@@ -26,6 +26,9 @@ interface GetRecipesOptions {
   query?: string;
   difficulty?: string;
   categorySlug?: string;
+  maxMinutes?: number;
+  tagSlugs?: string[];
+  sortBy?: "newest" | "quickest" | "popular";
   limit?: number;
   offset?: number;
 }
@@ -35,7 +38,16 @@ export async function getRecipes(options: GetRecipesOptions = {}): Promise<{
   recipes: RecipeCard[];
   total: number;
 }> {
-  const { query, difficulty, categorySlug, limit = 24, offset = 0 } = options;
+  const {
+    query,
+    difficulty,
+    categorySlug,
+    maxMinutes,
+    tagSlugs,
+    sortBy = "newest",
+    limit = 24,
+    offset = 0,
+  } = options;
 
   const where: Record<string, unknown> = {
     status: "PUBLISHED",
@@ -61,11 +73,28 @@ export async function getRecipes(options: GetRecipesOptions = {}): Promise<{
     where.category = { slug: categorySlug };
   }
 
+  if (maxMinutes && maxMinutes > 0) {
+    where.totalMinutes = { lte: maxMinutes };
+  }
+
+  if (tagSlugs && tagSlugs.length > 0) {
+    where.tags = {
+      some: { tag: { slug: { in: tagSlugs } } },
+    };
+  }
+
+  const orderBy =
+    sortBy === "quickest"
+      ? { totalMinutes: "asc" as const }
+      : sortBy === "popular"
+        ? { viewCount: "desc" as const }
+        : { createdAt: "desc" as const };
+
   const [recipes, total] = await Promise.all([
     prisma.recipe.findMany({
       where,
       select: recipeCardSelect,
-      orderBy: { createdAt: "desc" },
+      orderBy,
       take: limit,
       skip: offset,
     }),

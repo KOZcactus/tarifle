@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/Badge";
 import { IngredientList } from "@/components/recipe/IngredientList";
 import { RecipeSteps } from "@/components/recipe/RecipeSteps";
 import { NutritionInfo } from "@/components/recipe/NutritionInfo";
+import { generateRecipeJsonLd } from "@/lib/seo";
 import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
 import { MOCK_RECIPES, MOCK_RECIPE_DETAIL } from "@/data/mock-recipes";
 import type { Metadata } from "next";
@@ -48,8 +49,16 @@ export default async function TarifPage({ params }: TarifPageProps) {
     );
   }
 
+  const jsonLd = generateRecipeJsonLd(recipe);
+
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
+      {/* Schema.org Recipe JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Breadcrumb */}
       <nav className="mb-6 text-sm text-text-muted" aria-label="Breadcrumb">
         <Link href="/tarifler" className="hover:text-text">

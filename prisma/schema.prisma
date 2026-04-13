@@ -1,0 +1,420 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── ENUMS ───────────────────────────────────────────────
+
+enum Role {
+  USER
+  MODERATOR
+  ADMIN
+}
+
+enum RecipeType {
+  YEMEK
+  TATLI
+  ICECEK
+  KOKTEYL
+  APERATIF
+  SALATA
+  CORBA
+  KAHVALTI
+  ATISTIRMALIK
+  SOS
+}
+
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+enum RecipeStatus {
+  DRAFT
+  PENDING_REVIEW
+  PUBLISHED
+  HIDDEN
+  REJECTED
+}
+
+enum ContentStatus {
+  DRAFT
+  PENDING_REVIEW
+  PUBLISHED
+  HIDDEN
+  REJECTED
+}
+
+enum ReportTarget {
+  VARIATION
+  COMMENT
+}
+
+enum ReportReason {
+  SPAM
+  PROFANITY
+  MISLEADING
+  HARMFUL
+  OTHER
+}
+
+enum ReportStatus {
+  PENDING
+  REVIEWED
+  DISMISSED
+}
+
+enum VideoJobStatus {
+  QUEUED
+  PROCESSING
+  COMPLETED
+  FAILED
+}
+
+enum MediaType {
+  IMAGE
+  VIDEO
+}
+
+// ─── MODELS ──────────────────────────────────────────────
+
+model User {
+  id               String    @id @default(cuid())
+  name             String?   @db.VarChar(100)
+  username         String    @unique @db.VarChar(50)
+  email            String    @unique @db.VarChar(255)
+  emailVerified    DateTime?
+  passwordHash     String?   @db.VarChar(255)
+  avatarUrl        String?   @db.Text
+  bio              String?   @db.VarChar(300)
+  role             Role      @default(USER)
+  isVerified       Boolean   @default(false)
+  kvkkAccepted     Boolean   @default(false)
+  kvkkVersion      String?   @db.VarChar(20)
+  kvkkDate         DateTime?
+  termsVersion     String?   @db.VarChar(20)
+  marketingConsent Boolean   @default(false)
+  deletedAt        DateTime?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  recipes           Recipe[]
+  variations        Variation[]
+  likes             Like[]
+  bookmarks         Bookmark[]
+  reports           Report[]
+  moderationActions ModerationAction[]
+  auditLogs         AuditLog[]
+  mediaAssets       MediaAsset[]
+  accounts          Account[]
+  sessions          Session[]
+
+  @@map("users")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+model Category {
+  id          String     @id @default(cuid())
+  name        String     @db.VarChar(100)
+  slug        String     @unique @db.VarChar(100)
+  emoji       String?    @db.VarChar(10)
+  description String?    @db.Text
+  parentId    String?
+  sortOrder   Int        @default(0)
+  imageUrl    String?    @db.Text
+  createdAt   DateTime   @default(now())
+
+  parent   Category?  @relation("CategoryTree", fields: [parentId], references: [id])
+  children Category[] @relation("CategoryTree")
+  recipes  Recipe[]
+
+  @@map("categories")
+}
+
+model Tag {
+  id        String      @id @default(cuid())
+  name      String      @unique @db.VarChar(50)
+  slug      String      @unique @db.VarChar(50)
+  createdAt DateTime    @default(now())
+
+  recipeTags RecipeTag[]
+
+  @@map("tags")
+}
+
+model Recipe {
+  id                String       @id @default(cuid())
+  title             String       @db.VarChar(200)
+  slug              String       @unique @db.VarChar(200)
+  description       String       @db.Text
+  emoji             String?      @db.VarChar(20)
+  categoryId        String
+  type              RecipeType
+  difficulty        Difficulty
+  prepMinutes       Int
+  cookMinutes       Int
+  totalMinutes      Int
+  servingCount      Int
+  averageCalories   Int?
+  protein           Decimal?     @db.Decimal(5, 1)
+  carbs             Decimal?     @db.Decimal(5, 1)
+  fat               Decimal?     @db.Decimal(5, 1)
+  imageUrl          String?      @db.Text
+  videoUrl          String?      @db.Text
+  isFeatured        Boolean      @default(false)
+  status            RecipeStatus @default(PUBLISHED)
+  viewCount         Int          @default(0)
+  tipNote           String?      @db.Text
+  servingSuggestion String?      @db.Text
+  authorId          String?
+  createdAt         DateTime     @default(now())
+  updatedAt         DateTime     @updatedAt
+
+  category    Category          @relation(fields: [categoryId], references: [id])
+  author      User?             @relation(fields: [authorId], references: [id])
+  ingredients RecipeIngredient[]
+  steps       RecipeStep[]
+  tags        RecipeTag[]
+  variations  Variation[]
+  bookmarks   Bookmark[]
+  videoJobs   VideoJob[]
+
+  @@index([categoryId])
+  @@index([status])
+  @@index([type])
+  @@index([isFeatured])
+  @@map("recipes")
+}
+
+model RecipeIngredient {
+  id             String   @id @default(cuid())
+  recipeId       String
+  name           String   @db.VarChar(200)
+  amount         String   @db.VarChar(50)
+  unit           String?  @db.VarChar(50)
+  sortOrder      Int      @default(0)
+  isOptional     Boolean  @default(false)
+  caloriePerUnit Decimal? @db.Decimal(7, 2)
+
+  recipe Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+
+  @@map("recipe_ingredients")
+}
+
+model RecipeStep {
+  id           String  @id @default(cuid())
+  recipeId     String
+  stepNumber   Int
+  instruction  String  @db.Text
+  tip          String? @db.Text
+  imageUrl     String? @db.Text
+  timerSeconds Int?
+
+  recipe Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+
+  @@map("recipe_steps")
+}
+
+model RecipeTag {
+  id       String @id @default(cuid())
+  recipeId String
+  tagId    String
+
+  recipe Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  tag    Tag    @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@unique([recipeId, tagId])
+  @@map("recipe_tags")
+}
+
+model Variation {
+  id          String        @id @default(cuid())
+  recipeId    String
+  authorId    String
+  miniTitle   String        @db.VarChar(200)
+  description String?       @db.Text
+  ingredients Json
+  steps       Json
+  notes       String?       @db.Text
+  imageUrl    String?       @db.Text
+  likeCount   Int           @default(0)
+  reportCount Int           @default(0)
+  status      ContentStatus @default(PUBLISHED)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  recipe Recipe @relation(fields: [recipeId], references: [id])
+  author User   @relation(fields: [authorId], references: [id])
+  likes  Like[]
+
+  @@index([recipeId])
+  @@index([authorId])
+  @@map("variations")
+}
+
+model Like {
+  id          String   @id @default(cuid())
+  userId      String
+  variationId String
+  createdAt   DateTime @default(now())
+
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  variation Variation @relation(fields: [variationId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, variationId])
+  @@map("likes")
+}
+
+model Bookmark {
+  id        String   @id @default(cuid())
+  userId    String
+  recipeId  String
+  createdAt DateTime @default(now())
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  recipe Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, recipeId])
+  @@map("bookmarks")
+}
+
+model Report {
+  id          String       @id @default(cuid())
+  reporterId  String
+  targetType  ReportTarget
+  targetId    String
+  reason      ReportReason
+  description String?      @db.Text
+  status      ReportStatus @default(PENDING)
+  reviewedBy  String?
+  reviewedAt  DateTime?
+  createdAt   DateTime     @default(now())
+
+  reporter User @relation(fields: [reporterId], references: [id])
+
+  @@index([status])
+  @@map("reports")
+}
+
+model ModerationAction {
+  id          String   @id @default(cuid())
+  moderatorId String
+  targetType  String   @db.VarChar(50)
+  targetId    String
+  action      String   @db.VarChar(20)
+  reason      String?  @db.Text
+  createdAt   DateTime @default(now())
+
+  moderator User @relation(fields: [moderatorId], references: [id])
+
+  @@map("moderation_actions")
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  userId     String?
+  action     String   @db.VarChar(100)
+  targetType String?  @db.VarChar(50)
+  targetId   String?
+  metadata   Json?
+  ipAddress  String?  @db.VarChar(45)
+  createdAt  DateTime @default(now())
+
+  user User? @relation(fields: [userId], references: [id])
+
+  @@map("audit_log")
+}
+
+model MediaAsset {
+  id         String    @id @default(cuid())
+  uploaderId String?
+  type       MediaType
+  url        String    @db.Text
+  publicId   String?   @db.VarChar(255)
+  width      Int?
+  height     Int?
+  sizeBytes  Int?
+  mimeType   String?   @db.VarChar(50)
+  createdAt  DateTime  @default(now())
+
+  uploader User? @relation(fields: [uploaderId], references: [id])
+
+  @@map("media_assets")
+}
+
+model VideoJob {
+  id              String         @id @default(cuid())
+  recipeId        String
+  provider        String         @db.VarChar(50)
+  status          VideoJobStatus @default(QUEUED)
+  prompt          String?        @db.Text
+  inputImageUrl   String?        @db.Text
+  outputUrl       String?        @db.Text
+  errorMessage    String?        @db.Text
+  costEstimate    Decimal?       @db.Decimal(8, 4)
+  durationSeconds Int?
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  recipe Recipe @relation(fields: [recipeId], references: [id])
+
+  @@map("video_jobs")
+}
+
+model NutritionData {
+  id              String   @id @default(cuid())
+  name            String   @unique @db.VarChar(200)
+  caloriesPer100g Decimal  @db.Decimal(7, 2)
+  proteinPer100g  Decimal  @db.Decimal(5, 2)
+  carbsPer100g    Decimal  @db.Decimal(5, 2)
+  fatPer100g      Decimal  @db.Decimal(5, 2)
+  defaultUnit     String?  @db.VarChar(50)
+  gramsPerUnit    Decimal? @db.Decimal(7, 2)
+  source          String?  @db.VarChar(100)
+
+  @@map("nutrition_data")
+}

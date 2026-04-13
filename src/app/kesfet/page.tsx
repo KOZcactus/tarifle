@@ -16,7 +16,10 @@ export default async function KesfetPage() {
     getCategories(),
   ]);
 
-  const popularCategories = allCategories.slice(0, 8);
+  // Tarif sayısına göre sırala, en çok tarifi olan ilk 8
+  const popularCategories = [...allCategories]
+    .sort((a, b) => b._count.recipes - a._count.recipes)
+    .slice(0, 8);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
@@ -60,10 +63,19 @@ export default async function KesfetPage() {
             <Link
               key={cat.slug}
               href={`/tarifler/${cat.slug}`}
-              className="flex items-center gap-3 rounded-xl border border-border bg-bg-card p-4 transition-all hover:border-primary hover:shadow-md"
+              className="group flex items-center gap-3 rounded-xl border border-border bg-bg-card p-4 transition-all hover:border-primary hover:shadow-md"
             >
-              <span className="text-2xl">{cat.emoji}</span>
-              <span className="text-sm font-medium">{cat.name}</span>
+              <span className="text-2xl transition-transform duration-200 group-hover:scale-110">
+                {cat.emoji}
+              </span>
+              <div className="min-w-0">
+                <span className="block text-sm font-medium">{cat.name}</span>
+                {cat._count.recipes > 0 && (
+                  <span className="text-[10px] text-text-muted">
+                    {cat._count.recipes} tarif
+                  </span>
+                )}
+              </div>
             </Link>
           ))}
         </div>

@@ -2,9 +2,18 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { DIFFICULTY_OPTIONS } from "@/lib/constants";
-import { CATEGORIES } from "@/data/categories";
 
-export function FilterPanel() {
+interface FilterCategory {
+  name: string;
+  slug: string;
+  emoji: string | null;
+}
+
+interface FilterPanelProps {
+  categories?: FilterCategory[];
+}
+
+export function FilterPanel({ categories = [] }: FilterPanelProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -42,19 +51,21 @@ export function FilterPanel() {
       </select>
 
       {/* Category Filter */}
-      <select
-        value={currentCategory}
-        onChange={(e) => updateFilter("kategori", e.target.value)}
-        className="h-10 rounded-lg border border-border bg-bg-card px-3 text-sm text-text focus:border-primary focus:outline-none"
-        aria-label="Kategori filtresi"
-      >
-        <option value="">Tüm Kategoriler</option>
-        {CATEGORIES.map((cat) => (
-          <option key={cat.slug} value={cat.slug}>
-            {cat.emoji} {cat.name}
-          </option>
-        ))}
-      </select>
+      {categories.length > 0 && (
+        <select
+          value={currentCategory}
+          onChange={(e) => updateFilter("kategori", e.target.value)}
+          className="h-10 rounded-lg border border-border bg-bg-card px-3 text-sm text-text focus:border-primary focus:outline-none"
+          aria-label="Kategori filtresi"
+        >
+          <option value="">Tüm Kategoriler</option>
+          {categories.map((cat) => (
+            <option key={cat.slug} value={cat.slug}>
+              {cat.emoji} {cat.name}
+            </option>
+          ))}
+        </select>
+      )}
 
       {/* Clear Filters */}
       {hasFilters && (

@@ -3,6 +3,7 @@ import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
 import { FilterPanel } from "@/components/search/FilterPanel";
 import { getRecipes } from "@/lib/queries/recipe";
+import { getCategories } from "@/lib/queries/category";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -25,11 +26,14 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
   const difficulty = params.zorluk ?? "";
   const category = params.kategori ?? "";
 
-  const { recipes, total } = await getRecipes({
-    query: query || undefined,
-    difficulty: difficulty || undefined,
-    categorySlug: category || undefined,
-  });
+  const [{ recipes, total }, categories] = await Promise.all([
+    getRecipes({
+      query: query || undefined,
+      difficulty: difficulty || undefined,
+      categorySlug: category || undefined,
+    }),
+    getCategories(),
+  ]);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
@@ -47,7 +51,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
           <SearchBar />
         </Suspense>
         <Suspense>
-          <FilterPanel />
+          <FilterPanel categories={categories} />
         </Suspense>
       </div>
 

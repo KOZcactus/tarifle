@@ -3,7 +3,31 @@
 /* ─── DESIGN TOKENS ──────────────────────────────────────── */
 
 :root {
-  /* Dark Mode (Varsayilan) */
+  /* Light Mode (Varsayılan) */
+  --color-bg: #f8f6f2;
+  --color-bg-card: #f0ece4;
+  --color-bg-elevated: #e8e3da;
+  --color-primary: #e85d2c;
+  --color-primary-hover: #d14e1f;
+  --color-secondary: #d4a843;
+  --color-accent-green: #1fa85a;
+  --color-accent-blue: #3b7ae8;
+  --color-text: #1a1a1a;
+  --color-text-muted: #6b6b6b;
+  --color-success: #4caf50;
+  --color-error: #d32f2f;
+  --color-warning: #f57c00;
+  --color-border: #ddd8cf;
+  --color-border-hover: #c8c1b5;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+}
+
+[data-theme="dark"] {
   --color-bg: #0f0f0f;
   --color-bg-card: #1a1a1a;
   --color-bg-elevated: #222222;
@@ -19,30 +43,6 @@
   --color-warning: #ffa726;
   --color-border: #2a2a2a;
   --color-border-hover: #3a3a3a;
-
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-full: 9999px;
-}
-
-[data-theme="light"] {
-  --color-bg: #f8faf9;
-  --color-bg-card: #ffffff;
-  --color-bg-elevated: #f0f0f0;
-  --color-primary: #e85d2c;
-  --color-primary-hover: #d14e1f;
-  --color-secondary: #d4a843;
-  --color-accent-green: #1fa85a;
-  --color-accent-blue: #3b7ae8;
-  --color-text: #1a1a1a;
-  --color-text-muted: #6b6b6b;
-  --color-success: #4caf50;
-  --color-error: #d32f2f;
-  --color-warning: #f57c00;
-  --color-border: #e8e8e8;
-  --color-border-hover: #d0d0d0;
 }
 
 @theme inline {

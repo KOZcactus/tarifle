@@ -8,7 +8,7 @@ interface ProvidersProps {
 
 export function Providers({ children }: ProvidersProps) {
   return (
-    <NextThemesProvider attribute="data-theme" defaultTheme="dark" enableSystem={false}>
+    <NextThemesProvider attribute="data-theme" defaultTheme="light" enableSystem={false}>
       {children}
     </NextThemesProvider>
   );

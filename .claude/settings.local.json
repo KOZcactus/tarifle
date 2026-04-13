@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(where node:*)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/nodejs:/c/Users/kozca/AppData/Roaming/npm\")",
+      "Read(//c/Program Files/**)",
+      "Read(//c/Program Files \\(x86\\)/**)",
+      "Read(//c/Users/kozca/AppData/Local/Programs//**)",
+      "Bash(cmd.exe /c \"where node\")",
+      "Bash(cmd.exe /c \"node --version\")",
+      "Read(//c/Users/kozca/AppData/Roaming/**)",
+      "Read(//c/Users/kozca/**)",
+      "Read(//c/ProgramData/**)",
+      "Bash(powershell.exe -Command \"Get-Command node -ErrorAction SilentlyContinue | Select-Object Source\")",
+      "Bash(powershell.exe -Command \"node --version\")",
+      "Bash(mkdir -p docs)",
+      "Bash(mv TARIFLE_ULTIMATE_PLAN.md docs/)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --yes)"
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
-import { CATEGORIES } from "@/data/categories";
-import { MOCK_RECIPES } from "@/data/mock-recipes";
+import { getFeaturedRecipes, getQuickRecipes } from "@/lib/queries/recipe";
+import { getCategories } from "@/lib/queries/category";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,10 +9,14 @@ export const metadata: Metadata = {
   description: "Yeni tarifler keşfet, popüler kategorileri incele ve topluluk favorilerini gör.",
 };
 
-export default function KesfetPage() {
-  const featured = MOCK_RECIPES.filter((r) => r.isFeatured);
-  const quick = MOCK_RECIPES.filter((r) => r.totalMinutes <= 30);
-  const popularCategories = CATEGORIES.slice(0, 8);
+export default async function KesfetPage() {
+  const [featured, quick, allCategories] = await Promise.all([
+    getFeaturedRecipes(6),
+    getQuickRecipes(8),
+    getCategories(),
+  ]);
+
+  const popularCategories = allCategories.slice(0, 8);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
@@ -20,29 +24,33 @@ export default function KesfetPage() {
       <p className="mt-2 text-text-muted">Yeni lezzetler keşfet, ilham al.</p>
 
       {/* Featured */}
-      <section className="mt-10">
-        <div className="flex items-center justify-between">
-          <h2 className="font-heading text-xl font-bold">⭐ Öne Çıkanlar</h2>
-          <Link href="/tarifler" className="text-sm text-primary hover:underline">
-            Tümü
-          </Link>
-        </div>
-        <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {featured.map((recipe) => (
-            <RecipeCard key={recipe.id} recipe={recipe} />
-          ))}
-        </div>
-      </section>
+      {featured.length > 0 && (
+        <section className="mt-10">
+          <div className="flex items-center justify-between">
+            <h2 className="font-heading text-xl font-bold">⭐ Öne Çıkanlar</h2>
+            <Link href="/tarifler" className="text-sm text-primary hover:underline">
+              Tümü
+            </Link>
+          </div>
+          <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {featured.map((recipe) => (
+              <RecipeCard key={recipe.id} recipe={recipe} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Quick Recipes */}
-      <section className="mt-12">
-        <h2 className="font-heading text-xl font-bold">⚡ 30 Dakika Altı</h2>
-        <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {quick.map((recipe) => (
-            <RecipeCard key={recipe.id} recipe={recipe} />
-          ))}
-        </div>
-      </section>
+      {quick.length > 0 && (
+        <section className="mt-12">
+          <h2 className="font-heading text-xl font-bold">⚡ 30 Dakika Altı</h2>
+          <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {quick.map((recipe) => (
+              <RecipeCard key={recipe.id} recipe={recipe} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Categories Browse */}
       <section className="mt-12">

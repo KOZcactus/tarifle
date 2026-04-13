@@ -6,7 +6,7 @@ import { RecipeSteps } from "@/components/recipe/RecipeSteps";
 import { NutritionInfo } from "@/components/recipe/NutritionInfo";
 import { generateRecipeJsonLd } from "@/lib/seo";
 import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
-import { MOCK_RECIPES, MOCK_RECIPE_DETAIL } from "@/data/mock-recipes";
+import { getRecipeBySlug, incrementViewCount } from "@/lib/queries/recipe";
 import type { Metadata } from "next";
 
 interface TarifPageProps {
@@ -15,7 +15,7 @@ interface TarifPageProps {
 
 export async function generateMetadata({ params }: TarifPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const recipe = MOCK_RECIPES.find((r) => r.slug === slug);
+  const recipe = await getRecipeBySlug(slug);
   if (!recipe) return { title: "Tarif Bulunamadı" };
 
   return {
@@ -26,28 +26,12 @@ export async function generateMetadata({ params }: TarifPageProps): Promise<Meta
 
 export default async function TarifPage({ params }: TarifPageProps) {
   const { slug } = await params;
+  const recipe = await getRecipeBySlug(slug);
 
-  // MVP: mock data kullanıyoruz. DB geldiğinde Prisma query'si olacak.
-  const recipeExists = MOCK_RECIPES.find((r) => r.slug === slug);
-  if (!recipeExists) notFound();
+  if (!recipe) notFound();
 
-  // Demo için sadece "karniyarik" slug'ında detay var
-  const recipe = slug === "karniyarik" ? MOCK_RECIPE_DETAIL : null;
-
-  if (!recipe) {
-    return (
-      <div className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6">
-        <span className="text-5xl">{recipeExists.emoji ?? "🍽️"}</span>
-        <h1 className="mt-4 font-heading text-3xl font-bold">{recipeExists.title}</h1>
-        <p className="mt-4 text-text-muted">
-          Bu tarifin detayları yakında eklenecek.
-        </p>
-        <Link href="/tarifler" className="mt-6 inline-block text-primary hover:underline">
-          ← Tariflere dön
-        </Link>
-      </div>
-    );
-  }
+  // Görüntülenme sayısını arka planda artır
+  incrementViewCount(slug).catch(() => {});
 
   const jsonLd = generateRecipeJsonLd(recipe);
 
@@ -184,7 +168,7 @@ export default async function TarifPage({ params }: TarifPageProps) {
           <p className="text-text-muted">
             Varyasyonlar, kullanıcı sistemi aktif edildiğinde burada görünecek.
           </p>
-          <p className="mt-2 text-sm text-text-muted">MVP 0.2'de gelecek.</p>
+          <p className="mt-2 text-sm text-text-muted">MVP 0.2&apos;de gelecek.</p>
         </div>
       </section>
 

@@ -2,8 +2,7 @@ import { Suspense } from "react";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
 import { FilterPanel } from "@/components/search/FilterPanel";
-import { RecipeCardSkeleton } from "@/components/ui/Skeleton";
-import { MOCK_RECIPES } from "@/data/mock-recipes";
+import { getRecipes } from "@/lib/queries/recipe";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,27 +21,15 @@ interface TariflerPageProps {
 
 export default async function TariflerPage({ searchParams }: TariflerPageProps) {
   const params = await searchParams;
-  const query = params.q?.toLowerCase() ?? "";
+  const query = params.q ?? "";
   const difficulty = params.zorluk ?? "";
   const category = params.kategori ?? "";
 
-  let recipes = MOCK_RECIPES;
-
-  if (query) {
-    recipes = recipes.filter(
-      (r) =>
-        r.title.toLowerCase().includes(query) ||
-        r.category.name.toLowerCase().includes(query),
-    );
-  }
-
-  if (difficulty) {
-    recipes = recipes.filter((r) => r.difficulty === difficulty);
-  }
-
-  if (category) {
-    recipes = recipes.filter((r) => r.category.slug === category);
-  }
+  const { recipes, total } = await getRecipes({
+    query: query || undefined,
+    difficulty: difficulty || undefined,
+    categorySlug: category || undefined,
+  });
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
@@ -50,7 +37,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
       <div className="mb-8">
         <h1 className="font-heading text-3xl font-bold">Tarifler</h1>
         <p className="mt-2 text-text-muted">
-          {recipes.length} tarif bulundu
+          {total} tarif bulundu
         </p>
       </div>
 

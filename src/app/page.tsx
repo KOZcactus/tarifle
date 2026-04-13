@@ -3,13 +3,16 @@ import { Suspense } from "react";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
 import { RecipeCardSkeleton } from "@/components/ui/Skeleton";
-import { CATEGORIES } from "@/data/categories";
-import { MOCK_RECIPES } from "@/data/mock-recipes";
+import { getFeaturedRecipes } from "@/lib/queries/recipe";
+import { getCategories } from "@/lib/queries/category";
 
 const POPULAR_SEARCHES = ["karnıyarık", "baklava", "mojito", "mercimek", "menemen"];
 
-export default function HomePage() {
-  const featured = MOCK_RECIPES.filter((r) => r.isFeatured).slice(0, 6);
+export default async function HomePage() {
+  const [featured, categories] = await Promise.all([
+    getFeaturedRecipes(6),
+    getCategories(),
+  ]);
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -44,25 +47,27 @@ export default function HomePage() {
       </section>
 
       {/* Featured Recipes */}
-      <section className="py-12">
-        <div className="flex items-center justify-between">
-          <h2 className="font-heading text-2xl font-bold">Öne Çıkan Tarifler</h2>
-          <Link href="/tarifler" className="text-sm text-primary hover:underline">
-            Tümünü gör →
-          </Link>
-        </div>
-        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {featured.map((recipe) => (
-            <RecipeCard key={recipe.id} recipe={recipe} />
-          ))}
-        </div>
-      </section>
+      {featured.length > 0 && (
+        <section className="py-12">
+          <div className="flex items-center justify-between">
+            <h2 className="font-heading text-2xl font-bold">Öne Çıkan Tarifler</h2>
+            <Link href="/tarifler" className="text-sm text-primary hover:underline">
+              Tümünü gör →
+            </Link>
+          </div>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {featured.map((recipe) => (
+              <RecipeCard key={recipe.id} recipe={recipe} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Categories */}
       <section className="py-12">
         <h2 className="font-heading text-2xl font-bold">Kategoriler</h2>
         <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-          {CATEGORIES.map((cat) => (
+          {categories.map((cat) => (
             <Link
               key={cat.slug}
               href={`/tarifler/${cat.slug}`}

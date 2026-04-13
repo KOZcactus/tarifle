@@ -2,24 +2,41 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
-import { RecipeCardSkeleton } from "@/components/ui/Skeleton";
-import { getFeaturedRecipes } from "@/lib/queries/recipe";
+import { getFeaturedRecipes, getRecipes } from "@/lib/queries/recipe";
 import { getCategories } from "@/lib/queries/category";
 
-const POPULAR_SEARCHES = ["karnıyarık", "baklava", "mojito", "mercimek", "menemen"];
+const POPULAR_SEARCHES = [
+  "karnıyarık",
+  "baklava",
+  "mojito",
+  "mercimek",
+  "menemen",
+  "tavuk",
+  "çorba",
+];
 
 export default async function HomePage() {
-  const [featured, categories] = await Promise.all([
+  const [featured, categories, { total: recipeCount }] = await Promise.all([
     getFeaturedRecipes(6),
     getCategories(),
+    getRecipes({ limit: 0 }),
   ]);
+
+  // Tarif sayısı olan kategorileri önce göster
+  const sortedCategories = [...categories].sort(
+    (a, b) => b._count.recipes - a._count.recipes,
+  );
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       {/* Hero */}
       <section className="flex flex-col items-center py-16 text-center lg:py-24">
+        <span className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-medium text-primary">
+          🍳 {recipeCount} tarif keşfetmeye hazır
+        </span>
         <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-          Bugün ne pişirsek?
+          Bugün ne{" "}
+          <span className="text-primary">pişirsek</span>?
         </h1>
         <p className="mt-4 max-w-xl text-lg text-text-muted">
           Yemek, içecek ve kokteyl tariflerini keşfet. Topluluk varyasyonlarıyla ilham al.
@@ -67,14 +84,23 @@ export default async function HomePage() {
       <section className="py-12">
         <h2 className="font-heading text-2xl font-bold">Kategoriler</h2>
         <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-          {categories.map((cat) => (
+          {sortedCategories.map((cat) => (
             <Link
               key={cat.slug}
               href={`/tarifler/${cat.slug}`}
-              className="flex flex-col items-center gap-2 rounded-xl border border-border bg-bg-card p-4 transition-all hover:border-primary hover:shadow-lg hover:shadow-primary/5"
+              className="group flex flex-col items-center gap-2 rounded-xl border border-border bg-bg-card p-4 transition-all hover:border-primary hover:shadow-lg hover:shadow-primary/5"
             >
-              <span className="text-3xl">{cat.emoji}</span>
-              <span className="text-center text-xs font-medium sm:text-sm">{cat.name}</span>
+              <span className="text-3xl transition-transform duration-200 group-hover:scale-110">
+                {cat.emoji}
+              </span>
+              <span className="text-center text-xs font-medium sm:text-sm">
+                {cat.name}
+              </span>
+              {cat._count.recipes > 0 && (
+                <span className="text-[10px] text-text-muted">
+                  {cat._count.recipes} tarif
+                </span>
+              )}
             </Link>
           ))}
         </div>

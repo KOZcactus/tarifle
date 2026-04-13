@@ -28,16 +28,22 @@
 - [x] SEO optimizasyonu (meta tags, Open Graph, Schema.org Recipe)
 - [x] Light mode varsayılan tema olarak ayarlandı
 - [x] Light mode kart arka planları sıcak krem tonuna güncellendi
+- [x] Final seed data tamamlandı (56 tarif, 17 kategori, 15 etiket)
+- [x] Gelişmiş filtreler eklendi (süre aralığı, etiket, sıralama)
 
 ## Devam Edenler
 
 - [ ] Responsive tasarım iyileştirmeleri (MVP 0.1)
-- [ ] Final seed data (50 yemek + 20 içecek — MVP 0.1)
-- [ ] Gelişmiş filtreler (süre aralığı, kalori, etiket, çoklu kategori)
+- [ ] Vercel'e ilk deploy (MVP 0.1 final)
+
+## Tamamlanan Seed Verisi
+
+- 17 kategori, 15 etiket
+- 56 tarif (15 ilk seed + 41 final seed)
+- Kategoriler: Ana Yemek, Çorba, Salata, Meze, Aperatif, Tatlı, Kahvaltı, Hamur İşi, Baklagil, Pilav, Sos, Kokteyl, Soğuk İçecek, Sıcak İçecek, Smoothie, Pasta, Atıştırmalık
 
 ## Sıradaki İşler
 
-- [ ] Vercel'e ilk deploy
 - [ ] Auth.js v5 (e-posta + Google) — MVP 0.2
 - [ ] Kullanıcı profil ve varyasyon sistemi — MVP 0.2
 - [ ] Moderasyon ve raporlama — MVP 0.3

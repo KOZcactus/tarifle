@@ -4,6 +4,7 @@ import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
 import { getFeaturedRecipes, getRecipes } from "@/lib/queries/recipe";
 import { getCategories } from "@/lib/queries/category";
+import { auth } from "@/lib/auth";
 
 const POPULAR_SEARCHES = [
   "karnıyarık",
@@ -16,10 +17,11 @@ const POPULAR_SEARCHES = [
 ];
 
 export default async function HomePage() {
-  const [featured, categories, { total: recipeCount }] = await Promise.all([
+  const [featured, categories, { total: recipeCount }, session] = await Promise.all([
     getFeaturedRecipes(6),
     getCategories(),
     getRecipes({ limit: 0 }),
+    auth(),
   ]);
 
   // Tarif sayısı olan kategorileri önce göster
@@ -106,24 +108,26 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-12">
-        <div className="rounded-2xl border border-border bg-bg-card p-8 text-center sm:p-12">
-          <span className="text-4xl">👨‍🍳</span>
-          <h2 className="mt-4 font-heading text-2xl font-bold">
-            Kendi tarifini paylaş
-          </h2>
-          <p className="mt-2 text-text-muted">
-            Üye ol, favori tariflerinin uyarlamalarını ekle ve toplulukla paylaş.
-          </p>
-          <Link
-            href="/kayit"
-            className="mt-6 inline-block rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
-          >
-            Ücretsiz Üye Ol
-          </Link>
-        </div>
-      </section>
+      {/* CTA — sadece giriş yapmamış kullanıcılara */}
+      {!session?.user && (
+        <section className="py-12">
+          <div className="rounded-2xl border border-border bg-bg-card p-8 text-center sm:p-12">
+            <span className="text-4xl">👨‍🍳</span>
+            <h2 className="mt-4 font-heading text-2xl font-bold">
+              Kendi tarifini paylaş
+            </h2>
+            <p className="mt-2 text-text-muted">
+              Üye ol, favori tariflerinin uyarlamalarını ekle ve toplulukla paylaş.
+            </p>
+            <Link
+              href="/kayit"
+              className="mt-6 inline-block rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
+            >
+              Ücretsiz Üye Ol
+            </Link>
+          </div>
+        </section>
+      )}
     </div>
   );
 }

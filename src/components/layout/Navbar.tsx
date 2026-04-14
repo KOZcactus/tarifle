@@ -64,6 +64,15 @@ export function Navbar() {
                   >
                     Profilim
                   </Link>
+                  {(session.user.role === "ADMIN" || session.user.role === "MODERATOR") && (
+                    <Link
+                      href="/admin"
+                      onClick={() => setIsProfileOpen(false)}
+                      className="block px-4 py-2 text-sm text-primary hover:bg-bg-elevated"
+                    >
+                      Yönetim Paneli
+                    </Link>
+                  )}
                   <button
                     onClick={() => signOut({ callbackUrl: "/" })}
                     className="block w-full px-4 py-2 text-left text-sm text-error hover:bg-bg-elevated"
@@ -136,6 +145,15 @@ export function Navbar() {
                 >
                   Profilim
                 </Link>
+                {(session.user.role === "ADMIN" || session.user.role === "MODERATOR") && (
+                  <Link
+                    href="/admin"
+                    onClick={() => setIsMobileOpen(false)}
+                    className="rounded-lg px-3 py-2 text-sm font-medium text-primary transition-colors hover:bg-bg-card"
+                  >
+                    Yönetim Paneli
+                  </Link>
+                )}
                 <button
                   onClick={() => { setIsMobileOpen(false); signOut({ callbackUrl: "/" }); }}
                   className="rounded-lg px-3 py-2 text-left text-sm font-medium text-error transition-colors hover:bg-bg-card"

@@ -5,6 +5,7 @@ import { prisma } from "@/lib/prisma";
 import { ProfileSettingsForm } from "@/components/profile/ProfileSettingsForm";
 import { GoogleLinkCard } from "@/components/profile/GoogleLinkCard";
 import { PasswordChangeCard } from "@/components/profile/PasswordChangeCard";
+import { DeleteAccountCard } from "@/components/profile/DeleteAccountCard";
 
 export const metadata: Metadata = {
   title: "Ayarlar",
@@ -83,6 +84,11 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
         />
 
         <PasswordChangeCard hasPassword={!!user.passwordHash} />
+
+        <DeleteAccountCard
+          username={user.username}
+          hasPassword={!!user.passwordHash}
+        />
       </div>
     </div>
   );

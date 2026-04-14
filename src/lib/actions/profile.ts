@@ -321,3 +321,109 @@ export async function unlinkGoogleAction(): Promise<UnlinkResult> {
   return { success: true };
 }
 
+interface DeleteAccountResult {
+  success: boolean;
+  error?: string;
+}
+
+/**
+ * Permanently delete the signed-in user. Cascading relations (accounts,
+ * sessions, likes, bookmarks, collections, shoppingLists, badges,
+ * notifications) go automatically via Prisma `onDelete: Cascade`. The
+ * relations WITHOUT cascade require manual cleanup:
+ *
+ *  - `variations` (authorId required) → delete (cascades to likes on them)
+ *  - `reports` user filed → delete
+ *  - `moderationActions` user took (moderator) → delete; audit trail loss is
+ *    an accepted MVP trade-off. A dedicated anonymous "deleted user" row
+ *    would preserve the log but needs a schema change.
+ *  - `recipes.authorId` → set null (keep content, shed attribution)
+ *  - `auditLog.userId` → set null (attribution only)
+ *  - `mediaAssets.uploaderId` → set null
+ *
+ * Security gates:
+ *  - Auth required (session must belong to the target user)
+ *  - Rate limited (`account-delete` scope: 3/saat)
+ *  - Confirmation text must equal the user's current username — catches
+ *    accidental form POSTs and stolen-cookie attackers who don't know the
+ *    handle (they probably do, so the password below is the real gate)
+ *  - If the user has a password, it must be supplied and verify via bcrypt.
+ *    OAuth-only users skip this gate — their only proof is the active
+ *    session + the username echo.
+ *
+ * The client is responsible for calling `signOut()` + redirecting after a
+ * success response. Server actions can't invalidate the NextAuth JWT
+ * cookie cleanly; we hand off.
+ */
+export async function deleteAccountAction(
+  formData: FormData,
+): Promise<DeleteAccountResult> {
+  const session = await auth();
+  if (!session?.user?.id) {
+    return { success: false, error: "Giriş yapmalısın." };
+  }
+
+  const rate = await checkRateLimit(
+    "account-delete",
+    rateLimitIdentifier(session.user.id),
+  );
+  if (!rate.success) {
+    return {
+      success: false,
+      error: rate.message ?? "Çok fazla deneme. Biraz sonra tekrar dene.",
+    };
+  }
+
+  const confirmText = (formData.get("confirmUsername") as string | null)?.trim();
+  const password = (formData.get("password") as string | null) ?? "";
+
+  const user = await prisma.user.findUnique({
+    where: { id: session.user.id },
+    select: {
+      id: true,
+      username: true,
+      passwordHash: true,
+    },
+  });
+  if (!user) return { success: false, error: "Kullanıcı bulunamadı." };
+
+  if (confirmText !== user.username) {
+    return {
+      success: false,
+      error: `Onay için kullanıcı adını (${user.username}) olduğu gibi yazman gerekiyor.`,
+    };
+  }
+
+  if (user.passwordHash) {
+    if (!password) {
+      return { success: false, error: "Şifreni gir." };
+    }
+    const ok = await bcrypt.compare(password, user.passwordHash);
+    if (!ok) {
+      return { success: false, error: "Şifren yanlış." };
+    }
+  }
+
+  // All gates cleared — do the deed. Ordered so FKs don't choke. Wrapped in
+  // a transaction to keep the DB consistent if any step throws.
+  await prisma.$transaction([
+    prisma.report.deleteMany({ where: { reporterId: user.id } }),
+    prisma.moderationAction.deleteMany({ where: { moderatorId: user.id } }),
+    prisma.variation.deleteMany({ where: { authorId: user.id } }),
+    prisma.recipe.updateMany({
+      where: { authorId: user.id },
+      data: { authorId: null },
+    }),
+    prisma.auditLog.updateMany({
+      where: { userId: user.id },
+      data: { userId: null },
+    }),
+    prisma.mediaAsset.updateMany({
+      where: { uploaderId: user.id },
+      data: { uploaderId: null },
+    }),
+    prisma.user.delete({ where: { id: user.id } }),
+  ]);
+
+  return { success: true };
+}

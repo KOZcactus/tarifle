@@ -25,6 +25,7 @@ export type RateLimitScope =
   | "variation-create"
   | "variation-create-daily"
   | "password-change"
+  | "account-delete"
   | "ai-assistant";
 
 interface ScopeConfig {
@@ -81,6 +82,14 @@ const SCOPE_CONFIG: Record<RateLimitScope, ScopeConfig> = {
     // otomatize saldiriyi yavaslatir.
     description: "5 sifre degisikligi denemesi / 1 saat",
     limit: 5,
+    window: "1 h",
+  },
+  "account-delete": {
+    // Normal bir kullanici hesabi silerse bir kere siler. Ust ust denemek
+    // sart degil — dusuk threshold bir saldirganin sifre tahmin etme yoluyla
+    // hesabi silmeye calismasini yavaslatir.
+    description: "3 hesap silme denemesi / 1 saat",
+    limit: 3,
     window: "1 h",
   },
 };

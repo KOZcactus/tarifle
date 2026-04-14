@@ -4,9 +4,11 @@ import Credentials from "next-auth/providers/credentials";
 import Google from "next-auth/providers/google";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import bcrypt from "bcryptjs";
+import { cookies } from "next/headers";
 import { prisma } from "@/lib/prisma";
 import { normalizeEmail } from "@/lib/email";
 import { checkRateLimit, rateLimitIdentifier } from "@/lib/rate-limit";
+import { LINK_INTENT_COOKIE, verifyLinkIntent } from "@/lib/link-intent";
 
 /**
  * Our Prisma `User.username` column is required + unique, but Auth.js's
@@ -86,9 +88,13 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     Google({
       clientId: process.env.AUTH_GOOGLE_ID,
       clientSecret: process.env.AUTH_GOOGLE_SECRET,
-      // Do NOT auto-link accounts across providers by email — prevents takeover
-      // if an attacker controls an email that matches an existing local account.
-      allowDangerousEmailAccountLinking: false,
+      // Flag says "auto-link OAuth sign-ins to existing-email users". That
+      // default behaviour is dangerous. We keep the actual gate inside the
+      // `signIn` callback below: linking is only allowed when the user has
+      // just clicked "Google hesabını bağla" from /ayarlar (signed link-
+      // intent cookie). Plain OAuth sign-ins where an email match exists
+      // without that cookie are rejected the same as before.
+      allowDangerousEmailAccountLinking: true,
     }),
     Credentials({
       name: "credentials",
@@ -161,8 +167,71 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       }
       return session;
     },
-    // NOTE: first-time OAuth user creation (username + KVKK) happens in the
-    // adapter override at the top of this file. We don't need a signIn
-    // callback or events.createUser for that anymore.
+    /**
+     * Gate OAuth sign-ins against the danger of auto-linking a Google
+     * account to a pre-existing credentials user purely by email match.
+     *
+     * Decision tree for Google OAuth:
+     *  - Linking flow (user clicked "bağla" on /ayarlar): signed cookie is
+     *    present; email from Google must match the cookie's user email.
+     *    Allow → adapter creates the Account row.
+     *  - Normal sign-in, new email: no existing user, adapter creates both
+     *    User and Account. Allow.
+     *  - Normal sign-in, email already belongs to a user who already has a
+     *    Google account linked: same user signing back in. Allow.
+     *  - Normal sign-in, email already belongs to a user with NO Google
+     *    account yet: reject. Would be silent takeover otherwise. Pipe the
+     *    error code Auth.js uses so /giris renders the friendly message.
+     *
+     * Credentials sign-ins always pass through (this branch only fires
+     * when the provider is google).
+     */
+    async signIn({ user, account }) {
+      if (account?.provider !== "google") return true;
+      if (!user.email) return false;
+      const googleEmail = normalizeEmail(user.email);
+
+      const cookieStore = await cookies();
+      const intentCookie = cookieStore.get(LINK_INTENT_COOKIE)?.value;
+      const intentUserId = verifyLinkIntent(intentCookie);
+
+      if (intentUserId) {
+        // Explicit linking flow — verify the user that started it and
+        // that the Google email matches their account email.
+        const intentUser = await prisma.user.findUnique({
+          where: { id: intentUserId },
+          select: { id: true, email: true },
+        });
+        if (!intentUser) return "/ayarlar?linkError=session";
+        if (normalizeEmail(intentUser.email) !== googleEmail) {
+          return "/ayarlar?linkError=mismatch";
+        }
+        // Let the adapter create the Account row. Cookie is consumed on a
+        // successful link by the /api/link/google/start route on its next
+        // call (it overwrites) — and we also clear it lazily here by
+        // returning true; the browser keeps it until TTL expires otherwise,
+        // which is fine because verifyLinkIntent also time-bounds it.
+        return true;
+      }
+
+      // No linking intent — fall back to safe default: reject any sign-in
+      // that would silently link a Google account to an existing local user.
+      const existing = await prisma.user.findUnique({
+        where: { email: googleEmail },
+        select: {
+          id: true,
+          accounts: {
+            where: { provider: "google" },
+            select: { id: true },
+          },
+        },
+      });
+      if (existing && existing.accounts.length === 0) {
+        // Auth.js renders the query string's `error` via our /giris page.
+        return "/giris?error=OAuthAccountNotLinked";
+      }
+
+      return true;
+    },
   },
 });

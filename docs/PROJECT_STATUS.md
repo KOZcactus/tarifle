@@ -1,6 +1,6 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 14 Nisan 2026 (Faz 2 — Koleksiyonlar + Alışveriş Listesi)
+> Son güncelleme: 14 Nisan 2026 (Faz 2 — OG Image + Paylaşım + PWA)
 
 ## Yapılanlar
 
@@ -75,6 +75,22 @@
 - [x] Navbar dropdown: "Alışveriş Listem" bağlantısı
 - [x] İsim-bazlı deduplication (aynı malzeme iki kez eklenmez)
 
+## Faz 2 — Sosyal Paylaşım + OG Image + PWA ✅
+
+- [x] Dinamik OG Image: tarif (`/tarif/[slug]/opengraph-image`), koleksiyon, site default
+  - Bricolage Grotesque font (woff) Google Fonts'tan runtime'da
+  - Türkçe karakter desteği (latin-ext)
+  - Twemoji ile emoji rendering
+- [x] `ShareMenu` component: Web Share API (mobilde native) + fallback dropdown
+  - WhatsApp deeplink (`wa.me`), X/Twitter intent URL, bağlantı kopyalama
+- [x] PWA manifest (`src/app/manifest.ts`)
+  - `standalone` display, Türkçe dil, theme/bg color tokenleri
+  - Shortcuts: Tarifler, Keşfet, Alışveriş Listem (ana ekran kısayolları)
+- [x] PWA ikonlar: `scripts/generate-icons.ts` ile Sharp'tan SVG → PNG
+  - 192x192, 512x512, 180x180 (apple-touch), 32x32 (favicon), maskable 512
+- [x] Root layout: viewport themeColor (light/dark), applicationName, appleWebApp, icons
+- [x] SITE_URL fallback: `tarifle.com` → `tarifle.app`
+
 ## Devam Edenler
 
 ## Tamamlanan Seed Verisi
@@ -86,10 +102,10 @@
 ## Sıradaki İşler
 
 - [ ] Google OAuth bağlantısı (Google Cloud Console'dan credentials alınacak)
-- [ ] Sosyal paylaşım butonları + OG Image — Faz 2
-- [ ] PWA desteği — Faz 2
 - [ ] E-posta doğrulama + Rozet sistemi — Faz 2
 - [ ] AI Asistan (malzeme → tarif önerisi) — Faz 2
+- [ ] Gelişmiş moderasyon (AI destekli) — Faz 2
+- [ ] Şablon video sistemi (Remotion) — Faz 2/3
 
 ## Karar Bekleyenler
 

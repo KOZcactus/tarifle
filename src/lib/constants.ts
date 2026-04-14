@@ -2,7 +2,7 @@ export const SITE_NAME = "Tarifle";
 export const SITE_SLOGAN = "Make Eat";
 export const SITE_DESCRIPTION =
   "Yemek, içecek ve kokteyl tariflerini sade, hızlı okunur ve topluluk katkısına açık şekilde sunan modern tarif platformu.";
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://tarifle.com";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://tarifle.app";
 
 export const ITEMS_PER_PAGE = 12;
 export const SEARCH_DEBOUNCE_MS = 300;

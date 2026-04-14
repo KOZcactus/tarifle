@@ -5,6 +5,7 @@ import { IngredientList } from "@/components/recipe/IngredientList";
 import { RecipeSteps } from "@/components/recipe/RecipeSteps";
 import { NutritionInfo } from "@/components/recipe/NutritionInfo";
 import { SaveMenu } from "@/components/recipe/SaveMenu";
+import { ShareMenu } from "@/components/recipe/ShareMenu";
 import { VariationForm } from "@/components/recipe/VariationForm";
 import { CookingMode } from "@/components/recipe/CookingMode";
 import { PrintButton } from "@/components/recipe/PrintButton";
@@ -12,6 +13,7 @@ import { AgeGate } from "@/components/recipe/AgeGate";
 import { ReportButton } from "@/components/recipe/ReportButton";
 import { generateRecipeJsonLd } from "@/lib/seo";
 import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
+import { SITE_URL } from "@/lib/constants";
 import { getRecipeBySlug, incrementViewCount } from "@/lib/queries/recipe";
 import { isBookmarked } from "@/lib/queries/user";
 import { getCollectionsForRecipe } from "@/lib/queries/collection";
@@ -100,13 +102,18 @@ export default async function TarifPage({ params }: TarifPageProps) {
           )}
         </div>
 
-        {/* Save actions */}
-        <div className="mt-4 print:hidden">
+        {/* Save + share actions */}
+        <div className="mt-4 flex flex-wrap items-start gap-2 print:hidden">
           <SaveMenu
             recipeId={recipe.id}
             initialBookmarked={bookmarked}
             initialCollections={userCollections}
             ingredientCount={recipe.ingredients.length}
+          />
+          <ShareMenu
+            title={recipe.title}
+            url={`${SITE_URL}/tarif/${recipe.slug}`}
+            text={`${recipe.emoji ?? ""} ${recipe.title} — Tarifle`}
           />
         </div>
 

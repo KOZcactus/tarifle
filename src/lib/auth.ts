@@ -4,6 +4,7 @@ import Google from "next-auth/providers/google";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/prisma";
+import { normalizeEmail } from "@/lib/email";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: PrismaAdapter(prisma),
@@ -16,7 +17,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     Google({
       clientId: process.env.AUTH_GOOGLE_ID,
       clientSecret: process.env.AUTH_GOOGLE_SECRET,
-      allowDangerousEmailAccountLinking: true,
+      // Do NOT auto-link accounts across providers by email — prevents takeover
+      // if an attacker controls an email that matches an existing local account.
+      allowDangerousEmailAccountLinking: false,
     }),
     Credentials({
       name: "credentials",
@@ -27,7 +30,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null;
 
-        const email = credentials.email as string;
+        const email = normalizeEmail(credentials.email as string);
         const password = credentials.password as string;
 
         const user = await prisma.user.findUnique({
@@ -80,8 +83,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     },
     async signIn({ user, account }) {
       if (account?.provider === "google") {
+        const email = normalizeEmail(user.email!);
         const existingUser = await prisma.user.findUnique({
-          where: { email: user.email! },
+          where: { email },
         });
         if (!existingUser) {
           const baseUsername = (user.name || "kullanici")
@@ -93,7 +97,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
           await prisma.user.create({
             data: {
-              email: user.email!,
+              email,
               name: user.name,
               username,
               avatarUrl: user.image,

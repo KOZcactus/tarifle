@@ -20,6 +20,10 @@ export class RuleBasedProvider implements AiProvider {
   readonly name = "rule-based" as const;
 
   async suggest(input: AiSuggestInput): Promise<AiSuggestResponse> {
+    // Deterministic candidate pool: always evaluate the same 200 rows for the
+    // same filters, so results don't drift when the DB's natural order changes.
+    // When we outgrow 200 published recipes, swap this for an ingredient
+    // inverted index / trigram scan.
     const recipes = await prisma.recipe.findMany({
       where: {
         status: "PUBLISHED",
@@ -31,7 +35,12 @@ export class RuleBasedProvider implements AiProvider {
         ingredients: true,
         category: { select: { name: true } },
       },
-      take: 200, // scoring cost is small; evaluate a wide set
+      orderBy: [
+        { isFeatured: "desc" },
+        { viewCount: "desc" },
+        { createdAt: "desc" },
+      ],
+      take: 200,
     });
 
     const scored: AiSuggestion[] = recipes

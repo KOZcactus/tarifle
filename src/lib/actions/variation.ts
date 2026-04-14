@@ -4,10 +4,19 @@ import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 import { checkMultipleTexts } from "@/lib/moderation/blacklist";
+import { variationSchema } from "@/lib/validators";
 
 interface VariationResult {
   success: boolean;
   error?: string;
+}
+
+function splitLines(raw: string | null): string[] {
+  if (!raw) return [];
+  return raw
+    .split(/\r?\n/)
+    .map((l) => l.trim())
+    .filter(Boolean);
 }
 
 export async function createVariation(formData: FormData): Promise<VariationResult> {
@@ -16,42 +25,36 @@ export async function createVariation(formData: FormData): Promise<VariationResu
     return { success: false, error: "Giriş yapmalısınız." };
   }
 
-  const recipeId = formData.get("recipeId") as string;
-  const recipeSlug = formData.get("recipeSlug") as string;
-  const miniTitle = (formData.get("miniTitle") as string)?.trim();
-  const description = (formData.get("description") as string)?.trim() || null;
-  const ingredientsRaw = formData.get("ingredients") as string;
-  const stepsRaw = formData.get("steps") as string;
-  const notes = (formData.get("notes") as string)?.trim() || null;
+  const recipeSlug = (formData.get("recipeSlug") as string | null) ?? "";
 
-  if (!recipeId || !miniTitle) {
-    return { success: false, error: "Başlık zorunludur." };
+  const parsed = variationSchema.safeParse({
+    recipeId: formData.get("recipeId"),
+    miniTitle: (formData.get("miniTitle") as string | null)?.trim(),
+    description:
+      (formData.get("description") as string | null)?.trim() || undefined,
+    ingredients: splitLines(formData.get("ingredients") as string | null),
+    steps: splitLines(formData.get("steps") as string | null),
+    notes: (formData.get("notes") as string | null)?.trim() || undefined,
+  });
+
+  if (!parsed.success) {
+    return {
+      success: false,
+      error: parsed.error.issues[0]?.message ?? "Form bilgileri geçersiz.",
+    };
   }
 
-  if (miniTitle.length > 200) {
-    return { success: false, error: "Başlık en fazla 200 karakter olabilir." };
-  }
+  const { recipeId, miniTitle, description, ingredients, steps, notes } =
+    parsed.data;
 
-  let ingredients: string[] = [];
-  let steps: string[] = [];
-
-  try {
-    ingredients = ingredientsRaw
-      ? ingredientsRaw.split("\n").map((l) => l.trim()).filter(Boolean)
-      : [];
-    steps = stepsRaw
-      ? stepsRaw.split("\n").map((l) => l.trim()).filter(Boolean)
-      : [];
-  } catch {
-    return { success: false, error: "Malzeme veya adım formatı hatalı." };
-  }
-
-  if (ingredients.length === 0) {
-    return { success: false, error: "En az bir malzeme ekleyin." };
-  }
-
-  if (steps.length === 0) {
-    return { success: false, error: "En az bir adım ekleyin." };
+  // Verify recipe exists and is visible — otherwise someone could spam variations
+  // against arbitrary/deleted recipe IDs.
+  const recipe = await prisma.recipe.findUnique({
+    where: { id: recipeId },
+    select: { id: true, status: true },
+  });
+  if (!recipe || recipe.status === "REJECTED" || recipe.status === "HIDDEN") {
+    return { success: false, error: "Tarif bulunamadı." };
   }
 
   // Argo/küfür kontrolü
@@ -64,7 +67,11 @@ export async function createVariation(formData: FormData): Promise<VariationResu
   ];
   const blacklistResult = checkMultipleTexts(textsToCheck);
   if (!blacklistResult.isClean) {
-    return { success: false, error: "İçeriğiniz uygunsuz ifadeler içeriyor. Lütfen düzenleyip tekrar deneyin." };
+    return {
+      success: false,
+      error:
+        "İçeriğiniz uygunsuz ifadeler içeriyor. Lütfen düzenleyip tekrar deneyin.",
+    };
   }
 
   await prisma.variation.create({
@@ -72,10 +79,10 @@ export async function createVariation(formData: FormData): Promise<VariationResu
       recipeId,
       authorId: session.user.id,
       miniTitle,
-      description,
-      ingredients: ingredients,
-      steps: steps,
-      notes,
+      description: description ?? null,
+      ingredients,
+      steps,
+      notes: notes ?? null,
     },
   });
 

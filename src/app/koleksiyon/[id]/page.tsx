@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { auth } from "@/lib/auth";
-import { getCollectionById } from "@/lib/queries/collection";
+import { getViewableCollection } from "@/lib/queries/collection";
 import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
 import { CollectionActions } from "@/components/collection/CollectionActions";
 
@@ -14,7 +14,10 @@ export async function generateMetadata({
   params,
 }: CollectionPageProps): Promise<Metadata> {
   const { id } = await params;
-  const collection = await getCollectionById(id);
+  // Use auth-gated helper so private collection names/descriptions don't leak
+  // into <title>/<meta description>.
+  const session = await auth();
+  const collection = await getViewableCollection(id, session?.user?.id);
   if (!collection) return { title: "Koleksiyon bulunamadı" };
 
   return {
@@ -27,15 +30,12 @@ export async function generateMetadata({
 
 export default async function CollectionPage({ params }: CollectionPageProps) {
   const { id } = await params;
-  const [collection, session] = await Promise.all([getCollectionById(id), auth()]);
+  const session = await auth();
+  const collection = await getViewableCollection(id, session?.user?.id);
 
   if (!collection) notFound();
 
   const isOwner = session?.user?.id === collection.userId;
-
-  if (!collection.isPublic && !isOwner) {
-    notFound();
-  }
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">

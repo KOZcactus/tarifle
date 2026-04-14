@@ -21,10 +21,8 @@ export async function generateMetadata({ params }: ProfilePageProps) {
 
 export default async function ProfilePage({ params }: ProfilePageProps) {
   const { username } = await params;
-  const [user, session] = await Promise.all([
-    getUserByUsername(username),
-    auth(),
-  ]);
+  const session = await auth();
+  const user = await getUserByUsername(username, session?.user?.id);
 
   if (!user) notFound();
 
@@ -32,7 +30,7 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
 
   const [bookmarks, variations, collections] = await Promise.all([
     isOwner ? getUserBookmarks(user.id) : Promise.resolve([]),
-    getUserVariations(user.id),
+    getUserVariations(user.id, isOwner),
     isOwner ? getUserCollections(user.id) : getPublicCollections(user.id),
   ]);
 

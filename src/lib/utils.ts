@@ -1,8 +1,12 @@
 import { type ClassValue, clsx } from "clsx";
 import slugifyLib from "slugify";
 
+/**
+ * Compose class names. Supports objects, arrays, and conditional values via
+ * clsx — previously this function silently coerced objects to "[object Object]".
+ */
 export function cn(...inputs: ClassValue[]): string {
-  return inputs.filter(Boolean).join(" ");
+  return clsx(inputs);
 }
 
 export function slugify(text: string): string {

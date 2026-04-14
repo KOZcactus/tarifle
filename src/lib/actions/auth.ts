@@ -3,6 +3,7 @@
 import bcrypt from "bcryptjs";
 import { signIn } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
+import { normalizeEmail } from "@/lib/email";
 
 interface RegisterResult {
   success: boolean;
@@ -10,13 +11,17 @@ interface RegisterResult {
 }
 
 export async function registerUser(formData: FormData): Promise<RegisterResult> {
-  const name = formData.get("name") as string;
-  const email = formData.get("email") as string;
-  const password = formData.get("password") as string;
+  const name = (formData.get("name") as string | null)?.trim() ?? "";
+  const rawEmail = (formData.get("email") as string | null) ?? "";
+  const password = (formData.get("password") as string | null) ?? "";
   const kvkkAccepted = formData.get("kvkkAccepted") === "on";
 
-  if (!name || !email || !password) {
+  if (!name || !rawEmail || !password) {
     return { success: false, error: "Tüm alanlar zorunludur." };
+  }
+
+  if (name.length < 2 || name.length > 100) {
+    return { success: false, error: "Ad 2–100 karakter olmalıdır." };
   }
 
   if (password.length < 6) {
@@ -26,6 +31,8 @@ export async function registerUser(formData: FormData): Promise<RegisterResult> 
   if (!kvkkAccepted) {
     return { success: false, error: "KVKK aydınlatma metnini kabul etmelisiniz." };
   }
+
+  const email = normalizeEmail(rawEmail);
 
   const existingUser = await prisma.user.findUnique({
     where: { email },

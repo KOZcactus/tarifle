@@ -59,6 +59,19 @@ export async function getCollectionById(id: string) {
   });
 }
 
+/**
+ * Safe variant: returns a collection only if the viewer is allowed to see it
+ * (public OR owner). Use this in pages, metadata, and OG image routes to
+ * prevent private-collection content from leaking via stable IDs.
+ */
+export async function getViewableCollection(id: string, viewerId?: string | null) {
+  const collection = await getCollectionById(id);
+  if (!collection) return null;
+  if (collection.isPublic) return collection;
+  if (viewerId && collection.userId === viewerId) return collection;
+  return null;
+}
+
 export async function getCollectionsForRecipe(userId: string, recipeId: string) {
   // Returns user's collections with a flag indicating if the recipe is in each
   const collections = await prisma.collection.findMany({

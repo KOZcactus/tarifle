@@ -230,6 +230,12 @@ model Recipe {
   @@index([status])
   @@index([type])
   @@index([isFeatured])
+  // Composite indexes for common listing queries. Ordered so the leading
+  // predicate (status) is shared across most reads.
+  @@index([status, createdAt])
+  @@index([status, totalMinutes])
+  @@index([status, viewCount])
+  @@index([status, type, difficulty, totalMinutes])
   @@map("recipes")
 }
 
@@ -296,6 +302,10 @@ model Variation {
 
   @@index([recipeId])
   @@index([authorId])
+  // Listing recipes' variations (only PUBLISHED, sorted by likes)
+  @@index([recipeId, status, likeCount])
+  // Profile variation feed (owner vs public read)
+  @@index([authorId, status, createdAt])
   @@map("variations")
 }
 
@@ -340,6 +350,10 @@ model Report {
   reporter User @relation(fields: [reporterId], references: [id])
 
   @@index([status])
+  @@index([status, createdAt])
+  @@index([targetType, targetId, status])
+  // A user can only report a given target once
+  @@unique([reporterId, targetType, targetId])
   @@map("reports")
 }
 
@@ -442,6 +456,8 @@ model Collection {
 
   @@unique([userId, slug])
   @@index([userId])
+  // Profile collection feed (owner or public viewers, sorted)
+  @@index([userId, isPublic, sortOrder, createdAt])
   @@map("collections")
 }
 
@@ -457,6 +473,7 @@ model CollectionItem {
 
   @@unique([collectionId, recipeId])
   @@index([recipeId])
+  @@index([collectionId, addedAt])
   @@map("collection_items")
 }
 
@@ -488,5 +505,6 @@ model ShoppingListItem {
   shoppingList ShoppingList @relation(fields: [shoppingListId], references: [id], onDelete: Cascade)
 
   @@index([shoppingListId])
+  @@index([shoppingListId, isChecked, sortOrder, createdAt])
   @@map("shopping_list_items")
 }

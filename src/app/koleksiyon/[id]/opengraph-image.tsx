@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
-import { getCollectionById } from "@/lib/queries/collection";
+import { auth } from "@/lib/auth";
+import { getViewableCollection } from "@/lib/queries/collection";
 import { loadGoogleFont } from "@/lib/og";
 
 export const alt = "Tarifle koleksiyon";
@@ -12,7 +13,10 @@ interface Props {
 
 export default async function Image({ params }: Props) {
   const { id } = await params;
-  const collection = await getCollectionById(id);
+  // IMPORTANT: use the auth-gated helper so private collections never leak
+  // their name/emoji/owner/previews via the OG endpoint.
+  const session = await auth();
+  const collection = await getViewableCollection(id, session?.user?.id);
 
   const name = collection?.name ?? "Koleksiyon";
   const emoji = collection?.emoji ?? "📁";

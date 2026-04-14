@@ -25,26 +25,23 @@ export const registerSchema = z
     path: ["confirmPassword"],
   });
 
+/**
+ * Server-side schema for the user-facing variation form. Matches the actual
+ * form shape: line-separated strings for ingredients/steps, with per-line and
+ * total-count caps to keep the JSON payload bounded.
+ */
 export const variationSchema = z.object({
+  recipeId: z.string().min(1),
   miniTitle: z.string().min(3, "Başlık en az 3 karakter olmalıdır").max(200),
-  description: z.string().max(1000).optional(),
+  description: z.string().max(300).optional(),
   ingredients: z
-    .array(
-      z.object({
-        name: z.string().min(1),
-        amount: z.string().min(1),
-        unit: z.string().optional(),
-      }),
-    )
-    .min(1, "En az bir malzeme ekleyin"),
+    .array(z.string().min(1).max(200))
+    .min(1, "En az bir malzeme ekleyin")
+    .max(40, "En fazla 40 malzeme ekleyebilirsin."),
   steps: z
-    .array(
-      z.object({
-        stepNumber: z.number(),
-        instruction: z.string().min(1),
-      }),
-    )
-    .min(1, "En az bir adım ekleyin"),
+    .array(z.string().min(1).max(500))
+    .min(1, "En az bir adım ekleyin")
+    .max(30, "En fazla 30 adım ekleyebilirsin."),
   notes: z.string().max(500).optional(),
 });
 

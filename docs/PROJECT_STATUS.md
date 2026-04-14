@@ -91,6 +91,20 @@
 - [x] Root layout: viewport themeColor (light/dark), applicationName, appleWebApp, icons
 - [x] SITE_URL fallback: `tarifle.com` → `tarifle.app`
 
+## Review sonrası sertleştirmeler (GPT review pass 1) ✅
+
+- [x] **P1 — Gizli koleksiyon OG/metadata sızıntısı kapatıldı**: `getViewableCollection(id, viewerId)` helper, OG + generateMetadata + page hepsi auth-gated
+- [x] **Profil: gizli uyarlamalar sızıntısı**: `getUserVariations(userId, includeHidden)`, `getUserByUsername`'da public _count sadece PUBLISHED sayıyor
+- [x] **Email normalization**: `src/lib/email.ts` — auth.ts + register action'da `normalizeEmail(email)`
+- [x] **`allowDangerousEmailAccountLinking: false`** (Google provider)
+- [x] **Variation action**: artık `variationSchema` kullanıyor, `recipeId` ile hedef tarif doğrulaması, form'a maxLength
+- [x] **Report action**: `reportSchema` ile Zod validation, hedef varlık kontrolü, transaction içinde count artırımı, `@@unique([reporterId, targetType, targetId])` constraint, COMMENT açıkça reddediliyor
+- [x] **AI provider**: deterministic `orderBy` (isFeatured, viewCount, createdAt)
+- [x] **Composite indeksler**: Recipe(status+createdAt/totalMinutes/viewCount/type+difficulty), Variation(recipeId+status+likeCount, authorId+status+createdAt), Report(status+createdAt, targetType+targetId+status), Collection(userId+isPublic+sortOrder+createdAt), CollectionItem(collectionId+addedAt), ShoppingListItem(shoppingListId+isChecked+sortOrder+createdAt)
+- [x] **`cn()` utility fix**: artık clsx kullanıyor (object/array inputlarını doğru handle ediyor)
+
+**Sonraki review pass'larda**: rate limiting (Upstash Redis), a11y overhaul (Escape/focus trap), lint+test altyapısı, ingredient synonym/token tablosu.
+
 ## Faz 2 — AI Asistan (kural tabanlı, AI-gibi) ✅
 
 - [x] `AiProvider` interface — Claude/başka model eklendiğinde sadece factory değişecek

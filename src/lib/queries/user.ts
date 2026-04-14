@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/prisma";
 
-export async function getUserByUsername(username: string) {
-  return prisma.user.findUnique({
+export async function getUserByUsername(username: string, viewerId?: string | null) {
+  const user = await prisma.user.findUnique({
     where: { username },
     select: {
       id: true,
@@ -14,12 +14,28 @@ export async function getUserByUsername(username: string) {
       createdAt: true,
       _count: {
         select: {
-          variations: true,
+          // Public counter: only PUBLISHED variations leak via this number
+          variations: { where: { status: "PUBLISHED" } },
           bookmarks: true,
         },
       },
     },
   });
+
+  if (!user) return null;
+
+  // Owner sees their full count including hidden/pending/rejected
+  if (viewerId && viewerId === user.id) {
+    const totalVariations = await prisma.variation.count({
+      where: { authorId: user.id },
+    });
+    return {
+      ...user,
+      _count: { ...user._count, variations: totalVariations },
+    };
+  }
+
+  return user;
 }
 
 export async function getUserBookmarks(userId: string) {
@@ -36,9 +52,12 @@ export async function getUserBookmarks(userId: string) {
   });
 }
 
-export async function getUserVariations(userId: string) {
+export async function getUserVariations(userId: string, includeHidden = false) {
   return prisma.variation.findMany({
-    where: { authorId: userId },
+    where: {
+      authorId: userId,
+      ...(includeHidden ? {} : { status: "PUBLISHED" }),
+    },
     orderBy: { createdAt: "desc" },
     include: {
       recipe: {

@@ -2,8 +2,7 @@
 
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
-
-const VALID_REASONS = ["SPAM", "PROFANITY", "MISLEADING", "HARMFUL", "OTHER"] as const;
+import { reportSchema } from "@/lib/validators";
 
 interface ReportResult {
   success: boolean;
@@ -16,48 +15,68 @@ export async function createReport(formData: FormData): Promise<ReportResult> {
     return { success: false, error: "Giriş yapmalısınız." };
   }
 
-  const targetType = formData.get("targetType") as string;
-  const targetId = formData.get("targetId") as string;
-  const reason = formData.get("reason") as string;
-  const description = (formData.get("description") as string)?.trim() || null;
-
-  if (!targetId || !targetType) {
-    return { success: false, error: "Geçersiz hedef." };
-  }
-
-  if (!reason || !VALID_REASONS.includes(reason as typeof VALID_REASONS[number])) {
-    return { success: false, error: "Geçerli bir sebep seçin." };
-  }
-
-  // Aynı kullanıcı aynı hedefi zaten raporlamış mı?
-  const existing = await prisma.report.findFirst({
-    where: {
-      reporterId: session.user.id,
-      targetType: targetType as "VARIATION" | "COMMENT",
-      targetId,
-    },
+  const parsed = reportSchema.safeParse({
+    targetType: formData.get("targetType"),
+    targetId: formData.get("targetId"),
+    reason: formData.get("reason"),
+    description:
+      (formData.get("description") as string | null)?.trim() || undefined,
   });
 
-  if (existing) {
-    return { success: false, error: "Bu içeriği zaten raporladınız." };
+  if (!parsed.success) {
+    return {
+      success: false,
+      error: parsed.error.issues[0]?.message ?? "Geçersiz rapor.",
+    };
   }
 
-  await prisma.report.create({
-    data: {
-      reporterId: session.user.id,
-      targetType: targetType as "VARIATION" | "COMMENT",
-      targetId,
-      reason: reason as typeof VALID_REASONS[number],
-      description,
-    },
-  });
+  const { targetType, targetId, reason, description } = parsed.data;
 
-  // Uyarlama'nın reportCount'unu artır
-  if (targetType === "VARIATION") {
-    await prisma.variation.update({
-      where: { id: targetId },
-      data: { reportCount: { increment: 1 } },
+  // Verify the target actually exists and is reportable before creating a
+  // dangling report. COMMENT type has no model yet — reject it explicitly.
+  if (targetType === "COMMENT") {
+    return { success: false, error: "Yorum raporlama henüz aktif değil." };
+  }
+
+  const target = await prisma.variation.findUnique({
+    where: { id: targetId },
+    select: { id: true, status: true },
+  });
+  if (!target) {
+    return { success: false, error: "Raporlanan içerik bulunamadı." };
+  }
+
+  try {
+    await prisma.$transaction(async (tx) => {
+      // Create the report and bump the variation counter atomically. The
+      // @@unique([reporterId, targetType, targetId]) constraint (schema-level)
+      // guarantees a user can't spam the same target.
+      await tx.report.create({
+        data: {
+          reporterId: session.user!.id!,
+          targetType,
+          targetId,
+          reason,
+          description: description ?? null,
+        },
+      });
+
+      await tx.variation.update({
+        where: { id: targetId },
+        data: { reportCount: { increment: 1 } },
+      });
     });
+  } catch (error: unknown) {
+    // Unique-constraint violation → user already reported this target
+    if (
+      error &&
+      typeof error === "object" &&
+      "code" in error &&
+      (error as { code?: string }).code === "P2002"
+    ) {
+      return { success: false, error: "Bu içeriği zaten raporladınız." };
+    }
+    throw error;
   }
 
   return { success: true };

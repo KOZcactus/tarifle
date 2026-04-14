@@ -111,6 +111,7 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
             className="w-full rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
             placeholder="Kısa bir açıklama (isteğe bağlı)"
           />
+          <p className="mt-1 text-xs text-text-muted">Maks. 300 karakter.</p>
         </div>
 
         <div>
@@ -122,6 +123,7 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
             name="ingredients"
             required
             rows={4}
+            maxLength={8000}
             className="w-full rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
             placeholder={"2 adet patlıcan\n1 su bardağı zeytinyağı\n3 diş sarımsak"}
           />
@@ -136,6 +138,7 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
             name="steps"
             required
             rows={4}
+            maxLength={15000}
             className="w-full rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
             placeholder={"Patlıcanları boyuna ikiye kesin\nİç kısmını kaşıkla oyun\nFırında 180°C'de 20 dk pişirin"}
           />
@@ -149,6 +152,7 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
             id="notes"
             name="notes"
             rows={2}
+            maxLength={500}
             className="w-full rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
             placeholder="Püf noktası veya ekstra bilgi (isteğe bağlı)"
           />

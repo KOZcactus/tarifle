@@ -24,6 +24,7 @@ export type RateLimitScope =
   | "report"
   | "variation-create"
   | "variation-create-daily"
+  | "password-change"
   | "ai-assistant";
 
 interface ScopeConfig {
@@ -73,6 +74,14 @@ const SCOPE_CONFIG: Record<RateLimitScope, ScopeConfig> = {
     description: "30 istek / 1 dk",
     limit: 30,
     window: "1 m",
+  },
+  "password-change": {
+    // Brute-force korumasi: saldirgan "mevcut sifre" alanini tahmin etmeye
+    // calisabilir. 5 deneme/saat her kullanici icin yeterli rahatlik,
+    // otomatize saldiriyi yavaslatir.
+    description: "5 sifre degisikligi denemesi / 1 saat",
+    limit: 5,
+    window: "1 h",
   },
 };
 

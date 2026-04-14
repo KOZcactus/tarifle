@@ -50,6 +50,26 @@ const REPEATED_CHAR_PATTERN = /(.)\1{4,}/u;
 const URL_PATTERN =
   /(https?:\/\/|www\.)\S+|\b[\w.-]+\.(com|net|org|io|co|info|tr|gov|edu)\b/iu;
 
+/**
+ * Undo the obvious link-obfuscation tricks before running URL_PATTERN so
+ * "site . com", "site[dot]com", "site (nokta) com" all collapse into their
+ * real shape ("site.com") and get flagged. Kept intentionally conservative
+ * — we don't try to invert every encoding, just the ones commonly used to
+ * slip promo links past plain regex filters.
+ */
+function unobfuscateForUrlCheck(text: string): string {
+  return (
+    text
+      .toLowerCase()
+      // " dot ", " nokta " as a separator word between word chars → "."
+      .replace(/(\w)\s*(?:dot|nokta)\s*(\w)/g, "$1.$2")
+      // Bracketed forms [dot], (nokta), {dot}
+      .replace(/\s*[[(\{]\s*(?:dot|nokta|\.)\s*[\])}]\s*/g, ".")
+      // "site . com" / "site .com" / "site. com" — spaces around a literal dot
+      .replace(/\s*\.\s*/g, ".")
+  );
+}
+
 // Share of uppercase letters in a string, ignoring digits/punctuation. Used
 // to flag SHOUTING titles like "EN GÜZEL YEMEK!!!". Threshold is deliberately
 // high so legitimate Turkish ALL-CAPS like "GÜL" (proper noun) at low volume
@@ -82,7 +102,12 @@ export function computePreflightFlags(input: PreflightInput): PreflightResult {
 
   if (REPEATED_CHAR_PATTERN.test(allText)) flags.add("repeated_chars");
 
-  if (URL_PATTERN.test(allText)) flags.add("contains_url");
+  // Check BOTH the raw text (catches "https://..." or "foo.com") and a
+  // de-obfuscated copy (catches "site . com", "site[dot]com" tricks).
+  const unobfuscated = unobfuscateForUrlCheck(allText);
+  if (URL_PATTERN.test(allText) || URL_PATTERN.test(unobfuscated)) {
+    flags.add("contains_url");
+  }
 
   // CAPS check targets title + description — users abbreviating in steps
   // (e.g. "TL", "MM") shouldn't trigger it.

@@ -4,6 +4,7 @@ import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { ProfileSettingsForm } from "@/components/profile/ProfileSettingsForm";
 import { GoogleLinkCard } from "@/components/profile/GoogleLinkCard";
+import { PasswordChangeCard } from "@/components/profile/PasswordChangeCard";
 
 export const metadata: Metadata = {
   title: "Ayarlar",
@@ -32,6 +33,7 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
       email: true,
       bio: true,
       emailVerified: true,
+      passwordHash: true,
       accounts: {
         where: { provider: "google" },
         select: { id: true },
@@ -78,6 +80,8 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
           email={user.email}
           linkResult={linkResult}
         />
+
+        <PasswordChangeCard hasPassword={!!user.passwordHash} />
       </div>
     </div>
   );

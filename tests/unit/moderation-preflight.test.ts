@@ -88,6 +88,46 @@ describe("computePreflightFlags", () => {
     expect(result.flags).toContain("contains_url");
   });
 
+  it("flags spaced-TLD bypass (site . com)", () => {
+    const result = computePreflightFlags({
+      ...baseValid,
+      notes: "Detaylar icin tarifevim . com adresine bakin",
+    });
+    expect(result.flags).toContain("contains_url");
+  });
+
+  it("flags bracketed-dot bypass (site[dot]com)", () => {
+    const result = computePreflightFlags({
+      ...baseValid,
+      notes: "tarifevim[dot]com sitesinden",
+    });
+    expect(result.flags).toContain("contains_url");
+  });
+
+  it("flags word-based separator bypass (site dot com)", () => {
+    const result = computePreflightFlags({
+      ...baseValid,
+      notes: "mutfakblog dot com adresine gelebilirsin",
+    });
+    expect(result.flags).toContain("contains_url");
+  });
+
+  it("flags Turkish nokta word bypass (site nokta com)", () => {
+    const result = computePreflightFlags({
+      ...baseValid,
+      notes: "mutfakblog nokta com daha fazlasi",
+    });
+    expect(result.flags).toContain("contains_url");
+  });
+
+  it("flags parenthesised nokta bypass (site(nokta)com)", () => {
+    const result = computePreflightFlags({
+      ...baseValid,
+      notes: "tarifevim(nokta)com burada",
+    });
+    expect(result.flags).toContain("contains_url");
+  });
+
   it("does NOT flag plain Turkish domain-like text", () => {
     // Sentences containing dots (e.g. "Etin pH'sı 3 saatte düşer.") shouldn't
     // be misread as a domain.

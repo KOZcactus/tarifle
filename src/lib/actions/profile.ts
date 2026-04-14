@@ -1,9 +1,11 @@
 "use server";
 
+import bcrypt from "bcryptjs";
 import { revalidatePath } from "next/cache";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
-import { profileUpdateSchema } from "@/lib/validators";
+import { checkRateLimit, rateLimitIdentifier } from "@/lib/rate-limit";
+import { passwordChangeSchema, profileUpdateSchema } from "@/lib/validators";
 
 interface UpdateProfileResult {
   success: boolean;
@@ -104,3 +106,79 @@ export async function updateProfileAction(
     previousUsername: current.username,
   };
 }
+
+interface PasswordChangeResult {
+  success: boolean;
+  error?: string;
+}
+
+/**
+ * Change the current user's password. Requires the current password — that's
+ * the single most important safety gate, because a stolen session cookie
+ * without the password is useless here.
+ *
+ * OAuth-only users (registered with Google, no `passwordHash`) get told to
+ * set a password elsewhere — we don't quietly let them "set" a first
+ * password via this flow, because that would be a different risk profile
+ * (setting vs. rotating).
+ */
+export async function changePasswordAction(
+  formData: FormData,
+): Promise<PasswordChangeResult> {
+  const session = await auth();
+  if (!session?.user?.id) {
+    return { success: false, error: "Giriş yapmalısın." };
+  }
+
+  // Rate-limit — brute-force guard on the "currentPassword" check.
+  const rate = await checkRateLimit(
+    "password-change",
+    rateLimitIdentifier(session.user.id),
+  );
+  if (!rate.success) {
+    return {
+      success: false,
+      error: rate.message ?? "Çok fazla deneme. Biraz sonra tekrar dene.",
+    };
+  }
+
+  const parsed = passwordChangeSchema.safeParse({
+    currentPassword: formData.get("currentPassword"),
+    newPassword: formData.get("newPassword"),
+    confirmPassword: formData.get("confirmPassword"),
+  });
+
+  if (!parsed.success) {
+    return {
+      success: false,
+      error: parsed.error.issues[0]?.message ?? "Geçersiz giriş.",
+    };
+  }
+
+  const user = await prisma.user.findUnique({
+    where: { id: session.user.id },
+    select: { passwordHash: true },
+  });
+  if (!user) return { success: false, error: "Kullanıcı bulunamadı." };
+  if (!user.passwordHash) {
+    return {
+      success: false,
+      error:
+        "Şifren yok — hesabını Google gibi bir sağlayıcı ile açmışsın. Şifre eklemek için destek ekibiyle iletişime geç.",
+    };
+  }
+
+  const ok = await bcrypt.compare(parsed.data.currentPassword, user.passwordHash);
+  if (!ok) {
+    return { success: false, error: "Mevcut şifren yanlış." };
+  }
+
+  const newHash = await bcrypt.hash(parsed.data.newPassword, 12);
+  await prisma.user.update({
+    where: { id: session.user.id },
+    data: { passwordHash: newHash },
+  });
+
+  return { success: true };
+}
+

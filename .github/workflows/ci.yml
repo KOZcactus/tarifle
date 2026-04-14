@@ -11,6 +11,12 @@ concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
+# Opt JS-based actions (checkout, setup-node) into Node 24 early. Node 20 is
+# deprecated on runners starting June 2, 2026 and removed Sept 16, 2026;
+# this flag switches to Node 24 today so we don't eat the deprecation warnings.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   check:
     name: Lint · Typecheck · Unit tests · Build

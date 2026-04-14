@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { registerUser } from "@/lib/actions/auth";
 
 export function RegisterForm() {
+  const router = useRouter();
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -15,12 +17,35 @@ export function RegisterForm() {
     setLoading(true);
 
     const formData = new FormData(e.currentTarget);
+    const email = (formData.get("email") as string | null) ?? "";
+    const password = (formData.get("password") as string | null) ?? "";
+
     const result = await registerUser(formData);
 
     if (!result.success) {
       setError(result.error || "Bir hata oluştu.");
       setLoading(false);
+      return;
     }
+
+    // Server action created the account but did not sign in — do that here so
+    // SessionProvider refreshes and the navbar flips to the logged-in state
+    // without needing a hard reload.
+    const signInResult = await signIn("credentials", {
+      email,
+      password,
+      redirect: false,
+    });
+
+    setLoading(false);
+
+    if (signInResult?.error) {
+      setError("Hesap oluşturuldu ama giriş yapılamadı. Lütfen giriş sayfasından dene.");
+      return;
+    }
+
+    router.refresh();
+    router.push("/");
   }
 
   return (

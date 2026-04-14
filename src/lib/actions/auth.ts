@@ -1,7 +1,7 @@
 "use server";
 
 import bcrypt from "bcryptjs";
-import { auth, signIn } from "@/lib/auth";
+import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { normalizeEmail } from "@/lib/email";
 import { sendVerificationEmail } from "@/lib/email/verification";
@@ -75,12 +75,12 @@ export async function registerUser(formData: FormData): Promise<RegisterResult> 
     console.error("[register] verification email failed:", err);
   });
 
-  await signIn("credentials", {
-    email,
-    password,
-    redirectTo: "/",
-  });
-
+  // Sign-in happens client-side after this action returns. Calling signIn here
+  // (with redirectTo) would throw NEXT_REDIRECT inside the server action and
+  // skip the cookie-refresh step that the SessionProvider needs — the client
+  // ends up on "/" but `useSession()` still reports logged-out until a hard
+  // reload. Client-side signIn + router.refresh() mirrors the login flow and
+  // avoids that stale-session window.
   return { success: true };
 }
 

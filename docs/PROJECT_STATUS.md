@@ -149,8 +149,17 @@
 
 ## Bilinen Sorunlar
 
-- Prisma 7 CLI komutları (migrate dev, db push) için `--url` flag gerekiyor
+- Prisma 7 CLI komutları (migrate dev, db push) için `--config ./prisma/prisma.config.ts` flag gerekiyor
   (prisma.config.ts dotenv yüklemesi güvenilir değil)
+
+## DB Migration Disiplini
+
+- ✅ Baseline alındı: `prisma/migrations/0_init/migration.sql`, "applied" işaretli
+- Bundan sonra schema değişikliklerinde:
+  - `npm run db:migrate -- --name kisa_aciklama` → migration dosyası üretir + dev DB'ye uygular
+  - Production deploy: `npm run db:migrate:deploy`
+  - Status kontrolü: `npm run db:migrate:status`
+- `npm run db:push` artık sadece "deneysel/prototype schema değişikliği" için
 
 ## Teknik Notlar
 

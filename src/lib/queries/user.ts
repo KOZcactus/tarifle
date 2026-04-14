@@ -11,6 +11,9 @@ export async function getUserByUsername(username: string, viewerId?: string | nu
       bio: true,
       role: true,
       isVerified: true,
+      // Sensitive — only return to owner; we filter below before yielding
+      email: true,
+      emailVerified: true,
       createdAt: true,
       _count: {
         select: {
@@ -35,7 +38,10 @@ export async function getUserByUsername(username: string, viewerId?: string | nu
     };
   }
 
-  return user;
+  // Strip private fields for non-owner viewers — never let email leak via
+  // the public profile endpoint.
+  const { email: _email, emailVerified: _emailVerified, ...publicUser } = user;
+  return publicUser;
 }
 
 export async function getUserBookmarks(userId: string) {

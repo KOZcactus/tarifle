@@ -1,6 +1,6 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 14 Nisan 2026 (Faz 2 — AI Asistan kural tabanlı)
+> Son güncelleme: 14 Nisan 2026 (Faz 2 — E-posta doğrulama + Rozet sistemi)
 
 ## Yapılanlar
 
@@ -105,6 +105,32 @@
 
 **Sonraki review pass'larda**: rate limiting (Upstash Redis), a11y overhaul (Escape/focus trap), lint+test altyapısı, ingredient synonym/token tablosu.
 
+## Faz 2 — E-posta Doğrulama + Rozet Sistemi ✅
+
+- [x] **Email provider abstraction** (`src/lib/email/`):
+  - `EmailProvider` interface
+  - `ResendEmailProvider` (production, RESEND_API_KEY ile aktif)
+  - `ConsoleEmailProvider` (dev fallback, mail'i console'a basar)
+  - `getEmailProvider()` factory: env'e bakar, otomatik seçim
+- [x] **Verification flow**:
+  - `sendVerificationEmail()` → token üret (24sa TTL, base64url, 32 byte), eskileri sil, mail gönder
+  - `consumeVerificationToken()` → süre kontrolü, transaction içinde `emailVerified` set + token sil + EMAIL_VERIFIED badge
+  - HTML email template (TR, branded, button + plain link fallback)
+- [x] `/dogrula/[token]` sayfası (success / not-found / expired durumları, `noindex`)
+- [x] Register'a kanca: kayıttan sonra fire-and-forget mail
+- [x] `resendVerificationEmailAction` — 1 dk kullanıcı-bazlı in-process throttle (Redis sonra)
+- [x] Profil sayfası: `VerifyEmailBanner` sahibe gösterir (email + "Tekrar gönder" buton)
+- [x] **Rozet sistemi** (schema + migration `badge_system`):
+  - `BadgeKey` enum: EMAIL_VERIFIED, FIRST_VARIATION, POPULAR_VARIATION, RECIPE_COLLECTOR
+  - `UserBadge` model (`@@unique([userId, key])` idempotent)
+  - `BADGES` config (label/description/emoji/tone)
+- [x] Otomatik tetikleme (best-effort, action başarısını bloklamaz):
+  - Email verification → EMAIL_VERIFIED
+  - İlk variation create → FIRST_VARIATION
+  - Like sonrası variation likeCount ≥ 10 → POPULAR_VARIATION (yazar için)
+  - Collection count ≥ 5 → RECIPE_COLLECTOR
+- [x] Profil sayfasında `BadgeShelf` vitrini (4 tone)
+
 ## Faz 2 — AI Asistan (kural tabanlı, AI-gibi) ✅
 
 - [x] `AiProvider` interface — Claude/başka model eklendiğinde sadece factory değişecek
@@ -137,7 +163,10 @@
 ## Sıradaki İşler
 
 - [ ] Google OAuth bağlantısı (Google Cloud Console'dan credentials alınacak)
-- [ ] E-posta doğrulama + Rozet sistemi — Faz 2
+- [ ] **Rate limiting** (public launch öncesi son güvenlik pass — Upstash Redis öneri)
+- [ ] **A11y overhaul** (Escape/focus trap/ARIA roles)
+- [ ] Lint + test altyapısı (next 16 lint kırık)
+- [ ] AI Asistan v2: ingredient synonym/token tablosu
 - [ ] Gelişmiş moderasyon — Faz 2
 - [ ] Şablon video sistemi (Remotion) — Faz 2/3
 

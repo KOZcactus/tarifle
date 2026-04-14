@@ -5,6 +5,7 @@ import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 import { checkMultipleTexts } from "@/lib/moderation/blacklist";
 import { variationSchema } from "@/lib/validators";
+import { awardFirstVariationBadge } from "@/lib/badges/service";
 
 interface VariationResult {
   success: boolean;
@@ -84,6 +85,11 @@ export async function createVariation(formData: FormData): Promise<VariationResu
       steps,
       notes: notes ?? null,
     },
+  });
+
+  // Best-effort badge grant — never block the publish path.
+  awardFirstVariationBadge(session.user.id).catch((err) => {
+    console.error("[variation] badge grant failed:", err);
   });
 
   revalidatePath(`/tarif/${recipeSlug}`);

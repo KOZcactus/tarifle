@@ -10,6 +10,7 @@ import {
   updateCollection,
 } from "@/lib/queries/collection";
 import { collectionSchema } from "@/lib/validators";
+import { maybeAwardCollectorBadge } from "@/lib/badges/service";
 
 function requireSession() {
   return auth().then((session) => {
@@ -42,6 +43,11 @@ export async function createCollectionAction(
       description: parsed.data.description,
       emoji: parsed.data.emoji,
       isPublic: parsed.data.isPublic,
+    });
+
+    // Best-effort badge grant — never block create on a badge bug.
+    maybeAwardCollectorBadge(userId).catch((err) => {
+      console.error("[collection] badge grant failed:", err);
     });
 
     revalidatePath(`/profil`);

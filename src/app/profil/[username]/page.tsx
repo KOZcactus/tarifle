@@ -3,7 +3,10 @@ import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { getUserByUsername, getUserBookmarks, getUserVariations } from "@/lib/queries/user";
 import { getPublicCollections, getUserCollections } from "@/lib/queries/collection";
+import { getUserBadges } from "@/lib/badges/service";
 import { formatDistanceToNow } from "@/lib/utils";
+import { VerifyEmailBanner } from "@/components/auth/VerifyEmailBanner";
+import { BadgeShelf } from "@/components/profile/BadgeShelf";
 
 interface ProfilePageProps {
   params: Promise<{ username: string }>;
@@ -28,16 +31,28 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
 
   const isOwner = session?.user?.id === user.id;
 
-  const [bookmarks, variations, collections] = await Promise.all([
+  const [bookmarks, variations, collections, badges] = await Promise.all([
     isOwner ? getUserBookmarks(user.id) : Promise.resolve([]),
     getUserVariations(user.id, isOwner),
     isOwner ? getUserCollections(user.id) : getPublicCollections(user.id),
+    getUserBadges(user.id),
   ]);
+
+  // Owner-only fields (TS narrowing — only present when isOwner === true)
+  const ownerEmail = "email" in user ? (user as { email: string }).email : null;
+  const ownerEmailVerified =
+    "emailVerified" in user
+      ? (user as { emailVerified: Date | null }).emailVerified
+      : null;
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+      {isOwner && ownerEmail && !ownerEmailVerified && (
+        <VerifyEmailBanner email={ownerEmail} />
+      )}
+
       {/* Profile Header */}
-      <div className="mb-10 flex items-start gap-6">
+      <div className="mb-8 flex items-start gap-6">
         <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-primary text-3xl font-bold text-white">
           {user.name?.charAt(0).toUpperCase() || "U"}
         </div>
@@ -48,7 +63,7 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
             </h1>
             {user.isVerified && (
               <span className="rounded-full bg-accent-blue/10 px-2 py-0.5 text-xs font-medium text-accent-blue">
-                Doğrulanmış
+                Tarifle ekibi
               </span>
             )}
           </div>
@@ -61,6 +76,8 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
           </div>
         </div>
       </div>
+
+      <BadgeShelf badges={badges} />
 
       {/* Collections */}
       {(collections.length > 0 || isOwner) && (

@@ -81,6 +81,13 @@ enum MediaType {
   VIDEO
 }
 
+enum BadgeKey {
+  EMAIL_VERIFIED
+  FIRST_VARIATION
+  POPULAR_VARIATION
+  RECIPE_COLLECTOR
+}
+
 // ─── MODELS ──────────────────────────────────────────────
 
 model User {
@@ -109,6 +116,7 @@ model User {
   bookmarks         Bookmark[]
   collections       Collection[]
   shoppingLists     ShoppingList[]
+  badges            UserBadge[]
   reports           Report[]
   moderationActions ModerationAction[]
   auditLogs         AuditLog[]
@@ -507,4 +515,17 @@ model ShoppingListItem {
   @@index([shoppingListId])
   @@index([shoppingListId, isChecked, sortOrder, createdAt])
   @@map("shopping_list_items")
+}
+
+model UserBadge {
+  id        String   @id @default(cuid())
+  userId    String
+  key       BadgeKey
+  awardedAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, key])
+  @@index([userId])
+  @@map("user_badges")
 }

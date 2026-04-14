@@ -1,11 +1,17 @@
 "use server";
 
 import bcrypt from "bcryptjs";
-import { signIn } from "@/lib/auth";
+import { auth, signIn } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { normalizeEmail } from "@/lib/email";
+import { sendVerificationEmail } from "@/lib/email/verification";
 
 interface RegisterResult {
+  success: boolean;
+  error?: string;
+}
+
+interface ActionResult {
   success: boolean;
   error?: string;
 }
@@ -63,11 +69,53 @@ export async function registerUser(formData: FormData): Promise<RegisterResult> 
     },
   });
 
+  // Fire-and-forget verification email — don't block sign-in if SMTP is down.
+  // The user can resend from their profile if the first attempt fails.
+  sendVerificationEmail(email, name).catch((err) => {
+    console.error("[register] verification email failed:", err);
+  });
+
   await signIn("credentials", {
     email,
     password,
     redirectTo: "/",
   });
 
+  return { success: true };
+}
+
+/**
+ * Server action: re-issue a verification email for the currently signed-in user.
+ * Lightly throttled in-process (one mail per minute per user) to avoid abuse —
+ * a more serious throttle (Upstash Redis) is queued for the security pass.
+ */
+const lastResendByUser = new Map<string, number>();
+const RESEND_COOLDOWN_MS = 60_000;
+
+export async function resendVerificationEmailAction(): Promise<ActionResult> {
+  const session = await auth();
+  if (!session?.user?.id) {
+    return { success: false, error: "Giriş yapmalısın." };
+  }
+
+  const user = await prisma.user.findUnique({
+    where: { id: session.user.id },
+    select: { email: true, name: true, emailVerified: true },
+  });
+  if (!user) return { success: false, error: "Kullanıcı bulunamadı." };
+  if (user.emailVerified) {
+    return { success: false, error: "E-postan zaten doğrulanmış." };
+  }
+
+  const lastSent = lastResendByUser.get(session.user.id) ?? 0;
+  if (Date.now() - lastSent < RESEND_COOLDOWN_MS) {
+    return { success: false, error: "Çok hızlı denedin. Bir dakika sonra tekrar gönder." };
+  }
+  lastResendByUser.set(session.user.id, Date.now());
+
+  const result = await sendVerificationEmail(user.email, user.name);
+  if (!result.success) {
+    return { success: false, error: result.error ?? "Mail gönderilemedi." };
+  }
   return { success: true };
 }

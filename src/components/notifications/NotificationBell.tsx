@@ -2,14 +2,17 @@
 
 import Link from "next/link";
 import { useCallback, useState, useTransition } from "react";
+import type { NotificationType } from "@prisma/client";
 import { useDismiss } from "@/hooks/useDismiss";
 import {
   markAllNotificationsReadAction,
   markNotificationsReadAction,
 } from "@/lib/actions/notifications";
+import { resolveNotificationLink } from "@/lib/notifications/link";
 
 export interface NotificationBellItem {
   id: string;
+  type: NotificationType;
   title: string;
   body: string | null;
   link: string | null;
@@ -160,10 +163,15 @@ export function NotificationBell({
                       </div>
                     </div>
                   );
+                  // Resolve via the type-aware helper so legacy rows whose
+                  // stored link points to the wrong place still go to the
+                  // right destination (e.g. VARIATION_HIDDEN -> /bildirimler
+                  // even if the row was created before that fix landed).
+                  const target = resolveNotificationLink(item.type, item.link);
                   return (
                     <li key={item.id} role="menuitem">
-                      {item.link ? (
-                        <Link href={item.link} onClick={close} className="block">
+                      {target ? (
+                        <Link href={target} onClick={close} className="block">
                           {inner}
                         </Link>
                       ) : (

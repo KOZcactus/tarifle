@@ -18,7 +18,9 @@ const recipeCardSelect = {
     select: { name: true, slug: true, emoji: true },
   },
   _count: {
-    select: { variations: true },
+    // Card grids (home, kategoriler, tarifler list) read this — keep the
+    // public count consistent with what the user sees on the detail page.
+    select: { variations: { where: { status: "PUBLISHED" } } },
   },
 } as const;
 
@@ -208,7 +210,13 @@ export async function getRecipeBySlug(slug: string): Promise<RecipeDetail | null
         orderBy: { likeCount: "desc" },
       },
       _count: {
-        select: { variations: true, bookmarks: true },
+        select: {
+          // Only count what the public actually sees — HIDDEN/PENDING_REVIEW
+          // variations (or REJECTED, DRAFT) shouldn't inflate the badge on
+          // the recipe page or in card grids.
+          variations: { where: { status: "PUBLISHED" } },
+          bookmarks: true,
+        },
       },
     },
   });

@@ -50,7 +50,9 @@ export async function getCollectionById(id: string) {
           recipe: {
             include: {
               category: { select: { name: true, slug: true, emoji: true } },
-              _count: { select: { variations: true } },
+              _count: {
+                select: { variations: { where: { status: "PUBLISHED" } } },
+              },
             },
           },
         },

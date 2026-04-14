@@ -28,6 +28,7 @@ export async function NotificationBellLoader() {
       initialUnreadCount={unreadCount}
       initialItems={items.map((i) => ({
         id: i.id,
+        type: i.type,
         title: i.title,
         body: i.body,
         link: i.link,

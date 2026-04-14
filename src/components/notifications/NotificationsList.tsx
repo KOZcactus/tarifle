@@ -8,6 +8,7 @@ import {
   markAllNotificationsReadAction,
   markNotificationsReadAction,
 } from "@/lib/actions/notifications";
+import { resolveNotificationLink } from "@/lib/notifications/link";
 
 export interface NotificationItem {
   id: string;
@@ -104,11 +105,14 @@ export function NotificationsList({ items: initial }: NotificationsListProps) {
             </div>
           );
 
+          // Type-aware link resolution overrides legacy stored links —
+          // see lib/notifications/link.ts.
+          const target = resolveNotificationLink(item.type, item.link);
           return (
             <li key={item.id}>
-              {item.link ? (
+              {target ? (
                 <Link
-                  href={item.link}
+                  href={target}
                   onClick={() => handleItemClick(item.id)}
                   className="block"
                 >

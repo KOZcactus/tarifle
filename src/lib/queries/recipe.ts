@@ -30,7 +30,12 @@ interface GetRecipesOptions {
   categorySlug?: string;
   maxMinutes?: number;
   tagSlugs?: string[];
-  sortBy?: "newest" | "quickest" | "popular" | "alphabetical";
+  sortBy?:
+    | "newest"
+    | "quickest"
+    | "popular"
+    | "alphabetical"
+    | "most-variations";
   limit?: number;
   offset?: number;
 }
@@ -89,6 +94,11 @@ export async function getRecipes(options: GetRecipesOptions = {}): Promise<{
   // avoids clustering by recently-inserted seed batches (the old "newest"
   // default always pushed drinks to the top because their timestamps
   // happened to be last in the final seed run).
+  //
+  // "most-variations" siralamasi Prisma'nin orderBy._count'unu kullanir —
+  // filtered where desteklemedigi icin HIDDEN/PENDING_REVIEW variation'lar
+  // da siralamaya etki eder. Fark genelde kucuktur; modere edilmis tariflerde
+  // PUBLISHED sayilari zaten birbirine yakin kalir.
   const orderBy =
     sortBy === "quickest"
       ? { totalMinutes: "asc" as const }
@@ -96,8 +106,10 @@ export async function getRecipes(options: GetRecipesOptions = {}): Promise<{
         ? { viewCount: "desc" as const }
         : sortBy === "newest"
           ? { createdAt: "desc" as const }
-          : // alphabetical (default)
-            { title: "asc" as const };
+          : sortBy === "most-variations"
+            ? { variations: { _count: "desc" as const } }
+            : // alphabetical (default)
+              { title: "asc" as const };
 
   const [recipes, total] = await Promise.all([
     prisma.recipe.findMany({

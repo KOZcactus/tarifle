@@ -36,7 +36,13 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
   // "alphabetical" is the default when nothing is passed. Explicit typing
   // so an unknown ?siralama= value doesn't sneak through; we fall back to
   // undefined and let getRecipes apply its default.
-  const allowedSorts = ["alphabetical", "newest", "popular", "quickest"] as const;
+  const allowedSorts = [
+    "alphabetical",
+    "newest",
+    "popular",
+    "quickest",
+    "most-variations",
+  ] as const;
   type SortOption = (typeof allowedSorts)[number];
   const sortBy: SortOption | undefined = allowedSorts.includes(
     (params.siralama ?? "") as SortOption,
@@ -100,6 +106,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
           { key: "newest", label: "En yeni" },
           { key: "popular", label: "En popüler" },
           { key: "quickest", label: "En hızlı" },
+          { key: "most-variations", label: "En çok uyarlama" },
         ].map(({ key, label }) => {
           const isActive = key === activeSort;
           const search = new URLSearchParams();

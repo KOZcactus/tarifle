@@ -23,6 +23,7 @@ export type RateLimitScope =
   | "resend-verification"
   | "report"
   | "variation-create"
+  | "variation-create-daily"
   | "ai-assistant";
 
 interface ScopeConfig {
@@ -56,9 +57,17 @@ const SCOPE_CONFIG: Record<RateLimitScope, ScopeConfig> = {
     window: "1 h",
   },
   "variation-create": {
-    description: "5 uyarlama / 1 saat",
-    limit: 5,
+    // Kisa-pencere burst kalkan — bot/spam arka arkaya gonderemesin.
+    description: "3 uyarlama / 1 saat",
+    limit: 3,
     window: "1 h",
+  },
+  "variation-create-daily": {
+    // Uzun-pencere hacim kalkan — yavas ama inatci bir bot da durdurulsun.
+    // Gercek kullanicinin gunde 10 uyarlama yazmasi zor; asilirsa incelensin.
+    description: "10 uyarlama / 24 saat",
+    limit: 10,
+    window: "24 h",
   },
   "ai-assistant": {
     description: "30 istek / 1 dk",

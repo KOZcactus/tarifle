@@ -5,6 +5,12 @@ Bu doküman, `scripts/seed-recipes.ts` içine eklenecek her yeni tarifin
 bir asistan (Codex vb.) bu dokümana bakarak Tarifle'nin DB'sine uygun veri
 üretir.
 
+> **Son durum (2026 Nisan)**: Recipe modeli bu dokümanla aynı. Platform'da
+> Variation (topluluk uyarlaması) + Notification + moderasyon alanları var
+> ama Codex sadece Recipe eklemekle ilgileniyor — aşağıdaki alanlar geçerli,
+> başka değişiklik yok. Prisma şemasının son hali için
+> `prisma/schema.prisma` referans tutulur.
+
 ## Kullanım
 
 1. Bu dosyayı + `prisma/schema.prisma`'yı Codex'e oku.

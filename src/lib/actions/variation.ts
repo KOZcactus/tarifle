@@ -61,15 +61,18 @@ export async function createVariation(formData: FormData): Promise<VariationResu
     return { success: false, error: "Giriş yapmalısınız." };
   }
 
-  // 5 variations / hour keeps enthusiastic contributors happy (typical user
-  // will post 1-2 a week) while blocking bulk spam. Badge awarding happens
-  // post-insert so a rate-limited run doesn't accidentally grant a badge.
-  const rate = await checkRateLimit(
-    "variation-create",
-    rateLimitIdentifier(session.user.id),
-  );
-  if (!rate.success) {
-    return { success: false, error: rate.message ?? "Çok fazla istek." };
+  // Iki katmanli rate limit: kisa pencere burst'i (3/saat) ve gunluk hacmi
+  // (10/gun) ayri ayri kontrol et. Ikisinden hangisi trip ederse kullaniciya
+  // o mesaj gider. Badge awarding buradan sonraya kaliyor — rate-limit
+  // donunde kazara rozet verme riski yok.
+  const rlId = rateLimitIdentifier(session.user.id);
+  const burst = await checkRateLimit("variation-create", rlId);
+  if (!burst.success) {
+    return { success: false, error: burst.message ?? "Çok fazla istek." };
+  }
+  const daily = await checkRateLimit("variation-create-daily", rlId);
+  if (!daily.success) {
+    return { success: false, error: daily.message ?? "Günlük limitine ulaştın." };
   }
 
   const recipeSlug = (formData.get("recipeSlug") as string | null) ?? "";

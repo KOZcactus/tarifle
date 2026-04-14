@@ -193,6 +193,12 @@ export async function getRecipeBySlug(slug: string): Promise<RecipeDetail | null
           id: true,
           miniTitle: true,
           description: true,
+          // ingredients/steps/notes are needed by the new accordion in
+          // VariationCard. Stored as JSON columns; the component coerces
+          // back to string[] safely.
+          ingredients: true,
+          steps: true,
+          notes: true,
           likeCount: true,
           createdAt: true,
           author: {

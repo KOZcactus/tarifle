@@ -10,7 +10,7 @@ import { VariationForm } from "@/components/recipe/VariationForm";
 import { CookingMode } from "@/components/recipe/CookingMode";
 import { PrintButton } from "@/components/recipe/PrintButton";
 import { AgeGate } from "@/components/recipe/AgeGate";
-import { ReportButton } from "@/components/recipe/ReportButton";
+import { VariationCard } from "@/components/recipe/VariationCard";
 import { generateRecipeJsonLd } from "@/lib/seo";
 import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
 import { SITE_URL } from "@/lib/constants";
@@ -48,6 +48,13 @@ export default async function TarifPage({ params }: TarifPageProps) {
         getCollectionsForRecipe(session.user.id, recipe.id),
       ])
     : [false, []];
+
+  // Surface admin/moderator UI inline on community variations so a moderator
+  // can hide a clearly-bad post without leaving the recipe page. `session.user.role`
+  // is populated by the jwt + session callbacks in lib/auth.ts and typed by
+  // src/types/next-auth.d.ts.
+  const isModerator =
+    session?.user?.role === "ADMIN" || session?.user?.role === "MODERATOR";
 
   // Görüntülenme sayısını arka planda artır
   incrementViewCount(slug).catch(() => {});
@@ -212,23 +219,11 @@ export default async function TarifPage({ params }: TarifPageProps) {
         {recipe.variations && recipe.variations.length > 0 ? (
           <div className="mt-4 space-y-4">
             {recipe.variations.map((v) => (
-              <div key={v.id} className="rounded-xl border border-border bg-bg-card p-5">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="font-medium text-text">{v.miniTitle}</h3>
-                    {v.description && (
-                      <p className="mt-1 text-sm text-text-muted">{v.description}</p>
-                    )}
-                  </div>
-                  <span className="text-sm text-text-muted">❤️ {v.likeCount}</span>
-                </div>
-                <div className="mt-2 flex items-center justify-between">
-                  <p className="text-xs text-text-muted">
-                    @{v.author.username}
-                  </p>
-                  <ReportButton targetType="VARIATION" targetId={v.id} />
-                </div>
-              </div>
+              <VariationCard
+                key={v.id}
+                variation={v}
+                isModerator={isModerator}
+              />
             ))}
           </div>
         ) : (

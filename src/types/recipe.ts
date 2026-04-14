@@ -77,6 +77,10 @@ export interface RecipeDetail {
     id: string;
     miniTitle: string;
     description: string | null;
+    // JSON columns — coerced to string[] in components.
+    ingredients: unknown;
+    steps: unknown;
+    notes: string | null;
     likeCount: number;
     createdAt: Date;
     author: {

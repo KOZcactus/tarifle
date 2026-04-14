@@ -252,3 +252,72 @@ export async function setPasswordAction(
   return { success: true };
 }
 
+interface UnlinkResult {
+  success: boolean;
+  error?: string;
+}
+
+/**
+ * Remove the Google Account row for the signed-in user.
+ *
+ * HARD SAFETY GATE: the user must have a password set. Without one, this
+ * would delete their only way in and lock them out of their own account —
+ * there's no "forgot password" flow yet. We surface a clear message so the
+ * UI can point them at the password-set card first.
+ *
+ * We also rate-limit shared with the password-change scope. Unlink is low-
+ * volume but a loose endpoint on identity is worth capping.
+ */
+export async function unlinkGoogleAction(): Promise<UnlinkResult> {
+  const session = await auth();
+  if (!session?.user?.id) {
+    return { success: false, error: "Giriş yapmalısın." };
+  }
+
+  const rate = await checkRateLimit(
+    "password-change",
+    rateLimitIdentifier(session.user.id),
+  );
+  if (!rate.success) {
+    return {
+      success: false,
+      error: rate.message ?? "Çok fazla istek. Biraz sonra tekrar dene.",
+    };
+  }
+
+  const user = await prisma.user.findUnique({
+    where: { id: session.user.id },
+    select: {
+      passwordHash: true,
+      accounts: {
+        where: { provider: "google" },
+        select: { id: true },
+      },
+    },
+  });
+  if (!user) return { success: false, error: "Kullanıcı bulunamadı." };
+
+  if (!user.passwordHash) {
+    return {
+      success: false,
+      error:
+        "Önce bir şifre eklemen lazım. Google bağlantısını koparırsan başka giriş yolun kalmaz.",
+    };
+  }
+
+  if (user.accounts.length === 0) {
+    // Idempotent — already unlinked. No-op but return success so UI settles.
+    return { success: true };
+  }
+
+  await prisma.account.deleteMany({
+    where: {
+      userId: session.user.id,
+      provider: "google",
+    },
+  });
+
+  revalidatePath("/ayarlar");
+  return { success: true };
+}
+

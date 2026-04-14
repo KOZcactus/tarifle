@@ -78,6 +78,7 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
         <GoogleLinkCard
           linked={user.accounts.length > 0}
           email={user.email}
+          hasPassword={!!user.passwordHash}
           linkResult={linkResult}
         />
 

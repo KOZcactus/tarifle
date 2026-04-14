@@ -1,13 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { unlinkGoogleAction } from "@/lib/actions/profile";
 
 interface GoogleLinkCardProps {
   /** Whether the current user already has a Google Account row linked. */
   linked: boolean;
   /** Email the user signed up with — shown to set expectations about matching. */
   email: string;
+  /**
+   * Whether the user has a `passwordHash`. Unlink is gated on this at both
+   * the server and the UI: without a password, unlinking the Google account
+   * would leave no way in at all, so we disable the control.
+   */
+  hasPassword: boolean;
   /** Success/error flags read from the /ayarlar URL so we can show toasts. */
   linkResult?: "success" | "mismatch" | "session" | null;
 }
@@ -33,10 +41,34 @@ interface GoogleLinkCardProps {
 export function GoogleLinkCard({
   linked,
   email,
+  hasPassword,
   linkResult,
 }: GoogleLinkCardProps) {
+  const router = useRouter();
   const [error, setError] = useState<string | null>(null);
+  const [unlinkSuccess, setUnlinkSuccess] = useState(false);
   const [busy, setBusy] = useState(false);
+  const [isUnlinking, startUnlinking] = useTransition();
+
+  const handleUnlink = () => {
+    setError(null);
+    setUnlinkSuccess(false);
+    const ok = window.confirm(
+      "Google bağlantını koparmak istediğine emin misin? Bundan sonra hesabına yalnızca e-posta + şifreyle girebilirsin.",
+    );
+    if (!ok) return;
+    startUnlinking(async () => {
+      const result = await unlinkGoogleAction();
+      if (!result.success) {
+        setError(result.error ?? "Bağlantı koparılamadı.");
+        return;
+      }
+      setUnlinkSuccess(true);
+      // Refresh the server component so the card flips back to "bağla"
+      // without the user needing to reload manually.
+      router.refresh();
+    });
+  };
 
   const handleLink = async () => {
     setError(null);
@@ -109,6 +141,19 @@ export function GoogleLinkCard({
         </div>
       )}
 
+      {/* Unlink success — surfaced locally because there's no ?unlinked URL
+          param; router.refresh() will also re-render the card to "bağla"
+          state, but this banner gives the user confirmation during that
+          re-render window. */}
+      {unlinkSuccess && (
+        <div
+          role="status"
+          className="mt-4 rounded-lg bg-accent-green/10 px-4 py-3 text-sm text-accent-green"
+        >
+          Google bağlantın koparıldı.
+        </div>
+      )}
+
       {/* Client-side error (fetch failed, 401, etc.) */}
       {error && (
         <div
@@ -116,6 +161,29 @@ export function GoogleLinkCard({
           className="mt-4 rounded-lg bg-error/10 px-4 py-3 text-sm text-error"
         >
           {error}
+        </div>
+      )}
+
+      {/* Unlink control — only when linked. Disabled + warning when the user
+          has no password, because removing the only sign-in path would lock
+          them out. The server enforces the same rule; the disabled state is
+          UX, not security. */}
+      {linked && (
+        <div className="mt-4">
+          {!hasPassword && (
+            <p className="mb-2 text-xs text-text-muted">
+              Google bağlantısını koparabilmen için önce bir şifre eklemen
+              lazım — aşağıdaki Şifre kartından ekleyebilirsin.
+            </p>
+          )}
+          <button
+            type="button"
+            onClick={handleUnlink}
+            disabled={isUnlinking || !hasPassword}
+            className="rounded-lg border border-border px-4 py-2 text-sm font-medium text-text-muted transition-colors hover:border-error hover:text-error focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-error disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            {isUnlinking ? "Koparılıyor…" : "Bağlantıyı koparın"}
+          </button>
         </div>
       )}
 

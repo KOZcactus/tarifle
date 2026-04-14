@@ -1496,16 +1496,23 @@ Video özelliği güzel ama pahalı ve operasyonel olarak riskli olabilir. Üç 
 
 ### Faz 2 — Topluluk & AI
 
-- [ ] AI Asistan (malzeme → tarif önerisi)
-- [ ] Favori koleksiyonları
-- [ ] Alışveriş listesi
-- [ ] Bildirim sistemi
-- [ ] Sosyal paylaşım butonları
-- [ ] Gelişmiş moderasyon (AI destekli)
-- [ ] E-posta doğrulama
-- [ ] Kullanıcı rozet sistemi
-- [ ] Şablon video sistemi (Remotion)
-- [ ] PWA desteği
+- [x] AI Asistan (malzeme → tarif önerisi) — kural-tabanlı, AI-gibi sunuluyor
+- [x] Favori koleksiyonları
+- [x] Alışveriş listesi
+- [x] Bildirim sistemi — in-app (bell + /bildirimler)
+- [x] Sosyal paylaşım butonları — Web Share API + WhatsApp/X/kopyala fallback
+- [x] Gelişmiş moderasyon — kural-tabanlı pre-flight (7 sinyal + PENDING_REVIEW kuyruğu); AI-destekli sonraki iterasyonda
+- [x] E-posta doğrulama (Resend prod'da)
+- [x] Kullanıcı rozet sistemi (4 tip: EMAIL_VERIFIED / FIRST_VARIATION / POPULAR_VARIATION / RECIPE_COLLECTOR)
+- [ ] Şablon video sistemi (Remotion) — Faz 2/3 arası
+- [x] PWA desteği (manifest + ikonlar + shortcuts)
+- [x] **Google OAuth** (canlıda, bağla/unlink dahil — plandaki MVP 0.2 Auth.js kısmı Faz 2'ye genişledi)
+- [x] **Profil düzenleme + şifre yönetimi + hesap silme** (tam /ayarlar sayfası)
+- [x] **Rate limiting** (Upstash Redis, 6 scope)
+- [x] **A11y overhaul** (useDismiss/useFocusTrap hook'ları, ARIA, reduced motion)
+- [x] **Structured ingredient input** (amount + unit + name, backward compat)
+- [x] **CI pipeline** (GitHub Actions: lint + typecheck + vitest + build)
+- [x] **E2E test altyapısı** (Playwright, 9 smoke test)
 
 ### Faz 3 — Premium & Genişleme
 

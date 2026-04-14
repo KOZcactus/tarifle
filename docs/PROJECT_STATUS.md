@@ -1,6 +1,67 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 14 Nisan 2026 (kayıt akışı bug fix + Resend canlıda)
+> Son güncelleme: 15 Nisan 2026 (hesap silme + /ayarlar tam komple)
+
+## 14–15 Nisan 2026 özet — büyük oturum
+
+Tek oturumda public launch hazırlık paketi bitti. 18 pass + UX polish'ler.
+**114 unit + 9 E2E = 123 test yeşil**. Main'e push edilen özellikler:
+
+### Altyapı / güvenlik (pass 7, 9, 15)
+- Lint + test altyapısı: `eslint .` (Next 16 `next lint` kaldırıldı), Vitest 61+ test
+- E2E Playwright (9 test) + GitHub Actions CI (`lint + typecheck + vitest + build`); e2e job secret-gated
+- Rate limit genişletildi: `variation-create` (3/saat) + `variation-create-daily` (10/24sa) + `password-change` (5/saat) + `account-delete` (3/saat)
+- URL obfuscation bypass tespiti (spaced-dot, [dot], (nokta), "dot"/"nokta" kelimeler)
+
+### Gelişmiş moderasyon (pass 11)
+- `lib/moderation/preflight.ts`: 7 sinyal (too_short/too_long/repeated_chars/excessive_caps/contains_url/missing_steps/too_many_steps)
+- Variation submit akışı: blacklist hard-reject > preflight flag → `PENDING_REVIEW` + `moderationFlags` CSV
+- Schema: `Variation.moderationFlags String?` (db push)
+- `/admin/incelemeler` kuyruğu + flag chip'leri + accordion önizleme + Onayla/Gizle
+
+### Bildirim sistemi (pass 10)
+- Schema: `Notification` + `NotificationType` enum (6 tip: LIKED/APPROVED/HIDDEN/REPORT_RESOLVED/BADGE_AWARDED/SYSTEM)
+- `lib/notifications/service.ts` tip-özel helper'lar (TR copy merkezi)
+- Trigger'lar: `toggleLikeAction`, `grantBadge`, admin hide/approve, report resolve — hepsi fire-and-forget
+- Navbar bell + unread count + dropdown (son 10, açılınca auto mark-read + optimistic/rollback)
+- `/bildirimler` sayfası (Tümü/Okunmamış filtre, type chip'leri)
+- `resolveNotificationLink` type-aware router (HIDDEN → /bildirimler, legacy kayıtlar da düzelir)
+
+### Variation UX (pass 11, 13)
+- `VariationCard` accordion (malzeme/adım/not açılır-kapanır), modasetör inline "Gizle"
+- Variation başına 3 sort chip: En yeni / En çok beğeni / En az malzeme
+- Count `_count.variations` artık sadece PUBLISHED sayar (HIDDEN dahil değil)
+- **Structured ingredient input**: form `amount + unit + name` ayrı alanlar, `lib/ingredients.ts` legacy string[] ile uyumlu normalize
+
+### /tarifler sıralama (pass 11, 12c)
+- Default **alfabetik** (newest seed-batch clustering düzeldi)
+- 5 chip: Alfabetik / En yeni / En popüler / En hızlı / En çok uyarlama
+
+### Auth & profil (pass 12, 14, 16, 17, 18)
+- `/ayarlar` sayfası — name, username (reserved list + regex + lowercase transform), bio
+- Profil düzenle butonu belirgin (bg-primary/10 pastel, hover'da solid)
+- Profil variation status rozetleri (Gizlendi/İncelemede/Reddedildi/Taslak)
+- **Google hesabı bağla** — signed cookie + HMAC + `signIn("google")` client flow + email match gate
+- **Google hesabı unlink** — `passwordHash` zorunlu, aksi halde kilitlenmeye karşı disabled
+- **Şifre değiştir** — mevcut + yeni + tekrar, bcrypt verify, rate limit
+- **Şifre ekle** — OAuth-only user için, `passwordHash === null` server gate
+- **Hesap silme** — username echo + şifre verify + native confirm + transaction (cascading + manuel delete variations/reports/moderationActions + null set recipe.authorId/auditLog.userId/mediaAssets.uploaderId)
+
+### UX polish
+- Bildirim navigation type-aware (HIDDEN → /bildirimler)
+- VariationCard sade tasarım (Report/Gizle sadece açıkken)
+- Hesap silme metni sadeleşti (Recipe anonim-kalır vaadi çıkarıldı, Recipe user-created değil)
+
+### Yeni scriptler (ops tooling)
+- `scripts/list-users.ts` — provider + passwordHash + verified durumu
+- `scripts/delete-user.ts` — email ile cascading cleanup
+- `scripts/list-recipe-slugs.ts` — Codex için snapshot
+- `scripts/seed-test-notifications.ts` — preview testi için
+- `scripts/smoke-rate-limit.ts` — Upstash canlı sağlık kontrolü
+
+---
+
+
 
 ## Yapılanlar
 
@@ -280,15 +341,29 @@ Kalan A11y işleri (gelecek pass'e):
 
 ## Sıradaki İşler
 
-- [ ] **Secret rotasyonu** (acil): DATABASE_URL şifresi + AUTH_SECRET sohbette paylaşıldı, ikisi de yenilenmeli. Neon → Reset password; `node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"` → yeni AUTH_SECRET; `.env.local` + Vercel güncelle. Yan etki: tüm aktif oturumlar düşer.
-- [ ] **Upstash Redis provisioning**: hesap aç → Redis DB oluştur (region: eu-west-1 önerilir) → REST URL + TOKEN'ı `.env.local` + Vercel env vars'a ekle → rate limitler canlıda aktifleşir.
-- [ ] **A11y follow-up** (form label audit, renk kontrastı WCAG AA aracı ile kontrol, screen reader elle smoke)
-- [ ] **Test coverage genişletme**: `lib/email/verification` + `lib/badges/service` için prisma mock'lu testler, E2E akışı Playwright ile (kayıt → doğrulama → rozet), CI gate kurulumu (GitHub Actions: `lint + typecheck + test + build` pre-merge).
-- [ ] **"Google hesabını bağla" özelliği**: Mevcut credentials user'ı (örn. ahmet, batu) varken aynı email ile Google OAuth denerse `OAuthAccountNotLinked` alır. /ayarlar sayfasında şifreyle doğruladıktan sonra Google'ı bağlama flow'u. `allowDangerousEmailAccountLinking: false` güvenlik duvarını koruyarak UX.
-- [ ] AI Asistan v2: ingredient synonym/token tablosu
-- [ ] Gelişmiş moderasyon — Faz 2 (AI destekli ön-sınıflandırma)
-- [ ] Şablon video sistemi (Remotion) — Faz 2/3
-- [ ] Bildirim sistemi — Faz 2 (rapor sonucu, varyasyon beğenisi için in-app)
+### Yakın vadeli (launch öncesi / hemen sonrası)
+
+- [ ] **Codex batch review** — kardeş yarın başka PC'de `scripts/seed-recipes.ts`'ye 50+ tarif ekler, ilk batch'i review et (bkz. `docs/CODEX_HANDOFF.md` + Neon `codex-import` branch)
+- [ ] **A11y follow-up**: form label audit (otomatik + elle), renk kontrastı WCAG AA aracı ile kontrol, screen reader (NVDA/VoiceOver) elle smoke test
+- [ ] **Test coverage genişletme**: `lib/email/verification` + `lib/badges/service` için prisma mock'lu testler, E2E login-gerektiren akışlar (kayıt → doğrulama → rozet, uyarlama ekle → moderasyon onayla → bildirim)
+- [ ] **CI E2E aktivasyonu**: Neon'da `e2e-ci` branch aç → GitHub Secrets `E2E_DATABASE_URL` + `E2E_AUTH_SECRET` ekle → CI workflow'undaki e2e job otomatik çalışır
+- [ ] **Prisma migration baseline temizlik**: `db push` kullandığımız değişiklikleri (moderationFlags, Notification) proper migration olarak formalize et
+
+### Orta vadeli (Faz 2 kalanı)
+
+- [ ] **AI Asistan v2**: ingredient synonym/token tablosu (e.g. "domates" ⇔ "çeri domates" eşleştirmesi)
+- [ ] **AI-destekli moderasyon**: Claude Haiku ile ön-sınıflandırma (opsiyonel, kural-tabanlı yeterli gelirse geri al)
+- [ ] **"En çok beğeni" sort**: raw SQL ile variation likeCount toplam aggregation (`/tarifler?siralama=most-liked`)
+- [ ] **Şablon video sistemi** (Remotion) — büyük scope, Faz 2/3 arası
+- [ ] **Email-based şifre kurtarma**: "şifremi unuttum" flow (email token + /sifre-sifirla sayfası)
+
+### Uzun vadeli (Faz 3)
+
+- [ ] **Mobil uygulama** (React Native)
+- [ ] **Premium üyelik** (reklamsız + sınırsız AI)
+- [ ] **Çoklu dil** (EN, DE)
+- [ ] **AI tarif videoları** (runway/pika/özel)
+- [ ] **Açık API**
 
 ## Karar Bekleyenler
 

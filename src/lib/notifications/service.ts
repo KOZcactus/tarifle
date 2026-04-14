@@ -85,7 +85,10 @@ export async function notifyVariationHidden(params: {
     type: "VARIATION_HIDDEN",
     title: "Uyarlaman gizlendi",
     body,
-    link: `/tarif/${params.recipeSlug}`,
+    // Hidden uyarlama tarif sayfasında zaten görünmüyor — kullanıcıyı
+    // tarife yönlendirmek "kayboldu" hissi verir. Bildirimler sayfasına
+    // götürüp orada sebep + zaman damgasını görmesini sağlıyoruz.
+    link: "/bildirimler",
   });
 }
 

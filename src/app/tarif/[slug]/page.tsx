@@ -20,8 +20,17 @@ import { getCollectionsForRecipe } from "@/lib/queries/collection";
 import { auth } from "@/lib/auth";
 import type { Metadata } from "next";
 
+type VariationSort = "yeni" | "begeni" | "kolay";
+const VARIATION_SORTS: VariationSort[] = ["yeni", "begeni", "kolay"];
+const VARIATION_SORT_LABELS: Record<VariationSort, string> = {
+  yeni: "En yeni",
+  begeni: "En çok beğeni",
+  kolay: "En az malzeme",
+};
+
 interface TarifPageProps {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{ siralama?: string }>;
 }
 
 export async function generateMetadata({ params }: TarifPageProps): Promise<Metadata> {
@@ -35,8 +44,9 @@ export async function generateMetadata({ params }: TarifPageProps): Promise<Meta
   };
 }
 
-export default async function TarifPage({ params }: TarifPageProps) {
+export default async function TarifPage({ params, searchParams }: TarifPageProps) {
   const { slug } = await params;
+  const { siralama } = await searchParams;
   const recipe = await getRecipeBySlug(slug);
 
   if (!recipe) notFound();
@@ -55,6 +65,27 @@ export default async function TarifPage({ params }: TarifPageProps) {
   // src/types/next-auth.d.ts.
   const isModerator =
     session?.user?.role === "ADMIN" || session?.user?.role === "MODERATOR";
+
+  // Variation sıralama — URL'den okur, default "yeni". Server-side
+  // sıralıyoruz ki kullanıcı paylaştığı linkte aynı sırayı görür.
+  const activeSort: VariationSort = (VARIATION_SORTS as string[]).includes(
+    siralama ?? "",
+  )
+    ? (siralama as VariationSort)
+    : "yeni";
+
+  const sortedVariations = recipe.variations
+    ? [...recipe.variations].sort((a, b) => {
+        if (activeSort === "begeni") return b.likeCount - a.likeCount;
+        if (activeSort === "kolay") {
+          const aLen = Array.isArray(a.ingredients) ? a.ingredients.length : 0;
+          const bLen = Array.isArray(b.ingredients) ? b.ingredients.length : 0;
+          return aLen - bLen;
+        }
+        // "yeni" — most recent first
+        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+      })
+    : [];
 
   // Görüntülenme sayısını arka planda artır
   incrementViewCount(slug).catch(() => {});
@@ -211,14 +242,39 @@ export default async function TarifPage({ params }: TarifPageProps) {
 
       {/* Variations Section */}
       <section className="mt-12 print:hidden">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-wrap items-center justify-between gap-3">
           <h2 className="font-heading text-xl font-bold">
             Topluluk Uyarlamaları ({recipe._count.variations})
           </h2>
+          {sortedVariations.length > 1 && (
+            <div className="flex items-center gap-1 text-sm">
+              {VARIATION_SORTS.map((s) => {
+                const isActive = s === activeSort;
+                const href =
+                  s === "yeni"
+                    ? `/tarif/${recipe.slug}`
+                    : `/tarif/${recipe.slug}?siralama=${s}`;
+                return (
+                  <Link
+                    key={s}
+                    href={href}
+                    aria-current={isActive ? "page" : undefined}
+                    className={`rounded-md px-3 py-1.5 transition-colors ${
+                      isActive
+                        ? "bg-bg-card font-medium text-text"
+                        : "text-text-muted hover:bg-bg-card"
+                    }`}
+                  >
+                    {VARIATION_SORT_LABELS[s]}
+                  </Link>
+                );
+              })}
+            </div>
+          )}
         </div>
-        {recipe.variations && recipe.variations.length > 0 ? (
+        {sortedVariations.length > 0 ? (
           <div className="mt-4 space-y-4">
-            {recipe.variations.map((v) => (
+            {sortedVariations.map((v) => (
               <VariationCard
                 key={v.id}
                 variation={v}

@@ -63,18 +63,20 @@ export function VariationCard({ variation, isModerator }: VariationCardProps) {
   };
 
   return (
-    <div className="rounded-xl border border-border bg-bg-card p-5">
-      {/* Summary row — clicking opens the details. We use a button for
-          keyboard + screen reader semantics, then layer the visual rows
-          inside it. */}
+    <div className="overflow-hidden rounded-xl border border-border bg-bg-card">
+      {/* Header / toggle row. Single button so keyboard + screen reader read
+          the whole row as one control. Closed state is intentionally minimal
+          — title, description, author, like count, and a chevron + count
+          summary that hints at expansion. No moderation/report ikonu burada
+          gozukmuyor; karisikligi azaltir. */}
       <button
         type="button"
         onClick={() => setIsOpen((v) => !v)}
         aria-expanded={isOpen}
         aria-controls={`variation-${variation.id}-body`}
-        className="-m-1 block w-full p-1 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        className="w-full px-5 py-4 text-left transition-colors hover:bg-bg-elevated focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary"
       >
-        <div className="flex items-start justify-between gap-3">
+        <div className="flex items-start justify-between gap-4">
           <div className="min-w-0 flex-1">
             <h3 className="font-medium text-text">{variation.miniTitle}</h3>
             {variation.description && (
@@ -82,81 +84,88 @@ export function VariationCard({ variation, isModerator }: VariationCardProps) {
                 {variation.description}
               </p>
             )}
+            <p className="mt-2 text-xs text-text-muted">
+              @{variation.author.username ?? "anonim"}
+            </p>
           </div>
-          <span className="shrink-0 text-sm text-text-muted">
-            ❤️ {variation.likeCount}
-          </span>
-        </div>
-        <div className="mt-2 flex items-center justify-between text-xs text-text-muted">
-          <span>@{variation.author.username ?? "anonim"}</span>
-          <span aria-hidden="true">
-            {ingredients.length} malzeme · {steps.length} adım{" "}
-            <span className="ml-1 inline-block transition-transform" style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}>
-              ▾
+          <div className="flex shrink-0 flex-col items-end gap-1.5 text-sm">
+            <span className="text-text-muted">❤️ {variation.likeCount}</span>
+            <span className="flex items-center gap-1 text-xs text-text-muted">
+              {ingredients.length} malzeme · {steps.length} adım
+              <span
+                aria-hidden="true"
+                className="inline-block transition-transform duration-200"
+                style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+              >
+                ▾
+              </span>
             </span>
-          </span>
+          </div>
         </div>
       </button>
 
-      {/* Expanded body */}
+      {/* Expanded body — only mounted when open so closed cards stay light. */}
       {isOpen && (
         <div
           id={`variation-${variation.id}-body`}
-          className="mt-4 space-y-4 border-t border-border pt-4 text-sm"
+          className="border-t border-border bg-bg-elevated/30 px-5 py-4 text-sm"
         >
-          {ingredients.length > 0 && (
-            <section>
-              <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-text-muted">
-                Malzemeler
-              </h4>
-              <ul className="list-inside list-disc space-y-1 text-text">
-                {ingredients.map((ing, i) => (
-                  <li key={i}>{ing}</li>
-                ))}
-              </ul>
-            </section>
-          )}
+          <div className="space-y-4">
+            {ingredients.length > 0 && (
+              <section>
+                <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-text-muted">
+                  Malzemeler
+                </h4>
+                <ul className="list-inside list-disc space-y-1 text-text">
+                  {ingredients.map((ing, i) => (
+                    <li key={i}>{ing}</li>
+                  ))}
+                </ul>
+              </section>
+            )}
 
-          {steps.length > 0 && (
-            <section>
-              <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-text-muted">
-                Yapılış
-              </h4>
-              <ol className="list-inside list-decimal space-y-1 text-text">
-                {steps.map((step, i) => (
-                  <li key={i}>{step}</li>
-                ))}
-              </ol>
-            </section>
-          )}
+            {steps.length > 0 && (
+              <section>
+                <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-text-muted">
+                  Yapılış
+                </h4>
+                <ol className="list-inside list-decimal space-y-1 text-text">
+                  {steps.map((step, i) => (
+                    <li key={i}>{step}</li>
+                  ))}
+                </ol>
+              </section>
+            )}
 
-          {variation.notes && (
-            <section>
-              <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-text-muted">
-                Notlar
-              </h4>
-              <p className="whitespace-pre-line text-text">{variation.notes}</p>
-            </section>
-          )}
+            {variation.notes && (
+              <section>
+                <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-text-muted">
+                  Notlar
+                </h4>
+                <p className="whitespace-pre-line text-text">{variation.notes}</p>
+              </section>
+            )}
+          </div>
+
+          {/* Action footer — only when expanded. Report+Gizle yalnizca
+              icerik aciklanmis durumda mantikli. */}
+          <div className="mt-4 flex items-center justify-end gap-3 border-t border-border pt-3">
+            {isModerator && (
+              <button
+                type="button"
+                onClick={handleHide}
+                disabled={isPending}
+                className="text-xs font-medium text-error transition-colors hover:underline disabled:opacity-50"
+                title="Bu uyarlamayı gizle (sadece moderasyon)"
+              >
+                {isPending ? "Gizleniyor…" : "Gizle"}
+              </button>
+            )}
+            <ReportButton targetType="VARIATION" targetId={variation.id} />
+          </div>
+          {error && <p className="mt-2 text-right text-xs text-error">{error}</p>}
         </div>
       )}
-
-      {/* Footer actions: report (everyone) + moderator-only hide */}
-      <div className="mt-3 flex items-center justify-end gap-3 border-t border-border pt-3">
-        {isModerator && (
-          <button
-            type="button"
-            onClick={handleHide}
-            disabled={isPending}
-            className="text-xs font-medium text-error transition-colors hover:underline disabled:opacity-50"
-            title="Bu uyarlamayı gizle (sadece moderasyon)"
-          >
-            {isPending ? "Gizleniyor…" : "Gizle"}
-          </button>
-        )}
-        <ReportButton targetType="VARIATION" targetId={variation.id} />
-      </div>
-      {error && <p className="mt-2 text-right text-xs text-error">{error}</p>}
     </div>
   );
 }

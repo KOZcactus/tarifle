@@ -5,6 +5,7 @@ import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 import { checkMultipleTexts } from "@/lib/moderation/blacklist";
 import { computePreflightFlags } from "@/lib/moderation/preflight";
+import { formatIngredient } from "@/lib/ingredients";
 import { variationSchema } from "@/lib/validators";
 import { awardFirstVariationBadge } from "@/lib/badges/service";
 import { checkRateLimit, rateLimitIdentifier } from "@/lib/rate-limit";
@@ -26,6 +27,32 @@ function splitLines(raw: string | null): string[] {
     .split(/\r?\n/)
     .map((l) => l.trim())
     .filter(Boolean);
+}
+
+/**
+ * The new ingredient form posts a JSON-encoded array. We tolerate two legacy
+ * shapes so old clients — or anyone scripting against the action — still
+ * submit successfully: a raw `string[]` JSON blob, and a newline-separated
+ * textarea body. `variationSchema` normalises both into the structured
+ * `{amount, unit, name}` canonical form.
+ */
+function parseIngredientsField(raw: string | null): unknown[] {
+  if (!raw) return [];
+  const trimmed = raw.trim();
+  if (!trimmed) return [];
+
+  // Looks like JSON array → trust it and let Zod validate.
+  if (trimmed.startsWith("[")) {
+    try {
+      const parsed: unknown = JSON.parse(trimmed);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      return [];
+    }
+  }
+
+  // Legacy textarea — newline-separated strings.
+  return splitLines(trimmed);
 }
 
 export async function createVariation(formData: FormData): Promise<VariationResult> {
@@ -52,7 +79,7 @@ export async function createVariation(formData: FormData): Promise<VariationResu
     miniTitle: (formData.get("miniTitle") as string | null)?.trim(),
     description:
       (formData.get("description") as string | null)?.trim() || undefined,
-    ingredients: splitLines(formData.get("ingredients") as string | null),
+    ingredients: parseIngredientsField(formData.get("ingredients") as string | null),
     steps: splitLines(formData.get("steps") as string | null),
     notes: (formData.get("notes") as string | null)?.trim() || undefined,
   });
@@ -78,12 +105,17 @@ export async function createVariation(formData: FormData): Promise<VariationResu
     return { success: false, error: "Tarif bulunamadı." };
   }
 
+  // Flatten structured ingredients to plain text lines so the blacklist +
+  // preflight heuristics (string-based) still work. We keep the structured
+  // form for DB writes below — this is display-only.
+  const ingredientLines = ingredients.map(formatIngredient);
+
   // Argo/küfür kontrolü
   const textsToCheck = [
     miniTitle,
     description ?? "",
     notes ?? "",
-    ...ingredients,
+    ...ingredientLines,
     ...steps,
   ];
   const blacklistResult = checkMultipleTexts(textsToCheck);
@@ -102,7 +134,7 @@ export async function createVariation(formData: FormData): Promise<VariationResu
   const preflight = computePreflightFlags({
     miniTitle,
     description,
-    ingredients,
+    ingredients: ingredientLines,
     steps,
     notes,
   });

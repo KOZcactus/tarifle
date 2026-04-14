@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { FLAG_LABELS, type PreflightFlag } from "@/lib/moderation/preflight";
+import { formatIngredient, normaliseIngredients } from "@/lib/ingredients";
 import { ReviewActions } from "@/components/admin/ReviewActions";
 
 export const metadata: Metadata = {
@@ -103,47 +104,53 @@ export default async function ReviewQueuePage() {
                   </div>
                 )}
 
-                {/* Collapsed content preview */}
-                <details className="mt-3">
-                  <summary className="cursor-pointer text-xs font-medium text-text-muted hover:text-text">
-                    İçeriği göster ({Array.isArray(v.ingredients) ? v.ingredients.length : 0} malzeme,{" "}
-                    {Array.isArray(v.steps) ? v.steps.length : 0} adım)
-                  </summary>
-                  <div className="mt-3 space-y-3 rounded-lg bg-bg-elevated p-3 text-sm">
-                    <section>
-                      <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-text-muted">
-                        Malzemeler
-                      </p>
-                      <ul className="list-inside list-disc space-y-0.5 text-text">
-                        {(Array.isArray(v.ingredients) ? v.ingredients : []).map(
-                          (ing, i) => (
-                            <li key={i}>{String(ing)}</li>
-                          ),
+                {(() => {
+                  const ingredientLines = normaliseIngredients(
+                    v.ingredients,
+                  ).map(formatIngredient);
+                  const stepLines = Array.isArray(v.steps)
+                    ? (v.steps as unknown[]).map(String)
+                    : [];
+                  return (
+                    /* Collapsed content preview */
+                    <details className="mt-3">
+                      <summary className="cursor-pointer text-xs font-medium text-text-muted hover:text-text">
+                        İçeriği göster ({ingredientLines.length} malzeme,{" "}
+                        {stepLines.length} adım)
+                      </summary>
+                      <div className="mt-3 space-y-3 rounded-lg bg-bg-elevated p-3 text-sm">
+                        <section>
+                          <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-text-muted">
+                            Malzemeler
+                          </p>
+                          <ul className="list-inside list-disc space-y-0.5 text-text">
+                            {ingredientLines.map((line, i) => (
+                              <li key={i}>{line}</li>
+                            ))}
+                          </ul>
+                        </section>
+                        <section>
+                          <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-text-muted">
+                            Adımlar
+                          </p>
+                          <ol className="list-inside list-decimal space-y-0.5 text-text">
+                            {stepLines.map((step, i) => (
+                              <li key={i}>{step}</li>
+                            ))}
+                          </ol>
+                        </section>
+                        {v.notes && (
+                          <section>
+                            <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-text-muted">
+                              Notlar
+                            </p>
+                            <p className="text-text">{v.notes}</p>
+                          </section>
                         )}
-                      </ul>
-                    </section>
-                    <section>
-                      <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-text-muted">
-                        Adımlar
-                      </p>
-                      <ol className="list-inside list-decimal space-y-0.5 text-text">
-                        {(Array.isArray(v.steps) ? v.steps : []).map(
-                          (step, i) => (
-                            <li key={i}>{String(step)}</li>
-                          ),
-                        )}
-                      </ol>
-                    </section>
-                    {v.notes && (
-                      <section>
-                        <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-text-muted">
-                          Notlar
-                        </p>
-                        <p className="text-text">{v.notes}</p>
-                      </section>
-                    )}
-                  </div>
-                </details>
+                      </div>
+                    </details>
+                  );
+                })()}
               </li>
             );
           })}

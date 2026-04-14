@@ -26,16 +26,44 @@ export const registerSchema = z
   });
 
 /**
+ * Structured ingredient shape used by the new variation form. We still accept
+ * raw strings (old textarea format) for backward compat — the union below
+ * normalises them to `{ amount: "", unit: "", name }` so downstream code
+ * doesn't need to branch.
+ */
+const structuredIngredientSchema = z.object({
+  amount: z.string().trim().max(50).default(""),
+  unit: z.string().trim().max(50).default(""),
+  name: z
+    .string()
+    .trim()
+    .min(1, "Malzeme adı boş olamaz")
+    .max(200, "Malzeme adı en fazla 200 karakter olabilir"),
+});
+
+const legacyStringIngredientSchema = z
+  .string()
+  .trim()
+  .min(1)
+  .max(200)
+  .transform((name) => ({ amount: "", unit: "", name }));
+
+const ingredientInputSchema = z.union([
+  structuredIngredientSchema,
+  legacyStringIngredientSchema,
+]);
+
+/**
  * Server-side schema for the user-facing variation form. Matches the actual
- * form shape: line-separated strings for ingredients/steps, with per-line and
- * total-count caps to keep the JSON payload bounded.
+ * form shape: structured ingredient objects for the new picker, plain line-
+ * separated strings for steps.
  */
 export const variationSchema = z.object({
   recipeId: z.string().min(1),
   miniTitle: z.string().min(3, "Başlık en az 3 karakter olmalıdır").max(200),
   description: z.string().max(300).optional(),
   ingredients: z
-    .array(z.string().min(1).max(200))
+    .array(ingredientInputSchema)
     .min(1, "En az bir malzeme ekleyin")
     .max(40, "En fazla 40 malzeme ekleyebilirsin."),
   steps: z

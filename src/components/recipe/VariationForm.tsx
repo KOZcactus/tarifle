@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState, useTransition } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { createVariation } from "@/lib/actions/variation";
+import { IngredientRowsInput } from "@/components/recipe/IngredientRowsInput";
 
 interface VariationFormProps {
   recipeId: string;
@@ -143,18 +144,14 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
         </div>
 
         <div>
-          <label htmlFor="ingredients" className="mb-1.5 block text-sm font-medium text-text">
-            Malzemeler * <span className="font-normal text-text-muted">(her satıra bir malzeme)</span>
-          </label>
-          <textarea
-            id="ingredients"
-            name="ingredients"
-            required
-            rows={4}
-            maxLength={8000}
-            className="w-full rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-            placeholder={"2 adet patlıcan\n1 su bardağı zeytinyağı\n3 diş sarımsak"}
-          />
+          <p className="mb-1.5 block text-sm font-medium text-text">
+            Malzemeler <span className="text-text-muted">*</span>
+          </p>
+          <p className="mb-2 text-xs text-text-muted">
+            Her malzeme için miktar, birim ve adı ayrı alanlara. Birim
+            gerekmiyorsa &ldquo;— birim —&rdquo; seçili kalabilir.
+          </p>
+          <IngredientRowsInput name="ingredients" />
         </div>
 
         <div>

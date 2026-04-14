@@ -4,6 +4,10 @@ import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { ReportButton } from "@/components/recipe/ReportButton";
 import { hideVariation } from "@/lib/actions/admin";
+import {
+  formatIngredient,
+  normaliseIngredients,
+} from "@/lib/ingredients";
 
 interface VariationCardProps {
   variation: {
@@ -38,9 +42,12 @@ export function VariationCard({ variation, isModerator }: VariationCardProps) {
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
 
-  const ingredients = Array.isArray(variation.ingredients)
-    ? (variation.ingredients as unknown[]).map(String)
-    : [];
+  // Accept both the legacy `string[]` shape and the new
+  // `{amount, unit, name}[]` — normalise both into display strings so the
+  // accordion body doesn't care which format was stored.
+  const ingredients = normaliseIngredients(variation.ingredients).map(
+    formatIngredient,
+  );
   const steps = Array.isArray(variation.steps)
     ? (variation.steps as unknown[]).map(String)
     : [];

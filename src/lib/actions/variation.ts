@@ -48,13 +48,14 @@ export async function createVariation(formData: FormData): Promise<VariationResu
   const { recipeId, miniTitle, description, ingredients, steps, notes } =
     parsed.data;
 
-  // Verify recipe exists and is visible — otherwise someone could spam variations
-  // against arbitrary/deleted recipe IDs.
+  // Strict PUBLISHED check — DRAFT/PENDING_REVIEW/HIDDEN/REJECTED are all
+  // invalid targets for community variations. Prevents users from attaching
+  // content to in-review or admin-private recipes via crafted IDs.
   const recipe = await prisma.recipe.findUnique({
     where: { id: recipeId },
     select: { id: true, status: true },
   });
-  if (!recipe || recipe.status === "REJECTED" || recipe.status === "HIDDEN") {
+  if (!recipe || recipe.status !== "PUBLISHED") {
     return { success: false, error: "Tarif bulunamadı." };
   }
 

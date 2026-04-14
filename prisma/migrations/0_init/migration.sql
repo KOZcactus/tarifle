@@ -451,6 +451,17 @@ CREATE INDEX "reports_status_createdAt_idx" ON "reports"("status", "createdAt");
 CREATE INDEX "reports_targetType_targetId_status_idx" ON "reports"("targetType", "targetId", "status");
 
 -- CreateIndex
+-- NOTE (production migration): If applying this baseline against an existing
+-- DB that already has data, run the following BEFORE this index to remove
+-- duplicates that would otherwise block creation. New empty databases need
+-- no cleanup.
+--
+--   DELETE FROM "reports" a
+--   USING "reports" b
+--   WHERE a.id < b.id
+--     AND a."reporterId" = b."reporterId"
+--     AND a."targetType" = b."targetType"
+--     AND a."targetId"   = b."targetId";
 CREATE UNIQUE INDEX "reports_reporterId_targetType_targetId_key" ON "reports"("reporterId", "targetType", "targetId");
 
 -- CreateIndex

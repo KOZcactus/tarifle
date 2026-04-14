@@ -32,12 +32,8 @@ export async function createReport(formData: FormData): Promise<ReportResult> {
 
   const { targetType, targetId, reason, description } = parsed.data;
 
-  // Verify the target actually exists and is reportable before creating a
-  // dangling report. COMMENT type has no model yet — reject it explicitly.
-  if (targetType === "COMMENT") {
-    return { success: false, error: "Yorum raporlama henüz aktif değil." };
-  }
-
+  // Verify the target actually exists before creating a dangling report.
+  // (Schema accepts only VARIATION today — see validators.ts comment.)
   const target = await prisma.variation.findUnique({
     where: { id: targetId },
     select: { id: true, status: true },

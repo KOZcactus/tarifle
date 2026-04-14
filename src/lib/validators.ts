@@ -45,8 +45,10 @@ export const variationSchema = z.object({
   notes: z.string().max(500).optional(),
 });
 
+// COMMENT enum value exists in Prisma schema for forward-compat but the model
+// doesn't ship yet. Validator only accepts VARIATION until Comment lands.
 export const reportSchema = z.object({
-  targetType: z.enum(["VARIATION", "COMMENT"]),
+  targetType: z.literal("VARIATION"),
   targetId: z.string(),
   reason: z.enum(["SPAM", "PROFANITY", "MISLEADING", "HARMFUL", "OTHER"]),
   description: z.string().max(500).optional(),

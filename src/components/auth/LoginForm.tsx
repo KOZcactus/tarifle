@@ -13,7 +13,10 @@ function authErrorMessage(code: string | null): string | null {
   if (!code) return null;
   switch (code) {
     case "OAuthAccountNotLinked":
-      return "Bu e-posta adresi başka bir yöntemle (e-posta + şifre) zaten kayıtlı. Önce şifrenle giriş yap, daha sonra ayarlardan Google hesabını bağlayabilirsin.";
+      // Account-linking flow not yet built; tell the user the safe path for now
+      // and signal that linking is on the roadmap. Update this when settings
+      // page exposes "Connect Google".
+      return "Bu e-posta adresi e-posta + şifre ile zaten kayıtlı. Şimdilik şifrenle giriş yap; Google hesabını bağlama özelliği yakında ayarlar sayfasına eklenecek.";
     case "AccessDenied":
       return "Erişim reddedildi. Lütfen tekrar dene.";
     case "CredentialsSignin":

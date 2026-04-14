@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
 import { LoginForm } from "@/components/auth/LoginForm";
@@ -20,7 +21,9 @@ export default async function LoginPage() {
             Tarifle&apos;a giriş yap ve topluluğa katıl.
           </p>
         </div>
-        <LoginForm />
+        <Suspense>
+          <LoginForm />
+        </Suspense>
       </div>
     </main>
   );

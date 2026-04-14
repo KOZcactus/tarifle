@@ -3,11 +3,33 @@
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
+
+/**
+ * Translate Auth.js error codes that Next-Auth puts on `?error=...` into a
+ * Turkish, user-actionable message.
+ */
+function authErrorMessage(code: string | null): string | null {
+  if (!code) return null;
+  switch (code) {
+    case "OAuthAccountNotLinked":
+      return "Bu e-posta adresi başka bir yöntemle (e-posta + şifre) zaten kayıtlı. Önce şifrenle giriş yap, daha sonra ayarlardan Google hesabını bağlayabilirsin.";
+    case "AccessDenied":
+      return "Erişim reddedildi. Lütfen tekrar dene.";
+    case "CredentialsSignin":
+      return "E-posta veya şifre hatalı.";
+    case "Configuration":
+      return "Sunucu yapılandırma hatası. Lütfen daha sonra tekrar dene.";
+    default:
+      return "Giriş sırasında bir sorun oluştu. Lütfen tekrar dene.";
+  }
+}
 
 export function LoginForm() {
   const router = useRouter();
-  const [error, setError] = useState<string | null>(null);
+  const searchParams = useSearchParams();
+  const initialError = authErrorMessage(searchParams.get("error"));
+  const [error, setError] = useState<string | null>(initialError);
   const [loading, setLoading] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -37,6 +59,15 @@ export function LoginForm() {
 
   return (
     <div className="rounded-xl border border-border bg-bg-card p-6 shadow-sm">
+      {error && (
+        <div
+          role="alert"
+          className="mb-4 rounded-lg bg-error/10 px-4 py-3 text-sm text-error"
+        >
+          {error}
+        </div>
+      )}
+
       {/* Google Sign In */}
       <button
         onClick={() => signIn("google", { callbackUrl: "/" })}
@@ -71,12 +102,6 @@ export function LoginForm() {
 
       {/* Email Form */}
       <form onSubmit={handleSubmit} className="space-y-4">
-        {error && (
-          <div className="rounded-lg bg-error/10 px-4 py-3 text-sm text-error">
-            {error}
-          </div>
-        )}
-
         <div>
           <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-text">
             E-posta

@@ -9,6 +9,7 @@ export default async function AdminPage() {
     { label: "Toplam Tarif", value: stats.totalRecipes, emoji: "📖" },
     { label: "Toplam Kullanıcı", value: stats.totalUsers, emoji: "👥" },
     { label: "Toplam Uyarlama", value: stats.totalVariations, emoji: "🔄" },
+    { label: "İnceleme Bekliyor", value: stats.pendingReviews, emoji: "🧐", highlight: stats.pendingReviews > 0 },
     { label: "Bekleyen Rapor", value: stats.pendingReports, emoji: "🚩", highlight: stats.pendingReports > 0 },
     { label: "Raporlanmış Uyarlama", value: stats.flaggedVariations, emoji: "⚠️", highlight: stats.flaggedVariations > 0 },
   ];

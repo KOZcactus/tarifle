@@ -311,6 +311,10 @@ model Variation {
   likeCount   Int           @default(0)
   reportCount Int           @default(0)
   status      ContentStatus @default(PUBLISHED)
+  // Comma-separated PreflightFlag codes (see lib/moderation/preflight.ts).
+  // Null = clean auto-publish; non-null = rule-based flags that triggered
+  // PENDING_REVIEW. Admins render the chips in the review queue.
+  moderationFlags String?   @db.VarChar(200)
   createdAt   DateTime      @default(now())
   updatedAt   DateTime      @updatedAt
 

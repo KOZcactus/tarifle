@@ -58,12 +58,14 @@ export async function getAdminStats() {
     totalVariations,
     pendingReports,
     flaggedVariations,
+    pendingReviews,
   ] = await Promise.all([
     prisma.recipe.count({ where: { status: "PUBLISHED" } }),
     prisma.user.count(),
     prisma.variation.count(),
     prisma.report.count({ where: { status: "PENDING" } }),
     prisma.variation.count({ where: { reportCount: { gt: 0 } } }),
+    prisma.variation.count({ where: { status: "PENDING_REVIEW" } }),
   ]);
 
   return {
@@ -72,5 +74,6 @@ export async function getAdminStats() {
     totalVariations,
     pendingReports,
     flaggedVariations,
+    pendingReviews,
   };
 }

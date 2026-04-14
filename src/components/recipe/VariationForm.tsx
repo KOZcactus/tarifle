@@ -16,6 +16,10 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
+  // When pre-flight heuristics flag the submission the server saves it as
+  // PENDING_REVIEW. We show a different success panel so the user knows it
+  // isn't live yet — silent "published" would be misleading.
+  const [pendingReview, setPendingReview] = useState(false);
   const [isPending, startTransition] = useTransition();
 
   const close = useCallback(() => setIsOpen(false), []);
@@ -47,7 +51,12 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
   }
 
   if (success) {
-    return (
+    return pendingReview ? (
+      <div className="rounded-lg bg-accent-blue/10 px-4 py-3 text-sm text-accent-blue">
+        Uyarlaman alındı ve ekibimiz tarafından gözden geçirilecek. Onaylandığında
+        tarife eklenecek ve sana bildirim geleceğiz.
+      </div>
+    ) : (
       <div className="rounded-lg bg-accent-green/10 px-4 py-3 text-sm text-accent-green">
         Uyarlamanız eklendi!
       </div>
@@ -76,6 +85,7 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
     startTransition(async () => {
       const result = await createVariation(formData);
       if (result.success) {
+        setPendingReview(result.pending === true);
         setSuccess(true);
         setIsOpen(false);
       } else {

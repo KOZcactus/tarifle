@@ -4,6 +4,7 @@ import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 import { checkMultipleTexts } from "@/lib/moderation/blacklist";
+import { computePreflightFlags } from "@/lib/moderation/preflight";
 import { variationSchema } from "@/lib/validators";
 import { awardFirstVariationBadge } from "@/lib/badges/service";
 import { checkRateLimit, rateLimitIdentifier } from "@/lib/rate-limit";
@@ -11,6 +12,12 @@ import { checkRateLimit, rateLimitIdentifier } from "@/lib/rate-limit";
 interface VariationResult {
   success: boolean;
   error?: string;
+  /**
+   * True when pre-flight heuristics flagged the submission and we saved it
+   * as PENDING_REVIEW. The UI should tell the user their post is in review
+   * rather than silently promising it's live.
+   */
+  pending?: boolean;
 }
 
 function splitLines(raw: string | null): string[] {
@@ -88,6 +95,19 @@ export async function createVariation(formData: FormData): Promise<VariationResu
     };
   }
 
+  // Pre-flight heuristics (rule-based). Blacklist already caught outright
+  // profanity above. These are softer signals — if any fire, the variation
+  // is saved as PENDING_REVIEW so a moderator eyeballs it before it goes
+  // live. Clean content goes straight to PUBLISHED as before.
+  const preflight = computePreflightFlags({
+    miniTitle,
+    description,
+    ingredients,
+    steps,
+    notes,
+  });
+  const status = preflight.needsReview ? "PENDING_REVIEW" : "PUBLISHED";
+
   await prisma.variation.create({
     data: {
       recipeId,
@@ -97,6 +117,13 @@ export async function createVariation(formData: FormData): Promise<VariationResu
       ingredients,
       steps,
       notes: notes ?? null,
+      status,
+      // Store the flag codes directly on the row so the admin queue can
+      // render the reasons without joining to ModerationAction. Null for
+      // clean auto-publish, comma-joined codes otherwise.
+      moderationFlags: preflight.needsReview
+        ? preflight.flags.join(",")
+        : null,
     },
   });
 
@@ -106,5 +133,10 @@ export async function createVariation(formData: FormData): Promise<VariationResu
   });
 
   revalidatePath(`/tarif/${recipeSlug}`);
-  return { success: true };
+  return {
+    success: true,
+    // Signal to the UI so it can show "incelemeye alındı" vs the default
+    // "yayınlandı" toast. Both are success; the copy should differ.
+    pending: preflight.needsReview,
+  };
 }

@@ -105,6 +105,17 @@
 
 **Sonraki review pass'larda**: rate limiting (Upstash Redis), a11y overhaul (Escape/focus trap), lint+test altyapısı, ingredient synonym/token tablosu.
 
+## Pass 11 — Gelişmiş moderasyon (kural-tabanlı pre-flight) ✅
+
+- [x] **`src/lib/moderation/preflight.ts`** — 7 sinyal: `too_short`, `too_long`, `repeated_chars` (5+ tekrarlı karakter), `excessive_caps` (>%70), `contains_url` (protokollü ya da `domain.tld` deseni), `missing_steps`, `too_many_steps`. Saf string heuristik, AI yok. `FLAG_LABELS` map'i admin UI için TR.
+- [x] **`createVariation` action**: blacklist hâlâ hard-reject. Blacklist temizse pre-flight çağırılır → trip ederse `status = "PENDING_REVIEW"` + `moderationFlags = "code1,code2"`. Aksi halde `PUBLISHED` (önceki davranış).
+- [x] **Schema ekleme**: `Variation.moderationFlags String?` (VarChar 200, nullable). `db push` ile uygulandı.
+- [x] **Action result**: `pending: boolean` döner — `VariationForm` "Uyarlaman alındı ve gözden geçirilecek" mavi panelini gösterir, klasik "yayınlandı" yeşili pending değilken.
+- [x] **`/admin/incelemeler`** — yeni admin sayfası: PENDING_REVIEW kuyruğu (en eski → en yeni), her variation için flag chip'leri (TR labels), açılır içerik önizleme (malzeme/adım/notlar), Onayla/Gizle butonları (mevcut `approveVariation`/`hideVariation` action'larını kullanıyor — bildirim sistemi otomatik tetikleniyor).
+- [x] **Admin layout + overview**: Nav'a "İncelemeler" sekmesi, dashboard'a "İnceleme Bekliyor" kart (highlight when > 0).
+- [x] **Unit testler** (12 yeni): clean variation, too_short, repeated_chars, doubled-char negative, excessive_caps + negative, URL detection (protokollü + plain), false-positive dot-in-text negative, missing_steps, too_many_steps, multi-signal aggregate.
+- [x] **Doğrulama**: lint + typecheck + 61 vitest + 9 E2E hepsi pass.
+
 ## Pass 10 — In-app bildirim sistemi ✅
 
 - [x] **Schema**: `Notification` modeli + `NotificationType` enum (VARIATION_LIKED / VARIATION_APPROVED / VARIATION_HIDDEN / REPORT_RESOLVED / BADGE_AWARDED / SYSTEM). İki composite index — (userId, isRead, createdAt) bell count için, (userId, createdAt) liste için.

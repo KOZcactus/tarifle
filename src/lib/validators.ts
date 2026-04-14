@@ -216,7 +216,27 @@ export const passwordChangeSchema = z
     path: ["newPassword"],
   });
 
+/**
+ * First-time password set for OAuth-only users. No `currentPassword` because
+ * by definition they don't have one — the action layer additionally verifies
+ * that `user.passwordHash` is null so a bug here couldn't let someone bypass
+ * the normal change flow.
+ */
+export const passwordSetSchema = z
+  .object({
+    newPassword: z
+      .string()
+      .min(8, "Şifre en az 8 karakter olmalıdır")
+      .max(128, "Şifre en fazla 128 karakter olabilir"),
+    confirmPassword: z.string(),
+  })
+  .refine((d) => d.newPassword === d.confirmPassword, {
+    message: "Şifreler eşleşmiyor",
+    path: ["confirmPassword"],
+  });
+
 export type PasswordChangeInput = z.infer<typeof passwordChangeSchema>;
+export type PasswordSetInput = z.infer<typeof passwordSetSchema>;
 export type LoginInput = z.infer<typeof loginSchema>;
 export type RegisterInput = z.infer<typeof registerSchema>;
 export type VariationInput = z.infer<typeof variationSchema>;

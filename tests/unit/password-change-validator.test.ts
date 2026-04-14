@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { passwordChangeSchema } from "@/lib/validators";
+import {
+  passwordChangeSchema,
+  passwordSetSchema,
+} from "@/lib/validators";
 
 const valid = {
   currentPassword: "oldPassword1",
@@ -72,5 +75,57 @@ describe("passwordChangeSchema", () => {
       confirmPassword: password,
     });
     expect(parsed.success).toBe(false);
+  });
+});
+
+describe("passwordSetSchema", () => {
+  const valid = {
+    newPassword: "firstPassword1",
+    confirmPassword: "firstPassword1",
+  };
+
+  it("accepts a clean first-time password", () => {
+    expect(passwordSetSchema.safeParse(valid).success).toBe(true);
+  });
+
+  it("rejects new password shorter than 8", () => {
+    const parsed = passwordSetSchema.safeParse({
+      newPassword: "1234567",
+      confirmPassword: "1234567",
+    });
+    expect(parsed.success).toBe(false);
+  });
+
+  it("rejects mismatched confirmation", () => {
+    const parsed = passwordSetSchema.safeParse({
+      newPassword: "firstPassword1",
+      confirmPassword: "different1",
+    });
+    expect(parsed.success).toBe(false);
+    if (!parsed.success) {
+      expect(parsed.error.issues[0]?.message).toMatch(/eşleşmiyor/i);
+    }
+  });
+
+  it("does NOT require a currentPassword field (OAuth-only)", () => {
+    // Distinguishes this schema from passwordChangeSchema — caller only has
+    // two fields to fill when adding a password for the first time.
+    const parsed = passwordSetSchema.safeParse({
+      ...valid,
+      // extra `currentPassword` is ignored — Zod strips unknown keys by
+      // default, but we assert behaviour explicitly here.
+      currentPassword: "anything",
+    });
+    expect(parsed.success).toBe(true);
+  });
+
+  it("accepts a 128-char password", () => {
+    const password = "x".repeat(128);
+    expect(
+      passwordSetSchema.safeParse({
+        newPassword: password,
+        confirmPassword: password,
+      }).success,
+    ).toBe(true);
   });
 });

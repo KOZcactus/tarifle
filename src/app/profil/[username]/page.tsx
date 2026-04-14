@@ -76,8 +76,22 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
             {isOwner && (
               <Link
                 href="/ayarlar"
-                className="rounded-md border border-border px-3 py-1 text-xs font-medium text-text transition-colors hover:border-primary hover:text-primary"
+                className="inline-flex items-center gap-1.5 rounded-md bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               >
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 20h9" />
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                </svg>
                 Profili düzenle
               </Link>
             )}
@@ -174,23 +188,60 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
           <p className="text-sm text-text-muted">Henüz uyarlama eklenmemiş.</p>
         ) : (
           <div className="space-y-3">
-            {variations.map((v) => (
-              <Link
-                key={v.id}
-                href={`/tarif/${v.recipe.slug}`}
-                className="block rounded-lg border border-border bg-bg-card p-4 transition-colors hover:bg-bg-elevated"
-              >
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="font-medium text-text">{v.miniTitle}</p>
-                    <p className="text-sm text-text-muted">
-                      {v.recipe.emoji} {v.recipe.title}
-                    </p>
+            {variations.map((v) => {
+              // Owner sees non-public variations too — surface status so they
+              // can tell at a glance what's live vs. in queue vs. removed.
+              // PUBLISHED doesn't need a chip (the default state).
+              const statusChip =
+                v.status === "HIDDEN"
+                  ? { label: "Gizlendi", classes: "bg-error/15 text-error" }
+                  : v.status === "PENDING_REVIEW"
+                  ? { label: "İncelemede", classes: "bg-secondary/20 text-secondary" }
+                  : v.status === "REJECTED"
+                  ? { label: "Reddedildi", classes: "bg-error/15 text-error" }
+                  : v.status === "DRAFT"
+                  ? { label: "Taslak", classes: "bg-bg-elevated text-text-muted" }
+                  : null;
+
+              return (
+                <Link
+                  key={v.id}
+                  href={`/tarif/${v.recipe.slug}`}
+                  className={`block rounded-lg border p-4 transition-colors hover:bg-bg-elevated ${
+                    statusChip
+                      ? "border-border/60 bg-bg-card/60"
+                      : "border-border bg-bg-card"
+                  }`}
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2">
+                        <p
+                          className={`truncate font-medium ${
+                            statusChip ? "text-text-muted" : "text-text"
+                          }`}
+                        >
+                          {v.miniTitle}
+                        </p>
+                        {statusChip && (
+                          <span
+                            className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] font-medium ${statusChip.classes}`}
+                          >
+                            {statusChip.label}
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-sm text-text-muted">
+                        {v.recipe.emoji} {v.recipe.title}
+                      </p>
+                    </div>
+                    <span className="shrink-0 text-sm text-text-muted">
+                      {v.likeCount} beğeni
+                    </span>
                   </div>
-                  <span className="text-sm text-text-muted">{v.likeCount} beğeni</span>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         )}
       </section>

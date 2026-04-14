@@ -33,7 +33,17 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
   const difficulty = params.zorluk ?? "";
   const category = params.kategori ?? "";
   const maxMinutes = params.sure ? parseInt(params.sure, 10) : undefined;
-  const sortBy = (params.siralama as "newest" | "quickest" | "popular") || undefined;
+  // "alphabetical" is the default when nothing is passed. Explicit typing
+  // so an unknown ?siralama= value doesn't sneak through; we fall back to
+  // undefined and let getRecipes apply its default.
+  const allowedSorts = ["alphabetical", "newest", "popular", "quickest"] as const;
+  type SortOption = (typeof allowedSorts)[number];
+  const sortBy: SortOption | undefined = allowedSorts.includes(
+    (params.siralama ?? "") as SortOption,
+  )
+    ? (params.siralama as SortOption)
+    : undefined;
+  const activeSort: SortOption = sortBy ?? "alphabetical";
   const tagSlugs = params.etiket
     ? Array.isArray(params.etiket)
       ? params.etiket
@@ -76,6 +86,46 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
         <Suspense>
           <FilterPanel categories={categories} tags={tags} />
         </Suspense>
+      </div>
+
+      {/* Sort tabs — rewrites ?siralama=... while preserving every other
+          filter in the URL. Default (alphabetical) omits the param so the
+          canonical URL is clean. */}
+      <div className="mb-6 flex flex-wrap items-center gap-1 text-sm">
+        <span className="mr-2 text-xs uppercase tracking-wide text-text-muted">
+          Sıralama:
+        </span>
+        {[
+          { key: "alphabetical", label: "Alfabetik" },
+          { key: "newest", label: "En yeni" },
+          { key: "popular", label: "En popüler" },
+          { key: "quickest", label: "En hızlı" },
+        ].map(({ key, label }) => {
+          const isActive = key === activeSort;
+          const search = new URLSearchParams();
+          for (const [k, v] of Object.entries(params)) {
+            if (!v || k === "siralama" || k === "page") continue;
+            if (Array.isArray(v)) v.forEach((item) => search.append(k, item));
+            else search.set(k, v);
+          }
+          if (key !== "alphabetical") search.set("siralama", key);
+          const qs = search.toString();
+          const href = `/tarifler${qs ? `?${qs}` : ""}`;
+          return (
+            <Link
+              key={key}
+              href={href}
+              aria-current={isActive ? "page" : undefined}
+              className={`rounded-md px-3 py-1.5 transition-colors ${
+                isActive
+                  ? "bg-bg-card font-medium text-text"
+                  : "text-text-muted hover:bg-bg-card"
+              }`}
+            >
+              {label}
+            </Link>
+          );
+        })}
       </div>
 
       {/* Results */}

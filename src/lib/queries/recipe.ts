@@ -30,7 +30,7 @@ interface GetRecipesOptions {
   categorySlug?: string;
   maxMinutes?: number;
   tagSlugs?: string[];
-  sortBy?: "newest" | "quickest" | "popular";
+  sortBy?: "newest" | "quickest" | "popular" | "alphabetical";
   limit?: number;
   offset?: number;
 }
@@ -46,7 +46,7 @@ export async function getRecipes(options: GetRecipesOptions = {}): Promise<{
     categorySlug,
     maxMinutes,
     tagSlugs,
-    sortBy = "newest",
+    sortBy = "alphabetical",
     limit = 24,
     offset = 0,
   } = options;
@@ -85,12 +85,19 @@ export async function getRecipes(options: GetRecipesOptions = {}): Promise<{
     };
   }
 
+  // Default is now alphabetical — feels natural for a browse page and
+  // avoids clustering by recently-inserted seed batches (the old "newest"
+  // default always pushed drinks to the top because their timestamps
+  // happened to be last in the final seed run).
   const orderBy =
     sortBy === "quickest"
       ? { totalMinutes: "asc" as const }
       : sortBy === "popular"
         ? { viewCount: "desc" as const }
-        : { createdAt: "desc" as const };
+        : sortBy === "newest"
+          ? { createdAt: "desc" as const }
+          : // alphabetical (default)
+            { title: "asc" as const };
 
   const [recipes, total] = await Promise.all([
     prisma.recipe.findMany({

@@ -105,6 +105,18 @@
 
 **Sonraki review pass'larda**: rate limiting (Upstash Redis), a11y overhaul (Escape/focus trap), lint+test altyapısı, ingredient synonym/token tablosu.
 
+## Pass 10 — In-app bildirim sistemi ✅
+
+- [x] **Schema**: `Notification` modeli + `NotificationType` enum (VARIATION_LIKED / VARIATION_APPROVED / VARIATION_HIDDEN / REPORT_RESOLVED / BADGE_AWARDED / SYSTEM). İki composite index — (userId, isRead, createdAt) bell count için, (userId, createdAt) liste için.
+- [x] **Service** (`src/lib/notifications/service.ts`): tip-spesifik helper'lar (`notifyVariationLiked`, `notifyBadgeAwarded`, ...), hepsi fire-and-forget pattern. TR copy merkezi — aynı tip bildirim her yerde aynı okunur.
+- [x] **Trigger noktaları**: `toggleLikeAction` (self-like atlanır), `grantBadge` (badge service otomatik), `hideVariation` / `approveVariation` / `reviewReport` (admin). Hepsi async, action success'ını blocklamaz.
+- [x] **UI**:
+  - **NotificationBell** (client): navbar'da bell icon + unread count rozeti, dropdown son 10 bildirim, açılınca optimistic mark-as-read + rollback, Escape + outside-click (useDismiss). ARIA tam (aria-haspopup, aria-expanded, aria-controls, aria-label count ile).
+  - **NotificationBellLoader** (server RSC): auth çekip bell'i beslememüş, anonim'e null döner. Navbar'ın client component olmasıyla RSC tree prop slot üzerinden birleşiyor.
+  - **`/bildirimler`** sayfası: full inbox, Tümü/Okunmamış filtresi URL tabanlı, type chip'leri, absolute tarih.
+- [x] **Server actions**: `markNotificationsReadAction` (IDs array), `markAllNotificationsReadAction`. User-scoped where clause — tampered submission'lar başkasının inbox'una dokunamaz.
+- [x] **Doğrulama**: tsc + lint + vitest clean (49/49). Anonim homepage bell göstermiyor, `/bildirimler` → `/giris?callbackUrl=/bildirimler` redirect. Test bildirimleri için `scripts/seed-test-notifications.ts`.
+
 ## Pass 9 — E2E Playwright + GitHub Actions CI ✅
 
 - [x] **Playwright kurulumu**: `@playwright/test` + Chromium. `playwright.config.ts` lokalde dev server'ı auto-boot eder, CI'da headless + retry 2.

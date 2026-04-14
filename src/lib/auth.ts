@@ -5,6 +5,23 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/prisma";
 import { normalizeEmail } from "@/lib/email";
+import { checkRateLimit, rateLimitIdentifier } from "@/lib/rate-limit";
+
+/**
+ * Pull a best-effort client IP out of a standard `Request` object. Auth.js
+ * hands us the original request inside `authorize`, which is our only hook
+ * here — we can't use `next/headers` because the credentials provider may
+ * run outside a Next request context (e.g. during OAuth flows that also hit
+ * this file).
+ */
+function ipFromRequest(request: Request): string | null {
+  const forwarded = request.headers.get("x-forwarded-for");
+  if (forwarded) {
+    const first = forwarded.split(",")[0]?.trim();
+    if (first) return first;
+  }
+  return request.headers.get("x-real-ip") ?? null;
+}
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: PrismaAdapter(prisma),
@@ -27,8 +44,19 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         email: { label: "E-posta", type: "email" },
         password: { label: "Şifre", type: "password" },
       },
-      async authorize(credentials) {
+      async authorize(credentials, request) {
         if (!credentials?.email || !credentials?.password) return null;
+
+        // 5 attempts per minute per IP — matches common "login is brute-forceable"
+        // guidance. Fails open when UPSTASH creds aren't configured, so local
+        // dev stays smooth. We do NOT throw — returning null surfaces the
+        // existing "e-posta veya şifre hatalı" message without leaking the
+        // distinction between bad creds and rate limited.
+        const ip = ipFromRequest(request);
+        if (ip) {
+          const rate = await checkRateLimit("login", rateLimitIdentifier(null, ip));
+          if (!rate.success) return null;
+        }
 
         const email = normalizeEmail(credentials.email as string);
         const password = credentials.password as string;

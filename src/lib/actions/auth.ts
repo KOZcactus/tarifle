@@ -5,6 +5,11 @@ import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { normalizeEmail } from "@/lib/email";
 import { sendVerificationEmail } from "@/lib/email/verification";
+import {
+  checkRateLimit,
+  getClientIp,
+  rateLimitIdentifier,
+} from "@/lib/rate-limit";
 
 interface RegisterResult {
   success: boolean;
@@ -17,6 +22,15 @@ interface ActionResult {
 }
 
 export async function registerUser(formData: FormData): Promise<RegisterResult> {
+  // Rate limit by IP — an unauthenticated form, so user id is not available.
+  // 3 registrations / 10 minutes per IP stops obvious account-farming without
+  // hurting legit users (family sharing one household IP is well under the cap).
+  const ip = await getClientIp();
+  const rate = await checkRateLimit("register", rateLimitIdentifier(null, ip));
+  if (!rate.success) {
+    return { success: false, error: rate.message ?? "Çok fazla istek." };
+  }
+
   const name = (formData.get("name") as string | null)?.trim() ?? "";
   const rawEmail = (formData.get("email") as string | null) ?? "";
   const password = (formData.get("password") as string | null) ?? "";
@@ -86,16 +100,22 @@ export async function registerUser(formData: FormData): Promise<RegisterResult> 
 
 /**
  * Server action: re-issue a verification email for the currently signed-in user.
- * Lightly throttled in-process (one mail per minute per user) to avoid abuse —
- * a more serious throttle (Upstash Redis) is queued for the security pass.
+ * Rate limited to 1 resend per 60 seconds per user via Upstash Redis — this
+ * replaces the previous in-process Map throttle which didn't survive across
+ * Vercel cold starts or multiple regions.
  */
-const lastResendByUser = new Map<string, number>();
-const RESEND_COOLDOWN_MS = 60_000;
-
 export async function resendVerificationEmailAction(): Promise<ActionResult> {
   const session = await auth();
   if (!session?.user?.id) {
     return { success: false, error: "Giriş yapmalısın." };
+  }
+
+  const rate = await checkRateLimit(
+    "resend-verification",
+    rateLimitIdentifier(session.user.id),
+  );
+  if (!rate.success) {
+    return { success: false, error: rate.message ?? "Çok hızlı denedin." };
   }
 
   const user = await prisma.user.findUnique({
@@ -106,12 +126,6 @@ export async function resendVerificationEmailAction(): Promise<ActionResult> {
   if (user.emailVerified) {
     return { success: false, error: "E-postan zaten doğrulanmış." };
   }
-
-  const lastSent = lastResendByUser.get(session.user.id) ?? 0;
-  if (Date.now() - lastSent < RESEND_COOLDOWN_MS) {
-    return { success: false, error: "Çok hızlı denedin. Bir dakika sonra tekrar gönder." };
-  }
-  lastResendByUser.set(session.user.id, Date.now());
 
   const result = await sendVerificationEmail(user.email, user.name);
   if (!result.success) {

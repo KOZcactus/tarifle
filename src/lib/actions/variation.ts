@@ -6,6 +6,7 @@ import { revalidatePath } from "next/cache";
 import { checkMultipleTexts } from "@/lib/moderation/blacklist";
 import { variationSchema } from "@/lib/validators";
 import { awardFirstVariationBadge } from "@/lib/badges/service";
+import { checkRateLimit, rateLimitIdentifier } from "@/lib/rate-limit";
 
 interface VariationResult {
   success: boolean;
@@ -24,6 +25,17 @@ export async function createVariation(formData: FormData): Promise<VariationResu
   const session = await auth();
   if (!session?.user?.id) {
     return { success: false, error: "Giriş yapmalısınız." };
+  }
+
+  // 5 variations / hour keeps enthusiastic contributors happy (typical user
+  // will post 1-2 a week) while blocking bulk spam. Badge awarding happens
+  // post-insert so a rate-limited run doesn't accidentally grant a badge.
+  const rate = await checkRateLimit(
+    "variation-create",
+    rateLimitIdentifier(session.user.id),
+  );
+  if (!rate.success) {
+    return { success: false, error: rate.message ?? "Çok fazla istek." };
   }
 
   const recipeSlug = (formData.get("recipeSlug") as string | null) ?? "";

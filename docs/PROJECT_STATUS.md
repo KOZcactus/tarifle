@@ -105,6 +105,26 @@
 
 **Sonraki review pass'larda**: rate limiting (Upstash Redis), a11y overhaul (Escape/focus trap), lint+test altyapısı, ingredient synonym/token tablosu.
 
+## Pass 5 — Rate limiting (Upstash Redis) ✅
+
+- [x] `src/lib/rate-limit.ts` — Upstash `@upstash/ratelimit` + `@upstash/redis` sargısı.
+  - 6 scope: register (3/10dk), login (5/1dk), resend-verification (1/60sn), report (10/1sa), variation-create (5/1sa), ai-assistant (30/1dk).
+  - Sliding window algoritması, `tarifle:rl:<scope>` prefix.
+  - `getClientIp()` helper → `x-forwarded-for`/`x-real-ip` okur, Vercel edge'in arkasında doğru IP verir.
+  - `rateLimitIdentifier(userId, ip)` → auth'lu kullanıcıya `user:<id>`, anonim için `ip:<addr>`.
+  - **Fail-open**: `UPSTASH_REDIS_REST_*` env yoksa tek seferlik warning log'u basar, `success: true` döner. Redis hatasında da fail-open (error log + pass).
+- [x] Entegre edilen endpointler:
+  - `registerUser` → IP-bazlı (anon form).
+  - `authorize` (Credentials provider) → IP-bazlı, `null` döner (bad credentials ile aynı yol).
+  - `resendVerificationEmailAction` → user-bazlı (eski in-process Map throttle yerine).
+  - `createReport` → user-bazlı.
+  - `createVariation` → user-bazlı.
+  - `suggestRecipesAction` → user varsa user, yoksa IP.
+- [x] `.env.example` güncel: `UPSTASH_REDIS_REST_URL`/`TOKEN` + Resend env'leri.
+- [x] Preview ile smoke test: AI Asistan formu submit → sonuçlar geldi, server log'unda yalnız "rate limiting disabled" warning (env yok, beklenen), error yok.
+
+**Prod aktivasyon**: Upstash hesabı açıp bir Redis DB oluşturulacak (console.upstash.com → Redis → Create → REST tab), URL+TOKEN `.env.local` ve Vercel env vars'a eklenecek. Vercel otomatik redeploy → limitler canlıda.
+
 ## Pass 4 — Kayıt akışı bug fix + Resend prod ✅
 
 - [x] **Register navbar bug**: Kayıttan sonra navbar "Giriş yap" göstermeye devam ediyor, F5 sonrası düzeliyordu.
@@ -171,8 +191,8 @@
 
 ## Sıradaki İşler
 
-- [ ] **Secret rotasyonu** (acil): DATABASE_URL şifresi + AUTH_SECRET sohbette paylaşıldı, ikisi de yenilenmeli. Neon → Reset password; `openssl rand -base64 32` → yeni AUTH_SECRET; `.env.local` + Vercel güncelle. Yan etki: tüm aktif oturumlar düşer.
-- [ ] **Rate limiting** (public launch öncesi son güvenlik pass — Upstash Redis öneri)
+- [ ] **Secret rotasyonu** (acil): DATABASE_URL şifresi + AUTH_SECRET sohbette paylaşıldı, ikisi de yenilenmeli. Neon → Reset password; `node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"` → yeni AUTH_SECRET; `.env.local` + Vercel güncelle. Yan etki: tüm aktif oturumlar düşer.
+- [ ] **Upstash Redis provisioning**: hesap aç → Redis DB oluştur (region: eu-west-1 önerilir) → REST URL + TOKEN'ı `.env.local` + Vercel env vars'a ekle → rate limitler canlıda aktifleşir.
 - [ ] **A11y overhaul** (Escape/focus trap/ARIA roles)
 - [ ] **Lint + test altyapısı** (next 16 lint config kırık; vitest kurulu ama test dosyası yok — kritik paths için unit test yaz: `lib/ai/matcher`, `lib/moderation/blacklist`, `lib/email/verification`, `lib/badges/service`)
 - [ ] **Google OAuth bağlantısı** (Google Cloud Console'dan credentials alınacak)

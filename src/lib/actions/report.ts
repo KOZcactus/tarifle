@@ -3,6 +3,7 @@
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { reportSchema } from "@/lib/validators";
+import { checkRateLimit, rateLimitIdentifier } from "@/lib/rate-limit";
 
 interface ReportResult {
   success: boolean;
@@ -13,6 +14,16 @@ export async function createReport(formData: FormData): Promise<ReportResult> {
   const session = await auth();
   if (!session?.user?.id) {
     return { success: false, error: "Giriş yapmalısınız." };
+  }
+
+  // 10 reports / hour is generous for an honest user flagging a thread of
+  // problem content; it cuts off mass-flagging campaigns hard. DB-level
+  // @@unique([reporterId, targetType, targetId]) still prevents duplicate
+  // reports on the same target — rate limit protects breadth, unique protects
+  // depth.
+  const rate = await checkRateLimit("report", rateLimitIdentifier(session.user.id));
+  if (!rate.success) {
+    return { success: false, error: rate.message ?? "Çok fazla istek." };
   }
 
   const parsed = reportSchema.safeParse({

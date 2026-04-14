@@ -47,8 +47,8 @@ export function DeleteAccountCard({
     // nuke the account. Server still validates independently.
     const ok = window.confirm(
       "Hesabın kalıcı olarak silinecek. Tüm uyarlamaların, koleksiyonların, " +
-        "beğenilerin ve bildirimlerin silinecek — tariflerin (topluluğa " +
-        "katkın) ise anonim olarak kalacak. Devam etmek istiyor musun?",
+        "beğenilerin ve bildirimlerin silinecek. Bu işlem geri alınamaz — " +
+        "devam etmek istiyor musun?",
     );
     if (!ok) return;
 
@@ -73,8 +73,8 @@ export function DeleteAccountCard({
           </h2>
           <p className="mt-1 text-sm text-text-muted">
             Hesabını kalıcı olarak silebilirsin. Bu işlem geri alınamaz.
-            Uyarlamaların, koleksiyonların, beğenilerin ve bildirimlerin silinir;
-            topluluğa eklediğin tarifler anonim olarak kalır.
+            Uyarlamaların, koleksiyonların, beğenilerin ve bildirimlerin
+            silinir.
           </p>
         </div>
         <button

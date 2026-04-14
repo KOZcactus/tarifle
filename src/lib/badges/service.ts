@@ -1,5 +1,7 @@
 import type { BadgeKey } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
+import { BADGES } from "./config";
+import { notifyBadgeAwarded } from "@/lib/notifications/service";
 
 const COLLECTOR_THRESHOLD = 5;
 const POPULAR_THRESHOLD = 10;
@@ -7,10 +9,21 @@ const POPULAR_THRESHOLD = 10;
 /**
  * Idempotent badge grant. Safe to call multiple times — uses a unique
  * constraint, so concurrent inserts won't double-award.
+ *
+ * On a *new* grant (not a no-op retry) we fire-and-forget a notification.
+ * The notification write is wrapped so a notifications-table outage can't
+ * unwind the badge grant.
  */
 export async function grantBadge(userId: string, key: BadgeKey): Promise<boolean> {
   try {
     await prisma.userBadge.create({ data: { userId, key } });
+    // Real new award → notify. Meta is fixed at import time, never throws.
+    const meta = BADGES[key];
+    notifyBadgeAwarded({
+      userId,
+      badgeLabel: meta.label,
+      emoji: meta.emoji,
+    }).catch((err) => console.error("[badges] notification failed:", err));
     return true;
   } catch (err: unknown) {
     // P2002 = unique violation → user already has this badge

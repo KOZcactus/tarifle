@@ -13,7 +13,17 @@ const NAV_LINKS = [
   { href: "/ai-asistan", label: "AI Asistan" },
 ] as const;
 
-export function Navbar() {
+interface NavbarProps {
+  /**
+   * Server-rendered slot for the notification bell. Navbar is a client
+   * component (needs useSession), so we accept the already-rendered RSC
+   * tree as a prop and mount it in the right spot. Pass `null` or omit
+   * to hide the bell entirely.
+   */
+  notificationSlot?: React.ReactNode;
+}
+
+export function Navbar({ notificationSlot }: NavbarProps = {}) {
   const { data: session } = useSession();
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -60,6 +70,9 @@ export function Navbar() {
         {/* Right Side */}
         <div className="flex items-center gap-3">
           <ThemeToggle />
+
+          {/* Notification bell — only renders for logged-in users (loader returns null otherwise) */}
+          {notificationSlot}
 
           {session?.user ? (
             <div className="relative" ref={profileRef}>

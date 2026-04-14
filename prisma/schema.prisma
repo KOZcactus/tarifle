@@ -88,6 +88,15 @@ enum BadgeKey {
   RECIPE_COLLECTOR
 }
 
+enum NotificationType {
+  VARIATION_LIKED
+  VARIATION_HIDDEN
+  VARIATION_APPROVED
+  REPORT_RESOLVED
+  BADGE_AWARDED
+  SYSTEM
+}
+
 // ─── MODELS ──────────────────────────────────────────────
 
 model User {
@@ -117,6 +126,7 @@ model User {
   collections       Collection[]
   shoppingLists     ShoppingList[]
   badges            UserBadge[]
+  notifications     Notification[]
   reports           Report[]
   moderationActions ModerationAction[]
   auditLogs         AuditLog[]
@@ -528,4 +538,24 @@ model UserBadge {
   @@unique([userId, key])
   @@index([userId])
   @@map("user_badges")
+}
+
+model Notification {
+  id        String           @id @default(cuid())
+  userId    String
+  type      NotificationType
+  title     String           @db.VarChar(200)
+  body      String?          @db.Text
+  // Optional in-app target path (e.g. "/tarif/foo" or "/profil/me"). Never
+  // trusted as an external URL — the UI renders it through <Link>.
+  link      String?          @db.VarChar(500)
+  isRead    Boolean          @default(false)
+  createdAt DateTime         @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // The hot paths are: count unread for bell badge, list most-recent-first.
+  @@index([userId, isRead, createdAt])
+  @@index([userId, createdAt])
+  @@map("notifications")
 }

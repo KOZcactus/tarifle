@@ -7,7 +7,12 @@ export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
+  // SSR-hydration guard: next-themes resolves the current theme only on
+  // the client, and rendering the sun/moon icon before hydration produces
+  // a server/client mismatch. The React 19 rule flags this setState-in-
+  // effect pattern, but it's the canonical SSR/CSR reconciliation idiom.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 

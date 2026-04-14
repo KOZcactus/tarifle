@@ -26,7 +26,13 @@ export function ShareMenu({ title, url, text }: ShareMenuProps) {
     onClose: closeMenu,
   });
 
+  // SSR-hydration guard: `navigator.share` is only defined on the client,
+  // and we need it to decide whether to render our own dropdown or defer
+  // to the OS share sheet. The React 19 rule flags setState in an effect
+  // as usually-avoidable, but external-API detection is the legitimate
+  // exception.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setHasNativeShare(typeof navigator !== "undefined" && "share" in navigator);
   }, []);
 

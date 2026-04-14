@@ -11,8 +11,15 @@ interface AgeGateProps {
 export function AgeGate({ children }: AgeGateProps) {
   const [verified, setVerified] = useState<boolean | null>(null);
 
+  // SSR-hydration gate: sessionStorage only exists on the client, so we
+  // read it once after mount. The lint rule "no setState in effect" is
+  // aimed at derived state — this is a one-shot client-only side effect
+  // (read external API, sync to React state), which is exactly what
+  // effects are for. The `null` tri-state prevents flashing the overlay
+  // for users who already confirmed in this session.
   useEffect(() => {
     const stored = sessionStorage.getItem(AGE_GATE_KEY);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setVerified(stored === "true");
   }, []);
 

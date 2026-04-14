@@ -1,11 +1,20 @@
 "use client";
 
+import { useEffect } from "react";
+
 interface ErrorPageProps {
   error: Error;
   reset: () => void;
 }
 
 export default function ErrorPage({ error, reset }: ErrorPageProps) {
+  // Log boundary errors so ops gets signal in Vercel function logs; without
+  // this the error prop is silently discarded and the user just sees the
+  // generic page.
+  useEffect(() => {
+    console.error("[error-boundary]", error);
+  }, [error]);
+
   return (
     <div className="flex flex-1 flex-col items-center justify-center px-4 py-20 text-center">
       <span className="text-7xl">⚠️</span>

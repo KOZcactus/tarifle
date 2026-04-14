@@ -134,7 +134,7 @@ export function AiAssistantForm() {
             />
           </div>
           <p className="mt-1.5 text-xs text-text-muted">
-            Virgül ya da Enter'a basarak her malzemeyi ayrı ekle.
+            Virgül ya da Enter&apos;a basarak her malzemeyi ayrı ekle.
           </p>
         </div>
 

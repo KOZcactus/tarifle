@@ -105,6 +105,28 @@
 
 **Sonraki review pass'larda**: rate limiting (Upstash Redis), a11y overhaul (Escape/focus trap), lint+test altyapısı, ingredient synonym/token tablosu.
 
+## Pass 7 — Lint + test altyapısı ✅
+
+- [x] **Next 16 lint fix**: `next lint` Next 16'da kaldırıldı; `package.json`'daki `"lint": "next lint"` → `"lint": "eslint ."`'e çevrildi. `eslint.config.mjs` zaten flat config formatındaydı.
+- [x] **ESLint rule overrides** (`eslint.config.mjs`):
+  - `@typescript-eslint/no-unused-vars` → `_`-prefixed pattern intentional (`argsIgnorePattern: "^_"` + vars + caughtErrors + destructuredArray). `const { email: _email, ...rest } = user` idiomatik destructure-to-exclude artık flag olmuyor.
+  - `@next/next/no-img-element` → off (Cloudinary + `remotePatterns` config gelene kadar `recipe.imageUrl` user-uploaded URL'leri için `<img>` OK; config gelince kaldırılır).
+- [x] **React 19 `react-hooks/set-state-in-effect` fix**: `AgeGate`, `ThemeToggle`, `ShareMenu` hepsinde SSR-hydration pattern'i (setMounted in effect) — canonical React 19 pattern olduğundan `// eslint-disable-next-line` + açıklama yorumu.
+- [x] **CookingMode TDZ fix**: `goNext`/`goPrev` keyboard handler'dan önce `useCallback` ile deklare edildi. `useEffect` deps array'i doldu. React 19 `immutability` rule yakalamıştı.
+- [x] **AiAssistantForm**: `'` yerine `&apos;` escape.
+- [x] **error.tsx**: kullanılmayan `error` prop'u `console.error` ile log'lanıyor (boundary hatasını sessiz yutmasın).
+- [x] **Final lint**: 0 error, 0 warning. Build de clean (1.7s).
+
+### Vitest altyapı
+
+- [x] **5 test dosyası, 49 test, hepsi pass**:
+  - `moderation-blacklist.test.ts` (11) — normalize, TR karakter eşleşme, multi-word phrase, dedup
+  - `ai-matcher.test.ts` (20) — prefix match, prefix/substring ayrımı, isOptional, pantry staples toggle
+  - `rate-limit.test.ts` (8) — identifier priority, anonymous fail-open, env-missing fail-open, Upstash mock ile denied + error paths
+  - `email-normalize.test.ts` (5) — lowercase, trim, Turkish-locale trap (ASCII I → i, ı değil)
+  - `useDismiss.test.tsx` (5) — Escape, outside-click, inside-click ignore, `disableOutsideClick`, closed-state no-op
+- [x] **Prod bug fix (testler yakaladı!)**: `lib/moderation/blacklist.ts` — blacklist entry'leri (piç, göt, geri zekalı, vb.) TR karakter içerdiği için, normalize edilmiş input'la karşılaştırıldığında sessizce eşleşmiyordu. Module load'da `NORMALIZED_BLACKLIST`, `SINGLE_WORDS` set'i, `MULTI_WORD_PHRASES` ön hesaplandı. Artık bütün TR entry'ler gerçekten bloke ediyor.
+
 ## Pass 6 — A11y overhaul (hook'lar + ARIA + reduced motion) ✅
 
 - [x] **`src/hooks/useDismiss.ts`** — dropdown/menü için Escape + outside-click tek hook'ta. `disableOutsideClick` option'ı mobil menü gibi "scroll drag'ı dismiss olarak okuma" durumları için.
@@ -213,7 +235,7 @@ Kalan A11y işleri (gelecek pass'e):
 - [ ] **Secret rotasyonu** (acil): DATABASE_URL şifresi + AUTH_SECRET sohbette paylaşıldı, ikisi de yenilenmeli. Neon → Reset password; `node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"` → yeni AUTH_SECRET; `.env.local` + Vercel güncelle. Yan etki: tüm aktif oturumlar düşer.
 - [ ] **Upstash Redis provisioning**: hesap aç → Redis DB oluştur (region: eu-west-1 önerilir) → REST URL + TOKEN'ı `.env.local` + Vercel env vars'a ekle → rate limitler canlıda aktifleşir.
 - [ ] **A11y follow-up** (form label audit, renk kontrastı WCAG AA aracı ile kontrol, screen reader elle smoke)
-- [ ] **Lint + test altyapısı** (next 16 lint config kırık; vitest kurulu ama test dosyası yok — kritik paths için unit test yaz: `lib/ai/matcher`, `lib/moderation/blacklist`, `lib/email/verification`, `lib/badges/service`)
+- [ ] **Test coverage genişletme**: `lib/email/verification` + `lib/badges/service` için prisma mock'lu testler, E2E akışı Playwright ile (kayıt → doğrulama → rozet), CI gate kurulumu (GitHub Actions: `lint + typecheck + test + build` pre-merge).
 - [ ] **Google OAuth bağlantısı** (Google Cloud Console'dan credentials alınacak)
 - [ ] AI Asistan v2: ingredient synonym/token tablosu
 - [ ] Gelişmiş moderasyon — Faz 2 (AI destekli ön-sınıflandırma)

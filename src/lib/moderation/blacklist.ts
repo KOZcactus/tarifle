@@ -49,6 +49,14 @@ function normalize(text: string): string {
     .trim();
 }
 
+// Blacklist entries themselves contain Turkish characters ("piç", "göt",
+// "geri zekalı", ...). Normalize them at module load so comparisons against
+// the normalized input actually match — otherwise Turkish-character entries
+// silently slip through. Computed once; the array never changes.
+const NORMALIZED_BLACKLIST: string[] = BLACKLIST.map(normalize);
+const SINGLE_WORDS = new Set(NORMALIZED_BLACKLIST.filter((w) => !w.includes(" ")));
+const MULTI_WORD_PHRASES = NORMALIZED_BLACKLIST.filter((w) => w.includes(" "));
+
 export interface BlacklistResult {
   isClean: boolean;
   flaggedWords: string[];
@@ -57,18 +65,18 @@ export interface BlacklistResult {
 /** Verilen metni blacklist'e karşı kontrol eder */
 export function checkBlacklist(text: string): BlacklistResult {
   const normalized = normalize(text);
-  const words = normalized.split(/\s+/);
+  const words = normalized.split(/\s+/).filter(Boolean);
   const flaggedWords: string[] = [];
 
   for (const word of words) {
-    if (BLACKLIST.includes(word)) {
+    if (SINGLE_WORDS.has(word)) {
       flaggedWords.push(word);
     }
   }
 
   // Çok kelimelik ifadeleri de kontrol et
-  for (const phrase of BLACKLIST) {
-    if (phrase.includes(" ") && normalized.includes(phrase)) {
+  for (const phrase of MULTI_WORD_PHRASES) {
+    if (normalized.includes(phrase)) {
       flaggedWords.push(phrase);
     }
   }

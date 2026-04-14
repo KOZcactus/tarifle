@@ -80,6 +80,26 @@ export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProp
     document.body.style.overflow = "";
   }, [releaseWakeLock]);
 
+  // Step navigation — declared before the effect below so the keyboard
+  // handler can close over a stable identity via useCallback. Using plain
+  // arrow functions would require the effect to re-run every render and
+  // React 19's react-hooks/immutability rule flags the ordering mistake.
+  const goNext = useCallback(() => {
+    if (currentStep < totalSteps - 1) {
+      setCurrentStep((s) => s + 1);
+      setTimer(null);
+      setTimerRunning(false);
+    }
+  }, [currentStep, totalSteps]);
+
+  const goPrev = useCallback(() => {
+    if (currentStep > 0) {
+      setCurrentStep((s) => s - 1);
+      setTimer(null);
+      setTimerRunning(false);
+    }
+  }, [currentStep]);
+
   // Keyboard navigation
   useEffect(() => {
     if (!isOpen) return;
@@ -93,23 +113,7 @@ export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProp
     }
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  });
-
-  const goNext = () => {
-    if (currentStep < totalSteps - 1) {
-      setCurrentStep((s) => s + 1);
-      setTimer(null);
-      setTimerRunning(false);
-    }
-  };
-
-  const goPrev = () => {
-    if (currentStep > 0) {
-      setCurrentStep((s) => s - 1);
-      setTimer(null);
-      setTimerRunning(false);
-    }
-  };
+  }, [isOpen, close, goNext, goPrev]);
 
   const startTimer = (seconds: number) => {
     setTimer(seconds);

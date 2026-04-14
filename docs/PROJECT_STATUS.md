@@ -105,6 +105,21 @@
 
 **Sonraki review pass'larda**: rate limiting (Upstash Redis), a11y overhaul (Escape/focus trap), lint+test altyapısı, ingredient synonym/token tablosu.
 
+## Pass 9 — E2E Playwright + GitHub Actions CI ✅
+
+- [x] **Playwright kurulumu**: `@playwright/test` + Chromium. `playwright.config.ts` lokalde dev server'ı auto-boot eder, CI'da headless + retry 2.
+- [x] **`tests/e2e/` — 8 smoke test, hepsi pass**:
+  - `home.spec.ts` (3) — hero + featured + category grid render, AI banner → /ai-asistan, /tarifler listesi
+  - `recipe-detail.spec.ts` (2) — ingredients/steps render, ShareMenu aria-expanded toggle + Escape ile kapatma
+  - `auth-pages.spec.ts` (3) — /giris + /kayit formları, KVKK, Google button, sayfalar arası linkler
+- [x] **Read-only E2E focus**: İlk iterasyon sadece DB'ye yazmayan akışlar. Register/login round-trip ayrı iterasyonda (E2E'nin kendi Neon branch'i + cleanup infrastructure gerektirir).
+- [x] **`.github/workflows/ci.yml`** — 2 job:
+  - `check` (her push + PR'da): lint + typecheck + vitest + build. Fake env var'larla (DATABASE_URL, AUTH_SECRET placeholder) çalışır — prod secret'ına gerek yok.
+  - `e2e` (secret gated): `E2E_DATABASE_URL` + `E2E_AUTH_SECRET` GitHub Secrets'a eklendiğinde Playwright çalışır. Fork PR'larından çalışmaz (güvenlik). Report artifact olarak yüklenir.
+- [x] **Concurrency control**: Aynı branch'e yeni commit gelince önceki run cancel. Resource tasarrufu.
+- [x] **Playwright `playwright.config.ts`**: `reuseExistingServer: !CI` ile lokalde açık dev server'a bağlanır, CI'da fresh boot.
+- [x] **Sıradaki iterasyon için hazırlık**: E2E'nin production'a yazmaması için `.github/workflows/ci.yml`'de `E2E_DATABASE_URL` secret placeholder'ı. İleride Neon'da `e2e-ci` branch açılıp o URL buraya konur — prod'dan izole E2E.
+
 ## Pass 8 — Google OAuth canlıda ✅
 
 - [x] **Google Cloud Console OAuth 2.0 Client kuruldu**: tarifle.app + localhost:3000 authorized origins/redirects, Publish App ile production'a çekildi.

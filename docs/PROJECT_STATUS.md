@@ -105,6 +105,16 @@
 
 **Sonraki review pass'larda**: rate limiting (Upstash Redis), a11y overhaul (Escape/focus trap), lint+test altyapısı, ingredient synonym/token tablosu.
 
+## Pass 8 — Google OAuth canlıda ✅
+
+- [x] **Google Cloud Console OAuth 2.0 Client kuruldu**: tarifle.app + localhost:3000 authorized origins/redirects, Publish App ile production'a çekildi.
+- [x] **Env vars**: `AUTH_GOOGLE_ID` + `AUTH_GOOGLE_SECRET` hem `.env.local` hem Vercel'e kondu. `AUTH_URL` Vercel'den silindi (Auth.js v5 VERCEL_URL'den otomatik türetiyor, hardcode breaking).
+- [x] **Canonical domain fix**: Vercel'de `www.tarifle.app` → `tarifle.app`'e 308 redirect (önceki yön tersti → www'li redirect_uri Google Console'da kayıtlı olmadığı için `redirect_uri_mismatch`).
+- [x] **"Username is missing" bug fix**: `PrismaAdapter`'in default `createUser`'i bizim schema'daki required `username` + KVKK alanlarını bilmiyordu. `buildAdapter()` helper yazıldı — spread edilen PrismaAdapter üzerine `createUser` override'ı, User'ı atomik olarak `username` + `kvkkAccepted` + `kvkkVersion` + `kvkkDate` + `emailVerified: new Date()` ile yaratıyor, dönüşte Auth.js'in beklediği `AdapterUser` format'ına (`image` ← `avatarUrl`) dönüştürüyor.
+- [x] **Eski manuel create silindi**: signIn callback'teki `prisma.user.create()` ve events.createUser — ikisi de artık gereksiz, tüm logic adapter'da.
+- [x] **Ops tooling**: `scripts/list-users.ts` (provider + passwordHash + verified durumu) ve `scripts/delete-user.ts` (email ile cascading silme) — ileride OAuth debug için.
+- [x] **Canlı doğrulama**: `wessibf6@gmail.com` ile giriş denendi, DB'ye `providers: google` + `password: no` + auto-generated `username` ile temiz user eklendi.
+
 ## Pass 7 — Lint + test altyapısı ✅
 
 - [x] **Next 16 lint fix**: `next lint` Next 16'da kaldırıldı; `package.json`'daki `"lint": "next lint"` → `"lint": "eslint ."`'e çevrildi. `eslint.config.mjs` zaten flat config formatındaydı.
@@ -236,7 +246,7 @@ Kalan A11y işleri (gelecek pass'e):
 - [ ] **Upstash Redis provisioning**: hesap aç → Redis DB oluştur (region: eu-west-1 önerilir) → REST URL + TOKEN'ı `.env.local` + Vercel env vars'a ekle → rate limitler canlıda aktifleşir.
 - [ ] **A11y follow-up** (form label audit, renk kontrastı WCAG AA aracı ile kontrol, screen reader elle smoke)
 - [ ] **Test coverage genişletme**: `lib/email/verification` + `lib/badges/service` için prisma mock'lu testler, E2E akışı Playwright ile (kayıt → doğrulama → rozet), CI gate kurulumu (GitHub Actions: `lint + typecheck + test + build` pre-merge).
-- [ ] **Google OAuth bağlantısı** (Google Cloud Console'dan credentials alınacak)
+- [ ] **"Google hesabını bağla" özelliği**: Mevcut credentials user'ı (örn. ahmet, batu) varken aynı email ile Google OAuth denerse `OAuthAccountNotLinked` alır. /ayarlar sayfasında şifreyle doğruladıktan sonra Google'ı bağlama flow'u. `allowDangerousEmailAccountLinking: false` güvenlik duvarını koruyarak UX.
 - [ ] AI Asistan v2: ingredient synonym/token tablosu
 - [ ] Gelişmiş moderasyon — Faz 2 (AI destekli ön-sınıflandırma)
 - [ ] Şablon video sistemi (Remotion) — Faz 2/3

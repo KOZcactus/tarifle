@@ -3,6 +3,7 @@
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
+import { checkMultipleTexts } from "@/lib/moderation/blacklist";
 
 interface VariationResult {
   success: boolean;
@@ -51,6 +52,19 @@ export async function createVariation(formData: FormData): Promise<VariationResu
 
   if (steps.length === 0) {
     return { success: false, error: "En az bir adım ekleyin." };
+  }
+
+  // Argo/küfür kontrolü
+  const textsToCheck = [
+    miniTitle,
+    description ?? "",
+    notes ?? "",
+    ...ingredients,
+    ...steps,
+  ];
+  const blacklistResult = checkMultipleTexts(textsToCheck);
+  if (!blacklistResult.isClean) {
+    return { success: false, error: "İçeriğiniz uygunsuz ifadeler içeriyor. Lütfen düzenleyip tekrar deneyin." };
   }
 
   await prisma.variation.create({

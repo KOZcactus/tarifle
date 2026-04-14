@@ -55,7 +55,7 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
           <p className="text-sm text-text-muted">@{user.username}</p>
           {user.bio && <p className="mt-2 text-sm text-text">{user.bio}</p>}
           <div className="mt-3 flex gap-4 text-sm text-text-muted">
-            <span>{user._count.variations} varyasyon</span>
+            <span>{user._count.variations} uyarlama</span>
             {isOwner && <span>{user._count.bookmarks} kayıtlı tarif</span>}
             <span>Üye: {formatDistanceToNow(user.createdAt)}</span>
           </div>
@@ -64,9 +64,9 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
 
       {/* Variations */}
       <section className="mb-10">
-        <h2 className="mb-4 font-heading text-xl font-bold text-text">Varyasyonlar</h2>
+        <h2 className="mb-4 font-heading text-xl font-bold text-text">Uyarlamalar</h2>
         {variations.length === 0 ? (
-          <p className="text-sm text-text-muted">Henüz varyasyon eklenmemiş.</p>
+          <p className="text-sm text-text-muted">Henüz uyarlama eklenmemiş.</p>
         ) : (
           <div className="space-y-3">
             {variations.map((v) => (

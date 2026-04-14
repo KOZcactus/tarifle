@@ -57,15 +57,14 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
           </div>
 
           {/* Footer */}
-          <div className="mt-3 flex items-center justify-between text-xs text-text-muted">
-            <span>{recipe.servingCount} kişilik</span>
-            {recipe._count.variations > 0 && (
+          {recipe._count.variations > 0 && (
+            <div className="mt-3 text-xs text-text-muted">
               <span className="flex items-center gap-1">
                 <UsersIcon />
-                {recipe._count.variations} varyasyon
+                {recipe._count.variations} uyarlama
               </span>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </article>
     </Link>

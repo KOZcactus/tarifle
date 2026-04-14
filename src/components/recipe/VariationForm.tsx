@@ -24,7 +24,7 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
         onClick={() => router.push("/giris")}
         className="rounded-lg border border-dashed border-border px-4 py-2 text-sm text-text-muted transition-colors hover:border-primary hover:text-primary"
       >
-        Varyasyon eklemek için giriş yap
+        Uyarlama eklemek için giriş yap
       </button>
     );
   }
@@ -32,7 +32,7 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
   if (success) {
     return (
       <div className="rounded-lg bg-accent-green/10 px-4 py-3 text-sm text-accent-green">
-        Varyasyonunuz eklendi!
+        Uyarlamanız eklendi!
       </div>
     );
   }
@@ -43,7 +43,7 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
         onClick={() => setIsOpen(true)}
         className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-hover"
       >
-        + Varyasyon Ekle
+        + Uyarlama Ekle
       </button>
     );
   }
@@ -70,7 +70,7 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
   return (
     <div className="rounded-xl border border-border bg-bg-card p-5">
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="font-heading text-lg font-semibold text-text">Varyasyon Ekle</h3>
+        <h3 className="font-heading text-lg font-semibold text-text">Uyarlama Ekle</h3>
         <button
           onClick={() => setIsOpen(false)}
           className="text-sm text-text-muted hover:text-text"
@@ -159,7 +159,7 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
           disabled={isPending}
           className="w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-hover disabled:opacity-50"
         >
-          {isPending ? "Ekleniyor..." : "Varyasyonu Ekle"}
+          {isPending ? "Ekleniyor..." : "Uyarlamayı Ekle"}
         </button>
       </form>
     </div>

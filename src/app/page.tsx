@@ -39,7 +39,7 @@ export default async function HomePage() {
           <span className="text-primary">pişirsek</span>?
         </h1>
         <p className="mt-4 max-w-xl text-lg text-text-muted">
-          Yemek, içecek ve kokteyl tariflerini keşfet. Topluluk varyasyonlarıyla ilham al.
+          Yemek, içecek ve kokteyl tariflerini keşfet. Topluluk uyarlamalarıyla ilham al.
         </p>
 
         {/* Search */}
@@ -114,7 +114,7 @@ export default async function HomePage() {
             Kendi tarifini paylaş
           </h2>
           <p className="mt-2 text-text-muted">
-            Üye ol, favori tariflerinin varyasyonlarını ekle ve toplulukla paylaş.
+            Üye ol, favori tariflerinin uyarlamalarını ekle ve toplulukla paylaş.
           </p>
           <Link
             href="/kayit"

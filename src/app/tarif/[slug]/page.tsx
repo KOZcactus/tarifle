@@ -6,6 +6,10 @@ import { RecipeSteps } from "@/components/recipe/RecipeSteps";
 import { NutritionInfo } from "@/components/recipe/NutritionInfo";
 import { BookmarkButton } from "@/components/recipe/BookmarkButton";
 import { VariationForm } from "@/components/recipe/VariationForm";
+import { CookingMode } from "@/components/recipe/CookingMode";
+import { PrintButton } from "@/components/recipe/PrintButton";
+import { AgeGate } from "@/components/recipe/AgeGate";
+import { ReportButton } from "@/components/recipe/ReportButton";
 import { generateRecipeJsonLd } from "@/lib/seo";
 import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
 import { getRecipeBySlug, incrementViewCount } from "@/lib/queries/recipe";
@@ -43,8 +47,9 @@ export default async function TarifPage({ params }: TarifPageProps) {
   incrementViewCount(slug).catch(() => {});
 
   const jsonLd = generateRecipeJsonLd(recipe);
+  const isAlcoholic = recipe.tags.some(({ tag }) => tag.slug === "alkollu");
 
-  return (
+  const content = (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
       {/* Schema.org Recipe JSON-LD */}
       <script
@@ -87,12 +92,12 @@ export default async function TarifPage({ params }: TarifPageProps) {
           <Badge>{recipe.servingCount} kişilik</Badge>
           {recipe.averageCalories && <Badge>~{recipe.averageCalories} kcal</Badge>}
           {recipe._count.variations > 0 && (
-            <Badge variant="info">{recipe._count.variations} varyasyon</Badge>
+            <Badge variant="info">{recipe._count.variations} uyarlama</Badge>
           )}
         </div>
 
         {/* Bookmark */}
-        <div className="mt-4">
+        <div className="mt-4 print:hidden">
           <BookmarkButton recipeId={recipe.id} initialBookmarked={bookmarked} />
         </div>
 
@@ -123,6 +128,16 @@ export default async function TarifPage({ params }: TarifPageProps) {
           <span className="text-8xl">{recipe.emoji}</span>
         </div>
       )}
+
+      {/* Action Buttons */}
+      <div className="mb-6 flex gap-3 print:hidden">
+        <CookingMode
+          steps={recipe.steps}
+          recipeTitle={recipe.title}
+          recipeEmoji={recipe.emoji}
+        />
+        <PrintButton />
+      </div>
 
       {/* Ingredients + Steps — Side by Side on Desktop */}
       <div className="grid gap-8 lg:grid-cols-5">
@@ -172,10 +187,10 @@ export default async function TarifPage({ params }: TarifPageProps) {
       </div>
 
       {/* Variations Section */}
-      <section className="mt-12">
+      <section className="mt-12 print:hidden">
         <div className="flex items-center justify-between">
           <h2 className="font-heading text-xl font-bold">
-            Topluluk Varyasyonları ({recipe._count.variations})
+            Topluluk Uyarlamaları ({recipe._count.variations})
           </h2>
         </div>
         {recipe.variations && recipe.variations.length > 0 ? (
@@ -191,16 +206,19 @@ export default async function TarifPage({ params }: TarifPageProps) {
                   </div>
                   <span className="text-sm text-text-muted">❤️ {v.likeCount}</span>
                 </div>
-                <p className="mt-2 text-xs text-text-muted">
-                  @{v.author.username}
-                </p>
+                <div className="mt-2 flex items-center justify-between">
+                  <p className="text-xs text-text-muted">
+                    @{v.author.username}
+                  </p>
+                  <ReportButton targetType="VARIATION" targetId={v.id} />
+                </div>
               </div>
             ))}
           </div>
         ) : (
           <div className="mt-4 rounded-xl border border-dashed border-border p-8 text-center">
             <p className="text-text-muted">
-              Henüz varyasyon eklenmemiş. İlk varyasyonu sen ekle!
+              Henüz uyarlama eklenmemiş. İlk uyarlamayı sen ekle!
             </p>
           </div>
         )}
@@ -211,9 +229,15 @@ export default async function TarifPage({ params }: TarifPageProps) {
       </section>
 
       {/* View Count */}
-      <div className="mt-8 text-center text-xs text-text-muted">
+      <div className="mt-8 text-center text-xs text-text-muted print:hidden">
         {recipe.viewCount.toLocaleString("tr-TR")} görüntülenme
       </div>
     </div>
   );
+
+  if (isAlcoholic) {
+    return <AgeGate>{content}</AgeGate>;
+  }
+
+  return content;
 }

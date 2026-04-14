@@ -112,3 +112,38 @@ body {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
+
+/* ─── PRINT ──────────────────────────────────────────────── */
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+  }
+
+  nav,
+  footer,
+  .print\:hidden,
+  button,
+  [data-theme-toggle],
+  script {
+    display: none !important;
+  }
+
+  * {
+    background: transparent !important;
+    color: black !important;
+    border-color: #ccc !important;
+    box-shadow: none !important;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+
+  img {
+    max-height: 200px;
+    object-fit: contain;
+  }
+}

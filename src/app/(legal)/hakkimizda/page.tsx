@@ -17,11 +17,11 @@ export default function HakkimizdaPage() {
         </p>
         <p>
           Amacımız her bilindik yemeğin güvenilir bir genel tarifini sunmak ve kullanıcıların
-          kendi varyasyonlarını paylaşabilecekleri bir topluluk oluşturmaktır.
+          kendi uyarlamalarını paylaşabilecekleri bir topluluk oluşturmaktır.
         </p>
         <p>
           Tarifler kısa, göz yormayan, anlaşılır ve pratik olacak şekilde hazırlanır. Her tarif
-          kartında süre, zorluk, kategori, ortalama kalori ve varyasyon sayısı görünür.
+          kartında süre, zorluk, kategori, ortalama kalori ve uyarlama sayısı görünür.
         </p>
       </div>
     </div>

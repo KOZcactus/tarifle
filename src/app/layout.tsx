@@ -46,7 +46,7 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col antialiased">
         <Providers>
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 print:pt-0">{children}</main>
           <Footer />
         </Providers>
       </body>

@@ -36,6 +36,33 @@
 - [x] Vercel'e deploy edildi (tarifle.vercel.app)
 - [x] Custom domain bağlandı (tarifle.app — Cloudflare DNS)
 
+## MVP 0.2 — Tamamlandı ✅
+
+- [x] Auth.js v5 ile e-posta + şifre giriş/kayıt sistemi
+- [x] JWT tabanlı oturum yönetimi (Credentials provider)
+- [x] Giriş ve kayıt sayfaları (`/giris`, `/kayit`)
+- [x] Kullanıcı profil sayfası (`/profil/[username]`)
+- [x] Bookmark (yer imi) sistemi — optimistic UI
+- [x] Beğeni sistemi (varyasyonlar için)
+- [x] Varyasyon görüntüleme ve ekleme formu
+- [x] Navbar'da kullanıcı menüsü (avatar, dropdown)
+- [x] Google OAuth yapısı hazır (credentials henüz bağlanmadı)
+
+## MVP 0.3 — Tamamlandı ✅
+
+- [x] Pişirme modu (adım adım, zamanlayıcı, Wake Lock API, klavye navigasyonu)
+- [x] Yazdırma görünümü (print-friendly CSS, gereksiz öğeler gizlenir)
+- [x] Alkollü içecek yaş uyarısı (18+ modal, sessionStorage ile)
+- [x] Keyword blacklist filtresi (Türkçe argo/küfür kontrolü, uyarlama gönderiminde)
+- [x] Raporlama sistemi (uyarlamaları bayrakla, sebep + açıklama)
+- [x] Admin paneli — temel moderasyon (/admin)
+  - Genel bakış (istatistikler)
+  - Raporlar sayfası (rapor inceleme, uyarlama gizle/onayla)
+  - Tarifler listesi
+  - Kullanıcılar listesi
+- [x] "Varyasyon" → "Uyarlama" isim değişikliği (tüm UI)
+- [x] Tarif kartlarından "kişilik" kaldırıldı, uyarlama sayısı gösteriliyor
+
 ## Devam Edenler
 
 ## Tamamlanan Seed Verisi
@@ -46,9 +73,11 @@
 
 ## Sıradaki İşler
 
-- [ ] Auth.js v5 (e-posta + Google) — MVP 0.2
-- [ ] Kullanıcı profil ve varyasyon sistemi — MVP 0.2
-- [ ] Moderasyon ve raporlama — MVP 0.3
+- [ ] Google OAuth bağlantısı (Google Cloud Console'dan credentials alınacak)
+- [ ] Favori koleksiyonları — Faz 2
+- [ ] Alışveriş listesi — Faz 2
+- [ ] Sosyal paylaşım butonları — Faz 2
+- [ ] AI Asistan (malzeme → tarif önerisi) — Faz 2
 
 ## Karar Bekleyenler
 
@@ -65,6 +94,7 @@
 
 - Next.js 16.2.3, React 19.2.4, Tailwind CSS 4
 - Prisma 7.7.0 + @prisma/adapter-neon + @neondatabase/serverless
-- Auth.js v5 beta kurulu, MVP 0.2'de aktif edilecek
+- Auth.js v5 (next-auth@5.0.0-beta.30) — JWT strategy, Credentials provider aktif
+- Middleware'de Prisma import edilemez (Vercel Edge 1MB limiti) — auth kontrolleri sayfa seviyesinde
 - Light mode varsayılan, dark mode `[data-theme="dark"]`
 - Seed script: `npx tsx prisma/seed.ts` (DATABASE_URL env var gerekli)

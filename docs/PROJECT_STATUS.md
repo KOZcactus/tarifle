@@ -1,6 +1,6 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 14 Nisan 2026
+> Son güncelleme: 14 Nisan 2026 (Faz 2 — Koleksiyonlar + Alışveriş Listesi)
 
 ## Yapılanlar
 
@@ -63,6 +63,18 @@
 - [x] "Varyasyon" → "Uyarlama" isim değişikliği (tüm UI)
 - [x] Tarif kartlarından "kişilik" kaldırıldı, uyarlama sayısı gösteriliyor
 
+## Faz 2 — Favori Koleksiyonları + Alışveriş Listesi ✅
+
+- [x] Schema: `Collection`, `CollectionItem`, `ShoppingList`, `ShoppingListItem` modelleri
+- [x] Tarif sayfasında `SaveMenu`: Kaydet / Listeye ekle / Koleksiyon butonları
+- [x] Koleksiyon dropdown: checkbox ile tarif ekle/çıkar, yeni koleksiyon oluşturma
+- [x] Koleksiyon detay sayfası `/koleksiyon/[id]` — grid görünüm, düzenle/sil modal
+- [x] Profil sayfasında "Koleksiyonlarım" bölümü (4 tarif thumbnail grid)
+- [x] `/alisveris-listesi` sayfası — kontrol et/sil, manuel madde ekleme
+- [x] "Listeye ekle" — tarifin malzemelerini merge ederek ekler (tr case-insensitive)
+- [x] Navbar dropdown: "Alışveriş Listem" bağlantısı
+- [x] İsim-bazlı deduplication (aynı malzeme iki kez eklenmez)
+
 ## Devam Edenler
 
 ## Tamamlanan Seed Verisi
@@ -74,9 +86,9 @@
 ## Sıradaki İşler
 
 - [ ] Google OAuth bağlantısı (Google Cloud Console'dan credentials alınacak)
-- [ ] Favori koleksiyonları — Faz 2
-- [ ] Alışveriş listesi — Faz 2
-- [ ] Sosyal paylaşım butonları — Faz 2
+- [ ] Sosyal paylaşım butonları + OG Image — Faz 2
+- [ ] PWA desteği — Faz 2
+- [ ] E-posta doğrulama + Rozet sistemi — Faz 2
 - [ ] AI Asistan (malzeme → tarif önerisi) — Faz 2
 
 ## Karar Bekleyenler

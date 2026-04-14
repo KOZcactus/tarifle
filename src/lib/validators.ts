@@ -60,8 +60,23 @@ export const profileUpdateSchema = z.object({
   bio: z.string().max(300).optional(),
 });
 
+export const collectionSchema = z.object({
+  name: z.string().min(2, "Ad en az 2 karakter olmalıdır").max(100),
+  description: z.string().max(500).optional(),
+  emoji: z.string().max(10).optional(),
+  isPublic: z.boolean().optional(),
+});
+
+export const shoppingListItemSchema = z.object({
+  name: z.string().min(1, "Malzeme adı boş olamaz").max(200),
+  amount: z.string().max(50).optional(),
+  unit: z.string().max(50).optional(),
+});
+
 export type LoginInput = z.infer<typeof loginSchema>;
 export type RegisterInput = z.infer<typeof registerSchema>;
 export type VariationInput = z.infer<typeof variationSchema>;
 export type ReportInput = z.infer<typeof reportSchema>;
 export type ProfileUpdateInput = z.infer<typeof profileUpdateSchema>;
+export type CollectionInput = z.infer<typeof collectionSchema>;
+export type ShoppingListItemInput = z.infer<typeof shoppingListItemSchema>;

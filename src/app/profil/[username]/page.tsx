@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { getUserByUsername, getUserBookmarks, getUserVariations } from "@/lib/queries/user";
+import { getPublicCollections, getUserCollections } from "@/lib/queries/collection";
 import { formatDistanceToNow } from "@/lib/utils";
 
 interface ProfilePageProps {
@@ -29,9 +30,10 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
 
   const isOwner = session?.user?.id === user.id;
 
-  const [bookmarks, variations] = await Promise.all([
+  const [bookmarks, variations, collections] = await Promise.all([
     isOwner ? getUserBookmarks(user.id) : Promise.resolve([]),
     getUserVariations(user.id),
+    isOwner ? getUserCollections(user.id) : getPublicCollections(user.id),
   ]);
 
   return (
@@ -61,6 +63,86 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
           </div>
         </div>
       </div>
+
+      {/* Collections */}
+      {(collections.length > 0 || isOwner) && (
+        <section className="mb-10">
+          <div className="mb-4 flex items-center justify-between">
+            <h2 className="font-heading text-xl font-bold text-text">
+              {isOwner ? "Koleksiyonlarım" : "Koleksiyonlar"}
+            </h2>
+            {isOwner && (
+              <Link
+                href="/alisveris-listesi"
+                className="text-sm text-primary hover:text-primary-hover"
+              >
+                Alışveriş listesi →
+              </Link>
+            )}
+          </div>
+          {collections.length === 0 ? (
+            <p className="text-sm text-text-muted">
+              {isOwner
+                ? "Henüz koleksiyon oluşturmadın. Bir tarifi açıp 'Koleksiyon' butonuyla başla."
+                : "Herkese açık koleksiyon yok."}
+            </p>
+          ) : (
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {collections.map((c) => (
+                <Link
+                  key={c.id}
+                  href={`/koleksiyon/${c.id}`}
+                  className="group overflow-hidden rounded-xl border border-border bg-bg-card transition-all hover:border-primary"
+                >
+                  <div className="grid h-32 grid-cols-2 gap-px bg-border">
+                    {c.items.length === 0 ? (
+                      <div className="col-span-2 flex items-center justify-center bg-bg-elevated text-4xl">
+                        {c.emoji ?? "📁"}
+                      </div>
+                    ) : (
+                      Array.from({ length: 4 }).map((_, i) => {
+                        const item = c.items[i];
+                        return (
+                          <div
+                            key={i}
+                            className="flex items-center justify-center bg-bg-elevated"
+                          >
+                            {item?.recipe.imageUrl ? (
+                              <img
+                                src={item.recipe.imageUrl}
+                                alt=""
+                                className="h-full w-full object-cover"
+                              />
+                            ) : (
+                              <span className="text-2xl">
+                                {item?.recipe.emoji ?? ""}
+                              </span>
+                            )}
+                          </div>
+                        );
+                      })
+                    )}
+                  </div>
+                  <div className="p-4">
+                    <p className="font-medium text-text transition-colors group-hover:text-primary">
+                      {c.emoji && <span className="mr-1">{c.emoji}</span>}
+                      {c.name}
+                    </p>
+                    <div className="mt-1 flex items-center gap-2 text-xs text-text-muted">
+                      <span>{c._count.items} tarif</span>
+                      {c.isPublic && (
+                        <span className="rounded-full bg-accent-green/10 px-1.5 py-0.5 text-[10px] font-medium text-accent-green">
+                          Açık
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
+        </section>
+      )}
 
       {/* Variations */}
       <section className="mb-10">

@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/Badge";
 import { IngredientList } from "@/components/recipe/IngredientList";
 import { RecipeSteps } from "@/components/recipe/RecipeSteps";
 import { NutritionInfo } from "@/components/recipe/NutritionInfo";
-import { BookmarkButton } from "@/components/recipe/BookmarkButton";
+import { SaveMenu } from "@/components/recipe/SaveMenu";
 import { VariationForm } from "@/components/recipe/VariationForm";
 import { CookingMode } from "@/components/recipe/CookingMode";
 import { PrintButton } from "@/components/recipe/PrintButton";
@@ -14,6 +14,7 @@ import { generateRecipeJsonLd } from "@/lib/seo";
 import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
 import { getRecipeBySlug, incrementViewCount } from "@/lib/queries/recipe";
 import { isBookmarked } from "@/lib/queries/user";
+import { getCollectionsForRecipe } from "@/lib/queries/collection";
 import { auth } from "@/lib/auth";
 import type { Metadata } from "next";
 
@@ -39,9 +40,12 @@ export default async function TarifPage({ params }: TarifPageProps) {
   if (!recipe) notFound();
 
   const session = await auth();
-  const bookmarked = session?.user?.id
-    ? await isBookmarked(session.user.id, recipe.id)
-    : false;
+  const [bookmarked, userCollections] = session?.user?.id
+    ? await Promise.all([
+        isBookmarked(session.user.id, recipe.id),
+        getCollectionsForRecipe(session.user.id, recipe.id),
+      ])
+    : [false, []];
 
   // Görüntülenme sayısını arka planda artır
   incrementViewCount(slug).catch(() => {});
@@ -96,9 +100,14 @@ export default async function TarifPage({ params }: TarifPageProps) {
           )}
         </div>
 
-        {/* Bookmark */}
+        {/* Save actions */}
         <div className="mt-4 print:hidden">
-          <BookmarkButton recipeId={recipe.id} initialBookmarked={bookmarked} />
+          <SaveMenu
+            recipeId={recipe.id}
+            initialBookmarked={bookmarked}
+            initialCollections={userCollections}
+            ingredientCount={recipe.ingredients.length}
+          />
         </div>
 
         {/* Tags */}

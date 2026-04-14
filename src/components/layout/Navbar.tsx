@@ -56,13 +56,20 @@ export function Navbar() {
                 {session.user.name?.split(" ")[0] || "Kullanıcı"}
               </button>
               {isProfileOpen && (
-                <div className="absolute right-0 top-full mt-2 w-48 rounded-lg border border-border bg-bg-card py-1 shadow-lg">
+                <div className="absolute right-0 top-full mt-2 w-52 rounded-lg border border-border bg-bg-card py-1 shadow-lg">
                   <Link
                     href={`/profil/${session.user.username}`}
                     onClick={() => setIsProfileOpen(false)}
                     className="block px-4 py-2 text-sm text-text hover:bg-bg-elevated"
                   >
                     Profilim
+                  </Link>
+                  <Link
+                    href="/alisveris-listesi"
+                    onClick={() => setIsProfileOpen(false)}
+                    className="block px-4 py-2 text-sm text-text hover:bg-bg-elevated"
+                  >
+                    Alışveriş Listem
                   </Link>
                   {(session.user.role === "ADMIN" || session.user.role === "MODERATOR") && (
                     <Link
@@ -144,6 +151,13 @@ export function Navbar() {
                   className="rounded-lg px-3 py-2 text-sm font-medium text-text-muted transition-colors hover:bg-bg-card hover:text-text"
                 >
                   Profilim
+                </Link>
+                <Link
+                  href="/alisveris-listesi"
+                  onClick={() => setIsMobileOpen(false)}
+                  className="rounded-lg px-3 py-2 text-sm font-medium text-text-muted transition-colors hover:bg-bg-card hover:text-text"
+                >
+                  Alışveriş Listem
                 </Link>
                 {(session.user.role === "ADMIN" || session.user.role === "MODERATOR") && (
                   <Link

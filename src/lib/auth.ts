@@ -109,35 +109,38 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       }
       return session;
     },
-    async signIn({ user, account }) {
-      if (account?.provider === "google") {
-        const email = normalizeEmail(user.email!);
-        const existingUser = await prisma.user.findUnique({
-          where: { email },
-        });
-        if (!existingUser) {
-          const baseUsername = (user.name || "kullanici")
-            .toLowerCase()
-            .replace(/[^a-z0-9]/g, "")
-            .slice(0, 20);
-          const uniqueSuffix = Math.random().toString(36).slice(2, 7);
-          const username = `${baseUsername}${uniqueSuffix}`;
+    // NOTE: no custom user-creation in signIn. Creating the User manually
+    // here leaves the Account table empty for the OAuth provider, which then
+    // trips PrismaAdapter's existing-email check and throws
+    // OAuthAccountNotLinked. Let the adapter create User + Account atomically
+    // and populate our app-specific fields in `events.createUser` below.
+  },
+  events: {
+    // Fires once, right after PrismaAdapter has created a new User + Account
+    // pair for an OAuth sign-in. Populates the fields the adapter doesn't
+    // know about (username, KVKK timestamps). Credentials sign-up does its
+    // own user creation in actions/auth.ts and never triggers this event.
+    async createUser({ user }) {
+      if (!user.id) return;
+      const baseUsername = (user.name || "kullanici")
+        .toLowerCase()
+        .replace(/[^a-z0-9]/g, "")
+        .slice(0, 20);
+      const uniqueSuffix = Math.random().toString(36).slice(2, 7);
+      const username = `${baseUsername || "kullanici"}${uniqueSuffix}`;
 
-          await prisma.user.create({
-            data: {
-              email,
-              name: user.name,
-              username,
-              avatarUrl: user.image,
-              emailVerified: new Date(),
-              kvkkAccepted: true,
-              kvkkVersion: "1.0",
-              kvkkDate: new Date(),
-            },
-          });
-        }
-      }
-      return true;
+      await prisma.user.update({
+        where: { id: user.id },
+        data: {
+          username,
+          // Google already verified the address before issuing the ID token,
+          // so we trust it as verified without our own email loop.
+          emailVerified: new Date(),
+          kvkkAccepted: true,
+          kvkkVersion: "1.0",
+          kvkkDate: new Date(),
+        },
+      });
     },
   },
 });

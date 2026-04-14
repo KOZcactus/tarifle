@@ -1,6 +1,6 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 14 Nisan 2026 (Faz 2 — E-posta doğrulama + Rozet sistemi)
+> Son güncelleme: 14 Nisan 2026 (kayıt akışı bug fix + Resend canlıda)
 
 ## Yapılanlar
 
@@ -105,6 +105,15 @@
 
 **Sonraki review pass'larda**: rate limiting (Upstash Redis), a11y overhaul (Escape/focus trap), lint+test altyapısı, ingredient synonym/token tablosu.
 
+## Pass 4 — Kayıt akışı bug fix + Resend prod ✅
+
+- [x] **Register navbar bug**: Kayıttan sonra navbar "Giriş yap" göstermeye devam ediyor, F5 sonrası düzeliyordu.
+  - Sebep: `registerUser` server action'ında `signIn("credentials", { redirectTo: "/" })` çağrısı `NEXT_REDIRECT` fırlatıyor; cookie set ama SessionProvider tazelenmiyor.
+  - Çözüm: Server action sadece hesap+doğrulama maili yapar, signIn'i client'a bıraktık. `RegisterForm` artık LoginForm pattern'i uyguluyor: `signIn("credentials", { redirect: false })` + `router.refresh()` + `router.push("/")`.
+  - Preview doğrulandı: `/api/auth/session` yeni kullanıcıyı dönüyor, navbar avatar anında logged-in state'e geçiyor.
+- [x] **Resend production**: Domain tarifle.app verify edildi (Ireland region), DNS records Cloudflare'e one-click ile eklendi, API key üretildi ve hem `.env.local` hem Vercel env vars'a kondu. Mail gerçek kullanıcılara gidiyor.
+- [x] **middleware.ts kaldırıldı**: no-op idi, Next 16 deprecation uyarısı veriyordu. Proxy'e rename yerine direkt sildik.
+
 ## Faz 2 — E-posta Doğrulama + Rozet Sistemi ✅
 
 - [x] **Email provider abstraction** (`src/lib/email/`):
@@ -162,19 +171,22 @@
 
 ## Sıradaki İşler
 
-- [ ] Google OAuth bağlantısı (Google Cloud Console'dan credentials alınacak)
+- [ ] **Secret rotasyonu** (acil): DATABASE_URL şifresi + AUTH_SECRET sohbette paylaşıldı, ikisi de yenilenmeli. Neon → Reset password; `openssl rand -base64 32` → yeni AUTH_SECRET; `.env.local` + Vercel güncelle. Yan etki: tüm aktif oturumlar düşer.
 - [ ] **Rate limiting** (public launch öncesi son güvenlik pass — Upstash Redis öneri)
 - [ ] **A11y overhaul** (Escape/focus trap/ARIA roles)
-- [ ] Lint + test altyapısı (next 16 lint kırık)
+- [ ] **Lint + test altyapısı** (next 16 lint config kırık; vitest kurulu ama test dosyası yok — kritik paths için unit test yaz: `lib/ai/matcher`, `lib/moderation/blacklist`, `lib/email/verification`, `lib/badges/service`)
+- [ ] **Google OAuth bağlantısı** (Google Cloud Console'dan credentials alınacak)
 - [ ] AI Asistan v2: ingredient synonym/token tablosu
-- [ ] Gelişmiş moderasyon — Faz 2
+- [ ] Gelişmiş moderasyon — Faz 2 (AI destekli ön-sınıflandırma)
 - [ ] Şablon video sistemi (Remotion) — Faz 2/3
+- [ ] Bildirim sistemi — Faz 2 (rapor sonucu, varyasyon beğenisi için in-app)
 
 ## Karar Bekleyenler
 
-- E-posta doğrulaması MVP'de zorunlu mu yoksa opsiyonel mi?
+- E-posta doğrulaması MVP'de zorunlu mu yoksa opsiyonel mi? (Şu an opsiyonel — doğrulanmamış kullanıcı her şeyi yapabiliyor, sadece rozet eksik)
 - AI video için aylık deneme bütçesi belirlenecek mi?
 - İlk tarif veri setine kullanıcının özel tarifleri de eklensin mi?
+- Gelişmiş moderasyonda AI (Claude Haiku) kullanmadan kural-tabanlı mı gidelim?
 
 ## Bilinen Sorunlar
 
@@ -195,6 +207,8 @@
 - Next.js 16.2.3, React 19.2.4, Tailwind CSS 4
 - Prisma 7.7.0 + @prisma/adapter-neon + @neondatabase/serverless
 - Auth.js v5 (next-auth@5.0.0-beta.30) — JWT strategy, Credentials provider aktif
-- Middleware'de Prisma import edilemez (Vercel Edge 1MB limiti) — auth kontrolleri sayfa seviyesinde
+- **middleware.ts kaldırıldı** (Next 16'da `proxy.ts` önerilir, bizde no-op'tu, tamamen sildik)
 - Light mode varsayılan, dark mode `[data-theme="dark"]`
 - Seed script: `npx tsx prisma/seed.ts` (DATABASE_URL env var gerekli)
+- **Resend**: `RESEND_API_KEY` env'de → `ResendEmailProvider` aktif, yoksa `ConsoleEmailProvider` (dev fallback). From: `Tarifle <noreply@tarifle.app>`
+- **Server action'dan signIn çağırmak sorunlu**: Auth.js v5'te `signIn("...", { redirectTo })` server action içinde NEXT_REDIRECT fırlatır; SessionProvider tazelenmez, client'ta "giriş yapılmamış" görünmeye devam eder. Her zaman client-side `signIn({ redirect: false })` + `router.refresh()` + `router.push(...)` pattern'ini kullan.

@@ -1,28 +1,13 @@
-import { auth } from "@/lib/auth";
 import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-const PROTECTED_ROUTES = ["/profil"];
-const AUTH_ROUTES = ["/giris", "/kayit"];
+// Auth kontrolu sayfa seviyesinde yapiliyor (server component'larda auth() ile).
+// Middleware sadece genel routing icin kullanilir.
+// Prisma Client edge runtime'da cok buyuk oldugu icin middleware'de auth() kullanmiyoruz.
 
-export default auth((req) => {
-  const { pathname } = req.nextUrl;
-  const isLoggedIn = !!req.auth;
-
-  const isProtected = PROTECTED_ROUTES.some((route) => pathname.startsWith(route));
-  const isAuthRoute = AUTH_ROUTES.some((route) => pathname.startsWith(route));
-
-  if (isProtected && !isLoggedIn) {
-    const loginUrl = new URL("/giris", req.url);
-    loginUrl.searchParams.set("callbackUrl", pathname);
-    return NextResponse.redirect(loginUrl);
-  }
-
-  if (isAuthRoute && isLoggedIn) {
-    return NextResponse.redirect(new URL("/", req.url));
-  }
-
+export function middleware(_request: NextRequest) {
   return NextResponse.next();
-});
+}
 
 export const config = {
   matcher: ["/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)"],

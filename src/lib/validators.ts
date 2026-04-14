@@ -54,9 +54,83 @@ export const reportSchema = z.object({
   description: z.string().max(500).optional(),
 });
 
+/**
+ * URL segments the username must not clash with — otherwise /profil/<foo>
+ * would shadow /profil/me, /ayarlar would be unreachable, etc. Keep in sync
+ * with actual route directories under src/app/.
+ */
+export const RESERVED_USERNAMES: readonly string[] = [
+  "admin",
+  "administrator",
+  "moderator",
+  "mod",
+  "api",
+  "auth",
+  "tarifle",
+  "tarif",
+  "tarifler",
+  "bildirimler",
+  "ayarlar",
+  "giris",
+  "kayit",
+  "dogrula",
+  "profil",
+  "kesfet",
+  "kategori",
+  "kategoriler",
+  "ai-asistan",
+  "koleksiyon",
+  "alisveris-listesi",
+  "hakkimizda",
+  "kvkk",
+  "gizlilik",
+  "kullanim-sartlari",
+  "me",
+  "self",
+  "user",
+  "users",
+  "test",
+  "system",
+  "support",
+  "help",
+  "_next",
+  "public",
+] as const;
+
+const reservedSet = new Set(RESERVED_USERNAMES);
+
 export const profileUpdateSchema = z.object({
-  name: z.string().min(2).max(100).optional(),
-  bio: z.string().max(300).optional(),
+  name: z
+    .string()
+    .trim()
+    .min(2, "İsim en az 2 karakter olmalıdır")
+    .max(100, "İsim en fazla 100 karakter olabilir"),
+  username: z
+    .string()
+    .trim()
+    .toLowerCase()
+    .min(3, "Kullanıcı adı en az 3 karakter olmalıdır")
+    .max(30, "Kullanıcı adı en fazla 30 karakter olabilir")
+    // Lowercase ASCII + digit + underscore + hyphen. No diacritics; these
+    // appear in the URL path and must round-trip through basic routers,
+    // OGs, and share URLs cleanly.
+    .regex(
+      /^[a-z][a-z0-9_-]*$/,
+      "Kullanıcı adı harfle başlamalı; sadece küçük harf, rakam, _ veya - içerebilir",
+    )
+    .refine((v) => !reservedSet.has(v), {
+      message: "Bu kullanıcı adı sistem için ayrılmış, farklı bir tane seç",
+    }),
+  bio: z.preprocess(
+    // Treat blank submissions as "not set" so the DB stores null instead
+    // of an empty string. Also protects against callers sending undefined.
+    (v) => (typeof v === "string" && v.trim() === "" ? undefined : v),
+    z
+      .string()
+      .trim()
+      .max(300, "Bio en fazla 300 karakter olabilir")
+      .optional(),
+  ),
 });
 
 export const collectionSchema = z.object({

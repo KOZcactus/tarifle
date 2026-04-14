@@ -69,10 +69,18 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
           </div>
           <p className="text-sm text-text-muted">@{user.username}</p>
           {user.bio && <p className="mt-2 text-sm text-text">{user.bio}</p>}
-          <div className="mt-3 flex gap-4 text-sm text-text-muted">
+          <div className="mt-3 flex flex-wrap items-center gap-4 text-sm text-text-muted">
             <span>{user._count.variations} uyarlama</span>
             {isOwner && <span>{user._count.bookmarks} kayıtlı tarif</span>}
             <span>Üye: {formatDistanceToNow(user.createdAt)}</span>
+            {isOwner && (
+              <Link
+                href="/ayarlar"
+                className="rounded-md border border-border px-3 py-1 text-xs font-medium text-text transition-colors hover:border-primary hover:text-primary"
+              >
+                Profili düzenle
+              </Link>
+            )}
           </div>
         </div>
       </div>

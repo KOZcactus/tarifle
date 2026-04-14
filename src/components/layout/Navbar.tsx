@@ -111,6 +111,14 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
                   >
                     Alışveriş Listem
                   </Link>
+                  <Link
+                    href="/ayarlar"
+                    role="menuitem"
+                    onClick={closeProfile}
+                    className="block px-4 py-2 text-sm text-text hover:bg-bg-elevated focus-visible:bg-bg-elevated focus-visible:outline-none"
+                  >
+                    Ayarlar
+                  </Link>
                   {(session.user.role === "ADMIN" || session.user.role === "MODERATOR") && (
                     <Link
                       href="/admin"
@@ -206,6 +214,13 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
                   className="rounded-lg px-3 py-2 text-sm font-medium text-text-muted transition-colors hover:bg-bg-card hover:text-text"
                 >
                   Alışveriş Listem
+                </Link>
+                <Link
+                  href="/ayarlar"
+                  onClick={() => setIsMobileOpen(false)}
+                  className="rounded-lg px-3 py-2 text-sm font-medium text-text-muted transition-colors hover:bg-bg-card hover:text-text"
+                >
+                  Ayarlar
                 </Link>
                 {(session.user.role === "ADMIN" || session.user.role === "MODERATOR") && (
                   <Link

@@ -65,6 +65,32 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* AI Assistant Banner */}
+      <section className="pt-4">
+        <Link
+          href="/ai-asistan"
+          className="group flex flex-col items-start gap-4 rounded-2xl border border-accent-blue/20 bg-gradient-to-br from-accent-blue/10 via-accent-blue/5 to-transparent p-6 transition-all hover:border-accent-blue/40 hover:shadow-md sm:flex-row sm:items-center sm:gap-6"
+        >
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-accent-blue/15 text-3xl">
+            🧠
+          </div>
+          <div className="flex-1">
+            <p className="text-xs font-medium uppercase tracking-wide text-accent-blue">
+              AI Asistan
+            </p>
+            <h3 className="mt-0.5 font-heading text-xl font-bold text-text sm:text-2xl">
+              Elindeki malzemeleri yaz, tarif al
+            </h3>
+            <p className="mt-1 text-sm text-text-muted">
+              Dolabında ne varsa söyle — sana en uygun tarifleri ve eksiklerini gösterelim.
+            </p>
+          </div>
+          <span className="ml-auto rounded-lg border border-accent-blue/30 bg-bg-card px-4 py-2 text-sm font-medium text-accent-blue transition-colors group-hover:bg-accent-blue group-hover:text-white">
+            Dene →
+          </span>
+        </Link>
+      </section>
+
       {/* Featured Recipes */}
       {featured.length > 0 && (
         <section className="py-12">

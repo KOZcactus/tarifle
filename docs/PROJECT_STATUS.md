@@ -1,6 +1,6 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 14 Nisan 2026 (Faz 2 — OG Image + Paylaşım + PWA)
+> Son güncelleme: 14 Nisan 2026 (Faz 2 — AI Asistan kural tabanlı)
 
 ## Yapılanlar
 
@@ -91,6 +91,22 @@
 - [x] Root layout: viewport themeColor (light/dark), applicationName, appleWebApp, icons
 - [x] SITE_URL fallback: `tarifle.com` → `tarifle.app`
 
+## Faz 2 — AI Asistan (kural tabanlı) ✅
+
+- [x] `AiProvider` interface — Claude/başka model eklendiğinde sadece factory değişecek
+- [x] `RuleBasedProvider` — DB filtreleme + TR-aware malzeme eşleştirme
+  - Token-prefix matching (substring false positive yok)
+  - İsteğe bağlı malzemeler (isOptional) puana etki etmez
+  - Pantry staples modu (tuz/karabiber/su/yağ)
+  - Skor: matchedRequired / totalRequired (0-1)
+- [x] `/ai-asistan` sayfası: chip input, tür/süre/zorluk filtreleri, pantry toggle
+- [x] Sonuç kartları: %eşleşme rozeti, eksik malzeme listesi, "Tüm malzemeler elinde!" mesajı
+- [x] Asistan yorumu: perfect eşleşme sayısı, fallback mesajı
+- [x] Ana sayfa: AI Asistan banner (mavi gradient, hero altında)
+- [x] Navbar: "AI Asistan" linki (desktop + mobile)
+- [x] `scripts/test-ai.ts` — smoke test: basit malzeme / sıfır eşleşme / filtreli senaryolar
+- [x] Claude Haiku entegrasyonu: TODO (plan: `ANTHROPIC_API_KEY` geldiğinde factory'de switch, AI yorum katmanı)
+
 ## Devam Edenler
 
 ## Tamamlanan Seed Verisi
@@ -103,7 +119,7 @@
 
 - [ ] Google OAuth bağlantısı (Google Cloud Console'dan credentials alınacak)
 - [ ] E-posta doğrulama + Rozet sistemi — Faz 2
-- [ ] AI Asistan (malzeme → tarif önerisi) — Faz 2
+- [ ] Claude Haiku entegrasyonu (AI yorum katmanı) — Faz 2
 - [ ] Gelişmiş moderasyon (AI destekli) — Faz 2
 - [ ] Şablon video sistemi (Remotion) — Faz 2/3
 

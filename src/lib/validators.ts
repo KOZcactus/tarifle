@@ -73,6 +73,30 @@ export const shoppingListItemSchema = z.object({
   unit: z.string().max(50).optional(),
 });
 
+export const aiSuggestSchema = z.object({
+  ingredients: z
+    .array(z.string().min(1).max(80))
+    .min(1, "En az bir malzeme gir.")
+    .max(20, "En fazla 20 malzeme girebilirsin."),
+  type: z
+    .enum([
+      "YEMEK",
+      "TATLI",
+      "ICECEK",
+      "KOKTEYL",
+      "APERATIF",
+      "SALATA",
+      "CORBA",
+      "KAHVALTI",
+      "ATISTIRMALIK",
+      "SOS",
+    ])
+    .optional(),
+  difficulty: z.enum(["EASY", "MEDIUM", "HARD"]).optional(),
+  maxMinutes: z.number().int().positive().max(480).optional(),
+  assumePantryStaples: z.boolean().optional(),
+});
+
 export type LoginInput = z.infer<typeof loginSchema>;
 export type RegisterInput = z.infer<typeof registerSchema>;
 export type VariationInput = z.infer<typeof variationSchema>;
@@ -80,3 +104,4 @@ export type ReportInput = z.infer<typeof reportSchema>;
 export type ProfileUpdateInput = z.infer<typeof profileUpdateSchema>;
 export type CollectionInput = z.infer<typeof collectionSchema>;
 export type ShoppingListItemInput = z.infer<typeof shoppingListItemSchema>;
+export type AiSuggestInput = z.infer<typeof aiSuggestSchema>;

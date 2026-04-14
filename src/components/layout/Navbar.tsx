@@ -9,6 +9,7 @@ import { SITE_NAME } from "@/lib/constants";
 const NAV_LINKS = [
   { href: "/tarifler", label: "Tarifler" },
   { href: "/kesfet", label: "Keşfet" },
+  { href: "/ai-asistan", label: "AI Asistan" },
 ] as const;
 
 export function Navbar() {

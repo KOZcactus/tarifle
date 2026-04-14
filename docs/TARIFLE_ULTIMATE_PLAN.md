@@ -1,10 +1,12 @@
 # Tarifle — Ultimate Proje Dokümanı
 
-> Son güncelleme: 13 Nisan 2026
-> Durum: Planlama tamamlandı, geliştirmeye hazır
-> Versiyon: 1.0
+> Son güncelleme: 15 Nisan 2026
+> Durum: MVP 0.1/0.2/0.3 canlıda, Faz 2'nin büyük çoğunluğu tamamlandı
+> Versiyon: 1.1
 
 Bu doküman Tarifle projesinin tek kaynak belgesidir (Single Source of Truth). Yeni özellik eklerken, teknik karar değiştirirken veya yol haritasını güncellerken önce buraya bakılır ve buradan güncellenir.
+
+> **Terminoloji (15 Nisan 2026):** UI'da "varyasyon" yerine **"uyarlama"** kullanılıyor — aşağıdaki metinde "varyasyon" geçen her yer UI'da "uyarlama" olarak okunur. Teknik isimler (Prisma `Variation` modeli, `variationId` field'ı, `/api/variations` endpoint'i) İngilizce haliyle kalır.
 
 ---
 

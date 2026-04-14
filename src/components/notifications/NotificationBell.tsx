@@ -50,27 +50,28 @@ export function NotificationBell({
    * transition. On error we roll back so the badge reappears — silent sync
    * failures would be worse than a stale badge.
    *
-   * This lives in the click handler rather than a useEffect because the
-   * "run this when open flips to true" pattern is exactly what React 19's
-   * no-setState-in-effect rule targets — handlers are the correct home.
+   * setOpen is called flat (no updater callback) so the surrounding setItems/
+   * setUnreadCount aren't nested inside another setter's callback, which
+   * would be undefined-behaviour territory in React.
    */
   const handleToggle = () => {
-    setOpen((wasOpen) => {
-      if (wasOpen) return false;
-      const unreadIds = items.filter((i) => !i.isRead).map((i) => i.id);
-      if (unreadIds.length > 0) {
-        setItems((prev) => prev.map((i) => ({ ...i, isRead: true })));
-        setUnreadCount(0);
-        startTransition(async () => {
-          const result = await markNotificationsReadAction(unreadIds);
-          if (!result.success) {
-            setItems(initialItems);
-            setUnreadCount(initialUnreadCount);
-          }
-        });
-      }
-      return true;
-    });
+    if (open) {
+      setOpen(false);
+      return;
+    }
+    const unreadIds = items.filter((i) => !i.isRead).map((i) => i.id);
+    if (unreadIds.length > 0) {
+      setItems((prev) => prev.map((i) => ({ ...i, isRead: true })));
+      setUnreadCount(0);
+      startTransition(async () => {
+        const result = await markNotificationsReadAction(unreadIds);
+        if (!result.success) {
+          setItems(initialItems);
+          setUnreadCount(initialUnreadCount);
+        }
+      });
+    }
+    setOpen(true);
   };
 
   const handleMarkAll = () => {

@@ -91,7 +91,7 @@
 - [x] Root layout: viewport themeColor (light/dark), applicationName, appleWebApp, icons
 - [x] SITE_URL fallback: `tarifle.com` → `tarifle.app`
 
-## Faz 2 — AI Asistan (kural tabanlı) ✅
+## Faz 2 — AI Asistan (kural tabanlı, AI-gibi) ✅
 
 - [x] `AiProvider` interface — Claude/başka model eklendiğinde sadece factory değişecek
 - [x] `RuleBasedProvider` — DB filtreleme + TR-aware malzeme eşleştirme
@@ -101,11 +101,16 @@
   - Skor: matchedRequired / totalRequired (0-1)
 - [x] `/ai-asistan` sayfası: chip input, tür/süre/zorluk filtreleri, pantry toggle
 - [x] Sonuç kartları: %eşleşme rozeti, eksik malzeme listesi, "Tüm malzemeler elinde!" mesajı
-- [x] Asistan yorumu: perfect eşleşme sayısı, fallback mesajı
+- [x] **AI-hissi commentary** (`src/lib/ai/commentary.ts`):
+  - Senaryoya göre 3-5 varyant (0 sonuç / 1 tam / 2 tam / 3+ tam / 1 eksik / genel)
+  - Seed-based picking — aynı input aynı yorumu üretir ama farklı inputlar farklı hisseder
+  - "Yapay zekasız" disclaimer'ı yok — kullanıcıya AI gibi sunulur
+- [x] **Per-recipe notes**: "Zirvedeki seçenek", "En hızlı seçenek", "Sadece X eksik", "Sabır ister ama sonucu etkileyici" gibi roller
+- [x] "Düşünüyor…" typing dots animasyonu form submit sırasında
 - [x] Ana sayfa: AI Asistan banner (mavi gradient, hero altında)
 - [x] Navbar: "AI Asistan" linki (desktop + mobile)
-- [x] `scripts/test-ai.ts` — smoke test: basit malzeme / sıfır eşleşme / filtreli senaryolar
-- [x] Claude Haiku entegrasyonu: TODO (plan: `ANTHROPIC_API_KEY` geldiğinde factory'de switch, AI yorum katmanı)
+- [x] `scripts/test-ai.ts` — smoke test
+- [x] **Karar**: Claude Haiku entegrasyonu şimdilik YAPILMAYACAK — kural tabanlı motor AI-gibi sunuluyor, masraf sıfır
 
 ## Devam Edenler
 
@@ -119,8 +124,7 @@
 
 - [ ] Google OAuth bağlantısı (Google Cloud Console'dan credentials alınacak)
 - [ ] E-posta doğrulama + Rozet sistemi — Faz 2
-- [ ] Claude Haiku entegrasyonu (AI yorum katmanı) — Faz 2
-- [ ] Gelişmiş moderasyon (AI destekli) — Faz 2
+- [ ] Gelişmiş moderasyon — Faz 2
 - [ ] Şablon video sistemi (Remotion) — Faz 2/3
 
 ## Karar Bekleyenler

@@ -18,6 +18,7 @@ async function main(): Promise<void> {
     console.log(
       ` - ${s.title} (${s.categoryName}): %${Math.round(s.matchScore * 100)} | eksik: ${s.missingIngredients.length}`,
     );
+    if (s.note) console.log(`     note: "${s.note}"`);
   }
 
   console.log("\n--- Test 2: uydurma malzemeler ---");

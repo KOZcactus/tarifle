@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { computeMatch } from "./matcher";
+import { assignRecipeNotes, buildOverallCommentary } from "./commentary";
 import type {
   AiProvider,
   AiSuggestInput,
@@ -68,29 +69,13 @@ export class RuleBasedProvider implements AiProvider {
       })
       .slice(0, MAX_RESULTS);
 
-    const commentary = buildCommentary(input.ingredients, scored);
+    const withNotes = assignRecipeNotes(scored);
+    const commentary = buildOverallCommentary(input.ingredients, withNotes);
 
     return {
-      suggestions: scored,
+      suggestions: withNotes,
       commentary,
       provider: "rule-based",
     };
   }
-}
-
-function buildCommentary(
-  userIngredients: string[],
-  results: AiSuggestion[],
-): string {
-  if (results.length === 0) {
-    return `${userIngredients.length} malzemenle eşleşen tarif bulamadık. Daha az filtre dene ya da malzeme listene birkaç şey ekle.`;
-  }
-
-  const perfect = results.filter((r) => r.missingIngredients.length === 0).length;
-  if (perfect > 0) {
-    return `Elinde olanlarla yapabileceğin ${perfect} tarif buldum. Aşağıda en iyi eşleşmeleri sıraladım.`;
-  }
-
-  const topMissing = results[0].missingIngredients.length;
-  return `Tam eşleşme yok — ama en yakın tarif için sadece ${topMissing} malzeme eksik.`;
 }

@@ -220,9 +220,26 @@ export function AiAssistantForm() {
         <button
           type="submit"
           disabled={isPending}
-          className="mt-5 w-full rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-hover disabled:opacity-50 sm:w-auto"
+          className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-hover disabled:opacity-75 sm:w-auto"
         >
-          {isPending ? "Aranıyor…" : "Tarif öner"}
+          {isPending ? (
+            <>
+              <span className="inline-flex gap-0.5" aria-hidden="true">
+                <span className="h-1.5 w-1.5 animate-[pulse_1.4s_ease-in-out_infinite] rounded-full bg-white" />
+                <span
+                  className="h-1.5 w-1.5 animate-[pulse_1.4s_ease-in-out_0.2s_infinite] rounded-full bg-white"
+                  style={{ animationDelay: "0.2s" }}
+                />
+                <span
+                  className="h-1.5 w-1.5 animate-[pulse_1.4s_ease-in-out_0.4s_infinite] rounded-full bg-white"
+                  style={{ animationDelay: "0.4s" }}
+                />
+              </span>
+              Düşünüyor…
+            </>
+          ) : (
+            "Tarif öner"
+          )}
         </button>
       </form>
 
@@ -231,15 +248,10 @@ export function AiAssistantForm() {
         <section>
           {result.commentary && (
             <div className="mb-6 rounded-xl border border-accent-blue/30 bg-accent-blue/5 p-4">
-              <p className="text-sm text-text">
+              <p className="text-sm leading-relaxed text-text">
                 <span className="mr-1 font-semibold text-accent-blue">🧠 Asistan:</span>
                 {result.commentary}
               </p>
-              {result.provider === "rule-based" && (
-                <p className="mt-1 text-xs text-text-muted">
-                  Malzemelere göre veri tabanı eşleştirmesi (yapay zekasız).
-                </p>
-              )}
             </div>
           )}
 
@@ -332,6 +344,9 @@ function SuggestionCard({
           <p className="text-xs font-medium text-accent-green">
             ✓ Tüm malzemeler elinde!
           </p>
+        )}
+        {s.note && (
+          <p className="mt-0.5 text-xs italic text-accent-blue">— {s.note}</p>
         )}
       </div>
     </Link>

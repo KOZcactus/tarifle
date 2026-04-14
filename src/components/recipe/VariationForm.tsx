@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useCallback, useEffect, useState, useTransition } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { createVariation } from "@/lib/actions/variation";
@@ -17,6 +17,23 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
   const [isPending, startTransition] = useTransition();
+
+  const close = useCallback(() => setIsOpen(false), []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const handler = (e: KeyboardEvent) => {
+      // Don't steal Escape when the user is typing in a textarea/input —
+      // some browsers open inline IMEs or spellcheck menus on Escape. Only
+      // close when focus is outside inputs.
+      const target = e.target as HTMLElement | null;
+      const tag = target?.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+      if (e.key === "Escape") close();
+    };
+    document.addEventListener("keydown", handler);
+    return () => document.removeEventListener("keydown", handler);
+  }, [isOpen, close]);
 
   if (!session?.user) {
     return (
@@ -93,6 +110,7 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
             name="miniTitle"
             type="text"
             required
+            autoFocus
             maxLength={200}
             className="w-full rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
             placeholder="ör: Fırında versiyonu, Vegan alternatif..."

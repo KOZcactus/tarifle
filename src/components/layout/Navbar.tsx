@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useSession, signOut } from "next-auth/react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { SITE_NAME } from "@/lib/constants";
+import { useDismiss } from "@/hooks/useDismiss";
 
 const NAV_LINKS = [
   { href: "/tarifler", label: "Tarifler" },
@@ -16,6 +17,21 @@ export function Navbar() {
   const { data: session } = useSession();
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+
+  const closeProfile = useCallback(() => setIsProfileOpen(false), []);
+  const closeMobile = useCallback(() => setIsMobileOpen(false), []);
+
+  const profileRef = useDismiss<HTMLDivElement>({
+    isOpen: isProfileOpen,
+    onClose: closeProfile,
+  });
+  const mobileRef = useDismiss<HTMLDivElement>({
+    isOpen: isMobileOpen,
+    onClose: closeMobile,
+    // Mobile menu covers a strip under the navbar — outside-click would
+    // dismiss on every scroll drag. Keyboard Escape is enough.
+    disableOutsideClick: true,
+  });
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-bg/80 backdrop-blur-md">
@@ -46,10 +62,13 @@ export function Navbar() {
           <ThemeToggle />
 
           {session?.user ? (
-            <div className="relative">
+            <div className="relative" ref={profileRef}>
               <button
-                onClick={() => setIsProfileOpen(!isProfileOpen)}
-                className="hidden items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm font-medium text-text transition-colors hover:bg-bg-card md:flex"
+                onClick={() => setIsProfileOpen((v) => !v)}
+                aria-haspopup="menu"
+                aria-expanded={isProfileOpen}
+                aria-controls="profile-menu"
+                className="hidden items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm font-medium text-text transition-colors hover:bg-bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary md:flex"
               >
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
                   {session.user.name?.charAt(0).toUpperCase() || "U"}
@@ -57,33 +76,42 @@ export function Navbar() {
                 {session.user.name?.split(" ")[0] || "Kullanıcı"}
               </button>
               {isProfileOpen && (
-                <div className="absolute right-0 top-full mt-2 w-52 rounded-lg border border-border bg-bg-card py-1 shadow-lg">
+                <div
+                  id="profile-menu"
+                  role="menu"
+                  aria-label="Kullanıcı menüsü"
+                  className="absolute right-0 top-full mt-2 w-52 rounded-lg border border-border bg-bg-card py-1 shadow-lg"
+                >
                   <Link
                     href={`/profil/${session.user.username}`}
-                    onClick={() => setIsProfileOpen(false)}
-                    className="block px-4 py-2 text-sm text-text hover:bg-bg-elevated"
+                    role="menuitem"
+                    onClick={closeProfile}
+                    className="block px-4 py-2 text-sm text-text hover:bg-bg-elevated focus-visible:bg-bg-elevated focus-visible:outline-none"
                   >
                     Profilim
                   </Link>
                   <Link
                     href="/alisveris-listesi"
-                    onClick={() => setIsProfileOpen(false)}
-                    className="block px-4 py-2 text-sm text-text hover:bg-bg-elevated"
+                    role="menuitem"
+                    onClick={closeProfile}
+                    className="block px-4 py-2 text-sm text-text hover:bg-bg-elevated focus-visible:bg-bg-elevated focus-visible:outline-none"
                   >
                     Alışveriş Listem
                   </Link>
                   {(session.user.role === "ADMIN" || session.user.role === "MODERATOR") && (
                     <Link
                       href="/admin"
-                      onClick={() => setIsProfileOpen(false)}
-                      className="block px-4 py-2 text-sm text-primary hover:bg-bg-elevated"
+                      role="menuitem"
+                      onClick={closeProfile}
+                      className="block px-4 py-2 text-sm text-primary hover:bg-bg-elevated focus-visible:bg-bg-elevated focus-visible:outline-none"
                     >
                       Yönetim Paneli
                     </Link>
                   )}
                   <button
+                    role="menuitem"
                     onClick={() => signOut({ callbackUrl: "/" })}
-                    className="block w-full px-4 py-2 text-left text-sm text-error hover:bg-bg-elevated"
+                    className="block w-full px-4 py-2 text-left text-sm text-error hover:bg-bg-elevated focus-visible:bg-bg-elevated focus-visible:outline-none"
                   >
                     Çıkış Yap
                   </button>
@@ -101,9 +129,11 @@ export function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-border transition-colors hover:bg-bg-card md:hidden"
-            aria-label="Menüyü aç"
+            onClick={() => setIsMobileOpen((v) => !v)}
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-border transition-colors hover:bg-bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary md:hidden"
+            aria-label={isMobileOpen ? "Menüyü kapat" : "Menüyü aç"}
+            aria-expanded={isMobileOpen}
+            aria-controls="mobile-menu"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -132,7 +162,11 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileOpen && (
-        <div className="border-t border-border px-4 py-4 md:hidden">
+        <div
+          id="mobile-menu"
+          ref={mobileRef}
+          className="border-t border-border px-4 py-4 md:hidden"
+        >
           <div className="flex flex-col gap-3">
             {NAV_LINKS.map((link) => (
               <Link

@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState, useTransition } from "react";
+import { useCallback, useEffect, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import {
   deleteCollectionAction,
   updateCollectionAction,
 } from "@/lib/actions/collection";
+import { useFocusTrap } from "@/hooks/useFocusTrap";
 
 interface CollectionActionsProps {
   collection: {
@@ -27,16 +28,18 @@ export function CollectionActions({ collection, username }: CollectionActionsPro
   const [isPublic, setIsPublic] = useState(collection.isPublic);
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
-  const dialogRef = useRef<HTMLDivElement>(null);
+
+  const closeDialog = useCallback(() => setIsEditing(false), []);
+  const dialogRef = useFocusTrap<HTMLDivElement>(isEditing);
 
   useEffect(() => {
     if (!isEditing) return;
     const handler = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setIsEditing(false);
+      if (e.key === "Escape") closeDialog();
     };
     document.addEventListener("keydown", handler);
     return () => document.removeEventListener("keydown", handler);
-  }, [isEditing]);
+  }, [isEditing, closeDialog]);
 
   function handleSave(e: React.FormEvent) {
     e.preventDefault();
@@ -92,16 +95,21 @@ export function CollectionActions({ collection, username }: CollectionActionsPro
       {isEditing && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
-          onClick={() => setIsEditing(false)}
+          onClick={closeDialog}
         >
           <div
             ref={dialogRef}
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
-            className="w-full max-w-md rounded-xl border border-border bg-bg-card p-6 shadow-xl"
+            aria-labelledby="collection-edit-title"
+            tabIndex={-1}
+            className="w-full max-w-md rounded-xl border border-border bg-bg-card p-6 shadow-xl focus:outline-none"
           >
-            <h2 className="mb-4 font-heading text-lg font-bold text-text">
+            <h2
+              id="collection-edit-title"
+              className="mb-4 font-heading text-lg font-bold text-text"
+            >
               Koleksiyonu düzenle
             </h2>
 

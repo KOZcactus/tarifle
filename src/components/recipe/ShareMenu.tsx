@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { useDismiss } from "@/hooks/useDismiss";
 
 interface ShareMenuProps {
   title: string;
@@ -18,22 +19,16 @@ export function ShareMenu({ title, url, text }: ShareMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const [hasNativeShare, setHasNativeShare] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
+
+  const closeMenu = useCallback(() => setIsOpen(false), []);
+  const menuRef = useDismiss<HTMLDivElement>({
+    isOpen: isOpen && !hasNativeShare,
+    onClose: closeMenu,
+  });
 
   useEffect(() => {
     setHasNativeShare(typeof navigator !== "undefined" && "share" in navigator);
   }, []);
-
-  useEffect(() => {
-    if (!isOpen) return;
-    const handler = (e: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, [isOpen]);
 
   async function handleNativeShare() {
     try {

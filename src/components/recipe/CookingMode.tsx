@@ -138,7 +138,12 @@ export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProp
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-bg">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={`Pişirme modu: ${recipeTitle}`}
+      className="fixed inset-0 z-50 flex flex-col bg-bg"
+    >
       {/* Header */}
       <header className="flex items-center justify-between border-b border-border px-4 py-3 sm:px-6">
         <div className="flex items-center gap-2">

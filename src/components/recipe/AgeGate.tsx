@@ -32,12 +32,18 @@ export function AgeGate({ children }: AgeGateProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-      <div className="mx-4 w-full max-w-md rounded-2xl bg-bg p-8 text-center shadow-2xl">
-        <span className="mb-4 inline-block text-5xl">🍸</span>
-        <h2 className="font-heading text-xl font-bold text-text">
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="age-gate-title"
+        aria-describedby="age-gate-desc"
+        className="mx-4 w-full max-w-md rounded-2xl bg-bg p-8 text-center shadow-2xl"
+      >
+        <span aria-hidden="true" className="mb-4 inline-block text-5xl">🍸</span>
+        <h2 id="age-gate-title" className="font-heading text-xl font-bold text-text">
           Yaş Doğrulama
         </h2>
-        <p className="mt-3 text-sm text-text-muted">
+        <p id="age-gate-desc" className="mt-3 text-sm text-text-muted">
           Bu tarif alkollü içecek içermektedir. İçeriği görüntülemek için 18 yaşından büyük
           olduğunuzu onaylamanız gerekmektedir.
         </p>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useTransition } from "react";
+import { useCallback, useEffect, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { toggleBookmarkAction } from "@/lib/actions/bookmark";
@@ -9,6 +9,7 @@ import {
   toggleRecipeInCollectionAction,
 } from "@/lib/actions/collection";
 import { addRecipeIngredientsAction } from "@/lib/actions/shopping-list";
+import { useDismiss } from "@/hooks/useDismiss";
 
 interface CollectionSummary {
   id: string;
@@ -43,18 +44,15 @@ export function SaveMenu({
   const [newCollectionName, setNewCollectionName] = useState("");
   const [toast, setToast] = useState<Toast>(null);
   const [isPending, startTransition] = useTransition();
-  const menuRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!isOpen) return;
-    const handler = (e: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, [isOpen]);
+  const closeMenu = useCallback(() => {
+    setIsOpen(false);
+    setIsCreating(false);
+  }, []);
+  const menuRef = useDismiss<HTMLDivElement>({
+    isOpen,
+    onClose: closeMenu,
+  });
 
   useEffect(() => {
     if (!toast) return;

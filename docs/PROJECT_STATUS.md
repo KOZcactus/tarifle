@@ -105,6 +105,25 @@
 
 **Sonraki review pass'larda**: rate limiting (Upstash Redis), a11y overhaul (Escape/focus trap), lint+test altyapısı, ingredient synonym/token tablosu.
 
+## Pass 6 — A11y overhaul (hook'lar + ARIA + reduced motion) ✅
+
+- [x] **`src/hooks/useDismiss.ts`** — dropdown/menü için Escape + outside-click tek hook'ta. `disableOutsideClick` option'ı mobil menü gibi "scroll drag'ı dismiss olarak okuma" durumları için.
+- [x] **`src/hooks/useFocusTrap.ts`** — gerçek modal diyaloglar için. Açılınca ilk focusable'a odaklanır, Tab/Shift+Tab container içinde döner, kapandığında odak eski elemana döner. `tabindex="-1"` mantığını doğru ele alır.
+- [x] **Navbar** — profil dropdown ve mobil menüye `useDismiss` eklendi. Profil menüsü: `role="menu"`, her item `role="menuitem"`, toggle buton `aria-haspopup="menu"` + `aria-expanded` + `aria-controls="profile-menu"`. Mobil menü: `aria-expanded` + `aria-controls` + dinamik `aria-label` ("Menüyü aç"/"Menüyü kapat"). Outside-click mobil menüde kapatıldı (scroll drag'i dismiss etmesin).
+- [x] **SaveMenu** — manuel outside-click hook'u kaldırıldı, `useDismiss` ile değiştirildi (artık Escape de kapatır). "Yeni koleksiyon oluştur" alt-formu da dropdown kapanırken resetleniyor.
+- [x] **ShareMenu** — `useDismiss`, `isOpen: isOpen && !hasNativeShare` gating korundu (native share açıkken dropdown yok). Preview doğrulama: tık → `aria-expanded=true` + menü görünür, Escape → kapandı, outside-click → kapandı.
+- [x] **CollectionActions (gerçek modal)** — `useFocusTrap` eklendi (önce focusable tabindex=-1 + başlangıç focusu ilk input'a), `aria-labelledby="collection-edit-title"` eklendi, önceki manuel Escape handler kaldı (hook ile çakışmasın diye bilinçli ikili).
+- [x] **AgeGate** — `role="dialog"` + `aria-modal="true"` + `aria-labelledby` + `aria-describedby` + emoji `aria-hidden`. Escape eklenmedi (bilinçli — alkol yaş gate'i deliberately blocking).
+- [x] **CookingMode** — root container'a `role="dialog"` + `aria-modal="true"` + dinamik `aria-label`. Escape + klavye nav zaten vardı.
+- [x] **ReportButton** — `useEffect`'te Escape listener, select'e `autoFocus`, trigger butonuna `aria-label="Bu uyarlamayı rapor et"` + `aria-expanded` + focus-visible ring.
+- [x] **VariationForm** — Escape (input içindeyken override eder, spellcheck/IME'yi bozmaz), başlık input'una `autoFocus`.
+- [x] **`globals.css`** — `@media (prefers-reduced-motion: reduce)` bloku: tüm transition/animation 0.01ms, scroll-behavior auto. WCAG 2.1 SC 2.3.3. `:focus-visible` global zaten vardı (2px primary outline).
+
+Kalan A11y işleri (gelecek pass'e):
+- Form label/hint eşleşmeleri audit (çoğu OK ama kapsamlı bir gözden geçirme gerekir)
+- Renk kontrastı WCAG AA için araç-destekli audit (light/dark mode)
+- Screen reader smoke test (VoiceOver/NVDA ile elle — manual)
+
 ## Pass 5 — Rate limiting (Upstash Redis) ✅
 
 - [x] `src/lib/rate-limit.ts` — Upstash `@upstash/ratelimit` + `@upstash/redis` sargısı.
@@ -193,7 +212,7 @@
 
 - [ ] **Secret rotasyonu** (acil): DATABASE_URL şifresi + AUTH_SECRET sohbette paylaşıldı, ikisi de yenilenmeli. Neon → Reset password; `node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"` → yeni AUTH_SECRET; `.env.local` + Vercel güncelle. Yan etki: tüm aktif oturumlar düşer.
 - [ ] **Upstash Redis provisioning**: hesap aç → Redis DB oluştur (region: eu-west-1 önerilir) → REST URL + TOKEN'ı `.env.local` + Vercel env vars'a ekle → rate limitler canlıda aktifleşir.
-- [ ] **A11y overhaul** (Escape/focus trap/ARIA roles)
+- [ ] **A11y follow-up** (form label audit, renk kontrastı WCAG AA aracı ile kontrol, screen reader elle smoke)
 - [ ] **Lint + test altyapısı** (next 16 lint config kırık; vitest kurulu ama test dosyası yok — kritik paths için unit test yaz: `lib/ai/matcher`, `lib/moderation/blacklist`, `lib/email/verification`, `lib/badges/service`)
 - [ ] **Google OAuth bağlantısı** (Google Cloud Console'dan credentials alınacak)
 - [ ] AI Asistan v2: ingredient synonym/token tablosu

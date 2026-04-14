@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useCallback, useEffect, useState, useTransition } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { createReport } from "@/lib/actions/report";
@@ -26,6 +26,17 @@ export function ReportButton({ targetType, targetId }: ReportButtonProps) {
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
 
+  const close = useCallback(() => setIsOpen(false), []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") close();
+    };
+    document.addEventListener("keydown", handler);
+    return () => document.removeEventListener("keydown", handler);
+  }, [isOpen, close]);
+
   if (success) {
     return (
       <span className="text-xs text-accent-green">Raporlandı</span>
@@ -42,7 +53,9 @@ export function ReportButton({ targetType, targetId }: ReportButtonProps) {
           }
           setIsOpen(true);
         }}
-        className="text-xs text-text-muted transition-colors hover:text-error"
+        aria-label="Bu uyarlamayı rapor et"
+        aria-expanded={isOpen}
+        className="text-xs text-text-muted transition-colors hover:text-error focus-visible:text-error focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-error focus-visible:ring-offset-1 focus-visible:ring-offset-bg"
         title="Rapor et"
       >
         <FlagIcon />
@@ -89,6 +102,8 @@ export function ReportButton({ targetType, targetId }: ReportButtonProps) {
         <select
           name="reason"
           required
+          autoFocus
+          aria-label="Rapor sebebi"
           className="w-full rounded-lg border border-border bg-bg px-3 py-2 text-xs text-text focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
           defaultValue=""
         >

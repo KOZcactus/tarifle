@@ -147,3 +147,23 @@ body {
     object-fit: contain;
   }
 }
+
+/* ─── REDUCED MOTION ─────────────────────────────────────── */
+
+/*
+ * WCAG 2.1 SC 2.3.3 — kullanıcı "reduce motion" tercihi ayarladığında
+ * transition ve animasyonları iyi-niyetli değerlerle sıfırlıyoruz.
+ * Tamamen 0s yapmak bazı akışları (collapse gibi) "zıplama" olarak
+ * bozuyor; 0.01ms hem JS'in transitionend beklemesini sürdürüyor hem
+ * de görsel hareketi pratik olarak yok ediyor.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

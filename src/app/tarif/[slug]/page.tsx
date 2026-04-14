@@ -5,6 +5,7 @@ import { IngredientList } from "@/components/recipe/IngredientList";
 import { RecipeSteps } from "@/components/recipe/RecipeSteps";
 import { NutritionInfo } from "@/components/recipe/NutritionInfo";
 import { BookmarkButton } from "@/components/recipe/BookmarkButton";
+import { VariationForm } from "@/components/recipe/VariationForm";
 import { generateRecipeJsonLd } from "@/lib/seo";
 import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
 import { getRecipeBySlug, incrementViewCount } from "@/lib/queries/recipe";
@@ -203,6 +204,10 @@ export default async function TarifPage({ params }: TarifPageProps) {
             </p>
           </div>
         )}
+
+        <div className="mt-4">
+          <VariationForm recipeId={recipe.id} recipeSlug={recipe.slug} />
+        </div>
       </section>
 
       {/* View Count */}

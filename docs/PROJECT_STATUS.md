@@ -31,10 +31,12 @@
 - [x] Final seed data tamamlandı (56 tarif, 17 kategori, 15 etiket)
 - [x] Gelişmiş filtreler eklendi (süre aralığı, etiket, sıralama)
 
-## Devam Edenler
+## MVP 0.1 — Tamamlandı ✅
 
-- [ ] Responsive tasarım iyileştirmeleri (MVP 0.1)
-- [ ] Vercel'e ilk deploy (MVP 0.1 final)
+- [x] Vercel'e deploy edildi (tarifle.vercel.app)
+- [x] Custom domain bağlandı (tarifle.app — Cloudflare DNS)
+
+## Devam Edenler
 
 ## Tamamlanan Seed Verisi
 

@@ -4,9 +4,12 @@ import { Badge } from "@/components/ui/Badge";
 import { IngredientList } from "@/components/recipe/IngredientList";
 import { RecipeSteps } from "@/components/recipe/RecipeSteps";
 import { NutritionInfo } from "@/components/recipe/NutritionInfo";
+import { BookmarkButton } from "@/components/recipe/BookmarkButton";
 import { generateRecipeJsonLd } from "@/lib/seo";
 import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
 import { getRecipeBySlug, incrementViewCount } from "@/lib/queries/recipe";
+import { isBookmarked } from "@/lib/queries/user";
+import { auth } from "@/lib/auth";
 import type { Metadata } from "next";
 
 interface TarifPageProps {
@@ -29,6 +32,11 @@ export default async function TarifPage({ params }: TarifPageProps) {
   const recipe = await getRecipeBySlug(slug);
 
   if (!recipe) notFound();
+
+  const session = await auth();
+  const bookmarked = session?.user?.id
+    ? await isBookmarked(session.user.id, recipe.id)
+    : false;
 
   // Görüntülenme sayısını arka planda artır
   incrementViewCount(slug).catch(() => {});
@@ -80,6 +88,11 @@ export default async function TarifPage({ params }: TarifPageProps) {
           {recipe._count.variations > 0 && (
             <Badge variant="info">{recipe._count.variations} varyasyon</Badge>
           )}
+        </div>
+
+        {/* Bookmark */}
+        <div className="mt-4">
+          <BookmarkButton recipeId={recipe.id} initialBookmarked={bookmarked} />
         </div>
 
         {/* Tags */}
@@ -164,12 +177,32 @@ export default async function TarifPage({ params }: TarifPageProps) {
             Topluluk Varyasyonları ({recipe._count.variations})
           </h2>
         </div>
-        <div className="mt-4 rounded-xl border border-dashed border-border p-8 text-center">
-          <p className="text-text-muted">
-            Varyasyonlar, kullanıcı sistemi aktif edildiğinde burada görünecek.
-          </p>
-          <p className="mt-2 text-sm text-text-muted">MVP 0.2&apos;de gelecek.</p>
-        </div>
+        {recipe.variations && recipe.variations.length > 0 ? (
+          <div className="mt-4 space-y-4">
+            {recipe.variations.map((v) => (
+              <div key={v.id} className="rounded-xl border border-border bg-bg-card p-5">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h3 className="font-medium text-text">{v.miniTitle}</h3>
+                    {v.description && (
+                      <p className="mt-1 text-sm text-text-muted">{v.description}</p>
+                    )}
+                  </div>
+                  <span className="text-sm text-text-muted">❤️ {v.likeCount}</span>
+                </div>
+                <p className="mt-2 text-xs text-text-muted">
+                  @{v.author.username}
+                </p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="mt-4 rounded-xl border border-dashed border-border p-8 text-center">
+            <p className="text-text-muted">
+              Henüz varyasyon eklenmemiş. İlk varyasyonu sen ekle!
+            </p>
+          </div>
+        )}
       </section>
 
       {/* View Count */}

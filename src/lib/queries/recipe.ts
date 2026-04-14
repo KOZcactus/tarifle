@@ -187,6 +187,20 @@ export async function getRecipeBySlug(slug: string): Promise<RecipeDetail | null
           },
         },
       },
+      variations: {
+        where: { status: "PUBLISHED" },
+        select: {
+          id: true,
+          miniTitle: true,
+          description: true,
+          likeCount: true,
+          createdAt: true,
+          author: {
+            select: { username: true, name: true, avatarUrl: true },
+          },
+        },
+        orderBy: { likeCount: "desc" },
+      },
       _count: {
         select: { variations: true, bookmarks: true },
       },

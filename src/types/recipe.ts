@@ -73,6 +73,18 @@ export interface RecipeDetail {
       slug: string;
     };
   }[];
+  variations: {
+    id: string;
+    miniTitle: string;
+    description: string | null;
+    likeCount: number;
+    createdAt: Date;
+    author: {
+      username: string;
+      name: string | null;
+      avatarUrl: string | null;
+    };
+  }[];
   _count: {
     variations: number;
     bookmarks: number;

@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   description: "Yeni tarifler keşfet, popüler kategorileri incele ve topluluk favorilerini gör.",
 };
 
+// Rendered per-request so we always show the latest featured + popular state,
+// and — importantly — so CI builds don't need a real DATABASE_URL to prerender
+// this page. Other DB-backed pages (/, /tarifler) are already dynamic because
+// they touch auth cookies; Keşfet has no auth, which is why Next defaulted it
+// to static. Explicit `force-dynamic` makes the intent visible.
+export const dynamic = "force-dynamic";
+
 export default async function KesfetPage() {
   const [featured, quick, allCategories] = await Promise.all([
     getFeaturedRecipes(6),

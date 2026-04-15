@@ -6,6 +6,15 @@ import { prisma } from "@/lib/prisma";
 import { normalizeEmail } from "@/lib/email";
 import { sendVerificationEmail } from "@/lib/email/verification";
 import {
+  consumePasswordResetToken,
+  sendOAuthOnlyPasswordResetEmail,
+  sendPasswordResetEmail,
+} from "@/lib/email/password-reset";
+import {
+  passwordResetRequestSchema,
+  passwordResetSubmitSchema,
+} from "@/lib/validators";
+import {
   checkRateLimit,
   getClientIp,
   rateLimitIdentifier,
@@ -131,5 +140,128 @@ export async function resendVerificationEmailAction(): Promise<ActionResult> {
   if (!result.success) {
     return { success: false, error: result.error ?? "Mail gönderilemedi." };
   }
+  return { success: true };
+}
+
+/**
+ * Step 1 of the "forgot password" flow. Always returns a generic success
+ * message to the UI — never reveal whether an account exists for the given
+ * email. This stops email-enumeration via the reset endpoint.
+ *
+ * Behaviour by account state (internal, never surfaced to UI):
+ *   - user exists & has passwordHash     → send real reset link
+ *   - user exists & passwordHash is null → send informational "use Google" mail
+ *   - user does not exist                → do nothing (no DB row touched)
+ *
+ * Rate limiting uses the normalized email as the primary bucket so a single
+ * attacker cannot exhaust the limit for every victim by cycling IPs, and
+ * falls back to IP to stop a firehose of random emails from one source.
+ */
+export async function requestPasswordResetAction(
+  formData: FormData,
+): Promise<ActionResult> {
+  const parsed = passwordResetRequestSchema.safeParse({
+    email: formData.get("email"),
+  });
+  if (!parsed.success) {
+    // Invalid shape is the only case we surface an error for — otherwise the
+    // form just hangs. Missing email is a UI bug, not an enumeration vector.
+    return { success: false, error: "Geçerli bir e-posta adresi girin." };
+  }
+
+  const email = normalizeEmail(parsed.data.email);
+  const ip = await getClientIp();
+
+  // Per-email bucket (primary, survives IP rotation) and per-IP bucket
+  // (secondary, stops one IP from hammering through many victim emails).
+  const byEmail = await checkRateLimit("password-reset-request", `email:${email}`);
+  if (!byEmail.success) {
+    return { success: false, error: byEmail.message ?? "Çok fazla istek." };
+  }
+  const byIp = await checkRateLimit(
+    "password-reset-request",
+    rateLimitIdentifier(null, ip),
+  );
+  if (!byIp.success) {
+    return { success: false, error: byIp.message ?? "Çok fazla istek." };
+  }
+
+  const user = await prisma.user.findUnique({
+    where: { email },
+    select: { email: true, name: true, passwordHash: true, deletedAt: true },
+  });
+
+  // Fire-and-forget: do not block the UI on SMTP. The "always-success" UI
+  // already promises an indistinguishable response regardless of account
+  // state, so swallowing send errors does not weaken that promise.
+  if (user && !user.deletedAt) {
+    if (user.passwordHash) {
+      sendPasswordResetEmail(user.email, user.name).catch((err) => {
+        console.error("[password-reset] send failed:", err);
+      });
+    } else {
+      sendOAuthOnlyPasswordResetEmail(user.email, user.name).catch((err) => {
+        console.error("[password-reset] oauth-only send failed:", err);
+      });
+    }
+  }
+
+  return { success: true };
+}
+
+/**
+ * Step 2 of the "forgot password" flow. Consumes a reset token and sets a
+ * new bcrypt'd password on the user row in one DB transaction. Every
+ * outstanding reset token for the same email is wiped on success.
+ *
+ * Rate limit here is per-IP on token consumption — tokens are 32-byte random
+ * (base64url) so guessing one is not practical, but the limiter slows down
+ * anyone who starts spraying anyway.
+ */
+export async function resetPasswordAction(
+  formData: FormData,
+): Promise<ActionResult> {
+  const ip = await getClientIp();
+  const rate = await checkRateLimit(
+    "password-reset-consume",
+    rateLimitIdentifier(null, ip),
+  );
+  if (!rate.success) {
+    return { success: false, error: rate.message ?? "Çok fazla istek." };
+  }
+
+  const parsed = passwordResetSubmitSchema.safeParse({
+    token: formData.get("token"),
+    newPassword: formData.get("newPassword"),
+    confirmPassword: formData.get("confirmPassword"),
+  });
+  if (!parsed.success) {
+    const first = parsed.error.issues[0]?.message ?? "Geçersiz istek.";
+    return { success: false, error: first };
+  }
+
+  const passwordHash = await bcrypt.hash(parsed.data.newPassword, 12);
+  const result = await consumePasswordResetToken(parsed.data.token, passwordHash);
+
+  if (!result.success) {
+    if (result.reason === "expired") {
+      return {
+        success: false,
+        error: "Bu sıfırlama bağlantısının süresi dolmuş. Yeni bir tane iste.",
+      };
+    }
+    if (result.reason === "user-missing") {
+      return {
+        success: false,
+        error: "Bu bağlantıya ait hesap bulunamadı.",
+      };
+    }
+    return {
+      success: false,
+      error:
+        "Bu sıfırlama bağlantısı geçersiz. Daha önce kullanılmış ya da hatalı olabilir.",
+    };
+  }
+
   return { success: true };
 }

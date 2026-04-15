@@ -32,6 +32,7 @@ export function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const initialError = authErrorMessage(searchParams.get("error"));
+  const resetOk = searchParams.get("reset") === "ok";
   const [error, setError] = useState<string | null>(initialError);
   const [loading, setLoading] = useState(false);
 
@@ -62,6 +63,14 @@ export function LoginForm() {
 
   return (
     <div className="rounded-xl border border-border bg-bg-card p-6 shadow-sm">
+      {resetOk && !error && (
+        <div
+          role="status"
+          className="mb-4 rounded-lg bg-accent-green/15 px-4 py-3 text-sm text-text"
+        >
+          Şifren güncellendi. Yeni şifrenle giriş yapabilirsin.
+        </div>
+      )}
       {error && (
         <div
           role="alert"
@@ -121,9 +130,17 @@ export function LoginForm() {
         </div>
 
         <div>
-          <label htmlFor="password" className="mb-1.5 block text-sm font-medium text-text">
-            Şifre
-          </label>
+          <div className="mb-1.5 flex items-center justify-between">
+            <label htmlFor="password" className="block text-sm font-medium text-text">
+              Şifre
+            </label>
+            <Link
+              href="/sifremi-unuttum"
+              className="text-xs font-medium text-primary hover:text-primary-hover"
+            >
+              Şifremi unuttum
+            </Link>
+          </div>
           <input
             id="password"
             name="password"

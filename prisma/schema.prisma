@@ -177,6 +177,23 @@ model VerificationToken {
   @@map("verification_tokens")
 }
 
+/**
+ * Password reset tokens. Separate from VerificationToken so the two flows
+ * can have independent TTLs (reset is shorter, 1h) and so consuming one
+ * does not accidentally invalidate the other. `identifier` is the normalized
+ * email; tokens are base64url random, 32 bytes.
+ */
+model PasswordResetToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+  createdAt  DateTime @default(now())
+
+  @@unique([identifier, token])
+  @@index([identifier])
+  @@map("password_reset_tokens")
+}
+
 model Category {
   id          String     @id @default(cuid())
   name        String     @db.VarChar(100)

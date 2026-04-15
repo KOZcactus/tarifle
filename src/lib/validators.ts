@@ -102,6 +102,8 @@ export const RESERVED_USERNAMES: readonly string[] = [
   "giris",
   "kayit",
   "dogrula",
+  "sifremi-unuttum",
+  "sifre-sifirla",
   "profil",
   "kesfet",
   "kategori",
@@ -235,8 +237,37 @@ export const passwordSetSchema = z
     path: ["confirmPassword"],
   });
 
+/**
+ * "Forgot password" — step 1: user submits their email, we send a reset link.
+ * We validate shape only; the action layer normalizes and de-duplicates.
+ */
+export const passwordResetRequestSchema = z.object({
+  email: z.string().email("Geçerli bir e-posta adresi girin"),
+});
+
+/**
+ * "Forgot password" — step 2: user lands on /sifre-sifirla/[token] and submits
+ * a new password. Token itself is validated by the server action against the
+ * DB; schema only checks shape + matching confirmation.
+ */
+export const passwordResetSubmitSchema = z
+  .object({
+    token: z.string().min(1, "Sıfırlama bağlantısı geçersiz"),
+    newPassword: z
+      .string()
+      .min(8, "Şifre en az 8 karakter olmalıdır")
+      .max(128, "Şifre en fazla 128 karakter olabilir"),
+    confirmPassword: z.string(),
+  })
+  .refine((d) => d.newPassword === d.confirmPassword, {
+    message: "Şifreler eşleşmiyor",
+    path: ["confirmPassword"],
+  });
+
 export type PasswordChangeInput = z.infer<typeof passwordChangeSchema>;
 export type PasswordSetInput = z.infer<typeof passwordSetSchema>;
+export type PasswordResetRequestInput = z.infer<typeof passwordResetRequestSchema>;
+export type PasswordResetSubmitInput = z.infer<typeof passwordResetSubmitSchema>;
 export type LoginInput = z.infer<typeof loginSchema>;
 export type RegisterInput = z.infer<typeof registerSchema>;
 export type VariationInput = z.infer<typeof variationSchema>;

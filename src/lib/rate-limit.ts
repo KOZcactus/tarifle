@@ -25,6 +25,8 @@ export type RateLimitScope =
   | "variation-create"
   | "variation-create-daily"
   | "password-change"
+  | "password-reset-request"
+  | "password-reset-consume"
   | "account-delete"
   | "ai-assistant";
 
@@ -82,6 +84,20 @@ const SCOPE_CONFIG: Record<RateLimitScope, ScopeConfig> = {
     // otomatize saldiriyi yavaslatir.
     description: "5 sifre degisikligi denemesi / 1 saat",
     limit: 5,
+    window: "1 h",
+  },
+  "password-reset-request": {
+    // Kullanici bir email adresi icin saatte 3 reset baslatabilir. Ayni
+    // adresin inbox'ina spam yagmasini engeller, unutkan kullaniciya yer birakir.
+    description: "3 sifre sifirlama istegi / 1 saat",
+    limit: 3,
+    window: "1 h",
+  },
+  "password-reset-consume": {
+    // Token 32-byte random oldugundan brute-force zaten pratik degil ama
+    // bir saldirganin ayni IP'den yuzlerce token denemesini yine de yavaslatir.
+    description: "10 sifre sifirlama tuketim denemesi / 1 saat",
+    limit: 10,
     window: "1 h",
   },
   "account-delete": {

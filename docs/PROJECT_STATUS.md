@@ -61,6 +61,18 @@ Public launch ve Codex 500-batch öncesi büyük bir kalite + altyapı pass'i. T
 
 ---
 
+## 16 Nisan 2026 — Perf audit + ping cleanup ✅
+
+Codex batch 4'ü yazarken kısa bir bakım pass'i.
+
+- 🧹 **Deprecated ping step temizliği**: retrofit-all pipeline'ından Google+Bing sitemap ping adımı kaldırıldı (Google `/ping?sitemap=` 2023 kapandı, Bing 410). `src/lib/seo-ping.ts`, `scripts/ping-sitemap.ts`, ilgili 8 unit test + `content:ping` shortcut silindi. IndexNow değerlendirildi ama Google desteklemediği ve TR'de Bing/Yandex payı düşük olduğu için YAGNI.
+- 📊 **DB hot-path perf audit** (`scripts/perf-audit.ts`) — 306 tarif ölçeğinde 10 hot sorgu EXPLAIN ANALYZE'dan geçti. Hepsi < 0.3ms execution. 4 seq scan tespiti:
+  - `/tarifler` base alphabetical → 306'da fine, 1000+'a bakılır
+  - Allergen NOT hasSome → Postgres GIN NOT desteği zayıf, 2000+ tarifte denormalize bakılır
+  - FTS tsvector → planner 306'da seq scan tercih (cost model), 500+'ta GIN'e geçecek
+  - **Recipe ingredients/steps FK seq scan** → GERÇEK darboğaz: Prisma/Postgres FK'de otomatik index yok
+- ⚡ **Fix**: `RecipeIngredient(recipeId, sortOrder)` + `RecipeStep(recipeId, stepNumber)` composite index (migration `20260416000000_detail_page_indexes`). Production'a uygulandı, Seq Scan → Index Scan doğrulandı. Tarif detay sayfası hot path artık 1000+ tarife ölçeklenebilir.
+
 ## 15 Nisan 2026 — SEO pass + Benzer tarifler + Breadcrumb ✅
 
 Codex batch 1 main'de + production'da (106 tarif canlı). Codex batch 2'yi yazarken paralel bir pass: SEO altyapısı + discovery feature + rich results eligibility.

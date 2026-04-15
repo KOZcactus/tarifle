@@ -154,6 +154,7 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 💾 `RecipeIngredient.group String?` (bölüm desteği).
 - 🧹 **Migration baseline temizliği** (15 Nis 2026): Pass 10'dan itibaren biriken 8 `db push` değişikliği `prisma/migrations/20260415120000_codex_batch_prep/migration.sql` altında formal migration oldu. Fresh DB deploy'u artık `prisma migrate deploy` ile tam schema kuruyor.
 - 💾 **Full-text search** (migration `20260415180000_add_fulltext_search`) — `unaccent` extension + `immutable_unaccent(text)` SQL wrapper + `Recipe.searchVector` generated STORED tsvector (A/B/C weighted) + GIN index `recipes_search_gin`. `turkish` snowball dictionary ile morfolojik eşleşme; accent-insensitive search; schema'da `Unsupported("tsvector")?` olarak temsil edildi.
+- ⚡ **Tarif detay sayfası composite index** (migration `20260416000000_detail_page_indexes`) — `recipe_ingredients(recipeId, sortOrder)` + `recipe_steps(recipeId, stepNumber)`. Prisma/Postgres FK için otomatik index yaratmaz; 1000+ tarif × ~7 malzeme ölçeğinde seq scan yavaşlar. EXPLAIN ANALYZE ile tespit, migration ile fix: Seq Scan → Index Scan geçişi doğrulandı.
 
 ## Test & CI
 
@@ -191,6 +192,7 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - ⚙️ Ops helper: `check-password-reset-tokens.ts`.
 - ⚙️ **Batch pre-flight validator** — `scripts/validate-batch.ts` (`npm run content:validate`), Zod + semantik kontroller (muğlak ifade regex, kcal/makro uyumu, alkol tag cross-check, slug çakışması), DB'ye dokunmaz, Codex workflow'unda seed'den önce koşar.
 - ⚙️ FTS doğrulama smoke-test: `scripts/verify-fts.ts` (stemming + unaccent + populated rows + EXPLAIN plan).
+- ⚙️ **Perf audit runner** (`scripts/perf-audit.ts`) — 10 hot-path sorgusunun EXPLAIN ANALYZE raporu, seq scan tespiti, süre/plan özeti. 1000 tarife gitmeden darboğaz görünür.
 - 🧹 `scripts/seed-recipes.ts` refactor — DB init `main()` içine alındı, `recipes` export + entrypoint guard; validate-batch.ts side-effect olmadan import edebilsin diye. Codex'in array'e ekleme workflow'u değişmedi.
 - ⚙️ **Batch rollback safety net** — `scripts/rollback-batch.ts` (`npm run content:rollback`), 3 girdi modu (`--slugs`, `--slugs-file`, `--batch N`). Default dry-run + impact raporu; `--confirm "rollback-batch-N"` echo-phrase ile gerçek silme. Uyarlaması olan tarifleri otomatik bloklar (`--force` override). Her silme `AuditLog(action=ROLLBACK_RECIPE)`.
 - 🔒 **Validator CI step** — `.github/workflows/ci.yml` `check` job'una `npm run content:validate` adımı eklendi. Seed-recipes.ts'de format ihlali varsa CI main push + PR'ı kırmızıya düşürür, merge bloklanır.

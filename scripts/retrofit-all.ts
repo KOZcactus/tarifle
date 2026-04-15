@@ -35,15 +35,12 @@ const STEPS: readonly Step[] = [
     // Reads allergens to decide vegan status (SUT/YUMURTA/DENIZ_URUNLERI).
     dependsOnPrior: true,
   },
-  {
-    label: "Sitemap ping (Google + Bing)",
-    script: "scripts/ping-sitemap.ts",
-    // Best-effort — seed + retrofit tamamlandıktan sonra search engine'lere
-    // "sitemap güncellendi" sinyali atar. Ping script kendi içinde
-    // failure'ları swallow eder, exit 0 döner; orchestrator hatada zinciri
-    // durdurmaz (best-effort flag).
-    dependsOnPrior: true,
-  },
+  // NOTE: Sitemap ping step kaldırıldı (15 Nis 2026). Google
+  // `.../ping?sitemap=...` endpoint'i 2023'te kapatıldı (404), Bing
+  // 2024'te deprecate (410). İkisinin yerine sitemap otomatik re-fetch
+  // + Google Search Console'a explicit submit yeterli. IndexNow da
+  // değerlendirildi ama Google desteklemiyor, TR'de Bing/Yandex payı
+  // düşük — YAGNI.
 ];
 
 const isDryRun = process.argv.includes("--dry-run");

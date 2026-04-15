@@ -349,6 +349,12 @@ model RecipeIngredient {
 
   recipe Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
 
+  // Tarif detay sayfası her açılışta "bu tarifin malzemeleri, sortOrder
+  // sıralı" sorar. Composite index olmadan Postgres seq scan yapıyor —
+  // 306 tarifte <1ms ama 1000+ tarif × ~7 malzeme = 7k+ satırda
+  // scan maliyeti milisaniye mertebesinde büyür. FK'de otomatik index
+  // yok (Prisma default + Postgres default).
+  @@index([recipeId, sortOrder])
   @@map("recipe_ingredients")
 }
 
@@ -363,6 +369,9 @@ model RecipeStep {
 
   recipe Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
 
+  // RecipeIngredient ile aynı hot path: detay sayfası step listesi
+  // her açılışta recipeId filter + stepNumber sıralama ile çekilir.
+  @@index([recipeId, stepNumber])
   @@map("recipe_steps")
 }
 

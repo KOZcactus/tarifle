@@ -35,7 +35,11 @@ const CUISINE_OPTIONS: readonly { code: string; flag: string; label: string }[] 
 export function CuisineFilter() {
   return (
     <div
-      className="rounded-lg border border-dashed border-border bg-bg-card p-3 opacity-70"
+      // opacity-70 başlangıçta disabled hissi için kullanılmıştı ama
+      // text-muted üzerinde a11y color-contrast eşiğini düşürdü (4.5:1
+      // altına geçti). Sadece dashed border + "Yakında" badge yeterli
+      // sinyal — kontrast tam tutulur.
+      className="rounded-lg border border-dashed border-border bg-bg-card p-3"
       aria-label="Mutfak filtresi (yakında aktif)"
     >
       <div className="mb-2 flex items-center gap-2">

@@ -100,7 +100,15 @@ test("login → uyarlama ekle → listede görünür → kendi uyarlamasını si
   // 8. Variation card'ı aç (toggle)
   await variationHeading.click();
 
-  // 9. "Sil" butonu görünür — DeleteOwnVariationButton aria-label
+  // 9. Bonus — kendi uyarlamamızda LikeButton "isOwnVariation" pattern'i
+  //    nedeniyle salt-okunur ❤️ N gösteriyor. Başka bir variation
+  //    olduğunda tıklanabilir; bu test sahibi olduğu için sadece sayı
+  //    görünür. Like UI eklendiğini doğrulamak için varlığını kontrol et.
+  await expect(
+    page.getByLabel(/^\d+ beğeni$/i).first(),
+  ).toBeVisible();
+
+  // 10. "Sil" butonu görünür — DeleteOwnVariationButton aria-label
   //    olarak `${miniTitle} uyarlamasını sil` kullanır. Dialog handler
   //    yukarıda ayarlandı, confirm() otomatik accept oluyor.
   const deleteButton = page.getByRole("button", {

@@ -18,7 +18,7 @@ import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
 import { SITE_URL } from "@/lib/constants";
 import { getRecipeBySlug, incrementViewCount } from "@/lib/queries/recipe";
 import { getSimilarRecipes } from "@/lib/queries/similar-recipes";
-import { isBookmarked } from "@/lib/queries/user";
+import { isBookmarked, getLikedVariationIds } from "@/lib/queries/user";
 import { getCollectionsForRecipe } from "@/lib/queries/collection";
 import { auth } from "@/lib/auth";
 import type { Metadata } from "next";
@@ -77,13 +77,20 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
   if (!recipe) notFound();
 
   const session = await auth();
-  const [bookmarked, userCollections, similarRecipes] = await Promise.all([
-    session?.user?.id ? isBookmarked(session.user.id, recipe.id) : Promise.resolve(false),
-    session?.user?.id
-      ? getCollectionsForRecipe(session.user.id, recipe.id)
-      : Promise.resolve([]),
-    getSimilarRecipes(recipe.id, 6),
-  ]);
+  const variationIds = recipe.variations?.map((v) => v.id) ?? [];
+  const [bookmarked, userCollections, similarRecipes, likedVariationIds] =
+    await Promise.all([
+      session?.user?.id
+        ? isBookmarked(session.user.id, recipe.id)
+        : Promise.resolve(false),
+      session?.user?.id
+        ? getCollectionsForRecipe(session.user.id, recipe.id)
+        : Promise.resolve([]),
+      getSimilarRecipes(recipe.id, 6),
+      session?.user?.id
+        ? getLikedVariationIds(session.user.id, variationIds)
+        : Promise.resolve(new Set<string>()),
+    ]);
 
   // Surface admin/moderator UI inline on community variations so a moderator
   // can hide a clearly-bad post without leaving the recipe page. `session.user.role`
@@ -372,6 +379,8 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
                 variation={v}
                 isModerator={isModerator}
                 isOwnVariation={session?.user?.id === v.authorId}
+                isLikedByUser={likedVariationIds.has(v.id)}
+                recipeSlug={recipe.slug}
               />
             ))}
           </div>

@@ -4,6 +4,7 @@ import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { ReportButton } from "@/components/recipe/ReportButton";
 import { DeleteOwnVariationButton } from "@/components/recipe/DeleteOwnVariationButton";
+import { LikeButton } from "@/components/recipe/LikeButton";
 import { hideVariation } from "@/lib/actions/admin";
 import {
   formatIngredient,
@@ -28,6 +29,10 @@ interface VariationCardProps {
   isModerator: boolean;
   /** True when the signed-in user authored this uyarlama — shows "Sil". */
   isOwnVariation?: boolean;
+  /** Has the current user already liked this variation? */
+  isLikedByUser?: boolean;
+  /** Recipe slug — needed by LikeButton's revalidatePath after toggle. */
+  recipeSlug: string;
 }
 
 /**
@@ -39,7 +44,13 @@ interface VariationCardProps {
  * without clicking through to the admin queue. The hidden state takes
  * effect on the next page render — `router.refresh` triggers it.
  */
-export function VariationCard({ variation, isModerator, isOwnVariation = false }: VariationCardProps) {
+export function VariationCard({
+  variation,
+  isModerator,
+  isOwnVariation = false,
+  isLikedByUser = false,
+  recipeSlug,
+}: VariationCardProps) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
@@ -74,45 +85,50 @@ export function VariationCard({ variation, isModerator, isOwnVariation = false }
 
   return (
     <div className="overflow-hidden rounded-xl border border-border bg-bg-card">
-      {/* Header / toggle row. Single button so keyboard + screen reader read
-          the whole row as one control. Closed state is intentionally minimal
-          — title, description, author, like count, and a chevron + count
-          summary that hints at expansion. No moderation/report ikonu burada
-          gozukmuyor; karisikligi azaltir. */}
-      <button
-        type="button"
-        onClick={() => setIsOpen((v) => !v)}
-        aria-expanded={isOpen}
-        aria-controls={`variation-${variation.id}-body`}
-        className="w-full px-5 py-4 text-left transition-colors hover:bg-bg-elevated focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary"
-      >
-        <div className="flex items-start justify-between gap-4">
-          <div className="min-w-0 flex-1">
-            <h3 className="font-medium text-text">{variation.miniTitle}</h3>
-            {variation.description && (
-              <p className="mt-1 text-sm text-text-muted">
-                {variation.description}
-              </p>
-            )}
-            <p className="mt-2 text-xs text-text-muted">
-              @{variation.author.username ?? "anonim"}
+      {/* Header row — flex container. Sol taraf expand button, sağ taraf
+          LikeButton (interactive sibling). nested-interactive a11y kuralı
+          için button içinde button yapmıyoruz — LikeButton parent flex
+          row'un kardeşi. */}
+      <div className="flex items-start gap-4 px-5 py-4">
+        <button
+          type="button"
+          onClick={() => setIsOpen((v) => !v)}
+          aria-expanded={isOpen}
+          aria-controls={`variation-${variation.id}-body`}
+          className="min-w-0 flex-1 text-left transition-colors hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        >
+          <h3 className="font-medium text-text">{variation.miniTitle}</h3>
+          {variation.description && (
+            <p className="mt-1 text-sm text-text-muted">
+              {variation.description}
             </p>
-          </div>
-          <div className="flex shrink-0 flex-col items-end gap-1.5 text-sm">
-            <span className="text-text-muted">❤️ {variation.likeCount}</span>
-            <span className="flex items-center gap-1 text-xs text-text-muted">
-              {ingredients.length} malzeme · {steps.length} adım
-              <span
-                aria-hidden="true"
-                className="inline-block transition-transform duration-200"
-                style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
-              >
-                ▾
-              </span>
+          )}
+          <p className="mt-2 text-xs text-text-muted">
+            @{variation.author.username ?? "anonim"}
+          </p>
+          <p className="mt-2 flex items-center gap-1 text-xs text-text-muted">
+            {ingredients.length} malzeme · {steps.length} adım
+            <span
+              aria-hidden="true"
+              className="inline-block transition-transform duration-200"
+              style={{
+                transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+              }}
+            >
+              ▾
             </span>
-          </div>
+          </p>
+        </button>
+        <div className="shrink-0">
+          <LikeButton
+            variationId={variation.id}
+            recipePath={`/tarif/${recipeSlug}`}
+            initialLikeCount={variation.likeCount}
+            initialLiked={isLikedByUser}
+            isOwnVariation={isOwnVariation}
+          />
         </div>
-      </button>
+      </div>
 
       {/* Expanded body — only mounted when open so closed cards stay light. */}
       {isOpen && (

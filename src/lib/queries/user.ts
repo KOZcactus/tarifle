@@ -126,3 +126,21 @@ export async function isLiked(userId: string, variationId: string) {
   });
   return !!like;
 }
+
+/**
+ * Verilen variation ID'leri için kullanıcının beğendiklerini Set olarak
+ * döner. Tarif detay sayfası tek seferde N variation'ın "liked?" durumunu
+ * öğrenmek için kullanır — N+1 sorgu yerine tek IN(). Boş set boş input
+ * için ya da kullanıcı yoksa.
+ */
+export async function getLikedVariationIds(
+  userId: string,
+  variationIds: readonly string[],
+): Promise<Set<string>> {
+  if (variationIds.length === 0) return new Set();
+  const likes = await prisma.like.findMany({
+    where: { userId, variationId: { in: [...variationIds] } },
+    select: { variationId: true },
+  });
+  return new Set(likes.map((l) => l.variationId));
+}

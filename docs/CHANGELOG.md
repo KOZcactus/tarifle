@@ -141,6 +141,7 @@ Tam detay için `docs/PROJECT_STATUS.md` veya `git log`.
 - 🐛 **Revani ve 6 tarif daha fix**: baklava, künefe, mantı, lahmacun, ali-nazik, hünkar beğendi, boza — composite isim temizliği ("Şerbet şekeri" → "Şeker" + group="Şerbet için") + 46 ingredient update.
 - 🎨 **Alerjen uyarı metni sadeleştirildi**: "Alerjin varsa malzeme listesine bir de sen göz at."
 - 🐛 **Tipnote düzeltmesi**: Baklava + Revani için "ya da tersi" muğlak ifadesi iki case'e ayrıldı ("sıcakken soğuk, soğumuşsa sıcak").
+- 📝 **RECIPE_FORMAT "Dil ve anlatım kalitesi" bölümü**: muğlak koşullu ifadeler, belirsiz ölçüler, composite ingredient adları yasaklandı. Codex batch'ten önce kural netleşti.
 
 ## Ops tooling
 

@@ -216,9 +216,51 @@ Her tarif şu TypeScript nesnesine tıpatıp uymalı:
 
 ### tipNote / servingSuggestion
 
-- `tipNote`: tarifin kritik püf noktası, 1-2 cümle. Not bırakamayacaksan
+- `tipNote`: tarifin kritik püf noktası, 1-3 cümle. Not bırakamayacaksan
   `null` yap, sahte not üretme.
 - `servingSuggestion`: servis önerisi, 1 cümle. Aynı kural.
+
+### Dil ve anlatım kalitesi (HEPSİ için zorunlu)
+
+Tarif metni kullanıcı tarafında direkt görünecek. "AI-üretmişe benziyor"
+duygusunu vermesin — insan yazımı + mutfak bilgili + net.
+
+**Yazım kuralları (description / tipNote / servingSuggestion / step.instruction / step.tip)**:
+
+1. **Muğlak koşullu ifadeler YASAK**. "ya da tersi", "duruma göre",
+   "isteğe bağlı olarak şöyle ya da böyle", "kararına kalmış" — hepsi
+   kullanıcıya "ne yapacağımı anlamadım" dedirtir. İki durum varsa **iki
+   durumu ayrı cümlelerde ayrı ayrı** yaz.
+   - ❌ "Şerbet soğuk, baklava sıcak olmalı — ya da tersi."
+   - ✅ "Baklava fırından yeni çıkmışsa üzerine **soğuk** şerbet dök.
+        Baklava soğumuşsa **sıcak** şerbet kullan. İkisi birden sıcak
+        olursa şerbet emmez."
+
+2. **Sayısal belirsizlik YASAK** — "biraz", "azıcık", "epey", "yeteri
+   kadar" kullanma. Sayı veremediğin yerde niteliksel metrik ver.
+   - ❌ "Biraz tuz ekleyin."
+   - ✅ "Tat için tuz ekleyin." (miktar gerçekten değişiyorsa)
+   - ✅ "1 tutam tuz ekleyin." (ölçüsü belli ama standart olmayan)
+
+3. **"İyice" / "güzelce" ifadesine somut kriter ekle**. "İyice
+   yoğurun" kullanıcıya ne kadar olduğunu anlatmıyor.
+   - ❌ "Hamuru iyice yoğurun."
+   - ✅ "Hamuru elinize yapışmayana kadar 8-10 dakika yoğurun."
+
+4. **Kısa, aksiyona dönük cümle**. Adım talimatları özne + fiil ile
+   başlasın ya da doğrudan imperatif ("Soğanları doğrayın.").
+
+5. **Gereksiz tekrar yok**. description + tipNote + step'ler birbirini
+   tekrarlamamalı. description tarifin **ne olduğunu**, step **nasıl
+   yapıldığını**, tipNote **başarı için kritik olanı** anlatır.
+
+6. **Gerçek mutfak bilgisi**. Sakın sahte püf noktası uydurma — kural
+   tabanlı "bol bol karıştırın daha lezzetli olur" tarzı boş cümle yerine
+   `tipNote: null` bırak.
+
+7. **Emoji + süsleme YOK metin içinde**. Bunlar chip/buton etiketleri
+   için. `instruction`, `tipNote`, `description` alanlarında sade TR
+   yazımı.
 
 ### type / categorySlug uyumu
 
@@ -274,6 +316,7 @@ Her tarif şu TypeScript nesnesine tıpatıp uymalı:
 
 ## Kalite checklist (her tarif için)
 
+**Yapı**
 - [ ] Slug benzersiz, TR karakter yok
 - [ ] `type` + `categorySlug` uyumlu
 - [ ] `prepMinutes + cookMinutes` ≈ `totalMinutes`
@@ -284,8 +327,15 @@ Her tarif şu TypeScript nesnesine tıpatıp uymalı:
 - [ ] Her tag slug sabit listeden
 - [ ] Alkol varsa `alkollu` tag'i
 - [ ] **`allergens` alanı dolu** (veya bilerek boş array `[]`). Malzemeleri tara: süt/yoğurt/peynir varsa `SUT`, un/bulgur varsa `GLUTEN`, vb.
-- [ ] Türkçe doğru, büyük/küçük harf tutarlı
+- [ ] Çok-bileşenli ise `group: "X için"` ayarlı ("Hamur için", "Şerbet için", "Sos için"…)
+
+**Dil ve anlatım**
+- [ ] "ya da tersi", "duruma göre" muğlak ifadeler **yok** — iki durum varsa iki ayrı cümle
+- [ ] "Biraz", "iyice", "azıcık" belirsiz ölçü **yok** — sayı veya niteliksel metrik var
+- [ ] Composite ingredient adı **yok** ("Şerbet şekeri" → "Şeker" + group)
+- [ ] Metin Türkçe doğru, büyük/küçük harf tutarlı
 - [ ] description 20-500 karakter
+- [ ] tipNote varsa gerçek bir püf noktası (boş sahte not yerine `null`)
 
 ## Çalıştırma
 

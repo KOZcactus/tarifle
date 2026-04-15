@@ -342,3 +342,15 @@ production branch URL'i ile çalıştırır → canlıya geçer.
 10. Tekrar
 
 Eşlik edecek dosya: **`docs/RECIPE_FORMAT.md`** — o dosyayı da okumadan tarif yazma.
+
+**En kritik 3 yazım kuralı** (`RECIPE_FORMAT.md` "Dil ve anlatım kalitesi"
+bölümünün özeti; detay orada):
+
+1. **"ya da tersi" gibi muğlak koşullu ifadeler YASAK** — iki durum varsa
+   iki ayrı cümleyle yaz (ör. "kek sıcakken soğuk şerbet. Kek soğumuşsa
+   sıcak şerbet.").
+2. **Composite ingredient adı YASAK** — "Şerbet şekeri" yerine
+   `{ name: "Şeker", group: "Şerbet için" }` kullan.
+3. **"Biraz", "iyice", "azıcık" gibi belirsiz ölçüler YASAK** — sayı
+   veremediğin yerde niteliksel metrik ver ("elinize yapışmayana kadar
+   8-10 dakika").

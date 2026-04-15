@@ -255,6 +255,7 @@ export async function getRecipeBySlug(slug: string): Promise<RecipeDetail | null
           unit: true,
           sortOrder: true,
           isOptional: true,
+          group: true,
         },
         orderBy: { sortOrder: "asc" },
       },

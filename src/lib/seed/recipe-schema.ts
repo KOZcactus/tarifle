@@ -90,6 +90,10 @@ const ingredientSchema = z.object({
   unit: z.string().max(50).optional().nullable(),
   sortOrder: z.number().int().min(1),
   isOptional: z.boolean().optional(),
+  // Optional section label for multi-component recipes. "Hamur için",
+  // "Şerbet için", "Sos için"... Leave null for simple recipes. Convention:
+  // "X için" phrasing keeps group headers consistent across Codex entries.
+  group: z.string().trim().min(1).max(80).optional().nullable(),
 });
 
 const stepSchema = z.object({

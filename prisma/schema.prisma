@@ -328,6 +328,12 @@ model RecipeIngredient {
   sortOrder      Int      @default(0)
   isOptional     Boolean  @default(false)
   caloriePerUnit Decimal? @db.Decimal(7, 2)
+  // Optional section label used by multi-component recipes ("Hamur için",
+  // "Şerbet için", "Sos için"). NULL for simple single-component recipes;
+  // the UI renders those as a plain list. Convention: "X için" phrasing.
+  // Kept as free-text rather than an enum because section names are
+  // context-dependent (a pasta has "Sos için", a kebab has "Marine için").
+  group          String?  @db.VarChar(80)
 
   recipe Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
 

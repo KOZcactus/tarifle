@@ -144,7 +144,9 @@ Her tarif şu TypeScript nesnesine tıpatıp uymalı:
   ingredients: [
     { name: "Dana kıyma (yağlı)", amount: "500", unit: "gr", sortOrder: 1 },
     { name: "Pul biber",          amount: "2",   unit: "yemek kaşığı", sortOrder: 2 },
-    // ...
+    // OPSİYONEL group alanı — çok-bileşenli tarifler için
+    // (şerbetli tatlılar, soslu yemekler, marineli etler…)
+    // { name: "Şeker", amount: "2", unit: "su bardağı", sortOrder: 7, group: "Şerbet için" },
   ],
   steps: [
     { stepNumber: 1, instruction: "Kıyma, yağ, baharatları karıştırın." },
@@ -177,6 +179,17 @@ Her tarif şu TypeScript nesnesine tıpatıp uymalı:
 - 3-15 arası malzeme ideal. 1 tek malzemeli tarif doğru çalışır ama zayıf.
 - `isOptional: true` opsiyonel ekleyebilirsin (varsayılan false). Örnek:
   maydanoz, taze fesleğen, aroma için ekleme.
+- **`group: "X için"` opsiyonel** — çok-bileşenli tariflerde kullan:
+  şerbetli tatlılar ("Hamur için" / "Şerbet için"), makarnalar ("Makarna
+  için" / "Sos için"), kebaplar ("Marine için" / "Servis için"), vb.
+  - Basit tek-bileşenli tariflerde (ana yemek, salata, kokteyl) `group`
+    alanını **ekleme** — gereksiz. UI düz liste render eder.
+  - **Yanlış kullanım**: "Şerbet şekeri" gibi composite malzeme adı.
+    Doğrusu: `{ name: "Şeker", group: "Şerbet için" }` — AI Asistan
+    "şeker" diye arayan kullanıcıyı doğru eşleştirir.
+  - Naming konvansiyonu: **"X için"** (cümle başı büyük harf). Aynı
+    tarif içinde tutarlı yaz — "Hamur İçin" ≠ "Hamur için" karışıklık
+    yaratır.
 
 ### Steps
 

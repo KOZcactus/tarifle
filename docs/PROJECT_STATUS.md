@@ -1,6 +1,19 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 15 Nisan 2026 (AI Asistan pantry bug fix)
+> Son güncelleme: 15 Nisan 2026 (ingredient group/section)
+
+## 15 Nisan 2026 — Malzeme grupları (Hamur için / Şerbet için) ✅
+
+Kullanıcı Revani'de "Şerbet şekeri" ve "Şerbet suyu" ingredient isimleriyle sorun tespit etti — bunlar composite isim değil; "Şeker" + "Su" olmalı, farklı bölümde.
+
+- Schema: `RecipeIngredient.group String?` (nullable, VarChar 80, free-text). Çok-bileşenli tarifler için — "Hamur için", "Şerbet için", "Sos için". NULL = düz liste.
+- Type + query + seed validator güncel. Validator: trim + min 1 + max 80.
+- `IngredientList` component bucket-by-group render ediyor. Ungrouped → düz liste (backward compat). Grouped → turuncu uppercase heading + subtle separator aralarında. First-appearance order korunur.
+- **Revani fix'lendi**: DB retrofit + seed kaynak güncellendi. "Şerbet şekeri" → "Şeker / Şerbet için", "Şerbet suyu" → "Su / Şerbet için". AI Asistan artık "şeker" arayan kullanıcıyı doğru eşleştirir.
+- `RECIPE_FORMAT.md`: "X için" convention + yanlış kullanım örneği + basit tariflerde eklememeli uyarısı.
+- 7 yeni unit (bucketing: order preservation, null fallback, trim, mixed grouped/ungrouped). **212 unit + 9 E2E yeşil.**
+
+## 15 Nisan 2026 — AI Asistan %100 false-positive bug fix ✅
 
 ## 15 Nisan 2026 — AI Asistan %100 false-positive bug fix ✅
 

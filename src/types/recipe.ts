@@ -58,6 +58,7 @@ export interface RecipeDetail {
     unit: string | null;
     sortOrder: number;
     isOptional: boolean;
+    group: string | null;
   }[];
   steps: {
     id: string;

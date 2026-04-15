@@ -22,7 +22,8 @@
     "db:reset": "prisma migrate reset",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "content:seed": "tsx scripts/seed-recipes.ts"
+    "content:seed": "tsx scripts/seed-recipes.ts",
+    "content:validate": "tsx scripts/validate-batch.ts"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.1",

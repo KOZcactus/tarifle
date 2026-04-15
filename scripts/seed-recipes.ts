@@ -4,7 +4,7 @@ import { neonConfig } from "@neondatabase/serverless";
 import ws from "ws";
 import * as dotenv from "dotenv";
 import * as path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { validateSeedRecipes } from "../src/lib/seed/recipe-schema";
 
 neonConfig.webSocketConstructor = ws;
@@ -15,16 +15,26 @@ const __dirname2 = path.dirname(__filename2);
 dotenv.config({ path: path.resolve(__dirname2, "..", ".env.local") });
 dotenv.config({ path: path.resolve(__dirname2, "..", ".env") });
 
-const databaseUrl = process.env.DATABASE_URL;
-if (!databaseUrl) {
-  throw new Error("DATABASE_URL ortam değişkeni tanımlı değil!");
+/**
+ * DB init deferred into `main()` so this module can be imported for its
+ * `recipes` export (e.g. by `scripts/validate-batch.ts`) without requiring
+ * a live DATABASE_URL. Only the seed entrypoint needs the connection.
+ */
+function initPrisma(): PrismaClient {
+  const databaseUrl = process.env.DATABASE_URL;
+  if (!databaseUrl) {
+    throw new Error("DATABASE_URL ortam değişkeni tanımlı değil!");
+  }
+  const adapter = new PrismaNeon({ connectionString: databaseUrl });
+  return new PrismaClient({ adapter });
 }
 
-const adapter = new PrismaNeon({ connectionString: databaseUrl });
-const prisma = new PrismaClient({ adapter });
-
 // ─── Tarif Verileri ──────────────────────────────────────
-const recipes = [
+// Exported so `scripts/validate-batch.ts` can pre-flight this catalog
+// without hitting the database. Codex only edits inside the array body
+// (adding new entries before the closing `];`) — no other structural
+// change is needed to maintain that workflow.
+export const recipes = [
   // ── ET YEMEKLERİ ──
   {
     title: "Adana Kebap", slug: "adana-kebap", emoji: "🥩",
@@ -1025,6 +1035,15 @@ const recipes = [
 // ─── Seed Fonksiyonu ─────────────────────────────────────
 
 async function main() {
+  const prisma = initPrisma();
+  try {
+    await runSeed(prisma);
+  } finally {
+    await prisma.$disconnect();
+  }
+}
+
+async function runSeed(prisma: PrismaClient) {
   console.log("🌱 Seed başlatılıyor...");
 
   // ─── 1. PRE-FLIGHT VALIDATION ────────────────────────────
@@ -1139,11 +1158,16 @@ async function main() {
   }
 }
 
-main()
-  .catch((err) => {
+// Only auto-run the seed when this file is the Node entrypoint. Importing
+// it (e.g. from validate-batch.ts) yields the `recipes` array without any
+// DB side effect.
+const isEntrypoint =
+  !!process.argv[1] &&
+  import.meta.url === pathToFileURL(process.argv[1]).href;
+
+if (isEntrypoint) {
+  main().catch((err) => {
     console.error("❌ Seed hatası:", err);
     process.exit(1);
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
   });
+}

@@ -52,6 +52,16 @@ jobs:
       - name: Unit tests (Vitest)
         run: npx vitest run
 
+      # Codex batch pre-flight. Zod + semantik kontroller (muğlak ifade,
+      # kcal/makro, alkol tag, composite isim) DB'ye dokunmadan koşar.
+      # `content:seed` yolu yalnız seed-recipes.ts'yi değiştirenlerde
+      # tetikleniyor gibi gözükebilir ama validate cheap (~2s) ve tüm
+      # array üzerinden geçtiği için regression guard olarak her push'ta
+      # açık tutuyoruz. Yeni bir Codex batch'i merge olmadan sadece bu
+      # yeterli; ERROR varsa CI kırmızıya düşer.
+      - name: Content validator (Zod + semantic checks)
+        run: npm run content:validate
+
       - name: Build (Next.js)
         run: npm run build
 

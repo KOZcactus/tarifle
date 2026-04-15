@@ -309,6 +309,28 @@ Ne kadar tarif eklendiğini `list-recipe-slugs.ts` ile kontrol et. Script
 idempotent: aynı script'i tekrar çalıştırırsan kalan yerden devam eder
 (eklenmiş olanları atlar).
 
+### Kötü batch geri alınması (rollback)
+
+Bir batch yazıldıktan sonra "bu batch baştan yanlış, hepsini sil" durumu
+olursa proje sahibi `npm run content:rollback` komutunu kullanır — Codex
+bu scripti koşmaz, sadece bilgi olarak:
+
+```bash
+# önce dry-run (hangi tarifler silinecek + bookmark/koleksiyon etkisi)
+npm run content:rollback -- --batch 2
+
+# gerçekten silmek için echo-phrase onayı:
+npm run content:rollback -- --batch 2 --confirm "rollback-batch-2"
+```
+
+- Varsayılan **dry-run** — veri silinmez, sadece etki raporu basar.
+- Kullanıcı uyarlaması (`Variation`) olan tarifleri otomatik **bloklar**
+  (user içeriği kaybolmasın). `--force` ile zorlanır ama pratikte yeni
+  seed'lenen tarifin uyarlaması olmaz.
+- Cascade silinen ingredient/step/tag'ler, bookmark'lar, koleksiyon
+  item'ları rapor edilir — sürpriz yok.
+- Her silme `AuditLog`'a yazılır (`action=ROLLBACK_RECIPE`).
+
 ### İnternet/Redis/Auth hataları
 
 Codex'in bu projeyi çalıştırmasına gerek yok, sadece seed script. Redis

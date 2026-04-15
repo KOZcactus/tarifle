@@ -61,14 +61,15 @@ Public launch ve Codex 500-batch öncesi büyük bir kalite + altyapı pass'i. T
 
 ---
 
-## 15 Nisan 2026 — DB pass: FTS + batch validator ✅
+## 15 Nisan 2026 — DB pass: FTS + batch validator + rollback ✅
 
-Codex batch'i başlamadan önce DB odaklı iki iyileştirme, Claude ile paralel oturumda main'e düştü.
+Codex batch'i başlamadan önce DB odaklı üç iyileştirme, Claude ile paralel oturumda main'e düştü.
 
 - 🔍 **Postgres full-text search** (migration `20260415180000_add_fulltext_search`): `searchVector` generated STORED tsvector kolonu (title=A, description=B, tipNote/servingSuggestion/slug=C) + `immutable_unaccent` SQL wrapper + GIN index. `websearch_to_tsquery('turkish', ...)` ile `/tarifler` arama kutusunun tamamı yeni `src/lib/search/recipe-search.ts` üzerinden geçiyor. Kök eşleşme (`mantılar → Mantı`), aksan-bağımsız arama (`manti → Mantı`), ingredient adı fallback union'u mevcut. Chip row'a "En alakalı" sort eklendi (sadece query varken).
-- ✅ **Batch pre-flight validator** (`scripts/validate-batch.ts`, `npm run content:validate`): Zod'un üstüne semantik katman — muğlak ifade regex ban (`biraz/azıcık/ya da tersi/duruma göre/epey/yeteri kadar` ERROR; `iyice/güzelce` WARNING), kcal vs 4·P+4·C+9·F ±%15 tolerans (alkollü tarifte atlanır), alkollü malzeme ↔ `alkollu` tag cross-check, slug çakışması. DB'ye dokunmaz. `seed-recipes.ts` side-effect olmadan import edilebilsin diye DB init defer + `recipes` export + entrypoint guard.
-- 🧪 Test: 19 validator + 6 FTS sanitize unit eklendi. **255 unit + 12 E2E yeşil**.
-- 📝 `CODEX_HANDOFF.md` workflow'una `npm run content:validate -- --last 50 --slugs-file ...` adımı eklendi (seed'den ÖNCE).
+- ✅ **Batch pre-flight validator** (`scripts/validate-batch.ts`, `npm run content:validate`): Zod'un üstüne semantik katman — muğlak ifade regex ban (`biraz/azıcık/ya da tersi/duruma göre/epey/yeteri kadar` ERROR; `iyice/güzelce` WARNING), kcal vs 4·P+4·C+9·F ±%15 tolerans (alkollü tarifte atlanır), alkollü malzeme ↔ `alkollu` tag cross-check, slug çakışması. DB'ye dokunmaz. `seed-recipes.ts` side-effect olmadan import edilebilsin diye DB init defer + `recipes` export + entrypoint guard. **CI'da `check` job'una eklendi** — format ihlali varsa merge bloklanır.
+- 🧹 **Batch rollback safety net** (`scripts/rollback-batch.ts`, `npm run content:rollback`): 3 girdi modu (`--slugs`, `--slugs-file`, `--batch N`). Default dry-run + etki raporu; `--confirm "rollback-batch-N"` echo-phrase ile gerçek silme. Uyarlaması olan tarifleri otomatik bloklar (`--force` override). Her silme `AuditLog(action=ROLLBACK_RECIPE)`. 3 katman güvenlik: dry-run default, echo-confirm, variation/videoJob block.
+- 🧪 Test: 19 validator + 6 FTS sanitize + 6 rollback helper unit eklendi. **261 unit + 12 E2E yeşil**.
+- 📝 `CODEX_HANDOFF.md`: 5.2.5'te pre-flight validator adımı, 7'de rollback runbook.
 
 ## 15 Nisan 2026 — Test coverage genişletme ✅
 

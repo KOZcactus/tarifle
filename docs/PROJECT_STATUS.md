@@ -1,6 +1,16 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 15 Nisan 2026 (ingredient group/section)
+> Son güncelleme: 15 Nisan 2026 (7 tarifte group + CHANGELOG.md)
+
+## 15 Nisan 2026 — Kalan tariflerde group + CHANGELOG ✅
+
+- Audit: seed'deki 56 tarifte composite isim / "(servis)" parantezi / duplicate token taraması → 7 tarif grup eklenmesi için uygun: **baklava, künefe, mantı, lahmacun, ali-nazik, hünkar beğendi, boza**. Sütlaç/yayla/mercimek/ezogelin/iskender tek-bölüm, grup abartı olur.
+- Konsolide retrofit: `scripts/fix-ingredient-groups.ts` (revani-specific scripti sildik, yerine bu). Per-recipe mapping tablosu, idempotent, `--dry-run`. 46 ingredient güncellendi, 7 zaten hizalı.
+- Seed kaynağı (scripts/seed-recipes.ts + prisma/seed.ts) da aynı sekilde güncel — re-seed'de future-proof.
+- Boza "Leblebi (servis)" → name="Leblebi" + group="Servis için". AI Asistan artık temiz "leblebi" token üzerinden arama yapar.
+- **Yeni**: `docs/CHANGELOG.md` — bootstrap'dan bugüne tüm işlerin başlık başlık tek-satır özeti. PROJECT_STATUS daha aktif takip için, CHANGELOG referans için.
+
+## 15 Nisan 2026 — Malzeme grupları (Hamur için / Şerbet için) ✅
 
 ## 15 Nisan 2026 — Malzeme grupları (Hamur için / Şerbet için) ✅
 

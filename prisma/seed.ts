@@ -292,12 +292,12 @@ async function main() {
       tipNote: "Şerbeti soğuk, baklava sıcak olmalı — ya da tersi.",
       tags: ["misafir-sofrasi", "firinda"],
       ingredients: [
-        { name: "Baklava yufkası", amount: "500", unit: "gr", sortOrder: 1 },
-        { name: "Ceviz içi", amount: "300", unit: "gr", sortOrder: 2 },
-        { name: "Tereyağı", amount: "250", unit: "gr", sortOrder: 3 },
-        { name: "Şeker", amount: "3", unit: "su bardağı", sortOrder: 4 },
-        { name: "Su", amount: "2", unit: "su bardağı", sortOrder: 5 },
-        { name: "Limon suyu", amount: "1", unit: "tatlı kaşığı", sortOrder: 6 },
+        { name: "Baklava yufkası", amount: "500", unit: "gr", sortOrder: 1, group: "Baklava için" },
+        { name: "Ceviz içi", amount: "300", unit: "gr", sortOrder: 2, group: "Baklava için" },
+        { name: "Tereyağı", amount: "250", unit: "gr", sortOrder: 3, group: "Baklava için" },
+        { name: "Şeker", amount: "3", unit: "su bardağı", sortOrder: 4, group: "Şerbet için" },
+        { name: "Su", amount: "2", unit: "su bardağı", sortOrder: 5, group: "Şerbet için" },
+        { name: "Limon suyu", amount: "1", unit: "tatlı kaşığı", sortOrder: 6, group: "Şerbet için" },
       ],
       steps: [
         { stepNumber: 1, instruction: "Cevizleri çekin. Tereyağını eritin." },

@@ -5,6 +5,7 @@ import { prisma } from "@/lib/prisma";
 import { ProfileSettingsForm } from "@/components/profile/ProfileSettingsForm";
 import { GoogleLinkCard } from "@/components/profile/GoogleLinkCard";
 import { PasswordChangeCard } from "@/components/profile/PasswordChangeCard";
+import { LanguagePreferenceCard } from "@/components/profile/LanguagePreferenceCard";
 import { DeleteAccountCard } from "@/components/profile/DeleteAccountCard";
 
 export const metadata: Metadata = {
@@ -84,6 +85,11 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
         />
 
         <PasswordChangeCard hasPassword={!!user.passwordHash} />
+
+        {/* Language preference — placeholder until Faz 3 i18n wiring.
+            Placed before the destructive "delete account" card so it
+            stays in the "everyday settings" cluster, not next to danger. */}
+        <LanguagePreferenceCard />
 
         <DeleteAccountCard
           username={user.username}

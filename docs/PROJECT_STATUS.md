@@ -8,7 +8,7 @@ Tam i18n ertelendi (Faz 3), ama Codex batch öncesi **schema hazırlığı** yap
 
 - Schema: `Recipe.translations Json?` (JSONB, nullable). Shape: `{ en?: { title, description, tipNote, servingSuggestion, ingredients, steps }, de?: {...} }`. Locale keyed (ISO 639-1).
 - Seed validator: opsiyonel `translations` field — Zod ile shape check, unknown locale reddediliyor, partial OK (sadece title EN de verse çalışır).
-- Navbar: disabled "🌐 TR · YAKINDA" chip (tooltip: İngilizce / Deutsch yakında). Launch sonrası Faz 3'te aktive olur.
+- Dil tercihi UI: navbar chip yerine `/ayarlar` sayfasında `LanguagePreferenceCard` (🇹🇷 Türkçe / 🇬🇧 English / 🇩🇪 Deutsch select, disabled + "Yakında" rozeti). Destructive DeleteAccountCard'dan önce, günlük ayarlar kümesi içinde. Faz 3'te aktif Server Action'a bağlanacak + User.locale persist edilecek.
 - RECIPE_FORMAT.md + CODEX_HANDOFF.md güncel — Codex için opsiyonel field + "İskender/Baklava çevirmez" notu.
 - 6 yeni unit. **202 unit + 9 E2E yeşil.**
 

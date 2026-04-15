@@ -1,7 +1,6 @@
 # Tarifle — Değişiklik Günlüğü
 
-En başından bugüne yapılan her iş, başlık başlık, tek satırlık özetlerle.
-Tam detay için `docs/PROJECT_STATUS.md` veya `git log`.
+Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
 > Son güncelleme: 15 Nisan 2026
 
@@ -12,152 +11,189 @@ Tam detay için `docs/PROJECT_STATUS.md` veya `git log`.
 - 🔒 güvenlik / hardening
 - 📝 dokümantasyon
 - 🧹 refactor / temizlik
-- ⚙️ config / chore
+- ⚙️ config / chore / ops tooling
 - 🎨 UI / UX polish
 - 🧪 test / CI
 - 💾 database / schema
+- ⚡ performans
+- ♿ a11y
 
 ---
 
-## Bootstrap (MVP 0.1 — temel site)
+## Kullanıcı sistemi (auth, profil, hesap)
 
-- ⚙️ Next.js 16 + TypeScript + Tailwind 4 proje iskeleti kuruldu.
-- 💾 Prisma 7 + Neon PostgreSQL bağlantısı, 17 model + 9 enum ile schema.
-- 💾 17 kategori + 15 etiket + 15 demo tarif seed verisi.
-- 🎨 Tasarım token'ları (light/dark), Navbar, Footer, ThemeToggle.
-- ✨ Ana sayfa (hero + kategori grid + öne çıkan), Tarifler, Kategori, Tarif detay sayfaları.
-- ✨ Arama + zorluk + kategori + süre + etiket filtreleri, sayfalama.
-- ✨ SEO meta tag'leri, Open Graph, JSON-LD Schema.org Recipe.
-- ✨ Hata sayfaları + KVKK/Gizlilik/Kullanım Şartları legal sayfaları.
-- ⚙️ Vercel deploy + Cloudflare DNS (tarifle.app canonical, www → non-www 308).
-- 💾 Final seed: 56 tarif (15 bootstrap + 41 ek batch).
-- ✨ Gelişmiş filtreler + Keşfet sayfası kategoride tarif sayısı.
+- ✨ Auth.js v5 + Credentials provider + JWT strategy + KVKK onay akışı.
+- ✨ `/giris` + `/kayit` sayfaları; Google OAuth yapısı kuruldu.
+- ✨ Profil sayfası (`/profil/[username]`) + author + bio + avatar.
+- 🐛 Middleware'den Prisma kaldırıldı (Edge 1MB limit).
+- 🐛 Kayıt sonrası oturum navbar bug fix — client-side signIn pattern.
+- ✨ Google OAuth canlıya alındı (`buildAdapter()` + username + KVKK atomik create).
+- ✨ `/ayarlar` sayfası — profil düzenleme (name, username, bio) + status rozetleri.
+- ✨ Google hesabı bağla — signed cookie + HMAC + email match gate.
+- ✨ Şifre değiştir — bcrypt verify + rate limit.
+- ✨ Şifre ekle (OAuth-only user için) — `passwordHash === null` server gate.
+- ✨ Google hesabı unlink — `passwordHash` zorunlu (kilitlenme koruma).
+- ✨ Hesap silme — username echo + şifre verify + cascading transaction.
+- ✨ Şifremi unuttum akışı — `PasswordResetToken` (1h TTL), email enumeration defense.
+- ✨ `/ayarlar`'a LanguagePreferenceCard (🇹🇷/🇬🇧/🇩🇪, disabled + "Yakında").
 
-## MVP 0.2 — Kullanıcı sistemi
+## Tarif içeriği ve liste
 
-- ✨ Auth.js v5 (Credentials provider), JWT strategy, KVKK onay akışı.
-- ✨ `/giris` + `/kayit` sayfaları, Google OAuth yapısı hazır.
-- ✨ Profil sayfası (`/profil/[username]`), bookmark + beğeni + uyarlama görüntüleme.
-- ✨ Uyarlama ekleme formu, varyasyon sort'u, author + like sistemi.
-- 🐛 Middleware'den Prisma kaldırıldı (Edge 1MB limiti).
-- 🐛 Postinstall ile `prisma generate` (Vercel build fix).
-
-## MVP 0.3 — Moderasyon + kalite
-
-- ✨ Pişirme modu (tam ekran, zamanlayıcı, Wake Lock API, klavye nav).
-- ✨ Yazdırma görünümü, print-friendly CSS.
-- 🔒 Alkollü içecek 18+ yaş gate'i (sessionStorage).
-- 🔒 Keyword blacklist filtresi (Türkçe argo/küfür kontrolü).
-- ✨ Raporlama sistemi (spam/argo/yanıltıcı/zararlı/diğer).
-- ✨ Admin paneli: dashboard, raporlar, tarifler, kullanıcılar listesi.
+- ✨ Ana sayfa + Tarifler + Kategori + Tekil tarif sayfaları.
+- ✨ Arama (başlık + açıklama + malzeme) + zorluk + kategori + süre filtreleri.
+- ✨ Etiket sistemi + çoklu-etiket filter + sayfalama.
+- ✨ SEO meta tag'leri + Open Graph + JSON-LD Schema.org Recipe.
+- ✨ Porsiyon ayarlama — kişi sayısıyla malzeme miktarı otomatik güncellenir.
 - 🎨 "Varyasyon" → "Uyarlama" isim değişikliği (UI geneli).
-- 🐛 Giriş yapanlara CTA gizle + navbar'a admin sekmesi.
+- ✨ Alfabetik default sort + chip row: "Alfabetik / En yeni / En popüler / En hızlı / En çok uyarlama".
+- ✨ "En çok beğeni" sort — `variations.likeCount` toplamı, TR collation tie-break.
+- 💾 Allergen enum (10 değer) + `Recipe.allergens Allergen[]` + GIN index.
+- ✨ Alerjen etiketleri — rule-based inference + tarif detayında collapsible panel ("Alerjin varsa malzeme listesine bir de sen göz at.").
+- ✨ `/tarifler` "Alerjen · içermesin" multi-select filter.
+- ✨ Vegan/vejetaryen inference + retrofit + yeşil `🌱` chip + dedicated "DİYET" filter row.
+- 💾 `RecipeIngredient.group String?` — "Hamur için" / "Şerbet için" / "Sos için" bölüm desteği.
+- 🐛 8 tarif composite ingredient fix (revani + baklava + künefe + mantı + lahmacun + ali-nazik + hünkar beğendi + boza).
+- 🐛 Baklava + Revani tipnote netleşti ("sıcakken soğuk / soğumuşsa sıcak" iki ayrı cümle).
 
-## Faz 2 — Topluluk & AI paketleri
+## Uyarlama sistemi
 
-- ✨ **Favori koleksiyonları + alışveriş listesi**: schema (Collection / CollectionItem / ShoppingList / ShoppingListItem), `SaveMenu` buton, `/koleksiyon/[id]`, `/alisveris-listesi` sayfaları, isim-bazlı deduplication.
-- ✨ **OG Image + sosyal paylaşım + PWA**: dinamik OG (Bricolage + twemoji), `ShareMenu` (Web Share API + WhatsApp/X/kopyala fallback), PWA manifest + ikon seti + shortcuts.
-- ✨ **AI Asistan (kural tabanlı)**: `AiProvider` interface + `RuleBasedProvider` (TR-aware token-prefix matcher, pantry staples, skor = matchedRequired/totalRequired).
-- ✨ **AI-gibi commentary**: senaryo bazlı 3-5 varyant + per-recipe notlar, seed-based deterministic, disclaimer yok.
-- ✨ **E-posta doğrulama + rozet sistemi**: `EmailProvider` abstraction (Resend + Console), `/dogrula/[token]`, 4 rozet (EMAIL_VERIFIED / FIRST_VARIATION / POPULAR_VARIATION / RECIPE_COLLECTOR), profilde `BadgeShelf`.
+- ✨ Uyarlama ekleme formu + beğeni sistemi.
+- ✨ Uyarlama görüntüleme + sort (en yeni / en çok beğeni / en az malzeme).
+- ✨ Yapılandırılmış malzeme input (amount + unit + name, backward-compat).
+- ✨ VariationCard accordion (malzeme/adım/not açılır-kapanır).
+- ✨ Admin inline "Gizle" butonu (moderasyon).
+- 🎨 Status rozetleri (Gizlendi / İncelemede / Reddedildi / Taslak) profilde.
+- ✨ Kullanıcı kendi uyarlamasını silebilir — ownership gate + hard delete + AuditLog.
+- 🐛 Düzenleme EKLENMEDİ (bilinçli — edit + beğeni koruma abuse vektörü).
 
-## Security + review pass'ları
+## Bookmark, koleksiyon, alışveriş listesi
 
-- 🔒 **Pass 1**: gizli koleksiyon OG leak fix, private variations leak fix, email normalize, `allowDangerousEmailAccountLinking: false`, Zod schemas on variation/report, composite indexler.
-- 🔒 **Pass 2**: OAuth UX, email backfill scripti, schema index sadeleştirme.
-- 🐛 **Pass 3**: küçük follow-up (PUBLISHED check, OAuth UX, COMMENT type).
-- 💾 **Prisma migration baseline** alındı (db push → migrate workflow).
+- ✨ Bookmark sistemi — optimistic UI.
+- ✨ Favori koleksiyonları — `Collection` + `CollectionItem` schema.
+- ✨ `SaveMenu` — Kaydet / Listeye ekle / Koleksiyon butonları.
+- ✨ Koleksiyon detay sayfası — grid görünüm + düzenle/sil modal.
+- ✨ `/alisveris-listesi` sayfası — kontrol et/sil, manuel madde, isim-bazlı dedup.
 
-## Launch hazırlık — pass 4–18
+## AI Asistan
 
-- 🐛 **Pass 4**: kayıt sonrası oturum bug fix (client-side signIn pattern), Resend production'a çekildi, no-op middleware silindi.
-- 🔒 **Pass 5 (rate limiting)**: Upstash Redis, sliding window, 9 scope, fail-open, `getClientIp()` + `rateLimitIdentifier()`.
-- ♿ **Pass 6 (a11y)**: `useDismiss` + `useFocusTrap` hook'ları, navbar/modal/menu'lerde ARIA, reduced motion media query.
-- 🧪 **Pass 7 (lint + test altyapısı)**: Next 16 `eslint .`, ESLint rule override, React 19 purity fix, Vitest 5 dosya 49 test, blacklist prod bug fix (TR karakter).
-- ✨ **Pass 8 (Google OAuth canlıda)**: Google Cloud Console kurulum, `buildAdapter()` helper (username + KVKK), www → non-www canonical fix.
-- 🧪 **Pass 9 (E2E + CI)**: Playwright 8 smoke test, GitHub Actions `check` + `e2e` job, secret-gated e2e, concurrency control.
-- ✨ **Pass 10 (bildirim sistemi)**: `Notification` model + 6 tip enum, trigger'lar (like/badge/hide/approve/report), navbar bell + `/bildirimler` sayfası.
-- ✨ **Pass 11 (gelişmiş moderasyon)**: `lib/moderation/preflight.ts` 7 sinyal, `PENDING_REVIEW` + `moderationFlags`, `/admin/incelemeler` kuyruğu, 12 yeni test.
-- ✨ **Pass 12–13 (UX + yapılandırılmış input)**: `/ayarlar` profil düzenleme, status rozetleri, belirgin düzenleme butonu, alfabetik default sort, "En çok uyarlama" chip, structured ingredient input (amount + unit + name).
-- ✨ **Pass 14 (Google bağla)**: signed cookie + HMAC + `signIn("google")` client flow + email match gate.
-- 🔒 **Pass 15 (URL bypass + şifre değiştir)**: URL obfuscation tespiti (spaced-dot, [dot], vb.), şifre değiştirme akışı, rate limit.
-- ✨ **Pass 16 (şifre ekle)**: OAuth-only user'lar için, `passwordHash === null` server gate.
-- ✨ **Pass 17 (Google unlink)**: `passwordHash` zorunlu, kilitlenme koruma.
-- ✨ **Pass 18 (hesap silme)**: username echo + şifre verify + native confirm + transaction (cascading).
+- ✨ `AiProvider` interface + `RuleBasedProvider` (DB filter + TR-aware matcher).
+- ✨ Pantry staples modu (tuz / karabiber / su / yağ opt-in).
+- ✨ AI-gibi commentary — senaryo bazlı 3-5 varyant + per-recipe notlar, seed-based deterministic, disclaimer yok.
+- 🎨 "Düşünüyor…" typing dots + ana sayfa AI banner + navbar link.
+- 🐛 Pantry staple false-positive fix — "sucuk" eski algoritmada "su" prefix'ine match'lüyordu → exact token containment.
 
-## 15 Nisan 2026 — launch hazırlık çarşafı
+## Bildirim sistemi
 
-### Auth
+- 💾 `Notification` model + 6 tip enum (LIKED / APPROVED / HIDDEN / REPORT_RESOLVED / BADGE_AWARDED / SYSTEM).
+- ✨ `toggleLike`, `grantBadge`, admin `hide`/`approve`, `reviewReport` trigger'ları.
+- ✨ Navbar bell + unread count + dropdown (son 10, Escape + outside-click dismiss).
+- ✨ `/bildirimler` sayfası — Tümü/Okunmamış filter, type chip'leri.
+- 🎨 `resolveNotificationLink` type-aware router (HIDDEN → `/bildirimler`).
 
-- ✨ **Şifremi unuttum akışı**: `PasswordResetToken` modeli (1h TTL), `sendPasswordResetEmail` + `sendOAuthOnlyPasswordResetEmail`, `requestPasswordResetAction` + `resetPasswordAction`, `/sifremi-unuttum` + `/sifre-sifirla/[token]` sayfaları, login form'una link + success strip.
-- 🔒 Email enumeration defense — istek sonucu her zaman generic success, hiç mail gitmese bile.
+## Moderasyon ve güvenlik
 
-### Homepage
+- 🔒 Keyword blacklist — Türkçe argo/küfür kontrolü (normalized, TR karakter aware).
+- ✨ Raporlama sistemi (spam/argo/yanıltıcı/zararlı/diğer).
+- ✨ Admin paneli — dashboard + raporlar + tarifler + kullanıcılar.
+- 🔒 Rate limiting — Upstash Redis, sliding window, 9 scope, fail-open.
+- ✨ Gelişmiş moderasyon — `preflight.ts` 7 sinyal + `PENDING_REVIEW` + `/admin/incelemeler` kuyruğu.
+- 🔒 URL bypass tespiti (spaced-dot, [dot], "nokta" kelime varyasyonları).
+- 🔒 Email enumeration defense (şifremi unuttum akışında).
+- 🔒 Repo private yapıldı + `.claude/settings.local.json` gitignore'a.
 
-- ✨ **Bugünün tarifi widget'ı**: deterministic daily pick (`daysSinceEpoch % count`, `orderBy: slug`), 12-kural-bazlı curator note + 5 intro varyantı seed-based, turuncu gradient card.
-- 🎨 **Ana sayfa sıralaması**: Hero → Öne Çıkan → Günün Tarifi → AI Asistan → Kategoriler.
+## Pişirme + print + yaş gate
 
-### Liste + filtre
+- ✨ Pişirme modu — tam ekran, büyük yazı, Wake Lock API, klavye nav, zamanlayıcı.
+- ✨ Yazdırma görünümü — print-friendly CSS, gereksiz öğeler gizli.
+- 🔒 Alkollü içecek 18+ yaş gate (sessionStorage, `alkollu` tag'ine bağlı).
 
-- ✨ **"En çok beğeni" sort**: `getRecipes` branch — `variations.likeCount` toplamı, tie-break title asc (TR collation). `compareByMostLiked` helper.
+## Homepage
 
-### Variation
+- ✨ Hero + arama + popüler aramalar + kategori grid + öne çıkan + CTA.
+- ✨ AI Asistan banner (mavi gradient, navbar'la uyumlu).
+- ✨ Bugünün tarifi widget — deterministic daily pick (`daysSinceEpoch % count`, `orderBy: slug`), 12-kural curator note + 5 intro varyantı seed-based.
+- 🎨 Section sıralaması: Hero → Öne Çıkan → Günün Tarifi → AI Asistan → Kategoriler.
 
-- ✨ **Kullanıcı kendi uyarlamasını silebilir**: ownership gate + hard delete + AuditLog (`VARIATION_SELF_DELETE`). Tarif detay + profil iki yerden erişim.
-- 🐛 **Düzenleme EKLENMEDİ** (bilinçli): edit + beğeni koruma = abuse vektörü.
+## Sosyal + PWA
 
-### Alerjen sistemi
+- ✨ Dinamik OG Image — tarif, koleksiyon, site default (Bricolage Grotesque + twemoji, TR karakter).
+- ✨ `ShareMenu` — Web Share API (mobil native) + WhatsApp / X / kopyala fallback.
+- ✨ PWA manifest + ikon seti (32/180/192/512 + maskable) + shortcuts.
 
-- 💾 **Allergen enum** (10 değer) + `Recipe.allergens Allergen[]` + GIN index.
-- ✨ Retrofit inference (keyword match, TR-aware normalization, consonant softening için `fistik`/`fistig` çift form).
-- 🎨 **Tarif detay**: `<details>` collapsible (özet: "Bu tarif alerjen madde içerebilir"), açılınca subtle chip row + "Alerjin varsa malzeme listesine bir de sen göz at."
-- ✨ **`/tarifler` filter**: "Alerjen · içermesin" multi-select chip row.
-- ⚙️ `scripts/retrofit-allergens.ts` (idempotent, `--dry-run` + `--force`).
+## Email + rozet
 
-### Vejetaryen + vegan
+- ✨ E-posta doğrulama — `EmailProvider` abstraction (Resend prod + Console dev), 24h TTL token, `/dogrula/[token]`, `VerifyEmailBanner`.
+- ✨ Rozet sistemi — 4 enum (EMAIL_VERIFIED / FIRST_VARIATION / POPULAR_VARIATION / RECIPE_COLLECTOR), profilde `BadgeShelf`.
 
-- ✨ **Diet inference** (`lib/diet-inference.ts`): vegetarian = no meat/poultry/seafood; vegan = vegetarian + no SUT/YUMURTA + no honey/gelatin. "bal" regex negative lookahead balkabağı için.
-- 🐛 **Retrofit**: 42 yeni tag eklendi, 2 yanlış tag temizlendi (ezogelin + mercimek çorbası vegan etiketi yanlıştı, tereyağı vardı).
-- 🎨 **UI**: tarif detayında yeşil `🌱` chip, `/tarifler`'de dedicated "DİYET" filter row, generic tag row'dan vegan/vejetaryen çıkarıldı.
+## i18n (Faz 3 prep)
 
-### Codex 500-batch öncesi DB hijyeni
-
-- 🔒 **Seed input validation** (`lib/seed/recipe-schema.ts`): Zod shape check, slug regex, enum guard'ları, prep+cook≈total soft-check. 500 row'dan 1 bozuksa sadece o reddedilir.
-- ⚡ **GIN index on `Recipe.allergens`**: hasSome/hasNone filter'ları için ms-düzeyi.
-- ⚙️ **Retrofit orchestrator** (`scripts/retrofit-all.ts`): tek komut allergens → diet tags sırayla.
-
-### i18n minimal prep
-
-- 💾 **`Recipe.translations Json?`**: JSONB bucket, locale-keyed (`{en?, de?, ...}`), opsiyonel. Faz 3'te UI toggle aktive edildiğinde kullanılır.
+- 💾 `Recipe.translations Json?` — JSONB bucket, locale-keyed, opsiyonel.
 - 🧪 Seed validator opsiyonel `translations` alanı kabul ediyor.
-- 🎨 **`/ayarlar` sayfasında `LanguagePreferenceCard`**: 🇹🇷/🇬🇧/🇩🇪 select disabled + "Yakında" rozeti.
+- 🎨 `/ayarlar` LanguagePreferenceCard disabled placeholder.
 
-### Bug fix'ler + polish
+## Schema & DB
 
-- 🔒 **Repo private yapıldı** + `.claude/settings.local.json` gitignore'a eklendi.
-- 🎨 **Bugünün Tarifi polish**: "İleri" → "Zor" (`getDifficultyLabel` tutarlı), averageCalories chip eklendi.
-- 🐛 **AI Asistan pantry bug fix**: "Sucuk" eski `isPantryStaple` algoritması ile "su" prefix'ine match'lüyordu → %100 false-positive. Yeni: exact token containment.
-- ✨ **Malzeme grupları**: `RecipeIngredient.group String?` (nullable). `IngredientList` bucket-by-group render.
-- 🐛 **Revani ve 6 tarif daha fix**: baklava, künefe, mantı, lahmacun, ali-nazik, hünkar beğendi, boza — composite isim temizliği ("Şerbet şekeri" → "Şeker" + group="Şerbet için") + 46 ingredient update.
-- 🎨 **Alerjen uyarı metni sadeleştirildi**: "Alerjin varsa malzeme listesine bir de sen göz at."
-- 🐛 **Tipnote düzeltmesi**: Baklava + Revani için "ya da tersi" muğlak ifadesi iki case'e ayrıldı ("sıcakken soğuk, soğumuşsa sıcak").
-- 📝 **RECIPE_FORMAT "Dil ve anlatım kalitesi" bölümü**: muğlak koşullu ifadeler, belirsiz ölçüler, composite ingredient adları yasaklandı. Codex batch'ten önce kural netleşti.
+- 💾 Prisma 7 + Neon PostgreSQL + PrismaNeon adapter.
+- 💾 17 model + 9 enum (baseline).
+- 💾 Prisma migration baseline alındı (`db push` → `migrate` workflow).
+- 💾 Composite indexler (Pass 1-2): Recipe(status+createdAt/totalMinutes/viewCount/type+difficulty), Variation/Report/Collection.
+- 💾 `Variation.moderationFlags String?` (preflight signals CSV).
+- 💾 `Notification` model + 2 composite index.
+- 💾 `PasswordResetToken` model (1h TTL).
+- 💾 `Allergen` enum + `Recipe.allergens Allergen[]` + GIN index.
+- 💾 `Recipe.translations Json?` (Faz 3 prep).
+- 💾 `RecipeIngredient.group String?` (bölüm desteği).
+
+## Test & CI
+
+- 🧪 Vitest altyapısı — 5 dosya, 49 test (bootstrap).
+- 🧪 Playwright E2E + 8 smoke + secret-gated CI job.
+- 🧪 GitHub Actions CI — `lint + typecheck + vitest + build` her push'ta, concurrency control.
+- 🧪 Bildirim akış E2E + bell toggle bug fix.
+- 🧪 Preflight moderasyon — 12 yeni test.
+- 🧪 Password reset validator — 9 test.
+- 🧪 Recipe of the day commentary — 18 test.
+- 🧪 Allergens inference — 19 test.
+- 🧪 Diet inference — 15 test.
+- 🧪 Ingredient group bucketing — 7 test.
+- 🧪 AI Asistan pantry regression — 3 test.
+- 🧪 Seed recipe schema — 15 test.
+- 🧪 Toplam **212 unit + 9 E2E yeşil** (15 Nis 2026).
 
 ## Ops tooling
 
-- ⚙️ `scripts/list-users.ts`, `scripts/delete-user.ts`, `scripts/list-recipe-slugs.ts`, `scripts/seed-test-notifications.ts`, `scripts/smoke-rate-limit.ts`, `scripts/test-ai.ts`.
-- 🧪 Integration smoke'ları: `scripts/test-password-reset-flow.ts`, `scripts/test-most-liked-sort.ts`, `scripts/test-delete-own-variation.ts`.
-- ⚙️ Retrofit'ler: `scripts/retrofit-allergens.ts`, `scripts/retrofit-diet-tags.ts`, `scripts/retrofit-all.ts`, `scripts/fix-ingredient-groups.ts`, `scripts/fix-tipnotes.ts`, `scripts/check-password-reset-tokens.ts`.
+- ⚙️ Vercel auto-deploy + Cloudflare DNS (tarifle.app canonical, www → non-www 308).
+- ⚙️ Postinstall ile `prisma generate` (Vercel build fix).
+- ⚙️ `list-users.ts`, `delete-user.ts`, `list-recipe-slugs.ts` (Codex için slug snapshot).
+- ⚙️ `seed-test-notifications.ts`, `smoke-rate-limit.ts`, `test-ai.ts`.
+- ⚙️ Integration smoke'ları: `test-password-reset-flow.ts`, `test-most-liked-sort.ts`, `test-delete-own-variation.ts`.
+- ⚙️ Retrofit'ler: `retrofit-allergens.ts`, `retrofit-diet-tags.ts`, `retrofit-all.ts` (tek komut orchestrator).
+- ⚙️ İçerik fix'leri: `fix-ingredient-groups.ts`, `fix-tipnotes.ts`.
+- ⚙️ Ops helper: `check-password-reset-tokens.ts`.
+
+## A11y
+
+- ♿ `useDismiss` + `useFocusTrap` hook'ları (dropdown, modal).
+- ♿ Navbar / menu / modal ARIA attributes (role, aria-haspopup, aria-expanded, aria-controls).
+- ♿ `prefers-reduced-motion` global media query — animasyonlar 0.01ms'e iner.
+- ♿ Form autoFocus + Escape dismiss + focus-visible outline.
+
+## Polish & UX copy
+
+- 🎨 "Varyasyon" → "Uyarlama" isim değişikliği (UI geneli).
+- 🎨 Profil düzenleme butonu belirgin (bg-primary/10 pastel, hover solid).
+- 🎨 VariationCard sade tasarım (Report/Gizle sadece açıkken).
+- 🎨 Hesap silme metni sadeleşti ("Recipe anonim-kalır" vaadi çıkarıldı).
+- 🎨 Bildirim navigation type-aware (HIDDEN → `/bildirimler`).
+- 🎨 Alerjen panel collapse + kısa uyarı ("Alerjin varsa malzeme listesine bir de sen göz at.").
+- 🎨 Bugünün Tarifi polish — "İleri" → "Zor" (`getDifficultyLabel` tutarlı), averageCalories chip.
+- 🎨 Dil tercihi: navbar chip → `/ayarlar` kartına taşındı.
 
 ## Dokümantasyon
 
 - 📝 `docs/TARIFLE_ULTIMATE_PLAN.md` — tek kaynağı olan ana plan (~1928 satır).
-- 📝 `docs/PROJECT_STATUS.md` — her pass sonrası kısa özet + "Sıradaki İşler" listesi.
-- 📝 `docs/RECIPE_FORMAT.md` — Codex için tarif şartnamesi (17 kategori, 15 etiket, 10 alerjen, "X için" group convention, opsiyonel translations).
-- 📝 `docs/CODEX_HANDOFF.md` — yeni bilgisayarda Codex'in sıfırdan başlama akışı.
-
-## Test + kalite
-
-- 🧪 **212 unit + 9 E2E** test (15 Nisan 2026 itibarıyla).
-- 🧪 GitHub Actions CI her push'ta `lint + typecheck + vitest + build` koşuyor.
-- ⚙️ Vercel auto-deploy main → tarifle.app.
+- 📝 `docs/PROJECT_STATUS.md` — pass özeti + "Sıradaki İşler" aktif takip.
+- 📝 `docs/RECIPE_FORMAT.md` — Codex için tarif şartnamesi.
+- 📝 `docs/CODEX_HANDOFF.md` — yeni PC'de sıfırdan başlama akışı.
+- 📝 `docs/CHANGELOG.md` — bu dosya, kategorik kronolojik referans.
+- 📝 RECIPE_FORMAT "Dil ve anlatım kalitesi" bölümü — 7 yazım kuralı (muğlak ifadeler, belirsiz ölçüler, composite isimler yasak).

@@ -289,7 +289,7 @@ async function main() {
       categorySlug: "tatlilar", type: "TATLI" as const, difficulty: "HARD" as const,
       prepMinutes: 45, cookMinutes: 45, totalMinutes: 90, servingCount: 12,
       averageCalories: 450, protein: 6, carbs: 52, fat: 24, isFeatured: true,
-      tipNote: "Şerbeti soğuk, baklava sıcak olmalı — ya da tersi.",
+      tipNote: "Baklava fırından yeni çıkmışsa üzerine soğuk şerbet dök. Baklava soğumuşsa sıcak şerbet kullan. İkisi birden sıcak olursa şerbet emmez.",
       tags: ["misafir-sofrasi", "firinda"],
       ingredients: [
         { name: "Baklava yufkası", amount: "500", unit: "gr", sortOrder: 1, group: "Baklava için" },

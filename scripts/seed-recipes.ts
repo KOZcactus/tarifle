@@ -615,7 +615,7 @@ const recipes = [
     categorySlug: "tatlilar", type: "TATLI" as const, difficulty: "EASY" as const,
     prepMinutes: 15, cookMinutes: 30, totalMinutes: 45, servingCount: 8,
     averageCalories: 280, protein: 4, carbs: 50, fat: 8, isFeatured: false,
-    tipNote: "Kek sıcakken soğuk şerbet, şerbet sıcakken soğuk kek — bu kuralı unutmayın.",
+    tipNote: "Kek sıcakken soğuk şerbet dök. Kek soğumuşsa sıcak şerbet kullan. İkisi birden sıcak olursa kek hamur gibi kalır.",
     servingSuggestion: "Hindistan cevizi ile süsleyerek servis edin.",
     tags: ["pratik", "misafir-sofrasi"],
     ingredients: [

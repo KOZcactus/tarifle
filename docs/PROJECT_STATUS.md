@@ -1,6 +1,13 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 15 Nisan 2026 (7 tarifte group + CHANGELOG.md)
+> Son güncelleme: 15 Nisan 2026 (tipnote netleştirme + CHANGELOG işaret)
+
+## 15 Nisan 2026 — Baklava/Revani tipnote + CHANGELOG işaretleri ✅
+
+- **Tipnote fix (DB + seed kaynağı)**: "ya da tersi" muğlak ifadesi iki case'e ayrıldı. Baklava: "Fırından yeni çıkmışsa soğuk şerbet, soğumuşsa sıcak şerbet. İkisi birden sıcak olursa şerbet emmez." Revani de aynı mantık ("kek sıcakken/soğukken"). `scripts/fix-tipnotes.ts` idempotent.
+- **CHANGELOG.md işaretleri**: 9 tip (✨ yeni / 🐛 bug / 🔒 güvenlik / 📝 docs / 🧹 refactor / ⚙️ chore / 🎨 UI / 🧪 test / 💾 database / ⚡ perf / ♿ a11y). Legend yukarıda. Bootstrap'tan bugüne tüm satırlar işaretlendi.
+
+## 15 Nisan 2026 — Kalan tariflerde group + CHANGELOG ✅
 
 ## 15 Nisan 2026 — Kalan tariflerde group + CHANGELOG ✅
 

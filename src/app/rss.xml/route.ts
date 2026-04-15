@@ -15,6 +15,17 @@
 import { prisma } from "@/lib/prisma";
 import { buildRssXml, type RssItem } from "@/lib/rss";
 
+// Build-time prerender'ı kapatıyoruz çünkü CI'da DATABASE_URL placeholder
+// (`postgresql://ci:ci@localhost:5432/ci`) — Prisma bağlantı kuramaz,
+// build düşer. force-dynamic ile her istek runtime'da render edilir;
+// `Cache-Control: s-maxage=3600` sayesinde CDN (Vercel/Cloudflare)
+// 1 saatlik cache sağlar, perf etkisi sıfır. ISR semantiği yerine
+// CDN cache'i.
+//
+// sitemap.ts'in default convention'ı bu şekilde ele alınmıyor —
+// Next.js convention dosyaları (sitemap, robots) farklı path'ten geçiyor;
+// custom route handler için manuel beyan gerekiyor.
+export const dynamic = "force-dynamic";
 export const revalidate = 3600;
 
 export async function GET(): Promise<Response> {

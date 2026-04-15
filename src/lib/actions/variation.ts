@@ -10,6 +10,11 @@ import { variationSchema } from "@/lib/validators";
 import { awardFirstVariationBadge } from "@/lib/badges/service";
 import { checkRateLimit, rateLimitIdentifier } from "@/lib/rate-limit";
 
+interface ActionResult {
+  success: boolean;
+  error?: string;
+}
+
 interface VariationResult {
   success: boolean;
   error?: string;
@@ -174,4 +179,75 @@ export async function createVariation(formData: FormData): Promise<VariationResu
     // "yayınlandı" toast. Both are success; the copy should differ.
     pending: preflight.needsReview,
   };
+}
+
+/**
+ * Author-initiated delete. Lets a user remove an uyarlama they added —
+ * typical scenario: "yanlislikla ekledim". Hard delete (cascade removes
+ * Like rows via FK); we stamp an AuditLog entry so the action is traceable
+ * if support needs to reconstruct what happened.
+ *
+ * Authorization rule: session.user.id must equal variation.authorId. Anyone
+ * else — including admins — uses the moderation queue (hide / reject) which
+ * preserves the row for audit. An admin who also happens to be the author
+ * still goes through this path; the ownership check is what matters.
+ *
+ * Not wired to report/notification cleanup explicitly: Report FK is a
+ * logical reference (targetId/targetType strings), not a hard FK, so any
+ * pending reports for the deleted variation will simply never resolve —
+ * mods can ignore-or-close them in the admin queue. Acceptable: the
+ * expected volume is near-zero (report AND own-delete is rare).
+ */
+export async function deleteOwnVariationAction(
+  variationId: string,
+): Promise<ActionResult> {
+  const session = await auth();
+  if (!session?.user?.id) {
+    return { success: false, error: "Giriş yapmalısın." };
+  }
+  if (!variationId || typeof variationId !== "string") {
+    return { success: false, error: "Geçersiz istek." };
+  }
+
+  const variation = await prisma.variation.findUnique({
+    where: { id: variationId },
+    select: {
+      id: true,
+      authorId: true,
+      miniTitle: true,
+      recipe: { select: { slug: true } },
+    },
+  });
+  if (!variation) {
+    return { success: false, error: "Uyarlama bulunamadı." };
+  }
+  if (variation.authorId !== session.user.id) {
+    // Deliberately terse — don't confirm the variation exists to a non-owner.
+    return { success: false, error: "Bu uyarlamayı silme yetkin yok." };
+  }
+
+  await prisma.$transaction([
+    prisma.variation.delete({ where: { id: variation.id } }),
+    prisma.auditLog.create({
+      data: {
+        userId: session.user.id,
+        action: "VARIATION_SELF_DELETE",
+        targetType: "variation",
+        targetId: variation.id,
+        metadata: {
+          miniTitle: variation.miniTitle,
+          recipeSlug: variation.recipe.slug,
+        },
+      },
+    }),
+  ]);
+
+  // Refresh the two surfaces where the deleted uyarlama would have been
+  // visible — recipe detail (other visitors) and the author's profile.
+  revalidatePath(`/tarif/${variation.recipe.slug}`);
+  if (session.user.username) {
+    revalidatePath(`/profil/${session.user.username}`);
+  }
+
+  return { success: true };
 }

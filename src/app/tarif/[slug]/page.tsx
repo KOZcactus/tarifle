@@ -279,6 +279,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
                 key={v.id}
                 variation={v}
                 isModerator={isModerator}
+                isOwnVariation={session?.user?.id === v.authorId}
               />
             ))}
           </div>

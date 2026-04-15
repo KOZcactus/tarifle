@@ -1,11 +1,6 @@
 import Link from "next/link";
 import { getRecipeOfTheDay } from "@/lib/queries/recipe-of-the-day";
-
-const DIFFICULTY_LABEL: Record<string, string> = {
-  EASY: "Kolay",
-  MEDIUM: "Orta",
-  HARD: "İleri",
-};
+import { getDifficultyLabel } from "@/lib/utils";
 
 /**
  * Homepage "Bugünün tarifi" widget. Server component — fetches the daily
@@ -53,10 +48,19 @@ export async function RecipeOfTheDay() {
               <span aria-hidden="true">⏱️</span>
               {recipe.totalMinutes} dk
             </span>
-            <span className="inline-flex items-center gap-1">
+            <span
+              className="inline-flex items-center gap-1"
+              title={`Zorluk: ${getDifficultyLabel(recipe.difficulty)}`}
+            >
               <span aria-hidden="true">📊</span>
-              {DIFFICULTY_LABEL[recipe.difficulty] ?? recipe.difficulty}
+              {getDifficultyLabel(recipe.difficulty)}
             </span>
+            {recipe.averageCalories !== null && (
+              <span className="inline-flex items-center gap-1">
+                <span aria-hidden="true">🔥</span>
+                ~{recipe.averageCalories} kcal
+              </span>
+            )}
             {recipe._count.variations > 0 && (
               <span className="inline-flex items-center gap-1">
                 <span aria-hidden="true">✨</span>

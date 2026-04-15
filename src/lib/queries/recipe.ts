@@ -272,6 +272,10 @@ export async function getRecipeBySlug(slug: string): Promise<RecipeDetail | null
           steps: true,
           notes: true,
           likeCount: true,
+          // authorId is read on the page to decide whether to show the
+          // owner's "Sil" button. Lower-risk than deriving ownership from
+          // author.username because username can be changed, id cannot.
+          authorId: true,
           createdAt: true,
           author: {
             select: { username: true, name: true, avatarUrl: true },

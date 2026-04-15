@@ -82,6 +82,7 @@ export interface RecipeDetail {
     steps: unknown;
     notes: string | null;
     likeCount: number;
+    authorId: string;
     createdAt: Date;
     author: {
       username: string;

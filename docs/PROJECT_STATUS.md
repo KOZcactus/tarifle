@@ -1,6 +1,16 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 15 Nisan 2026 (en çok beğeni sort)
+> Son güncelleme: 15 Nisan 2026 (uyarlama sil + Bugünün Tarifi polish)
+
+## 15 Nisan 2026 — kullanıcı kendi uyarlamasını silebilir ✅
+
+- `deleteOwnVariationAction`: ownership gate (session.user.id === variation.authorId) → hard delete + AuditLog(`VARIATION_SELF_DELETE`) tx. Admin moderation path'i (soft HIDDEN) bağımsız — author hard delete farklı bir semantik (yanlışlıkla ekleme).
+- UI: `DeleteOwnVariationButton` component (native confirm + title echo + `stopPropagation` Link içine gömülebilsin diye). Tarif detay sayfasında sadece author'un açılmış VariationCard'ında + Profil sayfasında owner'ın variation row'larında.
+- VariationCard logic: owner → sadece Sil; moderator (owner değil) → Gizle + Report; normal → Report. Kendi uyarlamana report/hide garipti, temizlendi.
+- Integration smoke (`test-delete-own-variation.ts`): 2 test user, own-delete OK + cross-user gate reddediyor + AuditLog yazılıyor + cleanup.
+- Ayrıca "Bugünün tarifi" polish: "İleri" → **"Zor"** (`getDifficultyLabel` helper, site tutarlılığı) + `~XXX kcal` chip (averageCalories null değilse).
+
+## 15 Nisan 2026 — "En çok beğeni" sort ✅
 
 ## 15 Nisan 2026 — "En çok beğeni" sort ✅
 

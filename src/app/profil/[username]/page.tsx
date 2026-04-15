@@ -7,6 +7,7 @@ import { getUserBadges } from "@/lib/badges/service";
 import { formatDistanceToNow } from "@/lib/utils";
 import { VerifyEmailBanner } from "@/components/auth/VerifyEmailBanner";
 import { BadgeShelf } from "@/components/profile/BadgeShelf";
+import { DeleteOwnVariationButton } from "@/components/recipe/DeleteOwnVariationButton";
 
 interface ProfilePageProps {
   params: Promise<{ username: string }>;
@@ -235,9 +236,18 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
                         {v.recipe.emoji} {v.recipe.title}
                       </p>
                     </div>
-                    <span className="shrink-0 text-sm text-text-muted">
-                      {v.likeCount} beğeni
-                    </span>
+                    <div className="flex shrink-0 items-center gap-3">
+                      <span className="text-sm text-text-muted">
+                        {v.likeCount} beğeni
+                      </span>
+                      {isOwner && (
+                        <DeleteOwnVariationButton
+                          variationId={v.id}
+                          miniTitle={v.miniTitle}
+                          variant="compact"
+                        />
+                      )}
+                    </div>
                   </div>
                 </Link>
               );

@@ -3,6 +3,7 @@
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { ReportButton } from "@/components/recipe/ReportButton";
+import { DeleteOwnVariationButton } from "@/components/recipe/DeleteOwnVariationButton";
 import { hideVariation } from "@/lib/actions/admin";
 import {
   formatIngredient,
@@ -25,6 +26,8 @@ interface VariationCardProps {
   };
   /** Render moderator-only "Gizle" affordance. */
   isModerator: boolean;
+  /** True when the signed-in user authored this uyarlama — shows "Sil". */
+  isOwnVariation?: boolean;
 }
 
 /**
@@ -36,7 +39,7 @@ interface VariationCardProps {
  * without clicking through to the admin queue. The hidden state takes
  * effect on the next page render — `router.refresh` triggers it.
  */
-export function VariationCard({ variation, isModerator }: VariationCardProps) {
+export function VariationCard({ variation, isModerator, isOwnVariation = false }: VariationCardProps) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
@@ -154,10 +157,17 @@ export function VariationCard({ variation, isModerator }: VariationCardProps) {
             )}
           </div>
 
-          {/* Action footer — only when expanded. Report+Gizle yalnizca
-              icerik aciklanmis durumda mantikli. */}
+          {/* Action footer — only when expanded. Report+Gizle+Sil yalnizca
+              icerik aciklanmis durumda mantikli. Author'un "Sil"i moderator
+              "Gizle"sinden ayri bir aksiyon: hard delete vs soft-hide. */}
           <div className="mt-4 flex items-center justify-end gap-3 border-t border-border pt-3">
-            {isModerator && (
+            {isOwnVariation && (
+              <DeleteOwnVariationButton
+                variationId={variation.id}
+                miniTitle={variation.miniTitle}
+              />
+            )}
+            {isModerator && !isOwnVariation && (
               <button
                 type="button"
                 onClick={handleHide}
@@ -168,7 +178,7 @@ export function VariationCard({ variation, isModerator }: VariationCardProps) {
                 {isPending ? "Gizleniyor…" : "Gizle"}
               </button>
             )}
-            <ReportButton targetType="VARIATION" targetId={variation.id} />
+            {!isOwnVariation && <ReportButton targetType="VARIATION" targetId={variation.id} />}
           </div>
           {error && <p className="mt-2 text-right text-xs text-error">{error}</p>}
         </div>

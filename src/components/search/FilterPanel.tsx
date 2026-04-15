@@ -152,25 +152,29 @@ export function FilterPanel({ categories = [], tags = [] }: FilterPanelProps) {
         )}
       </div>
 
-      {/* Tag Pills */}
+      {/* Tag Pills — vegan/vejetaryen have their own dedicated DietFilter
+          row below so we strip them from this generic list to avoid the
+          same filter appearing in two places. */}
       {tags.length > 0 && (
         <div className="flex flex-wrap gap-2">
-          {tags.map((tag) => {
-            const isActive = currentTags.includes(tag.slug);
-            return (
-              <button
-                key={tag.slug}
-                onClick={() => toggleTag(tag.slug)}
-                className={`rounded-full border px-3 py-1 text-xs transition-colors ${
-                  isActive
-                    ? "border-primary bg-primary/10 text-primary"
-                    : "border-border text-text-muted hover:border-primary/50 hover:text-text"
-                }`}
-              >
-                #{tag.name}
-              </button>
-            );
-          })}
+          {tags
+            .filter((tag) => tag.slug !== "vegan" && tag.slug !== "vejetaryen")
+            .map((tag) => {
+              const isActive = currentTags.includes(tag.slug);
+              return (
+                <button
+                  key={tag.slug}
+                  onClick={() => toggleTag(tag.slug)}
+                  className={`rounded-full border px-3 py-1 text-xs transition-colors ${
+                    isActive
+                      ? "border-primary bg-primary/10 text-primary"
+                      : "border-border text-text-muted hover:border-primary/50 hover:text-text"
+                  }`}
+                >
+                  #{tag.name}
+                </button>
+              );
+            })}
         </div>
       )}
     </div>

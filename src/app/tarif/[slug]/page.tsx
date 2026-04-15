@@ -156,17 +156,39 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
           />
         </div>
 
-        {/* Tags */}
+        {/* Tags — diet tags (vegan/vejetaryen) get a loud green badge so
+            veg-aware visitors spot them at a glance; the rest stay as the
+            muted #hashtag chips. Filter-by-slug keeps the list iteration
+            single-pass. */}
         {recipe.tags.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-2">
-            {recipe.tags.map(({ tag }) => (
-              <span
-                key={tag.id}
-                className="rounded-full border border-border px-2.5 py-0.5 text-xs text-text-muted"
-              >
-                #{tag.name}
-              </span>
-            ))}
+            {recipe.tags.map(({ tag }) => {
+              const isDiet = tag.slug === "vegan" || tag.slug === "vejetaryen";
+              if (isDiet) {
+                return (
+                  <span
+                    key={tag.id}
+                    className="inline-flex items-center gap-1 rounded-full border border-accent-green/40 bg-accent-green/15 px-2.5 py-0.5 text-xs font-medium text-accent-green"
+                    title={
+                      tag.slug === "vegan"
+                        ? "Vegan uyumlu — hayvansal ürün içermiyor"
+                        : "Vejetaryen uyumlu — et/tavuk/balık içermiyor"
+                    }
+                  >
+                    <span aria-hidden="true">🌱</span>
+                    {tag.name}
+                  </span>
+                );
+              }
+              return (
+                <span
+                  key={tag.id}
+                  className="rounded-full border border-border px-2.5 py-0.5 text-xs text-text-muted"
+                >
+                  #{tag.name}
+                </span>
+              );
+            })}
           </div>
         )}
       </header>
@@ -193,22 +215,6 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
         />
         <PrintButton />
       </div>
-
-      {/* Allergen chips — rendered above the ingredients so allergy-aware
-          readers see them before scanning the list. Nothing renders when
-          the recipe has zero allergens (clean short-circuit). */}
-      {recipe.allergens.length > 0 && (
-        <div className="mb-6 rounded-xl border border-secondary/30 bg-secondary/5 p-4">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-secondary">
-            ⚠ İçindekiler
-          </p>
-          <AllergenBadges allergens={recipe.allergens} />
-          <p className="mt-2 text-xs text-text-muted">
-            Bu tarif yukarıdaki alerjenleri içeriyor olabilir. Malzeme
-            listesini kendin de kontrol et.
-          </p>
-        </div>
-      )}
 
       {/* Ingredients + Steps — Side by Side on Desktop */}
       <div className="grid gap-8 lg:grid-cols-5">
@@ -256,6 +262,37 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
           fat={recipe.fat}
         />
       </div>
+
+      {/* Allergen disclosure — collapsed by default so the info is
+          available without dominating the page (first impression
+          shouldn't be "dikkat! alerjen!" for every recipe). Native
+          <details>/<summary> = accessible keyboard toggling + no JS.
+          "İçerebilir" framing reflects the fact that inference is
+          rule-based and can miss niche ingredients. */}
+      {recipe.allergens.length > 0 && (
+        <details className="group mt-4 rounded-xl border border-border bg-bg-card">
+          <summary className="flex cursor-pointer items-center justify-between gap-3 px-4 py-3 text-sm text-text-muted hover:text-text focus:outline-none focus-visible:ring-2 focus-visible:ring-primary [&::-webkit-details-marker]:hidden">
+            <span>
+              <span aria-hidden="true" className="mr-1.5">⚠</span>
+              Bu tarif alerjen madde içerebilir
+            </span>
+            <span
+              aria-hidden="true"
+              className="text-xs transition-transform group-open:rotate-180"
+            >
+              ▾
+            </span>
+          </summary>
+          <div className="border-t border-border px-4 pb-4 pt-3">
+            <AllergenBadges allergens={recipe.allergens} tone="subtle" />
+            <p className="mt-3 text-xs text-text-muted">
+              Malzeme listesini kendin de kontrol et — etiketler kural
+              tabanlı çıkarımla oluşturuluyor ve bazı ürünler (çapraz
+              bulaşma, hazır soslar, vb.) dışarıda kalabilir.
+            </p>
+          </div>
+        </details>
+      )}
 
       {/* Variations Section */}
       <section className="mt-12 print:hidden">

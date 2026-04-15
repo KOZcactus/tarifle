@@ -57,6 +57,12 @@ alkolsuz            kis-tarifi         yaz-tarifi
 
 Bir tarife 1-5 tag uygun. Tag slug'ları listede olmalı, yoksa seed hata verir.
 
+**Vejetaryen / vegan tag'leri otomatik üretilebilir**: tariflerin içerik
+üzerinden `scripts/retrofit-diet-tags.ts` çalıştırılınca uygun olanlara
+eklenir. Codex batch'inde eklemeyi unutursan bu script düzeltir
+(idempotent — çift tag atmaz, yanlış etiketleri temizler). Yine de
+doğru etiketleri tarifte birlikte göndermek tercih edilir.
+
 ### Enum değerleri (exact string, değişmez)
 
 ```

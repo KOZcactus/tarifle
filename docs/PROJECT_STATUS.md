@@ -1,6 +1,20 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 15 Nisan 2026 (alerjen etiketleri)
+> Son güncelleme: 15 Nisan 2026 (alerjen UI collapse + vejetaryen/vegan)
+
+## 15 Nisan 2026 — alerjen paneli collapse + diyet filtresi ✅
+
+- **Alerjen paneli relocate + collapse**: eski amber "⚠ İÇİNDEKİLER" block ingredient'lerin ÜSTÜNDEYDİ, her tarifte alerjen ikonları kullanıcıyı korkutuyordu. Native `<details>` ile collapsible hale getirildi, konum `NutritionInfo` altına alındı. Summary: "⚠ Bu tarif alerjen madde içerebilir" (neden "içerebilir": inference rule-based, çapraz bulaşma ve hazır soslar kaçabilir). Açılınca subtle tone chip row + uyarı.
+- **Vejetaryen/vegan retrofit** (`scripts/retrofit-diet-tags.ts`): idempotent, allergen'lerden sonra koşulur. 42 yeni tag eklendi, 2 yanlış tag temizlendi (ezogelin + mercimek çorbası yanlışlıkla "vegan" etiketliymiş, tereyağı var — retrofit düzeltti).
+- **Diet inference** (`lib/diet-inference.ts`): vegetarian = no meat/poultry/seafood; vegan = vegetarian + no SUT/YUMURTA allergen + no honey/gelatin. "bal" için regex + negative lookahead: `/\bbal(?!\s*kabag)\b/` — "balkabağı" (pumpkin) vegan, "bal" (honey) değil.
+- **UI**:
+  - Tarif detayında vegan/vejetaryen tag'leri **yeşil chip** (`🌱` emoji, `accent-green`) — generic `#hashtag` row'dan ayrı belirgin.
+  - `/tarifler`'de dedicated **"DİYET"** filter row (`AllergenFilter`'in yanına). Generic tag list'ten vegan/vejetaryen çıkarıldı (duplikasyon olmasın).
+- **Karar — uyarlama düzenleme EKLEN(MİYE)CEK**: edit ile beğeni korur → tarif sahibi 50 beğeni alıp içeriği spam'a çevirebilir → abuse vektörü. Sil özelliği yeterli. Kullanıcının önerisi.
+- 15 yeni unit test (diet inference). **181 unit + 9 E2E yeşil.**
+- `RECIPE_FORMAT.md` + `CODEX_HANDOFF.md` güncel — retrofit-diet-tags batch sonrasi 2. adım.
+
+## 15 Nisan 2026 — alerjen etiketleri ✅
 
 ## 15 Nisan 2026 — alerjen etiketleri ✅
 

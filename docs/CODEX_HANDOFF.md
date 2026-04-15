@@ -338,7 +338,8 @@ production branch URL'i ile çalıştırır → canlıya geçer.
 6. `npx tsc --noEmit` → hata yok
 7. `npx tsx scripts/seed-recipes.ts` → veritabanına yaz
 8. `npx tsx scripts/retrofit-allergens.ts` → unutulan `allergens` alanları için otomatik çıkarım (idempotent, explicit verilmişleri atlar)
-9. Git branch + commit + push + PR
-10. Tekrar
+9. `npx tsx scripts/retrofit-diet-tags.ts` → vejetaryen/vegan tag'leri için otomatik çıkarım (idempotent, yanlış etiketleri de temizler)
+10. Git branch + commit + push + PR
+11. Tekrar
 
 Eşlik edecek dosya: **`docs/RECIPE_FORMAT.md`** — o dosyayı da okumadan tarif yazma.

@@ -69,6 +69,25 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
 
         {/* Right Side */}
         <div className="flex items-center gap-3">
+          {/* Language toggle — visual-only placeholder until Faz 3 wires
+              the EN/DE bucket (recipe.translations + messages/*.json).
+              Keeping the affordance visible now signals intent to
+              foreign visitors + anchors the final UI position so Faz 3
+              doesn't re-flow the navbar. */}
+          <button
+            type="button"
+            disabled
+            title="İngilizce / Deutsch yakında"
+            aria-label="Dil değiştirme — yakında"
+            className="hidden items-center gap-1 rounded-md border border-border bg-bg-card px-2 py-1 text-[11px] font-medium text-text-muted/70 disabled:cursor-not-allowed sm:inline-flex"
+          >
+            <span aria-hidden="true">🌐</span>
+            <span>TR</span>
+            <span className="text-[9px] uppercase tracking-wide text-text-muted/50">
+              · yakında
+            </span>
+          </button>
+
           <ThemeToggle />
 
           {/* Notification bell — only renders for logged-in users (loader returns null otherwise) */}

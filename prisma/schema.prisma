@@ -278,6 +278,16 @@ model Recipe {
   // explicit Codex-provided list populates it. A GIN index covers the array
   // so "bu alerjenleri iceren tarifleri gizle" filter stays fast.
   allergens         Allergen[]   @default([])
+  // Optional translations bucket. Shape (see docs/RECIPE_FORMAT.md):
+  //   { en?: { title, description, tipNote, servingSuggestion,
+  //            ingredients: [{sortOrder, name}],
+  //            steps: [{stepNumber, instruction, tip?}] },
+  //     de?: {...} }
+  // Primary language is always Turkish (the bare columns). Translations
+  // are opt-in per-locale; the UI language toggle (Faz 3) will read this
+  // JSON at render time. Stored as JSONB so we can add languages without
+  // a schema migration. NULL when no translations exist yet.
+  translations      Json?
   createdAt         DateTime     @default(now())
   updatedAt         DateTime     @updatedAt
 

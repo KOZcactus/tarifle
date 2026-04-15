@@ -99,6 +99,48 @@ const stepSchema = z.object({
   timerSeconds: z.number().int().min(1).max(86400).optional().nullable(),
 });
 
+/**
+ * Per-locale translation payload for a recipe. All fields are optional —
+ * Codex can translate just the title, or everything. Ingredient/step arrays
+ * mirror the primary TR ones by `sortOrder` / `stepNumber`, NOT by array
+ * index, so missing entries don't break alignment when rendered.
+ *
+ * The UI language toggle (Faz 3) reads this via `recipe.translations[locale]`.
+ * Until then: harmless JSONB column, no behaviour change.
+ */
+const localeTranslationSchema = z.object({
+  title: z.string().min(2).max(200).optional(),
+  description: z.string().min(20).max(500).optional(),
+  tipNote: z.string().max(500).optional().nullable(),
+  servingSuggestion: z.string().max(500).optional().nullable(),
+  ingredients: z
+    .array(
+      z.object({
+        sortOrder: z.number().int().min(1),
+        name: z.string().min(1).max(200),
+      }),
+    )
+    .optional(),
+  steps: z
+    .array(
+      z.object({
+        stepNumber: z.number().int().min(1),
+        instruction: z.string().min(1).max(1000),
+        tip: z.string().max(500).optional().nullable(),
+      }),
+    )
+    .optional(),
+});
+
+/**
+ * Multi-locale bucket keyed by ISO 639-1 lowercase code (en, de, fr, ...).
+ * Today only `en` is foreseen; the loose record shape is future-proof.
+ */
+const translationsSchema = z.record(
+  z.string().regex(/^[a-z]{2}$/, "locale kodu 2 küçük harf olmalı"),
+  localeTranslationSchema,
+);
+
 export const seedRecipeSchema = z
   .object({
     title: z.string().min(2).max(200),
@@ -137,6 +179,11 @@ export const seedRecipeSchema = z
     // Allergens field is new (Apr 2026). Legacy seed entries without it
     // default to empty — the retrofit script then fills them.
     allergens: z.array(z.enum(ALLERGEN)).max(10).default([]),
+
+    // Opsiyonel EN/DE çevirileri. TR primary language — translations
+    // UI language toggle'ı (Faz 3) canlıya alınınca devreye girer.
+    // Codex dilerse batch ile birlikte EN çevirisi de gönderebilir.
+    translations: translationsSchema.optional().nullable(),
 
     ingredients: z.array(ingredientSchema).min(1).max(40),
     steps: z.array(stepSchema).min(1).max(30),

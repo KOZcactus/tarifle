@@ -141,6 +141,68 @@ describe("seedRecipeSchema", () => {
   });
 });
 
+describe("seedRecipeSchema — translations (opt-in)", () => {
+  it("accepts a recipe with no translations field at all", () => {
+    const r = seedRecipeSchema.safeParse(validRecipe);
+    expect(r.success).toBe(true);
+    if (r.success) expect(r.data.translations).toBeUndefined();
+  });
+
+  it("accepts a recipe with en translation partial (title only)", () => {
+    const r = seedRecipeSchema.safeParse({
+      ...validRecipe,
+      translations: { en: { title: "Test Recipe" } },
+    });
+    expect(r.success).toBe(true);
+  });
+
+  it("accepts a full en translation (title + desc + ingredients + steps)", () => {
+    const r = seedRecipeSchema.safeParse({
+      ...validRecipe,
+      translations: {
+        en: {
+          title: "Test Recipe",
+          description:
+            "This is a test description that is long enough for validation.",
+          tipNote: "Pro tip: cook with love.",
+          servingSuggestion: "Serve hot.",
+          ingredients: [{ sortOrder: 1, name: "Flour" }],
+          steps: [{ stepNumber: 1, instruction: "Mix the flour." }],
+        },
+      },
+    });
+    expect(r.success).toBe(true);
+  });
+
+  it("rejects an unknown locale code (3 letters)", () => {
+    const r = seedRecipeSchema.safeParse({
+      ...validRecipe,
+      translations: { eng: { title: "Test" } },
+    });
+    expect(r.success).toBe(false);
+  });
+
+  it("accepts multiple locales side by side", () => {
+    const r = seedRecipeSchema.safeParse({
+      ...validRecipe,
+      translations: {
+        en: { title: "Test" },
+        de: { title: "Test auf Deutsch" },
+      },
+    });
+    expect(r.success).toBe(true);
+  });
+
+  it("rejects too-short EN title (same constraints as TR)", () => {
+    expect(
+      seedRecipeSchema.safeParse({
+        ...validRecipe,
+        translations: { en: { title: "X" } },
+      }).success,
+    ).toBe(false);
+  });
+});
+
 describe("validateSeedRecipes", () => {
   it("separates valid from invalid rows without throwing", () => {
     const { valid, errors } = validateSeedRecipes([

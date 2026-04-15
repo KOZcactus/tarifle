@@ -1,6 +1,20 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 15 Nisan 2026 (Codex batch öncesi DB hijyeni)
+> Son güncelleme: 15 Nisan 2026 (i18n minimal schema prep)
+
+## 15 Nisan 2026 — i18n minimal schema prep ✅
+
+Tam i18n ertelendi (Faz 3), ama Codex batch öncesi **schema hazırlığı** yapıldı: yarın 500 tarif gelirken Codex dilerse EN çevirisi de gönderebilir, yoksa TR-only kalır. Retrofit ileride çok daha kolay.
+
+- Schema: `Recipe.translations Json?` (JSONB, nullable). Shape: `{ en?: { title, description, tipNote, servingSuggestion, ingredients, steps }, de?: {...} }`. Locale keyed (ISO 639-1).
+- Seed validator: opsiyonel `translations` field — Zod ile shape check, unknown locale reddediliyor, partial OK (sadece title EN de verse çalışır).
+- Navbar: disabled "🌐 TR · YAKINDA" chip (tooltip: İngilizce / Deutsch yakında). Launch sonrası Faz 3'te aktive olur.
+- RECIPE_FORMAT.md + CODEX_HANDOFF.md güncel — Codex için opsiyonel field + "İskender/Baklava çevirmez" notu.
+- 6 yeni unit. **202 unit + 9 E2E yeşil.**
+
+**Karar — tam i18n neden ertelendi**: kapsam çok büyük (UI string extraction ~300-500, tarif içerik çevirisi kültürel, AI Asistan keyword mapping, allergen inference TR-only, URL yapısı, SEO hreflang, email şablonları — toplam 4-6 oturum). Türkçe MVP launch'u erteleyemeyiz. Plan Section 21 Faz 3'te zaten vardı, orada profesyonel tercüman + LLM hibriti ile yapılacak.
+
+## 15 Nisan 2026 — Codex batch öncesi DB paketi ✅
 
 ## 15 Nisan 2026 — Codex batch öncesi DB paketi ✅
 

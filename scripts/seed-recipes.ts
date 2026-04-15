@@ -1097,6 +1097,9 @@ async function main() {
         // allergens passthrough — Codex-provided explicit list wins; the
         // retrofit script later fills any empty arrays via inference.
         allergens: r.allergens,
+        // translations passthrough — optional JSONB bucket for EN/DE etc.
+        // Left NULL when not provided; Faz 3 language toggle reads this.
+        translations: r.translations ?? undefined,
         ingredients: {
           create: r.ingredients.map((ing) => ({
             name: ing.name,

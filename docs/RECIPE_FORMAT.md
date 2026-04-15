@@ -125,6 +125,22 @@ Her tarif şu TypeScript nesnesine tıpatıp uymalı:
   tags: ["misafir-sofrasi", "yuksek-protein"],  // slug array, 0-5 element
   allergens: ["GLUTEN", "SUT"] as const,   // enum array, 0-5 elements; bkz. Enum değerleri
 
+  // OPSİYONEL — EN/DE çevirileri. Eklemek zorunda değilsin; eklersen Faz 3'te UI dil
+  // toggle'ı canlıya alındığında direkt kullanılır. Primary dil her zaman TR.
+  translations: {
+    en: {
+      title: "Adana Kebab",
+      description: "Spicy grilled meat skewers from Adana region...",
+      // Sadece title çevirmek yeterli; malzeme/adım ingilizceye çevirmek opsiyonel
+      ingredients: [
+        { sortOrder: 1, name: "Ground beef (fatty)" },
+      ],
+      steps: [
+        { stepNumber: 1, instruction: "Combine meat, fat, and spices." },
+      ],
+    },
+  },
+
   ingredients: [
     { name: "Dana kıyma (yağlı)", amount: "500", unit: "gr", sortOrder: 1 },
     { name: "Pul biber",          amount: "2",   unit: "yemek kaşığı", sortOrder: 2 },
@@ -212,6 +228,19 @@ Her tarif şu TypeScript nesnesine tıpatıp uymalı:
 
 - Reçetede alkol geçiyorsa `tags` içine **zorunlu** `"alkollu"` ekle. Site bu
   tag'le 18+ yaş doğrulama gate'i tetikliyor.
+
+### Çeviriler (opsiyonel, Faz 3 için hazırlık)
+
+- `translations` alanı opsiyonel. Eklemek zorunda değilsin.
+- Eklersen: en azından `title` + `description` çeviri; malzeme/adım
+  çevirmek iş yükü arttırır, TR-only bırakabilirsin — UI fallback TR'ye
+  düşer.
+- Locale key 2 küçük harf: `en`, `de`, `fr`...
+- **İstisnalar**: İskender, Baklava, Lahmacun gibi özgün TR isimler
+  çevrilmez — aynı bırak veya "Baklava (Turkish layered pastry)" gibi
+  açıklamalı ver.
+- Translation kalitesi belirsizse boş bırak; Faz 3'te profesyonel
+  tercüman veya LLM ile retrofit yapılır.
 
 ### Dil
 

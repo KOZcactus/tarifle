@@ -194,6 +194,11 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
       {/* Results */}
       {recipes.length > 0 ? (
         <>
+          {/* Heading hierarchy fix — h1 (page title) → h2 (sr-only) →
+              h3 (RecipeCard inside). Lighthouse heading-order best-
+              practice violation gideriyor; ekran okuyucu için anlamlı,
+              görsel kullanıcıya etkisi yok. */}
+          <h2 className="sr-only">Tarif listesi</h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {recipes.map((recipe) => (
               <RecipeCard key={recipe.id} recipe={recipe} />

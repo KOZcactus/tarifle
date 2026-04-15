@@ -58,11 +58,17 @@ export default async function KategoriPage({ params }: KategoriPageProps) {
 
       {/* Recipe Grid */}
       {recipes.length > 0 ? (
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {recipes.map((recipe) => (
-            <RecipeCard key={recipe.id} recipe={recipe} />
-          ))}
-        </div>
+        <>
+          {/* Heading hierarchy: h1 (kategori adı) → h2 (sr-only) → h3
+              (RecipeCard). Lighthouse heading-order fix; sadece ekran
+              okuyucu görür. */}
+          <h2 className="sr-only">{category.name} tarifleri</h2>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {recipes.map((recipe) => (
+              <RecipeCard key={recipe.id} recipe={recipe} />
+            ))}
+          </div>
+        </>
       ) : (
         <div className="flex flex-col items-center py-20 text-center">
           <span className="text-5xl">{category.emoji}</span>

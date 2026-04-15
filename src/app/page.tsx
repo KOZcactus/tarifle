@@ -66,7 +66,27 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* AI Assistant Banner */}
+      {/* Featured Recipes — kullanici siteye tarif icin geliyor, ilk goz gezdirecegi grid */}
+      {featured.length > 0 && (
+        <section className="py-12">
+          <div className="flex items-center justify-between">
+            <h2 className="font-heading text-2xl font-bold">Öne Çıkan Tarifler</h2>
+            <Link href="/tarifler" className="text-sm text-primary hover:underline">
+              Tümünü gör →
+            </Link>
+          </div>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {featured.map((recipe) => (
+              <RecipeCard key={recipe.id} recipe={recipe} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Recipe of the day — Ome Cikan grid'inin kuratoryel devami gibi */}
+      <RecipeOfTheDay />
+
+      {/* AI Assistant Banner — ozellesmis oneri istiyorsan tarzi bir CTA, Gunun Tarifi'nin altinda */}
       <section className="pt-4">
         <Link
           href="/ai-asistan"
@@ -91,26 +111,6 @@ export default async function HomePage() {
           </span>
         </Link>
       </section>
-
-      {/* Recipe of the day — daily deterministic pick, rule-based curator note */}
-      <RecipeOfTheDay />
-
-      {/* Featured Recipes */}
-      {featured.length > 0 && (
-        <section className="py-12">
-          <div className="flex items-center justify-between">
-            <h2 className="font-heading text-2xl font-bold">Öne Çıkan Tarifler</h2>
-            <Link href="/tarifler" className="text-sm text-primary hover:underline">
-              Tümünü gör →
-            </Link>
-          </div>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {featured.map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
-            ))}
-          </div>
-        </section>
-      )}
 
       {/* Categories */}
       <section className="py-12">

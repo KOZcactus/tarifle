@@ -1,6 +1,16 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 15 Nisan 2026 (A11y audit — WCAG 2.1 AA)
+> Son güncelleme: 15 Nisan 2026 (Prisma migration baseline temizlendi)
+
+## 15 Nisan 2026 — Prisma migration baseline temizliği ✅
+
+Pass 10'dan itibaren biriken 8 `db push` değişikliği artık formal migration olarak `prisma/migrations/20260415120000_codex_batch_prep/migration.sql` altında. `prisma migrate resolve --applied` ile mevcut DB'ye "uygulandı" olarak işaretlendi (SQL re-run edilmedi — prod değişmedi). Fresh bir DB deploy'unda (e2e branch, future staging) artık `prisma migrate deploy` tam schema kuruyor.
+
+**Kapsadığı değişiklikler**: `Variation.moderationFlags` + `NotificationType` enum + `Notification` table + `PasswordResetToken` + `Allergen` enum + `Recipe.allergens` array + GIN index + `Recipe.translations` JSONB + `RecipeIngredient.group`.
+
+**Durum**: `npx prisma migrate status` → "3 migrations found, Database schema is up to date!" — dev/prod drift yok.
+
+## 15 Nisan 2026 — A11y audit: WCAG 2.1 AA tertemiz ✅
 
 ## 15 Nisan 2026 — A11y audit: WCAG 2.1 AA tertemiz ✅
 
@@ -481,7 +491,7 @@ Kalan A11y işleri (gelecek pass'e):
 - [ ] **A11y follow-up**: form label audit (otomatik + elle), renk kontrastı WCAG AA aracı ile kontrol, screen reader (NVDA/VoiceOver) elle smoke test
 - [ ] **Test coverage genişletme**: `lib/email/verification` + `lib/badges/service` için prisma mock'lu testler, E2E login-gerektiren akışlar (kayıt → doğrulama → rozet, uyarlama ekle → moderasyon onayla → bildirim)
 - [ ] **CI E2E aktivasyonu**: Neon'da `e2e-ci` branch aç → GitHub Secrets `E2E_DATABASE_URL` + `E2E_AUTH_SECRET` ekle → CI workflow'undaki e2e job otomatik çalışır
-- [ ] **Prisma migration baseline temizlik**: `db push` kullandığımız değişiklikleri (moderationFlags, Notification) proper migration olarak formalize et
+<!-- 15 Nis 2026: tamamlandı — prisma/migrations/20260415120000_codex_batch_prep -->
 
 ### Orta vadeli (Faz 2 kalanı)
 

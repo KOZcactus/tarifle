@@ -143,6 +143,7 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 💾 `Allergen` enum + `Recipe.allergens Allergen[]` + GIN index.
 - 💾 `Recipe.translations Json?` (Faz 3 prep).
 - 💾 `RecipeIngredient.group String?` (bölüm desteği).
+- 🧹 **Migration baseline temizliği** (15 Nis 2026): Pass 10'dan itibaren biriken 8 `db push` değişikliği `prisma/migrations/20260415120000_codex_batch_prep/migration.sql` altında formal migration oldu. Fresh DB deploy'u artık `prisma migrate deploy` ile tam schema kuruyor.
 
 ## Test & CI
 

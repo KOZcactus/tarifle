@@ -1818,7 +1818,7 @@ Bunlar MVP dışında, faz bazlı eklenecek:
 | Beslenme etiketleri | Vegan, vejetaryen, yüksek protein, düşük kalori | MVP 0.1 (etiket sistemiyle) |
 | Tarif düzenleme geçmişi | Varyasyon edit history | Faz 2 |
 | Kullanıcı rozetleri | İlk tarif, 10 beğeni, popüler tarif vb. | Faz 2 |
-| "Bugün ne pişirsem?" | Hızlı öneri alanı | Faz 2 |
+| "Bugün ne pişirsem?" | Hızlı öneri alanı | Faz 2 ✅ |
 | Schema.org Recipe | SEO için yapılandırılmış veri | MVP 0.1 |
 | Yazdırılabilir tarif modu | Temiz format | MVP 0.3 |
 | Tarif paylaşım linkleri | WhatsApp, Twitter, kopyala | Faz 2 |

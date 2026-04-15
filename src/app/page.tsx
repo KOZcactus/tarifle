@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
+import { RecipeOfTheDay } from "@/components/home/RecipeOfTheDay";
 import { getFeaturedRecipes, getRecipes } from "@/lib/queries/recipe";
 import { getCategories } from "@/lib/queries/category";
 import { auth } from "@/lib/auth";
@@ -90,6 +91,9 @@ export default async function HomePage() {
           </span>
         </Link>
       </section>
+
+      {/* Recipe of the day — daily deterministic pick, rule-based curator note */}
+      <RecipeOfTheDay />
 
       {/* Featured Recipes */}
       {featured.length > 0 && (

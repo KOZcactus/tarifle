@@ -17,6 +17,12 @@ export const metadata: Metadata = {
   title: "Tarifler",
   description:
     "Tüm yemek, içecek ve kokteyl tariflerini keşfet. Kategoriye, zorluğa ve süreye göre filtrele.",
+  // Filter combinations (?kategori=, ?etiket=, ?q=…) üretilen her URL
+  // varyantı ayrı indekslenmesin — param-free /tarifler canonical.
+  // Google'a "bu ana listeleme sayfası" sinyali.
+  alternates: {
+    canonical: "/tarifler",
+  },
 };
 
 interface TariflerPageProps {

@@ -43,6 +43,9 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - ✨ Arama (başlık + açıklama + malzeme) + zorluk + kategori + süre filtreleri.
 - ✨ Etiket sistemi + çoklu-etiket filter + sayfalama.
 - ✨ SEO meta tag'leri + Open Graph + JSON-LD Schema.org Recipe.
+- ✨ **Dinamik `sitemap.xml`** (Next.js `app/sitemap.ts`) — 131 URL: 8 statik + 17 kategori + 106 PUBLISHED tarif. `lastModified` = `updatedAt`, hourly revalidate.
+- ✨ **`robots.txt`** (Next.js `app/robots.ts`) — `/admin`, `/ayarlar`, `/api/*`, `/bildirimler`, token sayfaları disallow; sitemap referansı.
+- ✨ **Per-recipe canonical** — `/tarif/[slug]` sayfasına `alternates.canonical` + tarifle özel `openGraph` + `twitter:card` meta. `/tarifler?q=…&kategori=…` kombinasyonları param-free `/tarifler` canonical'a işaret eder, filter varyantları ayrı indexlenmez.
 - ✨ Porsiyon ayarlama — kişi sayısıyla malzeme miktarı otomatik güncellenir.
 - 🎨 "Varyasyon" → "Uyarlama" isim değişikliği (UI geneli).
 - ✨ Alfabetik default sort + chip row: "Alfabetik / En yeni / En popüler / En hızlı / En çok uyarlama".
@@ -56,6 +59,7 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🐛 Baklava + Revani tipnote netleşti ("sıcakken soğuk / soğumuşsa sıcak" iki ayrı cümle).
 - ⚡ Full-text search — `searchVector` generated tsvector (A/B/C weighted) + `immutable_unaccent` + GIN index + `websearch_to_tsquery('turkish', ...)` + `ts_rank_cd` relevance sort. Kök eşleşme (mantılar→Mantı), aksan-bağımsız (manti→Mantı), ingredient adı fallback union.
 - 🎨 `/tarifler` "En alakalı" sort chip (sadece query varken görünür, query'li aramalarda default).
+- ✨ **Benzer tarifler** — tarif detay sayfası altında 6 kart'lık öneri şeridi. Kural tabanlı skorlama: aynı kategori +3, aynı type +2, her ortak tag +1, aynı difficulty +0.5. Score 0 → gizli (noise değil). 12 unit test (skor matrisi + tie-break + kenar durumlar).
 
 ## Uyarlama sistemi
 
@@ -168,7 +172,8 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🧪 Batch pre-flight validator unit — 19 test (TR normalize + muğlak regex + macro consistency + alkol cross-check + slug dup).
 - 🧪 Recipe search sanitize — 6 test (sanitizeQueryInput: trim, control char strip, TR char preservation, empty input).
 - 🧪 Batch rollback helpers — 6 test (`extractBatchSlugsFromSeed` + BATCH N ↔ BATCH N SONU regex parsing, missing markers).
-- 🧪 Toplam **261 unit + 12 E2E yeşil**.
+- 🧪 Similar recipes skorlama — 12 test (ağırlık matrisi: kategori +3, type +2, tag +1, difficulty +0.5; tie-break: score → newest → TR collation; score=0 elenir; self hariç tutulur).
+- 🧪 Toplam **273 unit + 12 E2E yeşil**.
 
 ## Ops tooling
 

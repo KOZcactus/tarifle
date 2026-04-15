@@ -12,10 +12,12 @@ import { CookingMode } from "@/components/recipe/CookingMode";
 import { PrintButton } from "@/components/recipe/PrintButton";
 import { AgeGate } from "@/components/recipe/AgeGate";
 import { VariationCard } from "@/components/recipe/VariationCard";
+import { SimilarRecipes } from "@/components/recipe/SimilarRecipes";
 import { generateRecipeJsonLd } from "@/lib/seo";
 import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
 import { SITE_URL } from "@/lib/constants";
 import { getRecipeBySlug, incrementViewCount } from "@/lib/queries/recipe";
+import { getSimilarRecipes } from "@/lib/queries/similar-recipes";
 import { isBookmarked } from "@/lib/queries/user";
 import { getCollectionsForRecipe } from "@/lib/queries/collection";
 import { auth } from "@/lib/auth";
@@ -39,9 +41,31 @@ export async function generateMetadata({ params }: TarifPageProps): Promise<Meta
   const recipe = await getRecipeBySlug(slug);
   if (!recipe) return { title: "Tarif Bulunamadı" };
 
+  // Canonical yönetimi: tarifle.app non-www kanonik, www→non-www 308
+  // redirect Cloudflare'de. Bu alternates.canonical `metadataBase`
+  // (SITE_URL) ile çözülür; `?siralama=` gibi view state'leri
+  // indekslenmesin diye her tarifin kanonu param-free slug URL'i.
+  //
+  // OpenGraph image'ı src/app/tarif/[slug]/opengraph-image.tsx
+  // convention'ı otomatik ekliyor — burada manual image referansı
+  // vermeye gerek yok, duplicate olur.
   return {
     title: recipe.title,
     description: `${recipe.title} tarifi — ${getDifficultyLabel(recipe.difficulty)}, ${formatMinutes(recipe.totalMinutes)}, ${recipe.servingCount} kişilik${recipe.averageCalories ? `, ~${recipe.averageCalories} kcal` : ""}.`,
+    alternates: {
+      canonical: `/tarif/${recipe.slug}`,
+    },
+    openGraph: {
+      title: recipe.title,
+      description: recipe.description.slice(0, 200),
+      url: `/tarif/${recipe.slug}`,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: recipe.title,
+      description: recipe.description.slice(0, 200),
+    },
   };
 }
 
@@ -53,12 +77,13 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
   if (!recipe) notFound();
 
   const session = await auth();
-  const [bookmarked, userCollections] = session?.user?.id
-    ? await Promise.all([
-        isBookmarked(session.user.id, recipe.id),
-        getCollectionsForRecipe(session.user.id, recipe.id),
-      ])
-    : [false, []];
+  const [bookmarked, userCollections, similarRecipes] = await Promise.all([
+    session?.user?.id ? isBookmarked(session.user.id, recipe.id) : Promise.resolve(false),
+    session?.user?.id
+      ? getCollectionsForRecipe(session.user.id, recipe.id)
+      : Promise.resolve([]),
+    getSimilarRecipes(recipe.id, 6),
+  ]);
 
   // Surface admin/moderator UI inline on community variations so a moderator
   // can hide a clearly-bad post without leaving the recipe page. `session.user.role`
@@ -347,6 +372,12 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
           <VariationForm recipeId={recipe.id} recipeSlug={recipe.slug} />
         </div>
       </section>
+
+      {/* Similar recipes — kural tabanlı öneri (kategori + type + tag
+          ortaklığı). Print mode gizler, uyarlama bölümünden sonra gelir. */}
+      <div className="print:hidden">
+        <SimilarRecipes recipes={similarRecipes} />
+      </div>
 
       {/* View Count */}
       <div className="mt-8 text-center text-xs text-text-muted print:hidden">

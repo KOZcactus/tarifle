@@ -1,6 +1,19 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 15 Nisan 2026 (alerjen UI collapse + vejetaryen/vegan)
+> Son güncelleme: 15 Nisan 2026 (Codex batch öncesi DB hijyeni)
+
+## 15 Nisan 2026 — Codex batch öncesi DB paketi ✅
+
+Yarınki 500-tarif batch için data integrity + performans + UX hazırlığı.
+
+- **Seed input validation** (`lib/seed/recipe-schema.ts`): her tarif Zod ile pre-validate. 500 row'dan 1'i bozuksa sadece o reddedilir, 499'u yazılır. Slug regex (TR karakter yasak), enum guard'ları (Allergen/RecipeType/Difficulty), prep+cook≈total soft-check (15 dk fudge). 15 yeni unit test.
+- **Retrofit orchestrator** (`scripts/retrofit-all.ts`): tek komut — önce allergens, sonra diet tags. `--dry-run` flag. Codex workflow'u basitleşti, 9. adım oldu.
+- **GIN index on `Recipe.allergens`**: Postgres array hasSome/hasNone filter'ları için. 500 tarifte sequential scan vs GIN farkı ms-düzeyinde. `@@index([allergens], type: Gin)`.
+- **Alerjen uyarı metni sadeleştirildi**: "Malzeme listesini kendin de kontrol et — etiketler kural tabanlı çıkarımla…" → **"Alerjin varsa malzeme listesine bir de sen göz at."** Kısa, samimi, jargonsuz.
+- Seed script allergens field'ı passthrough (Codex-provided > retrofit inference); tag filtering type-narrowing fix.
+- **196 unit + 9 E2E yeşil.**
+
+## 15 Nisan 2026 — alerjen paneli collapse + diyet filtresi ✅
 
 ## 15 Nisan 2026 — alerjen paneli collapse + diyet filtresi ✅
 

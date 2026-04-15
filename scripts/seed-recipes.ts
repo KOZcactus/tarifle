@@ -5,6 +5,7 @@ import ws from "ws";
 import * as dotenv from "dotenv";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
+import { validateSeedRecipes } from "../src/lib/seed/recipe-schema";
 
 neonConfig.webSocketConstructor = ws;
 
@@ -1024,7 +1025,24 @@ const recipes = [
 // ─── Seed Fonksiyonu ─────────────────────────────────────
 
 async function main() {
-  console.log("🌱 Final seed başlatılıyor...");
+  console.log("🌱 Seed başlatılıyor...");
+
+  // ─── 1. PRE-FLIGHT VALIDATION ────────────────────────────
+  // Every candidate runs through Zod before any DB write. A single bad
+  // row (wrong enum, invalid slug, missing field) no longer blows up the
+  // batch — we log the offender + skip it, continue with the rest.
+  // For a 500-row Codex batch this is the difference between "one typo
+  // wastes the whole run" and "one typo is fixed in the next PR."
+  const { valid, errors: validationErrors } = validateSeedRecipes(recipes);
+  if (validationErrors.length > 0) {
+    console.warn(
+      `\n⚠ ${validationErrors.length} tarif şema doğrulamasından geçemedi ve atlanacak:`,
+    );
+    for (const err of validationErrors) {
+      console.warn(`   [${err.index}] ${err.title} — ${err.message}`);
+    }
+    console.warn("");
+  }
 
   // Mevcut kategori ve etiketleri DB'den al
   const allCategories = await prisma.category.findMany();
@@ -1036,7 +1054,7 @@ async function main() {
   let created = 0;
   let skipped = 0;
 
-  for (const r of recipes) {
+  for (const r of valid) {
     const categoryId = catMap[r.categorySlug];
     if (!categoryId) {
       console.warn(`  ⚠️ Kategori bulunamadı: ${r.categorySlug}, atlanıyor: ${r.title}`);
@@ -1054,14 +1072,14 @@ async function main() {
 
     const tagIds = r.tags
       .map((slug) => tagMap[slug])
-      .filter(Boolean);
+      .filter((id): id is string => Boolean(id));
 
     await prisma.recipe.create({
       data: {
         title: r.title,
         slug: r.slug,
         description: r.description,
-        emoji: r.emoji,
+        emoji: r.emoji ?? null,
         categoryId,
         type: r.type,
         difficulty: r.difficulty,
@@ -1069,27 +1087,31 @@ async function main() {
         cookMinutes: r.cookMinutes,
         totalMinutes: r.totalMinutes,
         servingCount: r.servingCount,
-        averageCalories: r.averageCalories,
-        protein: r.protein,
-        carbs: r.carbs,
-        fat: r.fat,
+        averageCalories: r.averageCalories ?? null,
+        protein: r.protein ?? null,
+        carbs: r.carbs ?? null,
+        fat: r.fat ?? null,
         isFeatured: r.isFeatured,
-        tipNote: r.tipNote,
-        servingSuggestion: r.servingSuggestion,
+        tipNote: r.tipNote ?? null,
+        servingSuggestion: r.servingSuggestion ?? null,
+        // allergens passthrough — Codex-provided explicit list wins; the
+        // retrofit script later fills any empty arrays via inference.
+        allergens: r.allergens,
         ingredients: {
           create: r.ingredients.map((ing) => ({
             name: ing.name,
             amount: ing.amount,
             unit: ing.unit ?? null,
             sortOrder: ing.sortOrder,
+            isOptional: ing.isOptional ?? false,
           })),
         },
         steps: {
           create: r.steps.map((s) => ({
             stepNumber: s.stepNumber,
             instruction: s.instruction,
-            tip: "tip" in s ? (s.tip ?? null) : null,
-            timerSeconds: "timerSeconds" in s ? (s.timerSeconds ?? null) : null,
+            tip: s.tip ?? null,
+            timerSeconds: s.timerSeconds ?? null,
           })),
         },
         tags: {
@@ -1102,7 +1124,15 @@ async function main() {
     created++;
   }
 
-  console.log(`\n🎉 Final seed tamamlandı! ${created} yeni tarif eklendi, ${skipped} atlandı.`);
+  const invalidCount = validationErrors.length;
+  console.log(
+    `\n🎉 Seed tamamlandı! ${created} yeni tarif eklendi, ${skipped} atlandı (zaten var/kategori yok), ${invalidCount} geçersiz format nedeniyle reddedildi.`,
+  );
+  if (invalidCount > 0) {
+    console.log(
+      "   Geçersiz tariflerin hangi alanda hata verdiği yukarıdaki liste ile beraber.",
+    );
+  }
 }
 
 main()

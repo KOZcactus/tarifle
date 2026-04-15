@@ -286,9 +286,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
           <div className="border-t border-border px-4 pb-4 pt-3">
             <AllergenBadges allergens={recipe.allergens} tone="subtle" />
             <p className="mt-3 text-xs text-text-muted">
-              Malzeme listesini kendin de kontrol et — etiketler kural
-              tabanlı çıkarımla oluşturuluyor ve bazı ürünler (çapraz
-              bulaşma, hazır soslar, vb.) dışarıda kalabilir.
+              Alerjin varsa malzeme listesine bir de sen göz at.
             </p>
           </div>
         </details>

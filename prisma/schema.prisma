@@ -301,6 +301,11 @@ model Recipe {
   @@index([status, createdAt])
   @@index([status, totalMinutes])
   @@index([status, viewCount])
+  // GIN on the allergens enum-array so `hasSome` filters (used by the
+  // "icermesin" allergen filter on /tarifler) stay fast once the catalog
+  // grows to 500+ recipes. Postgres GIN is the right access method for
+  // array containment — btree can't index arrays efficiently.
+  @@index([allergens], type: Gin)
   @@map("recipes")
 }
 

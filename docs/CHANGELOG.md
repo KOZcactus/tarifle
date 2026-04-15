@@ -46,6 +46,9 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - ✨ **Dinamik `sitemap.xml`** (Next.js `app/sitemap.ts`) — 131 URL: 8 statik + 17 kategori + 106 PUBLISHED tarif. `lastModified` = `updatedAt`, hourly revalidate.
 - ✨ **`robots.txt`** (Next.js `app/robots.ts`) — `/admin`, `/ayarlar`, `/api/*`, `/bildirimler`, token sayfaları disallow; sitemap referansı.
 - ✨ **Per-recipe canonical** — `/tarif/[slug]` sayfasına `alternates.canonical` + tarifle özel `openGraph` + `twitter:card` meta. `/tarifler?q=…&kategori=…` kombinasyonları param-free `/tarifler` canonical'a işaret eder, filter varyantları ayrı indexlenmez.
+- ✨ **BreadcrumbList JSON-LD** (Schema.org) — `/tarif/[slug]` (4 seviye: Ana Sayfa › Tarifler › Kategori › Tarif) ve `/tarifler/[kategori]` (3 seviye) sayfalarında. Google Search sonuç kartının altına breadcrumb şeridi çıkar → CTR artışı + rich results eligibility. `generateBreadcrumbJsonLd(items)` helper'ı `src/lib/seo.ts`'te, relative URL'leri SITE_URL ile prefix'ler.
+- ✨ **Kategori sayfası canonical** — `/tarifler/[kategori]` `alternates.canonical` metadata'sı eklendi.
+- 📝 `docs/SEO_SUBMISSION.md` — Google Search Console + Bing Webmaster Tools step-by-step submission rehberi (property verify, sitemap submit, URL inspection, CWV izleme, sitemap ping helper).
 - ✨ Porsiyon ayarlama — kişi sayısıyla malzeme miktarı otomatik güncellenir.
 - 🎨 "Varyasyon" → "Uyarlama" isim değişikliği (UI geneli).
 - ✨ Alfabetik default sort + chip row: "Alfabetik / En yeni / En popüler / En hızlı / En çok uyarlama".
@@ -173,7 +176,8 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🧪 Recipe search sanitize — 6 test (sanitizeQueryInput: trim, control char strip, TR char preservation, empty input).
 - 🧪 Batch rollback helpers — 6 test (`extractBatchSlugsFromSeed` + BATCH N ↔ BATCH N SONU regex parsing, missing markers).
 - 🧪 Similar recipes skorlama — 12 test (ağırlık matrisi: kategori +3, type +2, tag +1, difficulty +0.5; tie-break: score → newest → TR collation; score=0 elenir; self hariç tutulur).
-- 🧪 Toplam **273 unit + 12 E2E yeşil**.
+- 🧪 BreadcrumbList JSON-LD — 6 test (Schema.org shape, 1-tabanlı position, SITE_URL prefix, absolute URL bypass, empty array, 4-seviye tarif senaryosu).
+- 🧪 Toplam **279 unit + 12 E2E yeşil**.
 
 ## Ops tooling
 

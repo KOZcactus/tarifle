@@ -61,15 +61,19 @@ Public launch ve Codex 500-batch öncesi büyük bir kalite + altyapı pass'i. T
 
 ---
 
-## 15 Nisan 2026 — SEO pass + Benzer tarifler ✅
+## 15 Nisan 2026 — SEO pass + Benzer tarifler + Breadcrumb ✅
 
-Codex batch 1 main'de + production'da (106 tarif canlı). Codex batch 2'yi yazarken paralel bir pass: SEO altyapısı + discovery feature.
+Codex batch 1 main'de + production'da (106 tarif canlı). Codex batch 2'yi yazarken paralel bir pass: SEO altyapısı + discovery feature + rich results eligibility.
 
 - 🌐 **Dinamik sitemap.xml + robots.txt** (Next.js convention): 131 URL (8 statik + 17 kategori + 106 tarif), hourly revalidate. `/admin`, `/api/*`, auth-gated yollar disallow.
-- 🔗 **Per-recipe canonical + OG meta**: `/tarif/[slug]` sayfasında `alternates.canonical`, `openGraph`, `twitter:card`. `/tarifler?q=…&kategori=…` kombinasyonları param-free `/tarifler` canonical'a işaret eder, filter varyantları ayrı indexlenmez. Detail page JSON-LD Recipe schema (nutrition + ingredients + steps + author) zaten sağlamdı.
+- 🔗 **Per-recipe canonical + OG meta**: `/tarif/[slug]` sayfasında `alternates.canonical`, `openGraph`, `twitter:card`. `/tarifler?q=…&kategori=…` kombinasyonları param-free `/tarifler` canonical'a işaret eder, filter varyantları ayrı indexlenmez. `/tarifler/[kategori]` sayfasına da canonical eklendi. Detail page JSON-LD Recipe schema (nutrition + ingredients + steps + author) zaten sağlamdı.
+- 🧭 **BreadcrumbList JSON-LD** (Schema.org): `/tarif/[slug]` (4 seviye) ve `/tarifler/[kategori]` (3 seviye) sayfalarına enjekte edildi. Google Search sonuç kartının altına "Ana Sayfa › Tarifler › Kategori › Tarif" şeridi çıkar → CTR artışı + rich results eligibility. `generateBreadcrumbJsonLd` helper'ı `src/lib/seo.ts`'te.
 - ✨ **Benzer tarifler öneri motoru** (`src/lib/queries/similar-recipes.ts` + `SimilarRecipes.tsx`): tarif detay altında 6 kart'lık şerit. Kural tabanlı skor: aynı kategori +3, aynı type +2, ortak tag +1, aynı difficulty +0.5. Score 0 → gizli (noise önleme). Tie-break: newer → TR collation. Detail page `Promise.all` ile bookmark + collections + similar paralel yükleniyor, ek round-trip yok.
-- 🧪 12 yeni unit (skorlama matrisi + tie-break + kenar durumlar). **273 unit + 12 E2E yeşil**.
-- ✅ Browser verified: sitemap (106 tarif hepsi), robots.txt, canonical (`/tarifler?q=... → /tarifler`), similar section (Tas Kebabı → 6 et-yemekleri kart).
+- 🧪 12 similar-recipes + 6 breadcrumb unit = 18 yeni. **279 unit + 12 E2E yeşil**.
+- 📝 `docs/SEO_SUBMISSION.md` — Google Search Console + Bing Webmaster Tools submission rehberi (property verify, sitemap submit, URL inspection, CWV izleme, sitemap ping helper). Kerem Search Console'a ekleyene kadar sitemap passive; eklendikten sonra günler içinde indexleme.
+- ✅ Browser verified: sitemap (106 tarif hepsi), robots.txt, canonical (`/tarifler?q=... → /tarifler`), similar section (Tas Kebabı → 6 et-yemekleri kart), breadcrumb JSON-LD (Tas Kebabı detail → 4 seviye, Et Yemekleri kategori → 3 seviye).
+
+**AggregateRating bilinçli olarak atlanıldı**: Google Recipe rich results için gerçek kullanıcı rating'i gerekiyor. Bookmark/variation likeCount rating yerine geçmiyor; yanlış markup structured data abuse sayılır. Review system (Faz 3 kapsamı) eklenince `aggregateRating` + `review` array takılır.
 
 ## 15 Nisan 2026 — DB pass: FTS + batch validator + rollback ✅
 

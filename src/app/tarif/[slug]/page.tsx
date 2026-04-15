@@ -13,7 +13,7 @@ import { PrintButton } from "@/components/recipe/PrintButton";
 import { AgeGate } from "@/components/recipe/AgeGate";
 import { VariationCard } from "@/components/recipe/VariationCard";
 import { SimilarRecipes } from "@/components/recipe/SimilarRecipes";
-import { generateRecipeJsonLd } from "@/lib/seo";
+import { generateRecipeJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
 import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
 import { SITE_URL } from "@/lib/constants";
 import { getRecipeBySlug, incrementViewCount } from "@/lib/queries/recipe";
@@ -117,6 +117,15 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
   incrementViewCount(slug).catch(() => {});
 
   const jsonLd = generateRecipeJsonLd(recipe);
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: "Ana Sayfa", url: "/" },
+    { name: "Tarifler", url: "/tarifler" },
+    {
+      name: recipe.category.name,
+      url: `/tarifler?kategori=${recipe.category.slug}`,
+    },
+    { name: recipe.title, url: `/tarif/${recipe.slug}` },
+  ]);
   const isAlcoholic = recipe.tags.some(({ tag }) => tag.slug === "alkollu");
 
   const content = (
@@ -125,6 +134,12 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* Schema.org BreadcrumbList JSON-LD — Google Search'te kartın
+          altına "Ana Sayfa › Tarifler › Kategori › Tarif" şeridi çıkar. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       {/* Breadcrumb */}

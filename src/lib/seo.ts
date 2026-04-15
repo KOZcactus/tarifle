@@ -1,6 +1,35 @@
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 import type { RecipeDetail } from "@/types/recipe";
 
+export interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+/**
+ * Schema.org BreadcrumbList JSON-LD. Google Search "Ana sayfa › Tarifler
+ * › Kategori › Tarif" şeridini sonuç kartının altına ekler — organik
+ * CTR artırıcı rich result. Her breadcrumb item `@id` olarak tam URL
+ * ister (relative path değil).
+ *
+ * Aggregate rating SKIP: Google Recipe rich results için gerçek kullanıcı
+ * rating'i gerekir. Bookmark/like sayısı rating değil. Review system
+ * eklenirse (Faz 3 kapsamı) o zaman `aggregateRating` + `review` array
+ * eklenir — şimdilik yok.
+ */
+export function generateBreadcrumbJsonLd(items: readonly BreadcrumbItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url.startsWith("http") ? item.url : `${SITE_URL}${item.url}`,
+    })),
+  };
+}
+
 export function generateRecipeJsonLd(recipe: RecipeDetail) {
   const totalTime = `PT${recipe.totalMinutes}M`;
   const prepTime = `PT${recipe.prepMinutes}M`;

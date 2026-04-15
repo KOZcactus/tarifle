@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { getCategoryBySlug } from "@/lib/queries/category";
 import { getRecipes } from "@/lib/queries/recipe";
+import { generateBreadcrumbJsonLd } from "@/lib/seo";
 import type { Metadata } from "next";
 
 interface KategoriPageProps {
@@ -16,6 +17,9 @@ export async function generateMetadata({ params }: KategoriPageProps): Promise<M
   return {
     title: `${category.name} Tarifleri`,
     description: `${category.name} kategorisindeki tüm tarifler. ${category.emoji ?? ""}`,
+    alternates: {
+      canonical: `/tarifler/${kategori}`,
+    },
   };
 }
 
@@ -27,8 +31,20 @@ export default async function KategoriPage({ params }: KategoriPageProps) {
 
   const { recipes, total } = await getRecipes({ categorySlug: kategori });
 
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: "Ana Sayfa", url: "/" },
+    { name: "Tarifler", url: "/tarifler" },
+    { name: category.name, url: `/tarifler/${kategori}` },
+  ]);
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      {/* Schema.org BreadcrumbList JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
       {/* Category Header */}
       <div className="mb-8">
         <div className="flex items-center gap-3">

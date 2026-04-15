@@ -45,3 +45,8 @@ yarn-error.log*
 next-env.d.ts
 test-results/
 playwright-report/
+
+# Claude Code — user-specific harness files (permissions, dev launch config)
+# contain local preferences and may include env-inlined commands with secrets
+.claude/settings.local.json
+.claude/launch.json

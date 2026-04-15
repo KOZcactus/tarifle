@@ -1,6 +1,61 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 15 Nisan 2026 (test coverage genişletme)
+> Son güncelleme: 15 Nisan 2026 (gün sonu konsolidasyonu)
+
+## 15 Nisan 2026 oturumu — günün toplu özeti
+
+Public launch ve Codex 500-batch öncesi büyük bir kalite + altyapı pass'i. Tek günde 11 commit, hepsi main'de canlı.
+
+### Kullanıcı tarafı yeni özellikler
+- ✨ **Şifremi unuttum akışı** — `/sifremi-unuttum` + `/sifre-sifirla/[token]` + `PasswordResetToken` schema (1h TTL, email enumeration defense, OAuth-only user için bilgilendirme maili).
+- ✨ **Bugünün tarifi widget'ı** — ana sayfada deterministic daily pick (UTC gün indeksi % tarif sayısı, slug-orderlı, 12 kural-bazlı curator note + 5 intro varyantı).
+- ✨ **"En çok beğeni" sort** — `/tarifler` chip'ine 6. seçenek, in-memory aggregation + TR collation tie-break.
+- ✨ **Kullanıcı kendi uyarlamasını silebilir** — ownership gate + hard delete + AuditLog. Tarif detay + profil iki yerden. **Düzenleme bilinçli olarak EKLENMEDİ** (edit + beğeni koruma = abuse vektörü).
+- ✨ **Alerjen sistemi** — `Allergen` enum (10 değer) + `Recipe.allergens Allergen[]` + GIN index. Tarif detayında collapsible `<details>` (besin değerleri altında, "Alerjin varsa malzeme listesine bir de sen göz at."), `/tarifler`'de "içermesin" filter row.
+- ✨ **Vegan/vejetaryen** — `lib/diet-inference.ts` + retrofit (42 yeni tag, 2 yanlış temizlik). Tarif detayında yeşil `🌱` chip, `/tarifler` dedicated "DİYET" filter.
+- ✨ **Malzeme grupları** — `RecipeIngredient.group String?` "Hamur için / Şerbet için / Sos için". Revani + 6 tarif daha (baklava, künefe, mantı, lahmacun, ali-nazik, hünkar beğendi, boza) composite isim temizliği (46 ingredient update).
+- 🎨 **Ana sayfa düzeni**: Hero → Öne Çıkan → Günün Tarifi → AI Asistan → Kategoriler.
+- 🎨 **Bugünün Tarifi polish**: "İleri" → "Zor", `~XXX kcal` chip.
+- 🎨 **Dil tercihi UI** — `/ayarlar` LanguagePreferenceCard (🇹🇷/🇬🇧/🇩🇪 disabled + "Yakında").
+
+### Bug fix'ler
+- 🐛 **AI Asistan pantry false-positive**: "Sucuk" eski algoritmada "su" prefix'ine match'lüyordu → %100 false-positive. `isPantryStaple` exact-token containment ile düzeltildi.
+- 🐛 **Baklava + Revani tipnote**: "ya da tersi" muğlak ifadesi iki case'e ayrıldı.
+- 🐛 **AI Asistan select-name**: filtre dropdown'larına `htmlFor`/`id` label association.
+
+### A11y — WCAG 2.1 AA
+- ♿ **`@axe-core/playwright` ile 10 sayfa × 2 tema (light + dark)**: 164 critical/serious node → **0**.
+- 🎨 **Renk paletinde 9 token koyulaştırıldı** (primary `#e85d2c → #a03b0f`, secondary `#d4a843 → #785012`, accent-green/blue/warning/error/success/text-muted hepsi AA uyumlu). Brand turuncu ailede kaldı.
+- 🎨 Badge tint `/15` → `/10`, footer logo `text-lg` → `text-xl` (large text kategorisi).
+- 🧪 `tests/e2e/a11y-audit.spec.ts` — CI regression guard.
+
+### Codex 500-batch öncesi DB hijyeni
+- 🔒 **Seed input validation** (`lib/seed/recipe-schema.ts`) — Zod, slug regex, enum guard'ları, prep+cook≈total soft-check. 500'den 1 bozuksa diğerleri yine yazılır.
+- ⚡ **GIN index on `Recipe.allergens`** — array hasSome/hasNone filter ms-düzeyi.
+- ⚙️ **`scripts/retrofit-all.ts`** — tek komut allergens → diet tags orchestrator.
+- 💾 **i18n minimal prep**: `Recipe.translations Json?` JSONB bucket, locale-keyed, opsiyonel. Faz 3'te aktive olur.
+- 🧹 **Prisma migration baseline temizliği** — Pass 10'dan biriken 8 `db push` değişikliği `prisma/migrations/20260415120000_codex_batch_prep/migration.sql` altında formal migration. `prisma migrate resolve --applied` ile mevcut DB'de işaretlendi (re-run yok). Bundan sonra `db:migrate` kullanılacak.
+
+### Test coverage genişletme
+- 🧪 **`tests/unit/badges-service.test.ts`** (13 test, Prisma+notifications mock — `vi.hoisted` pattern).
+- 🧪 **`tests/unit/email-verification.test.ts`** (5 test, consume akışı + tx shape + best-effort badge).
+- 🧪 **`tests/e2e/auth-roundtrip.spec.ts`** (1 test, login → /ayarlar → profil → çıkış → state geri).
+- **Sonuç: 114 → 230 unit, 9 → 12 E2E test yeşil.**
+
+### Dokümantasyon
+- 📝 **`docs/CHANGELOG.md`** yeni — kategorik organize (17 başlık), her iş tek satır + emoji işaret. Her yeni iş ilgili kategorinin altına eklenir.
+- 📝 **`RECIPE_FORMAT.md`** — yeni alanlar (allergens, group, translations) + "Dil ve anlatım kalitesi" bölümü 7 yazım kuralı (muğlak ifadeler / belirsiz ölçüler / composite isim YASAK).
+- 📝 **`CODEX_HANDOFF.md`** — `retrofit-all.ts` adımı + en kritik 3 yazım kuralı özeti.
+- 📝 Memory güncel: `feedback_project_status_format.md`, `feedback_time_framing.md` eklendi.
+
+### Repo hijyeni
+- 🔒 **Repo private yapıldı** (kullanıcı), `.claude/settings.local.json` + `.claude/launch.json` gitignore'a.
+- ⚙️ Codex'in clone edebilmesi için kardeş **Collaborator** olarak eklenecek (kullanıcı yapacak).
+
+### Sıradaki tek opsiyonel iş
+- ⏳ **Full-text search (Postgres `to_tsvector`)** — 500 tarifte arama hızı + Türkçe kök eşleşme (LIKE scan yerine GIN tsvector). Şu an yapılmadı, Codex batch'i geldikten sonra ihtiyaç doğarsa eklenebilir.
+
+---
 
 ## 15 Nisan 2026 — Test coverage genişletme ✅
 
@@ -498,23 +553,22 @@ Kalan A11y işleri (gelecek pass'e):
 
 ### Yakın vadeli (launch öncesi / hemen sonrası)
 
-- [ ] **Codex batch review** — kardeş yarın başka PC'de `scripts/seed-recipes.ts`'ye 50+ tarif ekler, ilk batch'i review et (bkz. `docs/CODEX_HANDOFF.md` + Neon `codex-import` branch)
-- [ ] **A11y follow-up**: form label audit (otomatik + elle), renk kontrastı WCAG AA aracı ile kontrol, screen reader (NVDA/VoiceOver) elle smoke test
-- [ ] **Test coverage genişletme**: `lib/email/verification` + `lib/badges/service` için prisma mock'lu testler, E2E login-gerektiren akışlar (kayıt → doğrulama → rozet, uyarlama ekle → moderasyon onayla → bildirim)
-- [ ] **CI E2E aktivasyonu**: Neon'da `e2e-ci` branch aç → GitHub Secrets `E2E_DATABASE_URL` + `E2E_AUTH_SECRET` ekle → CI workflow'undaki e2e job otomatik çalışır
-<!-- 15 Nis 2026: tamamlandı — prisma/migrations/20260415120000_codex_batch_prep -->
+- [ ] **Codex batch review** — kardeş başka PC'de `scripts/seed-recipes.ts`'ye 50+ tarif ekler, ilk batch'i review et. Hazır altyapı: Neon `codex-import` branch + `docs/CODEX_HANDOFF.md` + `docs/RECIPE_FORMAT.md` (allergens + group + translations + dil kalitesi 7 kuralı). Codex'ten sonra `npx tsx scripts/retrofit-all.ts` ile allergen + diyet etiketleri otomatik dolar.
+- [ ] **CI E2E aktivasyonu**: Neon'da `e2e-ci` branch aç → GitHub Secrets `E2E_DATABASE_URL` + `E2E_AUTH_SECRET` ekle → CI workflow'undaki e2e job otomatik çalışır.
+- [ ] **Full-text search (Postgres `to_tsvector`)** — 500 tarifte arama hızı + Türkçe kök eşleşme (LIKE scan yerine GIN tsvector). Şu an `contains` ile sequential scan; 500+ tarifle hissedilir hale gelir.
 
 ### Orta vadeli (Faz 2 kalanı)
 
 - [ ] **AI Asistan v2**: ingredient synonym/token tablosu (e.g. "domates" ⇔ "çeri domates" eşleştirmesi)
 - [ ] **AI-destekli moderasyon**: Claude Haiku ile ön-sınıflandırma (opsiyonel, kural-tabanlı yeterli gelirse geri al)
 - [ ] **Şablon video sistemi** (Remotion) — büyük scope, Faz 2/3 arası
+- [ ] **A11y manuel pass**: screen reader (NVDA/VoiceOver) elle smoke test (otomatik axe pass'i tertemiz, ama gerçek SR deneyimi insan değerlendirmesi gerektirir)
 
 ### Uzun vadeli (Faz 3)
 
 - [ ] **Mobil uygulama** (React Native)
 - [ ] **Premium üyelik** (reklamsız + sınırsız AI)
-- [ ] **Çoklu dil** (EN, DE)
+- [ ] **Çoklu dil — i18n aktivasyonu** (EN, DE — schema hazır, `Recipe.translations` JSONB + `LanguagePreferenceCard` placeholder; UI string catalog + provider entegrasyonu kalıyor)
 - [ ] **AI tarif videoları** (runway/pika/özel)
 - [ ] **Açık API**
 

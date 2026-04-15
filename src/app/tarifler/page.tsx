@@ -5,6 +5,7 @@ import { SearchBar } from "@/components/search/SearchBar";
 import { FilterPanel } from "@/components/search/FilterPanel";
 import { AllergenFilter } from "@/components/search/AllergenFilter";
 import { DietFilter } from "@/components/search/DietFilter";
+import { CuisineFilter } from "@/components/search/CuisineFilter";
 import { getRecipes } from "@/lib/queries/recipe";
 import { getCategories } from "@/lib/queries/category";
 import { getTags } from "@/lib/queries/tag";
@@ -136,6 +137,9 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
         </Suspense>
         <Suspense>
           <DietFilter activeTagSlugs={tagSlugs ?? []} />
+        </Suspense>
+        <Suspense>
+          <CuisineFilter />
         </Suspense>
       </div>
 

@@ -1,12 +1,15 @@
 # Tarifle — Ultimate Proje Dokümanı
 
-> Son güncelleme: 15 Nisan 2026
-> Durum: MVP 0.1/0.2/0.3 canlıda, Faz 2'nin büyük çoğunluğu tamamlandı
-> Versiyon: 1.1
+> Son güncelleme: 15 Nisan 2026 (büyük launch hazırlık pass'i + Codex 500-batch öncesi DB hijyeni)
+> Durum: MVP 0.1/0.2/0.3 canlıda, Faz 2 büyük çoğunluk tamamlandı, A11y AA tertemiz
+> Versiyon: 1.2
+> İlişkili dokümanlar: `PROJECT_STATUS.md` (aktif takip + sıradaki işler), `CHANGELOG.md` (kategorik kronolojik özet), `RECIPE_FORMAT.md` (Codex tarif şartnamesi), `CODEX_HANDOFF.md` (yeni PC'de sıfırdan akış)
 
 Bu doküman Tarifle projesinin tek kaynak belgesidir (Single Source of Truth). Yeni özellik eklerken, teknik karar değiştirirken veya yol haritasını güncellerken önce buraya bakılır ve buradan güncellenir.
 
 > **Terminoloji (15 Nisan 2026):** UI'da "varyasyon" yerine **"uyarlama"** kullanılıyor — aşağıdaki metinde "varyasyon" geçen her yer UI'da "uyarlama" olarak okunur. Teknik isimler (Prisma `Variation` modeli, `variationId` field'ı, `/api/variations` endpoint'i) İngilizce haliyle kalır.
+
+> **15 Nisan 2026 büyük revizyon notları**: Allergen + group + translations alanları schema'ya eklendi (Section 5, 10), renk paleti AA için koyulaştırıldı (Section 14.1), Faz 2 listesine 13 yeni tamamlanan kalem eklendi (Section 21), Önerilen Ek Özellikler tablosu güncellendi (Section 30), test sayıları 230 unit + 12 E2E (Section 24).
 
 ---
 
@@ -182,6 +185,11 @@ MVP üç alt faza bölünür. Böylece ilk sürüm şişmez ve adım adım ilerl
 | Servis önerisi | Yanında ne gider | Pilav ile servis edin |
 | Varyasyon sayısı | Topluluk sayısı | 12 |
 | Etiketler | Filtrelenebilir etiketler | Fırında, Misafirlik |
+| **Alerjenler** | Allergen enum array (10 değer) — kural-tabanlı inference'la doldurulur | `[GLUTEN, SUT]` |
+| **Malzeme grupları** | Çok-bileşenli tariflerde `RecipeIngredient.group` | "Hamur için", "Şerbet için" |
+| **Çeviriler** | Opsiyonel JSONB bucket — Faz 3 i18n için hazırlık | `{ en: { title, description, … } }` |
+
+> **Not (Codex)**: yeni tarif eklerken `allergens` ve uygunsa `group` doldurulmalı. Detaylı kurallar `docs/RECIPE_FORMAT.md` "Dil ve anlatım kalitesi" bölümünde — muğlak ifadeler ("ya da tersi"), belirsiz ölçüler ("biraz"), composite isimler ("Şerbet şekeri") yasak. Codex batch sonrası `npx tsx scripts/retrofit-all.ts` allergen + diet etiketlerini otomatik doldurur.
 
 ### Kullanıcı Varyasyonlarında Bulunacak Alanlar
 
@@ -811,6 +819,84 @@ enum MediaType {
   IMAGE
   VIDEO
 }
+
+// 15 Nis 2026 — sonradan eklenenler:
+
+enum BadgeKey {
+  EMAIL_VERIFIED
+  FIRST_VARIATION
+  POPULAR_VARIATION
+  RECIPE_COLLECTOR
+}
+
+enum NotificationType {
+  VARIATION_LIKED
+  VARIATION_APPROVED
+  VARIATION_HIDDEN
+  REPORT_RESOLVED
+  BADGE_AWARDED
+  SYSTEM
+}
+
+enum Allergen {
+  GLUTEN
+  SUT
+  YUMURTA
+  KUSUYEMIS
+  YER_FISTIGI
+  SOYA
+  DENIZ_URUNLERI
+  SUSAM
+  KEREVIZ
+  HARDAL
+}
+```
+
+### 15 Nis 2026'da eklenen modeller
+
+```prisma
+// Rozet sistemi
+model UserBadge {
+  id        String   @id @default(cuid())
+  userId    String
+  key       BadgeKey
+  awardedAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@unique([userId, key])
+  @@index([userId])
+}
+
+// In-app bildirim
+model Notification {
+  id        String           @id @default(cuid())
+  userId    String
+  type      NotificationType
+  title     String           @db.VarChar(200)
+  body      String?          @db.Text
+  link      String?          @db.VarChar(500)
+  isRead    Boolean          @default(false)
+  createdAt DateTime         @default(now())
+  user      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@index([userId, isRead, createdAt])
+  @@index([userId, createdAt])
+}
+
+// Şifremi unuttum (1h TTL)
+model PasswordResetToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+  createdAt  DateTime @default(now())
+  @@unique([identifier, token])
+  @@index([identifier])
+}
+
+// Recipe'a eklenenler:
+//   moderationFlags String? @db.VarChar(200)   (Variation üstünde, preflight CSV)
+//   allergens       Allergen[] @default([])     (Recipe — GIN index ile)
+//   translations    Json?                       (Recipe — Faz 3 i18n bucket)
+//   group           String?  @db.VarChar(80)   (RecipeIngredient — "Hamur için" vb.)
+//   @@index([allergens], type: Gin)             (Recipe — array filter performance)
 ```
 
 ### İlişki Özeti
@@ -1148,34 +1234,43 @@ tarifle/
 
 ### 14.1 Renk Paleti
 
-```
-Dark Mode (Varsayilan):
-  Arka plan:         #0F0F0F
-  Kart arka plani:   #1A1A1A
-  Vurgu (primary):   #FF6B35  (turuncu — yemek sicakligi)
-  Ikincil:           #FFC857  (altin sarisi)
-  Taze aksent:       #2FBF71  (yesil — ferah, modern denge)
-  Bilgi aksent:      #4F8DFD  (mavi — linkler, info badge)
-  Metin:             #F5F5F5
-  Alt metin:         #A0A0A0
-  Basari:            #4CAF50
-  Hata:              #FF5252
-  Uyari:             #FFA726
-  Border:            #2A2A2A
+> **15 Nis 2026 — WCAG 2.1 AA pass:** Plandaki orijinal renkler text/buton kontrastını geçiremedi (axe-core ile 164 critical/serious node tespit). Token'lar koyulaştırıldı. Brand "orange family" içinde kaldı, marka tanınır. Aşağıdaki değerler **canlıdaki gerçek hex'lerdir** — `src/app/globals.css` referans.
 
+```
 Light Mode:
-  Arka plan:         #F8FAF9  (notr beyaz, hafif serin)
-  Kart arka plani:   #FFFFFF
-  Vurgu (primary):   #E85D2C  (koyu turuncu)
-  Ikincil:           #D4A843
-  Taze aksent:       #1FA85A  (koyu yesil)
-  Bilgi aksent:      #3B7AE8  (koyu mavi)
-  Metin:             #1A1A1A
-  Alt metin:         #6B6B6B
-  Border:            #E8E8E8
+  Arka plan:         #f8f6f2
+  Kart arka plani:   #f0ece4
+  Yukseltilmis:      #e8e3da
+  Vurgu (primary):   #a03b0f  (eski #e85d2c, white kontrast 6.7:1)
+  Primary hover:     #7f2d08
+  Ikincil:           #785012  (eski #d4a843 — amber → tütün, AA için koyulaştırıldı)
+  Taze aksent:       #146a36  (eski #1fa85a)
+  Bilgi aksent:      #184aaa  (eski #3b7ae8)
+  Metin:             #1a1a1a
+  Alt metin:         #5a5a5a  (eski #6b6b6b)
+  Basari:            #2e7d32  (eski #4caf50)
+  Hata:              #c62828  (eski #d32f2f)
+  Uyari:             #824200  (eski #f57c00)
+  Border:            #ddd8cf
+  Border hover:      #c8c1b5
+
+Dark Mode:
+  Arka plan:         #0f0f0f
+  Kart arka plani:   #1a1a1a
+  Yukseltilmis:      #222222
+  Vurgu (primary):   #ff7a3d  (eski #ff6b35 — buton white kontrastı için)
+  Primary hover:     #ff9055
+  Ikincil:           #ffc857
+  Taze aksent:       #2fbf71
+  Bilgi aksent:      #4f8dfd
+  Metin:             #f5f5f5
+  Alt metin:         #a0a0a0
+  Border:            #2a2a2a
 ```
 
-> **Not:** Primary turuncu yemek sıcaklığını verir ama tek başına monoton kalabilir. Yeşil aksent "taze malzeme/sağlıklı" hissi, mavi aksent linkler ve bilgi badge'leri için kullanılır. Böylece arayüz sadece sıcak değil, ferah ve modern de görünür.
+> **A11y notu:** Badge variant'larında tint opacity `/15` → `/10` indirildi (chip text kontrastı için). Footer logo `text-lg` → `text-xl` (large text kategorisi, 3:1 threshold yeterli). Regression guard: `tests/e2e/a11y-audit.spec.ts` — light + dark scan her CI push'unda. Yeni sayfa eklenince `PAGES_TO_SCAN` array'ine ekle yeterli.
+
+> **Brand notu:** Primary turuncu yemek sıcaklığını verir; AA için koyulaştırılmış ton "olgun terracotta" hissi taşıyor, hâlâ tanınır turuncu. Yeşil aksent "taze malzeme/sağlıklı", mavi aksent linkler/info, ikincil amber-tütün heading vurgusu (Püf Noktası, Servis Önerisi panel başlıkları).
 
 ### 14.2 Tipografi
 
@@ -1510,16 +1605,26 @@ Video özelliği güzel ama pahalı ve operasyonel olarak riskli olabilir. Üç 
 - [x] PWA desteği (manifest + ikonlar + shortcuts)
 - [x] **Google OAuth** (canlıda, bağla/unlink dahil — plandaki MVP 0.2 Auth.js kısmı Faz 2'ye genişledi)
 - [x] **Profil düzenleme + şifre yönetimi + hesap silme** (tam /ayarlar sayfası)
-- [x] **Rate limiting** (Upstash Redis, 6 scope)
+- [x] **Şifremi unuttum akışı** (PasswordResetToken, 1h TTL, email enumeration defense)
+- [x] **Rate limiting** (Upstash Redis, 9 scope)
 - [x] **A11y overhaul** (useDismiss/useFocusTrap hook'ları, ARIA, reduced motion)
+- [x] **A11y WCAG 2.1 AA tertemiz** (axe-core/playwright regression guard, renk paleti AA için revizyon, light + dark)
 - [x] **Structured ingredient input** (amount + unit + name, backward compat)
-- [x] **CI pipeline** (GitHub Actions: lint + typecheck + vitest + build)
-- [x] **E2E test altyapısı** (Playwright, 9 smoke test)
+- [x] **Malzeme grupları** ("Hamur için" / "Şerbet için" gibi bölümler — RecipeIngredient.group)
+- [x] **Alerjen sistemi** (10 enum + GIN index + UI: detayda collapsible panel + listede "içermesin" filter + retrofit script)
+- [x] **Vegan/vejetaryen retrofit** (kural-tabanlı diet inference + dedicated DİYET filter + yeşil chip)
+- [x] **Bugünün tarifi** widget (deterministic daily pick + 12-kural curator note)
+- [x] **"En çok beğeni" sort** (variations.likeCount aggregation, TR collation tie-break)
+- [x] **Kullanıcı kendi uyarlamasını silebilir** (ownership gate + hard delete + AuditLog; düzenleme bilinçli olarak EKLENMEDİ — abuse vektörü)
+- [x] **i18n minimal prep** (Recipe.translations Json? + LanguagePreferenceCard "Yakında") — gerçek aktivasyon Faz 3
+- [x] **CI pipeline** (GitHub Actions: lint + typecheck + vitest + build + a11y audit)
+- [x] **E2E test altyapısı** (Playwright, 12 test: home + recipe-detail + auth-pages + notifications + auth-roundtrip + a11y light/dark)
+- [x] **Codex 500-batch DB hijyeni** (seed Zod validation + retrofit-all orchestrator + GIN index + migration baseline temizliği)
 
 ### Faz 3 — Premium & Genişleme
 
 - [ ] AI tarif videoları
-- [ ] Çoklu dil desteği (EN, DE)
+- [ ] Çoklu dil desteği (EN, DE) — schema hazır (Recipe.translations + LanguagePreferenceCard placeholder); UI string catalog + provider entegrasyonu kalıyor
 - [ ] Premium üyelik (reklamsız, sınırsız AI)
 - [ ] Haftalık menü planlayıcı
 - [ ] Yemek blog / makale bölümü
@@ -1631,6 +1736,15 @@ ci: CI/CD degisiklikleri
 - Kritik domain logic (moderasyon, kalori hesabı, auth, beğeni) %80+ kapsam
 - UI bileşenleri kademeli olarak test kapsamına alınır
 - Kritik kullanıcı akışları (auth, varyasyon ekleme, beğeni) %100 E2E testli
+
+### 15 Nis 2026 — mevcut durum
+
+- **230 unit + 12 E2E test yeşil.**
+- Unit: moderation blacklist (11), AI matcher (23 — pantry regression dahil), rate-limit (8), email normalize (5), useDismiss (5), ingredients (?), link-intent (?), moderation preflight (12), profile validator (?), password change validator (?), password reset validator (9), recipe of the day commentary (18), recipe most-liked sort (6), allergens (19), diet inference (15), ingredient group bucketing (7), seed recipe schema (15), badges service (13, prisma+notification mock), email verification (5, prisma mock).
+- E2E: home (3), recipe-detail (2), auth-pages (3), notifications (1), auth-roundtrip (1), a11y light + dark (2 — axe-core/playwright, regression guard).
+- CI her push'ta: `lint + typecheck + vitest + build + a11y audit`.
+- Ops smoke scripts (CI'da değil, manuel): test-password-reset-flow, test-most-liked-sort, test-delete-own-variation, retrofit-allergens, retrofit-diet-tags, retrofit-all, fix-ingredient-groups, fix-tipnotes, smoke-rate-limit, list-users, delete-user, list-recipe-slugs.
+- **Mocking pattern**: Prisma'ya bağımlı service'leri test ederken `vi.hoisted` + `vi.mock` (örnek: `tests/unit/badges-service.test.ts`).
 
 ---
 
@@ -1810,21 +1924,26 @@ Bunlar MVP dışında, faz bazlı eklenecek:
 
 | Özellik | Açıklama | Faz |
 |---------|----------|-----|
-| Tarif kaydetme / favorilere alma | Bookmark sistemi | MVP 0.2 |
-| Porsiyon artırma/azaltma | Malzeme miktarları otomatik güncelleme | MVP 0.2 |
-| Pişirme modu | Ekranda büyük adımlar, timer, ekran kapanmasını engelleme | MVP 0.3 |
-| Alışveriş listesi oluşturma | Malzemeleri listeye ekle, WhatsApp'a gönder | Faz 2 |
-| Alerjen etiketleri | Süt ürünü, gluten, kuruyemiş, yumurta vb. | Faz 2 |
-| Beslenme etiketleri | Vegan, vejetaryen, yüksek protein, düşük kalori | MVP 0.1 (etiket sistemiyle) |
-| Tarif düzenleme geçmişi | Varyasyon edit history | Faz 2 |
-| Kullanıcı rozetleri | İlk tarif, 10 beğeni, popüler tarif vb. | Faz 2 |
-| "Bugün ne pişirsem?" | Hızlı öneri alanı | Faz 2 ✅ |
-| Schema.org Recipe | SEO için yapılandırılmış veri | MVP 0.1 |
-| Yazdırılabilir tarif modu | Temiz format | MVP 0.3 |
-| Tarif paylaşım linkleri | WhatsApp, Twitter, kopyala | Faz 2 |
-| OG Image oluşturucu | Her tarif için otomatik sosyal medya görseli (Vercel OG) | Faz 2 |
-| Adım zamanlayıcısı | "20 dakika pişirin" adımında otomatik timer | MVP 0.3 |
-| Mevsimsel öneriler | Kış tarifleri, Ramazan menüsü gibi | Faz 2 |
+| Tarif kaydetme / favorilere alma | Bookmark sistemi | MVP 0.2 ✅ |
+| Porsiyon artırma/azaltma | Malzeme miktarları otomatik güncelleme | MVP 0.2 ✅ |
+| Pişirme modu | Ekranda büyük adımlar, timer, ekran kapanmasını engelleme | MVP 0.3 ✅ |
+| Alışveriş listesi oluşturma | Malzemeleri listeye ekle, WhatsApp'a gönder | Faz 2 ✅ |
+| Alerjen etiketleri | Süt ürünü, gluten, kuruyemiş, yumurta vb. | Faz 2 ✅ (10 enum + GIN index + UI + retrofit script) |
+| Beslenme etiketleri | Vegan, vejetaryen, yüksek protein, düşük kalori | MVP 0.1 ✅ + Faz 2 ✅ (vegan/vejetaryen retrofit + dedicated DİYET filter) |
+| Tarif düzenleme geçmişi | Varyasyon edit history | **Eklenmedi** (15 Nis 2026 — bilinçli karar: edit + beğeni koruma abuse vektörü; sil özelliği yeterli) |
+| Kullanıcı rozetleri | İlk tarif, 10 beğeni, popüler tarif vb. | Faz 2 ✅ |
+| "Bugün ne pişirsem?" | Hızlı öneri alanı | Faz 2 ✅ (ana sayfa Bugünün Tarifi widget — deterministic daily pick) |
+| Schema.org Recipe | SEO için yapılandırılmış veri | MVP 0.1 ✅ |
+| Yazdırılabilir tarif modu | Temiz format | MVP 0.3 ✅ |
+| Tarif paylaşım linkleri | WhatsApp, Twitter, kopyala | Faz 2 ✅ |
+| OG Image oluşturucu | Her tarif için otomatik sosyal medya görseli (Vercel OG) | Faz 2 ✅ |
+| Adım zamanlayıcısı | "20 dakika pişirin" adımında otomatik timer | MVP 0.3 ✅ |
+| Mevsimsel öneriler | Kış tarifleri, Ramazan menüsü gibi | Faz 2 (ileride) |
+| Şifremi unuttum akışı | Email-based reset, 1h TTL | Faz 2 ✅ |
+| Kullanıcı kendi uyarlamasını silebilir | Hard delete + AuditLog | Faz 2 ✅ |
+| Malzeme grupları | Hamur için / Şerbet için bölümler | Faz 2 ✅ |
+| Diğer dil desteği (EN/DE) | UI + tarif çevirileri | Faz 3 (schema hazır: `Recipe.translations Json?`) |
+| Full-text arama (Postgres tsvector) | Türkçe kök eşleşme + GIN | Faz 2 sıradakiler (500+ tarifle hissedilir) |
 
 ---
 
@@ -1847,9 +1966,10 @@ Aşağıdaki kararlar netleştirilmiş durumda:
 
 ### Açık Kalan Sorular
 
-1. E-posta doğrulaması MVP'de zorunlu mu yoksa opsiyonel mi olsun?
-2. AI video için aylık deneme bütçesi belirlenecek mi?
-3. İlk tarif veri setine kullanıcının özel tarifleri de eklensin mi?
+1. E-posta doğrulaması MVP'de zorunlu mu yoksa opsiyonel mi olsun? — **Karar: opsiyonel** (15 Nis 2026; doğrulanmamış kullanıcı her şeyi yapabiliyor, sadece EMAIL_VERIFIED rozeti eksik. Şifremi unuttum akışı bunu varsayıyor — verify olmadan da reset alabilir).
+2. AI video için aylık deneme bütçesi belirlenecek mi? — Hâlâ açık (Faz 3 konusu)
+3. İlk tarif veri setine kullanıcının özel tarifleri de eklensin mi? — Hâlâ açık (Codex 500-batch akışında değerlendirilebilir)
+4. Gelişmiş moderasyonda AI (Claude Haiku) kullanımı? — **Karar: kural-tabanlı yeterli** (15 Nis 2026; preflight 7 sinyal + PENDING_REVIEW kuyruğu + URL bypass tespiti production'da çalışıyor; LLM masrafı şu an gereksiz, kalite gerektiğinde revisit edilir)
 
 ---
 

@@ -1,6 +1,21 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 15 Nisan 2026 (uyarlama sil + Bugünün Tarifi polish)
+> Son güncelleme: 15 Nisan 2026 (alerjen etiketleri)
+
+## 15 Nisan 2026 — alerjen etiketleri ✅
+
+Codex yarın batch getirmeden önce schema + UI hazır. Mevcut 56 tarif retrofit ile etiketlendi.
+
+- Schema: `Allergen` enum (10 değer — EU "big 10" adapted: GLUTEN/SUT/YUMURTA/KUSUYEMIS/YER_FISTIGI/SOYA/DENIZ_URUNLERI/SUSAM/KEREVIZ/HARDAL) + `Recipe.allergens Allergen[]`. `db push` ile uygulandı.
+- `lib/allergens.ts`: TR label/emoji map + `inferAllergensFromIngredients` (kural tabanlı keyword match, TR normalisation — "ı" → "i", "ğ" → "g" + Turkish-aware lowercase). Consonant softening için inflected formlar da keyword'te ("fistik" + "fistig").
+- **Retrofit script** (`scripts/retrofit-allergens.ts`): idempotent, `--dry-run` + `--force` flag'leri var. Mevcut 35 tarife inference çıktı, 21'i zaten temiz. `hasExisting` var ise skip (Codex'in explicit labeling'ini override etmez).
+- UI: tarif detay sayfasında ingredient list'in üstünde amber "⚠ İÇİNDEKİLER" panel + chip row (`AllergenBadges`). `/tarifler`'de "Alerjen · içermesin" filter row (`AllergenFilter`, URL: `?alerjen=X&alerjen=Y`). Filter çalışıyor: Gluten+Süt hariç 56 → 23 tarif.
+- `RECIPE_FORMAT.md` + `CODEX_HANDOFF.md` güncellendi — Codex her tarif için `allergens: [...]` alanı girsin, batch sonrası retrofit çalıştırsın.
+- Unit test (19 yeni): enum label coverage + kural tabanlı inference (fıstık vs antep fıstığı ayrımı, Turkish normalization, canonical order). **166 unit + 9 E2E yeşil.**
+
+**Not**: tone-of-safety kararı — over-flagging (false positive) safer than under (allergy user skips safe recipe = annoying; misses real allergen = dangerous). Inference kuralları conservative.
+
+## 15 Nisan 2026 — kullanıcı kendi uyarlamasını silebilir ✅
 
 ## 15 Nisan 2026 — kullanıcı kendi uyarlamasını silebilir ✅
 

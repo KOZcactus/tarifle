@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import { IngredientList } from "@/components/recipe/IngredientList";
+import { AllergenBadges } from "@/components/recipe/AllergenBadges";
 import { RecipeSteps } from "@/components/recipe/RecipeSteps";
 import { NutritionInfo } from "@/components/recipe/NutritionInfo";
 import { SaveMenu } from "@/components/recipe/SaveMenu";
@@ -192,6 +193,22 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
         />
         <PrintButton />
       </div>
+
+      {/* Allergen chips — rendered above the ingredients so allergy-aware
+          readers see them before scanning the list. Nothing renders when
+          the recipe has zero allergens (clean short-circuit). */}
+      {recipe.allergens.length > 0 && (
+        <div className="mb-6 rounded-xl border border-secondary/30 bg-secondary/5 p-4">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-secondary">
+            ⚠ İçindekiler
+          </p>
+          <AllergenBadges allergens={recipe.allergens} />
+          <p className="mt-2 text-xs text-text-muted">
+            Bu tarif yukarıdaki alerjenleri içeriyor olabilir. Malzeme
+            listesini kendin de kontrol et.
+          </p>
+        </div>
+      )}
 
       {/* Ingredients + Steps — Side by Side on Desktop */}
       <div className="grid gap-8 lg:grid-cols-5">

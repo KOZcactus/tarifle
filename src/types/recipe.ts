@@ -1,4 +1,4 @@
-import type { Difficulty, RecipeStatus, RecipeType } from "@prisma/client";
+import type { Allergen, Difficulty, RecipeStatus, RecipeType } from "@prisma/client";
 
 export interface RecipeCard {
   id: string;
@@ -43,6 +43,7 @@ export interface RecipeDetail {
   viewCount: number;
   tipNote: string | null;
   servingSuggestion: string | null;
+  allergens: Allergen[];
   createdAt: string;
   category: {
     id: string;

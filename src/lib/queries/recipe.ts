@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import type { Difficulty } from "@prisma/client";
+import type { Allergen, Difficulty } from "@prisma/client";
 import type { RecipeCard, RecipeDetail } from "@/types/recipe";
 
 /**
@@ -49,6 +49,11 @@ interface GetRecipesOptions {
   categorySlug?: string;
   maxMinutes?: number;
   tagSlugs?: string[];
+  /**
+   * Allergen exclusion filter. Recipes whose `allergens` array intersects
+   * with this list are hidden. Empty/undefined = no filter.
+   */
+  excludeAllergens?: Allergen[];
   sortBy?:
     | "newest"
     | "quickest"
@@ -71,6 +76,7 @@ export async function getRecipes(options: GetRecipesOptions = {}): Promise<{
     categorySlug,
     maxMinutes,
     tagSlugs,
+    excludeAllergens,
     sortBy = "alphabetical",
     limit = 24,
     offset = 0,
@@ -107,6 +113,16 @@ export async function getRecipes(options: GetRecipesOptions = {}): Promise<{
   if (tagSlugs && tagSlugs.length > 0) {
     where.tags = {
       some: { tag: { slug: { in: tagSlugs } } },
+    };
+  }
+
+  if (excludeAllergens && excludeAllergens.length > 0) {
+    // hasSome → true when the recipe has ANY of these allergens. We want
+    // the opposite — exclude those recipes — so wrap in NOT.
+    // Prisma's array filters: hasSome, hasEvery, has, isEmpty.
+    where.NOT = {
+      ...(where.NOT as object | undefined),
+      allergens: { hasSome: excludeAllergens },
     };
   }
 
@@ -226,6 +242,7 @@ export async function getRecipeBySlug(slug: string): Promise<RecipeDetail | null
       viewCount: true,
       tipNote: true,
       servingSuggestion: true,
+      allergens: true,
       createdAt: true,
       category: {
         select: { id: true, name: true, slug: true, emoji: true },

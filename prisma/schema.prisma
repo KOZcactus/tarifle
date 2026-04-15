@@ -88,6 +88,31 @@ enum BadgeKey {
   RECIPE_COLLECTOR
 }
 
+/**
+ * EU Food Information Regulation "big 10" adapted for Turkish recipes.
+ * - GLUTEN covers wheat/rye/barley/oats (un, ekmek, bulgur, makarna)
+ * - KUSUYEMIS is tree nuts (ceviz, badem, fındık, antep fıstığı)
+ * - YER_FISTIGI is peanuts — separated from tree nuts because the
+ *   allergies are clinically distinct
+ * - DENIZ_URUNLERI bundles fish + crustaceans + molluscs (balık/karides/midye)
+ *
+ * Lupin, celery outside of stock, sulphites-in-wine are omitted as they're
+ * rarely relevant to Turkish home cooking; we can extend this enum later if
+ * a specific recipe needs a flag that doesn't fit the current set.
+ */
+enum Allergen {
+  GLUTEN
+  SUT
+  YUMURTA
+  KUSUYEMIS
+  YER_FISTIGI
+  SOYA
+  DENIZ_URUNLERI
+  SUSAM
+  KEREVIZ
+  HARDAL
+}
+
 enum NotificationType {
   VARIATION_LIKED
   VARIATION_HIDDEN
@@ -248,6 +273,11 @@ model Recipe {
   tipNote           String?      @db.Text
   servingSuggestion String?      @db.Text
   authorId          String?
+  // Allergens present in this recipe. Postgres enum array — queryable with
+  // Prisma's hasSome / hasNone / has. Default empty; retrofit script or
+  // explicit Codex-provided list populates it. A GIN index covers the array
+  // so "bu alerjenleri iceren tarifleri gizle" filter stays fast.
+  allergens         Allergen[]   @default([])
   createdAt         DateTime     @default(now())
   updatedAt         DateTime     @updatedAt
 

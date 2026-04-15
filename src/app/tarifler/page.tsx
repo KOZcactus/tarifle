@@ -3,10 +3,12 @@ import { Suspense } from "react";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
 import { FilterPanel } from "@/components/search/FilterPanel";
+import { AllergenFilter } from "@/components/search/AllergenFilter";
 import { getRecipes } from "@/lib/queries/recipe";
 import { getCategories } from "@/lib/queries/category";
 import { getTags } from "@/lib/queries/tag";
 import { ITEMS_PER_PAGE } from "@/lib/constants";
+import { ALLERGEN_ORDER } from "@/lib/allergens";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -23,6 +25,7 @@ interface TariflerPageProps {
     sure?: string;
     siralama?: string;
     etiket?: string | string[];
+    alerjen?: string | string[];
     page?: string;
   }>;
 }
@@ -57,6 +60,18 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
       : [params.etiket]
     : undefined;
 
+  // Parse + validate allergen exclusion list. Unknown enum values are
+  // dropped silently so a mistyped URL doesn't 500 — just ignores the
+  // unknown one and filters by whatever else was valid.
+  const rawAllergens = params.alerjen
+    ? Array.isArray(params.alerjen)
+      ? params.alerjen
+      : [params.alerjen]
+    : [];
+  const excludeAllergens = rawAllergens.filter((a): a is (typeof ALLERGEN_ORDER)[number] =>
+    (ALLERGEN_ORDER as readonly string[]).includes(a),
+  );
+
   const currentPage = Math.max(1, parseInt(params.page ?? "1", 10));
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
 
@@ -67,6 +82,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
       categorySlug: category || undefined,
       maxMinutes,
       tagSlugs,
+      excludeAllergens: excludeAllergens.length > 0 ? excludeAllergens : undefined,
       sortBy,
       limit: ITEMS_PER_PAGE,
       offset,
@@ -92,6 +108,9 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
         </Suspense>
         <Suspense>
           <FilterPanel categories={categories} tags={tags} />
+        </Suspense>
+        <Suspense>
+          <AllergenFilter selected={excludeAllergens} />
         </Suspense>
       </div>
 

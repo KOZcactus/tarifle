@@ -62,7 +62,28 @@ Bir tarife 1-5 tag uygun. Tag slug'ları listede olmalı, yoksa seed hata verir.
 ```
 type:       YEMEK | TATLI | ICECEK | KOKTEYL | APERATIF | SALATA | CORBA | KAHVALTI | ATISTIRMALIK | SOS
 difficulty: EASY | MEDIUM | HARD
+allergens:  GLUTEN | SUT | YUMURTA | KUSUYEMIS | YER_FISTIGI | SOYA | DENIZ_URUNLERI | SUSAM | KEREVIZ | HARDAL
 ```
+
+**Alerjen etiketleri**: her tarifin `allergens` alanı, tarifin içerdiği
+alerjenlerin listesidir (boş array olabilir). Mutfakta kullanıcı "bu tarif
+süt içeriyor mu?" diye bakınca bu alan renderlanır. Eksik bırakılırsa
+`scripts/retrofit-allergens.ts` çalıştırılarak malzemelerden kural tabanlı
+çıkarım yapılır — ama Codex her tarif için açıkça eklemelidir (kural
+motoru bazen missler).
+
+**Hangi alerjen ne zaman**:
+- `GLUTEN`: un, ekmek, bulgur, makarna, yufka, kadayıf, hamur, kek, lavaş
+- `SUT`: süt, yoğurt, ayran, peynir (her tür), tereyağı, krema, kaymak
+- `YUMURTA`: yumurta (her şekilde)
+- `KUSUYEMIS`: ceviz, badem, fındık, kaju, **antep fıstığı**, kestane
+- `YER_FISTIGI`: yer fıstığı, fıstık ezmesi (KUSUYEMIS ile **ayrı** — klinik
+  olarak farklı alerji)
+- `SOYA`: soya sosu, tofu, edamame, miso
+- `DENIZ_URUNLERI`: balık, karides, midye, ahtapot, vb. (hepsi bu tag)
+- `SUSAM`: tahin, susam
+- `KEREVIZ`: kereviz (bütün veya sap)
+- `HARDAL`: hardal
 
 ## Alan-alan format
 
@@ -96,6 +117,7 @@ Her tarif şu TypeScript nesnesine tıpatıp uymalı:
   servingSuggestion: "Lavaş ve ...",       // kısa cümle, nullable
 
   tags: ["misafir-sofrasi", "yuksek-protein"],  // slug array, 0-5 element
+  allergens: ["GLUTEN", "SUT"] as const,   // enum array, 0-5 elements; bkz. Enum değerleri
 
   ingredients: [
     { name: "Dana kıyma (yağlı)", amount: "500", unit: "gr", sortOrder: 1 },
@@ -213,6 +235,7 @@ Her tarif şu TypeScript nesnesine tıpatıp uymalı:
 - [ ] 3-10 step, stepNumber sıralı
 - [ ] Her tag slug sabit listeden
 - [ ] Alkol varsa `alkollu` tag'i
+- [ ] **`allergens` alanı dolu** (veya bilerek boş array `[]`). Malzemeleri tara: süt/yoğurt/peynir varsa `SUT`, un/bulgur varsa `GLUTEN`, vb.
 - [ ] Türkçe doğru, büyük/küçük harf tutarlı
 - [ ] description 20-500 karakter
 

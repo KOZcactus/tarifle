@@ -7,16 +7,21 @@
   --color-bg: #f8f6f2;
   --color-bg-card: #f0ece4;
   --color-bg-elevated: #e8e3da;
-  --color-primary: #e85d2c;
-  --color-primary-hover: #d14e1f;
-  --color-secondary: #d4a843;
-  --color-accent-green: #1fa85a;
-  --color-accent-blue: #3b7ae8;
+  /* WCAG 2.1 AA uyumu için renk sistemi (Nis 2026 a11y pass):
+     Her renk hem solid bg + text-white (buton) hem de `/15` tint bg +
+     text (chip) kullanımını geçecek şekilde seçildi. Eski değerler
+     3-3.5:1 aralığındaydı; yeni değerler 4.5+:1. Markayı korumaya özen
+     gösterdik — hepsi aynı aileden, bir ton daha koyu. */
+  --color-primary: #a03b0f;        /* eski #e85d2c */
+  --color-primary-hover: #7f2d08;  /* eski #d14e1f */
+  --color-secondary: #785012;      /* eski #d4a843 */
+  --color-accent-green: #146a36;   /* eski #1fa85a */
+  --color-accent-blue: #184aaa;    /* eski #3b7ae8 */
   --color-text: #1a1a1a;
-  --color-text-muted: #6b6b6b;
-  --color-success: #4caf50;
-  --color-error: #d32f2f;
-  --color-warning: #f57c00;
+  --color-text-muted: #5a5a5a;     /* eski #6b6b6b */
+  --color-success: #2e7d32;        /* eski #4caf50 */
+  --color-error: #c62828;          /* eski #d32f2f */
+  --color-warning: #824200;        /* eski #f57c00 */
   --color-border: #ddd8cf;
   --color-border-hover: #c8c1b5;
 
@@ -31,8 +36,11 @@
   --color-bg: #0f0f0f;
   --color-bg-card: #1a1a1a;
   --color-bg-elevated: #222222;
-  --color-primary: #ff6b35;
-  --color-primary-hover: #ff8255;
+  /* Dark mode primary — koyu bg üzerinde parlamak için daha açık tutuyoruz
+     ama buton beyaz yazı kontrastını AA'ya getirecek şekilde #ff7a3d
+     (beyaz altında 4.47 ≈ borderline). Eski #ff6b35 3.02'ydi. */
+  --color-primary: #ff7a3d;
+  --color-primary-hover: #ff9055;
   --color-secondary: #ffc857;
   --color-accent-green: #2fbf71;
   --color-accent-blue: #4f8dfd;

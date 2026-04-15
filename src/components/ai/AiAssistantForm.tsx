@@ -141,10 +141,14 @@ export function AiAssistantForm() {
         {/* Filters */}
         <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-3">
           <div>
-            <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-text-muted">
+            <label
+              htmlFor="ai-filter-type"
+              className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-text-muted"
+            >
               Tür
             </label>
             <select
+              id="ai-filter-type"
               value={type}
               onChange={(e) => setType(e.target.value)}
               className="w-full rounded-md border border-border bg-bg-elevated px-3 py-2 text-sm outline-none focus:border-primary"
@@ -158,10 +162,14 @@ export function AiAssistantForm() {
             </select>
           </div>
           <div>
-            <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-text-muted">
+            <label
+              htmlFor="ai-filter-time"
+              className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-text-muted"
+            >
               Süre
             </label>
             <select
+              id="ai-filter-time"
               value={maxMinutes}
               onChange={(e) => setMaxMinutes(e.target.value)}
               className="w-full rounded-md border border-border bg-bg-elevated px-3 py-2 text-sm outline-none focus:border-primary"
@@ -175,10 +183,14 @@ export function AiAssistantForm() {
             </select>
           </div>
           <div>
-            <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-text-muted">
+            <label
+              htmlFor="ai-filter-difficulty"
+              className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-text-muted"
+            >
               Zorluk
             </label>
             <select
+              id="ai-filter-difficulty"
               value={difficulty}
               onChange={(e) => setDifficulty(e.target.value)}
               className="w-full rounded-md border border-border bg-bg-elevated px-3 py-2 text-sm outline-none focus:border-primary"

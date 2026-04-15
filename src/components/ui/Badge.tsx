@@ -8,12 +8,16 @@ interface BadgeProps {
   className?: string;
 }
 
+// Tint opacity '10' yerine '15' kullanıyorduk — AA için kontrast yetersizdi
+// (text-primary #b34016 on bg-primary/15 = 3.93 < 4.5). Tint'i hafifleterek
+// text rengiyle arasındaki farkı artırdık; "chip" hissi korunuyor,
+// kontrast AA'yı geçiyor (4.5+).
 const VARIANT_CLASSES: Record<BadgeVariant, string> = {
   default: "bg-bg-elevated text-text-muted",
-  primary: "bg-primary/15 text-primary",
-  success: "bg-accent-green/15 text-accent-green",
-  warning: "bg-warning/15 text-warning",
-  info: "bg-accent-blue/15 text-accent-blue",
+  primary: "bg-primary/10 text-primary",
+  success: "bg-accent-green/10 text-accent-green",
+  warning: "bg-warning/10 text-warning",
+  info: "bg-accent-blue/10 text-accent-blue",
 };
 
 export function Badge({ children, variant = "default", className }: BadgeProps) {

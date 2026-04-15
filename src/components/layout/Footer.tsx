@@ -21,7 +21,7 @@ export function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {/* Brand */}
           <div>
-            <Link href="/" className="font-heading text-lg font-bold text-primary">
+            <Link href="/" className="font-heading text-xl font-bold text-primary">
               {SITE_NAME}
             </Link>
             <p className="mt-2 text-sm text-text-muted">

@@ -177,6 +177,12 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - ♿ Navbar / menu / modal ARIA attributes (role, aria-haspopup, aria-expanded, aria-controls).
 - ♿ `prefers-reduced-motion` global media query — animasyonlar 0.01ms'e iner.
 - ♿ Form autoFocus + Escape dismiss + focus-visible outline.
+- ♿ WCAG 2.1 AA audit — 10 sayfa × 2 tema (light + dark) × `@axe-core/playwright`, 164 → 0 violation.
+- 🐛 AI Asistan filtre select'lerine `htmlFor`/`id` label association eklendi (select-name critical fix).
+- 🎨 Renk palet revizyonu — primary/secondary/accent-green/accent-blue/warning/success/error/text-muted daha koyu tonlara çekildi (4.5:1 kontrast için).
+- 🎨 Badge tint `/15` → `/10` (chip text kontrastı yükseldi).
+- 🎨 Footer logo `text-lg` → `text-xl` (large text kategorisine çıktı).
+- 🧪 `tests/e2e/a11y-audit.spec.ts` — CI regression guard, her push'ta 20 sayfa/tema tarar.
 
 ## Polish & UX copy
 

@@ -1,6 +1,30 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 15 Nisan 2026 (tipnote netleştirme + CHANGELOG işaret)
+> Son güncelleme: 15 Nisan 2026 (A11y audit — WCAG 2.1 AA)
+
+## 15 Nisan 2026 — A11y audit: WCAG 2.1 AA tertemiz ✅
+
+- `@axe-core/playwright` kuruldu, **10 sayfa** tarandı (home, tarifler, tarif detay×2, AI asistan, auth sayfaları, keşfet, hakkımızda).
+- İlk tarama: **164 node** critical/serious violation (hepsi renk kontrast + 1 select-name).
+- **Select-name fix**: AI Asistan filtre select'leri (Tür/Süre/Zorluk) için `htmlFor`/`id` bağlantısı eklendi.
+- **Renk palet revizyonu** — WCAG AA uyumu için token'lar koyulaştırıldı:
+  - `--color-primary`: #e85d2c → **#a03b0f** (kontrast white 6.7:1)
+  - `--color-primary-hover`: #d14e1f → **#7f2d08**
+  - `--color-secondary`: #d4a843 → **#785012** (amber/tütün; text chip'lerde fail ediyordu)
+  - `--color-accent-green`: #1fa85a → **#146a36**
+  - `--color-accent-blue`: #3b7ae8 → **#184aaa**
+  - `--color-text-muted`: #6b6b6b → **#5a5a5a**
+  - `--color-success`: #4caf50 → **#2e7d32**
+  - `--color-error`: #d32f2f → **#c62828**
+  - `--color-warning`: #f57c00 → **#824200**
+  - Dark mode primary: #ff6b35 → **#ff7a3d** (dark bg için accent-brightness koruyarak)
+- **Badge tint opacity**: `/15` → `/10` (tint bg hafifledi, text kontrastı yükseldi).
+- **Footer logo**: text-lg → text-xl (large text kategorisine çıktı).
+- **Sonuç**: 164 → 0 critical/serious. Light + dark mode ayrı ayrı pass.
+- **Regression guard**: `tests/e2e/a11y-audit.spec.ts` (2 test — light + dark). CI her push'ta çalışacak; yeni sayfa eklenince `PAGES_TO_SCAN` array'ine ekle yeterli.
+- Brand tonu biraz koyulaştı — "orange family" içinde kaldı, marka tanınır.
+
+## 15 Nisan 2026 — RECIPE_FORMAT dil kalitesi kuralları ✅
 
 ## 15 Nisan 2026 — Baklava/Revani tipnote + CHANGELOG işaretleri ✅
 

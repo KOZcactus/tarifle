@@ -1,6 +1,33 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 15 Nisan 2026 (hesap silme + /ayarlar tam komple)
+> Son güncelleme: 15 Nisan 2026 (en çok beğeni sort)
+
+## 15 Nisan 2026 — "En çok beğeni" sort ✅
+
+- `/tarifler` chip row'una 6. seçenek: **En çok beğeni**. URL: `?siralama=most-liked`.
+- `getRecipes` içinde yeni branch: filtrelenmiş tarifleri `variations.likeCount` ile çekip JS'te toplar + sıralar. Tie-break: `title.localeCompare(-, "tr")` — 0-like'lı uzun kuyruk alfabetik.
+- `compareByMostLiked` helper pure function olarak çıkarıldı → 6 unit test (sum, tie-break TR collation, empty variations, 0-like alfabetik sıralama).
+- Integration smoke (`scripts/test-most-liked-sort.ts`): throwaway user + 2 variation (likeCount 50 vs 2) → high-liked #1'e çıktı → cleanup. Geçti.
+- Not: Raw SQL yerine in-memory aggregation tercih edildi — 56-500 tarif scope'unda yeterli + type-safe. Büyürse Recipe'e denormalize `totalLikeCount` alanı + toggleLike'da increment düşünülür. **147 unit + 9 E2E yeşil.**
+
+## 15 Nisan 2026 — "Bugünün tarifi" widget'ı ✅
+
+- Ana sayfada AI Asistan banner'ından sonra turuncu gradient "Bugünün tarifi" card'ı (emoji + başlık + intro+curator note + meta + CTA). Mobil/desktop/dark mode temiz.
+- **Deterministic rotation**: UTC gün indeksi % tarif sayısı, `orderBy: { slug: "asc" }` (yeni seed'ler rotasyonu bozmasın diye createdAt yerine slug). 56 tarifle ~2 aylık döngü, herkes için aynı, cache-dostu.
+- **Kural-tabanlı curator note** (`lib/ai/recipe-of-the-day-commentary.ts`): 12 kural (type: TATLI/KOKTEYL/CORBA/SALATA/KAHVALTI/ATISTIRMALIK + difficulty HARD + quick/very-quick + light/hearty + popular-variations + featured + fallback). 1-2 varyant per kural, seed-based pick. "AI'dan" disclaimer'ı yok (feedback_ai_positioning).
+- **Intro varyantları**: 5 farklı açılış cümlesi ("Bugün için seçimimiz", "Bugün belki bunu denemek istersin"…), seed ile rotate.
+- Test: 18 yeni unit (intro/curator/daysSinceEpoch, deterministik + fallback + kural uniqueness). **141 unit + 9 E2E yeşil.**
+
+## 15 Nisan 2026 — şifremi unuttum akışı ✅
+
+- Schema: `PasswordResetToken` modeli (identifier + token + expires + createdAt), TTL **1 saat** (verification'dan kısa, daha hassas). `db push` ile Neon'a uygulandı.
+- `lib/email/password-reset.ts`: `sendPasswordResetEmail` + `sendOAuthOnlyPasswordResetEmail` + `consumePasswordResetToken` (transaction: passwordHash update + tüm token'ları sil = single-use + rotation korumalı).
+- Server actions: `requestPasswordResetAction` (her zaman generic success → email enumeration defense) + `resetPasswordAction`. Rate limit: `password-reset-request` 3/1sa (email+IP) + `password-reset-consume` 10/1sa (IP).
+- OAuth-only user'lar için ayrı bilgilendirme maili ("bu hesap Google ile bağlı, ayarlar'dan şifre ekle") — yine generic UI dönerek enumeration kapalı.
+- Sayfalar: `/sifremi-unuttum` + `/sifre-sifirla/[token]`. Token validasyonu sayfa açılışında, consume sadece form submit'te — refresh token'ı yakmıyor.
+- Login form'una "Şifremi unuttum" linki + `?reset=ok` success strip.
+- `RESERVED_USERNAMES`'a `sifremi-unuttum` + `sifre-sifirla` eklendi.
+- Validator (9 yeni unit test) + integration smoke script (`test-password-reset-flow.ts`): token → send → consume → passwordHash değişti → ikinci consume reddedildi → cleanup. **123 unit + 9 E2E test yeşil.**
 
 ## 14–15 Nisan 2026 özet — büyük oturum
 
@@ -257,23 +284,9 @@ Kalan A11y işleri (gelecek pass'e):
 
 ## Pass 5 — Rate limiting (Upstash Redis) ✅
 
-- [x] `src/lib/rate-limit.ts` — Upstash `@upstash/ratelimit` + `@upstash/redis` sargısı.
-  - 6 scope: register (3/10dk), login (5/1dk), resend-verification (1/60sn), report (10/1sa), variation-create (5/1sa), ai-assistant (30/1dk).
-  - Sliding window algoritması, `tarifle:rl:<scope>` prefix.
-  - `getClientIp()` helper → `x-forwarded-for`/`x-real-ip` okur, Vercel edge'in arkasında doğru IP verir.
-  - `rateLimitIdentifier(userId, ip)` → auth'lu kullanıcıya `user:<id>`, anonim için `ip:<addr>`.
-  - **Fail-open**: `UPSTASH_REDIS_REST_*` env yoksa tek seferlik warning log'u basar, `success: true` döner. Redis hatasında da fail-open (error log + pass).
-- [x] Entegre edilen endpointler:
-  - `registerUser` → IP-bazlı (anon form).
-  - `authorize` (Credentials provider) → IP-bazlı, `null` döner (bad credentials ile aynı yol).
-  - `resendVerificationEmailAction` → user-bazlı (eski in-process Map throttle yerine).
-  - `createReport` → user-bazlı.
-  - `createVariation` → user-bazlı.
-  - `suggestRecipesAction` → user varsa user, yoksa IP.
-- [x] `.env.example` güncel: `UPSTASH_REDIS_REST_URL`/`TOKEN` + Resend env'leri.
-- [x] Preview ile smoke test: AI Asistan formu submit → sonuçlar geldi, server log'unda yalnız "rate limiting disabled" warning (env yok, beklenen), error yok.
-
-**Prod aktivasyon**: Upstash hesabı açıp bir Redis DB oluşturulacak (console.upstash.com → Redis → Create → REST tab), URL+TOKEN `.env.local` ve Vercel env vars'a eklenecek. Vercel otomatik redeploy → limitler canlıda.
+- `src/lib/rate-limit.ts`: sliding window, `tarifle:rl:<scope>` prefix, **fail-open** (env yoksa warning + pass). `getClientIp()` + `rateLimitIdentifier()` helper'ları.
+- Tüm sensitif endpointler entegre: register/login (IP), resend-verification/report/variation-create/password-*/account-delete/ai-assistant (user → IP fallback).
+- **Prod canlı**: Upstash URL+TOKEN Vercel'de, limitler aktif. Detay scope tablosu için `src/lib/rate-limit.ts`.
 
 ## Pass 4 — Kayıt akışı bug fix + Resend prod ✅
 
@@ -312,24 +325,11 @@ Kalan A11y işleri (gelecek pass'e):
 
 ## Faz 2 — AI Asistan (kural tabanlı, AI-gibi) ✅
 
-- [x] `AiProvider` interface — Claude/başka model eklendiğinde sadece factory değişecek
-- [x] `RuleBasedProvider` — DB filtreleme + TR-aware malzeme eşleştirme
-  - Token-prefix matching (substring false positive yok)
-  - İsteğe bağlı malzemeler (isOptional) puana etki etmez
-  - Pantry staples modu (tuz/karabiber/su/yağ)
-  - Skor: matchedRequired / totalRequired (0-1)
-- [x] `/ai-asistan` sayfası: chip input, tür/süre/zorluk filtreleri, pantry toggle
-- [x] Sonuç kartları: %eşleşme rozeti, eksik malzeme listesi, "Tüm malzemeler elinde!" mesajı
-- [x] **AI-hissi commentary** (`src/lib/ai/commentary.ts`):
-  - Senaryoya göre 3-5 varyant (0 sonuç / 1 tam / 2 tam / 3+ tam / 1 eksik / genel)
-  - Seed-based picking — aynı input aynı yorumu üretir ama farklı inputlar farklı hisseder
-  - "Yapay zekasız" disclaimer'ı yok — kullanıcıya AI gibi sunulur
-- [x] **Per-recipe notes**: "Zirvedeki seçenek", "En hızlı seçenek", "Sadece X eksik", "Sabır ister ama sonucu etkileyici" gibi roller
-- [x] "Düşünüyor…" typing dots animasyonu form submit sırasında
-- [x] Ana sayfa: AI Asistan banner (mavi gradient, hero altında)
-- [x] Navbar: "AI Asistan" linki (desktop + mobile)
-- [x] `scripts/test-ai.ts` — smoke test
-- [x] **Karar**: Claude Haiku entegrasyonu şimdilik YAPILMAYACAK — kural tabanlı motor AI-gibi sunuluyor, masraf sıfır
+- `AiProvider` interface + `RuleBasedProvider`: TR-aware token-prefix matcher, pantry staples modu, skor = matchedRequired/totalRequired. `isOptional` puana etki etmez.
+- `/ai-asistan` sayfası: chip input + tür/süre/zorluk/pantry filtreleri. Sonuç kartında %eşleşme + eksik malzeme listesi.
+- `src/lib/ai/commentary.ts`: senaryo bazlı 3-5 varyant + per-recipe notlar (zirvedeki seçenek, en hızlı, sabır ister…). Seed-based deterministic.
+- "Yapay zekasız" disclaimer'ı yok — kullanıcıya AI gibi sunulur. Ana sayfa banner + navbar link. `scripts/test-ai.ts` smoke.
+- **Karar**: LLM entegrasyonu şimdilik yok — kural tabanlı motor yeterince AI-gibi, masraf sıfır.
 
 ## Devam Edenler
 
@@ -353,9 +353,7 @@ Kalan A11y işleri (gelecek pass'e):
 
 - [ ] **AI Asistan v2**: ingredient synonym/token tablosu (e.g. "domates" ⇔ "çeri domates" eşleştirmesi)
 - [ ] **AI-destekli moderasyon**: Claude Haiku ile ön-sınıflandırma (opsiyonel, kural-tabanlı yeterli gelirse geri al)
-- [ ] **"En çok beğeni" sort**: raw SQL ile variation likeCount toplam aggregation (`/tarifler?siralama=most-liked`)
 - [ ] **Şablon video sistemi** (Remotion) — büyük scope, Faz 2/3 arası
-- [ ] **Email-based şifre kurtarma**: "şifremi unuttum" flow (email token + /sifre-sifirla sayfası)
 
 ### Uzun vadeli (Faz 3)
 

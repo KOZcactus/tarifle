@@ -2,6 +2,25 @@ import { prisma } from "@/lib/prisma";
 import type { Difficulty } from "@prisma/client";
 import type { RecipeCard, RecipeDetail } from "@/types/recipe";
 
+/**
+ * Comparator used by the "most-liked" sort. Extracted as a pure function so
+ * the aggregation rule has a regression guard without needing to stand up a
+ * DB for the test. `variations` carries per-uyarlama likeCount; we return a
+ * positive number when `b` should come before `a`.
+ *
+ * Tie-break: Turkish-aware title asc, so recipes with the same like total
+ * (including the 0-liked long tail when the site is fresh) land in a
+ * predictable alphabetic order rather than undefined DB ordering.
+ */
+export function compareByMostLiked<
+  T extends { title: string; variations: { likeCount: number }[] },
+>(a: T, b: T): number {
+  const aTotal = a.variations.reduce((s, v) => s + v.likeCount, 0);
+  const bTotal = b.variations.reduce((s, v) => s + v.likeCount, 0);
+  if (bTotal !== aTotal) return bTotal - aTotal;
+  return a.title.localeCompare(b.title, "tr");
+}
+
 // Ortak select — RecipeCard tipi için
 const recipeCardSelect = {
   id: true,
@@ -35,7 +54,8 @@ interface GetRecipesOptions {
     | "quickest"
     | "popular"
     | "alphabetical"
-    | "most-variations";
+    | "most-variations"
+    | "most-liked";
   limit?: number;
   offset?: number;
 }
@@ -87,6 +107,37 @@ export async function getRecipes(options: GetRecipesOptions = {}): Promise<{
   if (tagSlugs && tagSlugs.length > 0) {
     where.tags = {
       some: { tag: { slug: { in: tagSlugs } } },
+    };
+  }
+
+  // "most-liked" ayri bir yoldan gidiyor cunku Prisma orderBy iliskili bir
+  // modeldeki kolonun SUM'unu dogrudan destekleyemiyor. Filtrelenmis tarifleri
+  // uyarlamalarinin likeCount'u ile birlikte cekip JS'te topluyor, sirliyoruz.
+  // 56-500 tarif olcegindeki proje icin tamamen yeterli; buyurse Recipe'e
+  // denormalize edilmis bir `totalLikeCount` alani eklenip artirmalar
+  // toggleLike'da yapilir.
+  if (sortBy === "most-liked") {
+    const rows = await prisma.recipe.findMany({
+      where,
+      select: {
+        ...recipeCardSelect,
+        variations: {
+          where: { status: "PUBLISHED" },
+          select: { likeCount: true },
+        },
+      },
+    });
+    const sorted = [...rows].sort(compareByMostLiked);
+    const page = sorted.slice(offset, offset + limit).map((recipe) => {
+      const {
+        variations: _variations, // strip: was only loaded for aggregation
+        ...card
+      } = recipe;
+      return card;
+    });
+    return {
+      recipes: page as unknown as RecipeCard[],
+      total: rows.length,
     };
   }
 

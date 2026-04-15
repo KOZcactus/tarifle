@@ -42,6 +42,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
     "popular",
     "quickest",
     "most-variations",
+    "most-liked",
   ] as const;
   type SortOption = (typeof allowedSorts)[number];
   const sortBy: SortOption | undefined = allowedSorts.includes(
@@ -107,6 +108,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
           { key: "popular", label: "En popüler" },
           { key: "quickest", label: "En hızlı" },
           { key: "most-variations", label: "En çok uyarlama" },
+          { key: "most-liked", label: "En çok beğeni" },
         ].map(({ key, label }) => {
           const isActive = key === activeSort;
           const search = new URLSearchParams();

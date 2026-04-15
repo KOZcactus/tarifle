@@ -58,6 +58,14 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  // RSS auto-discovery — feed reader'lar (Feedly, Inoreader, browser
+  // extension'ları) ana sayfaya bakınca otomatik feed tespit etsin.
+  // Google Feed crawler da bu link'i takip eder.
+  alternates: {
+    types: {
+      "application/rss+xml": `${SITE_URL}/rss.xml`,
+    },
+  },
 };
 
 export default function RootLayout({

@@ -35,12 +35,16 @@ Public launch ve Codex 500-batch öncesi büyük bir kalite + altyapı pass'i. T
 - ⚙️ **`scripts/retrofit-all.ts`** — tek komut allergens → diet tags orchestrator.
 - 💾 **i18n minimal prep**: `Recipe.translations Json?` JSONB bucket, locale-keyed, opsiyonel. Faz 3'te aktive olur.
 - 🧹 **Prisma migration baseline temizliği** — Pass 10'dan biriken 8 `db push` değişikliği `prisma/migrations/20260415120000_codex_batch_prep/migration.sql` altında formal migration. `prisma migrate resolve --applied` ile mevcut DB'de işaretlendi (re-run yok). Bundan sonra `db:migrate` kullanılacak.
+- 🔍 **Full-text search** (`20260415180000_add_fulltext_search`) — `searchVector` generated tsvector (A/B/C weighted) + `immutable_unaccent` SQL wrapper + GIN index. `/tarifler` araması `websearch_to_tsquery('turkish', ...)` + `ts_rank_cd` ile; ingredient adı fallback union'u. Kök eşleşme (mantılar→Mantı), aksan-bağımsız (manti→Mantı).
+- 🔒 **Batch pre-flight validator** (`npm run content:validate`) — Zod + semantik katman: muğlak ifade regex ban, kcal/makro uyumu, alkol tag cross-check, slug çakışması. DB'ye dokunmaz; seed'den önce koşulur.
 
 ### Test coverage genişletme
 - 🧪 **`tests/unit/badges-service.test.ts`** (13 test, Prisma+notifications mock — `vi.hoisted` pattern).
 - 🧪 **`tests/unit/email-verification.test.ts`** (5 test, consume akışı + tx shape + best-effort badge).
 - 🧪 **`tests/e2e/auth-roundtrip.spec.ts`** (1 test, login → /ayarlar → profil → çıkış → state geri).
-- **Sonuç: 114 → 230 unit, 9 → 12 E2E test yeşil.**
+- 🧪 **`tests/unit/validate-batch.test.ts`** (19 test, TR normalize + muğlak regex + macro + alkol cross-check + slug dup).
+- 🧪 **`tests/unit/recipe-search.test.ts`** (6 test, sanitizeQueryInput sınır durumlar).
+- **Sonuç: 114 → 255 unit, 9 → 12 E2E test yeşil.**
 
 ### Dokümantasyon
 - 📝 **`docs/CHANGELOG.md`** yeni — kategorik organize (17 başlık), her iş tek satır + emoji işaret. Her yeni iş ilgili kategorinin altına eklenir.
@@ -53,9 +57,18 @@ Public launch ve Codex 500-batch öncesi büyük bir kalite + altyapı pass'i. T
 - ⚙️ Codex'in clone edebilmesi için kardeş **Collaborator** olarak eklenecek (kullanıcı yapacak).
 
 ### Sıradaki tek opsiyonel iş
-- ⏳ **Full-text search (Postgres `to_tsvector`)** — 500 tarifte arama hızı + Türkçe kök eşleşme (LIKE scan yerine GIN tsvector). Şu an yapılmadı, Codex batch'i geldikten sonra ihtiyaç doğarsa eklenebilir.
+- ✅ **Full-text search (Postgres `to_tsvector`)** — 15 Nisan 2026 akşam eklendi (aşağıda "DB pass — FTS + batch validator" bölümü).
 
 ---
+
+## 15 Nisan 2026 — DB pass: FTS + batch validator ✅
+
+Codex batch'i başlamadan önce DB odaklı iki iyileştirme, Claude ile paralel oturumda main'e düştü.
+
+- 🔍 **Postgres full-text search** (migration `20260415180000_add_fulltext_search`): `searchVector` generated STORED tsvector kolonu (title=A, description=B, tipNote/servingSuggestion/slug=C) + `immutable_unaccent` SQL wrapper + GIN index. `websearch_to_tsquery('turkish', ...)` ile `/tarifler` arama kutusunun tamamı yeni `src/lib/search/recipe-search.ts` üzerinden geçiyor. Kök eşleşme (`mantılar → Mantı`), aksan-bağımsız arama (`manti → Mantı`), ingredient adı fallback union'u mevcut. Chip row'a "En alakalı" sort eklendi (sadece query varken).
+- ✅ **Batch pre-flight validator** (`scripts/validate-batch.ts`, `npm run content:validate`): Zod'un üstüne semantik katman — muğlak ifade regex ban (`biraz/azıcık/ya da tersi/duruma göre/epey/yeteri kadar` ERROR; `iyice/güzelce` WARNING), kcal vs 4·P+4·C+9·F ±%15 tolerans (alkollü tarifte atlanır), alkollü malzeme ↔ `alkollu` tag cross-check, slug çakışması. DB'ye dokunmaz. `seed-recipes.ts` side-effect olmadan import edilebilsin diye DB init defer + `recipes` export + entrypoint guard.
+- 🧪 Test: 19 validator + 6 FTS sanitize unit eklendi. **255 unit + 12 E2E yeşil**.
+- 📝 `CODEX_HANDOFF.md` workflow'una `npm run content:validate -- --last 50 --slugs-file ...` adımı eklendi (seed'den ÖNCE).
 
 ## 15 Nisan 2026 — Test coverage genişletme ✅
 

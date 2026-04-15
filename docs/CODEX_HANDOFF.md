@@ -173,6 +173,26 @@ npx tsc --noEmit
 Hata çıkmamalı. Çıkarsa büyük ihtimalle `as const` eksik, enum yanlış yazılmış
 ya da tip uyumsuzluğu var — düzelt.
 
+### 5.2.5. Batch pre-flight validator (DB'ye dokunmaz)
+
+```bash
+npm run content:validate                         # tüm array
+npm run content:validate -- --last 50            # sadece son 50 tarif
+npm run content:validate -- --slugs-file docs/existing-slugs.txt
+```
+
+Zod'un üstüne semantik kontroller koşar:
+- **Muğlak ifade** ("biraz", "azıcık", "ya da tersi", "duruma göre",
+  "epey", "yeteri kadar") → ERROR
+- **"iyice" / "güzelce"** somut kriter yoksa → WARNING
+- **Kcal vs 4·P+4·C+9·F uyumu** ±%15 tolerans → WARNING (alkollü
+  tariflerde otomatik atlanır — ethanol 7 kcal/gr formülde yok)
+- **Alkollü malzeme ↔ "alkollu" tag** tutarsızlığı → ERROR/WARNING
+- **Slug çakışması** (existing-slugs.txt üzerinden) → ERROR
+
+Exit 0 = clean veya sadece warning, Exit 1 = en az bir ERROR.
+Bu adım seed'den ÖNCE gelir → bir hata varsa seed'i çalıştırmadan düzelt.
+
 ### 5.3. Script'i çalıştır
 
 ```bash
@@ -336,10 +356,11 @@ production branch URL'i ile çalıştırır → canlıya geçer.
 4. `npx tsx scripts/list-recipe-slugs.ts > docs/existing-slugs.txt` → mevcut slug listesi
 5. `scripts/seed-recipes.ts` sonuna yeni batch ekle — her tarifin `allergens: [...]` alanını doldur
 6. `npx tsc --noEmit` → hata yok
-7. `npx tsx scripts/seed-recipes.ts` → veritabanına yaz
-8. `npx tsx scripts/retrofit-all.ts` → **tek komut** — önce alerjen, sonra vegan/vejetaryen etiketlerini otomatik doldurur (idempotent, yanlış olanları temizler). İstersen `--dry-run` ile önce önizleme
-9. Git branch + commit + push + PR
-10. Tekrar
+7. `npm run content:validate -- --last 50 --slugs-file docs/existing-slugs.txt` → **Zod + semantik kontrol** (muğlak ifade, makro uyumu, alkol tag, slug dup). ERROR varsa seed'i çalıştırma — düzelt
+8. `npx tsx scripts/seed-recipes.ts` → veritabanına yaz
+9. `npx tsx scripts/retrofit-all.ts` → **tek komut** — önce alerjen, sonra vegan/vejetaryen etiketlerini otomatik doldurur (idempotent, yanlış olanları temizler). İstersen `--dry-run` ile önce önizleme
+10. Git branch + commit + push + PR
+11. Tekrar
 
 Eşlik edecek dosya: **`docs/RECIPE_FORMAT.md`** — o dosyayı da okumadan tarif yazma.
 

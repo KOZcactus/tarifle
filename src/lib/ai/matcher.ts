@@ -55,9 +55,28 @@ export function ingredientMatches(recipeIng: string, userIng: string): boolean {
   );
 }
 
+/**
+ * Precomputed set of every token that appears in any pantry staple name.
+ * Used for pantry detection: a recipe ingredient qualifies ONLY if every
+ * one of its tokens is itself a pantry token. Avoids the prefix-matching
+ * false positive where "sucuk" was treated as "su" (water) because
+ * `ingredientMatches("sucuk","su")` returned true via bidirectional
+ * prefix — that logic is fine for user-vs-recipe matching but wrong for
+ * staple identity, which needs exact-token containment.
+ */
+const PANTRY_TOKEN_SET: ReadonlySet<string> = new Set(
+  PANTRY_STAPLES.flatMap((s) => tokens(normalizeIngredient(s))),
+);
+
 export function isPantryStaple(ingredient: string): boolean {
-  const norm = normalizeIngredient(ingredient);
-  return PANTRY_STAPLES.some((s) => ingredientMatches(norm, s));
+  const recipeTokens = tokens(normalizeIngredient(ingredient));
+  if (recipeTokens.length === 0) return false;
+  // Every token in the recipe ingredient must itself be a pantry token.
+  // "tuz, karabiber" → [tuz, karabiber] both pantry → staple ✓
+  // "sıvı yağ" → [sıvı, yağ] both pantry → staple ✓
+  // "sucuk" → [sucuk] NOT pantry → not staple ✓
+  // "su kabağı" → [su, kabağı] "kabağı" not pantry → not staple ✓
+  return recipeTokens.every((t) => PANTRY_TOKEN_SET.has(t));
 }
 
 export interface MatchResult {

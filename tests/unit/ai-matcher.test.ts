@@ -69,6 +69,27 @@ describe("isPantryStaple", () => {
     expect(isPantryStaple("domates")).toBe(false);
     expect(isPantryStaple("kıyma")).toBe(false);
   });
+
+  // Regression — prefix-matching bug: "sucuk" used to be treated as staple
+  // "su" because the old bidirectional prefix check said "sucuk".startsWith("su").
+  // Sucuklu Yumurta then scored %100 match without sucuk in the user's list.
+  it("does NOT treat ingredients that merely start with a staple prefix as staples", () => {
+    expect(isPantryStaple("sucuk")).toBe(false);
+    expect(isPantryStaple("Sucuk")).toBe(false);
+    expect(isPantryStaple("yağmur")).toBe(false); // starts with "yağ"
+    expect(isPantryStaple("sumak")).toBe(false); // starts with "su"
+    expect(isPantryStaple("tuzlu kraker")).toBe(false); // "tuzlu" ≠ "tuz"
+  });
+
+  it("recognises multi-word seasoning groups like 'tuz, karabiber'", () => {
+    expect(isPantryStaple("tuz, karabiber")).toBe(true);
+    expect(isPantryStaple("Tuz, karabiber")).toBe(true);
+  });
+
+  it("rejects mixed seasoning where one token is NOT a staple", () => {
+    // kimyon isn't in PANTRY_STAPLES; the whole phrase must be pantry-only.
+    expect(isPantryStaple("tuz, karabiber, kimyon")).toBe(false);
+  });
 });
 
 describe("computeMatch", () => {

@@ -1,6 +1,20 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 15 Nisan 2026 (i18n minimal schema prep)
+> Son güncelleme: 15 Nisan 2026 (AI Asistan pantry bug fix)
+
+## 15 Nisan 2026 — AI Asistan %100 false-positive bug fix ✅
+
+Kullanıcı tespit etti: "Sucuklu Yumurta" %100 eşleşme alıyordu, oysa sucuk kullanıcının malzeme listesinde yoktu.
+
+**Root cause**: `isPantryStaple` içinde `ingredientMatches` kullanılıyordu; o fonksiyon user↔recipe match için bidirectional prefix match yapıyor. "sucuk".startsWith("su") → true → Sucuk pantry staple sanıldı → matched listesine girdi → score 3/3 = %100.
+
+**Fix**: `isPantryStaple` için ayrı algoritma — recipe ingredient'ın HER token'ı pantry havuzunda olmalı (exact token containment). "sucuk" → [sucuk] → "sucuk" ∉ PANTRY_TOKEN_SET → not staple ✓. `ingredientMatches` dokunmadı — user matching'i bozmayacak.
+
+- 3 yeni regression test: sucuk/yağmur/sumak/tuzlu-kraker pantry değil, "tuz, karabiber, kimyon" pantry değil (kimyon staple olmadığı için).
+- Preview doğrulama: aynı malzemelerle Sucuklu Yumurta artık **%67 eşleşme**, "Eksik: Sucuk — Sadece Sucuk eksik." ✓
+- **205 unit + 9 E2E yeşil**.
+
+## 15 Nisan 2026 — i18n minimal schema prep ✅
 
 ## 15 Nisan 2026 — i18n minimal schema prep ✅
 

@@ -8,6 +8,7 @@ import { DietFilter } from "@/components/search/DietFilter";
 import { getRecipes } from "@/lib/queries/recipe";
 import { getCategories } from "@/lib/queries/category";
 import { getTags } from "@/lib/queries/tag";
+import { searchRecipeIds } from "@/lib/search/recipe-search";
 import { ITEMS_PER_PAGE } from "@/lib/constants";
 import { ALLERGEN_ORDER } from "@/lib/allergens";
 import type { Metadata } from "next";
@@ -47,6 +48,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
     "quickest",
     "most-variations",
     "most-liked",
+    "relevance",
   ] as const;
   type SortOption = (typeof allowedSorts)[number];
   const sortBy: SortOption | undefined = allowedSorts.includes(
@@ -54,7 +56,10 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
   )
     ? (params.siralama as SortOption)
     : undefined;
-  const activeSort: SortOption = sortBy ?? "alphabetical";
+  // Default sort picks relevance when there's an active query (FTS ranked
+  // results should win over alphabetical), otherwise alphabetical.
+  const activeSort: SortOption =
+    sortBy ?? (query ? "relevance" : "alphabetical");
   const tagSlugs = params.etiket
     ? Array.isArray(params.etiket)
       ? params.etiket
@@ -76,6 +81,15 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
   const currentPage = Math.max(1, parseInt(params.page ?? "1", 10));
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
 
+  // FTS layer: resolve the query to a ranked set of candidate IDs first
+  // so the downstream Prisma filter chain (category/difficulty/tags/
+  // allergens) only runs over the relevant subset. When no query is
+  // present we skip this entirely and let getRecipes do its plain
+  // listing (catalog browse mode).
+  const rankedIds = query
+    ? (await searchRecipeIds({ query })).map((r) => r.id)
+    : undefined;
+
   const [{ recipes, total }, categories, tags] = await Promise.all([
     getRecipes({
       query: query || undefined,
@@ -84,7 +98,8 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
       maxMinutes,
       tagSlugs,
       excludeAllergens: excludeAllergens.length > 0 ? excludeAllergens : undefined,
-      sortBy,
+      recipeIds: rankedIds,
+      sortBy: activeSort,
       limit: ITEMS_PER_PAGE,
       offset,
     }),
@@ -126,12 +141,17 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
           Sıralama:
         </span>
         {[
-          { key: "alphabetical", label: "Alfabetik" },
-          { key: "newest", label: "En yeni" },
-          { key: "popular", label: "En popüler" },
-          { key: "quickest", label: "En hızlı" },
-          { key: "most-variations", label: "En çok uyarlama" },
-          { key: "most-liked", label: "En çok beğeni" },
+          // Relevance chip shows up only when there is an active query;
+          // ekranı boş aramada kirletmeyelim.
+          ...(query
+            ? [{ key: "relevance", label: "En alakalı" } as const]
+            : []),
+          { key: "alphabetical", label: "Alfabetik" } as const,
+          { key: "newest", label: "En yeni" } as const,
+          { key: "popular", label: "En popüler" } as const,
+          { key: "quickest", label: "En hızlı" } as const,
+          { key: "most-variations", label: "En çok uyarlama" } as const,
+          { key: "most-liked", label: "En çok beğeni" } as const,
         ].map(({ key, label }) => {
           const isActive = key === activeSort;
           const search = new URLSearchParams();
@@ -140,7 +160,12 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
             if (Array.isArray(v)) v.forEach((item) => search.append(k, item));
             else search.set(k, v);
           }
-          if (key !== "alphabetical") search.set("siralama", key);
+          // Canonical URL için default sort param'ını çıkar.
+          // Query varsa default "relevance", yoksa "alphabetical".
+          const isDefaultForContext = query
+            ? key === "relevance"
+            : key === "alphabetical";
+          if (!isDefaultForContext) search.set("siralama", key);
           const qs = search.toString();
           const href = `/tarifler${qs ? `?${qs}` : ""}`;
           return (

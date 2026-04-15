@@ -288,6 +288,14 @@ model Recipe {
   // JSON at render time. Stored as JSONB so we can add languages without
   // a schema migration. NULL when no translations exist yet.
   translations      Json?
+  // Full-text search vector — populated by a Postgres GENERATED STORED
+  // column (see migration `20260415180000_add_fulltext_search`). Prisma
+  // cannot generate typed client fields for `tsvector`, so this is
+  // opaque to the ORM. /tarifler search reads it via `$queryRaw` with
+  // `websearch_to_tsquery('turkish', immutable_unaccent(input))` and
+  // `ts_rank_cd` for relevance ordering. Declared here so Prisma won't
+  // try to drop the column on future `migrate dev` runs.
+  searchVector      Unsupported("tsvector")?
   createdAt         DateTime     @default(now())
   updatedAt         DateTime     @updatedAt
 
@@ -316,6 +324,10 @@ model Recipe {
   // grows to 500+ recipes. Postgres GIN is the right access method for
   // array containment — btree can't index arrays efficiently.
   @@index([allergens], type: Gin)
+  // GIN on the generated tsvector column — powers the /tarifler search
+  // box. `map:` pins the index name so it matches the manual CREATE INDEX
+  // in the fulltext migration and Prisma treats it as already-managed.
+  @@index([searchVector], type: Gin, map: "recipes_search_gin")
   @@map("recipes")
 }
 

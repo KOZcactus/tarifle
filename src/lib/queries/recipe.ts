@@ -54,13 +54,23 @@ interface GetRecipesOptions {
    * with this list are hidden. Empty/undefined = no filter.
    */
   excludeAllergens?: Allergen[];
+  /**
+   * Restrict results to this set of IDs (in order of relevance). When
+   * set, the legacy title/description/ingredient `contains` OR is
+   * skipped — the caller has already decided which recipes match the
+   * query via the full-text search layer (see `lib/search/recipe-search`).
+   * The `query` field still controls `EmptyState` copy upstream but does
+   * NOT add a `where.OR` here.
+   */
+  recipeIds?: string[];
   sortBy?:
     | "newest"
     | "quickest"
     | "popular"
     | "alphabetical"
     | "most-variations"
-    | "most-liked";
+    | "most-liked"
+    | "relevance";
   limit?: number;
   offset?: number;
 }
@@ -77,6 +87,7 @@ export async function getRecipes(options: GetRecipesOptions = {}): Promise<{
     maxMinutes,
     tagSlugs,
     excludeAllergens,
+    recipeIds,
     sortBy = "alphabetical",
     limit = 24,
     offset = 0,
@@ -86,7 +97,17 @@ export async function getRecipes(options: GetRecipesOptions = {}): Promise<{
     status: "PUBLISHED",
   };
 
-  if (query) {
+  if (recipeIds !== undefined) {
+    // FTS layer already decided the candidate set. Zero results short-
+    // circuit — `id: { in: [] }` in Prisma matches nothing, which is
+    // what we want: an explicit empty search should return empty, not
+    // fall through to the full catalog.
+    where.id = { in: recipeIds };
+  } else if (query) {
+    // Legacy path — no FTS caller, fall back to contains OR. Used by
+    // any internal consumer that still calls getRecipes with a raw
+    // query string (tests, ad-hoc scripts). The main /tarifler page
+    // now goes through searchRecipeIds first.
     where.OR = [
       { title: { contains: query, mode: "insensitive" } },
       { description: { contains: query, mode: "insensitive" } },
@@ -157,6 +178,27 @@ export async function getRecipes(options: GetRecipesOptions = {}): Promise<{
     };
   }
 
+  // "relevance" — yalnız FTS akışı anlam taşıyor. recipeIds dizi
+  // sırasını koruyacak şekilde sonuçları client-side yeniden diziyoruz
+  // çünkü Postgres `ORDER BY ... IN (...)` tek SQL'de doğrudan olmuyor
+  // ve 500 tarif ölçeğinde JS sort trivial.
+  if (sortBy === "relevance" && recipeIds !== undefined) {
+    const [rows, total] = await Promise.all([
+      prisma.recipe.findMany({ where, select: recipeCardSelect }),
+      prisma.recipe.count({ where }),
+    ]);
+    const rankByIndex = new Map(recipeIds.map((id, idx) => [id, idx]));
+    const sorted = [...rows].sort((a, b) => {
+      const ai = rankByIndex.get(a.id) ?? Number.MAX_SAFE_INTEGER;
+      const bi = rankByIndex.get(b.id) ?? Number.MAX_SAFE_INTEGER;
+      return ai - bi;
+    });
+    return {
+      recipes: sorted.slice(offset, offset + limit) as unknown as RecipeCard[],
+      total,
+    };
+  }
+
   // Default is now alphabetical — feels natural for a browse page and
   // avoids clustering by recently-inserted seed batches (the old "newest"
   // default always pushed drinks to the top because their timestamps
@@ -175,7 +217,7 @@ export async function getRecipes(options: GetRecipesOptions = {}): Promise<{
           ? { createdAt: "desc" as const }
           : sortBy === "most-variations"
             ? { variations: { _count: "desc" as const } }
-            : // alphabetical (default)
+            : // alphabetical (default, relevance fallback w/o recipeIds)
               { title: "asc" as const };
 
   const [recipes, total] = await Promise.all([

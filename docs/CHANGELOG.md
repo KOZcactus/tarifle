@@ -159,7 +159,10 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🧪 Ingredient group bucketing — 7 test.
 - 🧪 AI Asistan pantry regression — 3 test.
 - 🧪 Seed recipe schema — 15 test.
-- 🧪 Toplam **212 unit + 9 E2E yeşil** (15 Nis 2026).
+- 🧪 Badge service unit (Prisma + notifications mock'lu) — 13 test (grant happy/P2002/error; per-badge award helper'ları; threshold edge'ler).
+- 🧪 Email verification unit (Prisma mock'lu) — 5 test (consume not-found/expired/valid; tx shape; badge grant best-effort).
+- 🧪 Auth round-trip E2E (`auth-roundtrip.spec.ts`) — login → ana sayfa → /ayarlar gate → /profil → çıkış yap → anonim state geri.
+- 🧪 Toplam **230 unit + 12 E2E yeşil**.
 
 ## Ops tooling
 

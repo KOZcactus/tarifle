@@ -1,6 +1,17 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 15 Nisan 2026 (Prisma migration baseline temizlendi)
+> Son güncelleme: 15 Nisan 2026 (test coverage genişletme)
+
+## 15 Nisan 2026 — Test coverage genişletme ✅
+
+İki eksik alan kapatıldı: badge service + email verification için Prisma-mock unit testler ve login round-trip için E2E.
+
+- **`tests/unit/badges-service.test.ts`** (13 test): `vi.hoisted` + `vi.mock` ile prisma + notifications mock'lanıyor. `grantBadge` happy/P2002 dup/error path; `awardEmailVerifiedBadge` kullanıcı yok / var; `awardFirstVariationBadge` skip if existing / fresh insert; `maybeAwardPopularBadge` threshold (10); `maybeAwardCollectorBadge` threshold (5) + idempotent over-threshold.
+- **`tests/unit/email-verification.test.ts`** (5 test): `consumeVerificationToken` not-found / expired / cleanup-error swallowing / valid path (transaction call shape) / badge grant best-effort (rejection swallowed).
+- **`tests/e2e/auth-roundtrip.spec.ts`** (1 test): `createTestUser` helper ile pre-verified user → `/giris` UI form submit → ana sayfaya redirect → `/ayarlar` auth gate geçiyor → `/profil/[username]` render → navbar profile menü → "Çıkış Yap" → anonim state geri geliyor → `/ayarlar` redirect /giris. Pass 4 bug sınıfı için regression guard.
+- **230 unit + 12 E2E yeşil.**
+
+## 15 Nisan 2026 — Prisma migration baseline temizliği ✅
 
 ## 15 Nisan 2026 — Prisma migration baseline temizliği ✅
 

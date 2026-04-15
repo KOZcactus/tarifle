@@ -235,14 +235,80 @@ export async function getRecipes(options: GetRecipesOptions = {}): Promise<{
 }
 
 /** Öne çıkan tarifler */
+/**
+ * Öne çıkan tarifler — haftalık rotating pool.
+ *
+ * Önceki davranış: tüm `isFeatured=true` tarifleri `createdAt desc` ile
+ * sıralayıp top N. Problem: 206 tarifte ~30-50 `isFeatured` olunca her
+ * gün aynı 6'yı gördük, dönüp gelen kullanıcı için yorucu.
+ *
+ * Yeni davranış: pool'u slug-ordered sabit liste say, ISO haftasına
+ * göre deterministic offset uygula, oradan N al. Bir hafta boyunca
+ * aynı 6, ertesi hafta farklı 6. Wrap-around: (offset + i) % pool.length.
+ * Pool küçükse (<= limit) tümü hep gösterilir; offset no-op olur.
+ *
+ * Neden haftalık (günlük yerine): tarifle.app ziyaretçisi zaman zaman
+ * açıyor — 7 gün aynı görmek tanıdıklık kuruyor, sonraki hafta yenilik.
+ * Günlük rotation çok agresif, "bu tarif nerede kayboldu" hissini verir.
+ *
+ * `getWeekIndex()` kontrol edilebilir bir saat kaynağı alır ki unit
+ * test'te deterministic rotation'ı doğrulayabilelim.
+ */
+export function getWeekIndex(now: Date = new Date()): number {
+  // 1970-01-01 Perşembe; UTC hafta indeksi. `Math.floor` her 7 günde bir
+  // artar. Timezone shift'i başlangıç haftasını ±1 kaydırsa da rotation
+  // çalışır.
+  const msPerWeek = 7 * 24 * 60 * 60 * 1000;
+  return Math.floor(now.getTime() / msPerWeek);
+}
+
 export async function getFeaturedRecipes(limit = 6): Promise<RecipeCard[]> {
-  const recipes = await prisma.recipe.findMany({
+  // Pool'u slug ordered olarak çek ki rotation offset her hafta
+  // aynı sıra üzerinden yürüsün. `createdAt` ordered olsaydı yeni batch
+  // eklenince mevcut rotation tamamen kayardı.
+  const pool = await prisma.recipe.findMany({
     where: { status: "PUBLISHED", isFeatured: true },
+    select: recipeCardSelect,
+    orderBy: { slug: "asc" },
+  });
+
+  if (pool.length <= limit) {
+    return pool as unknown as RecipeCard[];
+  }
+
+  const offset = getWeekIndex() % pool.length;
+  const rotated: typeof pool = [];
+  for (let i = 0; i < limit; i++) {
+    const idx = (offset + i) % pool.length;
+    const item = pool[idx];
+    if (item) rotated.push(item);
+  }
+  return rotated as unknown as RecipeCard[];
+}
+
+/**
+ * Son N günde eklenen tarifler — ana sayfadaki "Yeni eklenenler"
+ * section için. Her batch sonrası (50-100 tarif) kullanıcıya yeni içerik
+ * görünür olsun.
+ *
+ * `createdAt desc` ordering + `>= now - days` filter. 14 gün default:
+ * Codex haftalık ~1-2 batch varsayımıyla genelde 50-200 tarif kapsar,
+ * homepage'de 8 kart olarak gösteririz.
+ */
+export async function getRecentRecipes(
+  days = 14,
+  limit = 8,
+): Promise<RecipeCard[]> {
+  const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000);
+  const recipes = await prisma.recipe.findMany({
+    where: {
+      status: "PUBLISHED",
+      createdAt: { gte: since },
+    },
     select: recipeCardSelect,
     orderBy: { createdAt: "desc" },
     take: limit,
   });
-
   return recipes as unknown as RecipeCard[];
 }
 

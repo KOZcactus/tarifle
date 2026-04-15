@@ -35,6 +35,15 @@ const STEPS: readonly Step[] = [
     // Reads allergens to decide vegan status (SUT/YUMURTA/DENIZ_URUNLERI).
     dependsOnPrior: true,
   },
+  {
+    label: "Sitemap ping (Google + Bing)",
+    script: "scripts/ping-sitemap.ts",
+    // Best-effort — seed + retrofit tamamlandıktan sonra search engine'lere
+    // "sitemap güncellendi" sinyali atar. Ping script kendi içinde
+    // failure'ları swallow eder, exit 0 döner; orchestrator hatada zinciri
+    // durdurmaz (best-effort flag).
+    dependsOnPrior: true,
+  },
 ];
 
 const isDryRun = process.argv.includes("--dry-run");

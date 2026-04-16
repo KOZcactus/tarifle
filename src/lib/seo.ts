@@ -84,6 +84,37 @@ export function generateRecipeJsonLd(recipe: RecipeDetail) {
  * Google SERP'te FAQ rich results gösterir. Sıfır içerik yazma,
  * tamamen data-driven.
  */
+/**
+ * Category FAQ JSON-LD — auto-generated from category stats.
+ */
+export function generateCategoryFaqJsonLd(
+  categoryName: string,
+  recipeCount: number,
+): object {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: `${categoryName} kategorisinde kaç tarif var?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `${categoryName} kategorisinde şu an ${recipeCount} tarif bulunuyor.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: `${categoryName} tarifleri nasıl filtrelenir?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `${categoryName} tariflerini mutfak, alerjen ve diyet tercihine göre filtreleyebilirsiniz.`,
+        },
+      },
+    ],
+  };
+}
+
 export function generateRecipeFaqJsonLd(recipe: RecipeDetail): object | null {
   const cuisineLabel = recipe.cuisine
     ? CUISINE_LABEL[recipe.cuisine as CuisineCode]

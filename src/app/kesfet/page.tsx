@@ -1,10 +1,13 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
+import { SearchBar } from "@/components/search/SearchBar";
 import { RandomRecipeBanner } from "@/components/discovery/RandomRecipeBanner";
 import { getFeaturedRecipes, getQuickRecipes, getPopularRecipes } from "@/lib/queries/recipe";
 import { getCategories } from "@/lib/queries/category";
 import { getCuisineStats } from "@/lib/queries/cuisine-stats";
 import { getRandomRecipe } from "@/lib/queries/random-recipe";
+import { getSearchSuggestions } from "@/lib/queries/search-suggestions";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -20,13 +23,14 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function KesfetPage() {
-  const [featured, quick, popular, allCategories, cuisineStats, randomRecipe] = await Promise.all([
+  const [featured, quick, popular, allCategories, cuisineStats, randomRecipe, searchSuggestions] = await Promise.all([
     getFeaturedRecipes(6),
     getQuickRecipes(8),
     getPopularRecipes(8),
     getCategories(),
     getCuisineStats(),
     getRandomRecipe(),
+    getSearchSuggestions(),
   ]);
 
   // Tarif sayısına göre sırala, en çok tarifi olan ilk 8
@@ -38,6 +42,13 @@ export default async function KesfetPage() {
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <h1 className="font-heading text-3xl font-bold">Keşfet</h1>
       <p className="mt-2 text-text-muted">Yeni lezzetler keşfet, ilham al.</p>
+
+      {/* Search */}
+      <div className="mt-6">
+        <Suspense>
+          <SearchBar placeholder="Tarif veya malzeme ara..." suggestions={searchSuggestions} />
+        </Suspense>
+      </div>
 
       {/* Random Recipe — "Bugün ne yapsam?" + shuffle butonu */}
       {randomRecipe && (

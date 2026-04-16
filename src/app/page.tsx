@@ -10,6 +10,7 @@ import { getCuisineStats } from "@/lib/queries/cuisine-stats";
 import { getSearchSuggestions } from "@/lib/queries/search-suggestions";
 import { getRandomRecipe } from "@/lib/queries/random-recipe";
 import { RandomRecipeBanner } from "@/components/discovery/RandomRecipeBanner";
+import { CountUp } from "@/components/ui/CountUp";
 
 const POPULAR_SEARCHES = [
   "karnıyarık",
@@ -45,7 +46,7 @@ export default async function HomePage() {
       {/* Hero */}
       <section className="flex flex-col items-center py-16 text-center lg:py-24">
         <span className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-medium text-primary">
-          🍳 {recipeCount} tarif keşfetmeye hazır
+          🍳 <CountUp target={recipeCount} /> tarif keşfetmeye hazır
         </span>
         <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
           Bugün ne{" "}

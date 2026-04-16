@@ -7,7 +7,7 @@ import { DietFilter } from "@/components/search/DietFilter";
 import { CuisineFilter } from "@/components/search/CuisineFilter";
 import { getCategoryBySlug } from "@/lib/queries/category";
 import { getRecipes } from "@/lib/queries/recipe";
-import { generateBreadcrumbJsonLd } from "@/lib/seo";
+import { generateBreadcrumbJsonLd, generateCategoryFaqJsonLd } from "@/lib/seo";
 import { ALLERGEN_ORDER } from "@/lib/allergens";
 import { CUISINE_CODES, type CuisineCode } from "@/lib/cuisines";
 import type { Metadata } from "next";
@@ -89,6 +89,13 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      {/* Schema.org FAQPage JSON-LD — kategori SSS rich results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateCategoryFaqJsonLd(category.name, total)),
+        }}
       />
 
       {/* Category Header */}

@@ -77,8 +77,9 @@ function extractTimeFromInstruction(text: string): number | null {
     found = true;
   }
 
-  // Match "N saat" / "N sa" patterns
-  const hourPatterns = /(\d+)\s*(?:saat|sa\.?)/g;
+  // Match "N saat" only — "sa" short-form removed because "30 saniye"
+  // matches "\d+\s*sa" as substring and inflates to hours.
+  const hourPatterns = /(\d+)\s*saat\b/g;
   while ((match = hourPatterns.exec(lower)) !== null) {
     totalSeconds += parseInt(match[1], 10) * 3600;
     found = true;

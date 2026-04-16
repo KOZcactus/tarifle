@@ -6,7 +6,7 @@ import { FilterPanel } from "@/components/search/FilterPanel";
 import { AllergenFilter } from "@/components/search/AllergenFilter";
 import { DietFilter } from "@/components/search/DietFilter";
 import { CuisineFilter } from "@/components/search/CuisineFilter";
-import { CUISINE_CODES, CUISINE_LABEL, type CuisineCode } from "@/lib/cuisines";
+import { CUISINE_CODES, CUISINE_LABEL, CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
 import { getRecipes } from "@/lib/queries/recipe";
 import { getCategories } from "@/lib/queries/category";
 import { getTags } from "@/lib/queries/tag";
@@ -170,6 +170,18 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
           <CuisineFilter selected={cuisines} />
         </Suspense>
       </div>
+
+      {/* Active filter summary chips */}
+      <ActiveFilters
+        query={query}
+        category={category}
+        difficulty={difficulty}
+        maxMinutes={maxMinutes}
+        cuisines={cuisines}
+        excludeAllergens={excludeAllergens}
+        tagSlugs={tagSlugs}
+        params={params}
+      />
 
       {/* Sort tabs — rewrites ?siralama=... while preserving every other
           filter in the URL. Default (alphabetical) omits the param so the
@@ -423,6 +435,95 @@ function EmptyState({
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+/** Active filter summary — shows which filters are active with remove buttons. */
+function ActiveFilters({
+  query,
+  category,
+  difficulty,
+  maxMinutes,
+  cuisines,
+  excludeAllergens,
+  tagSlugs,
+  params,
+}: {
+  query: string;
+  category: string;
+  difficulty: string;
+  maxMinutes: number | undefined;
+  cuisines: string[];
+  excludeAllergens: string[];
+  tagSlugs: string[] | undefined;
+  params: Record<string, string | string[] | undefined>;
+}) {
+  const chips: { label: string; removeParam: string; removeValue?: string }[] = [];
+
+  if (query) chips.push({ label: `"${query}"`, removeParam: "q" });
+  if (category) chips.push({ label: `Kategori: ${category}`, removeParam: "kategori" });
+  if (difficulty) {
+    const d = difficulty === "EASY" ? "Kolay" : difficulty === "MEDIUM" ? "Orta" : "Zor";
+    chips.push({ label: d, removeParam: "zorluk" });
+  }
+  if (maxMinutes) chips.push({ label: `≤${maxMinutes} dk`, removeParam: "sure" });
+  for (const c of cuisines) {
+    chips.push({
+      label: `${CUISINE_FLAG[c as CuisineCode] ?? ""} ${CUISINE_LABEL[c as CuisineCode] ?? c}`,
+      removeParam: "mutfak",
+      removeValue: c,
+    });
+  }
+  for (const a of excludeAllergens) {
+    chips.push({ label: `${a} hariç`, removeParam: "alerjen", removeValue: a });
+  }
+  if (tagSlugs) {
+    for (const t of tagSlugs) {
+      chips.push({ label: `#${t}`, removeParam: "etiket", removeValue: t });
+    }
+  }
+
+  if (chips.length === 0) return null;
+
+  return (
+    <div className="mb-4 flex flex-wrap items-center gap-2">
+      <span className="text-xs text-text-muted">Aktif:</span>
+      {chips.map((chip, i) => {
+        const p = new URLSearchParams();
+        for (const [k, v] of Object.entries(params)) {
+          if (!v || k === "page") continue;
+          if (Array.isArray(v)) {
+            for (const item of v) {
+              if (k === chip.removeParam && item === chip.removeValue) continue;
+              p.append(k, item);
+            }
+          } else {
+            if (k === chip.removeParam && (!chip.removeValue || v === chip.removeValue)) continue;
+            p.set(k, v);
+          }
+        }
+        const qs = p.toString();
+        const href = `/tarifler${qs ? `?${qs}` : ""}`;
+
+        return (
+          <Link
+            key={`${chip.removeParam}-${chip.removeValue ?? i}`}
+            href={href}
+            className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/5 px-2.5 py-1 text-xs font-medium text-primary transition-colors hover:bg-primary/10"
+            title={`${chip.label} filtresini kaldır`}
+          >
+            {chip.label}
+            <span aria-hidden="true">×</span>
+          </Link>
+        );
+      })}
+      <Link
+        href="/tarifler"
+        className="text-[11px] text-text-muted hover:text-primary"
+      >
+        Hepsini temizle
+      </Link>
     </div>
   );
 }

@@ -47,7 +47,27 @@ const TIME_OPTIONS = [
   { value: 120, label: "2 saate kadar" },
 ];
 
-export function AiAssistantForm() {
+interface AiAssistantFormProps {
+  /** Pre-fetched unique ingredient names for autocomplete. */
+  knownIngredients?: string[];
+}
+
+/**
+ * Normalize for Turkish-aware fuzzy matching.
+ * "Tav" should match "Tavuk", "İsp" should match "Ispanak".
+ */
+function trNormalize(s: string): string {
+  return s
+    .toLocaleLowerCase("tr-TR")
+    .replaceAll("ı", "i")
+    .replaceAll("ğ", "g")
+    .replaceAll("ü", "u")
+    .replaceAll("ş", "s")
+    .replaceAll("ö", "o")
+    .replaceAll("ç", "c");
+}
+
+export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps) {
   const [ingredients, setIngredients] = useState<string[]>([]);
   const [currentInput, setCurrentInput] = useState("");
   const [excludeIngredients, setExcludeIngredients] = useState<string[]>([]);
@@ -57,6 +77,8 @@ export function AiAssistantForm() {
   const [maxMinutes, setMaxMinutes] = useState<string>("");
   const [cuisine, setCuisine] = useState<string>("tr");
   const [assumePantry, setAssumePantry] = useState(true);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [selectedSuggestionIdx, setSelectedSuggestionIdx] = useState(-1);
   const [result, setResult] = useState<AiSuggestResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
@@ -96,6 +118,25 @@ export function AiAssistantForm() {
     setCurrentInput("");
   }
 
+  // Autocomplete suggestions — filtered by current input, max 6
+  const autocompleteSuggestions = (() => {
+    if (!currentInput.trim() || currentInput.trim().length < 2) return [];
+    const query = trNormalize(currentInput.trim());
+    const alreadyAdded = new Set(ingredients.map((i) => i.toLocaleLowerCase("tr")));
+    return knownIngredients
+      .filter((name) => {
+        const norm = trNormalize(name);
+        return norm.includes(query) && !alreadyAdded.has(name.toLocaleLowerCase("tr"));
+      })
+      .slice(0, 6);
+  })();
+
+  function selectSuggestion(name: string) {
+    addIngredient(name);
+    setShowSuggestions(false);
+    setSelectedSuggestionIdx(-1);
+  }
+
   function addExclude(raw: string) {
     const trimmed = raw.trim().replace(/,$/, "");
     if (!trimmed) return;
@@ -118,9 +159,38 @@ export function AiAssistantForm() {
   }
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+    // Autocomplete navigation
+    if (showSuggestions && autocompleteSuggestions.length > 0) {
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        setSelectedSuggestionIdx((prev) =>
+          prev < autocompleteSuggestions.length - 1 ? prev + 1 : 0,
+        );
+        return;
+      }
+      if (e.key === "ArrowUp") {
+        e.preventDefault();
+        setSelectedSuggestionIdx((prev) =>
+          prev > 0 ? prev - 1 : autocompleteSuggestions.length - 1,
+        );
+        return;
+      }
+      if (e.key === "Enter" && selectedSuggestionIdx >= 0) {
+        e.preventDefault();
+        selectSuggestion(autocompleteSuggestions[selectedSuggestionIdx]!);
+        return;
+      }
+      if (e.key === "Escape") {
+        setShowSuggestions(false);
+        setSelectedSuggestionIdx(-1);
+        return;
+      }
+    }
+
     if (e.key === "Enter" || e.key === ",") {
       e.preventDefault();
       addIngredient(currentInput);
+      setShowSuggestions(false);
     } else if (e.key === "Backspace" && !currentInput && ingredients.length > 0) {
       setIngredients(ingredients.slice(0, -1));
     }
@@ -236,17 +306,60 @@ export function AiAssistantForm() {
             <input
               type="text"
               value={currentInput}
-              onChange={(e) => setCurrentInput(e.target.value)}
+              onChange={(e) => {
+                setCurrentInput(e.target.value);
+                setShowSuggestions(e.target.value.trim().length >= 2);
+                setSelectedSuggestionIdx(-1);
+              }}
               onKeyDown={handleKeyDown}
-              onBlur={() => currentInput.trim() && addIngredient(currentInput)}
+              onBlur={() => {
+                // Delay to allow click on suggestion
+                setTimeout(() => {
+                  if (currentInput.trim()) addIngredient(currentInput);
+                  setShowSuggestions(false);
+                }, 150);
+              }}
+              onFocus={() => {
+                if (currentInput.trim().length >= 2) setShowSuggestions(true);
+              }}
               placeholder={
                 ingredients.length === 0
                   ? "Örn. domates, soğan, yumurta (virgül veya Enter'la ekle)"
                   : "Yeni malzeme…"
               }
               className="min-w-[200px] flex-1 bg-transparent text-sm outline-none"
+              autoComplete="off"
+              role="combobox"
+              aria-expanded={showSuggestions && autocompleteSuggestions.length > 0}
+              aria-autocomplete="list"
             />
           </div>
+          {/* Autocomplete dropdown */}
+          {showSuggestions && autocompleteSuggestions.length > 0 && (
+            <ul
+              className="mt-1 max-h-48 overflow-y-auto rounded-lg border border-border bg-bg-card shadow-lg"
+              role="listbox"
+            >
+              {autocompleteSuggestions.map((name, idx) => (
+                <li
+                  key={name}
+                  role="option"
+                  aria-selected={idx === selectedSuggestionIdx}
+                  className={`cursor-pointer px-3 py-2 text-sm transition-colors ${
+                    idx === selectedSuggestionIdx
+                      ? "bg-primary/10 text-primary"
+                      : "text-text hover:bg-bg-elevated"
+                  }`}
+                  onMouseDown={(e) => {
+                    e.preventDefault(); // prevent blur
+                    selectSuggestion(name);
+                  }}
+                >
+                  {name}
+                </li>
+              ))}
+            </ul>
+          )}
           <p className="mt-1.5 text-xs text-text-muted">
             Virgül ya da Enter&apos;a basarak her malzemeyi ayrı ekle.
           </p>

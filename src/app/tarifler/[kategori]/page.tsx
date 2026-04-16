@@ -1,16 +1,23 @@
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
+import { AllergenFilter } from "@/components/search/AllergenFilter";
+import { DietFilter } from "@/components/search/DietFilter";
 import { CuisineFilter } from "@/components/search/CuisineFilter";
 import { getCategoryBySlug } from "@/lib/queries/category";
 import { getRecipes } from "@/lib/queries/recipe";
 import { generateBreadcrumbJsonLd } from "@/lib/seo";
+import { ALLERGEN_ORDER } from "@/lib/allergens";
 import { CUISINE_CODES, type CuisineCode } from "@/lib/cuisines";
 import type { Metadata } from "next";
 
 interface KategoriPageProps {
   params: Promise<{ kategori: string }>;
-  searchParams: Promise<{ mutfak?: string | string[] }>;
+  searchParams: Promise<{
+    mutfak?: string | string[];
+    alerjen?: string | string[];
+    etiket?: string | string[];
+  }>;
 }
 
 export async function generateMetadata({ params }: KategoriPageProps): Promise<Metadata> {
@@ -44,9 +51,29 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
     (CUISINE_CODES as readonly string[]).includes(c),
   );
 
+  // Parse allergen exclusion
+  const rawAllergens = sp.alerjen
+    ? Array.isArray(sp.alerjen)
+      ? sp.alerjen
+      : [sp.alerjen]
+    : [];
+  const excludeAllergens = rawAllergens.filter(
+    (a): a is (typeof ALLERGEN_ORDER)[number] =>
+      (ALLERGEN_ORDER as readonly string[]).includes(a),
+  );
+
+  // Parse diet tag filter
+  const tagSlugs = sp.etiket
+    ? Array.isArray(sp.etiket)
+      ? sp.etiket
+      : [sp.etiket]
+    : undefined;
+
   const { recipes, total } = await getRecipes({
     categorySlug: kategori,
     cuisines: cuisines.length > 0 ? cuisines : undefined,
+    excludeAllergens: excludeAllergens.length > 0 ? excludeAllergens : undefined,
+    tagSlugs,
   });
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
@@ -74,8 +101,14 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
         </div>
       </div>
 
-      {/* Cuisine Filter */}
-      <div className="mb-6">
+      {/* Filters */}
+      <div className="mb-6 space-y-3">
+        <Suspense>
+          <AllergenFilter selected={excludeAllergens} />
+        </Suspense>
+        <Suspense>
+          <DietFilter activeTagSlugs={tagSlugs ?? []} />
+        </Suspense>
         <Suspense>
           <CuisineFilter selected={cuisines} />
         </Suspense>

@@ -7712,7 +7712,7 @@ export const recipes = [
     ],
   },
   {
-    title: "Fırında Nohut Cipsi",
+    title: "Baharatlı Fırında Nohut Cipsi",
     slug: "baharatli-nohut-cipsi",
     emoji: "🍿",
     cuisine: "tr",
@@ -8017,7 +8017,7 @@ export const recipes = [
     ],
   },
   {
-    title: "Hojicha Latte",
+    title: "Kavrulmuş Hojicha Latte",
     slug: "kavrulmus-hojicha-latte",
     emoji: "☕",
     cuisine: "jp",

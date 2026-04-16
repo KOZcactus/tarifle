@@ -66,8 +66,11 @@ function normalizeIngredientName(name: string): string {
 /** Normalize a title for near-duplicate comparison. */
 function normalizeTitle(title: string): string {
   let t = trLower(title);
-  // Strip common noise prefixes
-  for (const prefix of ["ev yapımı ", "geleneksel ", "klasik "]) {
+  // Strip noise prefixes that don't signal a distinct recipe ("Ev yapımı X"
+  // is the same as "X"). "klasik" is NOT stripped — "Klasik Menemen" is a
+  // culturally separate preparation from modern "Menemen" (yeşil biber +
+  // zeytinyağı vs sivri biber + tereyağı, etc).
+  for (const prefix of ["ev yapımı ", "geleneksel "]) {
     if (t.startsWith(prefix)) {
       t = t.slice(prefix.length);
     }
@@ -523,21 +526,23 @@ async function main(): Promise<void> {
       }
     }
 
-    // 1d. Duplicate ingredient name (normalized)
+    // 1d. Duplicate ingredient name (normalized). Same name in different
+    // groups is legitimate (e.g. "Şeker" in both "Hamur için" and
+    // "Şerbet için" for revani-style desserts) — dedup key includes group.
     const namesSeen = new Map<string, number>();
     for (const ing of ingredients) {
-      const norm = normalizeIngredientName(ing.name);
-      const prev = namesSeen.get(norm);
+      const key = `${normalizeIngredientName(ing.name)}::${ing.group ?? ""}`;
+      const prev = namesSeen.get(key);
       if (prev !== undefined) {
         addFinding(
           "WARNING",
           "INGREDIENT_QUALITY",
           slug,
           title,
-          `Duplicate ingredient name "${ing.name}" (normalized: "${norm}") at sortOrders ${prev} and ${ing.sortOrder}`
+          `Duplicate ingredient name "${ing.name}" in same group at sortOrders ${prev} and ${ing.sortOrder}`
         );
       } else {
-        namesSeen.set(norm, ing.sortOrder);
+        namesSeen.set(key, ing.sortOrder);
       }
     }
 

@@ -2,11 +2,9 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
-import { RandomRecipeBanner } from "@/components/discovery/RandomRecipeBanner";
 import { getFeaturedRecipes, getQuickRecipes, getPopularRecipes } from "@/lib/queries/recipe";
 import { getCategories } from "@/lib/queries/category";
 import { getCuisineStats } from "@/lib/queries/cuisine-stats";
-import { getRandomRecipe } from "@/lib/queries/random-recipe";
 import { getSearchSuggestions } from "@/lib/queries/search-suggestions";
 import type { Metadata } from "next";
 
@@ -23,13 +21,12 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function KesfetPage() {
-  const [featured, quick, popular, allCategories, cuisineStats, randomRecipe, searchSuggestions] = await Promise.all([
+  const [featured, quick, popular, allCategories, cuisineStats, searchSuggestions] = await Promise.all([
     getFeaturedRecipes(6),
     getQuickRecipes(8),
     getPopularRecipes(8),
     getCategories(),
     getCuisineStats(),
-    getRandomRecipe(),
     getSearchSuggestions(),
   ]);
 
@@ -60,13 +57,6 @@ export default async function KesfetPage() {
           ))}
         </div>
       </div>
-
-      {/* Random Recipe — "Bugün ne yapsam?" + shuffle butonu */}
-      {randomRecipe && (
-        <section className="mt-8">
-          <RandomRecipeBanner initial={randomRecipe} />
-        </section>
-      )}
 
       {/* Featured */}
       {featured.length > 0 && (

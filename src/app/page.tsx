@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
 import { RecipeOfTheDay } from "@/components/home/RecipeOfTheDay";
-import { getFeaturedRecipes, getRecipes, getRecentRecipes, getPopularRecipes } from "@/lib/queries/recipe";
+import { getFeaturedRecipes, getRecipes, getPopularRecipes } from "@/lib/queries/recipe";
 import { getCategories } from "@/lib/queries/category";
 import { auth } from "@/lib/auth";
 import { getCuisineStats } from "@/lib/queries/cuisine-stats";
@@ -23,10 +23,9 @@ const POPULAR_SEARCHES = [
 ];
 
 export default async function HomePage() {
-  const [featured, recent, popular, categories, { total: recipeCount }, session, cuisineStats, searchSuggestions, randomRecipe] =
+  const [featured, popular, categories, { total: recipeCount }, session, cuisineStats, searchSuggestions, randomRecipe] =
     await Promise.all([
       getFeaturedRecipes(6),
-      getRecentRecipes(14, 8),
       getPopularRecipes(8),
       getCategories(),
       getRecipes({ limit: 0 }),
@@ -88,29 +87,6 @@ export default async function HomePage() {
           </div>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {featured.map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* Yeni Eklenenler — son 14 günde eklenen tarifler. Codex batch'leri
-          geldikçe burada görünür; 206+ tarif büyüdükçe "yeni keşif" hissi
-          kalıcı. Pool 8'den azsa section tamamen gizlenir (sıfır olunca
-          "hiçbir şey yok" gibi boş blok olmasın). */}
-      {recent.length >= 4 && (
-        <section className="py-12">
-          <div className="flex items-center justify-between">
-            <h2 className="font-heading text-2xl font-bold">Yeni Eklenenler</h2>
-            <Link
-              href="/tarifler?siralama=newest"
-              className="text-sm text-primary hover:underline"
-            >
-              Hepsini gör →
-            </Link>
-          </div>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {recent.slice(0, 8).map((recipe) => (
               <RecipeCard key={recipe.id} recipe={recipe} />
             ))}
           </div>

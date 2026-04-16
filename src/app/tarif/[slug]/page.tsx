@@ -50,9 +50,14 @@ export async function generateMetadata({ params }: TarifPageProps): Promise<Meta
   // OpenGraph image'ı src/app/tarif/[slug]/opengraph-image.tsx
   // convention'ı otomatik ekliyor — burada manual image referansı
   // vermeye gerek yok, duplicate olur.
+  const cuisineLabel = recipe.cuisine
+    ? CUISINE_LABEL[recipe.cuisine as CuisineCode]
+    : null;
+  const cuisineSeo = cuisineLabel ? `${cuisineLabel} mutfağından ` : "";
+
   return {
     title: recipe.title,
-    description: `${recipe.title} tarifi — ${getDifficultyLabel(recipe.difficulty)}, ${formatMinutes(recipe.totalMinutes)}, ${recipe.servingCount} kişilik${recipe.averageCalories ? `, ~${recipe.averageCalories} kcal` : ""}.`,
+    description: `${cuisineSeo}${recipe.title} tarifi — ${getDifficultyLabel(recipe.difficulty)}, ${formatMinutes(recipe.totalMinutes)}, ${recipe.servingCount} kişilik${recipe.averageCalories ? `, ~${recipe.averageCalories} kcal` : ""}.`,
     alternates: {
       canonical: `/tarif/${recipe.slug}`,
     },

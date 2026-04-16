@@ -1,4 +1,5 @@
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
+import { CUISINE_LABEL, type CuisineCode } from "@/lib/cuisines";
 import type { RecipeDetail } from "@/types/recipe";
 
 export interface BreadcrumbItem {
@@ -51,7 +52,9 @@ export function generateRecipeJsonLd(recipe: RecipeDetail) {
     totalTime,
     recipeYield: `${recipe.servingCount} porsiyon`,
     recipeCategory: recipe.category.name,
-    recipeCuisine: "Türk Mutfağı",
+    recipeCuisine: recipe.cuisine
+      ? `${CUISINE_LABEL[recipe.cuisine as CuisineCode] ?? "Türk"} Mutfağı`
+      : "Türk Mutfağı",
     recipeIngredient: recipe.ingredients.map(
       (ing) => `${ing.amount} ${ing.unit ?? ""} ${ing.name}`.trim(),
     ),

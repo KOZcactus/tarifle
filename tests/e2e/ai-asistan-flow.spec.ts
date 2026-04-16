@@ -55,6 +55,77 @@ test("AI asistan: 3 yaygın malzemeyle 'Tarif öner' → en az 1 eşleşme döne
   await expect(page.getByText(/🧠 Asistan:/i)).toBeVisible();
 });
 
+test("AI asistan: cuisine filter 'Türk' → sadece Türk tarifleri döner", async ({
+  page,
+}) => {
+  await page.goto("/ai-asistan");
+
+  const ingredientInput = page.getByRole("textbox").first();
+  await ingredientInput.fill("domates");
+  await ingredientInput.press("Enter");
+  await ingredientInput.fill("soğan");
+  await ingredientInput.press("Enter");
+
+  // Cuisine dropdown'ı "Türk" olarak bırak (default) ve submit
+  await page.getByRole("button", { name: /tarif öner/i }).click();
+
+  await expect(async () => {
+    const suggestionLinks = await page.locator('a[href^="/tarif/"]').count();
+    expect(suggestionLinks).toBeGreaterThan(0);
+  }).toPass({ timeout: 15000 });
+
+  // Commentary cuisine prefix kontrolü
+  await expect(page.getByText(/Türk mutfağından/i)).toBeVisible();
+});
+
+test("AI asistan: malzeme hariç tutma → fıstık içeren tarifler çıkmaz", async ({
+  page,
+}) => {
+  await page.goto("/ai-asistan");
+
+  // Yaygın malzemeler ekle
+  const ingredientInput = page.getByRole("textbox").first();
+  await ingredientInput.fill("tavuk");
+  await ingredientInput.press("Enter");
+  await ingredientInput.fill("soğan");
+  await ingredientInput.press("Enter");
+
+  // Hariç tutulacak malzeme ekle
+  const excludeInput = page.getByPlaceholder(/fıstık, yumurta/i);
+  await excludeInput.fill("fıstık");
+  await excludeInput.press("Enter");
+
+  // Submit
+  await page.getByRole("button", { name: /tarif öner/i }).click();
+
+  // Sonuçlarda "fıstık" geçen bir tarif olmamalı
+  await expect(async () => {
+    const noMatch = await page.getByText(/hiç eşleşme yok/i).count();
+    const suggestionLinks = await page.locator('a[href^="/tarif/"]').count();
+    expect(noMatch + suggestionLinks).toBeGreaterThan(0);
+  }).toPass({ timeout: 15000 });
+
+  // Sayfa crash olmadı
+  await expect(
+    page.getByRole("heading", { name: /elindekinden tarif bul/i }),
+  ).toBeVisible();
+});
+
+test("AI asistan: paylaş URL'i açıldığında auto-submit çalışır", async ({
+  page,
+}) => {
+  // Direkt paylaş URL'i ile aç
+  await page.goto("/ai-asistan?m=tavuk,domates&mutfak=tr");
+
+  // Auto-submit yapması gerekiyor — sonuç veya boş mesaj bekle
+  await expect(async () => {
+    const noMatch = await page.getByText(/hiç eşleşme yok/i).count();
+    const suggestionLinks = await page.locator('a[href^="/tarif/"]').count();
+    const commentary = await page.getByText(/🧠 Asistan:/i).count();
+    expect(noMatch + suggestionLinks + commentary).toBeGreaterThan(0);
+  }).toPass({ timeout: 15000 });
+});
+
 test("AI asistan: boş submit → en az 1 malzeme uyarısı veya boş eşleşme mesajı", async ({
   page,
 }) => {

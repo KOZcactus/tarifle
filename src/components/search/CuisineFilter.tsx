@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import {
   CUISINE_CODES,
   CUISINE_FLAG,
@@ -24,6 +24,7 @@ interface CuisineFilterProps {
 export function CuisineFilter({ selected }: CuisineFilterProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const pathname = usePathname();
 
   function toggle(code: CuisineCode) {
     const params = new URLSearchParams(searchParams.toString());
@@ -35,14 +36,14 @@ export function CuisineFilter({ selected }: CuisineFilterProps) {
       : [...current, code];
     next.forEach((c) => params.append("mutfak", c));
     params.delete("page"); // reset to first page after filter change
-    router.push(`/tarifler?${params.toString()}`);
+    router.push(`${pathname}?${params.toString()}`);
   }
 
   function clearAll() {
     const params = new URLSearchParams(searchParams.toString());
     params.delete("mutfak");
     params.delete("page");
-    router.push(`/tarifler?${params.toString()}`);
+    router.push(`${pathname}?${params.toString()}`);
   }
 
   return (

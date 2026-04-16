@@ -1,12 +1,16 @@
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
+import { CuisineFilter } from "@/components/search/CuisineFilter";
 import { getCategoryBySlug } from "@/lib/queries/category";
 import { getRecipes } from "@/lib/queries/recipe";
 import { generateBreadcrumbJsonLd } from "@/lib/seo";
+import { CUISINE_CODES, type CuisineCode } from "@/lib/cuisines";
 import type { Metadata } from "next";
 
 interface KategoriPageProps {
   params: Promise<{ kategori: string }>;
+  searchParams: Promise<{ mutfak?: string | string[] }>;
 }
 
 export async function generateMetadata({ params }: KategoriPageProps): Promise<Metadata> {
@@ -23,13 +27,27 @@ export async function generateMetadata({ params }: KategoriPageProps): Promise<M
   };
 }
 
-export default async function KategoriPage({ params }: KategoriPageProps) {
+export default async function KategoriPage({ params, searchParams }: KategoriPageProps) {
   const { kategori } = await params;
+  const sp = await searchParams;
   const category = await getCategoryBySlug(kategori);
 
   if (!category) notFound();
 
-  const { recipes, total } = await getRecipes({ categorySlug: kategori });
+  // Parse cuisine filter
+  const rawCuisines = sp.mutfak
+    ? Array.isArray(sp.mutfak)
+      ? sp.mutfak
+      : [sp.mutfak]
+    : [];
+  const cuisines = rawCuisines.filter((c): c is CuisineCode =>
+    (CUISINE_CODES as readonly string[]).includes(c),
+  );
+
+  const { recipes, total } = await getRecipes({
+    categorySlug: kategori,
+    cuisines: cuisines.length > 0 ? cuisines : undefined,
+  });
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: "Ana Sayfa", url: "/" },
@@ -54,6 +72,13 @@ export default async function KategoriPage({ params }: KategoriPageProps) {
             <p className="mt-1 text-text-muted">{total} tarif</p>
           </div>
         </div>
+      </div>
+
+      {/* Cuisine Filter */}
+      <div className="mb-6">
+        <Suspense>
+          <CuisineFilter selected={cuisines} />
+        </Suspense>
       </div>
 
       {/* Recipe Grid */}

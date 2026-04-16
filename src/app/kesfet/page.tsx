@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
+import { RandomRecipeBanner } from "@/components/discovery/RandomRecipeBanner";
 import { getFeaturedRecipes, getQuickRecipes } from "@/lib/queries/recipe";
 import { getCategories } from "@/lib/queries/category";
 import { getCuisineStats } from "@/lib/queries/cuisine-stats";
@@ -37,28 +38,10 @@ export default async function KesfetPage() {
       <h1 className="font-heading text-3xl font-bold">Keşfet</h1>
       <p className="mt-2 text-text-muted">Yeni lezzetler keşfet, ilham al.</p>
 
-      {/* Random Recipe — "Bugün ne yapsam?" */}
+      {/* Random Recipe — "Bugün ne yapsam?" + shuffle butonu */}
       {randomRecipe && (
         <section className="mt-8">
-          <Link
-            href={`/tarif/${randomRecipe.slug}`}
-            className="group flex items-center gap-4 rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-5 transition-all hover:border-primary hover:shadow-md"
-          >
-            <span className="text-4xl transition-transform duration-200 group-hover:scale-110">
-              🎲
-            </span>
-            <div>
-              <p className="text-xs font-medium uppercase tracking-wide text-primary">
-                Rastgele tarif
-              </p>
-              <p className="mt-0.5 font-heading text-lg font-bold text-text group-hover:text-primary">
-                {randomRecipe.emoji} {randomRecipe.title}
-              </p>
-              <p className="mt-0.5 text-xs text-text-muted">
-                Ne yapacağına karar veremiyorsan bu tarifi dene →
-              </p>
-            </div>
-          </Link>
+          <RandomRecipeBanner initial={randomRecipe} />
         </section>
       )}
 

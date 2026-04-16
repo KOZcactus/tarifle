@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: 16 Nisan 2026 (session 5)
+> Son güncelleme: 16 Nisan 2026 (session 6)
 
 ## İşaretler
 
@@ -66,7 +66,10 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - ⚡ Full-text search — `searchVector` generated tsvector (A/B/C weighted) + `immutable_unaccent` + GIN index + `websearch_to_tsquery('turkish', ...)` + `ts_rank_cd` relevance sort. Kök eşleşme (mantılar→Mantı), aksan-bağımsız (manti→Mantı), ingredient adı fallback union.
 - 🎨 `/tarifler` "En alakalı" sort chip (sadece query varken görünür, query'li aramalarda default).
 - ✨ **Benzer tarifler** — tarif detay sayfası altında 6 kart'lık öneri şeridi. Kural tabanlı skorlama: aynı kategori +3, aynı type +2, her ortak tag +1, aynı difficulty +0.5. Score 0 → gizli (noise değil). 12 unit test (skor matrisi + tie-break + kenar durumlar).
-- 🇹🇷 **CuisineFilter aktif** (`/tarifler?mutfak=jp`) — `cuisine String?` schema alanı + btree index + 19 kod (tr/it/fr/es/gr/jp/cn/kr/th/in/mx/us/me/ma/vn/br/cu/ru/hu). `inferCuisineFromRecipe()` slug segment + keyword inference, default "tr". Toggle chip UI, accent-blue active state. Retrofit ile 606 tarif etiketlendi. Placeholder → aktif dönüşüm.
+- 🇹🇷 **CuisineFilter aktif** (`/tarifler?mutfak=jp`) — `cuisine String?` schema alanı + btree index + 20 kod. Toggle chip UI, accent-blue active state. Retrofit ile 806 tarif etiketlendi.
+- 🎨 **RecipeCard cuisine flag** — uluslararası tariflerde sağ üst köşede 🇯🇵🇮🇹🇫🇷 bayrak. Türk tariflerde gizli (noise önleme).
+- 🎨 **Tarif detay cuisine badge** — meta badge'ler arasında "🇯🇵 Japon" / "🇹🇷 Türk" chip.
+- 🌐 **Sitemap cuisine pages** — `/tarifler?mutfak=xx` URL'leri sitemap.xml'e eklendi (~18 landing page). SEO: "Japon tarifleri" aramasında çıkma şansı.
 
 ## Uyarlama sistemi
 
@@ -99,6 +102,9 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - ✨ **Malzeme hariç tutma** — "Bu malzemeler olmasın" kırmızı chip input. `recipeContainsExcluded()` ile tarif disqualification. Alerji/tercih senaryoları.
 - ⚡ **200-tarif cap kaldırıldı** — tüm PUBLISHED tarifler skorlanıyor. 706 tarifte <20ms.
 - 🎨 Commentary cuisine-aware prefix ("Türk mutfağından...", "Japon mutfağından...").
+- ✨ **Malzeme autocomplete** — 689 benzersiz malzeme ismi DB'den, Türkçe fuzzy match (ı/i, ş/s), Arrow/Enter keyboard nav, ARIA combobox. Her tuşta client-side filter, API yok.
+- ✨ **Arama paylaş** — "🔗 Paylaş" butonu URL'e ingredients kodlar. Paylaşılan link açıldığında auto-submit, aynı arama tekrarlanır.
+- 🎨 **Sonuç sıralama tercihi** — "En iyi eşleşme / En hızlı / En az eksik" client-side toggle.
 
 ## Bildirim sistemi
 
@@ -130,7 +136,8 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - ✨ Hero + arama + popüler aramalar + kategori grid + öne çıkan + CTA.
 - ✨ AI Asistan banner (mavi gradient, navbar'la uyumlu).
 - ✨ Bugünün tarifi widget — deterministic daily pick (`daysSinceEpoch % count`, `orderBy: slug`), 12-kural curator note + 5 intro varyantı seed-based.
-- 🎨 Section sıralaması: Hero → Öne Çıkan → Günün Tarifi → AI Asistan → Kategoriler.
+- 🎨 Section sıralaması: Hero → Öne Çıkan → Günün Tarifi → AI Asistan → Mutfaklar → Kategoriler.
+- ✨ **"Mutfaklara Göz At" section** — top 10 mutfak bayrak + isim + tarif sayısı kartları. Tıkla → `/tarifler?mutfak=xx`. `getCuisineStats()` groupBy count.
 
 ## Sosyal + PWA
 
@@ -240,6 +247,7 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 ## Performans
 
 - ⚡ **LCP font optimizasyonu** — Bricolage Grotesque 5 weight (400-800) → 2 weight (600+700), ~60KB font tasarrufu. Geist Sans latin → latin-ext (TR karakter desteği). `adjustFontFallback: true` ile CLS azaltma.
+- ⚡ **bf-cache restore handler** — `BfCacheRestore` client component: `pageshow persisted` → `router.refresh()`, `visibilitychange` 5dk+ → soft refresh. Security headers: `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`.
 
 ## Polish & UX copy
 

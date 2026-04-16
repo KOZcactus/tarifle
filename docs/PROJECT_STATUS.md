@@ -1,48 +1,49 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 16 Nisan 2026 (session 5)
+> Son güncelleme: 16 Nisan 2026 (session 6)
 
-## 16 Nisan 2026 session 5 — batch 8 + AI Asistan 14 iyileştirme + nutrition pipeline
+## 16 Nisan 2026 session 6 — AI Asistan 17 iyileştirme + batch 8 + UI + SEO + bf-cache
 
-Codex batch 8 merge (**806 tarif**) + AI Asistan 14 özellik + 92 tarif kalite fix + isFeatured fix + nutrition backfill pipeline.
+**806 tarif canlı.** AI Asistan büyük yenileme (17 özellik) + batch 8 merge + cuisine badge UI + homepage mutfak section + sitemap cuisine pages + bf-cache fix + nutrition pipeline.
 
-### Codex batch 8 + nutrition backfill-1
-- 🌍 **Batch 8** (`6362ef1`): 100 tarif (İskandinav 11 ilk kez, soslar 14, kokteyl 8, nutrition dolu). 706 → **806**. 20 mutfak aktif.
-- 🥗 **Nutrition backfill-1**: Codex 50 tarihe kcal/macro ekledi. `sync-nutrition.ts` ile DB'ye UPDATE (sync-emojis pattern). Coverage: 156 → **206/806** (%25.6). Devam ediyor (backfill-2, 3...).
-
-### AI Asistan — 14 iyileştirme (5 commit)
+### AI Asistan — 17 iyileştirme (8 commit)
 1. ✨ Cuisine filter (dropdown, default Türk, 20 mutfak + Hepsi)
-2. ✨ Malzeme hariç tutma ("Bu malzemeler olmasın" kırmızı chip input)
+2. ✨ Malzeme hariç tutma ("Bu malzemeler olmasın" kırmızı chip)
 3. ⚡ 200-tarif cap kaldırma (tüm PUBLISHED tarifler skorlanıyor)
-4. ✨ Pantry staples 7 → 15 (un, şeker, biber, kekik, kimyon...)
+4. ✨ Pantry staples 7 → 15
 5. ✨ Synonym matching (piliç=tavuk, spagetti=makarna, 10 grup)
 6. 🎨 SuggestionCard cuisine flag (🇹🇷🇯🇵🇮🇹)
-7. 🎨 Commentary cuisine prefix ("Türk mutfağından...")
-8. ⚡ Sonuç sayısı 6 → 10
+7. 🎨 Commentary cuisine prefix
+8. ⚡ Sonuç 6 → 10
 9. ✨ Arama geçmişi (localStorage, son 3)
-10. 🎨 Commentary tüm filtre kombinasyonları duyarlı
-11. ✨ Popüler malzeme quick-add chip'leri (12 malzeme)
-12. 🎨 Boş sonuç fallback combo önerileri (4 combo)
-13. 🎨 Tag chip'leri (vegan/pratik/30dk, max 3)
-14. 🎨 Match score progress bar (renk kodlu)
+10. 🎨 Commentary tüm filtre duyarlı
+11. ✨ Popüler malzeme quick-add chip'leri
+12. 🎨 Boş sonuç fallback combo
+13. 🎨 Tag chip'leri (vegan/pratik/30dk)
+14. 🎨 Match score progress bar
+15. ✨ **Malzeme autocomplete** (689 isim, Türkçe fuzzy, keyboard nav, ARIA)
+16. ✨ **Arama paylaş** (URL kodlama + auto-submit, viral growth)
+17. 🎨 **Sonuç sıralama tercihi** (En iyi eşleşme / En hızlı / En az eksik)
 
-### DB kalite audit + fix (session 3-4)
-- 🐛 **92 tarif kalite audit**: Category D 42→0, B 12→0, A 4 fix (toplamda 58 tarif düzeltildi)
-- ✅ **isFeatured**: %6.4 → **%10.8** (45 → 76). 6 sıfır kategori → hepsi ≥1 featured.
-- ✅ **3 tagless tarif** tag'lendi.
+### Batch 8 + nutrition
+- 🌍 **Batch 8**: 100 tarif (İskandinav 11, soslar 14, kokteyl 8). 706 → **806**.
+- 🥗 **Nutrition backfill-1**: 50 tarif macro eklendi + `sync-nutrition.ts` script.
+
+### UI + SEO
+- 🎨 **RecipeCard cuisine flag**: uluslararası tariflerde 🇯🇵🇮🇹🇫🇷 sağ üst köşede.
+- 🎨 **Tarif detay cuisine badge**: "🇯🇵 Japon" / "🇹🇷 Türk" meta chip.
+- ✨ **Homepage "Mutfaklara Göz At"**: top 10 mutfak kartı, tıkla → /tarifler?mutfak=xx.
+- 🌐 **Sitemap cuisine pages**: /tarifler?mutfak=xx URL'leri sitemap'e eklendi (~18 landing page).
+
+### Altyapı
+- ⚡ **bf-cache fix**: `BfCacheRestore` component (pageshow + visibilitychange → router.refresh). Security headers (X-Content-Type-Options, Referrer-Policy, Permissions-Policy).
+- 🐛 92 tarif kalite fix (tipNote/group/serving)
+- ✅ isFeatured %6.4 → %10.8 + 3 tagless fix
 - 🧪 351 unit + 18 E2E yeşil.
 
-### Cuisine genişletme (session 2-3)
-- 💾 **`cuisine String?`** schema + migration + CuisineFilter aktif (/tarifler?mutfak=)
-- ✨ **20 cuisine kodu**: tr/it/fr/es/gr/jp/cn/kr/th/in/mx/us/me/ma + vn/br/cu/ru/hu/se
-- 📊 Perf audit 606 tarif: 11 sorgu <3.2ms, cuisine btree aktif
-- ⚡ LCP font optimizasyonu: Bricolage 5→2 weight, Geist latin-ext
-- ⚡ RSS feed 30→50
-
 ### Sıradaki
-- ⏳ **Codex nutrition backfill** devam (backfill-2, 3... → 600 tarif kalan)
+- ⏳ **Codex nutrition backfill** devam (550 tarif kalan)
 - ⏳ **Codex batch 9-10** (1000 hedefe 2 batch kaldı)
-- ⏳ **bf-cache fix**: NextAuth cookie + Cache-Control, low priority
 
 ## 16 Nisan 2026 session 3 — batch 7 + kalite fix + cuisine genişletme
 

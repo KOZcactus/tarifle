@@ -247,7 +247,12 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
           )}
         </>
       ) : (
-        <EmptyState query={query} />
+        <EmptyState
+          query={query}
+          hasFilters={!!(category || difficulty || maxMinutes || (tagSlugs && tagSlugs.length > 0) || excludeAllergens.length > 0 || cuisines.length > 0)}
+          cuisineCount={cuisines.length}
+          allergenCount={excludeAllergens.length}
+        />
       )}
     </div>
   );
@@ -349,16 +354,75 @@ function Pagination({
   );
 }
 
-function EmptyState({ query }: { query: string }) {
+function EmptyState({
+  query,
+  hasFilters,
+  cuisineCount,
+  allergenCount,
+}: {
+  query: string;
+  hasFilters: boolean;
+  cuisineCount: number;
+  allergenCount: number;
+}) {
   return (
     <div className="flex flex-col items-center py-20 text-center">
       <span className="text-5xl">🔍</span>
       <h2 className="mt-4 font-heading text-xl font-semibold">Tarif bulunamadı</h2>
       <p className="mt-2 text-sm text-text-muted">
         {query
-          ? `"${query}" ile eşleşen tarif yok. Farklı bir arama deneyin.`
+          ? `"${query}" ile eşleşen tarif yok.`
           : "Seçili filtrelere uygun tarif bulunamadı."}
       </p>
+
+      {/* Suggestions */}
+      {(hasFilters || query) && (
+        <div className="mt-6 space-y-2">
+          <p className="text-xs font-medium uppercase tracking-wide text-text-muted">
+            Şunu dene:
+          </p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {query && (
+              <Link
+                href="/tarifler"
+                className="rounded-full border border-border bg-bg-card px-3 py-1.5 text-xs text-text-muted transition-colors hover:border-primary hover:text-primary"
+              >
+                Aramayı temizle
+              </Link>
+            )}
+            {hasFilters && (
+              <Link
+                href={query ? `/tarifler?q=${encodeURIComponent(query)}` : "/tarifler"}
+                className="rounded-full border border-border bg-bg-card px-3 py-1.5 text-xs text-text-muted transition-colors hover:border-primary hover:text-primary"
+              >
+                Tüm filtreleri kaldır
+              </Link>
+            )}
+            {cuisineCount > 0 && (
+              <Link
+                href="/tarifler"
+                className="rounded-full border border-border bg-bg-card px-3 py-1.5 text-xs text-text-muted transition-colors hover:border-primary hover:text-primary"
+              >
+                Tüm mutfakları göster
+              </Link>
+            )}
+            {allergenCount > 0 && (
+              <Link
+                href="/tarifler"
+                className="rounded-full border border-border bg-bg-card px-3 py-1.5 text-xs text-text-muted transition-colors hover:border-primary hover:text-primary"
+              >
+                Alerjen filtresini kaldır
+              </Link>
+            )}
+            <Link
+              href="/ai-asistan"
+              className="rounded-full border border-accent-blue/30 bg-accent-blue/5 px-3 py-1.5 text-xs text-accent-blue transition-colors hover:border-accent-blue hover:bg-accent-blue/10"
+            >
+              🧠 AI Asistan&apos;da dene
+            </Link>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

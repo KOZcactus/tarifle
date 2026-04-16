@@ -1,14 +1,15 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 16 Nisan 2026 (mega session — ~65 commit)
+> Son güncelleme: 16 Nisan 2026 (~70 commit)
 
 ## 16 Nisan 2026 — mega session özeti
 
-**906 tarif canlı, batch 10 (son batch) Codex'te.** ~65 commit. AI Asistan 17 özellik, cuisine tam entegrasyon, 92 tarif kalite fix, batch 6-9 merge, nutrition pipeline (%54 coverage), UI/UX polish, SEO, admin dashboard.
+**🎉 1000 TARİF MİLESTONE TAMAMLANDI!** ~70 commit. Batch 6-10 merge (506→1000), AI Asistan 17 özellik, cuisine tam entegrasyon (20 kod), 92 tarif kalite fix, nutrition pipeline (%54 coverage), UI/UX büyük polish, SEO (FAQ schema + sitemap cuisine + dinamik title), admin dashboard, bf-cache, deep DB audit.
 
 ### Tarif büyümesi
-- 📊 **506 → 906**: batch 6-9 (+400 tarif), 20 mutfak aktif
-- 🥗 **Nutrition backfill**: 5 pass (~490 tarif macro), coverage %54. Devam ediyor.
+- 📊 **506 → 1000**: batch 6 (+100), 7 (+100), 8 (+100), 9 (+100), 10 (+94). 20 mutfak aktif.
+- 🥗 **Nutrition backfill**: 5 pass (~490 tarif macro), coverage **%54**. Devam ediyor.
+- 🔍 **Deep DB audit** (`scripts/audit-deep.ts`): 7 alan, ~40 kontrol. 26 CRITICAL (eksik alerjen), 498 WARNING, yapısal sorun SIFIR.
 - 🧪 **363 unit + 24 E2E** yeşil.
 
 ### AI Asistan — 17 iyileştirme
@@ -68,9 +69,10 @@
 - ⚙️ AllergenFilter + DietFilter + CuisineFilter pathname-aware fix
 
 ### Sıradaki
-- ⏳ **Codex batch 10** — son batch, 906→1000 (devam ediyor)
-- ⏳ **Codex nutrition backfill** devam (~410 tarif kalan)
-- ⏳ **1000 tarif milestone kutlaması!**
+- ✅ ~~Codex batch 10~~ — **1000 tarif tamamlandı!**
+- ⏳ **26 CRITICAL alerjen fix** — audit-deep.ts bulgularından (tereyağı→SUT, susam→SUSAM, un→GLUTEN)
+- ⏳ **Codex nutrition backfill** devam (~510 tarif kalan)
+- ⏳ **498 WARNING değerlendirme** — group tutarlılığı, timer uyumsuzluk, macro sapmaları
 - ⏳ Faz 3 hazırlık: i18n, review/rating, video entegrasyonu
 
 ## 16 Nisan 2026 session 3 — batch 7 + kalite fix + cuisine genişletme

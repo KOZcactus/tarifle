@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: 16 Nisan 2026 (mega session — ~65 commit)
+> Son güncelleme: 16 Nisan 2026 (~70 commit, 1000 tarif milestone)
 
 ## İşaretler
 
@@ -208,7 +208,9 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🧪 **FAQ schema** — 10 test (serving/duration/difficulty/calorie/allergen/cuisine/ingredient).
 - 🧪 **Similar recipes cuisine** — 2 test (aynı cuisine +1.5, farklı 0).
 - 🧪 **SearchBar autocomplete E2E** — 3 test (dropdown, seçim, Escape).
+- 🧪 **AI Asistan E2E** — 3 yeni test (cuisine filter, exclude, paylaş URL). Toplam 5 AI E2E.
 - 🧪 Toplam **363 unit + 24 E2E yeşil**.
+- 🔍 **Deep DB audit** (`scripts/audit-deep.ts`) — 7 alan, ~40 kontrol, 1000 tarif kapsamlı doğruluk kontrolü. Alerjen false positive fix (pirinç unu, mısır unu, hindistan cevizi sütü exclusion). Yapısal sorun sıfır.
 
 ## Ops tooling
 

@@ -335,6 +335,18 @@ export async function getQuickRecipes(limit = 8): Promise<RecipeCard[]> {
   return recipes as unknown as RecipeCard[];
 }
 
+/** En çok görüntülenen tarifler — viewCount desc */
+export async function getPopularRecipes(limit = 8): Promise<RecipeCard[]> {
+  const recipes = await prisma.recipe.findMany({
+    where: { status: "PUBLISHED" },
+    select: recipeCardSelect,
+    orderBy: { viewCount: "desc" },
+    take: limit,
+  });
+
+  return recipes as unknown as RecipeCard[];
+}
+
 /** Tek tarif detayı — slug ile */
 export async function getRecipeBySlug(slug: string): Promise<RecipeDetail | null> {
   const recipe = await prisma.recipe.findUnique({

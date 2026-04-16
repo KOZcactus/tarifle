@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { RandomRecipeBanner } from "@/components/discovery/RandomRecipeBanner";
-import { getFeaturedRecipes, getQuickRecipes } from "@/lib/queries/recipe";
+import { getFeaturedRecipes, getQuickRecipes, getPopularRecipes } from "@/lib/queries/recipe";
 import { getCategories } from "@/lib/queries/category";
 import { getCuisineStats } from "@/lib/queries/cuisine-stats";
 import { getRandomRecipe } from "@/lib/queries/random-recipe";
@@ -20,9 +20,10 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function KesfetPage() {
-  const [featured, quick, allCategories, cuisineStats, randomRecipe] = await Promise.all([
+  const [featured, quick, popular, allCategories, cuisineStats, randomRecipe] = await Promise.all([
     getFeaturedRecipes(6),
     getQuickRecipes(8),
+    getPopularRecipes(8),
     getCategories(),
     getCuisineStats(),
     getRandomRecipe(),
@@ -68,6 +69,18 @@ export default async function KesfetPage() {
           <h2 className="font-heading text-xl font-bold">⚡ 30 Dakika Altı</h2>
           <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {quick.map((recipe) => (
+              <RecipeCard key={recipe.id} recipe={recipe} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Popular */}
+      {popular.length > 0 && (
+        <section className="mt-12">
+          <h2 className="font-heading text-xl font-bold">🔥 En Popüler</h2>
+          <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {popular.map((recipe) => (
               <RecipeCard key={recipe.id} recipe={recipe} />
             ))}
           </div>

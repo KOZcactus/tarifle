@@ -56,7 +56,7 @@ export const recipes = [
     ],
     steps: [
       { stepNumber: 1, instruction: "Kıyma, kuyruk yağı, pul biber, tuz, karabiber, kimyon ve ezilmiş sarımsağı derin bir kapta karıştırın." },
-      { stepNumber: 2, instruction: "En az 15 dakika iyice yoğurun. Hamur gibi yapışkan bir kıvam almalı.", tip: "Yoğurma süresi lezzet için çok önemli.", timerSeconds: 900 },
+      { stepNumber: 2, instruction: "En az 15 dakika yoğurun. Hamur gibi yapışkan bir kıvam almalı.", tip: "Yoğurma süresi lezzet için çok önemli.", timerSeconds: 900 },
       { stepNumber: 3, instruction: "Buzdolabında 1 saat dinlendirin.", timerSeconds: 3600 },
       { stepNumber: 4, instruction: "Islak ellerle geniş şişlere sarın." },
       { stepNumber: 5, instruction: "Mangal közünde veya ızgarada sık sık çevirerek 15-20 dakika pişirin.", timerSeconds: 1200 },
@@ -313,7 +313,7 @@ export const recipes = [
       { name: "Tuz", amount: "1", unit: "tatlı kaşığı", sortOrder: 5 },
     ],
     steps: [
-      { stepNumber: 1, instruction: "Tarhanayı 1 bardak soğuk suyla iyice çözün, topak kalmayacak şekilde karıştırın." },
+      { stepNumber: 1, instruction: "Tarhanayı 1 bardak soğuk suyla topak kalmayacak şekilde çözün." },
       { stepNumber: 2, instruction: "Tencereye kalan suyu koyun, tarhana karışımını ekleyin." },
       { stepNumber: 3, instruction: "Sürekli karıştırarak kaynatın, 15-20 dk pişirin.", timerSeconds: 1200 },
       { stepNumber: 4, instruction: "Tereyağında salçayı kavurarak üzerine gezdirin." },
@@ -669,7 +669,7 @@ export const recipes = [
     steps: [
       { stepNumber: 1, instruction: "Bulgura kaynar su ekleyin, kabarmasını bekleyin.", timerSeconds: 600 },
       { stepNumber: 2, instruction: "Salçaları, rendelenmiş soğanı, baharatları ekleyin." },
-      { stepNumber: 3, instruction: "En az 20 dakika iyice yoğurun.", timerSeconds: 1200 },
+      { stepNumber: 3, instruction: "En az 20 dakika yoğurun; bulgur elinize yapışmayana kadar devam edin.", timerSeconds: 1200 },
       { stepNumber: 4, instruction: "Doğranmış yeşillikleri ekleyin, şekil verin." },
     ],
   },
@@ -766,7 +766,7 @@ export const recipes = [
     steps: [
       { stepNumber: 1, instruction: "Süzme yoğurdu kâseye alın." },
       { stepNumber: 2, instruction: "Beyaz peyniri ufalayıp ekleyin, sarımsağı ezin." },
-      { stepNumber: 3, instruction: "Nane ve zeytinyağını ekleyip iyice karıştırın." },
+      { stepNumber: 3, instruction: "Nane ve zeytinyağını ekleyip pürüzsüz kıvam alana kadar karıştırın." },
     ],
   },
   {
@@ -1005,7 +1005,7 @@ export const recipes = [
       { stepNumber: 1, instruction: "Suyu kaynatın, çayları demleyin, 5 dk bekletin.", timerSeconds: 300 },
       { stepNumber: 2, instruction: "Çay poşetlerini çıkarın, şekeri karıştırarak eritin." },
       { stepNumber: 3, instruction: "Limon suyunu ekleyin, soğumaya bırakın." },
-      { stepNumber: 4, instruction: "Buzdolabında iyice soğutun, buzlu servis edin." },
+      { stepNumber: 4, instruction: "Buzdolabında en az 2 saat soğutun, buzlu servis edin." },
     ],
   },
   {
@@ -3292,7 +3292,7 @@ export const recipes = [
     tipNote: "Lokmaları sıcak yağdan çıkarıp soğuk şerbete alın; dışı çıtır kalır.",
     servingSuggestion: "Tarçın serperek servis edin.",
     tags: ["vegan", "misafir-sofrasi"], allergens: ["GLUTEN"] as const,
-    ingredients: [{ name: "Un", amount: "3", unit: "su bardağı", sortOrder: 1, group: "Hamur için" }, { name: "Ilık su", amount: "2", unit: "su bardağı", sortOrder: 2, group: "Hamur için" }, { name: "Kuru maya", amount: "1", unit: "tatlı kaşığı", sortOrder: 3, group: "Hamur için" }, { name: "Şeker", amount: "2", unit: "su bardağı", sortOrder: 4, group: "Şerbet için" }, { name: "Su", amount: "2", unit: "su bardağı", sortOrder: 5, group: "Şerbet için" }, { name: "Limon suyu", amount: "1", unit: "tatlı kaşığı", sortOrder: 6, group: "Şerbet için" }, { name: "Sıvı yağ", amount: "3", unit: "su bardağı", sortOrder: 7 }],
+    ingredients: [{ name: "Un", amount: "3", unit: "su bardağı", sortOrder: 1, group: "Hamur için" }, { name: "Ilık su", amount: "2", unit: "su bardağı", sortOrder: 2, group: "Hamur için" }, { name: "Kuru maya", amount: "1", unit: "tatlı kaşığı", sortOrder: 3, group: "Hamur için" }, { name: "Sıvı yağ", amount: "3", unit: "su bardağı", sortOrder: 4, group: "Hamur için" }, { name: "Şeker", amount: "2", unit: "su bardağı", sortOrder: 5, group: "Şerbet için" }, { name: "Su", amount: "2", unit: "su bardağı", sortOrder: 6, group: "Şerbet için" }, { name: "Limon suyu", amount: "1", unit: "tatlı kaşığı", sortOrder: 7, group: "Şerbet için" }],
     steps: [{ stepNumber: 1, instruction: "Şeker ve suyu 10 dakika kaynatıp limon suyunu ekleyin, şerbeti soğutun.", timerSeconds: 600 }, { stepNumber: 2, instruction: "Hamur malzemelerini karıştırıp 35 dakika mayalandırın.", timerSeconds: 2100 }, { stepNumber: 3, instruction: "Hamurdan küçük parçalar kızartıp soğuk şerbete alın.", timerSeconds: 900 }],
   },
   {

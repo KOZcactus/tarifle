@@ -114,6 +114,18 @@ const ALLERGEN_RULES: AllergenRule[] = [
     allergen: "GLUTEN",
     keywords: [
       "buğday", "bulgur", "yufka", "galeta", "kadayıf", "pide", "lavaş", "börek",
+      // Aligned with src/lib/allergens.ts keyword list (Apr 2026):
+      // "arpa" intentionally excluded — matches "arpacık soğan" as substring;
+      // real arpa ingredients are caught via "bulgur"/"un"/"şehriye".
+      "irmik", "çavdar", "kepek", "kraker", "bisküvi", "kek", "hamur",
+      "simit", "şehriye", "kuş başı", "baklava",
+      // Codex-observed pasta/noodle names that weren't caught by customMatch:
+      "spagetti", "spaghetti", "penne", "fusilli", "fettuccine", "tagliatelle",
+      "tagliolini", "linguine", "rigatoni", "farfalle", "lasagna", "lazanya",
+      "udon", "gnocchi", "tortilla", "ravioli", "tortellini", "orzo", "pastitsio",
+      // Intentionally excluded from keywords: "ramen" (ramen noodle is in
+      // excludePatterns as gluten-free flag — actually wheat-based; fix
+      // that separately), "soba" (buckwheat, gluten-free).
     ],
     excludePatterns: [
       // Gluten-free starch/flour/noodle — do NOT flag as GLUTEN
@@ -122,6 +134,8 @@ const ALLERGEN_RULES: AllergenRule[] = [
       "nohut unu", "badem unu", "hindistan cevizi unu", "karabuğday",
       "yapışkan pirinç unu", "manyok unu", "manyok nişastası",
       "pirinç keki", "ramen noodle",
+      // Gluten-free tortilla variants (Mexican tortilla chips are corn-based):
+      "mısır tortilla", "tortilla cipsi",
     ],
     customMatch: (name: string) => {
       const lower = trLower(name);
@@ -159,7 +173,12 @@ const ALLERGEN_RULES: AllergenRule[] = [
   },
   {
     allergen: "SUT",
-    keywords: ["yoğurt", "krema", "peynir", "kaymak", "tereyağı", "labne", "lor"],
+    keywords: [
+      "yoğurt", "krema", "peynir", "kaymak", "tereyağı", "labne", "lor",
+      // Aligned with src/lib/allergens.ts + common ingredient names:
+      "kaşar", "ayran", "dondurma", "mozzarella", "parmesan", "ricotta",
+      "mascarpone", "feta", "pecorino", "cheddar", "cheddar",
+    ],
     excludePatterns: [
       // Non-dairy "süt" — do NOT flag as SUT
       "hindistan cevizi sütü", "hindistan cevizi kreması",
@@ -179,11 +198,14 @@ const ALLERGEN_RULES: AllergenRule[] = [
   },
   {
     allergen: "YUMURTA",
-    keywords: ["yumurta"],
+    keywords: ["yumurta", "mayonez"],
   },
   {
     allergen: "KUSUYEMIS",
-    keywords: ["ceviz", "badem", "fındık", "antep fıstığı", "kaju", "pekan"],
+    keywords: [
+      "ceviz", "badem", "fındık", "antep fıstığı", "kaju", "pekan",
+      "çam fıstığı", "macadamia",
+    ],
     excludePatterns: [
       // Hindistan cevizi (coconut) is NOT a tree nut
       "hindistan cevizi", "hindistan cevizi sütü", "hindistan cevizi rendesi",

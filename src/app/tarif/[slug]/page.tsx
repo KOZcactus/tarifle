@@ -13,7 +13,7 @@ import { PrintButton } from "@/components/recipe/PrintButton";
 import { AgeGate } from "@/components/recipe/AgeGate";
 import { VariationCard } from "@/components/recipe/VariationCard";
 import { SimilarRecipes } from "@/components/recipe/SimilarRecipes";
-import { generateRecipeJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { generateRecipeJsonLd, generateBreadcrumbJsonLd, generateRecipeFaqJsonLd } from "@/lib/seo";
 import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
 import { CUISINE_FLAG, CUISINE_LABEL, type CuisineCode } from "@/lib/cuisines";
 import { SITE_URL } from "@/lib/constants";
@@ -154,6 +154,17 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      {/* Schema.org FAQPage JSON-LD — Google SERP'te FAQ rich results.
+          "Kaç kişilik?", "Kaç kalori?", "Hangi alerjenler?" otomatik. */}
+      {(() => {
+        const faqJsonLd = generateRecipeFaqJsonLd(recipe);
+        return faqJsonLd ? (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+          />
+        ) : null;
+      })()}
 
       {/* Breadcrumb */}
       <nav className="mb-6 text-sm text-text-muted" aria-label="Breadcrumb">

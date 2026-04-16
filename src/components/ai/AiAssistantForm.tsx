@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useTransition, useEffect, useCallback } from "react";
+import { useState, useTransition, useEffect, useCallback, useRef } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { suggestRecipesAction } from "@/lib/actions/ai";
 import type { AiSuggestResponse } from "@/lib/ai/types";
@@ -83,6 +84,37 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
   const [recentSearches, setRecentSearches] = useState<string[][]>([]);
+  const [shareStatus, setShareStatus] = useState<"idle" | "copied">("idle");
+  const formRef = useRef<HTMLFormElement>(null);
+  const searchParams = useSearchParams();
+  const hasInitedFromUrl = useRef(false);
+
+  // Load state from URL params (shared link)
+  useEffect(() => {
+    if (hasInitedFromUrl.current) return;
+    const m = searchParams.get("m");
+    if (!m) return;
+    hasInitedFromUrl.current = true;
+    const urlIngredients = m.split(",").map((s) => s.trim()).filter(Boolean);
+    if (urlIngredients.length === 0) return;
+    setIngredients(urlIngredients);
+
+    const urlCuisine = searchParams.get("mutfak");
+    if (urlCuisine) setCuisine(urlCuisine);
+    const urlType = searchParams.get("tur");
+    if (urlType) setType(urlType);
+    const urlDiff = searchParams.get("zorluk");
+    if (urlDiff) setDifficulty(urlDiff);
+    const urlTime = searchParams.get("sure");
+    if (urlTime) setMaxMinutes(urlTime);
+    const urlExclude = searchParams.get("haric");
+    if (urlExclude) {
+      setExcludeIngredients(urlExclude.split(",").map((s) => s.trim()).filter(Boolean));
+    }
+
+    // Auto-submit after a tick
+    setTimeout(() => formRef.current?.requestSubmit(), 100);
+  }, [searchParams]);
 
   // Load recent searches from localStorage on mount
   useEffect(() => {
@@ -135,6 +167,36 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
     addIngredient(name);
     setShowSuggestions(false);
     setSelectedSuggestionIdx(-1);
+  }
+
+  function buildShareUrl(): string {
+    const params = new URLSearchParams();
+    if (ingredients.length > 0) params.set("m", ingredients.join(","));
+    if (cuisine && cuisine !== "all") params.set("mutfak", cuisine);
+    if (type) params.set("tur", type);
+    if (difficulty) params.set("zorluk", difficulty);
+    if (maxMinutes) params.set("sure", maxMinutes);
+    if (excludeIngredients.length > 0) params.set("haric", excludeIngredients.join(","));
+    return `${window.location.origin}/ai-asistan?${params.toString()}`;
+  }
+
+  async function handleShare() {
+    const url = buildShareUrl();
+    try {
+      await navigator.clipboard.writeText(url);
+      setShareStatus("copied");
+      setTimeout(() => setShareStatus("idle"), 2000);
+    } catch {
+      // Fallback for older browsers
+      const input = document.createElement("input");
+      input.value = url;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand("copy");
+      document.body.removeChild(input);
+      setShareStatus("copied");
+      setTimeout(() => setShareStatus("idle"), 2000);
+    }
   }
 
   function addExclude(raw: string) {
@@ -268,6 +330,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
       )}
 
       <form
+        ref={formRef}
         onSubmit={handleSubmit}
         className="rounded-2xl border border-border bg-bg-card p-5 sm:p-6"
       >
@@ -572,10 +635,20 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
         <section>
           {result.commentary && (
             <div className="mb-6 rounded-xl border border-accent-blue/30 bg-accent-blue/5 p-4">
-              <p className="text-sm leading-relaxed text-text">
-                <span className="mr-1 font-semibold text-accent-blue">🧠 Asistan:</span>
-                {result.commentary}
-              </p>
+              <div className="flex items-start justify-between gap-3">
+                <p className="flex-1 text-sm leading-relaxed text-text">
+                  <span className="mr-1 font-semibold text-accent-blue">🧠 Asistan:</span>
+                  {result.commentary}
+                </p>
+                <button
+                  type="button"
+                  onClick={handleShare}
+                  className="shrink-0 rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-text-muted transition-colors hover:border-primary hover:text-primary"
+                  title="Bu aramayı paylaş"
+                >
+                  {shareStatus === "copied" ? "✓ Kopyalandı" : "🔗 Paylaş"}
+                </button>
+              </div>
             </div>
           )}
 

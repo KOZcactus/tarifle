@@ -5015,7 +5015,7 @@ export const recipes = [
   // ── BATCH 3 SONU ──
   // ── BATCH 4 ── (tarih: 2026-04-16, 100 tarif, Codex)
   {
-    title: "Spaghetti Carbonara", slug: "spaghetti-carbonara",
+    title: "Spaghetti Carbonara", slug: "spaghetti-carbonara", emoji: "🍝",
     description: "Roma'nın yumurta, pecorino ve dana pastırmasıyla hazırlanan sade ama teknik makarnası.",
     categorySlug: "makarna-pilav", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 10, cookMinutes: 15, totalMinutes: 25, servingCount: 4,
@@ -5027,7 +5027,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Makarnayı tuzlu suda 9-10 dakika haşlayın.", timerSeconds: 600 }, { stepNumber: 2, instruction: "Pastırmayı tavada 4 dakika kızartın.", timerSeconds: 240 }, { stepNumber: 3, instruction: "Yumurta sarısı, peynir ve karabiberi çırpın." }, { stepNumber: 4, instruction: "Makarnayı tavaya alın, ocaktan çekip yumurta sosuyla karıştırın." }],
   },
   {
-    title: "Gnocchi Alla Sorrentina", slug: "gnocchi-alla-sorrentina",
+    title: "Gnocchi Alla Sorrentina", slug: "gnocchi-alla-sorrentina", emoji: "🍝",
     description: "Sorrento kıyılarından domates sosu, patates gnocchi ve erimiş mozzarella ile fırınlanan İtalyan klasiği.",
     categorySlug: "makarna-pilav", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 25, cookMinutes: 25, totalMinutes: 50, servingCount: 4,
@@ -5039,7 +5039,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Domates püresini 12 dakika kaynatın.", timerSeconds: 720 }, { stepNumber: 2, instruction: "Gnocchiyi kaynar suda 3 dakika haşlayın.", timerSeconds: 180 }, { stepNumber: 3, instruction: "Gnocchi, sos ve peynirleri fırın kabında karıştırın." }, { stepNumber: 4, instruction: "200°C fırında 15 dakika pişirin.", timerSeconds: 900 }],
   },
   {
-    title: "Osso Buco", slug: "osso-buco",
+    title: "Osso Buco", slug: "osso-buco", emoji: "🥩",
     description: "Milano usulü kemikli dana incik, sebze ve domatesle ağır ateşte pişen gösterişli bir ana yemek.",
     categorySlug: "et-yemekleri", type: "YEMEK" as const, difficulty: "HARD" as const,
     prepMinutes: 25, cookMinutes: 120, totalMinutes: 145, servingCount: 4,
@@ -5051,7 +5051,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "İncikleri una bulayıp tereyağında iki yüzünü 6 dakika kızartın.", timerSeconds: 360 }, { stepNumber: 2, instruction: "Soğan, havuç ve kereviz sapını ekleyip 8 dakika kavurun.", timerSeconds: 480 }, { stepNumber: 3, instruction: "Domates püresini ekleyin ve kapağı kapatın." }, { stepNumber: 4, instruction: "Kısık ateşte 2 saat pişirin.", timerSeconds: 7200 }],
   },
   {
-    title: "Cannoli", slug: "cannoli",
+    title: "Cannoli", slug: "cannoli", emoji: "🍰",
     description: "Sicilya pastanelerinin gevrek hamur tüpü, ricotta dolgusu ve Antep fıstığıyla hazırlanan tatlısı.",
     categorySlug: "tatlilar", type: "TATLI" as const, difficulty: "HARD" as const,
     prepMinutes: 45, cookMinutes: 20, totalMinutes: 65, servingCount: 8,
@@ -5063,7 +5063,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Hamur malzemelerini yoğurup 20 dakika dinlendirin.", timerSeconds: 1200 }, { stepNumber: 2, instruction: "Hamuru ince açıp kalıplara sarın." }, { stepNumber: 3, instruction: "Kabukları kızgın yağda 3-4 dakika kızartın.", timerSeconds: 240 }, { stepNumber: 4, instruction: "Ricotta ve pudra şekerini çırpıp soğuyan kabuklara sıkın." }],
   },
   {
-    title: "Panettone", slug: "panettone",
+    title: "Panettone", slug: "panettone", emoji: "🍰",
     description: "Milano'nun yılbaşı ekmeği, kuru meyve ve tereyağıyla uzun mayalanan zengin bir tatlı hamurudur.",
     categorySlug: "tatlilar", type: "TATLI" as const, difficulty: "HARD" as const,
     prepMinutes: 90, cookMinutes: 45, totalMinutes: 135, servingCount: 10,
@@ -5075,7 +5075,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Maya, süt ve unun yarısını karıştırıp 30 dakika bekletin.", timerSeconds: 1800 }, { stepNumber: 2, instruction: "Yumurta, tereyağı, kalan un ve kuru meyveyi ekleyip yoğurun." }, { stepNumber: 3, instruction: "Hamuru 60 dakika mayalandırın.", timerSeconds: 3600 }, { stepNumber: 4, instruction: "180°C fırında 40-45 dakika pişirin.", timerSeconds: 2700 }],
   },
   {
-    title: "Minestrone", slug: "minestrone",
+    title: "Minestrone", slug: "minestrone", emoji: "🍲",
     description: "Kuzey İtalya'nın sebze, fasulye ve küçük makarnayla hazırlanan doyurucu ev çorbası.",
     categorySlug: "corbalar", type: "CORBA" as const, difficulty: "EASY" as const,
     prepMinutes: 20, cookMinutes: 35, totalMinutes: 55, servingCount: 6,
@@ -5087,7 +5087,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Sebzeleri zeytinyağında 8 dakika kavurun.", timerSeconds: 480 }, { stepNumber: 2, instruction: "Fasulye ve suyu ekleyip 20 dakika kaynatın.", timerSeconds: 1200 }, { stepNumber: 3, instruction: "Makarnayı ekleyip 10 dakika pişirin.", timerSeconds: 600 }],
   },
   {
-    title: "Ribollita", slug: "ribollita",
+    title: "Ribollita", slug: "ribollita", emoji: "🍲",
     description: "Toskana mutfağından ekmek, kara lahana ve fasulyeyle koyulaşan rustik bir sebze çorbası.",
     categorySlug: "corbalar", type: "CORBA" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 20, cookMinutes: 45, totalMinutes: 65, servingCount: 6,
@@ -5099,7 +5099,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Soğan ve domatesi 8 dakika kavurun.", timerSeconds: 480 }, { stepNumber: 2, instruction: "Kara lahana ve fasulyeyi ekleyip 30 dakika pişirin.", timerSeconds: 1800 }, { stepNumber: 3, instruction: "Bayat ekmeği ekleyip 10 dakika dinlendirin.", timerSeconds: 600 }],
   },
   {
-    title: "Pasta Alla Norma", slug: "pasta-alla-norma",
+    title: "Pasta Alla Norma", slug: "pasta-alla-norma", emoji: "🍝",
     description: "Sicilya'nın patlıcan, domates ve ricotta salata ile hazırlanan canlı makarna tabağı.",
     categorySlug: "makarna-pilav", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 20, cookMinutes: 25, totalMinutes: 45, servingCount: 4,
@@ -5111,7 +5111,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Patlıcanları küp doğrayıp 12 dakika kızartın.", timerSeconds: 720 }, { stepNumber: 2, instruction: "Domates püresini 15 dakika kaynatın.", timerSeconds: 900 }, { stepNumber: 3, instruction: "Makarnayı 10 dakika haşlayın.", timerSeconds: 600 }, { stepNumber: 4, instruction: "Makarna, patlıcan ve sosu karıştırıp peynirle servis edin." }],
   },
   {
-    title: "Moussaka", slug: "moussaka",
+    title: "Moussaka", slug: "moussaka", emoji: "🍆",
     description: "Yunan sofralarının kat kat patlıcan, kıymalı sos ve beşamel ile fırınlanan güçlü klasiği.",
     categorySlug: "et-yemekleri", type: "YEMEK" as const, difficulty: "HARD" as const,
     prepMinutes: 40, cookMinutes: 60, totalMinutes: 100, servingCount: 6,
@@ -5123,7 +5123,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Patlıcan dilimlerini 200°C fırında 20 dakika pişirin.", timerSeconds: 1200 }, { stepNumber: 2, instruction: "Kıyma ve domates püresini 20 dakika pişirin.", timerSeconds: 1200 }, { stepNumber: 3, instruction: "Un ve sütle beşamel hazırlayıp yumurtayla bağlayın." }, { stepNumber: 4, instruction: "Katları dizip 180°C fırında 35 dakika pişirin.", timerSeconds: 2100 }],
   },
   {
-    title: "Souvlaki", slug: "souvlaki",
+    title: "Souvlaki", slug: "souvlaki", emoji: "🍢",
     description: "Atina sokaklarından limon, kekik ve zeytinyağıyla marine edilen ızgara et şişleri.",
     categorySlug: "et-yemekleri", type: "YEMEK" as const, difficulty: "EASY" as const,
     prepMinutes: 20, cookMinutes: 15, totalMinutes: 35, servingCount: 4,
@@ -5135,7 +5135,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Eti zeytinyağı, limon suyu, kekik ve tuzla karıştırın." }, { stepNumber: 2, instruction: "Eti 20 dakika buzdolabında dinlendirin.", timerSeconds: 1200 }, { stepNumber: 3, instruction: "Şişlere dizip ızgarada 12-15 dakika pişirin.", timerSeconds: 900 }],
   },
   {
-    title: "Tzatziki", slug: "tzatziki",
+    title: "Tzatziki", slug: "tzatziki", emoji: "🥒",
     description: "Yunan mezelerinin ferah yoğurt sosu; salatalık, sarımsak ve dereotuyla sofrayı açar.",
     categorySlug: "soslar-dippler", type: "SOS" as const, difficulty: "EASY" as const,
     prepMinutes: 15, cookMinutes: 0, totalMinutes: 15, servingCount: 4,
@@ -5147,7 +5147,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Salatalıkları rendeleyip suyunu sıkın." }, { stepNumber: 2, instruction: "Yoğurt, salatalık, ezilmiş sarımsak ve dereotunu karıştırın." }, { stepNumber: 3, instruction: "Sosu 10 dakika buzdolabında dinlendirin.", timerSeconds: 600 }],
   },
   {
-    title: "Spanakopita", slug: "spanakopita",
+    title: "Spanakopita", slug: "spanakopita", emoji: "🥟",
     description: "Yunan fırınlarından ıspanak, feta ve yufkanın çıtır katlarla birleştiği tuzlu börek.",
     categorySlug: "hamur-isleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 30, cookMinutes: 40, totalMinutes: 70, servingCount: 8,
@@ -5159,7 +5159,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Ispanağı 8 dakika soteleyip suyunu süzün.", timerSeconds: 480 }, { stepNumber: 2, instruction: "Ispanak, feta ve yumurtayı karıştırın." }, { stepNumber: 3, instruction: "Yufkaları yağlayarak tepsiye dizin ve harcı yayın." }, { stepNumber: 4, instruction: "180°C fırında 35-40 dakika pişirin.", timerSeconds: 2400 }],
   },
   {
-    title: "Gyros", slug: "gyros",
+    title: "Gyros", slug: "gyros", emoji: "🌯",
     description: "Yunan sokaklarında pita, baharatlı et ve yoğurtlu sosla elde yenilen doyurucu dürüm.",
     categorySlug: "et-yemekleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 25, cookMinutes: 20, totalMinutes: 45, servingCount: 4,
@@ -5171,7 +5171,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Eti yoğurt, kekik ve tuzla 20 dakika marine edin.", timerSeconds: 1200 }, { stepNumber: 2, instruction: "Eti tavada 8-10 dakika pişirin.", timerSeconds: 600 }, { stepNumber: 3, instruction: "Pitaları ısıtıp et ve soğanla doldurun." }],
   },
   {
-    title: "Pastitsio", slug: "pastitsio",
+    title: "Pastitsio", slug: "pastitsio", emoji: "🍝",
     description: "Yunan usulü fırın makarna; kıymalı tarçınlı sos ve beşamel katmanlarıyla kesilir.",
     categorySlug: "makarna-pilav", type: "YEMEK" as const, difficulty: "HARD" as const,
     prepMinutes: 35, cookMinutes: 55, totalMinutes: 90, servingCount: 8,
@@ -5183,7 +5183,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Makarnayı 8 dakika haşlayıp süzün.", timerSeconds: 480 }, { stepNumber: 2, instruction: "Kıymayı domates püresiyle 20 dakika pişirin.", timerSeconds: 1200 }, { stepNumber: 3, instruction: "Süt, un ve yumurtayla beşamel hazırlayın." }, { stepNumber: 4, instruction: "Katları dizip 180°C fırında 35 dakika pişirin.", timerSeconds: 2100 }],
   },
   {
-    title: "Horiatiki Salatası", slug: "horiatiki-salatasi",
+    title: "Horiatiki Salatası", slug: "horiatiki-salatasi", emoji: "🥗",
     description: "Ege adalarının domates, salatalık, zeytin ve feta ile hazırlanan yalın köy salatası.",
     categorySlug: "salatalar", type: "SALATA" as const, difficulty: "EASY" as const,
     prepMinutes: 15, cookMinutes: 0, totalMinutes: 15, servingCount: 4,
@@ -5195,7 +5195,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Sebzeleri iri doğrayın." }, { stepNumber: 2, instruction: "Zeytin ve feta peyniriyle geniş kasede birleştirin." }, { stepNumber: 3, instruction: "Zeytinyağı ve kekik ekleyip servis edin." }],
   },
   {
-    title: "Avgolemono Çorbası", slug: "avgolemono-corbasi",
+    title: "Avgolemono Çorbası", slug: "avgolemono-corbasi", emoji: "🍲",
     description: "Yunan mutfağında tavuk suyu, pirinç, yumurta ve limonla kadifemsi kıvam alan ferah çorba.",
     categorySlug: "corbalar", type: "CORBA" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 15, cookMinutes: 30, totalMinutes: 45, servingCount: 6,
@@ -5207,7 +5207,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Tavuk suyunda pirinci 18 dakika pişirin.", timerSeconds: 1080 }, { stepNumber: 2, instruction: "Yumurta ve limon suyunu çırpın." }, { stepNumber: 3, instruction: "Sıcak çorbadan bir kepçe ekleyip karışımı ılıştırın." }, { stepNumber: 4, instruction: "Karışımı tencereye alıp 3 dakika kısık ateşte pişirin.", timerSeconds: 180 }],
   },
   {
-    title: "Deniz Mahsullü Paella", slug: "deniz-mahsullu-paella",
+    title: "Deniz Mahsullü Paella", slug: "deniz-mahsullu-paella", emoji: "🥘",
     description: "Valencia esintili bu paella, safranlı pirinçle karides ve midyeyi geniş tavada buluşturur.",
     categorySlug: "makarna-pilav", type: "YEMEK" as const, difficulty: "HARD" as const,
     prepMinutes: 30, cookMinutes: 40, totalMinutes: 70, servingCount: 6,
@@ -5219,7 +5219,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Biberi tavada 5 dakika soteleyin.", timerSeconds: 300 }, { stepNumber: 2, instruction: "Pirinç, safran ve balık suyunu ekleyin." }, { stepNumber: 3, instruction: "Deniz ürünlerini üzerine yerleştirip 25 dakika pişirin.", timerSeconds: 1500 }, { stepNumber: 4, instruction: "Ocağı kapatıp paellayı 8 dakika dinlendirin.", timerSeconds: 480 }],
   },
   {
-    title: "Tortilla Espanola", slug: "tortilla-espanola",
+    title: "Tortilla Espanola", slug: "tortilla-espanola", emoji: "🍳",
     description: "İspanyol barlarının kalın patatesli omleti, soğan ve yumurtayla yumuşak merkezli pişer.",
     categorySlug: "kahvaltiliklar", type: "KAHVALTI" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 15, cookMinutes: 25, totalMinutes: 40, servingCount: 6,
@@ -5231,7 +5231,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Patates ve soğanı yağda 15 dakika yumuşatın.", timerSeconds: 900 }, { stepNumber: 2, instruction: "Yumurtaları çırpıp patatesle karıştırın." }, { stepNumber: 3, instruction: "Tavada 6 dakika pişirip çevirin.", timerSeconds: 360 }, { stepNumber: 4, instruction: "Diğer yüzünü 4 dakika pişirin.", timerSeconds: 240 }],
   },
   {
-    title: "Patatas Bravas", slug: "patatas-bravas",
+    title: "Patatas Bravas", slug: "patatas-bravas", emoji: "🥔",
     description: "Madrid tapas barlarının kızarmış patatesi, acılı domates sosuyla küçük tabakta paylaşılır.",
     categorySlug: "aperatifler", type: "APERATIF" as const, difficulty: "EASY" as const,
     prepMinutes: 15, cookMinutes: 25, totalMinutes: 40, servingCount: 4,
@@ -5243,7 +5243,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Patatesleri küp doğrayıp 8 dakika haşlayın.", timerSeconds: 480 }, { stepNumber: 2, instruction: "Patatesleri 180°C fırında 20 dakika kızartın.", timerSeconds: 1200 }, { stepNumber: 3, instruction: "Domates, biber ve sarımsağı 10 dakika kaynatın.", timerSeconds: 600 }],
   },
   {
-    title: "Sangria", slug: "sangria",
+    title: "Sangria", slug: "sangria", emoji: "🍷",
     description: "İspanya'nın meyveli şarap kasesi; portakal, elma ve tarçınla kalabalık sofralara serinlik getirir.",
     categorySlug: "kokteyller", type: "KOKTEYL" as const, difficulty: "EASY" as const,
     prepMinutes: 15, cookMinutes: 0, totalMinutes: 15, servingCount: 6,
@@ -5255,7 +5255,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Meyveleri dilimleyip sürahiye alın." }, { stepNumber: 2, instruction: "Şarap, brendi ve tarçını ekleyin." }, { stepNumber: 3, instruction: "Sangriayı buzdolabında 2 saat bekletin.", timerSeconds: 7200 }],
   },
   {
-    title: "Croquetas", slug: "croquetas",
+    title: "Croquetas", slug: "croquetas", emoji: "🧆",
     description: "İspanyol tapas tezgahlarından beşamel dolgulu, dışı galeta unuyla çıtırlaşan küçük kroketler.",
     categorySlug: "aperatifler", type: "APERATIF" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 35, cookMinutes: 20, totalMinutes: 55, servingCount: 6,
@@ -5267,7 +5267,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Tereyağı ve unu 3 dakika kavurun.", timerSeconds: 180 }, { stepNumber: 2, instruction: "Sütü ekleyip koyu beşamel pişirin." }, { stepNumber: 3, instruction: "Jambonu ekleyip harcı 60 dakika soğutun.", timerSeconds: 3600 }, { stepNumber: 4, instruction: "Şekillendirip yumurta ve galeta ununa bulayarak kızartın." }],
   },
   {
-    title: "Crema Catalana", slug: "crema-catalana",
+    title: "Crema Catalana", slug: "crema-catalana", emoji: "🍮",
     description: "Katalonya'nın portakal kabuğu ve tarçın kokulu kreması, üstündeki ince karamel tabakayla kırılır.",
     categorySlug: "tatlilar", type: "TATLI" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 15, cookMinutes: 20, totalMinutes: 35, servingCount: 6,
@@ -5279,7 +5279,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Sütü tarçınla 8 dakika ısıtın.", timerSeconds: 480 }, { stepNumber: 2, instruction: "Yumurta sarısı, şeker ve nişastayı çırpın." }, { stepNumber: 3, instruction: "Sütü karışıma ekleyip kısık ateşte 10 dakika pişirin.", timerSeconds: 600 }, { stepNumber: 4, instruction: "Kaselere paylaştırıp soğutun." }],
   },
   {
-    title: "Pimientos de Padron", slug: "pimientos-de-padron",
+    title: "Pimientos de Padron", slug: "pimientos-de-padron", emoji: "🫑",
     description: "Galicia tapas masalarının küçük yeşil biberleri, zeytinyağı ve iri tuzla hızlıca kavrulur.",
     categorySlug: "aperatifler", type: "APERATIF" as const, difficulty: "EASY" as const,
     prepMinutes: 5, cookMinutes: 8, totalMinutes: 13, servingCount: 4,
@@ -5291,7 +5291,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Biberleri yıkayıp kurulayın." }, { stepNumber: 2, instruction: "Zeytinyağını tavada ısıtın ve biberleri ekleyin." }, { stepNumber: 3, instruction: "Biberleri 6-8 dakika çevirerek pişirin.", timerSeconds: 480 }],
   },
   {
-    title: "Gazpacho", slug: "gazpacho",
+    title: "Gazpacho", slug: "gazpacho", emoji: "🍅",
     description: "Endülüs yazlarından domates, salatalık ve biberle hazırlanan soğuk, canlı sebze çorbası.",
     categorySlug: "corbalar", type: "CORBA" as const, difficulty: "EASY" as const,
     prepMinutes: 15, cookMinutes: 0, totalMinutes: 15, servingCount: 4,
@@ -5303,7 +5303,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Sebzeleri iri doğrayın." }, { stepNumber: 2, instruction: "Sebzeleri zeytinyağı ve tuzla blenderdan geçirin." }, { stepNumber: 3, instruction: "Çorbayı buzdolabında 60 dakika soğutun.", timerSeconds: 3600 }],
   },
   {
-    title: "Coq au Vin", slug: "coq-au-vin",
+    title: "Coq au Vin", slug: "coq-au-vin", emoji: "🍗",
     description: "Burgonya'nın şarapta ağır pişen tavuk yemeği; mantar, soğan ve tereyağıyla derinleşir.",
     categorySlug: "tavuk-yemekleri", type: "YEMEK" as const, difficulty: "HARD" as const,
     prepMinutes: 30, cookMinutes: 90, totalMinutes: 120, servingCount: 4,
@@ -5315,7 +5315,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Tavukları tereyağında 8 dakika kızartın.", timerSeconds: 480 }, { stepNumber: 2, instruction: "Mantar ve soğanı ekleyip 6 dakika kavurun.", timerSeconds: 360 }, { stepNumber: 3, instruction: "Un ve şarabı ekleyin." }, { stepNumber: 4, instruction: "Kısık ateşte 80-90 dakika pişirin.", timerSeconds: 5400 }],
   },
   {
-    title: "Quiche Lorraine", slug: "quiche-lorraine",
+    title: "Quiche Lorraine", slug: "quiche-lorraine", emoji: "🥧",
     description: "Lorraine bölgesinin tereyağlı tart hamuru, yumurtalı krema ve dana pastırmasıyla fırınlanır.",
     categorySlug: "hamur-isleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 30, cookMinutes: 40, totalMinutes: 70, servingCount: 8,
@@ -5327,7 +5327,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Un ve tereyağıyla hamur hazırlayıp kalıba yayın." }, { stepNumber: 2, instruction: "Hamuru 180°C fırında 15 dakika ön pişirin.", timerSeconds: 900 }, { stepNumber: 3, instruction: "Yumurta, krema ve pastırmayı karıştırıp hamura dökün." }, { stepNumber: 4, instruction: "180°C fırında 25 dakika pişirin.", timerSeconds: 1500 }],
   },
   {
-    title: "Peynirli Souffle", slug: "peynirli-souffle",
+    title: "Peynirli Souffle", slug: "peynirli-souffle", emoji: "🧀",
     description: "Fransız mutfağının kabaran peynirli klasiği, hafif iç dokusu ve kızarmış üstüyle hemen servis ister.",
     categorySlug: "aperatifler", type: "APERATIF" as const, difficulty: "HARD" as const,
     prepMinutes: 25, cookMinutes: 20, totalMinutes: 45, servingCount: 4,
@@ -5339,7 +5339,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Tereyağı ve unla 2 dakika kavurma yapın.", timerSeconds: 120 }, { stepNumber: 2, instruction: "Sütü ekleyip koyu sos pişirin." }, { stepNumber: 3, instruction: "Peynir ve yumurta sarılarını ekleyin." }, { stepNumber: 4, instruction: "Çırpılmış yumurta akını katlayıp 190°C fırında 18-20 dakika pişirin.", timerSeconds: 1200 }],
   },
   {
-    title: "Bouillabaisse", slug: "bouillabaisse",
+    title: "Bouillabaisse", slug: "bouillabaisse", emoji: "🐟",
     description: "Marsilya limanından safranlı balık çorbası; deniz ürünleri ve rezene aromasıyla güçlüdür.",
     categorySlug: "corbalar", type: "CORBA" as const, difficulty: "HARD" as const,
     prepMinutes: 30, cookMinutes: 45, totalMinutes: 75, servingCount: 6,
@@ -5351,7 +5351,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Rezene ve domatesi 10 dakika kavurun.", timerSeconds: 600 }, { stepNumber: 2, instruction: "Balık suyu ve safranı ekleyip 25 dakika kaynatın.", timerSeconds: 1500 }, { stepNumber: 3, instruction: "Balık ve karidesi ekleyip 8 dakika pişirin.", timerSeconds: 480 }],
   },
   {
-    title: "Tarte Tatin", slug: "tarte-tatin",
+    title: "Tarte Tatin", slug: "tarte-tatin", emoji: "🥧",
     description: "Fransız elmalı ters tartı, karamelize meyvenin üstüne hamur kapatılarak fırında pişer.",
     categorySlug: "tatlilar", type: "TATLI" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 25, cookMinutes: 40, totalMinutes: 65, servingCount: 8,
@@ -5363,7 +5363,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Şeker ve tereyağını tavada 8 dakika karamelize edin.", timerSeconds: 480 }, { stepNumber: 2, instruction: "Elmaları karamelin üzerine dizip 10 dakika pişirin.", timerSeconds: 600 }, { stepNumber: 3, instruction: "Milföyü elmaların üzerine kapatın." }, { stepNumber: 4, instruction: "190°C fırında 25 dakika pişirin.", timerSeconds: 1500 }],
   },
   {
-    title: "Boeuf Bourguignon", slug: "boeuf-bourguignon",
+    title: "Boeuf Bourguignon", slug: "boeuf-bourguignon", emoji: "🥩",
     description: "Burgonya'nın kırmızı şarapta ağır pişen dana yahnisi, mantar ve arpacık soğanla zenginleşir.",
     categorySlug: "et-yemekleri", type: "YEMEK" as const, difficulty: "HARD" as const,
     prepMinutes: 35, cookMinutes: 150, totalMinutes: 185, servingCount: 6,
@@ -5375,7 +5375,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Eti tereyağında 10 dakika kızartın.", timerSeconds: 600 }, { stepNumber: 2, instruction: "Unu ekleyip 2 dakika kavurun.", timerSeconds: 120 }, { stepNumber: 3, instruction: "Şarap, soğan ve mantarı ekleyin." }, { stepNumber: 4, instruction: "Kısık ateşte 2.5 saat pişirin.", timerSeconds: 9000 }],
   },
   {
-    title: "Duck Confit", slug: "duck-confit",
+    title: "Duck Confit", slug: "duck-confit", emoji: "🦆",
     description: "Güneybatı Fransa'nın ördek budu, kendi yağında düşük ısıda pişerek etinden ayrılan bir klasiktir.",
     categorySlug: "et-yemekleri", type: "YEMEK" as const, difficulty: "HARD" as const,
     prepMinutes: 20, cookMinutes: 180, totalMinutes: 200, servingCount: 4,
@@ -5387,7 +5387,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Ördek butlarını tuz ve biberiyeyle 30 dakika dinlendirin.", timerSeconds: 1800 }, { stepNumber: 2, instruction: "Butları ördek yağına gömüp 120°C fırında 3 saat pişirin.", timerSeconds: 10800 }, { stepNumber: 3, instruction: "Servis öncesi derisini tavada 5 dakika kızartın.", timerSeconds: 300 }],
   },
   {
-    title: "Gratin Dauphinois", slug: "gratin-dauphinois",
+    title: "Gratin Dauphinois", slug: "gratin-dauphinois", emoji: "🥔",
     description: "Dauphine bölgesinden ince patates dilimleri, krema ve sarımsakla fırında kadifemsi pişer.",
     categorySlug: "sebze-yemekleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 20, cookMinutes: 60, totalMinutes: 80, servingCount: 6,
@@ -5399,7 +5399,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Patatesleri ince dilimleyin." }, { stepNumber: 2, instruction: "Krema, süt, sarımsak ve muskatı karıştırın." }, { stepNumber: 3, instruction: "Patatesleri tepsiye dizip kremalı karışımı dökün." }, { stepNumber: 4, instruction: "170°C fırında 60 dakika pişirin.", timerSeconds: 3600 }],
   },
   {
-    title: "Somonlu Sushi Roll", slug: "somonlu-sushi-roll",
+    title: "Somonlu Sushi Roll", slug: "somonlu-sushi-roll", emoji: "🍣",
     description: "Tokyo dışına yayılan maki stilinde somon, pirinç ve noriyle sarılan ev tipi sushi roll.",
     categorySlug: "aperatifler", type: "APERATIF" as const, difficulty: "HARD" as const,
     prepMinutes: 35, cookMinutes: 20, totalMinutes: 55, servingCount: 4,
@@ -5411,7 +5411,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Pirinci 18 dakika pişirip soğutun.", timerSeconds: 1080 }, { stepNumber: 2, instruction: "Nori üzerine pirinci yayın." }, { stepNumber: 3, instruction: "Somon ve salatalığı yerleştirip sıkı rulo yapın." }, { stepNumber: 4, instruction: "Ruloyu 8 parçaya kesin." }],
   },
   {
-    title: "Salatalıklı Maki", slug: "salatalikli-maki",
+    title: "Salatalıklı Maki", slug: "salatalikli-maki", emoji: "🍣",
     description: "Japon sushi barlarının sade makisi, salatalık ve pirincin temiz tadını öne çıkarır.",
     categorySlug: "aperatifler", type: "APERATIF" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 25, cookMinutes: 18, totalMinutes: 43, servingCount: 4,
@@ -5423,7 +5423,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Pirinci pişirip pirinç sirkesiyle karıştırın.", timerSeconds: 1080 }, { stepNumber: 2, instruction: "Nori üzerine pirinci ince yayın." }, { stepNumber: 3, instruction: "Salatalığı yerleştirip rulo yapın." }, { stepNumber: 4, instruction: "Ruloyu keskin bıçakla dilimleyin." }],
   },
   {
-    title: "Onigiri", slug: "onigiri",
+    title: "Onigiri", slug: "onigiri", emoji: "🍙",
     description: "Japonların pratik pirinç üçgeni; ton balığı dolgusu ve nori sarımıyla öğün arası taşınır.",
     categorySlug: "atistirmaliklar", type: "ATISTIRMALIK" as const, difficulty: "EASY" as const,
     prepMinutes: 20, cookMinutes: 18, totalMinutes: 38, servingCount: 4,
@@ -5435,7 +5435,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Pirinci 18 dakika pişirip 10 dakika dinlendirin.", timerSeconds: 1680 }, { stepNumber: 2, instruction: "Ton balığı ve mayonezi karıştırın." }, { stepNumber: 3, instruction: "Pirincin ortasına dolgu koyup üçgen şekli verin." }, { stepNumber: 4, instruction: "Nori şeridiyle sarın." }],
   },
   {
-    title: "Shoyu Ramen", slug: "shoyu-ramen",
+    title: "Shoyu Ramen", slug: "shoyu-ramen", emoji: "🍜",
     description: "Tokyo usulü soya soslu ramen, tavuk suyu, erişte ve yumurtayla derin ama dengeli bir kase sunar.",
     categorySlug: "corbalar", type: "CORBA" as const, difficulty: "HARD" as const,
     prepMinutes: 35, cookMinutes: 90, totalMinutes: 125, servingCount: 4,
@@ -5447,7 +5447,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Tavuk suyunu soya sosuyla 30 dakika kaynatın.", timerSeconds: 1800 }, { stepNumber: 2, instruction: "Yumurtaları 7 dakika haşlayın.", timerSeconds: 420 }, { stepNumber: 3, instruction: "Erişteyi ayrı tencerede 4 dakika haşlayın.", timerSeconds: 240 }, { stepNumber: 4, instruction: "Kaseye erişte, çorba ve garnitürleri yerleştirin." }],
   },
   {
-    title: "Kitsune Udon", slug: "kitsune-udon",
+    title: "Kitsune Udon", slug: "kitsune-udon", emoji: "🍜",
     description: "Japon udon kasesi, tatlı soya soslu kızarmış tofu ve kalın erişteyle rahatlatıcı bir öğündür.",
     categorySlug: "makarna-pilav", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 20, cookMinutes: 25, totalMinutes: 45, servingCount: 4,
@@ -5459,7 +5459,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Tofuyu soya sosuyla 12 dakika pişirin.", timerSeconds: 720 }, { stepNumber: 2, instruction: "Sebze suyunu kaynatın." }, { stepNumber: 3, instruction: "Udon eriştesini 8 dakika haşlayın.", timerSeconds: 480 }, { stepNumber: 4, instruction: "Erişteyi kaseye alıp tofu ve sıcak suyla tamamlayın." }],
   },
   {
-    title: "Sebzeli Tempura", slug: "sebzeli-tempura",
+    title: "Sebzeli Tempura", slug: "sebzeli-tempura", emoji: "🍤",
     description: "Japon kızartma tekniğinde kabak, havuç ve mantar hafif hamurla ince çıtırlık kazanır.",
     categorySlug: "aperatifler", type: "APERATIF" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 20, cookMinutes: 15, totalMinutes: 35, servingCount: 4,
@@ -5471,7 +5471,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Sebzeleri ince dilimleyin." }, { stepNumber: 2, instruction: "Un, yumurta ve soğuk suyla akışkan hamur hazırlayın." }, { stepNumber: 3, instruction: "Sebzeleri hamura batırıp kızgın yağda 3-4 dakika kızartın.", timerSeconds: 240 }],
   },
   {
-    title: "Okonomiyaki", slug: "okonomiyaki",
+    title: "Okonomiyaki", slug: "okonomiyaki", emoji: "🥞",
     description: "Osaka'nın lahana ağırlıklı tuzlu pankeki, sos ve palamut rendesiyle sokak yemeği karakteri taşır.",
     categorySlug: "aperatifler", type: "APERATIF" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 20, cookMinutes: 18, totalMinutes: 38, servingCount: 4,
@@ -5483,7 +5483,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Lahana, un, yumurta ve suyu karıştırın." }, { stepNumber: 2, instruction: "Karışımı tavaya yayıp 7 dakika pişirin.", timerSeconds: 420 }, { stepNumber: 3, instruction: "Çevirip diğer yüzünü 6 dakika pişirin.", timerSeconds: 360 }, { stepNumber: 4, instruction: "Soya sosu ve palamut rendesiyle servis edin." }],
   },
   {
-    title: "Tavuk Katsu", slug: "tavuk-katsu",
+    title: "Tavuk Katsu", slug: "tavuk-katsu", emoji: "🍗",
     description: "Japon ev yemeklerinden pane tavuk katsu, panko kaplamasıyla kalın ve çıtır bir dış yüzey alır.",
     categorySlug: "tavuk-yemekleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 20, cookMinutes: 15, totalMinutes: 35, servingCount: 4,
@@ -5495,7 +5495,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Tavukları döverek eşit kalınlığa getirin." }, { stepNumber: 2, instruction: "Un, yumurta ve pankoya sırayla bulayın." }, { stepNumber: 3, instruction: "Tavukları kızgın yağda her yüzü 5 dakika pişirin.", timerSeconds: 600 }],
   },
   {
-    title: "Tacos al Pastor", slug: "tacos-al-pastor",
+    title: "Tacos al Pastor", slug: "tacos-al-pastor", emoji: "🌮",
     description: "Mexico City taquerialarından ananaslı marine dana eti, mısır tortillasında canlı bir sokak klasiği.",
     categorySlug: "et-yemekleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 35, cookMinutes: 25, totalMinutes: 60, servingCount: 4,
@@ -5507,7 +5507,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Eti acı biber püresi ve ananasla 30 dakika marine edin.", timerSeconds: 1800 }, { stepNumber: 2, instruction: "Eti tavada 12-15 dakika pişirin.", timerSeconds: 900 }, { stepNumber: 3, instruction: "Tortillaları ısıtıp et, soğan ve ananasla doldurun." }],
   },
   {
-    title: "Barbacoa Taco", slug: "barbacoa-taco",
+    title: "Barbacoa Taco", slug: "barbacoa-taco", emoji: "🌮",
     description: "Meksika'nın ağır pişmiş dana eti, baharatlı suyu ve mısır tortillasıyla yumuşak taco dolgusu olur.",
     categorySlug: "et-yemekleri", type: "YEMEK" as const, difficulty: "HARD" as const,
     prepMinutes: 25, cookMinutes: 180, totalMinutes: 205, servingCount: 6,
@@ -5519,7 +5519,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Eti sarımsak, kimyon ve lime suyuyla tencereye alın." }, { stepNumber: 2, instruction: "Üzerini geçecek kadar su ekleyin." }, { stepNumber: 3, instruction: "Kısık ateşte 3 saat pişirin.", timerSeconds: 10800 }, { stepNumber: 4, instruction: "Eti didikleyip sıcak tortillaya doldurun." }],
   },
   {
-    title: "Enchiladas Rojas", slug: "enchiladas-rojas",
+    title: "Enchiladas Rojas", slug: "enchiladas-rojas", emoji: "🌮",
     description: "Kırmızı biber sosuna batırılan tortilla ruloları, Meksika sofralarında peynirle fırınlanır.",
     categorySlug: "hamur-isleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 30, cookMinutes: 30, totalMinutes: 60, servingCount: 4,
@@ -5531,7 +5531,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Tortillaları tavada 20 saniye ısıtın.", timerSeconds: 20 }, { stepNumber: 2, instruction: "Tavuk ve soğanla doldurup rulo yapın." }, { stepNumber: 3, instruction: "Sos ve peynirle tepsiye dizin." }, { stepNumber: 4, instruction: "190°C fırında 20 dakika pişirin.", timerSeconds: 1200 }],
   },
   {
-    title: "Peynirli Quesadilla", slug: "peynirli-quesadilla",
+    title: "Peynirli Quesadilla", slug: "peynirli-quesadilla", emoji: "🌮",
     description: "Meksika'nın tavada katlanan tortilla lezzeti, eriyen peynir ve biberle hızlı öğüne dönüşür.",
     categorySlug: "aperatifler", type: "APERATIF" as const, difficulty: "EASY" as const,
     prepMinutes: 10, cookMinutes: 10, totalMinutes: 20, servingCount: 4,
@@ -5543,7 +5543,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Tortillanın yarısına peynir ve biber koyun." }, { stepNumber: 2, instruction: "Tortillayı kapatıp tavaya alın." }, { stepNumber: 3, instruction: "Her yüzünü 3-4 dakika pişirin.", timerSeconds: 480 }],
   },
   {
-    title: "Mole Poblano", slug: "mole-poblano",
+    title: "Mole Poblano", slug: "mole-poblano", emoji: "🥘",
     description: "Puebla'nın çikolata, kuru biber ve baharatla derinleşen koyu soslu tavuk yemeği.",
     categorySlug: "tavuk-yemekleri", type: "YEMEK" as const, difficulty: "HARD" as const,
     prepMinutes: 45, cookMinutes: 60, totalMinutes: 105, servingCount: 6,
@@ -5555,7 +5555,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Tavuğu 30 dakika haşlayın.", timerSeconds: 1800 }, { stepNumber: 2, instruction: "Biber, fıstık, susam ve bademi 5 dakika kavurun.", timerSeconds: 300 }, { stepNumber: 3, instruction: "Karışımı çikolata ve tavuk suyuyla blenderdan geçirin." }, { stepNumber: 4, instruction: "Tavuğu sosta 25 dakika pişirin.", timerSeconds: 1500 }],
   },
   {
-    title: "Pozole Rojo", slug: "pozole-rojo",
+    title: "Pozole Rojo", slug: "pozole-rojo", emoji: "🍲",
     description: "Meksika'nın kırmızı biberli mısır çorbası, uzun pişmiş et ve taze garnitürlerle kaseye gelir.",
     categorySlug: "corbalar", type: "CORBA" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 25, cookMinutes: 120, totalMinutes: 145, servingCount: 6,
@@ -5567,7 +5567,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Eti sarımsakla 60 dakika haşlayın.", timerSeconds: 3600 }, { stepNumber: 2, instruction: "Biberleri sıcak suda 10 dakika bekletip püre yapın.", timerSeconds: 600 }, { stepNumber: 3, instruction: "Mısır ve biber püresini tencereye ekleyin." }, { stepNumber: 4, instruction: "Çorbayı 60 dakika pişirin.", timerSeconds: 3600 }],
   },
   {
-    title: "Tamale", slug: "tamale",
+    title: "Tamale", slug: "tamale", emoji: "🫔",
     description: "Meksika'nın mısır hamurlu buharda pişen paketi, tavuk dolgusu ve mısır yaprağıyla hazırlanır.",
     categorySlug: "hamur-isleri", type: "YEMEK" as const, difficulty: "HARD" as const,
     prepMinutes: 60, cookMinutes: 75, totalMinutes: 135, servingCount: 8,
@@ -5579,7 +5579,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Mısır yapraklarını 30 dakika sıcak suda bekletin.", timerSeconds: 1800 }, { stepNumber: 2, instruction: "Masa harina, tavuk suyu ve yağı yoğurun." }, { stepNumber: 3, instruction: "Hamuru yaprağa yayın, tavuk ekleyip sarın." }, { stepNumber: 4, instruction: "Tamale paketlerini 75 dakika buharda pişirin.", timerSeconds: 4500 }],
   },
   {
-    title: "Horchata", slug: "horchata",
+    title: "Horchata", slug: "horchata", emoji: "🥤",
     description: "Meksika sofralarının tarçınlı pirinç içeceği, soğuk ve süt beyazı dokusuyla acı yemekleri dengeler.",
     categorySlug: "icecekler", type: "ICECEK" as const, difficulty: "EASY" as const,
     prepMinutes: 15, cookMinutes: 0, totalMinutes: 15, servingCount: 6,
@@ -5591,7 +5591,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Pirinç, su ve tarçını 6 saat bekletin.", timerSeconds: 21600 }, { stepNumber: 2, instruction: "Karışımı blenderdan geçirip süzün." }, { stepNumber: 3, instruction: "Şeker ve vanilyayı ekleyip soğutun." }],
   },
   {
-    title: "Butter Chicken", slug: "butter-chicken",
+    title: "Butter Chicken", slug: "butter-chicken", emoji: "🍗",
     description: "Delhi restoranlarından tereyağlı domates sosunda yumuşayan baharatlı tavuk klasiği.",
     categorySlug: "tavuk-yemekleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 35, cookMinutes: 35, totalMinutes: 70, servingCount: 4,
@@ -5603,7 +5603,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Tavuğu yoğurt ve baharatla 30 dakika marine edin.", timerSeconds: 1800 }, { stepNumber: 2, instruction: "Tavuğu tavada 10 dakika mühürleyin.", timerSeconds: 600 }, { stepNumber: 3, instruction: "Domates püresi ve tereyağını ekleyip 20 dakika pişirin.", timerSeconds: 1200 }, { stepNumber: 4, instruction: "Kremayı ekleyip 5 dakika daha pişirin.", timerSeconds: 300 }],
   },
   {
-    title: "Chicken Tikka Masala", slug: "chicken-tikka-masala",
+    title: "Chicken Tikka Masala", slug: "chicken-tikka-masala", emoji: "🍗",
     description: "Britanya-Hint lokantalarının dumanlı tavuk parçaları, domatesli baharat sosunda buluşur.",
     categorySlug: "tavuk-yemekleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 40, cookMinutes: 30, totalMinutes: 70, servingCount: 4,
@@ -5615,7 +5615,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Tavuğu yoğurt ve baharatla 30 dakika marine edin.", timerSeconds: 1800 }, { stepNumber: 2, instruction: "Tavukları tavada 8 dakika kızartın.", timerSeconds: 480 }, { stepNumber: 3, instruction: "Domates püresi ve kremayı ekleyip 18 dakika pişirin.", timerSeconds: 1080 }],
   },
   {
-    title: "Naan", slug: "naan",
+    title: "Naan", slug: "naan", emoji: "🍞",
     description: "Kuzey Hindistan'ın tandır ekmeği, yoğurtlu hamuruyla yumuşak ve hafif kabarcıklı pişer.",
     categorySlug: "hamur-isleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 45, cookMinutes: 15, totalMinutes: 60, servingCount: 6,
@@ -5627,7 +5627,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Un, yoğurt, maya ve sütle hamur yoğurun." }, { stepNumber: 2, instruction: "Hamuru 40 dakika mayalandırın.", timerSeconds: 2400 }, { stepNumber: 3, instruction: "Bezeleri açıp sıcak tavada her yüzünü 2 dakika pişirin.", timerSeconds: 240 }, { stepNumber: 4, instruction: "Tereyağı sürüp servis edin." }],
   },
   {
-    title: "Samosa", slug: "samosa",
+    title: "Samosa", slug: "samosa", emoji: "🥟",
     description: "Hint sokaklarının üçgen böreği, baharatlı patates ve bezelye dolgusu ile kızgın yağda çıtırlaşır.",
     categorySlug: "aperatifler", type: "APERATIF" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 40, cookMinutes: 25, totalMinutes: 65, servingCount: 8,
@@ -5639,7 +5639,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Un ve yağla sert bir hamur yoğurun." }, { stepNumber: 2, instruction: "Patates ve bezelyeyi baharatla 10 dakika pişirin.", timerSeconds: 600 }, { stepNumber: 3, instruction: "Hamuru üçgen kapatıp dolguyla doldurun." }, { stepNumber: 4, instruction: "Samosaları 6-8 dakika kızartın.", timerSeconds: 480 }],
   },
   {
-    title: "Dal Makhani", slug: "dal-makhani",
+    title: "Dal Makhani", slug: "dal-makhani", emoji: "🫘",
     description: "Pencap mutfağından siyah mercimek, tereyağı ve krema ile ağır ateşte koyulaşan kadifemsi dal.",
     categorySlug: "baklagil-yemekleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 25, cookMinutes: 120, totalMinutes: 145, servingCount: 6,
@@ -5651,7 +5651,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Mercimeği yıkayıp 60 dakika haşlayın.", timerSeconds: 3600 }, { stepNumber: 2, instruction: "Domates püresi, tereyağı ve zencefili ekleyin." }, { stepNumber: 3, instruction: "Kısık ateşte 60 dakika pişirin.", timerSeconds: 3600 }, { stepNumber: 4, instruction: "Kremayı ekleyip 10 dakika daha pişirin.", timerSeconds: 600 }],
   },
   {
-    title: "Palak Paneer", slug: "palak-paneer",
+    title: "Palak Paneer", slug: "palak-paneer", emoji: "🥬",
     description: "Hint mutfağında ıspanak püresi ve paneer peynirinin baharatla birleştiği koyu yeşil vejetaryen yemek.",
     categorySlug: "sebze-yemekleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 20, cookMinutes: 25, totalMinutes: 45, servingCount: 4,
@@ -5663,7 +5663,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Ispanağı 2 dakika haşlayıp süzün.", timerSeconds: 120 }, { stepNumber: 2, instruction: "Soğan ve domatesi 8 dakika kavurun.", timerSeconds: 480 }, { stepNumber: 3, instruction: "Ispanağı püre yapıp tavaya ekleyin." }, { stepNumber: 4, instruction: "Paneeri ekleyip 10 dakika pişirin.", timerSeconds: 600 }],
   },
   {
-    title: "Gulab Jamun", slug: "gulab-jamun",
+    title: "Gulab Jamun", slug: "gulab-jamun", emoji: "🍡",
     description: "Hint tatlı tezgahlarının süt tozlu kızarmış topları, gül kokulu şerbeti içine çeker.",
     categorySlug: "tatlilar", type: "TATLI" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 35, cookMinutes: 25, totalMinutes: 60, servingCount: 8,
@@ -5675,7 +5675,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Şeker ve suyu 10 dakika kaynatıp gül suyunu ekleyin.", timerSeconds: 600 }, { stepNumber: 2, instruction: "Süt tozu, un ve yoğurtla yumuşak hamur hazırlayın." }, { stepNumber: 3, instruction: "Hamurdan toplar yapıp 8-10 dakika kızartın.", timerSeconds: 600 }, { stepNumber: 4, instruction: "Topları ılık şerbete alın ve 20 dakika bekletin.", timerSeconds: 1200 }],
   },
   {
-    title: "Tavuk Shawarma", slug: "tavuk-shawarma",
+    title: "Tavuk Shawarma", slug: "tavuk-shawarma", emoji: "🌯",
     description: "Levant sokaklarından baharatlı tavuk, yoğurtlu marine ve lavaşla sarılan doyurucu bir dürüm.",
     categorySlug: "tavuk-yemekleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 35, cookMinutes: 25, totalMinutes: 60, servingCount: 4,
@@ -5687,7 +5687,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Tavuğu yoğurt, sarımsak ve baharatla 30 dakika marine edin.", timerSeconds: 1800 }, { stepNumber: 2, instruction: "Tavuğu tavada 15-18 dakika pişirin.", timerSeconds: 1080 }, { stepNumber: 3, instruction: "Lavaşa tavuk ve garnitürleri koyup sarın." }],
   },
   {
-    title: "Tabbouleh", slug: "tabbouleh",
+    title: "Tabbouleh", slug: "tabbouleh", emoji: "🥗",
     description: "Lübnan sofralarında maydanozun başrolde olduğu, bulgur ve limonla ferahlayan ince salata.",
     categorySlug: "salatalar", type: "SALATA" as const, difficulty: "EASY" as const,
     prepMinutes: 25, cookMinutes: 0, totalMinutes: 25, servingCount: 4,
@@ -5699,7 +5699,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Bulguru sıcak suyla 10 dakika ıslatın.", timerSeconds: 600 }, { stepNumber: 2, instruction: "Maydanoz, nane ve domatesi ince doğrayın." }, { stepNumber: 3, instruction: "Bulgur, yeşillik, limon suyu ve zeytinyağını karıştırın." }],
   },
   {
-    title: "Kibbeh", slug: "kibbeh",
+    title: "Kibbeh", slug: "kibbeh", emoji: "🧆",
     description: "Levant mutfağının bulgurlu et köftesi, baharatlı kıyma dolgusu ile kızartılarak hazırlanır.",
     categorySlug: "et-yemekleri", type: "YEMEK" as const, difficulty: "HARD" as const,
     prepMinutes: 60, cookMinutes: 25, totalMinutes: 85, servingCount: 6,
@@ -5711,7 +5711,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Bulguru 15 dakika sıcak suda bekletin.", timerSeconds: 900 }, { stepNumber: 2, instruction: "Dış harcı kıyma ile 10 dakika yoğurun.", timerSeconds: 600 }, { stepNumber: 3, instruction: "İç harcı soğan, kıyma ve cevizle 12 dakika pişirin.", timerSeconds: 720 }, { stepNumber: 4, instruction: "Köfteleri doldurup kızgın yağda 6 dakika kızartın.", timerSeconds: 360 }],
   },
   {
-    title: "Fattoush", slug: "fattoush",
+    title: "Fattoush", slug: "fattoush", emoji: "🥗",
     description: "Lübnan'ın sumaklı ekmek salatası, kızarmış pita ve çıtır sebzeyle ekşi-ferah bir kase olur.",
     categorySlug: "salatalar", type: "SALATA" as const, difficulty: "EASY" as const,
     prepMinutes: 20, cookMinutes: 8, totalMinutes: 28, servingCount: 4,
@@ -5723,7 +5723,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Pita ekmeğini 180°C fırında 8 dakika kızartın.", timerSeconds: 480 }, { stepNumber: 2, instruction: "Sebzeleri doğrayıp geniş kaseye alın." }, { stepNumber: 3, instruction: "Limon suyu, zeytinyağı ve sumakla karıştırın." }, { stepNumber: 4, instruction: "Kızarmış pitayı ekleyip servis edin." }],
   },
   {
-    title: "Kunafa Arap Usulü", slug: "kunafa-arap-usulu",
+    title: "Kunafa Arap Usulü", slug: "kunafa-arap-usulu", emoji: "🍯",
     description: "Ortadoğu pastanelerinden kadayıf, tuzsuz peynir ve portakal çiçeği şerbetiyle katmanlanan sıcak tatlı.",
     categorySlug: "tatlilar", type: "TATLI" as const, difficulty: "HARD" as const,
     prepMinutes: 35, cookMinutes: 35, totalMinutes: 70, servingCount: 8,
@@ -5735,7 +5735,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Şeker ve suyu 10 dakika kaynatıp şerbet hazırlayın.", timerSeconds: 600 }, { stepNumber: 2, instruction: "Kadayıfı tereyağıyla harmanlayıp tepsiye bastırın." }, { stepNumber: 3, instruction: "Peyniri yayıp kalan kadayıfla kapatın." }, { stepNumber: 4, instruction: "180°C fırında 30-35 dakika pişirin.", timerSeconds: 2100 }],
   },
   {
-    title: "Manakish", slug: "manakish",
+    title: "Manakish", slug: "manakish", emoji: "🍞",
     description: "Lübnan fırınlarının zahterli yassı ekmeği, susamlı karışımıyla kahvaltıdan mezeye uzanır.",
     categorySlug: "hamur-isleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 45, cookMinutes: 15, totalMinutes: 60, servingCount: 6,
@@ -5747,7 +5747,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Un, maya ve suyla hamur yoğurun." }, { stepNumber: 2, instruction: "Hamuru 40 dakika mayalandırın.", timerSeconds: 2400 }, { stepNumber: 3, instruction: "Zahter, susam ve zeytinyağını karıştırın." }, { stepNumber: 4, instruction: "Hamura sürüp 220°C fırında 12-15 dakika pişirin.", timerSeconds: 900 }],
   },
   {
-    title: "Mujaddara", slug: "mujaddara",
+    title: "Mujaddara", slug: "mujaddara", emoji: "🫘",
     description: "Levant evlerinde mercimek, pirinç ve karamelize soğanla hazırlanan ekonomik ve doyurucu tabak.",
     categorySlug: "baklagil-yemekleri", type: "YEMEK" as const, difficulty: "EASY" as const,
     prepMinutes: 15, cookMinutes: 40, totalMinutes: 55, servingCount: 4,
@@ -5759,7 +5759,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Mercimeği 20 dakika haşlayın.", timerSeconds: 1200 }, { stepNumber: 2, instruction: "Soğanları zeytinyağında 20 dakika kızartın.", timerSeconds: 1200 }, { stepNumber: 3, instruction: "Pirinç ve mercimeği tencereye alıp 18 dakika pişirin.", timerSeconds: 1080 }, { stepNumber: 4, instruction: "Kızarmış soğanla servis edin." }],
   },
   {
-    title: "Bibimbap", slug: "bibimbap",
+    title: "Bibimbap", slug: "bibimbap", emoji: "🍚",
     description: "Kore'nin renkli pirinç kasesi, sebze, yumurta, et ve acı biber ezmesini sofrada karıştırır.",
     categorySlug: "makarna-pilav", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 35, cookMinutes: 25, totalMinutes: 60, servingCount: 4,
@@ -5771,7 +5771,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Pirinci 18 dakika pişirin.", timerSeconds: 1080 }, { stepNumber: 2, instruction: "Sebzeleri ayrı ayrı 3-4 dakika soteleyin.", timerSeconds: 240 }, { stepNumber: 3, instruction: "Kıymayı soya sosuyla 8 dakika pişirin.", timerSeconds: 480 }, { stepNumber: 4, instruction: "Kaselere pirinç, sebze, et ve yumurta yerleştirin." }],
   },
   {
-    title: "Kimchi", slug: "kimchi",
+    title: "Kimchi", slug: "kimchi", emoji: "🥬",
     description: "Kore mutfağının fermente lahana klasiği, acı biber, sarımsak ve balık sosuyla keskinleşir.",
     categorySlug: "soslar-dippler", type: "SOS" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 45, cookMinutes: 0, totalMinutes: 45, servingCount: 10,
@@ -5783,7 +5783,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Lahanayı tuzla ovup 2 saat bekletin.", timerSeconds: 7200 }, { stepNumber: 2, instruction: "Lahanayı durulayıp süzün." }, { stepNumber: 3, instruction: "Biber, sarımsak ve balık sosunu karıştırın." }, { stepNumber: 4, instruction: "Lahanayı sosla harmanlayıp kavanoza bastırın." }],
   },
   {
-    title: "Korean Fried Chicken", slug: "korean-fried-chicken",
+    title: "Korean Fried Chicken", slug: "korean-fried-chicken", emoji: "🍗",
     description: "Seul tarzı çift kızarmış tavuk, gochujanglı parlak sosuyla çıtır ve yapışkan bir tabak olur.",
     categorySlug: "tavuk-yemekleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 30, cookMinutes: 25, totalMinutes: 55, servingCount: 4,
@@ -5795,7 +5795,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Tavukları nişastaya bulayın." }, { stepNumber: 2, instruction: "Tavukları 8 dakika kızartıp 5 dakika dinlendirin.", timerSeconds: 780 }, { stepNumber: 3, instruction: "Tavukları ikinci kez 5 dakika kızartın.", timerSeconds: 300 }, { stepNumber: 4, instruction: "Gochujang ve soya sosuyla hazırlanan sosa bulayın." }],
   },
   {
-    title: "Japchae", slug: "japchae",
+    title: "Japchae", slug: "japchae", emoji: "🍜",
     description: "Kore cam eriştesi, sebze ve susam yağıyla parlak, hafif tatlı-tuzlu bir tavada hazırlanır.",
     categorySlug: "makarna-pilav", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 25, cookMinutes: 20, totalMinutes: 45, servingCount: 4,
@@ -5807,7 +5807,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Erişteyi 7 dakika haşlayıp süzün.", timerSeconds: 420 }, { stepNumber: 2, instruction: "Sebzeleri tavada 8 dakika soteleyin.", timerSeconds: 480 }, { stepNumber: 3, instruction: "Erişte, sebze, soya sosu ve susam yağını karıştırın." }],
   },
   {
-    title: "Bulgogi", slug: "bulgogi",
+    title: "Bulgogi", slug: "bulgogi", emoji: "🥩",
     description: "Kore mangalının ince dana eti, soya sosu, armut ve susamla tatlı-tuzlu marine edilir.",
     categorySlug: "et-yemekleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 35, cookMinutes: 12, totalMinutes: 47, servingCount: 4,
@@ -5819,7 +5819,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Eti ince dilimleyin." }, { stepNumber: 2, instruction: "Soya sosu, armut püresi, susam yağı ve sarımsakla 30 dakika marine edin.", timerSeconds: 1800 }, { stepNumber: 3, instruction: "Eti tavada 10-12 dakika pişirin.", timerSeconds: 720 }],
   },
   {
-    title: "Tom Yum", slug: "tom-yum",
+    title: "Tom Yum", slug: "tom-yum", emoji: "🍲",
     description: "Bangkok pazarlarının ekşi-acı karides çorbası, limon otu ve lime yaprağıyla keskin kokar.",
     categorySlug: "corbalar", type: "CORBA" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 20, cookMinutes: 20, totalMinutes: 40, servingCount: 4,
@@ -5831,7 +5831,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Limon otu ve lime yaprağını suda 10 dakika kaynatın.", timerSeconds: 600 }, { stepNumber: 2, instruction: "Mantar ve balık sosunu ekleyip 6 dakika pişirin.", timerSeconds: 360 }, { stepNumber: 3, instruction: "Karidesi ekleyip 4 dakika pişirin.", timerSeconds: 240 }, { stepNumber: 4, instruction: "Lime suyunu ekleyip servis edin." }],
   },
   {
-    title: "Yeşil Tay Körisi", slug: "yesil-tay-korisi",
+    title: "Yeşil Tay Körisi", slug: "yesil-tay-korisi", emoji: "🍛",
     description: "Tay mutfağının kokoslu yeşil körisi, tavuk, patlıcan ve fesleğenle aromatik bir tencere olur.",
     categorySlug: "tavuk-yemekleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 20, cookMinutes: 25, totalMinutes: 45, servingCount: 4,
@@ -5843,7 +5843,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Köri ezmesini yağda 2 dakika kavurun.", timerSeconds: 120 }, { stepNumber: 2, instruction: "Tavukları ekleyip 8 dakika pişirin.", timerSeconds: 480 }, { stepNumber: 3, instruction: "Hindistan cevizi sütü ve patlıcanı ekleyin." }, { stepNumber: 4, instruction: "Köriyi 15 dakika pişirip fesleğenle tamamlayın.", timerSeconds: 900 }],
   },
   {
-    title: "Mango Sticky Rice", slug: "mango-sticky-rice",
+    title: "Mango Sticky Rice", slug: "mango-sticky-rice", emoji: "🍚",
     description: "Tayland'ın sokak tatlısı, yapışkan pirinç, hindistan cevizi sütü ve olgun mangoyla serin servis edilir.",
     categorySlug: "tatlilar", type: "TATLI" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 30, cookMinutes: 25, totalMinutes: 55, servingCount: 4,
@@ -5855,7 +5855,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Pirinci 30 dakika suda bekletin.", timerSeconds: 1800 }, { stepNumber: 2, instruction: "Pirinci buharda 25 dakika pişirin.", timerSeconds: 1500 }, { stepNumber: 3, instruction: "Hindistan cevizi sütü ve şekeri ısıtıp pirince karıştırın." }, { stepNumber: 4, instruction: "Mango dilimleriyle servis edin." }],
   },
   {
-    title: "Pad See Ew", slug: "pad-see-ew",
+    title: "Pad See Ew", slug: "pad-see-ew", emoji: "🍜",
     description: "Tay sokak woklarından kalın pirinç eriştesi, koyu soya sosu ve brokoliyle dumanlı pişer.",
     categorySlug: "makarna-pilav", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 20, cookMinutes: 15, totalMinutes: 35, servingCount: 4,
@@ -5867,7 +5867,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Erişteyi sıcak suda 8 dakika yumuşatın.", timerSeconds: 480 }, { stepNumber: 2, instruction: "Tavuğu wokta 5 dakika pişirin.", timerSeconds: 300 }, { stepNumber: 3, instruction: "Yumurta, brokoli ve erişteyi ekleyin." }, { stepNumber: 4, instruction: "Soslarla 4 dakika yüksek ateşte çevirin.", timerSeconds: 240 }],
   },
   {
-    title: "Som Tam", slug: "som-tam",
+    title: "Som Tam", slug: "som-tam", emoji: "🥗",
     description: "Tayland'ın yeşil papaya salatası, lime, balık sosu ve yer fıstığıyla ekşi-acı çıtır bir denge kurar.",
     categorySlug: "salatalar", type: "SALATA" as const, difficulty: "EASY" as const,
     prepMinutes: 20, cookMinutes: 0, totalMinutes: 20, servingCount: 4,
@@ -5879,7 +5879,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Papayayı ince şeritler halinde kesin." }, { stepNumber: 2, instruction: "Lime suyu, balık sosu ve acı biberi karıştırın." }, { stepNumber: 3, instruction: "Papaya ve sosu harmanlayıp yer fıstığı ekleyin." }],
   },
   {
-    title: "Mapo Tofu", slug: "mapo-tofu",
+    title: "Mapo Tofu", slug: "mapo-tofu", emoji: "🌶️",
     description: "Sichuan mutfağının acı biberli tofusu, soya ve fasulye ezmesiyle güçlü bir tavada pişer.",
     categorySlug: "sebze-yemekleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 15, cookMinutes: 20, totalMinutes: 35, servingCount: 4,
@@ -5891,7 +5891,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Fasulye ezmesini yağda 2 dakika kavurun.", timerSeconds: 120 }, { stepNumber: 2, instruction: "Tofu ve soya sosunu ekleyin." }, { stepNumber: 3, instruction: "Tavayı 12-15 dakika kısık ateşte pişirin.", timerSeconds: 900 }, { stepNumber: 4, instruction: "Taze soğanla servis edin." }],
   },
   {
-    title: "Kung Pao Tavuk", slug: "kung-pao-tavuk",
+    title: "Kung Pao Tavuk", slug: "kung-pao-tavuk", emoji: "🍗",
     description: "Sichuan tarzı tavuk, yer fıstığı ve kurutulmuş biberle tatlı-acı dengeli wok yemeği olur.",
     categorySlug: "tavuk-yemekleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 20, cookMinutes: 15, totalMinutes: 35, servingCount: 4,
@@ -5903,7 +5903,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Tavuğu küp doğrayıp soya sosuyla karıştırın." }, { stepNumber: 2, instruction: "Tavuğu wokta 6 dakika pişirin.", timerSeconds: 360 }, { stepNumber: 3, instruction: "Biber ve yer fıstığını ekleyip 4 dakika çevirin.", timerSeconds: 240 }],
   },
   {
-    title: "Sebzeli Dumpling", slug: "sebzeli-dumpling",
+    title: "Sebzeli Dumpling", slug: "sebzeli-dumpling", emoji: "🥟",
     description: "Çin mutfağının ince hamurlu mantısı, lahana ve mantar dolguyla buharda yumuşak pişer.",
     categorySlug: "hamur-isleri", type: "YEMEK" as const, difficulty: "HARD" as const,
     prepMinutes: 55, cookMinutes: 15, totalMinutes: 70, servingCount: 6,
@@ -5915,7 +5915,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Un ve suyla hamur yoğurup 20 dakika dinlendirin.", timerSeconds: 1200 }, { stepNumber: 2, instruction: "Sebzeleri ince doğrayıp soya sosuyla karıştırın." }, { stepNumber: 3, instruction: "Hamuru açıp dolguyla kapatın." }, { stepNumber: 4, instruction: "Dumplingleri 12-15 dakika buharda pişirin.", timerSeconds: 900 }],
   },
   {
-    title: "Acılı Ekşili Çorba", slug: "acili-eksili-corba",
+    title: "Acılı Ekşili Çorba", slug: "acili-eksili-corba", emoji: "🍲",
     description: "Çin lokantalarının sirke, mantar, tofu ve yumurtayla yoğunlaşan sıcak-ekşi çorbası.",
     categorySlug: "corbalar", type: "CORBA" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 15, cookMinutes: 20, totalMinutes: 35, servingCount: 4,
@@ -5927,7 +5927,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Mantar ve tofuyu suda 10 dakika kaynatın.", timerSeconds: 600 }, { stepNumber: 2, instruction: "Soya sosu ve sirkeyi ekleyin." }, { stepNumber: 3, instruction: "Çırpılmış yumurtayı ince akıtarak çorbaya karıştırın." }, { stepNumber: 4, instruction: "Çorbayı 3 dakika daha pişirin.", timerSeconds: 180 }],
   },
   {
-    title: "Char Siu", slug: "char-siu",
+    title: "Char Siu", slug: "char-siu", emoji: "🥩",
     description: "Kanton mutfağının parlak fırın domuz eti, soya, bal ve beş baharatla tatlı-tuzlu kızarır.",
     categorySlug: "et-yemekleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 40, cookMinutes: 35, totalMinutes: 75, servingCount: 4,
@@ -5939,7 +5939,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Eti soya sosu, bal, susam yağı ve baharatla 30 dakika marine edin.", timerSeconds: 1800 }, { stepNumber: 2, instruction: "Eti 200°C fırında 25 dakika pişirin.", timerSeconds: 1500 }, { stepNumber: 3, instruction: "Eti soslayıp 10 dakika daha fırınlayın.", timerSeconds: 600 }],
   },
   {
-    title: "Fırında Karnıyarık", slug: "firinda-karniyarik",
+    title: "Fırında Karnıyarık", slug: "firinda-karniyarik", emoji: "🍆",
     description: "Türk mutfağının patlıcanlı klasiği, kıymalı harcı kızarmış patlıcanın içinde fırında tamamlar.",
     categorySlug: "sebze-yemekleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 30, cookMinutes: 40, totalMinutes: 70, servingCount: 4,
@@ -5951,7 +5951,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Patlıcanları kızgın yağda 8 dakika kızartın.", timerSeconds: 480 }, { stepNumber: 2, instruction: "Kıyma, soğan, domates ve biberi 15 dakika pişirin.", timerSeconds: 900 }, { stepNumber: 3, instruction: "Patlıcanları açıp harçla doldurun." }, { stepNumber: 4, instruction: "180°C fırında 25 dakika pişirin.", timerSeconds: 1500 }],
   },
   {
-    title: "Zeytinyağlı İmam Bayıldı", slug: "zeytinyagli-imam-bayildi",
+    title: "Zeytinyağlı İmam Bayıldı", slug: "zeytinyagli-imam-bayildi", emoji: "🍆",
     description: "Zeytinyağlı patlıcanın soğan, domates ve sarımsakla doldurulduğu serin Türk klasiği.",
     categorySlug: "sebze-yemekleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 25, cookMinutes: 45, totalMinutes: 70, servingCount: 4,
@@ -5963,7 +5963,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Patlıcanları 8 dakika kızartın.", timerSeconds: 480 }, { stepNumber: 2, instruction: "Soğan, domates ve sarımsağı 15 dakika pişirin.", timerSeconds: 900 }, { stepNumber: 3, instruction: "Patlıcanları harçla doldurup tencereye dizin." }, { stepNumber: 4, instruction: "Kısık ateşte 25 dakika pişirin.", timerSeconds: 1500 }],
   },
   {
-    title: "İçli Köfte", slug: "icli-kofte",
+    title: "İçli Köfte", slug: "icli-kofte", emoji: "🧆",
     description: "Güneydoğu'nun ince bulgurlu dışı, cevizli kıyma harcıyla doldurulup kızartılan emek isteyen köftesi.",
     categorySlug: "et-yemekleri", type: "YEMEK" as const, difficulty: "HARD" as const,
     prepMinutes: 75, cookMinutes: 25, totalMinutes: 100, servingCount: 8,
@@ -5975,7 +5975,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Bulgur ve irmiği 15 dakika sıcak suyla bekletin.", timerSeconds: 900 }, { stepNumber: 2, instruction: "Kıyma, soğan ve cevizi 15 dakika kavurun.", timerSeconds: 900 }, { stepNumber: 3, instruction: "Dış harcı 10 dakika yoğurun.", timerSeconds: 600 }, { stepNumber: 4, instruction: "Köfteleri doldurup 6-8 dakika kızartın.", timerSeconds: 480 }],
   },
   {
-    title: "Fellah Köftesi", slug: "fellah-koftesi",
+    title: "Fellah Köftesi", slug: "fellah-koftesi", emoji: "🧆",
     description: "Adana ve Mersin sofralarından ince bulgur köfteleri, sarımsaklı domates sosuyla kaplanır.",
     categorySlug: "baklagil-yemekleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 35, cookMinutes: 25, totalMinutes: 60, servingCount: 6,
@@ -5987,7 +5987,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Bulguru 15 dakika sıcak suyla bekletin.", timerSeconds: 900 }, { stepNumber: 2, instruction: "Bulgur, un ve salçayla hamur yoğurun." }, { stepNumber: 3, instruction: "Köfteleri kaynar suda 10 dakika haşlayın.", timerSeconds: 600 }, { stepNumber: 4, instruction: "Sarımsaklı domates sosuyla karıştırın." }],
   },
   {
-    title: "Tepsi Kebabı", slug: "tepsi-kebabi",
+    title: "Tepsi Kebabı", slug: "tepsi-kebabi", emoji: "🥩",
     description: "Hatay usulü tepsi kebabı, kıymanın sebzeyle ince yayılıp fırında suyuyla piştiği paylaşmalık yemektir.",
     categorySlug: "et-yemekleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 25, cookMinutes: 35, totalMinutes: 60, servingCount: 6,
@@ -5999,7 +5999,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Kıyma, soğan, biber ve salçayı 8 dakika yoğurun.", timerSeconds: 480 }, { stepNumber: 2, instruction: "Harcı yağlı tepsiye ince yayın." }, { stepNumber: 3, instruction: "Üzerine domates dilimleri dizin." }, { stepNumber: 4, instruction: "200°C fırında 30-35 dakika pişirin.", timerSeconds: 2100 }],
   },
   {
-    title: "Analı Kızlı Çorbası", slug: "anali-kizli-corbasi",
+    title: "Analı Kızlı Çorbası", slug: "anali-kizli-corbasi", emoji: "🍲",
     description: "Malatya ve Adana çevresinde sevilen analı kızlı, büyük içli köfteler ve küçük bulgur köfteleriyle doyurur.",
     categorySlug: "corbalar", type: "CORBA" as const, difficulty: "HARD" as const,
     prepMinutes: 70, cookMinutes: 45, totalMinutes: 115, servingCount: 8,
@@ -6011,7 +6011,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Bulguru 15 dakika sıcak suyla bekletin.", timerSeconds: 900 }, { stepNumber: 2, instruction: "Kıymalı içli köfteleri ve küçük bulgur köftelerini hazırlayın." }, { stepNumber: 3, instruction: "Salçalı suya nohut ve köfteleri ekleyin." }, { stepNumber: 4, instruction: "Çorbayı 35-40 dakika pişirin.", timerSeconds: 2400 }],
   },
   {
-    title: "Yuvalama Çorbası", slug: "yuvalama-corbasi",
+    title: "Yuvalama Çorbası", slug: "yuvalama-corbasi", emoji: "🍲",
     description: "Gaziantep'in bayram çorbası, minik etli pirinç köfteleri ve yoğurtlu terbiyesiyle zahmetli bir klasiktir.",
     categorySlug: "corbalar", type: "CORBA" as const, difficulty: "HARD" as const,
     prepMinutes: 80, cookMinutes: 50, totalMinutes: 130, servingCount: 8,
@@ -6023,7 +6023,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Pirinç unu ve kıymayla minik köfteler yuvarlayın." }, { stepNumber: 2, instruction: "Nohut ve köfteleri suda 35 dakika pişirin.", timerSeconds: 2100 }, { stepNumber: 3, instruction: "Yoğurt ve yumurtayı çırpıp çorbaya ılıtarak ekleyin." }, { stepNumber: 4, instruction: "Çorbayı 10 dakika kısık ateşte pişirin.", timerSeconds: 600 }],
   },
   {
-    title: "Kayseri Yağlaması", slug: "kayseri-yaglamasi",
+    title: "Kayseri Yağlaması", slug: "kayseri-yaglamasi", emoji: "🥟",
     description: "Kayseri'nin şebit katları arasına kıymalı sos yayılan, yoğurtla servis edilen doyurucu hamur yemeği.",
     categorySlug: "hamur-isleri", type: "YEMEK" as const, difficulty: "HARD" as const,
     prepMinutes: 60, cookMinutes: 35, totalMinutes: 95, servingCount: 6,
@@ -6035,7 +6035,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Un ve mayayla hamur yoğurup 40 dakika mayalandırın.", timerSeconds: 2400 }, { stepNumber: 2, instruction: "Bezeleri ince açıp tavada pişirin." }, { stepNumber: 3, instruction: "Kıyma ve domatesi 20 dakika pişirin.", timerSeconds: 1200 }, { stepNumber: 4, instruction: "Şebitleri kıymalı sosla üst üste dizin." }],
   },
   {
-    title: "Etli Ekmek", slug: "etli-ekmek",
+    title: "Etli Ekmek", slug: "etli-ekmek", emoji: "🍞",
     description: "Konya'nın uzun ince hamuru, kıyma, domates ve biberle taş fırın tadında çıtır pişer.",
     categorySlug: "hamur-isleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 45, cookMinutes: 15, totalMinutes: 60, servingCount: 4,
@@ -6047,7 +6047,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Hamuru yoğurup 40 dakika mayalandırın.", timerSeconds: 2400 }, { stepNumber: 2, instruction: "Kıyma, domates ve biberi karıştırın." }, { stepNumber: 3, instruction: "Hamuru uzun açıp harcı ince yayın." }, { stepNumber: 4, instruction: "230°C fırında 12-15 dakika pişirin.", timerSeconds: 900 }],
   },
   {
-    title: "Tantuni", slug: "tantuni",
+    title: "Tantuni", slug: "tantuni", emoji: "🌯",
     description: "Mersin'in sacda çevrilen et dürümü, ince lavaş, sumaklı soğan ve domatesle hızlı servis edilir.",
     categorySlug: "et-yemekleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 20, cookMinutes: 35, totalMinutes: 55, servingCount: 4,
@@ -6059,7 +6059,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Eti küçük doğrayıp 25 dakika haşlayın.", timerSeconds: 1500 }, { stepNumber: 2, instruction: "Eti sacda baharatla 8 dakika çevirin.", timerSeconds: 480 }, { stepNumber: 3, instruction: "Lavaşı etin yağına değdirip doldurun." }],
   },
   {
-    title: "Hamsili Pilav", slug: "hamsili-pilav",
+    title: "Hamsili Pilav", slug: "hamsili-pilav", emoji: "🐟",
     description: "Karadeniz'in fırın pilavı, hamsi dizili kabuğu ve baharatlı iç pilavıyla kalıp gibi çıkar.",
     categorySlug: "makarna-pilav", type: "YEMEK" as const, difficulty: "HARD" as const,
     prepMinutes: 45, cookMinutes: 45, totalMinutes: 90, servingCount: 6,
@@ -6071,7 +6071,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Pirinci 20 dakika sıcak suda bekletin.", timerSeconds: 1200 }, { stepNumber: 2, instruction: "Soğan, pirinç, üzüm ve fıstıkla iç pilavı 15 dakika pişirin.", timerSeconds: 900 }, { stepNumber: 3, instruction: "Hamsileri tepsiye dizip pilavı içine yayın." }, { stepNumber: 4, instruction: "180°C fırında 30 dakika pişirin.", timerSeconds: 1800 }],
   },
   {
-    title: "Ekmek Kadayıfı", slug: "ekmek-kadayifi",
+    title: "Ekmek Kadayıfı", slug: "ekmek-kadayifi", emoji: "🍯",
     description: "Afyon geleneğinden ekmek kadayıfı, yoğun şerbeti ve kaymakla ağır ama görkemli bir tatlıdır.",
     categorySlug: "tatlilar", type: "TATLI" as const, difficulty: "HARD" as const,
     prepMinutes: 30, cookMinutes: 60, totalMinutes: 90, servingCount: 10,
@@ -6083,7 +6083,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Kadayıf ekmeğini sıcak suyla 15 dakika yumuşatın.", timerSeconds: 900 }, { stepNumber: 2, instruction: "Şeker ve suyu 20 dakika kaynatın.", timerSeconds: 1200 }, { stepNumber: 3, instruction: "Şerbeti ekmeğin üzerine gezdirip 35 dakika kısık ateşte pişirin.", timerSeconds: 2100 }, { stepNumber: 4, instruction: "Soğuyunca kaymakla servis edin." }],
   },
   {
-    title: "Ayva Tatlısı", slug: "ayva-tatlisi",
+    title: "Ayva Tatlısı", slug: "ayva-tatlisi", emoji: "🍐",
     description: "Kış sofralarının ayvası, karanfil ve şekerle ağır ağır pişip cevizli kaymakla servis edilir.",
     categorySlug: "tatlilar", type: "TATLI" as const, difficulty: "EASY" as const,
     prepMinutes: 15, cookMinutes: 60, totalMinutes: 75, servingCount: 4,
@@ -6095,7 +6095,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Ayvaları soyup ikiye bölün." }, { stepNumber: 2, instruction: "Ayva, şeker, karanfil ve çekirdekleri tencereye alın." }, { stepNumber: 3, instruction: "Kısık ateşte 60 dakika pişirin.", timerSeconds: 3600 }, { stepNumber: 4, instruction: "Soğutup kaymak ve cevizle servis edin." }],
   },
   {
-    title: "Kabak Tatlısı", slug: "kabak-tatlisi",
+    title: "Kabak Tatlısı", slug: "kabak-tatlisi", emoji: "🎃",
     description: "Anadolu'nun sade kış tatlısı, bal kabağının şekerle suyunu salıp yavaşça yumuşamasıyla hazırlanır.",
     categorySlug: "tatlilar", type: "TATLI" as const, difficulty: "EASY" as const,
     prepMinutes: 20, cookMinutes: 50, totalMinutes: 70, servingCount: 6,
@@ -6107,7 +6107,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Kabağı dilimleyip şekerle 2 saat bekletin.", timerSeconds: 7200 }, { stepNumber: 2, instruction: "Kabağı kısık ateşte 45-50 dakika pişirin.", timerSeconds: 3000 }, { stepNumber: 3, instruction: "Soğuyunca tahin ve cevizle servis edin." }],
   },
   {
-    title: "Höşmerim", slug: "hosmerim",
+    title: "Höşmerim", slug: "hosmerim", emoji: "🍮",
     description: "Balıkesir'in peynirli tatlısı, taze peynir, irmik ve yumurtayla parlak sarı kıvam alır.",
     categorySlug: "tatlilar", type: "TATLI" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 15, cookMinutes: 25, totalMinutes: 40, servingCount: 6,
@@ -6119,7 +6119,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Peyniri tencerede 8 dakika eritin.", timerSeconds: 480 }, { stepNumber: 2, instruction: "İrmik, şeker ve sütü ekleyin." }, { stepNumber: 3, instruction: "Yumurta sarısını karıştırıp 15 dakika pişirin.", timerSeconds: 900 }],
   },
   {
-    title: "Klasik Menemen", slug: "klasik-menemen",
+    title: "Klasik Menemen", slug: "klasik-menemen", emoji: "🍳",
     description: "Ege kahvaltılarının domates, biber ve yumurtayla tavada pişen sulu ve sıcak klasiği.",
     categorySlug: "kahvaltiliklar", type: "KAHVALTI" as const, difficulty: "EASY" as const,
     prepMinutes: 10, cookMinutes: 15, totalMinutes: 25, servingCount: 3,
@@ -6131,7 +6131,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Biberleri zeytinyağında 4 dakika kavurun.", timerSeconds: 240 }, { stepNumber: 2, instruction: "Domatesleri ekleyip 8 dakika pişirin.", timerSeconds: 480 }, { stepNumber: 3, instruction: "Yumurtaları ekleyip 3 dakika karıştırarak pişirin.", timerSeconds: 180 }],
   },
   {
-    title: "Kuru Dolma", slug: "kuru-dolma",
+    title: "Kuru Dolma", slug: "kuru-dolma", emoji: "🫑",
     description: "Güneydoğu'nun kuru patlıcan ve biber dolması, sumak ekşisiyle kış sofralarına yoğun tat verir.",
     categorySlug: "sebze-yemekleri", type: "YEMEK" as const, difficulty: "HARD" as const,
     prepMinutes: 45, cookMinutes: 60, totalMinutes: 105, servingCount: 6,
@@ -6143,7 +6143,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Kuru sebzeleri 10 dakika haşlayın.", timerSeconds: 600 }, { stepNumber: 2, instruction: "Pirinç, soğan, salça ve baharatı karıştırın." }, { stepNumber: 3, instruction: "Sebzeleri harçla doldurup tencereye dizin." }, { stepNumber: 4, instruction: "Sumak ekşili suyla 50-60 dakika pişirin.", timerSeconds: 3600 }],
   },
   {
-    title: "Ekşili Köfte", slug: "eksili-kofte",
+    title: "Ekşili Köfte", slug: "eksili-kofte", emoji: "🧆",
     description: "Terbiyesiz sade versiyonuyla ekşili köfte, pirinçli minik köfteler ve limonlu sebzeli suyuyla pişer.",
     categorySlug: "corbalar", type: "CORBA" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 30, cookMinutes: 35, totalMinutes: 65, servingCount: 6,
@@ -6155,7 +6155,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Kıyma ve pirinçle küçük köfteler yuvarlayın." }, { stepNumber: 2, instruction: "Köfteleri una bulayın." }, { stepNumber: 3, instruction: "Sebzeleri suda 15 dakika pişirin.", timerSeconds: 900 }, { stepNumber: 4, instruction: "Köfteleri ve limon suyunu ekleyip 20 dakika pişirin.", timerSeconds: 1200 }],
   },
   {
-    title: "Arap Aşı Çorbası", slug: "arap-asi-corbasi",
+    title: "Arap Aşı Çorbası", slug: "arap-asi-corbasi", emoji: "🍲",
     description: "İç Anadolu'nun acılı tavuk çorbası, yanında kesilen hamuruyla kaşık kaşık yenir.",
     categorySlug: "corbalar", type: "CORBA" as const, difficulty: "HARD" as const,
     prepMinutes: 40, cookMinutes: 50, totalMinutes: 90, servingCount: 6,
@@ -6167,7 +6167,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Tavuğu 35 dakika haşlayıp didikleyin.", timerSeconds: 2100 }, { stepNumber: 2, instruction: "Un ve salçayı kavurup tavuk suyunu ekleyin." }, { stepNumber: 3, instruction: "Çorbayı 15 dakika pişirin.", timerSeconds: 900 }, { stepNumber: 4, instruction: "Hamur için un ve suyu pişirip tepsiye dökün." }],
   },
   {
-    title: "Bici Bici", slug: "bici-bici",
+    title: "Bici Bici", slug: "bici-bici", emoji: "🍧",
     description: "Adana yazlarının buzlu nişasta tatlısı, gül şerbeti ve pudra şekeriyle serinletir.",
     categorySlug: "tatlilar", type: "TATLI" as const, difficulty: "EASY" as const,
     prepMinutes: 20, cookMinutes: 10, totalMinutes: 30, servingCount: 6,
@@ -6179,7 +6179,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Nişasta ve suyu 10 dakika pişirin.", timerSeconds: 600 }, { stepNumber: 2, instruction: "Muhallebiyi tepsiye döküp 2 saat soğutun.", timerSeconds: 7200 }, { stepNumber: 3, instruction: "Küp kesip buz, gül şerbeti ve pudra şekeriyle servis edin." }],
   },
   {
-    title: "Kars Ketesi", slug: "kars-ketesi",
+    title: "Kars Ketesi", slug: "kars-ketesi", emoji: "🍞",
     description: "Kars kahvaltılarının tereyağlı ketesi, kavrulmuş un içiyle kat kat ve tok bir hamur işidir.",
     categorySlug: "kahvaltiliklar", type: "KAHVALTI" as const, difficulty: "HARD" as const,
     prepMinutes: 60, cookMinutes: 30, totalMinutes: 90, servingCount: 8,
@@ -6191,7 +6191,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Hamur malzemelerini yoğurup 30 dakika dinlendirin.", timerSeconds: 1800 }, { stepNumber: 2, instruction: "İç için unu tereyağında 8 dakika kavurun.", timerSeconds: 480 }, { stepNumber: 3, instruction: "Hamuru açıp içle kapatın." }, { stepNumber: 4, instruction: "190°C fırında 25-30 dakika pişirin.", timerSeconds: 1800 }],
   },
   {
-    title: "Kömbe", slug: "kombe",
+    title: "Kömbe", slug: "kombe", emoji: "🍪",
     description: "Hatay'ın baharatlı bayram kurabiyesi, mahlep ve susamla kalıpta şekil alıp kıtır pişer.",
     categorySlug: "tatlilar", type: "TATLI" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 35, cookMinutes: 25, totalMinutes: 60, servingCount: 10,
@@ -6203,7 +6203,7 @@ export const recipes = [
     steps: [{ stepNumber: 1, instruction: "Tereyağı, şeker ve yumurtayı karıştırın." }, { stepNumber: 2, instruction: "Un ve mahlebi ekleyip hamur yoğurun." }, { stepNumber: 3, instruction: "Hamuru susama bulayıp kalıpla şekillendirin." }, { stepNumber: 4, instruction: "180°C fırında 22-25 dakika pişirin.", timerSeconds: 1500 }],
   },
   {
-    title: "Tirit", slug: "tirit",
+    title: "Tirit", slug: "tirit", emoji: "🍲",
     description: "Konya ve Kastamonu sofralarında et suyuyla ıslanan ekmek, didiklenmiş et ve yoğurtla birleşir.",
     categorySlug: "et-yemekleri", type: "YEMEK" as const, difficulty: "MEDIUM" as const,
     prepMinutes: 25, cookMinutes: 90, totalMinutes: 115, servingCount: 6,

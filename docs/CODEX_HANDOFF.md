@@ -277,6 +277,32 @@ RECIPE_FORMAT.md'deki tüm kurallara tamamen uy:
   paraphrase-ile yeniden yaz
 - 3-15 malzeme, 3-10 adım
 
+### 6.5. tipNote / servingSuggestion kalitesi (KRİTİK)
+
+**Bu kurallar batch 7'de ihlal edildi ve 42 tarif düzeltildi. Tekrarlama.**
+
+- **`.map()` ile toplu tipNote/servingSuggestion ATAMA YASAK**. Her tarifin
+  kendi tipNote'u ve servingSuggestion'ı olmalı veya `null` olmalı.
+  Generic boilerplate ("Sosu ve ana malzemeyi ayrı hazırlayın...") YASAK.
+- **tipNote**: tarifin kritik püf noktası. Tarife özel, somut, gerçek
+  mutfak bilgisi. Yoksa `null` bırak, sahte tip üretme.
+- **servingSuggestion**: tarife özgü servis önerisi. "Sıcak servis edin"
+  gibi generic öneriler YASAK — neyle, nasıl servis edileceğini yaz.
+- **servingSuggestion'da sos referansı**: "X sosuyla servis edin" yazacaksan
+  ya o sos tarif adımlarında olmalı, ya da hazır alınabilir bir sos olmalı
+  (soya sosu, ketçap, hazır tonkatsu sosu OK — "kırmızı biber sosu",
+  "orman meyveli sos" gibi belirsiz/yapılması gereken soslar YASAK).
+
+### 6.6. Malzeme grupları (ingredient `group` alanı)
+
+Çok-bileşenli tariflerde **zorunlu** kullan:
+- Marine eden tarifler: `group: "Et için"` + `group: "Marine için"`
+- Sos yapılan tarifler: `group: "Ana malzeme"` + `group: "Sos için"`
+- Şerbetli tatlılar: `group: "Hamur için"` + `group: "Şerbet için"`
+- Servis garnish'i: `group: "Servis için"`
+
+Basit tek-bileşenli tariflerde (kızartma, çorba, salata) `group` EKLEME.
+
 ---
 
 ## 7. Sorun giderme

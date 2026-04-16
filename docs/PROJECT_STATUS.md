@@ -1,29 +1,39 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 16 Nisan 2026 (session 2)
+> Son güncelleme: 16 Nisan 2026 (session 3)
+
+## 16 Nisan 2026 session 3 — batch 7 + kalite fix + cuisine genişletme
+
+Codex batch 7 merge (**706 tarif**) + 92 tarif kalite audit (tipNote/servingSuggestion/ingredient group fix) + İskandinav cuisine kodu + RSS limit artışı + Lighthouse re-baseline.
+
+### Codex batch 7
+- 🌍 **Batch 7** (`c5fddfc`): 100 tarif, ilk cuisine-explicit batch (%52 Türk, %48 uluslararası). validate 0 ERROR 0 WARNING. 606 → **706**.
+
+### Tarif kalite audit + fix (3 pass)
+- 🐛 **Category D** (42 tarif): Codex batch 7'de `.map()` ile 42 tarife aynı boilerplate tipNote atanmıştı ("Sosu ve ana malzemeyi ayrı hazırlayın..."). 24 tarif → null, 18 tarif → tarife özel tipNote. 42 servingSuggestion da tarife özel yazıldı.
+- 🐛 **Category B** (12 tarif): butter-chicken, bulgogi, banh-mi vb. sos/marine malzemeleri düz listedeydi. 60 malzemeye group eklendi ("Tavuk için", "Marine için", "Sos için", vb.).
+- 🐛 **Category A** (41 tarif): 4 gerçek sorunlu düzeltildi (banh-xeo, panna-cotta, tamale, tavuk-katsu). Kalan 37 OK — store-bought sos referansı veya zaten step'lerde yapılan sos.
+
+### Cuisine genişletme
+- ✨ **5 yeni cuisine kodu** (vn/br/cu/ru/hu → 19 toplam): batch 6'daki Vietnam/Brezilya/Küba/Rus/Macar tarifler doğru etiketlendi. 39 tarif re-retrofit.
+- ✨ **İskandinav kodu** (`se` → 20 toplam): gravlax, kanelbulle, köttbullar, smörgåsbord slug patterns. Batch 8'e hazır.
+- 🐛 "rus"/"fas" keyword false positive fix (kurusu→rus, fasulye→fas).
+
+### Diğer
+- ⚡ **RSS feed limit 30 → 50**: 706 tarifte son 30 dar kalıyordu.
+- 📊 **Lighthouse re-baseline** (606 tarif): Perf 96-97, A11y 100, LCP 2.5-2.6s stabil, TBT 12-33ms (font opt etkisi).
+- 📊 **Perf audit 606 tarif**: 11 sorgu hepsi <3.2ms, cuisine btree aktif.
+- 🧪 343 unit + 18 E2E yeşil.
+
+### Sıradaki
+- ⏳ **AI Asistan iyileştirmesi** — cuisine filter (default: TR, ülke ekleme/çıkarma), malzeme hariç tutma ("bu malzeme olmasın"), 706 tarif ölçeğinde arama kalitesi.
+- ⏳ **Codex batch 8-10** (1000 hedefe 3 batch kaldı). Codex artık `cuisine` + tarife özel tipNote/servingSuggestion + ingredient group yazıyor.
+- ⏳ **isFeatured oranı audit** — 706 tarifte oran %10-15 hedefinin altına düşmüş olabilir.
+- ⏳ **bf-cache fix**: NextAuth cookie + Cache-Control, low priority.
 
 ## 16 Nisan 2026 session 2 — cuisine schema + batch 6 + perf
 
-`cuisine String?` schema migration + CuisineFilter aktivasyonu + Codex batch 6 merge + LCP font optimizasyonu. 5 commit, hepsi main'de.
-
-### Cuisine alanı (schema → UI tam akış)
-- 💾 **Migration `20260416120000_add_cuisine_field`**: `cuisine VARCHAR(30)` + btree index. String, enum değil — yeni mutfak kodu migration gerektirmez.
-- ✨ **`src/lib/cuisines.ts`**: 19 cuisine kodu (tr/it/fr/es/gr/jp/cn/kr/th/in/mx/us/me/ma + vn/br/cu/ru/hu), `inferCuisineFromRecipe()` (slug segment + title/description keyword, default "tr").
-- ✨ **CuisineFilter aktive**: placeholder → toggle chip component (`/tarifler?mutfak=jp&mutfak=kr`). Accent-blue active state, AllergenFilter pattern.
-- ⚙️ **`scripts/retrofit-cuisine.ts`** + retrofit-all'a 3. adım olarak kayıtlı. 606 tarif etiketlendi (%58.6 Türk, %41.4 uluslararası).
-- 🧪 37 cuisine inference unit test (340 toplam).
-- 🐛 "rus" / "fas" keyword false positive fix — "kurusu" → "rus", "fasulye" → "fas" eşleşmesi spesifikleştirildi.
-
-### Codex batch 6
-- 🌍 **Batch 6** (`578f06e`): 100 tarif (Vietnam 11, Brezilya 11, Küba 7, Rus 6, Macar 4, Karadeniz/Güneydoğu/Ege bölgesel, Küba/Kolombiya/Guatemala). 506 → **606**. Cuisine retrofit ile tüm yeni tarifler etiketlendi.
-
-### Perf + LCP
-- 📊 **Perf audit 606 tarif**: 11 hot-path sorgu, hepsi <3.2ms. Cuisine btree Bitmap Index Scan çalışıyor (1.63ms). 3 seq scan (base alphabetical 0.30ms, allergen NOT 0.28ms, similar 0.09ms) — 606'da fine, 1000+'da tekrar bakılır.
-- ⚡ **LCP font optimizasyonu**: Bricolage Grotesque 5 weight → 2 (600+700), Geist latin-ext subset, `adjustFontFallback: true`. ~60KB font tasarrufu.
-
-### Sıradaki
-- ⏳ **Codex batch 7-10** (her biri 100 tarif): 1000 hedefe 4 batch kaldı. Codex artık `cuisine` alanını yazabilir.
-- ⏳ **bf-cache fix**: NextAuth cookie + Cache-Control, low priority.
+Cuisine schema migration + CuisineFilter aktivasyonu + batch 6 merge (506→606) + LCP font optimizasyonu. Detay: session 3 özeti bu bölümü kapsar.
 
 ---
 

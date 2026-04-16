@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: 16 Nisan 2026 (session 2)
+> Son güncelleme: 16 Nisan 2026 (session 3)
 
 ## İşaretler
 
@@ -59,6 +59,9 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - ✨ Vegan/vejetaryen inference + retrofit + yeşil `🌱` chip + dedicated "DİYET" filter row.
 - 💾 `RecipeIngredient.group String?` — "Hamur için" / "Şerbet için" / "Sos için" bölüm desteği.
 - 🐛 8 tarif composite ingredient fix (revani + baklava + künefe + mantı + lahmacun + ali-nazik + hünkar beğendi + boza).
+- 🐛 **42 boilerplate tipNote düzeltmesi** — Codex batch 7'de `.map()` ile atanan generic tipNote temizlendi. 24 tarif → null, 18 tarif → tarife özel. 42 servingSuggestion da tarife özel yazıldı.
+- 🐛 **12 tarif ingredient group eklendi** — butter-chicken, bulgogi, banh-mi vb. sos/marine malzemeleri "Tavuk için" / "Marine için" / "Sos için" olarak gruplandı (60 malzeme).
+- 🐛 **4 servingSuggestion düzeltmesi** — banh-xeo (limonlu sos→limon sıkarak), panna-cotta (orman meyveli sos→taze meyve/reçel), tamale (kırmızı biber sosu→salsa/ekşi krema), tavuk-katsu (katsu sos→hazır tonkatsu sosu).
 - 🐛 Baklava + Revani tipnote netleşti ("sıcakken soğuk / soğumuşsa sıcak" iki ayrı cümle).
 - ⚡ Full-text search — `searchVector` generated tsvector (A/B/C weighted) + `immutable_unaccent` + GIN index + `websearch_to_tsquery('turkish', ...)` + `ts_rank_cd` relevance sort. Kök eşleşme (mantılar→Mantı), aksan-bağımsız (manti→Mantı), ingredient adı fallback union.
 - 🎨 `/tarifler` "En alakalı" sort chip (sadece query varken görünür, query'li aramalarda default).

@@ -1,35 +1,32 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 16 Nisan 2026 (session 3)
+> Son güncelleme: 16 Nisan 2026 (session 4)
+
+## 16 Nisan 2026 session 4 — AI Asistan iyileştirme + DB kalite audit
+
+AI Asistan 3 büyük iyileştirme + DB-çapında kalite audit + isFeatured fix + nutrition estimation modülü.
+
+### AI Asistan iyileştirmesi
+- ✨ **Cuisine filter**: dropdown default "🇹🇷 Türk", 20 mutfak + "Hepsi". DB-side btree index. 5 malzeme girince artık sadece Türk tarifleri çıkıyor (önceden yabancılar baskındı).
+- ✨ **Malzeme hariç tutma**: "Bu malzemeler olmasın" kırmızı chip input. Alerji/tercih senaryoları (ör. "fıstık olmasın"). `recipeContainsExcluded()` matcher-level disqualification.
+- ⚡ **200-tarif cap kaldırıldı**: 706 tarifte 506 tarif hiç değerlendirilmiyordu. Tüm PUBLISHED tarifler artık skorlanıyor. <20ms performans.
+- 🎨 **Commentary cuisine-aware**: "Türk mutfağından 4 tarif öneriyorum" prefix.
+- 🧪 5 yeni exclude matching test (348 toplam).
+
+### DB kalite audit + fix
+- ✅ **isFeatured**: %6.4 → **%10.8** (45 → 76/706). 6 kategori sıfırdı → hepsi en az 1 featured.
+- ✅ **3 tagless tarif** tag'lendi (quindim, canjica, khanom-krok).
+- 📊 **audit-db-quality.ts**: 13 kontrol noktası, production'da çalıştırıldı.
+- ⚙️ **Nutrition estimation modülü** hazır ama uygulanmadı (%40 doğruluk yetersiz — Codex'e pass yaptırılacak).
+
+### Sıradaki
+- ⏳ **Codex nutrition pass** — 600 tarife averageCalories/protein/carbs/fat (Codex batch 8 sonrası).
+- ⏳ **Codex batch 8-10** (1000 hedefe 2-3 batch kaldı).
+- ⏳ **bf-cache fix**: NextAuth cookie + Cache-Control, low priority.
 
 ## 16 Nisan 2026 session 3 — batch 7 + kalite fix + cuisine genişletme
 
-Codex batch 7 merge (**706 tarif**) + 92 tarif kalite audit (tipNote/servingSuggestion/ingredient group fix) + İskandinav cuisine kodu + RSS limit artışı + Lighthouse re-baseline.
-
-### Codex batch 7
-- 🌍 **Batch 7** (`c5fddfc`): 100 tarif, ilk cuisine-explicit batch (%52 Türk, %48 uluslararası). validate 0 ERROR 0 WARNING. 606 → **706**.
-
-### Tarif kalite audit + fix (3 pass)
-- 🐛 **Category D** (42 tarif): Codex batch 7'de `.map()` ile 42 tarife aynı boilerplate tipNote atanmıştı ("Sosu ve ana malzemeyi ayrı hazırlayın..."). 24 tarif → null, 18 tarif → tarife özel tipNote. 42 servingSuggestion da tarife özel yazıldı.
-- 🐛 **Category B** (12 tarif): butter-chicken, bulgogi, banh-mi vb. sos/marine malzemeleri düz listedeydi. 60 malzemeye group eklendi ("Tavuk için", "Marine için", "Sos için", vb.).
-- 🐛 **Category A** (41 tarif): 4 gerçek sorunlu düzeltildi (banh-xeo, panna-cotta, tamale, tavuk-katsu). Kalan 37 OK — store-bought sos referansı veya zaten step'lerde yapılan sos.
-
-### Cuisine genişletme
-- ✨ **5 yeni cuisine kodu** (vn/br/cu/ru/hu → 19 toplam): batch 6'daki Vietnam/Brezilya/Küba/Rus/Macar tarifler doğru etiketlendi. 39 tarif re-retrofit.
-- ✨ **İskandinav kodu** (`se` → 20 toplam): gravlax, kanelbulle, köttbullar, smörgåsbord slug patterns. Batch 8'e hazır.
-- 🐛 "rus"/"fas" keyword false positive fix (kurusu→rus, fasulye→fas).
-
-### Diğer
-- ⚡ **RSS feed limit 30 → 50**: 706 tarifte son 30 dar kalıyordu.
-- 📊 **Lighthouse re-baseline** (606 tarif): Perf 96-97, A11y 100, LCP 2.5-2.6s stabil, TBT 12-33ms (font opt etkisi).
-- 📊 **Perf audit 606 tarif**: 11 sorgu hepsi <3.2ms, cuisine btree aktif.
-- 🧪 343 unit + 18 E2E yeşil.
-
-### Sıradaki
-- ⏳ **AI Asistan iyileştirmesi** — cuisine filter (default: TR, ülke ekleme/çıkarma), malzeme hariç tutma ("bu malzeme olmasın"), 706 tarif ölçeğinde arama kalitesi.
-- ⏳ **Codex batch 8-10** (1000 hedefe 3 batch kaldı). Codex artık `cuisine` + tarife özel tipNote/servingSuggestion + ingredient group yazıyor.
-- ⏳ **isFeatured oranı audit** — 706 tarifte oran %10-15 hedefinin altına düşmüş olabilir.
-- ⏳ **bf-cache fix**: NextAuth cookie + Cache-Control, low priority.
+Codex batch 7 merge (**706 tarif**) + 92 tarif kalite audit + cuisine genişletme (20 kod) + RSS 50 + Lighthouse re-baseline. Detay session 4 özeti bu bölümü kapsar.
 
 ## 16 Nisan 2026 session 2 — cuisine schema + batch 6 + perf
 

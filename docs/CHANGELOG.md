@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: 16 Nisan 2026 (session 3)
+> Son güncelleme: 16 Nisan 2026 (session 4)
 
 ## İşaretler
 
@@ -95,6 +95,10 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - ✨ AI-gibi commentary — senaryo bazlı 3-5 varyant + per-recipe notlar, seed-based deterministic, disclaimer yok.
 - 🎨 "Düşünüyor…" typing dots + ana sayfa AI banner + navbar link.
 - 🐛 Pantry staple false-positive fix — "sucuk" eski algoritmada "su" prefix'ine match'lüyordu → exact token containment.
+- ✨ **Cuisine filter** — dropdown default "🇹🇷 Türk", 20 mutfak + "Hepsi". DB-side `where.cuisine IN(...)` btree index. 5 malzeme girince yabancı tarifler baskın çıkma sorunu çözüldü.
+- ✨ **Malzeme hariç tutma** — "Bu malzemeler olmasın" kırmızı chip input. `recipeContainsExcluded()` ile tarif disqualification. Alerji/tercih senaryoları.
+- ⚡ **200-tarif cap kaldırıldı** — tüm PUBLISHED tarifler skorlanıyor. 706 tarifte <20ms.
+- 🎨 Commentary cuisine-aware prefix ("Türk mutfağından...", "Japon mutfağından...").
 
 ## Bildirim sistemi
 
@@ -193,7 +197,8 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🧪 **Variation flow E2E** (`variation-flow.spec.ts`) — login → "+ Uyarlama Ekle" → form doldur → submit → success → reload → variation listede → expand → kendi LikeButton "❤️ N" read-only → DeleteOwnVariationButton (window.confirm auto-accept) → kayboldu.
 - 🧪 **Cooking mode E2E** (`cooking-mode-flow.spec.ts`) — tarif → "Pişirme Modunu Başlat" → fullscreen dialog → "Sonraki" → "Önceki" enabled → close.
 - 🧪 **Cuisine inference** — 37 test (19 slug match + title/description keyword + default + priority + constants).
-- 🧪 Toplam **340 unit + 18 E2E yeşil**.
+- 🧪 **Exclude matching** — 5 test (recipeContainsExcluded: exact, prefix, empty, non-match).
+- 🧪 Toplam **348 unit + 18 E2E yeşil**.
 
 ## Ops tooling
 

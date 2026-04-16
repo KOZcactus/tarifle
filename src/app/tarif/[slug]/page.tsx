@@ -282,6 +282,18 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
               ingredients={recipe.ingredients}
               baseServingCount={recipe.servingCount}
             />
+            {/* AI Asistan cross-link */}
+            <Link
+              href={`/ai-asistan?m=${recipe.ingredients
+                .filter((i) => !i.isOptional)
+                .slice(0, 5)
+                .map((i) => encodeURIComponent(i.name.replace(/\(.*?\)/g, "").trim()))
+                .join(",")}`}
+              className="mt-4 flex items-center gap-2 rounded-lg border border-dashed border-accent-blue/30 bg-accent-blue/5 px-3 py-2 text-xs text-accent-blue transition-colors hover:border-accent-blue hover:bg-accent-blue/10 print:hidden"
+            >
+              <span aria-hidden="true">🧠</span>
+              Bu malzemelerle başka ne yapılır?
+            </Link>
           </div>
         </div>
         <div className="lg:col-span-3">

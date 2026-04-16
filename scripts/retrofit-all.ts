@@ -35,6 +35,12 @@ const STEPS: readonly Step[] = [
     // Reads allergens to decide vegan status (SUT/YUMURTA/DENIZ_URUNLERI).
     dependsOnPrior: true,
   },
+  {
+    label: "Mutfak etiketi (Recipe.cuisine)",
+    script: "scripts/retrofit-cuisine.ts",
+    // Reads title/slug/description — no dependency on allergens or diet.
+    dependsOnPrior: false,
+  },
   // NOTE: Sitemap ping step kaldırıldı (15 Nis 2026). Google
   // `.../ping?sitemap=...` endpoint'i 2023'te kapatıldı (404), Bing
   // 2024'te deprecate (410). İkisinin yerine sitemap otomatik re-fetch

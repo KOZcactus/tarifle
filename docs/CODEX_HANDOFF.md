@@ -116,6 +116,7 @@ Codex, tarif yazmaya başlamadan önce şu dosyaları **okumalı**:
 | `docs/RECIPE_FORMAT.md` | **En önemli doküman.** Tarif formatı, kategori slug'ları, tag slug'ları, enum değerleri, alan alan kurallar. |
 | `prisma/schema.prisma` | Veritabanı şeması — `Recipe`, `RecipeIngredient`, `RecipeStep`, `RecipeTag` modelleri ve enum tanımları. |
 | `scripts/seed-recipes.ts` | Mevcut 41 tarifin olduğu dosya. Codex buraya ekleme yapacak. Format örnek olarak bu dosyayı referans al. |
+| `src/lib/cuisines.ts` | Geçerli mutfak kodları (14 kod: tr, it, fr, jp, kr, th, in, mx, …). Yeni tarife `cuisine: "xx"` yazarken buraya bak. |
 | `prisma/seed.ts` | Bootstrap seed'i — ilk 15 tarif, kategoriler ve etiket tanımları. **DEĞİŞTİRME**. |
 
 Bu dosyaları okuduktan sonra:
@@ -147,6 +148,7 @@ Bu komut `codex-import` branch'indeki tüm tariflerin slug'larını
 {
   title: "...",
   slug: "...",
+  cuisine: "tr",  // mutfak kodu — bkz. src/lib/cuisines.ts
   // ... RECIPE_FORMAT.md'deki tüm alanlar
 },
 {
@@ -376,7 +378,7 @@ production branch URL'i ile çalıştırır → canlıya geçer.
 2. Proje sahibinden Neon `codex-import` branch DATABASE_URL'ini al, `.env.local`'e yaz
 3. `docs/RECIPE_FORMAT.md` oku (**önemli: yeni `allergens` alanı eklendi**)
 4. `npx tsx scripts/list-recipe-slugs.ts > docs/existing-slugs.txt` → mevcut slug listesi
-5. `scripts/seed-recipes.ts` sonuna yeni batch ekle — her tarifin `allergens: [...]` alanını doldur
+5. `scripts/seed-recipes.ts` sonuna yeni batch ekle — her tarifin `allergens: [...]` ve `cuisine: "xx"` alanını doldur
 6. `npx tsc --noEmit` → hata yok
 7. `npm run content:validate -- --last 50 --slugs-file docs/existing-slugs.txt` → **Zod + semantik kontrol** (muğlak ifade, makro uyumu, alkol tag, slug dup). ERROR varsa seed'i çalıştırma — düzelt
 8. `npx tsx scripts/seed-recipes.ts` → veritabanına yaz

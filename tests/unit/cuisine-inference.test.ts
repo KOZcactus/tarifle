@@ -1,0 +1,191 @@
+import { describe, test, expect } from "vitest";
+import { inferCuisineFromRecipe, CUISINE_CODES, CUISINE_LABEL, CUISINE_FLAG } from "@/lib/cuisines";
+
+// Helper — minimal recipe input with only the fields inference uses
+function recipe(
+  overrides: Partial<{
+    title: string;
+    slug: string;
+    description: string;
+    ingredients: { name: string }[];
+  }> = {},
+) {
+  return {
+    title: overrides.title ?? "Test Tarif",
+    slug: overrides.slug ?? "test-tarif",
+    description: overrides.description ?? "Basit bir test tarifi.",
+    ingredients: overrides.ingredients ?? [{ name: "Un" }],
+  };
+}
+
+describe("inferCuisineFromRecipe", () => {
+  // ─── Slug-based inference (highest confidence) ────────────
+
+  test("Japanese slug: sushi → jp", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "somon-sushi" }))).toBe("jp");
+  });
+
+  test("Japanese slug: ramen → jp", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "tonkotsu-ramen" }))).toBe("jp");
+  });
+
+  test("Korean slug: kimchi → kr", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "kimchi-jjigae" }))).toBe("kr");
+  });
+
+  test("Korean slug: bibimbap → kr", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "bibimbap" }))).toBe("kr");
+  });
+
+  test("Thai slug: pad-thai → th", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "pad-thai" }))).toBe("th");
+  });
+
+  test("Indian slug: tikka-masala → in", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "tavuk-tikka-masala" }))).toBe("in");
+  });
+
+  test("Mexican slug: guacamole → mx", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "guacamole" }))).toBe("mx");
+  });
+
+  test("Italian slug: carbonara → it", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "spagetti-carbonara" }))).toBe("it");
+  });
+
+  test("French slug: ratatouille → fr", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "ratatouille" }))).toBe("fr");
+  });
+
+  test("Spanish slug: paella → es", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "deniz-urunleri-paella" }))).toBe("es");
+  });
+
+  test("Greek slug: moussaka → gr", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "moussaka" }))).toBe("gr");
+  });
+
+  test("Chinese slug: wonton → cn", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "wonton-corbasi" }))).toBe("cn");
+  });
+
+  test("American slug: burger → us", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "klasik-burger" }))).toBe("us");
+  });
+
+  test("Middle Eastern slug: hummus → me", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "hummus" }))).toBe("me");
+  });
+
+  test("North African slug: shakshuka → ma", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "shakshuka" }))).toBe("ma");
+  });
+
+  // ─── Title keyword inference ──────────────────────────────
+
+  test("title with İtalyan → it", () => {
+    expect(
+      inferCuisineFromRecipe(
+        recipe({ title: "İtalyan Usulü Domates Çorbası", slug: "italyan-domates-corbasi" }),
+      ),
+    ).toBe("it");
+  });
+
+  test("title with Japon → jp", () => {
+    expect(
+      inferCuisineFromRecipe(
+        recipe({ title: "Japon Omlet", slug: "japon-omlet" }),
+      ),
+    ).toBe("jp");
+  });
+
+  test("title with Hint → in", () => {
+    expect(
+      inferCuisineFromRecipe(
+        recipe({ title: "Hint Usulü Mercimek", slug: "hint-mercimek" }),
+      ),
+    ).toBe("in");
+  });
+
+  // ─── Description keyword inference ────────────────────────
+
+  test("description with Fransız → fr", () => {
+    expect(
+      inferCuisineFromRecipe(
+        recipe({
+          slug: "bademli-kek",
+          description: "Fransız mutfağının zarif tatlısı.",
+        }),
+      ),
+    ).toBe("fr");
+  });
+
+  test("description with Kore → kr", () => {
+    expect(
+      inferCuisineFromRecipe(
+        recipe({
+          slug: "acili-tavuk",
+          description: "Kore usulü acılı tavuk sosu.",
+        }),
+      ),
+    ).toBe("kr");
+  });
+
+  // ─── Default to Turkish ───────────────────────────────────
+
+  test("no international markers → default tr", () => {
+    expect(
+      inferCuisineFromRecipe(
+        recipe({
+          title: "Kuru Fasulye",
+          slug: "kuru-fasulye",
+          description: "Geleneksel Türk mutfağının vazgeçilmez yemeği.",
+        }),
+      ),
+    ).toBe("tr");
+  });
+
+  test("generic recipe without any cuisine hint → tr", () => {
+    expect(
+      inferCuisineFromRecipe(
+        recipe({
+          title: "Patates Kızartması",
+          slug: "patates-kizartmasi",
+          description: "Çıtır çıtır patates kızartması tarifi.",
+        }),
+      ),
+    ).toBe("tr");
+  });
+
+  // ─── Slug priority over description ───────────────────────
+
+  test("slug match takes priority over description keyword", () => {
+    // Slug says sushi (jp) but description mentions İtalyan
+    expect(
+      inferCuisineFromRecipe(
+        recipe({
+          slug: "sushi-deneme",
+          description: "İtalyan esintili bir sushi denemesi.",
+        }),
+      ),
+    ).toBe("jp");
+  });
+});
+
+describe("cuisine constants", () => {
+  test("CUISINE_CODES has 14 entries", () => {
+    expect(CUISINE_CODES).toHaveLength(14);
+  });
+
+  test("every code has a label", () => {
+    for (const code of CUISINE_CODES) {
+      expect(CUISINE_LABEL[code]).toBeTruthy();
+    }
+  });
+
+  test("every code has a flag", () => {
+    for (const code of CUISINE_CODES) {
+      expect(CUISINE_FLAG[code]).toBeTruthy();
+    }
+  });
+});

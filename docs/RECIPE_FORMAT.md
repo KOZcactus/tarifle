@@ -69,7 +69,26 @@ doğru etiketleri tarifte birlikte göndermek tercih edilir.
 type:       YEMEK | TATLI | ICECEK | KOKTEYL | APERATIF | SALATA | CORBA | KAHVALTI | ATISTIRMALIK | SOS
 difficulty: EASY | MEDIUM | HARD
 allergens:  GLUTEN | SUT | YUMURTA | KUSUYEMIS | YER_FISTIGI | SOYA | DENIZ_URUNLERI | SUSAM | KEREVIZ | HARDAL
+cuisine:    tr | it | fr | es | gr | jp | cn | kr | th | in | mx | us | me | ma
 ```
+
+**Mutfak kodu (`cuisine`)**: tarifin ait olduğu mutfak. String, nullable,
+14 geçerli kod:
+
+| Kod | Mutfak | Kod | Mutfak |
+|-----|--------|-----|--------|
+| `tr` | Türk | `jp` | Japon |
+| `it` | İtalyan | `cn` | Çin |
+| `fr` | Fransız | `kr` | Kore |
+| `es` | İspanyol | `th` | Tay |
+| `gr` | Yunan | `in` | Hint |
+| `mx` | Meksika | `us` | ABD |
+| `me` | Orta Doğu | `ma` | Kuzey Afrika |
+
+Bir tarif **tek** mutfağa ait. Eklemek opsiyoneldir — eksik bırakılırsa
+`scripts/retrofit-cuisine.ts` title/slug/description'dan çıkarım yapar.
+Ama Codex doğru kodu açıkça yazsın — retrofit heuristic her zaman isabetli
+olmayabilir. Türk tarifleri `"tr"`, uluslararası tarifler ilgili ülke kodu.
 
 **Alerjen etiketleri**: her tarifin `allergens` alanı, tarifin içerdiği
 alerjenlerin listesidir (boş array olabilir). Mutfakta kullanıcı "bu tarif
@@ -100,6 +119,7 @@ Her tarif şu TypeScript nesnesine tıpatıp uymalı:
   title: "Adana Kebap",                    // 2-200 kar, TR ok, Title Case
   slug: "adana-kebap",                     // 2-200 kar, sadece [a-z0-9-], TR → ASCII
   emoji: "🥩",                              // 1 emoji, opsiyonel ama önerilir
+  cuisine: "tr",                             // mutfak kodu, opsiyonel (bkz. Enum değerleri)
 
   description: "Acılı kıyma ile ...",      // 20-500 kar, bir-iki cümle TR
 
@@ -328,6 +348,7 @@ duygusunu vermesin — insan yazımı + mutfak bilgili + net.
 - [ ] Alkol varsa `alkollu` tag'i
 - [ ] **`allergens` alanı dolu** (veya bilerek boş array `[]`). Malzemeleri tara: süt/yoğurt/peynir varsa `SUT`, un/bulgur varsa `GLUTEN`, vb.
 - [ ] Çok-bileşenli ise `group: "X için"` ayarlı ("Hamur için", "Şerbet için", "Sos için"…)
+- [ ] `cuisine` kodu doğru (Türk tarifi `"tr"`, İtalyan `"it"`, vb.) veya bilinçli olarak null
 
 **Dil ve anlatım**
 - [ ] "ya da tersi", "duruma göre" muğlak ifadeler **yok** — iki durum varsa iki ayrı cümle

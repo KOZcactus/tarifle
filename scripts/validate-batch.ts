@@ -198,6 +198,16 @@ function checkAlcoholTag(r: SeedRecipe, issues: Issue[]): void {
   }
 }
 
+function checkCuisine(r: SeedRecipe, issues: Issue[]): void {
+  if (r.cuisine == null) {
+    issues.push({
+      severity: "WARNING",
+      field: "cuisine",
+      message: `cuisine alanı boş — retrofit doldurur ama Codex açıkça yazmalı (tr, it, jp, …)`,
+    });
+  }
+}
+
 function checkSlugDuplicate(
   slug: string,
   existingSlugs: Set<string> | null,
@@ -238,6 +248,7 @@ export function runSemanticChecks(
   checkMacroConsistency(r, issues);
   checkAlcoholTag(r, issues);
   checkSlugDuplicate(r.slug, existingSlugs, issues);
+  checkCuisine(r, issues);
 
   return issues;
 }

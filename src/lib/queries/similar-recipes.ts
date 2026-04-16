@@ -154,6 +154,7 @@ export async function getSimilarRecipes(
       averageCalories: true,
       imageUrl: true,
       isFeatured: true,
+      cuisine: true,
       categoryId: true,
       type: true,
       createdAt: true,
@@ -208,6 +209,7 @@ export async function getSimilarRecipes(
     averageCalories: c.averageCalories,
     imageUrl: c.imageUrl,
     isFeatured: c.isFeatured,
+    cuisine: c.cuisine,
     category: c.category,
     _count: { variations: c._count.variations },
   }));

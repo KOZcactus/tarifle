@@ -11,6 +11,7 @@ export interface RecipeCard {
   averageCalories: number | null;
   imageUrl: string | null;
   isFeatured: boolean;
+  cuisine: string | null;
   category: {
     name: string;
     slug: string;
@@ -44,6 +45,7 @@ export interface RecipeDetail {
   tipNote: string | null;
   servingSuggestion: string | null;
   allergens: Allergen[];
+  cuisine: string | null;
   createdAt: string;
   category: {
     id: string;

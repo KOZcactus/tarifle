@@ -6,6 +6,7 @@ import { FilterPanel } from "@/components/search/FilterPanel";
 import { AllergenFilter } from "@/components/search/AllergenFilter";
 import { DietFilter } from "@/components/search/DietFilter";
 import { CuisineFilter } from "@/components/search/CuisineFilter";
+import { CUISINE_CODES, type CuisineCode } from "@/lib/cuisines";
 import { getRecipes } from "@/lib/queries/recipe";
 import { getCategories } from "@/lib/queries/category";
 import { getTags } from "@/lib/queries/tag";
@@ -35,6 +36,7 @@ interface TariflerPageProps {
     siralama?: string;
     etiket?: string | string[];
     alerjen?: string | string[];
+    mutfak?: string | string[];
     page?: string;
   }>;
 }
@@ -85,6 +87,17 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
     (ALLERGEN_ORDER as readonly string[]).includes(a),
   );
 
+  // Parse + validate cuisine inclusion list. Unknown codes are dropped
+  // silently so a mistyped URL doesn't 500.
+  const rawCuisines = params.mutfak
+    ? Array.isArray(params.mutfak)
+      ? params.mutfak
+      : [params.mutfak]
+    : [];
+  const cuisines = rawCuisines.filter((c): c is CuisineCode =>
+    (CUISINE_CODES as readonly string[]).includes(c),
+  );
+
   const currentPage = Math.max(1, parseInt(params.page ?? "1", 10));
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
 
@@ -105,6 +118,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
       maxMinutes,
       tagSlugs,
       excludeAllergens: excludeAllergens.length > 0 ? excludeAllergens : undefined,
+      cuisines: cuisines.length > 0 ? cuisines : undefined,
       recipeIds: rankedIds,
       sortBy: activeSort,
       limit: ITEMS_PER_PAGE,
@@ -139,7 +153,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
           <DietFilter activeTagSlugs={tagSlugs ?? []} />
         </Suspense>
         <Suspense>
-          <CuisineFilter />
+          <CuisineFilter selected={cuisines} />
         </Suspense>
       </div>
 

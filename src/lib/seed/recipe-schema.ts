@@ -11,6 +11,7 @@
  * Keeping them apart avoids cross-contamination as either side evolves.
  */
 import { z } from "zod";
+import { CUISINE_CODES } from "@/lib/cuisines";
 
 const CATEGORY_SLUGS = [
   "et-yemekleri",
@@ -183,6 +184,12 @@ export const seedRecipeSchema = z
     // Allergens field is new (Apr 2026). Legacy seed entries without it
     // default to empty — the retrofit script then fills them.
     allergens: z.array(z.enum(ALLERGEN)).max(10).default([]),
+
+    // Cuisine origin code — one of the 14 supported codes (see
+    // src/lib/cuisines.ts). Optional + nullable: legacy seed entries
+    // default to null, the retrofit script fills them. New Codex batches
+    // should include this explicitly.
+    cuisine: z.enum(CUISINE_CODES).optional().nullable(),
 
     // Opsiyonel EN/DE çevirileri. TR primary language — translations
     // UI language toggle'ı (Faz 3) canlıya alınınca devreye girer.

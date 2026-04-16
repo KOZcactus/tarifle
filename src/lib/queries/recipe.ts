@@ -33,6 +33,7 @@ const recipeCardSelect = {
   averageCalories: true,
   imageUrl: true,
   isFeatured: true,
+  cuisine: true,
   category: {
     select: { name: true, slug: true, emoji: true },
   },
@@ -54,6 +55,11 @@ interface GetRecipesOptions {
    * with this list are hidden. Empty/undefined = no filter.
    */
   excludeAllergens?: Allergen[];
+  /**
+   * Cuisine inclusion filter. Only recipes matching one of these cuisine
+   * codes are shown. Empty/undefined = no filter (show all).
+   */
+  cuisines?: string[];
   /**
    * Restrict results to this set of IDs (in order of relevance). When
    * set, the legacy title/description/ingredient `contains` OR is
@@ -87,6 +93,7 @@ export async function getRecipes(options: GetRecipesOptions = {}): Promise<{
     maxMinutes,
     tagSlugs,
     excludeAllergens,
+    cuisines,
     recipeIds,
     sortBy = "alphabetical",
     limit = 24,
@@ -135,6 +142,10 @@ export async function getRecipes(options: GetRecipesOptions = {}): Promise<{
     where.tags = {
       some: { tag: { slug: { in: tagSlugs } } },
     };
+  }
+
+  if (cuisines && cuisines.length > 0) {
+    where.cuisine = { in: cuisines };
   }
 
   if (excludeAllergens && excludeAllergens.length > 0) {
@@ -351,6 +362,7 @@ export async function getRecipeBySlug(slug: string): Promise<RecipeDetail | null
       tipNote: true,
       servingSuggestion: true,
       allergens: true,
+      cuisine: true,
       createdAt: true,
       category: {
         select: { id: true, name: true, slug: true, emoji: true },

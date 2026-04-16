@@ -1,78 +1,93 @@
+"use client";
+
+import { useRouter, useSearchParams } from "next/navigation";
+import {
+  CUISINE_CODES,
+  CUISINE_FLAG,
+  CUISINE_LABEL,
+  type CuisineCode,
+} from "@/lib/cuisines";
+
+interface CuisineFilterProps {
+  /** The cuisine codes currently selected (from URL). */
+  selected: readonly string[];
+}
+
 /**
- * Mutfak filter row — şimdilik DISABLED placeholder. 406 tarifin %32'si
- * uluslararası ve oran her batch'le artıyor; kullanıcı "İtalyan tarif
- * göster" diye filtrelemek isteyince filtre var olsun ki "yakında"
- * vaadi gerçek olsun.
+ * Cuisine inclusion filter row. Toggle chips that add/remove
+ * `?mutfak=<code>` from the URL. Multiple cuisines can be active;
+ * the backend uses `WHERE cuisine IN (...)` to show matching recipes.
  *
- * Şu an aktive edilmemesinin nedeni: Recipe schema'sında `cuisine`
- * alanı yok (Codex bu bilgiyi description'a organik enjekte ediyor).
- * Filter mantığı için ya schema migration (cuisine column + retrofit)
- * ya da description-based heuristic (kaba) ile aktive edilebilir.
- * 1000 tarife yaklaşırken o kararı vereceğiz.
- *
- * Bu component user'a sinyal veriyor: "ileride buradan filtreleyeceksin".
- * SEO + discovery için pozitif sinyal. Disabled state visible ama
- * etkileşimsiz; hover'da "yakında" tooltip'i.
+ * Accent colour: accent-blue to differentiate from allergen filter
+ * (which uses error/red for exclusion semantics).
  */
+export function CuisineFilter({ selected }: CuisineFilterProps) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
-const CUISINE_OPTIONS: readonly { code: string; flag: string; label: string }[] = [
-  { code: "tr", flag: "🇹🇷", label: "Türk" },
-  { code: "it", flag: "🇮🇹", label: "İtalyan" },
-  { code: "fr", flag: "🇫🇷", label: "Fransız" },
-  { code: "es", flag: "🇪🇸", label: "İspanyol" },
-  { code: "gr", flag: "🇬🇷", label: "Yunan" },
-  { code: "jp", flag: "🇯🇵", label: "Japon" },
-  { code: "cn", flag: "🇨🇳", label: "Çin" },
-  { code: "kr", flag: "🇰🇷", label: "Kore" },
-  { code: "th", flag: "🇹🇭", label: "Tay" },
-  { code: "in", flag: "🇮🇳", label: "Hint" },
-  { code: "mx", flag: "🇲🇽", label: "Meksika" },
-  { code: "us", flag: "🇺🇸", label: "ABD" },
-  { code: "me", flag: "🌍", label: "Orta Doğu" },
-  { code: "ma", flag: "🌍", label: "Kuzey Afrika" },
-];
+  function toggle(code: CuisineCode) {
+    const params = new URLSearchParams(searchParams.toString());
+    const current = params.getAll("mutfak");
+    const isActive = current.includes(code);
+    params.delete("mutfak");
+    const next = isActive
+      ? current.filter((c) => c !== code)
+      : [...current, code];
+    next.forEach((c) => params.append("mutfak", c));
+    params.delete("page"); // reset to first page after filter change
+    router.push(`/tarifler?${params.toString()}`);
+  }
 
-export function CuisineFilter() {
+  function clearAll() {
+    const params = new URLSearchParams(searchParams.toString());
+    params.delete("mutfak");
+    params.delete("page");
+    router.push(`/tarifler?${params.toString()}`);
+  }
+
   return (
-    <div
-      // opacity-70 başlangıçta disabled hissi için kullanılmıştı ama
-      // text-muted üzerinde a11y color-contrast eşiğini düşürdü (4.5:1
-      // altına geçti). Sadece dashed border + "Yakında" badge yeterli
-      // sinyal — kontrast tam tutulur.
-      className="rounded-lg border border-dashed border-border bg-bg-card p-3"
-      aria-label="Mutfak filtresi (yakında aktif)"
-    >
-      <div className="mb-2 flex items-center gap-2">
+    <div className="rounded-lg border border-border bg-bg-card p-3">
+      <div className="mb-2 flex items-baseline justify-between gap-2">
         <p className="text-xs font-semibold uppercase tracking-wide text-text-muted">
           Mutfak
         </p>
-        <span className="rounded-full border border-accent-blue/30 bg-accent-blue/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-accent-blue">
-          Yakında
-        </span>
-      </div>
-      <div
-        className="flex flex-wrap gap-1.5"
-        // pointer-events:none ensures the chip group is non-interactive but
-        // still visible. tabindex=-1 keeps them out of keyboard nav.
-        style={{ pointerEvents: "none" }}
-      >
-        {CUISINE_OPTIONS.map(({ code, flag, label }) => (
-          <span
-            key={code}
-            tabIndex={-1}
-            aria-disabled="true"
-            className="inline-flex items-center gap-1 rounded-full border border-border bg-bg px-2.5 py-1 text-xs text-text-muted"
+        {selected.length > 0 && (
+          <button
+            type="button"
+            onClick={clearAll}
+            className="text-[11px] font-medium text-accent-blue hover:text-accent-blue/80"
           >
-            <span aria-hidden="true">{flag}</span>
-            <span>{label}</span>
-          </span>
-        ))}
+            Temizle ({selected.length})
+          </button>
+        )}
       </div>
-      <p className="mt-2 text-[11px] text-text-muted">
-        Tariflerin mutfak/köken etiketlerine göre filtreleme yakında aktif
-        olacak. Şu an 14 mutfak temsil ediliyor — favori mutfağını seç,
-        gelir gelmez sana özel bir keşif sunalım.
-      </p>
+      <div className="flex flex-wrap gap-1.5">
+        {CUISINE_CODES.map((code) => {
+          const isActive = selected.includes(code);
+          return (
+            <button
+              key={code}
+              type="button"
+              onClick={() => toggle(code)}
+              aria-pressed={isActive}
+              className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-xs font-medium transition-colors ${
+                isActive
+                  ? "border-accent-blue/40 bg-accent-blue/15 text-accent-blue"
+                  : "border-border bg-bg text-text-muted hover:border-accent-blue/40 hover:text-text"
+              }`}
+              title={
+                isActive
+                  ? `${CUISINE_LABEL[code]} filtresini kaldır`
+                  : `Sadece ${CUISINE_LABEL[code]} mutfağını göster`
+              }
+            >
+              <span aria-hidden="true">{CUISINE_FLAG[code]}</span>
+              <span>{CUISINE_LABEL[code]}</span>
+              {isActive && <span aria-hidden="true">×</span>}
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 }

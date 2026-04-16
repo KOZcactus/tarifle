@@ -278,6 +278,14 @@ model Recipe {
   // explicit Codex-provided list populates it. A GIN index covers the array
   // so "bu alerjenleri iceren tarifleri gizle" filter stays fast.
   allergens         Allergen[]   @default([])
+  // Cuisine origin code — one of the 14 supported codes defined in
+  // `src/lib/cuisines.ts` (tr, it, fr, es, gr, jp, cn, kr, th, in, mx,
+  // us, me, ma). NULL for recipes not yet tagged; the retrofit script
+  // or explicit Codex labelling populates it. Validated by Zod in the
+  // seed schema, not by a Prisma enum — adding a new cuisine (e.g.
+  // Vietnamese) only requires updating the constants file + Zod, no
+  // migration needed.
+  cuisine           String?      @db.VarChar(30)
   // Optional translations bucket. Shape (see docs/RECIPE_FORMAT.md):
   //   { en?: { title, description, tipNote, servingSuggestion,
   //            ingredients: [{sortOrder, name}],
@@ -324,6 +332,10 @@ model Recipe {
   // grows to 500+ recipes. Postgres GIN is the right access method for
   // array containment — btree can't index arrays efficiently.
   @@index([allergens], type: Gin)
+  // Btree on cuisine string — serves `WHERE cuisine IN (...)` inclusion
+  // filter on /tarifler. Simple btree is optimal for single-value nullable
+  // varchar; no GIN needed (that's for arrays).
+  @@index([cuisine])
   // GIN on the generated tsvector column — powers the /tarifler search
   // box. `map:` pins the index name so it matches the manual CREATE INDEX
   // in the fulltext migration and Prisma treats it as already-managed.

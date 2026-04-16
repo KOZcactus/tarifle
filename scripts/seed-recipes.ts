@@ -7232,6 +7232,9 @@ async function runSeed(prisma: PrismaClient) {
         // allergens passthrough — Codex-provided explicit list wins; the
         // retrofit script later fills any empty arrays via inference.
         allergens: r.allergens,
+        // cuisine passthrough — Codex-provided code wins; the retrofit
+        // script fills null values via title/slug/description inference.
+        cuisine: r.cuisine ?? null,
         // translations passthrough — optional JSONB bucket for EN/DE etc.
         // Left NULL when not provided; Faz 3 language toggle reads this.
         translations: r.translations ?? undefined,

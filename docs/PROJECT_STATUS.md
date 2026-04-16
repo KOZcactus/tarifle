@@ -1,49 +1,57 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 16 Nisan 2026 (session 6)
+> Son güncelleme: 16 Nisan 2026 (final)
 
-## 16 Nisan 2026 session 6 — AI Asistan 17 iyileştirme + batch 8 + UI + SEO + bf-cache
+## 16 Nisan 2026 — mega session özeti
 
-**806 tarif canlı.** AI Asistan büyük yenileme (17 özellik) + batch 8 merge + cuisine badge UI + homepage mutfak section + sitemap cuisine pages + bf-cache fix + nutrition pipeline.
+**906 tarif canlı, 1000'e 94 kaldı.** ~55 commit. AI Asistan 17 özellik, cuisine tam entegrasyon, 92 tarif kalite fix, batch 6-9 merge, nutrition pipeline, keşfet yenileme, admin dashboard, bf-cache, SEO.
 
-### AI Asistan — 17 iyileştirme (8 commit)
-1. ✨ Cuisine filter (dropdown, default Türk, 20 mutfak + Hepsi)
-2. ✨ Malzeme hariç tutma ("Bu malzemeler olmasın" kırmızı chip)
-3. ⚡ 200-tarif cap kaldırma (tüm PUBLISHED tarifler skorlanıyor)
-4. ✨ Pantry staples 7 → 15
-5. ✨ Synonym matching (piliç=tavuk, spagetti=makarna, 10 grup)
-6. 🎨 SuggestionCard cuisine flag (🇹🇷🇯🇵🇮🇹)
-7. 🎨 Commentary cuisine prefix
-8. ⚡ Sonuç 6 → 10
-9. ✨ Arama geçmişi (localStorage, son 3)
-10. 🎨 Commentary tüm filtre duyarlı
-11. ✨ Popüler malzeme quick-add chip'leri
-12. 🎨 Boş sonuç fallback combo
-13. 🎨 Tag chip'leri (vegan/pratik/30dk)
-14. 🎨 Match score progress bar
-15. ✨ **Malzeme autocomplete** (689 isim, Türkçe fuzzy, keyboard nav, ARIA)
-16. ✨ **Arama paylaş** (URL kodlama + auto-submit, viral growth)
-17. 🎨 **Sonuç sıralama tercihi** (En iyi eşleşme / En hızlı / En az eksik)
+### Tarif büyümesi
+- 📊 **506 → 906**: batch 6 (+100), batch 7 (+100), batch 8 (+100), batch 9 (+100)
+- 🥗 **Nutrition backfill**: 3 pass tamamlandı (200 tarife macro eklendi), coverage %44. Devam ediyor.
+- 🧪 **351 unit + 24 E2E** yeşil.
 
-### Batch 8 + nutrition
-- 🌍 **Batch 8**: 100 tarif (İskandinav 11, soslar 14, kokteyl 8). 706 → **806**.
-- 🥗 **Nutrition backfill-1**: 50 tarif macro eklendi + `sync-nutrition.ts` script.
+### AI Asistan — 17 iyileştirme
+1-3: Cuisine filter + malzeme hariç tutma + 200-cap kaldırma
+4-7: Pantry 15 + synonym + cuisine flag + commentary prefix
+8-10: Sonuç 10 + arama geçmişi + filtre duyarlı commentary
+11-14: Popüler chip + fallback combo + tag chip + progress bar
+15: Malzeme autocomplete (689 isim, Türkçe fuzzy, keyboard nav)
+16: Arama paylaş (URL kodlama + auto-submit)
+17: Sonuç sıralama tercihi (eşleşme / hızlı / az eksik)
 
-### UI + SEO
-- 🎨 **RecipeCard cuisine flag**: uluslararası tariflerde 🇯🇵🇮🇹🇫🇷 sağ üst köşede.
-- 🎨 **Tarif detay cuisine badge**: "🇯🇵 Japon" / "🇹🇷 Türk" meta chip.
-- ✨ **Homepage "Mutfaklara Göz At"**: top 10 mutfak kartı, tıkla → /tarifler?mutfak=xx.
-- 🌐 **Sitemap cuisine pages**: /tarifler?mutfak=xx URL'leri sitemap'e eklendi (~18 landing page).
+### Cuisine tam entegrasyon
+- 💾 Schema `cuisine String?` + migration + 20 kod (tr→se)
+- 🎨 CuisineFilter aktif (/tarifler + /tarifler/[kategori])
+- 🎨 RecipeCard flag + tarif detay badge + "Bu mutfaktan diğer tarifler →" link
+- ✨ Homepage + Keşfet "Mutfaklara Göz At" section
+- 🌐 Sitemap cuisine landing pages (~18 URL)
+- 📝 Meta description + JSON-LD recipeCuisine dinamik
+- 📊 Admin dashboard cuisine bar chart
+- 🧪 40 cuisine inference test
 
-### Altyapı
-- ⚡ **bf-cache fix**: `BfCacheRestore` component (pageshow + visibilitychange → router.refresh). Security headers (X-Content-Type-Options, Referrer-Policy, Permissions-Policy).
-- 🐛 92 tarif kalite fix (tipNote/group/serving)
-- ✅ isFeatured %6.4 → %10.8 + 3 tagless fix
-- 🧪 351 unit + 18 E2E yeşil.
+### UI / UX
+- ✨ SearchBar autocomplete (tarif adı + malzeme, homepage + /tarifler)
+- ✨ Homepage "🔥 En Popüler" section (viewCount top 8)
+- ✨ Keşfet: rastgele tarif shuffle + popüler + mutfaklar + AI CTA
+- ✨ Tarif detay "🧠 Bu malzemelerle başka ne yapılır?" AI cross-link
+- 🎨 `/tarifler` dinamik title ("Japon Tarifleri | Tarifle")
+- 🎨 Kategori sayfası tam filtreleme (Allergen + Diet + Cuisine)
+
+### Kalite + altyapı
+- 🐛 92 tarif kalite audit (D:42 tipNote + B:12 group + A:4 serving fix)
+- ✅ isFeatured %6.4 → %10.8 (76/706→906)
+- ⚡ bf-cache restore handler + security headers
+- ⚡ LCP font opt + Lighthouse re-baseline (Perf 96-97)
+- ⚡ Perf audit 606 tarif (11 sorgu <3.2ms)
+- ⚡ RSS feed 30→50
+- 📊 Admin dashboard: 10 stat card + cuisine chart + nutrition coverage
+- 📝 Codex HANDOFF kalite kuralları (6.5 tipNote + 6.6 group)
 
 ### Sıradaki
-- ⏳ **Codex nutrition backfill** devam (550 tarif kalan)
-- ⏳ **Codex batch 9-10** (1000 hedefe 2 batch kaldı)
+- ⏳ **Codex batch 10** — son batch, 906→1000
+- ⏳ **Codex nutrition backfill-4+** — ~450 tarif kalan
+- ⏳ **1000 tarif kutlaması** — milestone!
 
 ## 16 Nisan 2026 session 3 — batch 7 + kalite fix + cuisine genişletme
 

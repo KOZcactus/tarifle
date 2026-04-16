@@ -8,6 +8,8 @@ import { getCategories } from "@/lib/queries/category";
 import { auth } from "@/lib/auth";
 import { getCuisineStats } from "@/lib/queries/cuisine-stats";
 import { getSearchSuggestions } from "@/lib/queries/search-suggestions";
+import { getRandomRecipe } from "@/lib/queries/random-recipe";
+import { RandomRecipeBanner } from "@/components/discovery/RandomRecipeBanner";
 
 const POPULAR_SEARCHES = [
   "karnıyarık",
@@ -20,7 +22,7 @@ const POPULAR_SEARCHES = [
 ];
 
 export default async function HomePage() {
-  const [featured, recent, categories, { total: recipeCount }, session, cuisineStats, searchSuggestions] =
+  const [featured, recent, categories, { total: recipeCount }, session, cuisineStats, searchSuggestions, randomRecipe] =
     await Promise.all([
       getFeaturedRecipes(6),
       getRecentRecipes(14, 8),
@@ -29,6 +31,7 @@ export default async function HomePage() {
       auth(),
       getCuisineStats(),
       getSearchSuggestions(),
+      getRandomRecipe(),
     ]);
 
   // Tarif sayısı olan kategorileri önce göster
@@ -109,6 +112,13 @@ export default async function HomePage() {
               <RecipeCard key={recipe.id} recipe={recipe} />
             ))}
           </div>
+        </section>
+      )}
+
+      {/* Random recipe shuffle */}
+      {randomRecipe && (
+        <section className="py-4">
+          <RandomRecipeBanner initial={randomRecipe} />
         </section>
       )}
 

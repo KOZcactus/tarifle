@@ -15,6 +15,7 @@ import { VariationCard } from "@/components/recipe/VariationCard";
 import { SimilarRecipes } from "@/components/recipe/SimilarRecipes";
 import { generateRecipeJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
 import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
+import { CUISINE_FLAG, CUISINE_LABEL, type CuisineCode } from "@/lib/cuisines";
 import { SITE_URL } from "@/lib/constants";
 import { getRecipeBySlug, incrementViewCount } from "@/lib/queries/recipe";
 import { getSimilarRecipes } from "@/lib/queries/similar-recipes";
@@ -183,6 +184,11 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
           <Badge>⏱️ {formatMinutes(recipe.totalMinutes)}</Badge>
           <Badge>{recipe.servingCount} kişilik</Badge>
           {recipe.averageCalories && <Badge>~{recipe.averageCalories} kcal</Badge>}
+          {recipe.cuisine && CUISINE_LABEL[recipe.cuisine as CuisineCode] && (
+            <Badge>
+              {CUISINE_FLAG[recipe.cuisine as CuisineCode]} {CUISINE_LABEL[recipe.cuisine as CuisineCode]}
+            </Badge>
+          )}
           {recipe._count.variations > 0 && (
             <Badge variant="info">{recipe._count.variations} uyarlama</Badge>
           )}

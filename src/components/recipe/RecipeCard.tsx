@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
+import { CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
 import type { RecipeCard as RecipeCardType } from "@/types/recipe";
 
 interface RecipeCardProps {
@@ -35,6 +36,15 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
           <span className="absolute left-3 top-3 rounded-full bg-bg/80 px-2.5 py-1 text-xs font-medium backdrop-blur-sm">
             {recipe.category.emoji} {recipe.category.name}
           </span>
+          {/* Cuisine Flag */}
+          {recipe.cuisine && recipe.cuisine !== "tr" && CUISINE_FLAG[recipe.cuisine as CuisineCode] && (
+            <span
+              className="absolute right-3 top-3 rounded-full bg-bg/80 px-2 py-1 text-sm backdrop-blur-sm"
+              title={recipe.cuisine}
+            >
+              {CUISINE_FLAG[recipe.cuisine as CuisineCode]}
+            </span>
+          )}
         </div>
 
         {/* Content */}

@@ -1,28 +1,48 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 16 Nisan 2026 (session 4)
+> Son güncelleme: 16 Nisan 2026 (session 5)
 
-## 16 Nisan 2026 session 4 — AI Asistan iyileştirme + DB kalite audit
+## 16 Nisan 2026 session 5 — batch 8 + AI Asistan 14 iyileştirme + nutrition pipeline
 
-AI Asistan 3 büyük iyileştirme + DB-çapında kalite audit + isFeatured fix + nutrition estimation modülü.
+Codex batch 8 merge (**806 tarif**) + AI Asistan 14 özellik + 92 tarif kalite fix + isFeatured fix + nutrition backfill pipeline.
 
-### AI Asistan iyileştirmesi
-- ✨ **Cuisine filter**: dropdown default "🇹🇷 Türk", 20 mutfak + "Hepsi". DB-side btree index. 5 malzeme girince artık sadece Türk tarifleri çıkıyor (önceden yabancılar baskındı).
-- ✨ **Malzeme hariç tutma**: "Bu malzemeler olmasın" kırmızı chip input. Alerji/tercih senaryoları (ör. "fıstık olmasın"). `recipeContainsExcluded()` matcher-level disqualification.
-- ⚡ **200-tarif cap kaldırıldı**: 706 tarifte 506 tarif hiç değerlendirilmiyordu. Tüm PUBLISHED tarifler artık skorlanıyor. <20ms performans.
-- 🎨 **Commentary cuisine-aware**: "Türk mutfağından 4 tarif öneriyorum" prefix.
-- 🧪 5 yeni exclude matching test (348 toplam).
+### Codex batch 8 + nutrition backfill-1
+- 🌍 **Batch 8** (`6362ef1`): 100 tarif (İskandinav 11 ilk kez, soslar 14, kokteyl 8, nutrition dolu). 706 → **806**. 20 mutfak aktif.
+- 🥗 **Nutrition backfill-1**: Codex 50 tarihe kcal/macro ekledi. `sync-nutrition.ts` ile DB'ye UPDATE (sync-emojis pattern). Coverage: 156 → **206/806** (%25.6). Devam ediyor (backfill-2, 3...).
 
-### DB kalite audit + fix
-- ✅ **isFeatured**: %6.4 → **%10.8** (45 → 76/706). 6 kategori sıfırdı → hepsi en az 1 featured.
-- ✅ **3 tagless tarif** tag'lendi (quindim, canjica, khanom-krok).
-- 📊 **audit-db-quality.ts**: 13 kontrol noktası, production'da çalıştırıldı.
-- ⚙️ **Nutrition estimation modülü** hazır ama uygulanmadı (%40 doğruluk yetersiz — Codex'e pass yaptırılacak).
+### AI Asistan — 14 iyileştirme (5 commit)
+1. ✨ Cuisine filter (dropdown, default Türk, 20 mutfak + Hepsi)
+2. ✨ Malzeme hariç tutma ("Bu malzemeler olmasın" kırmızı chip input)
+3. ⚡ 200-tarif cap kaldırma (tüm PUBLISHED tarifler skorlanıyor)
+4. ✨ Pantry staples 7 → 15 (un, şeker, biber, kekik, kimyon...)
+5. ✨ Synonym matching (piliç=tavuk, spagetti=makarna, 10 grup)
+6. 🎨 SuggestionCard cuisine flag (🇹🇷🇯🇵🇮🇹)
+7. 🎨 Commentary cuisine prefix ("Türk mutfağından...")
+8. ⚡ Sonuç sayısı 6 → 10
+9. ✨ Arama geçmişi (localStorage, son 3)
+10. 🎨 Commentary tüm filtre kombinasyonları duyarlı
+11. ✨ Popüler malzeme quick-add chip'leri (12 malzeme)
+12. 🎨 Boş sonuç fallback combo önerileri (4 combo)
+13. 🎨 Tag chip'leri (vegan/pratik/30dk, max 3)
+14. 🎨 Match score progress bar (renk kodlu)
+
+### DB kalite audit + fix (session 3-4)
+- 🐛 **92 tarif kalite audit**: Category D 42→0, B 12→0, A 4 fix (toplamda 58 tarif düzeltildi)
+- ✅ **isFeatured**: %6.4 → **%10.8** (45 → 76). 6 sıfır kategori → hepsi ≥1 featured.
+- ✅ **3 tagless tarif** tag'lendi.
+- 🧪 351 unit + 18 E2E yeşil.
+
+### Cuisine genişletme (session 2-3)
+- 💾 **`cuisine String?`** schema + migration + CuisineFilter aktif (/tarifler?mutfak=)
+- ✨ **20 cuisine kodu**: tr/it/fr/es/gr/jp/cn/kr/th/in/mx/us/me/ma + vn/br/cu/ru/hu/se
+- 📊 Perf audit 606 tarif: 11 sorgu <3.2ms, cuisine btree aktif
+- ⚡ LCP font optimizasyonu: Bricolage 5→2 weight, Geist latin-ext
+- ⚡ RSS feed 30→50
 
 ### Sıradaki
-- ⏳ **Codex nutrition pass** — 600 tarife averageCalories/protein/carbs/fat (Codex batch 8 sonrası).
-- ⏳ **Codex batch 8-10** (1000 hedefe 2-3 batch kaldı).
-- ⏳ **bf-cache fix**: NextAuth cookie + Cache-Control, low priority.
+- ⏳ **Codex nutrition backfill** devam (backfill-2, 3... → 600 tarif kalan)
+- ⏳ **Codex batch 9-10** (1000 hedefe 2 batch kaldı)
+- ⏳ **bf-cache fix**: NextAuth cookie + Cache-Control, low priority
 
 ## 16 Nisan 2026 session 3 — batch 7 + kalite fix + cuisine genişletme
 

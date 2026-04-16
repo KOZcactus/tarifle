@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: 16 Nisan 2026 (session 4)
+> Son güncelleme: 16 Nisan 2026 (session 5)
 
 ## İşaretler
 
@@ -216,6 +216,7 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🧹 `scripts/seed-recipes.ts` refactor — DB init `main()` içine alındı, `recipes` export + entrypoint guard; validate-batch.ts side-effect olmadan import edebilsin diye. Codex'in array'e ekleme workflow'u değişmedi.
 - ⚙️ **Batch rollback safety net** — `scripts/rollback-batch.ts` (`npm run content:rollback`), 3 girdi modu (`--slugs`, `--slugs-file`, `--batch N`). Default dry-run + impact raporu; `--confirm "rollback-batch-N"` echo-phrase ile gerçek silme. Uyarlaması olan tarifleri otomatik bloklar (`--force` override). Her silme `AuditLog(action=ROLLBACK_RECIPE)`.
 - 🔒 **Validator CI step** — `.github/workflows/ci.yml` `check` job'una `npm run content:validate` adımı eklendi. Seed-recipes.ts'de format ihlali varsa CI main push + PR'ı kırmızıya düşürür, merge bloklanır.
+- 🥗 **Nutrition sync** — `scripts/sync-nutrition.ts`. Source'taki averageCalories/protein/carbs/fat değerlerini DB'ye UPDATE eder (sync-emojis pattern). Codex nutrition backfill PR'ları gelince çalıştırılır.
 - 🎨 **Emoji sync helper** — `scripts/sync-emojis.ts` (`npm run content:sync-emojis`). Source'taki recipe emoji'lerini production DB'ye UPDATE eder. Seed idempotent (slug skip) olduğu için kod tarafına emoji ekleyince DB'ye otomatik geçmiyor; bu script gap'i kapatır. Single transaction (60sn timeout — Neon RTT × 100 update için).
 - 🧹 **Sitemap ping cleanup** — Google `/ping?sitemap=` 2023 deprecated (404), Bing 410. retrofit-all'dan adım kaldırıldı, ilgili `seo-ping.ts` + `ping-sitemap.ts` + 8 unit silindi. IndexNow değerlendirildi: Google desteklemiyor + TR'de Bing/Yandex payı düşük → YAGNI.
 - ⚙️ **Cuisine retrofit** (`scripts/retrofit-cuisine.ts`) — title/slug/description keyword inference ile `Recipe.cuisine` doldurur. `retrofit-all.ts`'e 3. adım olarak eklendi (allergens → diet → cuisine). `--dry-run` + `--force` flag'li.

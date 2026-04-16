@@ -43,11 +43,22 @@ export default async function KesfetPage() {
       <h1 className="font-heading text-3xl font-bold">Keşfet</h1>
       <p className="mt-2 text-text-muted">Yeni lezzetler keşfet, ilham al.</p>
 
-      {/* Search */}
+      {/* Search + popular queries */}
       <div className="mt-6">
         <Suspense>
           <SearchBar placeholder="Tarif veya malzeme ara..." suggestions={searchSuggestions} />
         </Suspense>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {["tavuk", "çorba", "makarna", "tatlı", "salata", "kokteyl", "vegan"].map((term) => (
+            <Link
+              key={term}
+              href={`/tarifler?q=${term}`}
+              className="rounded-full border border-border px-3 py-1 text-xs text-text-muted transition-colors hover:border-primary hover:text-primary"
+            >
+              #{term}
+            </Link>
+          ))}
+        </div>
       </div>
 
       {/* Random Recipe — "Bugün ne yapsam?" + shuffle butonu */}

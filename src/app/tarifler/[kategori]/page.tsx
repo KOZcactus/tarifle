@@ -9,7 +9,7 @@ import { getCategoryBySlug } from "@/lib/queries/category";
 import { getRecipes } from "@/lib/queries/recipe";
 import { generateBreadcrumbJsonLd, generateCategoryFaqJsonLd } from "@/lib/seo";
 import { ALLERGEN_ORDER } from "@/lib/allergens";
-import { CUISINE_CODES, type CuisineCode } from "@/lib/cuisines";
+import { CUISINE_CODES, CUISINE_LABEL, CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
 import type { Metadata } from "next";
 
 interface KategoriPageProps {
@@ -121,6 +121,49 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
           <CuisineFilter selected={cuisines} />
         </Suspense>
       </div>
+
+      {/* Active filter chips */}
+      {(cuisines.length > 0 || excludeAllergens.length > 0 || (tagSlugs && tagSlugs.length > 0)) && (
+        <div className="mb-4 flex flex-wrap items-center gap-2">
+          <span className="text-xs text-text-muted">Aktif:</span>
+          {cuisines.map((c) => (
+            <Link
+              key={c}
+              href={`/tarifler/${kategori}`}
+              className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/5 px-2.5 py-1 text-xs font-medium text-primary hover:bg-primary/10"
+            >
+              {CUISINE_FLAG[c as CuisineCode]} {CUISINE_LABEL[c as CuisineCode]}
+              <span aria-hidden="true">×</span>
+            </Link>
+          ))}
+          {excludeAllergens.map((a) => (
+            <Link
+              key={a}
+              href={`/tarifler/${kategori}`}
+              className="inline-flex items-center gap-1 rounded-full border border-error/30 bg-error/5 px-2.5 py-1 text-xs font-medium text-error hover:bg-error/10"
+            >
+              {a} hariç
+              <span aria-hidden="true">×</span>
+            </Link>
+          ))}
+          {tagSlugs?.map((t) => (
+            <Link
+              key={t}
+              href={`/tarifler/${kategori}`}
+              className="inline-flex items-center gap-1 rounded-full border border-accent-green/30 bg-accent-green/5 px-2.5 py-1 text-xs font-medium text-accent-green hover:bg-accent-green/10"
+            >
+              #{t}
+              <span aria-hidden="true">×</span>
+            </Link>
+          ))}
+          <Link
+            href={`/tarifler/${kategori}`}
+            className="text-[11px] text-text-muted hover:text-primary"
+          >
+            Hepsini temizle
+          </Link>
+        </div>
+      )}
 
       {/* Recipe Grid */}
       {recipes.length > 0 ? (

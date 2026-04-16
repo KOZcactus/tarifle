@@ -13,6 +13,33 @@ import {
   type CuisineCode,
 } from "@/lib/cuisines";
 
+/** Popular ingredients shown as quick-add chips when input is empty. */
+const POPULAR_INGREDIENTS = [
+  "tavuk", "soğan", "domates", "yumurta", "patates", "biber",
+  "pirinç", "makarna", "peynir", "havuç", "kabak", "nohut",
+];
+
+/** Suggest these when no results found — common combos that always match. */
+const FALLBACK_COMBOS = [
+  ["tavuk", "soğan", "biber"],
+  ["yumurta", "peynir", "domates"],
+  ["makarna", "domates", "sarımsak"],
+  ["patates", "soğan", "yumurta"],
+];
+
+const TAG_DISPLAY: Record<string, { label: string; color: string }> = {
+  "pratik": { label: "Pratik", color: "bg-accent-green/15 text-accent-green" },
+  "30-dakika-alti": { label: "30 dk", color: "bg-accent-blue/15 text-accent-blue" },
+  "vegan": { label: "Vegan", color: "bg-accent-green/15 text-accent-green" },
+  "vejetaryen": { label: "Vejetaryen", color: "bg-accent-green/15 text-accent-green" },
+  "tek-tencere": { label: "Tek Tencere", color: "bg-secondary/15 text-secondary" },
+  "cocuk-dostu": { label: "Çocuk Dostu", color: "bg-primary/15 text-primary" },
+  "butce-dostu": { label: "Bütçe Dostu", color: "bg-secondary/15 text-secondary" },
+  "misafir-sofrasi": { label: "Misafir", color: "bg-primary/15 text-primary" },
+  "yuksek-protein": { label: "Protein", color: "bg-accent-blue/15 text-accent-blue" },
+  "dusuk-kalorili": { label: "Düşük Kal", color: "bg-accent-green/15 text-accent-green" },
+};
+
 const TIME_OPTIONS = [
   { value: 15, label: "15 dk'ya kadar" },
   { value: 30, label: "30 dk'ya kadar" },
@@ -223,6 +250,21 @@ export function AiAssistantForm() {
           <p className="mt-1.5 text-xs text-text-muted">
             Virgül ya da Enter&apos;a basarak her malzemeyi ayrı ekle.
           </p>
+          {/* Popular ingredient quick-add chips */}
+          {ingredients.length === 0 && (
+            <div className="mt-2 flex flex-wrap gap-1.5">
+              {POPULAR_INGREDIENTS.map((ing) => (
+                <button
+                  key={ing}
+                  type="button"
+                  onClick={() => addIngredient(ing)}
+                  className="rounded-full border border-dashed border-border px-2.5 py-1 text-xs text-text-muted transition-colors hover:border-primary hover:text-primary"
+                >
+                  + {ing}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Exclude ingredients chips input */}
@@ -425,10 +467,27 @@ export function AiAssistantForm() {
           )}
 
           {result.suggestions.length === 0 ? (
-            <div className="rounded-xl border border-dashed border-border p-10 text-center">
+            <div className="rounded-xl border border-dashed border-border p-8 text-center">
               <p className="text-text-muted">
                 Hiç eşleşme yok. Daha az filtre dene veya malzeme ekle.
               </p>
+              <p className="mt-3 text-xs text-text-muted">Bu kombinasyonları dene:</p>
+              <div className="mt-2 flex flex-wrap justify-center gap-2">
+                {FALLBACK_COMBOS.map((combo, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => {
+                      setIngredients(combo);
+                      setCurrentInput("");
+                      setResult(null);
+                    }}
+                    className="rounded-full border border-border bg-bg px-3 py-1.5 text-xs text-text-muted transition-colors hover:border-primary hover:text-primary"
+                  >
+                    {combo.join(", ")}
+                  </button>
+                ))}
+              </div>
             </div>
           ) : (
             <div className="space-y-4">
@@ -483,18 +542,50 @@ function SuggestionCard({
               {s.title}
             </h3>
           </div>
-          <span
-            className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold ${
-              perfect
-                ? "bg-accent-green/15 text-accent-green"
-                : matchPercent >= 70
-                  ? "bg-secondary/15 text-secondary"
-                  : "bg-bg-elevated text-text-muted"
-            }`}
-          >
-            %{matchPercent} eşleşme
-          </span>
+          {/* Match score with progress bar */}
+          <div className="shrink-0 text-right">
+            <span
+              className={`text-xs font-semibold ${
+                perfect
+                  ? "text-accent-green"
+                  : matchPercent >= 70
+                    ? "text-secondary"
+                    : "text-text-muted"
+              }`}
+            >
+              %{matchPercent}
+            </span>
+            <div className="mt-1 h-1.5 w-16 overflow-hidden rounded-full bg-bg-elevated">
+              <div
+                className={`h-full rounded-full transition-all ${
+                  perfect
+                    ? "bg-accent-green"
+                    : matchPercent >= 70
+                      ? "bg-secondary"
+                      : "bg-text-muted/40"
+                }`}
+                style={{ width: `${matchPercent}%` }}
+              />
+            </div>
+          </div>
         </div>
+
+        {/* Tag chips */}
+        {s.tags.length > 0 && (
+          <div className="flex flex-wrap gap-1">
+            {s.tags
+              .filter((t) => TAG_DISPLAY[t])
+              .slice(0, 3)
+              .map((t) => (
+                <span
+                  key={t}
+                  className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${TAG_DISPLAY[t]!.color}`}
+                >
+                  {TAG_DISPLAY[t]!.label}
+                </span>
+              ))}
+          </div>
+        )}
 
         <div className="flex flex-wrap gap-1.5 text-xs text-text-muted">
           <span>{getDifficultyLabel(s.difficulty)}</span>

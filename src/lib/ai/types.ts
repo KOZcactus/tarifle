@@ -43,6 +43,8 @@ export interface AiSuggestion {
   matchedIngredients: string[];
   /** Ingredient names the user needs to buy. */
   missingIngredients: string[];
+  /** Recipe tag slugs for display (pratik, 30-dakika-alti, vegan...). */
+  tags: string[];
   /** Optional per-recipe AI commentary (empty for rule-based provider). */
   note?: string;
 }

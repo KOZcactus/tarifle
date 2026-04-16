@@ -39,6 +39,7 @@ export class RuleBasedProvider implements AiProvider {
       include: {
         ingredients: true,
         category: { select: { name: true } },
+        tags: { select: { tag: { select: { slug: true } } } },
       },
       // No `take` cap — evaluate all matching recipes. At 1000 recipes
       // × ~6 ingredients, client-side scoring is <20ms. If we ever hit
@@ -74,6 +75,7 @@ export class RuleBasedProvider implements AiProvider {
           matchScore: match.score,
           matchedIngredients: match.matched,
           missingIngredients: match.missing,
+          tags: recipe.tags.map((t) => t.tag.slug),
           // Keep ingredient list ref for exclude check below
           _ingredients: recipe.ingredients,
         };

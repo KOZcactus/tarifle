@@ -95,7 +95,10 @@ function normalise(name: string): string {
 const KEYWORDS: Record<Allergen, readonly string[]> = {
   GLUTEN: [
     "un",
+    // "ekmek" + "ekmeg" — Turkish possessive "ekmeği" → normalized "ekmegi";
+    // bare "ekmek" keyword won't substring-match "ekmegi" (k vs g softening).
     "ekmek",
+    "ekmeg",
     "bulgur",
     "irmik",
     "makarna",
@@ -104,7 +107,8 @@ const KEYWORDS: Record<Allergen, readonly string[]> = {
     "lavas",
     "pide",
     "galeta unu",
-    "arpa",
+    // "arpa" removed — substring-matches "arpacık soğan" as false positive.
+    // Real arpa ingredients are caught via "bulgur"/"sehriye"/"un".
     "cavdar",
     "bugday",
     "kepek",
@@ -117,6 +121,17 @@ const KEYWORDS: Record<Allergen, readonly string[]> = {
     "sehriye",
     "kus basi",
     "kadayif",
+    // Commonly-used wheat-derived ingredients audit-deep surfaces as over-tag:
+    "yulaf", "granola", "kuskus", "freekeh",
+    // Japanese/Vietnamese noodle wrappers (wheat-based unless specified):
+    "noodle", "wonton", "yakisoba", "udon",
+    // Italian pasta family (not always caught by "makarna"):
+    "spagetti", "spaghetti", "penne", "fusilli", "fettuccine", "tagliatelle",
+    "linguine", "rigatoni", "farfalle", "lasagna", "lazanya", "gnocchi",
+    "ravioli", "tortellini", "orzo", "pastitsio",
+    // Bread variants where "ekmek" substring doesn't catch (compound words):
+    "tost", "bagel", "simit", "milfoy", "pita", "tandir ekmeg",
+    "tortilla",
   ],
   SUT: [
     "sut",

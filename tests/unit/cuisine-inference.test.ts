@@ -131,6 +131,56 @@ describe("inferCuisineFromRecipe", () => {
     ).toBe("kr");
   });
 
+  // ─── New cuisines (batch 6+) ───────────────────────────────
+
+  test("Vietnamese slug: pho-bo → vn", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "pho-bo" }))).toBe("vn");
+  });
+
+  test("Vietnamese slug: banh-mi → vn", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "banh-mi" }))).toBe("vn");
+  });
+
+  test("Vietnamese title keyword → vn", () => {
+    expect(
+      inferCuisineFromRecipe(
+        recipe({ title: "Vietnam Buzlu Kahvesi", slug: "vietnam-buzlu-kahvesi" }),
+      ),
+    ).toBe("vn");
+  });
+
+  test("Brazilian slug: feijoada → br", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "feijoada" }))).toBe("br");
+  });
+
+  test("Brazilian slug: brigadeiro → br", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "brigadeiro" }))).toBe("br");
+  });
+
+  test("Cuban slug: ropa-vieja → cu", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "ropa-vieja" }))).toBe("cu");
+  });
+
+  test("Cuban slug: tostones → cu", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "tostones" }))).toBe("cu");
+  });
+
+  test("Russian slug: borscht → ru", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "borscht" }))).toBe("ru");
+  });
+
+  test("Russian slug: pelmeni → ru", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "pelmeni" }))).toBe("ru");
+  });
+
+  test("Hungarian slug: langos → hu", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "langos" }))).toBe("hu");
+  });
+
+  test("Hungarian slug: chicken-paprikash → hu", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "chicken-paprikash" }))).toBe("hu");
+  });
+
   // ─── Default to Turkish ───────────────────────────────────
 
   test("no international markers → default tr", () => {
@@ -173,8 +223,8 @@ describe("inferCuisineFromRecipe", () => {
 });
 
 describe("cuisine constants", () => {
-  test("CUISINE_CODES has 14 entries", () => {
-    expect(CUISINE_CODES).toHaveLength(14);
+  test("CUISINE_CODES has 19 entries", () => {
+    expect(CUISINE_CODES).toHaveLength(19);
   });
 
   test("every code has a label", () => {

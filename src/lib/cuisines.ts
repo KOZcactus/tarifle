@@ -23,6 +23,11 @@ export const CUISINE_CODES = [
   "us",
   "me",
   "ma",
+  "vn",
+  "br",
+  "cu",
+  "ru",
+  "hu",
 ] as const;
 
 export type CuisineCode = (typeof CUISINE_CODES)[number];
@@ -42,6 +47,11 @@ export const CUISINE_LABEL: Record<CuisineCode, string> = {
   us: "ABD",
   me: "Orta Doğu",
   ma: "Kuzey Afrika",
+  vn: "Vietnam",
+  br: "Brezilya",
+  cu: "Küba",
+  ru: "Rus",
+  hu: "Macar",
 };
 
 export const CUISINE_FLAG: Record<CuisineCode, string> = {
@@ -59,6 +69,11 @@ export const CUISINE_FLAG: Record<CuisineCode, string> = {
   us: "🇺🇸",
   me: "🌍",
   ma: "🌍",
+  vn: "🇻🇳",
+  br: "🇧🇷",
+  cu: "🇨🇺",
+  ru: "🇷🇺",
+  hu: "🇭🇺",
 };
 
 // ─── Inference engine ───────────────────────────────────────
@@ -181,6 +196,48 @@ const SLUG_PATTERNS: readonly { cuisine: CuisineCode; patterns: string[] }[] = [
       "pastilla", "chermoula", "msemen", "zaalouk",
     ],
   },
+  // Vietnamese
+  {
+    cuisine: "vn",
+    patterns: [
+      "pho", "banh-mi", "goi-cuon", "bun-cha", "banh-xeo",
+      "cha-gio", "com-tam", "bo-luc-lac", "bun-bo", "cao-lau",
+      "banh-cuon", "nem", "vietnam",
+    ],
+  },
+  // Brazilian
+  {
+    cuisine: "br",
+    patterns: [
+      "feijoada", "pao-de-queijo", "brigadeiro", "coxinha", "moqueca",
+      "picanha", "pastel-brezilya", "quindim", "farofa", "acai",
+      "caipirinha", "tapioca-brezilya",
+    ],
+  },
+  // Cuban
+  {
+    cuisine: "cu",
+    patterns: [
+      "ropa-vieja", "medianoche", "arroz-congri", "tostones",
+      "cubano", "mojito", "vaca-frita", "yuca",
+    ],
+  },
+  // Russian
+  {
+    cuisine: "ru",
+    patterns: [
+      "borscht", "pelmeni", "olivier", "syrniki", "blini",
+      "stroganoff", "pirozhki", "kvass", "shchi",
+    ],
+  },
+  // Hungarian
+  {
+    cuisine: "hu",
+    patterns: [
+      "paprikash", "langos", "dobos", "goulash", "gulyas",
+      "kurtoskalacs", "lecho", "toltott",
+    ],
+  },
 ];
 
 /**
@@ -202,6 +259,11 @@ const TEXT_KEYWORDS: readonly { cuisine: CuisineCode; keywords: string[] }[] = [
   { cuisine: "us", keywords: ["amerikan", "amerika"] },
   { cuisine: "me", keywords: ["orta doğu", "ortadoğu", "arap", "lübnan", "suriye"] },
   { cuisine: "ma", keywords: ["kuzey afrika", "fas mutfağı", "fas usulü", "tunus", "cezayir"] },
+  { cuisine: "vn", keywords: ["vietnam"] },
+  { cuisine: "br", keywords: ["brezilya"] },
+  { cuisine: "cu", keywords: ["küba"] },
+  { cuisine: "ru", keywords: ["rus mutfağı", "rus usulü", "rusya"] },
+  { cuisine: "hu", keywords: ["macar", "macaristan"] },
 ];
 
 interface InferInput {

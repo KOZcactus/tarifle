@@ -4,6 +4,7 @@ import { Providers } from "@/components/providers";
 import { Navbar } from "@/components/layout/Navbar";
 import { NotificationBellLoader } from "@/components/notifications/NotificationBellLoader";
 import { Footer } from "@/components/layout/Footer";
+import { BfCacheRestore } from "@/components/layout/BfCacheRestore";
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/constants";
 import "./globals.css";
 
@@ -81,6 +82,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col antialiased">
         <Providers>
+          <BfCacheRestore />
           <Navbar notificationSlot={<NotificationBellLoader />} />
           <main className="flex-1 print:pt-0">{children}</main>
           <Footer />

@@ -80,6 +80,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
   const [assumePantry, setAssumePantry] = useState(true);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [selectedSuggestionIdx, setSelectedSuggestionIdx] = useState(-1);
+  const [sortMode, setSortMode] = useState<"match" | "fastest" | "least-missing">("match");
   const [result, setResult] = useState<AiSuggestResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
@@ -652,6 +653,31 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
             </div>
           )}
 
+          {/* Sort toggle */}
+          {result.suggestions.length > 1 && (
+            <div className="mb-4 flex items-center gap-1 text-xs">
+              <span className="mr-2 text-text-muted">Sıralama:</span>
+              {([
+                { key: "match" as const, label: "En iyi eşleşme" },
+                { key: "fastest" as const, label: "En hızlı" },
+                { key: "least-missing" as const, label: "En az eksik" },
+              ]).map(({ key, label }) => (
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => setSortMode(key)}
+                  className={`rounded-md px-2.5 py-1 transition-colors ${
+                    sortMode === key
+                      ? "bg-bg-card font-medium text-text"
+                      : "text-text-muted hover:bg-bg-card"
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          )}
+
           {result.suggestions.length === 0 ? (
             <div className="rounded-xl border border-dashed border-border p-8 text-center">
               <p className="text-text-muted">
@@ -677,7 +703,13 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
             </div>
           ) : (
             <div className="space-y-4">
-              {result.suggestions.map((s) => (
+              {[...result.suggestions]
+                .sort((a, b) => {
+                  if (sortMode === "fastest") return a.totalMinutes - b.totalMinutes;
+                  if (sortMode === "least-missing") return a.missingIngredients.length - b.missingIngredients.length;
+                  return b.matchScore - a.matchScore; // default: match
+                })
+                .map((s) => (
                 <SuggestionCard key={s.recipeId} suggestion={s} />
               ))}
             </div>

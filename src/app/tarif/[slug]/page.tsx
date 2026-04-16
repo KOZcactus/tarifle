@@ -409,6 +409,21 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
         <SimilarRecipes recipes={similarRecipes} />
       </div>
 
+      {/* Cuisine discovery link */}
+      {recipe.cuisine && CUISINE_LABEL[recipe.cuisine as CuisineCode] && (
+        <div className="mt-6 print:hidden">
+          <Link
+            href={`/tarifler?mutfak=${recipe.cuisine}`}
+            className="group inline-flex items-center gap-2 rounded-lg border border-border bg-bg-card px-4 py-2.5 text-sm transition-all hover:border-primary hover:shadow-sm"
+          >
+            <span className="text-lg">{CUISINE_FLAG[recipe.cuisine as CuisineCode]}</span>
+            <span className="text-text-muted group-hover:text-text">
+              {CUISINE_LABEL[recipe.cuisine as CuisineCode]} mutfağından diğer tarifler →
+            </span>
+          </Link>
+        </div>
+      )}
+
       {/* View Count */}
       <div className="mt-8 text-center text-xs text-text-muted print:hidden">
         {recipe.viewCount.toLocaleString("tr-TR")} görüntülenme

@@ -16,6 +16,7 @@ function c(overrides: {
   categoryId?: string;
   type?: string;
   difficulty?: string;
+  cuisine?: string | null;
   createdAt?: Date;
   tagSlugs?: string[];
 }) {
@@ -25,6 +26,7 @@ function c(overrides: {
     categoryId: overrides.categoryId ?? "cat-different",
     type: overrides.type ?? "TATLI",
     difficulty: overrides.difficulty ?? "EASY",
+    cuisine: overrides.cuisine ?? null,
     createdAt: overrides.createdAt ?? new Date("2026-01-01"),
     tagSlugs: overrides.tagSlugs ?? [],
   };
@@ -35,6 +37,7 @@ const target: SimilarTarget = {
   categoryId: "cat-yemek",
   type: "YEMEK",
   difficulty: "MEDIUM",
+  cuisine: "tr",
   tagSlugs: ["misafir-sofrasi", "yuksek-protein", "firinda"],
 };
 
@@ -60,6 +63,22 @@ describe("scoreCandidates — ağırlıklar", () => {
     ]);
     // +0.5 (difficulty) + 1 (shared tag "firinda") = 1.5
     expect(r[0]?.score).toBe(1.5);
+  });
+
+  it("aynı cuisine +1.5", () => {
+    const r = scoreCandidates(target, [
+      c({ id: "same-cuisine", categoryId: "cat-xxx", type: "TATLI", cuisine: "tr", tagSlugs: [] }),
+    ]);
+    // +1.5 (cuisine)
+    expect(r[0]?.score).toBe(1.5);
+  });
+
+  it("farklı cuisine bonus yok", () => {
+    const r = scoreCandidates(target, [
+      c({ id: "diff-cuisine", categoryId: "cat-xxx", type: "TATLI", cuisine: "jp", tagSlugs: ["firinda"] }),
+    ]);
+    // +1 (shared tag) only, no cuisine bonus
+    expect(r[0]?.score).toBe(1);
   });
 
   it("her ortak tag +1 (max 3 shared = +3)", () => {

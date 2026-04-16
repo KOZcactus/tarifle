@@ -12,6 +12,7 @@
  *       da "hamur-isleri → hamur tatlısı" tarzı sıçramalarda etki
  *   +1  Her ortak tag — max 5 tag olduğu için 5 puan üstü çıkmaz
  *   +0.5 Aynı difficulty
+ *   +1.5 Aynı cuisine (Japon tarifi okurken diğer Japon tarifleri öne)
  *
  * Tie-break: daha yeni tarif öne, sonra alfabetik (TR collation).
  *
@@ -33,6 +34,7 @@ export interface SimilarTarget {
   categoryId: string;
   type: string;
   difficulty: string;
+  cuisine: string | null;
   tagSlugs: string[];
 }
 
@@ -58,6 +60,7 @@ export function scoreCandidates(
     categoryId: string;
     type: string;
     difficulty: string;
+    cuisine: string | null;
     createdAt: Date;
     tagSlugs: string[];
   }[],
@@ -71,6 +74,7 @@ export function scoreCandidates(
       if (c.categoryId === target.categoryId) score += 3;
       if (c.type === target.type) score += 2;
       if (c.difficulty === target.difficulty) score += 0.5;
+      if (target.cuisine && c.cuisine === target.cuisine) score += 1.5;
 
       let sharedTags = 0;
       for (const t of c.tagSlugs) if (targetTags.has(t)) sharedTags++;
@@ -118,6 +122,7 @@ export async function getSimilarRecipes(
       categoryId: true,
       type: true,
       difficulty: true,
+      cuisine: true,
       tags: { select: { tag: { select: { slug: true } } } },
     },
   });
@@ -128,6 +133,7 @@ export async function getSimilarRecipes(
     categoryId: target.categoryId,
     type: target.type,
     difficulty: target.difficulty,
+    cuisine: target.cuisine,
     tagSlugs: target.tags.map((t) => t.tag.slug),
   };
 
@@ -180,6 +186,7 @@ export async function getSimilarRecipes(
       categoryId: c.categoryId,
       type: c.type,
       difficulty: c.difficulty,
+      cuisine: c.cuisine,
       createdAt: c.createdAt,
       tagSlugs: c.tags.map((t) => t.tag.slug),
     })),

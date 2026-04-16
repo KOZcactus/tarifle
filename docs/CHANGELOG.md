@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: 15 Nisan 2026
+> Son güncelleme: 16 Nisan 2026
 
 ## İşaretler
 
@@ -63,6 +63,7 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - ⚡ Full-text search — `searchVector` generated tsvector (A/B/C weighted) + `immutable_unaccent` + GIN index + `websearch_to_tsquery('turkish', ...)` + `ts_rank_cd` relevance sort. Kök eşleşme (mantılar→Mantı), aksan-bağımsız (manti→Mantı), ingredient adı fallback union.
 - 🎨 `/tarifler` "En alakalı" sort chip (sadece query varken görünür, query'li aramalarda default).
 - ✨ **Benzer tarifler** — tarif detay sayfası altında 6 kart'lık öneri şeridi. Kural tabanlı skorlama: aynı kategori +3, aynı type +2, her ortak tag +1, aynı difficulty +0.5. Score 0 → gizli (noise değil). 12 unit test (skor matrisi + tie-break + kenar durumlar).
+- 🇹🇷 **CuisineFilter UI placeholder** (`/tarifler`) — 14 mutfak chip (🇹🇷🇮🇹🇫🇷🇪🇸🇬🇷🇯🇵🇨🇳🇰🇷🇹🇭🇮🇳🇲🇽🇺🇸🌍🌍), "Yakında" badge, dashed border. 1000 tarife yaklaşırken schema migration + retrofit ile aktive olur.
 
 ## Uyarlama sistemi
 
@@ -71,6 +72,7 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - ✨ Yapılandırılmış malzeme input (amount + unit + name, backward-compat).
 - ✨ VariationCard accordion (malzeme/adım/not açılır-kapanır).
 - ✨ Admin inline "Gizle" butonu (moderasyon).
+- ❤️ **LikeButton** — `toggleLikeAction` backend vardı ama UI yoktu, bu pass'te kapatıldı. Optimistic update + auth gate + 3 görsel state (red/gray/own-readonly). `getLikedVariationIds` helper N+1 önler. ♿ A11y bonus: VariationCard nested-interactive ihlali (button içinde button) restructure ile fix.
 - 🎨 Status rozetleri (Gizlendi / İncelemede / Reddedildi / Taslak) profilde.
 - ✨ Kullanıcı kendi uyarlamasını silebilir — ownership gate + hard delete + AuditLog.
 - 🐛 Düzenleme EKLENMEDİ (bilinçli — edit + beğeni koruma abuse vektörü).
@@ -178,7 +180,14 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🧪 Batch rollback helpers — 6 test (`extractBatchSlugsFromSeed` + BATCH N ↔ BATCH N SONU regex parsing, missing markers).
 - 🧪 Similar recipes skorlama — 12 test (ağırlık matrisi: kategori +3, type +2, tag +1, difficulty +0.5; tie-break: score → newest → TR collation; score=0 elenir; self hariç tutulur).
 - 🧪 BreadcrumbList JSON-LD — 6 test (Schema.org shape, 1-tabanlı position, SITE_URL prefix, absolute URL bypass, empty array, 4-seviye tarif senaryosu).
-- 🧪 Toplam **279 unit + 12 E2E yeşil**.
+- 🧪 Featured rotation — 11 test (`getWeekIndex` epoch/hafta sınırı, rotation arithmetic + wrap-around).
+- 🧪 RSS XML builder — 13 test (escapeXml, RFC 822 date, channel skeleton, atom:self-link, item render + escape, empty items).
+- 🧪 **Collection flow E2E** (`collection-flow.spec.ts`) — login → tarif detay → SaveMenu → yeni koleksiyon oluştur → tarifi ekle → /profil → koleksiyona git → tarif görünür.
+- 🧪 **AI Asistan flow E2E** (`ai-asistan-flow.spec.ts`, 2 test) — RuleBased provider hot path: 3 yaygın malzeme + pantry assumption → SuggestionCard veya boş eşleşme + commentary; boş submit safety.
+- 🧪 **Shopping list flow E2E** (`shopping-list-flow.spec.ts`) — manuel madde ekle → page reload (optimistic temp-ID → server ID) → check → "Alındı" bölümüne geç → sil → liste boş.
+- 🧪 **Variation flow E2E** (`variation-flow.spec.ts`) — login → "+ Uyarlama Ekle" → form doldur → submit → success → reload → variation listede → expand → kendi LikeButton "❤️ N" read-only → DeleteOwnVariationButton (window.confirm auto-accept) → kayboldu.
+- 🧪 **Cooking mode E2E** (`cooking-mode-flow.spec.ts`) — tarif → "Pişirme Modunu Başlat" → fullscreen dialog → "Sonraki" → "Önceki" enabled → close.
+- 🧪 Toplam **303 unit + 18 E2E yeşil**.
 
 ## Ops tooling
 
@@ -196,6 +205,8 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🧹 `scripts/seed-recipes.ts` refactor — DB init `main()` içine alındı, `recipes` export + entrypoint guard; validate-batch.ts side-effect olmadan import edebilsin diye. Codex'in array'e ekleme workflow'u değişmedi.
 - ⚙️ **Batch rollback safety net** — `scripts/rollback-batch.ts` (`npm run content:rollback`), 3 girdi modu (`--slugs`, `--slugs-file`, `--batch N`). Default dry-run + impact raporu; `--confirm "rollback-batch-N"` echo-phrase ile gerçek silme. Uyarlaması olan tarifleri otomatik bloklar (`--force` override). Her silme `AuditLog(action=ROLLBACK_RECIPE)`.
 - 🔒 **Validator CI step** — `.github/workflows/ci.yml` `check` job'una `npm run content:validate` adımı eklendi. Seed-recipes.ts'de format ihlali varsa CI main push + PR'ı kırmızıya düşürür, merge bloklanır.
+- 🎨 **Emoji sync helper** — `scripts/sync-emojis.ts` (`npm run content:sync-emojis`). Source'taki recipe emoji'lerini production DB'ye UPDATE eder. Seed idempotent (slug skip) olduğu için kod tarafına emoji ekleyince DB'ye otomatik geçmiyor; bu script gap'i kapatır. Single transaction (60sn timeout — Neon RTT × 100 update için).
+- 🧹 **Sitemap ping cleanup** — Google `/ping?sitemap=` 2023 deprecated (404), Bing 410. retrofit-all'dan adım kaldırıldı, ilgili `seo-ping.ts` + `ping-sitemap.ts` + 8 unit silindi. IndexNow değerlendirildi: Google desteklemiyor + TR'de Bing/Yandex payı düşük → YAGNI.
 
 ## A11y
 
@@ -209,6 +220,9 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🎨 Badge tint `/15` → `/10` (chip text kontrastı yükseldi).
 - 🎨 Footer logo `text-lg` → `text-xl` (large text kategorisine çıktı).
 - 🧪 `tests/e2e/a11y-audit.spec.ts` — CI regression guard, her push'ta 20 sayfa/tema tarar.
+- ♿ Heading-order fix `/tarifler` + `/tarifler/[kategori]` — H1 → H3 atlamasını sr-only `<h2>` ile düzeltildi (Lighthouse a11y 98 → 100).
+- ♿ CuisineFilter contrast fix — `opacity-70` text-muted'ı 3.04:1'e düşürüyordu, kaldırıldı; dashed border + "Yakında" badge yeterli sinyal.
+- ♿ VariationCard nested-interactive fix — expand `<button>` içinde LikeButton `<button>` vardı, restructure ile sibling yapıldı (DOM seviyesinde kardeş).
 
 ## Polish & UX copy
 
@@ -220,6 +234,8 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🎨 Alerjen panel collapse + kısa uyarı ("Alerjin varsa malzeme listesine bir de sen göz at.").
 - 🎨 Bugünün Tarifi polish — "İleri" → "Zor" (`getDifficultyLabel` tutarlı), averageCalories chip.
 - 🎨 Dil tercihi: navbar chip → `/ayarlar` kartına taşındı.
+- 🎨 **Admin dashboard genişletildi** — 6 → 8 stat card (Bookmark + Koleksiyon eklendi) + Aktivite section (Bugün/Hafta/Ay yeni tarif sayısı) + Son seed batch tablo (Postgres `date_trunc('hour')` + `HAVING COUNT(*) > 5`) + kategori dağılımı bar chart (17 kategori, primary renkli). Manuel SQL bakmaktan kurtarır, batch akışı görselleşir.
+- 🎨 **Homepage rotation + Yeni Eklenenler section** — `getFeaturedRecipes` haftalık deterministic offset (`getWeekIndex` ISO week index, slug-ordered pool wrap-around). `getRecentRecipes(14gün, 8 kart)` yeni query. Hero → Öne Çıkan → **Yeni Eklenenler** → Günün Tarifi → AI Banner → Kategoriler. Codex batch'leri spotlight'ta görünür.
 
 ## Dokümantasyon
 
@@ -229,3 +245,5 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 📝 `docs/CODEX_HANDOFF.md` — yeni PC'de sıfırdan başlama akışı.
 - 📝 `docs/CHANGELOG.md` — bu dosya, kategorik kronolojik referans.
 - 📝 RECIPE_FORMAT "Dil ve anlatım kalitesi" bölümü — 7 yazım kuralı (muğlak ifadeler, belirsiz ölçüler, composite isimler yasak).
+- 📝 `docs/SEO_SUBMISSION.md` — Google Search Console + Bing Webmaster step-by-step (DNS TXT verify, sitemap submit, URL inspection, sitemap ping helper).
+- 📝 `docs/PERFORMANCE_BASELINE.md` — Lighthouse 4 sayfa rapor (Perf 94-97, A11y/BP/SEO 100, LCP 2.5s borderline). 1000 tarife yaklaşırken karşılaştırma referansı.

@@ -1,6 +1,62 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 15 Nisan 2026 (gün sonu konsolidasyonu)
+> Son güncelleme: 16 Nisan 2026 (gün sonu konsolidasyonu)
+
+## 16 Nisan 2026 oturumu — günün toplu özeti
+
+DB-odaklı pass: **3 Codex batch (300 yeni tarif → 506 toplam)** + SEO altyapısı + discovery + admin görünürlük + E2E coverage + Like UI. 15+ commit, hepsi main'de.
+
+### Codex batch akışı (3 batch + 1 emoji retrofit)
+- 🍳 **Batch 3** (`8ecbe0b`): 100 tarif, Codex kendiliğinden uluslararası geçiş başlattı (Macar Gulaşı, Stroganoff, Teriyaki, Cajun, Fajita, Miso Çorbası, Ratatouille). 206 → 306.
+- 🌍 **Batch 4** (`8ecbe0b`): 100 tarif uluslararası odaklı (İtalyan/Yunan/İspanyol/Fransız/Japon/Meksika 8'er + Hint/Orta Doğu/Kore/Tay). 306 → 406. Uluslararası oran %19 → %31.8.
+- 🌏 **Batch 5** (`2bd041f`): 100 tarif eksik mutfaklara (Kore 10, Tay 10, Çin 5+, Kuzey Afrika 7) + boş kategorileri dengeleme (smoothie 0→7, sıcak içecek 0→7, kokteyl 1→10, atıştırmalık 1→13). 406 → **506**. Uluslararası %38.7.
+- 🎨 **Batch 4 emoji retrofit** (`39522a2` + sync-emojis): Codex batch 4'te 100 emoji eksik bırakmıştı; ayrı PR ile düzeltti. `scripts/sync-emojis.ts` source→DB UPDATE helper. Sonuç: **506/506 emoji dolu (%100)**.
+
+### DB perf + altyapı
+- ⚡ **Detail page composite indexes** (migration `20260416000000`): `recipe_ingredients(recipeId, sortOrder)` + `recipe_steps(recipeId, stepNumber)`. Prisma/Postgres FK için otomatik index yok; perf-audit.ts ile tespit edildi (1000+ tarif × 7 ing → seq scan büyür). Production'a uygulandı, Seq Scan → Index Scan geçişi doğrulandı.
+- 📊 **`scripts/perf-audit.ts`** — 10 hot-path sorgu için EXPLAIN ANALYZE runner. Hepsi <0.3ms 506 tarifte. Allergen NOT hasSome + FTS GIN cost-model nedeniyle seq scan tercih ediyor (500-2000'e kadar fine).
+- 🧹 **Sitemap ping cleanup**: Google `/ping` 2023 deprecated (404), Bing 410. retrofit-all'dan kaldırıldı (`847e135`); IndexNow değerlendirildi ama YAGNI (Google desteklemiyor, TR'de Bing/Yandex payı düşük).
+
+### SEO + launch readiness
+- 🌐 **Dinamik `sitemap.xml` + `robots.txt`** (Next.js convention): 506 tarif + 17 kategori + 8 statik = ~531 URL, hourly revalidate, force-dynamic.
+- 🔗 **Per-recipe canonical + per-page canonical** (`/tarif/[slug]`, `/tarifler`, `/tarifler/[kategori]`).
+- 🧭 **BreadcrumbList JSON-LD** (Schema.org rich results): tarif detayda 4 seviye, kategoride 3 seviye.
+- 📡 **RSS 2.0 feed** (`/rss.xml`): son 30 tarif, RFC 822 tarihler, atom:self-link, auto-discovery `<link rel="alternate">` her sayfanın head'inde.
+- 📝 **`docs/SEO_SUBMISSION.md`**: Google Search Console + Bing Webmaster step-by-step. Kerem ana PC'den uyguladı: GSC sitemap submit "Başarılı" (231 keşfedilen sayfa), Bing import + sitemap submit (331 URL).
+- 🔧 **CI build fix** (`7b2b20c`): `/rss.xml` + `/sitemap.xml` route handler'ları placeholder DATABASE_URL ile prerender patlıyordu — `export const dynamic = "force-dynamic"` ile çözüldü.
+- 📈 **Lighthouse baseline** (`docs/PERFORMANCE_BASELINE.md`): 4 sayfada Perf 94-97, A11y/BP/SEO 100, LCP 2.5s sınırda. Heading-order fix `/tarifler` + `/tarifler/[kategori]` (sr-only h2).
+- 🍒 **AggregateRating bilinçli atlandı**: Google gerçek kullanıcı rating'i ister, bookmark/likeCount yetmiyor (structured data abuse riski).
+
+### Discovery + ana sayfa
+- ✨ **Benzer tarifler öneri motoru** (`src/lib/queries/similar-recipes.ts` + `SimilarRecipes.tsx`): tarif detay altında 6 kart şerit. Kural-tabanlı skor (kategori +3, type +2, ortak tag +1, difficulty +0.5). Score 0 elenir. Tie-break: newer → TR collation. Promise.all paralel yükleme. 12 unit test.
+- 🎨 **Homepage `getFeaturedRecipes` rotation**: slug-ordered pool + ISO hafta offset (`getWeekIndex`), wrap-around. Bir hafta aynı 6, ertesi hafta farklı 6.
+- ✨ **"Yeni Eklenenler" homepage section**: `getRecentRecipes(14gün, 8 kart)`. 506 tarifle batch'lerin yeni içerikleri spotlight'ta görünür.
+- 🇹🇷 **CuisineFilter UI placeholder** (`/tarifler`): 14 mutfak chip (🇹🇷🇮🇹🇫🇷🇪🇸🇬🇷🇯🇵🇨🇳🇰🇷🇹🇭🇮🇳🇲🇽🇺🇸🌍🌍), "Yakında" badge. 1000 tarife yaklaşırken schema migration + retrofit ile aktive.
+
+### Codex batch pipeline güçlendirme
+- ✅ **Validator** (`scripts/validate-batch.ts`, `npm run content:validate`): Zod + semantik (muğlak ifade ERROR, kcal/makro WARNING, alkollü tag cross-check, slug çakışması). DB'siz. CI `check` job'una eklendi → format ihlali merge bloklar.
+- 🧹 **Rollback safety net** (`scripts/rollback-batch.ts`): 3 girdi modu (`--slugs`, `--slugs-file`, `--batch N`) + 3 katman güvenlik (dry-run default, echo-confirm phrase, variation/videoJob block). AuditLog kaydı.
+- 🎨 **Emoji sync** (`scripts/sync-emojis.ts`): source'taki emoji'leri DB'ye UPDATE eder. Codex emoji eksik bırakırsa düzeltme yolu. Transaction timeout 60sn (100 update için Neon RTT).
+
+### Admin + UI
+- 📊 **Admin dashboard genişletildi** (`fc7bddc`): 6 → 8 stat card (Bookmark + Koleksiyon eklendi) + Aktivite section (Bugün/Hafta/Ay) + Son seed batch tablo (date_trunc hour, count > 5) + kategori dağılımı bar chart (17 kategori, primary renkli).
+- ❤️ **Like UI butonu** (`LikeButton`): backend → UI gap kapatıldı. `toggleLikeAction` server action vardı ama hiçbir UI'da yoktu. Optimistic update + auth gate + 3 görsel state. `getLikedVariationIds` helper N+1 önler. **A11y bonus fix**: VariationCard nested-interactive ihlali (button içinde button) — restructure ile sibling yapıldı.
+
+### Test coverage
+- 🧪 **Unit: 230 → 303** (+73). Yeni: validate-batch (19), recipe-search sanitize (6), seo-breadcrumb (6), similar-recipes (12), rollback-batch (6), seo-rss (13), recipe-featured-rotation (11), seo-ping silindi (-8 sonra ping kaldırıldı).
+- 🧪 **E2E: 12 → 18** (+6). Yeni: collection-flow, ai-asistan-flow (2), shopping-list-flow, variation-flow, cooking-mode-flow.
+- 🧪 **A11y regression aktif**: a11y-audit yine 0 violation (CuisineFilter contrast + heading-order + nested-interactive bu pass'te yakalandı, hepsi düzeltildi).
+
+### Auth + observability
+- 🔍 **Google OAuth fix doğrulandı**: 14 Nis Vercel log'undaki 6 hata fix öncesinden. Fix sonrası 2 yeni Google user başarıyla kayıt (keroli.aga + akindarkhes), username otomatik mint, KVKK true.
+
+### Sıradaki tek opsiyonel iş
+- ⏳ **Codex batch 6-10** (her biri 100 tarif): 1000 hedefe 4 batch kaldı. Öncelik Vietnam/Brezilya/İskandinav (yeni mutfaklar) + Çin/Yunan/Kuzey Afrika derinleştirme + Türk bölgesel.
+- ⏳ **Schema'da `cuisine` alanı**: 1000+ tarifte CuisineFilter aktive olunca eklenir (migration + retrofit).
+- ⏳ **LCP optimizasyonu** (font preload + critical CSS): 2.5s borderline, 1000 tarife yaklaşırken bakılabilir.
+- ⏳ **bf-cache fix**: NextAuth cookie + Cache-Control ile back/forward cache restoration kapalı, low priority.
+
+---
 
 ## 15 Nisan 2026 oturumu — günün toplu özeti
 

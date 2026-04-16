@@ -9,7 +9,7 @@ import type {
 } from "./types";
 
 const MIN_SCORE = 0.3; // Below this, not a useful suggestion
-const MAX_RESULTS = 6;
+const MAX_RESULTS = 10;
 
 /**
  * Rule-based provider — does DB-side filtering + client-side scoring by

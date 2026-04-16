@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useState, useTransition, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { suggestRecipesAction } from "@/lib/actions/ai";
 import type { AiSuggestResponse } from "@/lib/ai/types";
@@ -33,6 +33,33 @@ export function AiAssistantForm() {
   const [result, setResult] = useState<AiSuggestResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
+  const [recentSearches, setRecentSearches] = useState<string[][]>([]);
+
+  // Load recent searches from localStorage on mount
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem("ai-recent-searches");
+      if (stored) setRecentSearches(JSON.parse(stored));
+    } catch {
+      // localStorage unavailable or corrupt — ignore
+    }
+  }, []);
+
+  const saveSearch = useCallback((ings: string[]) => {
+    try {
+      const key = ings.map((i) => i.toLocaleLowerCase("tr")).sort().join(",");
+      const existing = JSON.parse(localStorage.getItem("ai-recent-searches") ?? "[]") as string[][];
+      // Dedup by sorted key
+      const filtered = existing.filter(
+        (e) => e.map((i) => i.toLocaleLowerCase("tr")).sort().join(",") !== key,
+      );
+      const updated = [ings, ...filtered].slice(0, 3);
+      localStorage.setItem("ai-recent-searches", JSON.stringify(updated));
+      setRecentSearches(updated);
+    } catch {
+      // ignore
+    }
+  }, []);
 
   function addIngredient(raw: string) {
     const trimmed = raw.trim().replace(/,$/, "");
@@ -110,11 +137,39 @@ export function AiAssistantForm() {
       setIngredients(finalIngredients);
       setCurrentInput("");
       setResult(response.data);
+      saveSearch(finalIngredients);
     });
   }
 
   return (
     <div className="space-y-8">
+      {/* Recent searches */}
+      {recentSearches.length > 0 && !result && (
+        <div className="rounded-lg border border-dashed border-border bg-bg-card/50 p-3">
+          <p className="mb-2 text-xs font-medium uppercase tracking-wide text-text-muted">
+            Son aramalar
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {recentSearches.map((search, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => {
+                  setIngredients(search);
+                  setCurrentInput("");
+                  setResult(null);
+                }}
+                className="inline-flex items-center gap-1 rounded-full border border-border bg-bg px-3 py-1.5 text-xs text-text-muted transition-colors hover:border-primary hover:text-primary"
+              >
+                <span aria-hidden="true">🕒</span>
+                {search.slice(0, 3).join(", ")}
+                {search.length > 3 && ` +${search.length - 3}`}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
       <form
         onSubmit={handleSubmit}
         className="rounded-2xl border border-border bg-bg-card p-5 sm:p-6"

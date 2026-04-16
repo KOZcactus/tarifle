@@ -105,13 +105,15 @@ export function buildOverallCommentary(
   const seed = userIngredients.join("|").toLocaleLowerCase("tr");
   const cp = cuisinePrefix(cuisines);
   const fs = filterSuffix(context);
+  // Combined context: "Türk mutfağından çorba kategorisinde " or just ""
+  const ctx = cp || fs ? `${cp}${fs}`.trim() + " " : "";
 
   if (results.length === 0) {
     return pick(
       [
-        `${cp}${userIngredients.length} malzemenle yapılabilecek tarif çıkmadı. Bir iki şey daha ekler misin, yoksa filtreleri gevşetelim mi?`,
-        `Bu kombinasyonla ${fs}eşleşen tarifim yok. Daha fazla malzeme yaz ya da filtreleri gevşet.`,
-        `${fs}Elindekinle bir şey bulamadım. Daha temel malzemelerle (yumurta, soğan, domates gibi) dene.`,
+        `${ctx}${userIngredients.length} malzemenle yapılabilecek tarif çıkmadı. Bir iki şey daha ekler misin, yoksa filtreleri gevşetelim mi?`,
+        `${ctx}Bu kombinasyonla eşleşen tarifim yok. Daha fazla malzeme yaz ya da filtreleri gevşet.`,
+        `${ctx}Elindekinle bir şey bulamadım. Daha temel malzemelerle (yumurta, soğan, domates gibi) dene.`,
       ],
       seed,
     );
@@ -126,9 +128,9 @@ export function buildOverallCommentary(
   if (perfect.length >= 3) {
     return pick(
       [
-        `${cp}${perfect.length} tarifi elindekilerle tam olarak yapabilirsin. Üstte en hızlı olanları bıraktım.`,
-        `Güzel bir dolap: ${perfect.length} tarif için alışveriş yapman bile gerekmiyor.`,
-        `Neyse ki ${perfect.length} seçeneğin var — hepsi elindekiyle tamam.`,
+        `${ctx}${perfect.length} tarifi elindekilerle tam olarak yapabilirsin. Üstte en hızlı olanları bıraktım.`,
+        `${ctx}Güzel bir dolap: ${perfect.length} tarif için alışveriş yapman bile gerekmiyor.`,
+        `${ctx}Neyse ki ${perfect.length} seçeneğin var — hepsi elindekiyle tamam.`,
       ],
       seed,
     );
@@ -137,7 +139,7 @@ export function buildOverallCommentary(
   if (perfect.length === 2) {
     return pick(
       [
-        `${cp}İki tarif için hiçbir şey eksik değil: ${perfect[0].title} ve ${perfect[1].title}. Hangisine ruh halindesin?`,
+        `${ctx}İki tarif için hiçbir şey eksik değil: ${perfect[0].title} ve ${perfect[1].title}. Hangisine ruh halindesin?`,
         `Elindekiyle ${perfect[0].title} veya ${perfect[1].title} yapabilirsin. İkisi de 0 eksik.`,
         `Tam uyum 2 tarifte: ${perfect[0].title} ve ${perfect[1].title}. Gerisi için birkaç şey almak gerek.`,
       ],
@@ -149,7 +151,7 @@ export function buildOverallCommentary(
     const p = perfect[0];
     return pick(
       [
-        `${cp}${p.title} için hiçbir şey almana gerek yok — tam uyum. Altında birkaç yakın alternatif var.`,
+        `${ctx}${p.title} için hiçbir şey almana gerek yok — tam uyum. Altında birkaç yakın alternatif var.`,
         `Hemen mutfağa gidebilirsin: ${p.title} elindekiyle tamam. Diğerleri için ufak eksikler var.`,
         `Tam çıkan tek tarif: ${p.title}. Alternatif arıyorsan alttakilerden biri için 1-2 malzeme yeter.`,
       ],
@@ -161,7 +163,7 @@ export function buildOverallCommentary(
     const missing = formatList(top.missingIngredients);
     return pick(
       [
-        `${cp}Tam eşleşme yok ama ${top.title} için sadece ${missing} eksik — market turu kısa.`,
+        `${ctx}Tam eşleşme yok ama ${top.title} için sadece ${missing} eksik — market turu kısa.`,
         `En yakın seçenek ${top.title}. Sadece ${missing} alırsan başlayabilirsin.`,
         `${top.title}'nda ${missing} eksik. Onun dışında her şey elinde.`,
       ],
@@ -171,7 +173,7 @@ export function buildOverallCommentary(
 
   return pick(
     [
-      `${cp}Tam eşleşme çıkmadı, ama ${top.title} en çok malzemeni kullanıyor. Eksikler liste halinde altında.`,
+      `${ctx}Tam eşleşme çıkmadı, ama ${top.title} en çok malzemeni kullanıyor. Eksikler liste halinde altında.`,
       `En uygun aday ${top.title}. Eksiklerle birlikte aşağıda sıraladım.`,
       `${top.title} iyi bir başlangıç. Neyin eksik olduğunu kartta görebilirsin.`,
     ],

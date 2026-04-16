@@ -6,7 +6,7 @@ import { FilterPanel } from "@/components/search/FilterPanel";
 import { AllergenFilter } from "@/components/search/AllergenFilter";
 import { DietFilter } from "@/components/search/DietFilter";
 import { CuisineFilter } from "@/components/search/CuisineFilter";
-import { CUISINE_CODES, type CuisineCode } from "@/lib/cuisines";
+import { CUISINE_CODES, CUISINE_LABEL, type CuisineCode } from "@/lib/cuisines";
 import { getRecipes } from "@/lib/queries/recipe";
 import { getCategories } from "@/lib/queries/category";
 import { getTags } from "@/lib/queries/tag";
@@ -16,17 +16,29 @@ import { ALLERGEN_ORDER } from "@/lib/allergens";
 import { getSearchSuggestions } from "@/lib/queries/search-suggestions";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Tarifler",
-  description:
-    "Tüm yemek, içecek ve kokteyl tariflerini keşfet. Kategoriye, zorluğa ve süreye göre filtrele.",
-  // Filter combinations (?kategori=, ?etiket=, ?q=…) üretilen her URL
-  // varyantı ayrı indekslenmesin — param-free /tarifler canonical.
-  // Google'a "bu ana listeleme sayfası" sinyali.
-  alternates: {
-    canonical: "/tarifler",
-  },
-};
+export async function generateMetadata({ searchParams }: TariflerPageProps): Promise<Metadata> {
+  const params = await searchParams;
+  const rawCuisines = params.mutfak
+    ? Array.isArray(params.mutfak) ? params.mutfak : [params.mutfak]
+    : [];
+  const cuisineLabels = rawCuisines
+    .filter((c): c is CuisineCode => (CUISINE_CODES as readonly string[]).includes(c))
+    .map((c) => CUISINE_LABEL[c]);
+
+  const title = cuisineLabels.length > 0
+    ? `${cuisineLabels.join(" & ")} Tarifleri`
+    : "Tarifler";
+
+  const description = cuisineLabels.length > 0
+    ? `${cuisineLabels.join(" ve ")} mutfağından yemek, içecek ve kokteyl tariflerini keşfet.`
+    : "Tüm yemek, içecek ve kokteyl tariflerini keşfet. Kategoriye, zorluğa ve süreye göre filtrele.";
+
+  return {
+    title,
+    description,
+    alternates: { canonical: "/tarifler" },
+  };
+}
 
 interface TariflerPageProps {
   searchParams: Promise<{

@@ -63,22 +63,40 @@ async function main(): Promise<void> {
   const quickRemovals: { recipeId: string; slug: string; total: number }[] = [];
   const proteinRemovals: { recipeId: string; slug: string; protein: number }[] = [];
 
+  const skippedLastTag: string[] = [];
   for (const r of recipes) {
     const tagIds = new Set(r.tags.map((t) => t.tagId));
     if (tagIds.has(quickId) && r.totalMinutes > QUICK_THRESHOLD) {
-      quickRemovals.push({ recipeId: r.id, slug: r.slug, total: r.totalMinutes });
+      // Don't leave the recipe with 0 tags — skip if quick tag is the only one
+      if (r.tags.length === 1) {
+        skippedLastTag.push(`${r.slug} (would lose "30-dakika-alti" as only tag)`);
+      } else {
+        quickRemovals.push({ recipeId: r.id, slug: r.slug, total: r.totalMinutes });
+      }
     }
     if (
       tagIds.has(proteinId) &&
       r.protein !== null &&
       Number(r.protein) < PROTEIN_THRESHOLD
     ) {
-      proteinRemovals.push({
-        recipeId: r.id,
-        slug: r.slug,
-        protein: Number(r.protein),
-      });
+      if (r.tags.length === 1) {
+        skippedLastTag.push(`${r.slug} (would lose "yuksek-protein" as only tag)`);
+      } else {
+        proteinRemovals.push({
+          recipeId: r.id,
+          slug: r.slug,
+          protein: Number(r.protein),
+        });
+      }
     }
+  }
+
+  if (skippedLastTag.length > 0) {
+    console.log(
+      `⚠️  Skipped ${skippedLastTag.length} recipe(s) to avoid leaving 0 tags:`,
+    );
+    for (const s of skippedLastTag) console.log(`   ${s}`);
+    console.log("");
   }
 
   console.log(`--- 30-dakika-alti removals (${quickRemovals.length}) ---`);

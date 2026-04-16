@@ -1,12 +1,12 @@
 /**
- * RSS 2.0 feed handler — `/rss.xml` route. Son 30 PUBLISHED tarifi
+ * RSS 2.0 feed handler — `/rss.xml` route. Son 50 PUBLISHED tarifi
  * yayınlar; feed reader'lar (Feedly, Inoreader, NetNewsWire) ve
  * Google Feed crawler abone olabilir.
  *
- * Neden 30: RSS default / expected size. Feed reader'lar tipik olarak
- * ilk fetch'te hepsini yükler, sonrası delta. Çok büyük feed'ler
- * (200+) crawler'ları yorar ve tarihsiz öğeler eski sırada gelirse
- * kullanıcı yeni tarifleri kolay bulamaz.
+ * Neden 50: 706+ tarif ölçeğinde 30 tarif son 3 batch'i bile kapsamıyor.
+ * 50, Codex'in bir batch'ini (100) tam kaplamaz ama son 2-3 haftanın
+ * yeni içeriğini gösterir. Feed reader'lar tipik olarak ilk fetch'te
+ * hepsini yükler, sonrası delta.
  *
  * Cache: hourly revalidate (sitemap ile uyumlu). Her batch sonrası
  * seed + retrofit + sitemap ping pipeline'ında RSS de otomatik güncel
@@ -39,7 +39,7 @@ export async function GET(): Promise<Response> {
       category: { select: { name: true } },
     },
     orderBy: { createdAt: "desc" },
-    take: 30,
+    take: 50,
   });
 
   const items: RssItem[] = recipes.map((r) => ({

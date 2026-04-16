@@ -28,6 +28,7 @@ export const CUISINE_CODES = [
   "cu",
   "ru",
   "hu",
+  "se",
 ] as const;
 
 export type CuisineCode = (typeof CUISINE_CODES)[number];
@@ -52,6 +53,7 @@ export const CUISINE_LABEL: Record<CuisineCode, string> = {
   cu: "Küba",
   ru: "Rus",
   hu: "Macar",
+  se: "İskandinav",
 };
 
 export const CUISINE_FLAG: Record<CuisineCode, string> = {
@@ -74,6 +76,7 @@ export const CUISINE_FLAG: Record<CuisineCode, string> = {
   cu: "🇨🇺",
   ru: "🇷🇺",
   hu: "🇭🇺",
+  se: "🇸🇪",
 };
 
 // ─── Inference engine ───────────────────────────────────────
@@ -238,6 +241,16 @@ const SLUG_PATTERNS: readonly { cuisine: CuisineCode; patterns: string[] }[] = [
       "kurtoskalacs", "lecho", "toltott",
     ],
   },
+  // Scandinavian
+  {
+    cuisine: "se",
+    patterns: [
+      "gravlax", "smorgasbord", "kanelbulle", "kottbullar",
+      "janssons", "raggmunk", "kroppkakor", "semla",
+      "lefse", "lutefisk", "smorrebrod", "frikadeller",
+      "fleskesteg", "karjalanpiirakka",
+    ],
+  },
 ];
 
 /**
@@ -264,6 +277,7 @@ const TEXT_KEYWORDS: readonly { cuisine: CuisineCode; keywords: string[] }[] = [
   { cuisine: "cu", keywords: ["küba"] },
   { cuisine: "ru", keywords: ["rus mutfağı", "rus usulü", "rusya"] },
   { cuisine: "hu", keywords: ["macar", "macaristan"] },
+  { cuisine: "se", keywords: ["iskandinav", "isveç", "norveç", "danimarka", "finlandiya"] },
 ];
 
 interface InferInput {

@@ -69,7 +69,7 @@ doğru etiketleri tarifte birlikte göndermek tercih edilir.
 type:       YEMEK | TATLI | ICECEK | KOKTEYL | APERATIF | SALATA | CORBA | KAHVALTI | ATISTIRMALIK | SOS
 difficulty: EASY | MEDIUM | HARD
 allergens:  GLUTEN | SUT | YUMURTA | KUSUYEMIS | YER_FISTIGI | SOYA | DENIZ_URUNLERI | SUSAM | KEREVIZ | HARDAL
-cuisine:    tr | it | fr | es | gr | jp | cn | kr | th | in | mx | us | me | ma | vn | br | cu | ru | hu
+cuisine:    tr | it | fr | es | gr | jp | cn | kr | th | in | mx | us | me | ma | vn | br | cu | ru | hu | se
 ```
 
 **Mutfak kodu (`cuisine`)**: tarifin ait olduğu mutfak. String, nullable,
@@ -86,7 +86,7 @@ cuisine:    tr | it | fr | es | gr | jp | cn | kr | th | in | mx | us | me | ma 
 | `me` | Orta Doğu | `ma` | Kuzey Afrika |
 | `vn` | Vietnam | `br` | Brezilya |
 | `cu` | Küba | `ru` | Rus |
-| `hu` | Macar | | |
+| `hu` | Macar | `se` | İskandinav |
 
 Bir tarif **tek** mutfağa ait. Eklemek opsiyoneldir — eksik bırakılırsa
 `scripts/retrofit-cuisine.ts` title/slug/description'dan çıkarım yapar.

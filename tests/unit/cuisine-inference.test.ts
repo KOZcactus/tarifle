@@ -181,6 +181,22 @@ describe("inferCuisineFromRecipe", () => {
     expect(inferCuisineFromRecipe(recipe({ slug: "chicken-paprikash" }))).toBe("hu");
   });
 
+  test("Scandinavian slug: gravlax → se", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "gravlax" }))).toBe("se");
+  });
+
+  test("Scandinavian slug: kanelbulle → se", () => {
+    expect(inferCuisineFromRecipe(recipe({ slug: "kanelbulle" }))).toBe("se");
+  });
+
+  test("Scandinavian title keyword → se", () => {
+    expect(
+      inferCuisineFromRecipe(
+        recipe({ title: "İskandinav Somon Salatası", slug: "iskandinav-somon" }),
+      ),
+    ).toBe("se");
+  });
+
   // ─── Default to Turkish ───────────────────────────────────
 
   test("no international markers → default tr", () => {
@@ -223,8 +239,8 @@ describe("inferCuisineFromRecipe", () => {
 });
 
 describe("cuisine constants", () => {
-  test("CUISINE_CODES has 19 entries", () => {
-    expect(CUISINE_CODES).toHaveLength(19);
+  test("CUISINE_CODES has 20 entries", () => {
+    expect(CUISINE_CODES).toHaveLength(20);
   });
 
   test("every code has a label", () => {

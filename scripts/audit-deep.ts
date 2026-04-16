@@ -145,6 +145,8 @@ const ALLERGEN_RULES: AllergenRule[] = [
       "udon", "gnocchi", "tortilla", "ravioli", "tortellini", "orzo", "pastitsio",
       // Compound bread names where base "ekmek" substring won't catch:
       "tost", "bagel", "milfoy", "pita", "tandir ekmeg",
+      // Regional breads + croutons + muffin variants:
+      "muffin", "kruton", "güllaç", "misugaru",
       // Intentionally excluded from keywords: "ramen" (ramen noodle is in
       // excludePatterns as gluten-free flag — actually wheat-based; fix
       // that separately), "soba" (buckwheat, gluten-free).
@@ -202,7 +204,9 @@ const ALLERGEN_RULES: AllergenRule[] = [
       "yoğurt", "krema", "peynir", "kaymak", "tereyağı", "labne", "lor",
       // Aligned with src/lib/allergens.ts + common ingredient names:
       "kaşar", "ayran", "dondurma", "mozzarella", "parmesan", "ricotta",
-      "mascarpone", "feta", "pecorino", "cheddar", "cheddar",
+      "mascarpone", "feta", "pecorino", "cheddar",
+      // Fermented milk products (kefir, Swedish filmjölk, Russian smetana):
+      "kefir", "filmjölk", "smetana", "kırmızı peynir", "krem peynir",
     ],
     excludePatterns: [
       // Non-dairy "süt" — do NOT flag as SUT
@@ -230,6 +234,8 @@ const ALLERGEN_RULES: AllergenRule[] = [
     keywords: [
       "ceviz", "badem", "fındık", "antep fıstığı", "kaju", "pekan",
       "çam fıstığı", "macadamia",
+      // Turkish nut aliases (dolmalık fıstık = çam fıstığı):
+      "dolmalık fıstık",
     ],
     excludePatterns: [
       // Hindistan cevizi (coconut) is NOT a tree nut
@@ -269,18 +275,28 @@ const ALLERGEN_RULES: AllergenRule[] = [
   },
   {
     allergen: "SOYA",
-    keywords: ["soya", "tofu", "miso", "edamame"],
+    keywords: [
+      "soya", "tofu", "miso", "edamame",
+      // Korean/Japanese soy-based pastes + sauces:
+      "gochujang", "chunjang", "siyah fasulye ezmesi",
+      "tonkatsu sosu", "japon köri", "misugaru",
+    ],
   },
   {
     allergen: "DENIZ_URUNLERI",
     keywords: [
       "balık", "somon", "levrek", "hamsi", "karides", "midye",
       "kalamar", "ahtapot", "karidesli", "palamut", "istavrit",
+      // Crustaceans + mollusks + dried fish flakes:
+      "yengeç", "deniz tarağı", "ançüez", "bonito", "istiridye",
+      // "ton" alone collides with "tonik suyu" — use "ton balığı" possessive
+      // form "ton balıgı" explicitly to catch "Ton balığı" ingredient:
+      "ton balığı",
     ],
   },
   {
     allergen: "SUSAM",
-    keywords: ["susam", "tahin"],
+    keywords: ["susam", "tahin", "furikake", "zaatar"],
   },
   {
     allergen: "KEREVIZ",

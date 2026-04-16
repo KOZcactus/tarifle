@@ -13,6 +13,7 @@ import { getTags } from "@/lib/queries/tag";
 import { searchRecipeIds } from "@/lib/search/recipe-search";
 import { ITEMS_PER_PAGE } from "@/lib/constants";
 import { ALLERGEN_ORDER } from "@/lib/allergens";
+import { getSearchSuggestions } from "@/lib/queries/search-suggestions";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -110,7 +111,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
     ? (await searchRecipeIds({ query })).map((r) => r.id)
     : undefined;
 
-  const [{ recipes, total }, categories, tags] = await Promise.all([
+  const [{ recipes, total }, categories, tags, searchSuggestions] = await Promise.all([
     getRecipes({
       query: query || undefined,
       difficulty: difficulty || undefined,
@@ -126,6 +127,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
     }),
     getCategories(),
     getTags(),
+    getSearchSuggestions(),
   ]);
 
   const totalPages = Math.ceil(total / ITEMS_PER_PAGE);
@@ -141,7 +143,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
       {/* Search & Filters */}
       <div className="mb-8 space-y-4">
         <Suspense>
-          <SearchBar />
+          <SearchBar suggestions={searchSuggestions} />
         </Suspense>
         <Suspense>
           <FilterPanel categories={categories} tags={tags} />

@@ -7,6 +7,7 @@ import { getFeaturedRecipes, getRecipes, getRecentRecipes } from "@/lib/queries/
 import { getCategories } from "@/lib/queries/category";
 import { auth } from "@/lib/auth";
 import { getCuisineStats } from "@/lib/queries/cuisine-stats";
+import { getSearchSuggestions } from "@/lib/queries/search-suggestions";
 
 const POPULAR_SEARCHES = [
   "karnıyarık",
@@ -19,7 +20,7 @@ const POPULAR_SEARCHES = [
 ];
 
 export default async function HomePage() {
-  const [featured, recent, categories, { total: recipeCount }, session, cuisineStats] =
+  const [featured, recent, categories, { total: recipeCount }, session, cuisineStats, searchSuggestions] =
     await Promise.all([
       getFeaturedRecipes(6),
       getRecentRecipes(14, 8),
@@ -27,6 +28,7 @@ export default async function HomePage() {
       getRecipes({ limit: 0 }),
       auth(),
       getCuisineStats(),
+      getSearchSuggestions(),
     ]);
 
   // Tarif sayısı olan kategorileri önce göster
@@ -52,7 +54,7 @@ export default async function HomePage() {
         {/* Search */}
         <div className="mt-8 w-full max-w-xl">
           <Suspense>
-            <SearchBar placeholder="Tarif veya malzeme ara..." />
+            <SearchBar placeholder="Tarif veya malzeme ara..." suggestions={searchSuggestions} />
           </Suspense>
         </div>
 

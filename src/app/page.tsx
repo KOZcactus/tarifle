@@ -6,6 +6,7 @@ import { RecipeOfTheDay } from "@/components/home/RecipeOfTheDay";
 import { getFeaturedRecipes, getRecipes, getRecentRecipes } from "@/lib/queries/recipe";
 import { getCategories } from "@/lib/queries/category";
 import { auth } from "@/lib/auth";
+import { getCuisineStats } from "@/lib/queries/cuisine-stats";
 
 const POPULAR_SEARCHES = [
   "karnıyarık",
@@ -18,13 +19,14 @@ const POPULAR_SEARCHES = [
 ];
 
 export default async function HomePage() {
-  const [featured, recent, categories, { total: recipeCount }, session] =
+  const [featured, recent, categories, { total: recipeCount }, session, cuisineStats] =
     await Promise.all([
       getFeaturedRecipes(6),
       getRecentRecipes(14, 8),
       getCategories(),
       getRecipes({ limit: 0 }),
       auth(),
+      getCuisineStats(),
     ]);
 
   // Tarif sayısı olan kategorileri önce göster
@@ -136,6 +138,45 @@ export default async function HomePage() {
           </span>
         </Link>
       </section>
+
+      {/* Cuisine Discovery */}
+      {cuisineStats.length >= 4 && (
+        <section className="py-12">
+          <div className="flex items-center justify-between">
+            <h2 className="font-heading text-2xl font-bold">Mutfaklara Göz At</h2>
+            <Link
+              href="/tarifler"
+              className="text-sm text-primary hover:underline"
+            >
+              Tümünü filtrele →
+            </Link>
+          </div>
+          <p className="mt-1 text-sm text-text-muted">
+            {cuisineStats.length} mutfaktan {recipeCount}+ tarif keşfet
+          </p>
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            {cuisineStats.slice(0, 10).map((cs) => (
+              <Link
+                key={cs.code}
+                href={`/tarifler?mutfak=${cs.code}`}
+                className="group flex items-center gap-3 rounded-xl border border-border bg-bg-card p-3 transition-all hover:border-primary hover:shadow-lg hover:shadow-primary/5"
+              >
+                <span className="text-2xl transition-transform duration-200 group-hover:scale-110">
+                  {cs.flag}
+                </span>
+                <div>
+                  <span className="text-sm font-medium text-text">
+                    {cs.label}
+                  </span>
+                  <span className="block text-[10px] text-text-muted">
+                    {cs.count} tarif
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Categories */}
       <section className="py-12">

@@ -4,6 +4,7 @@ import {
   ingredientMatches,
   isPantryStaple,
   normalizeIngredient,
+  recipeContainsExcluded,
 } from "@/lib/ai/matcher";
 
 describe("normalizeIngredient", () => {
@@ -167,5 +168,34 @@ describe("computeMatch", () => {
     const result = computeMatch(allOptional, ["nane"]);
     // No required ingredients → score is 0 by convention (see matcher.ts)
     expect(result.score).toBe(0);
+  });
+});
+
+describe("recipeContainsExcluded", () => {
+  const ings = [
+    { name: "Tavuk göğsü" },
+    { name: "Soğan" },
+    { name: "Fıstık" },
+    { name: "Zeytinyağı" },
+  ];
+
+  it("returns true when an excluded ingredient matches", () => {
+    expect(recipeContainsExcluded(ings, ["fıstık"])).toBe(true);
+  });
+
+  it("returns false when no excluded ingredient matches", () => {
+    expect(recipeContainsExcluded(ings, ["yumurta"])).toBe(false);
+  });
+
+  it("handles empty exclude list", () => {
+    expect(recipeContainsExcluded(ings, [])).toBe(false);
+  });
+
+  it("matches with prefix logic (tavuk matches Tavuk göğsü)", () => {
+    expect(recipeContainsExcluded(ings, ["tavuk"])).toBe(true);
+  });
+
+  it("does not match partial non-prefix (ğan does not match Soğan)", () => {
+    expect(recipeContainsExcluded(ings, ["ğan"])).toBe(false);
   });
 });

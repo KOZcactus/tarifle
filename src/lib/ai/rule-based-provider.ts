@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import { computeMatch } from "./matcher";
+import { computeMatch, recipeContainsExcluded } from "./matcher";
 import { assignRecipeNotes, buildOverallCommentary } from "./commentary";
 import type {
   AiProvider,
@@ -13,35 +13,40 @@ const MAX_RESULTS = 6;
 
 /**
  * Rule-based provider — does DB-side filtering + client-side scoring by
- * ingredient overlap. Used as a fallback when no AI API key is configured,
- * and as the first-pass recall stage when Claude is wired up later.
+ * ingredient overlap. Evaluates ALL published recipes (no cap) — at 1000
+ * recipes × ~6 ingredients, client-side scoring stays <20ms.
+ *
+ * Filters: type, difficulty, maxMinutes (DB-side), cuisine (DB-side),
+ * excludeIngredients (client-side post-score).
  */
 export class RuleBasedProvider implements AiProvider {
   readonly name = "rule-based" as const;
 
   async suggest(input: AiSuggestInput): Promise<AiSuggestResponse> {
-    // Deterministic candidate pool: always evaluate the same 200 rows for the
-    // same filters, so results don't drift when the DB's natural order changes.
-    // When we outgrow 200 published recipes, swap this for an ingredient
-    // inverted index / trigram scan.
     const recipes = await prisma.recipe.findMany({
       where: {
         status: "PUBLISHED",
         ...(input.type ? { type: input.type } : {}),
         ...(input.difficulty ? { difficulty: input.difficulty } : {}),
-        ...(input.maxMinutes ? { totalMinutes: { lte: input.maxMinutes } } : {}),
+        ...(input.maxMinutes
+          ? { totalMinutes: { lte: input.maxMinutes } }
+          : {}),
+        // Cuisine filter — DB-side via btree index. Empty/undefined = all.
+        ...(input.cuisines && input.cuisines.length > 0
+          ? { cuisine: { in: input.cuisines } }
+          : {}),
       },
       include: {
         ingredients: true,
         category: { select: { name: true } },
       },
-      orderBy: [
-        { isFeatured: "desc" },
-        { viewCount: "desc" },
-        { createdAt: "desc" },
-      ],
-      take: 200,
+      // No `take` cap — evaluate all matching recipes. At 1000 recipes
+      // × ~6 ingredients, client-side scoring is <20ms. If we ever hit
+      // 5000+, swap this for an ingredient inverted index.
+      orderBy: { slug: "asc" },
     });
+
+    const excludeList = input.excludeIngredients ?? [];
 
     const scored: AiSuggestion[] = recipes
       .map((recipe) => {
@@ -68,18 +73,32 @@ export class RuleBasedProvider implements AiProvider {
           matchScore: match.score,
           matchedIngredients: match.matched,
           missingIngredients: match.missing,
+          // Keep ingredient list ref for exclude check below
+          _ingredients: recipe.ingredients,
         };
       })
+      // Exclude recipes containing any of the excluded ingredients
+      .filter((s) =>
+        excludeList.length === 0
+          ? true
+          : !recipeContainsExcluded(s._ingredients, excludeList),
+      )
       .filter((s) => s.matchScore >= MIN_SCORE)
       .sort((a, b) => {
         if (b.matchScore !== a.matchScore) return b.matchScore - a.matchScore;
         // Tie-break: fewer total minutes first — easier to make
         return a.totalMinutes - b.totalMinutes;
       })
-      .slice(0, MAX_RESULTS);
+      .slice(0, MAX_RESULTS)
+      // Strip internal _ingredients field before returning
+      .map(({ _ingredients, ...rest }) => rest);
 
     const withNotes = assignRecipeNotes(scored);
-    const commentary = buildOverallCommentary(input.ingredients, withNotes);
+    const commentary = buildOverallCommentary(
+      input.ingredients,
+      withNotes,
+      input.cuisines,
+    );
 
     return {
       suggestions: withNotes,

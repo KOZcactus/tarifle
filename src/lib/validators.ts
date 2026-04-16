@@ -198,6 +198,11 @@ export const aiSuggestSchema = z.object({
   difficulty: z.enum(["EASY", "MEDIUM", "HARD"]).optional(),
   maxMinutes: z.number().int().positive().max(480).optional(),
   assumePantryStaples: z.boolean().optional(),
+  cuisines: z.array(z.string().min(2).max(5)).max(20).optional(),
+  excludeIngredients: z
+    .array(z.string().min(1).max(80))
+    .max(10, "En fazla 10 hariç tutulan malzeme.")
+    .optional(),
 });
 
 export const passwordChangeSchema = z

@@ -79,6 +79,22 @@ export function isPantryStaple(ingredient: string): boolean {
   return recipeTokens.every((t) => PANTRY_TOKEN_SET.has(t));
 }
 
+/**
+ * Check if a recipe contains any of the excluded ingredients.
+ * Uses the same `ingredientMatches` logic as the main matcher.
+ * Returns true if the recipe should be EXCLUDED (disqualified).
+ */
+export function recipeContainsExcluded(
+  recipeIngredients: readonly { name: string }[],
+  excludeIngredients: readonly string[],
+): boolean {
+  if (excludeIngredients.length === 0) return false;
+  const excludeNorm = excludeIngredients.map(normalizeIngredient).filter(Boolean);
+  return recipeIngredients.some((ri) =>
+    excludeNorm.some((ex) => ingredientMatches(ri.name, ex)),
+  );
+}
+
 export interface MatchResult {
   matched: string[];
   missing: string[];

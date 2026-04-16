@@ -14,6 +14,12 @@ export interface AiSuggestInput {
   difficulty?: Difficulty;
   /** If true, common pantry staples (tuz, karabiber, su, yağ) are assumed on hand. */
   assumePantryStaples?: boolean;
+  /** Cuisine filter — recipe.cuisine must match one of these codes.
+   *  Empty/undefined = no filter (all cuisines, "Hepsi" mode). */
+  cuisines?: string[];
+  /** Ingredients to exclude — any recipe containing a matching ingredient
+   *  is disqualified regardless of match score. */
+  excludeIngredients?: string[];
 }
 
 /**

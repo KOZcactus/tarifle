@@ -6,6 +6,7 @@ import { suggestRecipesAction } from "@/lib/actions/ai";
 import type { AiSuggestResponse } from "@/lib/ai/types";
 import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
 import { DIFFICULTY_OPTIONS, RECIPE_TYPE_LABELS } from "@/lib/constants";
+import { CUISINE_CODES, CUISINE_LABEL, CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
 
 const TIME_OPTIONS = [
   { value: 15, label: "15 dk'ya kadar" },
@@ -17,9 +18,12 @@ const TIME_OPTIONS = [
 export function AiAssistantForm() {
   const [ingredients, setIngredients] = useState<string[]>([]);
   const [currentInput, setCurrentInput] = useState("");
+  const [excludeIngredients, setExcludeIngredients] = useState<string[]>([]);
+  const [excludeInput, setExcludeInput] = useState("");
   const [type, setType] = useState<string>("");
   const [difficulty, setDifficulty] = useState<string>("");
   const [maxMinutes, setMaxMinutes] = useState<string>("");
+  const [cuisine, setCuisine] = useState<string>("tr");
   const [assumePantry, setAssumePantry] = useState(true);
   const [result, setResult] = useState<AiSuggestResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -31,6 +35,27 @@ export function AiAssistantForm() {
     if (ingredients.includes(trimmed.toLocaleLowerCase("tr"))) return;
     setIngredients([...ingredients, trimmed]);
     setCurrentInput("");
+  }
+
+  function addExclude(raw: string) {
+    const trimmed = raw.trim().replace(/,$/, "");
+    if (!trimmed) return;
+    if (excludeIngredients.includes(trimmed.toLocaleLowerCase("tr"))) return;
+    setExcludeIngredients([...excludeIngredients, trimmed]);
+    setExcludeInput("");
+  }
+
+  function handleExcludeKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key === "Enter" || e.key === ",") {
+      e.preventDefault();
+      addExclude(excludeInput);
+    } else if (e.key === "Backspace" && !excludeInput && excludeIngredients.length > 0) {
+      setExcludeIngredients(excludeIngredients.slice(0, -1));
+    }
+  }
+
+  function removeExclude(index: number) {
+    setExcludeIngredients(excludeIngredients.filter((_, i) => i !== index));
   }
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
@@ -68,6 +93,8 @@ export function AiAssistantForm() {
         difficulty: difficulty || undefined,
         maxMinutes: maxMinutes ? Number(maxMinutes) : undefined,
         assumePantryStaples: assumePantry,
+        cuisines: cuisine ? (cuisine === "all" ? undefined : [cuisine]) : undefined,
+        excludeIngredients: excludeIngredients.length > 0 ? excludeIngredients : undefined,
       };
       const response = await suggestRecipesAction(payload);
       if (!response.success || !response.data) {
@@ -138,8 +165,57 @@ export function AiAssistantForm() {
           </p>
         </div>
 
+        {/* Exclude ingredients chips input */}
+        <div className="mt-4">
+          <label className="mb-2 block text-sm font-medium text-text">
+            Bu malzemeler olmasın
+            <span className="ml-1 text-xs font-normal text-text-muted">(opsiyonel)</span>
+          </label>
+          <div className="flex flex-wrap items-center gap-2 rounded-lg border border-border bg-bg-elevated px-3 py-2 focus-within:border-error/60">
+            {excludeIngredients.map((ing, i) => (
+              <span
+                key={`ex-${ing}-${i}`}
+                className="flex items-center gap-1.5 rounded-full bg-error/10 px-3 py-1 text-sm text-error"
+              >
+                {ing}
+                <button
+                  type="button"
+                  onClick={() => removeExclude(i)}
+                  aria-label={`${ing} hariç tutmayı kaldır`}
+                  className="text-error/60 transition-colors hover:text-error"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                  >
+                    <path d="M18 6 6 18M6 6l12 12" />
+                  </svg>
+                </button>
+              </span>
+            ))}
+            <input
+              type="text"
+              value={excludeInput}
+              onChange={(e) => setExcludeInput(e.target.value)}
+              onKeyDown={handleExcludeKeyDown}
+              onBlur={() => excludeInput.trim() && addExclude(excludeInput)}
+              placeholder={
+                excludeIngredients.length === 0
+                  ? "Örn. fıstık, yumurta (alerji veya tercih)"
+                  : "Başka malzeme…"
+              }
+              className="min-w-[200px] flex-1 bg-transparent text-sm outline-none"
+            />
+          </div>
+        </div>
+
         {/* Filters */}
-        <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <label
               htmlFor="ai-filter-type"
@@ -199,6 +275,27 @@ export function AiAssistantForm() {
               {DIFFICULTY_OPTIONS.map((opt) => (
                 <option key={opt.value} value={opt.value}>
                   {opt.label}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label
+              htmlFor="ai-filter-cuisine"
+              className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-text-muted"
+            >
+              Mutfak
+            </label>
+            <select
+              id="ai-filter-cuisine"
+              value={cuisine}
+              onChange={(e) => setCuisine(e.target.value)}
+              className="w-full rounded-md border border-border bg-bg-elevated px-3 py-2 text-sm outline-none focus:border-primary"
+            >
+              <option value="all">Hepsi</option>
+              {CUISINE_CODES.map((code) => (
+                <option key={code} value={code}>
+                  {CUISINE_FLAG[code]} {CUISINE_LABEL[code]}
                 </option>
               ))}
             </select>

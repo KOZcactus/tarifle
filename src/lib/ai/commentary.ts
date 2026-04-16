@@ -9,6 +9,7 @@
  * fresh.
  */
 import type { AiSuggestion } from "./types";
+import { CUISINE_LABEL, type CuisineCode } from "@/lib/cuisines";
 
 function pick<T>(options: T[], seed: string): T {
   let hash = 0;
@@ -28,16 +29,35 @@ function formatList(items: string[], max = 2): string {
   return `${trimmed.join(", ")} gibi ${items.length - max} malzeme`;
 }
 
+/**
+ * Build a cuisine context prefix for the commentary. Examples:
+ * - cuisines=["tr"] → "Türk mutfağından "
+ * - cuisines=["jp","kr"] → "Japon ve Kore mutfağından "
+ * - cuisines undefined/empty → "" (no prefix, "Hepsi" mode)
+ */
+function cuisinePrefix(cuisines?: string[]): string {
+  if (!cuisines || cuisines.length === 0) return "";
+  const labels = cuisines
+    .map((c) => CUISINE_LABEL[c as CuisineCode])
+    .filter(Boolean);
+  if (labels.length === 0) return "";
+  if (labels.length === 1) return `${labels[0]} mutfağından `;
+  if (labels.length === 2) return `${labels[0]} ve ${labels[1]} mutfağından `;
+  return `${labels.slice(0, 2).join(", ")} ve ${labels.length - 2} mutfak daha arasından `;
+}
+
 export function buildOverallCommentary(
   userIngredients: string[],
   results: AiSuggestion[],
+  cuisines?: string[],
 ): string {
   const seed = userIngredients.join("|").toLocaleLowerCase("tr");
+  const cp = cuisinePrefix(cuisines);
 
   if (results.length === 0) {
     return pick(
       [
-        `${userIngredients.length} malzemenle yapılabilecek tarif çıkmadı. Bir iki şey daha ekler misin, yoksa filtreleri gevşetelim mi?`,
+        `${cp}${userIngredients.length} malzemenle yapılabilecek tarif çıkmadı. Bir iki şey daha ekler misin, yoksa filtreleri gevşetelim mi?`,
         `Bu kombinasyonla eşleşen tarifim yok. Biraz daha malzeme yaz, ya da tür/süre filtrelerini gevşet.`,
         `Elindekinle bir şey bulamadım. Daha temel malzemelerle (yumurta, soğan, domates gibi) dene.`,
       ],
@@ -54,7 +74,7 @@ export function buildOverallCommentary(
   if (perfect.length >= 3) {
     return pick(
       [
-        `${perfect.length} tarifi elindekilerle tam olarak yapabilirsin. Üstte en hızlı olanları bıraktım.`,
+        `${cp}${perfect.length} tarifi elindekilerle tam olarak yapabilirsin. Üstte en hızlı olanları bıraktım.`,
         `Güzel bir dolap: ${perfect.length} tarif için alışveriş yapman bile gerekmiyor.`,
         `Neyse ki ${perfect.length} seçeneğin var — hepsi elindekiyle tamam.`,
       ],
@@ -65,7 +85,7 @@ export function buildOverallCommentary(
   if (perfect.length === 2) {
     return pick(
       [
-        `İki tarif için hiçbir şey eksik değil: ${perfect[0].title} ve ${perfect[1].title}. Hangisine ruh halindesin?`,
+        `${cp}İki tarif için hiçbir şey eksik değil: ${perfect[0].title} ve ${perfect[1].title}. Hangisine ruh halindesin?`,
         `Elindekiyle ${perfect[0].title} veya ${perfect[1].title} yapabilirsin. İkisi de 0 eksik.`,
         `Tam uyum 2 tarifte: ${perfect[0].title} ve ${perfect[1].title}. Gerisi için birkaç şey almak gerek.`,
       ],
@@ -77,7 +97,7 @@ export function buildOverallCommentary(
     const p = perfect[0];
     return pick(
       [
-        `${p.title} için hiçbir şey almana gerek yok — tam uyum. Altında birkaç yakın alternatif var.`,
+        `${cp}${p.title} için hiçbir şey almana gerek yok — tam uyum. Altında birkaç yakın alternatif var.`,
         `Hemen mutfağa gidebilirsin: ${p.title} elindekiyle tamam. Diğerleri için ufak eksikler var.`,
         `Tam çıkan tek tarif: ${p.title}. Alternatif arıyorsan alttakilerden biri için 1-2 malzeme yeter.`,
       ],
@@ -89,7 +109,7 @@ export function buildOverallCommentary(
     const missing = formatList(top.missingIngredients);
     return pick(
       [
-        `Tam eşleşme yok ama ${top.title} için sadece ${missing} eksik — market turu kısa.`,
+        `${cp}Tam eşleşme yok ama ${top.title} için sadece ${missing} eksik — market turu kısa.`,
         `En yakın seçenek ${top.title}. Sadece ${missing} alırsan başlayabilirsin.`,
         `${top.title}'nda ${missing} eksik. Onun dışında her şey elinde.`,
       ],
@@ -99,7 +119,7 @@ export function buildOverallCommentary(
 
   return pick(
     [
-      `Tam eşleşme çıkmadı, ama ${top.title} en çok malzemeni kullanıyor. Eksikler liste halinde altında.`,
+      `${cp}Tam eşleşme çıkmadı, ama ${top.title} en çok malzemeni kullanıyor. Eksikler liste halinde altında.`,
       `En uygun aday ${top.title}. Eksiklerle birlikte aşağıda sıraladım.`,
       `${top.title} iyi bir başlangıç. Neyin eksik olduğunu kartta görebilirsin.`,
     ],

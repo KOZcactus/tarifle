@@ -2,15 +2,17 @@ import {
   getAdminStats,
   getRecentBatches,
   getCategoryBreakdown,
+  getCuisineBreakdown,
 } from "@/lib/queries/admin";
 
 export const metadata = { title: "Yönetim Paneli | Tarifle" };
 
 export default async function AdminPage() {
-  const [stats, batches, categories] = await Promise.all([
+  const [stats, batches, categories, cuisines] = await Promise.all([
     getAdminStats(),
     getRecentBatches(7),
     getCategoryBreakdown(),
+    getCuisineBreakdown(),
   ]);
 
   // Üst sıra — yüksek-frekans bilgi (toplamlar + moderasyon).
@@ -37,6 +39,18 @@ export default async function AdminPage() {
       value: stats.flaggedVariations,
       emoji: "⚠️",
       highlight: stats.flaggedVariations > 0,
+    },
+    {
+      label: `Nutrition (${stats.nutritionCoverage}%)`,
+      value: stats.nutritionCount,
+      emoji: "🥗",
+      highlight: stats.nutritionCoverage < 50,
+    },
+    {
+      label: `Featured (${stats.featuredRatio}%)`,
+      value: stats.featuredCount,
+      emoji: "⭐",
+      highlight: stats.featuredRatio < 10 || stats.featuredRatio > 15,
     },
   ];
 
@@ -180,6 +194,42 @@ export default async function AdminPage() {
                 </span>
               </li>
             ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Cuisine breakdown */}
+      <section>
+        <h3 className="mb-3 font-heading text-base font-semibold">
+          🌍 Mutfak dağılımı
+        </h3>
+        <div className="rounded-xl border border-border bg-bg-card p-4">
+          <ul className="space-y-2">
+            {cuisines.map((c) => {
+              const maxCuisine = Math.max(...cuisines.map((x) => x.count), 1);
+              return (
+                <li
+                  key={c.code}
+                  className="grid grid-cols-[140px_1fr_50px] items-center gap-3"
+                >
+                  <span className="flex items-center gap-1.5 text-sm">
+                    <span aria-hidden="true">{c.flag}</span>
+                    <span>{c.label}</span>
+                  </span>
+                  <div className="h-2 overflow-hidden rounded-full bg-bg-elevated">
+                    <div
+                      className="h-full rounded-full bg-accent-blue"
+                      style={{
+                        width: `${(c.count / maxCuisine) * 100}%`,
+                      }}
+                    />
+                  </div>
+                  <span className="text-right text-sm font-medium text-text">
+                    {c.count}
+                  </span>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </section>

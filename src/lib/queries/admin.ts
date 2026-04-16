@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import { CUISINE_LABEL, CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
 
 /** Bekleyen raporları getir */
 export async function getPendingReports() {
@@ -72,6 +73,8 @@ export async function getAdminStats() {
     recipesToday,
     recipesThisWeek,
     recipesThisMonth,
+    nutritionCount,
+    featuredCount,
   ] = await Promise.all([
     prisma.recipe.count({ where: { status: "PUBLISHED" } }),
     prisma.user.count(),
@@ -90,7 +93,20 @@ export async function getAdminStats() {
     prisma.recipe.count({
       where: { status: "PUBLISHED", createdAt: { gte: monthStart } },
     }),
+    prisma.recipe.count({
+      where: { status: "PUBLISHED", averageCalories: { not: null } },
+    }),
+    prisma.recipe.count({
+      where: { status: "PUBLISHED", isFeatured: true },
+    }),
   ]);
+
+  const nutritionCoverage = totalRecipes > 0
+    ? Number(((nutritionCount / totalRecipes) * 100).toFixed(1))
+    : 0;
+  const featuredRatio = totalRecipes > 0
+    ? Number(((featuredCount / totalRecipes) * 100).toFixed(1))
+    : 0;
 
   return {
     totalRecipes,
@@ -104,6 +120,10 @@ export async function getAdminStats() {
     recipesToday,
     recipesThisWeek,
     recipesThisMonth,
+    nutritionCount,
+    nutritionCoverage,
+    featuredCount,
+    featuredRatio,
   };
 }
 
@@ -139,6 +159,28 @@ export async function getRecentBatches(limit = 7): Promise<
  * Kategori başına tarif sayısı — admin'in "hangi kategori dolu, hangi
  * boş" görüşü. Sortby count desc.
  */
+/**
+ * Cuisine dağılımı — admin'in mutfak dengesini görmesi.
+ */
+export async function getCuisineBreakdown(): Promise<
+  { code: string; label: string; flag: string; count: number }[]
+> {
+  const rows = await prisma.recipe.groupBy({
+    by: ["cuisine"],
+    where: { status: "PUBLISHED", cuisine: { not: null } },
+    _count: true,
+    orderBy: { _count: { cuisine: "desc" } },
+  });
+  return rows
+    .filter((r) => r.cuisine)
+    .map((r) => ({
+      code: r.cuisine!,
+      label: CUISINE_LABEL[r.cuisine as CuisineCode] ?? r.cuisine!,
+      flag: CUISINE_FLAG[r.cuisine as CuisineCode] ?? "🌍",
+      count: r._count,
+    }));
+}
+
 export async function getCategoryBreakdown(): Promise<
   { name: string; emoji: string | null; count: number }[]
 > {

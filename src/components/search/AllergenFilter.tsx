@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import type { Allergen } from "@prisma/client";
 import {
   ALLERGEN_EMOJI,
@@ -25,6 +25,7 @@ interface AllergenFilterProps {
 export function AllergenFilter({ selected }: AllergenFilterProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const pathname = usePathname();
 
   function toggle(allergen: Allergen) {
     const params = new URLSearchParams(searchParams.toString());
@@ -35,15 +36,15 @@ export function AllergenFilter({ selected }: AllergenFilterProps) {
       ? current.filter((a) => a !== allergen)
       : [...current, allergen];
     next.forEach((a) => params.append("alerjen", a));
-    params.delete("page"); // reset to first page after filter change
-    router.push(`/tarifler?${params.toString()}`);
+    params.delete("page");
+    router.push(`${pathname}?${params.toString()}`);
   }
 
   function clearAll() {
     const params = new URLSearchParams(searchParams.toString());
     params.delete("alerjen");
     params.delete("page");
-    router.push(`/tarifler?${params.toString()}`);
+    router.push(`${pathname}?${params.toString()}`);
   }
 
   return (

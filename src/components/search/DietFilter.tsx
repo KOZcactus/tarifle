@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
 
 interface DietFilterProps {
   /** Tag slugs currently active from the URL — typically ["vegan"], ["vejetaryen"], or both. */
@@ -27,6 +27,7 @@ const DIET_OPTIONS = [
 export function DietFilter({ activeTagSlugs }: DietFilterProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const pathname = usePathname();
 
   function toggle(slug: string) {
     const params = new URLSearchParams(searchParams.toString());
@@ -38,7 +39,7 @@ export function DietFilter({ activeTagSlugs }: DietFilterProps) {
       : [...current, slug];
     next.forEach((s) => params.append("etiket", s));
     params.delete("page");
-    router.push(`/tarifler?${params.toString()}`);
+    router.push(`${pathname}?${params.toString()}`);
   }
 
   return (

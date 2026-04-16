@@ -6,6 +6,7 @@
  *   - Static pages: home, /tarifler, /ai-asistan, /hakkimizda, KVKK, etc.
  *   - All PUBLISHED recipes: `/tarif/<slug>`
  *   - All categories: `/tarifler?kategori=<slug>`
+ *   - Active cuisines: `/tarifler?mutfak=<code>` (≥3 recipes)
  *
  * Drafts, hidden, and pending-review recipes are excluded — we don't
  * want Google indexing content that may be moderated away.
@@ -31,7 +32,7 @@ export const dynamic = "force-dynamic";
 export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [recipes, categories] = await Promise.all([
+  const [recipes, categories, cuisineCodes] = await Promise.all([
     prisma.recipe.findMany({
       where: { status: "PUBLISHED" },
       select: { slug: true, updatedAt: true },
@@ -41,6 +42,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       select: { slug: true, createdAt: true },
       orderBy: { sortOrder: "asc" },
     }),
+    // Active cuisines with ≥3 recipes — worth indexing as landing pages
+    prisma.recipe
+      .groupBy({
+        by: ["cuisine"],
+        where: { status: "PUBLISHED", cuisine: { not: null } },
+        _count: true,
+      })
+      .then((rows) =>
+        rows
+          .filter((r) => r.cuisine && r._count >= 3)
+          .map((r) => r.cuisine!),
+      ),
   ]);
 
   const now = new Date();
@@ -70,5 +83,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...categoryPages, ...recipePages];
+  const cuisinePages: MetadataRoute.Sitemap = cuisineCodes.map((code) => ({
+    url: `${SITE_URL}/tarifler?mutfak=${code}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...cuisinePages, ...categoryPages, ...recipePages];
 }

@@ -43,6 +43,21 @@ function trLower(s: string): string {
   return s.toLocaleLowerCase("tr-TR");
 }
 
+/**
+ * Normalize Turkish → ASCII for keyword substring matching.
+ * Aligned with src/lib/allergens.ts normalise(): catches inflected forms
+ * like "ekmeği" (possessive) substring-matching against keyword "ekmeg".
+ */
+function asciiNormalize(s: string): string {
+  return trLower(s)
+    .replace(/ç/g, "c")
+    .replace(/ğ/g, "g")
+    .replace(/ı/g, "i")
+    .replace(/ö/g, "o")
+    .replace(/ş/g, "s")
+    .replace(/ü/g, "u");
+}
+
 /** Strip parenthesized text and normalize for ingredient dedup. */
 function normalizeIngredientName(name: string): string {
   return trLower(name.replace(/\(.*?\)/g, "")).trim();
@@ -120,10 +135,16 @@ const ALLERGEN_RULES: AllergenRule[] = [
       // real arpa ingredients are caught via "bulgur"/"un"/"şehriye".
       "irmik", "çavdar", "kepek", "kraker", "bisküvi", "kek", "hamur",
       "simit", "şehriye", "kuş başı", "baklava",
+      // Grains + cereals (wheat-contaminated or wheat-derived):
+      "yulaf", "granola", "kuskus", "freekeh",
+      // Asian noodles/wrappers (mostly wheat-based):
+      "noodle", "wonton", "yakisoba",
       // Codex-observed pasta/noodle names that weren't caught by customMatch:
       "spagetti", "spaghetti", "penne", "fusilli", "fettuccine", "tagliatelle",
       "tagliolini", "linguine", "rigatoni", "farfalle", "lasagna", "lazanya",
       "udon", "gnocchi", "tortilla", "ravioli", "tortellini", "orzo", "pastitsio",
+      // Compound bread names where base "ekmek" substring won't catch:
+      "tost", "bagel", "milfoy", "pita", "tandir ekmeg",
       // Intentionally excluded from keywords: "ramen" (ramen noodle is in
       // excludePatterns as gluten-free flag — actually wheat-based; fix
       // that separately), "soba" (buckwheat, gluten-free).
@@ -134,24 +155,27 @@ const ALLERGEN_RULES: AllergenRule[] = [
       "mısır nişastası", "patates nişastası", "tatlı patates nişastası",
       "nohut unu", "badem unu", "hindistan cevizi unu", "karabuğday",
       "yapışkan pirinç unu", "manyok unu", "manyok nişastası",
-      "pirinç keki", "ramen noodle",
+      "pirinç keki",
+      // Gluten-free rice/glass noodle variants:
+      "pirinç noodle", "cam noodle",
       // Gluten-free tortilla variants (Mexican tortilla chips are corn-based):
       "mısır tortilla", "tortilla cipsi",
+      // NOTE: "ramen noodle" intentionally NOT excluded — actually wheat-based.
     ],
     customMatch: (name: string) => {
       const lower = trLower(name);
+      const ascii = asciiNormalize(name);
       // Exclude gluten-free items first
       const glutenFreeExempt = [
         "pirinç", "mısır", "patates", "nohut", "badem", "hindistan",
         "karabuğday", "yapışkan", "manyok", "tatlı patates",
       ];
-      // If ingredient starts with a gluten-free qualifier, skip
       if (glutenFreeExempt.some((ex) => lower.startsWith(ex))) return false;
 
       // "nişasta" — only GLUTEN if plain "nişasta" without qualifier
       if (lower.includes("nişasta")) {
-        if (lower === "nişasta") return true; // plain starch = wheat
-        return false; // qualified starch = not gluten
+        if (lower === "nişasta") return true;
+        return false;
       }
       // "erişte" — only GLUTEN if NOT rice/glass/sweet potato noodle
       if (lower.includes("erişte")) {
@@ -164,8 +188,8 @@ const ALLERGEN_RULES: AllergenRule[] = [
         if (lower.includes("pirinç")) return false;
         return true;
       }
-      // "ekmek" — GLUTEN
-      if (lower.includes("ekmek")) return true;
+      // "ekmek" + inflected "ekmeği" (ASCII "ekmegi") — GLUTEN
+      if (ascii.includes("ekmek") || ascii.includes("ekmeg")) return true;
       // "un" as standalone word — only if NOT qualified with gluten-free
       if (hasStandaloneWord(lower, "un")) return true;
       if (lower.endsWith(" unu")) return true;
@@ -274,15 +298,26 @@ function ingredientMatchesAllergen(
   rule: AllergenRule
 ): boolean {
   const lower = trLower(ingredientName);
+  const asciiLower = asciiNormalize(ingredientName);
 
-  // Exclude patterns first — if ingredient matches any exclude, skip entirely
-  if (rule.excludePatterns?.some((ex) => lower.includes(ex))) return false;
+  // Exclude patterns first — check both original and ASCII-normalized forms
+  // so "Hindistan cevizi sütü" matches exclude "hindistan cevizi sütü" even
+  // when ingredient name has Turkish punctuation/diacritics.
+  if (
+    rule.excludePatterns?.some(
+      (ex) => lower.includes(ex) || asciiLower.includes(asciiNormalize(ex)),
+    )
+  ) return false;
 
   // Custom match (e.g. GLUTEN "un" logic, SUT "süt" logic, KUSUYEMIS "ceviz" logic)
   if (rule.customMatch?.(ingredientName)) return true;
 
-  // Keyword substring check
-  return rule.keywords.some((kw) => lower.includes(kw));
+  // Keyword substring check — try both forms so "Sandviç ekmeği" (ASCII:
+  // "sandvic ekmegi") matches keyword "ekmeg" even though bare "ekmek"
+  // wouldn't (k vs g consonant softening).
+  return rule.keywords.some(
+    (kw) => lower.includes(kw) || asciiLower.includes(asciiNormalize(kw)),
+  );
 }
 
 // ── Cuisine slug patterns (small unambiguous subset) ────────

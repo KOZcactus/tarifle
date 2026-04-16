@@ -787,8 +787,9 @@ export const recipes = [
       { name: "Tuz", amount: "1", unit: "çay kaşığı", sortOrder: 6 },
     ],
     steps: [
-      { stepNumber: 1, instruction: "Tüm malzemeleri kâsede karıştırın." },
-      { stepNumber: 2, instruction: "Sarımsağı ezin, pul biber ve hardalla harmanlayın." },
+      { stepNumber: 1, instruction: "Sarımsağı ezip pul biber ve hardalla harmanlayın." },
+      { stepNumber: 2, instruction: "Yoğurt ve mayonezi bu karışımla çırpıp tuzlayın." },
+      { stepNumber: 3, instruction: "Buzdolabında 15 dakika dinlendirip servis edin.", timerSeconds: 900 },
     ],
   },
   // ── ATISTIRMALIKLAR ──
@@ -5240,7 +5241,7 @@ export const recipes = [
     servingSuggestion: "Sosu servis sırasında patateslerin üzerine gezdirin.",
     tags: ["vegan", "butce-dostu"], allergens: [] as const,
     ingredients: [{ name: "Patates", amount: "4", unit: "adet", sortOrder: 1 }, { name: "Domates püresi", amount: "1", unit: "su bardağı", sortOrder: 2 }, { name: "Toz kırmızı biber", amount: "1", unit: "tatlı kaşığı", sortOrder: 3 }, { name: "Sarımsak", amount: "2", unit: "diş", sortOrder: 4 }, { name: "Zeytinyağı", amount: "3", unit: "yemek kaşığı", sortOrder: 5 }],
-    steps: [{ stepNumber: 1, instruction: "Patatesleri küp doğrayıp 8 dakika haşlayın.", timerSeconds: 480 }, { stepNumber: 2, instruction: "Patatesleri 180°C fırında 20 dakika kızartın.", timerSeconds: 1200 }, { stepNumber: 3, instruction: "Domates, biber ve sarımsağı 10 dakika kaynatın.", timerSeconds: 600 }],
+    steps: [{ stepNumber: 1, instruction: "Patatesleri küp doğrayıp 8 dakika haşlayın.", timerSeconds: 480 }, { stepNumber: 2, instruction: "Patatesleri 180°C fırında 20 dakika kızartın.", timerSeconds: 1200 }, { stepNumber: 3, instruction: "Domates, biber ve sarımsağı 10 dakika kaynatın.", timerSeconds: 600 }, { stepNumber: 4, instruction: "Kızarmış patatesleri servis tabağına alıp acılı domates sosunu üzerine gezdirin." }],
   },
   {
     title: "Sangria", slug: "sangria", emoji: "🍷",
@@ -6766,7 +6767,7 @@ export const recipes = [
     tipNote: "Yumurta kremasını 4 dakika çırpın; rengi açılıp kaşıktan şerit halinde akar.", servingSuggestion: "Küçük fincanda sıcak servis edin.",
     tags: ["alkolsuz", "30-dakika-alti"], allergens: ["YUMURTA", "SUT"] as const,
     ingredients: [{ name: "Sert kahve", amount: "160", unit: "ml", sortOrder: 1 }, { name: "Yumurta sarısı", amount: "2", unit: "adet", sortOrder: 2 }, { name: "Yoğun süt", amount: "3", unit: "yemek kaşığı", sortOrder: 3 }, { name: "Şeker", amount: "1", unit: "tatlı kaşığı", sortOrder: 4 }],
-    steps: [{ stepNumber: 1, instruction: "Kahveyi demleyip iki fincana paylaştırın." }, { stepNumber: 2, instruction: "Yumurta sarısı, yoğun süt ve şekeri 4 dakika çırpın.", timerSeconds: 240 }, { stepNumber: 3, instruction: "Kremayı kahvenin üzerine kaşıkla yerleştirin." }],
+    steps: [{ stepNumber: 1, instruction: "Kahveyi demleyip iki fincana paylaştırın." }, { stepNumber: 2, instruction: "Yumurta sarısı, yoğun süt ve şekeri 4 dakika çırpın.", timerSeconds: 240 }, { stepNumber: 3, instruction: "Yumurta kremasını kahvenin üzerine kaşıkla yerleştirin." }],
   },
   { title: "Zerdeçal Latte", slug: "zerdecal-latte", emoji: "☕",
     description: "Altın renkli baharatlı süt; zerdeçal, zencefil ve karabiberle yumuşak bir kış içeceği olur.",

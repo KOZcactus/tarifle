@@ -376,16 +376,27 @@ const CUISINE_SLUG_CHECKS: { pattern: string; cuisine: string }[] = [
 
 // ── Type → CategorySlug mapping ─────────────────────────────
 
+// Maps RecipeType → acceptable category slugs. Deliberately permissive:
+// some Types legitimately span multiple categories (APERATIF börek is
+// both aperatifler and hamur-isleri; SALATA baklagil salata fits both
+// salatalar and baklagil-yemekleri). Each listed slug should be a
+// culturally-valid placement in Turkish recipe taxonomy.
 const TYPE_CATEGORY_MAP: Record<string, string[]> = {
   KOKTEYL: ["kokteyller"],
   CORBA: ["corbalar"],
   TATLI: ["tatlilar", "hamur-isleri"],
-  SALATA: ["salatalar"],
-  KAHVALTI: ["kahvaltiliklar"],
-  APERATIF: ["aperatifler"],
+  SALATA: ["salatalar", "baklagil-yemekleri"],
+  KAHVALTI: ["kahvaltiliklar", "hamur-isleri"],
+  APERATIF: [
+    "aperatifler",
+    "hamur-isleri",        // börek/gözleme/poğaça
+    "sebze-yemekleri",     // mezeler: saksuka/imam bayıldı
+    "baklagil-yemekleri",  // fava/humus
+    "tavuk-yemekleri",     // çerkez tavuğu
+  ],
   SOS: ["soslar-dippler"],
   ICECEK: ["icecekler", "smoothie-shake", "kahve-sicak-icecekler"],
-  ATISTIRMALIK: ["atistirmaliklar"],
+  ATISTIRMALIK: ["atistirmaliklar", "hamur-isleri"],
 };
 
 // ── Main ────────────────────────────────────────────────────
@@ -787,7 +798,9 @@ async function main(): Promise<void> {
       );
     }
 
-    // 4b. Total time extremes
+    // 4b. Total time extremes. Threshold raised to 36h because legitimate
+    // cure/ferment recipes (salt-cured salmon, kvass, sourdough) can list
+    // 24-36h total. Anything over 36h is a likely data error.
     if (totalMinutes === 0) {
       addFinding(
         "CRITICAL",
@@ -796,13 +809,13 @@ async function main(): Promise<void> {
         title,
         "totalMinutes is 0"
       );
-    } else if (totalMinutes > 720) {
+    } else if (totalMinutes > 2160) {
       addFinding(
         "WARNING",
         "RECIPE_CONSISTENCY",
         slug,
         title,
-        `totalMinutes is ${totalMinutes} (>12 hours)`
+        `totalMinutes is ${totalMinutes} (>36 hours)`
       );
     }
 
@@ -825,9 +838,11 @@ async function main(): Promise<void> {
       );
     }
 
-    // 4d. Calorie extremes
+    // 4d. Calorie extremes. Lower bound now 1 — plain coffee/tea recipes
+    // legitimately list 0-5 kcal. Anything 0 is likely data omission but
+    // 3-5 is realistic for unsweetened filtered coffee.
     if (averageCalories !== null) {
-      if (averageCalories < 10) {
+      if (averageCalories < 1) {
         addFinding(
           "WARNING",
           "RECIPE_CONSISTENCY",
@@ -847,13 +862,15 @@ async function main(): Promise<void> {
     }
 
     // 4e. Macro consistency: |4P + 4C + 9F - kcal| / kcal > 0.20
+    // Skip when kcal < 10 (plain coffee/tea/water-based drinks — trace
+    // calories don't meaningfully decompose into P/C/F).
     const hasAlkollu = tagSlugs.includes("alkollu");
     if (
       protein !== null &&
       carbs !== null &&
       fat !== null &&
       averageCalories !== null &&
-      averageCalories > 0 &&
+      averageCalories >= 10 &&
       !hasAlkollu
     ) {
       const p = Number(protein);
@@ -995,9 +1012,13 @@ async function main(): Promise<void> {
     );
   }
 
-  // 4i (deferred). Flag boilerplate tipNote/servingSuggestion
+  // 4i (deferred). Flag boilerplate tipNote/servingSuggestion.
+  // Threshold raised to 6 so authentic cultural notes ("Sarımsaklı
+  // yoğurtla servis edin." on 5 mantı/köfte recipes) aren't flagged.
+  // Aligned with fix-boilerplate-to-null.ts threshold.
+  const BOILERPLATE_THRESHOLD = 6;
   for (const [value, slugs] of tipNoteValues) {
-    if (slugs.length >= 3) {
+    if (slugs.length >= BOILERPLATE_THRESHOLD) {
       addFinding(
         "WARNING",
         "RECIPE_CONSISTENCY",
@@ -1008,7 +1029,7 @@ async function main(): Promise<void> {
     }
   }
   for (const [value, slugs] of servingSuggValues) {
-    if (slugs.length >= 3) {
+    if (slugs.length >= BOILERPLATE_THRESHOLD) {
       addFinding(
         "WARNING",
         "RECIPE_CONSISTENCY",

@@ -6,7 +6,12 @@ import { suggestRecipesAction } from "@/lib/actions/ai";
 import type { AiSuggestResponse } from "@/lib/ai/types";
 import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
 import { DIFFICULTY_OPTIONS, RECIPE_TYPE_LABELS } from "@/lib/constants";
-import { CUISINE_CODES, CUISINE_LABEL, CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
+import {
+  CUISINE_CODES,
+  CUISINE_LABEL,
+  CUISINE_FLAG,
+  type CuisineCode,
+} from "@/lib/cuisines";
 
 const TIME_OPTIONS = [
   { value: 15, label: "15 dk'ya kadar" },
@@ -411,7 +416,14 @@ function SuggestionCard({
       <div className="flex flex-1 flex-col gap-2">
         <div className="flex items-start justify-between gap-3">
           <div>
-            <p className="text-xs text-text-muted">{s.categoryName}</p>
+            <p className="text-xs text-text-muted">
+              {s.cuisine && CUISINE_FLAG[s.cuisine as CuisineCode] && (
+                <span className="mr-1" aria-label={CUISINE_LABEL[s.cuisine as CuisineCode]}>
+                  {CUISINE_FLAG[s.cuisine as CuisineCode]}
+                </span>
+              )}
+              {s.categoryName}
+            </p>
             <h3 className="font-heading text-lg font-bold text-text transition-colors group-hover:text-primary">
               {s.title}
             </h3>

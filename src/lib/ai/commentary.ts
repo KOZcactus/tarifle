@@ -8,8 +8,28 @@
  * requests with the same input don't flip wording but different requests feel
  * fresh.
  */
+import type { Difficulty, RecipeType } from "@prisma/client";
 import type { AiSuggestion } from "./types";
 import { CUISINE_LABEL, type CuisineCode } from "@/lib/cuisines";
+
+const TYPE_LABELS: Partial<Record<RecipeType, string>> = {
+  YEMEK: "yemek",
+  TATLI: "tatlı",
+  ICECEK: "içecek",
+  KOKTEYL: "kokteyl",
+  APERATIF: "aperatif",
+  SALATA: "salata",
+  CORBA: "çorba",
+  KAHVALTI: "kahvaltılık",
+  ATISTIRMALIK: "atıştırmalık",
+  SOS: "sos",
+};
+
+const DIFF_LABELS: Record<Difficulty, string> = {
+  EASY: "kolay",
+  MEDIUM: "orta",
+  HARD: "zor",
+};
 
 function pick<T>(options: T[], seed: string): T {
   let hash = 0;
@@ -27,6 +47,36 @@ function formatList(items: string[], max = 2): string {
     if (trimmed.length === 2) return `${trimmed[0]} ve ${trimmed[1]}`;
   }
   return `${trimmed.join(", ")} gibi ${items.length - max} malzeme`;
+}
+
+/** Active filter context for commentary. */
+export interface CommentaryContext {
+  cuisines?: string[];
+  type?: string;
+  difficulty?: string;
+  maxMinutes?: number;
+}
+
+/**
+ * Build a filter context suffix. Examples:
+ * - type=CORBA → "çorba kategorisinde "
+ * - maxMinutes=30 → "30 dakika altında "
+ * - difficulty=EASY → "kolay tarifler arasında "
+ */
+function filterSuffix(ctx?: CommentaryContext): string {
+  if (!ctx) return "";
+  const parts: string[] = [];
+  if (ctx.type && TYPE_LABELS[ctx.type as RecipeType]) {
+    parts.push(`${TYPE_LABELS[ctx.type as RecipeType]} kategorisinde`);
+  }
+  if (ctx.maxMinutes) {
+    parts.push(`${ctx.maxMinutes} dakika altında`);
+  }
+  if (ctx.difficulty && DIFF_LABELS[ctx.difficulty as Difficulty]) {
+    parts.push(`${DIFF_LABELS[ctx.difficulty as Difficulty]} tarifler arasında`);
+  }
+  if (parts.length === 0) return "";
+  return parts.join(", ") + " ";
 }
 
 /**
@@ -50,16 +100,18 @@ export function buildOverallCommentary(
   userIngredients: string[],
   results: AiSuggestion[],
   cuisines?: string[],
+  context?: CommentaryContext,
 ): string {
   const seed = userIngredients.join("|").toLocaleLowerCase("tr");
   const cp = cuisinePrefix(cuisines);
+  const fs = filterSuffix(context);
 
   if (results.length === 0) {
     return pick(
       [
         `${cp}${userIngredients.length} malzemenle yapılabilecek tarif çıkmadı. Bir iki şey daha ekler misin, yoksa filtreleri gevşetelim mi?`,
-        `Bu kombinasyonla eşleşen tarifim yok. Biraz daha malzeme yaz, ya da tür/süre filtrelerini gevşet.`,
-        `Elindekinle bir şey bulamadım. Daha temel malzemelerle (yumurta, soğan, domates gibi) dene.`,
+        `Bu kombinasyonla ${fs}eşleşen tarifim yok. Daha fazla malzeme yaz ya da filtreleri gevşet.`,
+        `${fs}Elindekinle bir şey bulamadım. Daha temel malzemelerle (yumurta, soğan, domates gibi) dene.`,
       ],
       seed,
     );

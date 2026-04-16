@@ -32,6 +32,7 @@ export interface AiSuggestion {
   emoji: string | null;
   imageUrl: string | null;
   categoryName: string;
+  cuisine: string | null;
   difficulty: Difficulty;
   totalMinutes: number;
   servingCount: number;

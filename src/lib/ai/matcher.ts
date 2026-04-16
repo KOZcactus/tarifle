@@ -10,6 +10,33 @@ const PANTRY_STAPLES = [
   "zeytinyağı",
   "sıvıyağ",
   "yağ",
+  "ayçiçek yağı",
+  "şeker",
+  "un",
+  "biber",
+  "pul biber",
+  "kekik",
+  "kimyon",
+  "nane",
+];
+
+/**
+ * Synonym / alias map. Turkish ingredient synonyms that should match
+ * each other. Each group of synonyms maps bidirectionally.
+ * Format: primary → alternatives[]. `ingredientMatches` checks synonyms
+ * when the direct prefix match fails.
+ */
+const SYNONYM_GROUPS: readonly string[][] = [
+  ["tavuk", "piliç"],
+  ["biber", "sivri biber", "çarliston biber", "dolmalık biber"],
+  ["domates", "çeri domates", "salkım domates"],
+  ["soğan", "kuru soğan", "arpacık soğan"],
+  ["sarımsak", "sarımsak dişi"],
+  ["peynir", "beyaz peynir", "kaşar", "kaşar peyniri"],
+  ["krema", "sıvı krema", "krema şanti"],
+  ["makarna", "spagetti", "penne", "fusilli"],
+  ["pirinç", "baldo pirinç", "basmati", "jasmine"],
+  ["et", "dana eti", "kuzu eti", "kıyma", "dana kıyma"],
 ];
 
 /**
@@ -36,23 +63,73 @@ function tokens(normalized: string): string[] {
 }
 
 /**
+ * Build a synonym lookup: for each term, return all equivalent terms.
+ * Precomputed once at module load.
+ */
+const SYNONYM_MAP: ReadonlyMap<string, readonly string[]> = (() => {
+  const map = new Map<string, string[]>();
+  for (const group of SYNONYM_GROUPS) {
+    const normalized = group.map(normalizeIngredient);
+    for (const term of normalized) {
+      const others = normalized.filter((t) => t !== term);
+      const existing = map.get(term) ?? [];
+      map.set(term, [...existing, ...others]);
+    }
+  }
+  return map;
+})();
+
+/**
+ * Get synonym alternatives for a normalized ingredient.
+ */
+function getSynonyms(normalized: string): readonly string[] {
+  // Exact match
+  const direct = SYNONYM_MAP.get(normalized);
+  if (direct) return direct;
+  // Check if any synonym key is a prefix of the normalized ingredient
+  for (const [key, synonyms] of SYNONYM_MAP) {
+    if (normalized.startsWith(key) || key.startsWith(normalized)) {
+      return synonyms;
+    }
+  }
+  return [];
+}
+
+/**
  * Does `recipeIng` contain any token that starts with any user token?
  *
  * Word-prefix matching (not substring) avoids false positives like "limon"
  * matching "helimonik". "domates" will match both "domates" and "çeri domates".
  */
 export function ingredientMatches(recipeIng: string, userIng: string): boolean {
-  const recipeTokens = tokens(normalizeIngredient(recipeIng));
-  const userTokens = tokens(normalizeIngredient(userIng));
+  const recipeNorm = normalizeIngredient(recipeIng);
+  const userNorm = normalizeIngredient(userIng);
+  const recipeTokens = tokens(recipeNorm);
+  const userTokens = tokens(userNorm);
   if (userTokens.length === 0 || recipeTokens.length === 0) return false;
 
-  // Every user token must hit SOME recipe token (prefix match). This lets
-  // "zeytin yağı" match "zeytinyağı" / "zeytin yağı" but not "zeytin".
-  return userTokens.every((ut) =>
+  // Direct prefix match — every user token must hit some recipe token.
+  const directMatch = userTokens.every((ut) =>
     recipeTokens.some(
       (rt) => rt.startsWith(ut) || ut.startsWith(rt),
     ),
   );
+  if (directMatch) return true;
+
+  // Synonym fallback — check if user ingredient is a synonym of recipe ingredient.
+  // "piliç" should match a recipe that says "tavuk göğsü".
+  const userSynonyms = getSynonyms(userNorm);
+  for (const syn of userSynonyms) {
+    const synTokens = tokens(syn);
+    const synMatch = synTokens.every((st) =>
+      recipeTokens.some(
+        (rt) => rt.startsWith(st) || st.startsWith(rt),
+      ),
+    );
+    if (synMatch) return true;
+  }
+
+  return false;
 }
 
 /**

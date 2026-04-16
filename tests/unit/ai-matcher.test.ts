@@ -88,8 +88,8 @@ describe("isPantryStaple", () => {
   });
 
   it("rejects mixed seasoning where one token is NOT a staple", () => {
-    // kimyon isn't in PANTRY_STAPLES; the whole phrase must be pantry-only.
-    expect(isPantryStaple("tuz, karabiber, kimyon")).toBe(false);
+    // safran isn't in PANTRY_STAPLES; the whole phrase must be pantry-only.
+    expect(isPantryStaple("tuz, karabiber, safran")).toBe(false);
   });
 });
 
@@ -168,6 +168,20 @@ describe("computeMatch", () => {
     const result = computeMatch(allOptional, ["nane"]);
     // No required ingredients → score is 0 by convention (see matcher.ts)
     expect(result.score).toBe(0);
+  });
+});
+
+describe("synonym matching", () => {
+  it("piliç matches tavuk göğsü via synonym", () => {
+    expect(ingredientMatches("Tavuk göğsü", "piliç")).toBe(true);
+  });
+
+  it("spagetti matches makarna via synonym", () => {
+    expect(ingredientMatches("Makarna", "spagetti")).toBe(true);
+  });
+
+  it("non-synonym does not match", () => {
+    expect(ingredientMatches("Tavuk göğsü", "balık")).toBe(false);
   });
 });
 

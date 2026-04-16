@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { computeMatch, recipeContainsExcluded } from "./matcher";
-import { assignRecipeNotes, buildOverallCommentary } from "./commentary";
+import { assignRecipeNotes, buildOverallCommentary, type CommentaryContext } from "./commentary";
 import type {
   AiProvider,
   AiSuggestInput,
@@ -66,6 +66,7 @@ export class RuleBasedProvider implements AiProvider {
           emoji: recipe.emoji,
           imageUrl: recipe.imageUrl,
           categoryName: recipe.category.name,
+          cuisine: recipe.cuisine,
           difficulty: recipe.difficulty,
           totalMinutes: recipe.totalMinutes,
           servingCount: recipe.servingCount,
@@ -94,10 +95,17 @@ export class RuleBasedProvider implements AiProvider {
       .map(({ _ingredients, ...rest }) => rest);
 
     const withNotes = assignRecipeNotes(scored);
+    const commentaryCtx: CommentaryContext = {
+      cuisines: input.cuisines,
+      type: input.type,
+      difficulty: input.difficulty,
+      maxMinutes: input.maxMinutes,
+    };
     const commentary = buildOverallCommentary(
       input.ingredients,
       withNotes,
       input.cuisines,
+      commentaryCtx,
     );
 
     return {

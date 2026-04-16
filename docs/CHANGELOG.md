@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: 16 Nisan 2026 (session 6)
+> Son güncelleme: 16 Nisan 2026 (mega session — ~65 commit)
 
 ## İşaretler
 
@@ -205,7 +205,10 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🧪 **Cooking mode E2E** (`cooking-mode-flow.spec.ts`) — tarif → "Pişirme Modunu Başlat" → fullscreen dialog → "Sonraki" → "Önceki" enabled → close.
 - 🧪 **Cuisine inference** — 37 test (19 slug match + title/description keyword + default + priority + constants).
 - 🧪 **Exclude matching** — 5 test (recipeContainsExcluded: exact, prefix, empty, non-match).
-- 🧪 Toplam **348 unit + 18 E2E yeşil**.
+- 🧪 **FAQ schema** — 10 test (serving/duration/difficulty/calorie/allergen/cuisine/ingredient).
+- 🧪 **Similar recipes cuisine** — 2 test (aynı cuisine +1.5, farklı 0).
+- 🧪 **SearchBar autocomplete E2E** — 3 test (dropdown, seçim, Escape).
+- 🧪 Toplam **363 unit + 24 E2E yeşil**.
 
 ## Ops tooling
 
@@ -260,7 +263,23 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🎨 Bugünün Tarifi polish — "İleri" → "Zor" (`getDifficultyLabel` tutarlı), averageCalories chip.
 - 🎨 Dil tercihi: navbar chip → `/ayarlar` kartına taşındı.
 - 🎨 **Admin dashboard genişletildi** — 6 → 8 stat card (Bookmark + Koleksiyon eklendi) + Aktivite section (Bugün/Hafta/Ay yeni tarif sayısı) + Son seed batch tablo (Postgres `date_trunc('hour')` + `HAVING COUNT(*) > 5`) + kategori dağılımı bar chart (17 kategori, primary renkli). Manuel SQL bakmaktan kurtarır, batch akışı görselleşir.
-- 🎨 **Homepage rotation + Yeni Eklenenler section** — `getFeaturedRecipes` haftalık deterministic offset (`getWeekIndex` ISO week index, slug-ordered pool wrap-around). `getRecentRecipes(14gün, 8 kart)` yeni query. Hero → Öne Çıkan → **Yeni Eklenenler** → Günün Tarifi → AI Banner → Kategoriler. Codex batch'leri spotlight'ta görünür.
+- 🎨 **Homepage rotation** — `getFeaturedRecipes` haftalık deterministic offset.
+- ✨ **Homepage 🔥 En Popüler** — `getPopularRecipes` viewCount top 8.
+- ✨ **Homepage 🎲 rastgele tarif shuffle** — `RandomRecipeBanner` client component, server action ile sayfayı yenilemeden yeni tarif.
+- 🎨 **`/tarifler` aktif filtre chips** — her aktif filtre × ile kaldırılabilir chip + "Hepsini temizle".
+- 🎨 **`/tarifler` boş sonuç iyileştirme** — "Filtreleri gevşet" + "AI Asistan'da dene" önerileri.
+- ✨ **SearchBar autocomplete** — tarif adı (📖) + malzeme (🥕) önerisi, Türkçe fuzzy, keyboard nav. Homepage + /tarifler + /kesfet.
+- ✨ **Tarif detay AI cross-link** — "🧠 Bu malzemelerle başka ne yapılır?" → AI Asistan pre-fill.
+- ✨ **Tarif detay cuisine keşif linki** — "🇯🇵 Japon mutfağından diğer tarifler →".
+- 🎨 **`/tarifler` dinamik title** — `?mutfak=jp` aktifken "Japon Tarifleri | Tarifle".
+- 🎨 **Navbar aktif sayfa highlight** — desktop primary renk, mobil bg tint, aria-current.
+- 🎨 **Hakkımızda istatistik kartları** — tarif/mutfak/kategori/malzeme sayıları, revalidate 3600.
+- 🎨 **Hero count-up animasyonu** — tarif sayısı easeOutExpo 1.2s.
+- 🎨 **Tarif detay görüntülenme göz ikonu**.
+- ✨ **Keşfet** — arama çubuğu + popüler arama chip'leri + popüler tarifler section.
+- 🧹 **Homepage 10→8 section** — "Yeni Eklenenler" kaldırıldı (Öne Çıkan rotation yeterli).
+- 🧹 **Keşfet rastgele tarif kaldırıldı** (homepage'de zaten var, duplicate).
+- 📊 **Admin dashboard** — 10 stat card (nutrition + featured coverage), cuisine bar chart.
 
 ## Dokümantasyon
 

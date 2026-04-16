@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: 16 Nisan 2026
+> Son güncelleme: 16 Nisan 2026 (session 2)
 
 ## İşaretler
 
@@ -63,7 +63,7 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - ⚡ Full-text search — `searchVector` generated tsvector (A/B/C weighted) + `immutable_unaccent` + GIN index + `websearch_to_tsquery('turkish', ...)` + `ts_rank_cd` relevance sort. Kök eşleşme (mantılar→Mantı), aksan-bağımsız (manti→Mantı), ingredient adı fallback union.
 - 🎨 `/tarifler` "En alakalı" sort chip (sadece query varken görünür, query'li aramalarda default).
 - ✨ **Benzer tarifler** — tarif detay sayfası altında 6 kart'lık öneri şeridi. Kural tabanlı skorlama: aynı kategori +3, aynı type +2, her ortak tag +1, aynı difficulty +0.5. Score 0 → gizli (noise değil). 12 unit test (skor matrisi + tie-break + kenar durumlar).
-- 🇹🇷 **CuisineFilter UI placeholder** (`/tarifler`) — 14 mutfak chip (🇹🇷🇮🇹🇫🇷🇪🇸🇬🇷🇯🇵🇨🇳🇰🇷🇹🇭🇮🇳🇲🇽🇺🇸🌍🌍), "Yakında" badge, dashed border. 1000 tarife yaklaşırken schema migration + retrofit ile aktive olur.
+- 🇹🇷 **CuisineFilter aktif** (`/tarifler?mutfak=jp`) — `cuisine String?` schema alanı + btree index + 19 kod (tr/it/fr/es/gr/jp/cn/kr/th/in/mx/us/me/ma/vn/br/cu/ru/hu). `inferCuisineFromRecipe()` slug segment + keyword inference, default "tr". Toggle chip UI, accent-blue active state. Retrofit ile 606 tarif etiketlendi. Placeholder → aktif dönüşüm.
 
 ## Uyarlama sistemi
 
@@ -157,6 +157,8 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🧹 **Migration baseline temizliği** (15 Nis 2026): Pass 10'dan itibaren biriken 8 `db push` değişikliği `prisma/migrations/20260415120000_codex_batch_prep/migration.sql` altında formal migration oldu. Fresh DB deploy'u artık `prisma migrate deploy` ile tam schema kuruyor.
 - 💾 **Full-text search** (migration `20260415180000_add_fulltext_search`) — `unaccent` extension + `immutable_unaccent(text)` SQL wrapper + `Recipe.searchVector` generated STORED tsvector (A/B/C weighted) + GIN index `recipes_search_gin`. `turkish` snowball dictionary ile morfolojik eşleşme; accent-insensitive search; schema'da `Unsupported("tsvector")?` olarak temsil edildi.
 - ⚡ **Tarif detay sayfası composite index** (migration `20260416000000_detail_page_indexes`) — `recipe_ingredients(recipeId, sortOrder)` + `recipe_steps(recipeId, stepNumber)`. Prisma/Postgres FK için otomatik index yaratmaz; 1000+ tarif × ~7 malzeme ölçeğinde seq scan yavaşlar. EXPLAIN ANALYZE ile tespit, migration ile fix: Seq Scan → Index Scan geçişi doğrulandı.
+- 💾 **Cuisine alanı** (migration `20260416120000_add_cuisine_field`) — `Recipe.cuisine String? @db.VarChar(30)` + btree index. 19 cuisine kodu, Zod validated (enum değil — yeni mutfak kodu migration gerektirmez). `scripts/retrofit-cuisine.ts` ile 606 tarif etiketlendi.
+- 📊 **Perf audit 606 tarif** — 11 hot-path sorgu EXPLAIN ANALYZE raporu. Hepsi <3.2ms. Cuisine btree Bitmap Index Scan aktif (1.63ms). 3 seq scan 606'da fine, 1000+'da tekrar bakılır.
 
 ## Test & CI
 
@@ -187,7 +189,8 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🧪 **Shopping list flow E2E** (`shopping-list-flow.spec.ts`) — manuel madde ekle → page reload (optimistic temp-ID → server ID) → check → "Alındı" bölümüne geç → sil → liste boş.
 - 🧪 **Variation flow E2E** (`variation-flow.spec.ts`) — login → "+ Uyarlama Ekle" → form doldur → submit → success → reload → variation listede → expand → kendi LikeButton "❤️ N" read-only → DeleteOwnVariationButton (window.confirm auto-accept) → kayboldu.
 - 🧪 **Cooking mode E2E** (`cooking-mode-flow.spec.ts`) — tarif → "Pişirme Modunu Başlat" → fullscreen dialog → "Sonraki" → "Önceki" enabled → close.
-- 🧪 Toplam **303 unit + 18 E2E yeşil**.
+- 🧪 **Cuisine inference** — 37 test (19 slug match + title/description keyword + default + priority + constants).
+- 🧪 Toplam **340 unit + 18 E2E yeşil**.
 
 ## Ops tooling
 
@@ -207,6 +210,7 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🔒 **Validator CI step** — `.github/workflows/ci.yml` `check` job'una `npm run content:validate` adımı eklendi. Seed-recipes.ts'de format ihlali varsa CI main push + PR'ı kırmızıya düşürür, merge bloklanır.
 - 🎨 **Emoji sync helper** — `scripts/sync-emojis.ts` (`npm run content:sync-emojis`). Source'taki recipe emoji'lerini production DB'ye UPDATE eder. Seed idempotent (slug skip) olduğu için kod tarafına emoji ekleyince DB'ye otomatik geçmiyor; bu script gap'i kapatır. Single transaction (60sn timeout — Neon RTT × 100 update için).
 - 🧹 **Sitemap ping cleanup** — Google `/ping?sitemap=` 2023 deprecated (404), Bing 410. retrofit-all'dan adım kaldırıldı, ilgili `seo-ping.ts` + `ping-sitemap.ts` + 8 unit silindi. IndexNow değerlendirildi: Google desteklemiyor + TR'de Bing/Yandex payı düşük → YAGNI.
+- ⚙️ **Cuisine retrofit** (`scripts/retrofit-cuisine.ts`) — title/slug/description keyword inference ile `Recipe.cuisine` doldurur. `retrofit-all.ts`'e 3. adım olarak eklendi (allergens → diet → cuisine). `--dry-run` + `--force` flag'li.
 
 ## A11y
 
@@ -223,6 +227,10 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - ♿ Heading-order fix `/tarifler` + `/tarifler/[kategori]` — H1 → H3 atlamasını sr-only `<h2>` ile düzeltildi (Lighthouse a11y 98 → 100).
 - ♿ CuisineFilter contrast fix — `opacity-70` text-muted'ı 3.04:1'e düşürüyordu, kaldırıldı; dashed border + "Yakında" badge yeterli sinyal.
 - ♿ VariationCard nested-interactive fix — expand `<button>` içinde LikeButton `<button>` vardı, restructure ile sibling yapıldı (DOM seviyesinde kardeş).
+
+## Performans
+
+- ⚡ **LCP font optimizasyonu** — Bricolage Grotesque 5 weight (400-800) → 2 weight (600+700), ~60KB font tasarrufu. Geist Sans latin → latin-ext (TR karakter desteği). `adjustFontFallback: true` ile CLS azaltma.
 
 ## Polish & UX copy
 

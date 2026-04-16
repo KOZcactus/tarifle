@@ -1,5 +1,5 @@
 /**
- * DB hot-path EXPLAIN ANALYZE runner — 306+ tarif ölçeğinde Tarifle'nin
+ * DB hot-path EXPLAIN ANALYZE runner — 600+ tarif ölçeğinde Tarifle'nin
  * en sık tetiklenen sorgularını analiz eder. 1000 tarife gitmeden önce
  * baseline ve darboğaz tespiti.
  *
@@ -126,7 +126,15 @@ const CASES: QueryCase[] = [
           LIMIT 50`,
   },
   {
-    label: "9. AI Asistan-style filter: difficulty + maxMinutes + type",
+    label: "9. /tarifler cuisine filter (IN list)",
+    sql: `SELECT id, title, slug FROM recipes
+          WHERE status = 'PUBLISHED'
+            AND cuisine IN ('jp', 'kr', 'th')
+          ORDER BY title ASC
+          LIMIT 12`,
+  },
+  {
+    label: "10. AI Asistan-style filter: difficulty + maxMinutes + type",
     sql: `SELECT r.id, r.title, r.slug
           FROM recipes r
           WHERE r.status = 'PUBLISHED'

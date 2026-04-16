@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+import Link from "next/link";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { AllergenFilter } from "@/components/search/AllergenFilter";
 import { DietFilter } from "@/components/search/DietFilter";
@@ -130,10 +131,28 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
       ) : (
         <div className="flex flex-col items-center py-20 text-center">
           <span className="text-5xl">{category.emoji}</span>
-          <h2 className="mt-4 font-heading text-xl font-semibold">Henüz tarif eklenmemiş</h2>
+          <h2 className="mt-4 font-heading text-xl font-semibold">Tarif bulunamadı</h2>
           <p className="mt-2 text-sm text-text-muted">
-            Bu kategoriye yakında tarifler eklenecek.
+            {cuisines.length > 0 || excludeAllergens.length > 0
+              ? "Seçili filtrelere uygun tarif bulunamadı."
+              : "Bu kategoriye yakında tarifler eklenecek."}
           </p>
+          {(cuisines.length > 0 || excludeAllergens.length > 0) && (
+            <div className="mt-4 flex flex-wrap justify-center gap-2">
+              <Link
+                href={`/tarifler/${kategori}`}
+                className="rounded-full border border-border bg-bg-card px-3 py-1.5 text-xs text-text-muted transition-colors hover:border-primary hover:text-primary"
+              >
+                Filtreleri temizle
+              </Link>
+              <Link
+                href="/tarifler"
+                className="rounded-full border border-border bg-bg-card px-3 py-1.5 text-xs text-text-muted transition-colors hover:border-primary hover:text-primary"
+              >
+                Tüm tariflere dön
+              </Link>
+            </div>
+          )}
         </div>
       )}
     </div>

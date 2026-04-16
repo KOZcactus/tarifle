@@ -119,17 +119,21 @@ async function main(): Promise<void> {
       return;
     }
 
-    // Apply: tek transaction içinde batch update.
+    // Apply: tek transaction içinde batch update. Default 5sn timeout
+    // 100+ update için yetersiz (Neon serverless RTT × N) — 60sn'ye çıkar.
     let updated = 0;
-    await prisma.$transaction(async (tx) => {
-      for (const u of willUpdate) {
-        await tx.recipe.update({
-          where: { slug: u.slug },
-          data: { emoji: u.to },
-        });
-        updated++;
-      }
-    });
+    await prisma.$transaction(
+      async (tx) => {
+        for (const u of willUpdate) {
+          await tx.recipe.update({
+            where: { slug: u.slug },
+            data: { emoji: u.to },
+          });
+          updated++;
+        }
+      },
+      { timeout: 60000, maxWait: 5000 },
+    );
     console.log(`\n✅ ${updated} tarifin emoji'si güncellendi.`);
   } finally {
     await prisma.$disconnect();

@@ -11,9 +11,15 @@ import * as Sentry from "@sentry/nextjs";
 
 const dsn = process.env.SENTRY_DSN ?? process.env.NEXT_PUBLIC_SENTRY_DSN;
 
+// TEMP debug — smoke test sonrası kaldır
+console.log(
+  `[sentry.server] init starting — dsn=${dsn ? "present" : "MISSING"}, env=${process.env.NEXT_PUBLIC_VERCEL_ENV}`,
+);
+
 if (dsn) {
   Sentry.init({
     dsn,
+    debug: true,
     tracesSampleRate: process.env.NODE_ENV === "production" ? 0.1 : 1.0,
     // Prisma/Auth.js internal errors çoğu zaman normal akışın parçası.
     // Raw Error mesajlarını analiz ederken ihtiyaç duyulursa açılır.

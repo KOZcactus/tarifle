@@ -1,29 +1,45 @@
 # Tarifle — Monitoring & Ops Safety
 
 Bugün (17 Nis 2026) prod login kırıldı (schema drift). Bunun bir daha
-yaşanmaması için 3 katmanlı savunma kuruldu.
+yaşanmaması için 2 savunma kuruldu + 1 denendi ama Neon uyumsuzluğu
+nedeniyle geri alındı.
 
 ---
 
-## 1. Vercel build-time auto-migrate ✅ aktif
+## 1. Manuel migration flow (zorunlu, runbook) ✅ aktif
 
-`package.json` → `build` script'i production deploy'da:
+**Vercel build-time auto-migrate denendi ama geri alındı** (`4d6a7fe`
+commit'i). Sebep: Neon pooled connection üzerinden `prisma migrate
+deploy` **P1002 lock timeout** veriyor. PgBouncer transaction pooling
+mode'u Postgres advisory lock desteklemiyor; Prisma migration lock
+mekanizması çalışmıyor. Bilinen bir Neon kısıtı.
 
-```
-tsx scripts/check-destructive-migration.ts
-  && prisma migrate deploy --config ./prisma/prisma.config.ts
-  && next build
-```
+Alternatif yaklaşımlar (gelecek iş):
+- Ayrı bir "direct connection" URL (non-pooled) migration için
+- GitHub Actions job: main push'ta `migrate deploy` koşsun (secret ile)
+- Veya manuel flow'u disiplinle (runbook uygulanır)
 
-- Schema drift **imkansız** — build öncesi migration uygulanır, Prisma
-  client ile prod DB daima sync.
-- CI (GitHub Actions) `build:skip-migrate` kullanır (DATABASE_URL
-  placeholder → migrate patlatır).
+**Şu anki disiplin:** Schema migration dev'e uyguladıktan sonra `main`
+push öncesi **mutlaka** prod'a da uygula. Adımlar: `docs/PROD_PROMOTE.md`
+bölüm A. Bugün gibi bir outage bir daha yaşanmaması için push öncesi
+checklist:
 
-## 2. Destructive migration check ✅ aktif
+- [ ] `prisma migrate dev` dev'e uygulandı
+- [ ] **`prisma migrate deploy` prod'a da uygulandı** (PROD_PROMOTE runbook)
+- [ ] `npm run build` lokal clean
+- [ ] `git push` main
+
+## 2. Destructive migration check — opsiyonel
 
 `scripts/check-destructive-migration.ts` pending migration SQL'lerini
-tarar. Bu pattern'lar bulursa build'i durdurur:
+tarar. Build pipeline'a henüz entegre değil (auto-migrate ile birlikte
+geri alındı). Manuel olarak koşmak için:
+
+```bash
+npm run db:check-destructive
+```
+
+Error pattern'lar:
 
 | Pattern | Severity |
 |---|---|
@@ -38,12 +54,10 @@ tarar. Bu pattern'lar bulursa build'i durdurur:
 **Bypass** (kasıtlı destructive için tek seferlik):
 
 ```bash
-ALLOW_DESTRUCTIVE_MIGRATION=1 npm run build
+ALLOW_DESTRUCTIVE_MIGRATION=1 npm run db:check-destructive
 ```
 
-Vercel Production env'e geçici ekle → deploy bit → env'den kaldır.
-
-## 3. Sentry error tracking — kurulum bekliyor
+## 3. Sentry error tracking ✅ aktif (17 Nis'te kuruldu)
 
 Kod altyapısı hazır (`sentry.{client,server,edge}.config.ts` +
 `src/app/global-error.tsx` + `next.config.ts` wrapper). DSN env var

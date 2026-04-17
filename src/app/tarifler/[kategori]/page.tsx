@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { AllergenFilter } from "@/components/search/AllergenFilter";
 import { DietFilter } from "@/components/search/DietFilter";
@@ -38,7 +39,10 @@ export async function generateMetadata({ params }: KategoriPageProps): Promise<M
 export default async function KategoriPage({ params, searchParams }: KategoriPageProps) {
   const { kategori } = await params;
   const sp = await searchParams;
-  const category = await getCategoryBySlug(kategori);
+  const [category, t] = await Promise.all([
+    getCategoryBySlug(kategori),
+    getTranslations("recipes"),
+  ]);
 
   if (!category) notFound();
 
@@ -104,7 +108,7 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
           <span className="text-4xl">{category.emoji}</span>
           <div>
             <h1 className="font-heading text-3xl font-bold">{category.name}</h1>
-            <p className="mt-1 text-text-muted">{total} tarif</p>
+            <p className="mt-1 text-text-muted">{t("totalSimple", { total })}</p>
           </div>
         </div>
       </div>
@@ -171,7 +175,9 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
           {/* Heading hierarchy: h1 (kategori adı) → h2 (sr-only) → h3
               (RecipeCard). Lighthouse heading-order fix; sadece ekran
               okuyucu görür. */}
-          <h2 className="sr-only">{category.name} tarifleri</h2>
+          <h2 className="sr-only">
+            {t("categorySrHeader", { category: category.name })}
+          </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {recipes.map((recipe) => (
               <RecipeCard key={recipe.id} recipe={recipe} />
@@ -181,11 +187,11 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
       ) : (
         <div className="flex flex-col items-center py-20 text-center">
           <span className="text-5xl">{category.emoji}</span>
-          <h2 className="mt-4 font-heading text-xl font-semibold">Tarif bulunamadı</h2>
+          <h2 className="mt-4 font-heading text-xl font-semibold">{t("empty.title")}</h2>
           <p className="mt-2 text-sm text-text-muted">
             {cuisines.length > 0 || excludeAllergens.length > 0
-              ? "Seçili filtrelere uygun tarif bulunamadı."
-              : "Bu kategoriye yakında tarifler eklenecek."}
+              ? t("empty.filtersMessage")
+              : t("empty.categoryMessage")}
           </p>
           {(cuisines.length > 0 || excludeAllergens.length > 0) && (
             <div className="mt-4 flex flex-wrap justify-center gap-2">
@@ -193,13 +199,13 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
                 href={`/tarifler/${kategori}`}
                 className="rounded-full border border-border bg-bg-card px-3 py-1.5 text-xs text-text-muted transition-colors hover:border-primary hover:text-primary"
               >
-                Filtreleri temizle
+                {t("empty.clearFilters")}
               </Link>
               <Link
                 href="/tarifler"
                 className="rounded-full border border-border bg-bg-card px-3 py-1.5 text-xs text-text-muted transition-colors hover:border-primary hover:text-primary"
               >
-                Tüm tariflere dön
+                {t("empty.backToAll")}
               </Link>
             </div>
           )}

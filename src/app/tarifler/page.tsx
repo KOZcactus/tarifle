@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Suspense } from "react";
+import { getTranslations } from "next-intl/server";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
 import { FilterPanel } from "@/components/search/FilterPanel";
@@ -123,7 +124,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
     ? (await searchRecipeIds({ query })).map((r) => r.id)
     : undefined;
 
-  const [{ recipes, total }, categories, tags, searchSuggestions] = await Promise.all([
+  const [{ recipes, total }, categories, tags, searchSuggestions, t] = await Promise.all([
     getRecipes({
       query: query || undefined,
       difficulty: difficulty || undefined,
@@ -140,6 +141,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
     getCategories(),
     getTags(),
     getSearchSuggestions(),
+    getTranslations("recipes"),
   ]);
 
   const totalPages = Math.ceil(total / ITEMS_PER_PAGE);
@@ -148,8 +150,8 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="font-heading text-3xl font-bold">Tarifler</h1>
-        <p className="mt-2 text-text-muted">{total} tarif bulundu</p>
+        <h1 className="font-heading text-3xl font-bold">{t("pageTitle")}</h1>
+        <p className="mt-2 text-text-muted">{t("totalFound", { total })}</p>
       </div>
 
       {/* Search & Filters */}
@@ -188,20 +190,20 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
           canonical URL is clean. */}
       <div className="mb-6 flex flex-wrap items-center gap-1 text-sm">
         <span className="mr-2 text-xs uppercase tracking-wide text-text-muted">
-          Sıralama:
+          {t("sortLabel")}
         </span>
         {[
           // Relevance chip shows up only when there is an active query;
           // ekranı boş aramada kirletmeyelim.
           ...(query
-            ? [{ key: "relevance", label: "En alakalı" } as const]
+            ? [{ key: "relevance", label: t("sort.relevance") } as const]
             : []),
-          { key: "alphabetical", label: "Alfabetik" } as const,
-          { key: "newest", label: "En yeni" } as const,
-          { key: "popular", label: "En popüler" } as const,
-          { key: "quickest", label: "En hızlı" } as const,
-          { key: "most-variations", label: "En çok uyarlama" } as const,
-          { key: "most-liked", label: "En çok beğeni" } as const,
+          { key: "alphabetical", label: t("sort.alphabetical") } as const,
+          { key: "newest", label: t("sort.newest") } as const,
+          { key: "popular", label: t("sort.popular") } as const,
+          { key: "quickest", label: t("sort.quickest") } as const,
+          { key: "most-variations", label: t("sort.mostVariations") } as const,
+          { key: "most-liked", label: t("sort.mostLiked") } as const,
         ].map(({ key, label }) => {
           const isActive = key === activeSort;
           const search = new URLSearchParams();
@@ -242,7 +244,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
               h3 (RecipeCard inside). Lighthouse heading-order best-
               practice violation gideriyor; ekran okuyucu için anlamlı,
               görsel kullanıcıya etkisi yok. */}
-          <h2 className="sr-only">Tarif listesi</h2>
+          <h2 className="sr-only">{t("listAria")}</h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {recipes.map((recipe) => (
               <RecipeCard key={recipe.id} recipe={recipe} />
@@ -255,6 +257,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
               currentPage={currentPage}
               totalPages={totalPages}
               searchParams={params}
+              t={t}
             />
           )}
         </>
@@ -264,20 +267,25 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
           hasFilters={!!(category || difficulty || maxMinutes || (tagSlugs && tagSlugs.length > 0) || excludeAllergens.length > 0 || cuisines.length > 0)}
           cuisineCount={cuisines.length}
           allergenCount={excludeAllergens.length}
+          t={t}
         />
       )}
     </div>
   );
 }
 
+type RecipesTranslator = (key: string, values?: Record<string, string | number | Date>) => string;
+
 function Pagination({
   currentPage,
   totalPages,
   searchParams,
+  t,
 }: {
   currentPage: number;
   totalPages: number;
   searchParams: Record<string, string | string[] | undefined>;
+  t: RecipesTranslator;
 }) {
   function buildPageUrl(page: number): string {
     const params = new URLSearchParams();
@@ -306,13 +314,13 @@ function Pagination({
   }
 
   return (
-    <nav className="mt-12 flex items-center justify-center gap-2" aria-label="Sayfalama">
+    <nav className="mt-12 flex items-center justify-center gap-2" aria-label={t("pagination.aria")}>
       {currentPage > 1 && (
         <Link
           href={buildPageUrl(currentPage - 1)}
           className="rounded-lg border border-border px-3 py-2 text-sm transition-colors hover:bg-bg-card"
         >
-          ← Önceki
+          {t("pagination.previous")}
         </Link>
       )}
 
@@ -359,7 +367,7 @@ function Pagination({
           href={buildPageUrl(currentPage + 1)}
           className="rounded-lg border border-border px-3 py-2 text-sm transition-colors hover:bg-bg-card"
         >
-          Sonraki →
+          {t("pagination.next")}
         </Link>
       )}
     </nav>
@@ -371,27 +379,29 @@ function EmptyState({
   hasFilters,
   cuisineCount,
   allergenCount,
+  t,
 }: {
   query: string;
   hasFilters: boolean;
   cuisineCount: number;
   allergenCount: number;
+  t: RecipesTranslator;
 }) {
   return (
     <div className="flex flex-col items-center py-20 text-center">
       <span className="text-5xl">🔍</span>
-      <h2 className="mt-4 font-heading text-xl font-semibold">Tarif bulunamadı</h2>
+      <h2 className="mt-4 font-heading text-xl font-semibold">{t("empty.title")}</h2>
       <p className="mt-2 text-sm text-text-muted">
         {query
-          ? `"${query}" ile eşleşen tarif yok.`
-          : "Seçili filtrelere uygun tarif bulunamadı."}
+          ? t("empty.queryMessage", { query })
+          : t("empty.filtersMessage")}
       </p>
 
       {/* Suggestions */}
       {(hasFilters || query) && (
         <div className="mt-6 space-y-2">
           <p className="text-xs font-medium uppercase tracking-wide text-text-muted">
-            Şunu dene:
+            {t("empty.tryHeader")}
           </p>
           <div className="flex flex-wrap justify-center gap-2">
             {query && (
@@ -399,7 +409,7 @@ function EmptyState({
                 href="/tarifler"
                 className="rounded-full border border-border bg-bg-card px-3 py-1.5 text-xs text-text-muted transition-colors hover:border-primary hover:text-primary"
               >
-                Aramayı temizle
+                {t("empty.clearSearch")}
               </Link>
             )}
             {hasFilters && (
@@ -407,7 +417,7 @@ function EmptyState({
                 href={query ? `/tarifler?q=${encodeURIComponent(query)}` : "/tarifler"}
                 className="rounded-full border border-border bg-bg-card px-3 py-1.5 text-xs text-text-muted transition-colors hover:border-primary hover:text-primary"
               >
-                Tüm filtreleri kaldır
+                {t("empty.removeAllFilters")}
               </Link>
             )}
             {cuisineCount > 0 && (
@@ -415,7 +425,7 @@ function EmptyState({
                 href="/tarifler"
                 className="rounded-full border border-border bg-bg-card px-3 py-1.5 text-xs text-text-muted transition-colors hover:border-primary hover:text-primary"
               >
-                Tüm mutfakları göster
+                {t("empty.showAllCuisines")}
               </Link>
             )}
             {allergenCount > 0 && (
@@ -423,14 +433,14 @@ function EmptyState({
                 href="/tarifler"
                 className="rounded-full border border-border bg-bg-card px-3 py-1.5 text-xs text-text-muted transition-colors hover:border-primary hover:text-primary"
               >
-                Alerjen filtresini kaldır
+                {t("empty.removeAllergenFilter")}
               </Link>
             )}
             <Link
               href="/ai-asistan"
               className="rounded-full border border-accent-blue/30 bg-accent-blue/5 px-3 py-1.5 text-xs text-accent-blue transition-colors hover:border-accent-blue hover:bg-accent-blue/10"
             >
-              🧠 AI Asistan&apos;da dene
+              {t("empty.aiAssistantTry")}
             </Link>
           </div>
         </div>

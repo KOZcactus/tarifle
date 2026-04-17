@@ -1,6 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/Badge";
-import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
 import { CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
 import type { RecipeCard as RecipeCardType } from "@/types/recipe";
 
@@ -14,7 +16,18 @@ const DIFFICULTY_VARIANT = {
   HARD: "primary",
 } as const;
 
+const DIFFICULTY_KEY = {
+  EASY: "difficultyEasy",
+  MEDIUM: "difficultyMedium",
+  HARD: "difficultyHard",
+} as const;
+
 export function RecipeCard({ recipe }: RecipeCardProps) {
+  const t = useTranslations("recipes.card");
+
+  const formattedMinutes = formatMinutes(recipe.totalMinutes, t);
+  const difficultyLabel = t(DIFFICULTY_KEY[recipe.difficulty]);
+
   return (
     <Link href={`/tarif/${recipe.slug}`} className="group block">
       <article className="overflow-hidden rounded-xl border border-border bg-bg-card transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
@@ -56,10 +69,10 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
           {/* Meta */}
           <div className="mt-3 flex flex-wrap gap-2">
             <Badge variant={DIFFICULTY_VARIANT[recipe.difficulty]}>
-              {getDifficultyLabel(recipe.difficulty)}
+              {difficultyLabel}
             </Badge>
             <Badge>
-              <ClockIcon /> {formatMinutes(recipe.totalMinutes)}
+              <ClockIcon /> {formattedMinutes}
             </Badge>
             {recipe.averageCalories && (
               <Badge>~{recipe.averageCalories} kcal</Badge>
@@ -71,7 +84,7 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
             <div className="mt-3 text-xs text-text-muted">
               <span className="flex items-center gap-1">
                 <UsersIcon />
-                {recipe._count.variations} uyarlama
+                {t("adaptations", { count: recipe._count.variations })}
               </span>
             </div>
           )}
@@ -79,6 +92,14 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
       </article>
     </Link>
   );
+}
+
+function formatMinutes(minutes: number, t: (key: string, values?: Record<string, string | number | Date>) => string): string {
+  if (minutes < 60) return t("minutesShort", { n: minutes });
+  const hours = Math.floor(minutes / 60);
+  const remaining = minutes % 60;
+  if (remaining === 0) return t("hoursShort", { n: hours });
+  return t("hoursMinutes", { h: hours, m: remaining });
 }
 
 function ClockIcon() {

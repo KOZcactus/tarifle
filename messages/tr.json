@@ -105,6 +105,51 @@
     "linkPrivacy": "Gizlilik Politikası",
     "copyright": "© {year} {site}. Tüm hakları saklıdır."
   },
+  "recipes": {
+    "pageTitle": "Tarifler",
+    "totalFound": "{total} tarif bulundu",
+    "totalSimple": "{total} tarif",
+    "sortLabel": "Sıralama:",
+    "sort": {
+      "relevance": "En alakalı",
+      "alphabetical": "Alfabetik",
+      "newest": "En yeni",
+      "popular": "En popüler",
+      "quickest": "En hızlı",
+      "mostVariations": "En çok uyarlama",
+      "mostLiked": "En çok beğeni"
+    },
+    "empty": {
+      "title": "Tarif bulunamadı",
+      "queryMessage": "\"{query}\" ile eşleşen tarif yok.",
+      "filtersMessage": "Seçili filtrelere uygun tarif bulunamadı.",
+      "categoryMessage": "Bu kategoriye yakında tarifler eklenecek.",
+      "tryHeader": "Şunu dene:",
+      "clearSearch": "Aramayı temizle",
+      "removeAllFilters": "Tüm filtreleri kaldır",
+      "showAllCuisines": "Tüm mutfakları göster",
+      "removeAllergenFilter": "Alerjen filtresini kaldır",
+      "clearFilters": "Filtreleri temizle",
+      "backToAll": "Tüm tariflere dön",
+      "aiAssistantTry": "🧠 AI Asistan'da dene"
+    },
+    "pagination": {
+      "previous": "← Önceki",
+      "next": "Sonraki →",
+      "aria": "Sayfalama"
+    },
+    "listAria": "Tarif listesi",
+    "categorySrHeader": "{category} tarifleri",
+    "card": {
+      "difficultyEasy": "Kolay",
+      "difficultyMedium": "Orta",
+      "difficultyHard": "Zor",
+      "minutesShort": "{n} dk",
+      "hoursShort": "{n} sa",
+      "hoursMinutes": "{h} sa {m} dk",
+      "adaptations": "{count} uyarlama"
+    }
+  },
   "common": {
     "save": "Kaydet",
     "cancel": "İptal",

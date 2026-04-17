@@ -105,6 +105,51 @@
     "linkPrivacy": "Privacy Policy",
     "copyright": "© {year} {site}. All rights reserved."
   },
+  "recipes": {
+    "pageTitle": "Recipes",
+    "totalFound": "{total} recipes found",
+    "totalSimple": "{total} recipes",
+    "sortLabel": "Sort:",
+    "sort": {
+      "relevance": "Most relevant",
+      "alphabetical": "Alphabetical",
+      "newest": "Newest",
+      "popular": "Most popular",
+      "quickest": "Quickest",
+      "mostVariations": "Most adaptations",
+      "mostLiked": "Most liked"
+    },
+    "empty": {
+      "title": "No recipes found",
+      "queryMessage": "No recipes match \"{query}\".",
+      "filtersMessage": "No recipes match the selected filters.",
+      "categoryMessage": "Recipes will be added to this category soon.",
+      "tryHeader": "Try this:",
+      "clearSearch": "Clear search",
+      "removeAllFilters": "Remove all filters",
+      "showAllCuisines": "Show all cuisines",
+      "removeAllergenFilter": "Remove allergen filter",
+      "clearFilters": "Clear filters",
+      "backToAll": "Back to all recipes",
+      "aiAssistantTry": "🧠 Try the AI Assistant"
+    },
+    "pagination": {
+      "previous": "← Previous",
+      "next": "Next →",
+      "aria": "Pagination"
+    },
+    "listAria": "Recipe list",
+    "categorySrHeader": "{category} recipes",
+    "card": {
+      "difficultyEasy": "Easy",
+      "difficultyMedium": "Medium",
+      "difficultyHard": "Hard",
+      "minutesShort": "{n} min",
+      "hoursShort": "{n} hr",
+      "hoursMinutes": "{h} hr {m} min",
+      "adaptations": "{count} adaptations"
+    }
+  },
   "common": {
     "save": "Save",
     "cancel": "Cancel",

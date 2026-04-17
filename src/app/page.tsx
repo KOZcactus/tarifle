@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Suspense } from "react";
+import { getTranslations } from "next-intl/server";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
 import { RecipeOfTheDay } from "@/components/home/RecipeOfTheDay";
@@ -23,7 +24,7 @@ const POPULAR_SEARCHES = [
 ];
 
 export default async function HomePage() {
-  const [featured, popular, categories, { total: recipeCount }, session, cuisineStats, searchSuggestions, randomRecipe] =
+  const [featured, popular, categories, { total: recipeCount }, session, cuisineStats, searchSuggestions, randomRecipe, t] =
     await Promise.all([
       getFeaturedRecipes(6),
       getPopularRecipes(8),
@@ -33,6 +34,7 @@ export default async function HomePage() {
       getCuisineStats(),
       getSearchSuggestions(),
       getRandomRecipe(),
+      getTranslations("home"),
     ]);
 
   // Tarif sayısı olan kategorileri önce göster
@@ -52,7 +54,7 @@ export default async function HomePage() {
           <span className="text-primary">pişirsek</span>?
         </h1>
         <p className="mt-4 max-w-xl text-lg text-text-muted">
-          Yemek, içecek ve kokteyl tariflerini keşfet. Topluluk uyarlamalarıyla ilham al.
+          {t("heroTagline")}
         </p>
 
         {/* Search */}

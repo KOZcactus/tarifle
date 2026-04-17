@@ -4,14 +4,16 @@ import Link from "next/link";
 import { useCallback, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useSession, signOut } from "next-auth/react";
+import { useTranslations } from "next-intl";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { LanguageToggle } from "@/components/ui/LanguageToggle";
 import { SITE_NAME } from "@/lib/constants";
 import { useDismiss } from "@/hooks/useDismiss";
 
-const NAV_LINKS = [
-  { href: "/tarifler", label: "Tarifler" },
-  { href: "/kesfet", label: "Keşfet" },
-  { href: "/ai-asistan", label: "AI Asistan" },
+const NAV_LINK_KEYS = [
+  { href: "/tarifler", key: "recipes" },
+  { href: "/kesfet", key: "discover" },
+  { href: "/ai-asistan", key: "aiAssistant" },
 ] as const;
 
 interface NavbarProps {
@@ -27,6 +29,7 @@ interface NavbarProps {
 export function Navbar({ notificationSlot }: NavbarProps = {}) {
   const { data: session } = useSession();
   const pathname = usePathname();
+  const t = useTranslations("nav");
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
@@ -58,7 +61,7 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
 
         {/* Desktop Nav */}
         <div className="hidden items-center gap-6 md:flex">
-          {NAV_LINKS.map((link) => {
+          {NAV_LINK_KEYS.map((link) => {
             const isActive = pathname === link.href || pathname.startsWith(link.href + "/");
             return (
               <Link
@@ -71,7 +74,7 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
                 }`}
                 aria-current={isActive ? "page" : undefined}
               >
-                {link.label}
+                {t(link.key)}
               </Link>
             );
           })}
@@ -79,6 +82,7 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
 
         {/* Right Side */}
         <div className="flex items-center gap-3">
+          <LanguageToggle />
           <ThemeToggle />
 
           {/* Notification bell — only renders for logged-in users (loader returns null otherwise) */}
@@ -96,13 +100,13 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
                   {session.user.name?.charAt(0).toUpperCase() || "U"}
                 </span>
-                {session.user.name?.split(" ")[0] || "Kullanıcı"}
+                {session.user.name?.split(" ")[0] || t("profile")}
               </button>
               {isProfileOpen && (
                 <div
                   id="profile-menu"
                   role="menu"
-                  aria-label="Kullanıcı menüsü"
+                  aria-label={t("profile")}
                   className="absolute right-0 top-full mt-2 w-52 rounded-lg border border-border bg-bg-card py-1 shadow-lg"
                 >
                   <Link
@@ -111,7 +115,7 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
                     onClick={closeProfile}
                     className="block px-4 py-2 text-sm text-text hover:bg-bg-elevated focus-visible:bg-bg-elevated focus-visible:outline-none"
                   >
-                    Profilim
+                    {t("profile")}
                   </Link>
                   <Link
                     href="/alisveris-listesi"
@@ -127,7 +131,7 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
                     onClick={closeProfile}
                     className="block px-4 py-2 text-sm text-text hover:bg-bg-elevated focus-visible:bg-bg-elevated focus-visible:outline-none"
                   >
-                    Ayarlar
+                    {t("settings")}
                   </Link>
                   {(session.user.role === "ADMIN" || session.user.role === "MODERATOR") && (
                     <Link
@@ -144,7 +148,7 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
                     onClick={() => signOut({ callbackUrl: "/" })}
                     className="block w-full px-4 py-2 text-left text-sm text-error hover:bg-bg-elevated focus-visible:bg-bg-elevated focus-visible:outline-none"
                   >
-                    Çıkış Yap
+                    {t("logout")}
                   </button>
                 </div>
               )}
@@ -154,7 +158,7 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
               href="/giris"
               className="hidden rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-hover md:block"
             >
-              Giriş Yap
+              {t("login")}
             </Link>
           )}
 
@@ -199,7 +203,7 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
           className="border-t border-border px-4 py-4 md:hidden"
         >
           <div className="flex flex-col gap-3">
-            {NAV_LINKS.map((link) => {
+            {NAV_LINK_KEYS.map((link) => {
               const isActive = pathname === link.href || pathname.startsWith(link.href + "/");
               return (
                 <Link
@@ -213,7 +217,7 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
                   }`}
                   aria-current={isActive ? "page" : undefined}
                 >
-                  {link.label}
+                  {t(link.key)}
                 </Link>
               );
             })}
@@ -238,7 +242,7 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
                   onClick={() => setIsMobileOpen(false)}
                   className="rounded-lg px-3 py-2 text-sm font-medium text-text-muted transition-colors hover:bg-bg-card hover:text-text"
                 >
-                  Ayarlar
+                  {t("settings")}
                 </Link>
                 {(session.user.role === "ADMIN" || session.user.role === "MODERATOR") && (
                   <Link
@@ -253,7 +257,7 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
                   onClick={() => { setIsMobileOpen(false); signOut({ callbackUrl: "/" }); }}
                   className="rounded-lg px-3 py-2 text-left text-sm font-medium text-error transition-colors hover:bg-bg-card"
                 >
-                  Çıkış Yap
+                  {t("logout")}
                 </button>
               </>
             ) : (
@@ -262,7 +266,7 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
                 onClick={() => setIsMobileOpen(false)}
                 className="rounded-lg bg-primary px-3 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-primary-hover"
               >
-                Giriş Yap
+                {t("login")}
               </Link>
             )}
           </div>

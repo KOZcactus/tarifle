@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "recipes": "Recipes",
+    "discover": "Discover",
+    "aiAssistant": "AI Assistant",
+    "login": "Sign In",
+    "signup": "Sign Up",
+    "profile": "Profile",
+    "settings": "Settings",
+    "notifications": "Notifications",
+    "logout": "Sign Out",
+    "toggleTheme": "Toggle theme",
+    "toggleLanguage": "Change language"
+  },
+  "home": {
+    "heroTagline": "Food, drink and cocktail recipes — a modern Turkish recipe platform you can trust for quality.",
+    "heroRecipeCount": "{count} recipes",
+    "heroCtaBrowse": "Browse Recipes",
+    "heroCtaAi": "Ask AI Assistant",
+    "sectionFeatured": "Featured Recipes",
+    "sectionToday": "Recipe of the Day",
+    "sectionCuisines": "Explore Cuisines",
+    "sectionCategories": "Categories",
+    "sectionPopular": "🔥 Most Popular"
+  },
+  "settings": {
+    "languageTitle": "Language Preference",
+    "languageDescription": "Choose the interface language. Changes apply instantly; recipe content will also appear in your selected language (where an English translation exists).",
+    "languageSaved": "Language preference saved",
+    "languageSaveError": "Could not save language preference"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "loading": "Loading…",
+    "error": "Something went wrong"
+  }
+}

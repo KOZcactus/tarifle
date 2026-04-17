@@ -1,5 +1,11 @@
 import type { NextConfig } from "next";
 import { withSentryConfig } from "@sentry/nextjs";
+import createNextIntlPlugin from "next-intl/plugin";
+
+// next-intl plugin — `src/i18n/request.ts` config'ini keşfeder, her RSC
+// render'ında getRequestConfig() çağrılır, locale + messages enjekte
+// edilir. Cookie-based pattern (URL routing yok) ile uyumlu.
+const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const nextConfig: NextConfig = {
   // bf-cache: allow browsers to cache pages for back/forward navigation.
@@ -42,7 +48,7 @@ const nextConfig: NextConfig = {
 // Sentry wrapper — source maps upload + auto-instrumentation. DSN yoksa
 // build time'da uyarı verir ama fail etmez. SENTRY_AUTH_TOKEN prod'da
 // Vercel env'e konulunca source map upload çalışır.
-export default withSentryConfig(nextConfig, {
+export default withSentryConfig(withNextIntl(nextConfig), {
   silent: !process.env.CI,
   org: process.env.SENTRY_ORG,
   project: process.env.SENTRY_PROJECT,

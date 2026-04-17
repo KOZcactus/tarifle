@@ -150,6 +150,11 @@ model User {
   // gösterilebilir (opsiyonel ileri iş).
   suspendedAt      DateTime?
   suspendedReason  String?   @db.VarChar(500)
+  // Dil tercihi — "tr" default (tüm mevcut kullanıcılar TR sayılır). User
+  // ayarlar sayfasında veya navbar selector'da değiştirir. Cookie
+  // NEXT_LOCALE + bu alan birlikte çalışır: login'de cookie bu değerle
+  // sync'lenir, anonymous user ise sadece cookie kullanılır.
+  locale           String    @default("tr") @db.VarChar(5)
   createdAt        DateTime  @default(now())
   updatedAt        DateTime  @updatedAt
 

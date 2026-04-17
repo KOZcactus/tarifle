@@ -1,4 +1,6 @@
 import type { Metadata, Viewport } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
 import { bricolage, geistSans, geistMono } from "@/styles/fonts";
 import { Providers } from "@/components/providers";
 import { Navbar } from "@/components/layout/Navbar";
@@ -79,24 +81,30 @@ export default async function RootLayout({
   // Aktif duyurular RSC olarak burada çekilir — client banner sadece
   // localStorage dismissal state'ini izler. Boş liste ise banner hiç render
   // edilmez (hydration sonrası). Cache: RSC per-request.
-  const announcements = await getActiveAnnouncements();
+  const [announcements, locale, messages] = await Promise.all([
+    getActiveAnnouncements(),
+    getLocale(),
+    getMessages(),
+  ]);
 
   return (
     <html
-      lang="tr"
+      lang={locale}
       className={`${bricolage.variable} ${geistSans.variable} ${geistMono.variable} h-full`}
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col antialiased">
-        <Providers>
-          <BfCacheRestore />
-          <Navbar notificationSlot={<NotificationBellLoader />} />
-          {announcements.length > 0 && (
-            <AnnouncementBanner announcements={announcements} />
-          )}
-          <main className="flex-1 print:pt-0">{children}</main>
-          <Footer />
-        </Providers>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <Providers>
+            <BfCacheRestore />
+            <Navbar notificationSlot={<NotificationBellLoader />} />
+            {announcements.length > 0 && (
+              <AnnouncementBanner announcements={announcements} />
+            )}
+            <main className="flex-1 print:pt-0">{children}</main>
+            <Footer />
+          </Providers>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

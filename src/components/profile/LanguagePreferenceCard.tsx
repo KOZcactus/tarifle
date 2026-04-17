@@ -1,46 +1,66 @@
+"use client";
+
+import { useTransition } from "react";
+import { useLocale, useTranslations } from "next-intl";
+import { LOCALES, LOCALE_LABELS, type Locale } from "@/i18n/config";
+import { updateLocaleAction } from "@/lib/actions/locale";
+
 /**
- * Language preference card — placeholder UI until Faz 3 wires the full
- * i18n stack (next-intl + recipe.translations JSONB + messages/*.json).
+ * Language preference card — /ayarlar sayfasında render edilir.
+ * Seçim updateLocaleAction çağırır: cookie set + logged-in ise
+ * User.locale update + revalidatePath ile full tree refresh.
  *
- * Why a card (not a form action): we can't actually switch languages yet
- * because (a) tarif içeriği henüz EN/DE'de yok (Codex batch'i opsiyonel
- * translations alanıyla geldikten sonra dolacak), (b) UI string catalog
- * yok. Göstererek "coming soon" sinyali veriyoruz; Faz 3'te select real
- * bir Server Action'a bağlanır ve User.locale persist edilir.
- *
- * Design parity: aynı surface/radius/padding diğer settings kartlarıyla.
- * Select disabled + "Yakında" rozeti + kısa açıklama.
+ * Navbar'daki LanguageToggle ile aynı server action'ı paylaşır — kaynak
+ * her zaman cookie + (varsa) DB. Client state yok, kaybolmaz.
  */
 export function LanguagePreferenceCard() {
+  const locale = useLocale() as Locale;
+  const t = useTranslations("settings");
+  const [pending, startTransition] = useTransition();
+
+  const handleChange = (next: Locale) => {
+    if (next === locale) return;
+    const fd = new FormData();
+    fd.set("locale", next);
+    startTransition(() => {
+      void updateLocaleAction(fd);
+    });
+  };
+
   return (
     <section className="rounded-xl border border-border bg-bg-card p-5">
-      <header className="mb-3 flex items-center gap-2">
+      <header className="mb-3">
         <h2 className="font-heading text-base font-semibold text-text">
-          Dil tercihi
+          {t("languageTitle")}
         </h2>
-        <span className="rounded-full border border-secondary/30 bg-secondary/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-secondary">
-          Yakında
-        </span>
       </header>
 
-      <p className="mb-3 text-sm text-text-muted">
-        Arayüzün ve tariflerin görüneceği dil. Şu an sadece Türkçe aktif;
-        İngilizce ve Almanca yakında devreye giriyor.
-      </p>
+      <p className="mb-3 text-sm text-text-muted">{t("languageDescription")}</p>
 
-      <label className="block">
-        <span className="sr-only">Dil seçimi</span>
-        <select
-          disabled
-          defaultValue="tr"
-          aria-disabled="true"
-          className="w-full cursor-not-allowed rounded-lg border border-border bg-bg px-3 py-2 text-sm text-text-muted disabled:opacity-70"
-        >
-          <option value="tr">🇹🇷 Türkçe</option>
-          <option value="en">🇬🇧 English (yakında)</option>
-          <option value="de">🇩🇪 Deutsch (yakında)</option>
-        </select>
-      </label>
+      <div role="radiogroup" className="flex flex-col gap-2 sm:flex-row">
+        {LOCALES.map((code) => {
+          const meta = LOCALE_LABELS[code];
+          const active = code === locale;
+          return (
+            <button
+              key={code}
+              type="button"
+              role="radio"
+              aria-checked={active}
+              onClick={() => handleChange(code)}
+              disabled={pending}
+              className={`flex flex-1 items-center justify-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-medium transition-colors disabled:opacity-60 ${
+                active
+                  ? "border-primary bg-primary/10 text-primary"
+                  : "border-border bg-bg text-text hover:bg-bg-elevated"
+              }`}
+            >
+              <span aria-hidden>{meta.flag}</span>
+              <span>{meta.name}</span>
+            </button>
+          );
+        })}
+      </div>
     </section>
   );
 }

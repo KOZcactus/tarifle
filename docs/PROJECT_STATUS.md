@@ -1,6 +1,10 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 17 Nisan 2026 (AI Asistan v2 — synonym 10 → 45 grup + pantry 15 → 20)
+> Son güncelleme: 17 Nisan 2026 (Admin dashboard v2 — review + user growth + top viewed)
+
+## 17 Nisan 2026 — Admin dashboard v2
+
+13 stat card (önceden 10) + 4 yeni bölüm: 📈 kullanıcı büyüme (son 30 gün bar chart), ⭐ yorum yıldız dağılımı, 🔥 en çok görüntülenen tarifler (top 5), 👤 son kaydolan kullanıcılar (10). Review v2 entegre (toplam + ortalama rating + dağılım). Unified inceleme kuyruğu (variation + review PENDING tek sayı). Yeni alarmlar: e-posta doğrulama <60% highlight, görselsiz tarif >20% highlight. Yeni query helpers: getTopViewedRecipes, getRecentSignups, getUserGrowthDaily, getReviewDistribution.
 
 ## 17 Nisan 2026 — AI Asistan v2 synonym expansion
 

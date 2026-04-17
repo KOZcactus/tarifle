@@ -51,6 +51,7 @@ import { PrismaNeon } from "@prisma/adapter-neon";
 import { neonConfig } from "@neondatabase/serverless";
 import ws from "ws";
 import * as dotenv from "dotenv";
+import { assertDbTarget } from "./lib/db-env";
 
 neonConfig.webSocketConstructor = ws;
 
@@ -304,6 +305,7 @@ async function executeRollback(
 // ─── Main ────────────────────────────────────────────────
 
 async function main(): Promise<void> {
+  assertDbTarget("rollback-batch");
   const args = parseArgs(process.argv.slice(2));
 
   if (args.slugs.length === 0) {

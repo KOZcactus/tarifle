@@ -15,6 +15,7 @@ import ws from "ws";
 import * as dotenv from "dotenv";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
+import { assertDbTarget } from "./lib/db-env";
 
 neonConfig.webSocketConstructor = ws;
 const __d = path.dirname(fileURLToPath(import.meta.url));
@@ -132,6 +133,7 @@ async function applyVietnam(dryRun: boolean): Promise<number> {
 }
 
 async function main(): Promise<void> {
+  assertDbTarget("fix-procedure-flow");
   console.log(
     `🔧 fix-procedure-flow (${APPLY ? "APPLY" : "DRY RUN"}) → ${
       process.env.DATABASE_URL?.split("@")[1]?.split("/")[0] ?? "?"

@@ -20,6 +20,7 @@ import ws from "ws";
 import * as dotenv from "dotenv";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
+import { assertDbTarget } from "./lib/db-env";
 
 neonConfig.webSocketConstructor = ws;
 const __d = path.dirname(fileURLToPath(import.meta.url));
@@ -217,6 +218,7 @@ const FIXES: Record<string, Fix> = {
 };
 
 async function main(): Promise<void> {
+  assertDbTarget("fix-boilerplate-tipnotes");
   const databaseUrl = process.env.DATABASE_URL;
   if (!databaseUrl) {
     console.error("❌ DATABASE_URL yok");

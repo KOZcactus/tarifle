@@ -20,6 +20,7 @@ import { PrismaNeon } from "@prisma/adapter-neon";
 import dotenv from "dotenv";
 import path from "node:path";
 import { inferAllergensFromIngredients } from "../src/lib/allergens";
+import { assertDbTarget } from "./lib/db-env";
 
 dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
 const adapter = new PrismaNeon({ connectionString: process.env.DATABASE_URL! });
@@ -29,6 +30,7 @@ const DRY_RUN = process.argv.includes("--dry-run");
 const FORCE = process.argv.includes("--force");
 
 async function main() {
+  assertDbTarget("retrofit-allergens");
   const recipes = await prisma.recipe.findMany({
     select: {
       id: true,

@@ -16,6 +16,7 @@ import { PrismaNeon } from "@prisma/adapter-neon";
 import dotenv from "dotenv";
 import path from "node:path";
 import { inferDietTags } from "../src/lib/diet-inference";
+import { assertDbTarget } from "./lib/db-env";
 
 dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
 const adapter = new PrismaNeon({ connectionString: process.env.DATABASE_URL! });
@@ -24,6 +25,7 @@ const prisma = new PrismaClient({ adapter });
 const DRY_RUN = process.argv.includes("--dry-run");
 
 async function main() {
+  assertDbTarget("retrofit-diet-tags");
   const vegetarianTag = await prisma.tag.findUnique({
     where: { slug: "vejetaryen" },
     select: { id: true },

@@ -16,6 +16,7 @@ import ws from "ws";
 import * as dotenv from "dotenv";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
+import { assertDbTarget } from "./lib/db-env";
 
 neonConfig.webSocketConstructor = ws;
 const __d = path.dirname(fileURLToPath(import.meta.url));
@@ -43,6 +44,7 @@ const ALLERGEN_ORDER: readonly Allergen[] = [
 ];
 
 async function main(): Promise<void> {
+  assertDbTarget("fix-critical-allergens-batch11");
   console.log(
     `🔧 fix-critical-allergens-batch11 (${APPLY ? "APPLY" : "DRY RUN"}) → ${
       process.env.DATABASE_URL?.split("@")[1]?.split("/")[0] ?? "?"

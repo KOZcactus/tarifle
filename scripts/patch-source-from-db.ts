@@ -22,6 +22,7 @@ import * as dotenv from "dotenv";
 import * as fs from "node:fs";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
+import { assertDbTarget } from "./lib/db-env";
 
 neonConfig.webSocketConstructor = ws;
 const __d = path.dirname(fileURLToPath(import.meta.url));
@@ -208,6 +209,7 @@ function patchNullableStringField(
 // ── Main ────────────────────────────────────────────────────────────
 
 async function main(): Promise<void> {
+  assertDbTarget("patch-source-from-db");
   console.log(
     `📋 patch-source-from-db (${APPLY ? "APPLY" : "DRY RUN"})\n`,
   );

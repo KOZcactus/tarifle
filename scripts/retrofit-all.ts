@@ -15,6 +15,7 @@
  */
 
 import { execSync } from "node:child_process";
+import { assertDbTarget } from "./lib/db-env";
 
 type Step = {
   label: string;
@@ -48,6 +49,8 @@ const STEPS: readonly Step[] = [
   // değerlendirildi ama Google desteklemiyor, TR'de Bing/Yandex payı
   // düşük — YAGNI.
 ];
+
+assertDbTarget("retrofit-all");
 
 const isDryRun = process.argv.includes("--dry-run");
 const flag = isDryRun ? " --dry-run" : "";

@@ -17,6 +17,7 @@ import ws from "ws";
 import * as dotenv from "dotenv";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
+import { assertDbTarget } from "./lib/db-env";
 
 neonConfig.webSocketConstructor = ws;
 const __d = path.dirname(fileURLToPath(import.meta.url));
@@ -32,6 +33,7 @@ const APPLY = process.argv.includes("--apply");
 const BOILERPLATE_THRESHOLD = 6;
 
 async function main(): Promise<void> {
+  assertDbTarget("fix-boilerplate-to-null");
   console.log(
     `🔧 fix-boilerplate-to-null (${APPLY ? "APPLY" : "DRY RUN"}) → ${
       process.env.DATABASE_URL?.split("@")[1]?.split("/")[0] ?? "?"

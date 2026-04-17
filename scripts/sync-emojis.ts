@@ -22,6 +22,7 @@ import * as dotenv from "dotenv";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
 import { recipes } from "./seed-recipes";
+import { assertDbTarget } from "./lib/db-env";
 
 neonConfig.webSocketConstructor = ws;
 const __d = path.dirname(fileURLToPath(import.meta.url));
@@ -30,6 +31,7 @@ dotenv.config({ path: path.resolve(__d, "..", ".env.local") });
 const isDryRun = process.argv.includes("--dry-run");
 
 async function main(): Promise<void> {
+  assertDbTarget("sync-emojis");
   const databaseUrl = process.env.DATABASE_URL;
   if (!databaseUrl) {
     console.error("❌ DATABASE_URL yok");

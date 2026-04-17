@@ -18,6 +18,7 @@ import ws from "ws";
 import * as dotenv from "dotenv";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
+import { assertDbTarget } from "./lib/db-env";
 
 neonConfig.webSocketConstructor = ws;
 const __d = path.dirname(fileURLToPath(import.meta.url));
@@ -31,6 +32,7 @@ const QUICK_THRESHOLD = 30; // minutes — "30-dakika-alti"
 const PROTEIN_THRESHOLD = 15; // grams — "yuksek-protein"
 
 async function main(): Promise<void> {
+  assertDbTarget("fix-inconsistent-tags");
   console.log(
     `🔧 fix-inconsistent-tags (${APPLY ? "APPLY" : "DRY RUN"}) → ${
       process.env.DATABASE_URL?.split("@")[1]?.split("/")[0] ?? "?"

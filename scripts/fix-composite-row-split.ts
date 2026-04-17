@@ -21,6 +21,7 @@ import ws from "ws";
 import * as dotenv from "dotenv";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
+import { assertDbTarget } from "./lib/db-env";
 
 neonConfig.webSocketConstructor = ws;
 const __d = path.dirname(fileURLToPath(import.meta.url));
@@ -80,6 +81,7 @@ const SPLITS: Split[] = [
 // ═════════════════════════════════════════════════════════════════════
 
 async function main(): Promise<void> {
+  assertDbTarget("fix-composite-row-split");
   console.log(
     `🔧 fix-composite-row-split (${APPLY ? "APPLY" : "DRY RUN"}, manual ${INCLUDE_MANUAL ? "IN" : "EX"}cluded) → ${
       process.env.DATABASE_URL?.split("@")[1]?.split("/")[0] ?? "?"

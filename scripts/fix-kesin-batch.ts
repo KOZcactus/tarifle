@@ -16,6 +16,7 @@ import ws from "ws";
 import * as dotenv from "dotenv";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
+import { assertDbTarget } from "./lib/db-env";
 
 neonConfig.webSocketConstructor = ws;
 const __d = path.dirname(fileURLToPath(import.meta.url));
@@ -92,6 +93,7 @@ const STEP_FIXES: StepFix[] = [
 ];
 
 async function main(): Promise<void> {
+  assertDbTarget("fix-kesin-batch");
   console.log(
     `🔧 fix-kesin-batch (${APPLY ? "APPLY" : "DRY RUN"}) → ${
       process.env.DATABASE_URL?.split("@")[1]?.split("/")[0] ?? "?"

@@ -105,6 +105,14 @@ DATABASE_URL="postgresql://neondb_owner:xxxx@ep-xxxx-codex-import.eu-west-2.aws.
 Artık Codex'in yaptığı her yazma `codex-import` branch'inde kalıyor,
 production'a dokunmuyor.
 
+**Not (17 Nis 2026 sonrası):** Kerem'in ana PC'si artık `dev` adlı ayrı
+bir child branch kullanıyor; Codex tarafında bir değişiklik yok. Eğer
+Kerem sana URL yerine `dev` branch URL'si verirse akış aynı — yine child
+branch, prod değil. Destructive scriptler `scripts/lib/db-env.ts` guard'ı
+kullanır: prod host'u algılarsa script `--confirm-prod` flag'i olmadan
+durur. Codex tarafında bu flag **asla kullanılmaz** — prod promotion
+Kerem'e ait (`docs/PROD_PROMOTE.md`).
+
 ---
 
 ## 4. Projeyi tanı (Codex'in ilk işi)

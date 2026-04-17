@@ -17,6 +17,7 @@ import ws from "ws";
 import * as dotenv from "dotenv";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
+import { assertDbTarget } from "./lib/db-env";
 
 neonConfig.webSocketConstructor = ws;
 const __d = path.dirname(fileURLToPath(import.meta.url));
@@ -76,6 +77,7 @@ const FIXES: Fix[] = [
 // ═════════════════════════════════════════════════════════════════════
 
 async function main(): Promise<void> {
+  assertDbTarget("fix-step-ingredient-mismatch");
   console.log(
     `🔧 fix-step-ingredient-mismatch (${APPLY ? "APPLY" : "DRY RUN"}, review ${INCLUDE_REVIEW ? "IN" : "EX"}cluded) → ${
       process.env.DATABASE_URL?.split("@")[1]?.split("/")[0] ?? "?"

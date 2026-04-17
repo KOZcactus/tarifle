@@ -17,6 +17,7 @@ import * as dotenv from "dotenv";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
 import { estimateNutrition } from "../src/lib/nutrition";
+import { assertDbTarget } from "./lib/db-env";
 
 neonConfig.webSocketConstructor = ws;
 const __d = path.dirname(fileURLToPath(import.meta.url));
@@ -27,6 +28,7 @@ const FORCE = process.argv.includes("--force");
 const VALIDATE = process.argv.includes("--validate");
 
 async function main(): Promise<void> {
+  assertDbTarget("retrofit-nutrition");
   const databaseUrl = process.env.DATABASE_URL;
   if (!databaseUrl) {
     console.error("❌ DATABASE_URL yok");

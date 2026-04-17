@@ -10,6 +10,7 @@ import { PrismaClient } from "@prisma/client";
 import { PrismaNeon } from "@prisma/adapter-neon";
 import dotenv from "dotenv";
 import path from "node:path";
+import { assertDbTarget } from "./lib/db-env";
 
 dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
 const adapter = new PrismaNeon({ connectionString: process.env.DATABASE_URL! });
@@ -29,6 +30,7 @@ const FIXES = [
 ];
 
 async function main() {
+  assertDbTarget("fix-tipnotes");
   let updated = 0;
   let skipped = 0;
   for (const f of FIXES) {

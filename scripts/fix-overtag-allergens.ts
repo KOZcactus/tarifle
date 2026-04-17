@@ -18,6 +18,7 @@ import ws from "ws";
 import * as dotenv from "dotenv";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
+import { assertDbTarget } from "./lib/db-env";
 
 neonConfig.webSocketConstructor = ws;
 const __d = path.dirname(fileURLToPath(import.meta.url));
@@ -194,6 +195,7 @@ function ingredientMatches(name: string, rule: Rule): boolean {
 // ═══════════════════════════════════════════════════════════════════
 
 async function main(): Promise<void> {
+  assertDbTarget("fix-overtag-allergens");
   console.log(
     `🔧 fix-overtag-allergens (${APPLY ? "APPLY" : "DRY RUN"}, yumurta ${INCLUDE_YUMURTA ? "IN" : "EX"}cluded) → ${
       process.env.DATABASE_URL?.split("@")[1]?.split("/")[0] ?? "?"

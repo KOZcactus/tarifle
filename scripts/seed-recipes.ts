@@ -6,6 +6,7 @@ import * as dotenv from "dotenv";
 import * as path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { validateSeedRecipes } from "../src/lib/seed/recipe-schema";
+import { assertDbTarget } from "./lib/db-env";
 
 neonConfig.webSocketConstructor = ws;
 
@@ -12374,6 +12375,7 @@ export const recipes = [
 // ─── Seed Fonksiyonu ─────────────────────────────────────
 
 async function main() {
+  assertDbTarget("seed-recipes");
   const prisma = initPrisma();
   try {
     await runSeed(prisma);

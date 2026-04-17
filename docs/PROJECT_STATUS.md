@@ -1,6 +1,10 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 17 Nisan 2026 (Review v2 — moderation + preflight + profil + notification)
+> Son güncelleme: 17 Nisan 2026 (Neon dev/prod branch separation + prod guard)
+
+## 17 Nisan 2026 — Neon dev/prod branch + script guard
+
+Önceden tek Neon branch hem prod hem dev olarak kullanılıyordu (hata payı sıfır). Artık `production` parent + `dev` child (copy-on-write). Lokal `.env.local` dev'e bakar, `.env.production.local` (gitignore'lı) prod URL'i saklar. 34 destructive script `scripts/lib/db-env.ts` guard'ı import eder: prod host + `--confirm-prod` flag yoksa exit 1, flag varsa 3 sn uyarı banner. Vercel Production env prod URL'de, Preview/Development env dev URL'de. Runbook: `docs/PROD_PROMOTE.md`. Codex tarafı hiç etkilenmiyor (zaten child branch kullanıyor).
 
 ## 17 Nisan 2026 — Review sistemi v2
 

@@ -15,6 +15,7 @@ import ws from "ws";
 import * as dotenv from "dotenv";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
+import { assertDbTarget } from "./lib/db-env";
 
 neonConfig.webSocketConstructor = ws;
 const __d = path.dirname(fileURLToPath(import.meta.url));
@@ -65,6 +66,7 @@ const TAG_FIXES: Record<string, string[]> = {
 };
 
 async function main(): Promise<void> {
+  assertDbTarget("fix-featured-and-tags");
   const databaseUrl = process.env.DATABASE_URL;
   if (!databaseUrl) { console.error("❌ DATABASE_URL yok"); process.exit(1); }
 

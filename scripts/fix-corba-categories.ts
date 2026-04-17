@@ -14,6 +14,7 @@ import ws from "ws";
 import * as dotenv from "dotenv";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
+import { assertDbTarget } from "./lib/db-env";
 
 neonConfig.webSocketConstructor = ws;
 const __d = path.dirname(fileURLToPath(import.meta.url));
@@ -27,6 +28,7 @@ const APPLY = process.argv.includes("--apply");
 const SLUGS = ["bissara", "caldo-de-feijao", "jokai-bableves"];
 
 async function main(): Promise<void> {
+  assertDbTarget("fix-corba-categories");
   console.log(
     `🔧 fix-corba-categories (${APPLY ? "APPLY" : "DRY RUN"}) → ${
       process.env.DATABASE_URL?.split("@")[1]?.split("/")[0] ?? "?"

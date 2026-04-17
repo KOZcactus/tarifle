@@ -1,6 +1,10 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 17 Nisan 2026 (Admin ops v3 — leaderboard + raporlanan içerik + sortable/filterable liste sayfaları)
+> Son güncelleme: 17 Nisan 2026 (Admin ops v4 — user/recipe detay drill-down sayfaları)
+
+## 17 Nisan 2026 — Admin ops v4 drill-down
+
+`/admin/kullanicilar/[username]` ve `/admin/tarifler/[slug]` yeni detay sayfaları. Moderator-view: HIDDEN + PENDING_REVIEW içerik görünür, preflight flag chip'leri + hiddenReason inline. User detay: 7 stat card + rozetler + variation/review/report listeleri. Recipe detay: 6 stat card + beslenme + rating aggregate + distribution mini-bar + review/variation listeleri + son kaydedenler. Liste sayfalarında drill-down linkleri (name → user detay, title → recipe detay, public ↗ yan link). Yeni queries: getAdminUserDetail + getAdminRecipeDetail.
 
 ## 17 Nisan 2026 — Admin ops v3
 

@@ -1,6 +1,19 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 17 Nisan 2026 (Admin ops v6 — moderasyon log + tag/kategori CRUD, admin kapandı)
+> Son güncelleme: 17 Nisan 2026 (Admin ops v7 — user ban + announcement + collection mod + broadcast — admin tamamen kapandı)
+
+## 17 Nisan 2026 — Admin ops v7 niş paket
+
+4 iş tek pakette, admin paneli nihai olarak kapandı:
+
+- **User suspension** — schema: `User.suspendedAt` + `suspendedReason`. Auth: authorize() + jwt callback çift katman guard (mid-session askıda ise token invalidate). ADMIN hesabı askıya alınamaz, self-suspend yasak. UI: user detail sayfasında "Askıya al/kaldır" butonu, 🚫 chip.
+- **Announcement (site-wide banner)** — model: `Announcement` + `AnnouncementVariant` enum (INFO/WARNING/SUCCESS) + startsAt/endsAt pencere. `/admin/duyurular` CRUD + inline edit. Public: `AnnouncementBanner` client component, localStorage dismissal, root layout mount. Build-time safe (`NEXT_PHASE` kontrolü).
+- **Collection moderation** — schema: `Collection.hiddenAt` + `hiddenReason`. `/admin/koleksiyonlar` visibility filter + search + pagination. `getPublicCollections` + `getViewableCollection` hidden filter (owner görür, yabancı görmez).
+- **Notification broadcast** — `/admin/bildirim-gonder` form (title/body/link/role/onlyVerified). `broadcastNotificationAction` bulk createMany SYSTEM tipinde, audit log "BROADCAST count=N" entry.
+
+Nav 8 → 11 tab. Migration `20260417160000_suspension_announcement_collection`. 22 yeni test (Zod validation + isActive window). 460 unit toplam PASS.
+
+**Admin panel kapanış skoru:** 14 sayfa + 3 CSV API + 60+ server action + 8 schema migration.
 
 ## 17 Nisan 2026 — Admin ops v6 moderasyon log + taxonomy
 

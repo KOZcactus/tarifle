@@ -4134,7 +4134,7 @@ export const recipes = [
     tipNote: "Hamuru ince açın ve kenarları sıkı bastırın; kızartırken harç dışarı çıkmaz.",
     servingSuggestion: "Ayranla sıcak servis edin.",
     tags: ["misafir-sofrasi", "butce-dostu"], allergens: ["GLUTEN"] as const,
-    ingredients: [{ name: "Un", amount: "4", unit: "su bardağı", sortOrder: 1, group: "Hamur için" }, { name: "Su", amount: "1.5", unit: "su bardağı", sortOrder: 2, group: "Hamur için" }, { name: "Dana kıyma", amount: "350", unit: "gr", sortOrder: 3, group: "İç için" }, { name: "Soğan", amount: "1", unit: "adet", sortOrder: 4, group: "İç için" }, { name: "Karabiber", amount: "1", unit: "çay kaşığı", sortOrder: 5, group: "İç için" }, { name: "Sıvı yağ", amount: "3", unit: "su bardağı", sortOrder: 6 }],
+    ingredients: [{ name: "Un", amount: "4", unit: "su bardağı", sortOrder: 1 }, { name: "Su", amount: "1.5", unit: "su bardağı", sortOrder: 2 }, { name: "Dana kıyma", amount: "350", unit: "gr", sortOrder: 3 }, { name: "Soğan", amount: "1", unit: "adet", sortOrder: 4 }, { name: "Karabiber", amount: "1", unit: "çay kaşığı", sortOrder: 5 }, { name: "Sıvı yağ", amount: "3", unit: "su bardağı", sortOrder: 6 }, { name: "Tuz", amount: "1", unit: "çay kaşığı", sortOrder: 7 }],
     steps: [{ stepNumber: 1, instruction: "Un ve suyla hamur yoğurup 20 dakika dinlendirin.", timerSeconds: 1200 }, { stepNumber: 2, instruction: "Kıyma, soğan, tuz ve karabiberle sulu bir iç hazırlayın." }, { stepNumber: 3, instruction: "Hamurları açıp harçla kapatın ve kızgın yağda 3-4 dakika kızartın.", timerSeconds: 240 }],
   },
   {

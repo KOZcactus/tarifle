@@ -223,6 +223,58 @@ function checkSlugDuplicate(
   }
 }
 
+/**
+ * Comma-composite ingredient row detector. RECIPE_FORMAT.md bans packing
+ * multiple ingredients into one row ("Tuz, şeker, maydanoz") — each should
+ * be its own RecipeIngredient. Flag as ERROR so Codex can't land a new
+ * batch with this pattern.
+ */
+function checkCompositeCommaRows(r: SeedRecipe, issues: Issue[]): void {
+  r.ingredients.forEach((ing, i) => {
+    if (!ing.name.includes(",")) return;
+    const parts = ing.name.split(",").map((p) => p.trim()).filter(Boolean);
+    if (parts.length < 2) return;
+    issues.push({
+      severity: "ERROR",
+      field: `ingredients[${i}].name`,
+      message: `Comma-composite row "${ing.name}" — split into ${parts.length} rows: ${parts.join(" | ")}`,
+    });
+  });
+}
+
+/**
+ * Step ↔ Ingredient mismatch detector. If a step instruction mentions a
+ * baseline staple (tuz/karabiber/un) but no ingredient has that name,
+ * flag as ERROR. Catches the "manti step says 'tuzla yoğurun' but no Tuz
+ * in the ingredient list" class of bugs.
+ */
+const STEP_BASELINES: { re: RegExp; kws: string[]; label: string }[] = [
+  { re: /(?:^|[\s,;.!?/()\-])tuz(?=$|[\s,;.!?/()\-lu])/i, kws: ["tuz"], label: "tuz" },
+  { re: /(?:^|[\s,;.!?/()\-])karabiber(?=$|[\s,;.!?/()\-li])/i, kws: ["karabiber"], label: "karabiber" },
+  { re: /(?:^|[\s,;.!?/()\-])pul biber(?=$|[\s,;.!?/()\-li])/i, kws: ["pul biber"], label: "pul biber" },
+  { re: /(?:^|[\s,;.!?/()\-])un(?=$|[\s,;.!?/()\-lu])/i, kws: ["un"], label: "un" },
+];
+
+function checkStepIngredientMismatch(r: SeedRecipe, issues: Issue[]): void {
+  const ingText = r.ingredients.map((i) => i.name.toLocaleLowerCase("tr-TR")).join(" | ");
+  const flagged = new Set<string>();
+  for (const step of r.steps) {
+    const instrLower = step.instruction.toLocaleLowerCase("tr-TR");
+    for (const bl of STEP_BASELINES) {
+      if (flagged.has(bl.label)) continue;
+      if (!bl.re.test(instrLower)) continue;
+      const found = bl.kws.some((kw) => ingText.includes(kw));
+      if (found) continue;
+      flagged.add(bl.label);
+      issues.push({
+        severity: "ERROR",
+        field: `steps[${step.stepNumber - 1}].instruction`,
+        message: `Step ${step.stepNumber} mentions "${bl.label}" but ingredient list has no match — add ingredient or revise step`,
+      });
+    }
+  }
+}
+
 export function runSemanticChecks(
   r: SeedRecipe,
   existingSlugs: Set<string> | null = null,
@@ -249,6 +301,8 @@ export function runSemanticChecks(
   checkAlcoholTag(r, issues);
   checkSlugDuplicate(r.slug, existingSlugs, issues);
   checkCuisine(r, issues);
+  checkCompositeCommaRows(r, issues);
+  checkStepIngredientMismatch(r, issues);
 
   return issues;
 }

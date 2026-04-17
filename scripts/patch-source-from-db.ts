@@ -30,7 +30,10 @@ const adapter = new PrismaNeon({ connectionString: process.env.DATABASE_URL! });
 const prisma = new PrismaClient({ adapter });
 
 const APPLY = process.argv.includes("--apply");
-const SEED_PATH = path.resolve(__d, "seed-recipes.ts");
+const seedPathArgIdx = process.argv.indexOf("--seed-path");
+const SEED_PATH = seedPathArgIdx !== -1
+  ? path.resolve(process.cwd(), process.argv[seedPathArgIdx + 1])
+  : path.resolve(__d, "seed-recipes.ts");
 
 // Optional --slugs a,b,c filter (or --slugs-file path). Limits patches
 // to a specific set — default (unfiltered) rewrites every drifted recipe,

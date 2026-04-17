@@ -1,5 +1,15 @@
 import type { Allergen } from "@prisma/client";
 
+// Re-export the unified matching API so callers can import everything
+// from one module. The actual rules live in allergen-matching.ts to avoid
+// drift with scripts/audit-deep.ts.
+export {
+  ALLERGEN_ORDER,
+  ALLERGEN_RULES,
+  ingredientMatchesAllergen,
+  inferAllergensFromIngredients,
+} from "./allergen-matching";
+
 /**
  * User-facing labels and emojis for the Allergen enum.
  * Labels are plural-noun form that reads naturally in chip rows ("Süt",
@@ -31,22 +41,15 @@ export const ALLERGEN_EMOJI: Record<Allergen, string> = {
   HARDAL: "🌭",
 };
 
-/**
- * Ordered list used for UI chips and filter rows. Stable order = stable
- * visual layout as recipes gain/lose allergens.
- */
-export const ALLERGEN_ORDER: readonly Allergen[] = [
-  "GLUTEN",
-  "SUT",
-  "YUMURTA",
-  "KUSUYEMIS",
-  "YER_FISTIGI",
-  "SOYA",
-  "DENIZ_URUNLERI",
-  "SUSAM",
-  "KEREVIZ",
-  "HARDAL",
-];
+// ALLERGEN_ORDER moved to allergen-matching.ts (re-exported above).
+
+// The private normalise() + KEYWORDS map + inferAllergensFromIngredients
+// previously lived here. All matching logic moved to ./allergen-matching.ts
+// (single source of truth shared with scripts/audit-deep.ts).
+//
+// Legacy KEYWORDS below is kept only for allergens unit tests that still
+// reference it by name — not used in production code. Safe to remove once
+// those tests migrate.
 
 /**
  * Normalise an ingredient/name string for keyword matching:
@@ -216,50 +219,5 @@ const KEYWORDS: Record<Allergen, readonly string[]> = {
   HARDAL: ["hardal", "mustard"],
 };
 
-/**
- * Infers the allergen set for a recipe from its ingredient names. Pure
- * function — no DB, no IO — so the retrofit script and unit tests exercise
- * the same code path.
- *
- * The function prefers specific matches over broad ones: if the ingredient
- * list contains "yer fistik", only YER_FISTIGI is added (not KUSUYEMIS).
- * For unrelated overlaps each allergen is considered independently.
- */
-export function inferAllergensFromIngredients(
-  ingredients: readonly { name: string }[],
-): Allergen[] {
-  const found = new Set<Allergen>();
-  const normalized = ingredients.map((i) => normalise(i.name));
-
-  // 1) YER_FISTIGI is checked first so it wins over the generic "fistik"
-  //    keyword that would otherwise push peanuts into KUSUYEMIS.
-  const hasPeanut = normalized.some((n) =>
-    KEYWORDS.YER_FISTIGI.some((k) => n.includes(k)),
-  );
-  if (hasPeanut) found.add("YER_FISTIGI");
-
-  // 2) All other allergens — iterate in enum order, substring match.
-  for (const allergen of ALLERGEN_ORDER) {
-    if (allergen === "YER_FISTIGI") continue; // already handled
-    for (const n of normalized) {
-      // If we already identified a peanut context for THIS ingredient,
-      // skip tree-nut matching on it so "yer fistigi" does not also
-      // trigger KUSUYEMIS via the generic "fistik" keyword.
-      if (
-        allergen === "KUSUYEMIS" &&
-        hasPeanut &&
-        KEYWORDS.YER_FISTIGI.some((k) => n.includes(k))
-      ) {
-        continue;
-      }
-      if (KEYWORDS[allergen].some((k) => n.includes(k))) {
-        found.add(allergen);
-        break; // one hit per allergen is enough; move on
-      }
-    }
-  }
-
-  // Return in canonical order so UI chip rows are stable even if two
-  // recipes have the same set in different hit order.
-  return ALLERGEN_ORDER.filter((a) => found.has(a));
-}
+// inferAllergensFromIngredients moved to ./allergen-matching.ts. The
+// export above (top of file) re-exports it so callers don't break.

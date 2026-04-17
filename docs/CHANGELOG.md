@@ -90,6 +90,7 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🐛 **Codex2 virgül-composite split (24 row → 59 yeni ingredient)** — "Tuz, karabiber, pul biber" tek row pattern'ı ayrı ingredient'lara bölündü (7 AUTO + 17 MANUAL).
 - 🐛 **Codex2 ek semantik 3 bulgu** — jokai-bableves Sıvı yağ, csalamade Şeker, banh-mi Sirke+Şeker (Turşu için) + Kişniş (Sandviç için).
 - 🐛 **humus Pul biber + kladdkaka Un** eksik ingredient ekle, kladdkaka GLUTEN allergen eklendi.
+- 🧹 **Source sync** (17 Nis) — 52 tarif `scripts/seed-recipes.ts` + 14 bootstrap `prisma/seed.ts` DB snapshot'ına göre regenerate (ingredients + steps + cookMinutes + tipNote + servingSuggestion field-by-field patch). 107 patch toplam. `scripts/patch-source-from-db.ts` bracket-depth-safe string slicer, `--slugs` / `--slugs-file` / `--seed-path` flag'li.
 
 ## Uyarlama sistemi
 
@@ -257,6 +258,10 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🔍 **`audit-composite-rows.ts`** (17 Nis) — virgülle birleşik ingredient.name tespiti + STAPLE_KEYWORDS ile auto/manual strategy.
 - 🔧 **Fix scripts (17 Nis, ~15 yeni)** — `fix-critical-allergens.ts` + `v2`, `fix-mayonez-yumurta.ts`, `fix-overtag-allergens.ts`, `fix-inconsistent-tags.ts`, `fix-zero-tag-recipes.ts`, `fix-boilerplate-to-null.ts`, `fix-unit-lt-to-litre.ts`, `fix-duplicate-titles.ts`, `fix-single-ingredient-groups.ts`, `fix-partial-grouping.ts`, `fix-corba-categories.ts`, `fix-kesin-batch.ts`, `fix-procedure-flow.ts`, `fix-vietnam-sauce-refs.ts`, `fix-final-polish.ts`, `fix-step-ingredient-mismatch.ts`, `fix-composite-row-split.ts` — hepsi idempotent, dry-run default, --apply flag'li.
 - ⚙️ **audit-deep.ts iyileştirmeleri** (17 Nis) — `asciiNormalize()` Türkçe inflected form desteği ("ekmek" → "ekmeği"), keyword listesi allergens.ts ile sync (kefir/filmjölk/gochujang/furikake/yengeç/dolmalık fıstık/tortilla/yulaf/granola/kuskus/muffin/kruton), TYPE_CATEGORY_MAP permissive (APERATIF multi-category), tolerance (totalMinutes > 2160 dk, kcal < 1, boilerplate threshold 6+, macro ≥10 kcal, "sa" short-form bug fix).
+- 🧹 **`src/lib/allergen-matching.ts`** (17 Nis, yeni) — Tek kaynak allergen matching mantığı. `ALLERGEN_RULES` + `ingredientMatchesAllergen` + `inferAllergensFromIngredients` unified. `src/lib/allergens.ts` artık buradan re-export eder; retrofit-allergens + UI import'ları bozulmaz. DRY: audit-deep.ts'te kendi copy'si kalıyor (tip uyumsuzluğu için ayrı sprint'te birleşecek).
+- 🔒 **`scripts/validate-batch.ts` + 2 yeni ERROR check** (17 Nis) — `checkCompositeCommaRows` (virgülle birleşik ingredient row) + `checkStepIngredientMismatch` (step'te tuz/karabiber/un/pul biber geçiyor ama ingredient'ta yok, baseline staple'lar için). CI `content:validate` job'unda otomatik run, yeni Codex batch'te benzer pattern'lar merge bloklanır.
+- 📋 **`scripts/sync-source-from-db.ts`** (17 Nis, yeni) — source drift raporu (DB ↔ seed-recipes.ts). Read-only dry-run, ingredient missing + group + scalar drift detect.
+- 🔧 **`scripts/patch-source-from-db.ts`** (17 Nis, yeni) — DB → source senkronizasyon, bracket-depth safe string slicing. Field-by-field patch: ingredients/steps array + cookMinutes/prepMinutes/totalMinutes scalar + tipNote/servingSuggestion nullable string. `--slugs-file` + `--seed-path` flag'li (bootstrap `prisma/seed.ts` için de çalışır).
 
 ## A11y
 

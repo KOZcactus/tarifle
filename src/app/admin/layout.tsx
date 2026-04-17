@@ -44,6 +44,7 @@ export default async function AdminLayout({
         <NavLink href="/admin/duyurular">Duyurular</NavLink>
         <NavLink href="/admin/bildirim-gonder">Bildirim</NavLink>
         <NavLink href="/admin/moderasyon-logu">Log</NavLink>
+        <NavLink href="/sentry-test">Sentry Test</NavLink>
       </nav>
 
       {children}

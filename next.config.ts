@@ -47,9 +47,12 @@ export default withSentryConfig(nextConfig, {
   org: process.env.SENTRY_ORG,
   project: process.env.SENTRY_PROJECT,
   authToken: process.env.SENTRY_AUTH_TOKEN,
-  // `/monitoring` tunnel route → Sentry istekleri aynı origin üzerinden
-  // geçer, ad-blocker'lar bloklamaz. Next.js rewrite gerektirir.
-  tunnelRoute: "/monitoring",
+  // Tunnel route → Sentry istekleri aynı origin üzerinden geçer.
+  // `/monitoring` default adı EasyPrivacy/AdGuard filter listelerinde
+  // (ERR_BLOCKED_BY_CLIENT). `/api/*` altında obscure bir ad kullan →
+  // hem ad-blocker listelerine yakalanmaz hem next.config headers
+  // policy'sinden muaf (`/((?!api|_next).*)`).
+  tunnelRoute: "/api/tarifle-ingest",
   // Source map config — prod JS içinde source map path'i gömülmez ama
   // Sentry sunucusunda erişilebilir.
   sourcemaps: {

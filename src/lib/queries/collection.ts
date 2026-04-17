@@ -22,7 +22,9 @@ export async function getUserCollections(userId: string) {
 
 export async function getPublicCollections(userId: string) {
   return prisma.collection.findMany({
-    where: { userId, isPublic: true },
+    // Admin gizlediği (hiddenAt != null) public koleksiyonlar public listelerden düşer.
+    // Owner kendi koleksiyonunu /profil/me'de zaten görür (admin filter yok oraya).
+    where: { userId, isPublic: true, hiddenAt: null },
     orderBy: [{ sortOrder: "asc" }, { createdAt: "desc" }],
     include: {
       _count: { select: { items: true } },
@@ -69,8 +71,13 @@ export async function getCollectionById(id: string) {
 export async function getViewableCollection(id: string, viewerId?: string | null) {
   const collection = await getCollectionById(id);
   if (!collection) return null;
+  const isOwner = viewerId && collection.userId === viewerId;
+  // Gizlenmiş koleksiyon: sahibi görebilir (kendi içeriğini inkar etmeyelim),
+  // başkaları göremez. Public flag dahi olsa hiddenAt dolu ise yabancıya
+  // 404 pratik olarak döner.
+  if ("hiddenAt" in collection && collection.hiddenAt && !isOwner) return null;
   if (collection.isPublic) return collection;
-  if (viewerId && collection.userId === viewerId) return collection;
+  if (isOwner) return collection;
   return null;
 }
 

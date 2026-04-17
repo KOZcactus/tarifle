@@ -12,6 +12,7 @@ import {
   InlineUserRole,
   InlineUserVerified,
 } from "@/components/admin/InlineUserEdit";
+import { SuspendUserButton } from "@/components/admin/SuspendUserButton";
 
 export const dynamic = "force-dynamic";
 
@@ -124,10 +125,31 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
                   ✉ doğrulanmış
                 </span>
               )}
+              {user.suspendedAt && (
+                <span
+                  className="rounded-full bg-error/15 px-2 py-0.5 text-xs font-medium text-error"
+                  title={user.suspendedReason ?? ""}
+                >
+                  🚫 Askıda
+                </span>
+              )}
             </div>
-            <div className="mt-2">
+            <div className="mt-2 flex flex-wrap items-center gap-3">
               <InlineUserVerified userId={user.id} value={user.isVerified} />
+              <SuspendUserButton
+                userId={user.id}
+                suspended={!!user.suspendedAt}
+                allow={
+                  // Kendini askıya alamaz, ADMIN hesabı askıya alınamaz.
+                  user.id !== session?.user?.id && user.role !== "ADMIN"
+                }
+              />
             </div>
+            {user.suspendedAt && user.suspendedReason && (
+              <p className="mt-2 text-xs italic text-text-muted">
+                Askıya alma sebebi: {user.suspendedReason}
+              </p>
+            )}
             <p className="mt-1 text-sm text-text-muted">
               @{user.username ?? "—"}
               {user.email && <span className="ml-2">· {user.email}</span>}

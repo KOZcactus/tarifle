@@ -3,6 +3,8 @@ import { bricolage, geistSans, geistMono } from "@/styles/fonts";
 import { Providers } from "@/components/providers";
 import { Navbar } from "@/components/layout/Navbar";
 import { NotificationBellLoader } from "@/components/notifications/NotificationBellLoader";
+import { AnnouncementBanner } from "@/components/announcement/AnnouncementBanner";
+import { getActiveAnnouncements } from "@/lib/queries/admin";
 import { Footer } from "@/components/layout/Footer";
 import { BfCacheRestore } from "@/components/layout/BfCacheRestore";
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/constants";
@@ -69,11 +71,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Aktif duyurular RSC olarak burada çekilir — client banner sadece
+  // localStorage dismissal state'ini izler. Boş liste ise banner hiç render
+  // edilmez (hydration sonrası). Cache: RSC per-request.
+  const announcements = await getActiveAnnouncements();
+
   return (
     <html
       lang="tr"
@@ -84,6 +91,9 @@ export default function RootLayout({
         <Providers>
           <BfCacheRestore />
           <Navbar notificationSlot={<NotificationBellLoader />} />
+          {announcements.length > 0 && (
+            <AnnouncementBanner announcements={announcements} />
+          )}
           <main className="flex-1 print:pt-0">{children}</main>
           <Footer />
         </Providers>

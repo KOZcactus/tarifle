@@ -328,6 +328,117 @@ export async function getMostReportedReviews(limit = 5): Promise<
 
 // ─── Admin drill-down detail queries ───
 
+// ─── Announcement admin ──────────────────────────────────
+
+export async function getAdminAnnouncements() {
+  return prisma.announcement.findMany({
+    orderBy: { createdAt: "desc" },
+    select: {
+      id: true,
+      title: true,
+      body: true,
+      link: true,
+      variant: true,
+      startsAt: true,
+      endsAt: true,
+      createdAt: true,
+      updatedAt: true,
+    },
+  });
+}
+
+/**
+ * Aktif duyurular — public layout'ta banner olarak gösterilir.
+ * Kurallar:
+ *  - startsAt null → hemen geçerli
+ *  - endsAt null → süresiz
+ *  - startsAt/endsAt her ikisi set ise aradaki pencerede geçerli
+ *
+ * Defensive: build prerender (CI + lokal) sırasında DATABASE_URL placeholder
+ * olabilir ya da migration henüz apply edilmemiş olabilir. Hata fırlarsa
+ * banner'sız sessiz dönüyoruz — layout asla patlamamalı.
+ */
+export async function getActiveAnnouncements() {
+  const now = new Date();
+  try {
+    return await prisma.announcement.findMany({
+      where: {
+        AND: [
+          { OR: [{ startsAt: null }, { startsAt: { lte: now } }] },
+          { OR: [{ endsAt: null }, { endsAt: { gte: now } }] },
+        ],
+      },
+      orderBy: { createdAt: "desc" },
+      select: {
+        id: true,
+        title: true,
+        body: true,
+        link: true,
+        variant: true,
+      },
+    });
+  } catch (err) {
+    // DB erişimsiz/tablo yok → boş liste. Banner hiç render edilmez,
+    // layout asla patlamaz. Build prerender sırasında (NEXT_PHASE set)
+    // sessiz geç — her static sayfa için log basmak çıktıyı boğar.
+    if (process.env.NEXT_PHASE !== "phase-production-build") {
+      const msg = err instanceof Error ? err.message : String(err);
+      console.warn(`[layout] getActiveAnnouncements skipped: ${msg.slice(0, 120)}`);
+    }
+    return [];
+  }
+}
+
+// ─── Collection admin ─────────────────────────────────────
+
+export interface AdminCollectionParams {
+  visibility?: "public" | "private" | "hidden"; // filter
+  search?: string;
+  page?: number;
+  pageSize?: number;
+}
+
+export async function getAdminCollections(params: AdminCollectionParams) {
+  const { visibility, search, page = 1, pageSize = 50 } = params;
+
+  const where: Record<string, unknown> = {};
+  if (visibility === "public") {
+    where.isPublic = true;
+    where.hiddenAt = null;
+  } else if (visibility === "private") {
+    where.isPublic = false;
+  } else if (visibility === "hidden") {
+    where.hiddenAt = { not: null };
+  }
+  if (search && search.trim()) {
+    where.name = { contains: search.trim(), mode: "insensitive" };
+  }
+
+  const [collections, total] = await Promise.all([
+    prisma.collection.findMany({
+      where,
+      orderBy: { createdAt: "desc" },
+      skip: (page - 1) * pageSize,
+      take: pageSize,
+      select: {
+        id: true,
+        name: true,
+        slug: true,
+        emoji: true,
+        isPublic: true,
+        hiddenAt: true,
+        hiddenReason: true,
+        createdAt: true,
+        user: { select: { username: true, name: true } },
+        _count: { select: { items: true } },
+      },
+    }),
+    prisma.collection.count({ where }),
+  ]);
+
+  return { collections, total, page, pageSize };
+}
+
 // ─── Moderation log ───────────────────────────────────────
 
 export interface ModerationLogParams {
@@ -510,6 +621,8 @@ export async function getAdminUserDetail(username: string) {
       createdAt: true,
       kvkkAccepted: true,
       kvkkDate: true,
+      suspendedAt: true,
+      suspendedReason: true,
       _count: {
         select: {
           variations: true,

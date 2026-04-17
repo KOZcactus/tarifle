@@ -38,8 +38,11 @@ export default async function AdminLayout({
         <NavLink href="/admin/raporlar">Raporlar</NavLink>
         <NavLink href="/admin/tarifler">Tarifler</NavLink>
         <NavLink href="/admin/kullanicilar">Kullanıcılar</NavLink>
+        <NavLink href="/admin/koleksiyonlar">Koleksiyonlar</NavLink>
         <NavLink href="/admin/kategoriler">Kategoriler</NavLink>
         <NavLink href="/admin/etiketler">Etiketler</NavLink>
+        <NavLink href="/admin/duyurular">Duyurular</NavLink>
+        <NavLink href="/admin/bildirim-gonder">Bildirim</NavLink>
         <NavLink href="/admin/moderasyon-logu">Log</NavLink>
       </nav>
 

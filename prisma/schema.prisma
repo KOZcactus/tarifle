@@ -144,6 +144,12 @@ model User {
   termsVersion     String?   @db.VarChar(20)
   marketingConsent Boolean   @default(false)
   deletedAt        DateTime?
+  // Suspension — admin action. Null = hesap aktif. Değer varsa giriş yapamaz
+  // ve protected action'lar (yorum/uyarlama yazma) bloklanır. Reason
+  // moderator'ın kayda aldığı kısa not, kullanıcıya "sebep ekranında"
+  // gösterilebilir (opsiyonel ileri iş).
+  suspendedAt      DateTime?
+  suspendedReason  String?   @db.VarChar(500)
   createdAt        DateTime  @default(now())
   updatedAt        DateTime  @updatedAt
 
@@ -617,6 +623,11 @@ model Collection {
   coverImageUrl String?  @db.Text
   isPublic      Boolean  @default(false)
   sortOrder     Int      @default(0)
+  // Admin gizleme — public koleksiyon uygunsuz içerik bildirilirse
+  // admin hideCollection ile timestamp yazar. Owner koleksiyonunu görür
+  // (kendi dashboard'ında) ama public listelerden düşer.
+  hiddenAt      DateTime?
+  hiddenReason  String?  @db.VarChar(500)
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 
@@ -709,4 +720,32 @@ model Notification {
   @@index([userId, isRead, createdAt])
   @@index([userId, createdAt])
   @@map("notifications")
+}
+
+// Site-wide duyuru — admin ekler, public header'da banner olarak gösterilir.
+// `endsAt` null = süresiz; `startsAt` null = hemen başlar. Variant sütun tipi
+// serbest string ama UI bilinen 3 değeri renderlar (info/warning/success).
+enum AnnouncementVariant {
+  INFO
+  WARNING
+  SUCCESS
+}
+
+model Announcement {
+  id        String              @id @default(cuid())
+  title     String              @db.VarChar(200)
+  body      String?             @db.VarChar(1000)
+  link      String?             @db.VarChar(500)
+  variant   AnnouncementVariant @default(INFO)
+  // Yayın penceresi. Her ikisi de null bırakılırsa duyuru "taslak"
+  // gibidir; only startsAt verilirse o andan itibaren süresiz yayın.
+  startsAt  DateTime?
+  endsAt    DateTime?
+  // Kim oluşturdu — audit için; silinmiş user için null kalabilir.
+  createdBy String?
+  createdAt DateTime            @default(now())
+  updatedAt DateTime            @updatedAt
+
+  @@index([startsAt, endsAt])
+  @@map("announcements")
 }

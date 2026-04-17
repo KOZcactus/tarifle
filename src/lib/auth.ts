@@ -125,6 +125,14 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
         if (!user || !user.passwordHash) return null;
 
+        // Suspended accounts can't sign in. We intentionally fall through
+        // to the generic "e-posta veya şifre hatalı" flow rather than
+        // leaking suspension state to an attacker — honest users see the
+        // suspendedAt flag on /ayarlar page after next valid login attempt,
+        // or in-product support. (Future work: dedicated "hesabın askıda"
+        // screen with suspendedReason.)
+        if (user.suspendedAt) return null;
+
         const isValid = await bcrypt.compare(password, user.passwordHash);
         if (!isValid) return null;
 
@@ -142,9 +150,20 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       if (user) {
         const dbUser = await prisma.user.findUnique({
           where: { id: user.id },
-          select: { id: true, username: true, role: true, avatarUrl: true },
+          select: {
+            id: true,
+            username: true,
+            role: true,
+            avatarUrl: true,
+            suspendedAt: true,
+          },
         });
         if (dbUser) {
+          // Defensive: a session could be reissued mid-suspension (ör. admin
+          // 1 saat sonra askıya aldı, token hâlâ geçerli). Return null ile
+          // token'ı iptal edelim — client bir sonraki middleware geçişinde
+          // sign-in'e yönlendirilir.
+          if (dbUser.suspendedAt) return null;
           token.id = dbUser.id;
           token.username = dbUser.username;
           token.role = dbUser.role;

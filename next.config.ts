@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { withSentryConfig } from "@sentry/nextjs";
 
 const nextConfig: NextConfig = {
   // bf-cache: allow browsers to cache pages for back/forward navigation.
@@ -38,4 +39,20 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+// Sentry wrapper — source maps upload + auto-instrumentation. DSN yoksa
+// build time'da uyarı verir ama fail etmez. SENTRY_AUTH_TOKEN prod'da
+// Vercel env'e konulunca source map upload çalışır.
+export default withSentryConfig(nextConfig, {
+  silent: !process.env.CI,
+  org: process.env.SENTRY_ORG,
+  project: process.env.SENTRY_PROJECT,
+  authToken: process.env.SENTRY_AUTH_TOKEN,
+  // `/monitoring` tunnel route → Sentry istekleri aynı origin üzerinden
+  // geçer, ad-blocker'lar bloklamaz. Next.js rewrite gerektirir.
+  tunnelRoute: "/monitoring",
+  // Source map config — prod JS içinde source map path'i gömülmez ama
+  // Sentry sunucusunda erişilebilir.
+  sourcemaps: {
+    disable: false,
+  },
+});

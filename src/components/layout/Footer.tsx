@@ -1,20 +1,13 @@
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { SITE_NAME } from "@/lib/constants";
 
-const FOOTER_LINKS = {
-  platform: [
-    { href: "/tarifler", label: "Tarifler" },
-    { href: "/kesfet", label: "Keşfet" },
-  ],
-  legal: [
-    { href: "/hakkimizda", label: "Hakkımızda" },
-    { href: "/kvkk", label: "KVKK" },
-    { href: "/kullanim-sartlari", label: "Kullanım Şartları" },
-    { href: "/gizlilik", label: "Gizlilik Politikası" },
-  ],
-} as const;
+export async function Footer() {
+  const [t, tNav] = await Promise.all([
+    getTranslations("footer"),
+    getTranslations("nav"),
+  ]);
 
-export function Footer() {
   return (
     <footer className="mt-auto border-t border-border bg-bg-card">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -24,50 +17,75 @@ export function Footer() {
             <Link href="/" className="font-heading text-xl font-bold text-primary">
               {SITE_NAME}
             </Link>
-            <p className="mt-2 text-sm text-text-muted">
-              Yemek, içecek ve kokteyl tariflerini sade ve topluluk katkısına açık şekilde sunan
-              modern tarif platformu.
-            </p>
+            <p className="mt-2 text-sm text-text-muted">{t("brandTagline")}</p>
           </div>
 
           {/* Platform */}
           <div>
-            <h3 className="text-sm font-semibold text-text">Platform</h3>
+            <h3 className="text-sm font-semibold text-text">{t("platform")}</h3>
             <ul className="mt-3 space-y-2">
-              {FOOTER_LINKS.platform.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-text-muted transition-colors hover:text-text"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/tarifler"
+                  className="text-sm text-text-muted transition-colors hover:text-text"
+                >
+                  {tNav("recipes")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/kesfet"
+                  className="text-sm text-text-muted transition-colors hover:text-text"
+                >
+                  {tNav("discover")}
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Legal */}
           <div>
-            <h3 className="text-sm font-semibold text-text">Yasal</h3>
+            <h3 className="text-sm font-semibold text-text">{t("legal")}</h3>
             <ul className="mt-3 space-y-2">
-              {FOOTER_LINKS.legal.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-text-muted transition-colors hover:text-text"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/hakkimizda"
+                  className="text-sm text-text-muted transition-colors hover:text-text"
+                >
+                  {t("linkAbout")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/kvkk"
+                  className="text-sm text-text-muted transition-colors hover:text-text"
+                >
+                  {t("linkKvkk")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/kullanim-sartlari"
+                  className="text-sm text-text-muted transition-colors hover:text-text"
+                >
+                  {t("linkTerms")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/gizlilik"
+                  className="text-sm text-text-muted transition-colors hover:text-text"
+                >
+                  {t("linkPrivacy")}
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-8 border-t border-border pt-6">
           <p className="text-center text-xs text-text-muted">
-            &copy; {new Date().getFullYear()} {SITE_NAME}. Tüm hakları saklıdır.
+            {t("copyright", { year: new Date().getFullYear(), site: SITE_NAME })}
           </p>
         </div>
       </div>

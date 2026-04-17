@@ -24,7 +24,7 @@ const POPULAR_SEARCHES = [
 ];
 
 export default async function HomePage() {
-  const [featured, popular, categories, { total: recipeCount }, session, cuisineStats, searchSuggestions, randomRecipe, t] =
+  const [featured, popular, categories, { total: recipeCount }, session, cuisineStats, searchSuggestions, randomRecipe, t, tNav] =
     await Promise.all([
       getFeaturedRecipes(6),
       getPopularRecipes(8),
@@ -35,6 +35,7 @@ export default async function HomePage() {
       getSearchSuggestions(),
       getRandomRecipe(),
       getTranslations("home"),
+      getTranslations("nav"),
     ]);
 
   // Tarif sayısı olan kategorileri önce göster
@@ -47,11 +48,12 @@ export default async function HomePage() {
       {/* Hero */}
       <section className="flex flex-col items-center py-16 text-center lg:py-24">
         <span className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-medium text-primary">
-          🍳 <CountUp target={recipeCount} /> tarif keşfetmeye hazır
+          🍳 <CountUp target={recipeCount} /> {t("heroBadgeSuffix")}
         </span>
         <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-          Bugün ne{" "}
-          <span className="text-primary">pişirsek</span>?
+          {t.rich("heroTitle", {
+            accent: (chunks) => <span className="text-primary">{chunks}</span>,
+          })}
         </h1>
         <p className="mt-4 max-w-xl text-lg text-text-muted">
           {t("heroTagline")}
@@ -60,7 +62,7 @@ export default async function HomePage() {
         {/* Search */}
         <div className="mt-8 w-full max-w-xl">
           <Suspense>
-            <SearchBar placeholder="Tarif veya malzeme ara..." suggestions={searchSuggestions} />
+            <SearchBar placeholder={t("searchPlaceholder")} suggestions={searchSuggestions} />
           </Suspense>
         </div>
 
@@ -82,9 +84,9 @@ export default async function HomePage() {
       {featured.length > 0 && (
         <section className="py-12">
           <div className="flex items-center justify-between">
-            <h2 className="font-heading text-2xl font-bold">Öne Çıkan Tarifler</h2>
+            <h2 className="font-heading text-2xl font-bold">{t("sectionFeatured")}</h2>
             <Link href="/tarifler" className="text-sm text-primary hover:underline">
-              Tümünü gör →
+              {t("seeAll")}
             </Link>
           </div>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -106,12 +108,12 @@ export default async function HomePage() {
       {popular.length > 0 && (
         <section className="py-12">
           <div className="flex items-center justify-between">
-            <h2 className="font-heading text-2xl font-bold">🔥 En Popüler</h2>
+            <h2 className="font-heading text-2xl font-bold">{t("sectionPopular")}</h2>
             <Link
               href="/tarifler?siralama=popular"
               className="text-sm text-primary hover:underline"
             >
-              Tümünü gör →
+              {t("seeAll")}
             </Link>
           </div>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -136,17 +138,17 @@ export default async function HomePage() {
           </div>
           <div className="flex-1">
             <p className="text-xs font-medium uppercase tracking-wide text-accent-blue">
-              AI Asistan
+              {tNav("aiAssistant")}
             </p>
             <h3 className="mt-0.5 font-heading text-xl font-bold text-text sm:text-2xl">
-              Elindeki malzemeleri yaz, tarif al
+              {t("aiBannerTitle")}
             </h3>
             <p className="mt-1 text-sm text-text-muted">
-              Dolabında ne varsa söyle — sana en uygun tarifleri ve eksiklerini gösterelim.
+              {t("aiBannerDescription")}
             </p>
           </div>
           <span className="ml-auto rounded-lg border border-accent-blue/30 bg-bg-card px-4 py-2 text-sm font-medium text-accent-blue transition-colors group-hover:bg-accent-blue group-hover:text-white">
-            Dene →
+            {t("aiBannerCta")}
           </span>
         </Link>
       </section>
@@ -155,16 +157,16 @@ export default async function HomePage() {
       {cuisineStats.length >= 4 && (
         <section className="py-12">
           <div className="flex items-center justify-between">
-            <h2 className="font-heading text-2xl font-bold">Mutfaklara Göz At</h2>
+            <h2 className="font-heading text-2xl font-bold">{t("sectionCuisines")}</h2>
             <Link
               href="/tarifler"
               className="text-sm text-primary hover:underline"
             >
-              Tümünü filtrele →
+              {t("seeAllFilter")}
             </Link>
           </div>
           <p className="mt-1 text-sm text-text-muted">
-            {cuisineStats.length} mutfaktan {recipeCount}+ tarif keşfet
+            {t("cuisineSubtitle", { count: cuisineStats.length, total: recipeCount })}
           </p>
           <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {cuisineStats.slice(0, 10).map((cs) => (
@@ -181,7 +183,7 @@ export default async function HomePage() {
                     {cs.label}
                   </span>
                   <span className="block text-[10px] text-text-muted">
-                    {cs.count} tarif
+                    {t("recipeCountSmall", { count: cs.count })}
                   </span>
                 </div>
               </Link>
@@ -192,7 +194,7 @@ export default async function HomePage() {
 
       {/* Categories */}
       <section className="py-12">
-        <h2 className="font-heading text-2xl font-bold">Kategoriler</h2>
+        <h2 className="font-heading text-2xl font-bold">{t("sectionCategories")}</h2>
         <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
           {sortedCategories.map((cat) => (
             <Link
@@ -208,7 +210,7 @@ export default async function HomePage() {
               </span>
               {cat._count.recipes > 0 && (
                 <span className="text-[10px] text-text-muted">
-                  {cat._count.recipes} tarif
+                  {t("recipeCountSmall", { count: cat._count.recipes })}
                 </span>
               )}
             </Link>
@@ -222,16 +224,16 @@ export default async function HomePage() {
           <div className="rounded-2xl border border-border bg-bg-card p-8 text-center sm:p-12">
             <span className="text-4xl">👨‍🍳</span>
             <h2 className="mt-4 font-heading text-2xl font-bold">
-              Kendi tarifini paylaş
+              {t("ctaTitle")}
             </h2>
             <p className="mt-2 text-text-muted">
-              Üye ol, favori tariflerinin uyarlamalarını ekle ve toplulukla paylaş.
+              {t("ctaDescription")}
             </p>
             <Link
               href="/kayit"
               className="mt-6 inline-block rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
             >
-              Ücretsiz Üye Ol
+              {t("ctaButton")}
             </Link>
           </div>
         </section>

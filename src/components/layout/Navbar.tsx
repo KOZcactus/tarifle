@@ -123,7 +123,7 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
                     onClick={closeProfile}
                     className="block px-4 py-2 text-sm text-text hover:bg-bg-elevated focus-visible:bg-bg-elevated focus-visible:outline-none"
                   >
-                    Alışveriş Listem
+                    {t("shoppingList")}
                   </Link>
                   <Link
                     href="/ayarlar"
@@ -140,7 +140,7 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
                       onClick={closeProfile}
                       className="block px-4 py-2 text-sm text-primary hover:bg-bg-elevated focus-visible:bg-bg-elevated focus-visible:outline-none"
                     >
-                      Yönetim Paneli
+                      {t("adminPanel")}
                     </Link>
                   )}
                   <button
@@ -166,7 +166,7 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
           <button
             onClick={() => setIsMobileOpen((v) => !v)}
             className="flex h-9 w-9 items-center justify-center rounded-lg border border-border transition-colors hover:bg-bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary md:hidden"
-            aria-label={isMobileOpen ? "Menüyü kapat" : "Menüyü aç"}
+            aria-label={isMobileOpen ? t("mobileMenuClose") : t("mobileMenuOpen")}
             aria-expanded={isMobileOpen}
             aria-controls="mobile-menu"
           >
@@ -235,7 +235,7 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
                   onClick={() => setIsMobileOpen(false)}
                   className="rounded-lg px-3 py-2 text-sm font-medium text-text-muted transition-colors hover:bg-bg-card hover:text-text"
                 >
-                  Alışveriş Listem
+                  {t("shoppingList")}
                 </Link>
                 <Link
                   href="/ayarlar"
@@ -250,7 +250,7 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
                     onClick={() => setIsMobileOpen(false)}
                     className="rounded-lg px-3 py-2 text-sm font-medium text-primary transition-colors hover:bg-bg-card"
                   >
-                    Yönetim Paneli
+                    {t("adminPanel")}
                   </Link>
                 )}
                 <button

@@ -1,10 +1,12 @@
 "use client";
 
 import { useTheme } from "next-themes";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
+  const t = useTranslations("nav");
   const [mounted, setMounted] = useState(false);
 
   // SSR-hydration guard: next-themes resolves the current theme only on
@@ -26,7 +28,7 @@ export function ThemeToggle() {
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className="flex h-9 w-9 items-center justify-center rounded-lg border border-border transition-colors hover:bg-bg-card"
-      aria-label={isDark ? "Açık temaya geç" : "Koyu temaya geç"}
+      aria-label={isDark ? t("toggleThemeLight") : t("toggleThemeDark")}
     >
       {isDark ? (
         <svg

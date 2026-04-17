@@ -9,25 +9,54 @@
     "settings": "Ayarlar",
     "notifications": "Bildirimler",
     "logout": "Çıkış",
+    "shoppingList": "Alışveriş Listem",
+    "adminPanel": "Yönetim Paneli",
     "toggleTheme": "Tema değiştir",
-    "toggleLanguage": "Dil değiştir"
+    "toggleThemeDark": "Koyu temaya geç",
+    "toggleThemeLight": "Açık temaya geç",
+    "toggleLanguage": "Dil değiştir",
+    "mobileMenuOpen": "Menüyü aç",
+    "mobileMenuClose": "Menüyü kapat"
   },
   "home": {
+    "heroBadgeSuffix": "tarif keşfetmeye hazır",
+    "heroTitle": "Bugün ne <accent>pişirsek</accent>?",
     "heroTagline": "Yemek, içecek ve kokteyl tarifleri — kalitesine güvenebileceğin modern bir Türkçe tarif platformu.",
     "heroRecipeCount": "{count} tarif",
     "heroCtaBrowse": "Tarifleri Keşfet",
     "heroCtaAi": "AI Asistan'a Sor",
+    "searchPlaceholder": "Tarif veya malzeme ara...",
     "sectionFeatured": "Öne Çıkan Tarifler",
     "sectionToday": "Bugünün Tarifi",
     "sectionCuisines": "Mutfaklara Göz At",
     "sectionCategories": "Kategoriler",
-    "sectionPopular": "🔥 En Popüler"
+    "sectionPopular": "🔥 En Popüler",
+    "seeAll": "Tümünü gör →",
+    "seeAllFilter": "Tümünü filtrele →",
+    "cuisineSubtitle": "{count} mutfaktan {total}+ tarif keşfet",
+    "recipeCountSmall": "{count} tarif",
+    "aiBannerTitle": "Elindeki malzemeleri yaz, tarif al",
+    "aiBannerDescription": "Dolabında ne varsa söyle — sana en uygun tarifleri ve eksiklerini gösterelim.",
+    "aiBannerCta": "Dene →",
+    "ctaTitle": "Kendi tarifini paylaş",
+    "ctaDescription": "Üye ol, favori tariflerinin uyarlamalarını ekle ve toplulukla paylaş.",
+    "ctaButton": "Ücretsiz Üye Ol"
   },
   "settings": {
     "languageTitle": "Dil Tercihi",
     "languageDescription": "Arayüz dilini seç. Değişiklik anında uygulanır, tarif içerikleri de seçtiğin dilde görünür (EN çevirisi varsa).",
     "languageSaved": "Dil tercihi kaydedildi",
     "languageSaveError": "Dil tercihi kaydedilemedi"
+  },
+  "footer": {
+    "brandTagline": "Yemek, içecek ve kokteyl tariflerini sade ve topluluk katkısına açık şekilde sunan modern tarif platformu.",
+    "platform": "Platform",
+    "legal": "Yasal",
+    "linkAbout": "Hakkımızda",
+    "linkKvkk": "KVKK",
+    "linkTerms": "Kullanım Şartları",
+    "linkPrivacy": "Gizlilik Politikası",
+    "copyright": "© {year} {site}. Tüm hakları saklıdır."
   },
   "common": {
     "save": "Kaydet",

@@ -9,25 +9,54 @@
     "settings": "Settings",
     "notifications": "Notifications",
     "logout": "Sign Out",
+    "shoppingList": "Shopping List",
+    "adminPanel": "Admin Panel",
     "toggleTheme": "Toggle theme",
-    "toggleLanguage": "Change language"
+    "toggleThemeDark": "Switch to dark mode",
+    "toggleThemeLight": "Switch to light mode",
+    "toggleLanguage": "Change language",
+    "mobileMenuOpen": "Open menu",
+    "mobileMenuClose": "Close menu"
   },
   "home": {
+    "heroBadgeSuffix": "recipes ready to explore",
+    "heroTitle": "What shall we <accent>cook</accent> today?",
     "heroTagline": "Food, drink and cocktail recipes — a modern Turkish recipe platform you can trust for quality.",
     "heroRecipeCount": "{count} recipes",
     "heroCtaBrowse": "Browse Recipes",
     "heroCtaAi": "Ask AI Assistant",
+    "searchPlaceholder": "Search recipes or ingredients...",
     "sectionFeatured": "Featured Recipes",
     "sectionToday": "Recipe of the Day",
     "sectionCuisines": "Explore Cuisines",
     "sectionCategories": "Categories",
-    "sectionPopular": "🔥 Most Popular"
+    "sectionPopular": "🔥 Most Popular",
+    "seeAll": "See all →",
+    "seeAllFilter": "Filter all →",
+    "cuisineSubtitle": "Discover {total}+ recipes from {count} cuisines",
+    "recipeCountSmall": "{count} recipes",
+    "aiBannerTitle": "List what's in your pantry, get a recipe",
+    "aiBannerDescription": "Tell us what you have — we'll show the best-matching recipes and what's missing.",
+    "aiBannerCta": "Try it →",
+    "ctaTitle": "Share your own recipe",
+    "ctaDescription": "Sign up, add your take on favourite recipes, and share with the community.",
+    "ctaButton": "Sign Up Free"
   },
   "settings": {
     "languageTitle": "Language Preference",
     "languageDescription": "Choose the interface language. Changes apply instantly; recipe content will also appear in your selected language (where an English translation exists).",
     "languageSaved": "Language preference saved",
     "languageSaveError": "Could not save language preference"
+  },
+  "footer": {
+    "brandTagline": "A modern recipe platform serving clean food, drink, and cocktail recipes with community contributions.",
+    "platform": "Platform",
+    "legal": "Legal",
+    "linkAbout": "About",
+    "linkKvkk": "KVKK (Data Protection)",
+    "linkTerms": "Terms of Use",
+    "linkPrivacy": "Privacy Policy",
+    "copyright": "© {year} {site}. All rights reserved."
   },
   "common": {
     "save": "Save",

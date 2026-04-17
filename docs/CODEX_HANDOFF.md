@@ -383,6 +383,43 @@ steps: [..., { stepNumber: 3, instruction: "Topları krema ile doldurun ve çiko
 steps: [..., { stepNumber: 3, instruction: "Süt ve şekeri kaynatıp pastacı kreması hazırlayın, çikolatayı eritin. Topları kremayla doldurup çikolata sosuyla kaplayın." }],
 ```
 
+**6. Ingredient-implied alerjenler — her zaman ekle.**
+
+Bazı malzemeler görünce alerjen otomatik devreye girer; ingredient varsa `allergens` arrayine *mutlaka* eklemek gerekir. Batch 11'de bu pattern'da 9 CRITICAL finding çıktı; CI henüz bunu ERROR olarak yakalamıyor ama audit-deep merge sonrası yakalıyor — bu yüzden batch yazarken kendi kontrolün.
+
+| Ingredient (TR) | Gerekli allergen |
+|---|---|
+| Tereyağı, süt, yoğurt, kefir, kaşar, peynir, krema, ayran, labne | `SUT` |
+| Un, yufka, ekmek, makarna, bulgur, firik, yulaf, dövme buğday, arpa şehriye | `GLUTEN` |
+| Yumurta, mayonez (ev yapımı) | `YUMURTA` |
+| Tahin, susam | `SUSAM` |
+| Ceviz, fındık, badem, Antep fıstığı, kaju | `KUSUYEMIS` |
+| Yer fıstığı, fıstık ezmesi | `YER_FISTIGI` |
+| Soya sosu, tofu, edamame, miso | `SOYA` |
+| Karides, somon, ton balığı, hamsi, ahtapot, midye, yengeç, kalamar | `DENIZ_URUNLERI` |
+
+Dikkat: _Hindistan cevizi sütü_ SUT **değil** (bitki bazlı); _pirinç sütü_, _badem sütü_, _yulaf sütü_ de SUT değil ama badem → KUSUYEMIS, yulaf → GLUTEN.
+
+```ts
+// ❌ YANLIŞ — Tereyağı var ama SUT yok
+allergens: ["GLUTEN"] as const,
+ingredients: [..., { name: "Tereyağı", amount: "30", unit: "gr", sortOrder: 5 }],
+
+// ✅ DOĞRU
+allergens: ["GLUTEN", "SUT"] as const,
+ingredients: [..., { name: "Tereyağı", amount: "30", unit: "gr", sortOrder: 5 }],
+```
+
+```ts
+// ❌ YANLIŞ — Tahin var ama SUSAM yok, Ceviz var ama KUSUYEMIS yok
+allergens: ["GLUTEN"] as const,
+ingredients: [..., { name: "Tahin", ... }, { name: "Ceviz", ... }],
+
+// ✅ DOĞRU
+allergens: ["GLUTEN", "KUSUYEMIS", "SUSAM"] as const,
+ingredients: [..., { name: "Tahin", ... }, { name: "Ceviz", ... }],
+```
+
 ### 6.8. Pre-flight kontrol
 
 Batch yazdıktan sonra, seed çalıştırmadan ÖNCE:

@@ -368,6 +368,7 @@ duygusunu vermesin — insan yazımı + mutfak bilgili + net.
 - [ ] **Adım sırası mantıklı** — önce hazırlık (kes/yoğur/marine), sonra pişirme, sonra servis. "Tüm malzemeleri karıştırın" adımından sonra "sarımsağı ezin" yazarsan ters akış — kullanıcı şaşırır.
 - [ ] **Çok-section tarif gerçek 2+ grup** — description/step'te hem "hamur" hem "şerbet" (veya "marine" + "sos", vb.) geçiyorsa ingredient'larda en az 2 farklı `group: "X için"` olmalı. Tek "Hamur için" group tüm ingredient'lara yetersiz.
 - [ ] **Step adımı oto-tutarlı** — step 3'te "krema kullanın" diyorsan ya ingredient'ta Krema olmalı, ya önceki bir adımda krema yapılmış olmalı. "Çikolata sosu" adımda varsa, ingredient'ta Çikolata olmalı + bir adımda sos hazırlama olmalı.
+- [ ] **Ingredient-implied alerjenler tam** — Tereyağı/süt/yoğurt/kefir/kaşar/peynir/krema/ayran/labne varsa `SUT`; un/yufka/ekmek/makarna/bulgur/firik/yulaf/dövme buğday/arpa şehriye varsa `GLUTEN`; tahin/susam varsa `SUSAM`; ceviz/fındık/badem/Antep fıstığı/kaju varsa `KUSUYEMIS`; yer fıstığı/fıstık ezmesi varsa `YER_FISTIGI`; tofu/soya sosu/miso/edamame varsa `SOYA`; karides/somon/ton/hamsi/ahtapot/midye/yengeç/kalamar varsa `DENIZ_URUNLERI`; yumurta/mayonez varsa `YUMURTA`. audit-deep seed sonrası bu pattern'ları yakalar — bir ihlal = CRITICAL finding. İstisna: hindistan cevizi sütü / badem sütü / yulaf sütü SUT **değil**; ama "badem sütü" zaten KUSUYEMIS, "yulaf sütü" zaten GLUTEN taşır.
 
 ## Çalıştırma
 

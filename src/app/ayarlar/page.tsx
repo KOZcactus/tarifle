@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { ProfileSettingsForm } from "@/components/profile/ProfileSettingsForm";
@@ -21,7 +22,10 @@ interface AyarlarPageProps {
 }
 
 export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
-  const session = await auth();
+  const [session, t] = await Promise.all([
+    auth(),
+    getTranslations("settings"),
+  ]);
   if (!session?.user?.id) {
     redirect("/giris?callbackUrl=/ayarlar");
   }
@@ -60,12 +64,9 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
     <div className="mx-auto max-w-2xl px-4 py-10 sm:px-6 lg:px-8">
       <header className="mb-6">
         <h1 className="font-heading text-2xl font-bold text-text">
-          Profil ayarları
+          {t("pageTitle")}
         </h1>
-        <p className="mt-1 text-sm text-text-muted">
-          İsmini, kullanıcı adını ve biyografini buradan güncelleyebilirsin.
-          Kullanıcı adın profil URL&apos;inde görünür.
-        </p>
+        <p className="mt-1 text-sm text-text-muted">{t("pageSubtitle")}</p>
       </header>
 
       <div className="space-y-6">

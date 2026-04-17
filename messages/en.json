@@ -42,7 +42,54 @@
     "ctaDescription": "Sign up, add your take on favourite recipes, and share with the community.",
     "ctaButton": "Sign Up Free"
   },
+  "auth": {
+    "orDivider": "or",
+    "login": {
+      "title": "Sign In",
+      "subtitle": "Sign in to Tarifle and join the community.",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "••••••••",
+      "forgotPassword": "Forgot password?",
+      "submit": "Sign In",
+      "submitting": "Signing in...",
+      "googleButton": "Continue with Google",
+      "noAccount": "Don't have an account?",
+      "signupLink": "Sign Up",
+      "passwordResetOk": "Your password has been updated. You can sign in with the new password.",
+      "errors": {
+        "oauthNotLinked": "This email is already registered with a password. For now, please sign in with your password; Google account linking will be added to settings soon.",
+        "accessDenied": "Access denied. Please try again.",
+        "credentialsSignin": "Incorrect email or password.",
+        "configuration": "Server configuration error. Please try again later.",
+        "default": "Something went wrong while signing in. Please try again."
+      }
+    },
+    "register": {
+      "title": "Sign Up",
+      "subtitle": "Create a free account and contribute recipes.",
+      "nameLabel": "Full Name",
+      "namePlaceholder": "Your Full Name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "At least 6 characters",
+      "submit": "Sign Up",
+      "submitting": "Signing up...",
+      "googleButton": "Continue with Google",
+      "haveAccount": "Already have an account?",
+      "loginLink": "Sign In",
+      "consent": "I have read and accept the <kvkk>KVKK Privacy Notice</kvkk> and <terms>Terms of Use</terms>.",
+      "errors": {
+        "default": "Something went wrong.",
+        "signInAfter": "Account created but sign-in failed. Please sign in from the login page."
+      }
+    }
+  },
   "settings": {
+    "pageTitle": "Profile Settings",
+    "pageSubtitle": "Update your name, username, and bio here. Your username appears in your profile URL.",
     "languageTitle": "Language Preference",
     "languageDescription": "Choose the interface language. Changes apply instantly; recipe content will also appear in your selected language (where an English translation exists).",
     "languageSaved": "Language preference saved",

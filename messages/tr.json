@@ -42,7 +42,54 @@
     "ctaDescription": "Üye ol, favori tariflerinin uyarlamalarını ekle ve toplulukla paylaş.",
     "ctaButton": "Ücretsiz Üye Ol"
   },
+  "auth": {
+    "orDivider": "veya",
+    "login": {
+      "title": "Giriş Yap",
+      "subtitle": "Tarifle'a giriş yap ve topluluğa katıl.",
+      "emailLabel": "E-posta",
+      "emailPlaceholder": "ornek@email.com",
+      "passwordLabel": "Şifre",
+      "passwordPlaceholder": "••••••••",
+      "forgotPassword": "Şifremi unuttum",
+      "submit": "Giriş Yap",
+      "submitting": "Giriş yapılıyor...",
+      "googleButton": "Google ile Giriş Yap",
+      "noAccount": "Hesabın yok mu?",
+      "signupLink": "Kayıt Ol",
+      "passwordResetOk": "Şifren güncellendi. Yeni şifrenle giriş yapabilirsin.",
+      "errors": {
+        "oauthNotLinked": "Bu e-posta adresi e-posta + şifre ile zaten kayıtlı. Şimdilik şifrenle giriş yap; Google hesabını bağlama özelliği yakında ayarlar sayfasına eklenecek.",
+        "accessDenied": "Erişim reddedildi. Lütfen tekrar dene.",
+        "credentialsSignin": "E-posta veya şifre hatalı.",
+        "configuration": "Sunucu yapılandırma hatası. Lütfen daha sonra tekrar dene.",
+        "default": "Giriş sırasında bir sorun oluştu. Lütfen tekrar dene."
+      }
+    },
+    "register": {
+      "title": "Kayıt Ol",
+      "subtitle": "Ücretsiz hesap oluştur ve tariflere katkıda bulun.",
+      "nameLabel": "Ad Soyad",
+      "namePlaceholder": "Adınız Soyadınız",
+      "emailLabel": "E-posta",
+      "emailPlaceholder": "ornek@email.com",
+      "passwordLabel": "Şifre",
+      "passwordPlaceholder": "En az 6 karakter",
+      "submit": "Kayıt Ol",
+      "submitting": "Kayıt yapılıyor...",
+      "googleButton": "Google ile Kayıt Ol",
+      "haveAccount": "Zaten hesabın var mı?",
+      "loginLink": "Giriş Yap",
+      "consent": "<kvkk>KVKK Aydınlatma Metni</kvkk>'ni ve <terms>Kullanım Şartları</terms>'nı okudum, kabul ediyorum.",
+      "errors": {
+        "default": "Bir hata oluştu.",
+        "signInAfter": "Hesap oluşturuldu ama giriş yapılamadı. Lütfen giriş sayfasından dene."
+      }
+    }
+  },
   "settings": {
+    "pageTitle": "Profil ayarları",
+    "pageSubtitle": "İsmini, kullanıcı adını ve biyografini buradan güncelleyebilirsin. Kullanıcı adın profil URL'inde görünür.",
     "languageTitle": "Dil Tercihi",
     "languageDescription": "Arayüz dilini seç. Değişiklik anında uygulanır, tarif içerikleri de seçtiğin dilde görünür (EN çevirisi varsa).",
     "languageSaved": "Dil tercihi kaydedildi",

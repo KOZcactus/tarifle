@@ -4,10 +4,13 @@ import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { registerUser } from "@/lib/actions/auth";
 
 export function RegisterForm() {
   const router = useRouter();
+  const t = useTranslations("auth.register");
+  const tDivider = useTranslations("auth");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -23,14 +26,11 @@ export function RegisterForm() {
     const result = await registerUser(formData);
 
     if (!result.success) {
-      setError(result.error || "Bir hata oluştu.");
+      setError(result.error || t("errors.default"));
       setLoading(false);
       return;
     }
 
-    // Server action created the account but did not sign in — do that here so
-    // SessionProvider refreshes and the navbar flips to the logged-in state
-    // without needing a hard reload.
     const signInResult = await signIn("credentials", {
       email,
       password,
@@ -40,7 +40,7 @@ export function RegisterForm() {
     setLoading(false);
 
     if (signInResult?.error) {
-      setError("Hesap oluşturuldu ama giriş yapılamadı. Lütfen giriş sayfasından dene.");
+      setError(t("errors.signInAfter"));
       return;
     }
 
@@ -73,12 +73,12 @@ export function RegisterForm() {
             fill="#EA4335"
           />
         </svg>
-        Google ile Kayıt Ol
+        {t("googleButton")}
       </button>
 
       <div className="my-6 flex items-center gap-3">
         <div className="h-px flex-1 bg-border" />
-        <span className="text-xs text-text-muted">veya</span>
+        <span className="text-xs text-text-muted">{tDivider("orDivider")}</span>
         <div className="h-px flex-1 bg-border" />
       </div>
 
@@ -92,7 +92,7 @@ export function RegisterForm() {
 
         <div>
           <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-text">
-            Ad Soyad
+            {t("nameLabel")}
           </label>
           <input
             id="name"
@@ -101,13 +101,13 @@ export function RegisterForm() {
             required
             autoComplete="name"
             className="w-full rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-            placeholder="Adınız Soyadınız"
+            placeholder={t("namePlaceholder")}
           />
         </div>
 
         <div>
           <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-text">
-            E-posta
+            {t("emailLabel")}
           </label>
           <input
             id="email"
@@ -116,13 +116,13 @@ export function RegisterForm() {
             required
             autoComplete="email"
             className="w-full rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-            placeholder="ornek@email.com"
+            placeholder={t("emailPlaceholder")}
           />
         </div>
 
         <div>
           <label htmlFor="password" className="mb-1.5 block text-sm font-medium text-text">
-            Şifre
+            {t("passwordLabel")}
           </label>
           <input
             id="password"
@@ -132,7 +132,7 @@ export function RegisterForm() {
             minLength={6}
             autoComplete="new-password"
             className="w-full rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-            placeholder="En az 6 karakter"
+            placeholder={t("passwordPlaceholder")}
           />
         </div>
 
@@ -145,14 +145,26 @@ export function RegisterForm() {
             className="mt-1 h-4 w-4 rounded border-border text-primary focus:ring-primary"
           />
           <label htmlFor="kvkkAccepted" className="text-sm text-text-muted">
-            <Link href="/kvkk" className="text-primary hover:text-primary-hover" target="_blank">
-              KVKK Aydınlatma Metni
-            </Link>
-            &apos;ni ve{" "}
-            <Link href="/kullanim-sartlari" className="text-primary hover:text-primary-hover" target="_blank">
-              Kullanım Şartları
-            </Link>
-            &apos;nı okudum, kabul ediyorum.
+            {t.rich("consent", {
+              kvkk: (chunks) => (
+                <Link
+                  href="/kvkk"
+                  className="text-primary hover:text-primary-hover"
+                  target="_blank"
+                >
+                  {chunks}
+                </Link>
+              ),
+              terms: (chunks) => (
+                <Link
+                  href="/kullanim-sartlari"
+                  className="text-primary hover:text-primary-hover"
+                  target="_blank"
+                >
+                  {chunks}
+                </Link>
+              ),
+            })}
           </label>
         </div>
 
@@ -161,14 +173,14 @@ export function RegisterForm() {
           disabled={loading}
           className="w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-hover disabled:opacity-50"
         >
-          {loading ? "Kayıt yapılıyor..." : "Kayıt Ol"}
+          {loading ? t("submitting") : t("submit")}
         </button>
       </form>
 
       <p className="mt-6 text-center text-sm text-text-muted">
-        Zaten hesabın var mı?{" "}
+        {t("haveAccount")}{" "}
         <Link href="/giris" className="font-medium text-primary hover:text-primary-hover">
-          Giriş Yap
+          {t("loginLink")}
         </Link>
       </p>
     </div>

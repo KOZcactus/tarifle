@@ -4,41 +4,44 @@ import { useState } from "react";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 
-/**
- * Translate Auth.js error codes that Next-Auth puts on `?error=...` into a
- * Turkish, user-actionable message.
- */
-function authErrorMessage(code: string | null): string | null {
+type LoginErrorKey =
+  | "oauthNotLinked"
+  | "accessDenied"
+  | "credentialsSignin"
+  | "configuration"
+  | "default";
+
+function mapAuthErrorCode(code: string | null): LoginErrorKey | null {
   if (!code) return null;
   switch (code) {
     case "OAuthAccountNotLinked":
-      // Account-linking flow not yet built; tell the user the safe path for now
-      // and signal that linking is on the roadmap. Update this when settings
-      // page exposes "Connect Google".
-      return "Bu e-posta adresi e-posta + şifre ile zaten kayıtlı. Şimdilik şifrenle giriş yap; Google hesabını bağlama özelliği yakında ayarlar sayfasına eklenecek.";
+      return "oauthNotLinked";
     case "AccessDenied":
-      return "Erişim reddedildi. Lütfen tekrar dene.";
+      return "accessDenied";
     case "CredentialsSignin":
-      return "E-posta veya şifre hatalı.";
+      return "credentialsSignin";
     case "Configuration":
-      return "Sunucu yapılandırma hatası. Lütfen daha sonra tekrar dene.";
+      return "configuration";
     default:
-      return "Giriş sırasında bir sorun oluştu. Lütfen tekrar dene.";
+      return "default";
   }
 }
 
 export function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const initialError = authErrorMessage(searchParams.get("error"));
+  const t = useTranslations("auth.login");
+  const tDivider = useTranslations("auth");
+  const initialErrorKey = mapAuthErrorCode(searchParams.get("error"));
   const resetOk = searchParams.get("reset") === "ok";
-  const [error, setError] = useState<string | null>(initialError);
+  const [errorKey, setErrorKey] = useState<LoginErrorKey | null>(initialErrorKey);
   const [loading, setLoading] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setError(null);
+    setErrorKey(null);
     setLoading(true);
 
     const formData = new FormData(e.currentTarget);
@@ -54,7 +57,7 @@ export function LoginForm() {
     setLoading(false);
 
     if (result?.error) {
-      setError("E-posta veya şifre hatalı.");
+      setErrorKey("credentialsSignin");
     } else {
       router.push("/");
       router.refresh();
@@ -63,20 +66,20 @@ export function LoginForm() {
 
   return (
     <div className="rounded-xl border border-border bg-bg-card p-6 shadow-sm">
-      {resetOk && !error && (
+      {resetOk && !errorKey && (
         <div
           role="status"
           className="mb-4 rounded-lg bg-accent-green/15 px-4 py-3 text-sm text-text"
         >
-          Şifren güncellendi. Yeni şifrenle giriş yapabilirsin.
+          {t("passwordResetOk")}
         </div>
       )}
-      {error && (
+      {errorKey && (
         <div
           role="alert"
           className="mb-4 rounded-lg bg-error/10 px-4 py-3 text-sm text-error"
         >
-          {error}
+          {t(`errors.${errorKey}`)}
         </div>
       )}
 
@@ -103,12 +106,12 @@ export function LoginForm() {
             fill="#EA4335"
           />
         </svg>
-        Google ile Giriş Yap
+        {t("googleButton")}
       </button>
 
       <div className="my-6 flex items-center gap-3">
         <div className="h-px flex-1 bg-border" />
-        <span className="text-xs text-text-muted">veya</span>
+        <span className="text-xs text-text-muted">{tDivider("orDivider")}</span>
         <div className="h-px flex-1 bg-border" />
       </div>
 
@@ -116,7 +119,7 @@ export function LoginForm() {
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-text">
-            E-posta
+            {t("emailLabel")}
           </label>
           <input
             id="email"
@@ -125,20 +128,20 @@ export function LoginForm() {
             required
             autoComplete="email"
             className="w-full rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-            placeholder="ornek@email.com"
+            placeholder={t("emailPlaceholder")}
           />
         </div>
 
         <div>
           <div className="mb-1.5 flex items-center justify-between">
             <label htmlFor="password" className="block text-sm font-medium text-text">
-              Şifre
+              {t("passwordLabel")}
             </label>
             <Link
               href="/sifremi-unuttum"
               className="text-xs font-medium text-primary hover:text-primary-hover"
             >
-              Şifremi unuttum
+              {t("forgotPassword")}
             </Link>
           </div>
           <input
@@ -148,7 +151,7 @@ export function LoginForm() {
             required
             autoComplete="current-password"
             className="w-full rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-            placeholder="••••••••"
+            placeholder={t("passwordPlaceholder")}
           />
         </div>
 
@@ -157,14 +160,14 @@ export function LoginForm() {
           disabled={loading}
           className="w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-hover disabled:opacity-50"
         >
-          {loading ? "Giriş yapılıyor..." : "Giriş Yap"}
+          {loading ? t("submitting") : t("submit")}
         </button>
       </form>
 
       <p className="mt-6 text-center text-sm text-text-muted">
-        Hesabın yok mu?{" "}
+        {t("noAccount")}{" "}
         <Link href="/kayit" className="font-medium text-primary hover:text-primary-hover">
-          Kayıt Ol
+          {t("signupLink")}
         </Link>
       </p>
     </div>

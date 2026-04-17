@@ -90,7 +90,11 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
   const searchParams = useSearchParams();
   const hasInitedFromUrl = useRef(false);
 
-  // Load state from URL params (shared link)
+  // Load state from URL params (shared link).
+  // setState inside this effect is intentional: we sync one-time from an
+  // external source (URLSearchParams) into component state. The hasInited
+  // ref guards against re-runs, so no cascading renders in practice.
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     if (hasInitedFromUrl.current) return;
     const m = searchParams.get("m");
@@ -117,7 +121,9 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
     setTimeout(() => formRef.current?.requestSubmit(), 100);
   }, [searchParams]);
 
-  // Load recent searches from localStorage on mount
+  // Load recent searches from localStorage on mount.
+  // Mount-only one-shot sync from an external storage source — same reason
+  // as above, setState here isn't a cascading-render hazard.
   useEffect(() => {
     try {
       const stored = localStorage.getItem("ai-recent-searches");
@@ -126,6 +132,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
       // localStorage unavailable or corrupt — ignore
     }
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   const saveSearch = useCallback((ings: string[]) => {
     try {

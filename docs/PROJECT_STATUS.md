@@ -1,6 +1,18 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 17 Nisan 2026 (Admin ops v7 — user ban + announcement + collection mod + broadcast — admin tamamen kapandı)
+> Son güncelleme: 17 Nisan 2026 (Fuzzy arama — AI matcher typo tolerance + pg_trgm trigram fallback)
+
+## 17 Nisan 2026 — Fuzzy arama
+
+**AI matcher 3. adım:** `ingredientMatches` pipeline = direct prefix → synonym → **fuzzy**. TR-aware Levenshtein + ASCII normalize. Length-aware threshold (≤4 exact, 5-7 L=1, 8+ L=2). Kullanıcı "domatez" yazar → "domates" eşleşir. "kerik" → "kekik", "maydonoz" → "maydanoz". En sona konduğu için hot path yavaşlamaz.
+
+**Recipe search trigram fallback:** FTS + ingredient contains hâlâ boşsa pg_trgm `similarity()` + `%` operator + GIN index (title + slug + ingredient name). "domatez corbasi" → "domates çorbası" bulur.
+
+**Migration `20260417170000_pg_trgm_fuzzy_search`:** CREATE EXTENSION pg_trgm + 3 GIN index.
+
+**Yeni utility `src/lib/fuzzy.ts`:** asciiNormalize, levenshteinDistance (rolling row DP), fuzzyMatches, tokensFuzzyMatch.
+
+Test: 29 yeni (fuzzy + AI matcher fuzzy case'leri). 489 unit toplam PASS.
 
 ## 17 Nisan 2026 — Admin ops v7 niş paket
 

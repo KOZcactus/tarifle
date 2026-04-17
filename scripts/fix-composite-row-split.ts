@@ -48,18 +48,33 @@ interface Split {
 // tarif-özel amount kararları daha güvenilir — final splits Codex2'den gelir.
 //
 const SPLITS: Split[] = [
-  // ═══════ AWAIT CODEX2 LIST ═══════
-  // Example format:
-  // {
-  //   slug: "citir-patates",
-  //   currentName: "Tuz, karabiber",
-  //   newIngredients: [
-  //     { name: "Tuz", amount: "1", unit: "çay kaşığı" },
-  //     { name: "Karabiber", amount: "0.5", unit: "çay kaşığı" },
-  //   ],
-  //   strategy: "auto",
-  //   preserveGroup: true,
-  // },
+  // ═══════ Codex2 list (2026-04-17, 24 rows) ═══════
+  // AUTO (7): orijinal row'un amount/unit'i boş — split de boş, güvenli
+  { slug: "imam-bayildi", currentName: "Tuz, şeker, maydanoz", newIngredients: [{ name: "Tuz", amount: "", unit: "" }, { name: "Şeker", amount: "", unit: "" }, { name: "Maydanoz", amount: "", unit: "" }], strategy: "auto", preserveGroup: true },
+  { slug: "kuru-fasulye", currentName: "Tuz, karabiber, pul biber", newIngredients: [{ name: "Tuz", amount: "", unit: "" }, { name: "Karabiber", amount: "", unit: "" }, { name: "Pul biber", amount: "", unit: "" }], strategy: "auto", preserveGroup: true },
+  { slug: "coban-salatasi", currentName: "Zeytinyağı, limon, tuz", newIngredients: [{ name: "Zeytinyağı", amount: "", unit: "" }, { name: "Limon", amount: "", unit: "" }, { name: "Tuz", amount: "", unit: "" }], strategy: "auto", preserveGroup: true },
+  { slug: "tavuk-sote", currentName: "Sıvı yağ, tuz, baharatlar", newIngredients: [{ name: "Sıvı yağ", amount: "", unit: "" }, { name: "Tuz", amount: "", unit: "" }, { name: "Baharatlar", amount: "", unit: "" }], strategy: "auto", preserveGroup: true },
+  { slug: "humus", currentName: "Zeytinyağı, tuz, kimyon", newIngredients: [{ name: "Zeytinyağı", amount: "", unit: "" }, { name: "Tuz", amount: "", unit: "" }, { name: "Kimyon", amount: "", unit: "" }], strategy: "auto", preserveGroup: true },
+  { slug: "menemen", currentName: "Tuz, karabiber, pul biber", newIngredients: [{ name: "Tuz", amount: "", unit: "" }, { name: "Karabiber", amount: "", unit: "" }, { name: "Pul biber", amount: "", unit: "" }], strategy: "auto", preserveGroup: true },
+  { slug: "mercimek-corbasi", currentName: "Tuz, karabiber, kimyon", newIngredients: [{ name: "Tuz", amount: "", unit: "" }, { name: "Karabiber", amount: "", unit: "" }, { name: "Kimyon", amount: "", unit: "" }], strategy: "auto", preserveGroup: true },
+  // MANUAL (17): orijinal amount/unit dolu ama split için ratio kararı manuel
+  { slug: "firinda-tavuk-baget", currentName: "Tuz, karabiber", newIngredients: [{ name: "Tuz", amount: "", unit: "" }, { name: "Karabiber", amount: "", unit: "" }], strategy: "manual", preserveGroup: true },
+  { slug: "tavuk-sis", currentName: "Tuz, karabiber", newIngredients: [{ name: "Tuz", amount: "", unit: "" }, { name: "Karabiber", amount: "", unit: "" }], strategy: "manual", preserveGroup: true },
+  { slug: "lahmacun", currentName: "Pul biber, tuz", newIngredients: [{ name: "Pul biber", amount: "", unit: "" }, { name: "Tuz", amount: "", unit: "" }], strategy: "manual", preserveGroup: true },
+  { slug: "patates-oturtma", currentName: "Tuz, karabiber, kimyon", newIngredients: [{ name: "Tuz", amount: "", unit: "" }, { name: "Karabiber", amount: "", unit: "" }, { name: "Kimyon", amount: "", unit: "" }], strategy: "manual", preserveGroup: true },
+  { slug: "cig-kofte", currentName: "Taze soğan, maydanoz", newIngredients: [{ name: "Taze soğan", amount: "", unit: "" }, { name: "Maydanoz", amount: "", unit: "" }], strategy: "manual", preserveGroup: true },
+  { slug: "cig-kofte", currentName: "Tuz, kimyon", newIngredients: [{ name: "Tuz", amount: "", unit: "" }, { name: "Kimyon", amount: "", unit: "" }], strategy: "manual", preserveGroup: true },
+  { slug: "citir-patates", currentName: "Tuz, karabiber", newIngredients: [{ name: "Tuz", amount: "", unit: "" }, { name: "Karabiber", amount: "", unit: "" }], strategy: "manual", preserveGroup: true },
+  { slug: "zeytinyagli-fasulye", currentName: "Tuz, şeker", newIngredients: [{ name: "Tuz", amount: "", unit: "" }, { name: "Şeker", amount: "", unit: "" }], strategy: "manual", preserveGroup: true },
+  { slug: "etli-nohut", currentName: "Tuz, karabiber", newIngredients: [{ name: "Tuz", amount: "", unit: "" }, { name: "Karabiber", amount: "", unit: "" }], strategy: "manual", preserveGroup: true },
+  { slug: "kabak-mucveri", currentName: "Tuz, karabiber", newIngredients: [{ name: "Tuz", amount: "", unit: "" }, { name: "Karabiber", amount: "", unit: "" }], strategy: "manual", preserveGroup: true },
+  { slug: "sucuklu-yumurta", currentName: "Tuz, karabiber", newIngredients: [{ name: "Tuz", amount: "", unit: "" }, { name: "Karabiber", amount: "", unit: "" }], strategy: "manual", preserveGroup: true },
+  { slug: "karniyarik", currentName: "Tuz, karabiber", newIngredients: [{ name: "Tuz", amount: "", unit: "" }, { name: "Karabiber", amount: "", unit: "" }], strategy: "manual", preserveGroup: true },
+  { slug: "yaprak-sarma", currentName: "Tuz, karabiber, yenibahar", newIngredients: [{ name: "Tuz", amount: "", unit: "" }, { name: "Karabiber", amount: "", unit: "" }, { name: "Yenibahar", amount: "", unit: "" }], strategy: "manual", preserveGroup: true },
+  { slug: "ali-nazik", currentName: "Tuz, pul biber", newIngredients: [{ name: "Tuz", amount: "", unit: "" }, { name: "Pul biber", amount: "", unit: "" }], strategy: "manual", preserveGroup: true },
+  { slug: "ezogelin-corbasi", currentName: "Nane, pul biber", newIngredients: [{ name: "Nane", amount: "", unit: "" }, { name: "Pul biber", amount: "", unit: "" }], strategy: "manual", preserveGroup: true },
+  { slug: "iskender-kebap", currentName: "Tuz, karabiber", newIngredients: [{ name: "Tuz", amount: "", unit: "" }, { name: "Karabiber", amount: "", unit: "" }], strategy: "manual", preserveGroup: true },
+  { slug: "acili-ezme", currentName: "Pul biber, tuz", newIngredients: [{ name: "Pul biber", amount: "", unit: "" }, { name: "Tuz", amount: "", unit: "" }], strategy: "manual", preserveGroup: true },
 ];
 
 // ═════════════════════════════════════════════════════════════════════

@@ -42,15 +42,35 @@ interface Fix {
 // BURAYI GÜNCELLE: Codex2'nin ingredient + amount önerisi daha context-aware.
 //
 const FIXES: Fix[] = [
-  // ═══════ AWAIT CODEX2 LIST ═══════
-  // Example format:
-  // {
-  //   slug: "manti",
-  //   stepNumber: 1,
-  //   stepSnippet: "Un, yumurta, su ve tuzla sert bir hamur yoğurun.",
-  //   ingredient: { name: "Tuz", amount: "1", unit: "çay kaşığı" },
-  //   confidence: "high",
-  // },
+  // ═══════ Codex2 list (2026-04-17, 28 entries, 27 recipes — manti x2) ═══════
+  { slug: "manti", stepNumber: 1, stepSnippet: "Un, yumurta, su ve tuzla sert bir hamur yoğurun.", ingredient: { name: "Tuz", amount: "1", unit: "çay kaşığı" }, confidence: "review" },
+  { slug: "manti", stepNumber: 2, stepSnippet: "Kıyma, rendelenmiş soğan, tuz ve karabiberi karıştırarak iç harç yapın.", ingredient: { name: "Karabiber", amount: "0.5", unit: "çay kaşığı" }, confidence: "high" },
+  { slug: "jokai-bableves", stepNumber: 3, stepSnippet: "Tuzunu ayarlayıp servis edin.", ingredient: { name: "Tuz", amount: "1", unit: "çay kaşığı" }, confidence: "review" },
+  { slug: "firinda-makarna", stepNumber: 1, stepSnippet: "Makarnayı tuzlu suda 8 dakika haşlayıp süzün.", ingredient: { name: "Tuz", amount: "1", unit: "yemek kaşığı" }, confidence: "review" },
+  { slug: "pizza-margherita", stepNumber: 1, stepSnippet: "Un, su, maya ve tuzu yoğurup 45 dakika mayalandırın.", ingredient: { name: "Tuz", amount: "1", unit: "çay kaşığı" }, confidence: "review" },
+  { slug: "beyti-sarma", stepNumber: 1, stepSnippet: "Kıyma, rendelenmiş soğan, sarımsak, kimyon ve tuzu 10 dakika yoğurun.", ingredient: { name: "Tuz", amount: "1", unit: "çay kaşığı" }, confidence: "high" },
+  { slug: "spaghetti-carbonara", stepNumber: 1, stepSnippet: "Makarnayı tuzlu suda 9-10 dakika haşlayın.", ingredient: { name: "Tuz", amount: "1", unit: "yemek kaşığı" }, confidence: "review" },
+  { slug: "sebzeli-guvec", stepNumber: 2, stepSnippet: "Domates, zeytinyağı ve tuzu ekleyip karıştırın.", ingredient: { name: "Tuz", amount: "1", unit: "çay kaşığı" }, confidence: "high" },
+  { slug: "gyros", stepNumber: 1, stepSnippet: "Eti yoğurt, kekik ve tuzla 20 dakika marine edin.", ingredient: { name: "Tuz", amount: "1", unit: "çay kaşığı" }, confidence: "high" },
+  { slug: "gazpacho", stepNumber: 2, stepSnippet: "Sebzeleri zeytinyağı ve tuzla blenderdan geçirin.", ingredient: { name: "Tuz", amount: "1", unit: "çay kaşığı" }, confidence: "high" },
+  { slug: "domatesli-makarna", stepNumber: 1, stepSnippet: "Makarnayı tuzlu suda 9-10 dakika haşlayın.", ingredient: { name: "Tuz", amount: "1", unit: "yemek kaşığı" }, confidence: "review" },
+  { slug: "kongnamul-muchim", stepNumber: 2, stepSnippet: "Süzüp susam yağı, ezilmiş sarımsak ve tuzla harmanlayın.", ingredient: { name: "Tuz", amount: "0.5", unit: "çay kaşığı" }, confidence: "high" },
+  { slug: "tom-kha-gai", stepNumber: 3, stepSnippet: "Lime suyu ve tuzla dengeleyip sıcak servis edin.", ingredient: { name: "Tuz", amount: "1", unit: "çay kaşığı" }, confidence: "high" },
+  { slug: "mansaf", stepNumber: 1, stepSnippet: "Kuzu etini kakule ve tuzla 90 dakika haşlayın.", ingredient: { name: "Tuz", amount: "1.5", unit: "çay kaşığı" }, confidence: "review" },
+  { slug: "ezogelin-corbasi", stepNumber: 5, stepSnippet: "Tuz, nane ve pul biber ile tatlandırın.", ingredient: { name: "Tuz", amount: "1", unit: "çay kaşığı" }, confidence: "high" },
+  { slug: "mumbar-dolmasi", stepNumber: 1, stepSnippet: "Mumbarı temizleyip tuzlu suda bekletin.", ingredient: { name: "Tuz", amount: "1", unit: "yemek kaşığı" }, confidence: "review" },
+  { slug: "kibe-mumbar", stepNumber: 1, stepSnippet: "Sakatatı temizleyip tuzlu suda bekletin.", ingredient: { name: "Tuz", amount: "1", unit: "yemek kaşığı" }, confidence: "review" },
+  { slug: "koz-biberli-barbunya-ezmesi", stepNumber: 3, stepSnippet: "Tuzunu ayarlayıp servis tabağına alın.", ingredient: { name: "Tuz", amount: "0.5", unit: "çay kaşığı" }, confidence: "high" },
+  { slug: "urfa-bostana", stepNumber: 2, stepSnippet: "Maydanoz, nar ekşisi ve tuzu ekleyin.", ingredient: { name: "Tuz", amount: "1", unit: "çay kaşığı" }, confidence: "high" },
+  { slug: "antalya-hibes", stepNumber: 2, stepSnippet: "Kimyon ve tuzu ekleyin.", ingredient: { name: "Tuz", amount: "0.5", unit: "çay kaşığı" }, confidence: "high" },
+  { slug: "ciborek", stepNumber: 2, stepSnippet: "Kıyma, soğan, tuz ve karabiberle sulu bir iç hazırlayın.", ingredient: { name: "Tuz", amount: "1", unit: "çay kaşığı" }, confidence: "review" },
+  { slug: "moqueca", stepNumber: 1, stepSnippet: "Balığı limon ve tuzla 15 dakika marine edin.", ingredient: { name: "Tuz", amount: "1", unit: "çay kaşığı" }, confidence: "high" },
+  { slug: "csalamade", stepNumber: 2, stepSnippet: "Sirke, tuz ve şekerle harmanlayın.", ingredient: { name: "Tuz", amount: "1", unit: "çay kaşığı" }, confidence: "review" },
+  { slug: "borulce-eksilemesi", stepNumber: 3, stepSnippet: "Tuzunu ayarlayıp limon suyunu ekleyin ve 5 dakika dinlendirerek servis edin.", ingredient: { name: "Tuz", amount: "1", unit: "çay kaşığı" }, confidence: "high" },
+  { slug: "fasolakia", stepNumber: 3, stepSnippet: "Tuzunu ayarlayıp ılık servis edin.", ingredient: { name: "Tuz", amount: "1", unit: "çay kaşığı" }, confidence: "high" },
+  { slug: "vinegret-salatasi", stepNumber: 3, stepSnippet: "Yağ ve tuz ekleyip soğuk servis edin.", ingredient: { name: "Tuz", amount: "0.5", unit: "çay kaşığı" }, confidence: "high" },
+  { slug: "banh-mi", stepNumber: 1, stepSnippet: "Havuç ve turpu sirke, tuz ve şekerle 30 dakika dinlendirin.", ingredient: { name: "Tuz", amount: "1", unit: "çay kaşığı" }, confidence: "review" },
+  { slug: "pastel-brezilya", stepNumber: 1, stepSnippet: "Un, su ve tuzla sert hamur hazırlayıp 20 dakika dinlendirin.", ingredient: { name: "Tuz", amount: "1", unit: "çay kaşığı" }, confidence: "review" },
 ];
 
 // ═════════════════════════════════════════════════════════════════════

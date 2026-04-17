@@ -1,6 +1,10 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 17 Nisan 2026 (Neon dev/prod branch separation + prod guard)
+> Son güncelleme: 17 Nisan 2026 (AI Asistan v2 — synonym 10 → 45 grup + pantry 15 → 20)
+
+## 17 Nisan 2026 — AI Asistan v2 synonym expansion
+
+Kural-tabanlı matcher'ın data tabloları TR mutfağı için zenginleşti. Algoritma (2-step direct prefix → synonym fallback) aynı kaldı. Et ayrıştırıldı (önceden "kıyma ↔ dana eti" false-positive vardı; şimdi kıyma kendi grubu). Balık/karides/süt ürünleri/bitkisel yağ/otlar/sebzeler/baklagil/un-nişasta/sirke-limon/salça eklendi. Pantry: tereyağı + maydanoz + maya + sirke + limon suyu eklendi. Test: 29 → 69 (412 unit toplam PASS). Form akışı + provider interface etkilenmedi.
 
 ## 17 Nisan 2026 — Neon dev/prod branch + script guard
 

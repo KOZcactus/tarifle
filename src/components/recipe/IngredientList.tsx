@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface Ingredient {
   id: string;
@@ -21,11 +22,6 @@ interface IngredientListProps {
   baseServingCount: number;
 }
 
-/** Stable bucket order helper — groups preserve first-appearance order so
- * the author's intent survives ("Hamur için" comes before "Şerbet için"
- * when that's how they listed it). Ungrouped items bucket under `null`
- * which we render last without a heading.
- */
 function bucketByGroup(
   items: readonly Ingredient[],
 ): { heading: string | null; items: Ingredient[] }[] {
@@ -41,9 +37,6 @@ function bucketByGroup(
     buckets.get(key)!.push(ing);
   }
 
-  // Keep ungrouped items at the bottom so author-labeled sections read as
-  // the primary structure. If the only bucket IS the null one, this is
-  // a no-op and the list renders flat.
   const sortedOrder = [...order].sort((a, b) => {
     if (a === b) return 0;
     if (a === null) return 1;
@@ -58,6 +51,7 @@ function bucketByGroup(
 }
 
 export function IngredientList({ ingredients, baseServingCount }: IngredientListProps) {
+  const t = useTranslations("recipe.ingredients");
   const [servingCount, setServingCount] = useState(baseServingCount);
   const multiplier = servingCount / baseServingCount;
 
@@ -75,22 +69,22 @@ export function IngredientList({ ingredients, baseServingCount }: IngredientList
   return (
     <div>
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="font-heading text-lg font-semibold">Malzemeler</h2>
+        <h2 className="font-heading text-lg font-semibold">{t("title")}</h2>
         <div className="flex items-center gap-2">
           <button
             onClick={() => setServingCount(Math.max(1, servingCount - 1))}
             className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-sm transition-colors hover:bg-bg-elevated"
-            aria-label="Porsiyon azalt"
+            aria-label={t("servingDown")}
           >
             −
           </button>
           <span className="min-w-[3rem] text-center text-sm font-medium">
-            {servingCount} kişi
+            {t("servingCount", { count: servingCount })}
           </span>
           <button
             onClick={() => setServingCount(servingCount + 1)}
             className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-sm transition-colors hover:bg-bg-elevated"
-            aria-label="Porsiyon artır"
+            aria-label={t("servingUp")}
           >
             +
           </button>
@@ -121,15 +115,13 @@ export function IngredientList({ ingredients, baseServingCount }: IngredientList
                   {ing.name}
                   {ing.isOptional && (
                     <span className="ml-1 text-xs text-text-muted">
-                      (isteğe bağlı)
+                      {t("optional")}
                     </span>
                   )}
                 </span>
               </li>
             ))}
           </ul>
-          {/* When sections are present, add a subtle separator between
-              them so the visual hierarchy is unmistakable. */}
           {hasSections && bucket.heading && (
             <div className="mt-3 h-px bg-border/60" aria-hidden="true" />
           )}

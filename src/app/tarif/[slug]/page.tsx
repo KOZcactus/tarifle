@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Badge } from "@/components/ui/Badge";
 import { IngredientList } from "@/components/recipe/IngredientList";
 import { AllergenBadges } from "@/components/recipe/AllergenBadges";
@@ -27,14 +28,23 @@ import { getSimilarRecipes } from "@/lib/queries/similar-recipes";
 import { isBookmarked, getLikedVariationIds } from "@/lib/queries/user";
 import { getCollectionsForRecipe } from "@/lib/queries/collection";
 import { auth } from "@/lib/auth";
+import { isValidLocale, type Locale } from "@/i18n/config";
+import {
+  mapTranslatedIngredients,
+  mapTranslatedSteps,
+  pickRecipeDescription,
+  pickRecipeServingSuggestion,
+  pickRecipeTipNote,
+  pickRecipeTitle,
+} from "@/lib/recipe/translate";
 import type { Metadata } from "next";
 
 type VariationSort = "yeni" | "begeni" | "kolay";
 const VARIATION_SORTS: VariationSort[] = ["yeni", "begeni", "kolay"];
-const VARIATION_SORT_LABELS: Record<VariationSort, string> = {
-  yeni: "En yeni",
-  begeni: "En çok beğeni",
-  kolay: "En az malzeme",
+const VARIATION_SORT_KEY: Record<VariationSort, string> = {
+  yeni: "variationSortNewest",
+  begeni: "variationSortMostLiked",
+  kolay: "variationSortEasiest",
 };
 
 interface TarifPageProps {
@@ -83,9 +93,50 @@ export async function generateMetadata({ params }: TarifPageProps): Promise<Meta
 export default async function TarifPage({ params, searchParams }: TarifPageProps) {
   const { slug } = await params;
   const { siralama } = await searchParams;
-  const recipe = await getRecipeBySlug(slug);
+  const [recipe, localeRaw, t, tRecipe, tCard, tCuisine] = await Promise.all([
+    getRecipeBySlug(slug),
+    getLocale(),
+    getTranslations("recipe"),
+    getTranslations("recipes"),
+    getTranslations("recipes.card"),
+    getTranslations("cuisines"),
+  ]);
 
   if (!recipe) notFound();
+
+  const locale: Locale = isValidLocale(localeRaw) ? localeRaw : "tr";
+  const translations = recipe.translations as
+    | Record<string, Parameters<typeof pickRecipeTitle>[1] extends infer _ ? never : never>
+    | null
+    | undefined;
+  const translatedTitle = pickRecipeTitle(recipe.title, recipe.translations, locale);
+  const translatedDescription = pickRecipeDescription(
+    recipe.description,
+    recipe.translations,
+    locale,
+  );
+  const translatedIngredients = mapTranslatedIngredients(
+    recipe.ingredients,
+    recipe.translations,
+    locale,
+  );
+  const translatedSteps = mapTranslatedSteps(
+    recipe.steps,
+    recipe.translations,
+    locale,
+  );
+  const translatedTipNote = pickRecipeTipNote(
+    recipe.tipNote,
+    recipe.translations,
+    locale,
+  );
+  const translatedServingSuggestion = pickRecipeServingSuggestion(
+    recipe.servingSuggestion,
+    recipe.translations,
+    locale,
+  );
+  // `translations` narrowing — Prisma Json type. Reference left for clarity.
+  void translations;
 
   const session = await auth();
   const variationIds = recipe.variations?.map((v) => v.id) ?? [];
@@ -152,7 +203,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
       name: recipe.category.name,
       url: `/tarifler?kategori=${recipe.category.slug}`,
     },
-    { name: recipe.title, url: `/tarif/${recipe.slug}` },
+    { name: translatedTitle, url: `/tarif/${recipe.slug}` },
   ]);
   const isAlcoholic = recipe.tags.some(({ tag }) => tag.slug === "alkollu");
 
@@ -182,9 +233,9 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
       })()}
 
       {/* Breadcrumb */}
-      <nav className="mb-6 text-sm text-text-muted" aria-label="Breadcrumb">
+      <nav className="mb-6 text-sm text-text-muted" aria-label={t("breadcrumbAria")}>
         <Link href="/tarifler" className="hover:text-text">
-          Tarifler
+          {tRecipe("pageTitle")}
         </Link>
         <span className="mx-2">›</span>
         <Link
@@ -194,7 +245,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
           {recipe.category.emoji} {recipe.category.name}
         </Link>
         <span className="mx-2">›</span>
-        <span className="text-text">{recipe.title}</span>
+        <span className="text-text">{translatedTitle}</span>
       </nav>
 
       {/* Header */}
@@ -202,26 +253,34 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
         <div className="flex items-start gap-3">
           <span className="text-4xl">{recipe.emoji}</span>
           <div>
-            <h1 className="font-heading text-3xl font-bold sm:text-4xl">{recipe.title}</h1>
-            <p className="mt-2 text-text-muted">{recipe.description}</p>
+            <h1 className="font-heading text-3xl font-bold sm:text-4xl">{translatedTitle}</h1>
+            <p className="mt-2 text-text-muted">{translatedDescription}</p>
           </div>
         </div>
 
         {/* Meta Badges */}
         <div className="mt-4 flex flex-wrap gap-2">
           <Badge variant={recipe.difficulty === "EASY" ? "success" : recipe.difficulty === "MEDIUM" ? "warning" : "primary"}>
-            {getDifficultyLabel(recipe.difficulty)}
+            {tCard(
+              recipe.difficulty === "EASY"
+                ? "difficultyEasy"
+                : recipe.difficulty === "MEDIUM"
+                  ? "difficultyMedium"
+                  : "difficultyHard",
+            )}
           </Badge>
-          <Badge>⏱️ {formatMinutes(recipe.totalMinutes)}</Badge>
-          <Badge>{recipe.servingCount} kişilik</Badge>
+          <Badge>⏱️ {formatTotalMinutes(recipe.totalMinutes, tCard)}</Badge>
+          <Badge>{t("servingsLabel", { count: recipe.servingCount })}</Badge>
           {recipe.averageCalories && <Badge>~{recipe.averageCalories} kcal</Badge>}
-          {recipe.cuisine && CUISINE_LABEL[recipe.cuisine as CuisineCode] && (
+          {recipe.cuisine && tCuisine.has(recipe.cuisine as CuisineCode) && (
             <Badge>
-              {CUISINE_FLAG[recipe.cuisine as CuisineCode]} {CUISINE_LABEL[recipe.cuisine as CuisineCode]}
+              {CUISINE_FLAG[recipe.cuisine as CuisineCode]} {tCuisine(recipe.cuisine as CuisineCode)}
             </Badge>
           )}
           {recipe._count.variations > 0 && (
-            <Badge variant="info">{recipe._count.variations} uyarlama</Badge>
+            <Badge variant="info">
+              {t("adaptationsBadge", { count: recipe._count.variations })}
+            </Badge>
           )}
         </div>
 
@@ -234,9 +293,9 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
             ingredientCount={recipe.ingredients.length}
           />
           <ShareMenu
-            title={recipe.title}
+            title={translatedTitle}
             url={`${SITE_URL}/tarif/${recipe.slug}`}
-            text={`${recipe.emoji ?? ""} ${recipe.title} — Tarifle`}
+            text={`${recipe.emoji ?? ""} ${translatedTitle} — Tarifle`}
           />
         </div>
 
@@ -255,8 +314,8 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
                     className="inline-flex items-center gap-1 rounded-full border border-accent-green/40 bg-accent-green/15 px-2.5 py-0.5 text-xs font-medium text-accent-green"
                     title={
                       tag.slug === "vegan"
-                        ? "Vegan uyumlu — hayvansal ürün içermiyor"
-                        : "Vejetaryen uyumlu — et/tavuk/balık içermiyor"
+                        ? t("tagTooltipVegan")
+                        : t("tagTooltipVegetarian")
                     }
                   >
                     <span aria-hidden="true">🌱</span>
@@ -281,7 +340,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
       {recipe.imageUrl ? (
         <img
           src={recipe.imageUrl}
-          alt={recipe.title}
+          alt={translatedTitle}
           className="mb-8 h-64 w-full rounded-xl object-cover sm:h-80"
         />
       ) : (
@@ -293,8 +352,8 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
       {/* Action Buttons */}
       <div className="mb-6 flex gap-3 print:hidden">
         <CookingMode
-          steps={recipe.steps}
-          recipeTitle={recipe.title}
+          steps={translatedSteps}
+          recipeTitle={translatedTitle}
           recipeEmoji={recipe.emoji}
         />
         <PrintButton />
@@ -305,7 +364,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
         <div className="lg:col-span-2">
           <div className="rounded-xl border border-border bg-bg-card p-5">
             <IngredientList
-              ingredients={recipe.ingredients}
+              ingredients={translatedIngredients}
               baseServingCount={recipe.servingCount}
             />
             {/* AI Asistan cross-link */}
@@ -318,33 +377,33 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
               className="mt-4 flex items-center gap-2 rounded-lg border border-dashed border-accent-blue/30 bg-accent-blue/5 px-3 py-2 text-xs text-accent-blue transition-colors hover:border-accent-blue hover:bg-accent-blue/10 print:hidden"
             >
               <span aria-hidden="true">🧠</span>
-              Bu malzemelerle başka ne yapılır?
+              {t("aiCrossLink")}
             </Link>
           </div>
         </div>
         <div className="lg:col-span-3">
           <div className="rounded-xl border border-border bg-bg-card p-5">
-            <RecipeSteps steps={recipe.steps} />
+            <RecipeSteps steps={translatedSteps} />
           </div>
         </div>
       </div>
 
       {/* Tip Note */}
-      {recipe.tipNote && (
+      {translatedTipNote && (
         <div className="mt-6 rounded-xl border border-secondary/30 bg-secondary/10 p-4">
           <p className="text-sm">
-            <span className="font-semibold text-secondary">💡 Püf Noktası:</span>{" "}
-            {recipe.tipNote}
+            <span className="font-semibold text-secondary">{t("tipNoteLabel")}</span>{" "}
+            {translatedTipNote}
           </p>
         </div>
       )}
 
       {/* Serving Suggestion */}
-      {recipe.servingSuggestion && (
+      {translatedServingSuggestion && (
         <div className="mt-4 rounded-xl border border-accent-green/30 bg-accent-green/10 p-4">
           <p className="text-sm">
-            <span className="font-semibold text-accent-green">🍽️ Servis Önerisi:</span>{" "}
-            {recipe.servingSuggestion}
+            <span className="font-semibold text-accent-green">{t("servingSuggestionLabel")}</span>{" "}
+            {translatedServingSuggestion}
           </p>
         </div>
       )}
@@ -370,7 +429,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
           <summary className="flex cursor-pointer items-center justify-between gap-3 px-4 py-3 text-sm text-text-muted hover:text-text focus:outline-none focus-visible:ring-2 focus-visible:ring-primary [&::-webkit-details-marker]:hidden">
             <span>
               <span aria-hidden="true" className="mr-1.5">⚠</span>
-              Bu tarif alerjen madde içerebilir
+              {t("allergenDisclosure")}
             </span>
             <span
               aria-hidden="true"
@@ -382,7 +441,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
           <div className="border-t border-border px-4 pb-4 pt-3">
             <AllergenBadges allergens={recipe.allergens} tone="subtle" />
             <p className="mt-3 text-xs text-text-muted">
-              Alerjin varsa malzeme listesine bir de sen göz at.
+              {t("allergenDisclaimer")}
             </p>
           </div>
         </details>
@@ -392,7 +451,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
       <section className="mt-12 print:hidden">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <h2 className="font-heading text-xl font-bold">
-            Topluluk Uyarlamaları ({recipe._count.variations})
+            {t("variationsTitle", { count: recipe._count.variations })}
           </h2>
           {sortedVariations.length > 1 && (
             <div className="flex items-center gap-1 text-sm">
@@ -413,7 +472,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
                         : "text-text-muted hover:bg-bg-card"
                     }`}
                   >
-                    {VARIATION_SORT_LABELS[s]}
+                    {t(VARIATION_SORT_KEY[s])}
                   </Link>
                 );
               })}
@@ -435,9 +494,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
           </div>
         ) : (
           <div className="mt-4 rounded-xl border border-dashed border-border p-8 text-center">
-            <p className="text-text-muted">
-              Henüz uyarlama eklenmemiş. İlk uyarlamayı sen ekle!
-            </p>
+            <p className="text-text-muted">{t("variationsEmpty")}</p>
           </div>
         )}
 
@@ -460,7 +517,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
       </div>
 
       {/* Cuisine discovery link */}
-      {recipe.cuisine && CUISINE_LABEL[recipe.cuisine as CuisineCode] && (
+      {recipe.cuisine && tCuisine.has(recipe.cuisine as CuisineCode) && (
         <div className="mt-6 print:hidden">
           <Link
             href={`/tarifler?mutfak=${recipe.cuisine}`}
@@ -468,7 +525,9 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
           >
             <span className="text-lg">{CUISINE_FLAG[recipe.cuisine as CuisineCode]}</span>
             <span className="text-text-muted group-hover:text-text">
-              {CUISINE_LABEL[recipe.cuisine as CuisineCode]} mutfağından diğer tarifler →
+              {t("cuisineDiscoveryLink", {
+                label: tCuisine(recipe.cuisine as CuisineCode),
+              })}
             </span>
           </Link>
         </div>
@@ -477,7 +536,9 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
       {/* View Count */}
       <div className="mt-8 flex items-center justify-center gap-1.5 text-xs text-text-muted print:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-        {recipe.viewCount.toLocaleString("tr-TR")} görüntülenme
+        {t("viewCount", {
+          count: recipe.viewCount.toLocaleString(locale === "tr" ? "tr-TR" : "en-US"),
+        })}
       </div>
     </div>
   );
@@ -487,4 +548,15 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
   }
 
   return content;
+}
+
+function formatTotalMinutes(
+  minutes: number,
+  tCard: (key: string, values?: Record<string, string | number | Date>) => string,
+): string {
+  if (minutes < 60) return tCard("minutesShort", { n: minutes });
+  const hours = Math.floor(minutes / 60);
+  const remaining = minutes % 60;
+  if (remaining === 0) return tCard("hoursShort", { n: hours });
+  return tCard("hoursMinutes", { h: hours, m: remaining });
 }

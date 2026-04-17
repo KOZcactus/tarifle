@@ -1,5 +1,8 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import type { Allergen } from "@prisma/client";
-import { ALLERGEN_EMOJI, ALLERGEN_LABEL } from "@/lib/allergens";
+import { ALLERGEN_EMOJI } from "@/lib/allergens";
 
 interface AllergenBadgesProps {
   allergens: readonly Allergen[];
@@ -18,6 +21,8 @@ interface AllergenBadgesProps {
  * Gluten, Süt, Yumurta" in screen readers.
  */
 export function AllergenBadges({ allergens, tone = "warning" }: AllergenBadgesProps) {
+  const t = useTranslations("recipe");
+  const tAllergen = useTranslations("allergens");
   if (allergens.length === 0) return null;
 
   const base =
@@ -26,18 +31,17 @@ export function AllergenBadges({ allergens, tone = "warning" }: AllergenBadgesPr
     tone === "warning"
       ? "border border-secondary/40 bg-secondary/10 text-secondary"
       : "border border-border bg-bg-elevated text-text-muted";
+  const listText = allergens.map((a) => tAllergen(a)).join(", ");
 
   return (
     <ul
       className="flex flex-wrap items-center gap-2"
-      aria-label={`Alerjen içerikleri: ${allergens
-        .map((a) => ALLERGEN_LABEL[a])
-        .join(", ")}`}
+      aria-label={t("allergenListAria", { list: listText })}
     >
       {allergens.map((a) => (
         <li key={a} className={`${base} ${toneClasses}`}>
           <span aria-hidden="true">{ALLERGEN_EMOJI[a]}</span>
-          <span>{ALLERGEN_LABEL[a]}</span>
+          <span>{tAllergen(a)}</span>
         </li>
       ))}
     </ul>

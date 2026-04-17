@@ -186,6 +186,44 @@
     "linkPrivacy": "Privacy Policy",
     "copyright": "© {year} {site}. All rights reserved."
   },
+  "recipe": {
+    "breadcrumbAria": "Breadcrumb",
+    "servingsLabel": "Serves {count}",
+    "adaptationsBadge": "{count} adaptations",
+    "aiCrossLink": "What else can I make with these ingredients?",
+    "tipNoteLabel": "💡 Tip:",
+    "servingSuggestionLabel": "🍽️ Serving suggestion:",
+    "allergenDisclosure": "This recipe may contain allergens",
+    "allergenDisclaimer": "If you have allergies, double-check the ingredient list yourself.",
+    "allergenListAria": "Allergen contents: {list}",
+    "variationsTitle": "Community Adaptations ({count})",
+    "variationSortNewest": "Newest",
+    "variationSortMostLiked": "Most liked",
+    "variationSortEasiest": "Fewest ingredients",
+    "variationsEmpty": "No adaptations yet. Be the first to add one!",
+    "cuisineDiscoveryLink": "More recipes from {label} cuisine →",
+    "viewCount": "{count} views",
+    "tagTooltipVegan": "Vegan — no animal products",
+    "tagTooltipVegetarian": "Vegetarian — no meat, poultry or fish",
+    "ingredients": {
+      "title": "Ingredients",
+      "servingCount": "{count} servings",
+      "servingDown": "Decrease servings",
+      "servingUp": "Increase servings",
+      "optional": "(optional)"
+    },
+    "steps": {
+      "title": "Instructions",
+      "tipLabel": "💡 Tip:"
+    },
+    "nutrition": {
+      "title": "Nutrition (per serving)",
+      "calorieUnit": "kcal calories",
+      "proteinUnit": "g protein",
+      "carbsUnit": "g carbs",
+      "fatUnit": "g fat"
+    }
+  },
   "recipes": {
     "pageTitle": "Recipes",
     "totalFound": "{total} recipes found",

@@ -375,6 +375,7 @@ export async function getRecipeBySlug(slug: string): Promise<RecipeDetail | null
       servingSuggestion: true,
       allergens: true,
       cuisine: true,
+      translations: true,
       createdAt: true,
       category: {
         select: { id: true, name: true, slug: true, emoji: true },

@@ -186,6 +186,44 @@
     "linkPrivacy": "Gizlilik Politikası",
     "copyright": "© {year} {site}. Tüm hakları saklıdır."
   },
+  "recipe": {
+    "breadcrumbAria": "Breadcrumb",
+    "servingsLabel": "{count} kişilik",
+    "adaptationsBadge": "{count} uyarlama",
+    "aiCrossLink": "Bu malzemelerle başka ne yapılır?",
+    "tipNoteLabel": "💡 Püf Noktası:",
+    "servingSuggestionLabel": "🍽️ Servis Önerisi:",
+    "allergenDisclosure": "Bu tarif alerjen madde içerebilir",
+    "allergenDisclaimer": "Alerjin varsa malzeme listesine bir de sen göz at.",
+    "allergenListAria": "Alerjen içerikleri: {list}",
+    "variationsTitle": "Topluluk Uyarlamaları ({count})",
+    "variationSortNewest": "En yeni",
+    "variationSortMostLiked": "En çok beğeni",
+    "variationSortEasiest": "En az malzeme",
+    "variationsEmpty": "Henüz uyarlama eklenmemiş. İlk uyarlamayı sen ekle!",
+    "cuisineDiscoveryLink": "{label} mutfağından diğer tarifler →",
+    "viewCount": "{count} görüntülenme",
+    "tagTooltipVegan": "Vegan uyumlu — hayvansal ürün içermiyor",
+    "tagTooltipVegetarian": "Vejetaryen uyumlu — et/tavuk/balık içermiyor",
+    "ingredients": {
+      "title": "Malzemeler",
+      "servingCount": "{count} kişi",
+      "servingDown": "Porsiyon azalt",
+      "servingUp": "Porsiyon artır",
+      "optional": "(isteğe bağlı)"
+    },
+    "steps": {
+      "title": "Yapılışı",
+      "tipLabel": "💡 İpucu:"
+    },
+    "nutrition": {
+      "title": "Besin Değerleri (porsiyon başı)",
+      "calorieUnit": "kcal kalori",
+      "proteinUnit": "g protein",
+      "carbsUnit": "g karbonhidrat",
+      "fatUnit": "g yağ"
+    }
+  },
   "recipes": {
     "pageTitle": "Tarifler",
     "totalFound": "{total} tarif bulundu",

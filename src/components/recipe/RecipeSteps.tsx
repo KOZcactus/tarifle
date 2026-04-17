@@ -1,3 +1,7 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 interface Step {
   id: string;
   stepNumber: number;
@@ -11,9 +15,11 @@ interface RecipeStepsProps {
 }
 
 export function RecipeSteps({ steps }: RecipeStepsProps) {
+  const t = useTranslations("recipe.steps");
+  const tCard = useTranslations("recipes.card");
   return (
     <div>
-      <h2 className="mb-4 font-heading text-lg font-semibold">Yapılışı</h2>
+      <h2 className="mb-4 font-heading text-lg font-semibold">{t("title")}</h2>
       <ol className="space-y-6">
         {steps.map((step) => (
           <li key={step.id} className="relative flex gap-4">
@@ -28,7 +34,7 @@ export function RecipeSteps({ steps }: RecipeStepsProps) {
               {step.tip && (
                 <div className="mt-2 rounded-lg border border-secondary/30 bg-secondary/10 px-3 py-2">
                   <p className="text-xs text-secondary">
-                    <span className="font-semibold">💡 İpucu:</span> {step.tip}
+                    <span className="font-semibold">{t("tipLabel")}</span> {step.tip}
                   </p>
                 </div>
               )}
@@ -37,7 +43,7 @@ export function RecipeSteps({ steps }: RecipeStepsProps) {
                 <div className="mt-2">
                   <span className="inline-flex items-center gap-1 rounded-full bg-accent-blue/15 px-2.5 py-1 text-xs font-medium text-accent-blue">
                     <TimerIcon />
-                    {formatTimer(step.timerSeconds)}
+                    {formatTimer(step.timerSeconds, tCard)}
                   </span>
                 </div>
               )}
@@ -49,13 +55,16 @@ export function RecipeSteps({ steps }: RecipeStepsProps) {
   );
 }
 
-function formatTimer(seconds: number): string {
+function formatTimer(
+  seconds: number,
+  tCard: (key: string, values?: Record<string, string | number | Date>) => string,
+): string {
   const minutes = Math.floor(seconds / 60);
-  if (minutes < 60) return `${minutes} dk`;
+  if (minutes < 60) return tCard("minutesShort", { n: minutes });
   const hours = Math.floor(minutes / 60);
   const remaining = minutes % 60;
-  if (remaining === 0) return `${hours} sa`;
-  return `${hours} sa ${remaining} dk`;
+  if (remaining === 0) return tCard("hoursShort", { n: hours });
+  return tCard("hoursMinutes", { h: hours, m: remaining });
 }
 
 function TimerIcon() {

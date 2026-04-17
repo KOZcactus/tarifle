@@ -46,6 +46,14 @@ export interface RecipeDetail {
   servingSuggestion: string | null;
   allergens: Allergen[];
   cuisine: string | null;
+  /**
+   * Recipe.translations Json? — locale-keyed bundle
+   * ({ en?: { title, description, ingredients[], steps[], tipNote,
+   * servingSuggestion } }). Schema in prisma/schema.prisma. Runtime shape
+   * narrowed by `src/lib/recipe/translate.ts` helpers. `unknown` typed
+   * here so pages are forced to go through the validated helpers.
+   */
+  translations: unknown;
   createdAt: string;
   category: {
     id: string;

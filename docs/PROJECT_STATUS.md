@@ -1,6 +1,12 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 17 Nisan 2026 (DB doğruluk + Faz 3 Review/Rating sistemi canlı)
+> Son güncelleme: 17 Nisan 2026 (Review v2 — moderation + preflight + profil + notification)
+
+## 17 Nisan 2026 — Review sistemi v2
+
+Review v1'in üstüne 5 katman: preflight (repeated_chars/caps/URL → PENDING_REVIEW), admin moderation (hideReview/approveReview + /admin/incelemeler Yorumlar section + /admin/raporlar Raporlanmış Yorumlar), profil "Yorumlarım" section (owner HIDDEN dahil + hiddenReason görünür), `REVIEW_HIDDEN`+`REVIEW_APPROVED` notification tipleri, ReportButton REVIEW hedefi. Schema: Review.moderationFlags + hiddenReason. Test: 11 unit + 1 E2E PASS, 374 unit toplam. Migration `20260417140000_review_moderation` dev branch'e uygulandı.
+
+
 
 ## 17 Nisan 2026 — DB derin doğruluk + Faz 3 başlangıç
 

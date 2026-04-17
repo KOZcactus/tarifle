@@ -87,6 +87,40 @@
       }
     }
   },
+  "allergens": {
+    "GLUTEN": "Gluten",
+    "SUT": "Milk",
+    "YUMURTA": "Egg",
+    "KUSUYEMIS": "Tree nuts",
+    "YER_FISTIGI": "Peanut",
+    "SOYA": "Soy",
+    "DENIZ_URUNLERI": "Seafood",
+    "SUSAM": "Sesame",
+    "KEREVIZ": "Celery",
+    "HARDAL": "Mustard"
+  },
+  "cuisines": {
+    "tr": "Turkish",
+    "it": "Italian",
+    "fr": "French",
+    "es": "Spanish",
+    "gr": "Greek",
+    "jp": "Japanese",
+    "cn": "Chinese",
+    "kr": "Korean",
+    "th": "Thai",
+    "in": "Indian",
+    "mx": "Mexican",
+    "us": "American",
+    "me": "Middle Eastern",
+    "ma": "North African",
+    "vn": "Vietnamese",
+    "br": "Brazilian",
+    "cu": "Cuban",
+    "ru": "Russian",
+    "hu": "Hungarian",
+    "se": "Scandinavian"
+  },
   "filters": {
     "clear": "Clear",
     "clearCount": "Clear ({count})",

@@ -87,6 +87,40 @@
       }
     }
   },
+  "allergens": {
+    "GLUTEN": "Gluten",
+    "SUT": "Süt",
+    "YUMURTA": "Yumurta",
+    "KUSUYEMIS": "Kuruyemiş",
+    "YER_FISTIGI": "Yer fıstığı",
+    "SOYA": "Soya",
+    "DENIZ_URUNLERI": "Deniz ürünleri",
+    "SUSAM": "Susam",
+    "KEREVIZ": "Kereviz",
+    "HARDAL": "Hardal"
+  },
+  "cuisines": {
+    "tr": "Türk",
+    "it": "İtalyan",
+    "fr": "Fransız",
+    "es": "İspanyol",
+    "gr": "Yunan",
+    "jp": "Japon",
+    "cn": "Çin",
+    "kr": "Kore",
+    "th": "Tay",
+    "in": "Hint",
+    "mx": "Meksika",
+    "us": "ABD",
+    "me": "Orta Doğu",
+    "ma": "Kuzey Afrika",
+    "vn": "Vietnam",
+    "br": "Brezilya",
+    "cu": "Küba",
+    "ru": "Rus",
+    "hu": "Macar",
+    "se": "İskandinav"
+  },
   "filters": {
     "clear": "Temizle",
     "clearCount": "Temizle ({count})",

@@ -473,6 +473,8 @@ async function ActiveFilters({
 }) {
   const tFilters = await getTranslations("filters");
   const tCard = await getTranslations("recipes.card");
+  const tCuisine = await getTranslations("cuisines");
+  const tAllergen = await getTranslations("allergens");
   const chips: { label: string; removeParam: string; removeValue?: string }[] = [];
 
   if (query) chips.push({ label: `"${query}"`, removeParam: "q" });
@@ -498,15 +500,19 @@ async function ActiveFilters({
     });
   }
   for (const c of cuisines) {
+    const code = c as CuisineCode;
+    const flag = CUISINE_FLAG[code] ?? "";
+    const label = tCuisine.has(code) ? tCuisine(code) : code;
     chips.push({
-      label: `${CUISINE_FLAG[c as CuisineCode] ?? ""} ${CUISINE_LABEL[c as CuisineCode] ?? c}`,
+      label: `${flag} ${label}`.trim(),
       removeParam: "mutfak",
       removeValue: c,
     });
   }
   for (const a of excludeAllergens) {
+    const allergenLabel = tAllergen.has(a) ? tAllergen(a) : a;
     chips.push({
-      label: tFilters("excludedSuffix", { label: a }),
+      label: tFilters("excludedSuffix", { label: allergenLabel }),
       removeParam: "alerjen",
       removeValue: a,
     });

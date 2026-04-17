@@ -10,7 +10,7 @@ import { getCategoryBySlug } from "@/lib/queries/category";
 import { getRecipes } from "@/lib/queries/recipe";
 import { generateBreadcrumbJsonLd, generateCategoryFaqJsonLd } from "@/lib/seo";
 import { ALLERGEN_ORDER } from "@/lib/allergens";
-import { CUISINE_CODES, CUISINE_LABEL, CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
+import { CUISINE_CODES, CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
 import type { Metadata } from "next";
 
 interface KategoriPageProps {
@@ -39,10 +39,12 @@ export async function generateMetadata({ params }: KategoriPageProps): Promise<M
 export default async function KategoriPage({ params, searchParams }: KategoriPageProps) {
   const { kategori } = await params;
   const sp = await searchParams;
-  const [category, t, tFilters] = await Promise.all([
+  const [category, t, tFilters, tCuisine, tAllergen] = await Promise.all([
     getCategoryBySlug(kategori),
     getTranslations("recipes"),
     getTranslations("filters"),
+    getTranslations("cuisines"),
+    getTranslations("allergens"),
   ]);
 
   if (!category) notFound();
@@ -137,7 +139,8 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
               href={`/tarifler/${kategori}`}
               className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/5 px-2.5 py-1 text-xs font-medium text-primary hover:bg-primary/10"
             >
-              {CUISINE_FLAG[c as CuisineCode]} {CUISINE_LABEL[c as CuisineCode]}
+              {CUISINE_FLAG[c as CuisineCode]}{" "}
+              {tCuisine.has(c as CuisineCode) ? tCuisine(c as CuisineCode) : c}
               <span aria-hidden="true">×</span>
             </Link>
           ))}
@@ -147,7 +150,9 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
               href={`/tarifler/${kategori}`}
               className="inline-flex items-center gap-1 rounded-full border border-error/30 bg-error/5 px-2.5 py-1 text-xs font-medium text-error hover:bg-error/10"
             >
-              {tFilters("excludedSuffix", { label: a })}
+              {tFilters("excludedSuffix", {
+                label: tAllergen.has(a) ? tAllergen(a) : a,
+              })}
               <span aria-hidden="true">×</span>
             </Link>
           ))}

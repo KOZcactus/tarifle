@@ -3,11 +3,7 @@
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import type { Allergen } from "@prisma/client";
-import {
-  ALLERGEN_EMOJI,
-  ALLERGEN_LABEL,
-  ALLERGEN_ORDER,
-} from "@/lib/allergens";
+import { ALLERGEN_EMOJI, ALLERGEN_ORDER } from "@/lib/allergens";
 
 interface AllergenFilterProps {
   /** The allergens currently being excluded (from URL). */
@@ -28,6 +24,7 @@ export function AllergenFilter({ selected }: AllergenFilterProps) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const t = useTranslations("filters");
+  const tAllergen = useTranslations("allergens");
 
   function toggle(allergen: Allergen) {
     const params = new URLSearchParams(searchParams.toString());
@@ -81,12 +78,12 @@ export function AllergenFilter({ selected }: AllergenFilterProps) {
               }`}
               title={
                 isActive
-                  ? t("allergen.titleShow", { label: ALLERGEN_LABEL[a] })
-                  : t("allergen.titleHide", { label: ALLERGEN_LABEL[a] })
+                  ? t("allergen.titleShow", { label: tAllergen(a) })
+                  : t("allergen.titleHide", { label: tAllergen(a) })
               }
             >
               <span aria-hidden="true">{ALLERGEN_EMOJI[a]}</span>
-              <span>{ALLERGEN_LABEL[a]}</span>
+              <span>{tAllergen(a)}</span>
               {isActive && <span aria-hidden="true">×</span>}
             </button>
           );

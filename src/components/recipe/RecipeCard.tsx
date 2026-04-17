@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/Badge";
 import { CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
 import type { RecipeCard as RecipeCardType } from "@/types/recipe";
+import type { Locale } from "@/i18n/config";
 
 interface RecipeCardProps {
   recipe: RecipeCardType;
@@ -24,9 +25,15 @@ const DIFFICULTY_KEY = {
 
 export function RecipeCard({ recipe }: RecipeCardProps) {
   const t = useTranslations("recipes.card");
+  const tCuisine = useTranslations("cuisines");
 
   const formattedMinutes = formatMinutes(recipe.totalMinutes, t);
   const difficultyLabel = t(DIFFICULTY_KEY[recipe.difficulty]);
+  const cuisineCode = recipe.cuisine as Locale | CuisineCode | null | undefined;
+  const cuisineTitle =
+    recipe.cuisine && tCuisine.has(recipe.cuisine as CuisineCode)
+      ? tCuisine(recipe.cuisine as CuisineCode)
+      : recipe.cuisine ?? "";
 
   return (
     <Link href={`/tarif/${recipe.slug}`} className="group block">
@@ -53,7 +60,7 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
           {recipe.cuisine && recipe.cuisine !== "tr" && CUISINE_FLAG[recipe.cuisine as CuisineCode] && (
             <span
               className="absolute right-3 top-3 rounded-full bg-bg/80 px-2 py-1 text-sm backdrop-blur-sm"
-              title={recipe.cuisine}
+              title={cuisineTitle}
             >
               {CUISINE_FLAG[recipe.cuisine as CuisineCode]}
             </span>

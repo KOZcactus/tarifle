@@ -2,12 +2,7 @@
 
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
-import {
-  CUISINE_CODES,
-  CUISINE_FLAG,
-  CUISINE_LABEL,
-  type CuisineCode,
-} from "@/lib/cuisines";
+import { CUISINE_CODES, CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
 
 interface CuisineFilterProps {
   /** The cuisine codes currently selected (from URL). */
@@ -27,6 +22,7 @@ export function CuisineFilter({ selected }: CuisineFilterProps) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const t = useTranslations("filters");
+  const tCuisine = useTranslations("cuisines");
 
   function toggle(code: CuisineCode) {
     const params = new URLSearchParams(searchParams.toString());
@@ -80,12 +76,12 @@ export function CuisineFilter({ selected }: CuisineFilterProps) {
               }`}
               title={
                 isActive
-                  ? t("cuisine.titleRemove", { label: CUISINE_LABEL[code] })
-                  : t("cuisine.titleAdd", { label: CUISINE_LABEL[code] })
+                  ? t("cuisine.titleRemove", { label: tCuisine(code) })
+                  : t("cuisine.titleAdd", { label: tCuisine(code) })
               }
             >
               <span aria-hidden="true">{CUISINE_FLAG[code]}</span>
-              <span>{CUISINE_LABEL[code]}</span>
+              <span>{tCuisine(code)}</span>
               {isActive && <span aria-hidden="true">×</span>}
             </button>
           );

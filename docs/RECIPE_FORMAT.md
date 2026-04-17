@@ -148,19 +148,25 @@ Her tarif şu TypeScript nesnesine tıpatıp uymalı:
   tags: ["misafir-sofrasi", "yuksek-protein"],  // slug array, 0-5 element
   allergens: ["GLUTEN", "SUT"] as const,   // enum array, 0-5 elements; bkz. Enum değerleri
 
-  // OPSİYONEL — EN/DE çevirileri. Eklemek zorunda değilsin; eklersen Faz 3'te UI dil
-  // toggle'ı canlıya alındığında direkt kullanılır. Primary dil her zaman TR.
+  // ZORUNLU (batch 12+) — EN + DE çevirileri. title + description iki
+  // locale için de doldurulmalı. Ingredient/step çevirisi opsiyonel
+  // (yoksa UI TR fallback'e düşer). Faz 3 UI dil toggle'ı canlıya
+  // alınınca direkt devreye girer. Primary dil her zaman TR.
   translations: {
     en: {
       title: "Adana Kebab",
       description: "Spicy grilled meat skewers from Adana region...",
-      // Sadece title çevirmek yeterli; malzeme/adım ingilizceye çevirmek opsiyonel
+      // Sadece title + description EN zorunlu; ingredient/step opsiyonel
       ingredients: [
         { sortOrder: 1, name: "Ground beef (fatty)" },
       ],
       steps: [
         { stepNumber: 1, instruction: "Combine meat, fat, and spices." },
       ],
+    },
+    de: {
+      title: "Adana Kebab",
+      description: "Würzige gegrillte Fleischspieße aus der Region Adana...",
     },
   },
 
@@ -307,18 +313,26 @@ duygusunu vermesin — insan yazımı + mutfak bilgili + net.
 - Reçetede alkol geçiyorsa `tags` içine **zorunlu** `"alkollu"` ekle. Site bu
   tag'le 18+ yaş doğrulama gate'i tetikliyor.
 
-### Çeviriler (opsiyonel, Faz 3 için hazırlık)
+### Çeviriler (batch 12+ için ZORUNLU, Faz 3 i18n prep)
 
-- `translations` alanı opsiyonel. Eklemek zorunda değilsin.
-- Eklersen: en azından `title` + `description` çeviri; malzeme/adım
-  çevirmek iş yükü arttırır, TR-only bırakabilirsin — UI fallback TR'ye
-  düşer.
-- Locale key 2 küçük harf: `en`, `de`, `fr`...
-- **İstisnalar**: İskender, Baklava, Lahmacun gibi özgün TR isimler
-  çevrilmez — aynı bırak veya "Baklava (Turkish layered pastry)" gibi
-  açıklamalı ver.
-- Translation kalitesi belirsizse boş bırak; Faz 3'te profesyonel
-  tercüman veya LLM ile retrofit yapılır.
+- Her tarifte `translations.en` **ve** `translations.de` olmak zorunda.
+  Her ikisi için en az `title` + `description` doldurulmalı.
+- Ingredient/step çevirisi **opsiyonel** — yoksa UI TR'ye fallback eder,
+  tarif kullanılabilir kalır. Eklenirse `sortOrder` / `stepNumber` ile
+  eşlenir, array index değil.
+- Locale key 2 küçük harf: `en`, `de`. İleride `fr`, `es` eklenecek.
+- **İstisnalar — özgün TR isimler** (İskender, Baklava, Lahmacun,
+  Adana Kebap, Mantı, Manti, Künefe, Menemen, Börek, Gözleme, Döner,
+  Çiğköfte, Simit, Lokum, Kumpir, Pilav…): aynen bırak veya
+  `"Baklava (Turkish layered pastry)"` açıklamalı. Description'da
+  kültürel bağlamı aç.
+- Description çevirisi 20-400 char, TR description'la aynı bilgi
+  yoğunluğunda — "Spicy grilled meat" gibi 3 kelime yetersiz.
+- Quality check: `scripts/validate-batch.ts` `translations` alanını
+  arar; EN veya DE eksik → WARNING (batch 12 kapandıktan sonra
+  ERROR'a yükseltilecek, CI bloklar).
+- Translation kalitesi belirsizse Codex atlayıp Kerem'e flagle;
+  LLM ile batch retrofit ileride yapılır, sahte/mechanical çeviri yazma.
 
 ### Dil
 
@@ -352,6 +366,8 @@ duygusunu vermesin — insan yazımı + mutfak bilgili + net.
 - [ ] **`allergens` alanı dolu** (veya bilerek boş array `[]`). Malzemeleri tara: süt/yoğurt/peynir varsa `SUT`, un/bulgur varsa `GLUTEN`, vb.
 - [ ] Çok-bileşenli ise `group: "X için"` ayarlı ("Hamur için", "Şerbet için", "Sos için"…)
 - [ ] `cuisine` kodu doğru (Türk tarifi `"tr"`, İtalyan `"it"`, vb.) veya bilinçli olarak null
+- [ ] **`translations.en.title` + `translations.en.description` dolu** (batch 12+ zorunlu)
+- [ ] **`translations.de.title` + `translations.de.description` dolu** (batch 12+ zorunlu)
 
 **Dil ve anlatım**
 - [ ] "ya da tersi", "duruma göre" muğlak ifadeler **yok** — iki durum varsa iki ayrı cümle

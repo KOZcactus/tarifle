@@ -229,6 +229,46 @@ function checkSlugDuplicate(
  * be its own RecipeIngredient. Flag as ERROR so Codex can't land a new
  * batch with this pattern.
  */
+/**
+ * Translations field check. Codex batch 12+ için her tarif en az EN + DE
+ * title + description ile gelmeli (i18n Faz 3 prep). Severity WARNING
+ * şimdilik — mevcut 1103 tarifte translations boş, ERROR yaparsak legacy
+ * üretim kırılır. Batch 12 kapanınca ERROR'a yükseltilebilir.
+ */
+function checkTranslations(r: SeedRecipe, issues: Issue[]): void {
+  const missing: string[] = [];
+  const t = r.translations;
+  if (!t) {
+    issues.push({
+      severity: "WARNING",
+      field: "translations",
+      message:
+        'translations alanı eksik — en az { en: { title, description }, de: { title, description } } bekleniyor (i18n Faz 3 prep, batch 12+ zorunlu)',
+    });
+    return;
+  }
+  for (const locale of ["en", "de"] as const) {
+    const entry = t[locale];
+    if (!entry) {
+      missing.push(`${locale} (bulunamadı)`);
+      continue;
+    }
+    if (!entry.title || entry.title.trim().length === 0) {
+      missing.push(`${locale}.title`);
+    }
+    if (!entry.description || entry.description.trim().length === 0) {
+      missing.push(`${locale}.description`);
+    }
+  }
+  if (missing.length > 0) {
+    issues.push({
+      severity: "WARNING",
+      field: "translations",
+      message: `eksik çeviri alanları: ${missing.join(", ")}`,
+    });
+  }
+}
+
 function checkCompositeCommaRows(r: SeedRecipe, issues: Issue[]): void {
   r.ingredients.forEach((ing, i) => {
     if (!ing.name.includes(",")) return;
@@ -301,6 +341,7 @@ export function runSemanticChecks(
   checkAlcoholTag(r, issues);
   checkSlugDuplicate(r.slug, existingSlugs, issues);
   checkCuisine(r, issues);
+  checkTranslations(r, issues);
   checkCompositeCommaRows(r, issues);
   checkStepIngredientMismatch(r, issues);
 

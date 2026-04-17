@@ -428,7 +428,38 @@ allergens: ["GLUTEN", "KUSUYEMIS", "SUSAM"] as const,
 ingredients: [..., { name: "Tahin", ... }, { name: "Ceviz", ... }],
 ```
 
-### 6.8. Pre-flight kontrol
+### 6.9. Çeviriler — ZORUNLU (batch 12+, i18n Faz 3 prep)
+
+Her yeni tarif için `translations.en` **ve** `translations.de` her ikisi de doldurulmalı, en az `title` + `description` seviyesinde. Ingredient/step çevirileri opsiyonel (yoksa UI TR fallback'e düşer).
+
+```ts
+// ✅ DOĞRU — minimum seviye (title + description iki locale)
+translations: {
+  en: {
+    title: "Lentil Soup",
+    description: "A classic Turkish lentil soup with red lentils, onion, carrot, and cumin — silky and warming.",
+  },
+  de: {
+    title: "Linsensuppe",
+    description: "Eine klassische türkische Linsensuppe mit roten Linsen, Zwiebel, Karotte und Kreuzkümmel — seidig und wärmend.",
+  },
+},
+
+// ❌ YANLIŞ — batch 12+'da WARNING, kapandıktan sonra ERROR
+// (translations alanı eksik veya sadece en/sadece de)
+translations: null,
+translations: { en: { title: "Lentil Soup", description: "..." } },  // de yok
+```
+
+**Özgün TR isimler** (İskender, Baklava, Adana Kebap, Mantı, Künefe, Menemen, Börek, Simit, Lokum, Pilav, Çiğköfte…): ismi aynen bırak veya "Baklava (Turkish layered pastry)" gibi parantezli açıklama ekle. Description'da kültürel bağlamı aç ("A classic Gaziantep pastry made with paper-thin yufka layers…").
+
+**Description kalite çıtası:** EN/DE description TR'nin bilgi yoğunluğunu yakalamalı. 3-4 kelimelik "Spicy meat dish" yetersiz — 20-400 char aralığında, malzemeden / bölgeden / doku-tat'tan bahsetmeli.
+
+**Kuşkudaysan yazma** — sahte / mechanical / Google Translate çıktısı kalitesizse bu tarifi translations'sız gönder ve Kerem'e flagle. LLM toplu retrofit ileride yapılır. Sahte çeviri TR fallback'e göre daha kötü.
+
+Pre-flight: `npm run content:validate` → `translations` alanı için WARNING çıkar, eksik locale/field listelenir. Batch 12 kapandıktan sonra bu WARNING **ERROR**'a yükseltilecek ve CI merge'i bloklayacak.
+
+### 6.10. Pre-flight kontrol
 
 Batch yazdıktan sonra, seed çalıştırmadan ÖNCE:
 

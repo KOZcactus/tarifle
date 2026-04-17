@@ -1,18 +1,36 @@
+import Link from "next/link";
 import {
   getAdminStats,
   getRecentBatches,
   getCategoryBreakdown,
   getCuisineBreakdown,
+  getTopViewedRecipes,
+  getRecentSignups,
+  getUserGrowthDaily,
+  getReviewDistribution,
 } from "@/lib/queries/admin";
 
 export const metadata = { title: "Yönetim Paneli | Tarifle" };
 
 export default async function AdminPage() {
-  const [stats, batches, categories, cuisines] = await Promise.all([
+  const [
+    stats,
+    batches,
+    categories,
+    cuisines,
+    topViewed,
+    recentSignups,
+    userGrowth,
+    reviewDist,
+  ] = await Promise.all([
     getAdminStats(),
     getRecentBatches(7),
     getCategoryBreakdown(),
     getCuisineBreakdown(),
+    getTopViewedRecipes(5),
+    getRecentSignups(10),
+    getUserGrowthDaily(30),
+    getReviewDistribution(),
   ]);
 
   // Üst sıra — yüksek-frekans bilgi (toplamlar + moderasyon).
@@ -20,13 +38,19 @@ export default async function AdminPage() {
     { label: "Toplam Tarif", value: stats.totalRecipes, emoji: "📖" },
     { label: "Toplam Kullanıcı", value: stats.totalUsers, emoji: "👥" },
     { label: "Toplam Uyarlama", value: stats.totalVariations, emoji: "🔄" },
+    {
+      label: `Yorum${stats.reviewAverage !== null ? ` (ort. ${stats.reviewAverage})` : ""}`,
+      value: stats.reviewCount,
+      emoji: "⭐",
+    },
     { label: "Bookmark", value: stats.totalBookmarks, emoji: "🔖" },
     { label: "Koleksiyon", value: stats.totalCollections, emoji: "📚" },
     {
-      label: "İnceleme Bekliyor",
-      value: stats.pendingReviews,
+      // Unified: variation PENDING + review PENDING
+      label: `İnceleme Kuyruğu (${stats.pendingVariations} uy. + ${stats.pendingReviewsQueue} yorum)`,
+      value: stats.pendingQueueTotal,
       emoji: "🧐",
-      highlight: stats.pendingReviews > 0,
+      highlight: stats.pendingQueueTotal > 0,
     },
     {
       label: "Bekleyen Rapor",
@@ -41,6 +65,12 @@ export default async function AdminPage() {
       highlight: stats.flaggedVariations > 0,
     },
     {
+      label: `E-posta Doğrulama (${stats.emailVerifiedRatio}%)`,
+      value: stats.emailVerifiedCount,
+      emoji: "✉️",
+      highlight: stats.emailVerifiedRatio < 60,
+    },
+    {
       label: `Nutrition (${stats.nutritionCoverage}%)`,
       value: stats.nutritionCount,
       emoji: "🥗",
@@ -49,10 +79,21 @@ export default async function AdminPage() {
     {
       label: `Featured (${stats.featuredRatio}%)`,
       value: stats.featuredCount,
-      emoji: "⭐",
+      emoji: "✨",
       highlight: stats.featuredRatio < 10 || stats.featuredRatio > 15,
     },
+    {
+      label: `Görselsiz Tarif (${stats.imagelessRatio}%)`,
+      value: stats.imagelessCount,
+      emoji: "📷",
+      // Bugün 1100/1100 imageUrl null → %100. Alarm çalsın ki Kerem unutmasın.
+      highlight: stats.imagelessRatio > 20,
+    },
   ];
+
+  // User growth için max değer — bar chart normalize eder.
+  const maxGrowth = Math.max(...userGrowth.map((d) => d.count), 1);
+  const totalReviews = Object.values(reviewDist).reduce((a, b) => a + b, 0);
 
   // İkinci sıra — kataloğun büyüme hızı.
   const activityCards = [
@@ -117,6 +158,172 @@ export default async function AdminPage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* User growth — son 30 gün */}
+      <section>
+        <h3 className="mb-3 font-heading text-base font-semibold">
+          📈 Kullanıcı büyümesi (son 30 gün)
+        </h3>
+        <div className="rounded-xl border border-border bg-bg-card p-4">
+          <div
+            className="flex h-24 items-end gap-0.5"
+            role="img"
+            aria-label={`Son 30 gün günlük yeni kullanıcı — toplam ${userGrowth.reduce((a, b) => a + b.count, 0)}`}
+          >
+            {userGrowth.map((d) => {
+              const height = maxGrowth > 0 ? (d.count / maxGrowth) * 100 : 0;
+              return (
+                <div
+                  key={d.day}
+                  title={`${d.day}: ${d.count} kayıt`}
+                  className="flex-1 rounded-t-sm bg-accent-blue/70 transition-opacity hover:opacity-100"
+                  style={{
+                    height: `${Math.max(height, d.count > 0 ? 4 : 1)}%`,
+                    opacity: d.count > 0 ? 1 : 0.3,
+                  }}
+                />
+              );
+            })}
+          </div>
+          <div className="mt-2 flex justify-between text-[10px] text-text-muted">
+            <span>{userGrowth[0]?.day}</span>
+            <span className="font-medium">
+              Toplam: {userGrowth.reduce((a, b) => a + b.count, 0)} kayıt
+            </span>
+            <span>{userGrowth[userGrowth.length - 1]?.day}</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Review dağılımı — 5 yıldız dağılımı */}
+      {totalReviews > 0 && (
+        <section>
+          <h3 className="mb-3 font-heading text-base font-semibold">
+            ⭐ Yorum yıldız dağılımı
+          </h3>
+          <div className="rounded-xl border border-border bg-bg-card p-4">
+            <ul className="space-y-1.5">
+              {[5, 4, 3, 2, 1].map((n) => {
+                const count = reviewDist[n as 1 | 2 | 3 | 4 | 5];
+                const pct = totalReviews > 0 ? (count / totalReviews) * 100 : 0;
+                return (
+                  <li
+                    key={n}
+                    className="grid grid-cols-[60px_1fr_60px] items-center gap-3 text-sm"
+                  >
+                    <span className="text-[#f5a623]">
+                      {"★".repeat(n)}
+                      <span className="text-text-muted">
+                        {"★".repeat(5 - n)}
+                      </span>
+                    </span>
+                    <div className="h-2 overflow-hidden rounded-full bg-bg-elevated">
+                      <div
+                        className="h-full bg-[#f5a623] transition-[width]"
+                        style={{ width: `${pct}%` }}
+                      />
+                    </div>
+                    <span className="text-right font-medium">
+                      {count} ({pct.toFixed(0)}%)
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* Top viewed tarifler */}
+      <section>
+        <h3 className="mb-3 font-heading text-base font-semibold">
+          🔥 En çok görüntülenen tarifler
+        </h3>
+        <div className="rounded-xl border border-border bg-bg-card">
+          {topViewed.length === 0 ? (
+            <p className="p-4 text-sm text-text-muted">Henüz görüntüleme yok.</p>
+          ) : (
+            <ol className="divide-y divide-border">
+              {topViewed.map((r, i) => (
+                <li
+                  key={r.slug}
+                  className="flex items-center gap-3 px-4 py-2.5 text-sm"
+                >
+                  <span className="w-6 text-center font-mono text-xs text-text-muted">
+                    #{i + 1}
+                  </span>
+                  <span aria-hidden="true" className="text-lg">
+                    {r.emoji ?? "•"}
+                  </span>
+                  <Link
+                    href={`/tarif/${r.slug}`}
+                    className="flex-1 truncate text-text hover:text-primary"
+                  >
+                    {r.title}
+                  </Link>
+                  {r.isFeatured && (
+                    <span className="rounded-full bg-secondary/15 px-2 py-0.5 text-[10px] font-medium text-secondary">
+                      Featured
+                    </span>
+                  )}
+                  <span className="tabular-nums text-text-muted">
+                    👁 {r.viewCount.toLocaleString("tr-TR")}
+                  </span>
+                </li>
+              ))}
+            </ol>
+          )}
+        </div>
+      </section>
+
+      {/* Son kayıtlar */}
+      <section>
+        <h3 className="mb-3 font-heading text-base font-semibold">
+          👤 Son kaydolan kullanıcılar
+        </h3>
+        <div className="rounded-xl border border-border bg-bg-card">
+          {recentSignups.length === 0 ? (
+            <p className="p-4 text-sm text-text-muted">Henüz kullanıcı yok.</p>
+          ) : (
+            <ul className="divide-y divide-border">
+              {recentSignups.map((u) => (
+                <li
+                  key={u.id}
+                  className="flex items-center gap-3 px-4 py-2.5 text-sm"
+                >
+                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/15 text-xs font-medium text-primary">
+                    {(u.name ?? u.username ?? "?").slice(0, 2).toUpperCase()}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-text">
+                      {u.name ?? u.username ?? "(anonim)"}
+                      {u.role !== "USER" && (
+                        <span className="ml-2 rounded-full bg-accent-blue/15 px-1.5 py-0.5 text-[10px] font-medium text-accent-blue">
+                          {u.role}
+                        </span>
+                      )}
+                    </p>
+                    <p className="truncate text-xs text-text-muted">
+                      @{u.username ?? "—"}
+                      {u.email && <span className="ml-2">· {u.email}</span>}
+                    </p>
+                  </div>
+                  <div className="shrink-0 text-right text-xs text-text-muted">
+                    <div>{new Date(u.createdAt).toLocaleDateString("tr-TR")}</div>
+                    <div>
+                      {u.emailVerified ? (
+                        <span className="text-accent-green">✓ doğrulanmış</span>
+                      ) : (
+                        <span>✉️ bekliyor</span>
+                      )}
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </section>
 

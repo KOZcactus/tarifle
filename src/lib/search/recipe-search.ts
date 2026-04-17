@@ -115,8 +115,38 @@ export async function searchRecipeIds(
     take: remaining,
   });
 
-  return [
+  const combined: RankedRecipeId[] = [
     ...ftsResults,
     ...ingRows.map((r) => ({ id: r.id, rank: 0 })),
   ];
+
+  // Trigram fuzzy fallback — FTS + ingredient contains hâlâ boşsa
+  // "typo tolerance" için pg_trgm similarity devreye girer. "domatez
+  // corbasi" → "domates çorbası" bulsun. Similarity threshold 0.3
+  // konservatif — 0.1-0.2 aralığı alakasız dönüş verir, 0.4+ çok katı.
+  //
+  // Title + slug üzerinde GIN trigram index var (pg_trgm migration),
+  // %> operator'ü indexi kullanır → ms-level lookup. Ingredient name
+  // üzerinde de ayrı bir pass — tarifte geçen yiyecek adı typo'sunu da
+  // yakalamak için.
+  //
+  // Sadece hiç sonuç yoksa ek maliyet ödüyoruz; mevcut arama akışı
+  // yavaşlamaz.
+  if (combined.length === 0) {
+    const trgmRows = await prisma.$queryRaw<RankedRecipeId[]>`
+      SELECT r."id",
+             GREATEST(
+               similarity(r."title", ${clean}),
+               similarity(r."slug", ${clean})
+             ) AS rank
+      FROM "recipes" r
+      WHERE r."status" = 'PUBLISHED'
+        AND (r."title" % ${clean} OR r."slug" % ${clean})
+      ORDER BY rank DESC, r."title" ASC
+      LIMIT ${limit}
+    `;
+    return trgmRows.map((r) => ({ id: r.id, rank: Number(r.rank) }));
+  }
+
+  return combined;
 }

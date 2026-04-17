@@ -2,6 +2,8 @@
  * Turkish-aware ingredient matching utilities.
  */
 
+import { fuzzyMatches } from "@/lib/fuzzy";
+
 /**
  * Pantry staples — genellikle her evde bulunan, eksikse endişelenilmeyen
  * kalemler. Matcher bu kelimeleri "zaten var" varsayarak skorlar; kullanıcı
@@ -205,6 +207,16 @@ export function ingredientMatches(recipeIng: string, userIng: string): boolean {
     );
     if (synMatch) return true;
   }
+
+  // Fuzzy fallback — kullanıcı typo yapmış olabilir ("domatez" → "domates",
+  // "kerik" → "kekik"). Token başına ASCII-normalize + length-aware
+  // Levenshtein distance (≤4 char exact-only, 5-7 = 1 edit, 8+ = 2 edit).
+  // En pahalı adım bu (O(m*n) per token pair), en sona konduğu için
+  // sadece direct + synonym miss olunca çalışır.
+  const fuzzyMatch = userTokens.every((ut) =>
+    recipeTokens.some((rt) => fuzzyMatches(ut, rt)),
+  );
+  if (fuzzyMatch) return true;
 
   return false;
 }

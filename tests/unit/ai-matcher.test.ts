@@ -315,6 +315,47 @@ describe("synonym matching", () => {
   });
 });
 
+describe("fuzzy typo tolerance (v3 — 17 Nis)", () => {
+  it("domates matches domatez (single substitution)", () => {
+    expect(ingredientMatches("Domates", "domatez")).toBe(true);
+  });
+
+  it("kekik matches kerik (single substitution)", () => {
+    expect(ingredientMatches("Kekik", "kerik")).toBe(true);
+  });
+
+  it("maydanoz matches maydonoz (single substitution)", () => {
+    expect(ingredientMatches("Maydanoz", "maydonoz")).toBe(true);
+  });
+
+  it("tereyağı matches tereyagi (ASCII normalize)", () => {
+    // ğ→g, ı→i — normalize sonrası exact, fuzzy'ye bile düşmez
+    expect(ingredientMatches("Tereyağı", "tereyagi")).toBe(true);
+  });
+
+  it("profiterol matches profiteroll (8+ char 1 insert)", () => {
+    expect(ingredientMatches("Profiterol", "profiteroll")).toBe(true);
+  });
+
+  it("spagetti matches spagetttti (8+ char 2 insert)", () => {
+    expect(ingredientMatches("Spagetti", "spagetttti")).toBe(true);
+  });
+
+  it("rejects short unrelated words (et vs at)", () => {
+    // 'et' (meat) 'at' (horse) farklı kelimeler, tolere etmez
+    expect(ingredientMatches("Et", "at")).toBe(false);
+  });
+
+  it("rejects far-apart strings (domates vs salatalık)", () => {
+    expect(ingredientMatches("Domates", "salatalık")).toBe(false);
+  });
+
+  it("fuzzy works even when direct prefix fails", () => {
+    // "nişasta" vs "nisasta" normalize sonrası aynı
+    expect(ingredientMatches("Nişasta", "nisasta")).toBe(true);
+  });
+});
+
 describe("pantry staples v2 (17 Nis) additions", () => {
   it("tereyağı is pantry staple", () => {
     expect(isPantryStaple("Tereyağı")).toBe(true);

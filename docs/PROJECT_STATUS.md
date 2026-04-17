@@ -1,6 +1,35 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 16 Nisan 2026 (~70 commit)
+> Son güncelleme: 17 Nisan 2026 (DB doğruluk turları — Claude + Codex2 paralel)
+
+## 17 Nisan 2026 — DB derin doğruluk turları
+
+🎯 **audit-deep.ts: 26 CRITICAL + 498 WARNING → 0/0 PASS. audit-content.ts: 0 CRITICAL / HIGH 13 (hepsi legitimate kısa içecek).**
+
+Tam ~30 commit. Nutrition %100 coverage, 200+ DB kalite düzeltmesi.
+
+### Ana başlıklar
+- 🥗 **Nutrition backfill %54 → %100** (Codex backfill-6/7/8/9 merge, 400 tarif macro, backfill-10 gerekmedi)
+- 🔧 **audit-deep WARNING 498 → 0**: 26 CRITICAL alerjen fix, 78 over-tagged temizlik, 42 yanlış tag removal, 14 YUMURTA data-driven cleanup, 76 tek-ingredient grup null, 13 partial grouping (7 transfer + 6 flatten), 276 boilerplate tipNote/servingSuggestion → null, timer regex bug (70 false positive), 3 CORBA kategori taşıma, unit standardize, 2 duplicate title rename, 3 TIME_GAP
+- 🔍 **audit-content.ts yeni** (Claude) — içerik kalite audit: COMPOSITE_COMMA + STEP_INGREDIENT_MISSING + MISSING_GROUPS + VAGUE_LANGUAGE + TIME_GAP + diğer 7 kategori
+- 🤝 **Codex2 ortak analiz** (bağımsız): 28 step-mismatch (tuz/karabiber/un eksik) + 24 composite row split ("Tuz, karabiber, pul biber" tek row → 3 ayrı) + 3 ek semantik bulgu (jokai Sıvı yağ, csalamade Şeker, banh-mi Sirke/Şeker/Kişniş)
+- 🎯 **Tarif-özel fix'ler**: profiterol krema + step revise + grup, atom-sos adım sırası, patatas-bravas step 4 ekle, vietnam-yumurta-kahvesi netleştir, cao-lau/com-tam/bo-luc-lac sos ref uyum, kourabiethes/makroudh/lokma-tatlisi grup, dereotlu-kur-somon/kvass kür/ferment süresi, 5 "iyice" somut kriter, humus Pul biber + kladdkaka Un eksik ekle + GLUTEN
+- ⚙️ **audit iyileştirmeleri**: asciiNormalize (ekmek→ekmegi inflected form), keyword listesi allergens.ts ile sync (kefir/filmjölk/gochujang/furikake/yengeç/dolmalık fıstık/tortilla/yulaf/vs), tolerance (kür 36h, eser kcal <10, boilerplate threshold 6)
+
+### Yeni ops tooling (~12 yeni script)
+- `audit-content.ts` (içerik kalite), `audit-step-ingredient-mismatch.ts`, `audit-composite-rows.ts`
+- Fix: `fix-critical-allergens.ts` + `v2`, `fix-mayonez-yumurta.ts`, `fix-overtag-allergens.ts`, `fix-inconsistent-tags.ts`, `fix-zero-tag-recipes.ts`, `fix-boilerplate-to-null.ts`, `fix-unit-lt-to-litre.ts`, `fix-duplicate-titles.ts`, `fix-single-ingredient-groups.ts`, `fix-partial-grouping.ts`, `fix-corba-categories.ts`, `fix-kesin-batch.ts`, `fix-procedure-flow.ts`, `fix-vietnam-sauce-refs.ts`, `fix-final-polish.ts`, `fix-step-ingredient-mismatch.ts`, `fix-composite-row-split.ts`
+
+### Sonuç
+- `audit-deep.ts`: 🟢 0 CRITICAL / 0 WARNING / 26 INFO — PASS
+- `audit-content.ts`: 🟢 0 CRITICAL / HIGH 13 (8 kahve 2-ingredient + 5 smoothie ≤2 step, legitimate) / MEDIUM 127 (STEP_TOO_SHORT çoğu "Soğuk servis edin." legit) / LOW 0
+
+### Kalan (opsiyonel)
+- 📝 `scripts/seed-recipes.ts` source sync — ~90 DB değişikliği source'a yansımadı (fresh deploy için)
+- 🌐 **Faz 3**: i18n aktivasyonu, review/rating sistemi, video entegrasyonu
+- 🔄 `src/lib/allergens.ts` ↔ `audit-deep.ts` tek kaynak refactor (opsiyonel)
+
+---
 
 ## 16 Nisan 2026 — mega session özeti
 
@@ -70,9 +99,9 @@
 
 ### Sıradaki
 - ✅ ~~Codex batch 10~~ — **1000 tarif tamamlandı!**
-- ⏳ **26 CRITICAL alerjen fix** — audit-deep.ts bulgularından (tereyağı→SUT, susam→SUSAM, un→GLUTEN)
-- ⏳ **Codex nutrition backfill** devam (~510 tarif kalan)
-- ⏳ **498 WARNING değerlendirme** — group tutarlılığı, timer uyumsuzluk, macro sapmaları
+- ✅ ~~26 CRITICAL alerjen fix~~ — 17 Nis turunda kapatıldı
+- ✅ ~~Codex nutrition backfill~~ — 17 Nis'te %100 coverage
+- ✅ ~~498 WARNING değerlendirme~~ — 17 Nis'te 0'a indirildi
 - ⏳ Faz 3 hazırlık: i18n, review/rating, video entegrasyonu
 
 ## 16 Nisan 2026 session 3 — batch 7 + kalite fix + cuisine genişletme

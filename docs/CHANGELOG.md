@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: 16 Nisan 2026 (~70 commit, 1000 tarif milestone)
+> Son güncelleme: 17 Nisan 2026 (~30 ek commit, DB derin doğruluk turları — audit 0/0 PASS)
 
 ## İşaretler
 
@@ -70,6 +70,26 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🎨 **RecipeCard cuisine flag** — uluslararası tariflerde sağ üst köşede 🇯🇵🇮🇹🇫🇷 bayrak. Türk tariflerde gizli (noise önleme).
 - 🎨 **Tarif detay cuisine badge** — meta badge'ler arasında "🇯🇵 Japon" / "🇹🇷 Türk" chip.
 - 🌐 **Sitemap cuisine pages** — `/tarifler?mutfak=xx` URL'leri sitemap.xml'e eklendi (~18 landing page). SEO: "Japon tarifleri" aramasında çıkma şansı.
+- 🐛 **26 CRITICAL alerjen fix** (17 Nis) — tereyağı→SUT (10), nişasta/un/bulgur→GLUTEN (11), susam yağı/tahin→SUSAM (5). `scripts/fix-critical-allergens.ts` + `v2` (kasarli-tost/filmjolk) UNION-merge.
+- 🐛 **78 over-tagged allergen temizlendi** (17 Nis) — hindistan cevizi sütü SUT false, pina-colada KUSUYEMIS false, khanom-krok pirinç unu + hindistan cevizi → gluten-free & non-dairy. `scripts/fix-overtag-allergens.ts`.
+- 🐛 **14 YUMURTA data-driven cleanup** (17 Nis) — hamur işi tariflerinde ingredient listesinde yumurta yok, safety margin bırakıldı → data-driven kaldırma.
+- 🐛 **42 yanlış tag kaldırıldı** (17 Nis) — 30-dakika-alti (>30dk) 35 + yuksek-protein (<15g) 7. `scripts/fix-inconsistent-tags.ts` son-tag regression guard'lı.
+- 🐛 **14 zero-tag regression fix** — tag auto-correct sonrası 0 tag'li kalan tariflere uygun tag atandı. `scripts/fix-zero-tag-recipes.ts`.
+- 🐛 **276 boilerplate tipNote/servingSuggestion → null** (17 Nis) — `.map()` ile toplu atanmış 19 jenerik pattern (threshold 6+, authentic 3-5 tarifli kültürel metinler korundu). `scripts/fix-boilerplate-to-null.ts`.
+- 🐛 **76 tek-ingredient grup null** (17 Nis) — "Tavuk için: Tavuk göğsü" gibi 1 malzemeli grup başlıkları anlamsız, group field'ları null'a çevrildi. `scripts/fix-single-ingredient-groups.ts`.
+- 🐛 **13 partial grouping fix** (17 Nis) — 7 transfer (Tereyağı → İç için, Antep fıstığı → Dolgu için) + 6 flatten (lokma/ciborek/tulumba sıvı yağ). `scripts/fix-partial-grouping.ts`.
+- 🐛 **3 CORBA kategori taşıma** — bissara/caldo-de-feijao/jokai-bableves baklagil-yemekleri → corbalar (type=CORBA uyum).
+- 🐛 **3 procedure flow fix** — atom-sos adım sırası düzenlendi, patatas-bravas step 4 servis eklendi, vietnam-yumurta-kahvesi "Kremayı" → "Yumurta kremasını" netleştirildi.
+- 🐛 **3 Vietnam sos referans uyumu** — cao-lau "az sosla" → "az soya sosuyla", com-tam/bo-luc-lac servingSuggestion ingredient listesiyle uyumlu hale getirildi + grup restructure (2-bucket).
+- 🐛 **profiterol krema eksik fix** — step 3 "Topları krema ile doldurun" için pastacı kreması hazırlama adımı eklendi + 2 grup (Hamur + Krema ve kaplama).
+- 🐛 **5 tarif multi-section grup** — kourabiethes/makroudh/lokma-tatlisi + profiterol + "iyice" somut kriter (adana-kebap/cig-kofte/haydari/soguk-cay/tarhana-corbasi).
+- 🐛 **2 time gap fix** — dereotlu-kur-somon + kvass cookMinutes'a 24h kür/ferment süresi dahil edildi.
+- 🐛 **2 duplicate title rename** — baharatli-nohut-cipsi "Fırında Nohut Cipsi" → "Baharatlı Fırında Nohut Cipsi", kavrulmus-hojicha-latte "Hojicha Latte" → "Kavrulmuş Hojicha Latte".
+- 🐛 **Unit standardize** — 15 "lt" → "litre" (audit unit inconsistency fix).
+- 🐛 **Codex2 step↔ingredient mismatch (28 tarif, 27 slug)** — tuz/karabiber/un eksik step'te geçen ama ingredient'ta olmayan tariflere baseline ekleme. 15 HIGH + 13 REVIEW apply, 4 regression grup fix.
+- 🐛 **Codex2 virgül-composite split (24 row → 59 yeni ingredient)** — "Tuz, karabiber, pul biber" tek row pattern'ı ayrı ingredient'lara bölündü (7 AUTO + 17 MANUAL).
+- 🐛 **Codex2 ek semantik 3 bulgu** — jokai-bableves Sıvı yağ, csalamade Şeker, banh-mi Sirke+Şeker (Turşu için) + Kişniş (Sandviç için).
+- 🐛 **humus Pul biber + kladdkaka Un** eksik ingredient ekle, kladdkaka GLUTEN allergen eklendi.
 
 ## Uyarlama sistemi
 
@@ -232,6 +252,11 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🎨 **Emoji sync helper** — `scripts/sync-emojis.ts` (`npm run content:sync-emojis`). Source'taki recipe emoji'lerini production DB'ye UPDATE eder. Seed idempotent (slug skip) olduğu için kod tarafına emoji ekleyince DB'ye otomatik geçmiyor; bu script gap'i kapatır. Single transaction (60sn timeout — Neon RTT × 100 update için).
 - 🧹 **Sitemap ping cleanup** — Google `/ping?sitemap=` 2023 deprecated (404), Bing 410. retrofit-all'dan adım kaldırıldı, ilgili `seo-ping.ts` + `ping-sitemap.ts` + 8 unit silindi. IndexNow değerlendirildi: Google desteklemiyor + TR'de Bing/Yandex payı düşük → YAGNI.
 - ⚙️ **Cuisine retrofit** (`scripts/retrofit-cuisine.ts`) — title/slug/description keyword inference ile `Recipe.cuisine` doldurur. `retrofit-all.ts`'e 3. adım olarak eklendi (allergens → diet → cuisine). `--dry-run` + `--force` flag'li.
+- 🔍 **`audit-content.ts`** (17 Nis) — `audit-deep` yapısal, bu içerik kalite: 12 kategori (COMPOSITE_NAME, COMPOSITE_COMMA, STEP_INGREDIENT_MISSING, MISSING_GROUPS, STEP_COUNT, INGREDIENT_COUNT, VAGUE_LANGUAGE, UNIT_AMOUNT, CUISINE_NULL, TIME_GAP, STEP_TOO_SHORT, NAME_HYGIENE, EMOJI_MISMATCH). Severity: CRITICAL/HIGH/MEDIUM/LOW.
+- 🔍 **`audit-step-ingredient-mismatch.ts`** (17 Nis) — 14 baseline keyword (tuz/karabiber/pul biber/un/su/sarımsak/soğan/zeytinyağı/tereyağı/sıvı yağ/yumurta/süt/limon/şeker). Word-boundary Turkish-aware regex + HIGH/REVIEW confidence.
+- 🔍 **`audit-composite-rows.ts`** (17 Nis) — virgülle birleşik ingredient.name tespiti + STAPLE_KEYWORDS ile auto/manual strategy.
+- 🔧 **Fix scripts (17 Nis, ~15 yeni)** — `fix-critical-allergens.ts` + `v2`, `fix-mayonez-yumurta.ts`, `fix-overtag-allergens.ts`, `fix-inconsistent-tags.ts`, `fix-zero-tag-recipes.ts`, `fix-boilerplate-to-null.ts`, `fix-unit-lt-to-litre.ts`, `fix-duplicate-titles.ts`, `fix-single-ingredient-groups.ts`, `fix-partial-grouping.ts`, `fix-corba-categories.ts`, `fix-kesin-batch.ts`, `fix-procedure-flow.ts`, `fix-vietnam-sauce-refs.ts`, `fix-final-polish.ts`, `fix-step-ingredient-mismatch.ts`, `fix-composite-row-split.ts` — hepsi idempotent, dry-run default, --apply flag'li.
+- ⚙️ **audit-deep.ts iyileştirmeleri** (17 Nis) — `asciiNormalize()` Türkçe inflected form desteği ("ekmek" → "ekmeği"), keyword listesi allergens.ts ile sync (kefir/filmjölk/gochujang/furikake/yengeç/dolmalık fıstık/tortilla/yulaf/granola/kuskus/muffin/kruton), TYPE_CATEGORY_MAP permissive (APERATIF multi-category), tolerance (totalMinutes > 2160 dk, kcal < 1, boilerplate threshold 6+, macro ≥10 kcal, "sa" short-form bug fix).
 
 ## A11y
 

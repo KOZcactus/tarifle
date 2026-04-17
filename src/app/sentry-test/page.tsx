@@ -3,7 +3,7 @@
  * gönderdiğini doğrulamak için.
  *
  * Tıklayınca 3 tip error test edilir:
- *   1) Client-side throw — tarayıcıda yakalanır (sentry.client.config)
+ *   1) Client-side throw — tarayıcıda yakalanır (instrumentation-client)
  *   2) Server action throw — sunucuda yakalanır (sentry.server.config)
  *   3) Server RSC throw — render path'te yakalanır
  *
@@ -61,7 +61,7 @@ export default async function SentryTestPage({
         <section className="rounded-xl border border-border bg-bg-card p-4">
           <h2 className="font-semibold">1. Client-side throw</h2>
           <p className="mt-1 text-xs text-text-muted">
-            Tarayıcı JS'i, sentry.client.config.ts yakalar.
+            Tarayıcı JS'i, instrumentation-client.ts yakalar.
           </p>
           <SentryTestClient />
         </section>

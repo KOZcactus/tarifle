@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Client-side throw — browser JS hatası. sentry.client.config.ts'deki
+ * Client-side throw — browser JS hatası. instrumentation-client.ts'deki
  * Sentry.init tarafından otomatik yakalanır ve ingest'e gönderilir.
  */
 

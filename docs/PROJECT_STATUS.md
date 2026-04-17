@@ -1,6 +1,14 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 17 Nisan 2026 (Admin ops v4 — user/recipe detay drill-down sayfaları)
+> Son güncelleme: 17 Nisan 2026 (Admin ops v5 — inline edit + CSV export)
+
+## 17 Nisan 2026 — Admin ops v5 inline edit + CSV export
+
+**Inline edit:** Admin detay sayfalarında tıkla-düzenle akışı, popup yok. Recipe: emoji/title/description (Ctrl+Enter), status dropdown (HIDDEN geçişinde confirm), isFeatured toggle. User: role dropdown (yalnız ADMIN session) + isVerified toggle. Server actions Zod whitelist + ModerationAction audit (diff summary). Self-demotion guard.
+
+**CSV export:** 3 route handler (`/api/admin/export/{recipes,users,reviews}`). RFC 4180 + UTF-8 BOM → Excel'de Türkçe doğru. Admin guard. Export butonları: ana dashboard üstü (3'lü) + liste sayfalarında. Tarifler 18 kolon (nutrition dahil), kullanıcılar 12 kolon, yorumlar 9 kolon (tüm statüler, moderation flag'leri dahil).
+
+Test: 10 CSV unit (BOM, quoting, escape, TR karakter, null/Date/bool). 422 toplam.
 
 ## 17 Nisan 2026 — Admin ops v4 drill-down
 

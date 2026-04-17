@@ -211,7 +211,16 @@ export default async function AdminUsersPage({ searchParams }: PageProps) {
                   <td className="py-3 pr-4">
                     <div>
                       <p className="font-medium text-text">
-                        {u.name || u.username || "(anonim)"}
+                        {u.username ? (
+                          <Link
+                            href={`/admin/kullanicilar/${u.username}`}
+                            className="hover:text-primary"
+                          >
+                            {u.name || u.username}
+                          </Link>
+                        ) : (
+                          u.name || "(anonim)"
+                        )}
                         {u.isVerified && (
                           <span
                             className="ml-1 text-xs text-accent-blue"
@@ -232,7 +241,7 @@ export default async function AdminUsersPage({ searchParams }: PageProps) {
                       <p className="text-xs text-text-muted">
                         {u.username ? (
                           <Link
-                            href={`/profil/${u.username}`}
+                            href={`/admin/kullanicilar/${u.username}`}
                             className="hover:text-primary"
                           >
                             @{u.username}

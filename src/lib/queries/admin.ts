@@ -326,6 +326,219 @@ export async function getMostReportedReviews(limit = 5): Promise<
     .sort((a, b) => b.reportCount - a.reportCount);
 }
 
+// ─── Admin drill-down detail queries ───
+
+/**
+ * Tek kullanıcının tüm admin-görünür verisi. Variation + review listelerinde
+ * tüm statüler (HIDDEN + PENDING_REVIEW dahil) gelir — moderatörün o user'ın
+ * içerik geçmişini tam görmesi için. Filed reports de dahil (user kimi
+ * raporlamış), kullanıcı spam-reporter mı tespit etmek için.
+ */
+export async function getAdminUserDetail(username: string) {
+  const user = await prisma.user.findUnique({
+    where: { username },
+    select: {
+      id: true,
+      username: true,
+      name: true,
+      email: true,
+      emailVerified: true,
+      role: true,
+      isVerified: true,
+      bio: true,
+      avatarUrl: true,
+      createdAt: true,
+      kvkkAccepted: true,
+      kvkkDate: true,
+      _count: {
+        select: {
+          variations: true,
+          reviews: true,
+          bookmarks: true,
+          reports: true,
+          collections: true,
+          notifications: true,
+        },
+      },
+    },
+  });
+  if (!user) return null;
+
+  const [variations, reviews, reportsFiled, badges] = await Promise.all([
+    prisma.variation.findMany({
+      where: { authorId: user.id },
+      orderBy: { createdAt: "desc" },
+      take: 100,
+      select: {
+        id: true,
+        miniTitle: true,
+        status: true,
+        reportCount: true,
+        likeCount: true,
+        moderationFlags: true,
+        createdAt: true,
+        recipe: { select: { slug: true, title: true, emoji: true } },
+      },
+    }),
+    prisma.review.findMany({
+      where: { userId: user.id },
+      orderBy: { createdAt: "desc" },
+      take: 100,
+      select: {
+        id: true,
+        rating: true,
+        comment: true,
+        status: true,
+        moderationFlags: true,
+        hiddenReason: true,
+        createdAt: true,
+        recipe: { select: { slug: true, title: true, emoji: true } },
+      },
+    }),
+    prisma.report.findMany({
+      where: { reporterId: user.id },
+      orderBy: { createdAt: "desc" },
+      take: 50,
+      select: {
+        id: true,
+        targetType: true,
+        targetId: true,
+        reason: true,
+        status: true,
+        description: true,
+        createdAt: true,
+      },
+    }),
+    prisma.userBadge.findMany({
+      where: { userId: user.id },
+      orderBy: { awardedAt: "desc" },
+      select: {
+        key: true,
+        awardedAt: true,
+      },
+    }),
+  ]);
+
+  return { user, variations, reviews, reportsFiled, badges };
+}
+
+/**
+ * Tek tarifin admin-görünür detayı: stats + rating aggregate + distribution
+ * + variation + review listeleri. /tarif/[slug] public sayfasının admin
+ * gözüyle tam karşılığı — HIDDEN / PENDING_REVIEW içerik dahil.
+ */
+export async function getAdminRecipeDetail(slug: string) {
+  const recipe = await prisma.recipe.findUnique({
+    where: { slug },
+    select: {
+      id: true,
+      title: true,
+      slug: true,
+      emoji: true,
+      description: true,
+      difficulty: true,
+      status: true,
+      type: true,
+      isFeatured: true,
+      viewCount: true,
+      cuisine: true,
+      imageUrl: true,
+      averageCalories: true,
+      protein: true,
+      carbs: true,
+      fat: true,
+      allergens: true,
+      createdAt: true,
+      updatedAt: true,
+      category: { select: { name: true, slug: true, emoji: true } },
+      _count: {
+        select: {
+          variations: true,
+          reviews: true,
+          bookmarks: true,
+          ingredients: true,
+          steps: true,
+        },
+      },
+    },
+  });
+  if (!recipe) return null;
+
+  const [reviews, variations, reviewAgg, reviewDist, topBookmarkers] = await Promise.all([
+    prisma.review.findMany({
+      where: { recipeId: recipe.id },
+      orderBy: { createdAt: "desc" },
+      take: 50,
+      select: {
+        id: true,
+        rating: true,
+        comment: true,
+        status: true,
+        moderationFlags: true,
+        hiddenReason: true,
+        createdAt: true,
+        user: {
+          select: { id: true, username: true, name: true, avatarUrl: true },
+        },
+      },
+    }),
+    prisma.variation.findMany({
+      where: { recipeId: recipe.id },
+      orderBy: { createdAt: "desc" },
+      take: 50,
+      select: {
+        id: true,
+        miniTitle: true,
+        status: true,
+        reportCount: true,
+        likeCount: true,
+        moderationFlags: true,
+        createdAt: true,
+        author: { select: { id: true, username: true, name: true } },
+      },
+    }),
+    prisma.review.aggregate({
+      where: { recipeId: recipe.id, status: "PUBLISHED" },
+      _avg: { rating: true },
+      _count: true,
+    }),
+    prisma.review.groupBy({
+      by: ["rating"],
+      where: { recipeId: recipe.id, status: "PUBLISHED" },
+      _count: true,
+    }),
+    prisma.bookmark.findMany({
+      where: { recipeId: recipe.id },
+      orderBy: { createdAt: "desc" },
+      take: 5,
+      select: {
+        createdAt: true,
+        user: { select: { username: true, name: true } },
+      },
+    }),
+  ]);
+
+  const dist: Record<1 | 2 | 3 | 4 | 5, number> = {
+    1: 0, 2: 0, 3: 0, 4: 0, 5: 0,
+  };
+  for (const d of reviewDist) {
+    const r = d.rating as 1 | 2 | 3 | 4 | 5;
+    if (r >= 1 && r <= 5) dist[r] = d._count;
+  }
+
+  return {
+    recipe,
+    reviews,
+    variations,
+    reviewCount: reviewAgg._count,
+    reviewAverage: reviewAgg._avg.rating
+      ? Number(reviewAgg._avg.rating.toFixed(2))
+      : null,
+    ratingDistribution: dist,
+    topBookmarkers,
+  };
+}
+
 // ─── Admin list queries (sort + filter + search + pagination) ───
 
 export type RecipeSortKey =

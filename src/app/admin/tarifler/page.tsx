@@ -196,15 +196,27 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
               recipes.map((r) => (
                 <tr key={r.id} className="hover:bg-bg-card">
                   <td className="py-3 pr-4">
-                    <Link
-                      href={`/tarif/${r.slug}`}
-                      className="font-medium text-text hover:text-primary"
-                    >
-                      {r.emoji} {r.title}
-                      {r.isFeatured && (
-                        <span className="ml-1 text-xs text-secondary">★</span>
-                      )}
-                    </Link>
+                    <div className="flex items-center gap-1.5">
+                      <Link
+                        href={`/admin/tarifler/${r.slug}`}
+                        className="font-medium text-text hover:text-primary"
+                      >
+                        {r.emoji} {r.title}
+                        {r.isFeatured && (
+                          <span className="ml-1 text-xs text-secondary">★</span>
+                        )}
+                      </Link>
+                      <Link
+                        href={`/tarif/${r.slug}`}
+                        target="_blank"
+                        rel="noopener"
+                        className="text-xs text-text-muted hover:text-primary"
+                        title="Public sayfa"
+                        aria-label="Public sayfa"
+                      >
+                        ↗
+                      </Link>
+                    </div>
                   </td>
                   <td className="py-3 pr-4 text-text-muted">{r.category.name}</td>
                   <td className="py-3 pr-4 text-text-muted">

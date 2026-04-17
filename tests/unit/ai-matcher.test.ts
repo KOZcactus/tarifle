@@ -183,6 +183,166 @@ describe("synonym matching", () => {
   it("non-synonym does not match", () => {
     expect(ingredientMatches("Tavuk göğsü", "balık")).toBe(false);
   });
+
+  // ─── v2 expansion (17 Nis) regression suite ──────────────
+
+  it("kıyma DOES NOT match dana eti (ayrı gruplarda, false-positive fix)", () => {
+    // Önceden "et, dana eti, kıyma, dana kıyma" tek grupta — "kıyma" kullanıcısı
+    // parça eti olan tarife de yönlendiriliyordu. v2'de "kıyma" kendi grubu.
+    expect(ingredientMatches("Dana eti", "kıyma")).toBe(false);
+  });
+
+  it("dana kıyma matches kıyma", () => {
+    expect(ingredientMatches("Dana kıyma", "kıyma")).toBe(true);
+  });
+
+  it("tavuk kıyma does not match dana kıyma (ayrı protein)", () => {
+    expect(ingredientMatches("Dana kıyma", "tavuk kıyma")).toBe(false);
+  });
+
+  it("somon matches balık via synonym", () => {
+    expect(ingredientMatches("Somon", "balık")).toBe(true);
+  });
+
+  it("balık matches hamsi via synonym", () => {
+    expect(ingredientMatches("Hamsi", "balık")).toBe(true);
+  });
+
+  it("balık does NOT match karides (ayrı grup)", () => {
+    expect(ingredientMatches("Karides", "balık")).toBe(false);
+  });
+
+  it("süzme yoğurt matches yoğurt", () => {
+    expect(ingredientMatches("Süzme yoğurt", "yoğurt")).toBe(true);
+  });
+
+  it("tereyağı matches sade yağ", () => {
+    expect(ingredientMatches("Sade yağ", "tereyağı")).toBe(true);
+  });
+
+  it("sızma zeytinyağı matches zeytinyağı", () => {
+    expect(ingredientMatches("Sızma zeytinyağı", "zeytinyağı")).toBe(true);
+  });
+
+  it("ayçiçek yağı matches mısır özü yağı (bitkisel yağ ikamesi)", () => {
+    expect(ingredientMatches("Mısır özü yağı", "ayçiçek yağı")).toBe(true);
+  });
+
+  it("çeri domates matches salkım domates", () => {
+    expect(ingredientMatches("Çeri domates", "salkım domates")).toBe(true);
+  });
+
+  it("kapya biber matches biber", () => {
+    expect(ingredientMatches("Kapya biber", "biber")).toBe(true);
+  });
+
+  it("yeşil soğan matches taze soğan", () => {
+    expect(ingredientMatches("Yeşil soğan", "taze soğan")).toBe(true);
+  });
+
+  it("fesleğen matches reyhan", () => {
+    expect(ingredientMatches("Fesleğen", "reyhan")).toBe(true);
+  });
+
+  it("kırmızı mercimek matches mercimek", () => {
+    expect(ingredientMatches("Kırmızı mercimek", "mercimek")).toBe(true);
+  });
+
+  it("köftelik bulgur matches bulgur", () => {
+    expect(ingredientMatches("Köftelik bulgur", "bulgur")).toBe(true);
+  });
+
+  it("nohut matches haşlanmış nohut", () => {
+    expect(ingredientMatches("Haşlanmış nohut", "nohut")).toBe(true);
+  });
+
+  it("beyaz fasulye DOES NOT match barbunya", () => {
+    // Barbunya ayrı bir grupta olmadığı için geçmemeli
+    expect(ingredientMatches("Barbunya", "beyaz fasulye")).toBe(false);
+  });
+
+  it("buğday unu matches un", () => {
+    expect(ingredientMatches("Buğday unu", "un")).toBe(true);
+  });
+
+  it("mısır nişastası matches nişasta", () => {
+    expect(ingredientMatches("Mısır nişastası", "nişasta")).toBe(true);
+  });
+
+  it("nişasta does NOT match un (ayrı gruplar)", () => {
+    expect(ingredientMatches("Un", "nişasta")).toBe(false);
+  });
+
+  it("esmer şeker matches şeker", () => {
+    expect(ingredientMatches("Esmer şeker", "şeker")).toBe(true);
+  });
+
+  it("limon suyu matches limon", () => {
+    expect(ingredientMatches("Limon suyu", "limon")).toBe(true);
+  });
+
+  it("elma sirkesi matches sirke", () => {
+    expect(ingredientMatches("Elma sirkesi", "sirke")).toBe(true);
+  });
+
+  it("balzamik sirke matches beyaz sirke", () => {
+    expect(ingredientMatches("Balzamik sirke", "beyaz sirke")).toBe(true);
+  });
+
+  it("domates salçası matches biber salçası (salça grubu)", () => {
+    // Tarif biber salçası istiyor, user domates salçası yazıyor — ikame.
+    expect(ingredientMatches("Biber salçası", "domates salçası")).toBe(true);
+  });
+
+  it("kuru maya matches maya", () => {
+    expect(ingredientMatches("Kuru maya", "maya")).toBe(true);
+  });
+
+  it("istiridye mantarı matches mantar", () => {
+    expect(ingredientMatches("İstiridye mantarı", "mantar")).toBe(true);
+  });
+
+  it("kara lahana matches lahana", () => {
+    expect(ingredientMatches("Kara lahana", "lahana")).toBe(true);
+  });
+
+  it("dondurulmuş ıspanak matches ıspanak", () => {
+    expect(ingredientMatches("Dondurulmuş ıspanak", "ıspanak")).toBe(true);
+  });
+
+  it("kaşar peyniri matches beyaz peynir via peynir grubu", () => {
+    expect(ingredientMatches("Kaşar peyniri", "beyaz peynir")).toBe(true);
+  });
+});
+
+describe("pantry staples v2 (17 Nis) additions", () => {
+  it("tereyağı is pantry staple", () => {
+    expect(isPantryStaple("Tereyağı")).toBe(true);
+  });
+
+  it("maydanoz is pantry staple", () => {
+    expect(isPantryStaple("Maydanoz")).toBe(true);
+  });
+
+  it("maya is pantry staple", () => {
+    expect(isPantryStaple("Maya")).toBe(true);
+  });
+
+  it("sirke is pantry staple", () => {
+    expect(isPantryStaple("Sirke")).toBe(true);
+  });
+
+  it("limon suyu is pantry staple", () => {
+    expect(isPantryStaple("Limon suyu")).toBe(true);
+  });
+
+  it("yumurta is NOT pantry (kullanıcı gerçekten eksikse bildirim almalı)", () => {
+    expect(isPantryStaple("Yumurta")).toBe(false);
+  });
+
+  it("soğan is NOT pantry (temel malzeme sayılır, eksikse bilmeli)", () => {
+    expect(isPantryStaple("Soğan")).toBe(false);
+  });
 });
 
 describe("recipeContainsExcluded", () => {

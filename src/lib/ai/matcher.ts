@@ -2,6 +2,14 @@
  * Turkish-aware ingredient matching utilities.
  */
 
+/**
+ * Pantry staples — genellikle her evde bulunan, eksikse endişelenilmeyen
+ * kalemler. Matcher bu kelimeleri "zaten var" varsayarak skorlar; kullanıcı
+ * tarife girdiğinde pantry ingredient eksikse tariften elenme nedeni olmaz.
+ *
+ * v2 (17 Nis 2026): tereyağı, maya, maydanoz, sirke, limon suyu eklendi.
+ * TR mutfağında bu 5 de ev rafında sabit sayılacak yaygınlıkta.
+ */
 const PANTRY_STAPLES = [
   "tuz",
   "karabiber",
@@ -11,6 +19,7 @@ const PANTRY_STAPLES = [
   "sıvıyağ",
   "yağ",
   "ayçiçek yağı",
+  "tereyağı",
   "şeker",
   "un",
   "biber",
@@ -18,6 +27,10 @@ const PANTRY_STAPLES = [
   "kekik",
   "kimyon",
   "nane",
+  "maydanoz",
+  "maya",
+  "sirke",
+  "limon suyu",
 ];
 
 /**
@@ -25,18 +38,82 @@ const PANTRY_STAPLES = [
  * each other. Each group of synonyms maps bidirectionally.
  * Format: primary → alternatives[]. `ingredientMatches` checks synonyms
  * when the direct prefix match fails.
+ *
+ * v2 (17 Nis 2026): 10 → 45 grup. Türk mutfağı kapsamı için eklenenler:
+ *   - Et ayrıştırıldı: et (parça), kıyma, tavuk göğsü, tavuk budu ayrı
+ *     gruplar (önceden "dana eti = kıyma" false-positive'i vardı)
+ *   - Balık, karides, mantar, yoğurt, süt, tereyağı, zeytinyağı, bitkisel
+ *     yağ, otlar, sebzeler, baklagil, tahıl, un/nişasta, bal/sirke/limon,
+ *     soslar, lahana/ıspanak
+ *
+ * Grup ekleme kuralı: iki ingredient'ın BİRBİRİNİN YERİNE ikame
+ * edilebilmesi gerek. "Beyaz peynir ↔ kaşar" OK (ikisi de peynir) ama
+ * "Tavuk ↔ balık" DEĞİL (protein farklı). Başka deyişle: "elimde A var,
+ * tarif B istiyor — yapabilir miyim?" sorusunun cevabı evet olmalı.
  */
 const SYNONYM_GROUPS: readonly string[][] = [
+  // ─── Et & Balık ────────────────────────────────────────
+  ["et", "dana eti", "kuzu eti", "biftek", "bonfile"],
+  ["kıyma", "dana kıyma", "kuzu kıyma", "karışık kıyma"],
   ["tavuk", "piliç"],
-  ["biber", "sivri biber", "çarliston biber", "dolmalık biber"],
+  ["tavuk göğsü", "piliç göğsü", "tavuk göğüs"],
+  ["tavuk budu", "piliç budu"],
+  ["tavuk kıyma", "piliç kıyma"],
+  ["balık", "somon", "levrek", "çipura", "alabalık", "hamsi", "sardalya", "ton balığı", "uskumru"],
+  ["karides", "jumbo karides"],
+
+  // ─── Süt ürünleri & Yağlar ─────────────────────────────
+  ["yoğurt", "süzme yoğurt", "çoban yoğurt", "tam yağlı yoğurt"],
+  ["süt", "tam yağlı süt", "yarım yağlı süt", "az yağlı süt"],
+  ["peynir", "beyaz peynir", "kaşar", "kaşar peyniri", "ezine peyniri"],
+  ["tereyağı", "sade yağ"],
+  ["krema", "sıvı krema", "krema şanti"],
+  ["zeytinyağı", "sızma zeytinyağı", "erken hasat zeytinyağı"],
+  ["ayçiçek yağı", "mısır özü yağı", "kanola yağı", "bitkisel yağ"],
+
+  // ─── Sebze ──────────────────────────────────────────────
+  ["biber", "sivri biber", "çarliston biber", "dolmalık biber", "kapya biber"],
   ["domates", "çeri domates", "salkım domates"],
   ["soğan", "kuru soğan", "arpacık soğan"],
+  ["yeşil soğan", "taze soğan"],
   ["sarımsak", "sarımsak dişi"],
-  ["peynir", "beyaz peynir", "kaşar", "kaşar peyniri"],
-  ["krema", "sıvı krema", "krema şanti"],
-  ["makarna", "spagetti", "penne", "fusilli"],
-  ["pirinç", "baldo pirinç", "basmati", "jasmine"],
-  ["et", "dana eti", "kuzu eti", "kıyma", "dana kıyma"],
+  ["patates", "haşlanmış patates", "fırınlık patates"],
+  ["patlıcan", "kemer patlıcan"],
+  ["kabak", "sakız kabağı", "çağla kabak"],
+  ["havuç", "rende havuç"],
+  ["salatalık", "taze salatalık"],
+  ["marul", "göbek marul", "iceberg marul", "kıvırcık marul"],
+  ["pırasa", "taze pırasa"],
+  ["ıspanak", "taze ıspanak", "dondurulmuş ıspanak"],
+  ["lahana", "beyaz lahana", "kırmızı lahana", "kara lahana"],
+  ["mantar", "kültür mantarı", "istiridye mantarı", "porçini"],
+
+  // ─── Otlar ──────────────────────────────────────────────
+  ["maydanoz", "yaprak maydanoz", "ince maydanoz"],
+  ["dereotu", "taze dereotu"],
+  ["reyhan", "fesleğen"],
+
+  // ─── Baklagil & Tahıl ──────────────────────────────────
+  ["pirinç", "baldo pirinç", "basmati", "jasmine", "osmancık pirinç"],
+  ["bulgur", "pilavlık bulgur", "köftelik bulgur", "ince bulgur"],
+  ["makarna", "spagetti", "penne", "fusilli", "fettuccine"],
+  ["mercimek", "kırmızı mercimek", "yeşil mercimek", "sarı mercimek"],
+  ["nohut", "haşlanmış nohut", "konserve nohut"],
+  ["kuru fasulye", "beyaz fasulye"],
+  ["yeşil fasulye", "ayşe kadın fasulye", "çalı fasulyesi"],
+
+  // ─── Un & Nişasta ──────────────────────────────────────
+  ["un", "buğday unu", "tam buğday unu"],
+  ["nişasta", "buğday nişastası", "mısır nişastası"],
+
+  // ─── Tatlı, ekşi, sos ──────────────────────────────────
+  ["şeker", "toz şeker", "esmer şeker", "pudra şeker"],
+  ["bal", "süzme bal", "çam balı", "çiçek balı"],
+  ["limon", "limon suyu", "taze limon"],
+  ["sirke", "elma sirkesi", "beyaz sirke", "balzamik sirke", "üzüm sirkesi"],
+  ["salça", "domates salçası", "biber salçası"],
+  ["soya sosu", "light soya sosu"],
+  ["maya", "kuru maya", "instant maya", "yaş maya"],
 ];
 
 /**

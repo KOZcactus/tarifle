@@ -4,7 +4,16 @@
 
 ## 17 Nisan 2026 — Neon dev/prod branch + script guard
 
-Önceden tek Neon branch hem prod hem dev olarak kullanılıyordu (hata payı sıfır). Artık `production` parent + `dev` child (copy-on-write). Lokal `.env.local` dev'e bakar, `.env.production.local` (gitignore'lı) prod URL'i saklar. 34 destructive script `scripts/lib/db-env.ts` guard'ı import eder: prod host + `--confirm-prod` flag yoksa exit 1, flag varsa 3 sn uyarı banner. Vercel Production env prod URL'de, Preview/Development env dev URL'de. Runbook: `docs/PROD_PROMOTE.md`. Codex tarafı hiç etkilenmiyor (zaten child branch kullanıyor).
+Önceden tek Neon branch hem prod hem dev olarak kullanılıyordu (hata payı sıfır). Artık iki branch:
+
+| Katman | Production | Dev |
+|---|---|---|
+| Neon host | `ep-broad-pond` | `ep-dry-bread` |
+| Vercel scope | Production | Preview + Development |
+| Lokal env | `.env.production.local` (elle) | `.env.local` (default) |
+| Script guard | `--confirm-prod` zorunlu | Serbest |
+
+34 destructive script `scripts/lib/db-env.ts` guard'ı import eder: prod host + flag yoksa exit 1, flag varsa 3 sn uyarı. Runbook: `docs/PROD_PROMOTE.md`. Codex tarafı (codex-import child branch) hiç etkilenmiyor.
 
 ## 17 Nisan 2026 — Review sistemi v2
 

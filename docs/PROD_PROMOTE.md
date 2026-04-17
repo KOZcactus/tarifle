@@ -5,6 +5,23 @@ Tarifle'nin iki Neon branch'i var:
 - **`production`** (parent) — tarifle.app + Vercel Production env
 - **`dev`** (child) — lokal + Vercel Preview/Development env
 
+## Aktif kurulum tablosu
+
+| Katman | Production | Dev |
+|---|---|---|
+| Neon DB branch | `production` | `dev` (child of production) |
+| Neon host prefix | `ep-broad-pond-...` | `ep-dry-bread-...` |
+| Vercel env scope | Production | Preview + Development (a.k.a "All Pre-Production") |
+| Vercel deploy tetikleyici | `main` branch push → tarifle.app | PR → `<hash>.vercel.app` preview URL |
+| Lokal `.env.local` | — | ✅ dev URL (default) |
+| Lokal `.env.production.local` | ✅ prod URL (gitignore'lı) | — |
+| Destructive script guard | `--confirm-prod` zorunlu | Serbest geçer |
+| Codex'in bildiği URL | ❌ (asla) | `codex-import` branch (kendi child'ı) |
+
+Host prefix'leri `scripts/lib/db-env.ts`'de sabit. Branch reset edip farklı host alırsan o sabitleri de güncelle.
+
+## Standart akış
+
 Lokal `.env.local` varsayılan olarak **dev** branch'ine bakar. Prod'a yazmak için bu dosya iki şey yapmanı ister:
 
 1. `DATABASE_URL`'i geçici olarak prod URL'ye override et

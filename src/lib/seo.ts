@@ -31,7 +31,17 @@ export function generateBreadcrumbJsonLd(items: readonly BreadcrumbItem[]) {
   };
 }
 
-export function generateRecipeJsonLd(recipe: RecipeDetail) {
+export interface AggregateRatingInput {
+  /** Average 0-5, one decimal. */
+  average: number;
+  /** Total count of published reviews. */
+  count: number;
+}
+
+export function generateRecipeJsonLd(
+  recipe: RecipeDetail,
+  aggregateRating?: AggregateRatingInput | null,
+) {
   const totalTime = `PT${recipe.totalMinutes}M`;
   const prepTime = `PT${recipe.prepMinutes}M`;
   const cookTime = `PT${recipe.cookMinutes}M`;
@@ -72,6 +82,19 @@ export function generateRecipeJsonLd(recipe: RecipeDetail) {
             ...(recipe.protein ? { proteinContent: `${recipe.protein}g` } : {}),
             ...(recipe.carbs ? { carbohydrateContent: `${recipe.carbs}g` } : {}),
             ...(recipe.fat ? { fatContent: `${recipe.fat}g` } : {}),
+          },
+        }
+      : {}),
+    // AggregateRating only emitted when real review data exists — Google
+    // structured-data abuse guard: fake/bookmark-based ratings are flagged.
+    ...(aggregateRating && aggregateRating.count > 0
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: aggregateRating.average.toFixed(1),
+            reviewCount: aggregateRating.count,
+            bestRating: "5",
+            worstRating: "1",
           },
         }
       : {}),

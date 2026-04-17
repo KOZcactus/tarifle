@@ -28,7 +28,8 @@ export type RateLimitScope =
   | "password-reset-request"
   | "password-reset-consume"
   | "account-delete"
-  | "ai-assistant";
+  | "ai-assistant"
+  | "review-submit";
 
 interface ScopeConfig {
   /** Human-readable window length for log messages */
@@ -106,6 +107,14 @@ const SCOPE_CONFIG: Record<RateLimitScope, ScopeConfig> = {
     // hesabi silmeye calismasini yavaslatir.
     description: "3 hesap silme denemesi / 1 saat",
     limit: 3,
+    window: "1 h",
+  },
+  "review-submit": {
+    // Review upsert (yildız + yorum). Normal kullanici bir tarife bir
+    // review birakir, ara sira duzeltir. 10/saat hem meşru hem spam
+    // blokajli bir denge.
+    description: "10 yorum / 1 saat",
+    limit: 10,
     window: "1 h",
   },
 };

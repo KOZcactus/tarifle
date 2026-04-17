@@ -440,6 +440,7 @@ export async function getRecipeBySlug(slug: string): Promise<RecipeDetail | null
           // the recipe page or in card grids.
           variations: { where: { status: "PUBLISHED" } },
           bookmarks: true,
+          reviews: { where: { status: "PUBLISHED" } },
         },
       },
     },
@@ -455,6 +456,78 @@ export async function getRecipeBySlug(slug: string): Promise<RecipeDetail | null
     fat: recipe.fat ? Number(recipe.fat) : null,
     createdAt: recipe.createdAt.toISOString(),
   } as RecipeDetail;
+}
+
+export interface RecipeReview {
+  id: string;
+  rating: number;
+  comment: string | null;
+  createdAt: string;
+  author: { username: string; name: string | null; avatarUrl: string | null };
+}
+
+export interface RecipeReviewSummary {
+  count: number;
+  average: number; // 0-5, rounded to 1 decimal
+  distribution: Record<1 | 2 | 3 | 4 | 5, number>;
+}
+
+/**
+ * Fetch all published reviews for a recipe + aggregate stats. Returns an
+ * ordered list (newest first) plus the distribution histogram used by the
+ * UI summary card ("★★★★☆ 4.2 · 127 yorum").
+ */
+export async function getRecipeReviews(
+  recipeId: string,
+): Promise<{ reviews: RecipeReview[]; summary: RecipeReviewSummary }> {
+  const rows = await prisma.review.findMany({
+    where: { recipeId, status: "PUBLISHED" },
+    select: {
+      id: true,
+      rating: true,
+      comment: true,
+      createdAt: true,
+      user: {
+        select: { username: true, name: true, avatarUrl: true },
+      },
+    },
+    orderBy: { createdAt: "desc" },
+  });
+
+  const distribution: Record<1 | 2 | 3 | 4 | 5, number> = {
+    1: 0, 2: 0, 3: 0, 4: 0, 5: 0,
+  };
+  let sum = 0;
+  for (const r of rows) {
+    sum += r.rating;
+    const bucket = r.rating as 1 | 2 | 3 | 4 | 5;
+    if (bucket >= 1 && bucket <= 5) distribution[bucket]++;
+  }
+  const count = rows.length;
+  const average = count === 0 ? 0 : Math.round((sum / count) * 10) / 10;
+
+  return {
+    reviews: rows.map((r) => ({
+      id: r.id,
+      rating: r.rating,
+      comment: r.comment,
+      createdAt: r.createdAt.toISOString(),
+      author: r.user,
+    })),
+    summary: { count, average, distribution },
+  };
+}
+
+/** Fetch the caller's existing review on a recipe (if any). */
+export async function getUserReviewForRecipe(
+  userId: string,
+  recipeId: string,
+): Promise<{ id: string; rating: number; comment: string | null } | null> {
+  const review = await prisma.review.findUnique({
+    where: { userId_recipeId: { userId, recipeId } },
+    select: { id: true, rating: true, comment: true },
+  });
+  return review;
 }
 
 /** Görüntülenme sayısını artır (fire-and-forget) */

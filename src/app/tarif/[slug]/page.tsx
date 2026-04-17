@@ -12,12 +12,17 @@ import { CookingMode } from "@/components/recipe/CookingMode";
 import { PrintButton } from "@/components/recipe/PrintButton";
 import { AgeGate } from "@/components/recipe/AgeGate";
 import { VariationCard } from "@/components/recipe/VariationCard";
+import { ReviewsSection } from "@/components/recipe/ReviewsSection";
 import { SimilarRecipes } from "@/components/recipe/SimilarRecipes";
 import { generateRecipeJsonLd, generateBreadcrumbJsonLd, generateRecipeFaqJsonLd } from "@/lib/seo";
 import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
 import { CUISINE_FLAG, CUISINE_LABEL, type CuisineCode } from "@/lib/cuisines";
 import { SITE_URL } from "@/lib/constants";
-import { getRecipeBySlug, incrementViewCount } from "@/lib/queries/recipe";
+import {
+  getRecipeBySlug,
+  getRecipeReviews,
+  incrementViewCount,
+} from "@/lib/queries/recipe";
 import { getSimilarRecipes } from "@/lib/queries/similar-recipes";
 import { isBookmarked, getLikedVariationIds } from "@/lib/queries/user";
 import { getCollectionsForRecipe } from "@/lib/queries/collection";
@@ -129,7 +134,17 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
   // Görüntülenme sayısını arka planda artır
   incrementViewCount(slug).catch(() => {});
 
-  const jsonLd = generateRecipeJsonLd(recipe);
+  // AggregateRating yalnızca gerçek review varsa JSON-LD'ye eklenir —
+  // Google structured-data abuse guard (fake/bookmark rating = penalty).
+  // Reviews zaten ReviewsSection için fetch edilecek; burada sadece
+  // summary paylaşıyoruz çünkü SEO head script render'ından önce gerek.
+  const reviewSummary = await getRecipeReviews(recipe.id).then((r) => r.summary);
+  const jsonLd = generateRecipeJsonLd(
+    recipe,
+    reviewSummary.count > 0
+      ? { average: reviewSummary.average, count: reviewSummary.count }
+      : null,
+  );
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: "Ana Sayfa", url: "/" },
     { name: "Tarifler", url: "/tarifler" },
@@ -430,6 +445,13 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
           <VariationForm recipeId={recipe.id} recipeSlug={recipe.slug} />
         </div>
       </section>
+
+      {/* Reviews — 1-5 yıldız + opsiyonel yorum. AggregateRating JSON-LD
+          için metaData'da da hesaplanır. Print mode'da gizlenir (yorumlar
+          bir tarifi yazılı kağıda basarken bilgi değeri katmıyor). */}
+      <div className="print:hidden">
+        <ReviewsSection recipeId={recipe.id} recipeSlug={recipe.slug} />
+      </div>
 
       {/* Similar recipes — kural tabanlı öneri (kategori + type + tag
           ortaklığı). Print mode gizler, uyarlama bölümünden sonra gelir. */}

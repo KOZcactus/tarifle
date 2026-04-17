@@ -53,6 +53,7 @@ enum ContentStatus {
 enum ReportTarget {
   VARIATION
   COMMENT
+  REVIEW
 }
 
 enum ReportReason {
@@ -153,6 +154,7 @@ model User {
   badges            UserBadge[]
   notifications     Notification[]
   reports           Report[]
+  reviews           Review[]
   moderationActions ModerationAction[]
   auditLogs         AuditLog[]
   mediaAssets       MediaAsset[]
@@ -316,6 +318,7 @@ model Recipe {
   bookmarks       Bookmark[]
   collectionItems CollectionItem[]
   videoJobs       VideoJob[]
+  reviews         Review[]
 
   @@index([categoryId])
   @@index([status])
@@ -456,6 +459,34 @@ model Bookmark {
 
   @@unique([userId, recipeId])
   @@map("bookmarks")
+}
+
+// Review — kullanıcı tarife 1-5 yıldız + opsiyonel yorum bırakır. Her
+// kullanıcı her tarif için en fazla bir review (@@unique). AggregateRating
+// JSON-LD için `Recipe.reviews` üzerinden hesaplama:
+//   avg(rating), count(*) → schema.org Recipe.aggregateRating
+//
+// Moderation: Report targetType = REVIEW (yeni enum değeri) ile admin
+// gizleyebilir. PENDING_REVIEW status variation sisteminden clone;
+// preflight burada yok (review kısa, spam kontrol rate-limit + report
+// sistemi yeterli).
+model Review {
+  id        String        @id @default(cuid())
+  userId    String
+  recipeId  String
+  rating    Int           // 1-5, Zod validated
+  comment   String?       @db.Text // nullable — sadece rating de atabilir
+  status    ContentStatus @default(PUBLISHED)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  recipe Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, recipeId])
+  @@index([recipeId, status])
+  @@index([userId, createdAt])
+  @@map("reviews")
 }
 
 model Report {

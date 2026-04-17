@@ -59,13 +59,13 @@ function q(s: string): string {
 }
 
 function formatIngredient(i: {
-  name: string; amount: string; unit: string;
+  name: string; amount: string; unit: string | null;
   sortOrder: number; group: string | null; isOptional: boolean;
 }): string {
   const parts = [
     `name: ${q(i.name)}`,
     `amount: ${q(i.amount)}`,
-    `unit: ${q(i.unit)}`,
+    `unit: ${q(i.unit ?? "")}`,
     `sortOrder: ${i.sortOrder}`,
   ];
   if (i.group) parts.push(`group: ${q(i.group)}`);

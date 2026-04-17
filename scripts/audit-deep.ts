@@ -262,15 +262,6 @@ const ALLERGEN_RULES: AllergenRule[] = [
       }
       return false;
     },
-    customMatch: (name: string) => {
-      const lower = trLower(name);
-      // "ceviz" should match BUT exclude "hindistan cevizi"
-      if (lower.includes("ceviz")) {
-        if (lower.includes("hindistan")) return false;
-        return true;
-      }
-      return false;
-    },
   },
   {
     allergen: "YER_FISTIGI",

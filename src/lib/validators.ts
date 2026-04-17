@@ -76,10 +76,26 @@ export const variationSchema = z.object({
 // COMMENT enum value exists in Prisma schema for forward-compat but the model
 // doesn't ship yet. Validator only accepts VARIATION until Comment lands.
 export const reportSchema = z.object({
-  targetType: z.literal("VARIATION"),
+  targetType: z.enum(["VARIATION", "REVIEW"]),
   targetId: z.string(),
   reason: z.enum(["SPAM", "PROFANITY", "MISLEADING", "HARMFUL", "OTHER"]),
   description: z.string().max(500).optional(),
+});
+
+/**
+ * Review (tarif yorumu + yıldız). Rating 1-5 integer; comment opsiyonel
+ * (sadece yıldız de atılabilir). Comment varsa 10-800 karakter — çok
+ * kısa yorum signal-less, çok uzun moderation yükü.
+ */
+export const reviewSchema = z.object({
+  recipeId: z.string().min(1),
+  rating: z.number().int().min(1).max(5),
+  comment: z
+    .string()
+    .trim()
+    .transform((s) => (s.length === 0 ? undefined : s))
+    .pipe(z.string().min(10).max(800).optional())
+    .optional(),
 });
 
 /**

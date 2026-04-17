@@ -97,5 +97,6 @@ export interface RecipeDetail {
   _count: {
     variations: number;
     bookmarks: number;
+    reviews: number;
   };
 }

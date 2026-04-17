@@ -37,7 +37,7 @@ const baseRecipe: RecipeDetail = {
   ],
   tags: [],
   variations: [],
-  _count: { variations: 0, bookmarks: 0 },
+  _count: { variations: 0, bookmarks: 0, reviews: 0 },
 };
 
 describe("generateRecipeFaqJsonLd", () => {

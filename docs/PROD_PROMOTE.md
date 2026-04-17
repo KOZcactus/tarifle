@@ -46,30 +46,54 @@ Devam etmek için: --confirm-prod flag'i gerekli.
 5. Prod promote → aşağıdaki komutlar
 ```
 
-## Schema migration — OTOMATİK (17 Nis 2026 sonrası)
+## Schema migration — MANUEL (17 Nis 2026 deneme sonrası)
 
-**`package.json` `build` script'i** `prisma migrate deploy --config ./prisma/prisma.config.ts && next build` → her Vercel production deploy'unda schema migration otomatik uygulanır.
+**Denedik, olmadı:** Auto-migrate (`build` script'inde `prisma migrate deploy`) Neon pooler connection'ı ile Prisma advisory lock çakışmasından dolayı `P1002 timeout` ile patlıyor. Neon'un pooled bağlantısı statement-level pooling yapar, advisory lock (`pg_advisory_lock`) korunmaz.
 
-- `main` branch'e push → Vercel production build tetiklenir → `DATABASE_URL` = prod URL ile `migrate deploy` koşar → yeni migration'lar prod'a uygulanır → `next build` başlar
-- PR preview deploy → `DATABASE_URL` = dev URL → `migrate deploy` dev'e no-op koşar → build devam eder
-- Migration kırıksa (SQL hatası, unreachable DB) **build fail** → deploy reddedilir, schema eski kalır (önce kırık schema ile canlıya asla çıkmaz)
+Çözüm senaryoları:
+1. **Schema'ya `directUrl` ekle** + Vercel'e ayrı `DIRECT_URL` env var (Neon direct connection URL). Extra iş, henüz yapmadık.
+2. **GitHub Actions ayrı job** — `main` push'unda prod'a migrate deploy. CI'da PROD_DATABASE_URL secret. Yine direct URL kullanır. Yapılacak iş.
+3. **Manuel flow** — aşağıdaki adımlar. Şu an aktif.
 
-**Bu yüzden schema değiştiren commit'lerde manuel `migrate deploy` koşmana gerek YOK** — sadece:
+### Manuel flow (mevcut)
+
+Migration dev'e uygulanır, push öncesi prod'a da manuel uygulanır. `docs/MONITORING.md` deploy checklist'e bu adım **ZORUNLU** olarak eklendi.
+
+**Schema değişikliği yaparken sıra:**
+
 1. `prisma/schema.prisma` güncelle
-2. `npx prisma migrate dev --config ./prisma/prisma.config.ts --name <isim>` (dev'e uygula)
-3. `git commit` + `git push` → Vercel deploy prod'a da uygular
+2. `npx prisma migrate dev --config ./prisma/prisma.config.ts --name <isim>` → dev'e uygula
+3. Kod değişikliklerini yap, commit'le
+4. **PUSH ÖNCESİ** prod'a migration uygula (aşağıdaki komut)
+5. `git push`
 
-**GitHub Actions CI** → `DATABASE_URL` placeholder olduğu için `build:skip-migrate` varyantını kullanır (sadece `next build`, migrate yok). CI'nın işi kod-seviyesi kontrol.
+**PowerShell:**
 
-**Hatırlatıcı:** Migration destructive ise (column drop, table rename) tek yönlü — prod'a uygulandıktan sonra geri alamazsın. Destructive olanı manuel koş ve test et.
+```powershell
+$env:DATABASE_URL = (Get-Content .env.production.local | Select-String '^DATABASE_URL' | ForEach-Object { $_ -replace '^DATABASE_URL="?','' -replace '"$','' })
+npx prisma migrate deploy --config ./prisma/prisma.config.ts
+Remove-Item Env:\DATABASE_URL
+```
+
+**Bash / Git Bash:**
+
+```bash
+PROD_URL=$(grep '^DATABASE_URL' .env.production.local | sed -E 's/^DATABASE_URL="?//; s/"$//')
+DATABASE_URL="$PROD_URL" npx prisma migrate deploy --config ./prisma/prisma.config.ts
+```
+
+Destructive check lokalde push öncesi koş (kendin için):
+```bash
+npm run db:check-destructive
+```
 
 ## Prod promote — hangi komutu ne zaman
 
-### A. Sadece migration (schema değişti) — ARTIK OTOMATİK
+### A. Sadece migration (schema değişti)
 
-Yukarıdaki "Schema migration — OTOMATİK" bölümüne bak. Manuel adım GEREKMEZ.
+Yukarıdaki "Manuel flow" bölümüne bak — push öncesi prod'a migration uygulanır.
 
-Eğer Vercel deploy beklemeden ACİL prod'a migration uygulamak istersen (ör. hotfix push öncesi):
+Eğer Vercel deploy öncesinde yine prod'a migration uygulamak istersen:
 
 **PowerShell (Windows):**
 

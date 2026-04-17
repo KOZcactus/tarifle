@@ -62,12 +62,8 @@ jobs:
       - name: Content validator (Zod + semantic checks)
         run: npm run content:validate
 
-      # Vercel production build'de `npm run build` → `prisma migrate deploy`
-      # + `next build` (schema drift engelleyen koruma). CI'da DATABASE_URL
-      # placeholder olduğu için migrate deploy patlatır; CI yalnız kod
-      # seviyesi kontrol yaptığı için migrate'i atlayan varyant kullanır.
-      - name: Build (Next.js, skip migrate)
-        run: npm run build:skip-migrate
+      - name: Build (Next.js)
+        run: npm run build
 
   e2e:
     name: E2E (Playwright)

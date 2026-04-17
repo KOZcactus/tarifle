@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "postinstall": "prisma generate",
-    "build": "tsx scripts/check-destructive-migration.ts && prisma migrate deploy --config ./prisma/prisma.config.ts && next build",
-    "build:skip-migrate": "next build",
+    "build": "next build",
     "db:check-destructive": "tsx scripts/check-destructive-migration.ts",
     "start": "next start",
     "lint": "eslint .",

@@ -1,6 +1,18 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 17 Nisan 2026 (Admin ops v5 — inline edit + CSV export)
+> Son güncelleme: 17 Nisan 2026 (Admin ops v6 — moderasyon log + tag/kategori CRUD, admin kapandı)
+
+## 17 Nisan 2026 — Admin ops v6 moderasyon log + taxonomy
+
+3 yeni admin sayfası, admin paneli kapandı:
+
+- **`/admin/moderasyon-logu`** — ModerationAction timeline. Filtre (hedef türü + işlem), 50/sayfa pagination. Hedef label'ları N+1 önleyen `getModerationLogTargets` ile toplu çekilir; silinmiş hedef için italic "(silinmiş)" fallback. Her satırda moderator → admin kullanıcı detayına drill-down, hedef → ilgili admin/public sayfaya.
+- **`/admin/etiketler`** — Tag CRUD. Inline rename (pencil icon → Enter/Esc), create form (name + optional slug, otomatik slugify), delete yalnız usage=0. Total usage + orphan count header'da.
+- **`/admin/kategoriler`** — Category CRUD. Inline emoji/name/sortOrder ayrı ayrı edit, create form (emoji + name + slug + sortOrder), delete recipe_count=0 AND children=0 şartıyla. Alt kategori sayısı inline gösterilir.
+
+Schema: ModerationAction'a 3 index (createdAt DESC + moderatorId+createdAt + targetType+action+createdAt) — migration `20260417150000_moderation_log_indexes`. Server actions: 6 yeni (tag/category create/update/delete), Zod whitelist + unique conflict detection + recipe_count guard. Layout nav 5 → 8 tab, flex-wrap.
+
+Test: 16 yeni (Zod validation + TR slugify). 438 unit toplam PASS.
 
 ## 17 Nisan 2026 — Admin ops v5 inline edit + CSV export
 

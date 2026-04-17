@@ -1,7 +1,12 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { auth } from "@/lib/auth";
-import { getUserByUsername, getUserBookmarks, getUserVariations } from "@/lib/queries/user";
+import {
+  getUserByUsername,
+  getUserBookmarks,
+  getUserVariations,
+  getUserReviews,
+} from "@/lib/queries/user";
 import { getPublicCollections, getUserCollections } from "@/lib/queries/collection";
 import { getUserBadges } from "@/lib/badges/service";
 import { formatDistanceToNow } from "@/lib/utils";
@@ -32,11 +37,12 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
 
   const isOwner = session?.user?.id === user.id;
 
-  const [bookmarks, variations, collections, badges] = await Promise.all([
+  const [bookmarks, variations, collections, badges, reviews] = await Promise.all([
     isOwner ? getUserBookmarks(user.id) : Promise.resolve([]),
     getUserVariations(user.id, isOwner),
     isOwner ? getUserCollections(user.id) : getPublicCollections(user.id),
     getUserBadges(user.id),
+    getUserReviews(user.id, isOwner),
   ]);
 
   // Owner-only fields (TS narrowing — only present when isOwner === true)
@@ -255,6 +261,89 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
           </div>
         )}
       </section>
+
+      {/* Reviews */}
+      {(reviews.length > 0 || isOwner) && (
+        <section className="mb-10">
+          <h2 className="mb-4 font-heading text-xl font-bold text-text">
+            {isOwner ? "Yorumlarım" : "Yorumlar"}
+          </h2>
+          {reviews.length === 0 ? (
+            <p className="text-sm text-text-muted">
+              {isOwner
+                ? "Henüz bir tarife yorum bırakmadın."
+                : "Herkese açık yorum yok."}
+            </p>
+          ) : (
+            <ul className="space-y-3">
+              {reviews.map((r) => {
+                // Owner sees non-PUBLISHED rows too — surface the status so
+                // they can tell why a review isn't visible publicly. Hide chip
+                // for the default state.
+                const statusChip =
+                  r.status === "HIDDEN"
+                    ? { label: "Gizlendi", classes: "bg-error/15 text-error" }
+                    : r.status === "PENDING_REVIEW"
+                    ? { label: "İncelemede", classes: "bg-secondary/20 text-secondary" }
+                    : null;
+
+                return (
+                  <li
+                    key={r.id}
+                    className={`rounded-lg border p-4 ${
+                      statusChip
+                        ? "border-border/60 bg-bg-card/60"
+                        : "border-border bg-bg-card"
+                    }`}
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="min-w-0 flex-1">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <Link
+                            href={`/tarif/${r.recipe.slug}`}
+                            className={`truncate font-medium hover:text-primary ${
+                              statusChip ? "text-text-muted" : "text-text"
+                            }`}
+                          >
+                            {r.recipe.emoji} {r.recipe.title}
+                          </Link>
+                          {statusChip && (
+                            <span
+                              className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] font-medium ${statusChip.classes}`}
+                            >
+                              {statusChip.label}
+                            </span>
+                          )}
+                        </div>
+                        <div className="mt-1 flex items-center gap-2">
+                          <span
+                            className="text-sm text-[#f5a623]"
+                            aria-label={`${r.rating} yıldız`}
+                          >
+                            {"★".repeat(r.rating)}
+                            {"☆".repeat(5 - r.rating)}
+                          </span>
+                          <span className="text-xs text-text-muted">
+                            {formatDistanceToNow(r.createdAt)}
+                          </span>
+                        </div>
+                        {r.comment && (
+                          <p className="mt-2 text-sm text-text">{r.comment}</p>
+                        )}
+                        {isOwner && r.status === "HIDDEN" && r.hiddenReason && (
+                          <p className="mt-2 text-xs italic text-text-muted">
+                            Moderasyon sebebi: {r.hiddenReason}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+        </section>
+      )}
 
       {/* Bookmarks (only visible to owner) */}
       {isOwner && (

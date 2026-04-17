@@ -5,6 +5,8 @@ import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 import {
   notifyReportResolved,
+  notifyReviewApproved,
+  notifyReviewHidden,
   notifyVariationApproved,
   notifyVariationHidden,
 } from "@/lib/notifications/service";
@@ -52,6 +54,14 @@ export async function reviewReport(reportId: string, action: "REVIEWED" | "DISMI
         select: { miniTitle: true },
       });
       targetTitle = v?.miniTitle ?? null;
+    } else if (report.targetType === "REVIEW") {
+      // For reviews, "title" is the underlying recipe title — the review
+      // itself has no name. Keeps the reporter notification human-readable.
+      const r = await prisma.review.findUnique({
+        where: { id: report.targetId },
+        select: { recipe: { select: { title: true } } },
+      });
+      targetTitle = r?.recipe.title ?? null;
     }
     await notifyReportResolved({
       reporterId: report.reporterId,
@@ -146,5 +156,110 @@ export async function approveVariation(variationId: string) {
   }).catch((err) => console.error("[admin] approve notify failed:", err));
 
   revalidatePath("/admin");
+  return { success: true };
+}
+
+/** Yorumu gizle (moderation action + notify author) */
+export async function hideReview(reviewId: string, reason?: string) {
+  const moderatorId = await requireAdmin();
+  const trimmedReason = reason?.trim() || null;
+
+  const [updated] = await prisma.$transaction([
+    prisma.review.update({
+      where: { id: reviewId },
+      data: {
+        status: "HIDDEN",
+        hiddenReason: trimmedReason,
+      },
+      select: {
+        userId: true,
+        recipe: { select: { slug: true, title: true } },
+      },
+    }),
+    prisma.moderationAction.create({
+      data: {
+        moderatorId,
+        targetType: "review",
+        targetId: reviewId,
+        action: "HIDE",
+        reason: trimmedReason,
+      },
+    }),
+    // Auto-resolve any pending reports pointing at this review — admin's
+    // hide decision closes them.
+    prisma.report.updateMany({
+      where: {
+        targetType: "REVIEW",
+        targetId: reviewId,
+        status: "PENDING",
+      },
+      data: {
+        status: "REVIEWED",
+        reviewedBy: moderatorId,
+        reviewedAt: new Date(),
+      },
+    }),
+  ]);
+
+  notifyReviewHidden({
+    authorId: updated.userId,
+    recipeSlug: updated.recipe.slug,
+    recipeTitle: updated.recipe.title,
+    reason: trimmedReason,
+  }).catch((err) => console.error("[admin] review hide notify failed:", err));
+
+  revalidatePath("/admin");
+  revalidatePath(`/tarif/${updated.recipe.slug}`);
+  return { success: true };
+}
+
+/** Yorumu onayla (preflight-pending veya hidden'dan geri yayınla) */
+export async function approveReview(reviewId: string) {
+  const moderatorId = await requireAdmin();
+
+  const [updated] = await prisma.$transaction([
+    prisma.review.update({
+      where: { id: reviewId },
+      data: {
+        status: "PUBLISHED",
+        // Clear flags + any past hide reason — the review is clean now.
+        moderationFlags: null,
+        hiddenReason: null,
+      },
+      select: {
+        userId: true,
+        recipe: { select: { slug: true, title: true } },
+      },
+    }),
+    prisma.moderationAction.create({
+      data: {
+        moderatorId,
+        targetType: "review",
+        targetId: reviewId,
+        action: "APPROVE",
+      },
+    }),
+    prisma.report.updateMany({
+      where: {
+        targetType: "REVIEW",
+        targetId: reviewId,
+        status: "PENDING",
+      },
+      data: {
+        status: "DISMISSED",
+        reviewedBy: moderatorId,
+        reviewedAt: new Date(),
+      },
+    }),
+  ]);
+
+  notifyReviewApproved({
+    authorId: updated.userId,
+    recipeSlug: updated.recipe.slug,
+    recipeTitle: updated.recipe.title,
+  }).catch((err) => console.error("[admin] review approve notify failed:", err));
+
+  revalidatePath("/admin");
+  revalidatePath(`/tarif/${updated.recipe.slug}`);
   return { success: true };
 }

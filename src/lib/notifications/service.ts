@@ -92,6 +92,42 @@ export async function notifyVariationHidden(params: {
   });
 }
 
+/** Admin hid a review authored by the user. */
+export async function notifyReviewHidden(params: {
+  authorId: string;
+  recipeSlug: string;
+  recipeTitle: string;
+  reason?: string | null;
+}): Promise<void> {
+  const bodyCore = `"${params.recipeTitle}" tarifine yazdığın yorum moderasyon ekibi tarafından gizlendi.`;
+  const body = params.reason ? `${bodyCore} Sebep: ${params.reason}` : bodyCore;
+  await createNotification({
+    userId: params.authorId,
+    type: "REVIEW_HIDDEN",
+    title: "Yorumun gizlendi",
+    // Same reasoning as variation-hidden: don't send them to a tarif page
+    // where their content is gone; point at bildirimler so they see the
+    // reason in-context.
+    body,
+    link: "/bildirimler",
+  });
+}
+
+/** Admin approved a review that was flagged by preflight. */
+export async function notifyReviewApproved(params: {
+  authorId: string;
+  recipeSlug: string;
+  recipeTitle: string;
+}): Promise<void> {
+  await createNotification({
+    userId: params.authorId,
+    type: "REVIEW_APPROVED",
+    title: "Yorumun yayınlandı",
+    body: `"${params.recipeTitle}" tarifine yazdığın yorum incelendi ve yayına alındı.`,
+    link: `/tarif/${params.recipeSlug}`,
+  });
+}
+
 /** A report the user filed was resolved by moderation. */
 export async function notifyReportResolved(params: {
   reporterId: string;

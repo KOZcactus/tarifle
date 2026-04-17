@@ -1,6 +1,12 @@
-import { getReports, getFlaggedVariations } from "@/lib/queries/admin";
+import Link from "next/link";
+import {
+  getReports,
+  getFlaggedVariations,
+  getReportedReviews,
+} from "@/lib/queries/admin";
 import { AdminReportActions } from "@/components/admin/AdminReportActions";
 import { AdminVariationActions } from "@/components/admin/AdminVariationActions";
+import { ReviewModerationActions } from "@/components/admin/ReviewModerationActions";
 
 export const metadata = { title: "Raporlar | Yönetim Paneli" };
 
@@ -19,9 +25,10 @@ const STATUS_LABELS: Record<string, string> = {
 };
 
 export default async function ReportsPage() {
-  const [reports, flaggedVariations] = await Promise.all([
+  const [reports, flaggedVariations, reportedReviews] = await Promise.all([
     getReports("PENDING"),
     getFlaggedVariations(),
+    getReportedReviews(),
   ]);
 
   return (
@@ -62,6 +69,59 @@ export default async function ReportsPage() {
                 </div>
                 <div className="mt-3">
                   <AdminVariationActions variationId={v.id} currentStatus={v.status} />
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+
+      {/* Raporlanmış Yorumlar */}
+      <section>
+        <h2 className="mb-4 font-heading text-xl font-bold">
+          Raporlanmış Yorumlar ({reportedReviews.length})
+        </h2>
+
+        {reportedReviews.length === 0 ? (
+          <p className="text-sm text-text-muted">Raporlanmış yorum yok.</p>
+        ) : (
+          <div className="space-y-3">
+            {reportedReviews.map((r) => (
+              <div
+                key={r.id}
+                className="rounded-xl border border-border bg-bg-card p-5"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1">
+                    <p
+                      className="font-medium text-text"
+                      aria-label={`${r.rating} yıldız`}
+                    >
+                      {"★".repeat(r.rating)}
+                      {"☆".repeat(5 - r.rating)}
+                    </p>
+                    <p className="mt-1 text-sm text-text-muted">
+                      {r.recipe.emoji}{" "}
+                      <Link
+                        href={`/tarif/${r.recipe.slug}`}
+                        className="text-primary hover:text-primary-hover"
+                      >
+                        {r.recipe.title}
+                      </Link>{" "}
+                      — @{r.user.username}
+                    </p>
+                    {r.comment && (
+                      <blockquote className="mt-2 border-l-2 border-border pl-3 text-sm text-text">
+                        {r.comment}
+                      </blockquote>
+                    )}
+                  </div>
+                  <span className="rounded-full bg-bg-elevated px-2.5 py-1 text-xs text-text-muted">
+                    {r.status}
+                  </span>
+                </div>
+                <div className="mt-3">
+                  <ReviewModerationActions reviewId={r.id} />
                 </div>
               </div>
             ))}

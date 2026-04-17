@@ -4,12 +4,16 @@ import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { reviewSchema } from "@/lib/validators";
 import { checkRateLimit, rateLimitIdentifier, getClientIp } from "@/lib/rate-limit";
+import { checkMultipleTexts } from "@/lib/moderation/blacklist";
+import { computeReviewPreflightFlags } from "@/lib/moderation/preflight-review";
 import { revalidatePath } from "next/cache";
 
 interface ActionResult {
   success: boolean;
   error?: string;
   reviewId?: string;
+  /** True when preflight flagged the comment and it landed in PENDING_REVIEW. */
+  pendingReview?: boolean;
 }
 
 /**
@@ -54,6 +58,29 @@ export async function submitReviewAction(input: unknown): Promise<ActionResult> 
     return { success: false, error: "Bu tarife şu an yorum yapılamıyor." };
   }
 
+  // Hard profanity filter — matches the variation action. Only scans the
+  // comment body (rating alone can't carry text). Blacklist hit is an
+  // outright rejection, not a preflight flag.
+  if (comment) {
+    const blacklistResult = checkMultipleTexts([comment]);
+    if (!blacklistResult.isClean) {
+      return {
+        success: false,
+        error:
+          "Yorumun uygunsuz ifadeler içeriyor. Lütfen düzenleyip tekrar dene.",
+      };
+    }
+  }
+
+  // Soft preflight — spam patterns, shouting, URLs. If any fire the review
+  // lands in PENDING_REVIEW and shows up on the admin queue. Rating-only
+  // submissions always return no flags.
+  const preflight = computeReviewPreflightFlags({ comment: comment ?? null });
+  const status = preflight.needsReview ? "PENDING_REVIEW" : "PUBLISHED";
+  const moderationFlags = preflight.needsReview
+    ? preflight.flags.join(",")
+    : null;
+
   const review = await prisma.review.upsert({
     where: {
       userId_recipeId: {
@@ -66,19 +93,29 @@ export async function submitReviewAction(input: unknown): Promise<ActionResult> 
       recipeId: recipe.id,
       rating,
       comment: comment ?? null,
+      status,
+      moderationFlags,
     },
     update: {
       rating,
       comment: comment ?? null,
-      // Reset to PUBLISHED if user edits a previously HIDDEN review.
-      // Admin can re-hide if it's still problematic.
-      status: "PUBLISHED",
+      // On edit, recompute status from scratch. A previously hidden review
+      // that's now clean can re-publish; a previously clean one that now
+      // trips preflight goes back to PENDING_REVIEW. hiddenReason clears
+      // on every edit — if the admin needs to re-hide they'll add fresh context.
+      status,
+      moderationFlags,
+      hiddenReason: null,
     },
   });
 
   revalidatePath(`/tarif/${recipe.slug}`);
   revalidatePath("/profil/[username]", "page");
-  return { success: true, reviewId: review.id };
+  return {
+    success: true,
+    reviewId: review.id,
+    pendingReview: preflight.needsReview,
+  };
 }
 
 /**

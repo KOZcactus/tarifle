@@ -15,7 +15,8 @@ export function ReviewForm({ recipeId, existing }: ReviewFormProps) {
   const [rating, setRating] = useState(existing?.rating ?? 0);
   const [comment, setComment] = useState(existing?.comment ?? "");
   const [error, setError] = useState<string | null>(null);
-  const [pending, setPending] = useState(false);
+  const [pendingNotice, setPendingNotice] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
 
   const isEditing = !!existing;
 
@@ -26,7 +27,8 @@ export function ReviewForm({ recipeId, existing }: ReviewFormProps) {
       return;
     }
     setError(null);
-    setPending(true);
+    setPendingNotice(null);
+    setSubmitting(true);
     try {
       const result = await submitReviewAction({
         recipeId,
@@ -36,14 +38,27 @@ export function ReviewForm({ recipeId, existing }: ReviewFormProps) {
       });
       if (!result.success) {
         setError(result.error ?? "Bir hata oluştu.");
-        setPending(false);
+        setSubmitting(false);
         return;
+      }
+      if (result.pendingReview) {
+        // Preflight caught something (caps, repeated chars, URL). Tell the
+        // user their review is queued for moderation rather than silently
+        // hiding it from the list after refresh.
+        setPendingNotice(
+          "Yorumun incelemeye alındı; moderasyon onayından sonra yayınlanacak.",
+        );
       }
       // Server action revalidated the path; client refresh pulls new list.
       router.refresh();
+      // Re-enable the button so the user can edit again after the RSC
+      // re-renders the form in edit mode. Without this, `submitting` stays
+      // true for the whole component lifetime and the button is stuck on
+      // "Gönderiliyor...".
+      setSubmitting(false);
     } catch {
       setError("Yorum gönderilemedi, tekrar dene.");
-      setPending(false);
+      setSubmitting(false);
     }
   }
 
@@ -95,12 +110,21 @@ export function ReviewForm({ recipeId, existing }: ReviewFormProps) {
         </p>
       )}
 
+      {pendingNotice && (
+        <p
+          className="mb-3 text-sm text-amber-700 dark:text-amber-400"
+          role="status"
+        >
+          {pendingNotice}
+        </p>
+      )}
+
       <button
         type="submit"
-        disabled={pending || rating === 0}
+        disabled={submitting || rating === 0}
         className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-50"
       >
-        {pending ? "Gönderiliyor..." : isEditing ? "Güncelle" : "Gönder"}
+        {submitting ? "Gönderiliyor..." : isEditing ? "Güncelle" : "Gönder"}
       </button>
     </form>
   );

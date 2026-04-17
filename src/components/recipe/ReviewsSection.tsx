@@ -8,6 +8,7 @@ import {
 import { StarRating } from "./StarRating";
 import { ReviewForm } from "./ReviewForm";
 import { DeleteOwnReviewButton } from "./DeleteOwnReviewButton";
+import { ReportButton } from "./ReportButton";
 
 interface ReviewsSectionProps {
   recipeId: string;
@@ -165,9 +166,15 @@ export async function ReviewsSection({
                     </div>
                   </div>
                 </div>
-                {userId && userReview?.id === r.id && (
-                  <DeleteOwnReviewButton reviewId={r.id} />
-                )}
+                <div className="flex shrink-0 items-center gap-3">
+                  {userId && userReview?.id === r.id ? (
+                    <DeleteOwnReviewButton reviewId={r.id} />
+                  ) : userId ? (
+                    // Rapor butonu yalnız başkalarının yorumu için
+                    // — kullanıcı kendi yorumunu raporlamaz, düzenler/siler.
+                    <ReportButton targetType="REVIEW" targetId={r.id} />
+                  ) : null}
+                </div>
               </div>
               {r.comment && (
                 <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">

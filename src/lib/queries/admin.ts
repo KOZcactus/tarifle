@@ -34,6 +34,36 @@ export async function getReports(status?: string) {
   });
 }
 
+/** Preflight tarafından PENDING_REVIEW'a düşmüş yorumlar */
+export async function getPendingReviews() {
+  return prisma.review.findMany({
+    where: { status: "PENDING_REVIEW" },
+    orderBy: { createdAt: "asc" },
+    include: {
+      user: { select: { id: true, name: true, username: true } },
+      recipe: { select: { slug: true, title: true } },
+    },
+  });
+}
+
+/** Hakkında PENDING rapor olan yorumlar — raporlar sayfasındaki review bölümü */
+export async function getReportedReviews() {
+  const pendingReports = await prisma.report.findMany({
+    where: { targetType: "REVIEW", status: "PENDING" },
+    select: { targetId: true },
+  });
+  const ids = Array.from(new Set(pendingReports.map((r) => r.targetId)));
+  if (ids.length === 0) return [];
+
+  return prisma.review.findMany({
+    where: { id: { in: ids } },
+    include: {
+      user: { select: { id: true, username: true, name: true } },
+      recipe: { select: { title: true, slug: true, emoji: true } },
+    },
+  });
+}
+
 /** Raporlanmış uyarlamaları getir (reportCount > 0) */
 export async function getFlaggedVariations() {
   return prisma.variation.findMany({

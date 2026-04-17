@@ -118,6 +118,8 @@ enum NotificationType {
   VARIATION_LIKED
   VARIATION_HIDDEN
   VARIATION_APPROVED
+  REVIEW_HIDDEN
+  REVIEW_APPROVED
   REPORT_RESOLVED
   BADGE_AWARDED
   SYSTEM
@@ -471,14 +473,21 @@ model Bookmark {
 // preflight burada yok (review kısa, spam kontrol rate-limit + report
 // sistemi yeterli).
 model Review {
-  id        String        @id @default(cuid())
-  userId    String
-  recipeId  String
-  rating    Int           // 1-5, Zod validated
-  comment   String?       @db.Text // nullable — sadece rating de atabilir
-  status    ContentStatus @default(PUBLISHED)
-  createdAt DateTime      @default(now())
-  updatedAt DateTime      @updatedAt
+  id               String        @id @default(cuid())
+  userId           String
+  recipeId         String
+  rating           Int           // 1-5, Zod validated
+  comment          String?       @db.Text // nullable — sadece rating de atabilir
+  status           ContentStatus @default(PUBLISHED)
+  // Comma-separated preflight flag codes (see `lib/moderation/preflight-review.ts`).
+  // Null when no flags tripped. Mirrors Variation.moderationFlags shape so
+  // the admin queue can render both with the same component.
+  moderationFlags  String?       @db.VarChar(200)
+  // Reason recorded by the moderator when status was flipped to HIDDEN.
+  // Surfaced to the review author in the `REVIEW_HIDDEN` notification.
+  hiddenReason     String?       @db.VarChar(500)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
 
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
   recipe Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)

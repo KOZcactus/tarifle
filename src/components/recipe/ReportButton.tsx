@@ -6,8 +6,10 @@ import { useRouter } from "next/navigation";
 import { createReport } from "@/lib/actions/report";
 
 interface ReportButtonProps {
-  targetType: "VARIATION";
+  targetType: "VARIATION" | "REVIEW";
   targetId: string;
+  /** Accessible label — defaults to variation wording for backward compat. */
+  label?: string;
 }
 
 const REASONS = [
@@ -18,7 +20,16 @@ const REASONS = [
   { value: "OTHER", label: "Diğer" },
 ];
 
-export function ReportButton({ targetType, targetId }: ReportButtonProps) {
+export function ReportButton({
+  targetType,
+  targetId,
+  label,
+}: ReportButtonProps) {
+  const ariaLabel =
+    label ??
+    (targetType === "REVIEW"
+      ? "Bu yorumu rapor et"
+      : "Bu uyarlamayı rapor et");
   const { data: session } = useSession();
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
@@ -53,7 +64,7 @@ export function ReportButton({ targetType, targetId }: ReportButtonProps) {
           }
           setIsOpen(true);
         }}
-        aria-label="Bu uyarlamayı rapor et"
+        aria-label={ariaLabel}
         aria-expanded={isOpen}
         className="text-xs text-text-muted transition-colors hover:text-error focus-visible:text-error focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-error focus-visible:ring-offset-1 focus-visible:ring-offset-bg"
         title="Rapor et"

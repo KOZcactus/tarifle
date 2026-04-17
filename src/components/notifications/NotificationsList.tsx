@@ -166,6 +166,14 @@ const CHIP_META: Record<
     label: "Moderasyon",
     classes: "bg-error/15 text-error",
   },
+  REVIEW_APPROVED: {
+    label: "Onay",
+    classes: "bg-accent-green/15 text-accent-green",
+  },
+  REVIEW_HIDDEN: {
+    label: "Moderasyon",
+    classes: "bg-error/15 text-error",
+  },
   REPORT_RESOLVED: {
     label: "Rapor",
     classes: "bg-accent-blue/15 text-accent-blue",

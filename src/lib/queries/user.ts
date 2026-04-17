@@ -73,6 +73,32 @@ export async function getUserVariations(userId: string, includeHidden = false) {
   });
 }
 
+/**
+ * Profile "Yorumlarım" section. `includeHidden` controls whether HIDDEN and
+ * PENDING_REVIEW rows come back — the owner sees everything so they can tell
+ * why their review isn't showing publicly; non-owners only see PUBLISHED.
+ */
+export async function getUserReviews(userId: string, includeHidden = false) {
+  return prisma.review.findMany({
+    where: {
+      userId,
+      ...(includeHidden ? {} : { status: "PUBLISHED" }),
+    },
+    orderBy: { createdAt: "desc" },
+    select: {
+      id: true,
+      rating: true,
+      comment: true,
+      status: true,
+      hiddenReason: true,
+      createdAt: true,
+      recipe: {
+        select: { title: true, slug: true, emoji: true },
+      },
+    },
+  });
+}
+
 export async function isBookmarked(userId: string, recipeId: string) {
   const bookmark = await prisma.bookmark.findUnique({
     where: { userId_recipeId: { userId, recipeId } },

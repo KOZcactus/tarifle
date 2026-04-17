@@ -1,6 +1,68 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 17 Nisan 2026 (Fuzzy arama — AI matcher typo tolerance + pg_trgm trigram fallback)
+> Son güncelleme: 17 Nisan 2026 (oturum 2 — Admin paneli + ops altyapı + monitoring, 33 commit)
+
+## 17 Nisan 2026 — Oturum 2 (büyük tur, 33 commit)
+
+Bu oturum uzun, çok iş yapıldı. Kısa özet:
+
+**Review v2 full-stack** (`ec5e37d`) — preflight (`repeated_chars`/`excessive_caps`/`contains_url` → PENDING_REVIEW) + admin moderation (hideReview/approveReview + /admin/incelemeler Yorumlar section + /admin/raporlar Raporlanmış Yorumlar) + profil "Yorumlarım" section + `REVIEW_HIDDEN`/`REVIEW_APPROVED` notifications + ReportButton REVIEW hedefi.
+
+**CI 14 rundur kırmızıydı → yeşil** (`f070f20`) — `seo-faq.test.ts` 20× `as any` + `AiAssistantForm.tsx` 2× setState-in-effect. Pre-existing lint error'lar, Review v2'den bağımsız.
+
+**Codex batch 11** (`f00144e` + `4d86e28` merge + `90d854a`) — Eren 100 tarif yazdı (65 tr + 35 uluslararası: us/ma/cu/br + jp/in 1'er). Regional Türk (şebit yağlaması, nevzine tatlısı, firik pilavı...) + smoothie 15 + kahve 15 + eksik mutfaklar. 8 CRITICAL alerjen fix (Tereyağı→SUT, Yulaf/Dövme→GLUTEN, Tahin→SUSAM) + 2 diet tag cleanup. DB artık **1100 tarif**.
+
+**CODEX_HANDOFF §6.7 kural 6** (`3a7bfdc`) — ingredient-implied alerjen tablosu (Tereyağı/Yulaf/Tahin gibi 8 ingredient family → zorunlu allergen). Batch 12'de bu ihlal yakalanır.
+
+**Neon dev/prod branch separation** (`34c6aab` + `690f3cf`) — prod (`ep-broad-pond`) + dev (`ep-dry-bread`) ayrıldı. `.env.local` dev'e, `.env.production.local` prod'a (gitignore'lı). 34 destructive script'e `assertDbTarget()` guard (`scripts/lib/db-env.ts`) — prod host + `--confirm-prod` flag yoksa exit 1. Vercel Production env prod URL, Preview/Development env dev URL. Runbook: `docs/PROD_PROMOTE.md`.
+
+**AI Asistan v2 — synonym + pantry expansion** (`85fbd86`) — SYNONYM_GROUPS 10 → 45 (et ayrıştırıldı, balık/karides/süt ürünleri/bitkisel yağ/otlar/sebze/baklagil/un-nişasta/sirke-limon/salça eklendi). PANTRY_STAPLES 15 → 20 (tereyağı, maydanoz, maya, sirke, limon suyu). +35 test.
+
+**Admin paneli v2 → v7 — nihai kapanış** (`2e14d1d`/`81e147c`/`2d2eab8`/`527a339`/`8357e82`/`6d4f836`):
+- **v2 dashboard** — 13 stat card + 📈 user growth (30 gün bar chart) + ⭐ yıldız dist + 🔥 top viewed + 👤 son kayıtlar
+- **v3 ops** — "En aktif kullanıcılar" leaderboard + "En çok raporlanan içerik" + liste sayfalarında URL-driven sort/filter/search/pagination (SortableHeader, PaginationBar)
+- **v4 drill-down** — `/admin/kullanicilar/[username]` + `/admin/tarifler/[slug]` detay sayfaları (moderator-view, HIDDEN + PENDING_REVIEW dahil)
+- **v5 inline edit + CSV export** — admin detay sayfalarında tıkla-düzenle (emoji/title/description/status/featured/role/isVerified), ModerationAction diff summary audit. 3 CSV route handler (recipes/users/reviews) UTF-8 BOM + RFC 4180
+- **v6 moderasyon log + taxonomy CRUD** — `/admin/moderasyon-logu` timeline + `/admin/etiketler` tag CRUD + `/admin/kategoriler` category CRUD
+- **v7 niş paket** — user suspend/unsuspend (User.suspendedAt + auth guard) + announcement (Announcement model + site-wide banner + localStorage dismiss) + collection moderation (Collection.hiddenAt) + toplu bildirim broadcast
+- **Sonuç:** 14 admin sayfası, 60+ server action, 3 CSV API, 11 schema migration, nav 5 → 11 tab
+
+**Image generation plan** (`a2fbc32`) — `docs/IMAGE_GENERATION_PLAN.md` Eren/Codex için brief (1100 cartoon/sticker illustration DALL-E 3 ile, ~$44). Prompt template + cuisine eşlemesi + 3 yol (Codex agent / ChatGPT Pro UI / OpenAI API) + 10 tarif pilot + teslim + kalite kriteri.
+
+**Fuzzy arama** (`5698c97`) — TR-aware Levenshtein (`src/lib/fuzzy.ts`) + ASCII normalize + length-aware threshold (≤4 exact, 5-7 L=1, 8+ L=2). AI matcher 3. adım (direct prefix → synonym → **fuzzy**): "domatez" → "domates", "kerik" → "kekik", "maydonoz" → "maydanoz". Recipe search pg_trgm similarity fallback ("domatez corbasi" → "domates çorbası"). Migration pg_trgm extension + 3 GIN index.
+
+**🚨 Prod outage + recovery** — Dev'e uyguladığım 4 schema migration prod'a promote edilmemişti (ayrı branch). Prisma client `User.suspendedAt` SELECT etti → prod DB'de yok → authorize() Configuration error → **login kırıldı**. Sırayla çözüldü:
+- `c896d0d` **HOTFIX** — auth.ts `suspendedAt` select geçici kaldırıldı (login anında düzeldi)
+- Prod'a 3 migration manuel `prisma migrate deploy` uygulandı (review_moderation zaten vardı)
+- `7e4f061` — suspension check restore
+
+**Vercel build auto-migrate denendi + geri alındı** (`4b528d9` → `4d6a7fe`) — `package.json` build'e `prisma migrate deploy` eklendi (schema drift bir daha olmasın). Ama **Neon pooler P1002 lock timeout** — PgBouncer transaction mode Postgres advisory lock desteklemiyor. Build fail. Revert. **Manuel migration flow'a dönüldü** (PROD_PROMOTE.md).
+
+**Sentry error tracking** (`a8ee01f`) — `@sentry/nextjs` 10.49 + `sentry.{client,server,edge}.config.ts` + `src/app/global-error.tsx` + `next.config.ts` `withSentryConfig` wrapper. DSN yoksa silently disabled. Filter: NEXT_REDIRECT/NEXT_NOT_FOUND. Prod sample %10 traces + %100 replay-on-error. Sentry hesap açıldı: org `tarifle-co` / project `tarifle-web` / EU data region / DSN + auth token Vercel env'de. **Smoke test sayfası** `/sentry-test` (admin-only, 3 error tipi: client throw + server action throw + RSC throw).
+
+**Destructive migration detector** (`a8ee01f`) — `scripts/check-destructive-migration.ts` pending SQL'leri tarar, DROP TABLE / DROP COLUMN / TRUNCATE / DROP TYPE / DELETE FROM bulursa exit 1. Auto-migrate revert edildiği için build pipeline'da değil; manuel `npm run db:check-destructive` veya bypass `ALLOW_DESTRUCTIVE_MIGRATION=1`.
+
+**Schema değişiklikleri (bu oturum, 4 migration):**
+- `20260417140000_review_moderation` — Review.moderationFlags + hiddenReason + REVIEW_HIDDEN/REVIEW_APPROVED enum
+- `20260417150000_moderation_log_indexes` — 3 GIN index ModerationAction
+- `20260417160000_suspension_announcement_collection` — User.suspendedAt/suspendedReason + Collection.hiddenAt/hiddenReason + Announcement table + AnnouncementVariant enum
+- `20260417170000_pg_trgm_fuzzy_search` — pg_trgm extension + 3 trigram GIN index (title/slug/ingredient)
+
+**Test durumu:** 363 → 489 unit (+126). Build + typecheck temiz. E2E 1 yeni (review-flow.spec.ts).
+
+**DB durumu (prod, bu oturum sonu):**
+- 1100 tarif (batch 11 merge)
+- 11 formal migration applied
+- audit-deep: 0 CRITICAL
+- 489 unit test PASS
+
+**Üzerinde durduğumuz sorunlar / bekleyen işler:**
+1. **Sentry smoke test doğrulanmadı** — Kerem tarifle.app/sentry-test'te 3 butona basıp Sentry Issues'da event görmeli. Vercel son deploy `c96bb96` (smoke test page) Ready durumunda.
+2. **Auto-migrate çözümsüz** — Neon direct (non-pooled) connection URL ile tekrar denenebilir, ya da GitHub Actions job. Şimdilik manuel flow.
+3. **Tarif görselleri** — Eren `docs/IMAGE_GENERATION_PLAN.md` okuyup Codex agent test edecek. Kalite onayı sonrası batch. Dashboard "Görselsiz %100" alarmı yanıyor.
+4. **i18n henüz başlamadı** — Schema hazır, ~400 UI string + EN/DE gerek. Ertelendi.
+
+---
 
 ## 17 Nisan 2026 — Fuzzy arama
 

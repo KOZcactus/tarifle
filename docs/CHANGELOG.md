@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: 17 Nisan 2026 (~30 ek commit, DB derin doğruluk turları — audit 0/0 PASS)
+> Son güncelleme: 17 Nisan 2026 (oturum 2 — 33 ek commit, Review v2 + Admin v2-v7 + Fuzzy + Neon branch + Sentry)
 
 ## İşaretler
 
@@ -91,6 +91,9 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🐛 **Codex2 ek semantik 3 bulgu** — jokai-bableves Sıvı yağ, csalamade Şeker, banh-mi Sirke+Şeker (Turşu için) + Kişniş (Sandviç için).
 - 🐛 **humus Pul biber + kladdkaka Un** eksik ingredient ekle, kladdkaka GLUTEN allergen eklendi.
 - 🧹 **Source sync** (17 Nis) — 52 tarif `scripts/seed-recipes.ts` + 14 bootstrap `prisma/seed.ts` DB snapshot'ına göre regenerate (ingredients + steps + cookMinutes + tipNote + servingSuggestion field-by-field patch). 107 patch toplam. `scripts/patch-source-from-db.ts` bracket-depth-safe string slicer, `--slugs` / `--slugs-file` / `--seed-path` flag'li.
+- ✨ **Codex batch 11 — 100 tarif** (17 Nis oturum 2). 65 tr + 35 uluslararası (us 14 + ma 9 + cu 6 + br 4 + jp/in 1). Regional Türk zenginleştirme (şebit yağlaması, nevzine tatlısı, firik pilavı, tutmaç çorbası, sac arası, göbete) + smoothie 15 + kahve 15. DB 1000 → **1100 tarif**.
+- 🐛 **Batch 11 allergen fix — 8 CRITICAL** — Tereyağı → SUT (firik-pilavi, nevzine, sac-arasi, gobete, empadao), Yulaf → GLUTEN (elmali-kefir + cilekli-yulaf smoothie'ler), Dövme buğday → GLUTEN (toyga), Tahin → SUSAM (nevzine). 2 diet-tag cleanup (nevzine + sac-arasi vegan → kaldırıldı, SUT içeriyorlar).
+- 🔍 **Fuzzy arama** — `src/lib/fuzzy.ts` TR-aware Levenshtein + ASCII normalize + length-aware threshold. Recipe search pg_trgm similarity fallback (FTS + contains boşsa trigram lookup). "domatez corbasi" → "domates çorbası".
 
 ## Uyarlama sistemi
 
@@ -126,6 +129,8 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - ✨ **Malzeme autocomplete** — 689 benzersiz malzeme ismi DB'den, Türkçe fuzzy match (ı/i, ş/s), Arrow/Enter keyboard nav, ARIA combobox. Her tuşta client-side filter, API yok.
 - ✨ **Arama paylaş** — "🔗 Paylaş" butonu URL'e ingredients kodlar. Paylaşılan link açıldığında auto-submit, aynı arama tekrarlanır.
 - 🎨 **Sonuç sıralama tercihi** — "En iyi eşleşme / En hızlı / En az eksik" client-side toggle.
+- ✨ **v2 synonym expansion** (17 Nis oturum 2) — SYNONYM_GROUPS 10 → 45. Et ayrıştırıldı (kıyma/tavuk kıyma/tavuk göğsü ayrı), balık ailesi, karides, süt ürünleri, bitkisel yağ, otlar, sebze, baklagil, un/nişasta, sirke/limon/salça/soya/maya. PANTRY 15 → 20 (tereyağı + maydanoz + maya + sirke + limon suyu).
+- ✨ **Fuzzy fallback** (17 Nis oturum 2) — AI matcher 3. adım: direct prefix → synonym → **fuzzy**. TR-aware Levenshtein + ASCII normalize. "domatez"→"domates", "kerik"→"kekik", "maydonoz"→"maydanoz".
 
 ## Bildirim sistemi
 
@@ -134,6 +139,9 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - ✨ Navbar bell + unread count + dropdown (son 10, Escape + outside-click dismiss).
 - ✨ `/bildirimler` sayfası — Tümü/Okunmamış filter, type chip'leri.
 - 🎨 `resolveNotificationLink` type-aware router (HIDDEN → `/bildirimler`).
+- 💾 `REVIEW_HIDDEN` + `REVIEW_APPROVED` enum değerleri (Review v2, 17 Nis oturum 2).
+- ✨ `notifyReviewHidden` + `notifyReviewApproved` helpers — admin hide/approve aksiyonu sonrası fire-and-forget.
+- ✨ **Toplu bildirim (broadcast)** — `/admin/bildirim-gonder` form (title/body/link/role filter/onlyVerified). `broadcastNotificationAction` bulk createMany SYSTEM type. Suspended + deleted user hariç. ModerationAction audit "BROADCAST count=N".
 
 ## Moderasyon ve güvenlik
 
@@ -145,6 +153,13 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🔒 URL bypass tespiti (spaced-dot, [dot], "nokta" kelime varyasyonları).
 - 🔒 Email enumeration defense (şifremi unuttum akışında).
 - 🔒 Repo private yapıldı + `.claude/settings.local.json` gitignore'a.
+- ✨ **Review sistemi full-stack** (Faz 3, 17 Nis oturum 1) — `Review` model + schema + `reviewSchema` Zod + rate-limit + `submitReviewAction` upsert + `deleteOwnReviewAction` + `getRecipeReviews` aggregate + 4 UI component (StarRating, ReviewForm, ReviewsSection, DeleteOwnReviewButton) + AggregateRating JSON-LD.
+- ✨ **Review v2** (17 Nis oturum 2) — preflight (repeated_chars/excessive_caps/contains_url → PENDING_REVIEW) + admin moderation (hideReview/approveReview + /admin/incelemeler Yorumlar section + /admin/raporlar Raporlanmış Yorumlar) + profil "Yorumlarım" section + ReportButton REVIEW hedefi. E2E review-flow.spec.ts.
+- 💾 `Review.moderationFlags` + `hiddenReason` (migration `20260417140000_review_moderation`).
+- ✨ **User suspension** (17 Nis oturum 2) — `User.suspendedAt` + `suspendedReason`. authorize() + jwt callback çift guard. ADMIN hesabı askıya alınamaz, self-suspend yasak. UI: user detail sayfasında "Askıya al/kaldır".
+- ✨ **Announcement banner** — `Announcement` model + `AnnouncementVariant` enum + `/admin/duyurular` CRUD + public `AnnouncementBanner` (localStorage dismiss, root layout mount).
+- ✨ **Collection moderation** — `Collection.hiddenAt` + `hiddenReason`. `/admin/koleksiyonlar` visibility filter. `getViewableCollection` hidden filter.
+- ✨ **Admin paneli v2-v7** (17 Nis oturum 2) — 14 sayfa tamamlandı: dashboard v2 (13 stat + user growth + top viewed + yıldız dist + son kayıtlar) + v3 leaderboard + raporlanan içerik + sortable/filterable liste sayfaları (SortableHeader/PaginationBar) + v4 drill-down detay (/[username] + /[slug]) + v5 inline edit + CSV export + v6 moderasyon log + tag/category CRUD + v7 suspend/announcement/collection/broadcast. 60+ server action.
 
 ## Pişirme + print + yaş gate
 
@@ -194,6 +209,11 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - ⚡ **Tarif detay sayfası composite index** (migration `20260416000000_detail_page_indexes`) — `recipe_ingredients(recipeId, sortOrder)` + `recipe_steps(recipeId, stepNumber)`. Prisma/Postgres FK için otomatik index yaratmaz; 1000+ tarif × ~7 malzeme ölçeğinde seq scan yavaşlar. EXPLAIN ANALYZE ile tespit, migration ile fix: Seq Scan → Index Scan geçişi doğrulandı.
 - 💾 **Cuisine alanı** (migration `20260416120000_add_cuisine_field`) — `Recipe.cuisine String? @db.VarChar(30)` + btree index. 19 cuisine kodu, Zod validated (enum değil — yeni mutfak kodu migration gerektirmez). `scripts/retrofit-cuisine.ts` ile 606 tarif etiketlendi.
 - 📊 **Perf audit 606 tarif** — 11 hot-path sorgu EXPLAIN ANALYZE raporu. Hepsi <3.2ms. Cuisine btree Bitmap Index Scan aktif (1.63ms). 3 seq scan 606'da fine, 1000+'da tekrar bakılır.
+- 💾 **Review model** (migration `20260417000000_review_system`) — userId+recipeId+rating 1-5+comment+status+timestamps, `@@unique([userId, recipeId])` + 2 index (recipeId+status, userId+createdAt). ReportTarget enum'a REVIEW değeri.
+- 💾 **Review v2 moderation fields** (migration `20260417140000_review_moderation`) — Review.moderationFlags VARCHAR(200) + hiddenReason VARCHAR(500). NotificationType enum + REVIEW_HIDDEN + REVIEW_APPROVED.
+- 💾 **ModerationAction indexes** (migration `20260417150000_moderation_log_indexes`) — 3 GIN index: createdAt DESC + moderatorId+createdAt + targetType+action+createdAt. Admin log sayfası erişim desenleri.
+- 💾 **User suspension + Collection moderation + Announcement** (migration `20260417160000_suspension_announcement_collection`) — User.suspendedAt + suspendedReason + Collection.hiddenAt + hiddenReason + Announcement table + AnnouncementVariant enum (INFO/WARNING/SUCCESS).
+- 💾 **pg_trgm fuzzy search** (migration `20260417170000_pg_trgm_fuzzy_search`) — CREATE EXTENSION pg_trgm + 3 GIN trigram index (recipes.title, recipes.slug, recipe_ingredients.name). "domatez corbasi" → "domates çorbası" similarity lookup.
 
 ## Test & CI
 
@@ -257,6 +277,12 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🔍 **`audit-step-ingredient-mismatch.ts`** (17 Nis) — 14 baseline keyword (tuz/karabiber/pul biber/un/su/sarımsak/soğan/zeytinyağı/tereyağı/sıvı yağ/yumurta/süt/limon/şeker). Word-boundary Turkish-aware regex + HIGH/REVIEW confidence.
 - 🔍 **`audit-composite-rows.ts`** (17 Nis) — virgülle birleşik ingredient.name tespiti + STAPLE_KEYWORDS ile auto/manual strategy.
 - 🔧 **Fix scripts (17 Nis, ~15 yeni)** — `fix-critical-allergens.ts` + `v2`, `fix-mayonez-yumurta.ts`, `fix-overtag-allergens.ts`, `fix-inconsistent-tags.ts`, `fix-zero-tag-recipes.ts`, `fix-boilerplate-to-null.ts`, `fix-unit-lt-to-litre.ts`, `fix-duplicate-titles.ts`, `fix-single-ingredient-groups.ts`, `fix-partial-grouping.ts`, `fix-corba-categories.ts`, `fix-kesin-batch.ts`, `fix-procedure-flow.ts`, `fix-vietnam-sauce-refs.ts`, `fix-final-polish.ts`, `fix-step-ingredient-mismatch.ts`, `fix-composite-row-split.ts` — hepsi idempotent, dry-run default, --apply flag'li.
+- 🔒 **Neon dev/prod branch separation** (17 Nis oturum 2) — production (ep-broad-pond) + dev (ep-dry-bread). `.env.local` → dev, `.env.production.local` → prod (gitignore). 34 destructive script'e `assertDbTarget()` guard (`scripts/lib/db-env.ts`): prod host + `--confirm-prod` flag yoksa exit 1; flag varsa 3 sn son-şans warning. Vercel Production env prod URL, Preview/Development env dev URL. Runbook `docs/PROD_PROMOTE.md`.
+- 🔧 **Batch 11 fix** — `scripts/fix-critical-allergens-batch11.ts` 8 slug için allergen union-add (idempotent).
+- ⚙️ **Auto-migrate denendi + geri alındı** — `prisma migrate deploy` Vercel build'e eklendi, Neon pooled connection P1002 lock timeout ile patladı (PgBouncer advisory lock desteksiz). `4d6a7fe` revert. Manuel migration flow (PROD_PROMOTE.md) kalıcı.
+- 🔧 **Destructive migration detector** — `scripts/check-destructive-migration.ts` pending SQL'leri tarar. Error pattern: DROP TABLE/COLUMN, TRUNCATE, DROP TYPE, DELETE FROM. Warn: ALTER TYPE, DROP INDEX. Bypass: `ALLOW_DESTRUCTIVE_MIGRATION=1`. Build pipeline'da değil (auto-migrate ile birlikte geri alındı), manuel `npm run db:check-destructive`.
+- ⚙️ **Sentry error tracking** — `@sentry/nextjs` 10.49 + 3 config (client/server/edge) + `global-error.tsx` + `withSentryConfig` wrapper. DSN yoksa silently disabled. Prod sample %10 traces + %100 replay-on-error. Filter: NEXT_REDIRECT/NEXT_NOT_FOUND. Tarifle hesabı: org `tarifle-co` / project `tarifle-web` / EU region. Smoke test sayfası `/sentry-test` (admin-only, 3 error tipi).
+- 🥗 **Codex batch 11 pipeline** — diff review + content:validate + merge + seed + retrofit-all (allergens + diet + cuisine) + audit-deep + source sync.
 - ⚙️ **audit-deep.ts iyileştirmeleri** (17 Nis) — `asciiNormalize()` Türkçe inflected form desteği ("ekmek" → "ekmeği"), keyword listesi allergens.ts ile sync (kefir/filmjölk/gochujang/furikake/yengeç/dolmalık fıstık/tortilla/yulaf/granola/kuskus/muffin/kruton), TYPE_CATEGORY_MAP permissive (APERATIF multi-category), tolerance (totalMinutes > 2160 dk, kcal < 1, boilerplate threshold 6+, macro ≥10 kcal, "sa" short-form bug fix).
 - 🧹 **`src/lib/allergen-matching.ts`** (17 Nis, yeni) — Tek kaynak allergen matching mantığı. `ALLERGEN_RULES` + `ingredientMatchesAllergen` + `inferAllergensFromIngredients` unified. `src/lib/allergens.ts` artık buradan re-export eder; retrofit-allergens + UI import'ları bozulmaz. DRY: audit-deep.ts'te kendi copy'si kalıyor (tip uyumsuzluğu için ayrı sprint'te birleşecek).
 - 🔒 **`scripts/validate-batch.ts` + 2 yeni ERROR check** (17 Nis) — `checkCompositeCommaRows` (virgülle birleşik ingredient row) + `checkStepIngredientMismatch` (step'te tuz/karabiber/un/pul biber geçiyor ama ingredient'ta yok, baseline staple'lar için). CI `content:validate` job'unda otomatik run, yeni Codex batch'te benzer pattern'lar merge bloklanır.
@@ -323,3 +349,9 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 📝 RECIPE_FORMAT "Dil ve anlatım kalitesi" bölümü — 7 yazım kuralı (muğlak ifadeler, belirsiz ölçüler, composite isimler yasak).
 - 📝 `docs/SEO_SUBMISSION.md` — Google Search Console + Bing Webmaster step-by-step (DNS TXT verify, sitemap submit, URL inspection, sitemap ping helper).
 - 📝 `docs/PERFORMANCE_BASELINE.md` — Lighthouse 4 sayfa rapor (Perf 94-97, A11y/BP/SEO 100, LCP 2.5s borderline). 1000 tarife yaklaşırken karşılaştırma referansı.
+- 📝 `docs/RECIPE_FORMAT.md` "Veri doğruluğu" bölümü — 6 yeni kural (17 Nis oturum 1) — virgül-composite YASAK, step-ingredient consistency, servingSuggestion sos refs, adım sırası mantıklı, step derived component açık.
+- 📝 `docs/CODEX_HANDOFF.md` §6.7 + §6.8 (17 Nis oturum 1) — yanlış/doğru kod blokları + pre-flight zorunlu.
+- 📝 `docs/CODEX_HANDOFF.md` §6.7 kural 6 (17 Nis oturum 2) — ingredient-implied alerjen tablosu (Tereyağı→SUT, Yulaf/Dövme→GLUTEN, Tahin→SUSAM, Ceviz→KUSUYEMIS, vb.). Batch 12 pre-flight için zorunlu.
+- 📝 `docs/PROD_PROMOTE.md` (17 Nis oturum 2) — dev/prod Neon branch runbook. Aktif kurulum tablosu + schema migration auto/manuel akış + A/B/C promote senaryoları + dev reset + host prefix güncelleme.
+- 📝 `docs/IMAGE_GENERATION_PLAN.md` (17 Nis oturum 2) — Eren/Codex için 1100 cartoon illustration üretim brief'i. Prompt template (flat vector sticker + warm pastel), cuisine eşlemesi 20 kod, 3 yol (Codex agent / ChatGPT Pro UI / OpenAI API ~$44), 10 tarif pilot, teslim (zip + Cloudinary), kabul/ret kriterleri.
+- 📝 `docs/MONITORING.md` (17 Nis oturum 2) — 3 katmanlı prod safety. Manuel migration flow (auto denedi → Neon pooler P1002 → geri alındı), destructive migration check, Sentry error tracking. Push öncesi checklist. Alert kural önerileri.

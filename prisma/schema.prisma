@@ -531,6 +531,12 @@ model ModerationAction {
 
   moderator User @relation(fields: [moderatorId], references: [id])
 
+  // Newest-first listing (admin moderation log).
+  @@index([createdAt(sort: Desc)])
+  // "Bu moderator en son ne yaptı" — moderator detail sayfası ileride.
+  @@index([moderatorId, createdAt(sort: Desc)])
+  // Filter by target type + action — log sayfasındaki chip filtreleri
+  @@index([targetType, action, createdAt(sort: Desc)])
   @@map("moderation_actions")
 }
 

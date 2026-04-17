@@ -328,6 +328,166 @@ export async function getMostReportedReviews(limit = 5): Promise<
 
 // ─── Admin drill-down detail queries ───
 
+// ─── Moderation log ───────────────────────────────────────
+
+export interface ModerationLogParams {
+  targetType?: string; // "variation" | "review" | "recipe" | "user"
+  action?: string; // "HIDE" | "APPROVE" | "EDIT"
+  moderatorId?: string;
+  page?: number;
+  pageSize?: number;
+}
+
+/**
+ * Moderation action audit trail. createdAt DESC. Filter + pagination.
+ * Log kayıtları read-only — kullanıcıya göstermek değil, moderatöre "ne
+ * yapıldı" izi bırakmak için. Target bilgisi denormalize saklı değil;
+ * target type'a göre ayrıca title çekilir (getModerationLogTargets).
+ */
+export async function getModerationLog(params: ModerationLogParams) {
+  const {
+    targetType,
+    action,
+    moderatorId,
+    page = 1,
+    pageSize = 50,
+  } = params;
+
+  const where: Record<string, unknown> = {};
+  if (targetType) where.targetType = targetType;
+  if (action) where.action = action;
+  if (moderatorId) where.moderatorId = moderatorId;
+
+  const [entries, total] = await Promise.all([
+    prisma.moderationAction.findMany({
+      where,
+      orderBy: { createdAt: "desc" },
+      skip: (page - 1) * pageSize,
+      take: pageSize,
+      include: {
+        moderator: {
+          select: { id: true, username: true, name: true, role: true },
+        },
+      },
+    }),
+    prisma.moderationAction.count({ where }),
+  ]);
+
+  return { entries, total, page, pageSize };
+}
+
+/**
+ * Log satırlarındaki targetId'lerin title/label'ını toplu çeker — N+1
+ * önlemek için. {variation-id: "Fırın versiyonu"} tipi map döner.
+ */
+export async function getModerationLogTargets(
+  entries: { targetType: string; targetId: string }[],
+): Promise<Map<string, { label: string; link: string | null }>> {
+  const byType = new Map<string, string[]>();
+  for (const e of entries) {
+    const arr = byType.get(e.targetType) ?? [];
+    arr.push(e.targetId);
+    byType.set(e.targetType, arr);
+  }
+
+  const result = new Map<string, { label: string; link: string | null }>();
+
+  if (byType.has("variation")) {
+    const ids = byType.get("variation")!;
+    const rows = await prisma.variation.findMany({
+      where: { id: { in: ids } },
+      select: {
+        id: true,
+        miniTitle: true,
+        recipe: { select: { slug: true } },
+      },
+    });
+    for (const r of rows) {
+      result.set(r.id, {
+        label: r.miniTitle,
+        link: `/tarif/${r.recipe.slug}`,
+      });
+    }
+  }
+  if (byType.has("review")) {
+    const ids = byType.get("review")!;
+    const rows = await prisma.review.findMany({
+      where: { id: { in: ids } },
+      select: {
+        id: true,
+        rating: true,
+        recipe: { select: { slug: true, title: true } },
+      },
+    });
+    for (const r of rows) {
+      result.set(r.id, {
+        label: `${r.rating}★ · ${r.recipe.title}`,
+        link: `/admin/tarifler/${r.recipe.slug}`,
+      });
+    }
+  }
+  if (byType.has("recipe")) {
+    const ids = byType.get("recipe")!;
+    const rows = await prisma.recipe.findMany({
+      where: { id: { in: ids } },
+      select: { id: true, title: true, slug: true },
+    });
+    for (const r of rows) {
+      result.set(r.id, {
+        label: r.title,
+        link: `/admin/tarifler/${r.slug}`,
+      });
+    }
+  }
+  if (byType.has("user")) {
+    const ids = byType.get("user")!;
+    const rows = await prisma.user.findMany({
+      where: { id: { in: ids } },
+      select: { id: true, username: true, name: true },
+    });
+    for (const r of rows) {
+      result.set(r.id, {
+        label: r.name ?? `@${r.username ?? "—"}`,
+        link: r.username ? `/admin/kullanicilar/${r.username}` : null,
+      });
+    }
+  }
+
+  return result;
+}
+
+// ─── Tag & Category admin ─────────────────────────────────
+
+export async function getAdminTags() {
+  return prisma.tag.findMany({
+    orderBy: { name: "asc" },
+    select: {
+      id: true,
+      name: true,
+      slug: true,
+      createdAt: true,
+      _count: { select: { recipeTags: true } },
+    },
+  });
+}
+
+export async function getAdminCategories() {
+  return prisma.category.findMany({
+    orderBy: { sortOrder: "asc" },
+    select: {
+      id: true,
+      name: true,
+      slug: true,
+      emoji: true,
+      description: true,
+      parentId: true,
+      sortOrder: true,
+      createdAt: true,
+      _count: { select: { recipes: true, children: true } },
+    },
+  });
+}
+
 /**
  * Tek kullanıcının tüm admin-görünür verisi. Variation + review listelerinde
  * tüm statüler (HIDDEN + PENDING_REVIEW dahil) gelir — moderatörün o user'ın

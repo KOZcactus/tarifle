@@ -1,6 +1,10 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 17 Nisan 2026 (Admin dashboard v2 — review + user growth + top viewed)
+> Son güncelleme: 17 Nisan 2026 (Admin ops v3 — leaderboard + raporlanan içerik + sortable/filterable liste sayfaları)
+
+## 17 Nisan 2026 — Admin ops v3
+
+Main dashboard'a 🏆 "En aktif kullanıcılar" (top 10, composite skor uy×3+yorum×2+bookmark) + 🚨 "En çok raporlanan içerik" (variation + review ayrı kolon) eklendi. `/admin/tarifler` ve `/admin/kullanicilar` URL-driven sort/filter/search/pagination aldı: kolon başlıklarına click → sort toggle (▼/▲), status/rol/e-posta doğrulama filter, ilike search, 50/sayfa pagination. Paylaşılan component: SortableHeader + PaginationBar (RSC-only, no-JS). Yeni query: getMostActiveUsers, getMostReportedVariations/Reviews, getAdminRecipesList, getAdminUsersList.
 
 ## 17 Nisan 2026 — Admin dashboard v2
 

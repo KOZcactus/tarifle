@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { DIFFICULTY_OPTIONS } from "@/lib/constants";
 
 interface FilterCategory {
@@ -20,22 +21,30 @@ interface FilterPanelProps {
 }
 
 const TIME_OPTIONS = [
-  { value: "", label: "Tüm Süreler" },
-  { value: "15", label: "15 dk altı" },
-  { value: "30", label: "30 dk altı" },
-  { value: "60", label: "1 saat altı" },
-  { value: "120", label: "2 saat altı" },
+  { value: "", labelKey: "all" },
+  { value: "15", labelKey: "under15" },
+  { value: "30", labelKey: "under30" },
+  { value: "60", labelKey: "under60" },
+  { value: "120", labelKey: "under120" },
 ] as const;
 
 const SORT_OPTIONS = [
-  { value: "", label: "En Yeni" },
-  { value: "quickest", label: "En Hızlı" },
-  { value: "popular", label: "En Popüler" },
+  { value: "", labelKey: "newest" },
+  { value: "quickest", labelKey: "quickest" },
+  { value: "popular", labelKey: "popular" },
 ] as const;
+
+const DIFFICULTY_KEY_MAP: Record<string, string> = {
+  EASY: "difficultyEasy",
+  MEDIUM: "difficultyMedium",
+  HARD: "difficultyHard",
+};
 
 export function FilterPanel({ categories = [], tags = [] }: FilterPanelProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const t = useTranslations("filters");
+  const tCard = useTranslations("recipes.card");
 
   const currentDifficulty = searchParams.get("zorluk") ?? "";
   const currentCategory = searchParams.get("kategori") ?? "";
@@ -61,10 +70,10 @@ export function FilterPanel({ categories = [], tags = [] }: FilterPanelProps) {
     params.delete("etiket");
     if (existing.includes(slug)) {
       existing
-        .filter((t) => t !== slug)
-        .forEach((t) => params.append("etiket", t));
+        .filter((tag) => tag !== slug)
+        .forEach((tag) => params.append("etiket", tag));
     } else {
-      [...existing, slug].forEach((t) => params.append("etiket", t));
+      [...existing, slug].forEach((tag) => params.append("etiket", tag));
     }
     params.delete("page");
     router.push(`/tarifler?${params.toString()}`);
@@ -86,12 +95,12 @@ export function FilterPanel({ categories = [], tags = [] }: FilterPanelProps) {
           value={currentDifficulty}
           onChange={(e) => updateFilter("zorluk", e.target.value)}
           className="h-10 rounded-lg border border-border bg-bg-card px-3 text-sm text-text focus:border-primary focus:outline-none"
-          aria-label="Zorluk filtresi"
+          aria-label={t("difficulty.aria")}
         >
-          <option value="">Tüm Zorluklar</option>
+          <option value="">{t("difficulty.all")}</option>
           {DIFFICULTY_OPTIONS.map((opt) => (
             <option key={opt.value} value={opt.value}>
-              {opt.label}
+              {tCard(DIFFICULTY_KEY_MAP[opt.value] ?? "difficultyEasy")}
             </option>
           ))}
         </select>
@@ -102,9 +111,9 @@ export function FilterPanel({ categories = [], tags = [] }: FilterPanelProps) {
             value={currentCategory}
             onChange={(e) => updateFilter("kategori", e.target.value)}
             className="h-10 rounded-lg border border-border bg-bg-card px-3 text-sm text-text focus:border-primary focus:outline-none"
-            aria-label="Kategori filtresi"
+            aria-label={t("category.aria")}
           >
-            <option value="">Tüm Kategoriler</option>
+            <option value="">{t("category.all")}</option>
             {categories.map((cat) => (
               <option key={cat.slug} value={cat.slug}>
                 {cat.emoji} {cat.name}
@@ -118,11 +127,11 @@ export function FilterPanel({ categories = [], tags = [] }: FilterPanelProps) {
           value={currentTime}
           onChange={(e) => updateFilter("sure", e.target.value)}
           className="h-10 rounded-lg border border-border bg-bg-card px-3 text-sm text-text focus:border-primary focus:outline-none"
-          aria-label="Süre filtresi"
+          aria-label={t("time.aria")}
         >
           {TIME_OPTIONS.map((opt) => (
             <option key={opt.value} value={opt.value}>
-              {opt.label}
+              {t(`time.${opt.labelKey}`)}
             </option>
           ))}
         </select>
@@ -132,11 +141,11 @@ export function FilterPanel({ categories = [], tags = [] }: FilterPanelProps) {
           value={currentSort}
           onChange={(e) => updateFilter("siralama", e.target.value)}
           className="h-10 rounded-lg border border-border bg-bg-card px-3 text-sm text-text focus:border-primary focus:outline-none"
-          aria-label="Sıralama"
+          aria-label={t("sort.aria")}
         >
           {SORT_OPTIONS.map((opt) => (
             <option key={opt.value} value={opt.value}>
-              {opt.label}
+              {t(`sort.${opt.labelKey}`)}
             </option>
           ))}
         </select>
@@ -147,7 +156,7 @@ export function FilterPanel({ categories = [], tags = [] }: FilterPanelProps) {
             onClick={clearAll}
             className="text-sm text-primary hover:underline"
           >
-            Temizle
+            {t("clear")}
           </button>
         )}
       </div>

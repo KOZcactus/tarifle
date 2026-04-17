@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import {
   CUISINE_CODES,
   CUISINE_FLAG,
@@ -25,6 +26,7 @@ export function CuisineFilter({ selected }: CuisineFilterProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
+  const t = useTranslations("filters");
 
   function toggle(code: CuisineCode) {
     const params = new URLSearchParams(searchParams.toString());
@@ -50,7 +52,7 @@ export function CuisineFilter({ selected }: CuisineFilterProps) {
     <div className="rounded-lg border border-border bg-bg-card p-3">
       <div className="mb-2 flex items-baseline justify-between gap-2">
         <p className="text-xs font-semibold uppercase tracking-wide text-text-muted">
-          Mutfak
+          {t("cuisine.header")}
         </p>
         {selected.length > 0 && (
           <button
@@ -58,7 +60,7 @@ export function CuisineFilter({ selected }: CuisineFilterProps) {
             onClick={clearAll}
             className="text-[11px] font-medium text-accent-blue hover:text-accent-blue/80"
           >
-            Temizle ({selected.length})
+            {t("clearCount", { count: selected.length })}
           </button>
         )}
       </div>
@@ -78,8 +80,8 @@ export function CuisineFilter({ selected }: CuisineFilterProps) {
               }`}
               title={
                 isActive
-                  ? `${CUISINE_LABEL[code]} filtresini kaldır`
-                  : `Sadece ${CUISINE_LABEL[code]} mutfağını göster`
+                  ? t("cuisine.titleRemove", { label: CUISINE_LABEL[code] })
+                  : t("cuisine.titleAdd", { label: CUISINE_LABEL[code] })
               }
             >
               <span aria-hidden="true">{CUISINE_FLAG[code]}</span>

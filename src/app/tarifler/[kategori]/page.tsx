@@ -39,9 +39,10 @@ export async function generateMetadata({ params }: KategoriPageProps): Promise<M
 export default async function KategoriPage({ params, searchParams }: KategoriPageProps) {
   const { kategori } = await params;
   const sp = await searchParams;
-  const [category, t] = await Promise.all([
+  const [category, t, tFilters] = await Promise.all([
     getCategoryBySlug(kategori),
     getTranslations("recipes"),
+    getTranslations("filters"),
   ]);
 
   if (!category) notFound();
@@ -129,7 +130,7 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
       {/* Active filter chips */}
       {(cuisines.length > 0 || excludeAllergens.length > 0 || (tagSlugs && tagSlugs.length > 0)) && (
         <div className="mb-4 flex flex-wrap items-center gap-2">
-          <span className="text-xs text-text-muted">Aktif:</span>
+          <span className="text-xs text-text-muted">{tFilters("activeLabel")}</span>
           {cuisines.map((c) => (
             <Link
               key={c}
@@ -146,17 +147,17 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
               href={`/tarifler/${kategori}`}
               className="inline-flex items-center gap-1 rounded-full border border-error/30 bg-error/5 px-2.5 py-1 text-xs font-medium text-error hover:bg-error/10"
             >
-              {a} hariç
+              {tFilters("excludedSuffix", { label: a })}
               <span aria-hidden="true">×</span>
             </Link>
           ))}
-          {tagSlugs?.map((t) => (
+          {tagSlugs?.map((tag) => (
             <Link
-              key={t}
+              key={tag}
               href={`/tarifler/${kategori}`}
               className="inline-flex items-center gap-1 rounded-full border border-accent-green/30 bg-accent-green/5 px-2.5 py-1 text-xs font-medium text-accent-green hover:bg-accent-green/10"
             >
-              #{t}
+              #{tag}
               <span aria-hidden="true">×</span>
             </Link>
           ))}
@@ -164,7 +165,7 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
             href={`/tarifler/${kategori}`}
             className="text-[11px] text-text-muted hover:text-primary"
           >
-            Hepsini temizle
+            {tFilters("clearAll")}
           </Link>
         </div>
       )}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 interface DietFilterProps {
   /** Tag slugs currently active from the URL — typically ["vegan"], ["vejetaryen"], or both. */
@@ -8,8 +9,8 @@ interface DietFilterProps {
 }
 
 const DIET_OPTIONS = [
-  { slug: "vejetaryen", label: "Vejetaryen", emoji: "🌿" },
-  { slug: "vegan", label: "Vegan", emoji: "🌱" },
+  { slug: "vejetaryen", labelKey: "vegetarian", emoji: "🌿" },
+  { slug: "vegan", labelKey: "vegan", emoji: "🌱" },
 ] as const;
 
 /**
@@ -28,6 +29,7 @@ export function DietFilter({ activeTagSlugs }: DietFilterProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
+  const t = useTranslations("filters.diet");
 
   function toggle(slug: string) {
     const params = new URLSearchParams(searchParams.toString());
@@ -45,10 +47,10 @@ export function DietFilter({ activeTagSlugs }: DietFilterProps) {
   return (
     <div className="rounded-lg border border-border bg-bg-card p-3">
       <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-text-muted">
-        Diyet
+        {t("header")}
       </p>
       <div className="flex flex-wrap gap-1.5">
-        {DIET_OPTIONS.map(({ slug, label, emoji }) => {
+        {DIET_OPTIONS.map(({ slug, labelKey, emoji }) => {
           const isActive = activeTagSlugs.includes(slug);
           return (
             <button
@@ -63,7 +65,7 @@ export function DietFilter({ activeTagSlugs }: DietFilterProps) {
               }`}
             >
               <span aria-hidden="true">{emoji}</span>
-              <span>{label}</span>
+              <span>{t(labelKey)}</span>
               {isActive && <span aria-hidden="true">×</span>}
             </button>
           );

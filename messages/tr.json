@@ -87,6 +87,53 @@
       }
     }
   },
+  "filters": {
+    "clear": "Temizle",
+    "clearCount": "Temizle ({count})",
+    "clearAll": "Hepsini temizle",
+    "activeLabel": "Aktif:",
+    "removeChipTitle": "{label} filtresini kaldır",
+    "excludedSuffix": "{label} hariç",
+    "difficulty": {
+      "all": "Tüm Zorluklar",
+      "aria": "Zorluk filtresi"
+    },
+    "category": {
+      "all": "Tüm Kategoriler",
+      "aria": "Kategori filtresi",
+      "chipPrefix": "Kategori: {label}"
+    },
+    "time": {
+      "all": "Tüm Süreler",
+      "under15": "15 dk altı",
+      "under30": "30 dk altı",
+      "under60": "1 saat altı",
+      "under120": "2 saat altı",
+      "aria": "Süre filtresi",
+      "chipMax": "≤{n} dk"
+    },
+    "sort": {
+      "newest": "En Yeni",
+      "quickest": "En Hızlı",
+      "popular": "En Popüler",
+      "aria": "Sıralama"
+    },
+    "allergen": {
+      "header": "Alerjen · içermesin",
+      "titleHide": "{label} içeren tarifleri gizle",
+      "titleShow": "{label} içeren tarifleri göstermeyi kaldırmak için tıkla"
+    },
+    "diet": {
+      "header": "Diyet",
+      "vegetarian": "Vejetaryen",
+      "vegan": "Vegan"
+    },
+    "cuisine": {
+      "header": "Mutfak",
+      "titleAdd": "Sadece {label} mutfağını göster",
+      "titleRemove": "{label} filtresini kaldır"
+    }
+  },
   "settings": {
     "pageTitle": "Profil ayarları",
     "pageSubtitle": "İsmini, kullanıcı adını ve biyografini buradan güncelleyebilirsin. Kullanıcı adın profil URL'inde görünür.",

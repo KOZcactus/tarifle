@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import type { Allergen } from "@prisma/client";
 import {
   ALLERGEN_EMOJI,
@@ -26,6 +27,7 @@ export function AllergenFilter({ selected }: AllergenFilterProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
+  const t = useTranslations("filters");
 
   function toggle(allergen: Allergen) {
     const params = new URLSearchParams(searchParams.toString());
@@ -51,7 +53,7 @@ export function AllergenFilter({ selected }: AllergenFilterProps) {
     <div className="rounded-lg border border-border bg-bg-card p-3">
       <div className="mb-2 flex items-baseline justify-between gap-2">
         <p className="text-xs font-semibold uppercase tracking-wide text-text-muted">
-          Alerjen · içermesin
+          {t("allergen.header")}
         </p>
         {selected.length > 0 && (
           <button
@@ -59,7 +61,7 @@ export function AllergenFilter({ selected }: AllergenFilterProps) {
             onClick={clearAll}
             className="text-[11px] font-medium text-primary hover:text-primary-hover"
           >
-            Temizle ({selected.length})
+            {t("clearCount", { count: selected.length })}
           </button>
         )}
       </div>
@@ -79,8 +81,8 @@ export function AllergenFilter({ selected }: AllergenFilterProps) {
               }`}
               title={
                 isActive
-                  ? `${ALLERGEN_LABEL[a]} içeren tarifleri göstermeyi kaldırmak için tıkla`
-                  : `${ALLERGEN_LABEL[a]} içeren tarifleri gizle`
+                  ? t("allergen.titleShow", { label: ALLERGEN_LABEL[a] })
+                  : t("allergen.titleHide", { label: ALLERGEN_LABEL[a] })
               }
             >
               <span aria-hidden="true">{ALLERGEN_EMOJI[a]}</span>

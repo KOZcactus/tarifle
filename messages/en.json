@@ -87,6 +87,53 @@
       }
     }
   },
+  "filters": {
+    "clear": "Clear",
+    "clearCount": "Clear ({count})",
+    "clearAll": "Clear all",
+    "activeLabel": "Active:",
+    "removeChipTitle": "Remove {label} filter",
+    "excludedSuffix": "{label} excluded",
+    "difficulty": {
+      "all": "All Difficulties",
+      "aria": "Difficulty filter"
+    },
+    "category": {
+      "all": "All Categories",
+      "aria": "Category filter",
+      "chipPrefix": "Category: {label}"
+    },
+    "time": {
+      "all": "All Durations",
+      "under15": "Under 15 min",
+      "under30": "Under 30 min",
+      "under60": "Under 1 hour",
+      "under120": "Under 2 hours",
+      "aria": "Duration filter",
+      "chipMax": "≤{n} min"
+    },
+    "sort": {
+      "newest": "Newest",
+      "quickest": "Quickest",
+      "popular": "Most popular",
+      "aria": "Sort"
+    },
+    "allergen": {
+      "header": "Allergen · exclude",
+      "titleHide": "Hide recipes containing {label}",
+      "titleShow": "Click to stop hiding recipes with {label}"
+    },
+    "diet": {
+      "header": "Diet",
+      "vegetarian": "Vegetarian",
+      "vegan": "Vegan"
+    },
+    "cuisine": {
+      "header": "Cuisine",
+      "titleAdd": "Show only {label} cuisine",
+      "titleRemove": "Remove {label} filter"
+    }
+  },
   "settings": {
     "pageTitle": "Profile Settings",
     "pageSubtitle": "Update your name, username, and bio here. Your username appears in your profile URL.",

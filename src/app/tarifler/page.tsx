@@ -183,6 +183,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
         excludeAllergens={excludeAllergens}
         tagSlugs={tagSlugs}
         params={params}
+        t={t}
       />
 
       {/* Sort tabs — rewrites ?siralama=... while preserving every other
@@ -450,7 +451,7 @@ function EmptyState({
 }
 
 /** Active filter summary — shows which filters are active with remove buttons. */
-function ActiveFilters({
+async function ActiveFilters({
   query,
   category,
   difficulty,
@@ -468,16 +469,34 @@ function ActiveFilters({
   excludeAllergens: string[];
   tagSlugs: string[] | undefined;
   params: Record<string, string | string[] | undefined>;
+  t: RecipesTranslator;
 }) {
+  const tFilters = await getTranslations("filters");
+  const tCard = await getTranslations("recipes.card");
   const chips: { label: string; removeParam: string; removeValue?: string }[] = [];
 
   if (query) chips.push({ label: `"${query}"`, removeParam: "q" });
-  if (category) chips.push({ label: `Kategori: ${category}`, removeParam: "kategori" });
-  if (difficulty) {
-    const d = difficulty === "EASY" ? "Kolay" : difficulty === "MEDIUM" ? "Orta" : "Zor";
-    chips.push({ label: d, removeParam: "zorluk" });
+  if (category) {
+    chips.push({
+      label: tFilters("category.chipPrefix", { label: category }),
+      removeParam: "kategori",
+    });
   }
-  if (maxMinutes) chips.push({ label: `≤${maxMinutes} dk`, removeParam: "sure" });
+  if (difficulty) {
+    const key =
+      difficulty === "EASY"
+        ? "difficultyEasy"
+        : difficulty === "MEDIUM"
+          ? "difficultyMedium"
+          : "difficultyHard";
+    chips.push({ label: tCard(key), removeParam: "zorluk" });
+  }
+  if (maxMinutes) {
+    chips.push({
+      label: tFilters("time.chipMax", { n: maxMinutes }),
+      removeParam: "sure",
+    });
+  }
   for (const c of cuisines) {
     chips.push({
       label: `${CUISINE_FLAG[c as CuisineCode] ?? ""} ${CUISINE_LABEL[c as CuisineCode] ?? c}`,
@@ -486,11 +505,15 @@ function ActiveFilters({
     });
   }
   for (const a of excludeAllergens) {
-    chips.push({ label: `${a} hariç`, removeParam: "alerjen", removeValue: a });
+    chips.push({
+      label: tFilters("excludedSuffix", { label: a }),
+      removeParam: "alerjen",
+      removeValue: a,
+    });
   }
   if (tagSlugs) {
-    for (const t of tagSlugs) {
-      chips.push({ label: `#${t}`, removeParam: "etiket", removeValue: t });
+    for (const tag of tagSlugs) {
+      chips.push({ label: `#${tag}`, removeParam: "etiket", removeValue: tag });
     }
   }
 
@@ -498,7 +521,7 @@ function ActiveFilters({
 
   return (
     <div className="mb-4 flex flex-wrap items-center gap-2">
-      <span className="text-xs text-text-muted">Aktif:</span>
+      <span className="text-xs text-text-muted">{tFilters("activeLabel")}</span>
       {chips.map((chip, i) => {
         const p = new URLSearchParams();
         for (const [k, v] of Object.entries(params)) {
@@ -521,7 +544,7 @@ function ActiveFilters({
             key={`${chip.removeParam}-${chip.removeValue ?? i}`}
             href={href}
             className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/5 px-2.5 py-1 text-xs font-medium text-primary transition-colors hover:bg-primary/10"
-            title={`${chip.label} filtresini kaldır`}
+            title={tFilters("removeChipTitle", { label: chip.label })}
           >
             {chip.label}
             <span aria-hidden="true">×</span>
@@ -532,7 +555,7 @@ function ActiveFilters({
         href="/tarifler"
         className="text-[11px] text-text-muted hover:text-primary"
       >
-        Hepsini temizle
+        {tFilters("clearAll")}
       </Link>
     </div>
   );

@@ -1,11 +1,17 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { auth } from "@/lib/auth";
+import { prisma } from "@/lib/prisma";
 import { getAdminUserDetail } from "@/lib/queries/admin";
 import { FLAG_LABELS, type PreflightFlag } from "@/lib/moderation/preflight";
 import {
   REVIEW_FLAG_LABELS,
   type ReviewPreflightFlag,
 } from "@/lib/moderation/preflight-review";
+import {
+  InlineUserRole,
+  InlineUserVerified,
+} from "@/components/admin/InlineUserEdit";
 
 export const dynamic = "force-dynamic";
 
@@ -54,10 +60,23 @@ function fmtDate(d: Date) {
 
 export default async function AdminUserDetailPage({ params }: PageProps) {
   const { username } = await params;
-  const detail = await getAdminUserDetail(username);
+  const [detail, session] = await Promise.all([
+    getAdminUserDetail(username),
+    auth(),
+  ]);
   if (!detail) notFound();
 
   const { user, variations, reviews, reportsFiled, badges } = detail;
+
+  // Only ADMIN (not MODERATOR) can promote/demote roles — layout already
+  // gates both, UI hides the select otherwise.
+  const currentUser = session?.user?.id
+    ? await prisma.user.findUnique({
+        where: { id: session.user.id },
+        select: { role: true },
+      })
+    : null;
+  const canEditRole = currentUser?.role === "ADMIN";
 
   // Composite score identical to dashboard leaderboard
   const score =
@@ -91,31 +110,23 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
             {(user.name ?? user.username ?? "?").slice(0, 2).toUpperCase()}
           </div>
           <div className="min-w-0 flex-1">
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="flex flex-wrap items-center gap-3">
               <h2 className="font-heading text-xl font-bold text-text">
                 {user.name ?? user.username ?? "(anonim)"}
               </h2>
-              <span
-                className={`rounded px-2 py-0.5 text-xs font-medium ${
-                  user.role === "ADMIN"
-                    ? "bg-primary/10 text-primary"
-                    : user.role === "MODERATOR"
-                      ? "bg-accent-blue/10 text-accent-blue"
-                      : "bg-bg-elevated text-text-muted"
-                }`}
-              >
-                {user.role}
-              </span>
-              {user.isVerified && (
-                <span className="rounded-full bg-accent-blue/10 px-2 py-0.5 text-xs font-medium text-accent-blue">
-                  Tarifle ekibi
-                </span>
-              )}
+              <InlineUserRole
+                userId={user.id}
+                value={user.role as "USER" | "MODERATOR" | "ADMIN"}
+                canEditRole={canEditRole}
+              />
               {user.emailVerified && (
                 <span className="rounded-full bg-accent-green/10 px-2 py-0.5 text-xs font-medium text-accent-green">
                   ✉ doğrulanmış
                 </span>
               )}
+            </div>
+            <div className="mt-2">
+              <InlineUserVerified userId={user.id} value={user.isVerified} />
             </div>
             <p className="mt-1 text-sm text-text-muted">
               @{user.username ?? "—"}

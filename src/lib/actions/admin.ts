@@ -3,6 +3,7 @@
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
+import { z } from "zod";
 import {
   notifyReportResolved,
   notifyReviewApproved,
@@ -263,3 +264,165 @@ export async function approveReview(reviewId: string) {
   revalidatePath(`/tarif/${updated.recipe.slug}`);
   return { success: true };
 }
+
+// ─── Inline edit actions ──────────────────────────────────
+
+const updateRecipeSchema = z.object({
+  recipeId: z.string().min(1),
+  patch: z
+    .object({
+      title: z.string().min(2).max(200).optional(),
+      emoji: z.string().max(8).optional(),
+      description: z.string().min(10).max(1000).optional(),
+      isFeatured: z.boolean().optional(),
+      status: z
+        .enum(["DRAFT", "PENDING_REVIEW", "PUBLISHED", "HIDDEN", "REJECTED"])
+        .optional(),
+    })
+    .refine((v) => Object.keys(v).length > 0, {
+      message: "En az bir alan güncellenmelidir.",
+    }),
+});
+
+/**
+ * Admin patch endpoint for Recipe. Only whitelisted fields. ModerationAction
+ * audit kaydı her update için — hangi alan değişti yazılır, hangi admin.
+ * status=HIDDEN geçişinde tarif public'ten çıkar; revalidatePath tarif
+ * sayfasını ve listeleri tazeler.
+ */
+export async function updateRecipeAction(
+  input: unknown,
+): Promise<{ success: boolean; error?: string }> {
+  const moderatorId = await requireAdmin();
+
+  const parsed = updateRecipeSchema.safeParse(input);
+  if (!parsed.success) {
+    return {
+      success: false,
+      error: parsed.error.issues[0]?.message ?? "Geçersiz form.",
+    };
+  }
+  const { recipeId, patch } = parsed.data;
+
+  const current = await prisma.recipe.findUnique({
+    where: { id: recipeId },
+    select: {
+      slug: true,
+      title: true,
+      emoji: true,
+      description: true,
+      isFeatured: true,
+      status: true,
+    },
+  });
+  if (!current) return { success: false, error: "Tarif bulunamadı." };
+
+  // Diff summary for audit log — "title: 'old' → 'new'" pattern.
+  const changes: string[] = [];
+  for (const [k, v] of Object.entries(patch)) {
+    const before = (current as Record<string, unknown>)[k];
+    if (before !== v) {
+      changes.push(`${k}: ${JSON.stringify(before)} → ${JSON.stringify(v)}`);
+    }
+  }
+  if (changes.length === 0) return { success: true };
+
+  await prisma.$transaction([
+    prisma.recipe.update({
+      where: { id: recipeId },
+      data: patch,
+    }),
+    prisma.moderationAction.create({
+      data: {
+        moderatorId,
+        targetType: "recipe",
+        targetId: recipeId,
+        action: "EDIT",
+        reason: changes.join("; ").slice(0, 500),
+      },
+    }),
+  ]);
+
+  revalidatePath("/admin");
+  revalidatePath(`/admin/tarifler/${current.slug}`);
+  revalidatePath(`/tarif/${current.slug}`);
+  return { success: true };
+}
+
+const updateUserSchema = z.object({
+  userId: z.string().min(1),
+  patch: z
+    .object({
+      role: z.enum(["USER", "MODERATOR", "ADMIN"]).optional(),
+      isVerified: z.boolean().optional(),
+    })
+    .refine((v) => Object.keys(v).length > 0, {
+      message: "En az bir alan güncellenmelidir.",
+    }),
+});
+
+/**
+ * Admin patch endpoint for User. Rol değişimi ADMIN yetkisi ister (requireAdmin
+ * MODERATOR'u da kabul ediyor — inline ikinci guard). Self-demotion yasak.
+ */
+export async function updateUserAction(
+  input: unknown,
+): Promise<{ success: boolean; error?: string }> {
+  const moderatorId = await requireAdmin();
+  const moderator = await prisma.user.findUnique({
+    where: { id: moderatorId },
+    select: { role: true },
+  });
+
+  const parsed = updateUserSchema.safeParse(input);
+  if (!parsed.success) {
+    return {
+      success: false,
+      error: parsed.error.issues[0]?.message ?? "Geçersiz form.",
+    };
+  }
+  const { userId, patch } = parsed.data;
+
+  if (patch.role && moderator?.role !== "ADMIN") {
+    return { success: false, error: "Rol değişikliği için ADMIN yetkisi gerekli." };
+  }
+  if (patch.role && userId === moderatorId && patch.role !== "ADMIN") {
+    return { success: false, error: "Kendi ADMIN rolünü düşüremezsin." };
+  }
+
+  const current = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { username: true, role: true, isVerified: true },
+  });
+  if (!current) return { success: false, error: "Kullanıcı bulunamadı." };
+
+  const changes: string[] = [];
+  for (const [k, v] of Object.entries(patch)) {
+    const before = (current as Record<string, unknown>)[k];
+    if (before !== v) {
+      changes.push(`${k}: ${JSON.stringify(before)} → ${JSON.stringify(v)}`);
+    }
+  }
+  if (changes.length === 0) return { success: true };
+
+  await prisma.$transaction([
+    prisma.user.update({ where: { id: userId }, data: patch }),
+    prisma.moderationAction.create({
+      data: {
+        moderatorId,
+        targetType: "user",
+        targetId: userId,
+        action: "EDIT",
+        reason: changes.join("; ").slice(0, 500),
+      },
+    }),
+  ]);
+
+  revalidatePath("/admin");
+  if (current.username) {
+    revalidatePath(`/admin/kullanicilar/${current.username}`);
+    revalidatePath(`/profil/${current.username}`);
+  }
+  return { success: true };
+}
+

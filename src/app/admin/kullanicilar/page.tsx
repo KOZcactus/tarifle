@@ -87,6 +87,13 @@ export default async function AdminUsersPage({ searchParams }: PageProps) {
         <h2 className="font-heading text-xl font-bold">
           Kullanıcılar ({total.toLocaleString("tr-TR")})
         </h2>
+        <a
+          href="/api/admin/export/users"
+          download
+          className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-1.5 text-sm hover:bg-bg-elevated"
+        >
+          📥 CSV indir
+        </a>
       </div>
 
       {/* Filters */}

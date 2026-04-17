@@ -8,6 +8,11 @@ import {
   REVIEW_FLAG_LABELS,
   type ReviewPreflightFlag,
 } from "@/lib/moderation/preflight-review";
+import {
+  InlineRecipeText,
+  InlineRecipeStatus,
+  InlineRecipeFeatured,
+} from "@/components/admin/InlineRecipeEdit";
 
 export const dynamic = "force-dynamic";
 
@@ -82,8 +87,6 @@ export default async function AdminRecipeDetailPage({ params }: PageProps) {
     0,
   );
 
-  const chip = statusChip(recipe.status);
-
   return (
     <div className="space-y-8">
       {/* Breadcrumb */}
@@ -99,22 +102,37 @@ export default async function AdminRecipeDetailPage({ params }: PageProps) {
       <header className="rounded-xl border border-border bg-bg-card p-5">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="min-w-0 flex-1">
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="flex flex-wrap items-center gap-3">
               <h2 className="font-heading text-xl font-bold text-text">
-                {recipe.emoji} {recipe.title}
+                <InlineRecipeText
+                  recipeId={recipe.id}
+                  field="emoji"
+                  value={recipe.emoji ?? ""}
+                  label="Emoji"
+                  maxLength={8}
+                />{" "}
+                <InlineRecipeText
+                  recipeId={recipe.id}
+                  field="title"
+                  value={recipe.title}
+                  label="Başlık"
+                />
               </h2>
-              <span
-                className={`rounded-full px-2 py-0.5 text-xs font-medium ${chip.classes}`}
-              >
-                {chip.label}
-              </span>
-              {recipe.isFeatured && (
-                <span className="rounded-full bg-secondary/15 px-2 py-0.5 text-xs font-medium text-secondary">
-                  ⭐ Featured
-                </span>
-              )}
             </div>
-            <p className="mt-2 text-sm text-text-muted">{recipe.description}</p>
+            <div className="mt-3 flex flex-wrap items-center gap-3">
+              <InlineRecipeStatus recipeId={recipe.id} value={recipe.status} />
+              <InlineRecipeFeatured recipeId={recipe.id} value={recipe.isFeatured} />
+            </div>
+            <div className="mt-3 text-sm text-text-muted">
+              <InlineRecipeText
+                recipeId={recipe.id}
+                field="description"
+                value={recipe.description ?? ""}
+                multiline
+                label="Açıklama"
+                maxLength={1000}
+              />
+            </div>
             <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs text-text-muted">
               <span>
                 {recipe.category.emoji} {recipe.category.name}

@@ -117,7 +117,33 @@ export default async function AdminPage() {
   return (
     <div className="space-y-8">
       <section>
-        <h2 className="mb-4 font-heading text-xl font-bold">Genel Bakış</h2>
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+          <h2 className="font-heading text-xl font-bold">Genel Bakış</h2>
+          <div className="flex items-center gap-2 text-xs">
+            <span className="text-text-muted">📥 CSV export:</span>
+            <a
+              href="/api/admin/export/recipes"
+              download
+              className="rounded border border-border px-2 py-1 hover:bg-bg-elevated"
+            >
+              Tarifler
+            </a>
+            <a
+              href="/api/admin/export/users"
+              download
+              className="rounded border border-border px-2 py-1 hover:bg-bg-elevated"
+            >
+              Kullanıcılar
+            </a>
+            <a
+              href="/api/admin/export/reviews"
+              download
+              className="rounded border border-border px-2 py-1 hover:bg-bg-elevated"
+            >
+              Yorumlar
+            </a>
+          </div>
+        </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {topCards.map((card) => (
             <div

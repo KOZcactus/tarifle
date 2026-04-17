@@ -303,6 +303,96 @@ RECIPE_FORMAT.md'deki tüm kurallara tamamen uy:
 
 Basit tek-bileşenli tariflerde (kızartma, çorba, salata) `group` EKLEME.
 
+### 6.7. Veri doğruluğu — CI seviye ERROR (17 Nis 2026 turunda eklendi)
+
+Bu 5 kural `validate-batch.ts` tarafından **ERROR** olarak yakalanır. ERROR varsa CI kırmızıya düşer ve PR merge edilemez. Batch göndermeden önce kendin kontrol et.
+
+**1. Virgülle birleşik ingredient YASAK.**
+
+```ts
+// ❌ YANLIŞ — tek row içinde 3 ingredient:
+{ name: "Tuz, karabiber, pul biber", amount: "1", unit: "tatlı kaşığı" }
+
+// ✅ DOĞRU — 3 ayrı row:
+{ name: "Tuz", amount: "1", unit: "çay kaşığı", sortOrder: 5 },
+{ name: "Karabiber", amount: "0.5", unit: "çay kaşığı", sortOrder: 6 },
+{ name: "Pul biber", amount: "0.5", unit: "çay kaşığı", sortOrder: 7 },
+```
+
+**2. Step'te geçen baseline staple ingredient olmalı.**
+
+Step instruction'da "tuz", "karabiber", "pul biber", "un" kelimeleri geçiyorsa o ingredient listesinde bulunmalı. Örnekler:
+
+```ts
+// ❌ YANLIŞ — step'te "tuzla yoğurun" diyor ama Tuz ingredient'ta yok
+steps: [{ stepNumber: 1, instruction: "Eti yoğurt, kekik ve tuzla marine edin." }],
+ingredients: [{ name: "Dana eti", ... }, { name: "Yoğurt", ... }, { name: "Kekik", ... }],
+
+// ✅ DOĞRU — Tuz eklenmiş
+steps: [{ stepNumber: 1, instruction: "Eti yoğurt, kekik ve tuzla marine edin." }],
+ingredients: [{ name: "Dana eti", ... }, { name: "Yoğurt", ... }, { name: "Kekik", ... }, { name: "Tuz", amount: "1", unit: "çay kaşığı", sortOrder: 4 }],
+```
+
+**3. ServingSuggestion'da bahsedilen sos/garnish ingredient OLMALI** (veya hazır ürün).
+
+```ts
+// ❌ YANLIŞ — "acı sos" ingredient yok, ne olduğu belirsiz
+servingSuggestion: "Salatalık, turşu havuç ve acı sosla servis edin.",
+ingredients: [{ name: "Kırık pirinç", ... }, { name: "Dana pirzola", ... }],
+
+// ✅ DOĞRU 1 — ingredient ekle
+servingSuggestion: "Salatalık, turşu havuç ve acı sosla servis edin.",
+ingredients: [..., { name: "Turşu havuç", ... }, { name: "Acı sos", ... }],
+
+// ✅ DOĞRU 2 — servingSuggestion'ı mevcut malzemelerle yaz
+servingSuggestion: "Pilav, ızgara et, yumurta ve salatalıkla sıcak servis edin.",
+
+// ✅ DOĞRU 3 — hazır ürün referansı (soya sosu, ketçap, tonkatsu sosu OK)
+servingSuggestion: "Tonkatsu sosuyla servis edin.",
+```
+
+**4. Adım sırası mantıklı** — hazırlık → pişirme → servis.
+
+```ts
+// ❌ YANLIŞ — adım 1 her şeyi karıştır, adım 2 hala hazırlık
+steps: [
+  { stepNumber: 1, instruction: "Tüm malzemeleri kâsede karıştırın." },
+  { stepNumber: 2, instruction: "Sarımsağı ezin, pul biber ve hardalla harmanlayın." },
+]
+
+// ✅ DOĞRU — hazırlık önce, karıştırma sonra
+steps: [
+  { stepNumber: 1, instruction: "Sarımsağı ezip pul biber ve hardalla harmanlayın." },
+  { stepNumber: 2, instruction: "Yoğurt ve mayonezi bu karışımla çırpıp tuzlayın." },
+  { stepNumber: 3, instruction: "Buzdolabında 15 dakika dinlendirip servis edin.", timerSeconds: 900 },
+]
+```
+
+**5. Step'teki derived component açık belirtilmeli.**
+
+Adımda "krema kullanın" / "sosu döküp" tipi referans varsa ya:
+- Ingredient olarak o isim var (`Krema` ingredient'ta var), VEYA
+- Önceki bir adımda o bileşen açıkça yapılıyor ("Süt ve şekeri kaynatıp pastacı kreması hazırlayın, topları kremayla doldurun.")
+
+```ts
+// ❌ YANLIŞ — "Topları krema ile doldurun" ama Krema yok
+ingredients: [{ name: "Un", ... }, { name: "Yumurta", ... }, { name: "Süt", ... }, { name: "Şeker", ... }],
+steps: [..., { stepNumber: 3, instruction: "Topları krema ile doldurun ve çikolata sosuyla kaplayın." }],
+
+// ✅ DOĞRU — step 3'te krema hazırlama açık
+steps: [..., { stepNumber: 3, instruction: "Süt ve şekeri kaynatıp pastacı kreması hazırlayın, çikolatayı eritin. Topları kremayla doldurup çikolata sosuyla kaplayın." }],
+```
+
+### 6.8. Pre-flight kontrol
+
+Batch yazdıktan sonra, seed çalıştırmadan ÖNCE:
+
+```bash
+npm run content:validate -- --last 100
+```
+
+Bu 0 ERROR dönmeli. ERROR dönerse yukarıdaki 5 kuraldan birini ihlal etmişsin demektir; düzeltmeden seed etme. WARNING'ler (cuisine boş, "iyice" kullanımı) kabul edilebilir ama mümkünse minimize et.
+
 ---
 
 ## 7. Sorun giderme

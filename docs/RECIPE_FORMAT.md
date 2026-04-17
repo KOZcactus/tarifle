@@ -342,7 +342,7 @@ duygusunu vermesin — insan yazımı + mutfak bilgili + net.
 **Yapı**
 - [ ] Slug benzersiz, TR karakter yok
 - [ ] `type` + `categorySlug` uyumlu
-- [ ] `prepMinutes + cookMinutes` ≈ `totalMinutes`
+- [ ] `prepMinutes + cookMinutes` ≈ `totalMinutes` (kür/fermentasyon varsa `cookMinutes`'a dahil, "pişirme" label'ı olmasa bile)
 - [ ] Servings 1-10 arası makul
 - [ ] Kalori porsiyon başı, makul aralık
 - [ ] 3-15 ingredient, sortOrder sıralı
@@ -360,6 +360,14 @@ duygusunu vermesin — insan yazımı + mutfak bilgili + net.
 - [ ] Metin Türkçe doğru, büyük/küçük harf tutarlı
 - [ ] description 20-500 karakter
 - [ ] tipNote varsa gerçek bir püf noktası (boş sahte not yerine `null`)
+
+**Veri doğruluğu (17 Nis 2026 turunda eklendi — CI bloklar)**
+- [ ] **Virgülle birleşik ingredient satırı YOK** — "Tuz, karabiber, pul biber" tek row olarak yazılmaz, 3 ayrı `{name: "Tuz", ...}`, `{name: "Karabiber", ...}`, `{name: "Pul biber", ...}` satırı olur. `validate-batch.ts` bu pattern'ı ERROR olarak yakalar.
+- [ ] **Step'te geçen baseline staple ingredient listesinde OLMALI** — adım "tuzla yoğurun" diyorsa ingredient'lar arasında Tuz olmalı. Aynı şekilde karabiber / pul biber / un için. `validate-batch.ts` bu mismatch'i ERROR olarak yakalar.
+- [ ] **ServingSuggestion'da bahsedilen sos/garnish ingredient olmalı** — "X sosuyla servis edin" yazacaksan ya sos ingredient listesinde olmalı ya da hazır-alınabilir bir ürün (soya sosu, ketçap OK). "Acı sos", "limonlu karabiber sosu" gibi belirsiz sos referansları YASAK — ya ingredient olarak ekle, ya servingSuggestion'ı mevcut malzemelerle yaz.
+- [ ] **Adım sırası mantıklı** — önce hazırlık (kes/yoğur/marine), sonra pişirme, sonra servis. "Tüm malzemeleri karıştırın" adımından sonra "sarımsağı ezin" yazarsan ters akış — kullanıcı şaşırır.
+- [ ] **Çok-section tarif gerçek 2+ grup** — description/step'te hem "hamur" hem "şerbet" (veya "marine" + "sos", vb.) geçiyorsa ingredient'larda en az 2 farklı `group: "X için"` olmalı. Tek "Hamur için" group tüm ingredient'lara yetersiz.
+- [ ] **Step adımı oto-tutarlı** — step 3'te "krema kullanın" diyorsan ya ingredient'ta Krema olmalı, ya önceki bir adımda krema yapılmış olmalı. "Çikolata sosu" adımda varsa, ingredient'ta Çikolata olmalı + bir adımda sos hazırlama olmalı.
 
 ## Çalıştırma
 

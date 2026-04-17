@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "postinstall": "prisma generate",
-    "build": "next build",
+    "build": "prisma migrate deploy --config ./prisma/prisma.config.ts && next build",
+    "build:skip-migrate": "next build",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",

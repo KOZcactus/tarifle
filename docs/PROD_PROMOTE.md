@@ -46,11 +46,30 @@ Devam etmek için: --confirm-prod flag'i gerekli.
 5. Prod promote → aşağıdaki komutlar
 ```
 
+## Schema migration — OTOMATİK (17 Nis 2026 sonrası)
+
+**`package.json` `build` script'i** `prisma migrate deploy --config ./prisma/prisma.config.ts && next build` → her Vercel production deploy'unda schema migration otomatik uygulanır.
+
+- `main` branch'e push → Vercel production build tetiklenir → `DATABASE_URL` = prod URL ile `migrate deploy` koşar → yeni migration'lar prod'a uygulanır → `next build` başlar
+- PR preview deploy → `DATABASE_URL` = dev URL → `migrate deploy` dev'e no-op koşar → build devam eder
+- Migration kırıksa (SQL hatası, unreachable DB) **build fail** → deploy reddedilir, schema eski kalır (önce kırık schema ile canlıya asla çıkmaz)
+
+**Bu yüzden schema değiştiren commit'lerde manuel `migrate deploy` koşmana gerek YOK** — sadece:
+1. `prisma/schema.prisma` güncelle
+2. `npx prisma migrate dev --config ./prisma/prisma.config.ts --name <isim>` (dev'e uygula)
+3. `git commit` + `git push` → Vercel deploy prod'a da uygular
+
+**GitHub Actions CI** → `DATABASE_URL` placeholder olduğu için `build:skip-migrate` varyantını kullanır (sadece `next build`, migrate yok). CI'nın işi kod-seviyesi kontrol.
+
+**Hatırlatıcı:** Migration destructive ise (column drop, table rename) tek yönlü — prod'a uygulandıktan sonra geri alamazsın. Destructive olanı manuel koş ve test et.
+
 ## Prod promote — hangi komutu ne zaman
 
-### A. Sadece migration (schema değişti)
+### A. Sadece migration (schema değişti) — ARTIK OTOMATİK
 
-Yeni bir `prisma/migrations/*` klasörü varsa önce prod schema'sını güncelle.
+Yukarıdaki "Schema migration — OTOMATİK" bölümüne bak. Manuel adım GEREKMEZ.
+
+Eğer Vercel deploy beklemeden ACİL prod'a migration uygulamak istersen (ör. hotfix push öncesi):
 
 **PowerShell (Windows):**
 

@@ -203,6 +203,284 @@ export async function getAdminStats() {
 }
 
 /**
+ * En aktif kullanıcılar — uyarlama + yorum + bookmark sayıları.
+ * Skor: variationCount * 3 + reviewCount * 2 + bookmarkCount * 1 (content
+ * üreten kullanıcıya daha yüksek ağırlık). Dashboard leaderboard'u için.
+ */
+export async function getMostActiveUsers(limit = 10): Promise<
+  {
+    id: string;
+    username: string | null;
+    name: string | null;
+    role: string;
+    variationCount: number;
+    reviewCount: number;
+    bookmarkCount: number;
+    score: number;
+  }[]
+> {
+  const users = await prisma.user.findMany({
+    select: {
+      id: true,
+      username: true,
+      name: true,
+      role: true,
+      _count: {
+        select: {
+          variations: { where: { status: "PUBLISHED" } },
+          reviews: { where: { status: "PUBLISHED" } },
+          bookmarks: true,
+        },
+      },
+    },
+  });
+
+  const scored = users
+    .map((u) => {
+      const variationCount = u._count.variations;
+      const reviewCount = u._count.reviews;
+      const bookmarkCount = u._count.bookmarks;
+      const score = variationCount * 3 + reviewCount * 2 + bookmarkCount;
+      return {
+        id: u.id,
+        username: u.username,
+        name: u.name,
+        role: u.role,
+        variationCount,
+        reviewCount,
+        bookmarkCount,
+        score,
+      };
+    })
+    .filter((u) => u.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit);
+
+  return scored;
+}
+
+/**
+ * En çok raporlanan uyarlamalar (reportCount DESC, sadece >0 olanlar).
+ * Admin alarm: hangi içerik tekrar tekrar raporlanıyor, düzenli moderasyon
+ * yapılmalı mı kararı.
+ */
+export async function getMostReportedVariations(limit = 5) {
+  return prisma.variation.findMany({
+    where: { reportCount: { gt: 0 } },
+    orderBy: { reportCount: "desc" },
+    take: limit,
+    select: {
+      id: true,
+      miniTitle: true,
+      reportCount: true,
+      status: true,
+      author: { select: { username: true } },
+      recipe: { select: { slug: true, title: true } },
+    },
+  });
+}
+
+/**
+ * En çok raporlanan yorumlar — Report targetType=REVIEW üzerinden groupBy.
+ * Variation'da `reportCount` denormalisation vardı, Review'da yok; bu yüzden
+ * report tablosu üzerinden aggregate ediliyor.
+ */
+export async function getMostReportedReviews(limit = 5): Promise<
+  {
+    id: string;
+    rating: number;
+    comment: string | null;
+    status: string;
+    reportCount: number;
+    user: { username: string | null };
+    recipe: { slug: string; title: string };
+  }[]
+> {
+  const grouped = await prisma.report.groupBy({
+    by: ["targetId"],
+    where: { targetType: "REVIEW" },
+    _count: true,
+    orderBy: { _count: { targetId: "desc" } },
+    take: limit,
+  });
+  if (grouped.length === 0) return [];
+
+  const ids = grouped.map((g) => g.targetId);
+  const reviews = await prisma.review.findMany({
+    where: { id: { in: ids } },
+    select: {
+      id: true,
+      rating: true,
+      comment: true,
+      status: true,
+      user: { select: { username: true } },
+      recipe: { select: { slug: true, title: true } },
+    },
+  });
+
+  // Merge report counts onto each review + re-sort (groupBy already
+  // sorted but map lookup loses order).
+  const countById = new Map(grouped.map((g) => [g.targetId, g._count]));
+  return reviews
+    .map((r) => ({ ...r, reportCount: countById.get(r.id) ?? 0 }))
+    .sort((a, b) => b.reportCount - a.reportCount);
+}
+
+// ─── Admin list queries (sort + filter + search + pagination) ───
+
+export type RecipeSortKey =
+  | "createdAt"
+  | "viewCount"
+  | "variations"
+  | "bookmarks";
+
+export interface AdminRecipeListParams {
+  sort?: RecipeSortKey;
+  order?: "asc" | "desc";
+  status?: string; // "PUBLISHED" | "DRAFT" | "PENDING_REVIEW" | "HIDDEN" | "REJECTED"
+  search?: string; // title ilike
+  page?: number; // 1-indexed
+  pageSize?: number;
+}
+
+export async function getAdminRecipesList(params: AdminRecipeListParams) {
+  const {
+    sort = "createdAt",
+    order = "desc",
+    status,
+    search,
+    page = 1,
+    pageSize = 50,
+  } = params;
+
+  const where: Record<string, unknown> = {};
+  if (status && ["PUBLISHED", "DRAFT", "PENDING_REVIEW", "HIDDEN", "REJECTED"].includes(status)) {
+    where.status = status;
+  }
+  if (search && search.trim()) {
+    where.title = { contains: search.trim(), mode: "insensitive" };
+  }
+
+  // Relation counts need `_count` orderBy in Prisma.
+  const orderBy =
+    sort === "variations"
+      ? { variations: { _count: order } }
+      : sort === "bookmarks"
+        ? { bookmarks: { _count: order } }
+        : { [sort]: order };
+
+  const [recipes, total] = await Promise.all([
+    prisma.recipe.findMany({
+      where,
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        emoji: true,
+        difficulty: true,
+        status: true,
+        viewCount: true,
+        isFeatured: true,
+        createdAt: true,
+        category: { select: { name: true } },
+        _count: { select: { variations: true, bookmarks: true, reviews: true } },
+      },
+      orderBy,
+      skip: (page - 1) * pageSize,
+      take: pageSize,
+    }),
+    prisma.recipe.count({ where }),
+  ]);
+
+  return { recipes, total, page, pageSize };
+}
+
+export type UserSortKey =
+  | "createdAt"
+  | "variations"
+  | "bookmarks"
+  | "reports"
+  | "reviews";
+
+export interface AdminUserListParams {
+  sort?: UserSortKey;
+  order?: "asc" | "desc";
+  role?: string; // "USER" | "MODERATOR" | "ADMIN"
+  verified?: "yes" | "no"; // emailVerified not-null veya null
+  search?: string; // name/username/email ilike (ilike any)
+  page?: number;
+  pageSize?: number;
+}
+
+export async function getAdminUsersList(params: AdminUserListParams) {
+  const {
+    sort = "createdAt",
+    order = "desc",
+    role,
+    verified,
+    search,
+    page = 1,
+    pageSize = 50,
+  } = params;
+
+  const where: Record<string, unknown> = {};
+  if (role && ["USER", "MODERATOR", "ADMIN"].includes(role)) {
+    where.role = role;
+  }
+  if (verified === "yes") where.emailVerified = { not: null };
+  if (verified === "no") where.emailVerified = null;
+  if (search && search.trim()) {
+    const q = search.trim();
+    where.OR = [
+      { name: { contains: q, mode: "insensitive" } },
+      { username: { contains: q, mode: "insensitive" } },
+      { email: { contains: q, mode: "insensitive" } },
+    ];
+  }
+
+  const orderBy =
+    sort === "variations"
+      ? { variations: { _count: order } }
+      : sort === "bookmarks"
+        ? { bookmarks: { _count: order } }
+        : sort === "reports"
+          ? { reports: { _count: order } }
+          : sort === "reviews"
+            ? { reviews: { _count: order } }
+            : { [sort]: order };
+
+  const [users, total] = await Promise.all([
+    prisma.user.findMany({
+      where,
+      select: {
+        id: true,
+        name: true,
+        username: true,
+        email: true,
+        role: true,
+        isVerified: true,
+        emailVerified: true,
+        createdAt: true,
+        _count: {
+          select: {
+            variations: true,
+            bookmarks: true,
+            reports: true,
+            reviews: true,
+          },
+        },
+      },
+      orderBy,
+      skip: (page - 1) * pageSize,
+      take: pageSize,
+    }),
+    prisma.user.count({ where }),
+  ]);
+
+  return { users, total, page, pageSize };
+}
+
+/**
  * En çok görüntülenen N tarif — editorial/featured karar vermek için.
  * Trendleri anlamak için viewCount DESC, sadece PUBLISHED.
  */

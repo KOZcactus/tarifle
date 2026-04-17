@@ -8,6 +8,9 @@ import {
   getRecentSignups,
   getUserGrowthDaily,
   getReviewDistribution,
+  getMostActiveUsers,
+  getMostReportedVariations,
+  getMostReportedReviews,
 } from "@/lib/queries/admin";
 
 export const metadata = { title: "Yönetim Paneli | Tarifle" };
@@ -22,6 +25,9 @@ export default async function AdminPage() {
     recentSignups,
     userGrowth,
     reviewDist,
+    activeUsers,
+    reportedVariations,
+    reportedReviews,
   ] = await Promise.all([
     getAdminStats(),
     getRecentBatches(7),
@@ -31,6 +37,9 @@ export default async function AdminPage() {
     getRecentSignups(10),
     getUserGrowthDaily(30),
     getReviewDistribution(),
+    getMostActiveUsers(10),
+    getMostReportedVariations(5),
+    getMostReportedReviews(5),
   ]);
 
   // Üst sıra — yüksek-frekans bilgi (toplamlar + moderasyon).
@@ -277,6 +286,149 @@ export default async function AdminPage() {
           )}
         </div>
       </section>
+
+      {/* En aktif kullanıcılar */}
+      <section>
+        <h3 className="mb-3 font-heading text-base font-semibold">
+          🏆 En aktif kullanıcılar (uyarlama × 3 + yorum × 2 + bookmark × 1)
+        </h3>
+        <div className="rounded-xl border border-border bg-bg-card">
+          {activeUsers.length === 0 ? (
+            <p className="p-4 text-sm text-text-muted">
+              Henüz yeterince aktif kullanıcı yok.
+            </p>
+          ) : (
+            <ol className="divide-y divide-border">
+              {activeUsers.map((u, i) => (
+                <li
+                  key={u.id}
+                  className="flex items-center gap-3 px-4 py-2.5 text-sm"
+                >
+                  <span className="w-6 text-center font-mono text-xs text-text-muted">
+                    #{i + 1}
+                  </span>
+                  <Link
+                    href={`/profil/${u.username ?? ""}`}
+                    className="flex-1 truncate text-text hover:text-primary"
+                  >
+                    {u.name ?? u.username ?? "(anonim)"}
+                    <span className="ml-2 text-xs text-text-muted">
+                      @{u.username ?? "—"}
+                    </span>
+                    {u.role !== "USER" && (
+                      <span className="ml-2 rounded-full bg-accent-blue/15 px-1.5 py-0.5 text-[10px] font-medium text-accent-blue">
+                        {u.role}
+                      </span>
+                    )}
+                  </Link>
+                  <div className="flex shrink-0 gap-3 text-xs text-text-muted tabular-nums">
+                    <span title="Uyarlama">🔄 {u.variationCount}</span>
+                    <span title="Yorum">⭐ {u.reviewCount}</span>
+                    <span title="Bookmark">🔖 {u.bookmarkCount}</span>
+                    <span
+                      className="w-10 text-right font-semibold text-text"
+                      title="Skor"
+                    >
+                      {u.score}
+                    </span>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          )}
+        </div>
+      </section>
+
+      {/* En çok raporlanan içerik */}
+      {(reportedVariations.length > 0 || reportedReviews.length > 0) && (
+        <section>
+          <h3 className="mb-3 font-heading text-base font-semibold">
+            🚨 En çok raporlanan içerik
+          </h3>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="rounded-xl border border-border bg-bg-card">
+              <h4 className="border-b border-border bg-bg-elevated/40 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-text-muted">
+                Uyarlamalar ({reportedVariations.length})
+              </h4>
+              {reportedVariations.length === 0 ? (
+                <p className="p-4 text-sm text-text-muted">Temiz.</p>
+              ) : (
+                <ul className="divide-y divide-border">
+                  {reportedVariations.map((v) => (
+                    <li
+                      key={v.id}
+                      className="flex items-center gap-3 px-4 py-2.5 text-sm"
+                    >
+                      <div className="min-w-0 flex-1">
+                        <Link
+                          href={`/tarif/${v.recipe.slug}`}
+                          className="block truncate font-medium text-text hover:text-primary"
+                        >
+                          {v.miniTitle}
+                        </Link>
+                        <p className="truncate text-xs text-text-muted">
+                          {v.recipe.title} — @{v.author.username ?? "—"}
+                        </p>
+                      </div>
+                      <div className="flex shrink-0 items-center gap-2">
+                        {v.status !== "PUBLISHED" && (
+                          <span className="rounded-full bg-bg-elevated px-2 py-0.5 text-[10px] text-text-muted">
+                            {v.status}
+                          </span>
+                        )}
+                        <span className="rounded-full bg-error/15 px-2 py-0.5 text-xs font-semibold text-error">
+                          {v.reportCount} rapor
+                        </span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            <div className="rounded-xl border border-border bg-bg-card">
+              <h4 className="border-b border-border bg-bg-elevated/40 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-text-muted">
+                Yorumlar ({reportedReviews.length})
+              </h4>
+              {reportedReviews.length === 0 ? (
+                <p className="p-4 text-sm text-text-muted">Temiz.</p>
+              ) : (
+                <ul className="divide-y divide-border">
+                  {reportedReviews.map((r) => (
+                    <li
+                      key={r.id}
+                      className="flex items-center gap-3 px-4 py-2.5 text-sm"
+                    >
+                      <div className="min-w-0 flex-1">
+                        <Link
+                          href={`/tarif/${r.recipe.slug}`}
+                          className="block truncate font-medium text-text hover:text-primary"
+                        >
+                          {r.recipe.title}
+                        </Link>
+                        <p className="truncate text-xs text-text-muted">
+                          {"★".repeat(r.rating)} — @{r.user.username ?? "—"}
+                          {r.comment && ` · "${r.comment.slice(0, 40)}${r.comment.length > 40 ? "…" : ""}"`}
+                        </p>
+                      </div>
+                      <div className="flex shrink-0 items-center gap-2">
+                        {r.status !== "PUBLISHED" && (
+                          <span className="rounded-full bg-bg-elevated px-2 py-0.5 text-[10px] text-text-muted">
+                            {r.status}
+                          </span>
+                        )}
+                        <span className="rounded-full bg-error/15 px-2 py-0.5 text-xs font-semibold text-error">
+                          {r.reportCount} rapor
+                        </span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Son kayıtlar */}
       <section>

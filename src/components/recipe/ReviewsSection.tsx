@@ -1,10 +1,12 @@
 import Link from "next/link";
+import { getLocale, getTranslations } from "next-intl/server";
 import { auth } from "@/lib/auth";
 import {
   getRecipeReviews,
   getUserReviewForRecipe,
   type RecipeReviewSummary,
 } from "@/lib/queries/recipe";
+import { isValidLocale } from "@/i18n/config";
 import { StarRating } from "./StarRating";
 import { ReviewForm } from "./ReviewForm";
 import { DeleteOwnReviewButton } from "./DeleteOwnReviewButton";
@@ -15,17 +17,22 @@ interface ReviewsSectionProps {
   recipeSlug: string;
 }
 
-function formatRelative(iso: string): string {
+type RelativeT = (
+  key: string,
+  values?: Record<string, string | number | Date>,
+) => string;
+
+function formatRelative(iso: string, t: RelativeT, locale: string): string {
   const then = new Date(iso).getTime();
   const diff = Date.now() - then;
   const min = Math.floor(diff / 60000);
-  if (min < 1) return "az önce";
-  if (min < 60) return `${min} dk önce`;
+  if (min < 1) return t("justNow");
+  if (min < 60) return t("minutesAgo", { n: min });
   const hr = Math.floor(min / 60);
-  if (hr < 24) return `${hr} sa önce`;
+  if (hr < 24) return t("hoursAgo", { n: hr });
   const d = Math.floor(hr / 24);
-  if (d < 7) return `${d} gün önce`;
-  return new Date(iso).toLocaleDateString("tr-TR", {
+  if (d < 7) return t("daysAgo", { n: d });
+  return new Date(iso).toLocaleDateString(locale === "tr" ? "tr-TR" : "en-US", {
     day: "numeric",
     month: "short",
     year: "numeric",
@@ -63,8 +70,14 @@ export async function ReviewsSection({
   recipeId,
   recipeSlug,
 }: ReviewsSectionProps) {
-  const session = await auth();
+  const [session, t, tRelative, localeRaw] = await Promise.all([
+    auth(),
+    getTranslations("reviews"),
+    getTranslations("reviews.relative"),
+    getLocale(),
+  ]);
   const userId = session?.user?.id ?? null;
+  const locale = isValidLocale(localeRaw) ? localeRaw : "tr";
 
   const [{ reviews, summary }, userReview] = await Promise.all([
     getRecipeReviews(recipeId),
@@ -77,7 +90,7 @@ export async function ReviewsSection({
         id="reviews-heading"
         className="mb-4 text-xl font-semibold md:text-2xl"
       >
-        Yıldız & Yorumlar ({summary.count})
+        {t("sectionTitle", { count: summary.count })}
       </h2>
 
       {/* Summary card */}
@@ -89,7 +102,7 @@ export async function ReviewsSection({
             </div>
             <StarRating value={summary.average} size="md" />
             <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-              {summary.count} yorum
+              {t("reviewCount", { count: summary.count })}
             </p>
           </div>
           <div className="flex-1 min-w-0">
@@ -106,14 +119,16 @@ export async function ReviewsSection({
       ) : (
         <div className="mb-6 rounded-xl border border-dashed border-black/10 bg-white/50 p-5 text-center dark:border-white/10 dark:bg-gray-900/50">
           <p className="text-sm text-gray-600 dark:text-gray-400">
-            Bu tarife yorum bırakmak için{" "}
-            <Link
-              href={`/giris?callbackUrl=/tarif/${recipeSlug}`}
-              className="font-medium text-primary hover:underline"
-            >
-              giriş yap
-            </Link>
-            .
+            {t.rich("loginPrompt", {
+              link: (chunks) => (
+                <Link
+                  href={`/giris?callbackUrl=/tarif/${recipeSlug}`}
+                  className="font-medium text-primary hover:underline"
+                >
+                  {chunks}
+                </Link>
+              ),
+            })}
           </p>
         </div>
       )}
@@ -121,7 +136,7 @@ export async function ReviewsSection({
       {/* Reviews list */}
       {reviews.length === 0 ? (
         <p className="text-sm text-gray-600 dark:text-gray-400">
-          Henüz yorum yok — ilk yıldızı sen bırak.
+          {t("empty")}
         </p>
       ) : (
         <ul className="space-y-4">
@@ -161,7 +176,7 @@ export async function ReviewsSection({
                     <div className="flex items-center gap-2">
                       <StarRating value={r.rating} size="sm" />
                       <span className="text-xs text-gray-500">
-                        {formatRelative(r.createdAt)}
+                        {formatRelative(r.createdAt, tRelative, locale)}
                       </span>
                     </div>
                   </div>

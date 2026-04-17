@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
 interface StarRatingProps {
@@ -12,7 +13,7 @@ interface StarRatingProps {
   onChange?: (value: number) => void;
   /** Boyut — md (24px) default, sm (16px) chip içi, lg (32px) form. */
   size?: "sm" | "md" | "lg";
-  /** Accessibility label — read-only'de "4 yıldız (25 yorum)", interactive'de "Yıldız seç". */
+  /** Accessibility label override — read-only'de "4 yıldız (25 yorum)", interactive'de "Yıldız seç". Verilmezse i18n key'inden üretilir. */
   ariaLabel?: string;
   className?: string;
 }
@@ -27,6 +28,7 @@ export function StarRating({
   ariaLabel,
   className,
 }: StarRatingProps) {
+  const t = useTranslations("reviews.star");
   const [hover, setHover] = useState<number | null>(null);
   const display = hover ?? value;
 
@@ -34,7 +36,7 @@ export function StarRating({
     <div
       className={cn("inline-flex items-center gap-0.5", className)}
       role={interactive ? "radiogroup" : "img"}
-      aria-label={ariaLabel ?? `${value.toFixed(1)} yıldız`}
+      aria-label={ariaLabel ?? t("valueAria", { n: value.toFixed(1) })}
     >
       {[1, 2, 3, 4, 5].map((n) => {
         const filled = display >= n - 0.25;
@@ -69,7 +71,7 @@ export function StarRating({
             type="button"
             role="radio"
             aria-checked={value === n}
-            aria-label={`${n} yıldız`}
+            aria-label={t("pickAria", { n })}
             onClick={() => onChange?.(n)}
             onMouseEnter={() => setHover(n)}
             onMouseLeave={() => setHover(null)}

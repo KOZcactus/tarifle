@@ -186,6 +186,45 @@
     "linkPrivacy": "Privacy Policy",
     "copyright": "© {year} {site}. All rights reserved."
   },
+  "reviews": {
+    "sectionTitle": "Ratings & Reviews ({count})",
+    "reviewCount": "{count} reviews",
+    "loginPrompt": "To leave a review, <link>sign in</link>.",
+    "empty": "No reviews yet — leave the first star.",
+    "form": {
+      "titleNew": "Leave a review",
+      "titleEdit": "Edit your review",
+      "ratingLabel": "Rating:",
+      "ratingAria": "Pick a star",
+      "ratingValue": "{n}/5",
+      "commentLabel": "Comment (optional, 10-800 characters)",
+      "commentPlaceholder": "What did you love, what would you change?",
+      "commentCounter": "{used}/{max}",
+      "submitNew": "Submit",
+      "submitEdit": "Update",
+      "submitting": "Submitting...",
+      "errorRatingRange": "Please pick a star between 1 and 5.",
+      "errorDefault": "Something went wrong.",
+      "errorNetwork": "Could not submit your review. Please try again.",
+      "pendingNotice": "Your review is in moderation; it will be published once approved."
+    },
+    "delete": {
+      "confirm": "Are you sure you want to delete your review?",
+      "button": "Delete",
+      "pending": "Deleting...",
+      "error": "Could not delete."
+    },
+    "star": {
+      "valueAria": "{n} stars",
+      "pickAria": "{n} stars"
+    },
+    "relative": {
+      "justNow": "just now",
+      "minutesAgo": "{n} min ago",
+      "hoursAgo": "{n} hr ago",
+      "daysAgo": "{n} days ago"
+    }
+  },
   "recipe": {
     "breadcrumbAria": "Breadcrumb",
     "servingsLabel": "Serves {count}",

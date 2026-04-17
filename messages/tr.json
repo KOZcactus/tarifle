@@ -186,6 +186,45 @@
     "linkPrivacy": "Gizlilik Politikası",
     "copyright": "© {year} {site}. Tüm hakları saklıdır."
   },
+  "reviews": {
+    "sectionTitle": "Yıldız & Yorumlar ({count})",
+    "reviewCount": "{count} yorum",
+    "loginPrompt": "Bu tarife yorum bırakmak için <link>giriş yap</link>.",
+    "empty": "Henüz yorum yok — ilk yıldızı sen bırak.",
+    "form": {
+      "titleNew": "Bu tarife yorum bırak",
+      "titleEdit": "Yorumunu düzenle",
+      "ratingLabel": "Puan:",
+      "ratingAria": "Yıldız seç",
+      "ratingValue": "{n}/5",
+      "commentLabel": "Yorum (opsiyonel, 10-800 karakter)",
+      "commentPlaceholder": "Tarifte neyi sevdin, neyi değiştirirdin?",
+      "commentCounter": "{used}/{max}",
+      "submitNew": "Gönder",
+      "submitEdit": "Güncelle",
+      "submitting": "Gönderiliyor...",
+      "errorRatingRange": "Lütfen 1-5 arası bir yıldız seç.",
+      "errorDefault": "Bir hata oluştu.",
+      "errorNetwork": "Yorum gönderilemedi, tekrar dene.",
+      "pendingNotice": "Yorumun incelemeye alındı; moderasyon onayından sonra yayınlanacak."
+    },
+    "delete": {
+      "confirm": "Yorumunu silmek istediğine emin misin?",
+      "button": "Sil",
+      "pending": "Siliniyor...",
+      "error": "Silinemedi."
+    },
+    "star": {
+      "valueAria": "{n} yıldız",
+      "pickAria": "{n} yıldız"
+    },
+    "relative": {
+      "justNow": "az önce",
+      "minutesAgo": "{n} dk önce",
+      "hoursAgo": "{n} sa önce",
+      "daysAgo": "{n} gün önce"
+    }
+  },
   "recipe": {
     "breadcrumbAria": "Breadcrumb",
     "servingsLabel": "{count} kişilik",

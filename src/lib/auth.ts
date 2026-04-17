@@ -119,13 +119,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         const email = normalizeEmail(credentials.email as string);
         const password = credentials.password as string;
 
-        // Explicit SELECT — suspendedAt kolonu prod'a henüz migrate edilmedi
-        // (17 Nis dev/prod ayrımından sonra yeni kolonlar sadece dev'de).
-        // Default findUnique TÜM kolonları çeker → prod'da patlar ("column
-        // does not exist" → Auth.js Configuration error). Explicit select
-        // ile yalnızca eski, kesin mevcut kolonları isteriz. Migration
-        // prod'a uygulandığında bu select suspendedAt'i de isteyecek
-        // şekilde genişletilir.
+        // Explicit select — default findUnique tüm kolonları çeker, gelecekte
+        // başka schema mismatch senaryolarına karşı explicit liste daha
+        // dayanıklı. Suspension kontrolü dahil.
         const user = await prisma.user.findUnique({
           where: { email },
           select: {
@@ -134,10 +130,19 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
             email: true,
             passwordHash: true,
             avatarUrl: true,
+            suspendedAt: true,
           },
         });
 
         if (!user || !user.passwordHash) return null;
+
+        // Suspended accounts can't sign in. We intentionally fall through
+        // to the generic "e-posta veya şifre hatalı" flow rather than
+        // leaking suspension state to an attacker — honest users see the
+        // suspendedAt flag on /ayarlar page after next valid login attempt,
+        // or in-product support. (Future work: dedicated "hesabın askıda"
+        // screen with suspendedReason.)
+        if (user.suspendedAt) return null;
 
         const isValid = await bcrypt.compare(password, user.passwordHash);
         if (!isValid) return null;
@@ -154,15 +159,22 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   callbacks: {
     async jwt({ token, user, trigger, session }) {
       if (user) {
-        // suspendedAt kontrolü şimdilik devre dışı — prod migration henüz
-        // apply edilmedi (17 Nis dev/prod ayrımı sonrası). Migration
-        // uygulandıktan sonra suspendedAt select'e eklenir ve null check
-        // geri getirilir.
         const dbUser = await prisma.user.findUnique({
           where: { id: user.id },
-          select: { id: true, username: true, role: true, avatarUrl: true },
+          select: {
+            id: true,
+            username: true,
+            role: true,
+            avatarUrl: true,
+            suspendedAt: true,
+          },
         });
         if (dbUser) {
+          // Defensive: a session could be reissued mid-suspension (ör. admin
+          // 1 saat sonra askıya aldı, token hâlâ geçerli). Return null ile
+          // token'ı iptal edelim — client bir sonraki middleware geçişinde
+          // sign-in'e yönlendirilir.
+          if (dbUser.suspendedAt) return null;
           token.id = dbUser.id;
           token.username = dbUser.username;
           token.role = dbUser.role;

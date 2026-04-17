@@ -1,6 +1,24 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 17 Nisan 2026 (oturum 2 — Admin paneli + ops altyapı + monitoring, 33 commit)
+> Son güncelleme: 18 Nisan 2026 — Sentry smoke test PASS + alert rules aktif
+
+## 18 Nisan 2026 — Sentry smoke test kapanışı
+
+Sentry kurulumu çalışmıyordu, 6 commit ile fix:
+- Next.js 16 `instrumentation.ts` + `instrumentation-client.ts` eksikti (server/client SDK init hiç çağrılmıyordu), eklendi (`62bac4e`)
+- Tunnel route `/monitoring` ad-blocker listelerinde → `/api/tarifle-ingest` (`698f9bc`)
+- **Kritik:** src-folder convention'da instrumentation dosyaları `src/` altında olmalı, root'ta değil — `de70a66`. Bu fix sonrası 3/3 event (client + server action + RSC) Sentry Feed'de.
+- Alert rules 2 adet aktif (new issue + 10 events/hour escalation), Notification kategorileri optimize (`docs/MONITORING.md`)
+- Yan temizlik: `scripts/set-admin.ts` commit + db-env guard (`4cbcd5f`), `docs/existing-slugs.txt` regenerate (1103 slug), orphan `sentry.client.config.ts` sil (`0dc2087`)
+
+**Bekleyen işler:**
+1. **Tarif görselleri** — Eren `docs/IMAGE_GENERATION_PLAN.md` okuyup pilot 10 tarif üretecek
+2. **Auto-migrate alternatif** — GitHub Actions workflow veya Neon direct URL
+3. **i18n aktivasyonu** — ~400 string + EN/DE + `[locale]` routing
+
+---
+
+## 17 Nisan 2026 (oturum 2 — Admin paneli + ops altyapı + monitoring, 33 commit)
 
 ## 17 Nisan 2026 — Oturum 2 (büyük tur, 33 commit)
 
@@ -56,8 +74,8 @@ Bu oturum uzun, çok iş yapıldı. Kısa özet:
 - audit-deep: 0 CRITICAL
 - 489 unit test PASS
 
-**Üzerinde durduğumuz sorunlar / bekleyen işler:**
-1. **Sentry smoke test doğrulanmadı** — Kerem tarifle.app/sentry-test'te 3 butona basıp Sentry Issues'da event görmeli. Vercel son deploy `c96bb96` (smoke test page) Ready durumunda.
+**Bu oturum bekleyen işler (18 Nis oturumunda kısmen devam):**
+1. ~~Sentry smoke test~~ → ✅ 18 Nis'te PASS (yukarı bak)
 2. **Auto-migrate çözümsüz** — Neon direct (non-pooled) connection URL ile tekrar denenebilir, ya da GitHub Actions job. Şimdilik manuel flow.
 3. **Tarif görselleri** — Eren `docs/IMAGE_GENERATION_PLAN.md` okuyup Codex agent test edecek. Kalite onayı sonrası batch. Dashboard "Görselsiz %100" alarmı yanıyor.
 4. **i18n henüz başlamadı** — Schema hazır, ~400 UI string + EN/DE gerek. Ertelendi.

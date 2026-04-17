@@ -57,11 +57,24 @@ Error pattern'lar:
 ALLOW_DESTRUCTIVE_MIGRATION=1 npm run db:check-destructive
 ```
 
-## 3. Sentry error tracking ✅ aktif (17 Nis'te kuruldu)
+## 3. Sentry error tracking ✅ aktif + smoke test PASS
 
-Kod altyapısı hazır (`sentry.{client,server,edge}.config.ts` +
-`src/app/global-error.tsx` + `next.config.ts` wrapper). DSN env var
-yoksa SDK silently disabled — dev + preview'da etki yok.
+Kod altyapısı `src/` altında (`src/instrumentation.ts` +
+`src/instrumentation-client.ts` + `src/sentry.{server,edge}.config.ts` +
+`src/app/global-error.tsx` + `next.config.ts` `withSentryConfig`
+wrapper). DSN env var yoksa SDK silently disabled — dev + preview'da
+etki yok.
+
+**Kritik Next.js 16 + src-folder gotcha:** `src/` konvansiyonu
+kullanan projelerde instrumentation dosyaları **mutlaka** `src/`
+altında olmalı, root'ta değil. Root'taki dosyaları Next discover
+etmiyor → register() çağrılmıyor → Sentry server SDK hiç init olmuyor.
+18 Nis oturumunda bu yakalandı (commit `de70a66`), smoke test öncesi
+server event'leri hiç Sentry'ye ulaşmıyordu.
+
+**Tunnel route `/api/tarifle-ingest`** — default `/monitoring`
+EasyPrivacy/AdGuard filter listelerinde (ERR_BLOCKED_BY_CLIENT).
+Obscure `/api/*` path'i ad-blocker'ları atlar.
 
 ### Vercel'de aktive etmek için Kerem'in yapacakları
 
@@ -83,13 +96,10 @@ yoksa SDK silently disabled — dev + preview'da etki yok.
 | `SENTRY_PROJECT` | slug | Production |
 | `SENTRY_AUTH_TOKEN` | token | Production |
 
-5. **Lokalde test** (opsiyonel) — `.env.local`'a aynı değerleri ekle, sonra:
-
-```bash
-# Tarayıcıda aç: http://localhost:3000/sentry-test
-```
-
-(Henüz bu route yok; eklemek istersen söyle.)
+5. **Prod smoke test** — tarifle.app/sentry-test (admin-only,
+   `robots: noindex`). 3 buton (client throw / server action throw /
+   RSC throw) Sentry Feed'de 3 ayrı event açar. 18 Nis oturumunda
+   doğrulandı, route + nav link ileride health check için bırakıldı.
 
 ### Sentry capture'ın yakalayacağı senaryolar
 
@@ -103,12 +113,25 @@ yoksa SDK silently disabled — dev + preview'da etki yok.
 `NEXT_REDIRECT` ve `NEXT_NOT_FOUND` filtrelendi — normal akış gürültüsü
 Sentry'ye düşmez.
 
-### Alert kurallar (Sentry UI'da)
+### Alert kurallar ✅ aktif (18 Nis)
 
-Önerilen kurallar:
-- "Yeni issue" → Slack/email anında
-- "Same issue 10 kere/1 saat" → email
-- Daily digest → e-posta
+Sentry Alerts kurulumu canlı, email hedefi `koz.devs@gmail.com`:
+
+| Alert | Trigger | Interval | Scope |
+|---|---|---|---|
+| `New issue — instant email` | A new issue is created | 5 min | All Envs |
+| `Issue escalation — 10 events/hour` | Event frequency > 10 / 1 hour | 1 hour | production |
+
+Notification kategorileri (`Settings → Account → Notifications`):
+- **Issue Alerts** On (alert rule email'i)
+- **Issue Workflow** On (regression/resolve state)
+- **Spend** On (free tier quota — Errors + Replays + Spans kategorileri;
+  Attachments/Cron/Profile/Uptime/Logs/Contributors/Seer Off)
+- **Weekly Reports** On (haftalık özet)
+
+Şu an tek Sentry member (Developer free plan 1 user limit). İkinci
+maille yedek için Gmail forwarding rule veya Team plan ($26/ay) ile
+invite. Alert action'ı `Member → kozcactus`.
 
 ---
 

@@ -1,12 +1,12 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 17 Nisan 2026 (DB doğruluk turları — Claude + Codex2 paralel)
+> Son güncelleme: 17 Nisan 2026 (DB doğruluk + Faz 3 Review/Rating sistemi canlı)
 
-## 17 Nisan 2026 — DB derin doğruluk turları
+## 17 Nisan 2026 — DB derin doğruluk + Faz 3 başlangıç
 
-🎯 **audit-deep.ts: 26 CRITICAL + 498 WARNING → 0/0 PASS. audit-content.ts: 0 CRITICAL / HIGH 13 (hepsi legitimate kısa içecek).**
+🎯 **audit-deep.ts: 26 CRITICAL + 498 WARNING → 0/0 PASS. audit-content.ts: 0 CRITICAL / HIGH 13 (hepsi legitimate kısa içecek). Faz 3 Review/Rating sistemi canlı.**
 
-Tam ~30 commit. Nutrition %100 coverage, 200+ DB kalite düzeltmesi.
+~40 commit. Nutrition %100 coverage, 200+ DB kalite düzeltmesi, Review system full-stack.
 
 ### Ana başlıklar
 - 🥗 **Nutrition backfill %54 → %100** (Codex backfill-6/7/8/9 merge, 400 tarif macro, backfill-10 gerekmedi)
@@ -15,19 +15,46 @@ Tam ~30 commit. Nutrition %100 coverage, 200+ DB kalite düzeltmesi.
 - 🤝 **Codex2 ortak analiz** (bağımsız): 28 step-mismatch (tuz/karabiber/un eksik) + 24 composite row split ("Tuz, karabiber, pul biber" tek row → 3 ayrı) + 3 ek semantik bulgu (jokai Sıvı yağ, csalamade Şeker, banh-mi Sirke/Şeker/Kişniş)
 - 🎯 **Tarif-özel fix'ler**: profiterol krema + step revise + grup, atom-sos adım sırası, patatas-bravas step 4 ekle, vietnam-yumurta-kahvesi netleştir, cao-lau/com-tam/bo-luc-lac sos ref uyum, kourabiethes/makroudh/lokma-tatlisi grup, dereotlu-kur-somon/kvass kür/ferment süresi, 5 "iyice" somut kriter, humus Pul biber + kladdkaka Un eksik ekle + GLUTEN
 - ⚙️ **audit iyileştirmeleri**: asciiNormalize (ekmek→ekmegi inflected form), keyword listesi allergens.ts ile sync (kefir/filmjölk/gochujang/furikake/yengeç/dolmalık fıstık/tortilla/yulaf/vs), tolerance (kür 36h, eser kcal <10, boilerplate threshold 6)
+- 📋 **Source sync**: 52 `seed-recipes.ts` tarif + 14 bootstrap `prisma/seed.ts` tarif DB snapshot'ına göre regenerate (ingredients + steps + cookMinutes + tipNote + servingSuggestion field-by-field)
+- 🔒 **CI guard genişletildi**: `validate-batch.ts` + 2 yeni ERROR check (composite-comma + step-ingredient-mismatch). Yeni Codex batch'te pattern'lar merge öncesi bloklanır
+- 🧩 **`src/lib/allergen-matching.ts` tek kaynak**: ALLERGEN_RULES + ingredientMatchesAllergen + inferAllergensFromIngredients unified. allergens.ts re-export eder
 
-### Yeni ops tooling (~12 yeni script)
-- `audit-content.ts` (içerik kalite), `audit-step-ingredient-mismatch.ts`, `audit-composite-rows.ts`
-- Fix: `fix-critical-allergens.ts` + `v2`, `fix-mayonez-yumurta.ts`, `fix-overtag-allergens.ts`, `fix-inconsistent-tags.ts`, `fix-zero-tag-recipes.ts`, `fix-boilerplate-to-null.ts`, `fix-unit-lt-to-litre.ts`, `fix-duplicate-titles.ts`, `fix-single-ingredient-groups.ts`, `fix-partial-grouping.ts`, `fix-corba-categories.ts`, `fix-kesin-batch.ts`, `fix-procedure-flow.ts`, `fix-vietnam-sauce-refs.ts`, `fix-final-polish.ts`, `fix-step-ingredient-mismatch.ts`, `fix-composite-row-split.ts`
+### 🎉 Faz 3 başlangıç — Review/Rating sistemi (full-stack)
+- 💾 Schema: `Review` model (userId+recipeId+rating 1-5+comment nullable+status+timestamps, `@@unique([userId, recipeId])`), ReportTarget enum'a `REVIEW` değeri. Migration `20260417000000_review_system` applied.
+- 🔒 Validation: `reviewSchema` (Zod) — rating 1-5 int + comment 10-800 char optional. `reportSchema.targetType` artık enum VARIATION|REVIEW.
+- 🔒 Rate limit: `review-submit` scope (10 yorum/saat)
+- ⚙️ Server actions: `submitReviewAction` (upsert pattern — edit aynı endpoint), `deleteOwnReviewAction` (ownership gate)
+- 📊 Query: `getRecipeReviews` (published liste + aggregate: average/count/distribution), `getUserReviewForRecipe` (form prefill)
+- 🎨 UI (4 component): `StarRating` (interactive + read-only, hover state, radiogroup ARIA), `ReviewForm` (yıldız + comment, 800 char counter, edit-aware), `ReviewsSection` (server RSC — summary card + histogram bars + login prompt + list), `DeleteOwnReviewButton`
+- 🌐 SEO: `AggregateRating` JSON-LD koşullu (count > 0) — Google rich results eligibility. Fake rating abuse guard.
+- 🧪 363 unit + build PASS
+
+### 📝 Codex batch 11+ için docs güncellemesi
+- `RECIPE_FORMAT.md` → 6 yeni "Veri doğruluğu" kuralı ("CI bloklar")
+- `CODEX_HANDOFF.md` §6.7 + §6.8 — yanlış/doğru kod blokları + pre-flight zorunlu
+- 5 kritik kural: virgül-composite YASAK, step-ingredient consistency, servingSuggestion sos refs, adım sırası mantıklı, step derived component açık
+
+### Yeni ops tooling (~22 yeni script)
+- 3 audit: `audit-content.ts`, `audit-step-ingredient-mismatch.ts`, `audit-composite-rows.ts`
+- 17 fix: `fix-critical-allergens.ts` + `v2`, `fix-mayonez-yumurta.ts`, `fix-overtag-allergens.ts`, `fix-inconsistent-tags.ts`, `fix-zero-tag-recipes.ts`, `fix-boilerplate-to-null.ts`, `fix-unit-lt-to-litre.ts`, `fix-duplicate-titles.ts`, `fix-single-ingredient-groups.ts`, `fix-partial-grouping.ts`, `fix-corba-categories.ts`, `fix-kesin-batch.ts`, `fix-procedure-flow.ts`, `fix-vietnam-sauce-refs.ts`, `fix-final-polish.ts`, `fix-step-ingredient-mismatch.ts`, `fix-composite-row-split.ts`
+- 2 sync: `sync-source-from-db.ts` (drift raporu), `patch-source-from-db.ts` (DB→source regenerate)
+
+### Schema değişiklikleri (17 Nis)
+- `Review` model + `reviews` tablo + 3 index
+- `ReportTarget` enum + `REVIEW` değeri
+- `User.reviews Review[]` relation
+- `Recipe.reviews Review[]` relation
 
 ### Sonuç
 - `audit-deep.ts`: 🟢 0 CRITICAL / 0 WARNING / 26 INFO — PASS
-- `audit-content.ts`: 🟢 0 CRITICAL / HIGH 13 (8 kahve 2-ingredient + 5 smoothie ≤2 step, legitimate) / MEDIUM 127 (STEP_TOO_SHORT çoğu "Soğuk servis edin." legit) / LOW 0
+- `audit-content.ts`: 🟢 0 CRITICAL / HIGH 13 (8 kahve 2-ingredient + 5 smoothie ≤2 step, legitimate) / MEDIUM 127 / LOW 0
+- `validate-batch.ts`: 0 ERROR (595 WARNING çoğu cuisine-null, retrofit otomatik doldurur)
+- Build + typecheck: clean, 363 unit test green
 
-### Kalan (opsiyonel)
-- 📝 `scripts/seed-recipes.ts` source sync — ~90 DB değişikliği source'a yansımadı (fresh deploy için)
-- 🌐 **Faz 3**: i18n aktivasyonu, review/rating sistemi, video entegrasyonu
-- 🔄 `src/lib/allergens.ts` ↔ `audit-deep.ts` tek kaynak refactor (opsiyonel)
+### Sıradaki
+- ⏳ **Codex batch 11** — kardeş Eren güncellenmiş docs ile 100 tarif yazacak (regional Türk zenginleştirme + smoothie/kahve + eksik mutfaklar)
+- ⏳ **Review sistemi ikinci iterasyon** — admin moderation (Report targetType=REVIEW handler), profil "Yorumlarım" section, REVIEW_POSTED notification, preflight moderation, dedicated unit/E2E test
+- ⏳ **Faz 3 devam**: i18n aktivasyonu (EN/DE), AI Asistan v2 ingredient synonym genişletme, video entegrasyonu
 
 ---
 

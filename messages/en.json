@@ -186,6 +186,74 @@
     "linkPrivacy": "Privacy Policy",
     "copyright": "© {year} {site}. All rights reserved."
   },
+  "similarRecipes": {
+    "title": "Similar recipes",
+    "subtitle": "Selected from the same category and tags"
+  },
+  "variations": {
+    "loginCta": "Sign in to add an adaptation",
+    "openButton": "+ Add Adaptation",
+    "successPublished": "Your adaptation has been added!",
+    "successPending": "Your adaptation has been received and will be reviewed by our team. Once approved, it will be added to the recipe and you'll be notified.",
+    "anonymousAuthor": "anonymous",
+    "form": {
+      "title": "Add Adaptation",
+      "cancel": "Cancel",
+      "miniTitleLabel": "Title *",
+      "miniTitlePlaceholder": "e.g. Oven version, Vegan alternative...",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "A short description (optional)",
+      "descriptionMaxNote": "Max. 300 characters.",
+      "ingredientsLabel": "Ingredients",
+      "ingredientsRequired": "*",
+      "ingredientsHelp": "Enter quantity, unit and name in separate fields for each ingredient. If no unit is needed, leave \"— unit —\" selected.",
+      "stepsLabel": "Instructions *",
+      "stepsLabelHint": "(one step per line)",
+      "stepsPlaceholder": "Cut the eggplants lengthwise in half\nScoop out the inside with a spoon\nBake at 180°C for 20 min",
+      "notesLabel": "Notes",
+      "notesPlaceholder": "Tips or extra info (optional)",
+      "submit": "Add Adaptation",
+      "submitting": "Adding...",
+      "errorDefault": "Something went wrong."
+    },
+    "card": {
+      "metaSummary": "{ingredients} ingredients · {steps} steps",
+      "expandedIngredientsLabel": "Ingredients",
+      "expandedStepsLabel": "Instructions",
+      "expandedNotesLabel": "Notes",
+      "hideAction": "Hide",
+      "hidingAction": "Hiding…",
+      "hidePromptLabel": "Optional: note the hide reason (notified to author).",
+      "hideTitleAttr": "Hide this adaptation (moderation only)",
+      "errorDefault": "Operation failed."
+    }
+  },
+  "likes": {
+    "countAria": "{n} likes",
+    "likeAria": "Like",
+    "unlikeAria": "Unlike"
+  },
+  "reports": {
+    "buttonAriaVariation": "Report this adaptation",
+    "buttonAriaReview": "Report this review",
+    "buttonTitle": "Report",
+    "formTitle": "Report",
+    "cancel": "Cancel",
+    "successBadge": "Reported",
+    "errorDefault": "Something went wrong.",
+    "submit": "Submit Report",
+    "submitting": "Submitting...",
+    "selectAria": "Report reason",
+    "selectPlaceholder": "Choose a reason...",
+    "descriptionPlaceholder": "Description (optional)",
+    "reasons": {
+      "SPAM": "Spam / Ads",
+      "PROFANITY": "Inappropriate language",
+      "MISLEADING": "Misleading info",
+      "HARMFUL": "Harmful content",
+      "OTHER": "Other"
+    }
+  },
   "reviews": {
     "sectionTitle": "Ratings & Reviews ({count})",
     "reviewCount": "{count} reviews",

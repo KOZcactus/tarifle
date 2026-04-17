@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { ReportButton } from "@/components/recipe/ReportButton";
 import { DeleteOwnVariationButton } from "@/components/recipe/DeleteOwnVariationButton";
 import { LikeButton } from "@/components/recipe/LikeButton";
@@ -35,15 +36,6 @@ interface VariationCardProps {
   recipeSlug: string;
 }
 
-/**
- * Variation list item. Collapsed by default — title + description + author +
- * like count + report button. Click anywhere on the summary row to expand
- * and reveal the full ingredient list, steps, and any author notes.
- *
- * Moderators get an inline "Gizle" button so they can pull bad content
- * without clicking through to the admin queue. The hidden state takes
- * effect on the next page render — `router.refresh` triggers it.
- */
 export function VariationCard({
   variation,
   isModerator,
@@ -52,13 +44,12 @@ export function VariationCard({
   recipeSlug,
 }: VariationCardProps) {
   const router = useRouter();
+  const t = useTranslations("variations");
+  const tCard = useTranslations("variations.card");
   const [isOpen, setIsOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
 
-  // Accept both the legacy `string[]` shape and the new
-  // `{amount, unit, name}[]` — normalise both into display strings so the
-  // accordion body doesn't care which format was stored.
   const ingredients = normaliseIngredients(variation.ingredients).map(
     formatIngredient,
   );
@@ -68,27 +59,21 @@ export function VariationCard({
 
   const handleHide = () => {
     setError(null);
-    const reason = window.prompt(
-      "İsteğe bağlı: gizleme sebebini not et (yazara bildirilir).",
-      "",
-    );
+    const reason = window.prompt(tCard("hidePromptLabel"), "");
     if (reason === null) return;
     startTransition(async () => {
       try {
         await hideVariation(variation.id, reason.trim() || undefined);
         router.refresh();
       } catch (e: unknown) {
-        setError(e instanceof Error ? e.message : "İşlem başarısız.");
+        setError(e instanceof Error ? e.message : tCard("errorDefault"));
       }
     });
   };
 
   return (
     <div className="overflow-hidden rounded-xl border border-border bg-bg-card">
-      {/* Header row — flex container. Sol taraf expand button, sağ taraf
-          LikeButton (interactive sibling). nested-interactive a11y kuralı
-          için button içinde button yapmıyoruz — LikeButton parent flex
-          row'un kardeşi. */}
+      {/* Header row */}
       <div className="flex items-start gap-4 px-5 py-4">
         <button
           type="button"
@@ -104,10 +89,13 @@ export function VariationCard({
             </p>
           )}
           <p className="mt-2 text-xs text-text-muted">
-            @{variation.author.username ?? "anonim"}
+            @{variation.author.username ?? t("anonymousAuthor")}
           </p>
           <p className="mt-2 flex items-center gap-1 text-xs text-text-muted">
-            {ingredients.length} malzeme · {steps.length} adım
+            {tCard("metaSummary", {
+              ingredients: ingredients.length,
+              steps: steps.length,
+            })}
             <span
               aria-hidden="true"
               className="inline-block transition-transform duration-200"
@@ -130,7 +118,7 @@ export function VariationCard({
         </div>
       </div>
 
-      {/* Expanded body — only mounted when open so closed cards stay light. */}
+      {/* Expanded body */}
       {isOpen && (
         <div
           id={`variation-${variation.id}-body`}
@@ -140,7 +128,7 @@ export function VariationCard({
             {ingredients.length > 0 && (
               <section>
                 <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-text-muted">
-                  Malzemeler
+                  {tCard("expandedIngredientsLabel")}
                 </h4>
                 <ul className="list-inside list-disc space-y-1 text-text">
                   {ingredients.map((ing, i) => (
@@ -153,7 +141,7 @@ export function VariationCard({
             {steps.length > 0 && (
               <section>
                 <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-text-muted">
-                  Yapılış
+                  {tCard("expandedStepsLabel")}
                 </h4>
                 <ol className="list-inside list-decimal space-y-1 text-text">
                   {steps.map((step, i) => (
@@ -166,16 +154,13 @@ export function VariationCard({
             {variation.notes && (
               <section>
                 <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-text-muted">
-                  Notlar
+                  {tCard("expandedNotesLabel")}
                 </h4>
                 <p className="whitespace-pre-line text-text">{variation.notes}</p>
               </section>
             )}
           </div>
 
-          {/* Action footer — only when expanded. Report+Gizle+Sil yalnizca
-              icerik aciklanmis durumda mantikli. Author'un "Sil"i moderator
-              "Gizle"sinden ayri bir aksiyon: hard delete vs soft-hide. */}
           <div className="mt-4 flex items-center justify-end gap-3 border-t border-border pt-3">
             {isOwnVariation && (
               <DeleteOwnVariationButton
@@ -189,9 +174,9 @@ export function VariationCard({
                 onClick={handleHide}
                 disabled={isPending}
                 className="text-xs font-medium text-error transition-colors hover:underline disabled:opacity-50"
-                title="Bu uyarlamayı gizle (sadece moderasyon)"
+                title={tCard("hideTitleAttr")}
               >
-                {isPending ? "Gizleniyor…" : "Gizle"}
+                {isPending ? tCard("hidingAction") : tCard("hideAction")}
               </button>
             )}
             {!isOwnVariation && <ReportButton targetType="VARIATION" targetId={variation.id} />}

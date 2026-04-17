@@ -3,33 +3,29 @@
 import { useCallback, useEffect, useState, useTransition } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { createReport } from "@/lib/actions/report";
 
 interface ReportButtonProps {
   targetType: "VARIATION" | "REVIEW";
   targetId: string;
-  /** Accessible label — defaults to variation wording for backward compat. */
+  /** Accessible label override — defaults to namespace-derived label. */
   label?: string;
 }
 
-const REASONS = [
-  { value: "SPAM", label: "Spam / Reklam" },
-  { value: "PROFANITY", label: "Uygunsuz dil" },
-  { value: "MISLEADING", label: "Yanıltıcı bilgi" },
-  { value: "HARMFUL", label: "Zararlı içerik" },
-  { value: "OTHER", label: "Diğer" },
-];
+const REASON_VALUES = ["SPAM", "PROFANITY", "MISLEADING", "HARMFUL", "OTHER"] as const;
 
 export function ReportButton({
   targetType,
   targetId,
   label,
 }: ReportButtonProps) {
+  const t = useTranslations("reports");
   const ariaLabel =
     label ??
     (targetType === "REVIEW"
-      ? "Bu yorumu rapor et"
-      : "Bu uyarlamayı rapor et");
+      ? t("buttonAriaReview")
+      : t("buttonAriaVariation"));
   const { data: session } = useSession();
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
@@ -50,7 +46,7 @@ export function ReportButton({
 
   if (success) {
     return (
-      <span className="text-xs text-accent-green">Raporlandı</span>
+      <span className="text-xs text-accent-green">{t("successBadge")}</span>
     );
   }
 
@@ -67,7 +63,7 @@ export function ReportButton({
         aria-label={ariaLabel}
         aria-expanded={isOpen}
         className="text-xs text-text-muted transition-colors hover:text-error focus-visible:text-error focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-error focus-visible:ring-offset-1 focus-visible:ring-offset-bg"
-        title="Rapor et"
+        title={t("buttonTitle")}
       >
         <FlagIcon />
       </button>
@@ -88,7 +84,7 @@ export function ReportButton({
         setSuccess(true);
         setIsOpen(false);
       } else {
-        setError(result.error || "Bir hata oluştu.");
+        setError(result.error || t("errorDefault"));
       }
     });
   }
@@ -96,12 +92,12 @@ export function ReportButton({
   return (
     <div className="mt-2 rounded-lg border border-border bg-bg p-3">
       <div className="mb-2 flex items-center justify-between">
-        <span className="text-xs font-medium text-text">Rapor Et</span>
+        <span className="text-xs font-medium text-text">{t("formTitle")}</span>
         <button
           onClick={() => setIsOpen(false)}
           className="text-xs text-text-muted hover:text-text"
         >
-          İptal
+          {t("cancel")}
         </button>
       </div>
 
@@ -114,13 +110,15 @@ export function ReportButton({
           name="reason"
           required
           autoFocus
-          aria-label="Rapor sebebi"
+          aria-label={t("selectAria")}
           className="w-full rounded-lg border border-border bg-bg px-3 py-2 text-xs text-text focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
           defaultValue=""
         >
-          <option value="" disabled>Sebep seçin...</option>
-          {REASONS.map((r) => (
-            <option key={r.value} value={r.value}>{r.label}</option>
+          <option value="" disabled>{t("selectPlaceholder")}</option>
+          {REASON_VALUES.map((value) => (
+            <option key={value} value={value}>
+              {t(`reasons.${value}`)}
+            </option>
           ))}
         </select>
 
@@ -129,7 +127,7 @@ export function ReportButton({
           rows={2}
           maxLength={500}
           className="w-full rounded-lg border border-border bg-bg px-3 py-2 text-xs text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-          placeholder="Açıklama (isteğe bağlı)"
+          placeholder={t("descriptionPlaceholder")}
         />
 
         <button
@@ -137,7 +135,7 @@ export function ReportButton({
           disabled={isPending}
           className="w-full rounded-lg bg-error px-3 py-2 text-xs font-medium text-white transition-colors hover:bg-error/90 disabled:opacity-50"
         >
-          {isPending ? "Gönderiliyor..." : "Raporu Gönder"}
+          {isPending ? t("submitting") : t("submit")}
         </button>
       </form>
     </div>

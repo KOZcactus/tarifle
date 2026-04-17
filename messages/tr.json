@@ -186,6 +186,74 @@
     "linkPrivacy": "Gizlilik Politikası",
     "copyright": "© {year} {site}. Tüm hakları saklıdır."
   },
+  "similarRecipes": {
+    "title": "Benzer tarifler",
+    "subtitle": "Aynı kategoriden ve etiketlerden seçildi"
+  },
+  "variations": {
+    "loginCta": "Uyarlama eklemek için giriş yap",
+    "openButton": "+ Uyarlama Ekle",
+    "successPublished": "Uyarlamanız eklendi!",
+    "successPending": "Uyarlaman alındı ve ekibimiz tarafından gözden geçirilecek. Onaylandığında tarife eklenecek ve sana bildirim geleceğiz.",
+    "anonymousAuthor": "anonim",
+    "form": {
+      "title": "Uyarlama Ekle",
+      "cancel": "İptal",
+      "miniTitleLabel": "Başlık *",
+      "miniTitlePlaceholder": "ör: Fırında versiyonu, Vegan alternatif...",
+      "descriptionLabel": "Açıklama",
+      "descriptionPlaceholder": "Kısa bir açıklama (isteğe bağlı)",
+      "descriptionMaxNote": "Maks. 300 karakter.",
+      "ingredientsLabel": "Malzemeler",
+      "ingredientsRequired": "*",
+      "ingredientsHelp": "Her malzeme için miktar, birim ve adı ayrı alanlara. Birim gerekmiyorsa \"— birim —\" seçili kalabilir.",
+      "stepsLabel": "Yapılış Adımları *",
+      "stepsLabelHint": "(her satıra bir adım)",
+      "stepsPlaceholder": "Patlıcanları boyuna ikiye kesin\nİç kısmını kaşıkla oyun\nFırında 180°C'de 20 dk pişirin",
+      "notesLabel": "Notlar",
+      "notesPlaceholder": "Püf noktası veya ekstra bilgi (isteğe bağlı)",
+      "submit": "Uyarlamayı Ekle",
+      "submitting": "Ekleniyor...",
+      "errorDefault": "Bir hata oluştu."
+    },
+    "card": {
+      "metaSummary": "{ingredients} malzeme · {steps} adım",
+      "expandedIngredientsLabel": "Malzemeler",
+      "expandedStepsLabel": "Yapılış",
+      "expandedNotesLabel": "Notlar",
+      "hideAction": "Gizle",
+      "hidingAction": "Gizleniyor…",
+      "hidePromptLabel": "İsteğe bağlı: gizleme sebebini not et (yazara bildirilir).",
+      "hideTitleAttr": "Bu uyarlamayı gizle (sadece moderasyon)",
+      "errorDefault": "İşlem başarısız."
+    }
+  },
+  "likes": {
+    "countAria": "{n} beğeni",
+    "likeAria": "Beğen",
+    "unlikeAria": "Beğeniyi geri al"
+  },
+  "reports": {
+    "buttonAriaVariation": "Bu uyarlamayı rapor et",
+    "buttonAriaReview": "Bu yorumu rapor et",
+    "buttonTitle": "Rapor et",
+    "formTitle": "Rapor Et",
+    "cancel": "İptal",
+    "successBadge": "Raporlandı",
+    "errorDefault": "Bir hata oluştu.",
+    "submit": "Raporu Gönder",
+    "submitting": "Gönderiliyor...",
+    "selectAria": "Rapor sebebi",
+    "selectPlaceholder": "Sebep seçin...",
+    "descriptionPlaceholder": "Açıklama (isteğe bağlı)",
+    "reasons": {
+      "SPAM": "Spam / Reklam",
+      "PROFANITY": "Uygunsuz dil",
+      "MISLEADING": "Yanıltıcı bilgi",
+      "HARMFUL": "Zararlı içerik",
+      "OTHER": "Diğer"
+    }
+  },
   "reviews": {
     "sectionTitle": "Yıldız & Yorumlar ({count})",
     "reviewCount": "{count} yorum",

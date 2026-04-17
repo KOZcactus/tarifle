@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState, useTransition } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { createVariation } from "@/lib/actions/variation";
 import { IngredientRowsInput } from "@/components/recipe/IngredientRowsInput";
 
@@ -14,12 +15,11 @@ interface VariationFormProps {
 export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
   const { data: session } = useSession();
   const router = useRouter();
+  const t = useTranslations("variations");
+  const tForm = useTranslations("variations.form");
   const [isOpen, setIsOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
-  // When pre-flight heuristics flag the submission the server saves it as
-  // PENDING_REVIEW. We show a different success panel so the user knows it
-  // isn't live yet — silent "published" would be misleading.
   const [pendingReview, setPendingReview] = useState(false);
   const [isPending, startTransition] = useTransition();
 
@@ -28,9 +28,6 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
   useEffect(() => {
     if (!isOpen) return;
     const handler = (e: KeyboardEvent) => {
-      // Don't steal Escape when the user is typing in a textarea/input —
-      // some browsers open inline IMEs or spellcheck menus on Escape. Only
-      // close when focus is outside inputs.
       const target = e.target as HTMLElement | null;
       const tag = target?.tagName;
       if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
@@ -46,7 +43,7 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
         onClick={() => router.push("/giris")}
         className="rounded-lg border border-dashed border-border px-4 py-2 text-sm text-text-muted transition-colors hover:border-primary hover:text-primary"
       >
-        Uyarlama eklemek için giriş yap
+        {t("loginCta")}
       </button>
     );
   }
@@ -54,12 +51,11 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
   if (success) {
     return pendingReview ? (
       <div className="rounded-lg bg-accent-blue/10 px-4 py-3 text-sm text-accent-blue">
-        Uyarlaman alındı ve ekibimiz tarafından gözden geçirilecek. Onaylandığında
-        tarife eklenecek ve sana bildirim geleceğiz.
+        {t("successPending")}
       </div>
     ) : (
       <div className="rounded-lg bg-accent-green/10 px-4 py-3 text-sm text-accent-green">
-        Uyarlamanız eklendi!
+        {t("successPublished")}
       </div>
     );
   }
@@ -70,7 +66,7 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
         onClick={() => setIsOpen(true)}
         className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-hover"
       >
-        + Uyarlama Ekle
+        {t("openButton")}
       </button>
     );
   }
@@ -90,7 +86,7 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
         setSuccess(true);
         setIsOpen(false);
       } else {
-        setError(result.error || "Bir hata oluştu.");
+        setError(result.error || tForm("errorDefault"));
       }
     });
   }
@@ -98,12 +94,12 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
   return (
     <div className="rounded-xl border border-border bg-bg-card p-5">
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="font-heading text-lg font-semibold text-text">Uyarlama Ekle</h3>
+        <h3 className="font-heading text-lg font-semibold text-text">{tForm("title")}</h3>
         <button
           onClick={() => setIsOpen(false)}
           className="text-sm text-text-muted hover:text-text"
         >
-          İptal
+          {tForm("cancel")}
         </button>
       </div>
 
@@ -114,7 +110,7 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
 
         <div>
           <label htmlFor="miniTitle" className="mb-1.5 block text-sm font-medium text-text">
-            Başlık *
+            {tForm("miniTitleLabel")}
           </label>
           <input
             id="miniTitle"
@@ -124,13 +120,13 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
             autoFocus
             maxLength={200}
             className="w-full rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-            placeholder="ör: Fırında versiyonu, Vegan alternatif..."
+            placeholder={tForm("miniTitlePlaceholder")}
           />
         </div>
 
         <div>
           <label htmlFor="description" className="mb-1.5 block text-sm font-medium text-text">
-            Açıklama
+            {tForm("descriptionLabel")}
           </label>
           <input
             id="description"
@@ -138,25 +134,23 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
             type="text"
             maxLength={300}
             className="w-full rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-            placeholder="Kısa bir açıklama (isteğe bağlı)"
+            placeholder={tForm("descriptionPlaceholder")}
           />
-          <p className="mt-1 text-xs text-text-muted">Maks. 300 karakter.</p>
+          <p className="mt-1 text-xs text-text-muted">{tForm("descriptionMaxNote")}</p>
         </div>
 
         <div>
           <p className="mb-1.5 block text-sm font-medium text-text">
-            Malzemeler <span className="text-text-muted">*</span>
+            {tForm("ingredientsLabel")} <span className="text-text-muted">{tForm("ingredientsRequired")}</span>
           </p>
-          <p className="mb-2 text-xs text-text-muted">
-            Her malzeme için miktar, birim ve adı ayrı alanlara. Birim
-            gerekmiyorsa &ldquo;— birim —&rdquo; seçili kalabilir.
-          </p>
+          <p className="mb-2 text-xs text-text-muted">{tForm("ingredientsHelp")}</p>
           <IngredientRowsInput name="ingredients" />
         </div>
 
         <div>
           <label htmlFor="steps" className="mb-1.5 block text-sm font-medium text-text">
-            Yapılış Adımları * <span className="font-normal text-text-muted">(her satıra bir adım)</span>
+            {tForm("stepsLabel")}{" "}
+            <span className="font-normal text-text-muted">{tForm("stepsLabelHint")}</span>
           </label>
           <textarea
             id="steps"
@@ -165,13 +159,13 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
             rows={4}
             maxLength={15000}
             className="w-full rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-            placeholder={"Patlıcanları boyuna ikiye kesin\nİç kısmını kaşıkla oyun\nFırında 180°C'de 20 dk pişirin"}
+            placeholder={tForm("stepsPlaceholder")}
           />
         </div>
 
         <div>
           <label htmlFor="notes" className="mb-1.5 block text-sm font-medium text-text">
-            Notlar
+            {tForm("notesLabel")}
           </label>
           <textarea
             id="notes"
@@ -179,7 +173,7 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
             rows={2}
             maxLength={500}
             className="w-full rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-            placeholder="Püf noktası veya ekstra bilgi (isteğe bağlı)"
+            placeholder={tForm("notesPlaceholder")}
           />
         </div>
 
@@ -188,7 +182,7 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
           disabled={isPending}
           className="w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-hover disabled:opacity-50"
         >
-          {isPending ? "Ekleniyor..." : "Uyarlamayı Ekle"}
+          {isPending ? tForm("submitting") : tForm("submit")}
         </button>
       </form>
     </div>

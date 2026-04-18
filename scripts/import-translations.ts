@@ -74,6 +74,21 @@ const translationItemSchema = z.object({
 
 const translationsFileSchema = z.array(translationItemSchema);
 
+/** Locale-specific aliases accepted as equivalent to the TR proper name.
+ *  Example: "Pilav" is globally written "Pilaf" (EN) or "Pilaw" (DE) — both
+ *  are acceptable and keep the dish recognisable. Only list aliases when the
+ *  Latin-alphabet equivalent is genuinely standard in the target language;
+ *  otherwise keep the TR form. */
+const PROTECTED_ALIAS: Record<string, { en?: string[]; de?: string[] }> = {
+  // "Pilav" is globally "Pilaf" (EN) / "Pilaw" (DE). In cuisine-specific
+  // contexts (Chinese "fried rice", Japanese "rice bowl"), "Rice"/"Reis" is
+  // the standard rendering and still conveys the pilav identity, so we
+  // accept it too.
+  Pilav: { en: ["Pilaf", "Rice"], de: ["Pilaw", "Pilaf", "Reis"] },
+  Humus: { en: ["Hummus"], de: ["Hummus"] },
+  Yoğurt: { en: ["Yogurt", "Yoghurt"], de: ["Joghurt"] },
+};
+
 /** Titles that MUST NOT be translated away — the TR proper name has to show
  *  up somewhere in the EN/DE title. Keeps "Adana Kebap" from becoming
  *  "Spicy Meat Skewer". Covers the highest-risk proper names; additional
@@ -150,14 +165,18 @@ function qualityCheck(
   const findings: QualityFinding[] = [];
 
   // TR slug-based proper name guard — if the TR title contains a protected
-  // token, the EN and DE titles must contain it too (case-insensitive match).
+  // token, the EN and DE titles must contain it (or a locale-appropriate
+  // alias, e.g. "Pilav" → "Pilaf"/"Pilaw"). Case-insensitive match.
   const titleTokens = PROTECTED_TR_TOKENS.filter((t) =>
     trTitle.toLocaleLowerCase("tr").includes(t.toLocaleLowerCase("tr")),
   );
+  const hasLocaleForm = (localeTitle: string, token: string, locale: "en" | "de"): boolean => {
+    const accepted = [token, ...(PROTECTED_ALIAS[token]?.[locale] ?? [])];
+    const lower = localeTitle.toLocaleLowerCase();
+    return accepted.some((alias) => lower.includes(alias.toLocaleLowerCase()));
+  };
   for (const token of titleTokens) {
-    const enHas = item.en.title.toLocaleLowerCase().includes(token.toLocaleLowerCase());
-    const deHas = item.de.title.toLocaleLowerCase().includes(token.toLocaleLowerCase());
-    if (!enHas) {
+    if (!hasLocaleForm(item.en.title, token, "en")) {
       findings.push({
         slug: item.slug,
         severity: "CRITICAL",
@@ -165,7 +184,7 @@ function qualityCheck(
         detail: `EN title "${item.en.title}" lost TR proper name "${token}"`,
       });
     }
-    if (!deHas) {
+    if (!hasLocaleForm(item.de.title, token, "de")) {
       findings.push({
         slug: item.slug,
         severity: "CRITICAL",
@@ -193,15 +212,23 @@ function qualityCheck(
     });
   }
 
-  // Banned placeholder patterns
-  const BANNED_PATTERNS = [
-    /^a (delicious|traditional|tasty|wonderful) /i,
-    /^a turkish (dish|recipe|food)$/i,
+  // Banned placeholder patterns. Two tiers:
+  //   - "hard" patterns (opener fully-generic) → CRITICAL always. Short,
+  //     information-dense descriptions are fine; what we're blocking is the
+  //     "A Turkish dish." / "Delicious and healthy recipe." tier.
+  //   - "soft" opener patterns ("A traditional X …") → CRITICAL only when
+  //     the description stays thin (<80 chars). A long description that
+  //     happens to start with "A traditional" but then includes specifics is
+  //     fine — Codex already did the work.
+  const HARD_BANNED = [
+    /^a turkish (dish|recipe|food)\s*\.?$/i,
+    /^a (delicious|tasty|wonderful) (turkish|recipe|dish)\b/i,
     /\bdelicious and healthy\b/i,
     /\bmust[- ]try\b/i,
     /\btraditional recipe\b/i,
   ];
-  for (const p of BANNED_PATTERNS) {
+  const SOFT_OPENER = /^a (traditional|classic|simple|quick) /i;
+  for (const p of HARD_BANNED) {
     if (p.test(item.en.description)) {
       findings.push({
         slug: item.slug,
@@ -210,6 +237,17 @@ function qualityCheck(
         detail: `EN description matches banned pattern: ${p.source}`,
       });
     }
+  }
+  if (
+    SOFT_OPENER.test(item.en.description) &&
+    item.en.description.length < 80
+  ) {
+    findings.push({
+      slug: item.slug,
+      severity: "CRITICAL",
+      type: "placeholder-prose",
+      detail: `EN description starts with a generic opener ("A traditional/classic/…") and stays thin (${item.en.description.length} chars). Needs more specifics.`,
+    });
   }
 
   // Issues from Codex are surfaced as INFO so Kerem sees them during review

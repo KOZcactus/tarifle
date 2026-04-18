@@ -1,5 +1,7 @@
+import { getLocale } from "next-intl/server";
 import { prisma } from "@/lib/prisma";
 import type { Difficulty, RecipeType } from "@prisma/client";
+import { DEFAULT_LOCALE, isValidLocale } from "@/i18n/config";
 import {
   buildCuratorNote,
   pickDailyIntro,
@@ -102,9 +104,12 @@ export async function getRecipeOfTheDay(
   });
   if (!recipe) return null;
 
+  const rawLocale = await getLocale();
+  const locale = isValidLocale(rawLocale) ? rawLocale : DEFAULT_LOCALE;
+
   return {
     recipe,
-    intro: pickDailyIntro(seed),
+    intro: pickDailyIntro(seed, locale),
     curatorNote: buildCuratorNote(
       {
         type: recipe.type,
@@ -115,6 +120,7 @@ export async function getRecipeOfTheDay(
         variationCount: recipe._count.variations,
       },
       seed,
+      locale,
     ),
     seed,
   };

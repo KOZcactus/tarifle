@@ -134,6 +134,68 @@
       "homeLinkShort": "Home"
     }
   },
+  "dailyRecipe": {
+    "intros": [
+      "Our pick for today",
+      "You might want to try this today",
+      "This is on our mind today",
+      "Today's suggestion",
+      "Shall we try this in the kitchen today?"
+    ],
+    "rules": {
+      "tatli": [
+        "Kills a sweet craving, and does the job when guests drop by.",
+        "Nobody can resist the smell of a homemade dessert."
+      ],
+      "kokteyl": [
+        "When the weekend rolls in, get the glasses ready.",
+        "Too much effort for a quiet night — just right for a real celebration."
+      ],
+      "corba": [
+        "A warming start — medicine on a cold day.",
+        "One spoonful takes the edge off the day."
+      ],
+      "salata": [
+        "A fresh touch for the table — light and still satisfying.",
+        "Not a side dish — the kind of salad that earns main-character energy."
+      ],
+      "kahvalti": [
+        "Made for a leisurely Sunday breakfast.",
+        "Lifts the morning mood in just a few minutes."
+      ],
+      "atistirmalik": [
+        "Small but effective — movie night or a surprise guest."
+      ],
+      "hard": [
+        "Takes patience, but the result is genuinely impressive.",
+        "Treat it as a weekend project — the table will reward you."
+      ],
+      "quick": [
+        "Practical and easy — a friend on tired days.",
+        "A filling option that doesn't even take half an hour."
+      ],
+      "veryQuick": [
+        "On the table in 20 minutes — fast, not careless.",
+        "The first thing that comes to mind when you want something quick."
+      ],
+      "light": [
+        "For those keeping it light — without cutting back on flavour.",
+        "Low-calorie but genuinely satisfying."
+      ],
+      "hearty": [
+        "Filling and nourishing — it won't leave you hungry.",
+        "A well-earned dinner at the end of a long day."
+      ],
+      "popularVariations": [
+        "A recipe the community has tried and made their own.",
+        "See how many variations it has — check the adaptations tab."
+      ],
+      "featured": [
+        "An editor's favourite — simple but memorable."
+      ]
+    },
+    "fallback": "Worth a try."
+  },
   "aiCommentary": {
     "typeLabels": {
       "YEMEK": "main dish",

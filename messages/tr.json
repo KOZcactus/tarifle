@@ -134,6 +134,68 @@
       "homeLinkShort": "Ana sayfa"
     }
   },
+  "dailyRecipe": {
+    "intros": [
+      "Bugün için seçimimiz",
+      "Bugün belki bunu denemek istersin",
+      "Aklımızda bugün için bu tarif var",
+      "Bugünün önerisi",
+      "Bugün mutfakta şunu denesek?"
+    ],
+    "rules": {
+      "tatli": [
+        "Tatlı krizini bastırır, misafir gelirse de iş görür.",
+        "Ev yapımı tatlı kokusuna karşı koyulmaz."
+      ],
+      "kokteyl": [
+        "Hafta sonu geldiğinde bardakları hazırla.",
+        "Küçük bir kutlama için fazla emek, büyük bir an için tam kıvamında."
+      ],
+      "corba": [
+        "Sıcacık bir başlangıç, soğuk günlerde ilaç gibi.",
+        "Günün stresini bir kaşık çorbayla alıp gidiyor."
+      ],
+      "salata": [
+        "Sofraya taze bir dokunuş, hem hafif hem doyurucu.",
+        "Yan yemek değil, ana yıldız olacak türden bir salata."
+      ],
+      "kahvalti": [
+        "Pazar kahvaltısı için biçilmiş kaftan.",
+        "Sabahın keyfini birkaç dakikada yükseltir."
+      ],
+      "atistirmalik": [
+        "Ufak ama etkili — film akşamı veya beklenmedik misafir."
+      ],
+      "hard": [
+        "Sabır ister ama sonuç tek kelimeyle etkileyici.",
+        "Bir hafta sonu projesi gibi düşün — sofrada karşılığını alırsın."
+      ],
+      "quick": [
+        "Pratik ve kolay — yorgun günlerin dostu.",
+        "Yarım saate kalmayan, doyurucu bir seçenek."
+      ],
+      "veryQuick": [
+        "20 dakikada sofrada — hızlı ama özensiz değil.",
+        "Çabuk bir şeyler yapmak istediğinde ilk akla gelen."
+      ],
+      "light": [
+        "Hafif kalmak isteyenlere — tadından ödün vermeden.",
+        "Düşük kalorili ama tatmin edici bir seçenek."
+      ],
+      "hearty": [
+        "Doyurucu ve besleyici — açlık bırakmaz.",
+        "Uzun bir günün sonunda hak edilmiş bir yemek."
+      ],
+      "popularVariations": [
+        "Topluluğun denediği, kendi uyarlamalarını eklediği bir tarif.",
+        "Kaç farklı yorumunun olduğunu gör — uyarlama sayfasına göz at."
+      ],
+      "featured": [
+        "Editör favorisi — sade ama akılda kalıcı bir lezzet."
+      ]
+    },
+    "fallback": "Denemeye değer."
+  },
   "aiCommentary": {
     "typeLabels": {
       "YEMEK": "yemek",

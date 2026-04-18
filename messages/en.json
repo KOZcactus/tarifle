@@ -1456,7 +1456,8 @@
     "pagination": {
       "previous": "← Previous",
       "next": "Next →",
-      "aria": "Pagination"
+      "aria": "Pagination",
+      "showing": "Showing {from}–{to} of {total} recipes"
     },
     "listAria": "Recipe list",
     "categorySrHeader": "{category} recipes",

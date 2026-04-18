@@ -282,6 +282,8 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
               totalPages={totalPages}
               searchParams={params}
               t={t}
+              totalItems={total}
+              pageSize={ITEMS_PER_PAGE}
             />
           )}
         </>

@@ -1456,7 +1456,8 @@
     "pagination": {
       "previous": "← Önceki",
       "next": "Sonraki →",
-      "aria": "Sayfalama"
+      "aria": "Sayfalama",
+      "showing": "Gösteriliyor: {from}–{to} / toplam {total} tarif"
     },
     "listAria": "Tarif listesi",
     "categorySrHeader": "{category} tarifleri",

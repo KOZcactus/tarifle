@@ -5,6 +5,10 @@ import Link from "next/link";
  *  the current `searchParams`, stripping `page`, and appending `?page=N`
  *  to `basePath`. The visible window caps at 5 numbered pages with
  *  leading/trailing "…" ellipses that link to the first/last page.
+ *
+ *  Optional `totalItems` + `pageSize` props render a "Gösteriliyor X–Y /
+ *  toplam Z" counter above the nav — lets the user see where they are in
+ *  a long catalog (e.g. 126 tatlı / 11 sayfa).
  */
 
 type PaginationTranslator = (
@@ -18,6 +22,11 @@ interface PaginationProps {
   totalPages: number;
   searchParams: Record<string, string | string[] | undefined>;
   t: PaginationTranslator;
+  /** Total matching recipes (unpaginated). When provided with `pageSize`
+   *  enables the "showing X–Y of Z" counter above the nav. */
+  totalItems?: number;
+  /** Items per page — must match the `limit` passed to getRecipes(). */
+  pageSize?: number;
 }
 
 export function Pagination({
@@ -26,6 +35,8 @@ export function Pagination({
   totalPages,
   searchParams,
   t,
+  totalItems,
+  pageSize,
 }: PaginationProps) {
   function buildPageUrl(page: number): string {
     const params = new URLSearchParams();
@@ -53,11 +64,25 @@ export function Pagination({
     pages.push(i);
   }
 
+  // Counter "X–Y / Z" — only shown when caller supplies totalItems + pageSize.
+  let counterText: string | null = null;
+  if (typeof totalItems === "number" && typeof pageSize === "number" && totalItems > 0) {
+    const from = (currentPage - 1) * pageSize + 1;
+    const to = Math.min(currentPage * pageSize, totalItems);
+    counterText = t("pagination.showing", { from, to, total: totalItems });
+  }
+
   return (
-    <nav
-      className="mt-12 flex flex-wrap items-center justify-center gap-2"
-      aria-label={t("pagination.aria")}
-    >
+    <div className="mt-12 flex flex-col items-center gap-3">
+      {counterText && (
+        <p className="text-xs text-text-muted" aria-live="polite">
+          {counterText}
+        </p>
+      )}
+      <nav
+        className="flex flex-wrap items-center justify-center gap-2"
+        aria-label={t("pagination.aria")}
+      >
       {currentPage > 1 && (
         <Link
           href={buildPageUrl(currentPage - 1)}
@@ -116,6 +141,7 @@ export function Pagination({
           {t("pagination.next")}
         </Link>
       )}
-    </nav>
+      </nav>
+    </div>
   );
 }

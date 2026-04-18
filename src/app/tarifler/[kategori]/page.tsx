@@ -25,10 +25,20 @@ interface KategoriPageProps {
   }>;
 }
 
-export async function generateMetadata({ params }: KategoriPageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+  searchParams,
+}: KategoriPageProps): Promise<Metadata> {
   const { kategori } = await params;
+  const sp = await searchParams;
   const category = await getCategoryBySlug(kategori);
   if (!category) return { title: "Kategori Bulunamadı" };
+
+  // Page 2+ sayfalarını indekslemeyelim — Google duplicate content kaygısını
+  // düşürür, canonical tek sayfa kategori landing'inde kalır. Page 1 ise
+  // indekslenebilir (canonical zaten /tarifler/[kategori]'ye eş).
+  const pageNum = parseInt(sp.page ?? "1", 10) || 1;
+  const isPaginated = pageNum > 1;
 
   return {
     title: `${category.name} Tarifleri`,
@@ -36,6 +46,7 @@ export async function generateMetadata({ params }: KategoriPageProps): Promise<M
     alternates: {
       canonical: `/tarifler/${kategori}`,
     },
+    robots: isPaginated ? { index: false, follow: true } : undefined,
   };
 }
 
@@ -209,6 +220,8 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
               totalPages={totalPages}
               searchParams={sp}
               t={t}
+              totalItems={total}
+              pageSize={ITEMS_PER_PAGE}
             />
           )}
         </>

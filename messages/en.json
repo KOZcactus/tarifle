@@ -279,7 +279,22 @@
       "A bit ambitious — try it when you have time.",
       "Needs some skill, but whoever sits at the table will notice."
     ],
-    "notesLongest": "Slow cooker — you can leave it on the stove."
+    "notesLongest": "Slow cooker — you can leave it on the stove.",
+    "pantryOnly": [
+      "{ctx}You've only listed pantry staples (salt, pepper, oil). Add a vegetable, protein, or grain and I'll surface real matches.",
+      "{ctx}These are all pantry items — add one real ingredient (say, tomato, chicken, or lentils) and the suggestions will click into place.",
+      "{ctx}Pantry-only input won't get us far. Throw in one non-staple ingredient and try again."
+    ],
+    "manyIngredients": [
+      "{ctx}You've loaded up the pantry — {count} recipes match. {title} is at the top.",
+      "{ctx}That's a generous pantry. {count} recipes fit, starting with {title}.",
+      "{ctx}With this much to work with, {count} recipes turn up — {title} leads the pack."
+    ],
+    "singleIngredient": [
+      "{ctx}Starting with just {ingredient}? {title} is the closest match.",
+      "{ctx}One ingredient to work with — {title} is your best bet.",
+      "{ctx}Just {ingredient}, nothing else? {title} gets you closest."
+    ]
   },
   "metadata": {
     "site": {

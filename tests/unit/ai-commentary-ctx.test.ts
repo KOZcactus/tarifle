@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { applyCtx, lowercaseFirstLetterForLocale } from "@/lib/ai/commentary";
+import { isPantryStaple } from "@/lib/ai/matcher";
 
 describe("lowercaseFirstLetterForLocale", () => {
   it("lowercases first letter in English", () => {
@@ -116,5 +117,63 @@ describe("applyCtx", () => {
     expect(result).toBe(
       "From Turkish cuisine, in soup category you can make 3 recipes exactly with what you have.",
     );
+  });
+});
+
+describe("commentary input classification (via isPantryStaple)", () => {
+  // The three new branches (pantryOnly/singleIngredient/manyIngredients)
+  // classify by filtering pantry staples. These tests pin the classifier
+  // boundaries used inside `buildOverallCommentary`.
+
+  const filterReal = (list: string[]) => list.filter((i) => !isPantryStaple(i));
+
+  it("treats an all-pantry list as onlyPantry", () => {
+    const input = ["tuz", "karabiber", "su", "zeytinyağı"];
+    expect(filterReal(input)).toHaveLength(0);
+  });
+
+  it("keeps a real vegetable alongside pantry staples", () => {
+    const input = ["tuz", "karabiber", "domates"];
+    const real = filterReal(input);
+    expect(real).toEqual(["domates"]);
+  });
+
+  it("classifies 1 real ingredient + pantry as single-ingredient", () => {
+    const input = ["tuz", "zeytinyağı", "tavuk"];
+    expect(filterReal(input)).toHaveLength(1);
+  });
+
+  it("classifies 15+ real ingredients as many-ingredient", () => {
+    // Pantry staples (biber/maydanoz/limon are part of PANTRY_STAPLES) get
+    // filtered out, so the non-pantry list has to hit 15 on its own.
+    const input = [
+      "tuz",
+      "zeytinyağı",
+      // 16 non-pantry
+      "domates",
+      "soğan",
+      "sarımsak",
+      "havuç",
+      "patates",
+      "nohut",
+      "mercimek",
+      "makarna",
+      "peynir",
+      "yumurta",
+      "tavuk",
+      "pirinç",
+      "salatalık",
+      "brokoli",
+      "kabak",
+      "ıspanak",
+    ];
+    expect(filterReal(input).length).toBeGreaterThanOrEqual(15);
+  });
+
+  it("does not treat a compound like 'su kabağı' as pantry (false-positive guard)", () => {
+    // This guards against the historical 'su' (water) vs 'su kabağı'
+    // (zucchini) confusion — the commentary classifier must not strip
+    // 'su kabağı' when the user typed that specifically.
+    expect(isPantryStaple("su kabağı")).toBe(false);
   });
 });

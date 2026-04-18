@@ -279,7 +279,22 @@
       "Biraz iddialı — vaktin varsa dene.",
       "Ustalık gerektirir, ancak masaya kim otursa fark eder."
     ],
-    "notesLongest": "Uzun pişer ama ocakta unutabilirsin."
+    "notesLongest": "Uzun pişer ama ocakta unutabilirsin.",
+    "pantryOnly": [
+      "{ctx}Yalnızca dolap malzemesi (tuz, biber, yağ) yazmışsın. Bir sebze, protein veya tahıl ekle, gerçek eşleşmeler çıksın.",
+      "{ctx}Hepsi temel malzeme — bir tane gerçek malzeme (domates, tavuk, mercimek gibi) ekle, öneriler anlam kazansın.",
+      "{ctx}Sadece temel malzemelerle uzağa gidemeyiz. Bir tane dolap dışı malzeme ekleyip tekrar dene."
+    ],
+    "manyIngredients": [
+      "{ctx}Dolabını tıka basa doldurmuşsun — {count} tarif eşleşiyor. Başta {title} var.",
+      "{ctx}Oldukça bereketli bir dolap. {count} tarif uyuyor, {title} ile başlıyorum.",
+      "{ctx}Elinde bu kadar malzeme varken {count} tarif çıkıyor — zirvede {title}."
+    ],
+    "singleIngredient": [
+      "{ctx}Sadece {ingredient} ile mi başlıyorsun? {title} en yakın eşleşme.",
+      "{ctx}Tek malzemeyle yola çıkmışsın — {title} en iyi seçenek.",
+      "{ctx}Sadece {ingredient}, başka yok mu? {title} en yakına düşüyor."
+    ]
   },
   "metadata": {
     "site": {

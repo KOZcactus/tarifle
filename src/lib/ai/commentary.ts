@@ -16,6 +16,15 @@
 import { getTranslations } from "next-intl/server";
 import type { AiSuggestion } from "./types";
 import { DEFAULT_LOCALE, type Locale } from "@/i18n/config";
+import { isPantryStaple } from "./matcher";
+
+/**
+ * A user with 15+ real ingredients has a well-stocked pantry — the tone
+ * shifts from "best-fit matching" to "you have plenty of options". The
+ * threshold is deliberately permissive; the real purpose is to light up
+ * the "packed pantry" variants for power users.
+ */
+const MANY_INGREDIENTS_THRESHOLD = 15;
 
 type Tns = Awaited<ReturnType<typeof getTranslations<"aiCommentary">>>;
 
@@ -143,6 +152,19 @@ export async function buildOverallCommentary(
     return Array.isArray(raw) ? (raw as string[]) : [];
   };
 
+  // Classify the user's ingredient input BEFORE dispatching on results —
+  // pantry-only / single / many variants speak to the input size itself
+  // and trump the per-result-count templates below.
+  const realIngredients = userIngredients.filter((ing) => !isPantryStaple(ing));
+  const onlyPantry = userIngredients.length > 0 && realIngredients.length === 0;
+  const isSingle = realIngredients.length === 1;
+  const isMany = realIngredients.length >= MANY_INGREDIENTS_THRESHOLD;
+
+  if (onlyPantry) {
+    const template = pick(rawVariant("pantryOnly"), seed);
+    return applyCtx(template, ctx, locale);
+  }
+
   if (results.length === 0) {
     const template = pick(rawVariant("empty"), seed);
     return applyCtx(template, ctx, locale).replace(
@@ -156,6 +178,20 @@ export async function buildOverallCommentary(
     (r) => r.missingIngredients.length > 0 && r.missingIngredients.length <= 2,
   );
   const top = results[0];
+
+  if (isMany) {
+    const template = pick(rawVariant("manyIngredients"), seed);
+    return applyCtx(template, ctx, locale)
+      .replace("{count}", String(results.length))
+      .replace("{title}", top.title);
+  }
+
+  if (isSingle) {
+    const template = pick(rawVariant("singleIngredient"), seed);
+    return applyCtx(template, ctx, locale)
+      .replace("{ingredient}", realIngredients[0])
+      .replace("{title}", top.title);
+  }
 
   if (perfect.length >= 3) {
     const template = pick(rawVariant("perfectMany"), seed);

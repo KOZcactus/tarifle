@@ -75,6 +75,22 @@ EN soft launch canlı (DE retrofit tamamlandı).
 - Prod DB erişimi, `.env.production.local` okuma
 - Mevcut tarifleri silme/değiştirme (append-only)
 
+### ⚠️ Dosya encoding — batch 12'de yakalandı, TEKRARLAMA
+`scripts/seed-recipes.ts` **her zaman UTF-8 (BOM yok) + LF satır sonu**
+olarak kaydedilmeli. Batch 12 teslim sırasında Windows-1252 → UTF-8
+round-trip ile **tüm dosya mojibake-korupt** geldi (ş→ÅŸ, ı→Ä±, emoji
+ðŸ¥© dahil batch 1-11 ANA KATALOGU bozulmuştu). Batch 12 eklentilerin
+temizdi çünkü sıfırdan yazmıştın — ama mevcut dosyayı okuyup kaydetme
+adımında encoding koruması yoktu.
+
+**Önleme:**
+- Editörde "Save with Encoding → UTF-8 (no BOM)" + "Line Endings → LF" seç
+- `file scripts/seed-recipes.ts` çıktısı `UTF-8 text` (BOM YOK) + teslim
+  öncesi kontrol et
+- Windows'tasan: VS Code alt-çubukta "UTF-8" + "LF" yazmalı (CRLF/UTF-8 BOM DEĞİL)
+- Şüphedeysen: **sadece batch N bölümünü ayrı bir `batch-N.txt` olarak teslim
+  et, Claude mevcut dosyaya append eder.** Mojibake riski sıfır olur.
+
 ---
 
 ## 4. Oturum modu
@@ -463,8 +479,8 @@ sahte geçme.**
 
 ## 9. Geçmişte yakalanmış hatalar — ASLA TEKRARLAMA
 
-Tarifle'nin batch 0-3 audit'inde şu hatalar yakalandı. Yeni oturumda bunları
-TEKRAR yapma:
+Tarifle'nin batch 0-3 + 11 + 12 audit'inde şu hatalar yakalandı. Yeni
+oturumda bunları TEKRAR yapma:
 
 | Kategori | Hata örneği | Neden yanlış | Doğrusu |
 |---|---|---|---|
@@ -476,7 +492,12 @@ TEKRAR yapma:
 | **Slug locative** | `firinda-baharatli-tofu-kupleri` | Türkçe locative `-da` eki slug'da var | `firin-baharatli-tofu-kupleri` (kök) |
 | **Özgün name kaybı** | `adana-kebap` EN title "Spicy Meat Skewer" | PROTECTED_TR_TOKENS ihlali — brand kaybı | "Adana Kebap" (TR birebir) |
 | **Tag yanlış** | `samsun-kaz-tiridi` tag `vejetaryen` | Kaz eti içerik, vejetaryen olamaz | Tag kaldırılmalı |
-| **Allergen eksik** | `sundubu-jjigae` susam yağı ingredient + SUSAM allergen yok | Cross-contamination riski | SUSAM eklenmeli |
+| **Allergen eksik (batch 0-3)** | `sundubu-jjigae` susam yağı ingredient + SUSAM allergen yok | Cross-contamination riski | SUSAM eklenmeli |
+| **Allergen eksik — Tereyağı→SUT (batch 11 ×5 + batch 12 ×8)** | `firik-pilavi`, `karalahana-corbasi`, `eriste-corbasi`, `yuksuk-corbasi`, `hamsili-pilav`, `nevzine`, `acik-agiz-boregi` vs. | Tereyağı dairy — SUT allergen zorunlu | `allergens: ["SUT", ...]` |
+| **Allergen eksik — İrmik→GLUTEN (batch 12 ×3)** | `irmik-helvasi`, `kabak-bastisi`, `hosmerim` | İrmik = buğday semolina | `allergens: ["GLUTEN", ...]` |
+| **Allergen eksik — Nişasta (generic) → GLUTEN** | `paluze-kilis`, `harire-tatlisi` | Generic "Nişasta" geleneksel olarak buğday nişastası (mısır/pirinç değilse belirt) | GLUTEN ekle VEYA ingredient adını "Mısır nişastası" yap |
+| **Allergen eksik — Ayran→SUT / Yumurta→YUMURTA / Ceviz→KUSUYEMIS / Susam→SUSAM (batch 12)** | `sembusek` (Ayran), `tandir-boregi` (Yumurta), `girit-ezmesi` (Ceviz), `biberli-ekmek` (Susam) | §5'teki ingredient-implied tablosunun mekanik uygulaması kaçtı | Her high-risk ingredient için tabloya bak |
+| **Vegan+dairy çelişkisi (batch 12)** | `karalahana-corbasi` tags `vegan` + ingredient Tereyağı | Vegan = süt/yumurta/bal YOK, Tereyağı dairy | `vejetaryen` (et yok ama dairy OK) |
 | **Missing ingredient** | `bun-bo-hue` step 1 "soğanla kaynatın" ama ingredients'te Soğan yok | Step-ingredient mismatch | Soğan eklenmeli |
 | **Generic description** | EN: "A delicious Turkish lentil soup" | 6 kelime, sıfır bilgi, placeholder prose | 100-150 char, 3 element |
 | **Soft opener + thin desc** | EN: "A traditional soup." <80 char | Generic + thin | >80 char + malzeme/bölge |
@@ -484,6 +505,22 @@ TEKRAR yapma:
 | **Calorie anomaly false positive** | `adacayli-elma-cayi` 24 kcal (çay için doğal) | Anomali değil, bitkisel çay düşük kalori beklenen | İssue flag ama legitimate |
 | **Reverse unused** | `sambousek` ingredients'te yoğurt var ama step'te kullanılmamış | Liste-step inconsistency | Issue flag, manual review |
 | **Slug/content mismatch** | `pulled-pork-sandvic` slug "pork" ama ingredient "dana döş" | TR adaptation ama slug yanıltıcı | Issue flag, Kerem karar |
+| **Dosya encoding (batch 12)** | `scripts/seed-recipes.ts` Windows-1252→UTF-8 mojibake (ş→ÅŸ, ı→Ä±, emoji ðŸ¥©) | Windows'ta editör CP1252 yorumuyla açıp UTF-8 save → double-encode | UTF-8 (BOM yok) + LF — §3 "Dosya encoding" bölümüne bak |
+
+**İkiz hata pattern (batch 11 + 12 tekrarı):** Allergen ingredient-implied
+tablosu §5'te yazılı ama her batch'te 8-16 legitimate allergen eksiği
+çıkıyor. Teslim öncesi her tarif için şu hızlı check:
+
+1. Ingredient listesinde **Tereyağı / yoğurt / peynir / süt / krema / kaşar / ayran / lor** var mı? → `SUT`
+2. **Un / bulgur / irmik / kadayıf / ekmek / börek / yufka / makarna / yulaf** var mı? → `GLUTEN`
+3. **Yumurta / mayonez** var mı? → `YUMURTA`
+4. **Ceviz / badem / fındık / Antep fıstığı / kaju / kestane** var mı? → `KUSUYEMIS`
+5. **Yer fıstığı / fıstık ezmesi** var mı? → `YER_FISTIGI` (KUSUYEMIS'ten AYRI)
+6. **Soya sosu / tofu / miso / edamame** var mı? → `SOYA`
+7. **Balık / somon / karides / midye / hamsi / ton** var mı? → `DENIZ_URUNLERI`
+8. **Susam / tahin / susam yağı** var mı? → `SUSAM`
+9. `vegan` tag yazdıysan: süt/yumurta/bal YOK mu? (Tereyağı varsa → `vejetaryen`)
+10. `vejetaryen` tag yazdıysan: et/balık YOK mu?
 
 **Altın kural:** "Türkçe isim + bölgesel açıklama
 (Kayseri/Hatay/Antep/Trabzon/Erzurum/Gaziantep/Karadeniz) varsa cuisine `tr`,

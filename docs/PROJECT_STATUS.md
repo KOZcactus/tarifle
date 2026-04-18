@@ -1,6 +1,6 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 18 Nisan 2026 (oturum 3) — pre-push lint hook + AI commentary EN polish + tarif çeviri batch 1+2 canlı (600 tarif, 800/1103 retrofit, %72) + content fix (53 cuisine + 24 ingredient) + migrate-prod wrapper + SEO meta i18n fix.
+> Son güncelleme: 18 Nisan 2026 (oturum 3) — pre-push lint hook + AI commentary EN polish + 3 yeni scenario + **batch 1+2+3 tamamlandı (1100/1100 retrofit, %100)** + content fix (90+ cuisine + 35 ingredient) + migrate-prod wrapper + SEO meta i18n + OG image i18n + taxonomy expansion (24 cuisine kodu). Prod promote path açık.
 
 ## 18 Nisan 2026 (oturum 3 — lint hook + commentary polish + batch 1)
 

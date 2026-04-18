@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import { useTranslations } from "next-intl";
 import { toggleBookmarkAction } from "@/lib/actions/bookmark";
 import {
   createCollectionAction,
@@ -36,6 +37,8 @@ export function SaveMenu({
 }: SaveMenuProps) {
   const { data: session } = useSession();
   const router = useRouter();
+  const t = useTranslations("save");
+  const tToast = useTranslations("save.toast");
 
   const [bookmarked, setBookmarked] = useState(initialBookmarked);
   const [collections, setCollections] = useState<CollectionSummary[]>(initialCollections);
@@ -77,11 +80,11 @@ export function SaveMenu({
       const result = await toggleBookmarkAction(recipeId);
       if (!result.success) {
         setBookmarked(prev);
-        setToast({ kind: "error", message: result.error ?? "Kaydedilemedi." });
+        setToast({ kind: "error", message: result.error ?? tToast("bookmarkError") });
       } else {
         setToast({
           kind: "success",
-          message: result.bookmarked ? "Tarif kaydedildi." : "Kayıtlardan çıkarıldı.",
+          message: result.bookmarked ? tToast("bookmarkSaved") : tToast("bookmarkRemoved"),
         });
       }
     });
@@ -92,20 +95,22 @@ export function SaveMenu({
     startTransition(async () => {
       const result = await addRecipeIngredientsAction(recipeId);
       if (!result.success) {
-        setToast({ kind: "error", message: result.error ?? "Eklenemedi." });
+        setToast({ kind: "error", message: result.error ?? tToast("shoppingError") });
         return;
       }
       const { added, merged } = result.data!;
       if (added === 0) {
         setToast({
           kind: "success",
-          message: "Tüm malzemeler zaten listede.",
+          message: tToast("shoppingAlreadyAll"),
         });
       } else {
-        const mergedLabel = merged > 0 ? ` (${merged} zaten vardı)` : "";
         setToast({
           kind: "success",
-          message: `${added} malzeme alışveriş listene eklendi${mergedLabel}.`,
+          message:
+            merged > 0
+              ? tToast("shoppingAddedWithMerged", { added, merged })
+              : tToast("shoppingAdded", { added }),
         });
       }
     });
@@ -147,7 +152,7 @@ export function SaveMenu({
               : c,
           ),
         );
-        setToast({ kind: "error", message: result.error ?? "Güncellenemedi." });
+        setToast({ kind: "error", message: result.error ?? tToast("collectionUpdateError") });
       }
     });
   }
@@ -157,7 +162,7 @@ export function SaveMenu({
     if (!requireAuth()) return;
     const name = newCollectionName.trim();
     if (name.length < 2) {
-      setToast({ kind: "error", message: "Ad en az 2 karakter olmalıdır." });
+      setToast({ kind: "error", message: tToast("nameTooShort") });
       return;
     }
 
@@ -166,7 +171,7 @@ export function SaveMenu({
       if (!createResult.success || !createResult.data) {
         setToast({
           kind: "error",
-          message: createResult.error ?? "Koleksiyon oluşturulamadı.",
+          message: createResult.error ?? tToast("collectionCreateError"),
         });
         return;
       }
@@ -174,7 +179,7 @@ export function SaveMenu({
       const newId = createResult.data.id;
       const addResult = await toggleRecipeInCollectionAction(newId, recipeId, true);
       if (!addResult.success) {
-        setToast({ kind: "error", message: addResult.error ?? "Tarif eklenemedi." });
+        setToast({ kind: "error", message: addResult.error ?? tToast("collectionAddError") });
         return;
       }
 
@@ -190,7 +195,7 @@ export function SaveMenu({
       ]);
       setNewCollectionName("");
       setIsCreating(false);
-      setToast({ kind: "success", message: `"${name}" koleksiyonuna eklendi.` });
+      setToast({ kind: "success", message: tToast("collectionAdded", { name }) });
     });
   }
 
@@ -219,7 +224,7 @@ export function SaveMenu({
         >
           <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
         </svg>
-        {bookmarked ? "Kaydedildi" : "Kaydet"}
+        {bookmarked ? t("savedButton") : t("saveButton")}
       </button>
 
       {/* Alışveriş listesine ekle */}
@@ -227,7 +232,7 @@ export function SaveMenu({
         onClick={handleAddToShoppingList}
         disabled={isPending || ingredientCount === 0}
         className="flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-text-muted transition-colors hover:border-accent-green hover:text-accent-green disabled:opacity-50"
-        title={`${ingredientCount} malzeme alışveriş listene eklenir`}
+        title={t("shoppingTitleAttr", { count: ingredientCount })}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -244,7 +249,7 @@ export function SaveMenu({
           <circle cx="19" cy="21" r="1" />
           <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
         </svg>
-        Listeye ekle
+        {t("shoppingButton")}
       </button>
 
       {/* Koleksiyon menüsü */}
@@ -272,7 +277,7 @@ export function SaveMenu({
           <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
           <path d="M9 6h6" />
         </svg>
-        Koleksiyon
+        {t("collectionsButton")}
         {collections.some((c) => c.hasRecipe) && (
           <span className="rounded-full bg-accent-blue/20 px-1.5 text-xs text-accent-blue">
             {collections.filter((c) => c.hasRecipe).length}
@@ -287,13 +292,13 @@ export function SaveMenu({
           className="absolute left-0 top-full z-20 mt-2 w-72 origin-top-left rounded-xl border border-border bg-bg-card p-2 shadow-lg"
         >
           <p className="px-2 py-1.5 text-xs font-medium uppercase tracking-wide text-text-muted">
-            Koleksiyonlarım
+            {t("collectionsHeader")}
           </p>
 
           <div className="max-h-64 overflow-y-auto">
             {collections.length === 0 ? (
               <p className="px-2 py-3 text-sm text-text-muted">
-                Henüz bir koleksiyonun yok.
+                {t("collectionsEmpty")}
               </p>
             ) : (
               collections.map((c) => (
@@ -347,7 +352,7 @@ export function SaveMenu({
                   type="text"
                   value={newCollectionName}
                   onChange={(e) => setNewCollectionName(e.target.value)}
-                  placeholder="Koleksiyon adı"
+                  placeholder={t("newCollectionPlaceholder")}
                   maxLength={100}
                   className="flex-1 rounded-md border border-border bg-bg-elevated px-2 py-1 text-sm outline-none focus:border-primary"
                 />
@@ -356,7 +361,7 @@ export function SaveMenu({
                   disabled={isPending}
                   className="rounded-md bg-primary px-3 py-1 text-xs font-medium text-white hover:bg-primary-hover"
                 >
-                  Ekle
+                  {t("newCollectionSubmit")}
                 </button>
               </form>
             ) : (
@@ -376,7 +381,7 @@ export function SaveMenu({
                 >
                   <path d="M12 5v14M5 12h14" />
                 </svg>
-                Yeni koleksiyon oluştur
+                {t("newCollectionButton")}
               </button>
             )}
           </div>

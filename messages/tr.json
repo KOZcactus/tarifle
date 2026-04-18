@@ -186,6 +186,32 @@
     "linkPrivacy": "Gizlilik Politikası",
     "copyright": "© {year} {site}. Tüm hakları saklıdır."
   },
+  "save": {
+    "saveButton": "Kaydet",
+    "savedButton": "Kaydedildi",
+    "shoppingButton": "Listeye ekle",
+    "shoppingTitleAttr": "{count} malzeme alışveriş listene eklenir",
+    "collectionsButton": "Koleksiyon",
+    "collectionsHeader": "Koleksiyonlarım",
+    "collectionsEmpty": "Henüz bir koleksiyonun yok.",
+    "newCollectionButton": "Yeni koleksiyon oluştur",
+    "newCollectionPlaceholder": "Koleksiyon adı",
+    "newCollectionSubmit": "Ekle",
+    "toast": {
+      "bookmarkSaved": "Tarif kaydedildi.",
+      "bookmarkRemoved": "Kayıtlardan çıkarıldı.",
+      "bookmarkError": "Kaydedilemedi.",
+      "shoppingAlreadyAll": "Tüm malzemeler zaten listede.",
+      "shoppingAdded": "{added} malzeme alışveriş listene eklendi.",
+      "shoppingAddedWithMerged": "{added} malzeme alışveriş listene eklendi ({merged} zaten vardı).",
+      "shoppingError": "Eklenemedi.",
+      "collectionUpdateError": "Güncellenemedi.",
+      "collectionAdded": "\"{name}\" koleksiyonuna eklendi.",
+      "collectionCreateError": "Koleksiyon oluşturulamadı.",
+      "collectionAddError": "Tarif eklenemedi.",
+      "nameTooShort": "Ad en az 2 karakter olmalıdır."
+    }
+  },
   "print": {
     "button": "Yazdır"
   },

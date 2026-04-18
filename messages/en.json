@@ -186,6 +186,32 @@
     "linkPrivacy": "Privacy Policy",
     "copyright": "© {year} {site}. All rights reserved."
   },
+  "save": {
+    "saveButton": "Save",
+    "savedButton": "Saved",
+    "shoppingButton": "Add to list",
+    "shoppingTitleAttr": "{count} ingredients will be added to your shopping list",
+    "collectionsButton": "Collection",
+    "collectionsHeader": "My Collections",
+    "collectionsEmpty": "You don't have any collections yet.",
+    "newCollectionButton": "Create new collection",
+    "newCollectionPlaceholder": "Collection name",
+    "newCollectionSubmit": "Add",
+    "toast": {
+      "bookmarkSaved": "Recipe saved.",
+      "bookmarkRemoved": "Removed from saved.",
+      "bookmarkError": "Could not save.",
+      "shoppingAlreadyAll": "All ingredients are already on the list.",
+      "shoppingAdded": "{added} ingredients added to your shopping list.",
+      "shoppingAddedWithMerged": "{added} ingredients added to your shopping list ({merged} already existed).",
+      "shoppingError": "Could not add.",
+      "collectionUpdateError": "Could not update.",
+      "collectionAdded": "Added to \"{name}\" collection.",
+      "collectionCreateError": "Could not create collection.",
+      "collectionAddError": "Could not add recipe.",
+      "nameTooShort": "Name must be at least 2 characters."
+    }
+  },
   "print": {
     "button": "Print"
   },

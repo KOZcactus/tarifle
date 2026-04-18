@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { getSiteStats } from "@/lib/queries/site-stats";
 
-export const metadata: Metadata = {
-  title: "Hakkımızda",
-  description: "Tarifle hakkında bilgi edinin.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("metadata.legal");
+  return { title: t("aboutTitle"), description: t("aboutDescription") };
+}
 
 // Saatlik revalidate — DB'ye her request'te sorgu gitmez
 export const revalidate = 3600;

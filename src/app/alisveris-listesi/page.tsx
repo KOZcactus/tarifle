@@ -6,10 +6,10 @@ import { auth } from "@/lib/auth";
 import { getShoppingListWithItems } from "@/lib/queries/shopping-list";
 import { ShoppingListClient } from "@/components/shopping-list/ShoppingListClient";
 
-export const metadata: Metadata = {
-  title: "Alışveriş Listem",
-  description: "Tariflerden ekleyip tek yerden takip et.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("metadata.shoppingList");
+  return { title: t("title"), description: t("description") };
+}
 
 export default async function AlisverisListesiPage() {
   const [session, t] = await Promise.all([

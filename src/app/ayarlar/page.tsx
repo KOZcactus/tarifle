@@ -9,10 +9,10 @@ import { PasswordChangeCard } from "@/components/profile/PasswordChangeCard";
 import { LanguagePreferenceCard } from "@/components/profile/LanguagePreferenceCard";
 import { DeleteAccountCard } from "@/components/profile/DeleteAccountCard";
 
-export const metadata: Metadata = {
-  title: "Ayarlar",
-  robots: { index: false, follow: false },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("metadata.settings");
+  return { title: t("title"), robots: { index: false, follow: false } };
+}
 
 // Personal settings — never prerender.
 export const dynamic = "force-dynamic";

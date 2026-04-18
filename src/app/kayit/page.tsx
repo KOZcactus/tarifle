@@ -1,12 +1,13 @@
+import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { auth } from "@/lib/auth";
 import { RegisterForm } from "@/components/auth/RegisterForm";
 
-export const metadata = {
-  title: "Kayıt Ol | Tarifle",
-  description: "Tarifle'a üye olun, tariflerinizi paylaşın.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("metadata.register");
+  return { title: t("title"), description: t("description") };
+}
 
 export default async function RegisterPage() {
   const [session, t] = await Promise.all([

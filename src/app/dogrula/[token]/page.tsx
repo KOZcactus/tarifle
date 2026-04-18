@@ -3,11 +3,14 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { consumeVerificationToken } from "@/lib/email/verification";
 
-export const metadata: Metadata = {
-  title: "E-posta Doğrulama",
-  // Doğrulama linkleri Google'a sızmasın diye index'leme
-  robots: { index: false, follow: false },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("metadata.verifyEmail");
+  return {
+    title: t("title"),
+    // Doğrulama linkleri Google'a sızmasın diye index'leme
+    robots: { index: false, follow: false },
+  };
+}
 
 interface PageProps {
   params: Promise<{ token: string }>;

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { SITE_NAME } from "@/lib/constants";
 
-export const metadata: Metadata = {
-  title: "Kullanım Şartları",
-  description: "Tarifle platformunun kullanım şartları.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("metadata.legal");
+  return { title: t("termsTitle"), description: t("termsDescription") };
+}
 
 export default function KullanimSartlariPage() {
   return (

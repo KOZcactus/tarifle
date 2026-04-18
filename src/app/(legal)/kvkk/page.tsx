@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { SITE_NAME } from "@/lib/constants";
 
-export const metadata: Metadata = {
-  title: "KVKK Aydınlatma Metni",
-  description: "Kişisel verilerin korunması kanunu kapsamında aydınlatma metni.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("metadata.legal");
+  return { title: t("kvkkTitle"), description: t("kvkkDescription") };
+}
 
 export default function KVKKPage() {
   return (

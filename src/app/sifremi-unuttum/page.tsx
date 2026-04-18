@@ -4,12 +4,15 @@ import { getTranslations } from "next-intl/server";
 import { auth } from "@/lib/auth";
 import { ForgotPasswordForm } from "@/components/auth/ForgotPasswordForm";
 
-export const metadata: Metadata = {
-  title: "Şifremi Unuttum | Tarifle",
-  description: "Tarifle hesabının şifresini e-posta ile sıfırla.",
-  // Sıfırlama sayfalarını arama motorlarına açmaya gerek yok.
-  robots: { index: false, follow: false },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("metadata.forgotPassword");
+  return {
+    title: t("title"),
+    description: t("description"),
+    // Sıfırlama sayfalarını arama motorlarına açmaya gerek yok.
+    robots: { index: false, follow: false },
+  };
+}
 
 export default async function ForgotPasswordPage() {
   const [session, t] = await Promise.all([

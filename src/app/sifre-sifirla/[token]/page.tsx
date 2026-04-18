@@ -6,11 +6,14 @@ import { prisma } from "@/lib/prisma";
 import { auth } from "@/lib/auth";
 import { ResetPasswordForm } from "@/components/auth/ResetPasswordForm";
 
-export const metadata: Metadata = {
-  title: "Şifre Sıfırlama | Tarifle",
-  // Reset bağlantıları Google'a sızmasın diye index dışı.
-  robots: { index: false, follow: false },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("metadata.resetPassword");
+  return {
+    title: t("title"),
+    // Reset bağlantıları Google'a sızmasın diye index dışı.
+    robots: { index: false, follow: false },
+  };
+}
 
 interface PageProps {
   params: Promise<{ token: string }>;

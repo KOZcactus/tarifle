@@ -6,10 +6,14 @@ import { auth } from "@/lib/auth";
 import { getRecentNotifications } from "@/lib/notifications/service";
 import { NotificationsList } from "@/components/notifications/NotificationsList";
 
-export const metadata: Metadata = {
-  title: "Bildirimler",
-  robots: { index: false, follow: false },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("metadata.notifications");
+  return {
+    title: t("title"),
+    description: t("description"),
+    robots: { index: false, follow: false },
+  };
+}
 
 // Personal inbox — request-time only. No static prerender.
 export const dynamic = "force-dynamic";

@@ -9,10 +9,10 @@ import { getCuisineStats } from "@/lib/queries/cuisine-stats";
 import { getSearchSuggestions } from "@/lib/queries/search-suggestions";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Keşfet",
-  description: "Yeni tarifler keşfet, popüler kategorileri incele ve topluluk favorilerini gör.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("metadata.discover");
+  return { title: t("title"), description: t("description") };
+}
 
 // Rendered per-request so we always show the latest featured + popular state,
 // and — importantly — so CI builds don't need a real DATABASE_URL to prerender

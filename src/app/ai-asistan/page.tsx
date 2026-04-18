@@ -3,11 +3,10 @@ import { getTranslations } from "next-intl/server";
 import { AiAssistantForm } from "@/components/ai/AiAssistantForm";
 import { getUniqueIngredientNames } from "@/lib/queries/ingredient";
 
-export const metadata: Metadata = {
-  title: "AI Asistan",
-  description:
-    "Elindeki malzemeleri yaz, sana en uygun tarifleri öne çıkaralım. Eksik olanları da göstereceğiz.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("metadata.aiAssistant");
+  return { title: t("title"), description: t("description") };
+}
 
 export default async function AiAsistanPage() {
   const [knownIngredients, t] = await Promise.all([

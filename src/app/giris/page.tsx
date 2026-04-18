@@ -1,13 +1,14 @@
 import { Suspense } from "react";
+import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { auth } from "@/lib/auth";
 import { LoginForm } from "@/components/auth/LoginForm";
 
-export const metadata = {
-  title: "Giriş Yap | Tarifle",
-  description: "Tarifle hesabınıza giriş yapın.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("metadata.login");
+  return { title: t("title"), description: t("description") };
+}
 
 export default async function LoginPage() {
   const [session, t] = await Promise.all([

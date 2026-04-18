@@ -134,6 +134,60 @@
       "homeLinkShort": "Home"
     }
   },
+  "metadata": {
+    "site": {
+      "tagline": "Tarifle — Make Eat",
+      "description": "A modern recipe platform serving clean, community-contributed food, drink and cocktail recipes.",
+      "ogLocale": "en_US"
+    },
+    "aiAssistant": {
+      "title": "AI Assistant",
+      "description": "List the ingredients you have and we'll surface the best-matching recipes. You'll also see what's missing."
+    },
+    "shoppingList": {
+      "title": "My Shopping List",
+      "description": "Bookmarked recipe ingredients and items you add manually, all in one list."
+    },
+    "settings": {
+      "title": "Settings"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "description": "Track adaptation likes, moderation decisions and badge notifications here."
+    },
+    "verifyEmail": {
+      "title": "Email Verification"
+    },
+    "login": {
+      "title": "Sign In",
+      "description": "Sign in to your Tarifle account."
+    },
+    "register": {
+      "title": "Sign Up",
+      "description": "Create a free Tarifle account."
+    },
+    "discover": {
+      "title": "Discover",
+      "description": "Random recipes, popular searches and cuisine discoveries."
+    },
+    "forgotPassword": {
+      "title": "Forgot Password",
+      "description": "Reset your Tarifle account password by email."
+    },
+    "resetPassword": {
+      "title": "Password Reset"
+    },
+    "legal": {
+      "aboutTitle": "About",
+      "aboutDescription": "About Tarifle — team, vision, contact.",
+      "privacyTitle": "Privacy Policy",
+      "privacyDescription": "Information on how Tarifle processes personal data.",
+      "kvkkTitle": "KVKK Privacy Notice",
+      "kvkkDescription": "KVKK (Turkish Data Protection Law) privacy notice.",
+      "termsTitle": "Terms of Use",
+      "termsDescription": "Tarifle platform terms of use."
+    }
+  },
   "email": {
     "verification": {
       "subject": "Verify your Tarifle account",

@@ -101,6 +101,16 @@ const PROTECTED_TOKEN_SKIP_SLUGS: Record<string, ReadonlySet<string>> = {
     "kabak-mucver-lokmalari",
     "patates-rosti-lokmalari",
   ]),
+  // "Dolma" as a stand-alone Turkish tradition (grape-leaf dolma, kabak
+  // dolması, Antep/Amasya regional variants) must stay. In `mantar-dolmasi`
+  // and `peynirli-mantar-dolmasi` the word is a generic "stuffed X"
+  // construction — "Stuffed Mushrooms" is the natural EN rendering.
+  Dolma: new Set(["mantar-dolmasi", "peynirli-mantar-dolmasi"]),
+  // "Köfte" regional proper names (İnegöl köfte, Akçaabat köftesi, Adana
+  // analı-kızlı köfte, etc.) stay. For `misir-unlu-balik-koftesi` the word
+  // is a generic patty/cake construct — "Fish Cakes with Cornmeal" reads
+  // natural in EN/DE.
+  Köfte: new Set(["misir-unlu-balik-koftesi"]),
 };
 
 /** Titles that MUST NOT be translated away — the TR proper name has to show

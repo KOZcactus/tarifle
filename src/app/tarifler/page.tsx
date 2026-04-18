@@ -9,7 +9,8 @@ import { DietFilter } from "@/components/search/DietFilter";
 import { CuisineFilter } from "@/components/search/CuisineFilter";
 import { Pagination } from "@/components/listing/Pagination";
 import { CUISINE_CODES, CUISINE_LABEL, CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
-import { getRecipes } from "@/lib/queries/recipe";
+import { getRecipes, resolveDefaultAllergenAvoidances } from "@/lib/queries/recipe";
+import { auth } from "@/lib/auth";
 import { getCategories } from "@/lib/queries/category";
 import { getTags } from "@/lib/queries/tag";
 import { searchRecipeIds } from "@/lib/search/recipe-search";
@@ -114,14 +115,26 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
   // Parse + validate allergen exclusion list. Unknown enum values are
   // dropped silently so a mistyped URL doesn't 500 — just ignores the
   // unknown one and filters by whatever else was valid.
+  //
+  // Kullanıcı URL'de açık bir ?alerjen= seçimi yapmadıysa, logged-in
+  // user'ın User.allergenAvoidances tercihini default olarak uygula
+  // (güvenlik — kullanıcı kendi profilinde kaçındığı alerjen işaretledi
+  // diye biz de listing'de ona göre filtre çekiyoruz). URL'de seçim varsa
+  // override.
   const rawAllergens = params.alerjen
     ? Array.isArray(params.alerjen)
       ? params.alerjen
       : [params.alerjen]
     : [];
-  const excludeAllergens = rawAllergens.filter((a): a is (typeof ALLERGEN_ORDER)[number] =>
-    (ALLERGEN_ORDER as readonly string[]).includes(a),
+  const urlExcludeAllergens = rawAllergens.filter(
+    (a): a is (typeof ALLERGEN_ORDER)[number] =>
+      (ALLERGEN_ORDER as readonly string[]).includes(a),
   );
+  const session = await auth();
+  const excludeAllergens = await resolveDefaultAllergenAvoidances({
+    userId: session?.user?.id ?? null,
+    explicitAllergens: urlExcludeAllergens,
+  });
 
   // Parse + validate cuisine inclusion list. Unknown codes are dropped
   // silently so a mistyped URL doesn't 500.

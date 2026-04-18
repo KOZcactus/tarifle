@@ -3,10 +3,16 @@ import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
-import { getFeaturedRecipes, getQuickRecipes, getPopularRecipes } from "@/lib/queries/recipe";
+import {
+  getFeaturedRecipes,
+  getQuickRecipes,
+  getPopularRecipes,
+  getPersonalizedRecipes,
+} from "@/lib/queries/recipe";
 import { getCategories } from "@/lib/queries/category";
 import { getCuisineStats } from "@/lib/queries/cuisine-stats";
 import { getSearchSuggestions } from "@/lib/queries/search-suggestions";
+import { auth } from "@/lib/auth";
 import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -22,16 +28,31 @@ export async function generateMetadata(): Promise<Metadata> {
 export const dynamic = "force-dynamic";
 
 export default async function KesfetPage() {
-  const [featured, quick, popular, allCategories, cuisineStats, searchSuggestions, t] =
-    await Promise.all([
-      getFeaturedRecipes(6),
-      getQuickRecipes(8),
-      getPopularRecipes(8),
-      getCategories(),
-      getCuisineStats(),
-      getSearchSuggestions(),
-      getTranslations("discover"),
-    ]);
+  // Session önce; personalized shelf çağrısı userId'ye bağlı conditional.
+  const session = await auth();
+  const userId = session?.user?.id ?? null;
+
+  const [
+    featured,
+    quick,
+    popular,
+    allCategories,
+    cuisineStats,
+    searchSuggestions,
+    personalized,
+    t,
+  ] = await Promise.all([
+    getFeaturedRecipes(6),
+    getQuickRecipes(8),
+    getPopularRecipes(8),
+    getCategories(),
+    getCuisineStats(),
+    getSearchSuggestions(),
+    userId
+      ? getPersonalizedRecipes({ userId, limit: 8 })
+      : Promise.resolve({ recipes: [], hasPrefs: false }),
+    getTranslations("discover"),
+  ]);
 
   // Tarif sayısına göre sırala, en çok tarifi olan ilk 8
   const popularCategories = [...allCategories]
@@ -60,6 +81,31 @@ export default async function KesfetPage() {
           ))}
         </div>
       </div>
+
+      {/* Sana özel — giriş yapmış + tercihleri dolu user'a featured'den önce
+          render edilir. Tercih boşsa bu section hiç çıkmaz. */}
+      {personalized.hasPrefs && personalized.recipes.length > 0 && (
+        <section className="mt-10">
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="font-heading text-xl font-bold">
+                {t("sectionPersonalized")}
+              </h2>
+              <p className="mt-1 text-sm text-text-muted">
+                {t("sectionPersonalizedSubtitle")}
+              </p>
+            </div>
+            <Link href="/ayarlar" className="text-sm text-primary hover:underline">
+              {t("personalizedEdit")}
+            </Link>
+          </div>
+          <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {personalized.recipes.map((recipe) => (
+              <RecipeCard key={recipe.id} recipe={recipe} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Featured */}
       {featured.length > 0 && (

@@ -347,6 +347,94 @@ export async function getPopularRecipes(limit = 8): Promise<RecipeCard[]> {
   return recipes as unknown as RecipeCard[];
 }
 
+/** Kişiselleştirme tur 2 — User.favoriteCuisines / favoriteTags /
+ *  allergenAvoidances alanlarını okuyup filtreleyerek tarif listesi döndürür.
+ *
+ *  Kullanım: homepage + /kesfet "Sana özel" shelf. Logged-in user en az bir
+ *  tercih kaydettiyse ve o tercihlerle en az birkaç tarif eşleşiyorsa shelf
+ *  render edilir; hasPrefs false veya recipes boşsa shelf hiç gösterilmez.
+ *
+ *  Filtering semantics:
+ *   - cuisines + tagSlugs: AND (hem seçilen cuisine hem de seçilen etiket).
+ *     Kullanıcı sadece cuisine seçtiyse o filtre yalnız çalışır; sadece tag
+ *     seçtiyse o. İkisi de boşsa cuisine/tag filter yok, sadece allergen
+ *     avoidance soft-fallback ile popular döner.
+ *   - excludeAllergens: kullanıcı kaçındığı alerjenleri her durumda uygula
+ *     (güvenlik).
+ *   - Sorting: popular (viewCount desc) — "ilgi göstermiş olduğun içerikten
+ *     en popülerini getir" intuition'ı. Sonraki turda personalized scoring. */
+export async function getPersonalizedRecipes({
+  userId,
+  limit = 8,
+}: {
+  userId: string;
+  limit?: number;
+}): Promise<{ recipes: RecipeCard[]; hasPrefs: boolean }> {
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    select: {
+      favoriteTags: true,
+      favoriteCuisines: true,
+      allergenAvoidances: true,
+    },
+  });
+  if (!user) return { recipes: [], hasPrefs: false };
+
+  const hasPrefs =
+    user.favoriteCuisines.length > 0 ||
+    user.favoriteTags.length > 0 ||
+    user.allergenAvoidances.length > 0;
+  if (!hasPrefs) return { recipes: [], hasPrefs: false };
+
+  // Cuisine/tag bir filter olmadan popular-only çağrısı generic bir liste
+  // olur; o kullanıcıya özel bir değer katmıyor. En az biri set olmalı ki
+  // "sana özel" iddiası tutsun. allergenAvoidances tek başına yeterli kabul
+  // etmiyoruz (o bir exclusion, positive signal değil).
+  const hasPositiveSignal =
+    user.favoriteCuisines.length > 0 || user.favoriteTags.length > 0;
+  if (!hasPositiveSignal) return { recipes: [], hasPrefs: false };
+
+  const { recipes } = await getRecipes({
+    cuisines:
+      user.favoriteCuisines.length > 0 ? user.favoriteCuisines : undefined,
+    tagSlugs: user.favoriteTags.length > 0 ? user.favoriteTags : undefined,
+    excludeAllergens:
+      user.allergenAvoidances.length > 0
+        ? user.allergenAvoidances
+        : undefined,
+    sortBy: "popular",
+    limit,
+  });
+  return { recipes, hasPrefs: true };
+}
+
+/** Listing sayfaları için allergen-default-exclude helper — URL'de açık bir
+ *  `?alerjen=` query yoksa kullanıcının `allergenAvoidances` tercihlerini
+ *  default exclude olarak döndür. Kullanıcı URL'de manual seçim yaptıysa
+ *  o override olur. Anonymous user veya preferences boşsa boş dizi.
+ *
+ *  İki ayrı listing sayfası (/tarifler + /tarifler/[kategori]) aynı mantığı
+ *  paylaşsın diye ayrı export. */
+export async function resolveDefaultAllergenAvoidances({
+  userId,
+  explicitAllergens,
+}: {
+  userId: string | null | undefined;
+  explicitAllergens: string[];
+}): Promise<Allergen[]> {
+  if (explicitAllergens.length > 0) {
+    // User made a choice in the URL — don't second-guess it. Caller is
+    // responsible for validating the strings are Allergen values.
+    return explicitAllergens as Allergen[];
+  }
+  if (!userId) return [];
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { allergenAvoidances: true },
+  });
+  return user?.allergenAvoidances ?? [];
+}
+
 /** Tek tarif detayı — slug ile */
 export async function getRecipeBySlug(slug: string): Promise<RecipeDetail | null> {
   const recipe = await prisma.recipe.findUnique({

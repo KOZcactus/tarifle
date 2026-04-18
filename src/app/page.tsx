@@ -4,7 +4,12 @@ import { getTranslations } from "next-intl/server";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
 import { RecipeOfTheDay } from "@/components/home/RecipeOfTheDay";
-import { getFeaturedRecipes, getRecipes, getPopularRecipes } from "@/lib/queries/recipe";
+import {
+  getFeaturedRecipes,
+  getRecipes,
+  getPopularRecipes,
+  getPersonalizedRecipes,
+} from "@/lib/queries/recipe";
 import { getCategories } from "@/lib/queries/category";
 import { auth } from "@/lib/auth";
 import { getCuisineStats } from "@/lib/queries/cuisine-stats";
@@ -24,19 +29,37 @@ const POPULAR_SEARCHES = [
 ];
 
 export default async function HomePage() {
-  const [featured, popular, categories, { total: recipeCount }, session, cuisineStats, searchSuggestions, randomRecipe, t, tNav] =
-    await Promise.all([
-      getFeaturedRecipes(6),
-      getPopularRecipes(8),
-      getCategories(),
-      getRecipes({ limit: 0 }),
-      auth(),
-      getCuisineStats(),
-      getSearchSuggestions(),
-      getRandomRecipe(),
-      getTranslations("home"),
-      getTranslations("nav"),
-    ]);
+  // Session önce çekiliyor ki aşağıdaki Promise.all'da personalized shelf
+  // çağrısı userId'ye bağlı olarak conditional yapılabilsin. auth() hızlı
+  // (~50ms); waterfall alt-sınırı minimum.
+  const session = await auth();
+  const userId = session?.user?.id ?? null;
+
+  const [
+    featured,
+    popular,
+    categories,
+    { total: recipeCount },
+    cuisineStats,
+    searchSuggestions,
+    randomRecipe,
+    personalized,
+    t,
+    tNav,
+  ] = await Promise.all([
+    getFeaturedRecipes(6),
+    getPopularRecipes(8),
+    getCategories(),
+    getRecipes({ limit: 0 }),
+    getCuisineStats(),
+    getSearchSuggestions(),
+    getRandomRecipe(),
+    userId
+      ? getPersonalizedRecipes({ userId, limit: 8 })
+      : Promise.resolve({ recipes: [], hasPrefs: false }),
+    getTranslations("home"),
+    getTranslations("nav"),
+  ]);
 
   // Tarif sayısı olan kategorileri önce göster
   const sortedCategories = [...categories].sort(
@@ -79,6 +102,33 @@ export default async function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* Sana özel — giriş yapmış + tercihleri dolu user için kişiselleştirilmiş
+          ilk shelf. Featured'den önce çünkü kullanıcı kendi profilinden
+          seçtiği içeriği anında görmeli. Tercih boşsa bu section hiç
+          render edilmez (fallback: featured). */}
+      {personalized.hasPrefs && personalized.recipes.length > 0 && (
+        <section className="py-12">
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="font-heading text-2xl font-bold">
+                {t("sectionPersonalized")}
+              </h2>
+              <p className="mt-1 text-sm text-text-muted">
+                {t("sectionPersonalizedSubtitle")}
+              </p>
+            </div>
+            <Link href="/ayarlar" className="text-sm text-primary hover:underline">
+              {t("personalizedEdit")}
+            </Link>
+          </div>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {personalized.recipes.map((recipe) => (
+              <RecipeCard key={recipe.id} recipe={recipe} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Featured Recipes — kullanici siteye tarif icin geliyor, ilk goz gezdirecegi grid */}
       {featured.length > 0 && (

@@ -8,7 +8,8 @@ import { DietFilter } from "@/components/search/DietFilter";
 import { CuisineFilter } from "@/components/search/CuisineFilter";
 import { Pagination } from "@/components/listing/Pagination";
 import { getCategoryBySlug } from "@/lib/queries/category";
-import { getRecipes } from "@/lib/queries/recipe";
+import { getRecipes, resolveDefaultAllergenAvoidances } from "@/lib/queries/recipe";
+import { auth } from "@/lib/auth";
 import { generateBreadcrumbJsonLd, generateCategoryFaqJsonLd } from "@/lib/seo";
 import { ALLERGEN_ORDER } from "@/lib/allergens";
 import { CUISINE_CODES, CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
@@ -73,16 +74,23 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
     (CUISINE_CODES as readonly string[]).includes(c),
   );
 
-  // Parse allergen exclusion
+  // Parse allergen exclusion — URL'de ?alerjen= yoksa logged-in user'ın
+  // User.allergenAvoidances tercihini default olarak uygula (güvenlik
+  // default'u). URL'de seçim varsa kullanıcı override kabul edilir.
   const rawAllergens = sp.alerjen
     ? Array.isArray(sp.alerjen)
       ? sp.alerjen
       : [sp.alerjen]
     : [];
-  const excludeAllergens = rawAllergens.filter(
+  const urlExcludeAllergens = rawAllergens.filter(
     (a): a is (typeof ALLERGEN_ORDER)[number] =>
       (ALLERGEN_ORDER as readonly string[]).includes(a),
   );
+  const session = await auth();
+  const excludeAllergens = await resolveDefaultAllergenAvoidances({
+    userId: session?.user?.id ?? null,
+    explicitAllergens: urlExcludeAllergens,
+  });
 
   // Parse diet tag filter
   const tagSlugs = sp.etiket

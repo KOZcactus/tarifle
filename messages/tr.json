@@ -134,6 +134,56 @@
       "homeLinkShort": "Ana sayfa"
     }
   },
+  "email": {
+    "verification": {
+      "subject": "Tarifle hesabını doğrula",
+      "eyebrow": "Tarifle",
+      "title": "Hesabını doğrula",
+      "greetingNamed": "Merhaba {name},",
+      "greeting": "Merhaba,",
+      "body": "Tarifle hesabını doğrulamak için aşağıdaki butona tıkla. Bu bağlantı <strong>{hours} saat</strong> geçerli.",
+      "cta": "E-postamı doğrula",
+      "fallbackHint": "Buton çalışmazsa şu bağlantıyı tarayıcına yapıştır:",
+      "footer": "Bu maili sen istemediysen görmezden gel — kimse hesabına erişemez.",
+      "textBody": "Tarifle hesabını doğrulamak için aşağıdaki bağlantıya tıkla:",
+      "textExpiry": "Bağlantı {hours} saat geçerli.",
+      "textFooter": "Bu maili sen istemediysen görmezden gel — kimse hesabına erişemez.",
+      "signature": "— Tarifle"
+    },
+    "passwordReset": {
+      "subject": "Tarifle şifre sıfırlama",
+      "eyebrow": "Tarifle",
+      "title": "Şifreni sıfırla",
+      "greetingNamed": "Merhaba {name},",
+      "greeting": "Merhaba,",
+      "body": "Tarifle hesabının şifresini sıfırlamak için aşağıdaki butona tıkla. Bu bağlantı <strong>{hours} saat</strong> geçerli.",
+      "cta": "Şifremi sıfırla",
+      "fallbackHint": "Buton çalışmazsa şu bağlantıyı tarayıcına yapıştır:",
+      "footer": "Bu maili sen istemediysen görmezden gel — şifren değişmez. Şüpheli bir durum varsa tarifle.app/ayarlar adresinden hesabını kontrol edebilirsin.",
+      "textBody": "Tarifle hesabının şifresini sıfırlamak için aşağıdaki bağlantıya tıkla:",
+      "textExpiry": "Bağlantı {hours} saat geçerli.",
+      "textFooter": "Bu maili sen istemediysen görmezden gel — şifren değişmez.",
+      "signature": "— Tarifle"
+    },
+    "oauthOnlyReset": {
+      "subject": "Tarifle — bu hesap Google ile bağlı",
+      "eyebrow": "Tarifle",
+      "title": "Bu hesap Google ile bağlı",
+      "greetingNamed": "Merhaba {name},",
+      "greeting": "Merhaba,",
+      "body": "Tarifle'da <strong>{email}</strong> adresi için şifre sıfırlama isteği aldık. Bu hesap Google ile bağlı ve şifre ile giriş tanımlı değil.",
+      "cta": "Google ile giriş yap",
+      "hint": "Şifre ile giriş de eklemek istersen, giriş yaptıktan sonra ayarlar sayfasından \"Şifre ekle\" seçeneğini kullanabilirsin.",
+      "footer": "Bu maili sen istemediysen görmezden gel — hesabın değişmez.",
+      "textBody": "Tarifle'da {email} adresi için şifre sıfırlama isteği aldık.",
+      "textBody2": "Bu hesap Google ile bağlı ve şifre ile giriş tanımlı değil.",
+      "textBody3": "Giriş yapmak için Google ile giriş butonunu kullan:",
+      "textHint1": "Şifre ile giriş eklemek istersen, Google ile giriş yaptıktan sonra",
+      "textHint2": "ayarlar sayfasından 'Şifre ekle' akışını kullanabilirsin.",
+      "textFooter": "Bu maili sen istemediysen görmezden gel — hesabın değişmez.",
+      "signature": "— Tarifle"
+    }
+  },
   "admin": {
     "layout": {
       "panelTitle": "Yönetim Paneli",

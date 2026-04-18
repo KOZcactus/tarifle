@@ -1,6 +1,7 @@
 "use server";
 
 import bcrypt from "bcryptjs";
+import { cookies } from "next/headers";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { normalizeEmail } from "@/lib/email";
@@ -19,6 +20,17 @@ import {
   getClientIp,
   rateLimitIdentifier,
 } from "@/lib/rate-limit";
+import { DEFAULT_LOCALE, isValidLocale, type Locale } from "@/i18n/config";
+
+/**
+ * Reads NEXT_LOCALE cookie for requests where we don't yet have a User row
+ * (register) or don't want to query the DB twice (resend). Falls back to TR.
+ */
+async function getLocaleFromCookie(): Promise<Locale> {
+  const store = await cookies();
+  const value = store.get("NEXT_LOCALE")?.value;
+  return isValidLocale(value) ? value : DEFAULT_LOCALE;
+}
 
 interface RegisterResult {
   success: boolean;
@@ -93,8 +105,12 @@ export async function registerUser(formData: FormData): Promise<RegisterResult> 
   });
 
   // Fire-and-forget verification email — don't block sign-in if SMTP is down.
-  // The user can resend from their profile if the first attempt fails.
-  sendVerificationEmail(email, name).catch((err) => {
+  // The user can resend from their profile if the first attempt fails. Locale
+  // comes from the cookie because the User.locale column hasn't been set yet
+  // (Prisma default will kick in on the row above, but reading it back would
+  // require another query).
+  const registerLocale = await getLocaleFromCookie();
+  sendVerificationEmail(email, name, registerLocale).catch((err) => {
     console.error("[register] verification email failed:", err);
   });
 
@@ -129,14 +145,15 @@ export async function resendVerificationEmailAction(): Promise<ActionResult> {
 
   const user = await prisma.user.findUnique({
     where: { id: session.user.id },
-    select: { email: true, name: true, emailVerified: true },
+    select: { email: true, name: true, emailVerified: true, locale: true },
   });
   if (!user) return { success: false, error: "Kullanıcı bulunamadı." };
   if (user.emailVerified) {
     return { success: false, error: "E-postan zaten doğrulanmış." };
   }
 
-  const result = await sendVerificationEmail(user.email, user.name);
+  const userLocale = isValidLocale(user.locale) ? user.locale : DEFAULT_LOCALE;
+  const result = await sendVerificationEmail(user.email, user.name, userLocale);
   if (!result.success) {
     return { success: false, error: result.error ?? "Mail gönderilemedi." };
   }
@@ -188,19 +205,26 @@ export async function requestPasswordResetAction(
 
   const user = await prisma.user.findUnique({
     where: { email },
-    select: { email: true, name: true, passwordHash: true, deletedAt: true },
+    select: {
+      email: true,
+      name: true,
+      passwordHash: true,
+      deletedAt: true,
+      locale: true,
+    },
   });
 
   // Fire-and-forget: do not block the UI on SMTP. The "always-success" UI
   // already promises an indistinguishable response regardless of account
   // state, so swallowing send errors does not weaken that promise.
   if (user && !user.deletedAt) {
+    const userLocale = isValidLocale(user.locale) ? user.locale : DEFAULT_LOCALE;
     if (user.passwordHash) {
-      sendPasswordResetEmail(user.email, user.name).catch((err) => {
+      sendPasswordResetEmail(user.email, user.name, userLocale).catch((err) => {
         console.error("[password-reset] send failed:", err);
       });
     } else {
-      sendOAuthOnlyPasswordResetEmail(user.email, user.name).catch((err) => {
+      sendOAuthOnlyPasswordResetEmail(user.email, user.name, userLocale).catch((err) => {
         console.error("[password-reset] oauth-only send failed:", err);
       });
     }

@@ -134,6 +134,56 @@
       "homeLinkShort": "Home"
     }
   },
+  "email": {
+    "verification": {
+      "subject": "Verify your Tarifle account",
+      "eyebrow": "Tarifle",
+      "title": "Verify your account",
+      "greetingNamed": "Hi {name},",
+      "greeting": "Hi,",
+      "body": "Click the button below to verify your Tarifle account. This link is valid for <strong>{hours} hours</strong>.",
+      "cta": "Verify my email",
+      "fallbackHint": "If the button doesn't work, paste this link into your browser:",
+      "footer": "If you didn't request this email, ignore it — no one can access your account.",
+      "textBody": "Click the link below to verify your Tarifle account:",
+      "textExpiry": "This link is valid for {hours} hours.",
+      "textFooter": "If you didn't request this email, ignore it — no one can access your account.",
+      "signature": "— Tarifle"
+    },
+    "passwordReset": {
+      "subject": "Tarifle password reset",
+      "eyebrow": "Tarifle",
+      "title": "Reset your password",
+      "greetingNamed": "Hi {name},",
+      "greeting": "Hi,",
+      "body": "Click the button below to reset your Tarifle account password. This link is valid for <strong>{hours} hour(s)</strong>.",
+      "cta": "Reset my password",
+      "fallbackHint": "If the button doesn't work, paste this link into your browser:",
+      "footer": "If you didn't request this email, ignore it — your password stays the same. If something looks suspicious, check your account at tarifle.app/ayarlar.",
+      "textBody": "Click the link below to reset your Tarifle account password:",
+      "textExpiry": "This link is valid for {hours} hour(s).",
+      "textFooter": "If you didn't request this email, ignore it — your password stays the same.",
+      "signature": "— Tarifle"
+    },
+    "oauthOnlyReset": {
+      "subject": "Tarifle — this account is linked to Google",
+      "eyebrow": "Tarifle",
+      "title": "This account is linked to Google",
+      "greetingNamed": "Hi {name},",
+      "greeting": "Hi,",
+      "body": "We received a password reset request for <strong>{email}</strong> on Tarifle. This account is linked to Google and has no password sign-in.",
+      "cta": "Sign in with Google",
+      "hint": "If you'd like to add password sign-in too, go to Settings after signing in and use the \"Add password\" option.",
+      "footer": "If you didn't request this email, ignore it — your account stays the same.",
+      "textBody": "We received a password reset request for {email} on Tarifle.",
+      "textBody2": "This account is linked to Google and has no password sign-in.",
+      "textBody3": "To sign in, use the Sign in with Google button:",
+      "textHint1": "If you want to add password sign-in too, after signing in with Google",
+      "textHint2": "go to the settings page and use the 'Add password' flow.",
+      "textFooter": "If you didn't request this email, ignore it — your account stays the same.",
+      "signature": "— Tarifle"
+    }
+  },
   "admin": {
     "layout": {
       "panelTitle": "Admin Panel",

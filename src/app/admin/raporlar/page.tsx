@@ -1,4 +1,6 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+import { getLocale, getTranslations } from "next-intl/server";
 import {
   getReports,
   getFlaggedVariations,
@@ -8,27 +10,18 @@ import { AdminReportActions } from "@/components/admin/AdminReportActions";
 import { AdminVariationActions } from "@/components/admin/AdminVariationActions";
 import { ReviewModerationActions } from "@/components/admin/ReviewModerationActions";
 
-export const metadata = { title: "Raporlar | Yönetim Paneli" };
-
-const REASON_LABELS: Record<string, string> = {
-  SPAM: "Spam / Reklam",
-  PROFANITY: "Uygunsuz dil",
-  MISLEADING: "Yanıltıcı bilgi",
-  HARMFUL: "Zararlı içerik",
-  OTHER: "Diğer",
-};
-
-const STATUS_LABELS: Record<string, string> = {
-  PENDING: "Bekliyor",
-  REVIEWED: "İncelendi",
-  DISMISSED: "Reddedildi",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("admin.pageTitles");
+  return { title: t("reports") };
+}
 
 export default async function ReportsPage() {
-  const [reports, flaggedVariations, reportedReviews] = await Promise.all([
+  const [reports, flaggedVariations, reportedReviews, t, locale] = await Promise.all([
     getReports("PENDING"),
     getFlaggedVariations(),
     getReportedReviews(),
+    getTranslations("admin.reports"),
+    getLocale(),
   ]);
 
   return (
@@ -36,11 +29,11 @@ export default async function ReportsPage() {
       {/* Raporlanmış Uyarlamalar */}
       <section>
         <h2 className="mb-4 font-heading text-xl font-bold">
-          Raporlanmış Uyarlamalar ({flaggedVariations.length})
+          {t("variationsHeading", { count: flaggedVariations.length })}
         </h2>
 
         {flaggedVariations.length === 0 ? (
-          <p className="text-sm text-text-muted">Raporlanmış uyarlama yok.</p>
+          <p className="text-sm text-text-muted">{t("emptyVariations")}</p>
         ) : (
           <div className="space-y-3">
             {flaggedVariations.map((v) => (
@@ -60,7 +53,7 @@ export default async function ReportsPage() {
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="rounded-full bg-error/10 px-2.5 py-1 text-xs font-medium text-error">
-                      {v.reportCount} rapor
+                      {t("reportCountChip", { count: v.reportCount })}
                     </span>
                     <span className="rounded-full bg-bg-elevated px-2.5 py-1 text-xs text-text-muted">
                       {v.status}
@@ -79,11 +72,11 @@ export default async function ReportsPage() {
       {/* Raporlanmış Yorumlar */}
       <section>
         <h2 className="mb-4 font-heading text-xl font-bold">
-          Raporlanmış Yorumlar ({reportedReviews.length})
+          {t("reviewsHeading", { count: reportedReviews.length })}
         </h2>
 
         {reportedReviews.length === 0 ? (
-          <p className="text-sm text-text-muted">Raporlanmış yorum yok.</p>
+          <p className="text-sm text-text-muted">{t("emptyReviews")}</p>
         ) : (
           <div className="space-y-3">
             {reportedReviews.map((r) => (
@@ -95,7 +88,7 @@ export default async function ReportsPage() {
                   <div className="flex-1">
                     <p
                       className="font-medium text-text"
-                      aria-label={`${r.rating} yıldız`}
+                      aria-label={t("starAria", { rating: r.rating })}
                     >
                       {"★".repeat(r.rating)}
                       {"☆".repeat(5 - r.rating)}
@@ -132,11 +125,11 @@ export default async function ReportsPage() {
       {/* Bekleyen Raporlar */}
       <section>
         <h2 className="mb-4 font-heading text-xl font-bold">
-          Bekleyen Raporlar ({reports.length})
+          {t("pendingHeading", { count: reports.length })}
         </h2>
 
         {reports.length === 0 ? (
-          <p className="text-sm text-text-muted">Bekleyen rapor yok.</p>
+          <p className="text-sm text-text-muted">{t("emptyPending")}</p>
         ) : (
           <div className="space-y-3">
             {reports.map((report) => (
@@ -148,10 +141,14 @@ export default async function ReportsPage() {
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
                       <span className="rounded bg-error/10 px-2 py-0.5 text-xs font-medium text-error">
-                        {REASON_LABELS[report.reason] || report.reason}
+                        {t.has(`reasons.${report.reason}`)
+                          ? t(`reasons.${report.reason}`)
+                          : report.reason}
                       </span>
                       <span className="rounded bg-bg-elevated px-2 py-0.5 text-xs text-text-muted">
-                        {STATUS_LABELS[report.status]}
+                        {t.has(`statuses.${report.status}`)
+                          ? t(`statuses.${report.status}`)
+                          : report.status}
                       </span>
                     </div>
                     <p className="mt-2 text-sm text-text-muted">
@@ -161,7 +158,8 @@ export default async function ReportsPage() {
                       <p className="mt-1 text-sm text-text">{report.description}</p>
                     )}
                     <p className="mt-1 text-xs text-text-muted">
-                      Raporlayan: @{report.reporter.username} — {new Date(report.createdAt).toLocaleDateString("tr-TR")}
+                      {t("reportedByPrefix")} @{report.reporter.username} —{" "}
+                      {new Date(report.createdAt).toLocaleDateString(locale)}
                     </p>
                   </div>
                 </div>

@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { updateRecipeAction } from "@/lib/actions/admin";
 
 interface BaseProps {
@@ -29,6 +30,7 @@ export function InlineRecipeText({
   label,
   maxLength = 200,
 }: TextEditProps) {
+  const t = useTranslations("admin.inlineEdit");
   const router = useRouter();
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(value);
@@ -50,7 +52,7 @@ export function InlineRecipeText({
         setError(null);
         router.refresh();
       } else {
-        setError(res.error ?? "Güncellenemedi.");
+        setError(res.error ?? t("saveFailed"));
       }
     });
   }
@@ -67,7 +69,7 @@ export function InlineRecipeText({
         type="button"
         onClick={() => setEditing(true)}
         className="group inline-flex items-center gap-1.5 text-left hover:text-primary"
-        aria-label={`${label} düzenle`}
+        aria-label={`${label} · ${t("editButton")}`}
       >
         <span>{value || <span className="italic text-text-muted">(boş)</span>}</span>
         <span
@@ -98,7 +100,7 @@ export function InlineRecipeText({
         />
         <div className="flex items-center justify-between gap-2 text-xs">
           <span className="text-text-muted">
-            {draft.length}/{maxLength} — Ctrl+Enter ile kaydet, Esc iptal
+            {draft.length}/{maxLength} — {t("ctrlEnterHint")}
           </span>
           <div className="flex gap-2">
             <button
@@ -107,7 +109,7 @@ export function InlineRecipeText({
               disabled={pending}
               className="rounded border border-border px-2 py-1 text-text-muted hover:bg-bg-elevated"
             >
-              İptal
+              {t("cancel")}
             </button>
             <button
               type="button"
@@ -115,7 +117,7 @@ export function InlineRecipeText({
               disabled={pending || draft.trim().length === 0}
               className="rounded bg-primary px-2 py-1 text-white hover:bg-primary-hover disabled:opacity-50"
             >
-              {pending ? "…" : "Kaydet"}
+              {pending ? t("saving") : t("save")}
             </button>
           </div>
         </div>
@@ -165,30 +167,32 @@ interface StatusEditProps extends BaseProps {
   value: "DRAFT" | "PENDING_REVIEW" | "PUBLISHED" | "HIDDEN" | "REJECTED";
 }
 
-const STATUS_OPTIONS: {
-  value: StatusEditProps["value"];
-  label: string;
-  classes: string;
-}[] = [
-  { value: "PUBLISHED", label: "Yayında", classes: "bg-accent-green/15 text-accent-green" },
-  { value: "HIDDEN", label: "Gizli", classes: "bg-error/15 text-error" },
-  { value: "DRAFT", label: "Taslak", classes: "bg-bg-elevated text-text-muted" },
-  { value: "PENDING_REVIEW", label: "İncelemede", classes: "bg-secondary/20 text-secondary" },
-  { value: "REJECTED", label: "Reddedildi", classes: "bg-error/15 text-error" },
+const STATUS_VALUES: StatusEditProps["value"][] = [
+  "PUBLISHED",
+  "HIDDEN",
+  "DRAFT",
+  "PENDING_REVIEW",
+  "REJECTED",
 ];
 
+const STATUS_LABEL_KEY: Record<StatusEditProps["value"], string> = {
+  PUBLISHED: "statusPublished",
+  HIDDEN: "statusHidden",
+  DRAFT: "statusDraft",
+  PENDING_REVIEW: "statusPendingReview",
+  REJECTED: "statusDraft", // fallback key
+};
+
 export function InlineRecipeStatus({ recipeId, value }: StatusEditProps) {
+  const t = useTranslations("admin.inlineEdit");
+  const tRecipes = useTranslations("admin.recipes");
   const router = useRouter();
   const [pending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
 
   function change(next: StatusEditProps["value"]) {
     if (next === value) return;
-    const confirmMsg =
-      next === "HIDDEN"
-        ? "Tarifi gizlemek istediğine emin misin? Public sayfadan kaybolur."
-        : null;
-    if (confirmMsg && !confirm(confirmMsg)) return;
+    if (next === "HIDDEN" && !confirm(t("statusHideConfirm"))) return;
 
     startTransition(async () => {
       const res = await updateRecipeAction({
@@ -199,7 +203,7 @@ export function InlineRecipeStatus({ recipeId, value }: StatusEditProps) {
         setError(null);
         router.refresh();
       } else {
-        setError(res.error ?? "Güncellenemedi.");
+        setError(res.error ?? t("saveFailed"));
       }
     });
   }
@@ -210,12 +214,12 @@ export function InlineRecipeStatus({ recipeId, value }: StatusEditProps) {
         value={value}
         onChange={(e) => change(e.target.value as StatusEditProps["value"])}
         disabled={pending}
-        aria-label="Tarif durumu"
+        aria-label={t("statusLabel")}
         className="rounded border border-border bg-bg-card px-2 py-0.5 text-xs focus:border-primary focus:outline-none"
       >
-        {STATUS_OPTIONS.map((o) => (
-          <option key={o.value} value={o.value}>
-            {o.label}
+        {STATUS_VALUES.map((v) => (
+          <option key={v} value={v}>
+            {tRecipes.has(STATUS_LABEL_KEY[v]) ? tRecipes(STATUS_LABEL_KEY[v]) : v}
           </option>
         ))}
       </select>
@@ -230,6 +234,8 @@ interface FeaturedToggleProps extends BaseProps {
 }
 
 export function InlineRecipeFeatured({ recipeId, value }: FeaturedToggleProps) {
+  const t = useTranslations("admin.inlineEdit");
+  const tDashboard = useTranslations("admin.dashboard");
   const router = useRouter();
   const [pending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
@@ -244,7 +250,7 @@ export function InlineRecipeFeatured({ recipeId, value }: FeaturedToggleProps) {
         setError(null);
         router.refresh();
       } else {
-        setError(res.error ?? "Güncellenemedi.");
+        setError(res.error ?? t("saveFailed"));
       }
     });
   }
@@ -256,7 +262,7 @@ export function InlineRecipeFeatured({ recipeId, value }: FeaturedToggleProps) {
         onClick={toggle}
         disabled={pending}
         aria-pressed={value}
-        aria-label={value ? "Featured'dan çıkar" : "Featured yap"}
+        aria-label={t("featuredLabel")}
         className={`inline-flex h-5 w-9 items-center rounded-full border transition-colors ${
           value
             ? "border-secondary/40 bg-secondary/30"
@@ -270,7 +276,7 @@ export function InlineRecipeFeatured({ recipeId, value }: FeaturedToggleProps) {
         />
       </button>
       <span className="text-xs text-text-muted">
-        {value ? "Featured" : "Normal"}
+        {value ? tDashboard("featuredBadge") : t("featuredNo")}
       </span>
       {error && <span className="text-xs text-error">{error}</span>}
     </div>

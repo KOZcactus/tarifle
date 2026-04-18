@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { updateUserAction } from "@/lib/actions/admin";
 
 interface BaseProps {
@@ -21,16 +22,14 @@ const ROLE_OPTIONS: { value: RoleEditProps["value"]; label: string }[] = [
 ];
 
 export function InlineUserRole({ userId, value, canEditRole }: RoleEditProps) {
+  const t = useTranslations("admin.inlineEdit");
   const router = useRouter();
   const [pending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
 
   function change(next: RoleEditProps["value"]) {
     if (next === value) return;
-    if (
-      next === "ADMIN" &&
-      !confirm(`Kullanıcıya ADMIN yetkisi vermek istediğine emin misin?`)
-    ) {
+    if (next === "ADMIN" && !confirm(t("selfDemoteConfirm"))) {
       return;
     }
     startTransition(async () => {
@@ -42,7 +41,7 @@ export function InlineUserRole({ userId, value, canEditRole }: RoleEditProps) {
         setError(null);
         router.refresh();
       } else {
-        setError(res.error ?? "Güncellenemedi.");
+        setError(res.error ?? t("saveFailed"));
       }
     });
   }
@@ -70,7 +69,7 @@ export function InlineUserRole({ userId, value, canEditRole }: RoleEditProps) {
         value={value}
         onChange={(e) => change(e.target.value as RoleEditProps["value"])}
         disabled={pending}
-        aria-label="Rol"
+        aria-label={t("roleLabel")}
         className="rounded border border-border bg-bg-card px-2 py-0.5 text-xs focus:border-primary focus:outline-none"
       >
         {ROLE_OPTIONS.map((o) => (
@@ -90,6 +89,7 @@ interface VerifiedToggleProps extends BaseProps {
 }
 
 export function InlineUserVerified({ userId, value }: VerifiedToggleProps) {
+  const t = useTranslations("admin.inlineEdit");
   const router = useRouter();
   const [pending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
@@ -104,7 +104,7 @@ export function InlineUserVerified({ userId, value }: VerifiedToggleProps) {
         setError(null);
         router.refresh();
       } else {
-        setError(res.error ?? "Güncellenemedi.");
+        setError(res.error ?? t("saveFailed"));
       }
     });
   }
@@ -116,7 +116,7 @@ export function InlineUserVerified({ userId, value }: VerifiedToggleProps) {
         onClick={toggle}
         disabled={pending}
         aria-pressed={value}
-        aria-label={value ? "Tarifle ekibinden çıkar" : "Tarifle ekibi yap"}
+        aria-label={t("verifiedLabel")}
         className={`inline-flex h-5 w-9 items-center rounded-full border transition-colors ${
           value
             ? "border-accent-blue/40 bg-accent-blue/30"
@@ -130,7 +130,7 @@ export function InlineUserVerified({ userId, value }: VerifiedToggleProps) {
         />
       </button>
       <span className="text-xs text-text-muted">
-        {value ? "Tarifle ekibi ✓" : "Normal üye"}
+        {value ? t("verifiedTrue") : t("verifiedFalse")}
       </span>
       {error && <span className="text-xs text-error">{error}</span>}
     </div>

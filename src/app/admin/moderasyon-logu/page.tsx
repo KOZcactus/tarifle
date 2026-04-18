@@ -1,4 +1,6 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+import { getLocale, getTranslations } from "next-intl/server";
 import {
   getModerationLog,
   getModerationLogTargets,
@@ -6,10 +8,11 @@ import {
 } from "@/lib/queries/admin";
 import { PaginationBar } from "@/components/admin/PaginationBar";
 
-export const metadata = {
-  title: "Moderasyon Logu | Yönetim Paneli",
-  robots: { index: false, follow: false },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("admin.pageTitles");
+  return { title: t("moderationLog"), robots: { index: false, follow: false } };
+}
+
 export const dynamic = "force-dynamic";
 
 const PAGE_SIZE = 50;
@@ -17,19 +20,10 @@ const PAGE_SIZE = 50;
 const TARGET_TYPES = ["variation", "review", "recipe", "user"] as const;
 const ACTIONS = ["HIDE", "APPROVE", "EDIT"] as const;
 
-const TARGET_LABELS: Record<string, string> = {
-  variation: "Uyarlama",
-  review: "Yorum",
-  recipe: "Tarif",
-  user: "Kullanıcı",
-};
-const ACTION_META: Record<
-  string,
-  { label: string; classes: string }
-> = {
-  HIDE: { label: "Gizlendi", classes: "bg-error/15 text-error" },
-  APPROVE: { label: "Onaylandı", classes: "bg-accent-green/15 text-accent-green" },
-  EDIT: { label: "Düzenlendi", classes: "bg-accent-blue/15 text-accent-blue" },
+const ACTION_CLASSES: Record<string, string> = {
+  HIDE: "bg-error/15 text-error",
+  APPROVE: "bg-accent-green/15 text-accent-green",
+  EDIT: "bg-accent-blue/15 text-accent-blue",
 };
 
 interface PageProps {
@@ -44,8 +38,8 @@ function firstStr(
   return raw ?? fallback;
 }
 
-function fmtDate(d: Date) {
-  return new Date(d).toLocaleString("tr-TR", {
+function fmtDate(d: Date, locale: string) {
+  return new Date(d).toLocaleString(locale, {
     day: "numeric",
     month: "short",
     year: "numeric",
@@ -67,7 +61,12 @@ export default async function ModerationLogPage({ searchParams }: PageProps) {
     pageSize: PAGE_SIZE,
   };
 
-  const { entries, total } = await getModerationLog(params);
+  const [{ entries, total }, t, tActions, locale] = await Promise.all([
+    getModerationLog(params),
+    getTranslations("admin.moderationLog"),
+    getTranslations("admin.actions"),
+    getLocale(),
+  ]);
   const targets = await getModerationLogTargets(
     entries.map((e) => ({ targetType: e.targetType, targetId: e.targetId })),
   );
@@ -89,7 +88,7 @@ export default async function ModerationLogPage({ searchParams }: PageProps) {
     <div>
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <h2 className="font-heading text-xl font-bold">
-          Moderasyon Logu ({total.toLocaleString("tr-TR")})
+          {t("headingWithCount", { count: total.toLocaleString(locale) })}
         </h2>
       </div>
 
@@ -102,26 +101,26 @@ export default async function ModerationLogPage({ searchParams }: PageProps) {
         <select
           name="type"
           defaultValue={targetType}
-          aria-label="Hedef türü"
+          aria-label={t("filterTypeAria")}
           className="rounded-lg border border-border bg-bg-card px-3 py-1.5 text-sm focus:border-primary focus:outline-none"
         >
-          <option value="">Tüm hedefler</option>
-          {TARGET_TYPES.map((t) => (
-            <option key={t} value={t}>
-              {TARGET_LABELS[t] ?? t}
+          <option value="">{t("allTargets")}</option>
+          {TARGET_TYPES.map((tt) => (
+            <option key={tt} value={tt}>
+              {t.has(`targetTypes.${tt}`) ? t(`targetTypes.${tt}`) : tt}
             </option>
           ))}
         </select>
         <select
           name="action"
           defaultValue={action}
-          aria-label="İşlem"
+          aria-label={t("filterActionAria")}
           className="rounded-lg border border-border bg-bg-card px-3 py-1.5 text-sm focus:border-primary focus:outline-none"
         >
-          <option value="">Tüm işlemler</option>
+          <option value="">{t("allActions")}</option>
           {ACTIONS.map((a) => (
             <option key={a} value={a}>
-              {ACTION_META[a]?.label ?? a}
+              {t.has(`actions.${a}`) ? t(`actions.${a}`) : a}
             </option>
           ))}
         </select>
@@ -129,40 +128,41 @@ export default async function ModerationLogPage({ searchParams }: PageProps) {
           type="submit"
           className="rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-white hover:bg-primary-hover"
         >
-          Uygula
+          {tActions("apply")}
         </button>
         {(targetType || action) && (
           <Link
             href="/admin/moderasyon-logu"
             className="rounded-lg border border-border px-3 py-1.5 text-sm text-text-muted hover:bg-bg-elevated"
           >
-            Temizle
+            {tActions("clear")}
           </Link>
         )}
       </form>
 
       {entries.length === 0 ? (
         <p className="rounded-xl border border-dashed border-border px-6 py-12 text-center text-text-muted">
-          Bu filtrelerde log kaydı yok.
+          {t("empty")}
         </p>
       ) : (
         <ol className="divide-y divide-border rounded-xl border border-border bg-bg-card">
           {entries.map((e) => {
-            const meta = ACTION_META[e.action] ?? {
-              label: e.action,
-              classes: "bg-bg-elevated text-text-muted",
-            };
+            const actionLabel = t.has(`actions.${e.action}`)
+              ? t(`actions.${e.action}`)
+              : e.action;
+            const targetLabel = t.has(`targetTypes.${e.targetType}`)
+              ? t(`targetTypes.${e.targetType}`)
+              : e.targetType;
+            const classes = ACTION_CLASSES[e.action] ?? "bg-bg-elevated text-text-muted";
             const target = targets.get(e.targetId);
             return (
               <li key={e.id} className="flex flex-col gap-1 px-4 py-3 text-sm">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span
-                    className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${meta.classes}`}
-                  >
-                    {meta.label}
+                  <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${classes}`}>
+                    {actionLabel}
                   </span>
                   <span className="rounded bg-bg-elevated px-1.5 py-0.5 text-[10px] font-medium uppercase text-text-muted">
-                    {TARGET_LABELS[e.targetType] ?? e.targetType}
+                    {targetLabel}
                   </span>
                   {target ? (
                     target.link ? (
@@ -179,16 +179,17 @@ export default async function ModerationLogPage({ searchParams }: PageProps) {
                     )
                   ) : (
                     <span className="min-w-0 flex-1 truncate font-mono text-xs text-text-muted">
-                      {e.targetId.slice(0, 16)}… <span className="italic">(silinmiş)</span>
+                      {e.targetId.slice(0, 16)}…{" "}
+                      <span className="italic">{t("deletedTarget")}</span>
                     </span>
                   )}
                   <span className="shrink-0 text-xs text-text-muted">
-                    {fmtDate(e.createdAt)}
+                    {fmtDate(e.createdAt, locale)}
                   </span>
                 </div>
                 <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
                   <span className="text-text-muted">
-                    Moderator:{" "}
+                    {t("moderatorPrefix")}{" "}
                     {e.moderator.username ? (
                       <Link
                         href={`/admin/kullanicilar/${e.moderator.username}`}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useTransition } from "react";
+import { useTranslations } from "next-intl";
 import { reviewReport } from "@/lib/actions/admin";
 
 interface AdminReportActionsProps {
@@ -8,6 +9,7 @@ interface AdminReportActionsProps {
 }
 
 export function AdminReportActions({ reportId }: AdminReportActionsProps) {
+  const t = useTranslations("admin.actions");
   const [isPending, startTransition] = useTransition();
 
   function handleAction(action: "REVIEWED" | "DISMISSED") {
@@ -23,14 +25,14 @@ export function AdminReportActions({ reportId }: AdminReportActionsProps) {
         disabled={isPending}
         className="rounded-lg bg-accent-green/15 px-3 py-1.5 text-xs font-medium text-accent-green transition-colors hover:bg-accent-green/25 disabled:opacity-50"
       >
-        İncelendi
+        {t("markReviewed")}
       </button>
       <button
         onClick={() => handleAction("DISMISSED")}
         disabled={isPending}
         className="rounded-lg bg-bg-elevated px-3 py-1.5 text-xs font-medium text-text-muted transition-colors hover:bg-border disabled:opacity-50"
       >
-        Reddet
+        {t("reject")}
       </button>
     </div>
   );

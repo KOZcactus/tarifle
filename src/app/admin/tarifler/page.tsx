@@ -1,15 +1,26 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+import { getLocale, getTranslations } from "next-intl/server";
 import {
   getAdminRecipesList,
   type RecipeSortKey,
   type AdminRecipeListParams,
 } from "@/lib/queries/admin";
-import { getDifficultyLabel } from "@/lib/utils";
 import { SortableHeader } from "@/components/admin/SortableHeader";
 import { PaginationBar } from "@/components/admin/PaginationBar";
 
-export const metadata = { title: "Tarifler | Yönetim Paneli" };
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("admin.pageTitles");
+  return { title: t("recipes") };
+}
+
 export const dynamic = "force-dynamic";
+
+const DIFFICULTY_KEY = {
+  EASY: "difficultyEasy",
+  MEDIUM: "difficultyMedium",
+  HARD: "difficultyHard",
+} as const;
 
 const PAGE_SIZE = 50;
 
@@ -50,7 +61,14 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
     pageSize: PAGE_SIZE,
   };
 
-  const { recipes, total } = await getAdminRecipesList(params);
+  const [{ recipes, total }, t, tActions, tDashboard, tCard, locale] = await Promise.all([
+    getAdminRecipesList(params),
+    getTranslations("admin.recipes"),
+    getTranslations("admin.actions"),
+    getTranslations("admin.dashboard"),
+    getTranslations("recipes.card"),
+    getLocale(),
+  ]);
 
   // Helper — preserve other search params when building next URL
   function buildHref(overrides: Record<string, string | number | null>) {
@@ -83,14 +101,14 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
     <div>
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <h2 className="font-heading text-xl font-bold">
-          Tarifler ({total.toLocaleString("tr-TR")})
+          {t("headingWithCount", { count: total.toLocaleString(locale) })}
         </h2>
         <a
           href="/api/admin/export/recipes"
           download
           className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-1.5 text-sm hover:bg-bg-elevated"
         >
-          📥 CSV indir
+          📥 {tDashboard("csvRecipes")}
         </a>
       </div>
 
@@ -103,17 +121,17 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
         <input
           name="q"
           defaultValue={search}
-          placeholder="Tarif adı ara..."
-          aria-label="Tarif adı ara"
+          placeholder={t("searchPlaceholder")}
+          aria-label={t("searchPlaceholder")}
           className="min-w-[200px] rounded-lg border border-border bg-bg-card px-3 py-1.5 text-sm focus:border-primary focus:outline-none"
         />
         <select
           name="status"
           defaultValue={status}
-          aria-label="Durum"
+          aria-label={t("colStatus")}
           className="rounded-lg border border-border bg-bg-card px-3 py-1.5 text-sm focus:border-primary focus:outline-none"
         >
-          <option value="">Tüm durumlar</option>
+          <option value="">{t("statusAll")}</option>
           {STATUSES.map((s) => (
             <option key={s} value={s}>
               {s}
@@ -127,14 +145,14 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
           type="submit"
           className="rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-white hover:bg-primary-hover"
         >
-          Uygula
+          {tActions("apply")}
         </button>
         {(search || status) && (
           <Link
             href="/admin/tarifler"
             className="rounded-lg border border-border px-3 py-1.5 text-sm text-text-muted hover:bg-bg-elevated"
           >
-            Temizle
+            {tActions("clear")}
           </Link>
         )}
       </form>
@@ -144,19 +162,19 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
           <thead>
             <tr className="border-b border-border">
               <th className="pb-3 pr-4 text-xs font-medium uppercase tracking-wide text-text-muted">
-                Tarif
+                {t("colTitle")}
               </th>
               <th className="pb-3 pr-4 text-xs font-medium uppercase tracking-wide text-text-muted">
-                Kategori
+                {t("colCategory")}
               </th>
               <th className="pb-3 pr-4 text-xs font-medium uppercase tracking-wide text-text-muted">
-                Zorluk
+                {t("colDifficulty")}
               </th>
               <th className="pb-3 pr-4 text-xs font-medium uppercase tracking-wide text-text-muted">
-                Durum
+                {t("colStatus")}
               </th>
               <SortableHeader<RecipeSortKey>
-                label="Görüntülenme"
+                label={t("colViews")}
                 sortKey="viewCount"
                 currentSort={sort}
                 currentOrder={order}
@@ -164,7 +182,7 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
                 align="right"
               />
               <SortableHeader<RecipeSortKey>
-                label="Uyarlama"
+                label={tDashboard("variationTitle")}
                 sortKey="variations"
                 currentSort={sort}
                 currentOrder={order}
@@ -172,7 +190,7 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
                 align="right"
               />
               <SortableHeader<RecipeSortKey>
-                label="Kayıt"
+                label={tDashboard("bookmarkTitle")}
                 sortKey="bookmarks"
                 currentSort={sort}
                 currentOrder={order}
@@ -180,10 +198,10 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
                 align="right"
               />
               <th className="pb-3 pr-4 text-right text-xs font-medium uppercase tracking-wide text-text-muted">
-                Yorum
+                {tDashboard("reviewTitle")}
               </th>
               <SortableHeader<RecipeSortKey>
-                label="Eklendi"
+                label={t("colCreated")}
                 sortKey="createdAt"
                 currentSort={sort}
                 currentOrder={order}
@@ -196,7 +214,7 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
             {recipes.length === 0 ? (
               <tr>
                 <td colSpan={9} className="py-8 text-center text-text-muted">
-                  Bu filtrelere uyan tarif bulunamadı.
+                  {t("emptyFiltered")}
                 </td>
               </tr>
             ) : (
@@ -218,8 +236,8 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
                         target="_blank"
                         rel="noopener"
                         className="text-xs text-text-muted hover:text-primary"
-                        title="Public sayfa"
-                        aria-label="Public sayfa"
+                        title={t("viewPublic")}
+                        aria-label={t("viewPublic")}
                       >
                         ↗
                       </Link>
@@ -227,7 +245,7 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
                   </td>
                   <td className="py-3 pr-4 text-text-muted">{r.category.name}</td>
                   <td className="py-3 pr-4 text-text-muted">
-                    {getDifficultyLabel(r.difficulty)}
+                    {tCard(DIFFICULTY_KEY[r.difficulty])}
                   </td>
                   <td className="py-3 pr-4">
                     <span
@@ -241,7 +259,7 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
                     </span>
                   </td>
                   <td className="py-3 pr-4 text-right tabular-nums text-text-muted">
-                    {r.viewCount.toLocaleString("tr-TR")}
+                    {r.viewCount.toLocaleString(locale)}
                   </td>
                   <td className="py-3 pr-4 text-right tabular-nums text-text-muted">
                     {r._count.variations}
@@ -253,7 +271,7 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
                     {r._count.reviews}
                   </td>
                   <td className="py-3 text-right text-xs tabular-nums text-text-muted">
-                    {new Date(r.createdAt).toLocaleDateString("tr-TR")}
+                    {new Date(r.createdAt).toLocaleDateString(locale)}
                   </td>
                 </tr>
               ))

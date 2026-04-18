@@ -1,6 +1,7 @@
 "use client";
 
 import { useTransition } from "react";
+import { useTranslations } from "next-intl";
 import { hideVariation, approveVariation } from "@/lib/actions/admin";
 
 interface AdminVariationActionsProps {
@@ -9,6 +10,7 @@ interface AdminVariationActionsProps {
 }
 
 export function AdminVariationActions({ variationId, currentStatus }: AdminVariationActionsProps) {
+  const t = useTranslations("admin.actions");
   const [isPending, startTransition] = useTransition();
 
   function handleHide() {
@@ -31,7 +33,7 @@ export function AdminVariationActions({ variationId, currentStatus }: AdminVaria
           disabled={isPending}
           className="rounded-lg bg-error/10 px-3 py-1.5 text-xs font-medium text-error transition-colors hover:bg-error/20 disabled:opacity-50"
         >
-          Gizle
+          {t("hide")}
         </button>
       )}
       <button
@@ -39,7 +41,7 @@ export function AdminVariationActions({ variationId, currentStatus }: AdminVaria
         disabled={isPending}
         className="rounded-lg bg-accent-green/15 px-3 py-1.5 text-xs font-medium text-accent-green transition-colors hover:bg-accent-green/25 disabled:opacity-50"
       >
-        Onayla
+        {t("approve")}
       </button>
     </div>
   );

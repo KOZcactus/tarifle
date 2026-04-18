@@ -1,7 +1,8 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { getLocale, getTranslations } from "next-intl/server";
 import { getAdminRecipeDetail } from "@/lib/queries/admin";
-import { getDifficultyLabel } from "@/lib/utils";
 import { CUISINE_LABEL, CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
 import { FLAG_LABELS, type PreflightFlag } from "@/lib/moderation/preflight";
 import {
@@ -20,29 +21,38 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateMetadata({ params }: PageProps) {
-  const { slug } = await params;
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const [{ slug }, t] = await Promise.all([
+    params,
+    getTranslations("admin.pageTitles"),
+  ]);
   return {
-    title: `${slug} | Yönetim Paneli`,
+    title: t("recipeDetail", { title: slug }),
     robots: { index: false, follow: false },
   };
 }
 
-function statusChip(status: string) {
+const DIFFICULTY_KEY = {
+  EASY: "difficultyEasy",
+  MEDIUM: "difficultyMedium",
+  HARD: "difficultyHard",
+} as const;
+
+function statusChip(status: string): { label: string; classes: string } {
   if (status === "PUBLISHED") {
-    return { label: "Yayında", classes: "bg-accent-green/15 text-accent-green" };
+    return { label: status, classes: "bg-accent-green/15 text-accent-green" };
   }
   if (status === "HIDDEN" || status === "REJECTED") {
     return { label: status, classes: "bg-error/15 text-error" };
   }
   if (status === "PENDING_REVIEW") {
-    return { label: "İncelemede", classes: "bg-secondary/20 text-secondary" };
+    return { label: status, classes: "bg-secondary/20 text-secondary" };
   }
   return { label: status, classes: "bg-bg-elevated text-text-muted" };
 }
 
-function fmtDate(d: Date) {
-  return new Date(d).toLocaleString("tr-TR", {
+function fmtDate(d: Date, locale: string) {
+  return new Date(d).toLocaleString(locale, {
     day: "numeric",
     month: "short",
     year: "numeric",
@@ -53,7 +63,14 @@ function fmtDate(d: Date) {
 
 export default async function AdminRecipeDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const detail = await getAdminRecipeDetail(slug);
+  const [detail, t, tCard, tLayout, tCuisine, locale] = await Promise.all([
+    getAdminRecipeDetail(slug),
+    getTranslations("admin.recipeDetail"),
+    getTranslations("recipes.card"),
+    getTranslations("admin.layout"),
+    getTranslations("cuisines"),
+    getLocale(),
+  ]);
   if (!detail) notFound();
 
   const {
@@ -66,20 +83,23 @@ export default async function AdminRecipeDetailPage({ params }: PageProps) {
     topBookmarkers,
   } = detail;
 
-  const cuisineLabel = recipe.cuisine
-    ? CUISINE_LABEL[recipe.cuisine as CuisineCode] ?? recipe.cuisine
+  const cuisineCode = recipe.cuisine as CuisineCode | null | undefined;
+  const cuisineLabel = cuisineCode
+    ? tCuisine.has(cuisineCode)
+      ? tCuisine(cuisineCode)
+      : CUISINE_LABEL[cuisineCode] ?? cuisineCode
     : null;
-  const cuisineFlag = recipe.cuisine
-    ? CUISINE_FLAG[recipe.cuisine as CuisineCode] ?? "🌍"
+  const cuisineFlag = cuisineCode
+    ? CUISINE_FLAG[cuisineCode] ?? "🌍"
     : null;
 
   const stats = [
-    { label: "Görüntülenme", value: recipe.viewCount, emoji: "👁" },
-    { label: "Uyarlama", value: recipe._count.variations, emoji: "🔄" },
-    { label: "Yorum", value: recipe._count.reviews, emoji: "⭐" },
-    { label: "Kayıt", value: recipe._count.bookmarks, emoji: "🔖" },
-    { label: "Malzeme", value: recipe._count.ingredients, emoji: "🧂" },
-    { label: "Adım", value: recipe._count.steps, emoji: "📝" },
+    { label: t("stats.views"), value: recipe.viewCount, emoji: "👁" },
+    { label: t("stats.variations"), value: recipe._count.variations, emoji: "🔄" },
+    { label: t("stats.reviews"), value: recipe._count.reviews, emoji: "⭐" },
+    { label: t("stats.bookmarks"), value: recipe._count.bookmarks, emoji: "🔖" },
+    { label: t("metaCategory"), value: recipe._count.ingredients, emoji: "🧂" },
+    { label: t("metaType"), value: recipe._count.steps, emoji: "📝" },
   ];
 
   const totalDistribution = Object.values(ratingDistribution).reduce(
@@ -92,7 +112,7 @@ export default async function AdminRecipeDetailPage({ params }: PageProps) {
       {/* Breadcrumb */}
       <nav className="text-xs text-text-muted" aria-label="breadcrumb">
         <Link href="/admin/tarifler" className="hover:text-primary">
-          Tarifler
+          {tLayout("recipes")}
         </Link>
         <span className="mx-1.5">›</span>
         <span className="text-text">{recipe.slug}</span>
@@ -142,10 +162,14 @@ export default async function AdminRecipeDetailPage({ params }: PageProps) {
                   {cuisineFlag} {cuisineLabel}
                 </span>
               )}
-              <span>Zorluk: {getDifficultyLabel(recipe.difficulty)}</span>
-              <span>Tip: {recipe.type}</span>
-              <span>Eklendi: {fmtDate(recipe.createdAt)}</span>
-              <span>Güncellendi: {fmtDate(recipe.updatedAt)}</span>
+              <span>
+                {t("metaDifficulty")}: {tCard(DIFFICULTY_KEY[recipe.difficulty])}
+              </span>
+              <span>
+                {t("metaType")}: {recipe.type}
+              </span>
+              <span>{fmtDate(recipe.createdAt, locale)}</span>
+              <span>{fmtDate(recipe.updatedAt, locale)}</span>
             </div>
             {recipe.allergens.length > 0 && (
               <div className="mt-2 flex flex-wrap gap-1">
@@ -166,7 +190,7 @@ export default async function AdminRecipeDetailPage({ params }: PageProps) {
             rel="noopener"
             className="shrink-0 rounded-lg border border-border px-3 py-1.5 text-xs hover:bg-bg-elevated"
           >
-            Public sayfa ↗
+            ↗
           </Link>
         </div>
       </header>
@@ -185,7 +209,7 @@ export default async function AdminRecipeDetailPage({ params }: PageProps) {
                 </span>
                 <div>
                   <p className="text-lg font-bold text-text">
-                    {s.value.toLocaleString("tr-TR")}
+                    {s.value.toLocaleString(locale)}
                   </p>
                   <p className="text-[11px] text-text-muted">{s.label}</p>
                 </div>
@@ -254,7 +278,7 @@ export default async function AdminRecipeDetailPage({ params }: PageProps) {
                 </span>
               </p>
               <p className="mt-1 text-xs text-text-muted">
-                {reviewCount} yayındaki yorum
+                {t("reviewsHeading", { count: reviewCount })}
               </p>
             </div>
             <ul className="flex flex-col justify-center gap-1.5">
@@ -290,10 +314,10 @@ export default async function AdminRecipeDetailPage({ params }: PageProps) {
       {/* Reviews */}
       <section>
         <h3 className="mb-3 font-heading text-base font-semibold">
-          ⭐ Yorumlar ({reviews.length})
+          ⭐ {t("reviewsHeading", { count: reviews.length })}
         </h3>
         {reviews.length === 0 ? (
-          <p className="text-sm text-text-muted">Henüz yorum yok.</p>
+          <p className="text-sm text-text-muted">{t("emptyReviews")}</p>
         ) : (
           <div className="overflow-hidden rounded-xl border border-border bg-bg-card">
             <ul className="divide-y divide-border">
@@ -319,7 +343,7 @@ export default async function AdminRecipeDetailPage({ params }: PageProps) {
                         {r.user.name ?? `@${r.user.username ?? "—"}`}
                       </Link>
                       <span className="shrink-0 text-xs text-text-muted">
-                        {fmtDate(r.createdAt)}
+                        {fmtDate(r.createdAt, locale)}
                       </span>
                       <span
                         className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-medium ${chipInfo.classes}`}
@@ -360,10 +384,10 @@ export default async function AdminRecipeDetailPage({ params }: PageProps) {
       {/* Variations */}
       <section>
         <h3 className="mb-3 font-heading text-base font-semibold">
-          🔄 Uyarlamalar ({variations.length})
+          🔄 {t("publishedVariationsHeading", { count: variations.length })}
         </h3>
         {variations.length === 0 ? (
-          <p className="text-sm text-text-muted">Henüz uyarlama yok.</p>
+          <p className="text-sm text-text-muted">—</p>
         ) : (
           <div className="overflow-hidden rounded-xl border border-border bg-bg-card">
             <ul className="divide-y divide-border">
@@ -387,7 +411,7 @@ export default async function AdminRecipeDetailPage({ params }: PageProps) {
                           {v.author.name ?? `@${v.author.username ?? "—"}`}
                         </Link>
                         {" · "}
-                        {fmtDate(v.createdAt)}
+                        {fmtDate(v.createdAt, locale)}
                       </p>
                       {flags.length > 0 && (
                         <div className="mt-1 flex flex-wrap gap-1">
@@ -429,7 +453,7 @@ export default async function AdminRecipeDetailPage({ params }: PageProps) {
       {topBookmarkers.length > 0 && (
         <section>
           <h3 className="mb-3 font-heading text-base font-semibold">
-            🔖 Son kaydedenler
+            🔖 {t("latestBookmarksHeading", { count: topBookmarkers.length })}
           </h3>
           <ul className="divide-y divide-border rounded-xl border border-border bg-bg-card">
             {topBookmarkers.map((b, i) => (
@@ -444,7 +468,7 @@ export default async function AdminRecipeDetailPage({ params }: PageProps) {
                   {b.user.name ?? `@${b.user.username ?? "—"}`}
                 </Link>
                 <span className="shrink-0 text-xs text-text-muted">
-                  {fmtDate(b.createdAt)}
+                  {fmtDate(b.createdAt, locale)}
                 </span>
               </li>
             ))}

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+import { getLocale, getTranslations } from "next-intl/server";
 import {
   getAdminCollections,
   type AdminCollectionParams,
@@ -6,10 +8,11 @@ import {
 import { PaginationBar } from "@/components/admin/PaginationBar";
 import { CollectionActions } from "@/components/admin/CollectionActions";
 
-export const metadata = {
-  title: "Koleksiyonlar | Yönetim Paneli",
-  robots: { index: false, follow: false },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("admin.pageTitles");
+  return { title: t("collections"), robots: { index: false, follow: false } };
+}
+
 export const dynamic = "force-dynamic";
 
 const PAGE_SIZE = 50;
@@ -36,12 +39,17 @@ export default async function AdminCollectionsPage({ searchParams }: PageProps) 
   const search = firstStr(sp.q);
   const page = Math.max(1, parseInt(firstStr(sp.page, "1"), 10) || 1);
 
-  const { collections, total } = await getAdminCollections({
-    visibility,
-    search: search || undefined,
-    page,
-    pageSize: PAGE_SIZE,
-  });
+  const [{ collections, total }, t, tActions, locale] = await Promise.all([
+    getAdminCollections({
+      visibility,
+      search: search || undefined,
+      page,
+      pageSize: PAGE_SIZE,
+    }),
+    getTranslations("admin.collections"),
+    getTranslations("admin.actions"),
+    getLocale(),
+  ]);
 
   function buildHref(overrides: Record<string, string | number | null>) {
     const out = new URLSearchParams();
@@ -60,7 +68,7 @@ export default async function AdminCollectionsPage({ searchParams }: PageProps) 
     <div>
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <h2 className="font-heading text-xl font-bold">
-          Koleksiyonlar ({total.toLocaleString("tr-TR")})
+          {t("headingWithCount", { count: total.toLocaleString(locale) })}
         </h2>
       </div>
 
@@ -72,33 +80,33 @@ export default async function AdminCollectionsPage({ searchParams }: PageProps) 
         <input
           name="q"
           defaultValue={search}
-          placeholder="Koleksiyon adı ara..."
-          aria-label="Koleksiyon adı ara"
+          placeholder={t("searchPlaceholder")}
+          aria-label={t("searchAria")}
           className="min-w-[200px] rounded-lg border border-border bg-bg-card px-3 py-1.5 text-sm focus:border-primary focus:outline-none"
         />
         <select
           name="visibility"
           defaultValue={visibility ?? ""}
-          aria-label="Görünürlük"
+          aria-label={t("visibilityAria")}
           className="rounded-lg border border-border bg-bg-card px-3 py-1.5 text-sm focus:border-primary focus:outline-none"
         >
-          <option value="">Tüm görünürlükler</option>
-          <option value="public">Herkese açık</option>
-          <option value="private">Özel</option>
-          <option value="hidden">Gizlenmiş</option>
+          <option value="">{t("visibilityAll")}</option>
+          <option value="public">{t("visibilityPublic")}</option>
+          <option value="private">{t("visibilityPrivate")}</option>
+          <option value="hidden">{t("visibilityHidden")}</option>
         </select>
         <button
           type="submit"
           className="rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-white hover:bg-primary-hover"
         >
-          Uygula
+          {tActions("apply")}
         </button>
         {(visibility || search) && (
           <Link
             href="/admin/koleksiyonlar"
             className="rounded-lg border border-border px-3 py-1.5 text-sm text-text-muted hover:bg-bg-elevated"
           >
-            Temizle
+            {tActions("clear")}
           </Link>
         )}
       </form>
@@ -106,7 +114,7 @@ export default async function AdminCollectionsPage({ searchParams }: PageProps) 
       <div className="overflow-hidden rounded-xl border border-border bg-bg-card">
         {collections.length === 0 ? (
           <p className="p-6 text-center text-sm text-text-muted">
-            Bu filtrelerde koleksiyon yok.
+            {t("emptyFiltered")}
           </p>
         ) : (
           <ul className="divide-y divide-border">
@@ -133,11 +141,11 @@ export default async function AdminCollectionsPage({ searchParams }: PageProps) 
                     </Link>
                     {c.isPublic ? (
                       <span className="rounded-full bg-accent-green/15 px-2 py-0.5 text-[10px] font-medium text-accent-green">
-                        Açık
+                        {t("publicBadge")}
                       </span>
                     ) : (
                       <span className="rounded-full bg-bg-elevated px-2 py-0.5 text-[10px] text-text-muted">
-                        Özel
+                        {t("privateBadge")}
                       </span>
                     )}
                     {c.hiddenAt && (
@@ -145,7 +153,7 @@ export default async function AdminCollectionsPage({ searchParams }: PageProps) 
                         className="rounded-full bg-error/15 px-2 py-0.5 text-[10px] font-medium text-error"
                         title={c.hiddenReason ?? ""}
                       >
-                        🚫 Gizlenmiş
+                        {t("hiddenBadge")}
                       </span>
                     )}
                   </div>
@@ -158,14 +166,15 @@ export default async function AdminCollectionsPage({ searchParams }: PageProps) 
                         {c.user.name ?? `@${c.user.username}`}
                       </Link>
                     ) : (
-                      "(silinmiş kullanıcı)"
+                      t("deletedUser")
                     )}
                     {" · "}
-                    {c._count.items} tarif · {new Date(c.createdAt).toLocaleDateString("tr-TR")}
+                    {t("itemsCount", { count: c._count.items })} ·{" "}
+                    {new Date(c.createdAt).toLocaleDateString(locale)}
                   </p>
                   {c.hiddenAt && c.hiddenReason && (
                     <p className="mt-1 text-[11px] italic text-text-muted">
-                      Gizleme sebebi: {c.hiddenReason}
+                      {t("hiddenReasonPrefix", { reason: c.hiddenReason })}
                     </p>
                   )}
                 </div>

@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { approveReview, hideReview } from "@/lib/actions/admin";
 
 interface ReviewModerationActionsProps {
@@ -17,6 +18,7 @@ interface ReviewModerationActionsProps {
 export function ReviewModerationActions({
   reviewId,
 }: ReviewModerationActionsProps) {
+  const t = useTranslations("admin.actions");
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
@@ -28,24 +30,21 @@ export function ReviewModerationActions({
         await approveReview(reviewId);
         router.refresh();
       } catch (e: unknown) {
-        setError(e instanceof Error ? e.message : "İşlem başarısız.");
+        setError(e instanceof Error ? e.message : t("actionFailed"));
       }
     });
   };
 
   const handleHide = () => {
     setError(null);
-    const reason = window.prompt(
-      "İsteğe bağlı: gizleme sebebini not et (yazara bildirilir).",
-      "",
-    );
+    const reason = window.prompt(t("promptHideReason"), "");
     if (reason === null) return;
     startTransition(async () => {
       try {
         await hideReview(reviewId, reason.trim() || undefined);
         router.refresh();
       } catch (e: unknown) {
-        setError(e instanceof Error ? e.message : "İşlem başarısız.");
+        setError(e instanceof Error ? e.message : t("actionFailed"));
       }
     });
   };
@@ -59,7 +58,7 @@ export function ReviewModerationActions({
           disabled={isPending}
           className="rounded-lg bg-accent-green px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-accent-green/90 disabled:opacity-50"
         >
-          Onayla
+          {t("approve")}
         </button>
         <button
           type="button"
@@ -67,7 +66,7 @@ export function ReviewModerationActions({
           disabled={isPending}
           className="rounded-lg bg-error px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-error/90 disabled:opacity-50"
         >
-          Gizle
+          {t("hide")}
         </button>
       </div>
       {error && <p className="text-xs text-error">{error}</p>}

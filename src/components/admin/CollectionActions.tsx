@@ -2,6 +2,7 @@
 
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import {
   hideCollectionAction,
   unhideCollectionAction,
@@ -13,14 +14,12 @@ interface Props {
 }
 
 export function CollectionActions({ collectionId, hidden }: Props) {
+  const t = useTranslations("admin.actions");
   const router = useRouter();
   const [pending, startTransition] = useTransition();
 
   function hide() {
-    const reason = window.prompt(
-      "İsteğe bağlı: gizleme sebebi (sahibe moderasyon log'unda görünür).",
-      "",
-    );
+    const reason = window.prompt(t("promptHideCollectionReason"), "");
     if (reason === null) return;
     startTransition(async () => {
       const res = await hideCollectionAction({
@@ -28,7 +27,7 @@ export function CollectionActions({ collectionId, hidden }: Props) {
         reason: reason.trim() || undefined,
       });
       if (res.success) router.refresh();
-      else alert(res.error ?? "Gizlenemedi.");
+      else alert(res.error ?? t("hideFailed"));
     });
   }
 
@@ -36,7 +35,7 @@ export function CollectionActions({ collectionId, hidden }: Props) {
     startTransition(async () => {
       const res = await unhideCollectionAction({ collectionId });
       if (res.success) router.refresh();
-      else alert(res.error ?? "Geri alınamadı.");
+      else alert(res.error ?? t("unhideFailed"));
     });
   }
 
@@ -47,7 +46,7 @@ export function CollectionActions({ collectionId, hidden }: Props) {
       disabled={pending}
       className="rounded-lg bg-accent-green/15 px-3 py-1 text-xs font-medium text-accent-green hover:bg-accent-green/25 disabled:opacity-50"
     >
-      Geri aç
+      {t("unhideCollection")}
     </button>
   ) : (
     <button
@@ -56,7 +55,7 @@ export function CollectionActions({ collectionId, hidden }: Props) {
       disabled={pending}
       className="rounded-lg bg-error/15 px-3 py-1 text-xs font-medium text-error hover:bg-error/25 disabled:opacity-50"
     >
-      Gizle
+      {t("hideCollection")}
     </button>
   );
 }

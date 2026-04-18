@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import {
   renameTagAction,
   deleteTagAction,
@@ -19,6 +20,8 @@ interface TagRowProps {
  * usage 0 ise (backend guard'ı da var).
  */
 export function TagRow({ id, name, slug, usageCount }: TagRowProps) {
+  const t = useTranslations("admin.tags");
+  const tActions = useTranslations("admin.actions");
   const router = useRouter();
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(name);
@@ -37,7 +40,7 @@ export function TagRow({ id, name, slug, usageCount }: TagRowProps) {
         setError(null);
         router.refresh();
       } else {
-        setError(res.error ?? "Güncellenemedi.");
+        setError(res.error ?? t("rowSaveFailed"));
       }
     });
   }
@@ -50,15 +53,13 @@ export function TagRow({ id, name, slug, usageCount }: TagRowProps) {
 
   function del() {
     if (usageCount > 0) return; // guard
-    if (
-      !confirm(`"${name}" etiketini silmek istediğine emin misin?`)
-    ) {
+    if (!confirm(t("rowDeleteConfirm", { name }))) {
       return;
     }
     startTransition(async () => {
       const res = await deleteTagAction({ tagId: id });
       if (res.success) router.refresh();
-      else setError(res.error ?? "Silinemedi.");
+      else setError(res.error ?? t("rowDeleteFailed"));
     });
   }
 
@@ -77,7 +78,7 @@ export function TagRow({ id, name, slug, usageCount }: TagRowProps) {
               }}
               maxLength={50}
               autoFocus
-              aria-label="Etiket adı"
+              aria-label={t("createNameLabel")}
               className="rounded border border-border bg-bg-card px-2 py-0.5 focus:border-primary focus:outline-none"
             />
             <button
@@ -85,6 +86,7 @@ export function TagRow({ id, name, slug, usageCount }: TagRowProps) {
               onClick={commit}
               disabled={pending || draft.trim().length < 2}
               className="rounded bg-primary px-2 py-0.5 text-xs text-white hover:bg-primary-hover disabled:opacity-50"
+              aria-label={t("rowSave")}
             >
               ✓
             </button>
@@ -93,6 +95,7 @@ export function TagRow({ id, name, slug, usageCount }: TagRowProps) {
               onClick={cancel}
               disabled={pending}
               className="rounded border border-border px-2 py-0.5 text-xs text-text-muted hover:bg-bg-elevated"
+              aria-label={t("rowCancel")}
             >
               ✕
             </button>
@@ -102,7 +105,7 @@ export function TagRow({ id, name, slug, usageCount }: TagRowProps) {
             type="button"
             onClick={() => setEditing(true)}
             className="group inline-flex items-center gap-1.5 text-left font-medium text-text hover:text-primary"
-            aria-label={`${name} düzenle`}
+            aria-label={t("rowRename")}
           >
             <span>{name}</span>
             <span
@@ -116,24 +119,17 @@ export function TagRow({ id, name, slug, usageCount }: TagRowProps) {
         <p className="mt-0.5 font-mono text-xs text-text-muted">{slug}</p>
         {error && <p className="mt-0.5 text-xs text-error">{error}</p>}
       </div>
-      <span
-        className="shrink-0 rounded-full bg-bg-elevated px-2 py-0.5 text-xs tabular-nums text-text-muted"
-        title="Kullanım sayısı"
-      >
-        {usageCount} tarif
+      <span className="shrink-0 rounded-full bg-bg-elevated px-2 py-0.5 text-xs tabular-nums text-text-muted">
+        {t("usageCount", { count: usageCount })}
       </span>
       <button
         type="button"
         onClick={del}
         disabled={pending || usageCount > 0}
-        title={
-          usageCount > 0
-            ? `${usageCount} tarif kullanıyor — önce tariflerden kaldır`
-            : "Etiketi sil"
-        }
+        title={usageCount > 0 ? t("rowDeleteDisabled") : tActions("delete")}
         className="shrink-0 rounded border border-border px-2 py-0.5 text-xs text-error hover:bg-error/10 disabled:cursor-not-allowed disabled:opacity-30"
       >
-        Sil
+        {tActions("delete")}
       </button>
     </li>
   );

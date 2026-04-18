@@ -1,4 +1,6 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+import { getLocale, getTranslations } from "next-intl/server";
 import {
   getAdminUsersList,
   type UserSortKey,
@@ -7,7 +9,11 @@ import {
 import { SortableHeader } from "@/components/admin/SortableHeader";
 import { PaginationBar } from "@/components/admin/PaginationBar";
 
-export const metadata = { title: "Kullanıcılar | Yönetim Paneli" };
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("admin.pageTitles");
+  return { title: t("users") };
+}
+
 export const dynamic = "force-dynamic";
 
 const PAGE_SIZE = 50;
@@ -52,7 +58,13 @@ export default async function AdminUsersPage({ searchParams }: PageProps) {
     pageSize: PAGE_SIZE,
   };
 
-  const { users, total } = await getAdminUsersList(params);
+  const [{ users, total }, t, tActions, tDashboard, locale] = await Promise.all([
+    getAdminUsersList(params),
+    getTranslations("admin.users"),
+    getTranslations("admin.actions"),
+    getTranslations("admin.dashboard"),
+    getLocale(),
+  ]);
 
   function buildHref(overrides: Record<string, string | number | null>) {
     const out = new URLSearchParams();
@@ -85,14 +97,14 @@ export default async function AdminUsersPage({ searchParams }: PageProps) {
     <div>
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <h2 className="font-heading text-xl font-bold">
-          Kullanıcılar ({total.toLocaleString("tr-TR")})
+          {t("headingWithCount", { count: total.toLocaleString(locale) })}
         </h2>
         <a
           href="/api/admin/export/users"
           download
           className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-1.5 text-sm hover:bg-bg-elevated"
         >
-          📥 CSV indir
+          📥 {tDashboard("csvUsers")}
         </a>
       </div>
 
@@ -105,17 +117,17 @@ export default async function AdminUsersPage({ searchParams }: PageProps) {
         <input
           name="q"
           defaultValue={search}
-          placeholder="İsim / kullanıcı adı / e-posta ara..."
-          aria-label="Kullanıcı ara"
+          placeholder={t("searchPlaceholder")}
+          aria-label={t("searchPlaceholder")}
           className="min-w-[220px] rounded-lg border border-border bg-bg-card px-3 py-1.5 text-sm focus:border-primary focus:outline-none"
         />
         <select
           name="role"
           defaultValue={role}
-          aria-label="Rol"
+          aria-label={t("colRole")}
           className="rounded-lg border border-border bg-bg-card px-3 py-1.5 text-sm focus:border-primary focus:outline-none"
         >
-          <option value="">Tüm roller</option>
+          <option value="">{t("roleAll")}</option>
           {ROLES.map((r) => (
             <option key={r} value={r}>
               {r}
@@ -125,12 +137,12 @@ export default async function AdminUsersPage({ searchParams }: PageProps) {
         <select
           name="verified"
           defaultValue={verified ?? ""}
-          aria-label="E-posta doğrulama"
+          aria-label={t("colVerified")}
           className="rounded-lg border border-border bg-bg-card px-3 py-1.5 text-sm focus:border-primary focus:outline-none"
         >
-          <option value="">E-posta: tümü</option>
-          <option value="yes">Doğrulanmış</option>
-          <option value="no">Doğrulanmamış</option>
+          <option value="">{t("verifiedAll")}</option>
+          <option value="yes">{t("verifiedYes")}</option>
+          <option value="no">{t("verifiedNo")}</option>
         </select>
         {sort !== "createdAt" && <input type="hidden" name="sort" value={sort} />}
         {order !== "desc" && <input type="hidden" name="order" value={order} />}
@@ -138,14 +150,14 @@ export default async function AdminUsersPage({ searchParams }: PageProps) {
           type="submit"
           className="rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-white hover:bg-primary-hover"
         >
-          Uygula
+          {tActions("apply")}
         </button>
         {(search || role || verified) && (
           <Link
             href="/admin/kullanicilar"
             className="rounded-lg border border-border px-3 py-1.5 text-sm text-text-muted hover:bg-bg-elevated"
           >
-            Temizle
+            {tActions("clear")}
           </Link>
         )}
       </form>
@@ -155,16 +167,16 @@ export default async function AdminUsersPage({ searchParams }: PageProps) {
           <thead>
             <tr className="border-b border-border">
               <th className="pb-3 pr-4 text-xs font-medium uppercase tracking-wide text-text-muted">
-                Kullanıcı
+                {t("colName")}
               </th>
               <th className="pb-3 pr-4 text-xs font-medium uppercase tracking-wide text-text-muted">
-                E-posta
+                {t("colEmail")}
               </th>
               <th className="pb-3 pr-4 text-xs font-medium uppercase tracking-wide text-text-muted">
-                Rol
+                {t("colRole")}
               </th>
               <SortableHeader<UserSortKey>
-                label="Uyarlama"
+                label={tDashboard("variationTitle")}
                 sortKey="variations"
                 currentSort={sort}
                 currentOrder={order}
@@ -172,7 +184,7 @@ export default async function AdminUsersPage({ searchParams }: PageProps) {
                 align="right"
               />
               <SortableHeader<UserSortKey>
-                label="Yorum"
+                label={tDashboard("reviewTitle")}
                 sortKey="reviews"
                 currentSort={sort}
                 currentOrder={order}
@@ -180,7 +192,7 @@ export default async function AdminUsersPage({ searchParams }: PageProps) {
                 align="right"
               />
               <SortableHeader<UserSortKey>
-                label="Kayıt"
+                label={tDashboard("bookmarkTitle")}
                 sortKey="bookmarks"
                 currentSort={sort}
                 currentOrder={order}
@@ -188,7 +200,7 @@ export default async function AdminUsersPage({ searchParams }: PageProps) {
                 align="right"
               />
               <SortableHeader<UserSortKey>
-                label="Rapor"
+                label={tDashboard("statPendingReports")}
                 sortKey="reports"
                 currentSort={sort}
                 currentOrder={order}
@@ -196,7 +208,7 @@ export default async function AdminUsersPage({ searchParams }: PageProps) {
                 align="right"
               />
               <SortableHeader<UserSortKey>
-                label="Kaydoldu"
+                label={t("colCreated")}
                 sortKey="createdAt"
                 currentSort={sort}
                 currentOrder={order}
@@ -209,7 +221,7 @@ export default async function AdminUsersPage({ searchParams }: PageProps) {
             {users.length === 0 ? (
               <tr>
                 <td colSpan={8} className="py-8 text-center text-text-muted">
-                  Bu filtrelere uyan kullanıcı bulunamadı.
+                  {t("emptyFiltered")}
                 </td>
               </tr>
             ) : (
@@ -226,7 +238,7 @@ export default async function AdminUsersPage({ searchParams }: PageProps) {
                             {u.name || u.username}
                           </Link>
                         ) : (
-                          u.name || "(anonim)"
+                          u.name || tDashboard("anonymousUser")
                         )}
                         {u.isVerified && (
                           <span
@@ -286,7 +298,7 @@ export default async function AdminUsersPage({ searchParams }: PageProps) {
                     {u._count.reports}
                   </td>
                   <td className="py-3 text-right text-xs tabular-nums text-text-muted">
-                    {new Date(u.createdAt).toLocaleDateString("tr-TR")}
+                    {new Date(u.createdAt).toLocaleDateString(locale)}
                   </td>
                 </tr>
               ))

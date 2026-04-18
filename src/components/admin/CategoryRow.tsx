@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import {
   updateCategoryAction,
   deleteCategoryAction,
@@ -28,6 +29,8 @@ export function CategoryRow({
   recipeCount,
   childrenCount,
 }: CategoryRowProps) {
+  const t = useTranslations("admin.categories");
+  const tActions = useTranslations("admin.actions");
   const router = useRouter();
   const [editing, setEditing] = useState<EditField>(null);
   const [draftName, setDraftName] = useState(name);
@@ -48,7 +51,7 @@ export function CategoryRow({
         setError(null);
         router.refresh();
       } else {
-        setError(res.error ?? "Güncellenemedi.");
+        setError(res.error ?? t("rowSaveFailed"));
       }
     });
   }
@@ -63,11 +66,11 @@ export function CategoryRow({
 
   function del() {
     if (recipeCount > 0 || childrenCount > 0) return;
-    if (!confirm(`"${name}" kategorisini silmek istediğine emin misin?`)) return;
+    if (!confirm(t("rowDeleteConfirm", { name }))) return;
     startTransition(async () => {
       const res = await deleteCategoryAction({ categoryId: id });
       if (res.success) router.refresh();
-      else setError(res.error ?? "Silinemedi.");
+      else setError(res.error ?? t("rowDeleteFailed"));
     });
   }
 
@@ -88,7 +91,7 @@ export function CategoryRow({
               }}
               maxLength={10}
               autoFocus
-              aria-label="Emoji"
+              aria-label={t("rowEmojiTitle")}
               className="w-12 rounded border border-border bg-bg-card px-1 py-0.5 text-lg focus:border-primary focus:outline-none"
             />
             <button
@@ -105,7 +108,7 @@ export function CategoryRow({
             type="button"
             onClick={() => setEditing("emoji")}
             className="inline-flex h-7 w-10 items-center justify-center rounded border border-transparent text-lg hover:border-border hover:bg-bg-elevated"
-            aria-label="Emoji düzenle"
+            aria-label={t("rowEmojiTitle")}
           >
             {emoji ?? "—"}
           </button>
@@ -126,7 +129,7 @@ export function CategoryRow({
               }}
               maxLength={100}
               autoFocus
-              aria-label="Kategori adı"
+              aria-label={t("rowNameTitle")}
               className="rounded border border-border bg-bg-card px-2 py-0.5 focus:border-primary focus:outline-none"
             />
             <button
@@ -189,7 +192,7 @@ export function CategoryRow({
             min={0}
             max={999}
             autoFocus
-            aria-label="Sıralama"
+            aria-label={t("rowOrderTitle")}
             className="w-16 rounded border border-border bg-bg-card px-1 py-0.5 text-right text-xs tabular-nums focus:border-primary focus:outline-none"
           />
         ) : (
@@ -197,8 +200,7 @@ export function CategoryRow({
             type="button"
             onClick={() => setEditing("sortOrder")}
             className="inline-flex h-6 w-16 items-center justify-end rounded border border-transparent pr-2 text-xs tabular-nums text-text-muted hover:border-border hover:bg-bg-elevated"
-            aria-label="Sıralama düzenle"
-            title="Sıralama (küçük önce)"
+            aria-label={t("rowOrderTitle")}
           >
             {sortOrder}
           </button>
@@ -207,9 +209,11 @@ export function CategoryRow({
 
       {/* Usage count */}
       <div className="text-right text-xs text-text-muted tabular-nums">
-        {recipeCount} tarif
+        {t("rowRecipeSuffix", { count: recipeCount })}
         {childrenCount > 0 && (
-          <span className="ml-1 text-[10px]">+{childrenCount} alt</span>
+          <span className="ml-1 text-[10px]">
+            {t("rowChildrenSuffix", { count: childrenCount })}
+          </span>
         )}
       </div>
 
@@ -219,16 +223,10 @@ export function CategoryRow({
           type="button"
           onClick={del}
           disabled={pending || recipeCount > 0 || childrenCount > 0}
-          title={
-            recipeCount > 0
-              ? `${recipeCount} tarif kullanıyor`
-              : childrenCount > 0
-                ? `${childrenCount} alt kategori var`
-                : "Kategoriyi sil"
-          }
+          title={recipeCount > 0 || childrenCount > 0 ? t("rowDeleteDisabled") : tActions("delete")}
           className="rounded border border-border px-2 py-0.5 text-xs text-error hover:bg-error/10 disabled:cursor-not-allowed disabled:opacity-30"
         >
-          Sil
+          {tActions("delete")}
         </button>
       </div>
     </li>

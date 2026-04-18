@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import {
   createAnnouncementAction,
   updateAnnouncementAction,
@@ -34,6 +35,8 @@ function toLocalInput(d: Date | null | undefined): string {
 }
 
 export function AnnouncementForm({ initial, onClose }: Props) {
+  const t = useTranslations("admin.announcements");
+  const tActions = useTranslations("admin.actions");
   const router = useRouter();
   const isEdit = !!initial?.id;
 
@@ -73,21 +76,21 @@ export function AnnouncementForm({ initial, onClose }: Props) {
         onClose?.();
         router.refresh();
       } else {
-        setError(res.error ?? "Kaydedilemedi.");
+        setError(res.error ?? t("createError"));
       }
     });
   }
 
   async function handleDelete() {
     if (!isEdit || !initial?.id) return;
-    if (!confirm("Bu duyuruyu silmek istediğine emin misin?")) return;
+    if (!confirm(t("rowDeleteConfirm", { title: initial.title ?? "" }))) return;
     startTransition(async () => {
       const res = await deleteAnnouncementAction({ id: initial.id! });
       if (res.success) {
         onClose?.();
         router.refresh();
       } else {
-        setError(res.error ?? "Silinemedi.");
+        setError(res.error ?? t("rowDeleteFailed"));
       }
     });
   }
@@ -99,7 +102,7 @@ export function AnnouncementForm({ initial, onClose }: Props) {
     >
       <div className="grid gap-2 md:grid-cols-[1fr_140px]">
         <div className="flex flex-col">
-          <label className="mb-0.5 text-xs text-text-muted">Başlık *</label>
+          <label className="mb-0.5 text-xs text-text-muted">{t("titleLabel")}</label>
           <input
             type="text"
             value={title}
@@ -110,63 +113,60 @@ export function AnnouncementForm({ initial, onClose }: Props) {
           />
         </div>
         <div className="flex flex-col">
-          <label className="mb-0.5 text-xs text-text-muted">Tür</label>
+          <label className="mb-0.5 text-xs text-text-muted">{t("variantLabel")}</label>
           <select
             value={variant}
             onChange={(e) => setVariant(e.target.value as Variant)}
             className="rounded border border-border bg-bg-card px-2 py-1 text-sm focus:border-primary focus:outline-none"
           >
-            <option value="INFO">Bilgi</option>
-            <option value="WARNING">Uyarı</option>
-            <option value="SUCCESS">Başarı</option>
+            <option value="INFO">{t("variantInfo")}</option>
+            <option value="WARNING">{t("variantWarning")}</option>
+            <option value="SUCCESS">{t("variantSuccess")}</option>
           </select>
         </div>
       </div>
       <div className="flex flex-col">
-        <label className="mb-0.5 text-xs text-text-muted">Detay</label>
+        <label className="mb-0.5 text-xs text-text-muted">{t("bodyLabel")}</label>
         <textarea
           value={body}
           onChange={(e) => setBody(e.target.value)}
           maxLength={1000}
           rows={2}
+          placeholder={t("bodyPlaceholder")}
           className="rounded border border-border bg-bg-card px-2 py-1 text-sm focus:border-primary focus:outline-none"
         />
       </div>
       <div className="flex flex-col">
-        <label className="mb-0.5 text-xs text-text-muted">
-          Link (opsiyonel, https:// ile)
-        </label>
+        <label className="mb-0.5 text-xs text-text-muted">{t("linkLabel")}</label>
         <input
           type="url"
           value={link}
           onChange={(e) => setLink(e.target.value)}
           maxLength={500}
-          placeholder="https://tarifle.app/kampanya"
+          placeholder={t("linkPlaceholder")}
           className="rounded border border-border bg-bg-card px-2 py-1 text-sm focus:border-primary focus:outline-none"
         />
       </div>
       <div className="grid gap-2 md:grid-cols-2">
         <div className="flex flex-col">
-          <label className="mb-0.5 text-xs text-text-muted">
-            Başlangıç (boş = hemen)
-          </label>
+          <label className="mb-0.5 text-xs text-text-muted">{t("startsAtLabel")}</label>
           <input
             type="datetime-local"
             value={startsAt}
             onChange={(e) => setStartsAt(e.target.value)}
             className="rounded border border-border bg-bg-card px-2 py-1 text-sm focus:border-primary focus:outline-none"
           />
+          <p className="mt-0.5 text-[10px] text-text-muted">{t("startsAtHelp")}</p>
         </div>
         <div className="flex flex-col">
-          <label className="mb-0.5 text-xs text-text-muted">
-            Bitiş (boş = süresiz)
-          </label>
+          <label className="mb-0.5 text-xs text-text-muted">{t("endsAtLabel")}</label>
           <input
             type="datetime-local"
             value={endsAt}
             onChange={(e) => setEndsAt(e.target.value)}
             className="rounded border border-border bg-bg-card px-2 py-1 text-sm focus:border-primary focus:outline-none"
           />
+          <p className="mt-0.5 text-[10px] text-text-muted">{t("endsAtHelp")}</p>
         </div>
       </div>
 
@@ -179,7 +179,7 @@ export function AnnouncementForm({ initial, onClose }: Props) {
             disabled={pending || title.trim().length < 3}
             className="rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-white hover:bg-primary-hover disabled:opacity-50"
           >
-            {pending ? "…" : isEdit ? "Güncelle" : "Yayınla"}
+            {pending ? t("submitting") : t("submit")}
           </button>
           {onClose && (
             <button
@@ -188,7 +188,7 @@ export function AnnouncementForm({ initial, onClose }: Props) {
               disabled={pending}
               className="rounded-lg border border-border px-3 py-1.5 text-sm text-text-muted hover:bg-bg-elevated"
             >
-              İptal
+              {tActions("clear")}
             </button>
           )}
         </div>
@@ -199,7 +199,7 @@ export function AnnouncementForm({ initial, onClose }: Props) {
             disabled={pending}
             className="rounded-lg border border-error/30 px-3 py-1.5 text-sm text-error hover:bg-error/10"
           >
-            Sil
+            {t("rowDelete")}
           </button>
         )}
       </div>

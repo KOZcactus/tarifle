@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { approveVariation, hideVariation } from "@/lib/actions/admin";
 
 interface ReviewActionsProps {
@@ -15,6 +16,7 @@ interface ReviewActionsProps {
  * a pending state and a lightweight "why are you hiding" prompt.
  */
 export function ReviewActions({ variationId }: ReviewActionsProps) {
+  const t = useTranslations("admin.actions");
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
@@ -26,24 +28,21 @@ export function ReviewActions({ variationId }: ReviewActionsProps) {
         await approveVariation(variationId);
         router.refresh();
       } catch (e: unknown) {
-        setError(e instanceof Error ? e.message : "İşlem başarısız.");
+        setError(e instanceof Error ? e.message : t("actionFailed"));
       }
     });
   };
 
   const handleHide = () => {
     setError(null);
-    const reason = window.prompt(
-      "İsteğe bağlı: gizleme sebebini not et (yazara bildirilir).",
-      "",
-    );
+    const reason = window.prompt(t("promptHideReason"), "");
     if (reason === null) return; // cancelled
     startTransition(async () => {
       try {
         await hideVariation(variationId, reason.trim() || undefined);
         router.refresh();
       } catch (e: unknown) {
-        setError(e instanceof Error ? e.message : "İşlem başarısız.");
+        setError(e instanceof Error ? e.message : t("actionFailed"));
       }
     });
   };
@@ -57,7 +56,7 @@ export function ReviewActions({ variationId }: ReviewActionsProps) {
           disabled={isPending}
           className="rounded-lg bg-accent-green px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-accent-green/90 disabled:opacity-50"
         >
-          Onayla
+          {t("approve")}
         </button>
         <button
           type="button"
@@ -65,7 +64,7 @@ export function ReviewActions({ variationId }: ReviewActionsProps) {
           disabled={isPending}
           className="rounded-lg bg-error px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-error/90 disabled:opacity-50"
         >
-          Gizle
+          {t("hide")}
         </button>
       </div>
       {error && <p className="text-xs text-error">{error}</p>}

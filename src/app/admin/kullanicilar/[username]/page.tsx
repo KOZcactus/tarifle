@@ -1,5 +1,7 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { getLocale, getTranslations } from "next-intl/server";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { getAdminUserDetail } from "@/lib/queries/admin";
@@ -20,37 +22,32 @@ interface PageProps {
   params: Promise<{ username: string }>;
 }
 
-export async function generateMetadata({ params }: PageProps) {
-  const { username } = await params;
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const [{ username }, t] = await Promise.all([
+    params,
+    getTranslations("admin.pageTitles"),
+  ]);
   return {
-    title: `@${username} | Yönetim Paneli`,
+    title: t("userDetail", { username }),
     robots: { index: false, follow: false },
   };
 }
 
-const REASON_LABELS: Record<string, string> = {
-  SPAM: "Spam",
-  PROFANITY: "Uygunsuz dil",
-  MISLEADING: "Yanıltıcı",
-  HARMFUL: "Zararlı",
-  OTHER: "Diğer",
-};
-
-function statusChip(status: string) {
+function statusChip(status: string): { label: string; classes: string } {
   if (status === "PUBLISHED") {
-    return { label: "Yayında", classes: "bg-accent-green/15 text-accent-green" };
+    return { label: status, classes: "bg-accent-green/15 text-accent-green" };
   }
   if (status === "HIDDEN" || status === "REJECTED") {
     return { label: status, classes: "bg-error/15 text-error" };
   }
   if (status === "PENDING_REVIEW") {
-    return { label: "İncelemede", classes: "bg-secondary/20 text-secondary" };
+    return { label: status, classes: "bg-secondary/20 text-secondary" };
   }
   return { label: status, classes: "bg-bg-elevated text-text-muted" };
 }
 
-function fmtDate(d: Date) {
-  return new Date(d).toLocaleString("tr-TR", {
+function fmtDate(d: Date, locale: string) {
+  return new Date(d).toLocaleString(locale, {
     day: "numeric",
     month: "short",
     year: "numeric",
@@ -61,9 +58,13 @@ function fmtDate(d: Date) {
 
 export default async function AdminUserDetailPage({ params }: PageProps) {
   const { username } = await params;
-  const [detail, session] = await Promise.all([
+  const [detail, session, t, tReports, tLayout, locale] = await Promise.all([
     getAdminUserDetail(username),
     auth(),
+    getTranslations("admin.userDetail"),
+    getTranslations("admin.reports"),
+    getTranslations("admin.layout"),
+    getLocale(),
   ]);
   if (!detail) notFound();
 
@@ -84,13 +85,13 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
     user._count.variations * 3 + user._count.reviews * 2 + user._count.bookmarks;
 
   const stats = [
-    { label: "Uyarlama", value: user._count.variations, emoji: "🔄" },
-    { label: "Yorum", value: user._count.reviews, emoji: "⭐" },
-    { label: "Bookmark", value: user._count.bookmarks, emoji: "🔖" },
-    { label: "Koleksiyon", value: user._count.collections, emoji: "📚" },
-    { label: "Rapor Etti", value: user._count.reports, emoji: "🚩" },
-    { label: "Bildirim", value: user._count.notifications, emoji: "🔔" },
-    { label: "Aktivite Skoru", value: score, emoji: "🏆" },
+    { label: t("stats.variations"), value: user._count.variations, emoji: "🔄" },
+    { label: t("stats.reviews"), value: user._count.reviews, emoji: "⭐" },
+    { label: t("stats.bookmarks"), value: user._count.bookmarks, emoji: "🔖" },
+    { label: t("stats.collections"), value: user._count.collections, emoji: "📚" },
+    { label: t("stats.reports"), value: user._count.reports, emoji: "🚩" },
+    { label: t("stats.badges"), value: user._count.notifications, emoji: "🔔" },
+    { label: t("stats.loginCount"), value: score, emoji: "🏆" },
   ];
 
   return (
@@ -98,7 +99,7 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
       {/* Breadcrumb */}
       <nav className="text-xs text-text-muted" aria-label="breadcrumb">
         <Link href="/admin/kullanicilar" className="hover:text-primary">
-          Kullanıcılar
+          {tLayout("users")}
         </Link>
         <span className="mx-1.5">›</span>
         <span className="text-text">@{user.username}</span>
@@ -113,7 +114,7 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-3">
               <h2 className="font-heading text-xl font-bold text-text">
-                {user.name ?? user.username ?? "(anonim)"}
+                {user.name ?? user.username ?? "(anonymous)"}
               </h2>
               <InlineUserRole
                 userId={user.id}
@@ -130,7 +131,7 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
                   className="rounded-full bg-error/15 px-2 py-0.5 text-xs font-medium text-error"
                   title={user.suspendedReason ?? ""}
                 >
-                  🚫 Askıda
+                  {t("suspendedBadge")}
                 </span>
               )}
             </div>
@@ -147,7 +148,7 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
             </div>
             {user.suspendedAt && user.suspendedReason && (
               <p className="mt-2 text-xs italic text-text-muted">
-                Askıya alma sebebi: {user.suspendedReason}
+                {t("suspendedReason", { reason: user.suspendedReason })}
               </p>
             )}
             <p className="mt-1 text-sm text-text-muted">
@@ -156,12 +157,12 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
             </p>
             {user.bio && <p className="mt-2 text-sm text-text">{user.bio}</p>}
             <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-text-muted">
-              <span>Kayıt: {fmtDate(user.createdAt)}</span>
+              <span>Kayıt: {fmtDate(user.createdAt, locale)}</span>
               {user.emailVerified && (
-                <span>E-posta onayı: {fmtDate(user.emailVerified)}</span>
+                <span>E-posta onayı: {fmtDate(user.emailVerified, locale)}</span>
               )}
               {user.kvkkAccepted && user.kvkkDate && (
-                <span>KVKK: {fmtDate(user.kvkkDate)}</span>
+                <span>KVKK: {fmtDate(user.kvkkDate, locale)}</span>
               )}
             </div>
           </div>
@@ -172,7 +173,7 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
               target="_blank"
               rel="noopener"
             >
-              Public profil ↗
+              ↗
             </Link>
           </div>
         </div>
@@ -192,7 +193,7 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
                 </span>
                 <div>
                   <p className="text-lg font-bold text-text">
-                    {s.value.toLocaleString("tr-TR")}
+                    {s.value.toLocaleString(locale)}
                   </p>
                   <p className="text-[11px] text-text-muted">{s.label}</p>
                 </div>
@@ -206,14 +207,14 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
       {badges.length > 0 && (
         <section>
           <h3 className="mb-3 font-heading text-base font-semibold">
-            🏅 Rozetler ({badges.length})
+            🏅 {t("badgesHeading", { count: badges.length })}
           </h3>
           <ul className="flex flex-wrap gap-2">
             {badges.map((b) => (
               <li
                 key={b.key}
                 className="rounded-full border border-border bg-bg-card px-3 py-1 text-xs text-text"
-                title={fmtDate(b.awardedAt)}
+                title={fmtDate(b.awardedAt, locale)}
               >
                 {b.key}
               </li>
@@ -225,10 +226,10 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
       {/* Variations */}
       <section>
         <h3 className="mb-3 font-heading text-base font-semibold">
-          🔄 Uyarlamalar ({variations.length})
+          🔄 {t("variationsHeading", { count: variations.length })}
         </h3>
         {variations.length === 0 ? (
-          <p className="text-sm text-text-muted">Henüz uyarlama eklenmemiş.</p>
+          <p className="text-sm text-text-muted">{t("emptyVariations")}</p>
         ) : (
           <div className="overflow-hidden rounded-xl border border-border bg-bg-card">
             <ul className="divide-y divide-border">
@@ -248,7 +249,7 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
                         {v.miniTitle}
                       </Link>
                       <p className="truncate text-xs text-text-muted">
-                        {v.recipe.emoji} {v.recipe.title} · {fmtDate(v.createdAt)}
+                        {v.recipe.emoji} {v.recipe.title} · {fmtDate(v.createdAt, locale)}
                       </p>
                       {flags.length > 0 && (
                         <div className="mt-1 flex flex-wrap gap-1">
@@ -292,10 +293,10 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
       {/* Reviews */}
       <section>
         <h3 className="mb-3 font-heading text-base font-semibold">
-          ⭐ Yorumlar ({reviews.length})
+          ⭐ {t("reviewsHeading", { count: reviews.length })}
         </h3>
         {reviews.length === 0 ? (
-          <p className="text-sm text-text-muted">Henüz yorum yazılmamış.</p>
+          <p className="text-sm text-text-muted">{t("emptyReviews")}</p>
         ) : (
           <div className="overflow-hidden rounded-xl border border-border bg-bg-card">
             <ul className="divide-y divide-border">
@@ -321,7 +322,7 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
                         {r.recipe.emoji} {r.recipe.title}
                       </Link>
                       <span className="shrink-0 text-xs text-text-muted">
-                        {fmtDate(r.createdAt)}
+                        {fmtDate(r.createdAt, locale)}
                       </span>
                       <span
                         className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-medium ${chip.classes}`}
@@ -348,7 +349,7 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
                     )}
                     {r.status === "HIDDEN" && r.hiddenReason && (
                       <p className="text-[11px] italic text-text-muted">
-                        Gizleme sebebi: {r.hiddenReason}
+                        {r.hiddenReason}
                       </p>
                     )}
                   </li>
@@ -362,10 +363,10 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
       {/* Reports filed */}
       <section>
         <h3 className="mb-3 font-heading text-base font-semibold">
-          🚩 Raporları ({reportsFiled.length})
+          🚩 {t("reportsHeading", { count: reportsFiled.length })}
         </h3>
         {reportsFiled.length === 0 ? (
-          <p className="text-sm text-text-muted">Rapor oluşturmamış.</p>
+          <p className="text-sm text-text-muted">{t("emptyReports")}</p>
         ) : (
           <div className="overflow-hidden rounded-xl border border-border bg-bg-card">
             <ul className="divide-y divide-border">
@@ -388,12 +389,14 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
                   </div>
                   <div className="flex shrink-0 items-center gap-2 text-xs">
                     <span className="rounded bg-error/10 px-1.5 py-0.5 text-[10px] text-error">
-                      {REASON_LABELS[r.reason] ?? r.reason}
+                      {tReports.has(`reasons.${r.reason}`)
+                        ? tReports(`reasons.${r.reason}`)
+                        : r.reason}
                     </span>
                     <span className="rounded bg-bg-elevated px-1.5 py-0.5 text-[10px] text-text-muted">
                       {r.status}
                     </span>
-                    <span className="text-text-muted">{fmtDate(r.createdAt)}</span>
+                    <span className="text-text-muted">{fmtDate(r.createdAt, locale)}</span>
                   </div>
                 </li>
               ))}

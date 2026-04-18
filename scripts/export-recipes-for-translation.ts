@@ -61,7 +61,16 @@ const HEADER = [
   "description",
   "type",
   "cuisine",
-  "ingredients_summary",
+  "difficulty",
+  "prep_minutes",
+  "cook_minutes",
+  "total_minutes",
+  "serving_count",
+  "average_calories",
+  "ingredients",
+  "ingredient_count",
+  "steps",
+  "step_count",
   "allergens",
   "tags",
   "tipNote",
@@ -74,7 +83,16 @@ interface RecipeRow {
   description: string;
   type: string;
   cuisine: string | null;
-  ingredientsSummary: string;
+  difficulty: string;
+  prepMinutes: number;
+  cookMinutes: number;
+  totalMinutes: number;
+  servingCount: number;
+  averageCalories: number | null;
+  ingredients: string;
+  ingredientCount: number;
+  steps: string;
+  stepCount: number;
   allergens: string;
   tags: string;
   tipNote: string | null;
@@ -88,7 +106,16 @@ function toCsvLine(r: RecipeRow): string {
     csvCell(r.description),
     csvCell(r.type),
     csvCell(r.cuisine ?? ""),
-    csvCell(r.ingredientsSummary),
+    csvCell(r.difficulty),
+    csvCell(String(r.prepMinutes)),
+    csvCell(String(r.cookMinutes)),
+    csvCell(String(r.totalMinutes)),
+    csvCell(String(r.servingCount)),
+    csvCell(r.averageCalories == null ? "" : String(r.averageCalories)),
+    csvCell(r.ingredients),
+    csvCell(String(r.ingredientCount)),
+    csvCell(r.steps),
+    csvCell(String(r.stepCount)),
     csvCell(r.allergens),
     csvCell(r.tags),
     csvCell(r.tipNote ?? ""),
@@ -129,12 +156,29 @@ async function main() {
       description: true,
       type: true,
       cuisine: true,
+      difficulty: true,
+      prepMinutes: true,
+      cookMinutes: true,
+      totalMinutes: true,
+      servingCount: true,
+      averageCalories: true,
       allergens: true,
       tipNote: true,
       servingSuggestion: true,
       ingredients: {
-        select: { name: true, sortOrder: true, isOptional: true },
+        select: {
+          name: true,
+          amount: true,
+          unit: true,
+          sortOrder: true,
+          isOptional: true,
+          group: true,
+        },
         orderBy: { sortOrder: "asc" },
+      },
+      steps: {
+        select: { instruction: true, stepNumber: true },
+        orderBy: { stepNumber: "asc" },
       },
       tags: {
         select: { tag: { select: { slug: true } } },
@@ -153,18 +197,46 @@ async function main() {
   }
 
   const rows: RecipeRow[] = recipes.map((r) => {
-    const ingredientsSummary = r.ingredients
-      .filter((i) => !i.isOptional)
-      .slice(0, 8)
-      .map((i) => i.name)
-      .join("; ");
+    // Full ingredient list with amount + unit + optional/group markers.
+    // Format per item: "<name> <amount><unit>[ (opt)][ — group]"
+    // Separator is " | " so Codex can parse back and so commas inside a
+    // single cell don't confuse CSV consumers once escaped.
+    const ingredients = r.ingredients
+      .map((i) => {
+        const amt = [i.amount, i.unit].filter(Boolean).join(" ").trim();
+        const flags = [
+          amt ? amt : null,
+          i.isOptional ? "(opsiyonel)" : null,
+          i.group ? `— ${i.group}` : null,
+        ]
+          .filter(Boolean)
+          .join(" ");
+        return flags ? `${i.name} ${flags}` : i.name;
+      })
+      .join(" | ");
+
+    // Full step list, numbered, joined with " || " (steps contain periods
+    // and commas; " || " keeps it parseable).
+    const steps = r.steps
+      .map((s) => `${s.stepNumber}. ${s.instruction}`)
+      .join(" || ");
+
     return {
       slug: r.slug,
       title: r.title,
       description: r.description,
       type: r.type,
       cuisine: r.cuisine,
-      ingredientsSummary,
+      difficulty: r.difficulty,
+      prepMinutes: r.prepMinutes,
+      cookMinutes: r.cookMinutes,
+      totalMinutes: r.totalMinutes,
+      servingCount: r.servingCount,
+      averageCalories: r.averageCalories,
+      ingredients,
+      ingredientCount: r.ingredients.length,
+      steps,
+      stepCount: r.steps.length,
       allergens: r.allergens.join(","),
       tags: r.tags.map((t) => t.tag.slug).join(","),
       tipNote: r.tipNote,

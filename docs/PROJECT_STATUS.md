@@ -1,19 +1,35 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 18 Nisan 2026 (oturum 4) — Codex batch 12 dev'e seed edildi (1100 → 1200 tarif). Codex teslim mojibake-corruption içeriyordu (tüm 1-11 batch UTF-8 double-encode olmuş); batch 12 temiz bloğu HEAD restore + izole append ile kurtarıldı. 18 CRITICAL allergen bulgusu fix'lendi (16 legitimate + 2 kekik false-positive audit exclude). Prod promote Kerem onayı bekliyor.
+> Son güncelleme: 18 Nisan 2026 (oturum 4) — **Codex batch 12 dev + prod promoted (1100 → 1200 tarif canlı)**. Codex teslim mojibake-korupt geldi (Windows-1252→UTF-8 round-trip), HEAD restore + izole append ile kurtarıldı. 18 CRITICAL allergen/tag bulgusu fix'lendi. Prod audit-deep PASS, `tarifle.app/tarif/lalanga-trakya-usulu` 200 canlı.
 
-## 18 Nisan 2026 (oturum 4 — batch 12 seed + recovery)
+## 18 Nisan 2026 (oturum 4 — batch 12 seed + recovery + PROD CANLI)
 
-- **Mojibake recovery** — Codex1 teslim ettiği `scripts/seed-recipes.ts` Windows-1252 → UTF-8 round-trip ile double-encoded çıktı (ş→ÅŸ, ı→Ä±, emoji de dahil). Tüm 1-11 batch bozulmuş, sadece batch 12 yeni eklentileri temizdi. Recovery: HEAD'den dosya restore edildi, sonra batch 12 bloğu (satır 12376-12476, 100 tarif) closing `];` öncesine append edildi. Net diff: +101 satır (batch 12) + 9 extra (ts type + ts-expect-error + karalahana allergen fix).
-- **Batch 12 seed (dev)** — 100 yeni tarif eklendi: 72 TR (Lalanga, Van Kavut, Sürk Ezmesi, Perde Pilavı, Keşkek, Tirit, Banduma, Laz Böreği, Höşmerim, Nevzine, Paluze vs.) + 28 uluslararası (5 se: Ärtsoppa; 5 hu: Lángos; 4 pe: Ají de Gallina, Papa a la Huancaína; 5 gb: Bakewell Tart; 4 pl: Żurek, Pierogi Ruskie; 5 au: Lamington). isFeatured %5-10 aralıkta.
-- **audit-deep 18 → 0 CRITICAL** — 16 allergen eksiği (Tereyağı→SUT ×8, İrmik→GLUTEN ×3, Nişasta→GLUTEN ×2 traditional wheat, Susam/Ayran/Yumurta/Ceviz ×1 each), 1 karalahana-çorbası tag inconsistency (vegan→vejetaryen, +Tereyağı SUT, GLUTEN over-tag kaldırıldı), 2 Kekik→GLUTEN false positive (thyme / `kek` substring collision — `audit-deep.ts` excludePatterns'e "kekik/taze kekik/kuru kekik/kekik otu" eklendi).
-- **TS2590 fix** — 1200 inline recipe literal union çok büyük, `export const recipes: SeedRecipe[]` + tek satır `@ts-expect-error` yorumu. Zod validator zaten shape authority.
-- **Test/typecheck/lint** — 508/508 unit PASS, tsc --noEmit clean, lint 15 warning/0 error (pre-existing).
-- **Yardımcı scriptler** — `fix-critical-allergens-batch12.ts` (DB 16 allergen union-add, dev apply done) + `sync-allergens-batch12-to-seed.ts` (seed-recipes.ts source senkron). `docs/existing-slugs.txt` 1200'e regenerate.
+**Prod durumu (oturum 4 sonu):**
+- **Prod: 1200 tarif, audit-deep 0 CRITICAL PASS, 24 cuisine kodu**
+- `tarifle.app/tarif/lalanga-trakya-usulu` → HTTP 200, "Lalanga | Tarifle" title, Trakya bağlam canlı
+- Karalahana: `tags=[vejetaryen,kis-tarifi]`, `allergens=[SUT]` ✓
+- Paluze: `allergens=[GLUTEN]` ✓
+- Lalanga: `allergens=[GLUTEN,SUT,YUMURTA]`, EN title "Lalanga" (translations dolu) ✓
 
-**Bekleyen (Kerem onayı sonrası):**
-- **Prod promote** — schema aynı (migrate no-op), 100 tarif + 16 allergen fix + 1 karalahana fix. `PROD_PROMOTE.md` runbook + `migrate-prod --confirm-prod` (schema sync) + content seed (dev pattern).
-- **Mod B çevirisi** — batch 12 ingredients + steps + tipNote + servingSuggestion tam EN/DE (yeni Codex oturumu, CODEX_BATCH_BRIEF §6).
+**Mojibake recovery** — Codex1 teslim ettiği `scripts/seed-recipes.ts` Windows-1252 → UTF-8 round-trip ile double-encoded çıktı (ş→ÅŸ, ı→Ä±, emoji de dahil). Tüm 1-11 batch bozulmuş, sadece batch 12 yeni eklentileri temizdi. Recovery: HEAD'den dosya restore edildi, sonra batch 12 bloğu (satır 12376-12476, 100 tarif) closing `];` öncesine append edildi. Net diff: +101 satır (batch 12) + 9 extra (ts type + ts-expect-error + karalahana allergen fix).
+
+**Batch 12 seed (dev + prod)** — 100 yeni tarif: 72 TR (Lalanga, Van Kavut, Sürk Ezmesi, Perde Pilavı, Keşkek, Tirit, Banduma, Laz Böreği, Höşmerim, Nevzine, Paluze vs.) + 28 uluslararası (5 se: Ärtsoppa; 5 hu: Lángos; 4 pe: Ají de Gallina, Papa a la Huancaína; 5 gb: Bakewell Tart; 4 pl: Żurek, Pierogi Ruskie; 5 au: Lamington). isFeatured %5-10 aralıkta.
+
+**audit-deep 18 → 0 CRITICAL (dev + prod)** — 16 allergen eksiği (Tereyağı→SUT ×8, İrmik→GLUTEN ×3, Nişasta→GLUTEN ×2 traditional wheat, Susam/Ayran/Yumurta/Ceviz ×1 each), 1 karalahana-çorbası tag inconsistency (vegan→vejetaryen, +Tereyağı SUT, GLUTEN over-tag kaldırıldı), 2 Kekik→GLUTEN false positive (thyme / `kek` substring collision — `audit-deep.ts` excludePatterns'e "kekik/taze kekik/kuru kekik/kekik otu" eklendi).
+
+**TS2590 fix** — 1200 inline recipe literal union çok büyük, `export const recipes: SeedRecipe[]` + tek satır `@ts-expect-error` yorumu. Zod validator zaten shape authority.
+
+**Prod promote akışı** — (1) `migrate-prod --apply --confirm-prod` → "No pending migrations" (schema up to date). (2) `DATABASE_URL=<prod> seed-recipes --confirm-prod` → 100 yeni. (3) `fix-critical-allergens-batch12 --apply --confirm-prod` → "Already clean: 16" (seed dosyası zaten güncellendiği için prod seed doğru allergen'lerle girdi, idempotent no-op). (4) Karalahana aynı mantık — `tags: ["vejetaryen", "kis-tarifi"]` + `allergens: ["SUT"]` seed dosyasında zaten doğru. (5) `audit-deep --confirm-prod` PASS.
+
+**Test/typecheck/lint** — 508/508 unit PASS, tsc --noEmit clean, lint 15 warning/0 error (pre-existing).
+
+**Yardımcı scriptler** — `fix-critical-allergens-batch12.ts` (DB 16 allergen union-add, idempotent) + `sync-allergens-batch12-to-seed.ts` (seed-recipes.ts source senkron). `docs/existing-slugs.txt` 1200'e regenerate. `docs/CODEX_BATCH_BRIEF.md` §3 "Dosya encoding" uyarısı + §9 geçmiş hatalar tablosu batch 11+12 dersleriyle genişletildi (10-maddelik allergen teslim-öncesi checklist).
+
+**Bekleyen iş:**
+- **Mod B çevirisi** — batch 12 ingredients + steps + tipNote + servingSuggestion tam EN/DE (yeni Codex oturumu, `CODEX_BATCH_BRIEF.md §6`). Mevcut `export-recipes-for-translation.ts` `translations IS NULL` filter ediyor → batch 12 için partial-null export varyantı yazılacak.
+- **Tarif görselleri** — `docs/IMAGE_GENERATION_PLAN.md` pilot 10 → 1100/1200 batch (Eren).
+- **Sentry monitoring** post-deploy — prod'da yeni error var mı.
+- **Performance baseline güncelleme** — 1200 tarif sonrası Lighthouse re-run.
 
 ## 18 Nisan 2026 (oturum 3 — 22 commit, 6 ana blok)
 

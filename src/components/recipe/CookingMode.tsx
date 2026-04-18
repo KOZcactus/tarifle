@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import { useTranslations } from "next-intl";
 
 interface Step {
   id: string;
@@ -17,6 +18,8 @@ interface CookingModeProps {
 }
 
 export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProps) {
+  const t = useTranslations("cookingMode");
+  const tCard = useTranslations("recipes.card");
   const [isOpen, setIsOpen] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
   const [timer, setTimer] = useState<number | null>(null);
@@ -136,7 +139,7 @@ export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProp
         className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-hover"
       >
         <ChefHatIcon />
-        Pişirme Modunu Başlat
+        {t("startButton")}
       </button>
     );
   }
@@ -145,7 +148,7 @@ export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProp
     <div
       role="dialog"
       aria-modal="true"
-      aria-label={`Pişirme modu: ${recipeTitle}`}
+      aria-label={t("modalAria", { title: recipeTitle })}
       className="fixed inset-0 z-50 flex flex-col bg-bg"
     >
       {/* Header */}
@@ -157,7 +160,7 @@ export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProp
         <button
           onClick={close}
           className="rounded-lg p-2 text-text-muted transition-colors hover:bg-bg-elevated hover:text-text"
-          aria-label="Pişirme modundan çık"
+          aria-label={t("closeAria")}
         >
           <CloseIcon />
         </button>
@@ -205,7 +208,7 @@ export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProp
                   className="inline-flex items-center gap-2 rounded-xl bg-accent-blue/15 px-6 py-3 text-base font-medium text-accent-blue transition-colors hover:bg-accent-blue/25"
                 >
                   <TimerIcon size={18} />
-                  Zamanlayıcıyı Başlat ({formatTimer(step.timerSeconds)})
+                  {t("timerStart", { duration: formatTimer(step.timerSeconds, tCard) })}
                 </button>
               ) : (
                 <div className="flex flex-col items-center gap-3">
@@ -217,20 +220,20 @@ export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProp
                     {formatTimerDisplay(timer)}
                   </span>
                   {timer === 0 ? (
-                    <span className="text-base font-medium text-accent-green">Süre doldu!</span>
+                    <span className="text-base font-medium text-accent-green">{t("timerDone")}</span>
                   ) : (
                     <div className="flex gap-2">
                       <button
                         onClick={toggleTimer}
                         className="rounded-lg bg-bg-elevated px-4 py-2 text-sm font-medium text-text transition-colors hover:bg-border"
                       >
-                        {timerRunning ? "Duraklat" : "Devam"}
+                        {timerRunning ? t("timerPause") : t("timerResume")}
                       </button>
                       <button
                         onClick={() => resetTimer(step.timerSeconds!)}
                         className="rounded-lg bg-bg-elevated px-4 py-2 text-sm font-medium text-text-muted transition-colors hover:bg-border hover:text-text"
                       >
-                        Sıfırla
+                        {t("timerReset")}
                       </button>
                     </div>
                   )}
@@ -249,7 +252,7 @@ export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProp
             disabled={currentStep === 0}
             className="rounded-lg px-5 py-2.5 text-sm font-medium text-text-muted transition-colors hover:bg-bg-elevated hover:text-text disabled:opacity-30 disabled:hover:bg-transparent"
           >
-            ← Önceki
+            {t("prev")}
           </button>
 
           {/* Step dots */}
@@ -269,7 +272,7 @@ export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProp
                       ? "w-2 bg-primary/40"
                       : "w-2 bg-border"
                 }`}
-                aria-label={`Adım ${i + 1}`}
+                aria-label={t("stepDotAria", { n: i + 1 })}
               />
             ))}
           </div>
@@ -279,14 +282,14 @@ export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProp
               onClick={close}
               className="rounded-lg bg-accent-green px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-green/90"
             >
-              Tamamlandı ✓
+              {t("finish")}
             </button>
           ) : (
             <button
               onClick={goNext}
               className="rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-hover"
             >
-              Sonraki →
+              {t("next")}
             </button>
           )}
         </div>
@@ -295,13 +298,16 @@ export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProp
   );
 }
 
-function formatTimer(seconds: number): string {
+function formatTimer(
+  seconds: number,
+  tCard: (key: string, values?: Record<string, string | number | Date>) => string,
+): string {
   const minutes = Math.floor(seconds / 60);
-  if (minutes < 60) return `${minutes} dk`;
+  if (minutes < 60) return tCard("minutesShort", { n: minutes });
   const hours = Math.floor(minutes / 60);
   const remaining = minutes % 60;
-  if (remaining === 0) return `${hours} sa`;
-  return `${hours} sa ${remaining} dk`;
+  if (remaining === 0) return tCard("hoursShort", { n: hours });
+  return tCard("hoursMinutes", { h: hours, m: remaining });
 }
 
 function formatTimerDisplay(seconds: number): string {

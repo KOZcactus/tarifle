@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState, useTransition } from "react";
+import { useTranslations } from "next-intl";
 import {
   addCustomItemAction,
   clearAllItemsAction,
@@ -22,6 +23,8 @@ interface ShoppingListClientProps {
 }
 
 export function ShoppingListClient({ initialItems }: ShoppingListClientProps) {
+  const t = useTranslations("shoppingList");
+  const tErrors = useTranslations("shoppingList.errors");
   const [items, setItems] = useState<Item[]>(initialItems);
   const [newName, setNewName] = useState("");
   const [newAmount, setNewAmount] = useState("");
@@ -42,7 +45,7 @@ export function ShoppingListClient({ initialItems }: ShoppingListClientProps) {
       const result = await toggleItemAction(id);
       if (!result.success) {
         setItems(prev);
-        setError(result.error ?? "Güncellenemedi.");
+        setError(result.error ?? tErrors("update"));
       } else {
         setError(null);
       }
@@ -56,7 +59,7 @@ export function ShoppingListClient({ initialItems }: ShoppingListClientProps) {
       const result = await removeItemAction(id);
       if (!result.success) {
         setItems(prev);
-        setError(result.error ?? "Silinemedi.");
+        setError(result.error ?? tErrors("remove"));
       } else {
         setError(null);
       }
@@ -74,7 +77,7 @@ export function ShoppingListClient({ initialItems }: ShoppingListClientProps) {
         amount: newAmount.trim() || undefined,
       });
       if (!result.success) {
-        setError(result.error ?? "Eklenemedi.");
+        setError(result.error ?? tErrors("add"));
         return;
       }
       // Optimistic: we don't know the new id yet. Instead of refreshing whole page,
@@ -104,7 +107,7 @@ export function ShoppingListClient({ initialItems }: ShoppingListClientProps) {
       const result = await clearCheckedItemsAction();
       if (!result.success) {
         setItems(prev);
-        setError(result.error ?? "Temizlenemedi.");
+        setError(result.error ?? tErrors("clear"));
       } else {
         setError(null);
       }
@@ -113,7 +116,7 @@ export function ShoppingListClient({ initialItems }: ShoppingListClientProps) {
 
   function handleClearAll() {
     if (items.length === 0) return;
-    const confirmed = window.confirm("Tüm liste silinsin mi?");
+    const confirmed = window.confirm(t("clearAllConfirm"));
     if (!confirmed) return;
 
     const prev = items;
@@ -122,7 +125,7 @@ export function ShoppingListClient({ initialItems }: ShoppingListClientProps) {
       const result = await clearAllItemsAction();
       if (!result.success) {
         setItems(prev);
-        setError(result.error ?? "Temizlenemedi.");
+        setError(result.error ?? tErrors("clear"));
       } else {
         setError(null);
       }
@@ -140,7 +143,7 @@ export function ShoppingListClient({ initialItems }: ShoppingListClientProps) {
           type="text"
           value={newName}
           onChange={(e) => setNewName(e.target.value)}
-          placeholder="Manuel malzeme ekle (örn. Tuz)"
+          placeholder={t("addPlaceholder")}
           maxLength={200}
           className="flex-1 rounded-md border border-border bg-bg-elevated px-3 py-2 text-sm outline-none focus:border-primary"
         />
@@ -148,7 +151,7 @@ export function ShoppingListClient({ initialItems }: ShoppingListClientProps) {
           type="text"
           value={newAmount}
           onChange={(e) => setNewAmount(e.target.value)}
-          placeholder="Miktar"
+          placeholder={t("addAmountPlaceholder")}
           maxLength={50}
           className="w-28 rounded-md border border-border bg-bg-elevated px-3 py-2 text-sm outline-none focus:border-primary"
         />
@@ -157,7 +160,7 @@ export function ShoppingListClient({ initialItems }: ShoppingListClientProps) {
           disabled={isPending || newName.trim().length === 0}
           className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-hover disabled:opacity-50"
         >
-          Ekle
+          {t("addButton")}
         </button>
       </form>
 
@@ -170,17 +173,17 @@ export function ShoppingListClient({ initialItems }: ShoppingListClientProps) {
       {/* Unchecked items */}
       {unchecked.length === 0 && checked.length === 0 ? (
         <div className="rounded-xl border border-dashed border-border p-10 text-center">
-          <p className="text-text-muted">Liste boş. Bir tarif aç ve malzemeleri ekle.</p>
+          <p className="text-text-muted">{t("empty")}</p>
         </div>
       ) : (
         <>
           <section>
             <h2 className="mb-2 text-sm font-medium uppercase tracking-wide text-text-muted">
-              Alınacaklar ({unchecked.length})
+              {t("toShopHeader", { count: unchecked.length })}
             </h2>
             {unchecked.length === 0 ? (
               <p className="rounded-xl border border-dashed border-border p-6 text-center text-sm text-text-muted">
-                Tüm malzemeleri işaretledin.
+                {t("allChecked")}
               </p>
             ) : (
               <ul className="divide-y divide-border overflow-hidden rounded-xl border border-border bg-bg-card">
@@ -201,14 +204,14 @@ export function ShoppingListClient({ initialItems }: ShoppingListClientProps) {
             <section>
               <div className="mb-2 flex items-center justify-between">
                 <h2 className="text-sm font-medium uppercase tracking-wide text-text-muted">
-                  Alındı ({checked.length})
+                  {t("boughtHeader", { count: checked.length })}
                 </h2>
                 <button
                   onClick={handleClearChecked}
                   disabled={isPending}
                   className="text-xs text-text-muted transition-colors hover:text-error"
                 >
-                  İşaretlileri sil
+                  {t("clearChecked")}
                 </button>
               </div>
               <ul className="divide-y divide-border overflow-hidden rounded-xl border border-border bg-bg-card opacity-70">
@@ -231,7 +234,7 @@ export function ShoppingListClient({ initialItems }: ShoppingListClientProps) {
               disabled={isPending}
               className="text-xs text-text-muted transition-colors hover:text-error"
             >
-              Tüm listeyi temizle
+              {t("clearAll")}
             </button>
           </div>
         </>

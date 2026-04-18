@@ -186,6 +186,43 @@
     "linkPrivacy": "Privacy Policy",
     "copyright": "© {year} {site}. All rights reserved."
   },
+  "cookingMode": {
+    "startButton": "Start Cooking Mode",
+    "modalAria": "Cooking mode: {title}",
+    "closeAria": "Exit cooking mode",
+    "stepDotAria": "Step {n}",
+    "timerStart": "Start Timer ({duration})",
+    "timerPause": "Pause",
+    "timerResume": "Resume",
+    "timerReset": "Reset",
+    "timerDone": "Time's up!",
+    "prev": "← Previous",
+    "next": "Next →",
+    "finish": "Done ✓"
+  },
+  "shoppingList": {
+    "headerLabel": "My shopping list",
+    "defaultName": "My Shopping List",
+    "headerSubtitle": "Add via the <strong>Add to list</strong> button on recipe pages, manage here.",
+    "browseRecipesLink": "Browse recipes →",
+    "addPlaceholder": "Add a custom item (e.g. Salt)",
+    "addAmountPlaceholder": "Amount",
+    "addButton": "Add",
+    "empty": "List is empty. Open a recipe and add ingredients.",
+    "toShopHeader": "To buy ({count})",
+    "boughtHeader": "Bought ({count})",
+    "allChecked": "You've checked off all ingredients.",
+    "clearChecked": "Remove checked",
+    "clearAll": "Clear entire list",
+    "clearAllConfirm": "Delete entire list?",
+    "removeAria": "Remove",
+    "errors": {
+      "update": "Could not update.",
+      "remove": "Could not delete.",
+      "add": "Could not add.",
+      "clear": "Could not clear."
+    }
+  },
   "save": {
     "saveButton": "Save",
     "savedButton": "Saved",

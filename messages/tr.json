@@ -186,6 +186,43 @@
     "linkPrivacy": "Gizlilik Politikası",
     "copyright": "© {year} {site}. Tüm hakları saklıdır."
   },
+  "cookingMode": {
+    "startButton": "Pişirme Modunu Başlat",
+    "modalAria": "Pişirme modu: {title}",
+    "closeAria": "Pişirme modundan çık",
+    "stepDotAria": "Adım {n}",
+    "timerStart": "Zamanlayıcıyı Başlat ({duration})",
+    "timerPause": "Duraklat",
+    "timerResume": "Devam",
+    "timerReset": "Sıfırla",
+    "timerDone": "Süre doldu!",
+    "prev": "← Önceki",
+    "next": "Sonraki →",
+    "finish": "Tamamlandı ✓"
+  },
+  "shoppingList": {
+    "headerLabel": "Alışveriş listem",
+    "defaultName": "Alışveriş Listem",
+    "headerSubtitle": "Tarif sayfalarındaki <strong>Listeye ekle</strong> butonuyla ekle, buradan yönet.",
+    "browseRecipesLink": "Tariflere göz at →",
+    "addPlaceholder": "Manuel malzeme ekle (örn. Tuz)",
+    "addAmountPlaceholder": "Miktar",
+    "addButton": "Ekle",
+    "empty": "Liste boş. Bir tarif aç ve malzemeleri ekle.",
+    "toShopHeader": "Alınacaklar ({count})",
+    "boughtHeader": "Alındı ({count})",
+    "allChecked": "Tüm malzemeleri işaretledin.",
+    "clearChecked": "İşaretlileri sil",
+    "clearAll": "Tüm listeyi temizle",
+    "clearAllConfirm": "Tüm liste silinsin mi?",
+    "removeAria": "Sil",
+    "errors": {
+      "update": "Güncellenemedi.",
+      "remove": "Silinemedi.",
+      "add": "Eklenemedi.",
+      "clear": "Temizlenemedi."
+    }
+  },
   "save": {
     "saveButton": "Kaydet",
     "savedButton": "Kaydedildi",

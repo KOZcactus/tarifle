@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { auth } from "@/lib/auth";
 import { getShoppingListWithItems } from "@/lib/queries/shopping-list";
 import { ShoppingListClient } from "@/components/shopping-list/ShoppingListClient";
@@ -11,7 +12,10 @@ export const metadata: Metadata = {
 };
 
 export default async function AlisverisListesiPage() {
-  const session = await auth();
+  const [session, t] = await Promise.all([
+    auth(),
+    getTranslations("shoppingList"),
+  ]);
   if (!session?.user?.id) {
     redirect("/giris?callbackUrl=/alisveris-listesi");
   }
@@ -22,14 +26,15 @@ export default async function AlisverisListesiPage() {
     <main className="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8">
       <header className="mb-8">
         <p className="text-xs font-medium uppercase tracking-wide text-accent-blue">
-          Alışveriş listem
+          {t("headerLabel")}
         </p>
         <h1 className="mt-1 font-heading text-3xl font-bold text-text sm:text-4xl">
-          {list?.name ?? "Alışveriş Listem"}
+          {list?.name ?? t("defaultName")}
         </h1>
         <p className="mt-2 text-sm text-text-muted">
-          Tarif sayfalarındaki <span className="font-medium">Listeye ekle</span> butonuyla
-          ekle, buradan yönet.
+          {t.rich("headerSubtitle", {
+            strong: (chunks) => <span className="font-medium">{chunks}</span>,
+          })}
           {list?.items.length === 0 && (
             <>
               {" "}
@@ -37,7 +42,7 @@ export default async function AlisverisListesiPage() {
                 href="/tarifler"
                 className="text-primary hover:text-primary-hover"
               >
-                Tariflere göz at →
+                {t("browseRecipesLink")}
               </Link>
             </>
           )}

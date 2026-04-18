@@ -1393,7 +1393,7 @@
     "tipNoteLabel": "💡 Tip:",
     "servingSuggestionLabel": "🍽️ Serving suggestion:",
     "allergenDisclosure": "This recipe may contain allergens",
-    "allergenDisclaimer": "If you have allergies, double-check the ingredient list yourself.",
+    "allergenDisclaimer": "Allergens are derived automatically from the ingredient list (EU-10 set). Cross-contamination (shared kitchen equipment, shared surfaces) isn't tracked — if you have a serious allergy, review the full ingredient list yourself and ask about preparation.",
     "allergenListAria": "Allergen contents: {list}",
     "variationsTitle": "Community Adaptations ({count})",
     "variationSortNewest": "Newest",
@@ -1421,7 +1421,8 @@
       "calorieUnit": "kcal calories",
       "proteinUnit": "g protein",
       "carbsUnit": "g carbs",
-      "fatUnit": "g fat"
+      "fatUnit": "g fat",
+      "approximateNote": "Approximate values, derived from ingredient amounts using USDA and TÜBİTAK tables. Real values can vary by ±15% depending on cooking method, brand, and portion size. For diet or medical conditions, consult a dietitian or doctor."
     }
   },
   "recipes": {

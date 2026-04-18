@@ -1393,7 +1393,7 @@
     "tipNoteLabel": "💡 Püf Noktası:",
     "servingSuggestionLabel": "🍽️ Servis Önerisi:",
     "allergenDisclosure": "Bu tarif alerjen madde içerebilir",
-    "allergenDisclaimer": "Alerjin varsa malzeme listesine bir de sen göz at.",
+    "allergenDisclaimer": "Alerjenler tarifteki malzeme listesinden otomatik türetilir (AB-10 alerjen seti). Çapraz bulaşma (ortak mutfak ekipmanı, ortak yüzey) takip edilmez — ciddi alerjiniz varsa malzeme listesini baştan sona gözden geçirin ve hazırlama yöntemini sorun.",
     "allergenListAria": "Alerjen içerikleri: {list}",
     "variationsTitle": "Topluluk Uyarlamaları ({count})",
     "variationSortNewest": "En yeni",
@@ -1421,7 +1421,8 @@
       "calorieUnit": "kcal kalori",
       "proteinUnit": "g protein",
       "carbsUnit": "g karbonhidrat",
-      "fatUnit": "g yağ"
+      "fatUnit": "g yağ",
+      "approximateNote": "Yaklaşık değer — USDA ve TÜBİTAK tablolarından malzeme miktarına göre hesaplanır. Pişirme yöntemi, marka ve porsiyon boyutuna göre ±%15 sapabilir. Diyet veya sağlık koşulu için diyetisyen/hekime danışın."
     }
   },
   "recipes": {

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Suspense } from "react";
+import { getTranslations } from "next-intl/server";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
 import { getFeaturedRecipes, getQuickRecipes, getPopularRecipes } from "@/lib/queries/recipe";
@@ -21,14 +22,16 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function KesfetPage() {
-  const [featured, quick, popular, allCategories, cuisineStats, searchSuggestions] = await Promise.all([
-    getFeaturedRecipes(6),
-    getQuickRecipes(8),
-    getPopularRecipes(8),
-    getCategories(),
-    getCuisineStats(),
-    getSearchSuggestions(),
-  ]);
+  const [featured, quick, popular, allCategories, cuisineStats, searchSuggestions, t] =
+    await Promise.all([
+      getFeaturedRecipes(6),
+      getQuickRecipes(8),
+      getPopularRecipes(8),
+      getCategories(),
+      getCuisineStats(),
+      getSearchSuggestions(),
+      getTranslations("discover"),
+    ]);
 
   // Tarif sayısına göre sırala, en çok tarifi olan ilk 8
   const popularCategories = [...allCategories]
@@ -37,13 +40,13 @@ export default async function KesfetPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <h1 className="font-heading text-3xl font-bold">Keşfet</h1>
-      <p className="mt-2 text-text-muted">Yeni lezzetler keşfet, ilham al.</p>
+      <h1 className="font-heading text-3xl font-bold">{t("pageTitle")}</h1>
+      <p className="mt-2 text-text-muted">{t("subtitle")}</p>
 
       {/* Search + popular queries */}
       <div className="mt-6">
         <Suspense>
-          <SearchBar placeholder="Tarif veya malzeme ara..." suggestions={searchSuggestions} />
+          <SearchBar placeholder={t("searchPlaceholder")} suggestions={searchSuggestions} />
         </Suspense>
         <div className="mt-3 flex flex-wrap gap-2">
           {["tavuk", "çorba", "makarna", "tatlı", "salata", "kokteyl", "vegan"].map((term) => (
@@ -62,9 +65,9 @@ export default async function KesfetPage() {
       {featured.length > 0 && (
         <section className="mt-10">
           <div className="flex items-center justify-between">
-            <h2 className="font-heading text-xl font-bold">⭐ Öne Çıkanlar</h2>
+            <h2 className="font-heading text-xl font-bold">{t("sectionFeatured")}</h2>
             <Link href="/tarifler" className="text-sm text-primary hover:underline">
-              Tümü
+              {t("seeAll")}
             </Link>
           </div>
           <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -78,7 +81,7 @@ export default async function KesfetPage() {
       {/* Quick Recipes */}
       {quick.length > 0 && (
         <section className="mt-12">
-          <h2 className="font-heading text-xl font-bold">⚡ 30 Dakika Altı</h2>
+          <h2 className="font-heading text-xl font-bold">{t("sectionQuick")}</h2>
           <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {quick.map((recipe) => (
               <RecipeCard key={recipe.id} recipe={recipe} />
@@ -90,7 +93,7 @@ export default async function KesfetPage() {
       {/* Popular */}
       {popular.length > 0 && (
         <section className="mt-12">
-          <h2 className="font-heading text-xl font-bold">🔥 En Popüler</h2>
+          <h2 className="font-heading text-xl font-bold">{t("sectionPopular")}</h2>
           <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {popular.map((recipe) => (
               <RecipeCard key={recipe.id} recipe={recipe} />
@@ -101,7 +104,7 @@ export default async function KesfetPage() {
 
       {/* Categories Browse */}
       <section className="mt-12">
-        <h2 className="font-heading text-xl font-bold">📂 Kategoriler</h2>
+        <h2 className="font-heading text-xl font-bold">{t("sectionCategories")}</h2>
         <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
           {popularCategories.map((cat) => (
             <Link
@@ -116,7 +119,7 @@ export default async function KesfetPage() {
                 <span className="block text-sm font-medium">{cat.name}</span>
                 {cat._count.recipes > 0 && (
                   <span className="text-[10px] text-text-muted">
-                    {cat._count.recipes} tarif
+                    {t("recipeCountSmall", { count: cat._count.recipes })}
                   </span>
                 )}
               </div>
@@ -128,9 +131,9 @@ export default async function KesfetPage() {
       {/* Cuisine Discovery */}
       {cuisineStats.length >= 4 && (
         <section className="mt-12">
-          <h2 className="font-heading text-xl font-bold">🌍 Mutfaklar</h2>
+          <h2 className="font-heading text-xl font-bold">{t("sectionCuisines")}</h2>
           <p className="mt-1 text-sm text-text-muted">
-            {cuisineStats.length} farklı mutfaktan tarifler keşfet
+            {t("cuisineSubtitle", { count: cuisineStats.length })}
           </p>
           <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {cuisineStats.slice(0, 10).map((cs) => (
@@ -144,7 +147,9 @@ export default async function KesfetPage() {
                 </span>
                 <div>
                   <span className="text-sm font-medium text-text">{cs.label}</span>
-                  <span className="block text-[10px] text-text-muted">{cs.count} tarif</span>
+                  <span className="block text-[10px] text-text-muted">
+                    {t("recipeCountSmall", { count: cs.count })}
+                  </span>
                 </div>
               </Link>
             ))}
@@ -161,14 +166,10 @@ export default async function KesfetPage() {
           <span className="text-3xl">🧠</span>
           <div>
             <p className="text-xs font-medium uppercase tracking-wide text-accent-blue">
-              AI Asistan
+              {t("aiCtaLabel")}
             </p>
-            <p className="mt-0.5 font-heading text-lg font-bold text-text">
-              Elindeki malzemelerle ne yapabilirsin?
-            </p>
-            <p className="mt-0.5 text-xs text-text-muted">
-              Malzemelerini yaz, sana en uygun tarifleri bulalım →
-            </p>
+            <p className="mt-0.5 font-heading text-lg font-bold text-text">{t("aiCtaTitle")}</p>
+            <p className="mt-0.5 text-xs text-text-muted">{t("aiCtaSubtitle")}</p>
           </div>
         </Link>
       </section>

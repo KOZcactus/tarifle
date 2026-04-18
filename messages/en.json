@@ -186,6 +186,27 @@
     "linkPrivacy": "Privacy Policy",
     "copyright": "© {year} {site}. All rights reserved."
   },
+  "discover": {
+    "pageTitle": "Discover",
+    "subtitle": "Find new flavors, get inspired.",
+    "searchPlaceholder": "Search recipes or ingredients...",
+    "sectionFeatured": "⭐ Featured",
+    "sectionQuick": "⚡ Under 30 Minutes",
+    "sectionPopular": "🔥 Most Popular",
+    "sectionCategories": "📂 Categories",
+    "sectionCuisines": "🌍 Cuisines",
+    "cuisineSubtitle": "Discover recipes from {count} different cuisines",
+    "seeAll": "All",
+    "recipeCountSmall": "{count} recipes",
+    "aiCtaLabel": "AI Assistant",
+    "aiCtaTitle": "What can you make with what you have?",
+    "aiCtaSubtitle": "List your ingredients and we'll find the best-matching recipes →"
+  },
+  "aiAssistant": {
+    "pageEyebrow": "AI Assistant",
+    "pageTitle": "Find a recipe from what you have",
+    "pageSubtitle": "List the ingredients in your pantry and we'll bring you the best-matching recipes. You'll also see what's missing — so you know what you can cook without going to the store."
+  },
   "cookingMode": {
     "startButton": "Start Cooking Mode",
     "modalAria": "Cooking mode: {title}",

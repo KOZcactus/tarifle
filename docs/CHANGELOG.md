@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: 17 Nisan 2026 (oturum 2 — 33 ek commit, Review v2 + Admin v2-v7 + Fuzzy + Neon branch + Sentry)
+> Son güncelleme: 18 Nisan 2026 (oturum 2 — i18n derin tur, 8 commit: AiAssistantForm + ayarlar child + auth tail + admin layout/dashboard + email templates + generateMetadata + AI commentary + admin partial)
 
 ## İşaretler
 
@@ -199,7 +199,18 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - ✨ **14 i18n extraction pass** (~25 commit, 18 Nis) — homepage + navbar + footer + ThemeToggle + auth (LoginForm + RegisterForm) + /ayarlar header + RecipeCard + /tarifler + /tarifler/[kategori] + Filter component'leri (Allergen/Diet/Cuisine/FilterPanel) + ActiveFilters + allergen + cuisine constants locale-aware + /tarif/[slug] (4 child component: IngredientList/RecipeSteps/NutritionInfo/AllergenBadges) + Reviews ekosistemi (4 component) + SimilarRecipes + variation ekosistemi (4 component) + Print/Share/AgeGate/DeleteOwnVariation + SaveMenu + CookingMode + /alisveris-listesi + /kesfet + /ai-asistan header + /profil/[username] + /koleksiyon/[id] + /bildirimler.
 - 🧹 **`src/lib/recipe/translate.ts`** — Recipe.translations JSONB locale-aware lookup helper (6 fonksiyon: pickRecipeTitle/Description/TipNote/ServingSuggestion + mapTranslatedIngredients/Steps). sortOrder/stepNumber ile eşler, eksik translation TR fallback.
 - 🧹 **`formatRelativeDate(date, t)` helper** (profile sayfasında inline) — locale-aware "X gün önce / X days ago", utils.ts TR-only versiyonuna dokunulmadı.
-- 📝 **Bekleyen i18n:** AiAssistantForm (846 satır), /ayarlar child kartlar (4 form), /sifremi-unuttum + /sifre-sifirla + /dogrula, admin panel, email templates, generateMetadata SEO, 1103 tarif retrofit translations.
+- ✨ **i18n derin tur (18 Nis oturum 2, 8 commit)** — kullanıcı-temas surface %100 EN + backend locale-aware + SEO locale-aware.
+  - `aa90d8b` **AiAssistantForm** (846 satır, 8 namespace) — form + sort + share + suggestion card + tag chip + cuisine flag + match% + missing/perfect label'ları. `recipes.card` reuse (time format + difficulty).
+  - `2951fae` **/ayarlar 4 child kart** — ProfileSettings + GoogleLink + PasswordChange + DeleteAccount. `settings.profile/google/password/delete` (65 key). `t.rich` `<code>` + `<strong>{email}</strong>` pattern. PasswordChangeCard mode (change|set) aware label mapping.
+  - `aca1543` **auth tail** — /sifremi-unuttum + /sifre-sifirla + /dogrula + ForgotPassword/ResetPassword forms. `auth.forgotPassword/resetPassword/verifyEmail` 3 sub-namespace.
+  - `35dcb86` **admin layout + dashboard** (50 key) — panel title + 12 nav link + 12 stat card (ICU parametreli: avg/ratio/variations/reviews) + activity/growth chart aria + reported content + recent signups + seed batches + category/cuisine distribution.
+  - `990702a` **Email templates locale-aware** — `sendVerificationEmail` + `sendPasswordResetEmail` + `sendOAuthOnlyPasswordResetEmail`. `locale: Locale = DEFAULT_LOCALE` optional param. HTML lang="{locale}" + subject + body `t.rich` `<strong>{hours} hours</strong>`. Caller'lar: register cookie'den `NEXT_LOCALE`, resend/reset `User.locale` select.
+  - `4dd34c5` **generateMetadata SEO** — root layout + 14 page (10 public + 4 legal) cookie-based title/description + `og:locale` (tr_TR/en_US) + `og:title`. 26 `export const metadata` → `async function generateMetadata()`. Admin page metadata'ları internal kaldı.
+  - `32993ce` **AI commentary backend locale-aware** — `commentary.ts` async, `t.raw()` variant array pattern. `buildOverallCommentary` + `assignRecipeNotes` imzası `(..., locale)`. `rule-based-provider.ts` `getLocale()` + `isValidLocale` guard. EN user "🧠 Assistant: From Turkish cuisine, You can make 5 recipes..." görür; TR "Türk mutfağından 5 tarifi...".
+  - `5cd547a` **Admin partial** — `admin.common` namespace (15 key: pagination/actions/filters) + `admin.pageTitles` + 10 sub-namespace şablonu. `PaginationBar` async + `/bildirim-gonder` page + `BroadcastForm` (confirm dialog + success/error i18n).
+- 🧹 **`src/lib/ai/commentary.ts` refactor** — 264 satır, 2 async fn, unused `CUISINE_LABEL`/`TYPE_LABELS`/`DIFF_LABELS` constants silindi (artık `t.raw` ile messages'tan çekilir). `resolveCuisinePrefix` helper — `cuisines.*` namespace'inden label alıp `aiCommentary.cuisineSingle/Double/Multi` template'ine basar.
+- 🧹 **3 email fonksiyonu signature extension** — `src/lib/email/{verification,password-reset}.ts`. Backward-compat: `locale` param default'lu (`DEFAULT_LOCALE`), caller isteğe bağlı geçer.
+- 📝 **Bekleyen i18n (düşük öncelik):** admin kalan 10 liste page + 2 detay page + 13 component (~3400 satır, internal use, `admin.*` şablonu hazır); 1103 tarif `Recipe.translations` JSONB retrofit (LLM batch); `recipe-of-the-day-commentary.ts` (commentary kardeşi, farklı caller).
 
 ## Schema & DB
 

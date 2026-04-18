@@ -1,8 +1,35 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 18 Nisan 2026 — Sentry kapanış + i18n marathon (25+ commit, TR/EN soft i18n canlı)
+> Son güncelleme: 18 Nisan 2026 (oturum 2) — i18n derin tur (8 commit): AiAssistantForm + ayarlar + auth tail + admin layout/dashboard + email templates + generateMetadata + commentary backend + admin partial
 
-## 18 Nisan 2026 — Sentry smoke test PASS + i18n altyapı + 14 i18n pass (~25 commit)
+## 18 Nisan 2026 (oturum 2 — i18n derin tur, 8 commit)
+
+i18n soft launch'un kalan büyük parçaları. Toplam 8 commit: kullanıcı-temas surface tam EN, backend locale-aware, admin internal use için altyapı + partial.
+
+- **`aa90d8b`** AiAssistantForm (846 satır, 8 namespace) — form + sort + share + suggestion card + tag chip + cuisine + match% + missing/perfect hepsi EN; RecipeCard pattern reuse (recipes.card time format)
+- **`2951fae`** /ayarlar 4 child kart — settings.profile/google/password/delete (65 key); t.rich `<code>` + `<strong>{email}</strong>`; mode (change|set) aware label
+- **`aca1543`** auth tail — /sifremi-unuttum + /sifre-sifirla + /dogrula + ForgotPassword/ResetPassword forms; auth.forgotPassword/resetPassword/verifyEmail 3 sub-namespace
+- **`35dcb86`** admin layout + dashboard (50 key) — panel title + 12 nav link + 12 stat card (ICU parametreli) + activity/growth/review dist/top viewed/active users/reported content/signups/batches/categories/cuisines
+- **`990702a`** email templates locale-aware — verification + passwordReset + oauthOnlyReset; `sendXxx(..., locale)` param + User.locale caller'da iletiliyor (register cookie'den)
+- **`4dd34c5`** generateMetadata SEO — root layout + 14 page (10 public + 4 legal) cookie-based title/description + og:locale (tr_TR/en_US) + og:title; 26 static metadata export dönüştürüldü
+- **`32993ce`** AI commentary backend locale-aware — commentary.ts async, t.raw() variant array pattern; rule-based-provider getLocale() + isValidLocale guard; EN user "🧠 Assistant: From Turkish cuisine..." görür
+- **`5cd547a`** admin partial — PaginationBar async + /bildirim-gonder + BroadcastForm; admin.common + 10 sub-namespace şablonu hazır (kalan 10 liste + 2 detay + 13 component gelecek sprint)
+
+**Sonuç (i18n soft launch tamamı):** Kullanıcı-temas surface %100 EN. Backend (email, AI commentary) User.locale'a göre. SEO (title/description/og) cookie-locale'a göre. Admin layout + dashboard + 1 page + shared pagination EN; 10 liste + 2 detay + 13 component TR (internal use, ayrı sprint).
+
+**Bekleyen i18n (düşük öncelik):**
+- Admin kalan 10 liste page + 2 detay page + 13 component (~3400 satır, internal use, `admin.*` namespace şablonu hazır)
+- 1103 tarif `Recipe.translations` JSONB null — LLM batch retrofit (ayrı iş)
+- `recipe-of-the-day-commentary.ts` (AI commentary'nin kardeşi, farklı caller, ayrı işlem)
+
+**Bekleyen büyük işler:**
+1. **Tarif görselleri** (Eren) — `docs/IMAGE_GENERATION_PLAN.md`, pilot 10 → 1100 batch. Zamanı var.
+2. **Codex batch 12+ translations dolu** — Hamle A hazır, validator WARNING fırlatır
+3. **Auto-migrate alternatif** — GitHub Actions / Neon direct URL (P1002 lock timeout; manuel runbook yeterli)
+
+---
+
+## 18 Nisan 2026 (oturum 1) — Sentry kapanış + i18n altyapı + 14 i18n pass (~25 commit)
 
 İki büyük iş paketi tek oturumda. Önce Sentry kurulumu çalıştırıldı, sonra i18n için cookie-based soft pattern ile altyapı + 14 pass extraction.
 

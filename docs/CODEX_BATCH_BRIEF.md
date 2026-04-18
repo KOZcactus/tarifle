@@ -7,6 +7,36 @@
 
 ---
 
+## 🚀 HIZLI TETİKLEYİCİ — Kerem ne derse ne yap
+
+| Kerem der | Sen anla | Git direkt | Çıktı |
+|---|---|---|---|
+| **"Mod A"**, "yeni batch", "batch N yaz", "100 tarif yaz" | **MOD A** — 100 yeni TR tarif yaz | §5 | `scripts/seed-recipes.ts` sonuna append + inline EN/DE title+description |
+| **"Mod B"**, "batch N çevirisi", "translations-batch-N.csv işle" | **MOD B** — CSV'yi okuyup JSON üret | §6 | `docs/translations-batch-N.json` (ingredients/steps/tipNote/servingSuggestion EN+DE) |
+
+**Default'lar (soru sorma, direkt başla):**
+
+### Mod A default (Kerem sadece "Mod A" veya "batch N yaz" derse):
+- **100 tarif** yaz (aksi belirtilmedikçe)
+- Dağılım: **~70 TR + ~30 uluslararası**, uluslararasıda eksik mutfaklardan çeşitlilik
+- TR'de **bölgesel çeşitlilik** zorunlu — sadece klasik değil, 7 bölgeden örnekler (Karadeniz, Ege, Güneydoğu, İç Anadolu, Doğu, Marmara, Akdeniz)
+- **isFeatured: batch'te 5-10 tarif** (sadece ikonik olanlar)
+- Eksik kategoriler için Kerem'e öncelik sor (kahvaltı/çorba/tatlı dengelensin)
+
+### Mod B default (Kerem sadece "Mod B" veya "batch N çevirisi" derse):
+- Kerem CSV dosya yolu verir: `docs/translations-batch-N.csv`
+- Sen aynı isimli **JSON** üretirsin: `docs/translations-batch-N.json`
+- Her tarif için **EN + DE ingredients + steps + tipNote + servingSuggestion** doldur (CSV'de hangisi eksikse)
+- `title + description` JSON'a YAZMA — CSV'deki `en_title_current` sütunundan görürsün zaten dolu (Mod A'dan)
+- Array uzunlukları TR'yle birebir eşleşmeli
+
+**Pilot-then-append kural (100+ tarifte Mod A için önerilen):** Kerem açıkça
+"100'ü tek seferde ver" demiyorsa, **önce 50 tarif yaz → "50 hazır, kalite
+check?" de → Kerem onaylarsa 50 daha ekle**. Bu yolla yarı yolda yön
+değişikliği maliyeti düşer.
+
+---
+
 ## 🎯 Mutlak öncelik: **DOĞRULUK > HIZ > KAPSAM**
 
 - Şüphede kaldıysan **çevirme / yazma — issues alanına yaz**, Kerem/Claude review eder.
@@ -30,11 +60,11 @@ EN soft launch canlı (DE retrofit tamamlandı).
 - GitHub: **KOZcactus/tarifle** (private repo)
 
 **Canlı durum:**
-- **1100 tarif prod'da**, 24 mutfak kodu, 17 kategori, 10 allergen, 15 tag
-- **1100/1100 tarif EN + DE çevirisi tamam** (Recipe.translations JSONB dolu)
-- Retrofit %100 — yeni batch'lerde çeviriler ZORUNLU olacak
-- Faz 3: admin paneli + Review v2 + Sentry + Fuzzy arama + OG image i18n +
-  SEO meta i18n — hepsi canlı
+- **1301 tarif prod'da** (Nisan 2026), 24 mutfak kodu, 17 kategori, 10 allergen, 15 tag
+- **1301/1301 tarif EN + DE `title + description` dolu** (Recipe.translations JSONB;
+  batch 12-13 için `ingredients + steps` Mod B ile dolduruluyor — iki-pass mimarisi)
+- Faz 3: admin paneli + Review v2 + Sentry + Fuzzy arama + kategori pagination
+  + OG image i18n + SEO meta i18n — hepsi canlı
 
 **Proje sahibi:** Kerem (koz.devs@gmail.com)
 
@@ -95,31 +125,88 @@ adımında encoding koruması yoktu.
 
 ## 4. Oturum modu
 
-Kerem sana şunlardan birini söyleyecek:
+Üstteki "Hızlı tetikleyici" kartı modu seç + default'u belirler. Bu bölüm
+mod akışının detayını sunar — tetikleyici yorum bırakmayan edge case'ler için
+geri dönüş referansı.
 
-### 🍳 **Mod A — Yeni TR tarif yazma** → §5'e atla
-- Kerem "Batch 12 için 100 yeni TR tarif yaz" der
-- Çıktı: `scripts/seed-recipes.ts` append + inline `translations` her tarifte
+### 🍳 Mod A — Yeni TR tarif yazma → §5
 
-### 🌍 **Mod B — Mevcut tarif çevirisi (translation retrofit)** → §6'ya atla
-- Kerem "docs/translations-batch-N.csv işle" der
-- Çıktı: `docs/translations-batch-N.json` (yeni dosya)
+- **Tetikleyici cümleler:** "Mod A", "yeni batch", "batch N yaz", "N tarif yaz",
+  "batch N için 100 tarif", "yeni tarif üret"
+- **Beklenen default:** 100 tarif, 70 TR + 30 uluslararası, isFeatured 5-10
+- **Çıktı:** `scripts/seed-recipes.ts` dosyasındaki `export const recipes = [...]`
+  array'inin **sonuna append**, batch başlangıcına `// ── BATCH N ──` yorumu
+- **Kerem farklı sayı verirse** (örn. "50 tarif", "20 tarif çorba"), default
+  yerine o sayıyı kullan; dağılımı sor ya da Türk + eksik mutfaklardan seç
 
-Her iki modda §7 kalite kıstası + §8 self-review + §9 geçmiş hata listesi geçerli.
+### 🌍 Mod B — Mevcut tarif çevirisi (retrofit) → §6
+
+- **Tetikleyici cümleler:** "Mod B", "batch N çevirisi", "translations-batch-N.csv
+  işle", "çeviri batch N"
+- **Beklenen default:** CSV'yi oku → eksik alanları (ingredients + steps,
+  kısmen tipNote/servingSuggestion) EN + DE olarak doldur → JSON üret
+- **Çıktı:** `docs/translations-batch-N.json` (yeni dosya, CSV ile aynı N)
+- **title + description JSON'a YAZMA** — Mod A'dan zaten dolu
+
+### Ortak kurallar (her iki modda geçerli)
+
+- §3 dosya çakışma + encoding disiplini
+- §7 kalite çıtası (PROTECTED_TR_TOKENS, description formatı, dil tonları)
+- §8 çift self-review (pass 1 içerik + pass 2 çeviri)
+- §9 geçmişte yakalanmış hatalar tablosu — **tekrar etme**
+- §10 kesin yasaklar (git, prod DB, encoding bozma)
 
 ---
 
 ## 5. Mod A — Yeni TR tarif yazma
 
-### Scope
-- Kerem sayı verir (tipik 100). Türk mutfağı %70+, uluslararası eksik
-  mutfaklardan çeşitlilik
-- Mevcut 1100 slug'ı tekrarlama: `docs/existing-slugs.txt` zorunlu kontrol
+### Scope (Kerem'in açık talimatı yoksa default'u uygula)
 
-### Çıktı yeri
-`scripts/seed-recipes.ts` dosyasındaki `export const recipes = [...]`
+**Default scope (Kerem sadece "Mod A" / "batch N yaz" dediğinde):**
+- **100 tarif**
+- **~70 TR + ~30 uluslararası** (TR ağırlıklı, uluslararasıda §5 cuisine
+  tablosundan eksik olan kodlardan — genelde `se/hu/pe/gb/pl/au` az olanlar,
+  ya da `ru/vn/es/cu` gibi gelişmekte olanlar)
+- **7 Türk bölgesi dengelensin** (Karadeniz, Ege, Güneydoğu, İç Anadolu,
+  Doğu, Marmara, Akdeniz) — sadece İstanbul/klasik değil, Rize-Antalya-Erzurum-
+  Mardin gibi bölgesel çeşitlilik zorunlu
+- **Kategori dağılımı**: kahvaltı 10-15, çorba 8-12, ana yemek 20-25, tatlı
+  15-20, meze/salata 8-12, hamur işi 8-12, içecek 5-10, kokteyl 3-5 (dengeli
+  karışım; belirli kategoride açık varsa Kerem sana "N tatlı yaz" gibi özel
+  talimat verir)
+- **isFeatured: 5-10** (toplam 100'ün %5-10'u; sadece gerçekten ikonik
+  tarifler — ilk kez duyulacak "Cantık Pidesi" gibi değil, "Adana Kebap"
+  kalibresi)
+
+**Kerem özel talimat verirse** (örn. "50 tarif yaz", "20 tatlı istiyorum",
+"sadece Türk", "10 kokteyl + 15 smoothie"), o talimatı uygula — default
+dağılım geçersiz.
+
+**Mevcut slug'ları tekrarlama:** `docs/existing-slugs.txt` zorunlu kontrol.
+Slug'un alfabetik sıralı tam listesi (şu an 1300+ slug).
+
+### Çıktı yeri ve teslim
+
+`scripts/seed-recipes.ts` dosyasındaki `export const recipes: SeedRecipe[] = [...]`
 array'inin **sonuna append**. Mevcut tarifleri silme. Batch başlangıcına
-`// ── BATCH N ──` yorumu koy.
+`// ── BATCH N ── (tarih: YYYY-MM-DD, N tarif, Codex)` yorumu koy.
+
+**Dosya encoding (kritik, batch 12'de yakalandı — §3'e bak):**
+- UTF-8 (BOM YOK) + LF satır sonu olarak kaydet
+- VS Code alt çubukta "UTF-8" + "LF" yazmalı (CRLF veya UTF-8 BOM DEĞİL)
+- Şüphedeysen: batch'i ayrı bir `.txt` olarak ver, Claude append eder — sıfır
+  risk
+
+**Teslim mesajı:**
+```
+Batch N hazır — 100 tarif + EN/DE çeviri (title + description minimum).
+- Eklendi: scripts/seed-recipes.ts (append only)
+- Dağılım: 72 TR + 28 uluslararası (5 it + 4 fr + 3 jp + ...)
+- 7 Türk bölgesi dengelendi: Karadeniz 10, Ege 8, Güneydoğu 12, ...
+- Kategori: 12 kahvaltı, 10 çorba, 22 ana yemek, 18 tatlı, ...
+- isFeatured: 8 tarif (X, Y, Z, ...)
+- Self-review pass 1 + 2 temiz, 0 bulunan issue / şu slug'larda şu noktalar review gerek
+```
 
 ### Recipe object format (birebir)
 
@@ -270,24 +357,24 @@ sonra yapılır. İki ayrı oturumda:
 Bu "iki-pass mimarisi" batch 0-3 retrofit akışıyla aynı — ispatlanmış
 pattern. Yeni tarifte de aynı disiplin.
 
-### Mod A çıktı teslim
-
-```
-Batch N hazır — 100 tarif + EN/DE çeviri.
-- Eklendi: scripts/seed-recipes.ts (append only)
-- Özet: 70 TR + 30 uluslararası (breakdown: 5 İtalyan, 4 Japon, ...)
-- isFeatured: 8 tarif
-- Self-review pass 1 + 2 temiz, bulunan issue yok / şu slug'larda şu noktalar
-  review gerek
-```
+(Mod A teslim mesajı formatı §5 başında "Çıktı yeri ve teslim" altında.)
 
 ---
 
 ## 6. Mod B — Mevcut tarif çevirisi (translation retrofit)
 
-### Scope
-- Kerem CSV dosya adı verir: `docs/translations-batch-N.csv`
-- Sen JSON üretirsin: `docs/translations-batch-N.json`
+### Scope ve default (Kerem sadece "Mod B" / "batch N çevirisi" derse)
+
+- **Girdi:** `docs/translations-batch-N.csv` (Kerem N numarasını verir; N
+  yoksa en son var olan CSV'yi kullan)
+- **Çıktı:** `docs/translations-batch-N.json` (aynı N, yeni dosya)
+- **Kapsam:** CSV'deki her satır için EN + DE `ingredients + steps +
+  tipNote + servingSuggestion` (hangileri CSV'de eksikse)
+- **YAPMA:** `title + description` JSON'a ekleme — CSV'nin
+  `en_title_current` / `de_title_current` sütunlarına bak, zaten dolu.
+- **Array uzunlukları:** EN/DE `ingredients` array uzunluğu CSV'deki
+  `ingredient_count` kadar; `steps` array uzunluğu `step_count` kadar.
+  Uyumsuzluk olursa import script CRITICAL blocker atar.
 
 ### Genel akış (batch 12 ve sonrası için standart)
 
@@ -604,7 +691,7 @@ istisnası yok." Uzmanlık algısı bu tutarlılıktan geliyor.
 - ❌ `git commit`, `git push`, `git add` — Kerem/Claude yapar
 - ❌ `npm run db:*`, `prisma migrate`, `--apply`, `--confirm-prod`, seed
   script çalıştırma
-- ❌ Mevcut 1200 tarifi silme/değiştirme (append-only)
+- ❌ Mevcut 1300+ tarifi silme/değiştirme (append-only)
 - ❌ `src/`, `prisma/`, `messages/`, `.env*` dosyalarına yazma
 - ❌ `docs/existing-slugs.txt` regen (Claude yapar seed sonrası)
 - ❌ Yeni kategori/tag/allergen/cuisine kodu ekleme (var olanı kullan)
@@ -625,10 +712,26 @@ istisnası yok." Uzmanlık algısı bu tutarlılıktan geliyor.
 
 Bu mesajı okuduğunda:
 
-1. **"Anladım."** de
-2. Belirsizlikler varsa şunları sor (önerilen):
-   - "Bu oturumda Mod A (yeni tarif yazma) mı, Mod B (çeviri retrofit) mı?"
-   - Belirli alan/kural hakkında emin değilsen spesifik sor
-3. Kerem mod + girdi dosyası bilgisini verince başla
+1. **"Anladım."** diye kısa onay ver
+2. **Kerem'in ilk mesajına bak** — üstteki "Hızlı tetikleyici" tablosu
+   büyük ihtimalle yanıtı çözüyor:
+   - "Mod A" / "batch N yaz" / "yeni batch" → §5 default'uyla direkt başla
+     (100 tarif, 70 TR + 30 uluslararası, isFeatured 5-10). Soru sorma.
+   - "Mod B" / "batch N çevirisi" / "translations-batch-N.csv işle" →
+     §6 default'uyla direkt başla (CSV oku → JSON üret, ingredients + steps
+     + tipNote + servingSuggestion EN/DE; title+description YAZMA). Soru sorma.
+3. **Net olmayan durumlar için soru sor** (örnekler):
+   - Kerem sayı vermedi ve default'tan farklı istediğini ima etti ("biraz
+     az yaz") → "Kaç tarif? Default 100" diye teyit et
+   - Kerem belirli kategori istedi ama sayı belirsiz ("biraz tatlı") → "Kaç
+     tatlı?" diye sor
+   - Belirli alan/kural hakkında emin değilsen (cuisine ataması, allergen
+     çıkarım, bölge eşleştirme) spesifik tarif bazında sor
+4. Kerem açık mesaj verirse (örn. "50 kokteyl yaz"), default'u unut, talimatı
+   uygula
+
+**Yaygın hata:** Her seferinde "Mod A mı B mi?" diye sormak — Kerem çoğu
+oturumda mod adını veya girdi dosyasını direkt söyler. Tetikleyici tablosu
+açıksa soru sorma.
 
 Başarılar. **Doğruluk her zaman 1. plan.**

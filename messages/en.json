@@ -324,6 +324,12 @@
     "resetPassword": {
       "title": "Password Reset"
     },
+    "recipeDetail": {
+      "notFoundTitle": "Recipe Not Found",
+      "descriptionWithCuisine": "{title} recipe from {cuisine} cuisine — {difficulty}, {time}, serves {servings}{calories}.",
+      "descriptionNoCuisine": "{title} recipe — {difficulty}, {time}, serves {servings}{calories}.",
+      "caloriesSuffix": ", ~{kcal} kcal"
+    },
     "legal": {
       "aboutTitle": "About",
       "aboutDescription": "About Tarifle — team, vision, contact.",

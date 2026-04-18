@@ -16,8 +16,7 @@ import { VariationCard } from "@/components/recipe/VariationCard";
 import { ReviewsSection } from "@/components/recipe/ReviewsSection";
 import { SimilarRecipes } from "@/components/recipe/SimilarRecipes";
 import { generateRecipeJsonLd, generateBreadcrumbJsonLd, generateRecipeFaqJsonLd } from "@/lib/seo";
-import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
-import { CUISINE_FLAG, CUISINE_LABEL, type CuisineCode } from "@/lib/cuisines";
+import { CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
 import { SITE_URL } from "@/lib/constants";
 import {
   getRecipeBySlug,
@@ -52,10 +51,33 @@ interface TarifPageProps {
   searchParams: Promise<{ siralama?: string }>;
 }
 
+function formatMinutesLocalized(
+  minutes: number,
+  t: (key: "minutesShort" | "hoursShort" | "hoursMinutes", values?: Record<string, string | number>) => string,
+): string {
+  if (minutes < 60) return t("minutesShort", { n: minutes });
+  const hours = Math.floor(minutes / 60);
+  const remaining = minutes % 60;
+  if (remaining === 0) return t("hoursShort", { n: hours });
+  return t("hoursMinutes", { h: hours, m: remaining });
+}
+
 export async function generateMetadata({ params }: TarifPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const recipe = await getRecipeBySlug(slug);
-  if (!recipe) return { title: "Tarif Bulunamadı" };
+  const [recipe, localeRaw] = await Promise.all([
+    getRecipeBySlug(slug),
+    getLocale(),
+  ]);
+  const locale: Locale = isValidLocale(localeRaw) ? localeRaw : "tr";
+  const [tMeta, tCard, tCuisine, tDifficulty] = await Promise.all([
+    getTranslations({ locale, namespace: "metadata.recipeDetail" }),
+    getTranslations({ locale, namespace: "recipes.card" }),
+    getTranslations({ locale, namespace: "cuisines" }),
+    getTranslations({ locale, namespace: "aiCommentary.difficultyLabels" }),
+  ]);
+  void tDifficulty; // unused — we pick the capitalized form from recipes.card
+
+  if (!recipe) return { title: tMeta("notFoundTitle") };
 
   // Canonical yönetimi: tarifle.app non-www kanonik, www→non-www 308
   // redirect Cloudflare'de. Bu alternates.canonical `metadataBase`
@@ -65,27 +87,65 @@ export async function generateMetadata({ params }: TarifPageProps): Promise<Meta
   // OpenGraph image'ı src/app/tarif/[slug]/opengraph-image.tsx
   // convention'ı otomatik ekliyor — burada manual image referansı
   // vermeye gerek yok, duplicate olur.
-  const cuisineLabel = recipe.cuisine
-    ? CUISINE_LABEL[recipe.cuisine as CuisineCode]
-    : null;
-  const cuisineSeo = cuisineLabel ? `${cuisineLabel} mutfağından ` : "";
+  const title = pickRecipeTitle(recipe.title, recipe.translations, locale);
+  const description = pickRecipeDescription(
+    recipe.description,
+    recipe.translations,
+    locale,
+  );
+
+  const cuisineCode = recipe.cuisine as CuisineCode | null | undefined;
+  const cuisineLabel =
+    cuisineCode && tCuisine.has(cuisineCode) ? tCuisine(cuisineCode) : null;
+
+  const difficultyKey =
+    recipe.difficulty === "EASY"
+      ? "difficultyEasy"
+      : recipe.difficulty === "MEDIUM"
+        ? "difficultyMedium"
+        : "difficultyHard";
+  const difficultyLabel = tCard(difficultyKey);
+  const timeLabel = formatMinutesLocalized(
+    recipe.totalMinutes,
+    (key, values) => tCard(key, values ?? {}),
+  );
+  const calories = recipe.averageCalories
+    ? tMeta("caloriesSuffix", { kcal: recipe.averageCalories })
+    : "";
+
+  const metaDescription = cuisineLabel
+    ? tMeta("descriptionWithCuisine", {
+        title,
+        cuisine: cuisineLabel,
+        difficulty: difficultyLabel,
+        time: timeLabel,
+        servings: recipe.servingCount,
+        calories,
+      })
+    : tMeta("descriptionNoCuisine", {
+        title,
+        difficulty: difficultyLabel,
+        time: timeLabel,
+        servings: recipe.servingCount,
+        calories,
+      });
 
   return {
-    title: recipe.title,
-    description: `${cuisineSeo}${recipe.title} tarifi — ${getDifficultyLabel(recipe.difficulty)}, ${formatMinutes(recipe.totalMinutes)}, ${recipe.servingCount} kişilik${recipe.averageCalories ? `, ~${recipe.averageCalories} kcal` : ""}.`,
+    title,
+    description: metaDescription,
     alternates: {
       canonical: `/tarif/${recipe.slug}`,
     },
     openGraph: {
-      title: recipe.title,
-      description: recipe.description.slice(0, 200),
+      title,
+      description: description.slice(0, 200),
       url: `/tarif/${recipe.slug}`,
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
-      title: recipe.title,
-      description: recipe.description.slice(0, 200),
+      title,
+      description: description.slice(0, 200),
     },
   };
 }

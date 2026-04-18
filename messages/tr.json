@@ -324,6 +324,12 @@
     "resetPassword": {
       "title": "Şifre Sıfırlama"
     },
+    "recipeDetail": {
+      "notFoundTitle": "Tarif Bulunamadı",
+      "descriptionWithCuisine": "{cuisine} mutfağından {title} tarifi — {difficulty}, {time}, {servings} kişilik{calories}.",
+      "descriptionNoCuisine": "{title} tarifi — {difficulty}, {time}, {servings} kişilik{calories}.",
+      "caloriesSuffix": ", ~{kcal} kcal"
+    },
     "legal": {
       "aboutTitle": "Hakkımızda",
       "aboutDescription": "Tarifle hakkında bilgi — ekip, vizyon, iletişim.",

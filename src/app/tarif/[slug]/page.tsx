@@ -382,35 +382,44 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
             muted #hashtag chips. Filter-by-slug keeps the list iteration
             single-pass. */}
         {recipe.tags.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-2">
+          // Semantic list so screen readers announce "N items" and each
+          // tag becomes its own list item. An earlier <div><span> layout
+          // leaked into textContent without separators ("#Misafir Sofrası
+          // 🌱Vegan#Bütçe Dostu" concatenated), which degraded SEO text
+          // extraction and accessibility.
+          <ul
+            role="list"
+            aria-label={t("tagsAriaLabel")}
+            className="mt-3 flex list-none flex-wrap gap-2 pl-0"
+          >
             {recipe.tags.map(({ tag }) => {
               const isDiet = tag.slug === "vegan" || tag.slug === "vejetaryen";
               if (isDiet) {
                 return (
-                  <span
-                    key={tag.id}
-                    className="inline-flex items-center gap-1 rounded-full border border-accent-green/40 bg-accent-green/15 px-2.5 py-0.5 text-xs font-medium text-accent-green"
-                    title={
-                      tag.slug === "vegan"
-                        ? t("tagTooltipVegan")
-                        : t("tagTooltipVegetarian")
-                    }
-                  >
-                    <span aria-hidden="true">🌱</span>
-                    {tag.name}
-                  </span>
+                  <li key={tag.id}>
+                    <span
+                      className="inline-flex items-center gap-1 rounded-full border border-accent-green/40 bg-accent-green/15 px-2.5 py-0.5 text-xs font-medium text-accent-green"
+                      title={
+                        tag.slug === "vegan"
+                          ? t("tagTooltipVegan")
+                          : t("tagTooltipVegetarian")
+                      }
+                    >
+                      <span aria-hidden="true">🌱</span>
+                      {tag.name}
+                    </span>
+                  </li>
                 );
               }
               return (
-                <span
-                  key={tag.id}
-                  className="rounded-full border border-border px-2.5 py-0.5 text-xs text-text-muted"
-                >
-                  #{tag.name}
-                </span>
+                <li key={tag.id}>
+                  <span className="rounded-full border border-border px-2.5 py-0.5 text-xs text-text-muted">
+                    #{tag.name}
+                  </span>
+                </li>
               );
             })}
-          </div>
+          </ul>
         )}
       </header>
 

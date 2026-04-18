@@ -1,10 +1,33 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 18 Nisan 2026 (oturum 4) — **Codex batch 12 dev + prod promoted (1100 → 1200 tarif canlı)**. Codex teslim mojibake-korupt geldi (Windows-1252→UTF-8 round-trip), HEAD restore + izole append ile kurtarıldı. 18 CRITICAL allergen/tag bulgusu fix'lendi. Prod audit-deep PASS, `tarifle.app/tarif/lalanga-trakya-usulu` 200 canlı.
+> Son güncelleme: 19 Nisan 2026 (oturum 5) — **Codex batch 13 dev + prod promoted (1200 → 1301 tarif canlı)**. Bu sefer encoding temiz geldi (brief §3 uyarısı işe yaradı). 8 CRITICAL allergen fix, audit-deep 0 CRITICAL. Ayrıca kategori listing sayfasına pagination eklendi (tatlılar 126 tarif → 11 sayfa), Mod B altyapısı (export-b + import-b shallow-merge) + batch 12/13 CSV'ler hazır. Tüm iş Vercel'e auto-deploy edildi.
+
+## 19 Nisan 2026 (oturum 5 — batch 13 prod + pagination + Mod B altyapı)
+
+- **Batch 13 seed (dev + prod, commit `ea255ce`)** — 101 yeni tarif (73 TR / 28 int'l): Rize Kayganası, Tokat Çemeni, Kapadokya Yumurtalı Ekmek, Erzincan Kesme Kete, Niğde Söğürmeli Yumurta, Konya Nohutlu Yahni, Antalya Mafişi, Rize Hamsili Pilav, Çorum İskilip Dolması… + 5 se + 5 hu + 4 pe + 5 gb (Sausage Rolls, Cornish Pasty, Sticky Toffee Pudding, Eton Mess) + 4 pl + 5 au (ANZAC Biscuits, Damper, Meat Pie). isFeatured 8. Codex 100 dedi, parse'da 101 bulundu — küçük sayım farkı, content temiz.
+- **Encoding temiz** — brief §3 "Dosya encoding" uyarısı işe yaradı, batch 12'deki Windows-1252→UTF-8 mojibake faciası tekrarlanmadı.
+- **audit-deep 8 CRITICAL → 0 CRITICAL** — Tereyağı→SUT ×5 (niğde söğürmeli, konya yahni, iskilip dolması, cornish pasty, anzac biscuits), Yoğurt→SUT ×1 (antalya mafişi), Çam fıstığı→KUSUYEMIS ×1 (rize hamsili pilav), Hardal→HARDAL ×1 (sausage rolls). `fix-critical-allergens-batch13.ts` + `sync-allergens-batch13-to-seed.ts` (batch 12 pattern).
+- **Prod promote akışı** — migrate-prod no-op ✓, seed 101 yeni, fix-allergens "Already clean: 8" (seed sync sayesinde idempotent), audit-deep PASS. Canlı: `tarifle.app/tarif/kaygana-rize-usulu` 200 OK + "Rize Kayganası | Tarifle" title, `/tarif/sausage-rolls` 200 OK.
+- **Pagination /tarifler/[kategori] (commit `f959fb8`)** — kategori listing sayfası (örn. tatlılar, 126 tarif) sadece 12 tarif gösteriyordu; 2+ sayfaya geçiş yoktu. Ortak `src/components/listing/Pagination.tsx` çıkarıldı (basePath prop), hem `/tarifler` hem `/tarifler/[kategori]` kullanıyor. Canlı doğrulama: `tatlilar?page=2` HTTP 200, HTML'de `aria-label="Sayfalama"` + `rel="next"`. Filter'ler (mutfak, alerjen, etiket) pagination URL'ine otomatik taşınıyor.
+- **Mod B altyapı (commit `23194f8` + `6433a46`)** — batch 12+ için partial-field çeviri retrofit:
+  - `scripts/export-recipes-for-translation-b.ts` — batch slug listesini seed markerından çıkarır, CSV'ye TR alanlar + EN/DE mevcut durum sütunları (en/de_title_current, en/de_tipNote_current, en/de_ingredients_present 0/1 vs.)
+  - `scripts/import-translations-b.ts` — Zod partial schema + shallow merge. Array length/sortOrder integrity check → mismatch CRITICAL block
+  - `docs/CODEX_BATCH_BRIEF.md §6` iki formatın karışıklığı düzeltildi: partial ana akış, full-format artık sadece "tarihçe" notu (batch 0-3 geçmişi)
+- **Batch 12 + 13 CSV hazır** — `docs/translations-batch-12.csv` (100 satır) + `docs/translations-batch-13.csv` (101 satır). İki-pass mimarisi için Kerem yeni Codex oturumunda Mod B'yi başlatacak.
+
+**Prod durumu (oturum 5 sonu):**
+- **Prod: 1301 tarif, 0 CRITICAL, 24 cuisine kodu**
+- Canlı: `/tarif/kaygana-rize-usulu` + `/tarif/sausage-rolls` 200, `/tarifler/tatlilar?page=11` 200
+- 508/508 test PASS, tsc clean, lint 0 error
 
 ## 18 Nisan 2026 (oturum 4 — batch 12 seed + recovery + PROD CANLI)
 
-**Prod durumu (oturum 4 sonu):**
+## 18 Nisan 2026 (oturum 4 — batch 12 seed + recovery + PROD CANLI)
+
+> Oturum 4 sonu durumu artık oturum 5 girişinde (1301 tarif). Aşağıda sadece
+> o oturumda yapılan iş kayıtları.
+
+**Oturum 4 özet durumu (referans):**
 - **Prod: 1200 tarif, audit-deep 0 CRITICAL PASS, 24 cuisine kodu**
 - `tarifle.app/tarif/lalanga-trakya-usulu` → HTTP 200, "Lalanga | Tarifle" title, Trakya bağlam canlı
 - Karalahana: `tags=[vejetaryen,kis-tarifi]`, `allergens=[SUT]` ✓

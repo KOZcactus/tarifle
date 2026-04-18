@@ -259,7 +259,82 @@
   "aiAssistant": {
     "pageEyebrow": "AI Assistant",
     "pageTitle": "Find a recipe from what you have",
-    "pageSubtitle": "List the ingredients in your pantry and we'll bring you the best-matching recipes. You'll also see what's missing — so you know what you can cook without going to the store."
+    "pageSubtitle": "List the ingredients in your pantry and we'll bring you the best-matching recipes. You'll also see what's missing — so you know what you can cook without going to the store.",
+    "recentSearches": "Recent searches",
+    "form": {
+      "ingredientsLabel": "Ingredients you have",
+      "ingredientsHelper": "Press comma or Enter to add each ingredient separately.",
+      "ingredientsPlaceholderEmpty": "e.g. tomato, onion, egg (add with comma or Enter)",
+      "ingredientsPlaceholderMore": "Another ingredient…",
+      "ingredientChipRemove": "Remove {ingredient}",
+      "popularChipPrefix": "+ {ingredient}",
+      "excludeLabel": "Without these ingredients",
+      "excludeOptional": "(optional)",
+      "excludePlaceholderEmpty": "e.g. peanuts, eggs (allergy or preference)",
+      "excludePlaceholderMore": "Another ingredient…",
+      "excludeChipRemove": "Stop excluding {ingredient}",
+      "typeLabel": "Type",
+      "timeLabel": "Time",
+      "difficultyLabel": "Difficulty",
+      "cuisineLabel": "Cuisine",
+      "anyOption": "Any",
+      "allCuisinesOption": "All",
+      "timeOptions": {
+        "min15": "Up to 15 min",
+        "min30": "Up to 30 min",
+        "hr1": "Up to 1 hour",
+        "hr2": "Up to 2 hours"
+      },
+      "pantryLabel": "I always have salt, pepper, water and oil",
+      "pantryHelper": "These pantry staples will be included in the match.",
+      "submit": "Suggest recipes",
+      "submitting": "Thinking…"
+    },
+    "recipeTypes": {
+      "YEMEK": "Main dish",
+      "TATLI": "Dessert",
+      "ICECEK": "Drink",
+      "KOKTEYL": "Cocktail",
+      "APERATIF": "Appetizer",
+      "SALATA": "Salad",
+      "CORBA": "Soup",
+      "KAHVALTI": "Breakfast",
+      "ATISTIRMALIK": "Snack",
+      "SOS": "Sauce"
+    },
+    "errors": {
+      "ingredientRequired": "Add at least one ingredient.",
+      "suggestionsFailed": "Couldn't load suggestions."
+    },
+    "result": {
+      "assistantPrefix": "🧠 Assistant:",
+      "shareTitle": "Share this search",
+      "shareIdle": "🔗 Share",
+      "shareCopied": "✓ Copied",
+      "sortLabel": "Sort:",
+      "sortMatch": "Best match",
+      "sortFastest": "Fastest",
+      "sortLeastMissing": "Fewest missing",
+      "emptyTitle": "No matches. Try fewer filters or add another ingredient.",
+      "emptyComboHint": "Try these combinations:",
+      "matchPercent": "{percent}%",
+      "calories": "~{kcal} kcal",
+      "missingPrefix": "Missing:",
+      "missingMore": "+{count} more",
+      "perfectMatch": "✓ You have every ingredient!"
+    },
+    "tags": {
+      "pratik": "Quick",
+      "30-dakika-alti": "30 min",
+      "vegan": "Vegan",
+      "vejetaryen": "Vegetarian",
+      "tek-tencere": "One-pot",
+      "cocuk-dostu": "Kid-friendly",
+      "butce-dostu": "Budget",
+      "misafir-sofrasi": "For guests",
+      "yuksek-protein": "High protein",
+      "dusuk-kalorili": "Low-cal"
+    }
   },
   "cookingMode": {
     "startButton": "Start Cooking Mode",

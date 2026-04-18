@@ -2,10 +2,10 @@
 
 import { useState, useTransition, useEffect, useCallback, useRef } from "react";
 import { useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { suggestRecipesAction } from "@/lib/actions/ai";
 import type { AiSuggestResponse } from "@/lib/ai/types";
-import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
 import { DIFFICULTY_OPTIONS, RECIPE_TYPE_LABELS } from "@/lib/constants";
 import {
   CUISINE_CODES,
@@ -28,25 +28,42 @@ const FALLBACK_COMBOS = [
   ["patates", "soğan", "yumurta"],
 ];
 
-const TAG_DISPLAY: Record<string, { label: string; color: string }> = {
-  "pratik": { label: "Pratik", color: "bg-accent-green/15 text-accent-green" },
-  "30-dakika-alti": { label: "30 dk", color: "bg-accent-blue/15 text-accent-blue" },
-  "vegan": { label: "Vegan", color: "bg-accent-green/15 text-accent-green" },
-  "vejetaryen": { label: "Vejetaryen", color: "bg-accent-green/15 text-accent-green" },
-  "tek-tencere": { label: "Tek Tencere", color: "bg-secondary/15 text-secondary" },
-  "cocuk-dostu": { label: "Çocuk Dostu", color: "bg-primary/15 text-primary" },
-  "butce-dostu": { label: "Bütçe Dostu", color: "bg-secondary/15 text-secondary" },
-  "misafir-sofrasi": { label: "Misafir", color: "bg-primary/15 text-primary" },
-  "yuksek-protein": { label: "Protein", color: "bg-accent-blue/15 text-accent-blue" },
-  "dusuk-kalorili": { label: "Düşük Kal", color: "bg-accent-green/15 text-accent-green" },
+/** Color tokens for tag chips — labels come from i18n (form.tags.*). */
+const TAG_COLOR: Record<string, string> = {
+  "pratik": "bg-accent-green/15 text-accent-green",
+  "30-dakika-alti": "bg-accent-blue/15 text-accent-blue",
+  "vegan": "bg-accent-green/15 text-accent-green",
+  "vejetaryen": "bg-accent-green/15 text-accent-green",
+  "tek-tencere": "bg-secondary/15 text-secondary",
+  "cocuk-dostu": "bg-primary/15 text-primary",
+  "butce-dostu": "bg-secondary/15 text-secondary",
+  "misafir-sofrasi": "bg-primary/15 text-primary",
+  "yuksek-protein": "bg-accent-blue/15 text-accent-blue",
+  "dusuk-kalorili": "bg-accent-green/15 text-accent-green",
 };
 
-const TIME_OPTIONS = [
-  { value: 15, label: "15 dk'ya kadar" },
-  { value: 30, label: "30 dk'ya kadar" },
-  { value: 60, label: "1 saate kadar" },
-  { value: 120, label: "2 saate kadar" },
+const TIME_OPTIONS: { value: number; key: "min15" | "min30" | "hr1" | "hr2" }[] = [
+  { value: 15, key: "min15" },
+  { value: 30, key: "min30" },
+  { value: 60, key: "hr1" },
+  { value: 120, key: "hr2" },
 ];
+
+const DIFFICULTY_KEY = {
+  EASY: "difficultyEasy",
+  MEDIUM: "difficultyMedium",
+  HARD: "difficultyHard",
+} as const;
+
+type CardT = (key: string, values?: Record<string, string | number>) => string;
+
+function formatMinutesI18n(minutes: number, t: CardT): string {
+  if (minutes < 60) return t("minutesShort", { n: minutes });
+  const hours = Math.floor(minutes / 60);
+  const remaining = minutes % 60;
+  if (remaining === 0) return t("hoursShort", { n: hours });
+  return t("hoursMinutes", { h: hours, m: remaining });
+}
 
 interface AiAssistantFormProps {
   /** Pre-fetched unique ingredient names for autocomplete. */
@@ -69,6 +86,15 @@ function trNormalize(s: string): string {
 }
 
 export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps) {
+  const t = useTranslations("aiAssistant");
+  const tForm = useTranslations("aiAssistant.form");
+  const tTime = useTranslations("aiAssistant.form.timeOptions");
+  const tType = useTranslations("aiAssistant.recipeTypes");
+  const tErr = useTranslations("aiAssistant.errors");
+  const tResult = useTranslations("aiAssistant.result");
+  const tTag = useTranslations("aiAssistant.tags");
+  const tCard = useTranslations("recipes.card");
+  const tCuisine = useTranslations("cuisines");
   const [ingredients, setIngredients] = useState<string[]>([]);
   const [currentInput, setCurrentInput] = useState("");
   const [excludeIngredients, setExcludeIngredients] = useState<string[]>([]);
@@ -281,7 +307,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
         : ingredients;
 
     if (finalIngredients.length === 0) {
-      setError("En az bir malzeme gir.");
+      setError(tErr("ingredientRequired"));
       return;
     }
 
@@ -297,7 +323,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
       };
       const response = await suggestRecipesAction(payload);
       if (!response.success || !response.data) {
-        setError(response.error ?? "Öneriler alınamadı.");
+        setError(response.error ?? tErr("suggestionsFailed"));
         setResult(null);
         return;
       }
@@ -314,7 +340,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
       {recentSearches.length > 0 && !result && (
         <div className="rounded-lg border border-dashed border-border bg-bg-card/50 p-3">
           <p className="mb-2 text-xs font-medium uppercase tracking-wide text-text-muted">
-            Son aramalar
+            {t("recentSearches")}
           </p>
           <div className="flex flex-wrap gap-2">
             {recentSearches.map((search, i) => (
@@ -345,7 +371,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
         {/* Ingredients chips input */}
         <div>
           <label className="mb-2 block text-sm font-medium text-text">
-            Elindeki malzemeler
+            {tForm("ingredientsLabel")}
           </label>
           <div className="flex flex-wrap items-center gap-2 rounded-lg border border-border bg-bg-elevated px-3 py-2 focus-within:border-primary">
             {ingredients.map((ing, i) => (
@@ -357,7 +383,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
                 <button
                   type="button"
                   onClick={() => removeIngredient(i)}
-                  aria-label={`${ing} kaldır`}
+                  aria-label={tForm("ingredientChipRemove", { ingredient: ing })}
                   className="text-accent-blue/60 transition-colors hover:text-accent-blue"
                 >
                   <svg
@@ -395,8 +421,8 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
               }}
               placeholder={
                 ingredients.length === 0
-                  ? "Örn. domates, soğan, yumurta (virgül veya Enter'la ekle)"
-                  : "Yeni malzeme…"
+                  ? tForm("ingredientsPlaceholderEmpty")
+                  : tForm("ingredientsPlaceholderMore")
               }
               className="min-w-[200px] flex-1 bg-transparent text-sm outline-none"
               autoComplete="off"
@@ -432,7 +458,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
             </ul>
           )}
           <p className="mt-1.5 text-xs text-text-muted">
-            Virgül ya da Enter&apos;a basarak her malzemeyi ayrı ekle.
+            {tForm("ingredientsHelper")}
           </p>
           {/* Popular ingredient quick-add chips */}
           {ingredients.length === 0 && (
@@ -454,8 +480,8 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
         {/* Exclude ingredients chips input */}
         <div className="mt-4">
           <label className="mb-2 block text-sm font-medium text-text">
-            Bu malzemeler olmasın
-            <span className="ml-1 text-xs font-normal text-text-muted">(opsiyonel)</span>
+            {tForm("excludeLabel")}
+            <span className="ml-1 text-xs font-normal text-text-muted">{tForm("excludeOptional")}</span>
           </label>
           <div className="flex flex-wrap items-center gap-2 rounded-lg border border-border bg-bg-elevated px-3 py-2 focus-within:border-error/60">
             {excludeIngredients.map((ing, i) => (
@@ -467,7 +493,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
                 <button
                   type="button"
                   onClick={() => removeExclude(i)}
-                  aria-label={`${ing} hariç tutmayı kaldır`}
+                  aria-label={tForm("excludeChipRemove", { ingredient: ing })}
                   className="text-error/60 transition-colors hover:text-error"
                 >
                   <svg
@@ -492,8 +518,8 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
               onBlur={() => excludeInput.trim() && addExclude(excludeInput)}
               placeholder={
                 excludeIngredients.length === 0
-                  ? "Örn. fıstık, yumurta (alerji veya tercih)"
-                  : "Başka malzeme…"
+                  ? tForm("excludePlaceholderEmpty")
+                  : tForm("excludePlaceholderMore")
               }
               className="min-w-[200px] flex-1 bg-transparent text-sm outline-none"
             />
@@ -507,7 +533,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
               htmlFor="ai-filter-type"
               className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-text-muted"
             >
-              Tür
+              {tForm("typeLabel")}
             </label>
             <select
               id="ai-filter-type"
@@ -515,10 +541,10 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
               onChange={(e) => setType(e.target.value)}
               className="w-full rounded-md border border-border bg-bg-elevated px-3 py-2 text-sm outline-none focus:border-primary"
             >
-              <option value="">Fark etmez</option>
-              {Object.entries(RECIPE_TYPE_LABELS).map(([val, label]) => (
+              <option value="">{tForm("anyOption")}</option>
+              {Object.keys(RECIPE_TYPE_LABELS).map((val) => (
                 <option key={val} value={val}>
-                  {label}
+                  {tType(val)}
                 </option>
               ))}
             </select>
@@ -528,7 +554,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
               htmlFor="ai-filter-time"
               className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-text-muted"
             >
-              Süre
+              {tForm("timeLabel")}
             </label>
             <select
               id="ai-filter-time"
@@ -536,10 +562,10 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
               onChange={(e) => setMaxMinutes(e.target.value)}
               className="w-full rounded-md border border-border bg-bg-elevated px-3 py-2 text-sm outline-none focus:border-primary"
             >
-              <option value="">Fark etmez</option>
+              <option value="">{tForm("anyOption")}</option>
               {TIME_OPTIONS.map((opt) => (
                 <option key={opt.value} value={opt.value}>
-                  {opt.label}
+                  {tTime(opt.key)}
                 </option>
               ))}
             </select>
@@ -549,7 +575,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
               htmlFor="ai-filter-difficulty"
               className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-text-muted"
             >
-              Zorluk
+              {tForm("difficultyLabel")}
             </label>
             <select
               id="ai-filter-difficulty"
@@ -557,10 +583,10 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
               onChange={(e) => setDifficulty(e.target.value)}
               className="w-full rounded-md border border-border bg-bg-elevated px-3 py-2 text-sm outline-none focus:border-primary"
             >
-              <option value="">Fark etmez</option>
+              <option value="">{tForm("anyOption")}</option>
               {DIFFICULTY_OPTIONS.map((opt) => (
                 <option key={opt.value} value={opt.value}>
-                  {opt.label}
+                  {tCard(DIFFICULTY_KEY[opt.value])}
                 </option>
               ))}
             </select>
@@ -570,7 +596,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
               htmlFor="ai-filter-cuisine"
               className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-text-muted"
             >
-              Mutfak
+              {tForm("cuisineLabel")}
             </label>
             <select
               id="ai-filter-cuisine"
@@ -578,10 +604,10 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
               onChange={(e) => setCuisine(e.target.value)}
               className="w-full rounded-md border border-border bg-bg-elevated px-3 py-2 text-sm outline-none focus:border-primary"
             >
-              <option value="all">Hepsi</option>
+              <option value="all">{tForm("allCuisinesOption")}</option>
               {CUISINE_CODES.map((code) => (
                 <option key={code} value={code}>
-                  {CUISINE_FLAG[code]} {CUISINE_LABEL[code]}
+                  {CUISINE_FLAG[code]} {tCuisine.has(code) ? tCuisine(code) : CUISINE_LABEL[code]}
                 </option>
               ))}
             </select>
@@ -598,10 +624,10 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
           />
           <span className="flex-1 text-sm">
             <span className="font-medium text-text">
-              Tuz, karabiber, su ve yağ hep bende var
+              {tForm("pantryLabel")}
             </span>
             <span className="mt-0.5 block text-xs text-text-muted">
-              Bu temel malzemeler eşleşmeye dahil edilir.
+              {tForm("pantryHelper")}
             </span>
           </span>
         </label>
@@ -630,10 +656,10 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
                   style={{ animationDelay: "0.4s" }}
                 />
               </span>
-              Düşünüyor…
+              {tForm("submitting")}
             </>
           ) : (
-            "Tarif öner"
+            tForm("submit")
           )}
         </button>
       </form>
@@ -645,16 +671,16 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
             <div className="mb-6 rounded-xl border border-accent-blue/30 bg-accent-blue/5 p-4">
               <div className="flex items-start justify-between gap-3">
                 <p className="flex-1 text-sm leading-relaxed text-text">
-                  <span className="mr-1 font-semibold text-accent-blue">🧠 Asistan:</span>
+                  <span className="mr-1 font-semibold text-accent-blue">{tResult("assistantPrefix")}</span>
                   {result.commentary}
                 </p>
                 <button
                   type="button"
                   onClick={handleShare}
                   className="shrink-0 rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-text-muted transition-colors hover:border-primary hover:text-primary"
-                  title="Bu aramayı paylaş"
+                  title={tResult("shareTitle")}
                 >
-                  {shareStatus === "copied" ? "✓ Kopyalandı" : "🔗 Paylaş"}
+                  {shareStatus === "copied" ? tResult("shareCopied") : tResult("shareIdle")}
                 </button>
               </div>
             </div>
@@ -663,11 +689,11 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
           {/* Sort toggle */}
           {result.suggestions.length > 1 && (
             <div className="mb-4 flex items-center gap-1 text-xs">
-              <span className="mr-2 text-text-muted">Sıralama:</span>
+              <span className="mr-2 text-text-muted">{tResult("sortLabel")}</span>
               {([
-                { key: "match" as const, label: "En iyi eşleşme" },
-                { key: "fastest" as const, label: "En hızlı" },
-                { key: "least-missing" as const, label: "En az eksik" },
+                { key: "match" as const, label: tResult("sortMatch") },
+                { key: "fastest" as const, label: tResult("sortFastest") },
+                { key: "least-missing" as const, label: tResult("sortLeastMissing") },
               ]).map(({ key, label }) => (
                 <button
                   key={key}
@@ -688,9 +714,9 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
           {result.suggestions.length === 0 ? (
             <div className="rounded-xl border border-dashed border-border p-8 text-center">
               <p className="text-text-muted">
-                Hiç eşleşme yok. Daha az filtre dene veya malzeme ekle.
+                {tResult("emptyTitle")}
               </p>
-              <p className="mt-3 text-xs text-text-muted">Bu kombinasyonları dene:</p>
+              <p className="mt-3 text-xs text-text-muted">{tResult("emptyComboHint")}</p>
               <div className="mt-2 flex flex-wrap justify-center gap-2">
                 {FALLBACK_COMBOS.map((combo, i) => (
                   <button
@@ -717,7 +743,17 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
                   return b.matchScore - a.matchScore; // default: match
                 })
                 .map((s) => (
-                <SuggestionCard key={s.recipeId} suggestion={s} />
+                <SuggestionCard
+                  key={s.recipeId}
+                  suggestion={s}
+                  tCard={tCard}
+                  tCuisine={tCuisine as (k: string) => string}
+                  hasCuisineLabel={(code) => tCuisine.has(code)}
+                  tTag={tTag as (k: string) => string}
+                  hasTagLabel={(slug) => tTag.has(slug)}
+                  tResult={tResult}
+                  difficultyLabel={(d) => tCard(DIFFICULTY_KEY[d])}
+                />
               ))}
             </div>
           )}
@@ -727,13 +763,36 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
   );
 }
 
+interface SuggestionCardProps {
+  suggestion: AiSuggestResponse["suggestions"][number];
+  tCard: CardT;
+  tCuisine: (k: string) => string;
+  hasCuisineLabel: (code: string) => boolean;
+  tTag: (k: string) => string;
+  hasTagLabel: (slug: string) => boolean;
+  tResult: (key: string, values?: Record<string, string | number>) => string;
+  difficultyLabel: (d: "EASY" | "MEDIUM" | "HARD") => string;
+}
+
 function SuggestionCard({
   suggestion: s,
-}: {
-  suggestion: AiSuggestResponse["suggestions"][number];
-}) {
+  tCard,
+  tCuisine,
+  hasCuisineLabel,
+  tTag,
+  hasTagLabel,
+  tResult,
+  difficultyLabel,
+}: SuggestionCardProps) {
   const matchPercent = Math.round(s.matchScore * 100);
   const perfect = s.missingIngredients.length === 0;
+  const cuisineCode = s.cuisine as CuisineCode | null | undefined;
+  const cuisineLabel =
+    cuisineCode && hasCuisineLabel(cuisineCode)
+      ? tCuisine(cuisineCode)
+      : cuisineCode
+        ? CUISINE_LABEL[cuisineCode]
+        : "";
 
   return (
     <Link
@@ -756,9 +815,9 @@ function SuggestionCard({
         <div className="flex items-start justify-between gap-3">
           <div>
             <p className="text-xs text-text-muted">
-              {s.cuisine && CUISINE_FLAG[s.cuisine as CuisineCode] && (
-                <span className="mr-1" aria-label={CUISINE_LABEL[s.cuisine as CuisineCode]}>
-                  {CUISINE_FLAG[s.cuisine as CuisineCode]}
+              {cuisineCode && CUISINE_FLAG[cuisineCode] && (
+                <span className="mr-1" aria-label={cuisineLabel}>
+                  {CUISINE_FLAG[cuisineCode]}
                 </span>
               )}
               {s.categoryName}
@@ -778,7 +837,7 @@ function SuggestionCard({
                     : "text-text-muted"
               }`}
             >
-              %{matchPercent}
+              {tResult("matchPercent", { percent: matchPercent })}
             </span>
             <div className="mt-1 h-1.5 w-16 overflow-hidden rounded-full bg-bg-elevated">
               <div
@@ -799,42 +858,42 @@ function SuggestionCard({
         {s.tags.length > 0 && (
           <div className="flex flex-wrap gap-1">
             {s.tags
-              .filter((t) => TAG_DISPLAY[t])
+              .filter((slug) => hasTagLabel(slug) && TAG_COLOR[slug])
               .slice(0, 3)
-              .map((t) => (
+              .map((slug) => (
                 <span
-                  key={t}
-                  className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${TAG_DISPLAY[t]!.color}`}
+                  key={slug}
+                  className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${TAG_COLOR[slug]}`}
                 >
-                  {TAG_DISPLAY[t]!.label}
+                  {tTag(slug)}
                 </span>
               ))}
           </div>
         )}
 
         <div className="flex flex-wrap gap-1.5 text-xs text-text-muted">
-          <span>{getDifficultyLabel(s.difficulty)}</span>
+          <span>{difficultyLabel(s.difficulty)}</span>
           <span>·</span>
-          <span>⏱ {formatMinutes(s.totalMinutes)}</span>
+          <span>⏱ {formatMinutesI18n(s.totalMinutes, tCard)}</span>
           {s.averageCalories && (
             <>
               <span>·</span>
-              <span>~{s.averageCalories} kcal</span>
+              <span>{tResult("calories", { kcal: s.averageCalories })}</span>
             </>
           )}
         </div>
 
         {s.missingIngredients.length > 0 && (
           <p className="text-xs text-text-muted">
-            <span className="font-medium text-warning">Eksik:</span>{" "}
+            <span className="font-medium text-warning">{tResult("missingPrefix")}</span>{" "}
             {s.missingIngredients.slice(0, 4).join(", ")}
             {s.missingIngredients.length > 4 &&
-              ` +${s.missingIngredients.length - 4} daha`}
+              ` ${tResult("missingMore", { count: s.missingIngredients.length - 4 })}`}
           </p>
         )}
         {perfect && (
           <p className="text-xs font-medium text-accent-green">
-            ✓ Tüm malzemeler elinde!
+            {tResult("perfectMatch")}
           </p>
         )}
         {s.note && (

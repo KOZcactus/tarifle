@@ -259,7 +259,82 @@
   "aiAssistant": {
     "pageEyebrow": "AI Asistan",
     "pageTitle": "Elindekinden tarif bul",
-    "pageSubtitle": "Dolabındaki malzemeleri yaz, sana en çok uyan tarifleri getirelim. Eksikleri de görürsün — böylece markete gitmeden ne pişirebileceğini anlarsın."
+    "pageSubtitle": "Dolabındaki malzemeleri yaz, sana en çok uyan tarifleri getirelim. Eksikleri de görürsün — böylece markete gitmeden ne pişirebileceğini anlarsın.",
+    "recentSearches": "Son aramalar",
+    "form": {
+      "ingredientsLabel": "Elindeki malzemeler",
+      "ingredientsHelper": "Virgül ya da Enter'a basarak her malzemeyi ayrı ekle.",
+      "ingredientsPlaceholderEmpty": "Örn. domates, soğan, yumurta (virgül veya Enter'la ekle)",
+      "ingredientsPlaceholderMore": "Yeni malzeme…",
+      "ingredientChipRemove": "{ingredient} kaldır",
+      "popularChipPrefix": "+ {ingredient}",
+      "excludeLabel": "Bu malzemeler olmasın",
+      "excludeOptional": "(opsiyonel)",
+      "excludePlaceholderEmpty": "Örn. fıstık, yumurta (alerji veya tercih)",
+      "excludePlaceholderMore": "Başka malzeme…",
+      "excludeChipRemove": "{ingredient} hariç tutmayı kaldır",
+      "typeLabel": "Tür",
+      "timeLabel": "Süre",
+      "difficultyLabel": "Zorluk",
+      "cuisineLabel": "Mutfak",
+      "anyOption": "Fark etmez",
+      "allCuisinesOption": "Hepsi",
+      "timeOptions": {
+        "min15": "15 dk'ya kadar",
+        "min30": "30 dk'ya kadar",
+        "hr1": "1 saate kadar",
+        "hr2": "2 saate kadar"
+      },
+      "pantryLabel": "Tuz, karabiber, su ve yağ hep bende var",
+      "pantryHelper": "Bu temel malzemeler eşleşmeye dahil edilir.",
+      "submit": "Tarif öner",
+      "submitting": "Düşünüyor…"
+    },
+    "recipeTypes": {
+      "YEMEK": "Yemek",
+      "TATLI": "Tatlı",
+      "ICECEK": "İçecek",
+      "KOKTEYL": "Kokteyl",
+      "APERATIF": "Aperatif",
+      "SALATA": "Salata",
+      "CORBA": "Çorba",
+      "KAHVALTI": "Kahvaltı",
+      "ATISTIRMALIK": "Atıştırmalık",
+      "SOS": "Sos"
+    },
+    "errors": {
+      "ingredientRequired": "En az bir malzeme gir.",
+      "suggestionsFailed": "Öneriler alınamadı."
+    },
+    "result": {
+      "assistantPrefix": "🧠 Asistan:",
+      "shareTitle": "Bu aramayı paylaş",
+      "shareIdle": "🔗 Paylaş",
+      "shareCopied": "✓ Kopyalandı",
+      "sortLabel": "Sıralama:",
+      "sortMatch": "En iyi eşleşme",
+      "sortFastest": "En hızlı",
+      "sortLeastMissing": "En az eksik",
+      "emptyTitle": "Hiç eşleşme yok. Daha az filtre dene veya malzeme ekle.",
+      "emptyComboHint": "Bu kombinasyonları dene:",
+      "matchPercent": "%{percent}",
+      "calories": "~{kcal} kcal",
+      "missingPrefix": "Eksik:",
+      "missingMore": "+{count} daha",
+      "perfectMatch": "✓ Tüm malzemeler elinde!"
+    },
+    "tags": {
+      "pratik": "Pratik",
+      "30-dakika-alti": "30 dk",
+      "vegan": "Vegan",
+      "vejetaryen": "Vejetaryen",
+      "tek-tencere": "Tek Tencere",
+      "cocuk-dostu": "Çocuk Dostu",
+      "butce-dostu": "Bütçe Dostu",
+      "misafir-sofrasi": "Misafir",
+      "yuksek-protein": "Protein",
+      "dusuk-kalorili": "Düşük Kal"
+    }
   },
   "cookingMode": {
     "startButton": "Pişirme Modunu Başlat",

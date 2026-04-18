@@ -289,52 +289,29 @@ Batch N hazır — 100 tarif + EN/DE çeviri.
 - Kerem CSV dosya adı verir: `docs/translations-batch-N.csv`
 - Sen JSON üretirsin: `docs/translations-batch-N.json`
 
-### İki farklı CSV formatı — önce hangisiyle çalıştığına bak
+### Genel akış (batch 12 ve sonrası için standart)
 
-**Format 1: Mod B full (batch 0-3 gibi — `translations IS NULL` tarifler)**
-- CSV'de sadece TR alanlar vardır, EN/DE hiç yoktur (henüz çeviri yok)
-- Kolonlar: `slug, title, description, type, cuisine, difficulty, prep_minutes,
-  cook_minutes, total_minutes, serving_count, average_calories, ingredients,
-  ingredient_count, steps, step_count, allergens, tags, tipNote, servingSuggestion`
-- JSON'da her tarif için EN + DE `{ title, description }` **zorunlu**,
-  `tipNote / servingSuggestion / ingredients / steps` opsiyonel
-- Import script: `scripts/import-translations.ts` (overwrite mode)
+Mod B tarifin `translations` alanında **title + description'ın zaten dolu
+olduğu** (Mod A tarafından yazılmış) durumu ele alır. Sen yalnızca **eksik
+alanları** doldurursun — tipik olarak `ingredients + steps`, bazı
+tariflerde `tipNote / servingSuggestion`.
 
-**Format 2: Mod B partial (batch 12+ gibi — Mod A'dan title+description zaten dolu)**
-- CSV'de hem TR alanlar hem de **EN/DE mevcut durum sütunları** vardır:
-  `en_title_current, en_description_current, en_tipNote_current,
-  en_servingSuggestion_current, en_ingredients_present (0/1),
-  en_steps_present (0/1)` — DE için aynılar
-- "current" string dolu ise → **dokunma, JSON'a yazma**. "present = 1" ise
-  ingredients/steps zaten var → atla
-- Sen sadece **eksik alanları** doldur (typically ingredients + steps her
-  zaman eksik; tipNote/servingSuggestion bazılarında zaten var)
-- Import script: `scripts/import-translations-b.ts` (shallow merge)
-- `title` + `description` alanlarını JSON'a yazma (CSV'de zaten "current"
-  dolu çıkacak); yazarsan mevcut dolu değer üzerine override eder — riskli
+CSV'de her tarif için şu sütunları göreceksin:
+- TR tabanı: `slug, title, description, type, cuisine, difficulty,
+  prep_minutes, cook_minutes, total_minutes, serving_count,
+  average_calories, ingredients, ingredient_count, steps, step_count,
+  allergens, tags, tipNote, servingSuggestion`
+- EN mevcut durum: `en_title_current, en_description_current,
+  en_tipNote_current, en_servingSuggestion_current,
+  en_ingredients_present (0/1), en_steps_present (0/1)`
+- DE mevcut durum: aynı sütunların `de_*` karşılıkları
 
-### JSON format (Format 1 — full)
+**Dolu olanları yeniden yazma.** `en_title_current` string dolu ise title
+hazır demektir; JSON'a `en.title` koyma. `en_ingredients_present = 1` ise
+ingredients hazırdır; JSON'a koyma. Tek istisna: mevcut çeviri açıkça
+bozuk/eksik görünüyorsa `issues` alanına yaz, Kerem/Claude review eder.
 
-```json
-[
-  {
-    "slug": "adana-kebap",
-    "en": {
-      "title": "Adana Kebap",
-      "description": "A charcoal-grilled classic from Adana in southern Türkiye, shaping spicy minced meat with tail fat, sumac onion, and cumin around wide flat skewers, served with lavash and grilled peppers."
-    },
-    "de": {
-      "title": "Adana Kebap",
-      "description": "Ein über Holzkohle gegrillter Klassiker aus Adana im Süden der Türkei, bei dem würziges Hackfleisch mit Schwanzfett, Sumach-Zwiebel und Kreuzkümmel um breite flache Spieße geformt und mit Lavasch und gegrillten Paprika serviert wird."
-    },
-    "issues": [
-      { "type": "ingredient-allergen-mismatch", "detail": "..." }
-    ]
-  }
-]
-```
-
-### JSON format (Format 2 — partial, batch 12+)
+### JSON format
 
 ```json
 [
@@ -372,32 +349,43 @@ Batch N hazır — 100 tarif + EN/DE çeviri.
 ]
 ```
 
-### Format 2 zorunlu disiplin (batch 12+)
+### Zorunlu disiplin
 
-1. **`title` + `description` JSON'a YAZMA** — mevcut Mod A çıktısını override
-   etmemek için. Zaten CSV'nin `en_title_current` / `en_description_current`
-   sütunlarında dolu olduğunu görürsün
-2. **`en_tipNote_current` dolu** → JSON'a `tipNote` yazma (aynı lokal için)
-3. **`en_servingSuggestion_current` dolu** → JSON'a `servingSuggestion` yazma
-4. **`en_ingredients_present = 1`** → JSON'a `ingredients` yazma
-5. **`en_steps_present = 1`** → JSON'a `steps` yazma
+1. **`title` + `description` JSON'a YAZMA** — Mod A'dan zaten dolu, CSV
+   `*_title_current` / `*_description_current` sütunlarıyla doğrula
+2. `en_tipNote_current` dolu → JSON'a `tipNote` yazma
+3. `en_servingSuggestion_current` dolu → JSON'a `servingSuggestion` yazma
+4. `en_ingredients_present = 1` → JSON'a `ingredients` yazma
+5. `en_steps_present = 1` → JSON'a `steps` yazma
 6. DE için aynı kurallar
-7. Hiçbir field eksik değilse o lokal bundle'ı hiç yazma (sadece karşı lokal
-   eksiklerini dolu göndermişsen tek taraflı item OK)
+7. Bir lokalde hiçbir alan eksik değilse o lokal bundle'ı hiç yazma (sadece
+   karşı lokalde eksik varsa tek taraflı `en` veya `de` item OK)
 
-### Array uzunluk kuralı (Format 2)
-- `ingredients` array'in **uzunluğu TR ingredient sayısıyla aynı olmak
-  zorunda** (CSV'de `ingredient_count` sütunu gösterir). Sort order: 1..N
-- `steps` array'in uzunluğu TR step sayısıyla aynı olmak zorunda.
-  Step numbers: 1..N
-- Uyumsuzluk varsa import script CRITICAL olarak blok atar
+### Array uzunluk kuralı (kritik)
 
-### Ortak kurallar (her iki format için)
+- `ingredients` array **uzunluğu TR ingredient sayısıyla aynı olmak
+  zorunda** (CSV'de `ingredient_count` sütunu gösterir). sortOrder'lar
+  1..N sırasında ve TR ile aynı sette olmalı
+- `steps` array uzunluğu TR step sayısıyla aynı olmak zorunda,
+  stepNumber'lar 1..N
+- Uyumsuzluk varsa `scripts/import-translations-b.ts` CRITICAL olarak
+  blok atar (`--force` ile override mümkün ama Kerem onayı gerekir)
 
-- UTF-8, 2-space indent, pretty-print
+### Biçim detayları
+
+- UTF-8 (BOM yok), 2-space indent, pretty-print
 - `issues` optional — yoksa alanı hiç yazma
-- Boş string `""` veya `null` göndermek "dokunma" sinyali olarak yorumlanır
-  (güvenli fallback) — ama daha temizi field'ı hiç yazmamak
+- Boş string `""` veya `null` göndermek "dokunma" sinyali (güvenli
+  fallback) — ama daha temizi field'ı hiç yazmamak
+
+### Tarihçe: "Full-format" varyant (yalnızca batch 0-3 için kullanıldı)
+
+Batch 0-3 tariflerinin `translations` alanı tamamen NULL idi. O batch'te
+Codex Max sıfırdan EN+DE `title + description` üretti ve `scripts/
+import-translations.ts` JSON'u overwrite etti. 1100/1100 tarif prod'da
+tam çeviri olduğundan **bu eski akış artık kullanılmıyor**; referans
+için bırakılmıştır. Yeni batch'lerde (12+) yukarıdaki partial-merge akışı
+standarttır.
 
 ### Mod B audit (çift görev)
 
@@ -625,7 +613,7 @@ istisnası yok." Uzmanlık algısı bu tutarlılıktan geliyor.
 - ❌ Cuisine mantığını kırma ("Mantı = Çinli dumpling, cuisine `cn`" →
   HAYIR, Türk tarifi)
 - ❌ PROTECTED_TR_TOKENS çiğneme ("Spicy Meat Skewer" gibi çeviri)
-- ❌ **Mod B Format 2'de `title` + `description` JSON'a yazma** — CSV
+- ❌ **Mod B'de `title` + `description` JSON'a yazma** — CSV
   `en/de_*_current` sütunları dolu ise zaten Mod A'dan gelen çeviri var;
   override etmek altyapı regression'u
 - ❌ `scripts/seed-recipes.ts` mojibake-encoded kaydetme (§3 Dosya

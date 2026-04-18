@@ -59,6 +59,9 @@ function formatTimer(
   seconds: number,
   tCard: (key: string, values?: Record<string, string | number | Date>) => string,
 ): string {
+  // Sub-minute steps (e.g. 30-second shake) should show as seconds, not
+  // "0 min" — `Math.floor(30/60)` is 0 and reads like a data bug.
+  if (seconds > 0 && seconds < 60) return tCard("secondsShort", { n: seconds });
   const minutes = Math.floor(seconds / 60);
   if (minutes < 60) return tCard("minutesShort", { n: minutes });
   const hours = Math.floor(minutes / 60);

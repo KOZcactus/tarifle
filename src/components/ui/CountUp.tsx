@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface CountUpProps {
   target: number;
@@ -9,14 +9,21 @@ interface CountUpProps {
 }
 
 /**
- * Animated count-up number. Starts at 0, reaches target in `duration` ms.
- * Uses easeOutExpo for a natural deceleration feel.
+ * Animated count-up number. Reaches `target` in `duration` ms with
+ * easeOutExpo.
+ *
+ * Initial state seeds to `target` so SSR, crawlers (Google, GPT analysis),
+ * and the first paint see the real number — starting at 0 would render
+ * "0 tarif" into the HTML and get indexed that way, as a recent external
+ * audit flagged. Animation kicks in after mount on the client only.
  */
 export function CountUp({ target, duration = 1200, className }: CountUpProps) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(target);
+  const hasAnimatedRef = useRef(false);
 
   useEffect(() => {
-    if (target <= 0) return;
+    if (hasAnimatedRef.current || target <= 0) return;
+    hasAnimatedRef.current = true;
     const start = performance.now();
 
     function tick(now: number) {
@@ -28,6 +35,9 @@ export function CountUp({ target, duration = 1200, className }: CountUpProps) {
       if (progress < 1) requestAnimationFrame(tick);
     }
 
+    // First setCount happens inside the rAF callback (not synchronously in
+    // the effect) — `Math.round(eased * target)` at progress ≈ 0 is near
+    // zero, so the animation still reads as a count-up from 0 → target.
     requestAnimationFrame(tick);
   }, [target, duration]);
 

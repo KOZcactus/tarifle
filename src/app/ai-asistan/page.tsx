@@ -3,9 +3,25 @@ import { getTranslations } from "next-intl/server";
 import { AiAssistantForm } from "@/components/ai/AiAssistantForm";
 import { getUniqueIngredientNames } from "@/lib/queries/ingredient";
 
-export async function generateMetadata(): Promise<Metadata> {
+interface AiAsistanPageProps {
+  searchParams: Promise<{ m?: string; [key: string]: string | string[] | undefined }>;
+}
+
+export async function generateMetadata({
+  searchParams,
+}: AiAsistanPageProps): Promise<Metadata> {
   const t = await getTranslations("metadata.aiAssistant");
-  return { title: t("title"), description: t("description") };
+  const params = await searchParams;
+  // User-prefilled ingredient URLs (`?m=domates,tavuk`) are private input,
+  // not landing pages. Block indexing on any parameterised variant and
+  // point crawlers back to the clean /ai-asistan page via canonical.
+  const hasParams = Object.keys(params).length > 0;
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: { canonical: "/ai-asistan" },
+    robots: hasParams ? { index: false, follow: true } : undefined,
+  };
 }
 
 export default async function AiAsistanPage() {

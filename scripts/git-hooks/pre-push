@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Tarifle pre-push hook — blocks push if `npm run lint` fails.
+#
+# CI runs `next lint` / `eslint .` and fails the whole pipeline on errors.
+# Catching it locally saves a round trip through GitHub Actions.
+#
+# Activation (one-time, per clone):
+#   npm run setup:hooks
+#
+# Bypass in emergencies:
+#   git push --no-verify
+set -e
+
+echo "🔍 pre-push: npm run lint"
+if ! npm run --silent lint; then
+  echo ""
+  echo "❌ pre-push: lint failed. Fix the errors above or bypass with --no-verify."
+  exit 1
+fi
+
+echo "✅ pre-push: lint clean"

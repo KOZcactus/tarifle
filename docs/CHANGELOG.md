@@ -288,6 +288,7 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🧪 **AI Asistan E2E** — 3 yeni test (cuisine filter, exclude, paylaş URL). Toplam 5 AI E2E.
 - 🧪 Toplam **363 unit + 24 E2E yeşil**.
 - 🔍 **Deep DB audit** (`scripts/audit-deep.ts`) — 7 alan, ~40 kontrol, 1000 tarif kapsamlı doğruluk kontrolü. Alerjen false positive fix (pirinç unu, mısır unu, hindistan cevizi sütü exclusion). Yapısal sorun sıfır.
+- 🧪 **Pre-push lint hook** (18 Nis oturum 3) — `scripts/git-hooks/pre-push` push öncesi `npm run lint` koşar, CI lint error'larını yerelde yakalar. Aktivasyon: `npm run setup:hooks` (tek sefer). Bypass: `git push --no-verify`.
 
 ## Ops tooling
 

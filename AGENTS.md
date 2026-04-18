@@ -13,3 +13,15 @@ Tarifle'nin iki Neon branch'i var: **production** (tarifle.app canlı) ve **dev*
 - prod host + `--confirm-prod` → 3 saniye uyarı banner + devam
 
 Prod promotion prosedürü: `docs/PROD_PROMOTE.md`. Bir agent olarak prod'a yazma komutlarını ASLA kendi başına koşma; Kerem'in açık onayı olmadan prod host için `--confirm-prod` ekleme.
+
+# Pre-push lint hook
+
+Repo'da versiyonlu bir pre-push hook var (`scripts/git-hooks/pre-push`) — push'tan önce `npm run lint` koşar, error varsa push'u bloklar. CI'ın lint adımıyla aynı disiplin, yerelde yakalar.
+
+Her klon/fresh checkout sonrası tek sefer aktifleştir:
+
+```sh
+npm run setup:hooks
+```
+
+Acil bypass (sadece gerçekten gerekliyse): `git push --no-verify`. Detay: `scripts/git-hooks/README.md`.

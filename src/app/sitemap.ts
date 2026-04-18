@@ -64,6 +64,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/ai-asistan`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/kesfet`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: `${SITE_URL}/hakkimizda`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
+    { url: `${SITE_URL}/iletisim`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE_URL}/kvkk`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
     { url: `${SITE_URL}/kullanim-sartlari`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
     { url: `${SITE_URL}/gizlilik`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
@@ -76,8 +77,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
+  // Use the path-based landing (`/tarifler/[kategori]`) instead of the
+  // query-string variant. The path route is the real canonical; sending
+  // crawlers to `?kategori=X` would conflict with the noindex rule on
+  // parameterised /tarifler variants.
   const categoryPages: MetadataRoute.Sitemap = categories.map((c) => ({
-    url: `${SITE_URL}/tarifler?kategori=${c.slug}`,
+    url: `${SITE_URL}/tarifler/${c.slug}`,
     lastModified: c.createdAt,
     changeFrequency: "monthly",
     priority: 0.6,

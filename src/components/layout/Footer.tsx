@@ -57,6 +57,14 @@ export async function Footer() {
               </li>
               <li>
                 <Link
+                  href="/iletisim"
+                  className="text-sm text-text-muted transition-colors hover:text-text"
+                >
+                  {t("linkContact")}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/kvkk"
                   className="text-sm text-text-muted transition-colors hover:text-text"
                 >

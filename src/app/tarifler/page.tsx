@@ -34,10 +34,31 @@ export async function generateMetadata({ searchParams }: TariflerPageProps): Pro
     ? `${cuisineLabels.join(" ve ")} mutfağından yemek, içecek ve kokteyl tariflerini keşfet.`
     : "Tüm yemek, içecek ve kokteyl tariflerini keşfet. Kategoriye, zorluğa ve süreye göre filtrele.";
 
+  // Index policy:
+  //   - Bare /tarifler → indexable (main listing landing)
+  //   - /tarifler?mutfak=X (single param) → indexable cuisine landing (the
+  //     sitemap emits these, so they must stay crawlable)
+  //   - Everything else parameterised → noindex,follow. User searches
+  //     (`?q=`), sort orders, allergen combos, and multi-filter URLs are
+  //     crawl traps and leak user input into the index. Canonical already
+  //     collapses them back to /tarifler.
+  const keys = Object.keys(params);
+  const isCuisineLanding =
+    keys.length === 1 && keys[0] === "mutfak" && rawCuisines.length === 1;
+  const shouldIndex = keys.length === 0 || isCuisineLanding;
+
+  // When we keep the cuisine landing indexable, self-canonical it so it
+  // stands on its own (otherwise the canonical would fold it back into
+  // /tarifler and kill the landing signal).
+  const canonical = isCuisineLanding
+    ? `/tarifler?mutfak=${rawCuisines[0]}`
+    : "/tarifler";
+
   return {
     title,
     description,
-    alternates: { canonical: "/tarifler" },
+    alternates: { canonical },
+    robots: shouldIndex ? undefined : { index: false, follow: true },
   };
 }
 

@@ -136,12 +136,22 @@ export async function generateMetadata({ params }: TarifPageProps): Promise<Meta
   // that rendered this page at crawl time.
   const ogImageUrl = `/tarif/${recipe.slug}/opengraph-image/${locale === "en" ? "en" : "tr"}`;
 
+  // Alcohol-gated recipes ship a client-side AgeGate; crawlers that can't
+  // pass the gate see thin content. Rather than strip the age gate or try
+  // to serve different content per user-agent, block these from the index.
+  // Covers both drink/cocktail types and recipes explicitly tagged
+  // "alkollu" (e.g. a sauce that uses wine).
+  const isAlcoholic =
+    recipe.type === "KOKTEYL" ||
+    recipe.tags.some(({ tag }) => tag.slug === "alkollu");
+
   return {
     title,
     description: metaDescription,
     alternates: {
       canonical: `/tarif/${recipe.slug}`,
     },
+    robots: isAlcoholic ? { index: false, follow: true } : undefined,
     openGraph: {
       title,
       description: description.slice(0, 200),

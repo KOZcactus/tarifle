@@ -339,6 +339,10 @@
     "resetPassword": {
       "title": "Şifre Sıfırlama"
     },
+    "contact": {
+      "title": "İletişim",
+      "description": "Tarifle ekibine ulaş — geri bildirim, hata raporu, iş birliği veya KVKK veri talepleri."
+    },
     "recipeDetail": {
       "notFoundTitle": "Tarif Bulunamadı",
       "descriptionWithCuisine": "{cuisine} mutfağından {title} tarifi — {difficulty}, {time}, {servings} kişilik{calories}.",
@@ -854,6 +858,19 @@
     "KEREVIZ": "Kereviz",
     "HARDAL": "Hardal"
   },
+  "iletisim": {
+    "eyebrow": "İletişim",
+    "title": "Bize ulaşın",
+    "subtitle": "Tarifle ekibine en hızlı ulaşma yolu.",
+    "emailHeading": "E-posta",
+    "emailHelp": "Geri bildirim, hata raporu ve iş birliği talepleri için.",
+    "kvkkHeading": "KVKK / Veri talepleri",
+    "kvkkHelp": "Kişisel verilerine erişim, düzeltme veya silme talebi. 6698 sayılı KVKK kapsamında 30 gün içinde yanıtlıyoruz.",
+    "moderationHeading": "İçerik moderasyonu",
+    "moderationHelp": "Bir tarif, uyarlama veya yorumu doğrudan ilgili sayfadaki rapor butonundan bildirebilirsin — rapor bizim moderasyon kuyruğumuza düşer.",
+    "responseNoteHeading": "Yanıt süresi",
+    "responseNote": "Küçük bir ekibiz — genellikle birkaç iş günü içinde cevap veriyoruz."
+  },
   "cuisines": {
     "tr": "Türk",
     "it": "İtalyan",
@@ -1014,7 +1031,9 @@
     "brandTagline": "Yemek, içecek ve kokteyl tariflerini sade ve topluluk katkısına açık şekilde sunan modern tarif platformu.",
     "platform": "Platform",
     "legal": "Yasal",
+    "contact": "İletişim",
     "linkAbout": "Hakkımızda",
+    "linkContact": "Bize ulaşın",
     "linkKvkk": "KVKK",
     "linkTerms": "Kullanım Şartları",
     "linkPrivacy": "Gizlilik Politikası",

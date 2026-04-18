@@ -339,6 +339,10 @@
     "resetPassword": {
       "title": "Password Reset"
     },
+    "contact": {
+      "title": "Contact",
+      "description": "Reach the Tarifle team — feedback, bug reports, partnership, or KVKK data requests."
+    },
     "recipeDetail": {
       "notFoundTitle": "Recipe Not Found",
       "descriptionWithCuisine": "{title} recipe from {cuisine} cuisine — {difficulty}, {time}, serves {servings}{calories}.",
@@ -854,6 +858,19 @@
     "KEREVIZ": "Celery",
     "HARDAL": "Mustard"
   },
+  "iletisim": {
+    "eyebrow": "Contact",
+    "title": "Get in touch",
+    "subtitle": "Fastest way to reach the Tarifle team.",
+    "emailHeading": "Email",
+    "emailHelp": "General feedback, bug reports, and partnership inquiries.",
+    "kvkkHeading": "KVKK / Data requests",
+    "kvkkHelp": "Access, correction, or deletion of your personal data. We respond within 30 days under Turkish Data Protection Law.",
+    "moderationHeading": "Content moderation",
+    "moderationHelp": "Report a recipe, variation, or review directly from the content page — the report button sends it straight to our moderation queue.",
+    "responseNoteHeading": "Response time",
+    "responseNote": "We're a small team — expect a reply within a few business days."
+  },
   "cuisines": {
     "tr": "Turkish",
     "it": "Italian",
@@ -1014,7 +1031,9 @@
     "brandTagline": "A modern recipe platform serving clean food, drink, and cocktail recipes with community contributions.",
     "platform": "Platform",
     "legal": "Legal",
+    "contact": "Contact",
     "linkAbout": "About",
+    "linkContact": "Contact us",
     "linkKvkk": "KVKK (Data Protection)",
     "linkTerms": "Terms of Use",
     "linkPrivacy": "Privacy Policy",

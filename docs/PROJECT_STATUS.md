@@ -2,7 +2,10 @@
 
 > Son güncelleme: 19 Nisan 2026 (oturum 6) — **Codex batch 14 dev + prod promoted (1301 → 1401 tarif canlı)**. Pagination counter yeniden tasarlandı ("X–Y gösteriliyor · toplam N tarif"). 6 UX copy iyileştirmesi (register faydaları, variation form, review empty state, cooking mode hint). Post-deploy spot check 0 regression.
 
-## 19 Nisan 2026 (oturum 6 — batch 14 prod + counter redesign + UX copy)
+## 19 Nisan 2026 (oturum 6 — batch 14 prod + counter redesign + UX copy + preferences)
+
+- **Kişiselleştirme tercihleri (commit `e84e1eb`)** — User'a `favoriteTags` (String[]) + `allergenAvoidances` (Allergen[]) + `favoriteCuisines` (String[]) alanları. Migration `20260419140000_add_user_preferences` additive-only, dev + prod'da applied. `/ayarlar` altına `PreferencesCard` (client component, 3 bölüm chip seçim, Zod validated server action, tag slug DB varlık check). MVP tur sadece saklar, listing filtering ayrı pass. 11 i18n key TR + EN. Not: #11 shopping list ekleme butonu zaten vardı (SaveMenu.tsx'te addRecipeIngredientsAction wire'lı); önceki audit yanlış işaretlemişti.
+
 
 - **Batch 14 seed (dev + prod, commit `1375359`)** — 100 tarif teslim, 74'ü dev'e yeni (26 mevcut slug skip), 100'ü prod'a yeni. Dev 1301→1375, prod 1301→1401. 67 TR + 33 int'l (12 cuisine'a yayılım: ma/br/me/cu/vn/ru/hu/gb/se/pe/au/pl). isFeatured 2. Encoding temiz (brief §3 uyarısı çalışıyor — 3. batch'te arka arkaya mojibake yok).
 - **audit-deep 6 CRITICAL → 0** — Tereyağı→SUT ×4 (kayisi-yahni-malatya, bubble-and-squeak, otlu-tava-artvin, sac-kavurma-rize), Yoğurt→SUT (mafis-tatlisi-balikesir), Hardal→HARDAL (welsh-rarebit). Trend: 16→8→6, brief §9 allergen checklist Codex'te etki gösteriyor.

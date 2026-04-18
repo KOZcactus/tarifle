@@ -214,10 +214,55 @@ Sadece ikonik/güçlü tariflerde `true`.
 beri Türk geleneği. **Description'a "Kayseri/Karadeniz/Hatay/Antep" yazıp
 cuisine `cn/th` atama inconsistency = uzmanlık algısını düşürür.**
 
-### Mod A translations kuralları
+### Mod A translations kuralları (ZORUNLU kapsam)
 
-Her tarife inline `translations: { en: {...}, de: {...} }` ekle. Minimum
-`title` + `description`. Kurallar §7'de.
+Her tarife inline `translations: { en: {...}, de: {...} }` ekle. **Yeni
+batch'lerde tam kapsam zorunlu** (mevcut 1100 tarif retrofit'ine göre
+ileri seviye — yeni içerikte baştan full quality):
+
+- `title` — zorunlu
+- `description` — zorunlu
+- `tipNote` — varsa çevir (EN + DE)
+- `servingSuggestion` — varsa çevir (EN + DE)
+- `ingredients` — zorunlu, her malzeme `sortOrder` + `name` ile
+- `steps` — zorunlu, her adım `stepNumber` + `instruction` (+ varsa `tip`)
+
+Schema `ingredients` ve `steps` çevirilerini TR primary'ye `sortOrder`
+ve `stepNumber` ile eşleştirir. Eksik entry TR fallback'e düşer ama
+**yeni tariflerde fallback bırakma — full çevir**. Örnek:
+
+```typescript
+translations: {
+  en: {
+    title: "Akçaabat Köftesi",
+    description: "A Black Sea Trabzon specialty...",
+    tipNote: "Knead the meat for a full 10 minutes until tacky.",
+    servingSuggestion: "Serve with charred peppers and piyaz.",
+    ingredients: [
+      { sortOrder: 1, name: "Ground beef" },
+      { sortOrder: 2, name: "Stale bread crumb" },
+      { sortOrder: 3, name: "Onion" },
+      // ... all ingredients
+    ],
+    steps: [
+      { stepNumber: 1, instruction: "Soak the stale bread in water, squeeze, and add to the mince." },
+      { stepNumber: 2, instruction: "Add grated onion, crushed garlic, and spices; knead for 10 minutes." },
+      // ... all steps
+    ],
+  },
+  de: {
+    // same shape — title + description + tipNote + servingSuggestion
+    // + ingredients[] + steps[] all localized
+  },
+},
+```
+
+Çeviri kalitesi §7 kurallarına tabi:
+- PROTECTED_TR_TOKENS (Adana Kebap, Baklava, Mantı, vs) title'da birebir
+- Description 100-200 char, 3 element, banned kalıp yok
+- Ingredients: tutarlı terminoloji (kıyma = "ground beef" her yerde)
+- Steps: active voice, imperativ (EN: "Heat the oil...", DE: "Man erhitzt...")
+- US English + DE "man" formu + umlaut doğru
 
 ### Mod A çıktı teslim
 
@@ -411,7 +456,8 @@ sahte geçme.**
 
 ### Pass 2 — Çeviri kalitesi (EN + DE)
 
-1. ✅ EN + DE title + description dolu?
+1. ✅ EN + DE title + description dolu? **Mod A'da ayrıca ingredients +
+   steps + tipNote + servingSuggestion da dolu?**
 2. ✅ PROTECTED_TR_TOKENS içindeki isimler AYNEN korundu (jenerik istisna hariç)?
 3. ✅ PROTECTED_ALIAS kuralları (Pilav→Pilaf, Humus→Hummus,
    Yoğurt→Yogurt/Joghurt)?

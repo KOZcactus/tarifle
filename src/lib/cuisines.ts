@@ -29,6 +29,10 @@ export const CUISINE_CODES = [
   "ru",
   "hu",
   "se",
+  "pe",
+  "gb",
+  "pl",
+  "au",
 ] as const;
 
 export type CuisineCode = (typeof CUISINE_CODES)[number];
@@ -54,6 +58,10 @@ export const CUISINE_LABEL: Record<CuisineCode, string> = {
   ru: "Rus",
   hu: "Macar",
   se: "İskandinav",
+  pe: "Peru",
+  gb: "İngiliz",
+  pl: "Polonya",
+  au: "Avustralya",
 };
 
 export const CUISINE_FLAG: Record<CuisineCode, string> = {
@@ -77,6 +85,10 @@ export const CUISINE_FLAG: Record<CuisineCode, string> = {
   ru: "🇷🇺",
   hu: "🇭🇺",
   se: "🇸🇪",
+  pe: "🇵🇪",
+  gb: "🇬🇧",
+  pl: "🇵🇱",
+  au: "🇦🇺",
 };
 
 // ─── Inference engine ───────────────────────────────────────
@@ -251,6 +263,40 @@ const SLUG_PATTERNS: readonly { cuisine: CuisineCode; patterns: string[] }[] = [
       "fleskesteg", "karjalanpiirakka",
     ],
   },
+  // Peruvian
+  {
+    cuisine: "pe",
+    patterns: [
+      "pisco-sour", "lomo-saltado", "ceviche-peru", "causa",
+      "aji-de-gallina", "anticucho",
+    ],
+  },
+  // British
+  {
+    cuisine: "gb",
+    patterns: [
+      "london-fog", "limonlu-posset", "posset", "fish-and-chips",
+      "shepherds-pie", "scotch-egg", "bangers-and-mash",
+      "yorkshire-pudding", "bakewell-tart", "trifle", "toad-in-the-hole",
+      "cottage-pie", "sticky-toffee-pudding",
+    ],
+  },
+  // Polish
+  {
+    cuisine: "pl",
+    patterns: [
+      "pierogi", "bigos", "zurek", "kielbasa-polonya",
+      "golabki-polonya", "barszcz-polonya", "placki-ziemniaczane",
+    ],
+  },
+  // Australian
+  {
+    cuisine: "au",
+    patterns: [
+      "pavlova", "lamington", "vegemite",
+      "fairy-bread", "anzac-biscuit",
+    ],
+  },
 ];
 
 /**
@@ -278,6 +324,10 @@ const TEXT_KEYWORDS: readonly { cuisine: CuisineCode; keywords: string[] }[] = [
   { cuisine: "ru", keywords: ["rus mutfağı", "rus usulü", "rusya"] },
   { cuisine: "hu", keywords: ["macar", "macaristan"] },
   { cuisine: "se", keywords: ["iskandinav", "isveç", "norveç", "danimarka", "finlandiya"] },
+  { cuisine: "pe", keywords: ["peru", "peru usulü", "peru mutfağı"] },
+  { cuisine: "gb", keywords: ["ingiliz", "britanya", "britanyalı"] },
+  { cuisine: "pl", keywords: ["polonya", "polonyalı", "polish"] },
+  { cuisine: "au", keywords: ["avustralya", "avustralyalı"] },
 ];
 
 interface InferInput {

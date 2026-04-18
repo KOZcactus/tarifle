@@ -7,29 +7,17 @@
  * one pseudo-randomly based on a stable seed (user ingredients), so repeated
  * requests with the same input don't flip wording but different requests feel
  * fresh.
+ *
+ * Locale handling: all text comes from `messages/{locale}.json` under the
+ * `aiCommentary` namespace. Variant arrays are read with `t.raw(key)`. The
+ * caller (rule-based-provider) resolves locale via `getLocale()` and passes
+ * it in — if omitted we fall back to TR (site default).
  */
-import type { Difficulty, RecipeType } from "@prisma/client";
+import { getTranslations } from "next-intl/server";
 import type { AiSuggestion } from "./types";
-import { CUISINE_LABEL, type CuisineCode } from "@/lib/cuisines";
+import { DEFAULT_LOCALE, type Locale } from "@/i18n/config";
 
-const TYPE_LABELS: Partial<Record<RecipeType, string>> = {
-  YEMEK: "yemek",
-  TATLI: "tatlı",
-  ICECEK: "içecek",
-  KOKTEYL: "kokteyl",
-  APERATIF: "aperatif",
-  SALATA: "salata",
-  CORBA: "çorba",
-  KAHVALTI: "kahvaltılık",
-  ATISTIRMALIK: "atıştırmalık",
-  SOS: "sos",
-};
-
-const DIFF_LABELS: Record<Difficulty, string> = {
-  EASY: "kolay",
-  MEDIUM: "orta",
-  HARD: "zor",
-};
+type Tns = Awaited<ReturnType<typeof getTranslations<"aiCommentary">>>;
 
 function pick<T>(options: T[], seed: string): T {
   let hash = 0;
@@ -40,13 +28,13 @@ function pick<T>(options: T[], seed: string): T {
   return options[index];
 }
 
-function formatList(items: string[], max = 2): string {
+function formatList(items: string[], t: Tns, max = 2): string {
   const trimmed = items.slice(0, max);
   if (items.length <= max) {
     if (trimmed.length === 1) return trimmed[0];
-    if (trimmed.length === 2) return `${trimmed[0]} ve ${trimmed[1]}`;
+    if (trimmed.length === 2) return t("listAnd", { a: trimmed[0], b: trimmed[1] });
   }
-  return `${trimmed.join(", ")} gibi ${items.length - max} malzeme`;
+  return t("listMore", { items: trimmed.join(", "), count: items.length - max });
 }
 
 /** Active filter context for commentary. */
@@ -57,66 +45,78 @@ export interface CommentaryContext {
   maxMinutes?: number;
 }
 
-/**
- * Build a filter context suffix. Examples:
- * - type=CORBA → "çorba kategorisinde "
- * - maxMinutes=30 → "30 dakika altında "
- * - difficulty=EASY → "kolay tarifler arasında "
- */
-function filterSuffix(ctx?: CommentaryContext): string {
+function filterSuffix(ctx: CommentaryContext | undefined, t: Tns): string {
   if (!ctx) return "";
   const parts: string[] = [];
-  if (ctx.type && TYPE_LABELS[ctx.type as RecipeType]) {
-    parts.push(`${TYPE_LABELS[ctx.type as RecipeType]} kategorisinde`);
+  if (ctx.type) {
+    const label = t.raw(`typeLabels.${ctx.type}`);
+    if (typeof label === "string") {
+      parts.push(t("filterInType", { label }));
+    }
   }
   if (ctx.maxMinutes) {
-    parts.push(`${ctx.maxMinutes} dakika altında`);
+    parts.push(t("filterMaxMinutes", { n: ctx.maxMinutes }));
   }
-  if (ctx.difficulty && DIFF_LABELS[ctx.difficulty as Difficulty]) {
-    parts.push(`${DIFF_LABELS[ctx.difficulty as Difficulty]} tarifler arasında`);
+  if (ctx.difficulty) {
+    const label = t.raw(`difficultyLabels.${ctx.difficulty}`);
+    if (typeof label === "string") {
+      parts.push(t("filterDifficulty", { label }));
+    }
   }
   if (parts.length === 0) return "";
   return parts.join(", ") + " ";
 }
 
 /**
- * Build a cuisine context prefix for the commentary. Examples:
- * - cuisines=["tr"] → "Türk mutfağından "
- * - cuisines=["jp","kr"] → "Japon ve Kore mutfağından "
- * - cuisines undefined/empty → "" (no prefix, "Hepsi" mode)
+ * Resolve cuisine labels for commentary prefix. Commentary has its own
+ * namespace but cuisine names live under `cuisines.*`, so we build the
+ * prefix string here with a second getTranslations call.
  */
-function cuisinePrefix(cuisines?: string[]): string {
+async function resolveCuisinePrefix(
+  cuisines: string[] | undefined,
+  locale: Locale,
+): Promise<string> {
   if (!cuisines || cuisines.length === 0) return "";
+  const tCuisine = await getTranslations({ locale, namespace: "cuisines" });
+  const t = await getTranslations({ locale, namespace: "aiCommentary" });
   const labels = cuisines
-    .map((c) => CUISINE_LABEL[c as CuisineCode])
-    .filter(Boolean);
+    .map((c) => (tCuisine.has(c) ? tCuisine(c) : null))
+    .filter((l): l is string => Boolean(l));
   if (labels.length === 0) return "";
-  if (labels.length === 1) return `${labels[0]} mutfağından `;
-  if (labels.length === 2) return `${labels[0]} ve ${labels[1]} mutfağından `;
-  return `${labels.slice(0, 2).join(", ")} ve ${labels.length - 2} mutfak daha arasından `;
+  if (labels.length === 1) return t("cuisineSingle", { label: labels[0] });
+  if (labels.length === 2)
+    return t("cuisineDouble", { label1: labels[0], label2: labels[1] });
+  return t("cuisineMulti", {
+    first: labels.slice(0, 2).join(", "),
+    count: labels.length - 2,
+  });
 }
 
-export function buildOverallCommentary(
+export async function buildOverallCommentary(
   userIngredients: string[],
   results: AiSuggestion[],
   cuisines?: string[],
   context?: CommentaryContext,
-): string {
-  const seed = userIngredients.join("|").toLocaleLowerCase("tr");
-  const cp = cuisinePrefix(cuisines);
-  const fs = filterSuffix(context);
+  locale: Locale = DEFAULT_LOCALE,
+): Promise<string> {
+  const t = await getTranslations({ locale, namespace: "aiCommentary" });
+  const seed = userIngredients.join("|").toLocaleLowerCase(locale);
+  const cp = await resolveCuisinePrefix(cuisines, locale);
+  const fs = filterSuffix(context, t);
   // Combined context: "Türk mutfağından çorba kategorisinde " or just ""
   const ctx = cp || fs ? `${cp}${fs}`.trim() + " " : "";
 
+  const rawVariant = (key: string): string[] => {
+    const raw = t.raw(key);
+    return Array.isArray(raw) ? (raw as string[]) : [];
+  };
+
   if (results.length === 0) {
-    return pick(
-      [
-        `${ctx}${userIngredients.length} malzemenle yapılabilecek tarif çıkmadı. Bir iki şey daha ekler misin, yoksa filtreleri gevşetelim mi?`,
-        `${ctx}Bu kombinasyonla eşleşen tarifim yok. Daha fazla malzeme yaz ya da filtreleri gevşet.`,
-        `${ctx}Elindekinle bir şey bulamadım. Daha temel malzemelerle (yumurta, soğan, domates gibi) dene.`,
-      ],
-      seed,
-    );
+    const variants = rawVariant("empty");
+    const template = pick(variants, seed);
+    return template
+      .replace("{ctx}", ctx)
+      .replace("{count}", String(userIngredients.length));
   }
 
   const perfect = results.filter((r) => r.missingIngredients.length === 0);
@@ -126,67 +126,51 @@ export function buildOverallCommentary(
   const top = results[0];
 
   if (perfect.length >= 3) {
-    return pick(
-      [
-        `${ctx}${perfect.length} tarifi elindekilerle tam olarak yapabilirsin. Üstte en hızlı olanları bıraktım.`,
-        `${ctx}Güzel bir dolap: ${perfect.length} tarif için alışveriş yapman bile gerekmiyor.`,
-        `${ctx}Neyse ki ${perfect.length} seçeneğin var — hepsi elindekiyle tamam.`,
-      ],
-      seed,
-    );
+    const template = pick(rawVariant("perfectMany"), seed);
+    return template.replace("{ctx}", ctx).replace("{count}", String(perfect.length));
   }
 
   if (perfect.length === 2) {
-    return pick(
-      [
-        `${ctx}İki tarif için hiçbir şey eksik değil: ${perfect[0].title} ve ${perfect[1].title}. Hangisine ruh halindesin?`,
-        `Elindekiyle ${perfect[0].title} veya ${perfect[1].title} yapabilirsin. İkisi de 0 eksik.`,
-        `Tam uyum 2 tarifte: ${perfect[0].title} ve ${perfect[1].title}. Gerisi için birkaç şey almak gerek.`,
-      ],
-      seed,
-    );
+    const template = pick(rawVariant("perfect2"), seed);
+    return template
+      .replace("{ctx}", ctx)
+      .replace("{title1}", perfect[0].title)
+      .replace("{title2}", perfect[1].title);
   }
 
   if (perfect.length === 1) {
-    const p = perfect[0];
-    return pick(
-      [
-        `${ctx}${p.title} için hiçbir şey almana gerek yok — tam uyum. Altında birkaç yakın alternatif var.`,
-        `Hemen mutfağa gidebilirsin: ${p.title} elindekiyle tamam. Diğerleri için ufak eksikler var.`,
-        `Tam çıkan tek tarif: ${p.title}. Alternatif arıyorsan alttakilerden biri için 1-2 malzeme yeter.`,
-      ],
-      seed,
-    );
+    const template = pick(rawVariant("perfect1"), seed);
+    return template.replace("{ctx}", ctx).replace("{title}", perfect[0].title);
   }
 
   if (closeCall.length > 0) {
-    const missing = formatList(top.missingIngredients);
-    return pick(
-      [
-        `${ctx}Tam eşleşme yok ama ${top.title} için sadece ${missing} eksik — market turu kısa.`,
-        `En yakın seçenek ${top.title}. Sadece ${missing} alırsan başlayabilirsin.`,
-        `${top.title}'nda ${missing} eksik. Onun dışında her şey elinde.`,
-      ],
-      seed,
-    );
+    const missing = formatList(top.missingIngredients, t);
+    const template = pick(rawVariant("closeCall"), seed);
+    return template
+      .replace("{ctx}", ctx)
+      .replace("{title}", top.title)
+      .replace("{missing}", missing);
   }
 
-  return pick(
-    [
-      `${ctx}Tam eşleşme çıkmadı, ama ${top.title} en çok malzemeni kullanıyor. Eksikler liste halinde altında.`,
-      `En uygun aday ${top.title}. Eksiklerle birlikte aşağıda sıraladım.`,
-      `${top.title} iyi bir başlangıç. Neyin eksik olduğunu kartta görebilirsin.`,
-    ],
-    seed,
-  );
+  const template = pick(rawVariant("fallback"), seed);
+  return template.replace("{ctx}", ctx).replace("{title}", top.title);
 }
 
 /**
  * Per-recipe short note. We assign roles based on position and stats so each
  * card has a personality: the best match, the fastest, the ambitious one, etc.
  */
-export function assignRecipeNotes(results: AiSuggestion[]): AiSuggestion[] {
+export async function assignRecipeNotes(
+  results: AiSuggestion[],
+  locale: Locale = DEFAULT_LOCALE,
+): Promise<AiSuggestion[]> {
   if (results.length === 0) return results;
+
+  const t = await getTranslations({ locale, namespace: "aiCommentary" });
+  const rawVariant = (key: string): string[] => {
+    const raw = t.raw(key);
+    return Array.isArray(raw) ? (raw as string[]) : [];
+  };
 
   // Find reference points
   const fastestIndex = results.reduce(
@@ -207,58 +191,29 @@ export function assignRecipeNotes(results: AiSuggestion[]): AiSuggestion[] {
     let note = "";
 
     if (i === 0 && perfect) {
-      note = pick(
-        [
-          "En iyi eşleşme. Elindekilerin tamamını değerlendirebilirsin.",
-          "Zirvedeki seçenek — tam uyum ve en güçlü sonuç.",
-          "Birinci öneri. Hiç eksik yok.",
-        ],
-        s.recipeId,
-      );
+      note = pick(rawVariant("notesFirstPerfect"), s.recipeId);
     } else if (i === 0 && oneMissing) {
-      note = pick(
-        [
-          `Neredeyse tam — sadece ${s.missingIngredients[0]} almak yeter.`,
-          `Tek adım uzakta: ${s.missingIngredients[0]}.`,
-          `Bir malzeme eksik (${s.missingIngredients[0]}), gerisi hazır.`,
-        ],
-        s.recipeId,
-      );
+      const template = pick(rawVariant("notesFirstOneMissing"), s.recipeId);
+      note = template.replace("{missing}", s.missingIngredients[0]);
     } else if (i === fastestIndex && s.totalMinutes <= 20) {
-      note = pick(
-        [
-          `En hızlı seçenek — ${s.totalMinutes} dakikada sofrada.`,
-          `Acele edenlere: ${s.totalMinutes} dakika.`,
-          `En çabuk çıkan. Aç gelen misafire ideal.`,
-        ],
-        s.recipeId,
-      );
+      const template = pick(rawVariant("notesFastest"), s.recipeId);
+      note = template.replace("{minutes}", String(s.totalMinutes));
     } else if (perfect) {
-      note = pick(
-        [
-          "Hiçbir şey eksik değil, bunu da seçebilirsin.",
-          "Elinde her şey var — plan B olarak dursun.",
-          "Tam çıkanlardan. Alternatif olarak kafana yat.",
-        ],
-        s.recipeId,
-      );
+      note = pick(rawVariant("notesPerfectAlt"), s.recipeId);
     } else if (oneMissing) {
-      note = `Sadece ${s.missingIngredients[0]} eksik.`;
+      note = t("notesOneMissing", { missing: s.missingIngredients[0] });
     } else if (twoMissing) {
-      note = `${s.missingIngredients[0]} ve ${s.missingIngredients[1]} almak gerek.`;
+      note = t("notesTwoMissing", {
+        missing1: s.missingIngredients[0],
+        missing2: s.missingIngredients[1],
+      });
     } else if (s.difficulty === "HARD" && i < 3) {
-      note = pick(
-        [
-          "Sabır ister ama sonucu etkileyici.",
-          "Biraz iddialı — vaktin varsa dene.",
-          "Ustalık gerektirir, ancak masaya kim otursa fark eder.",
-        ],
-        s.recipeId,
-      );
+      note = pick(rawVariant("notesHard"), s.recipeId);
     } else if (i === longestIndex && s.totalMinutes >= 60) {
-      note = "Uzun pişer ama ocakta unutabilirsin.";
+      note = t("notesLongest");
     }
 
     return { ...s, note };
   });
 }
+

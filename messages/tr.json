@@ -134,6 +134,91 @@
       "homeLinkShort": "Ana sayfa"
     }
   },
+  "aiCommentary": {
+    "typeLabels": {
+      "YEMEK": "yemek",
+      "TATLI": "tatlı",
+      "ICECEK": "içecek",
+      "KOKTEYL": "kokteyl",
+      "APERATIF": "aperatif",
+      "SALATA": "salata",
+      "CORBA": "çorba",
+      "KAHVALTI": "kahvaltılık",
+      "ATISTIRMALIK": "atıştırmalık",
+      "SOS": "sos"
+    },
+    "difficultyLabels": {
+      "EASY": "kolay",
+      "MEDIUM": "orta",
+      "HARD": "zor"
+    },
+    "cuisineSingle": "{label} mutfağından ",
+    "cuisineDouble": "{label1} ve {label2} mutfağından ",
+    "cuisineMulti": "{first} ve {count} mutfak daha arasından ",
+    "filterInType": "{label} kategorisinde",
+    "filterMaxMinutes": "{n} dakika altında",
+    "filterDifficulty": "{label} tarifler arasında",
+    "listAnd": "{a} ve {b}",
+    "listMore": "{items} gibi {count} malzeme",
+    "empty": [
+      "{ctx}{count} malzemenle yapılabilecek tarif çıkmadı. Bir iki şey daha ekler misin, yoksa filtreleri gevşetelim mi?",
+      "{ctx}Bu kombinasyonla eşleşen tarifim yok. Daha fazla malzeme yaz ya da filtreleri gevşet.",
+      "{ctx}Elindekinle bir şey bulamadım. Daha temel malzemelerle (yumurta, soğan, domates gibi) dene."
+    ],
+    "perfectMany": [
+      "{ctx}{count} tarifi elindekilerle tam olarak yapabilirsin. Üstte en hızlı olanları bıraktım.",
+      "{ctx}Güzel bir dolap: {count} tarif için alışveriş yapman bile gerekmiyor.",
+      "{ctx}Neyse ki {count} seçeneğin var — hepsi elindekiyle tamam."
+    ],
+    "perfect2": [
+      "{ctx}İki tarif için hiçbir şey eksik değil: {title1} ve {title2}. Hangisine ruh halindesin?",
+      "Elindekiyle {title1} veya {title2} yapabilirsin. İkisi de 0 eksik.",
+      "Tam uyum 2 tarifte: {title1} ve {title2}. Gerisi için birkaç şey almak gerek."
+    ],
+    "perfect1": [
+      "{ctx}{title} için hiçbir şey almana gerek yok — tam uyum. Altında birkaç yakın alternatif var.",
+      "Hemen mutfağa gidebilirsin: {title} elindekiyle tamam. Diğerleri için ufak eksikler var.",
+      "Tam çıkan tek tarif: {title}. Alternatif arıyorsan alttakilerden biri için 1-2 malzeme yeter."
+    ],
+    "closeCall": [
+      "{ctx}Tam eşleşme yok ama {title} için sadece {missing} eksik — market turu kısa.",
+      "En yakın seçenek {title}. Sadece {missing} alırsan başlayabilirsin.",
+      "{title} tarifinde {missing} eksik. Onun dışında her şey elinde."
+    ],
+    "fallback": [
+      "{ctx}Tam eşleşme çıkmadı, ama {title} en çok malzemeni kullanıyor. Eksikler liste halinde altında.",
+      "En uygun aday {title}. Eksiklerle birlikte aşağıda sıraladım.",
+      "{title} iyi bir başlangıç. Neyin eksik olduğunu kartta görebilirsin."
+    ],
+    "notesFirstPerfect": [
+      "En iyi eşleşme. Elindekilerin tamamını değerlendirebilirsin.",
+      "Zirvedeki seçenek — tam uyum ve en güçlü sonuç.",
+      "Birinci öneri. Hiç eksik yok."
+    ],
+    "notesFirstOneMissing": [
+      "Neredeyse tam — sadece {missing} almak yeter.",
+      "Tek adım uzakta: {missing}.",
+      "Bir malzeme eksik ({missing}), gerisi hazır."
+    ],
+    "notesFastest": [
+      "En hızlı seçenek — {minutes} dakikada sofrada.",
+      "Acele edenlere: {minutes} dakika.",
+      "En çabuk çıkan. Aç gelen misafire ideal."
+    ],
+    "notesPerfectAlt": [
+      "Hiçbir şey eksik değil, bunu da seçebilirsin.",
+      "Elinde her şey var — plan B olarak dursun.",
+      "Tam çıkanlardan. Alternatif olarak kafana yat."
+    ],
+    "notesOneMissing": "Sadece {missing} eksik.",
+    "notesTwoMissing": "{missing1} ve {missing2} almak gerek.",
+    "notesHard": [
+      "Sabır ister ama sonucu etkileyici.",
+      "Biraz iddialı — vaktin varsa dene.",
+      "Ustalık gerektirir, ancak masaya kim otursa fark eder."
+    ],
+    "notesLongest": "Uzun pişer ama ocakta unutabilirsin."
+  },
   "metadata": {
     "site": {
       "tagline": "Tarifle — Make Eat",

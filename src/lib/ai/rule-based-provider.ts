@@ -1,4 +1,6 @@
+import { getLocale } from "next-intl/server";
 import { prisma } from "@/lib/prisma";
+import { DEFAULT_LOCALE, isValidLocale } from "@/i18n/config";
 import { computeMatch, recipeContainsExcluded } from "./matcher";
 import { assignRecipeNotes, buildOverallCommentary, type CommentaryContext } from "./commentary";
 import type {
@@ -96,18 +98,21 @@ export class RuleBasedProvider implements AiProvider {
       // Strip internal _ingredients field before returning
       .map(({ _ingredients, ...rest }) => rest);
 
-    const withNotes = assignRecipeNotes(scored);
+    const resolvedLocale = await getLocale();
+    const locale = isValidLocale(resolvedLocale) ? resolvedLocale : DEFAULT_LOCALE;
+    const withNotes = await assignRecipeNotes(scored, locale);
     const commentaryCtx: CommentaryContext = {
       cuisines: input.cuisines,
       type: input.type,
       difficulty: input.difficulty,
       maxMinutes: input.maxMinutes,
     };
-    const commentary = buildOverallCommentary(
+    const commentary = await buildOverallCommentary(
       input.ingredients,
       withNotes,
       input.cuisines,
       commentaryCtx,
+      locale,
     );
 
     return {

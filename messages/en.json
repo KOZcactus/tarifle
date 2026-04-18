@@ -134,6 +134,91 @@
       "homeLinkShort": "Home"
     }
   },
+  "aiCommentary": {
+    "typeLabels": {
+      "YEMEK": "main dish",
+      "TATLI": "dessert",
+      "ICECEK": "drink",
+      "KOKTEYL": "cocktail",
+      "APERATIF": "appetizer",
+      "SALATA": "salad",
+      "CORBA": "soup",
+      "KAHVALTI": "breakfast",
+      "ATISTIRMALIK": "snack",
+      "SOS": "sauce"
+    },
+    "difficultyLabels": {
+      "EASY": "easy",
+      "MEDIUM": "medium",
+      "HARD": "hard"
+    },
+    "cuisineSingle": "From {label} cuisine, ",
+    "cuisineDouble": "From {label1} and {label2} cuisines, ",
+    "cuisineMulti": "Across {first} and {count} more cuisines, ",
+    "filterInType": "in {label} category",
+    "filterMaxMinutes": "under {n} minutes",
+    "filterDifficulty": "among {label} recipes",
+    "listAnd": "{a} and {b}",
+    "listMore": "{items} and {count} more",
+    "empty": [
+      "{ctx}I couldn't find a recipe you can make with {count} ingredient(s). Want to add a couple more, or shall we loosen the filters?",
+      "{ctx}No match for this combination. Add more ingredients or relax the filters.",
+      "{ctx}Nothing matched what you have. Try more staple ingredients (eggs, onion, tomato, etc.)."
+    ],
+    "perfectMany": [
+      "{ctx}You can make {count} recipes exactly with what you have. I put the fastest ones on top.",
+      "{ctx}Nice pantry: you don't even need to shop for {count} recipes.",
+      "{ctx}Luckily you have {count} options — all fully covered."
+    ],
+    "perfect2": [
+      "{ctx}Two recipes need nothing extra: {title1} and {title2}. Which one fits your mood?",
+      "With what you have, you can make {title1} or {title2}. Both have zero missing.",
+      "Perfect fit on 2 recipes: {title1} and {title2}. The rest need a bit of shopping."
+    ],
+    "perfect1": [
+      "{ctx}You don't need to buy anything for {title} — perfect fit. A few close alternatives sit below.",
+      "Head to the kitchen: {title} is ready with what you have. Others need a couple of items.",
+      "Only one exact match: {title}. If you want alternatives, the ones below need just 1–2 extras."
+    ],
+    "closeCall": [
+      "{ctx}No perfect match, but {title} only needs {missing} — quick market run.",
+      "Closest option is {title}. Grab {missing} and you're set.",
+      "{title} is missing {missing}. Everything else is already in your kitchen."
+    ],
+    "fallback": [
+      "{ctx}No exact match, but {title} uses the most of your ingredients. Missing items listed below.",
+      "Best candidate: {title}. I listed the missing items below.",
+      "{title} is a good starting point. Check the card for what's missing."
+    ],
+    "notesFirstPerfect": [
+      "Best match. You can use all of your ingredients.",
+      "Top pick — perfect fit and the strongest result.",
+      "Suggestion #1. Nothing missing."
+    ],
+    "notesFirstOneMissing": [
+      "Almost perfect — just grab {missing}.",
+      "One step away: {missing}.",
+      "One ingredient missing ({missing}), the rest is ready."
+    ],
+    "notesFastest": [
+      "Fastest option — on the table in {minutes} minutes.",
+      "For the impatient: {minutes} minutes.",
+      "The quickest one. Perfect for a hungry surprise guest."
+    ],
+    "notesPerfectAlt": [
+      "Nothing missing, you could pick this one too.",
+      "Everything is there — keep it as plan B.",
+      "Another exact match. File it as a backup."
+    ],
+    "notesOneMissing": "Just {missing} missing.",
+    "notesTwoMissing": "You'd need to grab {missing1} and {missing2}.",
+    "notesHard": [
+      "Takes patience, but the result is impressive.",
+      "A bit ambitious — try it when you have time.",
+      "Needs some skill, but whoever sits at the table will notice."
+    ],
+    "notesLongest": "Slow cooker — you can leave it on the stove."
+  },
   "metadata": {
     "site": {
       "tagline": "Tarifle — Make Eat",

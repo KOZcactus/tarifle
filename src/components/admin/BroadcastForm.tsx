@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { useTranslations } from "next-intl";
 import { broadcastNotificationAction } from "@/lib/actions/admin-ops";
 
 export function BroadcastForm() {
+  const t = useTranslations("admin.broadcast");
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [link, setLink] = useState("");
@@ -17,9 +19,11 @@ export function BroadcastForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const confirmMsg = `Bu bildirim ${
-      role ? `sadece ${role} rolüne` : "tüm kullanıcılara"
-    }${onlyVerified ? " (yalnız doğrulanmışlara)" : ""} gidecek. Emin misin?`;
+    const target = role
+      ? t("confirmByRole", { role })
+      : t("confirmAll");
+    const verified = onlyVerified ? t("confirmOnlyVerified") : "";
+    const confirmMsg = t("confirmPrompt", { target, verified });
     if (!confirm(confirmMsg)) return;
 
     startTransition(async () => {
@@ -36,10 +40,10 @@ export function BroadcastForm() {
         setLink("");
         setResult({
           kind: "success",
-          message: `${res.count ?? 0} kullanıcıya bildirim gönderildi.`,
+          message: t("successMessage", { count: res.count ?? 0 }),
         });
       } else {
-        setResult({ kind: "error", message: res.error ?? "Gönderilemedi." });
+        setResult({ kind: "error", message: res.error ?? t("genericError") });
       }
     });
   }
@@ -50,53 +54,51 @@ export function BroadcastForm() {
       className="flex flex-col gap-3 rounded-xl border border-border bg-bg-card p-4"
     >
       <div className="flex flex-col">
-        <label className="mb-0.5 text-xs text-text-muted">Başlık *</label>
+        <label className="mb-0.5 text-xs text-text-muted">{t("titleLabel")}</label>
         <input
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           maxLength={200}
           required
-          placeholder="Örn: Yeni özelliğimiz yayında"
+          placeholder={t("titlePlaceholder")}
           className="rounded border border-border bg-bg-card px-2 py-1 text-sm focus:border-primary focus:outline-none"
         />
       </div>
       <div className="flex flex-col">
-        <label className="mb-0.5 text-xs text-text-muted">İçerik</label>
+        <label className="mb-0.5 text-xs text-text-muted">{t("bodyLabel")}</label>
         <textarea
           value={body}
           onChange={(e) => setBody(e.target.value)}
           maxLength={1000}
           rows={3}
-          placeholder="Kısa açıklama (opsiyonel)"
+          placeholder={t("bodyPlaceholder")}
           className="rounded border border-border bg-bg-card px-2 py-1 text-sm focus:border-primary focus:outline-none"
         />
       </div>
       <div className="flex flex-col">
-        <label className="mb-0.5 text-xs text-text-muted">
-          Link (bildirim kutusundan gidilir)
-        </label>
+        <label className="mb-0.5 text-xs text-text-muted">{t("linkLabel")}</label>
         <input
           type="text"
           value={link}
           onChange={(e) => setLink(e.target.value)}
           maxLength={500}
-          placeholder="/tarif/yeni-slug veya https://..."
+          placeholder={t("linkPlaceholder")}
           className="rounded border border-border bg-bg-card px-2 py-1 text-sm focus:border-primary focus:outline-none"
         />
       </div>
       <div className="grid gap-3 md:grid-cols-2">
         <div className="flex flex-col">
-          <label className="mb-0.5 text-xs text-text-muted">Hedef rol</label>
+          <label className="mb-0.5 text-xs text-text-muted">{t("roleLabel")}</label>
           <select
             value={role}
             onChange={(e) => setRole(e.target.value as typeof role)}
             className="rounded border border-border bg-bg-card px-2 py-1 text-sm focus:border-primary focus:outline-none"
           >
-            <option value="">Tüm kullanıcılar</option>
-            <option value="USER">Sadece üyeler (USER)</option>
-            <option value="MODERATOR">Sadece moderatörler</option>
-            <option value="ADMIN">Sadece adminler</option>
+            <option value="">{t("roleAll")}</option>
+            <option value="USER">{t("roleUser")}</option>
+            <option value="MODERATOR">{t("roleModerator")}</option>
+            <option value="ADMIN">{t("roleAdmin")}</option>
           </select>
         </div>
         <label className="flex items-center gap-2 self-end text-sm text-text">
@@ -106,7 +108,7 @@ export function BroadcastForm() {
             onChange={(e) => setOnlyVerified(e.target.checked)}
             className="h-4 w-4 rounded border-border"
           />
-          Sadece e-posta doğrulanmışlar
+          {t("onlyVerified")}
         </label>
       </div>
 
@@ -126,7 +128,7 @@ export function BroadcastForm() {
         disabled={pending || title.trim().length < 3}
         className="self-start rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary-hover disabled:opacity-50"
       >
-        {pending ? "Gönderiliyor..." : "📣 Gönder"}
+        {pending ? t("submitting") : t("submit")}
       </button>
     </form>
   );

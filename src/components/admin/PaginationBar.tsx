@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 
 interface PaginationBarProps {
   currentPage: number;
@@ -12,17 +13,18 @@ interface PaginationBarProps {
  * Always shows first, last, current ± 1, and ellipsis gaps.
  * No JS — pure Link with URL param update.
  */
-export function PaginationBar({
+export async function PaginationBar({
   currentPage,
   totalItems,
   pageSize,
   buildHref,
 }: PaginationBarProps) {
+  const t = await getTranslations("admin.common");
   const totalPages = Math.max(1, Math.ceil(totalItems / pageSize));
   if (totalPages <= 1) {
     return (
       <p className="mt-3 text-xs text-text-muted">
-        {totalItems} kayıt — tek sayfa.
+        {t("paginationSingle", { count: totalItems })}
       </p>
     );
   }
@@ -47,12 +49,15 @@ export function PaginationBar({
 
   return (
     <nav
-      aria-label="Sayfalama"
+      aria-label={t("paginationAria")}
       className="mt-4 flex items-center justify-between gap-3 text-sm"
     >
       <p className="text-xs text-text-muted tabular-nums">
-        {(currentPage - 1) * pageSize + 1}–
-        {Math.min(currentPage * pageSize, totalItems)} / {totalItems}
+        {t("paginationRange", {
+          from: (currentPage - 1) * pageSize + 1,
+          to: Math.min(currentPage * pageSize, totalItems),
+          total: totalItems,
+        })}
       </p>
       <div className="flex items-center gap-1">
         {currentPage > 1 ? (
@@ -60,11 +65,11 @@ export function PaginationBar({
             href={buildHref(prevPage)}
             className="rounded-md border border-border px-2.5 py-1 text-xs hover:bg-bg-elevated"
           >
-            ‹ Önceki
+            {t("paginationPrev")}
           </Link>
         ) : (
           <span className="rounded-md border border-border px-2.5 py-1 text-xs text-text-muted opacity-40">
-            ‹ Önceki
+            {t("paginationPrev")}
           </span>
         )}
         {withGaps.map((p, i) =>
@@ -92,11 +97,11 @@ export function PaginationBar({
             href={buildHref(nextPage)}
             className="rounded-md border border-border px-2.5 py-1 text-xs hover:bg-bg-elevated"
           >
-            Sonraki ›
+            {t("paginationNext")}
           </Link>
         ) : (
           <span className="rounded-md border border-border px-2.5 py-1 text-xs text-text-muted opacity-40">
-            Sonraki ›
+            {t("paginationNext")}
           </span>
         )}
       </div>

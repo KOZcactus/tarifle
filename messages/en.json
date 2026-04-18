@@ -339,6 +339,135 @@
       "log": "Log",
       "sentryTest": "Sentry Test"
     },
+    "common": {
+      "paginationAria": "Pagination",
+      "paginationSingle": "{count} records — single page.",
+      "paginationRange": "{from}–{to} / {total}",
+      "paginationPrev": "‹ Previous",
+      "paginationNext": "Next ›",
+      "loading": "Loading…",
+      "submitSave": "Save",
+      "submitSubmitting": "Saving…",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "edit": "Edit",
+      "close": "Close",
+      "filterLabel": "Filter",
+      "searchPlaceholder": "Search…",
+      "applyFilters": "Apply",
+      "clearFilters": "Clear"
+    },
+    "pageTitles": {
+      "reviews": "Reviews | Admin",
+      "reports": "Reports | Admin",
+      "recipes": "Recipes | Admin",
+      "users": "Users | Admin",
+      "collections": "Collections | Admin",
+      "categories": "Categories | Admin",
+      "tags": "Tags | Admin",
+      "announcements": "Announcements | Admin",
+      "notification": "Send Notification | Admin",
+      "moderationLog": "Moderation Log | Admin",
+      "recipeDetail": "{title} · Recipe · Admin",
+      "userDetail": "@{username} · User · Admin"
+    },
+    "broadcast": {
+      "pageHeading": "📣 Send broadcast notification",
+      "pageDescription": "This form creates an in-app notification per user for the target audience. No email is sent. Suspended and deleted accounts are excluded.",
+      "tipsHeading": "Tips",
+      "tip1": "Keep the title short and actionable (\"New: 1100 recipes live\").",
+      "tip2": "Use an internal link (e.g. \"/kesfet\"). A click marks the notification as read.",
+      "tip3": "Every broadcast is written to ModerationAction; who sent what and when stays in the log.",
+      "titleLabel": "Title *",
+      "titlePlaceholder": "e.g. New feature is live",
+      "bodyLabel": "Body",
+      "bodyPlaceholder": "Short description (optional)",
+      "linkLabel": "Link (where the notification leads)",
+      "linkPlaceholder": "/tarif/new-slug or https://...",
+      "roleLabel": "Target role",
+      "roleAll": "All users",
+      "roleUser": "Members only (USER)",
+      "roleModerator": "Moderators only",
+      "roleAdmin": "Admins only",
+      "onlyVerified": "Email-verified users only",
+      "confirmAll": "to all users",
+      "confirmByRole": "only to {role}",
+      "confirmOnlyVerified": " (verified only)",
+      "confirmPrompt": "This notification will go {target}{verified}. Are you sure?",
+      "successMessage": "Notification sent to {count} users.",
+      "genericError": "Could not send.",
+      "submit": "📣 Send",
+      "submitting": "Sending..."
+    },
+    "reviews": {
+      "heading": "💬 Reviews",
+      "emptyQueue": "Review queue is empty. All clear.",
+      "filterAll": "All",
+      "filterVariations": "Adaptations",
+      "filterReviewsSection": "Reviews"
+    },
+    "reports": {
+      "heading": "🚩 Reports",
+      "empty": "No reports.",
+      "reporter": "Reporter",
+      "target": "Target",
+      "reason": "Reason",
+      "status": "Status",
+      "actions": "Action"
+    },
+    "recipes": {
+      "heading": "📖 Recipes",
+      "empty": "No recipes found.",
+      "searchPlaceholder": "Search title or slug…",
+      "colTitle": "Title",
+      "colStatus": "Status",
+      "colViews": "Views",
+      "colCreated": "Created",
+      "colFeatured": "Featured"
+    },
+    "users": {
+      "heading": "👥 Users",
+      "empty": "No users found.",
+      "searchPlaceholder": "Email, username or name…",
+      "colName": "Name",
+      "colEmail": "Email",
+      "colRole": "Role",
+      "colVerified": "Verified",
+      "colCreated": "Signed up"
+    },
+    "collections": {
+      "heading": "📚 Collections",
+      "empty": "No collections.",
+      "colTitle": "Name",
+      "colOwner": "Owner",
+      "colItems": "Recipes",
+      "colVisibility": "Visibility"
+    },
+    "categories": {
+      "heading": "📂 Categories",
+      "empty": "No categories.",
+      "usage": "Usage"
+    },
+    "tags": {
+      "heading": "🏷️ Tags",
+      "empty": "No tags.",
+      "usageTotal": "Total usage: {count}",
+      "orphanCount": "Orphans: {count}"
+    },
+    "announcements": {
+      "heading": "📢 Announcements",
+      "empty": "No active announcements.",
+      "createNew": "Create new announcement"
+    },
+    "moderationLog": {
+      "heading": "🛡️ Moderation Log",
+      "empty": "No entries yet.",
+      "colTime": "Time",
+      "colModerator": "Moderator",
+      "colAction": "Action",
+      "colTarget": "Target",
+      "colNote": "Note"
+    },
     "dashboard": {
       "overviewHeading": "Overview",
       "csvLabel": "📥 CSV export:",

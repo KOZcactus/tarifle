@@ -339,6 +339,135 @@
       "log": "Log",
       "sentryTest": "Sentry Test"
     },
+    "common": {
+      "paginationAria": "Sayfalama",
+      "paginationSingle": "{count} kayıt — tek sayfa.",
+      "paginationRange": "{from}–{to} / {total}",
+      "paginationPrev": "‹ Önceki",
+      "paginationNext": "Sonraki ›",
+      "loading": "Yükleniyor…",
+      "submitSave": "Kaydet",
+      "submitSubmitting": "Kaydediliyor…",
+      "cancel": "İptal",
+      "delete": "Sil",
+      "edit": "Düzenle",
+      "close": "Kapat",
+      "filterLabel": "Filtre",
+      "searchPlaceholder": "Ara…",
+      "applyFilters": "Uygula",
+      "clearFilters": "Temizle"
+    },
+    "pageTitles": {
+      "reviews": "İncelemeler | Yönetim Paneli",
+      "reports": "Raporlar | Yönetim Paneli",
+      "recipes": "Tarifler | Yönetim Paneli",
+      "users": "Kullanıcılar | Yönetim Paneli",
+      "collections": "Koleksiyonlar | Yönetim Paneli",
+      "categories": "Kategoriler | Yönetim Paneli",
+      "tags": "Etiketler | Yönetim Paneli",
+      "announcements": "Duyurular | Yönetim Paneli",
+      "notification": "Bildirim Gönder | Yönetim Paneli",
+      "moderationLog": "Moderasyon Logu | Yönetim Paneli",
+      "recipeDetail": "{title} · Tarif · Yönetim Paneli",
+      "userDetail": "@{username} · Kullanıcı · Yönetim Paneli"
+    },
+    "broadcast": {
+      "pageHeading": "📣 Toplu bildirim gönder",
+      "pageDescription": "Bu form seçtiğin hedef kitleye tek tek in-app bildirim oluşturur. E-posta gönderilmez. Askıya alınmış hesaplar ve silinmiş kullanıcılar hariç tutulur.",
+      "tipsHeading": "İpuçları",
+      "tip1": "Başlığı kısa ve eyleme çağıran yaz (\"Yeni: 1100 tarif canlıda\").",
+      "tip2": "Link iç sayfa olsun (\"/kesfet\" gibi). Tıklanınca bildirim okundu sayılır.",
+      "tip3": "Her broadcast ModerationAction log'a yazılır; kimin ne zaman ne gönderdiği kalıcı kayıtta.",
+      "titleLabel": "Başlık *",
+      "titlePlaceholder": "Örn: Yeni özelliğimiz yayında",
+      "bodyLabel": "İçerik",
+      "bodyPlaceholder": "Kısa açıklama (opsiyonel)",
+      "linkLabel": "Link (bildirim kutusundan gidilir)",
+      "linkPlaceholder": "/tarif/yeni-slug veya https://...",
+      "roleLabel": "Hedef rol",
+      "roleAll": "Tüm kullanıcılar",
+      "roleUser": "Sadece üyeler (USER)",
+      "roleModerator": "Sadece moderatörler",
+      "roleAdmin": "Sadece adminler",
+      "onlyVerified": "Sadece e-posta doğrulanmışlar",
+      "confirmAll": "tüm kullanıcılara",
+      "confirmByRole": "sadece {role} rolüne",
+      "confirmOnlyVerified": " (yalnız doğrulanmışlara)",
+      "confirmPrompt": "Bu bildirim {target}{verified} gidecek. Emin misin?",
+      "successMessage": "{count} kullanıcıya bildirim gönderildi.",
+      "genericError": "Gönderilemedi.",
+      "submit": "📣 Gönder",
+      "submitting": "Gönderiliyor..."
+    },
+    "reviews": {
+      "heading": "💬 İncelemeler",
+      "emptyQueue": "İnceleme kuyruğu boş. Hepsi halledilmiş.",
+      "filterAll": "Tümü",
+      "filterVariations": "Uyarlamalar",
+      "filterReviewsSection": "Yorumlar"
+    },
+    "reports": {
+      "heading": "🚩 Raporlar",
+      "empty": "Rapor yok.",
+      "reporter": "Raporlayan",
+      "target": "Hedef",
+      "reason": "Sebep",
+      "status": "Durum",
+      "actions": "İşlem"
+    },
+    "recipes": {
+      "heading": "📖 Tarifler",
+      "empty": "Tarif bulunamadı.",
+      "searchPlaceholder": "Başlık veya slug ara…",
+      "colTitle": "Başlık",
+      "colStatus": "Durum",
+      "colViews": "Görüntüleme",
+      "colCreated": "Oluşturulma",
+      "colFeatured": "Öne Çıkan"
+    },
+    "users": {
+      "heading": "👥 Kullanıcılar",
+      "empty": "Kullanıcı bulunamadı.",
+      "searchPlaceholder": "E-posta, kullanıcı adı veya isim…",
+      "colName": "İsim",
+      "colEmail": "E-posta",
+      "colRole": "Rol",
+      "colVerified": "Doğrulama",
+      "colCreated": "Kayıt"
+    },
+    "collections": {
+      "heading": "📚 Koleksiyonlar",
+      "empty": "Koleksiyon yok.",
+      "colTitle": "İsim",
+      "colOwner": "Sahip",
+      "colItems": "Tarif",
+      "colVisibility": "Görünürlük"
+    },
+    "categories": {
+      "heading": "📂 Kategoriler",
+      "empty": "Kategori yok.",
+      "usage": "Kullanım"
+    },
+    "tags": {
+      "heading": "🏷️ Etiketler",
+      "empty": "Etiket yok.",
+      "usageTotal": "Toplam kullanım: {count}",
+      "orphanCount": "Kullanılmayan: {count}"
+    },
+    "announcements": {
+      "heading": "📢 Duyurular",
+      "empty": "Aktif duyuru yok.",
+      "createNew": "Yeni duyuru oluştur"
+    },
+    "moderationLog": {
+      "heading": "🛡️ Moderasyon Logu",
+      "empty": "Henüz kayıt yok.",
+      "colTime": "Zaman",
+      "colModerator": "Moderatör",
+      "colAction": "İşlem",
+      "colTarget": "Hedef",
+      "colNote": "Not"
+    },
     "dashboard": {
       "overviewHeading": "Genel Bakış",
       "csvLabel": "📥 CSV export:",

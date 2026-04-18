@@ -1393,7 +1393,7 @@
     "tipNoteLabel": "💡 Püf Noktası:",
     "servingSuggestionLabel": "🍽️ Servis Önerisi:",
     "allergenDisclosure": "Bu tarif alerjen madde içerebilir",
-    "allergenDisclaimer": "Alerjenler tarifteki malzeme listesinden otomatik türetilir (AB-10 alerjen seti). Çapraz bulaşma (ortak mutfak ekipmanı, ortak yüzey) takip edilmez — ciddi alerjiniz varsa malzeme listesini baştan sona gözden geçirin ve hazırlama yöntemini sorun.",
+    "allergenDisclaimer": "Alerjenler tarifteki malzeme listesinden otomatik türetilir ve AB-14 gıda alerjen standardının ana gruplarını kapsar (gluten, süt, yumurta, yer fıstığı, kuruyemiş, soya, deniz ürünleri, susam, kereviz, hardal). Çapraz bulaşma (ortak mutfak ekipmanı, ortak yüzey) takip edilmez — ciddi alerjiniz varsa malzeme listesini baştan sona gözden geçirin ve hazırlama yöntemini sorun.",
     "allergenListAria": "Alerjen içerikleri: {list}",
     "variationsTitle": "Topluluk Uyarlamaları ({count})",
     "variationSortNewest": "En yeni",
@@ -1422,7 +1422,7 @@
       "proteinUnit": "g protein",
       "carbsUnit": "g karbonhidrat",
       "fatUnit": "g yağ",
-      "approximateNote": "Yaklaşık değer — USDA ve TÜBİTAK tablolarından malzeme miktarına göre hesaplanır. Pişirme yöntemi, marka ve porsiyon boyutuna göre ±%15 sapabilir. Diyet veya sağlık koşulu için diyetisyen/hekime danışın."
+      "approximateNote": "Yaklaşık değer — USDA FoodData Central ve TÜBİTAK Türk Gıda Kompozisyon Veritabanı&rsquo;ndan malzeme miktarına göre hesaplanır. Gerçek değer pişirme yöntemi, marka ve porsiyon boyutuna göre yaklaşık ±%20 sapabilir. Diyet veya sağlık koşulu için diyetisyen/hekime danışın."
     }
   },
   "recipes": {

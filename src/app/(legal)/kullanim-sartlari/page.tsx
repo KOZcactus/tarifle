@@ -95,18 +95,22 @@ export default function KullanimSartlariPage() {
           </h2>
           <p>
             Platform üzerindeki besin değerleri{" "}
-            <strong className="text-text">yaklaşık değerlerdir</strong>; USDA ve
-            TÜBİTAK besin tabloları ile malzeme miktarlarından türetilir.
-            Gerçek değer pişirme yöntemi, malzeme markası ve porsiyon boyutuna
-            göre ±%15 kadar sapabilir. Diyet, diyabet, kalp-damar takibi gibi
-            sağlık koşulları için bir diyetisyen veya hekime danışın.
+            <strong className="text-text">yaklaşık değerlerdir</strong>; USDA
+            FoodData Central ve TÜBİTAK Türk Gıda Kompozisyon Veritabanı
+            tablolarından malzeme miktarlarına göre hesaplanır. Gerçek değer
+            pişirme yöntemi, malzeme markası ve porsiyon boyutuna göre yaklaşık
+            ±%20 sapabilir. Diyet, diyabet, kalp-damar takibi gibi sağlık
+            koşulları için bir diyetisyen veya hekime danışın.
           </p>
           <p className="mt-3">
-            Alerjen bilgileri tarifteki malzeme listesinden otomatik türetilir
-            (gluten, süt, yumurta, yer fıstığı, kuruyemiş, soya, deniz ürünleri,
-            susam, kereviz, hardal — AB-10 alerjen seti). Çapraz bulaşma (aynı
-            mutfakta başka ürünle temas) takip edilemez. Ciddi alerjiniz varsa
-            malzeme listesini her zaman doğrulayın.
+            Alerjen bilgileri tarifteki malzeme listesinden otomatik türetilir.
+            Platform 10 ana alerjen kategorisini destekler: gluten, süt, yumurta,
+            yer fıstığı, kuruyemiş, soya, deniz ürünleri, susam, kereviz ve
+            hardal. Bu liste AB-14 gıda alerjen bildirim listesinin ana
+            gruplarını kapsar; sülfit, lupin ve yumuşakça henüz ayrı
+            etiketlenmez. Çapraz bulaşma (aynı mutfakta başka ürünle temas)
+            takip edilemez. Ciddi alerjiniz varsa malzeme listesini her zaman
+            doğrulayın.
           </p>
           <p className="mt-3">
             Platform tıbbi tavsiye niteliği taşımaz; tariflerden kaynaklanan
@@ -183,9 +187,12 @@ export default function KullanimSartlariPage() {
           </h2>
           <p>
             Bu şartlar Türkiye Cumhuriyeti mevzuatına tabidir. Uyuşmazlıklarda
-            İstanbul Mahkemeleri ve İcra Daireleri yetkilidir. Tüketici sıfatı
-            taşıyan kullanıcılar için Tüketici Hakem Heyeti ve Tüketici
-            Mahkemelerinin yetkisi saklıdır.
+            Türkiye Cumhuriyeti Mahkemeleri ve İcra Daireleri yetkilidir.
+            Tüketici sıfatı taşıyan kullanıcılar için 6502 sayılı Tüketicinin
+            Korunması Hakkında Kanun çerçevesinde Tüketici Hakem Heyeti ve
+            Tüketici Mahkemelerinin yetkisi saklıdır; bu haklar kullanıcının
+            ikametgahı veya mal/hizmetin sunulduğu yer mahkemelerinde
+            kullanılabilir.
           </p>
         </section>
 

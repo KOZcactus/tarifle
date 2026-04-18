@@ -62,8 +62,9 @@ export default function KVKKPage() {
           <p>Platformda hesap oluşturmanız veya hizmetleri kullanmanız halinde:</p>
           <ul className="mt-3 ml-4 list-disc space-y-1">
             <li>
-              <strong className="text-text">Kimlik:</strong> ad, soyad, kullanıcı adı
-              (kayıt formu veya Google OAuth üzerinden)
+              <strong className="text-text">Kimlik:</strong> isim (opsiyonel,
+              Google OAuth üzerinden profilinizde yer alan tam ad) ve kullanıcı
+              adı
             </li>
             <li>
               <strong className="text-text">İletişim:</strong> e-posta adresi (kayıt

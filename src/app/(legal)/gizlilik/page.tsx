@@ -129,11 +129,6 @@ export default function GizlilikPage() {
                   <td className="px-3 py-2">AB</td>
                 </tr>
                 <tr>
-                  <td className="px-3 py-2">Cloudinary</td>
-                  <td className="px-3 py-2">Görsel depolama (opsiyonel avatar/OG)</td>
-                  <td className="px-3 py-2">AB/ABD</td>
-                </tr>
-                <tr>
                   <td className="px-3 py-2">Sentry</td>
                   <td className="px-3 py-2">Hata izleme (PII filtreli)</td>
                   <td className="px-3 py-2">AB</td>
@@ -141,7 +136,7 @@ export default function GizlilikPage() {
                 <tr>
                   <td className="px-3 py-2">Upstash Redis</td>
                   <td className="px-3 py-2">Oran sınırlama (rate limit)</td>
-                  <td className="px-3 py-2">AB</td>
+                  <td className="px-3 py-2">Küresel</td>
                 </tr>
               </tbody>
             </table>

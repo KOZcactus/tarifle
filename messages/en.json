@@ -1393,7 +1393,7 @@
     "tipNoteLabel": "💡 Tip:",
     "servingSuggestionLabel": "🍽️ Serving suggestion:",
     "allergenDisclosure": "This recipe may contain allergens",
-    "allergenDisclaimer": "Allergens are derived automatically from the ingredient list (EU-10 set). Cross-contamination (shared kitchen equipment, shared surfaces) isn't tracked — if you have a serious allergy, review the full ingredient list yourself and ask about preparation.",
+    "allergenDisclaimer": "Allergens are derived automatically from the ingredient list, covering the main groups of the EU-14 food allergen standard (gluten, milk, eggs, peanuts, tree nuts, soy, seafood, sesame, celery, mustard). Cross-contamination (shared kitchen equipment, shared surfaces) isn't tracked — if you have a serious allergy, review the full ingredient list yourself and ask about preparation.",
     "allergenListAria": "Allergen contents: {list}",
     "variationsTitle": "Community Adaptations ({count})",
     "variationSortNewest": "Newest",
@@ -1422,7 +1422,7 @@
       "proteinUnit": "g protein",
       "carbsUnit": "g carbs",
       "fatUnit": "g fat",
-      "approximateNote": "Approximate values, derived from ingredient amounts using USDA and TÜBİTAK tables. Real values can vary by ±15% depending on cooking method, brand, and portion size. For diet or medical conditions, consult a dietitian or doctor."
+      "approximateNote": "Approximate values, derived from ingredient amounts using USDA FoodData Central and TÜBİTAK Turkish Food Composition Database. Actual values can vary by roughly ±20% depending on cooking method, brand, and portion size. For diet or medical conditions, consult a dietitian or doctor."
     }
   },
   "recipes": {

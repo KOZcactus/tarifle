@@ -956,6 +956,20 @@
     "languageDescription": "Arayüz dilini seç. Değişiklik anında uygulanır, tarif içerikleri de seçtiğin dilde görünür (EN çevirisi varsa).",
     "languageSaved": "Dil tercihi kaydedildi",
     "languageSaveError": "Dil tercihi kaydedilemedi",
+    "preferences": {
+      "title": "Kişiselleştirme tercihleri",
+      "description": "İlgini belirt — ileride keşif ve öneriler sana göre uyarlanacak. Her bölüm çoklu seçim; istediğin kadar ekle, aynı çiple tekrar bas kaldır.",
+      "tagsTitle": "İlgilendiğin etiketler",
+      "tagsHelp": "Sana gösterilen tariflerde öne çıkmasını istediğin temaları seç (pratik, vejetaryen, yüksek protein…).",
+      "allergensTitle": "Kaçındığın alerjenler",
+      "allergensHelp": "Seçtiklerini içeren tarifler listelerde arka plana itilir. Tıbbi tavsiye değildir — ambalaj bilgisini her zaman kontrol et.",
+      "cuisinesTitle": "Favori mutfaklar",
+      "cuisinesHelp": "Daha çok görmek istediğin mutfakları seç. Seçim yapmazsan tüm mutfaklar eşit ağırlıkta gelir.",
+      "save": "Kaydet",
+      "saving": "Kaydediliyor…",
+      "savedFeedback": "Tercihler kaydedildi",
+      "errorFeedback": "Tercihler kaydedilemedi"
+    },
     "profile": {
       "emailLabel": "E-posta",
       "emailVerified": "Doğrulandı",

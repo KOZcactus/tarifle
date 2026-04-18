@@ -956,6 +956,20 @@
     "languageDescription": "Choose the interface language. Changes apply instantly; recipe content will also appear in your selected language (where an English translation exists).",
     "languageSaved": "Language preference saved",
     "languageSaveError": "Could not save language preference",
+    "preferences": {
+      "title": "Personalisation preferences",
+      "description": "Tell us what you like — discovery and recommendations will adapt to your picks. Each section is multi-select; tap again to remove.",
+      "tagsTitle": "Tags you're into",
+      "tagsHelp": "Pick the themes you'd like to see more of (quick, vegetarian, high-protein…).",
+      "allergensTitle": "Allergens to avoid",
+      "allergensHelp": "Recipes containing these will be pushed down in listings. Not medical advice — always double-check ingredient labels.",
+      "cuisinesTitle": "Favourite cuisines",
+      "cuisinesHelp": "Pick the cuisines you'd like to see more of. With no picks, all cuisines get equal weight.",
+      "save": "Save",
+      "saving": "Saving…",
+      "savedFeedback": "Preferences saved",
+      "errorFeedback": "Could not save preferences"
+    },
     "profile": {
       "emailLabel": "Email",
       "emailVerified": "Verified",

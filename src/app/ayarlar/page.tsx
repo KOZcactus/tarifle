@@ -7,6 +7,7 @@ import { ProfileSettingsForm } from "@/components/profile/ProfileSettingsForm";
 import { GoogleLinkCard } from "@/components/profile/GoogleLinkCard";
 import { PasswordChangeCard } from "@/components/profile/PasswordChangeCard";
 import { LanguagePreferenceCard } from "@/components/profile/LanguagePreferenceCard";
+import { PreferencesCard } from "@/components/profile/PreferencesCard";
 import { DeleteAccountCard } from "@/components/profile/DeleteAccountCard";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -40,6 +41,9 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
       bio: true,
       emailVerified: true,
       passwordHash: true,
+      favoriteTags: true,
+      allergenAvoidances: true,
+      favoriteCuisines: true,
       accounts: {
         where: { provider: "google" },
         select: { id: true },
@@ -91,6 +95,12 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
             Placed before the destructive "delete account" card so it
             stays in the "everyday settings" cluster, not next to danger. */}
         <LanguagePreferenceCard />
+
+        <PreferencesCard
+          initialFavoriteTags={user.favoriteTags}
+          initialAllergenAvoidances={user.allergenAvoidances}
+          initialFavoriteCuisines={user.favoriteCuisines}
+        />
 
         <DeleteAccountCard
           username={user.username}

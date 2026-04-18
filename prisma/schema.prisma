@@ -155,6 +155,18 @@ model User {
   // NEXT_LOCALE + bu alan birlikte çalışır: login'de cookie bu değerle
   // sync'lenir, anonymous user ise sadece cookie kullanılır.
   locale           String    @default("tr") @db.VarChar(5)
+  // Kişiselleştirme tercihleri — /ayarlar/tercihler'den kullanıcı seçer,
+  // ileride feed/discover filtering'de kullanılacak (MVP bu turda yalnızca
+  // saklama + UI; filtering sonraki pass).
+  //   - favoriteTags: Tag.slug string'leri ("vejetaryen", "dusuk-kalorili" vs.).
+  //     Kullanıcı "bu etiketli tarifleri daha çok görmek isterim" der.
+  //   - allergenAvoidances: kaçınılan alerjenler. Listing/detail'de uyarı
+  //     gösterebiliriz, filtering'de default noindex-allergens olarak uygula.
+  //   - favoriteCuisines: cuisine kod listesi (24 kodtan — tr/it/fr vs.).
+  //     "Ağırlıklı Türk + İtalyan görmek isterim" gibi.
+  favoriteTags       String[]    @default([])
+  allergenAvoidances Allergen[]  @default([])
+  favoriteCuisines   String[]    @default([])
   createdAt        DateTime  @default(now())
   updatedAt        DateTime  @updatedAt
 

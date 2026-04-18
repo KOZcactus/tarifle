@@ -1,5 +1,5 @@
-◇ injected env (9) from .env.local // tip: ⌘ override existing { override: true }
-# 1200 recipe slugs (as of 2026-04-18)
+◇ injected env (9) from .env.local // tip: ◈ secrets for agents [www.dotenvx.com]
+# 1301 recipe slugs (as of 2026-04-18)
 
 acai-bowl
 acaraje
@@ -21,10 +21,12 @@ ajvar
 akcaabat-koftesi
 akdeniz-salatasi
 albondigas
+alfajores-peruanos
 ali-nazik
 ali-nazik-gaziantep-usulu
 aloo-gobi
 altin-sut
+amasra-peynirli-misir-tavasi
 amasya-baklali-dolma
 amasya-coregi
 americano
@@ -35,6 +37,7 @@ ananasli-smoothie
 antalya-hibes
 antep-katikli-dolma
 antep-katmeri
+anzac-biscuits
 aperol-spritz
 arabasi-corbasi-yozgat-usulu
 arabasi-hamuru
@@ -42,6 +45,7 @@ arancini
 arap-asi-corbasi
 arepa
 arequipe-flan
+armutlu-irmik-tatlisi-bilecik-usulu
 armutlu-zencefil-smoothie
 arnold-palmer
 arpa-sehriye-salatasi
@@ -50,14 +54,17 @@ arpa-sehriyeli-pilav
 arroz-carreteiro
 arroz-con-leche-cubano
 arroz-con-pollo-cubano
+arroz-con-pollo-peru-usulu
 arroz-congri
 artsoppa
 artsoppa-isvec-usulu
+aside-mugla-usulu
 aside-tatlisi-erzurum-usulu
 asma-yapragi-corbasi-tokat-usulu
 asure
 atom-mezesi-bodrum-usulu
 atom-sos
+australian-meat-pie
 avgolemono-corbasi
 aviation
 avocado-smash-toast-australian
@@ -72,6 +79,8 @@ ayva-tatlisi
 babagannus
 babagannus-gaziantep-usulu
 babgulyas
+badem-ezmesi-edirne-usulu
+bafra-nokulu
 bafra-pidesi-samsun-usulu
 baghrir
 baharatli-misir-bardak
@@ -110,6 +119,7 @@ beyti-sarma
 bhel-puri
 biang-biang-mian
 biberiyeli-mercimek-corbasi
+biberli-ekmek-antakya-usulu
 biberli-ekmek-hatay-usulu
 bibimbap
 bici-bici
@@ -130,6 +140,7 @@ bogurtlenli-chia-smoothie
 bolu-mengen-pilavi
 borscht
 borulce-eksilemesi
+borulce-ezmesi-aydin-usulu
 borulce-salatasi
 borulceli-domates-yahnisi
 bossam
@@ -180,13 +191,19 @@ caprese-salatasi
 carne-asada
 carne-de-panela
 cassoulet
+causa-limena
 cerkez-tavugu
 ceviche
+cevizli-biber-ezmesi-hatay-usulu
+cevizli-biberli-dip-antep-usulu
 cevizli-cokelek-ezmesi
 cevizli-corek-trakya-usulu
+cevizli-ekmek-mengen-usulu
 cevizli-kabak-ezmesi
 cevizli-medovik
 cevizli-sucuk
+cevizli-sutlu-kadayif-amasya-usulu
+cevizli-zahter-salatasi-hatay-usulu
 cha-gio
 chai-latte
 champurrado
@@ -227,6 +244,9 @@ clam-chowder
 clover-club
 coban-salatasi
 cocada
+cokelekli-bazlama-sandvic-sivas-usulu
+cokelekli-corek-tokat-firin
+cokelekli-katmer-tokat-usulu
 cokertme-kebabi
 cokertme-kebabi-mugla-usulu
 coleslaw
@@ -235,6 +255,7 @@ cong-you-bing
 congee
 coq-au-vin
 corn-dog
+cornish-pasty
 corpse-reviver-no-2
 cortado
 corum-keskek
@@ -259,6 +280,7 @@ dakgalbi
 dakos
 dal-makhani
 damla-sakizli-sicak-cikolata
+damper
 dan-dan-noodle
 dana-lo-mein
 dana-solyanka
@@ -275,9 +297,11 @@ deviled-eggs
 dibek-kahvesi
 diyarbakir-lebeniyesi
 diyarbakir-meftune
+dobos-torta
 dobos-torte
 doenjang-jjigae
 dolanger-tatlisi-sanliurfa-usulu
+dolaz-ordu-usulu
 domates-corbasi
 domatesli-makarna
 dorayaki
@@ -296,6 +320,8 @@ eggs-benedict
 ekmek-kadayifi
 eksili-dolma
 eksili-kofte
+eksili-kofte-malatya-usulu
+eksili-kuru-dolma-gaziantep-usulu
 eksili-ufak-kofte-gaziantep-usulu
 elazig-harput-koftesi
 elma-cipsi
@@ -309,6 +335,7 @@ empanada
 enchiladas-rojas
 enerji-toplari
 ensalada-de-aguacate
+erikli-eksili-tavuk-bursa-usulu
 eriste-corbasi-kastamonu-usulu
 erzincan-kesme-corbasi
 erzurum-ayran-asi
@@ -325,6 +352,7 @@ etli-ekmek-konya-usulu
 etli-guvec
 etli-kuru-fasulye
 etli-nohut
+eton-mess
 ezogelin-corbasi
 fabada-asturiana
 fagioli-all-uccelletto
@@ -348,6 +376,7 @@ filtre-kahve
 findikli-sicak-cikolata
 firik-pilavi
 firik-pilavi-gaziantep-usulu
+firikli-kabakli-pilav-mardin-usulu
 firin-baharatli-tofu-kupleri
 firin-elmali-granola-bar
 firin-somon-brokoli-kasesi
@@ -368,6 +397,7 @@ firinlanmis-kabak-cekirdegi
 firinlanmis-yulaf
 fiskefrikadeller
 fistik-ezmeli-muz-smoothie
+fistikli-kuru-baklava-gaziantep-usulu
 flan-cubano
 flan-de-coco-cubano
 flat-white
@@ -393,6 +423,7 @@ gigantes-plaki
 gilda-pintxos
 gin-tonik
 giresun-fasulye-tursusu-kavurmasi
+girit-ezmesi-ege-usulu
 girit-ezmesi-izmir-usulu
 gnocchi-alla-sorrentina
 gobete-eskisehir-usulu
@@ -424,15 +455,22 @@ hamsikoy-sutlaci
 hamsili-ekmek-rize-usulu
 hamsili-pilav
 hamsili-pilav-artvin-usulu
+hamsili-pilav-rize-usulu
 har-gow
 hardalli-artsoppa
 harira
+harire-mardin-usulu
 harire-tatlisi-mardin-usulu
 harissa-yogurt-sos
+harput-kofte-elazig-usulu
 hasanpasa-koftesi
+hashasli-gozleme-kutahya-usulu
+hashasli-kaymakli-ekmek-afyon-usulu
+hashasli-mercimekli-bukme-afyon-usulu
 haside-tatlisi
 hasir-kunefe
 hasselback-potatis
+hasuta-erzurum-usulu
 hatay-biberli-ekmek
 hatay-kagit-kebabi
 hatay-kaytaz-boregi
@@ -440,6 +478,8 @@ hatay-oruk
 hatay-tepsi-kebabi
 havuc-zencefil-corbasi
 haydari
+hedgehog-slice
+helle-tatlisi-tokat-usulu
 hellimli-salata
 hibiscus-iced-tea
 hibiskus-serbeti
@@ -470,11 +510,15 @@ igdir-bozbas
 ihlamur
 ihlamur-balli-sicak-icecek
 imam-bayildi
+incir-dolmasi-aydin-usulu
+incir-uyutmasi-balikesir-usulu
 irmik-helvasi
 irmik-helvasi-maras-dondurmali
 isirgan-corbasi-ordu-usulu
 iskembe-corbasi
 iskender-kebap
+iskilip-dolmasi-corum-usulu
+islama-kofte-sakarya-usulu
 ispanak-yemegi
 ispanakli-borek
 ispanakli-muzlu-smoothie
@@ -482,6 +526,7 @@ izmir-boyoz
 izmir-kofte
 jalapeno-poppers
 jambalaya
+janssons-frestelse
 japchae
 jeyuk-bokkeum
 jjajangmyeon
@@ -490,17 +535,20 @@ kaak-bi-simsim
 kabak-bastisi-gaziantep-usulu
 kabak-boranisi-gaziantep-usulu
 kabak-cicegi-dolmasi
+kabak-cicegi-salatasi-mugla-usulu
 kabak-cipsi
 kabak-dolmasi
 kabak-kalye
 kabak-mucver-lokmalari
 kabak-mucveri
 kabak-tatlisi
+kabakli-kombe-nevsehir-usulu
 kaburga-dolmasi
 kadayif-tatlisi
 kagit-kebabi
 kai-jeow
 kai-yang
+kakaolu-csiga
 kakaolu-enerji-lokmalari
 kakaolu-muzlu-protein-shake
 kakaolu-protein-shake
@@ -509,6 +557,7 @@ kakuleli-sicak-elma-suyu
 kakuleli-turk-kahvesi
 kanelbullar
 kanelbulle
+kapali-pide-carsamba-usulu
 kapuska
 karaage
 karadeniz-hamsi-kayganasi
@@ -527,8 +576,11 @@ kastamonu-banduma
 katmer
 katsu-sando
 kavrulmus-hojicha-latte
+kavrulmus-patlican-salatasi-urfa-usulu
 kavunlu-naneli-smoothie
 kavurmali-yumurta
+kaygana-rize-usulu
+kayisi-kavurmasi-malatya-usulu
 kayisili-kefir-smoothie
 kaymakli-bazlama-durumu-afyon-usulu
 kaymakli-kayisi-tatlisi
@@ -548,6 +600,7 @@ kemalpasa-tatlisi
 keskek-aydin-usulu
 keskul
 kesme-corbasi-sivas-usulu
+kesme-kete-erzincan-firin
 kete-erzincan-usulu
 key-lime-pie
 khanom-krok
@@ -580,6 +633,7 @@ kongguksu
 kongnamul-muchim
 konya-bamya-corbasi
 konya-tiridi
+kopytka-polonya-usulu
 korean-fried-chicken
 korokke
 koshari
@@ -598,6 +652,7 @@ kunefe
 kung-pao-tavuk
 kursun-asi
 kuru-bakla-yemegi
+kuru-borulce-salatasi-aydin-usulu
 kuru-borulce-yemegi
 kuru-dolma
 kuru-domatesli-beyaz-fasulye-dip
@@ -631,6 +686,8 @@ leek-and-potato-soup-british
 licuado-de-papaya
 limonana
 limonata
+limonlu-enginar-salatasi-ege-usulu
+limonlu-humus-mersin-usulu
 limonlu-posset
 limonlu-zencefil-cayi
 lohikeitto
@@ -640,6 +697,7 @@ london-fog
 lor-mantisi
 lorlu-biber-kavurmasi
 lorlu-biberli-krep
+lorlu-kete-erzurum-usulu
 lorlu-yumurta-muffin
 loubia
 loukoumades
@@ -650,11 +708,13 @@ madartej
 madeleine
 madimak-yemegi
 maduros
+mafis-antalya-usulu
 magrip-nane-cayi
 magrip-saksukasi
 mahluta-corbasi-antakya-usulu
 mahluta-corbasi-hatay-usulu
 mai-tai
+makowiec-polonya-usulu
 makroudh
 malatya-kayisi-dolmasi
 manakish
@@ -688,11 +748,13 @@ massaman-curry
 matcha-latte
 matcha-smoothie
 matchali-muzlu-smoothie
+mazarin-kekleri
 mechoui
 mechouia-salatasi
 medianoche
 medianoche-sandwich
 medovik
+meggyes-retes
 meggyleves
 meksika-sicak-cikolatasi
 melomakarona
@@ -714,6 +776,7 @@ mirra
 misir-corbasi
 misir-unlu-balik-koftesi
 misir-unlu-pankek-rize-usulu
+misir-unlu-yagli-ekmek-giresun-usulu
 miso-corbasi
 misto-quente
 misugaru-shake
@@ -744,6 +807,7 @@ muzlu-milkshake
 muzlu-tahinli-shake
 muzlu-tahinli-smoothie
 naan
+nalesniki-z-serem
 nam-khao-tod
 naneli-limonata
 negroni
@@ -751,12 +815,14 @@ negroni-sbagliato
 nevzine-kayseri-usulu
 nevzine-tatlisi
 nicoise-salatasi
+nigde-sogurmeli-yumurta
 nikujaga
 nohut-salatasi
 nohut-unlu-protein-krep
 nohutlu-ispanak
 nohutlu-pazi
 nohutlu-topalak
+nohutlu-yahni-konya-usulu
 nom-hoa-chuoi
 nom-yen
 nuoc-cham
@@ -777,6 +843,7 @@ orman-meyveli-kefir-smoothie
 orman-meyveli-protein-shake
 osso-buco
 ostkaka
+ostkaka-smaland-usulu
 ovmac-corbasi-konya-usulu
 oyakodon
 pacanga-boregi
@@ -786,6 +853,7 @@ pad-thai
 pakora
 palak-paneer
 paloma
+paluze-hatay-usulu
 paluze-kilis-usulu
 pamonha
 pan-con-bistec
@@ -813,17 +881,20 @@ patates-oturtma
 patates-rosti-lokmalari
 patates-salatasi
 patatesli-borek
+patatesli-bukme-afyon-usulu
 patatesli-yumurta
 patatesli-yumurta-tavasi-erzurum-usulu
 patila
 patlican-musakka
 patlican-salatasi
 patlican-sogurme-sanliurfa-usulu
+patlicanli-yogurtlama-trakya-usulu
 pavlova
 pazi-diblesi
 pazi-kavurmasi
 peanut-butter-milkshake
 pekin-ordegi
+pekmezli-ayva-tatlisi-nevsehir-usulu
 pelmeni
 penicillin-kokteyl
 pepecura
@@ -831,7 +902,10 @@ perde-pilavi
 perde-pilavi-siirt-usulu
 pestil-kavurmasi
 pesto-sos
+peynir-ezmesi-canakkale-usulu
+peynir-helvasi-canakkale-usulu
 peynir-toplari
+peynirli-biber-kavurma-edirne-usulu
 peynirli-gozleme
 peynirli-kraker
 peynirli-mantar-dolmasi
@@ -863,12 +937,14 @@ platanos-maduros-fritos
 poha
 ponzu-sos
 porkolt
+portakal-salatasi-antalya-usulu
 portakalli-havuc-suyu
 portakalli-kladdkaka
 portakalli-sicak-cikolata
 portokalopita
 pot-au-feu
 pozole-rojo
+prinsesstarta
 profiterol
 pulled-pork-sandvic
 pumpkin-soup-australian
@@ -902,6 +978,7 @@ ropa-vieja
 rosto-kofte
 sac-arasi
 sac-kavurma
+sac-kavurma-bayburt-usulu
 safranli-risotto
 saganaki
 sahanda-mihlama
@@ -930,6 +1007,8 @@ sangria
 satay-dip
 satay-soslu-tavuk
 sausage-roll-australian
+sausage-rolls
+sausage-sizzle
 sazerac
 sbiten
 scallion-pancake
@@ -971,6 +1050,7 @@ sigeumchi-namul
 siirt-buryan-kebabi
 siirt-kitel
 sikhye
+silor-ardahan-usulu
 simit-kebabi-gaziantep-usulu
 simit-tost
 sinh-to-bo
@@ -1008,6 +1088,7 @@ soya-sutu-cin-usulu
 spaghetti-bolognese
 spaghetti-carbonara
 spanakopita
+sticky-toffee-pudding
 stifado
 su-boregi
 sua-ngo
@@ -1015,10 +1096,12 @@ sucuklu-menemen
 sucuklu-yumurta
 sujeonggwa
 sumak-serbeti
+sumakli-kuru-cacik-gaziantep-usulu
 summer-pudding
 sundubu-jjigae
 suppli
 surk-ezmesi-hatay-usulu
+susamli-katikli-corek
 susamli-kraker
 susamli-tofu-nugget
 sutlac
@@ -1026,6 +1109,7 @@ sutlu-turk-kahvesi
 syrniki
 tabbouleh
 tacos-al-pastor
+tacu-tacu
 tahin-pekmezli-pankek
 tahin-pekmezli-yulaf
 tahin-sos
@@ -1045,16 +1129,19 @@ tarcinli-sicak-elma
 tarhana-corbasi
 tarhana-corbasi-kahramanmaras-usulu
 tarka-dal
+tarsus-sikmasi
 tarta-de-santiago
 tartar-sos
 tarte-tatin
 tas-kebabi
 tatar-boregi-eskisehir-usulu
 tatli-eksi-tavuk
+tava-coregi-beypazari-usulu
 tavali-katmer-kayseri-usulu
 tavuk-doner
 tavuk-gogsu
 tavuk-kapama
+tavuk-kapama-edirne-usulu
 tavuk-katsu
 tavuk-shawarma
 tavuk-sis
@@ -1078,6 +1165,7 @@ taze-kekikli-lorlu-omlet-ege-usulu
 tea-egg
 tepsi-kebabi
 tepsi-orugu
+tepsi-orugu-adiyaman-usulu
 tereyagli-bezelye-ezmesi
 teriyaki-tavuk
 thit-kho
@@ -1090,6 +1178,7 @@ tod-mun-pla
 tofulu-kabak-noodle
 tokat-bat
 tokat-bati
+tokat-cemeni
 tokat-kebabi
 tokat-yapragi-dolmasi
 tom-kha-gai
@@ -1098,6 +1187,7 @@ tonkatsu
 tonkatsu-sos
 torrijas
 tortilla-espanola
+tosca-kaka
 tostones
 tostones-con-mojo
 tostones-rellenos
@@ -1109,13 +1199,16 @@ toyga-corbasi-corum-usulu
 trabzon-kayganasi
 trabzon-misir-corbasi
 trabzon-vakfikebir-ekmegi
+treacle-tart
 trilece
 tropik-smoothie
 tteokbokki
 tulumba-tatlisi
 turk-kahvesi
 turlu
+turos-batyu
 turos-csusza
+turos-lepeny
 turp-otu-kavurmasi
 tutmac-corbasi
 tutmac-corbasi-kayseri-usulu
@@ -1130,10 +1223,12 @@ urfa-agzi-acik
 urfa-bostana
 uunijuusto
 uzum-suyu
+uzumlu-pelte-tokat-usulu
 vaca-frita
 vaca-frita-cubana
 van-ayran-asi
 van-kavut-kahvaltisi
+van-murtuga
 van-otlu-peynirli-gozleme
 vanilla-slice-australian
 vareniki
@@ -1155,6 +1250,7 @@ white-bean-shakshuka
 wonton-corbasi
 xiao-long-bao
 yaban-mersinli-lor-smoothie
+yag-somunu-konya-usulu
 yakisoba
 yakitori
 yam-woon-sen
@@ -1165,6 +1261,7 @@ yesil-mercimek-yemegi
 yesil-smoothie
 yesil-tay-korisi
 yogurtlu-chia-protein-kup
+yogurtlu-semizotu-ezmesi-denizli-usulu
 yogurtlu-semizotu-salatasi
 yu-xiang-qiezi
 yuca-con-mojo
@@ -1174,12 +1271,14 @@ yulaf-lapasi
 yulafli-granola-bar
 yulafli-hurma-smoothie
 yumurtali-ekmek
+yumurtali-ekmek-kapadokya-usulu
 yumurtali-ispanak-kavurmasi-karadeniz-usulu
 yumurtali-ispanak-tava
 yuvalama-corbasi
 zaalouk
 zahter-salatasi-hatay-usulu
 zahterli-zeytin-salatasi-hatay-usulu
+zapiekanka
 zaru-soba
 zencefil-cayi
 zencefilli-bal-limon-cayi
@@ -1187,11 +1286,13 @@ zencefilli-ihlamur
 zencefilli-limonata
 zenzai
 zerde-edirne-usulu
+zerde-sakarya-usulu
 zerdecal-latte
 zerdecalli-altin-sut
 zeytin-piyazi-antalya-usulu
 zeytin-tapenade
 zeytinli-pogaca
+zeytinli-yaglama-ayvalik-usulu
 zeytinyagli-bamya
 zeytinyagli-barbunya
 zeytinyagli-enginar

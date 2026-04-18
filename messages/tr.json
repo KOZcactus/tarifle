@@ -85,6 +85,53 @@
         "default": "Bir hata oluştu.",
         "signInAfter": "Hesap oluşturuldu ama giriş yapılamadı. Lütfen giriş sayfasından dene."
       }
+    },
+    "forgotPassword": {
+      "pageTitle": "Şifreni sıfırla",
+      "pageSubtitle": "E-posta adresini gir, sana tek kullanımlık bir sıfırlama bağlantısı gönderelim.",
+      "errorDefault": "Bir hata oluştu.",
+      "emailLabel": "E-posta adresin",
+      "emailPlaceholder": "ornek@email.com",
+      "emailHelper": "Hesabına kayıtlı e-posta adresine bir sıfırlama bağlantısı göndereceğiz.",
+      "submit": "Sıfırlama bağlantısı gönder",
+      "submitting": "Gönderiliyor...",
+      "rememberQuestion": "Şifreni hatırladın mı?",
+      "loginLink": "Giriş yap",
+      "sentTitle": "Bağlantı gönderildi",
+      "sentBody": "<email>{email}</email> adresine bir mail gönderdik. Bağlantı 1 saat geçerli. Görünmüyorsa spam/önemsiz klasörünü de kontrol et.",
+      "sentHint": "Mail gelmediyse: adres bu sitede kayıtlı olmayabilir ya da hesabın Google ile bağlı olabilir — giriş sayfasından Google ile dene.",
+      "backToLogin": "Giriş sayfasına dön",
+      "tryDifferent": "Farklı adres dene"
+    },
+    "resetPassword": {
+      "pageTitle": "Yeni şifreni belirle",
+      "subtitleValid": "Bağlantın aktif. Aşağıdan yeni şifreni ayarlayabilirsin.",
+      "subtitleInvalid": "Bu bağlantı çalışmıyor — aşağıdan yeni bir tane isteyebilirsin.",
+      "invalidTitle": "Bağlantı geçersiz",
+      "invalidExpired": "Sıfırlama bağlantısının süresi dolmuş. Yeni bir tane iste, 1 saat içinde kullanabilirsin.",
+      "invalidOther": "Bu bağlantı geçersiz. Daha önce kullanılmış ya da hatalı kopyalanmış olabilir.",
+      "requestNew": "Yeni bağlantı iste",
+      "loginPage": "Giriş sayfası",
+      "errorDefault": "Bir hata oluştu.",
+      "newPasswordLabel": "Yeni şifre",
+      "newPasswordPlaceholder": "En az 8 karakter",
+      "confirmLabel": "Yeni şifre (tekrar)",
+      "confirmPlaceholder": "••••••••",
+      "submit": "Şifremi güncelle",
+      "submitting": "Güncelleniyor...",
+      "doneTitle": "Şifren güncellendi",
+      "doneBody": "Yeni şifrenle giriş yapabilirsin. Giriş sayfasına yönlendiriyoruz…",
+      "brokenLinkQuestion": "Bağlantı çalışmıyor mu?"
+    },
+    "verifyEmail": {
+      "successTitle": "E-postan doğrulandı",
+      "successBody": "Artık <email>{email}</email> adresi hesabına bağlı. \"Doğrulanmış kullanıcı\" rozetin profilinde görünecek.",
+      "homeLink": "Ana sayfaya dön",
+      "failTitle": "Doğrulama başarısız",
+      "failExpired": "Bu doğrulama bağlantısının süresi dolmuş. Profilinden yenisini iste.",
+      "failOther": "Bu doğrulama bağlantısı geçersiz. Daha önce kullanılmış ya da hatalı olabilir.",
+      "loginLink": "Giriş yap",
+      "homeLinkShort": "Ana sayfa"
     }
   },
   "allergens": {

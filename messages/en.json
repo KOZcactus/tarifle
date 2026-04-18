@@ -85,6 +85,53 @@
         "default": "Something went wrong.",
         "signInAfter": "Account created but sign-in failed. Please sign in from the login page."
       }
+    },
+    "forgotPassword": {
+      "pageTitle": "Reset your password",
+      "pageSubtitle": "Enter your email and we'll send you a single-use reset link.",
+      "errorDefault": "Something went wrong.",
+      "emailLabel": "Your email",
+      "emailPlaceholder": "you@example.com",
+      "emailHelper": "We'll send a reset link to the email registered on your account.",
+      "submit": "Send reset link",
+      "submitting": "Sending...",
+      "rememberQuestion": "Remembered your password?",
+      "loginLink": "Sign in",
+      "sentTitle": "Link sent",
+      "sentBody": "We sent an email to <email>{email}</email>. The link is valid for 1 hour. If you don't see it, check your spam or junk folder.",
+      "sentHint": "Still no email? The address may not be registered here, or your account may be linked to Google — try \"Sign in with Google\" from the login page.",
+      "backToLogin": "Back to sign in",
+      "tryDifferent": "Try a different email"
+    },
+    "resetPassword": {
+      "pageTitle": "Set a new password",
+      "subtitleValid": "Your link is active. Set your new password below.",
+      "subtitleInvalid": "This link is no longer valid — you can request a new one below.",
+      "invalidTitle": "Link no longer valid",
+      "invalidExpired": "Your reset link has expired. Request a new one and use it within 1 hour.",
+      "invalidOther": "This link is invalid. It may have been used already or copied incorrectly.",
+      "requestNew": "Request a new link",
+      "loginPage": "Sign in page",
+      "errorDefault": "Something went wrong.",
+      "newPasswordLabel": "New password",
+      "newPasswordPlaceholder": "At least 8 characters",
+      "confirmLabel": "New password (repeat)",
+      "confirmPlaceholder": "••••••••",
+      "submit": "Update password",
+      "submitting": "Updating...",
+      "doneTitle": "Password updated",
+      "doneBody": "You can now sign in with your new password. Redirecting to the sign-in page…",
+      "brokenLinkQuestion": "Link not working?"
+    },
+    "verifyEmail": {
+      "successTitle": "Your email is verified",
+      "successBody": "<email>{email}</email> is now linked to your account. The \"Verified user\" badge will show on your profile.",
+      "homeLink": "Back to home",
+      "failTitle": "Verification failed",
+      "failExpired": "This verification link has expired. Request a new one from your profile.",
+      "failOther": "This verification link is invalid. It may have been used already or copied incorrectly.",
+      "loginLink": "Sign in",
+      "homeLinkShort": "Home"
     }
   },
   "allergens": {

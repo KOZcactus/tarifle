@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { auth } from "@/lib/auth";
 import { ForgotPasswordForm } from "@/components/auth/ForgotPasswordForm";
 
@@ -11,7 +12,10 @@ export const metadata: Metadata = {
 };
 
 export default async function ForgotPasswordPage() {
-  const session = await auth();
+  const [session, t] = await Promise.all([
+    auth(),
+    getTranslations("auth.forgotPassword"),
+  ]);
   // Already-signed-in users don't need this flow — the change-password form
   // on /ayarlar is the right place for them.
   if (session) redirect("/ayarlar");
@@ -21,12 +25,9 @@ export default async function ForgotPasswordPage() {
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
           <h1 className="font-heading text-3xl font-bold text-text">
-            Şifreni sıfırla
+            {t("pageTitle")}
           </h1>
-          <p className="mt-2 text-text-muted">
-            E-posta adresini gir, sana tek kullanımlık bir sıfırlama bağlantısı
-            gönderelim.
-          </p>
+          <p className="mt-2 text-text-muted">{t("pageSubtitle")}</p>
         </div>
         <ForgotPasswordForm />
       </div>

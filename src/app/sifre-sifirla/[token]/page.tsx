@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { prisma } from "@/lib/prisma";
 import { auth } from "@/lib/auth";
 import { ResetPasswordForm } from "@/components/auth/ResetPasswordForm";
@@ -38,7 +39,10 @@ function classifyToken(
 export default async function ResetPasswordPage({ params }: PageProps) {
   // If someone is already signed in, push them to /ayarlar instead — the
   // in-product change-password form is safer (mevcut şifre required).
-  const session = await auth();
+  const [session, t] = await Promise.all([
+    auth(),
+    getTranslations("auth.resetPassword"),
+  ]);
   if (session) redirect("/ayarlar");
 
   const { token: rawToken } = await params;
@@ -55,12 +59,10 @@ export default async function ResetPasswordPage({ params }: PageProps) {
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
           <h1 className="font-heading text-3xl font-bold text-text">
-            Yeni şifreni belirle
+            {t("pageTitle")}
           </h1>
           <p className="mt-2 text-text-muted">
-            {valid
-              ? "Bağlantın aktif. Aşağıdan yeni şifreni ayarlayabilirsin."
-              : "Bu bağlantı çalışmıyor — aşağıdan yeni bir tane isteyebilirsin."}
+            {valid ? t("subtitleValid") : t("subtitleInvalid")}
           </p>
         </div>
         {valid ? (
@@ -71,25 +73,23 @@ export default async function ResetPasswordPage({ params }: PageProps) {
               ⚠
             </div>
             <h2 className="font-heading text-lg font-bold text-text">
-              Bağlantı geçersiz
+              {t("invalidTitle")}
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-text-muted">
-              {expired
-                ? "Sıfırlama bağlantısının süresi dolmuş. Yeni bir tane iste, 1 saat içinde kullanabilirsin."
-                : "Bu bağlantı geçersiz. Daha önce kullanılmış ya da hatalı kopyalanmış olabilir."}
+              {expired ? t("invalidExpired") : t("invalidOther")}
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
               <Link
                 href="/sifremi-unuttum"
                 className="rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
               >
-                Yeni bağlantı iste
+                {t("requestNew")}
               </Link>
               <Link
                 href="/giris"
                 className="rounded-lg border border-border px-6 py-2.5 text-sm font-medium text-text-muted hover:text-text"
               >
-                Giriş sayfası
+                {t("loginPage")}
               </Link>
             </div>
           </div>

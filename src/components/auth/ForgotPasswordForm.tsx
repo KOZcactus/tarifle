@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { requestPasswordResetAction } from "@/lib/actions/auth";
 
 /**
@@ -11,6 +12,7 @@ import { requestPasswordResetAction } from "@/lib/actions/auth";
  * registered. The server action enforces the same non-leaky contract.
  */
 export function ForgotPasswordForm() {
+  const t = useTranslations("auth.forgotPassword");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [submittedEmail, setSubmittedEmail] = useState<string | null>(null);
@@ -27,7 +29,7 @@ export function ForgotPasswordForm() {
     setLoading(false);
 
     if (!result.success) {
-      setError(result.error ?? "Bir hata oluştu.");
+      setError(result.error ?? t("errorDefault"));
       return;
     }
     setSubmittedEmail(email);
@@ -40,30 +42,27 @@ export function ForgotPasswordForm() {
           ✉️
         </div>
         <h2 className="font-heading text-lg font-bold text-text">
-          Bağlantı gönderildi
+          {t("sentTitle")}
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-text-muted">
-          <strong className="text-text">{submittedEmail}</strong> adresine bir
-          mail gönderdik. Bağlantı 1 saat geçerli. Görünmüyorsa spam/önemsiz
-          klasörünü de kontrol et.
+          {t.rich("sentBody", {
+            email: () => <strong className="text-text">{submittedEmail}</strong>,
+          })}
         </p>
-        <p className="mt-3 text-xs text-text-muted">
-          Mail gelmediyse: adres bu sitede kayıtlı olmayabilir ya da hesabın
-          Google ile bağlı olabilir — giriş sayfasından Google ile dene.
-        </p>
+        <p className="mt-3 text-xs text-text-muted">{t("sentHint")}</p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
           <Link
             href="/giris"
             className="rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
           >
-            Giriş sayfasına dön
+            {t("backToLogin")}
           </Link>
           <button
             type="button"
             onClick={() => setSubmittedEmail(null)}
             className="rounded-lg border border-border px-6 py-2.5 text-sm font-medium text-text-muted hover:text-text"
           >
-            Farklı adres dene
+            {t("tryDifferent")}
           </button>
         </div>
       </div>
@@ -87,7 +86,7 @@ export function ForgotPasswordForm() {
             htmlFor="email"
             className="mb-1.5 block text-sm font-medium text-text"
           >
-            E-posta adresin
+            {t("emailLabel")}
           </label>
           <input
             id="email"
@@ -97,12 +96,9 @@ export function ForgotPasswordForm() {
             autoComplete="email"
             autoFocus
             className="w-full rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-            placeholder="ornek@email.com"
+            placeholder={t("emailPlaceholder")}
           />
-          <p className="mt-2 text-xs text-text-muted">
-            Hesabına kayıtlı e-posta adresine bir sıfırlama bağlantısı
-            göndereceğiz.
-          </p>
+          <p className="mt-2 text-xs text-text-muted">{t("emailHelper")}</p>
         </div>
 
         <button
@@ -110,17 +106,17 @@ export function ForgotPasswordForm() {
           disabled={loading}
           className="w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-hover disabled:opacity-50"
         >
-          {loading ? "Gönderiliyor..." : "Sıfırlama bağlantısı gönder"}
+          {loading ? t("submitting") : t("submit")}
         </button>
       </form>
 
       <p className="mt-6 text-center text-sm text-text-muted">
-        Şifreni hatırladın mı?{" "}
+        {t("rememberQuestion")}{" "}
         <Link
           href="/giris"
           className="font-medium text-primary hover:text-primary-hover"
         >
-          Giriş yap
+          {t("loginLink")}
         </Link>
       </p>
     </div>

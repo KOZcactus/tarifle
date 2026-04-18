@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { consumeVerificationToken } from "@/lib/email/verification";
 
 export const metadata: Metadata = {
@@ -14,7 +15,10 @@ interface PageProps {
 
 export default async function VerifyPage({ params }: PageProps) {
   const { token } = await params;
-  const result = await consumeVerificationToken(token);
+  const [result, t] = await Promise.all([
+    consumeVerificationToken(token),
+    getTranslations("auth.verifyEmail"),
+  ]);
 
   return (
     <main className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-md flex-col items-center justify-center px-4 py-12 text-center">
@@ -24,16 +28,18 @@ export default async function VerifyPage({ params }: PageProps) {
             ✓
           </div>
           <h1 className="font-heading text-2xl font-bold text-text">
-            E-postan doğrulandı
+            {t("successTitle")}
           </h1>
           <p className="mt-2 text-text-muted">
-            Artık <strong>{result.email}</strong> adresi hesabına bağlı. &ldquo;Doğrulanmış kullanıcı&rdquo; rozetin profilinde görünecek.
+            {t.rich("successBody", {
+              email: () => <strong>{result.email}</strong>,
+            })}
           </p>
           <Link
             href="/"
             className="mt-6 inline-block rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
           >
-            Ana sayfaya dön
+            {t("homeLink")}
           </Link>
         </>
       ) : (
@@ -42,25 +48,23 @@ export default async function VerifyPage({ params }: PageProps) {
             ⚠
           </div>
           <h1 className="font-heading text-2xl font-bold text-text">
-            Doğrulama başarısız
+            {t("failTitle")}
           </h1>
           <p className="mt-2 text-text-muted">
-            {result.reason === "expired"
-              ? "Bu doğrulama bağlantısının süresi dolmuş. Profilinden yenisini iste."
-              : "Bu doğrulama bağlantısı geçersiz. Daha önce kullanılmış ya da hatalı olabilir."}
+            {result.reason === "expired" ? t("failExpired") : t("failOther")}
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/giris"
               className="rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
             >
-              Giriş yap
+              {t("loginLink")}
             </Link>
             <Link
               href="/"
               className="rounded-lg border border-border px-6 py-3 text-sm font-medium text-text-muted hover:text-text"
             >
-              Ana sayfa
+              {t("homeLinkShort")}
             </Link>
           </div>
         </>

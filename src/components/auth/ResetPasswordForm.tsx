@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { resetPasswordAction } from "@/lib/actions/auth";
 
 interface ResetPasswordFormProps {
@@ -17,6 +18,7 @@ interface ResetPasswordFormProps {
  * device" confusion).
  */
 export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
+  const t = useTranslations("auth.resetPassword");
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -36,7 +38,7 @@ export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
     setLoading(false);
 
     if (!result.success) {
-      setError(result.error ?? "Bir hata oluştu.");
+      setError(result.error ?? t("errorDefault"));
       return;
     }
     setDone(true);
@@ -54,10 +56,10 @@ export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
           ✓
         </div>
         <h2 className="font-heading text-lg font-bold text-text">
-          Şifren güncellendi
+          {t("doneTitle")}
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-text-muted">
-          Yeni şifrenle giriş yapabilirsin. Giriş sayfasına yönlendiriyoruz…
+          {t("doneBody")}
         </p>
       </div>
     );
@@ -80,7 +82,7 @@ export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
             htmlFor="newPassword"
             className="mb-1.5 block text-sm font-medium text-text"
           >
-            Yeni şifre
+            {t("newPasswordLabel")}
           </label>
           <input
             id="newPassword"
@@ -92,7 +94,7 @@ export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
             autoComplete="new-password"
             autoFocus
             className="w-full rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-            placeholder="En az 8 karakter"
+            placeholder={t("newPasswordPlaceholder")}
           />
         </div>
 
@@ -101,7 +103,7 @@ export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
             htmlFor="confirmPassword"
             className="mb-1.5 block text-sm font-medium text-text"
           >
-            Yeni şifre (tekrar)
+            {t("confirmLabel")}
           </label>
           <input
             id="confirmPassword"
@@ -112,7 +114,7 @@ export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
             maxLength={128}
             autoComplete="new-password"
             className="w-full rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-            placeholder="••••••••"
+            placeholder={t("confirmPlaceholder")}
           />
         </div>
 
@@ -121,17 +123,17 @@ export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
           disabled={loading}
           className="w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-hover disabled:opacity-50"
         >
-          {loading ? "Güncelleniyor..." : "Şifremi güncelle"}
+          {loading ? t("submitting") : t("submit")}
         </button>
       </form>
 
       <p className="mt-6 text-center text-xs text-text-muted">
-        Bağlantı çalışmıyor mu?{" "}
+        {t("brokenLinkQuestion")}{" "}
         <Link
           href="/sifremi-unuttum"
           className="font-medium text-primary hover:text-primary-hover"
         >
-          Yeni bağlantı iste
+          {t("requestNew")}
         </Link>
       </p>
     </div>

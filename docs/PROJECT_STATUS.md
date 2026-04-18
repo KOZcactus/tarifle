@@ -48,7 +48,7 @@ i18n soft launch'un kalan büyük parçaları. Toplam 8 commit: kullanıcı-tema
 1. **Tarif görselleri** — Eren `docs/IMAGE_GENERATION_PLAN.md` pilot 10 → 1100 batch. Zamanı var.
 2. **Codex batch 12+ yeni TR tarif** — Hamle A validator hazır, Eren'in makinesinde Codex2 yazacak. Translations dolu zorunlu (EN/DE title+description minimum).
 3. **Auto-migrate alternatif** — GitHub Actions / Neon direct URL. Manuel runbook şimdilik yeterli.
-4. **AI commentary EN cümle polish** — "From Turkish cuisine, You can make…" cuisine prefix + template adaptif. Scope-complex, ayrı sprint.
+4. ~~**AI commentary EN cümle polish**~~ ✅ — `applyCtx` helper (mid-sentence lowercase + tüm varyantlara prefix). 14 yeni test, canlı doğrulama PASS (18 Nis oturum 3).
 5. ~~**CI pre-push lint hook**~~ ✅ — `scripts/git-hooks/pre-push` + `npm run setup:hooks` (18 Nis oturum 3).
 
 **Şu an odak:** Codex Max batch 1 çıktısını bekliyoruz. Geldiğinde Claude import + audit + commit + push.

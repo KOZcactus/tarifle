@@ -28,6 +28,38 @@ function pick<T>(options: T[], seed: string): T {
   return options[index];
 }
 
+/**
+ * Lowercase the first character of `body` for the given locale. Preserves the
+ * English first-person pronoun "I " and "I'" (contractions like "I'll",
+ * "I've") since it stays capital mid-sentence. Uses `toLocaleLowerCase` so
+ * Turkish `İ` becomes `i` rather than the dotted-`i̇` default.
+ */
+export function lowercaseFirstLetterForLocale(body: string, locale: Locale): string {
+  if (body.length === 0) return body;
+  const first = body[0];
+  const next = body[1] ?? "";
+  if (locale === "en" && first === "I" && (next === "" || next === " " || next === "'")) {
+    return body;
+  }
+  return first.toLocaleLowerCase(locale) + body.slice(1);
+}
+
+/**
+ * Apply the cuisine/filter prefix `ctx` to a template body. Every variant gets
+ * the same prefix regardless of whether its source string uses `{ctx}` — this
+ * keeps cuisine/filter context visible even when `pick()` selects a variant
+ * the author didn't prefix. When `ctx` is empty, the body is returned as-is.
+ *
+ * When `ctx` is non-empty, the first letter of the body is lowercased (with
+ * the EN "I" pronoun exception) so the result reads as a natural mid-sentence
+ * continuation: "From Turkish cuisine, you can make…" not "…, You can make…".
+ */
+export function applyCtx(template: string, ctx: string, locale: Locale): string {
+  const body = template.startsWith("{ctx}") ? template.slice("{ctx}".length) : template;
+  if (!ctx) return body;
+  return ctx + lowercaseFirstLetterForLocale(body, locale);
+}
+
 function formatList(items: string[], t: Tns, max = 2): string {
   const trimmed = items.slice(0, max);
   if (items.length <= max) {
@@ -112,11 +144,11 @@ export async function buildOverallCommentary(
   };
 
   if (results.length === 0) {
-    const variants = rawVariant("empty");
-    const template = pick(variants, seed);
-    return template
-      .replace("{ctx}", ctx)
-      .replace("{count}", String(userIngredients.length));
+    const template = pick(rawVariant("empty"), seed);
+    return applyCtx(template, ctx, locale).replace(
+      "{count}",
+      String(userIngredients.length),
+    );
   }
 
   const perfect = results.filter((r) => r.missingIngredients.length === 0);
@@ -127,33 +159,31 @@ export async function buildOverallCommentary(
 
   if (perfect.length >= 3) {
     const template = pick(rawVariant("perfectMany"), seed);
-    return template.replace("{ctx}", ctx).replace("{count}", String(perfect.length));
+    return applyCtx(template, ctx, locale).replace("{count}", String(perfect.length));
   }
 
   if (perfect.length === 2) {
     const template = pick(rawVariant("perfect2"), seed);
-    return template
-      .replace("{ctx}", ctx)
+    return applyCtx(template, ctx, locale)
       .replace("{title1}", perfect[0].title)
       .replace("{title2}", perfect[1].title);
   }
 
   if (perfect.length === 1) {
     const template = pick(rawVariant("perfect1"), seed);
-    return template.replace("{ctx}", ctx).replace("{title}", perfect[0].title);
+    return applyCtx(template, ctx, locale).replace("{title}", perfect[0].title);
   }
 
   if (closeCall.length > 0) {
     const missing = formatList(top.missingIngredients, t);
     const template = pick(rawVariant("closeCall"), seed);
-    return template
-      .replace("{ctx}", ctx)
+    return applyCtx(template, ctx, locale)
       .replace("{title}", top.title)
       .replace("{missing}", missing);
   }
 
   const template = pick(rawVariant("fallback"), seed);
-  return template.replace("{ctx}", ctx).replace("{title}", top.title);
+  return applyCtx(template, ctx, locale).replace("{title}", top.title);
 }
 
 /**

@@ -289,6 +289,7 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🧪 Toplam **363 unit + 24 E2E yeşil**.
 - 🔍 **Deep DB audit** (`scripts/audit-deep.ts`) — 7 alan, ~40 kontrol, 1000 tarif kapsamlı doğruluk kontrolü. Alerjen false positive fix (pirinç unu, mısır unu, hindistan cevizi sütü exclusion). Yapısal sorun sıfır.
 - 🧪 **Pre-push lint hook** (18 Nis oturum 3) — `scripts/git-hooks/pre-push` push öncesi `npm run lint` koşar, CI lint error'larını yerelde yakalar. Aktivasyon: `npm run setup:hooks` (tek sefer). Bypass: `git push --no-verify`.
+- 🐛 **AI commentary ctx adaptif + EN capitalization** (18 Nis oturum 3) — `applyCtx(template, ctx, locale)` helper `commentary.ts`'de. İki bug: (1) EN'de `{ctx}` comma+space ile bitip body "You"/"No"/"Nothing" ile başlayınca "From Turkish cuisine, You can..." mid-sentence capital hatası — body'nin ilk harfi locale-aware lowercase (EN "I " pronoun istisnası korunur, TR `İ`→`i` doğru). (2) Her senaryonun 3 varyantından sadece 1'incisinde `{ctx}` placeholder vardı; seed 2/3 seçerse cuisine context kayboluyordu — `applyCtx` her varyanta prefix'i koşulsuz ön-ekler, mevcut `{ctx}` varsa strip eder. 14 yeni unit test (`ai-commentary-ctx.test.ts`), canlı doğrulama: EN `/ai-asistan` + Türk mutfak filtresi = "From Turkish cuisine, nice pantry…"; TR = "Türk mutfağından güzel bir dolap…".
 
 ## Ops tooling
 

@@ -1,6 +1,26 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 19 Nisan 2026 (oturum 5) — **Codex batch 13 dev + prod promoted (1200 → 1301 tarif canlı)**. Bu sefer encoding temiz geldi (brief §3 uyarısı işe yaradı). 8 CRITICAL allergen fix, audit-deep 0 CRITICAL. Ayrıca kategori listing sayfasına pagination eklendi (tatlılar 126 tarif → 11 sayfa), Mod B altyapısı (export-b + import-b shallow-merge) + batch 12/13 CSV'ler hazır. Tüm iş Vercel'e auto-deploy edildi.
+> Son güncelleme: 19 Nisan 2026 (oturum 6) — **Codex batch 14 dev + prod promoted (1301 → 1401 tarif canlı)**. Pagination counter yeniden tasarlandı ("X–Y gösteriliyor · toplam N tarif"). 6 UX copy iyileştirmesi (register faydaları, variation form, review empty state, cooking mode hint). Post-deploy spot check 0 regression.
+
+## 19 Nisan 2026 (oturum 6 — batch 14 prod + counter redesign + UX copy)
+
+- **Batch 14 seed (dev + prod, commit `1375359`)** — 100 tarif teslim, 74'ü dev'e yeni (26 mevcut slug skip), 100'ü prod'a yeni. Dev 1301→1375, prod 1301→1401. 67 TR + 33 int'l (12 cuisine'a yayılım: ma/br/me/cu/vn/ru/hu/gb/se/pe/au/pl). isFeatured 2. Encoding temiz (brief §3 uyarısı çalışıyor — 3. batch'te arka arkaya mojibake yok).
+- **audit-deep 6 CRITICAL → 0** — Tereyağı→SUT ×4 (kayisi-yahni-malatya, bubble-and-squeak, otlu-tava-artvin, sac-kavurma-rize), Yoğurt→SUT (mafis-tatlisi-balikesir), Hardal→HARDAL (welsh-rarebit). Trend: 16→8→6, brief §9 allergen checklist Codex'te etki gösteriyor.
+- **Prod promote** — migrate no-op, seed 100 yeni, fix-allergens Already clean: 6 (seed sync idempotent), audit PASS. Canlı: `tarifle.app/tarif/katikli-ekmek-kilis-usulu` → "Kilis Katıklı Ekmek | Tarifle" HTTP 200.
+- **Pagination counter redesign (commits `aabb1dc` → `c072560` → `c25b86f`)** — Önce "Gösteriliyor: X–Y / toplam Z tarif" resmi çıktı. Sonra minimalist "X–Y · Z tarif". Kerem "anlaşılmıyor" dedi, final: **"X–Y gösteriliyor · toplam N tarif"** (TR) / **"Showing X–Y · N recipes total"** (EN) — iki cümlecik, sol vurgulu sağ muted, tabular-nums. Ayrıca `/tarifler/[kategori]?page=2+` için `robots: noindex, follow` eklendi (duplicate content kaygısı).
+- **6 UX copy iyileştirmesi (commit `45f576a`)** —
+  - `/kayit` faydalar kartı: "Üye olunca neler yapabilirsin?" + 4 checkmark item (primary-tinted, kayıt formu üstünde)
+  - VariationForm: "Ne değiştirdin?" + "Sonuç nasıl oldu?" + somut placeholder örnekleri
+  - Review empty: "Denedin mi? Nasıl oldu, neyi değiştirdin?" (yıldız çağrısı yerine deneyim çerçevesi)
+  - Cooking mode: "Ekran uyanık kalır · adım adım rehber · dahili zamanlayıcı" hint butonun altında
+- **Post-deploy sağlık (oturum 5 sonu check)** — 14 prod route HTTP 200, 0 regression. JSON-LD Recipe schema (batch 13 tarifleri) + Sentry instrumentation + canonical+noindex mantığı + locale switch + 404 fallback hepsi temiz.
+
+**Prod durumu (oturum 6 sonu):**
+- **Prod: 1401 tarif, 0 CRITICAL, 24 cuisine kodu**
+- Canlı: `/tarif/katikli-ekmek-kilis-usulu` + `/tarif/kaygana-rize-usulu` + `/tarif/lalanga-trakya-usulu` hepsi 200
+- 508/508 test PASS, tsc clean, lint 0 error
+- Pagination counter yeni form tüm kategori sayfalarında canlı
+- `docs/translations-batch-14.csv` hazır (Mod B için — 100 slug, EN+DE ingredients/steps/tipNote/servingSuggestion eksik)
 
 ## 19 Nisan 2026 (oturum 5 — batch 13 prod + pagination + Mod B altyapı)
 

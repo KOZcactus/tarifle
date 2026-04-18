@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: 18 Nisan 2026 (oturum 2 — i18n derin tur, 10 commit, admin full kapatıldı: AiAssistantForm + ayarlar child + auth tail + admin tüm surface + email templates + generateMetadata + AI commentary)
+> Son güncelleme: 18 Nisan 2026 (oturum 2 — i18n kapanış, 13 commit: tüm surface locale-aware + tarif retrofit altyapısı + recipe-of-the-day commentary backend)
 
 ## İşaretler
 
@@ -216,6 +216,11 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
   - 13 component: AdminReportActions, AdminVariationActions, ReviewActions, ReviewModerationActions, CollectionActions, SuspendUserButton, CreateTagForm, CreateCategoryForm, TagRow, CategoryRow, AnnouncementForm, AnnouncementRow, InlineUserEdit, InlineRecipeEdit — useTranslations + prompt/confirm dialog'lar i18n
   - ~220 yeni key: admin.actions (paylaşılan approve/hide/reject/suspend + prompts + error'lar), admin.reports (reasons + statuses enum), admin.recipes + users + collections + categories + tags + announcements + moderationLog + recipeDetail + userDetail + inlineEdit
   - Bu ilaveyle admin i18n scope kapandı.
+- ✨ **Tarif çeviri retrofit altyapısı (commit `5eff26a` + `66eb7aa`)** — 1103 mevcut tarifin Recipe.translations JSONB null olduğu için EN user UI EN ama content TR fallback. Codex Max (ChatGPT) üzerinden LLM batch çeviri için file-based workflow:
+  - `scripts/export-recipes-for-translation.ts`: 20 kolonlu CSV üretir (slug + title + description + type + cuisine + difficulty + prep/cook/total minutes + serving + calories + ingredients full (amount+unit) + ingredient_count + steps full + step_count + allergens + tags + tipNote + servingSuggestion). Split: pilot 200 + 3×300. Prisma.DbNull filter.
+  - `scripts/import-translations.ts`: JSON parse + Zod schema (title 2-200 / description 20-400) + quality check: CRITICAL (özgün TR isim kaybı — 45 korumalı token, banned placeholder patterns "a delicious/traditional/must-try") + WARNING (<60 char thin) + INFO (Codex reported issues 6 enum). Apply gate: CRITICAL varsa --force. Dev/prod guard (--confirm-prod).
+  - 4 CSV export edildi (`docs/translations-batch-{0,1,2,3}.csv`). Codex Max chat instrüksiyonu ayrı hazırlandı. Pilot 200 çıktısı bekleniyor.
+- ✨ **Recipe-of-the-day commentary backend locale-aware (commit `82fe8f1`)** — homepage "Bugünün Tarifi" widget artık cookie-locale'a göre. `messages.dailyRecipe` (intros 5 variant + rules 13 id × 1-2 note + fallback). Sync + direct JSON import pattern (test-friendly — main commentary.ts getTranslations async pattern'ının sync analogu). RULES array id + matches, notes messages'tan. `pickDailyIntro(seed, locale)` + `buildCuratorNote(features, seed, locale)`. 18 unit test PASS. `src/lib/queries/recipe-of-the-day.ts` getLocale() + isValidLocale guard.
 
 ## Schema & DB
 

@@ -1,6 +1,6 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 18 Nisan 2026 (oturum 2) — i18n derin tur (10 commit, admin full kapatıldı): AiAssistantForm + ayarlar + auth tail + admin tüm surface + email templates + generateMetadata + commentary backend
+> Son güncelleme: 18 Nisan 2026 (oturum 2) — i18n kapanış (13 commit): tüm surface locale-aware + tarif çeviri retrofit altyapısı hazır (Codex Max pilot 200 bekleniyor) + recipe-of-the-day commentary locale-aware
 
 ## 18 Nisan 2026 (oturum 2 — i18n derin tur, 8 commit)
 
@@ -14,13 +14,15 @@ i18n soft launch'un kalan büyük parçaları. Toplam 8 commit: kullanıcı-tema
 - **`4dd34c5`** generateMetadata SEO — root layout + 14 page (10 public + 4 legal) cookie-based title/description + og:locale (tr_TR/en_US) + og:title; 26 static metadata export dönüştürüldü
 - **`32993ce`** AI commentary backend locale-aware — commentary.ts async, t.raw() variant array pattern; rule-based-provider getLocale() + isValidLocale guard; EN user "🧠 Assistant: From Turkish cuisine..." görür
 - **`5cd547a`** admin partial — PaginationBar async + /bildirim-gonder + BroadcastForm; admin.common + 10 sub-namespace şablonu hazır
-- **`baff3f7`** admin kalan — 10 liste page (etiketler, kategoriler, duyurular, raporlar, koleksiyonlar, moderasyon-logu, incelemeler, tarifler, kullanicilar + /bildirim-gonder) + 2 detay page (kullanicilar/[username] + tarifler/[slug]) + 13 component (AdminReport/VariationActions, Review/ReviewModerationActions, CollectionActions, SuspendUserButton, CreateTag/CategoryForm, TagRow/CategoryRow, AnnouncementForm/Row, InlineUserEdit, InlineRecipeEdit). ~220 yeni key: admin.actions (shared), admin.reports (reasons/statuses enum), admin.recipes + users + collections + categories + tags + announcements + moderationLog + recipeDetail + userDetail + inlineEdit
+- **`baff3f7`** admin kalan — 10 liste page (etiketler, kategoriler, duyurular, raporlar, koleksiyonlar, moderasyon-logu, incelemeler, tarifler, kullanicilar + /bildirim-gonder) + 2 detay page (kullanicilar/[username] + tarifler/[slug]) + 13 component (AdminReport/VariationActions, Review/ReviewModerationActions, CollectionActions, SuspendUserButton, CreateTag/CategoryForm, TagRow/CategoryRow, AnnouncementForm/Row, InlineUserEdit, InlineRecipeEdit). ~220 yeni key
+- **`5eff26a` + `66eb7aa`** tarif çeviri retrofit altyapısı — `scripts/export-recipes-for-translation.ts` (20 kolon CSV: slug/title/description/type/cuisine/difficulty/süreler/kalori/ingredients (full with amount+unit)/steps (full)/allergens/tags/tipNote/servingSuggestion, 4 parça: pilot 200 + 3×300) + `scripts/import-translations.ts` (Zod + quality check: özgün TR isim koruma + banned placeholder patterns + description thin warning + Codex issues forwarding + CRITICAL gate). Codex Max chat instruksiyonu hazır, pilot `docs/translations-batch-0.csv` bekleniyor.
+- **`82fe8f1`** recipe-of-the-day commentary backend locale-aware — homepage "Bugünün Tarifi" widget intro + curator note. messages.dailyRecipe (intros 5 variant + rules 13 id × 1-2 note + fallback). Sync + direct JSON import pattern (test-friendly). 18 test PASS.
 
-**Sonuç (i18n soft launch tamamı):** Kullanıcı-temas surface + admin paneli + backend (email, AI commentary) + SEO hepsi locale-aware. %100 EN/TR surface.
+**Sonuç (i18n soft launch tamamı):** Kullanıcı-temas surface + admin paneli + backend (email, AI commentary, recipe-of-the-day) + SEO hepsi locale-aware. %100 EN/TR surface.
 
-**Bekleyen i18n (düşük öncelik):**
-- 1103 tarif `Recipe.translations` JSONB null — LLM batch retrofit (ayrı iş)
-- `recipe-of-the-day-commentary.ts` (AI commentary'nin kardeşi, farklı caller, ayrı işlem)
+**Bekleyen i18n:**
+- **Tarif içerik retrofit:** Codex Max pilot 200 çıktısı (`docs/translations-batch-0.json`) bekleniyor. Ardından 3 tam parça (~900 tarif). Import + prod promote Claude'da. Altyapı hazır.
+- AI commentary EN cümle polish ("From Turkish cuisine, You can make..." → cuisine prefix + template adaptif — scope-complex, ayrı sprint)
 
 **Bekleyen büyük işler:**
 1. **Tarif görselleri** (Eren) — `docs/IMAGE_GENERATION_PLAN.md`, pilot 10 → 1100 batch. Zamanı var.

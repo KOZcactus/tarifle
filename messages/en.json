@@ -69,6 +69,11 @@
     "register": {
       "title": "Sign Up",
       "subtitle": "Create a free account and contribute recipes.",
+      "benefitsTitle": "What you can do as a member",
+      "benefit1": "Save recipes to collections, build a shopping list",
+      "benefit2": "Like, comment, and leave star ratings",
+      "benefit3": "Share your own adaptations and earn badges",
+      "benefit4": "Personal profile and notification preferences",
       "nameLabel": "Full Name",
       "namePlaceholder": "Your Full Name",
       "emailLabel": "Email",
@@ -1191,6 +1196,7 @@
   },
   "cookingMode": {
     "startButton": "Start Cooking Mode",
+    "startButtonHint": "Keeps the screen on · step-by-step guide · built-in timer",
     "modalAria": "Cooking mode: {title}",
     "closeAria": "Exit cooking mode",
     "stepDotAria": "Step {n}",
@@ -1291,10 +1297,10 @@
     "form": {
       "title": "Add Adaptation",
       "cancel": "Cancel",
-      "miniTitleLabel": "Title *",
-      "miniTitlePlaceholder": "e.g. Oven version, Vegan alternative...",
-      "descriptionLabel": "Description",
-      "descriptionPlaceholder": "A short description (optional)",
+      "miniTitleLabel": "What did you change? *",
+      "miniTitlePlaceholder": "e.g. Oven version · Vegan swap · Less sugar",
+      "descriptionLabel": "How did it turn out?",
+      "descriptionPlaceholder": "A few lines: texture, flavor, timing, who you'd recommend it to…",
       "descriptionMaxNote": "Max. 300 characters.",
       "ingredientsLabel": "Ingredients",
       "ingredientsRequired": "*",
@@ -1350,7 +1356,7 @@
     "sectionTitle": "Ratings & Reviews ({count})",
     "reviewCount": "{count} reviews",
     "loginPrompt": "To leave a review, <link>sign in</link>.",
-    "empty": "No reviews yet — leave the first star.",
+    "empty": "No reviews yet — did you try it? How did it turn out, what did you change? Help the next cook.",
     "form": {
       "titleNew": "Leave a review",
       "titleEdit": "Edit your review",

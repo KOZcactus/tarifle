@@ -134,13 +134,16 @@ export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProp
 
   if (!isOpen) {
     return (
-      <button
-        onClick={open}
-        className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-hover"
-      >
-        <ChefHatIcon />
-        {t("startButton")}
-      </button>
+      <div className="inline-flex flex-col items-start gap-1.5">
+        <button
+          onClick={open}
+          className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-hover"
+        >
+          <ChefHatIcon />
+          {t("startButton")}
+        </button>
+        <p className="text-xs text-text-muted">{t("startButtonHint")}</p>
+      </div>
     );
   }
 

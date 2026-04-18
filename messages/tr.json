@@ -69,6 +69,11 @@
     "register": {
       "title": "Kayıt Ol",
       "subtitle": "Ücretsiz hesap oluştur ve tariflere katkıda bulun.",
+      "benefitsTitle": "Üye olunca neler yapabilirsin?",
+      "benefit1": "Tarifleri koleksiyonlara kaydet, alışveriş listesi oluştur",
+      "benefit2": "Beğen, yorum yap, yıldız ver",
+      "benefit3": "Kendi uyarlamalarını paylaş, rozet kazan",
+      "benefit4": "Kişisel profil + bildirim tercihleri",
       "nameLabel": "Ad Soyad",
       "namePlaceholder": "Adınız Soyadınız",
       "emailLabel": "E-posta",
@@ -1191,6 +1196,7 @@
   },
   "cookingMode": {
     "startButton": "Pişirme Modunu Başlat",
+    "startButtonHint": "Ekran uyanık kalır · adım adım rehber · dahili zamanlayıcı",
     "modalAria": "Pişirme modu: {title}",
     "closeAria": "Pişirme modundan çık",
     "stepDotAria": "Adım {n}",
@@ -1291,10 +1297,10 @@
     "form": {
       "title": "Uyarlama Ekle",
       "cancel": "İptal",
-      "miniTitleLabel": "Başlık *",
-      "miniTitlePlaceholder": "ör: Fırında versiyonu, Vegan alternatif...",
-      "descriptionLabel": "Açıklama",
-      "descriptionPlaceholder": "Kısa bir açıklama (isteğe bağlı)",
+      "miniTitleLabel": "Ne değiştirdin? *",
+      "miniTitlePlaceholder": "ör: Fırında versiyonu · Vegan alternatif · Daha az şekerli",
+      "descriptionLabel": "Sonuç nasıl oldu?",
+      "descriptionPlaceholder": "Kısaca anlat: doku, lezzet, süre farkı, kime önerirsin…",
       "descriptionMaxNote": "Maks. 300 karakter.",
       "ingredientsLabel": "Malzemeler",
       "ingredientsRequired": "*",
@@ -1350,7 +1356,7 @@
     "sectionTitle": "Yıldız & Yorumlar ({count})",
     "reviewCount": "{count} yorum",
     "loginPrompt": "Bu tarife yorum bırakmak için <link>giriş yap</link>.",
-    "empty": "Henüz yorum yok — ilk yıldızı sen bırak.",
+    "empty": "Henüz yorum yok — denedin mi? Nasıl oldu, neyi değiştirdin? Diğer ziyaretçilere yol göster.",
     "form": {
       "titleNew": "Bu tarife yorum bırak",
       "titleEdit": "Yorumunu düzenle",

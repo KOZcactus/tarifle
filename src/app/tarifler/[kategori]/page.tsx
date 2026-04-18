@@ -6,11 +6,13 @@ import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { AllergenFilter } from "@/components/search/AllergenFilter";
 import { DietFilter } from "@/components/search/DietFilter";
 import { CuisineFilter } from "@/components/search/CuisineFilter";
+import { Pagination } from "@/components/listing/Pagination";
 import { getCategoryBySlug } from "@/lib/queries/category";
 import { getRecipes } from "@/lib/queries/recipe";
 import { generateBreadcrumbJsonLd, generateCategoryFaqJsonLd } from "@/lib/seo";
 import { ALLERGEN_ORDER } from "@/lib/allergens";
 import { CUISINE_CODES, CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
+import { ITEMS_PER_PAGE } from "@/lib/constants";
 import type { Metadata } from "next";
 
 interface KategoriPageProps {
@@ -19,6 +21,7 @@ interface KategoriPageProps {
     mutfak?: string | string[];
     alerjen?: string | string[];
     etiket?: string | string[];
+    page?: string;
   }>;
 }
 
@@ -77,12 +80,20 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
       : [sp.etiket]
     : undefined;
 
+  // Pagination — 1-indexed page param, falls back to 1.
+  const currentPage = Math.max(1, parseInt(sp.page ?? "1", 10) || 1);
+  const offset = (currentPage - 1) * ITEMS_PER_PAGE;
+
   const { recipes, total } = await getRecipes({
     categorySlug: kategori,
     cuisines: cuisines.length > 0 ? cuisines : undefined,
     excludeAllergens: excludeAllergens.length > 0 ? excludeAllergens : undefined,
     tagSlugs,
+    limit: ITEMS_PER_PAGE,
+    offset,
   });
+
+  const totalPages = Math.max(1, Math.ceil(total / ITEMS_PER_PAGE));
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: "Ana Sayfa", url: "/" },
@@ -189,6 +200,17 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
               <RecipeCard key={recipe.id} recipe={recipe} />
             ))}
           </div>
+
+          {/* Pagination — total > ITEMS_PER_PAGE olan kategorilerde 2+ sayfa */}
+          {totalPages > 1 && (
+            <Pagination
+              basePath={`/tarifler/${kategori}`}
+              currentPage={currentPage}
+              totalPages={totalPages}
+              searchParams={sp}
+              t={t}
+            />
+          )}
         </>
       ) : (
         <div className="flex flex-col items-center py-20 text-center">

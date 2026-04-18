@@ -7,6 +7,7 @@ import { FilterPanel } from "@/components/search/FilterPanel";
 import { AllergenFilter } from "@/components/search/AllergenFilter";
 import { DietFilter } from "@/components/search/DietFilter";
 import { CuisineFilter } from "@/components/search/CuisineFilter";
+import { Pagination } from "@/components/listing/Pagination";
 import { CUISINE_CODES, CUISINE_LABEL, CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
 import { getRecipes } from "@/lib/queries/recipe";
 import { getCategories } from "@/lib/queries/category";
@@ -276,6 +277,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
           {/* Pagination */}
           {totalPages > 1 && (
             <Pagination
+              basePath="/tarifler"
               currentPage={currentPage}
               totalPages={totalPages}
               searchParams={params}
@@ -297,104 +299,6 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
 }
 
 type RecipesTranslator = (key: string, values?: Record<string, string | number | Date>) => string;
-
-function Pagination({
-  currentPage,
-  totalPages,
-  searchParams,
-  t,
-}: {
-  currentPage: number;
-  totalPages: number;
-  searchParams: Record<string, string | string[] | undefined>;
-  t: RecipesTranslator;
-}) {
-  function buildPageUrl(page: number): string {
-    const params = new URLSearchParams();
-    for (const [key, value] of Object.entries(searchParams)) {
-      if (!value || key === "page") continue;
-      if (Array.isArray(value)) {
-        value.forEach((v) => params.append(key, v));
-      } else {
-        params.set(key, value);
-      }
-    }
-    if (page > 1) params.set("page", String(page));
-    const qs = params.toString();
-    return `/tarifler${qs ? `?${qs}` : ""}`;
-  }
-
-  // Görünür sayfa numaralarını hesapla
-  const pages: number[] = [];
-  const maxVisible = 5;
-  let start = Math.max(1, currentPage - Math.floor(maxVisible / 2));
-  const end = Math.min(totalPages, start + maxVisible - 1);
-  start = Math.max(1, end - maxVisible + 1);
-
-  for (let i = start; i <= end; i++) {
-    pages.push(i);
-  }
-
-  return (
-    <nav className="mt-12 flex items-center justify-center gap-2" aria-label={t("pagination.aria")}>
-      {currentPage > 1 && (
-        <Link
-          href={buildPageUrl(currentPage - 1)}
-          className="rounded-lg border border-border px-3 py-2 text-sm transition-colors hover:bg-bg-card"
-        >
-          {t("pagination.previous")}
-        </Link>
-      )}
-
-      {start > 1 && (
-        <>
-          <Link
-            href={buildPageUrl(1)}
-            className="rounded-lg border border-border px-3 py-2 text-sm transition-colors hover:bg-bg-card"
-          >
-            1
-          </Link>
-          {start > 2 && <span className="px-1 text-text-muted">…</span>}
-        </>
-      )}
-
-      {pages.map((page) => (
-        <Link
-          key={page}
-          href={buildPageUrl(page)}
-          className={`rounded-lg border px-3 py-2 text-sm transition-colors ${
-            page === currentPage
-              ? "border-primary bg-primary text-white"
-              : "border-border hover:bg-bg-card"
-          }`}
-        >
-          {page}
-        </Link>
-      ))}
-
-      {end < totalPages && (
-        <>
-          {end < totalPages - 1 && <span className="px-1 text-text-muted">…</span>}
-          <Link
-            href={buildPageUrl(totalPages)}
-            className="rounded-lg border border-border px-3 py-2 text-sm transition-colors hover:bg-bg-card"
-          >
-            {totalPages}
-          </Link>
-        </>
-      )}
-
-      {currentPage < totalPages && (
-        <Link
-          href={buildPageUrl(currentPage + 1)}
-          className="rounded-lg border border-border px-3 py-2 text-sm transition-colors hover:bg-bg-card"
-        >
-          {t("pagination.next")}
-        </Link>
-      )}
-    </nav>
-  );
-}
 
 function EmptyState({
   query,

@@ -10,6 +10,7 @@
  */
 
 import * as Sentry from "@sentry/nextjs";
+import Link from "next/link";
 import { useEffect } from "react";
 
 interface GlobalErrorProps {
@@ -18,7 +19,6 @@ interface GlobalErrorProps {
 }
 
 export default function GlobalError({ error, reset }: GlobalErrorProps) {
-  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => {
     Sentry.captureException(error);
   }, [error]);
@@ -68,7 +68,7 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
           >
             Tekrar dene
           </button>
-          <a
+          <Link
             href="/"
             style={{
               padding: "0.6rem 1.2rem",
@@ -80,7 +80,7 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
             }}
           >
             Ana sayfa
-          </a>
+          </Link>
         </div>
       </body>
     </html>

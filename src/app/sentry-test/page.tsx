@@ -51,9 +51,9 @@ export default async function SentryTestPage({
       <div>
         <h1 className="font-heading text-2xl font-bold">🧪 Sentry Test</h1>
         <p className="mt-2 text-sm text-text-muted">
-          3 farklı error tipi — her biri Sentry'de ayrı issue açmalı.
-          Butona bas, sonra Sentry dashboard'unda (sol menü → Issues)
-          yeni event'leri gör.
+          3 farklı error tipi — her biri Sentry&apos;de ayrı issue açmalı.
+          Butona bas, sonra Sentry dashboard&apos;unda (sol menü → Issues)
+          yeni event&apos;leri gör.
         </p>
       </div>
 
@@ -61,7 +61,7 @@ export default async function SentryTestPage({
         <section className="rounded-xl border border-border bg-bg-card p-4">
           <h2 className="font-semibold">1. Client-side throw</h2>
           <p className="mt-1 text-xs text-text-muted">
-            Tarayıcı JS'i, instrumentation-client.ts yakalar.
+            Tarayıcı JS&apos;i, instrumentation-client.ts yakalar.
           </p>
           <SentryTestClient />
         </section>
@@ -85,7 +85,7 @@ export default async function SentryTestPage({
         <section className="rounded-xl border border-border bg-bg-card p-4">
           <h2 className="font-semibold">3. RSC render throw</h2>
           <p className="mt-1 text-xs text-text-muted">
-            URL'e `?throw=rsc` ekleyerek sayfa render'ı sırasında throw.
+            URL&apos;e `?throw=rsc` ekleyerek sayfa render&apos;ı sırasında throw.
           </p>
           <a
             href="/sentry-test?throw=rsc"
@@ -101,7 +101,7 @@ export default async function SentryTestPage({
         <ul className="mt-2 list-inside list-disc space-y-1">
           <li>Sentry → Issues → 3 yeni event (1-2 dakika içinde)</li>
           <li>Email: yeni issue bildirimi koz.devs@gmail.com&apos;a</li>
-          <li>Her event'te stack trace + source map → exact line</li>
+          <li>Her event&apos;te stack trace + source map → exact line</li>
         </ul>
         <p className="mt-2">
           Bu sayfa yalnızca ADMIN/MODERATOR görebilir. Sentry kurulumu

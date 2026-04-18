@@ -382,7 +382,7 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
                     </p>
                     {r.description && (
                       <p className="mt-1 truncate text-xs text-text-muted">
-                        "{r.description}"
+                        &ldquo;{r.description}&rdquo;
                       </p>
                     )}
                   </div>

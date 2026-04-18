@@ -48,38 +48,35 @@ Devam etmek için: --confirm-prod flag'i gerekli.
 
 ## Schema migration — MANUEL (17 Nis 2026 deneme sonrası)
 
-**Denedik, olmadı:** Auto-migrate (`build` script'inde `prisma migrate deploy`) Neon pooler connection'ı ile Prisma advisory lock çakışmasından dolayı `P1002 timeout` ile patlıyor. Neon'un pooled bağlantısı statement-level pooling yapar, advisory lock (`pg_advisory_lock`) korunmaz.
+**Geçmiş:** Auto-migrate (`build` script'inde `prisma migrate deploy`) Neon pooler URL'iyle advisory lock çakışmasından `P1002 timeout` yedi (`4b528d9` → `4d6a7fe` revert). Neon'un pooled bağlantısı PgBouncer transaction mode, `pg_advisory_lock` korunmaz.
 
-Çözüm senaryoları:
-1. **Schema'ya `directUrl` ekle** + Vercel'e ayrı `DIRECT_URL` env var (Neon direct connection URL). Extra iş, henüz yapmadık.
-2. **GitHub Actions ayrı job** — `main` push'unda prod'a migrate deploy. CI'da PROD_DATABASE_URL secret. Yine direct URL kullanır. Yapılacak iş.
-3. **Manuel flow** — aşağıdaki adımlar. Şu an aktif.
+**Şu anki akış:** Manuel, ama PowerShell one-liner yerine `scripts/migrate-prod.ts` wrapper script kullanılıyor. Script Neon'un **direct (non-pooled)** URL'ini türetir (`-pooler` suffix strip) ve `DATABASE_URL`'i geçici override ederek migrate deploy spawn eder. Destructive-guard convention'a uyar (`--confirm-prod`).
 
-### Manuel flow (mevcut)
+Alternatif otomasyon yolları için bkz. `docs/AUTO_MIGRATE_POC.md`.
 
-Migration dev'e uygulanır, push öncesi prod'a da manuel uygulanır. `docs/MONITORING.md` deploy checklist'e bu adım **ZORUNLU** olarak eklendi.
-
-**Schema değişikliği yaparken sıra:**
+### Schema değişikliği yaparken sıra
 
 1. `prisma/schema.prisma` güncelle
 2. `npx prisma migrate dev --config ./prisma/prisma.config.ts --name <isim>` → dev'e uygula
 3. Kod değişikliklerini yap, commit'le
-4. **PUSH ÖNCESİ** prod'a migration uygula (aşağıdaki komut)
-5. `git push`
-
-**PowerShell:**
-
-```powershell
-$env:DATABASE_URL = (Get-Content .env.production.local | Select-String '^DATABASE_URL' | ForEach-Object { $_ -replace '^DATABASE_URL="?','' -replace '"$','' })
-npx prisma migrate deploy --config ./prisma/prisma.config.ts
-Remove-Item Env:\DATABASE_URL
-```
-
-**Bash / Git Bash:**
+4. **PUSH ÖNCESİ** prod'a migration uygula:
 
 ```bash
-PROD_URL=$(grep '^DATABASE_URL' .env.production.local | sed -E 's/^DATABASE_URL="?//; s/"$//')
-DATABASE_URL="$PROD_URL" npx prisma migrate deploy --config ./prisma/prisma.config.ts
+# Önce status kontrolü (read-only, herhangi bir değişiklik yapmaz)
+npx tsx scripts/migrate-prod.ts
+
+# Temizse apply
+npx tsx scripts/migrate-prod.ts --apply --confirm-prod
+```
+
+5. `git push`
+
+Script `.env.production.local`'den `DATABASE_URL`'i okur, `-pooler` suffix'ini çıkararak direct URL'e çevirir (advisory lock için gerekli). `DIRECT_DATABASE_URL` env var set edilmişse onu kullanır. Prod host detection: `--confirm-prod` olmadan prod'da koşmaz, koşunca 3 saniye iptal penceresi.
+
+Dev ortamı testi (status kontrolü):
+
+```bash
+npx tsx scripts/migrate-prod.ts --env dev
 ```
 
 Destructive check lokalde push öncesi koş (kendin için):
@@ -91,26 +88,7 @@ npm run db:check-destructive
 
 ### A. Sadece migration (schema değişti)
 
-Yukarıdaki "Manuel flow" bölümüne bak — push öncesi prod'a migration uygulanır.
-
-Eğer Vercel deploy öncesinde yine prod'a migration uygulamak istersen:
-
-**PowerShell (Windows):**
-
-```powershell
-$env:DATABASE_URL = (Get-Content .env.production.local | Select-String '^DATABASE_URL' | ForEach-Object { $_ -replace '^DATABASE_URL="?','' -replace '"$','' })
-npx prisma migrate deploy --config ./prisma/prisma.config.ts
-Remove-Item Env:\DATABASE_URL
-```
-
-**Bash/Git Bash:**
-
-```bash
-DATABASE_URL="$(grep ^DATABASE_URL .env.production.local | cut -d'"' -f2)" \
-  npx prisma migrate deploy --config ./prisma/prisma.config.ts
-```
-
-Migration deploy flag gerektirmez (Prisma'nın kendi komutu, `assertDbTarget` yok); ama `DATABASE_URL`'i geçici override yeterli — sonrasında hemen `unset` et ki alışkanlıkla yanlış script'i prod'a koşmayasın.
+Yukarıdaki "Schema değişikliği yaparken sıra" bölümüne bak — `scripts/migrate-prod.ts` wrapper'ı push öncesi prod'a migrate eder.
 
 ### B. Yeni tarif batch seed + retrofit + audit (Codex batch promote)
 

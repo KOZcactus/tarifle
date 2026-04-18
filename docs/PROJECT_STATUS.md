@@ -13,10 +13,10 @@ Bekleyen listesinden 3 işi kapattık + batch 1 canlı.
 
 **Bekleyen iş güncel:**
 1. Batch 2 + 3 (600 tarif daha) — Codex Max'e sıra
-2. Prod promote — 4 batch onaydan sonra (runbook manuel)
+2. Prod promote — 4 batch onaydan sonra (`scripts/migrate-prod.ts` + seed/retrofit runbook)
 3. Tarif görselleri (Eren) — pilot 10 → 1100
 4. Codex batch 12+ yeni TR tarif (Eren, translations dolu zorunlu)
-5. Auto-migrate alternatif — GitHub Actions / Neon direct URL
+5. ~~Auto-migrate alternatif~~ ✅ — `scripts/migrate-prod.ts` Yol A ship edildi (direct URL wrapper + destructive guard). Yol B/C ileride değerlendirilir.
 
 ---
 

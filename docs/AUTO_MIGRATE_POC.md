@@ -1,6 +1,6 @@
 # Auto-migrate POC — Neon direct URL araştırması
 
-> 18 Nis 2026 oturum 3 — araştırma notları, henüz ship edilmedi.
+> 18 Nis 2026 oturum 3 — Yol A ship edildi (`scripts/migrate-prod.ts`). Yol B ve C hâlâ araştırma notu; ileride gündeme gelirse bu doküman referans.
 
 ## Kısa özet
 
@@ -205,10 +205,10 @@ POC'yi gerçek koşmadan önce:
 - **Connection leak:** `spawn` child process sonunda exit eder, URL env sadece child'a enjekte edilir, parent shell'e sızmaz.
 - **Secret rotation:** Direct URL bir secret — `.env.production.local` zaten gitignore'da, risk profili mevcut manuel akışla aynı.
 
-## Sonraki adımlar (Kerem onayıyla)
+## Sonraki adımlar
 
 1. ✅ Araştırma + POC doküman (bu dosya)
-2. ⏳ Yol A script'ini kes/yapıştır commit, PROD_PROMOTE runbook güncelle
-3. ⏳ Dev'de `--apply` ile idempotent no-op test
-4. ⏳ Schema değişikliği geldiğinde prod'a ilk gerçek kullanım
-5. ⏳ İlk 3 başarılı kullanım sonrası Yol C'yi değerlendir (Vercel build-time)
+2. ✅ Yol A script'i ship edildi — `scripts/migrate-prod.ts` (18 Nis oturum 3)
+3. ✅ Dev'de `migrate status` ile test — `--env dev` PASS, direct URL derivation doğru
+4. ⏳ Schema değişikliği geldiğinde prod'a ilk gerçek kullanım (`--apply --confirm-prod`)
+5. ⏳ İlk 3 başarılı kullanım sonrası Yol C'yi (Vercel build-time) değerlendir

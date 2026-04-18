@@ -30,10 +30,12 @@
 - `title + description` JSON'a YAZMA — CSV'deki `en_title_current` sütunundan görürsün zaten dolu (Mod A'dan)
 - Array uzunlukları TR'yle birebir eşleşmeli
 
-**Pilot-then-append kural (100+ tarifte Mod A için önerilen):** Kerem açıkça
-"100'ü tek seferde ver" demiyorsa, **önce 50 tarif yaz → "50 hazır, kalite
-check?" de → Kerem onaylarsa 50 daha ekle**. Bu yolla yarı yolda yön
-değişikliği maliyeti düşer.
+**⚠️ Tek teslim kuralı (Mod A):** Kerem açıkça "kademeli gönder" veya "50'şer
+ver" demiyorsa, **100 tarifi TEK seferde tamamla**. Ortada durma, "25 hazır,
+devam edeyim mi?" diye sorma — Kerem zaten 100 istediğini biliyor, ara
+teslim zaman kaybı. Context window sıkışırsa bile **aynı mesajda devam et**;
+devam edemezsen sadece tek cümlelik "context doldu, kaldığım slug şu" bilgisi
+bırak, sonra kal. Ama mümkün olduğunca **100'ü bitirene kadar durma**.
 
 ---
 
@@ -197,7 +199,14 @@ array'inin **sonuna append**. Mevcut tarifleri silme. Batch başlangıcına
 - Şüphedeysen: batch'i ayrı bir `.txt` olarak ver, Claude append eder — sıfır
   risk
 
-**Teslim mesajı:**
+**Teslim — SADECE 100 bittiğinde yaz:**
+
+100 tarif bitmeden teslim mesajı yazma. "26/100, devam edeyim mi?" gibi ara
+sorular yasak — Kerem zaten 100 istediğini biliyor, sen tamamla, TESLİM ET.
+`content:validate` gibi kendi self-check'lerini gizli yap (ara kontrol sana
+ait, Kerem'e rapor değil).
+
+Bittiğinde şu formatı kullan:
 ```
 Batch N hazır — 100 tarif + EN/DE çeviri (title + description minimum).
 - Eklendi: scripts/seed-recipes.ts (append only)
@@ -506,15 +515,17 @@ Batch N hazır — X tarif çevrildi, Y tanesinde issue alanı bulunuyor.
 İlgili slug'lar: [kısa liste]
 ```
 
-### Pilot-then-append akışı (önerilen)
+### Mod B için kademeli teslim — SADECE Kerem açıkça isterse
 
-Kerem "100+100+100 kademeli ilet" derse:
+Normal akış: **tüm JSON'u tek seferde teslim et**. Kademeli teslim sadece
+Kerem "100+100+100 kademeli ilet" gibi açık talimat verirse:
 1. İlk 100'ü yaz → "İlk 100 hazır" de
 2. Kerem/Claude dry-run → pattern sorunu varsa söyler
 3. Devam et → 2. 100 append → "2. 100 hazır"
 4. Aynı şekilde 3. 100 → "batch N hazır"
 
-Aynı dosyaya append, slug sırasını koru.
+Aynı dosyaya append, slug sırasını koru. **Default akışta kademeli gönderme
+— Mod A da Mod B de tek teslim.**
 
 ---
 

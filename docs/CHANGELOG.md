@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: 18 Nisan 2026 (oturum 2 — i18n derin tur, 8 commit: AiAssistantForm + ayarlar child + auth tail + admin layout/dashboard + email templates + generateMetadata + AI commentary + admin partial)
+> Son güncelleme: 18 Nisan 2026 (oturum 2 — i18n derin tur, 10 commit, admin full kapatıldı: AiAssistantForm + ayarlar child + auth tail + admin tüm surface + email templates + generateMetadata + AI commentary)
 
 ## İşaretler
 
@@ -211,6 +211,11 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 🧹 **`src/lib/ai/commentary.ts` refactor** — 264 satır, 2 async fn, unused `CUISINE_LABEL`/`TYPE_LABELS`/`DIFF_LABELS` constants silindi (artık `t.raw` ile messages'tan çekilir). `resolveCuisinePrefix` helper — `cuisines.*` namespace'inden label alıp `aiCommentary.cuisineSingle/Double/Multi` template'ine basar.
 - 🧹 **3 email fonksiyonu signature extension** — `src/lib/email/{verification,password-reset}.ts`. Backward-compat: `locale` param default'lu (`DEFAULT_LOCALE`), caller isteğe bağlı geçer.
 - 📝 **Bekleyen i18n (düşük öncelik):** admin kalan 10 liste page + 2 detay page + 13 component (~3400 satır, internal use, `admin.*` şablonu hazır); 1103 tarif `Recipe.translations` JSONB retrofit (LLM batch); `recipe-of-the-day-commentary.ts` (commentary kardeşi, farklı caller).
+- ✨ **Admin kalan i18n tamamlandı (18 Nis oturum 2 devamı, commit `baff3f7`)** — admin paneli %100 locale-aware.
+  - 10 liste page + 2 detay page (/admin/kullanicilar/[username] 406 satır + /admin/tarifler/[slug] 456 satır): generateMetadata async + getTranslations + getLocale(); fmtDate helper locale param (tr-TR hardcode kaldırıldı)
+  - 13 component: AdminReportActions, AdminVariationActions, ReviewActions, ReviewModerationActions, CollectionActions, SuspendUserButton, CreateTagForm, CreateCategoryForm, TagRow, CategoryRow, AnnouncementForm, AnnouncementRow, InlineUserEdit, InlineRecipeEdit — useTranslations + prompt/confirm dialog'lar i18n
+  - ~220 yeni key: admin.actions (paylaşılan approve/hide/reject/suspend + prompts + error'lar), admin.reports (reasons + statuses enum), admin.recipes + users + collections + categories + tags + announcements + moderationLog + recipeDetail + userDetail + inlineEdit
+  - Bu ilaveyle admin i18n scope kapandı.
 
 ## Schema & DB
 

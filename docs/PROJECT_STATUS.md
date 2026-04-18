@@ -1,6 +1,6 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 18 Nisan 2026 (oturum 2) — i18n derin tur (8 commit): AiAssistantForm + ayarlar + auth tail + admin layout/dashboard + email templates + generateMetadata + commentary backend + admin partial
+> Son güncelleme: 18 Nisan 2026 (oturum 2) — i18n derin tur (10 commit, admin full kapatıldı): AiAssistantForm + ayarlar + auth tail + admin tüm surface + email templates + generateMetadata + commentary backend
 
 ## 18 Nisan 2026 (oturum 2 — i18n derin tur, 8 commit)
 
@@ -13,12 +13,12 @@ i18n soft launch'un kalan büyük parçaları. Toplam 8 commit: kullanıcı-tema
 - **`990702a`** email templates locale-aware — verification + passwordReset + oauthOnlyReset; `sendXxx(..., locale)` param + User.locale caller'da iletiliyor (register cookie'den)
 - **`4dd34c5`** generateMetadata SEO — root layout + 14 page (10 public + 4 legal) cookie-based title/description + og:locale (tr_TR/en_US) + og:title; 26 static metadata export dönüştürüldü
 - **`32993ce`** AI commentary backend locale-aware — commentary.ts async, t.raw() variant array pattern; rule-based-provider getLocale() + isValidLocale guard; EN user "🧠 Assistant: From Turkish cuisine..." görür
-- **`5cd547a`** admin partial — PaginationBar async + /bildirim-gonder + BroadcastForm; admin.common + 10 sub-namespace şablonu hazır (kalan 10 liste + 2 detay + 13 component gelecek sprint)
+- **`5cd547a`** admin partial — PaginationBar async + /bildirim-gonder + BroadcastForm; admin.common + 10 sub-namespace şablonu hazır
+- **`baff3f7`** admin kalan — 10 liste page (etiketler, kategoriler, duyurular, raporlar, koleksiyonlar, moderasyon-logu, incelemeler, tarifler, kullanicilar + /bildirim-gonder) + 2 detay page (kullanicilar/[username] + tarifler/[slug]) + 13 component (AdminReport/VariationActions, Review/ReviewModerationActions, CollectionActions, SuspendUserButton, CreateTag/CategoryForm, TagRow/CategoryRow, AnnouncementForm/Row, InlineUserEdit, InlineRecipeEdit). ~220 yeni key: admin.actions (shared), admin.reports (reasons/statuses enum), admin.recipes + users + collections + categories + tags + announcements + moderationLog + recipeDetail + userDetail + inlineEdit
 
-**Sonuç (i18n soft launch tamamı):** Kullanıcı-temas surface %100 EN. Backend (email, AI commentary) User.locale'a göre. SEO (title/description/og) cookie-locale'a göre. Admin layout + dashboard + 1 page + shared pagination EN; 10 liste + 2 detay + 13 component TR (internal use, ayrı sprint).
+**Sonuç (i18n soft launch tamamı):** Kullanıcı-temas surface + admin paneli + backend (email, AI commentary) + SEO hepsi locale-aware. %100 EN/TR surface.
 
 **Bekleyen i18n (düşük öncelik):**
-- Admin kalan 10 liste page + 2 detay page + 13 component (~3400 satır, internal use, `admin.*` namespace şablonu hazır)
 - 1103 tarif `Recipe.translations` JSONB null — LLM batch retrofit (ayrı iş)
 - `recipe-of-the-day-commentary.ts` (AI commentary'nin kardeşi, farklı caller, ayrı işlem)
 

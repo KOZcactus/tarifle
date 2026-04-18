@@ -1,30 +1,79 @@
 import { ImageResponse } from "next/og";
+import { getTranslations } from "next-intl/server";
 import { getRecipeBySlug } from "@/lib/queries/recipe";
-import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
 import { loadGoogleFont } from "@/lib/og";
+import { isValidLocale, type Locale } from "@/i18n/config";
+import { pickRecipeTitle } from "@/lib/recipe/translate";
 
-export const alt = "Tarifle — tarif paylaşımı";
-export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+export const size = { width: 1200, height: 630 };
 
 interface Props {
   params: Promise<{ slug: string }>;
+  id: Promise<string>;
 }
 
-export default async function Image({ params }: Props) {
+/**
+ * Produce a TR and an EN version of the OG preview. OG crawlers (WhatsApp,
+ * Twitter, Facebook) don't send the user's locale cookie, so a single
+ * cached image can't adapt. Instead we expose two URLs — `.../opengraph-
+ * image/tr` and `.../opengraph-image/en` — and `generateMetadata` on the
+ * page picks the right one by reading the viewer's cookie at request time.
+ */
+export function generateImageMetadata() {
+  return [
+    { id: "tr", alt: "Tarifle — tarif paylaşımı", size, contentType },
+    { id: "en", alt: "Tarifle — recipe share", size, contentType },
+  ];
+}
+
+function formatMinutesI18n(
+  minutes: number,
+  t: (key: "minutesShort" | "hoursShort" | "hoursMinutes", values?: Record<string, string | number>) => string,
+): string {
+  if (minutes < 60) return t("minutesShort", { n: minutes });
+  const hours = Math.floor(minutes / 60);
+  const remaining = minutes % 60;
+  if (remaining === 0) return t("hoursShort", { n: hours });
+  return t("hoursMinutes", { h: hours, m: remaining });
+}
+
+export default async function Image({ params, id }: Props) {
   const { slug } = await params;
-  const recipe = await getRecipeBySlug(slug);
+  const rawId = await id;
+  const locale: Locale = isValidLocale(rawId) ? (rawId as Locale) : "tr";
 
-  const title = recipe?.title ?? "Tarifle";
+  const [recipe, tCard, tType] = await Promise.all([
+    getRecipeBySlug(slug),
+    getTranslations({ locale, namespace: "recipes.card" }),
+    getTranslations({ locale, namespace: "aiCommentary.typeLabels" }),
+  ]);
+
+  const title = recipe
+    ? pickRecipeTitle(recipe.title, recipe.translations, locale)
+    : "Tarifle";
   const emoji = recipe?.emoji ?? "🍳";
-  const categoryName = recipe?.category?.name ?? "Tarifler";
-  const difficulty = recipe ? getDifficultyLabel(recipe.difficulty) : "";
-  const duration = recipe ? formatMinutes(recipe.totalMinutes) : "";
+  const eyebrow =
+    recipe && tType.has(recipe.type) ? tType(recipe.type) : recipe?.category?.name ?? "Tarifler";
+  const difficulty = recipe
+    ? tCard(
+        recipe.difficulty === "EASY"
+          ? "difficultyEasy"
+          : recipe.difficulty === "MEDIUM"
+            ? "difficultyMedium"
+            : "difficultyHard",
+      )
+    : "";
+  const duration = recipe
+    ? formatMinutesI18n(
+        recipe.totalMinutes,
+        (key, values) => tCard(key, values ?? {}),
+      )
+    : "";
   const calories = recipe?.averageCalories ?? null;
+  const brandTagline = locale === "en" ? "Make Eat" : "Make Eat";
 
-  // Load a Turkish-capable subset of Bricolage Grotesque (bold) for the title
-  // and the body copy. We pass the exact text so Google only returns those glyphs.
-  const titleText = `${title} ${categoryName} ${difficulty} ${duration} ${calories ?? ""} kcal tarifle.app`;
+  const titleText = `${title} ${eyebrow} ${difficulty} ${duration} ${calories ?? ""} kcal tarifle.app`;
   const [bricolageBold, bricolageRegular] = await Promise.all([
     loadGoogleFont("Bricolage Grotesque", titleText, 700),
     loadGoogleFont("Bricolage Grotesque", titleText, 500),
@@ -44,7 +93,6 @@ export default async function Image({ params }: Props) {
           fontFamily: "Bricolage",
         }}
       >
-        {/* Decorative corner accent */}
         <div
           style={{
             position: "absolute",
@@ -56,7 +104,6 @@ export default async function Image({ params }: Props) {
           }}
         />
 
-        {/* Top — category label */}
         <div
           style={{
             display: "flex",
@@ -69,10 +116,9 @@ export default async function Image({ params }: Props) {
             letterSpacing: 2,
           }}
         >
-          <span>{categoryName}</span>
+          <span>{eyebrow}</span>
         </div>
 
-        {/* Body */}
         <div
           style={{
             display: "flex",
@@ -82,7 +128,6 @@ export default async function Image({ params }: Props) {
             marginTop: 32,
           }}
         >
-          {/* Emoji block */}
           <div
             style={{
               display: "flex",
@@ -99,7 +144,6 @@ export default async function Image({ params }: Props) {
             {emoji}
           </div>
 
-          {/* Title + chips */}
           <div
             style={{
               display: "flex",
@@ -133,7 +177,6 @@ export default async function Image({ params }: Props) {
           </div>
         </div>
 
-        {/* Footer — brand */}
         <div
           style={{
             display: "flex",
@@ -149,7 +192,7 @@ export default async function Image({ params }: Props) {
               Tarifle
             </span>
             <span style={{ fontSize: 22, color: "#6b6b6b", fontWeight: 500 }}>
-              Make Eat
+              {brandTagline}
             </span>
           </div>
           <span style={{ fontSize: 22, color: "#6b6b6b", fontWeight: 500 }}>

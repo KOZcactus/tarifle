@@ -150,9 +150,10 @@ export default function KVKKPage() {
               olduğu sürece.
             </li>
             <li>
-              <strong className="text-text">Hesap silme sonrası:</strong> 30 gün
-              içinde kalıcı olarak silinir; anonim istatistiksel veriler
-              korunabilir.
+              <strong className="text-text">Hesap silme sonrası:</strong>{" "}
+              anında ve geri alınamaz şekilde silinir (hesap bilgisi, uyarlama,
+              yorum, oturum kayıtları). Anonim istatistiksel veriler korunabilir.
+              Yedekleme kopyaları rotasyon döneminde (en fazla 90 gün) temizlenir.
             </li>
             <li>
               <strong className="text-text">Oturum/güvenlik logları:</strong> 90

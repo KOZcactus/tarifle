@@ -183,12 +183,15 @@ export default function GizlilikPage() {
             >
               Ayarlar
             </Link>{" "}
-            sayfasından silebilirsiniz. Silme talebinden itibaren{" "}
-            <strong className="text-text">30 gün</strong> içinde kişisel
-            verileriniz kalıcı olarak silinir. Yayınladığınız herkese açık
-            tarif-uyarlamaları platform katkınız olarak kalabilir ancak
-            kullanıcı adınız ve kimlik bilgileri anonimleştirilir. İstatistiksel
-            anonim veriler korunabilir (KVKK 28).
+            sayfasından silebilirsiniz. Silme işlemi{" "}
+            <strong className="text-text">anında ve geri alınamaz şekilde</strong>{" "}
+            tamamlanır: hesap bilgileriniz, oturum/log kayıtlarınız, uyarlama
+            ve yorumlarınız DB&rsquo;den kalıcı olarak silinir. Yayınladığınız
+            herkese açık tarif katkılarınız (nadir durum — topluluk
+            uyarlamaları ayrıdır) kimlik bilgisi anonimleştirilerek kalabilir.
+            Anonim istatistiksel veriler KVKK 28. madde kapsamında korunabilir.
+            Yedekleme sistemlerinde kopya bulunması halinde rotasyon dönemi
+            içinde (en fazla 90 gün) yedeklerden de temizlenir.
           </p>
         </section>
 

@@ -186,6 +186,60 @@
     "linkPrivacy": "Gizlilik Politikası",
     "copyright": "© {year} {site}. Tüm hakları saklıdır."
   },
+  "profile": {
+    "teamBadge": "Tarifle ekibi",
+    "variationsCount": "{count} uyarlama",
+    "bookmarksCount": "{count} kayıtlı tarif",
+    "memberSince": "Üye: {date}",
+    "editProfile": "Profili düzenle",
+    "collectionsTitle": "Koleksiyonlar",
+    "collectionsTitleOwner": "Koleksiyonlarım",
+    "shoppingListLink": "Alışveriş listesi →",
+    "collectionsEmptyOwner": "Henüz koleksiyon oluşturmadın. Bir tarifi açıp 'Koleksiyon' butonuyla başla.",
+    "collectionsEmptyPublic": "Herkese açık koleksiyon yok.",
+    "collectionRecipeCount": "{count} tarif",
+    "collectionPublicBadge": "Açık",
+    "variationsTitle": "Uyarlamalar",
+    "variationsEmpty": "Henüz uyarlama eklenmemiş.",
+    "likesShort": "{count} beğeni",
+    "reviewsTitle": "Yorumlar",
+    "reviewsTitleOwner": "Yorumlarım",
+    "reviewsEmptyOwner": "Henüz bir tarife yorum bırakmadın.",
+    "reviewsEmptyPublic": "Herkese açık yorum yok.",
+    "reviewStarsAria": "{n} yıldız",
+    "hiddenReason": "Moderasyon sebebi: {reason}",
+    "bookmarksTitle": "Kayıtlı Tarifler",
+    "bookmarksEmpty": "Henüz tarif kaydetmediniz.",
+    "bookmarksEmptyLink": "Tariflere göz at",
+    "status": {
+      "hidden": "Gizlendi",
+      "pendingReview": "İncelemede",
+      "rejected": "Reddedildi",
+      "draft": "Taslak"
+    }
+  },
+  "collection": {
+    "recipesCount": "{count} tarif",
+    "publicBadge": "Herkese açık",
+    "privateBadge": "Gizli",
+    "empty": "Bu koleksiyonda henüz tarif yok.",
+    "emptyBrowseLink": "Tariflere göz at →",
+    "notFoundTitle": "Koleksiyon bulunamadı"
+  },
+  "notifications": {
+    "pageTitle": "Bildirimler",
+    "filterAll": "Tümü",
+    "filterUnread": "Okunmamış",
+    "emptyAll": "Henüz bildirimin yok. Yeni etkinlikler burada görünecek.",
+    "emptyUnread": "Okunmamış bildirimin yok."
+  },
+  "relativeDate": {
+    "today": "Bugün",
+    "yesterday": "Dün",
+    "daysAgo": "{n} gün önce",
+    "monthsAgo": "{n} ay önce",
+    "yearsAgo": "{n} yıl önce"
+  },
   "discover": {
     "pageTitle": "Keşfet",
     "subtitle": "Yeni lezzetler keşfet, ilham al.",

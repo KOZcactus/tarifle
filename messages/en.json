@@ -186,6 +186,60 @@
     "linkPrivacy": "Privacy Policy",
     "copyright": "© {year} {site}. All rights reserved."
   },
+  "profile": {
+    "teamBadge": "Tarifle team",
+    "variationsCount": "{count} adaptations",
+    "bookmarksCount": "{count} saved recipes",
+    "memberSince": "Member since {date}",
+    "editProfile": "Edit profile",
+    "collectionsTitle": "Collections",
+    "collectionsTitleOwner": "My Collections",
+    "shoppingListLink": "Shopping list →",
+    "collectionsEmptyOwner": "You haven't created any collections yet. Open a recipe and start with the 'Collection' button.",
+    "collectionsEmptyPublic": "No public collections.",
+    "collectionRecipeCount": "{count} recipes",
+    "collectionPublicBadge": "Public",
+    "variationsTitle": "Adaptations",
+    "variationsEmpty": "No adaptations yet.",
+    "likesShort": "{count} likes",
+    "reviewsTitle": "Reviews",
+    "reviewsTitleOwner": "My Reviews",
+    "reviewsEmptyOwner": "You haven't reviewed any recipe yet.",
+    "reviewsEmptyPublic": "No public reviews.",
+    "reviewStarsAria": "{n} stars",
+    "hiddenReason": "Moderation reason: {reason}",
+    "bookmarksTitle": "Saved Recipes",
+    "bookmarksEmpty": "You haven't saved any recipes yet.",
+    "bookmarksEmptyLink": "Browse recipes",
+    "status": {
+      "hidden": "Hidden",
+      "pendingReview": "Under review",
+      "rejected": "Rejected",
+      "draft": "Draft"
+    }
+  },
+  "collection": {
+    "recipesCount": "{count} recipes",
+    "publicBadge": "Public",
+    "privateBadge": "Private",
+    "empty": "This collection has no recipes yet.",
+    "emptyBrowseLink": "Browse recipes →",
+    "notFoundTitle": "Collection not found"
+  },
+  "notifications": {
+    "pageTitle": "Notifications",
+    "filterAll": "All",
+    "filterUnread": "Unread",
+    "emptyAll": "You have no notifications yet. New activity will appear here.",
+    "emptyUnread": "You have no unread notifications."
+  },
+  "relativeDate": {
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "daysAgo": "{n} days ago",
+    "monthsAgo": "{n} months ago",
+    "yearsAgo": "{n} years ago"
+  },
   "discover": {
     "pageTitle": "Discover",
     "subtitle": "Find new flavors, get inspired.",

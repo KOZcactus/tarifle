@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { auth } from "@/lib/auth";
 import { getViewableCollection } from "@/lib/queries/collection";
 import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
@@ -14,8 +15,6 @@ export async function generateMetadata({
   params,
 }: CollectionPageProps): Promise<Metadata> {
   const { id } = await params;
-  // Use auth-gated helper so private collection names/descriptions don't leak
-  // into <title>/<meta description>.
   const session = await auth();
   const collection = await getViewableCollection(id, session?.user?.id);
   if (!collection) return { title: "Koleksiyon bulunamadı" };
@@ -30,7 +29,10 @@ export async function generateMetadata({
 
 export default async function CollectionPage({ params }: CollectionPageProps) {
   const { id } = await params;
-  const session = await auth();
+  const [session, t] = await Promise.all([
+    auth(),
+    getTranslations("collection"),
+  ]);
   const collection = await getViewableCollection(id, session?.user?.id);
 
   if (!collection) notFound();
@@ -57,14 +59,14 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
               <p className="mt-3 text-text-muted">{collection.description}</p>
             )}
             <div className="mt-4 flex items-center gap-3 text-sm text-text-muted">
-              <span>{collection.items.length} tarif</span>
+              <span>{t("recipesCount", { count: collection.items.length })}</span>
               {collection.isPublic ? (
                 <span className="rounded-full bg-accent-green/10 px-2 py-0.5 text-xs font-medium text-accent-green">
-                  Herkese açık
+                  {t("publicBadge")}
                 </span>
               ) : (
                 <span className="rounded-full bg-bg-elevated px-2 py-0.5 text-xs font-medium text-text-muted">
-                  Gizli
+                  {t("privateBadge")}
                 </span>
               )}
             </div>
@@ -89,7 +91,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
       {collection.items.length === 0 ? (
         <div className="rounded-xl border border-dashed border-border p-10 text-center">
           <p className="text-text-muted">
-            Bu koleksiyonda henüz tarif yok.
+            {t("empty")}
             {isOwner && (
               <>
                 {" "}
@@ -97,7 +99,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
                   href="/tarifler"
                   className="text-primary hover:text-primary-hover"
                 >
-                  Tariflere göz at →
+                  {t("emptyBrowseLink")}
                 </Link>
               </>
             )}

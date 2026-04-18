@@ -186,11 +186,20 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - ✨ E-posta doğrulama — `EmailProvider` abstraction (Resend prod + Console dev), 24h TTL token, `/dogrula/[token]`, `VerifyEmailBanner`.
 - ✨ Rozet sistemi — 4 enum (EMAIL_VERIFIED / FIRST_VARIATION / POPULAR_VARIATION / RECIPE_COLLECTOR), profilde `BadgeShelf`.
 
-## i18n (Faz 3 prep)
+## i18n (Faz 3 prep + canlı altyapı)
 
 - 💾 `Recipe.translations Json?` — JSONB bucket, locale-keyed, opsiyonel.
 - 🧪 Seed validator opsiyonel `translations` alanı kabul ediyor.
 - 🎨 `/ayarlar` LanguagePreferenceCard disabled placeholder.
+- ✨ **Cookie-based TR/EN soft i18n** (18 Nis) — `next-intl` + `src/i18n/{config,request}.ts` + `messages/{tr,en}.json` + `NextIntlClientProvider` mount. URL routing yapılmadı (36 page refactor riski) — locale `NEXT_LOCALE` cookie + `User.locale` DB field. SEO için hreflang yok ama TR primary pazar, ileride global olunca full URL routing yapılır.
+- 💾 `User.locale VARCHAR(5) NOT NULL DEFAULT 'tr'` — migration `20260418120000_add_user_locale` (manuel SQL + db execute, drift fix).
+- ✨ `LanguageToggle` (navbar) — dropdown + 2-harf locale text ("TR/EN", flag emoji yerine — Windows Chrome regional indicator render sorunu fix).
+- ✨ `LanguagePreferenceCard` (/ayarlar) — placeholder → aktif radiogroup, `updateLocaleAction` cookie + DB sync + `revalidatePath`.
+- ✨ **Hamle A: Codex batch 12+ translations zorunluluğu** — `RECIPE_FORMAT.md` Çeviriler bölümü opsiyonel → zorunlu (EN + DE title + description minimum). `validate-batch.ts` `checkTranslations()` WARNING (batch 12 kapanınca ERROR). `CODEX_HANDOFF.md` §6.9 yeni — DOĞRU/YANLIŞ örnek + özgün TR isim rehberi.
+- ✨ **14 i18n extraction pass** (~25 commit, 18 Nis) — homepage + navbar + footer + ThemeToggle + auth (LoginForm + RegisterForm) + /ayarlar header + RecipeCard + /tarifler + /tarifler/[kategori] + Filter component'leri (Allergen/Diet/Cuisine/FilterPanel) + ActiveFilters + allergen + cuisine constants locale-aware + /tarif/[slug] (4 child component: IngredientList/RecipeSteps/NutritionInfo/AllergenBadges) + Reviews ekosistemi (4 component) + SimilarRecipes + variation ekosistemi (4 component) + Print/Share/AgeGate/DeleteOwnVariation + SaveMenu + CookingMode + /alisveris-listesi + /kesfet + /ai-asistan header + /profil/[username] + /koleksiyon/[id] + /bildirimler.
+- 🧹 **`src/lib/recipe/translate.ts`** — Recipe.translations JSONB locale-aware lookup helper (6 fonksiyon: pickRecipeTitle/Description/TipNote/ServingSuggestion + mapTranslatedIngredients/Steps). sortOrder/stepNumber ile eşler, eksik translation TR fallback.
+- 🧹 **`formatRelativeDate(date, t)` helper** (profile sayfasında inline) — locale-aware "X gün önce / X days ago", utils.ts TR-only versiyonuna dokunulmadı.
+- 📝 **Bekleyen i18n:** AiAssistantForm (846 satır), /ayarlar child kartlar (4 form), /sifremi-unuttum + /sifre-sifirla + /dogrula, admin panel, email templates, generateMetadata SEO, 1103 tarif retrofit translations.
 
 ## Schema & DB
 
@@ -203,6 +212,7 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - 💾 `PasswordResetToken` model (1h TTL).
 - 💾 `Allergen` enum + `Recipe.allergens Allergen[]` + GIN index.
 - 💾 `Recipe.translations Json?` (Faz 3 prep).
+- 💾 `User.locale String @default("tr") @db.VarChar(5)` (18 Nis, migration `20260418120000_add_user_locale`) — cookie-based i18n için DB persistence. Drift nedeniyle manuel SQL + `prisma db execute`, sonra prod'a `migrate deploy`.
 - 💾 `RecipeIngredient.group String?` (bölüm desteği).
 - 🧹 **Migration baseline temizliği** (15 Nis 2026): Pass 10'dan itibaren biriken 8 `db push` değişikliği `prisma/migrations/20260415120000_codex_batch_prep/migration.sql` altında formal migration oldu. Fresh DB deploy'u artık `prisma migrate deploy` ile tam schema kuruyor.
 - 💾 **Full-text search** (migration `20260415180000_add_fulltext_search`) — `unaccent` extension + `immutable_unaccent(text)` SQL wrapper + `Recipe.searchVector` generated STORED tsvector (A/B/C weighted) + GIN index `recipes_search_gin`. `turkish` snowball dictionary ile morfolojik eşleşme; accent-insensitive search; schema'da `Unsupported("tsvector")?` olarak temsil edildi.

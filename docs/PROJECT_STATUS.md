@@ -1,20 +1,64 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 18 Nisan 2026 — Sentry smoke test PASS + alert rules aktif
+> Son güncelleme: 18 Nisan 2026 — Sentry kapanış + i18n marathon (25+ commit, TR/EN soft i18n canlı)
 
-## 18 Nisan 2026 — Sentry smoke test kapanışı
+## 18 Nisan 2026 — Sentry smoke test PASS + i18n altyapı + 14 i18n pass (~25 commit)
 
-Sentry kurulumu çalışmıyordu, 6 commit ile fix:
-- Next.js 16 `instrumentation.ts` + `instrumentation-client.ts` eksikti (server/client SDK init hiç çağrılmıyordu), eklendi (`62bac4e`)
-- Tunnel route `/monitoring` ad-blocker listelerinde → `/api/tarifle-ingest` (`698f9bc`)
-- **Kritik:** src-folder convention'da instrumentation dosyaları `src/` altında olmalı, root'ta değil — `de70a66`. Bu fix sonrası 3/3 event (client + server action + RSC) Sentry Feed'de.
-- Alert rules 2 adet aktif (new issue + 10 events/hour escalation), Notification kategorileri optimize (`docs/MONITORING.md`)
-- Yan temizlik: `scripts/set-admin.ts` commit + db-env guard (`4cbcd5f`), `docs/existing-slugs.txt` regenerate (1103 slug), orphan `sentry.client.config.ts` sil (`0dc2087`)
+İki büyük iş paketi tek oturumda. Önce Sentry kurulumu çalıştırıldı, sonra i18n için cookie-based soft pattern ile altyapı + 14 pass extraction.
 
-**Bekleyen işler:**
-1. **Tarif görselleri** — Eren `docs/IMAGE_GENERATION_PLAN.md` okuyup pilot 10 tarif üretecek
-2. **Auto-migrate alternatif** — GitHub Actions workflow veya Neon direct URL
-3. **i18n aktivasyonu** — ~400 string + EN/DE + `[locale]` routing
+### A) Sentry kurulumu fix (6 commit)
+- `62bac4e` Next.js 16 `instrumentation.ts` + `instrumentation-client.ts` eksikti (server/client SDK init hiç çağrılmıyordu), eklendi
+- `698f9bc` Tunnel route `/monitoring` ad-blocker listelerinde → `/api/tarifle-ingest`
+- **`de70a66` Kritik fix:** src-folder convention'da instrumentation dosyaları `src/` altında olmalı, root'ta değil. Bu fix sonrası 3/3 event (client + server action + RSC) Sentry Feed'de.
+- Alert rules 2 adet aktif (new issue → instant email + 10 events/hour escalation), notification kategorileri optimize (Issue Alerts/Workflow/Spend/Weekly Reports On, gerisi Off — bkz `docs/MONITORING.md`)
+- Yan temizlikler: `scripts/set-admin.ts` commit + db-env guard (`4cbcd5f`), `docs/existing-slugs.txt` regenerate (1103 slug), orphan `sentry.client.config.ts` sil (`0dc2087`)
+
+### B) Hamle A — Codex batch 12+ translations zorunluluğu (1 commit)
+- `6889a57` `validate-batch.ts` `checkTranslations()` (WARNING şimdilik, batch 12 kapanınca ERROR'a yükseltilecek)
+- `RECIPE_FORMAT.md` "Çeviriler" bölümü opsiyonel'den ZORUNLU'ya (EN + DE title + description minimum)
+- `CODEX_HANDOFF.md` §6.9 yeni — DOĞRU/YANLIŞ örnek + özgün TR isim rehberi (Adana Kebap/Baklava aynen bırak)
+
+### C) i18n soft launch — cookie-based TR/EN (14 pass, 18 commit)
+
+**Karar:** 36 page'lik full URL routing refactor breaking, riskli. Cookie-based pattern (`NEXT_LOCALE` cookie + `User.locale` DB) tercih edildi. SEO için hreflang yok ama Türkçe primary pazar, kabul edilebilir. Full URL routing ileride (gerçek global ürün olunca) ayrı iş.
+
+**Pass listesi (sıralı):**
+1. **`28b582e`** altyapı — `next-intl` install, `src/i18n/{config,request}.ts`, `messages/{tr,en}.json`, `User.locale` migration (Prisma + manuel db execute), `app/layout.tsx` provider, `LanguagePreferenceCard` aktive (placeholder → radiogroup), navbar `LanguageToggle`, `updateLocaleAction` server action
+2. **`dabbfb5`** + **revert** LanguageToggle: dropdown → toggle → dropdown (kullanıcı yanlış tıklamayı confirm etmek istiyor). Flag emoji "GB" Windows render sorunu — text "TR/EN"
+3. **`fa85bd7`** hero tagline tweak — "Lezzetli yemek..." + "Denenmiş tariflerle ne yapacağına daha hızlı karar ver."
+4. **`e313c85`** homepage + navbar + footer + ThemeToggle (27 key)
+5. **`05f25b9`** /ayarlar header + /giris + /kayit + LoginForm + RegisterForm (auth.* namespace, Auth.js error code → message key map, t.rich KVKK consent)
+6. **`d4cdc3e`** RecipeCard + /tarifler + /tarifler/[kategori] (40+ key recipes namespace)
+7. **`f92a638`** Filter components — AllergenFilter + DietFilter + CuisineFilter + FilterPanel + ActiveFilters (~30 key filters namespace, ActiveFilters async server function)
+8. **`82b9d2d`** allergen + cuisine constants locale-aware — 10 allergen + 20 cuisine label messages'a, ALLERGEN_LABEL/CUISINE_LABEL constants TR fallback (SEO için)
+9. **`d14da8d`** /tarif/[slug] detay + 4 child component + `src/lib/recipe/translate.ts` helper (~25 key recipe namespace, Recipe.translations JSONB lookup helper, page query'ye translations select eklendi, `RecipeDetail.translations: unknown` Prisma Json compat)
+10. **`67b031d`** Reviews ekosistemi — ReviewsSection + ReviewForm + StarRating + DeleteOwnReview (~25 key reviews namespace, t.rich loginPrompt, formatRelative locale-aware)
+11. **`8d03381`** SimilarRecipes + variation ekosistemi — VariationCard + VariationForm + LikeButton + ReportButton (4 namespace, ~50 key)
+12. **`12e1114`** PrintButton + DeleteOwnVariation + AgeGate + ShareMenu (4 namespace)
+13. **`f098945`** SaveMenu (~25 key save namespace, 13 toast)
+14. **`88678eb`** CookingMode + /alisveris-listesi + ShoppingListClient (cookingMode + shoppingList namespace)
+15. **`6090b13`** /kesfet komple + /ai-asistan page header (discover + aiAssistant namespace; AiAssistantForm 846 satır ayrı pass)
+16. **`c854e6f`** /profil/[username] + /koleksiyon/[id] + /bildirimler (profile + collection + notifications + relativeDate namespace, inline `formatRelativeDate(date, t)` helper)
+
+**Sonuç:** Recipe detail sayfası kullanıcı temas surface'i %100 EN. Homepage + navbar + footer + auth + /tarifler + /kesfet + /ai-asistan header + /profil + /koleksiyon + /bildirimler + /ayarlar header + alışveriş listesi tam EN. Constants (allergen + cuisine label'ları) i18n-aware.
+
+**Bekleyen i18n:**
+- AiAssistantForm (846 satır, ayrı büyük pass)
+- /ayarlar child kartlar (4 form: ProfileSettings + GoogleLink + PasswordChange + DeleteAccount)
+- /sifremi-unuttum + /sifre-sifirla + /dogrula auth flow tail
+- Admin panel (14 sayfa, internal use, düşük öncelik)
+- Email templates (verify/reset/notification)
+- generateMetadata SEO (TR primary, düşük öncelik)
+- 1103 mevcut tarif geriye dönük translations retrofit (LLM batch, ayrı iş)
+
+### Schema değişikliği (1 yeni migration)
+- `20260418120000_add_user_locale` — `users.locale VARCHAR(5) NOT NULL DEFAULT 'tr'`. Dev DB drift nedeniyle `prisma migrate dev` reset isteyince manuel SQL + `prisma db execute`. Prod'a `prisma migrate deploy` ile uygulandı (Kerem onayıyla, 12 → 13 migration).
+
+### Bekleyen büyük işler (Sentry/Hamle A/i18n dışı)
+1. **Tarif görselleri** — Eren `docs/IMAGE_GENERATION_PLAN.md` okuyup pilot 10 tarif üretecek (DALL-E 3 ~$44 toplam)
+2. **Auto-migrate alternatif** — GitHub Actions workflow veya Neon direct URL (P1002 lock timeout sorununu çözer; manuel runbook disiplini şimdilik yeterli)
+3. **AiAssistantForm i18n** — 846 satır, ayrı büyük pass
+4. **Codex batch 12+ translations dolu** — Hamle A hazır, Codex'in bir sonraki batch'i bekleniyor (EN/DE title+description zorunlu, validator WARNING fırlatır)
 
 ---
 

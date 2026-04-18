@@ -64,20 +64,37 @@ export function Pagination({
     pages.push(i);
   }
 
-  // Counter "X–Y / Z" — only shown when caller supplies totalItems + pageSize.
-  let counterText: string | null = null;
+  // Counter — only shown when caller supplies totalItems + pageSize.
+  // Visual: compact "<range> · <total> tarif" with bold range + tabular-nums
+  // for aligned digits. Full sentence lives in aria-live sr-only span so
+  // screen readers still get the context.
+  let counterRange: string | null = null;
+  let counterTotal: number | null = null;
+  let counterFullLabel: string | null = null;
   if (typeof totalItems === "number" && typeof pageSize === "number" && totalItems > 0) {
     const from = (currentPage - 1) * pageSize + 1;
     const to = Math.min(currentPage * pageSize, totalItems);
-    counterText = t("pagination.showing", { from, to, total: totalItems });
+    counterRange = `${from}–${to}`;
+    counterTotal = totalItems;
+    counterFullLabel = t("pagination.showing", { from, to, total: totalItems });
   }
 
   return (
-    <div className="mt-12 flex flex-col items-center gap-3">
-      {counterText && (
-        <p className="text-xs text-text-muted" aria-live="polite">
-          {counterText}
-        </p>
+    <div className="mt-12 flex flex-col items-center gap-4">
+      {counterRange && counterTotal !== null && (
+        <div className="flex items-baseline gap-2 text-sm tabular-nums text-text-muted">
+          <span className="font-semibold tracking-tight text-text">
+            {counterRange}
+          </span>
+          <span aria-hidden="true" className="text-text-muted/50">·</span>
+          <span>
+            <span className="font-medium text-text/80">{counterTotal}</span>{" "}
+            {t("pagination.totalSuffix")}
+          </span>
+          <span className="sr-only" aria-live="polite">
+            {counterFullLabel}
+          </span>
+        </div>
       )}
       <nav
         className="flex flex-wrap items-center justify-center gap-2"

@@ -1457,7 +1457,8 @@
       "previous": "← Önceki",
       "next": "Sonraki →",
       "aria": "Sayfalama",
-      "showing": "Gösteriliyor: {from}–{to} / toplam {total} tarif"
+      "showing": "{from}–{to} arası tarif · toplam {total}",
+      "totalSuffix": "tarif"
     },
     "listAria": "Tarif listesi",
     "categorySrHeader": "{category} tarifleri",

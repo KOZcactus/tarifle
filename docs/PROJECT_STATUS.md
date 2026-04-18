@@ -1,28 +1,69 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 18 Nisan 2026 (oturum 3) — pre-push lint hook + AI commentary EN polish + 3 yeni scenario + **batch 1+2+3 + PROD PROMOTE tamamlandı (prod 1100/1100 translations, %100)** + content fix (90+ cuisine + 35 ingredient) + migrate-prod wrapper + SEO meta i18n + OG image i18n + taxonomy expansion (24 cuisine kodu). 🎉 Tarifle.app canlı EN/TR tam retrofit.
+> Son güncelleme: 18 Nisan 2026 (oturum 3) — 22 commit'lik büyük tur: **retrofit %100 (prod 1100/1100)** + GPT dış audit tier-1+2+3 kapatıldı + hukuk/güven metinleri kodla %100 tutarlı + Codex1 batch 12 hazır (dev'e seed bekliyor). Tarifle.app production-ready + SEO-audit-clean.
 
-## 18 Nisan 2026 (oturum 3 — lint hook + commentary polish + batch 1)
+## 18 Nisan 2026 (oturum 3 — 22 commit, 6 ana blok)
 
-Bekleyen listesinden 3 işi kapattık + batch 1 canlı.
+### A) Altyapı + devops (5 commit)
+- **`65dc8ea`** pre-push lint hook — `scripts/git-hooks/pre-push` + `npm run setup:hooks` native git (husky'siz). CI lint error'larını yerelde yakalar.
+- **`a8019c6`** auto-migrate POC doc — `docs/AUTO_MIGRATE_POC.md` 3 yol karşılaştırma (lokal wrapper / GitHub Actions / Vercel build). Prisma 7 `directUrl` destekleme sınırı + env override pattern.
+- **`7031bea`** `scripts/migrate-prod.ts` (Yol A) — Neon `-pooler` suffix strip → direct URL ile `prisma migrate deploy`. PgBouncer advisory-lock sorununu bypass eder. `--confirm-prod` guard + 3sn banner + password redaction.
+- **`76d0993`** dev migration drift fix — `20260418120000_add_user_locale` manual `prisma migrate resolve --applied` ile `_prisma_migrations`'a kaydedildi. `migrate-prod --env dev` artık "schema up to date".
 
-- **`65dc8ea`** pre-push lint hook — `scripts/git-hooks/pre-push` + `npm run setup:hooks` (native git, husky'siz). CI lint error'larını yerelde yakalar.
-- **`f0382cb`** AI commentary ctx adaptif + EN capitalization — `applyCtx` helper her varyanta cuisine prefix'i garantiler, EN'de mid-sentence `"You"` → `"you"` (I pronoun istisnası korunur), TR `İ`→`i` locale-aware. 14 yeni unit test. Canlı: "From Turkish cuisine, nice pantry: you don't even need to shop for 10 recipes."
-- **Tarif çeviri batch 1** — Codex Max 300 tarif (recipes 200-499), 100+100+100 kademeli. Dry-run 0 CRITICAL / 0 WARNING / 32 INFO. Script update: `PROTECTED_TOKEN_SKIP_SLUGS` ("Lokma" generic kullanım — `*-lokmalari` slug'ları için skip). 1 slug typo fix (`firinda-...` → `firin-...` locative eki fazlası). Dev'de 500/1103 tarif translations dolu (%45 retrofit).
-- **Content fix batch 1** — `fix-content-batch1.ts` 14 cuisine reassignment (clam-chowder tr→us, erzurum-cag-kebabi **th→tr**, firinda-karniyarik **cn→tr**, hasir-kunefe/hosmerim/karadeniz-hamsi-kayganasi **th→tr** + 8 başka) + 8 ingredient eksikliği (congee/egg-drop-soup taze soğan garnish, cuban-picadillo/dana-solyanka/escondidinho soğan, fattoush zeytinyağı, jeyuk-bokkeum susam+taze soğan). Skipped: giresun tuz=pantry, kayseri style, 6 legitimate calorie.
+### B) Tarif çeviri retrofit tamamlandı — 1100/1100 (%100, 4 commit)
+- **`ce30da8`** batch 1 (300 tarif, recipes 200-499) — 100+100+100 kademeli. 0 CRITICAL/WARNING / 32 INFO. Script update: `PROTECTED_TOKEN_SKIP_SLUGS` ("Lokma" jenerik kullanım için: `*-lokmalari` skip). `fix-content-batch1.ts` 14c + 8i.
+- **`2dfa54d`** batch 2 (300 tarif, recipes 500-799) — 0 CRITICAL/WARNING / 76 INFO. Dolma + Köfte jenerik kullanım skip list'e eklendi. `fix-content-batch2.ts` 39c + 16i. Dev %72 retrofit.
+- **`4f5d4f3`** taxonomy expansion 20→24 — yeni kodlar `pe/gb/pl/au` (Peru/İngiliz/Polonya/Avustralya). `fix-taxonomy-expansion.ts` ile 6 deferred cuisine + 1 tag cleanup (samsun-kaz-tiridi vejetaryen→kaldırıldı, kaz eti içerik).
+- **`ad8a04f`** batch 3 (300 tarif, recipes 800-1099) — 0 CRITICAL / 62 INFO. `fix-content-batch3.ts` 28c + 11i + 1 allergen (sundubu-jjigae SUSAM — susam yağı eklenince audit flag'ledi). **Dev %100 retrofit.**
 
-**Bekleyen iş güncel:**
-1. ~~Batch 2 + 3~~ ✅ — dev + prod tamamlandı (18 Nis oturum 3)
-2. ~~Prod promote~~ ✅ — 1100/1100 translation + tüm content fix prod'da (18 Nis oturum 3, 4 batch + fix scripts + taxonomy expansion + 1 allergen)
-3. Tarif görselleri (Eren) — pilot 10 → 1100
-4. Codex batch 12+ yeni TR tarif (Eren, translations dolu zorunlu)
-5. ~~Auto-migrate alternatif~~ ✅ — `scripts/migrate-prod.ts` Yol A ship edildi
-6. OG Image i18n + SEO meta i18n ✅ — canlı doğrulandı
+### C) Prod promote (1 commit)
+- **`d9b170d`** — Kerem onayıyla tüm 4 batch + content fix + taxonomy expansion + allergen prod'a uygulandı. Schema migrate status "Database schema is up to date!" (no-op). Canlı EN doğrulama: `tarifle.app/tarif/pavlova` → "Pavlova recipe from Australian cuisine — Hard, 1 hr 55 min, serves 8, ~240 kcal." 🇦🇺 flag. 1100/1100 prod translations, audit-deep PASS.
 
-**Prod durumu:**
-- 1100 tarif, 1100/1100 translations dolu (%100)
-- audit-deep PASS, 24 cuisine kodu, pe/gb/pl/au canlı
-- Canlı EN doğrulama: `tarifle.app/tarif/pavlova` → "Pavlova recipe from Australian cuisine..."
+### D) SEO / i18n polish (3 commit)
+- **`f0382cb`** AI commentary ctx adaptif + EN mid-sentence capitalization — `applyCtx` helper her varyanta cuisine prefix garanti, EN'de "You" → "you" (I pronoun istisnası), TR `İ`→`i` locale-aware. 14 yeni unit test.
+- **`76d0993`** AI commentary 3 yeni scenario — `pantryOnly` (sadece staple), `singleIngredient` (1 real malzeme), `manyIngredients` (15+ real). `isPantryStaple` matcher'dan import, 3 variant her branch. 5 yeni test.
+- **`2b62594`** SEO recipe meta i18n — `/tarif/[slug]` generateMetadata cookie locale + `Recipe.translations`, EN user'a artık TR snippet dönmüyor. "Kaytaz Böreği recipe from Turkish cuisine — Medium, 1 hr 20 min..." `metadata.recipeDetail.{descriptionWithCuisine/NoCuisine/caloriesSuffix}` + mevcut `recipes.card` key reuse.
+- **`9f4048f`** OG image i18n — 2 locale variant (`/opengraph-image/tr` + `/opengraph-image/en`) via `generateImageMetadata`. Crawler'lar cookie göndermediği için URL-level split tek temiz yol. PNG farklı hash (49.7 KB EN vs 52.4 KB TR).
+
+### E) GPT dış audit kapatma (GPT5.4 rapor, 4 commit)
+- **`bdfee9d`** tier-1 buglar — (1) CountUp SSR "0 tarif" → `useState(target)` + rAF animation, (2) step timer "0 min" 30 saniye için → `secondsShort` i18n key + `<60s` guard, (3) AI Asistan `?m=` URL indekslenmesin → generateMetadata searchParams + `robots: noindex,follow`, (4) prod E2E test kalıntıları → 3 `@test.tarifle.local` user + 3 variation + 4 notification surgical delete.
+- **`c97d640`** tier-2 strateji — (10) alkollü/kokteyl tarif `noindex,follow` (thin content liability), (11) `/tarifler?q=/zorluk=/sure=` parametreli URL noindex + canonical clean, istisna `?mutfak=X` single-param cuisine landing, sitemap `?kategori=` → path-based `/tarifler/[kategori]`, (12) `/iletisim` sayfası (email/KVKK talep/moderasyon/yanıt süresi) + footer link + i18n, (9) www/non-www canonical zaten temiz.
+- **`8454238`** tier-1 son UI buglar — tag chip concat `#Misafir🌱Vegan#Bütçe` → `<ul><li>` semantic list + `role="list"` + aria-label, step numbering "1. 1" duplicate → `list-none pl-0` Tailwind 4 preflight marker suppress, 8 regional variant title disambiguation (Brik→Tunus Usulü Brik, etli-ekmek→Konya Usulü Etli Ekmek vs). Recipe JSON-LD zaten tam (Recipe + Breadcrumb + FAQ), Peanut Butter allergen doğru, 0 diğer test user.
+
+### F) Hukuk/güven metinleri (3 commit)
+- **`653b39a`** GPT audit section 7 — KVKK + Gizlilik + Kullanım Şartları güçlendirme. KVKK: 7 section (veri sorumlusu/hukuki sebep/saklama süreleri/KVKK 11 hak/30gün yanıt), "avukata danışın" kaldırıldı. Gizlilik: 8 üçüncü taraf tablosu + çerez türü + UGC moderasyon + çocuk gizliliği. Kullanım Şartları: UGC telif lisansı + sağlık/alerjen disclaimer + platform sorumluluk sınırı + Türkiye hukuku. NutritionInfo + allergen disclaimer güçlendi.
+- **`f47552c`** hesap silme "30 gün" yanlış iddia düzeltildi — kod anında hard-delete yapıyor (`deleteAccountAction` 7-adım transaction). Metinler gerçeğe uyarlandı ("anında ve geri alınamaz"), yedekleme rotasyon 90 gün eklendi. KVKK 13/2 başvuru yanıt 30 gün korundu (yasal).
+- **`88fcfaa`** 5 yanlış iddia düzeltildi — (1) Cloudinary kaldırıldı (kodda yok), (2) "AB-10 alerjen" → "AB-14 ana grupları" (resmi standart isim), (3) "ad, soyad" → "isim (opsiyonel, Google OAuth tam ad)" (User.name tek field), (4) nutrition ±%15 → ±%20 (kod `src/lib/nutrition.ts:18` "Accuracy target: ±20%"), (5) İstanbul Mahkemeleri → Türkiye Cumhuriyeti Mahkemeleri + 6502 Kanun tüketici hakları, (bonus) Upstash "AB" → "Küresel". **Metinler kodla %100 tutarlı.**
+
+### G) Codex2 brief + batch 12 (2 commit + hazır)
+- **`e7e3323`** `docs/CODEX_BATCH_BRIEF.md` — Codex yeni oturum için self-contained 485-satır talimat. Mod A (yeni TR tarif) + Mod B (çeviri retrofit), geçmiş hatalar tablosu (Mantı→cn, slug locative, özgün name kaybı vs), çift self-review checklist, kesin yasaklar.
+- **`4a4b2f4`** brief genişletildi — Mod A translations kapsamı: title+description yanında tipNote + servingSuggestion + **ingredients (sortOrder+name) + steps (stepNumber+instruction+tip)** zorunlu. Yeni tariflerde full quality, fallback bırakma.
+- **Batch 12 hazır** (Codex1 teslim, Claude bekliyor) — 72 TR + 28 uluslararası (14 kahvaltı + 12 çorba + 16 hamur + 12 tatlı + 10 meze + 8 bölgesel) + (5 se + 5 hu + 4 pe + 5 gb + 4 pl + 5 au). isFeatured 8 tarif. title + description tüm 100'de, tipNote/servingSuggestion bazı tariflerde. Ingredients + steps TR fallback (ileri bir Mod B turuyla genişletilebilir). `content:validate --last 100` clean.
+
+**Prod durumu (oturum 3 sonu):**
+- Prod: **1100 tarif, 1100/1100 translations (%100)**, audit-deep PASS, 24 cuisine kodu
+- Canlı: EN + TR tam retrofit, OG image i18n 2 variant, SEO meta i18n, cocktail/filter noindex, 3 E2E test içeriği temiz
+- `tarifle.app/tarif/pavlova` EN = "Pavlova recipe from Australian cuisine — Hard, 1 hr 55 min, serves 8, ~240 kcal." 🇦🇺
+- 508/508 test PASS (+19 yeni bu oturumda)
+- Hukuk metinleri kodla %100 tutarlı
+
+**Bekleyen iş (sonraki oturuma):**
+1. **Batch 12 seed + merge** — Codex1 teslim etti, Claude review + seed + retrofit + audit + commit + prod promote (schema aynı, sadece seed)
+2. **Batch 12 Mod B çevirisi** — ingredients + steps + tipNote + servingSuggestion tam EN/DE çevirisi için yeni Codex oturumu (Mod B, ikinci check olarak doğruluk iki kat artar)
+3. **Tarif görselleri** — `docs/IMAGE_GENERATION_PLAN.md`, pilot 10 → 1100 batch (Eren)
+4. **Sentry monitoring** post-deploy — prod'da yeni error var mı
+5. **Performance baseline güncelleme** — 1100 tarif + prod promote sonrası Lighthouse re-run
+
+**Tamamen tamamlanmış (oturum 3'te kapandı):**
+- ✅ Tarif çeviri retrofit (%100 prod)
+- ✅ AI commentary polish (3 yeni scenario)
+- ✅ Pre-push lint hook
+- ✅ SEO meta + OG image i18n
+- ✅ Taxonomy expansion (24 cuisine)
+- ✅ Migrate-prod wrapper (Yol A)
+- ✅ GPT dış audit tüm tier'lar (teknik + SEO + hukuk)
+- ✅ Hukuk metinleri kodla tutarlı
+- ✅ İletişim sayfası
 
 ---
 

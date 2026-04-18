@@ -1,8 +1,12 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 18 Nisan 2026 (oturum 2) — i18n kapanış (13 commit): tüm surface locale-aware + tarif çeviri retrofit altyapısı hazır (Codex Max pilot 200 bekleniyor) + recipe-of-the-day commentary locale-aware
+> Son güncelleme: 18 Nisan 2026 (oturum 2) — i18n %100 kapanış + tarif çeviri retrofit canlı (17 commit): tüm user-facing + backend + SEO + admin locale-aware, batch 0 import (200 tarif EN+DE), content audit fix (4 ingredient eksikliği)
 
-## 18 Nisan 2026 (oturum 2 — i18n derin tur, 8 commit)
+## 18 Nisan 2026 (oturum 2 — i18n kapanış + tarif retrofit canlı, 17 commit)
+
+Üç büyük blok: A) i18n tam kapatma (user-facing + backend + SEO + admin), B) Tarif çeviri retrofit altyapısı + pilot canlı (200 tarif), C) Content audit fix (Codex'in yakaladığı ingredient eksiklikleri).
+
+### A) i18n %100 locale-aware (11 commit)
 
 i18n soft launch'un kalan büyük parçaları. Toplam 8 commit: kullanıcı-temas surface tam EN, backend locale-aware, admin internal use için altyapı + partial.
 
@@ -18,11 +22,36 @@ i18n soft launch'un kalan büyük parçaları. Toplam 8 commit: kullanıcı-tema
 - **`5eff26a` + `66eb7aa`** tarif çeviri retrofit altyapısı — `scripts/export-recipes-for-translation.ts` (20 kolon CSV: slug/title/description/type/cuisine/difficulty/süreler/kalori/ingredients (full with amount+unit)/steps (full)/allergens/tags/tipNote/servingSuggestion, 4 parça: pilot 200 + 3×300) + `scripts/import-translations.ts` (Zod + quality check: özgün TR isim koruma + banned placeholder patterns + description thin warning + Codex issues forwarding + CRITICAL gate). Codex Max chat instruksiyonu hazır, pilot `docs/translations-batch-0.csv` bekleniyor.
 - **`82fe8f1`** recipe-of-the-day commentary backend locale-aware — homepage "Bugünün Tarifi" widget intro + curator note. messages.dailyRecipe (intros 5 variant + rules 13 id × 1-2 note + fallback). Sync + direct JSON import pattern (test-friendly). 18 test PASS.
 
-**Sonuç (i18n soft launch tamamı):** Kullanıcı-temas surface + admin paneli + backend (email, AI commentary, recipe-of-the-day) + SEO hepsi locale-aware. %100 EN/TR surface.
+**i18n %100 kapandı:** Kullanıcı-temas (homepage + navbar + footer + auth flow + recipe listing/detail + reviews + variations + AI Asistan form + settings + discover + profil + koleksiyon + bildirimler + alışveriş listesi + cooking mode) + admin paneli (14 sayfa + 17 component) + backend (email templates + AI commentary + recipe-of-the-day) + SEO (14 page + root layout generateMetadata) hepsi cookie-based locale-aware.
 
-**Bekleyen i18n:**
-- **Tarif içerik retrofit:** Codex Max pilot 200 çıktısı (`docs/translations-batch-0.json`) bekleniyor. Ardından 3 tam parça (~900 tarif). Import + prod promote Claude'da. Altyapı hazır.
-- AI commentary EN cümle polish ("From Turkish cuisine, You can make..." → cuisine prefix + template adaptif — scope-complex, ayrı sprint)
+### B) Tarif çeviri retrofit altyapısı + pilot canlı (200 tarif — 4 commit)
+
+1103 mevcut tarifin `Recipe.translations` JSONB alanı null → EN user UI EN ama content TR fallback. Codex Max (ChatGPT) üzerinden LLM batch çeviri ile gap kapatılıyor. File-based workflow (copy-paste yok): Claude CSV export, Codex JSON üret, Claude import.
+
+- **`5eff26a`** + **`66eb7aa`** export + import scripts + 4 CSV batch — `scripts/export-recipes-for-translation.ts` (Prisma.DbNull filter, 20 kolon: slug/title/description/type/cuisine/difficulty/süreler/kalori/ingredients full (amount+unit)/steps full/allergens/tags/tipNote/servingSuggestion; split: pilot 200 + 3×300) + `scripts/import-translations.ts` (Zod + quality check: özgün TR isim koruma 45 token + PROTECTED_ALIAS map [Pilav→Pilaf/Pilaw/Rice/Reis, Humus→Hummus, Yoğurt→Yogurt/Joghurt] + HARD_BANNED/SOFT_OPENER description pattern + Codex issues forwarding; apply gate CRITICAL --force; dev/prod guard)
+- **`74a0d29`** batch 0 import — Codex Max 200 tarif pilot çıktısı (8 issues raporuyla). Dry-run → alias fix → 0 CRITICAL → apply. Dev DB'de 200 tarif translations dolu. audit-deep PASS. Browser doğrulama: `/tarif/adana-kebap` EN = "Adana Kebap · A charcoal-grilled classic from Adana in southern Türkiye, shaping spicy minced meat with tail fat…"
+- **`ca0a989`** fix-missing-ingredients-batch0 — Codex'in 4 gerçek içerik hatası bulgusu (briam sarımsak + bun-bo-hue soğan + bun-cha sarımsak + antep-katikli-dolma sarımsak). Idempotent fix script, dev'e uygulandı.
+
+**Pilot kalite özeti (batch 0):**
+- EN description: min 106 / avg 138 / max 176 char — "yabancı için de tanınabilir" hedefi tutmuş, her biri malzeme + bölge + teknik + servis içeriyor
+- DE description: avg 145 / max 178 char (DE doğası gereği daha uzun)
+- Codex kalite hedefi güncellendi: **100–150 char tercih, max 200** (batch 1+ için)
+
+### C) Bekleyen iş
+
+**Tarif çeviri retrofit devamı (Codex Max + Claude paralel):**
+- **Batch 1** bekleniyor — 300 tarif (recipes 200–499), `docs/translations-batch-1.csv` hazır
+- **Batch 2 + 3** — 600 tarif daha (900 kalan)
+- **Prod promote** — dev'de 4 batch onaydan sonra (PROD_PROMOTE runbook manuel akış)
+
+**Diğer bekleyen işler:**
+1. **Tarif görselleri** — Eren `docs/IMAGE_GENERATION_PLAN.md` pilot 10 → 1100 batch. Zamanı var.
+2. **Codex batch 12+ yeni TR tarif** — Hamle A validator hazır, Eren'in makinesinde Codex2 yazacak. Translations dolu zorunlu (EN/DE title+description minimum).
+3. **Auto-migrate alternatif** — GitHub Actions / Neon direct URL. Manuel runbook şimdilik yeterli.
+4. **AI commentary EN cümle polish** — "From Turkish cuisine, You can make…" cuisine prefix + template adaptif. Scope-complex, ayrı sprint.
+5. **CI pre-push lint hook** — opsiyonel, git hook ile lint zorunluluğu (kullanıcı feedback'i).
+
+**Şu an odak:** Codex Max batch 1 çıktısını bekliyoruz. Geldiğinde Claude import + audit + commit + push.
 
 **Bekleyen büyük işler:**
 1. **Tarif görselleri** (Eren) — `docs/IMAGE_GENERATION_PLAN.md`, pilot 10 → 1100 batch. Zamanı var.

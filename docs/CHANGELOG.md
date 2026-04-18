@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: 18 Nisan 2026 (oturum 2 — i18n kapanış, 13 commit: tüm surface locale-aware + tarif retrofit altyapısı + recipe-of-the-day commentary backend)
+> Son güncelleme: 18 Nisan 2026 (oturum 2 — i18n %100 kapanış + batch 0 canlı, 17 commit: tüm surface locale-aware + tarif retrofit altyapısı + batch 0 import (200 tarif EN+DE) + 4 ingredient fix + recipe-of-the-day commentary backend)
 
 ## İşaretler
 
@@ -221,6 +221,11 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
   - `scripts/import-translations.ts`: JSON parse + Zod schema (title 2-200 / description 20-400) + quality check: CRITICAL (özgün TR isim kaybı — 45 korumalı token, banned placeholder patterns "a delicious/traditional/must-try") + WARNING (<60 char thin) + INFO (Codex reported issues 6 enum). Apply gate: CRITICAL varsa --force. Dev/prod guard (--confirm-prod).
   - 4 CSV export edildi (`docs/translations-batch-{0,1,2,3}.csv`). Codex Max chat instrüksiyonu ayrı hazırlandı. Pilot 200 çıktısı bekleniyor.
 - ✨ **Recipe-of-the-day commentary backend locale-aware (commit `82fe8f1`)** — homepage "Bugünün Tarifi" widget artık cookie-locale'a göre. `messages.dailyRecipe` (intros 5 variant + rules 13 id × 1-2 note + fallback). Sync + direct JSON import pattern (test-friendly — main commentary.ts getTranslations async pattern'ının sync analogu). RULES array id + matches, notes messages'tan. `pickDailyIntro(seed, locale)` + `buildCuratorNote(features, seed, locale)`. 18 unit test PASS. `src/lib/queries/recipe-of-the-day.ts` getLocale() + isValidLocale guard.
+- ✨ **Batch 0 çeviri import — 200 tarif canlı (commit `74a0d29`)** — Codex Max pilot çıktısı `docs/translations-batch-0.json` (200 tarif, 8 issues raporuyla) dev DB'ye yazıldı.
+  - Script iyileştirmeleri: PROTECTED_ALIAS map (Pilav→Pilaf/Pilaw/Rice/Reis cuisine bağlamı, Humus→Hummus, Yoğurt→Yogurt/Joghurt) — 6 false-positive CRITICAL düştü. placeholder-prose iki-tier (HARD_BANNED + SOFT_OPENER: "A traditional X" sadece <80 char description'da CRITICAL, uzunda OK) — 2 false-positive daha düştü.
+  - Dry-run: 0 CRITICAL, 0 WARNING, 8 INFO (Codex reported). Apply: 200 translation dev DB'ye. audit-deep PASS.
+  - Kalite: EN description avg 138 / max 176 char, DE avg 145 / max 178 — "yabancı için de tanınabilir" hedefi tutuldu. Codex description hedefi güncellendi: 100–150 tercih, max 200.
+- 🐛 **Batch 0 content audit fix — 4 ingredient eksikliği (commit `ca0a989`)** — Codex'in 4 gerçek içerik hatası bulgusu: briam (step 2 sarımsak), bun-bo-hue (step 1 soğan), bun-cha (step 1 sarımsak), antep-katikli-dolma (description "sarımsaklı yoğurt"). `scripts/fix-missing-ingredients-batch0.ts` idempotent fix (2 diş Sarımsak ×3 + 1 adet Soğan ×1). Dev'e uygulandı. 4 calorie-anomaly INFO (adaçaylı elma çayı 24, americano 3, cafe cubano 48, cafezinho 32 kcal) legitimate — içecekler düşük kalorili, fix gerekmez.
 
 ## Schema & DB
 

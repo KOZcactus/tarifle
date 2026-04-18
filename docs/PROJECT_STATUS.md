@@ -1,6 +1,28 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 18 Nisan 2026 (oturum 2) — i18n %100 kapanış + tarif çeviri retrofit canlı (17 commit): tüm user-facing + backend + SEO + admin locale-aware, batch 0 import (200 tarif EN+DE), content audit fix (4 ingredient eksikliği)
+> Son güncelleme: 18 Nisan 2026 (oturum 3) — pre-push lint hook + AI commentary EN polish + tarif çeviri batch 1 canlı (300 tarif, 500/1103 retrofit, %45) + content fix (14 cuisine + 8 ingredient).
+
+## 18 Nisan 2026 (oturum 3 — lint hook + commentary polish + batch 1)
+
+Bekleyen listesinden 3 işi kapattık + batch 1 canlı.
+
+- **`65dc8ea`** pre-push lint hook — `scripts/git-hooks/pre-push` + `npm run setup:hooks` (native git, husky'siz). CI lint error'larını yerelde yakalar.
+- **`f0382cb`** AI commentary ctx adaptif + EN capitalization — `applyCtx` helper her varyanta cuisine prefix'i garantiler, EN'de mid-sentence `"You"` → `"you"` (I pronoun istisnası korunur), TR `İ`→`i` locale-aware. 14 yeni unit test. Canlı: "From Turkish cuisine, nice pantry: you don't even need to shop for 10 recipes."
+- **Tarif çeviri batch 1** — Codex Max 300 tarif (recipes 200-499), 100+100+100 kademeli. Dry-run 0 CRITICAL / 0 WARNING / 32 INFO. Script update: `PROTECTED_TOKEN_SKIP_SLUGS` ("Lokma" generic kullanım — `*-lokmalari` slug'ları için skip). 1 slug typo fix (`firinda-...` → `firin-...` locative eki fazlası). Dev'de 500/1103 tarif translations dolu (%45 retrofit).
+- **Content fix batch 1** — `fix-content-batch1.ts` 14 cuisine reassignment (clam-chowder tr→us, erzurum-cag-kebabi **th→tr**, firinda-karniyarik **cn→tr**, hasir-kunefe/hosmerim/karadeniz-hamsi-kayganasi **th→tr** + 8 başka) + 8 ingredient eksikliği (congee/egg-drop-soup taze soğan garnish, cuban-picadillo/dana-solyanka/escondidinho soğan, fattoush zeytinyağı, jeyuk-bokkeum susam+taze soğan). Skipped: giresun tuz=pantry, kayseri style, 6 legitimate calorie.
+
+**Bekleyen iş güncel:**
+1. Batch 2 + 3 (600 tarif daha) — Codex Max'e sıra
+2. Prod promote — 4 batch onaydan sonra (runbook manuel)
+3. Tarif görselleri (Eren) — pilot 10 → 1100
+4. Codex batch 12+ yeni TR tarif (Eren, translations dolu zorunlu)
+5. Auto-migrate alternatif — GitHub Actions / Neon direct URL
+
+---
+
+## 18 Nisan 2026 (oturum 2 — i18n kapanış + tarif retrofit canlı, 17 commit)
+
+> Önceki son güncelleme: i18n %100 kapanış + tarif çeviri retrofit canlı (17 commit): tüm user-facing + backend + SEO + admin locale-aware, batch 0 import (200 tarif EN+DE), content audit fix (4 ingredient eksikliği)
 
 ## 18 Nisan 2026 (oturum 2 — i18n kapanış + tarif retrofit canlı, 17 commit)
 

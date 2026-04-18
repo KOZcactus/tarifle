@@ -89,6 +89,20 @@ const PROTECTED_ALIAS: Record<string, { en?: string[]; de?: string[] }> = {
   Yoğurt: { en: ["Yogurt", "Yoghurt"], de: ["Joghurt"] },
 };
 
+/** Slugs where a protected token appears only as a generic modifier and
+ *  doesn't need to be preserved in translation. "Lokma" as a dessert must
+ *  stay (`lokma-tatlisi`) but in `kakaolu-enerji-lokmalari` ("cocoa energy
+ *  bites") or `patates-rosti-lokmalari` ("potato rosti bites") it's just the
+ *  Turkish word for "bite/morsel" — "Energy Bites" / "Rosti Bites" are the
+ *  natural EN/DE renderings. Listed by token so the skip is surgical. */
+const PROTECTED_TOKEN_SKIP_SLUGS: Record<string, ReadonlySet<string>> = {
+  Lokma: new Set([
+    "kakaolu-enerji-lokmalari",
+    "kabak-mucver-lokmalari",
+    "patates-rosti-lokmalari",
+  ]),
+};
+
 /** Titles that MUST NOT be translated away — the TR proper name has to show
  *  up somewhere in the EN/DE title. Keeps "Adana Kebap" from becoming
  *  "Spicy Meat Skewer". Covers the highest-risk proper names; additional
@@ -176,6 +190,7 @@ function qualityCheck(
     return accepted.some((alias) => lower.includes(alias.toLocaleLowerCase()));
   };
   for (const token of titleTokens) {
+    if (PROTECTED_TOKEN_SKIP_SLUGS[token]?.has(item.slug)) continue;
     if (!hasLocaleForm(item.en.title, token, "en")) {
       findings.push({
         slug: item.slug,

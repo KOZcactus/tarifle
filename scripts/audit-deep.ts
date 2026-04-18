@@ -165,6 +165,8 @@ const ALLERGEN_RULES: AllergenRule[] = [
       "pirinç noodle", "cam noodle",
       // Gluten-free tortilla variants (Mexican tortilla chips are corn-based):
       "mısır tortilla", "tortilla cipsi",
+      // Herb "kekik" (thyme) is gluten-free — collides with "kek" substring:
+      "kekik", "taze kekik", "kuru kekik", "kekik otu",
       // NOTE: "ramen noodle" intentionally NOT excluded — actually wheat-based.
     ],
     customMatch: (name: string) => {

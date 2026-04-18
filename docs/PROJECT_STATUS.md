@@ -1,6 +1,6 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 18 Nisan 2026 (oturum 3) — pre-push lint hook + AI commentary EN polish + 3 yeni scenario + **batch 1+2+3 tamamlandı (1100/1100 retrofit, %100)** + content fix (90+ cuisine + 35 ingredient) + migrate-prod wrapper + SEO meta i18n + OG image i18n + taxonomy expansion (24 cuisine kodu). Prod promote path açık.
+> Son güncelleme: 18 Nisan 2026 (oturum 3) — pre-push lint hook + AI commentary EN polish + 3 yeni scenario + **batch 1+2+3 + PROD PROMOTE tamamlandı (prod 1100/1100 translations, %100)** + content fix (90+ cuisine + 35 ingredient) + migrate-prod wrapper + SEO meta i18n + OG image i18n + taxonomy expansion (24 cuisine kodu). 🎉 Tarifle.app canlı EN/TR tam retrofit.
 
 ## 18 Nisan 2026 (oturum 3 — lint hook + commentary polish + batch 1)
 
@@ -12,11 +12,17 @@ Bekleyen listesinden 3 işi kapattık + batch 1 canlı.
 - **Content fix batch 1** — `fix-content-batch1.ts` 14 cuisine reassignment (clam-chowder tr→us, erzurum-cag-kebabi **th→tr**, firinda-karniyarik **cn→tr**, hasir-kunefe/hosmerim/karadeniz-hamsi-kayganasi **th→tr** + 8 başka) + 8 ingredient eksikliği (congee/egg-drop-soup taze soğan garnish, cuban-picadillo/dana-solyanka/escondidinho soğan, fattoush zeytinyağı, jeyuk-bokkeum susam+taze soğan). Skipped: giresun tuz=pantry, kayseri style, 6 legitimate calorie.
 
 **Bekleyen iş güncel:**
-1. Batch 2 + 3 (600 tarif daha) — Codex Max'e sıra
-2. Prod promote — 4 batch onaydan sonra (`scripts/migrate-prod.ts` + seed/retrofit runbook)
+1. ~~Batch 2 + 3~~ ✅ — dev + prod tamamlandı (18 Nis oturum 3)
+2. ~~Prod promote~~ ✅ — 1100/1100 translation + tüm content fix prod'da (18 Nis oturum 3, 4 batch + fix scripts + taxonomy expansion + 1 allergen)
 3. Tarif görselleri (Eren) — pilot 10 → 1100
 4. Codex batch 12+ yeni TR tarif (Eren, translations dolu zorunlu)
-5. ~~Auto-migrate alternatif~~ ✅ — `scripts/migrate-prod.ts` Yol A ship edildi (direct URL wrapper + destructive guard). Yol B/C ileride değerlendirilir.
+5. ~~Auto-migrate alternatif~~ ✅ — `scripts/migrate-prod.ts` Yol A ship edildi
+6. OG Image i18n + SEO meta i18n ✅ — canlı doğrulandı
+
+**Prod durumu:**
+- 1100 tarif, 1100/1100 translations dolu (%100)
+- audit-deep PASS, 24 cuisine kodu, pe/gb/pl/au canlı
+- Canlı EN doğrulama: `tarifle.app/tarif/pavlova` → "Pavlova recipe from Australian cuisine..."
 
 ---
 

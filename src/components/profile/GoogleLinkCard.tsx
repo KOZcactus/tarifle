@@ -3,6 +3,7 @@
 import { useState, useTransition } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { unlinkGoogleAction } from "@/lib/actions/profile";
 
 interface GoogleLinkCardProps {
@@ -44,6 +45,7 @@ export function GoogleLinkCard({
   hasPassword,
   linkResult,
 }: GoogleLinkCardProps) {
+  const t = useTranslations("settings.google");
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
   const [unlinkSuccess, setUnlinkSuccess] = useState(false);
@@ -53,14 +55,12 @@ export function GoogleLinkCard({
   const handleUnlink = () => {
     setError(null);
     setUnlinkSuccess(false);
-    const ok = window.confirm(
-      "Google bağlantını koparmak istediğine emin misin? Bundan sonra hesabına yalnızca e-posta + şifreyle girebilirsin.",
-    );
+    const ok = window.confirm(t("confirmUnlink"));
     if (!ok) return;
     startUnlinking(async () => {
       const result = await unlinkGoogleAction();
       if (!result.success) {
-        setError(result.error ?? "Bağlantı koparılamadı.");
+        setError(result.error ?? t("unlinkError"));
         return;
       }
       setUnlinkSuccess(true);
@@ -79,18 +79,14 @@ export function GoogleLinkCard({
       });
       if (!res.ok) {
         setBusy(false);
-        setError(
-          res.status === 401
-            ? "Oturum süresi dolmuş. Lütfen yeniden giriş yap."
-            : "Bağlama başlatılamadı. Lütfen tekrar dene.",
-        );
+        setError(res.status === 401 ? t("sessionExpired") : t("startError"));
         return;
       }
       // Now hand control to Auth.js — this will redirect to Google.
       await signIn("google", { callbackUrl: "/ayarlar?linked=1" });
     } catch {
       setBusy(false);
-      setError("Beklenmeyen hata. Lütfen tekrar dene.");
+      setError(t("unexpectedError"));
     }
   };
 
@@ -99,17 +95,17 @@ export function GoogleLinkCard({
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
           <h2 className="font-heading text-base font-semibold text-text">
-            Google hesabı
+            {t("title")}
           </h2>
           <p className="mt-1 text-sm text-text-muted">
             {linked
-              ? `Hesabın şu Google kimliğiyle bağlı: ${email}. Bir sonraki girişinde "Google ile Giriş Yap" seçip parola girmeden girebilirsin.`
-              : "Google ile giriş yapabilmek için hesabını bağlayabilirsin. Yalnızca üyelik e-postan ile aynı olan Google hesabı bağlanabilir."}
+              ? t("descriptionLinked", { email })
+              : t("descriptionUnlinked")}
           </p>
         </div>
         {linked && (
           <span className="shrink-0 rounded-full bg-accent-green/15 px-3 py-1 text-xs font-semibold text-accent-green">
-            Bağlı
+            {t("linkedBadge")}
           </span>
         )}
       </div>
@@ -120,7 +116,7 @@ export function GoogleLinkCard({
           role="status"
           className="mt-4 rounded-lg bg-accent-green/10 px-4 py-3 text-sm text-accent-green"
         >
-          Google hesabın başarıyla bağlandı.
+          {t("linkSuccessBanner")}
         </div>
       )}
       {linkResult === "mismatch" && (
@@ -128,8 +124,9 @@ export function GoogleLinkCard({
           role="alert"
           className="mt-4 rounded-lg bg-error/10 px-4 py-3 text-sm text-error"
         >
-          Seçtiğin Google hesabı <strong>{email}</strong> ile kayıtlı değil.
-          Hesabını bağlamak için aynı e-postaya sahip Google kimliğini seçmelisin.
+          {t.rich("mismatchBanner", {
+            email: () => <strong>{email}</strong>,
+          })}
         </div>
       )}
       {linkResult === "session" && (
@@ -137,7 +134,7 @@ export function GoogleLinkCard({
           role="alert"
           className="mt-4 rounded-lg bg-error/10 px-4 py-3 text-sm text-error"
         >
-          Bağlama isteği süresi doldu. Lütfen tekrar dene.
+          {t("sessionBanner")}
         </div>
       )}
 
@@ -150,7 +147,7 @@ export function GoogleLinkCard({
           role="status"
           className="mt-4 rounded-lg bg-accent-green/10 px-4 py-3 text-sm text-accent-green"
         >
-          Google bağlantın koparıldı.
+          {t("unlinkSuccessBanner")}
         </div>
       )}
 
@@ -172,8 +169,7 @@ export function GoogleLinkCard({
         <div className="mt-4">
           {!hasPassword && (
             <p className="mb-2 text-xs text-text-muted">
-              Google bağlantısını koparabilmen için önce bir şifre eklemen
-              lazım — aşağıdaki Şifre kartından ekleyebilirsin.
+              {t("needPasswordHint")}
             </p>
           )}
           <button
@@ -182,7 +178,7 @@ export function GoogleLinkCard({
             disabled={isUnlinking || !hasPassword}
             className="rounded-lg border border-border px-4 py-2 text-sm font-medium text-text-muted transition-colors hover:border-error hover:text-error focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-error disabled:cursor-not-allowed disabled:opacity-50"
           >
-            {isUnlinking ? "Koparılıyor…" : "Bağlantıyı koparın"}
+            {isUnlinking ? t("unlinking") : t("unlink")}
           </button>
         </div>
       )}
@@ -212,7 +208,7 @@ export function GoogleLinkCard({
               fill="#EA4335"
             />
           </svg>
-          {busy ? "Yönlendiriliyor…" : "Google hesabını bağla"}
+          {busy ? t("linking") : t("link")}
         </button>
       )}
     </section>

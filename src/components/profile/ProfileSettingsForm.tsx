@@ -3,6 +3,7 @@
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { updateProfileAction } from "@/lib/actions/profile";
 
@@ -35,6 +36,7 @@ export function ProfileSettingsForm({
   email,
   emailVerified,
 }: ProfileSettingsFormProps) {
+  const t = useTranslations("settings.profile");
   const router = useRouter();
   const { update } = useSession();
   const [name, setName] = useState(initialName);
@@ -55,7 +57,7 @@ export function ProfileSettingsForm({
     startTransition(async () => {
       const result = await updateProfileAction(formData);
       if (!result.success || !result.data) {
-        setError(result.error ?? "Güncellenemedi.");
+        setError(result.error ?? t("errorDefault"));
         return;
       }
 
@@ -86,22 +88,22 @@ export function ProfileSettingsForm({
       {/* E-posta (read-only summary) */}
       <section>
         <p className="text-xs font-medium uppercase tracking-wide text-text-muted">
-          E-posta
+          {t("emailLabel")}
         </p>
         <p className="mt-1 flex items-center gap-2 text-sm text-text">
           {email}
           {emailVerified ? (
             <span className="rounded-full bg-accent-green/15 px-2 py-0.5 text-[11px] font-medium text-accent-green">
-              Doğrulandı
+              {t("emailVerified")}
             </span>
           ) : (
             <span className="rounded-full bg-secondary/15 px-2 py-0.5 text-[11px] font-medium text-secondary">
-              Doğrulanmadı
+              {t("emailUnverified")}
             </span>
           )}
         </p>
         <p className="mt-1 text-xs text-text-muted">
-          E-posta adresini buradan değiştiremezsin.
+          {t("emailHelper")}
         </p>
       </section>
 
@@ -112,7 +114,7 @@ export function ProfileSettingsForm({
           htmlFor="name"
           className="mb-1.5 block text-sm font-medium text-text"
         >
-          Ad Soyad
+          {t("nameLabel")}
         </label>
         <input
           id="name"
@@ -133,10 +135,10 @@ export function ProfileSettingsForm({
           htmlFor="username"
           className="mb-1.5 block text-sm font-medium text-text"
         >
-          Kullanıcı adı
+          {t("usernameLabel")}
         </label>
         <div className="flex items-center gap-2">
-          <span className="text-sm text-text-muted">tarifle.app/profil/</span>
+          <span className="text-sm text-text-muted">{t("usernamePrefix")}</span>
           <input
             id="username"
             name="username"
@@ -152,12 +154,14 @@ export function ProfileSettingsForm({
           />
         </div>
         <p className="mt-1.5 text-xs text-text-muted">
-          Sadece küçük harf, rakam, <code>_</code> ve <code>-</code>. Harfle başlamalı.
+          {t.rich("usernameHelper", {
+            code: (chunks) => <code>{chunks}</code>,
+          })}
           {usernameChanged && (
             <>
               {" "}
               <span className="text-secondary">
-                Değiştirirsen profil bağlantın tamamen yeni olur.
+                {t("usernameChangeWarning")}
               </span>
             </>
           )}
@@ -169,7 +173,7 @@ export function ProfileSettingsForm({
           htmlFor="bio"
           className="mb-1.5 block text-sm font-medium text-text"
         >
-          Biyografi
+          {t("bioLabel")}
         </label>
         <textarea
           id="bio"
@@ -178,11 +182,11 @@ export function ProfileSettingsForm({
           onChange={(e) => setBio(e.target.value)}
           maxLength={300}
           rows={3}
-          placeholder="Kendinden kısaca bahset — favori tarifler, mutfak tarzı, vb."
+          placeholder={t("bioPlaceholder")}
           className="w-full resize-none rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
         />
         <p className="mt-1 text-xs text-text-muted">
-          {bio.length}/300
+          {t("bioCounter", { count: bio.length })}
         </p>
       </div>
 
@@ -196,7 +200,7 @@ export function ProfileSettingsForm({
       )}
       {success && !error && (
         <div className="rounded-lg bg-accent-green/10 px-4 py-3 text-sm text-accent-green">
-          Profilin güncellendi.
+          {t("successMessage")}
         </div>
       )}
 
@@ -205,14 +209,14 @@ export function ProfileSettingsForm({
           href={`/profil/${initialUsername}`}
           className="text-sm text-text-muted hover:text-text"
         >
-          ← Profilime dön
+          {t("backToProfile")}
         </Link>
         <button
           type="submit"
           disabled={isPending}
           className="rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-hover disabled:opacity-50"
         >
-          {isPending ? "Kaydediliyor…" : "Kaydet"}
+          {isPending ? t("submitting") : t("submit")}
         </button>
       </div>
     </form>

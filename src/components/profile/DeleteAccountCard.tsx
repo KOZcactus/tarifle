@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { signOut } from "next-auth/react";
+import { useTranslations } from "next-intl";
 import { deleteAccountAction } from "@/lib/actions/profile";
 
 interface DeleteAccountCardProps {
@@ -33,6 +34,7 @@ export function DeleteAccountCard({
   username,
   hasPassword,
 }: DeleteAccountCardProps) {
+  const t = useTranslations("settings.delete");
   const [expanded, setExpanded] = useState(false);
   const [confirmInput, setConfirmInput] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -45,18 +47,14 @@ export function DeleteAccountCard({
     setError(null);
     // Double-check with a native confirm dialog so a single misclick doesn't
     // nuke the account. Server still validates independently.
-    const ok = window.confirm(
-      "Hesabın kalıcı olarak silinecek. Tüm uyarlamaların, koleksiyonların, " +
-        "beğenilerin ve bildirimlerin silinecek. Bu işlem geri alınamaz — " +
-        "devam etmek istiyor musun?",
-    );
+    const ok = window.confirm(t("confirmDialog"));
     if (!ok) return;
 
     const formData = new FormData(e.currentTarget);
     startTransition(async () => {
       const result = await deleteAccountAction(formData);
       if (!result.success) {
-        setError(result.error ?? "Hesap silinemedi.");
+        setError(result.error ?? t("errorDefault"));
         return;
       }
       // DB is gone; clear the session cookie and leave.
@@ -69,12 +67,10 @@ export function DeleteAccountCard({
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
           <h2 className="font-heading text-base font-semibold text-error">
-            Tehlikeli alan
+            {t("title")}
           </h2>
           <p className="mt-1 text-sm text-text-muted">
-            Hesabını kalıcı olarak silebilirsin. Bu işlem geri alınamaz.
-            Uyarlamaların, koleksiyonların, beğenilerin ve bildirimlerin
-            silinir.
+            {t("description")}
           </p>
         </div>
         <button
@@ -88,7 +84,7 @@ export function DeleteAccountCard({
           aria-controls="delete-account-form"
           className="shrink-0 rounded-md border border-error/40 px-3 py-1.5 text-xs font-semibold text-error transition-colors hover:bg-error/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-error"
         >
-          {expanded ? "Kapat" : "Hesabı Sil"}
+          {expanded ? t("closeButton") : t("openButton")}
         </button>
       </div>
 
@@ -103,10 +99,10 @@ export function DeleteAccountCard({
               htmlFor="confirmUsername"
               className="mb-1.5 block text-sm font-medium text-text"
             >
-              Onay
+              {t("confirmLabel")}
             </label>
             <p className="mb-2 text-xs text-text-muted">
-              Devam etmek için kullanıcı adını olduğu gibi yaz:{" "}
+              {t("confirmHelper")}{" "}
               <code className="rounded bg-bg-elevated px-1.5 py-0.5 text-text">
                 {username}
               </code>
@@ -129,7 +125,7 @@ export function DeleteAccountCard({
                 htmlFor="delete-password"
                 className="mb-1.5 block text-sm font-medium text-text"
               >
-                Şifren
+                {t("passwordLabel")}
               </label>
               <input
                 id="delete-password"
@@ -140,7 +136,7 @@ export function DeleteAccountCard({
                 className="w-full rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-error focus:outline-none focus:ring-1 focus:ring-error"
               />
               <p className="mt-1 text-xs text-text-muted">
-                Güvenlik için mevcut şifreni doğrulamamız lazım.
+                {t("passwordHelper")}
               </p>
             </div>
           )}
@@ -160,7 +156,7 @@ export function DeleteAccountCard({
               disabled={isPending || !confirmMatches}
               className="rounded-lg bg-error px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-error/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-error disabled:cursor-not-allowed disabled:opacity-50"
             >
-              {isPending ? "Siliniyor…" : "Hesabı Kalıcı Olarak Sil"}
+              {isPending ? t("submitting") : t("submit")}
             </button>
           </div>
         </form>

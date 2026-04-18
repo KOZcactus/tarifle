@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { useTranslations } from "next-intl";
 import {
   changePasswordAction,
   setPasswordAction,
@@ -29,6 +30,7 @@ interface PasswordChangeCardProps {
  * Both share the rate-limit scope + the same visual shell.
  */
 export function PasswordChangeCard({ hasPassword }: PasswordChangeCardProps) {
+  const t = useTranslations("settings.password");
   const [expanded, setExpanded] = useState(false);
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
@@ -61,27 +63,21 @@ export function PasswordChangeCard({ hasPassword }: PasswordChangeCardProps) {
       } else {
         setError(
           result.error ??
-            (mode === "change"
-              ? "Şifre değiştirilemedi."
-              : "Şifre eklenemedi."),
+            (mode === "change" ? t("errorChange") : t("errorSet")),
         );
       }
     });
   };
 
-  const title = "Şifre";
+  const title = t("title");
   const description =
-    mode === "change"
-      ? "Güvenlik için şifreni ara sıra değiştir."
-      : "Hesabın Google ile açıldı. Bir şifre ekleyerek e-posta + şifre ile de giriş yapabilirsin.";
-  const toggleLabel =
-    mode === "change" ? "Şifre Değiştir" : "Şifre Ekle";
-  const submitLabel =
-    mode === "change" ? "Şifreyi Güncelle" : "Şifreyi Ekle";
+    mode === "change" ? t("descriptionChange") : t("descriptionSet");
+  const toggleLabel = mode === "change" ? t("toggleChange") : t("toggleSet");
+  const submitLabel = mode === "change" ? t("submitChange") : t("submitSet");
   const submitPending =
-    mode === "change" ? "Güncelleniyor…" : "Ekleniyor…";
+    mode === "change" ? t("submittingChange") : t("submittingSet");
   const successMessage =
-    mode === "change" ? "Şifren güncellendi." : "Şifren eklendi.";
+    mode === "change" ? t("successChange") : t("successSet");
 
   return (
     <section className="rounded-xl border border-border bg-bg-card p-6">
@@ -103,7 +99,7 @@ export function PasswordChangeCard({ hasPassword }: PasswordChangeCardProps) {
           aria-controls="password-change-form"
           className="shrink-0 rounded-md border border-border px-3 py-1.5 text-xs font-semibold text-text transition-colors hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         >
-          {expanded ? "Kapat" : toggleLabel}
+          {expanded ? t("closeButton") : toggleLabel}
         </button>
       </div>
 
@@ -119,7 +115,7 @@ export function PasswordChangeCard({ hasPassword }: PasswordChangeCardProps) {
                 htmlFor="currentPassword"
                 className="mb-1.5 block text-sm font-medium text-text"
               >
-                Mevcut şifre
+                {t("currentPasswordLabel")}
               </label>
               <input
                 id="currentPassword"
@@ -137,7 +133,7 @@ export function PasswordChangeCard({ hasPassword }: PasswordChangeCardProps) {
               htmlFor="newPassword"
               className="mb-1.5 block text-sm font-medium text-text"
             >
-              {mode === "change" ? "Yeni şifre" : "Şifre"}
+              {mode === "change" ? t("newPasswordLabelChange") : t("newPasswordLabelSet")}
             </label>
             <input
               id="newPassword"
@@ -150,7 +146,7 @@ export function PasswordChangeCard({ hasPassword }: PasswordChangeCardProps) {
               className="w-full rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
             />
             <p className="mt-1 text-xs text-text-muted">
-              En az 8 karakter. Kolay tahmin edilmeyen bir şey seç.
+              {t("newPasswordHelper")}
             </p>
           </div>
 
@@ -159,7 +155,7 @@ export function PasswordChangeCard({ hasPassword }: PasswordChangeCardProps) {
               htmlFor="confirmPassword"
               className="mb-1.5 block text-sm font-medium text-text"
             >
-              {mode === "change" ? "Yeni şifre (tekrar)" : "Şifre (tekrar)"}
+              {mode === "change" ? t("confirmPasswordLabelChange") : t("confirmPasswordLabelSet")}
             </label>
             <input
               id="confirmPassword"

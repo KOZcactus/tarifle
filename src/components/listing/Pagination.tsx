@@ -65,36 +65,27 @@ export function Pagination({
   }
 
   // Counter — only shown when caller supplies totalItems + pageSize.
-  // Visual: compact "<range> · <total> tarif" with bold range + tabular-nums
-  // for aligned digits. Full sentence lives in aria-live sr-only span so
-  // screen readers still get the context.
-  let counterRange: string | null = null;
-  let counterTotal: number | null = null;
-  let counterFullLabel: string | null = null;
+  // Two-part layout: "<range> <showing verb> · <total verb> <N> <suffix>"
+  // ("1–12 gösteriliyor · toplam 159 tarif" / "Showing 1–12 · 159 recipes
+  // total"). First half (action) is emphasised, total half is muted context.
+  // tabular-nums keeps digit widths stable across page changes.
+  let showingCount: string | null = null;
+  let totalCount: string | null = null;
   if (typeof totalItems === "number" && typeof pageSize === "number" && totalItems > 0) {
     const from = (currentPage - 1) * pageSize + 1;
     const to = Math.min(currentPage * pageSize, totalItems);
-    counterRange = `${from}–${to}`;
-    counterTotal = totalItems;
-    counterFullLabel = t("pagination.showing", { from, to, total: totalItems });
+    showingCount = t("pagination.showingCount", { from, to });
+    totalCount = t("pagination.totalCount", { total: totalItems });
   }
 
   return (
     <div className="mt-12 flex flex-col items-center gap-4">
-      {counterRange && counterTotal !== null && (
-        <div className="flex items-baseline gap-2 text-sm tabular-nums text-text-muted">
-          <span className="font-semibold tracking-tight text-text">
-            {counterRange}
-          </span>
+      {showingCount && totalCount && (
+        <p className="flex flex-wrap items-baseline justify-center gap-x-2 text-sm tabular-nums text-text-muted">
+          <span className="font-medium text-text">{showingCount}</span>
           <span aria-hidden="true" className="text-text-muted/50">·</span>
-          <span>
-            <span className="font-medium text-text/80">{counterTotal}</span>{" "}
-            {t("pagination.totalSuffix")}
-          </span>
-          <span className="sr-only" aria-live="polite">
-            {counterFullLabel}
-          </span>
-        </div>
+          <span>{totalCount}</span>
+        </p>
       )}
       <nav
         className="flex flex-wrap items-center justify-center gap-2"

@@ -1463,8 +1463,8 @@
       "previous": "← Previous",
       "next": "Next →",
       "aria": "Pagination",
-      "showing": "Recipes {from}–{to} of {total}",
-      "totalSuffix": "recipes"
+      "showingCount": "Showing {from}–{to}",
+      "totalCount": "{total} recipes total"
     },
     "listAria": "Recipe list",
     "categorySrHeader": "{category} recipes",

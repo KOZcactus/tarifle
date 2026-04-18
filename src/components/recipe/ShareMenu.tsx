@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { useDismiss } from "@/hooks/useDismiss";
 
 interface ShareMenuProps {
@@ -16,6 +17,7 @@ interface ShareMenuProps {
  * let the OS native share sheet handle it — it covers every app the user has.
  */
 export function ShareMenu({ title, url, text }: ShareMenuProps) {
+  const t = useTranslations("share");
   const [isOpen, setIsOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const [hasNativeShare, setHasNativeShare] = useState(false);
@@ -77,7 +79,7 @@ export function ShareMenu({ title, url, text }: ShareMenuProps) {
         onClick={openShare}
         aria-haspopup={hasNativeShare ? undefined : "true"}
         aria-expanded={!hasNativeShare && isOpen}
-        aria-label="Paylaş"
+        aria-label={t("buttonAria")}
         className="flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-text-muted transition-colors hover:border-primary hover:text-primary"
       >
         <svg
@@ -97,7 +99,7 @@ export function ShareMenu({ title, url, text }: ShareMenuProps) {
           <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
           <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
         </svg>
-        Paylaş
+        {t("buttonLabel")}
       </button>
 
       {!hasNativeShare && isOpen && (
@@ -126,7 +128,7 @@ export function ShareMenu({ title, url, text }: ShareMenuProps) {
                 <path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.5.3-.8.3-1.4.2-1.5-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z" />
               </svg>
             </span>
-            WhatsApp
+            {t("whatsapp")}
           </a>
 
           <a
@@ -150,7 +152,7 @@ export function ShareMenu({ title, url, text }: ShareMenuProps) {
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
               </svg>
             </span>
-            X (Twitter)
+            {t("twitter")}
           </a>
 
           <button
@@ -192,7 +194,7 @@ export function ShareMenu({ title, url, text }: ShareMenuProps) {
                 </svg>
               )}
             </span>
-            {copied ? "Kopyalandı!" : "Bağlantıyı kopyala"}
+            {copied ? t("copied") : t("copy")}
           </button>
         </div>
       )}

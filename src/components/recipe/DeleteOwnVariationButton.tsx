@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { deleteOwnVariationAction } from "@/lib/actions/variation";
 
 interface DeleteOwnVariationButtonProps {
@@ -29,30 +30,23 @@ export function DeleteOwnVariationButton({
   variant = "inline",
 }: DeleteOwnVariationButtonProps) {
   const router = useRouter();
+  const t = useTranslations("deleteVariation");
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
 
   const handleClick = (e: React.MouseEvent) => {
-    // When rendered inside a parent <Link>-wrapping row (profile list), click
-    // would otherwise bubble to the link and navigate away before we could
-    // confirm. Stop it here; the button is semantically a standalone action.
     e.preventDefault();
     e.stopPropagation();
     setError(null);
-    const ok = window.confirm(
-      `"${miniTitle}" uyarlamasını silmek istediğine emin misin? Bu işlem geri alınamaz.`,
-    );
+    const ok = window.confirm(t("confirm", { title: miniTitle }));
     if (!ok) return;
 
     startTransition(async () => {
       const result = await deleteOwnVariationAction(variationId);
       if (!result.success) {
-        setError(result.error ?? "Silinemedi.");
+        setError(result.error ?? t("errorDefault"));
         return;
       }
-      // Page re-renders via revalidatePath on the server; router.refresh
-      // pulls the fresh RSC tree so the deleted row disappears without
-      // a full reload.
       router.refresh();
     });
   };
@@ -69,10 +63,10 @@ export function DeleteOwnVariationButton({
         onClick={handleClick}
         disabled={isPending}
         className={`${base} ${sizeClasses}`}
-        title="Uyarlamayı kalıcı olarak sil"
-        aria-label={`${miniTitle} uyarlamasını sil`}
+        title={t("titleAttr")}
+        aria-label={t("ariaLabel", { title: miniTitle })}
       >
-        {isPending ? "Siliniyor…" : "Sil"}
+        {isPending ? t("pending") : t("button")}
       </button>
       {error && (
         <span className="text-[11px] text-error" role="alert">

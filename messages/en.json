@@ -186,6 +186,32 @@
     "linkPrivacy": "Privacy Policy",
     "copyright": "© {year} {site}. All rights reserved."
   },
+  "print": {
+    "button": "Print"
+  },
+  "share": {
+    "buttonAria": "Share",
+    "buttonLabel": "Share",
+    "whatsapp": "WhatsApp",
+    "twitter": "X (Twitter)",
+    "copy": "Copy link",
+    "copied": "Copied!"
+  },
+  "deleteVariation": {
+    "confirm": "Are you sure you want to delete the \"{title}\" adaptation? This cannot be undone.",
+    "errorDefault": "Could not delete.",
+    "button": "Delete",
+    "pending": "Deleting…",
+    "titleAttr": "Permanently delete this adaptation",
+    "ariaLabel": "Delete {title} adaptation"
+  },
+  "ageGate": {
+    "title": "Age Verification",
+    "description": "This recipe contains alcohol. To view the content, please confirm you are over 18.",
+    "responsibility": "Please drink responsibly.",
+    "confirm": "I am over 18, continue",
+    "back": "Go back"
+  },
   "similarRecipes": {
     "title": "Similar recipes",
     "subtitle": "Selected from the same category and tags"

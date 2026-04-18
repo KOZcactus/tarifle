@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 
 const AGE_GATE_KEY = "tarifle_age_verified";
 
@@ -9,14 +10,11 @@ interface AgeGateProps {
 }
 
 export function AgeGate({ children }: AgeGateProps) {
+  const t = useTranslations("ageGate");
   const [verified, setVerified] = useState<boolean | null>(null);
 
   // SSR-hydration gate: sessionStorage only exists on the client, so we
-  // read it once after mount. The lint rule "no setState in effect" is
-  // aimed at derived state — this is a one-shot client-only side effect
-  // (read external API, sync to React state), which is exactly what
-  // effects are for. The `null` tri-state prevents flashing the overlay
-  // for users who already confirmed in this session.
+  // read it once after mount.
   useEffect(() => {
     const stored = sessionStorage.getItem(AGE_GATE_KEY);
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -48,29 +46,26 @@ export function AgeGate({ children }: AgeGateProps) {
       >
         <span aria-hidden="true" className="mb-4 inline-block text-5xl">🍸</span>
         <h2 id="age-gate-title" className="font-heading text-xl font-bold text-text">
-          Yaş Doğrulama
+          {t("title")}
         </h2>
         <p id="age-gate-desc" className="mt-3 text-sm text-text-muted">
-          Bu tarif alkollü içecek içermektedir. İçeriği görüntülemek için 18 yaşından büyük
-          olduğunuzu onaylamanız gerekmektedir.
+          {t("description")}
         </p>
         <div className="mt-3 rounded-lg bg-secondary/10 px-3 py-2">
-          <p className="text-xs text-secondary">
-            Alkollü içeceklerin sorumlu tüketimi önemlidir.
-          </p>
+          <p className="text-xs text-secondary">{t("responsibility")}</p>
         </div>
         <div className="mt-6 flex flex-col gap-3">
           <button
             onClick={handleConfirm}
             className="rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
           >
-            18 yaşından büyüğüm, devam et
+            {t("confirm")}
           </button>
           <button
             onClick={() => window.history.back()}
             className="rounded-xl border border-border px-6 py-3 text-sm font-medium text-text-muted transition-colors hover:bg-bg-elevated"
           >
-            Geri dön
+            {t("back")}
           </button>
         </div>
       </div>

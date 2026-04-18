@@ -186,6 +186,32 @@
     "linkPrivacy": "Gizlilik Politikası",
     "copyright": "© {year} {site}. Tüm hakları saklıdır."
   },
+  "print": {
+    "button": "Yazdır"
+  },
+  "share": {
+    "buttonAria": "Paylaş",
+    "buttonLabel": "Paylaş",
+    "whatsapp": "WhatsApp",
+    "twitter": "X (Twitter)",
+    "copy": "Bağlantıyı kopyala",
+    "copied": "Kopyalandı!"
+  },
+  "deleteVariation": {
+    "confirm": "\"{title}\" uyarlamasını silmek istediğine emin misin? Bu işlem geri alınamaz.",
+    "errorDefault": "Silinemedi.",
+    "button": "Sil",
+    "pending": "Siliniyor…",
+    "titleAttr": "Uyarlamayı kalıcı olarak sil",
+    "ariaLabel": "{title} uyarlamasını sil"
+  },
+  "ageGate": {
+    "title": "Yaş Doğrulama",
+    "description": "Bu tarif alkollü içecek içermektedir. İçeriği görüntülemek için 18 yaşından büyük olduğunuzu onaylamanız gerekmektedir.",
+    "responsibility": "Alkollü içeceklerin sorumlu tüketimi önemlidir.",
+    "confirm": "18 yaşından büyüğüm, devam et",
+    "back": "Geri dön"
+  },
   "similarRecipes": {
     "title": "Benzer tarifler",
     "subtitle": "Aynı kategoriden ve etiketlerden seçildi"

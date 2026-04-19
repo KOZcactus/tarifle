@@ -12,6 +12,10 @@ import {
 } from "@/lib/queries/admin";
 import { getTags } from "@/lib/queries/tag";
 import { getTopSearchQueries } from "@/lib/queries/search-log";
+import {
+  getDailyViewTrend,
+  type DailyViewBucket,
+} from "@/lib/queries/recipe-view-daily";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("admin.analytics");
@@ -43,6 +47,7 @@ export default async function AdminAnalyticsPage() {
     cuisines,
     tags,
     topSearches,
+    viewTrend,
     t,
   ] = await Promise.all([
     getAdminStats(),
@@ -54,6 +59,7 @@ export default async function AdminAnalyticsPage() {
     getCuisineBreakdown(),
     getTags(),
     getTopSearchQueries(7, 10),
+    getDailyViewTrend(30),
     getTranslations("admin.analytics"),
   ]);
 
@@ -119,9 +125,15 @@ export default async function AdminAnalyticsPage() {
           {t("trendsHeading")}
         </h3>
         <div className="grid gap-3 lg:grid-cols-2">
-          <TrendPlaceholder
-            label={t("viewTrendLabel")}
-            message={t("viewTrendNotTracked")}
+          <ViewTrendCard
+            title={t("viewTrendLabel")}
+            windowLabel={t("viewTrendWindow")}
+            emptyMessage={t("viewTrendEmpty")}
+            totalSuffix={t("viewTrendTotalSuffix")}
+            formatDayAria={(date, count) =>
+              t("viewTrendDayAria", { date, count })
+            }
+            trend={viewTrend}
           />
           <SearchFrequencyCard
             title={t("searchFreqLabel")}
@@ -188,17 +200,82 @@ export default async function AdminAnalyticsPage() {
   );
 }
 
-function TrendPlaceholder({
-  label,
-  message,
-}: {
-  label: string;
-  message: string;
-}) {
+interface ViewTrendCardProps {
+  title: string;
+  windowLabel: string;
+  emptyMessage: string;
+  totalSuffix: string;
+  formatDayAria: (date: string, count: number) => string;
+  trend: DailyViewBucket[];
+}
+
+/**
+ * Son N günlük görüntülenme trend'i — mini bar chart.
+ * Her bar bir UTC günü temsil eder; yüksekliği o günkü toplam view.
+ * Accessibility: her bar'da aria-label ile tarih + sayı verilir.
+ */
+function ViewTrendCard({
+  title,
+  windowLabel,
+  emptyMessage,
+  totalSuffix,
+  formatDayAria,
+  trend,
+}: ViewTrendCardProps) {
+  const total = trend.reduce((acc, bucket) => acc + bucket.views, 0);
+  const max = trend.reduce((m, bucket) => Math.max(m, bucket.views), 0);
+  const hasData = total > 0;
+
   return (
-    <div className="rounded-xl border border-dashed border-border bg-bg-card/40 p-6">
-      <div className="mb-2 text-sm font-semibold text-text-muted">{label}</div>
-      <p className="text-xs leading-relaxed text-text-muted">{message}</p>
+    <div className="rounded-xl border border-border bg-bg-card p-5">
+      <div className="mb-3 flex items-baseline justify-between gap-2">
+        <h4 className="font-heading text-base font-semibold">{title}</h4>
+        <span className="text-xs text-text-muted">{windowLabel}</span>
+      </div>
+      {!hasData ? (
+        <p className="text-xs text-text-muted">{emptyMessage}</p>
+      ) : (
+        <>
+          <div className="mb-3 text-2xl font-bold tabular-nums">
+            {total.toLocaleString("tr-TR")}{" "}
+            <span className="text-xs font-normal text-text-muted">
+              {totalSuffix}
+            </span>
+          </div>
+          <div
+            className="flex h-24 items-end gap-[2px]"
+            role="img"
+            aria-label={title}
+          >
+            {trend.map((bucket) => {
+              const heightPct =
+                max === 0
+                  ? 0
+                  : Math.max(2, Math.round((bucket.views / max) * 100));
+              return (
+                <div
+                  key={bucket.date}
+                  className="group relative flex-1"
+                  aria-label={formatDayAria(bucket.date, bucket.views)}
+                >
+                  <div
+                    className={`w-full rounded-sm transition-colors ${
+                      bucket.views > 0
+                        ? "bg-primary/70 group-hover:bg-primary"
+                        : "bg-bg-elevated"
+                    }`}
+                    style={{ height: `${heightPct}%` }}
+                  />
+                </div>
+              );
+            })}
+          </div>
+          <div className="mt-2 flex justify-between text-[10px] tabular-nums text-text-muted">
+            <span>{trend[0]?.date ?? ""}</span>
+            <span>{trend[trend.length - 1]?.date ?? ""}</span>
+          </div>
+        </>
+      )}
     </div>
   );
 }

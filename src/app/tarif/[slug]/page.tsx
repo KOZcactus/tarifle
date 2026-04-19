@@ -27,6 +27,7 @@ import {
   getRecipeReviews,
   incrementViewCount,
 } from "@/lib/queries/recipe";
+import { logDailyView } from "@/lib/queries/recipe-view-daily";
 import { getSimilarRecipes } from "@/lib/queries/similar-recipes";
 import { isBookmarked, getLikedVariationIds } from "@/lib/queries/user";
 import { getCollectionsForRecipe } from "@/lib/queries/collection";
@@ -265,8 +266,10 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
       })
     : [];
 
-  // Görüntülenme sayısını arka planda artır
+  // Görüntülenme sayısını arka planda artır — total (Recipe.viewCount)
+  // + günlük bucket (RecipeViewDaily) ayrı ayrı fire-and-forget.
   incrementViewCount(slug).catch(() => {});
+  logDailyView(recipe.id).catch(() => {});
 
   // AggregateRating yalnızca gerçek review varsa JSON-LD'ye eklenir —
   // Google structured-data abuse guard (fake/bookmark rating = penalty).

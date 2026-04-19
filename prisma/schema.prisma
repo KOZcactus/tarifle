@@ -356,6 +356,7 @@ model Recipe {
   reviews         Review[]
   mealPlanItems   MealPlanItem[]
   userPhotos      RecipePhoto[]
+  viewDaily       RecipeViewDaily[]
 
   @@index([categoryId])
   @@index([status])
@@ -893,6 +894,37 @@ model SearchQuery {
   @@index([normalizedQuery, createdAt])
   @@index([createdAt])
   @@map("search_queries")
+}
+
+// Günlük görüntülenme sayacı — `/tarif/[slug]` SSR akışında fire-and-forget
+// upsert edilir. Recipe.viewCount toplam (all-time) kalırken bu tablo
+// gün-gün dağılımı tutar: admin analytics view trend grafiği ve ileride
+// "bu hafta en çok okunan" listesi buradan beslenir.
+//
+// Bucket: (recipeId, date) composite unique; `date` DATE tipi (UTC gün).
+// Zaman dilimi kararı: ziyaretçinin lokal TSİ değil sunucu UTC günü
+// kullanılır — admin paneli TR saatine hizalamak yerine "son 30 gün trend"
+// yeterli ham sinyal veriyor; DST/TZ karmaşasına girmiyoruz.
+//
+// Prune: yok. Row sayısı ~= tarif sayısı × aktif gün sayısı; 2320 tarif
+// × 365 gün = 847k/yıl üst limit (her gün tüm tariflere view vurmaz).
+// Ölçek büyürse 180 gün prune cron'u eklenir.
+model RecipeViewDaily {
+  id       String   @id @default(cuid())
+  recipeId String
+  recipe   Recipe   @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  // UTC gün — @db.Date ile saat bilgisini düşürüp bucket anahtarı yapar.
+  date     DateTime @db.Date
+  count    Int      @default(0)
+
+  // (recipeId, date) unique → upsert anahtarı. Aynı gün ikinci ziyaret
+  // count+1 eder, yeni row açmaz.
+  @@unique([recipeId, date])
+  // Trend query: `date >= since GROUP BY date SUM(count)` için date tek
+  // başına index yeterli; (recipeId, date) zaten unique'ten composite
+  // gelir, per-recipe lookup'ta da kullanılır.
+  @@index([date])
+  @@map("recipe_view_daily")
 }
 
 // Site-wide key/value store — feature flags + config. Announcement model'i

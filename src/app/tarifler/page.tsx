@@ -8,7 +8,18 @@ import { AllergenFilter } from "@/components/search/AllergenFilter";
 import { DietFilter } from "@/components/search/DietFilter";
 import { CuisineFilter } from "@/components/search/CuisineFilter";
 import { Pagination } from "@/components/listing/Pagination";
-import { CUISINE_CODES, CUISINE_LABEL, CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
+import {
+  CUISINE_CODES,
+  CUISINE_LABEL,
+  CUISINE_FLAG,
+  CUISINE_SLUG,
+  type CuisineCode,
+} from "@/lib/cuisines";
+
+// Alias — canonical redirect helper. CUISINE_SLUG doğrudan kullanılabilir;
+// import'u local alias ile okunabilir tutmak yalnız generateMetadata
+// bloğu içinde sembolik.
+const CUISINE_SLUG_LOOKUP = CUISINE_SLUG;
 import {
   getRecipes,
   getUserFavoriteTagSlugs,
@@ -42,22 +53,22 @@ export async function generateMetadata({ searchParams }: TariflerPageProps): Pro
 
   // Index policy:
   //   - Bare /tarifler → indexable (main listing landing)
-  //   - /tarifler?mutfak=X (single param) → indexable cuisine landing (the
-  //     sitemap emits these, so they must stay crawlable)
+  //   - /tarifler?mutfak=X → NOINDEX + canonical → /mutfak/<slug>. Path-based
+  //     programatik landing artık canonical kaynak; query-string variant
+  //     duplicate content olarak değerlendirilir.
   //   - Everything else parameterised → noindex,follow. User searches
   //     (`?q=`), sort orders, allergen combos, and multi-filter URLs are
-  //     crawl traps and leak user input into the index. Canonical already
-  //     collapses them back to /tarifler.
+  //     crawl traps and leak user input into the index.
   const keys = Object.keys(params);
-  const isCuisineLanding =
+  const isSingleCuisineParam =
     keys.length === 1 && keys[0] === "mutfak" && rawCuisines.length === 1;
-  const shouldIndex = keys.length === 0 || isCuisineLanding;
+  const shouldIndex = keys.length === 0;
 
-  // When we keep the cuisine landing indexable, self-canonical it so it
-  // stands on its own (otherwise the canonical would fold it back into
-  // /tarifler and kill the landing signal).
-  const canonical = isCuisineLanding
-    ? `/tarifler?mutfak=${rawCuisines[0]}`
+  // Cuisine query-string variant: canonical'i path-based /mutfak/<slug>'a
+  // yönlendir. `CUISINE_SLUG` map cuisines.ts'de yaşar. Import ufak bir
+  // circular-risk taşır ama burada top-level helper olduğu için sorun yok.
+  const canonical = isSingleCuisineParam
+    ? `/mutfak/${CUISINE_SLUG_LOOKUP[rawCuisines[0] as CuisineCode]}`
     : "/tarifler";
 
   return {

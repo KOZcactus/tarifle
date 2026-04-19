@@ -23,6 +23,8 @@
 import type { MetadataRoute } from "next";
 import { prisma } from "@/lib/prisma";
 import { SITE_URL } from "@/lib/constants";
+import { CUISINE_CODES, CUISINE_SLUG, type CuisineCode } from "@/lib/cuisines";
+import { DIETS } from "@/lib/diets";
 
 // Build-time prerender'ı kapatıyoruz: CI'da DATABASE_URL placeholder
 // olduğu için Prisma bağlanamaz, build düşer (`/sitemap.xml` prerender
@@ -32,7 +34,7 @@ export const dynamic = "force-dynamic";
 export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [recipes, categories, cuisineCodes] = await Promise.all([
+  const [recipes, categories, cuisineCodes, tags] = await Promise.all([
     prisma.recipe.findMany({
       where: { status: "PUBLISHED" },
       select: { slug: true, updatedAt: true },
@@ -54,6 +56,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           .filter((r) => r.cuisine && r._count >= 3)
           .map((r) => r.cuisine!),
       ),
+    // Tags with ≥3 recipes — indexable etiket landing candidates
+    prisma.tag.findMany({
+      where: { recipeTags: { some: {} } },
+      select: {
+        slug: true,
+        _count: { select: { recipeTags: true } },
+      },
+    }),
   ]);
 
   const now = new Date();
@@ -93,12 +103,45 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  const cuisinePages: MetadataRoute.Sitemap = cuisineCodes.map((code) => ({
-    url: `${SITE_URL}/tarifler?mutfak=${code}`,
+  // Programatik landing — /mutfak/[cuisine]. Query-string variant
+  // (`/tarifler?mutfak=X`) deprecate edildi, path-based route canonical
+  // kaynak. Aktif cuisine listesi (≥3 tarif) set olarak kontrol edilir.
+  const activeCuisineSet = new Set<string>(cuisineCodes);
+  const cuisinePages: MetadataRoute.Sitemap = CUISINE_CODES.filter((code) =>
+    activeCuisineSet.has(code),
+  ).map((code) => ({
+    url: `${SITE_URL}/mutfak/${CUISINE_SLUG[code as CuisineCode]}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
-    priority: 0.6,
+    priority: 0.7,
   }));
 
-  return [...staticPages, ...cuisinePages, ...categoryPages, ...recipePages];
+  // Programatik landing — /etiket/[tag]. ≥3 tarif filtresi; 0-1 tariflik
+  // etiketlerde thin content oluşur, index dışı tutulur.
+  const tagPages: MetadataRoute.Sitemap = tags
+    .filter((t) => t._count.recipeTags >= 3)
+    .map((t) => ({
+      url: `${SITE_URL}/etiket/${t.slug}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    }));
+
+  // Programatik landing — /diyet/[diet]. Sabit 5 slug, filtre config
+  // DIETS tablosunda.
+  const dietPages: MetadataRoute.Sitemap = DIETS.map((d) => ({
+    url: `${SITE_URL}/diyet/${d.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
+  return [
+    ...staticPages,
+    ...cuisinePages,
+    ...tagPages,
+    ...dietPages,
+    ...categoryPages,
+    ...recipePages,
+  ];
 }

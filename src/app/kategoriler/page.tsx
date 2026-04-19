@@ -1,7 +1,14 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { getCategoriesForLanding } from "@/lib/queries/category";
+import {
+  CUISINE_CODES,
+  CUISINE_FLAG,
+  CUISINE_LABEL,
+  CUISINE_SLUG,
+} from "@/lib/cuisines";
+import { DIETS } from "@/lib/diets";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("metadata.categoriesPage");
@@ -13,9 +20,11 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function KategorilerPage() {
-  const [categories, t] = await Promise.all([
+  const [categories, t, tLanding, locale] = await Promise.all([
     getCategoriesForLanding(),
     getTranslations("categoriesLanding"),
+    getTranslations("landing"),
+    getLocale(),
   ]);
 
   return (
@@ -63,6 +72,44 @@ export default async function KategorilerPage() {
           ))}
         </ul>
       )}
+
+      {/* Cross-link: mutfak + diyet chip'leri. Kategori sayfası zaten 17
+          kategori kartı gösterir; aşağıya 24 mutfak + 5 diyet link'i
+          internal link graph'i güçlendirir ve user aynı sayfadan
+          alternate browse dimension'ına geçebilir. */}
+      <section className="mt-16 border-t border-border pt-8">
+        <h2 className="mb-3 text-sm font-semibold text-text">
+          {tLanding("relatedCuisinesHeading")}
+        </h2>
+        <div className="flex flex-wrap gap-2">
+          {CUISINE_CODES.map((c) => (
+            <Link
+              key={c}
+              href={`/mutfak/${CUISINE_SLUG[c]}`}
+              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-bg-card px-3 py-1 text-xs text-text-muted transition-colors hover:border-primary hover:text-primary"
+            >
+              <span aria-hidden="true">{CUISINE_FLAG[c]}</span>
+              {CUISINE_LABEL[c]}
+            </Link>
+          ))}
+        </div>
+
+        <h2 className="mb-3 mt-6 text-sm font-semibold text-text">
+          {tLanding("relatedDietsHeading")}
+        </h2>
+        <div className="flex flex-wrap gap-2">
+          {DIETS.map((d) => (
+            <Link
+              key={d.slug}
+              href={`/diyet/${d.slug}`}
+              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-bg-card px-3 py-1 text-xs text-text-muted transition-colors hover:border-primary hover:text-primary"
+            >
+              <span aria-hidden="true">{d.emoji}</span>
+              {locale === "en" ? d.labelEn : d.labelTr}
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

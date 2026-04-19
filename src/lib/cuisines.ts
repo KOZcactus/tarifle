@@ -64,6 +64,108 @@ export const CUISINE_LABEL: Record<CuisineCode, string> = {
   au: "Avustralya",
 };
 
+/**
+ * URL slug map — kod → Türkçe URL parçası. `/mutfak/[slug]` programatik
+ * landing route'u bu slug'ları bekler. Label'den türetilmez (Türk → turk
+ * gibi noktalama kayıpları riskli); sabit listede tutulur. Yeni cuisine
+ * eklenince 4 map'e de entry eklenir (CODE, LABEL, FLAG, SLUG, DESCRIPTION).
+ */
+export const CUISINE_SLUG: Record<CuisineCode, string> = {
+  tr: "turk",
+  it: "italyan",
+  fr: "fransiz",
+  es: "ispanyol",
+  gr: "yunan",
+  jp: "japon",
+  cn: "cin",
+  kr: "kore",
+  th: "tay",
+  in: "hint",
+  mx: "meksika",
+  us: "abd",
+  me: "orta-dogu",
+  ma: "kuzey-afrika",
+  vn: "vietnam",
+  br: "brezilya",
+  cu: "kuba",
+  ru: "rus",
+  hu: "macar",
+  se: "iskandinav",
+  pe: "peru",
+  gb: "ingiliz",
+  pl: "polonya",
+  au: "avustralya",
+};
+
+/** URL slug → kod ters lookup. Slug bilinmiyorsa null. */
+export function cuisineCodeBySlug(slug: string): CuisineCode | null {
+  const entry = (
+    Object.entries(CUISINE_SLUG) as [CuisineCode, string][]
+  ).find(([, s]) => s === slug);
+  return entry ? entry[0] : null;
+}
+
+/**
+ * Mutfak landing sayfaları için TR açıklama metinleri — SEO + kullanıcı
+ * değeri. Her biri 2-3 cümle, mutfağın karakteristik vurgusu + Tarifle
+ * platformundaki öne çıkan tarif örneği tipinden. Generic "X tarifleri"
+ * yerine okunabilir açıklama.
+ */
+export const CUISINE_DESCRIPTION_TR: Record<CuisineCode, string> = {
+  tr: "Türk mutfağı; çorbasından kebabına, zeytinyağlısından tatlısına Anadolu'nun yedi bölgesini bir araya getirir. Ev pişirmesine özgü dengeler — bulgur, yoğurt, acı biber ve tereyağı — her tarifin temelini oluşturur.",
+  it: "İtalyan mutfağı sadelikle yoğun tadı aynı anda sunar: pasta, pizza, risotto ve soğuk antipasti. Taze malzeme + az ama doğru baharat Akdeniz lezzet çizgisinin temeli.",
+  fr: "Fransız mutfağı tekniği ön plana çıkaran klasikleri barındırır: tereyağlı soslar, hamur işleri, yavaş pişen güveçler. Boeuf bourguignon'dan macaroon'a, mutfak okullarının da referansı.",
+  es: "İspanyol mutfağı paellanın safranı, gazpachonun serinliği ve tapasların çeşitliliği ile çalışır. Zeytinyağı, acılı paprika ve deniz ürünleri İber yarımadasının imzası.",
+  gr: "Yunan mutfağı Akdeniz'in en saf yüzünü gösterir: tulum peyniri, zeytinyağı, limon, kekik. Moussaka, souvlaki, spanakopita — ev sofralarına hızla uyarlanır.",
+  jp: "Japon mutfağı denge ve saygı üzerine kurulu: sushi, ramen, tempura, miso çorbası. Az malzeme + temiz teknik = umami dengesi.",
+  cn: "Çin mutfağı sekiz büyük bölgenin yüzlerce tarzını kapsar: mapo tofu, kung pao tavuk, dumpling, fried rice. Wok kullanımı ve soya temelli soslar ortak noktası.",
+  kr: "Kore mutfağı fermente lezzetlerin merkezi: kimchi, bibimbap, bulgogi, tteokbokki. Acı biber ezmesi gochujang neredeyse her tarifte yerini alır.",
+  th: "Tay mutfağı acı-tatlı-ekşi-tuzlu dengesini tek tabakta kurar: pad thai, green curry, tom yum. Hindistan cevizi sütü, limon otu ve Tay fesleğeni aromaları taşır.",
+  in: "Hint mutfağı baharat zenginliğiyle tanınır: butter chicken, biryani, dal, samosa. Her bölgenin kendi masala karışımı var — kuzey kremalı, güney hindistan cevizli.",
+  mx: "Meksika mutfağı mısır ve acı biber üzerine kurulu: taco, enchilada, guacamole, pozole. Taze corriander, limon ve chipotle karakterini tamamlar.",
+  us: "ABD mutfağı göç eden halkların birleşimini yansıtır: burger, BBQ, mac & cheese, cheesecake. Soul food, Tex-Mex ve New England klasikleri bir arada.",
+  me: "Orta Doğu mutfağı zengin baharat + sağlıklı tahıllar: hummus, falafel, tabbouleh, kebap. Zeytinyağı, nar ekşisi, sumak ortak dili.",
+  ma: "Kuzey Afrika mutfağı tajine'nin yavaş pişirmesini, kuskusun dokusunu ve harissa'nın acısını bir araya getirir. Fas, Tunus ve Cezayir'in mutfak mirası.",
+  vn: "Vietnam mutfağı ferahlık üzerine kurulu: pho, banh mi, bun cha, goi cuon. Taze otlar (nane, coriander, fesleğen) ve balık sosu temel aromalar.",
+  br: "Brezilya mutfağı tropikal lezzetler ve Afrika etkisi taşır: feijoada, pão de queijo, moqueca, brigadeiro. Manyok, hindistan cevizi sütü ve dendê yağı karakteristik.",
+  cu: "Küba mutfağı İspanyol + Karayip sentezi: ropa vieja, arroz con pollo, yuca con mojo, flan. Sarımsak, kimyon, acı biber ve limon ezmesi (mojo) imzası.",
+  ru: "Rus mutfağı soğuk kışlara göre tasarlanmış yoğun tatlar: borscht, pelmeni, blini, stroganoff. Turşulanmış sebzeler, krema ve karabuğday günlük masanın parçası.",
+  hu: "Macar mutfağı paprika başkenti: goulash, chicken paprikash, lángos, dobos torte. Dumplings, yoğun soslar ve tatlı-tuzlu denge Orta Avrupa imzası.",
+  se: "İskandinav mutfağı sadeliği ve deniz ürünlerini ön plana çıkarır: köttbullar, gravlax, smörgåsbord, kanelbullar. Dereotu, hardal ve soğuk tütsü yaygın.",
+  pe: "Peru mutfağı And tarihi + Pasifik sahilini birleştirir: ceviche, lomo saltado, aji de gallina, causa. Limon, acı biber aji ve mor patates karakteristik.",
+  gb: "İngiliz mutfağı ev rahatlığı klasikleri: fish and chips, shepherd's pie, full breakfast, scones. Hafta sonu roast dinner ve five o'clock tea geleneksel.",
+  pl: "Polonya mutfağı doyurucu ve tahıl-etli: pierogi, bigos, żurek, placki ziemniaczane. Turşulanmış sebzeler, kapuska ve ekşi krema sofranın sabiti.",
+  au: "Avustralya mutfağı deniz ürünleri, BBQ kültürü ve güçlü kahve ekosistemi. Meat pie, lamington, avocado toast, Vegemite — İngiliz mirası üzerine modern Avustralya.",
+};
+
+/** EN description — aynı set, kısa SEO metni. */
+export const CUISINE_DESCRIPTION_EN: Record<CuisineCode, string> = {
+  tr: "Turkish cuisine brings Anatolia's seven regions together: soups, kebabs, olive-oil dishes, and desserts. The home-cooking balance of bulgur, yogurt, chili and butter underpins every recipe.",
+  it: "Italian cuisine pairs simplicity with deep flavor — pasta, pizza, risotto and cold antipasti. Fresh ingredients and restrained seasoning define the Mediterranean line.",
+  fr: "French cuisine centers on technique: buttery sauces, pastries, slow-cooked stews. From boeuf bourguignon to macarons, the reference of culinary schools worldwide.",
+  es: "Spanish cuisine delivers paella's saffron, gazpacho's cool and tapas variety. Olive oil, smoked paprika and seafood are the Iberian signature.",
+  gr: "Greek cuisine shows the Mediterranean's purest face: feta, olive oil, lemon, oregano. Moussaka, souvlaki, spanakopita — quick to adapt at home.",
+  jp: "Japanese cuisine is built on balance and respect: sushi, ramen, tempura, miso soup. Few ingredients + clean technique = the umami equation.",
+  cn: "Chinese cuisine covers eight regional styles and hundreds of variants: mapo tofu, kung pao chicken, dumplings, fried rice. The wok and soy-based sauces are the thread.",
+  kr: "Korean cuisine is a fermentation hub: kimchi, bibimbap, bulgogi, tteokbokki. The chili paste gochujang appears in nearly every dish.",
+  th: "Thai cuisine nails the spicy-sweet-sour-salty balance in one plate: pad thai, green curry, tom yum. Coconut milk, lemongrass and Thai basil carry the aroma.",
+  in: "Indian cuisine is defined by spice depth: butter chicken, biryani, dal, samosa. Every region has its own masala — creamy in the north, coconut-forward in the south.",
+  mx: "Mexican cuisine is built on corn and chili: tacos, enchiladas, guacamole, pozole. Fresh cilantro, lime and chipotle round out the character.",
+  us: "American cuisine reflects the immigration mix: burgers, BBQ, mac & cheese, cheesecake. Soul food, Tex-Mex and New England classics sit side by side.",
+  me: "Middle Eastern cuisine ties rich spices with healthy grains: hummus, falafel, tabbouleh, kebabs. Olive oil, pomegranate molasses and sumac are the shared tongue.",
+  ma: "North African cuisine joins tajine's slow cook, couscous texture and harissa heat. The culinary heritage of Morocco, Tunisia and Algeria.",
+  vn: "Vietnamese cuisine rides on freshness: pho, banh mi, bun cha, goi cuon. Fresh herbs (mint, coriander, basil) and fish sauce form the core.",
+  br: "Brazilian cuisine carries tropical and African notes: feijoada, pão de queijo, moqueca, brigadeiro. Cassava, coconut milk and dendê oil are signature.",
+  cu: "Cuban cuisine is a Spanish + Caribbean blend: ropa vieja, arroz con pollo, yuca con mojo, flan. Garlic, cumin, chili and citrus mojo are the signature.",
+  ru: "Russian cuisine suits cold winters with rich flavors: borscht, pelmeni, blini, stroganoff. Pickled vegetables, cream and buckwheat are on the daily table.",
+  hu: "Hungarian cuisine is the paprika capital: goulash, chicken paprikash, lángos, dobos torte. Dumplings, rich sauces and a sweet-salty balance are the Central European stamp.",
+  se: "Scandinavian cuisine leans on simplicity and seafood: köttbullar, gravlax, smörgåsbord, kanelbullar. Dill, mustard and cold-smoke are common.",
+  pe: "Peruvian cuisine joins Andean heritage with the Pacific coast: ceviche, lomo saltado, aji de gallina, causa. Lime, aji chili and purple potato are core.",
+  gb: "British cuisine offers home-comfort classics: fish and chips, shepherd's pie, full breakfast, scones. Weekend roast dinners and five o'clock tea are tradition.",
+  pl: "Polish cuisine is hearty and grain-forward: pierogi, bigos, żurek, potato pancakes. Pickles, sauerkraut and sour cream stay on the table.",
+  au: "Australian cuisine blends seafood, BBQ culture and strong coffee. Meat pie, lamington, avocado toast, Vegemite — modern Australia on a British base.",
+};
+
 export const CUISINE_FLAG: Record<CuisineCode, string> = {
   tr: "🇹🇷",
   it: "🇮🇹",

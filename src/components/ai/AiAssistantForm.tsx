@@ -103,6 +103,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
   const [difficulty, setDifficulty] = useState<string>("");
   const [maxMinutes, setMaxMinutes] = useState<string>("");
   const [cuisine, setCuisine] = useState<string>("tr");
+  const [dietSlug, setDietSlug] = useState<string>("");
   const [assumePantry, setAssumePantry] = useState(true);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [selectedSuggestionIdx, setSelectedSuggestionIdx] = useState(-1);
@@ -319,6 +320,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
         maxMinutes: maxMinutes ? Number(maxMinutes) : undefined,
         assumePantryStaples: assumePantry,
         cuisines: cuisine ? (cuisine === "all" ? undefined : [cuisine]) : undefined,
+        dietSlug: dietSlug || undefined,
         excludeIngredients: excludeIngredients.length > 0 ? excludeIngredients : undefined,
       };
       const response = await suggestRecipesAction(payload);
@@ -527,7 +529,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
         </div>
 
         {/* Filters */}
-        <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           <div>
             <label
               htmlFor="ai-filter-type"
@@ -610,6 +612,32 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
                   {CUISINE_FLAG[code]} {tCuisine.has(code) ? tCuisine(code) : CUISINE_LABEL[code]}
                 </option>
               ))}
+            </select>
+          </div>
+
+          {/* Diet filter — vegan/vejetaryen/glutensiz/sutsuz/alkolsuz.
+              Diet config src/lib/diets.ts; "Farketmez" seçiliyse
+              kısıt yok. Tag-based diyetler tag filter'ı, allergen-based
+              diyetler allergen exclusion ile DB-side filtrelenir. */}
+          <div>
+            <label
+              htmlFor="ai-filter-diet"
+              className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-text-muted"
+            >
+              {tForm("dietLabel")}
+            </label>
+            <select
+              id="ai-filter-diet"
+              value={dietSlug}
+              onChange={(e) => setDietSlug(e.target.value)}
+              className="w-full rounded-md border border-border bg-bg-elevated px-3 py-2 text-sm outline-none focus:border-primary"
+            >
+              <option value="">{tForm("dietAnyOption")}</option>
+              <option value="vegan">🌱 {tForm("dietVegan")}</option>
+              <option value="vejetaryen">🥗 {tForm("dietVejetaryen")}</option>
+              <option value="glutensiz">🌾 {tForm("dietGlutensiz")}</option>
+              <option value="sutsuz">🥛 {tForm("dietSutsuz")}</option>
+              <option value="alkolsuz">🥤 {tForm("dietAlkolsuz")}</option>
             </select>
           </div>
         </div>

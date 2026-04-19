@@ -20,6 +20,10 @@ export interface AiSuggestInput {
   /** Ingredients to exclude — any recipe containing a matching ingredient
    *  is disqualified regardless of match score. */
   excludeIngredients?: string[];
+  /** Diet slug filter (vegan / vejetaryen / glutensiz / sutsuz / alkolsuz).
+   *  vegan/vejetaryen/alkolsuz tag bazlı filtre, glutensiz/sutsuz allergen
+   *  exclusion. Empty/undefined = kısıt yok. */
+  dietSlug?: string;
 }
 
 /**

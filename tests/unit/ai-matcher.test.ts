@@ -82,13 +82,19 @@ describe("isPantryStaple", () => {
     expect(isPantryStaple("tuzlu kraker")).toBe(false); // "tuzlu" ≠ "tuz"
   });
 
-  it("recognises multi-word seasoning groups like 'tuz, karabiber'", () => {
-    expect(isPantryStaple("tuz, karabiber")).toBe(true);
-    expect(isPantryStaple("Tuz, karabiber")).toBe(true);
+  it("exact-phrase match — compound 'tuz, karabiber' not in set (v3)", () => {
+    // v3: exact-phrase check. "tuz, karabiber" isn't a single entry in the
+    // pantry set; user should list them separately. This is intentionally
+    // stricter than v2's token-containment approach, which had a false-
+    // positive where "limon" (not pantry) matched because "limon suyu" was.
+    expect(isPantryStaple("tuz, karabiber")).toBe(false);
+    expect(isPantryStaple("tuz")).toBe(true);
+    expect(isPantryStaple("karabiber")).toBe(true);
   });
 
   it("rejects mixed seasoning where one token is NOT a staple", () => {
-    // safran isn't in PANTRY_STAPLES; the whole phrase must be pantry-only.
+    // safran isn't in PANTRY_STAPLES. Compound phrases are no longer
+    // recursively tokenized — exact-phrase only.
     expect(isPantryStaple("tuz, karabiber, safran")).toBe(false);
   });
 });
@@ -356,25 +362,41 @@ describe("fuzzy typo tolerance (v3 — 17 Nis)", () => {
   });
 });
 
-describe("pantry staples v2 (17 Nis) additions", () => {
-  it("tereyağı is pantry staple", () => {
-    expect(isPantryStaple("Tereyağı")).toBe(true);
+describe("pantry staples v3 (19 Nis) — daralma", () => {
+  // v3 daraltması: tereyağı/maydanoz/maya/sirke/limon suyu/kekik/kimyon/
+  // nane eski pantry'deydi, yeni liste sadece tuz-biber-yağ-su çerçevesi.
+  // Neden: v2'de pantry'nin token-set'i "limon" tek başına pantry gibi
+  // davranmasına yol açıyordu (limon suyu tokens'i → [limon, suyu] set'e
+  // giriyordu). Sonuç: limonata sadece domates girilmişken %100 geliyordu.
+
+  it("v3: tereyağı NO LONGER pantry — baking ana malzemesi kabul edilir", () => {
+    expect(isPantryStaple("Tereyağı")).toBe(false);
   });
 
-  it("maydanoz is pantry staple", () => {
-    expect(isPantryStaple("Maydanoz")).toBe(true);
+  it("v3: maya NO LONGER pantry — ekmek/hamur tarif kimliği", () => {
+    expect(isPantryStaple("Maya")).toBe(false);
   });
 
-  it("maya is pantry staple", () => {
-    expect(isPantryStaple("Maya")).toBe(true);
+  it("v3: sirke NO LONGER pantry — salata/turşu kimliği", () => {
+    expect(isPantryStaple("Sirke")).toBe(false);
   });
 
-  it("sirke is pantry staple", () => {
-    expect(isPantryStaple("Sirke")).toBe(true);
+  it("v3: limon suyu NO LONGER pantry — limonata/meyve tarifi kimliği", () => {
+    expect(isPantryStaple("Limon suyu")).toBe(false);
   });
 
-  it("limon suyu is pantry staple", () => {
-    expect(isPantryStaple("Limon suyu")).toBe(true);
+  it("v3: limon (tek başına) DEFINITELY not pantry — limonata bug'ının kaynağı", () => {
+    // Önceki bug: "limon suyu" pantry set'in token'ları içinde `limon` vardı,
+    // tek başına "limon" ingredient'i de pantry gibi işliyordu. v3 exact-
+    // phrase match ile çözüldü.
+    expect(isPantryStaple("limon")).toBe(false);
+    expect(isPantryStaple("Limon")).toBe(false);
+  });
+
+  it("v3: kekik / kimyon / nane HÂLÂ pantry — gerçek baharat", () => {
+    expect(isPantryStaple("Kekik")).toBe(true);
+    expect(isPantryStaple("Kimyon")).toBe(true);
+    expect(isPantryStaple("Nane")).toBe(true);
   });
 
   it("yumurta is NOT pantry (kullanıcı gerçekten eksikse bildirim almalı)", () => {

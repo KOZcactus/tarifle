@@ -5,35 +5,45 @@
 import { fuzzyMatches } from "@/lib/fuzzy";
 
 /**
- * Pantry staples — genellikle her evde bulunan, eksikse endişelenilmeyen
- * kalemler. Matcher bu kelimeleri "zaten var" varsayarak skorlar; kullanıcı
- * tarife girdiğinde pantry ingredient eksikse tariften elenme nedeni olmaz.
+ * Pantry staples — **gerçek salt-and-pepper seviyesinde** baharat + su +
+ * yağ. Matcher bu kelimeleri "zaten var" varsayarak skorlar.
  *
- * v2 (17 Nis 2026): tereyağı, maya, maydanoz, sirke, limon suyu eklendi.
- * TR mutfağında bu 5 de ev rafında sabit sayılacak yaygınlıkta.
+ * v3 (19 Nis 2026) — daraltma + exact-phrase match:
+ *
+ * v2'de liste aşırı genişti (un/şeker/maya/sirke/limon suyu/tereyağı/
+ * maydanoz/kekik dahildi). Sonuç: "limon suyu" pantry sayılınca
+ * tokenization bug'ıyla `limon` tek başına da pantry gibi davranıyordu
+ * ve **limonata %100 match** görünüyordu — kullanıcı sadece domates
+ * girmişken. Keza un pantry sayılınca ekmek/börek/çörek çok kolay
+ * %100'e ulaşıyordu, gerçek sinyal kayboluyordu.
+ *
+ * v3 filozofisi: pantry = "pratikte her tarife tuz-biber-yağ eşlesmesi
+ * olarak yazılan, ana malzeme kimliği taşımayan şeyler". Un ≠ pantry
+ * (ekmek/börek'in ANA malzemesi). Şeker ≠ pantry (tatlının ANA
+ * malzemesi). Tereyağı ≠ pantry (kahvaltı sabitleri vs. standart pişirme
+ * yağı dengesiz — opt-in bırak).
+ *
+ * Ayrıca `isPantryStaple` artık **exact normalized phrase match** yapar:
+ * `"limon"` tek başına pantry değildir çünkü listede `"limon"` yok
+ * (sadece `"limon suyu"` var ki o da v3'te çıkarıldı).
  */
-const PANTRY_STAPLES = [
-  "tuz",
-  "karabiber",
-  "su",
-  "sıvı yağ",
-  "zeytinyağı",
-  "sıvıyağ",
-  "yağ",
-  "ayçiçek yağı",
-  "tereyağı",
-  "şeker",
-  "un",
-  "biber",
-  "pul biber",
-  "kekik",
-  "kimyon",
-  "nane",
-  "maydanoz",
-  "maya",
-  "sirke",
-  "limon suyu",
-];
+const PANTRY_STAPLES: ReadonlySet<string> = new Set(
+  [
+    "tuz",
+    "karabiber",
+    "biber",
+    "pul biber",
+    "su",
+    "yağ",
+    "sıvı yağ",
+    "sıvıyağ",
+    "zeytinyağı",
+    "ayçiçek yağı",
+    "kekik",
+    "kimyon",
+    "nane",
+  ].map((s) => s.toLocaleLowerCase("tr").replace(/\s+/g, " ").trim()),
+);
 
 /**
  * Synonym / alias map. Turkish ingredient synonyms that should match
@@ -222,27 +232,20 @@ export function ingredientMatches(recipeIng: string, userIng: string): boolean {
 }
 
 /**
- * Precomputed set of every token that appears in any pantry staple name.
- * Used for pantry detection: a recipe ingredient qualifies ONLY if every
- * one of its tokens is itself a pantry token. Avoids the prefix-matching
- * false positive where "sucuk" was treated as "su" (water) because
- * `ingredientMatches("sucuk","su")` returned true via bidirectional
- * prefix — that logic is fine for user-vs-recipe matching but wrong for
- * staple identity, which needs exact-token containment.
+ * Exact-phrase pantry check — v3. Önceki token-set yaklaşımı `"limon"`
+ * tek token'ını pantry sayıyordu çünkü `"limon suyu"` pantry olduğunda
+ * tokens `[limon, suyu]` set'e giriyordu. Şimdi **normalize edilmiş tam
+ * ingredient string** PANTRY_STAPLES set'inde mi, dümdüz karşılaştırılır.
+ *
+ * Edge case — compound form: "sıvı yağ" (pantry) vs "sıvı yağ, yarım
+ * kaşık" gibi input. Normalize zaten parenthetical strip + whitespace
+ * collapse yapıyor, exact match için yeterli. Fuzzy match pantry'ye
+ * sıçramaz.
  */
-const PANTRY_TOKEN_SET: ReadonlySet<string> = new Set(
-  PANTRY_STAPLES.flatMap((s) => tokens(normalizeIngredient(s))),
-);
-
 export function isPantryStaple(ingredient: string): boolean {
-  const recipeTokens = tokens(normalizeIngredient(ingredient));
-  if (recipeTokens.length === 0) return false;
-  // Every token in the recipe ingredient must itself be a pantry token.
-  // "tuz, karabiber" → [tuz, karabiber] both pantry → staple ✓
-  // "sıvı yağ" → [sıvı, yağ] both pantry → staple ✓
-  // "sucuk" → [sucuk] NOT pantry → not staple ✓
-  // "su kabağı" → [su, kabağı] "kabağı" not pantry → not staple ✓
-  return recipeTokens.every((t) => PANTRY_TOKEN_SET.has(t));
+  const normalized = normalizeIngredient(ingredient);
+  if (normalized.length === 0) return false;
+  return PANTRY_STAPLES.has(normalized);
 }
 
 /**

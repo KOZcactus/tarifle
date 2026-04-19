@@ -62,9 +62,10 @@ EN soft launch canlı (DE retrofit tamamlandı).
 - GitHub: **KOZcactus/tarifle** (private repo)
 
 **Canlı durum:**
-- **1301 tarif prod'da** (Nisan 2026), 24 mutfak kodu, 17 kategori, 10 allergen, 15 tag
-- **1301/1301 tarif EN + DE `title + description` dolu** (Recipe.translations JSONB;
-  batch 12-13 için `ingredients + steps` Mod B ile dolduruluyor — iki-pass mimarisi)
+- **1701 tarif prod'da** (19 Nis 2026, batch 17 sonu), 24 mutfak kodu, 17 kategori, 10 allergen, 15 tag
+- **1701/1701 tarif EN + DE `title + description` dolu** (Recipe.translations JSONB;
+  600/1701 tarif (batch 12-17) `ingredients + steps` Mod B ile tam çevirisi canlı —
+  iki-pass mimarisi)
 - Faz 3: admin paneli + Review v2 + Sentry + Fuzzy arama + kategori pagination
   + OG image i18n + SEO meta i18n — hepsi canlı
 
@@ -193,6 +194,14 @@ Slug'un alfabetik sıralı tam listesi (şu an 1300+ slug).
 array'inin **sonuna append**. Mevcut tarifleri silme. Batch başlangıcına
 `// ── BATCH N ── (tarih: YYYY-MM-DD, N tarif, Codex)` yorumu koy.
 
+**Marker karakteri kritik:** `──` (U+2500 × 2 — box drawings light
+horizontal) kullan. **Em-dash (`——`, U+2014 × 2) KULLANMA.** Export
+script `export-recipes-for-translation-b.ts` regex'te `──` arıyor;
+em-dash'li marker bulunamaz, batch 17 Mod B hazırlığında normalize
+etmek gerekti. Kopyalarken karakteri kontrol et — VS Code'da
+"Insert Unicode" veya mevcut batch marker'ı kopyala-yapıştır en
+güvenlisi.
+
 **Dosya encoding (kritik, batch 12'de yakalandı — §3'e bak):**
 - UTF-8 (BOM YOK) + LF satır sonu olarak kaydet
 - VS Code alt çubukta "UTF-8" + "LF" yazmalı (CRLF veya UTF-8 BOM DEĞİL)
@@ -296,6 +305,11 @@ Batch N hazır — 100 tarif + EN/DE çeviri (title + description minimum).
 - `SUSAM` — susam, tahin, susam yağı
 - **İstisna:** Hindistan cevizi sütü/badem sütü/yulaf sütü SUT DEĞİL.
   Badem sütü = KUSUYEMIS, yulaf sütü = GLUTEN.
+- **Hindistan cevizi (coconut) KUSUYEMIS DEĞİLDİR.** "Ceviz" kelimesi
+  geçse bile coconut palm family, tree-nut allergen kapsamı dışında.
+  Hindistan cevizi + Hindistan cevizi sütü + rende hindistan cevizi →
+  allergen `[]`. (Batch 16 Mod B'de yanlış flag edildi — coconut-lime
+  / cinnamon-coconut tarifleri.)
 
 **Time math:** `prepMinutes + cookMinutes ≈ totalMinutes` (±5 dk).
 **Dinlendirme / soğutma / marinasyon / buzdolabı / fermentasyon süresi
@@ -500,9 +514,17 @@ yaz. Bu bulgular Claude tarafından review edilip fix script ile DB'ye
 uygulanır.
 
 **Issue type enum (tutarlı kullan):**
-- `ingredient-allergen-mismatch` — ingredient var allergen yok / tersi
-- `time-inconsistency` — prep+cook vs total uyumsuz, ya da chill/rest time
-  total'da yok
+- `ingredient-allergen-mismatch` — ingredient var allergen yok / tersi.
+  **Allergen enum'una bağlı kal:** GLUTEN, SUT, YUMURTA, KUSUYEMIS,
+  YER_FISTIGI, SOYA, DENIZ_URUNLERI, SUSAM, KEREVIZ, HARDAL. "KABUKLU_
+  AGAC_YEMISI" değil KUSUYEMIS. Brief §5 allergen enum listesi tek
+  referans.
+- `time-inconsistency` — SADECE `prep+cook > total` durumunda yaz.
+  `prep+cook < total` NORMAL → chill/rest/fermentasyon/buzdolabı/
+  dondurma süresi total'e dahil (§5 time math kuralı). Örnekler
+  normal: granita (190 total, 10 prep/cook), overnight oats (490
+  total, 10 prep/cook), şerbet (200 total, 20 prep/cook). **Bunlar
+  issue DEĞİL.** Batch 16 Mod B'de 3 false positive flag geldi.
 - `vague-language` — "biraz, azıcık, duruma göre" somut kriter yok
 - `composite-ingredient` — tek row'da "Tuz, karabiber, pul biber" gibi
   virgülle 2+ malzeme

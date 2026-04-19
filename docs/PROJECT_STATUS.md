@@ -2,6 +2,12 @@
 
 > Son güncelleme: 19 Nisan 2026 (oturum 6) — **Codex batch 14 dev + prod promoted (1301 → 1401 tarif canlı)**. Pagination counter yeniden tasarlandı ("X–Y gösteriliyor · toplam N tarif"). 6 UX copy iyileştirmesi (register faydaları, variation form, review empty state, cooking mode hint). Post-deploy spot check 0 regression.
 
+## 19 Nisan 2026 (oturum 6 devam — Mod B batch 12 çevirisi + perf paketi + Sentry fix)
+
+- **Batch 12 Mod B çevirisi (commit `a71483e`)** — Codex teslim ettiği `docs/translations-batch-12.json` (100 tarif, EN+DE `ingredients` + `steps` + 50/50 `tipNote/servingSuggestion`, title/desc yok — Mod A'dan dolu). `import-translations-b.ts` shallow merge → 100 applied dev + prod. İki content fix: `ovmac-corbasi-konya-usulu` `vejetaryen` tag kaldırıldı (et suyu), `summer-pudding` totalMinutes 30→270 (4 saat chill dahil). Canlı: lalanga EN "A Thracian..." + Flour/Yogurt + 5 ingredients + 3 steps render. İki-pass mimarisi ispatlandı.
+- **Perf paketi (commits `d9722e3` → `16f4406` → `c282fb4` → `ad677cd`)** — Neon warming `/api/warm` endpoint + unstable_cache 4 hot query (cuisine-stats, categories, search-suggestions, featured-pool). `vercel.json` cron Hobby tier'da build'i fail'liyordu → kaldırıldı. Warm state'te `/` TBT 310→50ms (6× iyileşme); cold miss'de ±50ms. External cron (UptimeRobot) önerisi docs'ta.
+- **Sentry OG image fix (commit `24896b5`)** — `generateImageMetadata` TR+EN OG PNG prerender'da `getTranslations({ locale })` `cookies()` çağırıyordu (dynamic server error). `src/i18n/request.ts` `requestLocale` guard eklendi — explicit locale varsa cookies skip, normal flow sapmaz. Preview: TR+EN OG 200 image/png.
+
 ## 19 Nisan 2026 (oturum 6 — batch 14 prod + counter redesign + UX copy + preferences)
 
 - **Kişiselleştirme tercihleri (commit `e84e1eb`)** — User'a `favoriteTags` (String[]) + `allergenAvoidances` (Allergen[]) + `favoriteCuisines` (String[]) alanları. Migration `20260419140000_add_user_preferences` additive-only, dev + prod'da applied. `/ayarlar` altına `PreferencesCard` (client component, 3 bölüm chip seçim, Zod validated server action, tag slug DB varlık check). MVP tur sadece saklar, listing filtering ayrı pass. 11 i18n key TR + EN. Not: #11 shopping list ekleme butonu zaten vardı (SaveMenu.tsx'te addRecipeIngredientsAction wire'lı); önceki audit yanlış işaretlemişti.

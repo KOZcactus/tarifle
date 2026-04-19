@@ -1,6 +1,7 @@
 "use server";
 
 import { auth } from "@/lib/auth";
+import { canChangeRole } from "@/lib/auth/super-admin";
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
@@ -395,6 +396,22 @@ export async function updateUserAction(
     select: { username: true, role: true, isVerified: true },
   });
   if (!current) return { success: false, error: "Kullanıcı bulunamadı." };
+
+  // Super-admin protection: kozcactus gibi süper admin username'lerine
+  // başka bir admin rol değişimi uygulayamaz. Kural `super-admin.ts`'de
+  // tek yerde (hem UI hem server action aynı predicate'ı paylaşıyor).
+  if (patch.role) {
+    const actor = await prisma.user.findUnique({
+      where: { id: moderatorId },
+      select: { username: true },
+    });
+    if (!canChangeRole(actor?.username, current.username)) {
+      return {
+        success: false,
+        error: "Bu kullanıcının rolünü değiştirme yetkin yok.",
+      };
+    }
+  }
 
   const changes: string[] = [];
   for (const [k, v] of Object.entries(patch)) {

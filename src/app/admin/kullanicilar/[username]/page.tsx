@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
 import { auth } from "@/lib/auth";
+import { canChangeRole } from "@/lib/auth/super-admin";
 import { prisma } from "@/lib/prisma";
 import { getAdminUserDetail } from "@/lib/queries/admin";
 import { FLAG_LABELS, type PreflightFlag } from "@/lib/moderation/preflight";
@@ -71,14 +72,19 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
   const { user, variations, reviews, reportsFiled, badges } = detail;
 
   // Only ADMIN (not MODERATOR) can promote/demote roles — layout already
-  // gates both, UI hides the select otherwise.
+  // gates both, UI hides the select otherwise. Super-admin protection:
+  // kozcactus gibi süper admin'leri düşürebilen tek kişi kendisi — bir
+  // başka admin bu sayfayı açarsa select'i hide ederiz (backend de ayrıca
+  // aynı kuralı uygular: `canChangeRole`).
   const currentUser = session?.user?.id
     ? await prisma.user.findUnique({
         where: { id: session.user.id },
-        select: { role: true },
+        select: { role: true, username: true },
       })
     : null;
-  const canEditRole = currentUser?.role === "ADMIN";
+  const canEditRole =
+    currentUser?.role === "ADMIN" &&
+    canChangeRole(currentUser.username, user.username);
 
   // Composite score identical to dashboard leaderboard
   const score =

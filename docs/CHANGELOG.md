@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: 19 Nisan 2026 (oturum 7 sonu — 28 commit, **1701 tarif** prod canlı, 600 tarif tam Mod B çeviri, legal hub `/yasal` + 44 programatik landing + haftalık menü planlayıcı + blog + newsletter double-opt-in). Detaylı kronolojik akış için `docs/PROJECT_STATUS.md`.
+> Son güncelleme: Oturum 8 — **1810 tarif** prod canlı (batch 18 + 9 drift-fix), Pinterest rich pin + AI Asistan paylaşım linki shipped. Detaylı kronolojik akış için `docs/PROJECT_STATUS.md`.
 
 ## İşaretler
 
@@ -138,6 +138,7 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - ✨ **Malzeme autocomplete** — 689 benzersiz malzeme ismi DB'den, Türkçe fuzzy match (ı/i, ş/s), Arrow/Enter keyboard nav, ARIA combobox. Her tuşta client-side filter, API yok.
 - ✨ **Arama paylaş** — "🔗 Paylaş" butonu URL'e ingredients kodlar. Paylaşılan link açıldığında auto-submit, aynı arama tekrarlanır.
 - 🎨 **Sonuç sıralama tercihi** — "En iyi eşleşme / En hızlı / En az eksik" client-side toggle.
+- ✨ **Paylaşılabilir sonuç linki v2** (oturum 8, `b40c051`) — ShareMenu entegre (WhatsApp/X/Pinterest/copy + Web Share API), commentary-bağımsız (zero-match dahil görünür). URL state tam kapsamlı: `diyet` + `pantry=0` + `sirala` param'ları + restore matching. Akıllı paylaşım metni (commentary yoksa "Bu malzemelerle ne yapsam: X, Y, Z" fallback).
 - ✨ **v2 synonym expansion** (17 Nis oturum 2) — SYNONYM_GROUPS 10 → 45. Et ayrıştırıldı (kıyma/tavuk kıyma/tavuk göğsü ayrı), balık ailesi, karides, süt ürünleri, bitkisel yağ, otlar, sebze, baklagil, un/nişasta, sirke/limon/salça/soya/maya. PANTRY 15 → 20 (tereyağı + maydanoz + maya + sirke + limon suyu).
 - ✨ **Fuzzy fallback** (17 Nis oturum 2) — AI matcher 3. adım: direct prefix → synonym → **fuzzy**. TR-aware Levenshtein + ASCII normalize. "domatez"→"domates", "kerik"→"kekik", "maydonoz"→"maydanoz".
 

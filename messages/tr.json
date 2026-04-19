@@ -1668,6 +1668,17 @@
   "print": {
     "button": "Yazdır"
   },
+  "pwa": {
+    "install": {
+      "title": "Tarifle'yi ana ekranına ekle",
+      "nativeBody": "Uygulama olarak kurabilirsin — daha hızlı açılır, çevrimdışı da çalışır.",
+      "nativeCta": "Ekle",
+      "nativeDismiss": "Daha sonra",
+      "iosBody": "Paylaş butonuna bas, menüyü aşağı kaydır, \"Ana Ekrana Ekle\" seçeneğine dokun.",
+      "iosDismiss": "Tamam, kapat",
+      "closeAria": "Kapat"
+    }
+  },
   "share": {
     "buttonAria": "Paylaş",
     "buttonLabel": "Paylaş",

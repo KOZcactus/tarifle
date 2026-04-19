@@ -1668,6 +1668,17 @@
   "print": {
     "button": "Print"
   },
+  "pwa": {
+    "install": {
+      "title": "Add Tarifle to your home screen",
+      "nativeBody": "Install it like an app — launches faster and works offline.",
+      "nativeCta": "Install",
+      "nativeDismiss": "Later",
+      "iosBody": "Tap the Share button, scroll down, and choose \"Add to Home Screen\".",
+      "iosDismiss": "Got it",
+      "closeAria": "Close"
+    }
+  },
   "share": {
     "buttonAria": "Share",
     "buttonLabel": "Share",

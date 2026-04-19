@@ -6,6 +6,8 @@
  */
 import { describe, it, expect } from "vitest";
 import {
+  filterSignalIngredients,
+  normalizeIngredientName,
   scoreCandidates,
   type SimilarTarget,
 } from "../../src/lib/queries/similar-recipes";
@@ -19,6 +21,8 @@ function c(overrides: {
   cuisine?: string | null;
   createdAt?: Date;
   tagSlugs?: string[];
+  ingredientNames?: string[];
+  isFeatured?: boolean;
 }) {
   return {
     id: overrides.id,
@@ -29,6 +33,8 @@ function c(overrides: {
     cuisine: overrides.cuisine ?? null,
     createdAt: overrides.createdAt ?? new Date("2026-01-01"),
     tagSlugs: overrides.tagSlugs ?? [],
+    ingredientNames: overrides.ingredientNames,
+    isFeatured: overrides.isFeatured,
   };
 }
 
@@ -39,6 +45,7 @@ const target: SimilarTarget = {
   difficulty: "MEDIUM",
   cuisine: "tr",
   tagSlugs: ["misafir-sofrasi", "yuksek-protein", "firinda"],
+  ingredientNames: [],
 };
 
 describe("scoreCandidates — ağırlıklar", () => {
@@ -152,6 +159,136 @@ describe("scoreCandidates — sıralama", () => {
       c({ id: "a", title: "Adana Kebap", categoryId: "cat-yemek", createdAt: date }),
     ]);
     expect(r.map((x) => x.id)).toEqual(["a", "b"]);
+  });
+});
+
+describe("scoreCandidates — ingredient overlap (1501 scale enhancement)", () => {
+  const ingredientTarget: SimilarTarget = {
+    ...target,
+    ingredientNames: ["Tavuk göğsü", "Yoğurt", "Sarımsak", "Tuz", "Karabiber"],
+  };
+
+  it("ingredient listesi verilmezse skor değişmez (backward-compat)", () => {
+    const r = scoreCandidates(target, [
+      c({ id: "plain", categoryId: "cat-yemek", type: "YEMEK" }),
+    ]);
+    expect(r[0]?.score).toBe(5); // +3 category + 2 type, no ingredient
+  });
+
+  it("1 ortak önemli malzeme → +1", () => {
+    const r = scoreCandidates(ingredientTarget, [
+      c({
+        id: "one-ing",
+        categoryId: "cat-yemek",
+        type: "YEMEK",
+        ingredientNames: ["Tavuk göğsü", "Soğan"],
+      }),
+    ]);
+    // +3 category + 2 type + 1 ingredient (Tavuk göğsü) = 6
+    expect(r[0]?.score).toBe(6);
+  });
+
+  it("3 ortak malzeme → cap +3 puan (4'üncü sayılmaz)", () => {
+    const r = scoreCandidates(ingredientTarget, [
+      c({
+        id: "all-ing",
+        categoryId: "cat-xxx",
+        type: "TATLI",
+        ingredientNames: [
+          "Tavuk göğsü",
+          "Yoğurt",
+          "Sarımsak",
+          "Limon",
+        ],
+      }),
+    ]);
+    // 3 shared non-pantry → capped at +3. No category/type match.
+    expect(r[0]?.score).toBe(3);
+  });
+
+  it("pantry malzemeler sayılmaz (tuz, karabiber)", () => {
+    const r = scoreCandidates(ingredientTarget, [
+      c({
+        id: "pantry-only",
+        categoryId: "cat-xxx",
+        type: "TATLI",
+        ingredientNames: ["Tuz", "Karabiber", "Su"],
+      }),
+    ]);
+    // Pantry overlap skor vermez; diğer sinyal yok → 0 → elenir
+    expect(r).toHaveLength(0);
+  });
+
+  it("aynı malzeme farklı case/spacing → eşleşir (normalize)", () => {
+    const r = scoreCandidates(ingredientTarget, [
+      c({
+        id: "cased",
+        categoryId: "cat-xxx",
+        type: "TATLI",
+        ingredientNames: ["  TAVUK   GÖĞSÜ  ", "Biber"],
+      }),
+    ]);
+    // "TAVUK GÖĞSÜ" normalize → "tavuk göğsü" = 1 shared ingredient
+    expect(r[0]?.score).toBe(1);
+  });
+});
+
+describe("scoreCandidates — isFeatured boost", () => {
+  it("isFeatured candidate +0.3 boost", () => {
+    const r = scoreCandidates(target, [
+      c({
+        id: "featured",
+        categoryId: "cat-yemek",
+        type: "ICECEK",
+        isFeatured: true,
+      }),
+    ]);
+    // +3 category, +0.3 featured
+    expect(r[0]?.score).toBe(3.3);
+  });
+
+  it("aynı ham skorda featured olan önce gelir", () => {
+    const r = scoreCandidates(target, [
+      c({
+        id: "plain",
+        categoryId: "cat-yemek",
+        type: "ICECEK",
+        createdAt: new Date("2026-01-01"),
+      }), // +3
+      c({
+        id: "featured",
+        categoryId: "cat-yemek",
+        type: "ICECEK",
+        createdAt: new Date("2026-01-01"),
+        isFeatured: true,
+      }), // +3.3
+    ]);
+    expect(r.map((x) => x.id)).toEqual(["featured", "plain"]);
+  });
+});
+
+describe("normalize + pantry helpers", () => {
+  it("normalizeIngredientName: lower + trim + whitespace squash", () => {
+    expect(normalizeIngredientName("  Tavuk  Göğsü ")).toBe("tavuk göğsü");
+    expect(normalizeIngredientName("Zeytinyağı")).toBe("zeytinyağı");
+    // Not: Prisma'daki ingredient isimleri sentence-case; ALL CAPS
+    // Türkçe tariflerde pratikte görülmez. JS default toLowerCase'in
+    // TR-aware olmaması burada problem yaratmaz.
+  });
+
+  it("filterSignalIngredients: pantry dışı malzemeleri tutar", () => {
+    const signals = filterSignalIngredients([
+      "Tavuk",
+      "Tuz",
+      "Karabiber",
+      "Limon",
+      "Su",
+    ]);
+    expect(signals).toEqual(["tavuk", "limon"]);
+  });
+
+  it("filterSignalIngredients: boş input → boş çıkış", () => {
+    expect(filterSignalIngredients([])).toEqual([]);
   });
 });
 

@@ -7,20 +7,21 @@
  * zorunda kalmasın.
  *
  * Skorlama (deterministic, aynı tarif için hep aynı sonuç):
- *   +3  Aynı kategori (corbalar ↔ corbalar)
- *   +2  Aynı RecipeType (YEMEK/TATLI/ICECEK ...) — kategoriyi farklı olsa
- *       da "hamur-isleri → hamur tatlısı" tarzı sıçramalarda etki
- *   +1  Her ortak tag — max 5 tag olduğu için 5 puan üstü çıkmaz
+ *   +3   Aynı kategori (corbalar ↔ corbalar)
+ *   +2   Aynı RecipeType (YEMEK/TATLI/ICECEK ...) — kategoriyi farklı olsa
+ *        da "hamur-isleri → hamur tatlısı" tarzı sıçramalarda etki
+ *   +1   Her ortak tag — max 5 tag olduğu için 5 puan üstü çıkmaz
  *   +0.5 Aynı difficulty
  *   +1.5 Aynı cuisine (Japon tarifi okurken diğer Japon tarifleri öne)
+ *   +1   Her ortak "önemli" malzeme (cap +3) — pantry ingredient'ler
+ *        (tuz, biber, yağ, su vb.) exclude edilir, ana protein ve
+ *        karakter malzemeleri sayılır. 1501 tarif ölçeğinde ingredient
+ *        sinyali artık anlamlı (motor ilk yazıldığında 106 tarif vardı
+ *        — pantry şişmesi sorun idi; şimdi scale yeterli).
+ *   +0.3 isFeatured bonus (editör seçimi benzer tarifleri ufak boost —
+ *        kullanıcıya kürasyonlu içerik hissiyatı)
  *
  * Tie-break: daha yeni tarif öne, sonra alfabetik (TR collation).
- *
- * Neden Jaccard ingredient similarity eklemedim: 106 tarif ölçeğinde
- * ingredient listesi genelde "tuz, karabiber, yağ" gibi pantry'yle
- * şişiyor — gerçek benzerlik sinyali zayıf. Kategori + tag zaten anlamlı
- * sinyal. 500+ tarife çıktığında ingredient similarity + pantry filtresi
- * ikinci katmana eklenebilir.
  *
  * Neden `ts_rank_cd` / FTS kullanmadım: FTS "bu kelimeyi arayan için"
  * relevance ölçüyor; burada amaç "bu tarife benzeyen" — tamamen farklı
@@ -29,6 +30,45 @@
 import { prisma } from "@/lib/prisma";
 import type { RecipeCard } from "@/types/recipe";
 
+/**
+ * Pantry / common ingredient blacklist — ingredient Jaccard skoru
+ * hesaplanırken bu malzemeler sayılmaz. Herkes tuz, yağ, su kullanır;
+ * gerçek benzerlik sinyalini boğarlar. Normalized ingredient name
+ * (lowercased, TR accents preserved) karşılaştırılır. Liste sabit tutulur
+ * — yeni pantry item gelirse burada ekle.
+ */
+const PANTRY_INGREDIENTS: ReadonlySet<string> = new Set([
+  "tuz",
+  "karabiber",
+  "biber",
+  "su",
+  "yağ",
+  "zeytinyağı",
+  "sıvı yağ",
+  "ayçiçek yağı",
+  "şeker",
+  "toz şeker",
+  "pudra şekeri",
+  "un",
+  "maya",
+  "kabartma tozu",
+  "vanilya",
+  "karbonat",
+]);
+
+/** Ingredient ismini normalize et: lowercase + TR collation için
+ *  minimum müdahale (i→i, ı→ı preserved). Pantry lookup için yeterli. */
+export function normalizeIngredientName(name: string): string {
+  return name.trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+/** Pantry filter uygulanmış anlamlı ingredient list. */
+export function filterSignalIngredients(names: readonly string[]): string[] {
+  return names
+    .map(normalizeIngredientName)
+    .filter((n) => n.length > 0 && !PANTRY_INGREDIENTS.has(n));
+}
+
 export interface SimilarTarget {
   id: string;
   categoryId: string;
@@ -36,6 +76,9 @@ export interface SimilarTarget {
   difficulty: string;
   cuisine: string | null;
   tagSlugs: string[];
+  /** Raw ingredient names — pantry filter `scoreCandidates` içinde
+   *  uygulanır, caller normalize etmek zorunda değil. */
+  ingredientNames: string[];
 }
 
 export interface ScoredCandidate {
@@ -63,9 +106,16 @@ export function scoreCandidates(
     cuisine: string | null;
     createdAt: Date;
     tagSlugs: string[];
+    /** Raw ingredient names — scoring içinde pantry filter uygulanır. */
+    ingredientNames?: readonly string[];
+    /** Editör Seçimi flag'i — varsa küçük bir boost. */
+    isFeatured?: boolean;
   }[],
 ): ScoredCandidate[] {
   const targetTags = new Set(target.tagSlugs);
+  const targetSignalIngredients = new Set(
+    filterSignalIngredients(target.ingredientNames),
+  );
 
   const scored = candidates
     .filter((c) => c.id !== target.id)
@@ -79,6 +129,24 @@ export function scoreCandidates(
       let sharedTags = 0;
       for (const t of c.tagSlugs) if (targetTags.has(t)) sharedTags++;
       score += sharedTags;
+
+      // Ingredient overlap — pantry filter + cap @ +3. "Aynı ana
+      // malzeme" sinyali metadata sinyaline karışmayacak şekilde
+      // üstüne eklenir; kategori/tag zaten güçlü olduğu için ingredient
+      // overlap tie-break gibi çalışır.
+      if (c.ingredientNames && targetSignalIngredients.size > 0) {
+        const candidateSignals = filterSignalIngredients(c.ingredientNames);
+        let sharedIngredients = 0;
+        for (const ing of candidateSignals) {
+          if (targetSignalIngredients.has(ing)) sharedIngredients++;
+        }
+        score += Math.min(sharedIngredients, 3);
+      }
+
+      // Featured soft-boost — editör seçimi tarifleri aynı skordaki
+      // sıradan tariflerin önüne geçer. Kürasyon kalitesini benzerlikle
+      // birleştirir.
+      if (c.isFeatured) score += 0.3;
 
       return { ...c, score };
     });
@@ -124,6 +192,7 @@ export async function getSimilarRecipes(
       difficulty: true,
       cuisine: true,
       tags: { select: { tag: { select: { slug: true } } } },
+      ingredients: { select: { name: true } },
     },
   });
   if (!target) return [];
@@ -135,6 +204,7 @@ export async function getSimilarRecipes(
     difficulty: target.difficulty,
     cuisine: target.cuisine,
     tagSlugs: target.tags.map((t) => t.tag.slug),
+    ingredientNames: target.ingredients.map((i) => i.name),
   };
 
   // Pool: same category OR same type, PUBLISHED, excluding self. Pull
@@ -168,14 +238,15 @@ export async function getSimilarRecipes(
         select: { name: true, slug: true, emoji: true },
       },
       tags: { select: { tag: { select: { slug: true } } } },
+      ingredients: { select: { name: true } },
       _count: {
         select: { variations: { where: { status: "PUBLISHED" } } },
       },
     },
-    // 50 row cap — scoring is O(n * avgTags) JS so small; the bigger
-    // cost is SELECTing wide rows. 50 is plenty for a 6-card section
-    // even once we have 500+ recipes.
-    take: 50,
+    // 100 row cap — 1501 tarif ölçeğinde 50 dardı, 100 candidate ile
+    // ingredient overlap sinyali anlamlı çalışır. Scoring JS-side
+    // O(n * avgIngredients) ≈ 100 × 10 = 1000 op, trivial.
+    take: 100,
   });
 
   const scored = scoreCandidates(
@@ -189,6 +260,8 @@ export async function getSimilarRecipes(
       cuisine: c.cuisine,
       createdAt: c.createdAt,
       tagSlugs: c.tags.map((t) => t.tag.slug),
+      ingredientNames: c.ingredients.map((i) => i.name),
+      isFeatured: c.isFeatured,
     })),
   );
 

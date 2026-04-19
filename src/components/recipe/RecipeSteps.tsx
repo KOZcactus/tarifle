@@ -22,7 +22,11 @@ export function RecipeSteps({ steps }: RecipeStepsProps) {
       <h2 className="mb-4 font-heading text-lg font-semibold">{t("title")}</h2>
       <ol className="list-none space-y-6 pl-0">
         {steps.map((step) => (
-          <li key={step.id} className="relative flex gap-4">
+          <li
+            key={step.id}
+            id={`step-${step.stepNumber}`}
+            className="relative flex scroll-mt-20 gap-4"
+          >
             {/* Step Number — custom badge replaces the default <ol> marker.
                 `list-none` + `pl-0` suppress the default "1.", "2." markers
                 that Tailwind 4 preflight leaves on ordered lists; without

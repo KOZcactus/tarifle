@@ -70,10 +70,11 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     // RSS auto-discovery — feed reader'lar (Feedly, Inoreader, browser
     // extension'ları) ana sayfaya bakınca otomatik feed tespit etsin.
-    // Google Feed crawler da bu link'i takip eder.
+    // Google Feed crawler da bu link'i takip eder. Tarifle feed URL'i
+    // `/feed.xml` (App Router route), `/rss.xml` eski referans kalan.
     alternates: {
       types: {
-        "application/rss+xml": `${SITE_URL}/rss.xml`,
+        "application/rss+xml": `${SITE_URL}/feed.xml`,
       },
     },
   };

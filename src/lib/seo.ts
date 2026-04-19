@@ -38,6 +38,50 @@ export interface AggregateRatingInput {
   count: number;
 }
 
+/**
+ * Adım metninden kısa `name` türet — HowToStep.name Google rich result'ta
+ * "step 1 of 5" başlığı olarak görünür. İlk cümlenin ilk 60 karakteri +
+ * fallback "Adım N".
+ */
+function stepNameFromInstruction(instruction: string, position: number): string {
+  const firstSentence = instruction.split(/[.!?]/)[0]?.trim() ?? "";
+  if (firstSentence.length === 0) return `Adım ${position}`;
+  if (firstSentence.length <= 60) return firstSentence;
+  return firstSentence.slice(0, 57).trimEnd() + "…";
+}
+
+/**
+ * Kural-tabanlı `tool` inference — tarif adım metinlerinden ve tag
+ * listesinden ortak mutfak ekipmanlarını çıkarır. HowTo schema'nın
+ * `tool` property'si Recipe'de de geçerli (inheritance). Google rich
+ * snippet'te doğrudan görünmez ama structured data zenginliği artar.
+ *
+ * Eşleşme sırası önemli değil — Set ile unique, sonra alfabetik.
+ */
+const TOOL_PATTERNS: readonly { pattern: RegExp; tool: string }[] = [
+  { pattern: /\bfırın/i, tool: "Fırın" },
+  { pattern: /\btavada?\b|\btavaya\b|\btavay[aı]\b/i, tool: "Tava" },
+  { pattern: /\btencere/i, tool: "Tencere" },
+  { pattern: /\b(blender|robot|mutfak robot)/i, tool: "Blender / Mutfak robotu" },
+  { pattern: /\b(çırpıcı|mikser)/i, tool: "Mikser / Çırpıcı" },
+  { pattern: /\b(buzdolab|dolapta|dinlen)/i, tool: "Buzdolabı" },
+  { pattern: /\bdüdüklü/i, tool: "Düdüklü tencere" },
+  { pattern: /\bızgara/i, tool: "Izgara" },
+  { pattern: /\b(waffle makinesi|gofret makinesi)/i, tool: "Waffle makinesi" },
+];
+
+function inferToolsFromSteps(
+  steps: readonly { instruction: string }[],
+): string[] {
+  const found = new Set<string>();
+  for (const step of steps) {
+    for (const { pattern, tool } of TOOL_PATTERNS) {
+      if (pattern.test(step.instruction)) found.add(tool);
+    }
+  }
+  return Array.from(found).sort();
+}
+
 export function generateRecipeJsonLd(
   recipe: RecipeDetail,
   aggregateRating?: AggregateRatingInput | null,
@@ -45,6 +89,8 @@ export function generateRecipeJsonLd(
   const totalTime = `PT${recipe.totalMinutes}M`;
   const prepTime = `PT${recipe.prepMinutes}M`;
   const cookTime = `PT${recipe.cookMinutes}M`;
+
+  const tools = inferToolsFromSteps(recipe.steps);
 
   return {
     "@context": "https://schema.org",
@@ -68,10 +114,31 @@ export function generateRecipeJsonLd(
     recipeIngredient: recipe.ingredients.map(
       (ing) => `${ing.amount} ${ing.unit ?? ""} ${ing.name}`.trim(),
     ),
+    // HowToSupply — schema.org'da Recipe HowTo'dan inherit eder. Malzeme
+    // listesinin yapısal versiyonu; recipeIngredient flat string kalsa da
+    // supply object array HowTo-style structured data sağlar.
+    supply: recipe.ingredients.map((ing) => ({
+      "@type": "HowToSupply",
+      name: ing.name,
+      requiredQuantity: {
+        "@type": "QuantitativeValue",
+        value: ing.amount,
+        ...(ing.unit ? { unitText: ing.unit } : {}),
+      },
+    })),
+    // HowToTool — adım metinlerinden inference edilen mutfak ekipmanı.
+    // Sıfırsa emit etme (schema temiz kalsın).
+    ...(tools.length > 0
+      ? {
+          tool: tools.map((name) => ({ "@type": "HowToTool", name })),
+        }
+      : {}),
     recipeInstructions: recipe.steps.map((step) => ({
       "@type": "HowToStep",
       position: step.stepNumber,
+      name: stepNameFromInstruction(step.instruction, step.stepNumber),
       text: step.instruction,
+      url: `${SITE_URL}/tarif/${recipe.slug}#step-${step.stepNumber}`,
       ...(step.tip ? { tip: step.tip } : {}),
     })),
     ...(recipe.averageCalories

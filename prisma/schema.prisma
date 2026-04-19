@@ -177,6 +177,7 @@ model User {
   collections       Collection[]
   shoppingLists     ShoppingList[]
   mealPlans         MealPlan[]
+  newsletterSubscriptions NewsletterSubscription[]
   badges            UserBadge[]
   notifications     Notification[]
   reports           Report[]
@@ -773,6 +774,47 @@ enum MealType {
   BREAKFAST
   LUNCH
   DINNER
+}
+
+/// Haftalık newsletter aboneliği — email + status + tokenlar.
+/// Double-opt-in: kayıt olunduğunda CONFIRMING status + email ile
+/// confirm token gönderilir; kullanıcı tıklayınca ACTIVE'e geçer.
+/// Unsubscribe token her mail'in altına gömülür, tıklanınca status
+/// UNSUBSCRIBED olur (hard delete yerine soft — yasal audit için).
+model NewsletterSubscription {
+  id                String                        @id @default(cuid())
+  email             String                        @unique @db.VarChar(255)
+  status            NewsletterSubscriptionStatus  @default(CONFIRMING)
+  /// Confirm link token — 24h TTL, tek kullanımlık.
+  confirmToken      String?                       @unique @db.VarChar(100)
+  confirmTokenAt    DateTime?
+  /// Unsubscribe link token — lifetime, tek kullanımlık ama hep aynı
+  /// token (GDPR gereği kolay kaldırma).
+  unsubscribeToken  String                        @unique @db.VarChar(100)
+  locale            String                        @default("tr") @db.VarChar(5)
+  /// Opsiyonel — logged-in user abone olursa User'a bağlanır. Anonim
+  /// aboneliklerde null kalır (email yeterli kimlik).
+  userId            String?
+  createdAt         DateTime                      @default(now())
+  confirmedAt       DateTime?
+  unsubscribedAt    DateTime?
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([status])
+  @@index([userId])
+  @@map("newsletter_subscriptions")
+}
+
+enum NewsletterSubscriptionStatus {
+  /// E-posta gönderildi, onay bekliyor (24h pencere).
+  CONFIRMING
+  /// Onaylandı, mail alıyor.
+  ACTIVE
+  /// Unsubscribe linkine tıkladı.
+  UNSUBSCRIBED
+  /// Hard bounce / spam report → otomatik suspend.
+  SUSPENDED
 }
 
 model Notification {

@@ -1250,6 +1250,41 @@
       "error": "Couldn't update the shopping list."
     }
   },
+  "newsletter": {
+    "form": {
+      "footerHeading": "Weekly editor's pick",
+      "footerSubtitle": "New recipes + cooking notes — one email a week, unsubscribe anytime.",
+      "inlineHeading": "Weekly picks — straight to your inbox",
+      "inlineSubtitle": "5-6 handpicked recipes and short cooking tips every week from Tarifle editors. No ads, no spam.",
+      "emailPlaceholder": "you@email.com",
+      "submit": "Subscribe",
+      "submitting": "Sending…",
+      "success": "Confirmation email sent.",
+      "error": "Something went wrong, please try again.",
+      "privacyHint": "We use your email only to send the weekly newsletter. Every message has a one-click unsubscribe link."
+    },
+    "confirmed": {
+      "title": "Subscription confirmed",
+      "description": "Your Tarifle newsletter subscription is active.",
+      "heading": "Subscription confirmed",
+      "body": "Thanks — the weekly editor's pick is now on its way. Expect the first email in a few days.",
+      "home": "Back to home"
+    },
+    "unsubscribed": {
+      "title": "Unsubscribed",
+      "description": "You've left the Tarifle newsletter.",
+      "heading": "You're unsubscribed",
+      "body": "We won't send any more weekly emails. If you ever want to come back, the footer form is always open.",
+      "home": "Back to home"
+    },
+    "expired": {
+      "title": "Link expired",
+      "description": "The confirmation link is no longer valid.",
+      "heading": "The confirmation link has expired",
+      "body": "The link was valid for 24 hours and no longer works. Subscribe again via the footer form and we'll send a fresh confirmation email.",
+      "home": "Back to home"
+    }
+  },
   "blog": {
     "pageTitle": "Blog",
     "subtitle": "Kitchen guides, cooking techniques and ingredient deep-dives — long-form writing from Tarifle editors.",

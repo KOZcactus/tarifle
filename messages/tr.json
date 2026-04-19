@@ -1250,6 +1250,41 @@
       "error": "Alışveriş listesi güncellenemedi."
     }
   },
+  "newsletter": {
+    "form": {
+      "footerHeading": "Haftalık editör seçkisi",
+      "footerSubtitle": "Yeni tarifler + pişirme notları — haftada bir mail, istediğin an iptal.",
+      "inlineHeading": "Haftalık seçki — posta kutunda",
+      "inlineSubtitle": "Tarifle editörlerinden haftalık 5-6 öne çıkan tarif, kısa pişirme ipuçları. Reklam yok, spam yok.",
+      "emailPlaceholder": "ornek@mail.com",
+      "submit": "Abone ol",
+      "submitting": "Gönderiliyor…",
+      "success": "Onay maili gönderildi.",
+      "error": "Bir şeyler ters gitti, tekrar dene.",
+      "privacyHint": "E-postanı sadece haftalık bülteni göndermek için kullanırız. Her mailin altında tek tık ile çıkış bağlantısı var."
+    },
+    "confirmed": {
+      "title": "Abonelik onaylandı",
+      "description": "Tarifle bülteni için onayın alındı.",
+      "heading": "Abonelik onaylandı",
+      "body": "Teşekkürler — haftalık editör seçkisi artık posta kutuna düşüyor. İlk mail birkaç gün içinde.",
+      "home": "Ana sayfaya dön"
+    },
+    "unsubscribed": {
+      "title": "Abonelik iptal edildi",
+      "description": "Tarifle bülteninden çıkış.",
+      "heading": "Bülten aboneliğin iptal edildi",
+      "body": "Artık haftalık mail göndermeyeceğiz. Tekrar abone olmak istersen her zaman footer'daki formla dönebilirsin.",
+      "home": "Ana sayfaya dön"
+    },
+    "expired": {
+      "title": "Bağlantı süresi dolmuş",
+      "description": "Onay linki geçersiz.",
+      "heading": "Onay linki süresi dolmuş",
+      "body": "Bağlantı 24 saat geçerliydi ve artık çalışmıyor. Footer'daki formdan tekrar abone olursan yeni onay maili geliriz.",
+      "home": "Ana sayfaya dön"
+    }
+  },
   "blog": {
     "pageTitle": "Blog",
     "subtitle": "Mutfak rehberleri, pişirme teknikleri ve malzeme tanıma — Tarifle editörlerinden uzun formatlı yazılar.",

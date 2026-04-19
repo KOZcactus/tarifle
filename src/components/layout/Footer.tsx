@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { SITE_NAME } from "@/lib/constants";
+import { NewsletterForm } from "@/components/newsletter/NewsletterForm";
 
 export async function Footer() {
   const [t, tNav] = await Promise.all([
@@ -11,7 +12,7 @@ export async function Footer() {
   return (
     <footer className="mt-auto border-t border-border bg-bg-card">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-8 sm:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
             <Link href="/" className="font-heading text-xl font-bold text-primary">
@@ -65,6 +66,12 @@ export async function Footer() {
                 </Link>
               </li>
             </ul>
+          </div>
+
+          {/* Newsletter opt-in — double-opt-in + unsubscribe flow.
+              Footer'da compact variant; haftalık editör seçkisi satışı. */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <NewsletterForm variant="footer" />
           </div>
         </div>
 

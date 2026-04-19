@@ -266,6 +266,77 @@ export async function approveReview(reviewId: string) {
   return { success: true };
 }
 
+// ─── Bulk moderation actions ──────────────────────────────
+
+export interface BulkModerateResult {
+  success: boolean;
+  processed: number;
+  skipped: number;
+  error?: string;
+}
+
+/**
+ * Çoklu uyarlama ya da yorum için toplu moderasyon — "hide" veya
+ * "approve". Tek tek hide/approveVariation/Review yerine moderator
+ * checkbox'lı liste + tek tık toolbar kullansın.
+ *
+ * Notification gönderimi her satır için fire-and-forget kalır; tek
+ * hata tüm batch'i patlatmaz (Promise.allSettled).
+ *
+ * IDs array 50 üst sınırı — daha büyük batch'leri sayfalı işlemek
+ * güvenli (accidental mass-hide'ı engellemek).
+ */
+const BULK_LIMIT = 50;
+
+export async function bulkModerateAction(
+  targetType: "VARIATION" | "REVIEW",
+  action: "hide" | "approve",
+  ids: string[],
+  reason?: string,
+): Promise<BulkModerateResult> {
+  try {
+    await requireAdmin();
+  } catch (err) {
+    return {
+      success: false,
+      processed: 0,
+      skipped: 0,
+      error: err instanceof Error ? err.message : "unauthorized",
+    };
+  }
+
+  const uniqueIds = [...new Set(ids)].filter((id) => typeof id === "string" && id.length > 0);
+  if (uniqueIds.length === 0) {
+    return { success: false, processed: 0, skipped: 0, error: "no-ids" };
+  }
+  if (uniqueIds.length > BULK_LIMIT) {
+    return {
+      success: false,
+      processed: 0,
+      skipped: uniqueIds.length - BULK_LIMIT,
+      error: "too-many",
+    };
+  }
+
+  const handler =
+    targetType === "VARIATION"
+      ? action === "hide"
+        ? (id: string) => hideVariation(id, reason).then(() => true).catch(() => false)
+        : (id: string) => approveVariation(id).then(() => true).catch(() => false)
+      : action === "hide"
+        ? (id: string) => hideReview(id, reason).then(() => true).catch(() => false)
+        : (id: string) => approveReview(id).then(() => true).catch(() => false);
+
+  const results = await Promise.all(uniqueIds.map(handler));
+  const processed = results.filter(Boolean).length;
+  const skipped = results.length - processed;
+
+  revalidatePath("/admin/incelemeler");
+  revalidatePath("/admin/yorumlar");
+
+  return { success: true, processed, skipped };
+}
+
 // ─── Inline edit actions ──────────────────────────────────
 
 const updateRecipeSchema = z.object({

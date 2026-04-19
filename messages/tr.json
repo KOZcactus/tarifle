@@ -506,6 +506,21 @@
       "defaultAlt": "{author} tarafından yüklenen fotoğraf",
       "anonymous": "Anonim"
     },
+    "bulkModeration": {
+      "rowCheckboxAria": "Satırı toplu işlem için seç",
+      "selectAll": "Tümünü seç ({count})",
+      "selected": "{count} seçili",
+      "selectedEmpty": "Seçim yok — satırları işaretle",
+      "bulkApprove": "Seçilenleri onayla",
+      "bulkHide": "Seçilenleri gizle",
+      "clearSelection": "Seçimi temizle",
+      "approveSuccess": "{processed} kayıt onaylandı.",
+      "hideSuccess": "{processed} kayıt gizlendi.",
+      "error_no-ids": "Seçili kayıt yok.",
+      "error_too-many": "Tek seferde en fazla 50 kayıt işlenebilir. Seçimi azalt.",
+      "error_unauthorized": "Yetkin yok.",
+      "error_unknown": "Beklenmedik hata — tekrar dene."
+    },
     "analytics": {
       "pageTitle": "Analytics | Yönetim Paneli",
       "heading": "📊 Analytics Dashboard",

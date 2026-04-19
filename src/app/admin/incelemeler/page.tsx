@@ -11,6 +11,11 @@ import { formatIngredient, normaliseIngredients } from "@/lib/ingredients";
 import { ReviewActions } from "@/components/admin/ReviewActions";
 import { ReviewModerationActions } from "@/components/admin/ReviewModerationActions";
 import { getPendingReviews } from "@/lib/queries/admin";
+import {
+  BulkCheckbox,
+  BulkModerationProvider,
+  BulkToolbar,
+} from "@/components/admin/BulkModeration";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("admin.pageTitles");
@@ -51,6 +56,8 @@ export default async function ReviewQueuePage() {
           <p className="text-text-muted">{t("emptyVariations")}</p>
         </div>
       ) : (
+        <BulkModerationProvider targetType="VARIATION">
+          <BulkToolbar allIds={variations.map((v) => v.id)} />
         <ul className="space-y-4">
           {variations.map((v) => {
             const flagCodes = (v.moderationFlags ?? "")
@@ -66,6 +73,10 @@ export default async function ReviewQueuePage() {
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div className="min-w-0 flex-1">
                     <div className="flex items-baseline gap-2">
+                      <BulkCheckbox
+                        id={v.id}
+                        ariaLabel={`${v.miniTitle} — bulk select`}
+                      />
                       <h3 className="font-heading text-base font-semibold text-text">
                         {v.miniTitle}
                       </h3>
@@ -168,6 +179,7 @@ export default async function ReviewQueuePage() {
             );
           })}
         </ul>
+        </BulkModerationProvider>
       )}
       </section>
 
@@ -181,6 +193,8 @@ export default async function ReviewQueuePage() {
             <p className="text-text-muted">{t("emptyReviews")}</p>
           </div>
         ) : (
+          <BulkModerationProvider targetType="REVIEW">
+            <BulkToolbar allIds={pendingReviews.map((r) => r.id)} />
           <ul className="space-y-4">
             {pendingReviews.map((r) => {
               const flagCodes = (r.moderationFlags ?? "")
@@ -196,6 +210,7 @@ export default async function ReviewQueuePage() {
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div className="min-w-0 flex-1">
                       <div className="flex items-baseline gap-2">
+                        <BulkCheckbox id={r.id} />
                         <span
                           className="font-heading text-base font-semibold text-text"
                           aria-label={t("starAria", { rating: r.rating })}
@@ -250,6 +265,7 @@ export default async function ReviewQueuePage() {
               );
             })}
           </ul>
+          </BulkModerationProvider>
         )}
       </section>
     </div>

@@ -506,6 +506,21 @@
       "defaultAlt": "Photo uploaded by {author}",
       "anonymous": "Anonymous"
     },
+    "bulkModeration": {
+      "rowCheckboxAria": "Select row for bulk action",
+      "selectAll": "Select all ({count})",
+      "selected": "{count} selected",
+      "selectedEmpty": "Nothing selected — tick rows to begin",
+      "bulkApprove": "Approve selected",
+      "bulkHide": "Hide selected",
+      "clearSelection": "Clear selection",
+      "approveSuccess": "{processed} records approved.",
+      "hideSuccess": "{processed} records hidden.",
+      "error_no-ids": "No records selected.",
+      "error_too-many": "Only 50 at a time. Reduce the selection.",
+      "error_unauthorized": "Not authorised.",
+      "error_unknown": "Unexpected error — try again."
+    },
     "analytics": {
       "pageTitle": "Analytics | Admin Panel",
       "heading": "📊 Analytics Dashboard",

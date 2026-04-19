@@ -6,9 +6,13 @@ import { pingIndexNow, getSiteBaseUrl, isValidKey } from "@/lib/indexnow";
  * Haftalık IndexNow batch ping — son 7 gün içinde eklenmiş veya
  * güncellenmiş PUBLISHED tarifleri Bing/Yandex/Seznam'a push eder.
  *
- * **Auth:** `Authorization: Bearer $INDEXNOW_CRON_SECRET` zorunlu
- * (newsletter endpoint'in simetriği — ayrı secret, kaza önlemi).
- * Secret set değilse 503.
+ * **Auth — iki yol kabul edilir:**
+ *   1. Vercel Cron: `x-vercel-cron: 1` header (Vercel edge enjekte eder,
+ *      dışarıdan spoof edilemez çünkü `x-vercel-*` external istekte
+ *      sıyrılır). vercel.json'daki cron tanımı otomatik bu yoldan gelir.
+ *   2. Manuel tetik / QStash: `Authorization: Bearer $INDEXNOW_CRON_SECRET`.
+ *
+ * Secret set değilse ve Vercel Cron header'ı da yoksa 503/401.
  *
  * **Scheduler:** Vercel Cron veya Upstash QStash. Önerilen frekans:
  *   - Haftalık (`0 8 * * 1`) — son 7 gün yeni/güncellenen
@@ -28,13 +32,6 @@ export const revalidate = 0;
 const DEFAULT_WINDOW_DAYS = 7;
 
 export async function GET(request: Request): Promise<NextResponse> {
-  const secret = process.env.INDEXNOW_CRON_SECRET;
-  if (!secret) {
-    return NextResponse.json(
-      { ok: false, error: "INDEXNOW_CRON_SECRET is not configured" },
-      { status: 503 },
-    );
-  }
   if (!isValidKey(process.env.INDEXNOW_KEY)) {
     return NextResponse.json(
       { ok: false, error: "INDEXNOW_KEY is not configured or invalid" },
@@ -42,12 +39,25 @@ export async function GET(request: Request): Promise<NextResponse> {
     );
   }
 
-  const authHeader = request.headers.get("authorization") ?? "";
-  if (authHeader !== `Bearer ${secret}`) {
-    return NextResponse.json(
-      { ok: false, error: "unauthorized" },
-      { status: 401 },
-    );
+  // Vercel Cron: "x-vercel-cron: 1" edge tarafından enjekte edilir,
+  // external istekte bu header sıyrılır → spoof edilemez.
+  const isVercelCron = request.headers.get("x-vercel-cron") === "1";
+
+  if (!isVercelCron) {
+    const secret = process.env.INDEXNOW_CRON_SECRET;
+    if (!secret) {
+      return NextResponse.json(
+        { ok: false, error: "INDEXNOW_CRON_SECRET is not configured" },
+        { status: 503 },
+      );
+    }
+    const authHeader = request.headers.get("authorization") ?? "";
+    if (authHeader !== `Bearer ${secret}`) {
+      return NextResponse.json(
+        { ok: false, error: "unauthorized" },
+        { status: 401 },
+      );
+    }
   }
 
   const url = new URL(request.url);

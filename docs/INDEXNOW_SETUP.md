@@ -42,15 +42,12 @@ Doğrula: `https://tarifle.app/d1277d55b71ba70595c7a887577dc9a0.txt` →
 
 **A) Vercel Cron** (önerilen — tek cron, yerinde):
 
-`vercel.json`'a ekle:
+`vercel.json` proje kökünde zaten hazır (oturum 9 sonu commit'lendi):
 
 ```json
 {
   "crons": [
-    {
-      "path": "/api/cron/indexnow",
-      "schedule": "0 8 * * 1"
-    }
+    { "path": "/api/cron/indexnow", "schedule": "0 8 * * 1" }
   ]
 }
 ```
@@ -59,6 +56,11 @@ Pazartesi 11:00 TSİ (08:00 UTC). Son 7 gün eklenmiş/güncellenen tariflerden
 liste toplanıp Bing + Yandex + Seznam'a tek POST ile gönderilir.
 
 Vercel Cron Hobby tier'da günde 1, haftada 1 yeterli. Pro tier no-limit.
+
+**Auth:** Endpoint Vercel Cron isteklerini `x-vercel-cron: 1` header ile
+doğrular (Vercel edge otomatik enjekte eder, dışarıdan spoof edilemez).
+Manuel tetik/QStash için hâlâ `INDEXNOW_CRON_SECRET` bearer kabul eder
+— ikisi birlikte çalışır.
 
 **B) Upstash QStash** (newsletter cron zaten burada):
 

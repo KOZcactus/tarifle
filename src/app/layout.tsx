@@ -77,6 +77,16 @@ export async function generateMetadata(): Promise<Metadata> {
         "application/rss+xml": `${SITE_URL}/feed.xml`,
       },
     },
+    // Pinterest rich pin + domain claim. PINTEREST_DOMAIN_VERIFY set
+    // edildiyse <meta name="p:domain_verify"> yayinlanir. pinterest-rich-pin
+    // opt-in sinyali, Recipe/Article JSON-LD ile birlikte Pinterest crawler'a
+    // "bu sayfalar rich pin aday" der.
+    other: {
+      "pinterest-rich-pin": "true",
+      ...(process.env.PINTEREST_DOMAIN_VERIFY
+        ? { "p:domain_verify": process.env.PINTEREST_DOMAIN_VERIFY }
+        : {}),
+    },
   };
 }
 

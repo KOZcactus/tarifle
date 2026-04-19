@@ -385,6 +385,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
             title={translatedTitle}
             url={`${SITE_URL}/tarif/${recipe.slug}`}
             text={`${recipe.emoji ?? ""} ${translatedTitle} — Tarifle`}
+            imageUrl={`${SITE_URL}/tarif/${recipe.slug}/pinterest-image?locale=${locale}`}
           />
         </div>
 

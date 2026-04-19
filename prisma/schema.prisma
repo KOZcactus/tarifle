@@ -178,6 +178,7 @@ model User {
   shoppingLists     ShoppingList[]
   mealPlans         MealPlan[]
   newsletterSubscriptions NewsletterSubscription[]
+  recipePhotos      RecipePhoto[]
   badges            UserBadge[]
   notifications     Notification[]
   reports           Report[]
@@ -347,6 +348,7 @@ model Recipe {
   videoJobs       VideoJob[]
   reviews         Review[]
   mealPlanItems   MealPlanItem[]
+  userPhotos      RecipePhoto[]
 
   @@index([categoryId])
   @@index([status])
@@ -863,4 +865,75 @@ model Announcement {
 
   @@index([startsAt, endsAt])
   @@map("announcements")
+}
+
+// Site-wide key/value store — feature flags + config. Announcement model'i
+// duyuruları (süreli, sunucudan push edilen banner içeriği) tutarken
+// SiteSetting runtime toggle'ları tutar: `userPhotosEnabled`, ileride
+// `variationUploadEnabled`, `maintenanceMode` gibi anahtarlar burada yaşar.
+// Admin panel'den tek tıkla değişir, unstable_cache 60s TTL ile hot path'lere
+// yayılır. Değer her zaman string ("true"/"false" veya JSON payload)
+// tutulur; okurken helper cast'ler (`getBooleanSetting`).
+model SiteSetting {
+  key       String   @id @db.VarChar(64)
+  value     String   @db.Text
+  // Kim güncelledi — audit için. User silinirse null kalır (set null).
+  updatedBy String?
+  updatedAt DateTime @updatedAt
+
+  @@map("site_settings")
+}
+
+// Moderasyon statüsü — RecipePhoto için. VISIBLE default (upload direkt
+// yayınlanır, auto-approve), HIDDEN admin/owner tarafından gizlenmiş.
+// "Pending" yok — spam/uygunsuzluk sonradan hide edilir, pre-moderation
+// kuyruğu gereksiz yük.
+enum RecipePhotoStatus {
+  VISIBLE
+  HIDDEN
+}
+
+// Kullanıcı tarafından yüklenen tarif fotoğrafı. Cloudinary'de host'lanır;
+// `publicId` delete + transformation için referans. `userId` silinirse
+// fotoğraf kalır ama anonim görünür (SetNull). `recipeId` silinirse
+// fotoğraflar cascade silinir. Feature flag `userPhotosEnabled` kapalıysa
+// UI'da gözükmez — public path hem listing hem upload form'u render
+// etmez, ama DB'deki mevcut kayıtlar korunur.
+model RecipePhoto {
+  id           String            @id @default(cuid())
+  recipeId     String
+  userId       String?
+  // Cloudinary secure_url. Resize/thumbnail için URL transformation
+  // kullanılabilir (w_300,q_auto,f_auto).
+  imageUrl     String            @db.Text
+  // Tam çözünürlük (1200w) ve thumbnail (400w) variantları. Detail view
+  // orijinali kullanır, grid thumbnail'ı. Cloudinary'nin fetch format
+  // transformationları olsa da pre-hesap edip kayda alınca render path
+  // ekstra parsing yapmaz.
+  thumbnailUrl String?           @db.Text
+  // Cloudinary public_id — silerken ve transform URL üretirken.
+  publicId     String            @unique @db.VarChar(255)
+  width        Int?
+  height       Int?
+  // İsteğe bağlı başlık — kullanıcı "Ekstra sarımsaklı denedim" gibi not
+  // bırakabilir. 200 karakter üst sınır UI seviyesinde validate edilir.
+  caption      String?           @db.VarChar(200)
+  status       RecipePhotoStatus @default(VISIBLE)
+  // Moderasyon bayrakları — ileride auto-flag (NSFW detection) veya user
+  // report count. Şimdilik boş kalıyor ama tip + index hazır.
+  reportCount  Int               @default(0)
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+
+  recipe Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  user   User?  @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  // Tarif detay sayfası grid için — sadece VISIBLE, oldest-first (olaylık
+  // anlatı olsun: ilk deneyen en üstte kalsın).
+  @@index([recipeId, status, createdAt])
+  // Kullanıcının kendi profilinde "benim fotoğraflarım" listeleme için.
+  @@index([userId])
+  // Admin moderation queue — yeni gelen fotoğraflar üst sırada.
+  @@index([status, createdAt])
+  @@map("recipe_photos")
 }

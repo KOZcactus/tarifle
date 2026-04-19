@@ -29,7 +29,8 @@ export type RateLimitScope =
   | "password-reset-consume"
   | "account-delete"
   | "ai-assistant"
-  | "review-submit";
+  | "review-submit"
+  | "recipePhotoUpload";
 
 interface ScopeConfig {
   /** Human-readable window length for log messages */
@@ -115,6 +116,14 @@ const SCOPE_CONFIG: Record<RateLimitScope, ScopeConfig> = {
     // blokajli bir denge.
     description: "10 yorum / 1 saat",
     limit: 10,
+    window: "1 h",
+  },
+  recipePhotoUpload: {
+    // Kullanici bir tarife 1-2 foto yukler (deneme + sunum). Saatlik 6
+    // hem meşru kullanima rahatlik verir hem spam bot'u sinirlar.
+    // Cloudinary free tier (25 credit/ay) acisindan da guvenli.
+    description: "6 fotoğraf / 1 saat",
+    limit: 6,
     window: "1 h",
   },
 };

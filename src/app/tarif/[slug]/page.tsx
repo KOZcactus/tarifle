@@ -15,6 +15,9 @@ import { AgeGate } from "@/components/recipe/AgeGate";
 import { VariationCard } from "@/components/recipe/VariationCard";
 import { ReviewsSection } from "@/components/recipe/ReviewsSection";
 import { SimilarRecipes } from "@/components/recipe/SimilarRecipes";
+import { UserPhotoGrid } from "@/components/recipe/UserPhotoGrid";
+import { UserPhotoUpload } from "@/components/recipe/UserPhotoUpload";
+import { isUserPhotosEnabled } from "@/lib/site-settings";
 import { generateRecipeJsonLd, generateBreadcrumbJsonLd, generateRecipeFaqJsonLd } from "@/lib/seo";
 import { CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
 import { SITE_URL } from "@/lib/constants";
@@ -218,7 +221,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
 
   const session = await auth();
   const variationIds = recipe.variations?.map((v) => v.id) ?? [];
-  const [bookmarked, userCollections, similarRecipes, likedVariationIds] =
+  const [bookmarked, userCollections, similarRecipes, likedVariationIds, userPhotosEnabled] =
     await Promise.all([
       session?.user?.id
         ? isBookmarked(session.user.id, recipe.id)
@@ -230,6 +233,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
       session?.user?.id
         ? getLikedVariationIds(session.user.id, variationIds)
         : Promise.resolve(new Set<string>()),
+      isUserPhotosEnabled(),
     ]);
 
   // Surface admin/moderator UI inline on community variations so a moderator
@@ -544,6 +548,26 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
             </p>
           </div>
         </details>
+      )}
+
+      {/* User-uploaded photos (flag-gated).
+          Server component UserPhotoGrid fetches VISIBLE photos; upload
+          form only renders for email-verified logged-in users. Feature
+          flag `userPhotosEnabled` şu an default kapalı — admin panelden
+          açılana kadar bu bölüm render etmez (ilk ziyaretçiler "kimse
+          foto yüklememiş" algısı kurmasın). */}
+      {userPhotosEnabled && (
+        <section className="mt-12 print:hidden">
+          <h2 className="mb-4 font-heading text-xl font-bold">
+            {t("userPhotosTitle")}
+          </h2>
+          {session?.user?.id && (
+            <div className="mb-4">
+              <UserPhotoUpload recipeId={recipe.id} />
+            </div>
+          )}
+          <UserPhotoGrid recipeId={recipe.id} />
+        </section>
       )}
 
       {/* Variations Section */}

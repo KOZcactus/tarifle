@@ -298,11 +298,21 @@ Batch N hazır — 100 tarif + EN/DE çeviri (title + description minimum).
   Badem sütü = KUSUYEMIS, yulaf sütü = GLUTEN.
 
 **Time math:** `prepMinutes + cookMinutes ≈ totalMinutes` (±5 dk).
-Dinlendirme/soğutma totalMinutes'a dahil olmalı.
+**Dinlendirme / soğutma / marinasyon / buzdolabı / fermentasyon süresi
+totalMinutes'a DAHİL olmalı** — pişirme süresi değil ama kullanıcı
+beklediği için total'de görünür. Örnek:
+- Summer pudding: 20 prep + 10 cook + **240 chill** → `totalMinutes: 270`
+- Yoğurt mayalama: 15 prep + 0 cook + **480 fermentasyon** → `totalMinutes: 495`
+- Tahinli soğuk tavuk: 10 prep + 20 cook + **60 buzdolabı** → `totalMinutes: 90`
+
+Step'lerdeki `timerSeconds` ile total mutabık olmalı (chill timer varsa
+totalMinutes o saniyeyi kapsar).
 
 **Vegetarian/vegan integrity:**
-- `vejetaryen` tag → et/balık YOK
-- `vegan` tag → ek olarak süt/yumurta/bal/peynir YOK
+- `vejetaryen` tag → et/balık YOK. **Et suyu / tavuk suyu / kemik suyu /
+  broth / stock da et** — vejetaryen değildir. Bunun yerine `sebze suyu`
+  (vegetable stock) yazarsan vejetaryen OK.
+- `vegan` tag → ek olarak süt/yumurta/bal/peynir/tereyağı YOK
 
 **isFeatured:** Batch'te **%5-10 oran** (100 tarifte 5-10 featured).
 Sadece ikonik/güçlü tariflerde `true`.
@@ -675,6 +685,8 @@ oturumda bunları TEKRAR yapma:
 | **Reverse unused** | `sambousek` ingredients'te yoğurt var ama step'te kullanılmamış | Liste-step inconsistency | Issue flag, manual review |
 | **Slug/content mismatch** | `pulled-pork-sandvic` slug "pork" ama ingredient "dana döş" | TR adaptation ama slug yanıltıcı | Issue flag, Kerem karar |
 | **Dosya encoding (batch 12)** | `scripts/seed-recipes.ts` Windows-1252→UTF-8 mojibake (ş→ÅŸ, ı→Ä±, emoji ðŸ¥©) | Windows'ta editör CP1252 yorumuyla açıp UTF-8 save → double-encode | UTF-8 (BOM yok) + LF — §3 "Dosya encoding" bölümüne bak |
+| **Vejetaryen tag + et suyu (batch 12 Mod B)** | `ovmac-corbasi-konya-usulu` tags `vejetaryen` + ingredient `Et suyu` | Et suyu (stock/broth) et içerir — vejetaryen değil | Tag kaldırılmalı VEYA `Et suyu` → `Sebze suyu` değiştir |
+| **Chill/rest totalMinutes dışı (batch 12 Mod B)** | `summer-pudding` totalMinutes 30 ama step 3 "4 saat buzdolabı" (timerSeconds 14400) | Chill/rest/marinasyon/fermentasyon totalMinutes'a dahil olmalı (kullanıcı "bu tarif ne kadar sürer" için total'a bakıyor) | `totalMinutes: prep + cook + chill` (summer-pudding → 270) |
 
 **İkiz hata pattern (batch 11 + 12 tekrarı):** Allergen ingredient-implied
 tablosu §5'te yazılı ama her batch'te 8-16 legitimate allergen eksiği

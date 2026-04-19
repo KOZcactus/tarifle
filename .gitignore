@@ -50,3 +50,10 @@ playwright-report/
 # contain local preferences and may include env-inlined commands with secrets
 .claude/settings.local.json
 .claude/launch.json
+
+# Codex / Mod B scratchpad — tarif Mod B çevirisi sırasında Codex
+# tmp_batch*.txt gibi scratch dosyalar bırakıyor. Bunların repo'ya
+# girmemesi için pattern. `git add -A` refleksiyle yanlışlıkla
+# karışmasınlar (bkz. feat(blog) commit 9e196fc içinde 4 tmp dosya
+# sızdı — bu ignore pattern eklendikten sonra tekrarı olmaz).
+tmp_*

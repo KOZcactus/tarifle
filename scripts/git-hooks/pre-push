@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
-# Tarifle pre-push hook — blocks push if `npm run lint` fails.
+# Tarifle pre-push hook — blocks push if `npm run lint` OR
+# `npm run content:validate` fails.
 #
-# CI runs `next lint` / `eslint .` and fails the whole pipeline on errors.
-# Catching it locally saves a round trip through GitHub Actions.
+# CI runs `next lint` + `content:validate` (muğlak ifade + Zod + semantik
+# checks) + tsc + vitest + build. Lint ve validate hızlı (~2-5s); lokalde
+# yakalamak GitHub Actions round-trip'ini kurtarır. Tsc + tests + build
+# çok daha pahalı, onları hook'a katmıyoruz — her commit'te 1-2 dk
+# beklemek push akışını öldürür.
 #
 # Activation (one-time, per clone):
 #   npm run setup:hooks
@@ -19,3 +23,13 @@ if ! npm run --silent lint; then
 fi
 
 echo "✅ pre-push: lint clean"
+
+echo "🔍 pre-push: npm run content:validate"
+if ! npm run --silent content:validate; then
+  echo ""
+  echo "❌ pre-push: content:validate failed (ERROR'lar — muğlak ifade, kcal, alkol tag vs.)."
+  echo "   Fix the ERROR lines above or bypass with --no-verify."
+  exit 1
+fi
+
+echo "✅ pre-push: content:validate clean"

@@ -1786,8 +1786,20 @@
       "hidingAction": "Hiding…",
       "hidePromptLabel": "Optional: note the hide reason (notified to author).",
       "hideTitleAttr": "Hide this adaptation (moderation only)",
+      "permalinkLabel": "Share",
+      "permalinkTitleAttr": "Open this adaptation's permalink",
       "errorDefault": "Operation failed."
     }
+  },
+  "variation": {
+    "permalinkEyebrow": "Community Adaptation",
+    "backToRecipe": "Back to {title}",
+    "byAuthorForRecipe": "{author} · adaptation for {recipe}",
+    "ingredientsHeading": "Ingredients",
+    "stepsHeading": "Steps",
+    "notesHeading": "Notes",
+    "ctaLead": "Compare this adaptation with the original {recipe} recipe.",
+    "ctaButton": "Open the original recipe"
   },
   "likes": {
     "countAria": "{n} likes",

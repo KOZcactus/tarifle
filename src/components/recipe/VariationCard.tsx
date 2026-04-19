@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { ReportButton } from "@/components/recipe/ReportButton";
@@ -162,6 +163,13 @@ export function VariationCard({
           </div>
 
           <div className="mt-4 flex items-center justify-end gap-3 border-t border-border pt-3">
+            <Link
+              href={`/uyarlama/${variation.id}`}
+              className="text-xs font-medium text-text-muted transition-colors hover:text-primary"
+              title={tCard("permalinkTitleAttr")}
+            >
+              🔗 {tCard("permalinkLabel")}
+            </Link>
             {isOwnVariation && (
               <DeleteOwnVariationButton
                 variationId={variation.id}

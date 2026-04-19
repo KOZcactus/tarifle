@@ -1786,8 +1786,20 @@
       "hidingAction": "Gizleniyor…",
       "hidePromptLabel": "İsteğe bağlı: gizleme sebebini not et (yazara bildirilir).",
       "hideTitleAttr": "Bu uyarlamayı gizle (sadece moderasyon)",
+      "permalinkLabel": "Paylaş",
+      "permalinkTitleAttr": "Uyarlamanın kalıcı linkini aç",
       "errorDefault": "İşlem başarısız."
     }
+  },
+  "variation": {
+    "permalinkEyebrow": "Topluluk Uyarlaması",
+    "backToRecipe": "{title} tarifine dön",
+    "byAuthorForRecipe": "{author} · {recipe} için uyarlama",
+    "ingredientsHeading": "Malzemeler",
+    "stepsHeading": "Yapılış",
+    "notesHeading": "Notlar",
+    "ctaLead": "{recipe} tarifinin orijinaline göz at, farkları kendin kıyasla.",
+    "ctaButton": "Orijinal tarife git"
   },
   "likes": {
     "countAria": "{n} beğeni",

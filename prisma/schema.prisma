@@ -874,6 +874,27 @@ model Announcement {
   @@map("announcements")
 }
 
+// Search query log — `/tarifler?q=...` SSR akışında fire-and-forget insert
+// edilir. Admin analytics dashboard'da "top search freq" kartı bu tablodan
+// beslenir. Normalized bucket (TR lowercase + asciifold) ile "köfte"/
+// "KOFTE"/"köftesi" aynı satıra yazılır. user null ise anonim arama.
+// 90 gün sonra pruning ayrı bir cron iş — şimdilik sonsuz bekliyor.
+model SearchQuery {
+  id              String   @id @default(cuid())
+  query           String   @db.VarChar(200)
+  normalizedQuery String   @db.VarChar(200)
+  resultCount     Int
+  userId          String?
+  createdAt       DateTime @default(now())
+
+  // Top N aggregate query: `normalizedQuery GROUP BY _count DESC WHERE
+  // createdAt >= since`. Composite index (normalizedQuery, createdAt)
+  // time-windowed group-by için en düşük maliyetli.
+  @@index([normalizedQuery, createdAt])
+  @@index([createdAt])
+  @@map("search_queries")
+}
+
 // Site-wide key/value store — feature flags + config. Announcement model'i
 // duyuruları (süreli, sunucudan push edilen banner içeriği) tutarken
 // SiteSetting runtime toggle'ları tutar: `userPhotosEnabled`, ileride

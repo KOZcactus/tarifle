@@ -11,6 +11,7 @@ import {
   getCuisineBreakdown,
 } from "@/lib/queries/admin";
 import { getTags } from "@/lib/queries/tag";
+import { getTopSearchQueries } from "@/lib/queries/search-log";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("admin.analytics");
@@ -41,6 +42,7 @@ export default async function AdminAnalyticsPage() {
     mostSaved,
     cuisines,
     tags,
+    topSearches,
     t,
   ] = await Promise.all([
     getAdminStats(),
@@ -51,6 +53,7 @@ export default async function AdminAnalyticsPage() {
     getMostSavedRecipes(10),
     getCuisineBreakdown(),
     getTags(),
+    getTopSearchQueries(7, 10),
     getTranslations("admin.analytics"),
   ]);
 
@@ -110,7 +113,7 @@ export default async function AdminAnalyticsPage() {
         </div>
       </section>
 
-      {/* Trends (tracking stub) */}
+      {/* Trends */}
       <section>
         <h3 className="mb-3 text-xs font-semibold uppercase tracking-wide text-text-muted">
           {t("trendsHeading")}
@@ -120,9 +123,12 @@ export default async function AdminAnalyticsPage() {
             label={t("viewTrendLabel")}
             message={t("viewTrendNotTracked")}
           />
-          <TrendPlaceholder
-            label={t("searchFreqLabel")}
-            message={t("searchFreqComingSoon")}
+          <SearchFrequencyCard
+            title={t("searchFreqLabel")}
+            entries={topSearches}
+            emptyMessage={t("searchFreqEmpty")}
+            countSuffix={t("searchFreqCountSuffix")}
+            windowLabel={t("searchFreqWindow")}
           />
         </div>
       </section>
@@ -193,6 +199,64 @@ function TrendPlaceholder({
     <div className="rounded-xl border border-dashed border-border bg-bg-card/40 p-6">
       <div className="mb-2 text-sm font-semibold text-text-muted">{label}</div>
       <p className="text-xs leading-relaxed text-text-muted">{message}</p>
+    </div>
+  );
+}
+
+interface SearchFrequencyCardProps {
+  title: string;
+  entries: { query: string; count: number; avgResultCount: number }[];
+  emptyMessage: string;
+  countSuffix: string;
+  windowLabel: string;
+}
+
+function SearchFrequencyCard({
+  title,
+  entries,
+  emptyMessage,
+  countSuffix,
+  windowLabel,
+}: SearchFrequencyCardProps) {
+  const max = entries.reduce((m, e) => Math.max(m, e.count), 0) || 1;
+  return (
+    <div className="rounded-xl border border-border bg-bg-card p-5">
+      <div className="mb-3 flex items-baseline justify-between gap-2">
+        <h4 className="font-heading text-base font-semibold">{title}</h4>
+        <span className="text-xs text-text-muted">{windowLabel}</span>
+      </div>
+      {entries.length === 0 ? (
+        <p className="text-xs text-text-muted">{emptyMessage}</p>
+      ) : (
+        <ul className="space-y-2">
+          {entries.map((entry, idx) => {
+            const widthPct = Math.max(8, Math.round((entry.count / max) * 100));
+            return (
+              <li key={`${entry.query}-${idx}`} className="flex items-center gap-3 text-sm">
+                <span className="w-5 shrink-0 text-xs tabular-nums text-text-muted">
+                  {idx + 1}.
+                </span>
+                <span className="min-w-0 flex-1 truncate font-medium text-text">
+                  {entry.query}
+                </span>
+                <div
+                  className="h-1.5 overflow-hidden rounded-full bg-bg-elevated"
+                  style={{ width: 60 }}
+                  aria-hidden="true"
+                >
+                  <div
+                    className="h-full rounded-full bg-primary/70"
+                    style={{ width: `${widthPct}%` }}
+                  />
+                </div>
+                <span className="w-20 shrink-0 text-right text-xs tabular-nums text-text-muted">
+                  {entry.count.toLocaleString("tr-TR")} {countSuffix}
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </div>
   );
 }

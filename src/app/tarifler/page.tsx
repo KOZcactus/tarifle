@@ -29,6 +29,7 @@ import { auth } from "@/lib/auth";
 import { getCategories } from "@/lib/queries/category";
 import { getTags } from "@/lib/queries/tag";
 import { searchRecipeIds } from "@/lib/search/recipe-search";
+import { logSearchQuery } from "@/lib/queries/search-log";
 import { ITEMS_PER_PAGE } from "@/lib/constants";
 import { ALLERGEN_ORDER } from "@/lib/allergens";
 import { getSearchSuggestions } from "@/lib/queries/search-suggestions";
@@ -213,6 +214,15 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
   ]);
 
   const totalPages = Math.ceil(total / ITEMS_PER_PAGE);
+
+  // Search log: query varsa ve ilk sayfa ise (pagination-1 = yeniden log
+  // yazmayalım — aynı arama 5 sayfa → 5 kayıt). Fire-and-forget; insert
+  // DB'ye her başarısız olursa listing akışını engellemez.
+  if (query && currentPage === 1) {
+    logSearchQuery(query, total, session?.user?.id ?? null).catch((err) => {
+      console.error("[search-log] insert failed:", err);
+    });
+  }
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">

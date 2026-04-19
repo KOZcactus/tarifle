@@ -6,6 +6,8 @@ import { auth } from "@/lib/auth";
 import { getViewableCollection } from "@/lib/queries/collection";
 import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
 import { CollectionActions } from "@/components/collection/CollectionActions";
+import { ShareMenu } from "@/components/recipe/ShareMenu";
+import { SITE_URL } from "@/lib/constants";
 
 interface CollectionPageProps {
   params: Promise<{ id: string }>;
@@ -19,11 +21,30 @@ export async function generateMetadata({
   const collection = await getViewableCollection(id, session?.user?.id);
   if (!collection) return { title: "Koleksiyon bulunamadı" };
 
+  // Private koleksiyonlar sadece owner'a görünür; canonical ve noindex
+  // ile search engines'ten izole et. Public olanlar default indexlenir.
   return {
     title: `${collection.name} | @${collection.user.username}`,
     description:
       collection.description ||
       `${collection.user.name || collection.user.username} tarafından oluşturulan ${collection.items.length} tariflik koleksiyon.`,
+    alternates: { canonical: `/koleksiyon/${collection.id}` },
+    robots: collection.isPublic ? undefined : { index: false, follow: false },
+    openGraph: {
+      title: `${collection.name} | @${collection.user.username}`,
+      description:
+        collection.description ||
+        `${collection.items.length} tariflik koleksiyon.`,
+      type: "article",
+      url: `/koleksiyon/${collection.id}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: collection.name,
+      description:
+        collection.description ||
+        `${collection.items.length} tariflik koleksiyon.`,
+    },
   };
 }
 
@@ -72,18 +93,31 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
             </div>
           </div>
 
-          {isOwner && (
-            <CollectionActions
-              collection={{
-                id: collection.id,
-                name: collection.name,
-                description: collection.description,
-                emoji: collection.emoji,
-                isPublic: collection.isPublic,
-              }}
-              username={collection.user.username}
-            />
-          )}
+          <div className="flex flex-col items-end gap-2">
+            {collection.isPublic && (
+              <ShareMenu
+                title={`${collection.emoji ?? "📚"} ${collection.name}`}
+                url={`${SITE_URL}/koleksiyon/${collection.id}`}
+                text={
+                  collection.description ||
+                  `@${collection.user.username} — ${collection.items.length} tariflik koleksiyon`
+                }
+                imageUrl={`${SITE_URL}/koleksiyon/${collection.id}/opengraph-image`}
+              />
+            )}
+            {isOwner && (
+              <CollectionActions
+                collection={{
+                  id: collection.id,
+                  name: collection.name,
+                  description: collection.description,
+                  emoji: collection.emoji,
+                  isPublic: collection.isPublic,
+                }}
+                username={collection.user.username}
+              />
+            )}
+          </div>
         </div>
       </header>
 

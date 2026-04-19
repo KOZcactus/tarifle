@@ -130,12 +130,22 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* Featured Recipes — kullanici siteye tarif icin geliyor, ilk goz gezdirecegi grid */}
+      {/* Editör Seçimi — Tarifle editörlerinin haftalık kürasyon shelf'i.
+          Rotasyonel (getFeaturedPool + hafta indeksi). Başlık + subtitle
+          ikilisi Tarifle ton'unu pekiştirir; altın rozet RecipeCard
+          seviyesinde görünür. */}
       {featured.length > 0 && (
         <section className="py-12">
-          <div className="flex items-center justify-between">
-            <h2 className="font-heading text-2xl font-bold">{t("sectionFeatured")}</h2>
-            <Link href="/tarifler" className="text-sm text-primary hover:underline">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <h2 className="font-heading text-2xl font-bold">
+                {t("sectionFeatured")}
+              </h2>
+              <p className="mt-1 text-sm text-text-muted">
+                {t("sectionFeaturedSubtitle")}
+              </p>
+            </div>
+            <Link href="/tarifler" className="shrink-0 text-sm text-primary hover:underline">
               {t("seeAll")}
             </Link>
           </div>

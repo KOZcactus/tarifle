@@ -34,6 +34,7 @@ const baseRecipe: RecipeDetail = {
   videoUrl: null,
   status: "PUBLISHED",
   viewCount: 100,
+  isFeatured: false,
   tipNote: null,
   servingSuggestion: null,
   allergens: ["GLUTEN", "SUT"],

@@ -42,6 +42,7 @@ export interface RecipeDetail {
   videoUrl: string | null;
   status: RecipeStatus;
   viewCount: number;
+  isFeatured: boolean;
   tipNote: string | null;
   servingSuggestion: string | null;
   allergens: Allergen[];

@@ -56,15 +56,29 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
           <span className="absolute left-3 top-3 rounded-full bg-bg/80 px-2.5 py-1 text-xs font-medium backdrop-blur-sm">
             {recipe.category.emoji} {recipe.category.name}
           </span>
-          {/* Cuisine Flag */}
-          {recipe.cuisine && recipe.cuisine !== "tr" && CUISINE_FLAG[recipe.cuisine as CuisineCode] && (
-            <span
-              className="absolute right-3 top-3 rounded-full bg-bg/80 px-2 py-1 text-sm backdrop-blur-sm"
-              title={cuisineTitle}
-            >
-              {CUISINE_FLAG[recipe.cuisine as CuisineCode]}
-            </span>
-          )}
+
+          {/* Sağ üst köşe: cuisine flag + editör rozeti. İkisi de varsa
+              flag solda (cuisine kimliği), rozet sağda (Tarifle kürasyonu).
+              Rozet isFeatured gate'li — admin seçtiği tariflerde görünür. */}
+          <div className="absolute right-3 top-3 flex items-center gap-1.5">
+            {recipe.cuisine && recipe.cuisine !== "tr" && CUISINE_FLAG[recipe.cuisine as CuisineCode] && (
+              <span
+                className="rounded-full bg-bg/80 px-2 py-1 text-sm backdrop-blur-sm"
+                title={cuisineTitle}
+              >
+                {CUISINE_FLAG[recipe.cuisine as CuisineCode]}
+              </span>
+            )}
+            {recipe.isFeatured && (
+              <span
+                className="inline-flex items-center gap-1 rounded-full bg-gradient-to-br from-amber-400/90 to-amber-500/90 px-2 py-1 text-[10px] font-semibold text-amber-950 shadow-sm backdrop-blur-sm"
+                title={t("editorsPickTitle")}
+              >
+                <span aria-hidden="true">⭐</span>
+                <span className="hidden sm:inline">{t("editorsPick")}</span>
+              </span>
+            )}
+          </div>
         </div>
 
         {/* Content */}

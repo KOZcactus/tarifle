@@ -330,8 +330,19 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
       <header className="mb-8">
         <div className="flex items-start gap-3">
           <span className="text-4xl">{recipe.emoji}</span>
-          <div>
-            <h1 className="font-heading text-3xl font-bold sm:text-4xl">{translatedTitle}</h1>
+          <div className="min-w-0 flex-1">
+            <div className="flex flex-wrap items-center gap-2">
+              <h1 className="font-heading text-3xl font-bold sm:text-4xl">{translatedTitle}</h1>
+              {recipe.isFeatured && (
+                <span
+                  className="inline-flex items-center gap-1 rounded-full bg-gradient-to-br from-amber-400 to-amber-500 px-2.5 py-1 text-xs font-semibold text-amber-950 shadow-sm"
+                  title={tCard("editorsPickTitle")}
+                >
+                  <span aria-hidden="true">⭐</span>
+                  {tCard("editorsPick")}
+                </span>
+              )}
+            </div>
             <p className="mt-2 text-text-muted">{translatedDescription}</p>
           </div>
         </div>

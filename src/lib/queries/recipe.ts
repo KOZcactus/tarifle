@@ -585,6 +585,7 @@ export async function getRecipeBySlug(slug: string): Promise<RecipeDetail | null
       videoUrl: true,
       status: true,
       viewCount: true,
+      isFeatured: true,
       tipNote: true,
       servingSuggestion: true,
       allergens: true,

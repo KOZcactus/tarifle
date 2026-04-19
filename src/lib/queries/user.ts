@@ -44,6 +44,127 @@ export async function getUserByUsername(username: string, viewerId?: string | nu
   return publicUser;
 }
 
+/**
+ * Public profile stat vitrin için aggregated sayılar + son aktivite.
+ * `getUserByUsername` zaten temel counter'ları döner; bu helper o
+ * counter'ların üstüne (a) toplam aldığı beğeni (variations.likeCount
+ * SUM), (b) review sayısı, (c) public collection sayısı, (d) son 10
+ * aktiviteyi ekler. Tek yere topluyorum ki profil page Promise.all'ında
+ * tek eklenti olsun — mevcut 5 query'ye ek 1.
+ *
+ * Public-safe: tüm sinyaller PUBLISHED + public visibility filter'ından
+ * geçer. Viewer non-owner ise bile aynı rakamlar — bunlar zaten
+ * herkese açık agregasyon.
+ */
+export interface ProfileActivityItem {
+  kind: "variation" | "review" | "collection";
+  id: string;
+  at: Date;
+  title: string;
+  /** Deep link — variation ve review tarif detayına, collection kendi
+   *  sayfasına gider. */
+  href: string;
+  /** Görsel ipucu için emoji (tarif emojisi veya kategori). */
+  emoji?: string | null;
+}
+
+export interface ProfileStats {
+  publishedVariations: number;
+  publishedReviews: number;
+  publicCollections: number;
+  totalLikesReceived: number;
+  recentActivity: ProfileActivityItem[];
+}
+
+export async function getUserProfileStats(
+  userId: string,
+): Promise<ProfileStats> {
+  const [variationAgg, reviewCount, collectionCount, recentVariations, recentReviews, recentCollections] =
+    await Promise.all([
+      prisma.variation.aggregate({
+        where: { authorId: userId, status: "PUBLISHED" },
+        _count: { _all: true },
+        _sum: { likeCount: true },
+      }),
+      prisma.review.count({
+        where: { userId, status: "PUBLISHED" },
+      }),
+      prisma.collection.count({
+        where: { userId, isPublic: true },
+      }),
+      prisma.variation.findMany({
+        where: { authorId: userId, status: "PUBLISHED" },
+        orderBy: { createdAt: "desc" },
+        take: 5,
+        select: {
+          id: true,
+          miniTitle: true,
+          createdAt: true,
+          recipe: { select: { slug: true, emoji: true, title: true } },
+        },
+      }),
+      prisma.review.findMany({
+        where: { userId, status: "PUBLISHED" },
+        orderBy: { createdAt: "desc" },
+        take: 5,
+        select: {
+          id: true,
+          createdAt: true,
+          rating: true,
+          recipe: { select: { slug: true, emoji: true, title: true } },
+        },
+      }),
+      prisma.collection.findMany({
+        where: { userId, isPublic: true },
+        orderBy: { createdAt: "desc" },
+        take: 3,
+        select: {
+          id: true,
+          name: true,
+          emoji: true,
+          createdAt: true,
+        },
+      }),
+    ]);
+
+  const recentActivity: ProfileActivityItem[] = [
+    ...recentVariations.map((v): ProfileActivityItem => ({
+      kind: "variation",
+      id: v.id,
+      at: v.createdAt,
+      title: v.miniTitle,
+      href: `/tarif/${v.recipe.slug}`,
+      emoji: v.recipe.emoji,
+    })),
+    ...recentReviews.map((r): ProfileActivityItem => ({
+      kind: "review",
+      id: r.id,
+      at: r.createdAt,
+      title: r.recipe.title,
+      href: `/tarif/${r.recipe.slug}`,
+      emoji: r.recipe.emoji,
+    })),
+    ...recentCollections.map((c): ProfileActivityItem => ({
+      kind: "collection",
+      id: c.id,
+      at: c.createdAt,
+      title: c.name,
+      href: `/koleksiyon/${c.id}`,
+      emoji: c.emoji,
+    })),
+  ]
+    .sort((a, b) => b.at.getTime() - a.at.getTime())
+    .slice(0, 8);
+
+  return {
+    publishedVariations: variationAgg._count._all,
+    publishedReviews: reviewCount,
+    publicCollections: collectionCount,
+    totalLikesReceived: variationAgg._sum.likeCount ?? 0,
+    recentActivity,
+  };
+}
+
 export async function getUserBookmarks(userId: string) {
   return prisma.bookmark.findMany({
     where: { userId },

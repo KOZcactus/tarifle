@@ -5,6 +5,7 @@ import { auth } from "@/lib/auth";
 import {
   getUserByUsername,
   getUserBookmarks,
+  getUserProfileStats,
   getUserVariations,
   getUserReviews,
 } from "@/lib/queries/user";
@@ -13,6 +14,8 @@ import { getUserBadges } from "@/lib/badges/service";
 import { isValidLocale } from "@/i18n/config";
 import { VerifyEmailBanner } from "@/components/auth/VerifyEmailBanner";
 import { BadgeShelf } from "@/components/profile/BadgeShelf";
+import { ProfileStats } from "@/components/profile/ProfileStats";
+import { ProfileActivity } from "@/components/profile/ProfileActivity";
 import { DeleteOwnVariationButton } from "@/components/recipe/DeleteOwnVariationButton";
 
 interface ProfilePageProps {
@@ -66,13 +69,15 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
   const locale = isValidLocale(localeRaw) ? localeRaw : "tr";
   void locale;
 
-  const [bookmarks, variations, collections, badges, reviews] = await Promise.all([
-    isOwner ? getUserBookmarks(user.id) : Promise.resolve([]),
-    getUserVariations(user.id, isOwner),
-    isOwner ? getUserCollections(user.id) : getPublicCollections(user.id),
-    getUserBadges(user.id),
-    getUserReviews(user.id, isOwner),
-  ]);
+  const [bookmarks, variations, collections, badges, reviews, profileStats] =
+    await Promise.all([
+      isOwner ? getUserBookmarks(user.id) : Promise.resolve([]),
+      getUserVariations(user.id, isOwner),
+      isOwner ? getUserCollections(user.id) : getPublicCollections(user.id),
+      getUserBadges(user.id),
+      getUserReviews(user.id, isOwner),
+      getUserProfileStats(user.id),
+    ]);
 
   // Owner-only fields (TS narrowing — only present when isOwner === true)
   const ownerEmail = "email" in user ? (user as { email: string }).email : null;
@@ -139,7 +144,20 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
         </div>
       </div>
 
+      {/* Stat vitrini — 4 kart: yayında uyarlama + aldığı beğeni + yayında
+          yorum + public koleksiyon. Public aggregated; owner için ek özel
+          sayılar header'da. */}
+      <ProfileStats stats={profileStats} />
+
       <BadgeShelf badges={badges} />
+
+      {/* Son aktivite timeline — son 8 event (varyasyon + yorum + public
+          koleksiyon) chronological. Yeni kullanıcıda hiç event olmazsa
+          section render edilmez. */}
+      <ProfileActivity
+        items={profileStats.recentActivity}
+        formatRelative={(d) => formatRelativeDate(d, tDate)}
+      />
 
       {/* Collections */}
       {(collections.length > 0 || isOwner) && (

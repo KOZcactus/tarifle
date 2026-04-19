@@ -1,6 +1,7 @@
 {
   "nav": {
     "recipes": "Recipes",
+    "categories": "Categories",
     "discover": "Discover",
     "aiAssistant": "AI Assistant",
     "login": "Sign In",
@@ -339,6 +340,10 @@
     "discover": {
       "title": "Discover",
       "description": "Random recipes, popular searches and cuisine discoveries."
+    },
+    "categoriesPage": {
+      "title": "Categories",
+      "description": "Browse every recipe category: soups, main dishes, desserts, drinks and more."
     },
     "forgotPassword": {
       "title": "Forgot Password",
@@ -1136,6 +1141,13 @@
     "daysAgo": "{n} days ago",
     "monthsAgo": "{n} months ago",
     "yearsAgo": "{n} years ago"
+  },
+  "categoriesLanding": {
+    "pageTitle": "Categories",
+    "subtitle": "All recipe categories on one page — jump straight to the cuisine type you're after.",
+    "recipeCount": "{count} recipes",
+    "empty": "No categories defined yet.",
+    "totalCount": "{total} categories"
   },
   "discover": {
     "pageTitle": "Discover",

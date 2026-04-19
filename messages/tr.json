@@ -1,6 +1,7 @@
 {
   "nav": {
     "recipes": "Tarifler",
+    "categories": "Kategoriler",
     "discover": "Keşfet",
     "aiAssistant": "AI Asistan",
     "login": "Giriş",
@@ -339,6 +340,10 @@
     "discover": {
       "title": "Keşfet",
       "description": "Rastgele tarifler, popüler aramalar ve mutfak keşifleri."
+    },
+    "categoriesPage": {
+      "title": "Kategoriler",
+      "description": "Tüm tarif kategorilerini gör: çorbalar, ana yemekler, tatlılar, içecekler ve daha fazlası."
     },
     "forgotPassword": {
       "title": "Şifremi Unuttum",
@@ -1136,6 +1141,13 @@
     "daysAgo": "{n} gün önce",
     "monthsAgo": "{n} ay önce",
     "yearsAgo": "{n} yıl önce"
+  },
+  "categoriesLanding": {
+    "pageTitle": "Kategoriler",
+    "subtitle": "Tüm tarif kategorilerini tek ekranda gör, aradığın mutfak türüne tek tıkla ulaş.",
+    "recipeCount": "{count} tarif",
+    "empty": "Henüz kategori tanımlanmamış.",
+    "totalCount": "{total} kategori"
   },
   "discover": {
     "pageTitle": "Keşfet",

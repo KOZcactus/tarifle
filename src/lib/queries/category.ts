@@ -12,6 +12,31 @@ export interface CategoryWithCount {
   };
 }
 
+export interface CategoryCardData extends CategoryWithCount {
+  description: string | null;
+}
+
+/** Tüm kategoriler + description + tarif sayısı — `/kategoriler` landing
+ *  page için. Light layer: getCategories'in üzerine açıklama alanı
+ *  ekliyor. Bu surface için ayrı cache değil, oradaki 5 dk TTL bu çağrıya
+ *  yansımıyor — sadece bir kez çağrılan bir sayfa olduğu için yeterli.
+ *  Trafik artarsa tag-bazlı cache eklenir. */
+export async function getCategoriesForLanding(): Promise<CategoryCardData[]> {
+  const categories = await prisma.category.findMany({
+    select: {
+      id: true,
+      name: true,
+      slug: true,
+      emoji: true,
+      description: true,
+      sortOrder: true,
+      _count: { select: { recipes: true } },
+    },
+    orderBy: { sortOrder: "asc" },
+  });
+  return categories;
+}
+
 /** Tüm kategoriler — tarif sayısı ile birlikte.
  *  Cached 5 dk — kategoriler nadir değişir (admin panel'den CRUD), TTL
  *  yeterli. Seed sonrası `revalidateTag("categories")` çağrısı ile force

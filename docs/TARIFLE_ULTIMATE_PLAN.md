@@ -1,15 +1,17 @@
 # Tarifle — Ultimate Proje Dokümanı
 
-> Son güncelleme: 15 Nisan 2026 (büyük launch hazırlık pass'i + Codex 500-batch öncesi DB hijyeni)
-> Durum: MVP 0.1/0.2/0.3 canlıda, Faz 2 büyük çoğunluk tamamlandı, A11y AA tertemiz
-> Versiyon: 1.2
-> İlişkili dokümanlar: `PROJECT_STATUS.md` (aktif takip + sıradaki işler), `CHANGELOG.md` (kategorik kronolojik özet), `RECIPE_FORMAT.md` (Codex tarif şartnamesi), `CODEX_HANDOFF.md` (yeni PC'de sıfırdan akış)
+> Son güncelleme: **20 Nisan 2026** (oturum 8 sonu — topluluk loop tam, rekabet §8 kısa 6/6 + orta 5/5 ✅)
+> Durum: MVP 0.1/0.2/0.3 + Faz 2 + Faz 3'ün büyük çoğunluğu **canlıda** (2320 tarif prod, 900/2020 Mod B tam çeviri, A11y AA tertemiz)
+> Versiyon: 1.3
+> İlişkili dokümanlar: `PROJECT_STATUS.md` (aktif takip + sıradaki işler — oturum 8 sonu detaylı dökümle), `CHANGELOG.md` (kategorik kronolojik özet), `CODEX_BATCH_BRIEF.md` (~800 satır, Codex Mod A/B talimatı + §9 geçmiş hatalar tablosu batch 23'e kadar güncel), `COMPETITIVE_ANALYSIS.md` (rekabet analizi v1.0, 3 dalga roadmap), `RECIPE_FORMAT.md` (tarif şartnamesi), `NEWSLETTER_CRON_SETUP.md` (3 scheduler seçeneği), `PROD_PROMOTE.md` (dev/prod Neon branch runbook), `CODEX_HANDOFF.md` (yeni PC akışı)
 
 Bu doküman Tarifle projesinin tek kaynak belgesidir (Single Source of Truth). Yeni özellik eklerken, teknik karar değiştirirken veya yol haritasını güncellerken önce buraya bakılır ve buradan güncellenir.
 
 > **Terminoloji (15 Nisan 2026):** UI'da "varyasyon" yerine **"uyarlama"** kullanılıyor — aşağıdaki metinde "varyasyon" geçen her yer UI'da "uyarlama" olarak okunur. Teknik isimler (Prisma `Variation` modeli, `variationId` field'ı, `/api/variations` endpoint'i) İngilizce haliyle kalır.
 
 > **15 Nisan 2026 büyük revizyon notları**: Allergen + group + translations alanları schema'ya eklendi (Section 5, 10), renk paleti AA için koyulaştırıldı (Section 14.1), Faz 2 listesine 13 yeni tamamlanan kalem eklendi (Section 21), Önerilen Ek Özellikler tablosu güncellendi (Section 30), test sayıları 230 unit + 12 E2E (Section 24).
+>
+> **20 Nisan 2026 oturum 8 notları — Faz 3 büyük sıçrama**: 6 Codex batch Mod A ile 1701 → **2320 tarif**. Topluluk loop tam (Follow schema + `/akis` feed + fan-out notification + followers/following list + homepage "Önerilen Aşçılar" + collection public share + variation `/uyarlama/[id]` permalink + OG kartı). Paylaşım yüzeyi: Pinterest rich pin + AI Asistan paylaşım linki + PWA install banner + PDF export (`@react-pdf/renderer`) + llms.txt AI crawler brief. Admin ops: `/admin/analytics` (6 KPI + 4 Top 10 + search freq aktif) + bulk moderation (checkbox + sticky toolbar, 50 cap) + user-photos moderation sayfası. User photos: SiteSetting KV + RecipePhoto Cloudinary (feature flag default KAPALI; admin panelden toggle). Newsletter haftalık cron endpoint hazır (Kerem QStash schedule + env ile aktifleştirir). Search log canlı (SearchQuery model + `/admin/analytics` top 10). 18 formal migration (add_user_photos + add_follow + add_search_log oturum 8'de eklendi). Rekabet §8 kısa vadeli 6/6 + orta vadeli 5/5 ✅ (video snippet hariç). 557/557 test PASS, tsc/lint clean. Detaylı blok dökümü için `docs/PROJECT_STATUS.md` → "20 Nisan 2026 (oturum 8)".
 
 ---
 

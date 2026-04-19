@@ -1,10 +1,71 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: Oturum 8 — **2020 tarif prod canlı**, Mod B 700/2020 tam çeviri (batch 12-18), rekabet §8 quick win **6/6 ✅** + user-photos feature flag'li shipped. 557/557 test PASS, tsc/lint clean. **Sonraki adımlar:** Kerem manuel: Vercel env'e `NEWSLETTER_CRON_SECRET` + QStash schedule · Cloudinary prod env + /admin/topluluk-fotolari toggle · Mod B batch 19-20 çevirisi · Orta vadeli: PWA install banner / takip-feed / video snippet.
+> Son güncelleme: **Oturum 8 sonu (20 Nis 2026) — 30 commit, rekor tur.** **2320 tarif prod canlı** (1701 → 2320, 6 Codex batch Mod A). Mod B **900/2020** (batch 12-20 tam çeviri; batch 21-23 CSV'leri hazır, Codex Mod B tetikleyici bekliyor). Rekabet §8 kısa vadeli **6/6 ✅** + orta vadeli **5/5 ✅** (video snippet hariç). Topluluk loop **tam**: follow + feed + fan-out + followers/following list + suggested cooks + collection share + variation share + PWA install banner + AI Asistan paylaşım + Pinterest rich pin + user-photos (flag kapalı, admin toggle hazır). Admin ops: analytics dashboard + bulk moderation + search log aktif. Search surface: llms.txt + variation/collection/recipe OG + PDF export. 557/557 test PASS, tsc/lint clean, 18 migration. **Sonraki adımlar:** Kerem manuel (Vercel env `NEWSLETTER_CRON_SECRET` + QStash cron · Cloudinary prod env + user-photos toggle · Pinterest domain claim) · Mod B batch 21-23 çevirisi · orta vadeli: video snippet (Remotion) / daily view log / premium / mobile.
 >
 > Oturum 7 sonu (28 commit) — 1701 tarif prod canlı. 8 blok: Mod B batch 13-17 (600 tarif EN+DE), Mod A batch 15-17 (1401→1701), foryou sort, pagination redesign, super-admin protection, /admin/yorumlar, /kategoriler, legal hub /yasal, editör rozeti, similar-recipes v2, 44 programatik landing, profil zenginleştirme, /menu-planlayici, RSS + HowTo schema, AI Asistan v2, blog MDX + 3 makale, rekabet analizi doc, newsletter double-opt-in altyapı, codex brief 3 clarify.
 
-## Oturum 8
+## 20 Nisan 2026 (oturum 8 — 30 commit, büyük tur)
+
+Kategori özet (10 blok):
+
+**A · İçerik pipeline — 6 Codex batch Mod A:**
+- Batch 18 (`219b21a` + `7c506cb`): 1701 → 1810 (+109 drift dahil). 2 allergen fix (irmik→GLUTEN, tereyağı→SUT).
+- Batch 19 (`ecca91c`): 1810 → 1920 (+110). 5 allergen fix (4× tereyağı→SUT, 1× ceviz→KUSUYEMIS). Codex IIFE kapanış bug fix.
+- Batch 20 (`ae0a56d`): 1920 → 2020 (+100). 7 allergen fix + 1 false positive (olgun muz "un " substring).
+- Batch 21 (`71ae96a`): 2020 → 2120 (+100). 0 gerçek CRITICAL (karabuğday false positive only). Peru ağırlıklı.
+- Batch 22 (`c66830b`): 2120 → 2245 (+125 drift dahil). 7 gerçek fix (3× terbiye yumurtası→YUMURTA, 3× tereyağı→SUT, 1× yer fıstığı→YER_FISTIGI).
+- Batch 23 (`a045f90`): 2245 → 2320 (+75). 7 gerçek fix (3× tane hardal→HARDAL, 2× irmik→GLUTEN, 1× kestane→KUSUYEMIS, 1× yumurta).
+
+**B · Mod B çevirisi — 3 batch tam, 3 batch CSV:**
+- Mod B batch 18 prod canlı (`1a447d1`): 100 tarif EN+DE. 0 CRITICAL.
+- Mod B batch 19 prod canlı (`ebb8c56`): 100 tarif. 3 WARNING (apply engeli değil).
+- Mod B batch 20 prod canlı (`ae0a56d`): 100 tarif. 0 WARNING. Mod B coverage **600 → 900/2020**.
+- Batch 21/22/23 CSV üretildi (`bacb7ae`) — yeni `scripts/gen-translation-csv.ts` seed + DB translations kaynaklı CSV generator. Codex Mod B tetiklenmesi bekleniyor.
+
+**C · Rekabet §8 kısa vadeli quick win — 6/6 ✅:**
+- Pinterest rich pin (`8734c47` + `81a52de`): `pinterest-rich-pin` meta + `p:domain_verify` env + ShareMenu Pinterest butonu + `/tarif/[slug]/pinterest-image` 1000×1500 portre OG + `/blog/[slug]/opengraph-image` + Article JSON-LD image.
+- AI Asistan paylaşım linki (`b40c051`): `ShareMenu` entegre, `buildShareUrl` `diyet/pantry/sirala` param'ları + URL→state restore, akıllı paylaşım metni.
+- Newsletter cron endpoint (`e80f9ae` + `32dd957`): `/api/cron/newsletter` Bearer auth + `sendWeeklyNewsletter` template (tr/en) + `getActiveSubscribers` + `getNewsletterContent` + `docs/NEWSLETTER_CRON_SETUP.md` 3 scheduler.
+- Admin analytics dashboard (`2817d6e`): 6 KPI + 4 Top 10 lists + 2 trend placeholder. `getMostReviewedRecipes` + `getMostSavedRecipes` + `getActiveNewsletterCount` + `getRecentRecipeAdditions/UserSignupCount` yeni query helper'ları.
+- Search log aktif (`091bef2`): `SearchQuery` schema + `normalizeSearchQuery` TR asciifold + `logSearchQuery` /tarifler SSR fire-and-forget + `getTopSearchQueries` aggregate + admin analytics "coming soon" stub'ı canlı.
+- Variation fan-out (`ac2938d`): createVariation PUBLISHED sonrası takipçilere NEW_VARIATION_FROM_FOLLOWED notification.
+
+**D · Rekabet §8 orta vadeli — 5/5 ✅:**
+- User photos feature (`00c9612`): SiteSetting KV + RecipePhoto Cloudinary + 4 action + admin `/admin/topluluk-fotolari` + feature flag default KAPALI.
+- PWA install banner (`119b606`): `beforeinstallprompt` + iOS Safari fallback + 30 gün dismiss cooldown.
+- Takip/feed V1 + V2 (`e2f5541` + `cb67f90`): Follow schema + `/akis` timeline + FollowButton + followers/following list sayfaları + homepage "Önerilen Aşçılar" kartı + fan-out.
+- Collection public share (`0e44d28`): `/koleksiyon/[id]` ShareMenu + OG meta + noindex-private.
+- Variation OG + permalink (`f4b0d0b`): `/uyarlama/[id]` dedicated page + dinamik OG image 1200×630 + VariationCard'da "Paylaş" linki.
+
+**E · Recipe surface:**
+- PDF export (`2526e67`): `@react-pdf/renderer` + `/tarif/[slug]/pdf` dinamik route. A4 layout: header + meta + description + malzemeler (grup-aware) + numbered adımlar + tip/servis + alerjenler + footer. Roboto latin-ext TR karakter. Cookie locale-aware.
+- llms.txt (`ac2938d`): AI crawler brief — ChatGPT/Claude/Perplexity/Gemini için high-signal URL listesi + şema açıklaması + kaynak linkleme teşviki.
+
+**F · Admin ops:**
+- Admin bulk moderation (`a02482b`): `bulkModerateAction` (hide/approve, 50 cap, Promise.all fail-tolerant) + `BulkModerationProvider` context + `BulkCheckbox` + sticky `BulkToolbar`. `/admin/incelemeler` variation + review sections.
+
+**G · Codex brief update (`54763db`):**
+- §9 tablosuna 4 yeni satır (tane hardal→HARDAL, terbiye yumurtası→YUMURTA, irmik→GLUTEN tekrar, kestane→KUSUYEMIS tekrar).
+- Hızlı check listesine yeni 9. madde (tane hardal / Dijon / hardal tozu).
+- §1 canlı durum 2320 tarif + Mod B 900/2020 güncel.
+
+**Prod skor kartı (oturum 8 sonu):**
+- **2320 tarif prod** (batch 23 sonu), 24 cuisine, 17 kategori, 10 allergen, 15 tag
+- **900/2020 tam Mod B** (batch 12-20 ingredients+steps+tipNote EN+DE), 2320/2320 title+description
+- audit 0 CRITICAL (son 3 batch tek tek temizlendi, idempotent source patch)
+- 557/557 test PASS, tsc clean, lint 0 error
+- 18 formal migration (add_user_photos + add_follow + add_search_log + add_meal_planner + add_newsletter_subscription oturum 7-8 toplamı)
+- Canlı yeni route'lar (oturum 8): `/tarif/[slug]/pinterest-image`, `/tarif/[slug]/pdf`, `/blog/[slug]/opengraph-image`, `/uyarlama/[id]` + `/uyarlama/[id]/opengraph-image`, `/akis`, `/profil/[u]/takipciler`, `/profil/[u]/takip`, `/admin/analytics`, `/admin/topluluk-fotolari`, `/api/cron/newsletter`, `/llms.txt`
+- Nav'daki chip'ler: Tarifler | Kategoriler | Keşfet | **Akış** (auth) | Menü Planla | Blog | AI Asistan
+- Admin nav: Genel Bakış | Analytics | İncelemeler | Yorumlar | Raporlar | Tarifler | Kullanıcılar | **Topluluk Foto** | Koleksiyonlar | Kategoriler | Etiketler | Duyurular | Bildirim | Log | Sentry Test
+
+**Bekleyen (oturum 9 başlangıcında):**
+- Kerem manuel: Vercel env `NEWSLETTER_CRON_SECRET=$(openssl rand -base64 32)` + QStash schedule (pazartesi 10:00 TSİ); Cloudinary `CLOUDINARY_CLOUD_NAME/API_KEY/API_SECRET` prod + `/admin/topluluk-fotolari` toggle aç; Pinterest `/settings/claim` → `PINTEREST_DOMAIN_VERIFY` env.
+- Codex: Mod B batch 21/22/23 JSON (CSV'leri `docs/translations-batch-2[123].csv`'de hazır). Batch 24 Mod A tetikleyici.
+- Orta vadeli: Video snippet altyapısı (Remotion, 1-2 hafta) · Daily view log → analytics view trend aktifleşir · Recipe görselleri (Eren dış bağımlı) · Cache Components (PPR) feature branch (12-18h).
+- Uzun vadeli: Premium subscription / React Native / AI Asistan v3 gerçek LLM / açık API.
+
+## Oturum 8 (eski — detay bullet'lar)
 
 - **Mod B batch 18 çevirisi prod canlı** — 100 tarif EN+DE ingredients/steps/tipNote/servingSuggestion tam. Dry-run 0 CRITICAL/0 WARNING, dev+prod apply 100/100. Toplam Mod B coverage 600 → **700/2020 tarif** (batch 12-18). `docs/translations-batch-18.json` commit'li.
 - **Kullanıcı tarif fotoğrafı feature (`00c9612`)** — Rekabet §8 orta vadeli "user-upload fotoğraf" topluluk loop. Feature flag'li (default KAPALI, admin panelinden açılır — ilk ziyaretçinin "kimse yüklememiş" algısı için). Schema: SiteSetting KV + RecipePhoto (Cloudinary + VISIBLE/HIDDEN + owner/recipe FK). Cloudinary SDK + EXIF strip + 1600×1600 cap + 400w thumbnail. 4 server action (upload/delete/toggle-visibility/toggle-feature). Rate limit 6/h/user. UI: `UserPhotoUpload` + `UserPhotoGrid` + `AdminPhotoCard` + `UserPhotosFeatureToggle`. Admin page `/admin/topluluk-fotolari` (son 100 foto + flag toggle). Nav entry. 30+ i18n key tr/en. Migration `20260419200000_add_user_photos` dev+prod applied (16 migration toplam).

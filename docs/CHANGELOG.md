@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: Oturum 8 — **2020 tarif** prod canlı, Mod B 700/2020 tam çeviri. Rekabet §8 quick win 6/6 + user-photos feature flag'li shipped. Detaylı kronolojik akış için `docs/PROJECT_STATUS.md`.
+> Son güncelleme: **Oturum 8 sonu (20 Nis 2026) — 30 commit.** **2320 tarif** prod canlı (batch 18-23), Mod B 900/2020 (batch 12-20). Rekabet §8 kısa 6/6 ✅ + orta 5/5 ✅. Topluluk loop tam (follow + feed + fan-out + list + suggested), admin bulk moderation + search log + analytics aktif, PDF export canlı, user-photos flag-gated, llms.txt AI crawler brief. Detaylı kronolojik akış için `docs/PROJECT_STATUS.md`.
 
 ## İşaretler
 

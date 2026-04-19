@@ -75,6 +75,63 @@ external monitor (UptimeRobot/GitHub Actions 5 dk cron). Şu an
 | `/tarif/adana-kebap` | 94 | 100 | 2.5 s | 40 ms | 342 KiB |
 | `/ai-asistan` | 97 | 98 | 2.5 s | 10 ms | 329 KiB |
 
+## Cache Components (PPR) — Kapsam tanıtlama (19 Nis oturum 6 sonu)
+
+Bir oturumda cacheComponents enable denedik, scope beklenenden çok daha
+büyük çıktı. Revert edildi. Buradaki notlar sonraki pass (ayrı branch +
+2-3 oturum) için rehber:
+
+### Yaşanan hata dalgaları
+
+1. **Route segment config incompat** — 22 dosyada `export const dynamic =
+   "force-dynamic"` ve 3 dosyada `export const revalidate = N`. Bulk
+   silme ile temizlendi (migration doc'un dediği: "not needed, default
+   dynamic").
+
+2. **`new Date()` prerender error** — `getActiveAnnouncements` layout'tan
+   çağrılıyor, `new Date()` kullanıyor. Cache Components'de static
+   prerender'da "current time" request data erişimi öncesi illegal.
+   Fix: `"use cache"` + `cacheLife("minutes")`. 1 fonksiyon için çalıştı.
+
+3. **"Uncached data accessed outside of <Suspense>"** — Blokaj. 30+ sayfa
+   (admin + /ayarlar + /bildirimler + /rss.xml + /sentry-test + diğerleri)
+   Suspense boundary dışında dynamic data erişiyor. Her sayfa için:
+     - Static shell (layout + header + placeholder)
+     - `<Suspense fallback>` boundary
+     - Dynamic child component (cookies/auth/searchParams burada)
+   Her birini refactor etmek bir oturumun işi değil.
+
+### Tahmini gerçek scope
+
+- **22 dosya** route segment config temizliği — 30 dk
+- **~30 sayfa** Suspense boundary refactor — her biri 15-30 dk, toplam
+  8-15 saat
+- **next-intl pattern** — `getTranslations` async call Suspense içine +
+  fallback skeleton component'leri
+- **next-auth pattern** — `auth()` session çağrısı Suspense içine
+- **Hot query cache migration** — `unstable_cache` → `"use cache"` (kolay
+  kısım, 4 query, 30 dk)
+- **Test matrix** — tüm sayfaların cold/warm render'ı, auth'lı/auth'sız,
+  her iki locale. Smoke testler 2 saat.
+- **Deploy + izleme** — kademeli ship (flag gate ile), Sentry alert
+  monitoring 1-2 gün.
+
+Toplam: **yaklaşık 12-18 saat, ayrı branch**, mevcut oturumların 3-4 katı
+odak. Kerem'in "büyük iş" tahmini doğru çıktı.
+
+### Neden değer
+
+Cache Components'ın gerçek kazancı: **static HTML shell edge'den saniyede
+gönderilir, dynamic kısım stream edilir**. TTFB % 30-60 düşer public
+sayfalarda. Mevcut `unstable_cache` sadece memory cache (Vercel function
+instance-scoped), Cache Components multi-tier (memory + edge KV).
+
+### Karar
+
+Şu an `unstable_cache` 4 hot query'de aktif + /api/warm endpoint canlı.
+Kısmi kazanç elde edildi. Cache Components geçişi sonraki Q için planlı
+büyük iş — ayrı feature branch'te yapılıp kademeli merge edilebilir.
+
 ## Optimization fırsatları (oturum 7+ için)
 
 Öncelikli — `/` ve `/tarifler` TBT regression'unu geri kazanmak:

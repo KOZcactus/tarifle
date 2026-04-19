@@ -18,12 +18,6 @@ interface PageProps {
   searchParams: Promise<{ page?: string; alerjen?: string | string[] }>;
 }
 
-/** Tüm tag slug'ları build time'da pre-render (15 etiket). */
-export async function generateStaticParams(): Promise<{ tag: string }[]> {
-  const tags = await prisma.tag.findMany({ select: { slug: true } });
-  return tags.map((t) => ({ tag: t.slug }));
-}
-
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {

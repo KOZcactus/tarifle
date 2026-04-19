@@ -24,6 +24,7 @@ export default async function YasalLayout({
     { href: "/yasal/gizlilik", labelKey: "cards.gizlilik.title" },
     { href: "/yasal/cerez-politikasi", labelKey: "cards.cerez.title" },
     { href: "/yasal/guvenlik", labelKey: "cards.guvenlik.title" },
+    { href: "/yasal/iletisim-aydinlatma", labelKey: "cards.iletisim.title" },
   ] as const;
 
   return (

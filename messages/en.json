@@ -376,7 +376,9 @@
       "cookiesTitle": "Cookie Policy",
       "cookiesDescription": "How Tarifle uses cookies, for what purpose, and how you can control them.",
       "securityTitle": "Security",
-      "securityDescription": "What you can do to protect your account and the measures we take on our side."
+      "securityDescription": "What you can do to protect your account and the measures we take on our side.",
+      "contactNoticeTitle": "Contact Privacy Notice",
+      "contactNoticeDescription": "Specific notice on how your data is processed when you reach us by email."
     }
   },
   "email": {
@@ -910,7 +912,10 @@
     "moderationHeading": "Content moderation",
     "moderationHelp": "Report a recipe, variation, or review directly from the content page — the report button sends it straight to our moderation queue.",
     "responseNoteHeading": "Response time",
-    "responseNote": "We're a small team — expect a reply within a few business days."
+    "responseNote": "We're a small team — expect a reply within a few business days.",
+    "privacyNoticeHeading": "How is your data handled?",
+    "privacyNoticeBody": "When you email us, we process your data only to respond. For details see",
+    "privacyNoticeLink": "the Contact Privacy Notice."
   },
   "cuisines": {
     "tr": "Turkish",
@@ -1150,11 +1155,19 @@
     "monthsAgo": "{n} months ago",
     "yearsAgo": "{n} years ago"
   },
+  "cookieBanner": {
+    "message": "Tarifle uses only 4 essential cookies — session, CSRF, language and theme. No advertising, analytics or tracking cookies.",
+    "acceptLabel": "Got it",
+    "detailsLabel": "Read details",
+    "ariaLabel": "Cookie notice"
+  },
   "legalHub": {
     "pageTitle": "Legal Information",
     "subtitle": "Transparent answers about how Tarifle works — in plain language, without the legalese. Pick a topic below.",
     "navHeading": "Legal pages",
     "lastUpdatePrefix": "Last update:",
+    "versionPrefix": "Version",
+    "versionAria": "Document version",
     "cards": {
       "kvkk": {
         "title": "KVKK Privacy Notice",
@@ -1175,6 +1188,10 @@
       "guvenlik": {
         "title": "Security",
         "description": "What you do to keep your account safe + what we harden on our side."
+      },
+      "iletisim": {
+        "title": "Contact Privacy Notice",
+        "description": "When you reach us by email, which data is processed and how long it is kept."
       }
     }
   },
@@ -1208,6 +1225,30 @@
     "backupBody": "Neon offers automatic point-in-time recovery — any moment in the last 7 days can be restored. For critical data loss, prod and dev branches are isolated — nothing reaches prod without dev testing.",
     "reportHeading": "Reporting a vulnerability",
     "reportBody": "Spotted a security issue? Email koz.devs@gmail.com with subject \"Security\" — response time 48 hours. Thanks for reporting; we prefer responsible disclosure."
+  },
+  "legalContactNotice": {
+    "pageTitle": "Contact Privacy Notice",
+    "subtitle": "When you email us at koz.devs@gmail.com, we process your data only for responding to you and only within the scope of your message. Details below.",
+    "kapsamHeading": "Scope",
+    "kapsamBody": "This notice applies to anyone — visitor or member — who reaches us through email, outside the Tarifle membership flow. General platform data processing is covered by the KVKK Privacy Notice as a separate document.",
+    "dataHeading": "Data we process",
+    "dataName": "Your name / sender name you provide",
+    "dataEmail": "Your email address (Gmail returns it automatically)",
+    "dataMessage": "The content of your message (whatever you write — may contain personal data)",
+    "dataHeaders": "Email headers (timestamp, routing, anti-spam checks)",
+    "purposeHeading": "Purpose and legal basis",
+    "purposeResponse": "Understanding and replying to your request — KVKK Art. 5/2-f (legitimate interest: mutual communication).",
+    "purposeLegal": "Responding if a legal request or complaint arises — KVKK Art. 5/2-ç (legal obligation).",
+    "purposeSpam": "Detecting spam and malicious requests — KVKK Art. 5/2-f (legitimate interest).",
+    "retentionHeading": "Retention",
+    "retentionBody": "Email threads stay in the Gmail account while actively being tracked. After resolution, we keep them for up to 1 year for reference and then delete. If a legal process is triggered, retention follows the mandatory statutory period.",
+    "transferHeading": "Transfer",
+    "transferBody": "Your messages are read only by Tarifle's administrator. They are not shared with third parties — apart from Google Mail infrastructure (Gmail servers in EU/US). Our outbound mail provider Resend (EU) only handles mail we SEND out; incoming mail lands directly in Gmail.",
+    "rightsHeading": "Exercising your rights",
+    "rightsBody": "You can request deletion, correction or a copy of the email you sent. The process is covered in KVKK Privacy Notice, Section 7 — send an email with the subject line \"KVKK Veri Talebi\" to the same address.",
+    "crosslinkLead": "Related documents:",
+    "crosslinkKvkk": "KVKK Privacy Notice (platform-wide)",
+    "crosslinkGizlilik": "Privacy Policy (third-party processors)"
   },
   "legalCookies": {
     "pageTitle": "Cookie Policy",

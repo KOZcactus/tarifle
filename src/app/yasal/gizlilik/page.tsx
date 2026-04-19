@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { SITE_NAME } from "@/lib/constants";
+import { LegalDocMeta } from "@/components/legal/LegalDocMeta";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("metadata.legal");
@@ -17,7 +18,7 @@ export default function GizlilikPage() {
     <article className="max-w-3xl">
       <header className="mb-8">
         <h1 className="font-heading text-3xl font-bold">Gizlilik Politikası</h1>
-        <p className="mt-2 text-sm text-text-muted">Son güncelleme: 19 Nisan 2026</p>
+        <LegalDocMeta version="1.0" lastUpdate="19 Nisan 2026" />
       </header>
 
       <div className="space-y-6 text-sm leading-relaxed text-text-muted">

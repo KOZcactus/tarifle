@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getLocale, getTranslations } from "next-intl/server";
 import { isValidLocale, type Locale } from "@/i18n/config";
 
@@ -59,6 +60,26 @@ export default async function IletisimPage() {
         <section className="rounded-lg border border-border bg-bg-card p-5">
           <h2 className="text-sm font-semibold text-text">{t("responseNoteHeading")}</h2>
           <p className="mt-2 text-sm text-text-muted">{t("responseNote")}</p>
+        </section>
+
+        {/* Aydınlatma metni referansı — iletişim bir veri işleme
+            noktası olduğu için KVKK şeffaflık yükümlülüğü kapsamında
+            mail yazmadan önce kullanıcıya aydınlatma linki sunulur.
+            Form olsaydı checkbox ile onay alırdık; mailto olduğu için
+            pasif bilgilendirme yeterli. */}
+        <section className="rounded-lg border border-primary/30 bg-primary/5 p-5">
+          <h2 className="text-sm font-semibold text-text">
+            {t("privacyNoticeHeading")}
+          </h2>
+          <p className="mt-2 text-sm text-text-muted">
+            {t("privacyNoticeBody")}{" "}
+            <Link
+              href="/yasal/iletisim-aydinlatma"
+              className="font-medium text-primary underline-offset-4 hover:underline"
+            >
+              {t("privacyNoticeLink")}
+            </Link>
+          </p>
         </section>
       </div>
     </main>

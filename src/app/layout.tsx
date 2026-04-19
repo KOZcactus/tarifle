@@ -8,6 +8,7 @@ import { NotificationBellLoader } from "@/components/notifications/NotificationB
 import { AnnouncementBanner } from "@/components/announcement/AnnouncementBanner";
 import { getActiveAnnouncements } from "@/lib/queries/admin";
 import { Footer } from "@/components/layout/Footer";
+import { CookieBanner } from "@/components/legal/CookieBanner";
 import { BfCacheRestore } from "@/components/layout/BfCacheRestore";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 import "./globals.css";
@@ -108,6 +109,7 @@ export default async function RootLayout({
             )}
             <main className="flex-1 print:pt-0">{children}</main>
             <Footer />
+            <CookieBanner />
           </Providers>
         </NextIntlClientProvider>
       </body>

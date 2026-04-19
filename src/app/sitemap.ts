@@ -72,6 +72,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/yasal/gizlilik`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
     { url: `${SITE_URL}/yasal/cerez-politikasi`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
     { url: `${SITE_URL}/yasal/guvenlik`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${SITE_URL}/yasal/iletisim-aydinlatma`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
   ];
 
   const recipePages: MetadataRoute.Sitemap = recipes.map((r) => ({

@@ -29,6 +29,7 @@ export default async function YasalHubPage() {
     { href: "/yasal/gizlilik", id: "gizlilik", emoji: "🔐" },
     { href: "/yasal/cerez-politikasi", id: "cerez", emoji: "🍪" },
     { href: "/yasal/guvenlik", id: "guvenlik", emoji: "🛡️" },
+    { href: "/yasal/iletisim-aydinlatma", id: "iletisim", emoji: "✉️" },
   ] as const;
 
   return (

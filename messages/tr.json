@@ -376,7 +376,9 @@
       "cookiesTitle": "Çerez Politikası",
       "cookiesDescription": "Tarifle'nin çerezleri nasıl kullandığı, hangi amaçla ve nasıl kontrol edilebileceği.",
       "securityTitle": "Güvenlik",
-      "securityDescription": "Hesap güvenliği için senin yapabileceklerin ve bizim aldığımız önlemler."
+      "securityDescription": "Hesap güvenliği için senin yapabileceklerin ve bizim aldığımız önlemler.",
+      "contactNoticeTitle": "İletişim Aydınlatma Metni",
+      "contactNoticeDescription": "Bize e-posta ile ulaştığında verilerinin işlenmesi hakkında özel aydınlatma."
     }
   },
   "email": {
@@ -910,7 +912,10 @@
     "moderationHeading": "İçerik moderasyonu",
     "moderationHelp": "Bir tarif, uyarlama veya yorumu doğrudan ilgili sayfadaki rapor butonundan bildirebilirsin — rapor bizim moderasyon kuyruğumuza düşer.",
     "responseNoteHeading": "Yanıt süresi",
-    "responseNote": "Küçük bir ekibiz — genellikle birkaç iş günü içinde cevap veriyoruz."
+    "responseNote": "Küçük bir ekibiz — genellikle birkaç iş günü içinde cevap veriyoruz.",
+    "privacyNoticeHeading": "Verilerin nasıl işlenir?",
+    "privacyNoticeBody": "E-posta ile bize yazdığında yalnız yanıtlamak için verilerini işliyoruz. Detaylı bilgi için",
+    "privacyNoticeLink": "İletişim Aydınlatma Metni'ne göz at."
   },
   "cuisines": {
     "tr": "Türk",
@@ -1150,11 +1155,19 @@
     "monthsAgo": "{n} ay önce",
     "yearsAgo": "{n} yıl önce"
   },
+  "cookieBanner": {
+    "message": "Tarifle yalnızca 4 zorunlu çerez kullanır — oturum, CSRF, dil ve tema. Reklam, analytics veya izleme çerezi yok.",
+    "acceptLabel": "Anladım",
+    "detailsLabel": "Detaylı oku",
+    "ariaLabel": "Çerez bilgilendirme"
+  },
   "legalHub": {
     "pageTitle": "Yasal Bilgilendirme",
     "subtitle": "Tarifle'nin nasıl çalıştığına dair şeffaf cevaplar — yalın dilde, gereksiz hukuk jargonu olmadan. Aşağıdan başlık seç.",
     "navHeading": "Yasal sayfalar",
     "lastUpdatePrefix": "Son güncelleme:",
+    "versionPrefix": "Sürüm",
+    "versionAria": "Belge sürümü",
     "cards": {
       "kvkk": {
         "title": "KVKK Aydınlatma Metni",
@@ -1175,6 +1188,10 @@
       "guvenlik": {
         "title": "Güvenlik",
         "description": "Hesabını güvende tutmak için sende olanlar + altyapıda bizde olanlar."
+      },
+      "iletisim": {
+        "title": "İletişim Aydınlatma Metni",
+        "description": "Bize e-posta ile ulaştığında hangi veriler işlenir, ne kadar süre saklanır."
       }
     }
   },
@@ -1208,6 +1225,30 @@
     "backupBody": "Neon otomatik point-in-time recovery: son 7 gün içinde herhangi bir ana geri dönüş mümkün. Kritik veri kaybı senaryosunda prod ve dev branch ayrık — dev'de test edilmeden prod'a yazılamaz.",
     "reportHeading": "Güvenlik açığı bildirimi",
     "reportBody": "Bir güvenlik açığı fark ettin mi? koz.devs@gmail.com adresine konu satırına \"Security\" yazarak ilet — yanıt süresi 48 saat. Bildirdiğin için teşekkür ederiz; sorumlu açıklama (responsible disclosure) tercih ediyoruz."
+  },
+  "legalContactNotice": {
+    "pageTitle": "İletişim Aydınlatma Metni",
+    "subtitle": "Bize koz.devs@gmail.com üzerinden yazdığında yalnız iletişim amaçlı ve mesajının içeriği kadarıyla verilerini işliyoruz. Kapsam aşağıda.",
+    "kapsamHeading": "Kapsam",
+    "kapsamBody": "Bu metin, Tarifle üyelik sistemi dışında, iletişim kanalı (e-posta) ile bize ulaşan ziyaretçi ve üye tüm kişiler için geçerlidir. Genel platform işlemesi için KVKK Aydınlatma Metni ayrı bir belgedir.",
+    "dataHeading": "İşlenen veriler",
+    "dataName": "Adın / gönderen olarak belirttiğin isim",
+    "dataEmail": "E-posta adresin (Gmail otomatik döner)",
+    "dataMessage": "Mesaj içeriğin (kendi yazdıkların — kişisel veri içerebilir)",
+    "dataHeaders": "E-posta başlıkları (timestamp, routing, anti-spam kontrolleri için)",
+    "purposeHeading": "İşleme amacı ve hukuki sebep",
+    "purposeResponse": "Sorunu anlayıp yanıtlamak — KVKK 5/2-f (meşru menfaat: karşılıklı iletişim).",
+    "purposeLegal": "Yasal talep veya şikayet gelirse yanıtlayabilmek — KVKK 5/2-ç (hukuki yükümlülük).",
+    "purposeSpam": "Spam ve kötü niyetli talepleri tespit etmek — KVKK 5/2-f (meşru menfaat).",
+    "retentionHeading": "Saklama süresi",
+    "retentionBody": "E-posta yazışmaları Gmail hesabında aktif takip süresince tutulur. Talebin kapanmasından sonra 1 yıla kadar referans için arşivde kalır; sonrasında silinir. Yasal süreç başlatılmışsa ilgili mevzuatın öngördüğü süre boyunca saklanır.",
+    "transferHeading": "Aktarım",
+    "transferBody": "Mesajların yalnızca Tarifle'nin yöneticisi tarafından okunur. Üçüncü taraflarla paylaşılmaz — Google Mail altyapısı (Gmail server'ları AB/ABD) haricinde. Mail servisimiz Resend (AB) sadece DİŞARI gönderilen e-postalar için kullanılır, GELEN mailler doğrudan Gmail'e düşer.",
+    "rightsHeading": "Haklarını nasıl kullanırsın?",
+    "rightsBody": "Gönderdiğin e-postanın silinmesini, içeriğinin düzeltilmesini veya bir kopyasının tarafına verilmesini isteyebilirsin. Başvuru yöntemi KVKK Aydınlatma Metni Bölüm 7'de — aynı adrese \"KVKK Veri Talebi\" konu satırıyla e-posta göndermen yeterli.",
+    "crosslinkLead": "İlgili belgeler:",
+    "crosslinkKvkk": "KVKK Aydınlatma Metni (platform genel)",
+    "crosslinkGizlilik": "Gizlilik Politikası (üçüncü taraf işleyiciler)"
   },
   "legalCookies": {
     "pageTitle": "Çerez Politikası",

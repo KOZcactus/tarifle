@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { LegalDocMeta } from "@/components/legal/LegalDocMeta";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("metadata.legal");
@@ -33,7 +34,8 @@ export default async function GuvenlikPage() {
     <article className="max-w-3xl">
       <header className="mb-8">
         <h1 className="font-heading text-3xl font-bold">{t("pageTitle")}</h1>
-        <p className="mt-2 text-sm text-text-muted">{t("subtitle")}</p>
+        <LegalDocMeta version="1.0" lastUpdate="19 Nisan 2026" />
+        <p className="mt-3 text-sm text-text-muted">{t("subtitle")}</p>
       </header>
 
       {/* Sen — kullanıcının yapabilecekleri. Hesap + cihaz olmak üzere

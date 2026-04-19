@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: Oturum 8 — **2020 tarif** prod canlı (batch 18+19+20), Pinterest rich pin + AI Asistan paylaşım linki + newsletter haftalık cron endpoint shipped. Rekabet §8 quick win 5/6. Detaylı kronolojik akış için `docs/PROJECT_STATUS.md`.
+> Son güncelleme: Oturum 8 — **2020 tarif** prod canlı, Mod B 700/2020 tam çeviri. Rekabet §8 quick win 6/6 + user-photos feature flag'li shipped. Detaylı kronolojik akış için `docs/PROJECT_STATUS.md`.
 
 ## İşaretler
 

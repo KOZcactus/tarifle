@@ -62,10 +62,10 @@ EN soft launch canlı (DE retrofit tamamlandı).
 - GitHub: **KOZcactus/tarifle** (private repo)
 
 **Canlı durum:**
-- **1701 tarif prod'da** (19 Nis 2026, batch 17 sonu), 24 mutfak kodu, 17 kategori, 10 allergen, 15 tag
-- **1701/1701 tarif EN + DE `title + description` dolu** (Recipe.translations JSONB;
-  600/1701 tarif (batch 12-17) `ingredients + steps` Mod B ile tam çevirisi canlı —
-  iki-pass mimarisi)
+- **2320 tarif prod'da** (20 Nis 2026, batch 23 sonu), 24 mutfak kodu, 17 kategori, 10 allergen, 15 tag
+- **2320/2320 tarif EN + DE `title + description` dolu** (Recipe.translations JSONB;
+  900/2020 tarif (batch 12-20) `ingredients + steps` Mod B ile tam çevirisi canlı —
+  iki-pass mimarisi; batch 21-23 Mod B CSV'leri hazır, JSON bekleniyor)
 - Faz 3: admin paneli + Review v2 + Sentry + Fuzzy arama + kategori pagination
   + OG image i18n + SEO meta i18n — hepsi canlı
 
@@ -680,8 +680,10 @@ sahte geçme.**
 
 ## 9. Geçmişte yakalanmış hatalar — ASLA TEKRARLAMA
 
-Tarifle'nin batch 0-3 + 11 + 12 audit'inde şu hatalar yakalandı. Yeni
-oturumda bunları TEKRAR yapma:
+Tarifle'nin batch 0-23 audit'lerinde yakalanan somut hatalar. Yeni
+oturumda bunları TEKRAR yapma — özellikle allergen eksikleri
+aynı kalıpta her batch'te tekrar çıkıyor (§5 tablosuna + §9 altındaki
+hızlı check'e bak).
 
 | Kategori | Hata örneği | Neden yanlış | Doğrusu |
 |---|---|---|---|
@@ -709,21 +711,26 @@ oturumda bunları TEKRAR yapma:
 | **Dosya encoding (batch 12)** | `scripts/seed-recipes.ts` Windows-1252→UTF-8 mojibake (ş→ÅŸ, ı→Ä±, emoji ðŸ¥©) | Windows'ta editör CP1252 yorumuyla açıp UTF-8 save → double-encode | UTF-8 (BOM yok) + LF — §3 "Dosya encoding" bölümüne bak |
 | **Vejetaryen tag + et suyu (batch 12 Mod B)** | `ovmac-corbasi-konya-usulu` tags `vejetaryen` + ingredient `Et suyu` | Et suyu (stock/broth) et içerir — vejetaryen değil | Tag kaldırılmalı VEYA `Et suyu` → `Sebze suyu` değiştir |
 | **Chill/rest totalMinutes dışı (batch 12 Mod B)** | `summer-pudding` totalMinutes 30 ama step 3 "4 saat buzdolabı" (timerSeconds 14400) | Chill/rest/marinasyon/fermentasyon totalMinutes'a dahil olmalı (kullanıcı "bu tarif ne kadar sürer" için total'a bakıyor) | `totalMinutes: prep + cook + chill` (summer-pudding → 270) |
+| **Allergen eksik — Tane hardal → HARDAL (batch 23 ×3)** | `hardalli-lufer-salatasi-canakkale-usulu`, `hardal-soslu-tavuk-pie-ingiltere-usulu`, `elma-havuclu-kok-patates-salatasi-isvec-usulu` | **"Tane hardal", "Dijon hardalı", "hardal tozu" hepsi HARDAL allergen** — "hardal" keyword'ü başlıkta/açıklamada olsa bile allergen listesine eklenmemiş | `allergens: [..., "HARDAL"]` |
+| **Allergen eksik — Terbiye yumurtası → YUMURTA (batch 22 ×3)** | `arpa-yarmali-yogurt-corbasi-eskisehir-usulu`, `peynirli-misir-ekmegi-balikesir-usulu`, `pao-de-queijo-waffle-brezilya-usulu` | Yoğurt çorbalarında terbiye (yumurta+yoğurt+un çırpması), ekmek/hamur işlerinde bağlayıcı yumurta → genelde radar dışı kalıyor | Ingredients'ta **Yumurta** tek satır geçse bile `YUMURTA` zorunlu |
+| **Allergen eksik — İrmik ve semolina → GLUTEN (batch 20-23 toplam ×5)** | Tvorog zapekanka, Kahramanmaraş helvası, vişneli irmik tatlısı, kayısılı irmik pilavı | İrmik = buğday semolina — batch 12'de uyarılmıştı ama farklı tariflerde tekrar atlanıyor | **İrmik = GLUTEN, istisnasız** |
+| **Allergen eksik — Kestane → KUSUYEMIS (batch 16-23 toplam ×3)** | `kestaneli-sutlac-bursa-usulu`, `dut-pekmezli-lor-kup-erzincan-usulu` (ceviz), `kestaneli-mantar-sote-bolu-usulu` | "Haşlanmış kestane" da kestane; tree-nut class KUSUYEMIS grubuna girer | `allergens: [..., "KUSUYEMIS"]` |
 
-**İkiz hata pattern (batch 11 + 12 tekrarı):** Allergen ingredient-implied
-tablosu §5'te yazılı ama her batch'te 8-16 legitimate allergen eksiği
-çıkıyor. Teslim öncesi her tarif için şu hızlı check:
+**İkiz hata pattern (batch 11-23 tekrar tekrar):** Allergen ingredient-
+implied tablosu §5'te yazılı ama her batch'te 3-10 legitimate allergen
+eksiği çıkıyor. Teslim öncesi her tarif için şu hızlı check:
 
-1. Ingredient listesinde **Tereyağı / yoğurt / peynir / süt / krema / kaşar / ayran / lor** var mı? → `SUT`
-2. **Un / bulgur / irmik / kadayıf / ekmek / börek / yufka / makarna / yulaf** var mı? → `GLUTEN`
-3. **Yumurta / mayonez** var mı? → `YUMURTA`
-4. **Ceviz / badem / fındık / Antep fıstığı / kaju / kestane** var mı? → `KUSUYEMIS`
+1. Ingredient listesinde **Tereyağı / yoğurt / peynir / süt / krema / kaşar / ayran / lor / süt ekmeği** var mı? → `SUT`
+2. **Un / bulgur / irmik / semolina / kadayıf / ekmek / börek / yufka / makarna / yulaf** var mı? → `GLUTEN` (**İrmik = buğday semolina, istisnasız GLUTEN**)
+3. **Yumurta / mayonez / yoğurt çorbası "terbiyesi"** var mı? → `YUMURTA` (**Terbiye = yumurta+yoğurt+un, yumurta başına allergen**)
+4. **Ceviz / badem / fındık / Antep fıstığı / kaju / kestane** var mı? → `KUSUYEMIS` (**Haşlanmış kestane dahil — tree-nut class**)
 5. **Yer fıstığı / fıstık ezmesi** var mı? → `YER_FISTIGI` (KUSUYEMIS'ten AYRI)
 6. **Soya sosu / tofu / miso / edamame** var mı? → `SOYA`
 7. **Balık / somon / karides / midye / hamsi / ton** var mı? → `DENIZ_URUNLERI`
 8. **Susam / tahin / susam yağı** var mı? → `SUSAM`
-9. `vegan` tag yazdıysan: süt/yumurta/bal YOK mu? (Tereyağı varsa → `vejetaryen`)
-10. `vejetaryen` tag yazdıysan: et/balık YOK mu?
+9. **Tane hardal / Dijon hardalı / hardal tozu / hardal sosu** var mı? → `HARDAL` (**"hardal" kelimesi başlıkta/açıklamada yetmez — ingredient listesinde hardal varyantı varsa allergen zorunlu**)
+10. `vegan` tag yazdıysan: süt/yumurta/bal YOK mu? (Tereyağı varsa → `vejetaryen`)
+11. `vejetaryen` tag yazdıysan: et/balık/et suyu YOK mu?
 
 **Altın kural:** "Türkçe isim + bölgesel açıklama
 (Kayseri/Hatay/Antep/Trabzon/Erzurum/Gaziantep/Karadeniz) varsa cuisine `tr`,

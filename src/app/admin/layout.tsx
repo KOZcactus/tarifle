@@ -37,6 +37,7 @@ export default async function AdminLayout({
 
       <nav className="mb-8 flex flex-wrap gap-2 border-b border-border pb-4">
         <NavLink href="/admin">{t("overview")}</NavLink>
+        <NavLink href="/admin/analytics">{t("analytics")}</NavLink>
         <NavLink href="/admin/incelemeler">{t("reviews")}</NavLink>
         <NavLink href="/admin/yorumlar">{t("comments")}</NavLink>
         <NavLink href="/admin/raporlar">{t("reports")}</NavLink>

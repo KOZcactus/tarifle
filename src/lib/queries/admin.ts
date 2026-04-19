@@ -1151,3 +1151,119 @@ export async function getCategoryBreakdown(): Promise<
     .map((r) => ({ name: r.name, emoji: r.emoji, count: r._count.recipes }))
     .sort((a, b) => b.count - a.count);
 }
+
+// ── Analytics dashboard helpers ─────────────────────────────────────
+//
+// Tarifle'nin `/admin/analytics` sayfası tarafından kullanılıyor. Overview
+// sayfasındaki `getAdminStats()` genel sayaçları döndürür; bu blok
+// topluluk sağlığı göstergelerini (abone, son 7 gün büyüme, en çok yorum /
+// kaydedilen tarif) doldurur.
+
+/** Newsletter ACTIVE sub count — double-opt-in confirmed subscribers. */
+export async function getActiveNewsletterCount(): Promise<number> {
+  return prisma.newsletterSubscription.count({
+    where: { status: "ACTIVE" },
+  });
+}
+
+/**
+ * Son N gün (default 7) içinde yayınlanan tarif sayısı. Codex batch promote
+ * sonrası grafik olarak "son haftada kaç yeni tarif girdi" görünürlüğü
+ * verir.
+ */
+export async function getRecentRecipeAdditions(days = 7): Promise<number> {
+  const since = new Date();
+  since.setDate(since.getDate() - days);
+  since.setHours(0, 0, 0, 0);
+  return prisma.recipe.count({
+    where: { status: "PUBLISHED", createdAt: { gte: since } },
+  });
+}
+
+/** Son N gün içindeki yeni kullanıcı kaydı sayısı. */
+export async function getRecentUserSignupCount(days = 7): Promise<number> {
+  const since = new Date();
+  since.setDate(since.getDate() - days);
+  since.setHours(0, 0, 0, 0);
+  return prisma.user.count({
+    where: { createdAt: { gte: since } },
+  });
+}
+
+/**
+ * En çok yorum alan tarifler — Review count group-by. Sadece `PUBLISHED`
+ * review'lar sayılır (moderasyondan geçmemiş içerik leaderboard'a giremez).
+ * Recipe join ikinci queryde: Prisma groupBy + relational include tek
+ * queryde desteklemez, ayrı fetch gerekir.
+ */
+export async function getMostReviewedRecipes(
+  limit = 10,
+): Promise<
+  { slug: string; title: string; emoji: string | null; reviewCount: number }[]
+> {
+  const grouped = await prisma.review.groupBy({
+    by: ["recipeId"],
+    where: { status: "PUBLISHED" },
+    _count: { _all: true },
+    orderBy: { _count: { recipeId: "desc" } },
+    take: limit,
+  });
+  if (grouped.length === 0) return [];
+
+  const recipes = await prisma.recipe.findMany({
+    where: { id: { in: grouped.map((g) => g.recipeId) } },
+    select: { id: true, slug: true, title: true, emoji: true },
+  });
+  const byId = new Map(recipes.map((r) => [r.id, r]));
+
+  return grouped
+    .map((g) => {
+      const recipe = byId.get(g.recipeId);
+      if (!recipe) return null;
+      return {
+        slug: recipe.slug,
+        title: recipe.title,
+        emoji: recipe.emoji,
+        reviewCount: g._count._all,
+      };
+    })
+    .filter((r): r is NonNullable<typeof r> => r !== null);
+}
+
+/**
+ * En çok kaydedilen tarifler — Bookmark group-by. "Kullanıcılar hangi
+ * tarifleri dolabına koyuyor" sorusunun cevabı; view'den daha güçlü bir
+ * niyet sinyali (görüntüleme ≠ deneme isteği).
+ */
+export async function getMostSavedRecipes(
+  limit = 10,
+): Promise<
+  { slug: string; title: string; emoji: string | null; saveCount: number }[]
+> {
+  const grouped = await prisma.bookmark.groupBy({
+    by: ["recipeId"],
+    _count: { _all: true },
+    orderBy: { _count: { recipeId: "desc" } },
+    take: limit,
+  });
+  if (grouped.length === 0) return [];
+
+  const recipes = await prisma.recipe.findMany({
+    where: { id: { in: grouped.map((g) => g.recipeId) } },
+    select: { id: true, slug: true, title: true, emoji: true },
+  });
+  const byId = new Map(recipes.map((r) => [r.id, r]));
+
+  return grouped
+    .map((g) => {
+      const recipe = byId.get(g.recipeId);
+      if (!recipe) return null;
+      return {
+        slug: recipe.slug,
+        title: recipe.title,
+        emoji: recipe.emoji,
+        saveCount: g._count._all,
+      };
+    })
+    .filter((r): r is NonNullable<typeof r> => r !== null);
+}

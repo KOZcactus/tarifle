@@ -1,6 +1,11 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 19 Nisan 2026 (oturum 6 sonu, 15+ commit) — **1401 tarif prod canlı**. Bu oturumun kapsamı: batch 14 prod promote, pagination counter 3-adım redesign, 6 UX copy iyileştirmesi, user profile kişiselleştirme tercihleri (schema migration + UI), "Sana özel" shelf + listing allergen default, Lighthouse baseline delta, Neon warming + unstable_cache 4 hot query, Sentry OG image fix, Codex batch 12 Mod B çevirisi (100 tarif EN+DE ingredients+steps prod), brief batch 12 Mod B dersleri, Cache Components denemesi (scope ölçüldü + revert + doc). Post-deploy 0 regression.
+> Son güncelleme: 19 Nisan 2026 (oturum 7) — **1401 tarif prod canlı**. Oturum 7 kapsamı: batch 13 Mod B çevirisi (101 tarif dev'de, prod onay bekliyor), kişiselleştirme tur 3 (favoriteTags sort boost listing'de — `foryou` sort + UI chip + 9 unit test). Oturum 6'nın kapsamı alt bölümde korunuyor.
+
+## 19 Nisan 2026 (oturum 7)
+
+- **Batch 13 + 14 (ilk yarı) Mod B çevirisi uygulandı (dev)** — Codex teslim: batch 13 101 tarif + batch 14 ilk yarı 50 tarif, EN+DE `ingredients` + `steps` + `tipNote` + `servingSuggestion`. İkisi de dry-run 0 CRITICAL/0 WARNING, apply 151/151 dev temiz, audit-deep PASS. Prod promote onay bekliyor. Batch 14 ikinci yarı Codex'te.
+- **Kişiselleştirme tur 3 — favoriteTags sort boost** — `getRecipes`'e `sortBy: "foryou"` + `boostTagSlugs` opsiyonu: filtered rows'u tags ile çek, intersection score hesapla, `compareByFavoriteBoost` ile sort (score desc, title tr asc), slice. `/tarifler` page logged-in user + `favoriteTags.length > 0` + URL `?siralama=` yoksa default `foryou`; aksi halde alphabetical. Sort dropdown'da "Sana göre" chip'i aynı şartta görünür. `scoreByFavoriteTags` + `compareByFavoriteBoost` pure function — 9 unit test (edge case: empty favs, no overlap, missing score, Turkish collation). `getUserFavoriteTagSlugs` helper. Smoke test dev'de: favs=['pratik','vegan'] → top 6 hepsi intersect=2, alphabetical'da "ANZAC..." yerine foryou'da "Acılı Ezme". 517/517 test PASS, tsc clean, lint 0 error.
 
 ## 19 Nisan 2026 (oturum 6 devam — Cache Components denemesi + revert)
 

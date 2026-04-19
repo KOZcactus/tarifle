@@ -5,7 +5,30 @@
 >
 > Önceki güncelleme: 16 Nisan 2026 (oturum 2) — 606 tarif, font optimizasyonu.
 
-## Skor tablosu (19 Nis — 1401 tarif + kişiselleştirme + pagination counter)
+## Skor tablosu (19 Nis — unstable_cache + /api/warm sonrası, ikinci ölçüm)
+
+| Sayfa | Perf (cold / warm) | LCP | TBT (cold / warm) | Δ vs pre-cache |
+|---|---|---|---|---|
+| `/` | **87 → 92** | 2.7–3.3 s | **310 → 50 ms** | TBT cold +80 ms; warm **−180 ms** (−78%) |
+| `/tarifler` | 92 | 3.2 s | 100 ms | ~aynı (LH varyans) |
+| `/tarifler/tatlilar` | 93 | 3.0 s | 100 ms | ~aynı |
+
+**Yorum:** `unstable_cache` dört hot query'de (cuisine-stats 5 dk, categories
+5 dk, search-suggestions 10 dk, featured-pool 1 saat) Vercel function
+memory cache kullanıyor. **İlk çağrı (cache miss)** DB round-trip + cache
+dolumu yaptığından cold TBT biraz yükseldi (230 → 310 ms) — single-shot
+Lighthouse measurement'ı bu cold path'i yakalıyor. **İkinci çağrı (cache
+hit)** aynı Vercel function instance'da memory lookup → **TBT 50 ms**, 6×
+iyileşme. Gerçek kullanıcılar (RUM) görece warm path kullanıyor çünkü
+traffic cold/warm mix. LCP ±400 ms varyans, anlamlı delta yok.
+
+**Neon warming** (`/api/warm` endpoint + Hobby cron 0 * * * *) deploy
+edildi. `GET /api/warm` 200, durationMs 80. Saat başı trigger 5 dk idle
+threshold'u aşmaya yetmez — gerçek faydası için Pro tier `*/4` veya
+external monitor (UptimeRobot/GitHub Actions 5 dk cron). Şu an
+"nominal fallback" olarak calıșıyor.
+
+## Skor tablosu (19 Nis — 1401 tarif + kişiselleştirme + pagination counter, pre-cache)
 
 | Sayfa | Perf | A11y | BP | SEO | LCP | FCP | CLS | TBT | TTI | Boyut |
 |---|---|---|---|---|---|---|---|---|---|---|

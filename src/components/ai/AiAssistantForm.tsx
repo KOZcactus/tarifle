@@ -6,13 +6,14 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { suggestRecipesAction } from "@/lib/actions/ai";
 import type { AiSuggestResponse } from "@/lib/ai/types";
-import { DIFFICULTY_OPTIONS, RECIPE_TYPE_LABELS } from "@/lib/constants";
+import { DIFFICULTY_OPTIONS, RECIPE_TYPE_LABELS, SITE_URL } from "@/lib/constants";
 import {
   CUISINE_CODES,
   CUISINE_LABEL,
   CUISINE_FLAG,
   type CuisineCode,
 } from "@/lib/cuisines";
+import { ShareMenu } from "@/components/recipe/ShareMenu";
 
 /** Popular ingredients shown as quick-add chips when input is empty. */
 const POPULAR_INGREDIENTS = [
@@ -112,7 +113,6 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
   const [recentSearches, setRecentSearches] = useState<string[][]>([]);
-  const [shareStatus, setShareStatus] = useState<"idle" | "copied">("idle");
   const formRef = useRef<HTMLFormElement>(null);
   const searchParams = useSearchParams();
   const hasInitedFromUrl = useRef(false);
@@ -143,6 +143,13 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
     if (urlExclude) {
       setExcludeIngredients(urlExclude.split(",").map((s) => s.trim()).filter(Boolean));
     }
+    const urlDiet = searchParams.get("diyet");
+    if (urlDiet) setDietSlug(urlDiet);
+    const urlPantry = searchParams.get("pantry");
+    // URL param missing → default true stays. Only flip to false when explicit "0".
+    if (urlPantry === "0") setAssumePantry(false);
+    const urlSort = searchParams.get("sirala");
+    if (urlSort === "fastest" || urlSort === "least-missing") setSortMode(urlSort);
 
     // Auto-submit after a tick
     setTimeout(() => formRef.current?.requestSubmit(), 100);
@@ -204,6 +211,14 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
     setSelectedSuggestionIdx(-1);
   }
 
+  /**
+   * Build a shareable URL that restores the full AI assistant query state.
+   * Keeps defaults (cuisine="all", assumePantry=true, sortMode="match") out
+   * of the URL so the link stays short for non-default choices.
+   * `origin` is read from window on the client; SSR paths use SITE_URL as
+   * fallback (share menu only opens after hydration, so window is always
+   * defined in practice, but the guard keeps TypeScript happy for prerender).
+   */
   function buildShareUrl(): string {
     const params = new URLSearchParams();
     if (ingredients.length > 0) params.set("m", ingredients.join(","));
@@ -212,26 +227,11 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
     if (difficulty) params.set("zorluk", difficulty);
     if (maxMinutes) params.set("sure", maxMinutes);
     if (excludeIngredients.length > 0) params.set("haric", excludeIngredients.join(","));
-    return `${window.location.origin}/ai-asistan?${params.toString()}`;
-  }
-
-  async function handleShare() {
-    const url = buildShareUrl();
-    try {
-      await navigator.clipboard.writeText(url);
-      setShareStatus("copied");
-      setTimeout(() => setShareStatus("idle"), 2000);
-    } catch {
-      // Fallback for older browsers
-      const input = document.createElement("input");
-      input.value = url;
-      document.body.appendChild(input);
-      input.select();
-      document.execCommand("copy");
-      document.body.removeChild(input);
-      setShareStatus("copied");
-      setTimeout(() => setShareStatus("idle"), 2000);
-    }
+    if (dietSlug) params.set("diyet", dietSlug);
+    if (!assumePantry) params.set("pantry", "0");
+    if (sortMode !== "match") params.set("sirala", sortMode);
+    const origin = typeof window !== "undefined" ? window.location.origin : SITE_URL;
+    return `${origin}/ai-asistan?${params.toString()}`;
   }
 
   function addExclude(raw: string) {
@@ -695,22 +695,39 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
       {/* Results */}
       {result && (
         <section>
+          {/* Share bar — always available when there is a result, regardless
+              of whether the assistant produced a commentary or zero matches
+              came back. Uses the recipe ShareMenu (WhatsApp / X / Pinterest
+              / copy) so the viral paths defined in rekabet §8 work the same
+              way they do on a tarif detay. */}
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+            <p className="text-xs text-text-muted">
+              {tResult("shareHint", {
+                count: ingredients.length,
+                defaultValue: "",
+              })}
+            </p>
+            <ShareMenu
+              title={tResult("shareTitle")}
+              url={buildShareUrl()}
+              text={
+                result.commentary
+                  ? result.commentary
+                  : tResult("shareTextFallback", {
+                      ingredients: ingredients.slice(0, 4).join(", "),
+                    })
+              }
+            />
+          </div>
+
           {result.commentary && (
             <div className="mb-6 rounded-xl border border-accent-blue/30 bg-accent-blue/5 p-4">
-              <div className="flex items-start justify-between gap-3">
-                <p className="flex-1 text-sm leading-relaxed text-text">
-                  <span className="mr-1 font-semibold text-accent-blue">{tResult("assistantPrefix")}</span>
-                  {result.commentary}
-                </p>
-                <button
-                  type="button"
-                  onClick={handleShare}
-                  className="shrink-0 rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-text-muted transition-colors hover:border-primary hover:text-primary"
-                  title={tResult("shareTitle")}
-                >
-                  {shareStatus === "copied" ? tResult("shareCopied") : tResult("shareIdle")}
-                </button>
-              </div>
+              <p className="text-sm leading-relaxed text-text">
+                <span className="mr-1 font-semibold text-accent-blue">
+                  {tResult("assistantPrefix")}
+                </span>
+                {result.commentary}
+              </p>
             </div>
           )}
 

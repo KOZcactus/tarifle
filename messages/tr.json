@@ -1507,8 +1507,8 @@
     "result": {
       "assistantPrefix": "🧠 Asistan:",
       "shareTitle": "Bu aramayı paylaş",
-      "shareIdle": "🔗 Paylaş",
-      "shareCopied": "✓ Kopyalandı",
+      "shareHint": "{count, plural, =0 {} other {Bu öneri listesini bir link olarak gönder}}",
+      "shareTextFallback": "Bu malzemelerle ne yapsam: {ingredients}",
       "sortLabel": "Sıralama:",
       "sortMatch": "En iyi eşleşme",
       "sortFastest": "En hızlı",

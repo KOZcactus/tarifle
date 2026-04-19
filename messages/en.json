@@ -1507,8 +1507,8 @@
     "result": {
       "assistantPrefix": "🧠 Assistant:",
       "shareTitle": "Share this search",
-      "shareIdle": "🔗 Share",
-      "shareCopied": "✓ Copied",
+      "shareHint": "{count, plural, =0 {} other {Send this suggestion list as a link}}",
+      "shareTextFallback": "What should I cook with these: {ingredients}",
       "sortLabel": "Sort:",
       "sortMatch": "Best match",
       "sortFastest": "Fastest",

@@ -9,6 +9,7 @@ import { formatIngredient } from "@/lib/ingredients";
 import { variationSchema } from "@/lib/validators";
 import { awardFirstVariationBadge } from "@/lib/badges/service";
 import { checkRateLimit, rateLimitIdentifier } from "@/lib/rate-limit";
+import { notifyNewVariationFromFollowed } from "@/lib/notifications/service";
 
 interface ActionResult {
   success: boolean;
@@ -172,6 +173,21 @@ export async function createVariation(formData: FormData): Promise<VariationResu
     console.error("[variation] badge grant failed:", err);
   });
 
+  // Fan-out bildirimi — sadece PUBLISHED içerik için. PENDING_REVIEW'da
+  // takipçilere haber vermiyoruz; admin approve ederse notifyVariation
+  // ApprovedExt olarak eklenebilir (v2). Sorgular sıralı çünkü follower
+  // sayısı genelde küçük (<200); Promise.allSettled spam güvenliği +
+  // tek hata tüm akışı patlatmasın.
+  if (status === "PUBLISHED") {
+    fanOutVariationToFollowers({
+      authorId: session.user.id,
+      recipeSlug,
+      miniTitle,
+    }).catch((err) => {
+      console.error("[variation] fan-out notification failed:", err);
+    });
+  }
+
   revalidatePath(`/tarif/${recipeSlug}`);
   return {
     success: true,
@@ -250,4 +266,43 @@ export async function deleteOwnVariationAction(
   }
 
   return { success: true };
+}
+
+/**
+ * Yeni PUBLISHED variation'ı yazarın tüm takipçilerine duyurur.
+ * `createVariation` sonrası fire-and-forget çağrılır; tek notification
+ * hatası tüm akışı batmasın diye `Promise.allSettled` ile izole.
+ *
+ * Scale notu: Takipçi sayısı <200 sayılır, tek-tek insert OK.
+ * 1000+ takipçili hesap çıkınca Notification batch insert + queue
+ * gerekir (v2 iş).
+ */
+async function fanOutVariationToFollowers(params: {
+  authorId: string;
+  recipeSlug: string;
+  miniTitle: string;
+}): Promise<void> {
+  const author = await prisma.user.findUnique({
+    where: { id: params.authorId },
+    select: { username: true, name: true },
+  });
+  if (!author) return;
+
+  const followers = await prisma.follow.findMany({
+    where: { followingId: params.authorId },
+    select: { followerId: true },
+  });
+  if (followers.length === 0) return;
+
+  await Promise.allSettled(
+    followers.map((f) =>
+      notifyNewVariationFromFollowed({
+        followerUserId: f.followerId,
+        authorUsername: author.username,
+        authorName: author.name,
+        recipeSlug: params.recipeSlug,
+        variationTitle: params.miniTitle,
+      }),
+    ),
+  );
 }

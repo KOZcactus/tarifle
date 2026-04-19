@@ -71,11 +71,11 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
             )}
             {recipe.isFeatured && (
               <span
-                className="inline-flex items-center gap-1 rounded-full bg-gradient-to-br from-amber-400/90 to-amber-500/90 px-2 py-1 text-[10px] font-semibold text-amber-950 shadow-sm backdrop-blur-sm"
+                className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-bg/80 text-sm backdrop-blur-sm"
                 title={t("editorsPickTitle")}
+                aria-label={t("editorsPick")}
               >
                 <span aria-hidden="true">⭐</span>
-                <span className="hidden sm:inline">{t("editorsPick")}</span>
               </span>
             )}
           </div>

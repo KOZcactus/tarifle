@@ -1,15 +1,18 @@
 /**
- * Inline audit for Batch 18 seeds. Reads the `recipes` export from
- * `scripts/seed-recipes.ts` (no DB access), filters to the last 100 entries
- * (= Batch 18), and runs a keyword-based ingredient → allergen mismatch
- * check that mirrors audit-deep's CRITICAL category.
+ * Inline audit for the latest batch seeds. Reads the `recipes` export from
+ * `scripts/seed-recipes.ts` (no DB access), filters to the last N entries
+ * (= last seeded batch), and runs a keyword-based ingredient → allergen
+ * mismatch check that mirrors audit-deep's CRITICAL category.
  *
  * Why a separate script: scripts/audit-deep.ts hangs silently on Windows
- * during this run (no output past the dotenv banner). We need a fast,
- * deterministic file-based pass to decide whether a fix-critical-
- * allergens-batch18.ts step is needed before prod promote.
+ * (no output past the dotenv banner) — root cause not yet isolated. This
+ * file-based pass gives a deterministic pre-prod check.
  *
  * Matches brief §9 allergen checklist keyword → required allergen set.
+ *
+ * Usage:
+ *   npx tsx scripts/audit-batch18-inline.ts              # scans last 100
+ *   npx tsx scripts/audit-batch18-inline.ts --last 100 --label "batch 19"
  */
 import { recipes } from "./seed-recipes";
 
@@ -190,18 +193,35 @@ function auditRecipe(recipe: (typeof recipes)[number]): Finding | null {
   return { slug: recipe.slug, title: recipe.title, missing, trigger: triggers };
 }
 
+function parseLast(): number {
+  const idx = process.argv.indexOf("--last");
+  if (idx >= 0 && process.argv[idx + 1]) {
+    const n = Number(process.argv[idx + 1]);
+    if (Number.isFinite(n) && n > 0) return Math.floor(n);
+  }
+  return 100;
+}
+
+function parseLabel(): string {
+  const idx = process.argv.indexOf("--label");
+  if (idx >= 0 && process.argv[idx + 1]) return process.argv[idx + 1]!;
+  return "son batch";
+}
+
 function main(): void {
-  const batch18 = recipes.slice(-100);
-  console.log(`🔍 audit-batch18 — ${batch18.length} tarif taranıyor\n`);
+  const size = parseLast();
+  const label = parseLabel();
+  const slice = recipes.slice(-size);
+  console.log(`🔍 audit-inline (${label}) — ${slice.length} tarif taranıyor\n`);
 
   const findings: Finding[] = [];
-  for (const r of batch18) {
+  for (const r of slice) {
     const finding = auditRecipe(r);
     if (finding) findings.push(finding);
   }
 
   if (findings.length === 0) {
-    console.log("✅ Batch 18 CRITICAL allergen eksiği yok.");
+    console.log(`✅ ${label} — CRITICAL allergen eksiği yok.`);
     return;
   }
 

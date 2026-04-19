@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: Oturum 8 — **1810 tarif** prod canlı (batch 18 + 9 drift-fix), Pinterest rich pin + AI Asistan paylaşım linki shipped. Detaylı kronolojik akış için `docs/PROJECT_STATUS.md`.
+> Son güncelleme: Oturum 8 — **1920 tarif** prod canlı (batch 18 + batch 19 + drift-fix), Pinterest rich pin + AI Asistan paylaşım linki shipped. Detaylı kronolojik akış için `docs/PROJECT_STATUS.md`.
 
 ## İşaretler
 

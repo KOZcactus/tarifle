@@ -19,10 +19,25 @@ import { getRequestConfig } from "next-intl/server";
 import { cookies } from "next/headers";
 import { DEFAULT_LOCALE, isValidLocale, type Locale } from "./config";
 
-export default getRequestConfig(async () => {
-  const cookieStore = await cookies();
-  const cookieValue = cookieStore.get("NEXT_LOCALE")?.value;
-  const locale: Locale = isValidLocale(cookieValue) ? cookieValue : DEFAULT_LOCALE;
+/**
+ * Caller `getTranslations({ locale })` ile explicit locale verdiyse (örn.
+ * OG image `generateImageMetadata` her locale için ayrı prerender ediyor)
+ * o değeri kullan — `cookies()` çağırmaz, yani OG image gibi static
+ * generation gereken route'lar dynamic server usage'a düşmez.
+ *
+ * Normal sayfa render'ında `requestLocale` null/undefined olur; o zaman
+ * cookie'den oku (mevcut cookie-based flow).
+ */
+export default getRequestConfig(async ({ requestLocale }) => {
+  const explicit = await requestLocale;
+  let locale: Locale;
+  if (isValidLocale(explicit)) {
+    locale = explicit;
+  } else {
+    const cookieStore = await cookies();
+    const cookieValue = cookieStore.get("NEXT_LOCALE")?.value;
+    locale = isValidLocale(cookieValue) ? cookieValue : DEFAULT_LOCALE;
+  }
 
   return {
     locale,

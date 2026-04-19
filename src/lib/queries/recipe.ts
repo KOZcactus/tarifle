@@ -1,3 +1,4 @@
+import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import type { Allergen, Difficulty } from "@prisma/client";
 import type { RecipeCard, RecipeDetail } from "@/types/recipe";
@@ -273,15 +274,24 @@ export function getWeekIndex(now: Date = new Date()): number {
   return Math.floor(now.getTime() / msPerWeek);
 }
 
+/** Featured pool cache — 1 saat TTL. Featured set nadir değişir (Codex
+ *  seed'de isFeatured:true flag + manuel admin toggle). Rotation math
+ *  dışarıda tutuluyor çünkü `getWeekIndex()` server time'a bağlı + pool
+ *  slug-ordered deterministic. */
+const getFeaturedPool = unstable_cache(
+  async () => {
+    return prisma.recipe.findMany({
+      where: { status: "PUBLISHED", isFeatured: true },
+      select: recipeCardSelect,
+      orderBy: { slug: "asc" },
+    });
+  },
+  ["featured-pool-v1"],
+  { revalidate: 3600, tags: ["featured-pool"] },
+);
+
 export async function getFeaturedRecipes(limit = 6): Promise<RecipeCard[]> {
-  // Pool'u slug ordered olarak çek ki rotation offset her hafta
-  // aynı sıra üzerinden yürüsün. `createdAt` ordered olsaydı yeni batch
-  // eklenince mevcut rotation tamamen kayardı.
-  const pool = await prisma.recipe.findMany({
-    where: { status: "PUBLISHED", isFeatured: true },
-    select: recipeCardSelect,
-    orderBy: { slug: "asc" },
-  });
+  const pool = await getFeaturedPool();
 
   if (pool.length <= limit) {
     return pool as unknown as RecipeCard[];

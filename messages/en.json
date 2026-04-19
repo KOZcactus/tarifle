@@ -3,6 +3,7 @@
     "recipes": "Recipes",
     "categories": "Categories",
     "discover": "Discover",
+    "mealPlanner": "Meal Planner",
     "aiAssistant": "AI Assistant",
     "login": "Sign In",
     "signup": "Sign Up",
@@ -345,6 +346,10 @@
     "categoriesPage": {
       "title": "Categories",
       "description": "Browse every recipe category: soups, main dishes, desserts, drinks and more."
+    },
+    "mealPlanner": {
+      "title": "Meal Planner",
+      "description": "Plan this week's 7-day × 3-meal menu and generate the shopping list in one click."
     },
     "forgotPassword": {
       "title": "Forgot Password",
@@ -1194,6 +1199,51 @@
     "relatedTagsHeading": "Popular tags",
     "relatedDietsHeading": "Other diets",
     "viewAllRecipes": "All recipes →"
+  },
+  "mealPlanner": {
+    "pageTitle": "Meal Planner",
+    "subtitle": "Pick a recipe for each of the 7 days × 3 meals this week. Push your selections into the shopping list in one click.",
+    "weekRangeLabel": "This week:",
+    "mealColumnHeader": "Meal",
+    "printLabel": "Print",
+    "emptyHint": "You haven't picked any recipes yet. Click a cell to start.",
+    "days": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    },
+    "meal": {
+      "breakfast": "Breakfast",
+      "lunch": "Lunch",
+      "dinner": "Dinner"
+    },
+    "slot": {
+      "addRecipe": "Add recipe",
+      "change": "Change",
+      "remove": "Remove"
+    },
+    "picker": {
+      "dialogTitle": "Pick a recipe",
+      "searchPlaceholder": "Search recipes (e.g. lentil soup, pasta…)",
+      "loading": "Searching…",
+      "empty": "No recipes found for this search.",
+      "hint": "Type at least 2 characters to start searching.",
+      "viewRecipe": "open recipe",
+      "close": "Close",
+      "searchError": "Search is unavailable right now.",
+      "saveError": "Something went wrong while saving the recipe."
+    },
+    "shoppingList": {
+      "addButton": "Add to shopping list",
+      "adding": "Adding…",
+      "successAdded": "Added {addedCount} new items from {recipeCount} recipes, {mergedCount} merged with existing.",
+      "openList": "Open list",
+      "error": "Couldn't update the shopping list."
+    }
   },
   "cookieBanner": {
     "message": "Tarifle uses only 4 essential cookies — session, CSRF, language and theme. No advertising, analytics or tracking cookies.",

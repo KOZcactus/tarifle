@@ -176,6 +176,7 @@ model User {
   bookmarks         Bookmark[]
   collections       Collection[]
   shoppingLists     ShoppingList[]
+  mealPlans         MealPlan[]
   badges            UserBadge[]
   notifications     Notification[]
   reports           Report[]
@@ -344,6 +345,7 @@ model Recipe {
   collectionItems CollectionItem[]
   videoJobs       VideoJob[]
   reviews         Review[]
+  mealPlanItems   MealPlanItem[]
 
   @@index([categoryId])
   @@index([status])
@@ -717,6 +719,60 @@ model UserBadge {
   @@unique([userId, key])
   @@index([userId])
   @@map("user_badges")
+}
+
+/// Haftalık menü planlayıcı — kullanıcının 7 gün × 3 öğün tarif
+/// seçimini tutar. Her kullanıcının birden fazla planı olabilir
+/// (geçmiş haftalar arşivlenir); aktif plan `weekStart` günümüzün
+/// haftasına denk gelen kayıttır.
+model MealPlan {
+  id        String   @id @default(cuid())
+  userId    String
+  /// Planın başladığı günün 00:00'ı — genelde Pazartesi. Aynı kullanıcı
+  /// aynı haftaya birden fazla plan açamaz (@@unique).
+  weekStart DateTime @db.Date
+  /// Opsiyonel isim — "Yaz menüsü", "Misafir haftası" gibi custom
+  /// etiketler için. Default boş, UI placeholder kullanır.
+  name      String?  @db.VarChar(100)
+  notes     String?  @db.VarChar(500)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user  User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items MealPlanItem[]
+
+  @@unique([userId, weekStart])
+  @@index([userId, weekStart])
+  @@map("meal_plans")
+}
+
+/// Menü planındaki tek slot — belirli gün + öğün için seçilen tarif.
+/// `dayOfWeek` 0-6 (Pazartesi=0 … Pazar=6), `mealType` enum.
+model MealPlanItem {
+  id          String   @id @default(cuid())
+  mealPlanId  String
+  recipeId    String
+  /// 0 = Pazartesi, 6 = Pazar. Week starts on Monday (TR convention).
+  dayOfWeek   Int
+  mealType    MealType
+  servings    Int?     @default(1)
+  createdAt   DateTime @default(now())
+
+  mealPlan MealPlan @relation(fields: [mealPlanId], references: [id], onDelete: Cascade)
+  recipe   Recipe   @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+
+  /// Aynı slot (plan × gün × öğün) tekrar eklenemez — yeni seçim
+  /// mevcut satırı update eder, duplicate oluşmaz.
+  @@unique([mealPlanId, dayOfWeek, mealType])
+  @@index([mealPlanId])
+  @@index([recipeId])
+  @@map("meal_plan_items")
+}
+
+enum MealType {
+  BREAKFAST
+  LUNCH
+  DINNER
 }
 
 model Notification {

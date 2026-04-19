@@ -3,6 +3,7 @@
     "recipes": "Tarifler",
     "categories": "Kategoriler",
     "discover": "Keşfet",
+    "mealPlanner": "Menü Planla",
     "aiAssistant": "AI Asistan",
     "login": "Giriş",
     "signup": "Kayıt",
@@ -345,6 +346,10 @@
     "categoriesPage": {
       "title": "Kategoriler",
       "description": "Tüm tarif kategorilerini gör: çorbalar, ana yemekler, tatlılar, içecekler ve daha fazlası."
+    },
+    "mealPlanner": {
+      "title": "Menü Planlayıcı",
+      "description": "Bu haftanın 7 gün × 3 öğün menüsünü düzenle, alışveriş listesini tek tıkla oluştur."
     },
     "forgotPassword": {
       "title": "Şifremi Unuttum",
@@ -1194,6 +1199,51 @@
     "relatedTagsHeading": "Popüler etiketler",
     "relatedDietsHeading": "Diğer diyetler",
     "viewAllRecipes": "Tüm tarifler →"
+  },
+  "mealPlanner": {
+    "pageTitle": "Menü Planlayıcı",
+    "subtitle": "Bu hafta için 7 gün × 3 öğün tarif seç. Seçimlerini alışveriş listesine tek tıkla aktar.",
+    "weekRangeLabel": "Bu hafta:",
+    "mealColumnHeader": "Öğün",
+    "printLabel": "Yazdır",
+    "emptyHint": "Henüz tarif seçmedin. Bir hücreye tıklayarak başlayabilirsin.",
+    "days": {
+      "monday": "Pazartesi",
+      "tuesday": "Salı",
+      "wednesday": "Çarşamba",
+      "thursday": "Perşembe",
+      "friday": "Cuma",
+      "saturday": "Cumartesi",
+      "sunday": "Pazar"
+    },
+    "meal": {
+      "breakfast": "Kahvaltı",
+      "lunch": "Öğle",
+      "dinner": "Akşam"
+    },
+    "slot": {
+      "addRecipe": "Tarif ekle",
+      "change": "Değiştir",
+      "remove": "Kaldır"
+    },
+    "picker": {
+      "dialogTitle": "Tarif seç",
+      "searchPlaceholder": "Tarif ara (örn. mercimek çorbası, pasta…)",
+      "loading": "Aranıyor…",
+      "empty": "Bu aramayla tarif bulunamadı.",
+      "hint": "Aramaya başlamak için en az 2 karakter yaz.",
+      "viewRecipe": "tarifi aç",
+      "close": "Kapat",
+      "searchError": "Arama şu an çalışmıyor.",
+      "saveError": "Tarif eklenirken bir sorun oluştu."
+    },
+    "shoppingList": {
+      "addButton": "Alışveriş listesine ekle",
+      "adding": "Ekleniyor…",
+      "successAdded": "{recipeCount} tariften {addedCount} yeni malzeme eklendi, {mergedCount} tanesi mevcutla birleşti.",
+      "openList": "Listeyi aç",
+      "error": "Alışveriş listesi güncellenemedi."
+    }
   },
   "cookieBanner": {
     "message": "Tarifle yalnızca 4 zorunlu çerez kullanır — oturum, CSRF, dil ve tema. Reklam, analytics veya izleme çerezi yok.",

@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: 18 Nisan 2026 (oturum 2 — i18n %100 kapanış + batch 0 canlı, 17 commit: tüm surface locale-aware + tarif retrofit altyapısı + batch 0 import (200 tarif EN+DE) + 4 ingredient fix + recipe-of-the-day commentary backend)
+> Son güncelleme: 19 Nisan 2026 (oturum 7 sonu — 28 commit, **1701 tarif** prod canlı, 600 tarif tam Mod B çeviri, legal hub `/yasal` + 44 programatik landing + haftalık menü planlayıcı + blog + newsletter double-opt-in). Detaylı kronolojik akış için `docs/PROJECT_STATUS.md`.
 
 ## İşaretler
 

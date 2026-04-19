@@ -1623,13 +1623,28 @@ Video özelliği güzel ama pahalı ve operasyonel olarak riskli olabilir. Üç 
 
 ### Faz 3 — Premium & Genişleme
 
-- [ ] AI tarif videoları
-- [ ] Çoklu dil desteği (EN, DE) — schema hazır (Recipe.translations + LanguagePreferenceCard placeholder); UI string catalog + provider entegrasyonu kalıyor
-- [ ] Premium üyelik (reklamsız, sınırsız AI)
-- [ ] Haftalık menü planlayıcı
-- [ ] Yemek blog / makale bölümü
-- [ ] Mobil uygulama (React Native)
-- [ ] Açık API
+- [ ] AI tarif videoları (Remotion altyapı §19-21 — henüz başlamadı)
+- [x] **Çoklu dil desteği (EN, DE)** — TR + EN + DE tam canlı (19 Nis 2026 oturum 7). 1701/1701 tarif title+description, 600/1701 full Mod B (ingredients + steps + tipNote + servingSuggestion). Codex Mod B pipeline devam ediyor.
+- [ ] Premium üyelik (reklamsız, sınırsız AI) — rekabet analizi (`docs/COMPETITIVE_ANALYSIS.md`) bunu 3-6 ay içinde öneriyor; ₺29/ay MVP test planlanabilir
+- [x] **Haftalık menü planlayıcı** (`/menu-planlayici` — 19 Nis 2026 oturum 7). 7 gün × 3 öğün grid + alışveriş listesi tek-tık entegrasyon + print view
+- [x] **Yemek blog / makale bölümü** (`/blog` — 19 Nis 2026 oturum 7). MDX altyapısı (next-mdx-remote + gray-matter + reading-time) + 3 seed makale (mutfak-rehberi / pisirme-teknikleri / malzeme-tanima kategori).
+- [ ] Mobil uygulama (React Native) — 3-6 ay
+- [ ] Açık API (developer access) — 3-6 ay
+
+**Faz 3'e eklenen yeni maddeler (19 Nis 2026 oturum 7):**
+
+- [x] **Legal hub** — `/yasal` 6 sayfa (KVKK + Kullanım Koşulları + Gizlilik + Çerez Politikası + Güvenlik + İletişim Aydınlatma) + cookie banner + sürüm etiketi + 301 redirect
+- [x] **44 programatik landing** — `/mutfak/24` + `/etiket/15` + `/diyet/5` (unique H1 + TR/EN açıklama + breadcrumb + sitemap + canonical alignment)
+- [x] **Newsletter double-opt-in altyapı** — schema + Resend + footer form + confirm/unsubscribe API (gönderim cron v2)
+- [x] **RSS feed** `/feed.xml` (son 50 tarif, alternate link auto-discovery)
+- [x] **HowTo schema enrichment** — Recipe JSON-LD `supply` + `tool` + step `name`+URL anchor
+- [x] **Benzer tarifler motor v2** — ingredient Jaccard + featured boost + pool 100
+- [x] **AI Asistan v2** — pantry daralt + diversify + diet filter
+- [x] **Kişiselleştirme tur 3** — `foryou` sort boost (favoriteTags intersection)
+- [x] **Editör Seçimi rozeti** — isFeatured görsel ⭐ + shelf rebrand
+- [x] **@kozcactus super-admin protection** — hardcoded allowlist
+- [x] **/admin/yorumlar browse** — review audit (moderasyon kuyruğu ayrı)
+- [x] **Rekabet analizi v1.0** — `docs/COMPETITIVE_ANALYSIS.md` (5 TR + 2 int'l rakip, feature matrix, 3 dalga roadmap)
 
 ---
 

@@ -1,13 +1,117 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 19 Nisan 2026 (oturum 7) — **1401 tarif prod canlı**. Oturum 7 kapsamı: batch 13 Mod B çevirisi (101 tarif dev'de, prod onay bekliyor), kişiselleştirme tur 3 (favoriteTags sort boost listing'de — `foryou` sort + UI chip + 9 unit test). Oturum 6'nın kapsamı alt bölümde korunuyor.
+> Son güncelleme: 19 Nisan 2026 (oturum 7 sonu, 28 commit) — **1701 tarif prod canlı**. Oturum 7 kapsamı (8 blok): Mod B batch 13+14+15+16+17 (500 tarif → 600 tarif EN+DE tam çeviri), batch 15+16+17 Mod A (1401→1701), kişiselleştirme tur 3 foryou sort, pagination redesign + counter sade, super-admin protection, admin/yorumlar browse, /kategoriler landing, legal hub /yasal (6 sayfa + cookie banner), editör rozeti, similar-recipes scale v2, **44 programatik landing** (/mutfak/24 + /etiket/15 + /diyet/5), profil public zenginleştirme, **haftalık menü planlayıcı**, RSS feed + HowTo schema, AI Asistan v2 (pantry daralt + diversify + diet filter), **blog MDX altyapısı + 3 makale**, rekabet analizi doc, **newsletter double-opt-in altyapı**, codex brief 3 clarify (Hindistan cevizi / time-inconsistency / marker karakteri). 0 regression.
 
-## 19 Nisan 2026 (oturum 7)
+## 19 Nisan 2026 (oturum 7 — 28 commit, büyük tur)
 
-- **Batch 13 + 14 Mod B çevirileri prod'a canlı** — Batch 13: 101 tarif, Batch 14: 100 tarif (Codex oturum sırasında ikinci yarıyı ekledi). Toplam 201 tarifin EN+DE `ingredients` + `steps` + `tipNote` + `servingSuggestion` alanları prod'da. Dev + prod 0 CRITICAL. Batch 14 tek dosyada tam (100/100), batch 15 Kerem tetiklerse Codex Mod A'ya geçer.
-- **Kişiselleştirme tur 3 — favoriteTags sort boost** — `getRecipes`'e `sortBy: "foryou"` + `boostTagSlugs` opsiyonu: filtered rows'u tags ile çek, intersection score hesapla, `compareByFavoriteBoost` ile sort (score desc, title tr asc), slice. `/tarifler` page logged-in user + `favoriteTags.length > 0` + URL `?siralama=` yoksa default `foryou`; aksi halde alphabetical. Sort dropdown'da "Sana göre" chip'i aynı şartta görünür. 9 unit test (edge case: empty favs, no overlap, missing score, Turkish collation). Smoke test: admin favs=['pratik','vegan'] → top 6 hepsi intersect=2.
-- **Pagination UI redesign** — kullanıcı referans gönderdi: `‹ Önceki  1 2 [3] 4  Sonraki ›`. Mevcut 5-item window + ellipsis korundu ama visual yenilendi: aktif sayfa ince siyah border + bold (kare kutu); inactive sayfalar border yok + muted text + hover bg; Prev/Next her zaman render (ilk/son sayfada `cursor-not-allowed` + 50% opacity disabled state — layout shift olmuyor). Dinamik visible count: `totalPages ≤ 9` → hepsi, aksi halde `current ± 2` window. `buildPageItems` pure function + 6 unit test (küçük total, baş/orta/son windowing, 117 sayfa edge). Chevron `‹ / ›` tek ok (TR+EN).
-- **Super-admin protection — @kozcactus** — `src/lib/auth/super-admin.ts` hardcoded allowlist (`SUPER_ADMIN_USERNAMES = ["kozcactus"]`) + `canChangeRole(actor, target)` predicate. Kural: bir admin süper admin'in rolünü düşüremez; süper admin diğer tüm admin'leri düşürebilir; regular admin'ler birbirini etkiler. Server action `updateUserAction` predicate'ı enforce eder, UI `InlineUserRole` select'i non-superadmin viewer'a kozcactus detay sayfasında hide eder. Chip'te sadece "ADMIN" görünür (özel rozet yok — Kerem'in talebi). 8 unit test. 534/534 test PASS, tsc clean, lint 0 error.
+Ana blok çıktıları:
+
+**İçerik pipeline:**
+- Batch 13+14 Mod B prod — 200 tarif EN+DE ingredients/steps tam
+- Batch 15 Mod A + Mod B prod — 100 yeni tarif (Karadeniz ağırlıklı) + çevirisi
+- Batch 16+17 Mod A prod — 200 yeni tarif (7 bölge × 10 + 30 int'l her biri)
+- Batch 16+17 Mod B prod — 200 tarif EN+DE ingredients/steps
+- **Toplam Mod B coverage: 600 tarif** (batch 12-17)
+- 6+6 allergen fix (fix-critical-allergens-batch15 + batch16-17)
+- `seed-recipes.ts` source-of-truth sync (re-seed drift önleme)
+- `docs/existing-slugs.txt` 1701 slug güncel
+
+**Kişiselleştirme tur 3 (`foryou` sort):** `getRecipes`'e `sortBy:"foryou"` + `boostTagSlugs` opsiyonu; `scoreByFavoriteTags` + `compareByFavoriteBoost` pure function (9 unit test). `/tarifler` logged-in user + favoriteTags dolu + URL'de siralama yoksa default `foryou`. Dropdown'da "Sana göre" chip'i şartlı.
+
+**UI — pagination & editor's pick:**
+- Pagination redesign: aktif sayfa ince siyah border (kare kutu) + muted inactive + disabled prev/next. Dinamik visible count (≤9 hepsi, üstü window). `buildPageItems` pure helper + 6 unit test.
+- Counter sadeleştirme: "X–Y / N gösteriliyor" tek satır (middot/çift renk kaldırıldı).
+- Editör Seçimi rozeti — `isFeatured` için ⭐ (tek yıldız, tooltip açıklamalı). Shelf başlığı "⭐ Editör Seçimi" rebrand. Admin panelde "Öne çıkan" → "Editör Seçimi" i18n.
+
+**Admin:**
+- Super-admin protection — `src/lib/auth/super-admin.ts` `SUPER_ADMIN_USERNAMES=["kozcactus"]` + `canChangeRole` predicate. Server action + UI iki katman koruma. 8 unit test.
+- `/admin/yorumlar` — Review browse (moderation kuyruğu DEĞİL). Preset date chip'ler (son 7 gün default + last30/thisMonth/custom/all). 12 unit test range helper.
+
+**Nav + legal:**
+- `/kategoriler` landing — 17 kategori grid + cuisine/diet cross-link.
+- **Legal hub `/yasal`** — 6 sayfa (KVKK + Kullanım Koşulları + Gizlilik + Çerez Politikası + Güvenlik + İletişim Aydınlatma) + shared sidebar layout + `LegalDocMeta` version chip (v1.0). 301 redirect eski URL'lerden. Footer sadeleşti (Yasal kolon kaldırıldı, alt şeritte tek "Yasal Bilgilendirme" link). Cookie banner root layout'ta.
+
+**SEO — 44 programatik landing:**
+- `/mutfak/[cuisine]` × 24 — ascii slug (turk, italyan, fransiz...) + TR/EN cuisine-specific 2-3 cümle açıklama + flag + tarif grid.
+- `/etiket/[tag]` × 15 — popüler tag'lerden.
+- `/diyet/[diet]` × 5 — vegan/vejetaryen/glutensiz/sutsuz/alkolsuz (tag + allergen exclusion).
+- Sitemap entry × 44 + canonical alignment (`/tarifler?mutfak=X` artık noindex + canonical path-based'e çekildi).
+- Her sayfa Schema.org BreadcrumbList JSON-LD + internal linking chip'leri.
+- RSS feed `/feed.xml` (son 50 tarif, RSS 2.0, alternate link root layout'ta).
+- HowTo schema enrichment — `supply` + `tool` inference + `recipeInstructions[].name` + step anchor URL. `scroll-mt-20` + `#step-N` id.
+
+**Profil public zenginleştirme:**
+- `ProfileStats` 4-kart (uyarlama / beğeni / yorum / koleksiyon) + `ProfileActivity` 8-event timeline + `BadgeShelf` revizyon (yatay chip → kart grid + emoji 3xl + kazanılma tarihi).
+- `getUserProfileStats(userId)` — 6 paralel Prisma query (aggregate + count + recent).
+
+**Haftalık menü planlayıcı — `/menu-planlayici`:**
+- Schema: `MealPlan` (userId+weekStart unique) + `MealPlanItem` (plan+day+meal unique) + `MealType` enum — migration `20260419180000_add_meal_planner`.
+- Server actions: `setMealPlanSlotAction` (upsert), `clearMealPlanSlotAction`, `addMealPlanToShoppingListAction` (unique recipeId × `addItemsFromRecipe`).
+- UI: 7×3 grid (desktop table, mobile gün-kart stack). `MealSlot` (client) + `RecipePickerDialog` (debounce 250ms FTS search) + `AddToShoppingListButton` + `PrintButton` (`print:hidden`).
+- `/api/meal-plan/search` — auth-only FTS endpoint.
+- Nav'a "Menü Planla" chip.
+
+**Benzer tarifler v2 (scale):**
+- Pool 50 → 100 candidate.
+- **Ingredient Jaccard overlap** — her ortak önemli malzeme +1 (cap +3). Pantry filter (tuz/biber/yağ/su) ortak sayılmaz — gerçek sinyal. v1'de 106 tarif vardı, 1501'de gerekli.
+- **Featured soft-boost** +0.3 (aynı ham skorda editör seçimi önce).
+- 14→24 unit test.
+
+**AI Asistan v2:**
+- **Pantry v3 daraltıldı** — `limon suyu`, `şeker`, `un`, `maya`, `sirke`, `tereyağı`, `maydanoz` pantry dışı. `isPantryStaple` exact-phrase match (v2'deki token-set bug: "limon suyu" set'e `[limon,suyu]` ekleyince "limon" tek başına pantry sayılıyordu — limonata %100 false positive).
+- **Diversification** — `diversifySuggestions` max 2/kategori + duplicate slug dedup. Top 5 hepsi aynı kategori sorunu çözüldü.
+- **Diet filter** — vegan/vejetaryen/glutensiz/sutsuz/alkolsuz dropdown (form 4-col → 5-col).
+- 78 → 79 matcher test (+1 "limon bug" tescil testi).
+
+**Blog MDX altyapısı — `/blog`:**
+- `next-mdx-remote` + `gray-matter` + `reading-time` paketleri.
+- `content/blog/*.mdx` file-based (DB değil — Git history + PR review editorial için daha değerli).
+- `src/lib/blog.ts` frontmatter validation + `getAllBlogPosts`/`getBlogPostBySlug` + excerpt builder.
+- `/blog` listing (tarih desc, kategori chip) + `/blog/[slug]` detail (MDX render + Article JSON-LD + breadcrumb + OG type=article).
+- 3 kategori: mutfak-rehberi / pisirme-teknikleri / malzeme-tanima.
+- 3 seed makale: Soğan kavurma, zeytinyağı seçimi, Türk mutfağının 7 bölgesi (her biri ~1500-2000 kelime).
+- Nav'a "Blog" chip + sitemap entry (/blog static + her post).
+- `mdxComponents.tsx` prose styling (h2/h3/p/ul/ol/a/strong/em/code/blockquote).
+
+**Rekabet analizi doc — `docs/COMPETITIVE_ANALYSIS.md`:**
+- 561 satır, 10 bölüm, v1.0. İç strateji belgesi.
+- 5 TR rakip profili (Nefisyemektarifleri / Yemek.com / Lezzet / Sofra / Mutfak.com) + 2 int'l (Allrecipes + NYT Cooking).
+- Feature matrix 35 satır × 8 kolon (Tarifle + 7 rakip). Alerjen filtre + AI Asistan + uyarlama sistemi + PWA + A11y + çoklu dil + zero-tracking satırlarında Tarifle tek ✅.
+- Pozisyonlama açıkları (6), Differentiator (10+3), 3 dalga roadmap, risk+fırsat, ölçüm hedefleri.
+
+**Newsletter altyapı:**
+- Schema `NewsletterSubscription` — (email unique, status enum CONFIRMING/ACTIVE/UNSUBSCRIBED/SUSPENDED, confirmToken 24h TTL, unsubscribeToken lifetime, locale, userId optional). Migration `20260419190000_add_newsletter_subscription` dev + prod.
+- Double-opt-in flow: form → CONFIRMING + Resend onay maili → token click → ACTIVE geçiş. Unsubscribe tek tık soft delete.
+- `subscribeNewsletterAction` idempotent upsert (ACTIVE resubscribe no-op, UNSUBSCRIBED resubscribe CONFIRMING'e çek).
+- `/api/newsletter/confirm` + `/api/newsletter/unsubscribe` GET route'ları.
+- 3 status sayfası: `/newsletter/{confirmed,unsubscribed,expired}` (robots:noindex).
+- `NewsletterForm` client (footer + inline variant) — Footer'a 4. kolon.
+- Gönderim cron (Vercel Scheduled / external) v2 iş — opt-in altyapı bugün tam.
+
+**Codex brief 3 clarify (`d15b602`):**
+1. Hindistan cevizi (coconut) KUSUYEMIS DEĞİL — palm family, batch 16 Mod B'de yanlış flag edildi.
+2. time-inconsistency SADECE `prep+cook > total`; `prep+cook < total` NORMAL (chill/rest total'e dahil — §5 time math).
+3. Batch marker `──` (U+2500) zorunlu, em-dash `——` (U+2014) YASAK — batch 17'de normalize gerekti.
+4. §1 canlı durum 1701 tarif + 600 Mod B güncel.
+
+**Prod skor kartı (oturum 7 sonu):**
+- **1701 tarif prod**, 24 cuisine, 17 kategori, 10 allergen, 15 tag
+- **600/1701 tam Mod B** (batch 12-17 ingredients+steps EN+DE), 1701/1701 title+description
+- audit-deep 0 CRITICAL
+- 557/557 test PASS, tsc clean, lint 0 error
+- 44 programatik landing + 6 legal + blog + newsletter + menü planlayıcı canlı
+- Schema 14 migration (add_meal_planner + add_newsletter_subscription oturum 7'de eklendi)
+
+**Bekleyen:**
+- Batch 18 Mod A Codex'te (brief hazır, Kerem tetikleyecek)
+- Newsletter gönderim cron'u (altyapı tam, cron scheduling v2)
+- Tarif görselleri (Eren — dış bağımlı)
+- Cache Components (PPR) feature branch — 12-18 saat Q işi
+- AI Asistan v3 (gerçek LLM — 3-6 ay)
+- Premium subscription (gelir modeli — 3-6 ay)
+- Mobil uygulama (React Native — 3-6 ay)
+
+## 19 Nisan 2026 (oturum 6 devam — Cache Components denemesi + revert)
 
 ## 19 Nisan 2026 (oturum 6 devam — Cache Components denemesi + revert)
 

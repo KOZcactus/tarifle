@@ -1,6 +1,15 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 19 Nisan 2026 (oturum 6) — **Codex batch 14 dev + prod promoted (1301 → 1401 tarif canlı)**. Pagination counter yeniden tasarlandı ("X–Y gösteriliyor · toplam N tarif"). 6 UX copy iyileştirmesi (register faydaları, variation form, review empty state, cooking mode hint). Post-deploy spot check 0 regression.
+> Son güncelleme: 19 Nisan 2026 (oturum 6 sonu, 15+ commit) — **1401 tarif prod canlı**. Bu oturumun kapsamı: batch 14 prod promote, pagination counter 3-adım redesign, 6 UX copy iyileştirmesi, user profile kişiselleştirme tercihleri (schema migration + UI), "Sana özel" shelf + listing allergen default, Lighthouse baseline delta, Neon warming + unstable_cache 4 hot query, Sentry OG image fix, Codex batch 12 Mod B çevirisi (100 tarif EN+DE ingredients+steps prod), brief batch 12 Mod B dersleri, Cache Components denemesi (scope ölçüldü + revert + doc). Post-deploy 0 regression.
+
+## 19 Nisan 2026 (oturum 6 devam — Cache Components denemesi + revert)
+
+- **Cache Components (PPR) deneme (commit `f08a0b1`)** — `cacheComponents: true` + "use cache" migrate denendi. Scope 4-5× büyük çıktı:
+  1. 22 dosya `export const dynamic/revalidate` incompat — bulk temizlik OK
+  2. `getActiveAnnouncements` `new Date()` prerender error — `"use cache" + cacheLife("minutes")` ile çözüldü
+  3. **30+ sayfa** "Uncached data outside Suspense" — her sayfa shell + Suspense + dynamic child refactor gerekiyor
+  - Revert edildi. Baseline doc'a tahmini scope (12-18 saat ayrı branch) + sonraki pass roadmap'i yazıldı
+- Mevcut kısmi kazanç canlı: `unstable_cache` 4 hot query + `/api/warm` 200 + Lighthouse warm TBT 50ms
 
 ## 19 Nisan 2026 (oturum 6 devam — Mod B batch 12 çevirisi + perf paketi + Sentry fix)
 

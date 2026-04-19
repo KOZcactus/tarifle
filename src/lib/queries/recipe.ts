@@ -22,6 +22,53 @@ export function compareByMostLiked<
   return a.title.localeCompare(b.title, "tr");
 }
 
+/**
+ * Scoring helper for the "foryou" (kişiselleştirme tur 3) sort — ranks
+ * recipes by how many of their tags intersect with the logged-in user's
+ * `favoriteTags` preference. Pure function; unit-testable without DB.
+ *
+ * Returned score is the intersection count (0 when the user has no matching
+ * tags, N when N tags align). Tie-break is Turkish-aware title ascending so
+ * two recipes with the same boost score land in predictable alphabetic
+ * order — matches the default "alphabetical" fallback ordering which the
+ * user already expects when nothing else wins.
+ *
+ * NOT exported as a comparator because the fair implementation reads both
+ * `score` values from a cached map; doing the set-intersect twice per
+ * pairwise compare would blow the complexity up to O(n·m·log n).
+ */
+export function scoreByFavoriteTags(
+  recipeTagSlugs: string[],
+  favoriteTagSlugs: readonly string[],
+): number {
+  if (favoriteTagSlugs.length === 0 || recipeTagSlugs.length === 0) return 0;
+  const favSet = new Set(favoriteTagSlugs);
+  let score = 0;
+  for (const slug of recipeTagSlugs) {
+    if (favSet.has(slug)) score += 1;
+  }
+  return score;
+}
+
+/**
+ * Comparator for the "foryou" sort. Takes a precomputed score map so the
+ * intersect-and-count cost is paid once per recipe, not once per compare.
+ *
+ * Tie-break: Turkish-aware title asc — keeps the 0-score long tail (recipes
+ * with no matching tags at all) in natural alphabetical order rather than
+ * undefined DB ordering.
+ */
+export function compareByFavoriteBoost<T extends { id: string; title: string }>(
+  scores: Map<string, number>,
+  a: T,
+  b: T,
+): number {
+  const aScore = scores.get(a.id) ?? 0;
+  const bScore = scores.get(b.id) ?? 0;
+  if (bScore !== aScore) return bScore - aScore;
+  return a.title.localeCompare(b.title, "tr");
+}
+
 // Ortak select — RecipeCard tipi için
 const recipeCardSelect = {
   id: true,
@@ -77,9 +124,18 @@ interface GetRecipesOptions {
     | "alphabetical"
     | "most-variations"
     | "most-liked"
-    | "relevance";
+    | "relevance"
+    | "foryou";
   limit?: number;
   offset?: number;
+  /**
+   * Kişiselleştirme tur 3 — user's `favoriteTags` slug list. Only consulted
+   * when `sortBy === "foryou"`; otherwise ignored. Empty / undefined turns
+   * the foryou branch into a plain alphabetical fallback (every recipe
+   * scores 0 so the title tie-break wins), which keeps the API total-
+   * ordered even when the caller forgot to gate on `hasFavoriteTags`.
+   */
+  boostTagSlugs?: string[];
 }
 
 /** Tarif listesi — arama, filtreleme ve sayfalama destekli */
@@ -99,6 +155,7 @@ export async function getRecipes(options: GetRecipesOptions = {}): Promise<{
     sortBy = "alphabetical",
     limit = 24,
     offset = 0,
+    boostTagSlugs,
   } = options;
 
   const where: Record<string, unknown> = {
@@ -156,6 +213,45 @@ export async function getRecipes(options: GetRecipesOptions = {}): Promise<{
     where.NOT = {
       ...(where.NOT as object | undefined),
       allergens: { hasSome: excludeAllergens },
+    };
+  }
+
+  // "foryou" — kişiselleştirme tur 3. Filtered tarifleri tags ile çek, her
+  // kayıt için favoriteTags ile kesişim sayısını hesapla, score desc + title
+  // asc ile sort, slice. `most-liked` ile aynı pattern (orderBy ile ifade
+  // edilemeyen aggregation mantığı JS'e taşınır); 1401 ölçeğinde filtered
+  // sonuçlar genelde <300 tarif ve Prisma findMany bunu ms seviyesinde
+  // getirir. Scale problemi varsa sonraki tur: User.favoriteTags JSONB
+  // kolon + Postgres `array_length(overlap)` CTE veya denormalize boost
+  // score.
+  if (sortBy === "foryou") {
+    const rows = await prisma.recipe.findMany({
+      where,
+      select: {
+        ...recipeCardSelect,
+        tags: {
+          select: { tag: { select: { slug: true } } },
+        },
+      },
+    });
+    // Precompute score per recipe so the comparator stays O(1) per compare;
+    // otherwise sort would pay the intersect cost O(n log n) times.
+    const boostList = boostTagSlugs ?? [];
+    const scoreMap = new Map<string, number>();
+    for (const row of rows) {
+      const slugs = row.tags.map((rt) => rt.tag.slug);
+      scoreMap.set(row.id, scoreByFavoriteTags(slugs, boostList));
+    }
+    const sorted = [...rows].sort((a, b) =>
+      compareByFavoriteBoost(scoreMap, a, b),
+    );
+    const page = sorted.slice(offset, offset + limit).map((recipe) => {
+      const { tags: _tags, ...card } = recipe;
+      return card;
+    });
+    return {
+      recipes: page as unknown as RecipeCard[],
+      total: rows.length,
     };
   }
 
@@ -443,6 +539,26 @@ export async function resolveDefaultAllergenAvoidances({
     select: { allergenAvoidances: true },
   });
   return user?.allergenAvoidances ?? [];
+}
+
+/** Kişiselleştirme tur 3 — listing'de sıralama boost için kullanıcının
+ *  favoriteTags slug listesini döndürür. Anonymous veya set etmemişse boş
+ *  dizi. Ayrı bir lookup: allergen helper'ıyla birleştirmek istemedim çünkü
+ *  allergen her listing sayfasında zorunlu (security default), favoriteTags
+ *  sadece `/tarifler` sort mantığı için opsiyonel — iki concern karıştırsa
+ *  caller tarafı karmaşıklaşır.
+ *
+ *  Kullanım: `/tarifler` logged-in user hiç `?siralama=` seçmediyse ve
+ *  favoriteTags boş değilse → `sortBy="foryou"` + `boostTagSlugs=...`. */
+export async function getUserFavoriteTagSlugs(
+  userId: string | null | undefined,
+): Promise<string[]> {
+  if (!userId) return [];
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { favoriteTags: true },
+  });
+  return user?.favoriteTags ?? [];
 }
 
 /** Tek tarif detayı — slug ile */

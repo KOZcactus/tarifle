@@ -9,7 +9,11 @@ import { DietFilter } from "@/components/search/DietFilter";
 import { CuisineFilter } from "@/components/search/CuisineFilter";
 import { Pagination } from "@/components/listing/Pagination";
 import { CUISINE_CODES, CUISINE_LABEL, CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
-import { getRecipes, resolveDefaultAllergenAvoidances } from "@/lib/queries/recipe";
+import {
+  getRecipes,
+  getUserFavoriteTagSlugs,
+  resolveDefaultAllergenAvoidances,
+} from "@/lib/queries/recipe";
 import { auth } from "@/lib/auth";
 import { getCategories } from "@/lib/queries/category";
 import { getTags } from "@/lib/queries/tag";
@@ -95,6 +99,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
     "most-variations",
     "most-liked",
     "relevance",
+    "foryou",
   ] as const;
   type SortOption = (typeof allowedSorts)[number];
   const sortBy: SortOption | undefined = allowedSorts.includes(
@@ -102,10 +107,6 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
   )
     ? (params.siralama as SortOption)
     : undefined;
-  // Default sort picks relevance when there's an active query (FTS ranked
-  // results should win over alphabetical), otherwise alphabetical.
-  const activeSort: SortOption =
-    sortBy ?? (query ? "relevance" : "alphabetical");
   const tagSlugs = params.etiket
     ? Array.isArray(params.etiket)
       ? params.etiket
@@ -131,10 +132,27 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
       (ALLERGEN_ORDER as readonly string[]).includes(a),
   );
   const session = await auth();
-  const excludeAllergens = await resolveDefaultAllergenAvoidances({
-    userId: session?.user?.id ?? null,
-    explicitAllergens: urlExcludeAllergens,
-  });
+  const [excludeAllergens, favoriteTagSlugs] = await Promise.all([
+    resolveDefaultAllergenAvoidances({
+      userId: session?.user?.id ?? null,
+      explicitAllergens: urlExcludeAllergens,
+    }),
+    getUserFavoriteTagSlugs(session?.user?.id ?? null),
+  ]);
+
+  // Default sort picks, in order:
+  //   1) URL'de explicit `?siralama=` varsa → kullanıcı bilerek seçmiş, saygı duy.
+  //   2) Query (FTS) varsa → `relevance` (ranked search results).
+  //   3) Logged-in user'ın `favoriteTags` tercihi doluysa → `foryou`
+  //      (kişiselleştirme tur 3 — user'ın beğenisine göre boost).
+  //   4) Diğer tüm durumlarda → `alphabetical` (catalog browse default).
+  const activeSort: SortOption =
+    sortBy ??
+    (query
+      ? "relevance"
+      : favoriteTagSlugs.length > 0
+        ? "foryou"
+        : "alphabetical");
 
   // Parse + validate cuisine inclusion list. Unknown codes are dropped
   // silently so a mistyped URL doesn't 500.
@@ -170,6 +188,10 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
       cuisines: cuisines.length > 0 ? cuisines : undefined,
       recipeIds: rankedIds,
       sortBy: activeSort,
+      boostTagSlugs:
+        activeSort === "foryou" && favoriteTagSlugs.length > 0
+          ? favoriteTagSlugs
+          : undefined,
       limit: ITEMS_PER_PAGE,
       offset,
     }),
@@ -234,6 +256,12 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
           ...(query
             ? [{ key: "relevance", label: t("sort.relevance") } as const]
             : []),
+          // "Sana göre" chip — yalnız logged-in user favoriteTags set
+          // ettiyse görünür. Anonim user için tamamen gizli: dropdown'u
+          // yemleyen login duvarı gereksiz.
+          ...(!query && favoriteTagSlugs.length > 0
+            ? [{ key: "foryou", label: t("sort.foryou") } as const]
+            : []),
           { key: "alphabetical", label: t("sort.alphabetical") } as const,
           { key: "newest", label: t("sort.newest") } as const,
           { key: "popular", label: t("sort.popular") } as const,
@@ -248,11 +276,16 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
             if (Array.isArray(v)) v.forEach((item) => search.append(k, item));
             else search.set(k, v);
           }
-          // Canonical URL için default sort param'ını çıkar.
-          // Query varsa default "relevance", yoksa "alphabetical".
-          const isDefaultForContext = query
-            ? key === "relevance"
-            : key === "alphabetical";
+          // Canonical URL için default sort param'ını çıkar. Default sırası:
+          //   query varsa "relevance", favoriteTags doluysa "foryou", aksi
+          //   halde "alphabetical". Default olan key URL'ye yazılmaz; kullanıcı
+          //   başka bir seçim yaptığında o key URL'ye eklenir.
+          const defaultKey = query
+            ? "relevance"
+            : favoriteTagSlugs.length > 0
+              ? "foryou"
+              : "alphabetical";
+          const isDefaultForContext = key === defaultKey;
           if (!isDefaultForContext) search.set("siralama", key);
           const qs = search.toString();
           const href = `/tarifler${qs ? `?${qs}` : ""}`;

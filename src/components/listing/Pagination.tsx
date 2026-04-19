@@ -3,13 +3,34 @@ import Link from "next/link";
 /** Shared listing pagination — used by `/tarifler` (full search) and
  *  `/tarifler/[kategori]` (category landing). Builds page URLs by cloning
  *  the current `searchParams`, stripping `page`, and appending `?page=N`
- *  to `basePath`. The visible window caps at 5 numbered pages with
- *  leading/trailing "…" ellipses that link to the first/last page.
+ *  to `basePath`.
  *
- *  Optional `totalItems` + `pageSize` props render a "Gösteriliyor X–Y /
- *  toplam Z" counter above the nav — lets the user see where they are in
- *  a long catalog (e.g. 126 tatlı / 11 sayfa).
+ *  Visible window:
+ *   - totalPages ≤ FULL_WINDOW_THRESHOLD → render every page number
+ *     (kullanıcı "başta kaç sayfa varsa o kadar" dedi — az sayfa için
+ *     ellipsis işine yaramaz)
+ *   - Aksi halde current ± 3 window + leading/trailing "…" + first/last
+ *     anchor pages (klasik Google-style pagination)
+ *
+ *  Visual treatment:
+ *   - Aktif sayfa: ince siyah border + bold (kare kutu referansı —
+ *     kullanıcı gönderdiği sample image'da bu aşamayı istedi)
+ *   - Inactive sayfalar: border yok, hover'da soft bg, muted digit rengi
+ *   - Prev / Next: her zaman render edilir; ilk/son sayfada span olarak
+ *     disabled render (layout shift olmasın + klavye navigasyonu net)
+ *
+ *  Optional `totalItems` + `pageSize` props render a "Gösteriliyor X–Y ·
+ *  toplam N tarif" counter above the nav.
  */
+
+/** Sayfa sayısı bu eşikten az/eşit ise ellipsis uygulanmaz, tüm sayfa
+ *  numaraları yan yana gösterilir. 9 seçildi çünkü mobilde çok küçük
+ *  ekranda 9 hane + Prev/Next taşmadan sığar (tabular-nums ile). */
+const FULL_WINDOW_THRESHOLD = 9;
+
+/** Current page etrafında gösterilecek komşu sayfa sayısı (tek tarafta).
+ *  current ± NEIGHBOR_RADIUS + current = (NEIGHBOR_RADIUS*2 + 1) rakam. */
+const NEIGHBOR_RADIUS = 2;
 
 type PaginationTranslator = (
   key: string,
@@ -27,6 +48,31 @@ interface PaginationProps {
   totalItems?: number;
   /** Items per page — must match the `limit` passed to getRecipes(). */
   pageSize?: number;
+}
+
+/** Build the list of pagination items to render. Numbers are page indices,
+ *  "…" strings are ellipsis separators. Exported for unit testing — the
+ *  windowing math is easy to break when refactoring, so we lock the output
+ *  shape with tests. */
+export function buildPageItems(
+  currentPage: number,
+  totalPages: number,
+): (number | "…")[] {
+  if (totalPages <= FULL_WINDOW_THRESHOLD) {
+    return Array.from({ length: totalPages }, (_, i) => i + 1);
+  }
+
+  const items: (number | "…")[] = [];
+  const windowStart = Math.max(2, currentPage - NEIGHBOR_RADIUS);
+  const windowEnd = Math.min(totalPages - 1, currentPage + NEIGHBOR_RADIUS);
+
+  items.push(1);
+  if (windowStart > 2) items.push("…");
+  for (let p = windowStart; p <= windowEnd; p++) items.push(p);
+  if (windowEnd < totalPages - 1) items.push("…");
+  items.push(totalPages);
+
+  return items;
 }
 
 export function Pagination({
@@ -53,22 +99,13 @@ export function Pagination({
     return `${basePath}${qs ? `?${qs}` : ""}`;
   }
 
-  // Visible window: up to 5 numbered pages around the current one.
-  const pages: number[] = [];
-  const maxVisible = 5;
-  let start = Math.max(1, currentPage - Math.floor(maxVisible / 2));
-  const end = Math.min(totalPages, start + maxVisible - 1);
-  start = Math.max(1, end - maxVisible + 1);
-
-  for (let i = start; i <= end; i++) {
-    pages.push(i);
-  }
+  const items = buildPageItems(currentPage, totalPages);
+  const isFirstPage = currentPage <= 1;
+  const isLastPage = currentPage >= totalPages;
 
   // Counter — only shown when caller supplies totalItems + pageSize.
-  // Two-part layout: "<range> <showing verb> · <total verb> <N> <suffix>"
-  // ("1–12 gösteriliyor · toplam 159 tarif" / "Showing 1–12 · 159 recipes
-  // total"). First half (action) is emphasised, total half is muted context.
-  // tabular-nums keeps digit widths stable across page changes.
+  // Layout: "<range> gösteriliyor · toplam N tarif" (TR) / "Showing X–Y ·
+  // N recipes total" (EN). First half emphasised, total half muted.
   let showingCount: string | null = null;
   let totalCount: string | null = null;
   if (typeof totalItems === "number" && typeof pageSize === "number" && totalItems > 0) {
@@ -77,6 +114,12 @@ export function Pagination({
     showingCount = t("pagination.showingCount", { from, to });
     totalCount = t("pagination.totalCount", { total: totalItems });
   }
+
+  // Shared base classes for every clickable nav element. Concrete button
+  // look is added per-variant so the active page, inactive numbers, and
+  // prev/next labels can diverge without duplicating padding rules.
+  const baseCell =
+    "inline-flex min-w-[2.25rem] items-center justify-center rounded-md px-3 py-2 text-sm tabular-nums transition-colors";
 
   return (
     <div className="mt-12 flex flex-col items-center gap-4">
@@ -88,67 +131,70 @@ export function Pagination({
         </p>
       )}
       <nav
-        className="flex flex-wrap items-center justify-center gap-2"
+        className="flex flex-wrap items-center justify-center gap-1"
         aria-label={t("pagination.aria")}
       >
-      {currentPage > 1 && (
-        <Link
-          href={buildPageUrl(currentPage - 1)}
-          className="rounded-lg border border-border px-3 py-2 text-sm transition-colors hover:bg-bg-card"
-          rel="prev"
-        >
-          {t("pagination.previous")}
-        </Link>
-      )}
-
-      {start > 1 && (
-        <>
-          <Link
-            href={buildPageUrl(1)}
-            className="rounded-lg border border-border px-3 py-2 text-sm transition-colors hover:bg-bg-card"
+        {isFirstPage ? (
+          <span
+            className={`${baseCell} cursor-not-allowed text-text-muted/50`}
+            aria-disabled="true"
           >
-            1
-          </Link>
-          {start > 2 && <span className="px-1 text-text-muted">…</span>}
-        </>
-      )}
-
-      {pages.map((page) => (
-        <Link
-          key={page}
-          href={buildPageUrl(page)}
-          className={`rounded-lg border px-3 py-2 text-sm transition-colors ${
-            page === currentPage
-              ? "border-primary bg-primary text-white"
-              : "border-border hover:bg-bg-card"
-          }`}
-          aria-current={page === currentPage ? "page" : undefined}
-        >
-          {page}
-        </Link>
-      ))}
-
-      {end < totalPages && (
-        <>
-          {end < totalPages - 1 && <span className="px-1 text-text-muted">…</span>}
+            {t("pagination.previous")}
+          </span>
+        ) : (
           <Link
-            href={buildPageUrl(totalPages)}
-            className="rounded-lg border border-border px-3 py-2 text-sm transition-colors hover:bg-bg-card"
+            href={buildPageUrl(currentPage - 1)}
+            className={`${baseCell} text-text hover:bg-bg-card`}
+            rel="prev"
           >
-            {totalPages}
+            {t("pagination.previous")}
           </Link>
-        </>
-      )}
+        )}
 
-      {currentPage < totalPages && (
-        <Link
-          href={buildPageUrl(currentPage + 1)}
-          className="rounded-lg border border-border px-3 py-2 text-sm transition-colors hover:bg-bg-card"
-          rel="next"
-        >
-          {t("pagination.next")}
-        </Link>
-      )}
+        {items.map((item, idx) =>
+          item === "…" ? (
+            <span
+              key={`ellipsis-${idx}`}
+              className={`${baseCell} cursor-default text-text-muted`}
+              aria-hidden="true"
+            >
+              …
+            </span>
+          ) : item === currentPage ? (
+            <span
+              key={item}
+              className={`${baseCell} border border-text font-semibold text-text`}
+              aria-current="page"
+            >
+              {item}
+            </span>
+          ) : (
+            <Link
+              key={item}
+              href={buildPageUrl(item)}
+              className={`${baseCell} text-text-muted hover:bg-bg-card hover:text-text`}
+            >
+              {item}
+            </Link>
+          ),
+        )}
+
+        {isLastPage ? (
+          <span
+            className={`${baseCell} cursor-not-allowed text-text-muted/50`}
+            aria-disabled="true"
+          >
+            {t("pagination.next")}
+          </span>
+        ) : (
+          <Link
+            href={buildPageUrl(currentPage + 1)}
+            className={`${baseCell} text-text hover:bg-bg-card`}
+            rel="next"
+          >
+            {t("pagination.next")}
+          </Link>
+        )}
       </nav>
     </div>
   );

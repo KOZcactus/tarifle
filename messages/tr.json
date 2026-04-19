@@ -3,6 +3,7 @@
     "recipes": "Tarifler",
     "categories": "Kategoriler",
     "discover": "Keşfet",
+    "feed": "Akış",
     "mealPlanner": "Menü Planla",
     "blog": "Blog",
     "aiAssistant": "AI Asistan",
@@ -1183,8 +1184,19 @@
     "teamBadge": "Tarifle ekibi",
     "variationsCount": "{count} uyarlama",
     "bookmarksCount": "{count} kayıtlı tarif",
+    "followersCount": "{count} takipçi",
+    "followingCount": "{count} takip",
     "memberSince": "Üye: {date}",
     "editProfile": "Profili düzenle",
+    "follow": {
+      "buttonFollow": "Takip et",
+      "buttonFollowing": "Takip ediliyor",
+      "error_auth-required": "Önce giriş yap.",
+      "error_cannot-follow-self": "Kendini takip edemezsin.",
+      "error_account-suspended": "Hesabın askıya alınmış.",
+      "error_target-not-found": "Kullanıcı bulunamadı.",
+      "error_unknown": "Beklenmedik hata — tekrar dene."
+    },
     "stats": {
       "variations": "Uyarlama",
       "likesReceived": "Aldığı beğeni",
@@ -1245,9 +1257,23 @@
   "relativeDate": {
     "today": "Bugün",
     "yesterday": "Dün",
+    "justNow": "Az önce",
+    "hoursAgo": "{n} saat önce",
     "daysAgo": "{n} gün önce",
     "monthsAgo": "{n} ay önce",
     "yearsAgo": "{n} yıl önce"
+  },
+  "feed": {
+    "pageTitle": "Akış | Tarifle",
+    "pageDescription": "Takip ettiğin kullanıcıların son uyarlamaları.",
+    "eyebrow": "Akış",
+    "heading": "Takip ettiklerinin akışı",
+    "subtitle": "Takip ettiğin kullanıcıların son 30 günde paylaştığı uyarlamalar — en yeniden eskiye.",
+    "emptyTitle": "Henüz içerik yok",
+    "emptyBody": "Kimseyi takip etmiyorsun ya da takip ettiklerin son 30 günde uyarlama paylaşmamış. Tariflere göz atıp beğendiğin uyarlamaların yazarını takip edebilirsin.",
+    "emptyCta": "Tarifleri keşfet",
+    "recipeLink": "{title} için uyarlama",
+    "likeCount": "{count} beğeni"
   },
   "landing": {
     "breadcrumbHome": "Ana Sayfa",

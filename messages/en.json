@@ -3,6 +3,7 @@
     "recipes": "Recipes",
     "categories": "Categories",
     "discover": "Discover",
+    "feed": "Feed",
     "mealPlanner": "Meal Planner",
     "blog": "Blog",
     "aiAssistant": "AI Assistant",
@@ -1183,8 +1184,19 @@
     "teamBadge": "Tarifle team",
     "variationsCount": "{count} adaptations",
     "bookmarksCount": "{count} saved recipes",
+    "followersCount": "{count} followers",
+    "followingCount": "{count} following",
     "memberSince": "Member since {date}",
     "editProfile": "Edit profile",
+    "follow": {
+      "buttonFollow": "Follow",
+      "buttonFollowing": "Following",
+      "error_auth-required": "Sign in first.",
+      "error_cannot-follow-self": "You can't follow yourself.",
+      "error_account-suspended": "Your account is suspended.",
+      "error_target-not-found": "User not found.",
+      "error_unknown": "Unexpected error — try again."
+    },
     "stats": {
       "variations": "Adaptations",
       "likesReceived": "Likes received",
@@ -1245,9 +1257,23 @@
   "relativeDate": {
     "today": "Today",
     "yesterday": "Yesterday",
+    "justNow": "Just now",
+    "hoursAgo": "{n}h ago",
     "daysAgo": "{n} days ago",
     "monthsAgo": "{n} months ago",
     "yearsAgo": "{n} years ago"
+  },
+  "feed": {
+    "pageTitle": "Feed | Tarifle",
+    "pageDescription": "Recent adaptations from people you follow.",
+    "eyebrow": "Feed",
+    "heading": "From people you follow",
+    "subtitle": "Adaptations shared in the last 30 days by cooks you follow — newest first.",
+    "emptyTitle": "Nothing yet",
+    "emptyBody": "Either you aren't following anyone or they haven't shared in 30 days. Browse recipes and follow the cooks whose adaptations you like.",
+    "emptyCta": "Browse recipes",
+    "recipeLink": "Adaptation for {title}",
+    "likeCount": "{count} likes"
   },
   "landing": {
     "breadcrumbHome": "Home",

@@ -16,7 +16,9 @@ import { VerifyEmailBanner } from "@/components/auth/VerifyEmailBanner";
 import { BadgeShelf } from "@/components/profile/BadgeShelf";
 import { ProfileStats } from "@/components/profile/ProfileStats";
 import { ProfileActivity } from "@/components/profile/ProfileActivity";
+import { FollowButton } from "@/components/profile/FollowButton";
 import { DeleteOwnVariationButton } from "@/components/recipe/DeleteOwnVariationButton";
+import { getFollowCounts, isFollowing } from "@/lib/queries/follow";
 
 interface ProfilePageProps {
   params: Promise<{ username: string }>;
@@ -69,15 +71,27 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
   const locale = isValidLocale(localeRaw) ? localeRaw : "tr";
   void locale;
 
-  const [bookmarks, variations, collections, badges, reviews, profileStats] =
-    await Promise.all([
-      isOwner ? getUserBookmarks(user.id) : Promise.resolve([]),
-      getUserVariations(user.id, isOwner),
-      isOwner ? getUserCollections(user.id) : getPublicCollections(user.id),
-      getUserBadges(user.id),
-      getUserReviews(user.id, isOwner),
-      getUserProfileStats(user.id),
-    ]);
+  const [
+    bookmarks,
+    variations,
+    collections,
+    badges,
+    reviews,
+    profileStats,
+    followCounts,
+    viewerFollows,
+  ] = await Promise.all([
+    isOwner ? getUserBookmarks(user.id) : Promise.resolve([]),
+    getUserVariations(user.id, isOwner),
+    isOwner ? getUserCollections(user.id) : getPublicCollections(user.id),
+    getUserBadges(user.id),
+    getUserReviews(user.id, isOwner),
+    getUserProfileStats(user.id),
+    getFollowCounts(user.id),
+    session?.user?.id && !isOwner
+      ? isFollowing(session.user.id, user.id)
+      : Promise.resolve(false),
+  ]);
 
   // Owner-only fields (TS narrowing — only present when isOwner === true)
   const ownerEmail = "email" in user ? (user as { email: string }).email : null;
@@ -112,12 +126,21 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
           {user.bio && <p className="mt-2 text-sm text-text">{user.bio}</p>}
           <div className="mt-3 flex flex-wrap items-center gap-4 text-sm text-text-muted">
             <span>{t("variationsCount", { count: user._count.variations })}</span>
+            <span>{t("followersCount", { count: followCounts.followers })}</span>
+            <span>{t("followingCount", { count: followCounts.following })}</span>
             {isOwner && (
               <span>{t("bookmarksCount", { count: user._count.bookmarks })}</span>
             )}
             <span>
               {t("memberSince", { date: formatRelativeDate(user.createdAt, tDate) })}
             </span>
+            {!isOwner && (
+              <FollowButton
+                targetUserId={user.id}
+                initialFollowing={viewerFollows}
+                signedIn={!!session?.user?.id}
+              />
+            )}
             {isOwner && (
               <Link
                 href="/ayarlar"

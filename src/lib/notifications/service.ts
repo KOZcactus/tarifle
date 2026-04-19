@@ -71,6 +71,45 @@ export async function notifyVariationApproved(params: {
   });
 }
 
+/** Bir kullanıcı başka bir kullanıcıyı takip etmeye başladı. */
+export async function notifyFollowed(params: {
+  followedUserId: string;
+  followerUsername: string | null;
+  followerName: string | null;
+}): Promise<void> {
+  const displayName = params.followerName?.trim() || params.followerUsername || "Biri";
+  const link = params.followerUsername
+    ? `/profil/${params.followerUsername}`
+    : null;
+  await createNotification({
+    userId: params.followedUserId,
+    type: "FOLLOWED",
+    title: `${displayName} seni takip etmeye başladı`,
+    body: params.followerUsername
+      ? `@${params.followerUsername} profilini ziyaret edebilirsin.`
+      : null,
+    link,
+  });
+}
+
+/** Takip edilen kullanıcı yeni bir uyarlama paylaştı. */
+export async function notifyNewVariationFromFollowed(params: {
+  followerUserId: string;
+  authorUsername: string | null;
+  authorName: string | null;
+  recipeSlug: string;
+  variationTitle: string;
+}): Promise<void> {
+  const displayName = params.authorName?.trim() || params.authorUsername || "Biri";
+  await createNotification({
+    userId: params.followerUserId,
+    type: "NEW_VARIATION_FROM_FOLLOWED",
+    title: `${displayName} yeni bir uyarlama paylaştı`,
+    body: `"${params.variationTitle}"`,
+    link: `/tarif/${params.recipeSlug}`,
+  });
+}
+
 /** Admin hid or rejected a variation. */
 export async function notifyVariationHidden(params: {
   authorId: string;

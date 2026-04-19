@@ -182,6 +182,14 @@ const CHIP_META: Record<
     label: "Rozet",
     classes: "bg-secondary/20 text-secondary",
   },
+  FOLLOWED: {
+    label: "Takip",
+    classes: "bg-accent-blue/15 text-accent-blue",
+  },
+  NEW_VARIATION_FROM_FOLLOWED: {
+    label: "Uyarlama",
+    classes: "bg-rose-500/15 text-rose-600",
+  },
   SYSTEM: { label: "Sistem", classes: "bg-bg-elevated text-text-muted" },
 };
 

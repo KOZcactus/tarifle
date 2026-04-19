@@ -14,6 +14,7 @@ const NAV_LINK_KEYS = [
   { href: "/tarifler", key: "recipes" },
   { href: "/kategoriler", key: "categories" },
   { href: "/kesfet", key: "discover" },
+  { href: "/akis", key: "feed", requiresAuth: true as const },
   { href: "/menu-planlayici", key: "mealPlanner" },
   { href: "/blog", key: "blog" },
   { href: "/ai-asistan", key: "aiAssistant" },
@@ -65,6 +66,9 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
         {/* Desktop Nav */}
         <div className="hidden items-center gap-6 md:flex">
           {NAV_LINK_KEYS.map((link) => {
+            if ("requiresAuth" in link && link.requiresAuth && !session?.user?.id) {
+              return null;
+            }
             const isActive = pathname === link.href || pathname.startsWith(link.href + "/");
             return (
               <Link

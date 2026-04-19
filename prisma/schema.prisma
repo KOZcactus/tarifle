@@ -122,6 +122,8 @@ enum NotificationType {
   REVIEW_APPROVED
   REPORT_RESOLVED
   BADGE_AWARDED
+  FOLLOWED
+  NEW_VARIATION_FROM_FOLLOWED
   SYSTEM
 }
 
@@ -188,6 +190,11 @@ model User {
   mediaAssets       MediaAsset[]
   accounts          Account[]
   sessions          Session[]
+  // Takip/feed V1 — kullanıcı hem takipçisi (following ilişkisinde follower)
+  // hem de takip edilen (followers ilişkisinde following) taraf olur. İki
+  // named relation Prisma'nın tek modelde iki yönü ayırt etmesi için zorunlu.
+  followers         Follow[]           @relation("following")
+  following         Follow[]           @relation("follower")
 
   @@map("users")
 }
@@ -936,4 +943,29 @@ model RecipePhoto {
   // Admin moderation queue — yeni gelen fotoğraflar üst sırada.
   @@index([status, createdAt])
   @@map("recipe_photos")
+}
+
+// Kullanıcı takip ilişkisi. followerId → followingId'yi takip ediyor.
+// Composite unique çift takip kaydını engeller; idempotent toggle için
+// followerId + followingId beraber primary lookup key. Cascade: iki taraf
+// da silinirse follow da düşer.
+//
+// Feed query pattern: `WHERE follower.following.followingId IN
+// (followed_ids_by_viewer)` → `Variation` ile join. @@index([followingId,
+// createdAt]) `/akis` sayfası için "takip edilen X'in takipçi listesi"
+// sorgusunu hızlandırır; @@index([followerId, createdAt]) profile
+// "takip ediyor" listesi için.
+model Follow {
+  id          String   @id @default(cuid())
+  followerId  String
+  followingId String
+  createdAt   DateTime @default(now())
+
+  follower  User @relation("follower", fields: [followerId], references: [id], onDelete: Cascade)
+  following User @relation("following", fields: [followingId], references: [id], onDelete: Cascade)
+
+  @@unique([followerId, followingId])
+  @@index([followingId, createdAt])
+  @@index([followerId, createdAt])
+  @@map("follows")
 }

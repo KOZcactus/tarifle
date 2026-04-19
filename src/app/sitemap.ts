@@ -25,6 +25,7 @@ import { prisma } from "@/lib/prisma";
 import { SITE_URL } from "@/lib/constants";
 import { CUISINE_CODES, CUISINE_SLUG, type CuisineCode } from "@/lib/cuisines";
 import { DIETS } from "@/lib/diets";
+import { getAllBlogPosts } from "@/lib/blog";
 
 // Build-time prerender'ı kapatıyoruz: CI'da DATABASE_URL placeholder
 // olduğu için Prisma bağlanamaz, build düşer (`/sitemap.xml` prerender
@@ -34,7 +35,7 @@ export const dynamic = "force-dynamic";
 export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [recipes, categories, cuisineCodes, tags] = await Promise.all([
+  const [recipes, categories, cuisineCodes, tags, blogPosts] = await Promise.all([
     prisma.recipe.findMany({
       where: { status: "PUBLISHED" },
       select: { slug: true, updatedAt: true },
@@ -64,6 +65,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         _count: { select: { recipeTags: true } },
       },
     }),
+    // Blog posts — file-based content; all MDX files in content/blog/.
+    getAllBlogPosts(),
   ]);
 
   const now = new Date();
@@ -74,6 +77,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/kategoriler`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE_URL}/ai-asistan`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/kesfet`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
+    { url: `${SITE_URL}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: `${SITE_URL}/hakkimizda`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
     { url: `${SITE_URL}/iletisim`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE_URL}/yasal`, lastModified: now, changeFrequency: "monthly", priority: 0.3 },
@@ -136,12 +140,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+  // Blog yazıları — MDX frontmatter `date` → lastModified. Tarifler
+  // kadar sık güncellenmediği için weekly + priority 0.6.
+  const blogPages: MetadataRoute.Sitemap = blogPosts.map((p) => ({
+    url: `${SITE_URL}/blog/${p.slug}`,
+    lastModified: new Date(p.date),
+    changeFrequency: "weekly" as const,
+    priority: 0.6,
+  }));
+
   return [
     ...staticPages,
     ...cuisinePages,
     ...tagPages,
     ...dietPages,
     ...categoryPages,
+    ...blogPages,
     ...recipePages,
   ];
 }

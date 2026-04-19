@@ -15,6 +15,7 @@ const NAV_LINK_KEYS = [
   { href: "/kategoriler", key: "categories" },
   { href: "/kesfet", key: "discover" },
   { href: "/menu-planlayici", key: "mealPlanner" },
+  { href: "/blog", key: "blog" },
   { href: "/ai-asistan", key: "aiAssistant" },
 ] as const;
 

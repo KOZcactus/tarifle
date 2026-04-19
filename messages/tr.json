@@ -4,6 +4,7 @@
     "categories": "Kategoriler",
     "discover": "Keşfet",
     "mealPlanner": "Menü Planla",
+    "blog": "Blog",
     "aiAssistant": "AI Asistan",
     "login": "Giriş",
     "signup": "Kayıt",
@@ -350,6 +351,10 @@
     "mealPlanner": {
       "title": "Menü Planlayıcı",
       "description": "Bu haftanın 7 gün × 3 öğün menüsünü düzenle, alışveriş listesini tek tıkla oluştur."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Tarifle'den mutfak rehberleri, pişirme teknikleri ve malzeme tanıma yazıları."
     },
     "forgotPassword": {
       "title": "Şifremi Unuttum",
@@ -1243,6 +1248,22 @@
       "successAdded": "{recipeCount} tariften {addedCount} yeni malzeme eklendi, {mergedCount} tanesi mevcutla birleşti.",
       "openList": "Listeyi aç",
       "error": "Alışveriş listesi güncellenemedi."
+    }
+  },
+  "blog": {
+    "pageTitle": "Blog",
+    "subtitle": "Mutfak rehberleri, pişirme teknikleri ve malzeme tanıma — Tarifle editörlerinden uzun formatlı yazılar.",
+    "emptyTitle": "Henüz yazı yok",
+    "emptyBody": "İlk makalelerimiz yakında burada olacak.",
+    "readingMinutes": "{minutes} dk okuma",
+    "tagsHeading": "Etiketler",
+    "backToList": "Tüm yazılar",
+    "breadcrumbHome": "Ana Sayfa",
+    "breadcrumbBlog": "Blog",
+    "categories": {
+      "mutfak-rehberi": "Mutfak Rehberi",
+      "pisirme-teknikleri": "Pişirme Teknikleri",
+      "malzeme-tanima": "Malzeme Tanıma"
     }
   },
   "cookieBanner": {

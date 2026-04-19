@@ -4,6 +4,7 @@
     "categories": "Categories",
     "discover": "Discover",
     "mealPlanner": "Meal Planner",
+    "blog": "Blog",
     "aiAssistant": "AI Assistant",
     "login": "Sign In",
     "signup": "Sign Up",
@@ -350,6 +351,10 @@
     "mealPlanner": {
       "title": "Meal Planner",
       "description": "Plan this week's 7-day × 3-meal menu and generate the shopping list in one click."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Kitchen guides, cooking techniques and ingredient deep-dives from Tarifle."
     },
     "forgotPassword": {
       "title": "Forgot Password",
@@ -1243,6 +1248,22 @@
       "successAdded": "Added {addedCount} new items from {recipeCount} recipes, {mergedCount} merged with existing.",
       "openList": "Open list",
       "error": "Couldn't update the shopping list."
+    }
+  },
+  "blog": {
+    "pageTitle": "Blog",
+    "subtitle": "Kitchen guides, cooking techniques and ingredient deep-dives — long-form writing from Tarifle editors.",
+    "emptyTitle": "No posts yet",
+    "emptyBody": "Our first articles will land here soon.",
+    "readingMinutes": "{minutes} min read",
+    "tagsHeading": "Tags",
+    "backToList": "All posts",
+    "breadcrumbHome": "Home",
+    "breadcrumbBlog": "Blog",
+    "categories": {
+      "mutfak-rehberi": "Kitchen Guide",
+      "pisirme-teknikleri": "Cooking Techniques",
+      "malzeme-tanima": "Ingredient Spotlight"
     }
   },
   "cookieBanner": {

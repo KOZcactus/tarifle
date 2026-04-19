@@ -189,6 +189,7 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 - ✨ Dinamik OG Image — tarif, koleksiyon, site default (Bricolage Grotesque + twemoji, TR karakter).
 - ✨ `ShareMenu` — Web Share API (mobil native) + WhatsApp / X / kopyala fallback.
 - ✨ PWA manifest + ikon seti (32/180/192/512 + maskable) + shortcuts.
+- ✨ **Pinterest rich pin aktivasyonu** (oturum 8, `8734c47`) — root layout'a `pinterest-rich-pin` meta + opsiyonel `p:domain_verify` (env `PINTEREST_DOMAIN_VERIFY`), ShareMenu Pinterest butonu (create-pin intent URL), `/tarif/[slug]/pinterest-image?locale=tr|en` 1000×1500 portre OG route, `/blog/[slug]/opengraph-image` 1200×630 landscape + Article JSON-LD'ye explicit `image` alanı.
 
 ## Email + rozet
 

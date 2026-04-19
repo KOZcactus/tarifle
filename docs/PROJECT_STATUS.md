@@ -1,6 +1,12 @@
 # Tarifle — Proje Durumu
 
-> Son güncelleme: 19 Nisan 2026 (oturum 7 sonu, 28 commit) — **1701 tarif prod canlı**. Oturum 7 kapsamı (8 blok): Mod B batch 13+14+15+16+17 (500 tarif → 600 tarif EN+DE tam çeviri), batch 15+16+17 Mod A (1401→1701), kişiselleştirme tur 3 foryou sort, pagination redesign + counter sade, super-admin protection, admin/yorumlar browse, /kategoriler landing, legal hub /yasal (6 sayfa + cookie banner), editör rozeti, similar-recipes scale v2, **44 programatik landing** (/mutfak/24 + /etiket/15 + /diyet/5), profil public zenginleştirme, **haftalık menü planlayıcı**, RSS feed + HowTo schema, AI Asistan v2 (pantry daralt + diversify + diet filter), **blog MDX altyapısı + 3 makale**, rekabet analizi doc, **newsletter double-opt-in altyapı**, codex brief 3 clarify (Hindistan cevizi / time-inconsistency / marker karakteri). 0 regression.
+> Son güncelleme: Oturum 8 açılışı — **Pinterest rich pin aktivasyonu** (commit `8734c47`). Rekabet §8 kısa vadeli quick win. Meta `pinterest-rich-pin` + opsiyonel `p:domain_verify` env + ShareMenu Pinterest butonu + tarif 2:3 portre OG image route (`/tarif/[slug]/pinterest-image?locale=tr|en`) + blog detay landscape OG image + Article JSON-LD'ye explicit `image` alanı. 557/557 test PASS, tsc/lint clean. **Sonraki adımlar:** Newsletter haftalık cron scheduling · AI Asistan paylaşılabilir sonuç linki · Admin analytics dashboard · Batch 18 Mod A (Codex'te hazır).
+>
+> Oturum 7 sonu (28 commit) — **1701 tarif prod canlı**. 8 blok: Mod B batch 13-17 (600 tarif EN+DE), Mod A batch 15-17 (1401→1701), foryou sort, pagination redesign, super-admin protection, /admin/yorumlar, /kategoriler, legal hub /yasal, editör rozeti, similar-recipes v2, 44 programatik landing, profil zenginleştirme, **/menu-planlayici**, RSS + HowTo schema, AI Asistan v2, **blog MDX + 3 makale**, rekabet analizi doc, newsletter double-opt-in altyapı, codex brief 3 clarify.
+
+## Oturum 8 (açılış)
+
+- **Pinterest rich pin aktivasyonu (commit `8734c47`)** — Rekabet §8 quick win. Root layout'a `pinterest-rich-pin` + opsiyonel `p:domain_verify` (env `PINTEREST_DOMAIN_VERIFY` set değilse meta yayılmaz). ShareMenu'de Pinterest butonu (imageUrl optional prop, portre OG variant'ına işaret ediyor). `src/app/tarif/[slug]/pinterest-image/route.tsx` — 1000×1500 portre, locale query param, 1h/24h cache. `src/app/blog/[slug]/opengraph-image.tsx` — 1200×630 blog landscape. Article JSON-LD'ye `image` alanı. tr/en `share.pinterest` i18n key. Sonraki: Kerem pinterest.com/settings/claim → domain claim → env'e kod set.
 
 ## 19 Nisan 2026 (oturum 7 — 28 commit, büyük tur)
 

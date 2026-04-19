@@ -17,6 +17,11 @@ import { getSearchSuggestions } from "@/lib/queries/search-suggestions";
 import { getRandomRecipe } from "@/lib/queries/random-recipe";
 import { RandomRecipeBanner } from "@/components/discovery/RandomRecipeBanner";
 import { CountUp } from "@/components/ui/CountUp";
+import {
+  getSuggestedCooks,
+  getFollowingUserIds,
+} from "@/lib/queries/follow";
+import { SuggestedCooksSection } from "@/components/home/SuggestedCooksSection";
 
 const POPULAR_SEARCHES = [
   "karnıyarık",
@@ -44,6 +49,8 @@ export default async function HomePage() {
     searchSuggestions,
     randomRecipe,
     personalized,
+    suggestedCooks,
+    viewerFollowingIds,
     t,
     tNav,
   ] = await Promise.all([
@@ -57,6 +64,8 @@ export default async function HomePage() {
     userId
       ? getPersonalizedRecipes({ userId, limit: 8 })
       : Promise.resolve({ recipes: [], hasPrefs: false }),
+    getSuggestedCooks(userId, 6),
+    userId ? getFollowingUserIds(userId) : Promise.resolve<string[]>([]),
     getTranslations("home"),
     getTranslations("nav"),
   ]);
@@ -212,6 +221,16 @@ export default async function HomePage() {
           </span>
         </Link>
       </section>
+
+      {/* Önerilen Aşçılar — topluluk loop açısı. Boşsa section kendini
+          gizler (SuggestedCooksSection içinde). Anonymous kullanıcı için
+          de gözükür; follow butonu click'te /giris'e yönlendirir. */}
+      <SuggestedCooksSection
+        cooks={suggestedCooks}
+        viewerSignedIn={!!userId}
+        viewerId={userId}
+        viewerFollowingIds={new Set(viewerFollowingIds)}
+      />
 
       {/* Cuisine Discovery */}
       {cuisineStats.length >= 4 && (

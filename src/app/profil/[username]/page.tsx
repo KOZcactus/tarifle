@@ -126,8 +126,18 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
           {user.bio && <p className="mt-2 text-sm text-text">{user.bio}</p>}
           <div className="mt-3 flex flex-wrap items-center gap-4 text-sm text-text-muted">
             <span>{t("variationsCount", { count: user._count.variations })}</span>
-            <span>{t("followersCount", { count: followCounts.followers })}</span>
-            <span>{t("followingCount", { count: followCounts.following })}</span>
+            <Link
+              href={`/profil/${user.username}/takipciler`}
+              className="transition-colors hover:text-primary"
+            >
+              {t("followersCount", { count: followCounts.followers })}
+            </Link>
+            <Link
+              href={`/profil/${user.username}/takip`}
+              className="transition-colors hover:text-primary"
+            >
+              {t("followingCount", { count: followCounts.following })}
+            </Link>
             {isOwner && (
               <span>{t("bookmarksCount", { count: user._count.bookmarks })}</span>
             )}

@@ -66,6 +66,171 @@ export interface FeedVariation {
   };
 }
 
+export interface FollowListUser {
+  id: string;
+  username: string;
+  name: string | null;
+  avatarUrl: string | null;
+  bio: string | null;
+  followedAt: Date;
+  variationCount: number;
+}
+
+/**
+ * Bir kullanıcıyı takip edenler (followers) listesi. "Takipçiler" sayfası.
+ * createdAt DESC — en son takip edenler başta.
+ */
+export async function getFollowersList(
+  userId: string,
+  limit = 100,
+): Promise<FollowListUser[]> {
+  const rows = await prisma.follow.findMany({
+    where: { followingId: userId },
+    orderBy: { createdAt: "desc" },
+    take: limit,
+    select: {
+      createdAt: true,
+      follower: {
+        select: {
+          id: true,
+          username: true,
+          name: true,
+          avatarUrl: true,
+          bio: true,
+          _count: { select: { variations: true } },
+        },
+      },
+    },
+  });
+  return rows.map((r) => ({
+    id: r.follower.id,
+    username: r.follower.username,
+    name: r.follower.name,
+    avatarUrl: r.follower.avatarUrl,
+    bio: r.follower.bio,
+    followedAt: r.createdAt,
+    variationCount: r.follower._count.variations,
+  }));
+}
+
+/**
+ * Bir kullanıcının takip ettiği kullanıcılar (following) listesi.
+ * "Takip ettikleri" sayfası.
+ */
+export async function getFollowingList(
+  userId: string,
+  limit = 100,
+): Promise<FollowListUser[]> {
+  const rows = await prisma.follow.findMany({
+    where: { followerId: userId },
+    orderBy: { createdAt: "desc" },
+    take: limit,
+    select: {
+      createdAt: true,
+      following: {
+        select: {
+          id: true,
+          username: true,
+          name: true,
+          avatarUrl: true,
+          bio: true,
+          _count: { select: { variations: true } },
+        },
+      },
+    },
+  });
+  return rows.map((r) => ({
+    id: r.following.id,
+    username: r.following.username,
+    name: r.following.name,
+    avatarUrl: r.following.avatarUrl,
+    bio: r.following.bio,
+    followedAt: r.createdAt,
+    variationCount: r.following._count.variations,
+  }));
+}
+
+export interface SuggestedCook {
+  id: string;
+  username: string;
+  name: string | null;
+  avatarUrl: string | null;
+  bio: string | null;
+  followerCount: number;
+  variationCount: number;
+}
+
+/**
+ * Homepage "önerilen aşçılar" kartı için. En çok takipçisi olan + son 30
+ * günde aktif (variation paylaşmış) kullanıcıları döndürür. Suspended
+ * hesapları ve role=ADMIN/MODERATOR'ı (resmi hesap değil, tarif yazarı
+ * önerisi istiyoruz) dışlamak için ilk pass'te basit filter kullanıyoruz
+ * — ölçek büyürse dedicated materialized view'a taşırız.
+ *
+ * viewerId verilirse viewer'ın kendini veya zaten takip ettiklerini
+ * dışlar (yeni kişiler önersin).
+ */
+export async function getSuggestedCooks(
+  viewerId: string | null,
+  limit = 6,
+): Promise<SuggestedCook[]> {
+  const since = new Date();
+  since.setDate(since.getDate() - 30);
+
+  // Son 30 günde variation yazmış + takipçisi olan kullanıcıları skor
+  // sırasıyla çek. Raw SQL'e girmeden Prisma ile yaklaşık skor:
+  // _count.followers DESC, _count.variations DESC. İlk 30 aday çek,
+  // viewer filtresi uygula, limit cap.
+  const excludeIds = new Set<string>();
+  if (viewerId) {
+    excludeIds.add(viewerId);
+    const following = await prisma.follow.findMany({
+      where: { followerId: viewerId },
+      select: { followingId: true },
+    });
+    for (const f of following) excludeIds.add(f.followingId);
+  }
+
+  const candidates = await prisma.user.findMany({
+    where: {
+      suspendedAt: null,
+      deletedAt: null,
+      variations: {
+        some: {
+          status: "PUBLISHED",
+          createdAt: { gte: since },
+        },
+      },
+      ...(excludeIds.size > 0 ? { id: { notIn: [...excludeIds] } } : {}),
+    },
+    orderBy: [
+      { followers: { _count: "desc" } },
+      { variations: { _count: "desc" } },
+    ],
+    take: limit,
+    select: {
+      id: true,
+      username: true,
+      name: true,
+      avatarUrl: true,
+      bio: true,
+      _count: {
+        select: { followers: true, variations: true },
+      },
+    },
+  });
+
+  return candidates.map((c) => ({
+    id: c.id,
+    username: c.username,
+    name: c.name,
+    avatarUrl: c.avatarUrl,
+    bio: c.bio,
+    followerCount: c._count.followers,
+    variationCount: c._count.variations,
+  }));
+}
+
 export async function getFollowFeedVariations(
   viewerId: string,
   limit = 40,

@@ -48,7 +48,12 @@
     "aiBannerCta": "Dene →",
     "ctaTitle": "Kendi tarifini paylaş",
     "ctaDescription": "Üye ol, favori tariflerinin uyarlamalarını ekle ve toplulukla paylaş.",
-    "ctaButton": "Ücretsiz Üye Ol"
+    "ctaButton": "Ücretsiz Üye Ol",
+    "suggestedCooks": {
+      "heading": "👨‍🍳 Önerilen Aşçılar",
+      "subtitle": "Son 30 günde uyarlama paylaşan ve topluluğun takip ettiği kişiler.",
+      "viewAll": "Keşfet"
+    }
   },
   "auth": {
     "orDivider": "veya",
@@ -1196,6 +1201,19 @@
       "error_account-suspended": "Hesabın askıya alınmış.",
       "error_target-not-found": "Kullanıcı bulunamadı.",
       "error_unknown": "Beklenmedik hata — tekrar dene."
+    },
+    "followList": {
+      "followersPageTitle": "{username} takipçileri | Tarifle",
+      "followingPageTitle": "{username} takip ettikleri | Tarifle",
+      "followersHeading": "{name} takipçileri",
+      "followingHeading": "{name} takip ettikleri",
+      "followersEmpty": "{name} henüz kimse tarafından takip edilmiyor.",
+      "followingEmpty": "{name} henüz kimseyi takip etmiyor.",
+      "tabFollowers": "Takipçiler",
+      "tabFollowing": "Takip edilenler",
+      "backToProfile": "{name} profiline dön",
+      "variationsBadge": "{count} uyarlama",
+      "followersBadge": "{count} takipçi"
     },
     "stats": {
       "variations": "Uyarlama",

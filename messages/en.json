@@ -48,7 +48,12 @@
     "aiBannerCta": "Try it →",
     "ctaTitle": "Share your own recipe",
     "ctaDescription": "Sign up, add your take on favourite recipes, and share with the community.",
-    "ctaButton": "Sign Up Free"
+    "ctaButton": "Sign Up Free",
+    "suggestedCooks": {
+      "heading": "👨‍🍳 Suggested Cooks",
+      "subtitle": "Cooks who shared adaptations in the last 30 days and are followed by the community.",
+      "viewAll": "Browse"
+    }
   },
   "auth": {
     "orDivider": "or",
@@ -1196,6 +1201,19 @@
       "error_account-suspended": "Your account is suspended.",
       "error_target-not-found": "User not found.",
       "error_unknown": "Unexpected error — try again."
+    },
+    "followList": {
+      "followersPageTitle": "{username}'s followers | Tarifle",
+      "followingPageTitle": "{username}'s following | Tarifle",
+      "followersHeading": "{name}'s followers",
+      "followingHeading": "{name} follows",
+      "followersEmpty": "{name} has no followers yet.",
+      "followingEmpty": "{name} isn't following anyone yet.",
+      "tabFollowers": "Followers",
+      "tabFollowing": "Following",
+      "backToProfile": "Back to {name}",
+      "variationsBadge": "{count} adaptations",
+      "followersBadge": "{count} followers"
     },
     "stats": {
       "variations": "Adaptations",

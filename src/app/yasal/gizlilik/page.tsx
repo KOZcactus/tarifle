@@ -5,16 +5,22 @@ import { SITE_NAME } from "@/lib/constants";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("metadata.legal");
-  return { title: t("privacyTitle"), description: t("privacyDescription") };
+  return {
+    title: t("privacyTitle"),
+    description: t("privacyDescription"),
+    alternates: { canonical: "/yasal/gizlilik" },
+  };
 }
 
 export default function GizlilikPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
-      <h1 className="font-heading text-3xl font-bold">Gizlilik Politikası</h1>
-      <p className="mt-2 text-sm text-text-muted">Son güncelleme: 18 Nisan 2026</p>
+    <article className="max-w-3xl">
+      <header className="mb-8">
+        <h1 className="font-heading text-3xl font-bold">Gizlilik Politikası</h1>
+        <p className="mt-2 text-sm text-text-muted">Son güncelleme: 19 Nisan 2026</p>
+      </header>
 
-      <div className="mt-8 space-y-6 text-sm leading-relaxed text-text-muted">
+      <div className="space-y-6 text-sm leading-relaxed text-text-muted">
         <section>
           <h2 className="mb-2 text-lg font-semibold text-text">
             1. Bu Politika Ne Kapsar?
@@ -25,7 +31,7 @@ export default function GizlilikPage() {
             sayfada açıklar. Bu politika, KVKK kapsamındaki tüm işleme
             faaliyetleri için geçerli olup{" "}
             <Link
-              href="/kvkk"
+              href="/yasal/kvkk"
               className="text-primary underline-offset-4 hover:underline"
             >
               KVKK Aydınlatma Metni
@@ -38,7 +44,14 @@ export default function GizlilikPage() {
           <h2 className="mb-2 text-lg font-semibold text-text">2. Çerez Kullanımı</h2>
           <p>
             Platform yalnızca işlevsel çerezler kullanır; reklam veya üçüncü
-            taraf takip çerezi çalıştırılmaz.
+            taraf takip çerezi çalıştırılmaz. Detaylı bilgi için{" "}
+            <Link
+              href="/yasal/cerez-politikasi"
+              className="text-primary underline-offset-4 hover:underline"
+            >
+              Çerez Politikası
+            </Link>{" "}
+            sayfasına göz atabilirsiniz.
           </p>
           <ul className="mt-3 ml-4 list-disc space-y-1">
             <li>
@@ -64,6 +77,16 @@ export default function GizlilikPage() {
 
         <section>
           <h2 className="mb-2 text-lg font-semibold text-text">3. Veri Güvenliği</h2>
+          <p className="mb-3">
+            Detaylı teknik önlemler için{" "}
+            <Link
+              href="/yasal/guvenlik"
+              className="text-primary underline-offset-4 hover:underline"
+            >
+              Güvenlik
+            </Link>{" "}
+            sayfasına bakabilirsiniz.
+          </p>
           <ul className="ml-4 list-disc space-y-1">
             <li>Tüm trafik HTTPS (TLS 1.3) üzerinden iletilir.</li>
             <li>
@@ -217,6 +240,6 @@ export default function GizlilikPage() {
           adresine yazabilirsiniz.
         </p>
       </div>
-    </div>
+    </article>
   );
 }

@@ -8,6 +8,19 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const nextConfig: NextConfig = {
+  // 301 redirects — eski legal URL'leri yeni /yasal/* hub'ı altına yönlendir.
+  // Permanent redirect (308 ≈ 301) ile SEO otoritesi korunur, external link'ler
+  // bozulmaz. Next, `permanent: true` için 308 döner (method-preserving) —
+  // legacy 301 bekleyen crawler'lar da 308'i aynı şekilde işler.
+  redirects: async () => [
+    { source: "/kvkk", destination: "/yasal/kvkk", permanent: true },
+    {
+      source: "/kullanim-sartlari",
+      destination: "/yasal/kullanim-kosullari",
+      permanent: true,
+    },
+    { source: "/gizlilik", destination: "/yasal/gizlilik", permanent: true },
+  ],
   // bf-cache: allow browsers to cache pages for back/forward navigation.
   // NextAuth's Set-Cookie still prevents full bfcache on dynamic pages,
   // but static assets and prefetch responses benefit. BfCacheRestore

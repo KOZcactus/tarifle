@@ -5,21 +5,27 @@ import { SITE_NAME } from "@/lib/constants";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("metadata.legal");
-  return { title: t("termsTitle"), description: t("termsDescription") };
+  return {
+    title: t("termsTitle"),
+    description: t("termsDescription"),
+    alternates: { canonical: "/yasal/kullanim-kosullari" },
+  };
 }
 
-export default function KullanimSartlariPage() {
+export default function KullanimKosullariPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
-      <h1 className="font-heading text-3xl font-bold">Kullanım Şartları</h1>
-      <p className="mt-2 text-sm text-text-muted">Son güncelleme: 18 Nisan 2026</p>
+    <article className="max-w-3xl">
+      <header className="mb-8">
+        <h1 className="font-heading text-3xl font-bold">Kullanım Koşulları</h1>
+        <p className="mt-2 text-sm text-text-muted">Son güncelleme: 19 Nisan 2026</p>
+      </header>
 
-      <div className="mt-8 space-y-6 text-sm leading-relaxed text-text-muted">
+      <div className="space-y-6 text-sm leading-relaxed text-text-muted">
         <section>
           <h2 className="mb-2 text-lg font-semibold text-text">1. Kabul</h2>
           <p>
             {SITE_NAME} platformuna (&ldquo;Platform&rdquo;) erişerek veya
-            kullanarak bu kullanım şartlarını kabul etmiş sayılırsınız. Şartları
+            kullanarak bu kullanım koşullarını kabul etmiş sayılırsınız. Koşulları
             kabul etmiyorsanız platformu kullanmamanız gerekir.
           </p>
         </section>
@@ -53,7 +59,7 @@ export default function KullanimSartlariPage() {
           <p>
             Platforma yüklediğiniz tarif uyarlamaları, yorumlar, koleksiyonlar ve
             görseller &ldquo;Kullanıcı İçeriği&rdquo; olarak tanımlanır. Kullanıcı
-            İçeriği ile ilgili aşağıdaki şartları kabul edersiniz.
+            İçeriği ile ilgili aşağıdaki koşulları kabul edersiniz.
           </p>
 
           <h3 className="mb-1 mt-4 font-semibold text-text">3.1 Telif ve Lisans</h3>
@@ -169,12 +175,12 @@ export default function KullanimSartlariPage() {
             </Link>
             &rsquo;dan silebilirsiniz. Silme akışı{" "}
             <Link
-              href="/gizlilik"
+              href="/yasal/gizlilik"
               className="text-primary underline-offset-4 hover:underline"
             >
               Gizlilik Politikası
             </Link>
-            nda açıklanmıştır. Platform, kullanım şartları ihlalinde hesabınızı
+            nda açıklanmıştır. Platform, kullanım koşulları ihlalinde hesabınızı
             askıya alma veya kalıcı olarak kapatma hakkını saklı tutar. Ciddi
             ihlallerde (sağlık zararı, hukuka aykırı içerik) içerik önceden
             uyarı yapılmaksızın kaldırılabilir.
@@ -186,7 +192,7 @@ export default function KullanimSartlariPage() {
             8. Uygulanacak Hukuk ve Yetki
           </h2>
           <p>
-            Bu şartlar Türkiye Cumhuriyeti mevzuatına tabidir. Uyuşmazlıklarda
+            Bu koşullar Türkiye Cumhuriyeti mevzuatına tabidir. Uyuşmazlıklarda
             Türkiye Cumhuriyeti Mahkemeleri ve İcra Daireleri yetkilidir.
             Tüketici sıfatı taşıyan kullanıcılar için 6502 sayılı Tüketicinin
             Korunması Hakkında Kanun çerçevesinde Tüketici Hakem Heyeti ve
@@ -199,11 +205,11 @@ export default function KullanimSartlariPage() {
         <section>
           <h2 className="mb-2 text-lg font-semibold text-text">9. Değişiklikler</h2>
           <p>
-            Kullanım şartları güncellenebilir. Güncel sürüm bu sayfada yayınlanır
+            Kullanım koşulları güncellenebilir. Güncel sürüm bu sayfada yayınlanır
             ve &ldquo;Son güncelleme&rdquo; tarihi ile işaretlenir. Esaslı
             değişikliklerde kayıtlı e-posta adresinize bildirim gönderilir.
             Güncellemenin ardından Platform&rsquo;u kullanmaya devam etmeniz
-            yeni şartları kabul anlamına gelir.
+            yeni koşulları kabul anlamına gelir.
           </p>
         </section>
 
@@ -218,6 +224,6 @@ export default function KullanimSartlariPage() {
           bize ulaşabilirsiniz.
         </p>
       </div>
-    </div>
+    </article>
   );
 }

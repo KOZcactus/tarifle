@@ -5,16 +5,22 @@ import { SITE_NAME } from "@/lib/constants";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("metadata.legal");
-  return { title: t("kvkkTitle"), description: t("kvkkDescription") };
+  return {
+    title: t("kvkkTitle"),
+    description: t("kvkkDescription"),
+    alternates: { canonical: "/yasal/kvkk" },
+  };
 }
 
 export default function KVKKPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
-      <h1 className="font-heading text-3xl font-bold">KVKK Aydınlatma Metni</h1>
-      <p className="mt-2 text-sm text-text-muted">Son güncelleme: 18 Nisan 2026</p>
+    <article className="max-w-3xl">
+      <header className="mb-8">
+        <h1 className="font-heading text-3xl font-bold">KVKK Aydınlatma Metni</h1>
+        <p className="mt-2 text-sm text-text-muted">Son güncelleme: 19 Nisan 2026</p>
+      </header>
 
-      <div className="mt-8 space-y-6 text-sm leading-relaxed text-text-muted">
+      <div className="space-y-6 text-sm leading-relaxed text-text-muted">
         <section>
           <h2 className="mb-2 text-lg font-semibold text-text">1. Veri Sorumlusu</h2>
           <p>
@@ -121,7 +127,7 @@ export default function KVKKPage() {
             Kişisel verileriniz hizmet altyapısı gereği aşağıdaki üçüncü taraf
             işleyicilere aktarılabilir (detaylı liste{" "}
             <Link
-              href="/gizlilik"
+              href="/yasal/gizlilik"
               className="text-primary underline-offset-4 hover:underline"
             >
               Gizlilik Politikası
@@ -216,6 +222,6 @@ export default function KVKKPage() {
           bildirim gönderilir.
         </p>
       </div>
-    </div>
+    </article>
   );
 }

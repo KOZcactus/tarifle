@@ -11,7 +11,7 @@ export async function Footer() {
   return (
     <footer className="mt-auto border-t border-border bg-bg-card">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-3">
           {/* Brand */}
           <div>
             <Link href="/" className="font-heading text-xl font-bold text-primary">
@@ -43,9 +43,10 @@ export async function Footer() {
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Corporate — Hakkımızda + İletişim ("legal" değil, ama aynı
+              kolona topluyoruz çünkü Platform'dan sonra 2 kolon yeter). */}
           <div>
-            <h3 className="text-sm font-semibold text-text">{t("legal")}</h3>
+            <h3 className="text-sm font-semibold text-text">{t("corporate")}</h3>
             <ul className="mt-3 space-y-2">
               <li>
                 <Link
@@ -63,38 +64,24 @@ export async function Footer() {
                   {t("linkContact")}
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/kvkk"
-                  className="text-sm text-text-muted transition-colors hover:text-text"
-                >
-                  {t("linkKvkk")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/kullanim-sartlari"
-                  className="text-sm text-text-muted transition-colors hover:text-text"
-                >
-                  {t("linkTerms")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/gizlilik"
-                  className="text-sm text-text-muted transition-colors hover:text-text"
-                >
-                  {t("linkPrivacy")}
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
 
+        {/* Legal — tek hub link + mini copyright satırı. "Ulu orta" olmasın
+            ama bulunabilir kalsın (Kerem'in talebi, Trendyol pattern'i). */}
         <div className="mt-8 border-t border-border pt-6">
-          <p className="text-center text-xs text-text-muted">
-            {t("copyright", { year: new Date().getFullYear(), site: SITE_NAME })}
-          </p>
+          <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-text-muted">
+            <p>
+              {t("copyright", { year: new Date().getFullYear(), site: SITE_NAME })}
+            </p>
+            <Link
+              href="/yasal"
+              className="transition-colors hover:text-text"
+            >
+              {t("linkLegalHub")}
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

@@ -370,7 +370,13 @@
       "kvkkTitle": "KVKK Aydınlatma Metni",
       "kvkkDescription": "Kişisel Verilerin Korunması Kanunu kapsamında aydınlatma metni.",
       "termsTitle": "Kullanım Şartları",
-      "termsDescription": "Tarifle platformunun kullanım şartları."
+      "termsDescription": "Tarifle platformunun kullanım şartları.",
+      "hubTitle": "Yasal Bilgilendirme",
+      "hubDescription": "Gizlilik, güvenlik, KVKK, çerez politikası ve kullanım koşulları tek sayfada.",
+      "cookiesTitle": "Çerez Politikası",
+      "cookiesDescription": "Tarifle'nin çerezleri nasıl kullandığı, hangi amaçla ve nasıl kontrol edilebileceği.",
+      "securityTitle": "Güvenlik",
+      "securityDescription": "Hesap güvenliği için senin yapabileceklerin ve bizim aldığımız önlemler."
     }
   },
   "email": {
@@ -1080,12 +1086,14 @@
     "brandTagline": "Yemek, içecek ve kokteyl tariflerini sade ve topluluk katkısına açık şekilde sunan modern tarif platformu.",
     "platform": "Platform",
     "legal": "Yasal",
+    "corporate": "Kurumsal",
     "contact": "İletişim",
     "linkAbout": "Hakkımızda",
     "linkContact": "Bize ulaşın",
     "linkKvkk": "KVKK",
     "linkTerms": "Kullanım Şartları",
     "linkPrivacy": "Gizlilik Politikası",
+    "linkLegalHub": "Yasal Bilgilendirme",
     "copyright": "© {year} {site}. Tüm hakları saklıdır."
   },
   "profile": {
@@ -1141,6 +1149,90 @@
     "daysAgo": "{n} gün önce",
     "monthsAgo": "{n} ay önce",
     "yearsAgo": "{n} yıl önce"
+  },
+  "legalHub": {
+    "pageTitle": "Yasal Bilgilendirme",
+    "subtitle": "Tarifle'nin gizlilik, güvenlik ve kullanım politikaları. Aşağıdan konu seç ya da doğrudan ilgili sayfaya geç.",
+    "navHeading": "Yasal sayfalar",
+    "lastUpdatePrefix": "Son güncelleme:",
+    "cards": {
+      "kvkk": {
+        "title": "KVKK Aydınlatma Metni",
+        "description": "Kişisel Verilerin Korunması Kanunu kapsamında veri işleme aydınlatması."
+      },
+      "kullanim": {
+        "title": "Kullanım Koşulları",
+        "description": "Platform kullanımı, üyelik ve içerik kuralları."
+      },
+      "gizlilik": {
+        "title": "Gizlilik Politikası",
+        "description": "Hangi verileri topluyoruz, nasıl saklıyoruz, kimlerle paylaşıyoruz."
+      },
+      "cerez": {
+        "title": "Çerez Politikası",
+        "description": "Kullandığımız çerez türleri, amaçları ve tercih yönetimi."
+      },
+      "guvenlik": {
+        "title": "Güvenlik",
+        "description": "Hesap güvenliği için senin yapabileceklerin + bizim aldığımız önlemler."
+      }
+    }
+  },
+  "legalSecurity": {
+    "pageTitle": "Güvenlik",
+    "subtitle": "Tarifle hesabının güvende kalması için iki taraflı bir iş — sen kullanıcı olarak bazı adımları at, biz altyapıda gerekli önlemleri al.",
+    "youSection": "Senin yapabileceklerin",
+    "accountHeading": "Hesap güvenliği",
+    "accountStrongPassword": "Güçlü ve benzersiz bir şifre seç: en az 10 karakter, büyük/küçük harf + rakam + sembol. Başka sitelerde kullandığın şifreyi burada tekrar kullanma.",
+    "accountEmailVerify": "Kayıt sonrası e-posta doğrulama bağlantısına tıkla — doğrulanmamış hesaplar yorum yazma ve uyarlama ekleme yetkisine sahip değil.",
+    "accountLogout": "Ortak bilgisayar kullanıyorsan işin bitince \"Çıkış yap\" butonuna bas; oturumu açık bırakma.",
+    "accountNoShare": "Kullanıcı adın + şifren sana özel. Kimseyle, Tarifle ekibiyle bile paylaşma — seni hiçbir zaman şifrenle soracak bir iletişim kurmayız.",
+    "deviceHeading": "Cihaz güvenliği",
+    "deviceDevice": "Tarifle'ye girdiğin cihazda güncel bir işletim sistemi + tarayıcı kullan.",
+    "devicePhishing": "\"Hesabın askıya alındı, tıkla\" tarzı şüpheli e-postalardaki bağlantılara dikkat — Tarifle'den gelen maillerde gönderen adresi @tarifle.app ya da Resend alan adıyla biter.",
+    "deviceAntivirus": "Bilinmeyen kaynaklardan tarayıcı uzantısı yükleme; bu uzantılar oturum çerezlerine erişebilir.",
+    "usSection": "Bizim yaptıklarımız",
+    "httpsHeading": "Tümüyle HTTPS + HSTS",
+    "httpsBody": "tarifle.app domain'i HTTPS üzerinden yayında; HSTS header'ı ile tüm trafik şifreli. HTTP üzerinden gelen istekler otomatik HTTPS'e yönlendirilir.",
+    "passwordHashHeading": "Şifreler bcrypt ile hash'li",
+    "passwordHashBody": "Şifren asla düz metin saklanmaz. bcrypt cost factor 10 ile tek-yönlü hash'lenir — veritabanı sızsa bile ham şifreye erişim olmaz.",
+    "emailVerifyHeading": "E-posta doğrulama + şifre sıfırlama",
+    "emailVerifyBody": "Kayıt sonrası e-posta doğrulama zorunlu; unutulan şifre için zaman-sınırlı (1 saat) tek kullanımlık bağlantı gönderilir.",
+    "rateLimitHeading": "Oran sınırlama (rate limit)",
+    "rateLimitBody": "Giriş denemeleri, şifre sıfırlama istekleri ve yorum gönderimleri IP + user bazında sınırlanır. Kaba kuvvet denemeleri Upstash Redis sliding-window algoritması ile bloklanır.",
+    "moderationHeading": "İçerik moderasyonu ön kontrol",
+    "moderationBody": "Yorum ve uyarlama gönderimleri otomatik preflight filtresinden geçer (blacklist kelime, URL, caps-lock spam, tekrar kalıbı). Şüpheli içerik moderasyon kuyruğuna düşer, admin onayı olmadan yayınlanmaz.",
+    "infraHeading": "Altyapı seviyesinde koruma",
+    "infraBody": "Cloudflare DNS + bot koruma, Vercel Edge firewall, Neon PostgreSQL SSL bağlantı zorunluluğu. Sentry üzerinden hata izleme PII filtresiyle (kullanıcı verisi kaybetmeden).",
+    "backupHeading": "Yedekleme + kurtarma",
+    "backupBody": "Neon otomatik point-in-time recovery: son 7 gün içinde herhangi bir ana geri dönüş mümkün. Kritik veri kaybı senaryosunda prod ve dev branch ayrık — dev'de test edilmeden prod'a yazılamaz.",
+    "reportHeading": "Güvenlik açığı bildirimi",
+    "reportBody": "Bir güvenlik açığı fark ettin mi? koz.devs@gmail.com adresine konu satırına \"Security\" yazarak ilet — yanıt süresi 48 saat. Bildirdiğin için teşekkür ederiz; sorumlu açıklama (responsible disclosure) tercih ediyoruz."
+  },
+  "legalCookies": {
+    "pageTitle": "Çerez Politikası",
+    "subtitle": "Tarifle işlevsellik için minimum seviyede çerez kullanır. İzleme/reklam çerezi yoktur.",
+    "introHeading": "Çerez nedir?",
+    "introBody": "Çerezler (cookie), ziyaret ettiğin sitenin tarayıcına gönderdiği küçük metin dosyalarıdır. Kullanıcı oturumu, tercihler ve bazı güvenlik kontrolleri için yaygın olarak kullanılır.",
+    "typesHeading": "Tarifle'nin kullandığı çerezler",
+    "essentialHeading": "Zorunlu çerezler",
+    "essentialBody": "Sitenin çalışması için gerekli, kapatılamaz.",
+    "essentialSession": "Giriş yapmış kullanıcı oturumu (HttpOnly + Secure + SameSite=Lax). Çıkış yapınca silinir.",
+    "essentialCsrf": "Form işlemlerinde CSRF koruma. Oturum süresince geçerli.",
+    "essentialLocale": "Seçtiğin dil (TR/EN). 1 yıl geçerli, dil değiştirince güncellenir.",
+    "essentialTheme": "Açık/koyu tema tercihi. 1 yıl geçerli.",
+    "controlImpactLabel": "Etkisi:",
+    "functionalHeading": "İşlevsel çerezler",
+    "functionalBody": "Kullanıcı deneyimini iyileştiren, kapalıyken de site çalışır ama bazı tercihler hatırlanmaz.",
+    "functionalPrefsHint": "Yaş onayı hatırlama (alkollü tariflere erişim), dismiss edilen duyuru ID'leri — localStorage, çerez değil (daha uzun ömürlü, cihaza özel).",
+    "noTrackingHeading": "Kullanmadıklarımız",
+    "noTrackingBody": "Google Analytics, Facebook Pixel, reklam ağı çerezleri, davranışsal izleme veya third-party fingerprinting — hiçbiri yok. Sentry (hata izleme) çerez kullanmaz, sadece bir session ID header'ı ile sunucu-taraflı korelasyon yapar.",
+    "controlHeading": "Çerez tercihlerini nasıl kontrol edersin?",
+    "controlBrowser": "Tarayıcı ayarlarından tüm çerezleri silmek/engellemek mümkün: Chrome, Firefox, Safari, Edge için \"Ayarlar → Gizlilik → Çerezler\" yolu ortak.",
+    "controlDelete": "\"Hesabı sil\" işlemini yaparsan oturum çerezi anında iptal edilir, hesap + uyarlama + yorumların 90 gün içinde geri dönüşsüz silinir.",
+    "controlImpact": "Zorunlu çerezleri bloke edersen giriş yapamazsın — sepete ekleme veya oturum tutma imkansız olur.",
+    "updateHeading": "Bu politika değişirse",
+    "updateBody": "Çerez politikası değişirse bu sayfa güncellenir + üst kısımda \"Son güncelleme\" tarihi yansıtılır. Önemli değişiklikler için kayıtlı e-posta adresine bildirim gönderilir."
   },
   "categoriesLanding": {
     "pageTitle": "Kategoriler",

@@ -370,7 +370,13 @@
       "kvkkTitle": "KVKK Privacy Notice",
       "kvkkDescription": "KVKK (Turkish Data Protection Law) privacy notice.",
       "termsTitle": "Terms of Use",
-      "termsDescription": "Tarifle platform terms of use."
+      "termsDescription": "Tarifle platform terms of use.",
+      "hubTitle": "Legal Information",
+      "hubDescription": "Privacy, security, KVKK, cookies and terms — all in one hub.",
+      "cookiesTitle": "Cookie Policy",
+      "cookiesDescription": "How Tarifle uses cookies, for what purpose, and how you can control them.",
+      "securityTitle": "Security",
+      "securityDescription": "What you can do to protect your account and the measures we take on our side."
     }
   },
   "email": {
@@ -1080,12 +1086,14 @@
     "brandTagline": "A modern recipe platform serving clean food, drink, and cocktail recipes with community contributions.",
     "platform": "Platform",
     "legal": "Legal",
+    "corporate": "Company",
     "contact": "Contact",
     "linkAbout": "About",
     "linkContact": "Contact us",
     "linkKvkk": "KVKK (Data Protection)",
     "linkTerms": "Terms of Use",
     "linkPrivacy": "Privacy Policy",
+    "linkLegalHub": "Legal Information",
     "copyright": "© {year} {site}. All rights reserved."
   },
   "profile": {
@@ -1141,6 +1149,90 @@
     "daysAgo": "{n} days ago",
     "monthsAgo": "{n} months ago",
     "yearsAgo": "{n} years ago"
+  },
+  "legalHub": {
+    "pageTitle": "Legal Information",
+    "subtitle": "Tarifle's privacy, security and usage policies. Pick a topic below or jump straight to the relevant page.",
+    "navHeading": "Legal pages",
+    "lastUpdatePrefix": "Last update:",
+    "cards": {
+      "kvkk": {
+        "title": "KVKK Privacy Notice",
+        "description": "Privacy notice under Turkish Data Protection Law."
+      },
+      "kullanim": {
+        "title": "Terms of Use",
+        "description": "Platform usage, membership and content rules."
+      },
+      "gizlilik": {
+        "title": "Privacy Policy",
+        "description": "What data we collect, how we store it, who we share it with."
+      },
+      "cerez": {
+        "title": "Cookie Policy",
+        "description": "Cookie types we use, their purpose, and how to manage them."
+      },
+      "guvenlik": {
+        "title": "Security",
+        "description": "What you can do to protect your account + measures we take."
+      }
+    }
+  },
+  "legalSecurity": {
+    "pageTitle": "Security",
+    "subtitle": "Keeping your Tarifle account safe is a two-sided effort — you handle a few steps as a user, we handle the infrastructure side.",
+    "youSection": "What you can do",
+    "accountHeading": "Account security",
+    "accountStrongPassword": "Choose a strong, unique password: at least 10 characters, mixing upper/lowercase + numbers + symbols. Don't reuse passwords from other sites here.",
+    "accountEmailVerify": "After signup, click the email verification link — unverified accounts cannot post reviews or share adaptations.",
+    "accountLogout": "If you're on a shared computer, click \"Log out\" when you're done; don't leave the session open.",
+    "accountNoShare": "Your username + password are yours alone. Don't share them with anyone, not even the Tarifle team — we will never contact you asking for your password.",
+    "deviceHeading": "Device security",
+    "deviceDevice": "Keep the OS + browser up to date on the device you use to access Tarifle.",
+    "devicePhishing": "Watch out for suspicious emails like \"your account was suspended, click here\" — real emails from Tarifle always come from @tarifle.app or our Resend sender domain.",
+    "deviceAntivirus": "Don't install browser extensions from unknown sources; they can read your session cookies.",
+    "usSection": "What we do",
+    "httpsHeading": "HTTPS + HSTS everywhere",
+    "httpsBody": "tarifle.app is served over HTTPS with the HSTS header — all traffic is encrypted. Any HTTP request is auto-redirected to HTTPS.",
+    "passwordHashHeading": "Passwords hashed with bcrypt",
+    "passwordHashBody": "Your password is never stored in plaintext. bcrypt with cost factor 10 is used for one-way hashing — even if the database leaks, the raw password cannot be recovered.",
+    "emailVerifyHeading": "Email verification + password reset",
+    "emailVerifyBody": "Email verification is required after signup; forgotten passwords are reset via a time-limited (1 hour), single-use link.",
+    "rateLimitHeading": "Rate limiting",
+    "rateLimitBody": "Login attempts, password reset requests, and review submissions are rate-limited per IP + user. Brute-force attempts are blocked by an Upstash Redis sliding-window algorithm.",
+    "moderationHeading": "Content moderation preflight",
+    "moderationBody": "Review and adaptation submissions go through an automatic preflight filter (blacklist keywords, URLs, all-caps spam, repetition patterns). Suspicious content lands in the moderation queue and cannot be published without admin approval.",
+    "infraHeading": "Infrastructure-level protection",
+    "infraBody": "Cloudflare DNS + bot protection, Vercel Edge firewall, Neon PostgreSQL enforcing SSL connections. Error tracking via Sentry with a PII filter (user data stays private).",
+    "backupHeading": "Backup + recovery",
+    "backupBody": "Neon offers automatic point-in-time recovery — any moment in the last 7 days can be restored. For critical data loss, prod and dev branches are isolated — nothing reaches prod without dev testing.",
+    "reportHeading": "Reporting a vulnerability",
+    "reportBody": "Spotted a security issue? Email koz.devs@gmail.com with subject \"Security\" — response time 48 hours. Thanks for reporting; we prefer responsible disclosure."
+  },
+  "legalCookies": {
+    "pageTitle": "Cookie Policy",
+    "subtitle": "Tarifle uses cookies at the minimum level needed for functionality. No tracking or advertising cookies.",
+    "introHeading": "What is a cookie?",
+    "introBody": "Cookies are small text files a website sends to your browser. They're commonly used for user sessions, preferences, and some security checks.",
+    "typesHeading": "Cookies Tarifle uses",
+    "essentialHeading": "Essential cookies",
+    "essentialBody": "Required for the site to work — cannot be disabled.",
+    "essentialSession": "Logged-in user session (HttpOnly + Secure + SameSite=Lax). Cleared on logout.",
+    "essentialCsrf": "CSRF protection on form actions. Valid for the session.",
+    "essentialLocale": "Your language choice (TR/EN). 1 year, updated when you switch languages.",
+    "essentialTheme": "Light/dark theme preference. 1 year.",
+    "controlImpactLabel": "Impact:",
+    "functionalHeading": "Functional cookies",
+    "functionalBody": "These improve the experience; the site still works if they're disabled but some preferences won't persist.",
+    "functionalPrefsHint": "Age confirmation (for alcoholic drink recipes), dismissed announcement IDs — stored in localStorage, not cookies (longer-lived, device-specific).",
+    "noTrackingHeading": "What we don't use",
+    "noTrackingBody": "No Google Analytics, Facebook Pixel, ad-network cookies, behavioral tracking or third-party fingerprinting. Sentry (error tracking) doesn't use cookies — only a server-side session ID header for correlation.",
+    "controlHeading": "How to manage cookie preferences",
+    "controlBrowser": "You can clear or block cookies via browser settings: \"Settings → Privacy → Cookies\" works for Chrome, Firefox, Safari and Edge.",
+    "controlDelete": "If you trigger \"Delete account\", the session cookie is invalidated immediately and your account + adaptations + reviews are permanently removed within 90 days.",
+    "controlImpact": "If you block essential cookies you cannot log in — session persistence becomes impossible.",
+    "updateHeading": "If this policy changes",
+    "updateBody": "If the cookie policy changes this page is updated and the \"Last update\" date at the top reflects it. For material changes, a notification is sent to your registered email address."
   },
   "categoriesLanding": {
     "pageTitle": "Categories",

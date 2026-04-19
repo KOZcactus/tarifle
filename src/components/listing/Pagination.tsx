@@ -104,15 +104,15 @@ export function Pagination({
   const isLastPage = currentPage >= totalPages;
 
   // Counter — only shown when caller supplies totalItems + pageSize.
-  // Layout: "<range> gösteriliyor · toplam N tarif" (TR) / "Showing X–Y ·
-  // N recipes total" (EN). First half emphasised, total half muted.
-  let showingCount: string | null = null;
-  let totalCount: string | null = null;
+  // Kompakt tek satır: "13–24/1401 gösteriliyor" (TR) / "Showing 13–24/1401"
+  // (EN). Önceki iki-parçalı layout (X–Y gösteriliyor · toplam N tarif) user
+  // geri bildirimiyle sadeleştirildi — slash ile range+total birleşti, tek
+  // cümle daha az gürültülü.
+  let rangeCounter: string | null = null;
   if (typeof totalItems === "number" && typeof pageSize === "number" && totalItems > 0) {
     const from = (currentPage - 1) * pageSize + 1;
     const to = Math.min(currentPage * pageSize, totalItems);
-    showingCount = t("pagination.showingCount", { from, to });
-    totalCount = t("pagination.totalCount", { total: totalItems });
+    rangeCounter = t("pagination.rangeCounter", { from, to, total: totalItems });
   }
 
   // Shared base classes for every clickable nav element. Concrete button
@@ -123,12 +123,8 @@ export function Pagination({
 
   return (
     <div className="mt-12 flex flex-col items-center gap-4">
-      {showingCount && totalCount && (
-        <p className="flex flex-wrap items-baseline justify-center gap-x-2 text-sm tabular-nums text-text-muted">
-          <span className="font-medium text-text">{showingCount}</span>
-          <span aria-hidden="true" className="text-text-muted/50">·</span>
-          <span>{totalCount}</span>
-        </p>
+      {rangeCounter && (
+        <p className="text-sm tabular-nums text-text-muted">{rangeCounter}</p>
       )}
       <nav
         className="flex flex-wrap items-center justify-center gap-1"

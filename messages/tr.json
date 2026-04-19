@@ -1152,36 +1152,36 @@
   },
   "legalHub": {
     "pageTitle": "Yasal Bilgilendirme",
-    "subtitle": "Tarifle'nin gizlilik, güvenlik ve kullanım politikaları. Aşağıdan konu seç ya da doğrudan ilgili sayfaya geç.",
+    "subtitle": "Tarifle'nin nasıl çalıştığına dair şeffaf cevaplar — yalın dilde, gereksiz hukuk jargonu olmadan. Aşağıdan başlık seç.",
     "navHeading": "Yasal sayfalar",
     "lastUpdatePrefix": "Son güncelleme:",
     "cards": {
       "kvkk": {
         "title": "KVKK Aydınlatma Metni",
-        "description": "Kişisel Verilerin Korunması Kanunu kapsamında veri işleme aydınlatması."
+        "description": "Hangi verini işliyoruz, neden, hangi hukuki sebeple — 6698 sayılı Kanun çerçevesinde."
       },
       "kullanim": {
         "title": "Kullanım Koşulları",
-        "description": "Platform kullanımı, üyelik ve içerik kuralları."
+        "description": "Üyelik, kullanıcı içeriği, alerjen bilgisi ve sorumluluk sınırları."
       },
       "gizlilik": {
         "title": "Gizlilik Politikası",
-        "description": "Hangi verileri topluyoruz, nasıl saklıyoruz, kimlerle paylaşıyoruz."
+        "description": "Hangi altyapı sağlayıcıları ile çalışıyoruz, veriyi nasıl saklıyoruz, silme ne zaman biter."
       },
       "cerez": {
         "title": "Çerez Politikası",
-        "description": "Kullandığımız çerez türleri, amaçları ve tercih yönetimi."
+        "description": "Sadece 4 zorunlu çerez. Reklam, analytics veya fingerprinting yok — neden yok, burada."
       },
       "guvenlik": {
         "title": "Güvenlik",
-        "description": "Hesap güvenliği için senin yapabileceklerin + bizim aldığımız önlemler."
+        "description": "Hesabını güvende tutmak için sende olanlar + altyapıda bizde olanlar."
       }
     }
   },
   "legalSecurity": {
     "pageTitle": "Güvenlik",
-    "subtitle": "Tarifle hesabının güvende kalması için iki taraflı bir iş — sen kullanıcı olarak bazı adımları at, biz altyapıda gerekli önlemleri al.",
-    "youSection": "Senin yapabileceklerin",
+    "subtitle": "Hesap güvenliği iki taraflı: sen birkaç alışkanlığı benimsersin, biz altyapıda gerekli sertleştirmeyi yaparız. Aşağıda iki taraf da açıkça listeli.",
+    "youSection": "Sende olanlar",
     "accountHeading": "Hesap güvenliği",
     "accountStrongPassword": "Güçlü ve benzersiz bir şifre seç: en az 10 karakter, büyük/küçük harf + rakam + sembol. Başka sitelerde kullandığın şifreyi burada tekrar kullanma.",
     "accountEmailVerify": "Kayıt sonrası e-posta doğrulama bağlantısına tıkla — doğrulanmamış hesaplar yorum yazma ve uyarlama ekleme yetkisine sahip değil.",
@@ -1191,7 +1191,7 @@
     "deviceDevice": "Tarifle'ye girdiğin cihazda güncel bir işletim sistemi + tarayıcı kullan.",
     "devicePhishing": "\"Hesabın askıya alındı, tıkla\" tarzı şüpheli e-postalardaki bağlantılara dikkat — Tarifle'den gelen maillerde gönderen adresi @tarifle.app ya da Resend alan adıyla biter.",
     "deviceAntivirus": "Bilinmeyen kaynaklardan tarayıcı uzantısı yükleme; bu uzantılar oturum çerezlerine erişebilir.",
-    "usSection": "Bizim yaptıklarımız",
+    "usSection": "Bizde olanlar",
     "httpsHeading": "Tümüyle HTTPS + HSTS",
     "httpsBody": "tarifle.app domain'i HTTPS üzerinden yayında; HSTS header'ı ile tüm trafik şifreli. HTTP üzerinden gelen istekler otomatik HTTPS'e yönlendirilir.",
     "passwordHashHeading": "Şifreler bcrypt ile hash'li",
@@ -1225,8 +1225,8 @@
     "functionalHeading": "İşlevsel çerezler",
     "functionalBody": "Kullanıcı deneyimini iyileştiren, kapalıyken de site çalışır ama bazı tercihler hatırlanmaz.",
     "functionalPrefsHint": "Yaş onayı hatırlama (alkollü tariflere erişim), dismiss edilen duyuru ID'leri — localStorage, çerez değil (daha uzun ömürlü, cihaza özel).",
-    "noTrackingHeading": "Kullanmadıklarımız",
-    "noTrackingBody": "Google Analytics, Facebook Pixel, reklam ağı çerezleri, davranışsal izleme veya third-party fingerprinting — hiçbiri yok. Sentry (hata izleme) çerez kullanmaz, sadece bir session ID header'ı ile sunucu-taraflı korelasyon yapar.",
+    "noTrackingHeading": "Bilerek kullanmadıklarımız",
+    "noTrackingBody": "Tarifle, Google Analytics, Facebook Pixel, reklam ağı çerezleri, davranışsal izleme veya third-party fingerprinting KULLANMIYOR. Bu bir \"unuttuk\" değil, bilinçli bir tercih — tarif platformu işlevini ölçmek için bu araçlara ihtiyaç yok, sen de kendi verinle reklam hedefi olmayı hak etmiyorsun. Sentry (hata izleme) de çerez kullanmaz; sadece bir session ID header'ı ile sunucu tarafında korelasyon yapar, tarayıcına hiçbir şey düşmez.",
     "controlHeading": "Çerez tercihlerini nasıl kontrol edersin?",
     "controlBrowser": "Tarayıcı ayarlarından tüm çerezleri silmek/engellemek mümkün: Chrome, Firefox, Safari, Edge için \"Ayarlar → Gizlilik → Çerezler\" yolu ortak.",
     "controlDelete": "\"Hesabı sil\" işlemini yaparsan oturum çerezi anında iptal edilir, hesap + uyarlama + yorumların 90 gün içinde geri dönüşsüz silinir.",

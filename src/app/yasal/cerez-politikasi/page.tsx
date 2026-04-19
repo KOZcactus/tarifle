@@ -77,11 +77,16 @@ export default async function CerezPolitikasiPage() {
           </p>
         </section>
 
-        <section>
-          <h2 className="mb-2 text-lg font-semibold text-text">
+        {/* Privacy duruşu bölümü — "Kullanmadıklarımız" bir özellik listesi
+            değil, Tarifle'nin tracking-yok prensibinin manifestosu. Görsel
+            olarak diğer section'lardan ayrılsın diye accent-green border +
+            privacy icon. */}
+        <section className="rounded-xl border border-accent-green/30 bg-accent-green/5 p-5">
+          <h2 className="mb-2 flex items-center gap-2 text-lg font-semibold text-text">
+            <span aria-hidden="true">🕵️</span>
             {t("noTrackingHeading")}
           </h2>
-          <p>{t("noTrackingBody")}</p>
+          <p className="leading-relaxed text-text">{t("noTrackingBody")}</p>
         </section>
 
         <section>

@@ -1152,36 +1152,36 @@
   },
   "legalHub": {
     "pageTitle": "Legal Information",
-    "subtitle": "Tarifle's privacy, security and usage policies. Pick a topic below or jump straight to the relevant page.",
+    "subtitle": "Transparent answers about how Tarifle works — in plain language, without the legalese. Pick a topic below.",
     "navHeading": "Legal pages",
     "lastUpdatePrefix": "Last update:",
     "cards": {
       "kvkk": {
         "title": "KVKK Privacy Notice",
-        "description": "Privacy notice under Turkish Data Protection Law."
+        "description": "What data we process, why, and under which legal basis — Turkish Data Protection Law (6698)."
       },
       "kullanim": {
         "title": "Terms of Use",
-        "description": "Platform usage, membership and content rules."
+        "description": "Membership, user content, allergen info and the limits of our liability."
       },
       "gizlilik": {
         "title": "Privacy Policy",
-        "description": "What data we collect, how we store it, who we share it with."
+        "description": "Which infrastructure partners we rely on, how long we keep data, when deletion really ends."
       },
       "cerez": {
         "title": "Cookie Policy",
-        "description": "Cookie types we use, their purpose, and how to manage them."
+        "description": "Just 4 essential cookies. No ads, no analytics, no fingerprinting — here's why."
       },
       "guvenlik": {
         "title": "Security",
-        "description": "What you can do to protect your account + measures we take."
+        "description": "What you do to keep your account safe + what we harden on our side."
       }
     }
   },
   "legalSecurity": {
     "pageTitle": "Security",
-    "subtitle": "Keeping your Tarifle account safe is a two-sided effort — you handle a few steps as a user, we handle the infrastructure side.",
-    "youSection": "What you can do",
+    "subtitle": "Account safety is two-sided: you pick up a few habits, we harden the infrastructure side. Both lists are below, explicit.",
+    "youSection": "On your side",
     "accountHeading": "Account security",
     "accountStrongPassword": "Choose a strong, unique password: at least 10 characters, mixing upper/lowercase + numbers + symbols. Don't reuse passwords from other sites here.",
     "accountEmailVerify": "After signup, click the email verification link — unverified accounts cannot post reviews or share adaptations.",
@@ -1191,7 +1191,7 @@
     "deviceDevice": "Keep the OS + browser up to date on the device you use to access Tarifle.",
     "devicePhishing": "Watch out for suspicious emails like \"your account was suspended, click here\" — real emails from Tarifle always come from @tarifle.app or our Resend sender domain.",
     "deviceAntivirus": "Don't install browser extensions from unknown sources; they can read your session cookies.",
-    "usSection": "What we do",
+    "usSection": "On our side",
     "httpsHeading": "HTTPS + HSTS everywhere",
     "httpsBody": "tarifle.app is served over HTTPS with the HSTS header — all traffic is encrypted. Any HTTP request is auto-redirected to HTTPS.",
     "passwordHashHeading": "Passwords hashed with bcrypt",
@@ -1225,8 +1225,8 @@
     "functionalHeading": "Functional cookies",
     "functionalBody": "These improve the experience; the site still works if they're disabled but some preferences won't persist.",
     "functionalPrefsHint": "Age confirmation (for alcoholic drink recipes), dismissed announcement IDs — stored in localStorage, not cookies (longer-lived, device-specific).",
-    "noTrackingHeading": "What we don't use",
-    "noTrackingBody": "No Google Analytics, Facebook Pixel, ad-network cookies, behavioral tracking or third-party fingerprinting. Sentry (error tracking) doesn't use cookies — only a server-side session ID header for correlation.",
+    "noTrackingHeading": "What we deliberately don't use",
+    "noTrackingBody": "Tarifle does NOT use Google Analytics, Facebook Pixel, ad-network cookies, behavioral tracking or third-party fingerprinting. This isn't an oversight — it's a deliberate choice. Running a recipe platform doesn't require these tools, and you don't deserve to become an ad-targeting data point just because you look up a stew. Sentry (error tracking) also doesn't use cookies — it correlates server-side via a session ID header only, nothing lands in your browser.",
     "controlHeading": "How to manage cookie preferences",
     "controlBrowser": "You can clear or block cookies via browser settings: \"Settings → Privacy → Cookies\" works for Chrome, Firefox, Safari and Edge.",
     "controlDelete": "If you trigger \"Delete account\", the session cookie is invalidated immediately and your account + adaptations + reviews are permanently removed within 90 days.",

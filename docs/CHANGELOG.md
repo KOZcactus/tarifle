@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: Oturum 8 — **1920 tarif** prod canlı (batch 18 + batch 19 + drift-fix), Pinterest rich pin + AI Asistan paylaşım linki shipped. Detaylı kronolojik akış için `docs/PROJECT_STATUS.md`.
+> Son güncelleme: Oturum 8 — **1920 tarif** prod canlı, Pinterest rich pin + AI Asistan paylaşım linki + newsletter haftalık cron endpoint shipped. Rekabet §8 quick win 5/6. Detaylı kronolojik akış için `docs/PROJECT_STATUS.md`.
 
 ## İşaretler
 
@@ -196,6 +196,8 @@ Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili 
 
 - ✨ E-posta doğrulama — `EmailProvider` abstraction (Resend prod + Console dev), 24h TTL token, `/dogrula/[token]`, `VerifyEmailBanner`.
 - ✨ Rozet sistemi — 4 enum (EMAIL_VERIFIED / FIRST_VARIATION / POPULAR_VARIATION / RECIPE_COLLECTOR), profilde `BadgeShelf`.
+- ✨ **Newsletter double-opt-in altyapısı** (oturum 7) — `NewsletterSubscription` schema (CONFIRMING/ACTIVE/UNSUBSCRIBED/SUSPENDED + confirmToken 24h TTL + lifetime unsubscribeToken), `/api/newsletter/{confirm,unsubscribe}` GET route'ları, footer + inline `NewsletterForm` variants, Resend onay maili.
+- ✨ **Newsletter haftalık cron endpoint** (oturum 8, `e80f9ae`) — `/api/cron/newsletter` Bearer secret auth (`NEWSLETTER_CRON_SECRET`), `getActiveSubscribers` + `getNewsletterContent` paralel, sequential Resend-safe 100ms gap, masked-email error summary. `src/lib/email/newsletter-weekly.ts` Outlook-safe table HTML + plain text fallback, locale-aware (tr/en), i18n `email.newsletterWeekly` 14 key. `docs/NEWSLETTER_CRON_SETUP.md` 3 scheduler seçeneği (QStash önerilen).
 
 ## i18n (Faz 3 prep + canlı altyapı)
 

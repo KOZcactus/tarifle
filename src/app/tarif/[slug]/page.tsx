@@ -11,6 +11,7 @@ import { ShareMenu } from "@/components/recipe/ShareMenu";
 import { VariationForm } from "@/components/recipe/VariationForm";
 import { CookingMode } from "@/components/recipe/CookingMode";
 import { PrintButton } from "@/components/recipe/PrintButton";
+import { PdfDownloadButton } from "@/components/recipe/PdfDownloadButton";
 import { AgeGate } from "@/components/recipe/AgeGate";
 import { VariationCard } from "@/components/recipe/VariationCard";
 import { ReviewsSection } from "@/components/recipe/ReviewsSection";
@@ -460,6 +461,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
           recipeEmoji={recipe.emoji}
         />
         <PrintButton />
+        <PdfDownloadButton slug={recipe.slug} />
       </div>
 
       {/* Ingredients + Steps — Side by Side on Desktop */}

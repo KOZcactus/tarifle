@@ -14,12 +14,19 @@ import { useTranslations } from "next-intl";
  * gerekiyor. User-agent'tan iOS Safari tespiti yapılıp talimat modu
  * render edilir ("Paylaş → Ana Ekrana Ekle").
  *
- * Dismissal: localStorage `pwa-install-dismissed-at`. Kapandıktan sonra
- * 30 gün gösterilmez. Zaten installed (`display-mode: standalone`)
- * veya `navigator.standalone` (iOS) ise hiç render edilmez.
+ * Zamanlama kuralları (session 11 refinement):
+ *   - İlk ziyarette GÖSTERILMEZ. Kullanıcı siteyi tanımadan install
+ *     teklifi conversion'ı düşürür (premature commitment).
+ *   - 2. ziyaret veya aynı ziyarette 45s+ aktif süre → banner uygun.
+ *   - 3s güvenlik gecikmesi (CLS'yi bozmasın) + engagement check.
  *
- * Gösterim gecikmesi: 3s, ilk yüklemede CLS'yi bozmasın, kullanıcı
- * sayfaya yerleşsin.
+ * Dismissal progressive:
+ *   - 1. dismiss → 30 gün cooldown
+ *   - 2. dismiss → 90 gün cooldown
+ *   - 3. dismiss → kalıcı, hiç gösterilmez (ısrar karşıtı hedef kitle).
+ *
+ * Zaten installed (`display-mode: standalone`) veya iOS
+ * `navigator.standalone` true ise hiç render edilmez.
  */
 
 interface BeforeInstallPromptEvent extends Event {
@@ -28,8 +35,20 @@ interface BeforeInstallPromptEvent extends Event {
 }
 
 const DISMISS_KEY = "pwa-install-dismissed-at";
-const DISMISS_COOLDOWN_MS = 30 * 24 * 60 * 60 * 1000; // 30 gün
+const DISMISS_COUNT_KEY = "pwa-install-dismiss-count";
+const VISIT_COUNT_KEY = "pwa-visit-count";
+const VISIT_SEEN_KEY = "pwa-visit-session-seen";
+
+// Progressive cooldown: 1→30 gün, 2→90 gün, 3+→kalıcı sessizlik
+const DISMISS_COOLDOWNS_MS = [
+  30 * 24 * 60 * 60 * 1000,
+  90 * 24 * 60 * 60 * 1000,
+];
+
 const SHOW_DELAY_MS = 3000;
+// Engagement gate: 2+ ziyaret VEYA aynı session'da 45s+ aktif süre
+const MIN_VISITS = 2;
+const ENGAGEMENT_MS = 45_000;
 
 type Mode = "hidden" | "native" | "ios";
 
@@ -56,9 +75,44 @@ function wasRecentlyDismissed(): boolean {
     if (!raw) return false;
     const ts = Number(raw);
     if (!Number.isFinite(ts)) return false;
-    return Date.now() - ts < DISMISS_COOLDOWN_MS;
+    const count = Number(localStorage.getItem(DISMISS_COUNT_KEY) ?? "1");
+    // 3+ dismiss → kalıcı sessizlik (hiçbir cooldown eşleşmesin)
+    if (count >= DISMISS_COOLDOWNS_MS.length + 1) return true;
+    const cooldown =
+      DISMISS_COOLDOWNS_MS[Math.min(count - 1, DISMISS_COOLDOWNS_MS.length - 1)];
+    return Date.now() - ts < cooldown;
   } catch {
     return false;
+  }
+}
+
+/**
+ * Visit counter: oturum başına 1 artar (session storage flag ile
+ * duplicate artışı engelle). localStorage kalıcı.
+ */
+function bumpVisitCount(): number {
+  try {
+    const seenThisSession = sessionStorage.getItem(VISIT_SEEN_KEY);
+    if (seenThisSession) {
+      return Number(localStorage.getItem(VISIT_COUNT_KEY) ?? "0");
+    }
+    const current = Number(localStorage.getItem(VISIT_COUNT_KEY) ?? "0");
+    const next = current + 1;
+    localStorage.setItem(VISIT_COUNT_KEY, String(next));
+    sessionStorage.setItem(VISIT_SEEN_KEY, "1");
+    return next;
+  } catch {
+    return 0;
+  }
+}
+
+function recordDismiss(): void {
+  try {
+    localStorage.setItem(DISMISS_KEY, String(Date.now()));
+    const count = Number(localStorage.getItem(DISMISS_COUNT_KEY) ?? "0") + 1;
+    localStorage.setItem(DISMISS_COUNT_KEY, String(count));
+  } catch {
+    /* no-op */
   }
 }
 
@@ -72,28 +126,61 @@ export function PWAInstallBanner() {
   useEffect(() => {
     if (isStandalone() || wasRecentlyDismissed()) return;
 
-    let timer: ReturnType<typeof setTimeout> | null = null;
+    // Engagement gate: önce visit count'u bump et, sonra karar ver.
+    const visits = bumpVisitCount();
+    const engagedByVisits = visits >= MIN_VISITS;
+
+    let nativeTimer: ReturnType<typeof setTimeout> | null = null;
+    let iosTimer: ReturnType<typeof setTimeout> | null = null;
+    let engagementTimer: ReturnType<typeof setTimeout> | null = null;
+    let pendingMode: Mode | null = null;
+
+    const reveal = (m: Mode) => {
+      setMode(m);
+    };
+
+    const scheduleReveal = (m: Mode) => {
+      if (engagedByVisits) {
+        // 2+ ziyaret: kısa güvenlik gecikmesi yeterli
+        nativeTimer = setTimeout(() => reveal(m), SHOW_DELAY_MS);
+      } else {
+        // İlk ziyaret: 45s engagement bekle
+        pendingMode = m;
+        engagementTimer = setTimeout(() => {
+          if (pendingMode) reveal(pendingMode);
+        }, ENGAGEMENT_MS);
+      }
+    };
 
     const onBeforeInstallPrompt = (event: Event) => {
       event.preventDefault();
       const evt = event as BeforeInstallPromptEvent;
       setDeferredPrompt(evt);
-      // 3s gecikme: ilk kareler rahatça renderlensin
-      timer = setTimeout(() => setMode("native"), SHOW_DELAY_MS);
+      scheduleReveal("native");
     };
 
     window.addEventListener("beforeinstallprompt", onBeforeInstallPrompt);
 
-    // iOS Safari için native event yok, manuel banner'ı 3s sonra göster.
+    // iOS Safari için native event yok, engagement gate ile banner'ı
+    // gecikmeli göster.
     if (isIosSafari()) {
-      timer = setTimeout(() => setMode("ios"), SHOW_DELAY_MS);
+      if (engagedByVisits) {
+        iosTimer = setTimeout(() => reveal("ios"), SHOW_DELAY_MS);
+      } else {
+        pendingMode = "ios";
+        engagementTimer = setTimeout(() => {
+          if (pendingMode === "ios") reveal("ios");
+        }, ENGAGEMENT_MS);
+      }
     }
 
     const onAppInstalled = () => setMode("hidden");
     window.addEventListener("appinstalled", onAppInstalled);
 
     return () => {
-      if (timer) clearTimeout(timer);
+      if (nativeTimer) clearTimeout(nativeTimer);
+      if (iosTimer) clearTimeout(iosTimer);
+      if (engagementTimer) clearTimeout(engagementTimer);
       window.removeEventListener("beforeinstallprompt", onBeforeInstallPrompt);
       window.removeEventListener("appinstalled", onAppInstalled);
     };
@@ -106,20 +193,12 @@ export function PWAInstallBanner() {
     setDeferredPrompt(null);
     setMode("hidden");
     if (choice.outcome === "dismissed") {
-      try {
-        localStorage.setItem(DISMISS_KEY, String(Date.now()));
-      } catch {
-        /* no-op */
-      }
+      recordDismiss();
     }
   }, [deferredPrompt]);
 
   const handleDismiss = useCallback(() => {
-    try {
-      localStorage.setItem(DISMISS_KEY, String(Date.now()));
-    } catch {
-      /* no-op */
-    }
+    recordDismiss();
     setMode("hidden");
   }, []);
 

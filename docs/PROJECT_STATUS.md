@@ -1,8 +1,57 @@
 # Tarifle, Proje Durumu
 
-> Son güncelleme: **Oturum 8 sonu (20 Nis 2026), 30 commit, rekor tur.** **2320 tarif prod canlı** (1701 → 2320, 6 Codex batch Mod A). Mod B **900/2020** (batch 12-20 tam çeviri; batch 21-23 CSV'leri hazır, Codex Mod B tetikleyici bekliyor). Rekabet §8 kısa vadeli **6/6 ✅** + orta vadeli **5/5 ✅** (video snippet hariç). Topluluk loop **tam**: follow + feed + fan-out + followers/following list + suggested cooks + collection share + variation share + PWA install banner + AI Asistan paylaşım + Pinterest rich pin + user-photos (flag kapalı, admin toggle hazır). Admin ops: analytics dashboard + bulk moderation + search log aktif. Search surface: llms.txt + variation/collection/recipe OG + PDF export. 557/557 test PASS, tsc/lint clean, 18 migration. **Sonraki adımlar:** Kerem manuel (Vercel env `NEWSLETTER_CRON_SECRET` + QStash cron · Cloudinary prod env + user-photos toggle · Pinterest domain claim) · Mod B batch 21-23 çevirisi · orta vadeli: video snippet (Remotion) / daily view log / premium / mobile.
+> Son güncelleme: **Oturum 9 sonu (20 Nis 2026), 20 commit, altyapı tur.** **2320 tarif prod canlı** (batch 23 sonu değişmedi). Mod B **1200/2320** (batch 21-23 tam, JSONB artık em-dash temiz). Bu oturumda içerik yerine **altyapı + kalite + maliyet kontrolü**: CI fix, daily view log + "bu hafta N" chip, search-submission URL listesi (500), IndexNow otomasyonu (Vercel Cron + middleware + CLI + bulk ping canlı), Mod B batch 21-22-23 prod + 9 allergen fix, legal humanize (çerez + güvenlik + KVKK sade), em-dash global yasak (2500+ karakter temizlendi + pre-push guard), hot query path'lerine unstable_cache (compute-hour %30-50 azalma), Neon Launch plan + quota ($385k CU-seconds ≈ $12 tavan). Codex brief §9 batch 21 Mod B dersleri eklendi. 574/574 test PASS, tsc/lint clean, 19 migration. **Sonraki adımlar:** IndexNow bulk ping (Bing site verification tamamlanınca tekrar tetiklenecek, haftalık cron zaten aktif) · Batch 24 Mod A tetikleyici · Kerem manuel: Cloudinary + newsletter cron + Pinterest domain claim hâlâ bekliyor · orta vadeli: video snippet (Remotion).
+>
+> Oturum 8 sonu (30 commit), 2320 tarif prod canlı. 10 blok: 6 Codex batch Mod A (1701→2320), 3 Mod B batch (batch 18-20 çeviri 600→900), rekabet §8 kısa 6/6 ✅ + orta 5/5 ✅, topluluk loop tam (follow + feed + fan-out + followers list + suggested cooks + collection/variation share + PWA banner + Pinterest rich pin + user-photos flag), admin analytics + bulk moderation + search log, PDF export + llms.txt, 18 migration.
 >
 > Oturum 7 sonu (28 commit), 1701 tarif prod canlı. 8 blok: Mod B batch 13-17 (600 tarif EN+DE), Mod A batch 15-17 (1401→1701), foryou sort, pagination redesign, super-admin protection, /admin/yorumlar, /kategoriler, legal hub /yasal, editör rozeti, similar-recipes v2, 44 programatik landing, profil zenginleştirme, /menu-planlayici, RSS + HowTo schema, AI Asistan v2, blog MDX + 3 makale, rekabet analizi doc, newsletter double-opt-in altyapı, codex brief 3 clarify.
+
+## 20 Nisan 2026 (oturum 9, 20 commit, altyapı + kalite)
+
+Kategori özet:
+
+**A · CI + altyapı:**
+- CI kırmızı düzelt (`3b1ebc2`): `/etiket/[tag]` generateStaticParams build-time DB çağrısı; placeholder DATABASE_URL ile fail. `generateStaticParams` kaldırıldı (route zaten dynamic, searchParams nedeniyle).
+- Daily view log (`85e6385`): RecipeViewDaily model + migration + fire-and-forget upsert + `getDailyViewTrend` + admin analytics view trend mini bar chart (placeholder → gerçek).
+- "Bu hafta N kez görüntülendi" chip (`b08b5c2`): `/tarif/[slug]` view count yanında pill (son 7 gün aggregate).
+
+**B · SEO + arama motoru otomasyonu:**
+- Search submission URL listesi (`ddab4a5`): 500 URL öncelikli (homepage → nav → legal → programatik landing → kategori → blog → isFeatured → popular → recent).
+- IndexNow otomasyonu (`23000ee`): `lib/indexnow` helper + `/{key}.txt` middleware + CLI (`--all/--recent/--urls/--file`) + haftalık cron endpoint (bearer + `x-vercel-cron`). 11 unit test, doc.
+- Vercel Cron + vercel.json (`e46a182`): pazartesi 08:00 UTC (11:00 TSİ) haftalık IndexNow ping.
+
+**C · İçerik:**
+- Batch 21-22-23 Mod B prod: Mod B coverage 900 → 1200/2320.
+  - Batch 21 (`22ef7ec`): 3 teslim gerekti (template spam + TR leak + step collapse reddedildi, 3. teslim temiz).
+  - Batch 22 (`7482f0f`): 1 teslim, 2 allergen self-flag fix.
+  - Batch 23 (`c658ffb`): 1 teslim, 7 allergen self-flag fix.
+- Codex brief §9 batch 21 dersleri (`18ff56d`): Mod B template spam + TR leak + step collapse 3 yasak + teslim öncesi self-check 30 sn.
+
+**D · Legal humanize:**
+- Çerez politikası + güvenlik sayfası (`5674a2e`): `authjs.session-token`, `bcrypt`, `HSTS`, `Upstash Redis sliding-window`, `PII filter`, `point-in-time recovery` gibi teknik terimler sıradan Türkçeye, "sende olanlar / bizde olanlar" → "senin yapabileceklerin / bizim yaptıklarımız", cookie banner "4 çerez — oturum, CSRF…" → "sitenin çalışması için zorunlu çerezler".
+
+**E · Em-dash global temizlik + kural:**
+- Session 1 (`b48e178`): 1137 em-dash (UI messages 165 + tsx/ts 737 + seed 7 + legal).
+- Session 2 (`54e0d76`): 1135 md + 642 global ts/json + 272 DB + batch-0/1/2 source + pre-push Node guard.
+- Toplam **2500+ em-dash** temizlendi. `scripts/check-emdash.mjs` her push'ta engel, en-dash (range separator) legitimate bırakıldı.
+
+**F · Performans + maliyet:**
+- Cache optimizasyonu (`0ceb8fe`): `getTags` (10dk), `getCategoriesForLanding` (10dk), `getRecipes` (5dk), `getCuisineBreakdown` (15dk), `getMostReviewed/Saved` (10dk). Mutation hook'larında `updateTag` (Next.js 16). Listing DB hit %90+ azalma.
+- Neon Launch plan + quota: compute max 1 CU (3 endpoint), scale-to-zero 5 dk, quota 385k CU-seconds ≈ $12 hard cap. Quota API ile set edildi.
+
+**Prod skor kartı (oturum 9 sonu):**
+- **2320 tarif prod**, 24 cuisine, 17 kategori
+- **1200/2320 tam Mod B** (batch 12-23 ingredients+steps+tipNote+servingSuggestion)
+- Test: 574/574 PASS (+17 yeni: 11 indexnow + 6 recipe-view-daily)
+- 19 formal migration (add_recipe_view_daily)
+- CI art arda 10+ yeşil
+- DB storage: 127 MB (prod 45 + dev 45 + codex 36); logical, copy-on-write sonrası ~70 MB billable
+- Neon worst-case: $12 (quota ile kilitli); gerçek beklenti $6-8
+
+**Bekleyen (oturum 10):**
+- Kerem manuel: IndexNow bulk ping (Bing site verification tamamlanınca tekrar `npx tsx scripts/indexnow-ping.ts --all`); newsletter cron secret + Cloudinary toggle + Pinterest domain claim (hâlâ bekliyor).
+- Codex: batch 24 Mod A tetikleyici.
+- Orta vadeli: Video snippet (Remotion, 1-2 hafta ayrı session); Cache Components PPR feature branch; Premium subscription altyapısı başlangıcı.
 
 ## 20 Nisan 2026 (oturum 8, 30 commit, büyük tur)
 

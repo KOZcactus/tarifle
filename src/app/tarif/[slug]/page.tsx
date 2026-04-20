@@ -159,6 +159,14 @@ export async function generateMetadata({ params }: TarifPageProps): Promise<Meta
     description: metaDescription,
     alternates: {
       canonical: `/tarif/${recipe.slug}`,
+      // Cookie-based i18n, aynı URL iki dilde render ediyor. Google'a
+      // x-default + tr + en sinyali ver; bilingual arama EN trafiği için
+      // faydalı.
+      languages: {
+        "tr-TR": `/tarif/${recipe.slug}`,
+        "en-US": `/tarif/${recipe.slug}`,
+        "x-default": `/tarif/${recipe.slug}`,
+      },
     },
     robots: isAlcoholic ? { index: false, follow: true } : undefined,
     openGraph: {

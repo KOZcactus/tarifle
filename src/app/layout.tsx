@@ -12,6 +12,10 @@ import { CookieBanner } from "@/components/legal/CookieBanner";
 import { PWAInstallBanner } from "@/components/pwa/PWAInstallBanner";
 import { BfCacheRestore } from "@/components/layout/BfCacheRestore";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
+import {
+  buildOrganizationSchema,
+  buildWebSiteSchema,
+} from "@/lib/seo/structured-data";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -73,7 +77,18 @@ export async function generateMetadata(): Promise<Metadata> {
     // extension'ları) ana sayfaya bakınca otomatik feed tespit etsin.
     // Google Feed crawler da bu link'i takip eder. Tarifle feed URL'i
     // `/feed.xml` (App Router route), `/rss.xml` eski referans kalan.
+    //
+    // hreflang alternates: Tarifle cookie-based i18n (NEXT_LOCALE cookie
+    // veya User.locale DB). Aynı URL farklı lang render ediyor; Google'a
+    // "bu URL iki dil için geçerli" sinyali için x-default + tr + en
+    // tanımlandı. x-default Türkçe (primary audience).
     alternates: {
+      canonical: "/",
+      languages: {
+        "tr-TR": SITE_URL,
+        "en-US": SITE_URL,
+        "x-default": SITE_URL,
+      },
       types: {
         "application/rss+xml": `${SITE_URL}/feed.xml`,
       },
@@ -99,11 +114,21 @@ export default async function RootLayout({
   // Aktif duyurular RSC olarak burada çekilir, client banner sadece
   // localStorage dismissal state'ini izler. Boş liste ise banner hiç render
   // edilmez (hydration sonrası). Cache: RSC per-request.
-  const [announcements, locale, messages] = await Promise.all([
+  const [announcements, locale, messages, tMeta] = await Promise.all([
     getActiveAnnouncements(),
     getLocale(),
     getMessages(),
+    getTranslations("metadata.site"),
   ]);
+
+  // Site-wide JSON-LD: WebSite (SearchAction → sitelinks search box) +
+  // Organization (logo, sameAs → knowledge panel). Tarif detay sayfaları
+  // kendi Recipe/Breadcrumb/FAQPage JSON-LD'lerini ayrıca yayar.
+  const description = tMeta("description");
+  const siteSchemas = [
+    buildWebSiteSchema(description),
+    buildOrganizationSchema(description),
+  ];
 
   return (
     <html
@@ -112,6 +137,13 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col antialiased">
+        {siteSchemas.map((schema, i) => (
+          <script
+            key={i}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        ))}
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Providers>
             <BfCacheRestore />

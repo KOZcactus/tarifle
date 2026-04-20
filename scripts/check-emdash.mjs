@@ -47,12 +47,23 @@ const SKIP_FILES = new Set([
 // Prisma generated tiplerde şüphe yok; yine de klasörü atlayalım.
 const SKIP_DIR_PATHS = new Set(["prisma/migrations"]);
 
+// Gitignored scratch file prefixes (Codex/Kerem tmp work files).
+// Keep in sync with .gitignore patterns `tmp_*`, `tmp-*`, `.tmp*`.
+function isScratchFile(entry) {
+  return (
+    entry.startsWith(".tmp") ||
+    entry.startsWith("tmp_") ||
+    entry.startsWith("tmp-")
+  );
+}
+
 function walk(dir, hits) {
   for (const entry of readdirSync(dir)) {
     const full = join(dir, entry);
     const rel = relative(process.cwd(), full).replace(/\\/g, "/");
     if (SKIP_DIRS.has(entry)) continue;
     if (SKIP_DIR_PATHS.has(rel)) continue;
+    if (isScratchFile(entry)) continue;
     const st = statSync(full);
     if (st.isDirectory()) {
       walk(full, hits);

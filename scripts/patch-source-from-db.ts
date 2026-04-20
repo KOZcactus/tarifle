@@ -88,6 +88,69 @@ function formatStep(s: {
 }
 
 /**
+ * Legacy IIFE block format (batch 12-27+): ingredients + steps string
+ * arrays, helpers (ing/st/r) parse at runtime.
+ *
+ *   ing(["Un|1|yemek kaşığı", "Su|2|su bardağı"]) pipe-splits
+ *   st(["Adım.", "Başka adım.||600"]) double-pipe for optional timer
+ *
+ * Object array format (batch 0-11): direct { name, amount, ... } literals
+ * consumed without helpers. Detect format per-block to avoid corrupting
+ * legacy IIFE blocks with object arrays (batch 27 v1 crash was root cause).
+ */
+function formatIngredientLegacy(i: {
+  name: string; amount: string; unit: string | null;
+  sortOrder: number; group: string | null; isOptional: boolean;
+}): string {
+  // Legacy pipe format: "name|amount|unit", no group/isOptional support.
+  // If group or isOptional is set, fall back to object format (data will
+  // round-trip incompletely via legacy helpers).
+  if (i.group || i.isOptional) {
+    return formatIngredient(i);
+  }
+  return q(`${i.name}|${i.amount}|${i.unit ?? ""}`);
+}
+
+function formatStepLegacy(s: {
+  stepNumber: number; instruction: string; tip: string | null;
+  timerSeconds: number | null;
+}): string {
+  // Legacy "instruction" or "instruction||timerSeconds" format.
+  // tip not representable in legacy; fall back if present.
+  if (s.tip) {
+    return formatStep(s);
+  }
+  if (s.timerSeconds !== null) {
+    return q(`${s.instruction}||${s.timerSeconds}`);
+  }
+  return q(s.instruction);
+}
+
+/**
+ * Detect whether a slug's current array block is legacy (string array) or
+ * object array format. Returns "legacy" if first non-whitespace char after
+ * opening `[` is `"`, "object" if `{`, unknown otherwise.
+ */
+function detectArrayFormat(
+  source: string,
+  slug: string,
+  fieldName: "ingredients" | "steps",
+): "legacy" | "object" | "unknown" {
+  const slugMarker = `slug: "${slug}"`;
+  const slugIdx = source.indexOf(slugMarker);
+  if (slugIdx === -1) return "unknown";
+  const fieldMarker = `${fieldName}: [`;
+  const fieldIdx = source.indexOf(fieldMarker, slugIdx);
+  if (fieldIdx === -1) return "unknown";
+  const after = source.slice(fieldIdx + fieldMarker.length, fieldIdx + fieldMarker.length + 200);
+  const trimmed = after.replace(/^\s+/, "");
+  if (trimmed.startsWith("\"")) return "legacy";
+  if (trimmed.startsWith("{")) return "object";
+  if (trimmed.startsWith("]")) return "unknown"; // empty array
+  return "unknown";
+}
+
+/**
  * Find the top-level closing bracket matching the opening at `openIdx`.
  * Works with nested objects (tracks depth of `{` and `[`).
  */
@@ -245,8 +308,11 @@ async function main(): Promise<void> {
       continue;
     }
 
-    // 1. ingredients array
-    const ingStr = `[${r.ingredients.map(formatIngredient).join(", ")}]`;
+    // 1. ingredients array, format-aware (legacy IIFE string array vs
+    // batch 0-11 object array). Legacy format crash'i önleniyor (batch 27 v1).
+    const ingFmt = detectArrayFormat(source, r.slug, "ingredients");
+    const ingFormatter = ingFmt === "legacy" ? formatIngredientLegacy : formatIngredient;
+    const ingStr = `[${r.ingredients.map(ingFormatter).join(", ")}]`;
     const ingRes = patchArrayField(source, r.slug, "ingredients", ingStr);
     if (ingRes.changed) {
       source = ingRes.source;
@@ -254,8 +320,10 @@ async function main(): Promise<void> {
       patches++;
     }
 
-    // 2. steps array
-    const stepStr = `[${r.steps.map(formatStep).join(", ")}]`;
+    // 2. steps array, format-aware
+    const stepFmt = detectArrayFormat(source, r.slug, "steps");
+    const stepFormatter = stepFmt === "legacy" ? formatStepLegacy : formatStep;
+    const stepStr = `[${r.steps.map(stepFormatter).join(", ")}]`;
     const stepRes = patchArrayField(source, r.slug, "steps", stepStr);
     if (stepRes.changed) {
       source = stepRes.source;

@@ -202,10 +202,14 @@ async function main() {
       cookMinutes: r.cookMinutes ?? 0,
       totalMinutes: r.totalMinutes ?? 0,
       servingCount: r.servingCount ?? 1,
-      averageCalories: r.averageCalories ?? 0,
-      protein: r.protein ?? 0,
-      carbs: r.carbs ?? 0,
-      fat: r.fat ?? 0,
+      // Prisma @db.Decimal → runtime 'Decimal' instance. Number(x) cast
+      // JSON output için integer'a dönüştürür (seed'de tam sayı kullanı-
+      // lıyor). Null'ı 0'a normalize, TSC 'Type Decimal is not assignable
+      // to number' hatasını kapatır.
+      averageCalories: Number(r.averageCalories ?? 0),
+      protein: Number(r.protein ?? 0),
+      carbs: Number(r.carbs ?? 0),
+      fat: Number(r.fat ?? 0),
       hungerBar: r.hungerBar,
       isFeatured: r.isFeatured ?? false,
       tipNote: r.tipNote,

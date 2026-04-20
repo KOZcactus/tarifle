@@ -69,3 +69,20 @@ if ! npx tsx scripts/check-allergen-source.ts; then
 fi
 
 echo "✅ pre-push: allergen source guard clean"
+
+# TypeScript compile check.
+# Oturum 11 kapanışında fark edildi: pre-push lint + validate + em-dash
+# + allergen hepsini geçiyordu ama tsc --noEmit CI'da fail ediyordu
+# (scripts/restore-missing-slugs-to-seed.ts Prisma Decimal → number
+# assign hatası). 36+ commit CI kırmızı gitti + Vercel deploy bozuldu.
+# Bu katman tsc'yi pre-push'a kilitliyor, ~10-15s maliyet kabul
+# edilebilir (CI round-trip kaybından çok daha iyi).
+echo "🔍 pre-push: tsc --noEmit (TypeScript compile)"
+if ! npx tsc --noEmit --pretty false; then
+  echo ""
+  echo "❌ pre-push: tsc failed. CI build'i fail eder, Vercel deploy bozulur."
+  echo "   Fix TS errors above, or bypass with --no-verify (riskli)."
+  exit 1
+fi
+
+echo "✅ pre-push: tsc clean"

@@ -1,10 +1,13 @@
 import * as fs from "node:fs";
 
-const jsonSlugs = new Set(
-  JSON.parse(fs.readFileSync("docs/translations-backfill-10.json", "utf-8"))
-    .map((r: { slug: string }) => r.slug),
+const jsonSlugs = new Set<string>(
+  (
+    JSON.parse(
+      fs.readFileSync("docs/translations-backfill-10.json", "utf-8"),
+    ) as { slug: string }[]
+  ).map((r) => r.slug),
 );
-const dbSlugs = new Set(
+const dbSlugs = new Set<string>(
   fs
     .readFileSync("tmp-db-slugs.txt", "utf-8")
     .split(/\r?\n/)

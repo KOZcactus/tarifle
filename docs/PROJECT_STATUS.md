@@ -30,12 +30,14 @@
 
 **Prod skor kartı (oturum 10 sonu):**
 - **2454 tarif prod** (2320 + 300 Codex - 166 merge)
-- **1299/2454 Mod B tam** (%53), kalan 1168 backfill-02..13 için
-- 613/613 test PASS (+8 yeni integrity cron test)
+- **1399/2454 Mod B tam (%57)**, backfill-01 + 02 apply, kalan 11 batch
+- 613/613 test PASS (+39 oturum 10: hunger + integrity + cron)
 - 20 formal migration (`add_hunger_bar`)
 - Tüm tarifler hungerBar 1-10 dolu
 - CI yeşil, pre-push 3 katman, em-dash 0
 - Vercel cron: newsletter (06:00) + audit (07:00) + indexnow (08:00) pazartesi UTC
+- Tüm manuel env live: Newsletter/Audit/Cloudinary/Pinterest Vercel Sensitive
+- `middleware.ts` → `proxy.ts` (Next 16 deprecation fix)
 
 **Bekleyen (oturum 11):**
 - Codex Mod B Backfill-02..13 (12 batch × ~100 tarif)

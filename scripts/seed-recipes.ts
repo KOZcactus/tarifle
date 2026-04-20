@@ -9124,7 +9124,7 @@ export const recipes: SeedRecipe[] = [
     servingSuggestion: "Üzerine kavrulmuş yer fıstığı serperek servis edin.",
     tags: ["yuksek-protein", "yaz-tarifi"],
     allergens: ["SOYA", "YER_FISTIGI"] as const,
-    ingredients: [{ name: "Haşlanmış tavuk göğsü", amount: "300", unit: "gr", sortOrder: 1 }, { name: "Beyaz lahana", amount: "300", unit: "gr", sortOrder: 2 }, { name: "Havuç", amount: "1", unit: "adet", sortOrder: 3 }, { name: "Soya sosu", amount: "2", unit: "yemek kaşığı", sortOrder: 4 }, { name: "Yer fıstığı", amount: "0.25", unit: "su bardağı", sortOrder: 5 }],
+    ingredients: [{ name: "Haşlanmış tavuk göğsü", amount: "300", unit: "gr", sortOrder: 1 }, { name: "Beyaz lahana", amount: "300", unit: "gr", sortOrder: 2 }, { name: "Havuç", amount: "1", unit: "adet", sortOrder: 3 }, { name: "Soya sosu", amount: "2", unit: "yemek kaşığı", sortOrder: 4 }, { name: "Yer fıstığı", amount: "0.25", unit: "su bardağı", sortOrder: 5 }, { name: "Lime suyu", amount: "2", unit: "yemek kaşığı", sortOrder: 6 }],
     steps: [{ stepNumber: 1, instruction: "Lahana ve havucu ince doğrayın." }, { stepNumber: 2, instruction: "Tavuk, soya sosu ve limon suyuyla birlikte salatayı harmanlayın." }, { stepNumber: 3, instruction: "Yer fıstığı serpip servis edin." }],
   },
   {

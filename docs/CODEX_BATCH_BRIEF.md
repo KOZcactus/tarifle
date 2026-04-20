@@ -219,8 +219,76 @@ güvenlisi.
 **Dosya encoding (kritik, batch 12'de yakalandı, §3'e bak):**
 - UTF-8 (BOM YOK) + LF satır sonu olarak kaydet
 - VS Code alt çubukta "UTF-8" + "LF" yazmalı (CRLF veya UTF-8 BOM DEĞİL)
-- Şüphedeysen: batch'i ayrı bir `.txt` olarak ver, Claude append eder, sıfır
-  risk
+- Son çare (recurring block tekrar ederse, Kerem onayıyla): batch'i ayrı
+  bir `.txt` olarak ver, Claude append eder. Default akış direkt
+  `seed-recipes.ts`'ye append.
+
+**⚠️ Append noktası mimarisi (batch 27 v1 dersi, kritik):**
+
+`scripts/seed-recipes.ts` ~15000 satır. TÜMÜNÜ context'e ALMA. Sadece
+dosyanın SON 100-150 satırına bak: önceki batch'in IIFE kapanışı + en
+dıştaki `];` bracketi. Gerisine ihtiyacın yok.
+
+Append yeri (dosyanın son iki satırı):
+
+```
+      })(),
+    ];
+```
+
+`];` bracket'ini yerinde bırak, yukarısına yeni IIFE ekle:
+
+```
+      })(),
+      // ── BATCH N ── (tarih: YYYY-MM-DD, 100 tarif, Codex)
+      ...(() => {
+        const t = (enTitle, enDescription, deTitle, deDescription) => ({
+          en: { title: enTitle, description: enDescription },
+          de: { title: deTitle, description: deDescription },
+        });
+        const ing = (specs) => specs.map((s, i) => {
+          const [name, amount, unit] = s.split("|");
+          return { name, amount, unit, sortOrder: i + 1 };
+        });
+        const st = (specs) => specs.map((s, i) => {
+          const [instruction, timer] = s.split("||");
+          return timer
+            ? { stepNumber: i + 1, instruction, timerSeconds: Number(timer) }
+            : { stepNumber: i + 1, instruction };
+        });
+        const r = (o) => ({
+          ...o,
+          ingredients: ing(o.ingredients),
+          steps: st(o.steps),
+        });
+        return [
+          r({ ... }), // tarif 1
+          ...
+          r({ ... }), // tarif 100
+        ];
+      })(),
+    ];
+```
+
+**⚠️ Recurring block kapanı (batch 27 v1 dersi):**
+
+Batch 27 ilk denemede "aynı blok tekrar tekrar" üretilmeye başlamıştı,
+Kerem rollback etti. Kök neden muhtemelen: dosyayı parça parça okuyup
+her parçada context sıfırlanınca auto-complete aynı slug'ı iki kez
+önerdi.
+
+Önlem:
+
+1. Tüm 100 tarifi kafanda TEK akışta oluştur, sonra yaz (parça parça
+   edit döngüsü YOK).
+2. Mental slug set tut: her yeni slug için "zaten listemde mi?" sorusu.
+3. Teslim öncesi kendi yazdığın batch bloğunda grep at:
+
+   ```
+   /slug: "([^"]+)"/g  eşleşmeleri unique olmalı, sayı = 100
+   ```
+
+   Duplicate varsa yeniden yaz.
 
 **Teslim, SADECE 100 bittiğinde yaz:**
 
@@ -799,6 +867,8 @@ hızlı check'e bak).
 | **Mod B template spam (batch 21, dosya reddedildi)** | 100 tarifte 3 unique `servingSuggestion` (`"Serve warm."` ×67, `"Serve cold."`, `"Serve hot."`) ve 81 tekrar eden generic `tipNote` (`"This small detail helps the dish keep a better texture and flavor."`) | Her tarife aynı placeholder, kültürel/teknik ipucu YOK, brief §6 "Boş bırak, sahte doldurma" ihlali | Her tarife **özgün** 1 cümle: "Let yoğurt warm to room temperature before mixing to prevent curdling"; CSV boşsa sen de boş bırak |
 | **Mod B TR leak (batch 21, dosya reddedildi)** | EN ingredient: `"Zeytinyağı"`, `"Sarımsak"`; EN step: `"Saute soganı zeytinyagında for 4 minutes."`; DE step: `"Soganı zeytinyagında 4 Minuten anschwitzen."` | Google-Translate düz çıktı, regex-replace fiil değişimi Türkçe kelimeleri olduğu gibi bırakmış, native speaker seviyesi DEĞİL | EN: `"olive oil"`, `"garlic"`, `"Sauté the onion in olive oil for 4 minutes."`; DE: `"Die Zwiebel 4 Minuten in Olivenöl anschwitzen."` |
 | **Mod B step collapse (batch 21, dosya reddedildi)** | 100 tarifin hepsinde EN/DE `steps.length = 3` (TR'de 4-7 adım vardı) | Array uzunluk kuralı (§6) birebir ihlal, import script CRITICAL atar, ama dosya bu noktaya gelmeden reddedilmeli | `step_count` CSV'den oku, aynı sayıda adım yaz, her TR adımının karşılığı tek EN/DE adım |
+| **Mod B pidgin / yarı-çeviri (backfill-02 v1, dosya reddedildi)** | EN step: `"Apple core and into thin rounds sliceyin."`; DE step: `"Apfel 100c firinda 2 saat kurutmehl."` | Özne + fiil eksik, cümle yapısı bozuk, TR kökleri EN/DE sonlara eklenmiş (pidgin), telegrafik yapı | EN: `"Remove the cores of the apples and slice them into thin rings."`; DE: `"Die Äpfel entkernen und in dünne Ringe schneiden."` (her cümle özne + fiil + nesne tam, TR leak sıfır) |
+| **Mod A recurring block (batch 27 v1, Kerem rollback etti)** | `scripts/seed-recipes.ts`'e append sırasında "aynı blok tekrar tekrar üretildi", Codex dosyayı parça parça okuyup her parçada context sıfırlanınca auto-complete aynı slug'ı 2+ kez önerdi | Seed dosyasının tümünü (15000+ satır) context'e alıp diff üretmeye çalışınca döngüye girildi | **Dosyanın TÜMÜNÜ okuma.** Sadece son 100-150 satıra bak (önceki batch IIFE kapanışı + en dıştaki `];`). 100 tarifi kafanda TEK akışta oluştur, sonra yaz. Teslim öncesi kendi bloğuna `/slug: "([^"]+)"/g` grep, unique 100 olmalı (§5 "Append noktası mimarisi" + "Recurring block kapanı") |
 
 **İkiz hata pattern (batch 11-23 tekrar tekrar):** Allergen ingredient-
 implied tablosu §5'te yazılı ama her batch'te 3-10 legitimate allergen

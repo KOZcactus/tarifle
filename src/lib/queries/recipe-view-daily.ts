@@ -72,6 +72,26 @@ export async function getDailyViewTrend(
   return result;
 }
 
+/**
+ * Tek tarif için son N gündeki toplam görüntülenme.
+ * Chip ("Bu hafta X kez") için hızlı aggregate.
+ */
+export async function getRecipeViewsLastDays(
+  recipeId: string,
+  days = 7,
+): Promise<number> {
+  if (days < 1) return 0;
+  const today = toUtcDateBucket();
+  const since = new Date(today);
+  since.setUTCDate(since.getUTCDate() - (days - 1));
+
+  const agg = await prisma.recipeViewDaily.aggregate({
+    where: { recipeId, date: { gte: since } },
+    _sum: { count: true },
+  });
+  return agg._sum.count ?? 0;
+}
+
 function toIsoDate(d: Date): string {
   const year = d.getUTCFullYear();
   const month = String(d.getUTCMonth() + 1).padStart(2, "0");

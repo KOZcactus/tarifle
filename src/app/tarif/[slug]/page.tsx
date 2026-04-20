@@ -27,7 +27,10 @@ import {
   getRecipeReviews,
   incrementViewCount,
 } from "@/lib/queries/recipe";
-import { logDailyView } from "@/lib/queries/recipe-view-daily";
+import {
+  logDailyView,
+  getRecipeViewsLastDays,
+} from "@/lib/queries/recipe-view-daily";
 import { getSimilarRecipes } from "@/lib/queries/similar-recipes";
 import { isBookmarked, getLikedVariationIds } from "@/lib/queries/user";
 import { getCollectionsForRecipe } from "@/lib/queries/collection";
@@ -270,6 +273,14 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
   // + günlük bucket (RecipeViewDaily) ayrı ayrı fire-and-forget.
   incrementViewCount(slug).catch(() => {});
   logDailyView(recipe.id).catch(() => {});
+
+  // "Bu hafta N kez görüntülendi" chip — son 7 gün RecipeViewDaily
+  // aggregate. Sıfırsa chip hiç render edilmez (boş site sosyal kanıt
+  // yerine gereksiz gürültü olmasın). Fire-and-forget ile yan yana
+  // ama render için gerek olduğundan await'liyoruz.
+  const viewsThisWeek = await getRecipeViewsLastDays(recipe.id, 7).catch(
+    () => 0,
+  );
 
   // AggregateRating yalnızca gerçek review varsa JSON-LD'ye eklenir —
   // Google structured-data abuse guard (fake/bookmark rating = penalty).
@@ -661,12 +672,22 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
         </div>
       )}
 
-      {/* View Count */}
-      <div className="mt-8 flex items-center justify-center gap-1.5 text-xs text-text-muted print:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-        {t("viewCount", {
-          count: recipe.viewCount.toLocaleString(locale === "tr" ? "tr-TR" : "en-US"),
-        })}
+      {/* View Count + This Week */}
+      <div className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-xs text-text-muted print:hidden">
+        <span className="inline-flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          {t("viewCount", {
+            count: recipe.viewCount.toLocaleString(locale === "tr" ? "tr-TR" : "en-US"),
+          })}
+        </span>
+        {viewsThisWeek > 0 && (
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-2.5 py-0.5 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            {t("viewsThisWeek", {
+              count: viewsThisWeek.toLocaleString(locale === "tr" ? "tr-TR" : "en-US"),
+            })}
+          </span>
+        )}
       </div>
     </div>
   );

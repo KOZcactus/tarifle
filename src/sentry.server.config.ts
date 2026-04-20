@@ -15,12 +15,38 @@ if (dsn) {
   Sentry.init({
     dsn,
     tracesSampleRate: process.env.NODE_ENV === "production" ? 0.1 : 1.0,
-    // Prisma/Auth.js internal errors çoğu zaman normal akışın parçası.
-    // Raw Error mesajlarını analiz ederken ihtiyaç duyulursa açılır.
+    // Session 11 noise tune: Prisma/Auth.js/Next.js internal "expected"
+    // error'ları dashboard'u dolduruyor. Aşağıdakiler bilinen benign
+    // pattern'ler, gerçek outage sinyalini bulandırmasın.
     ignoreErrors: [
+      // Next.js internal flow control (not bug, intentional throw)
       "Invariant: Method expects to have requestAsyncStorage",
       /NEXT_REDIRECT/,
       /NEXT_NOT_FOUND/,
+      // Request-scoped abort (client disconnect, navigation mid-flight).
+      // Server tarafında da gelebiliyor; legitim outage değil.
+      "AbortError",
+      "The operation was aborted",
+      "Request aborted",
+      // Prisma connection transient (cold start + Neon pooler reconnect);
+      // Tarifle Launch plan 5dk scale-to-zero yuzunden ilk istek bazen
+      // P1001 gorur, retry sonra basarili. Persistent P1001 altyapi
+      // outage sinyali (Neon uptime dashboard'dan izleniyor, Sentry'de
+      // ekstra duplicate gerekmez).
+      "Can't reach database server",
+      "Timed out fetching a new connection",
+      // Auth.js expected user-side
+      "CredentialsSignin", // user yanlis sifre/email
+      "AccessDenied", // email not verified, admin-only
+      "AccountNotLinked", // OAuth email collision
+      // Rate limit, expected throttle, her 429'u alarma donusturmek
+      // spam. Monitor dashboardda count-aggregate izlenir.
+      "Too Many Requests",
+      "Rate limit exceeded",
+      // JWT tampering / expired session, user cookie artifact
+      "JWTExpired",
+      "JWSSignatureVerificationFailed",
+      "JWTSessionError",
     ],
     release: process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA,
     environment: process.env.NEXT_PUBLIC_VERCEL_ENV ?? "development",

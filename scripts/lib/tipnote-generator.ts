@@ -399,6 +399,7 @@ interface ServRule {
 }
 
 const SERV_RULES: ServRule[] = [
+  // Type-based rules FIRST (specific content class beats ingredient hints)
   {
     name: "soup-basic",
     match: (r, _) => r.type === "CORBA",
@@ -407,33 +408,6 @@ const SERV_RULES: ServRule[] = [
       "Çorbayı derin kaseye boşaltıp üzerine eritilmiş tereyağında kavurulmuş nane dökün.",
       "Yanına ızgara lavaş veya simit dilimleri ve soğuk cacık koyarak tamamlayın.",
       "Küçük bir kase yoğurt, yanında maydanoz yaprakları ve bir limon dilimiyle sunun.",
-    ],
-  },
-  {
-    name: "grill-meat",
-    match: (_, s) => s.hasMeat && s.technique === "mangal",
-    variants: [
-      "Lavaş üzerine yerleştirip üzerine sumaklı soğan, közlenmiş biber ve maydanozla birlikte verin.",
-      "Yanına ayran ve roka salatası eşlik ederse mangal aroması dengelenir.",
-      "Közlenmiş domates ve ince bulgur pilavıyla tabakta sunum kurun.",
-    ],
-  },
-  {
-    name: "chicken-main",
-    match: (_, s) => s.hasChicken,
-    variants: [
-      "Pirinç pilavı veya buharı çekmiş bulgurla birlikte, yanında limonlu yeşillik karışımıyla tamamlayın.",
-      "Tabakta kuzu pembesi tabaka halinde dilimleyip üstüne pişme suyundan iki kaşık dökün.",
-      "Yanına patates püresi ve karamelize soğan koyarak tavuk ızgarayı öne çıkarın.",
-    ],
-  },
-  {
-    name: "fish-plate",
-    match: (_, s) => s.hasFish,
-    variants: [
-      "Taze limon ve roka ile soğumadan masaya götürün, yanına ılık patates eşlik etsin.",
-      "Deniz tuzu, zeytinyağı ve doğranmış dereotu üzerine gezdirip limon dilimleriyle süsleyin.",
-      "Pilav yerine buğulanmış yeşil fasulyeyle tamamlayın, tabak hafif kalsın.",
     ],
   },
   {
@@ -464,6 +438,56 @@ const SERV_RULES: ServRule[] = [
     ],
   },
   {
+    name: "salad-plate",
+    match: (r, _) => r.type === "SALATA" || r.categorySlug.includes("salata"),
+    variants: [
+      "Derin cam kasede, üzerine bir fiske pul biber ve birkaç damla nar ekşisi gezdirerek servise çıkarın.",
+      "Tabakta kümeler halinde dizip üzerine iri dilimlenmiş zeytin ve beyaz peynir ekleyerek sunun.",
+      "Soğuk servis için 10 dakika buzdolabında dinlendirin, yanına lavaş ekmek koyun.",
+      "Üzerine ince dilimlenmiş turp ve maydanoz yapraklarıyla yaz tabaklarına uygun sunum kurun.",
+    ],
+  },
+  {
+    name: "aperatif-mezze",
+    match: (r, _) =>
+      r.type === "APERATIF" ||
+      r.categorySlug.includes("meze") ||
+      r.categorySlug.includes("aperatif"),
+    variants: [
+      "Tabakta küçük kaselerde veya ayrı bölümlerde sunun; yanına limon dilimi, taze ekmek ve bir kase zeytin yerleştirin.",
+      "Oda sıcaklığında servis edin, tadını öne çıkarır; yanına kıtır ekmek veya lavaş dilimleri koyun.",
+      "Üzerine sızma zeytinyağı ve pul biber gezdirip küçük derin tabakta mezelik sunum kurun.",
+    ],
+  },
+  // Ingredient/technique-based rules AFTER (for YEMEK/SOS/ATISTIRMALIK types)
+  {
+    name: "grill-meat",
+    match: (_, s) => s.hasMeat && s.technique === "mangal",
+    variants: [
+      "Lavaş üzerine yerleştirip üzerine sumaklı soğan, közlenmiş biber ve maydanozla birlikte verin.",
+      "Yanına ayran ve roka salatası eşlik ederse mangal aroması dengelenir.",
+      "Közlenmiş domates ve ince bulgur pilavıyla tabakta sunum kurun.",
+    ],
+  },
+  {
+    name: "chicken-main",
+    match: (_, s) => s.hasChicken,
+    variants: [
+      "Pirinç pilavı veya buharı çekmiş bulgurla birlikte, yanında limonlu yeşillik karışımıyla tamamlayın.",
+      "Tabakta kuzu pembesi tabaka halinde dilimleyip üstüne pişme suyundan iki kaşık dökün.",
+      "Yanına patates püresi ve karamelize soğan koyarak tavuk ızgarayı öne çıkarın.",
+    ],
+  },
+  {
+    name: "fish-plate",
+    match: (_, s) => s.hasFish,
+    variants: [
+      "Taze limon ve roka ile soğumadan masaya götürün, yanına ılık patates eşlik etsin.",
+      "Deniz tuzu, zeytinyağı ve doğranmış dereotu üzerine gezdirip limon dilimleriyle süsleyin.",
+      "Pilav yerine buğulanmış yeşil fasulyeyle tamamlayın, tabak hafif kalsın.",
+    ],
+  },
+  {
     name: "legume-bowl",
     match: (_, s) => s.hasLegume,
     variants: [
@@ -488,25 +512,6 @@ const SERV_RULES: ServRule[] = [
       "Yanına cacık ve közlenmiş biber, üstüne tereyağında kavrulmuş fıstıkla tabakta verin.",
       "Derin kaseye boşaltıp küçük bir kase yoğurt ve maydanoz dalıyla sunun.",
       "Kıtır soğan halkaları ve limon dilimleriyle yanından çevirerek servis yapın.",
-    ],
-  },
-  {
-    name: "salad-plate",
-    match: (r, _) => r.type === "SALATA" || r.categorySlug.includes("salata"),
-    variants: [
-      "Derin cam kasede, üzerine bir fiske pul biber ve birkaç damla nar ekşisi gezdirerek servise çıkarın.",
-      "Tabakta kümeler halinde dizip üzerine iri dilimlenmiş zeytin ve beyaz peynir ekleyerek sunun.",
-      "Soğuk servis için 10 dakika buzdolabında dinlendirin, yanına lavaş ekmek koyun.",
-      "Üzerine ince dilimlenmiş turp ve maydanoz yapraklarıyla yaz tabaklarına uygun sunum kurun.",
-    ],
-  },
-  {
-    name: "aperatif-mezze",
-    match: (r, _) => r.type === "APERATIF" || r.categorySlug.includes("meze") || r.categorySlug.includes("aperatif"),
-    variants: [
-      "Tabakta küçük kaselerde veya ayrı bölümlerde sunun; yanına limon dilimi, taze ekmek ve bir kase zeytin yerleştirin.",
-      "Oda sıcaklığında servis edin, tadını öne çıkarır; yanına kıtır ekmek veya lavaş dilimleri koyun.",
-      "Üzerine sızma zeytinyağı ve pul biber gezdirip küçük derin tabakta mezelik sunum kurun.",
     ],
   },
   {

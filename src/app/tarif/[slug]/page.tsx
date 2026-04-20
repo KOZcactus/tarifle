@@ -38,6 +38,7 @@ import { getCollectionsForRecipe } from "@/lib/queries/collection";
 import { auth } from "@/lib/auth";
 import { isValidLocale, type Locale } from "@/i18n/config";
 import {
+  hasFullTranslation,
   mapTranslatedIngredients,
   mapTranslatedSteps,
   pickRecipeDescription,
@@ -397,6 +398,11 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
           {recipe._count.variations > 0 && (
             <Badge variant="info">
               {t("adaptationsBadge", { count: recipe._count.variations })}
+            </Badge>
+          )}
+          {hasFullTranslation(recipe.translations, locale) && (
+            <Badge variant="info" title={t("fullTranslationBadgeTitle")}>
+              {t("fullTranslationBadge")}
             </Badge>
           )}
         </div>

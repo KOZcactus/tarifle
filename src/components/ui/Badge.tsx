@@ -6,6 +6,9 @@ interface BadgeProps {
   children: React.ReactNode;
   variant?: BadgeVariant;
   className?: string;
+  /** Native HTML title attribute (tooltip on hover); accessibility
+   *  hint for screen readers reading badge context. */
+  title?: string;
 }
 
 // Tint opacity '10' yerine '15' kullanıyorduk, AA için kontrast yetersizdi
@@ -20,9 +23,10 @@ const VARIANT_CLASSES: Record<BadgeVariant, string> = {
   info: "bg-accent-blue/10 text-accent-blue",
 };
 
-export function Badge({ children, variant = "default", className }: BadgeProps) {
+export function Badge({ children, variant = "default", className, title }: BadgeProps) {
   return (
     <span
+      title={title}
       className={cn(
         "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium",
         VARIANT_CLASSES[variant],

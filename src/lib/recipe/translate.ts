@@ -128,6 +128,32 @@ export function mapTranslatedIngredients<T extends IngredientLike>(
   });
 }
 
+/**
+ * Check if a recipe has a FULL Mod B translation for a given locale.
+ * "Full" = ingredients + steps arrays present and non-empty in the
+ * locale bundle (Mod A sadece title+description yazıyordu, Mod B
+ * ingredients+steps+tipNote+servingSuggestion tümünü dolduruyor).
+ *
+ * Used by recipe detail page to show a "Full translation" badge for
+ * EN/DE readers, trust signal that the recipe isn't a thin auto-translated
+ * card. tr locale için her zaman false (source language).
+ */
+export function hasFullTranslation(
+  translations: TranslationsField,
+  locale: Locale,
+): boolean {
+  const bundle = readLocaleBundle(translations, locale);
+  if (!bundle) return false;
+  const ing = (bundle as { ingredients?: unknown }).ingredients;
+  const steps = (bundle as { steps?: unknown }).steps;
+  return (
+    Array.isArray(ing) &&
+    ing.length > 0 &&
+    Array.isArray(steps) &&
+    steps.length > 0
+  );
+}
+
 export function mapTranslatedSteps<T extends StepLike>(
   steps: T[],
   translations: TranslationsField,

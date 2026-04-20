@@ -160,6 +160,8 @@ const ALLERGEN_RULES: AllergenRule[] = [
       "mısır nişastası", "patates nişastası", "tatlı patates nişastası",
       "nohut unu", "badem unu", "hindistan cevizi unu", "karabuğday",
       "yapışkan pirinç unu", "manyok unu", "manyok nişastası",
+      "tapyoka unu", "tapyoka nişastası", "tapiyoka unu",
+      "hindistancevizi unu",
       "pirinç keki",
       // Gluten-free rice/glass noodle variants:
       "pirinç noodle", "cam noodle",
@@ -175,13 +177,15 @@ const ALLERGEN_RULES: AllergenRule[] = [
       // Exclude gluten-free items first
       const glutenFreeExempt = [
         "pirinç", "mısır", "patates", "nohut", "badem", "hindistan",
-        "karabuğday", "yapışkan", "manyok", "tatlı patates",
+        "hindistancevizi", "karabuğday", "yapışkan", "manyok",
+        "tapyoka", "tapiyoka", "tatlı patates",
       ];
       if (glutenFreeExempt.some((ex) => lower.startsWith(ex))) return false;
 
-      // "nişasta", only GLUTEN if plain "nişasta" without qualifier
+      // "nişasta", TR mutfağında default mısır nişastası (glutensiz).
+      // Buğday nişastası nadirdir, tarif o varyantı kastediyorsa ingredient
+      // adı "buğday nişastası" olarak netleştirilmeli.
       if (lower.includes("nişasta")) {
-        if (lower === "nişasta") return true;
         return false;
       }
       // "erişte", only GLUTEN if NOT rice/glass/sweet potato noodle
@@ -243,18 +247,23 @@ const ALLERGEN_RULES: AllergenRule[] = [
       "dolmalık fıstık",
     ],
     excludePatterns: [
-      // Hindistan cevizi (coconut) is NOT a tree nut
+      // Hindistan cevizi (coconut) is NOT a tree nut.
+      // Both spaced ("hindistan cevizi") and conjoined ("hindistancevizi")
+      // forms appear in DB, cover both.
       "hindistan cevizi", "hindistan cevizi sütü", "hindistan cevizi rendesi",
       "hindistan cevizi yağı", "hindistan cevizi kreması", "hindistan cevizi unu",
+      "hindistancevizi", "hindistancevizi sütü", "hindistancevizi rendesi",
+      "hindistancevizi yağı", "hindistancevizi kreması", "hindistancevizi unu",
       "kokos",
       // Kestane mantarı is a mushroom, not a chestnut
       "kestane mantarı", "kestane mantar",
     ],
     customMatch: (name: string) => {
       const lower = trLower(name);
-      // "ceviz" but NOT "hindistan cevizi"
+      // "ceviz" but NOT "hindistan cevizi" (spaced) or "hindistancevizi" (conjoined)
       if (lower.includes("ceviz")) {
         if (lower.includes("hindistan")) return false;
+        if (lower.includes("hindistancevizi")) return false;
         return true;
       }
       // "kestane" but NOT "kestane mantarı"

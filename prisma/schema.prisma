@@ -323,6 +323,13 @@ model Recipe {
   // Vietnamese) only requires updating the constants file + Zod, no
   // migration needed.
   cuisine           String?      @db.VarChar(30)
+  // Hunger bar score, 1-10 integer, Minecraft-esin tokluk göstergesi.
+  // Porsiyon başı hesap (`averageCalories` + `protein` + `carbs` + `fat` +
+  // ingredient fiber proxy). Formül ve retrofit için src/lib/hunger-bar.ts
+  // + scripts/retrofit-hunger-bar.ts. Null = hesaplanmamış (retrofit
+  // sonrası dolacak), UI tarafında fallback default 5. Seed opsiyonel
+  // override edebilir (manuel karar gerektiren kenarlar için).
+  hungerBar         Int?
   // Optional translations bucket. Shape (see docs/RECIPE_FORMAT.md):
   //   { en?: { title, description, tipNote, servingSuggestion,
   //            ingredients: [{sortOrder, name}],

@@ -1961,6 +1961,14 @@
       "carbsUnit": "g karbonhidrat",
       "fatUnit": "g yağ",
       "approximateNote": "Yaklaşık değer, USDA FoodData Central ve TÜBİTAK Türk Gıda Kompozisyon Veritabanı&rsquo;ndan malzeme miktarına göre hesaplanır. Gerçek değer pişirme yöntemi, marka ve porsiyon boyutuna göre yaklaşık ±%20 sapabilir. Diyet veya sağlık koşulu için diyetisyen/hekime danışın."
+    },
+    "hungerBar": {
+      "title": "Açlık barı (porsiyon başı)",
+      "tooltip": "{value}/10, {bucket}",
+      "bucketLow": "Az tok tutar, hızlı acıkabilirsin",
+      "bucketMid": "Orta tok tutar, öğün arası için uygun",
+      "bucketHigh": "Çok tok tutar, ana öğün yerini alır",
+      "bucketMax": "Uzun süre tok tutar, çok aç bir güne göre"
     }
   },
   "recipes": {

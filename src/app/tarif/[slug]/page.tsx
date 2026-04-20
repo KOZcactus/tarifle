@@ -6,6 +6,7 @@ import { IngredientList } from "@/components/recipe/IngredientList";
 import { AllergenBadges } from "@/components/recipe/AllergenBadges";
 import { RecipeSteps } from "@/components/recipe/RecipeSteps";
 import { NutritionInfo } from "@/components/recipe/NutritionInfo";
+import { HungerBar } from "@/components/recipe/HungerBar";
 import { SaveMenu } from "@/components/recipe/SaveMenu";
 import { ShareMenu } from "@/components/recipe/ShareMenu";
 import { VariationForm } from "@/components/recipe/VariationForm";
@@ -536,6 +537,15 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
           fat={recipe.fat}
         />
       </div>
+
+      {/* Hunger bar, Minecraft-esin tokluk göstergesi (porsiyon başı).
+          Formula: src/lib/hunger-bar.ts; retrofit ile her tarif için
+          hesaplanmış ve DB'ye yazılmış. */}
+      {recipe.hungerBar != null && (
+        <div className="mt-6">
+          <HungerBar value={recipe.hungerBar} />
+        </div>
+      )}
 
       {/* Allergen disclosure, collapsed by default so the info is
           available without dominating the page (first impression

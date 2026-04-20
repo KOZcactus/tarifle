@@ -1961,6 +1961,14 @@
       "carbsUnit": "g carbs",
       "fatUnit": "g fat",
       "approximateNote": "Approximate values, derived from ingredient amounts using USDA FoodData Central and TÜBİTAK Turkish Food Composition Database. Actual values can vary by roughly ±20% depending on cooking method, brand, and portion size. For diet or medical conditions, consult a dietitian or doctor."
+    },
+    "hungerBar": {
+      "title": "Satiety (per serving)",
+      "tooltip": "{value}/10, {bucket}",
+      "bucketLow": "Light satiety, you'll get hungry again soon",
+      "bucketMid": "Moderate satiety, fine between meals",
+      "bucketHigh": "Strong satiety, counts as a main meal",
+      "bucketMax": "Very filling, for a really hungry day"
     }
   },
   "recipes": {

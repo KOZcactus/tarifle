@@ -48,6 +48,11 @@ export interface RecipeDetail {
   allergens: Allergen[];
   cuisine: string | null;
   /**
+   * Açlık barı, 1-10 integer (porsiyon başı). Null = hesaplanmamış
+   * (yeni tarif, retrofit beklenir). UI fallback default 5.
+   */
+  hungerBar: number | null;
+  /**
    * Recipe.translations Json?, locale-keyed bundle
    * ({ en?: { title, description, ingredients[], steps[], tipNote,
    * servingSuggestion } }). Schema in prisma/schema.prisma. Runtime shape

@@ -191,6 +191,12 @@ export const seedRecipeSchema = z
     // should include this explicitly.
     cuisine: z.enum(CUISINE_CODES).optional().nullable(),
 
+    // Hunger bar, 1-10 integer tokluk puanı (porsiyon başı). Default
+    // olarak `scripts/retrofit-hunger-bar.ts` formül ile doldurur.
+    // Codex manuel override gerekliyse (özel vaka, tek kişilik ağır
+    // yemek vs) explicit verir; yoksa retrofit hesaplar.
+    hungerBar: z.number().int().min(1).max(10).optional().nullable(),
+
     // Opsiyonel EN/DE çevirileri. TR primary language, translations
     // UI language toggle'ı (Faz 3) canlıya alınınca devreye girer.
     // Codex dilerse batch ile birlikte EN çevirisi de gönderebilir.

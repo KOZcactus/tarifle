@@ -604,6 +604,7 @@ export async function getRecipeBySlug(slug: string): Promise<RecipeDetail | null
       servingSuggestion: true,
       allergens: true,
       cuisine: true,
+      hungerBar: true,
       translations: true,
       createdAt: true,
       category: {

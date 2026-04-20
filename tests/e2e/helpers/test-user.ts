@@ -119,6 +119,15 @@ export async function getUnreadCount(userId: string): Promise<number> {
 export async function deleteTestUser(userId: string): Promise<void> {
   const prisma = getPrisma();
   try {
+    // Manual cascade: Variation.authorId + ModerationAction.moderatorId +
+    // Report.reporterId FK'lerde onDelete yok, user.delete direkt silmeye
+    // çalışırsa P2003 FK violation atar ve user DB'de kalır (leak).
+    // User.delete'ten önce bu child kayıtları temizle; geri kalan cascade
+    // edilenler (Bookmark/Like/Collection/Session/Account/Notification/
+    // UserBadge/Follow/Review/MealPlan/ShoppingList) otomatik silinir.
+    await prisma.variation.deleteMany({ where: { authorId: userId } });
+    await prisma.moderationAction.deleteMany({ where: { moderatorId: userId } });
+    await prisma.report.deleteMany({ where: { reporterId: userId } });
     await prisma.user.delete({ where: { id: userId } });
   } catch (err) {
     // Already-gone is fine; anything else gets logged but doesn't fail teardown.

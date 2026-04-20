@@ -90,6 +90,8 @@ interface TariflerPageProps {
     etiket?: string | string[];
     alerjen?: string | string[];
     mutfak?: string | string[];
+    /** Açlık barı minimum filtresi, 1-10 integer (porsiyon başı tokluk). */
+    "tokluk-min"?: string;
     page?: string;
   }>;
 }
@@ -110,6 +112,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
     "quickest",
     "most-variations",
     "most-liked",
+    "most-filling",
     "relevance",
     "foryou",
   ] as const;
@@ -177,6 +180,13 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
     (CUISINE_CODES as readonly string[]).includes(c),
   );
 
+  // Açlık barı minimum parse. Geçersiz veya out-of-range değerler sessizce
+  // düşürülür (getRecipes tarafında da clamp var ama URL level'da da temizle).
+  const rawHungerMin = params["tokluk-min"];
+  const hungerBarMin = rawHungerMin
+    ? Math.max(1, Math.min(10, parseInt(rawHungerMin, 10) || 0)) || undefined
+    : undefined;
+
   const currentPage = Math.max(1, parseInt(params.page ?? "1", 10));
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
 
@@ -199,6 +209,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
       excludeAllergens: excludeAllergens.length > 0 ? excludeAllergens : undefined,
       cuisines: cuisines.length > 0 ? cuisines : undefined,
       recipeIds: rankedIds,
+      hungerBarMin,
       sortBy: activeSort,
       boostTagSlugs:
         activeSort === "foryou" && favoriteTagSlugs.length > 0
@@ -289,6 +300,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
           { key: "quickest", label: t("sort.quickest") } as const,
           { key: "most-variations", label: t("sort.mostVariations") } as const,
           { key: "most-liked", label: t("sort.mostLiked") } as const,
+          { key: "most-filling", label: t("sort.mostFilling") } as const,
         ].map(({ key, label }) => {
           const isActive = key === activeSort;
           const search = new URLSearchParams();

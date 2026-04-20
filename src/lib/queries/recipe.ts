@@ -118,6 +118,12 @@ interface GetRecipesOptions {
    * NOT add a `where.OR` here.
    */
   recipeIds?: string[];
+  /**
+   * Açlık barı minimum filtresi. Sadece `hungerBar >= hungerBarMin` olan
+   * tarifler gösterilir. 1-10 arası integer; undefined = filtre yok.
+   * URL'de `?tokluk-min=N`.
+   */
+  hungerBarMin?: number;
   sortBy?:
     | "newest"
     | "quickest"
@@ -125,6 +131,7 @@ interface GetRecipesOptions {
     | "alphabetical"
     | "most-variations"
     | "most-liked"
+    | "most-filling"
     | "relevance"
     | "foryou";
   limit?: number;
@@ -162,6 +169,7 @@ const _getRecipesInner = async (options: GetRecipesOptions = {}): Promise<{
     excludeAllergens,
     cuisines,
     recipeIds,
+    hungerBarMin,
     sortBy = "alphabetical",
     limit = 24,
     offset = 0,
@@ -214,6 +222,10 @@ const _getRecipesInner = async (options: GetRecipesOptions = {}): Promise<{
 
   if (cuisines && cuisines.length > 0) {
     where.cuisine = { in: cuisines };
+  }
+
+  if (hungerBarMin !== undefined && hungerBarMin >= 1 && hungerBarMin <= 10) {
+    where.hungerBar = { gte: hungerBarMin };
   }
 
   if (excludeAllergens && excludeAllergens.length > 0) {
@@ -335,8 +347,13 @@ const _getRecipesInner = async (options: GetRecipesOptions = {}): Promise<{
           ? { createdAt: "desc" as const }
           : sortBy === "most-variations"
             ? { variations: { _count: "desc" as const } }
-            : // alphabetical (default, relevance fallback w/o recipeIds)
-              { title: "asc" as const };
+            : sortBy === "most-filling"
+              ? // En tok tutandan başla; null hungerBar'lar Postgres'te
+                // desc sıralamada sona düşer (nulls last default). Tie-break
+                // title asc, kararlı sıralama için.
+                [{ hungerBar: "desc" as const }, { title: "asc" as const }]
+              : // alphabetical (default, relevance fallback w/o recipeIds)
+                { title: "asc" as const };
 
   const [recipes, total] = await Promise.all([
     prisma.recipe.findMany({

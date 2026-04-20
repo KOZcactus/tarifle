@@ -52,7 +52,7 @@ async function computeContentQualityStats(): Promise<ContentQualityStats> {
       ) AS modb,
       COUNT(*) FILTER (WHERE array_length("allergens", 1) > 0) AS allergen,
       COUNT(*) FILTER (WHERE "hungerBar" IS NOT NULL) AS hungerbar
-    FROM "Recipe"
+    FROM recipes
     WHERE status = 'PUBLISHED'
   `;
   const r = rows[0];

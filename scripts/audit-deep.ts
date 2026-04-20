@@ -128,7 +128,7 @@ interface AllergenRule {
   excludePatterns?: string[];
 }
 
-const ALLERGEN_RULES: AllergenRule[] = [
+export const ALLERGEN_RULES: AllergenRule[] = [
   {
     allergen: "GLUTEN",
     keywords: [
@@ -138,6 +138,14 @@ const ALLERGEN_RULES: AllergenRule[] = [
       // real arpa ingredients are caught via "bulgur"/"un"/"şehriye".
       "irmik", "çavdar", "kepek", "kraker", "bisküvi", "kek", "hamur",
       "simit", "şehriye", "kuş başı", "baklava",
+      // Regional TR wheat derivatives (session 11 audit genişletme):
+      "baget", "bazlama", "dövme", "firik", "yarma", "gavut",
+      "tarhana", "keşkek", "keşkeklik", "dövülmüş buğday",
+      "göce", "gendime", "katmer", "tandır ekmeği", "mantı", "kete", "kavut",
+      // International wheat breads caught by ingredient name:
+      "tunnbröd", "tunnbrod", "kvas", "krep", "crepe", "pancake",
+      "pandispanya", "wrap", "tarhonya", "cornbread", "corn bread",
+      "csiga", "pasty",
       // Grains + cereals (wheat-contaminated or wheat-derived):
       "yulaf", "granola", "kuskus", "freekeh",
       // Asian noodles/wrappers (mostly wheat-based):
@@ -162,7 +170,7 @@ const ALLERGEN_RULES: AllergenRule[] = [
       "yapışkan pirinç unu", "manyok unu", "manyok nişastası",
       "tapyoka unu", "tapyoka nişastası", "tapiyoka unu",
       "hindistancevizi unu",
-      "pirinç keki",
+      "pirinç keki", "mısır yarma", "mısır yarması", "mısır yarmalı",
       // Gluten-free rice/glass noodle variants:
       "pirinç noodle", "cam noodle",
       // Gluten-free tortilla variants (Mexican tortilla chips are corn-based):
@@ -204,6 +212,9 @@ const ALLERGEN_RULES: AllergenRule[] = [
       // "un" as standalone word, only if NOT qualified with gluten-free
       if (hasStandaloneWord(lower, "un")) return true;
       if (lower.endsWith(" unu")) return true;
+      // "arpa" standalone (word boundary): "arpacık soğan" FP'den kaçınmak
+      // için substring match yerine word boundary ile kontrol.
+      if (hasStandaloneWord(lower, "arpa")) return true;
       return false;
     },
   },
@@ -216,12 +227,17 @@ const ALLERGEN_RULES: AllergenRule[] = [
       "mascarpone", "feta", "pecorino", "cheddar",
       // Fermented milk products (kefir, Swedish filmjölk, Russian smetana):
       "kefir", "filmjölk", "smetana", "kırmızı peynir", "krem peynir",
+      // Turkish curd cheeses + international soft cheeses (session 11 audit):
+      "çökelek", "kurut", "hellim", "halloumi", "twarog", "tvorog",
+      "turos", "turós", "minci",
     ],
     excludePatterns: [
       // Non-dairy "süt", do NOT flag as SUT
       "hindistan cevizi sütü", "hindistan cevizi kreması",
       "badem sütü", "yulaf sütü", "pirinç sütü", "soya sütü",
       "kokos sütü", "kokos kreması",
+      // "kurut" substring "kurutulmuş"u yakalar (dried, not dairy)
+      "kurutulmuş",
     ],
     customMatch: (name: string) => {
       const lower = trLower(name);
@@ -236,7 +252,16 @@ const ALLERGEN_RULES: AllergenRule[] = [
   },
   {
     allergen: "YUMURTA",
-    keywords: ["yumurta", "mayonez"],
+    keywords: [
+      "yumurta", "mayonez",
+      // Egg-containing prepared goods (session 11 audit genişletme):
+      "beze", "kek küpü", "kek kupu", "pandispanya", "tart hamuru",
+      "kek hamuru", "kurabiye hamuru", "krep",
+    ],
+    excludePatterns: [
+      // "beze" substring "bezelye"yi yakalar, bezelye baklagil (YUMURTA yok)
+      "bezelye",
+    ],
   },
   {
     allergen: "KUSUYEMIS",
@@ -245,6 +270,8 @@ const ALLERGEN_RULES: AllergenRule[] = [
       "çam fıstığı", "macadamia",
       // Turkish nut aliases (dolmalık fıstık = çam fıstığı):
       "dolmalık fıstık",
+      // Pistacia terebinthus family + prepared nut products (session 11 audit):
+      "menengiç", "menengic", "turron", "turrón", "nougat",
     ],
     excludePatterns: [
       // Hindistan cevizi (coconut) is NOT a tree nut.
@@ -297,11 +324,23 @@ const ALLERGEN_RULES: AllergenRule[] = [
       // "ton" alone collides with "tonik suyu", use "ton balığı" possessive
       // form "ton balıgı" explicitly to catch "Ton balığı" ingredient:
       "ton balığı",
+      // Regional + international fish names (session 11 audit genişletme):
+      "sardalya", "barramundi", "kefal", "çipura", "cipura", "uskumru",
+      "ringa", "lüfer", "lufer", "kılıç", "kilic",
+      "morina", "alabalık", "alabalik", "istakoz", "ıstakoz",
+    ],
+    excludePatterns: [
+      // "kefal" substring "kefalotiri" peynirini yakalar (Yunan peyniri)
+      "kefalotiri",
     ],
   },
   {
     allergen: "SUSAM",
-    keywords: ["susam", "tahin", "furikake", "zaatar"],
+    keywords: [
+      "susam", "tahin", "furikake", "zaatar", "zahter",
+      // Sesame-topped breads + spreads (session 11 audit):
+      "simit", "humus",
+    ],
   },
   {
     allergen: "KEREVIZ",
@@ -314,7 +353,7 @@ const ALLERGEN_RULES: AllergenRule[] = [
 ];
 
 /** Check if an ingredient matches an allergen rule. */
-function ingredientMatchesAllergen(
+export function ingredientMatchesAllergen(
   ingredientName: string,
   rule: AllergenRule
 ): boolean {
@@ -1320,9 +1359,18 @@ async function main(): Promise<void> {
   }
 }
 
-main()
-  .catch((err) => {
-    console.error("Audit failed:", err);
-    process.exit(1);
-  })
-  .finally(() => prisma.$disconnect());
+// Only auto-invoke when run directly; skip when imported as a module
+// (so other scripts can reuse ALLERGEN_RULES + ingredientMatchesAllergen
+// without triggering a full audit on import).
+const __entryPath = fileURLToPath(import.meta.url);
+const __argvPath = process.argv[1] ? path.resolve(process.argv[1]) : "";
+const isDirectRun = __entryPath === __argvPath;
+
+if (isDirectRun) {
+  main()
+    .catch((err) => {
+      console.error("Audit failed:", err);
+      process.exit(1);
+    })
+    .finally(() => prisma.$disconnect());
+}

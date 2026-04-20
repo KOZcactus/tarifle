@@ -1141,7 +1141,9 @@ export const getCuisineBreakdown = unstable_cache(
     }));
   },
   ["cuisine-breakdown-v1"],
-  { revalidate: 900, tags: ["recipes", "cuisine-stats"] },
+  // Session 11 tune: 15 dk → 30 dk. Admin-only view, 100+ tarif
+  // eklenene kadar değişim minor.
+  { revalidate: 1800, tags: ["recipes", "cuisine-stats"] },
 );
 
 export async function getCategoryBreakdown(): Promise<

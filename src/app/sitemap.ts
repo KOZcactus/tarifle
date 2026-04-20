@@ -38,7 +38,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [recipes, categories, cuisineCodes, tags, blogPosts] = await Promise.all([
     prisma.recipe.findMany({
       where: { status: "PUBLISHED" },
-      select: { slug: true, updatedAt: true },
+      select: { slug: true, updatedAt: true, isFeatured: true },
       orderBy: { updatedAt: "desc" },
     }),
     prisma.category.findMany({
@@ -89,22 +89,32 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/yasal/iletisim-aydinlatma`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
   ];
 
+  // Recipe priority tuning:
+  //   - isFeatured=true tarifler editor-curated, Google için yüksek
+  //     sinyal. priority 0.9 (normal 0.8), changeFrequency daily
+  //     (seasonal feature shifts, review/bookmark ivmeleri).
+  //   - Normal tarif 0.8 / weekly (updatedAt tabanlı freshness).
   const recipePages: MetadataRoute.Sitemap = recipes.map((r) => ({
     url: `${SITE_URL}/tarif/${r.slug}`,
     lastModified: r.updatedAt,
-    changeFrequency: "weekly",
-    priority: 0.8,
+    changeFrequency: r.isFeatured ? "daily" : "weekly",
+    priority: r.isFeatured ? 0.9 : 0.8,
   }));
 
   // Use the path-based landing (`/tarifler/[kategori]`) instead of the
   // query-string variant. The path route is the real canonical; sending
   // crawlers to `?kategori=X` would conflict with the noindex rule on
   // parameterised /tarifler variants.
+  //
+  // Priority 0.7 (önceki 0.6): 17 kategori hub sayfaları programmatic
+  // landing + cross-link ağı, recipe detay'lardan sonra en yüksek
+  // discovery sayfaları. changeFrequency weekly (önceki monthly):
+  // yeni tarif eklendikçe listeleri güncelleniyor.
   const categoryPages: MetadataRoute.Sitemap = categories.map((c) => ({
     url: `${SITE_URL}/tarifler/${c.slug}`,
     lastModified: c.createdAt,
-    changeFrequency: "monthly",
-    priority: 0.6,
+    changeFrequency: "weekly",
+    priority: 0.7,
   }));
 
   // Programatik landing, /mutfak/[cuisine]. Query-string variant
@@ -121,14 +131,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Programatik landing, /etiket/[tag]. ≥3 tarif filtresi; 0-1 tariflik
-  // etiketlerde thin content oluşur, index dışı tutulur.
+  // etiketlerde thin content oluşur, index dışı tutulur. Priority 0.6:
+  // kategori hub'ından hafif düşük (kategori daha geniş, tag daraltıcı
+  // filter). Çok popüler tag'leri (10+ tarif) 0.7'ye çıkar.
   const tagPages: MetadataRoute.Sitemap = tags
     .filter((t) => t._count.recipeTags >= 3)
     .map((t) => ({
       url: `${SITE_URL}/etiket/${t.slug}`,
       lastModified: now,
       changeFrequency: "weekly" as const,
-      priority: 0.6,
+      priority: t._count.recipeTags >= 10 ? 0.7 : 0.6,
     }));
 
   // Programatik landing, /diyet/[diet]. Sabit 5 slug, filtre config

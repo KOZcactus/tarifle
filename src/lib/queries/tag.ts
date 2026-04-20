@@ -29,5 +29,7 @@ export const getTags = unstable_cache(
     });
   },
   ["tags-v1"],
-  { revalidate: 600, tags: ["tags"] },
+  // Session 11 tune: 10 dk → 1 sa. 15 tag sabit, sadece tarif eklendikçe
+  // _count değişiyor (sort order hafif kayar ama user-visible değil).
+  { revalidate: 3600, tags: ["tags"] },
 );

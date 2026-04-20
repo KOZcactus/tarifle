@@ -17,8 +17,9 @@ export interface CategoryCardData extends CategoryWithCount {
 }
 
 /** Tüm kategoriler + description + tarif sayısı, `/kategoriler` landing
- *  page için. Cached 10 dk, nadir değişir, `revalidateTag("categories")`
- *  ile force invalidate. Hot path: `/kategoriler` landing. */
+ *  page için. Cached 30 dk (session 11 tune: önceki 10 dk, ama kategori
+ *  CRUD admin-only ve günlük ~0 değişim; uzun TTL Neon compute azaltır,
+ *  revalidateTag("categories") mutation sonrası zaten invalidate eder). */
 export const getCategoriesForLanding = unstable_cache(
   async (): Promise<CategoryCardData[]> => {
     const categories = await prisma.category.findMany({
@@ -36,13 +37,15 @@ export const getCategoriesForLanding = unstable_cache(
     return categories;
   },
   ["categories-for-landing-v1"],
-  { revalidate: 600, tags: ["categories"] },
+  { revalidate: 1800, tags: ["categories"] },
 );
 
 /** Tüm kategoriler, tarif sayısı ile birlikte.
- *  Cached 5 dk, kategoriler nadir değişir (admin panel'den CRUD), TTL
- *  yeterli. Seed sonrası `revalidateTag("categories")` çağrısı ile force
- *  edilebilir ama şu an otomatik trigger yok. */
+ *  Cached 1 sa (session 11 tune: önceki 5 dk; kategori CRUD nadir,
+ *  admin-only. Seed'de yeni kategori yok, mevcut 17 sabit. Uzun TTL
+ *  hot-path Neon query'sini azaltır). Seed sonrası `revalidateTag
+ *  ("categories")` çağrısı ile force edilebilir ama şu an otomatik
+ *  trigger yok. */
 export const getCategories = unstable_cache(
   async (): Promise<CategoryWithCount[]> => {
     const categories = await prisma.category.findMany({
@@ -62,7 +65,7 @@ export const getCategories = unstable_cache(
     return categories;
   },
   ["categories-v1"],
-  { revalidate: 300, tags: ["categories"] },
+  { revalidate: 3600, tags: ["categories"] },
 );
 
 /** Tek kategori, slug ile */

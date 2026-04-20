@@ -369,8 +369,12 @@ const _getRecipesInner = async (options: GetRecipesOptions = {}): Promise<{
   return { recipes: recipes as unknown as RecipeCard[], total };
 };
 
+// Listing hot path (homepage, /tarifler, filter kombinasyonları).
+// Session 11 tune: 5 dk → 10 dk. Kullanıcı tarama pattern'ı aynı
+// filter'ı kısa sürede tekrarlamaz, uzun TTL Neon query'sini azaltır.
+// Yeni tarif seed'i revalidateTag("recipes") ile invalidate edilir.
 export const getRecipes = unstable_cache(_getRecipesInner, ["get-recipes-v1"], {
-  revalidate: 300,
+  revalidate: 600,
   tags: ["recipes"],
 });
 

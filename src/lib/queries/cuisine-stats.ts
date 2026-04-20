@@ -38,5 +38,7 @@ export const getCuisineStats = unstable_cache(
       }));
   },
   ["cuisine-stats-v1"],
-  { revalidate: 300, tags: ["cuisine-stats"] },
+  // Session 11 tune: 5 dk → 30 dk. 24 cuisine sabit, batch ekleme
+  // sonrası _count değişir ama absolute değerler minor (Türk %54).
+  { revalidate: 1800, tags: ["cuisine-stats"] },
 );

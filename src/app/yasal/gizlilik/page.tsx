@@ -206,7 +206,7 @@ export default function GizlilikPage() {
             <strong className="text-text">anında ve geri alınamaz şekilde</strong>{" "}
             tamamlanır: hesap bilgileriniz, oturum/log kayıtlarınız, uyarlama
             ve yorumlarınız DB&rsquo;den kalıcı olarak silinir. Yayınladığınız
-            herkese açık tarif katkılarınız (nadir durum — topluluk
+            herkese açık tarif katkılarınız (nadir durum; topluluk
             uyarlamaları ayrıdır) kimlik bilgisi anonimleştirilerek kalabilir.
             Anonim istatistiksel veriler KVKK 28. madde kapsamında korunabilir.
             Yedekleme sistemlerinde kopya bulunması halinde rotasyon dönemi

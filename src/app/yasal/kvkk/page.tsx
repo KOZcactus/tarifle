@@ -103,21 +103,21 @@ export default function KVKKPage() {
           <ul className="ml-4 list-disc space-y-2">
             <li>
               <strong className="text-text">Hizmet sunumu:</strong> üyelik
-              işlemleri, kimlik doğrulama, tarif kaydetme, uyarlama paylaşımı —
-              KVKK 5/2-c (sözleşmenin kurulması/ifası).
+              işlemleri, kimlik doğrulama, tarif kaydetme ve uyarlama paylaşımı
+              (KVKK 5/2-c, sözleşmenin kurulması ve ifası).
             </li>
             <li>
               <strong className="text-text">İçerik moderasyonu ve güvenlik:</strong>{" "}
-              spam, argo ve zararlı içerik tespiti — KVKK 5/2-f (meşru menfaat).
+              spam, argo ve zararlı içerik tespiti (KVKK 5/2-f, meşru menfaat).
             </li>
             <li>
               <strong className="text-text">Yasal yükümlülük:</strong> talep
-              halinde yetkili mercilere bilgi sağlanması — KVKK 5/2-ç (hukuki
+              halinde yetkili mercilere bilgi sağlanması (KVKK 5/2-ç, hukuki
               yükümlülük).
             </li>
             <li>
               <strong className="text-text">İstatistiksel analiz:</strong> anonim
-              kullanım metrikleri — KVKK 28 (anonim veri).
+              kullanım metrikleri (KVKK 28, anonim veri).
             </li>
           </ul>
         </section>
@@ -125,23 +125,23 @@ export default function KVKKPage() {
         <section>
           <h2 className="mb-2 text-lg font-semibold text-text">4. Veri Aktarımı</h2>
           <p>
-            Kişisel verileriniz hizmet altyapısı gereği aşağıdaki üçüncü taraf
-            işleyicilere aktarılabilir (detaylı liste{" "}
+            Kişisel verileriniz hizmet altyapısı gereği aşağıdaki hizmet
+            sağlayıcılarına aktarılabilir. Detaylı liste{" "}
             <Link
               href="/yasal/gizlilik"
               className="text-primary underline-offset-4 hover:underline"
             >
               Gizlilik Politikası
             </Link>
-            nda):
+            nda yer alır.
           </p>
           <ul className="mt-3 ml-4 list-disc space-y-1">
-            <li>Vercel, Neon PostgreSQL — barındırma ve veri saklama</li>
-            <li>Google OAuth — isteğe bağlı kimlik doğrulama</li>
-            <li>Resend — e-posta gönderimi (doğrulama, şifre sıfırlama)</li>
-            <li>Cloudflare — DNS ve bot koruma</li>
-            <li>Sentry — hata izleme (PII filtreli)</li>
-            <li>Upstash Redis — oran sınırlama / rate limiting</li>
+            <li>Barındırma ve veri saklama altyapısı</li>
+            <li>İsteğe bağlı Google ile giriş</li>
+            <li>E-posta gönderimi (doğrulama ve şifre sıfırlama)</li>
+            <li>Alan adı ve bot koruma hizmeti</li>
+            <li>Hata izleme (kişisel veri filtreli)</li>
+            <li>Otomatik kötüye kullanım kontrolü</li>
           </ul>
           <p className="mt-3">
             Bu hizmet sağlayıcılarının bir kısmı yurt dışında veri merkezi

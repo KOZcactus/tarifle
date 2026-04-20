@@ -17,7 +17,7 @@ import {
  * çalıştırılırken gerçekten tetiklenir.
  *
  * Session'ı UI üzerinden kurduğumuz için `emailVerified: new Date()`
- * önceden set ediliyor (helper bunu zaten yapıyor) — test kayıt akışı
+ * önceden set ediliyor (helper bunu zaten yapıyor), test kayıt akışı
  * DEĞIL, login akışını doğruluyor.
  */
 
@@ -33,7 +33,7 @@ test.afterAll(async () => {
 });
 
 test("login via UI → navbar reflects session → /ayarlar accessible → logout reverts state", async ({ page }) => {
-  // 1. Açılışta anonim state — /giris butonu beklenir.
+  // 1. Açılışta anonim state, /giris butonu beklenir.
   await page.goto("/");
   await expect(page.getByRole("link", { name: /giriş yap/i })).toBeVisible();
 
@@ -41,7 +41,7 @@ test("login via UI → navbar reflects session → /ayarlar accessible → logou
   await page.goto("/giris");
   await page.getByLabel(/e-posta/i).fill(user.email);
   await page.getByLabel(/şifre/i).fill(user.password);
-  // Form submit button — Google butonu ve navbar link'i de "Giriş Yap"
+  // Form submit button, Google butonu ve navbar link'i de "Giriş Yap"
   // metnini paylaşıyor; locator çakışmasın diye `type="submit"` üzerinden.
   await page.locator('form button[type="submit"]').click();
 
@@ -52,7 +52,7 @@ test("login via UI → navbar reflects session → /ayarlar accessible → logou
     page.getByRole("link", { name: /giriş yap/i }),
   ).not.toBeVisible();
 
-  // 4. /ayarlar'a git — auth gate'i geçmeli, /giris'e redirect atmamalı.
+  // 4. /ayarlar'a git, auth gate'i geçmeli, /giris'e redirect atmamalı.
   await page.goto("/ayarlar");
   await expect(page).toHaveURL(/\/ayarlar/);
   // Profil ayarları başlığı rendered.
@@ -60,14 +60,14 @@ test("login via UI → navbar reflects session → /ayarlar accessible → logou
     page.getByRole("heading", { name: /profil ayarları/i }),
   ).toBeVisible();
 
-  // 5. /profil/[username]'e git — kendi profilimiz görünür olmalı.
+  // 5. /profil/[username]'e git, kendi profilimiz görünür olmalı.
   await page.goto(`/profil/${user.username}`);
   // Kullanıcı ismi sayfada görünsün (header veya başka yerde). `.first()`
   // çünkü breadcrumb + header aynı ismi iki kere render edebilir.
   await expect(page.getByText(user.name).first()).toBeVisible();
 
   // 6. Logout: navbar profile menüsünü aç, "Çıkış Yap" tıkla.
-  //    aria-controls="profile-menu" tek bu butonda — bell vs.den ayrılır.
+  //    aria-controls="profile-menu" tek bu butonda, bell vs.den ayrılır.
   await page.locator('button[aria-controls="profile-menu"]').click();
   await page.getByRole("menuitem", { name: /çıkış yap/i }).click();
 

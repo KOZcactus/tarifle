@@ -3,7 +3,7 @@
  * array (imported, no DB side effect) and runs every entry through two
  * layers of checks:
  *
- *   1. Zod — existing `seedRecipeSchema` (structural + enum + ranges).
+ *   1. Zod, existing `seedRecipeSchema` (structural + enum + ranges).
  *   2. Semantic checks on top of Zod-valid entries:
  *      - Muğlak ifade (biraz / azıcık / ya da tersi / duruma göre /
  *        epey / yeteri kadar)  → ERROR
@@ -17,7 +17,7 @@
  * Why this exists: Codex Zod hatalarını seed çalışırken görüyor ama tüm
  * 500 tarifi yazmadan bir ön rapor almak bizi bir review turu kurtarır.
  * Muğlak ifade / makro sapması / alkol tag tutarsızlığı Zod'da yoktu
- * (semantik kurallar) — bu script onu kapsar.
+ * (semantik kurallar), bu script onu kapsar.
  *
  * USAGE:
  *   npx tsx scripts/validate-batch.ts
@@ -57,7 +57,7 @@ const ERROR_WORDS = [
 
 const WARNING_WORDS = ["iyice", "guzelce"] as const;
 
-// Basit alkol tespiti — malzeme isimlerinde geçerse tarifte alkol var
+// Basit alkol tespiti, malzeme isimlerinde geçerse tarifte alkol var
 // sayıyoruz. Bunlar normalize edilmiş (aksansız, lowercase) formlarında.
 // "gin" (cin) küçük bir false-positive riski taşıyor ama ingredient
 // isminde başka bir token olarak yazılıyorsa zaten alkol demektir.
@@ -82,7 +82,7 @@ const ALCOHOL_WORDS = [
 ] as const;
 
 export function normalize(text: string): string {
-  // Turkish locale lowercase first — `"İ".toLowerCase()` in the default
+  // Turkish locale lowercase first, `"İ".toLowerCase()` in the default
   // JS locale produces "i̇" (i + combining dot U+0307) which breaks
   // pattern matching. `toLocaleLowerCase("tr-TR")` maps İ→i, I→ı
   // properly. Then strip the remaining TR accents to ASCII so our
@@ -126,16 +126,16 @@ function checkProseField(
     issues.push({
       severity: "ERROR",
       field,
-      message: `muğlak ifade "${errorMatch}" — iki durumu iki ayrı cümlede yaz veya ölçüyü somutlaştır`,
+      message: `muğlak ifade "${errorMatch}", iki durumu iki ayrı cümlede yaz veya ölçüyü somutlaştır`,
     });
-    return; // only flag once per field — first hit is the most actionable
+    return; // only flag once per field, first hit is the most actionable
   }
   const warnMatch = findForbidden(text, WARN_PATTERN);
   if (warnMatch) {
     issues.push({
       severity: "WARNING",
       field,
-      message: `"${warnMatch}" geçiyor — somut kriter ekle (örn. "elinize yapışmayana kadar 8 dk")`,
+      message: `"${warnMatch}" geçiyor, somut kriter ekle (örn. "elinize yapışmayana kadar 8 dk")`,
     });
   }
 }
@@ -148,11 +148,11 @@ function checkMacroConsistency(r: SeedRecipe, issues: Issue[]): void {
     carbs == null ||
     fat == null
   )
-    return; // missing data — can't verify
+    return; // missing data, can't verify
 
   // Alkollü tariflerde etanol ~7 kcal/gr katkısı 4·P + 4·C + 9·F formülüne
   // girmediğinden kalori her zaman makro toplamından yüksek çıkar. Bu
-  // yapısal bir kayma, sapma değil — kontrolü atla.
+  // yapısal bir kayma, sapma değil, kontrolü atla.
   if (r.tags.includes("alkollu") || hasAlcoholIngredient(r)) return;
 
   const expected = 4 * protein + 4 * carbs + 9 * fat;
@@ -163,7 +163,7 @@ function checkMacroConsistency(r: SeedRecipe, issues: Issue[]): void {
     issues.push({
       severity: "WARNING",
       field: "averageCalories",
-      message: `kalori/makro uyumsuz — 4·protein(${protein}) + 4·carbs(${carbs}) + 9·fat(${fat}) = ${Math.round(
+      message: `kalori/makro uyumsuz, 4·protein(${protein}) + 4·carbs(${carbs}) + 9·fat(${fat}) = ${Math.round(
         expected,
       )} kcal, averageCalories=${actual} (%${Math.round(
         diff * 100,
@@ -187,13 +187,13 @@ function checkAlcoholTag(r: SeedRecipe, issues: Issue[]): void {
     issues.push({
       severity: "ERROR",
       field: "tags",
-      message: `alkollü malzeme algılandı ama "alkollu" tag'i yok — 18+ yaş gate tetiklenmiyor`,
+      message: `alkollü malzeme algılandı ama "alkollu" tag'i yok, 18+ yaş gate tetiklenmiyor`,
     });
   } else if (!hasAlc && hasTag) {
     issues.push({
       severity: "WARNING",
       field: "tags",
-      message: `"alkollu" tag var ama alkollü malzeme algılanmadı — kontrol et (tag gereksizse kaldır)`,
+      message: `"alkollu" tag var ama alkollü malzeme algılanmadı, kontrol et (tag gereksizse kaldır)`,
     });
   }
 }
@@ -203,7 +203,7 @@ function checkCuisine(r: SeedRecipe, issues: Issue[]): void {
     issues.push({
       severity: "WARNING",
       field: "cuisine",
-      message: `cuisine alanı boş — retrofit doldurur ama Codex açıkça yazmalı (tr, it, jp, …)`,
+      message: `cuisine alanı boş, retrofit doldurur ama Codex açıkça yazmalı (tr, it, jp, …)`,
     });
   }
 }
@@ -218,21 +218,21 @@ function checkSlugDuplicate(
     issues.push({
       severity: "ERROR",
       field: "slug",
-      message: `slug "${slug}" zaten DB'de var — yeni slug seç`,
+      message: `slug "${slug}" zaten DB'de var, yeni slug seç`,
     });
   }
 }
 
 /**
  * Comma-composite ingredient row detector. RECIPE_FORMAT.md bans packing
- * multiple ingredients into one row ("Tuz, şeker, maydanoz") — each should
+ * multiple ingredients into one row ("Tuz, şeker, maydanoz"), each should
  * be its own RecipeIngredient. Flag as ERROR so Codex can't land a new
  * batch with this pattern.
  */
 /**
  * Translations field check. Codex batch 12+ için her tarif en az EN + DE
  * title + description ile gelmeli (i18n Faz 3 prep). Severity WARNING
- * şimdilik — mevcut 1103 tarifte translations boş, ERROR yaparsak legacy
+ * şimdilik, mevcut 1103 tarifte translations boş, ERROR yaparsak legacy
  * üretim kırılır. Batch 12 kapanınca ERROR'a yükseltilebilir.
  */
 function checkTranslations(r: SeedRecipe, issues: Issue[]): void {
@@ -243,7 +243,7 @@ function checkTranslations(r: SeedRecipe, issues: Issue[]): void {
       severity: "WARNING",
       field: "translations",
       message:
-        'translations alanı eksik — en az { en: { title, description }, de: { title, description } } bekleniyor (i18n Faz 3 prep, batch 12+ zorunlu)',
+        'translations alanı eksik, en az { en: { title, description }, de: { title, description } } bekleniyor (i18n Faz 3 prep, batch 12+ zorunlu)',
     });
     return;
   }
@@ -277,7 +277,7 @@ function checkCompositeCommaRows(r: SeedRecipe, issues: Issue[]): void {
     issues.push({
       severity: "ERROR",
       field: `ingredients[${i}].name`,
-      message: `Comma-composite row "${ing.name}" — split into ${parts.length} rows: ${parts.join(" | ")}`,
+      message: `Comma-composite row "${ing.name}", split into ${parts.length} rows: ${parts.join(" | ")}`,
     });
   });
 }
@@ -309,7 +309,7 @@ function checkStepIngredientMismatch(r: SeedRecipe, issues: Issue[]): void {
       issues.push({
         severity: "ERROR",
         field: `steps[${step.stepNumber - 1}].instruction`,
-        message: `Step ${step.stepNumber} mentions "${bl.label}" but ingredient list has no match — add ingredient or revise step`,
+        message: `Step ${step.stepNumber} mentions "${bl.label}" but ingredient list has no match, add ingredient or revise step`,
       });
     }
   }
@@ -360,7 +360,7 @@ function readExistingSlugs(filePath: string): Set<string> | null {
     );
   } catch (err) {
     console.warn(
-      `⚠ slug dosyası "${filePath}" okunamadı — slug çakışma kontrolü atlanıyor. (${
+      `⚠ slug dosyası "${filePath}" okunamadı, slug çakışma kontrolü atlanıyor. (${
         err instanceof Error ? err.message : String(err)
       })`,
     );
@@ -406,14 +406,14 @@ export function main(): void {
       ? `son ${Math.min(lastN, recipes.length)} tarif`
       : `tüm ${recipes.length} tarif`;
 
-  console.log(`\n🔍 validate-batch — ${rangeLabel} kontrol ediliyor...\n`);
+  console.log(`\n🔍 validate-batch, ${rangeLabel} kontrol ediliyor...\n`);
 
   // 1. Zod layer
   const { valid, errors: zodErrors } = validateSeedRecipes(target);
   const zodByIndex = new Map<number, string>();
   for (const e of zodErrors) zodByIndex.set(e.index, e.message);
 
-  // 2. Semantic layer — runs on Zod-valid entries only (invalid shapes
+  // 2. Semantic layer, runs on Zod-valid entries only (invalid shapes
   // can't be trusted for semantic interpretation; Zod msg is the fix).
   const existingSlugs = slugsFile ? readExistingSlugs(slugsFile) : null;
   const validBySlug = new Map<string, SeedRecipe>();
@@ -503,7 +503,7 @@ export function main(): void {
   const errorTotal = errorCount + zodFailCount;
   const fail = errorTotal > 0;
   console.log(
-    `Sonuç: ${fail ? "❌ FAIL" : "⚠  TEMIZ (yalnızca warning)"} — ${errorTotal} ERROR, ${warningCount} WARNING\n`,
+    `Sonuç: ${fail ? "❌ FAIL" : "⚠  TEMIZ (yalnızca warning)"}, ${errorTotal} ERROR, ${warningCount} WARNING\n`,
   );
   process.exit(fail ? 1 : 0);
 }

@@ -152,7 +152,7 @@ export async function buildOverallCommentary(
     return Array.isArray(raw) ? (raw as string[]) : [];
   };
 
-  // Classify the user's ingredient input BEFORE dispatching on results —
+  // Classify the user's ingredient input BEFORE dispatching on results,
   // pantry-only / single / many variants speak to the input size itself
   // and trump the per-result-count templates below.
   const realIngredients = userIngredients.filter((ing) => !isPantryStaple(ing));

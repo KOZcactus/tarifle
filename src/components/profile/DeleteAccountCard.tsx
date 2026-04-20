@@ -26,7 +26,7 @@ interface DeleteAccountCardProps {
  *  - Native `window.confirm` on final submit
  *  - Password field shown when hasPassword
  *
- * On success the component triggers `signOut({ callbackUrl: "/" })` —
+ * On success the component triggers `signOut({ callbackUrl: "/" })`,
  * server action already deleted the DB row, so the NextAuth session JWT is
  * meaningless; signOut clears the client cookie and sends the user home.
  */

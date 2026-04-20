@@ -172,7 +172,7 @@ describe("commentary input classification (via isPantryStaple)", () => {
 
   it("does not treat a compound like 'su kabağı' as pantry (false-positive guard)", () => {
     // This guards against the historical 'su' (water) vs 'su kabağı'
-    // (zucchini) confusion — the commentary classifier must not strip
+    // (zucchini) confusion, the commentary classifier must not strip
     // 'su kabağı' when the user typed that specifically.
     expect(isPantryStaple("su kabağı")).toBe(false);
   });

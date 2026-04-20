@@ -121,7 +121,7 @@ describe("inferAllergensFromIngredients", () => {
   });
 
   it("does NOT false-positive 'un' inside 'uncut' style substrings (n-gram hunt)", () => {
-    // Turkish 'un' is 2 chars — tight match risk. "duncan" doesn't exist in
+    // Turkish 'un' is 2 chars, tight match risk. "duncan" doesn't exist in
     // any TR recipe ingredient; let's test a realistic non-gluten name.
     const r = inferAllergensFromIngredients(ingr("domates"));
     expect(r).not.toContain("GLUTEN");

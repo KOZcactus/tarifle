@@ -7,7 +7,7 @@ bir asistan (Codex vb.) bu dokümana bakarak Tarifle'nin DB'sine uygun veri
 
 > **Son durum (2026 Nisan)**: Recipe modeli bu dokümanla aynı. Platform'da
 > Variation (topluluk uyarlaması) + Notification + moderasyon alanları var
-> ama Codex sadece Recipe eklemekle ilgileniyor — aşağıdaki alanlar geçerli,
+> ama Codex sadece Recipe eklemekle ilgileniyor, aşağıdaki alanlar geçerli,
 > başka değişiklik yok. Prisma şemasının son hali için
 > `prisma/schema.prisma` referans tutulur.
 
@@ -30,7 +30,7 @@ Prisma Studio (`npm run db:studio`) ile elle düzenle.
 
 ## Sabit listeler
 
-### Kategori slug'ları (17 tane — yenisi eklenmez)
+### Kategori slug'ları (17 tane, yenisi eklenmez)
 
 ```
 et-yemekleri          tavuk-yemekleri       sebze-yemekleri
@@ -45,7 +45,7 @@ Kategori eklemek gerekiyorsa önce `prisma/seed.ts` içindeki `categories`
 bloğuna eklenmeli, sonra migration çalıştırılmalı. Yeni kategori eklemeden
 mevcutlardan birini seç.
 
-### Tag slug'ları (15 tane — yenisi eklenmez)
+### Tag slug'ları (15 tane, yenisi eklenmez)
 
 ```
 pratik              30-dakika-alti     dusuk-kalorili
@@ -60,7 +60,7 @@ Bir tarife 1-5 tag uygun. Tag slug'ları listede olmalı, yoksa seed hata verir.
 **Vejetaryen / vegan tag'leri otomatik üretilebilir**: tariflerin içerik
 üzerinden `scripts/retrofit-diet-tags.ts` çalıştırılınca uygun olanlara
 eklenir. Codex batch'inde eklemeyi unutursan bu script düzeltir
-(idempotent — çift tag atmaz, yanlış etiketleri temizler). Yine de
+(idempotent, çift tag atmaz, yanlış etiketleri temizler). Yine de
 doğru etiketleri tarifte birlikte göndermek tercih edilir.
 
 ### Enum değerleri (exact string, değişmez)
@@ -88,16 +88,16 @@ cuisine:    tr | it | fr | es | gr | jp | cn | kr | th | in | mx | us | me | ma 
 | `cu` | Küba | `ru` | Rus |
 | `hu` | Macar | `se` | İskandinav |
 
-Bir tarif **tek** mutfağa ait. Eklemek opsiyoneldir — eksik bırakılırsa
+Bir tarif **tek** mutfağa ait. Eklemek opsiyoneldir, eksik bırakılırsa
 `scripts/retrofit-cuisine.ts` title/slug/description'dan çıkarım yapar.
-Ama Codex doğru kodu açıkça yazsın — retrofit heuristic her zaman isabetli
+Ama Codex doğru kodu açıkça yazsın, retrofit heuristic her zaman isabetli
 olmayabilir. Türk tarifleri `"tr"`, uluslararası tarifler ilgili ülke kodu.
 
 **Alerjen etiketleri**: her tarifin `allergens` alanı, tarifin içerdiği
 alerjenlerin listesidir (boş array olabilir). Mutfakta kullanıcı "bu tarif
 süt içeriyor mu?" diye bakınca bu alan renderlanır. Eksik bırakılırsa
 `scripts/retrofit-allergens.ts` çalıştırılarak malzemelerden kural tabanlı
-çıkarım yapılır — ama Codex her tarif için açıkça eklemelidir (kural
+çıkarım yapılır, ama Codex her tarif için açıkça eklemelidir (kural
 motoru bazen missler).
 
 **Hangi alerjen ne zaman**:
@@ -105,7 +105,7 @@ motoru bazen missler).
 - `SUT`: süt, yoğurt, ayran, peynir (her tür), tereyağı, krema, kaymak
 - `YUMURTA`: yumurta (her şekilde)
 - `KUSUYEMIS`: ceviz, badem, fındık, kaju, **antep fıstığı**, kestane
-- `YER_FISTIGI`: yer fıstığı, fıstık ezmesi (KUSUYEMIS ile **ayrı** — klinik
+- `YER_FISTIGI`: yer fıstığı, fıstık ezmesi (KUSUYEMIS ile **ayrı**, klinik
   olarak farklı alerji)
 - `SOYA`: soya sosu, tofu, edamame, miso
 - `DENIZ_URUNLERI`: balık, karides, midye, ahtapot, vb. (hepsi bu tag)
@@ -148,7 +148,7 @@ Her tarif şu TypeScript nesnesine tıpatıp uymalı:
   tags: ["misafir-sofrasi", "yuksek-protein"],  // slug array, 0-5 element
   allergens: ["GLUTEN", "SUT"] as const,   // enum array, 0-5 elements; bkz. Enum değerleri
 
-  // ZORUNLU (batch 12+) — EN + DE çevirileri. title + description iki
+  // ZORUNLU (batch 12+), EN + DE çevirileri. title + description iki
   // locale için de doldurulmalı. Ingredient/step çevirisi opsiyonel
   // (yoksa UI TR fallback'e düşer). Faz 3 UI dil toggle'ı canlıya
   // alınınca direkt devreye girer. Primary dil her zaman TR.
@@ -173,7 +173,7 @@ Her tarif şu TypeScript nesnesine tıpatıp uymalı:
   ingredients: [
     { name: "Dana kıyma (yağlı)", amount: "500", unit: "gr", sortOrder: 1 },
     { name: "Pul biber",          amount: "2",   unit: "yemek kaşığı", sortOrder: 2 },
-    // OPSİYONEL group alanı — çok-bileşenli tarifler için
+    // OPSİYONEL group alanı, çok-bileşenli tarifler için
     // (şerbetli tatlılar, soslu yemekler, marineli etler…)
     // { name: "Şeker", amount: "2", unit: "su bardağı", sortOrder: 7, group: "Şerbet için" },
   ],
@@ -201,23 +201,23 @@ Her tarif şu TypeScript nesnesine tıpatıp uymalı:
 ### Ingredients
 
 - `amount` **string** (Prisma `VarChar(50)`). "1/2" ya da "bir tutam" gibi
-  değerler de valid. Sayısal kıvama zorlama — kullanıcı-dostu olsun.
+  değerler de valid. Sayısal kıvama zorlama, kullanıcı-dostu olsun.
 - `unit` açık TR ("gr", "ml", "adet", "yemek kaşığı", "çay kaşığı",
   "diş", "demet", "yaprak", "bardak", "su bardağı", "tatlı kaşığı").
 - `sortOrder` 1'den başlar, sırayla artar.
 - 3-15 arası malzeme ideal. 1 tek malzemeli tarif doğru çalışır ama zayıf.
 - `isOptional: true` opsiyonel ekleyebilirsin (varsayılan false). Örnek:
   maydanoz, taze fesleğen, aroma için ekleme.
-- **`group: "X için"` opsiyonel** — çok-bileşenli tariflerde kullan:
+- **`group: "X için"` opsiyonel**, çok-bileşenli tariflerde kullan:
   şerbetli tatlılar ("Hamur için" / "Şerbet için"), makarnalar ("Makarna
   için" / "Sos için"), kebaplar ("Marine için" / "Servis için"), vb.
   - Basit tek-bileşenli tariflerde (ana yemek, salata, kokteyl) `group`
-    alanını **ekleme** — gereksiz. UI düz liste render eder.
+    alanını **ekleme**, gereksiz. UI düz liste render eder.
   - **Yanlış kullanım**: "Şerbet şekeri" gibi composite malzeme adı.
-    Doğrusu: `{ name: "Şeker", group: "Şerbet için" }` — AI Asistan
+    Doğrusu: `{ name: "Şeker", group: "Şerbet için" }`, AI Asistan
     "şeker" diye arayan kullanıcıyı doğru eşleştirir.
   - Naming konvansiyonu: **"X için"** (cümle başı büyük harf). Aynı
-    tarif içinde tutarlı yaz — "Hamur İçin" ≠ "Hamur için" karışıklık
+    tarif içinde tutarlı yaz, "Hamur İçin" ≠ "Hamur için" karışıklık
     yaratır.
 
 ### Steps
@@ -225,7 +225,7 @@ Her tarif şu TypeScript nesnesine tıpatıp uymalı:
 - `stepNumber` 1'den başlar, sırayla.
 - `instruction` tam bir Türkçe cümle, başında büyük harf, sonunda nokta.
 - `tip` opsiyonel (nullable). Adıma özel ince ayarı verir.
-- `timerSeconds` opsiyonel (nullable). Pişirme süresi saniye cinsinden —
+- `timerSeconds` opsiyonel (nullable). Pişirme süresi saniye cinsinden
   kullanıcıya "pişirme modunda" timer başlatılır. Örnek: 30 dakika = 1800.
 - 3-10 adım ideal. Daha kısa = "tek adımlı", daha uzun = okuma yorgun.
 
@@ -235,11 +235,11 @@ Her tarif şu TypeScript nesnesine tıpatıp uymalı:
 - `averageCalories` porsiyon başı kcal (toplam değil). Normal aralık
   50-1200. Çok yüksek veya çok düşükse yanlış hesaplanmış.
 - `protein`, `carbs`, `fat` gram cinsinden. Toplamları bazen kalori ile
-  uyumsuz — OK, hassas besin takibi değil genel rehber.
+  uyumsuz, OK, hassas besin takibi değil genel rehber.
 
 ### isFeatured
 
-- Toplam tariflerin yaklaşık %10-15'i `true`. Abartma — her tarif
+- Toplam tariflerin yaklaşık %10-15'i `true`. Abartma, her tarif
   "öne çıkan" olursa "öne çıkan" bölümü anlamını yitirir. 500 tariften
   en fazla 50-70'i `true` olmalı.
 
@@ -252,20 +252,20 @@ Her tarif şu TypeScript nesnesine tıpatıp uymalı:
 ### Dil ve anlatım kalitesi (HEPSİ için zorunlu)
 
 Tarif metni kullanıcı tarafında direkt görünecek. "AI-üretmişe benziyor"
-duygusunu vermesin — insan yazımı + mutfak bilgili + net.
+duygusunu vermesin, insan yazımı + mutfak bilgili + net.
 
 **Yazım kuralları (description / tipNote / servingSuggestion / step.instruction / step.tip)**:
 
 1. **Muğlak koşullu ifadeler YASAK**. "ya da tersi", "duruma göre",
-   "isteğe bağlı olarak şöyle ya da böyle", "kararına kalmış" — hepsi
+   "isteğe bağlı olarak şöyle ya da böyle", "kararına kalmış", hepsi
    kullanıcıya "ne yapacağımı anlamadım" dedirtir. İki durum varsa **iki
    durumu ayrı cümlelerde ayrı ayrı** yaz.
-   - ❌ "Şerbet soğuk, baklava sıcak olmalı — ya da tersi."
+   - ❌ "Şerbet soğuk, baklava sıcak olmalı, ya da tersi."
    - ✅ "Baklava fırından yeni çıkmışsa üzerine **soğuk** şerbet dök.
         Baklava soğumuşsa **sıcak** şerbet kullan. İkisi birden sıcak
         olursa şerbet emmez."
 
-2. **Sayısal belirsizlik YASAK** — "biraz", "azıcık", "epey", "yeteri
+2. **Sayısal belirsizlik YASAK**, "biraz", "azıcık", "epey", "yeteri
    kadar" kullanma. Sayı veremediğin yerde niteliksel metrik ver.
    - ❌ "Biraz tuz ekleyin."
    - ✅ "Tat için tuz ekleyin." (miktar gerçekten değişiyorsa)
@@ -283,7 +283,7 @@ duygusunu vermesin — insan yazımı + mutfak bilgili + net.
    tekrarlamamalı. description tarifin **ne olduğunu**, step **nasıl
    yapıldığını**, tipNote **başarı için kritik olanı** anlatır.
 
-6. **Gerçek mutfak bilgisi**. Sakın sahte püf noktası uydurma — kural
+6. **Gerçek mutfak bilgisi**. Sakın sahte püf noktası uydurma, kural
    tabanlı "bol bol karıştırın daha lezzetli olur" tarzı boş cümle yerine
    `tipNote: null` bırak.
 
@@ -317,17 +317,17 @@ duygusunu vermesin — insan yazımı + mutfak bilgili + net.
 
 - Her tarifte `translations.en` **ve** `translations.de` olmak zorunda.
   Her ikisi için en az `title` + `description` doldurulmalı.
-- Ingredient/step çevirisi **opsiyonel** — yoksa UI TR'ye fallback eder,
+- Ingredient/step çevirisi **opsiyonel**, yoksa UI TR'ye fallback eder,
   tarif kullanılabilir kalır. Eklenirse `sortOrder` / `stepNumber` ile
   eşlenir, array index değil.
 - Locale key 2 küçük harf: `en`, `de`. İleride `fr`, `es` eklenecek.
-- **İstisnalar — özgün TR isimler** (İskender, Baklava, Lahmacun,
+- **İstisnalar, özgün TR isimler** (İskender, Baklava, Lahmacun,
   Adana Kebap, Mantı, Manti, Künefe, Menemen, Börek, Gözleme, Döner,
   Çiğköfte, Simit, Lokum, Kumpir, Pilav…): aynen bırak veya
   `"Baklava (Turkish layered pastry)"` açıklamalı. Description'da
   kültürel bağlamı aç.
 - Description çevirisi 20-400 char, TR description'la aynı bilgi
-  yoğunluğunda — "Spicy grilled meat" gibi 3 kelime yetersiz.
+  yoğunluğunda, "Spicy grilled meat" gibi 3 kelime yetersiz.
 - Quality check: `scripts/validate-batch.ts` `translations` alanını
   arar; EN veya DE eksik → WARNING (batch 12 kapandıktan sonra
   ERROR'a yükseltilecek, CI bloklar).
@@ -338,7 +338,7 @@ duygusunu vermesin — insan yazımı + mutfak bilgili + net.
 
 - Tüm metinler Türkçe. İngilizce ingredient ismi varsa TR karşılığı tercih
   et ("asparagus" yerine "kuşkonmaz").
-- Noktalama ve dilbilgisine dikkat — site'de direkt görünecek.
+- Noktalama ve dilbilgisine dikkat, site'de direkt görünecek.
 
 ## İdeal batch
 
@@ -370,21 +370,21 @@ duygusunu vermesin — insan yazımı + mutfak bilgili + net.
 - [ ] **`translations.de.title` + `translations.de.description` dolu** (batch 12+ zorunlu)
 
 **Dil ve anlatım**
-- [ ] "ya da tersi", "duruma göre" muğlak ifadeler **yok** — iki durum varsa iki ayrı cümle
-- [ ] "Biraz", "iyice", "azıcık" belirsiz ölçü **yok** — sayı veya niteliksel metrik var
+- [ ] "ya da tersi", "duruma göre" muğlak ifadeler **yok**, iki durum varsa iki ayrı cümle
+- [ ] "Biraz", "iyice", "azıcık" belirsiz ölçü **yok**, sayı veya niteliksel metrik var
 - [ ] Composite ingredient adı **yok** ("Şerbet şekeri" → "Şeker" + group)
 - [ ] Metin Türkçe doğru, büyük/küçük harf tutarlı
 - [ ] description 20-500 karakter
 - [ ] tipNote varsa gerçek bir püf noktası (boş sahte not yerine `null`)
 
-**Veri doğruluğu (17 Nis 2026 turunda eklendi — CI bloklar)**
-- [ ] **Virgülle birleşik ingredient satırı YOK** — "Tuz, karabiber, pul biber" tek row olarak yazılmaz, 3 ayrı `{name: "Tuz", ...}`, `{name: "Karabiber", ...}`, `{name: "Pul biber", ...}` satırı olur. `validate-batch.ts` bu pattern'ı ERROR olarak yakalar.
-- [ ] **Step'te geçen baseline staple ingredient listesinde OLMALI** — adım "tuzla yoğurun" diyorsa ingredient'lar arasında Tuz olmalı. Aynı şekilde karabiber / pul biber / un için. `validate-batch.ts` bu mismatch'i ERROR olarak yakalar.
-- [ ] **ServingSuggestion'da bahsedilen sos/garnish ingredient olmalı** — "X sosuyla servis edin" yazacaksan ya sos ingredient listesinde olmalı ya da hazır-alınabilir bir ürün (soya sosu, ketçap OK). "Acı sos", "limonlu karabiber sosu" gibi belirsiz sos referansları YASAK — ya ingredient olarak ekle, ya servingSuggestion'ı mevcut malzemelerle yaz.
-- [ ] **Adım sırası mantıklı** — önce hazırlık (kes/yoğur/marine), sonra pişirme, sonra servis. "Tüm malzemeleri karıştırın" adımından sonra "sarımsağı ezin" yazarsan ters akış — kullanıcı şaşırır.
-- [ ] **Çok-section tarif gerçek 2+ grup** — description/step'te hem "hamur" hem "şerbet" (veya "marine" + "sos", vb.) geçiyorsa ingredient'larda en az 2 farklı `group: "X için"` olmalı. Tek "Hamur için" group tüm ingredient'lara yetersiz.
-- [ ] **Step adımı oto-tutarlı** — step 3'te "krema kullanın" diyorsan ya ingredient'ta Krema olmalı, ya önceki bir adımda krema yapılmış olmalı. "Çikolata sosu" adımda varsa, ingredient'ta Çikolata olmalı + bir adımda sos hazırlama olmalı.
-- [ ] **Ingredient-implied alerjenler tam** — Tereyağı/süt/yoğurt/kefir/kaşar/peynir/krema/ayran/labne varsa `SUT`; un/yufka/ekmek/makarna/bulgur/firik/yulaf/dövme buğday/arpa şehriye varsa `GLUTEN`; tahin/susam varsa `SUSAM`; ceviz/fındık/badem/Antep fıstığı/kaju varsa `KUSUYEMIS`; yer fıstığı/fıstık ezmesi varsa `YER_FISTIGI`; tofu/soya sosu/miso/edamame varsa `SOYA`; karides/somon/ton/hamsi/ahtapot/midye/yengeç/kalamar varsa `DENIZ_URUNLERI`; yumurta/mayonez varsa `YUMURTA`. audit-deep seed sonrası bu pattern'ları yakalar — bir ihlal = CRITICAL finding. İstisna: hindistan cevizi sütü / badem sütü / yulaf sütü SUT **değil**; ama "badem sütü" zaten KUSUYEMIS, "yulaf sütü" zaten GLUTEN taşır.
+**Veri doğruluğu (17 Nis 2026 turunda eklendi, CI bloklar)**
+- [ ] **Virgülle birleşik ingredient satırı YOK**, "Tuz, karabiber, pul biber" tek row olarak yazılmaz, 3 ayrı `{name: "Tuz", ...}`, `{name: "Karabiber", ...}`, `{name: "Pul biber", ...}` satırı olur. `validate-batch.ts` bu pattern'ı ERROR olarak yakalar.
+- [ ] **Step'te geçen baseline staple ingredient listesinde OLMALI**, adım "tuzla yoğurun" diyorsa ingredient'lar arasında Tuz olmalı. Aynı şekilde karabiber / pul biber / un için. `validate-batch.ts` bu mismatch'i ERROR olarak yakalar.
+- [ ] **ServingSuggestion'da bahsedilen sos/garnish ingredient olmalı**, "X sosuyla servis edin" yazacaksan ya sos ingredient listesinde olmalı ya da hazır-alınabilir bir ürün (soya sosu, ketçap OK). "Acı sos", "limonlu karabiber sosu" gibi belirsiz sos referansları YASAK, ya ingredient olarak ekle, ya servingSuggestion'ı mevcut malzemelerle yaz.
+- [ ] **Adım sırası mantıklı**, önce hazırlık (kes/yoğur/marine), sonra pişirme, sonra servis. "Tüm malzemeleri karıştırın" adımından sonra "sarımsağı ezin" yazarsan ters akış, kullanıcı şaşırır.
+- [ ] **Çok-section tarif gerçek 2+ grup**, description/step'te hem "hamur" hem "şerbet" (veya "marine" + "sos", vb.) geçiyorsa ingredient'larda en az 2 farklı `group: "X için"` olmalı. Tek "Hamur için" group tüm ingredient'lara yetersiz.
+- [ ] **Step adımı oto-tutarlı**, step 3'te "krema kullanın" diyorsan ya ingredient'ta Krema olmalı, ya önceki bir adımda krema yapılmış olmalı. "Çikolata sosu" adımda varsa, ingredient'ta Çikolata olmalı + bir adımda sos hazırlama olmalı.
+- [ ] **Ingredient-implied alerjenler tam**, Tereyağı/süt/yoğurt/kefir/kaşar/peynir/krema/ayran/labne varsa `SUT`; un/yufka/ekmek/makarna/bulgur/firik/yulaf/dövme buğday/arpa şehriye varsa `GLUTEN`; tahin/susam varsa `SUSAM`; ceviz/fındık/badem/Antep fıstığı/kaju varsa `KUSUYEMIS`; yer fıstığı/fıstık ezmesi varsa `YER_FISTIGI`; tofu/soya sosu/miso/edamame varsa `SOYA`; karides/somon/ton/hamsi/ahtapot/midye/yengeç/kalamar varsa `DENIZ_URUNLERI`; yumurta/mayonez varsa `YUMURTA`. audit-deep seed sonrası bu pattern'ları yakalar, bir ihlal = CRITICAL finding. İstisna: hindistan cevizi sütü / badem sütü / yulaf sütü SUT **değil**; ama "badem sütü" zaten KUSUYEMIS, "yulaf sütü" zaten GLUTEN taşır.
 
 ## Çalıştırma
 

@@ -19,7 +19,7 @@
  *                                            that section
  *
  * SAFETY:
- *   - Default is DRY-RUN — prints what would be deleted + impact
+ *   - Default is DRY-RUN, prints what would be deleted + impact
  *     summary (variation count, bookmark count, etc.) and exits.
  *   - Real deletion requires `--confirm "rollback-batch-N"` literal
  *     echo-phrase matching the operation context.
@@ -121,7 +121,7 @@ function readSlugsFile(filePath: string): string[] {
 /**
  * Reads scripts/seed-recipes.ts and extracts slugs from inside a
  * `// ── BATCH N ──` .. `// ── BATCH N SONU ──` (or next batch marker,
- * or end-of-array) block. Regex-level parse — no AST, no evaluation —
+ * or end-of-array) block. Regex-level parse, no AST, no evaluation,
  * which is fragile if Codex abuses the format but falls through
  * harmlessly (returns 0 slugs) rather than deleting wrong things.
  */
@@ -252,7 +252,7 @@ function printImpact(rows: ImpactRow[], force: boolean): void {
   if (blocked.length > 0) {
     console.log(`\n🚫 BLOKLU: ${blocked.length} tarif (user content var)`);
     for (const r of blocked) {
-      console.log(`   - ${r.title} (${r.slug}) — ${r.blockReason}`);
+      console.log(`   - ${r.title} (${r.slug}), ${r.blockReason}`);
     }
     console.log(
       `   --force ile zorlayabilirsin ama user içeriği kaybolur. Çok dikkatli ol.`,
@@ -333,7 +333,7 @@ async function main(): Promise<void> {
 
     if (args.confirm === null) {
       console.log(
-        `ℹ  Dry-run — veri silinmedi.\n` +
+        `ℹ  Dry-run, veri silinmedi.\n` +
           `   Gerçekten silmek için: --confirm "${args.expectedConfirm}"${
             rows.some((r) => r.blocks) ? " --force" : ""
           }`,

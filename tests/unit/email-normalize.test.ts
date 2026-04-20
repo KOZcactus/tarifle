@@ -13,7 +13,7 @@ describe("normalizeEmail", () => {
 
   it("preserves ASCII 'I' as lowercase 'i' rather than Turkish 'ı'", () => {
     // A Turkish-locale lowercase would map "I" → "ı", breaking email matches.
-    // This regression would be catastrophic — all existing users whose email
+    // This regression would be catastrophic, all existing users whose email
     // has an uppercase I would lose access after login normalization changes.
     expect(normalizeEmail("INFO@example.com")).toBe("info@example.com");
     expect(normalizeEmail("Info@example.com")).toBe("info@example.com");

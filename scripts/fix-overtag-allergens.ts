@@ -2,7 +2,7 @@
  * Remove allergen tags that no ingredient actually triggers (per
  * audit-deep.ts' expanded keyword + customMatch + excludePatterns logic).
  *
- * Safety: YUMURTA is excluded by default — some baked-goods recipes have
+ * Safety: YUMURTA is excluded by default, some baked-goods recipes have
  * incomplete ingredient lists (egg/süt implicit) and auto-removing YUMURTA
  * would be user-visible allergen downgrade. Run with --include-yumurta
  * when ingredient lists are known-complete.
@@ -266,7 +266,7 @@ async function main(): Promise<void> {
 
   const verb = APPLY ? "Updated" : "Would update";
   console.log(`\n${verb}: ${willWrite} recipe(s)`);
-  if (!APPLY) console.log("(dry run — re-run with --apply to write)");
+  if (!APPLY) console.log("(dry run, re-run with --apply to write)");
 }
 
 main()

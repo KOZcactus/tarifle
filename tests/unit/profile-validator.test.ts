@@ -40,7 +40,7 @@ describe("profileUpdateSchema", () => {
 
   it("rejects usernames with diacritics", () => {
     // Non-ASCII letters can't roundtrip through URL paths and share URLs
-    // cleanly, so the regex blocks them outright — even after the lowercase
+    // cleanly, so the regex blocks them outright, even after the lowercase
     // transform.
     expect(
       profileUpdateSchema.safeParse({ ...valid, username: "özcan" }).success,
@@ -106,7 +106,7 @@ describe("profileUpdateSchema", () => {
   });
 
   it("exports a reserved list that covers every admin route segment we ship", () => {
-    // Tripwire — if we add a /profil/<slug>-shadow route we should also add
+    // Tripwire, if we add a /profil/<slug>-shadow route we should also add
     // it to RESERVED_USERNAMES so users can't grab it.
     expect(RESERVED_USERNAMES).toContain("admin");
     expect(RESERVED_USERNAMES).toContain("ayarlar");

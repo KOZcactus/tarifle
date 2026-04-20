@@ -20,7 +20,7 @@ const DIET_OPTIONS = [
  * scroll through 15 hashtag chips to find "vejetaryen".
  *
  * Toggle semantics match AllergenFilter for consistency (aria-pressed,
- * × on active). Filter-by-tag is inclusive (AND with other filters) —
+ * × on active). Filter-by-tag is inclusive (AND with other filters),
  * if both vegetarian + vegan are active, recipes must have BOTH tags
  * (which is fine: vegan ⊂ vegetarian, so selecting vegan alone already
  * implies vegetarian).

@@ -1,11 +1,11 @@
 /**
- * Fix 4 "biraz" muğlak ifade validate-batch ERROR'larını — tipNote /
+ * Fix 4 "biraz" muğlak ifade validate-batch ERROR'larını, tipNote /
  * servingSuggestion alanlarını somut ölçüyle değiştir.
  *
  * CI pipeline'ındaki `content:validate` step 4 ERROR ile düşüyordu
  * (bütün son 15+ push CI red). seed-recipes.ts kaynak patch'lenmişti,
  * prod DB'de de Recipe.tipNote/servingSuggestion aynı ifadeye yazılmış
- * olduğu için mevcut kayıt update gerekiyor (seed idempotent — yeni
+ * olduğu için mevcut kayıt update gerekiyor (seed idempotent, yeni
  * slug eklemiyor ama mevcut satırı da dokunmuyor).
  *
  * İdempotent: fix script iki kez koşsa ikinci sefer "zaten temiz".
@@ -82,7 +82,7 @@ async function main(): Promise<void> {
       select: { id: true, tipNote: true, servingSuggestion: true },
     });
     if (!row) {
-      console.log(`  ⚠ ${fix.slug} — DB'de yok`);
+      console.log(`  ⚠ ${fix.slug}, DB'de yok`);
       missing++;
       continue;
     }
@@ -90,19 +90,19 @@ async function main(): Promise<void> {
       fix.field === "tipNote" ? row.tipNote : row.servingSuggestion;
 
     if (current === fix.to) {
-      console.log(`  ⏭  ${fix.slug}.${fix.field} — zaten temiz`);
+      console.log(`  ⏭  ${fix.slug}.${fix.field}, zaten temiz`);
       alreadyClean++;
       continue;
     }
     if (current !== fix.from) {
       console.log(
-        `  ⚠ ${fix.slug}.${fix.field} — mevcut değer beklenenden farklı:\n     "${current}"`,
+        `  ⚠ ${fix.slug}.${fix.field}, mevcut değer beklenenden farklı:\n     "${current}"`,
       );
       continue;
     }
 
     console.log(
-      `  ${APPLY ? "✅" : "🔍"} ${fix.slug}.${fix.field} — "biraz" → somut`,
+      `  ${APPLY ? "✅" : "🔍"} ${fix.slug}.${fix.field}, "biraz" → somut`,
     );
 
     if (APPLY) {

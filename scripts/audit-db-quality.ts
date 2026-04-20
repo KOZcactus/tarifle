@@ -222,7 +222,7 @@ async function main(): Promise<void> {
     }
     report(
       "WARNING",
-      `${suspiciousAllergen.length}+ recipes with [] allergens contain flour/milk/egg ingredients — may need allergen tags`
+      `${suspiciousAllergen.length}+ recipes with [] allergens contain flour/milk/egg ingredients, may need allergen tags`
     );
   }
 
@@ -378,7 +378,7 @@ async function main(): Promise<void> {
 
   const nearDupes: Array<{ slugA: string; slugB: string; distance: number }> = [];
 
-  // O(n^2) but with 706 recipes this is ~250k comparisons — fast enough
+  // O(n^2) but with 706 recipes this is ~250k comparisons, fast enough
   for (let i = 0; i < allSlugs.length; i++) {
     for (let j = i + 1; j < allSlugs.length; j++) {
       const a = allSlugs[i].slug;

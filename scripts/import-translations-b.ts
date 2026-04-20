@@ -1,5 +1,5 @@
 /**
- * Mod B import — shallow-merge partial locale bundles into Recipe.translations.
+ * Mod B import, shallow-merge partial locale bundles into Recipe.translations.
  *
  * Companion to `scripts/import-translations.ts` (Mod A). Mod A expects a
  * full `{ title, description }` bundle per locale and overwrites the whole
@@ -11,8 +11,8 @@
  *   - Every top-level locale bundle field is OPTIONAL in the JSON.
  *   - For each recipe, existing `translations.en` / `translations.de` are
  *     preserved; only the fields explicitly supplied in the JSON overwrite
- *     them. Arrays (ingredients, steps) replace wholesale — no per-item
- *     merge — because ordering + length must match the TR source.
+ *     them. Arrays (ingredients, steps) replace wholesale, no per-item
+ *     merge, because ordering + length must match the TR source.
  *   - If a field is present in the JSON but has the literal string "" or
  *     null, it is ignored (treated as "don't touch").
  *   - Integrity: ingredient array length must equal TR ingredients length;
@@ -20,7 +20,7 @@
  *     unless --force is passed.
  *
  * Usage:
- *   # Dry run (default) — parses, validates, reports, does NOT write.
+ *   # Dry run (default), parses, validates, reports, does NOT write.
  *   npx tsx scripts/import-translations-b.ts --batch 12
  *
  *   # Apply on dev
@@ -103,7 +103,7 @@ const translationsFileSchema = z.array(translationItemSchema);
 
 type LocaleBundle = z.infer<typeof localeBundleSchema>;
 
-/** Keep only truthy, non-empty fields — Codex may send `""` or `null` as
+/** Keep only truthy, non-empty fields, Codex may send `""` or `null` as
  *  "don't touch" marker; treat them as absent to avoid wiping existing data. */
 function pruneEmpty(bundle: LocaleBundle | undefined): LocaleBundle {
   if (!bundle) return {};
@@ -156,7 +156,7 @@ async function main(): Promise<void> {
   const slugs = items.map((i) => i.slug);
   const uniqueSlugs = new Set(slugs);
   if (uniqueSlugs.size !== slugs.length) {
-    console.error("❌ Duplicate slugs detected — every row must be unique.");
+    console.error("❌ Duplicate slugs detected, every row must be unique.");
     process.exit(1);
   }
 
@@ -223,7 +223,7 @@ async function main(): Promise<void> {
       }
     }
     if (item.issues?.length) {
-      warnings.push(`${item.slug} carries ${item.issues.length} issue note(s) — review before apply.`);
+      warnings.push(`${item.slug} carries ${item.issues.length} issue note(s), review before apply.`);
     }
   }
 
@@ -237,7 +237,7 @@ async function main(): Promise<void> {
   }
 
   if (!APPLY) {
-    console.log("\n(dry run — re-run with --apply to write)");
+    console.log("\n(dry run, re-run with --apply to write)");
     return;
   }
 
@@ -278,7 +278,7 @@ async function main(): Promise<void> {
     console.log(`  ✅ ${Math.min(i + CHUNK, items.length)}/${items.length}`);
   }
 
-  console.log(`\n🎉 done — applied=${applied}, unchanged=${unchanged}, total=${items.length}`);
+  console.log(`\n🎉 done, applied=${applied}, unchanged=${unchanged}, total=${items.length}`);
   console.log(
     `\nNext: run \`npx tsx scripts/audit-deep.ts\` to verify nothing broke, then commit docs/translations-batch-${batch}.json + push.`,
   );

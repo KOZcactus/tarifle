@@ -1,5 +1,5 @@
 /**
- * AI Asistan akışı — public sayfa (auth gerekmez), kullanıcı malzeme
+ * AI Asistan akışı, public sayfa (auth gerekmez), kullanıcı malzeme
  * yazıyor, "Tarif öner" tıklayıp en az 1 sonuç almasını doğrularız.
  *
  * RuleBasedProvider 406 tarif üzerinde token-prefix matcher koşar; "tavuk"
@@ -15,12 +15,12 @@ test("AI asistan: 3 yaygın malzemeyle 'Tarif öner' → en az 1 eşleşme döne
 }) => {
   await page.goto("/ai-asistan");
 
-  // 1. Sayfa render — H1 ile doğrula
+  // 1. Sayfa render, H1 ile doğrula
   await expect(
     page.getByRole("heading", { name: /elindekinden tarif bul/i }),
   ).toBeVisible();
 
-  // 2. Malzeme input — formdaki tek text input. İlk malzeme eklenince
+  // 2. Malzeme input, formdaki tek text input. İlk malzeme eklenince
   //    placeholder değişiyor ("Yeni malzeme…"), o yüzden role-based
   //    locator daha stabil.
   const ingredientInput = page.getByRole("textbox").first();
@@ -31,7 +31,7 @@ test("AI asistan: 3 yaygın malzemeyle 'Tarif öner' → en az 1 eşleşme döne
   await ingredientInput.fill("biber");
   await ingredientInput.press("Enter");
 
-  // 3. Pantry assumption — tuz/yağ vb. tariflerin %100 eşleşmesini
+  // 3. Pantry assumption, tuz/yağ vb. tariflerin %100 eşleşmesini
   //    yakalamasına yardım. Aksi takdirde 3 malzeme tek başına çoğu
   //    tarifle %100 eşleşemez (gerçek tarifler 6-12 malzeme kullanır).
   await page.getByRole("checkbox", { name: /tuz, karabiber/i }).check();
@@ -46,7 +46,7 @@ test("AI asistan: 3 yaygın malzemeyle 'Tarif öner' → en az 1 eşleşme döne
     const noMatch = await page.getByText(/hiç eşleşme yok/i).count();
     const suggestionLinks = await page.locator('a[href^="/tarif/"]').count();
     // 0 SuggestionLink + 0 noMatch mesajı = ne yanıt geldi ne de "boş"
-    // sinyali — kötü senaryo (form submit'e cevap üretemedi).
+    // sinyali, kötü senaryo (form submit'e cevap üretemedi).
     expect(noMatch + suggestionLinks).toBeGreaterThan(0);
   }).toPass({ timeout: 15000 });
 
@@ -117,7 +117,7 @@ test("AI asistan: paylaş URL'i açıldığında auto-submit çalışır", async
   // Direkt paylaş URL'i ile aç
   await page.goto("/ai-asistan?m=tavuk,domates&mutfak=tr");
 
-  // Auto-submit yapması gerekiyor — sonuç veya boş mesaj bekle
+  // Auto-submit yapması gerekiyor, sonuç veya boş mesaj bekle
   await expect(async () => {
     const noMatch = await page.getByText(/hiç eşleşme yok/i).count();
     const suggestionLinks = await page.locator('a[href^="/tarif/"]').count();
@@ -131,7 +131,7 @@ test("AI asistan: boş submit → en az 1 malzeme uyarısı veya boş eşleşme 
 }) => {
   await page.goto("/ai-asistan");
 
-  // Hiç malzeme eklemeden submit — form ya validation ya da boş eşleşme
+  // Hiç malzeme eklemeden submit, form ya validation ya da boş eşleşme
   // göstermeli. Crash olmamalı, kullanıcı net cevap almalı.
   await page.getByRole("button", { name: /tarif öner/i }).click();
 

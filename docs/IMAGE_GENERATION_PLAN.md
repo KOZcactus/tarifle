@@ -1,4 +1,4 @@
-# Tarifle — Tarif Görseli Üretim Planı
+# Tarifle, Tarif Görseli Üretim Planı
 
 > Bu doküman **Eren/Codex** tarafından okunacak. Tek başına yeterli, başka bir Tarifle dokümanına bakmadan işe başlayabilmelisin.
 
@@ -6,7 +6,7 @@
 
 ## 1. Bağlam
 
-**Tarifle** (tarifle.app) — Türkçe tarif platformu, 1100 tarif canlıda. Şu an her tarifin yanında sadece emoji var (🍲 🥟 🍜 ...), gerçek görsel yok. Dashboard'da "Görselsiz tarif %100" alarmı yanıyor.
+**Tarifle** (tarifle.app), Türkçe tarif platformu, 1100 tarif canlıda. Şu an her tarifin yanında sadece emoji var (🍲 🥟 🍜 ...), gerçek görsel yok. Dashboard'da "Görselsiz tarif %100" alarmı yanıyor.
 
 Amaç: 1100 tarifin her birine **kendine özgü bir cartoon/sticker tarzı illustration** üretmek. Gerçek fotoğraf değil. Yemek fotoğrafçılığı AI'nın zayıf alanı (uncanny valley); cartoon/flat vector AI'nın güçlü olduğu alan ve Tarifle'nin emoji-heavy modern markasıyla çok daha uyumlu.
 
@@ -14,7 +14,7 @@ Amaç: 1100 tarifin her birine **kendine özgü bir cartoon/sticker tarzı illus
 
 ---
 
-## 2. Hedef — somut çıktı
+## 2. Hedef, somut çıktı
 
 | İstenen | Sayı | Format |
 |---|---|---|
@@ -22,11 +22,11 @@ Amaç: 1100 tarifin her birine **kendine özgü bir cartoon/sticker tarzı illus
 | Naming | Tarif slug'ına eşit | `adana-kebap.png`, `sebit-yaglamasi.png` |
 | Dosya boyutu | < 500 KB (ideal) | Cloudinary auto-optimize ikinci katman |
 
-Hedef kalite: Tarif kartı ızgarasına dizildiğinde hepsi **aynı görsel dili** konuşsun (tutarlı style, tutarlı renk paleti). Bir tarif "gerçekçi foto", diğeri "cartoon", başkası "minimal vektör" olmasın — hepsi tek karakter.
+Hedef kalite: Tarif kartı ızgarasına dizildiğinde hepsi **aynı görsel dili** konuşsun (tutarlı style, tutarlı renk paleti). Bir tarif "gerçekçi foto", diğeri "cartoon", başkası "minimal vektör" olmasın, hepsi tek karakter.
 
 ---
 
-## 3. Prompt template (ÇOK ÖNEMLİ — birebir kullan)
+## 3. Prompt template (ÇOK ÖNEMLİ, birebir kullan)
 
 Tüm 1100 tarif için aynı iskelet. Sadece `{TITLE}` ve `{CUISINE}` yerine koyduğun kısım değişir. Başka kelime ekleme/çıkarma.
 
@@ -70,9 +70,9 @@ image, no human figures, no hands, no utensils outside the plate or bowl.
 
 ---
 
-## 4. Nasıl çalıştıracaksın — 3 seçenek, sırasıyla dene
+## 4. Nasıl çalıştıracaksın, 3 seçenek, sırasıyla dene
 
-### Seçenek A — Codex cloud agent (öncelikli test)
+### Seçenek A, Codex cloud agent (öncelikli test)
 
 **Önce bunu dene**: Codex agent'a (ChatGPT Pro içinde) şunu söyle:
 
@@ -82,19 +82,19 @@ image, no human figures, no hands, no utensils outside the plate or bowl.
 - Çalışıyorsa → 1100 tarif için batch otomasyonu yapabilirsin (CSV oku, loop, kaydet)
 - Çalışmıyorsa ("Codex'in image generation yetkisi yok" veya benzeri) → Seçenek B'ye geç
 
-### Seçenek B — ChatGPT Pro web UI (manuel)
+### Seçenek B, ChatGPT Pro web UI (manuel)
 
 - chatgpt.com aç, DALL-E 3 aktif
 - Tek tek prompt at, görsel üretildikten sonra indir
 - Dosya adı = tarif slug'ı (örn. `sebit-yaglamasi.png`)
 - Pro plan rate limit: DALL-E 3 ~40 görsel/3 saat gibi gözüküyor (değişebilir). Günde ~200-300 ulaşılabilir → 1100 tarif ~4-5 gün.
 
-### Seçenek C — OpenAI API (hızlı, ~$44 ekstra)
+### Seçenek C, OpenAI API (hızlı, ~$44 ekstra)
 
 Kerem ayrı bir API key açacak (platform.openai.com). Script:
 
 ```ts
-// Örnek — Tarifle repo'sunda scripts/generate-recipe-images.ts olarak yazılacak
+// Örnek, Tarifle repo'sunda scripts/generate-recipe-images.ts olarak yazılacak
 import OpenAI from "openai";
 import { PrismaClient } from "@prisma/client";
 
@@ -128,20 +128,20 @@ for (const r of recipes) {
 
 ---
 
-## 5. Pilot önce — 10 tarif
+## 5. Pilot önce, 10 tarif
 
 **Full batch'e geçmeden önce 10 tarif ile test et.** Aşağıdaki listeyi kullan:
 
-1. `adana-kebap` (tr, et yemeği — karma örnek)
-2. `mercimek-corbasi` (tr, çorba — sıvı örnek)
-3. `mantarli-risotto` (it, makarna-pilav — creamy)
-4. `sushi-tabagi` (jp, deniz ürünleri — çiğ)
-5. `tavuk-pad-thai` (th, makarna — renkli)
-6. `kasarli-tost` (tr, kahvaltı — hamur işi)
-7. `chia-puding` (us, tatlı — soğuk)
-8. `tacos-al-pastor` (mx, et — street food)
-9. `elmali-kefir-smoothie` (tr, içecek — bardak)
-10. `sebit-yaglamasi` (tr, hamur işi — regional)
+1. `adana-kebap` (tr, et yemeği, karma örnek)
+2. `mercimek-corbasi` (tr, çorba, sıvı örnek)
+3. `mantarli-risotto` (it, makarna-pilav, creamy)
+4. `sushi-tabagi` (jp, deniz ürünleri, çiğ)
+5. `tavuk-pad-thai` (th, makarna, renkli)
+6. `kasarli-tost` (tr, kahvaltı, hamur işi)
+7. `chia-puding` (us, tatlı, soğuk)
+8. `tacos-al-pastor` (mx, et, street food)
+9. `elmali-kefir-smoothie` (tr, içecek, bardak)
+10. `sebit-yaglamasi` (tr, hamur işi, regional)
 
 Bu 10 tarif **her türlü kategoride** iyi temsil. Hepsini generate et, Kerem'e gönder, kalite onayı al. Onay yoksa prompt'u tune et, tekrar dene.
 
@@ -178,7 +178,7 @@ tarifle-images-batch-{n}.zip
 
 ### Teslim yolu (sıralı fallback)
 
-1. **Cloudinary upload** — Kerem sana Cloudinary API key verirse, her PNG'yi `recipes/{slug}` public ID'siyle yükle. Script:
+1. **Cloudinary upload**, Kerem sana Cloudinary API key verirse, her PNG'yi `recipes/{slug}` public ID'siyle yükle. Script:
    ```ts
    cloudinary.uploader.upload(localPath, {
      public_id: `recipes/${slug}`,
@@ -186,7 +186,7 @@ tarifle-images-batch-{n}.zip
      overwrite: false,
    });
    ```
-2. **Zip ile teslim** — Cloudinary erişimin yoksa zip'i Kerem'e gönder, o Cloudinary/Vercel Blob'a upload eder ve `imageUrl` field'ını doldurur.
+2. **Zip ile teslim**, Cloudinary erişimin yoksa zip'i Kerem'e gönder, o Cloudinary/Vercel Blob'a upload eder ve `imageUrl` field'ını doldurur.
 
 ### Metadata log
 
@@ -210,7 +210,7 @@ Bu log ileride "hangi tarifin görseli yenilensin" kararı almamızı sağlar.
 
 ---
 
-## 8. Kalite kriterleri — kabul / ret
+## 8. Kalite kriterleri, kabul / ret
 
 ### Kabul (approve et)
 
@@ -252,7 +252,7 @@ Eğer limit'e çarparsan bir sonraki güne bırak. 5 günlük iş olarak planla.
 
 ---
 
-## 10. Karar ağacı — Eren'in ilk adımı
+## 10. Karar ağacı, Eren'in ilk adımı
 
 ```
 1. Codex agent'a sor: "DALL-E 3 ile bir cartoon görsel üretip PNG olarak kaydedebiliyor musun?"
@@ -296,10 +296,10 @@ Bu bölüm Eren için değil, gelecekte Kerem dönüp bakacağı için not:
 
 ## 13. Hatırlatmalar
 
-- **Prod DB'ye yazma** — sadece `imageUrl` güncellenir, başka field'a dokunma
-- **Overwrite yapma** — eğer bir tarifin `imageUrl` zaten doluysa atla (Kerem manuel özel görsel koymuş olabilir)
-- **Style consistency** — 1100 içinde **hiçbir görsel fotoğraf gibi gerçekçi olmasın**. Kararsız kalırsan daha illustrative tarafa çek.
-- **Cuisine doğruluğu** — "Pad Thai" için Thai prompt kullan, Turkish değil. Görselin yemek kültürüyle uyumlu olması markaya katkı.
-- **Emoji ile ilişki** — recipe card'da emoji görsel'in ÜZERİNDE küçük chip olarak kalacak, onun yeri illustration'un içinde olmasın.
+- **Prod DB'ye yazma**, sadece `imageUrl` güncellenir, başka field'a dokunma
+- **Overwrite yapma**, eğer bir tarifin `imageUrl` zaten doluysa atla (Kerem manuel özel görsel koymuş olabilir)
+- **Style consistency**, 1100 içinde **hiçbir görsel fotoğraf gibi gerçekçi olmasın**. Kararsız kalırsan daha illustrative tarafa çek.
+- **Cuisine doğruluğu**, "Pad Thai" için Thai prompt kullan, Turkish değil. Görselin yemek kültürüyle uyumlu olması markaya katkı.
+- **Emoji ile ilişki**, recipe card'da emoji görsel'in ÜZERİNDE küçük chip olarak kalacak, onun yeri illustration'un içinde olmasın.
 
 Başarılar. Sorular için Kerem'e yaz.

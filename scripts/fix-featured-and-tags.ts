@@ -92,7 +92,7 @@ async function main(): Promise<void> {
         select: { id: true, title: true, isFeatured: true, category: { select: { name: true } } },
       });
       if (!r) {
-        console.log(`  ⚠ ${slug.padEnd(25)} — bulunamadı`);
+        console.log(`  ⚠ ${slug.padEnd(25)}, bulunamadı`);
         notFound++;
         continue;
       }
@@ -122,13 +122,13 @@ async function main(): Promise<void> {
         select: { id: true, title: true, tags: { select: { tag: { select: { slug: true } } } } },
       });
       if (!r) {
-        console.log(`  ⚠ ${slug} — bulunamadı`);
+        console.log(`  ⚠ ${slug}, bulunamadı`);
         continue;
       }
       const existingTags = r.tags.map(t => t.tag.slug);
       const newTags = tagSlugs.filter(ts => !existingTags.includes(ts));
       if (newTags.length === 0) {
-        console.log(`  ${slug.padEnd(25)} — zaten tag'li`);
+        console.log(`  ${slug.padEnd(25)}, zaten tag'li`);
         continue;
       }
       console.log(`  ✅ ${slug.padEnd(25)} → +${newTags.join(", ")}`);

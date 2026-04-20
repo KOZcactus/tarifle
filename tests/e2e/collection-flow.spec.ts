@@ -1,5 +1,5 @@
 /**
- * Koleksiyon end-to-end akışı — tarif detayında SaveMenu üzerinden
+ * Koleksiyon end-to-end akışı, tarif detayında SaveMenu üzerinden
  * yeni koleksiyon oluştur, tarifi içine ekle, /koleksiyon/[id]'ye git,
  * tarif orada görünüyor mu doğrula.
  *
@@ -34,7 +34,7 @@ test.afterAll(async () => {
 test("login → tarif detayında yeni koleksiyon oluştur + tarifi ekle → koleksiyon sayfasında görünür", async ({
   page,
 }) => {
-  // 1. Login — Google butonu da "Giriş Yap" içeriyor, exact match için
+  // 1. Login, Google butonu da "Giriş Yap" içeriyor, exact match için
   //    submit type ile filtrele.
   await page.goto("/giris");
   await page.getByLabel(/e-?posta/i).fill(user.email);
@@ -49,19 +49,19 @@ test("login → tarif detayında yeni koleksiyon oluştur + tarifi ekle → kole
   // 3. "Koleksiyon" butonuna tıkla (SaveMenu dropdown trigger)
   await page.getByRole("button", { name: /koleksiyon/i }).click();
 
-  // 4. Dropdown açıldı — "Yeni koleksiyon oluştur" butonu görünür
+  // 4. Dropdown açıldı, "Yeni koleksiyon oluştur" butonu görünür
   const newCollectionButton = page.getByRole("button", {
     name: /yeni koleksiyon oluştur/i,
   });
   await expect(newCollectionButton).toBeVisible();
   await newCollectionButton.click();
 
-  // 5. Inline form input — koleksiyon adı yaz
+  // 5. Inline form input, koleksiyon adı yaz
   const collectionName = `E2E Test ${Date.now().toString().slice(-6)}`;
   await page.getByPlaceholder(/koleksiyon adı/i).fill(collectionName);
   await page.getByRole("button", { name: /^ekle$/i }).click();
 
-  // 6. Toast "kaydedildi" benzeri (success indicator) — strict yapmıyorum,
+  // 6. Toast "kaydedildi" benzeri (success indicator), strict yapmıyorum,
   //    server action sonrası dropdown kapanır + "1" badge collection
   //    button'ında görünür. Onu doğrula.
   await expect(
@@ -69,7 +69,7 @@ test("login → tarif detayında yeni koleksiyon oluştur + tarifi ekle → kole
       .locator('span:has-text("1")'),
   ).toBeVisible({ timeout: 5000 });
 
-  // 7. Profile menü açıp koleksiyon sayfasına gidelim — direkt URL bilmiyoruz
+  // 7. Profile menü açıp koleksiyon sayfasına gidelim, direkt URL bilmiyoruz
   //    çünkü slug auto-generated. Profile sayfasına git, koleksiyon listesi
   //    orada olmalı.
   await page.goto(`/profil/${user.username}`);
@@ -79,7 +79,7 @@ test("login → tarif detayında yeni koleksiyon oluştur + tarifi ekle → kole
   await expect(collectionLink).toBeVisible();
   await collectionLink.click();
 
-  // 9. /koleksiyon/[id] sayfasında Adana Kebap görünür — heading
+  // 9. /koleksiyon/[id] sayfasında Adana Kebap görünür, heading
   //    ya da herhangi bir text olarak (RecipeCard h3 olarak render eder
   //    ama farklı layout'larda div de olabilir, generic getByText daha
   //    sağlam).

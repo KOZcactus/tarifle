@@ -1,5 +1,5 @@
 /**
- * Composite-row detector — virgülle birleşik ingredient satırlarını
+ * Composite-row detector, virgülle birleşik ingredient satırlarını
  * tespit eder (Codex2'nin 24-row bulgusu için independent tarama).
  *
  * Pattern: ingredient.name içinde 1+ virgül varsa multi-item composite.
@@ -98,13 +98,13 @@ async function main(): Promise<void> {
         reason = `hepsi seasoning staple + tek amount "${ing.amount} ${ing.unit}" bölünebilir`;
       } else if (staples && !hasAmount && !hasUnit) {
         strategy = "auto";
-        reason = "hepsi seasoning staple + amount/unit zaten boş — tatmin için eşit varsayılır";
+        reason = "hepsi seasoning staple + amount/unit zaten boş, tatmin için eşit varsayılır";
       } else if (staples) {
         strategy = "auto";
         reason = "hepsi seasoning staple";
       } else {
         strategy = "manual";
-        reason = parts.map((p) => `"${p}"`).join(" + ") + " — farklı form/miktar";
+        reason = parts.map((p) => `"${p}"`).join(" + ") + ", farklı form/miktar";
       }
 
       findings.push({
@@ -126,7 +126,7 @@ async function main(): Promise<void> {
   const manual = findings.filter((f) => f.strategy === "manual");
 
   console.log("=".repeat(70));
-  console.log(`  COMPOSITE ROW DETECTION — ${recipes.length} recipes scanned`);
+  console.log(`  COMPOSITE ROW DETECTION, ${recipes.length} recipes scanned`);
   console.log("=".repeat(70));
   console.log(
     `  Findings: AUTO ${auto.length}  MANUAL ${manual.length}  (${findings.length} rows across ${bySlug.size} recipes)`,

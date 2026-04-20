@@ -6,7 +6,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
  * The module caches its Redis client and Ratelimit instances at module load
  * based on env vars, so every test that needs a different env state must
  * reset modules. The happy-path with a real Redis lives in
- * `scripts/smoke-rate-limit.ts` — this file covers the logic around it:
+ * `scripts/smoke-rate-limit.ts`, this file covers the logic around it:
  * identifier building, anonymous fail-open, no-creds fail-open, and the
  * Redis-throws-error fail-open.
  */
@@ -33,7 +33,7 @@ describe("rateLimitIdentifier", () => {
   });
 });
 
-describe("checkRateLimit — fail-open paths", () => {
+describe("checkRateLimit, fail-open paths", () => {
   beforeEach(() => {
     vi.resetModules();
     vi.stubEnv("UPSTASH_REDIS_REST_URL", "");
@@ -68,7 +68,7 @@ describe("checkRateLimit — fail-open paths", () => {
   });
 });
 
-describe("checkRateLimit — failure path with mocked Upstash", () => {
+describe("checkRateLimit, failure path with mocked Upstash", () => {
   beforeEach(() => {
     vi.resetModules();
     vi.stubEnv("UPSTASH_REDIS_REST_URL", "https://fake.upstash.io");

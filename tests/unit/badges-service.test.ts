@@ -36,7 +36,7 @@ import {
 } from "@/lib/badges/service";
 
 beforeEach(() => {
-  // Full reset — any per-test stubbing lives in that test.
+  // Full reset, any per-test stubbing lives in that test.
   for (const g of Object.values(prismaMock)) {
     for (const fn of Object.values(g)) vi.mocked(fn).mockReset();
   }
@@ -55,7 +55,7 @@ describe("grantBadge", () => {
       data: { userId: "user-1", key: "EMAIL_VERIFIED" },
     });
     // Notification fires with the correct badge metadata (label + emoji from
-    // BADGES config). It's fire-and-forget so we don't await it — here we
+    // BADGES config). It's fire-and-forget so we don't await it, here we
     // just assert it was kicked off with the right userId.
     expect(notifyBadgeAwarded).toHaveBeenCalledTimes(1);
     expect(notifyBadgeAwarded).toHaveBeenCalledWith(
@@ -182,7 +182,7 @@ describe("maybeAwardCollectorBadge", () => {
     });
   });
 
-  it("still awards beyond 5 (idempotent path — P2002 handled by grantBadge)", async () => {
+  it("still awards beyond 5 (idempotent path, P2002 handled by grantBadge)", async () => {
     prismaMock.collection.count.mockResolvedValueOnce(17);
     // Duplicate error exercises the idempotent path; service should not throw.
     prismaMock.userBadge.create.mockRejectedValueOnce(

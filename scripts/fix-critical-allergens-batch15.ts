@@ -10,7 +10,7 @@
  *   Un → GLUTEN: 3 slugs (badem çorbası + nohut çorbası + semizotu çorbası)
  *   Tereyağı → SUT: 3 slugs (diyarbakır pilavı, kayısılı bulgur çorbası,
  *     findikli erişte)
- *   vegan tag → remove: 1 slug (soke bazlama — has peynir)
+ *   vegan tag → remove: 1 slug (soke bazlama, has peynir)
  *
  * Each fix is UNION-add for allergens; tag fix is a simple slug filter.
  * Source-of-truth (`seed-recipes.ts`) must get the same edit separately so
@@ -167,7 +167,7 @@ async function main(): Promise<void> {
   console.log(
     `\n${verb}: ${allergenUpdated + tagUpdated} changes (allergen=${allergenUpdated}, tag=${tagUpdated}) | Already clean: ${allergenAlreadyClean + tagAlreadyClean}`,
   );
-  if (!APPLY) console.log("(dry run — re-run with --apply to write)");
+  if (!APPLY) console.log("(dry run, re-run with --apply to write)");
 }
 
 main()

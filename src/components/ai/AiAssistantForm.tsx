@@ -942,7 +942,7 @@ function SuggestionCard({
           </p>
         )}
         {s.note && (
-          <p className="mt-0.5 text-xs italic text-accent-blue">— {s.note}</p>
+          <p className="mt-0.5 text-xs italic text-accent-blue">, {s.note}</p>
         )}
       </div>
     </Link>

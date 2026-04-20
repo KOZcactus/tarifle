@@ -112,7 +112,7 @@ async function main() {
     console.log(`  ${label.padEnd(15)} ${String(count).padStart(4)} (%${pct})`);
   }
 
-  if (DRY_RUN) console.log("\n(dry run — no writes)");
+  if (DRY_RUN) console.log("\n(dry run, no writes)");
 
   await prisma.$disconnect();
 }

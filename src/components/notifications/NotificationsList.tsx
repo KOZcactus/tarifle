@@ -105,7 +105,7 @@ export function NotificationsList({ items: initial }: NotificationsListProps) {
             </div>
           );
 
-          // Type-aware link resolution overrides legacy stored links —
+          // Type-aware link resolution overrides legacy stored links,
           // see lib/notifications/link.ts.
           const target = resolveNotificationLink(item.type, item.link);
           return (

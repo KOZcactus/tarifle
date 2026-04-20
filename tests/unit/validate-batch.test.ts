@@ -1,7 +1,7 @@
 /**
  * Unit tests for the batch pre-flight validator's semantic layer. These
  * guard the regex-based muğlak ifade detection, TR normalisation, kcal/
- * makro check, and alcohol-tag cross-check — the parts that catch Codex
+ * makro check, and alcohol-tag cross-check, the parts that catch Codex
  * format drift BEFORE the seed script runs.
  *
  * Pure helpers are exported from scripts/validate-batch.ts; importing
@@ -63,7 +63,7 @@ describe("normalize()", () => {
   });
 });
 
-describe("findForbidden() — muğlak ifade tespiti", () => {
+describe("findForbidden(), muğlak ifade tespiti", () => {
   it("ERROR kelimeleri (biraz/epey/ya da tersi) bulur", () => {
     expect(findForbidden("Biraz tuz ekleyin.", ERROR_PATTERN)).toBe("biraz");
     expect(findForbidden("Epey bekletin.", ERROR_PATTERN)).toBe("epey");
@@ -75,7 +75,7 @@ describe("findForbidden() — muğlak ifade tespiti", () => {
     );
   });
 
-  it("kelime sınırı saygılı — 'bırakın' 'biraz' olarak eşleşmez", () => {
+  it("kelime sınırı saygılı, 'bırakın' 'biraz' olarak eşleşmez", () => {
     expect(findForbidden("Soğumaya bırakın.", ERROR_PATTERN)).toBeNull();
     expect(findForbidden("Hazırlayın.", ERROR_PATTERN)).toBeNull();
   });
@@ -93,7 +93,7 @@ describe("findForbidden() — muğlak ifade tespiti", () => {
   });
 });
 
-describe("runSemanticChecks() — muğlak ifade", () => {
+describe("runSemanticChecks(), muğlak ifade", () => {
   it("description'da 'biraz' varsa ERROR verir", () => {
     const r = makeRecipe({
       description: "Yirmi karakter üzeri bir açıklama, biraz tuzlu bir yemek.",
@@ -131,7 +131,7 @@ describe("runSemanticChecks() — muğlak ifade", () => {
   });
 });
 
-describe("runSemanticChecks() — kcal/makro uyumu", () => {
+describe("runSemanticChecks(), kcal/makro uyumu", () => {
   it("4·P + 4·C + 9·F vs kcal uyumluysa issue yok", () => {
     // 30 protein * 4 + 20 carbs * 4 + 15 fat * 9 = 335 kcal
     const r = makeRecipe({
@@ -194,7 +194,7 @@ describe("runSemanticChecks() — kcal/makro uyumu", () => {
   });
 });
 
-describe("runSemanticChecks() — alkol tag tutarlılığı", () => {
+describe("runSemanticChecks(), alkol tag tutarlılığı", () => {
   it("alkollü malzeme var + 'alkollu' tag yok → ERROR", () => {
     const r = makeRecipe({
       tags: [],
@@ -241,7 +241,7 @@ describe("runSemanticChecks() — alkol tag tutarlılığı", () => {
   });
 });
 
-describe("runSemanticChecks() — slug çakışması", () => {
+describe("runSemanticChecks(), slug çakışması", () => {
   it("existingSlugs set'inde slug varsa ERROR", () => {
     const r = makeRecipe({ slug: "adana-kebap" });
     const issues = runSemanticChecks(r, new Set(["adana-kebap", "baklava"]));

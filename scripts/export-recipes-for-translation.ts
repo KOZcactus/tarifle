@@ -3,7 +3,7 @@
  * these parts, produces `docs/translations-batch-N.json`, then
  * `import-translations.ts` writes them to the DB.
  *
- * Only recipes with `translations IS NULL` are exported — idempotent, so
+ * Only recipes with `translations IS NULL` are exported, idempotent, so
  * running again after a batch is imported just produces smaller parts.
  *
  * Split strategy (when the whole unfinished set fits a single pilot):
@@ -45,7 +45,7 @@ function parsePartArg(): number | "all" | null {
   return null; // default: write all parts
 }
 
-/** RFC 4180 CSV escape — wrap in quotes, double embedded quotes. */
+/** RFC 4180 CSV escape, wrap in quotes, double embedded quotes. */
 function csvCell(value: string | null | undefined): string {
   if (value == null) return "";
   const s = String(value).replace(/\r?\n/g, " ").trim();
@@ -148,7 +148,7 @@ async function main() {
   // part boundaries stable across re-runs.
   const recipes = await prisma.recipe.findMany({
     // Prisma.DbNull = SQL NULL (nullable Json column). Prisma.JsonNull would
-    // match rows whose JSON value is literally `null` — not what we want.
+    // match rows whose JSON value is literally `null`, not what we want.
     where: { translations: { equals: Prisma.DbNull } },
     select: {
       slug: true,
@@ -198,7 +198,7 @@ async function main() {
 
   const rows: RecipeRow[] = recipes.map((r) => {
     // Full ingredient list with amount + unit + optional/group markers.
-    // Format per item: "<name> <amount><unit>[ (opt)][ — group]"
+    // Format per item: "<name> <amount><unit>[ (opt)][, group]"
     // Separator is " | " so Codex can parse back and so commas inside a
     // single cell don't confuse CSV consumers once escaped.
     const ingredients = r.ingredients
@@ -207,7 +207,7 @@ async function main() {
         const flags = [
           amt ? amt : null,
           i.isOptional ? "(opsiyonel)" : null,
-          i.group ? `— ${i.group}` : null,
+          i.group ? `, ${i.group}` : null,
         ]
           .filter(Boolean)
           .join(" ");

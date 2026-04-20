@@ -110,7 +110,7 @@ export function CategoryRow({
             className="inline-flex h-7 w-10 items-center justify-center rounded border border-transparent text-lg hover:border-border hover:bg-bg-elevated"
             aria-label={t("rowEmojiTitle")}
           >
-            {emoji ?? "—"}
+            {emoji ?? ","}
           </button>
         )}
       </div>

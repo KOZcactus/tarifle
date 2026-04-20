@@ -349,7 +349,7 @@ export default async function AdminPage() {
                   >
                     {u.name ?? u.username ?? t("anonymousUser")}
                     <span className="ml-2 text-xs text-text-muted">
-                      @{u.username ?? "—"}
+                      @{u.username ?? ","}
                     </span>
                     {u.role !== "USER" && (
                       <span className="ml-2 rounded-full bg-accent-blue/15 px-1.5 py-0.5 text-[10px] font-medium text-accent-blue">
@@ -403,7 +403,7 @@ export default async function AdminPage() {
                           {v.miniTitle}
                         </Link>
                         <p className="truncate text-xs text-text-muted">
-                          {v.recipe.title}, @{v.author.username ?? "—"}
+                          {v.recipe.title}, @{v.author.username ?? ","}
                         </p>
                       </div>
                       <div className="flex shrink-0 items-center gap-2">
@@ -443,7 +443,7 @@ export default async function AdminPage() {
                           {r.recipe.title}
                         </Link>
                         <p className="truncate text-xs text-text-muted">
-                          {"★".repeat(r.rating)}, @{r.user.username ?? "—"}
+                          {"★".repeat(r.rating)}, @{r.user.username ?? ","}
                           {r.comment && ` · "${r.comment.slice(0, 40)}${r.comment.length > 40 ? "…" : ""}"`}
                         </p>
                       </div>
@@ -494,7 +494,7 @@ export default async function AdminPage() {
                       )}
                     </p>
                     <p className="truncate text-xs text-text-muted">
-                      @{u.username ?? "—"}
+                      @{u.username ?? ","}
                       {u.email && <span className="ml-2">· {u.email}</span>}
                     </p>
                   </div>

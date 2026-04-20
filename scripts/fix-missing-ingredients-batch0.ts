@@ -10,7 +10,7 @@
  *   - antep-katikli-dolma  : description mentions "sarımsaklı yoğurt" → Sarımsak
  *
  * Idempotent: skips if the named ingredient already exists on the recipe.
- * Adds with a sensible small quantity (2 diş) — the steps already expect
+ * Adds with a sensible small quantity (2 diş), the steps already expect
  * a small amount so this won't throw off the recipe's balance.
  *
  * Runs dry-run by default. --apply to write. Dev-safe, prod requires
@@ -37,7 +37,7 @@ interface Fix {
   ingredientName: string;
   amount: string;
   unit: string;
-  /** Why this fix — mirrors the Codex issue so the audit log makes sense. */
+  /** Why this fix, mirrors the Codex issue so the audit log makes sense. */
   reason: string;
 }
 
@@ -76,7 +76,7 @@ const FIXES: readonly Fix[] = [
 async function main() {
   if (APPLY) assertDbTarget("fix-missing-ingredients-batch0");
 
-  console.log(`${APPLY ? "APPLYING" : "DRY-RUN"} — ${FIXES.length} fix(es)`);
+  console.log(`${APPLY ? "APPLYING" : "DRY-RUN"}, ${FIXES.length} fix(es)`);
   console.log("");
 
   let applied = 0;
@@ -97,7 +97,7 @@ async function main() {
       },
     });
     if (!recipe) {
-      console.log(`❌ [${fix.slug}] not found in DB — skip.`);
+      console.log(`❌ [${fix.slug}] not found in DB, skip.`);
       continue;
     }
 
@@ -115,7 +115,7 @@ async function main() {
     });
     if (existing) {
       console.log(
-        `⏭️  [${fix.slug}] already has "${existing.name}" — skip.`,
+        `⏭️  [${fix.slug}] already has "${existing.name}", skip.`,
       );
       skipped++;
       continue;
@@ -145,7 +145,7 @@ async function main() {
 
   console.log("");
   if (APPLY) {
-    console.log(`🎉 done — ${applied} ingredient(s) added, ${skipped} already existed.`);
+    console.log(`🎉 done, ${applied} ingredient(s) added, ${skipped} already existed.`);
     console.log(
       "Next: run `npx tsx scripts/audit-deep.ts` to verify step-ingredient mismatches are gone.",
     );

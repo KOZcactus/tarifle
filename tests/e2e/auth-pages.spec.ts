@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 
 /**
- * Auth pages smoke — read-only. Confirms both /giris and /kayit render their
+ * Auth pages smoke, read-only. Confirms both /giris and /kayit render their
  * expected fields + the Google OAuth button. We do NOT submit the forms here
  * because doing so either hits the live DB (register) or locks out a real
  * account (failed logins consume rate-limit tokens). A separate, DB-aware
@@ -30,7 +30,7 @@ test.describe("Auth pages", () => {
   });
 
   test("links between /giris and /kayit work", async ({ page }) => {
-    // Scope to the form itself — navbar also has "Giriş Yap" when logged
+    // Scope to the form itself, navbar also has "Giriş Yap" when logged
     // out, which makes an unqualified getByRole ambiguous.
     await page.goto("/giris");
     const loginFormArea = page.locator("main");

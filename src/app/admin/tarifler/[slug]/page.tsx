@@ -340,7 +340,7 @@ export default async function AdminRecipeDetailPage({ params }: PageProps) {
                         href={`/admin/kullanicilar/${r.user.username ?? ""}`}
                         className="min-w-0 flex-1 truncate text-xs text-text hover:text-primary"
                       >
-                        {r.user.name ?? `@${r.user.username ?? "—"}`}
+                        {r.user.name ?? `@${r.user.username ?? ","}`}
                       </Link>
                       <span className="shrink-0 text-xs text-text-muted">
                         {fmtDate(r.createdAt, locale)}
@@ -387,7 +387,7 @@ export default async function AdminRecipeDetailPage({ params }: PageProps) {
           🔄 {t("publishedVariationsHeading", { count: variations.length })}
         </h3>
         {variations.length === 0 ? (
-          <p className="text-sm text-text-muted">—</p>
+          <p className="text-sm text-text-muted">,</p>
         ) : (
           <div className="overflow-hidden rounded-xl border border-border bg-bg-card">
             <ul className="divide-y divide-border">
@@ -408,7 +408,7 @@ export default async function AdminRecipeDetailPage({ params }: PageProps) {
                           href={`/admin/kullanicilar/${v.author.username ?? ""}`}
                           className="hover:text-primary"
                         >
-                          {v.author.name ?? `@${v.author.username ?? "—"}`}
+                          {v.author.name ?? `@${v.author.username ?? ","}`}
                         </Link>
                         {" · "}
                         {fmtDate(v.createdAt, locale)}
@@ -465,7 +465,7 @@ export default async function AdminRecipeDetailPage({ params }: PageProps) {
                   href={`/admin/kullanicilar/${b.user.username ?? ""}`}
                   className="flex-1 truncate text-text hover:text-primary"
                 >
-                  {b.user.name ?? `@${b.user.username ?? "—"}`}
+                  {b.user.name ?? `@${b.user.username ?? ","}`}
                 </Link>
                 <span className="shrink-0 text-xs text-text-muted">
                   {fmtDate(b.createdAt, locale)}

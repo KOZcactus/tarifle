@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { buildPageItems } from "@/components/listing/Pagination";
 
-describe("buildPageItems — pagination windowing", () => {
+describe("buildPageItems, pagination windowing", () => {
   it("renders every page when totalPages is small (≤ threshold)", () => {
     expect(buildPageItems(1, 1)).toEqual([1]);
     expect(buildPageItems(1, 4)).toEqual([1, 2, 3, 4]);
@@ -38,7 +38,7 @@ describe("buildPageItems — pagination windowing", () => {
     expect(buildPageItems(20, 20)).toEqual([1, "…", 18, 19, 20]);
   });
 
-  it("large total (117 pages, /tarifler scale) — window stays bounded", () => {
+  it("large total (117 pages, /tarifler scale), window stays bounded", () => {
     // Real-world: 1401 recipes / 12 per page ≈ 117 pages. Middle page
     // shouldn't render anywhere near 117 links.
     const items = buildPageItems(60, 117);
@@ -48,7 +48,7 @@ describe("buildPageItems — pagination windowing", () => {
     expect(items).toContain(60);
   });
 
-  it("threshold boundary — 9 pages full, 10 pages windowed", () => {
+  it("threshold boundary, 9 pages full, 10 pages windowed", () => {
     expect(buildPageItems(5, 9)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9]);
     const tenItems = buildPageItems(5, 10);
     expect(tenItems).toContain("…");

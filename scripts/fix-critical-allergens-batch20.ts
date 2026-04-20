@@ -12,7 +12,7 @@
  *   Yer fıstığı → YER_FISTIGI: 1 slug (Poha)
  *
  * One additional keyword hit ("olgun muz" → "un " substring match on
- * Moqueca de Banana) was a false positive — manyok unu (cassava flour)
+ * Moqueca de Banana) was a false positive, manyok unu (cassava flour)
  * is gluten-free, and the rule's `un ` pattern grabbed the "un m" span
  * in "olgun muz". Exclusion pattern will be tightened in a follow-up.
  *
@@ -85,7 +85,7 @@ async function main(): Promise<void> {
   for (const fix of ALLERGEN_FIXES) {
     const recipe = recipes.find((r) => r.slug === fix.slug);
     if (!recipe) {
-      console.log(`  ⚠ ${fix.slug} — DB'de yok (atlandı)`);
+      console.log(`  ⚠ ${fix.slug}, DB'de yok (atlandı)`);
       missing++;
       continue;
     }
@@ -94,7 +94,7 @@ async function main(): Promise<void> {
     const toAdd = fix.add.filter((a) => !current.has(a));
 
     if (toAdd.length === 0) {
-      console.log(`  ⏭  ${fix.slug} — zaten temiz (${[...current].join(", ") || "none"})`);
+      console.log(`  ⏭  ${fix.slug}, zaten temiz (${[...current].join(", ") || "none"})`);
       alreadyClean++;
       continue;
     }
@@ -103,7 +103,7 @@ async function main(): Promise<void> {
     const sorted = ALLERGEN_ORDER.filter((a) => current.has(a));
 
     console.log(
-      `  ${APPLY ? "✅" : "🔍"} ${fix.slug} — +${toAdd.join(", ")} (${fix.reason}) → [${sorted.join(", ")}]`,
+      `  ${APPLY ? "✅" : "🔍"} ${fix.slug}, +${toAdd.join(", ")} (${fix.reason}) → [${sorted.join(", ")}]`,
     );
 
     if (APPLY) {

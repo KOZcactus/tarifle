@@ -4,8 +4,8 @@ import AxeBuilder from "@axe-core/playwright";
 const PAGES_TO_SCAN: { path: string; label: string }[] = [
   { path: "/", label: "Homepage" },
   { path: "/tarifler", label: "Tarifler (list)" },
-  { path: "/tarif/baklava", label: "Tarif detay (Baklava — grouped)" },
-  { path: "/tarif/adana-kebap", label: "Tarif detay (Adana — flat)" },
+  { path: "/tarif/baklava", label: "Tarif detay (Baklava, grouped)" },
+  { path: "/tarif/adana-kebap", label: "Tarif detay (Adana, flat)" },
   { path: "/ai-asistan", label: "AI Asistan" },
   { path: "/giris", label: "Giriş" },
   { path: "/kayit", label: "Kayıt" },
@@ -15,7 +15,7 @@ const PAGES_TO_SCAN: { path: string; label: string }[] = [
 ];
 
 /**
- * Shared audit runner — both light and dark tests share this. Failure
+ * Shared audit runner, both light and dark tests share this. Failure
  * mode is identical: aggregate all violations across PAGES_TO_SCAN and
  * assert zero critical/serious nodes.
  */
@@ -87,7 +87,7 @@ async function auditAllPages(page: Page, theme: "light" | "dark") {
   });
 
   console.log(
-    `\n━━ A11Y AUDIT [${theme.toUpperCase()}] — ${PAGES_TO_SCAN.length} pages scanned ━━`,
+    `\n━━ A11Y AUDIT [${theme.toUpperCase()}], ${PAGES_TO_SCAN.length} pages scanned ━━`,
   );
   if (sorted.length === 0) {
     console.log("  ✓ No violations found.");
@@ -96,7 +96,7 @@ async function auditAllPages(page: Page, theme: "light" | "dark") {
       const mark =
         f.impact === "critical" ? "×" : f.impact === "serious" ? "!" : "·";
       console.log(
-        `\n  ${mark} [${f.impact.toUpperCase()}] ${f.id} — ${f.help}`,
+        `\n  ${mark} [${f.impact.toUpperCase()}] ${f.id}, ${f.help}`,
       );
       console.log(`     on pages: ${[...f.pages].join(", ")}`);
       for (const s of f.samples) {

@@ -48,7 +48,7 @@ const target: SimilarTarget = {
   ingredientNames: [],
 };
 
-describe("scoreCandidates — ağırlıklar", () => {
+describe("scoreCandidates, ağırlıklar", () => {
   it("aynı kategori +3 puan", () => {
     const r = scoreCandidates(target, [
       c({ id: "same-cat", categoryId: "cat-yemek", type: "ICECEK" }),
@@ -127,7 +127,7 @@ describe("scoreCandidates — ağırlıklar", () => {
   });
 });
 
-describe("scoreCandidates — sıralama", () => {
+describe("scoreCandidates, sıralama", () => {
   it("score desc önce", () => {
     const r = scoreCandidates(target, [
       c({ id: "low", categoryId: "cat-yemek", type: "ICECEK" }), // +3
@@ -162,7 +162,7 @@ describe("scoreCandidates — sıralama", () => {
   });
 });
 
-describe("scoreCandidates — ingredient overlap (1501 scale enhancement)", () => {
+describe("scoreCandidates, ingredient overlap (1501 scale enhancement)", () => {
   const ingredientTarget: SimilarTarget = {
     ...target,
     ingredientNames: ["Tavuk göğsü", "Yoğurt", "Sarımsak", "Tuz", "Karabiber"],
@@ -233,7 +233,7 @@ describe("scoreCandidates — ingredient overlap (1501 scale enhancement)", () =
   });
 });
 
-describe("scoreCandidates — isFeatured boost", () => {
+describe("scoreCandidates, isFeatured boost", () => {
   it("isFeatured candidate +0.3 boost", () => {
     const r = scoreCandidates(target, [
       c({
@@ -292,7 +292,7 @@ describe("normalize + pantry helpers", () => {
   });
 });
 
-describe("scoreCandidates — kenar durumlar", () => {
+describe("scoreCandidates, kenar durumlar", () => {
   it("kendi ID'sini sonuçta göstermez", () => {
     const r = scoreCandidates(target, [
       c({ id: "target", categoryId: "cat-yemek" }),

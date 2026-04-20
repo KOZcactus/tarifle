@@ -41,7 +41,7 @@ describe("filterValidUrls", () => {
     const urls = [
       "https://tarifle.app/a",
       "https://example.com/b",
-      "https://www.tarifle.app/c", // host farkı www. prefix — reddedilir
+      "https://www.tarifle.app/c", // host farkı www. prefix, reddedilir
     ];
     const filtered = filterValidUrls(urls, base);
     expect(filtered).toEqual(["https://tarifle.app/a"]);

@@ -1,11 +1,11 @@
 /**
- * Uyarlama (variation) end-to-end akışı — login → tarif detayında
+ * Uyarlama (variation) end-to-end akışı, login → tarif detayında
  * "Uyarlama Ekle" formu doldur + submit → uyarlama listede görünür →
  * sahibi olarak "Sil" butonuna bas → variation kaybolur.
  *
  * Faz 2 + Pass 8'de eklenen variation create + delete-own akışına
  * regression guard. Like action'ı (toggleLikeAction) backend'de var ama
- * UI'da expose edilmemiş — like flow E2E'si yazılamadı, görsel beğeni
+ * UI'da expose edilmemiş, like flow E2E'si yazılamadı, görsel beğeni
  * butonu eklendiğinde test buraya genişletilebilir.
  */
 import { test, expect } from "@playwright/test";
@@ -24,7 +24,7 @@ test.beforeAll(async () => {
 
 test.afterAll(async () => {
   if (user) {
-    // Variation.author FK'da onDelete cascade YOK (kasıtlı — user
+    // Variation.author FK'da onDelete cascade YOK (kasıtlı, user
     // içeriği koruma). Test başarısız olup variation kalırsa user
     // delete patlar; o yüzden user'ın tüm variation'larını önce sil.
     const { PrismaClient } = await import("@prisma/client");
@@ -44,7 +44,7 @@ test.afterAll(async () => {
 test("login → uyarlama ekle → listede görünür → kendi uyarlamasını sil", async ({
   page,
 }) => {
-  // window.confirm browser dialog'u açar (DeleteOwnVariationButton içinde) —
+  // window.confirm browser dialog'u açar (DeleteOwnVariationButton içinde),
   // Playwright dialog'u otomatik dismiss eder. Auto-accept'e set et.
   page.on("dialog", (dialog) => dialog.accept());
 
@@ -62,7 +62,7 @@ test("login → uyarlama ekle → listede görünür → kendi uyarlamasını si
   await page.goto("/tarif/adana-kebap");
   await expect(page.getByRole("heading", { name: "Adana Kebap" })).toBeVisible();
 
-  // 3. "Uyarlama Ekle" butonu — login'liyiz, dropdown form trigger'ı
+  // 3. "Uyarlama Ekle" butonu, login'liyiz, dropdown form trigger'ı
   await page.getByRole("button", { name: /\+ uyarlama ekle/i }).click();
 
   // 4. Form alanlarını doldur
@@ -82,14 +82,14 @@ test("login → uyarlama ekle → listede görünür → kendi uyarlamasını si
   // 5. Submit
   await page.getByRole("button", { name: /uyarlamayı ekle/i }).click();
 
-  // 6. Success state — "Uyarlamanız eklendi!" veya pending review mesajı
+  // 6. Success state, "Uyarlamanız eklendi!" veya pending review mesajı
   await expect(
     page
       .getByText(/uyarlamanız eklendi/i)
       .or(page.getByText(/uyarlaman alındı/i)),
   ).toBeVisible({ timeout: 10000 });
 
-  // 7. Sayfa reload — yeni uyarlama variation listesinde görünür
+  // 7. Sayfa reload, yeni uyarlama variation listesinde görünür
   //    (pending review ise gözükmez ama happy path PUBLISHED)
   await page.reload();
 
@@ -100,7 +100,7 @@ test("login → uyarlama ekle → listede görünür → kendi uyarlamasını si
   // 8. Variation card'ı aç (toggle)
   await variationHeading.click();
 
-  // 9. Bonus — kendi uyarlamamızda LikeButton "isOwnVariation" pattern'i
+  // 9. Bonus, kendi uyarlamamızda LikeButton "isOwnVariation" pattern'i
   //    nedeniyle salt-okunur ❤️ N gösteriyor. Başka bir variation
   //    olduğunda tıklanabilir; bu test sahibi olduğu için sadece sayı
   //    görünür. Like UI eklendiğini doğrulamak için varlığını kontrol et.
@@ -108,7 +108,7 @@ test("login → uyarlama ekle → listede görünür → kendi uyarlamasını si
     page.getByLabel(/^\d+ beğeni$/i).first(),
   ).toBeVisible();
 
-  // 10. "Sil" butonu görünür — DeleteOwnVariationButton aria-label
+  // 10. "Sil" butonu görünür, DeleteOwnVariationButton aria-label
   //    olarak `${miniTitle} uyarlamasını sil` kullanır. Dialog handler
   //    yukarıda ayarlandı, confirm() otomatik accept oluyor.
   const deleteButton = page.getByRole("button", {

@@ -47,7 +47,7 @@ describe("computePreflightFlags", () => {
   });
 
   it("does NOT flag normal Turkish doubled characters", () => {
-    // "merhabaa" has only 2 a's — not a spam signal.
+    // "merhabaa" has only 2 a's, not a spam signal.
     const result = computePreflightFlags({
       ...baseValid,
       miniTitle: "Merhabaa karnıyarık",
@@ -156,7 +156,7 @@ describe("computePreflightFlags", () => {
   });
 
   it("aggregates multiple signals into the flags array", () => {
-    // Title is screamy, total content is short, AND there's a URL — three
+    // Title is screamy, total content is short, AND there's a URL, three
     // separate signals must all show up.
     const result = computePreflightFlags({
       miniTitle: "EN MUTHIS TARIFFFFF",

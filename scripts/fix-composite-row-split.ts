@@ -1,12 +1,12 @@
 /**
- * Split composite ingredient rows — virgülle birleşik ("Tuz, şeker,
+ * Split composite ingredient rows, virgülle birleşik ("Tuz, şeker,
  * maydanoz") row'ları ayrı RecipeIngredient kayıtlarına böl.
  *
  * strategy:
  *   "auto"   → --apply ile batch split. Eşit amount veya tekrarlanan tek
  *              amount ile her part için yeni row insert, orijinal row silinir.
  *   "manual" → sadece dry-run'da gösterilir; amount dağıtımı tarife özel
- *              karar gerektirir (örn. "Zeytinyağı, limon, tuz" — 3'ü farklı
+ *              karar gerektirir (örn. "Zeytinyağı, limon, tuz", 3'ü farklı
  *              form).
  *
  * Kullanım:
@@ -34,7 +34,7 @@ const INCLUDE_MANUAL = process.argv.includes("--include-manual");
 
 interface Split {
   slug: string;
-  /** Mevcut row'un adı ("Tuz, karabiber" gibi) — match key. */
+  /** Mevcut row'un adı ("Tuz, karabiber" gibi), match key. */
   currentName: string;
   /** Yeni ingredient'ların her biri. */
   newIngredients: { name: string; amount: string; unit: string }[];
@@ -43,14 +43,14 @@ interface Split {
   preserveGroup?: boolean;
 }
 
-// ═══════ SPLITS — Codex2 listesi geldiğinde buraya doldurulacak ═══════
+// ═══════ SPLITS, Codex2 listesi geldiğinde buraya doldurulacak ═══════
 //
 // Claude'un audit-composite-rows.ts çıktısı önkontrol için. Codex2'nin
-// tarif-özel amount kararları daha güvenilir — final splits Codex2'den gelir.
+// tarif-özel amount kararları daha güvenilir, final splits Codex2'den gelir.
 //
 const SPLITS: Split[] = [
   // ═══════ Codex2 list (2026-04-17, 24 rows) ═══════
-  // AUTO (7): orijinal row'un amount/unit'i boş — split de boş, güvenli
+  // AUTO (7): orijinal row'un amount/unit'i boş, split de boş, güvenli
   { slug: "imam-bayildi", currentName: "Tuz, şeker, maydanoz", newIngredients: [{ name: "Tuz", amount: "", unit: "" }, { name: "Şeker", amount: "", unit: "" }, { name: "Maydanoz", amount: "", unit: "" }], strategy: "auto", preserveGroup: true },
   { slug: "kuru-fasulye", currentName: "Tuz, karabiber, pul biber", newIngredients: [{ name: "Tuz", amount: "", unit: "" }, { name: "Karabiber", amount: "", unit: "" }, { name: "Pul biber", amount: "", unit: "" }], strategy: "auto", preserveGroup: true },
   { slug: "coban-salatasi", currentName: "Zeytinyağı, limon, tuz", newIngredients: [{ name: "Zeytinyağı", amount: "", unit: "" }, { name: "Limon", amount: "", unit: "" }, { name: "Tuz", amount: "", unit: "" }], strategy: "auto", preserveGroup: true },
@@ -90,7 +90,7 @@ async function main(): Promise<void> {
 
   if (SPLITS.length === 0) {
     console.log(
-      "ℹ️  SPLITS array boş — Codex2 listesi geldiğinde yukarıdaki bloğa ekle.\n" +
+      "ℹ️  SPLITS array boş, Codex2 listesi geldiğinde yukarıdaki bloğa ekle.\n" +
       "    scripts/audit-composite-rows.ts çıktısı önkontrol için.",
     );
     return;
@@ -189,7 +189,7 @@ async function main(): Promise<void> {
   console.log(
     `\n${verb}: ${willSplit} row(s) | Skipped (already done): ${alreadyDone} | Skipped (manual): ${skipManual}`,
   );
-  if (!APPLY) console.log("(dry run — re-run with --apply)");
+  if (!APPLY) console.log("(dry run, re-run with --apply)");
 }
 
 main()

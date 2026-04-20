@@ -1,5 +1,5 @@
 /**
- * Fix step ↔ ingredient mismatch — eksik baseline ingredient'ları ekle.
+ * Fix step ↔ ingredient mismatch, eksik baseline ingredient'ları ekle.
  *
  * Codex2 + Claude bağımsız analizinden karma liste. Her fix için:
  *   confidence: "high"   → --apply ile otomatik yazılır
@@ -36,14 +36,14 @@ interface Fix {
   confidence: "high" | "review";
 }
 
-// ═══════ FIXES — Codex2 listesi geldiğinde buraya doldurulacak ═══════
+// ═══════ FIXES, Codex2 listesi geldiğinde buraya doldurulacak ═══════
 //
 // Şu anda Claude'un audit-step-ingredient-mismatch.ts'ten çıkan HIGH 19 +
 // REVIEW 54 sonuçları placeholder olarak. Codex2 listesi geldiğinde
 // BURAYI GÜNCELLE: Codex2'nin ingredient + amount önerisi daha context-aware.
 //
 const FIXES: Fix[] = [
-  // ═══════ Codex2 list (2026-04-17, 28 entries, 27 recipes — manti x2) ═══════
+  // ═══════ Codex2 list (2026-04-17, 28 entries, 27 recipes, manti x2) ═══════
   { slug: "manti", stepNumber: 1, stepSnippet: "Un, yumurta, su ve tuzla sert bir hamur yoğurun.", ingredient: { name: "Tuz", amount: "1", unit: "çay kaşığı" }, confidence: "review" },
   { slug: "manti", stepNumber: 2, stepSnippet: "Kıyma, rendelenmiş soğan, tuz ve karabiberi karıştırarak iç harç yapın.", ingredient: { name: "Karabiber", amount: "0.5", unit: "çay kaşığı" }, confidence: "high" },
   { slug: "jokai-bableves", stepNumber: 3, stepSnippet: "Tuzunu ayarlayıp servis edin.", ingredient: { name: "Tuz", amount: "1", unit: "çay kaşığı" }, confidence: "review" },
@@ -86,7 +86,7 @@ async function main(): Promise<void> {
 
   if (FIXES.length === 0) {
     console.log(
-      "ℹ️  FIXES array boş — Codex2 listesi geldiğinde yukarıdaki bloğa ekle.\n" +
+      "ℹ️  FIXES array boş, Codex2 listesi geldiğinde yukarıdaki bloğa ekle.\n" +
       "    scripts/audit-step-ingredient-mismatch.ts çıktısı önkontrol için.",
     );
     return;
@@ -181,7 +181,7 @@ async function main(): Promise<void> {
   console.log(
     `\n${verb}: ${willWrite} ingredient(s) | Skipped (already present): ${alreadyPresent} | Skipped (review): ${skipReview}`,
   );
-  if (!APPLY) console.log("(dry run — re-run with --apply)");
+  if (!APPLY) console.log("(dry run, re-run with --apply)");
 }
 
 main()

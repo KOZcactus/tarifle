@@ -5,7 +5,7 @@
  * mismatch check that mirrors audit-deep's CRITICAL category.
  *
  * Why a separate script: scripts/audit-deep.ts hangs silently on Windows
- * (no output past the dotenv banner) — root cause not yet isolated. This
+ * (no output past the dotenv banner), root cause not yet isolated. This
  * file-based pass gives a deterministic pre-prod check.
  *
  * Matches brief §9 allergen checklist keyword → required allergen set.
@@ -54,7 +54,7 @@ const RULES: Rule[] = [
     allergen: "SUT",
     keywords: [
       "tereyag",
-      "sut", // matches "süt" and "sutsuz" — excluded below
+      "sut", // matches "süt" and "sutsuz", excluded below
       "yogurt",
       "krema",
       "peynir",
@@ -130,7 +130,7 @@ const RULES: Rule[] = [
     allergen: "GLUTEN",
     keywords: [
       "bugday",
-      "un ", // trailing space — avoid matching "undur", "unlu mamul"
+      "un ", // trailing space, avoid matching "undur", "unlu mamul"
       "ekmek",
       "bulgur",
       "makarna",
@@ -212,7 +212,7 @@ function main(): void {
   const size = parseLast();
   const label = parseLabel();
   const slice = recipes.slice(-size);
-  console.log(`🔍 audit-inline (${label}) — ${slice.length} tarif taranıyor\n`);
+  console.log(`🔍 audit-inline (${label}), ${slice.length} tarif taranıyor\n`);
 
   const findings: Finding[] = [];
   for (const r of slice) {
@@ -221,7 +221,7 @@ function main(): void {
   }
 
   if (findings.length === 0) {
-    console.log(`✅ ${label} — CRITICAL allergen eksiği yok.`);
+    console.log(`✅ ${label}, CRITICAL allergen eksiği yok.`);
     return;
   }
 

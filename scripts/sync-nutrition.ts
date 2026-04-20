@@ -1,7 +1,7 @@
 /**
  * Sync nutrition data from seed-recipes.ts source to production DB.
  *
- * Seed script is idempotent INSERT (slug skip) — when Codex adds
+ * Seed script is idempotent INSERT (slug skip), when Codex adds
  * averageCalories/protein/carbs/fat to existing recipes in source,
  * the DB doesn't get updated automatically. This script bridges the gap
  * by reading the source and UPDATEing recipes where the DB has NULL but
@@ -116,7 +116,7 @@ async function main(): Promise<void> {
       const dbHasValues = db.averageCalories !== null;
 
       if (dbHasValues && !isForce) {
-        // DB already has nutrition — check if same
+        // DB already has nutrition, check if same
         if (
           Number(db.averageCalories) === src.averageCalories &&
           Number(db.protein) === src.protein &&
@@ -125,7 +125,7 @@ async function main(): Promise<void> {
         ) {
           noChange.push(slug);
         }
-        // Different but not forced — skip
+        // Different but not forced, skip
         continue;
       }
 
@@ -168,7 +168,7 @@ async function main(): Promise<void> {
     }
 
     if (isDryRun) {
-      console.log("\nℹ Dry-run — DB'ye dokunulmadı.");
+      console.log("\nℹ Dry-run, DB'ye dokunulmadı.");
       return;
     }
 

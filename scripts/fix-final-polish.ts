@@ -2,7 +2,7 @@
  * Final-polish batch:
  * - lokma-tatlisi: restore 2 groups (Hamur için / Şerbet için) after my
  *   earlier flatten regression; Sıvı yağ goes to Hamur için (frying is
- *   an extension of the dough procedure — same pattern as tulumba)
+ *   an extension of the dough procedure, same pattern as tulumba)
  * - 5 "iyice" vagueness fixes (RECIPE_FORMAT.md §7.3: vague adverbs
  *   need concrete criteria):
  *   adana-kebap, cig-kofte, haydari, soguk-cay, tarhana-corbasi
@@ -49,7 +49,7 @@ const STEP_FIXES: StepFix[] = [
     slug: "adana-kebap",
     stepNumber: 2,
     newInstruction: "En az 15 dakika yoğurun. Hamur gibi yapışkan bir kıvam almalı.",
-    reason: "\"iyice\" gereksiz — süre (15 dk) + kriter (yapışkan) zaten var",
+    reason: "\"iyice\" gereksiz, süre (15 dk) + kriter (yapışkan) zaten var",
   },
   {
     slug: "cig-kofte",
@@ -73,7 +73,7 @@ const STEP_FIXES: StepFix[] = [
     slug: "tarhana-corbasi",
     stepNumber: 1,
     newInstruction: "Tarhanayı 1 bardak soğuk suyla topak kalmayacak şekilde çözün.",
-    reason: "\"iyice\" kaldırıldı — zaten \"topak kalmayacak\" kriter var",
+    reason: "\"iyice\" kaldırıldı, zaten \"topak kalmayacak\" kriter var",
   },
 ];
 
@@ -143,7 +143,7 @@ async function main(): Promise<void> {
 
   const verb = APPLY ? "Applied" : "Would apply";
   console.log(`\n${verb}: ${total} change(s)`);
-  if (!APPLY) console.log("(dry run — re-run with --apply to write)");
+  if (!APPLY) console.log("(dry run, re-run with --apply to write)");
 }
 
 main()

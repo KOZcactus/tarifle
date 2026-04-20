@@ -41,7 +41,7 @@ async function main() {
   const recipes = await prisma.recipe.findMany({
     where: { status: "PUBLISHED" },
     select: { slug: true, viewCount: true, isFeatured: true, createdAt: true },
-    // isFeatured önce, sonra viewCount, sonra en yeniler — en alakalı ilk.
+    // isFeatured önce, sonra viewCount, sonra en yeniler, en alakalı ilk.
     orderBy: [
       { isFeatured: "desc" },
       { viewCount: "desc" },

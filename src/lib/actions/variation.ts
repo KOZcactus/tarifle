@@ -198,7 +198,7 @@ export async function createVariation(formData: FormData): Promise<VariationResu
 }
 
 /**
- * Author-initiated delete. Lets a user remove an uyarlama they added —
+ * Author-initiated delete. Lets a user remove an uyarlama they added,
  * typical scenario: "yanlislikla ekledim". Hard delete (cascade removes
  * Like rows via FK); we stamp an AuditLog entry so the action is traceable
  * if support needs to reconstruct what happened.
@@ -210,7 +210,7 @@ export async function createVariation(formData: FormData): Promise<VariationResu
  *
  * Not wired to report/notification cleanup explicitly: Report FK is a
  * logical reference (targetId/targetType strings), not a hard FK, so any
- * pending reports for the deleted variation will simply never resolve —
+ * pending reports for the deleted variation will simply never resolve,
  * mods can ignore-or-close them in the admin queue. Acceptable: the
  * expected volume is near-zero (report AND own-delete is rare).
  */

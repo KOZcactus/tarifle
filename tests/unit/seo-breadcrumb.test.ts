@@ -1,7 +1,7 @@
 /**
  * Unit tests for the BreadcrumbList JSON-LD generator. Breadcrumb
  * markup is what Google uses to render "Ana Sayfa › Tarifler ›
- * Category › Recipe" strips under search results — getting the schema
+ * Category › Recipe" strips under search results, getting the schema
  * shape right matters for rich results eligibility.
  */
 import { describe, it, expect } from "vitest";

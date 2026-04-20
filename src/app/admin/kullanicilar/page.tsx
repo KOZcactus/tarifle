@@ -266,12 +266,12 @@ export default async function AdminUsersPage({ searchParams }: PageProps) {
                             @{u.username}
                           </Link>
                         ) : (
-                          "—"
+                          ","
                         )}
                       </p>
                     </div>
                   </td>
-                  <td className="py-3 pr-4 text-text-muted">{u.email ?? "—"}</td>
+                  <td className="py-3 pr-4 text-text-muted">{u.email ?? ","}</td>
                   <td className="py-3 pr-4">
                     <span
                       className={`rounded px-2 py-0.5 text-xs font-medium ${

@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/constants";
  *
  * UX: başarılı/başarısız durum için `/newsletter/confirmed` veya
  * `/newsletter/expired` sayfasına redirect. Query param yerine ayrı
- * sayfa URL'leri çünkü kullanıcıya mail linki üzerinden geliyor —
+ * sayfa URL'leri çünkü kullanıcıya mail linki üzerinden geliyor,
  * temiz URL isteriz.
  */
 export async function GET(request: Request): Promise<Response> {

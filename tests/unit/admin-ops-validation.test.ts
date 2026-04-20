@@ -1,7 +1,7 @@
 /**
  * admin-ops.ts server action'larının Zod şemalarını doğrular. Action
  * dosyası 'use server' direktifi içerdiği için şemaları inline duplicate
- * ediyoruz — action'ı direkt import etsek module load side-effect'lerini
+ * ediyoruz, action'ı direkt import etsek module load side-effect'lerini
  * tetikler (auth/prisma/revalidatePath). Küçük duplication kabul.
  */
 import { describe, it, expect } from "vitest";

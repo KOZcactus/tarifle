@@ -1,4 +1,4 @@
-# Tarifle — Codex Devir Teslim Dokümanı
+# Tarifle, Codex Devir Teslim Dokümanı
 
 Bu doküman **başka bir bilgisayarda Codex'e verilecek**. Tek başına okunduğunda
 Codex'in Tarifle projesine güvenle yeni tarif ekleyebilmesi için gereken her
@@ -8,7 +8,7 @@ Codex'in Tarifle projesine güvenle yeni tarif ekleyebilmesi için gereken her
 
 ## 1. Proje nedir
 
-**Tarifle** (tarifle.app) — Türkçe bir tarif platformu. Yemek, içecek ve
+**Tarifle** (tarifle.app), Türkçe bir tarif platformu. Yemek, içecek ve
 kokteyl tariflerini modern bir arayüzle sunuyor; kullanıcılar kayıt olup
 "uyarlama" ekleyebiliyor, koleksiyon ve alışveriş listesi oluşturabiliyor,
 malzemeden tarif bulan bir AI asistanı kullanabiliyor.
@@ -46,16 +46,16 @@ npm install
 ### 2.3. `.env.local` dosyası oluştur
 
 Aşağıdaki şablonu `.env.local` olarak kaydet. **DATABASE_URL alanı BOŞ kalır**
-— aşağıda Neon branch açıp onu dolduracağız.
+… aşağıda Neon branch açıp onu dolduracağız.
 
 ```env
 # Site
 NEXT_PUBLIC_SITE_URL="https://tarifle.app"
 
-# Veritabani — Neon codex-import branch URL'i buraya gelecek (adım 3)
+# Veritabani, Neon codex-import branch URL'i buraya gelecek (adım 3)
 DATABASE_URL=""
 
-# Auth.js v5 — Codex tarafında auth kullanmıyoruz ama dotenv yoklar, boş kalmasın
+# Auth.js v5, Codex tarafında auth kullanmıyoruz ama dotenv yoklar, boş kalmasın
 AUTH_SECRET="codex-placeholder-does-not-need-to-be-secure"
 AUTH_URL="http://localhost:3000"
 ```
@@ -80,11 +80,11 @@ Codex PC'sine aktarır.**
 2. Sol menüden **Branches** → **Create branch** butonu
 3. Ayarlar:
    - **Name**: `codex-import`
-   - **Parent branch**: `production` (veya `main` — hangisi ana branch ise)
+   - **Parent branch**: `production` (veya `main`, hangisi ana branch ise)
    - **Include data up to**: "Latest data" (varsayılan)
 4. **Create**
 
-Branch oluşur, production'ın veri snapshot'ı ile birlikte — tüm mevcut 56
+Branch oluşur, production'ın veri snapshot'ı ile birlikte, tüm mevcut 56
 tarif, kategoriler, etiketler orada. Ama yeni yazmalar sadece bu branch'te
 kalır.
 
@@ -107,10 +107,10 @@ production'a dokunmuyor.
 
 **Not (17 Nis 2026 sonrası):** Kerem'in ana PC'si artık `dev` adlı ayrı
 bir child branch kullanıyor; Codex tarafında bir değişiklik yok. Eğer
-Kerem sana URL yerine `dev` branch URL'si verirse akış aynı — yine child
+Kerem sana URL yerine `dev` branch URL'si verirse akış aynı, yine child
 branch, prod değil. Destructive scriptler `scripts/lib/db-env.ts` guard'ı
 kullanır: prod host'u algılarsa script `--confirm-prod` flag'i olmadan
-durur. Codex tarafında bu flag **asla kullanılmaz** — prod promotion
+durur. Codex tarafında bu flag **asla kullanılmaz**, prod promotion
 Kerem'e ait (`docs/PROD_PROMOTE.md`).
 
 ---
@@ -122,10 +122,10 @@ Codex, tarif yazmaya başlamadan önce şu dosyaları **okumalı**:
 | Dosya | Ne için |
 |---|---|
 | `docs/RECIPE_FORMAT.md` | **En önemli doküman.** Tarif formatı, kategori slug'ları, tag slug'ları, enum değerleri, alan alan kurallar. |
-| `prisma/schema.prisma` | Veritabanı şeması — `Recipe`, `RecipeIngredient`, `RecipeStep`, `RecipeTag` modelleri ve enum tanımları. |
+| `prisma/schema.prisma` | Veritabanı şeması, `Recipe`, `RecipeIngredient`, `RecipeStep`, `RecipeTag` modelleri ve enum tanımları. |
 | `scripts/seed-recipes.ts` | Mevcut 41 tarifin olduğu dosya. Codex buraya ekleme yapacak. Format örnek olarak bu dosyayı referans al. |
 | `src/lib/cuisines.ts` | Geçerli mutfak kodları (14 kod: tr, it, fr, jp, kr, th, in, mx, …). Yeni tarife `cuisine: "xx"` yazarken buraya bak. |
-| `prisma/seed.ts` | Bootstrap seed'i — ilk 15 tarif, kategoriler ve etiket tanımları. **DEĞİŞTİRME**. |
+| `prisma/seed.ts` | Bootstrap seed'i, ilk 15 tarif, kategoriler ve etiket tanımları. **DEĞİŞTİRME**. |
 
 Bu dosyaları okuduktan sonra:
 
@@ -156,7 +156,7 @@ Bu komut `codex-import` branch'indeki tüm tariflerin slug'larını
 {
   title: "...",
   slug: "...",
-  cuisine: "tr",  // mutfak kodu — bkz. src/lib/cuisines.ts
+  cuisine: "tr",  // mutfak kodu, bkz. src/lib/cuisines.ts
   // ... RECIPE_FORMAT.md'deki tüm alanlar
 },
 {
@@ -181,7 +181,7 @@ npx tsc --noEmit
 ```
 
 Hata çıkmamalı. Çıkarsa büyük ihtimalle `as const` eksik, enum yanlış yazılmış
-ya da tip uyumsuzluğu var — düzelt.
+ya da tip uyumsuzluğu var, düzelt.
 
 ### 5.2.5. Batch pre-flight validator (DB'ye dokunmaz)
 
@@ -196,7 +196,7 @@ Zod'un üstüne semantik kontroller koşar:
   "epey", "yeteri kadar") → ERROR
 - **"iyice" / "güzelce"** somut kriter yoksa → WARNING
 - **Kcal vs 4·P+4·C+9·F uyumu** ±%15 tolerans → WARNING (alkollü
-  tariflerde otomatik atlanır — ethanol 7 kcal/gr formülde yok)
+  tariflerde otomatik atlanır, ethanol 7 kcal/gr formülde yok)
 - **Alkollü malzeme ↔ "alkollu" tag** tutarsızlığı → ERROR/WARNING
 - **Slug çakışması** (existing-slugs.txt üzerinden) → ERROR
 
@@ -231,7 +231,7 @@ npx tsx scripts/seed-recipes.ts
 ```bash
 # Slug sayısı beklediğin kadar arttı mı?
 npx tsx scripts/list-recipe-slugs.ts | head -5
-# Son satırda "# N recipe slugs" yazar — N eski sayıdan ne kadar arttı?
+# Son satırda "# N recipe slugs" yazar, N eski sayıdan ne kadar arttı?
 ```
 
 ### 5.5. Git'e commit'le
@@ -239,7 +239,7 @@ npx tsx scripts/list-recipe-slugs.ts | head -5
 ```bash
 git checkout -b recipes/batch-2
 git add scripts/seed-recipes.ts
-git commit -m "feat(data): batch 2 — N yeni tarif eklendi"
+git commit -m "feat(data): batch 2, N yeni tarif eklendi"
 git push -u origin recipes/batch-2
 ```
 
@@ -249,21 +249,21 @@ GitHub'da PR aç. Merge işlemini proje sahibi yapar.
 
 ## 6. Kurallar (kırılmaz)
 
-### 6.1. Güvenlik — DB'ye karşı
+### 6.1. Güvenlik, DB'ye karşı
 
 - **Sadece Recipe + ingredients + steps + tags yaratmak** serbest.
 - **DELETE, DROP, TRUNCATE, UPDATE yasak.** Mevcut veriye dokunma.
 - `prisma migrate` komutları yasak. Schema değiştirilmeyecek.
-- `prisma/seed.ts` dosyasına dokunma — bootstrap dosyası.
+- `prisma/seed.ts` dosyasına dokunma, bootstrap dosyası.
 
-### 6.2. Güvenlik — kod tabanına karşı
+### 6.2. Güvenlik, kod tabanına karşı
 
 - `scripts/seed-recipes.ts` dışında hiçbir `.ts`/`.tsx` dosyası değiştirme.
 - Yeni `.md` dosyası ekleme (bu doküman ve `RECIPE_FORMAT.md` dışında).
 - `package.json`, `tsconfig.json`, `next.config.ts`, `tailwind.config.*`
   dosyalarına dokunma.
 
-### 6.3. İçerik — tariflerin kendisi
+### 6.3. İçerik, tariflerin kendisi
 
 RECIPE_FORMAT.md'deki tüm kurallara tamamen uy:
 
@@ -281,7 +281,7 @@ RECIPE_FORMAT.md'deki tüm kurallara tamamen uy:
 
 - Gerçek, yenebilir, tanınmış Türk ve dünya tarifleri (geleneksel, modern, vegan vs.)
 - Uydurulmuş egzotik tarifler yok ("piña colada" var, "ay tozu kokteyli" yok)
-- İçerik özgün olmalı — direkt başka siteden kopyala-yapıştır yok,
+- İçerik özgün olmalı, direkt başka siteden kopyala-yapıştır yok,
   paraphrase-ile yeniden yaz
 - 3-15 malzeme, 3-10 adım
 
@@ -295,10 +295,10 @@ RECIPE_FORMAT.md'deki tüm kurallara tamamen uy:
 - **tipNote**: tarifin kritik püf noktası. Tarife özel, somut, gerçek
   mutfak bilgisi. Yoksa `null` bırak, sahte tip üretme.
 - **servingSuggestion**: tarife özgü servis önerisi. "Sıcak servis edin"
-  gibi generic öneriler YASAK — neyle, nasıl servis edileceğini yaz.
+  gibi generic öneriler YASAK, neyle, nasıl servis edileceğini yaz.
 - **servingSuggestion'da sos referansı**: "X sosuyla servis edin" yazacaksan
   ya o sos tarif adımlarında olmalı, ya da hazır alınabilir bir sos olmalı
-  (soya sosu, ketçap, hazır tonkatsu sosu OK — "kırmızı biber sosu",
+  (soya sosu, ketçap, hazır tonkatsu sosu OK, "kırmızı biber sosu",
   "orman meyveli sos" gibi belirsiz/yapılması gereken soslar YASAK).
 
 ### 6.6. Malzeme grupları (ingredient `group` alanı)
@@ -311,17 +311,17 @@ RECIPE_FORMAT.md'deki tüm kurallara tamamen uy:
 
 Basit tek-bileşenli tariflerde (kızartma, çorba, salata) `group` EKLEME.
 
-### 6.7. Veri doğruluğu — CI seviye ERROR (17 Nis 2026 turunda eklendi)
+### 6.7. Veri doğruluğu, CI seviye ERROR (17 Nis 2026 turunda eklendi)
 
 Bu 5 kural `validate-batch.ts` tarafından **ERROR** olarak yakalanır. ERROR varsa CI kırmızıya düşer ve PR merge edilemez. Batch göndermeden önce kendin kontrol et.
 
 **1. Virgülle birleşik ingredient YASAK.**
 
 ```ts
-// ❌ YANLIŞ — tek row içinde 3 ingredient:
+// ❌ YANLIŞ, tek row içinde 3 ingredient:
 { name: "Tuz, karabiber, pul biber", amount: "1", unit: "tatlı kaşığı" }
 
-// ✅ DOĞRU — 3 ayrı row:
+// ✅ DOĞRU, 3 ayrı row:
 { name: "Tuz", amount: "1", unit: "çay kaşığı", sortOrder: 5 },
 { name: "Karabiber", amount: "0.5", unit: "çay kaşığı", sortOrder: 6 },
 { name: "Pul biber", amount: "0.5", unit: "çay kaşığı", sortOrder: 7 },
@@ -332,11 +332,11 @@ Bu 5 kural `validate-batch.ts` tarafından **ERROR** olarak yakalanır. ERROR va
 Step instruction'da "tuz", "karabiber", "pul biber", "un" kelimeleri geçiyorsa o ingredient listesinde bulunmalı. Örnekler:
 
 ```ts
-// ❌ YANLIŞ — step'te "tuzla yoğurun" diyor ama Tuz ingredient'ta yok
+// ❌ YANLIŞ, step'te "tuzla yoğurun" diyor ama Tuz ingredient'ta yok
 steps: [{ stepNumber: 1, instruction: "Eti yoğurt, kekik ve tuzla marine edin." }],
 ingredients: [{ name: "Dana eti", ... }, { name: "Yoğurt", ... }, { name: "Kekik", ... }],
 
-// ✅ DOĞRU — Tuz eklenmiş
+// ✅ DOĞRU, Tuz eklenmiş
 steps: [{ stepNumber: 1, instruction: "Eti yoğurt, kekik ve tuzla marine edin." }],
 ingredients: [{ name: "Dana eti", ... }, { name: "Yoğurt", ... }, { name: "Kekik", ... }, { name: "Tuz", amount: "1", unit: "çay kaşığı", sortOrder: 4 }],
 ```
@@ -344,31 +344,31 @@ ingredients: [{ name: "Dana eti", ... }, { name: "Yoğurt", ... }, { name: "Keki
 **3. ServingSuggestion'da bahsedilen sos/garnish ingredient OLMALI** (veya hazır ürün).
 
 ```ts
-// ❌ YANLIŞ — "acı sos" ingredient yok, ne olduğu belirsiz
+// ❌ YANLIŞ, "acı sos" ingredient yok, ne olduğu belirsiz
 servingSuggestion: "Salatalık, turşu havuç ve acı sosla servis edin.",
 ingredients: [{ name: "Kırık pirinç", ... }, { name: "Dana pirzola", ... }],
 
-// ✅ DOĞRU 1 — ingredient ekle
+// ✅ DOĞRU 1, ingredient ekle
 servingSuggestion: "Salatalık, turşu havuç ve acı sosla servis edin.",
 ingredients: [..., { name: "Turşu havuç", ... }, { name: "Acı sos", ... }],
 
-// ✅ DOĞRU 2 — servingSuggestion'ı mevcut malzemelerle yaz
+// ✅ DOĞRU 2, servingSuggestion'ı mevcut malzemelerle yaz
 servingSuggestion: "Pilav, ızgara et, yumurta ve salatalıkla sıcak servis edin.",
 
-// ✅ DOĞRU 3 — hazır ürün referansı (soya sosu, ketçap, tonkatsu sosu OK)
+// ✅ DOĞRU 3, hazır ürün referansı (soya sosu, ketçap, tonkatsu sosu OK)
 servingSuggestion: "Tonkatsu sosuyla servis edin.",
 ```
 
-**4. Adım sırası mantıklı** — hazırlık → pişirme → servis.
+**4. Adım sırası mantıklı**, hazırlık → pişirme → servis.
 
 ```ts
-// ❌ YANLIŞ — adım 1 her şeyi karıştır, adım 2 hala hazırlık
+// ❌ YANLIŞ, adım 1 her şeyi karıştır, adım 2 hala hazırlık
 steps: [
   { stepNumber: 1, instruction: "Tüm malzemeleri kâsede karıştırın." },
   { stepNumber: 2, instruction: "Sarımsağı ezin, pul biber ve hardalla harmanlayın." },
 ]
 
-// ✅ DOĞRU — hazırlık önce, karıştırma sonra
+// ✅ DOĞRU, hazırlık önce, karıştırma sonra
 steps: [
   { stepNumber: 1, instruction: "Sarımsağı ezip pul biber ve hardalla harmanlayın." },
   { stepNumber: 2, instruction: "Yoğurt ve mayonezi bu karışımla çırpıp tuzlayın." },
@@ -383,17 +383,17 @@ Adımda "krema kullanın" / "sosu döküp" tipi referans varsa ya:
 - Önceki bir adımda o bileşen açıkça yapılıyor ("Süt ve şekeri kaynatıp pastacı kreması hazırlayın, topları kremayla doldurun.")
 
 ```ts
-// ❌ YANLIŞ — "Topları krema ile doldurun" ama Krema yok
+// ❌ YANLIŞ, "Topları krema ile doldurun" ama Krema yok
 ingredients: [{ name: "Un", ... }, { name: "Yumurta", ... }, { name: "Süt", ... }, { name: "Şeker", ... }],
 steps: [..., { stepNumber: 3, instruction: "Topları krema ile doldurun ve çikolata sosuyla kaplayın." }],
 
-// ✅ DOĞRU — step 3'te krema hazırlama açık
+// ✅ DOĞRU, step 3'te krema hazırlama açık
 steps: [..., { stepNumber: 3, instruction: "Süt ve şekeri kaynatıp pastacı kreması hazırlayın, çikolatayı eritin. Topları kremayla doldurup çikolata sosuyla kaplayın." }],
 ```
 
-**6. Ingredient-implied alerjenler — her zaman ekle.**
+**6. Ingredient-implied alerjenler, her zaman ekle.**
 
-Bazı malzemeler görünce alerjen otomatik devreye girer; ingredient varsa `allergens` arrayine *mutlaka* eklemek gerekir. Batch 11'de bu pattern'da 9 CRITICAL finding çıktı; CI henüz bunu ERROR olarak yakalamıyor ama audit-deep merge sonrası yakalıyor — bu yüzden batch yazarken kendi kontrolün.
+Bazı malzemeler görünce alerjen otomatik devreye girer; ingredient varsa `allergens` arrayine *mutlaka* eklemek gerekir. Batch 11'de bu pattern'da 9 CRITICAL finding çıktı; CI henüz bunu ERROR olarak yakalamıyor ama audit-deep merge sonrası yakalıyor, bu yüzden batch yazarken kendi kontrolün.
 
 | Ingredient (TR) | Gerekli allergen |
 |---|---|
@@ -409,7 +409,7 @@ Bazı malzemeler görünce alerjen otomatik devreye girer; ingredient varsa `all
 Dikkat: _Hindistan cevizi sütü_ SUT **değil** (bitki bazlı); _pirinç sütü_, _badem sütü_, _yulaf sütü_ de SUT değil ama badem → KUSUYEMIS, yulaf → GLUTEN.
 
 ```ts
-// ❌ YANLIŞ — Tereyağı var ama SUT yok
+// ❌ YANLIŞ, Tereyağı var ama SUT yok
 allergens: ["GLUTEN"] as const,
 ingredients: [..., { name: "Tereyağı", amount: "30", unit: "gr", sortOrder: 5 }],
 
@@ -419,7 +419,7 @@ ingredients: [..., { name: "Tereyağı", amount: "30", unit: "gr", sortOrder: 5 
 ```
 
 ```ts
-// ❌ YANLIŞ — Tahin var ama SUSAM yok, Ceviz var ama KUSUYEMIS yok
+// ❌ YANLIŞ, Tahin var ama SUSAM yok, Ceviz var ama KUSUYEMIS yok
 allergens: ["GLUTEN"] as const,
 ingredients: [..., { name: "Tahin", ... }, { name: "Ceviz", ... }],
 
@@ -428,24 +428,24 @@ allergens: ["GLUTEN", "KUSUYEMIS", "SUSAM"] as const,
 ingredients: [..., { name: "Tahin", ... }, { name: "Ceviz", ... }],
 ```
 
-### 6.9. Çeviriler — ZORUNLU (batch 12+, i18n Faz 3 prep)
+### 6.9. Çeviriler, ZORUNLU (batch 12+, i18n Faz 3 prep)
 
 Her yeni tarif için `translations.en` **ve** `translations.de` her ikisi de doldurulmalı, en az `title` + `description` seviyesinde. Ingredient/step çevirileri opsiyonel (yoksa UI TR fallback'e düşer).
 
 ```ts
-// ✅ DOĞRU — minimum seviye (title + description iki locale)
+// ✅ DOĞRU, minimum seviye (title + description iki locale)
 translations: {
   en: {
     title: "Lentil Soup",
-    description: "A classic Turkish lentil soup with red lentils, onion, carrot, and cumin — silky and warming.",
+    description: "A classic Turkish lentil soup with red lentils, onion, carrot, and cumin, silky and warming.",
   },
   de: {
     title: "Linsensuppe",
-    description: "Eine klassische türkische Linsensuppe mit roten Linsen, Zwiebel, Karotte und Kreuzkümmel — seidig und wärmend.",
+    description: "Eine klassische türkische Linsensuppe mit roten Linsen, Zwiebel, Karotte und Kreuzkümmel, seidig und wärmend.",
   },
 },
 
-// ❌ YANLIŞ — batch 12+'da WARNING, kapandıktan sonra ERROR
+// ❌ YANLIŞ, batch 12+'da WARNING, kapandıktan sonra ERROR
 // (translations alanı eksik veya sadece en/sadece de)
 translations: null,
 translations: { en: { title: "Lentil Soup", description: "..." } },  // de yok
@@ -453,9 +453,9 @@ translations: { en: { title: "Lentil Soup", description: "..." } },  // de yok
 
 **Özgün TR isimler** (İskender, Baklava, Adana Kebap, Mantı, Künefe, Menemen, Börek, Simit, Lokum, Pilav, Çiğköfte…): ismi aynen bırak veya "Baklava (Turkish layered pastry)" gibi parantezli açıklama ekle. Description'da kültürel bağlamı aç ("A classic Gaziantep pastry made with paper-thin yufka layers…").
 
-**Description kalite çıtası:** EN/DE description TR'nin bilgi yoğunluğunu yakalamalı. 3-4 kelimelik "Spicy meat dish" yetersiz — 20-400 char aralığında, malzemeden / bölgeden / doku-tat'tan bahsetmeli.
+**Description kalite çıtası:** EN/DE description TR'nin bilgi yoğunluğunu yakalamalı. 3-4 kelimelik "Spicy meat dish" yetersiz, 20-400 char aralığında, malzemeden / bölgeden / doku-tat'tan bahsetmeli.
 
-**Kuşkudaysan yazma** — sahte / mechanical / Google Translate çıktısı kalitesizse bu tarifi translations'sız gönder ve Kerem'e flagle. LLM toplu retrofit ileride yapılır. Sahte çeviri TR fallback'e göre daha kötü.
+**Kuşkudaysan yazma**, sahte / mechanical / Google Translate çıktısı kalitesizse bu tarifi translations'sız gönder ve Kerem'e flagle. LLM toplu retrofit ileride yapılır. Sahte çeviri TR fallback'e göre daha kötü.
 
 Pre-flight: `npm run content:validate` → `translations` alanı için WARNING çıkar, eksik locale/field listelenir. Batch 12 kapandıktan sonra bu WARNING **ERROR**'a yükseltilecek ve CI merge'i bloklayacak.
 
@@ -494,7 +494,7 @@ difficulty: "EASY" as const,
 
 ### "unique constraint failed on the fields: (slug)"
 
-Bu hata gelmez çünkü script kontrol ediyor — ama olursa script'i yeniden
+Bu hata gelmez çünkü script kontrol ediyor, ama olursa script'i yeniden
 çalıştır, atlar.
 
 ### Script hata verip yarıda kalırsa
@@ -506,7 +506,7 @@ idempotent: aynı script'i tekrar çalıştırırsan kalan yerden devam eder
 ### Kötü batch geri alınması (rollback)
 
 Bir batch yazıldıktan sonra "bu batch baştan yanlış, hepsini sil" durumu
-olursa proje sahibi `npm run content:rollback` komutunu kullanır — Codex
+olursa proje sahibi `npm run content:rollback` komutunu kullanır, Codex
 bu scripti koşmaz, sadece bilgi olarak:
 
 ```bash
@@ -517,12 +517,12 @@ npm run content:rollback -- --batch 2
 npm run content:rollback -- --batch 2 --confirm "rollback-batch-2"
 ```
 
-- Varsayılan **dry-run** — veri silinmez, sadece etki raporu basar.
+- Varsayılan **dry-run**, veri silinmez, sadece etki raporu basar.
 - Kullanıcı uyarlaması (`Variation`) olan tarifleri otomatik **bloklar**
   (user içeriği kaybolmasın). `--force` ile zorlanır ama pratikte yeni
   seed'lenen tarifin uyarlaması olmaz.
 - Cascade silinen ingredient/step/tag'ler, bookmark'lar, koleksiyon
-  item'ları rapor edilir — sürpriz yok.
+  item'ları rapor edilir, sürpriz yok.
 - Her silme `AuditLog`'a yazılır (`action=ROLLBACK_RECIPE`).
 
 ### İnternet/Redis/Auth hataları
@@ -539,7 +539,7 @@ Codex'in bu projeyi çalıştırmasına gerek yok, sadece seed script. Redis
 
 | Batch | Tarif sayısı | Not |
 |---|---|---|
-| 1 | 50 | Format doğrulama — proje sahibi kontrol eder |
+| 1 | 50 | Format doğrulama, proje sahibi kontrol eder |
 | 2-4 | 50-100 | Onay sonrası hızlanır |
 | 5-10 | 50-100 | Kategori dengesine dikkat |
 | **Toplam** | **500** | İlk hedef |
@@ -570,24 +570,24 @@ production branch URL'i ile çalıştırır → canlıya geçer.
 2. Proje sahibinden Neon `codex-import` branch DATABASE_URL'ini al, `.env.local`'e yaz
 3. `docs/RECIPE_FORMAT.md` oku (**önemli: yeni `allergens` alanı eklendi**)
 4. `npx tsx scripts/list-recipe-slugs.ts > docs/existing-slugs.txt` → mevcut slug listesi
-5. `scripts/seed-recipes.ts` sonuna yeni batch ekle — her tarifin `allergens: [...]` ve `cuisine: "xx"` alanını doldur
+5. `scripts/seed-recipes.ts` sonuna yeni batch ekle, her tarifin `allergens: [...]` ve `cuisine: "xx"` alanını doldur
 6. `npx tsc --noEmit` → hata yok
-7. `npm run content:validate -- --last 50 --slugs-file docs/existing-slugs.txt` → **Zod + semantik kontrol** (muğlak ifade, makro uyumu, alkol tag, slug dup). ERROR varsa seed'i çalıştırma — düzelt
+7. `npm run content:validate -- --last 50 --slugs-file docs/existing-slugs.txt` → **Zod + semantik kontrol** (muğlak ifade, makro uyumu, alkol tag, slug dup). ERROR varsa seed'i çalıştırma, düzelt
 8. `npx tsx scripts/seed-recipes.ts` → veritabanına yaz
-9. `npx tsx scripts/retrofit-all.ts` → **tek komut** — önce alerjen, sonra vegan/vejetaryen etiketlerini otomatik doldurur (idempotent, yanlış olanları temizler). İstersen `--dry-run` ile önce önizleme
+9. `npx tsx scripts/retrofit-all.ts` → **tek komut**, önce alerjen, sonra vegan/vejetaryen etiketlerini otomatik doldurur (idempotent, yanlış olanları temizler). İstersen `--dry-run` ile önce önizleme
 10. Git branch + commit + push + PR
 11. Tekrar
 
-Eşlik edecek dosya: **`docs/RECIPE_FORMAT.md`** — o dosyayı da okumadan tarif yazma.
+Eşlik edecek dosya: **`docs/RECIPE_FORMAT.md`**, o dosyayı da okumadan tarif yazma.
 
 **En kritik 3 yazım kuralı** (`RECIPE_FORMAT.md` "Dil ve anlatım kalitesi"
 bölümünün özeti; detay orada):
 
-1. **"ya da tersi" gibi muğlak koşullu ifadeler YASAK** — iki durum varsa
+1. **"ya da tersi" gibi muğlak koşullu ifadeler YASAK**, iki durum varsa
    iki ayrı cümleyle yaz (ör. "kek sıcakken soğuk şerbet. Kek soğumuşsa
    sıcak şerbet.").
-2. **Composite ingredient adı YASAK** — "Şerbet şekeri" yerine
+2. **Composite ingredient adı YASAK**, "Şerbet şekeri" yerine
    `{ name: "Şeker", group: "Şerbet için" }` kullan.
-3. **"Biraz", "iyice", "azıcık" gibi belirsiz ölçüler YASAK** — sayı
+3. **"Biraz", "iyice", "azıcık" gibi belirsiz ölçüler YASAK**, sayı
    veremediğin yerde niteliksel metrik ver ("elinize yapışmayana kadar
    8-10 dakika").

@@ -1,17 +1,17 @@
-# Tarifle — Ultimate Proje Dokümanı
+# Tarifle, Ultimate Proje Dokümanı
 
-> Son güncelleme: **20 Nisan 2026** (oturum 8 sonu — topluluk loop tam, rekabet §8 kısa 6/6 + orta 5/5 ✅)
+> Son güncelleme: **20 Nisan 2026** (oturum 8 sonu, topluluk loop tam, rekabet §8 kısa 6/6 + orta 5/5 ✅)
 > Durum: MVP 0.1/0.2/0.3 + Faz 2 + Faz 3'ün büyük çoğunluğu **canlıda** (2320 tarif prod, 900/2020 Mod B tam çeviri, A11y AA tertemiz)
 > Versiyon: 1.3
-> İlişkili dokümanlar: `PROJECT_STATUS.md` (aktif takip + sıradaki işler — oturum 8 sonu detaylı dökümle), `CHANGELOG.md` (kategorik kronolojik özet), `CODEX_BATCH_BRIEF.md` (~800 satır, Codex Mod A/B talimatı + §9 geçmiş hatalar tablosu batch 23'e kadar güncel), `COMPETITIVE_ANALYSIS.md` (rekabet analizi v1.0, 3 dalga roadmap), `RECIPE_FORMAT.md` (tarif şartnamesi), `NEWSLETTER_CRON_SETUP.md` (3 scheduler seçeneği), `PROD_PROMOTE.md` (dev/prod Neon branch runbook), `CODEX_HANDOFF.md` (yeni PC akışı)
+> İlişkili dokümanlar: `PROJECT_STATUS.md` (aktif takip + sıradaki işler, oturum 8 sonu detaylı dökümle), `CHANGELOG.md` (kategorik kronolojik özet), `CODEX_BATCH_BRIEF.md` (~800 satır, Codex Mod A/B talimatı + §9 geçmiş hatalar tablosu batch 23'e kadar güncel), `COMPETITIVE_ANALYSIS.md` (rekabet analizi v1.0, 3 dalga roadmap), `RECIPE_FORMAT.md` (tarif şartnamesi), `NEWSLETTER_CRON_SETUP.md` (3 scheduler seçeneği), `PROD_PROMOTE.md` (dev/prod Neon branch runbook), `CODEX_HANDOFF.md` (yeni PC akışı)
 
 Bu doküman Tarifle projesinin tek kaynak belgesidir (Single Source of Truth). Yeni özellik eklerken, teknik karar değiştirirken veya yol haritasını güncellerken önce buraya bakılır ve buradan güncellenir.
 
-> **Terminoloji (15 Nisan 2026):** UI'da "varyasyon" yerine **"uyarlama"** kullanılıyor — aşağıdaki metinde "varyasyon" geçen her yer UI'da "uyarlama" olarak okunur. Teknik isimler (Prisma `Variation` modeli, `variationId` field'ı, `/api/variations` endpoint'i) İngilizce haliyle kalır.
+> **Terminoloji (15 Nisan 2026):** UI'da "varyasyon" yerine **"uyarlama"** kullanılıyor, aşağıdaki metinde "varyasyon" geçen her yer UI'da "uyarlama" olarak okunur. Teknik isimler (Prisma `Variation` modeli, `variationId` field'ı, `/api/variations` endpoint'i) İngilizce haliyle kalır.
 
 > **15 Nisan 2026 büyük revizyon notları**: Allergen + group + translations alanları schema'ya eklendi (Section 5, 10), renk paleti AA için koyulaştırıldı (Section 14.1), Faz 2 listesine 13 yeni tamamlanan kalem eklendi (Section 21), Önerilen Ek Özellikler tablosu güncellendi (Section 30), test sayıları 230 unit + 12 E2E (Section 24).
 >
-> **20 Nisan 2026 oturum 8 notları — Faz 3 büyük sıçrama**: 6 Codex batch Mod A ile 1701 → **2320 tarif**. Topluluk loop tam (Follow schema + `/akis` feed + fan-out notification + followers/following list + homepage "Önerilen Aşçılar" + collection public share + variation `/uyarlama/[id]` permalink + OG kartı). Paylaşım yüzeyi: Pinterest rich pin + AI Asistan paylaşım linki + PWA install banner + PDF export (`@react-pdf/renderer`) + llms.txt AI crawler brief. Admin ops: `/admin/analytics` (6 KPI + 4 Top 10 + search freq aktif) + bulk moderation (checkbox + sticky toolbar, 50 cap) + user-photos moderation sayfası. User photos: SiteSetting KV + RecipePhoto Cloudinary (feature flag default KAPALI; admin panelden toggle). Newsletter haftalık cron endpoint hazır (Kerem QStash schedule + env ile aktifleştirir). Search log canlı (SearchQuery model + `/admin/analytics` top 10). 18 formal migration (add_user_photos + add_follow + add_search_log oturum 8'de eklendi). Rekabet §8 kısa vadeli 6/6 + orta vadeli 5/5 ✅ (video snippet hariç). 557/557 test PASS, tsc/lint clean. Detaylı blok dökümü için `docs/PROJECT_STATUS.md` → "20 Nisan 2026 (oturum 8)".
+> **20 Nisan 2026 oturum 8 notları, Faz 3 büyük sıçrama**: 6 Codex batch Mod A ile 1701 → **2320 tarif**. Topluluk loop tam (Follow schema + `/akis` feed + fan-out notification + followers/following list + homepage "Önerilen Aşçılar" + collection public share + variation `/uyarlama/[id]` permalink + OG kartı). Paylaşım yüzeyi: Pinterest rich pin + AI Asistan paylaşım linki + PWA install banner + PDF export (`@react-pdf/renderer`) + llms.txt AI crawler brief. Admin ops: `/admin/analytics` (6 KPI + 4 Top 10 + search freq aktif) + bulk moderation (checkbox + sticky toolbar, 50 cap) + user-photos moderation sayfası. User photos: SiteSetting KV + RecipePhoto Cloudinary (feature flag default KAPALI; admin panelden toggle). Newsletter haftalık cron endpoint hazır (Kerem QStash schedule + env ile aktifleştirir). Search log canlı (SearchQuery model + `/admin/analytics` top 10). 18 formal migration (add_user_photos + add_follow + add_search_log oturum 8'de eklendi). Rekabet §8 kısa vadeli 6/6 + orta vadeli 5/5 ✅ (video snippet hariç). 557/557 test PASS, tsc/lint clean. Detaylı blok dökümü için `docs/PROJECT_STATUS.md` → "20 Nisan 2026 (oturum 8)".
 
 ---
 
@@ -108,7 +108,7 @@ Alt slogan: **Make Eat**
 
 MVP üç alt faza bölünür. Böylece ilk sürüm şişmez ve adım adım ilerlenir.
 
-### MVP 0.1 — Temel Site
+### MVP 0.1, Temel Site
 
 - Next.js projesi kur (TypeScript + Tailwind + Prisma)
 - Veritabanı şeması oluştur ve migrate et
@@ -127,9 +127,9 @@ MVP üç alt faza bölünür. Böylece ilk sürüm şişmez ve adım adım ilerl
 
 > **Not:** MVP 0.1'de önce demo seed ile temel sayfalar ayağa kaldırılır, sonra seed tamamlanır ve gelişmiş filtreler (süre aralığı, kalori, etiket, çoklu kategori) eklenir.
 
-### MVP 0.2 — Kullanıcı Sistemi
+### MVP 0.2, Kullanıcı Sistemi
 
-- Kullanıcı kayıt/giriş (Auth.js v5 — e-posta + Google)
+- Kullanıcı kayıt/giriş (Auth.js v5, e-posta + Google)
 - KVKK onay akışı
 - Kullanıcı profil sayfası
 - Varyasyon ekleme formu
@@ -137,7 +137,7 @@ MVP üç alt faza bölünür. Böylece ilk sürüm şişmez ve adım adım ilerl
 - Kaydetme (bookmark) sistemi
 - Porsiyon ayarlama özelliği
 
-### MVP 0.3 — Moderasyon ve Kalite
+### MVP 0.3, Moderasyon ve Kalite
 
 - Argo filtreleme (keyword blacklist)
 - Raporlama sistemi
@@ -187,11 +187,11 @@ MVP üç alt faza bölünür. Böylece ilk sürüm şişmez ve adım adım ilerl
 | Servis önerisi | Yanında ne gider | Pilav ile servis edin |
 | Varyasyon sayısı | Topluluk sayısı | 12 |
 | Etiketler | Filtrelenebilir etiketler | Fırında, Misafirlik |
-| **Alerjenler** | Allergen enum array (10 değer) — kural-tabanlı inference'la doldurulur | `[GLUTEN, SUT]` |
+| **Alerjenler** | Allergen enum array (10 değer), kural-tabanlı inference'la doldurulur | `[GLUTEN, SUT]` |
 | **Malzeme grupları** | Çok-bileşenli tariflerde `RecipeIngredient.group` | "Hamur için", "Şerbet için" |
-| **Çeviriler** | Opsiyonel JSONB bucket — Faz 3 i18n için hazırlık | `{ en: { title, description, … } }` |
+| **Çeviriler** | Opsiyonel JSONB bucket, Faz 3 i18n için hazırlık | `{ en: { title, description, … } }` |
 
-> **Not (Codex)**: yeni tarif eklerken `allergens` ve uygunsa `group` doldurulmalı. Detaylı kurallar `docs/RECIPE_FORMAT.md` "Dil ve anlatım kalitesi" bölümünde — muğlak ifadeler ("ya da tersi"), belirsiz ölçüler ("biraz"), composite isimler ("Şerbet şekeri") yasak. Codex batch sonrası `npx tsx scripts/retrofit-all.ts` allergen + diet etiketlerini otomatik doldurur.
+> **Not (Codex)**: yeni tarif eklerken `allergens` ve uygunsa `group` doldurulmalı. Detaylı kurallar `docs/RECIPE_FORMAT.md` "Dil ve anlatım kalitesi" bölümünde, muğlak ifadeler ("ya da tersi"), belirsiz ölçüler ("biraz"), composite isimler ("Şerbet şekeri") yasak. Codex batch sonrası `npx tsx scripts/retrofit-all.ts` allergen + diet etiketlerini otomatik doldurur.
 
 ### Kullanıcı Varyasyonlarında Bulunacak Alanlar
 
@@ -324,7 +324,7 @@ Kategorilerden bağımsız, tarif başına çoklu seçilebilir etiketler:
 |   +============================================================+  |
 |   |  Hero Bolumu                                                |  |
 |   |  "Bugun ne pisirsek?"                                       |  |
-|   |  [Arama cubugu — buyuk, odakli]                             |  |
+|   |  [Arama cubugu, buyuk, odakli]                             |  |
 |   |  Populer aramalar: #karniyarik #baklava #mojito             |  |
 |   +============================================================+  |
 |                                                                    |
@@ -344,7 +344,7 @@ Kategorilerden bağımsız, tarif başına çoklu seçilebilir etiketler:
 |   +---------+ +---------+ +---------+ +---------+                |
 |                                                                    |
 |   En Begenilen Varyasyonlar (bu hafta)                            |
-|   AI Asistan Banner — "Elindeki malzemeleri yaz, tarif al!"       |
+|   AI Asistan Banner, "Elindeki malzemeleri yaz, tarif al!"       |
 |   Mevsimsel Oneriler                                               |
 |                                                                    |
 +------------------------------------------------------------------+
@@ -676,7 +676,7 @@ createdAt       DateTime  @default(now())
 
 ### 10.13 moderation_actions
 
-> **Tasarım notu:** `targetType + targetId` polymorphic yapıdır — DB seviyesinde gerçek FK koruması olmaz. Bu bilinçli bir tercih: moderasyon log'u birden fazla hedef türünü (variation, comment, user) tek tabloda tutabilmek için. MVP'de sadece variation ve user hedefleri aktif olacak. İleride `targetType` ve `action` alanları enum'a dönüştürülebilir.
+> **Tasarım notu:** `targetType + targetId` polymorphic yapıdır, DB seviyesinde gerçek FK koruması olmaz. Bu bilinçli bir tercih: moderasyon log'u birden fazla hedef türünü (variation, comment, user) tek tabloda tutabilmek için. MVP'de sadece variation ve user hedefleri aktif olacak. İleride `targetType` ve `action` alanları enum'a dönüştürülebilir.
 
 ```
 id              String    @id @default(cuid())
@@ -822,7 +822,7 @@ enum MediaType {
   VIDEO
 }
 
-// 15 Nis 2026 — sonradan eklenenler:
+// 15 Nis 2026, sonradan eklenenler:
 
 enum BadgeKey {
   EMAIL_VERIFIED
@@ -895,10 +895,10 @@ model PasswordResetToken {
 
 // Recipe'a eklenenler:
 //   moderationFlags String? @db.VarChar(200)   (Variation üstünde, preflight CSV)
-//   allergens       Allergen[] @default([])     (Recipe — GIN index ile)
-//   translations    Json?                       (Recipe — Faz 3 i18n bucket)
-//   group           String?  @db.VarChar(80)   (RecipeIngredient — "Hamur için" vb.)
-//   @@index([allergens], type: Gin)             (Recipe — array filter performance)
+//   allergens       Allergen[] @default([])     (Recipe, GIN index ile)
+//   translations    Json?                       (Recipe, Faz 3 i18n bucket)
+//   group           String?  @db.VarChar(80)   (RecipeIngredient, "Hamur için" vb.)
+//   @@index([allergens], type: Gin)             (Recipe, array filter performance)
 ```
 
 ### İlişki Özeti
@@ -1236,7 +1236,7 @@ tarifle/
 
 ### 14.1 Renk Paleti
 
-> **15 Nis 2026 — WCAG 2.1 AA pass:** Plandaki orijinal renkler text/buton kontrastını geçiremedi (axe-core ile 164 critical/serious node tespit). Token'lar koyulaştırıldı. Brand "orange family" içinde kaldı, marka tanınır. Aşağıdaki değerler **canlıdaki gerçek hex'lerdir** — `src/app/globals.css` referans.
+> **15 Nis 2026, WCAG 2.1 AA pass:** Plandaki orijinal renkler text/buton kontrastını geçiremedi (axe-core ile 164 critical/serious node tespit). Token'lar koyulaştırıldı. Brand "orange family" içinde kaldı, marka tanınır. Aşağıdaki değerler **canlıdaki gerçek hex'lerdir**, `src/app/globals.css` referans.
 
 ```
 Light Mode:
@@ -1245,7 +1245,7 @@ Light Mode:
   Yukseltilmis:      #e8e3da
   Vurgu (primary):   #a03b0f  (eski #e85d2c, white kontrast 6.7:1)
   Primary hover:     #7f2d08
-  Ikincil:           #785012  (eski #d4a843 — amber → tütün, AA için koyulaştırıldı)
+  Ikincil:           #785012  (eski #d4a843, amber → tütün, AA için koyulaştırıldı)
   Taze aksent:       #146a36  (eski #1fa85a)
   Bilgi aksent:      #184aaa  (eski #3b7ae8)
   Metin:             #1a1a1a
@@ -1260,7 +1260,7 @@ Dark Mode:
   Arka plan:         #0f0f0f
   Kart arka plani:   #1a1a1a
   Yukseltilmis:      #222222
-  Vurgu (primary):   #ff7a3d  (eski #ff6b35 — buton white kontrastı için)
+  Vurgu (primary):   #ff7a3d  (eski #ff6b35, buton white kontrastı için)
   Primary hover:     #ff9055
   Ikincil:           #ffc857
   Taze aksent:       #2fbf71
@@ -1270,7 +1270,7 @@ Dark Mode:
   Border:            #2a2a2a
 ```
 
-> **A11y notu:** Badge variant'larında tint opacity `/15` → `/10` indirildi (chip text kontrastı için). Footer logo `text-lg` → `text-xl` (large text kategorisi, 3:1 threshold yeterli). Regression guard: `tests/e2e/a11y-audit.spec.ts` — light + dark scan her CI push'unda. Yeni sayfa eklenince `PAGES_TO_SCAN` array'ine ekle yeterli.
+> **A11y notu:** Badge variant'larında tint opacity `/15` → `/10` indirildi (chip text kontrastı için). Footer logo `text-lg` → `text-xl` (large text kategorisi, 3:1 threshold yeterli). Regression guard: `tests/e2e/a11y-audit.spec.ts`, light + dark scan her CI push'unda. Yeni sayfa eklenince `PAGES_TO_SCAN` array'ine ekle yeterli.
 
 > **Brand notu:** Primary turuncu yemek sıcaklığını verir; AA için koyulaştırılmış ton "olgun terracotta" hissi taşıyor, hâlâ tanınır turuncu. Yeşil aksent "taze malzeme/sağlıklı", mavi aksent linkler/info, ikincil amber-tütün heading vurgusu (Püf Noktası, Servis Önerisi panel başlıkları).
 
@@ -1299,7 +1299,7 @@ Emoji:        Sistem emoji (native)
 
 ### 15.1 Arama ve Filtreleme
 
-- **Anlık arama** (debounced, 300ms) — tarif adı, malzeme adı, kategori
+- **Anlık arama** (debounced, 300ms), tarif adı, malzeme adı, kategori
 - **Filtreler:**
   - Kategori (çoklu seçim)
   - Tür (yemek, içecek, tatlı, kokteyl, vb.)
@@ -1514,7 +1514,7 @@ interface AiProvider {
 
 Video özelliği güzel ama pahalı ve operasyonel olarak riskli olabilir. Üç aşamalı plan:
 
-### Faz 1 — Şablon Video (MVP sonrası)
+### Faz 1, Şablon Video (MVP sonrası)
 
 - AI video üretmeden, tarif fotoğrafı, malzeme listesi ve adımlardan kısa bir video hazırlanır
 - **Remotion** veya **FFmpeg** tabanlı sistem kullanılır
@@ -1522,13 +1522,13 @@ Video özelliği güzel ama pahalı ve operasyonel olarak riskli olabilir. Üç 
 - Maliyet çok düşük
 - İlk ürün için en mantıklı seçenek
 
-### Faz 2 — AI Destekli Kapak/Görsel
+### Faz 2, AI Destekli Kapak/Görsel
 
 - Tarifin fotoğrafı yoksa AI ile kapak görseli üretilebilir
 - Video hala şablon tabanlı kalır
 - Görsel düzen bozulmadan daha zengin içerik elde edilir
 
-### Faz 3 — AI Video
+### Faz 3, AI Video
 
 - Sadece admin onaylı veya popüler tariflerde çalışır
 - Her tarif için otomatik üretim yapılmaz
@@ -1555,7 +1555,7 @@ Video özelliği güzel ama pahalı ve operasyonel olarak riskli olabilir. Üç 
 
 ## 21. Faz Planı (Yol Haritası)
 
-### Faz 1 — MVP
+### Faz 1, MVP
 
 #### MVP 0.1: Temel Site
 - [ ] GitHub repo oluştur (`tarifle`, private)
@@ -1570,10 +1570,10 @@ Video özelliği güzel ama pahalı ve operasyonel olarak riskli olabilir. Üç 
 - [ ] Tekil tarif sayfası (malzeme, adımlar, besin)
 - [ ] Arama ve filtreleme
 - [ ] SEO (meta tags, Open Graph, Schema.org Recipe)
-- [ ] Demo seed data (10 yemek + 5 içecek — hızlı ayağa kalkma)
+- [ ] Demo seed data (10 yemek + 5 içecek, hızlı ayağa kalkma)
 - [ ] Responsive tasarım
 - [ ] İlk deploy (Vercel)
-- [ ] Final seed data (50 yemek + 20 içecek — deploy sonrası tamamlanır)
+- [ ] Final seed data (50 yemek + 20 içecek, deploy sonrası tamamlanır)
 - [ ] Gelişmiş filtreler (süre, kalori, etiket, çoklu kategori)
 
 #### MVP 0.2: Kullanıcı Sistemi
@@ -1593,60 +1593,60 @@ Video özelliği güzel ama pahalı ve operasyonel olarak riskli olabilir. Üç 
 - [ ] Yazdırma görünümü
 - [ ] Alkollü içecek yaş uyarısı
 
-### Faz 2 — Topluluk & AI
+### Faz 2, Topluluk & AI
 
-- [x] AI Asistan (malzeme → tarif önerisi) — kural-tabanlı, AI-gibi sunuluyor
+- [x] AI Asistan (malzeme → tarif önerisi), kural-tabanlı, AI-gibi sunuluyor
 - [x] Favori koleksiyonları
 - [x] Alışveriş listesi
-- [x] Bildirim sistemi — in-app (bell + /bildirimler)
-- [x] Sosyal paylaşım butonları — Web Share API + WhatsApp/X/kopyala fallback
-- [x] Gelişmiş moderasyon — kural-tabanlı pre-flight (7 sinyal + PENDING_REVIEW kuyruğu); AI-destekli sonraki iterasyonda
+- [x] Bildirim sistemi, in-app (bell + /bildirimler)
+- [x] Sosyal paylaşım butonları, Web Share API + WhatsApp/X/kopyala fallback
+- [x] Gelişmiş moderasyon, kural-tabanlı pre-flight (7 sinyal + PENDING_REVIEW kuyruğu); AI-destekli sonraki iterasyonda
 - [x] E-posta doğrulama (Resend prod'da)
 - [x] Kullanıcı rozet sistemi (4 tip: EMAIL_VERIFIED / FIRST_VARIATION / POPULAR_VARIATION / RECIPE_COLLECTOR)
-- [ ] Şablon video sistemi (Remotion) — Faz 2/3 arası
+- [ ] Şablon video sistemi (Remotion), Faz 2/3 arası
 - [x] PWA desteği (manifest + ikonlar + shortcuts)
-- [x] **Google OAuth** (canlıda, bağla/unlink dahil — plandaki MVP 0.2 Auth.js kısmı Faz 2'ye genişledi)
+- [x] **Google OAuth** (canlıda, bağla/unlink dahil, plandaki MVP 0.2 Auth.js kısmı Faz 2'ye genişledi)
 - [x] **Profil düzenleme + şifre yönetimi + hesap silme** (tam /ayarlar sayfası)
 - [x] **Şifremi unuttum akışı** (PasswordResetToken, 1h TTL, email enumeration defense)
 - [x] **Rate limiting** (Upstash Redis, 9 scope)
 - [x] **A11y overhaul** (useDismiss/useFocusTrap hook'ları, ARIA, reduced motion)
 - [x] **A11y WCAG 2.1 AA tertemiz** (axe-core/playwright regression guard, renk paleti AA için revizyon, light + dark)
 - [x] **Structured ingredient input** (amount + unit + name, backward compat)
-- [x] **Malzeme grupları** ("Hamur için" / "Şerbet için" gibi bölümler — RecipeIngredient.group)
+- [x] **Malzeme grupları** ("Hamur için" / "Şerbet için" gibi bölümler, RecipeIngredient.group)
 - [x] **Alerjen sistemi** (10 enum + GIN index + UI: detayda collapsible panel + listede "içermesin" filter + retrofit script)
 - [x] **Vegan/vejetaryen retrofit** (kural-tabanlı diet inference + dedicated DİYET filter + yeşil chip)
 - [x] **Bugünün tarifi** widget (deterministic daily pick + 12-kural curator note)
 - [x] **"En çok beğeni" sort** (variations.likeCount aggregation, TR collation tie-break)
-- [x] **Kullanıcı kendi uyarlamasını silebilir** (ownership gate + hard delete + AuditLog; düzenleme bilinçli olarak EKLENMEDİ — abuse vektörü)
-- [x] **i18n minimal prep** (Recipe.translations Json? + LanguagePreferenceCard "Yakında") — gerçek aktivasyon Faz 3
+- [x] **Kullanıcı kendi uyarlamasını silebilir** (ownership gate + hard delete + AuditLog; düzenleme bilinçli olarak EKLENMEDİ, abuse vektörü)
+- [x] **i18n minimal prep** (Recipe.translations Json? + LanguagePreferenceCard "Yakında"), gerçek aktivasyon Faz 3
 - [x] **CI pipeline** (GitHub Actions: lint + typecheck + vitest + build + a11y audit)
 - [x] **E2E test altyapısı** (Playwright, 12 test: home + recipe-detail + auth-pages + notifications + auth-roundtrip + a11y light/dark)
 - [x] **Codex 500-batch DB hijyeni** (seed Zod validation + retrofit-all orchestrator + GIN index + migration baseline temizliği)
 
-### Faz 3 — Premium & Genişleme
+### Faz 3, Premium & Genişleme
 
-- [ ] AI tarif videoları (Remotion altyapı §19-21 — henüz başlamadı)
-- [x] **Çoklu dil desteği (EN, DE)** — TR + EN + DE tam canlı (19 Nis 2026 oturum 7). 1701/1701 tarif title+description, 600/1701 full Mod B (ingredients + steps + tipNote + servingSuggestion). Codex Mod B pipeline devam ediyor.
-- [ ] Premium üyelik (reklamsız, sınırsız AI) — rekabet analizi (`docs/COMPETITIVE_ANALYSIS.md`) bunu 3-6 ay içinde öneriyor; ₺29/ay MVP test planlanabilir
-- [x] **Haftalık menü planlayıcı** (`/menu-planlayici` — 19 Nis 2026 oturum 7). 7 gün × 3 öğün grid + alışveriş listesi tek-tık entegrasyon + print view
-- [x] **Yemek blog / makale bölümü** (`/blog` — 19 Nis 2026 oturum 7). MDX altyapısı (next-mdx-remote + gray-matter + reading-time) + 3 seed makale (mutfak-rehberi / pisirme-teknikleri / malzeme-tanima kategori).
-- [ ] Mobil uygulama (React Native) — 3-6 ay
-- [ ] Açık API (developer access) — 3-6 ay
+- [ ] AI tarif videoları (Remotion altyapı §19-21, henüz başlamadı)
+- [x] **Çoklu dil desteği (EN, DE)**, TR + EN + DE tam canlı (19 Nis 2026 oturum 7). 1701/1701 tarif title+description, 600/1701 full Mod B (ingredients + steps + tipNote + servingSuggestion). Codex Mod B pipeline devam ediyor.
+- [ ] Premium üyelik (reklamsız, sınırsız AI), rekabet analizi (`docs/COMPETITIVE_ANALYSIS.md`) bunu 3-6 ay içinde öneriyor; ₺29/ay MVP test planlanabilir
+- [x] **Haftalık menü planlayıcı** (`/menu-planlayici`, 19 Nis 2026 oturum 7). 7 gün × 3 öğün grid + alışveriş listesi tek-tık entegrasyon + print view
+- [x] **Yemek blog / makale bölümü** (`/blog`, 19 Nis 2026 oturum 7). MDX altyapısı (next-mdx-remote + gray-matter + reading-time) + 3 seed makale (mutfak-rehberi / pisirme-teknikleri / malzeme-tanima kategori).
+- [ ] Mobil uygulama (React Native), 3-6 ay
+- [ ] Açık API (developer access), 3-6 ay
 
 **Faz 3'e eklenen yeni maddeler (19 Nis 2026 oturum 7):**
 
-- [x] **Legal hub** — `/yasal` 6 sayfa (KVKK + Kullanım Koşulları + Gizlilik + Çerez Politikası + Güvenlik + İletişim Aydınlatma) + cookie banner + sürüm etiketi + 301 redirect
-- [x] **44 programatik landing** — `/mutfak/24` + `/etiket/15` + `/diyet/5` (unique H1 + TR/EN açıklama + breadcrumb + sitemap + canonical alignment)
-- [x] **Newsletter double-opt-in altyapı** — schema + Resend + footer form + confirm/unsubscribe API (gönderim cron v2)
+- [x] **Legal hub**, `/yasal` 6 sayfa (KVKK + Kullanım Koşulları + Gizlilik + Çerez Politikası + Güvenlik + İletişim Aydınlatma) + cookie banner + sürüm etiketi + 301 redirect
+- [x] **44 programatik landing**, `/mutfak/24` + `/etiket/15` + `/diyet/5` (unique H1 + TR/EN açıklama + breadcrumb + sitemap + canonical alignment)
+- [x] **Newsletter double-opt-in altyapı**, schema + Resend + footer form + confirm/unsubscribe API (gönderim cron v2)
 - [x] **RSS feed** `/feed.xml` (son 50 tarif, alternate link auto-discovery)
-- [x] **HowTo schema enrichment** — Recipe JSON-LD `supply` + `tool` + step `name`+URL anchor
-- [x] **Benzer tarifler motor v2** — ingredient Jaccard + featured boost + pool 100
-- [x] **AI Asistan v2** — pantry daralt + diversify + diet filter
-- [x] **Kişiselleştirme tur 3** — `foryou` sort boost (favoriteTags intersection)
-- [x] **Editör Seçimi rozeti** — isFeatured görsel ⭐ + shelf rebrand
-- [x] **@kozcactus super-admin protection** — hardcoded allowlist
-- [x] **/admin/yorumlar browse** — review audit (moderasyon kuyruğu ayrı)
-- [x] **Rekabet analizi v1.0** — `docs/COMPETITIVE_ANALYSIS.md` (5 TR + 2 int'l rakip, feature matrix, 3 dalga roadmap)
+- [x] **HowTo schema enrichment**, Recipe JSON-LD `supply` + `tool` + step `name`+URL anchor
+- [x] **Benzer tarifler motor v2**, ingredient Jaccard + featured boost + pool 100
+- [x] **AI Asistan v2**, pantry daralt + diversify + diet filter
+- [x] **Kişiselleştirme tur 3**, `foryou` sort boost (favoriteTags intersection)
+- [x] **Editör Seçimi rozeti**, isFeatured görsel ⭐ + shelf rebrand
+- [x] **@kozcactus super-admin protection**, hardcoded allowlist
+- [x] **/admin/yorumlar browse**, review audit (moderasyon kuyruğu ayrı)
+- [x] **Rekabet analizi v1.0**, `docs/COMPETITIVE_ANALYSIS.md` (5 TR + 2 int'l rakip, feature matrix, 3 dalga roadmap)
 
 ---
 
@@ -1754,11 +1754,11 @@ ci: CI/CD degisiklikleri
 - UI bileşenleri kademeli olarak test kapsamına alınır
 - Kritik kullanıcı akışları (auth, varyasyon ekleme, beğeni) %100 E2E testli
 
-### 15 Nis 2026 — mevcut durum
+### 15 Nis 2026, mevcut durum
 
 - **230 unit + 12 E2E test yeşil.**
-- Unit: moderation blacklist (11), AI matcher (23 — pantry regression dahil), rate-limit (8), email normalize (5), useDismiss (5), ingredients (?), link-intent (?), moderation preflight (12), profile validator (?), password change validator (?), password reset validator (9), recipe of the day commentary (18), recipe most-liked sort (6), allergens (19), diet inference (15), ingredient group bucketing (7), seed recipe schema (15), badges service (13, prisma+notification mock), email verification (5, prisma mock).
-- E2E: home (3), recipe-detail (2), auth-pages (3), notifications (1), auth-roundtrip (1), a11y light + dark (2 — axe-core/playwright, regression guard).
+- Unit: moderation blacklist (11), AI matcher (23, pantry regression dahil), rate-limit (8), email normalize (5), useDismiss (5), ingredients (?), link-intent (?), moderation preflight (12), profile validator (?), password change validator (?), password reset validator (9), recipe of the day commentary (18), recipe most-liked sort (6), allergens (19), diet inference (15), ingredient group bucketing (7), seed recipe schema (15), badges service (13, prisma+notification mock), email verification (5, prisma mock).
+- E2E: home (3), recipe-detail (2), auth-pages (3), notifications (1), auth-roundtrip (1), a11y light + dark (2, axe-core/playwright, regression guard).
 - CI her push'ta: `lint + typecheck + vitest + build + a11y audit`.
 - Ops smoke scripts (CI'da değil, manuel): test-password-reset-flow, test-most-liked-sort, test-delete-own-variation, retrofit-allergens, retrofit-diet-tags, retrofit-all, fix-ingredient-groups, fix-tipnotes, smoke-rate-limit, list-users, delete-user, list-recipe-slugs.
 - **Mocking pattern**: Prisma'ya bağımlı service'leri test ederken `vi.hoisted` + `vi.mock` (örnek: `tests/unit/badges-service.test.ts`).
@@ -1824,7 +1824,7 @@ FAL_API_KEY="..."
 
 - [ ] HTTPS zorunlu (Vercel otomatik)
 - [ ] CSRF koruması (Auth.js yerleşik)
-- [ ] Rate limiting (API routes — IP + kullanıcı bazlı)
+- [ ] Rate limiting (API routes, IP + kullanıcı bazlı)
 - [ ] SQL injection koruması (Prisma ORM parametreli sorgular)
 - [ ] XSS koruması (React otomatik escape + sanitize)
 - [ ] Dosya yükleme validasyonu (tip, boyut, içerik)
@@ -1947,9 +1947,9 @@ Bunlar MVP dışında, faz bazlı eklenecek:
 | Alışveriş listesi oluşturma | Malzemeleri listeye ekle, WhatsApp'a gönder | Faz 2 ✅ |
 | Alerjen etiketleri | Süt ürünü, gluten, kuruyemiş, yumurta vb. | Faz 2 ✅ (10 enum + GIN index + UI + retrofit script) |
 | Beslenme etiketleri | Vegan, vejetaryen, yüksek protein, düşük kalori | MVP 0.1 ✅ + Faz 2 ✅ (vegan/vejetaryen retrofit + dedicated DİYET filter) |
-| Tarif düzenleme geçmişi | Varyasyon edit history | **Eklenmedi** (15 Nis 2026 — bilinçli karar: edit + beğeni koruma abuse vektörü; sil özelliği yeterli) |
+| Tarif düzenleme geçmişi | Varyasyon edit history | **Eklenmedi** (15 Nis 2026, bilinçli karar: edit + beğeni koruma abuse vektörü; sil özelliği yeterli) |
 | Kullanıcı rozetleri | İlk tarif, 10 beğeni, popüler tarif vb. | Faz 2 ✅ |
-| "Bugün ne pişirsem?" | Hızlı öneri alanı | Faz 2 ✅ (ana sayfa Bugünün Tarifi widget — deterministic daily pick) |
+| "Bugün ne pişirsem?" | Hızlı öneri alanı | Faz 2 ✅ (ana sayfa Bugünün Tarifi widget, deterministic daily pick) |
 | Schema.org Recipe | SEO için yapılandırılmış veri | MVP 0.1 ✅ |
 | Yazdırılabilir tarif modu | Temiz format | MVP 0.3 ✅ |
 | Tarif paylaşım linkleri | WhatsApp, Twitter, kopyala | Faz 2 ✅ |
@@ -1983,10 +1983,10 @@ Aşağıdaki kararlar netleştirilmiş durumda:
 
 ### Açık Kalan Sorular
 
-1. E-posta doğrulaması MVP'de zorunlu mu yoksa opsiyonel mi olsun? — **Karar: opsiyonel** (15 Nis 2026; doğrulanmamış kullanıcı her şeyi yapabiliyor, sadece EMAIL_VERIFIED rozeti eksik. Şifremi unuttum akışı bunu varsayıyor — verify olmadan da reset alabilir).
-2. AI video için aylık deneme bütçesi belirlenecek mi? — Hâlâ açık (Faz 3 konusu)
-3. İlk tarif veri setine kullanıcının özel tarifleri de eklensin mi? — Hâlâ açık (Codex 500-batch akışında değerlendirilebilir)
-4. Gelişmiş moderasyonda AI (Claude Haiku) kullanımı? — **Karar: kural-tabanlı yeterli** (15 Nis 2026; preflight 7 sinyal + PENDING_REVIEW kuyruğu + URL bypass tespiti production'da çalışıyor; LLM masrafı şu an gereksiz, kalite gerektiğinde revisit edilir)
+1. E-posta doğrulaması MVP'de zorunlu mu yoksa opsiyonel mi olsun?, **Karar: opsiyonel** (15 Nis 2026; doğrulanmamış kullanıcı her şeyi yapabiliyor, sadece EMAIL_VERIFIED rozeti eksik. Şifremi unuttum akışı bunu varsayıyor, verify olmadan da reset alabilir).
+2. AI video için aylık deneme bütçesi belirlenecek mi?, Hâlâ açık (Faz 3 konusu)
+3. İlk tarif veri setine kullanıcının özel tarifleri de eklensin mi?, Hâlâ açık (Codex 500-batch akışında değerlendirilebilir)
+4. Gelişmiş moderasyonda AI (Claude Haiku) kullanımı?, **Karar: kural-tabanlı yeterli** (15 Nis 2026; preflight 7 sinyal + PENDING_REVIEW kuyruğu + URL bypass tespiti production'da çalışıyor; LLM masrafı şu an gereksiz, kalite gerektiğinde revisit edilir)
 
 ---
 
@@ -2012,7 +2012,7 @@ Her feature tamamlanmış sayılması için:
 Proje durumunu takip etmek için `docs/PROJECT_STATUS.md` dosyası kullanılır. Her feature tamamlandığında veya yeni karar alındığında güncellenir. Ana plan dokümanını kalabalıklaştırmadan güncel durumu gösterir.
 
 ```markdown
-# Tarifle — Proje Durumu
+# Tarifle, Proje Durumu
 
 > Son güncelleme: [tarih]
 

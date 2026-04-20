@@ -1,5 +1,5 @@
 /**
- * Prints every existing recipe slug to stdout — one per line, alphabetical.
+ * Prints every existing recipe slug to stdout, one per line, alphabetical.
  *
  * Use this from the Codex machine before generating a new batch so the
  * assistant knows which slugs are already taken. Pipe into a file if you

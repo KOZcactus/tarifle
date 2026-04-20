@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 
 /**
- * Home page happy path — read-only smoke. Asserts the page loads with the
+ * Home page happy path, read-only smoke. Asserts the page loads with the
  * hero, the featured recipe list, and the category grid. If any of these
  * break, the whole front door of the site is down.
  */
@@ -28,7 +28,7 @@ test.describe("Home page", () => {
     await expect(cards.first()).toBeVisible();
     expect(await cards.count()).toBeGreaterThan(0);
 
-    // Categories section — seeded 17 categories
+    // Categories section, seeded 17 categories
     await expect(
       page.getByRole("heading", { name: /Kategoriler/i }),
     ).toBeVisible();
@@ -36,7 +36,7 @@ test.describe("Home page", () => {
 
   test("AI Assistant banner links to /ai-asistan", async ({ page }) => {
     await page.goto("/");
-    // Match by href rather than by name — the banner's accessible name is a
+    // Match by href rather than by name, the banner's accessible name is a
     // long concatenation of emoji + label + heading + CTA; matching on the
     // link target is more resilient to copy tweaks.
     const banner = page.locator('a[href="/ai-asistan"]').first();

@@ -141,7 +141,7 @@ describe("seedRecipeSchema", () => {
   });
 });
 
-describe("seedRecipeSchema — translations (opt-in)", () => {
+describe("seedRecipeSchema, translations (opt-in)", () => {
   it("accepts a recipe with no translations field at all", () => {
     const r = seedRecipeSchema.safeParse(validRecipe);
     expect(r.success).toBe(true);

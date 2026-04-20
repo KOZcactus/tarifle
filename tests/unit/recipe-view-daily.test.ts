@@ -12,7 +12,7 @@ describe("toUtcDateBucket", () => {
     expect(bucket.toISOString()).toBe("2026-04-20T00:00:00.000Z");
   });
 
-  it("uses UTC, not local — a 23:30 TSİ timestamp stays on the UTC day", () => {
+  it("uses UTC, not local, a 23:30 TSİ timestamp stays on the UTC day", () => {
     // 23:30 TSİ = 20:30 UTC → UTC günü aynı
     const instant = new Date("2026-04-20T20:30:00.000Z");
     const bucket = toUtcDateBucket(instant);
@@ -39,7 +39,7 @@ describe("toUtcDateBucket", () => {
   });
 });
 
-describe("getDailyViewTrend — shape and fill behavior", () => {
+describe("getDailyViewTrend, shape and fill behavior", () => {
   // Bu test Prisma client'ı mock'lar; asıl aggregate DB'ye gittiği için
   // sadece output shape + 0-fill davranışını doğruluyoruz.
   beforeEach(() => {

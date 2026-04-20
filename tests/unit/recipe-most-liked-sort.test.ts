@@ -27,7 +27,7 @@ describe("compareByMostLiked", () => {
     // Same total (5 each) → title asc. "Ç" comes after "C" in Turkish sort.
     const rows = [row("Çilekli", [5]), row("Cevizli", [5]), row("Cilekli", [5])];
     const sorted = [...rows].sort(compareByMostLiked);
-    // Latin "Cevizli" (e) < Latin "Cilekli" (i without dot — ASCII i) < "Çilekli"
+    // Latin "Cevizli" (e) < Latin "Cilekli" (i without dot, ASCII i) < "Çilekli"
     expect(sorted[0]!.title).toBe("Cevizli");
     expect(sorted[sorted.length - 1]!.title).toBe("Çilekli");
   });

@@ -2,7 +2,7 @@
  * Fix CRITICAL allergen findings for Codex batch 22 seed.
  *
  * Seven ingredient-allergen mismatches caught by audit-batch18-inline.ts
- * (`--last 100 --label "batch 22"`). Tamamı gerçek fix — false positive
+ * (`--last 100 --label "batch 22"`). Tamamı gerçek fix, false positive
  * yok (karabuğday hiç geçmedi).
  *
  *   Yumurta      → YUMURTA: 3 slug (Arpa yarmalı yoğurt çorbası,
@@ -80,7 +80,7 @@ async function main(): Promise<void> {
   for (const fix of ALLERGEN_FIXES) {
     const recipe = recipes.find((r) => r.slug === fix.slug);
     if (!recipe) {
-      console.log(`  ⚠ ${fix.slug} — DB'de yok (atlandı)`);
+      console.log(`  ⚠ ${fix.slug}, DB'de yok (atlandı)`);
       missing++;
       continue;
     }
@@ -89,7 +89,7 @@ async function main(): Promise<void> {
     const toAdd = fix.add.filter((a) => !current.has(a));
 
     if (toAdd.length === 0) {
-      console.log(`  ⏭  ${fix.slug} — zaten temiz (${[...current].join(", ") || "none"})`);
+      console.log(`  ⏭  ${fix.slug}, zaten temiz (${[...current].join(", ") || "none"})`);
       alreadyClean++;
       continue;
     }
@@ -98,7 +98,7 @@ async function main(): Promise<void> {
     const sorted = ALLERGEN_ORDER.filter((a) => current.has(a));
 
     console.log(
-      `  ${APPLY ? "✅" : "🔍"} ${fix.slug} — +${toAdd.join(", ")} (${fix.reason}) → [${sorted.join(", ")}]`,
+      `  ${APPLY ? "✅" : "🔍"} ${fix.slug}, +${toAdd.join(", ")} (${fix.reason}) → [${sorted.join(", ")}]`,
     );
 
     if (APPLY) {

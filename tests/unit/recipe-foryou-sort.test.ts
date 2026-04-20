@@ -28,7 +28,7 @@ describe("scoreByFavoriteTags", () => {
     expect(scoreByFavoriteTags(["tatli"], ["tuzlu", "vegan"])).toBe(0);
   });
 
-  it("is deduplicated-idempotent — duplicate recipe tags don't inflate score", () => {
+  it("is deduplicated-idempotent, duplicate recipe tags don't inflate score", () => {
     // Defensive: the prod schema has @@unique([recipeId, tagId]) so duplicates
     // shouldn't happen in practice, but the scorer should stay robust.
     expect(scoreByFavoriteTags(["pratik", "pratik"], ["pratik"])).toBe(2);

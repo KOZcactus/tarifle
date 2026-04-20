@@ -1,10 +1,10 @@
 /**
  * Remove `group` label from ingredients that are the sole member of their
  * group. A bucket header for a single ingredient adds noise without
- * meaningful structure — the ingredient itself stays, only the header
+ * meaningful structure, the ingredient itself stays, only the header
  * disappears (UI falls back to flat list when that ingredient has no group).
  *
- * Idempotent — re-running after apply is a no-op.
+ * Idempotent, re-running after apply is a no-op.
  *
  *   npx tsx scripts/fix-single-ingredient-groups.ts              # dry run
  *   npx tsx scripts/fix-single-ingredient-groups.ts --apply      # write
@@ -90,7 +90,7 @@ async function main(): Promise<void> {
   for (const [slug, items] of byRecipe) {
     for (const it of items) {
       console.log(
-        `  ${slug.padEnd(28)} "${it.name}" — "${it.group}" → null`,
+        `  ${slug.padEnd(28)} "${it.name}", "${it.group}" → null`,
       );
     }
   }
@@ -102,7 +102,7 @@ async function main(): Promise<void> {
     });
     console.log(`\n✅ Nulled ${idsToNull.length} ingredient group(s)`);
   } else if (!APPLY) {
-    console.log(`\n(dry run — re-run with --apply to write)`);
+    console.log(`\n(dry run, re-run with --apply to write)`);
   }
 }
 

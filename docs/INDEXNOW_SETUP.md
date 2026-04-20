@@ -1,4 +1,4 @@
-# IndexNow Setup — Bing / Yandex / Seznam otomatik ping
+# IndexNow Setup, Bing / Yandex / Seznam otomatik ping
 
 Tarifle'nin yeni/güncellenen içeriklerini Bing, Yandex, Seznam ve Naver'a
 otomatik ping'lemesini sağlar. Manuel günlük submit (100/gün Bing,
@@ -18,10 +18,10 @@ INDEXNOW_KEY=d1277d55b71ba70595c7a887577dc9a0
 INDEXNOW_CRON_SECRET=$(openssl rand -base64 32)
 ```
 
-`INDEXNOW_KEY` — 32-char lowercase hex (yukarıdaki oturum 9'da üretildi).
+`INDEXNOW_KEY`, 32-char lowercase hex (yukarıdaki oturum 9'da üretildi).
 Değiştirmek istersen `node -e "console.log(require('crypto').randomBytes(16).toString('hex'))"`.
 
-`INDEXNOW_CRON_SECRET` — cron endpoint bearer auth. Newsletter cron ile
+`INDEXNOW_CRON_SECRET`, cron endpoint bearer auth. Newsletter cron ile
 aynı pattern, ayrı secret (kaza önleme).
 
 Lokal test için `.env.local`'e de ekle (git'lemez).
@@ -40,7 +40,7 @@ Doğrula: `https://tarifle.app/d1277d55b71ba70595c7a887577dc9a0.txt` →
 
 ### 3. Scheduler kur (iki seçenek)
 
-**A) Vercel Cron** (önerilen — tek cron, yerinde):
+**A) Vercel Cron** (önerilen, tek cron, yerinde):
 
 `vercel.json` proje kökünde zaten hazır (oturum 9 sonu commit'lendi):
 
@@ -60,7 +60,7 @@ Vercel Cron Hobby tier'da günde 1, haftada 1 yeterli. Pro tier no-limit.
 **Auth:** Endpoint Vercel Cron isteklerini `x-vercel-cron: 1` header ile
 doğrular (Vercel edge otomatik enjekte eder, dışarıdan spoof edilemez).
 Manuel tetik/QStash için hâlâ `INDEXNOW_CRON_SECRET` bearer kabul eder
-— ikisi birlikte çalışır.
+Her iki yol da birlikte çalışır.
 
 **B) Upstash QStash** (newsletter cron zaten burada):
 
@@ -85,7 +85,7 @@ rahat yetiyor). Bing index'e düşüş 24-72 saat.
 Haftalık cron çalıştıkça:
 - Yeni eklenen tarifler → Bing'e 24 saat içinde push
 - Güncellenen tarifler (update) → yine 24 saat içinde re-index sinyali
-- Sitemap otomatik güncel (Prisma `updatedAt` desc) — Bing ikincil kanal
+- Sitemap otomatik güncel (Prisma `updatedAt` desc), Bing ikincil kanal
 
 Manuel tek sefer lazım olursa:
 

@@ -102,7 +102,7 @@ describe("buildRssXml()", () => {
     );
   });
 
-  it("kategori opsiyonel — verilmediğinde <category> elementi yok", () => {
+  it("kategori opsiyonel, verilmediğinde <category> elementi yok", () => {
     const noCategory: RssItem = {
       title: "Deneme",
       slug: "deneme",

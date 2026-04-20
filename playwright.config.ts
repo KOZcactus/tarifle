@@ -6,7 +6,7 @@ import { defineConfig, devices } from "@playwright/test";
  * Tests run against a local Next.js dev server on port 3000 that Playwright
  * boots on demand (`webServer` block). The server shares the real Neon DB
  * via `DATABASE_URL` in `.env.local`, so tests that create users or write
- * records will persist — specs are expected to clean up after themselves.
+ * records will persist, specs are expected to clean up after themselves.
  *
  * On CI we bump retries to 2 and run chromium-only. Locally, we can still
  * open the UI runner with `npx playwright test --ui` to debug specs.

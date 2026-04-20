@@ -27,7 +27,7 @@ export interface DbTargetInfo {
 
 /**
  * DATABASE_URL'deki host'tan hangi Neon branch olduğunu çıkar.
- * Unknown dönerse URL beklenmedik bir host'a işaret ediyor — ya bir test
+ * Unknown dönerse URL beklenmedik bir host'a işaret ediyor, ya bir test
  * ortamı, ya mis-configured .env. Caller karar verir.
  */
 export function detectDbTarget(databaseUrl: string | undefined): DbTargetInfo {
@@ -68,7 +68,7 @@ export function assertDbTarget(scriptName: string): DbTargetInfo {
 
   if (info.branch === "unknown") {
     console.warn(
-      `⚠️  [${scriptName}] Unknown DB host: ${info.host} — devam ediliyor.`,
+      `⚠️  [${scriptName}] Unknown DB host: ${info.host}, devam ediliyor.`,
     );
     return info;
   }
@@ -96,11 +96,11 @@ export function assertDbTarget(scriptName: string): DbTargetInfo {
 
   // Flag var → 3 sn son şans
   console.warn(
-    `\n⚠️  [${scriptName}] PRODUCTION write (${info.host}) — 3 saniye içinde başlayacak...\n` +
+    `\n⚠️  [${scriptName}] PRODUCTION write (${info.host}), 3 saniye içinde başlayacak...\n` +
       `   İptal için Ctrl+C (şimdi).\n`,
   );
   const start = Date.now();
-  // Busy-wait 3 saniye — script başlamadan gözlerini kapat sayısı.
+  // Busy-wait 3 saniye, script başlamadan gözlerini kapat sayısı.
   while (Date.now() - start < 3_000) {
     // intentional: block main thread for 3s
   }

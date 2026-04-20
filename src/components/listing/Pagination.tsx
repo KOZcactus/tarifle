@@ -13,7 +13,7 @@ import Link from "next/link";
  *     anchor pages (klasik Google-style pagination)
  *
  *  Visual treatment:
- *   - Aktif sayfa: ince siyah border + bold (kare kutu referansı —
+ *   - Aktif sayfa: ince siyah border + bold (kare kutu referansı,
  *     kullanıcı gönderdiği sample image'da bu aşamayı istedi)
  *   - Inactive sayfalar: border yok, hover'da soft bg, muted digit rengi
  *   - Prev / Next: her zaman render edilir; ilk/son sayfada span olarak

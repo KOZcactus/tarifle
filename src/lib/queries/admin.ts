@@ -559,7 +559,7 @@ export async function getModerationLogTargets(
     });
     for (const r of rows) {
       result.set(r.id, {
-        label: r.name ?? `@${r.username ?? "—"}`,
+        label: r.name ?? `@${r.username ?? ","}`,
         link: r.username ? `/admin/kullanicilar/${r.username}` : null,
       });
     }

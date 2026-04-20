@@ -1,6 +1,6 @@
-# Auto-migrate POC — Neon direct URL araştırması
+# Auto-migrate POC, Neon direct URL araştırması
 
-> 18 Nis 2026 oturum 3 — Yol A ship edildi (`scripts/migrate-prod.ts`). Yol B ve C hâlâ araştırma notu; ileride gündeme gelirse bu doküman referans.
+> 18 Nis 2026 oturum 3, Yol A ship edildi (`scripts/migrate-prod.ts`). Yol B ve C hâlâ araştırma notu; ileride gündeme gelirse bu doküman referans.
 
 ## Kısa özet
 
@@ -12,8 +12,8 @@ Bu doküman üç yolu karşılaştırıyor ve önerilen yaklaşımı anlatıyor.
 
 Neon connection string'leri host prefix'iyle iki tip:
 
-- **Pooled** — `ep-xxxxx-pooler.region.aws.neon.tech` (PgBouncer, transaction mode, statement pooling)
-- **Direct** — `ep-xxxxx.region.aws.neon.tech` (doğrudan Postgres, advisory lock destekli)
+- **Pooled**, `ep-xxxxx-pooler.region.aws.neon.tech` (PgBouncer, transaction mode, statement pooling)
+- **Direct**, `ep-xxxxx.region.aws.neon.tech` (doğrudan Postgres, advisory lock destekli)
 
 Prisma'nın `prisma migrate` komutları migration lock için `pg_advisory_lock` kullanır. PgBouncer transaction mode'da advisory lock statement sonunda düşer → `P1002` timeout. Direct URL bu sorunu tamamen çözer.
 
@@ -41,11 +41,11 @@ export declare type Datasource = {
 };
 ```
 
-`directUrl` field'ı eklenmedi. Bunun yerine Prisma 7 ekosistemi "env override" pattern'ini benimsiyor — `prisma.config.ts` `process.env.DATABASE_URL` okur, migrate zamanında başka bir URL ile override edilir.
+`directUrl` field'ı eklenmedi. Bunun yerine Prisma 7 ekosistemi "env override" pattern'ini benimsiyor, `prisma.config.ts` `process.env.DATABASE_URL` okur, migrate zamanında başka bir URL ile override edilir.
 
 ## Üç yol
 
-### Yol A — Lokal wrapper script (manuel devam, az sürtünme)
+### Yol A, Lokal wrapper script (manuel devam, az sürtünme)
 
 `scripts/migrate-prod.ts`:
 1. `.env.production.local`'den `DATABASE_URL` ve `DIRECT_DATABASE_URL` okur
@@ -58,7 +58,7 @@ export declare type Datasource = {
 
 **Efor:** ~50 satır TypeScript. Yarım saat.
 
-### Yol B — GitHub Actions workflow
+### Yol B, GitHub Actions workflow
 
 `.github/workflows/migrate-prod.yml`:
 - `main` push'ta tetiklenir (veya `workflow_dispatch` manuel)
@@ -66,18 +66,18 @@ export declare type Datasource = {
 - Başarısızsa job fail; Vercel deploy yine çalışır ama schema drift kalır (alert gerekli)
 
 **Artı:** Tamamen otomatik. Vercel'dan bağımsız.
-**Eksi:** Vercel deploy ile race var — migrate job bitmeden Vercel deploy başlayabilir. Schema değişiklikleri için Vercel'ı GitHub environment dependency ile bekletmek gerek (Vercel projesini GitHub environment'a bağlamak — ek kurulum).
+**Eksi:** Vercel deploy ile race var, migrate job bitmeden Vercel deploy başlayabilir. Schema değişiklikleri için Vercel'ı GitHub environment dependency ile bekletmek gerek (Vercel projesini GitHub environment'a bağlamak, ek kurulum).
 
 Senkron akış sağlamak için 3 adım:
 1. Workflow migrate koşar
 2. Başarıyla bitince Vercel deploy hook'u manuel tetikler (deploy pause eden değişiklik)
 3. Vercel webhook dinler, deploy etmeye başlar
 
-Bu kısım "basit CI job" olmaktan çıkıyor — `vercel-pause` / `vercel-resume` akışı veya GitHub environment approval gerekir.
+Bu kısım "basit CI job" olmaktan çıkıyor, `vercel-pause` / `vercel-resume` akışı veya GitHub environment approval gerekir.
 
 **Efor:** 2-3 saat. Vercel tarafı kurulumu da içerir.
 
-### Yol C — Vercel build'de migrate (denendi, geri alındı)
+### Yol C, Vercel build'de migrate (denendi, geri alındı)
 
 Geçmişte yapıldı (`4b528d9` → `4d6a7fe` revert). Build script'e `prisma migrate deploy` eklendi, **pooled** URL ile P1002 yedi.
 
@@ -92,7 +92,7 @@ Koşullar:
 - Dev/Preview build'lerini etkilememek için guard eklemek (sadece `VERCEL_ENV=production` iken migrate)
 
 **Artı:** Tek yerde toplu. Deploy ↔ migrate atomik.
-**Eksi:** Her deploy migrate çalıştırır (schema değişmediyse no-op, ama yine 5-10sn eklenir). Build fail migrate hatasından gelirse production kırılır — rollback discipline gerekir.
+**Eksi:** Her deploy migrate çalıştırır (schema değişmediyse no-op, ama yine 5-10sn eklenir). Build fail migrate hatasından gelirse production kırılır, rollback discipline gerekir.
 
 **Efor:** 1 saat. Risk profili orta (geçmişteki deney rollback'li).
 
@@ -109,9 +109,9 @@ Koşullar:
 
 **Uzun vade (eğer lazım olursa):** Yol B (GitHub Actions). Çoklu environment'a ihtiyaç duyulursa (staging branch, canary vb.).
 
-## Yol A — prototip
+## Yol A, prototip
 
-Aşağıdaki script `scripts/migrate-prod.ts` olarak eklenebilir. Henüz commit edilmedi — Kerem onayladıktan sonra shippable.
+Aşağıdaki script `scripts/migrate-prod.ts` olarak eklenebilir. Henüz commit edilmedi, Kerem onayladıktan sonra shippable.
 
 ```ts
 /**
@@ -141,7 +141,7 @@ function resolveDirectUrl(): string {
   const stripped = pooled.replace(/-pooler(\.[a-z0-9.-]+)/, "$1");
   if (stripped === pooled) {
     throw new Error(
-      "Could not derive direct URL — DATABASE_URL doesn't contain '-pooler'. Add DIRECT_DATABASE_URL to .env.production.local explicitly.",
+      "Could not derive direct URL, DATABASE_URL doesn't contain '-pooler'. Add DIRECT_DATABASE_URL to .env.production.local explicitly.",
     );
   }
   return stripped;
@@ -165,7 +165,7 @@ async function main() {
   console.log(`⚡ running: ${fullCmd.join(" ")}\n`);
 
   if (isProd && APPLY) {
-    console.log("⚠️  3 saniye içinde migrate deploy başlayacak — Ctrl+C iptal için.");
+    console.log("⚠️  3 saniye içinde migrate deploy başlayacak, Ctrl+C iptal için.");
     await new Promise((r) => setTimeout(r, 3000));
   }
 
@@ -200,15 +200,15 @@ POC'yi gerçek koşmadan önce:
 
 ## Risk değerlendirmesi
 
-- **Veri kaybı:** Yok — `migrate deploy` sadece migration dosyalarını uygular, mevcut veriyi silmez. `check-destructive-migration.ts` DROP/TRUNCATE tarar.
+- **Veri kaybı:** Yok, `migrate deploy` sadece migration dosyalarını uygular, mevcut veriyi silmez. `check-destructive-migration.ts` DROP/TRUNCATE tarar.
 - **Schema drift:** Yol A manuel kaldığı için hâlâ "push öncesi hatırla" baskısı var. Checklist gerekir (PROD_PROMOTE.md'de zaten var).
 - **Connection leak:** `spawn` child process sonunda exit eder, URL env sadece child'a enjekte edilir, parent shell'e sızmaz.
-- **Secret rotation:** Direct URL bir secret — `.env.production.local` zaten gitignore'da, risk profili mevcut manuel akışla aynı.
+- **Secret rotation:** Direct URL bir secret, `.env.production.local` zaten gitignore'da, risk profili mevcut manuel akışla aynı.
 
 ## Sonraki adımlar
 
 1. ✅ Araştırma + POC doküman (bu dosya)
-2. ✅ Yol A script'i ship edildi — `scripts/migrate-prod.ts` (18 Nis oturum 3)
-3. ✅ Dev'de `migrate status` ile test — `--env dev` PASS, direct URL derivation doğru
+2. ✅ Yol A script'i ship edildi, `scripts/migrate-prod.ts` (18 Nis oturum 3)
+3. ✅ Dev'de `migrate status` ile test, `--env dev` PASS, direct URL derivation doğru
 4. ⏳ Schema değişikliği geldiğinde prod'a ilk gerçek kullanım (`--apply --confirm-prod`)
 5. ⏳ İlk 3 başarılı kullanım sonrası Yol C'yi (Vercel build-time) değerlendir

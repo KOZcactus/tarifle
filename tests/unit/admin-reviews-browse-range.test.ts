@@ -4,7 +4,7 @@ import {
   resolveRange,
 } from "@/lib/queries/admin-reviews-browse";
 
-describe("resolveRange — URL → range object", () => {
+describe("resolveRange, URL → range object", () => {
   it("defaults to last7 when no preset or dates provided", () => {
     expect(resolveRange({})).toEqual({ kind: "last7" });
     expect(resolveRange({ preset: null, from: null, to: null })).toEqual({
@@ -60,7 +60,7 @@ describe("resolveRange — URL → range object", () => {
   });
 });
 
-describe("rangeToWhere — range → Prisma where fragment", () => {
+describe("rangeToWhere, range → Prisma where fragment", () => {
   it("returns empty where when range is all (no date filter)", () => {
     expect(rangeToWhere({ kind: "all" })).toEqual({});
   });

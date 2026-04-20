@@ -70,7 +70,7 @@ test.describe("Notifications flow", () => {
       /3 okunmamış/i,
     );
 
-    // 3) Open dropdown — all three titles render.
+    // 3) Open dropdown, all three titles render.
     await bell.click();
     const menu = page.getByRole("menu", { name: /Bildirimler/i });
     await expect(menu).toBeVisible();
@@ -91,7 +91,7 @@ test.describe("Notifications flow", () => {
       .poll(async () => bell.getAttribute("aria-label"), { timeout: 5000 })
       .toBe("Bildirimler");
 
-    // Server-side truth — mark-read must have landed.
+    // Server-side truth, mark-read must have landed.
     await expect
       .poll(async () => getUnreadCount(user.userId), { timeout: 5000 })
       .toBe(0);

@@ -75,7 +75,7 @@ describe("useDismiss", () => {
   });
 
   it("does not react to events when initial state is closed", () => {
-    // Arrange a harness where open starts false — onClose must never fire.
+    // Arrange a harness where open starts false, onClose must never fire.
     const onClose = vi.fn();
     function ClosedHarness() {
       useDismiss<HTMLDivElement>({ isOpen: false, onClose });

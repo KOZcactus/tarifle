@@ -1,7 +1,7 @@
 /**
  * One-off helper: seed a handful of notifications on a target user for
  * manual / preview testing. Run against `codex-import` branch or local
- * Neon — does NOT belong in production.
+ * Neon, does NOT belong in production.
  *
  *   npx tsx scripts/seed-test-notifications.ts <email>
  */

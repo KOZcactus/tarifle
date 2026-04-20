@@ -1,7 +1,7 @@
 import { describe, test, expect } from "vitest";
 import { inferCuisineFromRecipe, CUISINE_CODES, CUISINE_LABEL, CUISINE_FLAG } from "@/lib/cuisines";
 
-// Helper — minimal recipe input with only the fields inference uses
+// Helper, minimal recipe input with only the fields inference uses
 function recipe(
   overrides: Partial<{
     title: string;

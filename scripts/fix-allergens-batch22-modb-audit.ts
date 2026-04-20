@@ -6,7 +6,7 @@
  *      Ingredients: İrmik | Süt | Şeker | Menengiç ezmesi
  *      Mevcut:  [GLUTEN, SUT]
  *      Doğru:   [GLUTEN, SUT, KUSUYEMIS]
- *      Sebep: Menengiç (Pistacia terebinthus) tree-nut familyası —
+ *      Sebep: Menengiç (Pistacia terebinthus) tree-nut familyası,
  *             cross-reactivity riski, KUSUYEMIS grubuna ait.
  *
  *   2. poha-peanut-hint-kahvalti-usulu
@@ -75,7 +75,7 @@ async function main() {
     });
 
     if (!recipe) {
-      console.log(`  ❌ ${fix.slug} — bulunamadı, atla`);
+      console.log(`  ❌ ${fix.slug}, bulunamadı, atla`);
       skipped++;
       continue;
     }
@@ -88,7 +88,7 @@ async function main() {
     const prev = [...recipe.allergens].sort().join(",");
     const nextJoined = next.join(",");
     if (prev === nextJoined) {
-      console.log(`  ⏭️  ${fix.slug} — değişiklik yok (zaten ${prev})`);
+      console.log(`  ⏭️  ${fix.slug}, değişiklik yok (zaten ${prev})`);
       skipped++;
       continue;
     }

@@ -8,7 +8,7 @@ function ingr(...names: string[]) {
 
 const noAllergens: Allergen[] = [];
 
-describe("inferDietTags — vegetarian", () => {
+describe("inferDietTags, vegetarian", () => {
   it("is vegetarian + vegan for an all-plant recipe", () => {
     const r = inferDietTags(
       ingr("domates", "salatalık", "limon", "nane", "zeytinyağı"),
@@ -49,7 +49,7 @@ describe("inferDietTags — vegetarian", () => {
   });
 });
 
-describe("inferDietTags — vegan", () => {
+describe("inferDietTags, vegan", () => {
   it("vegetarian but NOT vegan when dairy (SUT) allergen present", () => {
     const r = inferDietTags(ingr("yoğurt", "nane"), ["SUT"]);
     expect(r.vegetarian).toBe(true);
@@ -97,7 +97,7 @@ describe("inferDietTags — vegan", () => {
   });
 });
 
-describe("inferDietTags — edge cases", () => {
+describe("inferDietTags, edge cases", () => {
   it("non-vegetarian is never vegan", () => {
     const r = inferDietTags(ingr("dana kıyma"), ["SUT", "YUMURTA"]);
     expect(r.vegetarian).toBe(false);

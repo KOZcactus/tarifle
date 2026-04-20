@@ -33,7 +33,7 @@ describe("ingredientMatches", () => {
   });
 
   it("does not false-positive on arbitrary substrings", () => {
-    // "limon" must not match "helimonik" — prefix rule blocks this.
+    // "limon" must not match "helimonik", prefix rule blocks this.
     expect(ingredientMatches("helimonik", "limon")).toBe(false);
   });
 
@@ -42,7 +42,7 @@ describe("ingredientMatches", () => {
   });
 
   it("requires every user token to hit a recipe token", () => {
-    // User says "tavuk göğsü" — recipe has just "tavuk" → should NOT match
+    // User says "tavuk göğsü", recipe has just "tavuk" → should NOT match
     // because "göğsü" finds no counterpart. Otherwise the ingredient "tavuk"
     // in a stew would be claimed by someone who only has a chicken breast.
     expect(ingredientMatches("tavuk", "tavuk göğsü")).toBe(false);
@@ -71,7 +71,7 @@ describe("isPantryStaple", () => {
     expect(isPantryStaple("kıyma")).toBe(false);
   });
 
-  // Regression — prefix-matching bug: "sucuk" used to be treated as staple
+  // Regression, prefix-matching bug: "sucuk" used to be treated as staple
   // "su" because the old bidirectional prefix check said "sucuk".startsWith("su").
   // Sucuklu Yumurta then scored %100 match without sucuk in the user's list.
   it("does NOT treat ingredients that merely start with a staple prefix as staples", () => {
@@ -82,7 +82,7 @@ describe("isPantryStaple", () => {
     expect(isPantryStaple("tuzlu kraker")).toBe(false); // "tuzlu" ≠ "tuz"
   });
 
-  it("exact-phrase match — compound 'tuz, karabiber' not in set (v3)", () => {
+  it("exact-phrase match, compound 'tuz, karabiber' not in set (v3)", () => {
     // v3: exact-phrase check. "tuz, karabiber" isn't a single entry in the
     // pantry set; user should list them separately. This is intentionally
     // stricter than v2's token-containment approach, which had a false-
@@ -94,7 +94,7 @@ describe("isPantryStaple", () => {
 
   it("rejects mixed seasoning where one token is NOT a staple", () => {
     // safran isn't in PANTRY_STAPLES. Compound phrases are no longer
-    // recursively tokenized — exact-phrase only.
+    // recursively tokenized, exact-phrase only.
     expect(isPantryStaple("tuz, karabiber, safran")).toBe(false);
   });
 });
@@ -193,7 +193,7 @@ describe("synonym matching", () => {
   // ─── v2 expansion (17 Nis) regression suite ──────────────
 
   it("kıyma DOES NOT match dana eti (ayrı gruplarda, false-positive fix)", () => {
-    // Önceden "et, dana eti, kıyma, dana kıyma" tek grupta — "kıyma" kullanıcısı
+    // Önceden "et, dana eti, kıyma, dana kıyma" tek grupta, "kıyma" kullanıcısı
     // parça eti olan tarife de yönlendiriliyordu. v2'de "kıyma" kendi grubu.
     expect(ingredientMatches("Dana eti", "kıyma")).toBe(false);
   });
@@ -296,7 +296,7 @@ describe("synonym matching", () => {
   });
 
   it("domates salçası matches biber salçası (salça grubu)", () => {
-    // Tarif biber salçası istiyor, user domates salçası yazıyor — ikame.
+    // Tarif biber salçası istiyor, user domates salçası yazıyor, ikame.
     expect(ingredientMatches("Biber salçası", "domates salçası")).toBe(true);
   });
 
@@ -321,7 +321,7 @@ describe("synonym matching", () => {
   });
 });
 
-describe("fuzzy typo tolerance (v3 — 17 Nis)", () => {
+describe("fuzzy typo tolerance (v3, 17 Nis)", () => {
   it("domates matches domatez (single substitution)", () => {
     expect(ingredientMatches("Domates", "domatez")).toBe(true);
   });
@@ -335,7 +335,7 @@ describe("fuzzy typo tolerance (v3 — 17 Nis)", () => {
   });
 
   it("tereyağı matches tereyagi (ASCII normalize)", () => {
-    // ğ→g, ı→i — normalize sonrası exact, fuzzy'ye bile düşmez
+    // ğ→g, ı→i, normalize sonrası exact, fuzzy'ye bile düşmez
     expect(ingredientMatches("Tereyağı", "tereyagi")).toBe(true);
   });
 
@@ -362,30 +362,30 @@ describe("fuzzy typo tolerance (v3 — 17 Nis)", () => {
   });
 });
 
-describe("pantry staples v3 (19 Nis) — daralma", () => {
+describe("pantry staples v3 (19 Nis), daralma", () => {
   // v3 daraltması: tereyağı/maydanoz/maya/sirke/limon suyu/kekik/kimyon/
   // nane eski pantry'deydi, yeni liste sadece tuz-biber-yağ-su çerçevesi.
   // Neden: v2'de pantry'nin token-set'i "limon" tek başına pantry gibi
   // davranmasına yol açıyordu (limon suyu tokens'i → [limon, suyu] set'e
   // giriyordu). Sonuç: limonata sadece domates girilmişken %100 geliyordu.
 
-  it("v3: tereyağı NO LONGER pantry — baking ana malzemesi kabul edilir", () => {
+  it("v3: tereyağı NO LONGER pantry, baking ana malzemesi kabul edilir", () => {
     expect(isPantryStaple("Tereyağı")).toBe(false);
   });
 
-  it("v3: maya NO LONGER pantry — ekmek/hamur tarif kimliği", () => {
+  it("v3: maya NO LONGER pantry, ekmek/hamur tarif kimliği", () => {
     expect(isPantryStaple("Maya")).toBe(false);
   });
 
-  it("v3: sirke NO LONGER pantry — salata/turşu kimliği", () => {
+  it("v3: sirke NO LONGER pantry, salata/turşu kimliği", () => {
     expect(isPantryStaple("Sirke")).toBe(false);
   });
 
-  it("v3: limon suyu NO LONGER pantry — limonata/meyve tarifi kimliği", () => {
+  it("v3: limon suyu NO LONGER pantry, limonata/meyve tarifi kimliği", () => {
     expect(isPantryStaple("Limon suyu")).toBe(false);
   });
 
-  it("v3: limon (tek başına) DEFINITELY not pantry — limonata bug'ının kaynağı", () => {
+  it("v3: limon (tek başına) DEFINITELY not pantry, limonata bug'ının kaynağı", () => {
     // Önceki bug: "limon suyu" pantry set'in token'ları içinde `limon` vardı,
     // tek başına "limon" ingredient'i de pantry gibi işliyordu. v3 exact-
     // phrase match ile çözüldü.
@@ -393,7 +393,7 @@ describe("pantry staples v3 (19 Nis) — daralma", () => {
     expect(isPantryStaple("Limon")).toBe(false);
   });
 
-  it("v3: kekik / kimyon / nane HÂLÂ pantry — gerçek baharat", () => {
+  it("v3: kekik / kimyon / nane HÂLÂ pantry, gerçek baharat", () => {
     expect(isPantryStaple("Kekik")).toBe(true);
     expect(isPantryStaple("Kimyon")).toBe(true);
     expect(isPantryStaple("Nane")).toBe(true);

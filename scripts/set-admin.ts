@@ -57,12 +57,12 @@ async function main(): Promise<void> {
   console.log(`  Target role:  ${newRole}`);
 
   if (user.role === newRole) {
-    console.log("  ✓ Already in target role — no change");
+    console.log("  ✓ Already in target role, no change");
     return;
   }
 
   if (!APPLY) {
-    console.log("\n(dry run — re-run with --apply to write)");
+    console.log("\n(dry run, re-run with --apply to write)");
     return;
   }
 

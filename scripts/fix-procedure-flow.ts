@@ -63,7 +63,7 @@ async function applyAtomSos(dryRun: boolean): Promise<number> {
     return 0;
   }
 
-  console.log("  atom-sos — replacing step list:");
+  console.log("  atom-sos, replacing step list:");
   for (const s of newSteps) console.log(`    ${s.stepNumber}. ${s.instruction}`);
 
   if (!dryRun) {
@@ -95,7 +95,7 @@ async function applyPatatasBravas(dryRun: boolean): Promise<number> {
     return 0;
   }
 
-  console.log(`  patatas-bravas — adding step 4: "${step4.instruction}"`);
+  console.log(`  patatas-bravas, adding step 4: "${step4.instruction}"`);
   if (!dryRun) {
     await prisma.recipeStep.create({
       data: { recipeId: recipe.id, ...step4 },
@@ -148,7 +148,7 @@ async function main(): Promise<void> {
 
   const verb = APPLY ? "Applied" : "Would apply";
   console.log(`\n${verb}: ${total} change(s)`);
-  if (dryRun) console.log("(dry run — re-run with --apply to write)");
+  if (dryRun) console.log("(dry run, re-run with --apply to write)");
 }
 
 main()

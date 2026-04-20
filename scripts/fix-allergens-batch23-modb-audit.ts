@@ -112,7 +112,7 @@ async function main() {
     });
 
     if (!recipe) {
-      console.log(`  ❌ ${fix.slug} — bulunamadı, atla`);
+      console.log(`  ❌ ${fix.slug}, bulunamadı, atla`);
       skipped++;
       continue;
     }
@@ -125,7 +125,7 @@ async function main() {
     const prev = [...recipe.allergens].sort().join(",");
     const nextJoined = next.join(",");
     if (prev === nextJoined) {
-      console.log(`  ⏭️  ${fix.slug} — değişiklik yok (zaten ${prev})`);
+      console.log(`  ⏭️  ${fix.slug}, değişiklik yok (zaten ${prev})`);
       skipped++;
       continue;
     }

@@ -33,7 +33,7 @@ export interface RssChannelMeta {
 /**
  * XML özel karakterlerini entity'lere dönüştürür. RSS item alanları
  * kullanıcı-turevli (tarif başlığı, description) değerler taşır, bu
- * yüzden escape zorunlu. Bu set XML 1.0 minimum gereklilikleri —
+ * yüzden escape zorunlu. Bu set XML 1.0 minimum gereklilikleri,
  * CDATA wrapping alternatifi de var ama tek-seferlik replace daha
  * okunur çıktı üretir.
  */

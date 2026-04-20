@@ -1,11 +1,11 @@
-# Tarifle — Performans Baseline Raporu
+# Tarifle, Performans Baseline Raporu
 
-> Son güncelleme: 19 Nisan 2026 (oturum 6) — 1401 tarif, pagination counter
+> Son güncelleme: 19 Nisan 2026 (oturum 6), 1401 tarif, pagination counter
 > + kişiselleştirme tur 2 + preferences migration sonrası.
 >
-> Önceki güncelleme: 16 Nisan 2026 (oturum 2) — 606 tarif, font optimizasyonu.
+> Önceki güncelleme: 16 Nisan 2026 (oturum 2), 606 tarif, font optimizasyonu.
 
-## Skor tablosu (19 Nis — unstable_cache + /api/warm sonrası, ikinci ölçüm)
+## Skor tablosu (19 Nis, unstable_cache + /api/warm sonrası, ikinci ölçüm)
 
 | Sayfa | Perf (cold / warm) | LCP | TBT (cold / warm) | Δ vs pre-cache |
 |---|---|---|---|---|
@@ -16,7 +16,7 @@
 **Yorum:** `unstable_cache` dört hot query'de (cuisine-stats 5 dk, categories
 5 dk, search-suggestions 10 dk, featured-pool 1 saat) Vercel function
 memory cache kullanıyor. **İlk çağrı (cache miss)** DB round-trip + cache
-dolumu yaptığından cold TBT biraz yükseldi (230 → 310 ms) — single-shot
+dolumu yaptığından cold TBT biraz yükseldi (230 → 310 ms), single-shot
 Lighthouse measurement'ı bu cold path'i yakalıyor. **İkinci çağrı (cache
 hit)** aynı Vercel function instance'da memory lookup → **TBT 50 ms**, 6×
 iyileşme. Gerçek kullanıcılar (RUM) görece warm path kullanıyor çünkü
@@ -24,11 +24,11 @@ traffic cold/warm mix. LCP ±400 ms varyans, anlamlı delta yok.
 
 **Neon warming** (`/api/warm` endpoint + Hobby cron 0 * * * *) deploy
 edildi. `GET /api/warm` 200, durationMs 80. Saat başı trigger 5 dk idle
-threshold'u aşmaya yetmez — gerçek faydası için Pro tier `*/4` veya
+threshold'u aşmaya yetmez, gerçek faydası için Pro tier `*/4` veya
 external monitor (UptimeRobot/GitHub Actions 5 dk cron). Şu an
 "nominal fallback" olarak calıșıyor.
 
-## Skor tablosu (19 Nis — 1401 tarif + kişiselleştirme + pagination counter, pre-cache)
+## Skor tablosu (19 Nis, 1401 tarif + kişiselleştirme + pagination counter, pre-cache)
 
 | Sayfa | Perf | A11y | BP | SEO | LCP | FCP | CLS | TBT | TTI | Boyut |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -41,7 +41,7 @@ external monitor (UptimeRobot/GitHub Actions 5 dk cron). Şu an
 ### Değişim analizi (16 Nis 606 tarif → 19 Nis 1401 tarif)
 
 **Regression (kabul edilebilir, hala 90+ eşik üstünde):**
-- `/` Perf **96 → 90** (−6). TBT **27 → 230 ms** (8× artış) — en büyük
+- `/` Perf **96 → 90** (−6). TBT **27 → 230 ms** (8× artış), en büyük
   darboğaz. Sebep: homepage'de Promise.all 10 paralel query + yeni "Sana
   özel" shelf çağrısı + CountUp 1401 + cuisineStats 24 cuisine. JS bundle
   client'a daha ağır iniyor.
@@ -54,10 +54,10 @@ external monitor (UptimeRobot/GitHub Actions 5 dk cron). Şu an
 - `/tarif/*` Perf **96** (aynı). Single-recipe render zaten az iş; tarif
   sayısı artışından bağımsız. CLS 0.017 borderline (emoji placeholder).
 - CLS tüm sayfalarda < 0.02 ✅
-- SEO + A11y + BP 96-100 aralığında (`/tarif/lalanga` A11y 96 — muhtemelen
+- SEO + A11y + BP 96-100 aralığında (`/tarif/lalanga` A11y 96, muhtemelen
   emoji role label veya aria-current contrast).
 
-### Önceki baseline (16 Nis — 606 tarif, font optimizasyonu sonrası)
+### Önceki baseline (16 Nis, 606 tarif, font optimizasyonu sonrası)
 
 | Sayfa | Perf | A11y | BP | SEO | LCP | FCP | CLS | TBT | Boyut |
 |---|---|---|---|---|---|---|---|---|---|
@@ -66,7 +66,7 @@ external monitor (UptimeRobot/GitHub Actions 5 dk cron). Şu an
 | `/tarif/adana-kebap` | 96 | 100 | 100 | 100 | 2.5 s | 1.0 s | 0 | 18 ms | 343 KiB |
 | `/ai-asistan` | 97 | 98 | 100 | 100 | 2.6 s | 1.0 s | 0 | 12 ms | 329 KiB |
 
-### İlk baseline (14 Nis — 406 tarif, font optimizasyonu öncesi)
+### İlk baseline (14 Nis, 406 tarif, font optimizasyonu öncesi)
 
 | Sayfa | Perf | A11y | LCP | TBT | Boyut |
 |---|---|---|---|---|---|
@@ -75,7 +75,7 @@ external monitor (UptimeRobot/GitHub Actions 5 dk cron). Şu an
 | `/tarif/adana-kebap` | 94 | 100 | 2.5 s | 40 ms | 342 KiB |
 | `/ai-asistan` | 97 | 98 | 2.5 s | 10 ms | 329 KiB |
 
-## Cache Components (PPR) — Kapsam tanıtlama (19 Nis oturum 6 sonu)
+## Cache Components (PPR), Kapsam tanıtlama (19 Nis oturum 6 sonu)
 
 Bir oturumda cacheComponents enable denedik, scope beklenenden çok daha
 büyük çıktı. Revert edildi. Buradaki notlar sonraki pass (ayrı branch +
@@ -83,17 +83,17 @@ büyük çıktı. Revert edildi. Buradaki notlar sonraki pass (ayrı branch +
 
 ### Yaşanan hata dalgaları
 
-1. **Route segment config incompat** — 22 dosyada `export const dynamic =
+1. **Route segment config incompat**, 22 dosyada `export const dynamic =
    "force-dynamic"` ve 3 dosyada `export const revalidate = N`. Bulk
    silme ile temizlendi (migration doc'un dediği: "not needed, default
    dynamic").
 
-2. **`new Date()` prerender error** — `getActiveAnnouncements` layout'tan
+2. **`new Date()` prerender error**, `getActiveAnnouncements` layout'tan
    çağrılıyor, `new Date()` kullanıyor. Cache Components'de static
    prerender'da "current time" request data erişimi öncesi illegal.
    Fix: `"use cache"` + `cacheLife("minutes")`. 1 fonksiyon için çalıştı.
 
-3. **"Uncached data accessed outside of <Suspense>"** — Blokaj. 30+ sayfa
+3. **"Uncached data accessed outside of <Suspense>"**, Blokaj. 30+ sayfa
    (admin + /ayarlar + /bildirimler + /rss.xml + /sentry-test + diğerleri)
    Suspense boundary dışında dynamic data erişiyor. Her sayfa için:
      - Static shell (layout + header + placeholder)
@@ -103,17 +103,17 @@ büyük çıktı. Revert edildi. Buradaki notlar sonraki pass (ayrı branch +
 
 ### Tahmini gerçek scope
 
-- **22 dosya** route segment config temizliği — 30 dk
-- **~30 sayfa** Suspense boundary refactor — her biri 15-30 dk, toplam
+- **22 dosya** route segment config temizliği, 30 dk
+- **~30 sayfa** Suspense boundary refactor, her biri 15-30 dk, toplam
   8-15 saat
-- **next-intl pattern** — `getTranslations` async call Suspense içine +
+- **next-intl pattern**, `getTranslations` async call Suspense içine +
   fallback skeleton component'leri
-- **next-auth pattern** — `auth()` session çağrısı Suspense içine
-- **Hot query cache migration** — `unstable_cache` → `"use cache"` (kolay
+- **next-auth pattern**, `auth()` session çağrısı Suspense içine
+- **Hot query cache migration**, `unstable_cache` → `"use cache"` (kolay
   kısım, 4 query, 30 dk)
-- **Test matrix** — tüm sayfaların cold/warm render'ı, auth'lı/auth'sız,
+- **Test matrix**, tüm sayfaların cold/warm render'ı, auth'lı/auth'sız,
   her iki locale. Smoke testler 2 saat.
-- **Deploy + izleme** — kademeli ship (flag gate ile), Sentry alert
+- **Deploy + izleme**, kademeli ship (flag gate ile), Sentry alert
   monitoring 1-2 gün.
 
 Toplam: **yaklaşık 12-18 saat, ayrı branch**, mevcut oturumların 3-4 katı
@@ -130,27 +130,27 @@ instance-scoped), Cache Components multi-tier (memory + edge KV).
 
 Şu an `unstable_cache` 4 hot query'de aktif + /api/warm endpoint canlı.
 Kısmi kazanç elde edildi. Cache Components geçişi sonraki Q için planlı
-büyük iş — ayrı feature branch'te yapılıp kademeli merge edilebilir.
+büyük iş, ayrı feature branch'te yapılıp kademeli merge edilebilir.
 
 ## Optimization fırsatları (oturum 7+ için)
 
-Öncelikli — `/` ve `/tarifler` TBT regression'unu geri kazanmak:
-1. **Homepage "Sana özel" shelf lazy load** — hero'nun hemen altında değil,
+Öncelikli, `/` ve `/tarifler` TBT regression'unu geri kazanmak:
+1. **Homepage "Sana özel" shelf lazy load**, hero'nun hemen altında değil,
    scroll eşiğinde fetch + render. IntersectionObserver ile.
-2. **getCuisineStats + getSearchSuggestions cache** — bu iki query
+2. **getCuisineStats + getSearchSuggestions cache**, bu iki query
    minute-level değişiyor, `unstable_cache` veya edge cache ile revalidate.
-3. **Filter chips collapsible** — 24 cuisine chip'ini ilk 8 visible +
+3. **Filter chips collapsible**, 24 cuisine chip'ini ilk 8 visible +
    "daha fazla" expander. A11y için expanded state ARIA.
-4. **ISR / PPR (Partial Prerendering)** — `/tarifler` dynamic kısım
+4. **ISR / PPR (Partial Prerendering)**, `/tarifler` dynamic kısım
    (results) + static shell (filter panel). Next.js 16 PPR stable.
 
-İkincil — LCP 3.0 s'yi 2.5 s altına çekmek:
-5. **Neon connection warming** — TTFB'nin büyük kısmı cold-start. `setInterval`
+İkincil, LCP 3.0 s'yi 2.5 s altına çekmek:
+5. **Neon connection warming**, TTFB'nin büyük kısmı cold-start. `setInterval`
    keep-alive cron veya Vercel Edge caching.
-6. **Hero görsel pipeline** — Eren görselleri canlıya alınca LCP image'a
+6. **Hero görsel pipeline**, Eren görselleri canlıya alınca LCP image'a
    dönüşecek; `priority` + AVIF/WebP + `fetchpriority="high"` preload.
 
-Üçüncül — recipe detail `/tarif/*` sıfır regression gösterdi ama CLS 0.017
+Üçüncül, recipe detail `/tarif/*` sıfır regression gösterdi ama CLS 0.017
 emoji-placeholder kaynaklı. Gerçek görsele geçişte reserved dimension.
 
 ## Web Vitals hedefleri
@@ -158,7 +158,7 @@ emoji-placeholder kaynaklı. Gerçek görsele geçişte reserved dimension.
 | Metrik | Hedef (Good) | Şu an | Durum |
 |---|---|---|---|
 | LCP | < 2.5 s | 2.2–3.0 s | ⚠ borderline (`/tarifler` 3.0 s üstünde) |
-| INP | < 200 ms | (RUM gerek) | — |
+| INP | < 200 ms | (RUM gerek) |, |
 | CLS | < 0.1 | 0–0.017 | ✅ |
 | FCP | < 1.8 s | 1.1–1.3 s | ✅ |
 | TBT | < 200 ms | 0–230 ms | ⚠ `/` 230 ms (eşikte) |

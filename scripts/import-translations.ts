@@ -17,7 +17,7 @@
  *   npx tsx scripts/import-translations.ts --batch 0 --apply
  *
  *   # Later, promote to prod:
- *   # (see docs/PROD_PROMOTE.md — set DATABASE_URL, then)
+ *   # (see docs/PROD_PROMOTE.md, set DATABASE_URL, then)
  *   # npx tsx scripts/import-translations.ts --batch 0 --apply --confirm-prod
  */
 import { PrismaClient } from "@prisma/client";
@@ -45,7 +45,7 @@ function parseBatchArg(): string {
   process.exit(1);
 }
 
-/** Locale bundle — Codex produces title + description (required), everything
+/** Locale bundle, Codex produces title + description (required), everything
  *  else optional. Ingredient/step translations are for later batches. */
 const localeBundleSchema = z.object({
   title: z.string().min(2).max(200),
@@ -75,7 +75,7 @@ const translationItemSchema = z.object({
 const translationsFileSchema = z.array(translationItemSchema);
 
 /** Locale-specific aliases accepted as equivalent to the TR proper name.
- *  Example: "Pilav" is globally written "Pilaf" (EN) or "Pilaw" (DE) — both
+ *  Example: "Pilav" is globally written "Pilaf" (EN) or "Pilaw" (DE), both
  *  are acceptable and keep the dish recognisable. Only list aliases when the
  *  Latin-alphabet equivalent is genuinely standard in the target language;
  *  otherwise keep the TR form. */
@@ -93,7 +93,7 @@ const PROTECTED_ALIAS: Record<string, { en?: string[]; de?: string[] }> = {
  *  doesn't need to be preserved in translation. "Lokma" as a dessert must
  *  stay (`lokma-tatlisi`) but in `kakaolu-enerji-lokmalari` ("cocoa energy
  *  bites") or `patates-rosti-lokmalari` ("potato rosti bites") it's just the
- *  Turkish word for "bite/morsel" — "Energy Bites" / "Rosti Bites" are the
+ *  Turkish word for "bite/morsel", "Energy Bites" / "Rosti Bites" are the
  *  natural EN/DE renderings. Listed by token so the skip is surgical. */
 const PROTECTED_TOKEN_SKIP_SLUGS: Record<string, ReadonlySet<string>> = {
   Lokma: new Set([
@@ -104,16 +104,16 @@ const PROTECTED_TOKEN_SKIP_SLUGS: Record<string, ReadonlySet<string>> = {
   // "Dolma" as a stand-alone Turkish tradition (grape-leaf dolma, kabak
   // dolması, Antep/Amasya regional variants) must stay. In `mantar-dolmasi`
   // and `peynirli-mantar-dolmasi` the word is a generic "stuffed X"
-  // construction — "Stuffed Mushrooms" is the natural EN rendering.
+  // construction, "Stuffed Mushrooms" is the natural EN rendering.
   Dolma: new Set(["mantar-dolmasi", "peynirli-mantar-dolmasi"]),
   // "Köfte" regional proper names (İnegöl köfte, Akçaabat köftesi, Adana
   // analı-kızlı köfte, etc.) stay. For `misir-unlu-balik-koftesi` the word
-  // is a generic patty/cake construct — "Fish Cakes with Cornmeal" reads
+  // is a generic patty/cake construct, "Fish Cakes with Cornmeal" reads
   // natural in EN/DE.
   Köfte: new Set(["misir-unlu-balik-koftesi"]),
 };
 
-/** Titles that MUST NOT be translated away — the TR proper name has to show
+/** Titles that MUST NOT be translated away, the TR proper name has to show
  *  up somewhere in the EN/DE title. Keeps "Adana Kebap" from becoming
  *  "Spicy Meat Skewer". Covers the highest-risk proper names; additional
  *  names live in docs but the script only guards the well-known ones. */
@@ -178,7 +178,7 @@ interface QualityFinding {
 }
 
 /**
- * Quality checks per item — run in addition to Zod. Findings are printed in
+ * Quality checks per item, run in addition to Zod. Findings are printed in
  * dry-run and summarised at the end of --apply. CRITICAL blocks the write
  * unless --force is passed.
  */
@@ -188,7 +188,7 @@ function qualityCheck(
 ): QualityFinding[] {
   const findings: QualityFinding[] = [];
 
-  // TR slug-based proper name guard — if the TR title contains a protected
+  // TR slug-based proper name guard, if the TR title contains a protected
   // token, the EN and DE titles must contain it (or a locale-appropriate
   // alias, e.g. "Pilav" → "Pilaf"/"Pilaw"). Case-insensitive match.
   const titleTokens = PROTECTED_TR_TOKENS.filter((t) =>
@@ -219,13 +219,13 @@ function qualityCheck(
     }
   }
 
-  // Description brevity — Zod min 20, but < 60 almost certainly thin
+  // Description brevity, Zod min 20, but < 60 almost certainly thin
   if (item.en.description.length < 60) {
     findings.push({
       slug: item.slug,
       severity: "WARNING",
       type: "description-thin",
-      detail: `EN description is ${item.en.description.length} chars — likely too brief`,
+      detail: `EN description is ${item.en.description.length} chars, likely too brief`,
     });
   }
   if (item.de.description.length < 60) {
@@ -233,7 +233,7 @@ function qualityCheck(
       slug: item.slug,
       severity: "WARNING",
       type: "description-thin",
-      detail: `DE description is ${item.de.description.length} chars — likely too brief`,
+      detail: `DE description is ${item.de.description.length} chars, likely too brief`,
     });
   }
 
@@ -244,7 +244,7 @@ function qualityCheck(
   //   - "soft" opener patterns ("A traditional X …") → CRITICAL only when
   //     the description stays thin (<80 chars). A long description that
   //     happens to start with "A traditional" but then includes specifics is
-  //     fine — Codex already did the work.
+  //     fine, Codex already did the work.
   const HARD_BANNED = [
     /^a turkish (dish|recipe|food)\s*\.?$/i,
     /^a (delicious|tasty|wonderful) (turkish|recipe|dish)\b/i,
@@ -326,7 +326,7 @@ async function main() {
   }
 
   const items = zodResult.data;
-  console.log(`✅ Zod schema OK — ${items.length} entries.`);
+  console.log(`✅ Zod schema OK, ${items.length} entries.`);
 
   // Verify every slug exists, no duplicates, none already have translations
   // (unless --force). Pull in batch so we don't hit N queries.
@@ -392,7 +392,7 @@ async function main() {
       console.log(`  [${f.slug}] ${f.type}: ${f.detail}`);
     }
   } else if (bySeverity.WARNING.length > 30) {
-    console.log(`\n🟡 ${bySeverity.WARNING.length} WARNING findings — first 10:`);
+    console.log(`\n🟡 ${bySeverity.WARNING.length} WARNING findings, first 10:`);
     for (const f of bySeverity.WARNING.slice(0, 10)) {
       console.log(`  [${f.slug}] ${f.type}: ${f.detail}`);
     }
@@ -405,12 +405,12 @@ async function main() {
     }
   } else if (bySeverity.INFO.length > 40) {
     console.log(
-      `\n🔵 Codex flagged ${bySeverity.INFO.length} content issues — see ${file} for full list.`,
+      `\n🔵 Codex flagged ${bySeverity.INFO.length} content issues, see ${file} for full list.`,
     );
   }
 
   if (!APPLY) {
-    console.log("\nDry-run only — no DB writes. Pass --apply to persist.");
+    console.log("\nDry-run only, no DB writes. Pass --apply to persist.");
     if (bySeverity.CRITICAL.length > 0) {
       console.log(
         "\nNote: --apply will refuse to proceed while CRITICAL findings exist (use --force to override).",
@@ -426,7 +426,7 @@ async function main() {
     process.exit(1);
   }
 
-  // Write phase — one update per recipe, one transaction per batch of 50 to
+  // Write phase, one update per recipe, one transaction per batch of 50 to
   // keep Neon round-trips bounded. Use the callback form so we can pass a
   // timeout (array form doesn't accept TransactionOptions on this Prisma
   // build). Each chunk runs serially inside the tx so a failure mid-batch
@@ -456,7 +456,7 @@ async function main() {
     console.log(`  ✅ ${applied}/${items.length}`);
   }
 
-  console.log(`\n🎉 done — ${applied} recipes updated.`);
+  console.log(`\n🎉 done, ${applied} recipes updated.`);
   console.log(
     `\nNext: run \`npx tsx scripts/audit-deep.ts\` to verify nothing broke, then commit docs/translations-batch-${batch}.json + push.`,
   );

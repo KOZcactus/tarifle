@@ -16,7 +16,7 @@
  * hem Vercel Production env'ine tek seferlik eklenir, commit'e girmez.
  *
  * Kapsam: yalnız PENDING migration'lar (prod'a henüz uygulanmamış).
- * Applied olmuş eski migration'lar tarama dışı — ya zaten geçmişte
+ * Applied olmuş eski migration'lar tarama dışı, ya zaten geçmişte
  * uygulanmış ya bilerek kabul edilmiş.
  */
 
@@ -38,7 +38,7 @@ dotenv.config({ path: path.resolve(__d, "..", ".env.local") });
 const MIGRATIONS_DIR = path.resolve(__d, "..", "prisma", "migrations");
 
 interface DestructivePattern {
-  /** Regex pattern — multiline, case-insensitive. */
+  /** Regex pattern, multiline, case-insensitive. */
   pattern: RegExp;
   /** Human label for the warning. */
   label: string;
@@ -71,7 +71,7 @@ interface Finding {
 async function getAppliedMigrationNames(): Promise<Set<string>> {
   const url = process.env.DATABASE_URL;
   if (!url) {
-    console.warn("[destructive-check] DATABASE_URL missing — skipping DB check, scanning ALL migrations.");
+    console.warn("[destructive-check] DATABASE_URL missing, skipping DB check, scanning ALL migrations.");
     return new Set();
   }
 
@@ -94,7 +94,7 @@ async function getAppliedMigrationNames(): Promise<Set<string>> {
 
 async function main(): Promise<void> {
   if (!existsSync(MIGRATIONS_DIR)) {
-    console.log("[destructive-check] No migrations directory — skipping.");
+    console.log("[destructive-check] No migrations directory, skipping.");
     return;
   }
 
@@ -167,7 +167,7 @@ async function main(): Promise<void> {
 
   if (allowOverride) {
     console.warn(
-      `\n⚠️  ALLOW_DESTRUCTIVE_MIGRATION=1 set — build devam ediyor. Bu tek seferlik deploy için olmalı.`,
+      `\n⚠️  ALLOW_DESTRUCTIVE_MIGRATION=1 set, build devam ediyor. Bu tek seferlik deploy için olmalı.`,
     );
   }
 }

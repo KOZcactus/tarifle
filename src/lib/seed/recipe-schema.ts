@@ -105,7 +105,7 @@ const stepSchema = z.object({
 });
 
 /**
- * Per-locale translation payload for a recipe. All fields are optional —
+ * Per-locale translation payload for a recipe. All fields are optional,
  * Codex can translate just the title, or everything. Ingredient/step arrays
  * mirror the primary TR ones by `sortOrder` / `stepNumber`, NOT by array
  * index, so missing entries don't break alignment when rendered.

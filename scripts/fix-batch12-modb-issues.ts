@@ -41,7 +41,7 @@ async function main(): Promise<void> {
     }\n`,
   );
 
-  // 1) ovmac-corbasi-konya-usulu — remove "vejetaryen" tag
+  // 1) ovmac-corbasi-konya-usulu, remove "vejetaryen" tag
   const ovmac = await prisma.recipe.findUnique({
     where: { slug: "ovmac-corbasi-konya-usulu" },
     include: { tags: { include: { tag: { select: { slug: true } } } } },
@@ -68,7 +68,7 @@ async function main(): Promise<void> {
     }
   }
 
-  // 2) summer-pudding — totalMinutes 30 → 270 (4h chill dahil)
+  // 2) summer-pudding, totalMinutes 30 → 270 (4h chill dahil)
   const pudding = await prisma.recipe.findUnique({
     where: { slug: "summer-pudding" },
     select: { id: true, slug: true, totalMinutes: true, prepMinutes: true, cookMinutes: true },
@@ -92,7 +92,7 @@ async function main(): Promise<void> {
     }
   }
 
-  if (!APPLY) console.log("\n(dry run — re-run with --apply to write)");
+  if (!APPLY) console.log("\n(dry run, re-run with --apply to write)");
 }
 
 main()

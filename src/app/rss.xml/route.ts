@@ -22,7 +22,7 @@ import { buildRssXml, type RssItem } from "@/lib/rss";
 // 1 saatlik cache sağlar, perf etkisi sıfır. ISR semantiği yerine
 // CDN cache'i.
 //
-// sitemap.ts'in default convention'ı bu şekilde ele alınmıyor —
+// sitemap.ts'in default convention'ı bu şekilde ele alınmıyor,
 // Next.js convention dosyaları (sitemap, robots) farklı path'ten geçiyor;
 // custom route handler için manuel beyan gerekiyor.
 export const dynamic = "force-dynamic";

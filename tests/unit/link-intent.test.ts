@@ -75,7 +75,7 @@ describe("link-intent cookie", () => {
   });
 
   it("exposes the cookie name as a stable constant", () => {
-    // Tripwire — this string is referenced in auth.ts and the start route;
+    // Tripwire, this string is referenced in auth.ts and the start route;
     // changing it in one place without the others would break silently.
     expect(LINK_INTENT_COOKIE).toBe("tarifle_link_intent");
   });

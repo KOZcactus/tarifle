@@ -6,7 +6,7 @@
  * parenthetical section hints like "Leblebi (servis)". Both hurt matching
  * (AI asistan keys on ingredient names) and readability. The `group` column
  * added in the previous change gives us a clean separation channel; this
- * script applies per-recipe mappings and is idempotent — re-running after
+ * script applies per-recipe mappings and is idempotent, re-running after
  * a partial edit just skips already-grouped recipes.
  *
  *   npx tsx scripts/fix-ingredient-groups.ts             # apply
@@ -14,7 +14,7 @@
  *
  * Adding a new recipe to the mapping? Put it in RECIPE_FIXES below and
  * update scripts/seed-recipes.ts with the same `group` values so fresh
- * seeds stay aligned. The script doesn't read from seed-recipes.ts — it's
+ * seeds stay aligned. The script doesn't read from seed-recipes.ts, it's
  * the source of truth for which rows to mutate in an already-seeded DB.
  */
 import { PrismaClient } from "@prisma/client";
@@ -128,7 +128,7 @@ async function applyRecipe(
     },
   });
   if (!recipe) {
-    console.warn(`  ⚠ ${slug}: tarif bulunamadı — atlanıyor`);
+    console.warn(`  ⚠ ${slug}: tarif bulunamadı, atlanıyor`);
     return { slug, touched: 0, skipped: 0 };
   }
 
@@ -139,7 +139,7 @@ async function applyRecipe(
     const hit = recipe.ingredients.find((i) => i.name === fix.matchName);
     if (!hit) {
       console.warn(
-        `  ⚠ ${slug}: "${fix.matchName}" bulunamadı — atlanıyor (belki isim değişti?)`,
+        `  ⚠ ${slug}: "${fix.matchName}" bulunamadı, atlanıyor (belki isim değişti?)`,
       );
       continue;
     }
@@ -189,7 +189,7 @@ async function main() {
   console.log(
     `\n${verb} ${totalTouched} ingredient(s) · Already aligned: ${totalSkipped}`,
   );
-  if (DRY_RUN) console.log("(dry run — no writes)");
+  if (DRY_RUN) console.log("(dry run, no writes)");
 
   await prisma.$disconnect();
 }

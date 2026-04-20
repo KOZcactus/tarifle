@@ -213,7 +213,7 @@ export default async function YorumlarPage({ searchParams }: YorumlarPageProps) 
                         href={`/admin/kullanicilar/${r.user.username ?? r.user.id}`}
                         className="font-medium text-text hover:text-primary"
                       >
-                        {t("byAuthor", { username: r.user.username ?? "—" })}
+                        {t("byAuthor", { username: r.user.username ?? "," })}
                       </Link>
                       <span className="mx-1.5">·</span>
                       <span>{t("onRecipe")}</span>{" "}

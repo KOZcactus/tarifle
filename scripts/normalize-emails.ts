@@ -29,7 +29,7 @@ async function main(): Promise<void> {
     });
     if (conflict) {
       console.warn(
-        `CONFLICT: ${u.email} normalizes to existing account ${conflict.email} — manual merge needed`,
+        `CONFLICT: ${u.email} normalizes to existing account ${conflict.email}, manual merge needed`,
       );
       conflicts += 1;
       continue;

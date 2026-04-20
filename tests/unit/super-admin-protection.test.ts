@@ -28,7 +28,7 @@ describe("isSuperAdminUsername", () => {
 
 describe("canChangeRole", () => {
   it("super-admin can change another super-admin's role", () => {
-    // Defensive — today there's only one super-admin, but the rule still
+    // Defensive, today there's only one super-admin, but the rule still
     // needs to hold if the allowlist grows.
     expect(canChangeRole("kozcactus", "kozcactus")).toBe(true);
   });
@@ -59,7 +59,7 @@ describe("canChangeRole", () => {
 
   it("null/undefined target collapses to regular-user rule (any admin can edit)", () => {
     // Missing target username shouldn't happen in practice, but if it
-    // does the protection doesn't trigger — we only shield known
+    // does the protection doesn't trigger, we only shield known
     // super-admin usernames.
     expect(canChangeRole("ahmetahmetyj9gn", null)).toBe(true);
     expect(canChangeRole("ahmetahmetyj9gn", undefined)).toBe(true);

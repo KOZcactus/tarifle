@@ -18,7 +18,7 @@
  *        karakter malzemeleri sayılır. 1501 tarif ölçeğinde ingredient
  *        sinyali artık anlamlı (motor ilk yazıldığında 106 tarif vardı
  *       , pantry şişmesi sorun idi; şimdi scale yeterli).
- *   +0.3 isFeatured bonus (editör seçimi benzer tarifleri ufak boost —
+ *   +0.3 isFeatured bonus (editör seçimi benzer tarifleri ufak boost,
  *        kullanıcıya kürasyonlu içerik hissiyatı)
  *
  * Tie-break: daha yeni tarif öne, sonra alfabetik (TR collation).

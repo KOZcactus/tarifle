@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 
 /**
- * Recipe detail page smoke — picks a known-seeded slug so the test doesn't
+ * Recipe detail page smoke, picks a known-seeded slug so the test doesn't
  * depend on ordering. Confirms ingredients, steps, and the ShareMenu a11y
  * attributes we rely on for dropdowns.
  */
@@ -18,7 +18,7 @@ test.describe("Recipe detail", () => {
     const ingredientList = page.getByRole("list", { name: /malzeme/i });
     const stepList = page.getByRole("list", { name: /adım/i });
 
-    // At least one of them exists — tolerate different headings
+    // At least one of them exists, tolerate different headings
     const anyList = page.locator("ul, ol").first();
     await expect(anyList).toBeVisible();
 

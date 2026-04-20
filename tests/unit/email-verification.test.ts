@@ -1,7 +1,7 @@
 import { describe, expect, it, beforeEach, vi } from "vitest";
 
 /**
- * Unit covers the consume path — token lookup, expiry check, happy-path
+ * Unit covers the consume path, token lookup, expiry check, happy-path
  * transaction, best-effort badge grant. sendVerificationEmail is skipped
  * here because it mostly builds HTML + deletes/creates tokens; a smoke
  * against the real email provider lives in the integration script set.
@@ -105,8 +105,8 @@ describe("consumeVerificationToken", () => {
       success: true,
       email: "new-user@tarifle.app",
     });
-    // Transaction wraps BOTH writes — verifying the user AND deleting the
-    // token — so a partial failure can't leave a verified user with a
+    // Transaction wraps BOTH writes, verifying the user AND deleting the
+    // token, so a partial failure can't leave a verified user with a
     // still-live token or vice versa.
     expect(prismaMock.$transaction).toHaveBeenCalledTimes(1);
     const txArgs = prismaMock.$transaction.mock.calls[0]?.[0];

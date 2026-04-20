@@ -18,7 +18,7 @@ describe("normaliseIngredients", () => {
     const out = normaliseIngredients([
       "2 adet patlıcan",
       "1 baş sarımsak",
-      "  ", // blank — silently dropped
+      "  ", // blank, silently dropped
       "tuz",
     ]);
     expect(out).toEqual([
@@ -42,8 +42,8 @@ describe("normaliseIngredients", () => {
   it("trims whitespace and drops entries with an empty name", () => {
     const out = normaliseIngredients([
       { amount: " 2 ", unit: " gr ", name: "  un  " },
-      { amount: "", unit: "", name: "" }, // blank — dropped
-      { amount: "x", unit: "y", name: "   " }, // whitespace-only name — dropped
+      { amount: "", unit: "", name: "" }, // blank, dropped
+      { amount: "x", unit: "y", name: "   " }, // whitespace-only name, dropped
     ]);
     expect(out).toEqual([{ amount: "2", unit: "gr", name: "un" }]);
   });
@@ -64,7 +64,7 @@ describe("normaliseIngredients", () => {
       null,
       undefined,
       42,
-      { amount: 1, unit: 2, name: 3 }, // non-string fields — name drops it
+      { amount: 1, unit: 2, name: 3 }, // non-string fields, name drops it
       { amount: "", unit: "", name: "geçerli" },
     ]);
     // Only the last entry has a valid string name; the object with numeric

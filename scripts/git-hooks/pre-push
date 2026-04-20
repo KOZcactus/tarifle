@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# Tarifle pre-push hook — blocks push if `npm run lint` OR
-# `npm run content:validate` fails.
+# Tarifle pre-push hook: blocks push if `npm run lint` OR
+# `npm run content:validate` fails, or if an em-dash (U+2014) slipped
+# into staged/committed files that ship to users.
 #
 # CI runs `next lint` + `content:validate` (muğlak ifade + Zod + semantik
 # checks) + tsc + vitest + build. Lint ve validate hızlı (~2-5s); lokalde
@@ -33,3 +34,21 @@ if ! npm run --silent content:validate; then
 fi
 
 echo "✅ pre-push: content:validate clean"
+
+# Em-dash (U+2014) guard.
+# User-facing metinlerde em-dash "AI yazdı" hissi veriyor, kural olarak
+# yasak (bkz. AGENTS.md "Em-dash yasak"). Birkaç dosya istisna:
+# - AGENTS.md / docs/CODEX_BATCH_BRIEF.md / docs/EM_DASH_CLEANUP.md:
+#   kural açıklaması, karakter referansı (— U+2014) göstermek zorunda.
+# - docs/PROJECT_STATUS.md / docs/CHANGELOG.md: tarihsel kayıt, eski
+#   commit başlıklarında kalabilir.
+# - test-results/: Playwright auto-gen, gitignore'da.
+# Kalan her yerde grep 0 dönmeli.
+echo "🔍 pre-push: em-dash (U+2014) guard"
+if ! node scripts/check-emdash.mjs; then
+  echo ""
+  echo "   Kural: AGENTS.md em-dash yasak. Bypass: git push --no-verify."
+  exit 1
+fi
+
+echo "✅ pre-push: em-dash guard clean"

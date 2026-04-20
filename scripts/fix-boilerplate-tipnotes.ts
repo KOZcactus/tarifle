@@ -250,7 +250,7 @@ async function main(): Promise<void> {
     for (const r of boilerplateRecipes) {
       const fix = FIXES[r.slug];
       if (!fix) {
-        console.log(`  ⚠ ${r.slug.padEnd(30)} — FIXES map'inde yok, atlanıyor`);
+        console.log(`  ⚠ ${r.slug.padEnd(30)}, FIXES map'inde yok, atlanıyor`);
         noFix++;
         continue;
       }
@@ -313,7 +313,7 @@ async function main(): Promise<void> {
     console.log(
       `\n${verb}: ${updated} | No fix defined: ${noFix} | Skipped: ${skipped} | Total boilerplate: ${boilerplateRecipes.length}`,
     );
-    if (DRY_RUN) console.log("(dry run — DB'ye dokunulmadı)");
+    if (DRY_RUN) console.log("(dry run, DB'ye dokunulmadı)");
   } finally {
     await prisma.$disconnect();
   }

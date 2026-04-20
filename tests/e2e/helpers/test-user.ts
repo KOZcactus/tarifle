@@ -7,7 +7,7 @@
  * a cleanup ever leaks.
  *
  * IMPORTANT: These helpers touch the same Neon DB the dev server does. Run
- * them only against your dev branch — do NOT configure CI secrets to point
+ * them only against your dev branch, do NOT configure CI secrets to point
  * at production.
  */
 import { PrismaClient, type NotificationType } from "@prisma/client";
@@ -26,7 +26,7 @@ function getPrisma(): PrismaClient {
   if (cachedClient) return cachedClient;
   const url = process.env.DATABASE_URL;
   if (!url) {
-    throw new Error("DATABASE_URL missing — needed for E2E test helpers");
+    throw new Error("DATABASE_URL missing, needed for E2E test helpers");
   }
   const adapter = new PrismaNeon({ connectionString: url });
   cachedClient = new PrismaClient({ adapter });
@@ -83,7 +83,7 @@ export async function createTestUser(
 }
 
 /**
- * Seed notifications onto a test user. Returns nothing — callers typically
+ * Seed notifications onto a test user. Returns nothing, callers typically
  * assert on counts or content via the UI and `getUnreadCount` below.
  */
 export async function seedNotifications(
@@ -103,7 +103,7 @@ export async function seedNotifications(
   });
 }
 
-/** Count unread notifications — used to assert persistence after mark-read. */
+/** Count unread notifications, used to assert persistence after mark-read. */
 export async function getUnreadCount(userId: string): Promise<number> {
   const prisma = getPrisma();
   return prisma.notification.count({
@@ -126,7 +126,7 @@ export async function deleteTestUser(userId: string): Promise<void> {
   }
 }
 
-/** Tests only — close the shared Prisma client on teardown. */
+/** Tests only, close the shared Prisma client on teardown. */
 export async function closeTestDb(): Promise<void> {
   if (cachedClient) {
     await cachedClient.$disconnect();

@@ -45,7 +45,7 @@ async function main(): Promise<void> {
     console.log(`✓ ${name} (${size}x${size})`);
   }
 
-  // Maskable variant (safe-zone-aware — centered "T" with extra padding)
+  // Maskable variant (safe-zone-aware, centered "T" with extra padding)
   const maskableSvg = (() => {
     const size = 512;
     const radius = 0; // maskable icons are cropped by the OS

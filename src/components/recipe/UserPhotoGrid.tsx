@@ -44,7 +44,7 @@ export async function UserPhotoGrid({ recipeId }: UserPhotoGridProps) {
 
   const viewerId = session?.user?.id ?? null;
 
-  // Admin/moderator role guard for delete button; we don't block fetch —
+  // Admin/moderator role guard for delete button; we don't block fetch,
   // just control which photos show the remove action.
   let viewerIsAdmin = false;
   if (viewerId) {

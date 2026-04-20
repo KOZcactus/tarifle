@@ -1,4 +1,4 @@
-# Tarifle — Arama motorlarına kayıt rehberi
+# Tarifle, Arama motorlarına kayıt rehberi
 
 Sitemap + robots + canonical altyapısı yazıldı (main'de). Bu altyapının
 değer üretmesi için siteyi Google/Bing'in webmaster araçlarına kaydetmek
@@ -6,12 +6,12 @@ gerekiyor. Aksi halde Google siteyi 2-6 hafta içinde organic olarak
 bulur; submit ettiğimizde günler içinde indexlemeye başlar.
 
 > Bu rehim sana (Kerem'e) yöneliktir. Adımları senin ana makinandan
-> yapman gerekiyor — ben scriptleri koşsam da Google Search Console
+> yapman gerekiyor, ben scriptleri koşsam da Google Search Console
 > UI'ına benim bağlantım yok.
 
 ---
 
-## 1. Google Search Console (öncelik 1 — mutlaka yap)
+## 1. Google Search Console (öncelik 1, mutlaka yap)
 
 ### 1.1. Property ekle
 
@@ -19,7 +19,7 @@ bulur; submit ettiğimizde günler içinde indexlemeye başlar.
    veya admin hesabın) ile giriş
 2. Sol üst property seçici → **+ Add property**
 3. **Domain** (önerilen) veya **URL prefix**:
-   - **Domain** (`tarifle.app`): DNS TXT kaydı gerektirir — tüm
+   - **Domain** (`tarifle.app`): DNS TXT kaydı gerektirir, tüm
      subdomain'leri ve protokolleri kapsar. En temiz seçenek.
    - **URL prefix** (`https://tarifle.app/`): HTML file / meta tag /
      Google Analytics / Google Tag Manager ile doğrulanır. Hızlı
@@ -54,7 +54,7 @@ Google sitemap'i parse eder (~dakikalar). **Success** durumunda 131
 URL tarlanmış olur. Sonraki 24-72 saat içinde ilk tarif'ler indexe
 girmeye başlar.
 
-### 1.4. URL inspection — hızlı indexleme
+### 1.4. URL inspection, hızlı indexleme
 
 İlk 10-20 önemli tarif için:
 
@@ -63,7 +63,7 @@ girmeye başlar.
 
 Bunu tüm 106 tarif için yapmana gerek yok, sitemap zaten hepsini
 Google'a sunuyor. Sadece **en önemli 10-20 tarif** için manual
-request indexing hızlandırıcı — homepage + top 10 tarif yeterli.
+request indexing hızlandırıcı, homepage + top 10 tarif yeterli.
 
 ### 1.5. Performans izleme
 
@@ -82,9 +82,9 @@ tüm 106 tarifin indexlenmesi normal.
 Sitemap parse edildikten sonra Google bir süre sonra **Enhancements**
 altında şunları gösterir:
 
-- **Recipe** — Schema.org Recipe markup'umuz tespit edilmiş tariflerin
+- **Recipe**, Schema.org Recipe markup'umuz tespit edilmiş tariflerin
   sayısı. Hedef: 106/106.
-- **Breadcrumb** — BreadcrumbList markup'u tespit edilen tariflerin
+- **Breadcrumb**, BreadcrumbList markup'u tespit edilen tariflerin
   sayısı. (Bu pass'te ekledik → hedef 106/106.)
 
 Hata gösterirse (örn. "missing required field `image`"), ilgili
@@ -93,9 +93,9 @@ tarifin `imageUrl` alanı boştur. Çözüm: görsel ekle veya fallback
 
 ---
 
-## 2. Bing Webmaster Tools (öncelik 2 — 10 dakikalık iş)
+## 2. Bing Webmaster Tools (öncelik 2, 10 dakikalık iş)
 
-Bing organic payı küçük ama edge cost'u sıfır — submit et, bitir.
+Bing organic payı küçük ama edge cost'u sıfır, submit et, bitir.
 
 ### 2.1. Kayıt
 
@@ -115,7 +115,7 @@ Tek tıkla yapılmış iş.
 
 ---
 
-## 3. Yandex Webmaster (öncelik 3 — opsiyonel)
+## 3. Yandex Webmaster (öncelik 3, opsiyonel)
 
 Türkiye'de Yandex payı %3-5. Türkçe içerik için küçük ek ziyaret
 getirebilir. Bing ile aynı UX:
@@ -147,7 +147,7 @@ getirebilir. Bing ile aynı UX:
 
 ---
 
-## 5. Kritik engeller — kontrol et
+## 5. Kritik engeller, kontrol et
 
 ### robots.txt yanlışlıkla engelliyor olabilir mi?
 
@@ -156,7 +156,7 @@ curl -s https://tarifle.app/robots.txt
 ```
 
 İlk satır `User-Agent: *` + `Allow: /` olmalı. `Disallow: /` olsaydı
-tüm indexleme kapanırdı — `/admin`, `/api/*` vb. özel disallow'lar var,
+tüm indexleme kapanırdı, `/admin`, `/api/*` vb. özel disallow'lar var,
 bunlar doğru.
 
 ### meta robots noindex kaza'sı var mı?
@@ -174,7 +174,7 @@ explicit set etmiştim).
 curl -s -o /dev/null -w "%{http_code}" https://tarifle.app/tarif/adana-kebap
 ```
 
-200 dönmeli. 404 dönen varsa sitemap'te yanlış slug var — seed'i
+200 dönmeli. 404 dönen varsa sitemap'te yanlış slug var, seed'i
 kontrol et.
 
 ---
@@ -199,7 +199,7 @@ Lighthouse lokal testi:
 npx lighthouse https://tarifle.app/tarif/adana-kebap --view
 ```
 
-Performance / SEO / Accessibility / Best Practices — hepsi 90+ olmalı.
+Performance / SEO / Accessibility / Best Practices, hepsi 90+ olmalı.
 
 ---
 

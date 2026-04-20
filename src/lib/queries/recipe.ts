@@ -321,7 +321,7 @@ const _getRecipesInner = async (options: GetRecipesOptions = {}): Promise<{
   // default always pushed drinks to the top because their timestamps
   // happened to be last in the final seed run).
   //
-  // "most-variations" siralamasi Prisma'nin orderBy._count'unu kullanir —
+  // "most-variations" siralamasi Prisma'nin orderBy._count'unu kullanir,
   // filtered where desteklemedigi icin HIDDEN/PENDING_REVIEW variation'lar
   // da siralamaya etki eder. Fark genelde kucuktur; modere edilmis tariflerde
   // PUBLISHED sayilari zaten birbirine yakin kalir.

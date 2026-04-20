@@ -37,49 +37,49 @@ const FIXES: readonly TitleFix[] = [
   {
     slug: "hatay-kagit-kebabi",
     newTitle: "Hatay Kağıt Kebabı",
-    reason: "Hatay-region variant — listing had two \"Kağıt Kebabı\" entries.",
+    reason: "Hatay-region variant, listing had two \"Kağıt Kebabı\" entries.",
   },
   {
     slug: "firik-pilavi-gaziantep-usulu",
     newTitle: "Gaziantep Usulü Firik Pilavı",
-    reason: "Gaziantep variant — listing had two \"Firik Pilavı\" entries.",
+    reason: "Gaziantep variant, listing had two \"Firik Pilavı\" entries.",
   },
   {
     slug: "mumbar-dolmasi-guneydogu-usulu",
     newTitle: "Güneydoğu Usulü Mumbar Dolması",
-    reason: "Southeast variant — listing had two \"Mumbar Dolması\" entries.",
+    reason: "Southeast variant, listing had two \"Mumbar Dolması\" entries.",
   },
   {
     slug: "vaca-frita-cubana",
     newTitle: "Vaca Frita Cubana",
-    reason: "Cuban-style variant — listing had two \"Vaca Frita\" entries.",
+    reason: "Cuban-style variant, listing had two \"Vaca Frita\" entries.",
   },
   {
     slug: "fasulye-diblesi-giresun-usulu",
     newTitle: "Giresun Usulü Fasulye Diblesi",
-    reason: "Giresun variant — listing had two \"Fasulye Diblesi\" entries.",
+    reason: "Giresun variant, listing had two \"Fasulye Diblesi\" entries.",
   },
   {
     slug: "toyga-corbasi-anadolu-usulu",
     newTitle: "Anadolu Usulü Toyga Çorbası",
-    reason: "Inner Anatolia variant — listing had two \"Toyga Çorbası\" entries.",
+    reason: "Inner Anatolia variant, listing had two \"Toyga Çorbası\" entries.",
   },
   {
     slug: "brik-tunus-usulu",
     newTitle: "Tunus Usulü Brik",
-    reason: "Tunisian variant — listing had two \"Brik\" entries.",
+    reason: "Tunisian variant, listing had two \"Brik\" entries.",
   },
   {
     slug: "etli-ekmek-konya-usulu",
     newTitle: "Konya Usulü Etli Ekmek",
-    reason: "Konya variant — listing had two \"Etli Ekmek\" entries.",
+    reason: "Konya variant, listing had two \"Etli Ekmek\" entries.",
   },
 ];
 
 async function main() {
   if (APPLY) assertDbTarget("fix-regional-variant-titles");
 
-  console.log(`${APPLY ? "APPLYING" : "DRY-RUN"} — regional variant title disambiguation`);
+  console.log(`${APPLY ? "APPLYING" : "DRY-RUN"}, regional variant title disambiguation`);
 
   let applied = 0;
   let skipped = 0;
@@ -90,11 +90,11 @@ async function main() {
       select: { id: true, slug: true, title: true },
     });
     if (!recipe) {
-      console.log(`❌ [${fix.slug}] not found — skip.`);
+      console.log(`❌ [${fix.slug}] not found, skip.`);
       continue;
     }
     if (recipe.title === fix.newTitle) {
-      console.log(`⏭️  [${fix.slug}] already "${fix.newTitle}" — skip.`);
+      console.log(`⏭️  [${fix.slug}] already "${fix.newTitle}", skip.`);
       skipped++;
       continue;
     }
@@ -113,7 +113,7 @@ async function main() {
 
   console.log("");
   if (APPLY) {
-    console.log(`🎉 done — ${applied} title(s) updated, ${skipped} already correct.`);
+    console.log(`🎉 done, ${applied} title(s) updated, ${skipped} already correct.`);
   } else {
     console.log(`Dry-run only. Pass --apply to write. ${skipped} already in place, ${applied} would be updated.`);
   }

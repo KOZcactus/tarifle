@@ -1,7 +1,7 @@
 /**
  * Fix CRITICAL audit-deep findings surfaced after Codex batch 16 + 17 seed.
  *
- * Six ALLERGEN_ACCURACY criticals — ingredient list implies allergens not
+ * Six ALLERGEN_ACCURACY criticals, ingredient list implies allergens not
  * declared. Trend continues (batch 15'te 6, burada 6).
  *
  * Categorical sources:
@@ -106,7 +106,7 @@ async function main(): Promise<void> {
   console.log(
     `\n${verb}: ${updated} | Already clean: ${alreadyClean} | Total: ${ALLERGEN_FIXES.length}`,
   );
-  if (!APPLY) console.log("(dry run — re-run with --apply to write)");
+  if (!APPLY) console.log("(dry run, re-run with --apply to write)");
 }
 
 main()

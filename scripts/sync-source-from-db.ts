@@ -12,7 +12,7 @@
  * 3. Field-by-field diff çıkarır, gerekliyse satırı regenerate eder
  *
  * NOT: Bu ilk iteration sadece RAPOR üretir (dry-run, baskı yok). Gerçek
- * source patch editing için daha dikkatli karşılıklı mapping gerekir —
+ * source patch editing için daha dikkatli karşılıklı mapping gerekir,
  * insan onayıyla adım adım uygulanmalı.
  *
  *   npx tsx scripts/sync-source-from-db.ts
@@ -47,7 +47,7 @@ interface RecipeSnapshot {
 }
 
 async function main(): Promise<void> {
-  console.log(`📋 sync-source-from-db — source drift raporu\n`);
+  console.log(`📋 sync-source-from-db, source drift raporu\n`);
 
   const recipes = await prisma.recipe.findMany({
     where: { status: "PUBLISHED" },
@@ -93,7 +93,7 @@ async function main(): Promise<void> {
       drifts.push(`cookMinutes source=${cookMatch[1]} db=${r.cookMinutes}`);
     }
 
-    // Check each ingredient name — are all DB names present in source block?
+    // Check each ingredient name, are all DB names present in source block?
     for (const ing of r.ingredients) {
       const nameNeedle = `name: "${ing.name}"`;
       if (!block.includes(nameNeedle)) {
@@ -101,7 +101,7 @@ async function main(): Promise<void> {
       }
     }
 
-    // Check each DB group — is it mentioned in source block?
+    // Check each DB group, is it mentioned in source block?
     const dbGroups = new Set(r.ingredients.map((i) => i.group).filter((g): g is string => g !== null));
     for (const g of dbGroups) {
       const gNeedle = `group: "${g}"`;

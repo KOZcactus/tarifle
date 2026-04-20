@@ -101,7 +101,7 @@ export function AnnouncementRow(props: Props) {
         <p className="text-xs text-text-muted">{props.body}</p>
       )}
       <p className="text-[11px] text-text-muted tabular-nums">
-        {fmtDateShort(props.startsAt, locale, "—")} → {fmtDateShort(props.endsAt, locale, "—")}
+        {fmtDateShort(props.startsAt, locale, ",")} → {fmtDateShort(props.endsAt, locale, ",")}
       </p>
     </li>
   );

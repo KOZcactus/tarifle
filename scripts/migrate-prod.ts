@@ -8,7 +8,7 @@
  * set, uses it; otherwise derives the direct URL from `DATABASE_URL` by
  * stripping the `-pooler` host suffix Neon adds for pooled endpoints.
  *
- * Dry-run (safe, read-only — runs `prisma migrate status`):
+ * Dry-run (safe, read-only, runs `prisma migrate status`):
  *   npx tsx scripts/migrate-prod.ts
  *
  * Apply (writes migrations to prod DB):
@@ -94,7 +94,7 @@ async function main(): Promise<void> {
   }
 
   if (!isProdHost && !isDevHost) {
-    console.error(`⚠️  unknown host ${host} — expected ep-broad-pond* or ep-dry-bread*.`);
+    console.error(`⚠️  unknown host ${host}, expected ep-broad-pond* or ep-dry-bread*.`);
     console.error(
       "Either the guard prefixes in scripts/lib/db-env.ts are stale, or the derived URL is wrong.",
     );
@@ -110,7 +110,7 @@ async function main(): Promise<void> {
   console.log(`⚡ cmd:    npx ${cmdArgs.join(" ")}\n`);
 
   if (isProdHost && APPLY) {
-    console.log("⚠️  production migrate deploy starting in 3 seconds — Ctrl+C to abort.");
+    console.log("⚠️  production migrate deploy starting in 3 seconds, Ctrl+C to abort.");
     await new Promise((r) => setTimeout(r, 3000));
   }
 

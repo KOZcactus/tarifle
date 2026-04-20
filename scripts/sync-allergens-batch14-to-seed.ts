@@ -4,7 +4,7 @@
  *
  *   npx tsx scripts/sync-allergens-batch14-to-seed.ts
  *
- * Idempotent — running twice is a no-op.
+ * Idempotent, running twice is a no-op.
  */
 import * as fs from "node:fs";
 import * as path from "node:path";

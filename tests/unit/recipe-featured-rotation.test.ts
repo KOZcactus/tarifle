@@ -1,7 +1,7 @@
 /**
  * Unit tests for the featured-recipes weekly rotation math. The DB call
  * itself needs a live Postgres; the rotation logic (week-index + offset
- * modulo pool size) is pure arithmetic and worth guarding — off-by-one
+ * modulo pool size) is pure arithmetic and worth guarding, off-by-one
  * here would mean the homepage shows wrong content for a whole week.
  *
  * `getWeekIndex(now)` is the injection point: pass a fake `Date` and
@@ -35,7 +35,7 @@ describe("getWeekIndex()", () => {
     expect(thu - wed).toBe(1);
   });
 
-  it("monotonic — ileri tarihler artıyor, geri değil", () => {
+  it("monotonic, ileri tarihler artıyor, geri değil", () => {
     const d1 = getWeekIndex(new Date("2026-01-01"));
     const d2 = getWeekIndex(new Date("2026-06-01"));
     const d3 = getWeekIndex(new Date("2027-01-01"));
@@ -45,7 +45,7 @@ describe("getWeekIndex()", () => {
 });
 
 describe("rotation arithmetic (kullandığımız offset formülü)", () => {
-  // Bu getFeaturedRecipes içinde uygulanan mantığın aynası — pure math,
+  // Bu getFeaturedRecipes içinde uygulanan mantığın aynası, pure math,
   // rotation algorithm'inin off-by-one'a düşmediğini doğrular.
   function rotate<T>(
     pool: readonly T[],

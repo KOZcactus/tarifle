@@ -34,7 +34,7 @@ const APPLY = process.argv.includes("--apply");
 
 /** Surgical fixes keyed by slug. Every entry traces to an audit-deep CRITICAL. */
 const FIXES: readonly { slug: string; add: Allergen[]; reason: string }[] = [
-  // GLUTEN — plain "Nişasta" or wheat-derived ingredient missed by inference
+  // GLUTEN, plain "Nişasta" or wheat-derived ingredient missed by inference
   { slug: "sutlac", add: ["GLUTEN"], reason: "Nişasta" },
   { slug: "sicak-cikolata", add: ["GLUTEN"], reason: "Nişasta" },
   { slug: "tavuk-gogsu", add: ["GLUTEN"], reason: "Nişasta" },
@@ -47,7 +47,7 @@ const FIXES: readonly { slug: string; add: Allergen[]; reason: string }[] = [
   { slug: "nyponsoppa", add: ["GLUTEN"], reason: "Nişasta" },
   { slug: "har-gow", add: ["GLUTEN"], reason: "Buğday nişastası" },
 
-  // SUT — Tereyağı or dairy derivative missed by inference
+  // SUT, Tereyağı or dairy derivative missed by inference
   { slug: "empanada", add: ["SUT"], reason: "Tereyağı" },
   { slug: "sucuklu-menemen", add: ["SUT"], reason: "Tereyağı" },
   { slug: "pastirmali-yumurta", add: ["SUT"], reason: "Tereyağı" },
@@ -59,7 +59,7 @@ const FIXES: readonly { slug: string; add: Allergen[]; reason: string }[] = [
   { slug: "quindim", add: ["SUT"], reason: "Tereyağı" },
   { slug: "firik-pilavi", add: ["SUT"], reason: "Tereyağı" },
 
-  // SUSAM — Susam yağı / susam / tahin missed by inference
+  // SUSAM, Susam yağı / susam / tahin missed by inference
   { slug: "tavuklu-noodle", add: ["SUSAM"], reason: "Susam yağı" },
   { slug: "sosisli-milfoy-cubuklari", add: ["SUSAM"], reason: "Susam" },
   { slug: "cong-you-bing", add: ["SUSAM"], reason: "Susam yağı" },
@@ -137,7 +137,7 @@ async function main(): Promise<void> {
   console.log(
     `\n${verb}: ${willWrite} | Already clean (idempotent): ${alreadyClean} | Total: ${FIXES.length}`,
   );
-  if (!APPLY) console.log("(dry run — re-run with --apply to write)");
+  if (!APPLY) console.log("(dry run, re-run with --apply to write)");
 }
 
 main()

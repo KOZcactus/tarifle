@@ -1,7 +1,7 @@
 /**
  * Move 3 CORBA-typed recipes from "baklagil-yemekleri" to "corbalar".
  * These are traditional legume soups (bissara, caldo de feijão, jókai
- * bableves) — naturally both legume dishes and soups, but "corbalar"
+ * bableves), naturally both legume dishes and soups, but "corbalar"
  * matches the type better for discovery.
  *
  *   npx tsx scripts/fix-corba-categories.ts              # dry run
@@ -69,7 +69,7 @@ async function main(): Promise<void> {
 
   const verb = APPLY ? "Moved" : "Would move";
   console.log(`\n${verb}: ${willWrite} recipe(s)`);
-  if (!APPLY) console.log("(dry run — re-run with --apply to write)");
+  if (!APPLY) console.log("(dry run, re-run with --apply to write)");
 }
 
 main()

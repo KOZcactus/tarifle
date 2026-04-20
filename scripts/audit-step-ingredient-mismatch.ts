@@ -1,5 +1,5 @@
 /**
- * Step ↔ Ingredient mismatch detector — independent second-opinion tarama
+ * Step ↔ Ingredient mismatch detector, independent second-opinion tarama
  * paralel Codex2'nin 27-tarif listesi için.
  *
  * Algorithm: baseline seasoning/kitchen-staple keyword'lerini step
@@ -88,7 +88,7 @@ const BASELINES: Baseline[] = [
     stepPattern: wb("su"),
     ingredientKeywords: ["su"],
     suggested: { name: "Su", amount: "1", unit: "su bardağı" },
-    // "su" çok jenerik — muhtemelen ingredient'ta "Ilık su" vs. var, false positive riski yüksek
+    // "su" çok jenerik, muhtemelen ingredient'ta "Ilık su" vs. var, false positive riski yüksek
     confidence: "review",
     label: "su",
   },
@@ -228,7 +228,7 @@ async function main(): Promise<void> {
   const review = findings.filter((f) => f.confidence === "review");
 
   console.log("=".repeat(70));
-  console.log(`  STEP ↔ INGREDIENT MISMATCH — ${recipes.length} recipes scanned`);
+  console.log(`  STEP ↔ INGREDIENT MISMATCH, ${recipes.length} recipes scanned`);
   console.log("=".repeat(70));
   console.log(`  Findings: HIGH ${high.length}  REVIEW ${review.length}  (total ${findings.length})`);
 

@@ -261,7 +261,7 @@ interface UnlinkResult {
  * Remove the Google Account row for the signed-in user.
  *
  * HARD SAFETY GATE: the user must have a password set. Without one, this
- * would delete their only way in and lock them out of their own account —
+ * would delete their only way in and lock them out of their own account,
  * there's no "forgot password" flow yet. We surface a clear message so the
  * UI can point them at the password-set card first.
  *

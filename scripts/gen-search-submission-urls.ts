@@ -4,7 +4,7 @@
  * Öncelik sırası (yukarıdan aşağıya değer kaybı):
  *   1. Homepage + ana nav listing (10)
  *   2. Legal hub (6)
- *   3. Programatik landing — cuisine × 24 + diet × 5 + tag × 15 (44)
+ *   3. Programatik landing, cuisine × 24 + diet × 5 + tag × 15 (44)
  *   4. Kategori sayfaları (17)
  *   5. Blog makaleler (3+)
  *   6. isFeatured=true tarifler (en yüksek konversiyon)
@@ -80,7 +80,7 @@ async function main() {
   push("/yasal/guvenlik");
   push("/yasal/iletisim-aydinlatma");
 
-  // 3. Programatik landing — cuisine × 24
+  // 3. Programatik landing, cuisine × 24
   for (const code of CUISINE_CODES) {
     push(`/mutfak/${CUISINE_SLUG[code]}`);
   }
@@ -90,7 +90,7 @@ async function main() {
     push(`/diyet/${d.slug}`);
   }
 
-  // 5. Tag landing (15 popüler) — DB'den recipeTag count desc
+  // 5. Tag landing (15 popüler), DB'den recipeTag count desc
   const topTags = await prisma.tag.findMany({
     orderBy: { recipeTags: { _count: "desc" } },
     take: 15,
@@ -109,7 +109,7 @@ async function main() {
     push(`/tarifler/${c.slug}`);
   }
 
-  // 7. Blog makaleler — MDX filesystem (küçük, hard-code'u da sürdürülebilir)
+  // 7. Blog makaleler, MDX filesystem (küçük, hard-code'u da sürdürülebilir)
   const blogSlugs = ["en-iyi-hamsi-tarifleri", "menemen-rehberi", "kis-corbalari"];
   for (const slug of blogSlugs) {
     push(`/blog/${slug}`);
@@ -131,7 +131,7 @@ async function main() {
     });
     for (const r of featured) push(`/tarif/${r.slug}`);
 
-    // 9. Popular (viewCount desc) — featured sonrası doldurmak için
+    // 9. Popular (viewCount desc), featured sonrası doldurmak için
     const afterFeatured = limit - urls.length;
     if (afterFeatured > 0) {
       const popular = await prisma.recipe.findMany({
@@ -143,7 +143,7 @@ async function main() {
       for (const r of popular) push(`/tarif/${r.slug}`);
     }
 
-    // 10. Recent (createdAt desc) — kalan alan varsa
+    // 10. Recent (createdAt desc), kalan alan varsa
     const afterPopular = limit - urls.length;
     if (afterPopular > 0) {
       const recent = await prisma.recipe.findMany({
@@ -164,7 +164,7 @@ async function main() {
 
   const outPath = resolve(process.cwd(), "docs/search-submission-urls.txt");
   const header = [
-    `# Tarifle — Search Engine Submission URL Listesi`,
+    `# Tarifle, Search Engine Submission URL Listesi`,
     `# Üretim tarihi: ${new Date().toISOString()}`,
     `# Toplam: ${finalUrls.length} URL (target: ${limit})`,
     `#`,

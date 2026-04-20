@@ -25,7 +25,7 @@ Tarifle'nin haftalık "Editör Seçimi" bülten gönderim endpoint'i (`/api/cron
 
    Beklenen: `{ ok: true, total: <n>, sent: <n>, failed: 0, durationMs: <ms> }`.
 
-## Seçenek A — Upstash QStash (önerilen)
+## Seçenek A, Upstash QStash (önerilen)
 
 Tarifle zaten Upstash Redis'te rate-limit tutuyor. Aynı dashboard'dan QStash ücretsiz tier etkinleştirilebilir (500 mesaj/gün, yeterli).
 
@@ -41,7 +41,7 @@ Tarifle zaten Upstash Redis'te rate-limit tutuyor. Aynı dashboard'dan QStash ü
 
 **Eksi**: ayrı bir servis (ama zaten projede Upstash var).
 
-## Seçenek B — Vercel Cron
+## Seçenek B, Vercel Cron
 
 Vercel Hobby tier günde 1 cron kısıtına tabi (haftalık bu yeterli), Pro tier limitsiz.
 
@@ -58,13 +58,13 @@ Vercel Hobby tier günde 1 cron kısıtına tabi (haftalık bu yeterli), Pro tie
    }
    ```
 
-2. **Vercel Cron kendi `Authorization` header'ını göndermez** — endpoint buna karşı iki yol sunar:
+2. **Vercel Cron kendi `Authorization` header'ını göndermez**, endpoint buna karşı iki yol sunar:
    - **(a)** Vercel'in imzalı `x-vercel-cron-signature` header'ını ek olarak kontrol etmek için route'a bir if-branch ekle (şu an yok, ileriki iyileştirme).
    - **(b)** Geçici çözüm: `vercel.json` cron bloğuna `headers` verilemiyor, bu nedenle **Seçenek A (QStash) ile birlikte kullanılması önerilir**.
 
-**Not**: Tarifle'nin `/api/warm` endpoint'i Vercel Cron ile zaten çalışıyor (public, auth gereksiz). Newsletter endpoint'i write olduğu için auth zorunlu — QStash'ın header desteği burada kritik.
+**Not**: Tarifle'nin `/api/warm` endpoint'i Vercel Cron ile zaten çalışıyor (public, auth gereksiz). Newsletter endpoint'i write olduğu için auth zorunlu, QStash'ın header desteği burada kritik.
 
-## Seçenek C — GitHub Actions
+## Seçenek C, GitHub Actions
 
 Secret Kerem'in Vercel dışında tutuluyorsa veya extra servis istenmiyorsa:
 
@@ -119,7 +119,7 @@ QStash / Vercel Cron / GH Action
 ## Rate limits
 
 - **Resend free tier**: 10 mail/sec, 100/day. Endpoint sequential 100ms gap bırakıyor → Resend'i memnun ediyor. >100 subscriber olunca tier upgrade gerekir.
-- **QStash free tier**: 500 publish/day — haftalık 1 schedule = 4-5/ay.
+- **QStash free tier**: 500 publish/day, haftalık 1 schedule = 4-5/ay.
 
 ## Monitor
 
@@ -138,12 +138,12 @@ Vercel Logs → Functions → `/api/cron/newsletter`:
 }
 ```
 
-Hata oranı >%10 aşarsa içerik/kurulum sorunu — Sentry alert kural eklenebilir (ayrı iş).
+Hata oranı >%10 aşarsa içerik/kurulum sorunu, Sentry alert kural eklenebilir (ayrı iş).
 
 ## Düşük riskli manuel test akışı
 
 1. Dev'de `.env.local`'e `NEWSLETTER_CRON_SECRET=test123` koy.
-2. Dev DB'de bir abone var olmalı — değilse:
+2. Dev DB'de bir abone var olmalı, değilse:
 
    ```sql
    INSERT INTO "NewsletterSubscription"
@@ -153,4 +153,4 @@ Hata oranı >%10 aşarsa içerik/kurulum sorunu — Sentry alert kural eklenebil
    ```
 
 3. `npm run dev` + `curl -H "Authorization: Bearer test123" http://localhost:3000/api/cron/newsletter`.
-4. Resend API key boşsa `ConsoleEmailProvider` stdout'a basar — gerçek mail atmaz, güvenli dev testi.
+4. Resend API key boşsa `ConsoleEmailProvider` stdout'a basar, gerçek mail atmaz, güvenli dev testi.

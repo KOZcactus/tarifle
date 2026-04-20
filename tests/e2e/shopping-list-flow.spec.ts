@@ -1,5 +1,5 @@
 /**
- * Alışveriş listesi end-to-end akışı — manuel madde ekle → checkbox
+ * Alışveriş listesi end-to-end akışı, manuel madde ekle → checkbox
  * işaretle → "Alındı" bölümüne geçtiğini doğrula → sil → liste boş.
  *
  * Faz 2'de eklenen ShoppingListClient'a regression guard: optimistic
@@ -41,7 +41,7 @@ test("login → /alisveris-listesi → manuel madde ekle → check → sil", asy
     .click();
   await page.waitForURL("/", { timeout: 10000 });
 
-  // 2. Alışveriş listesi sayfası — başta boş ekran beklenir
+  // 2. Alışveriş listesi sayfası, başta boş ekran beklenir
   await page.goto("/alisveris-listesi");
   await expect(
     page.getByRole("heading", { name: /alışveriş listem/i }),
@@ -50,7 +50,7 @@ test("login → /alisveris-listesi → manuel madde ekle → check → sil", asy
     page.getByText(/liste boş\. bir tarif aç/i),
   ).toBeVisible();
 
-  // 3. Manuel madde ekle — placeholder ile input bulalım
+  // 3. Manuel madde ekle, placeholder ile input bulalım
   await page.getByPlaceholder(/manuel malzeme ekle/i).fill("Tuz");
   await page.getByPlaceholder(/miktar/i).fill("1 paket");
   await page.getByRole("button", { name: /^ekle$/i }).click();
@@ -60,7 +60,7 @@ test("login → /alisveris-listesi → manuel madde ekle → check → sil", asy
   await expect(page.getByText(/alınacaklar \(1\)/i)).toBeVisible();
   await expect(page.getByText(/tuz/i).first()).toBeVisible();
 
-  // 5. Page reload — optimistic update sırasında "temp-…" ID kullanan
+  // 5. Page reload, optimistic update sırasında "temp-…" ID kullanan
   //    yeni item'a checkbox/sil disabled veriyor. Reload sonrası
   //    server'dan gerçek ID ile gelir, checkbox enabled olur.
   await page.reload();
@@ -71,13 +71,13 @@ test("login → /alisveris-listesi → manuel madde ekle → check → sil", asy
   await expect(itemCheckbox).toBeEnabled();
   await itemCheckbox.click();
 
-  // 7. "Alındı" bölümüne geçti — heading mevcut, item Alındı listesinde.
+  // 7. "Alındı" bölümüne geçti, heading mevcut, item Alındı listesinde.
   await expect(page.getByText(/alındı \(1\)/i)).toBeVisible();
 
   // 8. Sil butonuna bas (aria-label="Sil")
   await page.getByRole("button", { name: /^sil$/i }).first().click();
 
-  // 9. Liste boşaldı — initial empty state geri geldi
+  // 9. Liste boşaldı, initial empty state geri geldi
   await expect(page.getByText(/liste boş\. bir tarif aç/i)).toBeVisible({
     timeout: 5000,
   });

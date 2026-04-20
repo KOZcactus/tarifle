@@ -64,8 +64,8 @@ EN soft launch canlı (DE retrofit tamamlandı).
 **Canlı durum:**
 - **2320 tarif prod'da** (20 Nis 2026, batch 23 sonu), 24 mutfak kodu, 17 kategori, 10 allergen, 15 tag
 - **2320/2320 tarif EN + DE `title + description` dolu** (Recipe.translations JSONB;
-  900/2020 tarif (batch 12-20) `ingredients + steps` Mod B ile tam çevirisi canlı —
-  iki-pass mimarisi; batch 21-23 Mod B CSV'leri hazır, JSON bekleniyor)
+  1200/2320 tarif (batch 12-23) `ingredients + steps` Mod B ile tam çeviri canlı,
+  iki-pass mimarisi sonuçlandı; batch 24+ için yeni Mod B batch'leri bekleniyor)
 - Faz 3: admin paneli + Review v2 + Sentry + Fuzzy arama + kategori pagination
   + OG image i18n + SEO meta i18n, hepsi canlı
 
@@ -384,7 +384,7 @@ translations: {
 `servingSuggestion`) **ayrı bir Mod B pass'i** olarak batch tamamlandıktan
 sonra yapılır. İki ayrı oturumda:
 
-1. **Mod A (TR-focus):** Codex TR tarif yazarken doğruluğa odaklanır —
+1. **Mod A (TR-focus):** Codex TR tarif yazarken doğruluğa odaklanır:
    malzeme ölçüleri, adımlar, allergen-ingredient doğruluğu, cuisine
    atama, isFeatured dengesi. title+description SEO için inline çevrilir.
 2. **Mod B (çeviri-focus, ikinci review):** Aynı batch için ayrı oturumda
@@ -609,7 +609,7 @@ Kerem "100+100+100 kademeli ilet" gibi açık talimat verirse:
 4. Aynı şekilde 3. 100 → "batch N hazır"
 
 Aynı dosyaya append, slug sırasını koru. **Default akışta kademeli gönderme
-— Mod A da Mod B de tek teslim.**
+yapma; Mod A da Mod B de tek teslim.**
 
 ---
 

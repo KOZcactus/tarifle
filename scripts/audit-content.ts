@@ -1,5 +1,5 @@
 /**
- * Content-quality audit — complements scripts/audit-deep.ts (which covers
+ * Content-quality audit, complements scripts/audit-deep.ts (which covers
  * structural correctness) by checking content fidelity:
  *
  *   1. Composite ingredient names (RECIPE_FORMAT.md §§ban: "Şerbet şekeri"
@@ -50,7 +50,7 @@ function trLower(s: string): string {
 // Pattern: "SectionWord IngredientNoun" where SectionWord is purely a
 // bucket name (never an ingredient itself) and IngredientNoun is a raw
 // ingredient primitive with Turkish possessive suffix. "Şerbet şekeri"
-// — şerbet (section) + şeker (primitive).
+//, şerbet (section) + şeker (primitive).
 //
 // WHITELIST: "Et suyu" (beef broth), "Tavuk suyu" (chicken broth),
 // "Krema peyniri" / "Krem peyniri" (cream cheese), "Süzme yoğurt"
@@ -94,7 +94,7 @@ function detectCommaComposite(name: string): string[] | null {
 }
 
 // Baseline step-ingredient mismatch keywords (lighter version of
-// scripts/audit-step-ingredient-mismatch.ts — only HIGH confidence triggers
+// scripts/audit-step-ingredient-mismatch.ts, only HIGH confidence triggers
 // so this audit doesn't flood with REVIEW items).
 const STEP_BASELINE_PATTERNS: { re: RegExp; keywords: string[]; label: string }[] = [
   { re: /(?:^|[\s,;.!?/()\-])tuz(?=$|[\s,;.!?/()\-lu])/i, keywords: ["tuz"], label: "tuz" },
@@ -179,7 +179,7 @@ async function main(): Promise<void> {
   });
 
   console.log("=".repeat(70));
-  console.log(`  CONTENT QUALITY AUDIT — ${recipes.length} recipes`);
+  console.log(`  CONTENT QUALITY AUDIT, ${recipes.length} recipes`);
   console.log("=".repeat(70));
 
   // ── Global accumulators ──
@@ -200,7 +200,7 @@ async function main(): Promise<void> {
           "COMPOSITE_NAME",
           slug,
           title,
-          `Composite name "${ing.name}" — use {name:"${ing.name.split(/\s+/)[1]}", group:"${ing.name.split(/\s+/)[0]} için"} instead`,
+          `Composite name "${ing.name}", use {name:"${ing.name.split(/\s+/)[1]}", group:"${ing.name.split(/\s+/)[0]} için"} instead`,
         );
       }
 
@@ -213,7 +213,7 @@ async function main(): Promise<void> {
           "COMPOSITE_COMMA",
           slug,
           title,
-          `Comma-composite row "${ing.name}" — split into ${commaParts.length} rows: ${commaParts.join(" | ")}`,
+          `Comma-composite row "${ing.name}", split into ${commaParts.length} rows: ${commaParts.join(" | ")}`,
         );
       }
     }
@@ -270,7 +270,7 @@ async function main(): Promise<void> {
           "MISSING_GROUPS",
           slug,
           title,
-          `Text mentions [${[...sectionConcepts].join(", ")}] but all ingredients ungrouped — likely needs bucket groups`,
+          `Text mentions [${[...sectionConcepts].join(", ")}] but all ingredients ungrouped, likely needs bucket groups`,
         );
       }
     }
@@ -282,7 +282,7 @@ async function main(): Promise<void> {
         "STEP_COUNT",
         slug,
         title,
-        `Only ${steps.length} step(s) — a real recipe typically has 3-10`,
+        `Only ${steps.length} step(s), a real recipe typically has 3-10`,
       );
     } else if (steps.length > 12) {
       add(
@@ -290,7 +290,7 @@ async function main(): Promise<void> {
         "STEP_COUNT",
         slug,
         title,
-        `${steps.length} steps — check if mergeable or over-decomposed`,
+        `${steps.length} steps, check if mergeable or over-decomposed`,
       );
     }
 
@@ -301,7 +301,7 @@ async function main(): Promise<void> {
         "INGREDIENT_COUNT",
         slug,
         title,
-        `Only ${ingredients.length} ingredient(s) — suspicious for a published recipe`,
+        `Only ${ingredients.length} ingredient(s), suspicious for a published recipe`,
       );
     } else if (ingredients.length > 20) {
       add(
@@ -309,7 +309,7 @@ async function main(): Promise<void> {
         "INGREDIENT_COUNT",
         slug,
         title,
-        `${ingredients.length} ingredients — very long, check duplication`,
+        `${ingredients.length} ingredients, very long, check duplication`,
       );
     }
 
@@ -320,7 +320,7 @@ async function main(): Promise<void> {
         "DESCRIPTION",
         slug,
         title,
-        `Description only ${r.description.length} chars — too short (<30)`,
+        `Description only ${r.description.length} chars, too short (<30)`,
       );
     }
 
@@ -376,14 +376,14 @@ async function main(): Promise<void> {
       );
     }
 
-    // ── 9. Time deviation — handled in audit-deep already, spot check ──
+    // ── 9. Time deviation, handled in audit-deep already, spot check ──
     if (r.prepMinutes + r.cookMinutes < r.totalMinutes - 30) {
       add(
         "MEDIUM",
         "TIME_GAP",
         slug,
         title,
-        `prep(${r.prepMinutes})+cook(${r.cookMinutes})=${r.prepMinutes + r.cookMinutes} << total(${r.totalMinutes}) — missing rest/marinate time?`,
+        `prep(${r.prepMinutes})+cook(${r.cookMinutes})=${r.prepMinutes + r.cookMinutes} << total(${r.totalMinutes}), missing rest/marinate time?`,
       );
     }
 

@@ -1,9 +1,9 @@
 /**
  * Scan all published recipes and null out tipNote / servingSuggestion
- * values that are shared across 3+ recipes — these are always
+ * values that are shared across 3+ recipes, these are always
  * .map()-generated boilerplate (CODEX_HANDOFF.md §6.5 bans them).
  *
- * Null render's cleanly in the UI (section hidden) — RECIPE_FORMAT.md
+ * Null render's cleanly in the UI (section hidden), RECIPE_FORMAT.md
  * "sahte tip yerine null" rule. Real per-recipe text can be filled in
  * later, one recipe at a time.
  *
@@ -67,13 +67,13 @@ async function main(): Promise<void> {
 
   console.log(`--- Boilerplate tipNote patterns (${tipBoilerplate.length}) ---`);
   for (const [text, ids] of tipBoilerplate.sort((a, b) => b[1].length - a[1].length)) {
-    console.log(`  ${ids.length.toString().padStart(3)} tarif — "${text.slice(0, 70)}${text.length > 70 ? "..." : ""}"`);
+    console.log(`  ${ids.length.toString().padStart(3)} tarif, "${text.slice(0, 70)}${text.length > 70 ? "..." : ""}"`);
   }
   console.log(
     `\n--- Boilerplate servingSuggestion patterns (${servingBoilerplate.length}) ---`,
   );
   for (const [text, ids] of servingBoilerplate.sort((a, b) => b[1].length - a[1].length)) {
-    console.log(`  ${ids.length.toString().padStart(3)} tarif — "${text.slice(0, 70)}${text.length > 70 ? "..." : ""}"`);
+    console.log(`  ${ids.length.toString().padStart(3)} tarif, "${text.slice(0, 70)}${text.length > 70 ? "..." : ""}"`);
   }
 
   const tipTotal = tipBoilerplate.reduce((sum, [, ids]) => sum + ids.length, 0);
@@ -105,7 +105,7 @@ async function main(): Promise<void> {
       `\n✅ Nulled ${tipIds.length} tipNote + ${servingIds.length} servingSuggestion`,
     );
   } else {
-    console.log("\n(dry run — re-run with --apply to write)");
+    console.log("\n(dry run, re-run with --apply to write)");
   }
 }
 

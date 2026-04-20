@@ -1,6 +1,6 @@
 /**
  * Source'taki recipe emoji'lerini DB'ye senkronlar. seed-recipes.ts
- * idempotent INSERT (slug varsa atla) — sonradan source'a emoji eklersek
+ * idempotent INSERT (slug varsa atla), sonradan source'a emoji eklersek
  * prod'a otomatik geçmiyor. Bu script kapatır.
  *
  * Kullanım:
@@ -49,7 +49,7 @@ async function main(): Promise<void> {
     );
 
     // Source'tan slug → emoji map'ı çıkar. emoji null/undefined ise atla
-    // — onlar zaten Codex source'unda da yok, sync edilecek bir şey yok.
+    //, onlar zaten Codex source'unda da yok, sync edilecek bir şey yok.
     const sourceMap = new Map<string, string>();
     for (const r of recipes) {
       const slug = (r as { slug?: string }).slug;
@@ -116,13 +116,13 @@ async function main(): Promise<void> {
 
     if (isDryRun) {
       console.log(
-        `\nℹ Dry-run — DB'ye dokunulmadı. Apply için --dry-run'sız çalıştır.`,
+        `\nℹ Dry-run, DB'ye dokunulmadı. Apply için --dry-run'sız çalıştır.`,
       );
       return;
     }
 
     // Apply: tek transaction içinde batch update. Default 5sn timeout
-    // 100+ update için yetersiz (Neon serverless RTT × N) — 60sn'ye çıkar.
+    // 100+ update için yetersiz (Neon serverless RTT × N), 60sn'ye çıkar.
     let updated = 0;
     await prisma.$transaction(
       async (tx) => {

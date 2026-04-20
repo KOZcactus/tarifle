@@ -19,7 +19,7 @@ const IDENTIFIER = "user:smoke-test-rate-limit";
 
 async function main() {
   if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
-    console.error("UPSTASH_REDIS_REST_URL/TOKEN missing from .env.local — aborting");
+    console.error("UPSTASH_REDIS_REST_URL/TOKEN missing from .env.local, aborting");
     process.exit(1);
   }
 

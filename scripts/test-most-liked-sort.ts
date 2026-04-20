@@ -5,7 +5,7 @@
  * higher-liked recipe lands above the other, then cleans up.
  *
  * Uses real Prisma against the configured DB (same pattern as
- * test-password-reset-flow.ts) — no HTTP layer needed.
+ * test-password-reset-flow.ts), no HTTP layer needed.
  */
 import { PrismaClient } from "@prisma/client";
 import { PrismaNeon } from "@prisma/adapter-neon";
@@ -97,7 +97,7 @@ async function main() {
       throw new Error(`high-liked should be first, got pos=${highPos}`);
     console.log("→ high-liked recipe ranks first as expected");
   } finally {
-    // Cleanup — delete variations first (FK to user), then user.
+    // Cleanup, delete variations first (FK to user), then user.
     await prisma.variation.deleteMany({
       where: { id: { in: [lowVar.id, highVar.id] } },
     });

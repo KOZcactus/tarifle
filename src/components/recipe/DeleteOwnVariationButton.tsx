@@ -14,7 +14,7 @@ interface DeleteOwnVariationButtonProps {
 }
 
 /**
- * "Sil" button for the current user's own uyarlama. Hard delete on confirm —
+ * "Sil" button for the current user's own uyarlama. Hard delete on confirm,
  * the server action verifies ownership. A misclick risk is mitigated by a
  * native `window.confirm` that echoes the variation title; no modal
  * dependency (we don't need focus-trap for a single-yes/no prompt).

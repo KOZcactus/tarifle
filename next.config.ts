@@ -2,15 +2,15 @@ import type { NextConfig } from "next";
 import { withSentryConfig } from "@sentry/nextjs";
 import createNextIntlPlugin from "next-intl/plugin";
 
-// next-intl plugin — `src/i18n/request.ts` config'ini keşfeder, her RSC
+// next-intl plugin, `src/i18n/request.ts` config'ini keşfeder, her RSC
 // render'ında getRequestConfig() çağrılır, locale + messages enjekte
 // edilir. Cookie-based pattern (URL routing yok) ile uyumlu.
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const nextConfig: NextConfig = {
-  // 301 redirects — eski legal URL'leri yeni /yasal/* hub'ı altına yönlendir.
+  // 301 redirects, eski legal URL'leri yeni /yasal/* hub'ı altına yönlendir.
   // Permanent redirect (308 ≈ 301) ile SEO otoritesi korunur, external link'ler
-  // bozulmaz. Next, `permanent: true` için 308 döner (method-preserving) —
+  // bozulmaz. Next, `permanent: true` için 308 döner (method-preserving),
   // legacy 301 bekleyen crawler'lar da 308'i aynı şekilde işler.
   redirects: async () => [
     { source: "/kvkk", destination: "/yasal/kvkk", permanent: true },
@@ -58,7 +58,7 @@ const nextConfig: NextConfig = {
   },
 };
 
-// Sentry wrapper — source maps upload + auto-instrumentation. DSN yoksa
+// Sentry wrapper, source maps upload + auto-instrumentation. DSN yoksa
 // build time'da uyarı verir ama fail etmez. SENTRY_AUTH_TOKEN prod'da
 // Vercel env'e konulunca source map upload çalışır.
 export default withSentryConfig(withNextIntl(nextConfig), {
@@ -72,7 +72,7 @@ export default withSentryConfig(withNextIntl(nextConfig), {
   // hem ad-blocker listelerine yakalanmaz hem next.config headers
   // policy'sinden muaf (`/((?!api|_next).*)`).
   tunnelRoute: "/api/tarifle-ingest",
-  // Source map config — prod JS içinde source map path'i gömülmez ama
+  // Source map config, prod JS içinde source map path'i gömülmez ama
   // Sentry sunucusunda erişilebilir.
   sourcemaps: {
     disable: false,

@@ -8,10 +8,10 @@
  *   2. User A tries to delete User B's → denied (ownership gate).
  * Cleans up: user B variation + both test users.
  *
- * No HTTP — calls the server action directly. auth() is mocked by
+ * No HTTP, calls the server action directly. auth() is mocked by
  * injecting a session via a stub module; since our action reads session
  * from `auth()` we'd need to patch it. Simpler here: exercise the
- * underlying logic by hand (mirror the action body) — the action is 20
+ * underlying logic by hand (mirror the action body), the action is 20
  * lines and the delete + ownership-gate + AuditLog are what matters.
  */
 import { PrismaClient } from "@prisma/client";

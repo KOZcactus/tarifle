@@ -119,7 +119,7 @@ export async function submitReviewAction(input: unknown): Promise<ActionResult> 
 }
 
 /**
- * Delete the caller's own review. Ownership gate enforced at DB layer —
+ * Delete the caller's own review. Ownership gate enforced at DB layer,
  * userId match is required via the compound unique index.
  */
 export async function deleteOwnReviewAction(reviewId: string): Promise<ActionResult> {

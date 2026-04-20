@@ -2,7 +2,7 @@
  * Idempotent retrofit: scan every Recipe, infer whether it's vegetarian
  * and/or vegan from ingredients + allergens, and attach the `vejetaryen`
  * or `vegan` Tag accordingly. Also REMOVES incorrectly-applied diet tags
- * (e.g. a recipe tagged "vegan" that actually has meat — presumably a
+ * (e.g. a recipe tagged "vegan" that actually has meat, presumably a
  * hand-labeling error or edit drift).
  *
  *   npx tsx scripts/retrofit-diet-tags.ts             # apply
@@ -85,7 +85,7 @@ async function main() {
       added++;
     }
 
-    // Remove incorrect tags — e.g. a meat recipe mis-labelled as vegan
+    // Remove incorrect tags, e.g. a meat recipe mis-labelled as vegan
     if (!inferred.vegetarian && currentVeg) {
       ops.push("-vejetaryen");
       if (!DRY_RUN) {
@@ -123,7 +123,7 @@ async function main() {
   console.log(
     `\n${verb}: +${added} tag add, -${removed} tag remove | No change: ${noChange} | Total recipes: ${recipes.length}`,
   );
-  if (DRY_RUN) console.log("(dry run — no writes)");
+  if (DRY_RUN) console.log("(dry run, no writes)");
 
   await prisma.$disconnect();
 }

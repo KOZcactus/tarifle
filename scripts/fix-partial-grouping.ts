@@ -2,10 +2,10 @@
  * Fix 13 partial-grouping WARNINGs: each recipe has 2+ ingredient groups
  * but 1 ingredient sits ungrouped. Two strategies:
  *
- *   1. Transfer — add the stray ingredient to the most-related existing
+ *   1. Transfer, add the stray ingredient to the most-related existing
  *      group (e.g. fındık on şekerpare → "Hamur için" since it's bastırılır
  *      onto the dough ball)
- *   2. Flatten — clear all groups in the recipe when the stray ingredient
+ *   2. Flatten, clear all groups in the recipe when the stray ingredient
  *      doesn't meaningfully fit any bucket (frying oil, whole rice as
  *      main component, etc.)
  *
@@ -63,10 +63,10 @@ const ACTIONS: Action[] = [
     kind: "transfer", slug: "kayseri-yaglamasi", ingredientName: "Yoğurt",
     newGroup: "Sos için", reason: "Sos yoğurtlu",
   },
-  // Flatten — frying oil or main ingredient with no clear bucket fit
+  // Flatten, frying oil or main ingredient with no clear bucket fit
   { kind: "flatten", slug: "lokma-tatlisi", reason: "Sıvı yağ kızartma için, mevcut gruplara uymuyor" },
   { kind: "flatten", slug: "ciborek", reason: "Sıvı yağ kızartma için" },
-  // Tulumba "Hamur için" + "Şerbet için" ikisinde "Su" var — flatten
+  // Tulumba "Hamur için" + "Şerbet için" ikisinde "Su" var, flatten
   // duplicate Su yaratırdı. Sıvı yağ'ı hamur grubuna at (kızartma hamur
   // prosedürünün uzantısı), yapı korunsun.
   {
@@ -111,7 +111,7 @@ async function main(): Promise<void> {
       if (ing.group === action.newGroup) continue;
       transfers++;
       console.log(
-        `  TRANSFER  ${action.slug.padEnd(28)} "${ing.name}" (${ing.group ?? "null"} → ${action.newGroup})  — ${action.reason}`,
+        `  TRANSFER  ${action.slug.padEnd(28)} "${ing.name}" (${ing.group ?? "null"} → ${action.newGroup}) , ${action.reason}`,
       );
       if (APPLY) {
         await prisma.recipeIngredient.update({
@@ -124,7 +124,7 @@ async function main(): Promise<void> {
       if (!hasAnyGroup) continue;
       flattens++;
       console.log(
-        `  FLATTEN   ${action.slug.padEnd(28)} (clear all groups)  — ${action.reason}`,
+        `  FLATTEN   ${action.slug.padEnd(28)} (clear all groups) , ${action.reason}`,
       );
       if (APPLY) {
         await prisma.recipeIngredient.updateMany({
@@ -137,7 +137,7 @@ async function main(): Promise<void> {
 
   const verb = APPLY ? "Applied" : "Would apply";
   console.log(`\n${verb}: ${transfers} transfer(s) + ${flattens} flatten(s)`);
-  if (!APPLY) console.log("(dry run — re-run with --apply to write)");
+  if (!APPLY) console.log("(dry run, re-run with --apply to write)");
 }
 
 main()

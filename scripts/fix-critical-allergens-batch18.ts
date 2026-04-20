@@ -7,7 +7,7 @@
  *   Irmik (semolina) → GLUTEN: 1 slug (Rus tvorog zapekanka tatlısı)
  *   Tereyağı       → SUT:    1 slug (Kırklareli tavuklu kalle)
  *
- * A third keyword hit on "karabuğday" (buckwheat) was a false positive —
+ * A third keyword hit on "karabuğday" (buckwheat) was a false positive,
  * buckwheat is gluten-free, so Codex's empty allergen list on Grechka
  * Mantar Köftesi is correct.
  *
@@ -75,7 +75,7 @@ async function main(): Promise<void> {
   for (const fix of ALLERGEN_FIXES) {
     const recipe = recipes.find((r) => r.slug === fix.slug);
     if (!recipe) {
-      console.log(`  ⚠ ${fix.slug} — DB'de yok (atlandı)`);
+      console.log(`  ⚠ ${fix.slug}, DB'de yok (atlandı)`);
       missing++;
       continue;
     }
@@ -84,7 +84,7 @@ async function main(): Promise<void> {
     const toAdd = fix.add.filter((a) => !current.has(a));
 
     if (toAdd.length === 0) {
-      console.log(`  ⏭  ${fix.slug} — zaten temiz (${[...current].join(", ") || "none"})`);
+      console.log(`  ⏭  ${fix.slug}, zaten temiz (${[...current].join(", ") || "none"})`);
       alreadyClean++;
       continue;
     }
@@ -93,7 +93,7 @@ async function main(): Promise<void> {
     const sorted = ALLERGEN_ORDER.filter((a) => current.has(a));
 
     console.log(
-      `  ${APPLY ? "✅" : "🔍"} ${fix.slug} — +${toAdd.join(", ")} (${fix.reason}) → [${sorted.join(", ")}]`,
+      `  ${APPLY ? "✅" : "🔍"} ${fix.slug}, +${toAdd.join(", ")} (${fix.reason}) → [${sorted.join(", ")}]`,
     );
 
     if (APPLY) {

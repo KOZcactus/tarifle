@@ -1,5 +1,5 @@
 /**
- * IndexNow CLI — Bing/Yandex/Seznam'a batch URL ping.
+ * IndexNow CLI, Bing/Yandex/Seznam'a batch URL ping.
  *
  * Kullanım:
  *   # Son N yeni/güncellenen tarifi ping (default 50)
@@ -19,7 +19,7 @@
  *      `NEXT_PUBLIC_SITE_URL` default "https://tarifle.app".
  *
  * Not: API tek istekte 10 000 URL'ye kadar kabul eder; helper otomatik
- * chunk'lar. Günlük limit yok — idempotent, aynı URL tekrar gönderilebilir.
+ * chunk'lar. Günlük limit yok, idempotent, aynı URL tekrar gönderilebilir.
  */
 import { PrismaClient } from "@prisma/client";
 import { PrismaNeon } from "@prisma/adapter-neon";
@@ -118,7 +118,7 @@ async function main() {
 
   const result = await pingIndexNow(urls);
   if (result.ok) {
-    console.log(`✅ IndexNow ${result.status} — ${result.submitted} URL ping'lendi`);
+    console.log(`✅ IndexNow ${result.status}, ${result.submitted} URL ping'lendi`);
     if (result.skipped) {
       console.log(`   Atlandı: ${result.skipped} (host mismatch veya malformed)`);
     }

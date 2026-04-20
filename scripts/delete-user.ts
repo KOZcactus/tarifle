@@ -1,5 +1,5 @@
 /**
- * Delete a user (and their cascading data — bookmarks, variations, collections,
+ * Delete a user (and their cascading data, bookmarks, variations, collections,
  * shopping lists, badges, sessions, accounts) by email. Used once to clean up
  * a broken OAuth-only user whose Account row never got created because of a
  * misconfigured signIn callback.

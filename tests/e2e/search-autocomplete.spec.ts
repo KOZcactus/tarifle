@@ -1,5 +1,5 @@
 /**
- * SearchBar autocomplete E2E — /tarifler sayfasında arama çubuğuna
+ * SearchBar autocomplete E2E, /tarifler sayfasında arama çubuğuna
  * yazınca tarif adı + malzeme önerileri dropdown'u çıkması.
  */
 import { test, expect } from "@playwright/test";
@@ -12,7 +12,7 @@ test("SearchBar: 2+ karakter yazınca autocomplete dropdown çıkar", async ({
   const searchInput = page.getByRole("combobox", { name: /tarif ara/i });
   await expect(searchInput).toBeVisible();
 
-  // 2 karakter yaz — dropdown tetiklenmeli
+  // 2 karakter yaz, dropdown tetiklenmeli
   await searchInput.fill("ta");
 
   // Dropdown listbox görünmeli

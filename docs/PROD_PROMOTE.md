@@ -2,8 +2,8 @@
 
 Tarifle'nin iki Neon branch'i var:
 
-- **`production`** (parent) — tarifle.app + Vercel Production env
-- **`dev`** (child) — lokal + Vercel Preview/Development env
+- **`production`** (parent), tarifle.app + Vercel Production env
+- **`dev`** (child), lokal + Vercel Preview/Development env
 
 ## Aktif kurulum tablosu
 
@@ -13,8 +13,8 @@ Tarifle'nin iki Neon branch'i var:
 | Neon host prefix | `ep-broad-pond-...` | `ep-dry-bread-...` |
 | Vercel env scope | Production | Preview + Development (a.k.a "All Pre-Production") |
 | Vercel deploy tetikleyici | `main` branch push → tarifle.app | PR → `<hash>.vercel.app` preview URL |
-| Lokal `.env.local` | — | ✅ dev URL (default) |
-| Lokal `.env.production.local` | ✅ prod URL (gitignore'lı) | — |
+| Lokal `.env.local` |, | ✅ dev URL (default) |
+| Lokal `.env.production.local` | ✅ prod URL (gitignore'lı) |, |
 | Destructive script guard | `--confirm-prod` zorunlu | Serbest geçer |
 | Codex'in bildiği URL | ❌ (asla) | `codex-import` branch (kendi child'ı) |
 
@@ -46,7 +46,7 @@ Devam etmek için: --confirm-prod flag'i gerekli.
 5. Prod promote → aşağıdaki komutlar
 ```
 
-## Schema migration — MANUEL (17 Nis 2026 deneme sonrası)
+## Schema migration, MANUEL (17 Nis 2026 deneme sonrası)
 
 **Geçmiş:** Auto-migrate (`build` script'inde `prisma migrate deploy`) Neon pooler URL'iyle advisory lock çakışmasından `P1002 timeout` yedi (`4b528d9` → `4d6a7fe` revert). Neon'un pooled bağlantısı PgBouncer transaction mode, `pg_advisory_lock` korunmaz.
 
@@ -84,11 +84,11 @@ Destructive check lokalde push öncesi koş (kendin için):
 npm run db:check-destructive
 ```
 
-## Prod promote — hangi komutu ne zaman
+## Prod promote, hangi komutu ne zaman
 
 ### A. Sadece migration (schema değişti)
 
-Yukarıdaki "Schema değişikliği yaparken sıra" bölümüne bak — `scripts/migrate-prod.ts` wrapper'ı push öncesi prod'a migrate eder.
+Yukarıdaki "Schema değişikliği yaparken sıra" bölümüne bak, `scripts/migrate-prod.ts` wrapper'ı push öncesi prod'a migrate eder.
 
 ### B. Yeni tarif batch seed + retrofit + audit (Codex batch promote)
 
@@ -98,13 +98,13 @@ Dev'de batch temizse prod'a şu sırayla:
 # 1. Env'i prod'a geçir (bu shell oturumu için)
 $env:DATABASE_URL = (Get-Content .env.production.local | Select-String '^DATABASE_URL' | ForEach-Object { $_ -replace '^DATABASE_URL="?','' -replace '"$','' })
 
-# 2. Seed (idempotent — zaten olanı atlar)
+# 2. Seed (idempotent, zaten olanı atlar)
 npx tsx scripts/seed-recipes.ts --confirm-prod
 
 # 3. Retrofit (allergens + diet + cuisine)
 npx tsx scripts/retrofit-all.ts --confirm-prod
 
-# 4. Audit — PASS bekliyoruz
+# 4. Audit, PASS bekliyoruz
 npx tsx scripts/audit-deep.ts
 
 # 5. CRITICAL varsa ilgili fix'i apply (dev'de yaptıklarının aynısı)
@@ -118,7 +118,7 @@ Remove-Item Env:\DATABASE_URL
 Her adımda 3 saniye "son şans" warning görürsün:
 
 ```
-⚠️ [seed-recipes] PRODUCTION write (ep-broad-pond-...) — 3 saniye içinde başlayacak...
+⚠️ [seed-recipes] PRODUCTION write (ep-broad-pond-...), 3 saniye içinde başlayacak...
    İptal için Ctrl+C (şimdi).
 ```
 
@@ -150,7 +150,7 @@ Bu **destructive**: dev'deki extra deneyler silinir. Emin ol.
 
 ## Codex ne yapıyor?
 
-Codex'in PC'sindeki `.env.local` **her zaman dev URL** içerir — prod URL'ini görmez. Codex batch push ettiğinde:
+Codex'in PC'sindeki `.env.local` **her zaman dev URL** içerir, prod URL'ini görmez. Codex batch push ettiğinde:
 
 - GitHub'a push → Vercel Preview deploy tetiklenir (dev DB'ye bağlı)
 - Kerem preview'a bakar, diff review eder
@@ -165,10 +165,10 @@ Codex'in PC'sindeki `.env.local` **her zaman dev URL** içerir — prod URL'ini 
 
 ### Prod'a yanlışlıkla yazdım
 
-Muhtemelen yazmadın — guard iki katman engel koyar:
+Muhtemelen yazmadın, guard iki katman engel koyar:
 
 1. `--confirm-prod` flag yoksa script exit 1 yapar, hiçbir query koşmaz
-2. Flag varsa 3 saniye "son şans" warning bekler — Ctrl+C'e zamanın olur
+2. Flag varsa 3 saniye "son şans" warning bekler, Ctrl+C'e zamanın olur
 
 Yine de şüphedeysen `audit-deep.ts` koş, değerleri prod'la karşılaştır (Neon dashboard → Tables).
 
@@ -185,4 +185,4 @@ const PROD_HOST_PREFIX = "ep-broad-pond";
 const DEV_HOST_PREFIX = "ep-dry-bread";
 ```
 
-Neon branch'i sıfırlayıp farklı host alırsan buraya da yeni prefix'i yaz. Yoksa guard "unknown branch" der, warn verir ama devam eder — ideal değil.
+Neon branch'i sıfırlayıp farklı host alırsan buraya da yeni prefix'i yaz. Yoksa guard "unknown branch" der, warn verir ama devam eder, ideal değil.

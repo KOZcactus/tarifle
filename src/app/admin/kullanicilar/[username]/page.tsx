@@ -158,7 +158,7 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
               </p>
             )}
             <p className="mt-1 text-sm text-text-muted">
-              @{user.username ?? "—"}
+              @{user.username ?? ","}
               {user.email && <span className="ml-2">· {user.email}</span>}
             </p>
             {user.bio && <p className="mt-2 text-sm text-text">{user.bio}</p>}

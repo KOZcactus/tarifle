@@ -200,7 +200,7 @@ async function main(): Promise<void> {
 
   const verb = APPLY ? "Applied" : "Would apply";
   console.log(`\n${verb}: ${totalChanges} change(s)`);
-  if (!APPLY) console.log("(dry run — re-run with --apply to write)");
+  if (!APPLY) console.log("(dry run, re-run with --apply to write)");
 }
 
 main()

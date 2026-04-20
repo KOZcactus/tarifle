@@ -108,11 +108,11 @@ describe("passwordSetSchema", () => {
   });
 
   it("does NOT require a currentPassword field (OAuth-only)", () => {
-    // Distinguishes this schema from passwordChangeSchema — caller only has
+    // Distinguishes this schema from passwordChangeSchema, caller only has
     // two fields to fill when adding a password for the first time.
     const parsed = passwordSetSchema.safeParse({
       ...valid,
-      // extra `currentPassword` is ignored — Zod strips unknown keys by
+      // extra `currentPassword` is ignored, Zod strips unknown keys by
       // default, but we assert behaviour explicitly here.
       currentPassword: "anything",
     });

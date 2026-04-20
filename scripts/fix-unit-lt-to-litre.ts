@@ -57,7 +57,7 @@ async function main(): Promise<void> {
     });
     console.log(`\n✅ Updated ${rows.length} ingredient row(s)`);
   } else if (!APPLY) {
-    console.log(`\n(dry run — re-run with --apply to write)`);
+    console.log(`\n(dry run, re-run with --apply to write)`);
   }
 }
 

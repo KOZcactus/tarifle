@@ -1,11 +1,11 @@
 /**
- * Mod B export — partial-field translation retrofit for a specific batch.
+ * Mod B export, partial-field translation retrofit for a specific batch.
  *
  * Companion to `scripts/export-recipes-for-translation.ts` (Mod A). Mod A
  * runs on `translations IS NULL` and expects Codex to fill `title +
  * description`. Mod B runs on a **specific batch** (e.g. batch 12, whose
  * recipes already have EN/DE title+description from Mod A minimum) and
- * asks Codex to fill the remaining fields — `ingredients`, `steps`, and
+ * asks Codex to fill the remaining fields, `ingredients`, `steps`, and
  * optionally `tipNote` / `servingSuggestion`.
  *
  * Usage:
@@ -35,7 +35,7 @@
  * Codex reads this, sees which locale fields are already populated ("X_current"
  * non-empty or "X_present" = 1), and produces a JSON file filling ONLY the
  * empty fields. `scripts/import-translations-b.ts` then shallow-merges the new
- * locale bundle into `Recipe.translations` — existing fields are preserved
+ * locale bundle into `Recipe.translations`, existing fields are preserved
  * unless the JSON explicitly supplies a replacement.
  */
 import { PrismaClient } from "@prisma/client";
@@ -238,7 +238,7 @@ async function main(): Promise<void> {
   }
 
   if (slugs.length === 0) {
-    console.error("No slugs resolved — aborting.");
+    console.error("No slugs resolved, aborting.");
     process.exit(1);
   }
 
@@ -298,7 +298,7 @@ async function main(): Promise<void> {
         const flags = [
           amt ? amt : null,
           i.isOptional ? "(opsiyonel)" : null,
-          i.group ? `— ${i.group}` : null,
+          i.group ? `, ${i.group}` : null,
         ]
           .filter(Boolean)
           .join(" ");
@@ -348,7 +348,7 @@ async function main(): Promise<void> {
     `✅ wrote ${rows.length} rows to ${path.relative(process.cwd(), file)}`,
   );
 
-  // Quick coverage stats — lets the caller eyeball how much work Mod B actually
+  // Quick coverage stats, lets the caller eyeball how much work Mod B actually
   // has to do before handing off to Codex.
   let needsEnIngredients = 0;
   let needsDeIngredients = 0;

@@ -100,7 +100,7 @@ async function main(): Promise<void> {
   console.log(
     `\n${verb}: ${willWrite} tag link(s) | Already tagged: ${alreadyTagged}`,
   );
-  if (!APPLY) console.log("(dry run — re-run with --apply to write)");
+  if (!APPLY) console.log("(dry run, re-run with --apply to write)");
 }
 
 main()

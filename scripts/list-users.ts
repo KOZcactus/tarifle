@@ -1,7 +1,7 @@
 /**
  * Print every user with their email + whether they have a password (credentials)
  * and which OAuth providers are linked. Useful when debugging sign-in
- * conflicts like "OAuthAccountNotLinked" — shows you the exact DB state.
+ * conflicts like "OAuthAccountNotLinked", shows you the exact DB state.
  *
  * Usage:
  *   npx tsx scripts/list-users.ts

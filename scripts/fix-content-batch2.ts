@@ -3,14 +3,14 @@
  * translation audit (docs/translations-batch-2.json issues field).
  *
  * Two fix families:
- *   A. Cuisine reassignment (25) — recipes whose Recipe.cuisine field was
+ *   A. Cuisine reassignment (25), recipes whose Recipe.cuisine field was
  *      wrong (international dish marked 'tr', Turkish dish marked 'th' or
  *      'cn', etc).
- *   B. Missing ingredient (16 adds across 15 recipes) — a step references
+ *   B. Missing ingredient (16 adds across 15 recipes), a step references
  *      an ingredient that wasn't in the ingredients list.
  *
  * Deliberately skipped:
- *   Cuisine taxonomy gaps (7 recipes) — no country code available:
+ *   Cuisine taxonomy gaps (7 recipes), no country code available:
  *     - limonlu-posset, london-fog        (British / no `gb`)
  *     - lomo-saltado, pisco-sour          (Peruvian / no `pe`)
  *     - pavlova                            (Australia-NZ / no `au`)
@@ -20,7 +20,7 @@
  *                                           canonical cuisine)
  *   Future taxonomy expansion could address these.
  *
- *   Reverse "unused ingredient" (5) — ingredient listed but not used in
+ *   Reverse "unused ingredient" (5), ingredient listed but not used in
  *   steps. Could be intentional serving-side garnish or legitimate
  *   recipe simplification; needs case-by-case review:
  *     maqluba (yoğurt), mas-fasulyesi-yemegi (yoğurt),
@@ -28,14 +28,14 @@
  *     peynirli-quesadilla (taze soğan).
  *
  *   Nicoise-salatasi: Codex flagged dressing components ambiguously
- *   (mustard-based dressing) — the recipe lists vinaigrette base oil+lemon
+ *   (mustard-based dressing), the recipe lists vinaigrette base oil+lemon
  *   but not hardal. Manual content review, deferred.
  *
- *   6 calorie anomalies — all legitimate (low-cal drinks + dipping
+ *   6 calorie anomalies, all legitimate (low-cal drinks + dipping
  *   sauces): kimchi, kusburnu-cayi, limonlu-zencefil-cayi, mirra,
  *   nuoc-cham, ponzu-sos.
  *
- *   1 false positive: medianoche-sandwich "vejetaryen tag yok" — no
+ *   1 false positive: medianoche-sandwich "vejetaryen tag yok", no
  *   vejetaryen tag is CORRECT because the sandwich contains pork.
  *
  *   Idempotent: skips if cuisine is already correct / ingredient already
@@ -73,28 +73,28 @@ interface IngredientFix {
 
 const CUISINE_FIXES: readonly CuisineFix[] = [
   { slug: "key-lime-pie", expected: "us", reason: "Florida-origin American pie." },
-  { slug: "klasik-menemen", expected: "tr", reason: "Classic Turkish breakfast — was mis-marked 'th'." },
-  { slug: "kombe", expected: "tr", reason: "Mardin regional Turkish cookie — was mis-marked 'th'." },
-  { slug: "koshari", expected: "me", reason: "Egyptian street food — 'me' closest in taxonomy (no `eg`)." },
+  { slug: "klasik-menemen", expected: "tr", reason: "Classic Turkish breakfast, was mis-marked 'th'." },
+  { slug: "kombe", expected: "tr", reason: "Mardin regional Turkish cookie, was mis-marked 'th'." },
+  { slug: "koshari", expected: "me", reason: "Egyptian street food, 'me' closest in taxonomy (no `eg`)." },
   { slug: "kottbullar", expected: "se", reason: "Swedish meatballs." },
   { slug: "kulebyaka", expected: "ru", reason: "Russian pie." },
   { slug: "kvass", expected: "ru", reason: "Russian fermented drink." },
-  { slug: "lor-mantisi", expected: "tr", reason: "Turkish ricotta mantı — was mis-marked 'cn'." },
+  { slug: "lor-mantisi", expected: "tr", reason: "Turkish ricotta mantı, was mis-marked 'cn'." },
   { slug: "loubia", expected: "ma", reason: "Moroccan white-bean stew." },
   { slug: "maduros", expected: "cu", reason: "Cuban-style sweet plantains." },
-  { slug: "magrip-saksukasi", expected: "ma", reason: "North African (Maghrib) shakshuka — was mis-marked 'cn'." },
+  { slug: "magrip-saksukasi", expected: "ma", reason: "North African (Maghrib) shakshuka, was mis-marked 'cn'." },
   { slug: "mai-tai", expected: "us", reason: "Tiki cocktail (California origin)." },
   { slug: "manhattan", expected: "us", reason: "Classic American whisky cocktail." },
-  { slug: "mansaf", expected: "me", reason: "Jordanian/Levantine lamb-rice — 'me' covers Levant." },
-  { slug: "manti", expected: "tr", reason: "Turkish mantı — was mis-marked 'cn'." },
-  { slug: "maqluba", expected: "me", reason: "Palestinian/Levantine layered rice — 'me' covers Levant." },
+  { slug: "mansaf", expected: "me", reason: "Jordanian/Levantine lamb-rice, 'me' covers Levant." },
+  { slug: "manti", expected: "tr", reason: "Turkish mantı, was mis-marked 'cn'." },
+  { slug: "maqluba", expected: "me", reason: "Palestinian/Levantine layered rice, 'me' covers Levant." },
   { slug: "margarita", expected: "mx", reason: "Mexican tequila cocktail." },
   { slug: "martini", expected: "us", reason: "Classic American gin/vermouth cocktail." },
   { slug: "mechoui", expected: "ma", reason: "Maghrib slow-roasted lamb." },
   { slug: "medovik", expected: "ru", reason: "Russian honey cake." },
   { slug: "mi-quang", expected: "vn", reason: "Vietnamese Quảng-region noodle dish." },
   { slug: "moscow-mule", expected: "us", reason: "American cocktail (LA origin, despite the name)." },
-  { slug: "muhallebi", expected: "tr", reason: "Turkish milk pudding — was mis-marked 'th'." },
+  { slug: "muhallebi", expected: "tr", reason: "Turkish milk pudding, was mis-marked 'th'." },
   { slug: "mujaddara", expected: "me", reason: "Levantine lentil-rice dish." },
   { slug: "musakhan", expected: "me", reason: "Palestinian sumac chicken." },
   { slug: "negroni-sbagliato", expected: "it", reason: "Italian aperitivo cocktail." },
@@ -105,10 +105,10 @@ const CUISINE_FIXES: readonly CuisineFix[] = [
   { slug: "panettone", expected: "it", reason: "Italian Christmas bread." },
   { slug: "pasta-alla-norma", expected: "it", reason: "Sicilian/Italian pasta." },
   { slug: "patates-graten", expected: "fr", reason: "French potato gratin." },
-  { slug: "patatesli-yumurta", expected: "tr", reason: "Turkish breakfast skillet — was mis-marked 'th'." },
-  { slug: "pazi-kavurmasi", expected: "tr", reason: "Turkish chard sauté — was mis-marked 'th'." },
+  { slug: "patatesli-yumurta", expected: "tr", reason: "Turkish breakfast skillet, was mis-marked 'th'." },
+  { slug: "pazi-kavurmasi", expected: "tr", reason: "Turkish chard sauté, was mis-marked 'th'." },
   { slug: "penicillin-kokteyl", expected: "us", reason: "Modern NYC whisky cocktail." },
-  { slug: "pepecura", expected: "tr", reason: "Karadeniz pepeçura — was mis-marked 'th'." },
+  { slug: "pepecura", expected: "tr", reason: "Karadeniz pepeçura, was mis-marked 'th'." },
   { slug: "picadillo-cubano", expected: "cu", reason: "Cuban ground-beef dish." },
   { slug: "pirozhki", expected: "ru", reason: "Russian stuffed buns." },
 ];
@@ -240,12 +240,12 @@ async function applyCuisineFixes(): Promise<{ applied: number; skipped: number }
       select: { id: true, slug: true, cuisine: true },
     });
     if (!recipe) {
-      console.log(`❌ [${fix.slug}] not found — skip.`);
+      console.log(`❌ [${fix.slug}] not found, skip.`);
       continue;
     }
 
     if (recipe.cuisine === fix.expected) {
-      console.log(`⏭️  [${fix.slug}] already "${recipe.cuisine}" — skip.`);
+      console.log(`⏭️  [${fix.slug}] already "${recipe.cuisine}", skip.`);
       skipped++;
       continue;
     }
@@ -287,7 +287,7 @@ async function applyIngredientFixes(): Promise<{ applied: number; skipped: numbe
       },
     });
     if (!recipe) {
-      console.log(`❌ [${fix.slug}] not found — skip.`);
+      console.log(`❌ [${fix.slug}] not found, skip.`);
       continue;
     }
 
@@ -299,7 +299,7 @@ async function applyIngredientFixes(): Promise<{ applied: number; skipped: numbe
       select: { id: true, name: true },
     });
     if (existing) {
-      console.log(`⏭️  [${fix.slug}] already has "${existing.name}" — skip.`);
+      console.log(`⏭️  [${fix.slug}] already has "${existing.name}", skip.`);
       skipped++;
       continue;
     }
@@ -332,7 +332,7 @@ async function applyIngredientFixes(): Promise<{ applied: number; skipped: numbe
 async function main() {
   if (APPLY) assertDbTarget("fix-content-batch2");
 
-  console.log(`${APPLY ? "APPLYING" : "DRY-RUN"} — content fixes from batch 2 audit`);
+  console.log(`${APPLY ? "APPLYING" : "DRY-RUN"}, content fixes from batch 2 audit`);
 
   const cuisineResult = await applyCuisineFixes();
   const ingredientResult = await applyIngredientFixes();
@@ -343,7 +343,7 @@ async function main() {
   console.log("");
   if (APPLY) {
     console.log(
-      `🎉 done — ${appliedTotal} update(s) applied, ${skippedTotal} already in place.`,
+      `🎉 done, ${appliedTotal} update(s) applied, ${skippedTotal} already in place.`,
     );
     console.log("  cuisine:    ", cuisineResult.applied, "applied,", cuisineResult.skipped, "skipped");
     console.log("  ingredient: ", ingredientResult.applied, "applied,", ingredientResult.skipped, "skipped");

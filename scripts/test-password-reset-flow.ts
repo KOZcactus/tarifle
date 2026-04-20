@@ -3,7 +3,7 @@
  * issues a token via the email helper, then consumes it and verifies the
  * passwordHash changed. Cleans up everything at the end.
  *
- * Does NOT go through the HTTP layer — unit tests cover validator shape and
+ * Does NOT go through the HTTP layer, unit tests cover validator shape and
  * this script covers the DB transaction side. UI rendering is verified by
  * preview snapshot.
  */
@@ -41,7 +41,7 @@ async function main() {
     "../src/lib/email/password-reset"
   );
 
-  // Send — also creates a token row. We intercept the token by reading DB
+  // Send, also creates a token row. We intercept the token by reading DB
   // after the send; the send itself will hit Resend/console provider which
   // is fine for this test (nobody's inbox owns @tarifle.test).
   const sendResult = await sendPasswordResetEmail(email, "Smoke");

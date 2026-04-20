@@ -55,9 +55,9 @@ describe("levenshteinDistance", () => {
   });
 });
 
-describe("fuzzyMatches — length-based threshold", () => {
+describe("fuzzyMatches, length-based threshold", () => {
   it("rejects short-word near misses (≤4 char)", () => {
-    // "et" vs "at" tek harf fark ama kelimeler farklı — tolere etmeyiz
+    // "et" vs "at" tek harf fark ama kelimeler farklı, tolere etmeyiz
     expect(fuzzyMatches("et", "at")).toBe(false);
     expect(fuzzyMatches("su", "sup")).toBe(false);
   });

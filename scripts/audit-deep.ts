@@ -67,7 +67,7 @@ function normalizeIngredientName(name: string): string {
 function normalizeTitle(title: string): string {
   let t = trLower(title);
   // Strip noise prefixes that don't signal a distinct recipe ("Ev yapımı X"
-  // is the same as "X"). "klasik" is NOT stripped — "Klasik Menemen" is a
+  // is the same as "X"). "klasik" is NOT stripped, "Klasik Menemen" is a
   // culturally separate preparation from modern "Menemen" (yeşil biber +
   // zeytinyağı vs sivri biber + tereyağı, etc).
   for (const prefix of ["ev yapımı ", "geleneksel "]) {
@@ -95,7 +95,7 @@ function extractTimeFromInstruction(text: string): number | null {
     found = true;
   }
 
-  // Match "N saat" only — "sa" short-form removed because "30 saniye"
+  // Match "N saat" only, "sa" short-form removed because "30 saniye"
   // matches "\d+\s*sa" as substring and inflates to hours.
   const hourPatterns = /(\d+)\s*saat\b/g;
   while ((match = hourPatterns.exec(lower)) !== null) {
@@ -134,7 +134,7 @@ const ALLERGEN_RULES: AllergenRule[] = [
     keywords: [
       "buğday", "bulgur", "yufka", "galeta", "kadayıf", "pide", "lavaş", "börek",
       // Aligned with src/lib/allergens.ts keyword list (Apr 2026):
-      // "arpa" intentionally excluded — matches "arpacık soğan" as substring;
+      // "arpa" intentionally excluded, matches "arpacık soğan" as substring;
       // real arpa ingredients are caught via "bulgur"/"un"/"şehriye".
       "irmik", "çavdar", "kepek", "kraker", "bisküvi", "kek", "hamur",
       "simit", "şehriye", "kuş başı", "baklava",
@@ -151,11 +151,11 @@ const ALLERGEN_RULES: AllergenRule[] = [
       // Regional breads + croutons + muffin variants:
       "muffin", "kruton", "güllaç", "misugaru",
       // Intentionally excluded from keywords: "ramen" (ramen noodle is in
-      // excludePatterns as gluten-free flag — actually wheat-based; fix
+      // excludePatterns as gluten-free flag, actually wheat-based; fix
       // that separately), "soba" (buckwheat, gluten-free).
     ],
     excludePatterns: [
-      // Gluten-free starch/flour/noodle — do NOT flag as GLUTEN
+      // Gluten-free starch/flour/noodle, do NOT flag as GLUTEN
       "pirinç unu", "mısır unu", "pirinç eriştesi", "pirinç nişastası",
       "mısır nişastası", "patates nişastası", "tatlı patates nişastası",
       "nohut unu", "badem unu", "hindistan cevizi unu", "karabuğday",
@@ -165,9 +165,9 @@ const ALLERGEN_RULES: AllergenRule[] = [
       "pirinç noodle", "cam noodle",
       // Gluten-free tortilla variants (Mexican tortilla chips are corn-based):
       "mısır tortilla", "tortilla cipsi",
-      // Herb "kekik" (thyme) is gluten-free — collides with "kek" substring:
+      // Herb "kekik" (thyme) is gluten-free, collides with "kek" substring:
       "kekik", "taze kekik", "kuru kekik", "kekik otu",
-      // NOTE: "ramen noodle" intentionally NOT excluded — actually wheat-based.
+      // NOTE: "ramen noodle" intentionally NOT excluded, actually wheat-based.
     ],
     customMatch: (name: string) => {
       const lower = trLower(name);
@@ -179,25 +179,25 @@ const ALLERGEN_RULES: AllergenRule[] = [
       ];
       if (glutenFreeExempt.some((ex) => lower.startsWith(ex))) return false;
 
-      // "nişasta" — only GLUTEN if plain "nişasta" without qualifier
+      // "nişasta", only GLUTEN if plain "nişasta" without qualifier
       if (lower.includes("nişasta")) {
         if (lower === "nişasta") return true;
         return false;
       }
-      // "erişte" — only GLUTEN if NOT rice/glass/sweet potato noodle
+      // "erişte", only GLUTEN if NOT rice/glass/sweet potato noodle
       if (lower.includes("erişte")) {
         const gfNoodle = ["pirinç", "cam", "tatlı patates", "soba"];
         if (gfNoodle.some((g) => lower.includes(g))) return false;
         return true;
       }
-      // "makarna" — only GLUTEN if NOT rice-based
+      // "makarna", only GLUTEN if NOT rice-based
       if (lower.includes("makarna")) {
         if (lower.includes("pirinç")) return false;
         return true;
       }
-      // "ekmek" + inflected "ekmeği" (ASCII "ekmegi") — GLUTEN
+      // "ekmek" + inflected "ekmeği" (ASCII "ekmegi"), GLUTEN
       if (ascii.includes("ekmek") || ascii.includes("ekmeg")) return true;
-      // "un" as standalone word — only if NOT qualified with gluten-free
+      // "un" as standalone word, only if NOT qualified with gluten-free
       if (hasStandaloneWord(lower, "un")) return true;
       if (lower.endsWith(" unu")) return true;
       return false;
@@ -214,14 +214,14 @@ const ALLERGEN_RULES: AllergenRule[] = [
       "kefir", "filmjölk", "smetana", "kırmızı peynir", "krem peynir",
     ],
     excludePatterns: [
-      // Non-dairy "süt" — do NOT flag as SUT
+      // Non-dairy "süt", do NOT flag as SUT
       "hindistan cevizi sütü", "hindistan cevizi kreması",
       "badem sütü", "yulaf sütü", "pirinç sütü", "soya sütü",
       "kokos sütü", "kokos kreması",
     ],
     customMatch: (name: string) => {
       const lower = trLower(name);
-      // "süt" — only dairy if NOT plant-based
+      // "süt", only dairy if NOT plant-based
       if (lower.includes("süt")) {
         const plantMilk = ["hindistan", "badem", "yulaf", "pirinç", "soya", "kokos"];
         if (plantMilk.some((p) => lower.includes(p))) return false;
@@ -285,7 +285,7 @@ const ALLERGEN_RULES: AllergenRule[] = [
       "kalamar", "ahtapot", "karidesli", "palamut", "istavrit",
       // Crustaceans + mollusks + dried fish flakes:
       "yengeç", "deniz tarağı", "ançüez", "bonito", "istiridye",
-      // "ton" alone collides with "tonik suyu" — use "ton balığı" possessive
+      // "ton" alone collides with "tonik suyu", use "ton balığı" possessive
       // form "ton balıgı" explicitly to catch "Ton balığı" ingredient:
       "ton balığı",
     ],
@@ -312,7 +312,7 @@ function ingredientMatchesAllergen(
   const lower = trLower(ingredientName);
   const asciiLower = asciiNormalize(ingredientName);
 
-  // Exclude patterns first — check both original and ASCII-normalized forms
+  // Exclude patterns first, check both original and ASCII-normalized forms
   // so "Hindistan cevizi sütü" matches exclude "hindistan cevizi sütü" even
   // when ingredient name has Turkish punctuation/diacritics.
   if (
@@ -324,7 +324,7 @@ function ingredientMatchesAllergen(
   // Custom match (e.g. GLUTEN "un" logic, SUT "süt" logic, KUSUYEMIS "ceviz" logic)
   if (rule.customMatch?.(ingredientName)) return true;
 
-  // Keyword substring check — try both forms so "Sandviç ekmeği" (ASCII:
+  // Keyword substring check, try both forms so "Sandviç ekmeği" (ASCII:
   // "sandvic ekmegi") matches keyword "ekmeg" even though bare "ekmek"
   // wouldn't (k vs g consonant softening).
   return rule.keywords.some(
@@ -521,7 +521,7 @@ async function main(): Promise<void> {
 
     // 1d. Duplicate ingredient name (normalized). Same name in different
     // groups is legitimate (e.g. "Şeker" in both "Hamur için" and
-    // "Şerbet için" for revani-style desserts) — dedup key includes group.
+    // "Şerbet için" for revani-style desserts), dedup key includes group.
     const namesSeen = new Map<string, number>();
     for (const ing of ingredients) {
       const key = `${normalizeIngredientName(ing.name)}::${ing.group ?? ""}`;
@@ -578,7 +578,7 @@ async function main(): Promise<void> {
         "INGREDIENT_QUALITY",
         "_global_",
         "Unit Inconsistency",
-        `Both "${a}" (${allUnits.get(a)}) and "${b}" (${allUnits.get(b)}) exist as units — standardize`
+        `Both "${a}" (${allUnits.get(a)}) and "${b}" (${allUnits.get(b)}) exist as units, standardize`
       );
     }
   }
@@ -622,7 +622,7 @@ async function main(): Promise<void> {
           "GROUP_CONSISTENCY",
           slug,
           title,
-          `Group "${group}" contains only 1 ingredient — consider removing or merging`
+          `Group "${group}" contains only 1 ingredient, consider removing or merging`
         );
       }
     }
@@ -836,7 +836,7 @@ async function main(): Promise<void> {
       );
     }
 
-    // 4d. Calorie extremes. Lower bound now 1 — plain coffee/tea recipes
+    // 4d. Calorie extremes. Lower bound now 1, plain coffee/tea recipes
     // legitimately list 0-5 kcal. Anything 0 is likely data omission but
     // 3-5 is realistic for unsweetened filtered coffee.
     if (averageCalories !== null) {
@@ -860,7 +860,7 @@ async function main(): Promise<void> {
     }
 
     // 4e. Macro consistency: |4P + 4C + 9F - kcal| / kcal > 0.20
-    // Skip when kcal < 10 (plain coffee/tea/water-based drinks — trace
+    // Skip when kcal < 10 (plain coffee/tea/water-based drinks, trace
     // calories don't meaningfully decompose into P/C/F).
     const hasAlkollu = tagSlugs.includes("alkollu");
     if (
@@ -986,7 +986,7 @@ async function main(): Promise<void> {
 
     // 4j. type vs categorySlug mismatch
     const validCategorySlugs = TYPE_CATEGORY_MAP[type];
-    // YEMEK is flexible — maps to many categories, so skip
+    // YEMEK is flexible, maps to many categories, so skip
     if (validCategorySlugs && type !== "YEMEK") {
       if (!validCategorySlugs.includes(category.slug)) {
         addFinding(
@@ -1058,7 +1058,7 @@ async function main(): Promise<void> {
         "DUPLICATE_DETECTION",
         slugs[0],
         "Duplicate Description",
-        `${slugs.length} recipes share identical description: [${slugs.join(", ")}] — "${desc.slice(0, 60)}..."`
+        `${slugs.length} recipes share identical description: [${slugs.join(", ")}], "${desc.slice(0, 60)}..."`
       );
     }
   }
@@ -1301,12 +1301,12 @@ async function main(): Promise<void> {
   console.log("=".repeat(70));
   if (criticals.length > 0) {
     console.log(
-      `  RESULT: FAIL — ${criticals.length} CRITICAL issue(s) found`
+      `  RESULT: FAIL, ${criticals.length} CRITICAL issue(s) found`
     );
     console.log("=".repeat(70));
     process.exit(1);
   } else {
-    console.log("  RESULT: PASS — no CRITICAL issues");
+    console.log("  RESULT: PASS, no CRITICAL issues");
     console.log("=".repeat(70));
   }
 }

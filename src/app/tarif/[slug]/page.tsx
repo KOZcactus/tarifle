@@ -282,7 +282,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
     () => 0,
   );
 
-  // AggregateRating yalnızca gerçek review varsa JSON-LD'ye eklenir —
+  // AggregateRating yalnızca gerçek review varsa JSON-LD'ye eklenir,
   // Google structured-data abuse guard (fake/bookmark rating = penalty).
   // Reviews zaten ReviewsSection için fetch edilecek; burada sadece
   // summary paylaşıyoruz çünkü SEO head script render'ından önce gerek.

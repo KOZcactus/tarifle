@@ -1,7 +1,7 @@
 /**
  * Unit tests for the full-text search layer's pure helpers. The
  * tsvector/websearch behaviour itself lives in Postgres and is covered
- * by manual smoke tests after the migration is applied — but the input
+ * by manual smoke tests after the migration is applied, but the input
  * sanitisation is JS-side and guards against injection-like parse
  * failures, so it's worth exercising here.
  */
@@ -26,7 +26,7 @@ describe("sanitizeQueryInput()", () => {
   });
 
   it("preserves websearch_to_tsquery operator characters", () => {
-    // quotes, dash (exclusion), parens — websearch syntax uses these
+    // quotes, dash (exclusion), parens, websearch syntax uses these
     // naturally, don't strip them.
     expect(sanitizeQueryInput('"adana kebap"')).toBe('"adana kebap"');
     expect(sanitizeQueryInput("köfte -acılı")).toBe("köfte -acılı");

@@ -1,5 +1,5 @@
 /**
- * DB hot-path EXPLAIN ANALYZE runner — 600+ tarif ölçeğinde Tarifle'nin
+ * DB hot-path EXPLAIN ANALYZE runner, 600+ tarif ölçeğinde Tarifle'nin
  * en sık tetiklenen sorgularını analiz eder. 1000 tarife gitmeden önce
  * baseline ve darboğaz tespiti.
  *
@@ -9,7 +9,7 @@
  *   3. /tarifler: plain listeleme (status=PUBLISHED + alphabetical)
  *   4. /tarifler: kategori filter
  *   5. /tarifler: allergens hasNone (GIN index)
- *   6. /tarifler: FTS — websearch_to_tsquery + ts_rank_cd (GIN tsvector)
+ *   6. /tarifler: FTS, websearch_to_tsquery + ts_rank_cd (GIN tsvector)
  *   7. /tarif/[slug]: getRecipeBySlug (ingredients + steps + tags + variations)
  *   8. /tarif/[slug]: getSimilarRecipes (category OR type subset)
  *   9. AI Asistan DB filter
@@ -90,7 +90,7 @@ const CASES: QueryCase[] = [
           LIMIT 12`,
   },
   {
-    label: "7. getRecipeBySlug (adana-kebap) — recipe row only",
+    label: "7. getRecipeBySlug (adana-kebap), recipe row only",
     sql: `SELECT id, title, slug, description, emoji, type, difficulty,
                  "prepMinutes", "cookMinutes", "totalMinutes", "servingCount",
                  "averageCalories", protein, carbs, fat,
@@ -164,7 +164,7 @@ function summarizePlan(rows: readonly PlanRow[]): {
   for (const line of lines) {
     const trimmed = line.trim();
     // EXPLAIN çıktısı genelde "->  Seq Scan" / "->  Index Scan" şeklinde
-    // başlar; basit startsWith işe yaramaz — includes kullan.
+    // başlar; basit startsWith işe yaramaz, includes kullan.
     if (/Seq Scan on /.test(trimmed)) seqScans.push(trimmed);
     if (
       /Index Scan /.test(trimmed) ||
@@ -188,7 +188,7 @@ async function runOne(qc: QueryCase): Promise<void> {
     const rows = await prisma.$queryRawUnsafe<PlanRow[]>(explainSql);
     const summary = summarizePlan(rows);
 
-    // Plan satırlarını kısaltılmış yaz — ilk 6 + son 3 genelde yeterli.
+    // Plan satırlarını kısaltılmış yaz, ilk 6 + son 3 genelde yeterli.
     const preview = rows.map((r) => r["QUERY PLAN"]);
     const head = preview.slice(0, 8);
     const tail = preview.slice(-3).filter((l) => !head.includes(l));

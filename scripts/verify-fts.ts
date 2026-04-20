@@ -53,7 +53,7 @@ async function main() {
   `;
   console.log(`  hits: ${hit1.map((h) => `${h.title}(${h.rank.toFixed(3)})`).join(", ")}`);
 
-  console.log("\nTest 5: stemming — 'peynir' stem bulmalı");
+  console.log("\nTest 5: stemming, 'peynir' stem bulmalı");
   const hit2 = await prisma.$queryRaw<{ title: string }[]>`
     SELECT title
     FROM recipes, websearch_to_tsquery('turkish', public.immutable_unaccent('peynir')) AS q(query)

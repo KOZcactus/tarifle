@@ -1,4 +1,4 @@
-# Tarifle — Rekabet Analizi
+# Tarifle, Rekabet Analizi
 
 > **Versiyon:** 1.0 · **Tarih:** 19 Nisan 2026 · **Yazar:** Kerem + Claude
 > (ortak analiz) · **Kullanım:** Feature önceliklendirme + stratejik
@@ -8,7 +8,7 @@
 
 1. [Yönetici özeti](#1-yönetici-özeti)
 2. [Pazar haritası](#2-pazar-haritası)
-3. [Rakip profilleri — Türkiye](#3-rakip-profilleri--türkiye)
+3. [Rakip profilleri, Türkiye](#3-rakip-profilleri--türkiye)
    - [3.1 Nefisyemektarifleri](#31-nefisyemektarifleri)
    - [3.2 Yemek.com](#32-yemekcom)
    - [3.3 Lezzet.com.tr](#33-lezzetcomtr)
@@ -20,7 +20,7 @@
 5. [Feature karşılaştırma matrisi](#5-feature-karşılaştırma-matrisi)
 6. [Pozisyonlama açıkları](#6-pozisyonlama-açıkları)
 7. [Tarifle differentiator'ları](#7-tarifle-differentiatorları)
-8. [Feature önceliklendirme — 3 dalga](#8-feature-önceliklendirme--3-dalga)
+8. [Feature önceliklendirme, 3 dalga](#8-feature-önceliklendirme--3-dalga)
 9. [Risk + fırsat matrisi](#9-risk--fırsat-matrisi)
 10. [Sonraki adımlar + ölçüm](#10-sonraki-adımlar--ölçüm)
 
@@ -59,7 +59,7 @@ bağlıyor.
   video snippet'ler), AI Asistan'ın "paylaşılabilir sonuç" özelliği
   (trafik loop).
 - **Orta (1-2 ay):** Yemek planlayıcı export (PDF/ICS), topluluk
-  özellikleri (takip/feed — dikkatli), newsletter.
+  özellikleri (takip/feed, dikkatli), newsletter.
 - **Uzun (3-6 ay):** Mobil uygulama (React Native), video altyapısı
   (Remotion), premium katman (reklamsız + sınırsız menü plan).
 
@@ -98,11 +98,11 @@ bağlıyor.
 | **Niş (diyet/sağlık)** | Spesifik kullanıcı | Fitnessaga, sağlıklı-tarif.net |
 
 Tarifle **hibrit + moderasyon + diyet kümesinin kesişiminde** kendine
-yer açıyor — rakiplerden birinin baskın olmadığı boşluk.
+yer açıyor, rakiplerden birinin baskın olmadığı boşluk.
 
 ---
 
-## 3. Rakip profilleri — Türkiye
+## 3. Rakip profilleri, Türkiye
 
 ### 3.1 Nefisyemektarifleri
 
@@ -127,9 +127,9 @@ tarifin 50 farklı versiyonu sıradan.
   bilemiyor.
 - **UX modası geçmiş.** Reklam yoğunluğu rahatsızlık veriyor, mobile
   web deneyimi pop-up dolu.
-- **Alerjen/diyet filtresi minimum** — arama içinde "glutensiz" arama
+- **Alerjen/diyet filtresi minimum**, arama içinde "glutensiz" arama
   kelimesi olarak var, yapısal filtre yok.
-- **Kişiselleştirme yok** — herkes aynı homepage, aynı öneri motoru.
+- **Kişiselleştirme yok**, herkes aynı homepage, aynı öneri motoru.
 - Editör kürasyonu yok; algoritma popülerliğe bağlı, topluluk tuzakları
   (mucize diyet tarifleri, mitleşmiş yöntemler) ön plana çıkabiliyor.
 - Mutfak terimleri tutarsız (her kullanıcı kendi ağzıyla yazar).
@@ -162,10 +162,10 @@ kültürü" makaleleri belirgin.
 - Pinterest, Google Discover entegre (içerik görsel-odaklı).
 
 **Zayıf yanlar:**
-- **Kullanıcı-generated içerik eklemek zor** — topluluk katkısı düşük,
+- **Kullanıcı-generated içerik eklemek zor**, topluluk katkısı düşük,
   daha çok "hazır tarif okuyucu" modeli.
-- **Alerjen filtresi yok** — diyet tag'i sınırlı.
-- **Kişiselleştirme yok** — homepage herkese aynı.
+- **Alerjen filtresi yok**, diyet tag'i sınırlı.
+- **Kişiselleştirme yok**, homepage herkese aynı.
 - Reklam yoğunluğu (videolardan önce + banner) UX bozuyor.
 - Kategori hiyerarşisi zayıf; Türk mutfağı bölgeleri derli toplu değil.
 - Mobile web yavaş, LCP kötü (tahminen 4s+).
@@ -183,21 +183,21 @@ yapısal alerjen/diyet filtreleri, topluluk + editorial hibridi.
 **Web:** lezzet.com.tr · **Kuruluş:** Lezzet dergisi (1995) dijital
 uzantısı.
 
-**Model:** Saf editorial — dergi kökenli. Şef + gıda yazarı tarifleri
+**Model:** Saf editorial, dergi kökenli. Şef + gıda yazarı tarifleri
 uzun formatlı, fotoğraflı, magazin tarzı. Kullanıcı tarifi yok (veya
 çok kısıtlı).
 
 **Güçlü yanlar:**
 - Prestij marka, otoriteyi taşıyor.
 - Derin Türk mutfağı / bölgesel içerik.
-- Gastronomi yazıları + şef portreleri — blog niteliği yüksek.
+- Gastronomi yazıları + şef portreleri, blog niteliği yüksek.
 - Çok profesyonel fotoğraf.
 
 **Zayıf yanlar:**
 - **Tarif sayısı düşük** (birkaç bin), günlük kullanım için yetersiz.
-- **Topluluk sıfır** — yorum/yıldız yok.
+- **Topluluk sıfır**, yorum/yıldız yok.
 - **Mobile deneyim zayıf**, pop-up + newsletter overlay agresif.
-- **Trafik sınırlı** — Nefis'in ~5-10'da biri.
+- **Trafik sınırlı**, Nefis'in ~5-10'da biri.
 - Arama/filtreleme ilkel.
 
 **Monetizasyon:** Dergi abonelik + dijital reklam + marka işbirliği.
@@ -220,10 +220,10 @@ ama Hürriyet'in haber/yaşam ekosisteminin parçası.
 - Yemek haberi + tarif hybrid.
 
 **Zayıf yanlar:**
-- **Marka konfüzyonu** — Sofra mu, Hürriyet mi, Doğan mı? Kullanıcı
+- **Marka konfüzyonu**, Sofra mu, Hürriyet mi, Doğan mı? Kullanıcı
   "tarif sitesi" olarak net pozisyon algılamıyor.
 - Tarif sayısı Nefis'in çok altında.
-- UX orta — reklam yoğun ama Yemek.com kadar parlak değil.
+- UX orta, reklam yoğun ama Yemek.com kadar parlak değil.
 - Mobile app zayıf (Play Store 3.5 / 10K).
 - Topluluk sıfır.
 
@@ -281,9 +281,9 @@ yazıları ön planda.
 
 **Öne çıkanlar:**
 - **Premium subscription $5/ay** (reklamsız + özel içerik + meal plan).
-- Editorial kalite bench — her tarif food writer imzalı.
+- Editorial kalite bench, her tarif food writer imzalı.
 - Video: kısa pişirme video + detay yazı birleşik.
-- "Recipe notes" — kullanıcı kendi notunu tarife ekliyor, profilinde
+- "Recipe notes", kullanıcı kendi notunu tarife ekliyor, profilinde
   saklanıyor.
 - Strong newsletter.
 
@@ -295,7 +295,7 @@ yazıları ön planda.
 
 ## 5. Feature karşılaştırma matrisi
 
-**Legend:** ✅ Tam özellik · ⚠️ Kısmi / zayıf · ❌ Yok · — İlgisiz
+**Legend:** ✅ Tam özellik · ⚠️ Kısmi / zayıf · ❌ Yok ·, İlgisiz
 
 | Feature | Tarifle | Nefis | Yemek | Lezzet | Sofra | Mutfak | Allrecipes | NYT |
 |---|---|---|---|---|---|---|---|---|
@@ -305,7 +305,7 @@ yazıları ön planda.
 | Video entegre | ❌ | ⚠️ | ✅ | ⚠️ | ⚠️ | ❌ | ⚠️ | ✅ |
 | Kullanıcı tarifi (UGC) | ✅ | ✅ | ⚠️ | ❌ | ❌ | ⚠️ | ✅ | ❌ |
 | Çoklu dil (TR/EN/DE) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ |
-| Bölgesel Türk mutfağı dağılımı | ✅ | ⚠️ | ⚠️ | ✅ | ⚠️ | ⚠️ | — | — |
+| Bölgesel Türk mutfağı dağılımı | ✅ | ⚠️ | ⚠️ | ✅ | ⚠️ | ⚠️ |, |, |
 | Blog / makale | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ⚠️ | ✅ |
 | **Arama + Filtre** |
 | Full-text arama | ✅ | ✅ | ✅ | ⚠️ | ⚠️ | ⚠️ | ✅ | ✅ |
@@ -359,32 +359,32 @@ yazıları ön planda.
 
 ## 6. Pozisyonlama açıkları
 
-**Açık 1 — "Güvenilir alerjen bilgisi + diyet uyumu"**
+**Açık 1, "Güvenilir alerjen bilgisi + diyet uyumu"**
 Türkiye'de gluten intoleransı / laktoz hassasiyeti olan milyonlarca
 insan var ama hiçbir rakip sistematik alerjen filtrasyonu sunmuyor.
-Arama kutusuna "glutensiz kek" yazmak gerekiyor — yapısal değil.
+Arama kutusuna "glutensiz kek" yazmak gerekiyor, yapısal değil.
 Tarifle'de "Glutensiz" diyet filter'ı + allergen exclude profile
 kaydetme mevcut. **Bu pazar açığı Tarifle'nin en kuvvetli müşteri
 edinme koridoru.**
 
-**Açık 2 — "Reklam+tracking'siz güvenli ortam"**
+**Açık 2, "Reklam+tracking'siz güvenli ortam"**
 Çocuklu aileler + privacy-conscious kitle rakiplerin reklam+popup
 yoğunluğundan rahatsız. Tarifle'nin "zero tracking" duruşu niş ama
 yüksek dönüşümlü bir pozisyon.
 
-**Açık 3 — "Haftalık menü + alışveriş listesi entegrasyonu"**
+**Açık 3, "Haftalık menü + alışveriş listesi entegrasyonu"**
 TR pazarda first-mover. Özellikle çalışan ebeveynler için somut değer.
 
-**Açık 4 — "Bölgesel Türk mutfağı derin katalogu"**
+**Açık 4, "Bölgesel Türk mutfağı derin katalogu"**
 Kurumsal rakipler (Yemek.com, Lezzet) bölge kapsıyor ama dağılım
 sistematik değil. Tarifle'de 7 bölge × her batch'te dengeli seed
 prosedürü → derin ve kapsamlı.
 
-**Açık 5 — "Modern web performansı"**
-Core Web Vitals yeşil + A11y AA + PWA — hiçbir TR rakip yok. Hem SEO
+**Açık 5, "Modern web performansı"**
+Core Web Vitals yeşil + A11y AA + PWA, hiçbir TR rakip yok. Hem SEO
 avantajı (Google ranking signals) hem kullanıcı deneyimi.
 
-**Açık 6 — "Editor's pick + community denge"**
+**Açık 6, "Editor's pick + community denge"**
 NYT Cooking gibi editorial yok; Nefis gibi saf community yok. Tarifle
 hibrit: kural-tabanlı moderasyon + editör seçimi + topluluk uyarlamaları.
 
@@ -394,38 +394,38 @@ hibrit: kural-tabanlı moderasyon + editör seçimi + topluluk uyarlamaları.
 
 **Somut ve bugün mevcut:**
 
-1. **Alerjen sistemi (10 kategori)** + **diyet filtresi (5 seçenek)** —
+1. **Alerjen sistemi (10 kategori)** + **diyet filtresi (5 seçenek)**
    arama bazında değil yapısal filter.
-2. **AI Asistan "evdeki malzemelerle"** — rule-based ama pantry filter
+2. **AI Asistan "evdeki malzemelerle"**, rule-based ama pantry filter
    + diet + süre + mutfak matrisi. Rakiplerde yok.
 3. **Haftalık menü planlayıcı** + alışveriş listesi tek-tık entegrasyon.
-4. **Editör Seçimi rozeti** — admin kürasyonlu, rotasyonel haftalık.
-5. **Uyarlama/varyasyon sistemi** — kullanıcı tarifi "fork"layıp kendi
+4. **Editör Seçimi rozeti**, admin kürasyonlu, rotasyonel haftalık.
+5. **Uyarlama/varyasyon sistemi**, kullanıcı tarifi "fork"layıp kendi
    versiyonunu paylaşıyor, orijinal tarife bağlı kalıyor.
-6. **3 dilli içerik** (TR + EN + DE) — 400 tarif ingredient/step
+6. **3 dilli içerik** (TR + EN + DE), 400 tarif ingredient/step
    çevirisi tam, geri kalan 1300 title+description.
-7. **44 programatik landing sayfası** — SEO kaldıracı (mutfak × 24 +
+7. **44 programatik landing sayfası**, SEO kaldıracı (mutfak × 24 +
    etiket × 15 + diyet × 5).
-8. **Kural tabanlı pre-flight moderasyon** — yorum/uyarlama spam/
+8. **Kural tabanlı pre-flight moderasyon**, yorum/uyarlama spam/
    küfür/URL filtrelenir, admin kuyruğunda review.
-9. **Sıfır tracking + sıfır reklam** — Kullanım koşulları + gizlilik
+9. **Sıfır tracking + sıfır reklam**, Kullanım koşulları + gizlilik
    politikası manifest niteliğinde.
-10. **44 bölgesel Türk tarif** (7 bölge eşit dağılım) — sistematik,
+10. **44 bölgesel Türk tarif** (7 bölge eşit dağılım), sistematik,
     her Codex batch'inde korunan kural.
 
 **Kavramsal (marka katmanı):**
 
-- "Modern ama klasik" — Türkçe tarif platformunda UI'yi 2026'ya taşıyan
+- "Modern ama klasik", Türkçe tarif platformunda UI'yi 2026'ya taşıyan
   tek site.
-- "Güvenli öğün" — alerjen + kaynak doğruluğu + editör onayı.
-- "Şeffaf teknoloji" — legal sayfalar, güvenlik sayfası, bcrypt + Neon
+- "Güvenli öğün", alerjen + kaynak doğruluğu + editör onayı.
+- "Şeffaf teknoloji", legal sayfalar, güvenlik sayfası, bcrypt + Neon
   PITR açıkça anlatılıyor (rakipler gizliyor).
 
 ---
 
-## 8. Feature önceliklendirme — 3 dalga
+## 8. Feature önceliklendirme, 3 dalga
 
-**🚀 Kısa vadeli (0-2 hafta) — quick win + trafik loop**
+**🚀 Kısa vadeli (0-2 hafta), quick win + trafik loop**
 
 | İş | Kaynak | Etki | Neden şimdi |
 |---|---|---|---|
@@ -433,26 +433,26 @@ hibrit: kural-tabanlı moderasyon + editör seçimi + topluluk uyarlamaları.
 | AI Asistan "paylaşılabilir sonuç" linki | 1 gün | 🟢 Yüksek viral | Kullanıcı AI sonucunu WhatsApp'a atabilsin. |
 | Pinterest meta tags (rich pins) | 2 saat | 🟢 Trafik açısı | Nefis'in görsel paylaşımdan aldığı yüksek trafik bizim değil. |
 | HowTo schema step anchor deep-link | ✅ yapıldı | 🟢 SEO | Bu oturumda yapıldı. |
-| Blog — ilk 5-8 makale (iki ayda) | 1-2 gün/makale | 🟢 SEO long-tail | Altyapı hazır. İçerik doldurmak. |
+| Blog, ilk 5-8 makale (iki ayda) | 1-2 gün/makale | 🟢 SEO long-tail | Altyapı hazır. İçerik doldurmak. |
 | Admin analytics dashboard | 1 gün | 🟡 Operasyonel | View trend + search freq data-driven karar için. |
 
-**🎯 Orta vadeli (1-2 ay) — stratejik yatırım**
+**🎯 Orta vadeli (1-2 ay), stratejik yatırım**
 
 | İş | Kaynak | Etki | Risk |
 |---|---|---|---|
 | Menü planlayıcı v2 (PDF/ICS export) | 3-5 gün | 🟢 Premium adayı | - |
 | Fotoğraf yükleme (user-upload tarif/varyasyon) | 1 hafta | 🟢 Topluluk loop | Moderasyon yükü |
-| Takip/feed — "aşçıları takip et" | 1-2 hafta | 🟡 Engagement | Spam + toxicity riski |
+| Takip/feed, "aşçıları takip et" | 1-2 hafta | 🟡 Engagement | Spam + toxicity riski |
 | Tarif görselleri (Eren teslimi) | dış | 🟢 UX sıçrama | Dış bağımlı |
 | Video snippet altyapısı (Remotion) | 1-2 hafta | 🟢 Yemek.com rekabeti | Üretim maliyeti |
 | Open Graph image her tarif için dinamik | 2 gün | 🟢 Sosyal paylaşım | - |
 | Mobile app (PWA install promo banner) | 2-3 gün | 🟢 Retention | - |
 
-**🏔 Uzun vadeli (3-6 ay) — büyük bahis**
+**🏔 Uzun vadeli (3-6 ay), büyük bahis**
 
 | İş | Kaynak | Etki | Değerlendirme |
 |---|---|---|---|
-| Premium subscription (reklamsız + sınırsız menü plan) | 2-3 hafta | 🟢 Gelir modeli | Fiyat testi lazım — ₺29/ay, ₺299/yıl tahmin. |
+| Premium subscription (reklamsız + sınırsız menü plan) | 2-3 hafta | 🟢 Gelir modeli | Fiyat testi lazım, ₺29/ay, ₺299/yıl tahmin. |
 | React Native mobil uygulama | 4-6 hafta | 🟢 Retention 3x | Plan doc'ta var, iOS + Android. |
 | AI Asistan v3 (gerçek LLM tercih bazlı) | 2-3 hafta | 🟡 Diferansiyatör | Claude API maliyet + moderasyon. |
 | Açık API (developer access) | 2 hafta | 🟡 B2B | Niş ama marka katmanı. |
@@ -465,29 +465,29 @@ hibrit: kural-tabanlı moderasyon + editör seçimi + topluluk uyarlamaları.
 
 **Fırsatlar:**
 - Türkiye'de **diyet + sağlık** konsensüsü büyüyor (celiac, lactose,
-  vegan) — tarifle'nin alerjen sistemi müşteri edinme koridoru.
-- **Google SGE / AI search** rich structured data'yı ödüllendiriyor —
+  vegan), tarifle'nin alerjen sistemi müşteri edinme koridoru.
+- **Google SGE / AI search** rich structured data'yı ödüllendiriyor
   Recipe + HowTo schema Tarifle'de tam.
-- **Privacy regülasyonu** (KVKK artan denetim) — Tarifle zero-tracking
+- **Privacy regülasyonu** (KVKK artan denetim), Tarifle zero-tracking
   konumlanması uyum avantajı.
 - **Yemek bloğu yazar kitlesi** (Instagram food creator) platform
-  arıyor — Tarifle'nin uyarlama sistemi çekici olabilir.
+  arıyor, Tarifle'nin uyarlama sistemi çekici olabilir.
 
 **Riskler:**
-- **Nefisyemektarifleri'nin SEO domain otoritesi** — 15 yıllık backlink
+- **Nefisyemektarifleri'nin SEO domain otoritesi**, 15 yıllık backlink
   bizim 1. sayfaya geçmemizi yavaşlatabilir. Counter: long-tail +
   programatik landing + içerik kalitesi.
-- **Yemek.com video üretim kapasitesi** — biz Remotion kurana kadar
+- **Yemek.com video üretim kapasitesi**, biz Remotion kurana kadar
   onlar kitleye video alışkanlığı veriyor. Counter: video snippet
   otomatik üretim altyapısı acil.
-- **User-generated content moderasyon riski** — ölçeklendikçe abuse
+- **User-generated content moderasyon riski**, ölçeklendikçe abuse
   artacak. Counter: rate limit + pre-flight filter + admin queue
   çalışıyor.
-- **Gelir modeli eksik** — reklam yok + premium yok = sürdürülebilir
+- **Gelir modeli eksik**, reklam yok + premium yok = sürdürülebilir
   değil. Counter: 6 ay içinde premium/bağış modeli gerekli.
-- **Çoklu dil content debt** — 1.300 tarif henüz ingredient/step
+- **Çoklu dil content debt**, 1.300 tarif henüz ingredient/step
   çevirisi beklemiyor. Counter: Codex Mod B pipeline devam ediyor
-  (400 tamam, 1.300 kalan — 3-4 batch daha).
+  (400 tamam, 1.300 kalan, 3-4 batch daha).
 
 ---
 
@@ -511,16 +511,16 @@ hibrit: kural-tabanlı moderasyon + editör seçimi + topluluk uyarlamaları.
 
 - [ ] Menü planlayıcı v2 (PDF/ICS export)
 - [ ] Open Graph dinamik image + sosyal paylaşım butonu her yerde
-- [ ] Fotoğraf yükleme (user-upload) — pilot 100 tarif ile
-- [ ] Video snippet otomatik altyapı (Remotion) — ilk 20 tarif
+- [ ] Fotoğraf yükleme (user-upload), pilot 100 tarif ile
+- [ ] Video snippet otomatik altyapı (Remotion), ilk 20 tarif
 - [ ] Codex Mod B batch 16 + 17 prod canlı (pipeline'da bekliyor)
 
 **Ay 4-6:**
 
-- [ ] Premium subscription MVP (reklamsız + sınırsız menü plan —
+- [ ] Premium subscription MVP (reklamsız + sınırsız menü plan
   ₺29/ay test)
 - [ ] React Native mobil uygulama beta
-- [ ] Takip/feed — topluluk katmanı v1
+- [ ] Takip/feed, topluluk katmanı v1
 - [ ] Açık API (developer docs + auth)
 
 **Kendi kendine ölçüm soruları (her 3 ayda bir):**

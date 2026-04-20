@@ -1,13 +1,13 @@
 /**
  * Tag + Category admin CRUD action'larının Zod şemalarını test eder. Prisma
- * ya da session'a dokunmaz — sadece input validation katmanı. Kompleks
+ * ya da session'a dokunmaz, sadece input validation katmanı. Kompleks
  * CRUD akışı E2E test'ine bırakılır (şu an integration yok, sonra eklenebilir).
  */
 import { describe, it, expect } from "vitest";
 import { z } from "zod";
 import { slugify } from "@/lib/utils";
 
-// Aynı schema'ları inline tekrar tanımlıyoruz — server action private
+// Aynı schema'ları inline tekrar tanımlıyoruz, server action private
 // şemalarına erişmek için action dosyasını import etmek 'use server'
 // gereği yan etkileri tetikler. Küçük duplication + clear-intent olarak
 // kabul ediyoruz.
@@ -80,7 +80,7 @@ describe("slugify (TR) for tag/category", () => {
   });
 
   it("collapses multiple spaces and trims", () => {
-    // slugify (kütüphane) & karakterini "and"e çevirir — bu beklenen davranış.
+    // slugify (kütüphane) & karakterini "and"e çevirir, bu beklenen davranış.
     expect(slugify("  Çay   ve   Kahve ")).toBe("cay-ve-kahve");
   });
 });

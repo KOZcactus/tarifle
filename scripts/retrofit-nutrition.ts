@@ -78,7 +78,7 @@ async function main(): Promise<void> {
       for (const r of withValues) {
         const est = estimateNutrition(r.ingredients, r.servingCount);
         if (!est) {
-          console.log(`  ${r.slug.padEnd(30)} — estimation failed (low match rate)`);
+          console.log(`  ${r.slug.padEnd(30)}, estimation failed (low match rate)`);
           continue;
         }
 
@@ -121,7 +121,7 @@ async function main(): Promise<void> {
       // Sanity bounds
       if (est.averageCalories < 10 || est.averageCalories > 2000) {
         console.log(
-          `  ⚠ ${r.slug.padEnd(30)} — estimate out of bounds (${est.averageCalories} kcal), skipping`,
+          `  ⚠ ${r.slug.padEnd(30)}, estimate out of bounds (${est.averageCalories} kcal), skipping`,
         );
         noEstimate++;
         continue;
@@ -150,7 +150,7 @@ async function main(): Promise<void> {
     console.log(
       `\n${verb}: ${updated} | Skipped (has values): ${skipped} | No estimate: ${noEstimate} | Total: ${recipes.length}`,
     );
-    if (DRY_RUN) console.log("(dry run — DB'ye dokunulmadı)");
+    if (DRY_RUN) console.log("(dry run, DB'ye dokunulmadı)");
   } finally {
     await prisma.$disconnect();
   }

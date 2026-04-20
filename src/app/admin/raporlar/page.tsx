@@ -158,7 +158,7 @@ export default async function ReportsPage() {
                       <p className="mt-1 text-sm text-text">{report.description}</p>
                     )}
                     <p className="mt-1 text-xs text-text-muted">
-                      {t("reportedByPrefix")} @{report.reporter.username} —{" "}
+                      {t("reportedByPrefix")} @{report.reporter.username},{" "}
                       {new Date(report.createdAt).toLocaleDateString(locale)}
                     </p>
                   </div>

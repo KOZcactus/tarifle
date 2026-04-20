@@ -3,15 +3,15 @@
  * translation audit (docs/translations-batch-3.json issues field).
  *
  * Two fix families:
- *   A. Cuisine reassignment (30) — recipes whose Recipe.cuisine was wrong.
- *   B. Missing ingredient (11) — step references a missing ingredient.
+ *   A. Cuisine reassignment (30), recipes whose Recipe.cuisine was wrong.
+ *   B. Missing ingredient (11), step references a missing ingredient.
  *
  * Deliberately skipped:
- *   Taxonomy gaps (2 — waiting for future expansion):
+ *   Taxonomy gaps (2, waiting for future expansion):
  *     - pupusa (El Salvador, no `sv` code)
  *     - tkemali (Georgian, no `ge` code)
  *
- *   Ambiguous content (2 — deferred for manual content review):
+ *   Ambiguous content (2, deferred for manual content review):
  *     - salade-lyonnaise: dressing components not itemised
  *     - tavuklu-noodle: pan-Asian, no canonical cuisine
  *
@@ -19,17 +19,17 @@
  *     - slata-mechouia is already 'ma' (Codex flagged Tunisian context;
  *       'ma' covers Maghreb including Tunisia, so no change needed)
  *
- *   Reverse/content issues (3 — deferred, need manual review):
+ *   Reverse/content issues (3, deferred, need manual review):
  *     - sambousek: yoğurt listed but not used
  *     - pulled-pork-sandvic: slug/title says pork but ingredients are beef
  *     - tavuk-sote: "Baharatlar" vague (not specific spice names)
  *
- *   Time inconsistencies (6 — total_minutes vs. rest time ambiguity;
+ *   Time inconsistencies (6, total_minutes vs. rest time ambiguity;
  *   need schema-level decision about whether chill/rest time should be
  *   in total_minutes or a separate field): soguk-cay, tavuk-doner,
  *   tavuk-sis, tiramisu, trilece, zencefilli-limonata.
  *
- *   Allergen flags (2 — user-safety concern, manual review required):
+ *   Allergen flags (2, user-safety concern, manual review required):
  *     - sutlac GLUTEN (likely corn starch, no wheat)
  *     - tavuk-gogsu GLUTEN (rice-based dessert)
  *
@@ -76,19 +76,19 @@ const CUISINE_FIXES: readonly CuisineFix[] = [
   { slug: "salpicao", expected: "br", reason: "Brazilian chicken salad." },
   { slug: "san-sebastian-cheesecake", expected: "es", reason: "Basque burnt cheesecake." },
   { slug: "scallion-pancake", expected: "cn", reason: "Chinese savoury pancake." },
-  { slug: "sezar-salata", expected: "us", reason: "Caesar salad — Tijuana-origin, canonical as American restaurant dish." },
+  { slug: "sezar-salata", expected: "us", reason: "Caesar salad, Tijuana-origin, canonical as American restaurant dish." },
   { slug: "shchi", expected: "ru", reason: "Russian cabbage soup." },
   { slug: "sichuan-yesil-fasulye", expected: "cn", reason: "Sichuan-style dry-fried beans." },
   { slug: "sidecar", expected: "fr", reason: "Classic cognac cocktail of Paris origin." },
   { slug: "sinh-to-bo", expected: "vn", reason: "Vietnamese avocado smoothie." },
-  { slug: "sini-koftesi", expected: "tr", reason: "Hatay-region Turkish tray kofte — was mis-marked 'th'." },
+  { slug: "sini-koftesi", expected: "tr", reason: "Hatay-region Turkish tray kofte, was mis-marked 'th'." },
   { slug: "solyanka", expected: "ru", reason: "Russian thick, sour-salty soup." },
   { slug: "sopa-de-lima", expected: "mx", reason: "Yucatán lime soup." },
   { slug: "tacos-al-pastor", expected: "mx", reason: "Mexico City spit-grilled pork tacos." },
   { slug: "tamal-en-cazuela", expected: "cu", reason: "Cuban cornmeal casserole." },
   { slug: "tartar-sos", expected: "fr", reason: "French-origin classic mayonnaise sauce." },
-  { slug: "tavuklu-sezar-wrap", expected: "us", reason: "Caesar wrap — US café standard." },
-  { slug: "tepsi-kebabi", expected: "tr", reason: "Hatay regional Turkish tray kebab — was mis-marked 'th'." },
+  { slug: "tavuklu-sezar-wrap", expected: "us", reason: "Caesar wrap, US café standard." },
+  { slug: "tepsi-kebabi", expected: "tr", reason: "Hatay regional Turkish tray kebab, was mis-marked 'th'." },
   { slug: "thit-kho", expected: "vn", reason: "Vietnamese braised pork belly." },
   { slug: "tutu-de-feijao", expected: "br", reason: "Brazilian bean-flour mash." },
   { slug: "vaca-frita", expected: "cu", reason: "Cuban crispy beef." },
@@ -100,7 +100,7 @@ const CUISINE_FIXES: readonly CuisineFix[] = [
     reason: "Highball culture is strongly associated with Japanese whisky bars.",
   },
   { slug: "whiskey-sour", expected: "us", reason: "Classic American bar cocktail." },
-  { slug: "yaprak-sarma", expected: "tr", reason: "Turkish grape-leaf dolma — was mis-marked 'cn'." },
+  { slug: "yaprak-sarma", expected: "tr", reason: "Turkish grape-leaf dolma, was mis-marked 'cn'." },
   { slug: "yuca-con-mojo", expected: "cu", reason: "Cuban yuca with garlic-citrus sauce." },
 ];
 
@@ -196,11 +196,11 @@ async function applyCuisineFixes(): Promise<{ applied: number; skipped: number }
       select: { id: true, slug: true, cuisine: true },
     });
     if (!recipe) {
-      console.log(`❌ [${fix.slug}] not found — skip.`);
+      console.log(`❌ [${fix.slug}] not found, skip.`);
       continue;
     }
     if (recipe.cuisine === fix.expected) {
-      console.log(`⏭️  [${fix.slug}] already "${recipe.cuisine}" — skip.`);
+      console.log(`⏭️  [${fix.slug}] already "${recipe.cuisine}", skip.`);
       skipped++;
       continue;
     }
@@ -239,7 +239,7 @@ async function applyIngredientFixes(): Promise<{ applied: number; skipped: numbe
       },
     });
     if (!recipe) {
-      console.log(`❌ [${fix.slug}] not found — skip.`);
+      console.log(`❌ [${fix.slug}] not found, skip.`);
       continue;
     }
     const existing = await prisma.recipeIngredient.findFirst({
@@ -250,7 +250,7 @@ async function applyIngredientFixes(): Promise<{ applied: number; skipped: numbe
       select: { id: true, name: true },
     });
     if (existing) {
-      console.log(`⏭️  [${fix.slug}] already has "${existing.name}" — skip.`);
+      console.log(`⏭️  [${fix.slug}] already has "${existing.name}", skip.`);
       skipped++;
       continue;
     }
@@ -281,7 +281,7 @@ async function applyIngredientFixes(): Promise<{ applied: number; skipped: numbe
 async function main() {
   if (APPLY) assertDbTarget("fix-content-batch3");
 
-  console.log(`${APPLY ? "APPLYING" : "DRY-RUN"} — content fixes from batch 3 audit`);
+  console.log(`${APPLY ? "APPLYING" : "DRY-RUN"}, content fixes from batch 3 audit`);
 
   const cuisineResult = await applyCuisineFixes();
   const ingredientResult = await applyIngredientFixes();
@@ -292,7 +292,7 @@ async function main() {
   console.log("");
   if (APPLY) {
     console.log(
-      `🎉 done — ${appliedTotal} update(s) applied, ${skippedTotal} already in place.`,
+      `🎉 done, ${appliedTotal} update(s) applied, ${skippedTotal} already in place.`,
     );
     console.log("  cuisine:    ", cuisineResult.applied, "applied,", cuisineResult.skipped, "skipped");
     console.log("  ingredient: ", ingredientResult.applied, "applied,", ingredientResult.skipped, "skipped");

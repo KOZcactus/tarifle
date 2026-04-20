@@ -58,7 +58,7 @@ async function main() {
     const inferred = inferAllergensFromIngredients(r.ingredients);
 
     // Skip the write if inference matches current (includes the common
-    // "no allergens found on either side" case) — Prisma still no-ops DB-
+    // "no allergens found on either side" case), Prisma still no-ops DB-
     // side but this keeps logs clean.
     const sameSet =
       inferred.length === r.allergens.length &&
@@ -86,7 +86,7 @@ async function main() {
   console.log(
     `\n${verb}: ${updated} | Skipped (already tagged): ${skipped} | No change: ${noChange} | Total: ${recipes.length}`,
   );
-  if (DRY_RUN) console.log("(dry run — no writes)");
+  if (DRY_RUN) console.log("(dry run, no writes)");
 
   await prisma.$disconnect();
 }

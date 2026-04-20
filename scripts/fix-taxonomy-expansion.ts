@@ -6,7 +6,7 @@
  * code didn't exist in our taxonomy.
  *
  * Also fixes one data bug flagged in batch 3 audit:
- *   samsun-kaz-tiridi — recipe carries goose meat but `vejetaryen` tag
+ *   samsun-kaz-tiridi, recipe carries goose meat but `vejetaryen` tag
  *   slipped into the tags list. Removes the tag.
  *
  * Idempotent: skips if cuisine is already correct / tag already removed.
@@ -39,7 +39,7 @@ const CUISINE_FIXES: readonly CuisineFix[] = [
   { slug: "london-fog", expected: "gb", reason: "British tea-latte drink (named after London fog)." },
   { slug: "limonlu-posset", expected: "gb", reason: "Traditional English lemon posset." },
   { slug: "pierogi", expected: "pl", reason: "Polish stuffed dumplings." },
-  { slug: "pavlova", expected: "au", reason: "Australian/NZ meringue dessert — 'au' is the more common attribution." },
+  { slug: "pavlova", expected: "au", reason: "Australian/NZ meringue dessert, 'au' is the more common attribution." },
 ];
 
 const TAG_REMOVAL = {
@@ -61,11 +61,11 @@ async function applyCuisineFixes(): Promise<{ applied: number; skipped: number }
       select: { id: true, slug: true, cuisine: true },
     });
     if (!recipe) {
-      console.log(`❌ [${fix.slug}] not found — skip.`);
+      console.log(`❌ [${fix.slug}] not found, skip.`);
       continue;
     }
     if (recipe.cuisine === fix.expected) {
-      console.log(`⏭️  [${fix.slug}] already "${recipe.cuisine}" — skip.`);
+      console.log(`⏭️  [${fix.slug}] already "${recipe.cuisine}", skip.`);
       skipped++;
       continue;
     }
@@ -96,13 +96,13 @@ async function applyTagFix(): Promise<{ applied: number; skipped: number }> {
     },
   });
   if (!recipe) {
-    console.log(`❌ [${TAG_REMOVAL.slug}] not found — skip.`);
+    console.log(`❌ [${TAG_REMOVAL.slug}] not found, skip.`);
     return { applied: 0, skipped: 0 };
   }
 
   const link = recipe.tags.find((rt) => rt.tag.slug === TAG_REMOVAL.tag);
   if (!link) {
-    console.log(`⏭️  [${TAG_REMOVAL.slug}] no "${TAG_REMOVAL.tag}" tag — skip.`);
+    console.log(`⏭️  [${TAG_REMOVAL.slug}] no "${TAG_REMOVAL.tag}" tag, skip.`);
     return { applied: 0, skipped: 1 };
   }
 
@@ -122,7 +122,7 @@ async function main() {
   if (APPLY) assertDbTarget("fix-taxonomy-expansion");
 
   console.log(
-    `${APPLY ? "APPLYING" : "DRY-RUN"} — taxonomy expansion cuisine fixes + batch 3 tag cleanup`,
+    `${APPLY ? "APPLYING" : "DRY-RUN"}, taxonomy expansion cuisine fixes + batch 3 tag cleanup`,
   );
 
   const cuisineResult = await applyCuisineFixes();
@@ -134,7 +134,7 @@ async function main() {
   console.log("");
   if (APPLY) {
     console.log(
-      `🎉 done — ${appliedTotal} update(s) applied, ${skippedTotal} already in place.`,
+      `🎉 done, ${appliedTotal} update(s) applied, ${skippedTotal} already in place.`,
     );
     console.log("  cuisine: ", cuisineResult.applied, "applied,", cuisineResult.skipped, "skipped");
     console.log("  tag:     ", tagResult.applied, "applied,", tagResult.skipped, "skipped");

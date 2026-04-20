@@ -25,5 +25,5 @@ const tooMany = variationSchema.safeParse({
 console.log(
   "rejects 50 ingredients:",
   !tooMany.success,
-  tooMany.success ? "" : "— " + tooMany.error.issues[0].message,
+  tooMany.success ? "" : ", " + tooMany.error.issues[0].message,
 );

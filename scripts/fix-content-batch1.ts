@@ -3,24 +3,24 @@
  * translation audit (docs/translations-batch-1.json issues field).
  *
  * Two fix families:
- *   A. Cuisine reassignment (14) — recipes whose Recipe.cuisine field was
+ *   A. Cuisine reassignment (14), recipes whose Recipe.cuisine field was
  *      wrong (international dish marked 'tr', Turkish dish marked 'th' or
  *      'cn'). Codex's systematic review surfaced these.
- *   B. Missing ingredient (7) — a step or description references an
+ *   B. Missing ingredient (7), a step or description references an
  *      ingredient that wasn't in the recipe's ingredients list.
  *
  * Deliberately skipped:
  *   - giresun-fasulye-tursusu-kavurmasi: Codex flagged "tuz" in tip but tuz
- *     is a pantry staple per AI matcher rules — not required as an ingredient.
+ *     is a pantry staple per AI matcher rules, not required as an ingredient.
  *   - kayseri-mantisi-otantik: Codex noted description mentions garlic yogurt
  *     and chili-oil that aren't in ingredients. This is a description/serving
- *     style mismatch rather than a content bug — deferred for content pass.
+ *     style mismatch rather than a content bug, deferred for content pass.
  *   - Calorie anomalies (6): all legitimate low-cal drinks (filtre kahve,
  *     greek coffee, kakule Türk kahvesi, ihlamur, agua fresca) or air-light
  *     snack (deniz yosunu cipsi). Same pattern as batch 0 beverages.
  *
  * Cuisine note: halloumi-izgara was flagged as 'cy' (Cyprus) but Cyprus
- * isn't in our cuisine taxonomy — using 'gr' (Greek) since halloumi is a
+ * isn't in our cuisine taxonomy, using 'gr' (Greek) since halloumi is a
  * shared Cypriot/Greek tradition and 'gr' is the closest supported code.
  *
  * Idempotent: skips if cuisine is already correct / ingredient already
@@ -60,28 +60,28 @@ interface IngredientFix {
 }
 
 const CUISINE_FIXES: readonly CuisineFix[] = [
-  { slug: "clam-chowder", expected: "us", reason: "New England clam chowder — US dish." },
-  { slug: "crema-catalana", expected: "es", reason: "Catalan custard dessert — Spain." },
+  { slug: "clam-chowder", expected: "us", reason: "New England clam chowder, US dish." },
+  { slug: "crema-catalana", expected: "es", reason: "Catalan custard dessert, Spain." },
   { slug: "dakgalbi", expected: "kr", reason: "Korean spicy stir-fried chicken." },
   { slug: "dan-dan-noodle", expected: "cn", reason: "Sichuan Chinese noodle dish." },
-  { slug: "erzurum-cag-kebabi", expected: "tr", reason: "Erzurum regional Turkish kebab — was mis-marked 'th'." },
+  { slug: "erzurum-cag-kebabi", expected: "tr", reason: "Erzurum regional Turkish kebab, was mis-marked 'th'." },
   { slug: "fatteh", expected: "me", reason: "Levantine/Middle Eastern chickpea-yogurt dish." },
-  { slug: "firinda-karniyarik", expected: "tr", reason: "Classic Turkish stuffed eggplant — was mis-marked 'cn'." },
+  { slug: "firinda-karniyarik", expected: "tr", reason: "Classic Turkish stuffed eggplant, was mis-marked 'cn'." },
   { slug: "golubtsy", expected: "ru", reason: "Russian stuffed cabbage rolls." },
   { slug: "gumbo", expected: "us", reason: "Louisiana/Creole American stew." },
   {
     slug: "halloumi-izgara",
     expected: "gr",
     reason:
-      "Grilled halloumi — Cypriot/Greek tradition. 'cy' isn't in our taxonomy, 'gr' is the closest supported code.",
+      "Grilled halloumi, Cypriot/Greek tradition. 'cy' isn't in our taxonomy, 'gr' is the closest supported code.",
   },
   { slug: "harira", expected: "ma", reason: "Moroccan chickpea-lentil soup." },
-  { slug: "hasir-kunefe", expected: "tr", reason: "Turkish künefe variant — was mis-marked 'th'." },
-  { slug: "hosmerim", expected: "tr", reason: "Turkish milk dessert — was mis-marked 'th'." },
+  { slug: "hasir-kunefe", expected: "tr", reason: "Turkish künefe variant, was mis-marked 'th'." },
+  { slug: "hosmerim", expected: "tr", reason: "Turkish milk dessert, was mis-marked 'th'." },
   {
     slug: "karadeniz-hamsi-kayganasi",
     expected: "tr",
-    reason: "Black Sea Turkish anchovy omelette — was mis-marked 'th'.",
+    reason: "Black Sea Turkish anchovy omelette, was mis-marked 'th'.",
   },
 ];
 
@@ -156,12 +156,12 @@ async function applyCuisineFixes(): Promise<{ applied: number; skipped: number }
       select: { id: true, slug: true, title: true, cuisine: true },
     });
     if (!recipe) {
-      console.log(`❌ [${fix.slug}] not found in DB — skip.`);
+      console.log(`❌ [${fix.slug}] not found in DB, skip.`);
       continue;
     }
 
     if (recipe.cuisine === fix.expected) {
-      console.log(`⏭️  [${fix.slug}] already "${recipe.cuisine}" — skip.`);
+      console.log(`⏭️  [${fix.slug}] already "${recipe.cuisine}", skip.`);
       skipped++;
       continue;
     }
@@ -204,7 +204,7 @@ async function applyIngredientFixes(): Promise<{ applied: number; skipped: numbe
       },
     });
     if (!recipe) {
-      console.log(`❌ [${fix.slug}] not found in DB — skip.`);
+      console.log(`❌ [${fix.slug}] not found in DB, skip.`);
       continue;
     }
 
@@ -216,7 +216,7 @@ async function applyIngredientFixes(): Promise<{ applied: number; skipped: numbe
       select: { id: true, name: true },
     });
     if (existing) {
-      console.log(`⏭️  [${fix.slug}] already has "${existing.name}" — skip.`);
+      console.log(`⏭️  [${fix.slug}] already has "${existing.name}", skip.`);
       skipped++;
       continue;
     }
@@ -249,7 +249,7 @@ async function applyIngredientFixes(): Promise<{ applied: number; skipped: numbe
 async function main() {
   if (APPLY) assertDbTarget("fix-content-batch1");
 
-  console.log(`${APPLY ? "APPLYING" : "DRY-RUN"} — content fixes from batch 1 audit`);
+  console.log(`${APPLY ? "APPLYING" : "DRY-RUN"}, content fixes from batch 1 audit`);
 
   const cuisineResult = await applyCuisineFixes();
   const ingredientResult = await applyIngredientFixes();
@@ -260,7 +260,7 @@ async function main() {
   console.log("");
   if (APPLY) {
     console.log(
-      `🎉 done — ${appliedTotal} update(s) applied, ${skippedTotal} already in place.`,
+      `🎉 done, ${appliedTotal} update(s) applied, ${skippedTotal} already in place.`,
     );
     console.log("  cuisine:    ", cuisineResult.applied, "applied,", cuisineResult.skipped, "skipped");
     console.log("  ingredient: ", ingredientResult.applied, "applied,", ingredientResult.skipped, "skipped");

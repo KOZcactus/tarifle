@@ -39,7 +39,7 @@ const STEPS: readonly Step[] = [
   {
     label: "Mutfak etiketi (Recipe.cuisine)",
     script: "scripts/retrofit-cuisine.ts",
-    // Reads title/slug/description — no dependency on allergens or diet.
+    // Reads title/slug/description, no dependency on allergens or diet.
     dependsOnPrior: false,
   },
   // NOTE: Sitemap ping step kaldırıldı (15 Nis 2026). Google
@@ -47,7 +47,7 @@ const STEPS: readonly Step[] = [
   // 2024'te deprecate (410). İkisinin yerine sitemap otomatik re-fetch
   // + Google Search Console'a explicit submit yeterli. IndexNow da
   // değerlendirildi ama Google desteklemiyor, TR'de Bing/Yandex payı
-  // düşük — YAGNI.
+  // düşük, YAGNI.
 ];
 
 assertDbTarget("retrofit-all");
@@ -63,7 +63,7 @@ console.log(
 );
 
 for (const [i, step] of STEPS.entries()) {
-  console.log(`\n▸ Adım ${i + 1}/${STEPS.length} — ${step.label}`);
+  console.log(`\n▸ Adım ${i + 1}/${STEPS.length}, ${step.label}`);
   try {
     execSync(`npx tsx ${step.script}${flag}`, {
       stdio: "inherit",

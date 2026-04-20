@@ -67,7 +67,7 @@ async function main(): Promise<void> {
 
   const verb = APPLY ? "Updated" : "Would update";
   console.log(`\n${verb}: ${willWrite} recipe(s)`);
-  if (!APPLY) console.log("(dry run — re-run with --apply to write)");
+  if (!APPLY) console.log("(dry run, re-run with --apply to write)");
 }
 
 main()

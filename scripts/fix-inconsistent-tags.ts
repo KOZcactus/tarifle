@@ -5,7 +5,7 @@
  * - "30-dakika-alti" tag with totalMinutes > 30 → remove tag
  * - "yuksek-protein" tag with protein < 15g → remove tag
  *
- * Idempotent — re-running after a successful apply is a no-op.
+ * Idempotent, re-running after a successful apply is a no-op.
  * Default dry run, `--apply` to write.
  *
  *   npx tsx scripts/fix-inconsistent-tags.ts              # dry run
@@ -28,8 +28,8 @@ const adapter = new PrismaNeon({ connectionString: process.env.DATABASE_URL! });
 const prisma = new PrismaClient({ adapter });
 
 const APPLY = process.argv.includes("--apply");
-const QUICK_THRESHOLD = 30; // minutes — "30-dakika-alti"
-const PROTEIN_THRESHOLD = 15; // grams — "yuksek-protein"
+const QUICK_THRESHOLD = 30; // minutes, "30-dakika-alti"
+const PROTEIN_THRESHOLD = 15; // grams, "yuksek-protein"
 
 async function main(): Promise<void> {
   assertDbTarget("fix-inconsistent-tags");
@@ -69,7 +69,7 @@ async function main(): Promise<void> {
   for (const r of recipes) {
     const tagIds = new Set(r.tags.map((t) => t.tagId));
     if (tagIds.has(quickId) && r.totalMinutes > QUICK_THRESHOLD) {
-      // Don't leave the recipe with 0 tags — skip if quick tag is the only one
+      // Don't leave the recipe with 0 tags, skip if quick tag is the only one
       if (r.tags.length === 1) {
         skippedLastTag.push(`${r.slug} (would lose "30-dakika-alti" as only tag)`);
       } else {
@@ -132,7 +132,7 @@ async function main(): Promise<void> {
   const total = quickRemovals.length + proteinRemovals.length;
   const verb = APPLY ? "Removed" : "Would remove";
   console.log(`\n${verb}: ${total} tag link(s)`);
-  if (!APPLY) console.log("(dry run — re-run with --apply to write)");
+  if (!APPLY) console.log("(dry run, re-run with --apply to write)");
 }
 
 main()

@@ -1,10 +1,10 @@
 /**
- * Review (yıldız + yorum) end-to-end akışı — login → tarif detayında
+ * Review (yıldız + yorum) end-to-end akışı, login → tarif detayında
  * yıldız seç + yorum yaz + submit → liste/summary güncellenir → edit →
  * delete.
  *
  * Faz 3 Review v2 kapsamında yazıldı. Preflight flag yolunu (PENDING_REVIEW)
- * happy path'ten ayrı tutmak gerekiyorsa ileride ikinci test eklenebilir —
+ * happy path'ten ayrı tutmak gerekiyorsa ileride ikinci test eklenebilir,
  * bu test "temiz içerik tek upsert + sil" akışına regression guard.
  */
 import { test, expect } from "@playwright/test";
@@ -43,7 +43,7 @@ test.afterAll(async () => {
 test("login → yıldız + yorum bırak → listede görünür → düzenle → sil", async ({
   page,
 }) => {
-  // DeleteOwnReviewButton confirm() tetikleniyor — otomatik accept.
+  // DeleteOwnReviewButton confirm() tetikleniyor, otomatik accept.
   page.on("dialog", (dialog) => dialog.accept());
 
   // 1. Login
@@ -67,7 +67,7 @@ test("login → yıldız + yorum bırak → listede görünür → düzenle → 
   await reviewsHeading.scrollIntoViewIfNeeded();
   await expect(reviewsHeading).toBeVisible();
 
-  // 4. 4. yıldıza bas — StarRating radiogroup, her yıldız ayrı radio
+  // 4. 4. yıldıza bas, StarRating radiogroup, her yıldız ayrı radio
   //    Interactive modda "4 yıldız" aria-label'ı var.
   const fourthStar = page
     .getByRole("radio", { name: /4 yıldız/i })
@@ -75,17 +75,17 @@ test("login → yıldız + yorum bırak → listede görünür → düzenle → 
   await fourthStar.click();
 
   // 5. Yorum yaz
-  const comment = `E2E review ${Date.now().toString().slice(-6)} — temiz içerik.`;
+  const comment = `E2E review ${Date.now().toString().slice(-6)}, temiz içerik.`;
   await page.getByPlaceholder(/neyi sevdin/i).fill(comment);
 
   // 6. Submit
   await page.getByRole("button", { name: /^gönder$/i }).click();
 
-  // 7. router.refresh sonrası yorum listede görünür — sayfa reload etmeden
+  // 7. router.refresh sonrası yorum listede görünür, sayfa reload etmeden
   //    Playwright async UI'ı bekler
   await expect(page.getByText(comment)).toBeVisible({ timeout: 10000 });
 
-  // 8. Summary count güncellendi — başlıkta (N) sayısı artmış olmalı
+  // 8. Summary count güncellendi, başlıkta (N) sayısı artmış olmalı
   //    ("Yıldız & Yorumlar (N)" pattern)
   await expect(
     page.getByRole("heading", { name: /yıldız.*yorumlar.*\(\d+\)/i }),
@@ -94,7 +94,7 @@ test("login → yıldız + yorum bırak → listede görünür → düzenle → 
   // 9. Form artık "Yorumunu düzenle" moduna geçti (existing var)
   await expect(page.getByText(/yorumunu düzenle/i)).toBeVisible();
 
-  // 10. Edit — yıldızı 5'e çıkar, yorumu güncelle, Güncelle butonuna bas
+  // 10. Edit, yıldızı 5'e çıkar, yorumu güncelle, Güncelle butonuna bas
   const fifthStar = page
     .getByRole("radio", { name: /5 yıldız/i })
     .first();
@@ -106,8 +106,8 @@ test("login → yıldız + yorum bırak → listede görünür → düzenle → 
 
   await expect(page.getByText(updated)).toBeVisible({ timeout: 10000 });
 
-  // 11. Delete — DeleteOwnReviewButton içeriği "Sil". Reviews section'a
-  //     scope'la (yorumun kendi listesinde yalnız bir Sil butonu var —
+  // 11. Delete, DeleteOwnReviewButton içeriği "Sil". Reviews section'a
+  //     scope'la (yorumun kendi listesinde yalnız bir Sil butonu var,
   //     tarif detayındaki diğer Sil butonları uyarlamalara ait).
   const reviewsSection = page.locator("section").filter({ has: reviewsHeading });
   await reviewsSection
@@ -115,7 +115,7 @@ test("login → yıldız + yorum bırak → listede görünür → düzenle → 
     .click();
 
   // Sonrası: review list'indeki <p> / <li> kaybolmalı. Form textarea'sında
-  // metin hâlâ kalıyor (component unmount olmuyor) — o yüzden list item
+  // metin hâlâ kalıyor (component unmount olmuyor), o yüzden list item
   // üzerinden kontrol et, tüm sayfa üzerinden değil.
   await expect(
     reviewsSection.locator("li").filter({ hasText: updated }),

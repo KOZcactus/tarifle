@@ -98,7 +98,7 @@ export function IngredientRowsInput({
             >
               {INGREDIENT_UNITS.map((u) => (
                 <option key={u || "(boş)"} value={u}>
-                  {u === "" ? "— birim —" : u}
+                  {u === "" ? ", birim," : u}
                 </option>
               ))}
             </select>

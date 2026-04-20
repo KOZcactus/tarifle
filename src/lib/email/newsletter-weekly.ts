@@ -57,7 +57,7 @@ export async function sendWeeklyNewsletter(
     "",
     t("intro"),
     "",
-    `— ${t("featuredHeading")} —`,
+    `, ${t("featuredHeading")},`,
   ];
   for (const recipe of featuredCards) {
     const title = recipe.title;
@@ -67,7 +67,7 @@ export async function sendWeeklyNewsletter(
     );
   }
   if (recentCards.length > 0) {
-    textLines.push("", `— ${t("recentHeading")} —`);
+    textLines.push("", `, ${t("recentHeading")},`);
     for (const recipe of recentCards) {
       const title = recipe.title;
       textLines.push(
@@ -77,7 +77,7 @@ export async function sendWeeklyNewsletter(
     }
   }
   if (topCuisines.length > 0) {
-    textLines.push("", `— ${t("cuisinesHeading")} —`);
+    textLines.push("", `, ${t("cuisinesHeading")},`);
     for (const c of topCuisines) {
       const flag = CUISINE_FLAG[c.code as CuisineCode] ?? "🌍";
       textLines.push(`  ${flag} ${c.label}, ${c.count} ${t("recipesWord")}`);

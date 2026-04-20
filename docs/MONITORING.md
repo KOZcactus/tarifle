@@ -1,4 +1,4 @@
-# Tarifle — Monitoring & Ops Safety
+# Tarifle, Monitoring & Ops Safety
 
 Bugün (17 Nis 2026) prod login kırıldı (schema drift). Bunun bir daha
 yaşanmaması için 2 savunma kuruldu + 1 denendi ama Neon uyumsuzluğu
@@ -29,7 +29,7 @@ checklist:
 - [ ] `npm run build` lokal clean
 - [ ] `git push` main
 
-## 2. Destructive migration check — opsiyonel
+## 2. Destructive migration check, opsiyonel
 
 `scripts/check-destructive-migration.ts` pending migration SQL'lerini
 tarar. Build pipeline'a henüz entegre değil (auto-migrate ile birlikte
@@ -62,7 +62,7 @@ ALLOW_DESTRUCTIVE_MIGRATION=1 npm run db:check-destructive
 Kod altyapısı `src/` altında (`src/instrumentation.ts` +
 `src/instrumentation-client.ts` + `src/sentry.{server,edge}.config.ts` +
 `src/app/global-error.tsx` + `next.config.ts` `withSentryConfig`
-wrapper). DSN env var yoksa SDK silently disabled — dev + preview'da
+wrapper). DSN env var yoksa SDK silently disabled, dev + preview'da
 etki yok.
 
 **Kritik Next.js 16 + src-folder gotcha:** `src/` konvansiyonu
@@ -72,7 +72,7 @@ etmiyor → register() çağrılmıyor → Sentry server SDK hiç init olmuyor.
 18 Nis oturumunda bu yakalandı (commit `de70a66`), smoke test öncesi
 server event'leri hiç Sentry'ye ulaşmıyordu.
 
-**Tunnel route `/api/tarifle-ingest`** — default `/monitoring`
+**Tunnel route `/api/tarifle-ingest`**, default `/monitoring`
 EasyPrivacy/AdGuard filter listelerinde (ERR_BLOCKED_BY_CLIENT).
 Obscure `/api/*` path'i ad-blocker'ları atlar.
 
@@ -81,9 +81,9 @@ Obscure `/api/*` path'i ad-blocker'ları atlar.
 1. **Sentry.io'da hesap aç** (ücretsiz tier 5K error/ay yeter)
 2. Project oluştur: `tarifle-web`, Platform: Next.js
 3. Proje ayarlarından şunları al:
-   - **DSN** — `https://<key>@<org>.ingest.sentry.io/<project>`
-   - **Organization slug** — örn. `tarifle-co`
-   - **Project slug** — örn. `tarifle-web`
+   - **DSN**, `https://<key>@<org>.ingest.sentry.io/<project>`
+   - **Organization slug**, örn. `tarifle-co`
+   - **Project slug**, örn. `tarifle-web`
    - **Auth token** (Settings → Account → Auth Tokens, "project-releases" scope'lu)
 
 4. **Vercel Environment Variables** (tarifle projesi → Settings):
@@ -96,7 +96,7 @@ Obscure `/api/*` path'i ad-blocker'ları atlar.
 | `SENTRY_PROJECT` | slug | Production |
 | `SENTRY_AUTH_TOKEN` | token | Production |
 
-5. **Prod smoke test** — tarifle.app/sentry-test (admin-only,
+5. **Prod smoke test**, tarifle.app/sentry-test (admin-only,
    `robots: noindex`). 3 buton (client throw / server action throw /
    RSC throw) Sentry Feed'de 3 ayrı event açar. 18 Nis oturumunda
    doğrulandı, route + nav link ileride health check için bırakıldı.
@@ -110,7 +110,7 @@ Obscure `/api/*` path'i ad-blocker'ları atlar.
 - Client-side uncaught exception + unhandled rejection
 - Unhandled API route 500'ler
 
-`NEXT_REDIRECT` ve `NEXT_NOT_FOUND` filtrelendi — normal akış gürültüsü
+`NEXT_REDIRECT` ve `NEXT_NOT_FOUND` filtrelendi, normal akış gürültüsü
 Sentry'ye düşmez.
 
 ### Alert kurallar ✅ aktif (18 Nis)
@@ -119,13 +119,13 @@ Sentry Alerts kurulumu canlı, email hedefi `koz.devs@gmail.com`:
 
 | Alert | Trigger | Interval | Scope |
 |---|---|---|---|
-| `New issue — instant email` | A new issue is created | 5 min | All Envs |
-| `Issue escalation — 10 events/hour` | Event frequency > 10 / 1 hour | 1 hour | production |
+| `New issue, instant email` | A new issue is created | 5 min | All Envs |
+| `Issue escalation, 10 events/hour` | Event frequency > 10 / 1 hour | 1 hour | production |
 
 Notification kategorileri (`Settings → Account → Notifications`):
 - **Issue Alerts** On (alert rule email'i)
 - **Issue Workflow** On (regression/resolve state)
-- **Spend** On (free tier quota — Errors + Replays + Spans kategorileri;
+- **Spend** On (free tier quota, Errors + Replays + Spans kategorileri;
   Attachments/Cron/Profile/Uptime/Logs/Contributors/Seer Off)
 - **Weekly Reports** On (haftalık özet)
 
@@ -137,13 +137,13 @@ invite. Alert action'ı `Member → kozcactus`.
 
 ## Diğer öneriler (henüz değil, referans için)
 
-- **DB restore runbook** (`docs/DB_RESTORE.md`) — Neon point-in-time restore 7 gün, adım adım
-- **Vercel preview smoke test** — PR'da 5 kritik route 200 dönüyor mu
-- **`.env.production.local` yedek** — 1Password / Bitwarden Vault
-- **Uptime monitoring** — Better Stack veya Vercel'in kendi monitoring'i (Pro+)
-- **Synthetic test** — dakikada bir tarif detay sayfasını fetch (200 check)
+- **DB restore runbook** (`docs/DB_RESTORE.md`), Neon point-in-time restore 7 gün, adım adım
+- **Vercel preview smoke test**, PR'da 5 kritik route 200 dönüyor mu
+- **`.env.production.local` yedek**, 1Password / Bitwarden Vault
+- **Uptime monitoring**, Better Stack veya Vercel'in kendi monitoring'i (Pro+)
+- **Synthetic test**, dakikada bir tarif detay sayfasını fetch (200 check)
 
-## Checklist — Deploy öncesi
+## Checklist, Deploy öncesi
 
 - [ ] `npm run typecheck` clean
 - [ ] `npm run test` clean

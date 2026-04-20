@@ -37,7 +37,7 @@ const SEED_PATH = seedPathArgIdx !== -1
   : path.resolve(__d, "seed-recipes.ts");
 
 // Optional --slugs a,b,c filter (or --slugs-file path). Limits patches
-// to a specific set — default (unfiltered) rewrites every drifted recipe,
+// to a specific set, default (unfiltered) rewrites every drifted recipe,
 // which can produce a massive format-only diff when source is multi-line.
 const slugFileArgIdx = process.argv.indexOf("--slugs-file");
 const slugInlineArgIdx = process.argv.indexOf("--slugs");
@@ -134,7 +134,7 @@ function patchArrayField(
   // Check that between slugIdx and fieldIdx there's no ", {" at depth 0
   // (would signal next recipe). Simplest heuristic: check distance.
   const betweenText = source.slice(slugIdx, fieldIdx);
-  // If "]," appears then "{" starts a new recipe — suspicious
+  // If "]," appears then "{" starts a new recipe, suspicious
   const newRecipeRe = /\]\s*,\s*\n?\s*\{/;
   if (newRecipeRe.test(betweenText)) {
     return { source, changed: false };
@@ -298,7 +298,7 @@ async function main(): Promise<void> {
     fs.writeFileSync(SEED_PATH, source, "utf8");
     console.log(`\n✅ Wrote ${SEED_PATH} (${patches} patches)`);
   } else if (!APPLY) {
-    console.log(`\n(dry run — re-run with --apply to write file)`);
+    console.log(`\n(dry run, re-run with --apply to write file)`);
   }
 
   await prisma.$disconnect();

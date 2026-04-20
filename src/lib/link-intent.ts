@@ -2,7 +2,7 @@ import { createHmac, timingSafeEqual } from "node:crypto";
 
 /**
  * Signed cookie for "the currently-signed-in user explicitly asked to link a
- * Google account from /ayarlar". Read by the `signIn` callback in auth.ts —
+ * Google account from /ayarlar". Read by the `signIn` callback in auth.ts,
  * when present and valid, linking an existing-email OAuth account is allowed
  * (provided the Google email matches the user's own). Without this cookie
  * the callback falls back to the default strict behaviour (reject linkable

@@ -1,7 +1,7 @@
 # Git Hooks
 
 Committed hooks that run locally before destructive git operations. Activated
-via `git config core.hooksPath scripts/git-hooks` — run `npm run setup:hooks`
+via `git config core.hooksPath scripts/git-hooks`, run `npm run setup:hooks`
 once per clone.
 
 ## Hooks

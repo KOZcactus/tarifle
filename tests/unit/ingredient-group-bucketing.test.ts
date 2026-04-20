@@ -1,11 +1,11 @@
 /**
- * The IngredientList bucket-by-group helper is tested by contract only —
+ * The IngredientList bucket-by-group helper is tested by contract only,
  * we don't import it directly because it's a private in-component helper.
  * Instead we re-implement the same contract here and exercise the cases
  * that matter: order preservation, null fallback, trim, and the grouped/
  * ungrouped mix that a real recipe emits.
  *
- * If the contract drifts, this test will drift with the component — either
+ * If the contract drifts, this test will drift with the component, either
  * way a reviewer knows to look at both. Simpler than exporting a helper
  * just for tests when the contract is small.
  */
@@ -38,7 +38,7 @@ function bucketByGroup(
   }));
 }
 
-describe("bucketByGroup — ingredient sectioning", () => {
+describe("bucketByGroup, ingredient sectioning", () => {
   it("returns a single null-heading bucket for plain flat lists", () => {
     const r = bucketByGroup([
       { id: "1", name: "Un" },

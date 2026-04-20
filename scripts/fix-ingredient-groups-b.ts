@@ -119,7 +119,7 @@ async function main(): Promise<void> {
       });
 
       if (!recipe) {
-        console.log(`  ⚠ ${slug} — tarif bulunamadı`);
+        console.log(`  ⚠ ${slug}, tarif bulunamadı`);
         continue;
       }
 
@@ -130,12 +130,12 @@ async function main(): Promise<void> {
         const newGroup = groupMap[ing.sortOrder];
         if (!newGroup) continue;
         if (ing.group === newGroup) {
-          console.log(`    ${ing.sortOrder}. ${ing.name.padEnd(25)} — zaten "${newGroup}"`);
+          console.log(`    ${ing.sortOrder}. ${ing.name.padEnd(25)}, zaten "${newGroup}"`);
           continue;
         }
 
         const fromLabel = ing.group ? `"${ing.group}"` : "(yok)";
-        console.log(`    ${ing.sortOrder}. ${ing.name.padEnd(25)} — ${fromLabel} → "${newGroup}"`);
+        console.log(`    ${ing.sortOrder}. ${ing.name.padEnd(25)}, ${fromLabel} → "${newGroup}"`);
 
         if (!DRY_RUN) {
           await prisma.recipeIngredient.update({
@@ -152,7 +152,7 @@ async function main(): Promise<void> {
 
     const verb = DRY_RUN ? "Would update" : "Updated";
     console.log(`${verb}: ${totalUpdated} malzeme across ${Object.keys(FIXES).length} tarif`);
-    if (DRY_RUN) console.log("(dry run — DB'ye dokunulmadı)");
+    if (DRY_RUN) console.log("(dry run, DB'ye dokunulmadı)");
   } finally {
     await prisma.$disconnect();
   }

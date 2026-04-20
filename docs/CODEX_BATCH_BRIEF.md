@@ -30,6 +30,14 @@
 - `title + description` JSON'a YAZMA, CSV'deki `en_title_current` sütunundan görürsün zaten dolu (Mod A'dan)
 - Array uzunlukları TR'yle birebir eşleşmeli
 
+### Mod B Backfill default (Kerem "Mod B. Backfill-NN" derse):
+- Kerem CSV yolu verir: `docs/translations-backfill-NN.csv` (NN zero-padded 01..13)
+- Sen aynı isimli **JSON** üretirsin: `docs/translations-backfill-NN.json`
+- Mod B ile aynı kurallar geçerli (§6), tek fark:
+  - Batch 0-11 dönemi eski tarifler, EN/DE çevirisi **hiç yok** (title+desc dahil bazılarında eksik).
+  - CSV'deki `en_*_current` / `de_*_current` sütunları çoğunlukla boş, kafan karışmasın: **backfill'in işi zaten bu eksikleri kapatmak**.
+  - "Alanlar boş = sahte çevirmem gerekmez" refleksi yanlış, CSV'deki `ingredients_tr` / `steps_tr` / `tipNote_tr` / `servingSuggestion_tr` sütunlarından **TR metinleri oku** ve onları native çevir.
+
 **⚠️ Tek teslim kuralı (Mod A):** Kerem açıkça "kademeli gönder" veya "50'şer
 ver" demiyorsa, **100 tarifi TEK seferde tamamla**. Ortada durma, "25 hazır,
 devam edeyim mi?" diye sorma, Kerem zaten 100 istediğini biliyor, ara
@@ -486,6 +494,27 @@ bozuk/eksik görünüyorsa `issues` alanına yaz, Kerem/Claude review eder.
 6. DE için aynı kurallar
 7. Bir lokalde hiçbir alan eksik değilse o lokal bundle'ı hiç yazma (sadece
    karşı lokalde eksik varsa tek taraflı `en` veya `de` item OK)
+
+### ⚠️ Format ve boş-string kapanı (Backfill-01'de yakalandı, TEKRARLAMA)
+
+1. **ingredients object array**, string array DEĞİL:
+   - ❌ YANLIŞ: `"ingredients": ["4 eggplants", "300 g ground beef"]`
+   - ✅ DOĞRU: `"ingredients": [{ "sortOrder": 1, "name": "Eggplants" }, { "sortOrder": 2, "name": "Ground beef" }]`
+   - Miktar/birim TR tarafında saklı, sadece `name` çevir (ingredient
+     adı, rakam / unit yok)
+2. **steps object array**, string array DEĞİL:
+   - ❌ YANLIŞ: `"steps": ["Wash the...", "Remove..."]`
+   - ✅ DOĞRU: `"steps": [{ "stepNumber": 1, "instruction": "Wash the..." }, { "stepNumber": 2, "instruction": "Remove..." }]`
+3. **BOŞ `name` BIRAKMA**, Zod `min(1)` reddedecek:
+   - ❌ `{ "sortOrder": 5, "name": "" }` → CRITICAL
+   - TR ingredient "Karanfil" ise EN `"Cloves"`, DE `"Nelken"` yaz,
+     emin değilsen `issues` array'ine not düş
+4. **`tipNote` + `servingSuggestion` düz string** (object değil):
+   - ✅ `"tipNote": "Let yogurt warm to room temperature..."`
+   - Array değil, sadece tek string
+5. Dosya adı birebir CSV ile eşleşmeli:
+   - `docs/translations-batch-N.json` (Mod B ana)
+   - `docs/translations-backfill-NN.json` (Backfill, NN zero-padded 01..13)
 
 ### Array uzunluk kuralı (kritik)
 

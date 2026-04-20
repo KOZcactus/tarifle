@@ -6,20 +6,27 @@
  * aynı sayfada keşfedebilsin diye. Ana sayfaya dönüp filtrelerle uğraşmak
  * zorunda kalmasın.
  *
- * Skorlama (deterministic, aynı tarif için hep aynı sonuç):
- *   +3   Aynı kategori (corbalar ↔ corbalar)
- *   +2   Aynı RecipeType (YEMEK/TATLI/ICECEK ...), kategoriyi farklı olsa
- *        da "hamur-isleri → hamur tatlısı" tarzı sıçramalarda etki
- *   +1   Her ortak tag, max 5 tag olduğu için 5 puan üstü çıkmaz
- *   +0.5 Aynı difficulty
- *   +1.5 Aynı cuisine (Japon tarifi okurken diğer Japon tarifleri öne)
- *   +1   Her ortak "önemli" malzeme (cap +3), pantry ingredient'ler
- *        (tuz, biber, yağ, su vb.) exclude edilir, ana protein ve
- *        karakter malzemeleri sayılır. 1501 tarif ölçeğinde ingredient
- *        sinyali artık anlamlı (motor ilk yazıldığında 106 tarif vardı
- *       , pantry şişmesi sorun idi; şimdi scale yeterli).
- *   +0.3 isFeatured bonus (editör seçimi benzer tarifleri ufak boost,
- *        kullanıcıya kürasyonlu içerik hissiyatı)
+ * v3 Skorlama (deterministic, aynı tarif için hep aynı sonuç):
+ *   +3    Aynı kategori (corbalar ↔ corbalar)
+ *   +2    Aynı RecipeType (YEMEK/TATLI/ICECEK ...), kategoriyi farklı olsa
+ *         da "hamur-isleri → hamur tatlısı" tarzı sıçramalarda etki
+ *   +1    Her ortak tag, max 5 tag olduğu için 5 puan üstü çıkmaz
+ *   +0.5  Aynı difficulty
+ *   +1.5  Aynı cuisine (Japon tarifi okurken diğer Japon tarifleri öne)
+ *   +0.5  Aynı region (v3, cuisine-aware cluster). Farklı cuisine ama
+ *         aynı kültürel aile: Türk ↔ Yunan/İspanyol, Japon ↔ Kore/Tay
+ *         vb. Kullanıcıya "tanıdık damak hissi" kazandırır; farklı
+ *         cuisine'den tarifler öne geçerken Orta Doğu yakın kalır,
+ *         Peru tarifi öne karışmaz.
+ *   +1    Her ortak "önemli" malzeme (cap +3), pantry ingredient'ler
+ *         (tuz, biber, yağ, su vb.) exclude edilir, ana protein ve
+ *         karakter malzemeleri sayılır. 1501 tarif ölçeğinde ingredient
+ *         sinyali artık anlamlı.
+ *   +0.4  Hunger bar proximity (v3), |target.hungerBar - cand.hungerBar|
+ *         <= 2 ise bonus. Tok tarife bakıyorsa tok öneri, hafife
+ *         bakıyorsa hafif öneri; "acıktım/az yedim" continuity.
+ *   +0.3  isFeatured bonus (editör seçimi benzer tarifleri ufak boost,
+ *         kullanıcıya kürasyonlu içerik hissiyatı)
  *
  * Tie-break: daha yeni tarif öne, sonra alfabetik (TR collation).
  *
@@ -29,6 +36,7 @@
  */
 import { prisma } from "@/lib/prisma";
 import type { RecipeCard } from "@/types/recipe";
+import { CUISINE_REGION, type CuisineCode } from "@/lib/cuisines";
 
 /**
  * Pantry / common ingredient blacklist, ingredient Jaccard skoru
@@ -79,6 +87,15 @@ export interface SimilarTarget {
   /** Raw ingredient names, pantry filter `scoreCandidates` içinde
    *  uygulanır, caller normalize etmek zorunda değil. */
   ingredientNames: string[];
+  /** v3: hunger bar proximity için; null ise proximity scoring skip. */
+  hungerBar?: number | null;
+}
+
+/** Region lookup helper, CUISINE_REGION map'i CuisineCode key'ine göre
+ *  tablolanmış; null cuisine veya tanımsız kodda null döner. */
+function cuisineRegion(cuisine: string | null | undefined): string | null {
+  if (!cuisine) return null;
+  return CUISINE_REGION[cuisine as CuisineCode] ?? null;
 }
 
 export interface ScoredCandidate {
@@ -110,12 +127,15 @@ export function scoreCandidates(
     ingredientNames?: readonly string[];
     /** Editör Seçimi flag'i, varsa küçük bir boost. */
     isFeatured?: boolean;
+    /** v3: hunger bar proximity scoring için. */
+    hungerBar?: number | null;
   }[],
 ): ScoredCandidate[] {
   const targetTags = new Set(target.tagSlugs);
   const targetSignalIngredients = new Set(
     filterSignalIngredients(target.ingredientNames),
   );
+  const targetRegion = cuisineRegion(target.cuisine);
 
   const scored = candidates
     .filter((c) => c.id !== target.id)
@@ -124,7 +144,19 @@ export function scoreCandidates(
       if (c.categoryId === target.categoryId) score += 3;
       if (c.type === target.type) score += 2;
       if (c.difficulty === target.difficulty) score += 0.5;
-      if (target.cuisine && c.cuisine === target.cuisine) score += 1.5;
+
+      // v3: Cuisine + region scoring. Aynı cuisine +1.5 (güçlü sinyal);
+      // farklı cuisine ama aynı region +0.5 (kültürel yakınlık). İkisi
+      // mutually exclusive, aynı cuisine zaten aynı region içinde.
+      if (target.cuisine && c.cuisine === target.cuisine) {
+        score += 1.5;
+      } else if (
+        targetRegion &&
+        c.cuisine &&
+        cuisineRegion(c.cuisine) === targetRegion
+      ) {
+        score += 0.5;
+      }
 
       let sharedTags = 0;
       for (const t of c.tagSlugs) if (targetTags.has(t)) sharedTags++;
@@ -141,6 +173,19 @@ export function scoreCandidates(
           if (targetSignalIngredients.has(ing)) sharedIngredients++;
         }
         score += Math.min(sharedIngredients, 3);
+      }
+
+      // v3: Hunger bar proximity. Target ve candidate ikisi de dolu
+      // (null değil) ve |delta| <= 2 ise bonus. Tok tarife bakan
+      // kullanıcıya tok öneri continuity.
+      if (
+        target.hungerBar !== null &&
+        target.hungerBar !== undefined &&
+        c.hungerBar !== null &&
+        c.hungerBar !== undefined &&
+        Math.abs(target.hungerBar - c.hungerBar) <= 2
+      ) {
+        score += 0.4;
       }
 
       // Featured soft-boost, editör seçimi tarifleri aynı skordaki
@@ -191,6 +236,7 @@ export async function getSimilarRecipes(
       type: true,
       difficulty: true,
       cuisine: true,
+      hungerBar: true,
       tags: { select: { tag: { select: { slug: true } } } },
       ingredients: { select: { name: true } },
     },
@@ -203,6 +249,7 @@ export async function getSimilarRecipes(
     type: target.type,
     difficulty: target.difficulty,
     cuisine: target.cuisine,
+    hungerBar: target.hungerBar,
     tagSlugs: target.tags.map((t) => t.tag.slug),
     ingredientNames: target.ingredients.map((i) => i.name),
   };
@@ -263,6 +310,7 @@ export async function getSimilarRecipes(
       tagSlugs: c.tags.map((t) => t.tag.slug),
       ingredientNames: c.ingredients.map((i) => i.name),
       isFeatured: c.isFeatured,
+      hungerBar: c.hungerBar,
     })),
   );
 

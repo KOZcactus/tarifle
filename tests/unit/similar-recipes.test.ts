@@ -23,6 +23,7 @@ function c(overrides: {
   tagSlugs?: string[];
   ingredientNames?: string[];
   isFeatured?: boolean;
+  hungerBar?: number | null;
 }) {
   return {
     id: overrides.id,
@@ -35,6 +36,7 @@ function c(overrides: {
     tagSlugs: overrides.tagSlugs ?? [],
     ingredientNames: overrides.ingredientNames,
     isFeatured: overrides.isFeatured,
+    hungerBar: overrides.hungerBar,
   };
 }
 
@@ -311,5 +313,93 @@ describe("scoreCandidates, kenar durumlar", () => {
       c({ id: "b", categoryId: "cat-zzz", type: "ICECEK", difficulty: "EASY" }),
     ]);
     expect(r).toEqual([]);
+  });
+});
+
+describe("scoreCandidates v3: cuisine region + hunger proximity", () => {
+  it("aynı region farklı cuisine: +0.5 bonus (TR→GR mediterranean)", () => {
+    const r = scoreCandidates(target, [
+      c({
+        id: "greek",
+        categoryId: "cat-yemek",
+        type: "YEMEK",
+        difficulty: "MEDIUM",
+        cuisine: "gr", // same region mediterranean-levant
+      }),
+      c({
+        id: "japanese",
+        categoryId: "cat-yemek",
+        type: "YEMEK",
+        difficulty: "MEDIUM",
+        cuisine: "jp", // different region east-asia
+      }),
+    ]);
+    // greek: category(+3) + type(+2) + difficulty(+0.5) + region(+0.5) = 6
+    // japanese: category(+3) + type(+2) + difficulty(+0.5) = 5.5
+    expect(r[0]!.id).toBe("greek");
+    expect(r[0]!.score).toBe(6);
+    expect(r[1]!.score).toBe(5.5);
+  });
+
+  it("aynı cuisine region bonus'u TRIGGER etmez (mutually exclusive)", () => {
+    const r = scoreCandidates(target, [
+      c({
+        id: "turkish-twin",
+        categoryId: "cat-yemek",
+        type: "YEMEK",
+        difficulty: "MEDIUM",
+        cuisine: "tr", // same cuisine as target
+      }),
+    ]);
+    // cuisine(+1.5) not region(+0.5), total: 3+2+0.5+1.5 = 7
+    expect(r[0]!.score).toBe(7);
+  });
+
+  it("hunger proximity: |delta|<=2 → +0.4 bonus", () => {
+    const targetWithHunger: SimilarTarget = {
+      ...target,
+      hungerBar: 8,
+    };
+    const r = scoreCandidates(targetWithHunger, [
+      c({
+        id: "close-hunger",
+        categoryId: "cat-yemek",
+        type: "YEMEK",
+        difficulty: "MEDIUM",
+        cuisine: "tr",
+        hungerBar: 7, // delta 1, in range
+      }),
+      c({
+        id: "far-hunger",
+        categoryId: "cat-yemek",
+        type: "YEMEK",
+        difficulty: "MEDIUM",
+        cuisine: "tr",
+        hungerBar: 3, // delta 5, out of range
+      }),
+    ]);
+    // close-hunger: 3+2+0.5+1.5+0.4 = 7.4
+    // far-hunger: 3+2+0.5+1.5 = 7.0
+    expect(r[0]!.id).toBe("close-hunger");
+    expect(r[0]!.score).toBe(7.4);
+    expect(r[1]!.score).toBe(7);
+  });
+
+  it("hunger bar null ise proximity bonus yok", () => {
+    const targetWithHunger: SimilarTarget = {
+      ...target,
+      hungerBar: 8,
+    };
+    const r = scoreCandidates(targetWithHunger, [
+      c({
+        id: "null-hunger",
+        categoryId: "cat-yemek",
+        type: "YEMEK",
+        difficulty: "MEDIUM",
+        cuisine: "tr",
+        hungerBar: null,
+      }),
+    ]);
+    expect(r[0]!.score).toBe(7); // 3+2+0.5+1.5, hunger skipped
   });
 });

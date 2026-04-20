@@ -193,6 +193,43 @@ export const CUISINE_FLAG: Record<CuisineCode, string> = {
   au: "🇦🇺",
 };
 
+/**
+ * Culinary region clusters, similar-recipes v3 için. Aynı region içinde
+ * farklı cuisine'ler kültürel/malzeme yakınlığı taşır (Akdeniz'de
+ * zeytinyağı-domates-ot üçgeni, Doğu Asya'da soya-pirinç-zencefil).
+ * Target ile candidate aynı region'da ama farklı cuisine ise hafif
+ * bonus (aynı cuisine bonus'u zaten büyük +1.5).
+ *
+ * Hiçbir cluster'da olmayan cuisine'ler (us, gb, au, fr) kendi
+ * region'larını oluşturur; bu durumda bonus no-op.
+ */
+export const CUISINE_REGION: Record<CuisineCode, string> = {
+  tr: "mediterranean-levant",
+  gr: "mediterranean-levant",
+  es: "mediterranean-levant",
+  it: "mediterranean-levant",
+  me: "mediterranean-levant",
+  ma: "mediterranean-levant",
+  jp: "east-asia",
+  cn: "east-asia",
+  kr: "east-asia",
+  th: "east-asia",
+  vn: "east-asia",
+  in: "south-asia",
+  mx: "latin-america",
+  br: "latin-america",
+  cu: "latin-america",
+  pe: "latin-america",
+  ru: "slavic-central-europe",
+  pl: "slavic-central-europe",
+  hu: "slavic-central-europe",
+  se: "nordic",
+  fr: "west-europe",
+  gb: "west-europe",
+  us: "anglo-americas",
+  au: "anglo-americas",
+};
+
 // ─── Inference engine ───────────────────────────────────────
 
 /**

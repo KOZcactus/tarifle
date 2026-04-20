@@ -741,28 +741,44 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
 
           {/* Sort toggle */}
           {result.suggestions.length > 1 && (
-            <div className="mb-4 flex items-center gap-1 text-xs">
-              <span className="mr-2 text-text-muted">{tResult("sortLabel")}</span>
-              {([
-                { key: "match" as const, label: tResult("sortMatch") },
-                { key: "fastest" as const, label: tResult("sortFastest") },
-                { key: "least-missing" as const, label: tResult("sortLeastMissing") },
-                { key: "most-filling" as const, label: tResult("sortMostFilling") },
-              ]).map(({ key, label }) => (
-                <button
-                  key={key}
-                  type="button"
-                  onClick={() => setSortMode(key)}
-                  className={`rounded-md px-2.5 py-1 transition-colors ${
-                    sortMode === key
-                      ? "bg-bg-card font-medium text-text"
-                      : "text-text-muted hover:bg-bg-card"
-                  }`}
-                >
-                  {label}
-                </button>
-              ))}
-            </div>
+            <>
+              <div className="mb-2 flex flex-wrap items-center gap-1 text-xs">
+                <span className="mr-2 text-text-muted">{tResult("sortLabel")}</span>
+                {([
+                  { key: "match" as const, label: tResult("sortMatch") },
+                  { key: "fastest" as const, label: tResult("sortFastest") },
+                  { key: "least-missing" as const, label: tResult("sortLeastMissing") },
+                  { key: "most-filling" as const, label: tResult("sortMostFilling") },
+                ]).map(({ key, label }) => {
+                  const isActive = sortMode === key;
+                  // 'most-filling' active'de hunger theme rengi (sıcak kahverengi);
+                  // diğer sort active'leri neutral card bg. Görünürlük boost,
+                  // "Acıktım" sort session 10'da eklendi, kullanıcılar fark
+                  // etmiyor; renk + emoji tanınırlık artırır.
+                  const activeClass =
+                    key === "most-filling"
+                      ? "bg-primary/10 font-semibold text-primary ring-1 ring-primary/30"
+                      : "bg-bg-card font-medium text-text";
+                  return (
+                    <button
+                      key={key}
+                      type="button"
+                      onClick={() => setSortMode(key)}
+                      className={`rounded-md px-2.5 py-1 transition-colors ${
+                        isActive ? activeClass : "text-text-muted hover:bg-bg-card"
+                      }`}
+                    >
+                      {label}
+                    </button>
+                  );
+                })}
+              </div>
+              {sortMode === "most-filling" && (
+                <p className="mb-4 text-xs leading-snug text-text-muted">
+                  {tResult("sortMostFillingHint")}
+                </p>
+              )}
+            </>
           )}
 
           {result.suggestions.length === 0 ? (
@@ -816,6 +832,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
                   hasTagLabel={(slug) => tTag.has(slug)}
                   tResult={tResult}
                   difficultyLabel={(d) => tCard(DIFFICULTY_KEY[d])}
+                  sortMode={sortMode}
                 />
               ))}
             </div>
@@ -835,6 +852,7 @@ interface SuggestionCardProps {
   hasTagLabel: (slug: string) => boolean;
   tResult: (key: string, values?: Record<string, string | number>) => string;
   difficultyLabel: (d: "EASY" | "MEDIUM" | "HARD") => string;
+  sortMode: "match" | "fastest" | "least-missing" | "most-filling";
 }
 
 function SuggestionCard({
@@ -846,6 +864,7 @@ function SuggestionCard({
   hasTagLabel,
   tResult,
   difficultyLabel,
+  sortMode,
 }: SuggestionCardProps) {
   const matchPercent = Math.round(s.matchScore * 100);
   const perfect = s.missingIngredients.length === 0;
@@ -934,7 +953,7 @@ function SuggestionCard({
           </div>
         )}
 
-        <div className="flex flex-wrap gap-1.5 text-xs text-text-muted">
+        <div className="flex flex-wrap items-center gap-1.5 text-xs text-text-muted">
           <span>{difficultyLabel(s.difficulty)}</span>
           <span>·</span>
           <span>⏱ {formatMinutesI18n(s.totalMinutes, tCard)}</span>
@@ -942,6 +961,22 @@ function SuggestionCard({
             <>
               <span>·</span>
               <span>{tResult("calories", { kcal: s.averageCalories })}</span>
+            </>
+          )}
+          {s.hungerBar !== null && s.hungerBar !== undefined && (
+            <>
+              <span>·</span>
+              <span
+                className={`inline-flex items-center gap-0.5 rounded-full px-1.5 py-0.5 tabular-nums transition-colors ${
+                  sortMode === "most-filling"
+                    ? "bg-primary/15 font-semibold text-primary"
+                    : "bg-bg-elevated"
+                }`}
+                title={tResult("hungerBarTitle", { value: s.hungerBar })}
+                aria-label={tResult("hungerBarTitle", { value: s.hungerBar })}
+              >
+                🍖 {s.hungerBar}/10
+              </span>
             </>
           )}
         </div>

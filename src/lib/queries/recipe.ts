@@ -79,6 +79,7 @@ const recipeCardSelect = {
   totalMinutes: true,
   servingCount: true,
   averageCalories: true,
+  hungerBar: true,
   imageUrl: true,
   isFeatured: true,
   cuisine: true,

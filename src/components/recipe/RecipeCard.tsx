@@ -98,6 +98,17 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
             {recipe.averageCalories && (
               <Badge>~{recipe.averageCalories} kcal</Badge>
             )}
+            {recipe.hungerBar != null && (
+              <span
+                title={t("hungerBarTitle", { value: recipe.hungerBar })}
+                aria-label={t("hungerBarTitle", { value: recipe.hungerBar })}
+                className="inline-flex"
+              >
+                <Badge>
+                  <span aria-hidden>🍖</span> {recipe.hungerBar}/10
+                </Badge>
+              </span>
+            )}
           </div>
 
           {/* Footer */}

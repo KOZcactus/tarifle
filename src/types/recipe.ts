@@ -9,6 +9,11 @@ export interface RecipeCard {
   totalMinutes: number;
   servingCount: number;
   averageCalories: number | null;
+  /**
+   * Açlık barı, 1-10 (porsiyon başı tokluk). Null = hesaplanmamış.
+   * Listing kartında kompakt chip olarak gösterilir.
+   */
+  hungerBar: number | null;
   imageUrl: string | null;
   isFeatured: boolean;
   cuisine: string | null;

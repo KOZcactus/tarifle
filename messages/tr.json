@@ -44,7 +44,7 @@
     "cuisineSubtitle": "{count} mutfaktan {total}+ tarif keşfet",
     "recipeCountSmall": "{count} tarif",
     "aiBannerTitle": "Elindeki malzemeleri yaz, tarif al",
-    "aiBannerDescription": "Dolabında ne varsa söyle, sana en uygun tarifleri ve eksiklerini gösterelim.",
+    "aiBannerDescription": "Dolabında ne varsa söyle; sana en uygun tarifleri ve eksiklerini gösterelim.",
     "aiBannerCta": "Dene →",
     "ctaTitle": "Kendi tarifini paylaş",
     "ctaDescription": "Üye ol, favori tariflerinin uyarlamalarını ekle ve toplulukla paylaş.",
@@ -117,14 +117,14 @@
       "loginLink": "Giriş yap",
       "sentTitle": "Bağlantı gönderildi",
       "sentBody": "<email>{email}</email> adresine bir mail gönderdik. Bağlantı 1 saat geçerli. Görünmüyorsa spam/önemsiz klasörünü de kontrol et.",
-      "sentHint": "Mail gelmediyse: adres bu sitede kayıtlı olmayabilir ya da hesabın Google ile bağlı olabilir, giriş sayfasından Google ile dene.",
+      "sentHint": "Mail gelmediyse: adres bu sitede kayıtlı olmayabilir ya da hesabın Google ile bağlı olabilir. Giriş sayfasından Google ile dene.",
       "backToLogin": "Giriş sayfasına dön",
       "tryDifferent": "Farklı adres dene"
     },
     "resetPassword": {
       "pageTitle": "Yeni şifreni belirle",
       "subtitleValid": "Bağlantın aktif. Aşağıdan yeni şifreni ayarlayabilirsin.",
-      "subtitleInvalid": "Bu bağlantı çalışmıyor, aşağıdan yeni bir tane isteyebilirsin.",
+      "subtitleInvalid": "Bu bağlantı çalışmıyor. Aşağıdan yeni bir tane isteyebilirsin.",
       "invalidTitle": "Bağlantı geçersiz",
       "invalidExpired": "Sıfırlama bağlantısının süresi dolmuş. Yeni bir tane iste, 1 saat içinde kullanabilirsin.",
       "invalidOther": "Bu bağlantı geçersiz. Daha önce kullanılmış ya da hatalı kopyalanmış olabilir.",
@@ -182,34 +182,34 @@
         "Sabahın keyfini birkaç dakikada yükseltir."
       ],
       "atistirmalik": [
-        "Ufak ama etkili, film akşamı veya beklenmedik misafir."
+        "Ufak ama etkili: film akşamı veya beklenmedik misafir."
       ],
       "hard": [
         "Sabır ister ama sonuç tek kelimeyle etkileyici.",
-        "Bir hafta sonu projesi gibi düşün, sofrada karşılığını alırsın."
+        "Bir hafta sonu projesi gibi düşün; sofrada karşılığını alırsın."
       ],
       "quick": [
-        "Pratik ve kolay, yorgun günlerin dostu.",
+        "Pratik ve kolay: yorgun günlerin dostu.",
         "Yarım saate kalmayan, doyurucu bir seçenek."
       ],
       "veryQuick": [
-        "20 dakikada sofrada, hızlı ama özensiz değil.",
+        "20 dakikada sofrada: hızlı ama özensiz değil.",
         "Çabuk bir şeyler yapmak istediğinde ilk akla gelen."
       ],
       "light": [
-        "Hafif kalmak isteyenlere, tadından ödün vermeden.",
+        "Hafif kalmak isteyenlere: tadından ödün vermeden.",
         "Düşük kalorili ama tatmin edici bir seçenek."
       ],
       "hearty": [
-        "Doyurucu ve besleyici, açlık bırakmaz.",
+        "Doyurucu ve besleyici: açlık bırakmaz.",
         "Uzun bir günün sonunda hak edilmiş bir yemek."
       ],
       "popularVariations": [
         "Topluluğun denediği, kendi uyarlamalarını eklediği bir tarif.",
-        "Kaç farklı yorumunun olduğunu gör, uyarlama sayfasına göz at."
+        "Kaç farklı yorumunun olduğunu gör; uyarlama sayfasına göz at."
       ],
       "featured": [
-        "Editör favorisi, sade ama akılda kalıcı bir lezzet."
+        "Editör favorisi: sade ama akılda kalıcı bir lezzet."
       ]
     },
     "fallback": "Denemeye değer."
@@ -248,7 +248,7 @@
     "perfectMany": [
       "{ctx}{count} tarifi elindekilerle tam olarak yapabilirsin. Üstte en hızlı olanları bıraktım.",
       "{ctx}Güzel bir dolap: {count} tarif için alışveriş yapman bile gerekmiyor.",
-      "{ctx}Neyse ki {count} seçeneğin var, hepsi elindekiyle tamam."
+      "{ctx}Neyse ki {count} seçeneğin var: hepsi elindekiyle tamam."
     ],
     "perfect2": [
       "{ctx}İki tarif için hiçbir şey eksik değil: {title1} ve {title2}. Hangisine ruh halindesin?",
@@ -256,12 +256,12 @@
       "Tam uyum 2 tarifte: {title1} ve {title2}. Gerisi için birkaç şey almak gerek."
     ],
     "perfect1": [
-      "{ctx}{title} için hiçbir şey almana gerek yok, tam uyum. Altında birkaç yakın alternatif var.",
+      "{ctx}{title} için hiçbir şey almana gerek yok; tam uyum. Altında birkaç yakın alternatif var.",
       "Hemen mutfağa gidebilirsin: {title} elindekiyle tamam. Diğerleri için ufak eksikler var.",
       "Tam çıkan tek tarif: {title}. Alternatif arıyorsan alttakilerden biri için 1-2 malzeme yeter."
     ],
     "closeCall": [
-      "{ctx}Tam eşleşme yok ama {title} için sadece {missing} eksik, market turu kısa.",
+      "{ctx}Tam eşleşme yok ama {title} için sadece {missing} eksik; market turu kısa.",
       "En yakın seçenek {title}. Sadece {missing} alırsan başlayabilirsin.",
       "{title} tarifinde {missing} eksik. Onun dışında her şey elinde."
     ],
@@ -272,51 +272,51 @@
     ],
     "notesFirstPerfect": [
       "En iyi eşleşme. Elindekilerin tamamını değerlendirebilirsin.",
-      "Zirvedeki seçenek, tam uyum ve en güçlü sonuç.",
+      "Zirvedeki seçenek: tam uyum ve en güçlü sonuç.",
       "Birinci öneri. Hiç eksik yok."
     ],
     "notesFirstOneMissing": [
-      "Neredeyse tam, sadece {missing} almak yeter.",
+      "Neredeyse tam: sadece {missing} almak yeter.",
       "Tek adım uzakta: {missing}.",
       "Bir malzeme eksik ({missing}), gerisi hazır."
     ],
     "notesFastest": [
-      "En hızlı seçenek, {minutes} dakikada sofrada.",
+      "En hızlı seçenek: {minutes} dakikada sofrada.",
       "Acele edenlere: {minutes} dakika.",
       "En çabuk çıkan. Aç gelen misafire ideal."
     ],
     "notesPerfectAlt": [
       "Hiçbir şey eksik değil, bunu da seçebilirsin.",
-      "Elinde her şey var, plan B olarak dursun.",
+      "Elinde her şey var; plan B olarak dursun.",
       "Tam çıkanlardan. Alternatif olarak kafana yat."
     ],
     "notesOneMissing": "Sadece {missing} eksik.",
     "notesTwoMissing": "{missing1} ve {missing2} almak gerek.",
     "notesHard": [
       "Sabır ister ama sonucu etkileyici.",
-      "Biraz iddialı, vaktin varsa dene.",
+      "Biraz iddialı; vaktin varsa dene.",
       "Ustalık gerektirir, ancak masaya kim otursa fark eder."
     ],
     "notesLongest": "Uzun pişer ama ocakta unutabilirsin.",
     "pantryOnly": [
       "{ctx}Yalnızca dolap malzemesi (tuz, biber, yağ) yazmışsın. Bir sebze, protein veya tahıl ekle, gerçek eşleşmeler çıksın.",
-      "{ctx}Hepsi temel malzeme, bir tane gerçek malzeme (domates, tavuk, mercimek gibi) ekle, öneriler anlam kazansın.",
+      "{ctx}Hepsi temel malzeme: bir tane gerçek malzeme (domates, tavuk, mercimek gibi) ekle, öneriler anlam kazansın.",
       "{ctx}Sadece temel malzemelerle uzağa gidemeyiz. Bir tane dolap dışı malzeme ekleyip tekrar dene."
     ],
     "manyIngredients": [
-      "{ctx}Dolabını tıka basa doldurmuşsun, {count} tarif eşleşiyor. Başta {title} var.",
+      "{ctx}Dolabını tıka basa doldurmuşsun: {count} tarif eşleşiyor. Başta {title} var.",
       "{ctx}Oldukça bereketli bir dolap. {count} tarif uyuyor, {title} ile başlıyorum.",
-      "{ctx}Elinde bu kadar malzeme varken {count} tarif çıkıyor, zirvede {title}."
+      "{ctx}Elinde bu kadar malzeme varken {count} tarif çıkıyor; zirvede {title}."
     ],
     "singleIngredient": [
       "{ctx}Sadece {ingredient} ile mi başlıyorsun? {title} en yakın eşleşme.",
-      "{ctx}Tek malzemeyle yola çıkmışsın, {title} en iyi seçenek.",
+      "{ctx}Tek malzemeyle yola çıkmışsın: {title} en iyi seçenek.",
       "{ctx}Sadece {ingredient}, başka yok mu? {title} en yakına düşüyor."
     ]
   },
   "metadata": {
     "site": {
-      "tagline": "Tarifle, Make Eat",
+      "tagline": "Tarifle · Make Eat",
       "description": "Yemek, içecek ve kokteyl tariflerini sade, hızlı okunur ve topluluk katkısına açık şekilde sunan modern tarif platformu.",
       "ogLocale": "tr_TR"
     },
@@ -371,17 +371,17 @@
     },
     "contact": {
       "title": "İletişim",
-      "description": "Tarifle ekibine ulaş, geri bildirim, hata raporu, iş birliği veya KVKK veri talepleri."
+      "description": "Tarifle ekibine ulaş: geri bildirim, hata raporu, iş birliği veya KVKK veri talepleri."
     },
     "recipeDetail": {
       "notFoundTitle": "Tarif Bulunamadı",
-      "descriptionWithCuisine": "{cuisine} mutfağından {title} tarifi, {difficulty}, {time}, {servings} kişilik{calories}.",
-      "descriptionNoCuisine": "{title} tarifi, {difficulty}, {time}, {servings} kişilik{calories}.",
+      "descriptionWithCuisine": "{cuisine} mutfağından {title} tarifi: {difficulty}, {time}, {servings} kişilik{calories}.",
+      "descriptionNoCuisine": "{title} tarifi: {difficulty}, {time}, {servings} kişilik{calories}.",
       "caloriesSuffix": ", ~{kcal} kcal"
     },
     "legal": {
       "aboutTitle": "Hakkımızda",
-      "aboutDescription": "Tarifle hakkında bilgi, ekip, vizyon, iletişim.",
+      "aboutDescription": "Tarifle hakkında bilgi: ekip, vizyon, iletişim.",
       "privacyTitle": "Gizlilik Politikası",
       "privacyDescription": "Tarifle'nin kişisel verileri nasıl işlediği hakkında bilgi.",
       "kvkkTitle": "KVKK Aydınlatma Metni",
@@ -430,7 +430,7 @@
       "signature": "Tarifle ekibi"
     },
     "oauthOnlyReset": {
-      "subject": "Tarifle, bu hesap Google ile bağlı",
+      "subject": "Tarifle: bu hesap Google ile bağlı",
       "eyebrow": "Tarifle",
       "title": "Bu hesap Google ile bağlı",
       "greetingNamed": "Merhaba {name},",
@@ -452,13 +452,13 @@
       "eyebrow": "Haftalık bülten",
       "title": "Bu hafta ne pişirsek?",
       "greeting": "Merhaba,",
-      "intro": "Editörlerin bu hafta öne çıkardığı tarifler, yeni eklenenler ve öne çıkan mutfaklar, hepsi tek bakışta.",
+      "intro": "Editörlerin bu hafta öne çıkardığı tarifler, yeni eklenenler ve öne çıkan mutfaklar: hepsi tek bakışta.",
       "featuredHeading": "⭐ Editör Seçimi",
       "recentHeading": "🆕 Bu haftanın yenileri",
       "cuisinesHeading": "🌍 Bu hafta öne çıkan mutfaklar",
       "recipesWord": "tarif",
       "cta": "Tarifle'yi aç",
-      "outro": "Aşağıdaki tariflerden birini dene, sofrada nasıl olduğunu yazabilirsin, tarif detayında uyarlama paylaşımı açık.",
+      "outro": "Aşağıdaki tariflerden birini dene, sofrada nasıl olduğunu yazabilirsin. Tarif detayında uyarlama paylaşımı açık.",
       "footer": "Bu maili haftalık editör seçkisine abone olduğun için alıyorsun.",
       "unsubscribeLine": "Artık almak istemiyorsan",
       "unsubscribeCta": "tek tıkla listeden çık"
@@ -488,7 +488,7 @@
       "heading": "📸 Topluluk Fotoğrafları",
       "subtitle": "Kullanıcıların tariflere yüklediği fotoğrafları modere et. Feature flag kapalıyken upload + grid görünmez ama DB kayıtları korunur.",
       "toggleHeading": "Özellik durumu",
-      "toggleHelper": "Kapalıyken tarif sayfalarında ne upload form ne de grid render edilir. Mevcut fotoğraflar silinmez, flag tekrar açıldığında olduğu gibi görünür.",
+      "toggleHelper": "Kapalıyken tarif sayfalarında ne upload form ne de grid render edilir. Mevcut fotoğraflar silinmez; flag tekrar açıldığında olduğu gibi görünür.",
       "toggleTurnOn": "Özelliği aç",
       "toggleTurnOff": "Özelliği kapat",
       "toggleStatus": "Şu anki durum: {state}",
@@ -510,7 +510,7 @@
       "rowCheckboxAria": "Satırı toplu işlem için seç",
       "selectAll": "Tümünü seç ({count})",
       "selected": "{count} seçili",
-      "selectedEmpty": "Seçim yok, satırları işaretle",
+      "selectedEmpty": "Seçim yok. Satırları işaretle",
       "bulkApprove": "Seçilenleri onayla",
       "bulkHide": "Seçilenleri gizle",
       "clearSelection": "Seçimi temizle",
@@ -519,12 +519,12 @@
       "error_no-ids": "Seçili kayıt yok.",
       "error_too-many": "Tek seferde en fazla 50 kayıt işlenebilir. Seçimi azalt.",
       "error_unauthorized": "Yetkin yok.",
-      "error_unknown": "Beklenmedik hata, tekrar dene."
+      "error_unknown": "Beklenmedik hata. Tekrar dene."
     },
     "analytics": {
       "pageTitle": "Analytics | Yönetim Paneli",
       "heading": "📊 Analytics Dashboard",
-      "subtitle": "Topluluk sağlığı göstergeleri, son 7 gün büyümesi, abone/yorum ivmeleri, popüler içerik.",
+      "subtitle": "Topluluk sağlığı göstergeleri: son 7 gün büyümesi, abone/yorum ivmeleri, popüler içerik.",
       "metricsHeading": "Temel Metrikler",
       "metricTotalRecipes": "Toplam Tarifler",
       "metricTotalUsers": "Toplam Kullanıcılar",
@@ -555,7 +555,7 @@
     },
     "common": {
       "paginationAria": "Sayfalama",
-      "paginationSingle": "{count} kayıt, tek sayfa.",
+      "paginationSingle": "{count} kayıt; tek sayfa.",
       "paginationRange": "{from}–{to} / {total}",
       "paginationPrev": "‹ Önceki",
       "paginationNext": "Sonraki ›",
@@ -662,7 +662,7 @@
       "customFromLabel": "Başlangıç",
       "customToLabel": "Bitiş",
       "applyCustom": "Uygula",
-      "allWarning": "Tüm yorumlar yükleniyor, büyük liste olabilir.",
+      "allWarning": "Tüm yorumlar yükleniyor; büyük liste olabilir.",
       "statusChip": "{status}",
       "totalFound": "{count} yorum",
       "empty": "Bu aralıkta yorum yok.",
@@ -1221,7 +1221,7 @@
       "error_cannot-follow-self": "Kendini takip edemezsin.",
       "error_account-suspended": "Hesabın askıya alınmış.",
       "error_target-not-found": "Kullanıcı bulunamadı.",
-      "error_unknown": "Beklenmedik hata, tekrar dene."
+      "error_unknown": "Beklenmedik hata. Tekrar dene."
     },
     "followList": {
       "followersPageTitle": "{username} takipçileri | Tarifle",

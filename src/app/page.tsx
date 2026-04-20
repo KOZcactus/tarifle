@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
+import { FeaturedShelf } from "@/components/home/FeaturedShelf";
 import { RecipeOfTheDay } from "@/components/home/RecipeOfTheDay";
 import {
   getFeaturedRecipes,
@@ -142,7 +143,9 @@ export default async function HomePage() {
       {/* Editör Seçimi, Tarifle editörlerinin haftalık kürasyon shelf'i.
           Rotasyonel (getFeaturedPool + hafta indeksi). Başlık + subtitle
           ikilisi Tarifle ton'unu pekiştirir; altın rozet RecipeCard
-          seviyesinde görünür. */}
+          seviyesinde görünür.
+          Mobile'da horizontal scroll carousel (snap + arrow), desktop'ta
+          3-kolon grid, FeaturedShelf component. */}
       {featured.length > 0 && (
         <section className="py-12">
           <div className="flex items-start justify-between gap-4">
@@ -158,11 +161,7 @@ export default async function HomePage() {
               {t("seeAll")}
             </Link>
           </div>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {featured.map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
-            ))}
-          </div>
+          <FeaturedShelf recipes={featured} />
         </section>
       )}
 

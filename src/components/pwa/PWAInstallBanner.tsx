@@ -2,6 +2,14 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import {
+  trackAppInstalled,
+  trackInstallAccepted,
+  trackInstallDismissed,
+  trackInstallPrompted,
+  trackIosFallbackShown,
+  trackPromptAvailable,
+} from "@/lib/pwa-analytics";
 
 /**
  * "Ana ekrana ekle" promosyon bandı, mobil retention loop.
@@ -156,6 +164,7 @@ export function PWAInstallBanner() {
       event.preventDefault();
       const evt = event as BeforeInstallPromptEvent;
       setDeferredPrompt(evt);
+      trackPromptAvailable();
       scheduleReveal("native");
     };
 
@@ -164,17 +173,24 @@ export function PWAInstallBanner() {
     // iOS Safari için native event yok, engagement gate ile banner'ı
     // gecikmeli göster.
     if (isIosSafari()) {
+      const showIos = () => {
+        reveal("ios");
+        trackIosFallbackShown();
+      };
       if (engagedByVisits) {
-        iosTimer = setTimeout(() => reveal("ios"), SHOW_DELAY_MS);
+        iosTimer = setTimeout(showIos, SHOW_DELAY_MS);
       } else {
         pendingMode = "ios";
         engagementTimer = setTimeout(() => {
-          if (pendingMode === "ios") reveal("ios");
+          if (pendingMode === "ios") showIos();
         }, ENGAGEMENT_MS);
       }
     }
 
-    const onAppInstalled = () => setMode("hidden");
+    const onAppInstalled = () => {
+      setMode("hidden");
+      trackAppInstalled();
+    };
     window.addEventListener("appinstalled", onAppInstalled);
 
     return () => {
@@ -188,17 +204,22 @@ export function PWAInstallBanner() {
 
   const handleInstall = useCallback(async () => {
     if (!deferredPrompt) return;
+    trackInstallPrompted();
     await deferredPrompt.prompt();
     const choice = await deferredPrompt.userChoice;
     setDeferredPrompt(null);
     setMode("hidden");
-    if (choice.outcome === "dismissed") {
+    if (choice.outcome === "accepted") {
+      trackInstallAccepted();
+    } else {
       recordDismiss();
+      trackInstallDismissed("prompt-sheet");
     }
   }, [deferredPrompt]);
 
   const handleDismiss = useCallback(() => {
     recordDismiss();
+    trackInstallDismissed("banner-x");
     setMode("hidden");
   }, []);
 

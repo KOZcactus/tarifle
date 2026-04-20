@@ -1,0 +1,72 @@
+/**
+ * Pre-push guard: scan scripts/seed-recipes.ts for allergen over-tags and
+ * missing-allergen criticals, using the same rules as audit-deep. Runs
+ * fully offline (no DB), so suitable for CI and pre-push hooks.
+ *
+ * Exits non-zero on any finding so git push is blocked.
+ *
+ *   npx tsx scripts/check-allergen-source.ts
+ */
+import type { Allergen } from "@prisma/client";
+import { ALLERGEN_RULES, ingredientMatchesAllergen } from "./audit-deep";
+import { recipes } from "./seed-recipes";
+
+function main() {
+  let overTags = 0;
+  let missings = 0;
+  const overTagSamples: string[] = [];
+  const missingSamples: string[] = [];
+
+  for (const r of recipes) {
+    const allergenSet = new Set<Allergen>(r.allergens ?? []);
+    const ingNames = (r.ingredients ?? []).map((i) => i.name);
+    for (const rule of ALLERGEN_RULES) {
+      const matches = ingNames.some((n) => ingredientMatchesAllergen(n, rule));
+      const tagged = allergenSet.has(rule.allergen as Allergen);
+
+      if (tagged && !matches) {
+        overTags++;
+        if (overTagSamples.length < 10) {
+          overTagSamples.push(`${r.slug}  over-tag ${rule.allergen}`);
+        }
+      }
+      if (!tagged && matches) {
+        missings++;
+        if (missingSamples.length < 10) {
+          const hitIng = ingNames.find((n) => ingredientMatchesAllergen(n, rule));
+          missingSamples.push(`${r.slug}  missing ${rule.allergen}  (ingredient: ${hitIng})`);
+        }
+      }
+    }
+  }
+
+  if (overTags === 0 && missings === 0) {
+    process.stdout.write(
+      `Sonuç: ✅ TEMIZ, 0 over-tag, 0 missing (${recipes.length} kaynak tarifi)\n`,
+    );
+    return;
+  }
+
+  process.stderr.write(`\nSonuç: ❌ FAIL\n`);
+  if (overTags > 0) {
+    process.stderr.write(`\n${overTags} over-tag finding:\n`);
+    for (const s of overTagSamples) process.stderr.write(`  ${s}\n`);
+    if (overTags > overTagSamples.length) {
+      process.stderr.write(`  ... (+${overTags - overTagSamples.length} more)\n`);
+    }
+  }
+  if (missings > 0) {
+    process.stderr.write(`\n${missings} missing-allergen finding:\n`);
+    for (const s of missingSamples) process.stderr.write(`  ${s}\n`);
+    if (missings > missingSamples.length) {
+      process.stderr.write(`  ... (+${missings - missingSamples.length} more)\n`);
+    }
+  }
+  process.stderr.write(
+    `\n   Fix via: scripts/fix-critical-allergens-*.ts or scripts/remove-over-tagged-allergens.ts\n`,
+  );
+  process.stderr.write(`   Bypass: git push --no-verify\n`);
+  process.exit(1);
+}
+
+main();

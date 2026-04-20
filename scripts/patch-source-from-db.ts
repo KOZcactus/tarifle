@@ -102,12 +102,10 @@ function formatIngredientLegacy(i: {
   name: string; amount: string; unit: string | null;
   sortOrder: number; group: string | null; isOptional: boolean;
 }): string {
-  // Legacy pipe format: "name|amount|unit", no group/isOptional support.
-  // If group or isOptional is set, fall back to object format (data will
-  // round-trip incompletely via legacy helpers).
-  if (i.group || i.isOptional) {
-    return formatIngredient(i);
-  }
+  // Legacy pipe format: "name|amount|unit" only. group/isOptional NOT
+  // representable; legacy IIFE ing() helper has no fields for them and
+  // object-literal fallback breaks the IIFE's strict helper return type.
+  // Drop these flags silently; they're rare and the DB retains them.
   return q(`${i.name}|${i.amount}|${i.unit ?? ""}`);
 }
 
@@ -116,10 +114,7 @@ function formatStepLegacy(s: {
   timerSeconds: number | null;
 }): string {
   // Legacy "instruction" or "instruction||timerSeconds" format.
-  // tip not representable in legacy; fall back if present.
-  if (s.tip) {
-    return formatStep(s);
-  }
+  // tip NOT representable in legacy IIFE st() helper; drop silently.
   if (s.timerSeconds !== null) {
     return q(`${s.instruction}||${s.timerSeconds}`);
   }

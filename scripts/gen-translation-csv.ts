@@ -54,9 +54,25 @@ function parseOutArg(batch: number): string {
   return path.resolve(process.cwd(), `docs/translations-batch-${batch}.csv`);
 }
 
-function findBatchBoundsFromSource(batch: number): { start: number; end: number } {
+function parseSizeArg(): number | null {
+  // Override default 100-recipes-per-batch assumption. Needed when a batch
+  // is partial (e.g. batch 29 came from Codex with 45 tariffs, not 100).
+  const idx = process.argv.indexOf("--size");
+  if (idx < 0 || !process.argv[idx + 1]) return null;
+  const n = Number(process.argv[idx + 1]);
+  if (!Number.isInteger(n) || n <= 0) {
+    throw new Error(`geçersiz size: ${process.argv[idx + 1]}`);
+  }
+  return n;
+}
+
+function findBatchBoundsFromSource(
+  batch: number,
+  sizeOverride: number | null,
+): { start: number; end: number } {
   // seed-recipes.ts satırında "// ── BATCH N ──" markerlarını say,
-  // belirtilen N'in öncesindeki marker'dan sonraki 100 tarif alınır.
+  // belirtilen N'in öncesindeki marker'dan sonraki <size> tarif alınır
+  // (default 100).
   const sourcePath = path.resolve(__d, "seed-recipes.ts");
   const text = fs.readFileSync(sourcePath, "utf8");
   const markerRe = /\/\/ ── BATCH (\d+) ──/g;
@@ -74,15 +90,16 @@ function findBatchBoundsFromSource(batch: number): { start: number; end: number 
     throw new Error(`batch ${batch} seed'de yok (son batch: ${lastMarker})`);
   }
 
-  // Marker'lar batch 2'den başlıyor (batch 0 ve 1 marker'sız). Yani
-  // marker sayısı = seed'de olduğu kadar. Son batch marker'ı ile
-  // recipes length arası 100 olmalı (1 batch = 100).
+  const size = sizeOverride ?? 100;
+  // Marker'lar batch 2'den başlıyor (batch 0 ve 1 marker'sız). Son batch
+  // marker'ı ile recipes length arası <size> olmalı. --size flag partial
+  // batch'ler için (batch 29 kısmi = 45) override sağlar.
   const fromEndBatches = lastMarker - batch; // 0 = son batch, 1 = sondan ikinci
   const end = recipes.length - fromEndBatches * 100;
-  const start = end - 100;
+  const start = end - size;
   if (start < 0) {
     throw new Error(
-      `hesap hata: start=${start} (recipes.length=${recipes.length}, fromEndBatches=${fromEndBatches})`,
+      `hesap hata: start=${start} (recipes.length=${recipes.length}, fromEndBatches=${fromEndBatches}, size=${size})`,
     );
   }
   return { start, end };
@@ -147,7 +164,8 @@ function presentFlag(raw: unknown): number {
 async function main() {
   const batch = parseBatchArg();
   const outPath = parseOutArg(batch);
-  const { start, end } = findBatchBoundsFromSource(batch);
+  const sizeOverride = parseSizeArg();
+  const { start, end } = findBatchBoundsFromSource(batch, sizeOverride);
   const slice = recipes.slice(start, end);
   console.log(
     `📥 batch ${batch}: seed source slice ${start}..${end} (${slice.length} tarif)`,

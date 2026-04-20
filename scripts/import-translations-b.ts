@@ -28,6 +28,9 @@
  *
  *   # Apply on prod (explicit)
  *   DATABASE_URL=<prod> npx tsx scripts/import-translations-b.ts --batch 12 --apply --confirm-prod
+ *
+ *   # Custom file path (backfill serisi için)
+ *   npx tsx scripts/import-translations-b.ts --file docs/translations-backfill-01.json --apply
  */
 import { PrismaClient } from "@prisma/client";
 import { PrismaNeon } from "@prisma/adapter-neon";
@@ -53,8 +56,16 @@ function parseBatchArg(): string {
   if (eq) return eq.split("=")[1];
   const idx = process.argv.indexOf("--batch");
   if (idx >= 0 && process.argv[idx + 1]) return process.argv[idx + 1];
-  console.error("Missing --batch N (e.g. --batch 12).");
+  console.error("Missing --batch N (e.g. --batch 12) or --file <path>.");
   process.exit(1);
+}
+
+function parseFileArg(): string | null {
+  const eq = process.argv.find((a) => a.startsWith("--file="));
+  if (eq) return eq.split("=")[1];
+  const idx = process.argv.indexOf("--file");
+  if (idx >= 0 && process.argv[idx + 1]) return process.argv[idx + 1];
+  return null;
 }
 
 const ingredientItemSchema = z.object({
@@ -126,8 +137,10 @@ function pruneEmpty(bundle: LocaleBundle | undefined): LocaleBundle {
 async function main(): Promise<void> {
   if (APPLY) assertDbTarget("import-translations-b");
 
-  const batch = parseBatchArg();
-  const file = path.resolve(process.cwd(), `docs/translations-batch-${batch}.json`);
+  const fileArg = parseFileArg();
+  const file = fileArg
+    ? path.resolve(process.cwd(), fileArg)
+    : path.resolve(process.cwd(), `docs/translations-batch-${parseBatchArg()}.json`);
   if (!fs.existsSync(file)) {
     console.error(`Missing file: ${file}`);
     process.exit(1);
@@ -151,7 +164,7 @@ async function main(): Promise<void> {
     process.exit(1);
   }
   const items = zodResult.data;
-  console.log(`📥 Parsed ${items.length} items from docs/translations-batch-${batch}.json`);
+  console.log(`📥 Parsed ${items.length} items from ${path.relative(process.cwd(), file)}`);
 
   const slugs = items.map((i) => i.slug);
   const uniqueSlugs = new Set(slugs);
@@ -280,7 +293,7 @@ async function main(): Promise<void> {
 
   console.log(`\n🎉 done, applied=${applied}, unchanged=${unchanged}, total=${items.length}`);
   console.log(
-    `\nNext: run \`npx tsx scripts/audit-deep.ts\` to verify nothing broke, then commit docs/translations-batch-${batch}.json + push.`,
+    `\nNext: run \`npx tsx scripts/audit-deep.ts\` to verify nothing broke, then commit ${path.relative(process.cwd(), file)} + push.`,
   );
 }
 

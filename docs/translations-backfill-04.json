@@ -17,7 +17,7 @@
         },
         {
           "sortOrder": 4,
-          "name": "Veal Julienne"
+          "name": "Beef Strips"
         },
         {
           "sortOrder": 5,
@@ -27,7 +27,7 @@
       "steps": [
         {
           "stepNumber": 1,
-          "instruction": "Cook the egg into a thin omelette, saute the carrots and beef separately for 5 minutes."
+          "instruction": "Cook the eggs into a thin omelet, and saute the carrots and beef separately for 5 minutes."
         },
         {
           "stepNumber": 2,
@@ -38,7 +38,7 @@
           "instruction": "Wrap the roll tightly and slice it 2 cm thick."
         }
       ],
-      "tipNote": "Rice should be warm; Hot rice softens the seaweed, cold rice cracks the roll.",
+      "tipNote": "The rice should be warm; hot rice softens the seaweed, while cold rice can crack the roll.",
       "servingSuggestion": "Glaze the slices with sesame oil and serve with pickled radish."
     },
     "de": {
@@ -57,7 +57,7 @@
         },
         {
           "sortOrder": 4,
-          "name": "Kalbs-Julienne"
+          "name": "Rindfleischstreifen"
         },
         {
           "sortOrder": 5,
@@ -78,7 +78,7 @@
           "instruction": "Wickeln Sie die Rolle fest ein und schneiden Sie sie in 2 cm dicke Scheiben."
         }
       ],
-      "tipNote": "Reis sollte warm sein; Heißer Reis macht die Algen weich, kalter Reis lässt das Brötchen platzen.",
+      "tipNote": "Der Reis sollte warm sein; heißer Reis weicht das Nori auf, kalter Reis kann die Rolle reißen lassen.",
       "servingSuggestion": "Die Scheiben mit Sesamöl bestreichen und mit eingelegtem Rettich servieren."
     },
     "issues": []
@@ -97,7 +97,7 @@
         },
         {
           "sortOrder": 3,
-          "name": "Pumpkin"
+          "name": "Zucchini"
         },
         {
           "sortOrder": 4,
@@ -123,7 +123,7 @@
         }
       ],
       "tipNote": "Crush the doenjang and add it to the boiling water; The absence of lumps improves the texture of the soup.",
-      "servingSuggestion": "Serve hot with rice and spring onions."
+      "servingSuggestion": "Serve hot with rice and sliced green onions."
     },
     "de": {
       "ingredients": [
@@ -137,7 +137,7 @@
         },
         {
           "sortOrder": 3,
-          "name": "Kürbis"
+          "name": "Zucchini"
         },
         {
           "sortOrder": 4,
@@ -163,7 +163,7 @@
         }
       ],
       "tipNote": "Zerdrücken Sie den Doenjang und geben Sie ihn in das kochende Wasser. Das Fehlen von Klumpen verbessert die Konsistenz der Suppe.",
-      "servingSuggestion": "Heiß mit Reis und Frühlingszwiebeln servieren."
+      "servingSuggestion": "Heiß mit Reis und in Ringe geschnittenen Frühlingszwiebeln servieren."
     },
     "issues": []
   },
@@ -517,7 +517,7 @@
       "ingredients": [
         {
           "sortOrder": 1,
-          "name": "Beef Cubed"
+          "name": "Diced Beef"
         },
         {
           "sortOrder": 2,
@@ -543,7 +543,7 @@
         },
         {
           "stepNumber": 2,
-          "instruction": "Add veal and coconut cream and cook for 45 minutes."
+          "instruction": "Add the beef and coconut cream, then cook for 45 minutes."
         },
         {
           "stepNumber": 3,
@@ -551,7 +551,7 @@
         }
       ],
       "tipNote": "Frying the curry paste in oil for 2 minutes opens the scent of the spices.",
-      "servingSuggestion": "Serve with jasmin rice pilaf."
+      "servingSuggestion": "Serve with jasmine rice."
     },
     "de": {
       "ingredients": [
@@ -583,7 +583,7 @@
         },
         {
           "stepNumber": 2,
-          "instruction": "Kalbfleisch und Kokoscreme hinzufügen und 45 Minuten kochen lassen."
+          "instruction": "Rindfleisch und Kokoscreme hinzufügen und 45 Minuten sanft köcheln lassen."
         },
         {
           "stepNumber": 3,
@@ -591,7 +591,7 @@
         }
       ],
       "tipNote": "Durch 2-minütiges Anbraten der Currypaste in Öl entfaltet sich der Duft der Gewürze.",
-      "servingSuggestion": "Mit Jasminreis-Pilaw servieren."
+      "servingSuggestion": "Mit Jasminreis servieren."
     },
     "issues": []
   },
@@ -605,7 +605,7 @@
         },
         {
           "sortOrder": 2,
-          "name": "Kokos Drink"
+          "name": "Coconut Drink"
         },
         {
           "sortOrder": 3,
@@ -627,7 +627,7 @@
       "steps": [
         {
           "stepNumber": 1,
-          "instruction": "Boil kokos drink, 400 ml water, galangal and lemon grass for 8 minutes."
+          "instruction": "Boil the coconut drink with 400 ml of water, galangal, and lemongrass for 8 minutes."
         },
         {
           "stepNumber": 2,
@@ -671,7 +671,7 @@
       "steps": [
         {
           "stepNumber": 1,
-          "instruction": "Kokosdrink, 400 ml Wasser, Galgant und Zitronengras 8 Minuten kochen."
+          "instruction": "Kokosgetränk mit 400 ml Wasser, Galgant und Zitronengras 8 Minuten kochen."
         },
         {
           "stepNumber": 2,
@@ -799,11 +799,11 @@
       "steps": [
         {
           "stepNumber": 1,
-          "instruction": "Fry the curry paste in oil for 2 minutes, add the chicken and coco cream."
+          "instruction": "Fry the curry paste in oil for 2 minutes, then add the chicken and coconut cream."
         },
         {
           "stepNumber": 2,
-          "instruction": "Bake the chicken for 25 minutes; Boil the noodles in a separate pot."
+          "instruction": "Simmer the chicken for 25 minutes; boil the noodles in a separate pot."
         },
         {
           "stepNumber": 3,
@@ -843,7 +843,7 @@
         },
         {
           "stepNumber": 2,
-          "instruction": "Das Hähnchen 25 Minuten backen; Die Nudeln in einem separaten Topf kochen."
+          "instruction": "Das Hähnchen 25 Minuten sanft köcheln lassen; die Nudeln in einem separaten Topf kochen."
         },
         {
           "stepNumber": 3,
@@ -873,7 +873,7 @@
         },
         {
           "sortOrder": 4,
-          "name": "Hot Pepper"
+          "name": "Chili Pepper"
         },
         {
           "sortOrder": 5,
@@ -887,7 +887,7 @@
         },
         {
           "stepNumber": 2,
-          "instruction": "Add hot pepper and soy sauce and stir for 3 minutes."
+          "instruction": "Add chili pepper and soy sauce and stir for 3 minutes."
         },
         {
           "stepNumber": 3,
@@ -895,7 +895,7 @@
         }
       ],
       "tipNote": "Heat the pan over high heat; The meat is roasted without releasing its juice.",
-      "servingSuggestion": "Serve with fried egg and jasmin rice on the side."
+      "servingSuggestion": "Serve with a fried egg and jasmine rice on the side."
     },
     "de": {
       "ingredients": [
@@ -913,7 +913,7 @@
         },
         {
           "sortOrder": 4,
-          "name": "Scharfer Pfeffer"
+          "name": "Chili"
         },
         {
           "sortOrder": 5,
@@ -949,7 +949,7 @@
         },
         {
           "sortOrder": 2,
-          "name": "Kokos Drink"
+          "name": "Coconut Drink"
         },
         {
           "sortOrder": 3,
@@ -971,7 +971,7 @@
         },
         {
           "stepNumber": 2,
-          "instruction": "Add kokos drink, mango puree and chickpeas and cook for 12 minutes."
+          "instruction": "Add the coconut drink, mango puree, and chickpeas, then cook for 12 minutes."
         },
         {
           "stepNumber": 3,
@@ -979,7 +979,7 @@
         }
       ],
       "tipNote": "Puree half the mango, leave half in cubes; The sauce has both body and chunks.",
-      "servingSuggestion": "Serve with jasmin rice pilaf."
+      "servingSuggestion": "Serve with jasmine rice and lime wedges."
     },
     "de": {
       "ingredients": [
@@ -1011,7 +1011,7 @@
         },
         {
           "stepNumber": 2,
-          "instruction": "Kokosdrink, Mangopüree und Kichererbsen hinzufügen und 12 Minuten kochen lassen."
+          "instruction": "Kokosgetränk, Mangopüree und Kichererbsen hinzufügen und 12 Minuten garen."
         },
         {
           "stepNumber": 3,
@@ -1019,7 +1019,7 @@
         }
       ],
       "tipNote": "Die Hälfte der Mango pürieren, die Hälfte in Würfel schneiden; Die Sauce hat sowohl Körper als auch Stücke.",
-      "servingSuggestion": "Mit Jasminreis-Pilaw servieren."
+      "servingSuggestion": "Mit Jasminreis und Limettenspalten servieren."
     },
     "issues": []
   },
@@ -1139,15 +1139,15 @@
         },
         {
           "stepNumber": 2,
-          "instruction": "Add veal slices and cook for 15 minutes."
+          "instruction": "Add the beef slices and cook for 15 minutes."
         },
         {
           "stepNumber": 3,
           "instruction": "Add peanut butter and basil and cook for another 3 minutes."
         }
       ],
-      "tipNote": "Cut the veal thinly; It softens in a short time and does not harden in the sauce.",
-      "servingSuggestion": "Serve with fresh basil and rice pilaf."
+      "tipNote": "Slice the beef thinly; it turns tender quickly and does not toughen in the sauce.",
+      "servingSuggestion": "Serve with fresh basil and steamed rice."
     },
     "de": {
       "ingredients": [
@@ -1179,15 +1179,15 @@
         },
         {
           "stepNumber": 2,
-          "instruction": "Kalbsscheiben hinzufügen und 15 Minuten kochen lassen."
+          "instruction": "Rindfleischscheiben hinzufügen und 15 Minuten kochen lassen."
         },
         {
           "stepNumber": 3,
           "instruction": "Erdnussbutter und Basilikum hinzufügen und weitere 3 Minuten kochen lassen."
         }
       ],
-      "tipNote": "Das Kalbfleisch dünn schneiden; Es wird in kurzer Zeit weich und verhärtet in der Soße nicht.",
-      "servingSuggestion": "Mit frischem Basilikum und Reispilaw servieren."
+      "tipNote": "Das Rindfleisch dünn schneiden; es wird schnell zart und bleibt in der Soße saftig.",
+      "servingSuggestion": "Mit frischem Basilikum und gedämpftem Reis servieren."
     },
     "issues": []
   },
@@ -1209,7 +1209,7 @@
         },
         {
           "sortOrder": 4,
-          "name": "Hot Pepper"
+          "name": "Chili Pepper"
         },
         {
           "sortOrder": 5,
@@ -1223,7 +1223,7 @@
         },
         {
           "stepNumber": 2,
-          "instruction": "Add soy sauce, sesame oil and hot pepper and fry for 3 minutes."
+          "instruction": "Add soy sauce, sesame oil and chili pepper and fry for 3 minutes."
         },
         {
           "stepNumber": 3,
@@ -1249,7 +1249,7 @@
         },
         {
           "sortOrder": 4,
-          "name": "Scharfer Pfeffer"
+          "name": "Chili"
         },
         {
           "sortOrder": 5,
@@ -1271,7 +1271,7 @@
         }
       ],
       "tipNote": "Die Aubergine grob hacken; Bei starker Hitze wird es außen braun und bleibt innen cremig.",
-      "servingSuggestion": "Servieren Sie es als Hauptgericht mit gedünstetem Reispilaw."
+      "servingSuggestion": "Servieren Sie es als Hauptgericht mit gedünstetem gedämpftem Reis."
     },
     "issues": []
   },
@@ -1447,7 +1447,7 @@
         }
       ],
       "tipNote": "In den letzten 2 Minuten die Soße mit dem Hühnchen vermischen; Der Überzug behält seine Knusprigkeit besser.",
-      "servingSuggestion": "Mit gedünstetem Reispilaw servieren."
+      "servingSuggestion": "Mit gedünstetem gedämpftem Reis servieren."
     },
     "issues": []
   },
@@ -1461,7 +1461,7 @@
         },
         {
           "sortOrder": 2,
-          "name": "Veal Julienne"
+          "name": "Beef Strips"
         },
         {
           "sortOrder": 3,
@@ -1501,7 +1501,7 @@
         },
         {
           "sortOrder": 2,
-          "name": "Kalbs-Julienne"
+          "name": "Rindfleischstreifen"
         },
         {
           "sortOrder": 3,
@@ -1530,7 +1530,7 @@
           "instruction": "Brokkoli, Nudeln, Sojasauce und Sesamöl hinzufügen und 4 Minuten braten."
         }
       ],
-      "tipNote": "Nachdem Sie die Nudeln abgetropft haben, mischen Sie sie mit Öl. Im Wok verklumpt es nicht.",
+      "tipNote": "Die Nudeln nach dem Abgießen mit etwas Öl mischen; so kleben sie im Wok nicht zusammen.",
       "servingSuggestion": "Frühlingszwiebeln und Sesam darüber streuen."
     },
     "issues": []
@@ -1837,7 +1837,7 @@
         },
         {
           "sortOrder": 2,
-          "name": "Schatz"
+          "name": "Honig"
         },
         {
           "sortOrder": 3,
@@ -2053,7 +2053,7 @@
         },
         {
           "sortOrder": 3,
-          "name": "Veal"
+          "name": "Beef"
         },
         {
           "sortOrder": 4,
@@ -2093,7 +2093,7 @@
         },
         {
           "sortOrder": 3,
-          "name": "Kalbfleisch"
+          "name": "Rindfleisch"
         },
         {
           "sortOrder": 4,
@@ -2101,7 +2101,7 @@
         },
         {
           "sortOrder": 5,
-          "name": "Schatz"
+          "name": "Honig"
         }
       ],
       "steps": [
@@ -2118,8 +2118,8 @@
           "instruction": "Den Teig mit Füllung füllen und 15 Minuten dämpfen."
         }
       ],
-      "tipNote": "Öffnen Sie den Deckel des Dampfkorbs erst, wenn der Garvorgang beendet ist. der Teig verliert keine Luft.",
-      "servingSuggestion": "Als scharfes Dim-Sum-Gericht servieren."
+      "tipNote": "Den Deckel des Dampfkorbs erst nach Ende der Garzeit öffnen; so fällt der Teig nicht zusammen.",
+      "servingSuggestion": "Als warmes Dim Sum servieren."
     },
     "issues": []
   },
@@ -2145,7 +2145,7 @@
         },
         {
           "sortOrder": 5,
-          "name": "Hot Pepper"
+          "name": "Chili Pepper"
         }
       ],
       "steps": [
@@ -2155,7 +2155,7 @@
         },
         {
           "stepNumber": 2,
-          "instruction": "Add garlic and hot pepper and fry for 2 minutes."
+          "instruction": "Add garlic and chili pepper and fry for 2 minutes."
         },
         {
           "stepNumber": 3,
@@ -2163,7 +2163,7 @@
         }
       ],
       "tipNote": "Spread beans in single layer in skillet; While their shells wrinkle, their insides remain alive.",
-      "servingSuggestion": "Serve with rice pilaf and tofu dishes."
+      "servingSuggestion": "Serve with steamed rice and tofu dishes."
     },
     "de": {
       "ingredients": [
@@ -2185,7 +2185,7 @@
         },
         {
           "sortOrder": 5,
-          "name": "Scharfer Pfeffer"
+          "name": "Chili"
         }
       ],
       "steps": [
@@ -2203,7 +2203,7 @@
         }
       ],
       "tipNote": "Bohnen in einer einzigen Schicht in der Pfanne verteilen; Während ihr Panzer faltig wird, bleibt ihr Inneres lebendig.",
-      "servingSuggestion": "Zu Reis-Pilaw- und Tofu-Gerichten servieren."
+      "servingSuggestion": "Zu Reis- und Tofu-Gerichten servieren."
     },
     "issues": []
   },
@@ -2305,7 +2305,7 @@
       "ingredients": [
         {
           "sortOrder": 1,
-          "name": "Cubed Lamb"
+          "name": "Diced Lamb"
         },
         {
           "sortOrder": 2,
@@ -2809,7 +2809,7 @@
       "ingredients": [
         {
           "sortOrder": 1,
-          "name": "Cubed Lamb"
+          "name": "Diced Lamb"
         },
         {
           "sortOrder": 2,
@@ -4237,7 +4237,7 @@
         },
         {
           "sortOrder": 5,
-          "name": "Hot Pepper"
+          "name": "Chili Pepper"
         }
       ],
       "steps": [
@@ -4251,7 +4251,7 @@
         },
         {
           "stepNumber": 3,
-          "instruction": "Add chocolate and hot pepper and stir until melted."
+          "instruction": "Add chocolate and chili pepper and stir until melted."
         }
       ],
       "tipNote": "Whisk the cocoa into the milk before it heats up; There will be no lumps left.",
@@ -4277,7 +4277,7 @@
         },
         {
           "sortOrder": 5,
-          "name": "Scharfer Pfeffer"
+          "name": "Chili"
         }
       ],
       "steps": [
@@ -4321,7 +4321,7 @@
         },
         {
           "sortOrder": 5,
-          "name": "Date"
+          "name": "Dates"
         }
       ],
       "steps": [
@@ -4361,7 +4361,7 @@
         },
         {
           "sortOrder": 5,
-          "name": "Datum"
+          "name": "Datteln"
         }
       ],
       "steps": [
@@ -4517,7 +4517,7 @@
         },
         {
           "sortOrder": 4,
-          "name": "Schatz"
+          "name": "Honig"
         },
         {
           "sortOrder": 5,
@@ -4605,7 +4605,7 @@
         },
         {
           "sortOrder": 5,
-          "name": "Schatz"
+          "name": "Honig"
         }
       ],
       "steps": [
@@ -4765,7 +4765,7 @@
         },
         {
           "sortOrder": 4,
-          "name": "Schatz"
+          "name": "Honig"
         }
       ],
       "steps": [
@@ -4895,7 +4895,7 @@
       "steps": [
         {
           "stepNumber": 1,
-          "instruction": "Add pineapple, mango, coco juice and lime juice to the blender."
+          "instruction": "Add pineapple, mango, coconut water, and lime juice to the blender."
         },
         {
           "stepNumber": 2,
@@ -4903,7 +4903,7 @@
         },
         {
           "stepNumber": 3,
-          "instruction": "Share it among cold glasses."
+          "instruction": "Pour into chilled glasses."
         }
       ],
       "tipNote": "Use frozen fruit; It stays dense and cold without adding ice.",
@@ -4931,7 +4931,7 @@
       "steps": [
         {
           "stepNumber": 1,
-          "instruction": "Ananas, Mango, Kokossaft und Limettensaft in den Mixer geben."
+          "instruction": "Ananas, Mango, Kokoswasser und Limettensaft in den Mixer geben."
         },
         {
           "stepNumber": 2,
@@ -4939,7 +4939,7 @@
         },
         {
           "stepNumber": 3,
-          "instruction": "Teilen Sie es in kalte Gläser."
+          "instruction": "Auf gekühlte Gläser verteilen."
         }
       ],
       "tipNote": "Verwenden Sie gefrorenes Obst; Ohne Zugabe von Eis bleibt es dicht und kalt.",
@@ -5009,7 +5009,7 @@
         },
         {
           "sortOrder": 5,
-          "name": "Schatz"
+          "name": "Honig"
         }
       ],
       "steps": [
@@ -5093,7 +5093,7 @@
         },
         {
           "sortOrder": 5,
-          "name": "Schatz"
+          "name": "Honig"
         }
       ],
       "steps": [
@@ -5173,7 +5173,7 @@
         },
         {
           "sortOrder": 4,
-          "name": "Schatz"
+          "name": "Honig"
         },
         {
           "sortOrder": 5,
@@ -5205,7 +5205,7 @@
       "ingredients": [
         {
           "sortOrder": 1,
-          "name": "Date"
+          "name": "Dates"
         },
         {
           "sortOrder": 2,
@@ -5245,7 +5245,7 @@
       "ingredients": [
         {
           "sortOrder": 1,
-          "name": "Datum"
+          "name": "Datteln"
         },
         {
           "sortOrder": 2,
@@ -5457,7 +5457,7 @@
       "ingredients": [
         {
           "sortOrder": 1,
-          "name": "Date"
+          "name": "Dates"
         },
         {
           "sortOrder": 2,
@@ -5497,7 +5497,7 @@
       "ingredients": [
         {
           "sortOrder": 1,
-          "name": "Datum"
+          "name": "Datteln"
         },
         {
           "sortOrder": 2,
@@ -5527,7 +5527,7 @@
         },
         {
           "stepNumber": 3,
-          "instruction": "Mit Kokosraspeln bestreichen und 20 Minuten abkühlen lassen."
+          "instruction": "In Kokosraspeln wälzen und 20 Minuten kühlen."
         }
       ],
       "tipNote": "Wenn die Masse beim Zusammendrücken mit der Hand nicht auseinanderfällt, ist sie zum Ausrollen bereit.",
@@ -5973,7 +5973,7 @@
         },
         {
           "sortOrder": 3,
-          "name": "Schatz"
+          "name": "Honig"
         },
         {
           "sortOrder": 4,
@@ -6481,7 +6481,7 @@
         },
         {
           "sortOrder": 2,
-          "name": "Cream"
+          "name": "Kaymak"
         },
         {
           "sortOrder": 3,
@@ -6503,14 +6503,15 @@
         },
         {
           "stepNumber": 2,
-          "instruction": "Roll out the dough thinly and fold in cream, peanuts and sugar."
+          "instruction": "Roll the dough out very thin and fold in kaymak, pistachios, and sugar."
         },
         {
           "stepNumber": 3,
           "instruction": "Cook in a buttered pan for 6 minutes on both sides."
         }
       ],
-      "tipNote": "Roll out the dough like a dice; Katmer swells in a short time in the pan and remains crispy."
+      "tipNote": "Roll the dough out paper-thin; the katmer puffs quickly in the pan and stays crisp.",
+      "servingSuggestion": "Serve warm with extra pistachios and a glass of tea."
     },
     "de": {
       "ingredients": [
@@ -6520,7 +6521,7 @@
         },
         {
           "sortOrder": 2,
-          "name": "Sahne"
+          "name": "Kaymak"
         },
         {
           "sortOrder": 3,
@@ -6542,14 +6543,15 @@
         },
         {
           "stepNumber": 2,
-          "instruction": "Den Teig dünn ausrollen und Sahne, Erdnüsse und Zucker unterheben."
+          "instruction": "Den Teig sehr dünn ausrollen und Kaymak, Pistazien und Zucker einschlagen."
         },
         {
           "stepNumber": 3,
           "instruction": "In einer gebutterten Pfanne von beiden Seiten 6 Minuten braten."
         }
       ],
-      "tipNote": "Den Teig würfelförmig ausrollen; Katmer quillt in der Pfanne in kurzer Zeit auf und bleibt knusprig."
+      "tipNote": "Den Teig hauchdünn ausrollen; der Katmer geht in der Pfanne schnell auf und bleibt knusprig.",
+      "servingSuggestion": "Warm mit extra Pistazien und einem Glas Tee servieren."
     },
     "issues": []
   },
@@ -6891,7 +6893,7 @@
         },
         {
           "sortOrder": 2,
-          "name": "Beef Cubed"
+          "name": "Diced Beef"
         },
         {
           "sortOrder": 3,
@@ -7123,7 +7125,7 @@
       "ingredients": [
         {
           "sortOrder": 1,
-          "name": "Cubed Lamb"
+          "name": "Diced Lamb"
         },
         {
           "sortOrder": 2,
@@ -7657,7 +7659,7 @@
         }
       ],
       "tipNote": "Bring the broth to a boil over low heat; When you remove the foam that accumulates on the surface, the soup will be clearer.",
-      "servingSuggestion": "Serve with fresh coriander, lime and hot pepper."
+      "servingSuggestion": "Serve with fresh coriander, lime, and sliced chili."
     },
     "de": {
       "ingredients": [
@@ -7701,7 +7703,7 @@
         }
       ],
       "tipNote": "Die Brühe bei schwacher Hitze zum Kochen bringen; Wenn Sie den Schaum entfernen, der sich an der Oberfläche ansammelt, wird die Suppe klarer.",
-      "servingSuggestion": "Mit frischem Koriander, Limette und scharfer Paprika servieren."
+      "servingSuggestion": "Mit frischem Koriander, Limette und Chili servieren."
     },
     "issues": []
   },
@@ -7795,11 +7797,11 @@
       "ingredients": [
         {
           "sortOrder": 1,
-          "name": "Baguette Bread"
+          "name": "Baguette"
         },
         {
           "sortOrder": 2,
-          "name": "Veal Ribeye"
+          "name": "Beef Ribeye"
         },
         {
           "sortOrder": 3,
@@ -7859,7 +7861,7 @@
         },
         {
           "sortOrder": 2,
-          "name": "Kalbs-Ribeye"
+          "name": "Ribeye-Steak"
         },
         {
           "sortOrder": 3,
@@ -7897,7 +7899,7 @@
       "steps": [
         {
           "stepNumber": 1,
-          "instruction": "Die Karotten und Radieschen mit Essig, Salz und Zucker 30 Minuten ruhen lassen."
+          "instruction": "Karotten und Rettich mit Essig, Salz und Zucker 30 Minuten ziehen lassen."
         },
         {
           "stepNumber": 2,
@@ -8283,7 +8285,7 @@
         },
         {
           "sortOrder": 2,
-          "name": "Veal Cutlet"
+          "name": "Beef Chop"
         },
         {
           "sortOrder": 3,
@@ -8323,7 +8325,7 @@
         },
         {
           "sortOrder": 2,
-          "name": "Kalbsschnitzel"
+          "name": "Rinderkotelett"
         },
         {
           "sortOrder": 3,

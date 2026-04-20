@@ -136,6 +136,7 @@ export class RuleBasedProvider implements AiProvider {
           totalMinutes: recipe.totalMinutes,
           servingCount: recipe.servingCount,
           averageCalories: recipe.averageCalories,
+          hungerBar: recipe.hungerBar,
           matchScore: match.score,
           matchedIngredients: match.matched,
           missingIngredients: match.missing,

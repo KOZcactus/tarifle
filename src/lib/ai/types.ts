@@ -41,6 +41,9 @@ export interface AiSuggestion {
   totalMinutes: number;
   servingCount: number;
   averageCalories: number | null;
+  /** Açlık barı, 1-10 porsiyon başı tokluk. "En tok" sort + acıktım
+   *  senaryosunda kullanılır. Null = hesaplanmamış (retrofit bekler). */
+  hungerBar: number | null;
   /** 0..1, ratio of recipe ingredients the user already has. */
   matchScore: number;
   /** Ingredient names the user had that matched this recipe. */

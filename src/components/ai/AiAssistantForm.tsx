@@ -108,7 +108,9 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
   const [assumePantry, setAssumePantry] = useState(true);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [selectedSuggestionIdx, setSelectedSuggestionIdx] = useState(-1);
-  const [sortMode, setSortMode] = useState<"match" | "fastest" | "least-missing">("match");
+  const [sortMode, setSortMode] = useState<
+    "match" | "fastest" | "least-missing" | "most-filling"
+  >("match");
   const [result, setResult] = useState<AiSuggestResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
@@ -149,7 +151,13 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
     // URL param missing → default true stays. Only flip to false when explicit "0".
     if (urlPantry === "0") setAssumePantry(false);
     const urlSort = searchParams.get("sirala");
-    if (urlSort === "fastest" || urlSort === "least-missing") setSortMode(urlSort);
+    if (
+      urlSort === "fastest" ||
+      urlSort === "least-missing" ||
+      urlSort === "most-filling"
+    ) {
+      setSortMode(urlSort);
+    }
 
     // Auto-submit after a tick
     setTimeout(() => formRef.current?.requestSubmit(), 100);
@@ -739,6 +747,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
                 { key: "match" as const, label: tResult("sortMatch") },
                 { key: "fastest" as const, label: tResult("sortFastest") },
                 { key: "least-missing" as const, label: tResult("sortLeastMissing") },
+                { key: "most-filling" as const, label: tResult("sortMostFilling") },
               ]).map(({ key, label }) => (
                 <button
                   key={key}
@@ -785,6 +794,15 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
                 .sort((a, b) => {
                   if (sortMode === "fastest") return a.totalMinutes - b.totalMinutes;
                   if (sortMode === "least-missing") return a.missingIngredients.length - b.missingIngredients.length;
+                  if (sortMode === "most-filling") {
+                    // Null hungerBar en sona (eski tarifler retrofit bekler);
+                    // tie-break matchScore desc ki kullanıcının eldeki
+                    // malzemeleriyle en iyi eşleşen tok tarifler üstte kalsın.
+                    const aH = a.hungerBar ?? -1;
+                    const bH = b.hungerBar ?? -1;
+                    if (aH !== bH) return bH - aH;
+                    return b.matchScore - a.matchScore;
+                  }
                   return b.matchScore - a.matchScore; // default: match
                 })
                 .map((s) => (

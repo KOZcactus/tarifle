@@ -12,7 +12,7 @@ import { NextResponse, type NextRequest } from "next/server";
  * `next.config` rewrites Edge Function limit problemine girmez çünkü
  * Prisma/ağır bağımlılık yüklenmiyor, saf string match + NextResponse.
  */
-export function middleware(req: NextRequest): NextResponse {
+export function proxy(req: NextRequest): NextResponse {
   const path = req.nextUrl.pathname;
   const match = path.match(/^\/([a-zA-Z0-9-]{8,128})\.txt$/);
   if (!match) return NextResponse.next();
@@ -38,8 +38,8 @@ export function middleware(req: NextRequest): NextResponse {
 
 export const config = {
   // Sadece kök seviye .txt URL'lerini yakala (api, _next, static asset
-  // path'leri hariç). Middleware body zaten regex ile key kısıtı yapıyor
-  //, eşleşmezse NextResponse.next() ile app route'una düşer (llms.txt,
+  // path'leri hariç). Proxy body zaten regex ile key kısıtı yapıyor,
+  // eşleşmezse NextResponse.next() ile app route'una düşer (llms.txt,
   // robots.txt etkilenmez).
   matcher: ["/((?!api|_next|_static|favicon.ico).*\\.txt)"],
 };

@@ -125,10 +125,11 @@ sayısı artar.
 
 ## Mimari notlar
 
-- **Key rotation:** env güncelle + redeploy. Middleware çalışma zamanında
+- **Key rotation:** env güncelle + redeploy. Proxy çalışma zamanında
   env okuyor, yeni key ile eski anahtar invalidate olur.
-- **Edge Function:** `src/middleware.ts` Edge runtime (Prisma yok,
-  ağır bağımlılık yok). 1MB Vercel limit'e uzak.
+- **Edge Function:** `src/proxy.ts` Edge runtime (Prisma yok,
+  ağır bağımlılık yok). 1MB Vercel limit'e uzak. Next.js 16'da
+  `middleware.ts` deprecated, `proxy.ts` standardı.
 - **Idempotent:** Aynı URL tekrar ping'lenebilir, IndexNow spec gereği
   penalty yok.
 - **Rate limit:** Tek istek başına 10 000 URL. `pingIndexNow` helper

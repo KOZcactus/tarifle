@@ -19,7 +19,7 @@ export async function createReport(formData: FormData): Promise<ReportResult> {
   // 10 reports / hour is generous for an honest user flagging a thread of
   // problem content; it cuts off mass-flagging campaigns hard. DB-level
   // @@unique([reporterId, targetType, targetId]) still prevents duplicate
-  // reports on the same target — rate limit protects breadth, unique protects
+  // reports on the same target, rate limit protects breadth, unique protects
   // depth.
   const rate = await checkRateLimit("report", rateLimitIdentifier(session.user.id));
   if (!rate.success) {
@@ -46,7 +46,7 @@ export async function createReport(formData: FormData): Promise<ReportResult> {
   // Verify the target actually exists before creating a dangling report.
   // VARIATION and REVIEW branches diverge on two things: the model we look
   // the row up in, and whether we bump a denormalised `reportCount`. Variation
-  // has one (drives the "most reported" admin view); Review doesn't — the
+  // has one (drives the "most reported" admin view); Review doesn't, the
   // admin review list joins through Report directly via `getReportedReviews`.
   if (targetType === "VARIATION") {
     const target = await prisma.variation.findUnique({

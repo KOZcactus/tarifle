@@ -3,7 +3,7 @@ import type { MDXRemoteProps } from "next-mdx-remote/rsc";
 import type { ComponentProps, ReactNode } from "react";
 
 /**
- * MDX component overrides — `<MDXRemote components={mdxComponents}>`
+ * MDX component overrides, `<MDXRemote components={mdxComponents}>`
  * ile inject edilir. Default MDX'te h1/h2/ul/a vs. raw HTML olarak
  * render eder; burada Tarifle design system sınıflarıyla değiştiriyoruz.
  *

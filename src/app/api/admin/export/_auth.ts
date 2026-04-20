@@ -2,7 +2,7 @@ import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 
 /**
- * Route-handler adminGuard — route'un ilk satırında çağır. 401/403 response
+ * Route-handler adminGuard, route'un ilk satırında çağır. 401/403 response
  * dönerse doğrudan return et; null dönerse kullanıcı ADMIN veya MODERATOR
  * demektir ve route handler devam eder.
  */

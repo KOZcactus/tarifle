@@ -1,5 +1,5 @@
 /**
- * next-intl request config — App Router server tarafı her render'da bunu
+ * next-intl request config, App Router server tarafı her render'da bunu
  * çağırır, aktif locale + messages döner. Cookie-based yaklaşım (URL
  * routing yok): kullanıcı açıkça TR/EN seçmedikçe TR kalır.
  *
@@ -7,7 +7,7 @@
  *   1. NEXT_LOCALE cookie (user ayarlardan/navbar'dan seçmiş)
  *   2. DEFAULT_LOCALE ("tr")
  *
- * Accept-Language bilinçli olarak atlandı — "kullanıcı değiştirmezse TR"
+ * Accept-Language bilinçli olarak atlandı, "kullanıcı değiştirmezse TR"
  * kuralı tarayıcı default'undan bağımsız olsun. Anonymous user da TR
  * görür.
  *
@@ -22,7 +22,7 @@ import { DEFAULT_LOCALE, isValidLocale, type Locale } from "./config";
 /**
  * Caller `getTranslations({ locale })` ile explicit locale verdiyse (örn.
  * OG image `generateImageMetadata` her locale için ayrı prerender ediyor)
- * o değeri kullan — `cookies()` çağırmaz, yani OG image gibi static
+ * o değeri kullan, `cookies()` çağırmaz, yani OG image gibi static
  * generation gereken route'lar dynamic server usage'a düşmez.
  *
  * Normal sayfa render'ında `requestLocale` null/undefined olur; o zaman

@@ -15,7 +15,7 @@ interface ActionResult {
 
 /**
  * Mark a specific set of notifications as read. Only affects the caller's own
- * rows — the service-layer `where` clause enforces that server-side, so even
+ * rows, the service-layer `where` clause enforces that server-side, so even
  * a tampered form submission can't touch someone else's inbox.
  */
 export async function markNotificationsReadAction(

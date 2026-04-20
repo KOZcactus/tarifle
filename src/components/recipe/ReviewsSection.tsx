@@ -186,7 +186,7 @@ export async function ReviewsSection({
                     <DeleteOwnReviewButton reviewId={r.id} />
                   ) : userId ? (
                     // Rapor butonu yalnız başkalarının yorumu için
-                    // — kullanıcı kendi yorumunu raporlamaz, düzenler/siler.
+                    //, kullanıcı kendi yorumunu raporlamaz, düzenler/siler.
                     <ReportButton targetType="REVIEW" targetId={r.id} />
                   ) : null}
                 </div>

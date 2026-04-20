@@ -1,14 +1,14 @@
 "use server";
 
 /**
- * User personalisation preferences — MVP round saves the three selection
+ * User personalisation preferences, MVP round saves the three selection
  * sets (favoriteTags / allergenAvoidances / favoriteCuisines) to the
  * `users` table. Listing/discover filtering is a separate pass; this
  * server action only persists.
  *
  * Zod schema restricts inputs to canonical enums/slug lists so arbitrary
  * strings can't land in the DB. Tag slug validation is deferred to DB
- * lookup (cheap) — we only check string shape up front.
+ * lookup (cheap), we only check string shape up front.
  */
 import { z } from "zod";
 import type { Allergen } from "@prisma/client";
@@ -55,7 +55,7 @@ export async function updateUserPreferencesAction(
     };
   }
 
-  // Validate tag slugs exist — prevents UI-chipset drift from persisting
+  // Validate tag slugs exist, prevents UI-chipset drift from persisting
   // orphan slugs. Dedupe via Set so repeated values don't double-count.
   const uniqueTagSlugs = Array.from(new Set(parsed.data.favoriteTags));
   if (uniqueTagSlugs.length > 0) {

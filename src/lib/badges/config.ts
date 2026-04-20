@@ -4,7 +4,7 @@ export interface BadgeMeta {
   label: string;
   description: string;
   emoji: string;
-  /** Tone-color for the badge chip — maps to design tokens. */
+  /** Tone-color for the badge chip, maps to design tokens. */
   tone: "blue" | "green" | "gold" | "primary";
 }
 

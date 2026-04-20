@@ -59,7 +59,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
 
   const category = BLOG_CATEGORIES.find((c) => c.slug === post.category);
 
-  // Schema.org Article JSON-LD — Google Discover + rich results + Pinterest
+  // Schema.org Article JSON-LD, Google Discover + rich results + Pinterest
   // Article rich pin. `image` alani explicit verildi (Pinterest scraper
   // bunu opengraph-image fallback'ten once goruyor).
   const articleJsonLd = {

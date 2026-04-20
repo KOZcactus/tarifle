@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { loadGoogleFont } from "@/lib/og";
 import { SITE_DESCRIPTION } from "@/lib/constants";
 
-export const alt = "Tarifle — Make Eat";
+export const alt = "Tarifle, Make Eat";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

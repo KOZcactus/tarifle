@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 /**
- * `/akis` — takip edilen kullanıcıların son 30 günlük PUBLISHED
+ * `/akis`, takip edilen kullanıcıların son 30 günlük PUBLISHED
  * uyarlama akışı.
  *
  * Anonymous: /giris'e yönlendirir (feed login-gated).

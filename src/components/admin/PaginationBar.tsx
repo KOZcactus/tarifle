@@ -11,7 +11,7 @@ interface PaginationBarProps {
 /**
  * Compact admin pagination: "Önceki / 1 2 … 5 / Sonraki" style bar.
  * Always shows first, last, current ± 1, and ellipsis gaps.
- * No JS — pure Link with URL param update.
+ * No JS, pure Link with URL param update.
  */
 export async function PaginationBar({
   currentPage,

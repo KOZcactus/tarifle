@@ -9,14 +9,14 @@ export interface BreadcrumbItem {
 
 /**
  * Schema.org BreadcrumbList JSON-LD. Google Search "Ana sayfa › Tarifler
- * › Kategori › Tarif" şeridini sonuç kartının altına ekler — organik
+ * › Kategori › Tarif" şeridini sonuç kartının altına ekler, organik
  * CTR artırıcı rich result. Her breadcrumb item `@id` olarak tam URL
  * ister (relative path değil).
  *
  * Aggregate rating SKIP: Google Recipe rich results için gerçek kullanıcı
  * rating'i gerekir. Bookmark/like sayısı rating değil. Review system
  * eklenirse (Faz 3 kapsamı) o zaman `aggregateRating` + `review` array
- * eklenir — şimdilik yok.
+ * eklenir, şimdilik yok.
  */
 export function generateBreadcrumbJsonLd(items: readonly BreadcrumbItem[]) {
   return {
@@ -39,7 +39,7 @@ export interface AggregateRatingInput {
 }
 
 /**
- * Adım metninden kısa `name` türet — HowToStep.name Google rich result'ta
+ * Adım metninden kısa `name` türet, HowToStep.name Google rich result'ta
  * "step 1 of 5" başlığı olarak görünür. İlk cümlenin ilk 60 karakteri +
  * fallback "Adım N".
  */
@@ -51,12 +51,12 @@ function stepNameFromInstruction(instruction: string, position: number): string 
 }
 
 /**
- * Kural-tabanlı `tool` inference — tarif adım metinlerinden ve tag
+ * Kural-tabanlı `tool` inference, tarif adım metinlerinden ve tag
  * listesinden ortak mutfak ekipmanlarını çıkarır. HowTo schema'nın
  * `tool` property'si Recipe'de de geçerli (inheritance). Google rich
  * snippet'te doğrudan görünmez ama structured data zenginliği artar.
  *
- * Eşleşme sırası önemli değil — Set ile unique, sonra alfabetik.
+ * Eşleşme sırası önemli değil, Set ile unique, sonra alfabetik.
  */
 const TOOL_PATTERNS: readonly { pattern: RegExp; tool: string }[] = [
   { pattern: /\bfırın/i, tool: "Fırın" },
@@ -114,7 +114,7 @@ export function generateRecipeJsonLd(
     recipeIngredient: recipe.ingredients.map(
       (ing) => `${ing.amount} ${ing.unit ?? ""} ${ing.name}`.trim(),
     ),
-    // HowToSupply — schema.org'da Recipe HowTo'dan inherit eder. Malzeme
+    // HowToSupply, schema.org'da Recipe HowTo'dan inherit eder. Malzeme
     // listesinin yapısal versiyonu; recipeIngredient flat string kalsa da
     // supply object array HowTo-style structured data sağlar.
     supply: recipe.ingredients.map((ing) => ({
@@ -126,7 +126,7 @@ export function generateRecipeJsonLd(
         ...(ing.unit ? { unitText: ing.unit } : {}),
       },
     })),
-    // HowToTool — adım metinlerinden inference edilen mutfak ekipmanı.
+    // HowToTool, adım metinlerinden inference edilen mutfak ekipmanı.
     // Sıfırsa emit etme (schema temiz kalsın).
     ...(tools.length > 0
       ? {
@@ -152,7 +152,7 @@ export function generateRecipeJsonLd(
           },
         }
       : {}),
-    // AggregateRating only emitted when real review data exists — Google
+    // AggregateRating only emitted when real review data exists, Google
     // structured-data abuse guard: fake/bookmark-based ratings are flagged.
     ...(aggregateRating && aggregateRating.count > 0
       ? {
@@ -170,12 +170,12 @@ export function generateRecipeJsonLd(
 }
 
 /**
- * Schema.org FAQPage JSON-LD — auto-generated from recipe data.
+ * Schema.org FAQPage JSON-LD, auto-generated from recipe data.
  * Google SERP'te FAQ rich results gösterir. Sıfır içerik yazma,
  * tamamen data-driven.
  */
 /**
- * Category FAQ JSON-LD — auto-generated from category stats.
+ * Category FAQ JSON-LD, auto-generated from category stats.
  */
 export function generateCategoryFaqJsonLd(
   categoryName: string,

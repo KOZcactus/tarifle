@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const variation = await getVariationById(id, session?.user?.id ?? null);
   if (!variation) return { title: "Uyarlama bulunamadı | Tarifle" };
 
-  const title = `${variation.miniTitle} — ${variation.recipe.title} uyarlaması`;
+  const title = `${variation.miniTitle}, ${variation.recipe.title} uyarlaması`;
   const authorLabel = variation.author.name ?? `@${variation.author.username}`;
   const description =
     variation.description?.slice(0, 200) ||
@@ -47,12 +47,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 /**
- * `/uyarlama/[id]` — tek uyarlamanın permalink'i + paylaşım yüzü.
+ * `/uyarlama/[id]`, tek uyarlamanın permalink'i + paylaşım yüzü.
  *
  * Tarif detay sayfasındaki uzun akışın küçük bir çıkarımı: header,
  * author + tarife geri dönüş linki, miniTitle, description, notes,
  * ingredients listesi + adımlar, paylaş butonu. Alttan büyük CTA
- * tarif sayfasına götürüyor — izleyici uyarlamayı okuduktan sonra
+ * tarif sayfasına götürüyor, izleyici uyarlamayı okuduktan sonra
  * asıl tarifle buluşuyor.
  */
 export default async function VariationPermalinkPage({ params }: PageProps) {
@@ -69,7 +69,7 @@ export default async function VariationPermalinkPage({ params }: PageProps) {
   const authorLabel = variation.author.name ?? `@${variation.author.username}`;
   const ingredients = normalizeList(variation.ingredients);
   const steps = normalizeList(variation.steps);
-  const shareText = `${variation.miniTitle} — ${variation.recipe.title} uyarlaması`;
+  const shareText = `${variation.miniTitle}, ${variation.recipe.title} uyarlaması`;
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8">
@@ -131,7 +131,7 @@ export default async function VariationPermalinkPage({ params }: PageProps) {
               url={`${SITE_URL}/uyarlama/${variation.id}`}
               text={
                 variation.description?.slice(0, 160) ||
-                `${authorLabel} — ${variation.recipe.title} uyarlaması`
+                `${authorLabel}, ${variation.recipe.title} uyarlaması`
               }
               imageUrl={`${SITE_URL}/uyarlama/${variation.id}/opengraph-image`}
             />
@@ -209,7 +209,7 @@ export default async function VariationPermalinkPage({ params }: PageProps) {
 }
 
 /**
- * Variation ingredients/steps JSONB bucket — Prisma `Json` döndürür;
+ * Variation ingredients/steps JSONB bucket, Prisma `Json` döndürür;
  * seed formatında basit string array, kullanıcı entry'lerinde de
  * "line 1\nline 2" tek string bazen. Her iki şekli sade string[]'e
  * çeviriyoruz.

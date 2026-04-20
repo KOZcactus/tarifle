@@ -47,7 +47,7 @@ export async function getPendingReviews() {
   });
 }
 
-/** Hakkında PENDING rapor olan yorumlar — raporlar sayfasındaki review bölümü */
+/** Hakkında PENDING rapor olan yorumlar, raporlar sayfasındaki review bölümü */
 export async function getReportedReviews() {
   const pendingReports = await prisma.report.findMany({
     where: { targetType: "REVIEW", status: "PENDING" },
@@ -164,7 +164,7 @@ export async function getAdminStats() {
     ? Number(((imagelessCount / totalRecipes) * 100).toFixed(1))
     : 0;
 
-  // Unified "inceleme bekliyor" — variation + review preflight kuyrukları
+  // Unified "inceleme bekliyor", variation + review preflight kuyrukları
   const pendingQueueTotal = pendingVariations + pendingReviewsQueue;
 
   return {
@@ -192,7 +192,7 @@ export async function getAdminStats() {
     reviewAverage: reviewAggregate._avg.rating
       ? Number(reviewAggregate._avg.rating.toFixed(2))
       : null,
-    reviewTotal, // includes hidden/pending — for moderation health
+    reviewTotal, // includes hidden/pending, for moderation health
     // User health
     emailVerifiedCount,
     emailVerifiedRatio,
@@ -204,7 +204,7 @@ export async function getAdminStats() {
 }
 
 /**
- * En aktif kullanıcılar — uyarlama + yorum + bookmark sayıları.
+ * En aktif kullanıcılar, uyarlama + yorum + bookmark sayıları.
  * Skor: variationCount * 3 + reviewCount * 2 + bookmarkCount * 1 (content
  * üreten kullanıcıya daha yüksek ağırlık). Dashboard leaderboard'u için.
  */
@@ -282,7 +282,7 @@ export async function getMostReportedVariations(limit = 5) {
 }
 
 /**
- * En çok raporlanan yorumlar — Report targetType=REVIEW üzerinden groupBy.
+ * En çok raporlanan yorumlar, Report targetType=REVIEW üzerinden groupBy.
  * Variation'da `reportCount` denormalisation vardı, Review'da yok; bu yüzden
  * report tablosu üzerinden aggregate ediliyor.
  */
@@ -349,7 +349,7 @@ export async function getAdminAnnouncements() {
 }
 
 /**
- * Aktif duyurular — public layout'ta banner olarak gösterilir.
+ * Aktif duyurular, public layout'ta banner olarak gösterilir.
  * Kurallar:
  *  - startsAt null → hemen geçerli
  *  - endsAt null → süresiz
@@ -357,7 +357,7 @@ export async function getAdminAnnouncements() {
  *
  * Defensive: build prerender (CI + lokal) sırasında DATABASE_URL placeholder
  * olabilir ya da migration henüz apply edilmemiş olabilir. Hata fırlarsa
- * banner'sız sessiz dönüyoruz — layout asla patlamamalı.
+ * banner'sız sessiz dönüyoruz, layout asla patlamamalı.
  */
 export async function getActiveAnnouncements() {
   const now = new Date();
@@ -381,7 +381,7 @@ export async function getActiveAnnouncements() {
   } catch (err) {
     // DB erişimsiz/tablo yok → boş liste. Banner hiç render edilmez,
     // layout asla patlamaz. Build prerender sırasında (NEXT_PHASE set)
-    // sessiz geç — her static sayfa için log basmak çıktıyı boğar.
+    // sessiz geç, her static sayfa için log basmak çıktıyı boğar.
     if (process.env.NEXT_PHASE !== "phase-production-build") {
       const msg = err instanceof Error ? err.message : String(err);
       console.warn(`[layout] getActiveAnnouncements skipped: ${msg.slice(0, 120)}`);
@@ -452,7 +452,7 @@ export interface ModerationLogParams {
 
 /**
  * Moderation action audit trail. createdAt DESC. Filter + pagination.
- * Log kayıtları read-only — kullanıcıya göstermek değil, moderatöre "ne
+ * Log kayıtları read-only, kullanıcıya göstermek değil, moderatöre "ne
  * yapıldı" izi bırakmak için. Target bilgisi denormalize saklı değil;
  * target type'a göre ayrıca title çekilir (getModerationLogTargets).
  */
@@ -489,7 +489,7 @@ export async function getModerationLog(params: ModerationLogParams) {
 }
 
 /**
- * Log satırlarındaki targetId'lerin title/label'ını toplu çeker — N+1
+ * Log satırlarındaki targetId'lerin title/label'ını toplu çeker, N+1
  * önlemek için. {variation-id: "Fırın versiyonu"} tipi map döner.
  */
 export async function getModerationLogTargets(
@@ -602,7 +602,7 @@ export async function getAdminCategories() {
 
 /**
  * Tek kullanıcının tüm admin-görünür verisi. Variation + review listelerinde
- * tüm statüler (HIDDEN + PENDING_REVIEW dahil) gelir — moderatörün o user'ın
+ * tüm statüler (HIDDEN + PENDING_REVIEW dahil) gelir, moderatörün o user'ın
  * içerik geçmişini tam görmesi için. Filed reports de dahil (user kimi
  * raporlamış), kullanıcı spam-reporter mı tespit etmek için.
  */
@@ -699,7 +699,7 @@ export async function getAdminUserDetail(username: string) {
 /**
  * Tek tarifin admin-görünür detayı: stats + rating aggregate + distribution
  * + variation + review listeleri. /tarif/[slug] public sayfasının admin
- * gözüyle tam karşılığı — HIDDEN / PENDING_REVIEW içerik dahil.
+ * gözüyle tam karşılığı, HIDDEN / PENDING_REVIEW içerik dahil.
  */
 export async function getAdminRecipeDetail(slug: string) {
   const recipe = await prisma.recipe.findUnique({
@@ -968,7 +968,7 @@ export async function getAdminUsersList(params: AdminUserListParams) {
 }
 
 /**
- * En çok görüntülenen N tarif — editorial/featured karar vermek için.
+ * En çok görüntülenen N tarif, editorial/featured karar vermek için.
  * Trendleri anlamak için viewCount DESC, sadece PUBLISHED.
  */
 export async function getTopViewedRecipes(
@@ -989,7 +989,7 @@ export async function getTopViewedRecipes(
 }
 
 /**
- * Son N kullanıcı kaydı — onboarding akışını izlemek + yeni kullanıcılara
+ * Son N kullanıcı kaydı, onboarding akışını izlemek + yeni kullanıcılara
  * hoşgeldin e-maili / incelemesi için fikir verir.
  */
 export async function getRecentSignups(
@@ -1021,7 +1021,7 @@ export async function getRecentSignups(
 }
 
 /**
- * Son N gün günlük signup — user growth bar chart için.
+ * Son N gün günlük signup, user growth bar chart için.
  * Boş günler 0'la doldurulur (chart'ta gap yerine düz bar gözüksün).
  */
 export async function getUserGrowthDaily(
@@ -1083,11 +1083,11 @@ export async function getReviewDistribution(): Promise<Record<1 | 2 | 3 | 4 | 5,
 }
 
 /**
- * Son N batch — Recipe.createdAt günleri gruplayıp en yeni N grubu döner.
+ * Son N batch, Recipe.createdAt günleri gruplayıp en yeni N grubu döner.
  * Codex 100 tarif/batch yazıyor, hepsi aynı dakika INSERT'lendiği için
  * "aynı saatte 50+ tarif eklenmiş" tarihler batch sınırlarıdır.
  *
- * 1 saatlik bucket'lar — birden fazla seed run'u aynı gün varsa ayırır.
+ * 1 saatlik bucket'lar, birden fazla seed run'u aynı gün varsa ayırır.
  */
 export async function getRecentBatches(limit = 7): Promise<
   { hour: Date; count: number }[]
@@ -1111,13 +1111,13 @@ export async function getRecentBatches(limit = 7): Promise<
 }
 
 /**
- * Kategori başına tarif sayısı — admin'in "hangi kategori dolu, hangi
+ * Kategori başına tarif sayısı, admin'in "hangi kategori dolu, hangi
  * boş" görüşü. Sortby count desc.
  */
 /**
- * Cuisine dağılımı — admin'in mutfak dengesini görmesi.
+ * Cuisine dağılımı, admin'in mutfak dengesini görmesi.
  */
-/** Mutfak dağılımı — cached 15 dk. Yeni tarif seed'i 100'er artışla
+/** Mutfak dağılımı, cached 15 dk. Yeni tarif seed'i 100'er artışla
  *  geldiği için dakika-level taze olması kritik değil; analytics +
  *  footer/landing chip'leri 15 dk staleness'tan etkilenmez.
  *  `revalidateTag("recipes")` ile invalidate edilir. */
@@ -1168,7 +1168,7 @@ export async function getCategoryBreakdown(): Promise<
 // topluluk sağlığı göstergelerini (abone, son 7 gün büyüme, en çok yorum /
 // kaydedilen tarif) doldurur.
 
-/** Newsletter ACTIVE sub count — double-opt-in confirmed subscribers. */
+/** Newsletter ACTIVE sub count, double-opt-in confirmed subscribers. */
 export async function getActiveNewsletterCount(): Promise<number> {
   return prisma.newsletterSubscription.count({
     where: { status: "ACTIVE" },
@@ -1200,12 +1200,12 @@ export async function getRecentUserSignupCount(days = 7): Promise<number> {
 }
 
 /**
- * En çok yorum alan tarifler — Review count group-by. Sadece `PUBLISHED`
+ * En çok yorum alan tarifler, Review count group-by. Sadece `PUBLISHED`
  * review'lar sayılır (moderasyondan geçmemiş içerik leaderboard'a giremez).
  * Recipe join ikinci queryde: Prisma groupBy + relational include tek
  * queryde desteklemez, ayrı fetch gerekir.
  */
-/** En çok yorum alan tarifler — cached 10 dk. Admin analytics +
+/** En çok yorum alan tarifler, cached 10 dk. Admin analytics +
  *  potansiyel homepage shelf kullanımı için. Review ekleme/silme
  *  dakika-level taze olmak zorunda değil; `revalidateTag("reviews")`
  *  ile admin moderation sonrası invalidate edilir. */
@@ -1248,10 +1248,10 @@ export const getMostReviewedRecipes = unstable_cache(
 );
 
 /**
- * En çok kaydedilen tarifler — Bookmark group-by. "Kullanıcılar hangi
+ * En çok kaydedilen tarifler, Bookmark group-by. "Kullanıcılar hangi
  * tarifleri dolabına koyuyor" sorusunun cevabı; view'den daha güçlü bir
  * niyet sinyali (görüntüleme ≠ deneme isteği).
- * Cached 10 dk — bookmark ekleme dakika-level taze olmak zorunda değil.
+ * Cached 10 dk, bookmark ekleme dakika-level taze olmak zorunda değil.
  */
 export const getMostSavedRecipes = unstable_cache(
   async (

@@ -3,13 +3,13 @@
  *
  * Tarifle arama akışında kullanılır:
  *  - AI matcher 3. adım (direct prefix → synonym → fuzzy fallback)
- *  - Pantry staple check — "kerik" yazan kullanıcı "kekik" ile eşleşsin
- *  - Recipe title arama — "domatez corbasi" → "domates çorbası" bulunur
+ *  - Pantry staple check, "kerik" yazan kullanıcı "kekik" ile eşleşsin
+ *  - Recipe title arama, "domatez corbasi" → "domates çorbası" bulunur
  *
  * Strateji: klasik Levenshtein DP, TR karakterler ASCII'ye indirgenip
  * karşılaştırılır. Bu sayede "ş"/"s", "ğ"/"g" gibi klavye yazım
  * kaymaları ekstra distance yaratmaz. Distance eşiği kelime uzunluğuna
- * göre dinamik — kısa kelimeler ("et", "su") yanlış pozitif yaratmasın.
+ * göre dinamik, kısa kelimeler ("et", "su") yanlış pozitif yaratmasın.
  */
 
 /**
@@ -43,7 +43,7 @@ export function asciiNormalize(input: string): string {
  * ingredient adı <30 char) sorunsuz.
  *
  * Tek karakterlik ekleme/silme/değiştirme = 1 maliyet. Transposition
- * (harf takası) Damerau varyantında özel, biz kullanmıyoruz — klasik
+ * (harf takası) Damerau varyantında özel, biz kullanmıyoruz, klasik
  * Levenshtein zaten çoğu typo'yu 1-2 distance ile yakalar.
  */
 export function levenshteinDistance(a: string, b: string): number {
@@ -51,7 +51,7 @@ export function levenshteinDistance(a: string, b: string): number {
   if (a.length === 0) return b.length;
   if (b.length === 0) return a.length;
 
-  // Rolling rows — sadece previous + current tutulur.
+  // Rolling rows, sadece previous + current tutulur.
   let prev = new Array<number>(b.length + 1);
   let curr = new Array<number>(b.length + 1);
 
@@ -76,11 +76,11 @@ export function levenshteinDistance(a: string, b: string): number {
 /**
  * Fuzzy match eşik kuralı.
  *
- * Kısa string'lerde (≤4 char) distance 1 bile anlamsal farktır — "et"
+ * Kısa string'lerde (≤4 char) distance 1 bile anlamsal farktır, "et"
  * vs "at" farklı kelimeler, tolere etmiyoruz.
  *
  * Orta (5-7 char): 1 edit toleransı (bir harf eksik/yanlış/taşmış).
- * Uzun (8+ char): 2 edit toleransı — "profiterol" vs "profiteroll" OK.
+ * Uzun (8+ char): 2 edit toleransı, "profiterol" vs "profiteroll" OK.
  */
 function allowedDistance(len: number): number {
   if (len <= 4) return 0;
@@ -100,7 +100,7 @@ export interface FuzzyOptions {
  *   - ASCII normalize (TR → Latin)
  *   - Length-aware distance threshold
  *
- * Exact match, prefix match, substring match değildir — sadece edit
+ * Exact match, prefix match, substring match değildir, sadece edit
  * distance. Caller kendi stratejisinde prefix/substring'i ayrı dener.
  */
 export function fuzzyMatches(

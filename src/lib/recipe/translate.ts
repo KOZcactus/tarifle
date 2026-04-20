@@ -17,7 +17,7 @@
  *
  * Strateji: locale=tr için dokunma (primary dil). Diğer locale için
  * translations[locale].title varsa onu kullan, yoksa TR fallback.
- * Field-by-field fallback — EN title yokken description varsa yine
+ * Field-by-field fallback, EN title yokken description varsa yine
  * description'ı kullan, ama title TR kalır.
  *
  * Ingredient/step mapping: sortOrder/stepNumber ile eşlenir (array
@@ -51,7 +51,7 @@ interface RecipeLocaleBundle {
 }
 
 /**
- * Translations alanı Prisma Json? — TypeScript tarafında `unknown`.
+ * Translations alanı Prisma Json?, TypeScript tarafında `unknown`.
  * Helper'lar shape'i runtime'da narrow'lar (typeof check + field
  * existence), page tarafında JSON güvenliği garanti edilir.
  */

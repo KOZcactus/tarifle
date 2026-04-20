@@ -82,7 +82,7 @@ export function ShoppingListClient({ initialItems }: ShoppingListClientProps) {
       }
       // Optimistic: we don't know the new id yet. Instead of refreshing whole page,
       // add a temp item with negative id until next server load. Simpler: add + reload.
-      // We'll add locally with a synthetic id — server revalidates on next visit.
+      // We'll add locally with a synthetic id, server revalidates on next visit.
       setItems((list) => [
         ...list,
         {

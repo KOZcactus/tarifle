@@ -1,7 +1,7 @@
 /**
  * Fetch a Google Font as an ArrayBuffer, suitable for passing into
  * `next/og`'s ImageResponse. We load the full weight (latin + latin-ext for
- * Turkish) rather than a text subset — OG images are cached so the size hit
+ * Turkish) rather than a text subset, OG images are cached so the size hit
  * is one-time, and subsetting fragile-breaks when a char isn't listed.
  */
 export async function loadGoogleFont(

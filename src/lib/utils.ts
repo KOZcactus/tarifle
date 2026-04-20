@@ -3,7 +3,7 @@ import slugifyLib from "slugify";
 
 /**
  * Compose class names. Supports objects, arrays, and conditional values via
- * clsx — previously this function silently coerced objects to "[object Object]".
+ * clsx, previously this function silently coerced objects to "[object Object]".
  */
 export function cn(...inputs: ClassValue[]): string {
   return clsx(inputs);

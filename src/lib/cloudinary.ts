@@ -8,7 +8,7 @@ import { v2 as cloudinary, type UploadApiResponse } from "cloudinary";
  *   CLOUDINARY_API_KEY
  *   CLOUDINARY_API_SECRET
  *
- * Credentials never touch the client — upload goes through a server action
+ * Credentials never touch the client, upload goes through a server action
  * (`uploadRecipePhotoAction`) that streams the file buffer to Cloudinary via
  * `uploader.upload_stream`. That keeps the API secret server-side and lets
  * us enforce auth + file validation before any bandwidth goes to Cloudinary.
@@ -54,7 +54,7 @@ export interface CloudinaryUploadResult {
  * Transformations:
  *   - auto quality + auto format (Cloudinary picks avif/webp per browser)
  *   - hard cap at 1600x1600 (downsize if larger) to keep CDN egress bounded
- *   - strip exif (privacy — raw phone uploads leak geolocation)
+ *   - strip exif (privacy, raw phone uploads leak geolocation)
  *
  * Thumbnail URL uses Cloudinary's URL-level transformation so no second
  * upload needed; 400w variant for grid view.
@@ -71,14 +71,14 @@ export async function uploadRecipePhoto(
       {
         folder,
         resource_type: "image",
-        format: "jpg", // normalize — originals were heic/png/etc; serve jpg with auto format override downstream
+        format: "jpg", // normalize, originals were heic/png/etc; serve jpg with auto format override downstream
         transformation: [
           { width: 1600, height: 1600, crop: "limit" },
           { quality: "auto:good", fetch_format: "auto" },
         ],
         // Remove EXIF so user uploads don't leak GPS / camera serials.
         image_metadata: false,
-        // Overwrite would collide if two users upload same-hash photo — let
+        // Overwrite would collide if two users upload same-hash photo, let
         // Cloudinary auto-suffix with unique public_id.
         unique_filename: true,
         use_filename: false,
@@ -120,7 +120,7 @@ export function buildThumbnailUrl(secureUrl: string): string {
 
 /**
  * Delete a Cloudinary asset by `public_id`. Used when an admin or the
- * photo owner removes their upload. Idempotent — Cloudinary returns
+ * photo owner removes their upload. Idempotent, Cloudinary returns
  * `{ result: "not found" }` for missing IDs without throwing.
  */
 export async function deleteRecipePhoto(publicId: string): Promise<void> {

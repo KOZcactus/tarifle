@@ -16,7 +16,7 @@ import {
 } from "@/lib/actions/admin";
 
 /**
- * Çoklu moderasyon UI — admin/incelemeler + admin/yorumlar sayfalarında
+ * Çoklu moderasyon UI, admin/incelemeler + admin/yorumlar sayfalarında
  * kullanılır. Tek context + 3 parça:
  *
  *   <BulkModerationProvider targetType="VARIATION">

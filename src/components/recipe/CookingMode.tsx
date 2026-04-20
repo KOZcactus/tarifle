@@ -83,7 +83,7 @@ export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProp
     document.body.style.overflow = "";
   }, [releaseWakeLock]);
 
-  // Step navigation — declared before the effect below so the keyboard
+  // Step navigation, declared before the effect below so the keyboard
   // handler can close over a stable identity via useCallback. Using plain
   // arrow functions would require the effect to re-run every render and
   // React 19's react-hooks/immutability rule flags the ordering mistake.

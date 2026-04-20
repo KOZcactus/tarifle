@@ -59,7 +59,7 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
 
           {/* Sağ üst köşe: cuisine flag + editör rozeti. İkisi de varsa
               flag solda (cuisine kimliği), rozet sağda (Tarifle kürasyonu).
-              Rozet isFeatured gate'li — admin seçtiği tariflerde görünür. */}
+              Rozet isFeatured gate'li, admin seçtiği tariflerde görünür. */}
           <div className="absolute right-3 top-3 flex items-center gap-1.5">
             {recipe.cuisine && recipe.cuisine !== "tr" && CUISINE_FLAG[recipe.cuisine as CuisineCode] && (
               <span

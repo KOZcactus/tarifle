@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title: t("aboutTitle"), description: t("aboutDescription") };
 }
 
-// Saatlik revalidate — DB'ye her request'te sorgu gitmez
+// Saatlik revalidate, DB'ye her request'te sorgu gitmez
 export const revalidate = 3600;
 
 export default async function HakkimizdaPage() {

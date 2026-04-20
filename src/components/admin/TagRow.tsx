@@ -16,7 +16,7 @@ interface TagRowProps {
 }
 
 /**
- * Tag tablosunda bir satır — inline rename + delete. Silme yalnızca
+ * Tag tablosunda bir satır, inline rename + delete. Silme yalnızca
  * usage 0 ise (backend guard'ı da var).
  */
 export function TagRow({ id, name, slug, usageCount }: TagRowProps) {

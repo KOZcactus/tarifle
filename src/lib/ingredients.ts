@@ -2,7 +2,7 @@
  * Shared types + helpers for recipe/variation ingredients.
  *
  * History: early seeds and the first variation form stored ingredients as a
- * plain `string[]` — each item a raw line like "2 yemek kaşığı un". The new
+ * plain `string[]`, each item a raw line like "2 yemek kaşığı un". The new
  * variation form asks for amount + unit + name as separate fields so the
  * data is structured and we can later do things like scale servings, build
  * shopping lists without NLP, or offer better auto-complete.
@@ -61,7 +61,7 @@ export function isStructuredIngredient(value: unknown): value is Ingredient {
 
 /**
  * Accepts anything Prisma's `Json` column can hold and produces a clean
- * `Ingredient[]`. Silently drops malformed entries — the admin review path
+ * `Ingredient[]`. Silently drops malformed entries, the admin review path
  * would have filtered junk before it got here.
  */
 export function normaliseIngredients(raw: unknown): Ingredient[] {

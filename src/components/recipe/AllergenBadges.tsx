@@ -7,9 +7,9 @@ import { ALLERGEN_EMOJI } from "@/lib/allergens";
 interface AllergenBadgesProps {
   allergens: readonly Allergen[];
   /**
-   * "warning" — amber surface, used on recipe detail where we want the info
+   * "warning", amber surface, used on recipe detail where we want the info
    * to stand out for allergy-concerned readers.
-   * "subtle" — muted chip style for card grids where real estate is tight.
+   * "subtle", muted chip style for card grids where real estate is tight.
    */
   tone?: "warning" | "subtle";
 }

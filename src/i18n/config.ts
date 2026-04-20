@@ -1,9 +1,9 @@
 /**
- * i18n konfigürasyonu — tek kaynak liste. Yeni locale eklerken burayı
+ * i18n konfigürasyonu, tek kaynak liste. Yeni locale eklerken burayı
  * güncelle + `messages/{locale}.json` dosyasını ekle. Middleware /
  * cookie okuma / validation hepsi buradan beslenir.
  *
- * Tarifle primary language TR — default bu. EN Faz 3'te eklendi,
+ * Tarifle primary language TR, default bu. EN Faz 3'te eklendi,
  * user açıkça seçmezse TR kalır. DE / FR ileride buraya eklenecek.
  */
 

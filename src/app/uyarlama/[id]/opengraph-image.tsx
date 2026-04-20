@@ -4,19 +4,19 @@ import { loadGoogleFont } from "@/lib/og";
 
 export const contentType = "image/png";
 export const size = { width: 1200, height: 630 };
-export const alt = "Tarifle — uyarlama paylaşımı";
+export const alt = "Tarifle, uyarlama paylaşımı";
 
 interface Props {
   params: Promise<{ id: string }>;
 }
 
 /**
- * `/uyarlama/[id]/opengraph-image` — dinamik paylaşım kartı.
+ * `/uyarlama/[id]/opengraph-image`, dinamik paylaşım kartı.
  *
  * Layout: eyebrow "UYARLAMA · <tarif adı>" + uyarlama başlığı büyük +
  * author satırı + Tarifle footer. Emoji kartın sol kutucuğunda büyük.
  * verification.ts'teki Outlook-safe table pattern'ine gerek yok (OG
- * image PNG, table arithmetic'i yok — Satori flexbox renderer).
+ * image PNG, table arithmetic'i yok, Satori flexbox renderer).
  *
  * PUBLISHED olmayan uyarlamalar fallback kart gösterir (başlık yok,
  * generic "Tarifle uyarlaması"). Sayfa robots noindex olduğu için OG

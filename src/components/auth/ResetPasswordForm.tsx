@@ -30,7 +30,7 @@ export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
     setLoading(true);
 
     const formData = new FormData(e.currentTarget);
-    // The hidden token input carries the url param — the action layer is the
+    // The hidden token input carries the url param, the action layer is the
     // single place that validates it against the DB.
     formData.set("token", token);
 

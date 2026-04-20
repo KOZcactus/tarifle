@@ -21,12 +21,12 @@ interface ProfileSettingsFormProps {
  * Username is the tricky bit: changing it rewrites the user's public URL
  * (/profil/<new>), so after the server action succeeds we:
  *   1. Push the new fields into the NextAuth JWT via `session.update(...)`
- *      — this triggers the "update" branch of our jwt callback which
+ *     , this triggers the "update" branch of our jwt callback which
  *      forwards name/username/image into the token. Until this lands the
  *      navbar + session-aware components still show the old username.
  *   2. router.refresh() so server components re-read the fresh data.
  *   3. router.replace(`/profil/<new>`) so the old URL doesn't linger in
- *      history — much less confusing than leaving the user on /ayarlar
+ *      history, much less confusing than leaving the user on /ayarlar
  *      with a stale "visit profile" link pointing at the old handle.
  */
 export function ProfileSettingsForm({

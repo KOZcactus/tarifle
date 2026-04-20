@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/prisma";
 
 /**
- * Follow/feed query helpers — V1 kapsamı.
+ * Follow/feed query helpers, V1 kapsamı.
  *
  * Not: Takipçi sayıları denormalize edilmedi (User.followerCount alanı
  * yok). Profil sayfasında sayaçları aggregate query ile çekiyoruz;
@@ -33,7 +33,7 @@ export async function getFollowCounts(userId: string): Promise<{
   return { followers, following };
 }
 
-/** Viewer'ın takip ettiği kullanıcıların ID listesi — feed filter için. */
+/** Viewer'ın takip ettiği kullanıcıların ID listesi, feed filter için. */
 export async function getFollowingUserIds(userId: string): Promise<string[]> {
   const rows = await prisma.follow.findMany({
     where: { followerId: userId },
@@ -43,9 +43,9 @@ export async function getFollowingUserIds(userId: string): Promise<string[]> {
 }
 
 /**
- * `/akis` feed — viewer'ın takip ettiği kullanıcıların son 30 günlük
+ * `/akis` feed, viewer'ın takip ettiği kullanıcıların son 30 günlük
  * PUBLISHED variation'ları. Moderation queue'daki (PENDING_REVIEW) ve
- * gizlenenler (HIDDEN) hariç. Pagination ileri iş — V1 cap 40.
+ * gizlenenler (HIDDEN) hariç. Pagination ileri iş, V1 cap 40.
  */
 export interface FeedVariation {
   id: string;
@@ -78,7 +78,7 @@ export interface FollowListUser {
 
 /**
  * Bir kullanıcıyı takip edenler (followers) listesi. "Takipçiler" sayfası.
- * createdAt DESC — en son takip edenler başta.
+ * createdAt DESC, en son takip edenler başta.
  */
 export async function getFollowersList(
   userId: string,
@@ -165,7 +165,7 @@ export interface SuggestedCook {
  * günde aktif (variation paylaşmış) kullanıcıları döndürür. Suspended
  * hesapları ve role=ADMIN/MODERATOR'ı (resmi hesap değil, tarif yazarı
  * önerisi istiyoruz) dışlamak için ilk pass'te basit filter kullanıyoruz
- * — ölçek büyürse dedicated materialized view'a taşırız.
+ *, ölçek büyürse dedicated materialized view'a taşırız.
  *
  * viewerId verilirse viewer'ın kendini veya zaten takip ettiklerini
  * dışlar (yeni kişiler önersin).

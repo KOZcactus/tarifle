@@ -4,14 +4,14 @@ interface LegalDocMetaProps {
   /** Belge sürümü (örn. "1.0", "1.1"). Minor artış = içerik düzeltmesi,
    *  major artış = anlamsal kapsam değişikliği. */
   version: string;
-  /** Son güncelleme tarihi — locale-aware render için doğrudan string.
+  /** Son güncelleme tarihi, locale-aware render için doğrudan string.
    *  Her sayfa kendi tarihini yazar; merkezi kaynak yerine açıkça
    *  maintain etmek yasal-metin tradition'ına daha uygun. */
   lastUpdate: string;
 }
 
 /**
- * Legal sayfa header'ı için ortak meta satırı — sürüm etiketi + son
+ * Legal sayfa header'ı için ortak meta satırı, sürüm etiketi + son
  * güncelleme tarihi + "belge sürümü" aria-label. Her yasal sayfanın
  * `<header>` bloğunda başlığın altında render edilir. Versiyonlar
  * değişiklik history'si için önemli: kullanıcı metni imzalıyor gibi

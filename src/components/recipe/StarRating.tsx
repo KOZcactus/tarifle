@@ -7,13 +7,13 @@ import { cn } from "@/lib/utils";
 interface StarRatingProps {
   /** 0-5 gösterim değeri. Kesirli değerler yarım yıldız göstermez, en yakın tama yuvarlar (Schema.org best-practice, AggregateRating integer shown as N.N stars). */
   value: number;
-  /** Interactive mod — user click seçer. Default false = read-only. */
+  /** Interactive mod, user click seçer. Default false = read-only. */
   interactive?: boolean;
   /** Interactive modda kullanıcı seçince tetiklenir. */
   onChange?: (value: number) => void;
-  /** Boyut — md (24px) default, sm (16px) chip içi, lg (32px) form. */
+  /** Boyut, md (24px) default, sm (16px) chip içi, lg (32px) form. */
   size?: "sm" | "md" | "lg";
-  /** Accessibility label override — read-only'de "4 yıldız (25 yorum)", interactive'de "Yıldız seç". Verilmezse i18n key'inden üretilir. */
+  /** Accessibility label override, read-only'de "4 yıldız (25 yorum)", interactive'de "Yıldız seç". Verilmezse i18n key'inden üretilir. */
   ariaLabel?: string;
   className?: string;
 }

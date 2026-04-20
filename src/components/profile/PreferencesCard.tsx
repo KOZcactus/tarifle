@@ -15,7 +15,7 @@ import {
 import { ALLERGEN_ORDER, ALLERGEN_EMOJI } from "@/lib/allergens";
 
 /**
- * Personal preferences card — /ayarlar sayfasında render edilir.
+ * Personal preferences card, /ayarlar sayfasında render edilir.
  *
  * Üç bölüm (toggle chips, çoklu seçim):
  *   - favoriteTags        → ilgilendiğin etiketler (vejetaryen, dusuk-kalorili…)

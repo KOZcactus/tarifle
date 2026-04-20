@@ -3,10 +3,10 @@ import { prisma } from "@/lib/prisma";
 import { pingIndexNow, getSiteBaseUrl, isValidKey } from "@/lib/indexnow";
 
 /**
- * Haftalık IndexNow batch ping — son 7 gün içinde eklenmiş veya
+ * Haftalık IndexNow batch ping, son 7 gün içinde eklenmiş veya
  * güncellenmiş PUBLISHED tarifleri Bing/Yandex/Seznam'a push eder.
  *
- * **Auth — iki yol kabul edilir:**
+ * **Auth, iki yol kabul edilir:**
  *   1. Vercel Cron: `x-vercel-cron: 1` header (Vercel edge enjekte eder,
  *      dışarıdan spoof edilemez çünkü `x-vercel-*` external istekte
  *      sıyrılır). vercel.json'daki cron tanımı otomatik bu yoldan gelir.
@@ -15,7 +15,7 @@ import { pingIndexNow, getSiteBaseUrl, isValidKey } from "@/lib/indexnow";
  * Secret set değilse ve Vercel Cron header'ı da yoksa 503/401.
  *
  * **Scheduler:** Vercel Cron veya Upstash QStash. Önerilen frekans:
- *   - Haftalık (`0 8 * * 1`) — son 7 gün yeni/güncellenen
+ *   - Haftalık (`0 8 * * 1`), son 7 gün yeni/güncellenen
  *   - Günlük ince tuning için `?recent=24h` query param
  *
  * **Idempotency:** IndexNow aynı URL'yi tekrar kabul eder (spec: "no
@@ -23,7 +23,7 @@ import { pingIndexNow, getSiteBaseUrl, isValidKey } from "@/lib/indexnow";
  * israfı, yan etki yok.
  *
  * **Kapsam:** Sitemap 2000+ URL'ye şişse bile bu endpoint sadece son
- * 7 gün diff'ini gönderir — initial bulk için `scripts/indexnow-ping.ts
+ * 7 gün diff'ini gönderir, initial bulk için `scripts/indexnow-ping.ts
  * --all` kullanılır, cron taze değişikliği follow eder.
  */
 export const dynamic = "force-dynamic";
@@ -79,7 +79,7 @@ export async function GET(request: Request): Promise<NextResponse> {
   const base = getSiteBaseUrl();
   const urls = recipes.map((r) => `${base}/tarif/${r.slug}`);
 
-  // Yeni içerik yoksa homepage + son-güncel listing'i ping — arama
+  // Yeni içerik yoksa homepage + son-güncel listing'i ping, arama
   // motorları taze crawl sinyali alsın.
   if (urls.length === 0) {
     urls.push(`${base}/`, `${base}/tarifler`, `${base}/kesfet`);

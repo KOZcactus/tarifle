@@ -13,7 +13,7 @@ interface CountUpProps {
  * easeOutExpo.
  *
  * Initial state seeds to `target` so SSR, crawlers (Google, GPT analysis),
- * and the first paint see the real number — starting at 0 would render
+ * and the first paint see the real number, starting at 0 would render
  * "0 tarif" into the HTML and get indexed that way, as a recent external
  * audit flagged. Animation kicks in after mount on the client only.
  */
@@ -36,7 +36,7 @@ export function CountUp({ target, duration = 1200, className }: CountUpProps) {
     }
 
     // First setCount happens inside the rAF callback (not synchronously in
-    // the effect) — `Math.round(eased * target)` at progress ≈ 0 is near
+    // the effect), `Math.round(eased * target)` at progress ≈ 0 is near
     // zero, so the animation still reads as a count-up from 0 → target.
     requestAnimationFrame(tick);
   }, [target, duration]);

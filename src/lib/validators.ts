@@ -27,7 +27,7 @@ export const registerSchema = z
 
 /**
  * Structured ingredient shape used by the new variation form. We still accept
- * raw strings (old textarea format) for backward compat — the union below
+ * raw strings (old textarea format) for backward compat, the union below
  * normalises them to `{ amount: "", unit: "", name }` so downstream code
  * doesn't need to branch.
  */
@@ -84,7 +84,7 @@ export const reportSchema = z.object({
 
 /**
  * Review (tarif yorumu + yıldız). Rating 1-5 integer; comment opsiyonel
- * (sadece yıldız de atılabilir). Comment varsa 10-800 karakter — çok
+ * (sadece yıldız de atılabilir). Comment varsa 10-800 karakter, çok
  * kısa yorum signal-less, çok uzun moderation yükü.
  */
 export const reviewSchema = z.object({
@@ -99,7 +99,7 @@ export const reviewSchema = z.object({
 });
 
 /**
- * URL segments the username must not clash with — otherwise /profil/<foo>
+ * URL segments the username must not clash with, otherwise /profil/<foo>
  * would shadow /profil/me, /ayarlar would be unreachable, etc. Keep in sync
  * with actual route directories under src/app/.
  */
@@ -241,7 +241,7 @@ export const passwordChangeSchema = z
 
 /**
  * First-time password set for OAuth-only users. No `currentPassword` because
- * by definition they don't have one — the action layer additionally verifies
+ * by definition they don't have one, the action layer additionally verifies
  * that `user.passwordHash` is null so a bug here couldn't let someone bypass
  * the normal change flow.
  */
@@ -259,7 +259,7 @@ export const passwordSetSchema = z
   });
 
 /**
- * "Forgot password" — step 1: user submits their email, we send a reset link.
+ * "Forgot password", step 1: user submits their email, we send a reset link.
  * We validate shape only; the action layer normalizes and de-duplicates.
  */
 export const passwordResetRequestSchema = z.object({
@@ -267,7 +267,7 @@ export const passwordResetRequestSchema = z.object({
 });
 
 /**
- * "Forgot password" — step 2: user lands on /sifre-sifirla/[token] and submits
+ * "Forgot password", step 2: user lands on /sifre-sifirla/[token] and submits
  * a new password. Token itself is validated by the server action against the
  * DB; schema only checks shape + matching confirmation.
  */

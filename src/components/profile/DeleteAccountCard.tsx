@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import { deleteAccountAction } from "@/lib/actions/profile";
 
 interface DeleteAccountCardProps {
-  /** Current user's handle — shown so the user knows exactly what to type. */
+  /** Current user's handle, shown so the user knows exactly what to type. */
   username: string;
   /** When true the confirm form includes the password field. */
   hasPassword: boolean;
@@ -15,7 +15,7 @@ interface DeleteAccountCardProps {
 /**
  * Destructive "delete my account" card for /ayarlar. Rendered last on the
  * settings page under a danger-zone visual (red borders). Collapsed by
- * default — opening it requires an explicit click, so casual exploration
+ * default, opening it requires an explicit click, so casual exploration
  * doesn't surface a delete button users might click by mistake.
  *
  * Server gates are the real safety net (see deleteAccountAction). UI gates

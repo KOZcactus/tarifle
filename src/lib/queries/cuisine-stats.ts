@@ -10,10 +10,10 @@ export interface CuisineStat {
 }
 
 /**
- * Get cuisine distribution — count of published recipes per cuisine code.
+ * Get cuisine distribution, count of published recipes per cuisine code.
  * Returns only cuisines with ≥3 recipes, sorted by count desc.
  *
- * Cached for 5 minutes (homepage + /kesfet hot path — yeni seed veya
+ * Cached for 5 minutes (homepage + /kesfet hot path, yeni seed veya
  * cuisine değişiklikleri ≤5 dk içinde yansır, saniyede DB round-trip
  * yerine memory hit). Revalidate: sadece yeni batch seed sonrası manuel
  * `revalidateTag("cuisine-stats")` çağrısıyla force (şu an otomatik

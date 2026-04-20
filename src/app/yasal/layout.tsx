@@ -4,7 +4,7 @@ import { ActiveNavLink } from "@/components/legal/ActiveNavLink";
 /**
  * Shared layout for every legal sub-page. Sol tarafta sticky bir sidebar
  * ile sayfalar arası geçiş, sağ tarafta sayfa içeriği. Trendyol tarzı
- * "Yasal Bilgilendirme" hub deneyimi — user ana surface'de ayrı linkler
+ * "Yasal Bilgilendirme" hub deneyimi, user ana surface'de ayrı linkler
  * aramak zorunda kalmaz.
  *
  * Sayfalar kendi max-width / padding'ini uygulamaz; burada tek bir

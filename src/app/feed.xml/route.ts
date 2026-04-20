@@ -3,7 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 
 /**
- * RSS 2.0 feed — son 50 PUBLISHED tarif. URL: `/feed.xml`.
+ * RSS 2.0 feed, son 50 PUBLISHED tarif. URL: `/feed.xml`.
  *
  * Neden RSS 2.0 (Atom değil): tarif platformları için RSS reader desteği
  * daha geniş (Feedly, Inoreader, vb.) ve Google Search Console bu formatı
@@ -70,7 +70,7 @@ export async function GET(): Promise<Response> {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>${escapeXml(SITE_NAME)} — Yeni Tarifler</title>
+    <title>${escapeXml(SITE_NAME)}, Yeni Tarifler</title>
     <link>${SITE_URL}</link>
     <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml" />
     <description>${escapeXml(

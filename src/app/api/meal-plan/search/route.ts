@@ -6,7 +6,7 @@ import { searchRecipeIds } from "@/lib/search/recipe-search";
 /**
  * RecipePickerDialog için lightweight arama endpoint'i. Girilen query
  * için FTS rank + lookup → minimal RecipeHit (title, emoji, süre, slug,
- * difficulty). Tek liste döner, pagination yok — max 20 sonuç.
+ * difficulty). Tek liste döner, pagination yok, max 20 sonuç.
  *
  * Auth zorunlu: sadece giriş yapmış user meal plan kullanabilir ve
  * search endpoint'ini de üyesel tutarak bot trafiğini engelliyoruz.

@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
  * Blog listing page. File-based content (content/blog/*.mdx), tarihe göre
  * desc sort. Kategori chip'leri + kartlar + reading time.
  *
- * Şu an sayfalama yok — içerik ölçeği (30-50 yazı) küçük. 100+'a çıkarsa
+ * Şu an sayfalama yok, içerik ölçeği (30-50 yazı) küçük. 100+'a çıkarsa
  * ?page=N paginasyonu eklenir.
  */
 export default async function BlogListingPage() {
@@ -48,7 +48,7 @@ export default async function BlogListingPage() {
         </p>
       </header>
 
-      {/* Kategori chip'leri — mevcut kategori konfig'inden, yazı sayısı
+      {/* Kategori chip'leri, mevcut kategori konfig'inden, yazı sayısı
           badge'i ile. Şu an link yok (filtreleme v2); sadece info. */}
       <div className="mb-8 flex flex-wrap gap-2">
         {BLOG_CATEGORIES.map((c) => {

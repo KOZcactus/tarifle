@@ -30,7 +30,7 @@ const slotSchema = z.object({
 });
 
 /**
- * Bu haftanın planını oluştur ya da döndür. Idempotent — aynı user +
+ * Bu haftanın planını oluştur ya da döndür. Idempotent, aynı user +
  * weekStart için tek row (@@unique). Sayfa ilk yüklemede implicit
  * çağrılır.
  */
@@ -57,7 +57,7 @@ export async function ensureThisWeekPlanAction(): Promise<
 
 /**
  * Slot'a tarif ata (veya mevcut slot'un tarifini değiştir). Upsert
- * pattern — yeni satır veya existing row'un recipeId'sini update.
+ * pattern, yeni satır veya existing row'un recipeId'sini update.
  */
 export async function setMealPlanSlotAction(
   input: unknown,
@@ -83,7 +83,7 @@ export async function setMealPlanSlotAction(
       select: { id: true },
     });
 
-    // Recipe existence check — fail explicit, UI'da "tarif bulunamadı"
+    // Recipe existence check, fail explicit, UI'da "tarif bulunamadı"
     // hatası aşikar olsun.
     const recipe = await prisma.recipe.findUnique({
       where: { id: recipeId },
@@ -124,7 +124,7 @@ export async function setMealPlanSlotAction(
   }
 }
 
-/** Slot'u boşalt — item satırını sil. No-op eğer zaten boşsa. */
+/** Slot'u boşalt, item satırını sil. No-op eğer zaten boşsa. */
 export async function clearMealPlanSlotAction(input: {
   dayOfWeek: number;
   mealType: MealType;
@@ -158,10 +158,10 @@ export async function clearMealPlanSlotAction(input: {
 
 /**
  * Plan'daki tüm tariflerin ingredient'lerini mevcut shopping list'e
- * ekle. Tarif başına `addItemsFromRecipe` çağrısı — mevcut merge
+ * ekle. Tarif başına `addItemsFromRecipe` çağrısı, mevcut merge
  * mantığı (aynı isim + unit varsa amount birleşir) kullanılır.
  * Tekrarlanan tarif (aynı tarif birden fazla slot'ta) için aynı
- * ingredient seti birden fazla kez eklenmez — shopping list zaten
+ * ingredient seti birden fazla kez eklenmez, shopping list zaten
  * merge eder ama yine de tarif ID bazlı dedup yaparız.
  */
 export async function addMealPlanToShoppingListAction(): Promise<

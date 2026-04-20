@@ -80,7 +80,7 @@ export async function sendWeeklyNewsletter(
     textLines.push("", `— ${t("cuisinesHeading")} —`);
     for (const c of topCuisines) {
       const flag = CUISINE_FLAG[c.code as CuisineCode] ?? "🌍";
-      textLines.push(`  ${flag} ${c.label} — ${c.count} ${t("recipesWord")}`);
+      textLines.push(`  ${flag} ${c.label}, ${c.count} ${t("recipesWord")}`);
     }
   }
   textLines.push("", t("outro"), homeUrl, "", t("unsubscribeLine"), unsubUrl);

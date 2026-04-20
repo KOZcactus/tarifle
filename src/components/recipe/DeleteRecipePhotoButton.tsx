@@ -8,7 +8,7 @@ interface DeleteRecipePhotoButtonProps {
   photoId: string;
 }
 
-/** Küçük "×" silme butonu — hover sırasında grid kartında belirir. */
+/** Küçük "×" silme butonu, hover sırasında grid kartında belirir. */
 export function DeleteRecipePhotoButton({ photoId }: DeleteRecipePhotoButtonProps) {
   const t = useTranslations("recipe.userPhotos");
   const [isPending, startTransition] = useTransition();

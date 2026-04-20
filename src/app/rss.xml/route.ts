@@ -1,5 +1,5 @@
 /**
- * RSS 2.0 feed handler — `/rss.xml` route. Son 50 PUBLISHED tarifi
+ * RSS 2.0 feed handler, `/rss.xml` route. Son 50 PUBLISHED tarifi
  * yayınlar; feed reader'lar (Feedly, Inoreader, NetNewsWire) ve
  * Google Feed crawler abone olabilir.
  *
@@ -10,13 +10,13 @@
  *
  * Cache: hourly revalidate (sitemap ile uyumlu). Her batch sonrası
  * seed + retrofit + sitemap ping pipeline'ında RSS de otomatik güncel
- * olur — ekstra ping yok (feed reader'lar periyodik poll eder).
+ * olur, ekstra ping yok (feed reader'lar periyodik poll eder).
  */
 import { prisma } from "@/lib/prisma";
 import { buildRssXml, type RssItem } from "@/lib/rss";
 
 // Build-time prerender'ı kapatıyoruz çünkü CI'da DATABASE_URL placeholder
-// (`postgresql://ci:ci@localhost:5432/ci`) — Prisma bağlantı kuramaz,
+// (`postgresql://ci:ci@localhost:5432/ci`), Prisma bağlantı kuramaz,
 // build düşer. force-dynamic ile her istek runtime'da render edilir;
 // `Cache-Control: s-maxage=3600` sayesinde CDN (Vercel/Cloudflare)
 // 1 saatlik cache sağlar, perf etkisi sıfır. ISR semantiği yerine

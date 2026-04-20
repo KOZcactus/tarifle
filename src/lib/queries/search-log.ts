@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/prisma";
 
 /**
- * Search log — `/tarifler?q=...` SSR akışında fire-and-forget kullanılır.
+ * Search log, `/tarifler?q=...` SSR akışında fire-and-forget kullanılır.
  * Her query bir satır açar; aggregate pipe'ı top-N ve trend için
  * `normalizedQuery` bucket'ı üzerinden gruplar.
  *
@@ -14,7 +14,7 @@ import { prisma } from "@/lib/prisma";
 const MAX_QUERY_LEN = 200;
 
 /**
- * TR-aware normalize — "Köfte", "KÖFTE", "köfte " hepsi aynı bucket.
+ * TR-aware normalize, "Köfte", "KÖFTE", "köfte " hepsi aynı bucket.
  * asciifold lowercase + outer trim + boş normalize'ı kabul etme
  * (çağıran tarafta guard ediyoruz ama defansif).
  */
@@ -66,7 +66,7 @@ export interface SearchFrequencyEntry {
 }
 
 /**
- * Top N en çok aranan term — normalizedQuery bucket'ı üzerinden
+ * Top N en çok aranan term, normalizedQuery bucket'ı üzerinden
  * groupBy. `display` için ilk görülen orijinal query'yi alıyoruz
  * (admin dashboard için: kullanıcı "Köfte" yazdıysa "köfte" yerine
  * kapital olanı göstermek daha okunur).

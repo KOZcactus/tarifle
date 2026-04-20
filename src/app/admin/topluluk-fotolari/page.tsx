@@ -12,9 +12,9 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 /**
- * Admin moderasyon sayfası — /admin/topluluk-fotolari.
+ * Admin moderasyon sayfası, /admin/topluluk-fotolari.
  *
- * - Üstte feature flag toggle (on/off) — kapalıysa tarif sayfalarında grid
+ * - Üstte feature flag toggle (on/off), kapalıysa tarif sayfalarında grid
  *   ve upload form render etmez; foto kayıtları DB'de dokunulmadan kalır,
  *   admin daha sonra tekrar açabilir.
  * - Altta tüm fotoğraflar (VISIBLE + HIDDEN karışık, en yeniden eski).

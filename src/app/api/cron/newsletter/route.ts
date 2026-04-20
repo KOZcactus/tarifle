@@ -13,23 +13,23 @@ import { sendWeeklyNewsletter } from "@/lib/email/newsletter-weekly";
  * kurulum prod'da mail bombalamasın).
  *
  * **Scheduler seçenekleri** (bkz. `docs/NEWSLETTER_CRON_SETUP.md`):
- *   1. Upstash QStash — haftalık `publish` + endpoint URL (önerilen,
+ *   1. Upstash QStash, haftalık `publish` + endpoint URL (önerilen,
  *      retry + dead-letter + signature verification hazır altyapı).
- *   2. Vercel Cron (Hobby 1/day, Pro no-limit) — `vercel.json`'a
+ *   2. Vercel Cron (Hobby 1/day, Pro no-limit), `vercel.json`'a
  *      `schedule: "0 7 * * 1"` (Pazartesi 10:00 TSİ = 07:00 UTC).
- *   3. Manuel tetik — `curl -H "Authorization: Bearer $SECRET"` ile
+ *   3. Manuel tetik, `curl -H "Authorization: Bearer $SECRET"` ile
  *      admin paneli entegrasyonu veya GitHub Action.
  *
  * **Akış:**
  *   1. Bearer secret kontrol.
  *   2. Aktif aboneleri + editoryel içerik (featured + recent + cuisine)
  *      paralel çek.
- *   3. Her abone için `sendWeeklyNewsletter` — locale-aware HTML + text.
+ *   3. Her abone için `sendWeeklyNewsletter`, locale-aware HTML + text.
  *      Sequential loop (Resend free tier 10/sec, 100 subscriber ≈ 10s).
  *      Tek başarısız abone tüm batch'i bloklamaz.
  *   4. Summary JSON döndür (sent/failed/duration).
  *
- * **Idempotency:** Endpoint her çağrılışta mail gönderir — aynı gün
+ * **Idempotency:** Endpoint her çağrılışta mail gönderir, aynı gün
  * iki kez tetiklenirse abone iki kez mail alır. Scheduler frekansı
  * (haftada 1) bu riski üstlenir; endpoint tarafında dedup tutmaya
  * gerek yok (son gönderim zamanı takibi ayrı bir feature, yok şimdilik).
@@ -84,7 +84,7 @@ export async function GET(request: Request): Promise<NextResponse> {
         {
           ok: false,
           error:
-            "no featured or recent recipes available — skipping send to protect list quality",
+            "no featured or recent recipes available, skipping send to protect list quality",
         },
         { status: 500 },
       );

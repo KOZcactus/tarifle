@@ -23,14 +23,14 @@ export function compareByMostLiked<
 }
 
 /**
- * Scoring helper for the "foryou" (kişiselleştirme tur 3) sort — ranks
+ * Scoring helper for the "foryou" (kişiselleştirme tur 3) sort, ranks
  * recipes by how many of their tags intersect with the logged-in user's
  * `favoriteTags` preference. Pure function; unit-testable without DB.
  *
  * Returned score is the intersection count (0 when the user has no matching
  * tags, N when N tags align). Tie-break is Turkish-aware title ascending so
  * two recipes with the same boost score land in predictable alphabetic
- * order — matches the default "alphabetical" fallback ordering which the
+ * order, matches the default "alphabetical" fallback ordering which the
  * user already expects when nothing else wins.
  *
  * NOT exported as a comparator because the fair implementation reads both
@@ -54,7 +54,7 @@ export function scoreByFavoriteTags(
  * Comparator for the "foryou" sort. Takes a precomputed score map so the
  * intersect-and-count cost is paid once per recipe, not once per compare.
  *
- * Tie-break: Turkish-aware title asc — keeps the 0-score long tail (recipes
+ * Tie-break: Turkish-aware title asc, keeps the 0-score long tail (recipes
  * with no matching tags at all) in natural alphabetical order rather than
  * undefined DB ordering.
  */
@@ -69,7 +69,7 @@ export function compareByFavoriteBoost<T extends { id: string; title: string }>(
   return a.title.localeCompare(b.title, "tr");
 }
 
-// Ortak select — RecipeCard tipi için
+// Ortak select, RecipeCard tipi için
 const recipeCardSelect = {
   id: true,
   title: true,
@@ -86,7 +86,7 @@ const recipeCardSelect = {
     select: { name: true, slug: true, emoji: true },
   },
   _count: {
-    // Card grids (home, kategoriler, tarifler list) read this — keep the
+    // Card grids (home, kategoriler, tarifler list) read this, keep the
     // public count consistent with what the user sees on the detail page.
     select: { variations: { where: { status: "PUBLISHED" } } },
   },
@@ -111,7 +111,7 @@ interface GetRecipesOptions {
   /**
    * Restrict results to this set of IDs (in order of relevance). When
    * set, the legacy title/description/ingredient `contains` OR is
-   * skipped — the caller has already decided which recipes match the
+   * skipped, the caller has already decided which recipes match the
    * query via the full-text search layer (see `lib/search/recipe-search`).
    * The `query` field still controls `EmptyState` copy upstream but does
    * NOT add a `where.OR` here.
@@ -129,7 +129,7 @@ interface GetRecipesOptions {
   limit?: number;
   offset?: number;
   /**
-   * Kişiselleştirme tur 3 — user's `favoriteTags` slug list. Only consulted
+   * Kişiselleştirme tur 3, user's `favoriteTags` slug list. Only consulted
    * when `sortBy === "foryou"`; otherwise ignored. Empty / undefined turns
    * the foryou branch into a plain alphabetical fallback (every recipe
    * scores 0 so the title tie-break wins), which keeps the API total-
@@ -138,12 +138,12 @@ interface GetRecipesOptions {
   boostTagSlugs?: string[];
 }
 
-/** Tarif listesi — arama, filtreleme ve sayfalama destekli.
+/** Tarif listesi, arama, filtreleme ve sayfalama destekli.
  *
  *  Cache: 5 dk TTL + `revalidateTag("recipes")`. Admin recipe mutation
  *  (update/seed/delete) sonrası invalidate edilir. User-specific
  *  parametreler (`boostTagSlugs`, `sortBy: "foryou"`) farklı key entry'si
- *  yaratır — foryou mode her user için ayrı cache ama 5 dk içinde
+ *  yaratır, foryou mode her user için ayrı cache ama 5 dk içinde
  *  tekrar DB'ye gitmez. Public listing (`/kategoriler`, `/mutfak/*`,
  *  `/etiket/*`) en büyük kazancı alıyor: yüzlerce visitor → 12 DB
  *  hit/saat yerine 1500+ hit (5 dk TTL × saat).
@@ -173,12 +173,12 @@ const _getRecipesInner = async (options: GetRecipesOptions = {}): Promise<{
 
   if (recipeIds !== undefined) {
     // FTS layer already decided the candidate set. Zero results short-
-    // circuit — `id: { in: [] }` in Prisma matches nothing, which is
+    // circuit, `id: { in: [] }` in Prisma matches nothing, which is
     // what we want: an explicit empty search should return empty, not
     // fall through to the full catalog.
     where.id = { in: recipeIds };
   } else if (query) {
-    // Legacy path — no FTS caller, fall back to contains OR. Used by
+    // Legacy path, no FTS caller, fall back to contains OR. Used by
     // any internal consumer that still calls getRecipes with a raw
     // query string (tests, ad-hoc scripts). The main /tarifler page
     // now goes through searchRecipeIds first.
@@ -217,7 +217,7 @@ const _getRecipesInner = async (options: GetRecipesOptions = {}): Promise<{
 
   if (excludeAllergens && excludeAllergens.length > 0) {
     // hasSome → true when the recipe has ANY of these allergens. We want
-    // the opposite — exclude those recipes — so wrap in NOT.
+    // the opposite, exclude those recipes, so wrap in NOT.
     // Prisma's array filters: hasSome, hasEvery, has, isEmpty.
     where.NOT = {
       ...(where.NOT as object | undefined),
@@ -225,7 +225,7 @@ const _getRecipesInner = async (options: GetRecipesOptions = {}): Promise<{
     };
   }
 
-  // "foryou" — kişiselleştirme tur 3. Filtered tarifleri tags ile çek, her
+  // "foryou", kişiselleştirme tur 3. Filtered tarifleri tags ile çek, her
   // kayıt için favoriteTags ile kesişim sayısını hesapla, score desc + title
   // asc ile sort, slice. `most-liked` ile aynı pattern (orderBy ile ifade
   // edilemeyen aggregation mantığı JS'e taşınır); 1401 ölçeğinde filtered
@@ -295,7 +295,7 @@ const _getRecipesInner = async (options: GetRecipesOptions = {}): Promise<{
     };
   }
 
-  // "relevance" — yalnız FTS akışı anlam taşıyor. recipeIds dizi
+  // "relevance", yalnız FTS akışı anlam taşıyor. recipeIds dizi
   // sırasını koruyacak şekilde sonuçları client-side yeniden diziyoruz
   // çünkü Postgres `ORDER BY ... IN (...)` tek SQL'de doğrudan olmuyor
   // ve 500 tarif ölçeğinde JS sort trivial.
@@ -316,7 +316,7 @@ const _getRecipesInner = async (options: GetRecipesOptions = {}): Promise<{
     };
   }
 
-  // Default is now alphabetical — feels natural for a browse page and
+  // Default is now alphabetical, feels natural for a browse page and
   // avoids clustering by recently-inserted seed batches (the old "newest"
   // default always pushed drinks to the top because their timestamps
   // happened to be last in the final seed run).
@@ -358,7 +358,7 @@ export const getRecipes = unstable_cache(_getRecipesInner, ["get-recipes-v1"], {
 
 /** Öne çıkan tarifler */
 /**
- * Öne çıkan tarifler — haftalık rotating pool.
+ * Öne çıkan tarifler, haftalık rotating pool.
  *
  * Önceki davranış: tüm `isFeatured=true` tarifleri `createdAt desc` ile
  * sıralayıp top N. Problem: 206 tarifte ~30-50 `isFeatured` olunca her
@@ -370,7 +370,7 @@ export const getRecipes = unstable_cache(_getRecipesInner, ["get-recipes-v1"], {
  * Pool küçükse (<= limit) tümü hep gösterilir; offset no-op olur.
  *
  * Neden haftalık (günlük yerine): tarifle.app ziyaretçisi zaman zaman
- * açıyor — 7 gün aynı görmek tanıdıklık kuruyor, sonraki hafta yenilik.
+ * açıyor, 7 gün aynı görmek tanıdıklık kuruyor, sonraki hafta yenilik.
  * Günlük rotation çok agresif, "bu tarif nerede kayboldu" hissini verir.
  *
  * `getWeekIndex()` kontrol edilebilir bir saat kaynağı alır ki unit
@@ -384,7 +384,7 @@ export function getWeekIndex(now: Date = new Date()): number {
   return Math.floor(now.getTime() / msPerWeek);
 }
 
-/** Featured pool cache — 1 saat TTL. Featured set nadir değişir (Codex
+/** Featured pool cache, 1 saat TTL. Featured set nadir değişir (Codex
  *  seed'de isFeatured:true flag + manuel admin toggle). Rotation math
  *  dışarıda tutuluyor çünkü `getWeekIndex()` server time'a bağlı + pool
  *  slug-ordered deterministic. */
@@ -418,7 +418,7 @@ export async function getFeaturedRecipes(limit = 6): Promise<RecipeCard[]> {
 }
 
 /**
- * Son N günde eklenen tarifler — ana sayfadaki "Yeni eklenenler"
+ * Son N günde eklenen tarifler, ana sayfadaki "Yeni eklenenler"
  * section için. Her batch sonrası (50-100 tarif) kullanıcıya yeni içerik
  * görünür olsun.
  *
@@ -455,7 +455,7 @@ export async function getQuickRecipes(limit = 8): Promise<RecipeCard[]> {
   return recipes as unknown as RecipeCard[];
 }
 
-/** En çok görüntülenen tarifler — viewCount desc */
+/** En çok görüntülenen tarifler, viewCount desc */
 export async function getPopularRecipes(limit = 8): Promise<RecipeCard[]> {
   const recipes = await prisma.recipe.findMany({
     where: { status: "PUBLISHED" },
@@ -467,7 +467,7 @@ export async function getPopularRecipes(limit = 8): Promise<RecipeCard[]> {
   return recipes as unknown as RecipeCard[];
 }
 
-/** Kişiselleştirme tur 2 — User.favoriteCuisines / favoriteTags /
+/** Kişiselleştirme tur 2, User.favoriteCuisines / favoriteTags /
  *  allergenAvoidances alanlarını okuyup filtreleyerek tarif listesi döndürür.
  *
  *  Kullanım: homepage + /kesfet "Sana özel" shelf. Logged-in user en az bir
@@ -481,7 +481,7 @@ export async function getPopularRecipes(limit = 8): Promise<RecipeCard[]> {
  *     avoidance soft-fallback ile popular döner.
  *   - excludeAllergens: kullanıcı kaçındığı alerjenleri her durumda uygula
  *     (güvenlik).
- *   - Sorting: popular (viewCount desc) — "ilgi göstermiş olduğun içerikten
+ *   - Sorting: popular (viewCount desc), "ilgi göstermiş olduğun içerikten
  *     en popülerini getir" intuition'ı. Sonraki turda personalized scoring. */
 export async function getPersonalizedRecipes({
   userId,
@@ -528,7 +528,7 @@ export async function getPersonalizedRecipes({
   return { recipes, hasPrefs: true };
 }
 
-/** Listing sayfaları için allergen-default-exclude helper — URL'de açık bir
+/** Listing sayfaları için allergen-default-exclude helper, URL'de açık bir
  *  `?alerjen=` query yoksa kullanıcının `allergenAvoidances` tercihlerini
  *  default exclude olarak döndür. Kullanıcı URL'de manual seçim yaptıysa
  *  o override olur. Anonymous user veya preferences boşsa boş dizi.
@@ -543,7 +543,7 @@ export async function resolveDefaultAllergenAvoidances({
   explicitAllergens: string[];
 }): Promise<Allergen[]> {
   if (explicitAllergens.length > 0) {
-    // User made a choice in the URL — don't second-guess it. Caller is
+    // User made a choice in the URL, don't second-guess it. Caller is
     // responsible for validating the strings are Allergen values.
     return explicitAllergens as Allergen[];
   }
@@ -555,11 +555,11 @@ export async function resolveDefaultAllergenAvoidances({
   return user?.allergenAvoidances ?? [];
 }
 
-/** Kişiselleştirme tur 3 — listing'de sıralama boost için kullanıcının
+/** Kişiselleştirme tur 3, listing'de sıralama boost için kullanıcının
  *  favoriteTags slug listesini döndürür. Anonymous veya set etmemişse boş
  *  dizi. Ayrı bir lookup: allergen helper'ıyla birleştirmek istemedim çünkü
  *  allergen her listing sayfasında zorunlu (security default), favoriteTags
- *  sadece `/tarifler` sort mantığı için opsiyonel — iki concern karıştırsa
+ *  sadece `/tarifler` sort mantığı için opsiyonel, iki concern karıştırsa
  *  caller tarafı karmaşıklaşır.
  *
  *  Kullanım: `/tarifler` logged-in user hiç `?siralama=` seçmediyse ve
@@ -575,7 +575,7 @@ export async function getUserFavoriteTagSlugs(
   return user?.favoriteTags ?? [];
 }
 
-/** Tek tarif detayı — slug ile */
+/** Tek tarif detayı, slug ile */
 export async function getRecipeBySlug(slug: string): Promise<RecipeDetail | null> {
   const recipe = await prisma.recipe.findUnique({
     where: { slug },
@@ -665,7 +665,7 @@ export async function getRecipeBySlug(slug: string): Promise<RecipeDetail | null
       },
       _count: {
         select: {
-          // Only count what the public actually sees — HIDDEN/PENDING_REVIEW
+          // Only count what the public actually sees, HIDDEN/PENDING_REVIEW
           // variations (or REJECTED, DRAFT) shouldn't inflate the badge on
           // the recipe page or in card grids.
           variations: { where: { status: "PUBLISHED" } },

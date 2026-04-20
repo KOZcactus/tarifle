@@ -51,7 +51,7 @@ function normalize(text: string): string {
 
 // Blacklist entries themselves contain Turkish characters ("piç", "göt",
 // "geri zekalı", ...). Normalize them at module load so comparisons against
-// the normalized input actually match — otherwise Turkish-character entries
+// the normalized input actually match, otherwise Turkish-character entries
 // silently slip through. Computed once; the array never changes.
 const NORMALIZED_BLACKLIST: string[] = BLACKLIST.map(normalize);
 const SINGLE_WORDS = new Set(NORMALIZED_BLACKLIST.filter((w) => !w.includes(" ")));

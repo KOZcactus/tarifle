@@ -4,7 +4,7 @@ import { useState } from "react";
 import { INGREDIENT_UNITS, type Ingredient } from "@/lib/ingredients";
 
 interface IngredientRowsInputProps {
-  /** Hidden field name used when the enclosing form serialises — we put a
+  /** Hidden field name used when the enclosing form serialises, we put a
    * JSON-encoded `Ingredient[]` into this FormData key. */
   name: string;
   /** Initial rows; defaults to one empty row so the user sees the shape. */
@@ -49,7 +49,7 @@ export function IngredientRowsInput({
   const removeRow = (index: number) => {
     setRows((prev) => {
       if (prev.length === 1) {
-        // Never fully empty — reset instead of removing the last row.
+        // Never fully empty, reset instead of removing the last row.
         return [{ amount: "", unit: "", name: "" }];
       }
       return prev.filter((_, i) => i !== index);
@@ -140,7 +140,7 @@ export function IngredientRowsInput({
               </svg>
             </button>
 
-            {/* No tabindex leak — focus moves linearly through amount → unit →
+            {/* No tabindex leak, focus moves linearly through amount → unit →
                 name → remove → next row. */}
             {isLast && (
               <span aria-hidden="true" className="sr-only">

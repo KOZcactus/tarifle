@@ -29,7 +29,7 @@ const tagNameSchema = z
 
 const createTagSchema = z.object({
   name: tagNameSchema,
-  /** Opsiyonel — verilmezse name'den türetilir. */
+  /** Opsiyonel, verilmezse name'den türetilir. */
   slug: z.string().trim().min(2).max(50).optional(),
 });
 
@@ -44,7 +44,7 @@ export async function createTagAction(input: unknown): Promise<ActionResult> {
   const name = parsed.data.name;
   const slug = parsed.data.slug ? slugify(parsed.data.slug) : slugify(name);
 
-  // Uniqueness on both name and slug — prisma @@unique çiftli değil,
+  // Uniqueness on both name and slug, prisma @@unique çiftli değil,
   // iki ayrı unique field. Conflict'i elle kontrol ederek user-friendly
   // hata dönüyoruz (P2002'den parse etmek daha kırılgan).
   const existing = await prisma.tag.findFirst({
@@ -68,7 +68,7 @@ const renameTagSchema = z.object({
 });
 
 /**
- * Tag name rename. Slug değişmez — URL'ler sabit kalır, filtrelerdeki
+ * Tag name rename. Slug değişmez, URL'ler sabit kalır, filtrelerdeki
  * link/chip pattern'leri bozulmaz. Slug değiştirmek istersen yeni tag
  * oluştur + eskiyi sil akışı kullan.
  */
@@ -102,7 +102,7 @@ const deleteTagSchema = z.object({ tagId: z.string().min(1) });
 
 /**
  * Tag sil. RecipeTag join'deki ilişkiler CASCADE olarak silinir (schema'da
- * explicit onDelete yok, Prisma default — ama burada güvenlik için
+ * explicit onDelete yok, Prisma default, ama burada güvenlik için
  * kullanım sayısı 0 değilse elle bloklanıyor. Moderatör force=true
  * göndermeden CASCADE etkisi tetiklenmez.)
  */

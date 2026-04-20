@@ -75,7 +75,7 @@ export default async function ReviewQueuePage() {
                     <div className="flex items-baseline gap-2">
                       <BulkCheckbox
                         id={v.id}
-                        ariaLabel={`${v.miniTitle} — bulk select`}
+                        ariaLabel={`${v.miniTitle}, bulk select`}
                       />
                       <h3 className="font-heading text-base font-semibold text-text">
                         {v.miniTitle}

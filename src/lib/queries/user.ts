@@ -11,7 +11,7 @@ export async function getUserByUsername(username: string, viewerId?: string | nu
       bio: true,
       role: true,
       isVerified: true,
-      // Sensitive — only return to owner; we filter below before yielding
+      // Sensitive, only return to owner; we filter below before yielding
       email: true,
       emailVerified: true,
       createdAt: true,
@@ -38,7 +38,7 @@ export async function getUserByUsername(username: string, viewerId?: string | nu
     };
   }
 
-  // Strip private fields for non-owner viewers — never let email leak via
+  // Strip private fields for non-owner viewers, never let email leak via
   // the public profile endpoint.
   const { email: _email, emailVerified: _emailVerified, ...publicUser } = user;
   return publicUser;
@@ -50,10 +50,10 @@ export async function getUserByUsername(username: string, viewerId?: string | nu
  * counter'ların üstüne (a) toplam aldığı beğeni (variations.likeCount
  * SUM), (b) review sayısı, (c) public collection sayısı, (d) son 10
  * aktiviteyi ekler. Tek yere topluyorum ki profil page Promise.all'ında
- * tek eklenti olsun — mevcut 5 query'ye ek 1.
+ * tek eklenti olsun, mevcut 5 query'ye ek 1.
  *
  * Public-safe: tüm sinyaller PUBLISHED + public visibility filter'ından
- * geçer. Viewer non-owner ise bile aynı rakamlar — bunlar zaten
+ * geçer. Viewer non-owner ise bile aynı rakamlar, bunlar zaten
  * herkese açık agregasyon.
  */
 export interface ProfileActivityItem {
@@ -61,7 +61,7 @@ export interface ProfileActivityItem {
   id: string;
   at: Date;
   title: string;
-  /** Deep link — variation ve review tarif detayına, collection kendi
+  /** Deep link, variation ve review tarif detayına, collection kendi
    *  sayfasına gider. */
   href: string;
   /** Görsel ipucu için emoji (tarif emojisi veya kategori). */
@@ -196,7 +196,7 @@ export async function getUserVariations(userId: string, includeHidden = false) {
 
 /**
  * Profile "Yorumlarım" section. `includeHidden` controls whether HIDDEN and
- * PENDING_REVIEW rows come back — the owner sees everything so they can tell
+ * PENDING_REVIEW rows come back, the owner sees everything so they can tell
  * why their review isn't showing publicly; non-owners only see PUBLISHED.
  */
 export async function getUserReviews(userId: string, includeHidden = false) {
@@ -277,7 +277,7 @@ export async function isLiked(userId: string, variationId: string) {
 /**
  * Verilen variation ID'leri için kullanıcının beğendiklerini Set olarak
  * döner. Tarif detay sayfası tek seferde N variation'ın "liked?" durumunu
- * öğrenmek için kullanır — N+1 sorgu yerine tek IN(). Boş set boş input
+ * öğrenmek için kullanır, N+1 sorgu yerine tek IN(). Boş set boş input
  * için ya da kullanıcı yoksa.
  */
 export async function getLikedVariationIds(

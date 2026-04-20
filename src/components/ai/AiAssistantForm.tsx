@@ -21,7 +21,7 @@ const POPULAR_INGREDIENTS = [
   "pirinç", "makarna", "peynir", "havuç", "kabak", "nohut",
 ];
 
-/** Suggest these when no results found — common combos that always match. */
+/** Suggest these when no results found, common combos that always match. */
 const FALLBACK_COMBOS = [
   ["tavuk", "soğan", "biber"],
   ["yumurta", "peynir", "domates"],
@@ -29,7 +29,7 @@ const FALLBACK_COMBOS = [
   ["patates", "soğan", "yumurta"],
 ];
 
-/** Color tokens for tag chips — labels come from i18n (form.tags.*). */
+/** Color tokens for tag chips, labels come from i18n (form.tags.*). */
 const TAG_COLOR: Record<string, string> = {
   "pratik": "bg-accent-green/15 text-accent-green",
   "30-dakika-alti": "bg-accent-blue/15 text-accent-blue",
@@ -156,14 +156,14 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
   }, [searchParams]);
 
   // Load recent searches from localStorage on mount.
-  // Mount-only one-shot sync from an external storage source — same reason
+  // Mount-only one-shot sync from an external storage source, same reason
   // as above, setState here isn't a cascading-render hazard.
   useEffect(() => {
     try {
       const stored = localStorage.getItem("ai-recent-searches");
       if (stored) setRecentSearches(JSON.parse(stored));
     } catch {
-      // localStorage unavailable or corrupt — ignore
+      // localStorage unavailable or corrupt, ignore
     }
   }, []);
   /* eslint-enable react-hooks/set-state-in-effect */
@@ -192,7 +192,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
     setCurrentInput("");
   }
 
-  // Autocomplete suggestions — filtered by current input, max 6
+  // Autocomplete suggestions, filtered by current input, max 6
   const autocompleteSuggestions = (() => {
     if (!currentInput.trim() || currentInput.trim().length < 2) return [];
     const query = trNormalize(currentInput.trim());
@@ -615,7 +615,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
             </select>
           </div>
 
-          {/* Diet filter — vegan/vejetaryen/glutensiz/sutsuz/alkolsuz.
+          {/* Diet filter, vegan/vejetaryen/glutensiz/sutsuz/alkolsuz.
               Diet config src/lib/diets.ts; "Farketmez" seçiliyse
               kısıt yok. Tag-based diyetler tag filter'ı, allergen-based
               diyetler allergen exclusion ile DB-side filtrelenir. */}
@@ -695,7 +695,7 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
       {/* Results */}
       {result && (
         <section>
-          {/* Share bar — always available when there is a result, regardless
+          {/* Share bar, always available when there is a result, regardless
               of whether the assistant produced a commentary or zero matches
               came back. Uses the recipe ShareMenu (WhatsApp / X / Pinterest
               / copy) so the viral paths defined in rekabet §8 work the same

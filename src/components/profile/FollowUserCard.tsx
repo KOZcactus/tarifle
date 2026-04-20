@@ -14,7 +14,7 @@ interface FollowUserCardProps {
 }
 
 /**
- * Tekil user kartı — takipçiler/takip ettikleri/önerilen aşçılar
+ * Tekil user kartı, takipçiler/takip ettikleri/önerilen aşçılar
  * listelerinde paylaşılır. Server component kullanıyor olsa da
  * `FollowButton` client'tır; oraya gerekli state iki prop olarak
  * iletilir (viewerSignedIn + viewerFollows).

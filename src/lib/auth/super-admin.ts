@@ -1,11 +1,11 @@
 /**
- * Super-admin registry — usernames that sit "above" the regular ADMIN role.
+ * Super-admin registry, usernames that sit "above" the regular ADMIN role.
  *
  * Policy (Kerem, 19 Nis 2026):
  *   - Regular ADMINs can promote/demote each other freely.
  *   - A super-admin CANNOT be demoted by a non-super-admin ADMIN. Only a
  *     super-admin can change another super-admin's role.
- *   - Visually, a super-admin is shown as "ADMIN" — no special badge in the
+ *   - Visually, a super-admin is shown as "ADMIN", no special badge in the
  *     UI (explicit request: "başadmin diye belirtmene gerek yok").
  *
  * Implementation choice: hardcoded username allowlist rather than a schema
@@ -14,7 +14,7 @@
  * Boolean column on User and a migration. Username-based lookup is fine
  * because usernames are immutable once claimed (the auth layer never lets a
  * user rename to match an existing one). The const is case-sensitive on
- * purpose — Prisma username comparisons are case-sensitive.
+ * purpose, Prisma username comparisons are case-sensitive.
  *
  * KEEP THIS FILE SMALL. Add user-facing UX in the call sites, not here.
  */
@@ -43,7 +43,7 @@ export function isSuperAdminUsername(
  *   2. Everything else → ALLOW at this layer (existing self-demote and
  *      "role change requires ADMIN" guards still apply elsewhere)
  *
- * This is deliberately narrow — it only enforces the super-admin
+ * This is deliberately narrow, it only enforces the super-admin
  * protection. It does not re-check the baseline "must be ADMIN" rule,
  * because that guard already lives in `updateUserAction` and gets hit
  * before this predicate.

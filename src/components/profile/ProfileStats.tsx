@@ -8,7 +8,7 @@ interface ProfileStatsProps {
 /**
  * Profil header'ın altında 4 stat card'lık vitrin. Mevcut inline
  * satır formatı ("X uyarlama · Y bookmark · üye tarihi") yerine
- * dashboard tarzı rakam + label grid'i — kullanıcı profili zenginleşir,
+ * dashboard tarzı rakam + label grid'i, kullanıcı profili zenginleşir,
  * contribution sinyali görsel olarak da verilir.
  *
  * Bookmark + email gibi özel sayılar header'da owner-only kalır;

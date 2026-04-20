@@ -86,7 +86,7 @@ export default async function DiyetLandingPage({
   ]);
 
   const relatedDiets = DIETS.filter((d) => d.slug !== diet);
-  // Cuisine cross-link — küçük bir set rotasyon, SEO link graph.
+  // Cuisine cross-link, küçük bir set rotasyon, SEO link graph.
   const featuredCuisines = CUISINE_CODES.slice(0, 8);
 
   return (

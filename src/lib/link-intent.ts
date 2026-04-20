@@ -8,7 +8,7 @@ import { createHmac, timingSafeEqual } from "node:crypto";
  * the callback falls back to the default strict behaviour (reject linkable
  * accounts to prevent takeover).
  *
- * Payload: `<userId>:<timestamp>:<hmac>` — compact, no JWT lib dependency.
+ * Payload: `<userId>:<timestamp>:<hmac>`, compact, no JWT lib dependency.
  * Short TTL (10 min) so a stale cookie can't be resurrected.
  */
 

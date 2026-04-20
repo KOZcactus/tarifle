@@ -5,7 +5,7 @@
  *
  * Design: `cuisine` is a `String?` on Recipe (not a Prisma enum) so
  * adding new cuisines (Vietnamese, Brazilian, Scandinavian…) does not
- * require a migration — only this file and the Zod schema need updating.
+ * require a migration, only this file and the Zod schema need updating.
  */
 
 export const CUISINE_CODES = [
@@ -65,7 +65,7 @@ export const CUISINE_LABEL: Record<CuisineCode, string> = {
 };
 
 /**
- * URL slug map — kod → Türkçe URL parçası. `/mutfak/[slug]` programatik
+ * URL slug map, kod → Türkçe URL parçası. `/mutfak/[slug]` programatik
  * landing route'u bu slug'ları bekler. Label'den türetilmez (Türk → turk
  * gibi noktalama kayıpları riskli); sabit listede tutulur. Yeni cuisine
  * eklenince 4 map'e de entry eklenir (CODE, LABEL, FLAG, SLUG, DESCRIPTION).
@@ -106,22 +106,22 @@ export function cuisineCodeBySlug(slug: string): CuisineCode | null {
 }
 
 /**
- * Mutfak landing sayfaları için TR açıklama metinleri — SEO + kullanıcı
+ * Mutfak landing sayfaları için TR açıklama metinleri, SEO + kullanıcı
  * değeri. Her biri 2-3 cümle, mutfağın karakteristik vurgusu + Tarifle
  * platformundaki öne çıkan tarif örneği tipinden. Generic "X tarifleri"
  * yerine okunabilir açıklama.
  */
 export const CUISINE_DESCRIPTION_TR: Record<CuisineCode, string> = {
-  tr: "Türk mutfağı; çorbasından kebabına, zeytinyağlısından tatlısına Anadolu'nun yedi bölgesini bir araya getirir. Ev pişirmesine özgü dengeler — bulgur, yoğurt, acı biber ve tereyağı — her tarifin temelini oluşturur.",
+  tr: "Türk mutfağı; çorbasından kebabına, zeytinyağlısından tatlısına Anadolu'nun yedi bölgesini bir araya getirir. Ev pişirmesine özgü dengeler, bulgur, yoğurt, acı biber ve tereyağı, her tarifin temelini oluşturur.",
   it: "İtalyan mutfağı sadelikle yoğun tadı aynı anda sunar: pasta, pizza, risotto ve soğuk antipasti. Taze malzeme + az ama doğru baharat Akdeniz lezzet çizgisinin temeli.",
   fr: "Fransız mutfağı tekniği ön plana çıkaran klasikleri barındırır: tereyağlı soslar, hamur işleri, yavaş pişen güveçler. Boeuf bourguignon'dan macaroon'a, mutfak okullarının da referansı.",
   es: "İspanyol mutfağı paellanın safranı, gazpachonun serinliği ve tapasların çeşitliliği ile çalışır. Zeytinyağı, acılı paprika ve deniz ürünleri İber yarımadasının imzası.",
-  gr: "Yunan mutfağı Akdeniz'in en saf yüzünü gösterir: tulum peyniri, zeytinyağı, limon, kekik. Moussaka, souvlaki, spanakopita — ev sofralarına hızla uyarlanır.",
+  gr: "Yunan mutfağı Akdeniz'in en saf yüzünü gösterir: tulum peyniri, zeytinyağı, limon, kekik. Moussaka, souvlaki, spanakopita, ev sofralarına hızla uyarlanır.",
   jp: "Japon mutfağı denge ve saygı üzerine kurulu: sushi, ramen, tempura, miso çorbası. Az malzeme + temiz teknik = umami dengesi.",
   cn: "Çin mutfağı sekiz büyük bölgenin yüzlerce tarzını kapsar: mapo tofu, kung pao tavuk, dumpling, fried rice. Wok kullanımı ve soya temelli soslar ortak noktası.",
   kr: "Kore mutfağı fermente lezzetlerin merkezi: kimchi, bibimbap, bulgogi, tteokbokki. Acı biber ezmesi gochujang neredeyse her tarifte yerini alır.",
   th: "Tay mutfağı acı-tatlı-ekşi-tuzlu dengesini tek tabakta kurar: pad thai, green curry, tom yum. Hindistan cevizi sütü, limon otu ve Tay fesleğeni aromaları taşır.",
-  in: "Hint mutfağı baharat zenginliğiyle tanınır: butter chicken, biryani, dal, samosa. Her bölgenin kendi masala karışımı var — kuzey kremalı, güney hindistan cevizli.",
+  in: "Hint mutfağı baharat zenginliğiyle tanınır: butter chicken, biryani, dal, samosa. Her bölgenin kendi masala karışımı var, kuzey kremalı, güney hindistan cevizli.",
   mx: "Meksika mutfağı mısır ve acı biber üzerine kurulu: taco, enchilada, guacamole, pozole. Taze corriander, limon ve chipotle karakterini tamamlar.",
   us: "ABD mutfağı göç eden halkların birleşimini yansıtır: burger, BBQ, mac & cheese, cheesecake. Soul food, Tex-Mex ve New England klasikleri bir arada.",
   me: "Orta Doğu mutfağı zengin baharat + sağlıklı tahıllar: hummus, falafel, tabbouleh, kebap. Zeytinyağı, nar ekşisi, sumak ortak dili.",
@@ -135,21 +135,21 @@ export const CUISINE_DESCRIPTION_TR: Record<CuisineCode, string> = {
   pe: "Peru mutfağı And tarihi + Pasifik sahilini birleştirir: ceviche, lomo saltado, aji de gallina, causa. Limon, acı biber aji ve mor patates karakteristik.",
   gb: "İngiliz mutfağı ev rahatlığı klasikleri: fish and chips, shepherd's pie, full breakfast, scones. Hafta sonu roast dinner ve five o'clock tea geleneksel.",
   pl: "Polonya mutfağı doyurucu ve tahıl-etli: pierogi, bigos, żurek, placki ziemniaczane. Turşulanmış sebzeler, kapuska ve ekşi krema sofranın sabiti.",
-  au: "Avustralya mutfağı deniz ürünleri, BBQ kültürü ve güçlü kahve ekosistemi. Meat pie, lamington, avocado toast, Vegemite — İngiliz mirası üzerine modern Avustralya.",
+  au: "Avustralya mutfağı deniz ürünleri, BBQ kültürü ve güçlü kahve ekosistemi. Meat pie, lamington, avocado toast, Vegemite, İngiliz mirası üzerine modern Avustralya.",
 };
 
-/** EN description — aynı set, kısa SEO metni. */
+/** EN description, aynı set, kısa SEO metni. */
 export const CUISINE_DESCRIPTION_EN: Record<CuisineCode, string> = {
   tr: "Turkish cuisine brings Anatolia's seven regions together: soups, kebabs, olive-oil dishes, and desserts. The home-cooking balance of bulgur, yogurt, chili and butter underpins every recipe.",
-  it: "Italian cuisine pairs simplicity with deep flavor — pasta, pizza, risotto and cold antipasti. Fresh ingredients and restrained seasoning define the Mediterranean line.",
+  it: "Italian cuisine pairs simplicity with deep flavor, pasta, pizza, risotto and cold antipasti. Fresh ingredients and restrained seasoning define the Mediterranean line.",
   fr: "French cuisine centers on technique: buttery sauces, pastries, slow-cooked stews. From boeuf bourguignon to macarons, the reference of culinary schools worldwide.",
   es: "Spanish cuisine delivers paella's saffron, gazpacho's cool and tapas variety. Olive oil, smoked paprika and seafood are the Iberian signature.",
-  gr: "Greek cuisine shows the Mediterranean's purest face: feta, olive oil, lemon, oregano. Moussaka, souvlaki, spanakopita — quick to adapt at home.",
+  gr: "Greek cuisine shows the Mediterranean's purest face: feta, olive oil, lemon, oregano. Moussaka, souvlaki, spanakopita, quick to adapt at home.",
   jp: "Japanese cuisine is built on balance and respect: sushi, ramen, tempura, miso soup. Few ingredients + clean technique = the umami equation.",
   cn: "Chinese cuisine covers eight regional styles and hundreds of variants: mapo tofu, kung pao chicken, dumplings, fried rice. The wok and soy-based sauces are the thread.",
   kr: "Korean cuisine is a fermentation hub: kimchi, bibimbap, bulgogi, tteokbokki. The chili paste gochujang appears in nearly every dish.",
   th: "Thai cuisine nails the spicy-sweet-sour-salty balance in one plate: pad thai, green curry, tom yum. Coconut milk, lemongrass and Thai basil carry the aroma.",
-  in: "Indian cuisine is defined by spice depth: butter chicken, biryani, dal, samosa. Every region has its own masala — creamy in the north, coconut-forward in the south.",
+  in: "Indian cuisine is defined by spice depth: butter chicken, biryani, dal, samosa. Every region has its own masala, creamy in the north, coconut-forward in the south.",
   mx: "Mexican cuisine is built on corn and chili: tacos, enchiladas, guacamole, pozole. Fresh cilantro, lime and chipotle round out the character.",
   us: "American cuisine reflects the immigration mix: burgers, BBQ, mac & cheese, cheesecake. Soul food, Tex-Mex and New England classics sit side by side.",
   me: "Middle Eastern cuisine ties rich spices with healthy grains: hummus, falafel, tabbouleh, kebabs. Olive oil, pomegranate molasses and sumac are the shared tongue.",
@@ -163,7 +163,7 @@ export const CUISINE_DESCRIPTION_EN: Record<CuisineCode, string> = {
   pe: "Peruvian cuisine joins Andean heritage with the Pacific coast: ceviche, lomo saltado, aji de gallina, causa. Lime, aji chili and purple potato are core.",
   gb: "British cuisine offers home-comfort classics: fish and chips, shepherd's pie, full breakfast, scones. Weekend roast dinners and five o'clock tea are tradition.",
   pl: "Polish cuisine is hearty and grain-forward: pierogi, bigos, żurek, potato pancakes. Pickles, sauerkraut and sour cream stay on the table.",
-  au: "Australian cuisine blends seafood, BBQ culture and strong coffee. Meat pie, lamington, avocado toast, Vegemite — modern Australia on a British base.",
+  au: "Australian cuisine blends seafood, BBQ culture and strong coffee. Meat pie, lamington, avocado toast, Vegemite, modern Australia on a British base.",
 };
 
 export const CUISINE_FLAG: Record<CuisineCode, string> = {
@@ -196,7 +196,7 @@ export const CUISINE_FLAG: Record<CuisineCode, string> = {
 // ─── Inference engine ───────────────────────────────────────
 
 /**
- * Slug-level matches — highest confidence. These are dish names that
+ * Slug-level matches, highest confidence. These are dish names that
  * unambiguously belong to a single cuisine. Checked as substring of
  * the recipe slug (lowercase, ASCII, hyphenated).
  */
@@ -402,7 +402,7 @@ const SLUG_PATTERNS: readonly { cuisine: CuisineCode; patterns: string[] }[] = [
 ];
 
 /**
- * Title/description keyword matches — checked against Turkish text.
+ * Title/description keyword matches, checked against Turkish text.
  * These are nationality adjectives or explicit cuisine references that
  * appear in recipe titles or descriptions.
  */
@@ -441,7 +441,7 @@ interface InferInput {
 
 /**
  * Infer the cuisine code for a recipe. Priority:
- * 1. Slug substring match (highest confidence — dish name is unique)
+ * 1. Slug substring match (highest confidence, dish name is unique)
  * 2. Title keyword match (nationality adjective in title)
  * 3. Description keyword match (nationality adjective in body)
  * 4. Default: "tr" (majority of recipes are Turkish)
@@ -449,7 +449,7 @@ interface InferInput {
 export function inferCuisineFromRecipe(recipe: InferInput): CuisineCode {
   const slug = recipe.slug.toLowerCase();
 
-  // 1. Slug pattern — most specific. Match against hyphen-delimited
+  // 1. Slug pattern, most specific. Match against hyphen-delimited
   // segments so "dal" matches "dal" or "dal-xxx" but NOT "hardalli".
   const slugSegments = slug.split("-");
   for (const { cuisine, patterns } of SLUG_PATTERNS) {
@@ -464,7 +464,7 @@ export function inferCuisineFromRecipe(recipe: InferInput): CuisineCode {
     }
   }
 
-  // 2. Title keyword — check nationality adjective
+  // 2. Title keyword, check nationality adjective
   const titleLower = recipe.title.toLocaleLowerCase("tr-TR");
   for (const { cuisine, keywords } of TEXT_KEYWORDS) {
     for (const kw of keywords) {
@@ -480,6 +480,6 @@ export function inferCuisineFromRecipe(recipe: InferInput): CuisineCode {
     }
   }
 
-  // 4. Default — Turkish
+  // 4. Default, Turkish
   return "tr";
 }

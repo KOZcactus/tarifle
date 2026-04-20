@@ -4,8 +4,8 @@ import trMessages from "../../../messages/tr.json";
 import enMessages from "../../../messages/en.json";
 
 /**
- * "AI-feel" copy for the daily recipe widget. Entirely rule-based — zero LLM
- * calls — but varied and recipe-aware enough that a casual visitor perceives
+ * "AI-feel" copy for the daily recipe widget. Entirely rule-based, zero LLM
+ * calls, but varied and recipe-aware enough that a casual visitor perceives
  * it as curated. Mirrors the approach in `src/lib/ai/commentary.ts` (same
  * seed-based determinism so reloads are stable).
  *
@@ -43,7 +43,7 @@ export interface CuratorInput {
 }
 
 /**
- * Rule matcher. The notes pool is looked up per-locale from messages — this
+ * Rule matcher. The notes pool is looked up per-locale from messages, this
  * keeps the matching logic language-agnostic while the copy travels with the
  * rest of i18n.
  */
@@ -53,7 +53,7 @@ interface Rule {
   matches: (f: CuratorInput) => boolean;
 }
 
-/** Ordered by specificity — first match wins. */
+/** Ordered by specificity, first match wins. */
 const RULES: readonly Rule[] = [
   { id: "tatli", matches: (f) => f.type === "TATLI" },
   { id: "kokteyl", matches: (f) => f.type === "KOKTEYL" },
@@ -86,7 +86,7 @@ export function pickDailyIntro(
 /**
  * Builds the per-recipe curator note. Walks rules in order, grabs the first
  * matcher, then rotates between its notes by the provided seed. Falls back
- * to a generic sentence when no rule matches (should be rare — "featured"
+ * to a generic sentence when no rule matches (should be rare, "featured"
  * OR the generic fallback will nearly always cover).
  */
 export function buildCuratorNote(

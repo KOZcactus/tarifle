@@ -4,7 +4,7 @@ import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 
 /**
- * Server action throw — sunucu tarafında kasıtlı hata.
+ * Server action throw, sunucu tarafında kasıtlı hata.
  * sentry.server.config.ts yakalar. Sadece admin/moderator tetikleyebilir.
  */
 export async function triggerServerActionError(): Promise<void> {
@@ -18,9 +18,9 @@ export async function triggerServerActionError(): Promise<void> {
     throw new Error("forbidden");
   }
 
-  // Kasıtlı fırlatılan hata — Sentry ingest bunu "Server Action Error"
+  // Kasıtlı fırlatılan hata, Sentry ingest bunu "Server Action Error"
   // kategorisinde gösterir.
   throw new Error(
-    "Sentry server action test error — /sentry-test'ten tetiklendi",
+    "Sentry server action test error, /sentry-test'ten tetiklendi",
   );
 }

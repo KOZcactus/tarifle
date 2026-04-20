@@ -24,7 +24,7 @@ const FOCUSABLE_SELECTOR = [
  * - Loops Tab/Shift+Tab at the container's boundaries.
  *
  * Intended for true modal dialogs (with a backdrop). Plain dropdowns should
- * use `useDismiss` instead — trapping focus in a dropdown is hostile.
+ * use `useDismiss` instead, trapping focus in a dropdown is hostile.
  */
 export function useFocusTrap<T extends HTMLElement = HTMLElement>(
   isOpen: boolean,
@@ -44,7 +44,7 @@ export function useFocusTrap<T extends HTMLElement = HTMLElement>(
       container.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR),
     );
     const first = focusables[0] ?? container;
-    // Small timeout lets browser paint first — otherwise some setups scroll
+    // Small timeout lets browser paint first, otherwise some setups scroll
     // or shift layout when we focus something that's still being inserted.
     const raf = requestAnimationFrame(() => first.focus());
 

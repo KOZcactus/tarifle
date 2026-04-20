@@ -8,7 +8,7 @@ interface BadgeProps {
   className?: string;
 }
 
-// Tint opacity '10' yerine '15' kullanıyorduk — AA için kontrast yetersizdi
+// Tint opacity '10' yerine '15' kullanıyorduk, AA için kontrast yetersizdi
 // (text-primary #b34016 on bg-primary/15 = 3.93 < 4.5). Tint'i hafifleterek
 // text rengiyle arasındaki farkı artırdık; "chip" hissi korunuyor,
 // kontrast AA'yı geçiyor (4.5+).

@@ -12,7 +12,7 @@ interface FollowButtonProps {
 }
 
 /**
- * Takip et / takibi bırak butonu — profil header'ında.
+ * Takip et / takibi bırak butonu, profil header'ında.
  *
  * Anonymous kullanıcı clickleyince /giris'e yönlendirir (UI flow
  * kesintiye uğramasın). Session varsa server action çağrılır ve

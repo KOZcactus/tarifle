@@ -56,17 +56,16 @@ export default function GizlilikPage() {
           </p>
           <ul className="mt-3 ml-4 list-disc space-y-1">
             <li>
-              <strong className="text-text">Oturum çerezleri:</strong> Auth.js
-              session token&rsquo;ı (giriş yapmış kullanıcıyı tanımak için —
-              oturum sona erdiğinde silinir)
+              <strong className="text-text">Oturum çerezleri:</strong> Giriş
+              yapmış olduğunu hatırlamak için. Oturum sona erdiğinde silinir.
             </li>
             <li>
               <strong className="text-text">Tercih çerezleri:</strong> tema
-              (açık/koyu mod) ve dil (NEXT_LOCALE) seçiminizi hatırlamak için
+              (açık/koyu mod) ve dil seçiminizi hatırlamak için
             </li>
             <li>
-              <strong className="text-text">Güvenlik/CSRF çerezleri:</strong>{" "}
-              form gönderimlerinde cross-site istek koruması
+              <strong className="text-text">Form güvenliği çerezleri:</strong>{" "}
+              yorum, kayıt gibi form işlemlerinin kötüye kullanılmasını önler
             </li>
           </ul>
           <p className="mt-3">

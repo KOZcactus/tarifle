@@ -77,7 +77,7 @@ export default async function Image({ params }: Props) {
             marginTop: 32,
           }}
         >
-          {/* Preview tiles — 2x2 via nested flex since Satori has no grid */}
+          {/* Preview tiles, 2x2 via nested flex since Satori has no grid */}
           <div
             style={{
               display: "flex",

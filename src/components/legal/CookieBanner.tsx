@@ -5,14 +5,14 @@ import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 
 /**
- * localStorage anahtarı — versioned. Çerez politikası güncellendiğinde
+ * localStorage anahtarı, versioned. Çerez politikası güncellendiğinde
  * (örn. yeni çerez türü eklenirse) bu sürümü bump edip tüm kullanıcılara
  * banner'ı yeniden göstermek mümkün. Şu an v1 çünkü politika v1.0.
  */
 const STORAGE_KEY = "tarifle.cookieNotice.v1.dismissed";
 
 /**
- * Cookie banner — sade, bilgilendirici. GDPR/ePrivacy prensibi uyarınca
+ * Cookie banner, sade, bilgilendirici. GDPR/ePrivacy prensibi uyarınca
  * consent kutusu değil çünkü Tarifle sadece zorunlu çerez kullanıyor
  * (session + CSRF + locale + theme). Zorunlu çerezler için ayrı onay
  * gerekmiyor; banner sadece şeffaflık amaçlı.
@@ -21,10 +21,10 @@ const STORAGE_KEY = "tarifle.cookieNotice.v1.dismissed";
  *   - İlk ziyarette fade-in ile ekranın altında sabitlenir
  *   - "Anladım" tıklanınca localStorage'da dismissed flag set edilir,
  *     banner fade-out + unmount
- *   - SSR'da hiçbir şey render edilmez — yalnız mount sonrası banner
+ *   - SSR'da hiçbir şey render edilmez, yalnız mount sonrası banner
  *     görünür (hydration mismatch önlemi)
  *   - localStorage erişilemezse (private mode, vb.) banner görünür ama
- *     dismiss persist etmez — kullanıcı her sayfada kapatır
+ *     dismiss persist etmez, kullanıcı her sayfada kapatır
  *
  * Konum: root layout içinde mount edilir. z-50 ile her şeyin üstünde;
  * ancak modal/dialog gibi overlay'lerle çakışma yok çünkü bottom-4 +
@@ -32,9 +32,9 @@ const STORAGE_KEY = "tarifle.cookieNotice.v1.dismissed";
  */
 export function CookieBanner() {
   // null = SSR + hydration öncesi; false = dismissed değil; true = dismissed.
-  // Mount sonrası effect'te gerçek durum set edilir — bu kasıtlı hydration
+  // Mount sonrası effect'te gerçek durum set edilir, bu kasıtlı hydration
   // korumasıdır (SSR localStorage'a erişemez). eslint kuralı cascading
-  // render'dan şikayet ediyor ama burada tek sefer + conditional — intentional.
+  // render'dan şikayet ediyor ama burada tek sefer + conditional, intentional.
   const [dismissed, setDismissed] = useState<boolean | null>(null);
   const t = useTranslations("cookieBanner");
 
@@ -55,7 +55,7 @@ export function CookieBanner() {
     try {
       window.localStorage.setItem(STORAGE_KEY, "1");
     } catch {
-      // Persist edemediğimiz durumda bile banner'ı kapat — session içinde
+      // Persist edemediğimiz durumda bile banner'ı kapat, session içinde
       // rahatsız etmesin.
     }
     setDismissed(true);

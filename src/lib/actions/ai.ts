@@ -19,7 +19,7 @@ interface ActionResult<T = undefined> {
 export async function suggestRecipesAction(
   raw: unknown,
 ): Promise<ActionResult<AiSuggestResponse>> {
-  // 30 requests / minute per identifier — the rule-based provider is cheap
+  // 30 requests / minute per identifier, the rule-based provider is cheap
   // today, but when we wire a real LLM later the same limit protects cost.
   // Logged-in users get a stable bucket; anonymous callers are keyed by IP.
   const session = await auth();

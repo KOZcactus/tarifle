@@ -45,7 +45,7 @@ export async function reviewReport(reportId: string, action: "REVIEWED" | "DISMI
     select: { reporterId: true, targetType: true, targetId: true },
   });
 
-  // Best-effort notify the original reporter. Fire-and-forget — we already
+  // Best-effort notify the original reporter. Fire-and-forget, we already
   // committed the moderator decision and don't want a notifications glitch
   // to bounce the whole action.
   (async () => {
@@ -57,7 +57,7 @@ export async function reviewReport(reportId: string, action: "REVIEWED" | "DISMI
       });
       targetTitle = v?.miniTitle ?? null;
     } else if (report.targetType === "REVIEW") {
-      // For reviews, "title" is the underlying recipe title — the review
+      // For reviews, "title" is the underlying recipe title, the review
       // itself has no name. Keeps the reporter notification human-readable.
       const r = await prisma.review.findUnique({
         where: { id: report.targetId },
@@ -187,7 +187,7 @@ export async function hideReview(reviewId: string, reason?: string) {
         reason: trimmedReason,
       },
     }),
-    // Auto-resolve any pending reports pointing at this review — admin's
+    // Auto-resolve any pending reports pointing at this review, admin's
     // hide decision closes them.
     prisma.report.updateMany({
       where: {
@@ -224,7 +224,7 @@ export async function approveReview(reviewId: string) {
       where: { id: reviewId },
       data: {
         status: "PUBLISHED",
-        // Clear flags + any past hide reason — the review is clean now.
+        // Clear flags + any past hide reason, the review is clean now.
         moderationFlags: null,
         hiddenReason: null,
       },
@@ -276,14 +276,14 @@ export interface BulkModerateResult {
 }
 
 /**
- * Çoklu uyarlama ya da yorum için toplu moderasyon — "hide" veya
+ * Çoklu uyarlama ya da yorum için toplu moderasyon, "hide" veya
  * "approve". Tek tek hide/approveVariation/Review yerine moderator
  * checkbox'lı liste + tek tık toolbar kullansın.
  *
  * Notification gönderimi her satır için fire-and-forget kalır; tek
  * hata tüm batch'i patlatmaz (Promise.allSettled).
  *
- * IDs array 50 üst sınırı — daha büyük batch'leri sayfalı işlemek
+ * IDs array 50 üst sınırı, daha büyük batch'leri sayfalı işlemek
  * güvenli (accidental mass-hide'ı engellemek).
  */
 const BULK_LIMIT = 50;
@@ -358,7 +358,7 @@ const updateRecipeSchema = z.object({
 
 /**
  * Admin patch endpoint for Recipe. Only whitelisted fields. ModerationAction
- * audit kaydı her update için — hangi alan değişti yazılır, hangi admin.
+ * audit kaydı her update için, hangi alan değişti yazılır, hangi admin.
  * status=HIDDEN geçişinde tarif public'ten çıkar; revalidatePath tarif
  * sayfasını ve listeleri tazeler.
  */
@@ -389,7 +389,7 @@ export async function updateRecipeAction(
   });
   if (!current) return { success: false, error: "Tarif bulunamadı." };
 
-  // Diff summary for audit log — "title: 'old' → 'new'" pattern.
+  // Diff summary for audit log, "title: 'old' → 'new'" pattern.
   const changes: string[] = [];
   for (const [k, v] of Object.entries(patch)) {
     const before = (current as Record<string, unknown>)[k];
@@ -436,7 +436,7 @@ const updateUserSchema = z.object({
 
 /**
  * Admin patch endpoint for User. Rol değişimi ADMIN yetkisi ister (requireAdmin
- * MODERATOR'u da kabul ediyor — inline ikinci guard). Self-demotion yasak.
+ * MODERATOR'u da kabul ediyor, inline ikinci guard). Self-demotion yasak.
  */
 export async function updateUserAction(
   input: unknown,

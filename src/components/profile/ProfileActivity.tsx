@@ -9,10 +9,10 @@ interface ProfileActivityProps {
 }
 
 /**
- * Son aktivite timeline — uyarlama, yorum ve koleksiyon eventlerinden
+ * Son aktivite timeline, uyarlama, yorum ve koleksiyon eventlerinden
  * en yeni 8 kaydı kronolojik listeler. Her satır tıklanabilir deep-link.
  *
- * Boş listede section render etmez — kullanıcı henüz aktif değilse
+ * Boş listede section render etmez, kullanıcı henüz aktif değilse
  * profilde "son aktivite yok" gürültüsü oluşturmasın.
  */
 export async function ProfileActivity({
@@ -43,7 +43,7 @@ export async function ProfileActivity({
                 href={item.href}
                 className="flex items-start gap-3 rounded-lg border border-border bg-bg-card p-3 transition-colors hover:border-primary/40 hover:bg-bg-elevated"
               >
-                {/* Kind + emoji — icon chip, sol tarafta sabit genişlik */}
+                {/* Kind + emoji, icon chip, sol tarafta sabit genişlik */}
                 <span
                   className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm"
                   title={meta.label}

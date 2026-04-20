@@ -16,11 +16,11 @@ const MIN_SCORE = 0.3; // Below this, not a useful suggestion
 const MAX_RESULTS = 10;
 
 /**
- * Diversification — aynı slug ikinci kez girmesin + top N için kategori
+ * Diversification, aynı slug ikinci kez girmesin + top N için kategori
  * çeşitliliği. Kerem'in gözlemi: limonata ardından "Sivas Katmeri"
  * iki kez listede çıkıyor, tüm top 5 aynı kategori. Bu filter sıralı
  * listeden her slug'ı en az bir kez geçirir, sonra kategori başına
- * cap uygular (ilk N için max 2/kategori — sonuçlar çeşitlensin).
+ * cap uygular (ilk N için max 2/kategori, sonuçlar çeşitlensin).
  *
  * Algoritma: primary sort (score desc) korunur; dedup + cap sonrası
  * kalan slot'lara kapakı yaşayan kategorilerden tekrar eklenir.
@@ -59,8 +59,8 @@ function diversifySuggestions(
 }
 
 /**
- * Rule-based provider — does DB-side filtering + client-side scoring by
- * ingredient overlap. Evaluates ALL published recipes (no cap) — at 1000
+ * Rule-based provider, does DB-side filtering + client-side scoring by
+ * ingredient overlap. Evaluates ALL published recipes (no cap), at 1000
  * recipes × ~6 ingredients, client-side scoring stays <20ms.
  *
  * Filters: type, difficulty, maxMinutes (DB-side), cuisine (DB-side),
@@ -70,7 +70,7 @@ export class RuleBasedProvider implements AiProvider {
   readonly name = "rule-based" as const;
 
   async suggest(input: AiSuggestInput): Promise<AiSuggestResponse> {
-    // Diet filter — config'ten tag slug veya allergen exclusion. Tag-based
+    // Diet filter, config'ten tag slug veya allergen exclusion. Tag-based
     // diyetler (vegan/vejetaryen/alkolsuz) recipe.tags.some filtresi,
     // allergen-based diyetler (glutensiz/sutsuz) `NOT hasSome` ile exclude.
     const dietCfg = input.dietSlug
@@ -85,7 +85,7 @@ export class RuleBasedProvider implements AiProvider {
         ...(input.maxMinutes
           ? { totalMinutes: { lte: input.maxMinutes } }
           : {}),
-        // Cuisine filter — DB-side via btree index. Empty/undefined = all.
+        // Cuisine filter, DB-side via btree index. Empty/undefined = all.
         ...(input.cuisines && input.cuisines.length > 0
           ? { cuisine: { in: input.cuisines } }
           : {}),
@@ -105,7 +105,7 @@ export class RuleBasedProvider implements AiProvider {
         category: { select: { name: true } },
         tags: { select: { tag: { select: { slug: true } } } },
       },
-      // No `take` cap — evaluate all matching recipes. At 1000 recipes
+      // No `take` cap, evaluate all matching recipes. At 1000 recipes
       // × ~6 ingredients, client-side scoring is <20ms. If we ever hit
       // 5000+, swap this for an ingredient inverted index.
       orderBy: { slug: "asc" },
@@ -153,14 +153,14 @@ export class RuleBasedProvider implements AiProvider {
       .filter((s) => s.matchScore >= MIN_SCORE)
       .sort((a, b) => {
         if (b.matchScore !== a.matchScore) return b.matchScore - a.matchScore;
-        // Tie-break: fewer total minutes first — easier to make
+        // Tie-break: fewer total minutes first, easier to make
         return a.totalMinutes - b.totalMinutes;
       })
-      // Strip internal _ingredients field BEFORE diversification — overflow
+      // Strip internal _ingredients field BEFORE diversification, overflow
       // cap internal AiSuggestion shape üzerinden çalışıyor.
       .map(({ _ingredients, ...rest }) => rest);
 
-    // Diversification — duplicate slug + same-category over-concentration
+    // Diversification, duplicate slug + same-category over-concentration
     // düzeltmesi. Kerem'in gözlemi: "Sivas Katmeri" iki kez + tüm top 5
     // "Hamur İşleri". Artık max 2/kategori ilk 10'da.
     const diversified = diversifySuggestions(scored, MAX_RESULTS, 2);

@@ -45,7 +45,7 @@ export default async function AdminPage() {
     getTranslations("admin.dashboard"),
   ]);
 
-  // Üst sıra — yüksek-frekans bilgi (toplamlar + moderasyon).
+  // Üst sıra, yüksek-frekans bilgi (toplamlar + moderasyon).
   const topCards = [
     { label: t("statTotalRecipes"), value: stats.totalRecipes, emoji: "📖" },
     { label: t("statTotalUsers"), value: stats.totalUsers, emoji: "👥" },
@@ -109,19 +109,19 @@ export default async function AdminPage() {
     },
   ];
 
-  // User growth için max değer — bar chart normalize eder.
+  // User growth için max değer, bar chart normalize eder.
   const maxGrowth = Math.max(...userGrowth.map((d) => d.count), 1);
   const totalReviews = Object.values(reviewDist).reduce((a, b) => a + b, 0);
   const totalGrowth = userGrowth.reduce((a, b) => a + b.count, 0);
 
-  // İkinci sıra — kataloğun büyüme hızı.
+  // İkinci sıra, kataloğun büyüme hızı.
   const activityCards = [
     { label: t("activityToday"), value: stats.recipesToday, emoji: "🌅" },
     { label: t("activityThisWeek"), value: stats.recipesThisWeek, emoji: "📅" },
     { label: t("activityThisMonth"), value: stats.recipesThisMonth, emoji: "📆" },
   ];
 
-  // Mini bar chart için max değer — sütun yüksekliklerini normalize eder.
+  // Mini bar chart için max değer, sütun yüksekliklerini normalize eder.
   const maxCategoryCount = Math.max(...categories.map((c) => c.count), 1);
 
   return (
@@ -206,7 +206,7 @@ export default async function AdminPage() {
         </div>
       </section>
 
-      {/* User growth — son 30 gün */}
+      {/* User growth, son 30 gün */}
       <section>
         <h3 className="mb-3 font-heading text-base font-semibold">
           {t("growthHeading")}
@@ -242,7 +242,7 @@ export default async function AdminPage() {
         </div>
       </section>
 
-      {/* Review dağılımı — 5 yıldız dağılımı */}
+      {/* Review dağılımı, 5 yıldız dağılımı */}
       {totalReviews > 0 && (
         <section>
           <h3 className="mb-3 font-heading text-base font-semibold">
@@ -403,7 +403,7 @@ export default async function AdminPage() {
                           {v.miniTitle}
                         </Link>
                         <p className="truncate text-xs text-text-muted">
-                          {v.recipe.title} — @{v.author.username ?? "—"}
+                          {v.recipe.title}, @{v.author.username ?? "—"}
                         </p>
                       </div>
                       <div className="flex shrink-0 items-center gap-2">
@@ -443,7 +443,7 @@ export default async function AdminPage() {
                           {r.recipe.title}
                         </Link>
                         <p className="truncate text-xs text-text-muted">
-                          {"★".repeat(r.rating)} — @{r.user.username ?? "—"}
+                          {"★".repeat(r.rating)}, @{r.user.username ?? "—"}
                           {r.comment && ` · "${r.comment.slice(0, 40)}${r.comment.length > 40 ? "…" : ""}"`}
                         </p>
                       </div>

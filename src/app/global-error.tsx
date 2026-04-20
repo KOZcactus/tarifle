@@ -5,7 +5,7 @@
  * bu component render edilir; aynı anda Sentry'ye raporlar. DSN yoksa
  * captureException no-op.
  *
- * `global-error.tsx` layout'u bypass eder — kendi <html><body> sarar.
+ * `global-error.tsx` layout'u bypass eder, kendi <html><body> sarar.
  * Tarifle renk paletini inline tutuyoruz (global CSS yüklenmemiş olabilir).
  */
 

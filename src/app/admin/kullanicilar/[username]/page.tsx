@@ -71,9 +71,9 @@ export default async function AdminUserDetailPage({ params }: PageProps) {
 
   const { user, variations, reviews, reportsFiled, badges } = detail;
 
-  // Only ADMIN (not MODERATOR) can promote/demote roles — layout already
+  // Only ADMIN (not MODERATOR) can promote/demote roles, layout already
   // gates both, UI hides the select otherwise. Super-admin protection:
-  // kozcactus gibi süper admin'leri düşürebilen tek kişi kendisi — bir
+  // kozcactus gibi süper admin'leri düşürebilen tek kişi kendisi, bir
   // başka admin bu sayfayı açarsa select'i hide ederiz (backend de ayrıca
   // aynı kuralı uygular: `canChangeRole`).
   const currentUser = session?.user?.id

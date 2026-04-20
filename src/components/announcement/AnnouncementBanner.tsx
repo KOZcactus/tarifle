@@ -34,7 +34,7 @@ const VARIANT_ICON: Record<AnnouncementVariant, string> = {
 /**
  * Site-wide duyuru banner'ı. Aktif duyuruları sunucuda çekiyoruz, client
  * tarafı yalnızca "kullanıcı bu ID'yi kapattı mı" kontrolünü yapıyor
- * (localStorage). Backend'e yazmıyoruz — dismissal persist user-scope
+ * (localStorage). Backend'e yazmıyoruz, dismissal persist user-scope
  * değil device-scope, schema değişikliği gerektirmez.
  *
  * Birden fazla aktif duyuru varsa en yenisi üstte; kullanıcı her birini
@@ -44,7 +44,7 @@ export function AnnouncementBanner({ announcements }: Props) {
   const [dismissed, setDismissed] = useState<Set<string>>(new Set());
   const [hydrated, setHydrated] = useState(false);
 
-  // Load dismissed ids once on mount — external source sync pattern.
+  // Load dismissed ids once on mount, external source sync pattern.
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     try {
@@ -54,7 +54,7 @@ export function AnnouncementBanner({ announcements }: Props) {
         setDismissed(new Set(ids));
       }
     } catch {
-      // localStorage unavailable — ignore, all announcements visible
+      // localStorage unavailable, ignore, all announcements visible
     }
     setHydrated(true);
   }, []);
@@ -67,7 +67,7 @@ export function AnnouncementBanner({ announcements }: Props) {
     try {
       localStorage.setItem(DISMISSED_KEY, JSON.stringify([...next]));
     } catch {
-      // Storage quota / private mode — UI hâlâ gizlenir, sadece persist olmaz
+      // Storage quota / private mode, UI hâlâ gizlenir, sadece persist olmaz
     }
   }
 

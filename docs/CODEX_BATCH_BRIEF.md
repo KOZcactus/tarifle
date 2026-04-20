@@ -1,25 +1,25 @@
-# Tarifle — Codex Oturum Talimatı (Yeni Tarif VEYA Çeviri Retrofit)
+# Tarifle, Codex Oturum Talimatı (Yeni Tarif VEYA Çeviri Retrofit)
 
 > Bu doküman birden fazla session boyunca kullanılır. Her oturumda ilk önce
 > oku, sonra Kerem sana hangi modda çalışacağını (A ya da B) söyleyecek.
-> Oturum sıfırdan başlasa bile bu tek dosya yeterli — proje tanıtımı + her
+> Oturum sıfırdan başlasa bile bu tek dosya yeterli, proje tanıtımı + her
 > iki iş tipi + çift kontrol + geçmişte yakalanan somut hataların tablosu.
 
 ---
 
-## 🚀 HIZLI TETİKLEYİCİ — Kerem ne derse ne yap
+## 🚀 HIZLI TETİKLEYİCİ, Kerem ne derse ne yap
 
 | Kerem der | Sen anla | Git direkt | Çıktı |
 |---|---|---|---|
-| **"Mod A"**, "yeni batch", "batch N yaz", "100 tarif yaz" | **MOD A** — 100 yeni TR tarif yaz | §5 | `scripts/seed-recipes.ts` sonuna append + inline EN/DE title+description |
-| **"Mod B"**, "batch N çevirisi", "translations-batch-N.csv işle" | **MOD B** — CSV'yi okuyup JSON üret | §6 | `docs/translations-batch-N.json` (ingredients/steps/tipNote/servingSuggestion EN+DE) |
+| **"Mod A"**, "yeni batch", "batch N yaz", "100 tarif yaz" | **MOD A**, 100 yeni TR tarif yaz | §5 | `scripts/seed-recipes.ts` sonuna append + inline EN/DE title+description |
+| **"Mod B"**, "batch N çevirisi", "translations-batch-N.csv işle" | **MOD B**, CSV'yi okuyup JSON üret | §6 | `docs/translations-batch-N.json` (ingredients/steps/tipNote/servingSuggestion EN+DE) |
 
 **Default'lar (soru sorma, direkt başla):**
 
 ### Mod A default (Kerem sadece "Mod A" veya "batch N yaz" derse):
 - **100 tarif** yaz (aksi belirtilmedikçe)
 - Dağılım: **~70 TR + ~30 uluslararası**, uluslararasıda eksik mutfaklardan çeşitlilik
-- TR'de **bölgesel çeşitlilik** zorunlu — sadece klasik değil, 7 bölgeden örnekler (Karadeniz, Ege, Güneydoğu, İç Anadolu, Doğu, Marmara, Akdeniz)
+- TR'de **bölgesel çeşitlilik** zorunlu, sadece klasik değil, 7 bölgeden örnekler (Karadeniz, Ege, Güneydoğu, İç Anadolu, Doğu, Marmara, Akdeniz)
 - **isFeatured: batch'te 5-10 tarif** (sadece ikonik olanlar)
 - Eksik kategoriler için Kerem'e öncelik sor (kahvaltı/çorba/tatlı dengelensin)
 
@@ -27,12 +27,12 @@
 - Kerem CSV dosya yolu verir: `docs/translations-batch-N.csv`
 - Sen aynı isimli **JSON** üretirsin: `docs/translations-batch-N.json`
 - Her tarif için **EN + DE ingredients + steps + tipNote + servingSuggestion** doldur (CSV'de hangisi eksikse)
-- `title + description` JSON'a YAZMA — CSV'deki `en_title_current` sütunundan görürsün zaten dolu (Mod A'dan)
+- `title + description` JSON'a YAZMA, CSV'deki `en_title_current` sütunundan görürsün zaten dolu (Mod A'dan)
 - Array uzunlukları TR'yle birebir eşleşmeli
 
 **⚠️ Tek teslim kuralı (Mod A):** Kerem açıkça "kademeli gönder" veya "50'şer
 ver" demiyorsa, **100 tarifi TEK seferde tamamla**. Ortada durma, "25 hazır,
-devam edeyim mi?" diye sorma — Kerem zaten 100 istediğini biliyor, ara
+devam edeyim mi?" diye sorma, Kerem zaten 100 istediğini biliyor, ara
 teslim zaman kaybı. Context window sıkışırsa bile **aynı mesajda devam et**;
 devam edemezsen sadece tek cümlelik "context doldu, kaldığım slug şu" bilgisi
 bırak, sonra kal. Ama mümkün olduğunca **100'ü bitirene kadar durma**.
@@ -41,7 +41,7 @@ bırak, sonra kal. Ama mümkün olduğunca **100'ü bitirene kadar durma**.
 
 ## 🎯 Mutlak öncelik: **DOĞRULUK > HIZ > KAPSAM**
 
-- Şüphede kaldıysan **çevirme / yazma — issues alanına yaz**, Kerem/Claude review eder.
+- Şüphede kaldıysan **çevirme / yazma, issues alanına yaz**, Kerem/Claude review eder.
 - Google Translate / DeepL düz çıktı **YASAK**. Native speaker seviyesi + kültürel bağlam zorunlu.
 - Veri yanlışlığı "bilgi yokluğu"ndan daha kötüdür. Boş bırak, sahte doldurma.
 - **Her çıktıyı 2 kere kontrol et** (§8 checklist).
@@ -50,7 +50,7 @@ bırak, sonra kal. Ama mümkün olduğunca **100'ü bitirene kadar durma**.
 
 ## 1. Proje tanıtımı
 
-**Tarifle** (https://tarifle.app) — Türkçe modern tarif platformu. Yemek +
+**Tarifle** (https://tarifle.app), Türkçe modern tarif platformu. Yemek +
 içecek + kokteyl. **1100 canlı tarif** (Nisan 2026). Faz 3 aktif. i18n TR +
 EN soft launch canlı (DE retrofit tamamlandı).
 
@@ -67,7 +67,7 @@ EN soft launch canlı (DE retrofit tamamlandı).
   900/2020 tarif (batch 12-20) `ingredients + steps` Mod B ile tam çevirisi canlı —
   iki-pass mimarisi; batch 21-23 Mod B CSV'leri hazır, JSON bekleniyor)
 - Faz 3: admin paneli + Review v2 + Sentry + Fuzzy arama + kategori pagination
-  + OG image i18n + SEO meta i18n — hepsi canlı
+  + OG image i18n + SEO meta i18n, hepsi canlı
 
 **Proje sahibi:** Kerem (koz.devs@gmail.com)
 
@@ -92,28 +92,34 @@ EN soft launch canlı (DE retrofit tamamlandı).
 - **Mod B (çeviri):** `docs/translations-batch-N.json` (yeni oluştur)
 
 ### 🔴 ASLA DOKUNMA:
-- `src/` — frontend/backend kodu (Claude'un alanı)
+- `src/`, frontend/backend kodu (Claude'un alanı)
 - `scripts/` dışındaki tüm diğer scriptler (`scripts/seed-recipes.ts` dışında)
-- `messages/` — i18n keys
-- `prisma/` — schema + migrations
-- `.env*` — secrets
-- `docs/existing-slugs.txt` — Claude regen'liyor
-- `docs/RECIPE_FORMAT.md`, `docs/CODEX_HANDOFF.md` — bunları **oku**, yazma
+- `messages/`, i18n keys
+- `prisma/`, schema + migrations
+- `.env*`, secrets
+- `docs/existing-slugs.txt`, Claude regen'liyor
+- `docs/RECIPE_FORMAT.md`, `docs/CODEX_HANDOFF.md`, bunları **oku**, yazma
 
 ### ❌ Kesin yasaklar:
-- `git commit`, `git push`, `git add` — **YOK**. Sen dosyayı yaz, bırak;
+- `git commit`, `git push`, `git add`: **YOK**. Sen dosyayı yaz, bırak;
   Kerem/Claude halleder
-- `npm run db:*`, `prisma migrate`, `--apply`, `--confirm-prod` — **HİÇBİR
+- `npm run db:*`, `prisma migrate`, `--apply`, `--confirm-prod`: **HİÇBİR
   destructive komut**
 - Prod DB erişimi, `.env.production.local` okuma
 - Mevcut tarifleri silme/değiştirme (append-only)
+- **Em-dash (— U+2014) yasak.** Tüm metinlerde (tarif description, tipNote,
+  servingSuggestion, EN/DE çeviriler, issues detail field'ı vb.). Kullanıcı
+  geri bildirimi: em-dash "AI yazdı" hissi veriyor. Yerine virgül, noktalı
+  virgül, nokta veya parantez kullan. Hyphen (`-`) birleşik kelimede serbest
+  (*"scale-to-zero"*); yasak olan sadece em-dash (—) ve en-dash (–).
+  Teslim öncesi kendi JSON/seed'ine `—` grep at, varsa düzelt.
 
-### ⚠️ Dosya encoding — batch 12'de yakalandı, TEKRARLAMA
+### ⚠️ Dosya encoding, batch 12'de yakalandı, TEKRARLAMA
 `scripts/seed-recipes.ts` **her zaman UTF-8 (BOM yok) + LF satır sonu**
 olarak kaydedilmeli. Batch 12 teslim sırasında Windows-1252 → UTF-8
 round-trip ile **tüm dosya mojibake-korupt** geldi (ş→ÅŸ, ı→Ä±, emoji
 ðŸ¥© dahil batch 1-11 ANA KATALOGU bozulmuştu). Batch 12 eklentilerin
-temizdi çünkü sıfırdan yazmıştın — ama mevcut dosyayı okuyup kaydetme
+temizdi çünkü sıfırdan yazmıştın, ama mevcut dosyayı okuyup kaydetme
 adımında encoding koruması yoktu.
 
 **Önleme:**
@@ -129,10 +135,10 @@ adımında encoding koruması yoktu.
 ## 4. Oturum modu
 
 Üstteki "Hızlı tetikleyici" kartı modu seç + default'u belirler. Bu bölüm
-mod akışının detayını sunar — tetikleyici yorum bırakmayan edge case'ler için
+mod akışının detayını sunar, tetikleyici yorum bırakmayan edge case'ler için
 geri dönüş referansı.
 
-### 🍳 Mod A — Yeni TR tarif yazma → §5
+### 🍳 Mod A, Yeni TR tarif yazma → §5
 
 - **Tetikleyici cümleler:** "Mod A", "yeni batch", "batch N yaz", "N tarif yaz",
   "batch N için 100 tarif", "yeni tarif üret"
@@ -142,47 +148,47 @@ geri dönüş referansı.
 - **Kerem farklı sayı verirse** (örn. "50 tarif", "20 tarif çorba"), default
   yerine o sayıyı kullan; dağılımı sor ya da Türk + eksik mutfaklardan seç
 
-### 🌍 Mod B — Mevcut tarif çevirisi (retrofit) → §6
+### 🌍 Mod B, Mevcut tarif çevirisi (retrofit) → §6
 
 - **Tetikleyici cümleler:** "Mod B", "batch N çevirisi", "translations-batch-N.csv
   işle", "çeviri batch N"
 - **Beklenen default:** CSV'yi oku → eksik alanları (ingredients + steps,
   kısmen tipNote/servingSuggestion) EN + DE olarak doldur → JSON üret
 - **Çıktı:** `docs/translations-batch-N.json` (yeni dosya, CSV ile aynı N)
-- **title + description JSON'a YAZMA** — Mod A'dan zaten dolu
+- **title + description JSON'a YAZMA**, Mod A'dan zaten dolu
 
 ### Ortak kurallar (her iki modda geçerli)
 
 - §3 dosya çakışma + encoding disiplini
 - §7 kalite çıtası (PROTECTED_TR_TOKENS, description formatı, dil tonları)
 - §8 çift self-review (pass 1 içerik + pass 2 çeviri)
-- §9 geçmişte yakalanmış hatalar tablosu — **tekrar etme**
+- §9 geçmişte yakalanmış hatalar tablosu, **tekrar etme**
 - §10 kesin yasaklar (git, prod DB, encoding bozma)
 
 ---
 
-## 5. Mod A — Yeni TR tarif yazma
+## 5. Mod A, Yeni TR tarif yazma
 
 ### Scope (Kerem'in açık talimatı yoksa default'u uygula)
 
 **Default scope (Kerem sadece "Mod A" / "batch N yaz" dediğinde):**
 - **100 tarif**
 - **~70 TR + ~30 uluslararası** (TR ağırlıklı, uluslararasıda §5 cuisine
-  tablosundan eksik olan kodlardan — genelde `se/hu/pe/gb/pl/au` az olanlar,
+  tablosundan eksik olan kodlardan, genelde `se/hu/pe/gb/pl/au` az olanlar,
   ya da `ru/vn/es/cu` gibi gelişmekte olanlar)
 - **7 Türk bölgesi dengelensin** (Karadeniz, Ege, Güneydoğu, İç Anadolu,
-  Doğu, Marmara, Akdeniz) — sadece İstanbul/klasik değil, Rize-Antalya-Erzurum-
+  Doğu, Marmara, Akdeniz), sadece İstanbul/klasik değil, Rize-Antalya-Erzurum-
   Mardin gibi bölgesel çeşitlilik zorunlu
 - **Kategori dağılımı**: kahvaltı 10-15, çorba 8-12, ana yemek 20-25, tatlı
   15-20, meze/salata 8-12, hamur işi 8-12, içecek 5-10, kokteyl 3-5 (dengeli
   karışım; belirli kategoride açık varsa Kerem sana "N tatlı yaz" gibi özel
   talimat verir)
 - **isFeatured: 5-10** (toplam 100'ün %5-10'u; sadece gerçekten ikonik
-  tarifler — ilk kez duyulacak "Cantık Pidesi" gibi değil, "Adana Kebap"
+  tarifler, ilk kez duyulacak "Cantık Pidesi" gibi değil, "Adana Kebap"
   kalibresi)
 
 **Kerem özel talimat verirse** (örn. "50 tarif yaz", "20 tatlı istiyorum",
-"sadece Türk", "10 kokteyl + 15 smoothie"), o talimatı uygula — default
+"sadece Türk", "10 kokteyl + 15 smoothie"), o talimatı uygula, default
 dağılım geçersiz.
 
 **Mevcut slug'ları tekrarlama:** `docs/existing-slugs.txt` zorunlu kontrol.
@@ -194,30 +200,30 @@ Slug'un alfabetik sıralı tam listesi (şu an 1300+ slug).
 array'inin **sonuna append**. Mevcut tarifleri silme. Batch başlangıcına
 `// ── BATCH N ── (tarih: YYYY-MM-DD, N tarif, Codex)` yorumu koy.
 
-**Marker karakteri kritik:** `──` (U+2500 × 2 — box drawings light
+**Marker karakteri kritik:** `──` (U+2500 × 2, box drawings light
 horizontal) kullan. **Em-dash (`——`, U+2014 × 2) KULLANMA.** Export
 script `export-recipes-for-translation-b.ts` regex'te `──` arıyor;
 em-dash'li marker bulunamaz, batch 17 Mod B hazırlığında normalize
-etmek gerekti. Kopyalarken karakteri kontrol et — VS Code'da
+etmek gerekti. Kopyalarken karakteri kontrol et, VS Code'da
 "Insert Unicode" veya mevcut batch marker'ı kopyala-yapıştır en
 güvenlisi.
 
-**Dosya encoding (kritik, batch 12'de yakalandı — §3'e bak):**
+**Dosya encoding (kritik, batch 12'de yakalandı, §3'e bak):**
 - UTF-8 (BOM YOK) + LF satır sonu olarak kaydet
 - VS Code alt çubukta "UTF-8" + "LF" yazmalı (CRLF veya UTF-8 BOM DEĞİL)
-- Şüphedeysen: batch'i ayrı bir `.txt` olarak ver, Claude append eder — sıfır
+- Şüphedeysen: batch'i ayrı bir `.txt` olarak ver, Claude append eder, sıfır
   risk
 
-**Teslim — SADECE 100 bittiğinde yaz:**
+**Teslim, SADECE 100 bittiğinde yaz:**
 
 100 tarif bitmeden teslim mesajı yazma. "26/100, devam edeyim mi?" gibi ara
-sorular yasak — Kerem zaten 100 istediğini biliyor, sen tamamla, TESLİM ET.
+sorular yasak, Kerem zaten 100 istediğini biliyor, sen tamamla, TESLİM ET.
 `content:validate` gibi kendi self-check'lerini gizli yap (ara kontrol sana
 ait, Kerem'e rapor değil).
 
 Bittiğinde şu formatı kullan:
 ```
-Batch N hazır — 100 tarif + EN/DE çeviri (title + description minimum).
+Batch N hazır, 100 tarif + EN/DE çeviri (title + description minimum).
 - Eklendi: scripts/seed-recipes.ts (append only)
 - Dağılım: 72 TR + 28 uluslararası (5 it + 4 fr + 3 jp + ...)
 - 7 Türk bölgesi dengelendi: Karadeniz 10, Ege 8, Güneydoğu 12, ...
@@ -293,27 +299,27 @@ Batch N hazır — 100 tarif + EN/DE çeviri (title + description minimum).
   DENIZ_URUNLERI, SUSAM, KEREVIZ, HARDAL`
 
 **Allergen ingredient-implied (ZORUNLU, ihlalleri seed'de CRITICAL olur):**
-- `GLUTEN` — un, bulgur, buğday, ekmek, makarna, yufka, kadayıf, tarhana,
+- `GLUTEN`, un, bulgur, buğday, ekmek, makarna, yufka, kadayıf, tarhana,
   bayat ekmek, firik, dövme buğday, yulaf
-- `SUT` — süt, yoğurt, peynir, tereyağı, krema, kaymak, labne, ayran, kefir
-- `YUMURTA` — yumurta, ev yapımı mayonez
-- `KUSUYEMIS` — ceviz, badem, fındık, Antep fıstığı, kaju, kestane
-- `YER_FISTIGI` — yer fıstığı, fıstık ezmesi (KUSUYEMIS'ten AYRI)
-- `SOYA` — soya sosu, tofu, edamame, miso
-- `DENIZ_URUNLERI` — balık, karides, midye, ahtapot, kalamar, hamsi, somon,
+- `SUT`, süt, yoğurt, peynir, tereyağı, krema, kaymak, labne, ayran, kefir
+- `YUMURTA`, yumurta, ev yapımı mayonez
+- `KUSUYEMIS`, ceviz, badem, fındık, Antep fıstığı, kaju, kestane
+- `YER_FISTIGI`, yer fıstığı, fıstık ezmesi (KUSUYEMIS'ten AYRI)
+- `SOYA`, soya sosu, tofu, edamame, miso
+- `DENIZ_URUNLERI`, balık, karides, midye, ahtapot, kalamar, hamsi, somon,
   ton, yengeç
-- `SUSAM` — susam, tahin, susam yağı
+- `SUSAM`, susam, tahin, susam yağı
 - **İstisna:** Hindistan cevizi sütü/badem sütü/yulaf sütü SUT DEĞİL.
   Badem sütü = KUSUYEMIS, yulaf sütü = GLUTEN.
 - **Hindistan cevizi (coconut) KUSUYEMIS DEĞİLDİR.** "Ceviz" kelimesi
   geçse bile coconut palm family, tree-nut allergen kapsamı dışında.
   Hindistan cevizi + Hindistan cevizi sütü + rende hindistan cevizi →
-  allergen `[]`. (Batch 16 Mod B'de yanlış flag edildi — coconut-lime
+  allergen `[]`. (Batch 16 Mod B'de yanlış flag edildi, coconut-lime
   / cinnamon-coconut tarifleri.)
 
 **Time math:** `prepMinutes + cookMinutes ≈ totalMinutes` (±5 dk).
 **Dinlendirme / soğutma / marinasyon / buzdolabı / fermentasyon süresi
-totalMinutes'a DAHİL olmalı** — pişirme süresi değil ama kullanıcı
+totalMinutes'a DAHİL olmalı**, pişirme süresi değil ama kullanıcı
 beklediği için total'de görünür. Örnek:
 - Summer pudding: 20 prep + 10 cook + **240 chill** → `totalMinutes: 270`
 - Yoğurt mayalama: 15 prep + 0 cook + **480 fermentasyon** → `totalMinutes: 495`
@@ -324,41 +330,41 @@ totalMinutes o saniyeyi kapsar).
 
 **Vegetarian/vegan integrity:**
 - `vejetaryen` tag → et/balık YOK. **Et suyu / tavuk suyu / kemik suyu /
-  broth / stock da et** — vejetaryen değildir. Bunun yerine `sebze suyu`
+  broth / stock da et**, vejetaryen değildir. Bunun yerine `sebze suyu`
   (vegetable stock) yazarsan vejetaryen OK.
 - `vegan` tag → ek olarak süt/yumurta/bal/peynir/tereyağı YOK
 
 **isFeatured:** Batch'te **%5-10 oran** (100 tarifte 5-10 featured).
 Sadece ikonik/güçlü tariflerde `true`.
 
-**Cuisine doğruluğu — EN ÇOK BURADA HATA YAPILDI:**
+**Cuisine doğruluğu, EN ÇOK BURADA HATA YAPILDI:**
 
 | Slug örneği | Yanlış yazılırsa | Doğru |
 |---|---|---|
-| `manti` | `cn` (Çin) | `tr` — Kayseri Türk mantısı |
-| `erzurum-cag-kebabi` | `th` (Tay) | `tr` — Erzurum bölgesel Türk kebabı |
-| `hasir-kunefe` | `th` | `tr` — Hatay künefe |
-| `hosmerim` | `th` | `tr` — Türk sütlü tatlı |
-| `karadeniz-hamsi-kayganasi` | `th` | `tr` — Karadeniz |
-| `lor-mantisi` | `cn` | `tr` — Türk |
-| `firinda-karniyarik` | `cn` | `tr` — Türk klasiği |
+| `manti` | `cn` (Çin) | `tr`, Kayseri Türk mantısı |
+| `erzurum-cag-kebabi` | `th` (Tay) | `tr`, Erzurum bölgesel Türk kebabı |
+| `hasir-kunefe` | `th` | `tr`, Hatay künefe |
+| `hosmerim` | `th` | `tr`, Türk sütlü tatlı |
+| `karadeniz-hamsi-kayganasi` | `th` | `tr`, Karadeniz |
+| `lor-mantisi` | `cn` | `tr`, Türk |
+| `firinda-karniyarik` | `cn` | `tr`, Türk klasiği |
 | `pazi-kavurmasi` | `th` | `tr` |
 | `klasik-menemen` | `th` | `tr` |
 
 **Kural:** Tarif adı Türkçe ve Türkiye'de kökeni varsa cuisine `tr`.
-"Mantı"yı sırf "dumpling" benzediği için `cn` yapma — Kayseri 1250'lerden
+"Mantı"yı sırf "dumpling" benzediği için `cn` yapma, Kayseri 1250'lerden
 beri Türk geleneği. **Description'a "Kayseri/Karadeniz/Hatay/Antep" yazıp
 cuisine `cn/th` atama inconsistency = uzmanlık algısını düşürür.**
 
-### Mod A translations kuralları (minimum kapsam — full çeviri ayrı pass)
+### Mod A translations kuralları (minimum kapsam, full çeviri ayrı pass)
 
 Mod A'da inline çeviri **minimum**:
 
-- `title` — zorunlu (SEO floor, PROTECTED_TR_TOKENS §7'ye tabi)
-- `description` — zorunlu (SEO floor, 100-200 char, 3 element)
+- `title`, zorunlu (SEO floor, PROTECTED_TR_TOKENS §7'ye tabi)
+- `description`, zorunlu (SEO floor, 100-200 char, 3 element)
 
 `tipNote`, `servingSuggestion`, `ingredients`, `steps` çevirileri **bu
-pass'te gerekmez** — `Recipe.translations` schema fallback desteği var,
+pass'te gerekmez**, `Recipe.translations` schema fallback desteği var,
 TR primary kalır. Örnek minimum:
 
 ```typescript
@@ -382,19 +388,19 @@ sonra yapılır. İki ayrı oturumda:
    malzeme ölçüleri, adımlar, allergen-ingredient doğruluğu, cuisine
    atama, isFeatured dengesi. title+description SEO için inline çevrilir.
 2. **Mod B (çeviri-focus, ikinci review):** Aynı batch için ayrı oturumda
-   tam çeviri retrofit — `docs/translations-batch-N.json` formatında.
+   tam çeviri retrofit, `docs/translations-batch-N.json` formatında.
    Bu sırada her tarif IKINCI KEZ gözden geçirilir: TR içeriği doğru mu,
    çevirisi native mi, terminoloji tutarlı mı. İki-pass yapı doğruluğu
    iki kat artırır.
 
-Bu "iki-pass mimarisi" batch 0-3 retrofit akışıyla aynı — ispatlanmış
+Bu "iki-pass mimarisi" batch 0-3 retrofit akışıyla aynı, ispatlanmış
 pattern. Yeni tarifte de aynı disiplin.
 
 (Mod A teslim mesajı formatı §5 başında "Çıktı yeri ve teslim" altında.)
 
 ---
 
-## 6. Mod B — Mevcut tarif çevirisi (translation retrofit)
+## 6. Mod B, Mevcut tarif çevirisi (translation retrofit)
 
 ### Scope ve default (Kerem sadece "Mod B" / "batch N çevirisi" derse)
 
@@ -403,7 +409,7 @@ pattern. Yeni tarifte de aynı disiplin.
 - **Çıktı:** `docs/translations-batch-N.json` (aynı N, yeni dosya)
 - **Kapsam:** CSV'deki her satır için EN + DE `ingredients + steps +
   tipNote + servingSuggestion` (hangileri CSV'de eksikse)
-- **YAPMA:** `title + description` JSON'a ekleme — CSV'nin
+- **YAPMA:** `title + description` JSON'a ekleme, CSV'nin
   `en_title_current` / `de_title_current` sütunlarına bak, zaten dolu.
 - **Array uzunlukları:** EN/DE `ingredients` array uzunluğu CSV'deki
   `ingredient_count` kadar; `steps` array uzunluğu `step_count` kadar.
@@ -413,7 +419,7 @@ pattern. Yeni tarifte de aynı disiplin.
 
 Mod B tarifin `translations` alanında **title + description'ın zaten dolu
 olduğu** (Mod A tarafından yazılmış) durumu ele alır. Sen yalnızca **eksik
-alanları** doldurursun — tipik olarak `ingredients + steps`, bazı
+alanları** doldurursun, tipik olarak `ingredients + steps`, bazı
 tariflerde `tipNote / servingSuggestion`.
 
 CSV'de her tarif için şu sütunları göreceksin:
@@ -471,7 +477,7 @@ bozuk/eksik görünüyorsa `issues` alanına yaz, Kerem/Claude review eder.
 
 ### Zorunlu disiplin
 
-1. **`title` + `description` JSON'a YAZMA** — Mod A'dan zaten dolu, CSV
+1. **`title` + `description` JSON'a YAZMA**, Mod A'dan zaten dolu, CSV
    `*_title_current` / `*_description_current` sütunlarıyla doğrula
 2. `en_tipNote_current` dolu → JSON'a `tipNote` yazma
 3. `en_servingSuggestion_current` dolu → JSON'a `servingSuggestion` yazma
@@ -491,7 +497,7 @@ bozuk/eksik görünüyorsa `issues` alanına yaz, Kerem/Claude review eder.
 - Uyumsuzluk varsa `scripts/import-translations-b.ts` CRITICAL olarak
   blok atar (`--force` ile override mümkün ama Kerem onayı gerekir)
 
-### ⚠️ Batch 21 dersleri — Mod B kalite çıtası (ZORUNLU)
+### ⚠️ Batch 21 dersleri, Mod B kalite çıtası (ZORUNLU)
 
 Batch 21'in ilk teslimi 3 sebepten tümüyle reddedildi (dosya silindi,
 baştan yazıldı). Aşağıdaki 3 kalıp teslim öncesi kendi kendini check
@@ -502,12 +508,12 @@ etmen gereken şeyler:
    tarifte 3 unique `servingSuggestion` (`"Serve warm."`, `"Serve hot."`,
    `"Serve cold."`) ve 81 tekrar eden generic `tipNote` (`"This small
    detail helps the dish keep a better texture and flavor."`) içeriyordu
-   — bu işi yapmamış sayılır. Her tarife özgü **teknik veya kültürel
+  , bu işi yapmamış sayılır. Her tarife özgü **teknik veya kültürel
    ipucu** yaz: "Let the yoğurt sit at room temperature before mixing
    to avoid curdling", "Serve alongside a dollop of thick ayran and
    pickled biber". CSV'de `tipNote_tr` / `servingSuggestion_tr` boşsa
    sen de boş bırak VEYA orijinal tarifi baz alıp gerçek bir ipucu
-   üret — template doldurma.
+   üret, template doldurma.
 
 2. **EN/DE cümlede Türkçe kelime BIRAKMA.** Batch 21 ilk teslimi 105
    alanda Türkçe kelime leak ediyordu: EN blok içinde `"Zeytinyağı"`
@@ -540,9 +546,9 @@ step count tümü eşleşiyor".
 ### Biçim detayları
 
 - UTF-8 (BOM yok), 2-space indent, pretty-print
-- `issues` optional — yoksa alanı hiç yazma
+- `issues` optional, yoksa alanı hiç yazma
 - Boş string `""` veya `null` göndermek "dokunma" sinyali (güvenli
-  fallback) — ama daha temizi field'ı hiç yazmamak
+  fallback), ama daha temizi field'ı hiç yazmamak
 
 ### Tarihçe: "Full-format" varyant (yalnızca batch 0-3 için kullanıldı)
 
@@ -560,40 +566,40 @@ yaz. Bu bulgular Claude tarafından review edilip fix script ile DB'ye
 uygulanır.
 
 **Issue type enum (tutarlı kullan):**
-- `ingredient-allergen-mismatch` — ingredient var allergen yok / tersi.
+- `ingredient-allergen-mismatch`, ingredient var allergen yok / tersi.
   **Allergen enum'una bağlı kal:** GLUTEN, SUT, YUMURTA, KUSUYEMIS,
   YER_FISTIGI, SOYA, DENIZ_URUNLERI, SUSAM, KEREVIZ, HARDAL. "KABUKLU_
   AGAC_YEMISI" değil KUSUYEMIS. Brief §5 allergen enum listesi tek
   referans.
-- `time-inconsistency` — SADECE `prep+cook > total` durumunda yaz.
+- `time-inconsistency`, SADECE `prep+cook > total` durumunda yaz.
   `prep+cook < total` NORMAL → chill/rest/fermentasyon/buzdolabı/
   dondurma süresi total'e dahil (§5 time math kuralı). Örnekler
   normal: granita (190 total, 10 prep/cook), overnight oats (490
   total, 10 prep/cook), şerbet (200 total, 20 prep/cook). **Bunlar
   issue DEĞİL.** Batch 16 Mod B'de 3 false positive flag geldi.
-- `vague-language` — "biraz, azıcık, duruma göre" somut kriter yok
-- `composite-ingredient` — tek row'da "Tuz, karabiber, pul biber" gibi
+- `vague-language`, "biraz, azıcık, duruma göre" somut kriter yok
+- `composite-ingredient`, tek row'da "Tuz, karabiber, pul biber" gibi
   virgülle 2+ malzeme
-- `step-ingredient-missing` — step'te anılan malzeme ingredient listesinde yok
-- `calorie-anomaly` — <50 veya >1200 (alkol hariç, çay/kahve sade içecekler
+- `step-ingredient-missing`, step'te anılan malzeme ingredient listesinde yok
+- `calorie-anomaly`, <50 veya >1200 (alkol hariç, çay/kahve sade içecekler
   legitimate)
-- `other` — başka şüphe, detail'de açıkla
+- `other`, başka şüphe, detail'de açıkla
 
 **Özellikle dikkat et (geçmişte yakalanmış pattern'ler):**
 - Cuisine assignment yanlışı (§5'teki Mantı→cn örneği). CSV'de
   `cuisine: 'tr'` ama "Fransız kökenli Crema Catalana" diyorsa flag
 - Ingredient listesinde yoğurt/peynir var ama allergen'de SUT yok
 - "Soğanla kavurun" step ama ingredient listesinde Soğan yok
-- Slug "pulled-pork-sandvic" ama ingredient "dana döş" — slug/content mismatch
+- Slug "pulled-pork-sandvic" ama ingredient "dana döş", slug/content mismatch
 
 ### Mod B çıktı teslim
 
 ```
-Batch N hazır — X tarif çevrildi, Y tanesinde issue alanı bulunuyor.
+Batch N hazır, X tarif çevrildi, Y tanesinde issue alanı bulunuyor.
 İlgili slug'lar: [kısa liste]
 ```
 
-### Mod B için kademeli teslim — SADECE Kerem açıkça isterse
+### Mod B için kademeli teslim, SADECE Kerem açıkça isterse
 
 Normal akış: **tüm JSON'u tek seferde teslim et**. Kademeli teslim sadece
 Kerem "100+100+100 kademeli ilet" gibi açık talimat verirse:
@@ -609,7 +615,7 @@ Aynı dosyaya append, slug sırasını koru. **Default akışta kademeli gönder
 
 ## 7. Kalite çıtası (her iki mod için geçerli)
 
-### Özgün TR isim koruma (PROTECTED_TR_TOKENS — AYNEN kalır)
+### Özgün TR isim koruma (PROTECTED_TR_TOKENS, AYNEN kalır)
 
 Aşağıdakiler EN/DE title'da **birebir korun**. Generic çeviri ("Spicy Meat
 Skewer", "Turkish Dumplings") **YASAK**.
@@ -627,7 +633,7 @@ Hünkar Beğendi, Kumpir
 **Meze:** Cacık, Haydari, Muhammara, Tarhana, Acılı Ezme
 **İçecek:** Ayran, Şalgam, Boza, Salep, Türk Kahvesi, Şerbet, Rakı, Limonata
 
-### PROTECTED_ALIAS — dile özgü standart yazım (aliasları kabul edilir)
+### PROTECTED_ALIAS, dile özgü standart yazım (aliasları kabul edilir)
 
 - **Pilav** → EN: `Pilaf` veya `Rice` (cuisine-specific, örn. Chinese fried
   rice); DE: `Pilaw`, `Pilaf`, `Reis`
@@ -667,8 +673,8 @@ ama description >80 char olmalı ve spesifik detay içermeli.
 ### Dil tonları
 
 **EN:**
-- US English — color (not colour), flavor (not flavour), caramelize (not caramelise)
-- "Türkiye" tercih ("Turkey" değil — modern)
+- US English, color (not colour), flavor (not flavour), caramelize (not caramelise)
+- "Türkiye" tercih ("Turkey" değil, modern)
 - Oxford comma tutarlı kullan
 - Casual-friendly food blog tonu, overly formal değil
 
@@ -679,26 +685,26 @@ ama description >80 char olmalı ve spesifik detay içermeli.
 - "Türkei" tercih
 - Umlaut doğru (ä, ö, ü, ß)
 
-**İyi vs kötü description — Mercimek Çorbası örneği:**
+**İyi vs kötü description, Mercimek Çorbası örneği:**
 
 ❌ `"A traditional Turkish lentil soup."` (8 kelime, placeholder)
 
-✅ `"A velvety red-lentil soup from Anatolian home cooking — simmered with onion, carrot, and cumin, blended smooth, finished with lemon and a spoonful of chili-infused butter."` (malzeme ✓, bölge ✓, doku ✓, servis ✓, 163 char)
+✅ `"A velvety red-lentil soup from Anatolian home cooking, simmered with onion, carrot, and cumin, blended smooth, finished with lemon and a spoonful of chili-infused butter."` (malzeme ✓, bölge ✓, doku ✓, servis ✓, 163 char)
 
 ---
 
-## 8. Self-review — ZORUNLU çift kontrol
+## 8. Self-review, ZORUNLU çift kontrol
 
 Her tarif/çeviri için iki pass yap. Herhangi bir madde ❌ ise **düzelt,
 sahte geçme.**
 
-### Pass 1 — İçerik doğruluğu (Mod A için yazarken, Mod B için CSV verisini okurken)
+### Pass 1, İçerik doğruluğu (Mod A için yazarken, Mod B için CSV verisini okurken)
 
 1. ✅ Slug mevcut değil + doğru format (Türkçe karakter yok, locative eki yok)?
 2. ✅ `prepMinutes + cookMinutes ≈ totalMinutes` (±5 dk)?
 3. ✅ Her step'te anılan ingredient listede var?
 4. ✅ Her yüksek-risk ingredient için doğru allergen (§5 tablo)?
-5. ✅ **Cuisine doğru — "Mantı/Erzurum Cağ/Hasır Künefe" türü Türk mutfağı
+5. ✅ **Cuisine doğru, "Mantı/Erzurum Cağ/Hasır Künefe" türü Türk mutfağı
    `tr`, yanlış `cn/th` değil** (§9 tablo)?
 6. ✅ Kategori + type + difficulty mantıklı?
 7. ✅ `vejetaryen` tag varsa et/balık yok, `vegan` varsa süt/yumurta yok?
@@ -707,7 +713,7 @@ sahte geçme.**
 9. ✅ `isFeatured` sadece en güçlü 5-10 tarifte `true` (batch %5-10)?
 10. ✅ Description 100-150 char + 3 element + banned kalıp yok?
 
-### Pass 2 — Çeviri kalitesi (EN + DE)
+### Pass 2, Çeviri kalitesi (EN + DE)
 
 1. ✅ EN + DE title + description dolu? (Mod A minimum; ingredients/steps
    çevirisi ayrı Mod B pass'inde)
@@ -718,34 +724,34 @@ sahte geçme.**
 5. ✅ Soft opener ("A traditional X") kullanılıyorsa description >80 char +
    spesifik detay?
 6. ✅ US English (EN) + "man" formu (DE) + umlaut?
-7. ✅ Tutarlılık — aynı malzeme aynı şekilde çevrilmiş (kıyma = ground beef,
+7. ✅ Tutarlılık, aynı malzeme aynı şekilde çevrilmiş (kıyma = ground beef,
    her yerde aynı)?
 8. ✅ Native speaker gramer, idiomatik akış?
 
 ---
 
-## 9. Geçmişte yakalanmış hatalar — ASLA TEKRARLAMA
+## 9. Geçmişte yakalanmış hatalar, ASLA TEKRARLAMA
 
 Tarifle'nin batch 0-23 audit'lerinde yakalanan somut hatalar. Yeni
-oturumda bunları TEKRAR yapma — özellikle allergen eksikleri
+oturumda bunları TEKRAR yapma, özellikle allergen eksikleri
 aynı kalıpta her batch'te tekrar çıkıyor (§5 tablosuna + §9 altındaki
 hızlı check'e bak).
 
 | Kategori | Hata örneği | Neden yanlış | Doğrusu |
 |---|---|---|---|
-| **Cuisine misassign** | `manti` cuisine `cn` | Açıklamada "Kayseri" diyor ama Çin atanmış — uzmanlık algısını düşürür | `tr` |
+| **Cuisine misassign** | `manti` cuisine `cn` | Açıklamada "Kayseri" diyor ama Çin atanmış, uzmanlık algısını düşürür | `tr` |
 | **Cuisine misassign** | `erzurum-cag-kebabi` cuisine `th` | Türk bölgesel kebabı | `tr` |
 | **Cuisine misassign** | `hasir-kunefe` cuisine `th` | Hatay Türk künefe | `tr` |
 | **Cuisine misassign** | `firinda-karniyarik` cuisine `cn` | Klasik Türk patlıcan yemeği | `tr` |
 | **Cuisine misassign** | `hosmerim`, `pazi-kavurmasi`, `klasik-menemen`, `kombe`, `sini-koftesi`, `tepsi-kebabi`, `yaprak-sarma` cuisine `th/cn` | Hepsi Türk | `tr` |
 | **Slug locative** | `firinda-baharatli-tofu-kupleri` | Türkçe locative `-da` eki slug'da var | `firin-baharatli-tofu-kupleri` (kök) |
-| **Özgün name kaybı** | `adana-kebap` EN title "Spicy Meat Skewer" | PROTECTED_TR_TOKENS ihlali — brand kaybı | "Adana Kebap" (TR birebir) |
+| **Özgün name kaybı** | `adana-kebap` EN title "Spicy Meat Skewer" | PROTECTED_TR_TOKENS ihlali, brand kaybı | "Adana Kebap" (TR birebir) |
 | **Tag yanlış** | `samsun-kaz-tiridi` tag `vejetaryen` | Kaz eti içerik, vejetaryen olamaz | Tag kaldırılmalı |
 | **Allergen eksik (batch 0-3)** | `sundubu-jjigae` susam yağı ingredient + SUSAM allergen yok | Cross-contamination riski | SUSAM eklenmeli |
-| **Allergen eksik — Tereyağı→SUT (batch 11 ×5 + batch 12 ×8)** | `firik-pilavi`, `karalahana-corbasi`, `eriste-corbasi`, `yuksuk-corbasi`, `hamsili-pilav`, `nevzine`, `acik-agiz-boregi` vs. | Tereyağı dairy — SUT allergen zorunlu | `allergens: ["SUT", ...]` |
-| **Allergen eksik — İrmik→GLUTEN (batch 12 ×3)** | `irmik-helvasi`, `kabak-bastisi`, `hosmerim` | İrmik = buğday semolina | `allergens: ["GLUTEN", ...]` |
-| **Allergen eksik — Nişasta (generic) → GLUTEN** | `paluze-kilis`, `harire-tatlisi` | Generic "Nişasta" geleneksel olarak buğday nişastası (mısır/pirinç değilse belirt) | GLUTEN ekle VEYA ingredient adını "Mısır nişastası" yap |
-| **Allergen eksik — Ayran→SUT / Yumurta→YUMURTA / Ceviz→KUSUYEMIS / Susam→SUSAM (batch 12)** | `sembusek` (Ayran), `tandir-boregi` (Yumurta), `girit-ezmesi` (Ceviz), `biberli-ekmek` (Susam) | §5'teki ingredient-implied tablosunun mekanik uygulaması kaçtı | Her high-risk ingredient için tabloya bak |
+| **Allergen eksik, Tereyağı→SUT (batch 11 ×5 + batch 12 ×8)** | `firik-pilavi`, `karalahana-corbasi`, `eriste-corbasi`, `yuksuk-corbasi`, `hamsili-pilav`, `nevzine`, `acik-agiz-boregi` vs. | Tereyağı dairy, SUT allergen zorunlu | `allergens: ["SUT", ...]` |
+| **Allergen eksik, İrmik→GLUTEN (batch 12 ×3)** | `irmik-helvasi`, `kabak-bastisi`, `hosmerim` | İrmik = buğday semolina | `allergens: ["GLUTEN", ...]` |
+| **Allergen eksik, Nişasta (generic) → GLUTEN** | `paluze-kilis`, `harire-tatlisi` | Generic "Nişasta" geleneksel olarak buğday nişastası (mısır/pirinç değilse belirt) | GLUTEN ekle VEYA ingredient adını "Mısır nişastası" yap |
+| **Allergen eksik, Ayran→SUT / Yumurta→YUMURTA / Ceviz→KUSUYEMIS / Susam→SUSAM (batch 12)** | `sembusek` (Ayran), `tandir-boregi` (Yumurta), `girit-ezmesi` (Ceviz), `biberli-ekmek` (Susam) | §5'teki ingredient-implied tablosunun mekanik uygulaması kaçtı | Her high-risk ingredient için tabloya bak |
 | **Vegan+dairy çelişkisi (batch 12)** | `karalahana-corbasi` tags `vegan` + ingredient Tereyağı | Vegan = süt/yumurta/bal YOK, Tereyağı dairy | `vejetaryen` (et yok ama dairy OK) |
 | **Missing ingredient** | `bun-bo-hue` step 1 "soğanla kaynatın" ama ingredients'te Soğan yok | Step-ingredient mismatch | Soğan eklenmeli |
 | **Generic description** | EN: "A delicious Turkish lentil soup" | 6 kelime, sıfır bilgi, placeholder prose | 100-150 char, 3 element |
@@ -754,16 +760,16 @@ hızlı check'e bak).
 | **Calorie anomaly false positive** | `adacayli-elma-cayi` 24 kcal (çay için doğal) | Anomali değil, bitkisel çay düşük kalori beklenen | İssue flag ama legitimate |
 | **Reverse unused** | `sambousek` ingredients'te yoğurt var ama step'te kullanılmamış | Liste-step inconsistency | Issue flag, manual review |
 | **Slug/content mismatch** | `pulled-pork-sandvic` slug "pork" ama ingredient "dana döş" | TR adaptation ama slug yanıltıcı | Issue flag, Kerem karar |
-| **Dosya encoding (batch 12)** | `scripts/seed-recipes.ts` Windows-1252→UTF-8 mojibake (ş→ÅŸ, ı→Ä±, emoji ðŸ¥©) | Windows'ta editör CP1252 yorumuyla açıp UTF-8 save → double-encode | UTF-8 (BOM yok) + LF — §3 "Dosya encoding" bölümüne bak |
-| **Vejetaryen tag + et suyu (batch 12 Mod B)** | `ovmac-corbasi-konya-usulu` tags `vejetaryen` + ingredient `Et suyu` | Et suyu (stock/broth) et içerir — vejetaryen değil | Tag kaldırılmalı VEYA `Et suyu` → `Sebze suyu` değiştir |
+| **Dosya encoding (batch 12)** | `scripts/seed-recipes.ts` Windows-1252→UTF-8 mojibake (ş→ÅŸ, ı→Ä±, emoji ðŸ¥©) | Windows'ta editör CP1252 yorumuyla açıp UTF-8 save → double-encode | UTF-8 (BOM yok) + LF, §3 "Dosya encoding" bölümüne bak |
+| **Vejetaryen tag + et suyu (batch 12 Mod B)** | `ovmac-corbasi-konya-usulu` tags `vejetaryen` + ingredient `Et suyu` | Et suyu (stock/broth) et içerir, vejetaryen değil | Tag kaldırılmalı VEYA `Et suyu` → `Sebze suyu` değiştir |
 | **Chill/rest totalMinutes dışı (batch 12 Mod B)** | `summer-pudding` totalMinutes 30 ama step 3 "4 saat buzdolabı" (timerSeconds 14400) | Chill/rest/marinasyon/fermentasyon totalMinutes'a dahil olmalı (kullanıcı "bu tarif ne kadar sürer" için total'a bakıyor) | `totalMinutes: prep + cook + chill` (summer-pudding → 270) |
-| **Allergen eksik — Tane hardal → HARDAL (batch 23 ×3)** | `hardalli-lufer-salatasi-canakkale-usulu`, `hardal-soslu-tavuk-pie-ingiltere-usulu`, `elma-havuclu-kok-patates-salatasi-isvec-usulu` | **"Tane hardal", "Dijon hardalı", "hardal tozu" hepsi HARDAL allergen** — "hardal" keyword'ü başlıkta/açıklamada olsa bile allergen listesine eklenmemiş | `allergens: [..., "HARDAL"]` |
-| **Allergen eksik — Terbiye yumurtası → YUMURTA (batch 22 ×3)** | `arpa-yarmali-yogurt-corbasi-eskisehir-usulu`, `peynirli-misir-ekmegi-balikesir-usulu`, `pao-de-queijo-waffle-brezilya-usulu` | Yoğurt çorbalarında terbiye (yumurta+yoğurt+un çırpması), ekmek/hamur işlerinde bağlayıcı yumurta → genelde radar dışı kalıyor | Ingredients'ta **Yumurta** tek satır geçse bile `YUMURTA` zorunlu |
-| **Allergen eksik — İrmik ve semolina → GLUTEN (batch 20-23 toplam ×5)** | Tvorog zapekanka, Kahramanmaraş helvası, vişneli irmik tatlısı, kayısılı irmik pilavı | İrmik = buğday semolina — batch 12'de uyarılmıştı ama farklı tariflerde tekrar atlanıyor | **İrmik = GLUTEN, istisnasız** |
-| **Allergen eksik — Kestane → KUSUYEMIS (batch 16-23 toplam ×3)** | `kestaneli-sutlac-bursa-usulu`, `dut-pekmezli-lor-kup-erzincan-usulu` (ceviz), `kestaneli-mantar-sote-bolu-usulu` | "Haşlanmış kestane" da kestane; tree-nut class KUSUYEMIS grubuna girer | `allergens: [..., "KUSUYEMIS"]` |
-| **Mod B template spam (batch 21 — dosya reddedildi)** | 100 tarifte 3 unique `servingSuggestion` (`"Serve warm."` ×67, `"Serve cold."`, `"Serve hot."`) ve 81 tekrar eden generic `tipNote` (`"This small detail helps the dish keep a better texture and flavor."`) | Her tarife aynı placeholder — kültürel/teknik ipucu YOK, brief §6 "Boş bırak, sahte doldurma" ihlali | Her tarife **özgün** 1 cümle: "Let yoğurt warm to room temperature before mixing to prevent curdling"; CSV boşsa sen de boş bırak |
-| **Mod B TR leak (batch 21 — dosya reddedildi)** | EN ingredient: `"Zeytinyağı"`, `"Sarımsak"`; EN step: `"Saute soganı zeytinyagında for 4 minutes."`; DE step: `"Soganı zeytinyagında 4 Minuten anschwitzen."` | Google-Translate düz çıktı, regex-replace fiil değişimi Türkçe kelimeleri olduğu gibi bırakmış — native speaker seviyesi DEĞİL | EN: `"olive oil"`, `"garlic"`, `"Sauté the onion in olive oil for 4 minutes."`; DE: `"Die Zwiebel 4 Minuten in Olivenöl anschwitzen."` |
-| **Mod B step collapse (batch 21 — dosya reddedildi)** | 100 tarifin hepsinde EN/DE `steps.length = 3` (TR'de 4-7 adım vardı) | Array uzunluk kuralı (§6) birebir ihlal — import script CRITICAL atar, ama dosya bu noktaya gelmeden reddedilmeli | `step_count` CSV'den oku, aynı sayıda adım yaz — her TR adımının karşılığı tek EN/DE adım |
+| **Allergen eksik, Tane hardal → HARDAL (batch 23 ×3)** | `hardalli-lufer-salatasi-canakkale-usulu`, `hardal-soslu-tavuk-pie-ingiltere-usulu`, `elma-havuclu-kok-patates-salatasi-isvec-usulu` | **"Tane hardal", "Dijon hardalı", "hardal tozu" hepsi HARDAL allergen**, "hardal" keyword'ü başlıkta/açıklamada olsa bile allergen listesine eklenmemiş | `allergens: [..., "HARDAL"]` |
+| **Allergen eksik, Terbiye yumurtası → YUMURTA (batch 22 ×3)** | `arpa-yarmali-yogurt-corbasi-eskisehir-usulu`, `peynirli-misir-ekmegi-balikesir-usulu`, `pao-de-queijo-waffle-brezilya-usulu` | Yoğurt çorbalarında terbiye (yumurta+yoğurt+un çırpması), ekmek/hamur işlerinde bağlayıcı yumurta → genelde radar dışı kalıyor | Ingredients'ta **Yumurta** tek satır geçse bile `YUMURTA` zorunlu |
+| **Allergen eksik, İrmik ve semolina → GLUTEN (batch 20-23 toplam ×5)** | Tvorog zapekanka, Kahramanmaraş helvası, vişneli irmik tatlısı, kayısılı irmik pilavı | İrmik = buğday semolina, batch 12'de uyarılmıştı ama farklı tariflerde tekrar atlanıyor | **İrmik = GLUTEN, istisnasız** |
+| **Allergen eksik, Kestane → KUSUYEMIS (batch 16-23 toplam ×3)** | `kestaneli-sutlac-bursa-usulu`, `dut-pekmezli-lor-kup-erzincan-usulu` (ceviz), `kestaneli-mantar-sote-bolu-usulu` | "Haşlanmış kestane" da kestane; tree-nut class KUSUYEMIS grubuna girer | `allergens: [..., "KUSUYEMIS"]` |
+| **Mod B template spam (batch 21, dosya reddedildi)** | 100 tarifte 3 unique `servingSuggestion` (`"Serve warm."` ×67, `"Serve cold."`, `"Serve hot."`) ve 81 tekrar eden generic `tipNote` (`"This small detail helps the dish keep a better texture and flavor."`) | Her tarife aynı placeholder, kültürel/teknik ipucu YOK, brief §6 "Boş bırak, sahte doldurma" ihlali | Her tarife **özgün** 1 cümle: "Let yoğurt warm to room temperature before mixing to prevent curdling"; CSV boşsa sen de boş bırak |
+| **Mod B TR leak (batch 21, dosya reddedildi)** | EN ingredient: `"Zeytinyağı"`, `"Sarımsak"`; EN step: `"Saute soganı zeytinyagında for 4 minutes."`; DE step: `"Soganı zeytinyagında 4 Minuten anschwitzen."` | Google-Translate düz çıktı, regex-replace fiil değişimi Türkçe kelimeleri olduğu gibi bırakmış, native speaker seviyesi DEĞİL | EN: `"olive oil"`, `"garlic"`, `"Sauté the onion in olive oil for 4 minutes."`; DE: `"Die Zwiebel 4 Minuten in Olivenöl anschwitzen."` |
+| **Mod B step collapse (batch 21, dosya reddedildi)** | 100 tarifin hepsinde EN/DE `steps.length = 3` (TR'de 4-7 adım vardı) | Array uzunluk kuralı (§6) birebir ihlal, import script CRITICAL atar, ama dosya bu noktaya gelmeden reddedilmeli | `step_count` CSV'den oku, aynı sayıda adım yaz, her TR adımının karşılığı tek EN/DE adım |
 
 **İkiz hata pattern (batch 11-23 tekrar tekrar):** Allergen ingredient-
 implied tablosu §5'te yazılı ama her batch'te 3-10 legitimate allergen
@@ -772,16 +778,16 @@ eksiği çıkıyor. Teslim öncesi her tarif için şu hızlı check:
 1. Ingredient listesinde **Tereyağı / yoğurt / peynir / süt / krema / kaşar / ayran / lor / süt ekmeği** var mı? → `SUT`
 2. **Un / bulgur / irmik / semolina / kadayıf / ekmek / börek / yufka / makarna / yulaf** var mı? → `GLUTEN` (**İrmik = buğday semolina, istisnasız GLUTEN**)
 3. **Yumurta / mayonez / yoğurt çorbası "terbiyesi"** var mı? → `YUMURTA` (**Terbiye = yumurta+yoğurt+un, yumurta başına allergen**)
-4. **Ceviz / badem / fındık / Antep fıstığı / kaju / kestane** var mı? → `KUSUYEMIS` (**Haşlanmış kestane dahil — tree-nut class**)
+4. **Ceviz / badem / fındık / Antep fıstığı / kaju / kestane** var mı? → `KUSUYEMIS` (**Haşlanmış kestane dahil, tree-nut class**)
 5. **Yer fıstığı / fıstık ezmesi** var mı? → `YER_FISTIGI` (KUSUYEMIS'ten AYRI)
 6. **Soya sosu / tofu / miso / edamame** var mı? → `SOYA`
 7. **Balık / somon / karides / midye / hamsi / ton** var mı? → `DENIZ_URUNLERI`
 8. **Susam / tahin / susam yağı** var mı? → `SUSAM`
-9. **Tane hardal / Dijon hardalı / hardal tozu / hardal sosu** var mı? → `HARDAL` (**"hardal" kelimesi başlıkta/açıklamada yetmez — ingredient listesinde hardal varyantı varsa allergen zorunlu**)
+9. **Tane hardal / Dijon hardalı / hardal tozu / hardal sosu** var mı? → `HARDAL` (**"hardal" kelimesi başlıkta/açıklamada yetmez, ingredient listesinde hardal varyantı varsa allergen zorunlu**)
 10. `vegan` tag yazdıysan: süt/yumurta/bal YOK mu? (Tereyağı varsa → `vejetaryen`)
 11. `vejetaryen` tag yazdıysan: et/balık/et suyu YOK mu?
 
-**Mod B'de ek check (batch 21 dersi — §6 "Batch 21 dersleri"ne bak):**
+**Mod B'de ek check (batch 21 dersi, §6 "Batch 21 dersleri"ne bak):**
 
 12. `en.tipNote` + `en.servingSuggestion` unique count ≥ tarif sayısının
     %70'i mi? (100 tarif → 70+ unique; < 10 unique = template spam, reddedilir)
@@ -789,7 +795,7 @@ eksiği çıkıyor. Teslim öncesi her tarif için şu hızlı check:
     "Zeytinyağı / Sarımsak / soğan / soganı / suyu / katıp / soteleyip"
     leak var mı? Varsa düzelt
 14. Her slug'ın `en.steps.length` === CSV `step_count` mi? Farklıysa
-    adımları kısaltma/birleştirme — TR ile birebir sayıda yaz
+    adımları kısaltma/birleştirme, TR ile birebir sayıda yaz
 
 **Altın kural:** "Türkçe isim + bölgesel açıklama
 (Kayseri/Hatay/Antep/Trabzon/Erzurum/Gaziantep/Karadeniz) varsa cuisine `tr`,
@@ -799,7 +805,7 @@ istisnası yok." Uzmanlık algısı bu tutarlılıktan geliyor.
 
 ## 10. Asla yapılmayacaklar (kesin yasak)
 
-- ❌ `git commit`, `git push`, `git add` — Kerem/Claude yapar
+- ❌ `git commit`, `git push`, `git add`, Kerem/Claude yapar
 - ❌ `npm run db:*`, `prisma migrate`, `--apply`, `--confirm-prod`, seed
   script çalıştırma
 - ❌ Mevcut 1300+ tarifi silme/değiştirme (append-only)
@@ -811,11 +817,11 @@ istisnası yok." Uzmanlık algısı bu tutarlılıktan geliyor.
 - ❌ Cuisine mantığını kırma ("Mantı = Çinli dumpling, cuisine `cn`" →
   HAYIR, Türk tarifi)
 - ❌ PROTECTED_TR_TOKENS çiğneme ("Spicy Meat Skewer" gibi çeviri)
-- ❌ **Mod B'de `title` + `description` JSON'a yazma** — CSV
+- ❌ **Mod B'de `title` + `description` JSON'a yazma**, CSV
   `en/de_*_current` sütunları dolu ise zaten Mod A'dan gelen çeviri var;
   override etmek altyapı regression'u
 - ❌ `scripts/seed-recipes.ts` mojibake-encoded kaydetme (§3 Dosya
-  encoding) — UTF-8 (BOM yok) + LF zorunlu
+  encoding), UTF-8 (BOM yok) + LF zorunlu
 
 ---
 
@@ -824,7 +830,7 @@ istisnası yok." Uzmanlık algısı bu tutarlılıktan geliyor.
 Bu mesajı okuduğunda:
 
 1. **"Anladım."** diye kısa onay ver
-2. **Kerem'in ilk mesajına bak** — üstteki "Hızlı tetikleyici" tablosu
+2. **Kerem'in ilk mesajına bak**, üstteki "Hızlı tetikleyici" tablosu
    büyük ihtimalle yanıtı çözüyor:
    - "Mod A" / "batch N yaz" / "yeni batch" → §5 default'uyla direkt başla
      (100 tarif, 70 TR + 30 uluslararası, isFeatured 5-10). Soru sorma.
@@ -841,7 +847,7 @@ Bu mesajı okuduğunda:
 4. Kerem açık mesaj verirse (örn. "50 kokteyl yaz"), default'u unut, talimatı
    uygula
 
-**Yaygın hata:** Her seferinde "Mod A mı B mi?" diye sormak — Kerem çoğu
+**Yaygın hata:** Her seferinde "Mod A mı B mi?" diye sormak, Kerem çoğu
 oturumda mod adını veya girdi dosyasını direkt söyler. Tetikleyici tablosu
 açıksa soru sorma.
 

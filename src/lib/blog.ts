@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import readingTime from "reading-time";
 
 /**
- * File-based blog content layer — `content/blog/*.mdx` okur,
+ * File-based blog content layer, `content/blog/*.mdx` okur,
  * frontmatter + body ayıklar, metadata döner. MDX render `next-mdx-remote`
  * üzerinden detail page içinde yapılır.
  *
@@ -35,7 +35,7 @@ export interface BlogPostMeta extends BlogFrontmatter {
 }
 
 export interface BlogPost extends BlogPostMeta {
-  /** Raw MDX source — `<MDXRemote source>` ile render edilir. */
+  /** Raw MDX source, `<MDXRemote source>` ile render edilir. */
   content: string;
 }
 
@@ -80,7 +80,7 @@ function validateFrontmatter(
   };
 }
 
-/** İlk 160 karakterlik özet — frontmatter.description varsa onu, yoksa
+/** İlk 160 karakterlik özet, frontmatter.description varsa onu, yoksa
  *  body'nin ilk paragrafını kullan. */
 function buildExcerpt(frontmatterDesc: string, body: string): string {
   if (frontmatterDesc.length > 0) return frontmatterDesc;
@@ -131,7 +131,7 @@ export async function getAllBlogPosts(): Promise<BlogPostMeta[]> {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
-/** Kategori seti — sabit, yeni category frontmatter'ında kullanılırsa
+/** Kategori seti, sabit, yeni category frontmatter'ında kullanılırsa
  *  buraya eklenir. Listing page chip'leri bundan render edilir. */
 export const BLOG_CATEGORIES = [
   { slug: "mutfak-rehberi", emoji: "🧭" },

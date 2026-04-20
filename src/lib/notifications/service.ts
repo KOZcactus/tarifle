@@ -8,7 +8,7 @@ import { prisma } from "@/lib/prisma";
  * the cleanup caveats below.
  *
  * Callers should use the specialised helpers (`notifyVariationLiked`,
- * `notifyBadgeAwarded`, ...) whenever possible — they encode the correct TR
+ * `notifyBadgeAwarded`, ...) whenever possible, they encode the correct TR
  * copy and link format so every notification of the same type reads the same.
  * The raw `createNotification` is exported only for future ad-hoc events.
  *
@@ -38,7 +38,7 @@ export async function createNotification(input: CreateNotificationInput): Promis
 
 /**
  * Someone liked a variation the given user authored. Self-likes are skipped
- * at the caller — this helper assumes author !== liker.
+ * at the caller, this helper assumes author !== liker.
  */
 export async function notifyVariationLiked(params: {
   authorId: string;
@@ -124,7 +124,7 @@ export async function notifyVariationHidden(params: {
     type: "VARIATION_HIDDEN",
     title: "Uyarlaman gizlendi",
     body,
-    // Hidden uyarlama tarif sayfasında zaten görünmüyor — kullanıcıyı
+    // Hidden uyarlama tarif sayfasında zaten görünmüyor, kullanıcıyı
     // tarife yönlendirmek "kayboldu" hissi verir. Bildirimler sayfasına
     // götürüp orada sebep + zaman damgasını görmesini sağlıyoruz.
     link: "/bildirimler",

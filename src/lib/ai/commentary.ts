@@ -11,7 +11,7 @@
  * Locale handling: all text comes from `messages/{locale}.json` under the
  * `aiCommentary` namespace. Variant arrays are read with `t.raw(key)`. The
  * caller (rule-based-provider) resolves locale via `getLocale()` and passes
- * it in — if omitted we fall back to TR (site default).
+ * it in, if omitted we fall back to TR (site default).
  */
 import { getTranslations } from "next-intl/server";
 import type { AiSuggestion } from "./types";
@@ -19,7 +19,7 @@ import { DEFAULT_LOCALE, type Locale } from "@/i18n/config";
 import { isPantryStaple } from "./matcher";
 
 /**
- * A user with 15+ real ingredients has a well-stocked pantry — the tone
+ * A user with 15+ real ingredients has a well-stocked pantry, the tone
  * shifts from "best-fit matching" to "you have plenty of options". The
  * threshold is deliberately permissive; the real purpose is to light up
  * the "packed pantry" variants for power users.
@@ -55,7 +55,7 @@ export function lowercaseFirstLetterForLocale(body: string, locale: Locale): str
 
 /**
  * Apply the cuisine/filter prefix `ctx` to a template body. Every variant gets
- * the same prefix regardless of whether its source string uses `{ctx}` — this
+ * the same prefix regardless of whether its source string uses `{ctx}`, this
  * keeps cuisine/filter context visible even when `pick()` selects a variant
  * the author didn't prefix. When `ctx` is empty, the body is returned as-is.
  *
@@ -253,7 +253,7 @@ export async function assignRecipeNotes(
     const oneMissing = s.missingIngredients.length === 1;
     const twoMissing = s.missingIngredients.length === 2;
 
-    // Highest priority first — first matching rule wins
+    // Highest priority first, first matching rule wins
     let note = "";
 
     if (i === 0 && perfect) {

@@ -60,7 +60,7 @@ export function NutritionInfo({ calories, protein, carbs, fat }: NutritionInfoPr
       </div>
       {/* Trust + legal disclaimer. Values are derived from ingredient
           amounts using public nutrition tables (USDA / TÜBİTAK), so they
-          sit in a "reasonable estimate" band — not a lab assay. The
+          sit in a "reasonable estimate" band, not a lab assay. The
           recipe detail calorie+macros also show as "~" for the same
           reason; this footnote just makes the contract explicit. */}
       <p className="mt-3 border-t border-border pt-3 text-xs text-text-muted">

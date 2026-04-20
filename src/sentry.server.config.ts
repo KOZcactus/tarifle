@@ -3,7 +3,7 @@
  * server action exception'lar, API route 500'ler buradan yakalanır.
  *
  * En kritik Tarifle senaryosu: authorize() patladığında (ör. schema
- * mismatch) Sentry alarmı — 17 Nis 2026 gibi bir outage 1 dakikada
+ * mismatch) Sentry alarmı, 17 Nis 2026 gibi bir outage 1 dakikada
  * görülür.
  */
 

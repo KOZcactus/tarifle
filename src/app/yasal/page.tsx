@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 /**
- * Legal hub landing — her alt sayfaya giden kart grid'i. Kullanıcı
+ * Legal hub landing, her alt sayfaya giden kart grid'i. Kullanıcı
  * hangi sayfayı arıyor net değilse buradan başlar; sidebar navigation
  * her sub-route'ta zaten mevcut ama hub kendi-başına bir "içindekiler"
  * sayfası olarak çalışır.
@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function YasalHubPage() {
   const t = await getTranslations("legalHub");
 
-  // Her kart için küçük bir görsel işaret — emoji tarif platformunun
+  // Her kart için küçük bir görsel işaret, emoji tarif platformunun
   // genel dilini korur, ikonlar (SVG) eklemekten daha hızlı çözüm. Renk
   // accent'ı primary bg-tint ile hafif; hover'da kart derinleşir.
   const cards = [

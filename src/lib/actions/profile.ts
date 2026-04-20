@@ -62,7 +62,7 @@ export async function updateProfileAction(
   const { name, username, bio } = parsed.data;
   const userId = session.user.id;
 
-  // Fetch current values — we need the old username for redirect + cache
+  // Fetch current values, we need the old username for redirect + cache
   // invalidation.
   const current = await prisma.user.findUnique({
     where: { id: userId },
@@ -117,12 +117,12 @@ interface PasswordChangeResult {
 }
 
 /**
- * Change the current user's password. Requires the current password — that's
+ * Change the current user's password. Requires the current password, that's
  * the single most important safety gate, because a stolen session cookie
  * without the password is useless here.
  *
  * OAuth-only users (registered with Google, no `passwordHash`) get told to
- * set a password elsewhere — we don't quietly let them "set" a first
+ * set a password elsewhere, we don't quietly let them "set" a first
  * password via this flow, because that would be a different risk profile
  * (setting vs. rotating).
  */
@@ -134,7 +134,7 @@ export async function changePasswordAction(
     return { success: false, error: "Giriş yapmalısın." };
   }
 
-  // Rate-limit — brute-force guard on the "currentPassword" check.
+  // Rate-limit, brute-force guard on the "currentPassword" check.
   const rate = await checkRateLimit(
     "password-change",
     rateLimitIdentifier(session.user.id),
@@ -168,7 +168,7 @@ export async function changePasswordAction(
     return {
       success: false,
       error:
-        "Şifren yok — hesabını Google gibi bir sağlayıcı ile açmışsın. Şifre eklemek için destek ekibiyle iletişime geç.",
+        "Şifren yok, hesabını Google gibi bir sağlayıcı ile açmışsın. Şifre eklemek için destek ekibiyle iletişime geç.",
     };
   }
 
@@ -192,12 +192,12 @@ export async function changePasswordAction(
  * Google OR credentials.
  *
  * Safety gates:
- *  1. Session must exist — standard auth check.
+ *  1. Session must exist, standard auth check.
  *  2. User must NOT already have a passwordHash. If they do, we redirect
  *     them to the normal change flow (which requires the current password).
  *     Without this, a stolen session cookie could silently rotate someone's
  *     password here and bypass the change endpoint's bcrypt.compare.
- *  3. Rate limit shared with the change flow — same brute-force pressure.
+ *  3. Rate limit shared with the change flow, same brute-force pressure.
  */
 export async function setPasswordAction(
   formData: FormData,
@@ -239,7 +239,7 @@ export async function setPasswordAction(
     return {
       success: false,
       error:
-        "Şifren zaten var — değiştirmek için mevcut şifreni gerektiren formu kullan.",
+        "Şifren zaten var, değiştirmek için mevcut şifreni gerektiren formu kullan.",
     };
   }
 
@@ -306,7 +306,7 @@ export async function unlinkGoogleAction(): Promise<UnlinkResult> {
   }
 
   if (user.accounts.length === 0) {
-    // Idempotent — already unlinked. No-op but return success so UI settles.
+    // Idempotent, already unlinked. No-op but return success so UI settles.
     return { success: true };
   }
 
@@ -344,11 +344,11 @@ interface DeleteAccountResult {
  * Security gates:
  *  - Auth required (session must belong to the target user)
  *  - Rate limited (`account-delete` scope: 3/saat)
- *  - Confirmation text must equal the user's current username — catches
+ *  - Confirmation text must equal the user's current username, catches
  *    accidental form POSTs and stolen-cookie attackers who don't know the
  *    handle (they probably do, so the password below is the real gate)
  *  - If the user has a password, it must be supplied and verify via bcrypt.
- *    OAuth-only users skip this gate — their only proof is the active
+ *    OAuth-only users skip this gate, their only proof is the active
  *    session + the username echo.
  *
  * The client is responsible for calling `signOut()` + redirecting after a
@@ -404,7 +404,7 @@ export async function deleteAccountAction(
     }
   }
 
-  // All gates cleared — do the deed. Ordered so FKs don't choke. Wrapped in
+  // All gates cleared, do the deed. Ordered so FKs don't choke. Wrapped in
   // a transaction to keep the DB consistent if any step throws.
   await prisma.$transaction([
     prisma.report.deleteMany({ where: { reporterId: user.id } }),

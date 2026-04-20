@@ -8,7 +8,7 @@ import { prisma } from "@/lib/prisma";
  * lowercases with Turkish locale, deduplicates. Returns the "prettiest"
  * version of each name (first seen casing).
  *
- * Cached by Next.js Data Cache — re-fetched only on new deployments
+ * Cached by Next.js Data Cache, re-fetched only on new deployments
  * or explicit revalidation. ~700 unique names at 806 recipes.
  */
 export async function getUniqueIngredientNames(): Promise<string[]> {

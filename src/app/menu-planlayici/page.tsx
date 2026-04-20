@@ -68,14 +68,14 @@ export default async function MenuPlanlayiciPage() {
           </p>
         </div>
 
-        {/* Sağ üst toolbar — print gizli olur, sadece ekranda */}
+        {/* Sağ üst toolbar, print gizli olur, sadece ekranda */}
         <div className="flex flex-wrap items-center gap-2 print:hidden">
           <PrintButton label={t("printLabel")} />
           <AddToShoppingListButton slotCount={items.length} />
         </div>
       </header>
 
-      {/* Grid — mobilde list, md+'da 7-col grid. Header row'unda günler
+      {/* Grid, mobilde list, md+'da 7-col grid. Header row'unda günler
           + mealType kolonu, her cell MealSlot. */}
       <div className="hidden overflow-x-auto md:block">
         <table className="w-full border-collapse">
@@ -129,7 +129,7 @@ export default async function MenuPlanlayiciPage() {
         </table>
       </div>
 
-      {/* Mobil — gün bazlı kart dizisi */}
+      {/* Mobil, gün bazlı kart dizisi */}
       <div className="space-y-4 md:hidden">
         {DAYS_OF_WEEK.map((day) => (
           <section
@@ -171,7 +171,7 @@ export default async function MenuPlanlayiciPage() {
         ))}
       </div>
 
-      {/* Empty hint — tüm slot'lar boşsa */}
+      {/* Empty hint, tüm slot'lar boşsa */}
       {items.length === 0 && (
         <p className="mt-6 rounded-lg border border-dashed border-border p-4 text-center text-sm text-text-muted">
           {t("emptyHint")}

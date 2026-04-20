@@ -40,7 +40,7 @@ export interface RecipeOfTheDay {
 
 /**
  * Number of whole days since the Unix epoch (UTC). Used as the rotation seed
- * so every visitor on the same calendar day sees the same pick — which means
+ * so every visitor on the same calendar day sees the same pick, which means
  * the homepage response is cacheable across users without freshness drift
  * within a day.
  *
@@ -53,13 +53,13 @@ export function daysSinceEpoch(now: Date = new Date()): number {
 /**
  * Deterministically picks a recipe for "today". Strategy:
  *   1. Load every PUBLISHED recipe's id ordered by `slug` (stable across
- *      inserts of unrelated recipes — alphabetical is cheaper than hashing).
+ *      inserts of unrelated recipes, alphabetical is cheaper than hashing).
  *   2. seed = daysSinceEpoch(now); index = seed mod count.
  *   3. Fetch the full card data for that one id.
  *
  * Rationale for ORDER BY slug: createdAt drifts when new recipes are seeded
  * (Codex batch), which would shuffle the rotation mid-cycle. Slug order is
- * stable — a new recipe only shifts entries that come after it in the
+ * stable, a new recipe only shifts entries that come after it in the
  * alphabet and only does so after the next day index lands on those slots.
  *
  * Returns null when there are zero PUBLISHED recipes so the caller can

@@ -3,11 +3,11 @@
  *
  * Estimates averageCalories, protein, carbs, fat per serving from
  * ingredient names + amounts + units + serving count. NOT a precision
- * nutrition calculator — it's a "good enough" approximation for
+ * nutrition calculator, it's a "good enough" approximation for
  * recipe cards, comparable to what a food blog would display.
  *
  * Accuracy target: ±20% of actual. Some ingredient names are ambiguous
- * ("sos" could be anything) — unknown ingredients are skipped, which
+ * ("sos" could be anything), unknown ingredients are skipped, which
  * biases estimates slightly low. Better low than fabricated.
  *
  * Used by `scripts/retrofit-nutrition.ts` for bulk backfill and
@@ -211,7 +211,7 @@ const UNIT_TO_GRAMS: Record<string, number> = {
   "kg": 1000,
   "ml": 1, // approximate: water density
   "lt": 1000,
-  "adet": 100, // very rough default for "adet" — overridden per ingredient below
+  "adet": 100, // very rough default for "adet", overridden per ingredient below
   "diş": 5, // garlic clove
   "dal": 30, // herb sprig
   "demet": 50,
@@ -335,7 +335,7 @@ function getGrams(ingredient: Ingredient): number {
   const gramsPerUnit = UNIT_TO_GRAMS[unit];
   if (gramsPerUnit) return amount * gramsPerUnit;
 
-  // Unknown unit — guess 100g
+  // Unknown unit, guess 100g
   return amount * 100;
 }
 

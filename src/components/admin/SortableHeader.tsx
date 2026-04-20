@@ -13,7 +13,7 @@ interface SortableHeaderProps<TKey extends string> {
 /**
  * Admin table header cell that toggles sort order on click via URL params.
  * Renders ▲/▼ arrow for the active column, nothing for others. No JS
- * required — pure RSC Link works with page searchParams.
+ * required, pure RSC Link works with page searchParams.
  *
  * Click behavior:
  *   - If already sorted by this key: flip asc ↔ desc

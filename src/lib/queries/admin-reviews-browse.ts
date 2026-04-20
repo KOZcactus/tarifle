@@ -1,13 +1,13 @@
 import { prisma } from "@/lib/prisma";
 
 /**
- * Admin "Yorumlar" browse sayfası — moderation queue DEĞİL. Tüm review'ları
+ * Admin "Yorumlar" browse sayfası, moderation queue DEĞİL. Tüm review'ları
  * tarihe göre listelemek için kullanılır. `getPendingReviews` (moderation)
- * yanında ayrı bir helper — iki sayfa farklı mindset'lerde çalışır.
+ * yanında ayrı bir helper, iki sayfa farklı mindset'lerde çalışır.
  *
  * Varsayılan default: son 7 gün (kullanıcı yük bindirmeyi istemiyor).
  * `from` / `to` explicit verilirse custom range uygulanır. `null` olursa
- * "tümü" (risk: büyük liste — çağrıştıran sayfa uyarı göstermeli).
+ * "tümü" (risk: büyük liste, çağrıştıran sayfa uyarı göstermeli).
  */
 
 export const REVIEW_BROWSE_PAGE_SIZE = 20;
@@ -42,7 +42,7 @@ export function resolveRange(input: {
       !Number.isNaN(toDate.getTime()) &&
       fromDate <= toDate
     ) {
-      // Custom range inclusive — toDate'i günün sonuna çek ki aynı gün
+      // Custom range inclusive, toDate'i günün sonuna çek ki aynı gün
       // başlangıç+bitiş seçilirse o gün tamamen dahil olsun.
       const toEnd = new Date(toDate);
       toEnd.setHours(23, 59, 59, 999);

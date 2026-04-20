@@ -16,8 +16,8 @@ export interface CategoryCardData extends CategoryWithCount {
   description: string | null;
 }
 
-/** Tüm kategoriler + description + tarif sayısı — `/kategoriler` landing
- *  page için. Cached 10 dk — nadir değişir, `revalidateTag("categories")`
+/** Tüm kategoriler + description + tarif sayısı, `/kategoriler` landing
+ *  page için. Cached 10 dk, nadir değişir, `revalidateTag("categories")`
  *  ile force invalidate. Hot path: `/kategoriler` landing. */
 export const getCategoriesForLanding = unstable_cache(
   async (): Promise<CategoryCardData[]> => {
@@ -39,8 +39,8 @@ export const getCategoriesForLanding = unstable_cache(
   { revalidate: 600, tags: ["categories"] },
 );
 
-/** Tüm kategoriler — tarif sayısı ile birlikte.
- *  Cached 5 dk — kategoriler nadir değişir (admin panel'den CRUD), TTL
+/** Tüm kategoriler, tarif sayısı ile birlikte.
+ *  Cached 5 dk, kategoriler nadir değişir (admin panel'den CRUD), TTL
  *  yeterli. Seed sonrası `revalidateTag("categories")` çağrısı ile force
  *  edilebilir ama şu an otomatik trigger yok. */
 export const getCategories = unstable_cache(
@@ -65,7 +65,7 @@ export const getCategories = unstable_cache(
   { revalidate: 300, tags: ["categories"] },
 );
 
-/** Tek kategori — slug ile */
+/** Tek kategori, slug ile */
 export async function getCategoryBySlug(slug: string) {
   return prisma.category.findUnique({
     where: { slug },

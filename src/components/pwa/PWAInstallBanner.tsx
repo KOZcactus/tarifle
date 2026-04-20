@@ -4,13 +4,13 @@ import { useCallback, useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 
 /**
- * "Ana ekrana ekle" promosyon bandı — mobil retention loop.
+ * "Ana ekrana ekle" promosyon bandı, mobil retention loop.
  *
  * Android / Chromium: `beforeinstallprompt` event yakalanır, kullanıcı
  * "Ekle" butonuna basınca `prompt()` tetiklenir. Native sheet onay/red
  * döndürür.
  *
- * iOS Safari: `beforeinstallprompt` yayınlamaz — manuel yol göstermek
+ * iOS Safari: `beforeinstallprompt` yayınlamaz, manuel yol göstermek
  * gerekiyor. User-agent'tan iOS Safari tespiti yapılıp talimat modu
  * render edilir ("Paylaş → Ana Ekrana Ekle").
  *
@@ -18,7 +18,7 @@ import { useTranslations } from "next-intl";
  * 30 gün gösterilmez. Zaten installed (`display-mode: standalone`)
  * veya `navigator.standalone` (iOS) ise hiç render edilmez.
  *
- * Gösterim gecikmesi: 3s — ilk yüklemede CLS'yi bozmasın, kullanıcı
+ * Gösterim gecikmesi: 3s, ilk yüklemede CLS'yi bozmasın, kullanıcı
  * sayfaya yerleşsin.
  */
 
@@ -84,7 +84,7 @@ export function PWAInstallBanner() {
 
     window.addEventListener("beforeinstallprompt", onBeforeInstallPrompt);
 
-    // iOS Safari için native event yok — manuel banner'ı 3s sonra göster.
+    // iOS Safari için native event yok, manuel banner'ı 3s sonra göster.
     if (isIosSafari()) {
       timer = setTimeout(() => setMode("ios"), SHOW_DELAY_MS);
     }

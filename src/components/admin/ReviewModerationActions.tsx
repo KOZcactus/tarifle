@@ -13,7 +13,7 @@ interface ReviewModerationActionsProps {
  * Approve/hide buttons for the admin review queue. Mirrors the variation
  * `ReviewActions` component so moderators get the same muscle memory across
  * surfaces. Kept in its own file because admin/ReviewActions.tsx is already
- * the variation version — naming would collide.
+ * the variation version, naming would collide.
  */
 export function ReviewModerationActions({
   reviewId,

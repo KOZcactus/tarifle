@@ -5,7 +5,7 @@ import { loadGoogleFont } from "@/lib/og";
 
 export const contentType = "image/png";
 export const size = { width: 1200, height: 630 };
-export const alt = "Tarifle — blog";
+export const alt = "Tarifle, blog";
 
 /**
  * Blog post OG image. Single landscape variant (blog yazıları dil-sabit

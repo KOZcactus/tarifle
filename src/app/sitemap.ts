@@ -8,7 +8,7 @@
  *   - All categories: `/tarifler?kategori=<slug>`
  *   - Active cuisines: `/tarifler?mutfak=<code>` (≥3 recipes)
  *
- * Drafts, hidden, and pending-review recipes are excluded — we don't
+ * Drafts, hidden, and pending-review recipes are excluded, we don't
  * want Google indexing content that may be moderated away.
  *
  * `lastModified` drives Google's "have I seen this version?" heuristic;
@@ -45,7 +45,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       select: { slug: true, createdAt: true },
       orderBy: { sortOrder: "asc" },
     }),
-    // Active cuisines with ≥3 recipes — worth indexing as landing pages
+    // Active cuisines with ≥3 recipes, worth indexing as landing pages
     prisma.recipe
       .groupBy({
         by: ["cuisine"],
@@ -57,7 +57,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           .filter((r) => r.cuisine && r._count >= 3)
           .map((r) => r.cuisine!),
       ),
-    // Tags with ≥3 recipes — indexable etiket landing candidates
+    // Tags with ≥3 recipes, indexable etiket landing candidates
     prisma.tag.findMany({
       where: { recipeTags: { some: {} } },
       select: {
@@ -65,7 +65,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         _count: { select: { recipeTags: true } },
       },
     }),
-    // Blog posts — file-based content; all MDX files in content/blog/.
+    // Blog posts, file-based content; all MDX files in content/blog/.
     getAllBlogPosts(),
   ]);
 
@@ -107,7 +107,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  // Programatik landing — /mutfak/[cuisine]. Query-string variant
+  // Programatik landing, /mutfak/[cuisine]. Query-string variant
   // (`/tarifler?mutfak=X`) deprecate edildi, path-based route canonical
   // kaynak. Aktif cuisine listesi (≥3 tarif) set olarak kontrol edilir.
   const activeCuisineSet = new Set<string>(cuisineCodes);
@@ -120,7 +120,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  // Programatik landing — /etiket/[tag]. ≥3 tarif filtresi; 0-1 tariflik
+  // Programatik landing, /etiket/[tag]. ≥3 tarif filtresi; 0-1 tariflik
   // etiketlerde thin content oluşur, index dışı tutulur.
   const tagPages: MetadataRoute.Sitemap = tags
     .filter((t) => t._count.recipeTags >= 3)
@@ -131,7 +131,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     }));
 
-  // Programatik landing — /diyet/[diet]. Sabit 5 slug, filtre config
+  // Programatik landing, /diyet/[diet]. Sabit 5 slug, filtre config
   // DIETS tablosunda.
   const dietPages: MetadataRoute.Sitemap = DIETS.map((d) => ({
     url: `${SITE_URL}/diyet/${d.slug}`,
@@ -140,7 +140,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  // Blog yazıları — MDX frontmatter `date` → lastModified. Tarifler
+  // Blog yazıları, MDX frontmatter `date` → lastModified. Tarifler
   // kadar sık güncellenmediği için weekly + priority 0.6.
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((p) => ({
     url: `${SITE_URL}/blog/${p.slug}`,

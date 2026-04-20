@@ -8,7 +8,7 @@ import { NotificationBell } from "./NotificationBell";
 /**
  * Server component that fetches the current user's notification state and
  * passes it into the (client) NotificationBell. Rendered inside layout.tsx
- * as a slot for the Navbar — this lets the bell's initial paint be driven
+ * as a slot for the Navbar, this lets the bell's initial paint be driven
  * by an RSC query without turning Navbar itself into a server component.
  *
  * Returns `null` for anonymous users so logged-out visitors don't see the

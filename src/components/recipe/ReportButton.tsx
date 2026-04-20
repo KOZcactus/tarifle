@@ -9,7 +9,7 @@ import { createReport } from "@/lib/actions/report";
 interface ReportButtonProps {
   targetType: "VARIATION" | "REVIEW";
   targetId: string;
-  /** Accessible label override — defaults to namespace-derived label. */
+  /** Accessible label override, defaults to namespace-derived label. */
   label?: string;
 }
 

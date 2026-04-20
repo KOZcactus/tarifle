@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 /**
  * Haftalık menü planlayıcı query layer.
  *
- * Haftanın başlangıcı — Pazartesi (TR convention). Verilen tarihin haftasının
+ * Haftanın başlangıcı, Pazartesi (TR convention). Verilen tarihin haftasının
  * Pazartesi 00:00:00 UTC değerini döner. Timezone minimal: DATE kolonu
  * date-only tutar, saat bileşeni kaybolur.
  */
@@ -18,7 +18,7 @@ export function getMondayOfWeek(date: Date = new Date()): Date {
   return d;
 }
 
-/** Bu haftanın aktif planı — yoksa null. `findOrCreateThisWeekPlan` server
+/** Bu haftanın aktif planı, yoksa null. `findOrCreateThisWeekPlan` server
  *  action katmanında write yapar; bu sadece read. */
 export async function getActiveMealPlan(userId: string, reference: Date = new Date()) {
   const monday = getMondayOfWeek(reference);
@@ -52,7 +52,7 @@ export async function getActiveMealPlan(userId: string, reference: Date = new Da
 }
 
 /**
- * UI 7×3 grid render'ı için — plan item'ı (gün, öğün) tuple'ına indeksli
+ * UI 7×3 grid render'ı için, plan item'ı (gün, öğün) tuple'ına indeksli
  * döner. Bu bir helper; caller `plan.items` üzerinden de map'leyebilir
  * ama her cell için O(N) scan önlemek için tek geçişte Map'e koyar.
  *

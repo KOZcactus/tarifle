@@ -10,7 +10,7 @@ import { LINK_INTENT_COOKIE, signLinkIntent } from "@/lib/link-intent";
  * /api/auth/signin/google would land on Auth.js's sign-in UI because that
  * endpoint only redirects out-of-origin on CSRF-stamped POSTs. Step 2
  * (the client calling `signIn("google", ...)`) handles the real OAuth
- * handshake — CSRF token + provider redirect — from the browser.
+ * handshake, CSRF token + provider redirect, from the browser.
  *
  * Only POST is accepted: this mutates state (sets a cookie).
  */

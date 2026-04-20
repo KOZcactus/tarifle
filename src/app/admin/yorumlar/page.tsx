@@ -33,7 +33,7 @@ function rangeToActivePreset(range: ReviewBrowseRange): string {
   return range.kind;
 }
 
-/** Number formatter helpers — locale-aware date rendering for review
+/** Number formatter helpers, locale-aware date rendering for review
  *  timestamps. "tr" → "19 Nis 2026 05:33", "en" → "Apr 19, 2026, 5:33 AM". */
 function formatDateTime(d: Date, locale: string): string {
   const formatter = new Intl.DateTimeFormat(locale === "tr" ? "tr-TR" : "en-US", {
@@ -88,7 +88,7 @@ export default async function YorumlarPage({ searchParams }: YorumlarPageProps) 
         <p className="mt-1 text-sm text-text-muted">{t("subtitle")}</p>
       </header>
 
-      {/* Preset chips — tek tıkla yaygın aralıklara geç, yük kontrolü.
+      {/* Preset chips, tek tıkla yaygın aralıklara geç, yük kontrolü.
           Custom range input'u ayrı form ile aşağıda; URL'i direkt yazmak
           isteyen admin ?preset=custom&from=YYYY-MM-DD&to=... de koşturabilir. */}
       <section className="space-y-3">
@@ -112,7 +112,7 @@ export default async function YorumlarPage({ searchParams }: YorumlarPageProps) 
           })}
         </div>
 
-        {/* Custom range form — GET submit, native date input'lar. Admin
+        {/* Custom range form, GET submit, native date input'lar. Admin
             istediği günü seçer, "Uygula" bağlantısı URL'i set eder. */}
         <form
           method="GET"

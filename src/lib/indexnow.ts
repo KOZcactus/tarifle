@@ -1,5 +1,5 @@
 /**
- * IndexNow helper — Bing / Yandex / Seznam / Naver'a tek API ile
+ * IndexNow helper, Bing / Yandex / Seznam / Naver'a tek API ile
  * batch URL ping'i.
  *
  * Protokol: https://www.indexnow.org/documentation
@@ -11,13 +11,13 @@
  * değerinde: Bing index'e düştükten sonra Google da bot yönlendirebilir.
  *
  * Doğrulama: site kökünde `/{key}.txt` erişilebilir olmalı. Biz bunu
- * Next.js dynamic route ile serve ediyoruz — statik dosya değil, env
+ * Next.js dynamic route ile serve ediyoruz, statik dosya değil, env
  * değeri ile eşleşen isteklere cevap veriyor (rotate kolay).
  *
  * Env:
- *   INDEXNOW_KEY — 32-char lowercase hex. Kerem Vercel'e ekleyince aktif
+ *   INDEXNOW_KEY, 32-char lowercase hex. Kerem Vercel'e ekleyince aktif
  *                  olur; env set değilse `pingIndexNow` no-op döner.
- *   NEXT_PUBLIC_SITE_URL — "https://tarifle.app" (default).
+ *   NEXT_PUBLIC_SITE_URL, "https://tarifle.app" (default).
  */
 
 const INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow";
@@ -37,12 +37,12 @@ export function isValidKey(key: string | undefined | null): key is string {
   return /^[a-zA-Z0-9-]{8,128}$/.test(key);
 }
 
-/** Site base URL — env yoksa canlı prod. */
+/** Site base URL, env yoksa canlı prod. */
 export function getSiteBaseUrl(): string {
   return process.env.NEXT_PUBLIC_SITE_URL ?? "https://tarifle.app";
 }
 
-/** URL validasyonu — host eşleşmesi + http(s) şart. */
+/** URL validasyonu, host eşleşmesi + http(s) şart. */
 export function filterValidUrls(urls: string[], baseUrl: string): string[] {
   let base: URL;
   try {

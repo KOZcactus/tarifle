@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/prisma";
 
 /**
- * Variation query helpers — `/uyarlama/[id]` permalink sayfası ve OG
+ * Variation query helpers, `/uyarlama/[id]` permalink sayfası ve OG
  * image route'u tarafından kullanılır.
  *
  * Access rules:
@@ -9,7 +9,7 @@ import { prisma } from "@/lib/prisma";
  *   - PENDING_REVIEW / HIDDEN / REJECTED: sadece owner veya admin görür;
  *     diğerlerine `null` döner (404 render edilsin).
  *
- * Tarife ait alanlar (title, slug, emoji) join'le gelir — paylaşım
+ * Tarife ait alanlar (title, slug, emoji) join'le gelir, paylaşım
  * kartında "<Tarif adı> için uyarlama" bağlamı için gereklidir.
  */
 export interface VariationView {
@@ -63,7 +63,7 @@ export async function getVariationById(
   if (!row) return null;
 
   // Only PUBLISHED is publicly viewable. Owner + admin bypass for in-flight
-  // moderation — admin check piggybacks the ADMIN role fetch done elsewhere;
+  // moderation, admin check piggybacks the ADMIN role fetch done elsewhere;
   // here we accept owner directly and let the page layer widen when needed.
   if (row.status !== "PUBLISHED") {
     if (!viewerId || row.authorId !== viewerId) {

@@ -10,7 +10,7 @@ import {
 interface PasswordChangeCardProps {
   /**
    * True when the user has a `passwordHash` in the DB (registered with
-   * credentials). False for Google-only accounts — in that case we show
+   * credentials). False for Google-only accounts, in that case we show
    * the "add a password" form instead of the change form.
    */
   hasPassword: boolean;

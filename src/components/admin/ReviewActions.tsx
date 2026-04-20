@@ -12,7 +12,7 @@ interface ReviewActionsProps {
 
 /**
  * Per-variation approve/hide buttons for the review queue. Actions already
- * exist in `lib/actions/admin.ts` — this component just wires them up with
+ * exist in `lib/actions/admin.ts`, this component just wires them up with
  * a pending state and a lightweight "why are you hiding" prompt.
  */
 export function ReviewActions({ variationId }: ReviewActionsProps) {

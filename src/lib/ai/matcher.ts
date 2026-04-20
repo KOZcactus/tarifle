@@ -5,15 +5,15 @@
 import { fuzzyMatches } from "@/lib/fuzzy";
 
 /**
- * Pantry staples — **gerçek salt-and-pepper seviyesinde** baharat + su +
+ * Pantry staples, **gerçek salt-and-pepper seviyesinde** baharat + su +
  * yağ. Matcher bu kelimeleri "zaten var" varsayarak skorlar.
  *
- * v3 (19 Nis 2026) — daraltma + exact-phrase match:
+ * v3 (19 Nis 2026), daraltma + exact-phrase match:
  *
  * v2'de liste aşırı genişti (un/şeker/maya/sirke/limon suyu/tereyağı/
  * maydanoz/kekik dahildi). Sonuç: "limon suyu" pantry sayılınca
  * tokenization bug'ıyla `limon` tek başına da pantry gibi davranıyordu
- * ve **limonata %100 match** görünüyordu — kullanıcı sadece domates
+ * ve **limonata %100 match** görünüyordu, kullanıcı sadece domates
  * girmişken. Keza un pantry sayılınca ekmek/börek/çörek çok kolay
  * %100'e ulaşıyordu, gerçek sinyal kayboluyordu.
  *
@@ -21,7 +21,7 @@ import { fuzzyMatches } from "@/lib/fuzzy";
  * olarak yazılan, ana malzeme kimliği taşımayan şeyler". Un ≠ pantry
  * (ekmek/börek'in ANA malzemesi). Şeker ≠ pantry (tatlının ANA
  * malzemesi). Tereyağı ≠ pantry (kahvaltı sabitleri vs. standart pişirme
- * yağı dengesiz — opt-in bırak).
+ * yağı dengesiz, opt-in bırak).
  *
  * Ayrıca `isPantryStaple` artık **exact normalized phrase match** yapar:
  * `"limon"` tek başına pantry değildir çünkü listede `"limon"` yok
@@ -61,7 +61,7 @@ const PANTRY_STAPLES: ReadonlySet<string> = new Set(
  * Grup ekleme kuralı: iki ingredient'ın BİRBİRİNİN YERİNE ikame
  * edilebilmesi gerek. "Beyaz peynir ↔ kaşar" OK (ikisi de peynir) ama
  * "Tavuk ↔ balık" DEĞİL (protein farklı). Başka deyişle: "elimde A var,
- * tarif B istiyor — yapabilir miyim?" sorusunun cevabı evet olmalı.
+ * tarif B istiyor, yapabilir miyim?" sorusunun cevabı evet olmalı.
  */
 const SYNONYM_GROUPS: readonly string[][] = [
   // ─── Et & Balık ────────────────────────────────────────
@@ -144,7 +144,7 @@ export function normalizeIngredient(raw: string): string {
 }
 
 /**
- * Tokenise by whitespace and commas — keeps multi-word names like "ay çiçek yağı"
+ * Tokenise by whitespace and commas, keeps multi-word names like "ay çiçek yağı"
  * as separate tokens so we can do word-level matching without over-fitting.
  */
 function tokens(normalized: string): string[] {
@@ -197,7 +197,7 @@ export function ingredientMatches(recipeIng: string, userIng: string): boolean {
   const userTokens = tokens(userNorm);
   if (userTokens.length === 0 || recipeTokens.length === 0) return false;
 
-  // Direct prefix match — every user token must hit some recipe token.
+  // Direct prefix match, every user token must hit some recipe token.
   const directMatch = userTokens.every((ut) =>
     recipeTokens.some(
       (rt) => rt.startsWith(ut) || ut.startsWith(rt),
@@ -205,7 +205,7 @@ export function ingredientMatches(recipeIng: string, userIng: string): boolean {
   );
   if (directMatch) return true;
 
-  // Synonym fallback — check if user ingredient is a synonym of recipe ingredient.
+  // Synonym fallback, check if user ingredient is a synonym of recipe ingredient.
   // "piliç" should match a recipe that says "tavuk göğsü".
   const userSynonyms = getSynonyms(userNorm);
   for (const syn of userSynonyms) {
@@ -218,7 +218,7 @@ export function ingredientMatches(recipeIng: string, userIng: string): boolean {
     if (synMatch) return true;
   }
 
-  // Fuzzy fallback — kullanıcı typo yapmış olabilir ("domatez" → "domates",
+  // Fuzzy fallback, kullanıcı typo yapmış olabilir ("domatez" → "domates",
   // "kerik" → "kekik"). Token başına ASCII-normalize + length-aware
   // Levenshtein distance (≤4 char exact-only, 5-7 = 1 edit, 8+ = 2 edit).
   // En pahalı adım bu (O(m*n) per token pair), en sona konduğu için
@@ -232,12 +232,12 @@ export function ingredientMatches(recipeIng: string, userIng: string): boolean {
 }
 
 /**
- * Exact-phrase pantry check — v3. Önceki token-set yaklaşımı `"limon"`
+ * Exact-phrase pantry check, v3. Önceki token-set yaklaşımı `"limon"`
  * tek token'ını pantry sayıyordu çünkü `"limon suyu"` pantry olduğunda
  * tokens `[limon, suyu]` set'e giriyordu. Şimdi **normalize edilmiş tam
  * ingredient string** PANTRY_STAPLES set'inde mi, dümdüz karşılaştırılır.
  *
- * Edge case — compound form: "sıvı yağ" (pantry) vs "sıvı yağ, yarım
+ * Edge case, compound form: "sıvı yağ" (pantry) vs "sıvı yağ, yarım
  * kaşık" gibi input. Normalize zaten parenthetical strip + whitespace
  * collapse yapıyor, exact match için yeterli. Fuzzy match pantry'ye
  * sıçramaz.

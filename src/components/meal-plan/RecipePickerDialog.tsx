@@ -20,12 +20,12 @@ interface RecipePickerDialogProps {
   onClose: () => void;
   dayOfWeek: number;
   mealType: MealType;
-  /** Opsiyonel başlık — "Pazartesi · Öğle yemeği" gibi. */
+  /** Opsiyonel başlık, "Pazartesi · Öğle yemeği" gibi. */
   slotLabel: string;
 }
 
 /**
- * Slot picker modal — kullanıcı tarife arama + seçim yapar. Debounce
+ * Slot picker modal, kullanıcı tarife arama + seçim yapar. Debounce
  * 250ms; arama `/api/search/recipes` endpoint'ine değil, yeni route
  * `/api/meal-plan/search` kullanabilir. Şu an MVP için mevcut FTS
  * altyapısına doğrudan bağlanacak.

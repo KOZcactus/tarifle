@@ -29,7 +29,7 @@ type RelativeT = (
   values?: Record<string, string | number | Date>,
 ) => string;
 
-/** Locale-aware "X gün önce / X days ago" — üye/yorum tarihleri için. */
+/** Locale-aware "X gün önce / X days ago", üye/yorum tarihleri için. */
 function formatRelativeDate(date: Date | string, t: RelativeT): string {
   const now = new Date();
   const then = new Date(date);
@@ -93,7 +93,7 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
       : Promise.resolve(false),
   ]);
 
-  // Owner-only fields (TS narrowing — only present when isOwner === true)
+  // Owner-only fields (TS narrowing, only present when isOwner === true)
   const ownerEmail = "email" in user ? (user as { email: string }).email : null;
   const ownerEmailVerified =
     "emailVerified" in user
@@ -177,14 +177,14 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
         </div>
       </div>
 
-      {/* Stat vitrini — 4 kart: yayında uyarlama + aldığı beğeni + yayında
+      {/* Stat vitrini, 4 kart: yayında uyarlama + aldığı beğeni + yayında
           yorum + public koleksiyon. Public aggregated; owner için ek özel
           sayılar header'da. */}
       <ProfileStats stats={profileStats} />
 
       <BadgeShelf badges={badges} />
 
-      {/* Son aktivite timeline — son 8 event (varyasyon + yorum + public
+      {/* Son aktivite timeline, son 8 event (varyasyon + yorum + public
           koleksiyon) chronological. Yeni kullanıcıda hiç event olmazsa
           section render edilmez. */}
       <ProfileActivity

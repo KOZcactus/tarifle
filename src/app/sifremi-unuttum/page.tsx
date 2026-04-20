@@ -19,7 +19,7 @@ export default async function ForgotPasswordPage() {
     auth(),
     getTranslations("auth.forgotPassword"),
   ]);
-  // Already-signed-in users don't need this flow — the change-password form
+  // Already-signed-in users don't need this flow, the change-password form
   // on /ayarlar is the right place for them.
   if (session) redirect("/ayarlar");
 

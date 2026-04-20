@@ -4,7 +4,7 @@
  * handled separately by `blacklist.ts`) but tuned for the review shape:
  * short comment text, no ingredient/step structure to check.
  *
- * Scope is intentionally narrow — reviews carry less content than variations,
+ * Scope is intentionally narrow, reviews carry less content than variations,
  * so we only flag the patterns that legit users almost never produce:
  *   - empty/too-short comment when a comment was given at all
  *   - spam-style repeated characters
@@ -12,7 +12,7 @@
  *   - excessive caps (shouting reviews)
  *
  * Rating-only submissions (no comment) skip every string check by definition
- * — there's nothing to preflight. They always go straight to PUBLISHED.
+ *, there's nothing to preflight. They always go straight to PUBLISHED.
  */
 
 export type ReviewPreflightFlag =
@@ -45,7 +45,7 @@ const CAPS_RATIO_THRESHOLD = 0.7;
 /**
  * Undo common link-obfuscation tricks so "site . com" / "site[dot]com" /
  * "site (nokta) com" collapse into their real shape before the URL regex
- * runs. Kept identical to `preflight.ts` — same spam-evasion tactics show
+ * runs. Kept identical to `preflight.ts`, same spam-evasion tactics show
  * up here.
  */
 function unobfuscateForUrlCheck(text: string): string {

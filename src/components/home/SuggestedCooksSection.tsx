@@ -11,7 +11,7 @@ interface SuggestedCooksSectionProps {
 }
 
 /**
- * Homepage "Önerilen Aşçılar" bloğu — son 30 günde aktif + takipçili 6
+ * Homepage "Önerilen Aşçılar" bloğu, son 30 günde aktif + takipçili 6
  * user. `FollowUserCard` paylaşımlı grid kartı kullanılıyor. Anonim
  * kullanıcı için de gözüküyor (discovery); Follow butonu click anında
  * `/giris`'e yönlendirir.

@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 // Rendered per-request so we always show the latest featured + popular state,
-// and — importantly — so CI builds don't need a real DATABASE_URL to prerender
+// and, importantly, so CI builds don't need a real DATABASE_URL to prerender
 // this page. Other DB-backed pages (/, /tarifler) are already dynamic because
 // they touch auth cookies; Keşfet has no auth, which is why Next defaulted it
 // to static. Explicit `force-dynamic` makes the intent visible.
@@ -82,7 +82,7 @@ export default async function KesfetPage() {
         </div>
       </div>
 
-      {/* Sana özel — giriş yapmış + tercihleri dolu user'a featured'den önce
+      {/* Sana özel, giriş yapmış + tercihleri dolu user'a featured'den önce
           render edilir. Tercih boşsa bu section hiç çıkmaz. */}
       {personalized.hasPrefs && personalized.recipes.length > 0 && (
         <section className="mt-10">

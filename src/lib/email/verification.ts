@@ -124,7 +124,7 @@ export async function consumeVerificationToken(token: string): Promise<
     prisma.verificationToken.delete({ where: { token } }),
   ]);
 
-  // Award the verified badge — best-effort, never blocks the user from logging in.
+  // Award the verified badge, best-effort, never blocks the user from logging in.
   awardEmailVerifiedBadge(record.identifier).catch((err) => {
     console.error("[verification] badge grant failed:", err);
   });

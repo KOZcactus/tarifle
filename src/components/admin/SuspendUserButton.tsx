@@ -11,7 +11,7 @@ import {
 interface Props {
   userId: string;
   suspended: boolean;
-  /** False ise UI görünmez — ADMIN hesabı bile kendi kendini askıya alamaz. */
+  /** False ise UI görünmez, ADMIN hesabı bile kendi kendini askıya alamaz. */
   allow: boolean;
 }
 

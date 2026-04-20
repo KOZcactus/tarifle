@@ -4,7 +4,7 @@ interface PrintButtonProps {
   label: string;
 }
 
-/** Small client wrapper — invokes the browser print dialog.  `@media print`
+/** Small client wrapper, invokes the browser print dialog.  `@media print`
  *  CSS utility classes (`print:hidden`) strip the toolbar + interactive
  *  buttons from the printed view so the output is a clean grid. */
 export function PrintButton({ label }: PrintButtonProps) {

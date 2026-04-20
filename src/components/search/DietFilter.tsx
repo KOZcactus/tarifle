@@ -4,7 +4,7 @@ import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 
 interface DietFilterProps {
-  /** Tag slugs currently active from the URL — typically ["vegan"], ["vejetaryen"], or both. */
+  /** Tag slugs currently active from the URL, typically ["vegan"], ["vejetaryen"], or both. */
   activeTagSlugs: readonly string[];
 }
 
@@ -16,7 +16,7 @@ const DIET_OPTIONS = [
 /**
  * Dedicated diet filter row. The underlying plumbing is the same `?etiket=`
  * query param used by the generic tag filter, but surfacing a dedicated
- * row makes these two options discoverable — a visitor shouldn't have to
+ * row makes these two options discoverable, a visitor shouldn't have to
  * scroll through 15 hashtag chips to find "vejetaryen".
  *
  * Toggle semantics match AllergenFilter for consistency (aria-pressed,

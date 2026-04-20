@@ -48,7 +48,7 @@ export const ALLERGEN_EMOJI: Record<Allergen, string> = {
 // (single source of truth shared with scripts/audit-deep.ts).
 //
 // Legacy KEYWORDS below is kept only for allergens unit tests that still
-// reference it by name — not used in production code. Safe to remove once
+// reference it by name, not used in production code. Safe to remove once
 // those tests migrate.
 
 /**
@@ -81,7 +81,7 @@ function normalise(name: string): string {
 /**
  * Keyword → Allergen map. Keys are normalized Turkish substrings; matching
  * is substring (i.e. "yogurt" matches "tam yagli yogurt"). Order-sensitive
- * only for overlapping keywords — see notes below for two tricky cases:
+ * only for overlapping keywords, see notes below for two tricky cases:
  *
  *   "fistik":  On its own in Turkish usually means antep fistigi (tree
  *              nut → KUSUYEMIS). "Yer fistigi" and "fistik ezmesi" mean
@@ -90,7 +90,7 @@ function normalise(name: string): string {
  *
  *   "kereviz": Celery. Uncommon in home recipes; kept but low volume.
  *
- * The list is intentionally conservative — over-flagging (false positive)
+ * The list is intentionally conservative, over-flagging (false positive)
  * is safer than under-flagging for allergen UX, but we still avoid obviously
  * wrong inferences. If the retrofit is noisy the user can override per
  * recipe via Prisma Studio or admin tool later.
@@ -98,7 +98,7 @@ function normalise(name: string): string {
 const KEYWORDS: Record<Allergen, readonly string[]> = {
   GLUTEN: [
     "un",
-    // "ekmek" + "ekmeg" — Turkish possessive "ekmeği" → normalized "ekmegi";
+    // "ekmek" + "ekmeg", Turkish possessive "ekmeği" → normalized "ekmegi";
     // bare "ekmek" keyword won't substring-match "ekmegi" (k vs g softening).
     "ekmek",
     "ekmeg",
@@ -110,7 +110,7 @@ const KEYWORDS: Record<Allergen, readonly string[]> = {
     "lavas",
     "pide",
     "galeta unu",
-    // "arpa" removed — substring-matches "arpacık soğan" as false positive.
+    // "arpa" removed, substring-matches "arpacık soğan" as false positive.
     // Real arpa ingredients are caught via "bulgur"/"sehriye"/"un".
     "cavdar",
     "bugday",
@@ -185,7 +185,7 @@ const KEYWORDS: Record<Allergen, readonly string[]> = {
   ],
   SOYA: ["soya", "edamame", "tofu", "miso", "tempeh"],
   // NOTE: avoid short substring keywords that can collide with non-seafood
-  // words. E.g. "ton" alone (for tuna) matches "tonik suyu" — so we only
+  // words. E.g. "ton" alone (for tuna) matches "tonik suyu", so we only
   // include "ton baligi"/"ton bal" as the tuna trigger. Also include the
   // inflected 'balig' since 'baligi' (possessive) normalises to 'baligi'
   // and we want to match 'ton baligi', 'somon baligi', etc.

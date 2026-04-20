@@ -44,7 +44,7 @@ export async function Footer() {
             </ul>
           </div>
 
-          {/* Corporate — Hakkımızda + İletişim ("legal" değil, ama aynı
+          {/* Corporate, Hakkımızda + İletişim ("legal" değil, ama aynı
               kolona topluyoruz çünkü Platform'dan sonra 2 kolon yeter). */}
           <div>
             <h3 className="text-sm font-semibold text-text">{t("corporate")}</h3>
@@ -68,14 +68,14 @@ export async function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter opt-in — double-opt-in + unsubscribe flow.
+          {/* Newsletter opt-in, double-opt-in + unsubscribe flow.
               Footer'da compact variant; haftalık editör seçkisi satışı. */}
           <div className="sm:col-span-2 lg:col-span-1">
             <NewsletterForm variant="footer" />
           </div>
         </div>
 
-        {/* Legal — tek hub link + mini copyright satırı. "Ulu orta" olmasın
+        {/* Legal, tek hub link + mini copyright satırı. "Ulu orta" olmasın
             ama bulunabilir kalsın (Kerem'in talebi, Trendyol pattern'i). */}
         <div className="mt-8 border-t border-border pt-6">
           <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-text-muted">

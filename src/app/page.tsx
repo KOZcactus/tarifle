@@ -112,7 +112,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Sana özel — giriş yapmış + tercihleri dolu user için kişiselleştirilmiş
+      {/* Sana özel, giriş yapmış + tercihleri dolu user için kişiselleştirilmiş
           ilk shelf. Featured'den önce çünkü kullanıcı kendi profilinden
           seçtiği içeriği anında görmeli. Tercih boşsa bu section hiç
           render edilmez (fallback: featured). */}
@@ -139,7 +139,7 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* Editör Seçimi — Tarifle editörlerinin haftalık kürasyon shelf'i.
+      {/* Editör Seçimi, Tarifle editörlerinin haftalık kürasyon shelf'i.
           Rotasyonel (getFeaturedPool + hafta indeksi). Başlık + subtitle
           ikilisi Tarifle ton'unu pekiştirir; altın rozet RecipeCard
           seviyesinde görünür. */}
@@ -173,7 +173,7 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* Popular recipes — en çok görüntülenen */}
+      {/* Popular recipes, en çok görüntülenen */}
       {popular.length > 0 && (
         <section className="py-12">
           <div className="flex items-center justify-between">
@@ -193,10 +193,10 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* Recipe of the day — Ome Cikan grid'inin kuratoryel devami gibi */}
+      {/* Recipe of the day, Ome Cikan grid'inin kuratoryel devami gibi */}
       <RecipeOfTheDay />
 
-      {/* AI Assistant Banner — ozellesmis oneri istiyorsan tarzi bir CTA, Gunun Tarifi'nin altinda */}
+      {/* AI Assistant Banner, ozellesmis oneri istiyorsan tarzi bir CTA, Gunun Tarifi'nin altinda */}
       <section className="pt-4">
         <Link
           href="/ai-asistan"
@@ -222,7 +222,7 @@ export default async function HomePage() {
         </Link>
       </section>
 
-      {/* Önerilen Aşçılar — topluluk loop açısı. Boşsa section kendini
+      {/* Önerilen Aşçılar, topluluk loop açısı. Boşsa section kendini
           gizler (SuggestedCooksSection içinde). Anonymous kullanıcı için
           de gözükür; follow butonu click'te /giris'e yönlendirir. */}
       <SuggestedCooksSection
@@ -297,7 +297,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* CTA — sadece giriş yapmamış kullanıcılara */}
+      {/* CTA, sadece giriş yapmamış kullanıcılara */}
       {!session?.user && (
         <section className="py-12">
           <div className="rounded-2xl border border-border bg-bg-card p-8 text-center sm:p-12">

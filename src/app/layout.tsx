@@ -69,7 +69,7 @@ export async function generateMetadata(): Promise<Metadata> {
       index: true,
       follow: true,
     },
-    // RSS auto-discovery — feed reader'lar (Feedly, Inoreader, browser
+    // RSS auto-discovery, feed reader'lar (Feedly, Inoreader, browser
     // extension'ları) ana sayfaya bakınca otomatik feed tespit etsin.
     // Google Feed crawler da bu link'i takip eder. Tarifle feed URL'i
     // `/feed.xml` (App Router route), `/rss.xml` eski referans kalan.
@@ -96,7 +96,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Aktif duyurular RSC olarak burada çekilir — client banner sadece
+  // Aktif duyurular RSC olarak burada çekilir, client banner sadece
   // localStorage dismissal state'ini izler. Boş liste ise banner hiç render
   // edilmez (hydration sonrası). Cache: RSC per-request.
   const [announcements, locale, messages] = await Promise.all([

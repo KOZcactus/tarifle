@@ -9,7 +9,7 @@ interface ActiveNavLinkProps {
 }
 
 /**
- * Legal sidebar navigation link — sets `aria-current="page"` when the
+ * Legal sidebar navigation link, sets `aria-current="page"` when the
  * current pathname matches `href`. Exact match (not prefix) because the
  * hub `/yasal` should not highlight while on `/yasal/kvkk`. Kept as a
  * client component so it can read the live pathname.

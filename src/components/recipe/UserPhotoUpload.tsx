@@ -11,7 +11,7 @@ interface UserPhotoUploadProps {
 const MAX_BYTES = 5 * 1024 * 1024;
 
 /**
- * User photo upload widget — tarif detay sayfasındaki "Topluluk Fotoğrafları"
+ * User photo upload widget, tarif detay sayfasındaki "Topluluk Fotoğrafları"
  * bölümünün üstünde render edilir (ancak feature flag açıksa). Authenticated
  * + email-verified kullanıcılar için açık; diğerleri için action server-side
  * reddeder ve mesaj i18n'e yansır.
@@ -77,7 +77,7 @@ export function UserPhotoUpload({ recipeId }: UserPhotoUploadProps) {
         reset();
       } else {
         const key = `error_${result.error ?? "unknown"}`;
-        // i18n map — known codes have translated strings, else fallback.
+        // i18n map, known codes have translated strings, else fallback.
         const knownErrors: Record<string, string> = {
           "error_auth-required": t("errorAuthRequired"),
           "error_email-not-verified": t("errorEmailNotVerified"),

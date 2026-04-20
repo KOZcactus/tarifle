@@ -43,7 +43,7 @@ interface ActionResult {
 }
 
 export async function registerUser(formData: FormData): Promise<RegisterResult> {
-  // Rate limit by IP — an unauthenticated form, so user id is not available.
+  // Rate limit by IP, an unauthenticated form, so user id is not available.
   // 3 registrations / 10 minutes per IP stops obvious account-farming without
   // hurting legit users (family sharing one household IP is well under the cap).
   const ip = await getClientIp();
@@ -104,7 +104,7 @@ export async function registerUser(formData: FormData): Promise<RegisterResult> 
     },
   });
 
-  // Fire-and-forget verification email — don't block sign-in if SMTP is down.
+  // Fire-and-forget verification email, don't block sign-in if SMTP is down.
   // The user can resend from their profile if the first attempt fails. Locale
   // comes from the cookie because the User.locale column hasn't been set yet
   // (Prisma default will kick in on the row above, but reading it back would
@@ -116,7 +116,7 @@ export async function registerUser(formData: FormData): Promise<RegisterResult> 
 
   // Sign-in happens client-side after this action returns. Calling signIn here
   // (with redirectTo) would throw NEXT_REDIRECT inside the server action and
-  // skip the cookie-refresh step that the SessionProvider needs — the client
+  // skip the cookie-refresh step that the SessionProvider needs, the client
   // ends up on "/" but `useSession()` still reports logged-out until a hard
   // reload. Client-side signIn + router.refresh() mirrors the login flow and
   // avoids that stale-session window.
@@ -125,7 +125,7 @@ export async function registerUser(formData: FormData): Promise<RegisterResult> 
 
 /**
  * Server action: re-issue a verification email for the currently signed-in user.
- * Rate limited to 1 resend per 60 seconds per user via Upstash Redis — this
+ * Rate limited to 1 resend per 60 seconds per user via Upstash Redis, this
  * replaces the previous in-process Map throttle which didn't survive across
  * Vercel cold starts or multiple regions.
  */
@@ -162,7 +162,7 @@ export async function resendVerificationEmailAction(): Promise<ActionResult> {
 
 /**
  * Step 1 of the "forgot password" flow. Always returns a generic success
- * message to the UI — never reveal whether an account exists for the given
+ * message to the UI, never reveal whether an account exists for the given
  * email. This stops email-enumeration via the reset endpoint.
  *
  * Behaviour by account state (internal, never surfaced to UI):
@@ -181,7 +181,7 @@ export async function requestPasswordResetAction(
     email: formData.get("email"),
   });
   if (!parsed.success) {
-    // Invalid shape is the only case we surface an error for — otherwise the
+    // Invalid shape is the only case we surface an error for, otherwise the
     // form just hangs. Missing email is a UI bug, not an enumeration vector.
     return { success: false, error: "Geçerli bir e-posta adresi girin." };
   }
@@ -238,7 +238,7 @@ export async function requestPasswordResetAction(
  * new bcrypt'd password on the user row in one DB transaction. Every
  * outstanding reset token for the same email is wiped on success.
  *
- * Rate limit here is per-IP on token consumption — tokens are 32-byte random
+ * Rate limit here is per-IP on token consumption, tokens are 32-byte random
  * (base64url) so guessing one is not practical, but the limiter slows down
  * anyone who starts spraying anyway.
  */

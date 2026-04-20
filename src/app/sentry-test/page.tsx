@@ -1,11 +1,11 @@
 /**
- * Sentry smoke test — admin-only sayfa. SDK'nın prod'da doğru event
+ * Sentry smoke test, admin-only sayfa. SDK'nın prod'da doğru event
  * gönderdiğini doğrulamak için.
  *
  * Tıklayınca 3 tip error test edilir:
- *   1) Client-side throw — tarayıcıda yakalanır (instrumentation-client)
- *   2) Server action throw — sunucuda yakalanır (sentry.server.config)
- *   3) Server RSC throw — render path'te yakalanır
+ *   1) Client-side throw, tarayıcıda yakalanır (instrumentation-client)
+ *   2) Server action throw, sunucuda yakalanır (sentry.server.config)
+ *   3) Server RSC throw, render path'te yakalanır
  *
  * Sentry Issues sekmesinde 3 ayrı event görünmeli (dakikalar içinde).
  * Doğrulama tamamlanınca bu sayfa silinebilir; şu an bilerek bırakılıyor
@@ -43,7 +43,7 @@ export default async function SentryTestPage({
   // RSC-level throw test: ?throw=rsc ile tetikle
   const sp = await searchParams;
   if (sp.throw === "rsc") {
-    throw new Error("Sentry RSC test error — bu render sırasında atıldı");
+    throw new Error("Sentry RSC test error, bu render sırasında atıldı");
   }
 
   return (
@@ -51,7 +51,7 @@ export default async function SentryTestPage({
       <div>
         <h1 className="font-heading text-2xl font-bold">🧪 Sentry Test</h1>
         <p className="mt-2 text-sm text-text-muted">
-          3 farklı error tipi — her biri Sentry&apos;de ayrı issue açmalı.
+          3 farklı error tipi, her biri Sentry&apos;de ayrı issue açmalı.
           Butona bas, sonra Sentry dashboard&apos;unda (sol menü → Issues)
           yeni event&apos;leri gör.
         </p>

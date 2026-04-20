@@ -6,11 +6,11 @@ import { LOCALES, LOCALE_LABELS, type Locale } from "@/i18n/config";
 import { updateLocaleAction } from "@/lib/actions/locale";
 
 /**
- * Language preference card — /ayarlar sayfasında render edilir.
+ * Language preference card, /ayarlar sayfasında render edilir.
  * Seçim updateLocaleAction çağırır: cookie set + logged-in ise
  * User.locale update + revalidatePath ile full tree refresh.
  *
- * Navbar'daki LanguageToggle ile aynı server action'ı paylaşır — kaynak
+ * Navbar'daki LanguageToggle ile aynı server action'ı paylaşır, kaynak
  * her zaman cookie + (varsa) DB. Client state yok, kaybolmaz.
  */
 export function LanguagePreferenceCard() {

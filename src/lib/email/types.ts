@@ -1,9 +1,9 @@
 export interface SendEmailInput {
   to: string;
   subject: string;
-  /** Plain-text body — used as fallback. */
+  /** Plain-text body, used as fallback. */
   text: string;
-  /** HTML body — preferred by most clients. */
+  /** HTML body, preferred by most clients. */
   html: string;
 }
 

@@ -27,7 +27,7 @@ interface NotificationsListProps {
 /**
  * Full /bildirimler page list. Similar to the dropdown but denser, with a
  * "mark all as read" button and per-item click-to-read. Doesn't auto-mark
- * everything read on mount — that's the dropdown's job. Here the user can
+ * everything read on mount, that's the dropdown's job. Here the user can
  * scan through unread items intentionally.
  */
 export function NotificationsList({ items: initial }: NotificationsListProps) {
@@ -38,7 +38,7 @@ export function NotificationsList({ items: initial }: NotificationsListProps) {
   const unreadIds = items.filter((i) => !i.isRead).map((i) => i.id);
 
   const handleItemClick = (id: string) => {
-    // Optimistic — flip the single item's read state.
+    // Optimistic, flip the single item's read state.
     setItems((prev) =>
       prev.map((i) => (i.id === id ? { ...i, isRead: true } : i)),
     );

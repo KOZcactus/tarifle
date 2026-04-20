@@ -62,7 +62,7 @@ export default async function IletisimPage() {
           <p className="mt-2 text-sm text-text-muted">{t("responseNote")}</p>
         </section>
 
-        {/* Aydınlatma metni referansı — iletişim bir veri işleme
+        {/* Aydınlatma metni referansı, iletişim bir veri işleme
             noktası olduğu için KVKK şeffaflık yükümlülüğü kapsamında
             mail yazmadan önce kullanıcıya aydınlatma linki sunulur.
             Form olsaydı checkbox ile onay alırdık; mailto olduğu için

@@ -1,5 +1,5 @@
 /**
- * "Benzer tarifler" öneri motoru — rule-based, LLM'siz.
+ * "Benzer tarifler" öneri motoru, rule-based, LLM'siz.
  *
  * Tarif detay sayfasının altına 6 kart'lık "Benzer tarifler" şeridi için
  * skorlama mantığı. Kullanıcı bir tarife geldiğinde sonraki tarifi
@@ -8,34 +8,34 @@
  *
  * Skorlama (deterministic, aynı tarif için hep aynı sonuç):
  *   +3   Aynı kategori (corbalar ↔ corbalar)
- *   +2   Aynı RecipeType (YEMEK/TATLI/ICECEK ...) — kategoriyi farklı olsa
+ *   +2   Aynı RecipeType (YEMEK/TATLI/ICECEK ...), kategoriyi farklı olsa
  *        da "hamur-isleri → hamur tatlısı" tarzı sıçramalarda etki
- *   +1   Her ortak tag — max 5 tag olduğu için 5 puan üstü çıkmaz
+ *   +1   Her ortak tag, max 5 tag olduğu için 5 puan üstü çıkmaz
  *   +0.5 Aynı difficulty
  *   +1.5 Aynı cuisine (Japon tarifi okurken diğer Japon tarifleri öne)
- *   +1   Her ortak "önemli" malzeme (cap +3) — pantry ingredient'ler
+ *   +1   Her ortak "önemli" malzeme (cap +3), pantry ingredient'ler
  *        (tuz, biber, yağ, su vb.) exclude edilir, ana protein ve
  *        karakter malzemeleri sayılır. 1501 tarif ölçeğinde ingredient
  *        sinyali artık anlamlı (motor ilk yazıldığında 106 tarif vardı
- *        — pantry şişmesi sorun idi; şimdi scale yeterli).
+ *       , pantry şişmesi sorun idi; şimdi scale yeterli).
  *   +0.3 isFeatured bonus (editör seçimi benzer tarifleri ufak boost —
  *        kullanıcıya kürasyonlu içerik hissiyatı)
  *
  * Tie-break: daha yeni tarif öne, sonra alfabetik (TR collation).
  *
  * Neden `ts_rank_cd` / FTS kullanmadım: FTS "bu kelimeyi arayan için"
- * relevance ölçüyor; burada amaç "bu tarife benzeyen" — tamamen farklı
+ * relevance ölçüyor; burada amaç "bu tarife benzeyen", tamamen farklı
  * problem. Skorlama metadata üzerinden daha doğal.
  */
 import { prisma } from "@/lib/prisma";
 import type { RecipeCard } from "@/types/recipe";
 
 /**
- * Pantry / common ingredient blacklist — ingredient Jaccard skoru
+ * Pantry / common ingredient blacklist, ingredient Jaccard skoru
  * hesaplanırken bu malzemeler sayılmaz. Herkes tuz, yağ, su kullanır;
  * gerçek benzerlik sinyalini boğarlar. Normalized ingredient name
  * (lowercased, TR accents preserved) karşılaştırılır. Liste sabit tutulur
- * — yeni pantry item gelirse burada ekle.
+ *, yeni pantry item gelirse burada ekle.
  */
 const PANTRY_INGREDIENTS: ReadonlySet<string> = new Set([
   "tuz",
@@ -76,7 +76,7 @@ export interface SimilarTarget {
   difficulty: string;
   cuisine: string | null;
   tagSlugs: string[];
-  /** Raw ingredient names — pantry filter `scoreCandidates` içinde
+  /** Raw ingredient names, pantry filter `scoreCandidates` içinde
    *  uygulanır, caller normalize etmek zorunda değil. */
   ingredientNames: string[];
 }
@@ -88,7 +88,7 @@ export interface ScoredCandidate {
 }
 
 /**
- * Core scoring function — no DB, no I/O. Extracted so unit tests can
+ * Core scoring function, no DB, no I/O. Extracted so unit tests can
  * exercise the rule matrix without a live Postgres. The caller feeds
  * target's metadata + candidate rows; this assigns scores.
  *
@@ -106,9 +106,9 @@ export function scoreCandidates(
     cuisine: string | null;
     createdAt: Date;
     tagSlugs: string[];
-    /** Raw ingredient names — scoring içinde pantry filter uygulanır. */
+    /** Raw ingredient names, scoring içinde pantry filter uygulanır. */
     ingredientNames?: readonly string[];
-    /** Editör Seçimi flag'i — varsa küçük bir boost. */
+    /** Editör Seçimi flag'i, varsa küçük bir boost. */
     isFeatured?: boolean;
   }[],
 ): ScoredCandidate[] {
@@ -130,7 +130,7 @@ export function scoreCandidates(
       for (const t of c.tagSlugs) if (targetTags.has(t)) sharedTags++;
       score += sharedTags;
 
-      // Ingredient overlap — pantry filter + cap @ +3. "Aynı ana
+      // Ingredient overlap, pantry filter + cap @ +3. "Aynı ana
       // malzeme" sinyali metadata sinyaline karışmayacak şekilde
       // üstüne eklenir; kategori/tag zaten güçlü olduğu için ingredient
       // overlap tie-break gibi çalışır.
@@ -143,7 +143,7 @@ export function scoreCandidates(
         score += Math.min(sharedIngredients, 3);
       }
 
-      // Featured soft-boost — editör seçimi tarifleri aynı skordaki
+      // Featured soft-boost, editör seçimi tarifleri aynı skordaki
       // sıradan tariflerin önüne geçer. Kürasyon kalitesini benzerlikle
       // birleştirir.
       if (c.isFeatured) score += 0.3;
@@ -151,7 +151,7 @@ export function scoreCandidates(
       return { ...c, score };
     });
 
-  // Drop candidates with score 0 — they have NO signal (different
+  // Drop candidates with score 0, they have NO signal (different
   // category, type, and no shared tags). Showing them would be noise.
   const signal = scored.filter((c) => c.score > 0);
 
@@ -243,7 +243,7 @@ export async function getSimilarRecipes(
         select: { variations: { where: { status: "PUBLISHED" } } },
       },
     },
-    // 100 row cap — 1501 tarif ölçeğinde 50 dardı, 100 candidate ile
+    // 100 row cap, 1501 tarif ölçeğinde 50 dardı, 100 candidate ile
     // ingredient overlap sinyali anlamlı çalışır. Scoring JS-side
     // O(n * avgIngredients) ≈ 100 × 10 = 1000 op, trivial.
     take: 100,

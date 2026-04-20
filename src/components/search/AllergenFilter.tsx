@@ -15,7 +15,7 @@ interface AllergenFilterProps {
  * `?alerjen=<ENUM>` from the URL. Multiple allergens can be active; the
  * backend uses `hasSome` under a NOT to hide any recipe touching the list.
  *
- * Style: quieter than the top-level filters — this is a secondary tool,
+ * Style: quieter than the top-level filters, this is a secondary tool,
  * not the primary browse experience. Collapsed-by-default would be
  * friendlier still, but the chip row is compact enough inline.
  */

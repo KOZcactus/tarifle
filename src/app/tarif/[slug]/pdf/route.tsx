@@ -21,7 +21,7 @@ import { isValidLocale, type Locale } from "@/i18n/config";
 import { cookies } from "next/headers";
 
 /**
- * `/tarif/[slug]/pdf` — dinamik PDF export endpoint.
+ * `/tarif/[slug]/pdf`, dinamik PDF export endpoint.
  *
  * @react-pdf/renderer React component ağacını PDF stream'e çeviriyor.
  * Puppeteer tarzı headless chrome'a gerek yok (Vercel Serverless
@@ -33,13 +33,13 @@ import { cookies } from "next/headers";
  * adımlar, tip notu, alerjenler, footer (tarifle.app + URL).
  *
  * Cache: 1h public, 1 day CDN. Tarif güncellenirse stale-while-
- * revalidate — yeterince iyi (PDF indirmeli kullanıcılar tazelik
+ * revalidate, yeterince iyi (PDF indirmeli kullanıcılar tazelik
  * kritik değil).
  */
 export const dynamic = "force-dynamic";
 
 // Türkçe karakterler için Roboto regular + bold. Google Fonts CDN
-// URL'leri — Font.register module-scope'da once yapılır.
+// URL'leri, Font.register module-scope'da once yapılır.
 Font.register({
   family: "Roboto",
   fonts: [
@@ -255,7 +255,7 @@ function buildDocument(recipe: RecipeDetailLike, locale: Locale) {
 
   return (
     <Document
-      title={`${title} — Tarifle`}
+      title={`${title}, Tarifle`}
       author="Tarifle"
       subject={title}
       creator="Tarifle"
@@ -333,7 +333,7 @@ function buildDocument(recipe: RecipeDetailLike, locale: Locale) {
 
         <View style={styles.footer}>
           <Text>
-            <Text style={styles.footerBrand}>Tarifle</Text> — tarifle.app
+            <Text style={styles.footerBrand}>Tarifle</Text>, tarifle.app
           </Text>
           <Text>
             {SITE_URL}/tarif/{recipe.slug}

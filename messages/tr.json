@@ -44,7 +44,7 @@
     "cuisineSubtitle": "{count} mutfaktan {total}+ tarif keşfet",
     "recipeCountSmall": "{count} tarif",
     "aiBannerTitle": "Elindeki malzemeleri yaz, tarif al",
-    "aiBannerDescription": "Dolabında ne varsa söyle — sana en uygun tarifleri ve eksiklerini gösterelim.",
+    "aiBannerDescription": "Dolabında ne varsa söyle, sana en uygun tarifleri ve eksiklerini gösterelim.",
     "aiBannerCta": "Dene →",
     "ctaTitle": "Kendi tarifini paylaş",
     "ctaDescription": "Üye ol, favori tariflerinin uyarlamalarını ekle ve toplulukla paylaş.",
@@ -117,14 +117,14 @@
       "loginLink": "Giriş yap",
       "sentTitle": "Bağlantı gönderildi",
       "sentBody": "<email>{email}</email> adresine bir mail gönderdik. Bağlantı 1 saat geçerli. Görünmüyorsa spam/önemsiz klasörünü de kontrol et.",
-      "sentHint": "Mail gelmediyse: adres bu sitede kayıtlı olmayabilir ya da hesabın Google ile bağlı olabilir — giriş sayfasından Google ile dene.",
+      "sentHint": "Mail gelmediyse: adres bu sitede kayıtlı olmayabilir ya da hesabın Google ile bağlı olabilir, giriş sayfasından Google ile dene.",
       "backToLogin": "Giriş sayfasına dön",
       "tryDifferent": "Farklı adres dene"
     },
     "resetPassword": {
       "pageTitle": "Yeni şifreni belirle",
       "subtitleValid": "Bağlantın aktif. Aşağıdan yeni şifreni ayarlayabilirsin.",
-      "subtitleInvalid": "Bu bağlantı çalışmıyor — aşağıdan yeni bir tane isteyebilirsin.",
+      "subtitleInvalid": "Bu bağlantı çalışmıyor, aşağıdan yeni bir tane isteyebilirsin.",
       "invalidTitle": "Bağlantı geçersiz",
       "invalidExpired": "Sıfırlama bağlantısının süresi dolmuş. Yeni bir tane iste, 1 saat içinde kullanabilirsin.",
       "invalidOther": "Bu bağlantı geçersiz. Daha önce kullanılmış ya da hatalı kopyalanmış olabilir.",
@@ -182,34 +182,34 @@
         "Sabahın keyfini birkaç dakikada yükseltir."
       ],
       "atistirmalik": [
-        "Ufak ama etkili — film akşamı veya beklenmedik misafir."
+        "Ufak ama etkili, film akşamı veya beklenmedik misafir."
       ],
       "hard": [
         "Sabır ister ama sonuç tek kelimeyle etkileyici.",
-        "Bir hafta sonu projesi gibi düşün — sofrada karşılığını alırsın."
+        "Bir hafta sonu projesi gibi düşün, sofrada karşılığını alırsın."
       ],
       "quick": [
-        "Pratik ve kolay — yorgun günlerin dostu.",
+        "Pratik ve kolay, yorgun günlerin dostu.",
         "Yarım saate kalmayan, doyurucu bir seçenek."
       ],
       "veryQuick": [
-        "20 dakikada sofrada — hızlı ama özensiz değil.",
+        "20 dakikada sofrada, hızlı ama özensiz değil.",
         "Çabuk bir şeyler yapmak istediğinde ilk akla gelen."
       ],
       "light": [
-        "Hafif kalmak isteyenlere — tadından ödün vermeden.",
+        "Hafif kalmak isteyenlere, tadından ödün vermeden.",
         "Düşük kalorili ama tatmin edici bir seçenek."
       ],
       "hearty": [
-        "Doyurucu ve besleyici — açlık bırakmaz.",
+        "Doyurucu ve besleyici, açlık bırakmaz.",
         "Uzun bir günün sonunda hak edilmiş bir yemek."
       ],
       "popularVariations": [
         "Topluluğun denediği, kendi uyarlamalarını eklediği bir tarif.",
-        "Kaç farklı yorumunun olduğunu gör — uyarlama sayfasına göz at."
+        "Kaç farklı yorumunun olduğunu gör, uyarlama sayfasına göz at."
       ],
       "featured": [
-        "Editör favorisi — sade ama akılda kalıcı bir lezzet."
+        "Editör favorisi, sade ama akılda kalıcı bir lezzet."
       ]
     },
     "fallback": "Denemeye değer."
@@ -248,7 +248,7 @@
     "perfectMany": [
       "{ctx}{count} tarifi elindekilerle tam olarak yapabilirsin. Üstte en hızlı olanları bıraktım.",
       "{ctx}Güzel bir dolap: {count} tarif için alışveriş yapman bile gerekmiyor.",
-      "{ctx}Neyse ki {count} seçeneğin var — hepsi elindekiyle tamam."
+      "{ctx}Neyse ki {count} seçeneğin var, hepsi elindekiyle tamam."
     ],
     "perfect2": [
       "{ctx}İki tarif için hiçbir şey eksik değil: {title1} ve {title2}. Hangisine ruh halindesin?",
@@ -256,12 +256,12 @@
       "Tam uyum 2 tarifte: {title1} ve {title2}. Gerisi için birkaç şey almak gerek."
     ],
     "perfect1": [
-      "{ctx}{title} için hiçbir şey almana gerek yok — tam uyum. Altında birkaç yakın alternatif var.",
+      "{ctx}{title} için hiçbir şey almana gerek yok, tam uyum. Altında birkaç yakın alternatif var.",
       "Hemen mutfağa gidebilirsin: {title} elindekiyle tamam. Diğerleri için ufak eksikler var.",
       "Tam çıkan tek tarif: {title}. Alternatif arıyorsan alttakilerden biri için 1-2 malzeme yeter."
     ],
     "closeCall": [
-      "{ctx}Tam eşleşme yok ama {title} için sadece {missing} eksik — market turu kısa.",
+      "{ctx}Tam eşleşme yok ama {title} için sadece {missing} eksik, market turu kısa.",
       "En yakın seçenek {title}. Sadece {missing} alırsan başlayabilirsin.",
       "{title} tarifinde {missing} eksik. Onun dışında her şey elinde."
     ],
@@ -272,51 +272,51 @@
     ],
     "notesFirstPerfect": [
       "En iyi eşleşme. Elindekilerin tamamını değerlendirebilirsin.",
-      "Zirvedeki seçenek — tam uyum ve en güçlü sonuç.",
+      "Zirvedeki seçenek, tam uyum ve en güçlü sonuç.",
       "Birinci öneri. Hiç eksik yok."
     ],
     "notesFirstOneMissing": [
-      "Neredeyse tam — sadece {missing} almak yeter.",
+      "Neredeyse tam, sadece {missing} almak yeter.",
       "Tek adım uzakta: {missing}.",
       "Bir malzeme eksik ({missing}), gerisi hazır."
     ],
     "notesFastest": [
-      "En hızlı seçenek — {minutes} dakikada sofrada.",
+      "En hızlı seçenek, {minutes} dakikada sofrada.",
       "Acele edenlere: {minutes} dakika.",
       "En çabuk çıkan. Aç gelen misafire ideal."
     ],
     "notesPerfectAlt": [
       "Hiçbir şey eksik değil, bunu da seçebilirsin.",
-      "Elinde her şey var — plan B olarak dursun.",
+      "Elinde her şey var, plan B olarak dursun.",
       "Tam çıkanlardan. Alternatif olarak kafana yat."
     ],
     "notesOneMissing": "Sadece {missing} eksik.",
     "notesTwoMissing": "{missing1} ve {missing2} almak gerek.",
     "notesHard": [
       "Sabır ister ama sonucu etkileyici.",
-      "Biraz iddialı — vaktin varsa dene.",
+      "Biraz iddialı, vaktin varsa dene.",
       "Ustalık gerektirir, ancak masaya kim otursa fark eder."
     ],
     "notesLongest": "Uzun pişer ama ocakta unutabilirsin.",
     "pantryOnly": [
       "{ctx}Yalnızca dolap malzemesi (tuz, biber, yağ) yazmışsın. Bir sebze, protein veya tahıl ekle, gerçek eşleşmeler çıksın.",
-      "{ctx}Hepsi temel malzeme — bir tane gerçek malzeme (domates, tavuk, mercimek gibi) ekle, öneriler anlam kazansın.",
+      "{ctx}Hepsi temel malzeme, bir tane gerçek malzeme (domates, tavuk, mercimek gibi) ekle, öneriler anlam kazansın.",
       "{ctx}Sadece temel malzemelerle uzağa gidemeyiz. Bir tane dolap dışı malzeme ekleyip tekrar dene."
     ],
     "manyIngredients": [
-      "{ctx}Dolabını tıka basa doldurmuşsun — {count} tarif eşleşiyor. Başta {title} var.",
+      "{ctx}Dolabını tıka basa doldurmuşsun, {count} tarif eşleşiyor. Başta {title} var.",
       "{ctx}Oldukça bereketli bir dolap. {count} tarif uyuyor, {title} ile başlıyorum.",
-      "{ctx}Elinde bu kadar malzeme varken {count} tarif çıkıyor — zirvede {title}."
+      "{ctx}Elinde bu kadar malzeme varken {count} tarif çıkıyor, zirvede {title}."
     ],
     "singleIngredient": [
       "{ctx}Sadece {ingredient} ile mi başlıyorsun? {title} en yakın eşleşme.",
-      "{ctx}Tek malzemeyle yola çıkmışsın — {title} en iyi seçenek.",
+      "{ctx}Tek malzemeyle yola çıkmışsın, {title} en iyi seçenek.",
       "{ctx}Sadece {ingredient}, başka yok mu? {title} en yakına düşüyor."
     ]
   },
   "metadata": {
     "site": {
-      "tagline": "Tarifle — Make Eat",
+      "tagline": "Tarifle, Make Eat",
       "description": "Yemek, içecek ve kokteyl tariflerini sade, hızlı okunur ve topluluk katkısına açık şekilde sunan modern tarif platformu.",
       "ogLocale": "tr_TR"
     },
@@ -371,17 +371,17 @@
     },
     "contact": {
       "title": "İletişim",
-      "description": "Tarifle ekibine ulaş — geri bildirim, hata raporu, iş birliği veya KVKK veri talepleri."
+      "description": "Tarifle ekibine ulaş, geri bildirim, hata raporu, iş birliği veya KVKK veri talepleri."
     },
     "recipeDetail": {
       "notFoundTitle": "Tarif Bulunamadı",
-      "descriptionWithCuisine": "{cuisine} mutfağından {title} tarifi — {difficulty}, {time}, {servings} kişilik{calories}.",
-      "descriptionNoCuisine": "{title} tarifi — {difficulty}, {time}, {servings} kişilik{calories}.",
+      "descriptionWithCuisine": "{cuisine} mutfağından {title} tarifi, {difficulty}, {time}, {servings} kişilik{calories}.",
+      "descriptionNoCuisine": "{title} tarifi, {difficulty}, {time}, {servings} kişilik{calories}.",
       "caloriesSuffix": ", ~{kcal} kcal"
     },
     "legal": {
       "aboutTitle": "Hakkımızda",
-      "aboutDescription": "Tarifle hakkında bilgi — ekip, vizyon, iletişim.",
+      "aboutDescription": "Tarifle hakkında bilgi, ekip, vizyon, iletişim.",
       "privacyTitle": "Gizlilik Politikası",
       "privacyDescription": "Tarifle'nin kişisel verileri nasıl işlediği hakkında bilgi.",
       "kvkkTitle": "KVKK Aydınlatma Metni",
@@ -408,11 +408,11 @@
       "body": "Tarifle hesabını doğrulamak için aşağıdaki butona tıkla. Bu bağlantı <strong>{hours} saat</strong> geçerli.",
       "cta": "E-postamı doğrula",
       "fallbackHint": "Buton çalışmazsa şu bağlantıyı tarayıcına yapıştır:",
-      "footer": "Bu maili sen istemediysen görmezden gel — kimse hesabına erişemez.",
+      "footer": "Bu maili sen istemediysen görmezden gel, kimse hesabına erişemez.",
       "textBody": "Tarifle hesabını doğrulamak için aşağıdaki bağlantıya tıkla:",
       "textExpiry": "Bağlantı {hours} saat geçerli.",
-      "textFooter": "Bu maili sen istemediysen görmezden gel — kimse hesabına erişemez.",
-      "signature": "— Tarifle"
+      "textFooter": "Bu maili sen istemediysen görmezden gel, kimse hesabına erişemez.",
+      "signature": "Tarifle ekibi"
     },
     "passwordReset": {
       "subject": "Tarifle şifre sıfırlama",
@@ -423,14 +423,14 @@
       "body": "Tarifle hesabının şifresini sıfırlamak için aşağıdaki butona tıkla. Bu bağlantı <strong>{hours} saat</strong> geçerli.",
       "cta": "Şifremi sıfırla",
       "fallbackHint": "Buton çalışmazsa şu bağlantıyı tarayıcına yapıştır:",
-      "footer": "Bu maili sen istemediysen görmezden gel — şifren değişmez. Şüpheli bir durum varsa tarifle.app/ayarlar adresinden hesabını kontrol edebilirsin.",
+      "footer": "Bu maili sen istemediysen görmezden gel, şifren değişmez. Şüpheli bir durum varsa tarifle.app/ayarlar adresinden hesabını kontrol edebilirsin.",
       "textBody": "Tarifle hesabının şifresini sıfırlamak için aşağıdaki bağlantıya tıkla:",
       "textExpiry": "Bağlantı {hours} saat geçerli.",
-      "textFooter": "Bu maili sen istemediysen görmezden gel — şifren değişmez.",
-      "signature": "— Tarifle"
+      "textFooter": "Bu maili sen istemediysen görmezden gel, şifren değişmez.",
+      "signature": "Tarifle ekibi"
     },
     "oauthOnlyReset": {
-      "subject": "Tarifle — bu hesap Google ile bağlı",
+      "subject": "Tarifle, bu hesap Google ile bağlı",
       "eyebrow": "Tarifle",
       "title": "Bu hesap Google ile bağlı",
       "greetingNamed": "Merhaba {name},",
@@ -438,27 +438,27 @@
       "body": "Tarifle'da <strong>{email}</strong> adresi için şifre sıfırlama isteği aldık. Bu hesap Google ile bağlı ve şifre ile giriş tanımlı değil.",
       "cta": "Google ile giriş yap",
       "hint": "Şifre ile giriş de eklemek istersen, giriş yaptıktan sonra ayarlar sayfasından \"Şifre ekle\" seçeneğini kullanabilirsin.",
-      "footer": "Bu maili sen istemediysen görmezden gel — hesabın değişmez.",
+      "footer": "Bu maili sen istemediysen görmezden gel, hesabın değişmez.",
       "textBody": "Tarifle'da {email} adresi için şifre sıfırlama isteği aldık.",
       "textBody2": "Bu hesap Google ile bağlı ve şifre ile giriş tanımlı değil.",
       "textBody3": "Giriş yapmak için Google ile giriş butonunu kullan:",
       "textHint1": "Şifre ile giriş eklemek istersen, Google ile giriş yaptıktan sonra",
       "textHint2": "ayarlar sayfasından 'Şifre ekle' akışını kullanabilirsin.",
-      "textFooter": "Bu maili sen istemediysen görmezden gel — hesabın değişmez.",
-      "signature": "— Tarifle"
+      "textFooter": "Bu maili sen istemediysen görmezden gel, hesabın değişmez.",
+      "signature": "Tarifle ekibi"
     },
     "newsletterWeekly": {
-      "subject": "{siteName} — Bu haftanın editör seçkisi",
+      "subject": "{siteName}: Bu haftanın editör seçkisi",
       "eyebrow": "Haftalık bülten",
       "title": "Bu hafta ne pişirsek?",
       "greeting": "Merhaba,",
-      "intro": "Editörlerin bu hafta öne çıkardığı tarifler, yeni eklenenler ve öne çıkan mutfaklar — hepsi tek bakışta.",
+      "intro": "Editörlerin bu hafta öne çıkardığı tarifler, yeni eklenenler ve öne çıkan mutfaklar, hepsi tek bakışta.",
       "featuredHeading": "⭐ Editör Seçimi",
       "recentHeading": "🆕 Bu haftanın yenileri",
       "cuisinesHeading": "🌍 Bu hafta öne çıkan mutfaklar",
       "recipesWord": "tarif",
       "cta": "Tarifle'yi aç",
-      "outro": "Aşağıdaki tariflerden birini dene, sofrada nasıl olduğunu yazabilirsin — tarif detayında uyarlama paylaşımı açık.",
+      "outro": "Aşağıdaki tariflerden birini dene, sofrada nasıl olduğunu yazabilirsin, tarif detayında uyarlama paylaşımı açık.",
       "footer": "Bu maili haftalık editör seçkisine abone olduğun için alıyorsun.",
       "unsubscribeLine": "Artık almak istemiyorsan",
       "unsubscribeCta": "tek tıkla listeden çık"
@@ -488,7 +488,7 @@
       "heading": "📸 Topluluk Fotoğrafları",
       "subtitle": "Kullanıcıların tariflere yüklediği fotoğrafları modere et. Feature flag kapalıyken upload + grid görünmez ama DB kayıtları korunur.",
       "toggleHeading": "Özellik durumu",
-      "toggleHelper": "Kapalıyken tarif sayfalarında ne upload form ne de grid render edilir. Mevcut fotoğraflar silinmez — flag tekrar açıldığında olduğu gibi görünür.",
+      "toggleHelper": "Kapalıyken tarif sayfalarında ne upload form ne de grid render edilir. Mevcut fotoğraflar silinmez, flag tekrar açıldığında olduğu gibi görünür.",
       "toggleTurnOn": "Özelliği aç",
       "toggleTurnOff": "Özelliği kapat",
       "toggleStatus": "Şu anki durum: {state}",
@@ -510,7 +510,7 @@
       "rowCheckboxAria": "Satırı toplu işlem için seç",
       "selectAll": "Tümünü seç ({count})",
       "selected": "{count} seçili",
-      "selectedEmpty": "Seçim yok — satırları işaretle",
+      "selectedEmpty": "Seçim yok, satırları işaretle",
       "bulkApprove": "Seçilenleri onayla",
       "bulkHide": "Seçilenleri gizle",
       "clearSelection": "Seçimi temizle",
@@ -519,12 +519,12 @@
       "error_no-ids": "Seçili kayıt yok.",
       "error_too-many": "Tek seferde en fazla 50 kayıt işlenebilir. Seçimi azalt.",
       "error_unauthorized": "Yetkin yok.",
-      "error_unknown": "Beklenmedik hata — tekrar dene."
+      "error_unknown": "Beklenmedik hata, tekrar dene."
     },
     "analytics": {
       "pageTitle": "Analytics | Yönetim Paneli",
       "heading": "📊 Analytics Dashboard",
-      "subtitle": "Topluluk sağlığı göstergeleri — son 7 gün büyümesi, abone/yorum ivmeleri, popüler içerik.",
+      "subtitle": "Topluluk sağlığı göstergeleri, son 7 gün büyümesi, abone/yorum ivmeleri, popüler içerik.",
       "metricsHeading": "Temel Metrikler",
       "metricTotalRecipes": "Toplam Tarifler",
       "metricTotalUsers": "Toplam Kullanıcılar",
@@ -555,7 +555,7 @@
     },
     "common": {
       "paginationAria": "Sayfalama",
-      "paginationSingle": "{count} kayıt — tek sayfa.",
+      "paginationSingle": "{count} kayıt, tek sayfa.",
       "paginationRange": "{from}–{to} / {total}",
       "paginationPrev": "‹ Önceki",
       "paginationNext": "Sonraki ›",
@@ -662,7 +662,7 @@
       "customFromLabel": "Başlangıç",
       "customToLabel": "Bitiş",
       "applyCustom": "Uygula",
-      "allWarning": "Tüm yorumlar yükleniyor — büyük liste olabilir.",
+      "allWarning": "Tüm yorumlar yükleniyor, büyük liste olabilir.",
       "statusChip": "{status}",
       "totalFound": "{count} yorum",
       "empty": "Bu aralıkta yorum yok.",
@@ -670,7 +670,7 @@
       "byAuthor": "@{username}",
       "onRecipe": "tarifi:",
       "hiddenReason": "Gizleme gerekçesi:",
-      "noComment": "(yorum metni yok — sadece rating)"
+      "noComment": "(yorum metni yok, sadece rating)"
     },
     "reports": {
       "variationsHeading": "Raporlanmış Uyarlamalar ({count})",
@@ -886,7 +886,7 @@
       "metaDifficulty": "Zorluk",
       "metaCuisine": "Mutfak",
       "metaAllergens": "Alerjenler",
-      "metaNone": "—",
+      "metaNone": "·",
       "starDistTitle": "Yıldız dağılımı"
     },
     "userDetail": {
@@ -962,7 +962,7 @@
       "activityThisWeek": "Bu hafta",
       "activityThisMonth": "Bu ay",
       "growthHeading": "📈 Kullanıcı büyümesi (son 30 gün)",
-      "growthAria": "Son 30 gün günlük yeni kullanıcı — toplam {total}",
+      "growthAria": "Son 30 gün günlük yeni kullanıcı, toplam {total}",
       "growthDayTitle": "{day}: {count} kayıt",
       "growthTotal": "Toplam: {count} kayıt",
       "reviewDistHeading": "⭐ Yorum yıldız dağılımı",
@@ -989,7 +989,7 @@
       "batchesEmpty": "Henüz batch yok (5+ tarif aynı saatte INSERT olunca burada görünür).",
       "batchDateHeader": "Tarih · saat (UTC)",
       "batchCountHeader": "Tarif sayısı",
-      "batchesFooter": "Saatlik bucket'lar — aynı saatte 5+ tarif INSERT'lendiyse burada görünür.",
+      "batchesFooter": "Saatlik bucket'lar, aynı saatte 5+ tarif INSERT'lendiyse burada görünür.",
       "categoriesHeading": "Kategori dağılımı",
       "cuisinesHeading": "🌍 Mutfak dağılımı"
     }
@@ -1015,9 +1015,9 @@
     "kvkkHeading": "KVKK / Veri talepleri",
     "kvkkHelp": "Kişisel verilerine erişim, düzeltme veya silme talebi. 6698 sayılı KVKK kapsamında 30 gün içinde yanıtlıyoruz.",
     "moderationHeading": "İçerik moderasyonu",
-    "moderationHelp": "Bir tarif, uyarlama veya yorumu doğrudan ilgili sayfadaki rapor butonundan bildirebilirsin — rapor bizim moderasyon kuyruğumuza düşer.",
+    "moderationHelp": "Bir tarif, uyarlama veya yorumu doğrudan ilgili sayfadaki rapor butonundan bildirebilirsin, rapor bizim moderasyon kuyruğumuza düşer.",
     "responseNoteHeading": "Yanıt süresi",
-    "responseNote": "Küçük bir ekibiz — genellikle birkaç iş günü içinde cevap veriyoruz.",
+    "responseNote": "Küçük bir ekibiz, genellikle birkaç iş günü içinde cevap veriyoruz.",
     "privacyNoticeHeading": "Verilerin nasıl işlenir?",
     "privacyNoticeBody": "E-posta ile bize yazdığında yalnız yanıtlamak için verilerini işliyoruz. Detaylı bilgi için",
     "privacyNoticeLink": "İletişim Aydınlatma Metni'ne göz at."
@@ -1104,11 +1104,11 @@
     "languageSaveError": "Dil tercihi kaydedilemedi",
     "preferences": {
       "title": "Kişiselleştirme tercihleri",
-      "description": "İlgini belirt — ileride keşif ve öneriler sana göre uyarlanacak. Her bölüm çoklu seçim; istediğin kadar ekle, aynı çiple tekrar bas kaldır.",
+      "description": "İlgini belirt, ileride keşif ve öneriler sana göre uyarlanacak. Her bölüm çoklu seçim; istediğin kadar ekle, aynı çiple tekrar bas kaldır.",
       "tagsTitle": "İlgilendiğin etiketler",
       "tagsHelp": "Sana gösterilen tariflerde öne çıkmasını istediğin temaları seç (pratik, vejetaryen, yüksek protein…).",
       "allergensTitle": "Kaçındığın alerjenler",
-      "allergensHelp": "Seçtiklerini içeren tarifler listelerde arka plana itilir. Tıbbi tavsiye değildir — ambalaj bilgisini her zaman kontrol et.",
+      "allergensHelp": "Seçtiklerini içeren tarifler listelerde arka plana itilir. Tıbbi tavsiye değildir, ambalaj bilgisini her zaman kontrol et.",
       "cuisinesTitle": "Favori mutfaklar",
       "cuisinesHelp": "Daha çok görmek istediğin mutfakları seç. Seçim yapmazsan tüm mutfaklar eşit ağırlıkta gelir.",
       "save": "Kaydet",
@@ -1127,7 +1127,7 @@
       "usernameHelper": "Sadece küçük harf, rakam, <code>_</code> ve <code>-</code>. Harfle başlamalı.",
       "usernameChangeWarning": "Değiştirirsen profil bağlantın tamamen yeni olur.",
       "bioLabel": "Biyografi",
-      "bioPlaceholder": "Kendinden kısaca bahset — favori tarifler, mutfak tarzı, vb.",
+      "bioPlaceholder": "Kendinden kısaca bahset, favori tarifler, mutfak tarzı, vb.",
       "bioCounter": "{count}/300",
       "errorDefault": "Güncellenemedi.",
       "successMessage": "Profilin güncellendi.",
@@ -1149,7 +1149,7 @@
       "mismatchBanner": "Seçtiğin Google hesabı <email>{email}</email> ile kayıtlı değil. Hesabını bağlamak için aynı e-postaya sahip Google kimliğini seçmelisin.",
       "sessionBanner": "Bağlama isteği süresi doldu. Lütfen tekrar dene.",
       "unlinkSuccessBanner": "Google bağlantın koparıldı.",
-      "needPasswordHint": "Google bağlantısını koparabilmen için önce bir şifre eklemen lazım — aşağıdaki Şifre kartından ekleyebilirsin.",
+      "needPasswordHint": "Google bağlantısını koparabilmen için önce bir şifre eklemen lazım, aşağıdaki Şifre kartından ekleyebilirsin.",
       "unlink": "Bağlantıyı koparın",
       "unlinking": "Koparılıyor…",
       "link": "Google hesabını bağla",
@@ -1182,7 +1182,7 @@
       "description": "Hesabını kalıcı olarak silebilirsin. Bu işlem geri alınamaz. Uyarlamaların, koleksiyonların, beğenilerin ve bildirimlerin silinir.",
       "openButton": "Hesabı Sil",
       "closeButton": "Kapat",
-      "confirmDialog": "Hesabın kalıcı olarak silinecek. Tüm uyarlamaların, koleksiyonların, beğenilerin ve bildirimlerin silinecek. Bu işlem geri alınamaz — devam etmek istiyor musun?",
+      "confirmDialog": "Hesabın kalıcı olarak silinecek. Tüm uyarlamaların, koleksiyonların, beğenilerin ve bildirimlerin silinecek. Bu işlem geri alınamaz, devam etmek istiyor musun?",
       "confirmLabel": "Onay",
       "confirmHelper": "Devam etmek için kullanıcı adını olduğu gibi yaz:",
       "passwordLabel": "Şifren",
@@ -1221,7 +1221,7 @@
       "error_cannot-follow-self": "Kendini takip edemezsin.",
       "error_account-suspended": "Hesabın askıya alınmış.",
       "error_target-not-found": "Kullanıcı bulunamadı.",
-      "error_unknown": "Beklenmedik hata — tekrar dene."
+      "error_unknown": "Beklenmedik hata, tekrar dene."
     },
     "followList": {
       "followersPageTitle": "{username} takipçileri | Tarifle",
@@ -1307,7 +1307,7 @@
     "pageDescription": "Takip ettiğin kullanıcıların son uyarlamaları.",
     "eyebrow": "Akış",
     "heading": "Takip ettiklerinin akışı",
-    "subtitle": "Takip ettiğin kullanıcıların son 30 günde paylaştığı uyarlamalar — en yeniden eskiye.",
+    "subtitle": "Takip ettiğin kullanıcıların son 30 günde paylaştığı uyarlamalar, en yeniden eskiye.",
     "emptyTitle": "Henüz içerik yok",
     "emptyBody": "Kimseyi takip etmiyorsun ya da takip ettiklerin son 30 günde uyarlama paylaşmamış. Tariflere göz atıp beğendiğin uyarlamaların yazarını takip edebilirsin.",
     "emptyCta": "Tarifleri keşfet",
@@ -1321,14 +1321,14 @@
     "breadcrumbTags": "Etiketler",
     "breadcrumbDiets": "Diyetler",
     "cuisinePageTitle": "{label} Tarifleri",
-    "cuisineMetaTitle": "{label} Tarifleri — {count} tarif",
+    "cuisineMetaTitle": "{label} Tarifleri, {count} tarif",
     "cuisineMetaDescription": "{label} mutfağından {count} tarif. {description}",
     "tagPageTitle": "{label} Tarifleri",
-    "tagMetaTitle": "{label} Tarifleri — {count} tarif",
+    "tagMetaTitle": "{label} Tarifleri, {count} tarif",
     "tagMetaDescription": "\"{label}\" etiketli {count} tarif. Pratik filtreleme, detaylı malzeme listesi ve alerjen bilgisi.",
     "dietPageTitle": "{label} Tarifleri",
-    "dietMetaTitle": "{label} Tarifleri — {count} tarif",
-    "dietMetaDescription": "{label} tarifler — {count} seçenek. {description}",
+    "dietMetaTitle": "{label} Tarifleri, {count} tarif",
+    "dietMetaDescription": "{label} tarifler, {count} seçenek. {description}",
     "totalCount": "{count} tarif",
     "emptyTitle": "Henüz tarif yok",
     "emptyBody": "Bu filtre için henüz tarif eklenmedi. Yakında daha fazlasını göreceksin.",
@@ -1385,8 +1385,8 @@
   "newsletter": {
     "form": {
       "footerHeading": "Haftalık editör seçkisi",
-      "footerSubtitle": "Yeni tarifler + pişirme notları — haftada bir mail, istediğin an iptal.",
-      "inlineHeading": "Haftalık seçki — posta kutunda",
+      "footerSubtitle": "Yeni tarifler + pişirme notları, haftada bir mail, istediğin an iptal.",
+      "inlineHeading": "Haftalık seçki, posta kutunda",
       "inlineSubtitle": "Tarifle editörlerinden haftalık 5-6 öne çıkan tarif, kısa pişirme ipuçları. Reklam yok, spam yok.",
       "emailPlaceholder": "ornek@mail.com",
       "submit": "Abone ol",
@@ -1399,7 +1399,7 @@
       "title": "Abonelik onaylandı",
       "description": "Tarifle bülteni için onayın alındı.",
       "heading": "Abonelik onaylandı",
-      "body": "Teşekkürler — haftalık editör seçkisi artık posta kutuna düşüyor. İlk mail birkaç gün içinde.",
+      "body": "Teşekkürler, haftalık editör seçkisi artık posta kutuna düşüyor. İlk mail birkaç gün içinde.",
       "home": "Ana sayfaya dön"
     },
     "unsubscribed": {
@@ -1419,7 +1419,7 @@
   },
   "blog": {
     "pageTitle": "Blog",
-    "subtitle": "Mutfak rehberleri, pişirme teknikleri ve malzeme tanıma — Tarifle editörlerinden uzun formatlı yazılar.",
+    "subtitle": "Mutfak rehberleri, pişirme teknikleri ve malzeme tanıma, Tarifle editörlerinden uzun formatlı yazılar.",
     "emptyTitle": "Henüz yazı yok",
     "emptyBody": "İlk makalelerimiz yakında burada olacak.",
     "readingMinutes": "{minutes} dk okuma",
@@ -1512,7 +1512,7 @@
     "dataHeading": "İşlenen veriler",
     "dataName": "Adın / gönderen olarak belirttiğin isim",
     "dataEmail": "E-posta adresin (Gmail otomatik döner)",
-    "dataMessage": "Mesaj içeriğin (kendi yazdıkların — kişisel veri içerebilir)",
+    "dataMessage": "Mesaj içeriğin (kendi yazdıkların, kişisel veri içerebilir)",
     "dataHeaders": "E-posta başlıkları (timestamp, routing, anti-spam kontrolleri için)",
     "purposeHeading": "İşleme amacı ve hukuki sebep",
     "purposeResponse": "Sorunu anlayıp yanıtlamak (KVKK 5/2-f, meşru menfaat: karşılıklı iletişim).",
@@ -1521,7 +1521,7 @@
     "retentionHeading": "Saklama süresi",
     "retentionBody": "E-posta yazışmaları Gmail hesabında aktif takip süresince tutulur. Talebin kapanmasından sonra 1 yıla kadar referans için arşivde kalır; sonrasında silinir. Yasal süreç başlatılmışsa ilgili mevzuatın öngördüğü süre boyunca saklanır.",
     "transferHeading": "Aktarım",
-    "transferBody": "Mesajların yalnızca Tarifle'nin yöneticisi tarafından okunur. Üçüncü taraflarla paylaşılmaz — Google Mail altyapısı (Gmail server'ları AB/ABD) haricinde. Mail servisimiz Resend (AB) sadece DİŞARI gönderilen e-postalar için kullanılır, GELEN mailler doğrudan Gmail'e düşer.",
+    "transferBody": "Mesajların yalnızca Tarifle'nin yöneticisi tarafından okunur. Üçüncü taraflarla paylaşılmaz, Google Mail altyapısı (Gmail server'ları AB/ABD) haricinde. Mail servisimiz Resend (AB) sadece DİŞARI gönderilen e-postalar için kullanılır, GELEN mailler doğrudan Gmail'e düşer.",
     "rightsHeading": "Haklarını nasıl kullanırsın?",
     "rightsBody": "Gönderdiğin e-postanın silinmesini, içeriğinin düzeltilmesini veya bir kopyasının tarafına verilmesini isteyebilirsin. Başvuru yöntemi KVKK Aydınlatma Metni Bölüm 7'de anlatılıyor; aynı adrese \"KVKK Veri Talebi\" konu satırıyla e-posta göndermen yeterli.",
     "crosslinkLead": "İlgili belgeler:",
@@ -1588,7 +1588,7 @@
   "aiAssistant": {
     "pageEyebrow": "AI Asistan",
     "pageTitle": "Elindekinden tarif bul",
-    "pageSubtitle": "Dolabındaki malzemeleri yaz, sana en çok uyan tarifleri getirelim. Eksikleri de görürsün — böylece markete gitmeden ne pişirebileceğini anlarsın.",
+    "pageSubtitle": "Dolabındaki malzemeleri yaz, sana en çok uyan tarifleri getirelim. Eksikleri de görürsün, böylece markete gitmeden ne pişirebileceğini anlarsın.",
     "recentSearches": "Son aramalar",
     "form": {
       "ingredientsLabel": "Elindeki malzemeler",
@@ -1745,7 +1745,7 @@
   "pwa": {
     "install": {
       "title": "Tarifle'yi ana ekranına ekle",
-      "nativeBody": "Uygulama olarak kurabilirsin — daha hızlı açılır, çevrimdışı da çalışır.",
+      "nativeBody": "Uygulama olarak kurabilirsin, daha hızlı açılır, çevrimdışı da çalışır.",
       "nativeCta": "Ekle",
       "nativeDismiss": "Daha sonra",
       "iosBody": "Paylaş butonuna bas, menüyü aşağı kaydır, \"Ana Ekrana Ekle\" seçeneğine dokun.",
@@ -1797,7 +1797,7 @@
       "descriptionMaxNote": "Maks. 300 karakter.",
       "ingredientsLabel": "Malzemeler",
       "ingredientsRequired": "*",
-      "ingredientsHelp": "Her malzeme için miktar, birim ve adı ayrı alanlara. Birim gerekmiyorsa \"— birim —\" seçili kalabilir.",
+      "ingredientsHelp": "Her malzeme için miktar, birim ve adı ayrı alanlara. Birim gerekmiyorsa \"birim seç\" seçili kalabilir.",
       "stepsLabel": "Yapılış Adımları *",
       "stepsLabelHint": "(her satıra bir adım)",
       "stepsPlaceholder": "Patlıcanları boyuna ikiye kesin\nİç kısmını kaşıkla oyun\nFırında 180°C'de 20 dk pişirin",
@@ -1861,7 +1861,7 @@
     "sectionTitle": "Yıldız & Yorumlar ({count})",
     "reviewCount": "{count} yorum",
     "loginPrompt": "Bu tarife yorum bırakmak için <link>giriş yap</link>.",
-    "empty": "Henüz yorum yok — denedin mi? Nasıl oldu, neyi değiştirdin? Diğer ziyaretçilere yol göster.",
+    "empty": "Henüz yorum yok, denedin mi? Nasıl oldu, neyi değiştirdin? Diğer ziyaretçilere yol göster.",
     "form": {
       "titleNew": "Bu tarife yorum bırak",
       "titleEdit": "Yorumunu düzenle",
@@ -1909,7 +1909,7 @@
       "submit": "Yükle",
       "submitting": "Yükleniyor…",
       "cancel": "İptal",
-      "uploadSuccess": "Fotoğrafın yüklendi — teşekkürler!",
+      "uploadSuccess": "Fotoğrafın yüklendi, teşekkürler!",
       "errorFileRequired": "Bir fotoğraf seç.",
       "errorFileTooLarge": "Dosya 5 MB'den büyük olamaz.",
       "errorFileType": "Sadece JPEG, PNG, WebP veya HEIC kabul ediliyor.",
@@ -1917,10 +1917,10 @@
       "errorEmailNotVerified": "Önce e-posta adresini doğrula.",
       "errorAccountSuspended": "Hesabın askıya alınmış.",
       "errorFeatureDisabled": "Fotoğraf yükleme şu anda kapalı.",
-      "errorRateLimited": "Çok hızlı yükleme — bir süre bekleyip tekrar dene.",
+      "errorRateLimited": "Çok hızlı yükleme, bir süre bekleyip tekrar dene.",
       "errorUploadFailed": "Yükleme başarısız oldu, tekrar dener misin?",
       "errorRecipeNotFound": "Tarif bulunamadı.",
-      "errorUnknown": "Beklenmedik bir hata — sayfayı yenileyip tekrar dene.",
+      "errorUnknown": "Beklenmedik bir hata, sayfayı yenileyip tekrar dene.",
       "deleteConfirm": "Bu fotoğrafı silmek istediğine emin misin?",
       "deleteAria": "Fotoğrafı sil",
       "defaultAlt": "{author} tarafından yüklenen fotoğraf",
@@ -1930,7 +1930,7 @@
     "tipNoteLabel": "💡 Püf Noktası:",
     "servingSuggestionLabel": "🍽️ Servis Önerisi:",
     "allergenDisclosure": "Bu tarif alerjen madde içerebilir",
-    "allergenDisclaimer": "Alerjenler tarifteki malzeme listesinden otomatik türetilir ve AB-14 gıda alerjen standardının ana gruplarını kapsar (gluten, süt, yumurta, yer fıstığı, kuruyemiş, soya, deniz ürünleri, susam, kereviz, hardal). Çapraz bulaşma (ortak mutfak ekipmanı, ortak yüzey) takip edilmez — ciddi alerjiniz varsa malzeme listesini baştan sona gözden geçirin ve hazırlama yöntemini sorun.",
+    "allergenDisclaimer": "Alerjenler tarifteki malzeme listesinden otomatik türetilir ve AB-14 gıda alerjen standardının ana gruplarını kapsar (gluten, süt, yumurta, yer fıstığı, kuruyemiş, soya, deniz ürünleri, susam, kereviz, hardal). Çapraz bulaşma (ortak mutfak ekipmanı, ortak yüzey) takip edilmez, ciddi alerjiniz varsa malzeme listesini baştan sona gözden geçirin ve hazırlama yöntemini sorun.",
     "allergenListAria": "Alerjen içerikleri: {list}",
     "variationsTitle": "Topluluk Uyarlamaları ({count})",
     "variationSortNewest": "En yeni",
@@ -1940,8 +1940,8 @@
     "cuisineDiscoveryLink": "{label} mutfağından diğer tarifler →",
     "viewCount": "{count} görüntülenme",
     "viewsThisWeek": "Bu hafta {count} kez",
-    "tagTooltipVegan": "Vegan uyumlu — hayvansal ürün içermiyor",
-    "tagTooltipVegetarian": "Vejetaryen uyumlu — et/tavuk/balık içermiyor",
+    "tagTooltipVegan": "Vegan uyumlu, hayvansal ürün içermiyor",
+    "tagTooltipVegetarian": "Vejetaryen uyumlu, et/tavuk/balık içermiyor",
     "tagsAriaLabel": "Tarif etiketleri",
     "ingredients": {
       "title": "Malzemeler",
@@ -1960,7 +1960,7 @@
       "proteinUnit": "g protein",
       "carbsUnit": "g karbonhidrat",
       "fatUnit": "g yağ",
-      "approximateNote": "Yaklaşık değer — USDA FoodData Central ve TÜBİTAK Türk Gıda Kompozisyon Veritabanı&rsquo;ndan malzeme miktarına göre hesaplanır. Gerçek değer pişirme yöntemi, marka ve porsiyon boyutuna göre yaklaşık ±%20 sapabilir. Diyet veya sağlık koşulu için diyetisyen/hekime danışın."
+      "approximateNote": "Yaklaşık değer, USDA FoodData Central ve TÜBİTAK Türk Gıda Kompozisyon Veritabanı&rsquo;ndan malzeme miktarına göre hesaplanır. Gerçek değer pişirme yöntemi, marka ve porsiyon boyutuna göre yaklaşık ±%20 sapabilir. Diyet veya sağlık koşulu için diyetisyen/hekime danışın."
     }
   },
   "recipes": {

@@ -23,11 +23,11 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 /**
- * Admin analytics dashboard — `/admin/analytics`.
+ * Admin analytics dashboard, `/admin/analytics`.
  *
  * Layout:
  *   1. 6 KPI cards (totals + last-7-day pace)
- *   2. 2 trend placeholder cards (view trend, search freq) — tracking
+ *   2. 2 trend placeholder cards (view trend, search freq), tracking
  *      altyapısı yok, grayed-out "coming soon" mesajı.
  *   3. 4 top-10 lists (cuisines, tags, most reviewed, most saved)
  *
@@ -210,7 +210,7 @@ interface ViewTrendCardProps {
 }
 
 /**
- * Son N günlük görüntülenme trend'i — mini bar chart.
+ * Son N günlük görüntülenme trend'i, mini bar chart.
  * Her bar bir UTC günü temsil eder; yüksekliği o günkü toplam view.
  * Accessibility: her bar'da aria-label ile tarih + sayı verilir.
  */

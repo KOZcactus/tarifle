@@ -2,7 +2,7 @@
  * Zod schema mirroring `docs/RECIPE_FORMAT.md`. The seed script runs every
  * candidate recipe through `seedRecipeSchema.safeParse(...)` BEFORE touching
  * the DB, so a single bad Codex entry no longer blows up a 500-recipe
- * batch — it's rejected with a clear per-field message and the rest of the
+ * batch, it's rejected with a clear per-field message and the rest of the
  * batch continues. See `scripts/seed-recipes.ts`.
  *
  * Why a separate schema file (not `src/lib/validators.ts`): the shapes here
@@ -182,16 +182,16 @@ export const seedRecipeSchema = z
 
     tags: z.array(z.enum(TAG_SLUGS)).max(5).default([]),
     // Allergens field is new (Apr 2026). Legacy seed entries without it
-    // default to empty — the retrofit script then fills them.
+    // default to empty, the retrofit script then fills them.
     allergens: z.array(z.enum(ALLERGEN)).max(10).default([]),
 
-    // Cuisine origin code — one of the 14 supported codes (see
+    // Cuisine origin code, one of the 14 supported codes (see
     // src/lib/cuisines.ts). Optional + nullable: legacy seed entries
     // default to null, the retrofit script fills them. New Codex batches
     // should include this explicitly.
     cuisine: z.enum(CUISINE_CODES).optional().nullable(),
 
-    // Opsiyonel EN/DE çevirileri. TR primary language — translations
+    // Opsiyonel EN/DE çevirileri. TR primary language, translations
     // UI language toggle'ı (Faz 3) canlıya alınınca devreye girer.
     // Codex dilerse batch ile birlikte EN çevirisi de gönderebilir.
     translations: translationsSchema.optional().nullable(),
@@ -239,7 +239,7 @@ export function validateSeedRecipes(candidates: readonly unknown[]): {
         raw && typeof raw === "object" && "title" in raw
           ? String((raw as { title: unknown }).title ?? "<no title>")
           : "<no title>";
-      // Take the most specific error per row — the first issue is usually
+      // Take the most specific error per row, the first issue is usually
       // the most obvious one to fix.
       const first = parsed.error.issues[0];
       const pathStr = first?.path.join(".") || "(root)";

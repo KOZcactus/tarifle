@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-// Personal inbox — request-time only. No static prerender.
+// Personal inbox, request-time only. No static prerender.
 export const dynamic = "force-dynamic";
 
 interface NotificationsPageProps {

@@ -18,7 +18,7 @@ interface ActionResult {
 
 /**
  * Create or update a user's review on a recipe. `@@unique([userId, recipeId])`
- * means there's at most one review per user per recipe — so this upserts
+ * means there's at most one review per user per recipe, so this upserts
  * (edit if exists, create if not). Rate-limited to prevent spam.
  */
 export async function submitReviewAction(input: unknown): Promise<ActionResult> {
@@ -33,7 +33,7 @@ export async function submitReviewAction(input: unknown): Promise<ActionResult> 
       success: false,
       error:
         parsed.error.issues[0]?.message ??
-        "Geçersiz form — yıldız 1-5 arası, yorum 10-800 karakter olmalı.",
+        "Geçersiz form, yıldız 1-5 arası, yorum 10-800 karakter olmalı.",
     };
   }
   const { recipeId, rating, comment } = parsed.data;
@@ -45,7 +45,7 @@ export async function submitReviewAction(input: unknown): Promise<ActionResult> 
   if (!limited.success) {
     return {
       success: false,
-      error: limited.message ?? "Çok fazla yorum gönderdin — biraz sonra tekrar dene.",
+      error: limited.message ?? "Çok fazla yorum gönderdin, biraz sonra tekrar dene.",
     };
   }
 
@@ -58,7 +58,7 @@ export async function submitReviewAction(input: unknown): Promise<ActionResult> 
     return { success: false, error: "Bu tarife şu an yorum yapılamıyor." };
   }
 
-  // Hard profanity filter — matches the variation action. Only scans the
+  // Hard profanity filter, matches the variation action. Only scans the
   // comment body (rating alone can't carry text). Blacklist hit is an
   // outright rejection, not a preflight flag.
   if (comment) {
@@ -72,7 +72,7 @@ export async function submitReviewAction(input: unknown): Promise<ActionResult> 
     }
   }
 
-  // Soft preflight — spam patterns, shouting, URLs. If any fire the review
+  // Soft preflight, spam patterns, shouting, URLs. If any fire the review
   // lands in PENDING_REVIEW and shows up on the admin queue. Rating-only
   // submissions always return no flags.
   const preflight = computeReviewPreflightFlags({ comment: comment ?? null });
@@ -102,7 +102,7 @@ export async function submitReviewAction(input: unknown): Promise<ActionResult> 
       // On edit, recompute status from scratch. A previously hidden review
       // that's now clean can re-publish; a previously clean one that now
       // trips preflight goes back to PENDING_REVIEW. hiddenReason clears
-      // on every edit — if the admin needs to re-hide they'll add fresh context.
+      // on every edit, if the admin needs to re-hide they'll add fresh context.
       status,
       moderationFlags,
       hiddenReason: null,

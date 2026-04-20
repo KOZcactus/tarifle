@@ -15,13 +15,13 @@ import {
 import { checkRateLimit, rateLimitIdentifier } from "@/lib/rate-limit";
 
 /**
- * Recipe photo actions — user upload + owner/admin delete + admin hide.
+ * Recipe photo actions, user upload + owner/admin delete + admin hide.
  *
  * Feature flag gate: `isUserPhotosEnabled()` → site-settings store.
  * Upload action short-circuits when flag false (UI already hides the form,
- * ama agresif defense — doğrudan FormData POST edenlere karşı).
+ * ama agresif defense, doğrudan FormData POST edenlere karşı).
  *
- * Rate-limit: upload action `upload:photo:<userId>` bucket — ratelimit.ts
+ * Rate-limit: upload action `upload:photo:<userId>` bucket, ratelimit.ts
  * review pattern'ine benzer; spam kendi başına engellensin.
  */
 
@@ -144,7 +144,7 @@ export async function uploadRecipePhotoAction(
  *   - ADMIN / MODERATOR role
  *
  * Removes Cloudinary asset too (saves storage + complies with GDPR-style
- * deletion — Tarifle doesn't need to keep proof of deleted user content).
+ * deletion, Tarifle doesn't need to keep proof of deleted user content).
  */
 export async function deleteRecipePhotoAction(
   photoId: string,
@@ -177,7 +177,7 @@ export async function deleteRecipePhotoAction(
   try {
     await cloudinaryDelete(photo.publicId);
   } catch (err) {
-    // DB kaydı düştü; Cloudinary temizliği best-effort — başarısızsa
+    // DB kaydı düştü; Cloudinary temizliği best-effort, başarısızsa
     // loglayıp düşürelim, admin panelinden "orphan cleanup" ayrı iş.
     console.error("[recipe-photo] Cloudinary destroy failed:", err);
   }
@@ -189,7 +189,7 @@ export async function deleteRecipePhotoAction(
 
 /**
  * Admin-only: VISIBLE → HIDDEN toggle (veya tersi). Hard delete yerine
- * yumuşak gizleme — kullanıcı itiraz ederse geri açılabilir. Cloudinary
+ * yumuşak gizleme, kullanıcı itiraz ederse geri açılabilir. Cloudinary
  * asset korunur.
  */
 export async function toggleRecipePhotoVisibilityAction(
@@ -250,7 +250,7 @@ export async function toggleUserPhotosFeatureAction(
   );
 
   revalidatePath("/admin/topluluk-fotolari");
-  // SiteSetting okuma `unstable_cache` 60s TTL — toggle sonrası tarif
+  // SiteSetting okuma `unstable_cache` 60s TTL, toggle sonrası tarif
   // detay sayfalarında en geç 60s içinde yeni değer görünür. Admin
   // feedback için admin path açık invalidate edildi.
 

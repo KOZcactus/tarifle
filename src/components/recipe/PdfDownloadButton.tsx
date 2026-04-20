@@ -7,7 +7,7 @@ interface PdfDownloadButtonProps {
 }
 
 /**
- * Tarif PDF indir butonu — `/tarif/[slug]/pdf` route'una anchor ile
+ * Tarif PDF indir butonu, `/tarif/[slug]/pdf` route'una anchor ile
  * yönlendirir. Native browser download davranışı (Content-Disposition
  * inline ile tab'da açılır, kullanıcı ⌘S ile kaydedebilir); direkt
  * kaydettirmek için `download` attribute.

@@ -13,7 +13,7 @@ import { LINK_INTENT_COOKIE, verifyLinkIntent } from "@/lib/link-intent";
 /**
  * Our Prisma `User.username` column is required + unique, but Auth.js's
  * PrismaAdapter doesn't know about it and passes a bare `{ name, email, ... }`
- * to `prisma.user.create` — Prisma rejects with "Argument username is missing".
+ * to `prisma.user.create`, Prisma rejects with "Argument username is missing".
  *
  * We wrap PrismaAdapter and override `createUser` so first-time OAuth sign-in
  * mints a unique username + fills in our KVKK timestamps alongside the
@@ -64,7 +64,7 @@ function buildAdapter(): Adapter {
 /**
  * Pull a best-effort client IP out of a standard `Request` object. Auth.js
  * hands us the original request inside `authorize`, which is our only hook
- * here — we can't use `next/headers` because the credentials provider may
+ * here, we can't use `next/headers` because the credentials provider may
  * run outside a Next request context (e.g. during OAuth flows that also hit
  * this file).
  */
@@ -105,9 +105,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       async authorize(credentials, request) {
         if (!credentials?.email || !credentials?.password) return null;
 
-        // 5 attempts per minute per IP — matches common "login is brute-forceable"
+        // 5 attempts per minute per IP, matches common "login is brute-forceable"
         // guidance. Fails open when UPSTASH creds aren't configured, so local
-        // dev stays smooth. We do NOT throw — returning null surfaces the
+        // dev stays smooth. We do NOT throw, returning null surfaces the
         // existing "e-posta veya şifre hatalı" message without leaking the
         // distinction between bad creds and rate limited.
         const ip = ipFromRequest(request);
@@ -119,7 +119,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         const email = normalizeEmail(credentials.email as string);
         const password = credentials.password as string;
 
-        // Explicit select — default findUnique tüm kolonları çeker, gelecekte
+        // Explicit select, default findUnique tüm kolonları çeker, gelecekte
         // başka schema mismatch senaryolarına karşı explicit liste daha
         // dayanıklı. Suspension kontrolü dahil.
         const user = await prisma.user.findUnique({
@@ -138,7 +138,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
         // Suspended accounts can't sign in. We intentionally fall through
         // to the generic "e-posta veya şifre hatalı" flow rather than
-        // leaking suspension state to an attacker — honest users see the
+        // leaking suspension state to an attacker, honest users see the
         // suspendedAt flag on /ayarlar page after next valid login attempt,
         // or in-product support. (Future work: dedicated "hesabın askıda"
         // screen with suspendedReason.)
@@ -172,7 +172,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         if (dbUser) {
           // Defensive: a session could be reissued mid-suspension (ör. admin
           // 1 saat sonra askıya aldı, token hâlâ geçerli). Return null ile
-          // token'ı iptal edelim — client bir sonraki middleware geçişinde
+          // token'ı iptal edelim, client bir sonraki middleware geçişinde
           // sign-in'e yönlendirilir.
           if (dbUser.suspendedAt) return null;
           token.id = dbUser.id;
@@ -226,7 +226,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       const intentUserId = verifyLinkIntent(intentCookie);
 
       if (intentUserId) {
-        // Explicit linking flow — verify the user that started it and
+        // Explicit linking flow, verify the user that started it and
         // that the Google email matches their account email.
         const intentUser = await prisma.user.findUnique({
           where: { id: intentUserId },
@@ -238,13 +238,13 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         }
         // Let the adapter create the Account row. Cookie is consumed on a
         // successful link by the /api/link/google/start route on its next
-        // call (it overwrites) — and we also clear it lazily here by
+        // call (it overwrites), and we also clear it lazily here by
         // returning true; the browser keeps it until TTL expires otherwise,
         // which is fine because verifyLinkIntent also time-bounds it.
         return true;
       }
 
-      // No linking intent — fall back to safe default: reject any sign-in
+      // No linking intent, fall back to safe default: reject any sign-in
       // that would silently link a Google account to an existing local user.
       const existing = await prisma.user.findUnique({
         where: { email: googleEmail },

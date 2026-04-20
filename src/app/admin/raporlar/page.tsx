@@ -45,7 +45,7 @@ export default async function ReportsPage() {
                   <div className="flex-1">
                     <p className="font-medium text-text">{v.miniTitle}</p>
                     <p className="mt-1 text-sm text-text-muted">
-                      {v.recipe.emoji} {v.recipe.title} — @{v.author.username}
+                      {v.recipe.emoji} {v.recipe.title}, @{v.author.username}
                     </p>
                     {v.description && (
                       <p className="mt-1 text-sm text-text-muted">{v.description}</p>
@@ -101,7 +101,7 @@ export default async function ReportsPage() {
                       >
                         {r.recipe.title}
                       </Link>{" "}
-                      — @{r.user.username}
+                     , @{r.user.username}
                     </p>
                     {r.comment && (
                       <blockquote className="mt-2 border-l-2 border-border pl-3 text-sm text-text">

@@ -1,7 +1,7 @@
 "use server";
 
 /**
- * Niş admin ops — v7 paketi:
+ * Niş admin ops, v7 paketi:
  *  - User suspend/unsuspend
  *  - Announcement CRUD
  *  - Collection hide/unhide
@@ -77,7 +77,7 @@ export async function suspendUserAction(input: unknown): Promise<ActionResult> {
         reason: reason ?? null,
       },
     }),
-    // Invalidate any live sessions — next JWT callback will reject the token.
+    // Invalidate any live sessions, next JWT callback will reject the token.
     // Session table'ı kullanmayan credentials flow'u direct clear edilemez
     // ama session callback'e suspendedAt check eklendi (auth.ts).
   ]);
@@ -177,7 +177,7 @@ export async function updateAnnouncementAction(
     return { success: false, error: parsed.error.issues[0]?.message ?? "Geçersiz." };
   }
   const { id, patch } = parsed.data;
-  // Build the actual Prisma data — trim strings / parse dates
+  // Build the actual Prisma data, trim strings / parse dates
   const data: Record<string, unknown> = {};
   if (patch.title !== undefined) data.title = patch.title;
   if (patch.body !== undefined) data.body = patch.body || null;
@@ -306,7 +306,7 @@ export async function broadcastNotificationAction(
   }
   const { title, body, link, role, onlyVerified } = parsed.data;
 
-  // Select matching users — askıya alınmışlar dahil edilmez.
+  // Select matching users, askıya alınmışlar dahil edilmez.
   const where: Record<string, unknown> = { suspendedAt: null, deletedAt: null };
   if (role) where.role = role;
   if (onlyVerified) where.emailVerified = { not: null };
@@ -337,7 +337,7 @@ export async function broadcastNotificationAction(
         targetType: "broadcast",
         targetId: `count=${targets.length}`,
         action: "BROADCAST",
-        reason: `${title}${body ? ` — ${body}` : ""}`.slice(0, 500),
+        reason: `${title}${body ? `, ${body}` : ""}`.slice(0, 500),
       },
     }),
   ]);

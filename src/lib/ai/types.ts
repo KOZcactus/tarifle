@@ -14,10 +14,10 @@ export interface AiSuggestInput {
   difficulty?: Difficulty;
   /** If true, common pantry staples (tuz, karabiber, su, yağ) are assumed on hand. */
   assumePantryStaples?: boolean;
-  /** Cuisine filter — recipe.cuisine must match one of these codes.
+  /** Cuisine filter, recipe.cuisine must match one of these codes.
    *  Empty/undefined = no filter (all cuisines, "Hepsi" mode). */
   cuisines?: string[];
-  /** Ingredients to exclude — any recipe containing a matching ingredient
+  /** Ingredients to exclude, any recipe containing a matching ingredient
    *  is disqualified regardless of match score. */
   excludeIngredients?: string[];
   /** Diet slug filter (vegan / vejetaryen / glutensiz / sutsuz / alkolsuz).
@@ -41,7 +41,7 @@ export interface AiSuggestion {
   totalMinutes: number;
   servingCount: number;
   averageCalories: number | null;
-  /** 0..1 — ratio of recipe ingredients the user already has. */
+  /** 0..1, ratio of recipe ingredients the user already has. */
   matchScore: number;
   /** Ingredient names the user had that matched this recipe. */
   matchedIngredients: string[];
@@ -61,7 +61,7 @@ export interface AiSuggestResponse {
   suggestions: AiSuggestion[];
   /** Provider-level commentary / summary shown above the results (optional). */
   commentary?: string;
-  /** Which provider handled this request — useful for UI badges and logs. */
+  /** Which provider handled this request, useful for UI badges and logs. */
   provider: "rule-based" | "claude-haiku";
 }
 

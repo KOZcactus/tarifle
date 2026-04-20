@@ -1,7 +1,7 @@
 /**
- * Diet tag inference — detect whether a recipe is vegetarian and/or vegan
+ * Diet tag inference, detect whether a recipe is vegetarian and/or vegan
  * from its ingredient list. Same conservative posture as allergen inference:
- * when in doubt, DON'T tag (false negative here is safer — a vegetarian
+ * when in doubt, DON'T tag (false negative here is safer, a vegetarian
  * eats a non-vegetarian meal = bad; being too strict about tagging =
  * annoying but safe).
  *
@@ -35,7 +35,7 @@ function normalise(name: string): string {
 
 /**
  * Keywords that mark a recipe as NOT vegetarian (meat/poultry/fish/gelatin).
- * Fish + seafood are also covered by the DENIZ_URUNLERI allergen — we read
+ * Fish + seafood are also covered by the DENIZ_URUNLERI allergen, we read
  * that as a shortcut in `inferDietTags`, so this list focuses on meat and
  * poultry which don't have their own allergen group.
  */
@@ -94,7 +94,7 @@ const MEAT_KEYWORDS: readonly string[] = [
  * we don't guard against it here.
  */
 const NON_VEGAN_PATTERNS: readonly RegExp[] = [
-  /\bbal(?!\s*kabag)\b/, // honey — but not "bal kabagi" / "balkabagi" (pumpkin)
+  /\bbal(?!\s*kabag)\b/, // honey, but not "bal kabagi" / "balkabagi" (pumpkin)
   /\bballi\b/, // "ballı" → normalized "balli" (honey-glazed)
   /\bjelatin\b/,
   /\bgelatin\b/,
@@ -109,7 +109,7 @@ export interface DietTags {
  * Given a recipe's ingredient names + its allergen set (from the allergens
  * inference step), return { vegetarian, vegan }.
  *
- * Callers wire the result to the Tag / RecipeTag tables — see the retrofit
+ * Callers wire the result to the Tag / RecipeTag tables, see the retrofit
  * script. This module is DB-agnostic.
  */
 export function inferDietTags(
@@ -132,7 +132,7 @@ export function inferDietTags(
   const hasDairy = allergens.includes("SUT");
   const hasEgg = allergens.includes("YUMURTA");
 
-  // Honey/gelatin — whole-word regex so "bal" does not match "balkabagi"
+  // Honey/gelatin, whole-word regex so "bal" does not match "balkabagi"
   // (pumpkin) or "balik" (fish). Any match on any ingredient breaks vegan.
   const hasNonVegan = normalized.some((n) =>
     NON_VEGAN_PATTERNS.some((re) => re.test(n)),

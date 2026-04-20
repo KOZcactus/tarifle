@@ -3,7 +3,7 @@ import { getRecipeOfTheDay } from "@/lib/queries/recipe-of-the-day";
 import { getDifficultyLabel } from "@/lib/utils";
 
 /**
- * Homepage "Bugünün tarifi" widget. Server component — fetches the daily
+ * Homepage "Bugünün tarifi" widget. Server component, fetches the daily
  * pick via the helper and renders a single large card with curated copy.
  * Renders nothing when the DB has no PUBLISHED recipes (fresh project).
  *

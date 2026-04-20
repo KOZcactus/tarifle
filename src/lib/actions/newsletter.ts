@@ -91,7 +91,7 @@ export async function subscribeNewsletterAction(
     const provider = getEmailProvider();
     await provider.send({
       to: email,
-      subject: `${SITE_NAME} — abonelik onayı`,
+      subject: `${SITE_NAME}, abonelik onayı`,
       text: [
         `Merhaba,`,
         ``,
@@ -106,7 +106,7 @@ export async function subscribeNewsletterAction(
         <div style="font-family: system-ui, sans-serif; max-width: 560px; margin: 0 auto; padding: 24px;">
           <h1 style="font-size: 24px; margin-bottom: 8px;">${SITE_NAME}'e hoş geldin</h1>
           <p style="color: #525252; line-height: 1.6;">
-            Haftalık editör seçkisi almak için aboneliğini doğrula — tek tık yeter.
+            Haftalık editör seçkisi almak için aboneliğini doğrula, tek tık yeter.
           </p>
           <p style="margin: 24px 0;">
             <a href="${confirmUrl}" style="background: #a03b0f; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; display: inline-block; font-weight: 600;">

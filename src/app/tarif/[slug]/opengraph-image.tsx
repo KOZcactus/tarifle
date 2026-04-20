@@ -16,14 +16,14 @@ interface Props {
 /**
  * Produce a TR and an EN version of the OG preview. OG crawlers (WhatsApp,
  * Twitter, Facebook) don't send the user's locale cookie, so a single
- * cached image can't adapt. Instead we expose two URLs — `.../opengraph-
- * image/tr` and `.../opengraph-image/en` — and `generateMetadata` on the
+ * cached image can't adapt. Instead we expose two URLs, `.../opengraph-
+ * image/tr` and `.../opengraph-image/en`, and `generateMetadata` on the
  * page picks the right one by reading the viewer's cookie at request time.
  */
 export function generateImageMetadata() {
   return [
-    { id: "tr", alt: "Tarifle — tarif paylaşımı", size, contentType },
-    { id: "en", alt: "Tarifle — recipe share", size, contentType },
+    { id: "tr", alt: "Tarifle, tarif paylaşımı", size, contentType },
+    { id: "en", alt: "Tarifle, recipe share", size, contentType },
   ];
 }
 

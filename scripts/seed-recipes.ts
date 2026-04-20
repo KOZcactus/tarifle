@@ -34,14 +34,14 @@ function initPrisma(): PrismaClient {
 // ─── Tarif Verileri ──────────────────────────────────────
 // Exported so `scripts/validate-batch.ts` can pre-flight this catalog
 // without hitting the database. Codex only edits inside the array body
-// (adding new entries before the closing `];`) — no other structural
+// (adding new entries before the closing `];`), no other structural
 // change is needed to maintain that workflow.
 //
 // Explicit `SeedRecipe[]` annotation + ts-expect-error below: with 1200+
 // inline recipe literals, TS2590 ("union type too complex") fires on the
 // unannotated array. `validateSeedRecipes` runs Zod at startup, so the
 // per-row shape is still authoritatively enforced before any DB write.
-// @ts-expect-error TS2590 — see comment above, Zod is the authority.
+// @ts-expect-error TS2590, see comment above, Zod is the authority.
 export const recipes: SeedRecipe[] = [
   // ── ET YEMEKLERİ ──
   {
@@ -15694,7 +15694,7 @@ async function runSeed(prisma: PrismaClient) {
   // ─── 1. PRE-FLIGHT VALIDATION ────────────────────────────
   // Every candidate runs through Zod before any DB write. A single bad
   // row (wrong enum, invalid slug, missing field) no longer blows up the
-  // batch — we log the offender + skip it, continue with the rest.
+  // batch, we log the offender + skip it, continue with the rest.
   // For a 500-row Codex batch this is the difference between "one typo
   // wastes the whole run" and "one typo is fixed in the next PR."
   const { valid, errors: validationErrors } = validateSeedRecipes(recipes);
@@ -15703,7 +15703,7 @@ async function runSeed(prisma: PrismaClient) {
       `\n⚠ ${validationErrors.length} tarif şema doğrulamasından geçemedi ve atlanacak:`,
     );
     for (const err of validationErrors) {
-      console.warn(`   [${err.index}] ${err.title} — ${err.message}`);
+      console.warn(`   [${err.index}] ${err.title}, ${err.message}`);
     }
     console.warn("");
   }
@@ -15758,13 +15758,13 @@ async function runSeed(prisma: PrismaClient) {
         isFeatured: r.isFeatured,
         tipNote: r.tipNote ?? null,
         servingSuggestion: r.servingSuggestion ?? null,
-        // allergens passthrough — Codex-provided explicit list wins; the
+        // allergens passthrough, Codex-provided explicit list wins; the
         // retrofit script later fills any empty arrays via inference.
         allergens: r.allergens,
-        // cuisine passthrough — Codex-provided code wins; the retrofit
+        // cuisine passthrough, Codex-provided code wins; the retrofit
         // script fills null values via title/slug/description inference.
         cuisine: r.cuisine ?? null,
-        // translations passthrough — optional JSONB bucket for EN/DE etc.
+        // translations passthrough, optional JSONB bucket for EN/DE etc.
         // Left NULL when not provided; Faz 3 language toggle reads this.
         translations: r.translations ?? undefined,
         ingredients: {

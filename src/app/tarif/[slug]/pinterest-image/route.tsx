@@ -5,7 +5,7 @@ import { loadGoogleFont } from "@/lib/og";
 import { isValidLocale, type Locale } from "@/i18n/config";
 import { pickRecipeTitle } from "@/lib/recipe/translate";
 
-// Runtime: nodejs (default) — getRecipeBySlug uses Prisma, which doesn't run
+// Runtime: nodejs (default), getRecipeBySlug uses Prisma, which doesn't run
 // on the edge. Matches opengraph-image.tsx's implicit runtime.
 export const contentType = "image/png";
 

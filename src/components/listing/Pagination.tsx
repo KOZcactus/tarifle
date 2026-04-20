@@ -1,13 +1,13 @@
 import Link from "next/link";
 
-/** Shared listing pagination — used by `/tarifler` (full search) and
+/** Shared listing pagination, used by `/tarifler` (full search) and
  *  `/tarifler/[kategori]` (category landing). Builds page URLs by cloning
  *  the current `searchParams`, stripping `page`, and appending `?page=N`
  *  to `basePath`.
  *
  *  Visible window:
  *   - totalPages ≤ FULL_WINDOW_THRESHOLD → render every page number
- *     (kullanıcı "başta kaç sayfa varsa o kadar" dedi — az sayfa için
+ *     (kullanıcı "başta kaç sayfa varsa o kadar" dedi, az sayfa için
  *     ellipsis işine yaramaz)
  *   - Aksi halde current ± 3 window + leading/trailing "…" + first/last
  *     anchor pages (klasik Google-style pagination)
@@ -46,12 +46,12 @@ interface PaginationProps {
   /** Total matching recipes (unpaginated). When provided with `pageSize`
    *  enables the "showing X–Y of Z" counter above the nav. */
   totalItems?: number;
-  /** Items per page — must match the `limit` passed to getRecipes(). */
+  /** Items per page, must match the `limit` passed to getRecipes(). */
   pageSize?: number;
 }
 
 /** Build the list of pagination items to render. Numbers are page indices,
- *  "…" strings are ellipsis separators. Exported for unit testing — the
+ *  "…" strings are ellipsis separators. Exported for unit testing, the
  *  windowing math is easy to break when refactoring, so we lock the output
  *  shape with tests. */
 export function buildPageItems(
@@ -103,10 +103,10 @@ export function Pagination({
   const isFirstPage = currentPage <= 1;
   const isLastPage = currentPage >= totalPages;
 
-  // Counter — only shown when caller supplies totalItems + pageSize.
+  // Counter, only shown when caller supplies totalItems + pageSize.
   // Kompakt tek satır: "13–24/1401 gösteriliyor" (TR) / "Showing 13–24/1401"
   // (EN). Önceki iki-parçalı layout (X–Y gösteriliyor · toplam N tarif) user
-  // geri bildirimiyle sadeleştirildi — slash ile range+total birleşti, tek
+  // geri bildirimiyle sadeleştirildi, slash ile range+total birleşti, tek
   // cümle daha az gürültülü.
   let rangeCounter: string | null = null;
   if (typeof totalItems === "number" && typeof pageSize === "number" && totalItems > 0) {

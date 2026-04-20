@@ -2,7 +2,7 @@ import { prisma } from "@/lib/prisma";
 
 /**
  * Returns a single random published recipe for "surprise me" features.
- * Uses count + skip(random offset) — simple and efficient.
+ * Uses count + skip(random offset), simple and efficient.
  */
 export async function getRandomRecipe(): Promise<{
   slug: string;

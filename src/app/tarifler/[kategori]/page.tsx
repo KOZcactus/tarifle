@@ -35,7 +35,7 @@ export async function generateMetadata({
   const category = await getCategoryBySlug(kategori);
   if (!category) return { title: "Kategori Bulunamadı" };
 
-  // Page 2+ sayfalarını indekslemeyelim — Google duplicate content kaygısını
+  // Page 2+ sayfalarını indekslemeyelim, Google duplicate content kaygısını
   // düşürür, canonical tek sayfa kategori landing'inde kalır. Page 1 ise
   // indekslenebilir (canonical zaten /tarifler/[kategori]'ye eş).
   const pageNum = parseInt(sp.page ?? "1", 10) || 1;
@@ -74,7 +74,7 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
     (CUISINE_CODES as readonly string[]).includes(c),
   );
 
-  // Parse allergen exclusion — URL'de ?alerjen= yoksa logged-in user'ın
+  // Parse allergen exclusion, URL'de ?alerjen= yoksa logged-in user'ın
   // User.allergenAvoidances tercihini default olarak uygula (güvenlik
   // default'u). URL'de seçim varsa kullanıcı override kabul edilir.
   const rawAllergens = sp.alerjen
@@ -99,7 +99,7 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
       : [sp.etiket]
     : undefined;
 
-  // Pagination — 1-indexed page param, falls back to 1.
+  // Pagination, 1-indexed page param, falls back to 1.
   const currentPage = Math.max(1, parseInt(sp.page ?? "1", 10) || 1);
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
 
@@ -127,7 +127,7 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      {/* Schema.org FAQPage JSON-LD — kategori SSS rich results */}
+      {/* Schema.org FAQPage JSON-LD, kategori SSS rich results */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -220,7 +220,7 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
             ))}
           </div>
 
-          {/* Pagination — total > ITEMS_PER_PAGE olan kategorilerde 2+ sayfa */}
+          {/* Pagination, total > ITEMS_PER_PAGE olan kategorilerde 2+ sayfa */}
           {totalPages > 1 && (
             <Pagination
               basePath={`/tarifler/${kategori}`}

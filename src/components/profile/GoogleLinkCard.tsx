@@ -9,7 +9,7 @@ import { unlinkGoogleAction } from "@/lib/actions/profile";
 interface GoogleLinkCardProps {
   /** Whether the current user already has a Google Account row linked. */
   linked: boolean;
-  /** Email the user signed up with — shown to set expectations about matching. */
+  /** Email the user signed up with, shown to set expectations about matching. */
   email: string;
   /**
    * Whether the user has a `passwordHash`. Unlink is gated on this at both
@@ -26,10 +26,10 @@ interface GoogleLinkCardProps {
  *
  * Two-step start so the server gate (signed cookie) is in place before the
  * real OAuth request ever leaves our origin:
- *   1. POST /api/link/google/set-intent — sets the signed HMAC cookie that
- *      auth.ts's `signIn` callback keys off. Returns 200 JSON — no redirect
+ *   1. POST /api/link/google/set-intent, sets the signed HMAC cookie that
+ *      auth.ts's `signIn` callback keys off. Returns 200 JSON, no redirect
  *      so the browser doesn't pre-navigate.
- *   2. `signIn("google", { callbackUrl })` — NextAuth client helper fetches
+ *   2. `signIn("google", { callbackUrl })`, NextAuth client helper fetches
  *      a CSRF token and POSTs to the signin endpoint, which redirects to
  *      Google. This is the step that needs a real form submission + CSRF;
  *      a plain server-side 303 to /api/auth/signin/google would just land
@@ -82,7 +82,7 @@ export function GoogleLinkCard({
         setError(res.status === 401 ? t("sessionExpired") : t("startError"));
         return;
       }
-      // Now hand control to Auth.js — this will redirect to Google.
+      // Now hand control to Auth.js, this will redirect to Google.
       await signIn("google", { callbackUrl: "/ayarlar?linked=1" });
     } catch {
       setBusy(false);
@@ -138,7 +138,7 @@ export function GoogleLinkCard({
         </div>
       )}
 
-      {/* Unlink success — surfaced locally because there's no ?unlinked URL
+      {/* Unlink success, surfaced locally because there's no ?unlinked URL
           param; router.refresh() will also re-render the card to "bağla"
           state, but this banner gives the user confirmation during that
           re-render window. */}
@@ -161,7 +161,7 @@ export function GoogleLinkCard({
         </div>
       )}
 
-      {/* Unlink control — only when linked. Disabled + warning when the user
+      {/* Unlink control, only when linked. Disabled + warning when the user
           has no password, because removing the only sign-in path would lock
           them out. The server enforces the same rule; the disabled state is
           UX, not security. */}

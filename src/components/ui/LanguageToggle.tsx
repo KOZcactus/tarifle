@@ -7,10 +7,10 @@ import { updateLocaleAction } from "@/lib/actions/locale";
 import { useDismiss } from "@/hooks/useDismiss";
 
 /**
- * Navbar language selector — dropdown pattern (yanlış tıklamalarda
+ * Navbar language selector, dropdown pattern (yanlış tıklamalarda
  * kullanıcı dropdown görüp iptal edebilir, accidental switch önlenir).
  *
- * Flag emoji (🇹🇷/🇬🇧) kullanılmıyor — Windows Chrome/Edge regional
+ * Flag emoji (🇹🇷/🇬🇧) kullanılmıyor, Windows Chrome/Edge regional
  * indicator'ı "GB"/"TR" harfi olarak render ediyor. Yerine locale
  * code upper-case text ("TR" / "EN"). Tüm platformlarda garantili.
  *

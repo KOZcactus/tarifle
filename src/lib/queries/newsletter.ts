@@ -10,7 +10,7 @@ import type { RecipeCard } from "@/types/recipe";
  *   - `getActiveSubscribers` → all ACTIVE subs with unsubscribe token + locale
  *   - `getNewsletterContent` → shared editorial bundle (featured + recent + cuisines)
  *
- * Content is the same for every recipient in a given run — we assemble it
+ * Content is the same for every recipient in a given run, we assemble it
  * once and reuse it per send. Localized labels are rendered in the template,
  * not here.
  */
@@ -44,11 +44,11 @@ export interface NewsletterContent {
 /**
  * Haftalık bülten için editoryel içerik paketi.
  *
- * - featured: `getFeaturedRecipes(6)` — `isFeatured=true` havuzundan
+ * - featured: `getFeaturedRecipes(6)`, `isFeatured=true` havuzundan
  *   haftalık rotate edilmiş 6 tarif (zaten unstable_cache arkasında).
- * - recent: son 14 günde eklenen tarif (cap 6) — Codex batch sonrası
+ * - recent: son 14 günde eklenen tarif (cap 6), Codex batch sonrası
  *   bülten açısından "yeni içerik" görünürlüğü.
- * - topCuisines: tarif sayısına göre üst 4 mutfak — küratorluk hissi
+ * - topCuisines: tarif sayısına göre üst 4 mutfak, küratorluk hissi
  *   için "bu hafta öne çıkan mutfaklar" satırı.
  */
 export async function getNewsletterContent(): Promise<NewsletterContent> {

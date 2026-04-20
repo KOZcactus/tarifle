@@ -3,7 +3,7 @@ import Link from "next/link";
 export interface BreadcrumbItem {
   /** Görünür label. */
   label: string;
-  /** Link hedefi. Aktif (son) item'da undefined olur — span render edilir. */
+  /** Link hedefi. Aktif (son) item'da undefined olur, span render edilir. */
   href?: string;
 }
 

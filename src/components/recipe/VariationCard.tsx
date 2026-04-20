@@ -29,11 +29,11 @@ interface VariationCardProps {
   };
   /** Render moderator-only "Gizle" affordance. */
   isModerator: boolean;
-  /** True when the signed-in user authored this uyarlama — shows "Sil". */
+  /** True when the signed-in user authored this uyarlama, shows "Sil". */
   isOwnVariation?: boolean;
   /** Has the current user already liked this variation? */
   isLikedByUser?: boolean;
-  /** Recipe slug — needed by LikeButton's revalidatePath after toggle. */
+  /** Recipe slug, needed by LikeButton's revalidatePath after toggle. */
   recipeSlug: string;
 }
 

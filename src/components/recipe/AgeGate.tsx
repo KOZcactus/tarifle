@@ -26,7 +26,7 @@ export function AgeGate({ children }: AgeGateProps) {
     setVerified(true);
   };
 
-  // Loading state — don't flash content
+  // Loading state, don't flash content
   if (verified === null) {
     return null;
   }

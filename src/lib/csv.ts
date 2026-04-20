@@ -39,7 +39,7 @@ export function toCsv(headers: string[], rows: CsvRow[]): string {
  * the browser saves to disk with a sensible filename.
  */
 export function csvResponse(csv: string, filename: string): Response {
-  // Sanitise filename — keep ASCII letters/digits/dash/underscore/dot only.
+  // Sanitise filename, keep ASCII letters/digits/dash/underscore/dot only.
   const safe = filename.replace(/[^\w.-]/g, "_");
   return new Response(csv, {
     status: 200,

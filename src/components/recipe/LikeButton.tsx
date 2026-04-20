@@ -12,7 +12,7 @@ interface LikeButtonProps {
   initialLikeCount: number;
   initialLiked: boolean;
   /**
-   * Author kendi uyarlamasını beğenemez — server tarafı `notifyVariationLiked`
+   * Author kendi uyarlamasını beğenemez, server tarafı `notifyVariationLiked`
    * self-like'ı zaten skip ediyor ve toggle çalışıyor ama UX olarak da
    * gizliyoruz: kart sahibi bu butonu hiç görmez. Pas geçilirse default
    * false (gösterir).
@@ -34,7 +34,7 @@ export function LikeButton({
   const [liked, setLiked] = useState(initialLiked);
   const [count, setCount] = useState(initialLikeCount);
 
-  // Author kendi uyarlamasında butonu görmez — sadece "❤️ N" ifadesi.
+  // Author kendi uyarlamasında butonu görmez, sadece "❤️ N" ifadesi.
   if (isOwnVariation) {
     return (
       <span

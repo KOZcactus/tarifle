@@ -21,7 +21,7 @@ interface PageProps {
 
 /**
  * Checks whether a reset-token row is still usable. Extracted so that the
- * impure `Date.now()` call lives outside the component body — the React 19
+ * impure `Date.now()` call lives outside the component body, the React 19
  * purity rule (`react-hooks/purity`) flags calling impure functions during
  * render even inside Server Components.
  */
@@ -36,11 +36,11 @@ function classifyToken(
 /**
  * Renders the new-password form if the token exists and is unexpired, else
  * shows a friendly explanation with a link back to the request page. We do
- * NOT consume the token here — only the form submit action does, so a user
+ * NOT consume the token here, only the form submit action does, so a user
  * refreshing the page does not lose the opportunity to use their link.
  */
 export default async function ResetPasswordPage({ params }: PageProps) {
-  // If someone is already signed in, push them to /ayarlar instead — the
+  // If someone is already signed in, push them to /ayarlar instead, the
   // in-product change-password form is safer (mevcut şifre required).
   const [session, t] = await Promise.all([
     auth(),

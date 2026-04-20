@@ -15,7 +15,7 @@ function generateToken(): string {
 /**
  * Issues a fresh password-reset token for the given email and sends the reset
  * mail. Old unexpired tokens for this address are wiped first so only the
- * latest link works — protects users who click "send again" multiple times
+ * latest link works, protects users who click "send again" multiple times
  * from accidentally reactivating an older link if the new one gets leaked.
  *
  * NOTE: Callers should only invoke this for users who actually have a
@@ -103,7 +103,7 @@ export async function sendPasswordResetEmail(
 
 /**
  * Informational mail for OAuth-only accounts. The user asked for a password
- * reset but their account has no passwordHash — tell them to log in with
+ * reset but their account has no passwordHash, tell them to log in with
  * Google. Sending this (instead of silently dropping) stops email enumeration
  * via "did I get a reset mail or not?" side-channel. The UI shows the same
  * success message either way.
@@ -185,7 +185,7 @@ export async function sendOAuthOnlyPasswordResetEmail(
  * transaction. Deletes ALL reset tokens for this email on success so that
  * any other leaked links for the same account are invalidated too.
  *
- * `newPasswordHash` must already be bcrypt-hashed by the caller — this
+ * `newPasswordHash` must already be bcrypt-hashed by the caller, this
  * function never touches raw passwords.
  */
 export async function consumePasswordResetToken(
@@ -220,7 +220,7 @@ export async function consumePasswordResetToken(
       where: { id: user.id },
       data: { passwordHash: newPasswordHash },
     }),
-    // Wipe every outstanding reset token for this identifier — if a second
+    // Wipe every outstanding reset token for this identifier, if a second
     // link was issued in parallel (or leaked), it's dead now.
     prisma.passwordResetToken.deleteMany({ where: { identifier: record.identifier } }),
   ]);

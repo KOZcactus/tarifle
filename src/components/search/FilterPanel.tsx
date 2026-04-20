@@ -161,7 +161,7 @@ export function FilterPanel({ categories = [], tags = [] }: FilterPanelProps) {
         )}
       </div>
 
-      {/* Tag Pills — vegan/vejetaryen have their own dedicated DietFilter
+      {/* Tag Pills, vegan/vejetaryen have their own dedicated DietFilter
           row below so we strip them from this generic list to avoid the
           same filter appearing in two places. */}
       {tags.length > 0 && (

@@ -9,7 +9,7 @@ import { headers } from "next/headers";
  * real Ratelimit instances are created lazily (one per scope) and shared across
  * invocations. If either env var is missing (e.g. local dev without a Redis
  * account, or during the interval between deploy and env-var addition) we fall
- * back to a no-op that always allows the request — fail-open. The console
+ * back to a no-op that always allows the request, fail-open. The console
  * warning fires once per process so we notice if prod is missing credentials.
  *
  * Usage:
@@ -63,13 +63,13 @@ const SCOPE_CONFIG: Record<RateLimitScope, ScopeConfig> = {
     window: "1 h",
   },
   "variation-create": {
-    // Kisa-pencere burst kalkan — bot/spam arka arkaya gonderemesin.
+    // Kisa-pencere burst kalkan, bot/spam arka arkaya gonderemesin.
     description: "3 uyarlama / 1 saat",
     limit: 3,
     window: "1 h",
   },
   "variation-create-daily": {
-    // Uzun-pencere hacim kalkan — yavas ama inatci bir bot da durdurulsun.
+    // Uzun-pencere hacim kalkan, yavas ama inatci bir bot da durdurulsun.
     // Gercek kullanicinin gunde 10 uyarlama yazmasi zor; asilirsa incelensin.
     description: "10 uyarlama / 24 saat",
     limit: 10,
@@ -104,7 +104,7 @@ const SCOPE_CONFIG: Record<RateLimitScope, ScopeConfig> = {
   },
   "account-delete": {
     // Normal bir kullanici hesabi silerse bir kere siler. Ust ust denemek
-    // sart degil — dusuk threshold bir saldirganin sifre tahmin etme yoluyla
+    // sart degil, dusuk threshold bir saldirganin sifre tahmin etme yoluyla
     // hesabi silmeye calismasini yavaslatir.
     description: "3 hesap silme denemesi / 1 saat",
     limit: 3,
@@ -150,7 +150,7 @@ function getRedis(): Redis | null {
   if (!url || !token) {
     if (!warnedMissingCreds) {
       console.warn(
-        "[rate-limit] UPSTASH_REDIS_REST_URL/TOKEN missing — rate limiting disabled (fail-open). Add env vars in Vercel to enable."
+        "[rate-limit] UPSTASH_REDIS_REST_URL/TOKEN missing, rate limiting disabled (fail-open). Add env vars in Vercel to enable."
       );
       warnedMissingCreds = true;
     }
@@ -199,7 +199,7 @@ export async function checkRateLimit(
   identifier: string
 ): Promise<RateLimitResult> {
   if (!identifier || identifier === "anonymous") {
-    // Never block when we literally can't identify the caller — there is no
+    // Never block when we literally can't identify the caller, there is no
     // safe bucket to count against. Callers should pass a real IP or user id.
     return RESET_OK;
   }
@@ -220,7 +220,7 @@ export async function checkRateLimit(
   } catch (err) {
     // Redis outage → fail-open so we don't accidentally lock everyone out.
     // Log loudly so the operator notices.
-    console.error("[rate-limit] upstash error — failing open:", err);
+    console.error("[rate-limit] upstash error, failing open:", err);
     return RESET_OK;
   }
 }
@@ -248,7 +248,7 @@ export async function getClientIp(): Promise<string | null> {
     const h = await headers();
     const forwardedFor = h.get("x-forwarded-for");
     if (forwardedFor) {
-      // Take only the first IP — subsequent entries are edge/proxy addresses.
+      // Take only the first IP, subsequent entries are edge/proxy addresses.
       const first = forwardedFor.split(",")[0]?.trim();
       if (first) return first;
     }

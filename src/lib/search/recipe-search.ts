@@ -25,7 +25,7 @@ export interface SearchRecipeIdsOptions {
 
 export interface RankedRecipeId {
   id: string;
-  /** ts_rank_cd score — higher is more relevant. Only meaningful for sort. */
+  /** ts_rank_cd score, higher is more relevant. Only meaningful for sort. */
   rank: number;
 }
 
@@ -33,7 +33,7 @@ export interface RankedRecipeId {
  * Prepares raw user input for `websearch_to_tsquery`. Strips characters
  * Postgres treats specially to avoid injection-like parse failures:
  * backslashes, null bytes, and stray control chars. Keeps `- " ' ()`
- * — websearch syntax handles them naturally.
+ *, websearch syntax handles them naturally.
  *
  * Intentionally does NOT normalize Turkish characters here; unaccent is
  * applied SQL-side (`immutable_unaccent($1)`) so the logic lives on the
@@ -57,12 +57,12 @@ export function sanitizeQueryInput(raw: string): string {
  *      returns recipes that match ONLY on ingredient name (and weren't
  *      already in set 1). Rank = 0 so they always sort below FTS hits.
  *
- * This preserves the pre-FTS behaviour — "tuz" still lists every recipe
- * using salt — while giving title/description matches the ms-level tsvector
+ * This preserves the pre-FTS behaviour, "tuz" still lists every recipe
+ * using salt, while giving title/description matches the ms-level tsvector
  * path. When the catalog grows to 5k+ we can add pg_trgm to ingredient
  * names too; for 500 rows a seq scan on recipe_ingredients is fine.
  *
- * Empty array when the query is whitespace-only — caller skips the search
+ * Empty array when the query is whitespace-only, caller skips the search
  * layer entirely and renders the unfiltered catalog.
  */
 export async function searchRecipeIds(
@@ -72,7 +72,7 @@ export async function searchRecipeIds(
   const clean = sanitizeQueryInput(query);
   if (!clean) return [];
 
-  // websearch_to_tsquery: user-friendly syntax — quoted phrases, `-`
+  // websearch_to_tsquery: user-friendly syntax, quoted phrases, `-`
   // exclusion, implicit AND. Safer than plainto_tsquery (which chokes
   // on punctuation). The CROSS JOIN with a single-row subquery binds
   // the parsed query once per statement rather than re-parsing per row.
@@ -99,7 +99,7 @@ export async function searchRecipeIds(
   const remaining = Math.max(0, limit - ftsResults.length);
   if (remaining === 0) return ftsResults;
 
-  // Ingredient fallback — run as a plain Prisma query (typed, cacheable).
+  // Ingredient fallback, run as a plain Prisma query (typed, cacheable).
   // `insensitive` mode respects ICU collation so "Pirinç" matches "pirinc"
   // at the Unicode level; combined with the ingredient synonym list in
   // lib/ingredients.ts this covers the common morphological cases.
@@ -120,14 +120,14 @@ export async function searchRecipeIds(
     ...ingRows.map((r) => ({ id: r.id, rank: 0 })),
   ];
 
-  // Trigram fuzzy fallback — FTS + ingredient contains hâlâ boşsa
+  // Trigram fuzzy fallback, FTS + ingredient contains hâlâ boşsa
   // "typo tolerance" için pg_trgm similarity devreye girer. "domatez
   // corbasi" → "domates çorbası" bulsun. Similarity threshold 0.3
-  // konservatif — 0.1-0.2 aralığı alakasız dönüş verir, 0.4+ çok katı.
+  // konservatif, 0.1-0.2 aralığı alakasız dönüş verir, 0.4+ çok katı.
   //
   // Title + slug üzerinde GIN trigram index var (pg_trgm migration),
   // %> operator'ü indexi kullanır → ms-level lookup. Ingredient name
-  // üzerinde de ayrı bir pass — tarifte geçen yiyecek adı typo'sunu da
+  // üzerinde de ayrı bir pass, tarifte geçen yiyecek adı typo'sunu da
   // yakalamak için.
   //
   // Sadece hiç sonuç yoksa ek maliyet ödüyoruz; mevcut arama akışı

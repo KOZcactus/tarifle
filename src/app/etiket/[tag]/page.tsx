@@ -83,7 +83,7 @@ export default async function EtiketLandingPage({
     { name: dbTag.name, url: `/etiket/${tag}` },
   ]);
 
-  // Related tags — mevcut etiketi hariç en popüler 10 tag.
+  // Related tags, mevcut etiketi hariç en popüler 10 tag.
   const relatedTags = allTags.filter((t) => t.slug !== tag).slice(0, 10);
 
   return (

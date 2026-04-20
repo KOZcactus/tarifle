@@ -100,7 +100,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
                 url={`${SITE_URL}/koleksiyon/${collection.id}`}
                 text={
                   collection.description ||
-                  `@${collection.user.username} — ${collection.items.length} tariflik koleksiyon`
+                  `@${collection.user.username}, ${collection.items.length} tariflik koleksiyon`
                 }
                 imageUrl={`${SITE_URL}/koleksiyon/${collection.id}/opengraph-image`}
               />

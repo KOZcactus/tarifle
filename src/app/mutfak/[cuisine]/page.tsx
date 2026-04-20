@@ -78,7 +78,7 @@ export default async function MutfakLandingPage({
   const description =
     locale === "en" ? CUISINE_DESCRIPTION_EN[code] : CUISINE_DESCRIPTION_TR[code];
 
-  // Allergen exclusion — URL'de seçim varsa onu kullan, yoksa logged-in
+  // Allergen exclusion, URL'de seçim varsa onu kullan, yoksa logged-in
   // user'ın User.allergenAvoidances tercihleri (security default).
   const rawAllergens = sp.alerjen
     ? Array.isArray(sp.alerjen)
@@ -118,7 +118,7 @@ export default async function MutfakLandingPage({
     { name: label, url: `/mutfak/${cuisine}` },
   ]);
 
-  // Related cuisines — mevcut kodu hariç diğer 5 rastgele mutfak.
+  // Related cuisines, mevcut kodu hariç diğer 5 rastgele mutfak.
   // Simple pick: slug alfabetik sırada önceki/sonraki + ek çeşitlilik.
   const relatedCuisines = CUISINE_CODES.filter((c) => c !== code).slice(0, 8);
 
@@ -189,7 +189,7 @@ export default async function MutfakLandingPage({
         </div>
       )}
 
-      {/* Cross-linking — internal navigation + SEO link graph. 8 mutfak +
+      {/* Cross-linking, internal navigation + SEO link graph. 8 mutfak +
           5 diet link'i footer'ın üstüne, SEO crawl derinliğini azaltır. */}
       <section className="mt-16 border-t border-border pt-8">
         <h2 className="mb-3 text-sm font-semibold text-text">

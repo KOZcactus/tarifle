@@ -16,7 +16,7 @@ import {
   type CuisineCode,
 } from "@/lib/cuisines";
 
-// Alias — canonical redirect helper. CUISINE_SLUG doğrudan kullanılabilir;
+// Alias, canonical redirect helper. CUISINE_SLUG doğrudan kullanılabilir;
 // import'u local alias ile okunabilir tutmak yalnız generateMetadata
 // bloğu içinde sembolik.
 const CUISINE_SLUG_LOOKUP = CUISINE_SLUG;
@@ -126,12 +126,12 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
     : undefined;
 
   // Parse + validate allergen exclusion list. Unknown enum values are
-  // dropped silently so a mistyped URL doesn't 500 — just ignores the
+  // dropped silently so a mistyped URL doesn't 500, just ignores the
   // unknown one and filters by whatever else was valid.
   //
   // Kullanıcı URL'de açık bir ?alerjen= seçimi yapmadıysa, logged-in
   // user'ın User.allergenAvoidances tercihini default olarak uygula
-  // (güvenlik — kullanıcı kendi profilinde kaçındığı alerjen işaretledi
+  // (güvenlik, kullanıcı kendi profilinde kaçındığı alerjen işaretledi
   // diye biz de listing'de ona göre filtre çekiyoruz). URL'de seçim varsa
   // override.
   const rawAllergens = params.alerjen
@@ -156,7 +156,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
   //   1) URL'de explicit `?siralama=` varsa → kullanıcı bilerek seçmiş, saygı duy.
   //   2) Query (FTS) varsa → `relevance` (ranked search results).
   //   3) Logged-in user'ın `favoriteTags` tercihi doluysa → `foryou`
-  //      (kişiselleştirme tur 3 — user'ın beğenisine göre boost).
+  //      (kişiselleştirme tur 3, user'ın beğenisine göre boost).
   //   4) Diğer tüm durumlarda → `alphabetical` (catalog browse default).
   const activeSort: SortOption =
     sortBy ??
@@ -216,7 +216,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
   const totalPages = Math.ceil(total / ITEMS_PER_PAGE);
 
   // Search log: query varsa ve ilk sayfa ise (pagination-1 = yeniden log
-  // yazmayalım — aynı arama 5 sayfa → 5 kayıt). Fire-and-forget; insert
+  // yazmayalım, aynı arama 5 sayfa → 5 kayıt). Fire-and-forget; insert
   // DB'ye her başarısız olursa listing akışını engellemez.
   if (query && currentPage === 1) {
     logSearchQuery(query, total, session?.user?.id ?? null).catch((err) => {
@@ -264,7 +264,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
         t={t}
       />
 
-      {/* Sort tabs — rewrites ?siralama=... while preserving every other
+      {/* Sort tabs, rewrites ?siralama=... while preserving every other
           filter in the URL. Default (alphabetical) omits the param so the
           canonical URL is clean. */}
       <div className="mb-6 flex flex-wrap items-center gap-1 text-sm">
@@ -277,7 +277,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
           ...(query
             ? [{ key: "relevance", label: t("sort.relevance") } as const]
             : []),
-          // "Sana göre" chip — yalnız logged-in user favoriteTags set
+          // "Sana göre" chip, yalnız logged-in user favoriteTags set
           // ettiyse görünür. Anonim user için tamamen gizli: dropdown'u
           // yemleyen login duvarı gereksiz.
           ...(!query && favoriteTagSlugs.length > 0
@@ -330,7 +330,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
       {/* Results */}
       {recipes.length > 0 ? (
         <>
-          {/* Heading hierarchy fix — h1 (page title) → h2 (sr-only) →
+          {/* Heading hierarchy fix, h1 (page title) → h2 (sr-only) →
               h3 (RecipeCard inside). Lighthouse heading-order best-
               practice violation gideriyor; ekran okuyucu için anlamlı,
               görsel kullanıcıya etkisi yok. */}
@@ -444,7 +444,7 @@ function EmptyState({
   );
 }
 
-/** Active filter summary — shows which filters are active with remove buttons. */
+/** Active filter summary, shows which filters are active with remove buttons. */
 async function ActiveFilters({
   query,
   category,

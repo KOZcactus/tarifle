@@ -8,17 +8,17 @@ import { notifyFollowed } from "@/lib/notifications/service";
 export interface FollowActionResult {
   success: boolean;
   error?: string;
-  /** Toggle'dan sonraki son durum — UI anlık tazelemek için. */
+  /** Toggle'dan sonraki son durum, UI anlık tazelemek için. */
   following?: boolean;
 }
 
 /**
  * Takip et / takibi bırak toggle'ı. Aynı action iki yönde çalışır:
- * follow row yoksa oluşturur, varsa siler. Idempotent değil — UI
+ * follow row yoksa oluşturur, varsa siler. Idempotent değil, UI
  * state'ini action sonucundan okumalı.
  *
  * Notification: ilk takipte `FOLLOWED` notifikasyonu gönderilir.
- * `notify` fire-and-forget (catch'te log) — ana akışı bloklamaz.
+ * `notify` fire-and-forget (catch'te log), ana akışı bloklamaz.
  */
 export async function toggleFollowAction(
   targetUserId: string,

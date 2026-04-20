@@ -3,12 +3,12 @@ import { prisma } from "@/lib/prisma";
 
 /**
  * Returns a combined list of recipe titles and unique ingredient names
- * for search autocomplete. Cached 10 dk — yeni seed sonrası auto-stale ama
+ * for search autocomplete. Cached 10 dk, yeni seed sonrası auto-stale ama
  * her pageview'da 1400+ title + 690 ingredient query'si ağır, TTL değeri
  * büyük. Homepage + /kesfet + navbar SearchBar hepsi bunu tüketiyor.
  *
  * Returns ~1400 titles + ~690 ingredients ≈ ~2100 suggestions.
- * Client filters these by typed query — no API call per keystroke.
+ * Client filters these by typed query, no API call per keystroke.
  */
 export const getSearchSuggestions = unstable_cache(
   async (): Promise<{

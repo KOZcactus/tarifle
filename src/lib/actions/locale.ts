@@ -8,7 +8,7 @@ import { isValidLocale, type Locale } from "@/i18n/config";
 
 /**
  * Update user locale. Writes cookie (NEXT_LOCALE) always; writes User.locale
- * too if logged-in. Anonymous users get just the cookie — enough for
+ * too if logged-in. Anonymous users get just the cookie, enough for
  * next-intl request config to pick up the change on next RSC render.
  *
  * revalidatePath("/", "layout") forces full tree re-render so freshly

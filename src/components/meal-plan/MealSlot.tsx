@@ -27,7 +27,7 @@ interface MealSlotProps {
  *   - Boş: "+ Tarif ekle" buton → RecipePickerDialog açar
  *   - Dolu: tarif emoji + title + "değiştir" + "kaldır" butonları
  *
- * Optimistic UI yok — server action sonrası revalidatePath tetikler,
+ * Optimistic UI yok, server action sonrası revalidatePath tetikler,
  * Next fresh render'ı yollar. Transition feedback için `pending`
  * durumu opacity düşürür.
  */

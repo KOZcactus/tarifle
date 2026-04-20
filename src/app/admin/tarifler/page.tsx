@@ -70,7 +70,7 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
     getLocale(),
   ]);
 
-  // Helper — preserve other search params when building next URL
+  // Helper, preserve other search params when building next URL
   function buildHref(overrides: Record<string, string | number | null>) {
     const out = new URLSearchParams();
     if (sort !== "createdAt") out.set("sort", sort);

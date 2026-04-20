@@ -47,7 +47,7 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
   const mobileRef = useDismiss<HTMLDivElement>({
     isOpen: isMobileOpen,
     onClose: closeMobile,
-    // Mobile menu covers a strip under the navbar — outside-click would
+    // Mobile menu covers a strip under the navbar, outside-click would
     // dismiss on every scroll drag. Keyboard Escape is enough.
     disableOutsideClick: true,
   });
@@ -92,7 +92,7 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
           <LanguageToggle />
           <ThemeToggle />
 
-          {/* Notification bell — only renders for logged-in users (loader returns null otherwise) */}
+          {/* Notification bell, only renders for logged-in users (loader returns null otherwise) */}
           {notificationSlot}
 
           {session?.user ? (

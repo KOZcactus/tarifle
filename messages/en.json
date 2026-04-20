@@ -25,7 +25,7 @@
   "home": {
     "heroBadgeSuffix": "recipes ready to explore",
     "heroTitle": "What shall we <accent>cook</accent> today?",
-    "heroTagline": "Delicious food, drink and cocktail recipes. Decide what to cook faster — with recipes that actually work.",
+    "heroTagline": "Delicious food, drink and cocktail recipes. Decide what to cook faster, with recipes that actually work.",
     "heroRecipeCount": "{count} recipes",
     "heroCtaBrowse": "Browse Recipes",
     "heroCtaAi": "Ask AI Assistant",
@@ -44,7 +44,7 @@
     "cuisineSubtitle": "Discover {total}+ recipes from {count} cuisines",
     "recipeCountSmall": "{count} recipes",
     "aiBannerTitle": "List what's in your pantry, get a recipe",
-    "aiBannerDescription": "Tell us what you have — we'll show the best-matching recipes and what's missing.",
+    "aiBannerDescription": "Tell us what you have, we'll show the best-matching recipes and what's missing.",
     "aiBannerCta": "Try it →",
     "ctaTitle": "Share your own recipe",
     "ctaDescription": "Sign up, add your take on favourite recipes, and share with the community.",
@@ -117,14 +117,14 @@
       "loginLink": "Sign in",
       "sentTitle": "Link sent",
       "sentBody": "We sent an email to <email>{email}</email>. The link is valid for 1 hour. If you don't see it, check your spam or junk folder.",
-      "sentHint": "Still no email? The address may not be registered here, or your account may be linked to Google — try \"Sign in with Google\" from the login page.",
+      "sentHint": "Still no email? The address may not be registered here, or your account may be linked to Google, try \"Sign in with Google\" from the login page.",
       "backToLogin": "Back to sign in",
       "tryDifferent": "Try a different email"
     },
     "resetPassword": {
       "pageTitle": "Set a new password",
       "subtitleValid": "Your link is active. Set your new password below.",
-      "subtitleInvalid": "This link is no longer valid — you can request a new one below.",
+      "subtitleInvalid": "This link is no longer valid, you can request a new one below.",
       "invalidTitle": "Link no longer valid",
       "invalidExpired": "Your reset link has expired. Request a new one and use it within 1 hour.",
       "invalidOther": "This link is invalid. It may have been used already or copied incorrectly.",
@@ -167,49 +167,49 @@
       ],
       "kokteyl": [
         "When the weekend rolls in, get the glasses ready.",
-        "Too much effort for a quiet night — just right for a real celebration."
+        "Too much effort for a quiet night, just right for a real celebration."
       ],
       "corba": [
-        "A warming start — medicine on a cold day.",
+        "A warming start, medicine on a cold day.",
         "One spoonful takes the edge off the day."
       ],
       "salata": [
-        "A fresh touch for the table — light and still satisfying.",
-        "Not a side dish — the kind of salad that earns main-character energy."
+        "A fresh touch for the table, light and still satisfying.",
+        "Not a side dish, the kind of salad that earns main-character energy."
       ],
       "kahvalti": [
         "Made for a leisurely Sunday breakfast.",
         "Lifts the morning mood in just a few minutes."
       ],
       "atistirmalik": [
-        "Small but effective — movie night or a surprise guest."
+        "Small but effective, movie night or a surprise guest."
       ],
       "hard": [
         "Takes patience, but the result is genuinely impressive.",
-        "Treat it as a weekend project — the table will reward you."
+        "Treat it as a weekend project, the table will reward you."
       ],
       "quick": [
-        "Practical and easy — a friend on tired days.",
+        "Practical and easy, a friend on tired days.",
         "A filling option that doesn't even take half an hour."
       ],
       "veryQuick": [
-        "On the table in 20 minutes — fast, not careless.",
+        "On the table in 20 minutes, fast, not careless.",
         "The first thing that comes to mind when you want something quick."
       ],
       "light": [
-        "For those keeping it light — without cutting back on flavour.",
+        "For those keeping it light, without cutting back on flavour.",
         "Low-calorie but genuinely satisfying."
       ],
       "hearty": [
-        "Filling and nourishing — it won't leave you hungry.",
+        "Filling and nourishing, it won't leave you hungry.",
         "A well-earned dinner at the end of a long day."
       ],
       "popularVariations": [
         "A recipe the community has tried and made their own.",
-        "See how many variations it has — check the adaptations tab."
+        "See how many variations it has, check the adaptations tab."
       ],
       "featured": [
-        "An editor's favourite — simple but memorable."
+        "An editor's favourite, simple but memorable."
       ]
     },
     "fallback": "Worth a try."
@@ -248,7 +248,7 @@
     "perfectMany": [
       "{ctx}You can make {count} recipes exactly with what you have. I put the fastest ones on top.",
       "{ctx}Nice pantry: you don't even need to shop for {count} recipes.",
-      "{ctx}Luckily you have {count} options — all fully covered."
+      "{ctx}Luckily you have {count} options, all fully covered."
     ],
     "perfect2": [
       "{ctx}Two recipes need nothing extra: {title1} and {title2}. Which one fits your mood?",
@@ -256,12 +256,12 @@
       "Perfect fit on 2 recipes: {title1} and {title2}. The rest need a bit of shopping."
     ],
     "perfect1": [
-      "{ctx}You don't need to buy anything for {title} — perfect fit. A few close alternatives sit below.",
+      "{ctx}You don't need to buy anything for {title}, perfect fit. A few close alternatives sit below.",
       "Head to the kitchen: {title} is ready with what you have. Others need a couple of items.",
       "Only one exact match: {title}. If you want alternatives, the ones below need just 1–2 extras."
     ],
     "closeCall": [
-      "{ctx}No perfect match, but {title} only needs {missing} — quick market run.",
+      "{ctx}No perfect match, but {title} only needs {missing}, quick market run.",
       "Closest option is {title}. Grab {missing} and you're set.",
       "{title} is missing {missing}. Everything else is already in your kitchen."
     ],
@@ -272,51 +272,51 @@
     ],
     "notesFirstPerfect": [
       "Best match. You can use all of your ingredients.",
-      "Top pick — perfect fit and the strongest result.",
+      "Top pick, perfect fit and the strongest result.",
       "Suggestion #1. Nothing missing."
     ],
     "notesFirstOneMissing": [
-      "Almost perfect — just grab {missing}.",
+      "Almost perfect, just grab {missing}.",
       "One step away: {missing}.",
       "One ingredient missing ({missing}), the rest is ready."
     ],
     "notesFastest": [
-      "Fastest option — on the table in {minutes} minutes.",
+      "Fastest option, on the table in {minutes} minutes.",
       "For the impatient: {minutes} minutes.",
       "The quickest one. Perfect for a hungry surprise guest."
     ],
     "notesPerfectAlt": [
       "Nothing missing, you could pick this one too.",
-      "Everything is there — keep it as plan B.",
+      "Everything is there, keep it as plan B.",
       "Another exact match. File it as a backup."
     ],
     "notesOneMissing": "Just {missing} missing.",
     "notesTwoMissing": "You'd need to grab {missing1} and {missing2}.",
     "notesHard": [
       "Takes patience, but the result is impressive.",
-      "A bit ambitious — try it when you have time.",
+      "A bit ambitious, try it when you have time.",
       "Needs some skill, but whoever sits at the table will notice."
     ],
-    "notesLongest": "Slow cooker — you can leave it on the stove.",
+    "notesLongest": "Slow cooker, you can leave it on the stove.",
     "pantryOnly": [
       "{ctx}You've only listed pantry staples (salt, pepper, oil). Add a vegetable, protein, or grain and I'll surface real matches.",
-      "{ctx}These are all pantry items — add one real ingredient (say, tomato, chicken, or lentils) and the suggestions will click into place.",
+      "{ctx}These are all pantry items, add one real ingredient (say, tomato, chicken, or lentils) and the suggestions will click into place.",
       "{ctx}Pantry-only input won't get us far. Throw in one non-staple ingredient and try again."
     ],
     "manyIngredients": [
-      "{ctx}You've loaded up the pantry — {count} recipes match. {title} is at the top.",
+      "{ctx}You've loaded up the pantry, {count} recipes match. {title} is at the top.",
       "{ctx}That's a generous pantry. {count} recipes fit, starting with {title}.",
-      "{ctx}With this much to work with, {count} recipes turn up — {title} leads the pack."
+      "{ctx}With this much to work with, {count} recipes turn up, {title} leads the pack."
     ],
     "singleIngredient": [
       "{ctx}Starting with just {ingredient}? {title} is the closest match.",
-      "{ctx}One ingredient to work with — {title} is your best bet.",
+      "{ctx}One ingredient to work with, {title} is your best bet.",
       "{ctx}Just {ingredient}, nothing else? {title} gets you closest."
     ]
   },
   "metadata": {
     "site": {
-      "tagline": "Tarifle — Make Eat",
+      "tagline": "Tarifle, Make Eat",
       "description": "A modern recipe platform serving clean, community-contributed food, drink and cocktail recipes.",
       "ogLocale": "en_US"
     },
@@ -371,17 +371,17 @@
     },
     "contact": {
       "title": "Contact",
-      "description": "Reach the Tarifle team — feedback, bug reports, partnership, or KVKK data requests."
+      "description": "Reach the Tarifle team, feedback, bug reports, partnership, or KVKK data requests."
     },
     "recipeDetail": {
       "notFoundTitle": "Recipe Not Found",
-      "descriptionWithCuisine": "{title} recipe from {cuisine} cuisine — {difficulty}, {time}, serves {servings}{calories}.",
-      "descriptionNoCuisine": "{title} recipe — {difficulty}, {time}, serves {servings}{calories}.",
+      "descriptionWithCuisine": "{title} recipe from {cuisine} cuisine, {difficulty}, {time}, serves {servings}{calories}.",
+      "descriptionNoCuisine": "{title} recipe, {difficulty}, {time}, serves {servings}{calories}.",
       "caloriesSuffix": ", ~{kcal} kcal"
     },
     "legal": {
       "aboutTitle": "About",
-      "aboutDescription": "About Tarifle — team, vision, contact.",
+      "aboutDescription": "About Tarifle, team, vision, contact.",
       "privacyTitle": "Privacy Policy",
       "privacyDescription": "Information on how Tarifle processes personal data.",
       "kvkkTitle": "KVKK Privacy Notice",
@@ -389,7 +389,7 @@
       "termsTitle": "Terms of Use",
       "termsDescription": "Tarifle platform terms of use.",
       "hubTitle": "Legal Information",
-      "hubDescription": "Privacy, security, KVKK, cookies and terms — all in one hub.",
+      "hubDescription": "Privacy, security, KVKK, cookies and terms, all in one hub.",
       "cookiesTitle": "Cookie Policy",
       "cookiesDescription": "How Tarifle uses cookies, for what purpose, and how you can control them.",
       "securityTitle": "Security",
@@ -408,11 +408,11 @@
       "body": "Click the button below to verify your Tarifle account. This link is valid for <strong>{hours} hours</strong>.",
       "cta": "Verify my email",
       "fallbackHint": "If the button doesn't work, paste this link into your browser:",
-      "footer": "If you didn't request this email, ignore it — no one can access your account.",
+      "footer": "If you didn't request this email, ignore it, no one can access your account.",
       "textBody": "Click the link below to verify your Tarifle account:",
       "textExpiry": "This link is valid for {hours} hours.",
-      "textFooter": "If you didn't request this email, ignore it — no one can access your account.",
-      "signature": "— Tarifle"
+      "textFooter": "If you didn't request this email, ignore it, no one can access your account.",
+      "signature": "The Tarifle team"
     },
     "passwordReset": {
       "subject": "Tarifle password reset",
@@ -423,14 +423,14 @@
       "body": "Click the button below to reset your Tarifle account password. This link is valid for <strong>{hours} hour(s)</strong>.",
       "cta": "Reset my password",
       "fallbackHint": "If the button doesn't work, paste this link into your browser:",
-      "footer": "If you didn't request this email, ignore it — your password stays the same. If something looks suspicious, check your account at tarifle.app/ayarlar.",
+      "footer": "If you didn't request this email, ignore it, your password stays the same. If something looks suspicious, check your account at tarifle.app/ayarlar.",
       "textBody": "Click the link below to reset your Tarifle account password:",
       "textExpiry": "This link is valid for {hours} hour(s).",
-      "textFooter": "If you didn't request this email, ignore it — your password stays the same.",
-      "signature": "— Tarifle"
+      "textFooter": "If you didn't request this email, ignore it, your password stays the same.",
+      "signature": "The Tarifle team"
     },
     "oauthOnlyReset": {
-      "subject": "Tarifle — this account is linked to Google",
+      "subject": "Tarifle, this account is linked to Google",
       "eyebrow": "Tarifle",
       "title": "This account is linked to Google",
       "greetingNamed": "Hi {name},",
@@ -438,27 +438,27 @@
       "body": "We received a password reset request for <strong>{email}</strong> on Tarifle. This account is linked to Google and has no password sign-in.",
       "cta": "Sign in with Google",
       "hint": "If you'd like to add password sign-in too, go to Settings after signing in and use the \"Add password\" option.",
-      "footer": "If you didn't request this email, ignore it — your account stays the same.",
+      "footer": "If you didn't request this email, ignore it, your account stays the same.",
       "textBody": "We received a password reset request for {email} on Tarifle.",
       "textBody2": "This account is linked to Google and has no password sign-in.",
       "textBody3": "To sign in, use the Sign in with Google button:",
       "textHint1": "If you want to add password sign-in too, after signing in with Google",
       "textHint2": "go to the settings page and use the 'Add password' flow.",
-      "textFooter": "If you didn't request this email, ignore it — your account stays the same.",
-      "signature": "— Tarifle"
+      "textFooter": "If you didn't request this email, ignore it, your account stays the same.",
+      "signature": "The Tarifle team"
     },
     "newsletterWeekly": {
-      "subject": "{siteName} — This week's editor picks",
+      "subject": "{siteName}: This week's editor picks",
       "eyebrow": "Weekly newsletter",
       "title": "What should we cook this week?",
       "greeting": "Hi,",
-      "intro": "This week's editor picks, newly added recipes, and trending cuisines — at a glance.",
+      "intro": "This week's editor picks, newly added recipes, and trending cuisines, at a glance.",
       "featuredHeading": "⭐ Editor's picks",
       "recentHeading": "🆕 Fresh this week",
       "cuisinesHeading": "🌍 Trending cuisines this week",
       "recipesWord": "recipes",
       "cta": "Open Tarifle",
-      "outro": "Try one of these — when you do, you can share your adaptation on the recipe page.",
+      "outro": "Try one of these, when you do, you can share your adaptation on the recipe page.",
       "footer": "You're receiving this because you subscribed to Tarifle's weekly editor picks.",
       "unsubscribeLine": "Don't want these anymore?",
       "unsubscribeCta": "unsubscribe with one click"
@@ -486,7 +486,7 @@
     "userPhotos": {
       "pageTitle": "User Photos | Admin Panel",
       "heading": "📸 User Photos",
-      "subtitle": "Moderate photos users upload to recipes. When the feature flag is off, the upload form and grid are hidden — existing photos are preserved.",
+      "subtitle": "Moderate photos users upload to recipes. When the feature flag is off, the upload form and grid are hidden, existing photos are preserved.",
       "toggleHeading": "Feature status",
       "toggleHelper": "When off, the recipe pages don't render the upload form or grid. Existing photos are kept and reappear when the flag is flipped back on.",
       "toggleTurnOn": "Turn feature on",
@@ -510,7 +510,7 @@
       "rowCheckboxAria": "Select row for bulk action",
       "selectAll": "Select all ({count})",
       "selected": "{count} selected",
-      "selectedEmpty": "Nothing selected — tick rows to begin",
+      "selectedEmpty": "Nothing selected, tick rows to begin",
       "bulkApprove": "Approve selected",
       "bulkHide": "Hide selected",
       "clearSelection": "Clear selection",
@@ -519,12 +519,12 @@
       "error_no-ids": "No records selected.",
       "error_too-many": "Only 50 at a time. Reduce the selection.",
       "error_unauthorized": "Not authorised.",
-      "error_unknown": "Unexpected error — try again."
+      "error_unknown": "Unexpected error, try again."
     },
     "analytics": {
       "pageTitle": "Analytics | Admin Panel",
       "heading": "📊 Analytics Dashboard",
-      "subtitle": "Community health metrics — last 7 days growth, subscriber/review pace, popular content.",
+      "subtitle": "Community health metrics, last 7 days growth, subscriber/review pace, popular content.",
       "metricsHeading": "Core Metrics",
       "metricTotalRecipes": "Total Recipes",
       "metricTotalUsers": "Total Users",
@@ -539,7 +539,7 @@
       "viewTrendTotalSuffix": "views",
       "viewTrendDayAria": "{date} · {count} views",
       "searchFreqLabel": "🔍 Top Searches",
-      "searchFreqComingSoon": "Search query logging is not active yet — infrastructure coming soon.",
+      "searchFreqComingSoon": "Search query logging is not active yet, infrastructure coming soon.",
       "searchFreqWindow": "Last 7 days",
       "searchFreqCountSuffix": "searches",
       "searchFreqEmpty": "No search logs in the last 7 days.",
@@ -555,7 +555,7 @@
     },
     "common": {
       "paginationAria": "Pagination",
-      "paginationSingle": "{count} records — single page.",
+      "paginationSingle": "{count} records, single page.",
       "paginationRange": "{from}–{to} / {total}",
       "paginationPrev": "‹ Previous",
       "paginationNext": "Next ›",
@@ -653,7 +653,7 @@
     },
     "reviewsBrowse": {
       "heading": "Comments",
-      "subtitle": "User comments on recipes, newest first. Not a moderation queue — browse + audit only.",
+      "subtitle": "User comments on recipes, newest first. Not a moderation queue, browse + audit only.",
       "presetLast7": "Last 7 days",
       "presetLast30": "Last 30 days",
       "presetThisMonth": "This month",
@@ -662,7 +662,7 @@
       "customFromLabel": "From",
       "customToLabel": "To",
       "applyCustom": "Apply",
-      "allWarning": "Loading all comments — may be a large list.",
+      "allWarning": "Loading all comments, may be a large list.",
       "statusChip": "{status}",
       "totalFound": "{count} comments",
       "empty": "No comments in this range.",
@@ -670,7 +670,7 @@
       "byAuthor": "@{username}",
       "onRecipe": "on recipe:",
       "hiddenReason": "Hidden reason:",
-      "noComment": "(no comment text — rating only)"
+      "noComment": "(no comment text, rating only)"
     },
     "reports": {
       "variationsHeading": "Reported Adaptations ({count})",
@@ -886,7 +886,7 @@
       "metaDifficulty": "Difficulty",
       "metaCuisine": "Cuisine",
       "metaAllergens": "Allergens",
-      "metaNone": "—",
+      "metaNone": "·",
       "starDistTitle": "Star distribution"
     },
     "userDetail": {
@@ -962,7 +962,7 @@
       "activityThisWeek": "This week",
       "activityThisMonth": "This month",
       "growthHeading": "📈 User growth (last 30 days)",
-      "growthAria": "Last 30 days of daily new users — total {total}",
+      "growthAria": "Last 30 days of daily new users, total {total}",
       "growthDayTitle": "{day}: {count} signups",
       "growthTotal": "Total: {count} signups",
       "reviewDistHeading": "⭐ Review star distribution",
@@ -989,7 +989,7 @@
       "batchesEmpty": "No batches yet (shows once 5+ recipes INSERT in the same hour).",
       "batchDateHeader": "Date · hour (UTC)",
       "batchCountHeader": "Recipe count",
-      "batchesFooter": "Hourly buckets — appears when 5+ recipes INSERT in the same hour.",
+      "batchesFooter": "Hourly buckets, appears when 5+ recipes INSERT in the same hour.",
       "categoriesHeading": "Category distribution",
       "cuisinesHeading": "🌍 Cuisine distribution"
     }
@@ -1015,9 +1015,9 @@
     "kvkkHeading": "KVKK / Data requests",
     "kvkkHelp": "Access, correction, or deletion of your personal data. We respond within 30 days under Turkish Data Protection Law.",
     "moderationHeading": "Content moderation",
-    "moderationHelp": "Report a recipe, variation, or review directly from the content page — the report button sends it straight to our moderation queue.",
+    "moderationHelp": "Report a recipe, variation, or review directly from the content page, the report button sends it straight to our moderation queue.",
     "responseNoteHeading": "Response time",
-    "responseNote": "We're a small team — expect a reply within a few business days.",
+    "responseNote": "We're a small team, expect a reply within a few business days.",
     "privacyNoticeHeading": "How is your data handled?",
     "privacyNoticeBody": "When you email us, we process your data only to respond. For details see",
     "privacyNoticeLink": "the Contact Privacy Notice."
@@ -1104,11 +1104,11 @@
     "languageSaveError": "Could not save language preference",
     "preferences": {
       "title": "Personalisation preferences",
-      "description": "Tell us what you like — discovery and recommendations will adapt to your picks. Each section is multi-select; tap again to remove.",
+      "description": "Tell us what you like, discovery and recommendations will adapt to your picks. Each section is multi-select; tap again to remove.",
       "tagsTitle": "Tags you're into",
       "tagsHelp": "Pick the themes you'd like to see more of (quick, vegetarian, high-protein…).",
       "allergensTitle": "Allergens to avoid",
-      "allergensHelp": "Recipes containing these will be pushed down in listings. Not medical advice — always double-check ingredient labels.",
+      "allergensHelp": "Recipes containing these will be pushed down in listings. Not medical advice, always double-check ingredient labels.",
       "cuisinesTitle": "Favourite cuisines",
       "cuisinesHelp": "Pick the cuisines you'd like to see more of. With no picks, all cuisines get equal weight.",
       "save": "Save",
@@ -1127,7 +1127,7 @@
       "usernameHelper": "Lowercase letters, digits, <code>_</code> and <code>-</code> only. Must start with a letter.",
       "usernameChangeWarning": "If you change it, your profile link becomes brand new.",
       "bioLabel": "Bio",
-      "bioPlaceholder": "Tell us a little about yourself — favourite recipes, cooking style, etc.",
+      "bioPlaceholder": "Tell us a little about yourself, favourite recipes, cooking style, etc.",
       "bioCounter": "{count}/300",
       "errorDefault": "Could not update.",
       "successMessage": "Your profile has been updated.",
@@ -1149,7 +1149,7 @@
       "mismatchBanner": "The Google account you chose isn't registered as <email>{email}</email>. To link your account you need to choose the Google identity with the same email.",
       "sessionBanner": "The linking request expired. Please try again.",
       "unlinkSuccessBanner": "Your Google account has been unlinked.",
-      "needPasswordHint": "To unlink your Google account you first need to add a password — you can add one from the Password card below.",
+      "needPasswordHint": "To unlink your Google account you first need to add a password, you can add one from the Password card below.",
       "unlink": "Unlink account",
       "unlinking": "Unlinking…",
       "link": "Link Google account",
@@ -1182,7 +1182,7 @@
       "description": "You can permanently delete your account. This action can't be undone. Your adaptations, collections, likes and notifications will be removed.",
       "openButton": "Delete Account",
       "closeButton": "Close",
-      "confirmDialog": "Your account will be permanently deleted. All your adaptations, collections, likes and notifications will be removed. This action can't be undone — do you want to continue?",
+      "confirmDialog": "Your account will be permanently deleted. All your adaptations, collections, likes and notifications will be removed. This action can't be undone, do you want to continue?",
       "confirmLabel": "Confirmation",
       "confirmHelper": "To continue, type your username exactly:",
       "passwordLabel": "Your password",
@@ -1221,7 +1221,7 @@
       "error_cannot-follow-self": "You can't follow yourself.",
       "error_account-suspended": "Your account is suspended.",
       "error_target-not-found": "User not found.",
-      "error_unknown": "Unexpected error — try again."
+      "error_unknown": "Unexpected error, try again."
     },
     "followList": {
       "followersPageTitle": "{username}'s followers | Tarifle",
@@ -1307,7 +1307,7 @@
     "pageDescription": "Recent adaptations from people you follow.",
     "eyebrow": "Feed",
     "heading": "From people you follow",
-    "subtitle": "Adaptations shared in the last 30 days by cooks you follow — newest first.",
+    "subtitle": "Adaptations shared in the last 30 days by cooks you follow, newest first.",
     "emptyTitle": "Nothing yet",
     "emptyBody": "Either you aren't following anyone or they haven't shared in 30 days. Browse recipes and follow the cooks whose adaptations you like.",
     "emptyCta": "Browse recipes",
@@ -1321,14 +1321,14 @@
     "breadcrumbTags": "Tags",
     "breadcrumbDiets": "Diets",
     "cuisinePageTitle": "{label} Recipes",
-    "cuisineMetaTitle": "{label} Recipes — {count} recipes",
+    "cuisineMetaTitle": "{label} Recipes, {count} recipes",
     "cuisineMetaDescription": "{count} recipes from {label} cuisine. {description}",
     "tagPageTitle": "{label} Recipes",
-    "tagMetaTitle": "{label} Recipes — {count} recipes",
+    "tagMetaTitle": "{label} Recipes, {count} recipes",
     "tagMetaDescription": "{count} recipes tagged \"{label}\". Easy filters, detailed ingredient list and allergen info.",
     "dietPageTitle": "{label} Recipes",
-    "dietMetaTitle": "{label} Recipes — {count} recipes",
-    "dietMetaDescription": "{label} recipes — {count} options. {description}",
+    "dietMetaTitle": "{label} Recipes, {count} recipes",
+    "dietMetaDescription": "{label} recipes, {count} options. {description}",
     "totalCount": "{count} recipes",
     "emptyTitle": "No recipes yet",
     "emptyBody": "No recipes added for this filter yet. More coming soon.",
@@ -1385,8 +1385,8 @@
   "newsletter": {
     "form": {
       "footerHeading": "Weekly editor's pick",
-      "footerSubtitle": "New recipes + cooking notes — one email a week, unsubscribe anytime.",
-      "inlineHeading": "Weekly picks — straight to your inbox",
+      "footerSubtitle": "New recipes + cooking notes, one email a week, unsubscribe anytime.",
+      "inlineHeading": "Weekly picks, straight to your inbox",
       "inlineSubtitle": "5-6 handpicked recipes and short cooking tips every week from Tarifle editors. No ads, no spam.",
       "emailPlaceholder": "you@email.com",
       "submit": "Subscribe",
@@ -1399,7 +1399,7 @@
       "title": "Subscription confirmed",
       "description": "Your Tarifle newsletter subscription is active.",
       "heading": "Subscription confirmed",
-      "body": "Thanks — the weekly editor's pick is now on its way. Expect the first email in a few days.",
+      "body": "Thanks, the weekly editor's pick is now on its way. Expect the first email in a few days.",
       "home": "Back to home"
     },
     "unsubscribed": {
@@ -1419,7 +1419,7 @@
   },
   "blog": {
     "pageTitle": "Blog",
-    "subtitle": "Kitchen guides, cooking techniques and ingredient deep-dives — long-form writing from Tarifle editors.",
+    "subtitle": "Kitchen guides, cooking techniques and ingredient deep-dives, long-form writing from Tarifle editors.",
     "emptyTitle": "No posts yet",
     "emptyBody": "Our first articles will land here soon.",
     "readingMinutes": "{minutes} min read",
@@ -1508,11 +1508,11 @@
     "pageTitle": "Contact Privacy Notice",
     "subtitle": "When you email us at koz.devs@gmail.com, we process your data only for responding to you and only within the scope of your message. Details below.",
     "kapsamHeading": "Scope",
-    "kapsamBody": "This notice applies to anyone — visitor or member — who reaches us through email, outside the Tarifle membership flow. General platform data processing is covered by the KVKK Privacy Notice as a separate document.",
+    "kapsamBody": "This notice applies to anyone, visitor or member, who reaches us through email, outside the Tarifle membership flow. General platform data processing is covered by the KVKK Privacy Notice as a separate document.",
     "dataHeading": "Data we process",
     "dataName": "Your name / sender name you provide",
     "dataEmail": "Your email address (Gmail returns it automatically)",
-    "dataMessage": "The content of your message (whatever you write — may contain personal data)",
+    "dataMessage": "The content of your message (whatever you write, may contain personal data)",
     "dataHeaders": "Email headers (timestamp, routing, anti-spam checks)",
     "purposeHeading": "Purpose and legal basis",
     "purposeResponse": "Understanding and replying to your request (KVKK Art. 5/2-f, legitimate interest: mutual communication).",
@@ -1521,9 +1521,9 @@
     "retentionHeading": "Retention",
     "retentionBody": "Email threads stay in the Gmail account while actively being tracked. After resolution, we keep them for up to 1 year for reference and then delete. If a legal process is triggered, retention follows the mandatory statutory period.",
     "transferHeading": "Transfer",
-    "transferBody": "Your messages are read only by Tarifle's administrator. They are not shared with third parties — apart from Google Mail infrastructure (Gmail servers in EU/US). Our outbound mail provider Resend (EU) only handles mail we SEND out; incoming mail lands directly in Gmail.",
+    "transferBody": "Your messages are read only by Tarifle's administrator. They are not shared with third parties, apart from Google Mail infrastructure (Gmail servers in EU/US). Our outbound mail provider Resend (EU) only handles mail we SEND out; incoming mail lands directly in Gmail.",
     "rightsHeading": "Exercising your rights",
-    "rightsBody": "You can request deletion, correction or a copy of the email you sent. The process is covered in KVKK Privacy Notice, Section 7 — send an email with the subject line \"KVKK Veri Talebi\" to the same address.",
+    "rightsBody": "You can request deletion, correction or a copy of the email you sent. The process is covered in KVKK Privacy Notice, Section 7, send an email with the subject line \"KVKK Veri Talebi\" to the same address.",
     "crosslinkLead": "Related documents:",
     "crosslinkKvkk": "KVKK Privacy Notice (platform-wide)",
     "crosslinkGizlilik": "Privacy Policy (third-party processors)"
@@ -1561,7 +1561,7 @@
   },
   "categoriesLanding": {
     "pageTitle": "Categories",
-    "subtitle": "All recipe categories on one page — jump straight to the cuisine type you're after.",
+    "subtitle": "All recipe categories on one page, jump straight to the cuisine type you're after.",
     "recipeCount": "{count} recipes",
     "empty": "No categories defined yet.",
     "totalCount": "{total} categories"
@@ -1588,7 +1588,7 @@
   "aiAssistant": {
     "pageEyebrow": "AI Assistant",
     "pageTitle": "Find a recipe from what you have",
-    "pageSubtitle": "List the ingredients in your pantry and we'll bring you the best-matching recipes. You'll also see what's missing — so you know what you can cook without going to the store.",
+    "pageSubtitle": "List the ingredients in your pantry and we'll bring you the best-matching recipes. You'll also see what's missing, so you know what you can cook without going to the store.",
     "recentSearches": "Recent searches",
     "form": {
       "ingredientsLabel": "Ingredients you have",
@@ -1745,7 +1745,7 @@
   "pwa": {
     "install": {
       "title": "Add Tarifle to your home screen",
-      "nativeBody": "Install it like an app — launches faster and works offline.",
+      "nativeBody": "Install it like an app, launches faster and works offline.",
       "nativeCta": "Install",
       "nativeDismiss": "Later",
       "iosBody": "Tap the Share button, scroll down, and choose \"Add to Home Screen\".",
@@ -1797,7 +1797,7 @@
       "descriptionMaxNote": "Max. 300 characters.",
       "ingredientsLabel": "Ingredients",
       "ingredientsRequired": "*",
-      "ingredientsHelp": "Enter quantity, unit and name in separate fields for each ingredient. If no unit is needed, leave \"— unit —\" selected.",
+      "ingredientsHelp": "Enter quantity, unit and name in separate fields for each ingredient. If no unit is needed, leave \"select unit\" selected.",
       "stepsLabel": "Instructions *",
       "stepsLabelHint": "(one step per line)",
       "stepsPlaceholder": "Cut the eggplants lengthwise in half\nScoop out the inside with a spoon\nBake at 180°C for 20 min",
@@ -1861,7 +1861,7 @@
     "sectionTitle": "Ratings & Reviews ({count})",
     "reviewCount": "{count} reviews",
     "loginPrompt": "To leave a review, <link>sign in</link>.",
-    "empty": "No reviews yet — did you try it? How did it turn out, what did you change? Help the next cook.",
+    "empty": "No reviews yet, did you try it? How did it turn out, what did you change? Help the next cook.",
     "form": {
       "titleNew": "Leave a review",
       "titleEdit": "Edit your review",
@@ -1909,7 +1909,7 @@
       "submit": "Upload",
       "submitting": "Uploading…",
       "cancel": "Cancel",
-      "uploadSuccess": "Photo uploaded — thanks!",
+      "uploadSuccess": "Photo uploaded, thanks!",
       "errorFileRequired": "Pick a photo.",
       "errorFileTooLarge": "File must be under 5 MB.",
       "errorFileType": "Only JPEG, PNG, WebP or HEIC are accepted.",
@@ -1917,10 +1917,10 @@
       "errorEmailNotVerified": "Verify your email first.",
       "errorAccountSuspended": "Your account is suspended.",
       "errorFeatureDisabled": "Photo uploads are currently disabled.",
-      "errorRateLimited": "Too many uploads — wait a bit and try again.",
+      "errorRateLimited": "Too many uploads, wait a bit and try again.",
       "errorUploadFailed": "Upload failed, can you try again?",
       "errorRecipeNotFound": "Recipe not found.",
-      "errorUnknown": "Unexpected error — reload and try again.",
+      "errorUnknown": "Unexpected error, reload and try again.",
       "deleteConfirm": "Delete this photo?",
       "deleteAria": "Delete photo",
       "defaultAlt": "Photo uploaded by {author}",
@@ -1930,7 +1930,7 @@
     "tipNoteLabel": "💡 Tip:",
     "servingSuggestionLabel": "🍽️ Serving suggestion:",
     "allergenDisclosure": "This recipe may contain allergens",
-    "allergenDisclaimer": "Allergens are derived automatically from the ingredient list, covering the main groups of the EU-14 food allergen standard (gluten, milk, eggs, peanuts, tree nuts, soy, seafood, sesame, celery, mustard). Cross-contamination (shared kitchen equipment, shared surfaces) isn't tracked — if you have a serious allergy, review the full ingredient list yourself and ask about preparation.",
+    "allergenDisclaimer": "Allergens are derived automatically from the ingredient list, covering the main groups of the EU-14 food allergen standard (gluten, milk, eggs, peanuts, tree nuts, soy, seafood, sesame, celery, mustard). Cross-contamination (shared kitchen equipment, shared surfaces) isn't tracked, if you have a serious allergy, review the full ingredient list yourself and ask about preparation.",
     "allergenListAria": "Allergen contents: {list}",
     "variationsTitle": "Community Adaptations ({count})",
     "variationSortNewest": "Newest",
@@ -1940,8 +1940,8 @@
     "cuisineDiscoveryLink": "More recipes from {label} cuisine →",
     "viewCount": "{count} views",
     "viewsThisWeek": "{count} this week",
-    "tagTooltipVegan": "Vegan — no animal products",
-    "tagTooltipVegetarian": "Vegetarian — no meat, poultry or fish",
+    "tagTooltipVegan": "Vegan, no animal products",
+    "tagTooltipVegetarian": "Vegetarian, no meat, poultry or fish",
     "tagsAriaLabel": "Recipe tags",
     "ingredients": {
       "title": "Ingredients",

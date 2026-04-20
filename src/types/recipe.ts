@@ -48,7 +48,7 @@ export interface RecipeDetail {
   allergens: Allergen[];
   cuisine: string | null;
   /**
-   * Recipe.translations Json? — locale-keyed bundle
+   * Recipe.translations Json?, locale-keyed bundle
    * ({ en?: { title, description, ingredients[], steps[], tipNote,
    * servingSuggestion } }). Schema in prisma/schema.prisma. Runtime shape
    * narrowed by `src/lib/recipe/translate.ts` helpers. `unknown` typed
@@ -90,7 +90,7 @@ export interface RecipeDetail {
     id: string;
     miniTitle: string;
     description: string | null;
-    // JSON columns — coerced to string[] in components.
+    // JSON columns, coerced to string[] in components.
     ingredients: unknown;
     steps: unknown;
     notes: string | null;

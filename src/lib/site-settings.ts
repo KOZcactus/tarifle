@@ -2,12 +2,12 @@ import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 
 /**
- * Key/value runtime flags — admin panel'den tek tıkla toggle edilir.
+ * Key/value runtime flags, admin panel'den tek tıkla toggle edilir.
  * Duyurular için `Announcement` modeli ayrı; bu store yalnızca boolean
  * feature flag + kısa string config içindir.
  *
  * Cache: 60s unstable_cache + tag `site-setting:<key>`. Toggle sonrası
- * action `revalidateTag` çağırır — bir sonraki read taze değerle gelir.
+ * action `revalidateTag` çağırır, bir sonraki read taze değerle gelir.
  * Tam CDN invalidation değil (cross-region Neon replica yok) ama Next.js
  * local cache TTL aynı süre içinde yayılır.
  */
@@ -43,13 +43,13 @@ export async function getBooleanSetting(
   return raw === "true" || raw === "1";
 }
 
-/** Tek-çağrıda user-photos feature flag'i okur — hot path helper. */
+/** Tek-çağrıda user-photos feature flag'i okur, hot path helper. */
 export async function isUserPhotosEnabled(): Promise<boolean> {
   return getBooleanSetting(SITE_SETTING_KEYS.USER_PHOTOS_ENABLED, false);
 }
 
 /**
- * Upsert helper — sadece admin action'ından çağrılır, kendi auth guard'ı
+ * Upsert helper, sadece admin action'ından çağrılır, kendi auth guard'ı
  * vardır (admin.ts'deki toggleUserPhotosFeatureAction). Bu helper saf DB
  * writer, cache invalidation çağrıya bırakılır (server action revalidates).
  */

@@ -15,12 +15,12 @@ const TONE_CLASSES: Record<string, string> = {
 };
 
 /**
- * Rozet vitrini — eski yatay chip dizisi yerine 2-3-4 column kart grid.
+ * Rozet vitrini, eski yatay chip dizisi yerine 2-3-4 column kart grid.
  * Her kart: büyük emoji + label + açıklama + kazanılma tarihi. Kullanıcı
  * profiline geldiğinde rozetleri "koleksiyon" gibi görsel olarak algılar;
  * küçük chip'ler kalabalık izlenimi veriyordu.
  *
- * Boş rozet listesinde hiç section render etmez — yeni kullanıcıda
+ * Boş rozet listesinde hiç section render etmez, yeni kullanıcıda
  * "henüz rozet yok" placeholder gürültü olur.
  */
 export async function BadgeShelf({ badges }: BadgeShelfProps) {

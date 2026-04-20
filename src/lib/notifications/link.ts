@@ -4,7 +4,7 @@ import type { NotificationType } from "@prisma/client";
  * Single source of truth for "where should clicking this notification take
  * the user?". Lives outside the create helpers so legacy DB rows (whose
  * `link` was set with the old logic) get the right destination on render
- * — we override based on type rather than trusting the stored link.
+ *, we override based on type rather than trusting the stored link.
  *
  * VARIATION_HIDDEN intentionally returns `/bildirimler`: the variation is
  * not visible on the recipe page anymore, so sending the user there is
@@ -25,7 +25,7 @@ export function resolveNotificationLink(
       return "/bildirimler";
     case "VARIATION_LIKED":
     case "VARIATION_APPROVED":
-      // Stored link is the recipe URL — content is live, take user there.
+      // Stored link is the recipe URL, content is live, take user there.
       return storedLink ?? null;
     case "BADGE_AWARDED":
       return storedLink ?? "/bildirimler";

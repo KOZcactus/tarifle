@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title: t("title"), robots: { index: false, follow: false } };
 }
 
-// Personal settings — never prerender.
+// Personal settings, never prerender.
 export const dynamic = "force-dynamic";
 
 interface AyarlarPageProps {
@@ -91,7 +91,7 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
 
         <PasswordChangeCard hasPassword={!!user.passwordHash} />
 
-        {/* Language preference — placeholder until Faz 3 i18n wiring.
+        {/* Language preference, placeholder until Faz 3 i18n wiring.
             Placed before the destructive "delete account" card so it
             stays in the "everyday settings" cluster, not next to danger. */}
         <LanguagePreferenceCard />

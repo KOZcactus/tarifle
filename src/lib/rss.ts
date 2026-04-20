@@ -91,7 +91,7 @@ export function buildRssXml(
     `  <description>${escapeXml(channel.description)}</description>`,
     `  <language>${escapeXml(channel.language)}</language>`,
     `  <lastBuildDate>${toRssDate(channel.lastBuildDate)}</lastBuildDate>`,
-    // atom:link self-reference — feed reader'lara "bu kanalın canonical
+    // atom:link self-reference, feed reader'lara "bu kanalın canonical
     // URL'i" der. RSS 2.0 best practice (Feed Validator uyarı basar yoksa).
     `  <atom:link href="${escapeXml(feedUrl)}" rel="self" type="application/rss+xml" />`,
   ];

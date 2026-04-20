@@ -1,12 +1,12 @@
 /**
  * Rule-based pre-flight checks for user-submitted variations. Run AFTER the
- * hard blacklist filter — if blacklist catches profanity we reject outright
+ * hard blacklist filter, if blacklist catches profanity we reject outright
  * with an explicit error. Pre-flight signals are softer: each one suggests
  * the content might need a human eye, but none of them on its own means the
  * content is definitely bad. When any fire, the variation is saved as
  * `PENDING_REVIEW` so a moderator can glance at it before it goes live.
  *
- * The rules are deliberately conservative — we'd rather flag a legit user
+ * The rules are deliberately conservative, we'd rather flag a legit user
  * and unblock them in seconds than auto-publish a spam post. The admin UI
  * shows the exact flag codes so reviewers know what tripped the net.
  *
@@ -44,7 +44,7 @@ const MIN_STEPS = 1;
 const MAX_STEPS = 25;
 
 // 5+ identical characters in a row = "aaaaaa" style spam signal. We accept
-// 4 in a row (common in real Turkish words and emphasis — "merhabaaa").
+// 4 in a row (common in real Turkish words and emphasis, "merhabaaa").
 const REPEATED_CHAR_PATTERN = /(.)\1{4,}/u;
 
 const URL_PATTERN =
@@ -54,7 +54,7 @@ const URL_PATTERN =
  * Undo the obvious link-obfuscation tricks before running URL_PATTERN so
  * "site . com", "site[dot]com", "site (nokta) com" all collapse into their
  * real shape ("site.com") and get flagged. Kept intentionally conservative
- * — we don't try to invert every encoding, just the ones commonly used to
+ *, we don't try to invert every encoding, just the ones commonly used to
  * slip promo links past plain regex filters.
  */
 function unobfuscateForUrlCheck(text: string): string {
@@ -65,7 +65,7 @@ function unobfuscateForUrlCheck(text: string): string {
       .replace(/(\w)\s*(?:dot|nokta)\s*(\w)/g, "$1.$2")
       // Bracketed forms [dot], (nokta), {dot}
       .replace(/\s*[[(\{]\s*(?:dot|nokta|\.)\s*[\])}]\s*/g, ".")
-      // "site . com" / "site .com" / "site. com" — spaces around a literal dot
+      // "site . com" / "site .com" / "site. com", spaces around a literal dot
       .replace(/\s*\.\s*/g, ".")
   );
 }
@@ -109,7 +109,7 @@ export function computePreflightFlags(input: PreflightInput): PreflightResult {
     flags.add("contains_url");
   }
 
-  // CAPS check targets title + description — users abbreviating in steps
+  // CAPS check targets title + description, users abbreviating in steps
   // (e.g. "TL", "MM") shouldn't trigger it.
   const titleDesc = `${input.miniTitle} ${input.description ?? ""}`;
   if (uppercaseRatio(titleDesc) > 0.7) flags.add("excessive_caps");

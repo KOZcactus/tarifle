@@ -37,7 +37,7 @@ function splitLines(raw: string | null): string[] {
 
 /**
  * The new ingredient form posts a JSON-encoded array. We tolerate two legacy
- * shapes so old clients — or anyone scripting against the action — still
+ * shapes so old clients, or anyone scripting against the action, still
  * submit successfully: a raw `string[]` JSON blob, and a newline-separated
  * textarea body. `variationSchema` normalises both into the structured
  * `{amount, unit, name}` canonical form.
@@ -57,7 +57,7 @@ function parseIngredientsField(raw: string | null): unknown[] {
     }
   }
 
-  // Legacy textarea — newline-separated strings.
+  // Legacy textarea, newline-separated strings.
   return splitLines(trimmed);
 }
 
@@ -69,7 +69,7 @@ export async function createVariation(formData: FormData): Promise<VariationResu
 
   // Iki katmanli rate limit: kisa pencere burst'i (3/saat) ve gunluk hacmi
   // (10/gun) ayri ayri kontrol et. Ikisinden hangisi trip ederse kullaniciya
-  // o mesaj gider. Badge awarding buradan sonraya kaliyor — rate-limit
+  // o mesaj gider. Badge awarding buradan sonraya kaliyor, rate-limit
   // donunde kazara rozet verme riski yok.
   const rlId = rateLimitIdentifier(session.user.id);
   const burst = await checkRateLimit("variation-create", rlId);
@@ -103,7 +103,7 @@ export async function createVariation(formData: FormData): Promise<VariationResu
   const { recipeId, miniTitle, description, ingredients, steps, notes } =
     parsed.data;
 
-  // Strict PUBLISHED check — DRAFT/PENDING_REVIEW/HIDDEN/REJECTED are all
+  // Strict PUBLISHED check, DRAFT/PENDING_REVIEW/HIDDEN/REJECTED are all
   // invalid targets for community variations. Prevents users from attaching
   // content to in-review or admin-private recipes via crafted IDs.
   const recipe = await prisma.recipe.findUnique({
@@ -116,7 +116,7 @@ export async function createVariation(formData: FormData): Promise<VariationResu
 
   // Flatten structured ingredients to plain text lines so the blacklist +
   // preflight heuristics (string-based) still work. We keep the structured
-  // form for DB writes below — this is display-only.
+  // form for DB writes below, this is display-only.
   const ingredientLines = ingredients.map(formatIngredient);
 
   // Argo/küfür kontrolü
@@ -137,7 +137,7 @@ export async function createVariation(formData: FormData): Promise<VariationResu
   }
 
   // Pre-flight heuristics (rule-based). Blacklist already caught outright
-  // profanity above. These are softer signals — if any fire, the variation
+  // profanity above. These are softer signals, if any fire, the variation
   // is saved as PENDING_REVIEW so a moderator eyeballs it before it goes
   // live. Clean content goes straight to PUBLISHED as before.
   const preflight = computePreflightFlags({
@@ -168,12 +168,12 @@ export async function createVariation(formData: FormData): Promise<VariationResu
     },
   });
 
-  // Best-effort badge grant — never block the publish path.
+  // Best-effort badge grant, never block the publish path.
   awardFirstVariationBadge(session.user.id).catch((err) => {
     console.error("[variation] badge grant failed:", err);
   });
 
-  // Fan-out bildirimi — sadece PUBLISHED içerik için. PENDING_REVIEW'da
+  // Fan-out bildirimi, sadece PUBLISHED içerik için. PENDING_REVIEW'da
   // takipçilere haber vermiyoruz; admin approve ederse notifyVariation
   // ApprovedExt olarak eklenebilir (v2). Sorgular sıralı çünkü follower
   // sayısı genelde küçük (<200); Promise.allSettled spam güvenliği +
@@ -204,7 +204,7 @@ export async function createVariation(formData: FormData): Promise<VariationResu
  * if support needs to reconstruct what happened.
  *
  * Authorization rule: session.user.id must equal variation.authorId. Anyone
- * else — including admins — uses the moderation queue (hide / reject) which
+ * else, including admins, uses the moderation queue (hide / reject) which
  * preserves the row for audit. An admin who also happens to be the author
  * still goes through this path; the ownership check is what matters.
  *
@@ -238,7 +238,7 @@ export async function deleteOwnVariationAction(
     return { success: false, error: "Uyarlama bulunamadı." };
   }
   if (variation.authorId !== session.user.id) {
-    // Deliberately terse — don't confirm the variation exists to a non-owner.
+    // Deliberately terse, don't confirm the variation exists to a non-owner.
     return { success: false, error: "Bu uyarlamayı silme yetkin yok." };
   }
 
@@ -259,7 +259,7 @@ export async function deleteOwnVariationAction(
   ]);
 
   // Refresh the two surfaces where the deleted uyarlama would have been
-  // visible — recipe detail (other visitors) and the author's profile.
+  // visible, recipe detail (other visitors) and the author's profile.
   revalidatePath(`/tarif/${variation.recipe.slug}`);
   if (session.user.username) {
     revalidatePath(`/profil/${session.user.username}`);

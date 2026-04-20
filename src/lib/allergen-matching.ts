@@ -68,7 +68,7 @@ export const ALLERGEN_RULES: AllergenRule[] = [
       "tortellini", "orzo", "pastitsio",
       "tost", "bagel", "milfoy", "pita", "tandir ekmeg",
       "muffin", "kruton", "güllaç", "misugaru",
-      // "arpa" intentionally excluded — false positive with "arpacık soğan"
+      // "arpa" intentionally excluded, false positive with "arpacık soğan"
     ],
     excludePatterns: [
       "pirinç unu", "mısır unu", "pirinç eriştesi", "pirinç nişastası",
@@ -77,7 +77,7 @@ export const ALLERGEN_RULES: AllergenRule[] = [
       "yapışkan pirinç unu", "manyok unu", "manyok nişastası",
       "pirinç keki", "pirinç noodle", "cam noodle",
       "mısır tortilla", "tortilla cipsi",
-      // NOTE: "ramen noodle" intentionally NOT excluded — wheat-based
+      // NOTE: "ramen noodle" intentionally NOT excluded, wheat-based
     ],
     customMatch: (name) => {
       const lower = trLower(name);

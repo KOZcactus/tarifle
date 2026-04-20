@@ -11,7 +11,7 @@ interface ShareMenuProps {
   /**
    * Absolute URL of the share image. When provided, the Pinterest fallback
    * button uses this as the pre-seeded pin media (Pinterest cannot scrape
-   * the page at click time — it trusts the `media` query param). Tarif
+   * the page at click time, it trusts the `media` query param). Tarif
    * detay sayfasinda 2:3 portre OG variant URL'i tercih edilir.
    */
   imageUrl?: string;
@@ -21,7 +21,7 @@ interface ShareMenuProps {
  * Share menu with Web Share API + fallback (WhatsApp, X/Twitter, Pinterest, copy).
  *
  * On mobile browsers that expose `navigator.share`, we skip our dropdown and
- * let the OS native share sheet handle it — it covers every app the user has.
+ * let the OS native share sheet handle it, it covers every app the user has.
  */
 export function ShareMenu({ title, url, text, imageUrl }: ShareMenuProps) {
   const t = useTranslations("share");
@@ -53,7 +53,7 @@ export function ShareMenu({ title, url, text, imageUrl }: ShareMenuProps) {
         url,
       });
     } catch {
-      // User dismissed — ignore
+      // User dismissed, ignore
     }
   }
 

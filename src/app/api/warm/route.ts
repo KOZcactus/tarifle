@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
 /**
- * Connection warming endpoint — Vercel Cron her 4 dakikada bir hit eder,
+ * Connection warming endpoint, Vercel Cron her 4 dakikada bir hit eder,
  * Neon serverless connection'ı sıcak tutar. Scale-to-zero idle threshold
  * (Neon default 5 dk) geçmeden önce yeni request TTFB cold-start cezasını
  * ödemez.
@@ -12,7 +12,7 @@ import { prisma } from "@/lib/prisma";
  * Public GET kötü niyetli bir actor tarafından spam'lenirse bile maliyet
  * DB connection pool zaten warm olduğu için minimum.
  *
- * Response body gözlemleme amaçlı — Vercel Cron dashboard'da success/fail
+ * Response body gözlemleme amaçlı, Vercel Cron dashboard'da success/fail
  * ve süre görünür.
  *
  * Doğrudan GET:

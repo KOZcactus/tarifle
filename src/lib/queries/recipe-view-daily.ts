@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/prisma";
 
 /**
- * Günlük görüntülenme sayacı — `/tarif/[slug]` SSR akışında
+ * Günlük görüntülenme sayacı, `/tarif/[slug]` SSR akışında
  * fire-and-forget upsert. Recipe.viewCount toplam (all-time) kalırken
  * bu tablo gün-gün dağılımı tutar: admin analytics view trend grafiği
  * + ileride "bu hafta en çok okunan" listesi buradan beslenir.
@@ -10,7 +10,7 @@ import { prisma } from "@/lib/prisma";
  * bozmaz ve DST karmaşasına girmiyoruz.
  */
 
-/** UTC günü normalize et — saat/dakika bilgisini at. */
+/** UTC günü normalize et, saat/dakika bilgisini at. */
 export function toUtcDateBucket(instant: Date = new Date()): Date {
   return new Date(
     Date.UTC(instant.getUTCFullYear(), instant.getUTCMonth(), instant.getUTCDate()),
@@ -31,14 +31,14 @@ export async function logDailyView(recipeId: string): Promise<void> {
 }
 
 export interface DailyViewBucket {
-  /** ISO YYYY-MM-DD (UTC) — grafik ekseninde label olarak kullanılır. */
+  /** ISO YYYY-MM-DD (UTC), grafik ekseninde label olarak kullanılır. */
   date: string;
   /** O gün tüm tariflerde toplam görüntülenme. */
   views: number;
 }
 
 /**
- * Son N günün trend serisi. Boş günler 0 ile doldurulur — grafikte
+ * Son N günün trend serisi. Boş günler 0 ile doldurulur, grafikte
  * sürekli çizgi için.
  *
  * @param days Dahil edilen pencere uzunluğu (default 30). Bugün dahil.

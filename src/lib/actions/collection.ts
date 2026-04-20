@@ -45,7 +45,7 @@ export async function createCollectionAction(
       isPublic: parsed.data.isPublic,
     });
 
-    // Best-effort badge grant — never block create on a badge bug.
+    // Best-effort badge grant, never block create on a badge bug.
     maybeAwardCollectorBadge(userId).catch((err) => {
       console.error("[collection] badge grant failed:", err);
     });

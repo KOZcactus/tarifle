@@ -17,7 +17,7 @@ export interface NotificationBellItem {
   body: string | null;
   link: string | null;
   isRead: boolean;
-  createdAt: string; // ISO — serialisable over the RSC boundary
+  createdAt: string; // ISO, serialisable over the RSC boundary
 }
 
 interface NotificationBellProps {
@@ -31,7 +31,7 @@ interface NotificationBellProps {
  * client-side fetch. Marks items read optimistically on open; on outside
  * click or Escape the dropdown closes via useDismiss.
  *
- * The dropdown itself is server-time cached — we don't poll. A future pass
+ * The dropdown itself is server-time cached, we don't poll. A future pass
  * could add SWR or a tab-focus refetch to surface new items without reload.
  */
 export function NotificationBell({
@@ -50,7 +50,7 @@ export function NotificationBell({
    * Toggle open state. When we're opening (not closing), mark every currently
    * unread item as read so the badge clears without the user touching each
    * one. Optimistic UI flips immediately; the server write happens in a
-   * transition. On error we roll back so the badge reappears — silent sync
+   * transition. On error we roll back so the badge reappears, silent sync
    * failures would be worse than a stale badge.
    *
    * setOpen is called flat (no updater callback) so the surrounding setItems/
@@ -220,7 +220,7 @@ function BellIcon() {
 }
 
 /**
- * "şimdi" / "3 dk önce" / "2 saat önce" / "Dün" / "14 Nis" — client-side
+ * "şimdi" / "3 dk önce" / "2 saat önce" / "Dün" / "14 Nis", client-side
  * formatter. Intentionally coarse so we don't need a heavy date lib.
  */
 function formatRelative(iso: string): string {

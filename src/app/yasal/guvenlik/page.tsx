@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function GuvenlikPage() {
   const t = await getTranslations("legalSecurity");
 
-  /** "Bizim yaptıklarımız" bölümündeki kartlar — her biri başlık + body
+  /** "Bizim yaptıklarımız" bölümündeki kartlar, her biri başlık + body
    *  tek paragraf. Trendyol'daki formata sadık ama Tarifle'nin gerçek
    *  teknik önlemleriyle doldurulmuş (bcrypt, Upstash, Cloudflare vb.
    *  gerçekten kullanılan şeyler). Liste halinde tekrar önlemek için
@@ -38,8 +38,8 @@ export default async function GuvenlikPage() {
         <p className="mt-3 text-sm text-text-muted">{t("subtitle")}</p>
       </header>
 
-      {/* Sen — kullanıcının yapabilecekleri. Hesap + cihaz olmak üzere
-          iki alt başlık. Her madde tek cümle — tarama kolay. */}
+      {/* Sen, kullanıcının yapabilecekleri. Hesap + cihaz olmak üzere
+          iki alt başlık. Her madde tek cümle, tarama kolay. */}
       <section>
         <h2 className="font-heading text-xl font-semibold text-text">
           {t("youSection")}
@@ -71,9 +71,9 @@ export default async function GuvenlikPage() {
         </div>
       </section>
 
-      {/* Biz — altyapı + süreçsel önlemler. Emoji + başlık + paragraf
+      {/* Biz, altyapı + süreçsel önlemler. Emoji + başlık + paragraf
           formatı, Trendyol'daki "PCI DSS / ISO 27001" bölümlerine denk.
-          Kartlaştırma yapmadık — bilgi yoğun ama okuma akışı daha doğal. */}
+          Kartlaştırma yapmadık, bilgi yoğun ama okuma akışı daha doğal. */}
       <section className="mt-12">
         <h2 className="font-heading text-xl font-semibold text-text">
           {t("usSection")}

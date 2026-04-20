@@ -16,7 +16,7 @@ export async function toggleLikeAction(variationId: string, recipePath: string) 
   const isNowLiked = await toggleLike(session.user.id, variationId);
 
   if (isNowLiked) {
-    // Like only counts toward the author's POPULAR badge — best-effort.
+    // Like only counts toward the author's POPULAR badge, best-effort.
     maybeAwardPopularBadge(variationId).catch((err) => {
       console.error("[like] badge grant failed:", err);
     });
@@ -24,7 +24,7 @@ export async function toggleLikeAction(variationId: string, recipePath: string) 
     // Fire-and-forget notification to the variation author. We look the
     // row up here instead of passing it in because the caller has only
     // the variation id; the extra query is negligible compared to the
-    // like write itself. Self-likes skip — nobody wants "you liked your
+    // like write itself. Self-likes skip, nobody wants "you liked your
     // own thing" in their bell.
     (async () => {
       const variation = await prisma.variation.findUnique({

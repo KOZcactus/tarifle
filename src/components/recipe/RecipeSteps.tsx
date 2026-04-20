@@ -27,7 +27,7 @@ export function RecipeSteps({ steps }: RecipeStepsProps) {
             id={`step-${step.stepNumber}`}
             className="relative flex scroll-mt-20 gap-4"
           >
-            {/* Step Number — custom badge replaces the default <ol> marker.
+            {/* Step Number, custom badge replaces the default <ol> marker.
                 `list-none` + `pl-0` suppress the default "1.", "2." markers
                 that Tailwind 4 preflight leaves on ordered lists; without
                 that, screen readers and text-extraction tools (GPT audit,
@@ -68,7 +68,7 @@ function formatTimer(
   tCard: (key: string, values?: Record<string, string | number | Date>) => string,
 ): string {
   // Sub-minute steps (e.g. 30-second shake) should show as seconds, not
-  // "0 min" — `Math.floor(30/60)` is 0 and reads like a data bug.
+  // "0 min", `Math.floor(30/60)` is 0 and reads like a data bug.
   if (seconds > 0 && seconds < 60) return tCard("secondsShort", { n: seconds });
   const minutes = Math.floor(seconds / 60);
   if (minutes < 60) return tCard("minutesShort", { n: minutes });

@@ -39,7 +39,7 @@ export function BfCacheRestore() {
     function handleVisibilityChange() {
       if (document.visibilityState === "visible") {
         const elapsed = Date.now() - lastActive;
-        // Tab was hidden for 5+ minutes — soft refresh
+        // Tab was hidden for 5+ minutes, soft refresh
         if (elapsed > 5 * 60 * 1000) {
           router.refresh();
         }

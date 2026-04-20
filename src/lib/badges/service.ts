@@ -7,7 +7,7 @@ const COLLECTOR_THRESHOLD = 5;
 const POPULAR_THRESHOLD = 10;
 
 /**
- * Idempotent badge grant. Safe to call multiple times — uses a unique
+ * Idempotent badge grant. Safe to call multiple times, uses a unique
  * constraint, so concurrent inserts won't double-award.
  *
  * On a *new* grant (not a no-op retry) we fire-and-forget a notification.
@@ -40,7 +40,7 @@ export async function grantBadge(userId: string, key: BadgeKey): Promise<boolean
 }
 
 /**
- * Award the EMAIL_VERIFIED badge — call after consumeVerificationToken.
+ * Award the EMAIL_VERIFIED badge, call after consumeVerificationToken.
  */
 export async function awardEmailVerifiedBadge(email: string): Promise<void> {
   const user = await prisma.user.findUnique({
@@ -66,7 +66,7 @@ export async function awardFirstVariationBadge(userId: string): Promise<void> {
 
 /**
  * Award POPULAR_VARIATION when one of the user's variations crosses the
- * like threshold. Called after toggleLike — only checks the touched
+ * like threshold. Called after toggleLike, only checks the touched
  * variation's author, not all of the user's variations.
  */
 export async function maybeAwardPopularBadge(variationId: string): Promise<void> {

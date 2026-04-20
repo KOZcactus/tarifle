@@ -234,6 +234,10 @@ const TIP_RULES: TipNoteRule[] = [
       "Parçaları tencereye aynı anda doldurmayın; iki etaba bölmek kavurma yerine haşlanma riskini engeller.",
       "Kemikli et kullanıyorsanız kemiği önce yalayıp kavurmak et suyunu derinleştirir.",
       "Eti pişirmeden 20 dakika önce buzdolabından çıkarıp oda sıcaklığına getirmek eşit pişim sağlar.",
+      "Tuzlamayı pişirmeden hemen önce yapın, erken tuz et suyunu dışarı çeker ve kavurmayı zorlaştırır.",
+      "Pişirme sırasında sık karıştırmaktan kaçının, etin bir yüzeyinin tavaya 2-3 dakika temas etmesi tat tabakası oluşturur.",
+      "Eti ocaktan aldıktan sonra alüminyum folyoyla örtüp 5 dakika dinlendirmek suları eşit dağıtır.",
+      "Yağlı parçalar için eklenti yağa gerek yok, kendi yağıyla kızarır ve karamelize olur.",
     ],
   },
   {
@@ -243,6 +247,9 @@ const TIP_RULES: TipNoteRule[] = [
       "Tavuğu pişirmeden önce kağıt havluyla iyice kurulamak dış yüzeyin kızarmasını sağlar.",
       "Tavuğu tencereye koymadan 15 dakika oda sıcaklığında bekletirseniz eşit pişer, dış kabuk kurumaz.",
       "Tavuğun iç sıcaklığı 74 dereceye ulaştığında pişmiştir; kalın bölgeden termometre ile kontrol edin.",
+      "Tavuk göğsünü 20 dakika sütlü marine ile beklettiyseniz pişince kuru ve lifli olmaz.",
+      "Derili kısım için ters tarafı aşağı koyup pişirmeye başlayın, yağ yavaş çıkıp derisi çıtır olur.",
+      "Kemikli parçaları kemik yüzü üste gelecek şekilde yerleştirin, sular aşağı iner ve eti nemli tutar.",
     ],
   },
   {
@@ -408,6 +415,11 @@ const SERV_RULES: ServRule[] = [
       "Çorbayı derin kaseye boşaltıp üzerine eritilmiş tereyağında kavurulmuş nane dökün.",
       "Yanına ızgara lavaş veya simit dilimleri ve soğuk cacık koyarak tamamlayın.",
       "Küçük bir kase yoğurt, yanında maydanoz yaprakları ve bir limon dilimiyle sunun.",
+      "Taze doğranmış dereotu ve bir damla zeytinyağıyla sunum kurun, yanına kıtır ekmek iliştirin.",
+      "Çorbayı ince uzun kaselere alıp yanına turşu tabağı koyun, küçük bir kase pul biber ayrı dursun.",
+      "Üzerine rendelenmiş eski kaşar ve ince doğranmış taze nane yerleştirerek sunum kurun.",
+      "Yanına çıtır bruşetta ve sarımsaklı yoğurt sosu koyup kışlık tabak kurgulayın.",
+      "Porselen derin kaseye boşaltıp kenarına haşlanmış bir dilim yumurta ve taze soğan koyun.",
     ],
   },
   {
@@ -417,6 +429,12 @@ const SERV_RULES: ServRule[] = [
       "Buzdolabından çıkarıp 10 dakika oda sıcaklığında bekletip yanına bir fincan Türk kahvesiyle sunun.",
       "Tabak kenarına taze meyve dilimleri ve bir yaprak nane yerleştirip soğuk olarak verin.",
       "Üstüne bir parça fıstık tozu veya ince tarçın gezdirip porselen tabakta servis yapın.",
+      "Soğuk servis etmeden önce küçük dilimlere bölün; tabağın yanına sade bir kaşık krema koyun.",
+      "Üstüne iri kıyılmış çiğ fındık ve bir damla gül suyuyla sunum kurun.",
+      "Altına bir kaşık vişne reçeli, yanına soğuk süt bardağı koyarak çocuklu sofralara hazırlayın.",
+      "Buzdolabında bekletmiş tabakta tek porsiyon olarak, yanına demli ıhlamur fincanıyla verin.",
+      "Üstüne ince çekilmiş kakao ve iri kıyılmış Antep fıstığı gezdirip küçük porsiyon tabağında sunun.",
+      "Yanına kuru incir dilimi ve bir kaşık yoğurtla kontrastlı tadım tabağı oluşturun.",
     ],
   },
   {
@@ -426,6 +444,11 @@ const SERV_RULES: ServRule[] = [
       "Yüksek ince bardakta buzla birlikte verin, bardağın kenarını limon kabuğuyla gezdirip süsleyin.",
       "Kısa genişçe bir bardakta, üstüne taze meyve veya otlardan bir tutamla sunun.",
       "Şeffaf sürahide sunmak içeceğin rengini öne çıkarır, bardakları yanına ayrı dizin.",
+      "Bardağın ağzını tuz veya şekerle kaplayıp (rim) süsleyin, içine dik bir kamış koyun.",
+      "Tahta tepsiye buzlu bardağı, yanına limon dilimleri ve taze nane sapıyla sunum kurun.",
+      "Soğuk içecek için 1 saat önceden bardakları buzdolabında bekletin; sıcak camda aroma zayıflar.",
+      "Kısa köpüklü bardakta, üstüne ince rende muskat gezdirip Avrupai bir sunum verin.",
+      "Üzerine bir dilim taze zencefil ve küçük bir yaprak fesleğen ekleyip aromayı canlandırın.",
     ],
   },
   {
@@ -435,6 +458,11 @@ const SERV_RULES: ServRule[] = [
       "Taze ekmek, zeytin ve beyaz peynirle birlikte tabakta verin; yanına demli çay eşlik etsin.",
       "Kahvaltı tabağında domates, salatalık, yeşillik ve bir fincan sade kahveyle tamamlayın.",
       "Sıcak servis edip yanına bal, kaymak ve tereyağlı simit dilimleri koyun.",
+      "Sahan tabakta, yanına taze kıyılmış nane ve bir kase zeytinyağlı yoğurtla verin.",
+      "Tahta tepsiye yerleştirip bir sürahi portakal suyu ve karmaşık tane ekmek dilimleri ekleyin.",
+      "Yanına közlenmiş biber, salatalık turşusu ve sıcak çörek dilimleriyle serpintisiz sunum kurun.",
+      "Kişi başı küçük tava, yanında taze maydanoz ve dilimlenmiş tereyağıyla geleneksel kahvaltı kurgula.",
+      "Tabakta yumurta, peynir, bal-kaymak üçlüsü ve bir bardak sıcak sahlep eşlik ettiğinde tamamlanır.",
     ],
   },
   {
@@ -445,6 +473,10 @@ const SERV_RULES: ServRule[] = [
       "Tabakta kümeler halinde dizip üzerine iri dilimlenmiş zeytin ve beyaz peynir ekleyerek sunun.",
       "Soğuk servis için 10 dakika buzdolabında dinlendirin, yanına lavaş ekmek koyun.",
       "Üzerine ince dilimlenmiş turp ve maydanoz yapraklarıyla yaz tabaklarına uygun sunum kurun.",
+      "Tabağı tahta masaya koyup yanına ince dilimlenmiş limon ve bir kase sarımsaklı yoğurt iliştirin.",
+      "Servis öncesi üzerine sumak ve ince kıyılmış soğan serpip ekşi-tuzlu tabaka oluşturun.",
+      "Geniş tabakta tek katman halinde dizip, yanına sıcak pide ve bir kase zeytinyağıyla Akdeniz usulü sunun.",
+      "Kenara iri kıyılmış ceviz içi ve nar taneleri ekleyerek kış salatası sunumu hazırlayın.",
     ],
   },
   {
@@ -457,6 +489,10 @@ const SERV_RULES: ServRule[] = [
       "Tabakta küçük kaselerde veya ayrı bölümlerde sunun; yanına limon dilimi, taze ekmek ve bir kase zeytin yerleştirin.",
       "Oda sıcaklığında servis edin, tadını öne çıkarır; yanına kıtır ekmek veya lavaş dilimleri koyun.",
       "Üzerine sızma zeytinyağı ve pul biber gezdirip küçük derin tabakta mezelik sunum kurun.",
+      "Ahşap tepside 3-4 meze bir arada sunmak için yanına acılı ezme ve kısırla eşleştirin.",
+      "Üzerine kavrulmuş çam fıstığı ve taze kıyılmış dereotu serpip Ege sofrası kurgusu yapın.",
+      "Yanına turşu tabağı, zeytin ezmesi ve sıcak ekmekle meyhane usulü sofra tamamlayın.",
+      "Küçük cam kaselerde tabağın ortasına yerleştirip etrafına közlenmiş sebze dilimleri dizin.",
     ],
   },
   // Ingredient/technique-based rules AFTER (for YEMEK/SOS/ATISTIRMALIK types)
@@ -474,8 +510,11 @@ const SERV_RULES: ServRule[] = [
     match: (_, s) => s.hasChicken,
     variants: [
       "Pirinç pilavı veya buharı çekmiş bulgurla birlikte, yanında limonlu yeşillik karışımıyla tamamlayın.",
-      "Tabakta kuzu pembesi tabaka halinde dilimleyip üstüne pişme suyundan iki kaşık dökün.",
+      "Tabakta pembesi tabaka halinde dilimleyip üstüne pişme suyundan iki kaşık dökün.",
       "Yanına patates püresi ve karamelize soğan koyarak tavuk ızgarayı öne çıkarın.",
+      "Sıcak lavaşa sararak dürüm usulü yapın, yanına sumaklı soğan ve közlenmiş biberle sunun.",
+      "Tavuğu sıcak sosunun içinde bırakıp yanına ince kesilmiş yeşil yaprak salatayla verin.",
+      "Pilav tabağının üstüne yerleştirip kenarına kızarmış pide dilimleri koyun.",
     ],
   },
   {
@@ -485,6 +524,9 @@ const SERV_RULES: ServRule[] = [
       "Taze limon ve roka ile soğumadan masaya götürün, yanına ılık patates eşlik etsin.",
       "Deniz tuzu, zeytinyağı ve doğranmış dereotu üzerine gezdirip limon dilimleriyle süsleyin.",
       "Pilav yerine buğulanmış yeşil fasulyeyle tamamlayın, tabak hafif kalsın.",
+      "Yanına mevsim salatası ve kısırla verin; beyaz porselen tabakta renk kontrastı güzel durur.",
+      "Üzerine ince dilimlenmiş soğan ve nar taneleriyle İstanbul meyhanesi sunumu hazırlayın.",
+      "Domatesli pilavla ve közlenmiş yeşil biberle birlikte, yanında bir kase yoğurtla tamamlayın.",
     ],
   },
   {
@@ -494,6 +536,9 @@ const SERV_RULES: ServRule[] = [
       "Yanına bulgur pilavı ve turşu koyarak derin kasede verin; üzerine pul biber gezdirin.",
       "Üzerine yoğurt kaşığı ve bol maydanozla birlikte ılıklığında sunun.",
       "Yanına karamelize soğan ve ızgara ekmek dilimleriyle destekleyin, protein dengesi kurulsun.",
+      "Sıcak pide dilimleri ve közlenmiş biberle, üstüne bir kaşık tereyağı gezdirerek tamamlayın.",
+      "Limon dilimi ve taze nane yapraklarını iliştirip derin çorba kasesine koyun.",
+      "Yanına közlenmiş domates ve sumaklı soğan eklemek ekşi-tuzlu dengeyi kurar.",
     ],
   },
   {
@@ -503,6 +548,9 @@ const SERV_RULES: ServRule[] = [
       "Rendelenmiş parmesan ve taze fesleğen yapraklarıyla sıcak servis edin.",
       "Yanına yeşil yapraklı bir salata koyun, üzerine bol zeytinyağı ve balzamik gezdirin.",
       "Tabağın yanına bir parça kıtır ekmek koyup sosun sıyrılmasını tamamlayın.",
+      "Derin çanakta, üzerine bir fiske pul biber ve ince kıyılmış maydanoz ekleyip sıcak sunun.",
+      "Yanına sarımsaklı kıtır ekmek ve soğuk beyaz şarap eşliğinde akşam tabağı kurun.",
+      "Porselen tabakta, üzerine ince rende kaşar ve bir damla zeytinyağıyla tamamlayın.",
     ],
   },
   {
@@ -512,6 +560,9 @@ const SERV_RULES: ServRule[] = [
       "Yanına cacık ve közlenmiş biber, üstüne tereyağında kavrulmuş fıstıkla tabakta verin.",
       "Derin kaseye boşaltıp küçük bir kase yoğurt ve maydanoz dalıyla sunun.",
       "Kıtır soğan halkaları ve limon dilimleriyle yanından çevirerek servis yapın.",
+      "Üzerine kavrulmuş dolmalık fıstık ve kuş üzümü serpip Osmanlı sofrası sunumu hazırlayın.",
+      "Yanına közlenmiş sivri biber ve tuzlu yoğurtla ılık servis için tabakta düzenleyin.",
+      "Üzerine ince dilimlenmiş taze soğan ve bir kaşık tereyağı gezdirerek parlaklık verin.",
     ],
   },
   {
@@ -521,6 +572,9 @@ const SERV_RULES: ServRule[] = [
       "Yanına yoğurt veya cacık ve birkaç dilim limonla, hafif ılık serin.",
       "Taze dereotu ve zeytinyağıyla porselen tabakta soğuk tüketin; lezzet ertesi gün daha derin olur.",
       "Sıcak pide veya lavaşla birlikte tabakta sunun, üstüne bir kaşık tahin tarator düşünülebilir.",
+      "Geniş servis tabağında, üstüne sızma zeytinyağı ve limon kabuğu rendesi gezdirerek ılık servis edin.",
+      "Yanına kısa kırılmış arpa ekmeği ve bir kase sarımsaklı yoğurtla Ege sunumu hazırlayın.",
+      "Soğuk bekletip ertesi gün derin tabağa alıp üzerine taze fesleğen yaprağı ekleyerek servis edin.",
     ],
   },
   {
@@ -530,6 +584,10 @@ const SERV_RULES: ServRule[] = [
       "Taze dilimlenmiş ekmek ve yanında mevsim yeşillikleriyle derin tabakta verin.",
       "Servis tabağının kenarına limon dilimi ve maydanoz dalları yerleştirerek renk ekleyin.",
       "Porselen tabakta, üzerine bir tutam taze ot ve zeytinyağı gezdirerek ılık sunun.",
+      "Yanına sıcak ekmek ve bir kase turşu iliştirip geleneksel tabağa dönüştürün.",
+      "Üzerine taze soğan halkaları ve ince kıyılmış maydanozla renk katarak tabağı tamamlayın.",
+      "Kenara közlenmiş biber ve ince dilimlenmiş limon koyarak ev sofrası tabağı kurgulayın.",
+      "Geniş porselen tabakta, yanına yoğurtlu bir sos ve bir bardak ayran eşliğinde servis yapın.",
     ],
   },
 ];
@@ -545,8 +603,19 @@ function djb2(s: string): number {
   return Math.abs(h);
 }
 
-function pickVariant(slug: string, name: string, variants: string[]): string {
-  const seed = djb2(slug + "::" + name);
+/**
+ * Deterministic variant pick. Seed slug + rule + first 2 ingredient
+ * names ile zenginleştirilir; bu aynı rule'a düşen tariflerin
+ * ingredient karışımına göre farklı variant'a düşmesini sağlar,
+ * uniform dağılımı iyileştirir.
+ */
+function pickVariant(
+  slug: string,
+  name: string,
+  variants: string[],
+  salt: string = "",
+): string {
+  const seed = djb2(slug + "::" + name + "::" + salt);
   return variants[seed % variants.length];
 }
 
@@ -582,10 +651,14 @@ export function generate(r: RecipeSignal): GenerateResult {
     }
   }
 
+  // Salt = first 2 ingredient names (when present), improves dispersion
+  // for recipes landing in the same rule family.
+  const salt = (r.ingredients.slice(0, 2).join("|") || "none").toLowerCase();
+
   return {
-    tipNote: pickVariant(r.slug, tipRule, tipVariants),
+    tipNote: pickVariant(r.slug, tipRule, tipVariants, salt),
     tipRule,
-    servingSuggestion: pickVariant(r.slug, servRule, servVariants),
+    servingSuggestion: pickVariant(r.slug, servRule, servVariants, salt),
     servRule,
   };
 }

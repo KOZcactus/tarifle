@@ -16,6 +16,7 @@ import {
   getDailyViewTrend,
   type DailyViewBucket,
 } from "@/lib/queries/recipe-view-daily";
+import { getContentQualityStats } from "@/lib/queries/admin-content-quality";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("admin.analytics");
@@ -48,6 +49,7 @@ export default async function AdminAnalyticsPage() {
     tags,
     topSearches,
     viewTrend,
+    contentQuality,
     t,
   ] = await Promise.all([
     getAdminStats(),
@@ -60,6 +62,7 @@ export default async function AdminAnalyticsPage() {
     getTags(),
     getTopSearchQueries(7, 10),
     getDailyViewTrend(30),
+    getContentQualityStats(),
     getTranslations("admin.analytics"),
   ]);
 
@@ -116,6 +119,72 @@ export default async function AdminAnalyticsPage() {
               <div className="mt-0.5 text-xs text-text-muted">{kpi.label}</div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Content Quality Coverage */}
+      <section>
+        <h3 className="mb-3 text-xs font-semibold uppercase tracking-wide text-text-muted">
+          {t("contentQualityHeading")}
+        </h3>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            { label: t("cqFeatured"), count: contentQuality.featuredCount, ratio: contentQuality.featuredRatio, emoji: "⭐" },
+            { label: t("cqModBFull"), count: contentQuality.modBFullCount, ratio: contentQuality.modBFullRatio, emoji: "🌍" },
+            { label: t("cqTipNote"), count: contentQuality.tipNoteCount, ratio: contentQuality.tipNoteRatio, emoji: "💡" },
+            { label: t("cqServingSuggestion"), count: contentQuality.servingSuggestionCount, ratio: contentQuality.servingSuggestionRatio, emoji: "🍽️" },
+            { label: t("cqAllergenTagged"), count: contentQuality.allergenTaggedCount, ratio: contentQuality.allergenTaggedRatio, emoji: "⚠️" },
+            { label: t("cqHungerBar"), count: contentQuality.hungerBarCount, ratio: contentQuality.hungerBarRatio, emoji: "🍖" },
+          ].map((m) => {
+            // Ratio rengi: >=95 yeşil, 70-95 mavi, <70 kehribar
+            const ringClass =
+              m.ratio >= 95
+                ? "text-emerald-600"
+                : m.ratio >= 70
+                  ? "text-sky-600"
+                  : "text-amber-600";
+            return (
+              <div
+                key={m.label}
+                className="rounded-xl border border-border bg-bg-card p-4"
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <div>
+                    <div className="mb-1 text-xl" aria-hidden="true">
+                      {m.emoji}
+                    </div>
+                    <div className="text-sm font-medium">{m.label}</div>
+                  </div>
+                  <div
+                    className={`font-heading text-2xl font-bold tabular-nums ${ringClass}`}
+                  >
+                    %{m.ratio.toFixed(1)}
+                  </div>
+                </div>
+                <div className="mt-2 text-xs text-text-muted tabular-nums">
+                  {t("cqCoverageOf", {
+                    count: m.count.toLocaleString("tr-TR"),
+                    total: contentQuality.total.toLocaleString("tr-TR"),
+                  })}
+                </div>
+                <div
+                  className="mt-2 h-1.5 overflow-hidden rounded-full bg-border/40"
+                  aria-hidden="true"
+                >
+                  <div
+                    className={`h-full ${
+                      m.ratio >= 95
+                        ? "bg-emerald-500"
+                        : m.ratio >= 70
+                          ? "bg-sky-500"
+                          : "bg-amber-500"
+                    }`}
+                    style={{ width: `${Math.min(100, m.ratio)}%` }}
+                  />
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 

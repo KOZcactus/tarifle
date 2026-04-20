@@ -142,6 +142,7 @@ export const ALLERGEN_RULES: AllergenRule[] = [
       "baget", "bazlama", "dövme", "firik", "yarma", "gavut",
       "tarhana", "keşkek", "keşkeklik", "dövülmüş buğday",
       "göce", "gendime", "katmer", "tandır ekmeği", "mantı", "kete", "kavut",
+      "crumpet", "scone", "hurmalı kek",
       // International wheat breads caught by ingredient name:
       "tunnbröd", "tunnbrod", "kvas", "krep", "crepe", "pancake",
       "pandispanya", "wrap", "tarhonya", "cornbread", "corn bread",
@@ -256,7 +257,7 @@ export const ALLERGEN_RULES: AllergenRule[] = [
       "yumurta", "mayonez",
       // Egg-containing prepared goods (session 11 audit genişletme):
       "beze", "kek küpü", "kek kupu", "pandispanya", "tart hamuru",
-      "kek hamuru", "kurabiye hamuru", "krep",
+      "kek hamuru", "kurabiye hamuru", "krep", "kete",
     ],
     excludePatterns: [
       // "beze" substring "bezelye"yi yakalar, bezelye baklagil (YUMURTA yok)

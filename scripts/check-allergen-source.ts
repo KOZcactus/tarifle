@@ -19,10 +19,9 @@ import { recipes } from "./seed-recipes";
  * this list means a regression.
  */
 const SKIP_FINDINGS = new Set<string>([
-  "dut-pekmezli-kete-kup-erzurum-usulu:over-tag:YUMURTA",
-  "cheddarli-mantarli-crumpet-ingiltere-usulu:over-tag:GLUTEN",
-  "avokadolu-misir-mucver-stack-avustralya-usulu:over-tag:SUT",
-  "misirli-pazili-tava-ekmegi-rize-usulu:missing:GLUTEN",
+  // (empty baseline; session 11 all 4 edge cases resolved via audit keyword
+  // expansion + targeted allergen/ingredient patch. Future drift should
+  // appear as real findings rather than being ignored.)
 ]);
 
 function main() {

@@ -52,3 +52,20 @@ if ! node scripts/check-emdash.mjs; then
 fi
 
 echo "✅ pre-push: em-dash guard clean"
+
+# Allergen source guard.
+# Seed (scripts/seed-recipes.ts) ingredient listesi ile allergens alanını
+# karşılaştırır. 'over-tag' (allergen tag var, match eden ingredient yok)
+# veya 'missing' (ingredient match ediyor, allergen tag yok) durumunda
+# blocklar. Baseline 4 edge case (check-allergen-source.ts SKIP_FINDINGS)
+# hariç. Yeni batch'te allergen-ingredient uyuşmazlığı eklenirse push
+# durur. Tarama ~2s, DB'siz.
+echo "🔍 pre-push: allergen source guard"
+if ! npx tsx scripts/check-allergen-source.ts; then
+  echo ""
+  echo "   Fix via scripts/fix-critical-allergens-*.ts or remove-over-tagged-allergens.ts."
+  echo "   Bypass: git push --no-verify"
+  exit 1
+fi
+
+echo "✅ pre-push: allergen source guard clean"

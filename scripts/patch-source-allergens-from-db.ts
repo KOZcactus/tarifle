@@ -56,6 +56,7 @@ async function main() {
     let text = fs.readFileSync(SEED, "utf-8");
 
     let patched = 0;
+    let inserted = 0;
     let already = 0;
     let missing = 0;
     const samples: string[] = [];
@@ -67,15 +68,47 @@ async function main() {
         missing++;
         continue;
       }
-      // Recipe block boundary
+      // Recipe block boundary. Multi-line blocks (batch 0-11) end with
+      // `},\n  {` (next recipe begin); single-line IIFE blocks end with
+      // `}),\n`. We use the first `ingredients:` OR `steps:` field
+      // occurrence after the slug as a safe upper bound , these fields
+      // always come AFTER allergens/tags in the canonical block shape,
+      // so we won't miss allergens positioned before them.
       const fromSlug = text.slice(slugIdx);
-      const endMatch = fromSlug.search(/\}\s*\),?\s*\r?\n|\},?\s*\r?\n\s+(r\(|title:)/);
-      const tailLen = endMatch > 0 ? endMatch + 5 : 2500;
-      const tail = fromSlug.slice(0, tailLen);
+      const ingIdx = fromSlug.search(/\bingredients:\s*\[/);
+      const stepIdx = fromSlug.search(/\bsteps:\s*\[/);
+      const endCandidates = [ingIdx, stepIdx].filter((x) => x > 0);
+      // Use ingredients/steps start as hard upper bound so we don't leak
+      // into the next recipe's allergens field.
+      const endIdx = endCandidates.length > 0 ? Math.min(...endCandidates) : 2500;
+      const tail = fromSlug.slice(0, Math.min(endIdx, 3000));
 
       const m = tail.match(ALLERGENS_RE);
       if (!m) {
-        // No allergens field in block; skip silently
+        // No allergens field in block , batch 0-11 style where allergens
+        // was optional. Insert allergens: [...] after the tags: [...]
+        // field so block remains valid TS.
+        const tagsRe = /(tags:\s*\[[^\]]*\])/;
+        const tagsMatch = tail.match(tagsRe);
+        if (!tagsMatch || tagsMatch.index === undefined) {
+          // Neither tags nor allergens, very unusual; skip
+          continue;
+        }
+        const allergenStr = formatAllergens(r.allergens as string[]);
+        if (allergenStr === `allergens: [] as const`) {
+          // Don't clutter with empty insert for slugs with no DB allergens
+          continue;
+        }
+        const insertion = `${tagsMatch[0]},\n    ${allergenStr}`;
+        const absIdx = slugIdx + tagsMatch.index;
+        text =
+          text.slice(0, absIdx) +
+          insertion +
+          text.slice(absIdx + tagsMatch[0].length);
+        if (samples.length < 15) {
+          samples.push(`${r.slug}  INSERT ${allergenStr}`);
+        }
+        inserted++;
         continue;
       }
       const oldStr = m[0];
@@ -96,14 +129,14 @@ async function main() {
     }
 
     console.log(
-      `\n${apply ? "applying" : "dry-run"}: ${patched} patched, ${already} already, ${missing} missing (seed'de yok)`,
+      `\n${apply ? "applying" : "dry-run"}: ${patched} patched, ${inserted} inserted, ${already} already, ${missing} missing (seed'de yok)`,
     );
     if (samples.length > 0) {
       console.log(`\nSamples (ilk 15):`);
       for (const s of samples) console.log(`  ${s}`);
     }
 
-    if (apply && patched > 0) {
+    if (apply && (patched > 0 || inserted > 0)) {
       fs.writeFileSync(SEED, text, "utf-8");
       console.log(`\n  wrote: scripts/seed-recipes.ts`);
     } else if (!apply) {

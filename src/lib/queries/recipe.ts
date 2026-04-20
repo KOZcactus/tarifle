@@ -138,11 +138,20 @@ interface GetRecipesOptions {
   boostTagSlugs?: string[];
 }
 
-/** Tarif listesi — arama, filtreleme ve sayfalama destekli */
-export async function getRecipes(options: GetRecipesOptions = {}): Promise<{
+/** Tarif listesi — arama, filtreleme ve sayfalama destekli.
+ *
+ *  Cache: 5 dk TTL + `revalidateTag("recipes")`. Admin recipe mutation
+ *  (update/seed/delete) sonrası invalidate edilir. User-specific
+ *  parametreler (`boostTagSlugs`, `sortBy: "foryou"`) farklı key entry'si
+ *  yaratır — foryou mode her user için ayrı cache ama 5 dk içinde
+ *  tekrar DB'ye gitmez. Public listing (`/kategoriler`, `/mutfak/*`,
+ *  `/etiket/*`) en büyük kazancı alıyor: yüzlerce visitor → 12 DB
+ *  hit/saat yerine 1500+ hit (5 dk TTL × saat).
+ */
+const _getRecipesInner = async (options: GetRecipesOptions = {}): Promise<{
   recipes: RecipeCard[];
   total: number;
-}> {
+}> => {
   const {
     query,
     difficulty,
@@ -340,7 +349,12 @@ export async function getRecipes(options: GetRecipesOptions = {}): Promise<{
   ]);
 
   return { recipes: recipes as unknown as RecipeCard[], total };
-}
+};
+
+export const getRecipes = unstable_cache(_getRecipesInner, ["get-recipes-v1"], {
+  revalidate: 300,
+  tags: ["recipes"],
+});
 
 /** Öne çıkan tarifler */
 /**

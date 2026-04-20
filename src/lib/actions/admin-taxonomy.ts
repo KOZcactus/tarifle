@@ -4,7 +4,7 @@ import { z } from "zod";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { slugify } from "@/lib/utils";
-import { revalidatePath } from "next/cache";
+import { revalidatePath, updateTag } from "next/cache";
 
 async function requireAdmin(): Promise<string> {
   const session = await auth();
@@ -58,6 +58,7 @@ export async function createTagAction(input: unknown): Promise<ActionResult> {
 
   await prisma.tag.create({ data: { name, slug } });
   revalidatePath("/admin/etiketler");
+  updateTag("tags");
   return { success: true };
 }
 
@@ -93,6 +94,7 @@ export async function renameTagAction(input: unknown): Promise<ActionResult> {
     return { success: false, error: "Etiket bulunamadı." };
   }
   revalidatePath("/admin/etiketler");
+  updateTag("tags");
   return { success: true };
 }
 
@@ -129,6 +131,7 @@ export async function deleteTagAction(input: unknown): Promise<ActionResult> {
 
   await prisma.tag.delete({ where: { id: parsed.data.tagId } });
   revalidatePath("/admin/etiketler");
+  updateTag("tags");
   return { success: true };
 }
 
@@ -173,6 +176,7 @@ export async function createCategoryAction(
   });
   revalidatePath("/admin/kategoriler");
   revalidatePath("/tarifler");
+  updateTag("categories");
   return { success: true };
 }
 
@@ -217,6 +221,8 @@ export async function updateCategoryAction(
     await prisma.category.update({ where: { id: categoryId }, data: patch });
     revalidatePath("/admin/kategoriler");
     revalidatePath(`/tarifler/${current.slug}`);
+    updateTag("categories");
+    updateTag("recipes");
   } catch {
     return { success: false, error: "Güncellenemedi." };
   }
@@ -256,5 +262,6 @@ export async function deleteCategoryAction(
 
   await prisma.category.delete({ where: { id: parsed.data.categoryId } });
   revalidatePath("/admin/kategoriler");
+  updateTag("categories");
   return { success: true };
 }

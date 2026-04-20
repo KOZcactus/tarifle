@@ -17,25 +17,27 @@ export interface CategoryCardData extends CategoryWithCount {
 }
 
 /** Tüm kategoriler + description + tarif sayısı — `/kategoriler` landing
- *  page için. Light layer: getCategories'in üzerine açıklama alanı
- *  ekliyor. Bu surface için ayrı cache değil, oradaki 5 dk TTL bu çağrıya
- *  yansımıyor — sadece bir kez çağrılan bir sayfa olduğu için yeterli.
- *  Trafik artarsa tag-bazlı cache eklenir. */
-export async function getCategoriesForLanding(): Promise<CategoryCardData[]> {
-  const categories = await prisma.category.findMany({
-    select: {
-      id: true,
-      name: true,
-      slug: true,
-      emoji: true,
-      description: true,
-      sortOrder: true,
-      _count: { select: { recipes: true } },
-    },
-    orderBy: { sortOrder: "asc" },
-  });
-  return categories;
-}
+ *  page için. Cached 10 dk — nadir değişir, `revalidateTag("categories")`
+ *  ile force invalidate. Hot path: `/kategoriler` landing. */
+export const getCategoriesForLanding = unstable_cache(
+  async (): Promise<CategoryCardData[]> => {
+    const categories = await prisma.category.findMany({
+      select: {
+        id: true,
+        name: true,
+        slug: true,
+        emoji: true,
+        description: true,
+        sortOrder: true,
+        _count: { select: { recipes: true } },
+      },
+      orderBy: { sortOrder: "asc" },
+    });
+    return categories;
+  },
+  ["categories-for-landing-v1"],
+  { revalidate: 600, tags: ["categories"] },
+);
 
 /** Tüm kategoriler — tarif sayısı ile birlikte.
  *  Cached 5 dk — kategoriler nadir değişir (admin panel'den CRUD), TTL

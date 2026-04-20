@@ -3,7 +3,7 @@
 import { auth } from "@/lib/auth";
 import { canChangeRole } from "@/lib/auth/super-admin";
 import { prisma } from "@/lib/prisma";
-import { revalidatePath } from "next/cache";
+import { revalidatePath, updateTag } from "next/cache";
 import { z } from "zod";
 import {
   notifyReportResolved,
@@ -418,6 +418,7 @@ export async function updateRecipeAction(
   revalidatePath("/admin");
   revalidatePath(`/admin/tarifler/${current.slug}`);
   revalidatePath(`/tarif/${current.slug}`);
+  updateTag("recipes");
   return { success: true };
 }
 

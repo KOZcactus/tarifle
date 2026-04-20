@@ -1,3 +1,4 @@
+import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { CUISINE_LABEL, CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
 
@@ -1116,9 +1117,14 @@ export async function getRecentBatches(limit = 7): Promise<
 /**
  * Cuisine dağılımı — admin'in mutfak dengesini görmesi.
  */
-export async function getCuisineBreakdown(): Promise<
-  { code: string; label: string; flag: string; count: number }[]
-> {
+/** Mutfak dağılımı — cached 15 dk. Yeni tarif seed'i 100'er artışla
+ *  geldiği için dakika-level taze olması kritik değil; analytics +
+ *  footer/landing chip'leri 15 dk staleness'tan etkilenmez.
+ *  `revalidateTag("recipes")` ile invalidate edilir. */
+export const getCuisineBreakdown = unstable_cache(
+  async (): Promise<
+    { code: string; label: string; flag: string; count: number }[]
+  > => {
   const rows = await prisma.recipe.groupBy({
     by: ["cuisine"],
     where: { status: "PUBLISHED", cuisine: { not: null } },
@@ -1133,7 +1139,10 @@ export async function getCuisineBreakdown(): Promise<
       flag: CUISINE_FLAG[r.cuisine as CuisineCode] ?? "🌍",
       count: r._count,
     }));
-}
+  },
+  ["cuisine-breakdown-v1"],
+  { revalidate: 900, tags: ["recipes", "cuisine-stats"] },
+);
 
 export async function getCategoryBreakdown(): Promise<
   { name: string; emoji: string | null; count: number }[]
@@ -1196,11 +1205,16 @@ export async function getRecentUserSignupCount(days = 7): Promise<number> {
  * Recipe join ikinci queryde: Prisma groupBy + relational include tek
  * queryde desteklemez, ayrı fetch gerekir.
  */
-export async function getMostReviewedRecipes(
-  limit = 10,
-): Promise<
-  { slug: string; title: string; emoji: string | null; reviewCount: number }[]
-> {
+/** En çok yorum alan tarifler — cached 10 dk. Admin analytics +
+ *  potansiyel homepage shelf kullanımı için. Review ekleme/silme
+ *  dakika-level taze olmak zorunda değil; `revalidateTag("reviews")`
+ *  ile admin moderation sonrası invalidate edilir. */
+export const getMostReviewedRecipes = unstable_cache(
+  async (
+    limit = 10,
+  ): Promise<
+    { slug: string; title: string; emoji: string | null; reviewCount: number }[]
+  > => {
   const grouped = await prisma.review.groupBy({
     by: ["recipeId"],
     where: { status: "PUBLISHED" },
@@ -1228,18 +1242,23 @@ export async function getMostReviewedRecipes(
       };
     })
     .filter((r): r is NonNullable<typeof r> => r !== null);
-}
+  },
+  ["most-reviewed-recipes-v1"],
+  { revalidate: 600, tags: ["reviews", "recipes"] },
+);
 
 /**
  * En çok kaydedilen tarifler — Bookmark group-by. "Kullanıcılar hangi
  * tarifleri dolabına koyuyor" sorusunun cevabı; view'den daha güçlü bir
  * niyet sinyali (görüntüleme ≠ deneme isteği).
+ * Cached 10 dk — bookmark ekleme dakika-level taze olmak zorunda değil.
  */
-export async function getMostSavedRecipes(
-  limit = 10,
-): Promise<
-  { slug: string; title: string; emoji: string | null; saveCount: number }[]
-> {
+export const getMostSavedRecipes = unstable_cache(
+  async (
+    limit = 10,
+  ): Promise<
+    { slug: string; title: string; emoji: string | null; saveCount: number }[]
+  > => {
   const grouped = await prisma.bookmark.groupBy({
     by: ["recipeId"],
     _count: { _all: true },
@@ -1266,4 +1285,7 @@ export async function getMostSavedRecipes(
       };
     })
     .filter((r): r is NonNullable<typeof r> => r !== null);
-}
+  },
+  ["most-saved-recipes-v1"],
+  { revalidate: 600, tags: ["bookmarks", "recipes"] },
+);

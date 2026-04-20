@@ -1,10 +1,49 @@
 # Tarifle, Proje Durumu
 
-> Son güncelleme: **Oturum 9 sonu (20 Nis 2026), 23 commit, altyapı + kalite + maliyet kontrolü turu.** **2320 tarif prod canlı** (batch 23 sonu; batch 24 Codex teslim yeniden üretim bekliyor). Mod B **1200/2320** (batch 21-22-23 tam çeviri prod canlı). Bu oturum altyapı ağırlıklı: CI fix (`/etiket/[tag]` build), daily view log + "bu hafta N" chip, search-submission URL listesi (500), IndexNow otomasyonu (middleware + CLI + haftalık Vercel Cron + bulk ping 2301 URL canlı), Mod B batch 21-22-23 prod + 9 allergen fix, legal humanize (çerez + güvenlik + KVKK sade), **em-dash global yasak** (2500+ karakter temizlendi + `scripts/check-emdash.mjs` pre-push Node guard + `scripts/fix-emdash-meaning.mjs` punct upgrade 39 yer), hot query path'lerine `unstable_cache` (compute-hour %30-50 azalma + `updateTag` invalidation), **Neon Launch plan + quota** (385k CU-seconds ~$12 hard cap, API ile set edildi). Codex brief §9 batch 21 Mod B dersleri eklendi. 574/574 test PASS, tsc/lint clean, 19 migration, CI 13+ art arda yeşil. Pre-push 3 katman: lint + content:validate + em-dash guard. **Sonraki adımlar:** Genel DB audit (orphan, duplicate slug, cross-table tutarlılık, migration drift, review/variation quality) · Batch 24 Mod A ham text yapıştırma bekleniyor (Codex dosyaya yazamadı, tek kod bloğu olarak gelecek) · Kerem manuel: Cloudinary + newsletter cron + Pinterest domain claim · orta vadeli: video snippet (Remotion, ayrı session).
+> Son güncelleme: **Oturum 10 sonu (20 Nis 2026), 15 commit, büyük gün — DB audit + açlık barı + batch 24-26 + duplicate merge + manuel env'ler.** **2454 tarif prod canlı** (2320 + 300 batch 24-26 - 166 duplicate merge). Mod B **1299/2454** (%53, backfill-01 98 tarif apply). Oturum highlight: **(1) Açlık barı** (Minecraft-esin 1-10 tokluk, formül + schema + retrofit + detay + listing chip + `/tarifler` filter+sort + AI Asistan "Acıktım" + home widget + OG + PDF + JSON-LD), **(2) Batch 24-26 Mod A prod** (300 yeni tarif + 25 allergen fix), **(3) Duplicate merge P3** (155 grup, 166 loser silindi, 0 reference kaybı, SEO win), **(4) Mod B backfill altyapısı** (13 CSV, 1266 tarif, backfill-01 prod %53'e çıkardı), **(5) Haftalık audit cron** (`/api/cron/audit-report`, Sentry alert, vercel.json), **(6) Empty allergen fix** (4 prod + 1 FP rollback), **(7) E2E TestUser cleanup** + helper cascade fix, **(8) Tüm manuel env tamam** (Newsletter + Audit + Cloudinary + Pinterest domain claim). 20 migration, 613/613 test PASS, tsc/lint/em-dash clean, pre-push 3 katman. **Sonraki:** Codex Backfill-02..13 (12 batch, 1168 tarif kalan), batch 27 Mod A, 3-katmanlı source drift fix, tipNote/servingSuggestion backfill (180+167), isFeatured boost (%9.2 → %10-15 hedef), uzun vade: video snippet + Cache Components PPR + Premium.
+
+> Oturum 9 sonu (23 commit), 2320 tarif prod. Altyapı + kalite + maliyet turu: CI fix, daily view log, 500 URL search submission, IndexNow otomasyonu (middleware + CLI + haftalık cron + 2301 URL ping), Mod B batch 21-23 prod + 9 allergen fix, legal humanize, em-dash global yasak (2500+ karakter + pre-push Node guard), `unstable_cache` hot path'ler, Neon Launch + quota 385k CU-sec ~$12 hard cap. 574/574 test, 19 migration.
 >
 > Oturum 8 sonu (30 commit), 2320 tarif prod canlı. 10 blok: 6 Codex batch Mod A (1701→2320), 3 Mod B batch (batch 18-20 çeviri 600→900), rekabet §8 kısa 6/6 ✅ + orta 5/5 ✅, topluluk loop tam (follow + feed + fan-out + followers list + suggested cooks + collection/variation share + PWA banner + Pinterest rich pin + user-photos flag), admin analytics + bulk moderation + search log, PDF export + llms.txt, 18 migration.
 >
 > Oturum 7 sonu (28 commit), 1701 tarif prod canlı. 8 blok: Mod B batch 13-17 (600 tarif EN+DE), Mod A batch 15-17 (1401→1701), foryou sort, pagination redesign, super-admin protection, /admin/yorumlar, /kategoriler, legal hub /yasal, editör rozeti, similar-recipes v2, 44 programatik landing, profil zenginleştirme, /menu-planlayici, RSS + HowTo schema, AI Asistan v2, blog MDX + 3 makale, rekabet analizi doc, newsletter double-opt-in altyapı, codex brief 3 clarify.
+
+## 20 Nisan 2026 (oturum 10, 15 commit, büyük gün)
+
+**A · Açlık barı full integration** (5 commit): `ca58c6a` core (formül 1-10, `Recipe.hungerBar Int?` + migration + retrofit dev/prod tüm tarifler), `521420f` listing kart chip (🍖×N/10), `002ced8` `/tarifler?tokluk-min=N` filter + "En tok tutan" sort, `d7fd55e` AI Asistan "Acıktım" sort (rule-based), `d40b711` home widget + OG image + PDF export + JSON-LD (additionalProperty + FAQ "tok tutar mı"). Holt Satiety Index temelli, kategori base + protein/fiber/fat bonus + TATLI penalty + ICECEK liquid multiplier. Bell curve dağılım (tepe 5, 10 sadece %0.4).
+
+**B · Batch 24-26 Mod A** (1 commit `1fecde5` + 1 `521420f`): 300 yeni Codex tarifi prod (2320 → 2620), 21 allergen fix (11 SUT + 4 YUMURTA + 3 GLUTEN + 2 HARDAL + 1 KUSUYEMIS + 1 SOYA), coconut + kavun çekirdeği FP filter'ları. batch 24 (120 drift dahil), 25+26 (140).
+
+**C · Duplicate merge P3** (`1fecde5` + `d57a461`): 155 duplicate title grup, 166 loser silindi (0 user-gen reference), prod 2620 → **2454**. SEO win (thin content penalty riski kaybı + 166 gereksiz sitemap URL azaldı). Source patch: `seed-recipes.ts` 237KB küçüldü, single-line r({}) + multi-line { } format ikisi de handle.
+
+**D · Mod B backfill altyapısı** (`4939150`, `d57a461`): `gen-modb-backfill-csv.ts` DB source-of-truth (seed drift'inden bağımsız), 13 CSV × 100 tarif ≈ 1266 backfill gap. `import-translations-b.ts --file` flag + backfill-NN naming. Backfill-01 Codex teslim (100 unique tipNote, 2 manuel Cloves fix, 2 dead-slug skip duplicate merge sonrası): prod apply 98 tarif. Mod B coverage %49 → **%53**.
+
+**E · Haftalık audit cron** (`afc6686`): `src/lib/audit/integrity-core.ts` 14 hızlı integrity check (orphan FK + duplicate email/username/title + stale moderation > 14 gün + report backlog + token cleanup). `/api/cron/audit-report` endpoint + Sentry breadcrumb/error. `vercel.json` pazartesi 07:00 UTC. 8 unit test.
+
+**F · Empty allergen fix** (`de671cf`): `audit-empty-allergens.ts` + coconut context exclude (hindistan cevizi SUT/KUSUYEMIS değil brief §5). Prod 4 tarif fix (HARDAL + 3 SUT). Pina-colada SUT yanlış eklendi, FP rollback (`rollback-pina-colada-sut.ts`). Post-fix 0 action item.
+
+**G · E2E TestUser cleanup** (`8b6f17a`): Dev'de 3 E2E test user leak. Root cause: `tests/e2e/helpers/test-user.ts` `deleteTestUser` direkt `user.delete` ama Variation/ModerationAction/Report FK onDelete yok → P2003 FK violation, afterAll sessizce warn. Helper'a manuel cascade eklendi (Variation + ModerationAction + Report delete → User delete). 3 user + 3 variation dev'den silindi.
+
+**H · Newsletter cron + manuel env'ler** (`b02d5f8`): vercel.json'a 3. cron slot (newsletter pazartesi 06:00 UTC). Kerem manuel: `NEWSLETTER_CRON_SECRET` + `AUDIT_CRON_SECRET` + `CLOUDINARY_*` (3 env, API_SECRET Sensitive) + `PINTEREST_DOMAIN_VERIFY` hepsi Vercel Production'da. Pinterest claim `tarifle.app` aktif, meta tag live `content="7b2c6ca8787e7fa07bb9cb796e732f3c"`. 3 cron endpoint 401 smoke test ✅.
+
+**I · Codex brief update** (`8ee7b4b`): §4'e "Mod B Backfill default" bölümü + §6'ya "Format ve boş-string kapanı" (ingredients/steps object array format + empty-name Zod reddeder). Backfill-01 hataları (string array + boş Cloves) belgelendi.
+
+**Prod skor kartı (oturum 10 sonu):**
+- **2454 tarif prod** (2320 + 300 Codex - 166 merge)
+- **1299/2454 Mod B tam** (%53), kalan 1168 backfill-02..13 için
+- 613/613 test PASS (+8 yeni integrity cron test)
+- 20 formal migration (`add_hunger_bar`)
+- Tüm tarifler hungerBar 1-10 dolu
+- CI yeşil, pre-push 3 katman, em-dash 0
+- Vercel cron: newsletter (06:00) + audit (07:00) + indexnow (08:00) pazartesi UTC
+
+**Bekleyen (oturum 11):**
+- Codex Mod B Backfill-02..13 (12 batch × ~100 tarif)
+- Batch 27+ Mod A (Kerem yeni batch isteyince)
+- 3-katmanlı source drift fix (seed 2420 < dev 2420 < prod 2454, minor)
+- tipNote/servingSuggestion backfill (180+167 eski batch 0-11)
+- isFeatured boost (%9.2 → %10-15 hedef)
+- Orta vade: video snippet (Remotion) / Cache Components PPR / Premium subscription
 
 ## 20 Nisan 2026 (oturum 9, 23 commit, altyapı + kalite + maliyet)
 

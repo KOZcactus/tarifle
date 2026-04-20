@@ -6572,7 +6572,7 @@ export const recipes: SeedRecipe[] = [
     tags: ["vegan", "tek-tencere"],
     allergens: [] as const,
     ingredients: [{ name: "Kapya biber", amount: "4", unit: "adet", sortOrder: 1 }, { name: "Domates", amount: "5", unit: "adet", sortOrder: 2 }, { name: "Soğan", amount: "2", unit: "adet", sortOrder: 3 }, { name: "Macar sosis", amount: "160", unit: "gr", sortOrder: 4 }, { name: "Toz kırmızı biber", amount: "1", unit: "tatlı kaşığı", sortOrder: 5 }],
-    steps: [{ stepNumber: 1, instruction: "Soğanları yağda yumuşatın." }, { stepNumber: 2, instruction: "Biberleri ekleyip 8 dakika soteleyin.", timerSeconds: 480 }, { stepNumber: 3, instruction: "Domates ve toz biberle 20 dakika pişirin.", timerSeconds: 1200 }],
+    steps: [{ stepNumber: 1, instruction: "Soğanları yağda yumuşatın." }, { stepNumber: 2, instruction: "Biberleri ve dilimlenmiş Macar sosisi ekleyip 8 dakika soteleyin.", timerSeconds: 480 }, { stepNumber: 3, instruction: "Domates ve toz biberle 20 dakika pişirin.", timerSeconds: 1200 }],
   },
   {
     title: "Rakott Krumpli",
@@ -7546,8 +7546,8 @@ export const recipes: SeedRecipe[] = [
     servingSuggestion: "Soğuk servis edip üstüne dereotu serpin.",
     tags: ["misafir-sofrasi"],
     allergens: ["YUMURTA"] as const,
-    ingredients: [{ name: "Patates", amount: "400", unit: "gr", sortOrder: 1 }, { name: "Havuç", amount: "2", unit: "adet", sortOrder: 2 }, { name: "Bezelye", amount: "150", unit: "gr", sortOrder: 3 }, { name: "Mayonez", amount: "5", unit: "yemek kaşığı", sortOrder: 4 }],
-    steps: [{ stepNumber: 1, instruction: "Patates ve havucu küp doğrayıp haşlayın." }, { stepNumber: 2, instruction: "Bezelye ve turşuyla karıştırın." }, { stepNumber: 3, instruction: "Mayonezle harmanlayıp soğutun." }],
+    ingredients: [{ name: "Patates", amount: "400", unit: "gr", sortOrder: 1 }, { name: "Havuç", amount: "2", unit: "adet", sortOrder: 2 }, { name: "Bezelye", amount: "150", unit: "gr", sortOrder: 3 }, { name: "Mayonez", amount: "5", unit: "yemek kaşığı", sortOrder: 4 }, { name: "Kornişon turşusu", amount: "100", unit: "gr", sortOrder: 5 }, { name: "Dereotu", amount: "0.25", unit: "demet", sortOrder: 6 }],
+    steps: [{ stepNumber: 1, instruction: "Patates ve havucu küp doğrayıp haşlayın." }, { stepNumber: 2, instruction: "Bezelye ve küp doğranmış turşuyla karıştırın." }, { stepNumber: 3, instruction: "Mayonez ve ince kıyılmış dereotuyla harmanlayıp soğutun." }],
   },
   {
     title: "Cevizli Medovik",
@@ -7570,9 +7570,9 @@ export const recipes: SeedRecipe[] = [
     tipNote: "Katları çok kalın açmayın; Medovik bekledikçe incelikle yumuşamalı.",
     servingSuggestion: "Bir gece dinlendirip ertesi gün dilimleyerek servis edin.",
     tags: ["misafir-sofrasi"],
-    allergens: ["GLUTEN", "SUT", "YUMURTA"] as const,
-    ingredients: [{ name: "Un", amount: "450", unit: "gr", sortOrder: 1, group: "Katlar için" }, { name: "Bal", amount: "120", unit: "gr", sortOrder: 2, group: "Katlar için" }, { name: "Yumurta", amount: "2", unit: "adet", sortOrder: 3, group: "Katlar için" }, { name: "Ekşi krema", amount: "500", unit: "gr", sortOrder: 4 }],
-    steps: [{ stepNumber: 1, instruction: "Bal, yumurta ve unla hamuru hazırlayıp ince katlar açın." }, { stepNumber: 2, instruction: "Katları kısa kısa pişirin.", timerSeconds: 600 }, { stepNumber: 3, instruction: "Ekşi kremayla katlayıp dinlendirin.", timerSeconds: 28800 }],
+    allergens: ["GLUTEN", "KUSUYEMIS", "SUT", "YUMURTA"] as const,
+    ingredients: [{ name: "Un", amount: "450", unit: "gr", sortOrder: 1, group: "Katlar için" }, { name: "Bal", amount: "120", unit: "gr", sortOrder: 2, group: "Katlar için" }, { name: "Yumurta", amount: "2", unit: "adet", sortOrder: 3, group: "Katlar için" }, { name: "Ekşi krema", amount: "500", unit: "gr", sortOrder: 4 }, { name: "Ceviz içi", amount: "100", unit: "gr", sortOrder: 5 }],
+    steps: [{ stepNumber: 1, instruction: "Bal, yumurta ve unla hamuru hazırlayıp ince katlar açın." }, { stepNumber: 2, instruction: "Katları kısa kısa pişirin.", timerSeconds: 600 }, { stepNumber: 3, instruction: "Ekşi kremayla katlayıp aralarına iri kıyılmış cevizi serpip dinlendirin.", timerSeconds: 28800 }],
   },
   {
     title: "Smetanalı Mantar Çorbası",

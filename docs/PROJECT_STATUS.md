@@ -1,12 +1,63 @@
 # Tarifle, Proje Durumu
 
-> Son güncelleme: **Oturum 10 sonu (20 Nis 2026), 15 commit, büyük gün — DB audit + açlık barı + batch 24-26 + duplicate merge + manuel env'ler.** **2454 tarif prod canlı** (2320 + 300 batch 24-26 - 166 duplicate merge). Mod B **1299/2454** (%53, backfill-01 98 tarif apply). Oturum highlight: **(1) Açlık barı** (Minecraft-esin 1-10 tokluk, formül + schema + retrofit + detay + listing chip + `/tarifler` filter+sort + AI Asistan "Acıktım" + home widget + OG + PDF + JSON-LD), **(2) Batch 24-26 Mod A prod** (300 yeni tarif + 25 allergen fix), **(3) Duplicate merge P3** (155 grup, 166 loser silindi, 0 reference kaybı, SEO win), **(4) Mod B backfill altyapısı** (13 CSV, 1266 tarif, backfill-01 prod %53'e çıkardı), **(5) Haftalık audit cron** (`/api/cron/audit-report`, Sentry alert, vercel.json), **(6) Empty allergen fix** (4 prod + 1 FP rollback), **(7) E2E TestUser cleanup** + helper cascade fix, **(8) Tüm manuel env tamam** (Newsletter + Audit + Cloudinary + Pinterest domain claim). 20 migration, 613/613 test PASS, tsc/lint/em-dash clean, pre-push 3 katman. **Sonraki:** Codex Backfill-02..13 (12 batch, 1168 tarif kalan), batch 27 Mod A, 3-katmanlı source drift fix, tipNote/servingSuggestion backfill (180+167), isFeatured boost (%9.2 → %10-15 hedef), uzun vade: video snippet + Cache Components PPR + Premium.
+> Son güncelleme: **Oturum 11 sonu (21 Nis 2026), 36 commit, en büyük gün** — Backfill trilogy (01-13 tam) + allergen audit overhaul + source drift fix + SEO + mobile carousel + Sentry tune + batch 27 Mod A prod + Mod B CSV hazır. **2553 tarif prod** (2454 + 99 batch 27). **Mod B 2465/2553 (%96.5)** — %53'ten başlayıp ~1266 tarifi tam çevirili yaptık. **isFeatured 294/2553 (%12.0)** — +63 boost. Pre-push **4 katman** (lint + content:validate + em-dash + allergen source guard). Source drift trilogy: allergens (553) + missing slugs (34) + content (345). Audit 0 CRITICAL / 0 over-tag. Mobile shelf carousel + "Tam çeviri" badge + PWA engagement gate + install analytics + similar-recipes v3 (region + hunger proximity, 28 test). SEO: WebSite+Organization JSON-LD + hreflang + robots param. Sentry noise tune (client denyUrls + server Auth/Prisma/JWT ignore). **Sonraki:** Batch 27 Mod B CSV Codex'e (hazır), dev-prod slug drift fix, batch 28+ Mod A, orta vade Cache Components / Video snippet / Premium.
+
+> Oturum 10 sonu (20 Nis 2026, 15 commit): DB audit + açlık barı + batch 24-26 + duplicate merge + manuel env'ler. **2454 tarif prod canlı**. Mod B **1299/2454** (%53). Oturum highlight: **(1) Açlık barı** (Minecraft-esin 1-10 tokluk, formül + schema + retrofit + detay + listing chip + `/tarifler` filter+sort + AI Asistan "Acıktım" + home widget + OG + PDF + JSON-LD), **(2) Batch 24-26 Mod A prod** (300 yeni tarif + 25 allergen fix), **(3) Duplicate merge P3** (155 grup, 166 loser silindi, 0 reference kaybı, SEO win), **(4) Mod B backfill altyapısı** (13 CSV, 1266 tarif, backfill-01 prod %53'e çıkardı), **(5) Haftalık audit cron** (`/api/cron/audit-report`, Sentry alert, vercel.json), **(6) Empty allergen fix** (4 prod + 1 FP rollback), **(7) E2E TestUser cleanup** + helper cascade fix, **(8) Tüm manuel env tamam** (Newsletter + Audit + Cloudinary + Pinterest domain claim). 20 migration, 613/613 test PASS, tsc/lint/em-dash clean, pre-push 3 katman. **Sonraki:** Codex Backfill-02..13 (12 batch, 1168 tarif kalan), batch 27 Mod A, 3-katmanlı source drift fix, tipNote/servingSuggestion backfill (180+167), isFeatured boost (%9.2 → %10-15 hedef), uzun vade: video snippet + Cache Components PPR + Premium.
 
 > Oturum 9 sonu (23 commit), 2320 tarif prod. Altyapı + kalite + maliyet turu: CI fix, daily view log, 500 URL search submission, IndexNow otomasyonu (middleware + CLI + haftalık cron + 2301 URL ping), Mod B batch 21-23 prod + 9 allergen fix, legal humanize, em-dash global yasak (2500+ karakter + pre-push Node guard), `unstable_cache` hot path'ler, Neon Launch + quota 385k CU-sec ~$12 hard cap. 574/574 test, 19 migration.
 >
 > Oturum 8 sonu (30 commit), 2320 tarif prod canlı. 10 blok: 6 Codex batch Mod A (1701→2320), 3 Mod B batch (batch 18-20 çeviri 600→900), rekabet §8 kısa 6/6 ✅ + orta 5/5 ✅, topluluk loop tam (follow + feed + fan-out + followers list + suggested cooks + collection/variation share + PWA banner + Pinterest rich pin + user-photos flag), admin analytics + bulk moderation + search log, PDF export + llms.txt, 18 migration.
 >
 > Oturum 7 sonu (28 commit), 1701 tarif prod canlı. 8 blok: Mod B batch 13-17 (600 tarif EN+DE), Mod A batch 15-17 (1401→1701), foryou sort, pagination redesign, super-admin protection, /admin/yorumlar, /kategoriler, legal hub /yasal, editör rozeti, similar-recipes v2, 44 programatik landing, profil zenginleştirme, /menu-planlayici, RSS + HowTo schema, AI Asistan v2, blog MDX + 3 makale, rekabet analizi doc, newsletter double-opt-in altyapı, codex brief 3 clarify.
+
+## 21 Nisan 2026 (oturum 11, 36 commit, maraton gün)
+
+**A · Backfill trilogy 01-13 tam** (13 commit): Mod B %53 → **%96.5** (1399 → 2465/2553). 13 batch × ~100 tarif = ~1266 tarifin ingredients+steps+tipNote+servingSuggestion EN+DE tamamlandı. Her batch: dry-run → dev+prod apply. backfill-02 v1 pidgin ("Apple core and into thin rounds sliceyin.") Codex v2 re-teslim (`2d113db`). backfill-03 (`ec8a40e`), 04 v1 (`757b9c1`) + v2 (`bae84b4` inline batch 27), 05 (`8b9116e`), 06 (`d6cf5a9`), 07 (`722cd05`), 08 (`79ffbb0`) + medianoche-sandwich vejetaryen tag fix, 09 (`aec7edf`) + goi-ga-bap-cai lime eklendi, 10 (`54bd8c3`) + 19 slug dev-prod drift remap, 11 (`799738c`), 12 (`e14c5b3`), 13 (`e70c7fb` 66 tarif son scope). Codex kalite başlangıçta pidgin + format sorunlu, son batch'ler tek sefer PASS.
+
+**B · Allergen audit overhaul** (5 commit): `6da8dfd` ilk 19 CRITICAL fix v1 (9 true + 10 FP filter). `84999e5` over-tag cleanup 128→0 + keyword expansion (GLUTEN +16 baget/bazlama/dövme/firik/yarma/gavut/tarhana/göce/gendime/katmer/kete/kavut/crumpet, SUT +8 çökelek/kurut/hellim/twarog/tvorog, DENIZ_URUNLERI +10 sardalya/barramundi/kefal/çipura/uskumru, YUMURTA +7 beze/kek küpü/pandispanya/krep, KUSUYEMIS +4 menengiç/turron, SUSAM +3 zahter/simit/humus) + 20 yeni CRITICAL fix v2 (zahter/kvas/krep/beze). `aecb569` 4 edge case temizlik (SKIP_FINDINGS empty, %100 saf). `48c67ea` 3 TR content drift fix (dereotlu-olivier + kolbaszli-lecso + cevizli-medovik + KUSUYEMIS). `21877d5` soft-match duplicate-title audit (1 LEGIT-VARIANT Fava, 0 MERGE-CANDIDATE).
+
+**C · Source drift fix trilogy** (3 commit): `b34e76f` seed allergens DB sync (553 patched) + check-allergen-source pre-push candidate. `0b57f2e` 34 missing slug restore (ayran, baklava, humus, karnıyarık, menemen, mojito, türk kahvesi, şalgam suyu, bölgesel drift tortusu). `8780d53` full patch-source-from-db apply (345 gerçek content drift) + format-aware refactor (batch 27 v1 crash fix: legacy IIFE string array vs object array format detection).
+
+**D · Content generator** (3 commit): `284ea9a` tipNote + servingSuggestion generator v1 (+321 alan, 20 tip rule + 12 serv rule, djb2 slug seed deterministic variation, kural tabanlı AI hissi). `bb0951b` serving diversify (+1069 boilerplate "Ilık/Soğuk/Sıcak servis edin" → tarife özgü varyant, %41 prod etkilendi). `f0bb982` generator v2 (pool 108 → 158 variant, salt = ingredient[0..2] ingredient-aware seed, 1040 refresh, max duplicate 72x → 64x).
+
+**E · SEO teknik bakım** (2 commit): `f6123d3` WebSite+Organization JSON-LD (SearchAction sitelinks + Knowledge Panel iskelet) + hreflang x-default/tr/en (root + her tarif) + robots param disallow (`/akis`, `/menu-planlayici`, `?sayfa=*`, `?utm_*`). `2a594e3` sitemap priority tuning (isFeatured +0.1, kategori 0.6→0.7 weekly, tag adaptive ≥10 → 0.7) + cache TTL tuning (`getCategoriesForLanding` 10dk→30dk, `getCategories` 5dk→1sa, `getTags` 10dk→1sa, `getCuisineStats` 5dk→30dk, `getRecipes` 5dk→10dk; Neon compute %40-50 azalma).
+
+**F · isFeatured boost** (`e4f02c0`): %9.4 → **%12.0** (+63 editör seçimi). Kural tabanlı scoring: underrepresented cuisine/kategori + Mod B tam + iconic short title + isFeatured bonus. Cap: TR max 40, diğer max 6 (domination önleme). Seçilen klasikler: Şalgam Suyu, Boza, İhlamur, Kısır, Waldorf, Muzlu Milkshake, Mujaddara, Spanakopita, Crema Catalana, Mapo Tofu vb. Icecek/salata severely under önce gelir.
+
+**G · Mobile UX polish** (4 commit): `2f4fab7` home "Editör Seçimi" shelf carousel (mobile <sm horizontal scroll-snap + left/right arrow button, 85%vw kart genişliği + 15% peek, desktop grid korur). `2ff6c9d` recipe "🌍 Tam çeviri" badge (locale !== 'tr' + Mod B full = hasFullTranslation helper, güven sinyali). `5259f23` AI Asistan "Acıktım" sort görünürlük polish (🎯/⚡/🧺/🍖 emoji + active primary theme + hint banner + SuggestionCard 🍖 N/10 chip). `8126c10` PWA banner engagement gate (ilk ziyarette 45s beklet, 2+ visit sonra 3s; progressive dismiss cooldown 30/90 gün/kalıcı).
+
+**H · Similar-recipes v3** (`5259f23`): Cuisine region clustering (CUISINE_REGION 8 region: mediterranean-levant, east-asia, south-asia, latin-america, slavic-central-europe, nordic, west-europe, anglo-americas) + region bonus +0.5 aynı region farklı cuisine + hunger bar proximity +0.4 (|delta|≤2). 24 → 28 unit test PASS.
+
+**I · Pre-push 4. katman + hook tune** (3 commit): `722cd05` allergen source guard aktif (`scripts/check-allergen-source.ts`, audit-deep kurallarıyla seed ingredient-allergen uyumu, DB'siz). `6bfa0e0` em-dash scratch file skip (.tmp*/tmp_*/tmp-*). `e073a7a` eslint tmp ignore (pre-existing Codex working file'lar lint bloklamaz).
+
+**J · Admin + Sentry** (2 commit): `aecb569` Admin analytics Content Quality widget (6 metrik emoji + yüzde + progress bar: isFeatured %12, Mod B %96.5, tipNote %100, serving %100, allergen, hungerBar). `21877d5` Sentry noise vs signal tune (client denyUrls browser extension protocol, server Auth.js user-side + Prisma cold start + JWT tamper ignore, %50-60 event azalma beklentisi).
+
+**K · PWA install analytics** (`522bde3`): src/lib/pwa-analytics.ts — 6 helper (trackPromptAvailable, trackInstallPrompted, trackInstallAccepted, trackInstallDismissed, trackIosFallbackShown, trackAppInstalled). Sentry tag + breadcrumb + localStorage counter. Dashboard filter `pwa.native_available:true AND pwa.install.outcome:accepted` conversion rate. iOS vs Chromium split pwa.ios_fallback tag ile.
+
+**L · Codex brief update** (2 commit): `cdf680a` batch 27 v1 recurring block kapanı + append noktası mimarisi (seed'in TÜMÜNÜ okuma, son 100-150 satıra bak). `becff0c` backfill-08/09 drift pattern dersleri (step-ingredient + tag-content mismatch + content drift issues takibi, self-check pass 1'e TR source kontrol ekle).
+
+**M · Batch 27 Mod A + Mod B CSV**: Codex batch 27 seed-recipes.ts'ye 100 yeni tarif ekledi (commit `bae84b4` içinde), prod seed 99 new + 1 skip (duplicate). 4 allergen fix (pastırmalı-yumurta/dereotlu-patates/yeşil-soğanlı-omlet + SUT, labneli-zahterli-bazlama + SUSAM). existing-slugs.txt 2556 slug güncel. **Batch 27 Mod B CSV üretildi** (`docs/translations-batch-27.csv`, 100 tarif, Codex'e Template 3 gönderilebilir).
+
+**Prod skor kartı (oturum 11 sonu):**
+- **2553 tarif prod** (2454 + 99 batch 27)
+- **Mod B 2465/2553 (%96.5)** — ~88 tarif eksik (çoğu batch 27 Mod A sonrası Mod B bekleyen)
+- **isFeatured 294/2553 (%12.0)** (+63 boost)
+- **tipNote + servingSuggestion %100 dolu** (+321 fill + 1069 diversify + 1040 v2 refresh)
+- hungerBar %100 dolu (2454 + 99 batch 27 retrofit gerekebilir, kontrol)
+- 28 unit test PASS (similar-recipes v3 +4)
+- Pre-push 4 katman: lint + content:validate + em-dash + **allergen source guard**
+- tsc clean, lint 0 error, content:validate 0 ERROR / 1611 WARNING
+- 20 formal migration (oturum 11'de yeni yok)
+- Audit-deep: 0 CRITICAL / 0 over-tag / 201-278 WARNING
+- 4 edge case SKIP_FINDINGS → empty (check-allergen-source %100 saf)
+- Son commit `e70c7fb` + `21877d5` + `522bde3` (sırayla backfill-13, dup audit+sentry, pwa analytics)
+
+**Bekleyen (oturum 12):**
+- **Batch 27 Mod B apply**: CSV hazır `docs/translations-batch-27.csv`. Codex'e "Mod B. Batch 27." Template 3 ile gönder → JSON teslim → apply → Mod B %98-99'a çıkar.
+- **Dev-prod slug drift fix**: 34 slug dev'de uzun form (`cevizli-tirit-samsun-ocak-usulu`), prod'da kısa (`cevizli-tirit-samsun-usulu`). Prod authoritative; dev DB rename + seed sync + restore-missing-slugs-to-seed script'i prod-form'a güncelle.
+- **Batch 28+ Mod A**: Kerem tetiklediğinde, Codex batch 27 crash fix (append mimarisi + recurring block kapanı) brief'te kalıcı.
+- **Orta vade**: Video snippet (Remotion 1-2 hafta), Cache Components PPR feature branch (12-18h), Premium subscription altyapısı, React Native mobil planlama.
+- **Uzun vade**: AI Asistan v3 gerçek LLM, açık API.
 
 ## 20 Nisan 2026 (oturum 10, 15 commit, büyük gün)
 

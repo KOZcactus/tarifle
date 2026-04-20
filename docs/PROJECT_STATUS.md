@@ -1,12 +1,12 @@
 # Tarifle, Proje Durumu
 
-> Son güncelleme: **Oturum 9 sonu (20 Nis 2026), 20 commit, altyapı tur.** **2320 tarif prod canlı** (batch 23 sonu değişmedi). Mod B **1200/2320** (batch 21-23 tam, JSONB artık em-dash temiz). Bu oturumda içerik yerine **altyapı + kalite + maliyet kontrolü**: CI fix, daily view log + "bu hafta N" chip, search-submission URL listesi (500), IndexNow otomasyonu (Vercel Cron + middleware + CLI + bulk ping canlı), Mod B batch 21-22-23 prod + 9 allergen fix, legal humanize (çerez + güvenlik + KVKK sade), em-dash global yasak (2500+ karakter temizlendi + pre-push guard), hot query path'lerine unstable_cache (compute-hour %30-50 azalma), Neon Launch plan + quota ($385k CU-seconds ≈ $12 tavan). Codex brief §9 batch 21 Mod B dersleri eklendi. 574/574 test PASS, tsc/lint clean, 19 migration. **Sonraki adımlar:** IndexNow bulk ping (Bing site verification tamamlanınca tekrar tetiklenecek, haftalık cron zaten aktif) · Batch 24 Mod A tetikleyici · Kerem manuel: Cloudinary + newsletter cron + Pinterest domain claim hâlâ bekliyor · orta vadeli: video snippet (Remotion).
+> Son güncelleme: **Oturum 9 sonu (20 Nis 2026), 23 commit, altyapı + kalite + maliyet kontrolü turu.** **2320 tarif prod canlı** (batch 23 sonu; batch 24 Codex teslim yeniden üretim bekliyor). Mod B **1200/2320** (batch 21-22-23 tam çeviri prod canlı). Bu oturum altyapı ağırlıklı: CI fix (`/etiket/[tag]` build), daily view log + "bu hafta N" chip, search-submission URL listesi (500), IndexNow otomasyonu (middleware + CLI + haftalık Vercel Cron + bulk ping 2301 URL canlı), Mod B batch 21-22-23 prod + 9 allergen fix, legal humanize (çerez + güvenlik + KVKK sade), **em-dash global yasak** (2500+ karakter temizlendi + `scripts/check-emdash.mjs` pre-push Node guard + `scripts/fix-emdash-meaning.mjs` punct upgrade 39 yer), hot query path'lerine `unstable_cache` (compute-hour %30-50 azalma + `updateTag` invalidation), **Neon Launch plan + quota** (385k CU-seconds ~$12 hard cap, API ile set edildi). Codex brief §9 batch 21 Mod B dersleri eklendi. 574/574 test PASS, tsc/lint clean, 19 migration, CI 13+ art arda yeşil. Pre-push 3 katman: lint + content:validate + em-dash guard. **Sonraki adımlar:** Genel DB audit (orphan, duplicate slug, cross-table tutarlılık, migration drift, review/variation quality) · Batch 24 Mod A ham text yapıştırma bekleniyor (Codex dosyaya yazamadı, tek kod bloğu olarak gelecek) · Kerem manuel: Cloudinary + newsletter cron + Pinterest domain claim · orta vadeli: video snippet (Remotion, ayrı session).
 >
 > Oturum 8 sonu (30 commit), 2320 tarif prod canlı. 10 blok: 6 Codex batch Mod A (1701→2320), 3 Mod B batch (batch 18-20 çeviri 600→900), rekabet §8 kısa 6/6 ✅ + orta 5/5 ✅, topluluk loop tam (follow + feed + fan-out + followers list + suggested cooks + collection/variation share + PWA banner + Pinterest rich pin + user-photos flag), admin analytics + bulk moderation + search log, PDF export + llms.txt, 18 migration.
 >
 > Oturum 7 sonu (28 commit), 1701 tarif prod canlı. 8 blok: Mod B batch 13-17 (600 tarif EN+DE), Mod A batch 15-17 (1401→1701), foryou sort, pagination redesign, super-admin protection, /admin/yorumlar, /kategoriler, legal hub /yasal, editör rozeti, similar-recipes v2, 44 programatik landing, profil zenginleştirme, /menu-planlayici, RSS + HowTo schema, AI Asistan v2, blog MDX + 3 makale, rekabet analizi doc, newsletter double-opt-in altyapı, codex brief 3 clarify.
 
-## 20 Nisan 2026 (oturum 9, 20 commit, altyapı + kalite)
+## 20 Nisan 2026 (oturum 9, 23 commit, altyapı + kalite + maliyet)
 
 Kategori özet:
 
@@ -30,28 +30,40 @@ Kategori özet:
 **D · Legal humanize:**
 - Çerez politikası + güvenlik sayfası (`5674a2e`): `authjs.session-token`, `bcrypt`, `HSTS`, `Upstash Redis sliding-window`, `PII filter`, `point-in-time recovery` gibi teknik terimler sıradan Türkçeye, "sende olanlar / bizde olanlar" → "senin yapabileceklerin / bizim yaptıklarımız", cookie banner "4 çerez — oturum, CSRF…" → "sitenin çalışması için zorunlu çerezler".
 
-**E · Em-dash global temizlik + kural:**
+**E · Em-dash global temizlik + kural + pre-push guard:**
 - Session 1 (`b48e178`): 1137 em-dash (UI messages 165 + tsx/ts 737 + seed 7 + legal).
-- Session 2 (`54e0d76`): 1135 md + 642 global ts/json + 272 DB + batch-0/1/2 source + pre-push Node guard.
-- Toplam **2500+ em-dash** temizlendi. `scripts/check-emdash.mjs` her push'ta engel, en-dash (range separator) legitimate bırakıldı.
+- Session 2 (`54e0d76`): 1135 md + 642 global ts/json + 272 DB (Recipe.translations JSONB EN/DE) + batch-0/1/2 source + pre-push Node guard (`scripts/check-emdash.mjs`).
+- Punct spot-fix (`d3fc795`): toplu `" — "` → `", "` sonrası anlam zayıf 39 yerde virgül yerine `:` / `;` / `.` upgrade (messages tr/en + blog MDX + email template).
+- Toplam **2500+ em-dash** temizlendi. `scripts/check-emdash.mjs` her push'ta engel; en-dash (range separator `1–2`, `2.7–3.3 s`) legitimate bırakıldı.
+- Kural kaynağı: `AGENTS.md` + `docs/CODEX_BATCH_BRIEF.md` §3 yasaklar + `docs/EM_DASH_CLEANUP.md` plan.
 
-**F · Performans + maliyet:**
-- Cache optimizasyonu (`0ceb8fe`): `getTags` (10dk), `getCategoriesForLanding` (10dk), `getRecipes` (5dk), `getCuisineBreakdown` (15dk), `getMostReviewed/Saved` (10dk). Mutation hook'larında `updateTag` (Next.js 16). Listing DB hit %90+ azalma.
-- Neon Launch plan + quota: compute max 1 CU (3 endpoint), scale-to-zero 5 dk, quota 385k CU-seconds ≈ $12 hard cap. Quota API ile set edildi.
+**F · Performans + maliyet (Neon optimizasyonu):**
+- Cache optimizasyonu (`0ceb8fe`): `getTags` (10dk), `getCategoriesForLanding` (10dk), `getRecipes` (5dk), `getCuisineBreakdown` (15dk), `getMostReviewed/Saved` (10dk). Mutation hook'larında Next.js 16 `updateTag` (Next.js 15+ `revalidateTag` 2-arg signature değiştiği için `updateTag` tek-arg tercih edildi). Listing DB hit %90+ azalma.
+- Neon Launch plan + compute ayarı: max 1 CU (3 endpoint), min 0.25 CU, scale-to-zero 5 dk. Dashboard'dan Branches → Compute Edit ile.
+- Quota (API üzerinden, Neon Dashboard'da UI yok): `compute_time_seconds: 385000` + `active_time_seconds: 720000`. Aşılırsa tüm compute suspend, ay sonuna kadar otomatik reset yok.
+- Budget ~$12 hard cap. Gerçek beklenti $6-8 cache sonrası (intermittent load profili).
+
+**G · Doc + plan güncellemeleri:**
+- PROJECT_STATUS.md oturum 9 özeti (`56295bb`).
+- EM_DASH_CLEANUP.md kalan scope + hook açıklaması (session 2 commit'inde).
+- INDEXNOW_SETUP.md Kerem manuel adımları (env + Vercel Cron + bulk ping).
 
 **Prod skor kartı (oturum 9 sonu):**
-- **2320 tarif prod**, 24 cuisine, 17 kategori
-- **1200/2320 tam Mod B** (batch 12-23 ingredients+steps+tipNote+servingSuggestion)
+- **2320 tarif prod** (batch 23 sonu; batch 24 Codex teslim bekliyor, dosyaya yapıştırma gerekiyor)
+- **1200/2320 tam Mod B** (batch 12-23 ingredients+steps+tipNote+servingSuggestion EN+DE)
 - Test: 574/574 PASS (+17 yeni: 11 indexnow + 6 recipe-view-daily)
-- 19 formal migration (add_recipe_view_daily)
-- CI art arda 10+ yeşil
-- DB storage: 127 MB (prod 45 + dev 45 + codex 36); logical, copy-on-write sonrası ~70 MB billable
-- Neon worst-case: $12 (quota ile kilitli); gerçek beklenti $6-8
+- 19 formal migration (oturum 9: `add_recipe_view_daily`)
+- CI art arda 13+ yeşil, son commit `d3fc795`
+- DB storage: 127 MB total (prod 45 + dev 45 + codex-import 36 MB logical); copy-on-write sonrası billable ~70 MB
+- Neon worst-case: $12 (quota ile kilitli), gerçek beklenti $6-8
+- Pre-push 3 katman: lint + content:validate + em-dash guard (`scripts/check-emdash.mjs`)
 
 **Bekleyen (oturum 10):**
-- Kerem manuel: IndexNow bulk ping (Bing site verification tamamlanınca tekrar `npx tsx scripts/indexnow-ping.ts --all`); newsletter cron secret + Cloudinary toggle + Pinterest domain claim (hâlâ bekliyor).
-- Codex: batch 24 Mod A tetikleyici.
-- Orta vadeli: Video snippet (Remotion, 1-2 hafta ayrı session); Cache Components PPR feature branch; Premium subscription altyapısı başlangıcı.
+- **Genel DB audit (Kerem'in istediği zor iş):** orphan records, duplicate slug/title, cross-table tutarlılık (Recipe.allergens ↔ ingredient listesi), migration drift, review/variation user-generated quality, bookmark/collection orphan'ları, status dağılımı (prod vs dev), unused index.
+- **Batch 24 Mod A pipeline:** Codex ilk denemede dosyaya yazamadı, yeniden ham kod bloğu olarak mesajda gelecek. Claude yapıştırıp marker + UTF-8/LF garanti edecek, seed → audit → dev apply → prod promote → allergen fix (gerekirse).
+- **Kerem manuel:** newsletter cron secret (Vercel env + QStash/Cron schedule), Cloudinary prod env + `/admin/topluluk-fotolari` user-photos toggle, Pinterest `/settings/claim` + `PINTEREST_DOMAIN_VERIFY` env, IndexNow günlük/haftalık doğrulama (zaten cron pazartesi 08:00 UTC).
+- **Orta vadeli (ayrı session):** Video snippet (Remotion, 1-2 hafta), Cache Components PPR feature branch (12-18h), Premium subscription altyapısı başlangıcı.
+- **Uzun vadeli:** React Native mobil, AI Asistan v3 gerçek LLM, açık API.
 
 ## 20 Nisan 2026 (oturum 8, 30 commit, büyük tur)
 

@@ -206,6 +206,7 @@ interface RecipeDetailLike {
   cookMinutes: number;
   servingCount: number;
   averageCalories: number | null;
+  hungerBar: number | null;
   difficulty: "EASY" | "MEDIUM" | "HARD";
   cuisine: string | null;
   category: { name: string; emoji: string | null };
@@ -280,6 +281,11 @@ function buildDocument(recipe: RecipeDetailLike, locale: Locale) {
           <Text style={styles.metaItem}>{difficultyLabel}</Text>
           {recipe.averageCalories !== null && (
             <Text style={styles.metaItem}>~{recipe.averageCalories} kcal</Text>
+          )}
+          {recipe.hungerBar !== null && (
+            <Text style={styles.metaItem}>
+              Açlık barı {recipe.hungerBar}/10
+            </Text>
           )}
         </View>
         {description && <Text style={styles.description}>{description}</Text>}

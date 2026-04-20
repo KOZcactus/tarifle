@@ -23,6 +23,7 @@ export interface RecipeOfTheDay {
     totalMinutes: number;
     servingCount: number;
     averageCalories: number | null;
+    hungerBar: number | null;
     description: string;
     imageUrl: string | null;
     isFeatured: boolean;
@@ -91,6 +92,7 @@ export async function getRecipeOfTheDay(
       totalMinutes: true,
       servingCount: true,
       averageCalories: true,
+      hungerBar: true,
       description: true,
       imageUrl: true,
       isFeatured: true,

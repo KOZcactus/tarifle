@@ -71,6 +71,7 @@ export default async function Image({ params, id }: Props) {
       )
     : "";
   const calories = recipe?.averageCalories ?? null;
+  const hunger = recipe?.hungerBar ?? null;
   const brandTagline = locale === "en" ? "Make Eat" : "Make Eat";
 
   const titleText = `${title} ${eyebrow} ${difficulty} ${duration} ${calories ?? ""} kcal tarifle.app`;
@@ -171,6 +172,9 @@ export default async function Image({ params, id }: Props) {
                 <Chip label={`⏱ ${duration}`} bg="#f0ece4" fg="#1a1a1a" />
                 {calories !== null && (
                   <Chip label={`~${calories} kcal`} bg="#f0ece4" fg="#1a1a1a" />
+                )}
+                {hunger !== null && (
+                  <Chip label={`🍖 ${hunger}/10`} bg="#f0ece4" fg="#1a1a1a" />
                 )}
               </div>
             )}

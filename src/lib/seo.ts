@@ -152,6 +152,28 @@ export function generateRecipeJsonLd(
           },
         }
       : {}),
+    // Açlık barı, Tarifle-özel tokluk puanı (Holt Satiety Index temelli,
+    // 1-10 integer). Schema.org Recipe tipinde karşılığı yok; standart
+    // additionalProperty ile PropertyValue olarak expose ediliyor. Google
+    // Search bu alanı rich result'a çıkarmaz ama AI crawler'lar (ChatGPT,
+    // Claude), Pinterest ve custom tool'lar structured sinyal olarak
+    // kullanabilir.
+    ...(recipe.hungerBar !== null
+      ? {
+          additionalProperty: [
+            {
+              "@type": "PropertyValue",
+              name: "Satiety score",
+              value: recipe.hungerBar,
+              minValue: 1,
+              maxValue: 10,
+              propertyID: "tarifle:hunger-bar",
+              description:
+                "Minecraft-esin tokluk göstergesi (porsiyon başı, 1-10 integer)",
+            },
+          ],
+        }
+      : {}),
     // AggregateRating only emitted when real review data exists, Google
     // structured-data abuse guard: fake/bookmark-based ratings are flagged.
     ...(aggregateRating && aggregateRating.count > 0
@@ -273,6 +295,23 @@ export function generateRecipeFaqJsonLd(recipe: RecipeDetail): object | null {
     question: `${recipe.title} için kaç malzeme gerekiyor?`,
     answer: `Bu tarif için ${recipe.ingredients.length} malzeme gereklidir.`,
   });
+
+  // 8. Açlık barı (varsa), Google SERP'te "ne kadar tok tutar" sorusu
+  // FAQ rich result olarak çıkabilir (Tarifle'ye özel differentiation).
+  if (recipe.hungerBar !== null) {
+    const bucket =
+      recipe.hungerBar <= 2
+        ? "az tok tutar, hızlı acıkabilirsin"
+        : recipe.hungerBar <= 5
+          ? "orta düzeyde tok tutar, öğün arasına uygundur"
+          : recipe.hungerBar <= 8
+            ? "güçlü tok tutar, ana öğün yerini alır"
+            : "uzun süre tok tutar, çok aç bir güne göredir";
+    faqs.push({
+      question: `${recipe.title} tok tutar mı?`,
+      answer: `Porsiyon başına açlık barı ${recipe.hungerBar}/10; ${bucket}. Puan protein + lif + doygunluk endeksine göre hesaplanır.`,
+    });
+  }
 
   if (faqs.length === 0) return null;
 

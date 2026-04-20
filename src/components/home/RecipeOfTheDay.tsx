@@ -61,6 +61,15 @@ export async function RecipeOfTheDay() {
                 ~{recipe.averageCalories} kcal
               </span>
             )}
+            {recipe.hungerBar !== null && (
+              <span
+                className="inline-flex items-center gap-1"
+                title={`Açlık barı ${recipe.hungerBar}/10 (porsiyon başı tokluk)`}
+              >
+                <span aria-hidden="true">🍖</span>
+                {recipe.hungerBar}/10
+              </span>
+            )}
             {recipe._count.variations > 0 && (
               <span className="inline-flex items-center gap-1">
                 <span aria-hidden="true">✨</span>

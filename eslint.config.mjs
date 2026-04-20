@@ -35,6 +35,11 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Kerem/Codex tmp working files (ile senkron .gitignore `.tmp*`,
+    // `tmp_*`, `tmp-*` patterns). Pre-existing scratch code, lint dışı.
+    ".tmp*",
+    "tmp_*",
+    "tmp-*",
   ]),
 ]);
 

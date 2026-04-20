@@ -18,7 +18,7 @@
 
 ### Mod A default (Kerem sadece "Mod A" veya "batch N yaz" derse):
 - **100 tarif** yaz (aksi belirtilmedikçe)
-- Dağılım: **~70 TR + ~30 uluslararası**, uluslararasıda eksik mutfaklardan çeşitlilik
+- Dağılım: **~50 TR + ~50 uluslararası**, uluslararasıda eksik mutfaklardan çeşitlilik
 - TR'de **bölgesel çeşitlilik** zorunlu, sadece klasik değil, 7 bölgeden örnekler (Karadeniz, Ege, Güneydoğu, İç Anadolu, Doğu, Marmara, Akdeniz)
 - **isFeatured: batch'te 5-10 tarif** (sadece ikonik olanlar)
 - Eksik kategoriler için Kerem'e öncelik sor (kahvaltı/çorba/tatlı dengelensin)
@@ -181,7 +181,7 @@ geri dönüş referansı.
 
 **Default scope (Kerem sadece "Mod A" / "batch N yaz" dediğinde):**
 - **100 tarif**
-- **~70 TR + ~30 uluslararası** (TR ağırlıklı, uluslararasıda §5 cuisine
+- **~50 TR + ~50 uluslararası** (uluslararasıda §5 cuisine
   tablosundan eksik olan kodlardan, genelde `se/hu/pe/gb/pl/au` az olanlar,
   ya da `ru/vn/es/cu` gibi gelişmekte olanlar)
 - **7 Türk bölgesi dengelensin** (Karadeniz, Ege, Güneydoğu, İç Anadolu,

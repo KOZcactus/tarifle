@@ -147,6 +147,8 @@ export const ALLERGEN_RULES: AllergenRule[] = [
       "tunnbröd", "tunnbrod", "kvas", "krep", "crepe", "pancake",
       "pandispanya", "wrap", "tarhonya", "cornbread", "corn bread",
       "csiga", "pasty",
+      // Composite TR desserts (finished goods used as ingredient; oturum 12):
+      "revani",
       // Grains + cereals (wheat-contaminated or wheat-derived):
       "yulaf", "granola", "kuskus", "freekeh",
       // Asian noodles/wrappers (mostly wheat-based):
@@ -258,6 +260,8 @@ export const ALLERGEN_RULES: AllergenRule[] = [
       // Egg-containing prepared goods (session 11 audit genişletme):
       "beze", "kek küpü", "kek kupu", "pandispanya", "tart hamuru",
       "kek hamuru", "kurabiye hamuru", "krep", "kete",
+      // Composite TR desserts with egg (oturum 12):
+      "revani",
     ],
     excludePatterns: [
       // "beze" substring "bezelye"yi yakalar, bezelye baklagil (YUMURTA yok)

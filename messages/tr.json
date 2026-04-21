@@ -28,6 +28,15 @@
     "heroTagline": "Lezzetli yemek, içecek ve kokteyl tarifleri. Denenmiş tariflerle ne yapacağına daha hızlı karar ver.",
     "heroRecipeCount": "{count} yemek çeşidi",
     "heroCtaBrowse": "Yemek Çeşitlerini Keşfet",
+    "heroAiPrompt": {
+      "title": "Dolabında ne var?",
+      "subtitle": "2-3 malzeme yaz, sana ne yapabileceğini söyleyelim.",
+      "inputLabel": "Malzemeler (virgülle ayır)",
+      "placeholder": "örn. tavuk, pirinç, sarımsak",
+      "timeLabel": "Süre:",
+      "timeOption": "{n} dk",
+      "submit": "Öneri al →"
+    },
     "heroCtaAi": "AI Asistan'a Sor",
     "searchPlaceholder": "Yemek çeşidi veya malzeme ara...",
     "sectionPersonalized": "Sana özel",

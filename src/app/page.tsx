@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
 import { FeaturedShelf } from "@/components/home/FeaturedShelf";
+import { HeroAiPrompt } from "@/components/home/HeroAiPrompt";
 import { RecipeOfTheDay } from "@/components/home/RecipeOfTheDay";
 import {
   getFeaturedRecipes,
@@ -111,6 +112,11 @@ export default async function HomePage() {
             </Link>
           ))}
         </div>
+
+        {/* Hero AI prompt: malzeme girisi + sure chip + 'Oneri al' CTA,
+            /ai-asistan'a query string ile yonlendirir. GPT audit'inin
+            "karar-motoru hero'da baskin olmali" onerisinin uygulamasi. */}
+        <HeroAiPrompt />
       </section>
 
       {/* Sana özel, giriş yapmış + tercihleri dolu user için kişiselleştirilmiş

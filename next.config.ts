@@ -21,7 +21,20 @@ const nextConfig: NextConfig = {
   // Permanent redirect (308 ≈ 301) ile SEO otoritesi korunur, external link'ler
   // bozulmaz. Next, `permanent: true` için 308 döner (method-preserving),
   // legacy 301 bekleyen crawler'lar da 308'i aynı şekilde işler.
+  //
+  // Canonical domain: www.tarifle.app -> tarifle.app (apex). İki domain
+  // ayrı ayrı 200 serve ediyordu, Google duplicate content + split link
+  // authority olarak okuyordu (GPT audit'i de "www vs apex karışımı" olarak
+  // flag'lemişti). `has` host match ile www request'leri apex'e permanent
+  // yönlendiriliyor; `SITE_URL` zaten apex, sitemap + canonical tag'ler
+  // de apex, tam hizalama.
   redirects: async () => [
+    {
+      source: "/:path*",
+      has: [{ type: "host", value: "www.tarifle.app" }],
+      destination: "https://tarifle.app/:path*",
+      permanent: true,
+    },
     { source: "/kvkk", destination: "/yasal/kvkk", permanent: true },
     {
       source: "/kullanim-sartlari",

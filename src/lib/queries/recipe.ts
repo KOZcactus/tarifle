@@ -598,7 +598,7 @@ export async function getUserFavoriteTagSlugs(
 }
 
 /** Tek tarif detayı, slug ile */
-export async function getRecipeBySlug(slug: string): Promise<RecipeDetail | null> {
+async function _getRecipeBySlugInner(slug: string): Promise<RecipeDetail | null> {
   const recipe = await prisma.recipe.findUnique({
     where: { slug },
     select: {
@@ -710,6 +710,27 @@ export async function getRecipeBySlug(slug: string): Promise<RecipeDetail | null
     createdAt: recipe.createdAt.toISOString(),
   } as RecipeDetail;
 }
+
+/**
+ * Cached tek tarif detayı wrapper. /tarif/[slug] sayfası her ziyarette
+ * ~7-9 Prisma subquery'si üretir (ingredients + steps + tags + variations +
+ * _count relation subselects). Sentry N+1 alert'inin ana kaynağı. 5 dk TTL
+ * ile çoğu tekil ziyarette Neon'a hiç gitmemesi sağlanır; "recipes" tag'i
+ * mevcut mutasyon akışında zaten invalidate ediliyor (seed / admin edit /
+ * view count güncellemesi dışında; viewCount zamanlamayı atlatır ama o
+ * info-only metrik, stale OK).
+ *
+ * Revalidation: revalidateTag("recipes"). seed-recipes/scripts ve admin
+ * hook'ları çağrıyor (bkz. src/app/api/admin/*).
+ */
+export const getRecipeBySlug = unstable_cache(
+  _getRecipeBySlugInner,
+  ["get-recipe-by-slug-v1"],
+  {
+    revalidate: 300,
+    tags: ["recipes"],
+  },
+);
 
 export interface RecipeReview {
   id: string;

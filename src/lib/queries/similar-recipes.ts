@@ -34,6 +34,7 @@
  * relevance ölçüyor; burada amaç "bu tarife benzeyen", tamamen farklı
  * problem. Skorlama metadata üzerinden daha doğal.
  */
+import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import type { RecipeCard } from "@/types/recipe";
 import { CUISINE_REGION, type CuisineCode } from "@/lib/cuisines";
@@ -224,7 +225,7 @@ export function scoreCandidates(
  * Returns empty array if the target doesn't exist or has no signal
  * matches. UI component handles the empty state by hiding the section.
  */
-export async function getSimilarRecipes(
+async function _getSimilarRecipesInner(
   recipeId: string,
   limit = 6,
 ): Promise<RecipeCard[]> {
@@ -344,3 +345,27 @@ export async function getSimilarRecipes(
     _count: { variations: c._count.variations },
   }));
 }
+
+/**
+ * Cached `getSimilarRecipes` wrapper. Her çağrı 2 DB query + nested select
+ * subquery'leri üretiyor (target + 100-row candidate pool with tags /
+ * ingredients / _count subselects, Prisma-side 5-7 subquery). /tarif/[slug]
+ * sayfasında Sentry info-level db_query trace'inin ana kaynaklarından biri.
+ *
+ * 1 saat TTL: skorlama deterministic ve katalog hareketi düşük (yeni tarif
+ * günde ~3-5); stale 1 saatlik sonuç kullanıcı keşfini etkilemez. Yeni
+ * tarif eklendiğinde `revalidateTag("recipes")` chain cache'i temizler,
+ * similar öneriler taze başa alınır.
+ *
+ * Key'ler recipeId + limit kombinasyonunu kapsar ("get-similar-recipes-v1"
+ * + argümanlar otomatik dahil); aynı tarif için limit=6 ve limit=12 farklı
+ * slot.
+ */
+export const getSimilarRecipes = unstable_cache(
+  _getSimilarRecipesInner,
+  ["get-similar-recipes-v1"],
+  {
+    revalidate: 3600,
+    tags: ["recipes"],
+  },
+);

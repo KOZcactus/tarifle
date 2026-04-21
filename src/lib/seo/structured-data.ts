@@ -73,3 +73,53 @@ export function buildOrganizationSchema(description: string): OrganizationSchema
     ],
   };
 }
+
+interface ItemListSchema {
+  "@context": "https://schema.org";
+  "@type": "ItemList";
+  name: string;
+  description?: string;
+  numberOfItems: number;
+  itemListElement: {
+    "@type": "ListItem";
+    position: number;
+    url: string;
+    name: string;
+  }[];
+}
+
+/**
+ * Recipe list ItemList JSON-LD. Google kategori/mutfak/diyet sayfalarının
+ * bir "tarif koleksiyonu" olduğunu anlaması için; Recipe karnıyarığa
+ * zaten individual Recipe schema veriyor, bu toplu katalog sayfaları
+ * için list-level signal. Rich Results "Carousel" eligibility'si için
+ * de şart (çoklu Recipe pointer).
+ *
+ * `items` sadece görünür sayfanın slug + title'ını içerir (pagination'a
+ * uyumlu, tüm koleksiyonu değil). Google dokümantasyonu açıkça:
+ * ItemList o sayfada görünen item'ların listesi olmalı, gizli veya
+ * filtered dahil değil.
+ *
+ * url ve name mandatory; image + description opsiyonel ama trafik
+ * sinyali artırır. Bu ilk pass'te url + name yeterli, çünkü list
+ * page'de card'ta resim zaten görünür.
+ */
+export function buildRecipeListSchema(options: {
+  name: string;
+  description?: string;
+  items: { slug: string; title: string }[];
+}): ItemListSchema {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: options.name,
+    ...(options.description ? { description: options.description } : {}),
+    numberOfItems: options.items.length,
+    itemListElement: options.items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: `${SITE_URL}/tarif/${item.slug}`,
+      name: item.title,
+    })),
+  };
+}

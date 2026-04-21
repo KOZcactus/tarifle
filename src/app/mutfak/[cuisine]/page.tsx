@@ -20,6 +20,7 @@ import { auth } from "@/lib/auth";
 import { ITEMS_PER_PAGE } from "@/lib/constants";
 import { ALLERGEN_ORDER } from "@/lib/allergens";
 import { generateBreadcrumbJsonLd } from "@/lib/seo";
+import { buildRecipeListSchema } from "@/lib/seo/structured-data";
 import { DIETS } from "@/lib/diets";
 import { getLocale } from "next-intl/server";
 
@@ -131,6 +132,15 @@ export default async function MutfakLandingPage({
     { name: label, url: `/mutfak/${cuisine}` },
   ]);
 
+  // ItemList JSON-LD: Google kategori/mutfak sayfasını Recipe Carousel
+  // eligibility'si için "tarif koleksiyonu" olarak okur. Görünür
+  // sayfadaki recipes array'ini pointer list haline getirir.
+  const recipeListJsonLd = buildRecipeListSchema({
+    name: t("cuisinePageTitle", { label }),
+    description: description.slice(0, 200),
+    items: recipes.map((r) => ({ slug: r.slug, title: r.title })),
+  });
+
   // Related cuisines, mevcut kodu hariç diğer 5 rastgele mutfak.
   // Simple pick: slug alfabetik sırada önceki/sonraki + ek çeşitlilik.
   const relatedCuisines = CUISINE_CODES.filter((c) => c !== code).slice(0, 8);
@@ -141,6 +151,12 @@ export default async function MutfakLandingPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      {recipes.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(recipeListJsonLd) }}
+        />
+      )}
 
       <LandingBreadcrumb
         items={[

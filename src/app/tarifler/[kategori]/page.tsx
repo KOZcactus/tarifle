@@ -11,6 +11,7 @@ import { getCategoryBySlug } from "@/lib/queries/category";
 import { getRecipes, resolveDefaultAllergenAvoidances } from "@/lib/queries/recipe";
 import { auth } from "@/lib/auth";
 import { generateBreadcrumbJsonLd, generateCategoryFaqJsonLd } from "@/lib/seo";
+import { buildRecipeListSchema } from "@/lib/seo/structured-data";
 import { ALLERGEN_ORDER } from "@/lib/allergens";
 import { CUISINE_CODES, CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
 import { ITEMS_PER_PAGE } from "@/lib/constants";
@@ -120,6 +121,14 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
     { name: category.name, url: `/tarifler/${kategori}` },
   ]);
 
+  // ItemList JSON-LD: görünür sayfadaki recipe pointer list'i, Google
+  // Recipe Carousel rich result eligibility için.
+  const recipeListJsonLd = buildRecipeListSchema({
+    name: `${category.name} Tarifleri`,
+    description: category.description ?? undefined,
+    items: recipes.map((r) => ({ slug: r.slug, title: r.title })),
+  });
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Schema.org BreadcrumbList JSON-LD */}
@@ -134,6 +143,12 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
           __html: JSON.stringify(generateCategoryFaqJsonLd(category.name, total)),
         }}
       />
+      {recipes.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(recipeListJsonLd) }}
+        />
+      )}
 
       {/* Category Header */}
       <div className="mb-8">

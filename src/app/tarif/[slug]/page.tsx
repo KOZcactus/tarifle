@@ -716,11 +716,16 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
     </div>
   );
 
-  if (isAlcoholic) {
-    return <AgeGate>{content}</AgeGate>;
-  }
-
-  return content;
+  // AgeGate v2 overlay: content her zaman render edilir (SSR HTML'inde
+  // tarif schema + adimlar + malzemeler mevcut, Google bot indexler).
+  // Alkollu tarifse gate overlay client-side mount'ta kullanici onayi
+  // gelene kadar icerigin ustune dusuyor.
+  return (
+    <>
+      {isAlcoholic && <AgeGate />}
+      {content}
+    </>
+  );
 }
 
 function formatTotalMinutes(

@@ -15,6 +15,7 @@ import {
   cuisineCodeBySlug,
 } from "@/lib/cuisines";
 import { getRecipes, resolveDefaultAllergenAvoidances } from "@/lib/queries/recipe";
+import { getCuisineStats } from "@/lib/queries/cuisine-stats";
 import { auth } from "@/lib/auth";
 import { ITEMS_PER_PAGE } from "@/lib/constants";
 import { ALLERGEN_ORDER } from "@/lib/allergens";
@@ -49,8 +50,13 @@ export async function generateMetadata({
 
   const t = await getTranslations("landing");
 
-  // Tarif sayısı metadata'da yer alsın diye lightweight count.
-  const { total } = await getRecipes({ cuisines: [code], limit: 1 });
+  // User-agnostic count: home page `getCuisineStats` ile aynı kaynak.
+  // Önceki davranış `getRecipes({ cuisines: [code], limit: 1 }).total` idi,
+  // ama o hook detay sayfada allergen filter uygulanıyordu; metadata her
+  // kullanıcıya aynı başlığı göstermeli. GPT dış audit'inde "ana sayfa
+  // 1541 vs mutfak detay 1407" olarak yakalanan tutarsızlığın kök nedeni.
+  const stats = await getCuisineStats();
+  const total = stats.find((s) => s.code === code)?.count ?? 0;
 
   return {
     title: t("cuisineMetaTitle", { label, count: total }),
@@ -98,19 +104,26 @@ export default async function MutfakLandingPage({
   const currentPage = Math.max(1, parseInt(sp.page ?? "1", 10) || 1);
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
 
-  const [{ recipes, total }, t, tCommon] = await Promise.all([
-    getRecipes({
-      cuisines: [code],
-      excludeAllergens:
-        excludeAllergens.length > 0 ? excludeAllergens : undefined,
-      limit: ITEMS_PER_PAGE,
-      offset,
-    }),
-    getTranslations("landing"),
-    getTranslations("recipes"),
-  ]);
+  const [{ recipes, total: filteredTotal }, t, tCommon, cuisineStats] =
+    await Promise.all([
+      getRecipes({
+        cuisines: [code],
+        excludeAllergens:
+          excludeAllergens.length > 0 ? excludeAllergens : undefined,
+        limit: ITEMS_PER_PAGE,
+        offset,
+      }),
+      getTranslations("landing"),
+      getTranslations("recipes"),
+      getCuisineStats(),
+    ]);
 
-  const totalPages = Math.max(1, Math.ceil(total / ITEMS_PER_PAGE));
+  // User-agnostic total (home + metadata ile aynı kaynak). Header ve
+  // pagination'da bu gösterilir; listede kullanıcının allergen
+  // tercihlerine göre filtrelenmiş `filteredTotal` kalabilir.
+  const agnosticTotal =
+    cuisineStats.find((s) => s.code === code)?.count ?? filteredTotal;
+  const totalPages = Math.max(1, Math.ceil(filteredTotal / ITEMS_PER_PAGE));
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: t("breadcrumbHome"), url: "/" },
@@ -150,7 +163,7 @@ export default async function MutfakLandingPage({
           {description}
         </p>
         <p className="mt-2 text-xs text-text-muted">
-          {t("totalCount", { count: total })}
+          {t("totalCount", { count: agnosticTotal })}
         </p>
       </header>
 
@@ -169,7 +182,7 @@ export default async function MutfakLandingPage({
               totalPages={totalPages}
               searchParams={sp}
               t={tCommon}
-              totalItems={total}
+              totalItems={filteredTotal}
               pageSize={ITEMS_PER_PAGE}
             />
           )}

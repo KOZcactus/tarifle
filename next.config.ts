@@ -8,6 +8,15 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const nextConfig: NextConfig = {
+  // PDF route `@fontsource/roboto` local woff dosyalarını runtime'da
+  // `fs` ile okuyor. Vercel serverless bundle default tracing bu dosyaları
+  // göremez, bu yüzden explicit include. Cold start'ta network fetch
+  // yok, glyph missing yok, Türkçe karakterler PDF'te doğru çizilir.
+  outputFileTracingIncludes: {
+    "/tarif/[slug]/pdf": [
+      "./node_modules/@fontsource/roboto/files/roboto-latin-ext-*-normal.woff",
+    ],
+  },
   // 301 redirects, eski legal URL'leri yeni /yasal/* hub'ı altına yönlendir.
   // Permanent redirect (308 ≈ 301) ile SEO otoritesi korunur, external link'ler
   // bozulmaz. Next, `permanent: true` için 308 döner (method-preserving),

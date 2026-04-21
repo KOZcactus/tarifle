@@ -30,13 +30,15 @@ export const getCategoriesForLanding = unstable_cache(
         emoji: true,
         description: true,
         sortOrder: true,
-        _count: { select: { recipes: true } },
+        _count: {
+          select: { recipes: { where: { status: "PUBLISHED" } } },
+        },
       },
       orderBy: { sortOrder: "asc" },
     });
     return categories;
   },
-  ["categories-for-landing-v1"],
+  ["categories-for-landing-v2"],
   { revalidate: 1800, tags: ["categories"] },
 );
 
@@ -56,7 +58,11 @@ export const getCategories = unstable_cache(
         emoji: true,
         sortOrder: true,
         _count: {
-          select: { recipes: true },
+          // Sadece PUBLISHED sayılsın; home card + detail page tutarlı
+          // olsun (detail sayfası `getRecipes` ile PUBLISHED filtreli
+          // sonuç çekiyor). DRAFT/HIDDEN tarifler card badge'inde
+          // gösterilmez.
+          select: { recipes: { where: { status: "PUBLISHED" } } },
         },
       },
       orderBy: { sortOrder: "asc" },
@@ -64,7 +70,7 @@ export const getCategories = unstable_cache(
 
     return categories;
   },
-  ["categories-v1"],
+  ["categories-v2"],
   { revalidate: 3600, tags: ["categories"] },
 );
 

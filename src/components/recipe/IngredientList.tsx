@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
+import { formatIngredientAmount } from "@/lib/recipe/format-amount";
 
 interface Ingredient {
   id: string;
@@ -59,11 +60,7 @@ export function IngredientList({ ingredients, baseServingCount }: IngredientList
   const hasSections = buckets.some((b) => b.heading !== null);
 
   function scaleAmount(amount: string): string {
-    const num = parseFloat(amount);
-    if (isNaN(num)) return amount;
-    const scaled = num * multiplier;
-    if (scaled === Math.floor(scaled)) return String(scaled);
-    return scaled.toFixed(1);
+    return formatIngredientAmount(amount, multiplier);
   }
 
   return (

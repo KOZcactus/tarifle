@@ -59,9 +59,9 @@ export const DIETS: readonly DietConfig[] = [
     emoji: "🌾",
     excludeAllergen: "GLUTEN",
     descriptionTr:
-      "Glutensiz tarifler, buğday, arpa, çavdar ve bunların türevlerini içermeyen tarifler. Pirinç, mısır, karabuğday ve kinoa temelli yemekler; çölyak veya gluten hassasiyeti olan sofralar için güvenli seçimler.",
+      "Malzeme listesine göre gluten içermeyen tarifler: buğday, arpa, çavdar ve türevleri dışında pirinç, mısır, karabuğday ve kinoa temelli seçenekler. Çapraz bulaşma takibi yapılmaz; çölyak hassasiyetinde malzeme etiketlerini doğrulamanız önerilir.",
     descriptionEn:
-      "Gluten-free recipes, no wheat, barley, rye or their derivatives. Rice, corn, buckwheat and quinoa-based dishes; safe picks for celiac or gluten-sensitive tables.",
+      "Recipes with no gluten in the ingredient list: rice, corn, buckwheat and quinoa-based dishes instead of wheat, barley and rye. Cross-contamination is not tracked; for celiac sensitivity please verify ingredient labels before cooking.",
   },
   {
     slug: "sutsuz",
@@ -70,9 +70,9 @@ export const DIETS: readonly DietConfig[] = [
     emoji: "🥛",
     excludeAllergen: "SUT",
     descriptionTr:
-      "Sütsüz tarifler, süt, yoğurt, tereyağı, peynir ve krema gibi süt ürünleri içermeyen tarifler. Laktoz intoleransı olanlar için güvenli, bitkisel alternatif yağlar ve sular ile hazırlanmış seçimler.",
+      "Malzeme listesine göre süt ürünü içermeyen tarifler: süt, yoğurt, tereyağı, peynir ve krema dışında bitkisel alternatif yağlar ve sularla hazırlanmış seçenekler. Çapraz bulaşma takibi yapılmaz; süt alerjisinde ürün etiketlerini doğrulamanız önerilir.",
     descriptionEn:
-      "Dairy-free recipes, no milk, yogurt, butter, cheese or cream. Safe picks for lactose intolerance, prepared with plant-based oils and liquids.",
+      "Recipes with no dairy in the ingredient list: prepared with plant-based oils and liquids instead of milk, yogurt, butter, cheese or cream. Cross-contamination is not tracked; for milk allergy please verify product labels before cooking.",
   },
   {
     slug: "alkolsuz",

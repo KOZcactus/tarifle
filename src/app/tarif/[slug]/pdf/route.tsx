@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import path from "node:path";
 import {
   Document,
   Font,
@@ -17,6 +18,7 @@ import {
   pickRecipeTipNote,
   pickRecipeServingSuggestion,
 } from "@/lib/recipe/translate";
+import { formatIngredientAmount } from "@/lib/recipe/format-amount";
 import { isValidLocale, type Locale } from "@/i18n/config";
 import { cookies } from "next/headers";
 
@@ -38,17 +40,28 @@ import { cookies } from "next/headers";
  */
 export const dynamic = "force-dynamic";
 
-// Türkçe karakterler için Roboto regular + bold. Google Fonts CDN
-// URL'leri, Font.register module-scope'da once yapılır.
+// Türkçe karakterler için Roboto regular + bold. `@fontsource/roboto`
+// paketinden local woff okunur, Google Fonts CDN'ine network bağımlılığı
+// yoktur. Vercel cold start'ta fetch fail → glyph missing → bozuk Türkçe
+// risk'i (GPT dış audit'te Empanada PDF'inde "Kıymalı", "fırın", "açlık
+// barı" gibi başlıklarda bozuk/üst üste metin olarak yakalanmıştı).
+// Module-scope'da bir kez register edilir.
+const FONT_DIR = path.join(
+  process.cwd(),
+  "node_modules",
+  "@fontsource",
+  "roboto",
+  "files",
+);
 Font.register({
   family: "Roboto",
   fonts: [
     {
-      src: "https://cdn.jsdelivr.net/npm/@fontsource/roboto@5.1.0/files/roboto-latin-ext-400-normal.woff",
+      src: path.join(FONT_DIR, "roboto-latin-ext-400-normal.woff"),
       fontWeight: 400,
     },
     {
-      src: "https://cdn.jsdelivr.net/npm/@fontsource/roboto@5.1.0/files/roboto-latin-ext-700-normal.woff",
+      src: path.join(FONT_DIR, "roboto-latin-ext-700-normal.woff"),
       fontWeight: 700,
     },
   ],
@@ -296,7 +309,7 @@ function buildDocument(recipe: RecipeDetailLike, locale: Locale) {
             {group && <Text style={styles.ingredientGroup}>{group}</Text>}
             {items.map((ing) => (
               <Text key={ing.sortOrder} style={styles.ingredientLine}>
-                • {ing.amount} {ing.unit} {ing.name}
+                • {formatIngredientAmount(ing.amount)} {ing.unit} {ing.name}
               </Text>
             ))}
           </View>

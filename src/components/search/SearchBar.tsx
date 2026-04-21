@@ -148,11 +148,13 @@ export function SearchBar({
         role="combobox"
         aria-expanded={showSuggestions && filtered.length > 0}
         aria-autocomplete="list"
+        aria-controls="searchbar-suggestions-listbox"
       />
 
       {/* Autocomplete dropdown */}
       {showSuggestions && filtered.length > 0 && (
         <ul
+          id="searchbar-suggestions-listbox"
           className="absolute left-0 right-0 top-full z-20 mt-1 max-h-64 overflow-y-auto rounded-xl border border-border bg-bg-card shadow-lg"
           role="listbox"
         >

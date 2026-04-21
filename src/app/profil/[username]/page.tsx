@@ -52,6 +52,7 @@ export async function generateMetadata({ params }: ProfilePageProps) {
   return {
     title: `${user.name || user.username} | Tarifle`,
     description: user.bio || `${user.name || user.username} profili`,
+    alternates: { canonical: `/profil/${username}` },
   };
 }
 

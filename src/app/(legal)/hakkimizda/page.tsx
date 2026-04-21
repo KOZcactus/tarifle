@@ -4,7 +4,11 @@ import { getSiteStats } from "@/lib/queries/site-stats";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("metadata.legal");
-  return { title: t("aboutTitle"), description: t("aboutDescription") };
+  return {
+    title: t("aboutTitle"),
+    description: t("aboutDescription"),
+    alternates: { canonical: "/hakkimizda" },
+  };
 }
 
 // Saatlik revalidate, DB'ye her request'te sorgu gitmez

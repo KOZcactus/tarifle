@@ -17,7 +17,11 @@ import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("metadata.discover");
-  return { title: t("title"), description: t("description") };
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: { canonical: "/kesfet" },
+  };
 }
 
 // Rendered per-request so we always show the latest featured + popular state,

@@ -439,11 +439,13 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
               role="combobox"
               aria-expanded={showSuggestions && autocompleteSuggestions.length > 0}
               aria-autocomplete="list"
+              aria-controls="ai-ingredient-suggestions-listbox"
             />
           </div>
           {/* Autocomplete dropdown */}
           {showSuggestions && autocompleteSuggestions.length > 0 && (
             <ul
+              id="ai-ingredient-suggestions-listbox"
               className="mt-1 max-h-48 overflow-y-auto rounded-lg border border-border bg-bg-card shadow-lg"
               role="listbox"
             >

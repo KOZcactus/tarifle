@@ -261,7 +261,7 @@ export const ALLERGEN_RULES: AllergenRule[] = [
       "beze", "kek küpü", "kek kupu", "pandispanya", "tart hamuru",
       "kek hamuru", "kurabiye hamuru", "krep", "kete",
       // Composite TR desserts with egg (oturum 12):
-      "revani",
+      "revani", "hazır kek",
     ],
     excludePatterns: [
       // "beze" substring "bezelye"yi yakalar, bezelye baklagil (YUMURTA yok)

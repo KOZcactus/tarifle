@@ -56,6 +56,13 @@ const VARIATION_SORT_KEY: Record<VariationSort, string> = {
   kolay: "variationSortEasiest",
 };
 
+// Sosyal kanit esigi: viewCount bu sayinin altindayken goruntulenme
+// sayisi UI'da gizlenir. 30 = ~bir haftalik organik trafikte yeni
+// tarifin ulasabildigi minimum; alti yalniz baslangic gurultusu.
+// "3 goruntulendi" gostermek yerine hic gostermemek ziyaretciyi
+// cesaretsizlestirmez. viewsThisWeek zaten > 0 filtresi kullaniyor.
+const VIEW_COUNT_MIN_DISPLAY = 30;
+
 interface TarifPageProps {
   params: Promise<{ slug: string }>;
   searchParams: Promise<{ siralama?: string }>;
@@ -696,23 +703,32 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
         </div>
       )}
 
-      {/* View Count + This Week */}
-      <div className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-xs text-text-muted print:hidden">
-        <span className="inline-flex items-center gap-1.5">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-          {t("viewCount", {
-            count: recipe.viewCount.toLocaleString(locale === "tr" ? "tr-TR" : "en-US"),
-          })}
-        </span>
-        {viewsThisWeek > 0 && (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-2.5 py-0.5 text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            {t("viewsThisWeek", {
-              count: viewsThisWeek.toLocaleString(locale === "tr" ? "tr-TR" : "en-US"),
-            })}
-          </span>
-        )}
-      </div>
+      {/* View Count + This Week. Social proof eşiği: viewCount < 30
+          gösterilmez; düşük sayı yeni/az ziyaret edilmiş tarif için
+          zayıf sinyal verir (GPT audit'inde "düşük sosyal kanıt göster
+          mekten gizlemek daha iyi" önerisi). viewsThisWeek hali hazırda
+          > 0 filterli. İkisi de eşik altı ise sayaç bloğu tümüyle
+          gizlenir. */}
+      {(recipe.viewCount >= VIEW_COUNT_MIN_DISPLAY || viewsThisWeek > 0) && (
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-xs text-text-muted print:hidden">
+          {recipe.viewCount >= VIEW_COUNT_MIN_DISPLAY && (
+            <span className="inline-flex items-center gap-1.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              {t("viewCount", {
+                count: recipe.viewCount.toLocaleString(locale === "tr" ? "tr-TR" : "en-US"),
+              })}
+            </span>
+          )}
+          {viewsThisWeek > 0 && (
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-2.5 py-0.5 text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              {t("viewsThisWeek", {
+                count: viewsThisWeek.toLocaleString(locale === "tr" ? "tr-TR" : "en-US"),
+              })}
+            </span>
+          )}
+        </div>
+      )}
     </div>
   );
 

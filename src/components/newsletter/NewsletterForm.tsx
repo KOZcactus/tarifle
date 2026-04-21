@@ -53,6 +53,35 @@ export function NewsletterForm({ variant = "footer" }: NewsletterFormProps) {
         <p className="mt-2 text-sm leading-relaxed text-text-muted">
           {t("inlineSubtitle")}
         </p>
+        {/* Somut ornek konu basliklari: GPT audit'i "kullaniciya ne
+            alacagini ve hangi siklikta alacagini net anlatan kucuk bir
+            email alani + ornek konu basliklari eklenmeli" dedi. Siklik
+            (haftada bir) zaten inlineSubtitle'da; burada icerik sinyali. */}
+        <div className="mt-4 rounded-lg border border-dashed border-border bg-bg p-3">
+          <p className="text-xs font-medium text-text">
+            {t("inlineExamplesTitle")}
+          </p>
+          <ul className="mt-2 space-y-1 text-xs text-text-muted">
+            <li className="flex gap-2">
+              <span aria-hidden="true" className="shrink-0 text-primary">
+                •
+              </span>
+              <span>{t("inlineExample1")}</span>
+            </li>
+            <li className="flex gap-2">
+              <span aria-hidden="true" className="shrink-0 text-primary">
+                •
+              </span>
+              <span>{t("inlineExample2")}</span>
+            </li>
+            <li className="flex gap-2">
+              <span aria-hidden="true" className="shrink-0 text-primary">
+                •
+              </span>
+              <span>{t("inlineExample3")}</span>
+            </li>
+          </ul>
+        </div>
         <form onSubmit={handleSubmit} className="mt-4 flex flex-col gap-2 sm:flex-row">
           <input
             type="email"

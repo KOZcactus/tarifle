@@ -1,4 +1,3 @@
-import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { auth } from "@/lib/auth";
@@ -6,12 +5,14 @@ import {
   DAYS_OF_WEEK,
   MEAL_TYPES,
   getActiveMealPlan,
+  getDemoMealPlanRecipes,
   getMondayOfWeek,
   indexMealPlanItems,
 } from "@/lib/queries/meal-plan";
 import { MealSlot } from "@/components/meal-plan/MealSlot";
 import { AddToShoppingListButton } from "@/components/meal-plan/AddToShoppingListButton";
 import { PrintButton } from "@/components/meal-plan/PrintButton";
+import { DemoMealPlanGrid } from "@/components/meal-plan/DemoMealPlanGrid";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("metadata.mealPlanner");
@@ -19,7 +20,13 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t("title"),
     description: t("description"),
     alternates: { canonical: "/menu-planlayici" },
-    robots: { index: false, follow: false },
+    // Login yoksa demo preview serve ediliyor; Google bot demo'yu
+    // indexleyebilir cunku zengin icerik + CTA sinyali var. Ancak
+    // interactive planner login-gated oldugu icin private index sinyali
+    // istemiyoruz; authenticated state'te de robots noindex yararli
+    // (kullaniciya ozel, search context'te anlamsiz). noindex + follow
+    // korundu, internal link crawl devam eder.
+    robots: { index: false, follow: true },
   };
 }
 
@@ -27,8 +34,46 @@ export const dynamic = "force-dynamic";
 
 export default async function MenuPlanlayiciPage() {
   const session = await auth();
+
+  // Login yoksa demo preview render et; GPT audit'inin "login oncesi
+  // kisa bir demo, ornek haftalik menu gosterilirse kullanici neden
+  // uye olmasi gerektigini daha iyi anlar" onerisi.
   if (!session?.user?.id) {
-    redirect("/giris?next=/menu-planlayici");
+    const [demoRecipes, t, tMeal, tDemo] = await Promise.all([
+      getDemoMealPlanRecipes(),
+      getTranslations("mealPlanner"),
+      getTranslations("mealPlanner.meal"),
+      getTranslations("mealPlanner.demo"),
+    ]);
+    void tDemo;
+    const dayLabels = [
+      t("days.monday"),
+      t("days.tuesday"),
+      t("days.wednesday"),
+      t("days.thursday"),
+      t("days.friday"),
+      t("days.saturday"),
+      t("days.sunday"),
+    ];
+    return (
+      <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <header className="mb-8">
+          <h1 className="font-heading text-3xl font-bold text-text sm:text-4xl">
+            {t("pageTitle")}
+          </h1>
+          <p className="mt-2 text-sm text-text-muted">{t("subtitle")}</p>
+        </header>
+        <DemoMealPlanGrid
+          recipes={demoRecipes}
+          dayLabels={dayLabels}
+          mealLabels={{
+            BREAKFAST: tMeal("breakfast"),
+            LUNCH: tMeal("lunch"),
+            DINNER: tMeal("dinner"),
+          }}
+        />
+      </main>
+    );
   }
 
   const [plan, t, tMeal] = await Promise.all([

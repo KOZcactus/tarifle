@@ -79,3 +79,60 @@ export const MEAL_TYPES: readonly MealType[] = [
   "LUNCH",
   "DINNER",
 ] as const;
+
+/**
+ * Giris yapmamis ziyaretciler icin Menu Planlayici on-izleme gridi
+ * besleyicisi. 7 kahvalti + 7 ogle + 7 aksam = 21 tarif, meal-type
+ * uyumlu (KAHVALTI recipe -> BREAKFAST slot, YEMEK -> LUNCH/DINNER).
+ * Featured oncelikli, createdAt desc tie-break; deterministic siralama
+ * (ayni hafta ayni demo).
+ *
+ * Donus: 21 elemanli array, index = day*3 + mealOffset formatinda:
+ *   0: mon-breakfast, 1: mon-lunch, 2: mon-dinner, 3: tue-breakfast, ...
+ */
+export interface DemoMealPlanSlot {
+  id: string;
+  title: string;
+  slug: string;
+  emoji: string | null;
+  totalMinutes: number;
+}
+
+export async function getDemoMealPlanRecipes(): Promise<
+  (DemoMealPlanSlot | null)[]
+> {
+  const [breakfasts, mains] = await Promise.all([
+    prisma.recipe.findMany({
+      where: { status: "PUBLISHED", type: "KAHVALTI" },
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        emoji: true,
+        totalMinutes: true,
+      },
+      orderBy: [{ isFeatured: "desc" }, { createdAt: "desc" }],
+      take: 7,
+    }),
+    prisma.recipe.findMany({
+      where: { status: "PUBLISHED", type: "YEMEK" },
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        emoji: true,
+        totalMinutes: true,
+      },
+      orderBy: [{ isFeatured: "desc" }, { createdAt: "desc" }],
+      take: 14,
+    }),
+  ]);
+
+  const slots: (DemoMealPlanSlot | null)[] = [];
+  for (let day = 0; day < 7; day++) {
+    slots.push(breakfasts[day] ?? null);
+    slots.push(mains[day] ?? null);
+    slots.push(mains[day + 7] ?? null);
+  }
+  return slots;
+}

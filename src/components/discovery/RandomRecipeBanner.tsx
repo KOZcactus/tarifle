@@ -24,7 +24,7 @@ export function RandomRecipeBanner({ initial }: RandomRecipeBannerProps) {
       <span className="text-4xl">🎲</span>
       <div className="flex-1">
         <p className="text-xs font-medium uppercase tracking-wide text-primary">
-          Rastgele tarif
+          Rastgele Öneri
         </p>
         <Link
           href={`/tarif/${recipe.slug}`}
@@ -33,7 +33,7 @@ export function RandomRecipeBanner({ initial }: RandomRecipeBannerProps) {
           {recipe.emoji} {recipe.title}
         </Link>
         <p className="mt-0.5 text-xs text-text-muted">
-          Ne yapacağına karar veremiyorsan bu tarifi dene
+          Karar veremiyorsan bunu dene
         </p>
       </div>
       <button
@@ -42,7 +42,7 @@ export function RandomRecipeBanner({ initial }: RandomRecipeBannerProps) {
         disabled={isPending}
         className="shrink-0 rounded-lg border border-primary/30 bg-bg-card px-3 py-2 text-xs font-medium text-primary transition-colors hover:bg-primary hover:text-white disabled:opacity-50"
       >
-        {isPending ? "..." : "🎲 Başka tarif"}
+        {isPending ? "..." : "🎲 Başka öneri"}
       </button>
     </div>
   );

@@ -28,7 +28,7 @@ export async function RecipeOfTheDay() {
         </div>
         <div className="flex-1">
           <p className="text-xs font-medium uppercase tracking-wide text-primary">
-            Bugünün tarifi
+            Bugünün Seçimi
           </p>
           <h3
             id="recipe-of-the-day-heading"

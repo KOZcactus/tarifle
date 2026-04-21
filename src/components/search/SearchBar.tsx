@@ -26,7 +26,7 @@ interface SearchBarProps {
 }
 
 export function SearchBar({
-  placeholder = "Tarif, malzeme veya kategori ara...",
+  placeholder = "Yemek çeşidi, malzeme veya kategori ara...",
   className = "",
   suggestions,
 }: SearchBarProps) {

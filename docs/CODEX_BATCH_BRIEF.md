@@ -13,6 +13,7 @@
 |---|---|---|---|
 | **"Mod A"**, "yeni batch", "batch N yaz", "100 tarif yaz" | **MOD A**, 100 yeni TR tarif yaz | §5 | `scripts/seed-recipes.ts` sonuna append + inline EN/DE title+description |
 | **"Mod B"**, "batch N çevirisi", "translations-batch-N.csv işle" | **MOD B**, CSV'yi okuyup JSON üret | §6 | `docs/translations-batch-N.json` (ingredients/steps/tipNote/servingSuggestion EN+DE) |
+| **"Mod C"**, "Kategori SEO", "SEO copy", "landing intro + FAQ" | **MOD C**, landing sayfaları için özgün TR giriş + FAQ yaz | §12 | `docs/seo-copy-v1.json` (17 kategori + 16 mutfak + 5 diyet = 38 item array) |
 
 **Default'lar (soru sorma, direkt başla):**
 
@@ -37,6 +38,15 @@
   - Batch 0-11 dönemi eski tarifler, EN/DE çevirisi **hiç yok** (title+desc dahil bazılarında eksik).
   - CSV'deki `en_*_current` / `de_*_current` sütunları çoğunlukla boş, kafan karışmasın: **backfill'in işi zaten bu eksikleri kapatmak**.
   - "Alanlar boş = sahte çevirmem gerekmez" refleksi yanlış, CSV'deki `ingredients_tr` / `steps_tr` / `tipNote_tr` / `servingSuggestion_tr` sütunlarından **TR metinleri oku** ve onları native çevir.
+
+### Mod C default (Kerem sadece "Mod C" veya "Kategori SEO" derse):
+- **Çıktı:** `docs/seo-copy-v1.json`, 38 item array (17 kategori + 16 mutfak + 5 diyet).
+- Her item: `{ slug, type, intro, faqs }`.
+  - `slug`: string, sabit listeden (§12).
+  - `type`: `"category" | "cuisine" | "diet"`.
+  - `intro`: TR 180-220 kelime, tek paragraf, özgün + somut + slug'a özgü karakter.
+  - `faqs`: 4 item, her biri `{ q, a }`, her `a` 60-90 kelime, spesifik (generic değil).
+- Detay §12.
 
 **⚠️ Tek teslim kuralı (Mod A):** Kerem açıkça "kademeli gönder" veya "50'şer
 ver" demiyorsa, **100 tarifi TEK seferde tamamla**. Ortada durma, "25 hazır,
@@ -954,3 +964,86 @@ oturumda mod adını veya girdi dosyasını direkt söyler. Tetikleyici tablosu
 açıksa soru sorma.
 
 Başarılar. **Doğruluk her zaman 1. plan.**
+
+---
+
+## 12. Mod C, Landing SEO copy (intro + FAQ)
+
+**Amaç:** Tarifle'nin 3 tür landing sayfasına (kategori / mutfak / diyet)
+özgün TR giriş metni + spesifik FAQ yazmak. Mevcut sayfalarda ya generic
+tek cümle var, ya hiçbir şey; Google long-tail aramalarında (örn.
+"çorbalar hakkında", "Japon mutfağında ne var", "glutensiz kahvaltı")
+sinyal zayıf.
+
+### 12.1 Çıktı dosyası
+
+- **Tek dosya:** `docs/seo-copy-v1.json`
+- **Array, 38 item:** 17 kategori + 16 mutfak + 5 diyet.
+- Encoding: UTF-8, BOM yok, 2-space indent.
+- Mevcutsa **üzerine yazma** (wrapper değil, yeni dosya).
+
+### 12.2 Item şeması
+
+```json
+{
+  "slug": "corbalar",
+  "type": "category",
+  "intro": "TR 180-220 kelime özgün paragraf. Slug karakterini yansıt.",
+  "faqs": [
+    { "q": "…?", "a": "TR 60-90 kelime spesifik cevap." },
+    { "q": "…?", "a": "…" },
+    { "q": "…?", "a": "…" },
+    { "q": "…?", "a": "…" }
+  ]
+}
+```
+
+- `slug`: sabit listeden (§12.5).
+- `type`: `"category"` | `"cuisine"` | `"diet"`. Slug'a göre doğru type.
+- `intro`: tek paragraf, **180-220 kelime**, Tarifle ses tonu (samimi, sade, pratik). Slug'a özgü karakter çıkar: "çorbalar" için sıcak + doyurucu + hızlı; "Japon mutfağı" için denge + umami + minimalizm; "glutensiz" için malzeme bazlı temiz tanım + disclaimer (çapraz bulaşma takip edilmez).
+- `faqs`: **4 soru-cevap**. Sorular slug'a özgü (generic "tarif nasıl yapılır" değil); "çorbalar için tavuk suyunu nasıl netleştiririm?", "Japon mutfağında dashi yerine ne kullanabilirim?", "glutensiz bir kahvaltıda hangi tahıllar güvenli?" tarzı. Cevap **60-90 kelime**, somut + pratik + örnekli.
+
+### 12.3 İçerik kuralları (her iki § için)
+
+**YAPILACAKLAR:**
+- Slug'ın **kültürel ve pratik karakteri** yansısın: mutfak için bölge/malzeme/teknik; kategori için öğün rolü + yeme anı + porsiyon; diyet için tanım + sınırlama + güvenli alanlar.
+- **Somut dil**: "bolca", "iyice", "lezzetli" gibi muğlak ifadelerden kaçın. Yerine ölçü + yöntem + zaman: "tencereyi 20 dakika ağır ateşte tut", "suyunu 5 dakika süz".
+- **TR collation** (ç, ğ, ı, İ, ö, ş, ü) doğru. "ı/i" karışıklığı yok.
+- **Disclaimer** (diyet intro'larında zorunlu): glutensiz + sütsüz için "malzeme listesine göre … içermeyen tarifler; çapraz bulaşma takibi yapılmaz; ciddi hassasiyet için ürün etiketlerini doğrulayın" benzeri açıklama. Sonuna veya 1 cümleyle içine entegre et.
+
+**YASAKLAR:**
+- **Em-dash (— U+2014) YASAK**. Yerine virgül, nokta, parantez, iki nokta. En-dash (–) da yasak.
+- **Generic cümle**: "Bu sayfada birçok tarif var" gibi hiçbir bilgi taşımayan tümceler.
+- **Rakip isim**: Yemek.com, Nefis Yemek gibi platform adı geçmesin.
+- **Fiyat/kampanya vaadi**: "ücretsiz", "şimdi kaydol" gibi marketing copy yok. Editoryal + bilgilendirici ton.
+- **Zaman işareti** (bu yaz, bu ay, 2026'da): evergreen içerik, tarihi referans yok.
+- **"Tarifle" brand name intro'da bir kez geçebilir**, FAQ cevaplarında geçirme (kendi kendini övme riski).
+- **"Yemek çeşidi" vs "tarif" terminology**: katalog sayımlarında "yemek çeşidi", yapılış bağlamında "tarif" tercih et (ana sayfa i18n tutarlılığı için).
+
+### 12.4 Self-review (teslim öncesi çift kontrol)
+
+- [ ] 38 item var (17 + 16 + 5 toplam).
+- [ ] Her slug listede (§12.5) geçiyor, fazla/eksik yok.
+- [ ] Her `intro` 180-220 kelime (Python `len(text.split())` veya manuel say).
+- [ ] Her `faqs` tam 4 item, her `a` 60-90 kelime.
+- [ ] Em-dash (—) grep: 0 eşleşme.
+- [ ] Generic cümle yok (slug değişse de cümle aynı kalabiliyorsa generic).
+- [ ] JSON valid (`jq . docs/seo-copy-v1.json` veya online validator).
+
+### 12.5 Slug listesi (sabit, eksik yazma)
+
+**17 kategori** (`type: "category"`):
+`corbalar`, `salatalar`, `kahvaltiliklar`, `ana-yemekler`, `tavuk-yemekleri`,
+`et-yemekleri`, `baklagil-yemekleri`, `makarna-ve-pilav`, `hamur-isleri`,
+`aperatifler`, `mezeler`, `tatlilar`, `icecekler`, `soslar`, `pideler-ve-lahmacunlar`,
+`kahveler-ve-cay`, `kokteyller`
+
+**16 mutfak** (`type: "cuisine"`):
+`turk`, `italyan`, `fransiz`, `ispanyol`, `yunan`, `japon`, `cin`, `kore`,
+`tay`, `hint`, `meksika`, `abd`, `orta-dogu`, `kuzey-afrika`, `vietnam`, `ingiltere`
+
+**5 diyet** (`type: "diet"`):
+`vegan`, `vejetaryen`, `glutensiz`, `sutsuz`, `alkolsuz`
+
+---
+

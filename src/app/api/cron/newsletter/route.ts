@@ -62,9 +62,25 @@ export async function GET(request: Request): Promise<NextResponse> {
 
   const startedAt = Date.now();
 
+  // Test mode: ?test_email=X query param. Sadece o email'e mail yollar,
+  // getActiveSubscribers atlanir, prod list'e dokunmaz. Bearer secret yine
+  // zorunlu (admin-only). Locale ?test_locale=tr|en (default tr).
+  const url = new URL(request.url);
+  const testEmail = url.searchParams.get("test_email");
+  const testLocale = url.searchParams.get("test_locale") ?? "tr";
+
   try {
     const [subscribers, content] = await Promise.all([
-      getActiveSubscribers(),
+      testEmail
+        ? Promise.resolve([
+            {
+              id: "test-mode",
+              email: testEmail,
+              locale: testLocale === "en" ? "en" : "tr",
+              unsubscribeToken: "test-token-no-effect",
+            },
+          ])
+        : getActiveSubscribers(),
       getNewsletterContent(),
     ]);
 

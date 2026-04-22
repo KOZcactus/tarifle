@@ -73,28 +73,33 @@ function detectIssues(
   const issues: IssueCode[] = [];
   const totalText = steps.map((s) => s.instruction).join(" ");
 
-  // 1. few-steps: toplam <4 adim
-  if (steps.length < 4) issues.push("few-steps");
+  // 1. few-steps: <3 adim (1-2 adim gerçekten yetersiz; 3 adim basit
+  //    içecek/salata için OK, "ihtimalli sorun" degil "ciddi yetersiz"
+  //    olanlari yakala)
+  if (steps.length < 3) issues.push("few-steps");
 
-  // 2. em-dash: herhangi step
+  // 2. em-dash: herhangi step (KRITIK)
   if (steps.some((s) => checkTextEmDash(s.instruction))) issues.push("em-dash");
 
-  // 3. no-temp: firin/pisir deyip sicaklik yok (genel tarif tarama)
+  // 3. no-temp: firin/pisir deyip sicaklik yok (gercek problem)
   const hasOvenMention = steps.some((s) => OVEN_WORDS.test(s.instruction));
   const hasTemp = TEMP_PATTERN.test(totalText);
   if (hasOvenMention && !hasTemp) issues.push("no-temp");
 
-  // 4. no-time: pisir/dinlendir/kaynat step'inde zaman yok
+  // 4. no-time: pisir/dinlendir/kaynat step'inde zaman yok (gercek problem)
   const hasCookWithoutTime = steps.some((s) => {
     if (!COOK_TIME_WORDS.test(s.instruction)) return false;
     return !TIME_PATTERN.test(s.instruction);
   });
   if (hasCookWithoutTime) issues.push("no-time");
 
-  // 5. short-step: herhangi step <8 kelime
-  if (steps.some((s) => wordCount(s.instruction) < 8)) issues.push("short-step");
+  // 5. short-step: 2+ step <5 kelime (eski 8 cok kati, "Tuzu son anda
+  //    ekleyin" gibi 4-kelime adımlar bilinçli kısa olabilir; 2'den
+  //    fazla cok-kisa step olunca "anlamlı kısa" değil "yetersiz" sinyal)
+  const veryShortCount = steps.filter((s) => wordCount(s.instruction) < 5).length;
+  if (veryShortCount >= 2) issues.push("short-step");
 
-  // 6. vague-noun: "Sebzeleri ince yerleştirin" gibi
+  // 6. vague-noun: "Sebzeleri ince yerleştirin" gibi context'siz çoğul
   if (steps.some((s) => VAGUE_NOUN_PATTERN.test(s.instruction.trim())))
     issues.push("vague-noun");
 

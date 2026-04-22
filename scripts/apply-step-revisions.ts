@@ -50,7 +50,11 @@ const prisma = new PrismaClient({ adapter });
 const APPLY = process.argv.includes("--apply");
 const FORCE = process.argv.includes("--force");
 
-const MIN_STEP_WORDS = 5;
+// MIN_STEP_WORDS 3: son servis step'i sik sik 3-4 kelime ("Corbayi
+// sicak servis edin", 4 kelime). Ana pisirme adimlarinda 5-25 ideal
+// ama hard minimum 3 (tamamen yasadisi <3). Codex Brief §14.3'te bu
+// aciklandi.
+const MIN_STEP_WORDS = 3;
 const MAX_STEP_WORDS = 25;
 const MIN_STEP_COUNT = 1;
 const MAX_STEP_COUNT = 15;

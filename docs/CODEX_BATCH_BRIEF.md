@@ -1250,8 +1250,10 @@ dokunmaz.
 - `steps` array zorunlu (type bazli min: ICECEK 3+, KOKTEYL/APERATIF 4+,
   diger 5+; ideal 5-7, max 12).
 - `stepNumber` ardışık 1, 2, 3, ... (boşluk yok).
-- `instruction` her step için zorunlu, **5-25 kelime** (Mod D'den biraz
-  daha esnek, kompleks step'ler için 25'e kadar OK).
+- `instruction` her step için zorunlu, **5-25 kelime ideal**. Son
+  servis step'i 3-4 kelime OK ("Çorbayı sıcak servis edin", "Tostları
+  ılık servis edin"). Ana pişirme adımlarında 5+ kelime hedef, kısa
+  servis kapanışı esnek. Hard minimum 3 kelime.
 - `timerSeconds` opsiyonel ama **pişirme/dinlendirme/marine adımlarında
   ekle**. Saniye cinsinden integer (30 dk = 1800, 1 saat = 3600, 18 dk
   = 1080). UI dahili zamanlayıcıda kullanır.

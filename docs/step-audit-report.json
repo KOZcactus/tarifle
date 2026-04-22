@@ -1,991 +1,16 @@
 {
-  "scannedAt": "2026-04-22T15:42:36.356Z",
+  "scannedAt": "2026-04-22T16:14:54.925Z",
   "totalRecipes": 2753,
-  "flaggedRecipes": 2590,
+  "flaggedRecipes": 2526,
   "byIssue": {
     "em-dash": 0,
-    "few-steps": 2425,
-    "no-temp": 23,
-    "no-time": 228,
-    "short-step": 942,
+    "few-steps": 2327,
+    "no-temp": 12,
+    "no-time": 171,
+    "short-step": 869,
     "vague-noun": 0
   },
   "entries": [
-    {
-      "slug": "tavuk-sis",
-      "score": 9,
-      "issues": [
-        "few-steps",
-        "no-temp",
-        "no-time"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "shepherds-pie-ingiliz-usulu",
-      "score": 9,
-      "issues": [
-        "few-steps",
-        "no-temp",
-        "no-time"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "elma-sirkeli-lahana-salatasi-tekirdag-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "domatesli-lebeniye-corbasi-gaziantep-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "lorlu-zeytinli-katmer-izmir-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "tahinli-uzumlu-corek-ankara-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "susamli-kabak-ezme-foca-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "zahterli-yogurt-corbasi-hatay-koy-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "zahterli-katmer-durum-hatay-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "isotlu-susamli-patlican-ezmesi-adiyaman-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "isotlu-tavuk-sis-sanliurfa-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "terbiyeli-nohut-corbasi-burdur-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "kavurmali-eriste-pilavi-kars-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "dut-pekmezli-un-helvasi-erzurum-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "pirasali-misir-unlu-pide-samsun-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "edamame",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "tavuklu-mantarli-pie-tava-ingiltere-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "nohutlu-yogurtlu-sorgun-corbasi-burdur-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "hamsili-kabakli-firin-pilav-rize-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-temp",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "lorlu-ispanakli-tandir-boregi-kars-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "tavuk-pho-hizli-tencere-vietnam-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "otlu-lorlu-kete-artvin-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "otlu-peynirli-tandir-boregi-van-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "corekotlu-gobit-ekmegi-konya-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "limonotlu-tofu-bulyon-vietnam-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "kurutlu-arpa-sehriye-pilavi-elazig-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "susamli-koz-biber-ezme-adana-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "semla",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-temp",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "banh-cuon-chay-vietnam-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "buffalo-chicken-dip-abd-pub-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-temp",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "paprika-soslu-mantar-tava-macaristan-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "sutlu-kete-bingol-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "canh-chua-vietnam-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "rosehip-soup-iskandinav-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "mini-banh-xeo-vietnam-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "firikli-kabak-kisiri-gaziantep-bag-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "dereotlu-patates-salatasi-polonya-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "yogurtlu-nohut-yahni-konya-ova-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "anticucho-tavuk-sis-peru-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "kestaneli-hamsi-pilavi-zonguldak-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "sogan-kebabi-tepsi-kilis-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-temp",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "hardalli-kok-sebze-salatasi-isvec-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "yabanmersinli-sutlac-kup-isvec-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "kinoa-pancar-bowl-avustralya-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-temp",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "kayisili-un-helvasi-karaman-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "peynir-helvasi-edirne-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "yoruk-tarhana-corbasi-burdur-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "paprikali-tavuklu-arpa-sehriye-macar-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "corekotlu-un-helvasi-ankara-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "cizleme-trakya-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "limonlu-nohut-corbasi-yunan-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "susamli-kabak-corbasi-japon-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "firin-kabakli-bulgur-pilavi-burdur-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-temp",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "tarhanali-nohut-corbasi-kahramanmaras-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "hardaliyeli-istavrit-tava-tekirdag-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "enginarli-ic-pilav-ayvalik-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "biberli-zeytinli-ekmek-hatay-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "zahterli-lorlu-katmer-kilis-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "zahterli-tavuk-sis-hatay-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "nar-eksili-karnabahar-salatasi-levant-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-temp",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "pastirmali-arpa-pilavi-kayseri-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "uzumlu-tahinli-un-helvasi-konya-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "kayisili-irmik-pilavi-macaristan-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "narenciyeli-levrek-sis-alanya-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "mantarli-kasza-tava-polonya-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "kasha-grechnevaya-rus-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "mesir-baharatli-tavuk-manisa-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "erikli-kuskus-salata-sakarya-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "medovik-rus-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "anticuchos-peru-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "kongnamul-guk-kore-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "farinata-italyan-sokak-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "kuru-domatesli-gozleme-aydin-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "patila-kars-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "pudin-de-pan-kuba-usulu",
-      "score": 7,
-      "issues": [
-        "few-steps",
-        "no-time",
-        "short-step"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "menemen",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 4
-    },
-    {
-      "slug": "gilda-pintxos",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "amasra-peynirli-misir-tavasi",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 4
-    },
-    {
-      "slug": "incirli-kereviz-aydin-usulu",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "irmik-helvasi-maras-dondurmali",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "sac-kavurma-bayburt-usulu",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 4
-    },
-    {
-      "slug": "galbi",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "sumakli-mahluta-corbasi-mardin-usulu",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "giresun-fasulye-tursusu-kavurmasi",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "gobete-eskisehir-usulu",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 4
-    },
-    {
-      "slug": "peynirli-biber-kavurma-edirne-usulu",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "sembusek-mardin-usulu",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 4
-    },
-    {
-      "slug": "siirt-kitel",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "kuru-borulce-salatasi-aydin-usulu",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "camarao-na-moranga",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-temp"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "lemongrass-dana-pirinc-bowl-vietnam-usulu",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "limonlu-enginar-salatasi-ege-usulu",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "white-bean-shakshuka",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "arap-asi-corbasi",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 4
-    },
-    {
-      "slug": "nevzine-kayseri-usulu",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 4
-    },
-    {
-      "slug": "nevzine-tatlisi",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 3
-    },
-    {
-      "slug": "kuru-fasulye",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 4
-    },
-    {
-      "slug": "tavuk-sote",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 4
-    },
-    {
-      "slug": "hunkar-begendi",
-      "score": 6,
-      "issues": [
-        "no-temp",
-        "no-time"
-      ],
-      "stepCount": 5
-    },
-    {
-      "slug": "revani",
-      "score": 6,
-      "issues": [
-        "few-steps",
-        "no-time"
-      ],
-      "stepCount": 4
-    },
     {
       "slug": "char-siu-chicken-cin-firin-usulu",
       "score": 6,
@@ -8992,6 +8017,14 @@
       "stepCount": 3
     },
     {
+      "slug": "gilda-pintxos",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 4
+    },
+    {
       "slug": "hobakjuk",
       "score": 3,
       "issues": [
@@ -9184,6 +8217,14 @@
       "stepCount": 3
     },
     {
+      "slug": "amasra-peynirli-misir-tavasi",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
+    },
+    {
       "slug": "sac-kavurma-rize-usulu",
       "score": 3,
       "issues": [
@@ -9270,6 +8311,14 @@
         "few-steps"
       ],
       "stepCount": 4
+    },
+    {
+      "slug": "incirli-kereviz-aydin-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
     },
     {
       "slug": "pekmezli-badem-sutlaci-nigde-usulu",
@@ -9432,12 +8481,28 @@
       "stepCount": 3
     },
     {
+      "slug": "isotlu-tavuk-sis-sanliurfa-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
+    },
+    {
       "slug": "ispanakli-nohut-tava-ispanya-usulu",
       "score": 3,
       "issues": [
         "few-steps"
       ],
       "stepCount": 3
+    },
+    {
+      "slug": "sac-kavurma-bayburt-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
     },
     {
       "slug": "albondigas",
@@ -9472,12 +8537,28 @@
       "stepCount": 3
     },
     {
+      "slug": "galbi",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
+    },
+    {
       "slug": "aside-tatlisi-erzurum-usulu",
       "score": 3,
       "issues": [
         "few-steps"
       ],
       "stepCount": 3
+    },
+    {
+      "slug": "sumakli-mahluta-corbasi-mardin-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
     },
     {
       "slug": "amasya-coregi",
@@ -9624,6 +8705,14 @@
       "stepCount": 3
     },
     {
+      "slug": "terbiyeli-nohut-corbasi-burdur-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
+    },
+    {
       "slug": "kayisili-kestaneli-irmik-helvasi-malatya-usulu",
       "score": 3,
       "issues": [
@@ -9768,6 +8857,14 @@
       "stepCount": 3
     },
     {
+      "slug": "gobete-eskisehir-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 6
+    },
+    {
       "slug": "cokelekli-corek-tokat-firin",
       "score": 3,
       "issues": [
@@ -9832,6 +8929,14 @@
       "stepCount": 3
     },
     {
+      "slug": "kavurmali-eriste-pilavi-kars-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
+    },
+    {
       "slug": "khao-man-gai-tay-usulu",
       "score": 3,
       "issues": [
@@ -9854,6 +8959,14 @@
         "few-steps"
       ],
       "stepCount": 3
+    },
+    {
+      "slug": "siirt-kitel",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 6
     },
     {
       "slug": "domatesli-arapsaci-corbasi-urla-usulu",
@@ -10584,6 +9697,14 @@
       "stepCount": 3
     },
     {
+      "slug": "dut-pekmezli-un-helvasi-erzurum-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
+    },
+    {
       "slug": "grissini",
       "score": 3,
       "issues": [
@@ -10702,6 +9823,14 @@
         "few-steps"
       ],
       "stepCount": 3
+    },
+    {
+      "slug": "edamame",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 4
     },
     {
       "slug": "sebzeli-spring-roll",
@@ -10992,6 +10121,14 @@
       "stepCount": 3
     },
     {
+      "slug": "arap-asi-corbasi",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 6
+    },
+    {
       "slug": "katikli-patates-corbasi-sivas-usulu",
       "score": 3,
       "issues": [
@@ -11198,6 +10335,14 @@
         "few-steps"
       ],
       "stepCount": 3
+    },
+    {
+      "slug": "nevzine-tatlisi",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
     },
     {
       "slug": "nigde-sogurmeli-yumurta",
@@ -11464,6 +10609,14 @@
       "stepCount": 3
     },
     {
+      "slug": "kuru-fasulye",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
+    },
+    {
       "slug": "horchata-de-chufa",
       "score": 3,
       "issues": [
@@ -11494,6 +10647,14 @@
         "no-time"
       ],
       "stepCount": 5
+    },
+    {
+      "slug": "hunkar-begendi",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 6
     },
     {
       "slug": "paprikas-csirke-macar-usulu",
@@ -11614,6 +10775,14 @@
         "few-steps"
       ],
       "stepCount": 2
+    },
+    {
+      "slug": "kurutlu-arpa-sehriye-pilavi-elazig-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
     },
     {
       "slug": "imam-bayildi",
@@ -13368,6 +12537,14 @@
       "stepCount": 3
     },
     {
+      "slug": "buffalo-chicken-dip-abd-pub-usulu",
+      "score": 3,
+      "issues": [
+        "few-steps"
+      ],
+      "stepCount": 4
+    },
+    {
       "slug": "firinda-baharatli-leblebi",
       "score": 3,
       "issues": [
@@ -13510,6 +12687,14 @@
         "few-steps"
       ],
       "stepCount": 3
+    },
+    {
+      "slug": "canh-chua-vietnam-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
     },
     {
       "slug": "maras-dondurmasi",
@@ -14446,6 +13631,14 @@
         "few-steps"
       ],
       "stepCount": 3
+    },
+    {
+      "slug": "anticucho-tavuk-sis-peru-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
     },
     {
       "slug": "kaldirikli-yumurtali-tava-samsun-usulu",
@@ -15816,6 +15009,14 @@
       "stepCount": 3
     },
     {
+      "slug": "kayisili-un-helvasi-karaman-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
+    },
+    {
       "slug": "scotch-egg-ingiliz-usulu",
       "score": 3,
       "issues": [
@@ -15838,6 +15039,14 @@
         "few-steps"
       ],
       "stepCount": 3
+    },
+    {
+      "slug": "peynir-helvasi-edirne-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
     },
     {
       "slug": "fellah-kofteli-ispanak-tavasi-mersin-usulu",
@@ -15870,6 +15079,14 @@
         "few-steps"
       ],
       "stepCount": 3
+    },
+    {
+      "slug": "paprikali-tavuklu-arpa-sehriye-macar-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
     },
     {
       "slug": "picadillo-empanada-kuba-usulu",
@@ -15918,6 +15135,14 @@
         "few-steps"
       ],
       "stepCount": 3
+    },
+    {
+      "slug": "corekotlu-un-helvasi-ankara-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
     },
     {
       "slug": "susurluk-ayran-asi-balikesir-usulu",
@@ -16094,6 +15319,14 @@
         "few-steps"
       ],
       "stepCount": 3
+    },
+    {
+      "slug": "tarhanali-nohut-corbasi-kahramanmaras-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
     },
     {
       "slug": "rajma-masala-hint-usulu",
@@ -16558,6 +15791,14 @@
         "few-steps"
       ],
       "stepCount": 3
+    },
+    {
+      "slug": "hardaliyeli-istavrit-tava-tekirdag-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
     },
     {
       "slug": "trabzon-vakfikebir-ekmegi",
@@ -19216,6 +18457,14 @@
       "stepCount": 3
     },
     {
+      "slug": "zahterli-tavuk-sis-hatay-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
+    },
+    {
       "slug": "arroz-con-elote-meksika-usulu",
       "score": 3,
       "issues": [
@@ -19344,6 +18593,14 @@
       "stepCount": 4
     },
     {
+      "slug": "pastirmali-arpa-pilavi-kayseri-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
+    },
+    {
       "slug": "hardaliyeli-tavuk-kapama-kirklareli-usulu",
       "score": 3,
       "issues": [
@@ -19448,6 +18705,22 @@
       "stepCount": 3
     },
     {
+      "slug": "uzumlu-tahinli-un-helvasi-konya-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
+    },
+    {
+      "slug": "kayisili-irmik-pilavi-macaristan-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
+    },
+    {
       "slug": "tursulu-kavrulmus-lahana-rize-usulu",
       "score": 3,
       "issues": [
@@ -19462,6 +18735,14 @@
         "few-steps"
       ],
       "stepCount": 3
+    },
+    {
+      "slug": "narenciyeli-levrek-sis-alanya-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
     },
     {
       "slug": "otlu-cirpma-yumurtasi-izmir-usulu",
@@ -20344,12 +19625,28 @@
       "stepCount": 3
     },
     {
+      "slug": "shepherds-pie-ingiliz-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
+    },
+    {
       "slug": "cigerli-bulgur-pilavi-edirne-usulu",
       "score": 3,
       "issues": [
         "few-steps"
       ],
       "stepCount": 3
+    },
+    {
+      "slug": "kasha-grechnevaya-rus-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
     },
     {
       "slug": "kluski-slaskie-polonya-usulu",
@@ -20536,6 +19833,14 @@
       "stepCount": 3
     },
     {
+      "slug": "anticuchos-peru-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
+    },
+    {
       "slug": "anzac-biscuit-avustralya-usulu",
       "score": 3,
       "issues": [
@@ -20694,6 +19999,14 @@
         "few-steps"
       ],
       "stepCount": 3
+    },
+    {
+      "slug": "kongnamul-guk-kore-usulu",
+      "score": 3,
+      "issues": [
+        "no-time"
+      ],
+      "stepCount": 5
     },
     {
       "slug": "erikli-kuzu-yahnisi-malatya-usulu",

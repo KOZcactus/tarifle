@@ -158,7 +158,14 @@ async function main() {
   });
 
   const batch = process.argv.includes("--batch") ? parseIntArg("--batch") : null;
+  const batches = process.argv.includes("--batches") ? parseIntArg("--batches") : null;
   const top = parseIntArg("--top", 100);
+  // --batch-offset N: ilk uretilen CSV'nin adinda N kullan (default 1).
+  // Batch 1 apply sonrasi yeni CSV'ler --batch-offset 2 ile 2-11 olur.
+  // Entries slice index 0'dan baslar (yeni en sorunlu); dosya adi offset'le.
+  const batchOffset = process.argv.includes("--batch-offset")
+    ? parseIntArg("--batch-offset") - 1
+    : 0;
 
   console.log(`📥 PUBLISHED tarif tarama basliyor...`);
   const recipes = await prisma.recipe.findMany({
@@ -244,50 +251,68 @@ async function main() {
   );
   console.log(`\n✅ Full rapor: docs/step-audit-report.json`);
 
-  // Batch CSV (opsiyonel)
-  if (batch !== null) {
-    const start = (batch - 1) * top;
+  // Batch CSV (opsiyonel). --batch N tek CSV, --batches N ise K adet uret.
+  // --batch tek mod: slice index (N-1)*top (mutlak), dosya adi N.
+  // --batches K mod: slice index 0'dan baslar (yeni sorunlu), dosya adi
+  // batchOffset + 1'den K'ya.
+  const batchPlan: Array<{ fileNum: number; sliceIdx: number }> =
+    batch !== null
+      ? [{ fileNum: batch, sliceIdx: batch - 1 }]
+      : batches !== null
+      ? Array.from({ length: batches }, (_, i) => ({
+          fileNum: i + 1 + batchOffset,
+          sliceIdx: i,
+        }))
+      : [];
+
+  for (const p of batchPlan) {
+    const b = p.fileNum;
+    const start = p.sliceIdx * top;
     const end = start + top;
     const slice = entries.slice(start, end);
     if (slice.length === 0) {
-      console.log(`⚠️  Batch ${batch} bos (top ${top} skoru asan tarif kalmadi)`);
-    } else {
-      const header = [
-        "slug",
-        "title",
-        "type",
-        "category",
-        "cuisine",
-        "stepCount",
-        "score",
-        "issues",
-        "ingredients_tr",
-        "current_steps_tr",
-      ];
-      const lines = [header.join(",")];
-      for (const e of slice) {
-        lines.push(
-          [
-            e.slug,
-            e.title,
-            e.type,
-            e.category,
-            e.cuisine,
-            e.stepCount,
-            e.score,
-            e.issues.join(";"),
-            e.ingredientsText,
-            e.currentStepsText,
-          ]
-            .map(csvEscape)
-            .join(","),
-        );
-      }
-      const out = `docs/step-review-batch-${batch}.csv`;
-      fs.writeFileSync(out, lines.join("\n") + "\n", "utf8");
-      console.log(`✅ Batch ${batch} CSV: ${out} (${slice.length} tarif)`);
-      console.log(`   Codex'e komut: "Mod E. Batch ${batch}."`);
+      console.log(`⚠️  Batch ${b} bos (top ${top} skoru asan tarif kalmadi)`);
+      continue;
     }
+    const header = [
+      "slug",
+      "title",
+      "type",
+      "category",
+      "cuisine",
+      "stepCount",
+      "score",
+      "issues",
+      "ingredients_tr",
+      "current_steps_tr",
+    ];
+    const lines = [header.join(",")];
+    for (const e of slice) {
+      lines.push(
+        [
+          e.slug,
+          e.title,
+          e.type,
+          e.category,
+          e.cuisine,
+          e.stepCount,
+          e.score,
+          e.issues.join(";"),
+          e.ingredientsText,
+          e.currentStepsText,
+        ]
+          .map(csvEscape)
+          .join(","),
+      );
+    }
+    const out = `docs/step-review-batch-${b}.csv`;
+    fs.writeFileSync(out, lines.join("\n") + "\n", "utf8");
+    console.log(`✅ Batch ${b} CSV: ${out} (${slice.length} tarif)`);
+  }
+  if (batchPlan.length > 0) {
+    const first = batchPlan[0]!.fileNum;
+    const last = batchPlan[batchPlan.length - 1]!.fileNum;
+    console.log(`   Codex komutu: "Mod E. Batch N." (N = ${first}..${last})`);
   }
 
   await prisma.$disconnect();

@@ -87,6 +87,18 @@ enum BadgeKey {
   FIRST_VARIATION
   POPULAR_VARIATION
   RECIPE_COLLECTOR
+  // Faz 1 topluluk rozetleri (oturum 12+):
+  // Her biri UserBadge tablosunda atanır, haftalık cron script'i
+  // yeniden değerlendirir. POPULAR_VARIATION + EDITOR_CHOICE ayrı:
+  // POPULAR 10+ beğeni aldıysa, EDITOR_CHOICE ise moderator seçimi
+  // (skor bonusu ×10).
+  EXPERIENCED         // 5+ uyarlama
+  PHOTOGRAPHER        // 10+ tarif fotoğrafı upload
+  CATEGORY_MASTER     // Aynı kategoride 5+ uyarlama
+  EDITOR_CHOICE       // Moderator tarafından "topluluk seçimi" onayı
+  WEEKLY_TOP_10       // Haftalık leaderboard top 10 (son 7 gün)
+  MONTHLY_TOP_10      // Aylık leaderboard top 10 (son 30 gün)
+  ALL_TIME_TOP_50     // Tüm zamanlar top 50
 }
 
 /**

@@ -3,6 +3,7 @@
     "recipes": "Recipes",
     "categories": "Categories",
     "discover": "Discover",
+    "leaderboard": "Leaderboard",
     "feed": "Feed",
     "mealPlanner": "Meal Planner",
     "blog": "Blog",
@@ -362,6 +363,10 @@
     "discover": {
       "title": "Discover",
       "description": "Random recipes, popular searches and cuisine discoveries."
+    },
+    "leaderboard": {
+      "title": "Leaderboard",
+      "description": "The most active members of the Tarifle community. Weekly, monthly and all-time rankings."
     },
     "categoriesPage": {
       "title": "Categories",
@@ -1357,6 +1362,20 @@
     "relatedTagsHeading": "Popular tags",
     "relatedDietsHeading": "Other diets",
     "viewAllRecipes": "All recipes →"
+  },
+  "leaderboard": {
+    "pageTitle": "Leaderboard",
+    "pageSubtitle": "The most active members of the Tarifle community. Weekly, monthly and all-time rankings based on variations, likes, photos and editor picks.",
+    "periodAriaLabel": "Time period selector",
+    "period": {
+      "weekly": "This week",
+      "monthly": "This month",
+      "all_time": "All time"
+    },
+    "emptyTitle": "No entries yet",
+    "emptyBody": "No active users in this period. Share a variation to make the list.",
+    "activitySummary": "{variations} variations, {likes} likes",
+    "scoreFormula": "Score: <bold>variations × 3 + likes × 1 + reviews × 2 + photos × 2 + editor picks × 10</bold>. Only moderator-approved content counts."
   },
   "mealPlanner": {
     "demo": {

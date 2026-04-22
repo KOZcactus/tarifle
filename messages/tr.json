@@ -3,6 +3,7 @@
     "recipes": "Tarifler",
     "categories": "Kategoriler",
     "discover": "Keşfet",
+    "leaderboard": "Liderlik",
     "feed": "Akış",
     "mealPlanner": "Menü Planla",
     "blog": "Blog",
@@ -362,6 +363,10 @@
     "discover": {
       "title": "Keşfet",
       "description": "Rastgele tarifler, popüler aramalar ve mutfak keşifleri."
+    },
+    "leaderboard": {
+      "title": "Liderlik Tablosu",
+      "description": "Tarifle topluluğunun en aktif üyeleri. Haftalık, aylık ve tüm zamanlar sıralaması."
     },
     "categoriesPage": {
       "title": "Kategoriler",
@@ -1357,6 +1362,20 @@
     "relatedTagsHeading": "Popüler etiketler",
     "relatedDietsHeading": "Diğer diyetler",
     "viewAllRecipes": "Tüm tarifler →"
+  },
+  "leaderboard": {
+    "pageTitle": "Liderlik Tablosu",
+    "pageSubtitle": "Tarifle topluluğunun en aktif üyeleri. Uyarlama, beğeni, fotoğraf ve editör seçimleriyle hesaplanan haftalık, aylık ve tüm zamanlar sıralaması.",
+    "periodAriaLabel": "Zaman aralığı seçimi",
+    "period": {
+      "weekly": "Bu hafta",
+      "monthly": "Bu ay",
+      "all_time": "Tüm zamanlar"
+    },
+    "emptyTitle": "Henüz kayıt yok",
+    "emptyBody": "Bu pencerede aktif kullanıcı yok. Uyarlama paylaşarak tabloya girebilirsin.",
+    "activitySummary": "{variations} uyarlama, {likes} beğeni",
+    "scoreFormula": "Skor: <bold>uyarlama × 3 + beğeni × 1 + değerlendirme × 2 + fotoğraf × 2 + editör seçimi × 10</bold>. Yalnızca moderatör onaylı içerik sayılır."
   },
   "mealPlanner": {
     "demo": {

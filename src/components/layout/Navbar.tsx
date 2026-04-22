@@ -14,6 +14,7 @@ const NAV_LINK_KEYS = [
   { href: "/tarifler", key: "recipes" },
   { href: "/kategoriler", key: "categories" },
   { href: "/kesfet", key: "discover" },
+  { href: "/leaderboard", key: "leaderboard" },
   { href: "/akis", key: "feed", requiresAuth: true as const },
   { href: "/menu-planlayici", key: "mealPlanner" },
   { href: "/blog", key: "blog" },

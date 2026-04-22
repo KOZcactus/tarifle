@@ -38,4 +38,47 @@ export const BADGES: Record<BadgeKey, BadgeMeta> = {
     emoji: "📚",
     tone: "primary",
   },
+  // Faz 1 topluluk rozetleri (oturum 12+):
+  EXPERIENCED: {
+    label: "Deneyimli",
+    description: "5+ uyarlama paylaştın.",
+    emoji: "⭐",
+    tone: "gold",
+  },
+  PHOTOGRAPHER: {
+    label: "Fotoğrafçı",
+    description: "10+ tarif fotoğrafı paylaştın.",
+    emoji: "📸",
+    tone: "blue",
+  },
+  CATEGORY_MASTER: {
+    label: "Kategori Ustası",
+    description: "Bir kategoride 5+ uyarlama paylaştın.",
+    emoji: "👑",
+    tone: "primary",
+  },
+  EDITOR_CHOICE: {
+    label: "Editör Seçimi",
+    description: "Tarifle editörü senin uyarlamanı öne çıkardı.",
+    emoji: "🏆",
+    tone: "gold",
+  },
+  WEEKLY_TOP_10: {
+    label: "Haftalık Top 10",
+    description: "Bu hafta liderlik tablosunda Top 10'a girdin.",
+    emoji: "🥇",
+    tone: "gold",
+  },
+  MONTHLY_TOP_10: {
+    label: "Aylık Top 10",
+    description: "Bu ay liderlik tablosunda Top 10'a girdin.",
+    emoji: "🏅",
+    tone: "gold",
+  },
+  ALL_TIME_TOP_50: {
+    label: "Efsane",
+    description: "Tüm zamanlar liderlik Top 50'sinde yer alıyorsun.",
+    emoji: "💎",
+    tone: "primary",
+  },
 };

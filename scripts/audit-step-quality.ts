@@ -166,6 +166,12 @@ async function main() {
   const batchOffset = process.argv.includes("--batch-offset")
     ? parseIntArg("--batch-offset") - 1
     : 0;
+  // --slice-offset N: entries array'inin ilk N*top tarifini atla.
+  // B11-B20 CSV onceden uretilmis ve Codex uzerinde calisiyor, yeni
+  // batch'ler entries[1000..] slice'ini kullanmali.
+  const sliceOffset = process.argv.includes("--slice-offset")
+    ? parseIntArg("--slice-offset")
+    : 0;
 
   console.log(`📥 PUBLISHED tarif tarama basliyor...`);
   const recipes = await prisma.recipe.findMany({
@@ -261,7 +267,7 @@ async function main() {
       : batches !== null
       ? Array.from({ length: batches }, (_, i) => ({
           fileNum: i + 1 + batchOffset,
-          sliceIdx: i,
+          sliceIdx: i + sliceOffset,
         }))
       : [];
 

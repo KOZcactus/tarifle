@@ -16,6 +16,10 @@ interface CountUpProps {
  * and the first paint see the real number, starting at 0 would render
  * "0 tarif" into the HTML and get indexed that way, as a recent external
  * audit flagged. Animation kicks in after mount on the client only.
+ *
+ * **A11y:** Eger kullanici prefers-reduced-motion: reduce ayarliysa
+ * animation tamamen atlanir, target degeri direkt gosterilir. WCAG 2.3.3
+ * ve vestibular hassasiyet icin hareket pasifize.
  */
 export function CountUp({ target, duration = 1200, className }: CountUpProps) {
   const [count, setCount] = useState(target);
@@ -24,6 +28,16 @@ export function CountUp({ target, duration = 1200, className }: CountUpProps) {
   useEffect(() => {
     if (hasAnimatedRef.current || target <= 0) return;
     hasAnimatedRef.current = true;
+
+    // Reduced motion check, animation tetiklenmesin.
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (prefersReducedMotion) {
+      setCount(target);
+      return;
+    }
+
     const start = performance.now();
 
     function tick(now: number) {

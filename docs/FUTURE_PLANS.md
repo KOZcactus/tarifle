@@ -15,45 +15,42 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
-### Codex Mod E (step kalitesi sistematik revize), teslim bekleniyor
+### Codex Mod E (step kalitesi sistematik revize)
 
-Brief `docs/CODEX_BATCH_BRIEF.md` §14 (oturum 13'te kuruldu). Audit %94
-tarif sorunlu (catalog 2772, 2585+ flag), Mod A boilerplate izi. Sırada:
-- [ ] Codex teslim `docs/step-revisions-batch-1.json` (top 100 step kalitesi)
-- [ ] Apply: `scripts/apply-step-revisions.ts --batch 1 --apply` (dev+prod)
-- [ ] Sırayla B2-B26 (~26 batch toplam)
-- [ ] Cache invalidate: `/api/admin/revalidate?slug=X` veya 30dk TTL bekle
-
-### Mod D Batch 28 son (catalog tükendi), yeni batch için catalog büyümesi gerek
-
-- [ ] Mod A Batch 30+ ile catalog 2900+'a çıkarsa Mod D Batch 29 mümkün
-- [ ] Veya Mod D pipeline'ı kapat (B1-B28 = ~%50 dokunma yeterli)
+Brief `docs/CODEX_BATCH_BRIEF.md` §14 (B6+ ince ayar oturum 14'te
+tamamlandı). Pipeline oturdu, B1-B13 apply (~%45 catalog). Sırada:
+- [ ] **Codex teslim B14-B30** (17 batch, ~1700 tarif kalan)
+- [ ] Apply akışı: dry-run → TR karakter scan → spot check → dev+prod
+- [ ] Fix script gerekirse tek-seferlik auto-clean (B8 v3 + B12 v3 pattern)
+- [ ] Cache invalidate: apply sonrası Vercel deploy otomatik (unstable_cache
+      reset)
 
 ### Hero A/B test sonuçları (1-2 hafta sonra)
 
 - [ ] Sentry tag `hero.variant: A|B` filter ile per-variant hata oranı
 - [ ] Plausible/PostHog entegrasyonu (conversion attribution)
 - [ ] Variant kazanan kararı, kaybedeni sil
+- [ ] Oturum 14 değişikliği: hero içerik "24 mutfak, N farklı yemek çeşidi"
+      vurgusu A/B A variant + B variant aynı şekilde etkilenir
 
 ### Vercel Fluid CPU 7-day teyit
 
 - [ ] TTL artışı sonrası Dashboard Fluid Active CPU %50+ azalma gözlemi
+- [ ] Oturum 12-13 TTL agresif artış + B1-B13 Mod E apply sonrası ek
+      cache invalidation frequency etkisi
 
 ---
 
-## 📋 Planlı (site açılışı öncesi, oturum 14-22)
+## 📋 Planlı (site açılışı öncesi, oturum 15-22)
 
 ### Teknik + kalite
 
-- [ ] **Admin "Tarif Düzenle" formu** (oturum 13 dersi: pide manuel fix
-      script + cache invalidate + hot path öğretti). `/admin/tarifler/[slug]/duzenle`
-      ingredient + step + tipNote + serv inline edit, save → otomatik
-      `updateTag("recipes")` + `revalidatePath`.
-- [ ] **Blog tarif kümesi** (P3-16): "30 dakikalık tavuk", "airfryer
-      patates", "glutensiz kahvaltı", "karnıyarık yanında ne gider",
-      "menü planlamanın 5 kuralı" tarzı 10-15 yazı ilk dalga
-- [ ] **AI Asistan v3 sıkılaştırma**: mevcut pantry + prefs (oturum 13 tur 5),
-      daha derin diyet/zaman/öneri çeşitliliği
+- [ ] **AI Asistan v4**: "Haftalık menü önerisi" - kullanıcı pantry +
+      prefs + kişi sayısı + süre → 7×3 öğün önerisi. Mevcut v3 tek
+      tarif veriyor, v4 çok-öğün menü planı.
+- [ ] **Admin Tarif Düzenle UX iyileştirmeleri**: drag-drop reorder
+      (ingredient/step), çift onay modal silme için, gerçek zamanlı
+      preview
 - [ ] **Cache Components (PPR) full refactor** (oturum 12'de denendi,
       `cacheComponents: true` Tarifle'de 30+ `force-dynamic` export ile
       çakıştı, paradigm shift 8-12 saat). Site açılış sonrası dedicated
@@ -69,6 +66,18 @@ tarif sorunlu (catalog 2772, 2585+ flag), Mod A boilerplate izi. Sırada:
 - [ ] **Fotoğraf dalgası**: top 100 tarife Cloudinary'den görsel yükle
       (placeholder emoji değil, gerçek foto)
 
+### Blog kategorisi genişletme
+
+Oturum 14'te 4 → 25 yazı eklendi, 11/7/7 denge. Sonraki aday konular:
+
+- [ ] **Blog 26+**: Ramazan Sofrası (rehber 8), Yoğurt ve Tereyağı
+      Yapımı (malzeme 8), Fırın Kullanımı Raf Isı (pişirme 12), Bayram
+      Sofrası (rehber), Sarımsak Doğru Kullanımı (pişirme), Kahvaltı
+      Sonrası Kahve/Çay Eşleştirme (rehber)
+- [ ] Hedef: **30-40 blog yazısı** açılış öncesi (mevcut 25 + 5-15 yeni).
+- [ ] **İç link ağı**: mevcut 25 yazının birbirine çapraz-referansları
+      eklenebilir (Blog 19 kalıp boyutu → Blog 14 kek dönüşümü bağlantısı gibi)
+
 ### A11y + UX polish
 
 - [ ] **Color contrast** WCAG AA detaylı tarama (Lighthouse 100 ulaştı
@@ -80,6 +89,8 @@ tarif sorunlu (catalog 2772, 2585+ flag), Mod A boilerplate izi. Sırada:
 - [ ] **Schema.org Video** (ileride Remotion snippet eklenince)
 - [ ] **Google Search Console**: her kategori/mutfak/diyet için CTR
       izlem, düşük CTR'lı başlık revize
+- [ ] **Blog yazıları SEO izlem**: 25 yazının indekslenme + CTR takibi,
+      düşük performanslı başlık revize
 
 ---
 
@@ -114,8 +125,8 @@ tarif sorunlu (catalog 2772, 2585+ flag), Mod A boilerplate izi. Sırada:
 
 - [ ] Sosyal medya otomasyonu: Instagram Reels (Remotion), TikTok snippet,
       Pinterest pin jenerasyonu
-- [ ] Newsletter aktivasyonu (Resend zaten bağlı, haftalık scheduled send;
-      oturum 13 ilk test mail başarılı, scheduler kurulumu kalıyor)
+- [ ] Newsletter haftalık scheduled send (Resend bağlı, test başarılı,
+      scheduler kurulumu kalıyor)
 - [ ] Influencer pilot (5 mikro-influencer, affiliate code)
 - [ ] App Store / Play Store hazırlığı (PWA → TWA Android, Capacitor iOS)
 - [ ] Referral programı (kullanıcı davet = 1 ay Pro free)
@@ -133,28 +144,24 @@ tarif sorunlu (catalog 2772, 2585+ flag), Mod A boilerplate izi. Sırada:
 - Tarif "zorluk seviyesi kişiselleştirme" (yeni başlayan → orta →
   ileri, aynı tarif farklı detayla)
 - Çoklu kullanıcı menü planlayıcı (aile üyeleri diyet kısıtı aggregate)
+- Tarif karşılaştırma sayfası (`/karsilastir?a=slug1&b=slug2`)
+- Recipe remix feature (otomatik vegan/glutensiz/hızlı versiyon)
 
 ---
 
-## ✅ Oturum 13'te tamamlananlar (silinmeden önce burada referans)
+## ✅ Oturum 14'te tamamlananlar (silinmeden önce burada referans)
 
 Hızlı snapshot, detay PROJECT_STATUS.md'de:
-- Faz 1 Leaderboard döngüsü (Profile chip + cron + 7 rozet) ✅
-- Privacy 3 toggle ✅
-- Mod D Batch 1-22 prod ✅ (B23-B28 son, batch 29 catalog yetmez)
-- Mod C inject 38 item ✅
-- Personalization tur 4 + tur 5 ✅
-- WCAG 96→100 ✅
-- Sitemap v2 composite ✅
-- Ingredient catalog %100 temiz ✅
-- Admin Quality widget v2 ✅
-- Newsletter ilk gerçek gönderim test ✅
-- Sentry Replay ✅
-- Hero A/B kurulumu ✅
-- Akıllı alışveriş listesi 11 kategori ✅
-- Playwright E2E + keyboard nav ✅
-- Turbopack prod build ✅
-- Lighthouse 3-run baseline ✅
-- 23 lint warning → 0 ✅
-- Reduced motion CountUp ✅
-- Mod E pipeline kurulumu (audit + apply + brief + ilk batch CSV) ✅
+- Admin "Tarif Düzenle" formu ✅
+- AI Asistan v3 (reason chip + cuisine diversity) ✅
+- Hero badge çeşitlilik vurgusu (24 mutfak) ✅
+- Mod E Brief §14 B6+ ince ayar (paraphrase + type + servis esneklik) ✅
+- Mod E B1-B13 apply (1300 tarif, ~%45 catalog) ✅
+- Mod E B11-B30 CSV hazır (20 batch kuyruk) ✅
+- Audit script --batches / --batch-offset / --slice-offset flag ✅
+- 20 yeni blog yazısı (Blog 5-25, kategori 11/7/7) ✅
+- Blog citation standardı 4 yazıya retro-apply ✅
+- BLOG_CONTENT_GUIDE.md editöryal standart ✅
+- feedback_output_format.md memory ✅
+- Fix script disiplin (B8 v3 + B12 v3) ✅
+- Cleanup + .gitignore lh-*.json ✅

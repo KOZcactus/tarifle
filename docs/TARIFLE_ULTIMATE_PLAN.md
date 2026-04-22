@@ -1,9 +1,9 @@
 # Tarifle, Ultimate Proje Dokümanı
 
-> Son güncelleme: **22 Nisan 2026** (oturum 13 sonu, 55 commit, dev tarihinin en uzun günü, 12 saatlik kesintisiz iş)
-> Durum: MVP + Faz 2 + Faz 3 **canlıda** (**2772 tarif prod** (batch 29 prod seed +55), **Mod B ~%98+**, **5 Codex modu aktif (A/B/C/D/E)**, **Mod E pipeline tam kuruldu** (audit + apply + brief §14 internet araştırma + 3-katman doğruluk + opsiyonel ingredient revizyon), **Faz 1 Leaderboard döngüsü tamamlandı** (Profile Chef Puanı + haftalık cron + 6 rozet otomatik atama), **Privacy 3 toggle** (chef puanı/aktivite/takip opt-out), **Personalization tur 5** (AI Asistan auto-fill cuisine + diet), **Newsletter prod canlı** (test_email query + Gmail teyit), **Sentry Replay aktif** (PII safe), **Hero A/B kurulumu** (cookie + Sentry tag), **Akıllı alışveriş 11 kategori**, **WCAG 100/100**, **Sitemap v2 composite priority**, **Ingredient catalog %100 temiz**, Pre-push 5 katman, 624/624 test PASS, Cache TTL agresif)
-> Versiyon: 1.8
-> İlişkili dokümanlar: `PROJECT_STATUS.md` (oturum 13 detaylı blok-blok), `CHANGELOG.md`, `CODEX_BATCH_BRIEF.md` (~1300 satır, Mod A/B/C/D/E **beş mod**), `FUTURE_PLANS.md` (yalnız yapılmamış, biten silinir), `COMPETITIVE_ANALYSIS.md`, `RECIPE_FORMAT.md`, `NEWSLETTER_CRON_SETUP.md`, `PROD_PROMOTE.md`, `CODEX_HANDOFF.md`
+> Son güncelleme: **22-23 Nisan 2026** (oturum 14 sonu, 40 commit, içerik + Mod E apply ritmi)
+> Durum: MVP + Faz 2 + Faz 3 **canlıda** (**2772 tarif prod**, **Mod B ~%98+**, **5 Codex modu aktif (A/B/C/D/E)**, **Mod E B1-B13 apply** (1300 tarif step yeniden yazıldı, ~%45 catalog), **Mod E B11-B30 CSV hazır** (20 batch Codex kuyruğu), **25 blog yazısı** (kategori 11/7/7 denge), **Admin "Tarif Düzenle" formu** (content edit + otomatik cache invalidate), **AI Asistan v3** (reason chip + cuisine diversity cap), **Hero "24 mutfak, N farklı yemek çeşidi"** çeşitlilik vurgusu, **Faz 1 Leaderboard döngüsü tamamlandı**, **Privacy 3 toggle**, **Personalization tur 5** (AI Asistan auto-fill), **Newsletter prod canlı**, **Sentry Replay aktif**, **Hero A/B kurulumu**, **WCAG 100/100**, Pre-push 5 katman, 630/630 test PASS, Cache TTL agresif)
+> Versiyon: 1.9
+> İlişkili dokümanlar: `PROJECT_STATUS.md` (oturum 14 detaylı blok-blok), `CHANGELOG.md`, `CODEX_BATCH_BRIEF.md` (~1400 satır, Mod A/B/C/D/E + §14 B6+ ince ayar), `BLOG_CONTENT_GUIDE.md` (editöryal standart), `FUTURE_PLANS.md` (yalnız yapılmamış, biten silinir), `COMPETITIVE_ANALYSIS.md`, `RECIPE_FORMAT.md`, `NEWSLETTER_CRON_SETUP.md`, `PROD_PROMOTE.md`, `CODEX_HANDOFF.md`
 
 Bu doküman Tarifle projesinin tek kaynak belgesidir (Single Source of Truth). Yeni özellik eklerken, teknik karar değiştirirken veya yol haritasını güncellerken önce buraya bakılır ve buradan güncellenir.
 

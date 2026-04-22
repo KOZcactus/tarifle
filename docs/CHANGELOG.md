@@ -2,7 +2,9 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: **Oturum 13 sonu (22 Nis 2026), 55 commit.** **2772 tarif** prod canlı (batch 29 prod seed +55). 5 Codex modu aktif (A/B/C/D/E), Mod E pipeline tam kuruldu. **Faz 1 Leaderboard döngüsü tamamlandı** (Profile Chef Puanı + haftalık cron + 7 rozet). Privacy 3 toggle (chef puanı/aktivite/takip). Mod D Batch 1-22 prod (~1500 revize). Mod C 38 item landing inject. Personalization tur 4 (cuisine boost) + tur 5 (AI Asistan auto-fill). WCAG 96→100. Sitemap v2 composite. Akıllı alışveriş 11 kategori. Newsletter prod canlı (test_email query). Sentry Replay aktif. Hero A/B cookie. Lighthouse 3-run baseline (perf 73 stabil, LCP -733ms gerçek). Pide manuel fix + cache invalidate hot path. **Pre-push 5 katman sabit**, 624/624 test PASS. Detaylı kronolojik akış için `docs/PROJECT_STATUS.md` → "22 Nisan 2026 (oturum 13)".
+> Son güncelleme: **Oturum 14 sonu (22-23 Nis 2026), 40 commit.** **2772 tarif** prod (değişiklik yok, Mod E step revize). **25 blog yazı** (4 → 25, kategori 11/7/7 denge). **Mod E B1-B13 apply** (1300 tarif step yeniden yazıldı, ~%45 catalog). Mod E B11-B30 CSV hazır (20 batch Codex kuyruğu). **Admin "Tarif Düzenle" formu** (content edit + otomatik cache invalidate). **AI Asistan v3** (reason chip + cuisine diversity cap). **Hero "24 mutfak, N farklı yemek çeşidi"** çeşitlilik vurgusu. **Mod E Brief §14 B6+ ince ayar** (paraphrase + type kolonu + "ya da" azaltma + servis step esneklik). Blog citation standardı (4 yazıya retro-apply, inline link + Kaynaklar bölümü). **BLOG_CONTENT_GUIDE.md** editöryal standart. audit script --batches/--batch-offset/--slice-offset flag. 630/630 test PASS. Detaylı akış: `docs/PROJECT_STATUS.md` → "22-23 Nisan 2026 (oturum 14)".
+
+> Oturum 13 sonu (22 Nis 2026), 55 commit. Faz 1 Leaderboard + Privacy 3 toggle + Mod D 1-22 prod + Mod E pipeline kurulumu + Newsletter prod + Sentry Replay + Hero A/B + Akıllı alışveriş + Playwright E2E + Lighthouse baseline. **2772 tarif prod**, 5 Codex modu aktif.
 
 ## İşaretler
 

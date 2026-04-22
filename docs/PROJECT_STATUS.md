@@ -1,6 +1,8 @@
 # Tarifle, Proje Durumu
 
-> Son güncelleme: **Oturum 13 sonu (22 Nis 2026), 55 commit, dev tarihinin en uzun günü, 12 saat aktif iş**. Privacy 3 toggle + Chef Puanı + leaderboard cron + Mod D Batch 1-22 prod (1500+ revize) + Mod D Batch 23-28 + Mod A Batch 29 prod seed + Mod B Batch 29 (45 çeviri) + Codex Mod C 38 item landing inject + Personalization tur 4 (cuisine boost) + tur 5 (AI Asistan auto-fill) + Reduced motion CountUp + WCAG 96→100 + Sitemap v2 composite formula + Ingredient catalog %100 temiz + Admin Quality widget v2 (8 metrik) + Cron ingredient drift WARNING + Newsletter ilk gerçek gönderim prod canlı (test_email query + curl + Gmail teyit) + Sentry Replay aktivasyon (PII safe, 50/ay quota) + Hero A/B (cookie + Sentry tag) + Akıllı alışveriş listesi (11 supermarket kategorisi rule-based) + Playwright E2E (3 spec, search→detail→bookmark + keyboard nav) + Turbopack prod build aktive + Lighthouse 3-run audit (LCP -733ms gerçek kazanım, perf 73 stabil, a11y 100) + cache key v1→v2 emergency invalidate + admin revalidate endpoint (session veya Bearer) + Pide tarifi manuel fix + **Mod E pipeline tam kurulum** (audit + apply + brief §14: type bazlı min step + internet araştırma + 3-katman doğruluk + opsiyonel ingredient revizyon + ilk batch CSV). **2772 tarif prod**, **Pre-push 5 katman sabit**, 624/624 test PASS, 5 mod aktif (A/B/C/D/E). **Sonraki:** Codex "Mod E. Batch 1." (top 100 step kalitesi).
+> Son güncelleme: **Oturum 14 sonu (22-23 Nis 2026), 40 commit, içerik + Mod E apply akışı**. Admin Tarif Düzenle formu + AI Asistan v3 (reason chip + cuisine diversity cap) + Hero "24 mutfak, N farklı yemek çeşidi" çeşitlilik vurgusu + Mod E Brief §14 B6+ ince ayarlar (paraphrase, type kolonu, "ya da" azaltma, malzemesini yasağı, servis step esneklik) + Mod E B1-B13 apply (1300 tarif, ~%45 catalog) + Mod E B11-B30 CSV hazır (20 batch kuyruk) + 20 yeni blog yazısı (Blog 5-25) + 4 yazıya citation (inline link + Kaynaklar) + BLOG_CONTENT_GUIDE.md editöryal standart + audit-step-quality.ts flag genişletme (--batches, --batch-offset, --slice-offset). **2772 tarif prod, 25 blog yazı (kategori 11/7/7), Mod E B1-B13 canlı**. **Sonraki:** Codex B14 + Blog 26 Ramazan Sofrası.
+
+> Oturum 14 sonu (22-23 Nis 2026), 40 commit. Content + Mod E apply ritmi. 20 yeni blog (kategori 11/7/7 denge), Mod E 1300 tarif apply + kalan 17 batch CSV, Admin Tarif Düzenle formu, AI Asistan v3 reason chip + cuisine diversity, Hero çeşitlilik vurgusu, Brief §14 B6+ ince ayar.
 
 > Oturum 13 sonu (22 Nis 2026), 55 commit, en uzun gün. Faz 1 Leaderboard döngüsü tamamlandı + Privacy 3 toggle + Chef Puanı + Mod D Batch 1-22 prod (1500+ revize) + Mod E pipeline kuruldu + Newsletter prod canlı + Sentry Replay + Hero A/B + Akıllı alışveriş + Playwright E2E + Lighthouse audit. **2772 tarif prod**, 5 mod aktif (A/B/C/D/E).
 
@@ -15,6 +17,162 @@
 > Oturum 8 sonu (30 commit), 2320 tarif prod canlı. 10 blok: 6 Codex batch Mod A (1701→2320), 3 Mod B batch (batch 18-20 çeviri 600→900), rekabet §8 kısa 6/6 ✅ + orta 5/5 ✅, topluluk loop tam (follow + feed + fan-out + followers list + suggested cooks + collection/variation share + PWA banner + Pinterest rich pin + user-photos flag), admin analytics + bulk moderation + search log, PDF export + llms.txt, 18 migration.
 >
 > Oturum 7 sonu (28 commit), 1701 tarif prod canlı. 8 blok: Mod B batch 13-17 (600 tarif EN+DE), Mod A batch 15-17 (1401→1701), foryou sort, pagination redesign, super-admin protection, /admin/yorumlar, /kategoriler, legal hub /yasal, editör rozeti, similar-recipes v2, 44 programatik landing, profil zenginleştirme, /menu-planlayici, RSS + HowTo schema, AI Asistan v2, blog MDX + 3 makale, rekabet analizi doc, newsletter double-opt-in altyapı, codex brief 3 clarify.
+
+## 22-23 Nisan 2026 (oturum 14, 40 commit, Content + Mod E apply)
+
+> İki takvim günü süren oturum. 22 Nisan sonlarında başlayıp 23 Nisan
+> akşamına uzandı. Odak: içerik üretimi (20 yeni blog yazısı) + Mod E
+> apply pipeline'ının 13 batch'i canlıya aktarması. Ayrıca 3 yeni teknik
+> özellik (Admin Tarif Düzenle, AI Asistan v3, Hero çeşitlilik).
+
+**A · Admin "Tarif Düzenle" formu** (commit `8072ee2`) — Pide manuel fix
+dersinden sonra FUTURE_PLANS aktif madde tamamlandı. `/admin/tarifler/
+[slug]/duzenle` ingredient + step + tipNote + servingSuggestion inline
+edit. Atomic transaction (5 Prisma operasyonu) + moderationAction audit
+log + 4 revalidatePath + updateTag("recipes"). 3 katman güvenlik: admin
+layout + requireAdmin + Zod + em-dash guard.
+
+**B · AI Asistan v3 sıkılaştırma** (commit `f7dccd6`) — reason chip (kural
+tabanlı "neden bu tarif?" açıklama) + cuisine diversity cap (max 3 per
+cuisine, null sayılmaz) + server-side locale-aware reasons üretim. UI
+tag chip'lerinden sonra primary renk chip. Duplicate "perfect match"
+paragraph kaldırıldı. 630/630 unit test PASS (+6 diversify testi).
+
+**C · Hero badge çeşitlilik vurgusu** (commit `74dffca`) — "keşfetmeye
+hazır" (klişe + pasif) → **"24 mutfak, 2.772 farklı yemek çeşidi"**. Rakip
+"900bin tarif" vs çeşitlilik USP. heroBadgePrefix + heroBadgeSuffix i18n
+key yapısı, CountUp animasyon ortada.
+
+**D · Brief §14 B6+ ince ayar** (5 commit: `6197100`, `e4549dc`,
+`e59a970`) — Mod E kalitesini pekiştirmek için Codex talimat:
+- **Paraphrase zorunlu** (copy-paste yasak, yemek.com/seriouseats vs.
+  kaynakları referans, cümle Tarifle sesi)
+- **CSV type kolonu** (§14.1 tutarsızlık kapatıldı)
+- **"2 kaynak" threshold** (Katman 3 tetik netleşti)
+- **Em-dash vs hyphen** clarify (aralık için - OK, — ve – yasak)
+- **"malzemesini" yasağı** (doğru: "Kuşbaşı dana etini" - yapay ek yok)
+- **Template tekrar yasağı** (aynı 5-adım iskeleti farklı tariflere kopya)
+- **Teknik hatalar** (erişte yıkanmaz, tereyağı 5-6 dk yanar)
+- **Jenerik kapanış çeşitlendirme**
+- **Servis step esneklik** (MIN_STEP_WORDS 5→3, son servis 3-4 kelime OK)
+
+**E · Mod E B1-B13 apply** (1300 tarif, ~%45 catalog):
+- **B1** (commit `9599fb4`): Codex ilk teslim, tavuk-şiş + shepherd's pie
+  + semla + buffalo chicken dip spot check, 506 step
+- **B2+B3** (`e90a828`): 200 tarif, 977 step (alfajores, halászlé,
+  churros, peynirli pide, enginarli börülce, palacsinta)
+- **B4** (`9373f10`): 488 step (bulgur salatası, kinoa, katmer)
+- **B5 üç tur rework** (`e4549dc`): v1 REJECT %59 muğlak + 14x copy-paste,
+  v2 REJECT tarif adı step içinde, v3 APPLY minor kalite
+- **B6** (`e59a970`): B1-B4 seviyesi, 473 step (skordalia, çağla aşı,
+  ısotlu patates böreği). MIN_STEP_WORDS 5→3 ayar.
+- **B7** (`23ec547`): 488 step profesyonel ton (bulgur, shepherd's pie
+  mükemmel), "ya da" trend düşüyor
+- **B8 v2 + v3 fix** (`7c70908`, `fb47397`): v1 REJECT UTF-8 çift-encoding
+  + template tekrar. v2 çözüldü, v3 ek karakter fix (20 step + 11
+  redundant step silindi). Fix script pattern oturdu.
+- **B9** (`f60d30f`): 479 step MÜKEMMEL (galaktoboureko ingredient
+  revizyonu 7 ingredient), Codex kaynakları detaylı self-report
+- **B10** (`740c958`): 488 step + 7 ingredient revizyonu (key-lime-pie,
+  panettone, sesame-balls, basbousa)
+- **B11** (`bd6a1d7`): 484 step + 7 ingredient revize (suspiro-limeño,
+  kete-kars, sütlaç varyantı)
+- **B12 rework saga** (`d74038d`): v1 REJECT ASCII-only (TR karakter
+  ~57), v2 büyük iyileşme (1989 TR) + fix script (38 karakter + 11
+  redundant) = v3
+- **B13** (`49b24ed`): Türkçe karakter sorunu çözüldü, manuel 1 step fix
+
+**F · Mod E CSV pipeline genişleme** (commit `23ec547`, `1c863f0`) —
+`audit-step-quality.ts` 3 yeni flag:
+- `--batches K`: K adet CSV tek run
+- `--batch-offset N`: file name N'den başlar
+- `--slice-offset N`: entries ilk N*top'u atlar (B11-B20 üstte
+  duruyorken yeni B21-B30 üretme)
+Sonuç: **B11-B30 toplam 20 batch CSV hazır** (Codex kuyruğu dolu, ~1938
+tarif kalan sorunlu).
+
+**G · Fix script disiplin** — karakter kayıp + redundant step için
+tek-seferlik TS script pattern'i (B8 v3 + B12 v3'te kullanıldı).
+50+ Türkçe karakter pattern (ateşte/başlayın/sıkın/soğumaya/yumuşatın/
+kısık/karıştırın/sarımsak/ısındığında vs). Jaccard benzerlik >0.4 ile
+redundant step tespit. Apply öncesi auto-clean.
+
+**H · 20 yeni blog yazısı (Blog 5-25)** — kategori 11/7/7 denge:
+
+_Pişirme-teknikleri (11)_: soğan kavurma (mevcut), **et-mühürleme-bilimi**
+(López-Alt + USDA), **pilav-bilimi** (Nature + ScienceDirect), **yumurta-
+pişirme-7-yöntem** (Kenji + Gordon Ramsay), **mutfak-bıçağı** (Gear
+Patrol + Misen), **balık-seçimi-temizlik-pişirme** (FDA + Tasting Table),
+**mutfak-ocakları-induksiyon-gaz-elektrik-döküm** (DOE + ENERGY STAR),
+**evde-tarif-uyarlama** (Food Network + King Arthur), **ev-mutfağı-hijyen-
+temelleri** (FDA + ANSI + Scientific American), **kahve-demlemesi**
+(UNESCO + SCA), **mutfak-ekipman-olmazsa-olmazları** (ATK + Consumer
+Reports).
+
+_Malzeme-tanıma (7)_: zeytinyağı (mevcut), maya-kabartma-karbonat (King
+Arthur + Serious Eats), **tuz-çeşitleri** (Nosrat + WHO), **fermentasyon-
+temelleri** (Katz + Harvard Nutrition), **baharat-dolabı** (Webstaurant +
+Mama Fatma), **su-ve-mutfak** (WHO + King Arthur + SCA), **evde-dondurma-
+dondurucu** (USDA + ScienceDirect).
+
+_Mutfak-rehberi (7)_: yedi-bölge (mevcut), **türk-kahvaltısının-mantığı**
+(Wikipedia + CNN Travel), **anadolunun-unutulmuş-yemekleri** (Slow Food
+Ark of Taste 76 ürün), **türk-tatlı-felsefesi** (Smithsonian + Exploratorium),
+**zeytinyağlı-yemek-geleneği** (UNESCO Mediterranean Diet 2013 + PMC),
+**düğün-sofrası** (UNESCO Keşkek 2011), **türk-çayı-kültürü** (Daily Sabah +
+ÇAYKUR tarih + Springer).
+
+Her yazı 1400-2700 kelime, 8-23 H2, **6 kaynak Kaynaklar bölümünde +
+2-5 inline link**. WebSearch araştırma + citation disiplini. Kritik
+iddialar FDA/USDA/UNESCO/SCA/Harold McGee ile teyit.
+
+**I · Blog citation standardı** (commit `37c3eec`) — Mevcut 4 yazıya
+(et mühürleme + soğan + maya + zeytinyağı) geriye dönük inline link +
+Kaynaklar bölümü. Editorial blog patterni (Serious Eats, Atlantic, HBR).
+MDX Anchor component external link `target="_blank"` + `rel="noopener
+noreferrer"` zaten yerinde.
+
+**J · BLOG_CONTENT_GUIDE.md** (commit `3beab3a`) — Editöryal standart
+doküman (196 satır): konu seçimi, AI kalıbı kaçınma, doğruluk kaynak
+hierarchy (resmî kurum > bilim editörlü > otoriteli medya > Türkçe
+referans), citation format, em-dash yasağı, frontmatter, dosya
+adlandırma, tablo limiti (remark-gfm yok), mevcut 5 yazı referans
+tablosu. Sonraki oturum için standard.
+
+**K · Cleanup + .gitignore** (commit `f63585c`) — Mod D B23-B28
+editorial-revisions-batch JSON commit (B1-B22 zaten committed), lh-*.json
+pattern .gitignore'a eklendi (Lighthouse local rapor).
+
+**L · Feedback memory** (feedback_output_format.md) — Kullanıcı direktifi:
+her mesajın sonunda 3 blok (Özet + Sonuç + Sıradaki işler) + "sıradaki
+işler" kısmında her zaman kendi öneri.
+
+### Prod skor kartı (oturum 14 sonu, son commit 49b24ed)
+
+- **2772 tarif prod** (değişiklik yok, Mod E step revize)
+- **Mod E B1-B13 apply** (1300 tarif step yeniden yazıldı, ~%45 catalog)
+- **Mod E B14-B30 CSV hazır** (17 batch Codex kuyruğu)
+- **25 blog yazı** (4 → 25, 21 yeni)
+- Mod B ~%98+, isFeatured ~%11.5, tipNote + serv %100, hungerBar %100
+- 24 cuisine, 17 kategori, 10 allergen, 15 tag, 11 rozet
+- **630/630 unit test PASS** (+6 AI diversify test)
+- 22 formal migration (değişiklik yok)
+- **Pre-push 5 katman sabit**
+- tsc 0 error, lint 0 warning
+- A11y 100/100 stabil, Performance ~73
+- 4 cron aktif, Newsletter prod canlı, Sentry Replay aktif
+- Hero A/B yeni içerikle sticky (24 mutfak vurgusu canlı)
+- 5 Codex modu aktif (A/B/C/D/E)
+
+### Bekleyen (oturum 15)
+
+1. **Codex B14 teslim bekleniyor** — CSV hazır, feedback iletildikten
+   sonra başlar.
+2. **B14-B30 sıralı apply** (~1700 tarif kalan, 17 batch)
+3. **Blog 26+ devam** (önerim: Ramazan Sofrası, mutfak-rehberi 8)
+4. Admin "Tarif Düzenle" formu test + iyileştirme (kullanıcı deneyimi)
+5. Hero A/B sonuçları (1-2 hafta sonra Sentry data)
+6. Vercel Fluid CPU 7-day teyit (cache TTL agresif etkisi)
 
 ## 22 Nisan 2026 (oturum 13, 55 commit, dev tarihinin en uzun günü)
 

@@ -69,6 +69,31 @@ export function compareByFavoriteBoost<T extends { id: string; title: string }>(
   return a.title.localeCompare(b.title, "tr");
 }
 
+/**
+ * Cuisine boost weight. Cuisine signal tag'den daha güçlü (kullanıcı bir
+ * mutfak seçtiyse o mutfak tariflerinin önceliği yüksek olmalı). 2 puan
+ * = ortalama 2 tag eşleşmesine denk.
+ */
+const CUISINE_BOOST_WEIGHT = 2;
+
+/**
+ * Combined preference score: tag-intersection + cuisine match. Pure
+ * function. Cuisine eşleşmesi varsa +2, her tag eşleşmesi +1.
+ */
+export function scoreByFavoritePrefs(
+  recipeTagSlugs: string[],
+  recipeCuisine: string | null,
+  favoriteTagSlugs: readonly string[],
+  favoriteCuisines: readonly string[],
+): number {
+  const tagScore = scoreByFavoriteTags(recipeTagSlugs, favoriteTagSlugs);
+  const cuisineScore =
+    recipeCuisine && favoriteCuisines.includes(recipeCuisine)
+      ? CUISINE_BOOST_WEIGHT
+      : 0;
+  return tagScore + cuisineScore;
+}
+
 // Ortak select, RecipeCard tipi için
 const recipeCardSelect = {
   id: true,
@@ -144,6 +169,13 @@ interface GetRecipesOptions {
    * ordered even when the caller forgot to gate on `hasFavoriteTags`.
    */
   boostTagSlugs?: string[];
+  /**
+   * Kişiselleştirme tur 4 (oturum 13), user's `favoriteCuisines` codes.
+   * "foryou" sort'ta her cuisine eşleşmesi +CUISINE_BOOST_WEIGHT (2)
+   * puan ekler (tag intersection +1, cuisine match daha güçlü sinyal).
+   * boostTagSlugs ile birlikte ya da tek başına kullanılabilir.
+   */
+  boostCuisines?: string[];
 }
 
 /** Tarif listesi, arama, filtreleme ve sayfalama destekli.
@@ -174,6 +206,7 @@ const _getRecipesInner = async (options: GetRecipesOptions = {}): Promise<{
     limit = 24,
     offset = 0,
     boostTagSlugs,
+    boostCuisines,
   } = options;
 
   const where: Record<string, unknown> = {
@@ -258,11 +291,17 @@ const _getRecipesInner = async (options: GetRecipesOptions = {}): Promise<{
     });
     // Precompute score per recipe so the comparator stays O(1) per compare;
     // otherwise sort would pay the intersect cost O(n log n) times.
-    const boostList = boostTagSlugs ?? [];
+    // Tur 4 (oturum 13): cuisine boost dahil, tag intersection +1 +
+    // cuisine match +CUISINE_BOOST_WEIGHT (2).
+    const tagBoost = boostTagSlugs ?? [];
+    const cuisineBoost = boostCuisines ?? [];
     const scoreMap = new Map<string, number>();
     for (const row of rows) {
       const slugs = row.tags.map((rt) => rt.tag.slug);
-      scoreMap.set(row.id, scoreByFavoriteTags(slugs, boostList));
+      scoreMap.set(
+        row.id,
+        scoreByFavoritePrefs(slugs, row.cuisine, tagBoost, cuisineBoost),
+      );
     }
     const sorted = [...rows].sort((a, b) =>
       compareByFavoriteBoost(scoreMap, a, b),
@@ -601,6 +640,21 @@ export async function getUserFavoriteTagSlugs(
     select: { favoriteTags: true },
   });
   return user?.favoriteTags ?? [];
+}
+
+/** Kişiselleştirme tur 4 (oturum 13), user's `favoriteCuisines` codes
+ *  ("tr", "it", "fr"...). Anonymous veya boş ise [] döner. /tarifler
+ *  foryou sort cuisine boost için kullanır.
+ */
+export async function getUserFavoriteCuisines(
+  userId: string | null | undefined,
+): Promise<string[]> {
+  if (!userId) return [];
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { favoriteCuisines: true },
+  });
+  return user?.favoriteCuisines ?? [];
 }
 
 /** Tek tarif detayı, slug ile */

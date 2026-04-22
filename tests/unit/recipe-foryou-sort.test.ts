@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   compareByFavoriteBoost,
   scoreByFavoriteTags,
+  scoreByFavoritePrefs,
 } from "@/lib/queries/recipe";
 
 type Row = { id: string; title: string };
@@ -90,5 +91,37 @@ describe("compareByFavoriteBoost", () => {
       compareByFavoriteBoost(scores, x, y),
     );
     expect(sorted.map((r) => r.title)).toEqual(["Apple", "Lion", "Zebra"]);
+  });
+});
+
+describe("scoreByFavoritePrefs (tag + cuisine combined, tur 4)", () => {
+  it("cuisine match alone scores 2", () => {
+    expect(scoreByFavoritePrefs([], "tr", [], ["tr"])).toBe(2);
+  });
+
+  it("tag intersection + cuisine match = sum (3 = 1 tag + 2 cuisine)", () => {
+    expect(scoreByFavoritePrefs(["pratik"], "tr", ["pratik"], ["tr"])).toBe(3);
+  });
+
+  it("multi-tag intersection + cuisine = 4 (2 tags + 2 cuisine)", () => {
+    expect(
+      scoreByFavoritePrefs(["pratik", "vegan"], "it", ["pratik", "vegan"], ["it"]),
+    ).toBe(4);
+  });
+
+  it("cuisine mismatch contributes 0", () => {
+    expect(scoreByFavoritePrefs(["pratik"], "fr", ["pratik"], ["tr"])).toBe(1);
+  });
+
+  it("null cuisine ignores cuisine boost", () => {
+    expect(scoreByFavoritePrefs(["pratik"], null, ["pratik"], ["tr"])).toBe(1);
+  });
+
+  it("empty preferences (both) score 0", () => {
+    expect(scoreByFavoritePrefs(["pratik"], "tr", [], [])).toBe(0);
+  });
+
+  it("cuisine in preference list but recipe has different cuisine, no boost", () => {
+    expect(scoreByFavoritePrefs([], "jp", [], ["tr", "it"])).toBe(0);
   });
 });

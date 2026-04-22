@@ -23,6 +23,7 @@ const CUISINE_SLUG_LOOKUP = CUISINE_SLUG;
 import {
   getRecipes,
   getUserFavoriteTagSlugs,
+  getUserFavoriteCuisines,
   resolveDefaultAllergenAvoidances,
 } from "@/lib/queries/recipe";
 import { auth } from "@/lib/auth";
@@ -147,25 +148,29 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
       (ALLERGEN_ORDER as readonly string[]).includes(a),
   );
   const session = await auth();
-  const [excludeAllergens, favoriteTagSlugs] = await Promise.all([
+  const [excludeAllergens, favoriteTagSlugs, favoriteCuisines] = await Promise.all([
     resolveDefaultAllergenAvoidances({
       userId: session?.user?.id ?? null,
       explicitAllergens: urlExcludeAllergens,
     }),
     getUserFavoriteTagSlugs(session?.user?.id ?? null),
+    getUserFavoriteCuisines(session?.user?.id ?? null),
   ]);
 
   // Default sort picks, in order:
   //   1) URL'de explicit `?siralama=` varsa → kullanıcı bilerek seçmiş, saygı duy.
   //   2) Query (FTS) varsa → `relevance` (ranked search results).
-  //   3) Logged-in user'ın `favoriteTags` tercihi doluysa → `foryou`
-  //      (kişiselleştirme tur 3, user'ın beğenisine göre boost).
+  //   3) Logged-in user'ın `favoriteTags` veya `favoriteCuisines` tercihi
+  //      doluysa → `foryou` (kişiselleştirme tur 4, user'ın tag + cuisine
+  //      sinyaline göre boost).
   //   4) Diğer tüm durumlarda → `alphabetical` (catalog browse default).
+  const hasPersonalizationSignal =
+    favoriteTagSlugs.length > 0 || favoriteCuisines.length > 0;
   const activeSort: SortOption =
     sortBy ??
     (query
       ? "relevance"
-      : favoriteTagSlugs.length > 0
+      : hasPersonalizationSignal
         ? "foryou"
         : "alphabetical");
 
@@ -214,6 +219,10 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
       boostTagSlugs:
         activeSort === "foryou" && favoriteTagSlugs.length > 0
           ? favoriteTagSlugs
+          : undefined,
+      boostCuisines:
+        activeSort === "foryou" && favoriteCuisines.length > 0
+          ? favoriteCuisines
           : undefined,
       limit: ITEMS_PER_PAGE,
       offset,
@@ -288,10 +297,10 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
           ...(query
             ? [{ key: "relevance", label: t("sort.relevance") } as const]
             : []),
-          // "Sana göre" chip, yalnız logged-in user favoriteTags set
-          // ettiyse görünür. Anonim user için tamamen gizli: dropdown'u
-          // yemleyen login duvarı gereksiz.
-          ...(!query && favoriteTagSlugs.length > 0
+          // "Sana göre" chip, yalnız logged-in user favoriteTags VEYA
+          // favoriteCuisines set ettiyse görünür. Anonim user için
+          // tamamen gizli: dropdown'u yemleyen login duvarı gereksiz.
+          ...(!query && hasPersonalizationSignal
             ? [{ key: "foryou", label: t("sort.foryou") } as const]
             : []),
           { key: "alphabetical", label: t("sort.alphabetical") } as const,
@@ -310,12 +319,13 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
             else search.set(k, v);
           }
           // Canonical URL için default sort param'ını çıkar. Default sırası:
-          //   query varsa "relevance", favoriteTags doluysa "foryou", aksi
-          //   halde "alphabetical". Default olan key URL'ye yazılmaz; kullanıcı
-          //   başka bir seçim yaptığında o key URL'ye eklenir.
+          //   query varsa "relevance", favoriteTags veya favoriteCuisines
+          //   doluysa "foryou", aksi halde "alphabetical". Default olan key
+          //   URL'ye yazılmaz; kullanıcı başka bir seçim yaptığında o key
+          //   URL'ye eklenir.
           const defaultKey = query
             ? "relevance"
-            : favoriteTagSlugs.length > 0
+            : hasPersonalizationSignal
               ? "foryou"
               : "alphabetical";
           const isDefaultForContext = key === defaultKey;

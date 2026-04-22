@@ -24,9 +24,17 @@ export const geistSans = Geist({
   adjustFontFallback: true,
 });
 
-/** Mono font, code blocks and pre-formatted text only. */
+/**
+ * Mono font, code blocks and pre-formatted text only.
+ *
+ * `preload: false` çünkü ana sayfa + listing sayfaları hiç mono kullanmaz;
+ * sadece /yasal/güvenlik (auth/HSTS açıklamaları) ve birkaç admin sayfasında
+ * kod bloğu var. Critical path'ten çıkarmak homepage LCP iyileştirir
+ * (Lighthouse 3G 4.2s -> ... ölçülecek).
+ */
 export const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-geist-mono",
   display: "swap",
+  preload: false,
 });

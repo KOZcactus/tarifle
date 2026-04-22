@@ -74,7 +74,7 @@
   - **TAM REPLACEMENT:** Mevcut steps tamamen silinir, yenileri yazılır.
     Partial yok, tek adım dokunmak için bile tüm steps yazılır.
   - **slug:** CSV'den aynen kopyala.
-  - **steps:** ardışık 1..N stepNumber, min 4 ideal 5-7 max 12.
+  - **steps:** ardışık 1..N stepNumber, **min 5 ideal 6-8 max 12** (Kerem karari: 3-4 adim az, en az 5).
   - **Ingredient listesi DOKUNULMAZ** (Mod E sadece steps; ingredient
     listesi sabit).
   - **tipNote + servingSuggestion DOKUNULMAZ** (Mod D alanı).
@@ -1277,24 +1277,32 @@ dokunmaz.
 - **TR collation**: ç, ğ, ı, İ, ö, ş, ü doğru. ASCII düşmesin.
 - **Step başı büyük harf, sonu nokta.**
 
-### 14.6 Sıradan adım sayısı kararı (önemli)
+### 14.6 Adım sayısı kararı (Kerem direktifi)
 
-Mevcut step sayısına bakma, **gerekli olanı yaz**. Bazı tarifler 3-4
-adımda yeter (içecek, basit salata), bazıları 7-8 step gerek (börek,
-fırın işi). Genel rehber:
-- **İçecek/Salad/Sos:** 3-5 step
-- **Çorba/Tek-tencere:** 4-6 step
-- **Hamur işi/Börek/Pide:** 5-8 step
-- **Fırın yemeği:** 5-7 step
-- **Et yemeği (kebap/güveç):** 5-7 step
+**Minimum 5 adım her tarifte.** Mevcut catalog %98+ tarifte 3-4 adimla
+yetersiz (Mod A boilerplate). En basit içecek bile 5 adıma çıkmalı:
+hazırlık + asıl iş + son dokunuş + servis bağlamı ayrı adımlar.
 
-Eski step sayısı 3 ise mutlaka **4+'a çıkar** (audit kuralı: <4 = yetersiz).
+Genel rehber (minimum 5, ideal 6-8):
+- **İçecek/Sos:** 5-6 step (malzeme hazırla + birleştir + son dokunuş + servis)
+- **Salata:** 5-6 step (yıka/doğra + sos hazırla + karıştır + dinlendir + servis)
+- **Çorba/Tek-tencere:** 6-7 step (sote + ana pişirme + ayar + son ekleme + bekleme + servis)
+- **Hamur işi/Börek/Pide:** 7-9 step (hamur + dinlendirme + iç hazırla + şekil + pişirme + son)
+- **Fırın yemeği:** 6-8 step
+- **Et yemeği (kebap/güveç):** 6-8 step
+
+**Eski step sayısı 3-4 ise MUTLAKA genişlet:**
+- Tek "Sebzeleri kavurun" step'ini 2'ye böl: "Soğanı doğrayın" + "Soğan + biber + domatesi 8 dakika kavurun"
+- "Pişirin" step'ini 2'ye böl: "Önceden 200°C ısıtın" + "20 dakika pişirin, üstü kızarana kadar"
+- Kapanış step'i ekle: "5 dakika dinlendirip servis edin"
+
+Kalite > brevity. Detaylı adımlar pişirme deneyimini iyileştirir.
 
 ### 14.7 Self-review (teslim öncesi)
 
 - [ ] JSON valid (`jq . docs/step-revisions-batch-N.json`).
 - [ ] Her item'da `slug` var + CSV'deki bir slug'a eşleşiyor.
-- [ ] Her item'da `steps` array, min 4 step.
+- [ ] Her item'da `steps` array, **min 5 step** (Kerem direktifi).
 - [ ] stepNumber ardışık 1..N (eksik veya tekrar yok).
 - [ ] Em-dash grep: 0 eşleşme.
 - [ ] Her step 5-25 kelime arası.

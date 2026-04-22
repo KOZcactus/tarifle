@@ -110,7 +110,7 @@ export async function GET(request: Request): Promise<NextResponse> {
 
   // Period-based: getLeaderboard zaten unstable_cache ile sarılı, ama bu cron
   // gerçek-zamanlı snapshot ister. Cache 15 dk TTL, cron pazartesi 05:00 UTC
-  // tek seferlik iş — stale read kabul. Daha agresif istenirse `noStore` veya
+  // tek seferlik iş, stale read kabul. Daha agresif istenirse `noStore` veya
   // raw _computeLeaderboard export edilir.
   const [weeklyTop, monthlyTop, allTimeTop] = await Promise.all([
     getLeaderboard("WEEKLY", 10),

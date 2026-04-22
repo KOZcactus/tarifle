@@ -365,7 +365,10 @@ export const getSimilarRecipes = unstable_cache(
   _getSimilarRecipesInner,
   ["get-similar-recipes-v1"],
   {
-    revalidate: 3600,
+    // Oturum 12 tune: 1 sa -> 6 sa. Skorlama deterministic + katalog
+    // hareketi dusuk; stale 6 saat similar tavsiyeye zararsiz. Neon
+    // query + Vercel CPU dusus.
+    revalidate: 21600,
     tags: ["recipes"],
   },
 );

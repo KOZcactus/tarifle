@@ -39,7 +39,9 @@ export const getCategoriesForLanding = unstable_cache(
     return categories;
   },
   ["categories-for-landing-v2"],
-  { revalidate: 1800, tags: ["categories"] },
+  // Oturum 12 tune: 30 dk -> 2 sa. Kategori listesi 17 sabit, yeni
+  // kategori nadir; _count degisimi minor. Neon query azaltma.
+  { revalidate: 7200, tags: ["categories"] },
 );
 
 /** Tüm kategoriler, tarif sayısı ile birlikte.

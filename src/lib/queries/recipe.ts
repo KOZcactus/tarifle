@@ -374,7 +374,10 @@ const _getRecipesInner = async (options: GetRecipesOptions = {}): Promise<{
 // filter'ı kısa sürede tekrarlamaz, uzun TTL Neon query'sini azaltır.
 // Yeni tarif seed'i revalidateTag("recipes") ile invalidate edilir.
 export const getRecipes = unstable_cache(_getRecipesInner, ["get-recipes-v1"], {
-  revalidate: 600,
+  // Oturum 12 tune: 10 dk -> 30 dk. Vercel Free tier Fluid Active CPU
+  // %75 seviyesine cikinca agresif cache. Tarif listing'i nadiren
+  // degisir; admin edit + seed invalidate "recipes" tag zaten tetikler.
+  revalidate: 1800,
   tags: ["recipes"],
 });
 
@@ -418,8 +421,11 @@ const getFeaturedPool = unstable_cache(
       orderBy: { slug: "asc" },
     });
   },
-  ["featured-pool-v1"],
-  { revalidate: 3600, tags: ["featured-pool"] },
+  ["featured-pool-v2"],
+  // Oturum 12 tune: 1 sa -> 6 sa. Featured set nadir degisir (admin
+  // toggle + isFeatured seed). Uzun TTL Neon CU-seconds + Vercel
+  // Fluid CPU'yu dramatik dusurur.
+  { revalidate: 21600, tags: ["featured-pool"] },
 );
 
 export async function getFeaturedRecipes(limit = 6): Promise<RecipeCard[]> {
@@ -727,7 +733,10 @@ export const getRecipeBySlug = unstable_cache(
   _getRecipeBySlugInner,
   ["get-recipe-by-slug-v1"],
   {
-    revalidate: 300,
+    // Oturum 12 tune: 5 dk -> 30 dk. Tarif icerigi nadir degisir;
+    // admin edit + seed "recipes" tag ile anlik invalidate. Uzun TTL
+    // Vercel Fluid CPU tuketimini buyuk olcude dusurur.
+    revalidate: 1800,
     tags: ["recipes"],
   },
 );

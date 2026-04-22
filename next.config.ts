@@ -8,6 +8,14 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const nextConfig: NextConfig = {
+  // Not (oturum 12): Next 16 `cacheComponents` denendi (Partial
+  // Prerendering yeni API). Tarifle'de 30+ dosyada `export const dynamic
+  // = "force-dynamic"` + `export const revalidate` var (admin routes,
+  // cron, API export, kesfet, menu-planlayici vs). cacheComponents tum
+  // bu dynamic marker'lari yasaklar; paradigm shift buyuk refactor
+  // gerektirir (4-6 saatten fazla, tum app cache model'i revize).
+  // Rollback edildi; mevcut unstable_cache TTL artislari + Suspense
+  // streaming yeterli kazanc saglayacak (oturum 12 perf commit).
   // PDF route `@fontsource/roboto` local woff dosyalarını runtime'da
   // `fs` ile okuyor. Vercel serverless bundle default tracing bu dosyaları
   // göremez, bu yüzden explicit include. Cold start'ta network fetch

@@ -15,7 +15,7 @@
 | **"Mod B"**, "batch N çevirisi", "translations-batch-N.csv işle" | **MOD B**, CSV'yi okuyup JSON üret | §6 | `docs/translations-batch-N.json` (ingredients/steps/tipNote/servingSuggestion EN+DE) |
 | **"Mod C"**, "Kategori SEO", "SEO copy", "landing intro + FAQ" | **MOD C**, landing sayfaları için özgün TR giriş + FAQ yaz | §12 | `docs/seo-copy-v1.json` (17 kategori + 16 mutfak + 5 diyet = 38 item array) |
 | **"Mod D"**, "editoryal revize", "top 200 duzelt", "tipNote drift fix" | **MOD D**, mevcut tariflerin tipNote + servingSuggestion revize JSON | §13 | `docs/editorial-revisions-batch-N.json` (slug bazlı update array) |
-| **"Mod E"**, "step revize", "adım kalitesi düzelt", "boilerplate steps" | **MOD E**, mevcut tariflerin steps array'ini yeniden yaz (sıcaklık + zaman + somut) | §14 | `docs/step-revisions-batch-N.json` (slug + tam steps array) |
+| **"Mod E"**, "step revize", "adım kalitesi düzelt", "boilerplate steps" | **MOD E**, mevcut tariflerin steps array'ini yeniden yaz + opsiyonel ingredient düzeltme (araştırmaya göre eksik malzeme/yanlış oran) | §14 | `docs/step-revisions-batch-N.json` (slug + steps + opsiyonel ingredients) |
 
 **Default'lar (soru sorma, direkt başla):**
 
@@ -1168,6 +1168,9 @@ degisiklik de kabul edilir, 100 zorla revize KOTU.
       uydurmadın).
 - [ ] Her item'da en az bir alan dolu (`tipNote` veya `servingSuggestion`),
       boş item yok.
+- [ ] (Mod E özel) Eğer `ingredients` revize edildiyse: steps o
+      ingredient'leri kullaniyor (eksik kalmasin), TAM array (partial
+      yok), sortOrder ardisik.
 - [ ] Em-dash grep: 0 eşleşme.
 - [ ] Kelime sayısı her tipNote + servingSuggestion'da 8-20 arası
       (Python `len(text.split())` kontrol).
@@ -1230,19 +1233,53 @@ dokunmaz.
     { "stepNumber": 2, "instruction": "Enginar kalplerini..." },
     { "stepNumber": 3, "instruction": "Hamuru oval acin..." },
     { "stepNumber": 4, "instruction": "Onceden 220 derece...", "timerSeconds": 1080 }
+  ],
+  "ingredients": [
+    { "sortOrder": 1, "name": "Un", "amount": "2", "unit": "su bardağı" },
+    { "sortOrder": 2, "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
   ]
 }
 ```
 
-**Kritik:**
+**Kritik (steps zorunlu):**
 - `slug` zorunlu, CSV'den aynen kopyala.
-- `steps` array zorunlu (min 4 step, ideal 5-7, max 12).
+- `steps` array zorunlu (type bazli min: ICECEK 3+, KOKTEYL/APERATIF 4+,
+  diger 5+; ideal 5-7, max 12).
 - `stepNumber` ardışık 1, 2, 3, ... (boşluk yok).
 - `instruction` her step için zorunlu, **5-25 kelime** (Mod D'den biraz
   daha esnek, kompleks step'ler için 25'e kadar OK).
 - `timerSeconds` opsiyonel ama **pişirme/dinlendirme/marine adımlarında
   ekle**. Saniye cinsinden integer (30 dk = 1800, 1 saat = 3600, 18 dk
   = 1080). UI dahili zamanlayıcıda kullanır.
+
+**Opsiyonel ingredient revizyonu (yeni, Kerem direktifi):**
+
+Internet araştırması sırasında **tarifte başka hata** fark edersen
+(eksik malzeme, yanlış oran, gereksiz malzeme) `ingredients` alanını
+da JSON'a ekle. Bu durumda **TAM REPLACEMENT** olur (eski tüm
+ingredient silinir, yenileri yazılır), partial update yok.
+
+- `ingredients` opsiyonel array. Sadece düzeltilmesi gereken tariflerde
+  yaz, diğerlerinde JSON'a koyma (ingredient dokunulmaz).
+- Her item: `{ sortOrder, name, amount, unit? }`.
+  - `sortOrder` ardışık 1, 2, 3, ...
+  - `name` ingredient adı (ör. "Un", "Enginar kalbi", "Domates").
+  - `amount` miktar string (ör. "2", "0.5", "1/2").
+  - `unit` ölçü (ör. "su bardağı", "yemek kaşığı", "adet"). Olmayabilir
+    (ör. "Tuz: tadına göre" → name="Tuz", amount="tadına göre", unit yok).
+
+**Ne zaman ingredient'i revize et:**
+- ✅ Pide tarifinde "Enginar" listede yok ama isim "enginarli pide" → ekle
+- ✅ Kek tarifinde "yumurta 1 adet" yazıyor ama bilinen tarif 3 adet → düzelt
+- ✅ Bir malzeme kullanılmıyor steps'te (gereksiz) → kaldır
+- ❌ Sadece "daha lezzetli olur" diye yeni baharat ekleme → araştırmadan
+  ekleme yapma
+- ❌ Brand isim ekleme ("Cif krem" gibi) → marka kullanma yasağı
+
+**Zorunlu yedek koşul:**
+Ingredient revize ettiysen mutlaka steps de o ingredient'i kullansın
+(eksik kalmasın). Pide ornegi: enginar listede + steps'te de açıkça
+"enginar kalplerini limonlu suya bırakın".
 
 ### 14.4 Kalite kriterleri (mutlaka uy)
 

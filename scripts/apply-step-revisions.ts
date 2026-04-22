@@ -88,9 +88,25 @@ const stepItemSchema = z.object({
   timerSeconds: z.number().int().nonnegative().optional(),
 });
 
+const ingredientItemSchema = z.object({
+  sortOrder: z.number().int().positive(),
+  name: z.string().min(1).max(200),
+  amount: z.string().min(1).max(50),
+  unit: z.string().max(50).optional(),
+});
+
 const itemSchema = z.object({
   slug: z.string().min(1).max(200),
   steps: z.array(stepItemSchema).min(MIN_STEP_COUNT).max(MAX_STEP_COUNT),
+  // Opsiyonel ingredient revizyonu (Mod E v2, Kerem direktifi). Codex
+  // arastirma sirasinda tarifte hata bulursa (eksik malzeme/yanlis oran)
+  // ingredients de revize edilir. Tam REPLACEMENT: eski silinir, yeniler
+  // yazilir. JSON'da yoksa ingredient dokunulmaz.
+  ingredients: z
+    .array(ingredientItemSchema)
+    .min(1)
+    .max(40)
+    .optional(),
 });
 
 const fileSchema = z.array(itemSchema);
@@ -185,13 +201,16 @@ async function main() {
 
   let updated = 0;
   let totalStepsWritten = 0;
+  let ingredientsRevised = 0;
+  let totalIngredientsWritten = 0;
 
   for (const item of items) {
     const recipeId = existingMap.get(item.slug);
     if (!recipeId) continue;
 
     if (APPLY) {
-      await prisma.$transaction([
+      // Step revisyonu (zorunlu): atomic delete + create.
+      const stepOps = [
         prisma.recipeStep.deleteMany({ where: { recipeId } }),
         prisma.recipeStep.createMany({
           data: item.steps.map((s) => ({
@@ -201,18 +220,43 @@ async function main() {
             timerSeconds: s.timerSeconds ?? null,
           })),
         }),
-      ]);
+      ];
+
+      // Ingredient revisyonu (opsiyonel, Mod E v2): sadece JSON'da varsa.
+      // Atomic delete + create, tam REPLACEMENT.
+      const ingredientOps = item.ingredients
+        ? [
+            prisma.recipeIngredient.deleteMany({ where: { recipeId } }),
+            prisma.recipeIngredient.createMany({
+              data: item.ingredients.map((i) => ({
+                recipeId,
+                sortOrder: i.sortOrder,
+                name: i.name,
+                amount: i.amount,
+                unit: i.unit ?? null,
+              })),
+            }),
+          ]
+        : [];
+
+      await prisma.$transaction([...stepOps, ...ingredientOps]);
     }
     updated += 1;
     totalStepsWritten += item.steps.length;
+    if (item.ingredients) {
+      ingredientsRevised += 1;
+      totalIngredientsWritten += item.ingredients.length;
+    }
   }
 
   console.log(`\n📊 Sonuc:`);
-  console.log(`  Toplam item:           ${items.length}`);
-  console.log(`  DB'de bulunan:         ${items.length - missing.length}`);
-  console.log(`  Skip (slug yok):       ${missing.length}`);
-  console.log(`  ${APPLY ? "Update edilen tarif:" : "Update edilecek tarif:"}   ${updated}`);
-  console.log(`  Toplam step ${APPLY ? "yazilan" : "yazilacak"}:  ${totalStepsWritten}`);
+  console.log(`  Toplam item:                 ${items.length}`);
+  console.log(`  DB'de bulunan:               ${items.length - missing.length}`);
+  console.log(`  Skip (slug yok):             ${missing.length}`);
+  console.log(`  ${APPLY ? "Update edilen tarif:" : "Update edilecek tarif:"}         ${updated}`);
+  console.log(`  Toplam step ${APPLY ? "yazilan" : "yazilacak"}:        ${totalStepsWritten}`);
+  console.log(`  Ingredient revize ${APPLY ? "edilen tarif" : "edilecek tarif"}: ${ingredientsRevised}`);
+  console.log(`  Toplam ingredient ${APPLY ? "yazilan" : "yazilacak"}:  ${totalIngredientsWritten}`);
 
   if (!APPLY) {
     console.log(`\n💡 Apply icin --apply ekle.`);

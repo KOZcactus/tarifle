@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { Suspense } from "react";
+import { cookies } from "next/headers";
 import { getTranslations } from "next-intl/server";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
 import { FeaturedShelf } from "@/components/home/FeaturedShelf";
 import { HeroAiPrompt } from "@/components/home/HeroAiPrompt";
+import { HeroVariantReporter } from "@/components/home/HeroVariantReporter";
 import { RecipeOfTheDay } from "@/components/home/RecipeOfTheDay";
 import {
   getFeaturedRecipes,
@@ -36,6 +38,13 @@ const POPULAR_SEARCHES = [
 ];
 
 export default async function HomePage() {
+  // Hero tagline A/B (middleware.ts cookie assign). A = mevcut "Bugun ne
+  // pisirsek?"; B = GPT oneri karar-motoru framing ("Evde ne varsa...").
+  // Sentry breadcrumb client-side HeroVariantReporter component'inde.
+  const cookieStore = await cookies();
+  const heroVariant =
+    cookieStore.get("hero_variant")?.value === "B" ? "B" : "A";
+
   // Session önce çekiliyor ki aşağıdaki Promise.all'da personalized shelf
   // çağrısı userId'ye bağlı olarak conditional yapılabilsin. auth() hızlı
   // (~50ms); waterfall alt-sınırı minimum.
@@ -85,13 +94,14 @@ export default async function HomePage() {
           🍳 <CountUp target={recipeCount} /> {t("heroBadgeSuffix")}
         </span>
         <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-          {t.rich("heroTitle", {
+          {t.rich(heroVariant === "B" ? "heroTitleB" : "heroTitle", {
             accent: (chunks) => <span className="text-primary">{chunks}</span>,
           })}
         </h1>
         <p className="mt-4 max-w-xl text-lg text-text-muted">
-          {t("heroTagline")}
+          {t(heroVariant === "B" ? "heroTaglineB" : "heroTagline")}
         </p>
+        <HeroVariantReporter variant={heroVariant} />
 
         {/* Search */}
         <div className="mt-8 w-full max-w-xl">

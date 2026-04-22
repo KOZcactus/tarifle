@@ -153,15 +153,14 @@ export async function generateMetadata({ params }: TarifPageProps): Promise<Meta
   // that rendered this page at crawl time.
   const ogImageUrl = `/tarif/${recipe.slug}/opengraph-image/${locale === "en" ? "en" : "tr"}`;
 
-  // Alcohol-gated recipes ship a client-side AgeGate; crawlers that can't
-  // pass the gate see thin content. Rather than strip the age gate or try
-  // to serve different content per user-agent, block these from the index.
-  // Covers both drink/cocktail types and recipes explicitly tagged
-  // "alkollu" (e.g. a sauce that uses wine).
-  const isAlcoholic =
-    recipe.type === "KOKTEYL" ||
-    recipe.tags.some(({ tag }) => tag.slug === "alkollu");
-
+  // Alcohol-gated recipes (cocktail type or "alkollu" tag) carry an age
+  // gate overlay (AgeGate v2), ancak SSR HTML'de tarif content + Recipe
+  // schema her zaman render edilir; Google bot schema'yi gorur + indexler.
+  // Onceki surum noindex ile alkollu tarifleri SEO disi birakiyordu;
+  // rakipler (Yemek.com, Nefis Yemek Tarifleri) alkollu tarifleri index
+  // ediyor ve editoryal tarif icerigi TAPDK reklam/promosyon tanimina
+  // girmez. 96 alkollu tarifin SEO trafigi acik, kullanici sayfaya
+  // geldigi anda gate overlay yasi dogrulatir.
   return {
     title,
     description: metaDescription,
@@ -176,7 +175,6 @@ export async function generateMetadata({ params }: TarifPageProps): Promise<Meta
         "x-default": `/tarif/${recipe.slug}`,
       },
     },
-    robots: isAlcoholic ? { index: false, follow: true } : undefined,
     openGraph: {
       title,
       description: description.slice(0, 200),

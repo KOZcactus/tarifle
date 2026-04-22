@@ -53,7 +53,9 @@ export function LanguageToggle() {
         onClick={() => setIsOpen((v) => !v)}
         aria-haspopup="menu"
         aria-expanded={isOpen}
-        aria-label={t("toggleLanguage")}
+        // WCAG label-content-name-mismatch: visible text "TR" accessible
+        // name'in basinda olmali (voice control "click TR" diyebilsin).
+        aria-label={`${locale.toUpperCase()}, ${t("toggleLanguage")}`}
         disabled={pending}
         className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-xs font-semibold uppercase tracking-wide text-text transition-colors hover:bg-bg-card disabled:opacity-60"
       >

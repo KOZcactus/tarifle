@@ -69,9 +69,10 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
             )}
             {recipe.isFeatured && (
               <span
-                className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-bg/80 text-sm backdrop-blur-sm"
-                title={t("editorsPickTitle")}
+                role="img"
                 aria-label={t("editorsPick")}
+                title={t("editorsPickTitle")}
+                className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-bg/80 text-sm backdrop-blur-sm"
               >
                 <span aria-hidden="true">⭐</span>
               </span>
@@ -98,8 +99,9 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
             )}
             {recipe.hungerBar != null && (
               <span
-                title={t("hungerBarTitle", { value: recipe.hungerBar })}
+                role="img"
                 aria-label={t("hungerBarTitle", { value: recipe.hungerBar })}
+                title={t("hungerBarTitle", { value: recipe.hungerBar })}
                 className="inline-flex"
               >
                 <Badge>

@@ -63,6 +63,8 @@ export async function runIntegrityAudit(): Promise<IntegrityReport> {
     expiredVerifTokens,
     expiredResetTokens,
     expiredSessions,
+    ingredientTrailingWhitespaceRaw,
+    ingredientCaseDriftRaw,
   ] = await Promise.all([
     prisma.recipe.count(),
     prisma.user.count(),
@@ -111,6 +113,20 @@ export async function runIntegrityAudit(): Promise<IntegrityReport> {
     prisma.verificationToken.count({ where: { expires: { lt: new Date() } } }),
     prisma.passwordResetToken.count({ where: { expires: { lt: new Date() } } }),
     prisma.session.count({ where: { expires: { lt: new Date() } } }),
+    // Ingredient catalog drift (oturum 13 ekleme): trailing whitespace +
+    // case-only duplicate. Diacritic strip Postgres'te ek extension
+    // gerektirir, manuel scripts/audit-ingredient-standards.ts derin
+    // tarama yapar; cron'da hizli WARNING sinyali yeterli.
+    prisma.$queryRaw<{ count: bigint }[]>`
+      SELECT COUNT(*) AS count FROM recipe_ingredients
+      WHERE name <> TRIM(name)
+    `,
+    prisma.$queryRaw<{ count: bigint }[]>`
+      SELECT COUNT(*) AS count FROM (
+        SELECT LOWER(name) FROM recipe_ingredients
+        GROUP BY LOWER(name) HAVING COUNT(DISTINCT name) > 1
+      ) dup
+    `,
   ]);
 
   const findings: IntegrityFinding[] = [];
@@ -121,6 +137,8 @@ export async function runIntegrityAudit(): Promise<IntegrityReport> {
   const dupEmails = Number(dupEmailsRaw[0]?.count ?? 0);
   const dupUsernames = Number(dupUsernamesRaw[0]?.count ?? 0);
   const dupTitles = Number(dupTitlesRaw[0]?.count ?? 0);
+  const ingredientTrailing = Number(ingredientTrailingWhitespaceRaw[0]?.count ?? 0);
+  const ingredientCaseDrift = Number(ingredientCaseDriftRaw[0]?.count ?? 0);
 
   if (orphanRecipeAuthors > 0) {
     findings.push({
@@ -201,6 +219,23 @@ export async function runIntegrityAudit(): Promise<IntegrityReport> {
       category: "status-inconsistency",
       message: `${reportInconsistency} reports have reviewedBy but still PENDING status`,
       value: reportInconsistency,
+    });
+  }
+
+  if (ingredientTrailing > 0) {
+    findings.push({
+      severity: "WARNING",
+      category: "ingredient-drift",
+      message: `${ingredientTrailing} recipe_ingredients rows have trailing whitespace in name`,
+      value: ingredientTrailing,
+    });
+  }
+  if (ingredientCaseDrift > 0) {
+    findings.push({
+      severity: "WARNING",
+      category: "ingredient-drift",
+      message: `${ingredientCaseDrift} ingredient name groups have case-only duplicates (e.g. "Tuz" vs "tuz")`,
+      value: ingredientCaseDrift,
     });
   }
 

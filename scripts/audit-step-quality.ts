@@ -142,6 +142,7 @@ function csvEscape(val: string | number | null | undefined): string {
 interface AuditEntry {
   slug: string;
   title: string;
+  type: string;
   category: string;
   cuisine: string;
   ingredientsText: string;
@@ -185,6 +186,7 @@ async function main() {
     entries.push({
       slug: r.slug,
       title: r.title,
+      type: r.type,
       category: r.category.slug,
       cuisine: r.cuisine ?? "",
       ingredientsText: r.ingredients
@@ -253,6 +255,7 @@ async function main() {
       const header = [
         "slug",
         "title",
+        "type",
         "category",
         "cuisine",
         "stepCount",
@@ -267,6 +270,7 @@ async function main() {
           [
             e.slug,
             e.title,
+            e.type,
             e.category,
             e.cuisine,
             e.stepCount,

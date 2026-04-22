@@ -1207,9 +1207,13 @@ dokunmaz.
   1'den artan).
 - **CSV kolonları:**
   ```
-  slug, title, category, cuisine, stepCount, score, issues,
+  slug, title, type, category, cuisine, stepCount, score, issues,
   ingredients_tr, current_steps_tr
   ```
+  - `type`: Recipe type enum (YEMEK, CORBA, SALATA, TATLI, KAHVALTI,
+    ICECEK, KOKTEYL, APERATIF). Min step eşiği buradan belirlenir
+    (bkz. §14.6). `category`'den farklıdır: `category` = kategori slug'ı
+    (ör. `tavuk-yemekleri`), `type` = Recipe type enum.
   - `score`: yüksek = daha sorunlu (ağırlıklı: KRITIK em-dash +5, AGIR
     no-temp/no-time/few-steps +3, ORTA short-step/vague +1)
   - `issues`: noktalı virgülle ayrı liste (`few-steps;no-temp;...`)
@@ -1305,13 +1309,48 @@ spesifik yemegin **gercek sicakligi + suresi + yontemi** dogrula.
    (Katman 1 yaz)
 4. **2 kaynak farkli/celiskili** → tahmini aralik + gorsel sinyal
    (Katman 2 yaz)
-5. **Hicbir kaynak yoksa veya tarif cok niche** → SAYI YAZMA, sadece
-   gorsel sinyal (Katman 3)
+5. **2 guvenilir kaynak bulunmazsa** (sadece 1 kaynak, veya hicbiri, veya
+   tarif cok niche) → SAYI YAZMA, sadece gorsel sinyal (Katman 3). "1
+   kaynak + tahmin" Katman 2 degil Katman 3'tur, tek kaynak yetersizdir.
 
 **Kaynak gizliligi:**
 JSON'a kaynak bilgisi YAZMA (cikti sadece slug + steps). Arastirmanin
 kendisi senin self-disciplinen, kullaniciya gorunmez. Ama kaynak
 dogrulamasi yapmadigin step icin kesin sayi yazma.
+
+**🚨 PARAPHRASE ZORUNLU (copy-paste kesinlikle YASAK)**
+
+Kaynak sitelerden cumleyi birebir kopyalama. Teknik sayilar (sicaklik,
+sure, miktar) ayni kalabilir, ama **cumle yapisi + kelime secimi + sira
+kendi yazdığın olsun**. Kaynak sadece **bilgi** kaynagi, metin kaynagi
+degil.
+
+**Neden:**
+- Telif hakki: yemek.com, seriouseats, nytcooking metni kopyalamak
+  yasal risk.
+- Google duplicate content penalty: ayni cümle → arama siralamasi düşer.
+- Kullanici guveni: "AI/robot yazdi" hissi yaratmaz, dogal Turkce okunur.
+- Ozgunluk: Tarifle kendi sesi ile yazar, iki kaynagi harmanlar.
+
+**Yanlis vs dogru ornek:**
+
+Kaynak (yemek.com): *"Hamuru 220 dereceye onceden isitilmis firinda 18
+dakika, ustu altin sari olana kadar pisirin."*
+
+- ❌ YANLIS (kopyalama): "Hamuru 220 dereceye onceden isitilmis firinda
+  18 dakika, ustu altin sari olana kadar pisirin."
+- ✅ DOGRU (paraphrase): "Onceden 220°C isitilmis firinda, kenarlar
+  altin renk alana kadar 17-19 dakika pisirin."
+
+Sayilar ayni (220°C, ~18 dk), ama cumle yapisi farkli, kelime secimi
+kendi yazmana ait. 2. kaynaktan (nefisyemektarifleri) "kenarlar" detayi
+eklenmis → harmanlanmis yaklasim.
+
+**Kural ozet:**
+- Sayilari araştır, dogrula, kopyala (teknik deger degismesin)
+- Cumleyi sifirdan yaz (kendi secimin)
+- 2 kaynagin bilgisini harmanla (kimsenin cumlesi olmasin)
+- Kisa, somut, Tarifle sesi (tek cumle, aksiyon odakli)
 
 **❌ Guvenilmez kaynaklar (kullanma):**
 - Pinterest random pin (cogu zaman uydurulmus)
@@ -1406,7 +1445,10 @@ tahmin/aralık + görsel sinyal kombinasyonu ideal.
 ### 14.5 Yazım kuralları (Mod A/B/C/D ortak)
 
 - **Em-dash (— U+2014) YASAK**. Yerine virgül, nokta, parantez, iki nokta.
-  En-dash (–) de yasak.
+  En-dash (–, U+2013) de yasak.
+- **Hyphen (-, U+002D) serbest**: sicaklik/sure araliginda kullan
+  (`180-200°C`, `17-19 dakika`, `3-4 kaşığı`). Yasak olan sadece em-dash
+  ve en-dash; ASCII hyphen gunluk kullanima dahildir.
 - **Muglak ifade yasak**: "iyice", "bolca", "biraz" → ölçü + zaman ver.
 - **Marka ismi geçmez** (Tarifle dahil).
 - **Zaman işareti yok** (evergreen).
@@ -1459,6 +1501,9 @@ Type ne olursa olsun, **her adım somut + bilgi yoğun + ölçü + zaman + yönt
 - [ ] **Internet arastirmasi yapildi** her tarif icin (en az 2 guvenilir
       kaynak: yemek.com / nefisyemektarifleri / seriouseats / nytcooking /
       bbc food / kingarthurbaking). Ezbere yazma.
+- [ ] **Paraphrase kontrolu**: Her step kendi cumlelerinle yazildi,
+      kaynak sitelerden birebir kopyalama yok. Sayilar kaynak, cumle
+      Tarifle sesi. (Copy-paste hem telif hem duplicate content riski.)
 - [ ] Hassas degerler (firin sicaklik/pisirme dakika/dinlendirme):
       **uc katmanli yaklasim** (§14.4):
       1. Emin standart deger (2+ kaynak dogruladi) → kesin sayi/aralik OK

@@ -1,12 +1,10 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import { cookies } from "next/headers";
 import { getTranslations } from "next-intl/server";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
 import { FeaturedShelf } from "@/components/home/FeaturedShelf";
 import { HeroAiPrompt } from "@/components/home/HeroAiPrompt";
-import { HeroVariantReporter } from "@/components/home/HeroVariantReporter";
 import { RecipeOfTheDay } from "@/components/home/RecipeOfTheDay";
 import {
   getFeaturedRecipes,
@@ -38,13 +36,6 @@ const POPULAR_SEARCHES = [
 ];
 
 export default async function HomePage() {
-  // Hero tagline A/B (middleware.ts cookie assign). A = mevcut "Bugun ne
-  // pisirsek?"; B = GPT oneri karar-motoru framing ("Evde ne varsa...").
-  // Sentry breadcrumb client-side HeroVariantReporter component'inde.
-  const cookieStore = await cookies();
-  const heroVariant =
-    cookieStore.get("hero_variant")?.value === "B" ? "B" : "A";
-
   // Session önce çekiliyor ki aşağıdaki Promise.all'da personalized shelf
   // çağrısı userId'ye bağlı olarak conditional yapılabilsin. auth() hızlı
   // (~50ms); waterfall alt-sınırı minimum.
@@ -94,14 +85,13 @@ export default async function HomePage() {
           🍳 <CountUp target={recipeCount} /> {t("heroBadgeSuffix")}
         </span>
         <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-          {t.rich(heroVariant === "B" ? "heroTitleB" : "heroTitle", {
+          {t.rich("heroTitle", {
             accent: (chunks) => <span className="text-primary">{chunks}</span>,
           })}
         </h1>
         <p className="mt-4 max-w-xl text-lg text-text-muted">
-          {t(heroVariant === "B" ? "heroTaglineB" : "heroTagline")}
+          {t("heroTagline")}
         </p>
-        <HeroVariantReporter variant={heroVariant} />
 
         {/* Search */}
         <div className="mt-8 w-full max-w-xl">
@@ -122,10 +112,22 @@ export default async function HomePage() {
             </Link>
           ))}
         </div>
+      </section>
 
-        {/* Hero AI prompt: malzeme girisi + sure chip + 'Oneri al' CTA,
-            /ai-asistan'a query string ile yonlendirir. GPT audit'inin
-            "karar-motoru hero'da baskin olmali" onerisinin uygulamasi. */}
+      {/* İkinci hero: "Evdekilerle ne pişireceğini bul" başlığı + HeroAiPrompt.
+          Primary hero arama/keşfet odakli; secondary hero karar-motoru
+          vurgusuyla (malzeme girişi + AI önerisi). İki hero aynı renkli-
+          banner stili yerine ayırıcı border-top ile ayrıldı, visual
+          hiyerarşi korundu. */}
+      <section className="flex flex-col items-center border-t border-border py-12 text-center lg:py-16">
+        <h2 className="font-heading text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
+          {t.rich("heroSecondaryTitle", {
+            accent: (chunks) => <span className="text-primary">{chunks}</span>,
+          })}
+        </h2>
+        <p className="mt-3 max-w-xl text-sm text-text-muted sm:text-base">
+          {t("heroSecondaryTagline")}
+        </p>
         <HeroAiPrompt />
       </section>
 

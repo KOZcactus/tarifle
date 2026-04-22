@@ -29,12 +29,14 @@ export function CountUp({ target, duration = 1200, className }: CountUpProps) {
     if (hasAnimatedRef.current || target <= 0) return;
     hasAnimatedRef.current = true;
 
-    // Reduced motion check, animation tetiklenmesin.
+    // Reduced motion check, animation tetiklenmesin. setState dogrudan
+    // effect icinde cagirmak React 19 + Next 16'da cascading render
+    // uyarisi verir; rAF callback'inde set ederek bir frame defer ederiz.
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
     if (prefersReducedMotion) {
-      setCount(target);
+      requestAnimationFrame(() => setCount(target));
       return;
     }
 

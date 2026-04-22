@@ -23,6 +23,12 @@ export interface ContentQualityStats {
   allergenTaggedRatio: number;
   hungerBarCount: number;
   hungerBarRatio: number;
+  /** Recipe.imageUrl dolu olan PUBLISHED tarif sayisi (editor gorseli). */
+  imageUrlCount: number;
+  imageUrlRatio: number;
+  /** En az bir VISIBLE RecipePhoto sahibi tarif sayisi (kullanici foto). */
+  userPhotoCount: number;
+  userPhotoRatio: number;
 }
 
 async function computeContentQualityStats(): Promise<ContentQualityStats> {
@@ -37,23 +43,32 @@ async function computeContentQualityStats(): Promise<ContentQualityStats> {
       modb: bigint;
       allergen: bigint;
       hungerbar: bigint;
+      imageurl: bigint;
+      userphoto: bigint;
     }[]
   >`
     SELECT
       COUNT(*) AS total,
-      COUNT(*) FILTER (WHERE "isFeatured" = true) AS featured,
-      COUNT(*) FILTER (WHERE "tipNote" IS NOT NULL AND LENGTH(TRIM("tipNote")) > 0) AS tipnote,
-      COUNT(*) FILTER (WHERE "servingSuggestion" IS NOT NULL AND LENGTH(TRIM("servingSuggestion")) > 0) AS serving,
+      COUNT(*) FILTER (WHERE r."isFeatured" = true) AS featured,
+      COUNT(*) FILTER (WHERE r."tipNote" IS NOT NULL AND LENGTH(TRIM(r."tipNote")) > 0) AS tipnote,
+      COUNT(*) FILTER (WHERE r."servingSuggestion" IS NOT NULL AND LENGTH(TRIM(r."servingSuggestion")) > 0) AS serving,
       COUNT(*) FILTER (
-        WHERE "translations" -> 'en' -> 'ingredients' IS NOT NULL
-          AND jsonb_array_length("translations" -> 'en' -> 'ingredients') > 0
-          AND "translations" -> 'de' -> 'ingredients' IS NOT NULL
-          AND jsonb_array_length("translations" -> 'de' -> 'ingredients') > 0
+        WHERE r."translations" -> 'en' -> 'ingredients' IS NOT NULL
+          AND jsonb_array_length(r."translations" -> 'en' -> 'ingredients') > 0
+          AND r."translations" -> 'de' -> 'ingredients' IS NOT NULL
+          AND jsonb_array_length(r."translations" -> 'de' -> 'ingredients') > 0
       ) AS modb,
-      COUNT(*) FILTER (WHERE array_length("allergens", 1) > 0) AS allergen,
-      COUNT(*) FILTER (WHERE "hungerBar" IS NOT NULL) AS hungerbar
-    FROM recipes
-    WHERE status = 'PUBLISHED'
+      COUNT(*) FILTER (WHERE array_length(r."allergens", 1) > 0) AS allergen,
+      COUNT(*) FILTER (WHERE r."hungerBar" IS NOT NULL) AS hungerbar,
+      COUNT(*) FILTER (WHERE r."imageUrl" IS NOT NULL AND LENGTH(TRIM(r."imageUrl")) > 0) AS imageurl,
+      COUNT(*) FILTER (
+        WHERE EXISTS (
+          SELECT 1 FROM recipe_photos rp
+          WHERE rp."recipeId" = r.id AND rp.status = 'VISIBLE'
+        )
+      ) AS userphoto
+    FROM recipes r
+    WHERE r.status = 'PUBLISHED'
   `;
   const r = rows[0];
   const total = Number(r.total);
@@ -74,6 +89,10 @@ async function computeContentQualityStats(): Promise<ContentQualityStats> {
     allergenTaggedRatio: pct(r.allergen),
     hungerBarCount: Number(r.hungerbar),
     hungerBarRatio: pct(r.hungerbar),
+    imageUrlCount: Number(r.imageurl),
+    imageUrlRatio: pct(r.imageurl),
+    userPhotoCount: Number(r.userphoto),
+    userPhotoRatio: pct(r.userphoto),
   };
 }
 
@@ -83,6 +102,6 @@ async function computeContentQualityStats(): Promise<ContentQualityStats> {
  */
 export const getContentQualityStats = unstable_cache(
   computeContentQualityStats,
-  ["admin-content-quality-stats-v1"],
+  ["admin-content-quality-stats-v2"],
   { revalidate: 300, tags: ["admin-content-quality"] },
 );

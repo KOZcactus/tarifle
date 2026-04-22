@@ -135,6 +135,8 @@ export default async function AdminAnalyticsPage() {
             { label: t("cqServingSuggestion"), count: contentQuality.servingSuggestionCount, ratio: contentQuality.servingSuggestionRatio, emoji: "🍽️" },
             { label: t("cqAllergenTagged"), count: contentQuality.allergenTaggedCount, ratio: contentQuality.allergenTaggedRatio, emoji: "⚠️" },
             { label: t("cqHungerBar"), count: contentQuality.hungerBarCount, ratio: contentQuality.hungerBarRatio, emoji: "🍖" },
+            { label: t("cqImageUrl"), count: contentQuality.imageUrlCount, ratio: contentQuality.imageUrlRatio, emoji: "🖼️" },
+            { label: t("cqUserPhoto"), count: contentQuality.userPhotoCount, ratio: contentQuality.userPhotoRatio, emoji: "📸" },
           ].map((m) => {
             // Ratio rengi: >=95 yeşil, 70-95 mavi, <70 kehribar
             const ringClass =

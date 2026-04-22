@@ -14,7 +14,7 @@
  *     duplicate merge sonrası slug yok olabilir).
  *   - Mevcut değer JSON ile aynıysa unchanged (no-op update yine atılır,
  *     ama not edilir).
- *   - Em-dash (—), kelime 8-20 disi içerikler CRITICAL → apply iptal
+ *   - Em-dash (U+2014), kelime 8-20 disi icerikler CRITICAL, apply iptal
  *     (--force ile bypass).
  *
  * Usage:

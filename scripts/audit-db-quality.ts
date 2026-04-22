@@ -11,7 +11,7 @@
  * Usage:
  *   npx tsx scripts/audit-db-quality.ts
  */
-import { PrismaClient, Prisma } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 import { PrismaNeon } from "@prisma/adapter-neon";
 import dotenv from "dotenv";
 import path from "node:path";

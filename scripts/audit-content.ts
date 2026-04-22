@@ -188,9 +188,7 @@ async function main(): Promise<void> {
 
   for (const r of recipes) {
     const { slug, title, ingredients, steps } = r;
-    const descLower = trLower(r.description);
     const stepsText = steps.map((s) => s.instruction).join(" ");
-    const stepsLower = trLower(stepsText);
 
     // ── 1. Composite ingredient names (section-prefix pattern) ──
     for (const ing of ingredients) {
@@ -325,7 +323,6 @@ async function main(): Promise<void> {
     }
 
     // ── 6. Vague language ──
-    const allText = `${r.description} ${r.tipNote ?? ""} ${r.servingSuggestion ?? ""} ${stepsText}`;
     const vagueHits = new Map<string, number>();
     for (const step of steps) {
       for (const { re, tag } of VAGUE_PATTERNS) {

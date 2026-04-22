@@ -72,7 +72,6 @@ export async function UserPhotoGrid({ recipeId }: UserPhotoGridProps) {
               rel="noopener noreferrer"
               className="block aspect-square bg-bg-elevated"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={photo.thumbnailUrl ?? photo.imageUrl}
                 alt={photo.caption ?? t("defaultAlt", { author: authorLabel })}

@@ -152,7 +152,6 @@ export async function ReviewsSection({
                     className="shrink-0"
                   >
                     {r.author.avatarUrl ? (
-                      // eslint-disable-next-line @next/next/no-img-element
                       <img
                         src={r.author.avatarUrl}
                         alt=""

@@ -25,15 +25,16 @@ const adapter = new PrismaNeon({ connectionString: process.env.DATABASE_URL! });
 const prisma = new PrismaClient({ adapter });
 const APPLY = process.argv.includes("--apply");
 
-interface AtomSosFix {
+// Tip belgeleri (script-içi şema referansı, kod yolunda kullanılmıyor):
+interface _AtomSosFix {
   slug: "atom-sos";
   newSteps: { stepNumber: number; instruction: string; timerSeconds?: number | null }[];
 }
-interface PatatasBravasFix {
+interface _PatatasBravasFix {
   slug: "patatas-bravas";
   appendStep: { stepNumber: number; instruction: string };
 }
-interface VietnamFix {
+interface _VietnamFix {
   slug: "vietnam-yumurta-kahvesi";
   stepNumber: number;
   newInstruction: string;

@@ -13383,7 +13383,8 @@ export const recipes: SeedRecipe[] = [
   })(),
   // ── DRIFT RESTORE (2026-04-20, 34 tarif) ──
   ...(() => {
-    const t = (enTitle: string, enDescription: string, deTitle: string, deDescription: string) => ({ en: { title: enTitle, description: enDescription }, de: { title: deTitle, description: deDescription } });
+    // t() helper bu IIFE'de cagrilmiyor (translations inline JSON literal),
+    // diger DRIFT bloklari ile parite icin paterni ayni birakiyoruz.
     const ing = (specs: string[]) => specs.map((s, i) => { const [name, amount, unit] = s.split("|"); return { name, amount, unit, sortOrder: i + 1 }; });
     const st = (specs: string[]) => specs.map((s, i) => { const [instruction, timer] = s.split("||"); return timer ? { stepNumber: i + 1, instruction, timerSeconds: Number(timer) } : { stepNumber: i + 1, instruction }; });
     const r = (o: Omit<SeedRecipe, "ingredients" | "steps"> & { ingredients: string[] | ReturnType<typeof ing>; steps: string[] | ReturnType<typeof st> }) => ({ ...o, ingredients: Array.isArray(o.ingredients) && typeof o.ingredients[0] === "string" ? ing(o.ingredients as string[]) : o.ingredients as ReturnType<typeof ing>, steps: Array.isArray(o.steps) && typeof o.steps[0] === "string" ? st(o.steps as string[]) : o.steps as ReturnType<typeof st> });

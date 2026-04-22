@@ -46,7 +46,6 @@ export function CookieBanner() {
     } catch {
       // localStorage engeli (private mode, güvenlik ayarları). Banner'ı
       // yine de göster ama persist etmeyeceğiz.
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setDismissed(false);
     }
   }, []);

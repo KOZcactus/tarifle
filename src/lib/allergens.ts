@@ -64,7 +64,11 @@ export const ALLERGEN_EMOJI: Record<Allergen, string> = {
  * which keeps the keyword list easier to scan and removes the risk of
  * typing "ı" vs "i" inconsistencies.
  */
-function normalise(name: string): string {
+// _normalise + _KEYWORDS: legacy keyword-based allergen inference helper'lari.
+// Yeni audit-deep ve check-allergen-source pipeline'i ayri keyword set
+// kullaniyor; bu blok belge degeri icin tutuluyor (allergen UX kararlarinin
+// arka plani). Silinebilir ama git history'sinden kazimak yerine inline kalsin.
+function _normalise(name: string): string {
   return name
     .toLocaleLowerCase("tr-TR")
     .replace(/ç/g, "c")
@@ -95,7 +99,7 @@ function normalise(name: string): string {
  * wrong inferences. If the retrofit is noisy the user can override per
  * recipe via Prisma Studio or admin tool later.
  */
-const KEYWORDS: Record<Allergen, readonly string[]> = {
+const _KEYWORDS: Record<Allergen, readonly string[]> = {
   GLUTEN: [
     "un",
     // "ekmek" + "ekmeg", Turkish possessive "ekmeği" → normalized "ekmegi";

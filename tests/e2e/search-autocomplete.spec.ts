@@ -34,7 +34,6 @@ test("SearchBar: öneri tıklanınca arama yapılır", async ({ page }) => {
 
   // İlk öneriyi tıkla
   const firstOption = page.getByRole("option").first();
-  const optionText = await firstOption.textContent();
   await firstOption.click();
 
   // URL'de ?q= parametresi olmalı

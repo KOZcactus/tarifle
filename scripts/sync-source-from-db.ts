@@ -34,7 +34,7 @@ const prisma = new PrismaClient({ adapter });
 
 const SEED_PATH = path.resolve(__d, "seed-recipes.ts");
 
-interface RecipeSnapshot {
+interface _RecipeSnapshot {
   slug: string;
   title: string;
   prepMinutes: number;

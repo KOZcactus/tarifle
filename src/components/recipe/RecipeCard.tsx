@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/Badge";
 import { CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
 import type { RecipeCard as RecipeCardType } from "@/types/recipe";
-import type { Locale } from "@/i18n/config";
 
 interface RecipeCardProps {
   recipe: RecipeCardType;
@@ -29,7 +28,6 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
 
   const formattedMinutes = formatMinutes(recipe.totalMinutes, t);
   const difficultyLabel = t(DIFFICULTY_KEY[recipe.difficulty]);
-  const cuisineCode = recipe.cuisine as Locale | CuisineCode | null | undefined;
   const cuisineTitle =
     recipe.cuisine && tCuisine.has(recipe.cuisine as CuisineCode)
       ? tCuisine(recipe.cuisine as CuisineCode)

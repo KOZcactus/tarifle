@@ -13,7 +13,6 @@ import { neonConfig } from "@neondatabase/serverless";
 import ws from "ws";
 import * as dotenv from "dotenv";
 import * as path from "node:path";
-import * as fs from "node:fs";
 import { fileURLToPath } from "node:url";
 import { assertDbTarget } from "./lib/db-env";
 import { generate, type RecipeSignal } from "./lib/tipnote-generator";

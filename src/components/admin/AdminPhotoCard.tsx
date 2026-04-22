@@ -68,7 +68,6 @@ export function AdminPhotoCard(props: AdminPhotoCardProps) {
         rel="noopener noreferrer"
         className="relative block aspect-square bg-bg-elevated"
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={thumbnailUrl}
           alt={caption ?? t("defaultAlt", { author: authorLabel })}

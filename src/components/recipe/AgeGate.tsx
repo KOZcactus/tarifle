@@ -70,7 +70,6 @@ export function AgeGate() {
       if (sessionStorage.getItem(LEGACY_SESSION_KEY) === "true") {
         writeAgeCookie();
         sessionStorage.removeItem(LEGACY_SESSION_KEY);
-        // eslint-disable-next-line react-hooks/set-state-in-effect
         setOpen(false);
         return;
       }
@@ -78,7 +77,6 @@ export function AgeGate() {
       // sessionStorage erisim hatasi (iframe sandbox vs), sessizce gec.
     }
 
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setOpen(true);
   }, []);
 

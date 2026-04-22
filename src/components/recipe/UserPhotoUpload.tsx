@@ -106,7 +106,6 @@ export function UserPhotoUpload({ recipeId }: UserPhotoUploadProps) {
           className="flex h-24 w-24 shrink-0 cursor-pointer items-center justify-center overflow-hidden rounded-lg border border-border bg-bg-elevated text-3xl text-text-muted transition-colors hover:border-primary hover:text-primary"
         >
           {preview ? (
-            // eslint-disable-next-line @next/next/no-img-element
             <img src={preview} alt="" className="h-full w-full object-cover" />
           ) : (
             <span aria-hidden="true">📸</span>

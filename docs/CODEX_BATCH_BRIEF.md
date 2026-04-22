@@ -1442,6 +1442,60 @@ tahmin/aralık + görsel sinyal kombinasyonu ideal.
 - Ingredient adlarını step'te aynen kullan ("enginar kalpleri", "domates"
   vs).
 
+**🚫 "malzemesini" sözcüğü YASAK (v3 rework dersi):**
+
+Codex B5 v3'te şu pattern'i kullandı:
+- ❌ "Kuşbaşı dana eti **malzemesini** tavada kavurun."
+- ❌ "Pilavlık bulgur **malzemesini** yıkayıp tencereye ekleyin."
+
+Doğal Türkçe "malzemesini" kelimesini kullanmaz, direkt ismi çeker:
+- ✅ "Kuşbaşı dana etini tavada 5-6 dakika kavurun."
+- ✅ "Pilavlık bulguru yıkayıp tencereye ekleyin."
+
+Ingredient adı step'te kendi adıyla geçer, "malzemesini" ekleme.
+
+**🚫 Template pattern tekrarı YASAK:**
+
+Farklı tariflere **aynı 5-adım iskeletini** kopyalama, sadece malzeme
+değiştirerek çoğaltma. Her tarifin kendi pişirme mantığı var.
+
+Örnek template-yanlış (v3'te yapılan):
+```
+1. X tavada 5-6 dakika kavurun
+2. Y yıkayıp tencereye ekleyin
+3. X üzerine su ilave edip karışımı bir kez çevirin
+4. Y yumuşayıp suyunu çekene kadar 14-18 dakika pişirin
+5. X pişer pişmez sıcak servis edin
+```
+Bu yapıyı 3 farklı tarife (etli-erikli-bulgur, firikli-mercimek-kuzu,
+isotlu-tava-eriste) kopyaladı → hepsi robotik ve aynı hissediyor.
+
+Doğrusu: her tarif için adımlar **yemek mantığına özgü** olmalı.
+- Pilav: pirinç yıkama + tereyağı kavurma + su oranı + dinlendirme
+- Çorba: sote + sıvı + pişirme + kıvam + servis
+- Köfte: yoğurma + dinlendirme + şekil + pişirme
+- Börek: hamur + iç + katlama + pişirme
+
+**🚫 Teknik hatalar (doğruluk kontrolü):**
+
+Bazı malzemeler/yöntemler yanlış uygulanıyor, dikkat:
+- **Erişte yıkanmaz** (kuru, hazır). Sadece bulgur ve pirinç yıkanır.
+- **Tereyağı kavurma max 3 dakika** (150°C duman noktası), daha uzunsa
+  yanar. "Tereyağı + sıvıyağ karışımı" alternatif.
+- **İki kez pişirme gereksiz**: "önce haşla sonra tencereye al sonra
+  kaynat" yerine tek adım "tencerede yumuşayana kadar kaynat".
+
+**🚫 Jenerik kapanış kalıbı çeşitlendir:**
+
+"X pişer pişmez sıcak servis edin" 5+ tarife aynen kopyalama.
+Alternatifler:
+- "Sıcak veya ılık servis edin"
+- "Dinlendirip ayran eşliğinde servis edin"
+- "Maydanoz serpip servis edin"
+- "Yanında cacık ile ikram edin"
+
+Servis adımı tarifin kültürüne göre özgünleşmeli.
+
 ### 14.5 Yazım kuralları (Mod A/B/C/D ortak)
 
 - **Em-dash (— U+2014) YASAK**. Yerine virgül, nokta, parantez, iki nokta.

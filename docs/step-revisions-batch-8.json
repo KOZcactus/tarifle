@@ -4,7 +4,7 @@
     "steps": [
       {
         "stepNumber": 1,
-        "instruction": "Kabakları rendeleyip suyunu sikin, dereotunu ince kıyın."
+        "instruction": "Kabakları rendeleyip suyunu sıkın, dereotunu ince kıyın."
       },
       {
         "stepNumber": 2,
@@ -58,7 +58,7 @@
       },
       {
         "stepNumber": 3,
-        "instruction": "Suyu ekleyip pilavı kısık ateste 12 dakika pişirin.",
+        "instruction": "Suyu ekleyip pilavı kısık ateşte 12 dakika pişirin.",
         "timerSeconds": 720
       },
       {
@@ -198,7 +198,7 @@
       },
       {
         "stepNumber": 4,
-        "instruction": "Pilavı kısık ateste 10 dakika pişirip mercimeği katın.",
+        "instruction": "Pilavı kısık ateşte 10 dakika pişirip mercimeği katın.",
         "timerSeconds": 600
       },
       {
@@ -465,10 +465,6 @@
         "stepNumber": 4,
         "instruction": "Kup tatlıyı 1 saat soğutup servis edin.",
         "timerSeconds": 3600
-      },
-      {
-        "stepNumber": 5,
-        "instruction": "Kup tatlıyı iyice soğutup katlar yumuşayınca servis edin."
       }
     ]
   },
@@ -491,10 +487,6 @@
       {
         "stepNumber": 4,
         "instruction": "Flanlari tamamen soğutup kup içinde servis edin."
-      },
-      {
-        "stepNumber": 5,
-        "instruction": "Flanı kup içinde tamamen soğutup servis edin."
       }
     ]
   },
@@ -641,7 +633,7 @@
       },
       {
         "stepNumber": 4,
-        "instruction": "Tencereyi 5 dakika daha kısık ateste tutun.",
+        "instruction": "Tencereyi 5 dakika daha kısık ateşte tutun.",
         "timerSeconds": 300
       },
       {
@@ -661,7 +653,7 @@
       },
       {
         "stepNumber": 2,
-        "instruction": "Süt ve irmiği ayrı tencerede çırparak pişirmeye baslayin."
+        "instruction": "Süt ve irmiği ayrı tencerede çırparak pişirmeye başlayın."
       },
       {
         "stepNumber": 3,
@@ -827,17 +819,13 @@
       },
       {
         "stepNumber": 3,
-        "instruction": "Suyu ilave edip pilavı kısık ateste 15 dakika pişirin.",
+        "instruction": "Suyu ilave edip pilavı kısık ateşte 15 dakika pişirin.",
         "timerSeconds": 900
       },
       {
         "stepNumber": 4,
         "instruction": "Pilavı 10 dakika dinlendirip sıcak servis edin.",
         "timerSeconds": 600
-      },
-      {
-        "stepNumber": 5,
-        "instruction": "Pilavı 8 dakika demlendirip sıcak servis edin."
       }
     ]
   },
@@ -886,10 +874,6 @@
         "stepNumber": 4,
         "instruction": "Firigi 5 dakika dinlendirip sıcak servis edin.",
         "timerSeconds": 300
-      },
-      {
-        "stepNumber": 5,
-        "instruction": "Firikli tavayı 5 dakika dinlendirip servis edin."
       }
     ]
   },
@@ -1015,10 +999,6 @@
         "stepNumber": 4,
         "instruction": "Tatlıyı 15 dakika dinlendirip soğuk servis edin.",
         "timerSeconds": 900
-      },
-      {
-        "stepNumber": 5,
-        "instruction": "Tatlıyı kaymak erimeden soğuk servis edin."
       }
     ]
   },
@@ -1041,7 +1021,7 @@
       },
       {
         "stepNumber": 4,
-        "instruction": "Harirayi kısık ateste 15 dakika pişirip kaseye alın.",
+        "instruction": "Harirayi kısık ateşte 15 dakika pişirip kaseye alın.",
         "timerSeconds": 900
       },
       {
@@ -1242,7 +1222,7 @@
       },
       {
         "stepNumber": 3,
-        "instruction": "Pilavı kısık ateste 15 dakika pişirin.",
+        "instruction": "Pilavı kısık ateşte 15 dakika pişirin.",
         "timerSeconds": 900
       },
       {
@@ -1344,7 +1324,7 @@
       },
       {
         "stepNumber": 2,
-        "instruction": "Kimyonu ekleyip Çorbayı orta ateste kaynatin."
+        "instruction": "Kimyonu ekleyip Çorbayı orta ateşte kaynatin."
       },
       {
         "stepNumber": 3,
@@ -1455,7 +1435,7 @@
       },
       {
         "stepNumber": 3,
-        "instruction": "Pilavı kısık ateste 15 dakika pişirin.",
+        "instruction": "Pilavı kısık ateşte 15 dakika pişirin.",
         "timerSeconds": 900
       },
       {
@@ -1478,7 +1458,7 @@
       },
       {
         "stepNumber": 2,
-        "instruction": "Karışımı kısık ateste 20 dakika pişirip kajuyu katın.",
+        "instruction": "Karışımı kısık ateşte 20 dakika pişirip kajuyu katın.",
         "timerSeconds": 1200
       },
       {
@@ -1488,10 +1468,6 @@
       {
         "stepNumber": 4,
         "instruction": "Tatlıyı ılık ya da soğuk servis edin."
-      },
-      {
-        "stepNumber": 5,
-        "instruction": "Kheer kupunu ılık ya da soğuk servis edin."
       }
     ]
   },
@@ -1700,10 +1676,6 @@
         "stepNumber": 4,
         "instruction": "Muhallebiyi dolapta soğutup gül reçeliyle servis edin.",
         "timerSeconds": 1800
-      },
-      {
-        "stepNumber": 5,
-        "instruction": "Muhallebiyi gül reçeliyle birlikte soğuk servis edin."
       }
     ]
   },
@@ -1725,10 +1697,6 @@
       {
         "stepNumber": 4,
         "instruction": "Sosu gezdirip salatayı hemen servis edin."
-      },
-      {
-        "stepNumber": 5,
-        "instruction": "Salatayı son kez karıştırıp hemen servis edin."
       }
     ]
   },
@@ -1801,7 +1769,7 @@
       },
       {
         "stepNumber": 4,
-        "instruction": "Suyu ilave edip pilavı 16 dakika kısık ateste pişirin.",
+        "instruction": "Suyu ilave edip pilavı 16 dakika kısık ateşte pişirin.",
         "timerSeconds": 960
       },
       {
@@ -1824,7 +1792,7 @@
       },
       {
         "stepNumber": 3,
-        "instruction": "Karışımı kısık ateste 6-8 dakika koyulaştırın.",
+        "instruction": "Karışımı kısık ateşte 6-8 dakika koyulaştırın.",
         "timerSeconds": 420
       },
       {
@@ -2059,7 +2027,7 @@
       },
       {
         "stepNumber": 4,
-        "instruction": "Pilavı 16 dakika kısık ateste pişirip sıcak servis edin.",
+        "instruction": "Pilavı 16 dakika kısık ateşte pişirip sıcak servis edin.",
         "timerSeconds": 960
       },
       {
@@ -2088,10 +2056,6 @@
         "stepNumber": 4,
         "instruction": "Salatayı iyice soğutup sonra servis edin.",
         "timerSeconds": 1200
-      },
-      {
-        "stepNumber": 5,
-        "instruction": "Salatayı son dokunuştan sonra servis edin."
       }
     ]
   },
@@ -2180,7 +2144,7 @@
     "steps": [
       {
         "stepNumber": 1,
-        "instruction": "Dana kiyma, ince doğranmış soğan ve tarhanayi yogurun."
+        "instruction": "Dana kiyma, ince doğranmış soğan ve tarhanayi yoğurun."
       },
       {
         "stepNumber": 2,
@@ -2433,10 +2397,6 @@
         "stepNumber": 4,
         "instruction": "Kup tatlıyı soğutup elmalı katmanla servis edin.",
         "timerSeconds": 1800
-      },
-      {
-        "stepNumber": 5,
-        "instruction": "Kup tatlıyı elmalı dolgu yerleşince servis edin."
       }
     ]
   },
@@ -2454,7 +2414,7 @@
       },
       {
         "stepNumber": 3,
-        "instruction": "Yemeği 12 dakika kısık ateste pişirin.",
+        "instruction": "Yemeği 12 dakika kısık ateşte pişirin.",
         "timerSeconds": 720
       },
       {
@@ -2494,7 +2454,7 @@
     "steps": [
       {
         "stepNumber": 1,
-        "instruction": "Süt, irmik ve şekeri tencerede karıştırıp pişirmeye baslayin."
+        "instruction": "Süt, irmik ve şekeri tencerede karıştırıp pişirmeye başlayın."
       },
       {
         "stepNumber": 2,
@@ -2503,16 +2463,12 @@
       },
       {
         "stepNumber": 3,
-        "instruction": "Tatlıyı kaselere paylaştırıp sogumaya bırakın."
+        "instruction": "Tatlıyı kaselere paylaştırıp soğumaya bırakın."
       },
       {
         "stepNumber": 4,
         "instruction": "Tatlıyı soğuk servis edin.",
         "timerSeconds": 1800
-      },
-      {
-        "stepNumber": 5,
-        "instruction": "Tatlıyı turunç kokusu belirginleşince servis edin."
       }
     ]
   },
@@ -2569,7 +2525,7 @@
       },
       {
         "stepNumber": 2,
-        "instruction": "Seker ve toz bademi ekleyip karışımı kısık ateste pişirin."
+        "instruction": "Seker ve toz bademi ekleyip karışımı kısık ateşte pişirin."
       },
       {
         "stepNumber": 3,
@@ -2605,7 +2561,7 @@
       },
       {
         "stepNumber": 4,
-        "instruction": "Yemeği kısık ateste 25 dakika pişirip ılık servis edin.",
+        "instruction": "Yemeği kısık ateşte 25 dakika pişirip ılık servis edin.",
         "timerSeconds": 1500
       },
       {

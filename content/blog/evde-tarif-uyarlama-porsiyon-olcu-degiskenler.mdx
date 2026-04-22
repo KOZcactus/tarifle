@@ -1,0 +1,205 @@
+---
+title: "Evde Tarif Uyarlama: Porsiyon, Ölçü, Değişkenler"
+description: "Aynı tarif 4 yerine 8 kişi için nasıl yapılır? Kek kalıbı boyutu değişince neyi çarparsın? Ankara ile İstanbul arasındaki rakım farkı ekmeğe nasıl etki eder? Pratik matematik ve bilim rehberi."
+date: "2026-04-29"
+author: "Tarifle Editörleri"
+tags: ["tarif-uyarlama", "matematik", "teknik", "rakim"]
+category: "pisirme-teknikleri"
+coverEmoji: "📐"
+---
+
+Bir tarifi olduğu gibi uygulamak her zaman mümkün değildir. Akşam davetinde dört yerine yedi kişi varsa, mevcut kalıbın doğru boyda değilse, taşındığın şehirde rakım farklıysa, tarifi yalnızca çarpmakla ölçeklemek yanlış sonuç verir. Mutfak ölçeklendirmesi basit orantı değil, matematik + kimya kombinasyonudur. Bu yazı bir tarifi farklı koşullara uyarlamanın temel kurallarını açıklar.
+
+## Linear scaling yanılgısı
+
+İlk düşünce genelde şudur: "4 kişilik tarif 8 kişi için yapılacaksa her malzemeyi 2 ile çarp." Bu yaklaşım **bazı malzemelerde çalışır** (ana sebze, et, hububat ağırlığı) ama **birçok malzemede yanlış sonuç** verir.
+
+Malzemeleri üç sınıfa ayır:
+
+- **Linear scaling**: et, sebze, tahıl, süt, yağ, ana bileşenler. Bunları porsiyon kadarıyla çarp.
+- **Sub-linear scaling**: baharat, tuz, limon suyu, bazı otlar. Porsiyon iki kata çıkınca baharat **1.6-1.8 kat** yeter, iki kat koymak aşırı olur.
+- **Özel kurallar**: maya, kabartma tozu, karbonat. Hacim değiştikçe oran değişmez ama pişirme dinamikleri değişir.
+
+Bu üçlü ayrımı bilmek iki kat porsiyon pişirirken yemeği tuzlu/baharatlı/ağır yapmanı önler.
+
+## Porsiyon uyarlama (kişi sayısı değişimi)
+
+**Aynı kalıp/tencere ile daha az veya daha fazla kişi için yapılacak tarif** en sık karşılaşılan durum.
+
+**Linear malzemeler**: orantı net. 4 kişiden 6'ya çıkarken 1.5 ile, 8'e çıkarken 2 ile çarp.
+
+**Baharat sub-linear**: %70-80 civarında ölçeklendir. 4 kişilik 1 çay kaşığı karabiber, 8 kişilik için 1.6 çay kaşığı (2 değil). Sebep: yemeğin toplam hacmi iki kat olsa da, **baharatın yemekle yüzey teması** lineer artmaz; bir noktada baharat birbirini bastırmaya başlar.
+
+**Tuz hem linear hem değildir**. Ana malzemeye tuz absorbsiyonu doğrusal ama tadın dil eşiği logaritmik. Pratik kural: iki kat hacim için **1.8 kat tuz**. Servis sırasında tada göre ayarla.
+
+**Limon suyu, sirke, asit genelleri**: sub-linear. Yemeği iki kata ölçekleyince limonu %60-70 ekle, servis sırasında tada göre ayarla.
+
+**Pişirme süresi**: linear DEĞİL. İki kat porsiyon aynı tavada pişiyorsa süre biraz uzar (%10-20). Daha büyük tencereye geçiliyorsa süre artabilir. **Daha kalın bir tabaka sıvı daha yavaş ısınır**, termodinamik kuralı.
+
+**Örnek: Mercimek çorbası**
+- 4 kişilik: 250 g mercimek + 1.5 l su + 1 orta soğan + 1 yemek kaşığı zeytinyağı + 1 çay kaşığı tuz + 0.5 çay kaşığı karabiber.
+- 8 kişilik: 500 g mercimek + 3 l su + 2 orta soğan + 2 yemek kaşığı zeytinyağı + **1.8 çay kaşığı tuz** (2 değil) + **0.8 çay kaşığı karabiber** (1 değil) + pişirme süresi 30 dk yerine 35-40 dk.
+
+## Kek kalıbı boyutu değişimi
+
+Tarif 20 cm yuvarlak kalıp için yazılmış ama sende 23 cm var, ne yapacaksın? [Food Network'ün kalıp dönüşüm rehberine göre](https://www.foodnetwork.com/recipes/packages/baking-guide/baking-pan-conversion-calculator) çözüm **hacim oranı**dır.
+
+**Yuvarlak kalıp hacmi**: π × r² × h (yarıçap² × yükseklik × π)
+**Kare/dikdörtgen kalıp**: l × b × h (uzunluk × genişlik × yükseklik)
+
+Formül:
+```
+Scaling factor = Yeni kalıp hacmi / Orijinal kalıp hacmi
+Yeni malzeme miktarı = Eski miktar × Scaling factor
+```
+
+**Örnek hesaplama**:
+
+20 cm yuvarlak kalıp, 5 cm derinlik:
+- Hacim = π × 10² × 5 = 1570 cm³
+
+23 cm yuvarlak kalıp, 5 cm derinlik:
+- Hacim = π × 11.5² × 5 = 2077 cm³
+
+Scaling factor = 2077 / 1570 = 1.32
+
+Tarifin tüm malzemelerini 1.32 ile çarp. Un 300 g ise 396 g, yumurta 3 ise 4 (yuvarlatılmış), şeker 200 g ise 264 g.
+
+**Eğer yükseklikler aynıysa sadece area kullanabilirsin** (daha kolay):
+
+```
+Yuvarlak alan = π × r²
+Kare alan = l × b
+```
+
+20 cm yuvarlak alanı = 314 cm², 23 cm yuvarlak = 415 cm². Scaling factor 415/314 = 1.32 (aynı).
+
+**Pratik kural**: kalıbı **yarısı ile üçte ikisi arası** dolacak kadar malzeme kullan. Daha az doldurursan düz kek çıkar, daha fazla doldurursan taşar.
+
+## Kalıp şekli değiştirmek (yuvarlaktan kareye)
+
+Yuvarlak tarifi kare kalıba uyarlamak için aynı formülü uygula, sadece alan hesabını değiştir.
+
+- 20 cm × 20 cm kare = 400 cm² alan
+- 22 cm yuvarlak ≈ 380 cm²
+
+Bunlar yaklaşık eşdeğer. Yuvarlak tarifler için kare kalıp geçişi sıkça kabul edilebilir; ama **kenar/iç oranı farklı** olduğundan pişirme süresi ayarlanabilir. Kare kalıpta kenarlar daha fazla, iç yavaş pişer.
+
+## Tava boyu değişimi (sıcak yemek)
+
+Zeytinyağlı, kavurma, sote gibi tavada pişen yemekler için kalıp tersine tava yüzey alanı önemlidir.
+
+**Kural**: sebze tavaya **tek kat serilmeli, üst üste binmemeli**. Aksi halde buhar çıkar, yemek kavrulmaz haşlanır.
+
+**Örnek**: 4 kişilik soğan sotesi 24 cm tavada iyi gider. 8 kişiye çıkarken iki farklı seçenek var:
+- **Aynı tava, iki seferde pişir**: daha uzun toplam süre ama her parti iyi kavrulur.
+- **Büyük tava (30-32 cm) kullan**: tek seferde ama ısı dağılımı daha zor, ocak alev tavanın her tarafına gelmeyebilir.
+
+İkincisi profesyonel mutfak tercihi (büyük wok veya izgara), ev mutfağında iki seferde pişirme daha iyi sonuç verir.
+
+## Rakım etkisi (Türkiye'de şehirler)
+
+Rakım mutfakta düşünülmeyen ama **çok gerçek bir değişken**. [King Arthur Baking'in rakım rehberine göre](https://www.kingarthurbaking.com/learn/resources/high-altitude-baking) 914 metre (3000 ft) üstü "yüksek rakım" sayılır, fırında pişirmede farklı kurallar gerekir.
+
+**Türkiye'nin rakım haritası**:
+- **Deniz seviyesi** (İstanbul, İzmir, Antalya, Samsun): standart tarifler sorunsuz çalışır.
+- **Orta rakım** (Bursa 100m, Adana 23m, Diyarbakır 660m): minimum ayar gerekir.
+- **Yüksek rakım başlangıcı** (Ankara 938m, Kayseri 1054m): King Arthur sınır eşiği. Hafif ayarlamalar fark yaratır.
+- **Tam yüksek rakım** (Van 1725m, Kars 1750m, Erzurum 1890m): ciddi ayarlama gerekir.
+
+**Neden etkiler?** Yükseldikçe atmosferik basınç düşer, hava seyrekleşir. Bu değişikliğin mutfakta üç etkisi var:
+
+1. **Kabarmış daha hızlı**: düşük basınç hamurun içindeki gazları daha büyük hacme çıkarır. Maya ve kimyasal kabartıcılar hızlı etki eder, hamur çok kabarır ve sonra çöker.
+2. **Su daha düşük ısıda kaynar**: deniz seviyesinde 100°C, Ankara'da ~98°C, Van'da ~95°C. Bu pişirme süresini uzatır.
+3. **Daha hızlı buharlaşma**: hamur ve pişen ürün daha çabuk kurur.
+
+**Kek, ekmek ve pasta için yüksek rakım ayarları**:
+
+- **Kabartıcı** (karbonat, kabartma tozu): her 3000 ft üstü için **%25 azalt**. Ankara'da standart, Van'da 1 çay kaşığı kabartma tozu → 0.75.
+- **Sıvı**: 3000 ft'te 1-2 yemek kaşığı artır, her ek 1000 ft için 1.5 çay kaşığı.
+- **Şeker**: hafif azalt (yapı desteği için). 3000 ft için %10.
+- **Un**: 3000 ft'te 1-2 yemek kaşığı artır (yapı güçlendirme).
+- **Fırın sıcaklığı**: 10-15°C artır (yapı önce otursun, sonra kabarsın).
+- **Pişirme süresi**: her 30 dakikada 5-8 dakika kısalt.
+
+**Haşlama ve kaynatma ayarları**:
+- Rakım yüksek oldukça pişirme süresi uzar (su 95-98°C'de kaynar).
+- Baklagil haşlama %20-30 uzar (Van'da nohut deniz seviyesinden 20 dk daha uzun haşlanır).
+- Yumurta haşlama 1-2 dakika uzar.
+
+**Pratik yaklaşım**: Türkiye'de yaşadığın şehrin rakımını bir kez kontrol et, eğer 1000m üstündeysen kek/pasta tariflerini hafif ayarla. Günlük yemeklerin çoğu bu farklara hassas değildir.
+
+## Fırın farkları (konvansiyonel vs fan-assisted)
+
+Aynı tarif iki farklı fırında farklı sonuç verir.
+
+- **Konvansiyonel (statik) fırın**: alt ve üst rezistansları, hava doğal dolaşımı. Tariflerin çoğu bu tip içindir.
+- **Fan (turbo, konveksiyon) fırın**: fan havayı döndürür, eşit ısı. **Sıcaklığı 20°C düşürebilirsin**, süreyi %10-15 kısalt. Örnek: 180°C / 30 dk konvansiyonel → 160°C / 25-27 dk fanla.
+- **Kombi fırın**: ikisi arasında seçim. Menü'ye göre kullan, çoğu tarif "konvansiyonel" varsayımı yazıldığı için fanla pişireceksen çevirim yap.
+
+Eski bir tarif "180°C" diyorsa ve fırınında fan aktifse otomatik 160°C'ye düşür; unutursan kek kenarları sertleşir, ortası çiğ kalabilir.
+
+## Baharat ve lezzet scaling
+
+Lezzet molekülleri bir noktadan sonra "doygunluk" yaratır. Dilin algısı logaritmiktir: iki kat baharat iki kat lezzet vermez, belki %30-50 daha yoğun hissettirir.
+
+**Acılık scaling**: acı biber, sirke, soğan keskinliği **hafif sub-linear**. İki kat porsiyon için 1.5 kat acı malzeme yeter.
+
+**Tatlı scaling**: şeker en çok linear kalır çünkü dokuya ve hidrasyona da etkiler, sadece tat değil.
+
+**Taze otlar scaling**: maydanoz, nane, dereotu gibi taze otlar **hemen hemen linear**. Hacim büyük miktarlarda aromayı eşit dağıtamaz, iki kat porsiyon için iki kat ot yeter.
+
+**Pişmiş otlar (kekik, biberiye)**: sub-linear, pişme sırasında aromalar konsantre olur. %70-80 yeter.
+
+**Acı sos, hardal, nar ekşisi**: kesinlikle sub-linear (%50-70). İki katlamak asit ve acı dengesini bozar.
+
+## Maya ve kabartma tozu scaling
+
+**Maya (yaş veya kuru)**: oran değişmez, **hep un ağırlığının %1.5-2'si** (kuru maya için). Porsiyonu iki katlarsan mayayı da iki katlarsın, orantı sabit. Ama **mayalanma süresi aynı kalır** (2X maya 2X hızlı değil, aynı sürede iki kat hamur kabarır).
+
+**Kabartma tozu ve karbonat**: un ağırlığının %1-1.5'u. Aynı oran. Porsiyon değişse de un başına oran sabit.
+
+**İstisna: yüksek rakım**. Rakım etkisi bölümünde bahsettiğimiz gibi kabartıcıyı azaltmak gerekir.
+
+## Pişirme süresi scaling (matematiğin aldatıcılığı)
+
+Bu en çok yanılgıya yol açan alandır. **İki kat malzeme iki kat süre ister** yanlış.
+
+Nedeni **ısı iletim matematiği**: pişirme süresi hacim değil **yüzey/hacim oranı** ile ilgilidir. Büyük malzeme bloğu ısıya aynı hızda girmez; merkezi iç kısma ulaşması kareköksel bir süre alır.
+
+**Genel kural**:
+- **İki kat porsiyon, aynı kalıp**: süre %15-25 uzar.
+- **İki kat porsiyon, iki katı alanı olan kalıp**: süre aynı kalır, ama sıcaklık 10°C artırılabilir (yüzey doğru kızarır).
+- **Üç kat porsiyon, aynı derinlik üçer kat alan**: süre aynı.
+- **Bir kalın dilim et iki dilim ince etten daha uzun pişer**: kalınlık artınca süre kuadratik artar.
+
+**Termometre kullanımı burada kritik**. Et mühürleme yazımızda bahsettiğimiz gibi iç sıcaklık kontrolü tek güvenilir yöntem.
+
+## Sık yapılan hatalar
+
+**"Her şeyi 2 ile çarp" kural dışı**. Baharat ve tuz sub-linear, süre süresel olmayan bir ilişki, kabartıcı oran sabit. Linear scaling sadece ana malzemelerde.
+
+**Kalıp değiştirmeyi boşvermek**. 20 cm kalıp yerine 24 cm'e aynı tarif koyarsan kek düz ve kuru çıkar. Formül 30 saniye matematik, hesaplamaya değer.
+
+**Rakım varsayımı**. Deniz seviyesi tariflerini Ankara veya Van'da olduğu gibi uygulamak. Özellikle **kek ve ekmek** yapımında belirgin fark yaratır.
+
+**Fırın tipini atlamak**. Tarif "180°C" yazar ama fanlı fırın için 160°C'ye düşürülmezse kek tepesi yanık, içi çiğ çıkar.
+
+**Pişirme süresi doğrusal arttırmak**. İki kat porsiyon için iki kat süre → dış yanık, iç çiğ.
+
+**Servis düşünmeden ölçeklemek**. 8 kişilik yemek 4 kişilik tava/tencereye sığmaz. Uyarlama **ekipman uygunluğunu** da içermeli.
+
+## Son söz
+
+Mutfak matematiği aritmetikten biraz daha karmaşık; orantı sınıfından biraz daha nüanslı. Linear, sub-linear ve sabit malzemelerin hangi gruba düştüğünü bir kere öğrendiğinde tarifleri kendi koşullarına uyarlayabilirsin. Aynı tarif bir ev için dört kişi + Ankara rakımı + fanlı fırın ve başka bir ev için sekiz kişi + deniz seviyesi + konvansiyonel fırın. İkisi de aynı reçeteyi kullanıyor ama uyarladıktan sonra iki tamamen farklı tarif uyguluyorlar.
+
+Tarifleri kendin yazmaya başladığında bu matematiği otomatik işlersin. Profesyonel şeflerin yapabildiği tarif kayması ve doğaçlama bu temele oturur.
+
+## Kaynaklar
+
+- [Food Network, "This Baking Chart Helps You Convert Between Pan Sizes"](https://www.foodnetwork.com/recipes/packages/baking-guide/baking-pan-conversion-calculator): Kek kalıbı boyutu dönüşüm formülleri ve pratik tablo.
+- [King Arthur Baking, "High-Altitude Baking"](https://www.kingarthurbaking.com/learn/resources/high-altitude-baking): Yüksek rakımda fırın ayarları, kabartıcı ve sıvı düzenlemeleri.
+- [Chef Gail Sokol, "Scaling-Adjusting Your Recipe to Fit Your Pans"](https://chefgailsokol.com/baking-essentials/scaling-adjusting-your-recipe-to-fit-your-pans/): Profesyonel fırıncılık scaling teknikleri.
+- [America's Test Kitchen, "How to Scale a Cake Recipe for Any Size Pan"](https://www.americastestkitchen.com/articles/8002-cake-pan-sizes): Hacim bazlı ölçekleme ve pişirme sıcaklığı ayarları.
+- [Sally's Baking Addiction, "Cake Pan Sizes & Conversions"](https://sallysbakingaddiction.com/cake-pan-sizes/): Kalıp doldurma kuralları ve dönüşüm tablosu.
+- [Harold McGee, *On Food and Cooking* (2004)](https://en.wikipedia.org/wiki/On_Food_and_Cooking): Isı iletimi, pişirme zamanı ve malzeme etkileşimi üzerine bilim temeli.

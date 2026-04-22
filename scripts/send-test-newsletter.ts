@@ -29,8 +29,70 @@ import crypto from "node:crypto";
 neonConfig.webSocketConstructor = ws;
 dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
 
-import { getNewsletterContent } from "../src/lib/queries/newsletter";
 import { sendWeeklyNewsletter } from "../src/lib/email/newsletter-weekly";
+import { CUISINE_LABEL, CUISINE_FLAG } from "../src/lib/cuisines";
+
+/**
+ * Standalone script context'inde unstable_cache çalışmaz (Next runtime
+ * gerek). getNewsletterContent / getFeaturedRecipes / getCuisineStats
+ * hepsi cache wrapper. Bu script icin cache bypass eden inline
+ * content fetcher yazariz; gercek prod cron yine cache'li helper'lari
+ * kullanir.
+ */
+async function fetchInlineNewsletterContent(prisma: PrismaClient) {
+  const [featured, recent, cuisineRows] = await Promise.all([
+    prisma.recipe.findMany({
+      where: { status: "PUBLISHED", isFeatured: true },
+      select: {
+        id: true, title: true, slug: true, emoji: true, difficulty: true,
+        totalMinutes: true, servingCount: true, averageCalories: true,
+        hungerBar: true, imageUrl: true, isFeatured: true, cuisine: true,
+        category: { select: { name: true, slug: true, emoji: true } },
+        _count: { select: { variations: { where: { status: "PUBLISHED" } } } },
+      },
+      take: 6,
+      orderBy: { updatedAt: "desc" },
+    }),
+    prisma.recipe.findMany({
+      where: {
+        status: "PUBLISHED",
+        createdAt: { gte: new Date(Date.now() - 14 * 24 * 60 * 60 * 1000) },
+      },
+      select: {
+        id: true, title: true, slug: true, emoji: true, difficulty: true,
+        totalMinutes: true, servingCount: true, averageCalories: true,
+        hungerBar: true, imageUrl: true, isFeatured: true, cuisine: true,
+        category: { select: { name: true, slug: true, emoji: true } },
+        _count: { select: { variations: { where: { status: "PUBLISHED" } } } },
+      },
+      take: 6,
+      orderBy: { createdAt: "desc" },
+    }),
+    prisma.recipe.groupBy({
+      by: ["cuisine"],
+      where: { status: "PUBLISHED", cuisine: { not: null } },
+      _count: true,
+      orderBy: { _count: { cuisine: "desc" } },
+    }),
+  ]);
+
+  const topCuisines = cuisineRows
+    .filter((r) => r.cuisine && r._count >= 3)
+    .slice(0, 4)
+    .map((r) => ({
+      code: r.cuisine!,
+      label: (CUISINE_LABEL as Record<string, string>)[r.cuisine!] ?? r.cuisine!,
+      flag: (CUISINE_FLAG as Record<string, string>)[r.cuisine!] ?? "🌍",
+      count: r._count,
+    }));
+
+  // sendWeeklyNewsletter expects RecipeCard shape; cast safe (selects match).
+  return {
+    featured: featured as unknown as ReturnType<typeof Array<unknown>>,
+    recent: recent as unknown as ReturnType<typeof Array<unknown>>,
+    topCuisines,
+  } as Parameters<typeof sendWeeklyNewsletter>[1];
+}
 
 async function main() {
   const email = process.argv[2] ?? process.env.TEST_NEWSLETTER_EMAIL;
@@ -53,11 +115,9 @@ async function main() {
     adapter: new PrismaNeon({ connectionString: process.env.DATABASE_URL! }),
   });
 
-  // Globals'ı template fonksiyonuna verebilmek için module-level prisma'yi
-  // setlemeye gerek yok; getNewsletterContent default prisma client'i import
-  // ediyor (src/lib/prisma.ts), o da DATABASE_URL'i okur.
-
-  const content = await getNewsletterContent();
+  // Inline content fetcher (unstable_cache bypass), gercek prod cron
+  // sirasinda cache'li getNewsletterContent kullanir.
+  const content = await fetchInlineNewsletterContent(prisma);
   console.log(
     `📄 Icerik: ${content.featured.length} featured + ${content.recent.length} recent + ${content.topCuisines.length} cuisine`,
   );

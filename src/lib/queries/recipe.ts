@@ -785,7 +785,7 @@ async function _getRecipeBySlugInner(slug: string): Promise<RecipeDetail | null>
  */
 export const getRecipeBySlug = unstable_cache(
   _getRecipeBySlugInner,
-  ["get-recipe-by-slug-v1"],
+  ["get-recipe-by-slug-v2"],
   {
     // Oturum 12 tune: 5 dk -> 30 dk. Tarif icerigi nadir degisir;
     // admin edit + seed "recipes" tag ile anlik invalidate. Uzun TTL

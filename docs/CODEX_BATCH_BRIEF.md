@@ -1246,6 +1246,49 @@ dokunmaz.
 
 ### 14.4 Kalite kriterleri (mutlaka uy)
 
+**🌐 ZORUNLU: HER TARIF ICIN INTERNETTEN ARASTIRMA YAP**
+
+Ezbere yazma. Bilinen kurala dayanma. Her tarif icin web search ile o
+spesifik yemegin **gercek sicakligi + suresi + yontemi** dogrula.
+
+**Arastirma adimlari (Codex):**
+
+1. **Google search** ile tarif adini ara: `"<tarif_adi>" tarifi firin
+   sicakligi dakika` veya `"<tarif_adi>" recipe oven temperature time`
+2. **En az 2 farkli guvenilir kaynak** dogrulasin (tek kaynak yetersiz):
+   - **TR oncelik:** yemek.com, refikalimutfagi.com, sofra.com.tr,
+     mutfaksirlari.com, hurriyet.com.tr/lezizz, oktay-usta-tarifleri,
+     nefis yemek tarifleri (nefisyemektarifleri.com), yemekmasasi.com
+   - **Uluslararasi (EN):** seriouseats.com, nytcooking, bbc.co.uk/food,
+     foodnetwork.com, bonappetit.com, allrecipes.com, kingarthurbaking.com,
+     epicurious.com
+   - **Tarif tipine ozel:** kingarthurbaking (firin/hamur), seriouseats
+     (et/teknik), bbc food (Britanya/orta klasik), nytcooking (genel)
+3. **2 kaynagin sicaklik+sure ortalamasi** veya kesismesi → emin standart
+   (Katman 1 yaz)
+4. **2 kaynak farkli/celiskili** → tahmini aralik + gorsel sinyal
+   (Katman 2 yaz)
+5. **Hicbir kaynak yoksa veya tarif cok niche** → SAYI YAZMA, sadece
+   gorsel sinyal (Katman 3)
+
+**Kaynak gizliligi:**
+JSON'a kaynak bilgisi YAZMA (cikti sadece slug + steps). Arastirmanin
+kendisi senin self-disciplinen, kullaniciya gorunmez. Ama kaynak
+dogrulamasi yapmadigin step icin kesin sayi yazma.
+
+**❌ Guvenilmez kaynaklar (kullanma):**
+- Pinterest random pin (cogu zaman uydurulmus)
+- Instagram tarif paylasimlari (kalite degisken)
+- Forum/blog yorumlari (tek kullanici denedi)
+- AI-generated tarif siteleri (sayilar uydurulmus)
+- Wikipedia genel tarif aciklamasi (spesifik degil)
+
+**✅ Ek pragmatik:**
+- Klasik Turk yemegi → `yemek.com` veya `nefisyemektarifleri.com` ara
+- Hamur isi/firin → `kingarthurbaking.com` (en titiz teknik)
+- Et/teknik → `seriouseats.com` (J. Kenji López-Alt sistematik)
+- Modern yemek → `nytcooking.com` (test mutfagi denenmis)
+
 **Her step somut + bilgi yoğun olmalı:**
 - ✅ "Önceden 220°C ısıtılmış fırında 17-19 dakika kenarlar altın olana kadar pişirin."
 - ❌ "Pideyi 18 dakika pişirin." (sıcaklık eksik)
@@ -1376,11 +1419,14 @@ Type ne olursa olsun, **her adım somut + bilgi yoğun + ölçü + zaman + yönt
 - [ ] JSON valid (`jq . docs/step-revisions-batch-N.json`).
 - [ ] Her item'da `slug` var + CSV'deki bir slug'a eşleşiyor.
 - [ ] Her item'da `steps` array, **type bazli min**: ICECEK 3+, KOKTEYL/APERATIF 4+, diger 5+ (Kerem direktifi).
+- [ ] **Internet arastirmasi yapildi** her tarif icin (en az 2 guvenilir
+      kaynak: yemek.com / nefisyemektarifleri / seriouseats / nytcooking /
+      bbc food / kingarthurbaking). Ezbere yazma.
 - [ ] Hassas degerler (firin sicaklik/pisirme dakika/dinlendirme):
       **uc katmanli yaklasim** (§14.4):
-      1. Emin standart deger → kesin sayi/aralik OK (pide 240-260°C 8-10 dk)
-      2. Kiyas yapabiliyorsan → tahmini aralik + gorsel sinyal kombinasyonu
-      3. Emin degilsen → SAYI YAZMA, sadece gorsel sinyal ("altin renk olana kadar")
+      1. Emin standart deger (2+ kaynak dogruladi) → kesin sayi/aralik OK
+      2. Kaynaklar farkli/celiskili → tahmini aralik + gorsel sinyal
+      3. Kaynak yok/niche → SAYI YAZMA, sadece gorsel sinyal
       Uydurma sayi yemegi yakar/cig birakir. Gorsel sinyal zayiflik degil GUC.
 - [ ] stepNumber ardışık 1..N (eksik veya tekrar yok).
 - [ ] Em-dash grep: 0 eşleşme.

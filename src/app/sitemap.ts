@@ -38,7 +38,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [recipes, categories, cuisineCodes, tags, blogPosts] = await Promise.all([
     prisma.recipe.findMany({
       where: { status: "PUBLISHED" },
-      select: { slug: true, updatedAt: true, isFeatured: true },
+      select: {
+        slug: true,
+        updatedAt: true,
+        isFeatured: true,
+        viewCount: true,
+        imageUrl: true,
+        translations: true,
+      },
       orderBy: { updatedAt: "desc" },
     }),
     prisma.category.findMany({
@@ -89,16 +96,49 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/yasal/iletisim-aydinlatma`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
   ];
 
-  // Recipe priority tuning:
-  //   - isFeatured=true tarifler editor-curated, Google için yüksek
-  //     sinyal. priority 0.9 (normal 0.8), changeFrequency daily
-  //     (seasonal feature shifts, review/bookmark ivmeleri).
-  //   - Normal tarif 0.8 / weekly (updatedAt tabanlı freshness).
+  // Recipe priority v2 (oturum 13 sonrasi tuning):
+  // Cok-sinyalli composite formul. Base 0.7, kalite/populariteye gore
+  // adim adim artar, max 1.0. Google priority kesin emir degil ama
+  // crawl bütcesinde guclu sinyal; oncelikli olanlari en uste ittirir.
+  //
+  //   Base                                       0.70
+  //   + isFeatured                               +0.10 (editor curated)
+  //   + imageUrl var (editor gorseli)            +0.05
+  //   + Mod B tam (EN + DE ingredients dolu)     +0.05 (cok dilli icerik)
+  //   + viewCount >= 100                         +0.05 (popularite)
+  //   + viewCount >= 500                         +0.10 (yuksek populariter)
+  //   ───────────────────────────────────────────
+  //   Cap                                        1.00
+  //
+  // changeFrequency: isFeatured tariflerde daily (seasonal+review ivmesi),
+  // diger tarif normal weekly.
+  function recipePriority(r: {
+    isFeatured: boolean;
+    viewCount: number;
+    imageUrl: string | null;
+    translations: unknown;
+  }): number {
+    let p = 0.7;
+    if (r.isFeatured) p += 0.1;
+    if (r.imageUrl) p += 0.05;
+    // Mod B tam check, translations.en.ingredients + de.ingredients
+    // ikisi de array length > 0 ise tam cevirili.
+    const t = r.translations as
+      | { en?: { ingredients?: unknown[] }; de?: { ingredients?: unknown[] } }
+      | null;
+    const enIng = Array.isArray(t?.en?.ingredients) ? t.en.ingredients.length : 0;
+    const deIng = Array.isArray(t?.de?.ingredients) ? t.de.ingredients.length : 0;
+    if (enIng > 0 && deIng > 0) p += 0.05;
+    if (r.viewCount >= 500) p += 0.1;
+    else if (r.viewCount >= 100) p += 0.05;
+    return Math.min(p, 1.0);
+  }
+
   const recipePages: MetadataRoute.Sitemap = recipes.map((r) => ({
     url: `${SITE_URL}/tarif/${r.slug}`,
     lastModified: r.updatedAt,
     changeFrequency: r.isFeatured ? "daily" : "weekly",
-    priority: r.isFeatured ? 0.9 : 0.8,
+    priority: recipePriority(r),
   }));
 
   // Use the path-based landing (`/tarifler/[kategori]`) instead of the

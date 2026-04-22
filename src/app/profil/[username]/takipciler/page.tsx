@@ -30,6 +30,10 @@ export default async function FollowersPage({ params }: PageProps) {
   const user = await getUserByUsername(username, session?.user?.id);
   if (!user) notFound();
 
+  // Gizlilik: showFollowCounts=false ise sadece owner gorebilir
+  const isOwner = session?.user?.id === user.id;
+  if (!isOwner && !user.showFollowCounts) notFound();
+
   const [followers, viewerFollowingIds, t, tCount] = await Promise.all([
     getFollowersList(user.id, 100),
     session?.user?.id

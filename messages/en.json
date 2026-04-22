@@ -1134,6 +1134,18 @@
       "savedFeedback": "Preferences saved",
       "errorFeedback": "Could not save preferences"
     },
+    "privacy": {
+      "heading": "Profile privacy",
+      "subtitle": "You choose what others see on your profile. If you turn something off it stays visible to you but is hidden from visitors.",
+      "chefScoreLabel": "Show Chef Score",
+      "chefScoreDescription": "Profile chip and leaderboard listing. If off you also drop out of the leaderboard.",
+      "activityLabel": "Show recent activity",
+      "activityDescription": "Your latest variations, reviews and collections appear as a timeline on your profile.",
+      "followCountsLabel": "Show follower and following counts",
+      "followCountsDescription": "Follower/following counts and lists are visible to visitors. If off only you see them.",
+      "savedMessage": "Saved",
+      "errorMessage": "Could not save, try again"
+    },
     "profile": {
       "emailLabel": "Email",
       "emailVerified": "Verified",

@@ -8,6 +8,7 @@ import { GoogleLinkCard } from "@/components/profile/GoogleLinkCard";
 import { PasswordChangeCard } from "@/components/profile/PasswordChangeCard";
 import { LanguagePreferenceCard } from "@/components/profile/LanguagePreferenceCard";
 import { PreferencesCard } from "@/components/profile/PreferencesCard";
+import { PrivacyCard } from "@/components/profile/PrivacyCard";
 import { DeleteAccountCard } from "@/components/profile/DeleteAccountCard";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -44,6 +45,9 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
       favoriteTags: true,
       allergenAvoidances: true,
       favoriteCuisines: true,
+      showChefScore: true,
+      showActivity: true,
+      showFollowCounts: true,
       accounts: {
         where: { provider: "google" },
         select: { id: true },
@@ -100,6 +104,12 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
           initialFavoriteTags={user.favoriteTags}
           initialAllergenAvoidances={user.allergenAvoidances}
           initialFavoriteCuisines={user.favoriteCuisines}
+        />
+
+        <PrivacyCard
+          initialShowChefScore={user.showChefScore}
+          initialShowActivity={user.showActivity}
+          initialShowFollowCounts={user.showFollowCounts}
         />
 
         <DeleteAccountCard

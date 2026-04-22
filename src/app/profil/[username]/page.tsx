@@ -130,28 +130,34 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
           {user.bio && <p className="mt-2 text-sm text-text">{user.bio}</p>}
           <div className="mt-3 flex flex-wrap items-center gap-4 text-sm text-text-muted">
             <span>{t("variationsCount", { count: user._count.variations })}</span>
-            <Link
-              href={`/profil/${user.username}/takipciler`}
-              className="transition-colors hover:text-primary"
-            >
-              {t("followersCount", { count: followCounts.followers })}
-            </Link>
-            <Link
-              href={`/profil/${user.username}/takip`}
-              className="transition-colors hover:text-primary"
-            >
-              {t("followingCount", { count: followCounts.following })}
-            </Link>
+            {(isOwner || user.showFollowCounts) && (
+              <>
+                <Link
+                  href={`/profil/${user.username}/takipciler`}
+                  className="transition-colors hover:text-primary"
+                >
+                  {t("followersCount", { count: followCounts.followers })}
+                </Link>
+                <Link
+                  href={`/profil/${user.username}/takip`}
+                  className="transition-colors hover:text-primary"
+                >
+                  {t("followingCount", { count: followCounts.following })}
+                </Link>
+              </>
+            )}
             {badges.length > 0 && (
               <span>{t("badgesCount", { count: badges.length })}</span>
             )}
-            <Link
-              href="/leaderboard"
-              className="transition-colors hover:text-primary"
-              title={t("scoreTooltip")}
-            >
-              {t("scoreCount", { count: userScore.score })}
-            </Link>
+            {(isOwner || user.showChefScore) && (
+              <Link
+                href="/leaderboard"
+                className="transition-colors hover:text-primary"
+                title={t("scoreTooltip")}
+              >
+                {t("scoreCount", { count: userScore.score })}
+              </Link>
+            )}
             {isOwner && (
               <span>{t("bookmarksCount", { count: user._count.bookmarks })}</span>
             )}
@@ -200,11 +206,14 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
 
       {/* Son aktivite timeline, son 8 event (varyasyon + yorum + public
           koleksiyon) chronological. Yeni kullanıcıda hiç event olmazsa
-          section render edilmez. */}
-      <ProfileActivity
-        items={profileStats.recentActivity}
-        formatRelative={(d) => formatRelativeDate(d, tDate)}
-      />
+          section render edilmez. Owner gizlilik tercihinden bagimsiz her
+          zaman gorur, baskalarina showActivity=false ise gizli. */}
+      {(isOwner || user.showActivity) && (
+        <ProfileActivity
+          items={profileStats.recentActivity}
+          formatRelative={(d) => formatRelativeDate(d, tDate)}
+        />
+      )}
 
       {/* Collections */}
       {(collections.length > 0 || isOwner) && (

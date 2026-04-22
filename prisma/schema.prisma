@@ -181,6 +181,15 @@ model User {
   favoriteTags       String[]    @default([])
   allergenAvoidances Allergen[]  @default([])
   favoriteCuisines   String[]    @default([])
+  // Profil gizlilik tercihleri, /ayarlar/gizlilik'ten kullanıcı seçer.
+  // Default: hepsi açık (mevcut davranışla geriye uyumlu). Owner kendi
+  // profilinde her zaman görür, başkalarına görünüm gizlilik ayarına bağlı.
+  //   - showChefScore: false ise profil chip + leaderboard'da gizli (opt-out)
+  //   - showActivity: false ise "Son aktiviteler" timeline gizli
+  //   - showFollowCounts: false ise takipçi/takip sayıları + listeler gizli
+  showChefScore      Boolean     @default(true)
+  showActivity       Boolean     @default(true)
+  showFollowCounts   Boolean     @default(true)
   createdAt        DateTime  @default(now())
   updatedAt        DateTime  @updatedAt
 

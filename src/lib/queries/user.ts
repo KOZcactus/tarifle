@@ -14,6 +14,12 @@ export async function getUserByUsername(username: string, viewerId?: string | nu
       // Sensitive, only return to owner; we filter below before yielding
       email: true,
       emailVerified: true,
+      // Profil gizlilik tercihleri (oturum 13). Profil sayfası ve leaderboard
+      // bu üç bayrağı kullanarak conditional render yapar; owner kendisi her
+      // zaman görür, başkalarına bayrak değerine bağlı.
+      showChefScore: true,
+      showActivity: true,
+      showFollowCounts: true,
       createdAt: true,
       _count: {
         select: {

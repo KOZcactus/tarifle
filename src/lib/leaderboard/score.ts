@@ -149,6 +149,8 @@ async function _computeLeaderboard(
         LEFT JOIN user_editor_badges ueb ON ueb.user_id = u.id
         WHERE u."deletedAt" IS NULL
           AND u."suspendedAt" IS NULL
+          -- Privacy: showChefScore=false opt-out, leaderboard listesinden cikar
+          AND u."showChefScore" = true
       )
     SELECT "userId", username, name, "avatarUrl",
            "variationCount", "likeCount", "photoCount",

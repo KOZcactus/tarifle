@@ -66,9 +66,19 @@ function formatMinutesI18n(minutes: number, t: CardT): string {
   return t("hoursMinutes", { h: hours, m: remaining });
 }
 
+interface InitialPrefs {
+  cuisine: string;
+  dietSlug: string;
+  personalized: boolean;
+}
+
 interface AiAssistantFormProps {
   /** Pre-fetched unique ingredient names for autocomplete. */
   knownIngredients?: string[];
+  /** Logged-in user'in /ayarlar tercihlerinden turetilen on-doldurma
+   *  (Personalization tur 5). Anonymous user veya tercih yoksa
+   *  cuisine="tr", dietSlug="", personalized=false. */
+  initialPrefs?: InitialPrefs;
 }
 
 /**
@@ -86,7 +96,12 @@ function trNormalize(s: string): string {
     .replaceAll("ç", "c");
 }
 
-export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps) {
+const DEFAULT_PREFS: InitialPrefs = { cuisine: "tr", dietSlug: "", personalized: false };
+
+export function AiAssistantForm({
+  knownIngredients = [],
+  initialPrefs = DEFAULT_PREFS,
+}: AiAssistantFormProps) {
   const t = useTranslations("aiAssistant");
   const tForm = useTranslations("aiAssistant.form");
   const tTime = useTranslations("aiAssistant.form.timeOptions");
@@ -103,8 +118,8 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
   const [type, setType] = useState<string>("");
   const [difficulty, setDifficulty] = useState<string>("");
   const [maxMinutes, setMaxMinutes] = useState<string>("");
-  const [cuisine, setCuisine] = useState<string>("tr");
-  const [dietSlug, setDietSlug] = useState<string>("");
+  const [cuisine, setCuisine] = useState<string>(initialPrefs.cuisine);
+  const [dietSlug, setDietSlug] = useState<string>(initialPrefs.dietSlug);
   const [assumePantry, setAssumePantry] = useState(true);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [selectedSuggestionIdx, setSelectedSuggestionIdx] = useState(-1);
@@ -346,6 +361,15 @@ export function AiAssistantForm({ knownIngredients = [] }: AiAssistantFormProps)
 
   return (
     <div className="space-y-8">
+      {/* Personalization tur 5 (oturum 13): user tercihlerine gore on-doldurma
+          chip'i. Sadece logged-in user'da ve gercekten tercih varsa gorunur. */}
+      {initialPrefs.personalized && (
+        <div className="flex items-start gap-2 rounded-lg border border-accent-blue/30 bg-accent-blue/5 px-3 py-2 text-xs text-accent-blue">
+          <span aria-hidden="true">✨</span>
+          <span className="flex-1">{tForm("personalizedHint")}</span>
+        </div>
+      )}
+
       {/* Recent searches */}
       {recentSearches.length > 0 && !result && (
         <div className="rounded-lg border border-dashed border-border bg-bg-card/50 p-3">

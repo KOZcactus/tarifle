@@ -18,8 +18,8 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 ### Codex Mod E (step kalitesi sistematik revize)
 
 Brief `docs/CODEX_BATCH_BRIEF.md` §14 (B6+ ince ayar oturum 14'te
-tamamlandı). Pipeline oturdu, B1-B13 apply (~%45 catalog). Sırada:
-- [ ] **Codex teslim B14-B30** (17 batch, ~1700 tarif kalan)
+tamamlandı). Pipeline oturdu, B1-B14 apply (~%48 catalog). Sırada:
+- [ ] **Codex teslim B15-B30** (16 batch, ~1600 tarif kalan)
 - [ ] Apply akışı: dry-run → TR karakter scan → spot check → dev+prod
 - [ ] Fix script gerekirse tek-seferlik auto-clean (B8 v3 + B12 v3 pattern)
 - [ ] Cache invalidate: apply sonrası Vercel deploy otomatik (unstable_cache
@@ -133,6 +133,16 @@ Oturum 14'te 4 → 25 yazı eklendi, 11/7/7 denge. Sonraki aday konular:
 
 ---
 
+## 🔎 Audit notları (küçük, post-launch)
+
+- [ ] **Near-duplicate slug çifti:** `sakizli-badem-sutlac-cesme-usulu`
+      (MEDIUM, 218 kcal, 5 ingredient, isFeatured) vs
+      `sakizli-bademli-sutlac-cesme-usulu` (EASY, 228 kcal, 4 ingredient).
+      Farklı tarifler ama isim ayrımı zayıf. Duplicate merge run'ına
+      düşmemiş (içerik ayrı). Open: birleştirilsin mi yoksa isim netleş-
+      tirilsin mi (ör. "hızlı" / "klasik" varyant etiketi). Oturum 15
+      B14 apply sonrası spot bulundu.
+
 ## 💡 Fikir havuzu (öncelikli değil, değerlendirilecek)
 
 - Ses tanıma ile pişirme modu ("sıradaki adım", "tekrarla")
@@ -146,6 +156,17 @@ Oturum 14'te 4 → 25 yazı eklendi, 11/7/7 denge. Sonraki aday konular:
 - Çoklu kullanıcı menü planlayıcı (aile üyeleri diyet kısıtı aggregate)
 - Tarif karşılaştırma sayfası (`/karsilastir?a=slug1&b=slug2`)
 - Recipe remix feature (otomatik vegan/glutensiz/hızlı versiyon)
+
+---
+
+## 🟢 Oturum 15 erken (silinmeden önce referans)
+
+- Tailwind 4 `dark:` variant, `[data-theme]` attribute'una bağlandı
+  (commit `c409342`). OS dark modundaki ziyaretçilerde light toggle
+  sonrası kart bg'lerinin lacivert kalıp içeriği gizlemesi çözüldü.
+- Mod E B14 apply (commit `648276a`), 100 tarif + 492 step, dev+prod.
+  TR char 1934, ASCII trap 0, "ya da" 15 (trend azalma). Mod E
+  toplam B1-B14 = 1400 tarif (~%48 catalog).
 
 ---
 

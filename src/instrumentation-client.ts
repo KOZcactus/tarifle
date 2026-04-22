@@ -6,7 +6,24 @@ if (dsn) {
   Sentry.init({
     dsn,
     tracesSampleRate: process.env.NODE_ENV === "production" ? 0.1 : 1.0,
-    replaysOnErrorSampleRate: 1.0,
+    // Sentry Replay (oturum 13 aktivasyon): hata aninda kullanici session
+    // replay'i kaydet. Onceki konfigurasyonda sample rate set edilmis ama
+    // integration eklenmemis idi (Sentry v8+ artik manuel integration
+    // gerektiriyor). Free tier 50 replay/ay; replaysOnErrorSampleRate 0.5
+    // = hata olan session'larin yarisi replay, quota korunur.
+    //
+    // PII koruma (KVKK + email + sifre alanlari):
+    //   - maskAllText: true   → tum text gizli (** ile)
+    //   - maskAllInputs: true → input field'lari da gizli
+    //   - blockAllMedia: true → resim/video kaydedilmez (storage tasarruf)
+    integrations: [
+      Sentry.replayIntegration({
+        maskAllText: true,
+        maskAllInputs: true,
+        blockAllMedia: true,
+      }),
+    ],
+    replaysOnErrorSampleRate: 0.5,
     replaysSessionSampleRate: 0,
     // Session 11 noise vs signal tune. Sentry Issues dashboard'da
     // Tarifle prod'unda %70+ event "noise" kategorisinde (tarayıcı

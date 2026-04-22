@@ -422,6 +422,133 @@ export async function updateRecipeAction(
   return { success: true };
 }
 
+// ─── Recipe Content Edit (ingredient + step + tipNote + serv) ──────────
+
+const ingredientInputSchema = z.object({
+  sortOrder: z.number().int().positive(),
+  name: z.string().min(1).max(200),
+  amount: z.string().min(1).max(50),
+  unit: z.string().max(50).optional().nullable(),
+});
+
+const stepInputSchema = z.object({
+  stepNumber: z.number().int().positive(),
+  instruction: z.string().min(1).max(2000),
+  timerSeconds: z.number().int().nonnegative().optional().nullable(),
+});
+
+const updateRecipeContentSchema = z.object({
+  recipeId: z.string().min(1),
+  ingredients: z.array(ingredientInputSchema).min(1).max(40),
+  steps: z.array(stepInputSchema).min(1).max(15),
+  tipNote: z.string().max(500).optional().nullable(),
+  servingSuggestion: z.string().max(500).optional().nullable(),
+});
+
+function checkEmDash(text: string | null | undefined): boolean {
+  if (!text) return false;
+  return text.includes("\u2014") || text.includes("\u2013");
+}
+
+/**
+ * Admin tarif icerik editoru: ingredients + steps + tipNote + servingSuggestion.
+ * Pide vakasi dersi: manuel DB patch + cache invalidate yerine bu sayfa.
+ * Otomatik revalidate + tag invalidate + moderationAction audit.
+ */
+export async function updateRecipeContentAction(
+  input: unknown,
+): Promise<{ success: boolean; error?: string }> {
+  const moderatorId = await requireAdmin();
+
+  const parsed = updateRecipeContentSchema.safeParse(input);
+  if (!parsed.success) {
+    return {
+      success: false,
+      error: parsed.error.issues[0]?.message ?? "Geçersiz form.",
+    };
+  }
+  const { recipeId, ingredients, steps, tipNote, servingSuggestion } = parsed.data;
+
+  // Em-dash guard (AGENTS.md kurali)
+  for (const ing of ingredients) {
+    if (checkEmDash(ing.name) || checkEmDash(ing.amount) || checkEmDash(ing.unit)) {
+      return { success: false, error: `Em-dash yasak (malzeme: ${ing.name}).` };
+    }
+  }
+  for (const s of steps) {
+    if (checkEmDash(s.instruction)) {
+      return { success: false, error: `Em-dash yasak (adım ${s.stepNumber}).` };
+    }
+  }
+  if (checkEmDash(tipNote) || checkEmDash(servingSuggestion)) {
+    return { success: false, error: "Em-dash yasak (not/servis)." };
+  }
+
+  // stepNumber ardisiklik
+  for (let i = 0; i < steps.length; i++) {
+    if (steps[i]!.stepNumber !== i + 1) {
+      return { success: false, error: `Adım sırası bozuk (#${i + 1}).` };
+    }
+  }
+  // sortOrder ardisiklik
+  for (let i = 0; i < ingredients.length; i++) {
+    if (ingredients[i]!.sortOrder !== i + 1) {
+      return { success: false, error: `Malzeme sırası bozuk (#${i + 1}).` };
+    }
+  }
+
+  const current = await prisma.recipe.findUnique({
+    where: { id: recipeId },
+    select: { slug: true },
+  });
+  if (!current) return { success: false, error: "Tarif bulunamadı." };
+
+  await prisma.$transaction([
+    prisma.recipe.update({
+      where: { id: recipeId },
+      data: {
+        tipNote: tipNote ?? null,
+        servingSuggestion: servingSuggestion ?? null,
+      },
+    }),
+    prisma.recipeIngredient.deleteMany({ where: { recipeId } }),
+    prisma.recipeIngredient.createMany({
+      data: ingredients.map((i) => ({
+        recipeId,
+        sortOrder: i.sortOrder,
+        name: i.name,
+        amount: i.amount,
+        unit: i.unit ?? null,
+      })),
+    }),
+    prisma.recipeStep.deleteMany({ where: { recipeId } }),
+    prisma.recipeStep.createMany({
+      data: steps.map((s) => ({
+        recipeId,
+        stepNumber: s.stepNumber,
+        instruction: s.instruction,
+        timerSeconds: s.timerSeconds ?? null,
+      })),
+    }),
+    prisma.moderationAction.create({
+      data: {
+        moderatorId,
+        targetType: "recipe",
+        targetId: recipeId,
+        action: "EDIT",
+        reason: `content: ${ingredients.length} malzeme, ${steps.length} adım`.slice(0, 500),
+      },
+    }),
+  ]);
+
+  revalidatePath("/admin");
+  revalidatePath(`/admin/tarifler/${current.slug}`);
+  revalidatePath(`/admin/tarifler/${current.slug}/duzenle`);
+  revalidatePath(`/tarif/${current.slug}`);
+  updateTag("recipes");
+  return { success: true };
+}
+
 const updateUserSchema = z.object({
   userId: z.string().min(1),
   patch: z

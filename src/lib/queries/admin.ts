@@ -1291,3 +1291,29 @@ export const getMostSavedRecipes = unstable_cache(
   ["most-saved-recipes-v1"],
   { revalidate: 600, tags: ["bookmarks", "recipes"] },
 );
+
+/**
+ * Admin tarif icerik duzenleme icin minimal fetch: ingredient + step +
+ * tipNote + servingSuggestion. Cache edilmez (admin, her acista taze).
+ */
+export async function getRecipeForAdminEdit(slug: string) {
+  return prisma.recipe.findUnique({
+    where: { slug },
+    select: {
+      id: true,
+      slug: true,
+      title: true,
+      emoji: true,
+      tipNote: true,
+      servingSuggestion: true,
+      ingredients: {
+        orderBy: { sortOrder: "asc" },
+        select: { sortOrder: true, name: true, amount: true, unit: true },
+      },
+      steps: {
+        orderBy: { stepNumber: "asc" },
+        select: { stepNumber: true, instruction: true, timerSeconds: true },
+      },
+    },
+  });
+}

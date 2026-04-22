@@ -109,14 +109,22 @@ export default async function AdminRecipeDetailPage({ params }: PageProps) {
 
   return (
     <div className="space-y-8">
-      {/* Breadcrumb */}
-      <nav className="text-xs text-text-muted" aria-label="breadcrumb">
-        <Link href="/admin/tarifler" className="hover:text-primary">
-          {tLayout("recipes")}
+      {/* Breadcrumb + İçerik Düzenle */}
+      <div className="flex items-center justify-between gap-3">
+        <nav className="text-xs text-text-muted" aria-label="breadcrumb">
+          <Link href="/admin/tarifler" className="hover:text-primary">
+            {tLayout("recipes")}
+          </Link>
+          <span className="mx-1.5">›</span>
+          <span className="text-text">{recipe.slug}</span>
+        </nav>
+        <Link
+          href={`/admin/tarifler/${recipe.slug}/duzenle`}
+          className="rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-white hover:bg-primary-hover"
+        >
+          ✎ İçeriği Düzenle
         </Link>
-        <span className="mx-1.5">›</span>
-        <span className="text-text">{recipe.slug}</span>
-      </nav>
+      </div>
 
       {/* Header */}
       <header className="rounded-xl border border-border bg-bg-card p-5">

@@ -1260,26 +1260,61 @@ dokunmaz.
   "limonlu suya bırakın")
 - **Birleştirme:** sıra + bağlam ("önce A, sonra B üzerine")
 
-**⚠️ DOĞRULUK ÖNCELİĞİ — uydurma kesin sayı yerine aralık ver:**
-Tariflerde fırın sıcaklığı, pişirme süresi, dinlendirme dakikası gibi
-hassas değerlerde **emin değilsen aralık tercih et**. Yanlış kesin sayı
-("18 dakika" diyince kullanıcı 18'inci dakikada açar, hala çiğ olabilir)
-zarar verir; aralık ("17-19 dakika") doğal esneklik sağlar + güvenilirlik
-artar.
+**🚨 DOĞRULUK MUTLAK ÖNCELIK (KRITIK GUVENLIK KURALI)**
 
-- ✅ "180-200°C ısıtılmış fırında 25-30 dakika pişirin."
-- ✅ "Hamuru 25-35 dakika dinlendirin."
-- ✅ "Soğanı 8-10 dakika orta ateşte kavurun."
-- ❌ "180°C'de 27 dakika pişirin." (uydurulmuş kesin sayı)
-- ✅ "180°C'de 25-30 dakika pişirin." (aralık + doğal esneklik)
+Yanlış sıcaklık/süre yemeğin **yanmasına veya çiğ kalmasına** sebep
+olur. Kullanıcı için en kötü deneyim: tarifi takip ediyor, yemek
+ziyan oluyor. Bu durumu kesinlikle yaratma.
 
-**Aralık verme kuralları:**
-- Fırın sıcaklığı: ±10-20°C aralık (180-200°C, 200-220°C)
-- Pişirme süresi: ±2-5 dakika aralık (15-18, 25-30 dk)
-- Dinlendirme: ±5-10 dakika aralık (10-15, 25-35 dk)
-- Klasik tarifler için kesin sayı OK (Türk kahvesi 3 dakika, makarna paketinde
-  yazan süre)
-- timerSeconds alanı için aralığın **ortasını** ver (17-19 dk = 1080 sn ≈ 18 dk)
+**Üç katmanlı yaklaşım (sırayla dene):**
+
+**1. EMIN OLDUGUN STANDART DEGER → kesin sayi/aralik kullan**
+
+Klasik tariflerin **bilinen standart** değerleri vardır, bunları doğru
+ver:
+- ✅ Türk pide: 240-260°C 8-10 dakika (taş fırın yüksek)
+- ✅ Lahmacun: 250-280°C 5-7 dakika
+- ✅ Börek: 180-200°C 35-40 dakika
+- ✅ Kek: 170-180°C 30-35 dakika (orta raf)
+- ✅ Kurabiye: 160-170°C 12-15 dakika
+- ✅ Tavuk göğsü tava: orta-yüksek ateş 6-7 dk + 6-7 dk
+- ✅ Mercimek çorbası: 25-30 dakika kısık ateşte
+
+Bu standart bilgi ise **kesin yaz** (sıcaklık aralığı + dakika aralığı OK).
+
+**2. STANDART DEGIL AMA KIYAS YAPABILIRSEN → benzer tariflerden tahmin yap**
+
+Tarif standart değil ama benzer kategorideki standart değerleri biliyorsan
+(fırın yemeği genelde 180-200°C, et güveç 150-160°C uzun), o aralığı
+kullan. Ama **TAHMINI** olduğunu görsel sinyal ile destekle.
+
+- ✅ "180°C fırında 30-35 dakika, **üzeri altın renk olana kadar** pişirin."
+- ✅ "Kısık ateşte 25-30 dakika, **mercimekler dağılana kadar** kaynatın."
+
+**3. EMIN DEGILSEN → SAYI YAZMA, GÖRSEL/DOKU SINYALI VER**
+
+Hiç bilmediğin/emin olmadığın bir tarif ise **uydurma sayı koyma**.
+Yerine kullanıcıya görsel ipucu ver:
+
+- ✅ "Üzeri altın renk olana kadar pişirin."
+- ✅ "Kenarları kabarıp ortası katılaşana kadar fırınlayın."
+- ✅ "Soğanlar şeffaflaşana kadar kavurun."
+- ✅ "Çatal batırıldığında temiz çıkana kadar pişirin."
+- ✅ "Hamur iki katına çıkana kadar mayalandırın."
+- ✅ "Sebzeler yumuşayana kadar."
+- ❌ "180°C'de 27 dakika pişirin." (uydurma kesin)
+- ❌ "200°C'de 23-26 dakika pişirin." (uydurma aralık, daha kötü çünkü
+  güvenilir görünüyor)
+
+**Görsel sinyal kullanımı zayıflık değil GÜÇ.** Profesyonel tarif
+kitapları da kullanır ("until golden brown", "until tender"). Süre
+tahmin/aralık + görsel sinyal kombinasyonu ideal.
+
+**timerSeconds alanı:**
+- Standart süre verdiysen aralığın ORTASI (17-19 dk = 1080 sn)
+- Görsel sinyal verdiysen + süre yoksa **timerSeconds boş bırak** (UI
+  zamanlayıcı göstermez, kullanıcı görsel takip eder)
+- Tahmini süre verdiysen + görsel sinyal varsa orta süreyi yaz
 
 **Ingredient kullanımı:**
 - CSV'deki `ingredients_tr` listesindeki **TÜM malzemeleri** step'lerde
@@ -1341,9 +1376,12 @@ Type ne olursa olsun, **her adım somut + bilgi yoğun + ölçü + zaman + yönt
 - [ ] JSON valid (`jq . docs/step-revisions-batch-N.json`).
 - [ ] Her item'da `slug` var + CSV'deki bir slug'a eşleşiyor.
 - [ ] Her item'da `steps` array, **type bazli min**: ICECEK 3+, KOKTEYL/APERATIF 4+, diger 5+ (Kerem direktifi).
-- [ ] Hassas degerler (firin sicaklik/pisirme dakika/dinlendirme): emin
-      degilsen **aralik** ver ("17-19 dk", "180-200°C") — uydurma kesin
-      sayi yazma. timerSeconds aralik ortasi.
+- [ ] Hassas degerler (firin sicaklik/pisirme dakika/dinlendirme):
+      **uc katmanli yaklasim** (§14.4):
+      1. Emin standart deger → kesin sayi/aralik OK (pide 240-260°C 8-10 dk)
+      2. Kiyas yapabiliyorsan → tahmini aralik + gorsel sinyal kombinasyonu
+      3. Emin degilsen → SAYI YAZMA, sadece gorsel sinyal ("altin renk olana kadar")
+      Uydurma sayi yemegi yakar/cig birakir. Gorsel sinyal zayiflik degil GUC.
 - [ ] stepNumber ardışık 1..N (eksik veya tekrar yok).
 - [ ] Em-dash grep: 0 eşleşme.
 - [ ] Her step 5-25 kelime arası.

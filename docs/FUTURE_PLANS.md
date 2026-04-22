@@ -15,73 +15,50 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
-### Faz 1 Leaderboard kalan parçalar (oturum 12'de altyapı canlı, sonraki iterasyon)
+### Codex Mod E (step kalitesi sistematik revize), teslim bekleniyor
 
-Tamamlananlar (oturum 12, commit `88da36b`):
-- ✅ Prisma migration `20260422030000_add_faz1_badge_keys` (7 yeni BadgeKey)
-- ✅ `src/lib/leaderboard/score.ts` skor util (raw SQL 5 CTE, 3 pencere)
-- ✅ `src/app/leaderboard/page.tsx` SSR route (haftalık + aylık + all-time)
-- ✅ Navbar "Liderlik" link
-- ✅ Badge config (`src/lib/badges/config.ts`) 7 yeni metadata
+Brief `docs/CODEX_BATCH_BRIEF.md` §14 (oturum 13'te kuruldu). Audit %94
+tarif sorunlu (catalog 2772, 2585+ flag), Mod A boilerplate izi. Sırada:
+- [ ] Codex teslim `docs/step-revisions-batch-1.json` (top 100 step kalitesi)
+- [ ] Apply: `scripts/apply-step-revisions.ts --batch 1 --apply` (dev+prod)
+- [ ] Sırayla B2-B26 (~26 batch toplam)
+- [ ] Cache invalidate: `/api/admin/revalidate?slug=X` veya 30dk TTL bekle
 
-Kalan:
-- [ ] Profil sayfasına skor + rozet satırı (`src/app/profil/[username]/page.tsx`; `getUserScore` util hazır, ~45dk)
-- [ ] Haftalık cron: pazartesi 06:00 UTC skor + WEEKLY/MONTHLY/ALL_TIME_TOP rozet atama
-- [ ] Paylaşım kartı: "Top 10" Instagram-story boyutlu PNG (opsiyonel, Faz 1.1)
+### Mod D Batch 28 son (catalog tükendi), yeni batch için catalog büyümesi gerek
 
-### Codex Mod C (Landing SEO copy), teslim bekleniyor
+- [ ] Mod A Batch 30+ ile catalog 2900+'a çıkarsa Mod D Batch 29 mümkün
+- [ ] Veya Mod D pipeline'ı kapat (B1-B28 = ~%50 dokunma yeterli)
 
-Brief `docs/CODEX_BATCH_BRIEF.md` §12. Beklenen:
-- [ ] Codex teslim `docs/seo-copy-v1.json` (38 item: 17 kategori + 16 mutfak + 5 diyet)
-- [ ] Landing sayfalarına inject kodu (~2 saat)
-- [ ] Article + FAQPage JSON-LD entegrasyonu
+### Hero A/B test sonuçları (1-2 hafta sonra)
 
-### Codex Mod D (Top 200 editoryal revize), CSV hazırlanacak
+- [ ] Sentry tag `hero.variant: A|B` filter ile per-variant hata oranı
+- [ ] Plausible/PostHog entegrasyonu (conversion attribution)
+- [ ] Variant kazanan kararı, kaybedeni sil
 
-Brief `docs/CODEX_BATCH_BRIEF.md` §13 (oturum 12'de eklendi). Beklenen:
-- [ ] `scripts/gen-editorial-review-csv.ts` yeni script (viewCount desc top 200, 100'er batch)
-- [ ] Codex teslim `docs/editorial-revisions-batch-N.json` (partial update, değişiklik önerileri)
-- [ ] Tarif update pipeline: tipNote + servingSuggestion DB update script
-- [ ] dev/prod apply
+### Vercel Fluid CPU 7-day teyit
 
-### Batch 30 Codex tam teslim
-
-- [ ] Codex partial 30 tarif gönderdi (oturum 12 sonu), full 100'e tamamlaması bekleniyor
-- [ ] Full teslim sonrası: dev seed + audit + CSV üret + Mod B brief
-
-### Vercel Fluid CPU teyit
-
-- [ ] TTL artışı sonrası Dashboard Fluid Active CPU %50+ azalma gözlemi (oturum 13 ilk iş)
+- [ ] TTL artışı sonrası Dashboard Fluid Active CPU %50+ azalma gözlemi
 
 ---
 
-## 📋 Planlı (site açılışı öncesi, oturum 13-22)
+## 📋 Planlı (site açılışı öncesi, oturum 14-22)
 
 ### Teknik + kalite
 
-- [ ] **Top 200 tarif elle kalite kontrol** (Codex Mod D teslim sonrası
-      manuel review + onay)
+- [ ] **Admin "Tarif Düzenle" formu** (oturum 13 dersi: pide manuel fix
+      script + cache invalidate + hot path öğretti). `/admin/tarifler/[slug]/duzenle`
+      ingredient + step + tipNote + serv inline edit, save → otomatik
+      `updateTag("recipes")` + `revalidatePath`.
 - [ ] **Blog tarif kümesi** (P3-16): "30 dakikalık tavuk", "airfryer
       patates", "glutensiz kahvaltı", "karnıyarık yanında ne gider",
       "menü planlamanın 5 kuralı" tarzı 10-15 yazı ilk dalga
-- [ ] **23 lint warning cosmetic temizliği** (unused vars)
-- [ ] **RecipeCard viewCount threshold** (detail page'de yapıldı, card'a da
-      `viewCount < 30` hide)
-- [ ] **Content Quality admin widget v2**: "Eksik tipNote", "Eksik
-      ingredient image" filter
-- [ ] **Performance audit**: Lighthouse 90+ hedefi, gerçek 3G simülasyon
-- [ ] **Playwright E2E**: kritik user flow (arama → tarif detay → bookmark
-      → koleksiyon)
-- [ ] **Sentry replay entegrasyonu** (opsiyonel): kullanıcı hatası
-      anında session replay
+- [ ] **AI Asistan v3 sıkılaştırma**: mevcut pantry + prefs (oturum 13 tur 5),
+      daha derin diyet/zaman/öneri çeşitliliği
 - [ ] **Cache Components (PPR) full refactor** (oturum 12'de denendi,
       `cacheComponents: true` Tarifle'de 30+ `force-dynamic` export ile
       çakıştı, paradigm shift 8-12 saat). Site açılış sonrası dedicated
-      sprint'te. Beklenen kazanç: Fluid Active CPU %40-50 azalma.
-- [ ] **Turbopack prod build** (`next build --turbopack`, Build Minutes
-      (Fluid CPU değil) azaltır, developer-side deploy süresi kısalır).
-      Risk: Sentry source map + @react-pdf outputFileTracingIncludes
-      edge case'leri. Opt-in ileride.
+      sprint'te. Beklenen kazanç: Fluid Active CPU %40-50 azalma + perf
+      score 73 → 90+.
 
 ### İçerik
 
@@ -89,25 +66,18 @@ Brief `docs/CODEX_BATCH_BRIEF.md` §13 (oturum 12'de eklendi). Beklenen:
       açılış öncesi
 - [ ] **Mod B backfill temizlik**: eski batch'lerden kalan translation
       açığı varsa son pass (gen-modb-backfill-csv.ts tarama)
-- [ ] **Ingredient standardı audit**: 1208 ingredient listesinde
-      duplicate/yakın-duplicate temizliği (örn. "tavuk göğsü" vs "Tavuk
-      göğsü" case, "kirmizi biber" vs "kırmızı biber" accent)
 - [ ] **Fotoğraf dalgası**: top 100 tarife Cloudinary'den görsel yükle
       (placeholder emoji değil, gerçek foto)
 
 ### A11y + UX polish
 
-- [ ] **Keyboard navigation** tam audit: hero prompt, recipe card, filter,
-      search (Tab, Enter, Escape tüm flow)
-- [ ] **Color contrast** WCAG AA doğrulama (devtools Lighthouse)
-- [ ] **Reduced motion**: hero animation, carousel transitions `@media
-      (prefers-reduced-motion: reduce)` ile durdur
+- [ ] **Color contrast** WCAG AA detaylı tarama (Lighthouse 100 ulaştı
+      ama spot check eksik)
 - [ ] **Dark mode polish**: varsa kontrol, yoksa karar
 
 ### SEO
 
 - [ ] **Schema.org Video** (ileride Remotion snippet eklenince)
-- [ ] **Sitemap priority v2**: isFeatured + content-quality bazlı
 - [ ] **Google Search Console**: her kategori/mutfak/diyet için CTR
       izlem, düşük CTR'lı başlık revize
 
@@ -144,7 +114,8 @@ Brief `docs/CODEX_BATCH_BRIEF.md` §13 (oturum 12'de eklendi). Beklenen:
 
 - [ ] Sosyal medya otomasyonu: Instagram Reels (Remotion), TikTok snippet,
       Pinterest pin jenerasyonu
-- [ ] Newsletter aktivasyonu (Resend zaten bağlı, haftalık scheduled send)
+- [ ] Newsletter aktivasyonu (Resend zaten bağlı, haftalık scheduled send;
+      oturum 13 ilk test mail başarılı, scheduler kurulumu kalıyor)
 - [ ] Influencer pilot (5 mikro-influencer, affiliate code)
 - [ ] App Store / Play Store hazırlığı (PWA → TWA Android, Capacitor iOS)
 - [ ] Referral programı (kullanıcı davet = 1 ay Pro free)
@@ -153,8 +124,6 @@ Brief `docs/CODEX_BATCH_BRIEF.md` §13 (oturum 12'de eklendi). Beklenen:
 
 ## 💡 Fikir havuzu (öncelikli değil, değerlendirilecek)
 
-- ~~Akıllı alışveriş listesi (supermarket kategori bazlı gruplandırma)~~
-  ✅ Oturum 13'te tamamlandı, 11 supermarket kategorisi rule-based.
 - Ses tanıma ile pişirme modu ("sıradaki adım", "tekrarla")
 - Tarif tercümesi kullanıcı input ile (başka mutfak adaptasyonu)
 - Besin değeri benim diyetime göre hedef skor (düşük-şeker, yüksek-lifli,
@@ -164,3 +133,28 @@ Brief `docs/CODEX_BATCH_BRIEF.md` §13 (oturum 12'de eklendi). Beklenen:
 - Tarif "zorluk seviyesi kişiselleştirme" (yeni başlayan → orta →
   ileri, aynı tarif farklı detayla)
 - Çoklu kullanıcı menü planlayıcı (aile üyeleri diyet kısıtı aggregate)
+
+---
+
+## ✅ Oturum 13'te tamamlananlar (silinmeden önce burada referans)
+
+Hızlı snapshot, detay PROJECT_STATUS.md'de:
+- Faz 1 Leaderboard döngüsü (Profile chip + cron + 7 rozet) ✅
+- Privacy 3 toggle ✅
+- Mod D Batch 1-22 prod ✅ (B23-B28 son, batch 29 catalog yetmez)
+- Mod C inject 38 item ✅
+- Personalization tur 4 + tur 5 ✅
+- WCAG 96→100 ✅
+- Sitemap v2 composite ✅
+- Ingredient catalog %100 temiz ✅
+- Admin Quality widget v2 ✅
+- Newsletter ilk gerçek gönderim test ✅
+- Sentry Replay ✅
+- Hero A/B kurulumu ✅
+- Akıllı alışveriş listesi 11 kategori ✅
+- Playwright E2E + keyboard nav ✅
+- Turbopack prod build ✅
+- Lighthouse 3-run baseline ✅
+- 23 lint warning → 0 ✅
+- Reduced motion CountUp ✅
+- Mod E pipeline kurulumu (audit + apply + brief + ilk batch CSV) ✅

@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: **Oturum 12 sonu (22 Nis 2026), ~29 commit.** **2717 tarif** prod canlı (batch 28+29 + eski drift kapanışı), Mod B ~%98+ (batch 27/28/29 tam). Faz 1 Leaderboard canlı (7 yeni rozet + `/leaderboard` 3 tab). GPT 5.4 Pro dış audit P0 response (PDF self-host font + rounding + safety + canonical + ItemList + AgeGate overlay). Home iki hero (primary "Bugün ne pişirsek?" + secondary "Evdekilerle ne pişireceğini bul → AI Asistan"). Canonical apex 308. Alkol noindex kaldırıldı. Vercel cache TTL agresif. Codex Mod C+D brief. FUTURE_PLANS.md havuz. Pre-push 5 katman sabit. Detaylı kronolojik akış için `docs/PROJECT_STATUS.md` → "21-22 Nisan 2026 (oturum 12)".
+> Son güncelleme: **Oturum 13 sonu (22 Nis 2026), 55 commit.** **2772 tarif** prod canlı (batch 29 prod seed +55). 5 Codex modu aktif (A/B/C/D/E), Mod E pipeline tam kuruldu. **Faz 1 Leaderboard döngüsü tamamlandı** (Profile Chef Puanı + haftalık cron + 7 rozet). Privacy 3 toggle (chef puanı/aktivite/takip). Mod D Batch 1-22 prod (~1500 revize). Mod C 38 item landing inject. Personalization tur 4 (cuisine boost) + tur 5 (AI Asistan auto-fill). WCAG 96→100. Sitemap v2 composite. Akıllı alışveriş 11 kategori. Newsletter prod canlı (test_email query). Sentry Replay aktif. Hero A/B cookie. Lighthouse 3-run baseline (perf 73 stabil, LCP -733ms gerçek). Pide manuel fix + cache invalidate hot path. **Pre-push 5 katman sabit**, 624/624 test PASS. Detaylı kronolojik akış için `docs/PROJECT_STATUS.md` → "22 Nisan 2026 (oturum 13)".
 
 ## İşaretler
 

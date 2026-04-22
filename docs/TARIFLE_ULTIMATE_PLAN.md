@@ -1,9 +1,9 @@
 # Tarifle, Ultimate Proje Dokümanı
 
-> Son güncelleme: **22 Nisan 2026** (oturum 12 sonu, ~29 commit, GPT dış audit response + Faz 1 Leaderboard + terminology + batch 27/28/29 tam + Next 16 breaking fix)
-> Durum: MVP 0.1/0.2/0.3 + Faz 2 + Faz 3 **canlıda** (**2717 tarif prod**, **Mod B ~%98+** (batch 27/28/29 tam), **isFeatured 318/2717 (%11.7)**, tipNote+serving %100 dolu, Açlık barı 9 yüzeyde, Cloudinary user-photos + Pinterest rich pin + Newsletter/Audit cron aktif, A11y AA, Neon Launch $12 tavan, **Pre-push 5 katman guard**, **Faz 1 Leaderboard altyapısı canlı** (7 yeni rozet + `/leaderboard` 3 tab), **Canonical apex standart** (www→apex 308), **Alkol noindex kaldırıldı** (AgeGate v2 overlay), **Vercel cache TTL agresif** (Fluid CPU optimizasyonu))
-> Versiyon: 1.7
-> İlişkili dokümanlar: `PROJECT_STATUS.md` (aktif takip + sıradaki işler, oturum 12 detaylı dökümle), `CHANGELOG.md`, `CODEX_BATCH_BRIEF.md` (~1100 satır, Mod A/B/C/D dört mod), `FUTURE_PLANS.md` (yalnız yapılmamış planlar havuzu, biten silinir), `COMPETITIVE_ANALYSIS.md`, `RECIPE_FORMAT.md`, `NEWSLETTER_CRON_SETUP.md`, `PROD_PROMOTE.md`, `CODEX_HANDOFF.md`
+> Son güncelleme: **22 Nisan 2026** (oturum 13 sonu, 55 commit, dev tarihinin en uzun günü, 12 saatlik kesintisiz iş)
+> Durum: MVP + Faz 2 + Faz 3 **canlıda** (**2772 tarif prod** (batch 29 prod seed +55), **Mod B ~%98+**, **5 Codex modu aktif (A/B/C/D/E)**, **Mod E pipeline tam kuruldu** (audit + apply + brief §14 internet araştırma + 3-katman doğruluk + opsiyonel ingredient revizyon), **Faz 1 Leaderboard döngüsü tamamlandı** (Profile Chef Puanı + haftalık cron + 6 rozet otomatik atama), **Privacy 3 toggle** (chef puanı/aktivite/takip opt-out), **Personalization tur 5** (AI Asistan auto-fill cuisine + diet), **Newsletter prod canlı** (test_email query + Gmail teyit), **Sentry Replay aktif** (PII safe), **Hero A/B kurulumu** (cookie + Sentry tag), **Akıllı alışveriş 11 kategori**, **WCAG 100/100**, **Sitemap v2 composite priority**, **Ingredient catalog %100 temiz**, Pre-push 5 katman, 624/624 test PASS, Cache TTL agresif)
+> Versiyon: 1.8
+> İlişkili dokümanlar: `PROJECT_STATUS.md` (oturum 13 detaylı blok-blok), `CHANGELOG.md`, `CODEX_BATCH_BRIEF.md` (~1300 satır, Mod A/B/C/D/E **beş mod**), `FUTURE_PLANS.md` (yalnız yapılmamış, biten silinir), `COMPETITIVE_ANALYSIS.md`, `RECIPE_FORMAT.md`, `NEWSLETTER_CRON_SETUP.md`, `PROD_PROMOTE.md`, `CODEX_HANDOFF.md`
 
 Bu doküman Tarifle projesinin tek kaynak belgesidir (Single Source of Truth). Yeni özellik eklerken, teknik karar değiştirirken veya yol haritasını güncellerken önce buraya bakılır ve buradan güncellenir.
 

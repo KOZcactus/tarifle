@@ -1,6 +1,8 @@
 # Tarifle, Proje Durumu
 
-> Son güncelleme: **Oturum 13 sonu (22 Nis 2026), ~75 commit, dev tarihinin en uzun günü**. Privacy 3 toggle + Chef Puanı + leaderboard cron + Mod D Batch 1-22 (2200 tarif → 1182 revize prod, Codex %54 dokunma) + Codex Mod C 38 item landing inject + Personalization tur 4 (cuisine boost) + tur 5 (AI Asistan auto-fill) + Reduced motion CountUp + WCAG 96→100 + Sitemap v2 composite formula + Ingredient catalog %100 temiz + Admin Quality widget v2 (8 metrik) + Cron ingredient drift WARNING + Newsletter ilk gerçek gönderim test (prod canlı) + Sentry Replay aktivasyon + Hero A/B (cookie + Sentry tag) + Akıllı alışveriş listesi (11 supermarket kategorisi) + Playwright E2E (3 spec, search→detail→bookmark + keyboard nav) + Turbopack prod build aktive + Lighthouse audit (LCP -733ms, perf 73 stabil baseline 3-run avg). **Pre-push 5 katman sabit**, **624/624 test PASS** (+7 yeni cuisine boost). **Sonraki:** Codex Mod D B23-B27 (kalan 500 tarif), oturum 14 paket önerileri (PROJECT_STATUS detay update, AI Asistan v3 sıkılaştırma, blog ilk yazı, fotoğraf dalgası).
+> Son güncelleme: **Oturum 13 sonu (22 Nis 2026), 55 commit, dev tarihinin en uzun günü, 12 saat aktif iş**. Privacy 3 toggle + Chef Puanı + leaderboard cron + Mod D Batch 1-22 prod (1500+ revize) + Mod D Batch 23-28 + Mod A Batch 29 prod seed + Mod B Batch 29 (45 çeviri) + Codex Mod C 38 item landing inject + Personalization tur 4 (cuisine boost) + tur 5 (AI Asistan auto-fill) + Reduced motion CountUp + WCAG 96→100 + Sitemap v2 composite formula + Ingredient catalog %100 temiz + Admin Quality widget v2 (8 metrik) + Cron ingredient drift WARNING + Newsletter ilk gerçek gönderim prod canlı (test_email query + curl + Gmail teyit) + Sentry Replay aktivasyon (PII safe, 50/ay quota) + Hero A/B (cookie + Sentry tag) + Akıllı alışveriş listesi (11 supermarket kategorisi rule-based) + Playwright E2E (3 spec, search→detail→bookmark + keyboard nav) + Turbopack prod build aktive + Lighthouse 3-run audit (LCP -733ms gerçek kazanım, perf 73 stabil, a11y 100) + cache key v1→v2 emergency invalidate + admin revalidate endpoint (session veya Bearer) + Pide tarifi manuel fix + **Mod E pipeline tam kurulum** (audit + apply + brief §14: type bazlı min step + internet araştırma + 3-katman doğruluk + opsiyonel ingredient revizyon + ilk batch CSV). **2772 tarif prod**, **Pre-push 5 katman sabit**, 624/624 test PASS, 5 mod aktif (A/B/C/D/E). **Sonraki:** Codex "Mod E. Batch 1." (top 100 step kalitesi).
+
+> Oturum 13 sonu (22 Nis 2026), 55 commit, en uzun gün. Faz 1 Leaderboard döngüsü tamamlandı + Privacy 3 toggle + Chef Puanı + Mod D Batch 1-22 prod (1500+ revize) + Mod E pipeline kuruldu + Newsletter prod canlı + Sentry Replay + Hero A/B + Akıllı alışveriş + Playwright E2E + Lighthouse audit. **2772 tarif prod**, 5 mod aktif (A/B/C/D/E).
 
 > Oturum 12 sonu (21-22 Nis 2026), ~29 commit, GPT 5.4 Pro dış audit response + Faz 1 Leaderboard altyapısı + terminology ayarı + Batch 27/28/29 Mod A/B tam entegrasyon + Next 16 breaking fix. **2717 tarif prod** (2553 → +164 batch 28+29 + eski drift kapatılmış). **Mod B ~%98+** (batch 27 100/100, batch 28 100/100, batch 29 45/45 tam). Faz 1 Leaderboard: Prisma migration 7 yeni BadgeKey + `/leaderboard` SSR (haftalık/aylık/tüm zamanlar tab) + Navbar "Liderlik" + skor util (raw SQL 5 CTE). GPT audit P0 response: PDF Roboto self-host (cold start glyph miss fix) + web↔PDF amount rounding shared util + diyet safety softener + cuisine/kategori sayaç tek kaynak. Home iki hero: primary "Bugün ne pişirsek?" + secondary "Evdekilerle ne pişireceğini bul → AI Asistan'a Git". Canonical 308 www→apex. AgeGate v2 overlay (SSR content visible). Alkol noindex kaldırıldı (96 tarif SEO). Mutfak/kategori/diyet sayfalarına ItemList JSON-LD. /admin/analytics 42P01 fix (FROM "Recipe" → recipes). N+1 query cache (getRecipeBySlug 30dk + getSimilarRecipes 6sa). Vercel Fluid CPU %75 → agresif TTL artış + docs-only build skip. Next 16 middleware → proxy breaking fix. Codex Mod C + Mod D brief eklendi (§12-13). FUTURE_PLANS.md havuz + TARIFLE_ULTIMATE_PLAN §35-36 (3 fazlı monetizasyon + uygulama kuralı). **Pre-push 5 katman sabit**. 617/617 test PASS. **Sonraki:** Profile skor/rozet satırı, haftalık cron (rozet atama), Codex Mod C teslim, Mod D CSV hazırlama, batch 30 full Codex, blog küme başlat.
 
@@ -13,6 +15,151 @@
 > Oturum 8 sonu (30 commit), 2320 tarif prod canlı. 10 blok: 6 Codex batch Mod A (1701→2320), 3 Mod B batch (batch 18-20 çeviri 600→900), rekabet §8 kısa 6/6 ✅ + orta 5/5 ✅, topluluk loop tam (follow + feed + fan-out + followers list + suggested cooks + collection/variation share + PWA banner + Pinterest rich pin + user-photos flag), admin analytics + bulk moderation + search log, PDF export + llms.txt, 18 migration.
 >
 > Oturum 7 sonu (28 commit), 1701 tarif prod canlı. 8 blok: Mod B batch 13-17 (600 tarif EN+DE), Mod A batch 15-17 (1401→1701), foryou sort, pagination redesign, super-admin protection, /admin/yorumlar, /kategoriler, legal hub /yasal, editör rozeti, similar-recipes v2, 44 programatik landing, profil zenginleştirme, /menu-planlayici, RSS + HowTo schema, AI Asistan v2, blog MDX + 3 makale, rekabet analizi doc, newsletter double-opt-in altyapı, codex brief 3 clarify.
+
+## 22 Nisan 2026 (oturum 13, 55 commit, dev tarihinin en uzun günü)
+
+> Oturum 12 ile aynı takvim günü ama oturum 13 = ayrı session, 12 saatlik kesintisiz iş. 55 commit, 7 prod write turu, 5 Mod aktif hale geldi. Bilanço aşağıda blok-blok özetlenir.
+
+**A · Faz 1 Leaderboard döngüsü tamamlandı** (oturum 12 altyapısının üstüne):
+- Profile chip: `getUserScore` Promise.all'a + "Chef Puanı: N" link `/leaderboard`'a + "N rozet" badge.length>0
+- Haftalık cron `/api/cron/leaderboard` pazartesi 05:00 UTC, 6 rozet idempotent grant: WEEKLY_TOP_10 + MONTHLY_TOP_10 + ALL_TIME_TOP_50 + EXPERIENCED + PHOTOGRAPHER + CATEGORY_MASTER. Bearer auth (LEADERBOARD_CRON_SECRET) + x-vercel-cron header. İlk gerçek prod run: 7 yeni rozet atandı.
+- Terminology revizyonu: "Skor" → **"Chef Puanı"** (TR) / **"Chef Score"** (EN). Badge desc "Bu hafta" → "Bir hafta" (kalıcı rozet anısı, idempotent).
+
+**B · Privacy 3 toggle (opt-out)** — User.showChefScore + showActivity + showFollowCounts Boolean default true. Migration `20260422180000_add_user_privacy_prefs`. /ayarlar Gizlilik bölümü (3 inline-save toggle). Profile + leaderboard SQL filter (`WHERE showChefScore=true`). Takip/takipciler list 404 (gizlilik koruyucu). Owner kendi profilinde her zaman görür.
+
+**C · Personalization tur 4 + tur 5:**
+- Tur 4 cuisine boost: `/tarifler` foryou sort'a `boostCuisines` parametresi, +CUISINE_BOOST_WEIGHT (2 puan, tag intersection +1'den daha güçlü). `getUserFavoriteCuisines` helper. 9→16 unit test PASS.
+- Tur 5 AI Asistan auto-fill: server-side derivePrefs → favoriteCuisines[0] → cuisine state default + allergenAvoidances → dietSlug ("GLUTEN" → glutensiz, "SUT" → sutsuz, fallback tag-based vegan/vejetaryen/alkolsuz). UI "✨ Tercihlerinize göre dolduruldu" chip.
+
+**D · Mod D pipeline genişleme + Batch 1-22 prod** (1500 tarif → ~1182 revize):
+- B1-B5: 270 revize (~%54 dokunma, brief §13.4 "şüpheliyse DOKUNMA" disiplini sabit)
+- B6-B22: 21 batch sırayla apply, dev/prod skip 1-3 (Mod A drift)
+- 22 yeni Mod D CSV (B6-B27) gen-editorial-review-csv.ts --top 2700
+- Top 200 sample review: 30/30 mükemmel kalite, manuel review gereksiz
+- Mod D Batch 28 (top 2700-2800) son, batch 29+ catalog yetmez
+
+**E · Codex Mod C inject** (38 item landing copy):
+- `docs/seo-copy-v1.json` Codex teslim (17 kategori + 16 mutfak + 5 diyet, intro 200 kelime + 4 FAQ)
+- `src/lib/seo/landing-copy.ts` build-time import + Map cache + cuisine alias ("ingiltere" → "ingiliz")
+- `src/components/landing/LandingIntroAndFaq.tsx` shared (intro + FAQ accordion native `<details>`)
+- 3 route inject: `/mutfak/[cuisine]`, `/diyet/[diet]`, `/tarifler/[kategori]` → intro + FAQ + FAQPage JSON-LD
+- 6 yeni i18n key tr+en
+
+**F · Reduced motion + WCAG fix** (a11y 96 → 100):
+- CountUp.tsx prefers-reduced-motion check (rAF defer, lint-clean)
+- RecipeCard editor's pick + hunger bar span'leri `role="img"` (aria-label izinli, eski "aria-prohibited-attr" fail çözüldü)
+- LanguageToggle aria-label "TR, Dil değiştir" formatı (visible text önce, label-content-name-mismatch fix)
+- 3-run Lighthouse: a11y 100/100/100 stabil
+
+**G · Sitemap v2 composite formula:**
+Recipe priority binary 0.8/0.9 → multi-signal (base 0.7 + isFeatured +0.10 + imageUrl +0.05 + Mod B tam +0.05 + viewCount≥100 +0.05 + viewCount≥500 +0.10, cap 1.0). Float quirk fix (Math.round(p*100)/100, "0.7999...9" → "0.8"). Prod doğrulama: 1 sayfa 1.0, 1 0.9, 298 tarif 0.85, 2238 tarif 0.75, 225 0.7.
+
+**H · Ingredient catalog %100 temiz:**
+- `audit-ingredient-standards.ts` (TR diacritic strip + collision detect): 13185 satır × 1216 unique, 0 trailing whitespace, sadece 2 drift grup (4 satır)
+- `fix-ingredient-drift.ts`: "Cachaca (rom)" + "Aci biber püresi" → standardize, 4 satır 2 brand'a indi
+- Re-audit drift 0 ✅
+- Cron `integrity-core.ts`'e ingredient drift WARNING (trailing whitespace + case-only duplicate) eklendi
+
+**I · Admin Content Quality widget v2** (6 → 8 metrik):
+- Yeni: 🖼️ Editor Görseli (Recipe.imageUrl coverage), 📸 Kullanıcı Fotoğrafı (RecipePhoto VISIBLE EXISTS subquery)
+- Cache key v1 → v2
+
+**J · Mod D Batch 23-28 + Mod A/B Batch 29:**
+- B23-28 dev+prod uygulandı (200+ tarif, 3 dev/prod skip per batch)
+- Mod A Batch 29: Codex 100 yeni tarif scripts/seed-recipes.ts marker, dev önceki seed'de eklendi, prod seed +55 tarif (catalog 2717 → 2772)
+- Mod B Batch 29: docs/translations-batch-29.json (45 çeviri), dev+prod 45/45
+
+**K · Newsletter ilk gerçek gönderim test:**
+- Standalone tsx script (unstable_cache + getTranslations Next runtime gereği başarısız)
+- Çözüm: `/api/cron/newsletter` route'una `?test_email=X` query param eklendi (production list dokunulmaz, ephemeral subscriber)
+- Bearer NEWSLETTER_CRON_SECRET ile curl: `{"ok":true,"sent":1,"durationMs":1207}`
+- Gmail teyit: 6 ⭐ Editör Seçimi + 6 💌 Yeniler + 4 🌍 Mutfak chip + "Tarife'yi aç" CTA + KVKK footer
+
+**L · Sentry Replay aktivasyon:**
+- Önceki config'de `replaysOnErrorSampleRate: 1.0` set ama integration eklenmemişti (Sentry v8+ artık manuel)
+- `Sentry.replayIntegration({ maskAllText, maskAllInputs, blockAllMedia })` PII safe (KVKK + email/şifre alanları)
+- Sample rate 1.0 → 0.5 (free tier 50/ay quota korunur, hata session'larının yarısı kayıt)
+
+**M · Hero A/B test** (cookie + Sentry tag, minimal):
+- 2 variant: A "Bugün ne pişirsek?" / B "Aklındaki malzemeyle yeni bir şey"
+- `src/lib/experiments/hero-tagline.ts` pickVariant + cookie sabit (HERO_VARIANT_COOKIE)
+- `HeroVariantInit.tsx` client component, mount sonrası 30 gün persist + Sentry.setTag("hero.variant", X)
+- Edge Config gerek yok, ileride Plausible/PostHog ile conversion analiz mümkün
+
+**N · Akıllı alışveriş listesi** (11 supermarket kategorisi):
+- `src/lib/shopping/supermarket-categories.ts` rule-based classifier (~200 keyword, TR diacritic strip + lowercase + substring, özgül-öncelikli sıra)
+- Kategoriler: 🥬 Sebze & Meyve, 🥩 Et, Tavuk & Balık, 🥛 Süt, 🥖 Fırın, 🍚 Bakliyat, 🥚 Yumurta & Konserve, 🌶️ Baharat & Soslar, 🍫 Atıştırmalık, ❄️ Donmuş, 🥤 İçecek, 📦 Diğer
+- ShoppingListClient.tsx unchecked items'ı kategoriye göre gruplandırır, her kategori başlık + emoji + count chip + items list
+- 11 i18n key tr+en
+
+**O · Playwright E2E + keyboard nav** (14 → 15 spec):
+- `tests/e2e/search-detail-bookmark-flow.spec.ts` 3 test:
+  - search → detail → bookmark → profile (9.3s)
+  - keyboard nav navbar + search Enter + Escape (4.2s)
+  - mobile menu Enter aç + Escape kapat + focus restore (1.0s)
+- 3/3 PASS
+
+**P · Lighthouse 3-run audit + quick win:**
+- Baseline single-run 79 → quick win (Geist Mono preload kapat + DeferredBanners) → 79 stabil + LCP -733ms gerçek kazanım
+- Variance teyit: R1: 66, R2: 77, R3: 76 → ortalama 73 (single-run unreliable)
+- DeferredBanners TBT regression rollback (LCP -733ms kalıcı, banners direkt import)
+- Turbopack prod build aktive: `package.json build` → `next build --turbopack`, eski webpack `build:webpack` alias
+
+**Q · Pide tarifi manuel fix + cache invalidate hot path:**
+- Kullanıcı geri bildirim: enginarli-domatesli-pide-manisa-usulu step'leri yetersiz ("Sebzeleri ince yerleştirin", "Pideyi 18 dakika pişirin" sıcaklık eksik)
+- Manuel fix: 4 yeni step (220°C 17-19 dk, 30 dk dinlendirme, enginar limonlu su, somut yöntem)
+- Stale cache sorunu: getRecipeBySlug unstable_cache 30dk TTL, Vercel deploy reset etmedi
+- Çözüm 1: `/api/admin/revalidate` endpoint (admin session VEYA Bearer ADMIN_REVALIDATE_SECRET, ?slug=X path + tag invalidate)
+- Çözüm 2 (emergency): cache key v1→v2 bump → tüm tarif cache reset, deploy ile garanti
+
+**R · Mod E pipeline tam kurulum** (Pide vakası izole değil → sistematik):
+- Audit `scripts/audit-step-quality.ts` type-aware: ICECEK 3+, KOKTEYL/APERATIF 4+, diğer 5+ min step. 6 issue: em-dash KRITIK, few-steps/no-temp/no-time AGIR, short-step/vague-noun ORTA. Severity-weighted scoring.
+- Apply `scripts/apply-step-revisions.ts` v2: Zod + atomic transaction (steps zorunlu + ingredients opsiyonel, tam REPLACEMENT)
+- Brief §14 (8 alt bölüm): type bazlı min step + 3-katman doğruluk hierarchy (emin standart → tahmini aralık + görsel sinyal → SAYI YAZMA gerek olmadığında) + internet araştırma ZORUNLU (yemek.com/nefisyemektarifleri/seriouseats/nytcooking/bbc/kingarthurbaking) + opsiyonel ingredient revizyon (eksik malzeme/yanlış oran)
+- İlk batch CSV `docs/step-review-batch-1.csv` (top 100, score 4-9)
+- Audit ilk sonuç: 2585/2753 (%94) sorunlu, %95+ tarifte 3 adımlı boilerplate
+- Codex tetik: "Mod E. Batch 1." (yeni session'da başlayacak)
+
+### Prod skor kartı (oturum 13 sonu, son commit 981fd32)
+
+- **2772 tarif prod** (oturum 12 sonu 2717 + 55 batch 29 prod seed)
+- **Mod B yüksek (~%98+)** + 45 yeni çeviri (Batch 29)
+- isFeatured 320+ (~%11.5)
+- tipNote + servingSuggestion %100 dolu
+- 24 cuisine, 17 kategori, 10 allergen, 15 tag, 11 rozet
+- **624/624 unit test PASS** (+7 cuisine boost test)
+- 22 formal migration (oturum 13'te +1: privacy prefs)
+- **Pre-push 5 katman**: lint + content:validate + em-dash + allergen + tsc --noEmit
+- **5 Codex modu** (A/B/C/D/E) tam aktif
+- A11y **100** (WCAG fix sonrası, 3-run stabil)
+- Performance ~73 (LCP 4.3s ortalama, mimari sınır → PPR sprint açılış sonrası)
+- Newsletter prod canlı + ilk test mail ulaştı
+- Sentry Replay PII-safe, hata session'ları kayıt
+- Hero A/B 50/50 cookie sticky, Sentry tag tracking
+
+### Yeni route + altyapı (oturum 13)
+
+- `/api/cron/leaderboard` (pazartesi 05:00 UTC, 6 rozet)
+- `/api/admin/revalidate` (path/tag/slug invalidate, admin session veya Bearer)
+- `/api/cron/newsletter?test_email=X` (production list dokunmadan tek mail test)
+- Akıllı alışveriş 11 kategori grupland (mevcut /alisveris-listesi içinde)
+- AI Asistan tercih awareness chip ("✨ Tercihlerinize göre dolduruldu")
+- Profile Chef Puanı + N rozet chip header'da
+- 3 landing route'a (mutfak/diyet/kategori) intro + FAQ accordion + FAQPage JSON-LD
+- Hero A/B variant cookie sticky
+- /ayarlar Gizlilik 3 toggle
+
+### Bekleyen (oturum 14)
+
+1. **Codex Mod E. Batch 1.** — top 100 step kalitesi (Codex araştırma + revize bekleniyor)
+2. Mod E apply pipeline test (Codex JSON gelince dev+prod)
+3. Sırada gelen Mod E batch'leri (~26 batch toplam, 2585 sorunlu tarif)
+4. Hero A/B sonuçları toplama (1-2 hafta sonra Sentry Replay + tag analiz)
+5. AI Asistan v3 kural sıkılaştırma (mevcut pantry + prefs, daha derin diet/zaman)
+6. Blog ilk yazı (FUTURE_PLANS P3-16, "30 dakikalık tavuk" gibi arama-niyet)
+7. Fotoğraf dalgası top 100 (Cloudinary upload manuel)
+8. PPR/Cache Components sprint (8-12 saat, perf 73 → 90+ için tek yol, açılış sonrası)
+9. Vercel Fluid CPU 7-day teyit (cache TTL agresif sonrası gerçek azalma %)
 
 ## 21-22 Nisan 2026 (oturum 12, ~29 commit)
 

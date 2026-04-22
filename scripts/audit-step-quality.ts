@@ -73,10 +73,10 @@ function detectIssues(
   const issues: IssueCode[] = [];
   const totalText = steps.map((s) => s.instruction).join(" ");
 
-  // 1. few-steps: <5 adim (Kerem karari: "3 adim az, en az 4-5 olmali")
-  //    Mevcut catalog'da 3-adimli tarifler cogunluk (Mod A boilerplate),
-  //    bunlar mutlaka revize edilmeli. 4 adim minimum.
-  if (steps.length < 5) issues.push("few-steps");
+  // 1. few-steps: <4 adim (Kerem karari: "min 4 olsun, illaki dogru
+  //    3-step tarifler de vardir ama dikkatli olmaliyiz aciklamada")
+  //    3 adim minimum kabul edilebilir, 1-2 adim kesin yetersiz.
+  if (steps.length < 4) issues.push("few-steps");
 
   // 2. em-dash: herhangi step (KRITIK)
   if (steps.some((s) => checkTextEmDash(s.instruction))) issues.push("em-dash");

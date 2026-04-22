@@ -74,7 +74,7 @@
   - **TAM REPLACEMENT:** Mevcut steps tamamen silinir, yenileri yazılır.
     Partial yok, tek adım dokunmak için bile tüm steps yazılır.
   - **slug:** CSV'den aynen kopyala.
-  - **steps:** ardışık 1..N stepNumber, **min 5 ideal 6-8 max 12** (Kerem karari: 3-4 adim az, en az 5).
+  - **steps:** ardışık 1..N stepNumber, **min 4 ideal 5-7 max 12** (Kerem karari: 3 adim minimum kabul ama dikkatli olmaliyiz aciklamada).
   - **Ingredient listesi DOKUNULMAZ** (Mod E sadece steps; ingredient
     listesi sabit).
   - **tipNote + servingSuggestion DOKUNULMAZ** (Mod D alanı).
@@ -1279,30 +1279,37 @@ dokunmaz.
 
 ### 14.6 Adım sayısı kararı (Kerem direktifi)
 
-**Minimum 5 adım her tarifte.** Mevcut catalog %98+ tarifte 3-4 adimla
-yetersiz (Mod A boilerplate). En basit içecek bile 5 adıma çıkmalı:
-hazırlık + asıl iş + son dokunuş + servis bağlamı ayrı adımlar.
+**Minimum 4 adım her tarifte.** Mevcut catalog %95+ tarifte 3 adımla
+yetersiz (Mod A boilerplate). 3 adım bazen yeterli olabilir (basit
+sos), ama açıklamalar her zaman somut + bilgi yoğun olmalı.
 
-Genel rehber (minimum 5, ideal 6-8):
-- **İçecek/Sos:** 5-6 step (malzeme hazırla + birleştir + son dokunuş + servis)
-- **Salata:** 5-6 step (yıka/doğra + sos hazırla + karıştır + dinlendir + servis)
-- **Çorba/Tek-tencere:** 6-7 step (sote + ana pişirme + ayar + son ekleme + bekleme + servis)
-- **Hamur işi/Börek/Pide:** 7-9 step (hamur + dinlendirme + iç hazırla + şekil + pişirme + son)
-- **Fırın yemeği:** 6-8 step
-- **Et yemeği (kebap/güveç):** 6-8 step
+Genel rehber (minimum 4, ideal 5-7):
+- **İçecek/Sos:** 4-5 step (malzeme hazırla + birleştir + son dokunuş + servis)
+- **Salata:** 4-6 step (yıka/doğra + sos hazırla + karıştır + dinlendir + servis)
+- **Çorba/Tek-tencere:** 5-7 step (sote + ana pişirme + ayar + son ekleme + servis)
+- **Hamur işi/Börek/Pide:** 6-9 step (hamur + dinlendirme + iç hazırla + şekil + pişirme + son)
+- **Fırın yemeği:** 5-8 step
+- **Et yemeği (kebap/güveç):** 5-8 step
 
-**Eski step sayısı 3-4 ise MUTLAKA genişlet:**
+**Eski step sayısı 3 ise genelde genişlet (mutlak değil ama tercih):**
 - Tek "Sebzeleri kavurun" step'ini 2'ye böl: "Soğanı doğrayın" + "Soğan + biber + domatesi 8 dakika kavurun"
 - "Pişirin" step'ini 2'ye böl: "Önceden 200°C ısıtın" + "20 dakika pişirin, üstü kızarana kadar"
 - Kapanış step'i ekle: "5 dakika dinlendirip servis edin"
 
-Kalite > brevity. Detaylı adımlar pişirme deneyimini iyileştirir.
+**Kalite > brevity.** Açıklama detaylı + somut olmalı:
+- ✅ "Önceden 220°C ısıtılmış fırında 18 dakika kenarlar altın olana kadar pişirin."
+- ❌ "Pideyi 18 dakika pişirin." (sıcaklık eksik)
+- ✅ "Enginar kalplerini ince dilimleyip limonlu suya bırakın, 5 dakika beklesin."
+- ❌ "Sebzeleri ince yerleştirin." (hangi sebze, ne sırada belirsiz)
+
+3 adımlık tarif kabul edilebilir ama her adımın **anlamlı + bilgi yoğun**
+olması zorunlu. 4-5 adıma genişletmek genelde daha iyi okunur.
 
 ### 14.7 Self-review (teslim öncesi)
 
 - [ ] JSON valid (`jq . docs/step-revisions-batch-N.json`).
 - [ ] Her item'da `slug` var + CSV'deki bir slug'a eşleşiyor.
-- [ ] Her item'da `steps` array, **min 5 step** (Kerem direktifi).
+- [ ] Her item'da `steps` array, **min 4 step** (Kerem direktifi, 3 step tercih değil).
 - [ ] stepNumber ardışık 1..N (eksik veya tekrar yok).
 - [ ] Em-dash grep: 0 eşleşme.
 - [ ] Her step 5-25 kelime arası.

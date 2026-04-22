@@ -11,6 +11,7 @@ import {
 } from "@/lib/queries/user";
 import { getPublicCollections, getUserCollections } from "@/lib/queries/collection";
 import { getUserBadges } from "@/lib/badges/service";
+import { getUserScore } from "@/lib/leaderboard/score";
 import { isValidLocale } from "@/i18n/config";
 import { VerifyEmailBanner } from "@/components/auth/VerifyEmailBanner";
 import { BadgeShelf } from "@/components/profile/BadgeShelf";
@@ -81,6 +82,7 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
     profileStats,
     followCounts,
     viewerFollows,
+    userScore,
   ] = await Promise.all([
     isOwner ? getUserBookmarks(user.id) : Promise.resolve([]),
     getUserVariations(user.id, isOwner),
@@ -92,6 +94,7 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
     session?.user?.id && !isOwner
       ? isFollowing(session.user.id, user.id)
       : Promise.resolve(false),
+    getUserScore(user.id),
   ]);
 
   // Owner-only fields (TS narrowing, only present when isOwner === true)
@@ -138,6 +141,16 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
               className="transition-colors hover:text-primary"
             >
               {t("followingCount", { count: followCounts.following })}
+            </Link>
+            {badges.length > 0 && (
+              <span>{t("badgesCount", { count: badges.length })}</span>
+            )}
+            <Link
+              href="/leaderboard"
+              className="transition-colors hover:text-primary"
+              title={t("scoreTooltip")}
+            >
+              {t("scoreCount", { count: userScore.score })}
             </Link>
             {isOwner && (
               <span>{t("bookmarksCount", { count: user._count.bookmarks })}</span>

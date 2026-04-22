@@ -42,6 +42,7 @@ const SKIP_FILES = new Set([
   "docs/EM_DASH_CLEANUP.md",
   "docs/PROJECT_STATUS.md",
   "docs/CHANGELOG.md",
+  "docs/BLOG_CONTENT_GUIDE.md",
 ]);
 // prisma/migrations içinde geçmiş migration SQL'leri em-dash'siz ama
 // Prisma generated tiplerde şüphe yok; yine de klasörü atlayalım.

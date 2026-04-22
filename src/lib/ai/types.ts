@@ -54,6 +54,10 @@ export interface AiSuggestion {
   tags: string[];
   /** Optional per-recipe AI commentary (empty for rule-based provider). */
   note?: string;
+  /** Kural tabanlı explain chip'ler, "neden bu tarif" bilgisi. Kısa (4
+   *  kelimeden az), localize edilmiş. UI chip olarak sıralar. Örn:
+   *  ["Tek eksik: un", "⚡ 18 dakikada hazır"]. v3 sıkılaştırma eklendi. */
+  reasons?: string[];
 }
 
 /**

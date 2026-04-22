@@ -1770,7 +1770,16 @@
       "calories": "~{kcal} kcal",
       "missingPrefix": "Missing:",
       "missingMore": "+{count} more",
-      "perfectMatch": "✓ You have every ingredient!"
+      "perfectMatch": "✓ You have every ingredient!",
+      "reasons": {
+        "allMatched": "✓ Everything on hand",
+        "oneMissing": "Just missing: {ingredient}",
+        "twoMissing": "2 missing: {list}",
+        "fewMissing": "{matched}/{total} on hand",
+        "veryFast": "⚡ Ready in {minutes} min",
+        "quick": "{minutes} min",
+        "withinTime": "{minutes} min (within budget)"
+      }
     },
     "tags": {
       "pratik": "Quick",

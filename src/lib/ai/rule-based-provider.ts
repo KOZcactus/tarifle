@@ -5,6 +5,7 @@ import { DEFAULT_LOCALE, isValidLocale } from "@/i18n/config";
 import { dietConfigBySlug } from "@/lib/diets";
 import { computeMatch, recipeContainsExcluded } from "./matcher";
 import { assignRecipeNotes, buildOverallCommentary, type CommentaryContext } from "./commentary";
+import { buildReasons } from "./reasons";
 import type {
   AiProvider,
   AiSuggestInput,
@@ -17,21 +18,25 @@ const MAX_RESULTS = 10;
 
 /**
  * Diversification, aynı slug ikinci kez girmesin + top N için kategori
- * çeşitliliği. Kerem'in gözlemi: limonata ardından "Sivas Katmeri"
+ * ve mutfak çeşitliliği. Kerem'in gözlemi: limonata ardından "Sivas Katmeri"
  * iki kez listede çıkıyor, tüm top 5 aynı kategori. Bu filter sıralı
  * listeden her slug'ı en az bir kez geçirir, sonra kategori başına
- * cap uygular (ilk N için max 2/kategori, sonuçlar çeşitlensin).
+ * cap uygular (ilk N için max 2/kategori, 3/cuisine).
  *
  * Algoritma: primary sort (score desc) korunur; dedup + cap sonrası
  * kalan slot'lara kapakı yaşayan kategorilerden tekrar eklenir.
+ * v3 sıkılaştırma: cuisine cap eklendi (Türk mutfağı listede dominasyonu
+ * azalsın, user'ı "dünya çeşidi" ile buluştur).
  */
-function diversifySuggestions(
+export function diversifySuggestions(
   scored: readonly AiSuggestion[],
   limit: number,
   maxPerCategory: number = 2,
+  maxPerCuisine: number = 3,
 ): AiSuggestion[] {
   const seenSlugs = new Set<string>();
   const categoryCount = new Map<string, number>();
+  const cuisineCount = new Map<string, number>();
   const primary: AiSuggestion[] = [];
   const overflow: AiSuggestion[] = [];
 
@@ -39,18 +44,24 @@ function diversifySuggestions(
     if (seenSlugs.has(s.slug)) continue;
     seenSlugs.add(s.slug);
     const cat = s.categoryName;
-    const count = categoryCount.get(cat) ?? 0;
-    if (count < maxPerCategory) {
+    const cui = s.cuisine ?? "";
+    const catCount = categoryCount.get(cat) ?? 0;
+    // Cuisine null ise sayma (eski tarifler, cuisine retrofit bekler).
+    const cuiCount = cui ? cuisineCount.get(cui) ?? 0 : 0;
+    const underCategoryCap = catCount < maxPerCategory;
+    const underCuisineCap = !cui || cuiCount < maxPerCuisine;
+    if (underCategoryCap && underCuisineCap) {
       primary.push(s);
-      categoryCount.set(cat, count + 1);
+      categoryCount.set(cat, catCount + 1);
+      if (cui) cuisineCount.set(cui, cuiCount + 1);
     } else {
       overflow.push(s);
     }
     if (primary.length >= limit) break;
   }
 
-  // Yeterli sonuç gelmediyse overflow'dan tamamla (kategori cap yerine
-  // boş slot yaratmaktansa aynı kategoriden ikinci/üçüncü gösterim).
+  // Yeterli sonuç gelmediyse overflow'dan tamamla (cap'ler yerine
+  // boş slot yaratmaktansa aynı kategori/cuisine'den tekrar gösterim).
   while (primary.length < limit && overflow.length > 0) {
     const next = overflow.shift();
     if (next) primary.push(next);
@@ -161,14 +172,28 @@ export class RuleBasedProvider implements AiProvider {
       // cap internal AiSuggestion shape üzerinden çalışıyor.
       .map(({ _ingredients, ...rest }) => rest);
 
-    // Diversification, duplicate slug + same-category over-concentration
-    // düzeltmesi. Kerem'in gözlemi: "Sivas Katmeri" iki kez + tüm top 5
-    // "Hamur İşleri". Artık max 2/kategori ilk 10'da.
-    const diversified = diversifySuggestions(scored, MAX_RESULTS, 2);
+    // Diversification, duplicate slug + same-category/cuisine
+    // over-concentration düzeltmesi. Max 2/kategori + 3/cuisine ilk 10'da.
+    const diversified = diversifySuggestions(scored, MAX_RESULTS, 2, 3);
+
+    // Reason chip'leri (v3 sıkılaştırma): "Tek eksik: un", "⚡ 18 dakika".
+    const withReasons = await Promise.all(
+      diversified.map(async (s) => ({
+        ...s,
+        reasons: await buildReasons(
+          {
+            matchedIngredients: s.matchedIngredients,
+            missingIngredients: s.missingIngredients,
+            totalMinutes: s.totalMinutes,
+          },
+          { maxMinutes: input.maxMinutes },
+        ),
+      })),
+    );
 
     const resolvedLocale = await getLocale();
     const locale = isValidLocale(resolvedLocale) ? resolvedLocale : DEFAULT_LOCALE;
-    const withNotes = await assignRecipeNotes(diversified, locale);
+    const withNotes = await assignRecipeNotes(withReasons, locale);
     const commentaryCtx: CommentaryContext = {
       cuisines: input.cuisines,
       type: input.type,

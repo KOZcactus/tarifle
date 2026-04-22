@@ -979,6 +979,20 @@ function SuggestionCard({
           </div>
         )}
 
+        {/* Reason chips, "neden bu tarif?" açıklaması (v3). */}
+        {s.reasons && s.reasons.length > 0 && (
+          <div className="flex flex-wrap gap-1">
+            {s.reasons.map((reason, idx) => (
+              <span
+                key={idx}
+                className="rounded-full border border-primary/20 bg-primary/5 px-2 py-0.5 text-[10px] font-medium text-primary"
+              >
+                {reason}
+              </span>
+            ))}
+          </div>
+        )}
+
         <div className="flex flex-wrap items-center gap-1.5 text-xs text-text-muted">
           <span>{difficultyLabel(s.difficulty)}</span>
           <span>·</span>
@@ -1007,17 +1021,14 @@ function SuggestionCard({
           )}
         </div>
 
-        {s.missingIngredients.length > 0 && (
+        {/* Missing liste: reason chip "Tek eksik: X" 1-2 eksik için yeterli,
+           detay liste sadece 3+ eksik'te (isim isim görsün). */}
+        {s.missingIngredients.length > 2 && (
           <p className="text-xs text-text-muted">
             <span className="font-medium text-warning">{tResult("missingPrefix")}</span>{" "}
             {s.missingIngredients.slice(0, 4).join(", ")}
             {s.missingIngredients.length > 4 &&
               ` ${tResult("missingMore", { count: s.missingIngredients.length - 4 })}`}
-          </p>
-        )}
-        {perfect && (
-          <p className="text-xs font-medium text-accent-green">
-            {tResult("perfectMatch")}
           </p>
         )}
         {s.note && (

@@ -1770,7 +1770,16 @@
       "calories": "~{kcal} kcal",
       "missingPrefix": "Eksik:",
       "missingMore": "+{count} daha",
-      "perfectMatch": "✓ Tüm malzemeler elinde!"
+      "perfectMatch": "✓ Tüm malzemeler elinde!",
+      "reasons": {
+        "allMatched": "✓ Tüm malzemeler evde",
+        "oneMissing": "Tek eksik: {ingredient}",
+        "twoMissing": "2 eksik: {list}",
+        "fewMissing": "{matched}/{total} malzemen var",
+        "veryFast": "⚡ {minutes} dakikada hazır",
+        "quick": "{minutes} dakika",
+        "withinTime": "{minutes} dk (süre hedefinde)"
+      }
     },
     "tags": {
       "pratik": "Pratik",

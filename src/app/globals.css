@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* Tailwind 4'te `dark:` variant default olarak `prefers-color-scheme: dark`
+   media query'sine bağlı. Tarifle `next-themes` ile `[data-theme="dark"]`
+   attribute'u kullanıyor (enableSystem=false). Bu mapping olmadan OS'si
+   dark olan ziyaretçilerde light toggle sonrası `dark:bg-gray-900` gibi
+   class'lar aktif kalıp kart bg'sini lacivert bırakırken body text'i
+   koyulaştırıyor, kartlar okunmaz oluyor. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 /* ─── DESIGN TOKENS ──────────────────────────────────────── */
 
 :root {

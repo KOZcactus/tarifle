@@ -14,6 +14,7 @@
 | **"Mod A"**, "yeni batch", "batch N yaz", "100 tarif yaz" | **MOD A**, 100 yeni TR tarif yaz | §5 | `scripts/seed-recipes.ts` sonuna append + inline EN/DE title+description |
 | **"Mod B"**, "batch N çevirisi", "translations-batch-N.csv işle" | **MOD B**, CSV'yi okuyup JSON üret | §6 | `docs/translations-batch-N.json` (ingredients/steps/tipNote/servingSuggestion EN+DE) |
 | **"Mod C"**, "Kategori SEO", "SEO copy", "landing intro + FAQ" | **MOD C**, landing sayfaları için özgün TR giriş + FAQ yaz | §12 | `docs/seo-copy-v1.json` (17 kategori + 16 mutfak + 5 diyet = 38 item array) |
+| **"Mod D"**, "editoryal revize", "top 200 duzelt", "tipNote drift fix" | **MOD D**, mevcut tariflerin tipNote + servingSuggestion revize JSON | §13 | `docs/editorial-revisions-batch-N.json` (slug bazlı update array) |
 
 **Default'lar (soru sorma, direkt başla):**
 
@@ -47,6 +48,22 @@
   - `intro`: TR 180-220 kelime, tek paragraf, özgün + somut + slug'a özgü karakter.
   - `faqs`: 4 item, her biri `{ q, a }`, her `a` 60-90 kelime, spesifik (generic değil).
 - Detay §12.
+
+### Mod D default (Kerem sadece "Mod D" veya "editoryal revize" derse):
+- **Çıktı:** `docs/editorial-revisions-batch-N.json`, 100 item array (batch
+  numarası Kerem'in belirttiği; default en son batch veya Kerem verir).
+- **Kaynak:** Kerem sana input CSV verir: `docs/editorial-review-batch-N.csv`
+  (slug + mevcut tipNote + servingSuggestion + ingredients + steps
+  okunur), SENIN işin drift/generic/yanlış-bağlam metinleri revize
+  etmek.
+- Her item: `{ slug, tipNote?, servingSuggestion? }`.
+  - Sadece degistirilecek alanı yaz (partial update). Degisiklik gerekmeyen
+    alanı JSON'a KOYMA (undefined = dokunma).
+  - `slug`: CSV'den aynen kopyala.
+  - `tipNote`: revize TR 8-20 kelime, somut ölçü + zaman + yöntem. Generic
+    ("iyi olsun", "güzel pişer") YASAK.
+  - `servingSuggestion`: revize TR 8-20 kelime, spesifik servis bağlamı.
+- Detay §13.
 
 **⚠️ Tek teslim kuralı (Mod A):** Kerem açıkça "kademeli gönder" veya "50'şer
 ver" demiyorsa, **100 tarifi TEK seferde tamamla**. Ortada durma, "25 hazır,
@@ -1044,6 +1061,114 @@ sinyal zayıf.
 
 **5 diyet** (`type: "diet"`):
 `vegan`, `vejetaryen`, `glutensiz`, `sutsuz`, `alkolsuz`
+
+---
+
+## 13. Mod D, Top 200 editoryal revize
+
+**Amaç:** Mevcut canlı tariflerde (2800+) küçük drift/generic/bağlam-dışı
+tipNote ve servingSuggestion metinleri görülüyor. GPT audit örneği:
+Makroudh tatlısında "uzun pişimde ara ara karıştırmak" notu, aslında
+bir hamur tatlısı için bağlama oturmuyor. Bu tür drift'leri toplu olarak
+temiz hale getirmek.
+
+Bu mod veri değişikliği yapar ama yeni tarif eklemez. Mevcut DB
+satırlarının yalnızca `tipNote` ve `servingSuggestion` kolonlarını
+update eden JSON üretir; Claude apply kodunu yazar ve dev + prod'a
+uygular.
+
+### 13.1 Girdi (Kerem sana ne verir)
+
+- **CSV yolu**: `docs/editorial-review-batch-N.csv` (N = Kerem'in
+  belirttiği batch numarası; 1'den başlayarak artan).
+- **CSV kolonları** (okuyacağın, yazmayacağın):
+  ```
+  slug, title, category, type, cuisine,
+  ingredients_tr, steps_tr,
+  tipNote_current, servingSuggestion_current
+  ```
+- Tipik batch boyutu: **100 tarif** (en çok görüntülenen 200 tarif iki
+  batch'e bölünür, 100-100).
+
+### 13.2 Çıktı dosyası
+
+- **Tek dosya**: `docs/editorial-revisions-batch-N.json`
+- **Array, değişken boyut** (senin degisiklik onerdigin tarif sayısı;
+  CSV'deki 100'den az olabilir, 100 zorunlu değil).
+- Encoding: UTF-8, BOM yok, 2-space indent.
+
+### 13.3 Item şeması
+
+```json
+{
+  "slug": "makroudh-tunus-usulu",
+  "tipNote": "Hamuru 30 dakika dinlendirmek sekerlemenin icinde yumusak katman birakir.",
+  "servingSuggestion": "Serbetli olarak orta sicaklikta, yaninda Tunus kahvesiyle sun."
+}
+```
+
+**Kritik**:
+- `slug` zorunlu, CSV'den aynen kopyala.
+- `tipNote` ve `servingSuggestion` **her ikisi de opsiyonel**.
+  Yalnızca **degisiklik onerdigin** alanı yaz. Alan dokunulmasın istiyorsan
+  JSON'a ekleme (null veya "" yazma, tamamen atla).
+- Degisiklik yoksa o tarifi JSON'a HIC EKLEME. Array'de yalnızca
+  degistirilmesi gerekenler yer alır.
+
+### 13.4 Nerede degisiklik onerirsin (karar cercevesi)
+
+**tipNote revize kriterleri**:
+- Generic ifade ("iyi olsun", "güzel pişer", "lezzet katar") — REVIZE
+- Baglam dışı ("uzun pişimde karıştır" ama tarif 5 dakika) — REVIZE
+- Ölçü/zaman eksik ("biraz bekle") — REVIZE (5 dk, 10 dk gibi somut)
+- Zaten somut + spesifik + tarifin karakterini yansıtıyor — DOKUNMA
+
+**servingSuggestion revize kriterleri**:
+- "Sıcak servis edin." gibi tek cümlelik generic — REVIZE (nereye,
+  yanında ne, hangi kap, hangi anda)
+- Zaten bağlam verici ("yanında taze sumak ve limonlu roka ile ılık
+  servis") — DOKUNMA
+
+**Şüphe durumunda DOKUNMA**. Doğruluk > hacim. 100 tariflik CSV'den 40
+degisiklik de kabul edilir, 100 zorla revize KOTU.
+
+### 13.5 Yazım kuralları (Mod A/B/C ortak)
+
+- **Em-dash (— U+2014) YASAK**. Yerine virgul, nokta, parantez, iki
+  nokta. En-dash (–) de yasak.
+- **Muglak ifade yasak**: "iyice", "bolca", "biraz" — ölçü + zaman ver.
+- **Marka ismi geçmez** (Tarifle dahil, içsel brand vurgusu JSON'a
+  gerekmez).
+- **Zaman işareti yok** (evergreen).
+- **TR collation**: ç, ğ, ı, İ, ö, ş, ü doğru. ASCII düşmesin.
+- **TipNote**: 8-20 kelime. Tek cümle veya kısa iki cümle. Uzunluk sınırı
+  sıkı.
+- **servingSuggestion**: 8-20 kelime. Servis bağlamı + yan öğe veya
+  sunum şekli.
+
+### 13.6 Self-review (teslim öncesi)
+
+- [ ] JSON valid (`jq . docs/editorial-revisions-batch-N.json`).
+- [ ] Her item'da `slug` var + CSV'deki bir slug'a eşleşiyor (slug
+      uydurmadın).
+- [ ] Her item'da en az bir alan dolu (`tipNote` veya `servingSuggestion`),
+      boş item yok.
+- [ ] Em-dash grep: 0 eşleşme.
+- [ ] Kelime sayısı her tipNote + servingSuggestion'da 8-20 arası
+      (Python `len(text.split())` kontrol).
+- [ ] Generic cümle yok (değişiklik önerdin ama hala generic
+      kalmadıysa, tekrar revize).
+- [ ] CSV'de dokunmadığın tarifleri JSON'a EKLEMEDİN.
+
+### 13.7 Dosya adlandırma + versiyonlama
+
+- İlk batch: `docs/editorial-revisions-batch-1.json`
+- İkinci batch: `docs/editorial-revisions-batch-2.json`
+- ...
+- Kerem "Mod D. Batch 3" derse batch 3 dosyası.
+
+Apply sonrası Claude DB'ye update atar, dosya kaynak olarak tracking'de
+kalır (review + rollback trace için).
 
 ---
 

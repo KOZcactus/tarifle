@@ -2070,4 +2070,102 @@ Proje durumunu takip etmek için `docs/PROJECT_STATUS.md` dosyası kullanılır.
 
 ---
 
+## 35. Monetizasyon + Topluluk Flywheel (Faz 1 aktif, Faz 2-3 plan)
+
+Kerem + Claude oturum 12 kararı. Ayrıntı `docs/FUTURE_PLANS.md`'de,
+buradaki özet stratejik konum.
+
+### Genel çerçeve
+
+Tarifle büyük tarif arşivi olma yarışına girmez. Karar-motoru + topluluk
+prestij odaklı konumlanma. Topluluk değerini önce **ücretsiz tier**
+üzerinden büyütür, monetizasyon yalnızca critical mass (min 5000 aktif
+user) sonrası açılır.
+
+### Faz 1, Rozet + Leaderboard (ÜCRETSİZ, oturum 12+)
+
+Uygulanacak altyapı:
+
+- **Badge system**: her kullanıcı profili rozet + skor gösterir.
+  Örnek rozetler:
+  - Çaylak (ilk uyarlama)
+  - Deneyimli (5 uyarlama)
+  - Editör favorisi (en çok beğenilen 10'a giren bir uyarlama)
+  - Fotoğrafçı (10 tarif fotoğrafı)
+  - Kategori ustası (5 uyarlama aynı kategoride)
+- **Leaderboard sayfası** `/leaderboard`:
+  - Haftalık Top 10 (pazartesi 00:00 UTC sıfırlanır)
+  - Aylık Top 10 (ayın 1'inde sıfırlanır)
+  - Tüm zamanlar Top 50
+  - Kategori bazlı ("En iyi çorba ustası", "En iyi tatlıcı")
+- **Skor algoritması**:
+  ```
+  skor = uyarlama_sayısı × 3
+       + toplam_beğeni × 1
+       + review_rating_toplam × 2
+       + fotoğraf_sayısı × 2
+       + topluluk_seçimi (editör) × 10
+  ```
+- **Profil entegrasyonu**: "12 uyarlama, 89 beğeni, 3 rozet" satırı.
+- **Paylaşım kartı**: "Bu hafta Tarifle Top 10'a girdim" Instagram-story
+  sized görsel, viral marketing için.
+- **Cron**: her pazartesi 06:00 UTC haftalık skor hesaplama + rozet
+  yeniden değerlendirme.
+
+### Faz 2, Pro tier (6-9 ay sonra, min 5000 aktif user koşulu)
+
+- **Fiyat**: ₺39/ay veya ₺299/yıl (%35 yıllık indirim)
+- **Avantajlar**:
+  - 50 uyarlama/ay (ücretsiz 10 yerine)
+  - Altın Pro rozeti (profil öne çıkar)
+  - Erken erişim (yeni batch tarif 24 saat önce)
+  - Reklamsız (reklam eklenirse)
+  - Pro-only feed boost (%20 öne çıkma)
+  - Alışveriş listesi sınırsız (ücretsiz 10 limit)
+  - Menü planlayıcı 4 hafta ileri (ücretsiz 1 hafta)
+
+### Faz 3, Max tier (12+ ay, elit community signal)
+
+- **Fiyat**: ₺99/ay veya ₺799/yıl
+- **Avantajlar**:
+  - Sınırsız uyarlama
+  - Public koleksiyon yayınlama (ücretsizde kişisel kalır)
+  - Platin Max rozeti
+  - Ayda bir editör review (1-1)
+  - Video snippet yükleme (ücretsizde yalnızca foto)
+  - **Tarifle içerik üreticisi programı** eligible: Top 50 all-time
+    kullanıcısına reklam geliri %30 pay (YouTube/Medium mantığı).
+    Uzun vadeli bağlılık + bağımsız içerik üreticisi motivasyonu.
+
+### Limit ölçüleri
+
+- **Ücretsiz**: 10 uyarlama/ay (aylık reset, lifetime quota değil).
+  Churn riski düşük, platformu denemeye yeter.
+- **Pro**: 50 uyarlama/ay.
+- **Max**: sınırsız.
+
+### Leaderboard gaming önlemi (Kerem onayı ile yumuşatılmış)
+
+- Fake hesap: başlarda bir ölçüde tolerans (ziyaretçi ivmesi için reklam
+  etkisi), açılış sonrası sıkılaştırılır.
+- Moderator-approved uyarlamalar skoru sayılır, pending durumu etkilemez.
+- Aynı IP'den 3+ hesap otomatik flag (aşırılık durumunda).
+- Haftalık review threshold (1 hafta bekleme, fake'ler filtrelenir).
+
+---
+
+## 36. Uygulanma durumu ve deploy kuralları
+
+**Site açılışı ÖNCESİ** (oturum 12-22): Faz 1 altyapısı, topluluk seed
+ÇALIŞMAZ (boş sayfaya editör davet etmek demotive edici). Teknik +
+içerik perfeksiyon öncelikli.
+
+**Site açılışı SONRASI**: Topluluk seed + P2-12 marketing + Faz 1 full
+aktivasyon + Faz 2 planlama başlar.
+
+**Gelecek fikirler**: `docs/FUTURE_PLANS.md`. O dosya yalnızca yapılmamış
+planlar içerir, biten iş silinir (değer-veren havuz).
+
+---
+
 > **Bu doküman, projenin tek kaynak dokümanıdır (Single Source of Truth).** Her büyük karar bu dokümana referansla alınır ve güncel tutulur. Faz ilerledikçe tamamlanan maddeler işaretlenir, yeni fikirler eklenir.

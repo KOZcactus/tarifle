@@ -1247,18 +1247,39 @@ dokunmaz.
 ### 14.4 Kalite kriterleri (mutlaka uy)
 
 **Her step somut + bilgi yoğun olmalı:**
-- ✅ "Önceden 220°C ısıtılmış fırında 18 dakika kenarlar altın olana kadar pişirin."
+- ✅ "Önceden 220°C ısıtılmış fırında 17-19 dakika kenarlar altın olana kadar pişirin."
 - ❌ "Pideyi 18 dakika pişirin." (sıcaklık eksik)
 - ❌ "Sebzeleri ince yerleştirin." (hangi sebze, ne sırada, ne kadar)
 - ❌ "Hamuru açın." (kalınlık? şekil?)
 - ❌ "Iyice yoğurun." (ne kadar süre?)
 
 **Mutlaka olması gerekenler step'te:**
-- **Pişirme/fırın step'i:** sıcaklık + zaman ("220°C 18 dakika")
-- **Dinlendirme:** süre ("30 dakika dinlendirin")
+- **Pişirme/fırın step'i:** sıcaklık + zaman ("220°C 17-19 dakika")
+- **Dinlendirme:** süre ("30 dakika dinlendirin" veya "25-35 dakika")
 - **Hazırlık:** yöntem + form ("ince dilimleyin", "küp doğrayın",
   "limonlu suya bırakın")
 - **Birleştirme:** sıra + bağlam ("önce A, sonra B üzerine")
+
+**⚠️ DOĞRULUK ÖNCELİĞİ — uydurma kesin sayı yerine aralık ver:**
+Tariflerde fırın sıcaklığı, pişirme süresi, dinlendirme dakikası gibi
+hassas değerlerde **emin değilsen aralık tercih et**. Yanlış kesin sayı
+("18 dakika" diyince kullanıcı 18'inci dakikada açar, hala çiğ olabilir)
+zarar verir; aralık ("17-19 dakika") doğal esneklik sağlar + güvenilirlik
+artar.
+
+- ✅ "180-200°C ısıtılmış fırında 25-30 dakika pişirin."
+- ✅ "Hamuru 25-35 dakika dinlendirin."
+- ✅ "Soğanı 8-10 dakika orta ateşte kavurun."
+- ❌ "180°C'de 27 dakika pişirin." (uydurulmuş kesin sayı)
+- ✅ "180°C'de 25-30 dakika pişirin." (aralık + doğal esneklik)
+
+**Aralık verme kuralları:**
+- Fırın sıcaklığı: ±10-20°C aralık (180-200°C, 200-220°C)
+- Pişirme süresi: ±2-5 dakika aralık (15-18, 25-30 dk)
+- Dinlendirme: ±5-10 dakika aralık (10-15, 25-35 dk)
+- Klasik tarifler için kesin sayı OK (Türk kahvesi 3 dakika, makarna paketinde
+  yazan süre)
+- timerSeconds alanı için aralığın **ortasını** ver (17-19 dk = 1080 sn ≈ 18 dk)
 
 **Ingredient kullanımı:**
 - CSV'deki `ingredients_tr` listesindeki **TÜM malzemeleri** step'lerde
@@ -1320,6 +1341,9 @@ Type ne olursa olsun, **her adım somut + bilgi yoğun + ölçü + zaman + yönt
 - [ ] JSON valid (`jq . docs/step-revisions-batch-N.json`).
 - [ ] Her item'da `slug` var + CSV'deki bir slug'a eşleşiyor.
 - [ ] Her item'da `steps` array, **type bazli min**: ICECEK 3+, KOKTEYL/APERATIF 4+, diger 5+ (Kerem direktifi).
+- [ ] Hassas degerler (firin sicaklik/pisirme dakika/dinlendirme): emin
+      degilsen **aralik** ver ("17-19 dk", "180-200°C") — uydurma kesin
+      sayi yazma. timerSeconds aralik ortasi.
 - [ ] stepNumber ardışık 1..N (eksik veya tekrar yok).
 - [ ] Em-dash grep: 0 eşleşme.
 - [ ] Her step 5-25 kelime arası.

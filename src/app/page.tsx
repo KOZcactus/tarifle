@@ -1,10 +1,17 @@
 import Link from "next/link";
 import { Suspense } from "react";
+import { cookies } from "next/headers";
 import { getTranslations } from "next-intl/server";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
 import { FeaturedShelf } from "@/components/home/FeaturedShelf";
 import { RecipeOfTheDay } from "@/components/home/RecipeOfTheDay";
+import { HeroVariantInit } from "@/components/home/HeroVariantInit";
+import {
+  HERO_VARIANT_COOKIE,
+  heroTitleI18nKey,
+  pickVariant,
+} from "@/lib/experiments/hero-tagline";
 import {
   getFeaturedRecipes,
   getRecipes,
@@ -40,6 +47,13 @@ export default async function HomePage() {
   // (~50ms); waterfall alt-sınırı minimum.
   const session = await auth();
   const userId = session?.user?.id ?? null;
+
+  // Hero A/B variant pick (oturum 13 minimal kurulum). Cookie varsa onu
+  // kullanir, yoksa rastgele 50/50; HeroVariantInit client component
+  // mount sonrasi cookie'yi 30 gun persist eder + Sentry tag setler.
+  const cookieStore = await cookies();
+  const heroVariant = pickVariant(cookieStore.get(HERO_VARIANT_COOKIE)?.value);
+  const heroTitleKey = heroTitleI18nKey(heroVariant);
 
   const [
     featured,
@@ -78,13 +92,16 @@ export default async function HomePage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* A/B variant cookie persist + Sentry tag tracker (render etmez). */}
+      <HeroVariantInit variant={heroVariant} />
+
       {/* Hero */}
       <section className="flex flex-col items-center py-16 text-center lg:py-24">
         <span className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-medium text-primary">
           🍳 <CountUp target={recipeCount} /> {t("heroBadgeSuffix")}
         </span>
         <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-          {t.rich("heroTitle", {
+          {t.rich(heroTitleKey, {
             accent: (chunks) => <span className="text-primary">{chunks}</span>,
           })}
         </h1>

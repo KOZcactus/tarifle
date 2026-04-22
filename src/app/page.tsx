@@ -4,7 +4,6 @@ import { getTranslations } from "next-intl/server";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
 import { FeaturedShelf } from "@/components/home/FeaturedShelf";
-import { HeroAiPrompt } from "@/components/home/HeroAiPrompt";
 import { RecipeOfTheDay } from "@/components/home/RecipeOfTheDay";
 import {
   getFeaturedRecipes,
@@ -114,12 +113,16 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* İkinci hero: "Evdekilerle ne pişireceğini bul" başlığı + HeroAiPrompt.
-          Primary hero arama/keşfet odakli; secondary hero karar-motoru
-          vurgusuyla (malzeme girişi + AI önerisi). İki hero aynı renkli-
-          banner stili yerine ayırıcı border-top ile ayrıldı, visual
-          hiyerarşi korundu. */}
+      {/* İkinci hero: karar-motoru vaadi ile AI Asistan'a yönlendirme.
+          Eski versiyonda burada inline malzeme prompt'u vardı; Kerem
+          oturum 12 kararı, prompt /ai-asistan ile tekrar ediyordu. İllüs
+          trasyon + tek CTA ile temizlendi; kullanıcı CTA'ya basınca
+          sayfada tam deneyimi (autocomplete + 7 filtre + sonuç listesi)
+          görür. Border-top primary hero'dan ayırır. */}
       <section className="flex flex-col items-center border-t border-border py-12 text-center lg:py-16">
+        <span aria-hidden="true" className="mb-3 text-6xl sm:text-7xl">
+          🤖
+        </span>
         <h2 className="font-heading text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
           {t.rich("heroSecondaryTitle", {
             accent: (chunks) => <span className="text-primary">{chunks}</span>,
@@ -128,7 +131,13 @@ export default async function HomePage() {
         <p className="mt-3 max-w-xl text-sm text-text-muted sm:text-base">
           {t("heroSecondaryTagline")}
         </p>
-        <HeroAiPrompt />
+        <Link
+          href="/ai-asistan"
+          className="mt-6 inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary/90 sm:text-base"
+        >
+          {t("heroSecondaryCta")}
+          <span aria-hidden="true">→</span>
+        </Link>
       </section>
 
       {/* Sana özel, giriş yapmış + tercihleri dolu user için kişiselleştirilmiş

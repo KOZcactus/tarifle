@@ -13,33 +13,45 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ---
 
-## 🎯 Aktif (şu an çalışılıyor)
+## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
-### Faz 1 Rozet + Leaderboard altyapısı (oturum 12)
+### Faz 1 Leaderboard kalan parçalar (oturum 12'de altyapı canlı, sonraki iterasyon)
 
-Ayrıntı `docs/TARIFLE_ULTIMATE_PLAN.md` §35. Uygulama adımları:
+Tamamlananlar (oturum 12, commit `88da36b`):
+- ✅ Prisma migration `20260422030000_add_faz1_badge_keys` (7 yeni BadgeKey)
+- ✅ `src/lib/leaderboard/score.ts` skor util (raw SQL 5 CTE, 3 pencere)
+- ✅ `src/app/leaderboard/page.tsx` SSR route (haftalık + aylık + all-time)
+- ✅ Navbar "Liderlik" link
+- ✅ Badge config (`src/lib/badges/config.ts`) 7 yeni metadata
 
-- [ ] Prisma schema: `Badge` + `UserBadge` + `UserScoreSnapshot` model
-- [ ] Migration + seed 5 başlangıç rozeti
-- [ ] `src/lib/leaderboard/score.ts` skor hesaplama util
-- [ ] `src/app/leaderboard/page.tsx` SSR route (haftalık + aylık + all-time tabs)
-- [ ] Profil sayfasına skor + rozet satırı (`src/app/profil/[username]/page.tsx`)
-- [ ] Haftalık cron: pazartesi 06:00 UTC skor hesaplama + rozet atama
+Kalan:
+- [ ] Profil sayfasına skor + rozet satırı (`src/app/profil/[username]/page.tsx`; `getUserScore` util hazır, ~45dk)
+- [ ] Haftalık cron: pazartesi 06:00 UTC skor + WEEKLY/MONTHLY/ALL_TIME_TOP rozet atama
 - [ ] Paylaşım kartı: "Top 10" Instagram-story boyutlu PNG (opsiyonel, Faz 1.1)
 
-### Codex Mod C (Landing SEO copy)
+### Codex Mod C (Landing SEO copy), teslim bekleniyor
 
 Brief `docs/CODEX_BATCH_BRIEF.md` §12. Beklenen:
-- [ ] Codex teslim `docs/seo-copy-v1.json` (38 item)
+- [ ] Codex teslim `docs/seo-copy-v1.json` (38 item: 17 kategori + 16 mutfak + 5 diyet)
 - [ ] Landing sayfalarına inject kodu (~2 saat)
 - [ ] Article + FAQPage JSON-LD entegrasyonu
 
-### Codex Mod D (Top 200 editoryal revize)
+### Codex Mod D (Top 200 editoryal revize), CSV hazırlanacak
 
-Brief `docs/CODEX_BATCH_BRIEF.md` §13 (eklenecek). Beklenen:
-- [ ] Codex teslim `docs/editorial-revisions-batch-N.json` (100 item)
+Brief `docs/CODEX_BATCH_BRIEF.md` §13 (oturum 12'de eklendi). Beklenen:
+- [ ] `scripts/gen-editorial-review-csv.ts` yeni script (viewCount desc top 200, 100'er batch)
+- [ ] Codex teslim `docs/editorial-revisions-batch-N.json` (partial update, değişiklik önerileri)
 - [ ] Tarif update pipeline: tipNote + servingSuggestion DB update script
 - [ ] dev/prod apply
+
+### Batch 30 Codex tam teslim
+
+- [ ] Codex partial 30 tarif gönderdi (oturum 12 sonu), full 100'e tamamlaması bekleniyor
+- [ ] Full teslim sonrası: dev seed + audit + CSV üret + Mod B brief
+
+### Vercel Fluid CPU teyit
+
+- [ ] TTL artışı sonrası Dashboard Fluid Active CPU %50+ azalma gözlemi (oturum 13 ilk iş)
 
 ---
 
@@ -62,6 +74,14 @@ Brief `docs/CODEX_BATCH_BRIEF.md` §13 (eklenecek). Beklenen:
       → koleksiyon)
 - [ ] **Sentry replay entegrasyonu** (opsiyonel): kullanıcı hatası
       anında session replay
+- [ ] **Cache Components (PPR) full refactor** (oturum 12'de denendi,
+      `cacheComponents: true` Tarifle'de 30+ `force-dynamic` export ile
+      çakıştı, paradigm shift 8-12 saat). Site açılış sonrası dedicated
+      sprint'te. Beklenen kazanç: Fluid Active CPU %40-50 azalma.
+- [ ] **Turbopack prod build** (`next build --turbopack`, Build Minutes
+      (Fluid CPU değil) azaltır, developer-side deploy süresi kısalır).
+      Risk: Sentry source map + @react-pdf outputFileTracingIncludes
+      edge case'leri. Opt-in ileride.
 
 ### İçerik
 

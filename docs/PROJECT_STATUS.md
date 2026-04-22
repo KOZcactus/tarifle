@@ -1,6 +1,8 @@
 # Tarifle, Proje Durumu
 
-> Son güncelleme: **Oturum 11 sonu (21 Nis 2026), 37 commit (36 feat + 1 kritik CI fix), en büyük gün** — Backfill trilogy (01-13 tam) + allergen audit overhaul + source drift fix + SEO + mobile carousel + Sentry tune + batch 27 Mod A prod + Mod B CSV hazır + **🚨 CI/Vercel deploy regression fix** (tsc --noEmit pre-push 5. katman olarak eklendi, 36+ commit CI kırmızı/Vercel deploy bozulma kök nedeni kalıcı olarak kapatıldı). **2553 tarif prod** (2454 + 99 batch 27). **Mod B 2465/2553 (%96.5)** — %53'ten başlayıp ~1266 tarifi tam çevirili yaptık. **isFeatured 294/2553 (%12.0)** — +63 boost. Pre-push **4 katman** (lint + content:validate + em-dash + allergen source guard). Source drift trilogy: allergens (553) + missing slugs (34) + content (345). Audit 0 CRITICAL / 0 over-tag. Mobile shelf carousel + "Tam çeviri" badge + PWA engagement gate + install analytics + similar-recipes v3 (region + hunger proximity, 28 test). SEO: WebSite+Organization JSON-LD + hreflang + robots param. Sentry noise tune (client denyUrls + server Auth/Prisma/JWT ignore). **Sonraki:** Batch 27 Mod B CSV Codex'e (hazır), dev-prod slug drift fix, batch 28+ Mod A, orta vade Cache Components / Video snippet / Premium.
+> Son güncelleme: **Oturum 12 sonu (21-22 Nis 2026), ~29 commit**, GPT 5.4 Pro dış audit response + Faz 1 Leaderboard altyapısı + terminology ayarı + Batch 27/28/29 Mod A/B tam entegrasyon + Next 16 breaking fix. **2717 tarif prod** (2553 → +164 batch 28+29 + eski drift kapatılmış). **Mod B ~%98+** (batch 27 100/100, batch 28 100/100, batch 29 45/45 tam). Faz 1 Leaderboard: Prisma migration 7 yeni BadgeKey + `/leaderboard` SSR (haftalık/aylık/tüm zamanlar tab) + Navbar "Liderlik" + skor util (raw SQL 5 CTE). GPT audit P0 response: PDF Roboto self-host (cold start glyph miss fix) + web↔PDF amount rounding shared util + diyet safety softener + cuisine/kategori sayaç tek kaynak. Home iki hero: primary "Bugün ne pişirsek?" + secondary "Evdekilerle ne pişireceğini bul → AI Asistan'a Git". Canonical 308 www→apex. AgeGate v2 overlay (SSR content visible). Alkol noindex kaldırıldı (96 tarif SEO). Mutfak/kategori/diyet sayfalarına ItemList JSON-LD. /admin/analytics 42P01 fix (FROM "Recipe" → recipes). N+1 query cache (getRecipeBySlug 30dk + getSimilarRecipes 6sa). Vercel Fluid CPU %75 → agresif TTL artış + docs-only build skip. Next 16 middleware → proxy breaking fix. Codex Mod C + Mod D brief eklendi (§12-13). FUTURE_PLANS.md havuz + TARIFLE_ULTIMATE_PLAN §35-36 (3 fazlı monetizasyon + uygulama kuralı). **Pre-push 5 katman sabit**. 617/617 test PASS. **Sonraki:** Profile skor/rozet satırı, haftalık cron (rozet atama), Codex Mod C teslim, Mod D CSV hazırlama, batch 30 full Codex, blog küme başlat.
+
+> Oturum 11 sonu (21 Nis 2026), 37 commit (36 feat + 1 kritik CI fix), en büyük gün — Backfill trilogy (01-13 tam) + allergen audit overhaul + source drift fix + SEO + mobile carousel + Sentry tune + batch 27 Mod A prod + Mod B CSV hazır + **🚨 CI/Vercel deploy regression fix** (tsc --noEmit pre-push 5. katman olarak eklendi, 36+ commit CI kırmızı/Vercel deploy bozulma kök nedeni kalıcı olarak kapatıldı). **2553 tarif prod** (2454 + 99 batch 27). **Mod B 2465/2553 (%96.5)** — %53'ten başlayıp ~1266 tarifi tam çevirili yaptık. **isFeatured 294/2553 (%12.0)** — +63 boost. Pre-push **4 katman** (lint + content:validate + em-dash + allergen source guard). Source drift trilogy: allergens (553) + missing slugs (34) + content (345). Audit 0 CRITICAL / 0 over-tag. Mobile shelf carousel + "Tam çeviri" badge + PWA engagement gate + install analytics + similar-recipes v3 (region + hunger proximity, 28 test). SEO: WebSite+Organization JSON-LD + hreflang + robots param. Sentry noise tune (client denyUrls + server Auth/Prisma/JWT ignore).
 
 > Oturum 10 sonu (20 Nis 2026, 15 commit): DB audit + açlık barı + batch 24-26 + duplicate merge + manuel env'ler. **2454 tarif prod canlı**. Mod B **1299/2454** (%53). Oturum highlight: **(1) Açlık barı** (Minecraft-esin 1-10 tokluk, formül + schema + retrofit + detay + listing chip + `/tarifler` filter+sort + AI Asistan "Acıktım" + home widget + OG + PDF + JSON-LD), **(2) Batch 24-26 Mod A prod** (300 yeni tarif + 25 allergen fix), **(3) Duplicate merge P3** (155 grup, 166 loser silindi, 0 reference kaybı, SEO win), **(4) Mod B backfill altyapısı** (13 CSV, 1266 tarif, backfill-01 prod %53'e çıkardı), **(5) Haftalık audit cron** (`/api/cron/audit-report`, Sentry alert, vercel.json), **(6) Empty allergen fix** (4 prod + 1 FP rollback), **(7) E2E TestUser cleanup** + helper cascade fix, **(8) Tüm manuel env tamam** (Newsletter + Audit + Cloudinary + Pinterest domain claim). 20 migration, 613/613 test PASS, tsc/lint/em-dash clean, pre-push 3 katman. **Sonraki:** Codex Backfill-02..13 (12 batch, 1168 tarif kalan), batch 27 Mod A, 3-katmanlı source drift fix, tipNote/servingSuggestion backfill (180+167), isFeatured boost (%9.2 → %10-15 hedef), uzun vade: video snippet + Cache Components PPR + Premium.
 
@@ -9,6 +11,103 @@
 > Oturum 8 sonu (30 commit), 2320 tarif prod canlı. 10 blok: 6 Codex batch Mod A (1701→2320), 3 Mod B batch (batch 18-20 çeviri 600→900), rekabet §8 kısa 6/6 ✅ + orta 5/5 ✅, topluluk loop tam (follow + feed + fan-out + followers list + suggested cooks + collection/variation share + PWA banner + Pinterest rich pin + user-photos flag), admin analytics + bulk moderation + search log, PDF export + llms.txt, 18 migration.
 >
 > Oturum 7 sonu (28 commit), 1701 tarif prod canlı. 8 blok: Mod B batch 13-17 (600 tarif EN+DE), Mod A batch 15-17 (1401→1701), foryou sort, pagination redesign, super-admin protection, /admin/yorumlar, /kategoriler, legal hub /yasal, editör rozeti, similar-recipes v2, 44 programatik landing, profil zenginleştirme, /menu-planlayici, RSS + HowTo schema, AI Asistan v2, blog MDX + 3 makale, rekabet analizi doc, newsletter double-opt-in altyapı, codex brief 3 clarify.
+
+## 21-22 Nisan 2026 (oturum 12, ~29 commit)
+
+**A · /admin/analytics 42P01 fix** (`bd598aa`): `FROM "Recipe"` → `FROM recipes` (Prisma `@@map("recipes")` ile uyum). Oturum 11'de eklenen Content Quality widget (`aecb569`) deploy düzelince ilk render'da patlıyordu, Sentry `PrismaClientKnownRequestError 06e983d48...`. Diğer raw SQL dosyaları (`integrity-core.ts`, `recipe-search.ts`, `admin.ts:1039`) zaten lowercase `recipes` kullanıyordu. Dev DB smoke: 2553 tarif, 6 metrik sağlıklı.
+
+**B · Batch 27 Mod B prod** (`48b52da`): Codex teslim 100 row (47 zaten dolu önceki pass'lerden + 53 yeni). Dev + prod apply 100/100 integrity 0/0. Batch 27 tam kapandı.
+
+**C · Batch 28 Mod A seed + allergen drift** (`72d423a` + `4ab9234`): Codex 110 tarif. Dev 110 yeni, prod 164 yeni (eski drift kapanışı dahil). 14 allergen drift tamizlik (over-tag SUT/GLUTEN/YUMURTA + missing SUT/SUSAM/KUSUYEMIS + "Tavuk baget" → "Tavuk but" rename). 11 duplicate slug dedup (stash/pop cycle artifact). Audit-deep `revani` keyword eklendi (GLUTEN + YUMURTA, composite dessert). 2 irmik-kek ingredient enrich (`Yumurta|2|adet`). Mod B CSV regenerate.
+
+**D · Batch 28 Mod B prod** (`00f6c6b`): Codex 100 row (66 yeni + 34 zaten dolu). Dev+prod 100/100.
+
+**E · Batch 29 Mod A + Mod B** (`2ca35a8` CSV + `3e23eeb` Mod B): Codex batch 29 **kısmi teslim** (45 tarif, 100 değil). IIFE #1 10 Karadeniz + IIFE #2 35 Ege/Marmara. `gen-translation-csv.ts` scriptine `--size N` flag eklendi (partial batch edge case). Mod B 45/45 tam teslim. Dev+prod apply.
+
+**F · N+1 query cache** (`2752b02`): `/tarif/[slug]` Sentry `prisma:client:db_query` info alert. `getRecipeBySlug` + `getSimilarRecipes` için `unstable_cache` wrap (5dk + 1sa, sonra 30dk + 6sa'ya yükseltildi). "recipes" tag zaten mutasyon akışında invalidate. Beklenen %60-70 query azalma.
+
+**G · GPT 5.4 Pro dış audit response (P0 batch)** (`2945618`): 5 iş paketi:
+1. **PDF Türkçe font self-host** — Google Fonts CDN (jsdelivr) → `@fontsource/roboto` local woff, Vercel cold start glyph miss biter. `outputFileTracingIncludes` next.config ile Vercel bundle'a dahil edildi.
+2. **PDF ↔ web amount rounding** — yeni shared util `src/lib/recipe/format-amount.ts`. Önceden web `0.75 → 0.8` (toFixed), PDF ham `0.75`. Şimdi ikisi aynı formatter.
+3. **Cuisine/kategori sayaç tek kaynak** — mutfak detay `getCuisineStats()` kullanır (home ile aynı), pagination user-filtered. Category `_count.recipes.where: PUBLISHED` filter. Cache key v1→v2.
+4. **Diyet safety softener** — glutensiz + sütsüz: "güvenli seçimler" → "malzeme listesine göre içermeyen; çapraz bulaşma takibi yapılmaz; hassasiyette etiketleri doğrulayın".
+5. Adım numarası duplication (zaten fix'li, `list-none pl-0`, skip).
+
+**H · Home i18n "tarif" → "yemek çeşidi"** (`c6d7d33` + `73cb69b` revert + `93cba60` landing): Kerem karar — katalog bağlamındaki "tarif" metinleri "yemek çeşidi" olsun, item-level "tarif" kalsın. Hero badge + count + CTA + search + cuisine subtitle + "Bugünün Seçimi". Tagline revert ("yemek tarifleri" doğal Türkçe). Landing (mutfak/kategori/diyet) meta+totalCount da güncellendi.
+
+**I · Canonical 308 www→apex** (`b4bb65b`): İki domain ayrı ayrı 200 serve ediyordu (GPT audit flag). next.config `redirects` `has` host match ile permanent 308. SITE_URL + metadataBase + sitemap + robots zaten apex. Ayrıca 3 kritik canonical gap (`/kesfet`, `/hakkimizda`, `/profil/[username]` — root layout `/` inherit ediyordu). 2 combobox aria-controls (SearchBar + AiAssistantForm a11y).
+
+**J · ItemList JSON-LD** (`9f12b35`): Mutfak + kategori + diyet listing sayfalarına Recipe Carousel eligibility. `buildRecipeListSchema` helper. GPT "Empanada'da JSON-LD yok" yanılgısı düzeltildi (aslında Recipe + BreadcrumbList + FAQ + HowTo + Nutrition var) — gerçek gap `/mutfak/[cuisine]` ve ItemList idi.
+
+**K · AgeGate v2 overlay + alkol noindex kaldırıldı** (`23000a0` + `daef80b`): Önceki wrapper pattern SSR'da content hiç render etmiyordu, Google bot alkollü tarifleri boş görüyordu. Overlay pattern: content her zaman DOM'da, gate client-side mount sonrası. Cookie `tarifle_age_18` 1 yıl sticky (önceki sessionStorage → cookie, legacy migrate). "Hayır" → router.push("/"). Alkol noindex (`robots: { index: false }`) kaldırıldı — 96 alkollü tarif SEO'ya açıldı.
+
+**L · viewCount < 30 hide** (`f12d648`): Düşük social proof sinyali yerine gizle. Yeni constant `VIEW_COUNT_MIN_DISPLAY = 30`.
+
+**M · Newsletter detail** (`3786c9f`): Inline variant'a 3 somut örnek konu başlığı + sıklık vurgulandı. GPT önerisi.
+
+**N · AI hero promo → iki hero refactor → Secenek B** (`a54b630` → `b6a05f5` → `6c94256`): Önce hero'ya inline malzeme prompt eklendi (A/B cookie), sonra Kerem "eski hero'yu geri getir" dedi iki hero yapıldı, en sonunda "AI prompt /ai-asistan ile overlap ediyor" kararı ile secondary hero tek CTA "AI Asistan'a Git" haline geldi. HeroAiPrompt + HeroVariantReporter silindi (+ A/B cookie logic proxy.ts'ten kaldırıldı).
+
+**O · Menü Planla pre-login demo** (`09b2919`): Login redirect yerine 7×3 grid demo + signup/login CTA. `getDemoMealPlanRecipes()` KAHVALTI 7 + YEMEK 14 featured-first. Read-only grid (RecipePickerDialog yok).
+
+**P · Faz 1 Leaderboard + Badge** (`88da36b`): docs/TARIFLE_ULTIMATE_PLAN §35 Faz 1 altyapısı. Prisma migration `20260422030000_add_faz1_badge_keys` (7 yeni enum: EXPERIENCED, PHOTOGRAPHER, CATEGORY_MASTER, EDITOR_CHOICE, WEEKLY_TOP_10, MONTHLY_TOP_10, ALL_TIME_TOP_50). Score util raw SQL 5 CTE JOIN + GROUP BY (uyarlama × 3 + like × 1 + review × 2 + foto × 2 + editor × 10). `/leaderboard` SSR 3 tab (WEEKLY/MONTHLY/ALL_TIME), Navbar "Liderlik". `getUserScore()` profil entegrasyonu için hazır (profile UI + cron sonraki iterasyon).
+
+**Q · Codex Mod C + Mod D brief** (`5122c53` + `46157a5`): CODEX_BATCH_BRIEF.md'ye §12 Mod C (Landing SEO copy, 38 item = 17 kategori + 16 mutfak + 5 diyet) + §13 Mod D (Top 200 editoryal revize, tipNote/servingSuggestion drift fix). Hızlı tetikleyici tablosuna 2 satır eklendi. docs/FUTURE_PLANS.md yeni (aktif/planlı/sonrası havuz). docs/TARIFLE_ULTIMATE_PLAN §35-36 (3 fazlı monetizasyon + site açılışı kuralları). Memory: `feedback_launch_priority.md` ("site açılış öncesi marketing/topluluk acelesi YOK").
+
+**R · Build fix Next 16 middleware → proxy** (`ea1eac5`): Next 16.2 breaking — `src/middleware.ts` (A/B cookie) + mevcut `src/proxy.ts` (IndexNow) çakışıyordu. İki gorevi tek `proxy.ts`'e birleştirildi (sonra A/B tamamen kaldırıldı). 4 commit build fail sonrası fix push.
+
+**S · Vercel Fluid CPU azaltma + PPR rollback** (`b663ed7` + `d8396d1` + `dd81818`): Vercel Free tier Fluid Active CPU %75 (3h 3m / 4h). Agresif TTL: getRecipes 10dk→30dk, getFeaturedPool 1sa→6sa, getRecipeBySlug 5dk→30dk, getSimilarRecipes 1sa→6sa, getCuisineStats 30dk→2sa, getCategoriesForLanding 30dk→2sa. Cache key bump v2. vercel.json `ignoreCommand` docs-only push skip. Cache Components (PPR) denendi → `cacheComponents: true` 30+ dosyadaki `force-dynamic` + `revalidate` ile çakıştı, paradigm shift 8-12 saat refactor, rollback. `_comment_ignore` property schema validation fail (JSON yorum desteklemez), kaldırıldı.
+
+### Prod skor kartı (oturum 12 sonu)
+
+- **2717 tarif prod** (+164, batch 28+29 + eski drift kapanışı)
+- **Mod B ~%98+** (batch 27/28/29 tam)
+- **isFeatured 318/2717 (%11.7)** — +24 yeni featured batch 28'den
+- 24 cuisine, 17 kategori, 10 allergen, 15 tag, 7+4=11 rozet
+- **617/617 unit test PASS** (42 test dosyası)
+- **Pre-push 5 katman sabit**: lint + content:validate + em-dash + allergen source guard + tsc --noEmit
+- tsc 0 error, lint 0 a11y warning (23 unused-var cosmetic), content:validate 0 ERROR / 1615 WARNING
+- **21 formal migration** (oturum 12'de +1: `20260422030000_add_faz1_badge_keys`)
+- **Canonical apex standart**, www→apex 308
+- **Alkol noindex kaldırıldı** (96 tarif SEO'ya açık)
+- Cache TTL **agresif** (Fluid CPU azaltma hedefi)
+- Son commit `dd81818` (vercel.json schema fix)
+- Neon Launch plan + quota 385k CU-seconds (~$12 hard cap)
+
+### Yeni route'lar + altyapı (oturum 12)
+
+- **`/leaderboard`** (TR "Liderlik") — 3 tab haftalık/aylık/tüm zamanlar
+- **7 yeni rozet** (EXPERIENCED, PHOTOGRAPHER, CATEGORY_MASTER, EDITOR_CHOICE, WEEKLY_TOP_10, MONTHLY_TOP_10, ALL_TIME_TOP_50)
+- **Home iki hero** (primary "Bugün ne pişirsek?" + secondary "Evdekilerle ne pişireceğini bul → AI Asistan'a Git")
+- **Menü Planla pre-login demo** (7×3 grid, signup/login CTA)
+- **Mutfak + kategori + diyet sayfalarına ItemList JSON-LD**
+- **AgeGate v2 overlay** (SSR content visible, cookie 1 yıl)
+
+### Önemli teknik detaylar (oturum 12 eklemeler)
+
+- `src/lib/leaderboard/score.ts` — skor util raw SQL 5 CTE
+- `src/lib/recipe/format-amount.ts` — web+PDF shared amount formatter
+- `src/lib/seo/structured-data.ts` — `buildRecipeListSchema` ItemList helper
+- `src/components/meal-plan/DemoMealPlanGrid.tsx` — login öncesi preview
+- `src/app/leaderboard/page.tsx` — yeni SSR route
+- `src/proxy.ts` — Next 16 middleware → proxy rename + IndexNow serve
+- `src/components/recipe/AgeGate.tsx` — v2 overlay + cookie migrate
+- Silindi: `src/middleware.ts`, `src/components/home/HeroAiPrompt.tsx`, `src/components/home/HeroVariantReporter.tsx`
+- `vercel.json` `ignoreCommand` — docs-only push skip
+- `next.config.ts` `outputFileTracingIncludes` — PDF woff bundle'a
+- `scripts/gen-translation-csv.ts` — `--size N` flag partial batch
+
+### Oturum 13 bekleyen (öncelik sırası)
+
+1. **Vercel Fluid CPU smoke** — TTL artışı sonrası %40-50 azalma teyidi (Dashboard)
+2. **Profile sayfasına skor + rozet satırı** (`getUserScore` hazır, ~45dk)
+3. **Haftalık cron** — pazartesi 06:00 UTC skor + rozet atama (WEEKLY/MONTHLY/ALL_TIME_TOP)
+4. **Codex Mod C teslim beklemede** — `docs/seo-copy-v1.json` (38 item kategori+mutfak+diyet SEO). JSON gelince landing sayfalarına inject (~2 saat)
+5. **Codex Mod D CSV hazırla** — top 200 tarif CSV üretim script (`scripts/gen-editorial-review-csv.ts` yeni, viewCount desc top 200)
+6. **Batch 30 Codex tam teslim bekleniyor** — Şu an kısmi (30 tarif), full geldiğinde apply + audit. Benim bu oturumda denedim batch 30'u apply ama Kerem "full gelene kadar dokunma" dedi
+7. **Blog küme** (P3-16) — "30 dk tavuk", "airfryer patates", "glutensiz kahvaltı" yazıları
+8. **Top 200 editoryal** (P3-14, Mod D teslim sonrası)
+9. **23 unused-var lint warning** (cosmetic temizlik)
+10. Orta vade: PPR (cacheComponents) ayrı sprint (8-12 saat refactor, site açılış sonrası), Video snippet Remotion, Pro tier altyapı (açılış sonrası)
 
 ## 21 Nisan 2026 (oturum 11, 36 commit, maraton gün)
 

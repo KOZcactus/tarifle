@@ -2,7 +2,7 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: **Oturum 8 sonu (20 Nis 2026), 30 commit.** **2320 tarif** prod canlı (batch 18-23), Mod B 900/2020 (batch 12-20). Rekabet §8 kısa 6/6 ✅ + orta 5/5 ✅. Topluluk loop tam (follow + feed + fan-out + list + suggested), admin bulk moderation + search log + analytics aktif, PDF export canlı, user-photos flag-gated, llms.txt AI crawler brief. Detaylı kronolojik akış için `docs/PROJECT_STATUS.md`.
+> Son güncelleme: **Oturum 12 sonu (22 Nis 2026), ~29 commit.** **2717 tarif** prod canlı (batch 28+29 + eski drift kapanışı), Mod B ~%98+ (batch 27/28/29 tam). Faz 1 Leaderboard canlı (7 yeni rozet + `/leaderboard` 3 tab). GPT 5.4 Pro dış audit P0 response (PDF self-host font + rounding + safety + canonical + ItemList + AgeGate overlay). Home iki hero (primary "Bugün ne pişirsek?" + secondary "Evdekilerle ne pişireceğini bul → AI Asistan"). Canonical apex 308. Alkol noindex kaldırıldı. Vercel cache TTL agresif. Codex Mod C+D brief. FUTURE_PLANS.md havuz. Pre-push 5 katman sabit. Detaylı kronolojik akış için `docs/PROJECT_STATUS.md` → "21-22 Nisan 2026 (oturum 12)".
 
 ## İşaretler
 

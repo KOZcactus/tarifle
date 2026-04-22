@@ -20,7 +20,9 @@ import { auth } from "@/lib/auth";
 import { ITEMS_PER_PAGE } from "@/lib/constants";
 import { ALLERGEN_ORDER } from "@/lib/allergens";
 import { generateBreadcrumbJsonLd } from "@/lib/seo";
-import { buildRecipeListSchema } from "@/lib/seo/structured-data";
+import { buildRecipeListSchema, buildFaqPageSchema } from "@/lib/seo/structured-data";
+import { getLandingCopy } from "@/lib/seo/landing-copy";
+import { LandingIntroAndFaq } from "@/components/landing/LandingIntroAndFaq";
 import { DIETS } from "@/lib/diets";
 import { getLocale } from "next-intl/server";
 
@@ -145,6 +147,12 @@ export default async function MutfakLandingPage({
   // Simple pick: slug alfabetik sırada önceki/sonraki + ek çeşitlilik.
   const relatedCuisines = CUISINE_CODES.filter((c) => c !== code).slice(0, 8);
 
+  // Mod C SEO copy (intro + 4 FAQ + FAQPage JSON-LD), varsa ek render.
+  // 38 item Codex teslim docs/seo-copy-v1.json'da; eksik slug için null
+  // dönerse mevcut metin (description) yeterli kalır.
+  const landingCopy = getLandingCopy("cuisine", cuisine);
+  const faqJsonLd = landingCopy ? buildFaqPageSchema(landingCopy.faqs) : null;
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <script
@@ -155,6 +163,12 @@ export default async function MutfakLandingPage({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(recipeListJsonLd) }}
+        />
+      )}
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
       )}
 
@@ -182,6 +196,10 @@ export default async function MutfakLandingPage({
           {t("totalCount", { count: agnosticTotal })}
         </p>
       </header>
+
+      {landingCopy && (
+        <LandingIntroAndFaq copy={landingCopy} faqHeading={t("faqHeading")} />
+      )}
 
       {recipes.length > 0 ? (
         <>

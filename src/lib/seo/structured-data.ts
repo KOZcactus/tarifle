@@ -104,6 +104,40 @@ interface ItemListSchema {
  * sinyali artırır. Bu ilk pass'te url + name yeterli, çünkü list
  * page'de card'ta resim zaten görünür.
  */
+interface FAQPageSchema {
+  "@context": "https://schema.org";
+  "@type": "FAQPage";
+  mainEntity: {
+    "@type": "Question";
+    name: string;
+    acceptedAnswer: {
+      "@type": "Answer";
+      text: string;
+    };
+  }[];
+}
+
+/**
+ * FAQPage JSON-LD, landing sayfalarındaki SSS bölümünün rich-results
+ * eligibility'si için. Her q+a Question/Answer pair'i olur. Google
+ * dokümantasyonu: minimum 1 question, max ~10 önerilen, her cevap
+ * tam metin (sadece özet değil).
+ */
+export function buildFaqPageSchema(faqs: { q: string; a: string }[]): FAQPageSchema {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: f.a,
+      },
+    })),
+  };
+}
+
 export function buildRecipeListSchema(options: {
   name: string;
   description?: string;

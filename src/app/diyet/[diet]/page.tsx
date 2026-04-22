@@ -8,7 +8,9 @@ import { LandingBreadcrumb } from "@/components/landing/LandingBreadcrumb";
 import { getRecipes } from "@/lib/queries/recipe";
 import { ITEMS_PER_PAGE } from "@/lib/constants";
 import { generateBreadcrumbJsonLd } from "@/lib/seo";
-import { buildRecipeListSchema } from "@/lib/seo/structured-data";
+import { buildRecipeListSchema, buildFaqPageSchema } from "@/lib/seo/structured-data";
+import { getLandingCopy } from "@/lib/seo/landing-copy";
+import { LandingIntroAndFaq } from "@/components/landing/LandingIntroAndFaq";
 import { DIETS, dietConfigBySlug } from "@/lib/diets";
 import { CUISINE_CODES, CUISINE_FLAG, CUISINE_LABEL, CUISINE_SLUG } from "@/lib/cuisines";
 
@@ -96,6 +98,9 @@ export default async function DiyetLandingPage({
   // Cuisine cross-link, küçük bir set rotasyon, SEO link graph.
   const featuredCuisines = CUISINE_CODES.slice(0, 8);
 
+  const landingCopy = getLandingCopy("diet", diet);
+  const faqJsonLd = landingCopy ? buildFaqPageSchema(landingCopy.faqs) : null;
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <script
@@ -106,6 +111,12 @@ export default async function DiyetLandingPage({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(recipeListJsonLd) }}
+        />
+      )}
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
       )}
 
@@ -133,6 +144,10 @@ export default async function DiyetLandingPage({
           {t("totalCount", { count: total })}
         </p>
       </header>
+
+      {landingCopy && (
+        <LandingIntroAndFaq copy={landingCopy} faqHeading={t("faqHeading")} />
+      )}
 
       {recipes.length > 0 ? (
         <>

@@ -11,7 +11,9 @@ import { getCategoryBySlug } from "@/lib/queries/category";
 import { getRecipes, resolveDefaultAllergenAvoidances } from "@/lib/queries/recipe";
 import { auth } from "@/lib/auth";
 import { generateBreadcrumbJsonLd, generateCategoryFaqJsonLd } from "@/lib/seo";
-import { buildRecipeListSchema } from "@/lib/seo/structured-data";
+import { buildRecipeListSchema, buildFaqPageSchema } from "@/lib/seo/structured-data";
+import { getLandingCopy } from "@/lib/seo/landing-copy";
+import { LandingIntroAndFaq } from "@/components/landing/LandingIntroAndFaq";
 import { ALLERGEN_ORDER } from "@/lib/allergens";
 import { CUISINE_CODES, CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
 import { ITEMS_PER_PAGE } from "@/lib/constants";
@@ -55,12 +57,13 @@ export async function generateMetadata({
 export default async function KategoriPage({ params, searchParams }: KategoriPageProps) {
   const { kategori } = await params;
   const sp = await searchParams;
-  const [category, t, tFilters, tCuisine, tAllergen] = await Promise.all([
+  const [category, t, tFilters, tCuisine, tAllergen, tLanding] = await Promise.all([
     getCategoryBySlug(kategori),
     getTranslations("recipes"),
     getTranslations("filters"),
     getTranslations("cuisines"),
     getTranslations("allergens"),
+    getTranslations("landing"),
   ]);
 
   if (!category) notFound();
@@ -129,6 +132,13 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
     items: recipes.map((r) => ({ slug: r.slug, title: r.title })),
   });
 
+  // Mod C SEO copy (intro + 4 FAQ + FAQPage JSON-LD). Varsa generic
+  // generateCategoryFaqJsonLd yerine bunu kullan (daha spesifik + somut).
+  const landingCopy = getLandingCopy("category", kategori);
+  const faqJsonLd = landingCopy
+    ? buildFaqPageSchema(landingCopy.faqs)
+    : generateCategoryFaqJsonLd(category.name, total);
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Schema.org BreadcrumbList JSON-LD */}
@@ -136,12 +146,11 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      {/* Schema.org FAQPage JSON-LD, kategori SSS rich results */}
+      {/* Schema.org FAQPage JSON-LD, kategori SSS rich results.
+          landingCopy varsa Mod C 4 spesifik soru, yoksa fallback generic. */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateCategoryFaqJsonLd(category.name, total)),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       {recipes.length > 0 && (
         <script
@@ -160,6 +169,10 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
           </div>
         </div>
       </div>
+
+      {landingCopy && (
+        <LandingIntroAndFaq copy={landingCopy} faqHeading={tLanding("faqHeading")} />
+      )}
 
       {/* Filters */}
       <div className="mb-6 space-y-3">

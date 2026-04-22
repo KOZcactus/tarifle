@@ -46,14 +46,21 @@ export function RecipePickerDialog({
   const [pending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  // A11y: dialog acilirken trigger button'i kaydet, kapanirken focus geri ver
+  // (klavye kullanicisi bir sonraki Tab'a yine ayni baglamdan devam etsin).
+  const previouslyFocusedRef = useRef<HTMLElement | null>(null);
 
   // Mount sonrası input'a fokusla; sonraki query değişiminde arama.
   useEffect(() => {
     if (open) {
+      previouslyFocusedRef.current = document.activeElement as HTMLElement | null;
       inputRef.current?.focus();
       setQuery("");
       setHits([]);
       setError(null);
+    } else {
+      // Dialog kapandi, focus restore. Element hala DOM'da degilse no-op.
+      previouslyFocusedRef.current?.focus?.();
     }
   }, [open]);
 

@@ -131,7 +131,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     if (enIng > 0 && deIng > 0) p += 0.05;
     if (r.viewCount >= 500) p += 0.1;
     else if (r.viewCount >= 100) p += 0.05;
-    return Math.min(p, 1.0);
+    // Floating point cleanup: 0.7 + 0.1 = 0.7999...9 JS quirk; iki ondalik
+    // basamaga yuvarla (sitemap XML "0.7999999999999999" gosteriyordu).
+    return Math.min(Math.round(p * 100) / 100, 1.0);
   }
 
   const recipePages: MetadataRoute.Sitemap = recipes.map((r) => ({

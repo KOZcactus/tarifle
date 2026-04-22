@@ -67,16 +67,27 @@ function wordCount(text: string): number {
   return text.split(/\s+/).filter(Boolean).length;
 }
 
+/** Type bazli minimum step esigi (Kerem karari):
+ *  - ICECEK: min 3 (cin tonik gibi cok basit)
+ *  - KOKTEYL/APERATIF: min 4 (basit hazirlik + servis)
+ *  - YEMEK/CORBA/SALATA/TATLI/KAHVALTI: min 5 (asil tarif)
+ */
+function getMinStepsByType(type: string): number {
+  if (type === "ICECEK") return 3;
+  if (type === "KOKTEYL" || type === "APERATIF") return 4;
+  return 5;
+}
+
 function detectIssues(
+  type: string,
   steps: { stepNumber: number; instruction: string }[],
 ): IssueCode[] {
   const issues: IssueCode[] = [];
   const totalText = steps.map((s) => s.instruction).join(" ");
 
-  // 1. few-steps: <4 adim (Kerem karari: "min 4 olsun, illaki dogru
-  //    3-step tarifler de vardir ama dikkatli olmaliyiz aciklamada")
-  //    3 adim minimum kabul edilebilir, 1-2 adim kesin yetersiz.
-  if (steps.length < 4) issues.push("few-steps");
+  // 1. few-steps: type bazli esik (Kerem direktifi)
+  const minSteps = getMinStepsByType(type);
+  if (steps.length < minSteps) issues.push("few-steps");
 
   // 2. em-dash: herhangi step (KRITIK)
   if (steps.some((s) => checkTextEmDash(s.instruction))) issues.push("em-dash");
@@ -154,6 +165,7 @@ async function main() {
     select: {
       slug: true,
       title: true,
+      type: true,
       cuisine: true,
       category: { select: { slug: true } },
       ingredients: {
@@ -167,7 +179,7 @@ async function main() {
 
   const entries: AuditEntry[] = [];
   for (const r of recipes) {
-    const issues = detectIssues(r.steps);
+    const issues = detectIssues(r.type, r.steps);
     if (issues.length === 0) continue;
     const score = scoreIssues(issues);
     entries.push({

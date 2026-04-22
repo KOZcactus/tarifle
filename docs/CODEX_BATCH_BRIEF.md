@@ -74,7 +74,7 @@
   - **TAM REPLACEMENT:** Mevcut steps tamamen silinir, yenileri yazılır.
     Partial yok, tek adım dokunmak için bile tüm steps yazılır.
   - **slug:** CSV'den aynen kopyala.
-  - **steps:** ardışık 1..N stepNumber, **min 4 ideal 5-7 max 12** (Kerem karari: 3 adim minimum kabul ama dikkatli olmaliyiz aciklamada).
+  - **steps:** ardışık 1..N stepNumber, **type bazli minimum** (Kerem karari): **ICECEK 3+, KOKTEYL/APERATIF 4+, diger (YEMEK/CORBA/SALATA/TATLI/KAHVALTI) 5+**. Max 12. Detay §14.6.
   - **Ingredient listesi DOKUNULMAZ** (Mod E sadece steps; ingredient
     listesi sabit).
   - **tipNote + servingSuggestion DOKUNULMAZ** (Mod D alanı).
@@ -1277,21 +1277,32 @@ dokunmaz.
 - **TR collation**: ç, ğ, ı, İ, ö, ş, ü doğru. ASCII düşmesin.
 - **Step başı büyük harf, sonu nokta.**
 
-### 14.6 Adım sayısı kararı (Kerem direktifi)
+### 14.6 Adım sayısı kararı (Kerem direktifi, type bazli kademeli)
 
-**Minimum 4 adım her tarifte.** Mevcut catalog %95+ tarifte 3 adımla
-yetersiz (Mod A boilerplate). 3 adım bazen yeterli olabilir (basit
-sos), ama açıklamalar her zaman somut + bilgi yoğun olmalı.
+**Tarif type'ına göre minimum step sayısı:**
 
-Genel rehber (minimum 4, ideal 5-7):
-- **İçecek/Sos:** 4-5 step (malzeme hazırla + birleştir + son dokunuş + servis)
-- **Salata:** 4-6 step (yıka/doğra + sos hazırla + karıştır + dinlendir + servis)
+| Type | Minimum | İdeal | Mantık |
+|---|---|---|---|
+| **ICECEK** (cin tonik, smoothie, ferahlatıcı) | **3** | 3-4 | Çok basit, hazırlık + birleştirme + servis yeter |
+| **KOKTEYL** (whiskey sour, margarita) | **4** | 4-5 | Ölçü + buz + shake + süsleme + servis ayrı adımlar |
+| **APERATIF** (humus, dolmalık) | **4** | 4-6 | Hazırlık + ana iş + son dokunuş + servis |
+| **YEMEK / CORBA / SALATA / TATLI / KAHVALTI** | **5** | 5-7 | Asıl tarif, detaylı |
+
+Genel rehber (minimum eşiklerin üstü):
+- **İçecek (basit):** 3-4 step
+- **Kokteyl/Sos:** 4-5 step
+- **Aperatif/Meze:** 4-6 step
+- **Salata:** 5-6 step (yıka/doğra + sos hazırla + karıştır + dinlendir + servis)
 - **Çorba/Tek-tencere:** 5-7 step (sote + ana pişirme + ayar + son ekleme + servis)
 - **Hamur işi/Börek/Pide:** 6-9 step (hamur + dinlendirme + iç hazırla + şekil + pişirme + son)
-- **Fırın yemeği:** 5-8 step
+- **Fırın yemeği:** 6-8 step
 - **Et yemeği (kebap/güveç):** 5-8 step
 
-**Eski step sayısı 3 ise genelde genişlet (mutlak değil ama tercih):**
+**Type ne ise CSV'deki `type` kolonundan oku, eşiğe göre karar ver.**
+3-step bir cin tonik (ICECEK) flag DEĞİL, ama 3-step bir köfte (YEMEK)
+mutlaka 5+'a genişletilmeli.
+
+**Eski step sayısı eşiğin altında ise genişlet:**
 - Tek "Sebzeleri kavurun" step'ini 2'ye böl: "Soğanı doğrayın" + "Soğan + biber + domatesi 8 dakika kavurun"
 - "Pişirin" step'ini 2'ye böl: "Önceden 200°C ısıtın" + "20 dakika pişirin, üstü kızarana kadar"
 - Kapanış step'i ekle: "5 dakika dinlendirip servis edin"
@@ -1302,14 +1313,13 @@ Genel rehber (minimum 4, ideal 5-7):
 - ✅ "Enginar kalplerini ince dilimleyip limonlu suya bırakın, 5 dakika beklesin."
 - ❌ "Sebzeleri ince yerleştirin." (hangi sebze, ne sırada belirsiz)
 
-3 adımlık tarif kabul edilebilir ama her adımın **anlamlı + bilgi yoğun**
-olması zorunlu. 4-5 adıma genişletmek genelde daha iyi okunur.
+Type ne olursa olsun, **her adım somut + bilgi yoğun + ölçü + zaman + yöntem**.
 
 ### 14.7 Self-review (teslim öncesi)
 
 - [ ] JSON valid (`jq . docs/step-revisions-batch-N.json`).
 - [ ] Her item'da `slug` var + CSV'deki bir slug'a eşleşiyor.
-- [ ] Her item'da `steps` array, **min 4 step** (Kerem direktifi, 3 step tercih değil).
+- [ ] Her item'da `steps` array, **type bazli min**: ICECEK 3+, KOKTEYL/APERATIF 4+, diger 5+ (Kerem direktifi).
 - [ ] stepNumber ardışık 1..N (eksik veya tekrar yok).
 - [ ] Em-dash grep: 0 eşleşme.
 - [ ] Her step 5-25 kelime arası.

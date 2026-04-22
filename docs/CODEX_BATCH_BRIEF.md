@@ -15,6 +15,7 @@
 | **"Mod B"**, "batch N çevirisi", "translations-batch-N.csv işle" | **MOD B**, CSV'yi okuyup JSON üret | §6 | `docs/translations-batch-N.json` (ingredients/steps/tipNote/servingSuggestion EN+DE) |
 | **"Mod C"**, "Kategori SEO", "SEO copy", "landing intro + FAQ" | **MOD C**, landing sayfaları için özgün TR giriş + FAQ yaz | §12 | `docs/seo-copy-v1.json` (17 kategori + 16 mutfak + 5 diyet = 38 item array) |
 | **"Mod D"**, "editoryal revize", "top 200 duzelt", "tipNote drift fix" | **MOD D**, mevcut tariflerin tipNote + servingSuggestion revize JSON | §13 | `docs/editorial-revisions-batch-N.json` (slug bazlı update array) |
+| **"Mod E"**, "step revize", "adım kalitesi düzelt", "boilerplate steps" | **MOD E**, mevcut tariflerin steps array'ini yeniden yaz (sıcaklık + zaman + somut) | §14 | `docs/step-revisions-batch-N.json` (slug + tam steps array) |
 
 **Default'lar (soru sorma, direkt başla):**
 
@@ -64,6 +65,20 @@
     ("iyi olsun", "güzel pişer") YASAK.
   - `servingSuggestion`: revize TR 8-20 kelime, spesifik servis bağlamı.
 - Detay §13.
+
+### Mod E default (Kerem sadece "Mod E" veya "step revize" derse):
+- **Çıktı:** `docs/step-revisions-batch-N.json`, ~100 item array.
+- **Kaynak:** `docs/step-review-batch-N.csv` (slug + mevcut steps + issues
+  + ingredients), audit-step-quality.ts otomatik üretir.
+- Her item: `{ slug, steps: [{ stepNumber, instruction, timerSeconds? }] }`.
+  - **TAM REPLACEMENT:** Mevcut steps tamamen silinir, yenileri yazılır.
+    Partial yok, tek adım dokunmak için bile tüm steps yazılır.
+  - **slug:** CSV'den aynen kopyala.
+  - **steps:** ardışık 1..N stepNumber, min 4 ideal 5-7 max 12.
+  - **Ingredient listesi DOKUNULMAZ** (Mod E sadece steps; ingredient
+    listesi sabit).
+  - **tipNote + servingSuggestion DOKUNULMAZ** (Mod D alanı).
+- Detay §14.
 
 **⚠️ Tek teslim kuralı (Mod A):** Kerem açıkça "kademeli gönder" veya "50'şer
 ver" demiyorsa, **100 tarifi TEK seferde tamamla**. Ortada durma, "25 hazır,
@@ -1171,4 +1186,129 @@ Apply sonrası Claude DB'ye update atar, dosya kaynak olarak tracking'de
 kalır (review + rollback trace için).
 
 ---
+
+## 14. Mod E, Step kalitesi revize (boilerplate / sicaklik / belirsiz)
+
+**Amaç:** Mevcut canlı tariflerin (~2700) bazılarında step'ler yetersiz:
+"Sebzeleri ince yerleştirin" (enginar açıkça yazılmamış), "Pideyi 18
+dakika pişirin" (sıcaklık eksik), 3 adımdan oluşan tarifler. Mod E bu
+sorunları sistematik tarayıp Codex'e revize ettirir.
+
+Bu mod **steps array'ini TAM olarak yeniden yazar** (replacement, partial
+update değil). Ingredient listesine, tipNote'a, servingSuggestion'a
+dokunmaz.
+
+### 14.1 Girdi (Kerem sana ne verir)
+
+- **CSV yolu:** `docs/step-review-batch-N.csv` (N = batch numarası,
+  1'den artan).
+- **CSV kolonları:**
+  ```
+  slug, title, category, cuisine, stepCount, score, issues,
+  ingredients_tr, current_steps_tr
+  ```
+  - `score`: yüksek = daha sorunlu (ağırlıklı: KRITIK em-dash +5, AGIR
+    no-temp/no-time/few-steps +3, ORTA short-step/vague +1)
+  - `issues`: noktalı virgülle ayrı liste (`few-steps;no-temp;...`)
+  - `ingredients_tr`: pipe ile ayrı liste (`Un 2 su bardağı | Enginar...`)
+  - `current_steps_tr`: pipe pipe (`||`) ile ayrı adım (`1. ... || 2. ...`)
+- Tipik batch boyutu: **100 tarif** (en sorunlu 100, score desc).
+
+### 14.2 Cikti dosyasi
+
+- **Tek dosya:** `docs/step-revisions-batch-N.json`
+- **Array, tam tarif sayısı kadar (en az 1, ideal CSV'deki tüm 100).**
+- Encoding: UTF-8, BOM yok, 2-space indent.
+
+### 14.3 Item şeması
+
+```json
+{
+  "slug": "enginarli-domatesli-pide-manisa-usulu",
+  "steps": [
+    { "stepNumber": 1, "instruction": "Unu 1 cay kasigi tuz...", "timerSeconds": 1800 },
+    { "stepNumber": 2, "instruction": "Enginar kalplerini..." },
+    { "stepNumber": 3, "instruction": "Hamuru oval acin..." },
+    { "stepNumber": 4, "instruction": "Onceden 220 derece...", "timerSeconds": 1080 }
+  ]
+}
+```
+
+**Kritik:**
+- `slug` zorunlu, CSV'den aynen kopyala.
+- `steps` array zorunlu (min 4 step, ideal 5-7, max 12).
+- `stepNumber` ardışık 1, 2, 3, ... (boşluk yok).
+- `instruction` her step için zorunlu, **5-25 kelime** (Mod D'den biraz
+  daha esnek, kompleks step'ler için 25'e kadar OK).
+- `timerSeconds` opsiyonel ama **pişirme/dinlendirme/marine adımlarında
+  ekle**. Saniye cinsinden integer (30 dk = 1800, 1 saat = 3600, 18 dk
+  = 1080). UI dahili zamanlayıcıda kullanır.
+
+### 14.4 Kalite kriterleri (mutlaka uy)
+
+**Her step somut + bilgi yoğun olmalı:**
+- ✅ "Önceden 220°C ısıtılmış fırında 18 dakika kenarlar altın olana kadar pişirin."
+- ❌ "Pideyi 18 dakika pişirin." (sıcaklık eksik)
+- ❌ "Sebzeleri ince yerleştirin." (hangi sebze, ne sırada, ne kadar)
+- ❌ "Hamuru açın." (kalınlık? şekil?)
+- ❌ "Iyice yoğurun." (ne kadar süre?)
+
+**Mutlaka olması gerekenler step'te:**
+- **Pişirme/fırın step'i:** sıcaklık + zaman ("220°C 18 dakika")
+- **Dinlendirme:** süre ("30 dakika dinlendirin")
+- **Hazırlık:** yöntem + form ("ince dilimleyin", "küp doğrayın",
+  "limonlu suya bırakın")
+- **Birleştirme:** sıra + bağlam ("önce A, sonra B üzerine")
+
+**Ingredient kullanımı:**
+- CSV'deki `ingredients_tr` listesindeki **TÜM malzemeleri** step'lerde
+  kullan. Eksik bırakma (Pide ornegi: enginar listede ama step'te yok
+  → kullanıcı "enginar nerede" der).
+- Ingredient adlarını step'te aynen kullan ("enginar kalpleri", "domates"
+  vs).
+
+### 14.5 Yazım kuralları (Mod A/B/C/D ortak)
+
+- **Em-dash (— U+2014) YASAK**. Yerine virgül, nokta, parantez, iki nokta.
+  En-dash (–) de yasak.
+- **Muglak ifade yasak**: "iyice", "bolca", "biraz" → ölçü + zaman ver.
+- **Marka ismi geçmez** (Tarifle dahil).
+- **Zaman işareti yok** (evergreen).
+- **TR collation**: ç, ğ, ı, İ, ö, ş, ü doğru. ASCII düşmesin.
+- **Step başı büyük harf, sonu nokta.**
+
+### 14.6 Sıradan adım sayısı kararı (önemli)
+
+Mevcut step sayısına bakma, **gerekli olanı yaz**. Bazı tarifler 3-4
+adımda yeter (içecek, basit salata), bazıları 7-8 step gerek (börek,
+fırın işi). Genel rehber:
+- **İçecek/Salad/Sos:** 3-5 step
+- **Çorba/Tek-tencere:** 4-6 step
+- **Hamur işi/Börek/Pide:** 5-8 step
+- **Fırın yemeği:** 5-7 step
+- **Et yemeği (kebap/güveç):** 5-7 step
+
+Eski step sayısı 3 ise mutlaka **4+'a çıkar** (audit kuralı: <4 = yetersiz).
+
+### 14.7 Self-review (teslim öncesi)
+
+- [ ] JSON valid (`jq . docs/step-revisions-batch-N.json`).
+- [ ] Her item'da `slug` var + CSV'deki bir slug'a eşleşiyor.
+- [ ] Her item'da `steps` array, min 4 step.
+- [ ] stepNumber ardışık 1..N (eksik veya tekrar yok).
+- [ ] Em-dash grep: 0 eşleşme.
+- [ ] Her step 5-25 kelime arası.
+- [ ] Pişirme step'inde sıcaklık + zaman var.
+- [ ] CSV'deki ingredient'ların TÜMÜ step'lerde geçiyor.
+
+### 14.8 Dosya adlandırma + versiyonlama
+
+- İlk batch: `docs/step-revisions-batch-1.json`
+- İkinci batch: `docs/step-revisions-batch-2.json`
+- ...
+- Kerem "Mod E. Batch 3" derse batch 3 dosyası.
+
+Apply sonrası Claude `scripts/apply-step-revisions.ts` ile DB'ye atomic
+transaction yazar (eski steps delete + yenileri create), dosya tracking'de
+kalır.
 

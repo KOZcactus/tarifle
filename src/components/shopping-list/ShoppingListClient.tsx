@@ -9,6 +9,12 @@ import {
   removeItemAction,
   toggleItemAction,
 } from "@/lib/actions/shopping-list";
+import {
+  classifyIngredient,
+  SUPERMARKET_CATEGORY_META,
+  SUPERMARKET_CATEGORY_ORDER,
+  type SupermarketCategory,
+} from "@/lib/shopping/supermarket-categories";
 
 interface Item {
   id: string;
@@ -31,11 +37,19 @@ export function ShoppingListClient({ initialItems }: ShoppingListClientProps) {
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
 
-  const { unchecked, checked } = useMemo(() => {
-    return {
-      unchecked: items.filter((i) => !i.isChecked),
-      checked: items.filter((i) => i.isChecked),
-    };
+  const { unchecked, checked, uncheckedByCategory } = useMemo(() => {
+    const u = items.filter((i) => !i.isChecked);
+    const c = items.filter((i) => i.isChecked);
+    // Akilli grupland: her unchecked item'i supermarket kategorisine ata.
+    // Map insertion sirasi SUPERMARKET_CATEGORY_ORDER ile sabitlenir,
+    // boylece manav-kasap-sut-firin-... sirayla render edilir.
+    const grouped = new Map<SupermarketCategory, typeof u>();
+    for (const cat of SUPERMARKET_CATEGORY_ORDER) grouped.set(cat, []);
+    for (const item of u) {
+      const cat = classifyIngredient(item.name);
+      grouped.get(cat)!.push(item);
+    }
+    return { unchecked: u, checked: c, uncheckedByCategory: grouped };
   }, [items]);
 
   function handleToggle(id: string) {
@@ -186,17 +200,35 @@ export function ShoppingListClient({ initialItems }: ShoppingListClientProps) {
                 {t("allChecked")}
               </p>
             ) : (
-              <ul className="divide-y divide-border overflow-hidden rounded-xl border border-border bg-bg-card">
-                {unchecked.map((item) => (
-                  <ItemRow
-                    key={item.id}
-                    item={item}
-                    onToggle={handleToggle}
-                    onRemove={handleRemove}
-                    disabled={isPending}
-                  />
-                ))}
-              </ul>
+              <div className="space-y-4">
+                {SUPERMARKET_CATEGORY_ORDER.map((cat) => {
+                  const list = uncheckedByCategory.get(cat) ?? [];
+                  if (list.length === 0) return null;
+                  const meta = SUPERMARKET_CATEGORY_META[cat];
+                  return (
+                    <div key={cat}>
+                      <h3 className="mb-1.5 flex items-center gap-2 px-1 text-xs font-semibold uppercase tracking-wide text-text-muted">
+                        <span aria-hidden="true">{meta.emoji}</span>
+                        {t(`category.${cat}`)}
+                        <span className="ml-auto rounded-full bg-bg-elevated px-2 py-0.5 text-[10px] font-medium tabular-nums text-text">
+                          {list.length}
+                        </span>
+                      </h3>
+                      <ul className="divide-y divide-border overflow-hidden rounded-xl border border-border bg-bg-card">
+                        {list.map((item) => (
+                          <ItemRow
+                            key={item.id}
+                            item={item}
+                            onToggle={handleToggle}
+                            onRemove={handleRemove}
+                            disabled={isPending}
+                          />
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                })}
+              </div>
             )}
           </section>
 

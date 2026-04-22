@@ -1773,6 +1773,19 @@
     "clearAll": "Clear entire list",
     "clearAllConfirm": "Delete entire list?",
     "removeAria": "Remove",
+    "category": {
+      "produce": "Produce",
+      "meat": "Meat & Fish",
+      "dairy": "Dairy",
+      "bakery": "Bakery",
+      "pantry": "Pantry",
+      "eggs_canned": "Eggs & Canned",
+      "spices_sauces": "Spices & Sauces",
+      "snacks_sweets": "Snacks & Sweets",
+      "frozen_ready": "Frozen & Ready",
+      "beverages": "Beverages",
+      "other": "Other"
+    },
     "errors": {
       "update": "Could not update.",
       "remove": "Could not delete.",

@@ -153,7 +153,8 @@ Brief `docs/CODEX_BATCH_BRIEF.md` §13 (oturum 12'de eklendi). Beklenen:
 
 ## 💡 Fikir havuzu (öncelikli değil, değerlendirilecek)
 
-- Akıllı alışveriş listesi (supermarket kategori bazlı gruplandırma)
+- ~~Akıllı alışveriş listesi (supermarket kategori bazlı gruplandırma)~~
+  ✅ Oturum 13'te tamamlandı, 11 supermarket kategorisi rule-based.
 - Ses tanıma ile pişirme modu ("sıradaki adım", "tekrarla")
 - Tarif tercümesi kullanıcı input ile (başka mutfak adaptasyonu)
 - Besin değeri benim diyetime göre hedef skor (düşük-şeker, yüksek-lifli,

@@ -88,6 +88,20 @@ yakalandığında (1000+ DAU) tekrar aktifleştirilebilir:
 - [ ] **AI Asistan v4**: "Haftalık menü önerisi" - kullanıcı pantry +
       prefs + kişi sayısı + süre → 7×3 öğün önerisi. Mevcut v3 tek
       tarif veriyor, v4 çok-öğün menü planı.
+      - [x] Core algoritma: `src/lib/ai/menu-planner.ts` (oturum 16,
+            rule-based, deterministic seed, breakfast/lunch/dinner ayrı
+            havuz, hafta içi çeşitlilik cap 2 kategori + 3 cuisine).
+      - [x] Types: `src/lib/ai/types.ts` WeeklyMenuInput/Response/
+            MenuSlot/AiMenuPlanner interfaceleri eklendi.
+      - [ ] Server action: `src/lib/actions/menu.ts`
+            `generateWeeklyMenuAction(input)` + rate limit + Zod.
+      - [ ] UI: `/menu-planlayici` sayfasına "✨ AI ile Doldur" button,
+            form modal (pantry + kişi sayısı + diyet + cuisine), 21 öğün
+            preview tablosu, "Uygula" → mevcut MealPlan'a yaz.
+      - [ ] i18n: messages/{tr,en}.json aiMenuPlanner namespace.
+      - [ ] Unit test: menu-planner 21 slot invariant, cap disiplini,
+            seed determinism, Prisma mock.
+      - [ ] Playwright E2E: demo pantry ile grid doldurma happy path.
 - [ ] **Admin Tarif Düzenle UX iyileştirmeleri**: drag-drop reorder
       (ingredient/step), çift onay modal silme için, gerçek zamanlı
       preview

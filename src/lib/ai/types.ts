@@ -79,3 +79,61 @@ export interface AiProvider {
   readonly name: AiSuggestResponse["provider"];
   suggest(input: AiSuggestInput): Promise<AiSuggestResponse>;
 }
+
+// ── AI v4 (Weekly Menu Planner) ────────────────────────────────────
+
+/**
+ * Input for planning a full 7-day menu (3 meals × 7 days = 21 slots).
+ * Reuses AiSuggestInput pantry + diet filters, adds menu-specific options.
+ */
+export interface WeeklyMenuInput {
+  /** Pantry ingredients the user has at home. */
+  ingredients: string[];
+  /** If true, common staples (tuz/yağ/su/karabiber) assumed available. */
+  assumePantryStaples?: boolean;
+  /** Optional cuisine filter. Empty = all cuisines allowed. */
+  cuisines?: string[];
+  /** Optional diet slug (vegan/vejetaryen/glutensiz/sutsuz/alkolsuz). */
+  dietSlug?: string;
+  /** Ingredients to exclude (any recipe containing them is skipped). */
+  excludeIngredients?: string[];
+  /** Person count (adjusts scaling notes, doesn't filter). Default 2. */
+  personCount?: number;
+  /** Max time per breakfast meal (minutes). Default 25 (quick mornings). */
+  maxBreakfastMinutes?: number;
+  /** Max time per lunch meal (minutes). Default 45. */
+  maxLunchMinutes?: number;
+  /** Max time per dinner meal (minutes). Default 60. */
+  maxDinnerMinutes?: number;
+  /** Deterministic seed for reproducible plans (test + replay). */
+  seed?: string;
+}
+
+/** One slot in the 7×3 grid. */
+export interface MenuSlot {
+  /** 0 = Monday ... 6 = Sunday. */
+  dayOfWeek: number;
+  /** Fixed meal type. */
+  mealType: "BREAKFAST" | "LUNCH" | "DINNER";
+  /** Filled recipe (null if algorithm couldn't find a match under filters). */
+  recipe: AiSuggestion | null;
+  /** Rule-based note explaining why this slot got this recipe. */
+  reason?: string;
+}
+
+export interface WeeklyMenuResponse {
+  /** 21 slots, sorted by dayOfWeek then mealType. */
+  slots: MenuSlot[];
+  /** Overall commentary (e.g. "Bu hafta 4 farklı mutfak, 7 farklı kategori"). */
+  commentary?: string;
+  /** How many slots could not be filled (pantry too narrow / filters too strict). */
+  unfilledCount: number;
+  /** Provider identifier. */
+  provider: "rule-based" | "claude-haiku";
+}
+
+/** AI menu planner abstraction, parallel to AiProvider. */
+export interface AiMenuPlanner {
+  readonly name: WeeklyMenuResponse["provider"];
+  plan(input: WeeklyMenuInput): Promise<WeeklyMenuResponse>;
+}

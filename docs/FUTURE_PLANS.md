@@ -44,8 +44,15 @@ trigger.
 
 Brief `docs/CODEX_BATCH_BRIEF.md` §14 (B6+ ince ayar oturum 14'te
 tamamlandı, B16 dersleri §14.5 + §14.7'ye işlendi: UTF-8 no-BOM +
-cümle tekrar yasağı). Pipeline oturdu, B1-B29 apply. Sırada:
-- [ ] **Codex teslim B30** (1 batch, 38 tarif, finiş)
+cümle tekrar yasağı). Pipeline oturdu, B1-B29 apply (2900 tarif
+revize, ~%95 kalite-düşük catalog kapsandı). **Mod E bitti.**
+
+B30 CSV'si (38 "few-steps" score 1 kısa içecek/kokteyl/aperatif)
+silindi çünkü Mod A Batch 30a/30b ile numara çakışması karışıklık
+yaratıyordu + bu tarifler type minimum eşiğine oturtuldu zaten
+(ICECEK 3+, KOKTEYL/APERATIF 4+), revize marginal katkı. Gelecekte
+trafikte düşük CWV fark edilirse ayrı "few-steps refresh" pass
+açılır.
 - [ ] Apply akışı: dry-run → TR karakter scan → spot check → dev+prod
 - [ ] Fix script gerekirse tek-seferlik auto-clean (B8 v3 + B12 v3 pattern)
 - [ ] Cache invalidate: apply sonrası Vercel deploy otomatik (unstable_cache
@@ -282,8 +289,9 @@ Oturum 14'te 4 → 25 yazı eklendi, 11/7/7 denge. Sonraki aday konular:
   kokteyl / aperatif "few-steps" flag'li, type minimum eşiğine
   oturtuldu). Audit: TR 2500, `?` 0, ASCII corrupt 0, template
   dup 0, **"ya da" 0 (yeni rekor, ilk kez sıfır)**, "malzemesini" 0,
-  timer 69/100 (kısa tariflerde timer az, normal). Mod E B1-B29
-  = 2900 tarif. Kalan B30 = 38 tarif (finiş).
+  timer 69/100 (kısa tariflerde timer az, normal). **Mod E B1-B29
+  toplam 2900 tarif apply, Mod E pipeline kapandı.** B30 CSV (38
+  marjinal tarif) Mod A numara çakışmasını önlemek için silindi.
 
 ---
 

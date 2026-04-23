@@ -58,13 +58,20 @@ açılır.
 - [ ] Cache invalidate: apply sonrası Vercel deploy otomatik (unstable_cache
       reset)
 
-### Hero A/B test sonuçları (1-2 hafta sonra)
+### Hero A/B test DURDURULDU (oturum 15)
 
-- [ ] Sentry tag `hero.variant: A|B` filter ile per-variant hata oranı
+Oturum 13'te kurulu A/B ("Bugün ne pişirsek?" vs "Aklındaki malzemeyle
+yeni bir şey") launch öncesi trafikte anlamlı data üretmeden Kerem'in
+cookie'sinde B'ye yapışıp kaldı, eski klasik A hero'yu hiç göremedi.
+Mekaniği `src/lib/experiments/hero-tagline.ts` + `HeroVariantInit`
+korundu ama `pickVariant` her zaman A döner. Launch sonrası trafik
+yakalandığında (1000+ DAU) tekrar aktifleştirilebilir:
+
+- [ ] Launch sonrası A/B yeniden aç (pickVariant'ın random kısmını
+      restore et, cookie sticky)
 - [ ] Plausible/PostHog entegrasyonu (conversion attribution)
-- [ ] Variant kazanan kararı, kaybedeni sil
-- [ ] Oturum 14 değişikliği: hero içerik "24 mutfak, N farklı yemek çeşidi"
-      vurgusu A/B A variant + B variant aynı şekilde etkilenir
+- [ ] 2 hafta sonra Sentry `hero.variant: A|B` filter + variant
+      kazanan kararı, kaybedeni sil
 
 ### Vercel Fluid CPU 7-day teyit
 

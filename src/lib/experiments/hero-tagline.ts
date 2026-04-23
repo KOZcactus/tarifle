@@ -26,15 +26,17 @@ export const HERO_VARIANT_COOKIE = "tarifle_hero_v";
 export const HERO_VARIANTS: HeroVariant[] = ["A", "B"];
 
 /**
- * Cookie deger -> variant. Gecersiz/yoksa rastgele 50/50 pick.
- * Server side: Math.random kabul; deterministic gerekirse session id
- * hash'i veya request fingerprint olur (su an gerekmiyor).
+ * Cookie deger -> variant.
+ *
+ * Oturum 15: A/B test durduruldu, default A (Kerem'in tercihi; B variant
+ * "Aklindaki malzemeyle yeni bir sey" kullanicida cookie-sticky kaldi ve
+ * eski klasik "Bugun ne pisirsek?" hero'yu hic goremiyordu). Fonksiyon
+ * imzasi + HeroVariantInit cookie-persist mekaniği korunuyor (gelecekte
+ * launch sonrasi tekrar A/B acilabilir), simdi hep A donuyor. Cookie'de
+ * B varsa HeroVariantInit mount olunca A'ya yeniden yazilir.
  */
-export function pickVariant(cookieValue: string | undefined): HeroVariant {
-  if (cookieValue === "A" || cookieValue === "B") {
-    return cookieValue;
-  }
-  return Math.random() < 0.5 ? "A" : "B";
+export function pickVariant(_cookieValue: string | undefined): HeroVariant {
+  return "A";
 }
 
 /** i18n key adapter: heroTitle (control) veya heroTitleVariantB. */

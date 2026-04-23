@@ -997,6 +997,16 @@
       "confirmRemoveStepBody": "{n}. adım listeden kaldırılacak. Bu işlem kaydet basılana kadar yalnızca taslakta uygulanır.",
       "confirmRemoveCancel": "Vazgeç",
       "confirmRemoveConfirm": "Evet, sil",
+      "preview": {
+        "heading": "Canlı Önizleme",
+        "hint": "Form değişince burası anında güncellenir. Sadece taslak, kaydetmeden canlıya gitmez.",
+        "untitled": "(başlık yok)",
+        "empty": "Preview için form alanlarını doldurmaya başla.",
+        "ingredientsHeading": "Malzemeler",
+        "stepsHeading": "Adımlar",
+        "tipNoteHeading": "Püf Noktası",
+        "servingHeading": "Servis Önerisi"
+      },
       "saveAll": "Tümünü kaydet",
       "saving": "Kaydediliyor…",
       "saveSuccess": "✓ Kaydedildi, önbellek temizlendi.",

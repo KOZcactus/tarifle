@@ -997,6 +997,16 @@
       "confirmRemoveStepBody": "Step {n} will be removed from the list. Applied only to the draft until you save.",
       "confirmRemoveCancel": "Cancel",
       "confirmRemoveConfirm": "Yes, remove",
+      "preview": {
+        "heading": "Live Preview",
+        "hint": "Updates instantly as the form changes. Draft only, nothing goes live until you save.",
+        "untitled": "(untitled)",
+        "empty": "Start filling the form to see the preview here.",
+        "ingredientsHeading": "Ingredients",
+        "stepsHeading": "Steps",
+        "tipNoteHeading": "Tip",
+        "servingHeading": "Serving suggestion"
+      },
       "saveAll": "Save all",
       "saving": "Saving…",
       "saveSuccess": "✓ Saved, cache cleared.",

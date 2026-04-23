@@ -21,6 +21,7 @@ import {
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { updateRecipeContentAction } from "@/lib/actions/admin";
+import { RecipePreviewPane } from "./RecipePreviewPane";
 
 interface IngredientDraft {
   uid: string;
@@ -278,8 +279,19 @@ export function RecipeContentEditForm({
         ? t("confirmRemoveStepBody", { n: confirmTarget.index + 1 })
         : "";
 
+  const previewIngredients = ingredients.map(({ name, amount, unit }) => ({
+    name,
+    amount,
+    unit,
+  }));
+  const previewSteps = steps.map(({ instruction, timerSeconds }) => ({
+    instruction,
+    timerSeconds,
+  }));
+
   return (
-    <div className="space-y-8">
+    <div className="grid gap-6 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
+      <div className="space-y-8">
       <header className="border-b border-border pb-4">
         <p className="text-sm text-text-muted">{t("editingLabel")}</p>
         <h1 className="text-2xl font-semibold text-text">
@@ -463,6 +475,17 @@ export function RecipeContentEditForm({
           </button>
         </div>
       </dialog>
+      </div>
+
+      <div className="hidden lg:block">
+        <RecipePreviewPane
+          title={title}
+          ingredients={previewIngredients}
+          steps={previewSteps}
+          tipNote={tipNote}
+          servingSuggestion={servingSuggestion}
+        />
+      </div>
     </div>
   );
 }

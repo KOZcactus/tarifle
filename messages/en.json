@@ -1542,7 +1542,13 @@
       "errorNoIngredients": "Add at least one ingredient.",
       "errorNoSlots": "No filled slots to apply.",
       "errorGeneric": "Couldn't generate a menu.",
-      "errorApply": "Couldn't save the menu."
+      "errorApply": "Couldn't save the menu.",
+      "shoppingHint": "Add all recipe ingredients to your shopping list in one click.",
+      "shoppingButton": "Add to list",
+      "shoppingAria": "Add menu recipe ingredients to the shopping list",
+      "shoppingAdding": "Adding…",
+      "shoppingSuccess": "Added {addedCount} new items from {recipeCount} recipes, {mergedCount} merged.",
+      "errorShopping": "Couldn't add to the shopping list."
     }
   },
   "ingredientSuggestion": {

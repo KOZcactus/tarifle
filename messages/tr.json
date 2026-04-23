@@ -1542,7 +1542,13 @@
       "errorNoIngredients": "En az bir malzeme yaz.",
       "errorNoSlots": "Uygulanacak dolu slot yok.",
       "errorGeneric": "Menü oluşturulamadı.",
-      "errorApply": "Menü kaydedilemedi."
+      "errorApply": "Menü kaydedilemedi.",
+      "shoppingHint": "Menüdeki tariflerin malzemelerini tek tıkla alışveriş listene ekle.",
+      "shoppingButton": "Listeye ekle",
+      "shoppingAria": "Menüdeki tariflerin malzemelerini alışveriş listesine ekle",
+      "shoppingAdding": "Ekleniyor…",
+      "shoppingSuccess": "{recipeCount} tariften {addedCount} yeni malzeme eklendi, {mergedCount} birleştirildi.",
+      "errorShopping": "Alışveriş listesine eklenemedi."
     }
   },
   "ingredientSuggestion": {

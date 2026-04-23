@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import {
   generateWeeklyMenuAction,
   applyWeeklyMenuAction,
+  addRecipesToShoppingListAction,
 } from "@/lib/actions/menu";
 import type {
   MenuSlot,
@@ -57,7 +58,9 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
   const [result, setResult] = useState<WeeklyMenuResponse | null>(null);
   const [isGenerating, startGenerate] = useTransition();
   const [isApplying, startApply] = useTransition();
+  const [isShopping, startShopping] = useTransition();
   const [replaceExisting, setReplaceExisting] = useState(false);
+  const [shoppingStatus, setShoppingStatus] = useState<string | null>(null);
 
   const [ingredientsText, setIngredientsText] = useState("");
   const [assumeStaples, setAssumeStaples] = useState(true);
@@ -146,6 +149,36 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
     // Fresh seed each click; keeps form inputs as-is, just varies plan.
     const seed = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
     runGenerate(seed);
+  }
+
+  function handleShoppingList() {
+    if (!result) return;
+    const recipeIds = Array.from(
+      new Set(
+        result.slots
+          .map((s) => s.recipe?.recipeId)
+          .filter((id): id is string => Boolean(id)),
+      ),
+    );
+    if (recipeIds.length === 0) {
+      setError(t("errorNoSlots"));
+      return;
+    }
+    setShoppingStatus(null);
+    startShopping(async () => {
+      const res = await addRecipesToShoppingListAction({ recipeIds });
+      if (!res.success || !res.data) {
+        setError(res.error ?? t("errorShopping"));
+        return;
+      }
+      setShoppingStatus(
+        t("shoppingSuccess", {
+          recipeCount: res.data.recipeCount,
+          addedCount: res.data.totalAdded,
+          mergedCount: res.data.totalMerged,
+        }),
+      );
+    });
   }
 
   function handleApply() {
@@ -461,6 +494,22 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
                 />
                 {t("replaceLabel")}
               </label>
+
+              <div className="flex flex-wrap items-center gap-3 rounded-md border border-surface-muted bg-surface-muted/30 px-3 py-2">
+                <div className="flex-1 text-xs text-text">
+                  {shoppingStatus ?? t("shoppingHint")}
+                </div>
+                <button
+                  type="button"
+                  onClick={handleShoppingList}
+                  disabled={isShopping || isApplying || isGenerating}
+                  className="inline-flex items-center gap-1 rounded-md border border-primary/40 bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary hover:bg-primary/20 disabled:cursor-not-allowed disabled:opacity-60"
+                  aria-label={t("shoppingAria")}
+                >
+                  <span aria-hidden>🛒</span>
+                  {isShopping ? t("shoppingAdding") : t("shoppingButton")}
+                </button>
+              </div>
 
               <div className="flex flex-wrap justify-between gap-2 border-t border-surface-muted pt-4">
                 <div className="flex gap-2">

@@ -76,6 +76,20 @@ if (dsn) {
     ],
     release: process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA,
     environment: process.env.NEXT_PUBLIC_VERCEL_ENV ?? "development",
+    // Oturum 16: PWA install analytics Vercel Analytics'e tasindi,
+    // Sentry captureMessage cagrilari kaldirildi. Bu beforeSend defansif
+    // filter eski release'lerden gelen PWA info event'leri Sentry'ye
+    // dusurmesin diye (kullanici uzun sure eski cache'i tasir, browser
+    // service worker vs). Sadece pwa.* prefix'li info-level message'lar
+    // iptal; error/warning hala kacar.
+    beforeSend(event) {
+      if (event.level === "info" && typeof event.message === "string") {
+        if (event.message.startsWith("pwa.")) {
+          return null;
+        }
+      }
+      return event;
+    },
   });
 }
 

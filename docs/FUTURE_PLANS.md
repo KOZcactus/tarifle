@@ -85,8 +85,9 @@ cümle tekrar yasağı). Pipeline oturdu, B1-B29 apply. Sırada:
 
 ### İçerik
 
-- [ ] **Batch 30+**: Codex Mod A pipeline devam, hedef 3500+ tarif
-      açılış öncesi
+- [ ] **Batch 30a/30b ve sonrası**: Codex Mod A pipeline devam
+      (yeni 50/50 yarı batch mimarisi, B30'dan itibaren her batch
+      iki yarıya bölünüyor), hedef 3500+ tarif açılış öncesi
 - [ ] **Mod B backfill temizlik**: eski batch'lerden kalan translation
       açığı varsa son pass (gen-modb-backfill-csv.ts tarama)
 - [ ] **Fotoğraf dalgası**: top 100 tarife Cloudinary'den görsel yükle

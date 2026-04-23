@@ -39,12 +39,79 @@
 - Array uzunlukları TR'yle birebir eşleşmeli
 
 ### Mod B Backfill default (Kerem "Mod B. Backfill-NN" derse):
-- Kerem CSV yolu verir: `docs/translations-backfill-NN.csv` (NN zero-padded 01..13)
+
+**Scope ve mahiyet netleştirme (oturum 16 dersi, TEKRARLAMA):**
+
+Backfill işi **mevcut eksik EN+DE çevirilerini sıfırdan doldurma** işi.
+Her CSV satırı için TR source CSV'nin kendisinde TAM var. Senin işin
+sadece çeviri, bilgi arama değil, eski JSON'dan kurtarma değil, "güvenilir
+kaynak" sorgulaması değil.
+
+- Kerem CSV yolu verir: `docs/translations-backfill-NN.csv` (NN zero-padded)
 - Sen aynı isimli **JSON** üretirsin: `docs/translations-backfill-NN.json`
-- Mod B ile aynı kurallar geçerli (§6), tek fark:
-  - Batch 0-11 dönemi eski tarifler, EN/DE çevirisi **hiç yok** (title+desc dahil bazılarında eksik).
-  - CSV'deki `en_*_current` / `de_*_current` sütunları çoğunlukla boş, kafan karışmasın: **backfill'in işi zaten bu eksikleri kapatmak**.
-  - "Alanlar boş = sahte çevirmem gerekmez" refleksi yanlış, CSV'deki `ingredients_tr` / `steps_tr` / `tipNote_tr` / `servingSuggestion_tr` sütunlarından **TR metinleri oku** ve onları native çevir.
+- Mod B ile aynı kurallar geçerli (§6), format aynı (§6.3).
+
+**CSV tek kaynak, başka bir yere bakma:**
+
+CSV'deki her satır eksiksiz TR source taşır:
+- `title_tr`, `description_tr`, `tipNote_tr`, `servingSuggestion_tr`
+- `ingredients_tr` (pipe-ayrık), `steps_tr` (step_count ile)
+- `ingredient_count`, `step_count` (array length doğrulaması zorunlu)
+- `allergens`, `tags`, `type`, `cuisine` (çeviri bağlamı için)
+- `en_*_current` ve `de_*_current` kolonları mevcut çevirinin var/yok
+  flag'i. Çoğu `"no"` veya boş, çünkü zaten eksik olduğu için backfill
+  gerekti. Bu kolonlar **bilgi amaçlı**, sen ignore edebilirsin. Tüm
+  EN + DE'yi sıfırdan üretiyorsun.
+
+Batch 0-11 döneminden gelen eski tarifler, EN/DE çevirisi hiç yok;
+"alan boş = sahte çevirmem gerekmez" refleksi YANLIŞ. Backfill'in işi
+tam bu eksikleri kapatmak.
+
+**⚠️ Renumber uyarısı (oturum 16, 23 Nisan 2026 dersi, TEKRARLAMA):**
+
+Backfill CSV dosya adları **sabit değil, gap'ler yeniden numaralanabilir**.
+Aynı dosya adı (örn. `backfill-03.csv`) farklı oturumda farklı slug
+setine ait olabilir:
+
+- 20 Nis 2026'da `backfill-03.csv` bir slug seti içindi (osso-buco vb.),
+  Codex JSON teslim etmişti (commit `ec8a40e`).
+- 23 Nis 2026'da `gen-modb-backfill-csv.ts --start N` offset flag eklendi
+  (commit `55bd437`), aynı isimle **yeni gap** için CSV üretildi. Eski
+  JSON artık alakasız.
+
+Sana düşen davranış:
+- **Güncel CSV'yi oku**, eski aynı isimli JSON'u hiç açma.
+- Aynı isimli JSON diskte duruyorsa **overwrite et**, eski içerik bağlamsız.
+- "Farklı slug seti için JSON yaz, ne yapayım eskisini?" diye sorma;
+  eski içerik silinip yeniden yazılıyor, bu tasarım.
+
+**⚠️ "Güvenilir kaynak yok" itirazı GEÇERSİZ (oturum 16 Backfill-03
+v1 vakası, TEKRARLAMA):**
+
+Backfill işinde "güvenilir kaynak" = **CSV'deki TR source**. İşin TR
+metinleri native EN + DE'ye çevirmek. "Bu slug için EN+DE tam çeviri
+garantisi veremem" tipi itiraz geçersiz, çünkü:
+
+1. Girdi bilgi zaten CSV'de tam var (title_tr, description_tr,
+   ingredients_tr, steps_tr, tipNote_tr, servingSuggestion_tr).
+2. Görevin **çeviri**, araştırma değil.
+3. Backfill-01 ve 02'de 100'er tarif aynı akışla native kaliteyle
+   ürettin; sistem değişmedi, sadece slug seti farklı.
+4. §97 "DOĞRULUK > HIZ > KAPSAM" prensibi **içerik doğruluğu** içindir
+   (örn. tavuk pişirme sıcaklığı uydurma), **çeviri işini boykot etmek**
+   için değil. Çevirirken doğruluğa özen göster, ama işi yapmayı
+   reddetme.
+
+İşi durdurmak **ancak** şu üç durumda meşru:
+- CSV dosyası fiziksel olarak okunmuyor (encoding bozuk, path yanlış),
+- TR source kendi içinde çelişkili (örn. ingredient listesi 5 öğe ama
+  `ingredient_count: 7`),
+- Bir slug için `title_tr` veya `steps_tr` CSV'de **gerçekten boş**
+  (pratikte hiç olmadı, `gen-modb-backfill-csv` zaten boş source
+  üretmez).
+
+Yukarıdaki üç durumun hiçbiri yoksa **çeviriyi üret**, issues alanına
+flag'lemeye gerek yok, "acaba" diye durma.
 
 ### Mod C default (Kerem sadece "Mod C" veya "Kategori SEO" derse):
 - **Çıktı:** `docs/seo-copy-v1.json`, 38 item array (17 kategori + 16 mutfak + 5 diyet).

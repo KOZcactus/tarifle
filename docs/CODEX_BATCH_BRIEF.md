@@ -1510,6 +1510,17 @@ Servis adımı tarifin kültürüne göre özgünleşmeli.
 - **Zaman işareti yok** (evergreen).
 - **TR collation**: ç, ğ, ı, İ, ö, ş, ü doğru. ASCII düşmesin.
 - **Step başı büyük harf, sonu nokta.**
+- **UTF-8 no-BOM** (B16 dersi): dosyanın ilk bayt'ı `[` (veya boşluk)
+  olmalı. PowerShell/Notepad bazen U+FEFF BOM ekler, Node.js
+  `JSON.parse` blocker olur, apply öncesi elle temizlik gerektirir.
+  Dosyayı UTF-8 (BOM'suz) yaz; VS Code'da status bar "UTF-8 with BOM"
+  gösteriyorsa "UTF-8" a çevir.
+- **Cümle tekrar yasağı** (B15 v2 + B16 dersi): hiçbir `instruction`
+  cümlesi **2 farklı tarifte bile** birebir geçmesin. Benzer tarif
+  grupları (2 salata, 2 irmik helvası, 4 sos) dahil her adım
+  tarif-spesifik paraphrase ile yazılsın; servis/sos ayar/topak açma
+  gibi "jenerik" sahnelerde de malzeme karakterine göre varyasyon
+  üret.
 
 ### 14.6 Adım sayısı kararı (Kerem direktifi, type bazli kademeli)
 
@@ -1571,6 +1582,18 @@ Type ne olursa olsun, **her adım somut + bilgi yoğun + ölçü + zaman + yönt
 - [ ] Her step 5-25 kelime arası.
 - [ ] Pişirme step'inde sıcaklık + zaman var.
 - [ ] CSV'deki ingredient'ların TÜMÜ step'lerde geçiyor.
+- [ ] **BOM kontrolü** (B16 dersi):
+      ```bash
+      node -e "const r=require('fs').readFileSync('docs/step-revisions-batch-N.json','utf8');console.log(r.charCodeAt(0)===0xFEFF?'BOM VAR':'BOM YOK');"
+      ```
+      Çıktı `BOM YOK` olmalı. `BOM VAR` ise dosyayı UTF-8 (BOM'suz)
+      yeniden yaz.
+- [ ] **Cümle tekrar kontrolü** (B15 v2 standardı):
+      ```bash
+      node -e "const j=JSON.parse(require('fs').readFileSync('docs/step-revisions-batch-N.json','utf8'));const m={};j.flatMap(r=>r.steps.map(s=>[r.slug,s.instruction])).forEach(([sl,t])=>(m[t]=m[t]||new Set()).add(sl));const d=Object.entries(m).filter(([,s])=>s.size>1);console.log('Tekrar:',d.length);d.slice(0,5).forEach(([t,s])=>console.log(s.size+'x: '+t.slice(0,70)));"
+      ```
+      Çıktı `Tekrar: 0` olmalı. 2+ tarife yayılan cümle varsa o
+      cümleleri tarif-spesifik paraphrase et.
 
 ### 14.8 Dosya adlandırma + versiyonlama
 

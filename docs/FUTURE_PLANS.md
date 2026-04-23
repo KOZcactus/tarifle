@@ -44,9 +44,9 @@ trigger.
 
 Brief `docs/CODEX_BATCH_BRIEF.md` §14 (B6+ ince ayar oturum 14'te
 tamamlandı, B16 dersleri §14.5 + §14.7'ye işlendi: UTF-8 no-BOM +
-cümle tekrar yasağı). Pipeline oturdu, B1-B22 apply (~%80 catalog).
+cümle tekrar yasağı). Pipeline oturdu, B1-B24 apply (~%87 catalog).
 Sırada:
-- [ ] **Codex teslim B23-B30** (8 batch, ~800 tarif kalan)
+- [ ] **Codex teslim B25-B30** (6 batch, ~600 tarif kalan)
 - [ ] Apply akışı: dry-run → TR karakter scan → spot check → dev+prod
 - [ ] Fix script gerekirse tek-seferlik auto-clean (B8 v3 + B12 v3 pattern)
 - [ ] Cache invalidate: apply sonrası Vercel deploy otomatik (unstable_cache
@@ -247,6 +247,16 @@ Oturum 14'te 4 → 25 yazı eklendi, 11/7/7 denge. Sonraki aday konular:
   template dup 0, "ya da" 7, "malzemesini" 0, timer **99/100** (yeni
   rekor, neredeyse tüm tarifler timer'lı). Mod E B1-B22 = 2200 tarif
   (~%80 catalog, beşte dördü).
+- Mod E B23 üç tur rework (v3.1 onay): v1 REJECT (tüm dosya ASCII-only,
+  TR chars 0, B12 v1 tekrarı). v2 REJECT (TR 0 → 3022 yükseldi ama
+  54 ASCII kalıntı, en düşük TR oran %2.4). v3 REJECT (TR 3956 iyi
+  ama 3 kelime hâlâ corrupt: pisirdikten/yumusayan/yumusakligi).
+  v3.1: Claude tarafında spot fix 3 kelime (1 dk iş), Codex v4 atmak
+  yerine direkt düzelt + apply. Mod E B1-B23 = 2300 tarif (~%84).
+- Mod E B24 apply (100 tarif + 501 step + 1 tarif 5 ingredient revize).
+  Audit direkt temiz teslim: TR 4075, template dup 0, "ya da" 8,
+  "malzemesini" 0, timer 99/100 tarif. Codex paralel session B23
+  rework'ünden ayrı üretti. Mod E B1-B24 = 2400 tarif (~%87 catalog).
 
 ---
 

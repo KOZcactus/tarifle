@@ -15,11 +15,38 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
+### Neon → Vercel Marketplace migration cleanup (30 Nis 2026 civarı)
+
+Oturum 15'te standalone Neon (ep-broad-pond + ep-dry-bread) Vercel-managed
+Neon'a (ep-icy-mountain + ep-jolly-haze) taşındı, tasarruf $20/ay = $240/yıl.
+1 hafta paralel izleme dönemi sonrası cleanup:
+
+- [ ] **Eski Neon standalone organization cancel** (console.neon.tech,
+      billing durdur, fatura kesilir)
+- [ ] Vercel env `DATABASE_URL_OLD` satırlarını sil (Production + Preview)
+- [ ] `scripts/lib/db-env.ts` PROD_HOST_PREFIXES + DEV_HOST_PREFIXES
+      dizilerinden eski prefix'leri çıkar (`ep-broad-pond`, `ep-dry-bread`),
+      tek-prefix'e geri dön
+- [ ] Lokal backup dosyalarını sil: `.env.local.bak-oturum15-neon-migration`,
+      `.env.production.local.bak-oturum15-neon-migration`
+- [ ] `scripts/tmp-migration/` dizinini temizle (prod.dump + dev.dump +
+      connections.json + test-fetch scripts)
+- [ ] İsterse Neon console'da yeni project'in password rotate (dump
+      sırasında chat'e password yapıştırıldı, güvenli rotation hijyen)
+
+Gating koşul: 1 hafta boyunca prod `tarifle.app` + dev smoke test temiz
+olması + Sentry error hacminin baseline'da kalması. 30 Nis 2026 sonrası
+trigger.
+
+
+
 ### Codex Mod E (step kalitesi sistematik revize)
 
 Brief `docs/CODEX_BATCH_BRIEF.md` §14 (B6+ ince ayar oturum 14'te
-tamamlandı). Pipeline oturdu, B1-B16 apply (~%56 catalog). Sırada:
-- [ ] **Codex teslim B17-B30** (14 batch, ~1400 tarif kalan)
+tamamlandı, B16 dersleri §14.5 + §14.7'ye işlendi: UTF-8 no-BOM +
+cümle tekrar yasağı). Pipeline oturdu, B1-B17 apply (~%60 catalog).
+Sırada:
+- [ ] **Codex teslim B18-B30** (13 batch, ~1300 tarif kalan)
 - [ ] Apply akışı: dry-run → TR karakter scan → spot check → dev+prod
 - [ ] Fix script gerekirse tek-seferlik auto-clean (B8 v3 + B12 v3 pattern)
 - [ ] Cache invalidate: apply sonrası Vercel deploy otomatik (unstable_cache
@@ -180,6 +207,20 @@ Oturum 14'te 4 → 25 yazı eklendi, 11/7/7 denge. Sonraki aday konular:
   yok), "ya da" 1, timer 95/100 tarif, ASCII trap 0. Codex B17'ye
   feedback: (a) UTF-8 no-BOM yaz, (b) aynı cümle 2 tarifte bile
   geçmesin. Mod E toplam B1-B16 = 1600 tarif (~%56 catalog).
+- CODEX_BATCH_BRIEF §14.5 + §14.7 B16 dersleri (commit `2a48d49`):
+  UTF-8 no-BOM zorunlu + cümle tekrar yasağı + self-check bash
+  komutları.
+- Neon → Vercel Marketplace migration (commit `1506441`): standalone
+  Neon (ep-broad-pond + ep-dry-bread) Vercel-managed Neon'a
+  (ep-icy-mountain + ep-jolly-haze) taşındı. Docker postgres:17 ile
+  pg_dump + pg_restore (prod 2.5MB / dev 2.3MB), row count 1:1 eşleşti,
+  22 migration history intact. `scripts/lib/prisma.ts` runtime URL
+  seçimi (VERCEL_ENV check, Preview/Dev `DATABASE_URL_DEV`) integration
+  çakışmasını atladı. Tasarruf $20/ay = $240/yıl. 1 hafta rezerv,
+  30 Nis cleanup.
+- Mod E B17 apply (yeni Neon üzerinden ilk apply, 100 tarif + 486
+  step). Audit en iyi seviye: BOM yok, template dup 0, TR 3174,
+  ASCII trap 0, "ya da" 7. Mod E B1-B17 = 1700 tarif (~%60 catalog).
 
 ---
 

@@ -29,6 +29,8 @@ export type RateLimitScope =
   | "password-reset-consume"
   | "account-delete"
   | "ai-assistant"
+  | "ai-menu-planner"
+  | "ai-menu-apply"
   | "review-submit"
   | "recipePhotoUpload";
 
@@ -79,6 +81,20 @@ const SCOPE_CONFIG: Record<RateLimitScope, ScopeConfig> = {
     description: "30 istek / 1 dk",
     limit: 30,
     window: "1 m",
+  },
+  "ai-menu-planner": {
+    // Haftalık menü üretimi 21 tarif sorgusu çalıştırır, v3 tek-tarif
+    // önerisinden ağır. Dakikalık sınır ağırlık farkını yansıtır.
+    description: "10 menü üretimi / 1 dk",
+    limit: 10,
+    window: "1 m",
+  },
+  "ai-menu-apply": {
+    // MealPlanItem yazımı, 21 upsert max. Kullanıcı bir haftada bir
+    // plan uygular, 20/saat esnek ama kötüye kullanımı engeller.
+    description: "20 menü uygulama / 1 saat",
+    limit: 20,
+    window: "1 h",
   },
   "password-change": {
     // Brute-force korumasi: saldirgan "mevcut sifre" alanini tahmin etmeye

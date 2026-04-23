@@ -297,3 +297,43 @@ export type ProfileUpdateInput = z.infer<typeof profileUpdateSchema>;
 export type CollectionInput = z.infer<typeof collectionSchema>;
 export type ShoppingListItemInput = z.infer<typeof shoppingListItemSchema>;
 export type AiSuggestInput = z.infer<typeof aiSuggestSchema>;
+
+/** AI v4 Weekly Menu Planner input (core algoritma inputu ile uyumlu). */
+export const weeklyMenuSchema = z.object({
+  ingredients: z
+    .array(z.string().min(1).max(80))
+    .min(1, "En az bir malzeme gir.")
+    .max(30, "En fazla 30 malzeme girebilirsin."),
+  assumePantryStaples: z.boolean().optional(),
+  cuisines: z.array(z.string().min(2).max(5)).max(20).optional(),
+  dietSlug: z.string().min(2).max(40).optional(),
+  excludeIngredients: z
+    .array(z.string().min(1).max(80))
+    .max(10, "En fazla 10 hariç tutulan malzeme.")
+    .optional(),
+  personCount: z.number().int().min(1).max(12).optional(),
+  maxBreakfastMinutes: z.number().int().positive().max(240).optional(),
+  maxLunchMinutes: z.number().int().positive().max(240).optional(),
+  maxDinnerMinutes: z.number().int().positive().max(240).optional(),
+  seed: z.string().max(64).optional(),
+});
+
+export type WeeklyMenuFormInput = z.infer<typeof weeklyMenuSchema>;
+
+/** Schema for applying a generated menu to the user's active meal plan. */
+export const applyWeeklyMenuSchema = z.object({
+  slots: z
+    .array(
+      z.object({
+        dayOfWeek: z.number().int().min(0).max(6),
+        mealType: z.enum(["BREAKFAST", "LUNCH", "DINNER"]),
+        recipeId: z.string().min(1),
+      }),
+    )
+    .min(1, "En az bir öğün seçilmeli.")
+    .max(21, "Haftalık menüde en fazla 21 slot olur."),
+  /** Mevcut meal plan itemlarını silip yeniden yaz (true) vs sadece boş slotlara yaz (false). */
+  replace: z.boolean().optional(),
+});
+
+export type ApplyWeeklyMenuInput = z.infer<typeof applyWeeklyMenuSchema>;

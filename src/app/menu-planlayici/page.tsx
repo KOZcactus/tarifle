@@ -13,6 +13,7 @@ import { MealSlot } from "@/components/meal-plan/MealSlot";
 import { AddToShoppingListButton } from "@/components/meal-plan/AddToShoppingListButton";
 import { PrintButton } from "@/components/meal-plan/PrintButton";
 import { DemoMealPlanGrid } from "@/components/meal-plan/DemoMealPlanGrid";
+import { AiFillModal } from "@/components/meal-plan/AiFillModal";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("metadata.mealPlanner");
@@ -95,7 +96,7 @@ export default async function MenuPlanlayiciPage() {
     t("days.friday"),
     t("days.saturday"),
     t("days.sunday"),
-  ];
+  ] as const;
   const mealLabels: Record<string, string> = {
     BREAKFAST: tMeal("breakfast"),
     LUNCH: tMeal("lunch"),
@@ -115,6 +116,14 @@ export default async function MenuPlanlayiciPage() {
 
         {/* Sağ üst toolbar, print gizli olur, sadece ekranda */}
         <div className="flex flex-wrap items-center gap-2 print:hidden">
+          <AiFillModal
+            dayLabels={dayLabels}
+            mealLabels={{
+              BREAKFAST: tMeal("breakfast"),
+              LUNCH: tMeal("lunch"),
+              DINNER: tMeal("dinner"),
+            }}
+          />
           <PrintButton label={t("printLabel")} />
           <AddToShoppingListButton slotCount={items.length} />
         </div>

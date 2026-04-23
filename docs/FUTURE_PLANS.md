@@ -174,16 +174,6 @@ Oturum 14'te 4 → 25 yazı eklendi, 11/7/7 denge. Sonraki aday konular:
 
 ---
 
-## 🔎 Audit notları (küçük, post-launch)
-
-- [ ] **Near-duplicate slug çifti:** `sakizli-badem-sutlac-cesme-usulu`
-      (MEDIUM, 218 kcal, 5 ingredient, isFeatured) vs
-      `sakizli-bademli-sutlac-cesme-usulu` (EASY, 228 kcal, 4 ingredient).
-      Farklı tarifler ama isim ayrımı zayıf. Duplicate merge run'ına
-      düşmemiş (içerik ayrı). Open: birleştirilsin mi yoksa isim netleş-
-      tirilsin mi (ör. "hızlı" / "klasik" varyant etiketi). Oturum 15
-      B14 apply sonrası spot bulundu.
-
 ## 💡 Fikir havuzu (öncelikli değil, değerlendirilecek)
 
 - Ses tanıma ile pişirme modu ("sıradaki adım", "tekrarla")

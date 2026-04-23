@@ -31,6 +31,7 @@ export type RateLimitScope =
   | "ai-assistant"
   | "ai-menu-planner"
   | "ai-menu-apply"
+  | "ingredient-autocomplete"
   | "review-submit"
   | "recipePhotoUpload";
 
@@ -95,6 +96,13 @@ const SCOPE_CONFIG: Record<RateLimitScope, ScopeConfig> = {
     description: "20 menü uygulama / 1 saat",
     limit: 20,
     window: "1 h",
+  },
+  "ingredient-autocomplete": {
+    // Her keystroke potential istek; debounced client + in-memory
+    // cache server-side var ama yine de bot korumasi gerek.
+    description: "120 autocomplete sorgusu / 1 dk",
+    limit: 120,
+    window: "1 m",
   },
   "password-change": {
     // Brute-force korumasi: saldirgan "mevcut sifre" alanini tahmin etmeye

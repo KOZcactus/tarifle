@@ -16,6 +16,10 @@ import {
   CUISINE_LABEL,
   type CuisineCode,
 } from "@/lib/cuisines";
+import {
+  IngredientSuggestionBar,
+  replaceLastToken,
+} from "@/components/ai/IngredientSuggestionBar";
 
 type View = "form" | "preview";
 
@@ -224,6 +228,13 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
                 <p className="mt-1 text-xs text-text-muted">
                   {t("ingredientsHelp")}
                 </p>
+                <IngredientSuggestionBar
+                  className="mt-2"
+                  text={ingredientsText}
+                  onReplaceLast={(name) =>
+                    setIngredientsText((prev) => replaceLastToken(prev, name))
+                  }
+                />
               </div>
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

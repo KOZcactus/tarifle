@@ -19,12 +19,17 @@
 
 **Default'lar (soru sorma, direkt başla):**
 
-### Mod A default (Kerem sadece "Mod A" veya "batch N yaz" derse):
-- **100 tarif** yaz (aksi belirtilmedikçe)
-- Dağılım: **~50 TR + ~50 uluslararası**, uluslararasıda eksik mutfaklardan çeşitlilik
+### Mod A default (Kerem "Mod A. Batch Na" / "Mod A. Batch Nb" derse):
+- **50 tarif** yaz (B30 Windows komut uzunluğu sınırı dersinden sonra
+  100→50 ikiye bölündü; tek teslim daha kontrollü, recurring block
+  riski azaldı)
+- Batch adı: **{N}a** ilk 50, **{N}b** sonraki 50 (örn. Batch 30a,
+  30b; 31a, 31b). Kerem her yarıyı ayrı tetikler.
+- Dağılım: **~25 TR + ~25 uluslararası**, uluslararasıda eksik mutfaklardan çeşitlilik
 - TR'de **bölgesel çeşitlilik** zorunlu, sadece klasik değil, 7 bölgeden örnekler (Karadeniz, Ege, Güneydoğu, İç Anadolu, Doğu, Marmara, Akdeniz)
-- **isFeatured: batch'te 5-10 tarif** (sadece ikonik olanlar)
+- **isFeatured: her yarıda 3-5 tarif** (toplam batch için 5-10)
 - Eksik kategoriler için Kerem'e öncelik sor (kahvaltı/çorba/tatlı dengelensin)
+- Marker: `// ── BATCH 30a ──` (küçük `a`/`b` harf)
 
 ### Mod B default (Kerem sadece "Mod B" veya "batch N çevirisi" derse):
 - Kerem CSV dosya yolu verir: `docs/translations-batch-N.csv`
@@ -221,21 +226,35 @@ geri dönüş referansı.
 
 ### Scope (Kerem'in açık talimatı yoksa default'u uygula)
 
-**Default scope (Kerem sadece "Mod A" / "batch N yaz" dediğinde):**
-- **100 tarif**
-- **~50 TR + ~50 uluslararası** (uluslararasıda §5 cuisine
+**Default scope (Kerem "Mod A. Batch Na" / "Mod A. Batch Nb" dediğinde):**
+- **50 tarif** (B30 dersi: Windows komut uzunluğu sınırı + recurring
+  block riski yüzünden 100→50 ikiye bölündü. {N}a = ilk 50, {N}b =
+  sonraki 50. Kerem her yarıyı ayrı tetikler, ikisi arası tarif
+  tekrar üretmezsin ama her yarıda kendi 25 TR + 25 int dağılımı)
+- **~25 TR + ~25 uluslararası** (uluslararasıda §5 cuisine
   tablosundan eksik olan kodlardan, genelde `se/hu/pe/gb/pl/au` az olanlar,
   ya da `ru/vn/es/cu` gibi gelişmekte olanlar)
 - **7 Türk bölgesi dengelensin** (Karadeniz, Ege, Güneydoğu, İç Anadolu,
   Doğu, Marmara, Akdeniz), sadece İstanbul/klasik değil, Rize-Antalya-Erzurum-
-  Mardin gibi bölgesel çeşitlilik zorunlu
-- **Kategori dağılımı**: kahvaltı 10-15, çorba 8-12, ana yemek 20-25, tatlı
-  15-20, meze/salata 8-12, hamur işi 8-12, içecek 5-10, kokteyl 3-5 (dengeli
-  karışım; belirli kategoride açık varsa Kerem sana "N tatlı yaz" gibi özel
-  talimat verir)
-- **isFeatured: 5-10** (toplam 100'ün %5-10'u; sadece gerçekten ikonik
-  tarifler, ilk kez duyulacak "Cantık Pidesi" gibi değil, "Adana Kebap"
-  kalibresi)
+  Mardin gibi bölgesel çeşitlilik zorunlu. Bir yarıya sığmazsa
+  diğer yarıda telafi et.
+- **Kategori dağılımı** (her yarıda yaklaşık): kahvaltı 5-7, çorba
+  4-6, ana yemek 10-12, tatlı 7-10, meze/salata 4-6, hamur işi 4-6,
+  içecek 2-5, kokteyl 1-3 (50 tariflik yarı; toplam batch 100
+  tarif için bunların 2 katı)
+- **isFeatured: 3-5 her yarıda** (toplam batch için 5-10; sadece
+  gerçekten ikonik tarifler, ilk kez duyulacak "Cantık Pidesi" gibi
+  değil, "Adana Kebap" kalibresi)
+
+**⚠️ Yarı batch (Na / Nb) ek kurallar:**
+- Batch 30a teslim sonrası Claude `existing-slugs.txt` regen yapar,
+  30b'ye geçmeden önce Codex güncel listeyi okumalı (30a'daki 50
+  slug artık yasak).
+- Her yarı **kendi marker'ıyla** append: `// ── BATCH 30a ──` veya
+  `// ── BATCH 30b ──`. İki ayrı IIFE, iki ayrı blok.
+- 30a ve 30b arası **mental slug seti paylaşma**; Codex 30a session'u
+  30b başlarken slug'larını unutmuş olabilir, existing-slugs.txt
+  zorunlu referans.
 
 **Kerem özel talimat verirse** (örn. "50 tarif yaz", "20 tatlı istiyorum",
 "sadece Türk", "10 kokteyl + 15 smoothie"), o talimatı uygula, default

@@ -1,21 +1,28 @@
 /**
  * Tarifle'nin iki Neon branch'i var:
- *   - production (parent) → tarifle.app + Vercel Production env
- *   - dev (child, production'dan fork)  → lokal + Vercel Preview/Development
+ *   - production (main) → tarifle.app + Vercel Production env
+ *   - dev (child, main'den fork)  → lokal + Vercel Preview/Development
  *
  * Destructive script'ler (seed, fix, retrofit, rollback) default olarak hangi
  * DATABASE_URL set edilmişse oraya yazar. Yanlışlıkla prod'a yazmamak için
  * her destructive script başlatırken `assertDbTarget()` çağırır.
  *
- * Prod URL host'unda `ep-broad-pond` sabit kısım var; dev URL'de `ep-dry-bread`.
- * Kullanıcı farklı bir prod/dev host'una geçerse buradaki sabitleri güncelle.
+ * Oturum 15 Neon -> Vercel Marketplace taşıması ile host prefix'leri değişti.
+ * Eski standalone Neon prefix'leri 1 hafta rollback rezervi için listede kalıyor;
+ * 30 Nis sonrası eski prefix'ler kaldırılabilir.
  */
 
-/** Production Neon branch host prefix (sabit). */
-const PROD_HOST_PREFIX = "ep-broad-pond";
+/** Production Neon branch host prefix'leri (yeni öncelikli, eski rollback rezervi). */
+const PROD_HOST_PREFIXES = [
+  "ep-icy-mountain", // yeni, Vercel-managed Neon main branch (23 Nis 2026+)
+  "ep-broad-pond", // eski standalone Neon production (1 hafta rollback rezervi)
+] as const;
 
-/** Dev Neon branch host prefix (sabit). */
-const DEV_HOST_PREFIX = "ep-dry-bread";
+/** Dev Neon branch host prefix'leri (yeni öncelikli, eski rollback rezervi). */
+const DEV_HOST_PREFIXES = [
+  "ep-jolly-haze", // yeni, Vercel-managed Neon dev branch (23 Nis 2026+)
+  "ep-dry-bread", // eski standalone Neon dev (1 hafta rollback rezervi)
+] as const;
 
 export type DbBranch = "production" | "dev" | "unknown";
 
@@ -40,10 +47,10 @@ export function detectDbTarget(databaseUrl: string | undefined): DbTargetInfo {
   } catch {
     return { branch: "unknown", host: "(invalid URL)", isProd: false };
   }
-  if (host.startsWith(PROD_HOST_PREFIX)) {
+  if (PROD_HOST_PREFIXES.some((p) => host.startsWith(p))) {
     return { branch: "production", host, isProd: true };
   }
-  if (host.startsWith(DEV_HOST_PREFIX)) {
+  if (DEV_HOST_PREFIXES.some((p) => host.startsWith(p))) {
     return { branch: "dev", host, isProd: false };
   }
   return { branch: "unknown", host, isProd: false };

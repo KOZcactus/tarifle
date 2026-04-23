@@ -37,6 +37,12 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# migration temp (oturum 15 Neon -> Vercel Marketplace taşıma, connection strings)
+scripts/tmp-migration/
+.env.*.bak*
+.env.local.bak*
+.env.production.local.bak*
+
 # vercel
 .vercel
 

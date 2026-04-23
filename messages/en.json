@@ -1549,6 +1549,26 @@
     "label": "Suggestions:",
     "addAria": "Add {name} to the list"
   },
+  "aiPresets": {
+    "label": "Quick start:",
+    "groupAria": "Pick a ready-made scenario",
+    "single": {
+      "guest": { "label": "Guest Dinner", "description": "Medium difficulty, 60 min, main dish" },
+      "kids": { "label": "Kid-friendly", "description": "Easy, 30 min, main dish" },
+      "light": { "label": "Light Evening", "description": "Vegetarian, under 30 min" },
+      "quick": { "label": "Quick", "description": "Easy, under 25 min" },
+      "appetizer": { "label": "Party Snack", "description": "Appetizer, 30 min" },
+      "dessert": { "label": "Dessert Craving", "description": "Dessert category" }
+    },
+    "menu": {
+      "vegetarian": { "label": "Vegetarian Week", "description": "Weekly menu, vegetarian filter" },
+      "vegan": { "label": "Vegan Week", "description": "Weekly menu, vegan filter" },
+      "glutenFree": { "label": "Gluten-free Week", "description": "Weekly menu, gluten-free filter" },
+      "mediterranean": { "label": "Mediterranean Week", "description": "Turkish, Greek, and Italian cuisines" },
+      "worldTour": { "label": "World Tour", "description": "Mexican, Korean, Japanese, Indian, Thai" },
+      "quickWeek": { "label": "Quick Week", "description": "Short cook times for breakfast + lunch + dinner" }
+    }
+  },
   "newsletter": {
     "form": {
       "footerHeading": "Weekly editor's pick",

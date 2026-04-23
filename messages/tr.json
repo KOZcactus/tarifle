@@ -1549,6 +1549,26 @@
     "label": "Öneriler:",
     "addAria": "{name} malzemesini ekle"
   },
+  "aiPresets": {
+    "label": "Hızlı başlangıç:",
+    "groupAria": "Hazır senaryo seç",
+    "single": {
+      "guest": { "label": "Misafir Sofrası", "description": "Orta zorluk, 60 dk, ana yemek odaklı" },
+      "kids": { "label": "Çocuk Dostu", "description": "Kolay, 30 dk, ana yemek" },
+      "light": { "label": "Hafif Akşam", "description": "Vejetaryen, 30 dk altı" },
+      "quick": { "label": "Pratik", "description": "Kolay, 25 dk altı" },
+      "appetizer": { "label": "Parti Atıştırmalığı", "description": "Aperatif, 30 dk" },
+      "dessert": { "label": "Tatlı Kaçamağı", "description": "Tatlı kategorisi" }
+    },
+    "menu": {
+      "vegetarian": { "label": "Vejetaryen Hafta", "description": "Haftalık menü vejetaryen filtresi" },
+      "vegan": { "label": "Vegan Hafta", "description": "Haftalık menü vegan filtresi" },
+      "glutenFree": { "label": "Glutensiz Hafta", "description": "Haftalık menü glutensiz filtresi" },
+      "mediterranean": { "label": "Akdeniz Haftası", "description": "Türk, Yunan ve İtalyan mutfakları" },
+      "worldTour": { "label": "Dünya Turu", "description": "Meksika, Kore, Japon, Hint, Tay" },
+      "quickWeek": { "label": "Hızlı Hafta", "description": "Kısa pişme süreli sabah + öğle + akşam" }
+    }
+  },
   "newsletter": {
     "form": {
       "footerHeading": "Haftalık editör seçkisi",

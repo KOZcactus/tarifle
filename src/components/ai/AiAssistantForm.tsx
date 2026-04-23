@@ -14,6 +14,7 @@ import {
   type CuisineCode,
 } from "@/lib/cuisines";
 import { ShareMenu } from "@/components/recipe/ShareMenu";
+import { PresetChips } from "@/components/ai/PresetChips";
 
 /** Popular ingredients shown as quick-add chips when input is empty. */
 const POPULAR_INGREDIENTS = [
@@ -402,6 +403,19 @@ export function AiAssistantForm({
         onSubmit={handleSubmit}
         className="rounded-2xl border border-border bg-bg-card p-5 sm:p-6"
       >
+        <PresetChips
+          mode="single"
+          className="mb-4"
+          onApply={(preset) => {
+            if (preset.values.type !== undefined) setType(preset.values.type);
+            if (preset.values.difficulty !== undefined)
+              setDifficulty(preset.values.difficulty);
+            if (preset.values.maxMinutes !== undefined)
+              setMaxMinutes(String(preset.values.maxMinutes));
+            if (preset.values.dietSlug !== undefined)
+              setDietSlug(preset.values.dietSlug);
+          }}
+        />
         {/* Ingredients chips input */}
         <div>
           <label className="mb-2 block text-sm font-medium text-text">

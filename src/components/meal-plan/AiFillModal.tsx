@@ -20,6 +20,8 @@ import {
   IngredientSuggestionBar,
   replaceLastToken,
 } from "@/components/ai/IngredientSuggestionBar";
+import { PresetChips } from "@/components/ai/PresetChips";
+import type { MenuPreset } from "@/lib/ai/presets";
 
 type View = "form" | "preview";
 
@@ -62,11 +64,30 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
   const [personCount, setPersonCount] = useState<number>(2);
   const [dietSlug, setDietSlug] = useState<string>("");
   const [selectedCuisines, setSelectedCuisines] = useState<CuisineCode[]>([]);
+  const [maxBreakfast, setMaxBreakfast] = useState<number | undefined>(undefined);
+  const [maxLunch, setMaxLunch] = useState<number | undefined>(undefined);
+  const [maxDinner, setMaxDinner] = useState<number | undefined>(undefined);
 
   function toggleCuisine(code: CuisineCode) {
     setSelectedCuisines((prev) =>
       prev.includes(code) ? prev.filter((c) => c !== code) : [...prev, code],
     );
+  }
+
+  function applyMenuPreset(preset: MenuPreset) {
+    if (preset.values.dietSlug !== undefined) {
+      setDietSlug(preset.values.dietSlug);
+    }
+    if (preset.values.cuisines !== undefined) {
+      const validCuisines = preset.values.cuisines.filter(
+        (c): c is CuisineCode =>
+          (CUISINE_CODES as readonly string[]).includes(c),
+      );
+      setSelectedCuisines(validCuisines);
+    }
+    setMaxBreakfast(preset.values.maxBreakfastMinutes);
+    setMaxLunch(preset.values.maxLunchMinutes);
+    setMaxDinner(preset.values.maxDinnerMinutes);
   }
 
   const dialogRef = useRef<HTMLDialogElement | null>(null);
@@ -104,6 +125,9 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
         dietSlug: dietSlug || undefined,
         cuisines: selectedCuisines.length > 0 ? selectedCuisines : undefined,
         seed: seedOverride,
+        maxBreakfastMinutes: maxBreakfast,
+        maxLunchMinutes: maxLunch,
+        maxDinnerMinutes: maxDinner,
       });
       if (!res.success || !res.data) {
         setError(res.error ?? t("errorGeneric"));
@@ -210,6 +234,7 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
 
           {view === "form" && (
             <div className="space-y-4">
+              <PresetChips mode="menu" onApply={applyMenuPreset} />
               <div>
                 <label
                   htmlFor="ai-fill-ingredients"

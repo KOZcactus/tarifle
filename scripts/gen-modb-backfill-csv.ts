@@ -179,7 +179,17 @@ async function main(): Promise<void> {
   }
 
   const totalChunks = Math.ceil(gap.length / BATCH_SIZE);
-  console.log(`Will write ${totalChunks} CSV files (${BATCH_SIZE} per chunk).\n`);
+  // --start N flag: dosya numarasını N'den başlatır (default 1).
+  // Örn. eski backfill-01 + 02 apply edildikten sonra yeni gap için
+  // --start 3 verince chunkIdx 03, 04, 05 olarak yazılır, eski
+  // backfill-01/02 dosyaları overwrite olmaz.
+  const startIdxArg = process.argv.indexOf("--start");
+  const startOffset = startIdxArg >= 0 ? parseInt(process.argv[startIdxArg + 1], 10) : 1;
+  if (Number.isNaN(startOffset) || startOffset < 1) {
+    console.error(`Invalid --start value: ${process.argv[startIdxArg + 1]}. Must be integer >= 1.`);
+    process.exit(1);
+  }
+  console.log(`Will write ${totalChunks} CSV files (${BATCH_SIZE} per chunk, starting index ${String(startOffset).padStart(2, "0")}).\n`);
 
   const header = [
     "slug",
@@ -217,7 +227,7 @@ async function main(): Promise<void> {
 
   for (let i = 0; i < totalChunks; i++) {
     const chunk = gap.slice(i * BATCH_SIZE, (i + 1) * BATCH_SIZE);
-    const chunkIdx = String(i + 1).padStart(2, "0");
+    const chunkIdx = String(i + startOffset).padStart(2, "0");
     const outPath = path.join(OUT_DIR, `translations-backfill-${chunkIdx}.csv`);
 
     const lines: string[] = [header.join(",")];

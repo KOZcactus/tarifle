@@ -168,6 +168,37 @@ bırak, sonra kal. Ama mümkün olduğunca **100'ü bitirene kadar durma**.
 - Veri yanlışlığı "bilgi yokluğu"ndan daha kötüdür. Boş bırak, sahte doldurma.
 - **Her çıktıyı 2 kere kontrol et** (§8 checklist).
 
+### ⛔ Translation script / otomasyon yasağı (oturum 16 Backfill-03 v2 dersi, TEKRARLAMA)
+
+**Görevini SEN yaparsın, bir script'e delege etmezsin.** Codex ChatGPT
+Max tabanlı, çeviri işinin kendisi doğrudan senin üzerinde. "Bir kerelik
+translation script çalıştırayım, CSV'den okusun JSON'a yazsın" önerisi
+**reddedilir**, aşağıdaki sebeplerle:
+
+1. Google Translate / DeepL yasağının ruhuna aykırı (sadece farklı isim
+   altında aynı şey). Hangi model, hangi prompt, hangi kalite kontrolü
+   belirsiz; çıktı native kaliteye inmez.
+2. Brief'in kalite çıtası (özne+fiil tam cümle, pidgin yok, TR leak 0,
+   kültürel bağlam, §658 Batch 21 dersleri) bir script'in
+   yakalayamayacağı detaylarla dolu.
+3. `scripts/` dizinine dosya ekleme yetkin yok (§144-149, dosya çakışma
+   kuralı). Tek seferlik "model destekli" script de aynı kuralın altında.
+4. Backfill-01 ve Backfill-02'de **100'er tarifi manuel** teslim ettin.
+   Sistem değişmedi, hacim aynı. "Bu sefer yapamam" gerekçesi geçersiz.
+
+**"Hacim fazla" itirazına çözüm:**
+
+Context window gerçekten sıkışıyorsa:
+- §88-93 kademeli izin: "context doldu, kaldığım slug şu" bilgisi bırak,
+  yeni mesajda devam et.
+- Veya Mod A yarı batch pattern'i gibi 50'şerlik iki mesajda teslim
+  (§5); her yarı kendi self-check'i ile tam.
+- Ama **asla script/API/otomasyon yazma**. Çeviri işi senin.
+
+Bu yasak Mod A (yeni tarif yazma), Mod B (çeviri), Mod C (SEO copy),
+Mod D (editoryal revize), Mod E (step revize), **hepsi için geçerli**.
+Her Mod'un çıktısı senin yazdığın native içerik olmak zorunda.
+
 ---
 
 ## 1. Proje tanıtımı

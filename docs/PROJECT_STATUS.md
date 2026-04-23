@@ -1,6 +1,6 @@
 # Tarifle, Proje Durumu
 
-> Son güncelleme: **Oturum 15 başı (23 Nis 2026)**. Tailwind 4 `dark:` variant `[data-theme]` fix (light toggle kart okunurluğu) + **Neon → Vercel Marketplace migration** (standalone Neon → Vercel-managed, $240/yıl tasarruf, pg_dump/restore ile 2772 prod + 2753 dev row count 1:1 eşleşme, 1 hafta paralel rezerv) + Mod E B14-B17 apply (400 tarif, toplam B1-B17 = **1700 tarif ~%60 catalog**) + B15 v1 REJECT (23 template cümlesi, feedback + v2 temiz) + CODEX_BRIEF §14.5 + §14.7 B16 dersleri (UTF-8 no-BOM + cümle tekrar yasağı) + `src/lib/prisma.ts` runtime `VERCEL_ENV` URL seçimi. **2772 tarif prod (yeni Neon), Mod E B1-B17 canlı**. **Sonraki:** Codex B18 + 30 Nis eski Neon cleanup + Blog 26.
+> Son güncelleme: **Oturum 15 sonu (23 Nis 2026)**, 50+ commit, en yoğun altyapı + içerik günü. **Neon → Vercel Marketplace migration** ($240/yıl tasarruf) + **Vercel Analytics aktif** + Mod E B14-B29 apply (1600 tarif, **Mod E pipeline kapandı 2900 tarif revize ~%95 kalite-düşük catalog**) + **Mod A Batch 30a + 30b apply** (100 yeni tarif, 2772 → 2872 → 2952 source) + **Hero A/B durduruldu default A** + **Tailwind 4 dark variant fix** + **Blog 26 Ramazan Sofrası** (25 → 26, kategori 11/7/8) + Mod B Backfill 01 + 02 apply (200 çeviri) + CODEX_BRIEF §14.5 + §14.7 dersleri (UTF-8 no-BOM + cümle tekrar yasağı) + Mod A 100→50 yarı batch pattern (30a/30b, 31a/31b). **2952 tarif source (prod 2872), Mod E bitti, 26 blog**. **Sonraki:** Codex B31a/31b + Mod B Backfill-03/04/05 + Blog 27 + 30 Nis eski Neon cleanup.
 
 > Oturum 14 sonu (22-23 Nis 2026), 40 commit, içerik + Mod E apply akışı. Admin Tarif Düzenle formu + AI Asistan v3 (reason chip + cuisine diversity cap) + Hero "24 mutfak, N farklı yemek çeşidi" çeşitlilik vurgusu + Mod E Brief §14 B6+ ince ayarlar + Mod E B1-B13 apply (1300 tarif, ~%45 catalog) + 20 yeni blog yazısı (Blog 5-25).
 
@@ -19,6 +19,107 @@
 > Oturum 8 sonu (30 commit), 2320 tarif prod canlı. 10 blok: 6 Codex batch Mod A (1701→2320), 3 Mod B batch (batch 18-20 çeviri 600→900), rekabet §8 kısa 6/6 ✅ + orta 5/5 ✅, topluluk loop tam (follow + feed + fan-out + followers list + suggested cooks + collection/variation share + PWA banner + Pinterest rich pin + user-photos flag), admin analytics + bulk moderation + search log, PDF export + llms.txt, 18 migration.
 >
 > Oturum 7 sonu (28 commit), 1701 tarif prod canlı. 8 blok: Mod B batch 13-17 (600 tarif EN+DE), Mod A batch 15-17 (1401→1701), foryou sort, pagination redesign, super-admin protection, /admin/yorumlar, /kategoriler, legal hub /yasal, editör rozeti, similar-recipes v2, 44 programatik landing, profil zenginleştirme, /menu-planlayici, RSS + HowTo schema, AI Asistan v2, blog MDX + 3 makale, rekabet analizi doc, newsletter double-opt-in altyapı, codex brief 3 clarify.
+
+## 23 Nisan 2026 (oturum 15, 50+ commit, Altyapı taşıma + Mod E kapanışı)
+
+> Tek gün içine sıkışan en yoğun oturum. Sabah Tailwind 4 dark variant
+> bug fix ile başladı, öğleden sonra Neon'un Vercel Marketplace'e
+> taşınması ($240/yıl tasarruf), akşam Mod E'nin tamamlanması ve Mod A
+> 30. batch'in 50/50 yarı mimariye geçişi. Content tarafında 26. blog
+> yazısı. Codex pipeline tüm 5 modda aktif, yarı batch pattern oturdu.
+
+**A · Tailwind 4 dark variant `[data-theme]` mapping** (commit `c409342`) —
+Light toggle sonrası kart bg'lerinin lacivert kalıp içeriği gizlemesi
+problemi. `@custom-variant dark (&:where([data-theme="dark"], ...))` ile
+global CSS'de çözüldü. OS prefers-color-scheme'ten bağımsız, tek
+attribute üzerinden yönetim.
+
+**B · Neon → Vercel Marketplace migration** (commit `1506441` +
+`a17267d`) — Standalone Neon (ep-broad-pond + ep-dry-bread) Vercel-
+managed Neon'a (ep-icy-mountain + ep-jolly-haze) taşındı. **$240/yıl
+tasarruf** (Neon Launch $20/ay Vercel Pro credit içinde eriyor, tek
+fatura). Docker postgres:17 ile pg_dump + pg_restore, 2772 prod + 2753
+dev row count 1:1 eşleşti, 22 migration history intact.
+`src/lib/prisma.ts`'de runtime `VERCEL_ENV` URL seçimi
+(Preview/Development için `DATABASE_URL_DEV` fallback, integration'ın
+3 env'e birden zorla inject etmesi probleminde workaround). Eski Neon
+1 hafta paralel rezerv, 30 Nis 2026 cleanup (eski organization cancel +
+`DATABASE_URL_OLD` sil + db-env prefix temizle).
+
+**C · Vercel Analytics aktivasyonu** (commit `ff62cba`, Speed Insights
+kaldırıldı `92f4237`) — `@vercel/analytics` layout.tsx'e eklendi
+(100k event/ay Pro dahil, GDPR/KVKK uyumlu). Speed Insights $10/ay
+sabit paket olduğu için kaldırıldı (CrUX + Lighthouse CI bedava
+alternatifi açılış sonrası yeterli).
+
+**D · Hero A/B test durduruldu** (commit `3be0ed4`) — Kerem'in
+tarayıcısında B variant "Aklındaki malzemeyle yeni bir şey" cookie-
+sticky, klasik A "Bugün ne pişirsek?" hero'yu hiç göremedi.
+`pickVariant` her zaman "A" döner, mekanik korundu (launch sonrası
+reenable kolay). FUTURE_PLANS "Hero A/B sonuçları" aktif maddesi
+"durduruldu, launch sonrası yeniden aç" olarak güncellendi.
+
+**E · Mod E B14-B29 apply, pipeline kapandı** (16 batch, ~1600 tarif
+revize, toplam B1-B29 = **2900 tarif revize, ~%95 kalite-düşük
+catalog**):
+- **B14** (`648276a`): paralel Claude session apply
+- **B15** üç tur: v1 REJECT (23 template cümlesi, en ağır 32x aynı
+  servis), v2 REJECT (encoding + template karışımı), v3 temiz
+  (`a4b8c6a`)
+- **B16** (`b9b5f05`): BOM auto-fix (U+FEFF blocker), TR 3203 rekor
+- **B17-B19** (`7ea6d73`, `c62991d`, `e44c398`): yeni Neon üzerinden
+  ilk apply'lar, TR 3174/3204/3261 sürekli rekor kırdı
+- **B20** üç tur: v1 REJECT (33 tarif template smuggling,
+  `{TARIFADI}` değişken + "ya da" 39), v2 REJECT (1427 `?` karakteri,
+  UTF-8 encoding bozulması), v3 temiz (`6d36199`)
+- **B21-B27** (`1f604f3`, `5d5c6eb`, `a029881`, `7e34675`, `4afd3d0`,
+  `87b132e`): stable ritim, B23 üç tur rework (ASCII-only → kalıntı →
+  spot fix v3.1)
+- **B28-B29** (`f54cddb`, `7a2de51`): **"ya da" 0 (rekor)**, Mod E
+  pipeline kapandı
+- B30 CSV silindi (`9e88c7d`): Mod A numara çakışması + 38 marjinal
+  tarif zaten type min eşiğinde
+
+**F · CODEX_BATCH_BRIEF §14.5 + §14.7 dersleri** (commit `2a48d49`) —
+B16 BOM deneyimi + B15 v1 template smuggling dersi brief'e işlendi:
+UTF-8 no-BOM zorunluluğu, cümle tekrar yasağı (2 tarifte birebir
+bile yok), self-check bash komutları.
+
+**G · Mod A 100→50 yarı batch pattern** (commit `a8e035c` +
+`3343128`) — B30 Codex tarafında Windows komut uzunluğu sınırına
+takıldığı için brief §5 güncellendi: her Mod A batch ikiye bölünüyor
+({N}a = ilk 50, {N}b = sonraki 50). Brief template: en baştaki batch
+ID'yi değiştir, body'deki tüm XX referansları oradan türer.
+
+**H · Mod A Batch 30a + 30b apply** (commit `4e99fb8` + `7f4e049` +
+`84e5f32`) — Her yarı 50 tarif, dev + prod apply. Her birinde
+allergen fix (30a: 12 spot, 30b: 9 spot + passiflora → Maracuya
+false-positive fix). Source drift fix (`84e5f32`): B30b push
+sırasında 45 tarif eksik commit edilmişti (duplicate `];` temizleme
+sırasında legit blok kaybı), c74cf9c state restore ile çözüldü.
+existing-slugs.txt 2772 → 2872 → 2952 (source + prod drift normal
+aralıkta).
+
+**I · Mod B Backfill-01 + 02 apply** (commit `2eb84b1`) — 200 tarif
+EN + DE çeviri uygulandı. Audit temiz: tipNote/servingSuggestion
+%100 unique (template yok), TR leak 0, object array format.
+`gen-modb-backfill-csv.ts`'e `--start N` flag eklendi (commit
+`55bd437`), yeni gap için backfill-03/04/05 regen (235 kalan).
+
+**J · Blog 26 Ramazan Sofrası** (commit `61c3887`) — mutfak-rehberi
+kategorisi, 1434 kelime, 7 H2, 6 Kaynaklar (UNESCO + Turkish Airlines
++ Haberturk + Pera Palace + Turkish Cuisine + British Nutrition
+Foundation + AFSI), 8+ inline link. Kategori dağılımı 11/7/8 denge.
+
+**K · Allergen guard çoklu fix** — 30a (12 fix), 30b (9 fix), ek
+legacy 6 fix. Toplam ~27 allergen düzeltme. Ingredient adı
+değişiklikleri: "Tavuk baget" → "Tavuk but" (gluten false-positive),
+"Passiflora püresi" → "Maracuya" (SUT false-positive).
+
+**L · docs/existing-slugs.txt regen pattern** — Her Mod A batch
+sonrası `scripts/list-recipe-slugs.ts` ile prod DB'den tazelenmesi
+artık sabit. 2556 (20 Nis) → 2772 (30a öncesi) → 2822 (30a sonrası) →
+2872 (30b sonrası).
 
 ## 22-23 Nisan 2026 (oturum 14, 40 commit, Content + Mod E apply)
 

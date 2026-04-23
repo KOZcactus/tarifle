@@ -44,9 +44,9 @@ trigger.
 
 Brief `docs/CODEX_BATCH_BRIEF.md` §14 (B6+ ince ayar oturum 14'te
 tamamlandı, B16 dersleri §14.5 + §14.7'ye işlendi: UTF-8 no-BOM +
-cümle tekrar yasağı). Pipeline oturdu, B1-B26 apply (~%94 catalog).
+cümle tekrar yasağı). Pipeline oturdu, B1-B27 apply (~%98 catalog).
 Sırada:
-- [ ] **Codex teslim B27-B30** (4 batch, ~400 tarif kalan)
+- [ ] **Codex teslim B28-B30** (3 batch, ~300 tarif kalan, finişe yakın)
 - [ ] Apply akışı: dry-run → TR karakter scan → spot check → dev+prod
 - [ ] Fix script gerekirse tek-seferlik auto-clean (B8 v3 + B12 v3 pattern)
 - [ ] Cache invalidate: apply sonrası Vercel deploy otomatik (unstable_cache
@@ -269,6 +269,11 @@ Oturum 14'te 4 → 25 yazı eklendi, 11/7/7 denge. Sonraki aday konular:
   fırın/taş zemin, ılık/soğuk, rulo/üçgen, kaşık/asma yaprak); tarif
   adı değişken template smuggling yok, exact-match 0. Mod E B1-B26
   = 2600 tarif (~%94 catalog).
+- Mod E B27 apply (100 tarif + 494 step). Audit: TR 3375, `?` = 0,
+  ASCII corrupt 0, template dup 0, "malzemesini" 0, timer 81/100
+  (son batch'lerde timer oranı azalma trend: B24=99, B25=91, B26=87,
+  B27=81; kritik değil). "ya da" 15 (Codex kendi raporladığı sayıya
+  eşit, disiplin oturdu). Mod E B1-B27 = 2700 tarif (~%98 catalog).
 
 ---
 

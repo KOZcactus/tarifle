@@ -18,8 +18,8 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 ### Codex Mod E (step kalitesi sistematik revize)
 
 Brief `docs/CODEX_BATCH_BRIEF.md` §14 (B6+ ince ayar oturum 14'te
-tamamlandı). Pipeline oturdu, B1-B15 apply (~%52 catalog). Sırada:
-- [ ] **Codex teslim B16-B30** (15 batch, ~1500 tarif kalan)
+tamamlandı). Pipeline oturdu, B1-B16 apply (~%56 catalog). Sırada:
+- [ ] **Codex teslim B17-B30** (14 batch, ~1400 tarif kalan)
 - [ ] Apply akışı: dry-run → TR karakter scan → spot check → dev+prod
 - [ ] Fix script gerekirse tek-seferlik auto-clean (B8 v3 + B12 v3 pattern)
 - [ ] Cache invalidate: apply sonrası Vercel deploy otomatik (unstable_cache
@@ -174,6 +174,12 @@ Oturum 14'te 4 → 25 yazı eklendi, 11/7/7 denge. Sonraki aday konular:
   template dup 0, "ya da" 0, TR 2865 (batch'ler arası en yüksek),
   ASCII trap 0. Dev + prod apply. Mod E toplam B1-B15 = 1500 tarif
   (~%52 catalog).
+- Mod E B16 apply, 100 tarif + 500 step. BOM auto-fix (UTF-8 BOM
+  dosya başında geldi, Node parse blocker; sildik). Audit temiz:
+  TR 3203 (yeni en yüksek), template dup yalnız 4 cümle 2x (3+ tarif
+  yok), "ya da" 1, timer 95/100 tarif, ASCII trap 0. Codex B17'ye
+  feedback: (a) UTF-8 no-BOM yaz, (b) aynı cümle 2 tarifte bile
+  geçmesin. Mod E toplam B1-B16 = 1600 tarif (~%56 catalog).
 
 ---
 

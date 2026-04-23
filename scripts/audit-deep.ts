@@ -262,10 +262,24 @@ export const ALLERGEN_RULES: AllergenRule[] = [
       "kek hamuru", "kurabiye hamuru", "krep", "kete",
       // Composite TR desserts with egg (oturum 12):
       "revani", "hazır kek",
+      // Composite bakery ingredients (oturum 16, Lamington over-tag dersi):
+      // "Kek" ingredient'i market/hazır kek anlamında yumurta içerir;
+      // aynı şekilde kurabiye ve muffin. "pasta" TR'de "pasta makarnası"
+      // ile çakıştığı için dahil edilmedi.
+      "kek", "kurabiye", "muffin",
     ],
     excludePatterns: [
       // "beze" substring "bezelye"yi yakalar, bezelye baklagil (YUMURTA yok)
       "bezelye",
+      // "kek" substring "kekik"i yakalar, kekik otu yumurtasız (GLUTEN
+      // rule'unda da aynı exclude var, paralel gerekli, oturum 16):
+      "kekik", "taze kekik", "kuru kekik", "kekik otu",
+      // "kek" substring "keşkek" ve "keşkeklik"i yakalar, buğday taneleri
+      // yumurtasız (keşkek dövülmüş buğday + et; yumurta yok):
+      "keşkek", "keşkeklik", "keşkeklik buğday",
+      // "kek" substring "pirinç keki"ni yakalar, Asian rice cake yumurtasız
+      // (pirinç + tuz + su, vegan; GLUTEN excludePatterns'de de aynı exclude):
+      "pirinç keki",
     ],
   },
   {

@@ -70,10 +70,24 @@ function mk(
  */
 function mockPool(recipes: FakeRecipe[]) {
   findManyMock.mockImplementation(async (args: unknown) => {
-    const where = (args as { where?: { type?: { in?: RecipeType[] } } })?.where;
+    const where = (
+      args as {
+        where?: {
+          type?: { in?: RecipeType[] };
+          cuisine?: { in?: string[] };
+          totalMinutes?: { lte?: number };
+        };
+      }
+    )?.where;
     const typesIn = where?.type?.in ?? null;
-    if (!typesIn) return recipes;
-    return recipes.filter((r) => typesIn.includes(r.type));
+    const cuisinesIn = where?.cuisine?.in ?? null;
+    const maxMin = where?.totalMinutes?.lte ?? Number.POSITIVE_INFINITY;
+    return recipes.filter((r) => {
+      if (typesIn && !typesIn.includes(r.type)) return false;
+      if (cuisinesIn && (!r.cuisine || !cuisinesIn.includes(r.cuisine))) return false;
+      if (r.totalMinutes > maxMin) return false;
+      return true;
+    });
   });
 }
 
@@ -282,5 +296,61 @@ describe("RuleBasedMenuPlanner", () => {
       seed: "provider",
     });
     expect(res.provider).toBe("rule-based");
+  });
+
+  it("cuisine filter: only recipes from selected cuisines fill slots", async () => {
+    mockPool(buildRichPool());
+    const planner = new RuleBasedMenuPlanner();
+    const res = await planner.plan({
+      ingredients: ["tuz", "un"],
+      assumePantryStaples: true,
+      cuisines: ["tr", "it"],
+      seed: "cuisine-filter",
+    });
+    const cuisines = res.slots
+      .map((s) => s.recipe?.cuisine)
+      .filter((c): c is string => Boolean(c));
+    // Every filled slot must be tr or it
+    for (const c of cuisines) {
+      expect(["tr", "it"]).toContain(c);
+    }
+  });
+
+  it("cuisine filter: empty array means no restriction (all cuisines)", async () => {
+    mockPool(buildRichPool());
+    const planner = new RuleBasedMenuPlanner();
+    const res = await planner.plan({
+      ingredients: ["tuz", "un"],
+      assumePantryStaples: true,
+      cuisines: [],
+      seed: "cuisine-empty",
+    });
+    const uniqueCuisines = new Set(
+      res.slots.map((s) => s.recipe?.cuisine).filter(Boolean),
+    );
+    // Rich pool spans 7 cuisines; unrestricted plan should pull more than 2
+    expect(uniqueCuisines.size).toBeGreaterThan(2);
+  });
+
+  it("different seeds produce different plans (non-determinism across seeds)", async () => {
+    const pool = buildRichPool();
+    mockPool(pool);
+    const planner = new RuleBasedMenuPlanner();
+    const run1 = await planner.plan({
+      ingredients: ["tuz", "un"],
+      assumePantryStaples: true,
+      seed: "seed-a",
+    });
+    mockPool(pool);
+    const run2 = await planner.plan({
+      ingredients: ["tuz", "un"],
+      assumePantryStaples: true,
+      seed: "seed-b",
+    });
+    const slugs1 = run1.slots.map((s) => s.recipe?.slug ?? "NULL").join(",");
+    const slugs2 = run2.slots.map((s) => s.recipe?.slug ?? "NULL").join(",");
+    // With a rich pool and different seeds, plans must differ in at least
+    // one slot (regenerate button use case).
+    expect(slugs1).not.toEqual(slugs2);
   });
 });

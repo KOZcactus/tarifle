@@ -85,7 +85,7 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
     reset();
   }
 
-  function handleGenerate() {
+  function runGenerate(seedOverride?: string) {
     const ingredients = splitCsv(ingredientsText);
     if (ingredients.length === 0) {
       setError(t("errorNoIngredients"));
@@ -99,6 +99,7 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
         personCount,
         dietSlug: dietSlug || undefined,
         cuisines: selectedCuisines.length > 0 ? selectedCuisines : undefined,
+        seed: seedOverride,
       });
       if (!res.success || !res.data) {
         setError(res.error ?? t("errorGeneric"));
@@ -107,6 +108,16 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
       setResult(res.data);
       setView("preview");
     });
+  }
+
+  function handleGenerate() {
+    runGenerate();
+  }
+
+  function handleRegenerate() {
+    // Fresh seed each click; keeps form inputs as-is, just varies plan.
+    const seed = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    runGenerate(seed);
   }
 
   function handleApply() {
@@ -415,28 +426,39 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
                 {t("replaceLabel")}
               </label>
 
-              <div className="flex justify-between gap-2 border-t border-surface-muted pt-4">
-                <button
-                  type="button"
-                  onClick={() => setView("form")}
-                  disabled={isApplying}
-                  className="rounded-md px-4 py-2 text-sm font-medium text-text-muted hover:bg-surface-muted"
-                >
-                  {t("back")}
-                </button>
+              <div className="flex flex-wrap justify-between gap-2 border-t border-surface-muted pt-4">
+                <div className="flex gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setView("form")}
+                    disabled={isApplying || isGenerating}
+                    className="rounded-md px-4 py-2 text-sm font-medium text-text-muted hover:bg-surface-muted disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    {t("back")}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleRegenerate}
+                    disabled={isApplying || isGenerating}
+                    className="rounded-md border border-primary/30 bg-primary/5 px-4 py-2 text-sm font-medium text-primary transition hover:bg-primary/10 disabled:cursor-not-allowed disabled:opacity-60"
+                    aria-label={t("regenerateAria")}
+                  >
+                    {isGenerating ? t("generating") : t("regenerate")}
+                  </button>
+                </div>
                 <div className="flex gap-2">
                   <button
                     type="button"
                     onClick={closeDialog}
-                    disabled={isApplying}
-                    className="rounded-md px-4 py-2 text-sm font-medium text-text-muted hover:bg-surface-muted"
+                    disabled={isApplying || isGenerating}
+                    className="rounded-md px-4 py-2 text-sm font-medium text-text-muted hover:bg-surface-muted disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {t("cancel")}
                   </button>
                   <button
                     type="button"
                     onClick={handleApply}
-                    disabled={isApplying}
+                    disabled={isApplying || isGenerating}
                     className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-white transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {isApplying ? t("applying") : t("apply")}

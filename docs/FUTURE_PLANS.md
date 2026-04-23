@@ -44,9 +44,9 @@ trigger.
 
 Brief `docs/CODEX_BATCH_BRIEF.md` §14 (B6+ ince ayar oturum 14'te
 tamamlandı, B16 dersleri §14.5 + §14.7'ye işlendi: UTF-8 no-BOM +
-cümle tekrar yasağı). Pipeline oturdu, B1-B19 apply (~%68 catalog).
+cümle tekrar yasağı). Pipeline oturdu, B1-B20 apply (~%72 catalog).
 Sırada:
-- [ ] **Codex teslim B20-B30** (11 batch, ~1100 tarif kalan)
+- [ ] **Codex teslim B21-B30** (10 batch, ~1000 tarif kalan)
 - [ ] Apply akışı: dry-run → TR karakter scan → spot check → dev+prod
 - [ ] Fix script gerekirse tek-seferlik auto-clean (B8 v3 + B12 v3 pattern)
 - [ ] Cache invalidate: apply sonrası Vercel deploy otomatik (unstable_cache
@@ -230,6 +230,14 @@ Oturum 14'te 4 → 25 yazı eklendi, 11/7/7 denge. Sonraki aday konular:
   alternatifler), "malzemesini" 2 (false-positive: "iç malzemesini"
   = böreğin içi substantif, gramer doğru). Mod E B1-B19 = 1900 tarif
   (~%68 catalog).
+- Mod E B20 üç tur rework: v1 REJECT (33 tarif template smuggling,
+  `{TARIFADI} hazır olduğunda sıcak ya da ılık biçimde servis edin`
+  ve `{TARIFADI} tarifini bekletmeden ya da kısa dinlenmeyle sofraya
+  çıkarın` kalıpları; "ya da" 39). v2 REJECT (template + "ya da"
+  düzeldi ama 1427 `?` karakteri, UTF-8 encoding bozulması, TR chars
+  1521'e düştü). v3 temiz: TR 2945, `?` = 0, template dup 0, "ya da" 3,
+  "malzemesini" 0. Apply dev+prod. Mod E B1-B20 = 2000 tarif (~%72
+  catalog, yolun dörtte üçü).
 
 ---
 

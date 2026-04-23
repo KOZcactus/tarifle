@@ -44,10 +44,8 @@ trigger.
 
 Brief `docs/CODEX_BATCH_BRIEF.md` §14 (B6+ ince ayar oturum 14'te
 tamamlandı, B16 dersleri §14.5 + §14.7'ye işlendi: UTF-8 no-BOM +
-cümle tekrar yasağı). Pipeline oturdu, B1-B28 apply (~%101 catalog,
-catalog kapasitesi aşıldı çünkü son batch'lerde bazı duplicate slug
-seed edilmişti). Sırada:
-- [ ] **Codex teslim B29-B30** (2 batch, ~200 tarif kalan)
+cümle tekrar yasağı). Pipeline oturdu, B1-B29 apply. Sırada:
+- [ ] **Codex teslim B30** (1 batch, 38 tarif, finiş)
 - [ ] Apply akışı: dry-run → TR karakter scan → spot check → dev+prod
 - [ ] Fix script gerekirse tek-seferlik auto-clean (B8 v3 + B12 v3 pattern)
 - [ ] Cache invalidate: apply sonrası Vercel deploy otomatik (unstable_cache
@@ -278,7 +276,13 @@ Oturum 14'te 4 → 25 yazı eklendi, 11/7/7 denge. Sonraki aday konular:
 - Mod E B28 apply (100 tarif + 498 step). Audit: TR 3389, `?` = 0,
   ASCII corrupt 0, template dup 0, "malzemesini" 0, timer **95/100**
   (toparlandı, B27=81'den yükseldi). "ya da" 11 (düşüş trend devam).
-  Mod E B1-B28 = 2800 tarif. Kalan B29-B30 = 2 batch.
+  Mod E B1-B28 = 2800 tarif.
+- Mod E B29 apply (100 tarif + 330 step, kısa tarifler: icecek /
+  kokteyl / aperatif "few-steps" flag'li, type minimum eşiğine
+  oturtuldu). Audit: TR 2500, `?` 0, ASCII corrupt 0, template
+  dup 0, **"ya da" 0 (yeni rekor, ilk kez sıfır)**, "malzemesini" 0,
+  timer 69/100 (kısa tariflerde timer az, normal). Mod E B1-B29
+  = 2900 tarif. Kalan B30 = 38 tarif (finiş).
 
 ---
 

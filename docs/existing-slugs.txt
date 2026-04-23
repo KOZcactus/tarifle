@@ -1,5 +1,4 @@
-◇ injected env (12) from .env.local // tip: ⌘ suppress logs { quiet: true }
-# 2772 recipe slugs (as of 2026-04-23)
+# 2822 recipe slugs (as of 2026-04-23)
 
 aam-panna-hindistan-usulu
 acai-bowl
@@ -31,6 +30,7 @@ aji-amarillolu-kinoa-corbasi-peru-usulu
 aji-de-gallina
 aji-de-quinua-peru-usulu
 aji-lime-patates-salata-peru-usulu
+aji-panca-soslu-tavuklu-pirinc-peru-usulu
 aji-panca-tavuk-tava-peru-usulu
 ajili-tavuk-anticucho-bowl-peru-usulu
 ajo-blanco-corbasi-ispanyol-usulu
@@ -110,6 +110,7 @@ avocado-smash-toast-australian
 avokadolu-cancha-bowl-peru-usulu
 avokadolu-ispanak-smoothie
 avokadolu-kakao-smoothie
+avokadolu-lahana-salata-kuba-usulu
 avokadolu-misir-mucver-stack-avustralya-usulu
 avokadolu-misir-mucveri-avustralya-usulu
 avokadolu-narli-gavurdagi-salata-hatay-usulu
@@ -161,6 +162,8 @@ balila
 balkabagi-corbasi
 balkabakli-damper-toast-avustralya-usulu
 balkabakli-hindistancevizli-corba-avustralya-usulu
+balkabakli-tavuk-tepsi-firini-avustralya-usulu
+balli-cevizli-sutlac-kup-macar-usulu
 balli-hardalli-tavuk
 balli-hashasli-syrniki-rus-usulu
 balli-syrniki
@@ -365,6 +368,7 @@ cevizli-bulgur-koftesi-yalova-usulu
 cevizli-bulgur-sarmasi-amasya-bag-usulu
 cevizli-bulgur-sarmasi-amasya-usulu
 cevizli-cokelek-ezmesi
+cevizli-corek-dilimi-tokat-usulu
 cevizli-corek-trakya-usulu
 cevizli-domatesli-biber-dip-hatay-usulu
 cevizli-ekmek-mengen-usulu
@@ -442,6 +446,7 @@ churros
 ciborek
 cig-kofte
 ciger-sote
+cigerli-arpa-sehriye-pilavi-edirne-usulu
 cigerli-bulgur-pilavi-edirne-usulu
 cilbir
 cilekli-kefir-smoothie
@@ -546,10 +551,12 @@ deniz-mahsullu-paella
 deniz-yosunu-cipsi
 denizli-tandir-kebabi
 dereotlu-cubuk-tursu-salatasi-ankara-usulu
+dereotlu-kofte-patates-tava-isvec-usulu
 dereotlu-kofte-tava-isvec-usulu
 dereotlu-kur-somon
 dereotlu-kuru-domates-gozleme-nevsehir-usulu
 dereotlu-olivier-salatasi
+dereotlu-patates-corbasi-macar-usulu
 dereotlu-patates-pierogi-polonya-usulu
 dereotlu-patates-salatasi-polonya-usulu
 dereotlu-patates-yumurta-tava-isvec-usulu
@@ -697,6 +704,7 @@ erikli-poppyseed-kup-polonya-usulu
 erikli-rezene-salatasi-izmir-usulu
 erikli-seftali-salata-canakkale-usulu
 erikli-semizotu-salatasi-ayvalik-usulu
+erikli-tavuk-paprikas-macar-usulu
 erikli-tavuk-salata-kocaeli-usulu
 erikli-yaprak-sarma-yalova-usulu
 erikli-yarma-salata-igdir-usulu
@@ -782,6 +790,7 @@ findikli-elma-salatasi-sinop-usulu
 findikli-incir-kup-trabzon-usulu
 findikli-incir-uyutmasi-giresun-usulu
 findikli-karalahana-sarmasi-giresun-usulu
+findikli-kaygana-durumu-giresun-usulu
 findikli-keskek-toplari-ordu-usulu
 findikli-laz-boregi-artvin-usulu
 findikli-pancar-salatasi-ordu-usulu
@@ -937,6 +946,7 @@ hamsili-misirli-pilav-giresun-usulu
 hamsili-patates-tavasi-sinop-usulu
 hamsili-patatesli-bulgur-pilavi-sinop-usulu
 hamsili-pazi-sarma-trabzon-usulu
+hamsili-pazi-tava-rize-usulu
 hamsili-pilav-artvin-usulu
 hamsili-pilav-rize-usulu
 hamsili-pirincli-yesil-lahana-sarmasi-sinop-usulu
@@ -987,6 +997,7 @@ hashasli-pancar-salatasi-afyon-usulu
 hashasli-patates-ezmeli-bukme-afyon-usulu
 hashasli-peynirli-gozleme-eskisehir-usulu
 hashasli-tahinli-revani-kup-afyon-usulu
+hashasli-yogurt-corbasi-afyon-usulu
 hashasli-yogurtlu-makarna-denizli-usulu
 hashasli-yogurtlu-patates-eskisehir-usulu
 hashasli-yumurta-durumu-afyon-usulu
@@ -1013,6 +1024,8 @@ hibiscus-paloma-meksika-usulu
 hibiskus-serbeti
 hindistancevizli-flan-kup-kuba-usulu
 hindistancevizli-havuc-corbasi-vietnam-usulu
+hindistancevizli-lamington-kup-avustralya-usulu
+hindistancevizli-pirinc-tatlisi-kuba-usulu
 hindistancevizli-tavuk-corbasi-vietnam-usulu
 hindistancevizli-tavuklu-pirinc-tava-brezilya-usulu
 hindistancevizli-yumurtali-tost-tayland-usulu
@@ -1142,6 +1155,7 @@ kakaolu-muzlu-kup-brezilya-usulu
 kakaolu-muzlu-protein-shake
 kakaolu-protein-shake
 kakuleli-armut-kompostosu-isvec-usulu
+kakuleli-armut-kup-isvec-usulu
 kakuleli-armut-limonatasi-isvec-usulu
 kakuleli-sicak-cikolata
 kakuleli-sicak-elma-suyu
@@ -1173,6 +1187,7 @@ karalahanali-yogurtlu-salata-bartin-usulu
 karamel-biberli-tavuk-pirinci-vietnam-usulu
 karanfilli-erik-kompostosu-polonya-usulu
 karayemis-kompostosu-trabzon-usulu
+karayemisli-muhallebi-trabzon-usulu
 karayemisli-soguk-cay-ordu-usulu
 kardamomlu-elma-coplari-isvec-usulu
 kardemummali-elma-crumble-isvec-usulu
@@ -1186,6 +1201,8 @@ kasarli-eriste-tavasi-kars-usulu
 kasarli-fasulyeli-kahvalti-kase-ingiltere-usulu
 kasarli-ispanakli-gurme-tost-bursa-usulu
 kasarli-kapya-pide-bursa-usulu
+kasarli-patatesli-pogaca-macar-usulu
+kasarli-rocoto-empanada-peru-usulu
 kasarli-tost
 kasha-grechka
 kasha-grechnevaya-rus-usulu
@@ -1265,7 +1282,9 @@ kelle-paca-corbasi
 kemalpasa-tatlisi
 kengerli-bulgur-tavasi-bingol-usulu
 kengerli-kuzu-sote-erzincan-usulu
+kerebic-kup-mersin-usulu
 kerevizli-havuclu-yogurt-corbasi-edirne-usulu
+kerevizli-rezeneli-balik-corbasi-isvec-usulu
 kerevizli-yogurt-corbasi-edirne-usulu
 keskek-aydin-usulu
 keskek-usulu-tavuklu-bartin
@@ -1283,6 +1302,7 @@ kestaneli-mantar-sote-bilecik-usulu
 kestaneli-pirinc-kek-bursa-usulu
 kestaneli-sutlac-bursa-usulu
 kestaneli-sutlu-irmik-tatli-bursa-usulu
+kestaneli-tavuk-kapama-bursa-usulu
 kete-erzincan-usulu
 kete-erzurum-tava-usulu
 kete-kirigi-tava-ardahan-usulu
@@ -1314,6 +1334,7 @@ kirenli-elma-hosafi-gumushane-usulu
 kirmizi-erikli-taze-fasulye-manisa-usulu
 kirmizi-pancar-mihlama-trabzon-usulu
 kirmizi-pancarli-kefir-kasesi-polonya-usulu
+kirmizi-yabanmersinli-soda-isvec-usulu
 kisir
 kitsune-udon
 kivili-maydanoz-smoothie
@@ -1411,6 +1432,7 @@ kvass
 lablabi
 labneh
 labneli-biber-dolmasi-orta-dogu-usulu
+labneli-misir-mucveri-avustralya-usulu
 labneli-somonlu-bagel
 labneli-zaatar-pide-orta-dogu-usulu
 labneli-zaatar-tost-orta-dogu-usulu
@@ -1451,9 +1473,11 @@ lemonato-tavuklu-orzo-yunan-usulu
 lemongrass-dana-pirinc-bowl-vietnam-usulu
 lemongrass-tofu-rice-salad-vietnam-usulu
 licuado-de-papaya
+lima-fasulyeli-kinoa-salata-peru-usulu
 lime-biberli-barramundi-tava-avustralya-usulu
 lime-bitters-spritz-avustralya-usulu
 lime-coconut-batida-brezilya-usulu
+lime-zencefilli-ananas-fizz-avustralya-usulu
 limeade-with-coconut-brezilya-usulu
 limon-mersinli-tavuk-pirinci-tava-avustralya-usulu
 limon-myrtle-avokado-toast-avustralya-usulu
@@ -1543,6 +1567,7 @@ manakish
 mancar-diblesi-zonguldak-usulu
 mandalinali-adacayi-fizz-bodrum-usulu
 mandalinali-kefir-smoothie-didim-usulu
+mandalinali-rakili-spritz-bodrum-usulu
 mandalinali-reyhan-serbeti-aydin-usulu
 mandalinali-soguk-icecek-alanya-usulu
 mandu
@@ -1670,6 +1695,7 @@ misir-yarmali-nohut-corbasi-sinop-usulu
 misir-yarmali-tavuk-corbasi-ordu-koy-usulu
 misir-yarmali-tavuk-corbasi-ordu-usulu
 misirli-kabak-corbasi-peru-usulu
+misirli-palamut-corbasi-sinop-usulu
 misirli-pazili-tava-ekmegi-rize-usulu
 miso-corbasi
 miso-corn-soup-japon-kis-usulu
@@ -1719,6 +1745,8 @@ muzlu-tapyoka-kup-vietnam-usulu
 naan
 nalesniki-z-serem
 nam-khao-tod
+naneli-guava-mojito-kuba-usulu
+naneli-kabakli-kuskus-salata-avustralya-usulu
 naneli-limonata
 naneli-mango-lassi-spritz-hindistan-usulu
 naneli-patatesli-humus-kase-mersin-usulu
@@ -1735,6 +1763,7 @@ nar-eksili-kuru-patlican-ezmesi-mardin-usulu
 nar-eksili-kuru-patlican-pilavi-mardin-usulu
 nar-eksili-patlican-dizmesi-gaziantep-usulu
 nar-eksili-sehriye-pilavi-mardin-usulu
+nar-eksili-tepsi-kofte-adiyaman-usulu
 narenciyeli-avokado-salatasi-kuba-usulu
 narenciyeli-cin-tonik-antalya-usulu
 narenciyeli-cin-tonik-mersin-usulu
@@ -1771,6 +1800,7 @@ nohutlu-otlu-borek-aydin-usulu
 nohutlu-pancar-bulguru-ankara-usulu
 nohutlu-pazi
 nohutlu-semizotu-borani-aydin-usulu
+nohutlu-semizotu-corbasi-gaziantep-usulu
 nohutlu-topalak
 nohutlu-yahni-konya-usulu
 nohutlu-yogurt-corbasi-diyarbakir-usulu
@@ -1818,6 +1848,7 @@ otlu-peynirli-yumurta-durumu-van-usulu
 otlu-tava-artvin-usulu
 otlu-tulumlu-lavas-tostu-van-usulu
 otlu-yumurta-banh-mi-vietnam-usulu
+otlu-yumurta-tava-van-usulu
 ovmac-corbasi-konya-usulu
 oyakodon
 pacanga-boregi
@@ -1864,12 +1895,14 @@ paper-plane
 pappa-al-pomodoro
 paprika-soslu-mantar-tava-macaristan-usulu
 paprikali-fasulye-corbasi-macar-usulu
+paprikali-lorlu-ekmek-dilimi-macar-usulu
 paprikali-lorlu-yumurta-tava-macaristan-usulu
 paprikali-nohut-gulas-macar-usulu
 paprikali-tavuklu-arpa-sehriye-macar-usulu
 paprikas-csirke-macar-usulu
 paprikas-krumpli
 paprikas-tarhonya-macar-usulu
+passiflorali-pisco-cooler-peru-usulu
 passionfruit-pisco-spritz-peru-usulu
 pasta-alla-norma
 pastel-brezilya
@@ -1878,6 +1911,7 @@ pastirmali-arpa-pilavi-kayseri-usulu
 pastirmali-biberli-yumurta-ekmegi-kayseri-usulu
 pastirmali-eriste-omleti-kayseri-usulu
 pastirmali-kuru-domatesli-yumurta-kayseri-usulu
+pastirmali-mercimek-pilavi-kayseri-usulu
 pastirmali-nohutlu-bulgur-pilavi-kayseri-usulu
 pastirmali-yumurta
 pastitsio
@@ -1960,6 +1994,7 @@ peynirli-biberli-firikli-gozleme-kahramanmaras-usulu
 peynirli-dereotlu-mini-borek-bilecik-usulu
 peynirli-fasulye-diblesi-samsun-usulu
 peynirli-gozleme
+peynirli-kabak-cicegi-boregi-balikesir-usulu
 peynirli-kabak-mucver-tostu-bursa-usulu
 peynirli-kabakli-borek-kocaeli-usulu
 peynirli-kavrulmus-misir-ekmegi-samsun-usulu
@@ -1972,6 +2007,7 @@ peynirli-maydanozlu-kol-boregi-sakarya-usulu
 peynirli-milfoy
 peynirli-misir-ekmegi-balikesir-usulu
 peynirli-omlet
+peynirli-patatesli-tunnbrod-durum-isvec-usulu
 peynirli-pazili-tava-boregi-balikesir-usulu
 peynirli-pogaca
 peynirli-quesadilla
@@ -2030,10 +2066,12 @@ portakal-salatasi-antalya-usulu
 portakalli-arroz-con-leche-ispanya-usulu
 portakalli-bademli-irmik-kup-adana-usulu
 portakalli-crema-kup-ispanya-usulu
+portakalli-dana-picadillo-kuba-usulu
 portakalli-havuc-suyu
 portakalli-irmik-helvasi-antakya-usulu
 portakalli-irmik-keki-adana-usulu
 portakalli-irmik-keki-yunan-usulu
+portakalli-irmik-muhallebisi-mugla-usulu
 portakalli-kladdkaka
 portakalli-krema-kup-ispanya-usulu
 portakalli-labneli-krep-antalya-usulu
@@ -2085,6 +2123,7 @@ revani
 revithia-yunan-usulu
 revithokeftedes
 reyhan-serbeti
+reyhanli-bostana-salatasi-diyarbakir-usulu
 reyhanli-bulgur-koftesi-diyarbakir-usulu
 reyhanli-bulgur-patlican-dolmasi-isparta-usulu
 reyhanli-bulgur-salatasi-batman-usulu
@@ -2240,6 +2279,7 @@ siveydiz
 siyah-fasulye-corbasi-kuba-usulu
 siyah-fasulyeli-balkabagi-corbasi-brezilya-usulu
 siyah-fasulyeli-pilav-bowl-kuba-usulu
+siyah-fasulyeli-yumurta-tostada-kuba-usulu
 siyez-unlu-elma-keki-kastamonu-usulu
 siyezli-kes-durumu-kastamonu-usulu
 sizma-yogurtlu-bulgur-corbasi-isparta-usulu
@@ -2339,6 +2379,7 @@ surk-ezmesi-hatay-usulu
 surk-peynirli-biberli-durum-hatay-usulu
 susamli-armut-tatlisi-bursa-usulu
 susamli-biber-dizmesi-kocaeli-usulu
+susamli-borulce-salatasi-izmir-usulu
 susamli-corek-eskisehir-usulu
 susamli-kabak-cicegi-tava-adana-usulu
 susamli-kabak-corbasi-japon-usulu
@@ -2378,10 +2419,12 @@ tahin-pekmezli-pankek
 tahin-pekmezli-yulaf
 tahin-sos
 tahinli-cevizli-kahvalti-durumu
+tahinli-elma-tatlisi-konya-usulu
 tahinli-incir-muhallebisi-adana-usulu
 tahinli-incirli-krep-denizli-usulu
 tahinli-isotlu-kabak-dip-adiyaman-usulu
 tahinli-isotlu-koplenmis-biber-ezme-adiyaman-usulu
+tahinli-kabak-basti-antalya-usulu
 tahinli-kabak-mezesi-antalya-usulu
 tahinli-kabak-tatlisi-antalya-usulu
 tahinli-kapya-biber-dip-urla-usulu
@@ -2422,6 +2465,7 @@ taratorlu-kabak-corbasi-mersin-usulu
 taratorlu-kabak-mucveri-mugla-usulu
 tarcinli-ananas-kup-peru-usulu
 tarcinli-etli-erik-tavasi-mardin-usulu
+tarcinli-mor-misir-muhallebisi-peru-usulu
 tarcinli-quinoa-puding-peru-usulu
 tarcinli-sicak-elma
 tarhana-corbasi-kahramanmaras-usulu
@@ -2569,6 +2613,7 @@ tursulu-patates-salata-sinop-usulu
 turunc-recelli-labne-tostu-antalya-usulu
 turunclu-irmik-tatlisi-mersin-usulu
 turunclu-kuskus-salatasi-mersin-usulu
+turunclu-soguk-cay-alanya-usulu
 turunclu-zeytin-salatasi-antalya-usulu
 tutlu-yarma-corbasi-erzincan-usulu
 tutmac-corbasi
@@ -2598,6 +2643,7 @@ uzum-suyu
 uzumlu-aside-tatlisi-nevsehir-usulu
 uzumlu-dugun-pilavi-nevsehir-usulu
 uzumlu-karanfilli-hosaf-nevsehir-usulu
+uzumlu-kefir-serbeti-nevsehir-usulu
 uzumlu-pelte-tokat-usulu
 uzumlu-tahinli-un-helvasi-konya-usulu
 uzumlu-tavuk-kapama-manisa-bag-usulu
@@ -2674,6 +2720,7 @@ yesil-elma-cevizli-salata-amerikan-usulu
 yesil-mercimek-yemegi
 yesil-mercimekli-bulgur-pilavi-kirsehir-usulu
 yesil-mercimekli-eriste-corbasi-yozgat-usulu
+yesil-mercimekli-kete-erzurum-usulu
 yesil-mercimekli-pancar-corbasi-bolu-usulu
 yesil-papayali-karides-salatasi-vietnam-usulu
 yesil-smoothie
@@ -2722,6 +2769,7 @@ zaatarli-labneh-gozleme-levant-usulu
 zahter-salatasi-hatay-usulu
 zahterli-domatesli-pide-hatay-usulu
 zahterli-katmer-durum-hatay-usulu
+zahterli-lor-tost-hatay-usulu
 zahterli-lorlu-katmer-kilis-usulu
 zahterli-nohutlu-krep-hatay-usulu
 zahterli-peynir-durum-hatay-usulu
@@ -2749,6 +2797,7 @@ zeytin-ezmeli-patates-salata-bodrum-usulu
 zeytin-piyazi-antalya-usulu
 zeytin-tapenade
 zeytin-yaprakli-lor-sarma-izmir-usulu
+zeytinli-acur-ezmesi-kilis-usulu
 zeytinli-biber-ezmesi-hatay-usulu
 zeytinli-enginar-guveci-yalova-usulu
 zeytinli-humuslu-bazlama-adana-usulu

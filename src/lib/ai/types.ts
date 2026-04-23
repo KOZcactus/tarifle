@@ -83,6 +83,18 @@ export interface AiProvider {
 // ── AI v4 (Weekly Menu Planner) ────────────────────────────────────
 
 /**
+ * Macro preference: optional scoring layer on top of pantry matching.
+ * "high-protein" and "high-fiber" are currently tag-based heuristics
+ * with a nutrition fallback; "low-calorie" uses Recipe.averageCalories.
+ * Omit or "none" = disabled, planner falls back to the v4.1 ordering.
+ */
+export type MacroPreference =
+  | "none"
+  | "high-protein"
+  | "low-calorie"
+  | "high-fiber";
+
+/**
  * Input for planning a full 7-day menu (3 meals × 7 days = 21 slots).
  * Reuses AiSuggestInput pantry + diet filters, adds menu-specific options.
  */
@@ -107,6 +119,8 @@ export interface WeeklyMenuInput {
   maxDinnerMinutes?: number;
   /** Deterministic seed for reproducible plans (test + replay). */
   seed?: string;
+  /** Optional macro bias to weight recipe picking. */
+  macroPreference?: MacroPreference;
 }
 
 /** One slot in the 7×3 grid. */

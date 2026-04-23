@@ -9,6 +9,7 @@ import {
   addRecipesToShoppingListAction,
 } from "@/lib/actions/menu";
 import type {
+  MacroPreference,
   MenuSlot,
   WeeklyMenuResponse,
 } from "@/lib/ai/types";
@@ -42,6 +43,13 @@ const DIET_OPTIONS = [
   { slug: "alkolsuz", labelKey: "dietAlcoholFree" },
 ] as const;
 
+const MACRO_OPTIONS: { value: MacroPreference; labelKey: string }[] = [
+  { value: "none", labelKey: "macroNone" },
+  { value: "high-protein", labelKey: "macroHighProtein" },
+  { value: "low-calorie", labelKey: "macroLowCalorie" },
+  { value: "high-fiber", labelKey: "macroHighFiber" },
+];
+
 function splitCsv(raw: string): string[] {
   return raw
     .split(/[,\n]/g)
@@ -70,6 +78,7 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
   const [maxBreakfast, setMaxBreakfast] = useState<number | undefined>(undefined);
   const [maxLunch, setMaxLunch] = useState<number | undefined>(undefined);
   const [maxDinner, setMaxDinner] = useState<number | undefined>(undefined);
+  const [macroPreference, setMacroPreference] = useState<MacroPreference>("none");
 
   function toggleCuisine(code: CuisineCode) {
     setSelectedCuisines((prev) =>
@@ -131,6 +140,7 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
         maxBreakfastMinutes: maxBreakfast,
         maxLunchMinutes: maxLunch,
         maxDinnerMinutes: maxDinner,
+        macroPreference,
       });
       if (!res.success || !res.data) {
         setError(res.error ?? t("errorGeneric"));
@@ -337,6 +347,30 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
                     ))}
                   </select>
                 </div>
+              </div>
+
+              <div>
+                <label
+                  htmlFor="ai-fill-macro"
+                  className="mb-1 block text-sm font-medium text-text"
+                >
+                  {t("macroLabel")}
+                </label>
+                <select
+                  id="ai-fill-macro"
+                  value={macroPreference}
+                  onChange={(e) =>
+                    setMacroPreference(e.target.value as MacroPreference)
+                  }
+                  className="w-full rounded-md border border-surface-muted bg-surface px-3 py-2 text-sm text-text focus:border-primary focus:outline-none"
+                >
+                  {MACRO_OPTIONS.map((m) => (
+                    <option key={m.value} value={m.value}>
+                      {t(m.labelKey)}
+                    </option>
+                  ))}
+                </select>
+                <p className="mt-1 text-xs text-text-muted">{t("macroHint")}</p>
               </div>
 
               <label className="flex items-center gap-2 text-sm text-text">

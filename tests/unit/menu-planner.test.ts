@@ -332,6 +332,60 @@ describe("RuleBasedMenuPlanner", () => {
     expect(uniqueCuisines.size).toBeGreaterThan(2);
   });
 
+  it("macroPreference high-protein shifts plan away from macro:none baseline", async () => {
+    // Two pools, identical match score; half have the high-protein tag.
+    // With preference "none" ordering is matchScore + slug tie-break, so
+    // protein-tagged picks appear alphabetically mixed. With
+    // "high-protein" macroBoost pushes them first; the resulting plans
+    // must diverge in at least one dinner slot.
+    // Generics listed first (alphabetic g < p) so baseline pool (no
+    // boost) picks them; protein plan must reorder via macroBoost.
+    const recipes: FakeRecipe[] = [
+      ...Array.from({ length: 6 }).map((_, i) =>
+        mk(`g-${i}`, "YEMEK", {
+          category: { name: `Sebze ${i}` },
+          cuisine: ["mx", "kr", "th", "in", "us", "br"][i],
+          totalMinutes: 30,
+        }),
+      ),
+      ...Array.from({ length: 6 }).map((_, i) =>
+        mk(`p-${i}`, "YEMEK", {
+          category: { name: `Tavuk ${i}` },
+          cuisine: ["tr", "it", "fr", "es", "gr", "jp"][i],
+          totalMinutes: 30,
+          tags: [{ tag: { slug: "yuksek-protein" } }],
+        }),
+      ),
+    ];
+    mockPool(recipes);
+    const planner = new RuleBasedMenuPlanner();
+    const baseline = await planner.plan({
+      ingredients: ["tuz", "un"],
+      assumePantryStaples: true,
+      seed: "macro-cmp",
+    });
+    mockPool(recipes);
+    const proteinPlan = await planner.plan({
+      ingredients: ["tuz", "un"],
+      assumePantryStaples: true,
+      macroPreference: "high-protein",
+      seed: "macro-cmp",
+    });
+    const baseDinners = baseline.slots
+      .filter((s) => s.mealType === "DINNER")
+      .map((s) => s.recipe?.slug ?? "");
+    const proteinDinners = proteinPlan.slots
+      .filter((s) => s.mealType === "DINNER")
+      .map((s) => s.recipe?.slug ?? "");
+    // Plans must differ in at least one dinner slot (macroBoost took effect).
+    const diverged = baseDinners.some(
+      (slug, i) => slug !== proteinDinners[i],
+    );
+    expect(diverged).toBe(true);
+    // And protein plan must contain at least one protein-tagged pick.
+    expect(proteinDinners.some((s) => s.startsWith("p-"))).toBe(true);
+  });
+
   it("different seeds produce different plans (non-determinism across seeds)", async () => {
     const pool = buildRichPool();
     mockPool(pool);

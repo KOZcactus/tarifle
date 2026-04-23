@@ -22,10 +22,68 @@ import { dietConfigBySlug } from "@/lib/diets";
 import type {
   AiMenuPlanner,
   AiSuggestion,
+  MacroPreference,
   MenuSlot,
   WeeklyMenuInput,
   WeeklyMenuResponse,
 } from "./types";
+
+const MACRO_WEIGHT = 0.25; // 0..1 etki orani, matchScore ile ag onemi
+const PROTEIN_TAGS = new Set(["yuksek-protein", "protein-kaynagi", "et-yemegi"]);
+const FIBER_TAGS = new Set([
+  "yuksek-lifli",
+  "baklagil",
+  "lifli",
+  "tam-tahil",
+  "sebze-yemegi",
+  "vegan",
+  "vejetaryen",
+]);
+const FIBER_CATEGORIES = new Set(["Çorbalar", "Salatalar", "Baklagil Yemekleri", "Sebze Yemekleri"]);
+const PROTEIN_CATEGORIES = new Set([
+  "Et Yemekleri",
+  "Tavuk Yemekleri",
+  "Balık Yemekleri",
+  "Baklagil Yemekleri",
+]);
+
+function computeMacroBoost(
+  preference: MacroPreference | undefined,
+  recipe: {
+    averageCalories: number | null;
+    protein: unknown;
+    tags: string[];
+    categoryName: string;
+  },
+): number {
+  if (!preference || preference === "none") return 0;
+  const proteinNum = typeof recipe.protein === "number"
+    ? recipe.protein
+    : typeof (recipe.protein as { toNumber?: () => number })?.toNumber === "function"
+      ? (recipe.protein as { toNumber: () => number }).toNumber()
+      : Number(recipe.protein ?? 0);
+
+  if (preference === "high-protein") {
+    if (proteinNum >= 25) return 1;
+    if (proteinNum >= 15) return 0.6;
+    if (recipe.tags.some((t) => PROTEIN_TAGS.has(t))) return 0.5;
+    if (PROTEIN_CATEGORIES.has(recipe.categoryName)) return 0.3;
+    return 0;
+  }
+  if (preference === "low-calorie") {
+    if (recipe.averageCalories == null) return 0.2; // belirsiz nötr
+    if (recipe.averageCalories <= 200) return 1;
+    if (recipe.averageCalories <= 350) return 0.6;
+    if (recipe.averageCalories <= 500) return 0.2;
+    return 0;
+  }
+  if (preference === "high-fiber") {
+    if (recipe.tags.some((t) => FIBER_TAGS.has(t))) return 0.8;
+    if (FIBER_CATEGORIES.has(recipe.categoryName)) return 0.5;
+    return 0;
+  }
+  return 0;
+}
 
 const MIN_SCORE = 0.3;
 const BREAKFAST_TYPES: RecipeType[] = ["KAHVALTI"];
@@ -42,6 +100,7 @@ type MealSlotType = MenuSlot["mealType"];
 interface ScoredRecipe extends AiSuggestion {
   _totalMinutes: number;
   _type: RecipeType;
+  _macroBoost?: number;
 }
 
 /**
@@ -110,6 +169,8 @@ async function fetchCandidates(
     orderBy: { slug: "asc" },
   });
 
+  const macroPref = input.macroPreference;
+
   const excludeList = input.excludeIngredients ?? [];
 
   const scored: ScoredRecipe[] = recipes
@@ -142,7 +203,11 @@ async function fetchCandidates(
         _totalMinutes: recipe.totalMinutes,
         _type: recipe.type,
         _ingredients: recipe.ingredients,
-      } as ScoredRecipe & { _ingredients: typeof recipe.ingredients };
+        _proteinRaw: recipe.protein,
+      } as ScoredRecipe & {
+        _ingredients: typeof recipe.ingredients;
+        _proteinRaw: typeof recipe.protein;
+      };
     })
     .filter((s) =>
       excludeList.length === 0
@@ -155,14 +220,27 @@ async function fetchCandidates(
     )
     .filter((s) => s.matchScore >= MIN_SCORE)
     .map((s) => {
-      const { _ingredients, ...rest } = s as ScoredRecipe & {
+      const full = s as ScoredRecipe & {
         _ingredients: unknown;
+        _proteinRaw: unknown;
       };
+      const { _ingredients, _proteinRaw, ...rest } = full;
       void _ingredients;
-      return rest;
+      const macroBoost =
+        macroPref && macroPref !== "none"
+          ? computeMacroBoost(macroPref, {
+              averageCalories: rest.averageCalories,
+              protein: _proteinRaw,
+              tags: rest.tags,
+              categoryName: rest.categoryName,
+            })
+          : 0;
+      return { ...rest, _macroBoost: macroBoost };
     })
     .sort((a, b) => {
-      if (b.matchScore !== a.matchScore) return b.matchScore - a.matchScore;
+      const compositeA = a.matchScore + (a._macroBoost ?? 0) * MACRO_WEIGHT;
+      const compositeB = b.matchScore + (b._macroBoost ?? 0) * MACRO_WEIGHT;
+      if (compositeA !== compositeB) return compositeB - compositeA;
       return a._totalMinutes - b._totalMinutes;
     });
 
@@ -266,9 +344,10 @@ export class RuleBasedMenuPlanner implements AiMenuPlanner {
               pick.cuisine,
               (cuisineCount.get(pick.cuisine) ?? 0) + 1,
             );
-          const { _totalMinutes, _type, ...suggestion } = pick;
+          const { _totalMinutes, _type, _macroBoost, ...suggestion } = pick;
           void _totalMinutes;
           void _type;
+          void _macroBoost;
           slots.push({
             dayOfWeek: day,
             mealType: type,

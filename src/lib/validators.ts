@@ -316,6 +316,9 @@ export const weeklyMenuSchema = z.object({
   maxLunchMinutes: z.number().int().positive().max(240).optional(),
   maxDinnerMinutes: z.number().int().positive().max(240).optional(),
   seed: z.string().max(64).optional(),
+  macroPreference: z
+    .enum(["none", "high-protein", "low-calorie", "high-fiber"])
+    .optional(),
 });
 
 export type WeeklyMenuFormInput = z.infer<typeof weeklyMenuSchema>;

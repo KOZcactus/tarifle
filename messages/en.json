@@ -1548,7 +1548,13 @@
       "shoppingAria": "Add menu recipe ingredients to the shopping list",
       "shoppingAdding": "Adding…",
       "shoppingSuccess": "Added {addedCount} new items from {recipeCount} recipes, {mergedCount} merged.",
-      "errorShopping": "Couldn't add to the shopping list."
+      "errorShopping": "Couldn't add to the shopping list.",
+      "macroLabel": "Macro goal",
+      "macroHint": "Nutrient to prioritize. 'None' keeps the default ordering.",
+      "macroNone": "None (default)",
+      "macroHighProtein": "💪 High protein",
+      "macroLowCalorie": "🥗 Low calorie",
+      "macroHighFiber": "🌾 High fiber"
     }
   },
   "ingredientSuggestion": {

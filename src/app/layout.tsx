@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages, getTranslations } from "next-intl/server";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { bricolage, geistSans, geistMono } from "@/styles/fonts";
 import { Providers } from "@/components/providers";
 import { Navbar } from "@/components/layout/Navbar";
@@ -157,6 +159,8 @@ export default async function RootLayout({
             <PWAInstallBanner />
           </Providers>
         </NextIntlClientProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

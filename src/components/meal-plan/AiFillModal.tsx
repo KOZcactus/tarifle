@@ -11,6 +11,11 @@ import type {
   MenuSlot,
   WeeklyMenuResponse,
 } from "@/lib/ai/types";
+import {
+  CUISINE_CODES,
+  CUISINE_LABEL,
+  type CuisineCode,
+} from "@/lib/cuisines";
 
 type View = "form" | "preview";
 
@@ -52,6 +57,13 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
   const [assumeStaples, setAssumeStaples] = useState(true);
   const [personCount, setPersonCount] = useState<number>(2);
   const [dietSlug, setDietSlug] = useState<string>("");
+  const [selectedCuisines, setSelectedCuisines] = useState<CuisineCode[]>([]);
+
+  function toggleCuisine(code: CuisineCode) {
+    setSelectedCuisines((prev) =>
+      prev.includes(code) ? prev.filter((c) => c !== code) : [...prev, code],
+    );
+  }
 
   const dialogRef = useRef<HTMLDialogElement | null>(null);
 
@@ -86,6 +98,7 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
         assumePantryStaples: assumeStaples,
         personCount,
         dietSlug: dietSlug || undefined,
+        cuisines: selectedCuisines.length > 0 ? selectedCuisines : undefined,
       });
       if (!res.success || !res.data) {
         setError(res.error ?? t("errorGeneric"));
@@ -255,6 +268,54 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
                 />
                 {t("assumeStaplesLabel")}
               </label>
+
+              <div>
+                <div className="mb-2 flex items-center justify-between">
+                  <span className="text-sm font-medium text-text">
+                    {t("cuisinesLabel")}
+                  </span>
+                  {selectedCuisines.length > 0 && (
+                    <button
+                      type="button"
+                      onClick={() => setSelectedCuisines([])}
+                      className="text-xs text-text-muted underline underline-offset-2 hover:text-text"
+                    >
+                      {t("cuisinesClear")}
+                    </button>
+                  )}
+                </div>
+                <p className="mb-2 text-xs text-text-muted">
+                  {selectedCuisines.length === 0
+                    ? t("cuisinesHintAll")
+                    : t("cuisinesHintSelected", {
+                        count: selectedCuisines.length,
+                      })}
+                </p>
+                <div
+                  role="group"
+                  aria-label={t("cuisinesLabel")}
+                  className="flex flex-wrap gap-1.5"
+                >
+                  {CUISINE_CODES.map((code) => {
+                    const active = selectedCuisines.includes(code);
+                    return (
+                      <button
+                        key={code}
+                        type="button"
+                        onClick={() => toggleCuisine(code)}
+                        aria-pressed={active}
+                        className={`rounded-full border px-2.5 py-1 text-xs font-medium transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
+                          active
+                            ? "border-primary bg-primary/10 text-primary"
+                            : "border-surface-muted bg-surface text-text-muted hover:border-primary/40 hover:text-text"
+                        }`}
+                      >
+                        {CUISINE_LABEL[code]}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
 
               <div className="flex justify-end gap-2 border-t border-surface-muted pt-4">
                 <button

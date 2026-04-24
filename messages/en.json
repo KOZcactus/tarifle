@@ -1594,7 +1594,12 @@
       "personalizedBenzer": "similar",
       "antiRepeatWarning": "{count} slots left empty. The last-14-days filter narrowed the pool.",
       "antiRepeatClearButton": "Clear history and retry",
-      "shoppingDiffSummary": "{recipeCount} recipes · {missingCount} missing ingredients · {haveCount} already at home"
+      "shoppingDiffSummary": "{recipeCount} recipes · {missingCount} missing ingredients · {haveCount} already at home",
+      "icalButton": "Add to calendar",
+      "icalAria": "Download the weekly menu as a calendar file (.ics)",
+      "shareButton": "Share",
+      "shareAria": "Share the weekly menu via WhatsApp or other apps",
+      "shareTitle": "This week's menu (Tarifle)"
     }
   },
   "ingredientSuggestion": {

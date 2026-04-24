@@ -38,6 +38,8 @@ import {
   clearMenuHistory,
   type PersonalizedStats,
 } from "@/lib/ai/menu-history";
+import { buildIcalString } from "@/lib/ai/menu-ical";
+import { buildShareText, buildWhatsAppUrl } from "@/lib/ai/menu-share";
 import {
   addMenuPlanFavorite,
   readMenuPlanFavorites,
@@ -364,6 +366,50 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
         }),
       );
     });
+  }
+
+  /**
+   * #12 iCal export: v4 preview'den Blob indir. Mobil takvim +
+   * Google/Outlook import uyumlu, floating local time.
+   */
+  function handleIcalDownload() {
+    if (!result) return;
+    const ics = buildIcalString({ slots: result.slots });
+    const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "tarifle-haftalik-menu.ics";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  /**
+   * #13 WhatsApp paylaş: mobilde Web Share API, desktop'ta wa.me
+   * fallback. Metin formatlanmış 7 gün × dolu slot + tarif URL'leri.
+   */
+  async function handleShareWhatsApp() {
+    if (!result) return;
+    const text = buildShareText({ slots: result.slots });
+    // Mobile Web Share API (iOS/Android): WhatsApp dahil tüm uygulama
+    // share sheet'te.
+    if (typeof navigator !== "undefined" && "share" in navigator) {
+      try {
+        await navigator.share({
+          title: t("shareTitle"),
+          text,
+        });
+        return;
+      } catch {
+        // Kullanıcı iptal etti veya mobile share reject; desktop
+        // fallback'e düş.
+      }
+    }
+    // Desktop / share unsupported: wa.me deep link yeni sekmede aç.
+    const url = buildWhatsAppUrl(text);
+    window.open(url, "_blank", "noopener,noreferrer");
   }
 
   function handleApply() {
@@ -910,16 +956,38 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
                       });
                     })()}
                 </div>
-                <button
-                  type="button"
-                  onClick={handleShoppingList}
-                  disabled={isShopping || isApplying || isGenerating}
-                  className="inline-flex items-center gap-1 rounded-md border border-primary/40 bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary hover:bg-primary/20 disabled:cursor-not-allowed disabled:opacity-60"
-                  aria-label={t("shoppingAria")}
-                >
-                  <span aria-hidden>🛒</span>
-                  {isShopping ? t("shoppingAdding") : t("shoppingButton")}
-                </button>
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <button
+                    type="button"
+                    onClick={handleShoppingList}
+                    disabled={isShopping || isApplying || isGenerating}
+                    className="inline-flex items-center gap-1 rounded-md border border-primary/40 bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary hover:bg-primary/20 disabled:cursor-not-allowed disabled:opacity-60"
+                    aria-label={t("shoppingAria")}
+                  >
+                    <span aria-hidden>🛒</span>
+                    {isShopping ? t("shoppingAdding") : t("shoppingButton")}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleIcalDownload}
+                    disabled={isApplying || isGenerating}
+                    className="inline-flex items-center gap-1 rounded-md border border-sky-300/60 bg-sky-50 px-3 py-1.5 text-xs font-medium text-sky-700 transition hover:bg-sky-100 disabled:cursor-not-allowed disabled:opacity-60 dark:border-sky-500/40 dark:bg-sky-950/40 dark:text-sky-300 dark:hover:bg-sky-900/40"
+                    aria-label={t("icalAria")}
+                  >
+                    <span aria-hidden>📅</span>
+                    {t("icalButton")}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleShareWhatsApp}
+                    disabled={isApplying || isGenerating}
+                    className="inline-flex items-center gap-1 rounded-md border border-emerald-300/60 bg-emerald-50 px-3 py-1.5 text-xs font-medium text-emerald-700 transition hover:bg-emerald-100 disabled:cursor-not-allowed disabled:opacity-60 dark:border-emerald-500/40 dark:bg-emerald-950/40 dark:text-emerald-300 dark:hover:bg-emerald-900/40"
+                    aria-label={t("shareAria")}
+                  >
+                    <span aria-hidden>💬</span>
+                    {t("shareButton")}
+                  </button>
+                </div>
               </div>
 
               <div className="flex flex-wrap justify-between gap-2 border-t border-surface-muted pt-4">

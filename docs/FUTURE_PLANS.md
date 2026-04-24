@@ -15,6 +15,43 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
+### Multi-line recipe cuisine field drift (569 WARNING, ~1-2 saat)
+
+Oturum 19'da tespit edildi: content:validate 569 "cuisine alanı boş" WARNING
+veriyor. DB'de 0 NULL cuisine (3452/3452 dolu, retrofit önceki oturumlarda
+yapılmıştı). Sorun **seed-recipes.ts source of truth drift**:
+
+- 1521 TEK-satır recipe (`r({ ... })` format): cuisine dolu ✅
+- 569 MULTI-satır recipe (`{ \n title: ... \n slug: ... \n ... \n }` format):
+  cuisine field eksik, DB'den mapping ile doldurulması gerek.
+
+Line-based regex multi-line bloklarda `cuisine:` başka satırda olunca
+duplicate property TS error veriyordu (ilk denemede 734 "fix" attı → 174'ü
+duplicate çıkarttı). Doğru yaklaşım AST-aware:
+
+1. Recipe bloğunu tam scope et (`{ ... },` top-level array item, nested
+   helper `t()/ing()/st()` bloklarını karıştırmadan)
+2. Block içinde `cuisine:` ara, yoksa `slug:` satırından sonra ekle
+3. Prettier ile format et
+4. tsc + validate PASS
+
+Sonuç: 569 WARNING → 0, push raporu temizlenir. Launch-blocker değil ama
+push gürültüsü belirgin azalır.
+
+### Translations drift (Mod B %100 oldu, WARNING'ler seed drift)
+
+Oturum 19'da Backfill-14 + 15 tam apply edildi, Mod B DB'de 3452/3452
+%100. Ama content:validate 1032 "translations eksik" WARNING hâlâ var
+çünkü **seed-recipes.ts source of truth** bu çevirileri içermiyor (Mod B
+shallow merge DB'ye yazar, seed'e yazmaz).
+
+Bu seed drift yukaridaki multi-line cuisine drift ile aynı problemin
+başka varyasyonu: DB dolu, seed eksik, content:validate seed üstünden
+çalışıyor.
+
+Fix: seed-recipes.ts'te tüm tariflere DB'den translations mapping
+enjeksiyonu (AST-aware edit, ~1-2 saat cuisine drift fix ile ortak).
+
 ### Content-Security-Policy (CSP) Report-Only mode (launch öncesi, 1-2 saat)
 
 Oturum 19 security audit'inde tespit edildi: CSP header yok. HSTS + X-Content-Type-Options
@@ -83,19 +120,6 @@ için geçerli. Son 4 batch (03-06) her biri kritik nokta gate'i geçti.
 Codex'e tek tek tetik: `"Mod F. Retrofit-07"`, JSON gelince
 `scripts/apply-retrofit.ts --batch 7 --apply` + prod.
 
-### Mod B Backfill-14 + 15 (200 slug, Codex'e hazır)
-
-35a+35b+36a+36b (oturum 18 seed) = 200 yeni slug, Mod B gap. CSV'ler üretildi:
-- `docs/translations-backfill-14.csv` (100 slug)
-- `docs/translations-backfill-15.csv` (100 slug)
-
-Codex'e `"Mod B. Backfill-14"` + `"Backfill-15"` diye tetikle, JSON gelince
-`scripts/import-translations-b.ts --file ... --apply` + prod.
-
-Apply sonrası Mod B **3452/3452 %100** olur.
-
-- [ ] Codex Backfill-14 teslim → dev+prod apply
-- [ ] Codex Backfill-15 teslim → dev+prod apply
 
 ### Mod A Batch 37a+ (launch hedefi 3500+)
 

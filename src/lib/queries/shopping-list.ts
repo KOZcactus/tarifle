@@ -182,3 +182,107 @@ export async function clearAllItems(userId: string) {
     where: { shoppingListId: list.id },
   });
 }
+
+/**
+ * Checked (isaretli) shopping list item'larini UserPantry'ye upsert edip
+ * shopping list'ten siler. Kullanici "satin aldim, dolaba gectim" senaryosu.
+ *
+ * Davranis:
+ *   - Her checked item -> UserPantry upsert (composite key userId + normalized
+ *     name). Ayni isim varsa quantity update, yoksa insert.
+ *   - Quantity parse edilebiliyorsa sayisal UserPantry.quantity olur; aksi
+ *     halde null (var ama miktar belirsiz).
+ *   - Shopping list item'lari silinir.
+ *   - Tum islem tek transaction.
+ *
+ * @returns `{ movedCount, conflicts }` - kac item tasindi + kac tanesi ayni
+ *   isimdeki mevcut pantry ile conflict verdi (upsert ile increment yapildi).
+ */
+export async function moveCheckedToPantry(
+  userId: string,
+  parseAmount: (raw: string | null | undefined) => number | null,
+): Promise<{ movedCount: number; incrementedExisting: number }> {
+  const list = await getOrCreateShoppingList(userId);
+  const checked = await prisma.shoppingListItem.findMany({
+    where: { shoppingListId: list.id, isChecked: true },
+    select: { id: true, name: true, amount: true, unit: true },
+  });
+  if (checked.length === 0) return { movedCount: 0, incrementedExisting: 0 };
+
+  // Gerekli onceden parse et (transaction disinda sade, Prisma Decimal
+  // serialize edilsin diye string -> number burada yapilir).
+  const records = checked.map((item) => {
+    const normalizedName = item.name.trim().toLocaleLowerCase("tr");
+    const qty = parseAmount(item.amount);
+    return {
+      originalName: item.name,
+      normalizedName,
+      displayName: item.name,
+      quantity: qty,
+      unit: item.unit,
+      itemId: item.id,
+    };
+  });
+
+  // Var olan ayni isimli pantry entry'leri say (incrementedExisting metric).
+  const existingMap = new Map<string, { id: string; quantity: number | null; unit: string | null }>();
+  const existingRows = await prisma.userPantryItem.findMany({
+    where: {
+      userId,
+      ingredientName: { in: records.map((r) => r.normalizedName) },
+    },
+    select: { id: true, ingredientName: true, quantity: true, unit: true },
+  });
+  for (const row of existingRows) {
+    existingMap.set(row.ingredientName, {
+      id: row.id,
+      quantity: row.quantity === null ? null : Number(row.quantity),
+      unit: row.unit,
+    });
+  }
+
+  const txSteps = records.flatMap((r) => {
+    const existing = existingMap.get(r.normalizedName);
+    // Upsert: yoksa create, varsa quantity ekle (ayni unit ise).
+    let newQuantity: number | null = r.quantity;
+    if (existing) {
+      if (existing.quantity !== null && r.quantity !== null && existing.unit === r.unit) {
+        newQuantity = existing.quantity + r.quantity;
+      } else if (existing.quantity !== null && r.quantity === null) {
+        newQuantity = existing.quantity; // yeni miktar yok, eskiyi koru
+      } else {
+        newQuantity = r.quantity ?? existing.quantity;
+      }
+    }
+    return [
+      prisma.userPantryItem.upsert({
+        where: {
+          userId_ingredientName: {
+            userId,
+            ingredientName: r.normalizedName,
+          },
+        },
+        create: {
+          userId,
+          ingredientName: r.normalizedName,
+          displayName: r.displayName,
+          quantity: newQuantity,
+          unit: r.unit,
+        },
+        update: {
+          quantity: newQuantity,
+          unit: r.unit ?? existing?.unit ?? null,
+          displayName: r.displayName,
+        },
+      }),
+      prisma.shoppingListItem.delete({ where: { id: r.itemId } }),
+    ];
+  });
+
+  await prisma.$transaction(txSteps);
+
+  return {
+    movedCount: records.length,
+    incrementedExisting: existingRows.length,
+  };
+}

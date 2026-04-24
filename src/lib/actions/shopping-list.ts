@@ -7,9 +7,11 @@ import {
   addItemsFromRecipe,
   clearAllItems,
   clearCheckedItems,
+  moveCheckedToPantry,
   removeItem,
   toggleItemChecked,
 } from "@/lib/queries/shopping-list";
+import { parseAmount } from "@/lib/pantry/match";
 import { shoppingListItemSchema } from "@/lib/validators";
 
 async function requireSession(): Promise<string> {
@@ -101,6 +103,21 @@ export async function clearAllItemsAction(): Promise<ActionResult> {
     await clearAllItems(userId);
     revalidatePath("/alisveris-listesi");
     return { success: true };
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : "Beklenmeyen hata.";
+    return { success: false, error: message };
+  }
+}
+
+export async function moveCheckedToPantryAction(): Promise<
+  ActionResult<{ movedCount: number; incrementedExisting: number }>
+> {
+  try {
+    const userId = await requireSession();
+    const result = await moveCheckedToPantry(userId, parseAmount);
+    revalidatePath("/alisveris-listesi");
+    revalidatePath("/dolap");
+    return { success: true, data: result };
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : "Beklenmeyen hata.";
     return { success: false, error: message };

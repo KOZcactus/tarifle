@@ -6,6 +6,7 @@ import {
   addCustomItemAction,
   clearAllItemsAction,
   clearCheckedItemsAction,
+  moveCheckedToPantryAction,
   removeItemAction,
   toggleItemAction,
 } from "@/lib/actions/shopping-list";
@@ -128,6 +129,22 @@ export function ShoppingListClient({ initialItems }: ShoppingListClientProps) {
     });
   }
 
+  function handleMoveToPantry() {
+    if (checked.length === 0) return;
+    const prev = items;
+    // Optimistic: checked olanlar listeden kalksin (pantry'ye tasindi).
+    setItems(items.filter((i) => !i.isChecked));
+    startTransition(async () => {
+      const result = await moveCheckedToPantryAction();
+      if (!result.success) {
+        setItems(prev);
+        setError(result.error ?? tErrors("clear"));
+      } else {
+        setError(null);
+      }
+    });
+  }
+
   function handleClearAll() {
     if (items.length === 0) return;
     const confirmed = window.confirm(t("clearAllConfirm"));
@@ -238,13 +255,23 @@ export function ShoppingListClient({ initialItems }: ShoppingListClientProps) {
                 <h2 className="text-sm font-medium uppercase tracking-wide text-text-muted">
                   {t("boughtHeader", { count: checked.length })}
                 </h2>
-                <button
-                  onClick={handleClearChecked}
-                  disabled={isPending}
-                  className="text-xs text-text-muted transition-colors hover:text-error"
-                >
-                  {t("clearChecked")}
-                </button>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={handleMoveToPantry}
+                    disabled={isPending}
+                    className="rounded-full border border-emerald-300/60 bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-900 transition-colors hover:border-emerald-500 hover:bg-emerald-100 dark:border-emerald-700/60 dark:bg-emerald-950/40 dark:text-emerald-100 dark:hover:border-emerald-500"
+                    title={t("moveToPantryTitle")}
+                  >
+                    🎒 {t("moveToPantry")}
+                  </button>
+                  <button
+                    onClick={handleClearChecked}
+                    disabled={isPending}
+                    className="text-xs text-text-muted transition-colors hover:text-error"
+                  >
+                    {t("clearChecked")}
+                  </button>
+                </div>
               </div>
               <ul className="divide-y divide-border overflow-hidden rounded-xl border border-border bg-bg-card opacity-70">
                 {checked.map((item) => (

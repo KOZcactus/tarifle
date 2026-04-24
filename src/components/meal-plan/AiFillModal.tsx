@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState, useTransition } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import {
   generateWeeklyMenuAction,
@@ -86,7 +86,10 @@ function splitCsv(raw: string): string[] {
 export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
   const t = useTranslations("mealPlanner.aiFill");
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const hasInitedFromUrlRef = useRef(false);
   const [open, setOpen] = useState(false);
+  const [shareCopiedStatus, setShareCopiedStatus] = useState<string | null>(null);
   const [view, setView] = useState<View>("form");
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<WeeklyMenuResponse | null>(null);
@@ -152,6 +155,65 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setFavorites(readMenuPlanFavorites());
   }, [open]);
+
+  // #6 URL-state paylaşılabilir link: URL'de `m=tavuk,pirinc&diet=vegan`
+  // varsa modal otomatik açılır + form hydrate. Localstorage'dan önce
+  // çalışır ki paylaş link her zaman baskın.
+  useEffect(() => {
+    if (hasInitedFromUrlRef.current) return;
+    const m = searchParams.get("m");
+    if (!m) return;
+    hasInitedFromUrlRef.current = true;
+    // Mount-once sync from URL query params to component state; the ref
+    // guards re-runs so cascading renders won't happen in practice.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIngredientsText(m.split(",").map((s) => s.trim()).filter(Boolean).join(", "));
+    const diet = searchParams.get("diet");
+    if (diet) setDietSlug(diet);
+    const macro = searchParams.get("macro");
+    if (
+      macro === "none" ||
+      macro === "high-protein" ||
+      macro === "low-calorie" ||
+      macro === "high-fiber"
+    ) {
+      setMacroPreference(macro);
+    }
+    const kisi = searchParams.get("kisi");
+    if (kisi) {
+      const n = Number(kisi);
+      if (Number.isFinite(n) && n >= 1 && n <= 12) setPersonCount(n);
+    }
+    const cuisinesRaw = searchParams.get("cuisines");
+    if (cuisinesRaw) {
+      const codes = cuisinesRaw
+        .split(",")
+        .map((s) => s.trim())
+        .filter((c): c is CuisineCode =>
+          (CUISINE_CODES as readonly string[]).includes(c),
+        );
+      if (codes.length > 0) setSelectedCuisines(codes);
+    }
+    const maxb = searchParams.get("maxb");
+    if (maxb) {
+      const n = Number(maxb);
+      if (Number.isFinite(n)) setMaxBreakfast(n);
+    }
+    const maxl = searchParams.get("maxl");
+    if (maxl) {
+      const n = Number(maxl);
+      if (Number.isFinite(n)) setMaxLunch(n);
+    }
+    const maxd = searchParams.get("maxd");
+    if (maxd) {
+      const n = Number(maxd);
+      if (Number.isFinite(n)) setMaxDinner(n);
+    }
+    const ss = searchParams.get("ss");
+    if (ss === "0") setAssumeStaples(false);
+    // Modal otomatik aç, user'a formun hazır olduğunu göster.
+    setOpen(true);
+  }, [searchParams]);
 
   // #5 v4 form persistence: modal ilk açıldığında son form state'ini
   // hydrate et. Modal kapat + aç senaryosunda kullanıcı aynı ayarları
@@ -435,6 +497,40 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
         }),
       );
     });
+  }
+
+  /**
+   * #6 Paylaşılabilir link: form değerlerini URL query string'e kodla
+   * + clipboard'a kopyala. Alıcı linki açınca modal otomatik açılır +
+   * aynı form değerleriyle dolar.
+   */
+  async function handleCopyShareLink() {
+    const ingredients = splitCsv(ingredientsText);
+    const params = new URLSearchParams();
+    if (ingredients.length > 0) params.set("m", ingredients.join(","));
+    if (dietSlug) params.set("diet", dietSlug);
+    if (macroPreference !== "none") params.set("macro", macroPreference);
+    if (personCount !== 2) params.set("kisi", String(personCount));
+    if (selectedCuisines.length > 0)
+      params.set("cuisines", selectedCuisines.join(","));
+    if (maxBreakfast) params.set("maxb", String(maxBreakfast));
+    if (maxLunch) params.set("maxl", String(maxLunch));
+    if (maxDinner) params.set("maxd", String(maxDinner));
+    if (!assumeStaples) params.set("ss", "0");
+    const base =
+      typeof window !== "undefined"
+        ? `${window.location.origin}/menu-planlayici`
+        : "/menu-planlayici";
+    const url = `${base}?${params.toString()}`;
+    try {
+      await navigator.clipboard.writeText(url);
+      setShareCopiedStatus(t("shareLinkCopied"));
+      setTimeout(() => setShareCopiedStatus(null), 2500);
+    } catch {
+      // Clipboard izin yok, fallback: show URL in status
+      setShareCopiedStatus(url);
+      setTimeout(() => setShareCopiedStatus(null), 5000);
+    }
   }
 
   /**
@@ -763,23 +859,46 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
                 </div>
               </div>
 
-              <div className="flex justify-end gap-2 border-t border-surface-muted pt-4">
+              {shareCopiedStatus && (
+                <div
+                  className="rounded-md border border-emerald-300/60 bg-emerald-50/70 px-3 py-2 text-xs text-emerald-900 dark:border-emerald-500/30 dark:bg-emerald-950/30 dark:text-emerald-200"
+                  role="status"
+                >
+                  <span aria-hidden className="mr-1">✓</span>
+                  {shareCopiedStatus}
+                </div>
+              )}
+
+              <div className="flex flex-wrap justify-between gap-2 border-t border-surface-muted pt-4">
                 <button
                   type="button"
-                  onClick={closeDialog}
+                  onClick={handleCopyShareLink}
                   disabled={isGenerating}
-                  className="rounded-md px-4 py-2 text-sm font-medium text-text-muted hover:bg-surface-muted"
+                  className="inline-flex items-center gap-1 rounded-md border border-surface-muted bg-surface px-3 py-2 text-xs font-medium text-text-muted transition hover:border-primary/40 hover:text-primary disabled:cursor-not-allowed disabled:opacity-60"
+                  aria-label={t("shareLinkAria")}
+                  title={t("shareLinkAria")}
                 >
-                  {t("cancel")}
+                  <span aria-hidden>🔗</span>
+                  {t("shareLinkButton")}
                 </button>
-                <button
-                  type="button"
-                  onClick={handleGenerate}
-                  disabled={isGenerating}
-                  className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-white transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-60"
-                >
-                  {isGenerating ? t("generating") : t("generate")}
-                </button>
+                <div className="flex gap-2">
+                  <button
+                    type="button"
+                    onClick={closeDialog}
+                    disabled={isGenerating}
+                    className="rounded-md px-4 py-2 text-sm font-medium text-text-muted hover:bg-surface-muted"
+                  >
+                    {t("cancel")}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleGenerate}
+                    disabled={isGenerating}
+                    className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-white transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    {isGenerating ? t("generating") : t("generate")}
+                  </button>
+                </div>
               </div>
             </div>
           )}

@@ -4,7 +4,11 @@ import { useState, useTransition, useEffect, useCallback, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { suggestRecipesAction } from "@/lib/actions/ai";
+import {
+  suggestRecipesAction,
+  getIngredientCompletionsAction,
+  type IngredientCompletion,
+} from "@/lib/actions/ai";
 import type { AiSuggestResponse } from "@/lib/ai/types";
 import { DIFFICULTY_OPTIONS, RECIPE_TYPE_LABELS, SITE_URL } from "@/lib/constants";
 import {
@@ -142,6 +146,10 @@ export function AiAssistantForm({
   const formRef = useRef<HTMLFormElement>(null);
   const searchParams = useSearchParams();
   const hasInitedFromUrl = useRef(false);
+  // #13 Fırsat öneri: result.suggestions.length === 0 olduğunda server'dan
+  // top popular ingredient fetch, "+un (1200 tarifte)" chip göster.
+  const [completions, setCompletions] = useState<IngredientCompletion[]>([]);
+  const [isLoadingCompletions, setIsLoadingCompletions] = useState(false);
   // #11 Saate göre öneri ipucu. Mount'ta hesaplanır + her saatte bir
   // yenilenebilir ama zaten single-page form, mount yeterli.
   const [timeHint, setTimeHint] = useState<TimeHint | null>(null);
@@ -150,6 +158,21 @@ export function AiAssistantForm({
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setTimeHint(getTimeHint());
   }, []);
+
+  // #13 Fırsat öneri helper: submit handler çağırır, server action'dan
+  // top popular ingredient döner. Effect değil, submit sonucu explicit.
+  async function fetchCompletions(currentIngredients: string[]) {
+    setIsLoadingCompletions(true);
+    const res = await getIngredientCompletionsAction({
+      currentIngredients,
+    });
+    setIsLoadingCompletions(false);
+    if (res.success && res.data) {
+      setCompletions(res.data);
+    } else {
+      setCompletions([]);
+    }
+  }
   // #7 Sesli malzeme girişi: Web Speech API. Desteklenmezse button gizli.
   // SpeechRecognition type'ı lib.dom'da yok, minimal interface + window cast.
   interface MinSpeechRecognition {
@@ -480,6 +503,12 @@ export function AiAssistantForm({
       saveSearch(finalIngredients);
       pushToPantryHistory(finalIngredients);
       setHistoryBump((x) => x + 1);
+      // #13 Fırsat öneri: 0 match ise server'dan top ingredient fetch.
+      if (response.data.suggestions.length === 0) {
+        fetchCompletions(finalIngredients);
+      } else {
+        setCompletions([]);
+      }
     });
   }
 
@@ -1074,7 +1103,50 @@ export function AiAssistantForm({
               <p className="text-text-muted">
                 {tResult("emptyTitle")}
               </p>
-              <p className="mt-3 text-xs text-text-muted">{tResult("emptyComboHint")}</p>
+
+              {/* #13 Fırsat öneri: server'dan popüler ingredient
+                  completion'ları. Empty result'ta "Dolabına +X eklersen Y
+                  tarif açılır" chip'leri. Click → ingredient ekle + form
+                  resubmit. */}
+              {completions.length > 0 && (
+                <>
+                  <p className="mt-4 text-xs font-medium text-amber-700 dark:text-amber-300">
+                    <span aria-hidden className="mr-1">💡</span>
+                    {tResult("opportunityHint")}
+                  </p>
+                  <div className="mt-2 flex flex-wrap justify-center gap-1.5">
+                    {completions.map((c) => (
+                      <button
+                        key={c.name}
+                        type="button"
+                        onClick={() => {
+                          setIngredients([...ingredients, c.name]);
+                          setCurrentInput("");
+                          setTimeout(
+                            () => formRef.current?.requestSubmit(),
+                            50,
+                          );
+                        }}
+                        className="inline-flex items-center gap-1 rounded-full border border-amber-400/60 bg-amber-100 px-2.5 py-1 text-xs font-medium text-amber-900 transition hover:bg-amber-200 dark:border-amber-500/40 dark:bg-amber-900/60 dark:text-amber-100 dark:hover:bg-amber-900"
+                      >
+                        <span>+{c.name}</span>
+                        <span className="text-amber-700 dark:text-amber-300">
+                          {tResult("opportunityRecipeCount", {
+                            count: c.recipeCount,
+                          })}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                </>
+              )}
+              {isLoadingCompletions && (
+                <p className="mt-3 text-xs text-text-muted">
+                  {tResult("opportunityLoading")}
+                </p>
+              )}
+
+              <p className="mt-6 text-xs text-text-muted">{tResult("emptyComboHint")}</p>
               <div className="mt-2 flex flex-wrap justify-center gap-2">
                 {FALLBACK_COMBOS.map((combo, i) => (
                   <button

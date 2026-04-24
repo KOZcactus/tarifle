@@ -1599,7 +1599,10 @@
       "icalAria": "Download the weekly menu as a calendar file (.ics)",
       "shareButton": "Share",
       "shareAria": "Share the weekly menu via WhatsApp or other apps",
-      "shareTitle": "This week's menu (Tarifle)"
+      "shareTitle": "This week's menu (Tarifle)",
+      "shareLinkButton": "Copy link",
+      "shareLinkAria": "Create a shareable link with these form settings",
+      "shareLinkCopied": "Link copied to clipboard, you can share it."
     }
   },
   "ingredientSuggestion": {
@@ -1938,6 +1941,9 @@
       "emptyComboHint": "Try these combinations:",
       "completionHint": "Adding these to your pantry would match better:",
       "completionRecipeCount": "{count, plural, =1 {in 1 recipe} other {in # recipes}}",
+      "opportunityHint": "Add one of these to your pantry to unlock recipes:",
+      "opportunityRecipeCount": "{count, plural, =1 {in 1 recipe} other {in # recipes}}",
+      "opportunityLoading": "Calculating suggestions…",
       "matchPercent": "{percent}%",
       "calories": "~{kcal} kcal",
       "missingPrefix": "Missing:",

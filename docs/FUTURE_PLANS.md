@@ -83,6 +83,31 @@ rua@ adresine haftada 1-2 rapor gelir, deliverability doğrulama için.
 
 Opsiyonel: `p=none` DMARC çoğu durumda launch için yeterli.
 
+### E. Onboarding polish (launch sonrası, 1-2 saat)
+
+Oturum 19 E paketi core ship edildi: **welcome email** register sonrası
+fire-and-forget gidiyor (Dolap + AI Asistan + Favoriler/Koleksiyon 3
+feature + blog referansı). Kalan polish işleri launch sonrası:
+
+1. **İlk giriş guided tour** (30-45 dk): Kayıt sonrası ilk giriş
+   algılanıp (User.tourCompletedAt NULL), anasayfada 3-4 step'li
+   floating overlay tour (Dolap'a git → Favorilere kaydet → AI
+   Asistan'ı dene). Skip edilebilir. Intro.js veya shepherd.js gibi
+   kütüphane değil, custom lightweight.
+
+2. **Profil eksik tamamla banner** (15-30 dk): Kullanıcı profilinde
+   bio, avatar, diyet tercihleri boşsa üstte küçük banner: "Profilini
+   tamamla → AI önerileri daha isabetli olur". Dismissable.
+
+3. **Empty state CTA polish** (20 dk): /dolap boş → "İlk malzemeni ekle"
+   büyük CTA + örnek 5 malzeme öneri. /favoriler boş → "İlk tarifini
+   bookmark et" + popüler 3 tarif carousel. /koleksiyon boş → "İlk
+   koleksiyonunu oluştur" + template öneri (hafta sonu / çocuk dostu).
+
+4. **Welcome email i18n polish**: DE dosyası yok, sadece TR + EN
+   eklendi. Codex veya sonraki iterasyon DE çevirisi yazabilir
+   (messages/de.json yaratılmamış, gerektiğinde olur).
+
 ### Sub-route error boundary genişletme (launch sonrası polish, ~30 dk)
 
 Oturum 19 error boundary audit: root `app/error.tsx` + `global-error.tsx`

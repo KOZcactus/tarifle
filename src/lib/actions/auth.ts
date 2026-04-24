@@ -6,6 +6,7 @@ import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { normalizeEmail } from "@/lib/email";
 import { sendVerificationEmail } from "@/lib/email/verification";
+import { sendWelcomeEmail } from "@/lib/email/welcome";
 import {
   consumePasswordResetToken,
   sendOAuthOnlyPasswordResetEmail,
@@ -112,6 +113,14 @@ export async function registerUser(formData: FormData): Promise<RegisterResult> 
   const registerLocale = await getLocaleFromCookie();
   sendVerificationEmail(email, name, registerLocale).catch((err) => {
     console.error("[register] verification email failed:", err);
+  });
+
+  // Oturum 19 E paketi: Welcome email, kullaniciyi kesfe cagiriyor (Dolap,
+  // AI Asistan, Favoriler/Koleksiyon). Verification email'den ayri, ikisi
+  // birbirini tamamlar (verification dogrulamaya, welcome kesfe). Fire-
+  // and-forget: SMTP hatası sign-in'i bloklamasin.
+  sendWelcomeEmail(email, name, registerLocale).catch((err) => {
+    console.error("[register] welcome email failed:", err);
   });
 
   // Sign-in happens client-side after this action returns. Calling signIn here

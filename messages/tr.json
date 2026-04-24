@@ -1575,6 +1575,15 @@
     "addAria": "{name} malzemesini yeniden ekle",
     "clear": "Temizle"
   },
+  "recipeVariants": {
+    "heading": "Bu tarifin başka sürümleri",
+    "hint": "Aynı kategoride benzer bir tarif farklı karmaşıklıkta denenebilir.",
+    "simplerLabel": "🔄 Daha basit",
+    "fancierLabel": "✨ Daha lüks",
+    "simplerSummary": "{steps} adım, {ingredients} malzeme, {minutes} dk",
+    "fancierSummary": "{steps} adım, {ingredients} malzeme, {minutes} dk",
+    "cta": "Tarife git"
+  },
   "aiPresets": {
     "label": "Hızlı başlangıç:",
     "groupAria": "Hazır senaryo seç",

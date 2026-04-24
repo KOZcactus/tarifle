@@ -33,6 +33,8 @@ import {
   getRecipeViewsLastDays,
 } from "@/lib/queries/recipe-view-daily";
 import { getSimilarRecipes } from "@/lib/queries/similar-recipes";
+import { getRecipeVariants } from "@/lib/queries/recipe-variants";
+import { RecipeVariantsPanel } from "@/components/recipe/RecipeVariantsPanel";
 import { isBookmarked, getLikedVariationIds } from "@/lib/queries/user";
 import { getCollectionsForRecipe } from "@/lib/queries/collection";
 import { auth } from "@/lib/auth";
@@ -241,7 +243,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
 
   const session = await auth();
   const variationIds = recipe.variations?.map((v) => v.id) ?? [];
-  const [bookmarked, userCollections, similarRecipes, likedVariationIds, userPhotosEnabled] =
+  const [bookmarked, userCollections, similarRecipes, likedVariationIds, userPhotosEnabled, variants] =
     await Promise.all([
       session?.user?.id
         ? isBookmarked(session.user.id, recipe.id)
@@ -254,6 +256,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
         ? getLikedVariationIds(session.user.id, variationIds)
         : Promise.resolve(new Set<string>()),
       isUserPhotosEnabled(),
+      getRecipeVariants(recipe.slug),
     ]);
 
   // Surface admin/moderator UI inline on community variations so a moderator
@@ -676,6 +679,15 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
           bir tarifi yazılı kağıda basarken bilgi değeri katmıyor). */}
       <div className="print:hidden">
         <ReviewsSection recipeId={recipe.id} recipeSlug={recipe.slug} />
+      </div>
+
+      {/* Basit / lüks varyant paneli: aynı kategori + type pool'undan
+          daha az / daha çok karmaşıklıkta tarif önerir. */}
+      <div className="print:hidden">
+        <RecipeVariantsPanel
+          simpler={variants.simpler}
+          fancier={variants.fancier}
+        />
       </div>
 
       {/* Similar recipes, kural tabanlı öneri (kategori + type + tag

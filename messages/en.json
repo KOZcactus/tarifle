@@ -1575,6 +1575,15 @@
     "addAria": "Add {name} back to the list",
     "clear": "Clear"
   },
+  "recipeVariants": {
+    "heading": "Other versions of this recipe",
+    "hint": "Try a similar recipe in the same category at a different complexity.",
+    "simplerLabel": "🔄 Simpler",
+    "fancierLabel": "✨ Fancier",
+    "simplerSummary": "{steps} steps, {ingredients} ingredients, {minutes} min",
+    "fancierSummary": "{steps} steps, {ingredients} ingredients, {minutes} min",
+    "cta": "Open recipe"
+  },
   "aiPresets": {
     "label": "Quick start:",
     "groupAria": "Pick a ready-made scenario",

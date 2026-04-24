@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
-import { RecipeCard } from "@/components/recipe/RecipeCard";
-import type { RecipeCard as RecipeCardType } from "@/types/recipe";
+import type { SimilarRecipeCard } from "@/lib/queries/similar-recipes";
+import { SimilarRecipesClient } from "@/components/recipe/SimilarRecipesClient";
 
 /**
  * "Benzer tarifler" card row for the recipe detail page footer.
@@ -9,11 +9,11 @@ import type { RecipeCard as RecipeCardType } from "@/types/recipe";
  *   - If `recipes` is empty → render NOTHING (no empty state copy).
  *     The detail page already has plenty of content; an "öneri yok"
  *     block would just add noise at the bottom.
- *   - Otherwise: 2-3-4 column responsive grid, mirroring /tarifler
- *     listing so visual rhythm matches.
+ *   - Otherwise: section header + I-chip filter row (client) + 2-3-4
+ *     column grid, visual rhythm /tarifler listing'i izler.
  */
 interface SimilarRecipesProps {
-  recipes: RecipeCardType[];
+  recipes: SimilarRecipeCard[];
 }
 
 export async function SimilarRecipes({ recipes }: SimilarRecipesProps) {
@@ -34,11 +34,7 @@ export async function SimilarRecipes({ recipes }: SimilarRecipesProps) {
         </h2>
         <p className="text-sm text-text-muted">{t("subtitle")}</p>
       </div>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {recipes.map((recipe) => (
-          <RecipeCard key={recipe.id} recipe={recipe} />
-        ))}
-      </div>
+      <SimilarRecipesClient recipes={recipes} />
     </section>
   );
 }

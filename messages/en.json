@@ -2203,7 +2203,12 @@
   },
   "similarRecipes": {
     "title": "Similar recipes",
-    "subtitle": "Selected from the same category and tags"
+    "subtitle": "Selected from the same category and tags",
+    "filterLabel": "Sort:",
+    "filterDefault": "Suggested",
+    "filterFaster": "Faster",
+    "filterFewerIngredients": "Fewer ingredients",
+    "filterLessCalorie": "Fewer calories"
   },
   "variations": {
     "loginCta": "Sign in to add an adaptation",

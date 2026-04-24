@@ -2203,7 +2203,12 @@
   },
   "similarRecipes": {
     "title": "Benzer tarifler",
-    "subtitle": "Aynı kategoriden ve etiketlerden seçildi"
+    "subtitle": "Aynı kategoriden ve etiketlerden seçildi",
+    "filterLabel": "Sıralama:",
+    "filterDefault": "Önerilen",
+    "filterFaster": "Daha hızlı",
+    "filterFewerIngredients": "Daha az malzeme",
+    "filterLessCalorie": "Daha az kalori"
   },
   "variations": {
     "loginCta": "Uyarlama eklemek için giriş yap",

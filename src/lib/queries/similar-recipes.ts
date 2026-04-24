@@ -37,6 +37,12 @@
 import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import type { RecipeCard } from "@/types/recipe";
+
+/**
+ * I: "Benzer ama..." filter chip'i için RecipeCard + ingredientCount.
+ * Component filter/sort'u client-side yapar.
+ */
+export type SimilarRecipeCard = RecipeCard & { ingredientCount: number };
 import { CUISINE_REGION, type CuisineCode } from "@/lib/cuisines";
 
 /**
@@ -228,7 +234,7 @@ export function scoreCandidates(
 async function _getSimilarRecipesInner(
   recipeId: string,
   limit = 6,
-): Promise<RecipeCard[]> {
+): Promise<SimilarRecipeCard[]> {
   const target = await prisma.recipe.findUnique({
     where: { id: recipeId },
     select: {
@@ -328,6 +334,8 @@ async function _getSimilarRecipesInner(
   );
 
   // Strip the scoring-only fields, return RecipeCard shape.
+  // ingredientCount eklendi (I: filter chip 'az malzeme' için), RecipeCard
+  // tipinin üstüne genişletme, opsiyonel.
   return top.map((c) => ({
     id: c.id,
     title: c.title,
@@ -343,6 +351,7 @@ async function _getSimilarRecipesInner(
     cuisine: c.cuisine,
     category: c.category,
     _count: { variations: c._count.variations },
+    ingredientCount: c.ingredients.length,
   }));
 }
 

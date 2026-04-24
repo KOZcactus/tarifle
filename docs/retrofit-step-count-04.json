@@ -1,0 +1,1352 @@
+[
+  {
+    "slug": "dana-solyanka",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "250 gr dana etini kuşbaşı doğrayıp 1 adet soğanı yemeklik doğrayın." },
+      { "stepNumber": 2, "instruction": "Eti ve soğanı orta ateşte 8 dakika kavurun, et suyunu salıp hafif toparlasın.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "200 ml domates püresini ekleyip 4 dakika kaynatın, çiğ domates tadı kalmasın.", "timerSeconds": 240 },
+      { "stepNumber": 4, "instruction": "4 su bardağı sıcak su ekleyip kısık ateşte 35 dakika pişirin.", "timerSeconds": 2100 },
+      { "stepNumber": 5, "instruction": "120 gr kornişon turşu ve 80 gr zeytini ekleyip 5 dakika kaynatın.", "timerSeconds": 300 },
+      { "stepNumber": 6, "instruction": "Tuzunu kontrol edip sıcak kaselere alın, turşu tadı canlı kalsın diye hemen sunun." }
+    ],
+    "notes": "Olga's Flavor Factory solyanka + Natasha's Kitchen; turşu-zeytin dengesi, domatesli et bazı ve son ekleme sırası doğrulandı"
+  },
+  {
+    "slug": "dereotlu-patates-corbasi-macar-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "3 adet patatesi küçük küp, 1 adet soğanı yemeklik doğrayın." },
+      { "stepNumber": 2, "instruction": "Soğanı orta ateşte 2 dakika çevirip 1 tatlı kaşığı paprikayı ekleyin.", "timerSeconds": 120 },
+      { "stepNumber": 3, "instruction": "Patatesleri katıp 1 dakika karıştırın, paprika yağda açılıp acılaşmasın.", "timerSeconds": 60 },
+      { "stepNumber": 4, "instruction": "5 su bardağı suyu ekleyip orta ateşte 15 dakika kaynatın.", "timerSeconds": 900 },
+      { "stepNumber": 5, "instruction": "Patateslerin üçte birini kaşıkla ezin, böylece çorba nişastayla koyulaşır." },
+      { "stepNumber": 6, "instruction": "Dereotunu ekleyip 3 dakika pişirin, yeşil aroması taze kalsın.", "timerSeconds": 180 }
+    ],
+    "notes": "Nosalty krumplileves + Hungarian Tidbits potato soup; paprika yağda açma, patatesle koyulaştırma ve dereotu finali doğrulandı"
+  },
+  {
+    "slug": "diyarbakir-lebeniyesi",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "250 gr dana kıyma ve yarım su bardağı ince bulguru 3 dakika yoğurun.", "timerSeconds": 180 },
+      { "stepNumber": 2, "instruction": "Harçtan nohut büyüklüğünde köfteler yuvarlayın, pişerken dağılmasın diye sıkıştırın." },
+      { "stepNumber": 3, "instruction": "1 su bardağı nohut ve köfteleri 5 su bardağı suda 25 dakika haşlayın.", "timerSeconds": 1500 },
+      { "stepNumber": 4, "instruction": "600 gr yoğurt ve 1 yumurtayı ayrı kapta pürüzsüz çırpın." },
+      { "stepNumber": 5, "instruction": "Sıcak çorba suyundan 2 kepçe ekleyerek terbiyeyi ılıtın, yoğurt kesilmesin." },
+      { "stepNumber": 6, "instruction": "Terbiyeyi tencereye döküp kısık ateşte 10 dakika karıştırarak pişirin.", "timerSeconds": 600 }
+    ],
+    "notes": "Yemek.com lebeniye + Nefis Yemek Tarifleri lebeniye; köfte ölçüsü, nohutlu baz ve yoğurt terbiyesi ılıtma doğrulandı"
+  },
+  {
+    "slug": "doenjang-jjigae",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 kabak, 200 gr mantar ve 300 gr tofuyu eş lokmalık doğrayın." },
+      { "stepNumber": 2, "instruction": "800 ml suyu tencerede kaynatıp 3 yemek kaşığı doenjangı içinde ezin.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Kabak ve mantarı ekleyip orta ateşte 10 dakika pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 4, "instruction": "Tofuyu ekleyip parçalamadan 3 dakika kaynatın, dokusu dağılmasın.", "timerSeconds": 180 },
+      { "stepNumber": 5, "instruction": "3 dal yeşil soğanı son anda katın ve tencereyi ocaktan alın." }
+    ],
+    "notes": "Maangchi doenjang-jjigae + Korean Bapsang; doenjangı suda çözme, sebze-tofu sırası ve kısa tofu pişirme doğrulandı"
+  },
+  {
+    "slug": "domatesli-arapsaci-corbasi-urla-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "120 gr arapsaçını yıkayıp ince doğrayın, sert sapları ayıklayın." },
+      { "stepNumber": 2, "instruction": "1 yemek kaşığı zeytinyağında 1.5 su bardağı domates rendesini 4 dakika pişirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Yarım su bardağı pirinci ekleyip domatesle 1 dakika çevirin.", "timerSeconds": 60 },
+      { "stepNumber": 4, "instruction": "5 su bardağı sıcak suyu katıp pirinç açılana kadar 12 dakika kaynatın.", "timerSeconds": 720 },
+      { "stepNumber": 5, "instruction": "Arapsaçını ekleyip 5 dakika pişirin, ot aroması fazla kararmasın.", "timerSeconds": 300 }
+    ],
+    "notes": "Ege ot yemekleri kaynakları + Yemek.com pirinçli çorba; arapsaçı son ekleme, pirinç süresi ve domatesli baz doğrulandı"
+  },
+  {
+    "slug": "domatesli-arpa-sehriye-corbasi-bilecik-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "3 adet domatesi rendeleyin ve 1 su bardağı arpa şehriyeyi ölçün." },
+      { "stepNumber": 2, "instruction": "Şehriyeyi 1 yemek kaşığı zeytinyağında orta ateşte 2 dakika kavurun.", "timerSeconds": 120 },
+      { "stepNumber": 3, "instruction": "Domates rendesini ekleyip 4 dakika kaynatın, çiğ kokusu gitsin.", "timerSeconds": 240 },
+      { "stepNumber": 4, "instruction": "4 su bardağı sıcak su ve tuzu ekleyip 12 dakika pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 5, "instruction": "Şehriye şişince ocaktan alın, 3 dakika dinlendirin, taneler lapa olmasın.", "timerSeconds": 180 }
+    ],
+    "notes": "Yemek.com şehriye çorbası + Nefis Yemek Tarifleri domatesli şehriye; şehriye kavurma, domates pişirme ve 12 dk süre doğrulandı"
+  },
+  {
+    "slug": "domatesli-beyaz-fasulye-corbasi-ispanya-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "2 diş sarımsağı ince kıyın, 2 su bardağı pişmiş beyaz fasulyeyi süzün." },
+      { "stepNumber": 2, "instruction": "Sarımsağı 1 yemek kaşığı yağda orta ateşte 1 dakika çevirin.", "timerSeconds": 60 },
+      { "stepNumber": 3, "instruction": "1.5 su bardağı domates rendesini ekleyip 5 dakika pişirin.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "Fasulye ve 4 su bardağı suyu ekleyip 15 dakika kaynatın.", "timerSeconds": 900 },
+      { "stepNumber": 5, "instruction": "Bir kepçe fasulyeyi ezip geri karıştırın, böylece çorba un eklemeden koyulaşır." }
+    ],
+    "notes": "Spanish white bean soup kaynakları + Mediterranean Dish bean soup; sarımsak-domates bazı, fasulye ezerek kıvam verme doğrulandı"
+  },
+  {
+    "slug": "domatesli-borulce-corbasi-manisa-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1.5 su bardağı pişmiş börülceyi süzün, 2 diş sarımsağı ezin." },
+      { "stepNumber": 2, "instruction": "Sarımsağı 1 yemek kaşığı zeytinyağında 1 dakika kokusu çıkana kadar çevirin.", "timerSeconds": 60 },
+      { "stepNumber": 3, "instruction": "1.5 su bardağı domates rendesini katıp 4 dakika kaynatın.", "timerSeconds": 240 },
+      { "stepNumber": 4, "instruction": "Börülce ve 4 su bardağı suyu ekleyip 12 dakika pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 5, "instruction": "Tuzunu ayarlayın ve 5 dakika dinlendirin, bakliyat domatesli suyu içine çeksin.", "timerSeconds": 300 }
+    ],
+    "notes": "Ege börülce yemekleri + Yemek.com domatesli bakliyat çorbası; sarımsaklı domates bazı, börülceyi ezmeden pişirme doğrulandı"
+  },
+  {
+    "slug": "domatesli-lebeniye-corbasi-gaziantep-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "150 gr köftelik kıymadan nohut kadar köfteler yuvarlayın." },
+      { "stepNumber": 2, "instruction": "Yarım su bardağı pirinci 4 su bardağı suda 12 dakika kaynatın.", "timerSeconds": 720 },
+      { "stepNumber": 3, "instruction": "Köfteleri ekleyip 8 dakika pişirin, içleri pembe kalmasın.", "timerSeconds": 480 },
+      { "stepNumber": 4, "instruction": "1.5 su bardağı yoğurdu 1 su bardağı domates rendesiyle ayrı kapta çırpın." },
+      { "stepNumber": 5, "instruction": "Terbiyeye 2 kepçe sıcak su ekleyip ılıtın, yoğurt kesilmesin." },
+      { "stepNumber": 6, "instruction": "Terbiyeyi tencereye döküp kısık ateşte 8 dakika karıştırarak pişirin.", "timerSeconds": 480 }
+    ],
+    "notes": "Gaziantep lebeniye kaynakları + Yemek.com lebeniye; pirinçli baz, minik köfte ve yoğurdu ılıtarak ekleme doğrulandı"
+  },
+  {
+    "slug": "domatesli-sarimsak-corbasi-ispanya-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "4 diş sarımsağı ince dilimleyin, 3 dilim köy ekmeğini küp doğrayın." },
+      { "stepNumber": 2, "instruction": "Sarımsağı 1 yemek kaşığı zeytinyağında 2 dakika pembeleştirin.", "timerSeconds": 120 },
+      { "stepNumber": 3, "instruction": "4 adet rendelenmiş domatesi ekleyip 5 dakika kaynatın.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "4 su bardağı sıcak suyu katıp orta ateşte 8 dakika pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 5, "instruction": "Ekmek küplerini ekleyip 5 dakika yumuşatın, çorba doğal olarak koyulaşsın.", "timerSeconds": 300 },
+      { "stepNumber": 6, "instruction": "Ekmeği kaşıkla parçalayın ve sıcak servis edin." }
+    ],
+    "notes": "Ricardo sopa de ajo + Mediterranean Dish sopa de ajo; sarımsaklı baz, ekmekle koyulaştırma ve domatesli yorum doğrulandı"
+  },
+  {
+    "slug": "domatesli-tarhana-corbasi-trakya-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "4 yemek kaşığı tarhanayı geniş kasede 1 su bardağı soğuk suyla açın." },
+      { "stepNumber": 2, "instruction": "1 yemek kaşığı tereyağını eritip 1 su bardağı domates rendesini 4 dakika pişirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Tarhana karışımını tencereye ekleyip 1 dakika sürekli karıştırın.", "timerSeconds": 60 },
+      { "stepNumber": 4, "instruction": "Kalan 4 su bardağı suyu iki parçada dökün, topak oluşmasın diye karıştırın." },
+      { "stepNumber": 5, "instruction": "Çorbayı kısık ateşte 12 dakika koyulaşana kadar pişirin.", "timerSeconds": 720 }
+    ],
+    "notes": "Yemek.com tarhana + Nefis Yemek Tarifleri tarhana; soğuk suyla açma, domatesli yağ bazı ve 12-15 dk pişirme doğrulandı"
+  },
+  {
+    "slug": "domatesli-yarma-corbasi-konya-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 su bardağı yarma buğdayı yıkayıp süzün." },
+      { "stepNumber": 2, "instruction": "Yarmayı 5 su bardağı suda orta ateşte 18 dakika haşlayın.", "timerSeconds": 1080 },
+      { "stepNumber": 3, "instruction": "1.5 su bardağı domates rendesini ekleyip 6 dakika kaynatın.", "timerSeconds": 360 },
+      { "stepNumber": 4, "instruction": "Yarmanın bir kısmını kaşıkla ezin, böylece çorba sulu kalmasın." },
+      { "stepNumber": 5, "instruction": "Yarım çay kaşığı naneyi ekleyip 3 dakika pişirin.", "timerSeconds": 180 }
+    ],
+    "notes": "Konya yarma çorbası kaynakları + Yemek.com buğday çorbası; yarma haşlama, domates son pişirme ve ezerek kıvam doğrulandı"
+  },
+  {
+    "slug": "domatesli-yesil-mercimek-corbasi-konya-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 su bardağı yeşil mercimeği yıkayıp kara suyunu akıtın." },
+      { "stepNumber": 2, "instruction": "Mercimeği 5 su bardağı suda 14 dakika orta ateşte haşlayın.", "timerSeconds": 840 },
+      { "stepNumber": 3, "instruction": "1 su bardağı domates rendesini katıp 6 dakika kaynatın.", "timerSeconds": 360 },
+      { "stepNumber": 4, "instruction": "Mercimek tanelerini kontrol edin, çatlayınca ateşi kısın, dağılmasın." },
+      { "stepNumber": 5, "instruction": "Yarım çay kaşığı naneyi ekleyip 2 dakika daha pişirin.", "timerSeconds": 120 }
+    ],
+    "notes": "Yemek.com yeşil mercimek çorbası + Konya bakliyat çorbaları; mercimek ön haşlama, domates ve nane finali doğrulandı"
+  },
+  {
+    "slug": "egg-drop-soup",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 yemek kaşığı mısır nişastasını 3 yemek kaşığı soğuk suyla açın." },
+      { "stepNumber": 2, "instruction": "1 litre tavuk suyunu 1 yemek kaşığı soya sosuyla kaynatın.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Nişastalı suyu ekleyip 2 dakika karıştırarak pişirin.", "timerSeconds": 120 },
+      { "stepNumber": 4, "instruction": "3 yumurtayı kasede çırpın ve kaynamayı kısık ateşe indirin." },
+      { "stepNumber": 5, "instruction": "Yumurtayı ince ip gibi akıtıp 30 saniye karıştırın, ipeksi şeritler oluşsun.", "timerSeconds": 30 },
+      { "stepNumber": 6, "instruction": "2 dal taze soğanı ekleyip hemen servis edin, yumurta sertleşmesin." }
+    ],
+    "notes": "The Woks of Life egg drop soup + Bon Appetit egg drop tekniği; nişasta bağlama, ince yumurta akıtma ve kısa pişirme doğrulandı"
+  },
+  {
+    "slug": "eksi-kremali-mantar-corbasi-polonya-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "400 gr mantarı dilimleyin, 1 adet soğanı ince doğrayın." },
+      { "stepNumber": 2, "instruction": "Soğan ve mantarı 1 yemek kaşığı tereyağında 6 dakika soteleyin.", "timerSeconds": 360 },
+      { "stepNumber": 3, "instruction": "4 su bardağı suyu ekleyip orta ateşte 10 dakika kaynatın.", "timerSeconds": 600 },
+      { "stepNumber": 4, "instruction": "Ekşi kremayı 1 kepçe sıcak çorba suyuyla açın, kesilmesin." },
+      { "stepNumber": 5, "instruction": "Kremayı tencereye ekleyip kısık ateşte 2 dakika ısıtın.", "timerSeconds": 120 },
+      { "stepNumber": 6, "instruction": "Karabiberle bitirin ve fokurdatmadan servis edin." }
+    ],
+    "notes": "Polish Housewife mushroom soup + Everyday Delicious zupa grzybowa; mantar sote, ekşi kremayı ılıtma ve kaynatmama doğrulandı"
+  },
+  {
+    "slug": "eksili-kofte",
+    "type": "CORBA",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "350 gr kıyma ve çeyrek su bardağı pirinci 3 dakika yoğurun.", "timerSeconds": 180 },
+      { "stepNumber": 2, "instruction": "Köfteleri fındık büyüklüğünde yuvarlayıp 2 yemek kaşığı una bulayın." },
+      { "stepNumber": 3, "instruction": "1 havuç ve 1 patatesi küçük küp doğrayın." },
+      { "stepNumber": 4, "instruction": "Sebzeleri 5 su bardağı suda 15 dakika pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 5, "instruction": "Köfteleri ekleyip kısık ateşte 18 dakika kaynatın, dağılmasın diye karıştırmayın.", "timerSeconds": 1080 },
+      { "stepNumber": 6, "instruction": "3 yemek kaşığı limon suyunu ekleyip 2 dakika daha pişirin.", "timerSeconds": 120 }
+    ],
+    "notes": "Yemek.com ekşili köfte + Nefis Yemek Tarifleri; pirinçli köfte, una bulama, sebze ön pişirme ve limon finali doğrulandı"
+  },
+  {
+    "slug": "elma-sirkeli-lahana-corbasi-bolu-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "400 gr beyaz lahanayı ince şerit, 1 soğanı yemeklik doğrayın." },
+      { "stepNumber": 2, "instruction": "Soğanı 1 yemek kaşığı zeytinyağında 3 dakika yumuşatın.", "timerSeconds": 180 },
+      { "stepNumber": 3, "instruction": "Lahanayı ekleyip 4 dakika çevirin, hacmi düşsün.", "timerSeconds": 240 },
+      { "stepNumber": 4, "instruction": "1.25 litre suyu katıp orta ateşte 18 dakika pişirin.", "timerSeconds": 1080 },
+      { "stepNumber": 5, "instruction": "2 yemek kaşığı elma sirkesini ekleyip 2 dakika kaynatın.", "timerSeconds": 120 },
+      { "stepNumber": 6, "instruction": "Sirke keskinliği uçmasın diye tencereyi 5 dakika kapalı dinlendirin.", "timerSeconds": 300 }
+    ],
+    "notes": "Bolu lahana çorbası kaynakları + Yemek.com lahana çorbası; lahanayı söndürme, sirkeli final ve kısa dinlendirme doğrulandı"
+  },
+  {
+    "slug": "enginarli-arpa-sehriye-corbasi-aydin-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "3 enginar kalbini küçük küp doğrayın, dereotunu ince kıyın." },
+      { "stepNumber": 2, "instruction": "0.75 su bardağı arpa şehriyeyi 5 su bardağı suda 8 dakika haşlayın.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Enginarları ekleyip orta ateşte 6 dakika pişirin.", "timerSeconds": 360 },
+      { "stepNumber": 4, "instruction": "1 yemek kaşığı limon suyunu ekleyin, enginar rengi kararmasın." },
+      { "stepNumber": 5, "instruction": "Dereotunu son anda karıştırın ve 2 dakika dinlendirin.", "timerSeconds": 120 }
+    ],
+    "notes": "Ege enginar çorbası kaynakları + Yemek.com enginar; enginarı kısa pişirme, limonla renk koruma ve dereotu finali doğrulandı"
+  },
+  {
+    "slug": "erikli-yogurt-asi-igdir-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "0.75 su bardağı aşurelik buğdayı yıkayıp 5 su bardağı suda kaynatın.", "timerSeconds": 300 },
+      { "stepNumber": 2, "instruction": "Buğdayı orta ateşte 18 dakika haşlayın.", "timerSeconds": 1080 },
+      { "stepNumber": 3, "instruction": "1.5 su bardağı yoğurdu iki kepçe sıcak buğday suyuyla ılıtın, kesilmesin." },
+      { "stepNumber": 4, "instruction": "Yoğurdu tencereye ekleyip kısık ateşte 5 dakika karıştırarak pişirin.", "timerSeconds": 300 },
+      { "stepNumber": 5, "instruction": "4 kırmızı eriği dilimleyip nane ile ekleyin, meyve dağılmasın diye 2 dakika ısıtın.", "timerSeconds": 120 }
+    ],
+    "notes": "Doğu Anadolu ayran aşı kaynakları + Yemek.com ayran aşı; buğday haşlama, yoğurdu ılıtma ve eriği son ekleme doğrulandı"
+  },
+  {
+    "slug": "erikli-yogurtlu-tarhana-eskisehir-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "4 yemek kaşığı tarhanayı 1 su bardağı soğuk suyla açın." },
+      { "stepNumber": 2, "instruction": "Tarhanayı kalan 3 su bardağı suyla kısık ateşte 12 dakika pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 3, "instruction": "1 su bardağı yoğurdu 1 kepçe sıcak çorbayla ılıtın, kesilmesin." },
+      { "stepNumber": 4, "instruction": "Yoğurdu tencereye ekleyip 2 dakika karıştırarak ısıtın.", "timerSeconds": 120 },
+      { "stepNumber": 5, "instruction": "3 kırmızı eriği dilimleyip ekleyin ve tencereyi ocaktan alın." }
+    ],
+    "notes": "Yemek.com tarhana + Eskişehir tarhana kaynakları; soğuk suyla açma, yoğurdu ılıtma ve eriği son ekleme doğrulandı"
+  },
+  {
+    "slug": "eriste-corbasi-kastamonu-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 litre tavuk suyunu tencerede kaynama noktasına getirin.", "timerSeconds": 300 },
+      { "stepNumber": 2, "instruction": "1 su bardağı erişte ve yarım çay kaşığı tuzu ekleyin." },
+      { "stepNumber": 3, "instruction": "Erişteyi orta ateşte 10 dakika pişirin, hamurlaşmasın diye fazla fokurdatmayın.", "timerSeconds": 600 },
+      { "stepNumber": 4, "instruction": "15 gr tereyağını küçük tavada 1 dakika köpürtün.", "timerSeconds": 60 },
+      { "stepNumber": 5, "instruction": "Tereyağı ve karabiberi çorbaya gezdirip 3 dakika dinlendirin.", "timerSeconds": 180 }
+    ],
+    "notes": "Kastamonu erişte çorbası kaynakları + Yemek.com erişte çorbası; tavuk suyu, 10 dk erişte pişirme ve tereyağı finali doğrulandı"
+  },
+  {
+    "slug": "eristeli-kara-lahana-corbasi-ordu-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 demet kara lahanayı ince kıyın, 1 soğanı yemeklik doğrayın." },
+      { "stepNumber": 2, "instruction": "Soğanı orta ateşte 3 dakika yumuşayana kadar çevirin.", "timerSeconds": 180 },
+      { "stepNumber": 3, "instruction": "Kara lahanayı ekleyip 4 dakika söndürün, sertliği azalsın.", "timerSeconds": 240 },
+      { "stepNumber": 4, "instruction": "5 su bardağı suyu ekleyip 12 dakika kaynatın.", "timerSeconds": 720 },
+      { "stepNumber": 5, "instruction": "1 su bardağı erişte ve yarım su bardağı mısırı ekleyip 6 dakika pişirin.", "timerSeconds": 360 }
+    ],
+    "notes": "Yemek.com karalahana çorbası + Ordu karalahana kaynakları; lahana söndürme, mısır ve erişteyi son ekleme doğrulandı"
+  },
+  {
+    "slug": "eristeli-un-corbasi-kirsehir-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "2 yemek kaşığı unu ve 0.75 su bardağı erişteyi hazır edin." },
+      { "stepNumber": 2, "instruction": "15 gr tereyağını eritip unu orta ateşte 3 dakika kavurun.", "timerSeconds": 180 },
+      { "stepNumber": 3, "instruction": "4 su bardağı suyu ince akıtarak ekleyin, topaklanmasın diye çırpın." },
+      { "stepNumber": 4, "instruction": "Erişteyi ekleyip kısık ateşte 12 dakika pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 5, "instruction": "Tuzunu ayarlayıp 4 dakika dinlendirin, unlu kıvam otursun.", "timerSeconds": 240 }
+    ],
+    "notes": "Kırşehir un çorbası kaynakları + Yemek.com un çorbası; unu kavurma, suyu çırparak ekleme ve erişte süresi doğrulandı"
+  },
+  {
+    "slug": "eristeli-yesil-mercimek-corbasi-yozgat-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 su bardağı yeşil mercimeği yıkayıp 5 su bardağı suyla tencereye alın." },
+      { "stepNumber": 2, "instruction": "Mercimeği orta ateşte 16 dakika kaynatın.", "timerSeconds": 960 },
+      { "stepNumber": 3, "instruction": "1 soğanı ve 1 yemek kaşığı salçayı ayrı tavada 3 dakika çevirin.", "timerSeconds": 180 },
+      { "stepNumber": 4, "instruction": "Salçalı karışımı mercimekli tencereye ekleyip 2 dakika kaynatın.", "timerSeconds": 120 },
+      { "stepNumber": 5, "instruction": "0.75 su bardağı erişteyi katıp 7 dakika pişirin.", "timerSeconds": 420 },
+      { "stepNumber": 6, "instruction": "Erişte şişince ocaktan alın, lapa olmasın diye 3 dakika sonra servis edin.", "timerSeconds": 180 }
+    ],
+    "notes": "Yozgat kesme çorbası kaynakları + Yemek.com erişteli mercimek; mercimek ön pişirme, salçalı baz ve erişte finali doğrulandı"
+  },
+  {
+    "slug": "erzincan-kesme-corbasi",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 su bardağı yeşil mercimeği yıkayıp 5 su bardağı suda 20 dakika haşlayın.", "timerSeconds": 1200 },
+      { "stepNumber": 2, "instruction": "200 gr ev eriştesini ekleyip 10 dakika pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "300 gr yoğurt ve 1 yumurtayı kasede pürüzsüz çırpın." },
+      { "stepNumber": 4, "instruction": "Terbiyeyi 2 kepçe sıcak suyla ılıtın, yoğurt kesilmesin." },
+      { "stepNumber": 5, "instruction": "Terbiyeyi tencereye ekleyip kısık ateşte 5 dakika karıştırarak pişirin.", "timerSeconds": 300 }
+    ],
+    "notes": "Erzincan kesme çorbası kaynakları + Yemek.com yoğurtlu erişte; mercimek, kesme erişte ve terbiyeyi ılıtma doğrulandı"
+  },
+  {
+    "slug": "erzurum-ayran-asi",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pişmiş buğday ve nohudu tencereye alıp 4 su bardağı su ekleyin." },
+      { "stepNumber": 2, "instruction": "Bakliyatları orta ateşte 20 dakika kaynatın.", "timerSeconds": 1200 },
+      { "stepNumber": 3, "instruction": "600 gr yoğurdu 2 kepçe sıcak suyla ılıtın, kesilmesin." },
+      { "stepNumber": 4, "instruction": "Yoğurdu tencereye ekleyip kısık ateşte 15 dakika karıştırarak pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 5, "instruction": "1 tatlı kaşığı naneyi ekleyin ve 5 dakika kapalı dinlendirin.", "timerSeconds": 300 }
+    ],
+    "notes": "Yemek.com ayran aşı + Erzurum ayran aşı kaynakları; buğday-nohut bazı, yoğurt ılıtma ve sürekli karıştırma doğrulandı"
+  },
+  {
+    "slug": "evelikli-eriste-corbasi-kars-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 demet evelik otunu yıkayıp ince doğrayın." },
+      { "stepNumber": 2, "instruction": "1 su bardağı erişteyi 5 su bardağı kaynar suda 10 dakika pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Eveliği ekleyip 6 dakika kaynatın.", "timerSeconds": 360 },
+      { "stepNumber": 4, "instruction": "1 su bardağı yoğurt ve 1 yemek kaşığı unu pürüzsüz çırpın." },
+      { "stepNumber": 5, "instruction": "Terbiyeyi sıcak suyla ılıtıp tencereye ekleyin, kesilmesin." },
+      { "stepNumber": 6, "instruction": "Kısık ateşte 4 dakika karıştırarak pişirin.", "timerSeconds": 240 }
+    ],
+    "notes": "Kars evelik çorbası kaynakları + Yemek.com yoğurtlu çorba; evelik pişirme, erişte süresi ve unlu yoğurt terbiyesi doğrulandı"
+  },
+  {
+    "slug": "fasolada-corbasi-yunan-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 su bardağı beyaz fasulyeyi yıkayıp 5 su bardağı suyla tencereye alın." },
+      { "stepNumber": 2, "instruction": "Fasulyeyi orta ateşte 20 dakika haşlayın.", "timerSeconds": 1200 },
+      { "stepNumber": 3, "instruction": "1 havuç ve 2 domatesi küçük doğrayıp tencereye ekleyin." },
+      { "stepNumber": 4, "instruction": "1 yemek kaşığı zeytinyağını katıp 20 dakika kısık ateşte pişirin.", "timerSeconds": 1200 },
+      { "stepNumber": 5, "instruction": "Fasulyeden bir kepçe ezip geri karıştırın, çorba doğal koyulaşsın." }
+    ],
+    "notes": "Greek Boston fasolada + Olive & Mango; beyaz fasulye, havuç-domates bazı ve zeytinyağlı yavaş pişirme doğrulandı"
+  },
+  {
+    "slug": "fasolada-yunan-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 havucu küçük küp doğrayın, 2 su bardağı pişmiş fasulyeyi süzün." },
+      { "stepNumber": 2, "instruction": "Havucu 2 yemek kaşığı zeytinyağında 4 dakika çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "1 su bardağı domates püresini ekleyip 5 dakika kaynatın.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "Fasulye ve 3 su bardağı suyu katıp 25 dakika pişirin.", "timerSeconds": 1500 },
+      { "stepNumber": 5, "instruction": "Bir kepçe fasulyeyi ezin, böylece fasolada kremasız koyulaşır." },
+      { "stepNumber": 6, "instruction": "Zeytinyağı gezdirip sıcak servis edin." }
+    ],
+    "notes": "Greek Boston fasolada + Greece Is fasolada; domatesli fasulye bazı, havuç ve zeytinyağıyla bitirme doğrulandı"
+  },
+  {
+    "slug": "fasulye-tursulu-cavdar-corbasi-ordu-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "0.75 su bardağı çavdar yarmasını yıkayıp 10 dakika sıcak suda bekletin.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "1 soğanı 1 yemek kaşığı zeytinyağında 4 dakika çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Çavdar ve 5 su bardağı suyu ekleyip 25 dakika pişirin.", "timerSeconds": 1500 },
+      { "stepNumber": 4, "instruction": "250 gr fasulye turşusunu sudan geçirip iri doğrayın." },
+      { "stepNumber": 5, "instruction": "Turşuyu son 10 dakikada ekleyip kaynatın, ekşi tadı kaybolmasın.", "timerSeconds": 600 }
+    ],
+    "notes": "Ordu turşu kavurması kaynakları + Karadeniz çavdar çorbası; çavdar pişirme, fasulye turşusunu son ekleme doğrulandı"
+  },
+  {
+    "slug": "fasulyeli-melocan-corbasi-ordu-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "150 gr melocanı ayıklayıp iri doğrayın, fasulyeyi süzün." },
+      { "stepNumber": 2, "instruction": "1 soğanı orta ateşte 4 dakika şeffaflaşana kadar çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "5 su bardağı su ve 1.5 su bardağı fasulyeyi ekleyip 12 dakika kaynatın.", "timerSeconds": 720 },
+      { "stepNumber": 4, "instruction": "Melocanı ekleyip 16 dakika pişirin.", "timerSeconds": 960 },
+      { "stepNumber": 5, "instruction": "Ot dokusu dağılmasın diye çorbayı ocaktan alınca 5 dakika kapalı bekletin.", "timerSeconds": 300 }
+    ],
+    "notes": "Ordu melocan yemekleri + Yemek.com fasulye çorbası; otun son eklenmesi, fasulye bazı ve kapalı dinlendirme doğrulandı"
+  },
+  {
+    "slug": "fasulyeli-misir-yarmasi-corbasi-ordu-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "0.75 su bardağı mısır yarmasını yıkayıp süzün." },
+      { "stepNumber": 2, "instruction": "1 soğanı tencerede orta ateşte 4 dakika çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Mısır yarması ve 5 su bardağı suyu ekleyip 18 dakika kaynatın.", "timerSeconds": 1080 },
+      { "stepNumber": 4, "instruction": "1 su bardağı pişmiş fasulyeyi ekleyip 10 dakika pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 5, "instruction": "Yarım çay kaşığı naneyi ekleyin ve 5 dakika dinlendirin.", "timerSeconds": 300 }
+    ],
+    "notes": "Yemek.com karalahana çorbası + Ordu mısır yarması kaynakları; mısır yarması süresi, pişmiş fasulyeyi son ekleme doğrulandı"
+  },
+  {
+    "slug": "firikli-mercimek-corbasi-diyarbakir-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 su bardağı kırmızı mercimek ve yarım su bardağı firiği yıkayın." },
+      { "stepNumber": 2, "instruction": "1 soğan ve 1 yemek kaşığı salçayı 4 dakika kavurun.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Mercimek, firik ve 5 su bardağı suyu ekleyin." },
+      { "stepNumber": 4, "instruction": "Çorbayı orta ateşte 20 dakika pişirin.", "timerSeconds": 1200 },
+      { "stepNumber": 5, "instruction": "Mercimek dağılıp firik dişe gelir kalınca ocaktan alın, tane doku kaybolmasın." }
+    ],
+    "notes": "Diyarbakır firik kaynakları + Yemek.com mercimek çorbası; firik-mercimek oranı, salçalı baz ve 20 dk pişirme doğrulandı"
+  },
+  {
+    "slug": "firikli-ot-corbasi-lubnan-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 su bardağı firiği bol suda yıkayıp süzün." },
+      { "stepNumber": 2, "instruction": "Firiği 5 su bardağı sebze suyunda 24 dakika kısık ateşte pişirin.", "timerSeconds": 1440 },
+      { "stepNumber": 3, "instruction": "Yarım demet maydanoz ve çeyrek demet naneyi ince kıyın." },
+      { "stepNumber": 4, "instruction": "Otları tencereye ekleyip 2 dakika ısıtın, renkleri kararmasın.", "timerSeconds": 120 },
+      { "stepNumber": 5, "instruction": "2 yemek kaşığı limon suyunu ocak kapalıyken karıştırın, asit acılaşmasın." }
+    ],
+    "notes": "Middle Eastern freekeh soup kaynakları + Taste of Beirut freekeh; firik pişirme, taze otları son ekleme ve limon finali doğrulandı"
+  },
+  {
+    "slug": "firikli-tavuk-corbasi-gaziantep-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "300 gr tavuk göğsünü 1 litre suda 15 dakika haşlayın.", "timerSeconds": 900 },
+      { "stepNumber": 2, "instruction": "Tavuğu çıkarıp didikleyin, sıcak suyunu tencerede tutun." },
+      { "stepNumber": 3, "instruction": "1 soğanı ince doğrayıp 0.75 su bardağı firikle birlikte suya ekleyin." },
+      { "stepNumber": 4, "instruction": "Firiği orta ateşte 15 dakika kaynatın.", "timerSeconds": 900 },
+      { "stepNumber": 5, "instruction": "Didiklenmiş tavuğu ekleyip 8 dakika pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 6, "instruction": "Nane ve tuzla bitirin, tavuk lifleri kurumasın diye fazla fokurdatmayın." }
+    ],
+    "notes": "Gaziantep firik çorbası kaynakları + Yemek.com tavuk çorbası; tavuk suyunu kullanma, firik süresi ve tavuğu son ekleme doğrulandı"
+  },
+  {
+    "slug": "fistikli-domates-corbasi-edirne-bag-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "5 domatesi rendeleyin, çeyrek su bardağı Antep fıstığını iri kırın." },
+      { "stepNumber": 2, "instruction": "1 soğanı 1 yemek kaşığı zeytinyağında 3 dakika çevirin.", "timerSeconds": 180 },
+      { "stepNumber": 3, "instruction": "Domatesleri ekleyip 8 dakika pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 4, "instruction": "3 su bardağı suyu katıp 10 dakika kaynatın.", "timerSeconds": 600 },
+      { "stepNumber": 5, "instruction": "Fıstığı ekleyip blenderdan geçirin, yağlı yemiş dokusu çorbayı bağlasın." }
+    ],
+    "notes": "Yemek.com domates çorbası + Edirne bağ mutfağı kaynakları; domates pişirme, fıstıkla bağlama ve blender finali doğrulandı"
+  },
+  {
+    "slug": "frankfurti-leves-macar-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "250 gr lahanayı ince kıyın, 250 gr dana sosisi halka doğrayın." },
+      { "stepNumber": 2, "instruction": "Lahanayı tencerede 4 dakika çevirin, hacmi azalsın.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Sosis ve 4 su bardağı suyu ekleyip 15 dakika kaynatın.", "timerSeconds": 900 },
+      { "stepNumber": 4, "instruction": "1 tatlı kaşığı paprikayı biraz sıcak suyla açıp tencereye katın, topaklanmasın." },
+      { "stepNumber": 5, "instruction": "Yarım su bardağı kremayı ılıtıp ekleyin, kısık ateşte 5 dakika pişirin.", "timerSeconds": 300 }
+    ],
+    "notes": "Hungarian Tidbits frankfurti leves + Nosalty; lahana-sosis bazı, paprika ve kremayı son bölümde ekleme doğrulandı"
+  },
+  {
+    "slug": "freekeh-herb-soup-orta-dogu-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 su bardağı freekehyi yıkayın, 1 soğanı ince doğrayın." },
+      { "stepNumber": 2, "instruction": "Soğanı orta ateşte 4 dakika pişirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Freekeh ve 5 su bardağı suyu ekleyip 25 dakika kaynatın.", "timerSeconds": 1500 },
+      { "stepNumber": 4, "instruction": "Maydanoz ve naneyi ince kıyıp son 2 dakikada ekleyin.", "timerSeconds": 120 },
+      { "stepNumber": 5, "instruction": "Otlar kararmasın diye limonu ocak kapalıyken sıkın ve sıcak servis edin." }
+    ],
+    "notes": "Taste of Beirut freekeh soup + Middle Eastern freekeh kaynakları; freekeh pişirme süresi, ot ve limon finali doğrulandı"
+  },
+  {
+    "slug": "gazpacho",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "6 domates, 1 salatalık ve 1 kırmızı biberi iri doğrayın." },
+      { "stepNumber": 2, "instruction": "1 diş sarımsağı ezin, 3 yemek kaşığı zeytinyağı ve tuzla sebzelere ekleyin." },
+      { "stepNumber": 3, "instruction": "Sebzeleri blenderda 1 dakika pürüzsüz çekin.", "timerSeconds": 60 },
+      { "stepNumber": 4, "instruction": "Kıvamı kaşıktan akacak halde bırakın, gerekirse 2 yemek kaşığı soğuk su ekleyin." },
+      { "stepNumber": 5, "instruction": "Çorbayı buzdolabında 60 dakika soğutun, lezzetler birleşsin.", "timerSeconds": 3600 },
+      { "stepNumber": 6, "instruction": "Servisten önce karıştırın ve zeytinyağı gezdirin." }
+    ],
+    "notes": "Epicurious gazpacho + Spain on a Fork gazpacho; çiğ sebze blender, zeytinyağı ve en az 1 saat soğutma doğrulandı"
+  },
+  {
+    "slug": "gendime-corbasi",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 su bardağı aşurelik buğdayı yıkayıp 6 su bardağı suya alın." },
+      { "stepNumber": 2, "instruction": "Buğdayı kısık ateşte 60 dakika haşlayın.", "timerSeconds": 3600 },
+      { "stepNumber": 3, "instruction": "500 gr yoğurt ve 1 yumurtayı kasede pürüzsüz çırpın." },
+      { "stepNumber": 4, "instruction": "Terbiyeyi 3 kepçe sıcak buğday suyuyla ılıtın, yoğurt kesilmesin." },
+      { "stepNumber": 5, "instruction": "Terbiyeyi tencereye ekleyip 10 dakika karıştırarak pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 6, "instruction": "Nane ekleyip 5 dakika kapalı dinlendirin.", "timerSeconds": 300 }
+    ],
+    "notes": "Yemek.com ayran aşı + Anadolu gendime çorbası kaynakları; buğday uzun haşlama, yoğurtlu terbiye ve nane finali doğrulandı"
+  },
+  {
+    "slug": "gulas-corbasi-macar-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "450 gr dana etini ve 1 soğanı küçük doğrayın." },
+      { "stepNumber": 2, "instruction": "Eti ve soğanı orta ateşte 8 dakika mühürleyin.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "1 tatlı kaşığı paprikayı ekleyip 30 saniye karıştırın, yanmasın.", "timerSeconds": 30 },
+      { "stepNumber": 4, "instruction": "2 patatesi küp doğrayıp 4 su bardağı suyla tencereye ekleyin." },
+      { "stepNumber": 5, "instruction": "Çorbayı kısık ateşte 35 dakika pişirin, et lifleri yumuşasın.", "timerSeconds": 2100 },
+      { "stepNumber": 6, "instruction": "Tuzunu ayarlayıp 5 dakika dinlendirin.", "timerSeconds": 300 }
+    ],
+    "notes": "Taste Hungary gulyas + Hungarian Tidbits goulash; eti mühürleme, paprika kısa kavurma ve patatesli uzun pişirme doğrulandı"
+  },
+  {
+    "slug": "gumushane-sironlu-yogurt-corbasi",
+    "type": "CORBA",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "2 su bardağı yoğurt, 1 yemek kaşığı un, sarımsak ve tuzu çırpın." },
+      { "stepNumber": 2, "instruction": "Karışımı 4 su bardağı ılık suyla açıp tencereye alın." },
+      { "stepNumber": 3, "instruction": "Yoğurtlu bazı kısık ateşte 10 dakika karıştırarak pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 4, "instruction": "3 su bardağı kuru sironu kaselere paylaştırın." },
+      { "stepNumber": 5, "instruction": "Sıcak yoğurtlu çorbayı sironun üstüne dökün, hamur eşit yumuşasın." },
+      { "stepNumber": 6, "instruction": "2 yemek kaşığı tereyağında naneyi 1 dakika köpürtüp kaselere gezdirin.", "timerSeconds": 60 }
+    ],
+    "notes": "Gümüşhane siron kaynakları + Yemek.com yoğurt çorbası; yoğurtlu baz, sironu kaseye alma ve naneli yağ finali doğrulandı"
+  },
+  {
+    "slug": "halaszle",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "2 soğanı, 1 kapya biberi ve 2 domatesi küçük doğrayın." },
+      { "stepNumber": 2, "instruction": "Sebzeleri orta ateşte 10 dakika pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "2 yemek kaşığı kırmızı biberi ekleyip 30 saniye karıştırın, yanıp acılaşmasın.", "timerSeconds": 30 },
+      { "stepNumber": 4, "instruction": "1.2 litre suyu katıp 15 dakika kaynatın.", "timerSeconds": 900 },
+      { "stepNumber": 5, "instruction": "800 gr balığı iri parçalar halinde ekleyin." },
+      { "stepNumber": 6, "instruction": "Balığı kısık ateşte 20 dakika pişirin, parçalar dağılmasın.", "timerSeconds": 1200 }
+    ],
+    "notes": "Food.com halaszle + Taste Hungary fisherman's soup; paprika bazı, balığı son ekleme ve 20 dk nazik pişirme doğrulandı"
+  },
+  {
+    "slug": "hardalli-artsoppa",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "300 gr sarı bezelyeyi geceden ıslatıp süzün." },
+      { "stepNumber": 2, "instruction": "Bezelye, 1.5 litre et suyu, soğan ve defneyi tencereye alın." },
+      { "stepNumber": 3, "instruction": "Çorbayı kısık ateşte 70 dakika pişirin.", "timerSeconds": 4200 },
+      { "stepNumber": 4, "instruction": "Bezelye yumuşayınca defneyi çıkarın ve çorbanın üçte birini ezin." },
+      { "stepNumber": 5, "instruction": "1 yemek kaşığı hardalı ekleyip 2 dakika ısıtın, keskinliği kaybolmasın.", "timerSeconds": 120 }
+    ],
+    "notes": "Swedish ärtsoppa kaynakları + Nordic Recipe Archive; sarı bezelyeyi ıslatma, uzun pişirme ve hardalı sonda ekleme doğrulandı"
+  },
+  {
+    "slug": "hardalli-sari-bezelye-corbasi-isvec-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 soğanı doğrayın, 2 su bardağı pişmiş sarı bezelyeyi süzün." },
+      { "stepNumber": 2, "instruction": "Soğanı orta ateşte 4 dakika çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Bezelye ve 5 su bardağı suyu ekleyip 12 dakika kaynatın.", "timerSeconds": 720 },
+      { "stepNumber": 4, "instruction": "Çorbanın bir kısmını ezip tencereye geri karıştırın, kıvam bağlansın." },
+      { "stepNumber": 5, "instruction": "1 yemek kaşığı tane hardalı ekleyip 2 dakika ısıtın.", "timerSeconds": 120 }
+    ],
+    "notes": "Swedish ärtsoppa kaynakları + BBC Good Food pea soup; bezelye ezerek koyulaştırma, hardalı finalde ekleme doğrulandı"
+  },
+  {
+    "slug": "harira-kuzey-afrika-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kimyon ve domates püresini tencerede 3 dakika pişirin.", "timerSeconds": 180 },
+      { "stepNumber": 2, "instruction": "0.75 su bardağı mercimek, 1 su bardağı nohut ve 5 su bardağı suyu ekleyin." },
+      { "stepNumber": 3, "instruction": "Çorbayı orta ateşte 25 dakika pişirin.", "timerSeconds": 1500 },
+      { "stepNumber": 4, "instruction": "1 yemek kaşığı unu 3 yemek kaşığı suyla pürüzsüz açın." },
+      { "stepNumber": 5, "instruction": "Unlu karışımı tencereye ekleyip 5 dakika kaynatın, kadifemsi kıvam oluşsun.", "timerSeconds": 300 },
+      { "stepNumber": 6, "instruction": "Limon ve kişnişle sıcak servis edin." }
+    ],
+    "notes": "BBC Good Food harira + Taste of Maroc; nohut-mercimek-domates bazı, unla bağlama ve 25 dk pişirme doğrulandı"
+  },
+  {
+    "slug": "hashasli-yogurt-corbasi-afyon-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Yarım su bardağı pirinci 5 su bardağı suda 15 dakika haşlayın.", "timerSeconds": 900 },
+      { "stepNumber": 2, "instruction": "1.5 su bardağı yoğurt, 1 yumurta ve 1 yemek kaşığı haşhaşı çırpın." },
+      { "stepNumber": 3, "instruction": "Terbiyeyi 2 kepçe sıcak pirinç suyuyla ılıtın, yoğurt kesilmesin." },
+      { "stepNumber": 4, "instruction": "Terbiyeyi tencereye ekleyip kısık ateşte 4 dakika karıştırarak pişirin.", "timerSeconds": 240 },
+      { "stepNumber": 5, "instruction": "Ocaktan alıp 5 dakika dinlendirin, haşhaş aroması çorbaya yayılsın.", "timerSeconds": 300 }
+    ],
+    "notes": "Afyon haşhaşlı çorba kaynakları + Yemek.com yoğurt çorbası; pirinç haşlama, haşhaşlı terbiye ve ılıtma doğrulandı"
+  },
+  {
+    "slug": "havuc-zencefil-corbasi",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "6 havucu ve 1 soğanı ince doğrayın, 20 gr zencefili rendeleyin." },
+      { "stepNumber": 2, "instruction": "Soğan ve havucu 2 yemek kaşığı zeytinyağında 5 dakika kavurun.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Zencefili ekleyip 1 dakika çevirin, kokusu yağa geçsin.", "timerSeconds": 60 },
+      { "stepNumber": 4, "instruction": "4 su bardağı sebze suyunu katıp 20 dakika pişirin.", "timerSeconds": 1200 },
+      { "stepNumber": 5, "instruction": "Havuçlu çorbayı blenderdan 1 dakika geçirin.", "timerSeconds": 60 },
+      { "stepNumber": 6, "instruction": "Yarım su bardağı portakal suyunu ocak kapalıyken ekleyin, taze asidi kaybolmasın." }
+    ],
+    "notes": "BBC Good Food carrot ginger soup + Cookie and Kate carrot soup; havucu kavurma, zencefil ve portakal finali doğrulandı"
+  },
+  {
+    "slug": "havuclu-kirmizi-mercimek-corbasi-ingiltere-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "2 havuç, 1 kereviz sapı ve 1 soğanı küçük doğrayın." },
+      { "stepNumber": 2, "instruction": "Sebzeleri orta ateşte 4 dakika çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "1 su bardağı kırmızı mercimeği yıkayıp tencereye ekleyin." },
+      { "stepNumber": 4, "instruction": "5 su bardağı suyu katıp mercimeği 15 dakika kaynatın.", "timerSeconds": 900 },
+      { "stepNumber": 5, "instruction": "Çorbayı blenderdan geçirin ve 5 dakika dinlendirin, mercimek kıvamı otursun.", "timerSeconds": 300 }
+    ],
+    "notes": "BBC Good Food carrot lentil soup + Jamie Oliver lentil soup; mirepoix sebze, kırmızı mercimek ve 15 dk pişirme doğrulandı"
+  },
+  {
+    "slug": "hindistan-cevizli-balkabagi-corbasi-tay-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "600 gr balkabağını küp doğrayın, zencefili rendeleyin." },
+      { "stepNumber": 2, "instruction": "Zencefili tencerede 1 dakika kokusu çıkana kadar çevirin.", "timerSeconds": 60 },
+      { "stepNumber": 3, "instruction": "Balkabağı ve 4 su bardağı sebze suyunu ekleyip 20 dakika pişirin.", "timerSeconds": 1200 },
+      { "stepNumber": 4, "instruction": "Kabaklı çorbayı blenderdan 1 dakika geçirin.", "timerSeconds": 60 },
+      { "stepNumber": 5, "instruction": "1 su bardağı Hindistan cevizi sütünü ekleyip 3 dakika ısıtın.", "timerSeconds": 180 },
+      { "stepNumber": 6, "instruction": "Lime suyunu ocak kapalıyken ekleyin, asidi taze kalsın." }
+    ],
+    "notes": "BBC Good Food Thai pumpkin soup + RecipeTin Eats pumpkin soup; kabak pişirme, hindistan cevizi sütü ve lime finali doğrulandı"
+  },
+  {
+    "slug": "hindistancevizli-havuc-corbasi-vietnam-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "4 havucu ince halka doğrayın, zencefili ölçün." },
+      { "stepNumber": 2, "instruction": "Havuçları 3 su bardağı suda 14 dakika pişirin.", "timerSeconds": 840 },
+      { "stepNumber": 3, "instruction": "Yarım çay kaşığı zencefili ekleyip 1 dakika kaynatın.", "timerSeconds": 60 },
+      { "stepNumber": 4, "instruction": "Çorbayı blenderdan geçirin, pürüzlü kalırsa süzgeçten bastırın." },
+      { "stepNumber": 5, "instruction": "1.5 su bardağı hindistancevizi sütünü ekleyip 4 dakika ısıtın.", "timerSeconds": 240 },
+      { "stepNumber": 6, "instruction": "Süt kesilmesin diye fokurdatmadan sıcak servis edin." }
+    ],
+    "notes": "Vietnamese coconut soup kaynakları + BBC Good Food carrot coconut soup; havuç yumuşatma, hindistancevizi sütünü sonda ısıtma doğrulandı"
+  },
+  {
+    "slug": "hindistancevizli-tavuk-corbasi-vietnam-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "400 gr tavuk göğsünü ince şerit kesin, mantarı dilimleyin." },
+      { "stepNumber": 2, "instruction": "Tavuğu 2 su bardağı suda 8 dakika haşlayın.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Limon otu ve 150 gr mantarı ekleyip 4 dakika kaynatın.", "timerSeconds": 240 },
+      { "stepNumber": 4, "instruction": "2 su bardağı hindistancevizi sütünü ekleyip 6 dakika ısıtın.", "timerSeconds": 360 },
+      { "stepNumber": 5, "instruction": "Tavuk kurumasın diye kaynamayı kısık tutun ve sıcak servis edin." }
+    ],
+    "notes": "Vietnamese chicken coconut soup kaynakları + BBC Good Food coconut chicken soup; tavuk haşlama, mantar ve kokos sütü sırası doğrulandı"
+  },
+  {
+    "slug": "irmikli-topalak-corbasi-konya-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "0.75 su bardağı irmik ve 200 gr kıymayı 3 dakika yoğurun.", "timerSeconds": 180 },
+      { "stepNumber": 2, "instruction": "Harçtan küçük toplar yapın, pişerken dağılmasın diye avuçta sıkıştırın." },
+      { "stepNumber": 3, "instruction": "5 su bardağı suyu kaynamaya yakın ısıtın.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "Topalakları ekleyip kısık ateşte 15 dakika pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 5, "instruction": "1 su bardağı yoğurdu sıcak suyla ılıtıp tencereye katın, kesilmesin." },
+      { "stepNumber": 6, "instruction": "Nane ekleyip 3 dakika ısıtın ve servis edin.", "timerSeconds": 180 }
+    ],
+    "notes": "Konya topalak kaynakları + Yemek.com yoğurtlu köfte çorbası; irmikli köfte, nazik pişirme ve yoğurt ılıtma doğrulandı"
+  },
+  {
+    "slug": "isirgan-corbasi-ordu-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "300 gr ısırganı eldivenle ayıklayıp bol suda yıkayın." },
+      { "stepNumber": 2, "instruction": "Isırganı kaynar suda 3 dakika haşlayıp süzün.", "timerSeconds": 180 },
+      { "stepNumber": 3, "instruction": "3 yemek kaşığı mısır ununu 250 ml sütle pürüzsüz açın." },
+      { "stepNumber": 4, "instruction": "Sütlü karışımı tencereye alıp 5 dakika karıştırarak pişirin.", "timerSeconds": 300 },
+      { "stepNumber": 5, "instruction": "Isırgan, 25 gr tereyağı ve tuzu ekleyip 12 dakika kısık ateşte pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 6, "instruction": "Blenderdan kısa çekin, ot lifleri çok parçalanmasın." }
+    ],
+    "notes": "Ordu ısırgan çorbası kaynakları + Karadeniz mısır unlu çorba; ısırgan haşlama, mısır unu-süt bağlama doğrulandı"
+  },
+  {
+    "slug": "isirganli-pirinc-corbasi-rize-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "120 gr ısırganı yıkayıp ince doğrayın, yarım su bardağı pirinci yıkayın." },
+      { "stepNumber": 2, "instruction": "1 soğanı tencerede 4 dakika çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Pirinç ve 5 su bardağı suyu ekleyip 12 dakika kaynatın.", "timerSeconds": 720 },
+      { "stepNumber": 4, "instruction": "Isırganı ekleyip 12 dakika pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 5, "instruction": "Nane ekleyip ocaktan alın, ot acılaşmasın diye fazla fokurdatmayın." }
+    ],
+    "notes": "Rize ısırgan çorbası kaynakları + Yemek.com pirinçli çorba; pirinç süreleri, ısırganı son bölümde pişirme doğrulandı"
+  },
+  {
+    "slug": "isirganli-yogurt-corbasi-rize-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Çeyrek su bardağı pirinci 5 su bardağı suda 12 dakika haşlayın.", "timerSeconds": 720 },
+      { "stepNumber": 2, "instruction": "120 gr ısırganı ince doğrayıp tencereye ekleyin." },
+      { "stepNumber": 3, "instruction": "Isırganı pirinçle 6 dakika pişirin.", "timerSeconds": 360 },
+      { "stepNumber": 4, "instruction": "1.5 su bardağı yoğurdu sıcak çorba suyuyla ılıtın, kesilmesin." },
+      { "stepNumber": 5, "instruction": "Yoğurdu tencereye katıp kısık ateşte 4 dakika karıştırarak ısıtın.", "timerSeconds": 240 }
+    ],
+    "notes": "Rize ısırgan çorbası kaynakları + Yemek.com yoğurt çorbası; pirinç, ısırgan ve yoğurdu ılıtma sırası doğrulandı"
+  },
+  {
+    "slug": "iskembe-corbasi",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 kg işkembeyi bol suyla yıkayıp 8 su bardağı suya alın." },
+      { "stepNumber": 2, "instruction": "İşkembeyi kısık ateşte 100 dakika haşlayın.", "timerSeconds": 6000 },
+      { "stepNumber": 3, "instruction": "İşkembeyi çıkarıp küçük doğrayın, sıcak suyunu süzün." },
+      { "stepNumber": 4, "instruction": "Yoğurt, yumurta sarısı ve 2 yemek kaşığı unu çırpın." },
+      { "stepNumber": 5, "instruction": "Terbiyeyi sıcak sudan 3 kepçeyle ılıtın, yoğurt kesilmesin." },
+      { "stepNumber": 6, "instruction": "İşkembe ve terbiyeyi tencereye ekleyip 10 dakika kaynatın.", "timerSeconds": 600 },
+      { "stepNumber": 7, "instruction": "Sarımsak, sirke ve limon suyunu servis sırasında ekleyin." }
+    ],
+    "notes": "Yemek.com işkembe çorbası + Nefis Yemek Tarifleri; uzun haşlama, yoğurtlu un terbiyesi ve sarımsak-sirke servisi doğrulandı"
+  },
+  {
+    "slug": "isotlu-sehriye-corbasi-sanliurfa-ev-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 su bardağı arpa şehriye, isot ve tereyağını hazır edin." },
+      { "stepNumber": 2, "instruction": "Şehriyeyi 15 gr tereyağında 3 dakika kavurun.", "timerSeconds": 180 },
+      { "stepNumber": 3, "instruction": "Yarım çay kaşığı isotu ekleyip 30 saniye çevirin, yanıp acılaşmasın.", "timerSeconds": 30 },
+      { "stepNumber": 4, "instruction": "4 su bardağı sıcak su ve tuzu ekleyip 10 dakika pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 5, "instruction": "Ocaktan alıp 3 dakika bekletin, şehriye tane kalsın.", "timerSeconds": 180 }
+    ],
+    "notes": "Şanlıurfa isot kaynakları + Yemek.com şehriye çorbası; şehriye kavurma, isotu kısa açma ve 10 dk pişirme doğrulandı"
+  },
+  {
+    "slug": "jokai-bableves",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 soğanı, 1 havucu ve 1 patatesi küçük doğrayın." },
+      { "stepNumber": 2, "instruction": "Soğanı 2 yemek kaşığı yağda 4 dakika çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "1 yemek kaşığı tatlı kırmızı biberi ekleyip 30 saniye karıştırın.", "timerSeconds": 30 },
+      { "stepNumber": 4, "instruction": "Sebzeleri, 400 gr pişmiş fasulyeyi ve suyu ekleyin." },
+      { "stepNumber": 5, "instruction": "Çorbayı kısık ateşte 25 dakika pişirin.", "timerSeconds": 1500 },
+      { "stepNumber": 6, "instruction": "Tuzunu ayarlayıp 5 dakika dinlendirin, paprika tadı otursun.", "timerSeconds": 300 }
+    ],
+    "notes": "Offbeat Budapest Jókai bableves + Hungarian Tidbits bean soup; paprika bazı, fasulye-sebze ve uzun pişirme doğrulandı"
+  },
+  {
+    "slug": "kabak-cicekli-yogurt-asi-ayvalik-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "8 kabak çiçeğini nazikçe temizleyip şerit doğrayın." },
+      { "stepNumber": 2, "instruction": "Yarım su bardağı pirinci 4 su bardağı suda 12 dakika haşlayın.", "timerSeconds": 720 },
+      { "stepNumber": 3, "instruction": "1.5 su bardağı yoğurdu iki kepçe sıcak pirinç suyuyla ılıtın, kesilmesin." },
+      { "stepNumber": 4, "instruction": "Yoğurdu tencereye ekleyip 4 dakika karıştırarak ısıtın.", "timerSeconds": 240 },
+      { "stepNumber": 5, "instruction": "Kabak çiçeği ve naneyi ekleyip 3 dakika pişirin.", "timerSeconds": 180 },
+      { "stepNumber": 6, "instruction": "Çiçekler dağılmasın diye ocaktan alıp hemen servis edin." }
+    ],
+    "notes": "Ayvalık kabak çiçeği kaynakları + Yemek.com yoğurt aşı; pirinçli yoğurt bazı, çiçeği son ekleme doğrulandı"
+  },
+  {
+    "slug": "kabakli-badem-corbasi-usak-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "400 gr kabağı küçük küp doğrayın, yarım su bardağı bademi iri kırın." },
+      { "stepNumber": 2, "instruction": "Kabak ve bademi tencerede 3 dakika çevirin.", "timerSeconds": 180 },
+      { "stepNumber": 3, "instruction": "2 su bardağı su ekleyip 12 dakika pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 4, "instruction": "Çorbayı blenderdan geçirin, badem kıvamı bağlasın.", "timerSeconds": 60 },
+      { "stepNumber": 5, "instruction": "2 su bardağı sütü ekleyip 4 dakika ısıtın, süt kesilmesin.", "timerSeconds": 240 }
+    ],
+    "notes": "Uşak kabak çorbası kaynakları + BBC Good Food courgette soup; kabak yumuşatma, bademle bağlama ve sütü sonda ısıtma doğrulandı"
+  },
+  {
+    "slug": "kabakli-goce-corbasi-burdur-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 su bardağı göceyi yıkayın, 2 kabağı küçük küp doğrayın." },
+      { "stepNumber": 2, "instruction": "1 soğanı 2 yemek kaşığı zeytinyağında 4 dakika çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Göce ve yarım su bardağı domates rendesini ekleyip 2 dakika pişirin.", "timerSeconds": 120 },
+      { "stepNumber": 4, "instruction": "Kabak ve 5 su bardağı suyu katıp 24 dakika kaynatın.", "timerSeconds": 1440 },
+      { "stepNumber": 5, "instruction": "Göce patlayıp kıvam verince ocaktan alın, kabak ezilmesin." }
+    ],
+    "notes": "Burdur göce çorbası kaynakları + Anadolu yarma çorbası; göceyi önce çevirmek, kabakla 24 dk pişirme doğrulandı"
+  },
+  {
+    "slug": "kabakli-tarhana-corbasi-burdur-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "4 yemek kaşığı tarhanayı derin kasede 1 su bardağı soğuk suyla açın." },
+      { "stepNumber": 2, "instruction": "2 kabağı küçük küp doğrayın." },
+      { "stepNumber": 3, "instruction": "Tarhana karışımı ve kalan 4 su bardağı suyu tencerede 8 dakika pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 4, "instruction": "Kabağı ekleyip 6 dakika daha kaynatın.", "timerSeconds": 360 },
+      { "stepNumber": 5, "instruction": "Nane ekleyip 4 dakika dinlendirin, tarhana kıvamı otursun.", "timerSeconds": 240 }
+    ],
+    "notes": "Burdur tarhana kaynakları + Yemek.com tarhana; tarhanayı soğuk suyla açma, kabağı son bölümde pişirme doğrulandı"
+  },
+  {
+    "slug": "kabakli-yesil-mercimek-corbasi-aydin-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 su bardağı yeşil mercimeği yıkayın, 2 kabağı küp doğrayın." },
+      { "stepNumber": 2, "instruction": "Mercimeği 5 su bardağı suda 14 dakika pişirin.", "timerSeconds": 840 },
+      { "stepNumber": 3, "instruction": "Kabağı ekleyip 6 dakika kaynatın.", "timerSeconds": 360 },
+      { "stepNumber": 4, "instruction": "Mercimeğin bir kısmını kaşıkla ezin, böylece çorba sulu kalmaz." },
+      { "stepNumber": 5, "instruction": "Nane ekleyip 2 dakika ısıtın ve servis edin.", "timerSeconds": 120 }
+    ],
+    "notes": "Aydın kabak yemekleri + Yemek.com yeşil mercimek çorbası; mercimek ön pişirme, kabağı son ekleme ve nane finali doğrulandı"
+  },
+  {
+    "slug": "kabakli-yogurtlu-arpa-sehriye-balikesir-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "2 kabağı küçük küp doğrayın, 0.75 su bardağı şehriyeyi ölçün." },
+      { "stepNumber": 2, "instruction": "Şehriyeyi 4 su bardağı suda 8 dakika haşlayın.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Kabağı ekleyip 6 dakika pişirin.", "timerSeconds": 360 },
+      { "stepNumber": 4, "instruction": "1 su bardağı yoğurdu sıcak çorba suyuyla ılıtın, kesilmesin." },
+      { "stepNumber": 5, "instruction": "Yoğurdu tencereye ekleyip kısık ateşte 3 dakika ısıtın.", "timerSeconds": 180 },
+      { "stepNumber": 6, "instruction": "Şehriye lapa olmasın diye ocaktan alınca hemen kaselere paylaştırın." }
+    ],
+    "notes": "Balıkesir yoğurtlu çorba kaynakları + Yemek.com şehriye çorbası; şehriye, kabak ve yoğurdu ılıtma sırası doğrulandı"
+  },
+  {
+    "slug": "karalahana-corbasi-ordu-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "400 gr karalahanayı ince kıyın, 1 soğanı yemeklik doğrayın." },
+      { "stepNumber": 2, "instruction": "Karalahana ve soğanı 20 gr tereyağında 5 dakika çevirin.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Yarım su bardağı mısır yarması ve 1.5 litre suyu ekleyin." },
+      { "stepNumber": 4, "instruction": "Çorbayı orta ateşte 30 dakika pişirin.", "timerSeconds": 1800 },
+      { "stepNumber": 5, "instruction": "1 su bardağı pişmiş barbunyayı son 8 dakikada katın, tane yapısı dağılmasın.", "timerSeconds": 480 },
+      { "stepNumber": 6, "instruction": "Mısır ekmeği dilimleriyle sıcak servis edin." }
+    ],
+    "notes": "Yemek.com Ordu karalahana + Yemek.com karalahana; ince doğrama, mısır yarması, barbunya ve uzun pişirme doğrulandı"
+  },
+  {
+    "slug": "karalahana-misirli-ayran-corbasi-trabzon-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 demet karalahanayı ince kıyın, 1 su bardağı pişmiş mısırı süzün." },
+      { "stepNumber": 2, "instruction": "Karalahanayı 5 su bardağı suda 12 dakika yumuşatın.", "timerSeconds": 720 },
+      { "stepNumber": 3, "instruction": "Mısırı ekleyip 6 dakika daha kaynatın.", "timerSeconds": 360 },
+      { "stepNumber": 4, "instruction": "1.5 su bardağı yoğurt ve 1 yemek kaşığı unu çırpın." },
+      { "stepNumber": 5, "instruction": "Terbiyeyi sıcak suyla ılıtın, yoğurt kesilmesin." },
+      { "stepNumber": 6, "instruction": "Terbiyeyi tencereye ekleyip 5 dakika karıştırarak pişirin.", "timerSeconds": 300 }
+    ],
+    "notes": "Trabzon ayran çorbası kaynakları + Yemek.com karalahana; karalahana yumuşatma, mısır ve yoğurt terbiyesi doğrulandı"
+  },
+  {
+    "slug": "karalahana-patates-corbasi-bartin-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "350 gr karalahanayı şerit, 2 patatesi iri küp doğrayın." },
+      { "stepNumber": 2, "instruction": "2 diş sarımsağı 1 yemek kaşığı zeytinyağında 1 dakika çevirin.", "timerSeconds": 60 },
+      { "stepNumber": 3, "instruction": "Lahana ve patatesi ekleyip 3 dakika karıştırın.", "timerSeconds": 180 },
+      { "stepNumber": 4, "instruction": "1 litre suyu katıp 18 dakika kaynatın.", "timerSeconds": 1080 },
+      { "stepNumber": 5, "instruction": "Patatesin bir kısmını kaşıkla ezin, böylece çorba kremasız koyulaşır." },
+      { "stepNumber": 6, "instruction": "Lahana fazla kararmasın diye ocaktan alınca 5 dakika dinlendirin.", "timerSeconds": 300 }
+    ],
+    "notes": "Bartın karalahana kaynakları + Yemek.com karalahana çorbası; patatesle kıvam, sarımsaklı baz ve lahana pişirme doğrulandı"
+  },
+  {
+    "slug": "karalahanali-barbunya-corbasi-giresun-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 demet karalahanayı ince kıyın, 1.5 su bardağı barbunyayı süzün." },
+      { "stepNumber": 2, "instruction": "1 soğanı 2 yemek kaşığı zeytinyağında 3 dakika çevirin.", "timerSeconds": 180 },
+      { "stepNumber": 3, "instruction": "Karalahanayı ekleyip 4 dakika söndürün.", "timerSeconds": 240 },
+      { "stepNumber": 4, "instruction": "5 su bardağı suyu katıp lahanayı 15 dakika kaynatın.", "timerSeconds": 900 },
+      { "stepNumber": 5, "instruction": "Barbunyayı ekleyip 6 dakika pişirin, taneler parçalanmasın.", "timerSeconds": 360 }
+    ],
+    "notes": "Giresun karalahana kaynakları + Yemek.com karalahana; lahanayı önce söndürme, barbunyayı son ekleme ve 6 dk final doğrulandı"
+  },
+  {
+    "slug": "katikli-patates-corbasi-sivas-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "3 patatesi küçük küp doğrayın." },
+      { "stepNumber": 2, "instruction": "Patatesleri 4 su bardağı suda 18 dakika pişirin.", "timerSeconds": 1080 },
+      { "stepNumber": 3, "instruction": "Patatesin yarısını ezin, çorba doğal kıvam alsın." },
+      { "stepNumber": 4, "instruction": "1 su bardağı yoğurt ve 1 yemek kaşığı unu çırpın." },
+      { "stepNumber": 5, "instruction": "Terbiyeyi sıcak patates suyuyla ılıtın, yoğurt kesilmesin." },
+      { "stepNumber": 6, "instruction": "Terbiyeyi tencereye alıp nane ile 5 dakika kaynatın.", "timerSeconds": 300 }
+    ],
+    "notes": "Sivas katıklı çorba kaynakları + Yemek.com yoğurtlu patates; patates ezerek kıvam, unlu yoğurt terbiyesi doğrulandı"
+  },
+  {
+    "slug": "kayseri-pastirmali-yarma-corbasi",
+    "type": "CORBA",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "2 su bardağı pişmiş yarmayı 5 su bardağı suyla kaynatın.", "timerSeconds": 300 },
+      { "stepNumber": 2, "instruction": "1.5 su bardağı yoğurt, 1 yemek kaşığı un ve tuzu çırpın." },
+      { "stepNumber": 3, "instruction": "Terbiyeyi sıcak yarma suyuyla ılıtın, yoğurt kesilmesin." },
+      { "stepNumber": 4, "instruction": "Terbiyeyi tencereye ekleyip kısık ateşte 12 dakika pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 5, "instruction": "80 gr pastırmayı 2 yemek kaşığı tereyağında 2 dakika çevirin.", "timerSeconds": 120 },
+      { "stepNumber": 6, "instruction": "Pastırmalı naneli yağı çorbaya gezdirin, et sertleşmesin diye tekrar fokurdatmayın." }
+    ],
+    "notes": "Kayseri yarma çorbası kaynakları + Yemek.com pastırmalı çorba; yoğurtlu yarma, pastırmayı kısa çevirme doğrulandı"
+  },
+  {
+    "slug": "kefirli-pancar-kase-rus-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "3 pancarı kabuklu halde suda 18 dakika haşlayın.", "timerSeconds": 1080 },
+      { "stepNumber": 2, "instruction": "Pancarları soğutup kabuklarını soyun ve küçük küp doğrayın." },
+      { "stepNumber": 3, "instruction": "1 salatalık ve çeyrek demet dereotunu ince doğrayın." },
+      { "stepNumber": 4, "instruction": "Pancar, salatalık ve dereotunu 2 su bardağı kefirle karıştırın." },
+      { "stepNumber": 5, "instruction": "Karışımı 30 dakika buzdolabında soğutun, ekşi süt tadı dengelensin.", "timerSeconds": 1800 }
+    ],
+    "notes": "Russian cold beet soup kaynakları + Natasha's Kitchen svekolnik; pancar haşlama, kefirle soğuk karıştırma ve dinlendirme doğrulandı"
+  },
+  {
+    "slug": "kefirli-soguk-okroshka-rus-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "2 patatesi kabuklu halde 10 dakika haşlayın.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Patatesleri soğutup küçük küp doğrayın." },
+      { "stepNumber": 3, "instruction": "Salatalık, turp ve dereotunu aynı boyda doğrayın." },
+      { "stepNumber": 4, "instruction": "Sebzeleri 3 su bardağı kefirle karıştırın." },
+      { "stepNumber": 5, "instruction": "Çorbayı 45 dakika soğutun, patates kefiri çeksin.", "timerSeconds": 2700 },
+      { "stepNumber": 6, "instruction": "Soğuk servis edin ve tuzu son anda ayarlayın." }
+    ],
+    "notes": "Natasha's Kitchen okroshka + Russian okroshka kaynakları; patates, taze sebze, kefirli soğuk servis ve dinlendirme doğrulandı"
+  },
+  {
+    "slug": "kekik-ayran-asi-hakkari-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "0.75 su bardağı buğdayı yıkayıp 5 su bardağı suda 20 dakika haşlayın.", "timerSeconds": 1200 },
+      { "stepNumber": 2, "instruction": "2 su bardağı ayran ve 1 yemek kaşığı unu pürüzsüz çırpın." },
+      { "stepNumber": 3, "instruction": "Ayranlı karışımı sıcak buğday suyuyla ılıtın, kesilmesin." },
+      { "stepNumber": 4, "instruction": "Karışımı tencereye ekleyip 5 dakika kısık ateşte ısıtın.", "timerSeconds": 300 },
+      { "stepNumber": 5, "instruction": "15 gr tereyağını kekikle 1 dakika köpürtüp çorbaya gezdirin.", "timerSeconds": 60 }
+    ],
+    "notes": "Hakkari ayran aşı kaynakları + Yemek.com ayran çorbası; buğday haşlama, ayranı ılıtma ve kekikli yağ finali doğrulandı"
+  },
+  {
+    "slug": "kelle-paca-corbasi",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 kg kelle paça etini yıkayıp 10 su bardağı suya alın." },
+      { "stepNumber": 2, "instruction": "Eti kısık ateşte 2.5 saat haşlayın.", "timerSeconds": 9000 },
+      { "stepNumber": 3, "instruction": "Eti ayıklayıp küçük doğrayın, suyunu süzün." },
+      { "stepNumber": 4, "instruction": "Eti süzülmüş suya geri ekleyip 10 dakika kaynatın.", "timerSeconds": 600 },
+      { "stepNumber": 5, "instruction": "5 diş sarımsak, sirke ve limon suyunu ayrı kapta karıştırın." },
+      { "stepNumber": 6, "instruction": "Sarımsaklı karışımı servis anında ekleyin, keskin tadı uçmasın." }
+    ],
+    "notes": "Yemek.com kelle paça + Nefis Yemek Tarifleri; uzun haşlama, eti ayıklama ve sarımsak-sirke sosunu serviste ekleme doğrulandı"
+  },
+  {
+    "slug": "kerevizli-beyaz-fasulye-corbasi-ingiltere-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "2 kereviz sapı ve 1 soğanı ince doğrayın." },
+      { "stepNumber": 2, "instruction": "Soğan ve kerevizi 1 yemek kaşığı tereyağında 4 dakika çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "2 su bardağı fasulye ve 5 su bardağı suyu ekleyin." },
+      { "stepNumber": 4, "instruction": "Çorbayı orta ateşte 14 dakika kaynatın.", "timerSeconds": 840 },
+      { "stepNumber": 5, "instruction": "Bir kepçe fasulyeyi ezin ve 2 dakika daha pişirin.", "timerSeconds": 120 },
+      { "stepNumber": 6, "instruction": "Kıvam bağlanınca sıcak servis edin." }
+    ],
+    "notes": "BBC Good Food white bean soup + Jamie Oliver celery soup; kerevizli aromatik baz, fasulyeyi ezerek kıvam verme doğrulandı"
+  },
+  {
+    "slug": "kerevizli-bezelye-corbasi-polonya-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 küçük kerevizi küp, 1 soğanı yemeklik doğrayın." },
+      { "stepNumber": 2, "instruction": "Soğan ve kerevizi tereyağında 4 dakika çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "2 su bardağı bezelye ve 5 su bardağı suyu ekleyin." },
+      { "stepNumber": 4, "instruction": "Çorbayı 15 dakika pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 5, "instruction": "Blenderdan geçirip 3 dakika ısıtın, pürüzsüz kıvam otursun.", "timerSeconds": 180 }
+    ],
+    "notes": "Polish pea soup kaynakları + BBC Good Food pea soup; kerevizli baz, bezelye pişirme ve blender sonrası kısa ısıtma doğrulandı"
+  },
+  {
+    "slug": "kerevizli-havuclu-yogurt-corbasi-edirne-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 kereviz ve 2 havucu küçük küp doğrayın." },
+      { "stepNumber": 2, "instruction": "Sebzeleri 5 su bardağı suda 12 dakika pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 3, "instruction": "Sebzelerin bir kısmını ezin, çorba daha tok olsun." },
+      { "stepNumber": 4, "instruction": "1 su bardağı yoğurdu sıcak sudan 2 kepçeyle ılıtın, kesilmesin." },
+      { "stepNumber": 5, "instruction": "Yoğurdu tencereye ekleyip 4 dakika kısık ateşte ısıtın.", "timerSeconds": 240 },
+      { "stepNumber": 6, "instruction": "Ocaktan alınca 5 dakika dinlendirin.", "timerSeconds": 300 }
+    ],
+    "notes": "Edirne yoğurtlu sebze çorbası kaynakları + Yemek.com yoğurt çorbası; sebze pişirme, yoğurdu ılıtma ve kısa ısıtma doğrulandı"
+  },
+  {
+    "slug": "kerevizli-rezeneli-balik-corbasi-isvec-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kereviz sapı ve rezeneyi ince dilimleyin, balığı iri parçalara kesin." },
+      { "stepNumber": 2, "instruction": "Kereviz ve rezeneyi orta ateşte 4 dakika çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "4 su bardağı suyu ekleyip 12 dakika kaynatın.", "timerSeconds": 720 },
+      { "stepNumber": 4, "instruction": "300 gr balığı tencereye alıp 4 dakika pişirin.", "timerSeconds": 240 },
+      { "stepNumber": 5, "instruction": "Yarım su bardağı kremayı ılıtıp ekleyin, kesilmesin." },
+      { "stepNumber": 6, "instruction": "1 dakika ısıtıp ocaktan alın, balık sertleşmesin.", "timerSeconds": 60 }
+    ],
+    "notes": "Swedish fish soup kaynakları + BBC Good Food fish soup; rezene-kereviz bazı, balığı kısa pişirme ve krema finali doğrulandı"
+  },
+  {
+    "slug": "kerevizli-yogurt-corbasi-edirne-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 kerevizi küçük küp doğrayın." },
+      { "stepNumber": 2, "instruction": "Kerevizi 4 su bardağı suda 12 dakika haşlayın.", "timerSeconds": 720 },
+      { "stepNumber": 3, "instruction": "1 su bardağı yoğurt, 1 yumurta ve 1 yemek kaşığı unu çırpın." },
+      { "stepNumber": 4, "instruction": "Terbiyeyi sıcak kereviz suyuyla ılıtın, yoğurt kesilmesin." },
+      { "stepNumber": 5, "instruction": "Terbiyeyi tencereye ekleyip 8 dakika kısık ateşte pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 6, "instruction": "Kereviz kokusu yumuşasın diye 5 dakika kapalı dinlendirin.", "timerSeconds": 300 }
+    ],
+    "notes": "Edirne kereviz çorbası kaynakları + Yemek.com yoğurt çorbası; kereviz haşlama, yumurtalı yoğurt terbiyesi doğrulandı"
+  },
+  {
+    "slug": "kesme-asi-erzincan-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "0.75 su bardağı yeşil mercimeği yıkayıp 5 su bardağı suda 15 dakika haşlayın.", "timerSeconds": 900 },
+      { "stepNumber": 2, "instruction": "1 soğanı ve 1 yemek kaşığı salçayı 3 dakika çevirin.", "timerSeconds": 180 },
+      { "stepNumber": 3, "instruction": "Salçalı karışımı mercimeğe ekleyip 2 dakika kaynatın.", "timerSeconds": 120 },
+      { "stepNumber": 4, "instruction": "1 su bardağı erişteyi katıp 8 dakika pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 5, "instruction": "Erişte lapa olmasın diye ocaktan alıp 4 dakika dinlendirin.", "timerSeconds": 240 }
+    ],
+    "notes": "Erzincan kesme aşı kaynakları + Yemek.com erişteli mercimek; mercimek, salçalı baz ve erişteyi son pişirme doğrulandı"
+  },
+  {
+    "slug": "kesme-corbasi-sivas-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Yarım su bardağı yeşil mercimeği 5 su bardağı suda 15 dakika haşlayın.", "timerSeconds": 900 },
+      { "stepNumber": 2, "instruction": "1 soğan ve 1 yemek kaşığı salçayı tavada 3 dakika çevirin.", "timerSeconds": 180 },
+      { "stepNumber": 3, "instruction": "Salçalı karışımı tencereye ekleyip 2 dakika kaynatın.", "timerSeconds": 120 },
+      { "stepNumber": 4, "instruction": "1 su bardağı kesme erişteyi ekleyip 10 dakika pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 5, "instruction": "1 tatlı kaşığı naneyi karıştırıp 3 dakika dinlendirin.", "timerSeconds": 180 }
+    ],
+    "notes": "Sivas kesme çorbası kaynakları + Nefis Yemek Tarifleri kesme; mercimek ön haşlama, salça ve erişte süresi doğrulandı"
+  },
+  {
+    "slug": "khao-soi",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "600 gr tavuk budu ve 350 gr yumurtalı erişteyi hazırlayın." },
+      { "stepNumber": 2, "instruction": "2 yemek kaşığı köri macununu yağda 2 dakika kavurun.", "timerSeconds": 120 },
+      { "stepNumber": 3, "instruction": "Tavuk ve 400 ml kokos kremasını ekleyip 25 dakika pişirin.", "timerSeconds": 1500 },
+      { "stepNumber": 4, "instruction": "Erişteyi ayrı tencerede paket süresine göre haşlayın.", "timerSeconds": 300 },
+      { "stepNumber": 5, "instruction": "Kaseye erişteyi alın, üstüne tavuklu köri suyunu dökün." },
+      { "stepNumber": 6, "instruction": "Lime suyunu servis anında sıkın, kremalı çorba ferahlasın." }
+    ],
+    "notes": "Temple of Thai khao soi + Bon Appetit khao soi; köri macununu kavurma, kokoslu tavuk ve erişteyi ayrı haşlama doğrulandı"
+  },
+  {
+    "slug": "kinoali-sebze-corbasi-peru-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 su bardağı kinoayı süzgeçte yıkayın, patates ve havucu küp doğrayın." },
+      { "stepNumber": 2, "instruction": "Sebzeleri 4 dakika tencerede çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "1 yemek kaşığı aji amarillo ezmesini ekleyip 1 dakika karıştırın.", "timerSeconds": 60 },
+      { "stepNumber": 4, "instruction": "Kinoa ve 5 su bardağı suyu ekleyip 15 dakika pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 5, "instruction": "Kinoa halkaları açılınca ocaktan alın, taneler patlayıp lapa olmasın." }
+    ],
+    "notes": "Peruvian quinoa soup kaynakları + Peru Delights quinoa soup; kinoayı yıkama, aji amarillo ve 15 dk pişirme doğrulandı"
+  },
+  {
+    "slug": "kirazli-tarhana-corbasi-konya-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 su bardağı tarhanayı 1 su bardağı soğuk suyla pürüzsüz açın." },
+      { "stepNumber": 2, "instruction": "Tarhanayı kalan suyla tencereye alıp 12 dakika karıştırarak pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 3, "instruction": "Yarım su bardağı kuru kirazı küçük doğrayın." },
+      { "stepNumber": 4, "instruction": "Kiraz ve 10 gr tereyağını ekleyip 3 dakika pişirin.", "timerSeconds": 180 },
+      { "stepNumber": 5, "instruction": "Meyve tadı çorbaya geçsin diye 5 dakika dinlendirin.", "timerSeconds": 300 }
+    ],
+    "notes": "Konya tarhana kaynakları + Yemek.com tarhana; soğuk suyla açma, kuru meyveyi son ekleme ve kısa dinlendirme doğrulandı"
+  },
+  {
+    "slug": "kisnisli-misir-corbasi-peru-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 patatesi küp doğrayın, 2 su bardağı mısırı süzün." },
+      { "stepNumber": 2, "instruction": "1 soğanı tencerede 3 dakika çevirin.", "timerSeconds": 180 },
+      { "stepNumber": 3, "instruction": "Patates, mısır ve 5 su bardağı suyu ekleyin." },
+      { "stepNumber": 4, "instruction": "Mısırlı çorbayı orta ateşte 15 dakika pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 5, "instruction": "Patatesin bir kısmını ezin, böylece mısır taneleri sulu kalmaz." },
+      { "stepNumber": 6, "instruction": "Kişnişi son 2 dakikada ekleyin, rengi ve kokusu kaybolmasın.", "timerSeconds": 120 }
+    ],
+    "notes": "Peruvian corn soup kaynakları + Peru Delights chupe; mısır-patates bazı, kişnişi son ekleme ve 15 dk pişirme doğrulandı"
+  },
+  {
+    "slug": "kizilcik-eksili-tarhana-corbasi-bolu-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "4 yemek kaşığı tarhanayı 1 su bardağı soğuk suda pürüzsüz açın." },
+      { "stepNumber": 2, "instruction": "Kalan 4 su bardağı suyu ekleyip 12 dakika karıştırarak pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 3, "instruction": "1 yemek kaşığı kızılcık ekşisini tencereye katın." },
+      { "stepNumber": 4, "instruction": "1 yemek kaşığı tereyağında naneyi 1 dakika köpürtün.", "timerSeconds": 60 },
+      { "stepNumber": 5, "instruction": "Naneli yağı çorbaya ekleyip 2 dakika dinlendirin, ekşi tat dengelensin.", "timerSeconds": 120 }
+    ],
+    "notes": "Bolu kızılcık tarhanası kaynakları + Yemek.com tarhana; soğuk suda açma, kızılcık ekşisi ve naneli yağ doğrulandı"
+  },
+  {
+    "slug": "kongnamul-guk-kore-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "300 gr maş filizini yıkayıp kahverengi uçları ayıklayın." },
+      { "stepNumber": 2, "instruction": "5 su bardağı suyu tencerede kaynatın.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Filizleri ekleyip kapağı kapalı 8 dakika pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 4, "instruction": "Kapağı erken açmayın, filizin kokusu çorbaya ağır geçmesin." },
+      { "stepNumber": 5, "instruction": "1 diş sarımsak ve taze soğanı ekleyip 1 dakika ısıtın.", "timerSeconds": 60 }
+    ],
+    "notes": "Maangchi kongnamul-guk + Korean Bapsang soybean sprout soup; filizi kapaklı pişirme, sarımsak ve taze soğan finali doğrulandı"
+  },
+  {
+    "slug": "konya-bamya-corbasi",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "80 gr kuru bamyayı limonlu suda 10 dakika haşlayın.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Bamyayı süzüp iplerinden ayırın, dağılmasın diye kenara alın." },
+      { "stepNumber": 3, "instruction": "300 gr dana etini 1 yemek kaşığı salçayla 8 dakika kavurun.", "timerSeconds": 480 },
+      { "stepNumber": 4, "instruction": "4 su bardağı sıcak su ekleyip eti 25 dakika pişirin.", "timerSeconds": 1500 },
+      { "stepNumber": 5, "instruction": "Bamyayı ve 3 yemek kaşığı limon suyunu katıp 15 dakika pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 6, "instruction": "Bamyalar parçalanmasın diye çorbayı kaşıkla karıştırmadan servis edin." }
+    ],
+    "notes": "Konya bamya çorbası kaynakları + Yemek.com bamya çorbası; kuru bamyayı limonlu haşlama, etli salçalı baz doğrulandı"
+  },
+  {
+    "slug": "kulak-corbasi",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "2 su bardağı un ve 1 yumurtayı sert hamur olana kadar yoğurun.", "timerSeconds": 300 },
+      { "stepNumber": 2, "instruction": "Hamuru 15 dakika dinlendirin, açarken yırtılmasın.", "timerSeconds": 900 },
+      { "stepNumber": 3, "instruction": "Hamuru küçük kareler kesin ve 200 gr kıymalı harçla kapatın." },
+      { "stepNumber": 4, "instruction": "Mantıları ve 1 su bardağı nohudu 5 su bardağı suda 20 dakika haşlayın.", "timerSeconds": 1200 },
+      { "stepNumber": 5, "instruction": "1.5 su bardağı yoğurdu sıcak suyla ılıtıp tencereye ekleyin, kesilmesin." },
+      { "stepNumber": 6, "instruction": "2 yemek kaşığı tereyağını nane ile 1 dakika kızdırıp çorbaya gezdirin.", "timerSeconds": 60 }
+    ],
+    "notes": "Kulak çorbası kaynakları + Yemek.com mantı çorbası; sert hamur, minik mantı, nohut ve yoğurtlu final doğrulandı"
+  },
+  {
+    "slug": "kursun-asi",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "200 gr kıyma ve yarım su bardağı ince bulguru 3 dakika yoğurun.", "timerSeconds": 180 },
+      { "stepNumber": 2, "instruction": "Harçtan küçük köfteler yuvarlayın, pişerken dağılmasın diye sıkıştırın." },
+      { "stepNumber": 3, "instruction": "1 su bardağı nohut ve doğranmış havucu 20 dakika pişirin.", "timerSeconds": 1200 },
+      { "stepNumber": 4, "instruction": "Köfteleri ekleyip 12 dakika kaynatın.", "timerSeconds": 720 },
+      { "stepNumber": 5, "instruction": "Tuzunu ayarlayın ve limon suyunu ocak kapalıyken ekleyin." }
+    ],
+    "notes": "Kurşun aşı kaynakları + Yemek.com topalak; bulgurlu köfte, nohut-havuç bazı ve limon finali doğrulandı"
+  },
+  {
+    "slug": "kuru-domatesli-firik-corbasi-gaziantep-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "6 kuru domatesi sıcak suda 10 dakika yumuşatın.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "1 soğanı 4 dakika çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "1 su bardağı firik ve 5 su bardağı suyu ekleyin." },
+      { "stepNumber": 4, "instruction": "Firiği orta ateşte 15 dakika pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 5, "instruction": "Kuru domatesleri doğrayıp ekleyin ve 8 dakika kaynatın.", "timerSeconds": 480 },
+      { "stepNumber": 6, "instruction": "Nane ekleyip 5 dakika dinlendirin, firik dumanlı tadını versin.", "timerSeconds": 300 }
+    ],
+    "notes": "Gaziantep firik kaynakları + Yemek.com kuru domates; kuru domatesi yumuşatma, firik pişirme ve nane finali doğrulandı"
+  },
+  {
+    "slug": "kuru-kayisili-bulgur-corbasi-erzurum-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "8 kuru kayısıyı ince doğrayın, yarım su bardağı bulguru yıkayın." },
+      { "stepNumber": 2, "instruction": "1 soğanı 15 gr tereyağında 3 dakika çevirin.", "timerSeconds": 180 },
+      { "stepNumber": 3, "instruction": "Kayısı ve bulguru ekleyip 1 litre su dökün." },
+      { "stepNumber": 4, "instruction": "Çorbayı orta ateşte 15 dakika pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 5, "instruction": "Karabiberle bitirip 5 dakika dinlendirin, kayısı tatlılığı suya geçsin.", "timerSeconds": 300 }
+    ],
+    "notes": "Erzurum bulgur çorbası kaynakları + Anadolu kayısılı çorba kaynakları; bulgur süresi ve kuru kayısı final dengesi doğrulandı"
+  },
+  {
+    "slug": "kurut-asi-igdir-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "2 adet kurutu 1 su bardağı ılık suda 15 dakika bekletin.", "timerSeconds": 900 },
+      { "stepNumber": 2, "instruction": "Yarım su bardağı mercimeği 5 su bardağı suda 12 dakika haşlayın.", "timerSeconds": 720 },
+      { "stepNumber": 3, "instruction": "Kurutlu suyu süzerek tencereye ekleyin, pütür kalmasın." },
+      { "stepNumber": 4, "instruction": "1 su bardağı erişteyi ekleyip 10 dakika pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 5, "instruction": "Nane ekleyip kısık ateşte 2 dakika ısıtın.", "timerSeconds": 120 }
+    ],
+    "notes": "Iğdır kurut aşı kaynakları + Doğu Anadolu erişte çorbası; kurutu eritme, mercimek ve erişte pişirme doğrulandı"
+  },
+  {
+    "slug": "kurutlu-semizotu-corbasi-erzincan-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "0.75 su bardağı buğdayı yıkayıp 5 su bardağı suda 15 dakika haşlayın.", "timerSeconds": 900 },
+      { "stepNumber": 2, "instruction": "150 gr semizotunu iri doğrayın, 80 gr kurutu ılık suda ezin." },
+      { "stepNumber": 3, "instruction": "Semizotunu tencereye ekleyip 5 dakika pişirin.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "Kurutlu suyu süzerek ekleyin, pütür çorbaya geçmesin." },
+      { "stepNumber": 5, "instruction": "Çorbayı kısık ateşte 5 dakika ısıtın, kurut kesilmesin.", "timerSeconds": 300 }
+    ],
+    "notes": "Erzincan kurut çorbası kaynakları + Semizotu çorbası kaynakları; kurutu eritme, buğday ve semizotu sırası doğrulandı"
+  },
+  {
+    "slug": "kuzukulakli-patates-corbasi-polonya-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "2 patatesi küp doğrayın, 1 demet kuzukulağını ince kıyın." },
+      { "stepNumber": 2, "instruction": "1 soğanı orta ateşte 4 dakika çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Patates ve 5 su bardağı suyu ekleyip 15 dakika pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 4, "instruction": "Kuzukulağını ekleyip 8 dakika kaynatın.", "timerSeconds": 480 },
+      { "stepNumber": 5, "instruction": "Patatesin bir kısmını ezin, ekşi ot tadı dengelensin diye 5 dakika dinlendirin.", "timerSeconds": 300 }
+    ],
+    "notes": "Polish sorrel soup kaynakları + Everyday Delicious sorrel soup; patatesli baz, kuzukulağını son ekleme ve ekşi denge doğrulandı"
+  },
+  {
+    "slug": "lablabi",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "2 su bardağı pişmiş nohudu sarımsak ve kimyonla tencereye alın." },
+      { "stepNumber": 2, "instruction": "Nohudu 4 su bardağı suda 12 dakika kaynatın.", "timerSeconds": 720 },
+      { "stepNumber": 3, "instruction": "4 dilim bayat ekmeği kaselere küçük parçalar halinde paylaştırın." },
+      { "stepNumber": 4, "instruction": "Sıcak nohutlu suyu ekmeklerin üstüne dökün, ekmek eşit yumuşasın." },
+      { "stepNumber": 5, "instruction": "2 yemek kaşığı limon suyunu gezdirip sıcak servis edin." }
+    ],
+    "notes": "Mediterranean Dish lablabi + SBS Food lablabi; nohut-kimyon bazı, bayat ekmek üstüne dökme ve limon finali doğrulandı"
+  },
+  {
+    "slug": "lebeniye-corbasi",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Yarım su bardağı pirinç ve 1 su bardağı nohudu 5 su bardağı suda 20 dakika haşlayın.", "timerSeconds": 1200 },
+      { "stepNumber": 2, "instruction": "200 gr kıymadan küçük köfteler yapın." },
+      { "stepNumber": 3, "instruction": "Köfteleri tencereye ekleyip 8 dakika pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 4, "instruction": "2 su bardağı yoğurt ve 1 yumurtayı çırpın." },
+      { "stepNumber": 5, "instruction": "Terbiyeyi sıcak sudan 2 kepçeyle ılıtın, yoğurt kesilmesin." },
+      { "stepNumber": 6, "instruction": "Terbiyeyi tencereye ekleyip 10 dakika kısık ateşte pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 7, "instruction": "Tereyağında naneyi 1 dakika kızdırıp çorbaya gezdirin.", "timerSeconds": 60 }
+    ],
+    "notes": "Yemek.com lebeniye + Nefis Yemek Tarifleri lebeniye; pirinç-nohut bazı, köfte ve yoğurt terbiyesi ılıtma doğrulandı"
+  },
+  {
+    "slug": "leek-and-potato-soup-british",
+    "type": "CORBA",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "3 pırasayı ince, 3 patatesi küçük küp doğrayın." },
+      { "stepNumber": 2, "instruction": "Pırasayı 25 gr tereyağında 6 dakika renk almadan yumuşatın.", "timerSeconds": 360 },
+      { "stepNumber": 3, "instruction": "Patates ve 1 litre sebze suyunu ekleyin." },
+      { "stepNumber": 4, "instruction": "Çorbayı 18 dakika kısık ateşte pişirin.", "timerSeconds": 1080 },
+      { "stepNumber": 5, "instruction": "Blenderdan 1 dakika geçirin.", "timerSeconds": 60 },
+      { "stepNumber": 6, "instruction": "120 ml kremayı ekleyip 2 dakika ısıtın, kaynatmayın.", "timerSeconds": 120 },
+      { "stepNumber": 7, "instruction": "Karabiberle servis edin." }
+    ],
+    "notes": "BBC Good Food leek potato soup + Jamie Oliver leek soup; pırasayı renk almadan pişirme, patates ve krema finali doğrulandı"
+  },
+  {
+    "slug": "limonlu-kirmizi-mercimek-corbasi-orta-dogu-usulu",
+    "type": "CORBA",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "1 soğanı yemeklik doğrayın, 1 su bardağı kırmızı mercimeği yıkayın." },
+      { "stepNumber": 2, "instruction": "Soğanı orta ateşte 3 dakika çevirin.", "timerSeconds": 180 },
+      { "stepNumber": 3, "instruction": "Yarım çay kaşığı kimyonu ekleyip 30 saniye karıştırın.", "timerSeconds": 30 },
+      { "stepNumber": 4, "instruction": "Mercimek ve 5 su bardağı suyu ekleyip 16 dakika pişirin.", "timerSeconds": 960 },
+      { "stepNumber": 5, "instruction": "Çorbayı blenderdan geçirin ve 3 dakika dinlendirin.", "timerSeconds": 180 },
+      { "stepNumber": 6, "instruction": "2 yemek kaşığı limon suyunu ocak kapalıyken ekleyin, asidi parlak kalsın." }
+    ],
+    "notes": "BBC Good Food lentil soup + Mediterranean Dish red lentil soup; kimyonlu mercimek bazı, 16 dk pişirme ve limonu sonda ekleme doğrulandı"
+  }
+]

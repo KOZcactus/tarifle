@@ -29,6 +29,12 @@ import {
   appendIngredient,
 } from "@/components/ai/PantryHistoryChips";
 import { pushToPantryHistory } from "@/lib/ai/pantry-history";
+import {
+  addMenuPlanFavorite,
+  readMenuPlanFavorites,
+  removeMenuPlanFavorite,
+  type MenuPlanFavorite,
+} from "@/lib/ai/menu-plan-favorites";
 
 type View = "form" | "preview";
 
@@ -85,6 +91,9 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
   const [maxDinner, setMaxDinner] = useState<number | undefined>(undefined);
   const [macroPreference, setMacroPreference] = useState<MacroPreference>("none");
   const [historyBump, setHistoryBump] = useState(0);
+  const [favorites, setFavorites] = useState<MenuPlanFavorite[]>([]);
+  const [saveFavOpen, setSaveFavOpen] = useState(false);
+  const [saveFavName, setSaveFavName] = useState("");
 
   function toggleCuisine(code: CuisineCode) {
     setSelectedCuisines((prev) =>
@@ -116,6 +125,52 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
     if (open && !dlg.open) dlg.showModal();
     if (!open && dlg.open) dlg.close();
   }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setFavorites(readMenuPlanFavorites());
+  }, [open]);
+
+  function applyFavorite(fav: MenuPlanFavorite) {
+    const p = fav.payload;
+    setIngredientsText(p.ingredients.join(", "));
+    setAssumeStaples(p.assumePantryStaples);
+    setPersonCount(p.personCount);
+    setDietSlug(p.dietSlug);
+    setSelectedCuisines(
+      p.cuisines.filter((c): c is CuisineCode =>
+        (CUISINE_CODES as readonly string[]).includes(c),
+      ),
+    );
+    setMaxBreakfast(p.maxBreakfastMinutes);
+    setMaxLunch(p.maxLunchMinutes);
+    setMaxDinner(p.maxDinnerMinutes);
+    setMacroPreference(p.macroPreference);
+  }
+
+  function confirmSaveFavorite() {
+    const name = saveFavName.trim() || t("favoriteDefaultName");
+    const ingredients = splitCsv(ingredientsText);
+    const next = addMenuPlanFavorite(name, {
+      ingredients,
+      assumePantryStaples: assumeStaples,
+      personCount,
+      dietSlug,
+      cuisines: selectedCuisines,
+      maxBreakfastMinutes: maxBreakfast,
+      maxLunchMinutes: maxLunch,
+      maxDinnerMinutes: maxDinner,
+      macroPreference,
+    });
+    setFavorites(next);
+    setSaveFavName("");
+    setSaveFavOpen(false);
+  }
+
+  function handleRemoveFavorite(id: string) {
+    setFavorites(removeMenuPlanFavorite(id));
+  }
 
   function reset() {
     setView("form");
@@ -285,6 +340,41 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
 
           {view === "form" && (
             <div className="space-y-4">
+              {favorites.length > 0 && (
+                <div className="rounded-md border border-surface-muted bg-surface-muted/30 px-3 py-2">
+                  <div className="mb-1 flex items-center justify-between text-xs">
+                    <span className="font-medium text-text">
+                      {t("favoritesLabel")}
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {favorites.map((fav) => (
+                      <div
+                        key={fav.id}
+                        className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/5 pl-2.5 pr-1 py-0.5 text-xs text-primary"
+                      >
+                        <button
+                          type="button"
+                          onClick={() => applyFavorite(fav)}
+                          className="font-medium hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                          aria-label={t("favoriteApplyAria", { name: fav.name })}
+                        >
+                          {fav.name}
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => handleRemoveFavorite(fav.id)}
+                          className="rounded-full px-1 text-primary/60 hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                          aria-label={t("favoriteRemoveAria", { name: fav.name })}
+                        >
+                          ✕
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <PresetChips mode="menu" onApply={applyMenuPreset} />
               <div>
                 <label
@@ -579,6 +669,18 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
                   >
                     {isGenerating ? t("generating") : t("regenerate")}
                   </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSaveFavName("");
+                      setSaveFavOpen(true);
+                    }}
+                    disabled={isApplying || isGenerating}
+                    className="rounded-md border border-surface-muted bg-surface px-4 py-2 text-sm font-medium text-text-muted hover:bg-surface-muted disabled:cursor-not-allowed disabled:opacity-60"
+                    aria-label={t("favoriteSaveAria")}
+                  >
+                    ⭐ {t("favoriteSaveButton")}
+                  </button>
                 </div>
                 <div className="flex gap-2">
                   <button
@@ -602,6 +704,44 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
             </div>
           )}
         </div>
+
+        {saveFavOpen && (
+          <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/30 p-4">
+            <div className="w-full max-w-sm rounded-xl border border-surface-muted bg-surface p-4 shadow-lg">
+              <h3 className="text-sm font-semibold text-text">
+                {t("favoriteSavePrompt")}
+              </h3>
+              <input
+                type="text"
+                autoFocus
+                value={saveFavName}
+                onChange={(e) => setSaveFavName(e.target.value)}
+                maxLength={60}
+                placeholder={t("favoriteSavePlaceholder")}
+                className="mt-2 w-full rounded-md border border-surface-muted bg-surface px-3 py-2 text-sm text-text focus:border-primary focus:outline-none"
+              />
+              <div className="mt-3 flex justify-end gap-2">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSaveFavOpen(false);
+                    setSaveFavName("");
+                  }}
+                  className="rounded-md px-3 py-1.5 text-sm text-text-muted hover:bg-surface-muted"
+                >
+                  {t("cancel")}
+                </button>
+                <button
+                  type="button"
+                  onClick={confirmSaveFavorite}
+                  className="rounded-md bg-primary px-3 py-1.5 text-sm font-medium text-white hover:bg-primary/90"
+                >
+                  {t("favoriteSaveConfirm")}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </dialog>
     </>
   );

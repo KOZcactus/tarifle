@@ -1923,7 +1923,7 @@ son 3 batch'te (35a/35b/36a) uygulandı. Pre-30a dönemindeki 2363 tarif
 kurala uygun hale getirmek. Scope dar değil, geniş — en doğru tarifleri
 üretmek için.
 
-### 15.1 Amaç ve prensip
+### 15.1 Amaç ve prensip, A+ kalite standardı (oturum 18 Retrofit-01 dersi)
 
 Mevcut tariflerin **step sayısını artır + kaliteli detaylandır**, ama
 orijinal malzeme ve oranları koru. Eğer web kaynağı kontrolünde mevcut
@@ -1933,6 +1933,27 @@ Temel prensip: **tarif içeriği DAHA DOĞRU, DAHA DETAYLI ve DAHA
 EĞİTİCİ olur.** Şu anki kısa step'ler kullanıcıya yetersiz rehberlik
 veriyor; "sebzeleri kavurun" gibi tek adım 3-4 ayrı adıma bölünür
 (doğra + ısıt + kavur + baharat ekle).
+
+**A+ KALİTE BAROMETRESİ (Retrofit-01 B+ notundan yukarı çıkmak için):**
+
+Retrofit-01 teslim audit'inde şu 3 sorun yakalandı, Retrofit-02+
+batch'lerde TEKRARLANMAYACAK:
+
+1. ❌ **Step sayısı çeşitlilik 0** — 100 tarifin 100'ü tam 4 step. Codex
+   "min yeter" yaklaşımı seçmiş. **A+ kuralı:** her batch içinde step
+   sayısı en az **3 farklı değer** kullan (§15.5.1 dağılım tablosu).
+2. ❌ **`notes` alanı 0/100** — web kaynağı doğrulama izi yok. Chat'te
+   "BBC Good Food baktım" demek yetmez. **A+ kuralı:** her item'da
+   `notes` DOLU (§15.6.2), min 2 kaynak + doğrulanan boyut (süre /
+   sıcaklık / oran / sıra).
+3. ❌ **Muğlak ifadeler** ("kısa süre", "hafif dokulu", "iyice",
+   "yumuşayana kadar" gibi) — somut olmayan kelime. **A+ kuralı:** bu
+   kelimeler GREP ile yakalanır (§15.7.3 genişletilmiş yasak liste).
+   Yerine ölçü + zaman + görsel sinyal.
+
+**A+ = 4 temel:** doğru (web kaynak) · detaylı (adım + ölçü + zaman +
+sıcaklık + görsel sinyal) · çeşitli (step sayısı + ifade varyasyonu) ·
+eğitici (kritik nokta + neden-sonuç açıklama).
 
 ### 15.2 Girdi (Kerem sana ne verir)
 
@@ -2022,6 +2043,29 @@ Alanlar:
 **Hard cap: hiçbir tarif 10 step'i geçemez** (SOS/ICECEK için 6).
 Gereksiz şişirme yasak — ideal aralıkta tut, max'a dayanmak zorunda değilsin.
 
+### 15.5.1 Step sayısı çeşitlilik zorunluluğu (A+ kuralı)
+
+**Bir batch içinde step sayısı tek değerde kilitlenmez.** Retrofit-01'de
+100 tarif için 100'ü 4-step oldu — bu B+ notuna kadar düşürüyor.
+Gerçek tarifler farklı detay seviyeleri gerektirir.
+
+**Dağılım zorunluluğu (her batch için):**
+
+| Type | Dağılım önerisi (100 tarif baz) |
+|---|---|
+| APERATIF / ATISTIRMALIK | ≥ 30% **4-step**, ≥ 40% **5-step**, ≥ 20% **6-step**, isteğe bağlı 7-8 |
+| KOKTEYL | ≥ 50% **4-step**, ≥ 40% **5-step**, isteğe bağlı 6 |
+| ICECEK / SOS | ≥ 50% **3-step**, ≥ 30% **4-step**, isteğe bağlı 5-6 |
+| SALATA / KAHVALTI | ≥ 20% **5-step**, ≥ 50% **6-step**, ≥ 20% **7-step**, isteğe bağlı 8 |
+| YEMEK / CORBA / TATLI | ≥ 15% **5-step**, ≥ 40% **6-step**, ≥ 25% **7-step**, ≥ 15% **8+-step** |
+
+**Karar mantığı per-recipe:** CSV'deki `currentStepCount` + tarifin
+karmaşıklığı + web kaynaktaki referans step sayısı. Basit humus = 4,
+karides dolgulu acarajé = 5-6, etli güveç = 7-8.
+
+**Self-check:** §15.9 madde 10'da Node script batch dağılımını ölçer,
+tek değer kilidi varsa FAIL. Min 3 farklı step sayısı zorunlu.
+
 ### 15.6 Doğruluk — web kaynağı kontrolü (ZORUNLU)
 
 Her tarif için **en az 2 güvenilir kaynak** kontrol et ve tariften emin ol.
@@ -2064,20 +2108,129 @@ Mevcut step'te **ciddi hata** bulursan (ör: "100°C fırında 10 dk" → aslın
 **Küçük drift** (ör: step'te "tuz" eksik, malzeme listesinde var):
 step'i genişletirken doğal ekle, notes'a yazmaya gerek yok.
 
-### 15.7 Step kalite kuralları
+### 15.6.2 Notes alanı ZORUNLU (A+ kuralı, Retrofit-01 dersi)
+
+**Her item'da `notes` alanı DOLU** (empty string veya undefined yasak).
+Chat'te "BBC Good Food baktım" demek yetmez — her tarifin JSON'ında
+hangi kaynağa bakıldığı + doğrulanan aspekt yazılı olsun. Audit için
+kritik.
+
+**Format (tek satır, 80-200 karakter):**
+```
+{kaynak1} + {kaynak2}; {dogrulanan_aspekt1}, {dogrulanan_aspekt2}; {degisiklik_varsa}
+```
+
+**Örnekler:**
+```json
+"notes": "BBC Good Food arancini + Giallo Zafferano; pirinç haşlama süresi 18 dk, iç doldurma sırası; 150°C -> 180°C düzeltildi (CSV'de yanlış sıcaklık)"
+```
+```json
+"notes": "Serious Eats hummus + Yemek.com klasik; tahin-nohut oranı 1:3, limon miktarı; oran eşit, değişiklik yok"
+```
+```json
+"notes": "Maangchi kimchijeon + Korean Bapsang; hamur kıvamı, tavada pişirme süresi 3dk/yüz; yeni step sırası = çırpma + dinlendirme ayrıldı"
+```
+
+**Minimum içerik:**
+- ✅ 2+ kaynak adı (soyadı + site veya site + site)
+- ✅ En az 1 doğrulanan aspekt (süre / sıcaklık / oran / sıra / teknik)
+- ✅ Değişiklik yaptıysan açıkla ("yeni step 3 eklendi: dinlendirme"),
+  yoksa "oran eşit, değişiklik yok" veya "sıra korundu, sadece detay arttı"
+
+**Yanlış format (FAIL):**
+```json
+"notes": "web kaynaklari kontrol edildi"   // çok belirsiz
+"notes": "BBC Good Food"                   // tek kaynak + aspekt yok
+"notes": ""                                // boş string, undefined sayılır
+```
+
+Self-check §15.9 madde 11 her item'da `notes.length >= 40` kontrol eder.
+
+### 15.7 Step kalite kuralları (A+ standardı)
 
 Her step şöyle olmalı:
 
-✅ **Somut eylem verbi** (doğra, kavur, ezle, haşla, mühürle, süz, karıştır, dinlendir, şekillendir)
-✅ **Ölçü veya zaman** mantıklıysa ("2 yemek kaşığı yağ", "5 dakika", "orta ateşte")
-✅ **Sıcaklık varsa eklenmiş** ("180°C önceden ısıtılmış fırın", "kısık ateş", "orta ateş", "kızgın yağ")
-✅ **Görsel/duyusal işaret** eklenebilir ("kenarlar altın rengi olana kadar", "salgısını çekene kadar", "köpük bırakana kadar")
+✅ **Somut eylem verbi** (doğra, kavur, ezle, haşla, mühürle, süz, karıştır, dinlendir, şekillendir, kızart, deller, form ver)
+✅ **Ölçü** gerektiren yerde YAZILI ("2 yemek kaşığı yağ", "1 su bardağı su", "3 diş sarımsak")
+✅ **Süre** gerektiren yerde YAZILI ("5 dakika", "30 saniye", "1 gece 8 saat")
+✅ **Sıcaklık** gerektiren yerde YAZILI ("180°C önceden ısıtılmış fırın", "kısık ateş", "orta ateş", "kızgın yağ 170°C", "soğuk su")
+✅ **Görsel/duyusal sinyal** eklenmeli pişirme/hazırlama step'lerinde ("kenarlar altın olana kadar", "salgısını çekene kadar", "kabaran şekilde", "parmakla basınca geri gelene kadar", "köpük bırakana kadar", "yüzeyi çatlayana kadar")
 ✅ **5-40 kelime arası** (çok kısa = yetersiz, çok uzun = karmaşık)
 
 ❌ **"pişirin" tek başına** yeterli değil (nasıl, kaç dk, hangi ateş, görsel sinyal?)
 ❌ **"hazırlayın" tek başına** belirsiz (neyi nasıl?)
 ❌ **"karıştırın" tek başına** belirsiz (neyle, ne kadar?)
 ❌ **"servis edin" tek başına** zayıf (neyle, sıcak mı soğuk mı, yan tabak?)
+
+### 15.7.2 Pişirme step'inde sıcaklık + timer ZORUNLU (A+ kuralı)
+
+**Fırın / ocak / tava / ızgara / derin yağ kullanan her step'te:**
+- ✅ Sıcaklık yazılı (°C veya "kısık/orta/yüksek ateş" + "kızgın yağ" gibi nitel)
+- ✅ `timerSeconds` JSON alanı DOLU (tahmini süre saniye cinsinden)
+
+**Dinlendirme / ıslatma / mayalanma step'inde:** `timerSeconds` zorunlu
+(1800 = 30 dk, 28800 = 8 saat gece ıslatma gibi).
+
+**Hazırlama step'inde (doğrama, karıştırma hamur yoğurma):** timer
+opsiyonel ama mantıklıysa yaz (8 dakika yoğurma = 480).
+
+**Ekleme/süsleme/son servis step'inde:** timer gerekmez, null OK.
+
+Self-check §15.9 madde 12 pişirme-verbi içeren step'lerin `timerSeconds`
+alanının null OLMADIĞINI kontrol eder.
+
+### 15.7.3 Muğlak ifade yasak listesi (genişletildi, Retrofit-01 dersi)
+
+Bu kelimeler tek başına YASAK — yerine somut ölçü + zaman + görsel.
+Self-check §15.9 madde 13 grep ile yakalar.
+
+| Yasak kelime/ifade | Neden | Yerine |
+|---|---|---|
+| "kısa süre" | Belirsiz | "3-4 dakika" |
+| "bir süre" | Belirsiz | "8 dakika" |
+| "biraz" | Belirsiz | "1 yemek kaşığı" |
+| "biraz bekle" | Belirsiz | "10 dakika dinlendir" |
+| "hafif" / "hafifçe" (tek başına) | Belirsiz | "2 dakika hafifçe pembeleşene kadar" |
+| "iyice" | Belirsiz | "elinize yapışmayana kadar" veya "5 dakika" |
+| "uygun kıvam" | Belirsiz | "kaşıktan ağır akan kıvam" |
+| "yumuşayana kadar" (tek başına) | Kısmen belirsiz | "20 dakika yumuşayana kadar" |
+| "azar azar" (tek başına) | Kısmen belirsiz | "1 yemek kaşığı ekleyip karıştırarak" |
+| "dilediğin kadar" | Belirsiz | Brief'te ölçü ver veya "ihtiyaca göre" |
+| "yeterince" | Belirsiz | Ölçü ver |
+| "uygun ölçüde" | Belirsiz | Ölçü ver |
+| "bol" (tek başına) | Kısmen belirsiz | "3 litre su" veya "kaplı yağ" |
+
+**Not:** "hafifçe pembeleşene kadar 5 dakika kavurun" OK (hafif kelimesi
+somut süre + görsel ile dengelenmiş). "hafif dokulu" tek başına FAIL —
+dokulu kelimesi net değil.
+
+### 15.7.4 Kritik nokta / neden-sonuç notu (A+ eğitici yön)
+
+Tarifin başarısı için kritik bir detay varsa, step içinde kısa bir
+neden-sonuç ekle (parantez veya virgülle). Kullanıcı niye bu adım
+önemli anlamalı:
+
+✅ "Nohutları bir gece ıslatın, kabukları hızlı çıksın diye." (neden)
+✅ "Hamuru 20 dakika dinlendirin, gluten gevşeyip açılması kolaylaşır."
+✅ "Yoğurt ve eti karıştırmadan önce eti soğutun, yoğurt kesilmesin."
+✅ "Tereyağını eklemeden ocağı kapatın, beurre monté kesilmesin."
+
+**Her tarifte minimum 1 kritik nokta** step'lerinden birinin içinde
+belirt (zorunlu değil ama A+ için beklenen). Basit tariflerde servis
+tavsiyesi de kabul: "Sıcak servis edin, soğuyunca dokusu kayar."
+
+### 15.7.5 Ingredient miktar tekrarı (mantıklı yerlerde)
+
+Step içinde ingredient'a atıfta bulunurken **miktarı da hatırlat**,
+kullanıcı malzeme listesine bakmadan akışı takip edebilsin.
+
+✅ "**2 yemek kaşığı zeytinyağını** orta ateşte ısıtıp 1 adet ince
+   doğranmış soğanı 5 dakika pembeleştirin."
+✅ "**400 gr haşlanmış nohutu** robotta 30 saniye pütürsüz çekin."
+
+Zorunlu değil ama step uzunluğu 10-25 kelime ise ingredient miktarını
+tekrar hatırlatmak A+ kalitenin göstergesi. Kısa basit step'lerde
+(ör. "Soğanı doğrayın.") gereksiz.
 
 ### 15.7.1 Step-split örnekleri (eski → yeni)
 
@@ -2175,9 +2328,85 @@ grep -Ei '"(pişirin|hazırlayın|karıştırın|servis edin)\.?"' $FILE && echo
 
 # 9) Slug CSV ile eşleşiyor mu (çıktıda CSV'de olmayan slug yok)
 # (Claude apply sırasında ayrıca kontrol eder)
+
+# 10) A+ KURALI: Step sayısı çeşitlilik zorunluluğu (§15.5.1)
+# Bir batch içinde min 3 farklı step sayısı kullanılmalı.
+node -e "
+const j=JSON.parse(require('fs').readFileSync('$FILE','utf8'));
+const dist=j.reduce((a,r)=>{a[r.newSteps.length]=(a[r.newSteps.length]||0)+1;return a;},{});
+const uniq=Object.keys(dist).length;
+console.log('Step dist:',JSON.stringify(dist),'uniq:',uniq);
+if(uniq<3){console.log('FAIL: hepsi aynı step sayısında, varyasyon gerek');process.exit(1)}
+// Max oran herhangi tek değerin %60'ı geçmemeli
+const max=Math.max(...Object.values(dist));
+if(max/j.length>0.6){console.log('FAIL: tek değer dominant',max+'/'+j.length);process.exit(1)}
+"
+
+# 11) A+ KURALI: notes ZORUNLU (§15.6.2)
+# Her item'da notes min 40 karakter dolu olsun.
+node -e "
+const j=JSON.parse(require('fs').readFileSync('$FILE','utf8'));
+const miss=j.filter(r=>!r.notes||r.notes.trim().length<40);
+console.log('Notes eksik/kısa:',miss.length);
+miss.slice(0,5).forEach(r=>console.log('  -',r.slug,'=',JSON.stringify(r.notes||'').slice(0,50)));
+if(miss.length>0)process.exit(1)
+"
+
+# 12) A+ KURALI: Pişirme step'inde timerSeconds ZORUNLU (§15.7.2)
+# Pişirme verbi içeren step'te timerSeconds null ise FAIL.
+node -e "
+const j=JSON.parse(require('fs').readFileSync('$FILE','utf8'));
+const COOK_VERBS=/\\b(pi(ş|s)ir|kav(u|û)r|haşla|mühürle|kızart|mayala|fırınla|ızgara|pöhle|közle|karamelize|eritin|dinlendirin)/i;
+const fails=[];
+j.forEach(r=>r.newSteps.forEach(s=>{
+  if(COOK_VERBS.test(s.instruction) && (s.timerSeconds===null||s.timerSeconds===undefined)){
+    fails.push(r.slug+' step'+s.stepNumber+': '+s.instruction.slice(0,60));
+  }
+}));
+console.log('Timer eksik pişirme step:',fails.length);
+fails.slice(0,5).forEach(f=>console.log('  -',f));
+if(fails.length>0)process.exit(1)
+"
+
+# 13) A+ KURALI: Muğlak ifade yasağı (§15.7.3 genişletilmiş liste)
+node -e "
+const j=JSON.parse(require('fs').readFileSync('$FILE','utf8'));
+// Standalone veya sadece virgül/nokta etrafında; somut ölçü YOKKEN yasak.
+// Basit yaklaşım: kelimeyi tespit et + aynı step içinde sayı/°C/dakika/saniye yoksa FAIL.
+const VAGUE=['kısa süre','bir süre','biraz bekle','uygun kıvam','dilediğin kadar','yeterince','uygun ölçüde','iyice'];
+const fails=[];
+j.forEach(r=>r.newSteps.forEach(s=>{
+  const txt=s.instruction.toLocaleLowerCase('tr');
+  for(const v of VAGUE){
+    if(txt.includes(v)){
+      // sayı veya ölçü birimi var mı kontrol, varsa pas geç
+      const hasMeasure=/\d|°C|dakika|saniye|gram|litre|adet|su bardağ|yemek kaşığ/i.test(s.instruction);
+      if(!hasMeasure){ fails.push(r.slug+' step'+s.stepNumber+': '+v); break; }
+    }
+  }
+}));
+console.log('Muglak ifade:',fails.length);
+fails.slice(0,8).forEach(f=>console.log('  -',f));
+if(fails.length>0)process.exit(1)
+"
+
+# 14) A+ KURALI: 100% notes dolu (çift kontrol, madde 11 için güvence)
+node -e "
+const j=JSON.parse(require('fs').readFileSync('$FILE','utf8'));
+const empty=j.filter(r=>!r.notes).length;
+if(empty>0){console.log('FAIL:',empty,'item notes undefined');process.exit(1)}
+console.log('Notes dolu: 100%')
+"
 ```
 
 Hepsi PASS ise teslim. Bir tanesi FAIL ise sorunu gider, tekrar koş.
+
+**A+ KALITE GATE (özet):**
+- Madde 10: step sayısı varyasyon (min 3 distinct, tek değer ≤ %60)
+- Madde 11 + 14: notes zorunlu, min 40 char
+- Madde 12: pişirme step'inde timer zorunlu
+- Madde 13: genişletilmiş muğlak yasak liste
+Bu 4 gate Retrofit-01 B+ notunu A+ çıkarır.
 
 ### 15.10 Kurala uyan tarifler (DOKUNMA)
 

@@ -38,15 +38,34 @@ export function CookedButton({ recipeId, defaultServings }: CookedButtonProps) {
         });
         return;
       }
-      const { decisions, notFoundRecipeIngredients, skippedUnknownQuantity } = res.data;
+      const { decisions, notFoundRecipeIngredients, skippedUnknownQuantity, skippedIncompatibleUnit } =
+        res.data;
       if (decisions.length === 0) {
+        // Düşülecek decision yok ama skip edilen var (null quantity veya
+        // unit uyumsuz) → kullanıcıya net anlat. Yoksa "bulunamadı" fallback.
+        const skipParts: string[] = [];
+        if (skippedUnknownQuantity.length > 0) {
+          skipParts.push(
+            `${skippedUnknownQuantity.length} malzeme dolabında var ama miktarsız, atlandı`,
+          );
+        }
+        if (skippedIncompatibleUnit.length > 0) {
+          skipParts.push(
+            `${skippedIncompatibleUnit.length} malzeme birim uyumsuz, atlandı`,
+          );
+        }
+        if (notFoundRecipeIngredients.length > 0) {
+          skipParts.push(
+            `${notFoundRecipeIngredients.length} malzeme dolabında yok`,
+          );
+        }
+        const base =
+          skippedUnknownQuantity.length > 0 || skippedIncompatibleUnit.length > 0
+            ? "Bu tarifte dolaptan düşülecek sayısal malzeme yok."
+            : "Dolabında eşleşen malzeme bulunamadı, bir şey düşülmedi.";
         setFeedback({
           tone: "info",
-          message:
-            "Dolabında eşleşen malzeme bulunamadı, bir şey düşülmedi. " +
-            (notFoundRecipeIngredients.length > 0
-              ? `Tarifteki ${notFoundRecipeIngredients.length} malzeme dolabında yok.`
-              : ""),
+          message: `${base}${skipParts.length > 0 ? " " + skipParts.join(", ") + "." : ""}`,
         });
         return;
       }

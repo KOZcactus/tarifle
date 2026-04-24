@@ -199,6 +199,91 @@ Bu yasak Mod A (yeni tarif yazma), Mod B (çeviri), Mod C (SEO copy),
 Mod D (editoryal revize), Mod E (step revize), **hepsi için geçerli**.
 Her Mod'un çıktısı senin yazdığın native içerik olmak zorunda.
 
+### ⛔ Mod A `d`/default-helper yasağı (oturum 17 Batch 32b+33a dersi, ZORUNLU)
+
+**`d` veya başka bir "default helper" fonksiyonuyla tarif tanımlamak
+yasaktır.** 32b ve 33a iki kere üst üste şu pattern'le geldi:
+
+```ts
+const d = (title, slug, cuisine, ..., ingredients, steps, tipNote, servingSuggestion) =>
+  r({ title, slug, emoji: "🍽️", prepMinutes: 16, cookMinutes: 24,
+      totalMinutes: 40, servingCount: 4, averageCalories: 310,
+      protein: 13, carbs: 34, fat: 13, tags: ["pratik"],
+      translations: t(enTitle, `${enTitle} uses specific ingredients...`,
+                      deTitle, `${deTitle} nutzt konkrete Zutaten...`),
+      ingredients, steps });
+```
+
+**Sorun**: 50 tarif aynı emoji, aynı süre, aynı kalori, aynı makro,
+aynı tek tag, template EN+DE description. Production'a gidince:
+- "30 dakika altı" filter Hard dolma + Easy smoothie'yi birlikte gösterir
+- AI menü planlayıcı macro target (high-protein/low-cal) yanıltıcı sonuç verir
+- Person count scaling servingCount=4 sabit olduğundan yanlış
+- Arama + SEO 50 tarifi aynı EN cümleyle gösterir
+- Kategori/tag filter "pratik" tek tag yüzünden zayıflar
+
+**Zorunlu pattern** (32a örneği seed-recipes.ts satır ~13880-13934):
+
+```ts
+r({ title: "Otlu Pirinç Frittata",
+    slug: "otlu-pirinc-frittata-yunan-usulu",
+    emoji: "🍳",               // 🥘 dolma, 🍲 çorba, 🥗 salata,
+                                // 🍮 tatlı, 🫓 hamur, 🍷 içecek
+    cuisine: "gr",
+    description: "...",
+    categorySlug: "kahvaltiliklar",
+    type: "KAHVALTI" as const,
+    difficulty: "EASY" as const,
+    prepMinutes: 12,            // TARİFE ÖZEL
+    cookMinutes: 14,            // TARİFE ÖZEL
+    totalMinutes: 26,           // Hard ≥60, Easy ≤30 TUTARLI
+    servingCount: 4,            // 2-8 aralığı TARİFE ÖZEL
+    averageCalories: 226,       // meze ~150, ana 300-500,
+    protein: 11,                // tatlı 200-350, salata 120-200,
+    carbs: 24,                  // çorba 180-300
+    fat: 10,
+    isFeatured: false,
+    tipNote: "...",
+    servingSuggestion: "...",
+    tags: ["vejetaryen", "30-dakika-alti"],  // 2-4 tag TARİFE ÖZEL
+    allergens: ["YUMURTA", "SUT"] as const,
+    translations: t(
+      "Herbed Rice Frittata",
+      "This Greek-style skillet binds dill, parsley, and cooked rice with eggs into a green breakfast pan.",
+      "Kräuter-Reis-Frittata",
+      "Diese Pfanne nach griechischer Art bindet Dill, Petersilie und gekochten Reis mit Eiern zu einem grünen Frühstück."
+    ),
+    ingredients: [...], steps: [...] }),
+```
+
+**11 alan PER-RECIPE zorunlu**: emoji, prepMinutes, cookMinutes,
+totalMinutes, servingCount, averageCalories, protein, carbs, fat,
+tags, EN+DE description.
+
+`t()`, `ing()`, `st()`, `r()` pass-through helper'lar serbest
+(title/description/ingredient/step string'ini object'e çeviren saf
+utility). `d()` gibi **default değer enjekte eden helper YASAK**.
+
+**Self-check (v2 teslim öncesi zorunlu)**:
+```bash
+# Aynı EN description 2+ tarif varsa FAIL
+grep -oP '"en":\s*\{[^}]*description":\s*"[^"]+"' scripts/seed-recipes.ts | \
+  awk -F'description":' '{print $2}' | sort | uniq -c | sort -rn | head -5
+# En yüksek count 1 olmalı.
+
+# Emoji dağılımı: en az 8 farklı
+grep -oP 'emoji:\s*"\S+"' scripts/seed-recipes.ts | sort -u | wc -l
+# ≥8 olmalı batch'te.
+
+# Macro çeşitlilik: averageCalories 200-550 range
+grep -oP 'averageCalories:\s*\d+' scripts/seed-recipes.ts | \
+  awk -F: '{print $2}' | sort -u | wc -l
+# ≥10 farklı değer olmalı 50 tarifte.
+```
+
+Apply tarafı bu kontrolü de yapar, helper pattern detect edilirse
+batch tümüyle REJECT, stash'e alınır, re-teslim beklenir.
+
 ---
 
 ## 1. Proje tanıtımı

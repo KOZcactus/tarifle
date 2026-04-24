@@ -20,6 +20,7 @@ import {
 import { ShareMenu } from "@/components/recipe/ShareMenu";
 import { PresetChips } from "@/components/ai/PresetChips";
 import { PantryHistoryChips } from "@/components/ai/PantryHistoryChips";
+import { LoadPantryButton } from "@/components/ai/LoadPantryButton";
 import { pushToPantryHistory } from "@/lib/ai/pantry-history";
 import {
   readV3FormState,
@@ -91,6 +92,8 @@ interface AiAssistantFormProps {
    *  (Personalization tur 5). Anonymous user veya tercih yoksa
    *  cuisine="tr", dietSlug="", personalized=false. */
   initialPrefs?: InitialPrefs;
+  /** Oturum varsa UserPantry "Dolabımı getir" buton görünür. */
+  isAuthenticated?: boolean;
 }
 
 /**
@@ -113,6 +116,7 @@ const DEFAULT_PREFS: InitialPrefs = { cuisine: "tr", dietSlug: "", personalized:
 export function AiAssistantForm({
   knownIngredients = [],
   initialPrefs = DEFAULT_PREFS,
+  isAuthenticated = false,
 }: AiAssistantFormProps) {
   const t = useTranslations("aiAssistant");
   const tForm = useTranslations("aiAssistant.form");
@@ -717,6 +721,21 @@ export function AiAssistantForm({
           <p className="mt-1.5 text-xs text-text-muted">
             {tForm("ingredientsHelper")}
           </p>
+          <div className="mt-2">
+            <LoadPantryButton
+              isAuthenticated={isAuthenticated}
+              onLoad={(names) => {
+                const currentLower = new Set(
+                  ingredients.map((i) => i.toLocaleLowerCase("tr")),
+                );
+                const fresh = names.filter(
+                  (n) => !currentLower.has(n.toLocaleLowerCase("tr")),
+                );
+                if (fresh.length > 0)
+                  setIngredients([...ingredients, ...fresh]);
+              }}
+            />
+          </div>
           <PantryHistoryChips
             className="mt-2"
             refreshKey={historyBump}

@@ -33,7 +33,8 @@ export type RateLimitScope =
   | "ai-menu-apply"
   | "ingredient-autocomplete"
   | "review-submit"
-  | "recipePhotoUpload";
+  | "recipePhotoUpload"
+  | "pantry-mutation";
 
 interface ScopeConfig {
   /** Human-readable window length for log messages */
@@ -102,6 +103,13 @@ const SCOPE_CONFIG: Record<RateLimitScope, ScopeConfig> = {
     // cache server-side var ama yine de bot korumasi gerek.
     description: "120 autocomplete sorgusu / 1 dk",
     limit: 120,
+    window: "1 m",
+  },
+  "pantry-mutation": {
+    // UserPantryItem CRUD, kullanıcı başına. Yoğun bulk-add senaryosu
+    // (bir kere 30 malzeme ekle) 60/dk esnek; üstü bot indikatörü.
+    description: "60 dolap yazma / 1 dk",
+    limit: 60,
     window: "1 m",
   },
   "password-change": {

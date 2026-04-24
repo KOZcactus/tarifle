@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState, useTransition } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useSession } from "next-auth/react";
 import { useTranslations } from "next-intl";
 import {
   generateWeeklyMenuAction,
@@ -50,6 +51,7 @@ import {
   readV4FormState,
   saveV4FormState,
 } from "@/lib/ai/form-persistence";
+import { LoadPantryButton } from "@/components/ai/LoadPantryButton";
 
 type View = "form" | "preview";
 
@@ -86,6 +88,8 @@ function splitCsv(raw: string): string[] {
 export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
   const t = useTranslations("mealPlanner.aiFill");
   const router = useRouter();
+  const { data: session } = useSession();
+  const isAuthenticated = Boolean(session?.user?.id);
   const searchParams = useSearchParams();
   const hasInitedFromUrlRef = useRef(false);
   const [open, setOpen] = useState(false);
@@ -724,6 +728,30 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
                     setIngredientsText((prev) => replaceLastToken(prev, name))
                   }
                 />
+                <div className="mt-2">
+                  <LoadPantryButton
+                    isAuthenticated={isAuthenticated}
+                    onLoad={(names) => {
+                      // Mevcut textarea'daki isimleri TR normalize ile kıyasla.
+                      const currentLower = new Set(
+                        splitCsv(ingredientsText).map((s) =>
+                          s.toLocaleLowerCase("tr"),
+                        ),
+                      );
+                      const fresh = names.filter(
+                        (n) => !currentLower.has(n.toLocaleLowerCase("tr")),
+                      );
+                      if (fresh.length === 0) return;
+                      setIngredientsText((prev) => {
+                        const trimmed = prev.trim();
+                        const joined = fresh.join(", ");
+                        return trimmed
+                          ? `${trimmed}, ${joined}`
+                          : joined;
+                      });
+                    }}
+                  />
+                </div>
                 <PantryHistoryChips
                   className="mt-2"
                   refreshKey={historyBump}

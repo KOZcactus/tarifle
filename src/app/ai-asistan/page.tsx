@@ -122,6 +122,7 @@ export default async function AiAsistanPage() {
       <AiAssistantForm
         knownIngredients={knownIngredients}
         initialPrefs={initialPrefs}
+        isAuthenticated={Boolean(session?.user?.id)}
       />
     </main>
   );

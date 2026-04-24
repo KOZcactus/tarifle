@@ -92,13 +92,13 @@ enum BadgeKey {
   // yeniden değerlendirir. POPULAR_VARIATION + EDITOR_CHOICE ayrı:
   // POPULAR 10+ beğeni aldıysa, EDITOR_CHOICE ise moderator seçimi
   // (skor bonusu ×10).
-  EXPERIENCED         // 5+ uyarlama
-  PHOTOGRAPHER        // 10+ tarif fotoğrafı upload
-  CATEGORY_MASTER     // Aynı kategoride 5+ uyarlama
-  EDITOR_CHOICE       // Moderator tarafından "topluluk seçimi" onayı
-  WEEKLY_TOP_10       // Haftalık leaderboard top 10 (son 7 gün)
-  MONTHLY_TOP_10      // Aylık leaderboard top 10 (son 30 gün)
-  ALL_TIME_TOP_50     // Tüm zamanlar top 50
+  EXPERIENCED // 5+ uyarlama
+  PHOTOGRAPHER // 10+ tarif fotoğrafı upload
+  CATEGORY_MASTER // Aynı kategoride 5+ uyarlama
+  EDITOR_CHOICE // Moderator tarafından "topluluk seçimi" onayı
+  WEEKLY_TOP_10 // Haftalık leaderboard top 10 (son 7 gün)
+  MONTHLY_TOP_10 // Aylık leaderboard top 10 (son 30 gün)
+  ALL_TIME_TOP_50 // Tüm zamanlar top 50
 }
 
 /**
@@ -106,9 +106,8 @@ enum BadgeKey {
  * - GLUTEN covers wheat/rye/barley/oats (un, ekmek, bulgur, makarna)
  * - KUSUYEMIS is tree nuts (ceviz, badem, fındık, antep fıstığı)
  * - YER_FISTIGI is peanuts — separated from tree nuts because the
- *   allergies are clinically distinct
+ * allergies are clinically distinct
  * - DENIZ_URUNLERI bundles fish + crustaceans + molluscs (balık/karides/midye)
- *
  * Lupin, celery outside of stock, sulphites-in-wine are omitted as they're
  * rarely relevant to Turkish home cooking; we can extend this enum later if
  * a specific recipe needs a flag that doesn't fit the current set.
@@ -142,33 +141,33 @@ enum NotificationType {
 // ─── MODELS ──────────────────────────────────────────────
 
 model User {
-  id               String    @id @default(cuid())
-  name             String?   @db.VarChar(100)
-  username         String    @unique @db.VarChar(50)
-  email            String    @unique @db.VarChar(255)
-  emailVerified    DateTime?
-  passwordHash     String?   @db.VarChar(255)
-  avatarUrl        String?   @db.Text
-  bio              String?   @db.VarChar(300)
-  role             Role      @default(USER)
-  isVerified       Boolean   @default(false)
-  kvkkAccepted     Boolean   @default(false)
-  kvkkVersion      String?   @db.VarChar(20)
-  kvkkDate         DateTime?
-  termsVersion     String?   @db.VarChar(20)
-  marketingConsent Boolean   @default(false)
-  deletedAt        DateTime?
+  id                 String     @id @default(cuid())
+  name               String?    @db.VarChar(100)
+  username           String     @unique @db.VarChar(50)
+  email              String     @unique @db.VarChar(255)
+  emailVerified      DateTime?
+  passwordHash       String?    @db.VarChar(255)
+  avatarUrl          String?    @db.Text
+  bio                String?    @db.VarChar(300)
+  role               Role       @default(USER)
+  isVerified         Boolean    @default(false)
+  kvkkAccepted       Boolean    @default(false)
+  kvkkVersion        String?    @db.VarChar(20)
+  kvkkDate           DateTime?
+  termsVersion       String?    @db.VarChar(20)
+  marketingConsent   Boolean    @default(false)
+  deletedAt          DateTime?
   // Suspension — admin action. Null = hesap aktif. Değer varsa giriş yapamaz
   // ve protected action'lar (yorum/uyarlama yazma) bloklanır. Reason
   // moderator'ın kayda aldığı kısa not, kullanıcıya "sebep ekranında"
   // gösterilebilir (opsiyonel ileri iş).
-  suspendedAt      DateTime?
-  suspendedReason  String?   @db.VarChar(500)
+  suspendedAt        DateTime?
+  suspendedReason    String?    @db.VarChar(500)
   // Dil tercihi — "tr" default (tüm mevcut kullanıcılar TR sayılır). User
   // ayarlar sayfasında veya navbar selector'da değiştirir. Cookie
   // NEXT_LOCALE + bu alan birlikte çalışır: login'de cookie bu değerle
   // sync'lenir, anonymous user ise sadece cookie kullanılır.
-  locale           String    @default("tr") @db.VarChar(5)
+  locale             String     @default("tr") @db.VarChar(5)
   // Kişiselleştirme tercihleri — /ayarlar/tercihler'den kullanıcı seçer,
   // ileride feed/discover filtering'de kullanılacak (MVP bu turda yalnızca
   // saklama + UI; filtering sonraki pass).
@@ -178,44 +177,45 @@ model User {
   //     gösterebiliriz, filtering'de default noindex-allergens olarak uygula.
   //   - favoriteCuisines: cuisine kod listesi (24 kodtan — tr/it/fr vs.).
   //     "Ağırlıklı Türk + İtalyan görmek isterim" gibi.
-  favoriteTags       String[]    @default([])
-  allergenAvoidances Allergen[]  @default([])
-  favoriteCuisines   String[]    @default([])
+  favoriteTags       String[]   @default([])
+  allergenAvoidances Allergen[] @default([])
+  favoriteCuisines   String[]   @default([])
   // Profil gizlilik tercihleri, /ayarlar/gizlilik'ten kullanıcı seçer.
   // Default: hepsi açık (mevcut davranışla geriye uyumlu). Owner kendi
   // profilinde her zaman görür, başkalarına görünüm gizlilik ayarına bağlı.
   //   - showChefScore: false ise profil chip + leaderboard'da gizli (opt-out)
   //   - showActivity: false ise "Son aktiviteler" timeline gizli
   //   - showFollowCounts: false ise takipçi/takip sayıları + listeler gizli
-  showChefScore      Boolean     @default(true)
-  showActivity       Boolean     @default(true)
-  showFollowCounts   Boolean     @default(true)
-  createdAt        DateTime  @default(now())
-  updatedAt        DateTime  @updatedAt
+  showChefScore      Boolean    @default(true)
+  showActivity       Boolean    @default(true)
+  showFollowCounts   Boolean    @default(true)
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime   @updatedAt
 
-  recipes           Recipe[]
-  variations        Variation[]
-  likes             Like[]
-  bookmarks         Bookmark[]
-  collections       Collection[]
-  shoppingLists     ShoppingList[]
-  mealPlans         MealPlan[]
+  recipes                 Recipe[]
+  variations              Variation[]
+  likes                   Like[]
+  bookmarks               Bookmark[]
+  collections             Collection[]
+  shoppingLists           ShoppingList[]
+  mealPlans               MealPlan[]
   newsletterSubscriptions NewsletterSubscription[]
-  recipePhotos      RecipePhoto[]
-  badges            UserBadge[]
-  notifications     Notification[]
-  reports           Report[]
-  reviews           Review[]
-  moderationActions ModerationAction[]
-  auditLogs         AuditLog[]
-  mediaAssets       MediaAsset[]
-  accounts          Account[]
-  sessions          Session[]
+  recipePhotos            RecipePhoto[]
+  badges                  UserBadge[]
+  notifications           Notification[]
+  reports                 Report[]
+  reviews                 Review[]
+  moderationActions       ModerationAction[]
+  auditLogs               AuditLog[]
+  mediaAssets             MediaAsset[]
+  accounts                Account[]
+  sessions                Session[]
   // Takip/feed V1 — kullanıcı hem takipçisi (following ilişkisinde follower)
   // hem de takip edilen (followers ilişkisinde following) taraf olur. İki
   // named relation Prisma'nın tek modelde iki yönü ayırt etmesi için zorunlu.
-  followers         Follow[]           @relation("following")
-  following         Follow[]           @relation("follower")
+  followers               Follow[]                 @relation("following")
+  following               Follow[]                 @relation("follower")
+  pantryItems             UserPantryItem[]
 
   @@map("users")
 }
@@ -278,15 +278,15 @@ model PasswordResetToken {
 }
 
 model Category {
-  id          String     @id @default(cuid())
-  name        String     @db.VarChar(100)
-  slug        String     @unique @db.VarChar(100)
-  emoji       String?    @db.VarChar(10)
-  description String?    @db.Text
+  id          String   @id @default(cuid())
+  name        String   @db.VarChar(100)
+  slug        String   @unique @db.VarChar(100)
+  emoji       String?  @db.VarChar(10)
+  description String?  @db.Text
   parentId    String?
-  sortOrder   Int        @default(0)
-  imageUrl    String?    @db.Text
-  createdAt   DateTime   @default(now())
+  sortOrder   Int      @default(0)
+  imageUrl    String?  @db.Text
+  createdAt   DateTime @default(now())
 
   parent   Category?  @relation("CategoryTree", fields: [parentId], references: [id])
   children Category[] @relation("CategoryTree")
@@ -296,10 +296,10 @@ model Category {
 }
 
 model Tag {
-  id        String      @id @default(cuid())
-  name      String      @unique @db.VarChar(50)
-  slug      String      @unique @db.VarChar(50)
-  createdAt DateTime    @default(now())
+  id        String   @id @default(cuid())
+  name      String   @unique @db.VarChar(50)
+  slug      String   @unique @db.VarChar(50)
+  createdAt DateTime @default(now())
 
   recipeTags RecipeTag[]
 
@@ -307,11 +307,11 @@ model Tag {
 }
 
 model Recipe {
-  id                String       @id @default(cuid())
-  title             String       @db.VarChar(200)
-  slug              String       @unique @db.VarChar(200)
-  description       String       @db.Text
-  emoji             String?      @db.VarChar(20)
+  id                String                   @id @default(cuid())
+  title             String                   @db.VarChar(200)
+  slug              String                   @unique @db.VarChar(200)
+  description       String                   @db.Text
+  emoji             String?                  @db.VarChar(20)
   categoryId        String
   type              RecipeType
   difficulty        Difficulty
@@ -320,22 +320,22 @@ model Recipe {
   totalMinutes      Int
   servingCount      Int
   averageCalories   Int?
-  protein           Decimal?     @db.Decimal(5, 1)
-  carbs             Decimal?     @db.Decimal(5, 1)
-  fat               Decimal?     @db.Decimal(5, 1)
-  imageUrl          String?      @db.Text
-  videoUrl          String?      @db.Text
-  isFeatured        Boolean      @default(false)
-  status            RecipeStatus @default(PUBLISHED)
-  viewCount         Int          @default(0)
-  tipNote           String?      @db.Text
-  servingSuggestion String?      @db.Text
+  protein           Decimal?                 @db.Decimal(5, 1)
+  carbs             Decimal?                 @db.Decimal(5, 1)
+  fat               Decimal?                 @db.Decimal(5, 1)
+  imageUrl          String?                  @db.Text
+  videoUrl          String?                  @db.Text
+  isFeatured        Boolean                  @default(false)
+  status            RecipeStatus             @default(PUBLISHED)
+  viewCount         Int                      @default(0)
+  tipNote           String?                  @db.Text
+  servingSuggestion String?                  @db.Text
   authorId          String?
   // Allergens present in this recipe. Postgres enum array — queryable with
   // Prisma's hasSome / hasNone / has. Default empty; retrofit script or
   // explicit Codex-provided list populates it. A GIN index covers the array
   // so "bu alerjenleri iceren tarifleri gizle" filter stays fast.
-  allergens         Allergen[]   @default([])
+  allergens         Allergen[]               @default([])
   // Cuisine origin code — one of the 14 supported codes defined in
   // `src/lib/cuisines.ts` (tr, it, fr, es, gr, jp, cn, kr, th, in, mx,
   // us, me, ma). NULL for recipes not yet tagged; the retrofit script
@@ -343,7 +343,7 @@ model Recipe {
   // seed schema, not by a Prisma enum — adding a new cuisine (e.g.
   // Vietnamese) only requires updating the constants file + Zod, no
   // migration needed.
-  cuisine           String?      @db.VarChar(30)
+  cuisine           String?                  @db.VarChar(30)
   // Hunger bar score, 1-10 integer, Minecraft-esin tokluk göstergesi.
   // Porsiyon başı hesap (`averageCalories` + `protein` + `carbs` + `fat` +
   // ingredient fiber proxy). Formül ve retrofit için src/lib/hunger-bar.ts
@@ -369,8 +369,8 @@ model Recipe {
   // `ts_rank_cd` for relevance ordering. Declared here so Prisma won't
   // try to drop the column on future `migrate dev` runs.
   searchVector      Unsupported("tsvector")?
-  createdAt         DateTime     @default(now())
-  updatedAt         DateTime     @updatedAt
+  createdAt         DateTime                 @default(now())
+  updatedAt         DateTime                 @updatedAt
 
   category        Category           @relation(fields: [categoryId], references: [id])
   author          User?              @relation(fields: [authorId], references: [id])
@@ -469,24 +469,24 @@ model RecipeTag {
 }
 
 model Variation {
-  id          String        @id @default(cuid())
-  recipeId    String
-  authorId    String
-  miniTitle   String        @db.VarChar(200)
-  description String?       @db.Text
-  ingredients Json
-  steps       Json
-  notes       String?       @db.Text
-  imageUrl    String?       @db.Text
-  likeCount   Int           @default(0)
-  reportCount Int           @default(0)
-  status      ContentStatus @default(PUBLISHED)
+  id              String        @id @default(cuid())
+  recipeId        String
+  authorId        String
+  miniTitle       String        @db.VarChar(200)
+  description     String?       @db.Text
+  ingredients     Json
+  steps           Json
+  notes           String?       @db.Text
+  imageUrl        String?       @db.Text
+  likeCount       Int           @default(0)
+  reportCount     Int           @default(0)
+  status          ContentStatus @default(PUBLISHED)
   // Comma-separated PreflightFlag codes (see lib/moderation/preflight.ts).
   // Null = clean auto-publish; non-null = rule-based flags that triggered
   // PENDING_REVIEW. Admins render the chips in the review queue.
-  moderationFlags String?   @db.VarChar(200)
-  createdAt   DateTime      @default(now())
-  updatedAt   DateTime      @updatedAt
+  moderationFlags String?       @db.VarChar(200)
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
 
   recipe Recipe @relation(fields: [recipeId], references: [id])
   author User   @relation(fields: [authorId], references: [id])
@@ -537,21 +537,21 @@ model Bookmark {
 // preflight burada yok (review kısa, spam kontrol rate-limit + report
 // sistemi yeterli).
 model Review {
-  id               String        @id @default(cuid())
-  userId           String
-  recipeId         String
-  rating           Int           // 1-5, Zod validated
-  comment          String?       @db.Text // nullable — sadece rating de atabilir
-  status           ContentStatus @default(PUBLISHED)
+  id              String        @id @default(cuid())
+  userId          String
+  recipeId        String
+  rating          Int // 1-5, Zod validated
+  comment         String?       @db.Text // nullable — sadece rating de atabilir
+  status          ContentStatus @default(PUBLISHED)
   // Comma-separated preflight flag codes (see `lib/moderation/preflight-review.ts`).
   // Null when no flags tripped. Mirrors Variation.moderationFlags shape so
   // the admin queue can render both with the same component.
-  moderationFlags  String?       @db.VarChar(200)
+  moderationFlags String?       @db.VarChar(200)
   // Reason recorded by the moderator when status was flipped to HIDDEN.
   // Surfaced to the review author in the `REVIEW_HIDDEN` notification.
-  hiddenReason     String?       @db.VarChar(500)
-  createdAt        DateTime      @default(now())
-  updatedAt        DateTime      @updatedAt
+  hiddenReason    String?       @db.VarChar(500)
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
 
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
   recipe Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
@@ -576,11 +576,11 @@ model Report {
 
   reporter User @relation(fields: [reporterId], references: [id])
 
+  // A user can only report a given target once
+  @@unique([reporterId, targetType, targetId])
   @@index([status])
   @@index([status, createdAt])
   @@index([targetType, targetId, status])
-  // A user can only report a given target once
-  @@unique([reporterId, targetType, targetId])
   @@map("reports")
 }
 
@@ -672,22 +672,22 @@ model NutritionData {
 // ─── COLLECTIONS & SHOPPING LIST (Faz 2) ─────────────────
 
 model Collection {
-  id            String   @id @default(cuid())
+  id            String    @id @default(cuid())
   userId        String
-  name          String   @db.VarChar(100)
-  slug          String   @db.VarChar(120)
-  description   String?  @db.VarChar(500)
-  emoji         String?  @db.VarChar(10)
-  coverImageUrl String?  @db.Text
-  isPublic      Boolean  @default(false)
-  sortOrder     Int      @default(0)
+  name          String    @db.VarChar(100)
+  slug          String    @db.VarChar(120)
+  description   String?   @db.VarChar(500)
+  emoji         String?   @db.VarChar(10)
+  coverImageUrl String?   @db.Text
+  isPublic      Boolean   @default(false)
+  sortOrder     Int       @default(0)
   // Admin gizleme — public koleksiyon uygunsuz içerik bildirilirse
   // admin hideCollection ile timestamp yazar. Owner koleksiyonunu görür
   // (kendi dashboard'ında) ama public listelerden düşer.
   hiddenAt      DateTime?
-  hiddenReason  String?  @db.VarChar(500)
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  hiddenReason  String?   @db.VarChar(500)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
 
   user  User             @relation(fields: [userId], references: [id], onDelete: Cascade)
   items CollectionItem[]
@@ -788,14 +788,14 @@ model MealPlan {
 /// Menü planındaki tek slot — belirli gün + öğün için seçilen tarif.
 /// `dayOfWeek` 0-6 (Pazartesi=0 … Pazar=6), `mealType` enum.
 model MealPlanItem {
-  id          String   @id @default(cuid())
-  mealPlanId  String
-  recipeId    String
+  id         String   @id @default(cuid())
+  mealPlanId String
+  recipeId   String
   /// 0 = Pazartesi, 6 = Pazar. Week starts on Monday (TR convention).
-  dayOfWeek   Int
-  mealType    MealType
-  servings    Int?     @default(1)
-  createdAt   DateTime @default(now())
+  dayOfWeek  Int
+  mealType   MealType
+  servings   Int?     @default(1)
+  createdAt  DateTime @default(now())
 
   mealPlan MealPlan @relation(fields: [mealPlanId], references: [id], onDelete: Cascade)
   recipe   Recipe   @relation(fields: [recipeId], references: [id], onDelete: Cascade)
@@ -820,22 +820,22 @@ enum MealType {
 /// Unsubscribe token her mail'in altına gömülür, tıklanınca status
 /// UNSUBSCRIBED olur (hard delete yerine soft — yasal audit için).
 model NewsletterSubscription {
-  id                String                        @id @default(cuid())
-  email             String                        @unique @db.VarChar(255)
-  status            NewsletterSubscriptionStatus  @default(CONFIRMING)
+  id               String                       @id @default(cuid())
+  email            String                       @unique @db.VarChar(255)
+  status           NewsletterSubscriptionStatus @default(CONFIRMING)
   /// Confirm link token — 24h TTL, tek kullanımlık.
-  confirmToken      String?                       @unique @db.VarChar(100)
-  confirmTokenAt    DateTime?
+  confirmToken     String?                      @unique @db.VarChar(100)
+  confirmTokenAt   DateTime?
   /// Unsubscribe link token — lifetime, tek kullanımlık ama hep aynı
   /// token (GDPR gereği kolay kaldırma).
-  unsubscribeToken  String                        @unique @db.VarChar(100)
-  locale            String                        @default("tr") @db.VarChar(5)
+  unsubscribeToken String                       @unique @db.VarChar(100)
+  locale           String                       @default("tr") @db.VarChar(5)
   /// Opsiyonel — logged-in user abone olursa User'a bağlanır. Anonim
   /// aboneliklerde null kalır (email yeterli kimlik).
-  userId            String?
-  createdAt         DateTime                      @default(now())
-  confirmedAt       DateTime?
-  unsubscribedAt    DateTime?
+  userId           String?
+  createdAt        DateTime                     @default(now())
+  confirmedAt      DateTime?
+  unsubscribedAt   DateTime?
 
   user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
 
@@ -1049,4 +1049,45 @@ model Follow {
   @@index([followingId, createdAt])
   @@index([followerId, createdAt])
   @@map("follows")
+}
+
+// Kullanıcının "dolabı": evde bulunan malzemeleri kalıcı olarak tutar.
+// Oturum 17 sonu eklendi. Amaç:
+//   - Cihazlar arası senkron (telefon + bilgisayar aynı dolap)
+//   - Son kullanma tarihi bazlı öncelikli tarif önerisi
+//   - AI Asistan + v4 menü planlayıcıya tek tık "dolabımı getir"
+//   - /dolap sayfasında yönetim (ekle/sil/miktar/tarih)
+//
+// Tasarım:
+//   - ingredientName normalize edilmiş (lowercase TR), unique per user
+//   - displayName kullanıcı yazımı ("Tavuk Göğsü" vs)
+//   - quantity + unit opsiyonel (kullanıcı sadece "tavuk var" diyebilir)
+//   - expiryDate opsiyonel ama girerse son kullanma bildirimi tetikler
+//   - Premium tier'da otomatik alışveriş listesi → pantry senkron eklenir
+model UserPantryItem {
+  id             String    @id @default(cuid())
+  userId         String
+  // Normalize edilmiş ad (lowercase TR), duplicate önleme için unique key.
+  ingredientName String    @db.VarChar(80)
+  // Kullanıcıya gösterilen orijinal yazım ("Tavuk Göğsü"). Null ise
+  // ingredientName title-case ile fallback.
+  displayName    String?   @db.VarChar(100)
+  quantity       Decimal?  @db.Decimal(7, 2)
+  unit           String?   @db.VarChar(30)
+  // Son kullanma tarihi. Null = belirtilmemiş (uyarı tetiklenmez).
+  expiryDate     DateTime? @db.Date
+  // Opsiyonel user notu ("yarın balık yapacağım", "ikiye bölüp dondurdum").
+  note           String?   @db.VarChar(200)
+  addedAt        DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Aynı user aynı ingredient'ı iki kere ekleyemez; update ile quantity
+  // biriktirilir. Uygulama katmanında upsert pattern.
+  @@unique([userId, ingredientName])
+  // Son kullanma tarihine göre sort + yaklaşan filtreleme için.
+  @@index([userId, expiryDate])
+  @@index([userId, addedAt])
+  @@map("user_pantry_items")
 }

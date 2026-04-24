@@ -5,6 +5,7 @@
     "discover": "Discover",
     "leaderboard": "Leaderboard",
     "feed": "Feed",
+    "pantry": "My Pantry",
     "mealPlanner": "Meal Planner",
     "blog": "Blog",
     "aiAssistant": "AI Assistant",
@@ -338,6 +339,10 @@
     "shoppingList": {
       "title": "My Shopping List",
       "description": "Bookmarked recipe ingredients and items you add manually, all in one list."
+    },
+    "pantry": {
+      "title": "My Pantry",
+      "description": "Keep a persistent list of ingredients at home, track expiry dates, and let the AI Assistant pull from this list with one click."
     },
     "settings": {
       "title": "Settings"
@@ -1605,6 +1610,16 @@
       "shareLinkCopied": "Link copied to clipboard, you can share it."
     }
   },
+  "ai": {
+    "loadPantry": {
+      "button": "Load my pantry",
+      "loading": "Loading…",
+      "loadedCount": "{count} items loaded",
+      "emptyPantry": "Your pantry is empty, add items in /dolap first.",
+      "fetchError": "Could not read pantry.",
+      "loginHint": "Sign in to use your pantry."
+    }
+  },
   "ingredientSuggestion": {
     "label": "Suggestions:",
     "addAria": "Add {name} to the list"
@@ -2001,6 +2016,39 @@
     "prev": "← Previous",
     "next": "Next →",
     "finish": "Done ✓"
+  },
+  "pantry": {
+    "headerLabel": "My Pantry",
+    "pageTitle": "My Pantry",
+    "subtitle": "Add what you have at home; AI Assistant and the Weekly Menu Planner will pull from this list with one click. Add expiry dates to surface urgent items first.",
+    "addSectionTitle": "Add ingredient",
+    "addPlaceholder": "e.g. chicken breast",
+    "addButton": "Add",
+    "bulkOpen": "Bulk add",
+    "bulkCancel": "Close",
+    "bulkAddButton": "Add all",
+    "bulkPlaceholder": "chicken, egg, rice, tomato, onion…",
+    "bulkHelper": "Comma or newline separated, max 50 items.",
+    "bulkSuccess": "✓ {added} added + {updated} updated",
+    "emptyBody": "Your pantry is empty. Add ingredients above, the AI Assistant can pull this list with one click.",
+    "totalItems": "{count} items in pantry",
+    "expiringSoonTitle": "{count} items are expiring soon",
+    "expiringToday": "{name} today",
+    "expiringTomorrow": "{name} tomorrow",
+    "expiringInDays": "{name} in {days} days",
+    "quantityPlaceholder": "qty",
+    "quantityAria": "{name} quantity",
+    "unitPlaceholder": "unit",
+    "unitAria": "{name} unit",
+    "expiryAria": "{name} expiry date",
+    "removeAria": "Remove {name}",
+    "removeTitle": "Remove",
+    "errors": {
+      "add": "Could not add.",
+      "bulk": "Bulk add failed.",
+      "remove": "Could not remove.",
+      "update": "Could not update."
+    }
   },
   "shoppingList": {
     "headerLabel": "My shopping list",

@@ -16,6 +16,7 @@ const NAV_LINK_KEYS = [
   { href: "/kesfet", key: "discover" },
   { href: "/leaderboard", key: "leaderboard", featureFlag: "leaderboard" as const },
   { href: "/akis", key: "feed", requiresAuth: true as const },
+  { href: "/dolap", key: "pantry", requiresAuth: true as const },
   { href: "/menu-planlayici", key: "mealPlanner" },
   { href: "/blog", key: "blog" },
   { href: "/ai-asistan", key: "aiAssistant" },

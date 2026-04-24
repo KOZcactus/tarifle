@@ -5,6 +5,7 @@
     "discover": "Keşfet",
     "leaderboard": "Liderlik",
     "feed": "Akış",
+    "pantry": "Dolabım",
     "mealPlanner": "Menü Planla",
     "blog": "Blog",
     "aiAssistant": "AI Asistan",
@@ -338,6 +339,10 @@
     "shoppingList": {
       "title": "Alışveriş Listem",
       "description": "Bookmark'ladığın tarif malzemeleri + manuel eklediğin maddeler tek listede."
+    },
+    "pantry": {
+      "title": "Dolabım",
+      "description": "Evdeki malzemeleri kalıcı olarak tut, son kullanma tarihlerini takip et, AI Asistan tek tıkla bu listeden tarif önersin."
     },
     "settings": {
       "title": "Ayarlar"
@@ -1605,6 +1610,16 @@
       "shareLinkCopied": "Link panoya kopyalandı, paylaşabilirsin."
     }
   },
+  "ai": {
+    "loadPantry": {
+      "button": "Dolabımı getir",
+      "loading": "Yükleniyor…",
+      "loadedCount": "{count} malzeme yüklendi",
+      "emptyPantry": "Dolabın boş, önce /dolap'a malzeme ekle.",
+      "fetchError": "Dolap okunamadı.",
+      "loginHint": "Dolabını kullanmak için giriş yap."
+    }
+  },
   "ingredientSuggestion": {
     "label": "Öneriler:",
     "addAria": "{name} malzemesini ekle"
@@ -2001,6 +2016,39 @@
     "prev": "← Önceki",
     "next": "Sonraki →",
     "finish": "Tamamlandı ✓"
+  },
+  "pantry": {
+    "headerLabel": "Dolabım",
+    "pageTitle": "Dolabım",
+    "subtitle": "Evdeki malzemeleri buraya ekle; AI Asistan ve Haftalık Menü Planlayıcı tek tıkla bu listeyi kullansın. Son kullanma tarihi yazarsan yaklaşan ürünler öne çıkar.",
+    "addSectionTitle": "Malzeme ekle",
+    "addPlaceholder": "Örn. tavuk göğsü",
+    "addButton": "Ekle",
+    "bulkOpen": "Toplu ekle",
+    "bulkCancel": "Kapat",
+    "bulkAddButton": "Toplu ekle",
+    "bulkPlaceholder": "tavuk, yumurta, pirinç, domates, soğan…",
+    "bulkHelper": "Virgül veya satır sonu ile ayır, maksimum 50 malzeme.",
+    "bulkSuccess": "✓ {added} yeni + {updated} güncellendi",
+    "emptyBody": "Dolabın henüz boş. Üstten malzeme ekle, AI Asistan \"Dolabımı getir\" diyerek buradan alsın.",
+    "totalItems": "{count} malzeme dolabında",
+    "expiringSoonTitle": "{count} malzemenin son kullanma tarihi yakın",
+    "expiringToday": "{name} bugün",
+    "expiringTomorrow": "{name} yarın",
+    "expiringInDays": "{name} {days} gün",
+    "quantityPlaceholder": "miktar",
+    "quantityAria": "{name} miktarı",
+    "unitPlaceholder": "birim",
+    "unitAria": "{name} birimi",
+    "expiryAria": "{name} son kullanma tarihi",
+    "removeAria": "{name} malzemesini sil",
+    "removeTitle": "Sil",
+    "errors": {
+      "add": "Malzeme eklenemedi.",
+      "bulk": "Toplu ekleme başarısız.",
+      "remove": "Silinemedi.",
+      "update": "Güncellenemedi."
+    }
   },
   "shoppingList": {
     "headerLabel": "Alışveriş listem",

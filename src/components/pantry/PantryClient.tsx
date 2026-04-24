@@ -29,7 +29,7 @@ function splitCsv(raw: string): string[] {
 
 export function PantryClient({ initialItems }: PantryClientProps) {
   const t = useTranslations("pantry");
-  const tCat = useTranslations("shoppingList.categories");
+  const tCat = useTranslations("shoppingList.category");
   const [items, setItems] = useState<UserPantryItemView[]>(initialItems);
   const [newName, setNewName] = useState("");
   const [bulkText, setBulkText] = useState("");

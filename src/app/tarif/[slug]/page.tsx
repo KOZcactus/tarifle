@@ -40,6 +40,7 @@ import { getCollectionsForRecipe } from "@/lib/queries/collection";
 import { auth } from "@/lib/auth";
 import { getPantryMatchForRecipe } from "@/lib/pantry/server";
 import { PantryMatchBadge } from "@/components/pantry/PantryMatchBadge";
+import { CookedButton } from "@/components/pantry/CookedButton";
 import { isValidLocale, type Locale } from "@/i18n/config";
 import {
   hasFullTranslation,
@@ -522,10 +523,12 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
       </div>
 
       {/* Pantry match: giris yapmis kullanicinin dolabi ile bu tarifin
-          malzeme karsilastirmasi. Yeter mi, ne eksik? */}
+          malzeme karsilastirmasi. Yeter mi, ne eksik?
+          Altinda "Pisirdim" butonu ile pantry'den dusurme akisi. */}
       {pantryMatch && pantryMatch.total > 0 && (
         <div className="mb-8">
           <PantryMatchBadge summary={pantryMatch} />
+          <CookedButton recipeId={recipe.id} defaultServings={recipe.servingCount} />
         </div>
       )}
 

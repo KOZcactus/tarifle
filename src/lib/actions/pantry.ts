@@ -5,6 +5,11 @@ import { z } from "zod";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { checkRateLimit, rateLimitIdentifier } from "@/lib/rate-limit";
+import {
+  computeConsume,
+  type ConsumeResult,
+  type ConsumeStockItem,
+} from "@/lib/pantry/consume";
 
 interface ActionResult<T = undefined> {
   success: boolean;
@@ -300,6 +305,93 @@ export async function removePantryItemAction(
     return {
       success: false,
       error: error instanceof Error ? error.message : "Silme hata.",
+    };
+  }
+}
+
+const consumeSchema = z.object({
+  recipeId: z.string().min(1),
+  servingsCooked: z.number().positive().max(50).optional(),
+});
+
+/**
+ * Pişirdim → UserPantry'dan tarif ingredient miktarlarını düşür.
+ *
+ * - Rate limit: "pantry-mutation" key ile aynı bucket (60/dk).
+ * - Recipe ingredient eşleşen pantry item'ların quantity'si düşülür.
+ * - Aynı anda birden fazla item update = $transaction.
+ * - Sonuç: ConsumeResult UI'ye döner (düşülen/bulunamayan/atlanan).
+ */
+export async function consumeRecipeFromPantryAction(
+  raw: unknown,
+): Promise<ActionResult<ConsumeResult>> {
+  const session = await auth();
+  if (!session?.user?.id) return { success: false, error: "auth-required" };
+
+  const parsed = consumeSchema.safeParse(raw);
+  if (!parsed.success) {
+    return {
+      success: false,
+      error: parsed.error.issues[0]?.message ?? "invalid input",
+    };
+  }
+
+  const rate = await checkRateLimit(
+    "pantry-mutation",
+    rateLimitIdentifier(session.user.id, null),
+  );
+  if (!rate.success) {
+    return { success: false, error: rate.message ?? "Çok fazla istek." };
+  }
+
+  try {
+    const recipe = await prisma.recipe.findUnique({
+      where: { id: parsed.data.recipeId },
+      select: {
+        id: true,
+        servingCount: true,
+        ingredients: {
+          select: { name: true, amount: true, unit: true, isOptional: true },
+        },
+      },
+    });
+    if (!recipe) return { success: false, error: "recipe-not-found" };
+
+    const stockRows = await prisma.userPantryItem.findMany({
+      where: { userId: session.user.id },
+      select: { id: true, ingredientName: true, quantity: true, unit: true },
+    });
+    const stock: ConsumeStockItem[] = stockRows.map((row) => ({
+      id: row.id,
+      ingredientName: row.ingredientName,
+      quantity: row.quantity === null ? null : Number(row.quantity),
+      unit: row.unit,
+    }));
+
+    const result = computeConsume(
+      recipe.ingredients,
+      recipe.servingCount,
+      parsed.data.servingsCooked ?? recipe.servingCount,
+      stock,
+    );
+
+    if (result.decisions.length > 0) {
+      await prisma.$transaction(
+        result.decisions.map((d) =>
+          prisma.userPantryItem.update({
+            where: { id: d.pantryItemId },
+            data: { quantity: d.after },
+          }),
+        ),
+      );
+      revalidatePath("/dolap");
+    }
+
+    return { success: true, data: result };
+  } catch (error: unknown) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : "Tüketme hata.",
     };
   }
 }

@@ -124,6 +124,7 @@ export async function ReviewsSection({
                 <Link
                   href={`/giris?callbackUrl=/tarif/${recipeSlug}`}
                   className="font-medium text-primary hover:underline"
+                  rel="nofollow"
                 >
                   {chunks}
                 </Link>

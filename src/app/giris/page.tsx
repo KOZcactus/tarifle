@@ -7,7 +7,17 @@ import { LoginForm } from "@/components/auth/LoginForm";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("metadata.login");
-  return { title: t("title"), description: t("description") };
+  // Login sayfası + callbackUrl query variant'ları SEO değeri sıfır,
+  // kullanıcıya özel yönlendirme parametresi. Tarif sayfalarındaki
+  // "giriş yap" link'leri Google'a /giris?callbackUrl=/tarif/slug
+  // kombinasyonlarını ifşa ediyor (GSC 21 Nis 2026: 55 duplicate),
+  // canonical + noindex ile crawler'a tek /giris yeterli diyoruz.
+  return {
+    title: t("title"),
+    description: t("description"),
+    robots: { index: false, follow: true },
+    alternates: { canonical: "/giris" },
+  };
 }
 
 export default async function LoginPage() {

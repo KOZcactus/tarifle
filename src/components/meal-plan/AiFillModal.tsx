@@ -239,7 +239,10 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
     }
     setShoppingStatus(null);
     startShopping(async () => {
-      const res = await addRecipesToShoppingListAction({ recipeIds });
+      const res = await addRecipesToShoppingListAction({
+        recipeIds,
+        personCount,
+      });
       if (!res.success || !res.data) {
         setError(res.error ?? t("errorShopping"));
         return;

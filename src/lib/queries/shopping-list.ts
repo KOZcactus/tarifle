@@ -28,9 +28,48 @@ export async function getShoppingListWithItems(userId: string) {
   });
 }
 
+/**
+ * Scales an amount string by a factor. Handles numeric strings, simple
+ * fractions ("1/2"), ranges ("1-2"), and pass-through for non-numeric
+ * amounts ("tat için", "yeterince"). Rounds to 2 decimals, trims
+ * trailing ".00". Keeps ".5" suffix when factor produces half units.
+ */
+export function scaleAmount(amount: string, factor: number): string {
+  if (!amount || factor === 1) return amount;
+  const trimmed = amount.trim();
+  // Range "1-2"
+  const rangeMatch = trimmed.match(/^(\d+(?:[.,]\d+)?)\s*-\s*(\d+(?:[.,]\d+)?)$/);
+  if (rangeMatch) {
+    const lo = Number(rangeMatch[1]!.replace(",", ".")) * factor;
+    const hi = Number(rangeMatch[2]!.replace(",", ".")) * factor;
+    return `${formatNumber(lo)}-${formatNumber(hi)}`;
+  }
+  // Fraction "1/2"
+  const fracMatch = trimmed.match(/^(\d+)\s*\/\s*(\d+)$/);
+  if (fracMatch) {
+    const val = (Number(fracMatch[1]!) / Number(fracMatch[2]!)) * factor;
+    return formatNumber(val);
+  }
+  // Plain number ("2", "2.5", "2,5")
+  const numMatch = trimmed.match(/^(\d+(?:[.,]\d+)?)$/);
+  if (numMatch) {
+    const val = Number(numMatch[1]!.replace(",", ".")) * factor;
+    return formatNumber(val);
+  }
+  // Non-numeric ("tat için", "1 tutam"): pass through
+  return amount;
+}
+
+function formatNumber(n: number): string {
+  const rounded = Math.round(n * 100) / 100;
+  if (Number.isInteger(rounded)) return String(rounded);
+  return rounded.toFixed(2).replace(/\.?0+$/, "");
+}
+
 export async function addItemsFromRecipe(
   userId: string,
   recipeId: string,
+  options: { servingScale?: number } = {},
 ): Promise<{ added: number; merged: number }> {
   const list = await getOrCreateShoppingList(userId);
 
@@ -42,6 +81,10 @@ export async function addItemsFromRecipe(
   if (!recipe) {
     throw new Error("Tarif bulunamadı.");
   }
+
+  const scale = options.servingScale && options.servingScale > 0
+    ? options.servingScale
+    : 1;
 
   // Existing items in the list (used for deduplication)
   const existing = await prisma.shoppingListItem.findMany({
@@ -56,7 +99,7 @@ export async function addItemsFromRecipe(
     .map((ing, index) => ({
       shoppingListId: list.id,
       name: ing.name,
-      amount: ing.amount,
+      amount: scale === 1 ? ing.amount : scaleAmount(ing.amount, scale),
       unit: ing.unit,
       sourceRecipeId: recipeId,
       sortOrder: existing.length + index,

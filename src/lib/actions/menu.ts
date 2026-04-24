@@ -186,6 +186,7 @@ const addRecipesToShoppingListSchema = z.object({
     .array(z.string().min(1))
     .min(1, "En az bir tarif gerekli.")
     .max(21, "En fazla 21 tarif işlenir."),
+  personCount: z.number().int().min(1).max(12).optional(),
 });
 
 /**
@@ -218,23 +219,29 @@ export async function addRecipesToShoppingListAction(
   }
 
   const uniqueIds = [...new Set(parsed.data.recipeIds)];
+  const personCount = parsed.data.personCount ?? 1;
 
   try {
     // Validate recipeIds exist + PUBLISHED (v4 preview güvenilmez, client
     // payload'ı manipüle edilebilir).
     const found = await prisma.recipe.findMany({
       where: { id: { in: uniqueIds }, status: "PUBLISHED" },
-      select: { id: true },
+      select: { id: true, servingCount: true },
     });
-    const validIds = found.map((r) => r.id);
-    if (validIds.length === 0) {
+    if (found.length === 0) {
       return { success: false, error: "Geçerli tarif bulunamadı." };
     }
 
     let totalAdded = 0;
     let totalMerged = 0;
-    for (const recipeId of validIds) {
-      const res = await addItemsFromRecipe(session.user.id, recipeId);
+    for (const recipe of found) {
+      const servingScale =
+        recipe.servingCount > 0 && personCount !== recipe.servingCount
+          ? personCount / recipe.servingCount
+          : 1;
+      const res = await addItemsFromRecipe(session.user.id, recipe.id, {
+        servingScale,
+      });
       totalAdded += res.added;
       totalMerged += res.merged;
     }
@@ -242,7 +249,7 @@ export async function addRecipesToShoppingListAction(
     return {
       success: true,
       data: {
-        recipeCount: validIds.length,
+        recipeCount: found.length,
         totalAdded,
         totalMerged,
       },

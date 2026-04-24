@@ -1,6 +1,6 @@
 # Tarifle, Proje Durumu
 
-> Son güncelleme: **Oturum 17 (24 Nis 2026, devam ediyor)**, 13+ commit: **AI v4.3 genişleme** (8 özellik: single-slot regenerate + uyum skoru badge + reason chip renk kodu + anti-repeat seed + edge UX + seasonal/bayram banner + commentary personalization + alışveriş diff özeti) + **Liderlik feature flag** (admin panelden aç/kapa, default kapalı) + **SEO/Sentry fix dalgası** (Prisma findFirst bug + GSC 206+ uyarı kapatıldı: noindex AI-asistan + /giris canonical + rel=nofollow) + **Mod A Batch 32b + 33a v2 apply** (100 yeni tarif, 3002 → 3102, d-helper retrofit + 9 allergen fix + pierogi audit rule) + **Brief §d-helper-yasak + helper tip + allergen self-check** (oturum 17 dersleri). **Sonraki:** Backfill-09 (100 yeni slug çeviri), 33b yeni batch, AI iCal/WhatsApp polish, 30 Nis Neon cleanup.
+> Son güncelleme: **Oturum 17 sonu (24 Nis 2026)**, 32 commit, en büyük tek gün sprint: **AI v4.3 ailesi 16 özellik** (single-slot regenerate + uyum skoru rozeti + reason chip renk kodu + anti-repeat seed + edge UX + seasonal/bayram banner + commentary personalization + alışveriş diff özeti + iCal export + WhatsApp paylaş + form persistence + dolabını tamamla + saate göre filtre + sesli giriş + URL-state v4 + fırsat öneri) + **UserPantry DB + /dolap + AI entegrasyon** (kalıcı dolap modeli, cihazlar arası senkron, 🎒 tek tık AI'ya aktar, 17 unit test) + **Mod A Batch 32b/33a v2/33b/34a/34b apply** (250 yeni tarif, 3002 → **3252 tarif prod**) + **CUISINE_CODES 24 → 30** (de/ir/pk/id/et/ng yeni mutfak) + **Mod B Backfill-09/10 apply** (200 çeviri) + **Liderlik feature flag** (admin toggle, default kapalı) + **Blog redesign** (sol sidebar + kategori + arşiv + alt konular + tag chip'leri) + **Blog 31** Soğuk Zincir + Et Güvenliği + **SEO/Sentry fix dalgası** (Prisma N+1 + GSC 206+ uyarı + /ai-asistan query noindex + /giris canonical) + **Brief oturum 17 dersleri** (d-helper yasağı + helper tip + allergen self-check + TR bölge denge kaldırıldı + uluslararası bilinen öncelikli + web kaynak doğrulama). **Sonraki:** Backfill-11/12/13 Codex'te (250 çeviri), 35a+ yeni Mod A, 30 Nis Neon cleanup, AI v5 LLM katmanı launch sonrası.
 
 > Oturum 16 sonu (23-24 Nis 2026), 32 commit: **AI v4 haftalık menü planlayıcı** tam ship (core + UI + test + v4.1-v4.2 iterasyon + macro + shopping + person count scaling + favoriler + pantry history + autocomplete + preset chips) + **Admin Tarif Düzenle v3** (drag-drop + çift onay + canlı preview) + **Mod A 31a/31b/32a apply** (150 yeni, 2872 → 3021) + **Mod B Backfill-03/04/05/06/07/08 apply** (485 çeviri, **Mod B %100 kapanış**) + **Blog 27-30** (12/9/9 ideal denge) + Allergen 2 tur spot-fix prod audit PASS + PWA Sentry → Vercel Analytics + Tarif basit/lüks varyant paneli. **3021 tarif, Mod B %100, 30 blog, AI v4 tam ship**.
 
@@ -24,15 +24,20 @@
 >
 > Oturum 7 sonu (28 commit), 1701 tarif prod canlı. 8 blok: Mod B batch 13-17 (600 tarif EN+DE), Mod A batch 15-17 (1401→1701), foryou sort, pagination redesign, super-admin protection, /admin/yorumlar, /kategoriler, legal hub /yasal, editör rozeti, similar-recipes v2, 44 programatik landing, profil zenginleştirme, /menu-planlayici, RSS + HowTo schema, AI Asistan v2, blog MDX + 3 makale, rekabet analizi doc, newsletter double-opt-in altyapı, codex brief 3 clarify.
 
-## 24 Nisan 2026 (oturum 17, 13+ commit devam, AI v4.3 + SEO + Liderlik flag + 32b+33a v2)
+## 24 Nisan 2026 (oturum 17, 32 commit, AI v4.3 + UserPantry + Mod A x5 + Blog redesign + Cuisine 30)
 
-> Tek uzun oturum. **AI v4.3 ailesi** 8 yeni özellikle genişledi
-> (regenerate, match badge, reason renk, anti-repeat, edge UX,
-> seasonal, commentary, alışveriş diff), **Liderlik** admin feature
-> flag'ine bağlandı (default kapalı), **GSC 206+ uyarı** 3 net fix'le
-> kapatıldı, **Sentry Prisma findFirst bug** /tarif/[slug]'de çözüldü,
-> **Codex 32b + 33a v2** retrofit edildi (100 yeni tarif, d-helper
-> reject iki kere yenilendi), brief'e kalıcı 3 ders eklendi.
+> En büyük tek gün sprint. **AI v4.3 ailesi 16 özellikle ship** (v3 ve
+> v4 menü planlayıcı), **UserPantry DB + /dolap sayfası + AI entegre**
+> (kalıcı dolap, cihazlar arası senkron, 17 unit test), **Mod A
+> Batch 32b + 33a v2 + 33b + 34a + 34b apply** (250 yeni tarif, prod
+> 3002 → 3252), **CUISINE_CODES 24 → 30** (de/ir/pk/id/et/ng yeni
+> mutfak kodu), **Mod B Backfill-09 + 10 apply** (200 çeviri), **Liderlik
+> feature flag** (admin toggle default kapalı), **Blog redesign** (sol
+> sidebar arama + kategori + arşiv + alt konular + tag chip'leri) +
+> **Blog 31 Soğuk Zincir**, **SEO/Sentry fix dalgası** (Prisma N+1 +
+> GSC 206+ uyarı), **Brief oturum 17 dersleri** (d-helper yasağı +
+> helper tip + allergen self-check + TR bölge denge kaldırıldı +
+> uluslararası bilinen öncelikli + web kaynak doğrulama zorunlu).
 
 **A · AI v4.3 batch 1** (`5f4cb93`): Single-slot regenerate
 (`menu-planner.regenerateSingleSlot` + `regenerateMenuSlotAction` +
@@ -87,15 +92,100 @@ kalori 52 unique range 120-465), 9 Claude allergen fix (5 missing
 SUT/KUSUYEMIS/GLUTEN/SUSAM + 4 over-tag) + pierogi audit rule
 eklendi. Dev + prod apply, **3002 → 3102 tarif**.
 
-**F · Brief oturum 17 3 ders** (`1fcfb0b`, brief §d-helper-yasak +
-Mod A default genişleme): (a) d/default-helper yasağı + 11 alan per
-recipe zorunlu + self-check bash, (b) helper parametre tipleri
-zorunlu (t, ing, st, r string/SeedRecipe generic), (c) allergen
-source guard self-check teslim öncesi PASS zorunlu, (d) iki session
-koordinasyon (aynı dosyaya paralel yazma + her session kendi batch
-ID + append point farklı).
+**F · Brief oturum 17 3 ders** (`1fcfb0b`, `3880753`, brief §d-helper-yasak
++ Mod A default genişleme): (a) d/default-helper yasağı + 11 alan per
+recipe zorunlu + self-check bash, (b) helper parametre tipleri zorunlu
+(t, ing, st, r string/SeedRecipe generic), (c) allergen source guard
+self-check teslim öncesi PASS zorunlu, (d) iki session koordinasyon
+(aynı dosyaya paralel yazma + her session kendi batch ID + append
+point farklı), (e) TR bölge dengesi KALDIRILDI, (f) uluslararası
+bilinen/popüler öncelikli (nasi goreng, bratwurst, ratatouille), (g)
+web kaynak doğrulama ZORUNLU.
 
+**G · AI v4.3 iCal + WhatsApp paylaş** (`f74b0c5`): `menu-ical.ts`
+RFC 5545 VCALENDAR builder (VEVENT per dolu slot, unique UID,
+escape). `menu-share.ts` 7 gün × 3 öğün metin + wa.me fallback.
+AiFillModal 3 action buton: 🛒 · 📅 · 💬. 6 unit test PASS.
 
+**H · Blog 31 Soğuk Zincir + Et Güvenliği** (`87c49ac`):
+`pisirme-teknikleri` kategorisi 12 → 13, 1014 kelime, 5 kaynak
+(USDA FSIS x2, FDA Food Code, Serious Eats Kenji, T.C. Tarım Bak.).
+4 H2 bölüm + hızlı checklist. Kategori denge 12/9/9 → 13/9/9.
+
+**I · CUISINE_CODES 24 → 30** (`a8ec7d0`): Codex 33a v2'de Alman/İran/
+Pakistan/Endonezya/Etiyopya/Nijerya tarifleri üretti. 6 yeni cuisine
+kodu eklendi (de, ir, pk, id, et, ng). 6 Record (CODES, LABEL, SLUG,
+DESCRIPTION_TR, DESCRIPTION_EN, FLAG, REGION) + hero metni "24 → 30
+mutfak" TR+EN güncellendi. cuisine-inference test assertion 24 → 30.
+
+**J · Mod A Batch 33b + 34a + 34b apply** (`da47748`, `6fced5c`, Codex
+5da8238 region balance): d-helper retrofit sonrası kaliteli teslim.
+- 33b: 50 tarif, emoji 25 unique, kalori 36 unique 145-510
+- 34a: 50 tarif, emoji 35 unique, kalori 28 unique 95-640, TR 25 +
+  25 uluslararası (25 farklı mutfak), isFeatured 7
+- 34b: 50 tarif, emoji 30 unique, kalori 27 unique 165-620, TR 25 +
+  25 uluslararası (24 mutfak), isFeatured 5
+
+Dev + prod apply: 3102 → 3152 → 3202 → 3252 tarif. Her teslim Claude
+tarafı allergen + helper tip drift check ile ship.
+
+**K · Mod B Backfill-09 + 10 apply** (`28dcfaa`, `349af59`, `c10e200`):
+32b + 33a v2 + 33b + 34a gap'i kapatıldı (200 çeviri). 11/12/13 CSV
+Codex kuyruğunda bekliyor (250 kalan çeviri).
+
+**L · SEO + Sentry dalgası**:
+- `recipe-variants.ts` bozuk findFirst({take:30}) (`8d0d2af`) prod 500 fix
+- robots.txt `/ai-asistan?*` Disallow (`2e167d0`) GSC 150 noindex
+- `/giris` noindex + canonical + ReviewsSection rel=nofollow (`a5626a8`)
+  GSC 55 duplicate + 1 /akis redirect error kaynağı
+- Sentry N+1 /tarif/[slug] %5 sample filter (`bbc1918`) Googlebot
+  spike gürültüsü
+
+**M · Content + audit fix'ler**:
+- 32a 3 validation error (`67552d0`, mersin/diyarbakir tuz, havana alkollu)
+- audit-deep YUMURTA "kete" keyword "keten tohumu" exclude (`dd3d481`)
+
+**N · Liderlik feature flag** (`c0afa37`): SiteSetting
+LEADERBOARD_ENABLED (default false) + `/admin/ayarlar` toggle + admin
+layout "Özellikler" nav link + Navbar koşullu link + `/leaderboard`
+notFound() + metadata noindex. kozcactus admin tek tık açar.
+
+**O · Blog redesign** (`9ec84da`, `a5a4863`):
+- Sol sticky sidebar: arama + kategori + ay arşivi + alt konular +
+  reset filter
+- Post kartı: tag chip'leri (max 4 + N rozet)
+- Filter chain: category + tag + archive + search AND
+- TR ascii-fold normalize arama
+
+**P · AI v4.3 form persistence + dolabını tamamla** (`d64af61`):
+- `form-persistence.ts` localStorage 30 gün TTL, v3 + v4 snapshot
+- v3 empty result'ta "+ingredient (N tarifte)" client-side
+  frequency chip (ortalama match <%60 eşiği)
+
+**R · AI saate göre + sesli giriş** (`a94c46d`):
+- `time-context.ts` 6 senaryo (sabah/öğle/ikindi/akşam içi/akşam sonu/
+  gece), sky banner + "≤30 dk uygula" butonu
+- Web Speech API TR-TR, 🎤 Sesli ekle buton (Chrome/Safari mobile)
+
+**S · AI URL-state v4 + fırsat öneri** (`98e5abe`):
+- AiFillModal URL param okuma + "🔗 Link kopyala"
+- `getIngredientCompletionsAction` server-side top 50 ingredient
+  cached 1 saat, empty result'ta amber chip render
+
+**T · UserPantry tam DB** (`fe0146c`, `adf0e73`): en büyük feature.
+- UserPantryItem model + SQL migration (dev + prod)
+- 5 server action (get/add/bulk/update/remove) + pantry-mutation
+  rate limit 60/dk
+- /dolap sayfası (auth-gated): kategori grup + son kullanma uyarısı +
+  quick add + bulk add + inline qty/unit/date edit
+- 🎒 "Dolabımı getir" v3 AiAssistantForm + v4 AiFillModal entegre
+- Navbar "Dolabım" link (requiresAuth)
+- 17 unit test PASS
+
+**Toplam**: 32 commit, 250 yeni tarif, 200 çeviri, 16 AI özelliği,
+1 DB model (UserPantry), 6 yeni cuisine, 1 blog, Liderlik flag,
+blog redesign. **Pre-push pattern**: lint 5 katman korundu, tsc 0
+error, 674/674 test PASS (657 + 17 pantry).
 
 > Uzun tek oturum. AI Asistan v4 (haftalık menü planlayıcı) baştan
 > sona inşa edildi (core + UI + test + 5 iterasyon), Mod A Batch

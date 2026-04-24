@@ -41,6 +41,21 @@
   "Hayal edilen ingredient listesi" yasak, gerçek tarifle tutarlı olsun.
   Malzeme oranları, pişirme sıcaklıkları, süreler gerçek referans ile
   uyumlu. Yoksa yanlış bilgi + SEO zararı + kullanıcı güveni kaybı.
+- **⚠️ Minimum step sayısı (§14 Mod E tablosu Mod A'ya uygulanır,
+  oturum 17 sonu dersi):** Son 3 batch'te YEMEK ortalama 3.8 step,
+  yetersiz. Type'a göre minimum:
+
+  | Type | Minimum | İdeal |
+  |---|---|---|
+  | ICECEK | 3 | 3-4 |
+  | KOKTEYL | 4 | 4-5 |
+  | APERATIF | 4 | 4-6 |
+  | **YEMEK / CORBA / SALATA / TATLI / KAHVALTI** | **5** | **5-7** |
+
+  3-step bir YEMEK/TATLI/KAHVALTI tarifi REJECT. Composite step'i böl:
+  "Sebzeleri doğra ve kavur" → 2 adım ("Soğanı doğra" + "Soğan+biber+
+  domatesi 8 dk kavur"). Hamur işi 6-9, fırın yemeği 6-8, kebap/
+  güveç 5-8 ideal.
 - **isFeatured: her yarıda 3-5 tarif** (toplam batch için 5-10)
 - Eksik kategoriler için Kerem'e öncelik sor (kahvaltı/çorba/tatlı dengelensin)
 - Marker: `// ── BATCH 30a ──` (küçük `a`/`b` harf)

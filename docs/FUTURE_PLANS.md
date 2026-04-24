@@ -15,27 +15,34 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
-### Codex Batch 33b (oturum 17 sonu, Kerem tetikleyecek)
+### Codex Mod B Backfill-11 / 12 / 13 (oturum 17 sonu, Codex'te)
 
-Mod A pipeline devam, 33a v2 apply sonrası sırada 33b. Brief'e
-oturum 17 dersleri eklendi (§d-helper-yasak + helper tip zorunlu +
-allergen self-check). 33b teslim edildiğinde:
+32b + 33a v2 + 33b + 34a + 34b apply sonrası prod'da 250 slug çeviri
+gap'i. 3 CSV Codex kuyruğunda:
+- `docs/translations-backfill-11.csv` (100 slug, 34a ikinci yarı +
+  kalan)
+- `docs/translations-backfill-12.csv` (100 slug, 34b ilk yarı +
+  marjinal)
+- `docs/translations-backfill-13.csv` (50 slug, 34b kalan)
 
-- [ ] Workspace append point satır ~14082 (33a bitişi)
-- [ ] Self-check: d helper yok, emoji ≥8, kalori ≥10 farklı,
-      EN/DE description 50 unique, allergen guard TEMIZ
-- [ ] Apply dev + prod, commit, Backfill-11 açılır
+Her biri için Codex "Mod B. Backfill-NN" talimatı bekliyor.
 
-### Mod B Backfill-09 (oturum 17 sonu, 32b+33a v2 apply sonrası)
+- [ ] Codex 11 teslim → apply dev + prod
+- [ ] Codex 12 teslim → apply dev + prod
+- [ ] Codex 13 teslim → apply dev + prod
+- [ ] Apply sonrası Mod B 3252/3252 %100 olur
 
-32b + 33a v2 prod apply sonrası 100 yeni slug için EN+DE çeviri gap
-oluşur. `scripts/gen-modb-backfill-csv.ts --start 9 --confirm-prod`
-çalıştırılıp `docs/translations-backfill-09.csv` üretilir, Codex
-"Mod B. Backfill-09" ile tetiklenir.
+### Codex Mod A Batch 35a+ (oturum 18+, Kerem tetikleyecek)
 
-- [ ] Gap üret CSV
-- [ ] Codex Mod B retrofit (hem EN hem DE tüm alanlar)
-- [ ] Apply dev + prod, Mod B %100 durumu geri kazanılır
+Launch öncesi hedef 3500+ tarif. Şu an 3252, 248 kısa. Brief'te
+oturum 17 dersleri aktif (§d-helper-yasak + helper tip + allergen
+self-check + TR bölge denge kaldırıldı + uluslararası bilinen +
+web kaynak + minimum step YEMEK ≥5).
+
+- [ ] Kerem Codex 35a tetikler template ile
+- [ ] Apply dev + prod, Backfill-14 açılır
+
+### Neon → Vercel Marketplace migration cleanup (30 Nis 2026, 6 gün kaldı)
 
 ### Neon → Vercel Marketplace migration cleanup (30 Nis 2026, 5 gün kaldı)
 

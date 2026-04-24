@@ -14,6 +14,8 @@ import {
 } from "@/lib/rate-limit";
 import { getUserPantryStock } from "@/lib/pantry/server";
 import { computePantryMatch } from "@/lib/pantry/match";
+import { loadUserPreferenceProfile } from "@/lib/ai/preference-profile-server";
+import { applyBoostAndSort } from "@/lib/ai/preference-boost";
 
 interface ActionResult<T = undefined> {
   success: boolean;
@@ -50,8 +52,12 @@ export async function suggestRecipesAction(
     // stock'u varsa her suggestion icin quantity-aware match hesapla
     // ve suggestion.pantryMatch'a enjekte et. v4 (menu-planner) ile
     // tutarlilik saglanir.
+    // G: preference profile (explicit + bookmark) ile boost sort.
     if (session?.user?.id && result.suggestions.length > 0) {
-      const stock = await getUserPantryStock(session.user.id).catch(() => []);
+      const [stock, prefProfile] = await Promise.all([
+        getUserPantryStock(session.user.id).catch(() => []),
+        loadUserPreferenceProfile(session.user.id).catch(() => null),
+      ]);
       if (stock.length > 0) {
         const recipeIds = result.suggestions.map((s) => s.recipeId);
         const ingredientRows = await prisma.recipeIngredient.findMany({
@@ -83,6 +89,11 @@ export async function suggestRecipesAction(
           );
           return { ...s, pantryMatch };
         });
+      }
+      // G: Preference boost re-sort. Pantry match hesaplandıktan sonra
+      // çünkü sort ranking değişikliği en son uygulanmalı.
+      if (prefProfile) {
+        result.suggestions = applyBoostAndSort(result.suggestions, prefProfile);
       }
     }
 

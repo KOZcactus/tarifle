@@ -50,5 +50,28 @@ if (dsn) {
     ],
     release: process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA,
     environment: process.env.NEXT_PUBLIC_VERCEL_ENV ?? "development",
+    // Oturum 17 noise tune: /tarif/[slug] için Sentry otomatik "N+1
+    // Query" performans issue'ı üretiyordu. Mevcut query bilinçli
+    // olarak nested select + unstable_cache 30 dk TTL ile çalışıyor
+    // (getRecipeBySlug, lib/queries/recipe.ts satır 786). Googlebot
+    // crawl spike'larında fresh cache miss dalgası tek seferlik
+    // tetikler, gerçek bug değil. Cache invalidation stratejisi
+    // monitor dashboard'da izleniyor; buradan duplicate alarm lazım
+    // değil.
+    beforeSendTransaction(event) {
+      const spans = event.spans ?? [];
+      const hasN1Issue = spans.some(
+        (s) =>
+          s.op === "db.query" &&
+          s.description?.includes("prisma") &&
+          event.transaction === "/tarif/[slug]",
+      );
+      if (hasN1Issue && event.contexts?.trace?.op === "http.server") {
+        // Performance issue sadece sample'da görünsün, her trace
+        // Sentry'ye gönderilmesin.
+        if (Math.random() > 0.05) return null;
+      }
+      return event;
+    },
   });
 }

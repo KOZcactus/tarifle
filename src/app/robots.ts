@@ -38,6 +38,13 @@ export default function robots(): MetadataRoute.Robots {
           // parametre öğrenme süresi azaltılıyor. Path-based canonical
           // (/tarifler/[kategori], /mutfak/[cuisine]) indexable kalır.
           "/tarifler?*",
+          // AI Asistan ingredient combination URLs (?m=domates,tavuk).
+          // Kullanıcıya özel input, sonsuz permütasyon, thin content.
+          // noindex meta zaten var ama Google yine de tarıyor ve GSC'de
+          // "noindex hariç tutuldu" uyarısı üretiyor (21 Nis 2026, 150
+          // sayfa). Disallow ile taramayı tamamen engelle, canonical
+          // /ai-asistan zaten clean sayfaya işaret ediyor.
+          "/ai-asistan?*",
           // Pagination crawl trap (page>1 noindex + canonical page 1,
           // yine de Google sık sık para variant çekiyor).
           "/*?sayfa=*",

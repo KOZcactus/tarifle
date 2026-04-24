@@ -206,11 +206,11 @@ yakalandığında (1000+ DAU) tekrar aktifleştirilebilir:
 
 Oturum 16'da 26 → 30 yazı eklendi, 12/9/9 ideal denge. Sonraki adaylar:
 
-- [ ] **Blog 36+**: Zeytin Çeşitleri (malzeme), Balık Mevsimleri (rehber),
-      Makarna Çeşitleri (malzeme), Un Çeşitleri (malzeme),
-      Baharatlı Yemek Seviyeleri (rehber)
-- [ ] Hedef: **35-40 blog yazısı** açılış öncesi (mevcut 35, launch minimum
-      tam karşılandı) + opsiyonel 0-5 bonus
+- [ ] **Blog 37+**: Balık Mevsimleri (rehber), Makarna Çeşitleri (malzeme),
+      Un Çeşitleri (malzeme), Baharatlı Yemek Seviyeleri (rehber),
+      Soğuk vs Sıcak Başlangıç (rehber)
+- [ ] Hedef: **35-40 blog yazısı** açılış öncesi (mevcut 36, launch minimum
+      aşıldı) + opsiyonel 0-4 bonus
 - [ ] **İç link ağı**: mevcut 30 yazının birbirine çapraz-referansları
       (Blog 19 kalıp boyutu → Blog 14 kek dönüşümü bağlantısı gibi)
 

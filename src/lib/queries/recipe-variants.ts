@@ -46,63 +46,6 @@ async function computeVariantsInner(
     return { simpler: null, fancier: null };
   }
 
-  const [simpler, fancier] = await Promise.all([
-    prisma.recipe.findFirst({
-      where: {
-        status: "PUBLISHED",
-        id: { not: anchor.id },
-        categoryId: anchor.categoryId,
-        type: anchor.type,
-        steps: {
-          // Fewer steps: upper bound at anchor - 1. Prisma has no
-          // _count-on-where so we'll filter post-fetch with a generous
-          // candidate pool. Keep simple: query by totalMinutes proxy.
-        },
-      },
-      orderBy: [{ totalMinutes: "asc" }, { slug: "asc" }],
-      select: {
-        id: true,
-        slug: true,
-        title: true,
-        emoji: true,
-        imageUrl: true,
-        totalMinutes: true,
-        servingCount: true,
-        averageCalories: true,
-        isFeatured: true,
-        _count: { select: { steps: true, ingredients: true } },
-      },
-      take: 30,
-    }),
-    prisma.recipe.findFirst({
-      where: {
-        status: "PUBLISHED",
-        id: { not: anchor.id },
-        categoryId: anchor.categoryId,
-        type: anchor.type,
-      },
-      orderBy: [{ isFeatured: "desc" }, { totalMinutes: "desc" }, { slug: "asc" }],
-      select: {
-        id: true,
-        slug: true,
-        title: true,
-        emoji: true,
-        imageUrl: true,
-        totalMinutes: true,
-        servingCount: true,
-        averageCalories: true,
-        isFeatured: true,
-        _count: { select: { steps: true, ingredients: true } },
-      },
-      take: 30,
-    }),
-  ]);
-
-  // Prisma's findFirst returns one row; we requested a pool (take: 30) via
-  // findMany instead to pick the best fit. Rewrite with a pool query.
-  void simpler;
-  void fancier;
-
   const pool = await prisma.recipe.findMany({
     where: {
       status: "PUBLISHED",

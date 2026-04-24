@@ -381,3 +381,58 @@ export class RuleBasedMenuPlanner implements AiMenuPlanner {
 export function getMenuPlanner(): AiMenuPlanner {
   return new RuleBasedMenuPlanner();
 }
+
+/**
+ * v4.3 Tek-slot regenerate. `plan()` tüm 21 slotu baştan kurar, bu
+ * fonksiyon hedef hücre dışındaki 20 slotu aynen korur, sadece o
+ * hücreye yeni bir aday seçer. Seed rastgele, çağrı her basışta farklı
+ * tarif getirir. `excludeSlugs` + `categoryCount` + `cuisineCount` v4
+ * plan'daki kalan 20 slotdan türetilir, böylece tekrar, kategori cap
+ * (2/hafta), mutfak cap (3/hafta) disiplin devam eder.
+ */
+export interface RegenerateSlotContext {
+  targetMeal: MealSlotType;
+  excludeSlugs: Set<string>;
+  categoryCount: Map<string, number>;
+  cuisineCount: Map<string, number>;
+}
+
+export async function regenerateSingleSlot(
+  input: WeeklyMenuInput,
+  ctx: RegenerateSlotContext,
+): Promise<{ recipe: AiSuggestion | null; reason?: string }> {
+  const maxB = input.maxBreakfastMinutes ?? DEFAULT_MAX_BREAKFAST;
+  const maxL = input.maxLunchMinutes ?? DEFAULT_MAX_LUNCH;
+  const maxD = input.maxDinnerMinutes ?? DEFAULT_MAX_DINNER;
+  const types =
+    ctx.targetMeal === "BREAKFAST"
+      ? BREAKFAST_TYPES
+      : ctx.targetMeal === "LUNCH"
+        ? LUNCH_TYPES
+        : DINNER_TYPES;
+  const maxMinutes =
+    ctx.targetMeal === "BREAKFAST"
+      ? maxB
+      : ctx.targetMeal === "LUNCH"
+        ? maxL
+        : maxD;
+
+  const candidates = await fetchCandidates(input, types, maxMinutes);
+  // Fresh non-deterministic seed, her tıklamada farklı sıra.
+  const rand = mulberry32(Math.floor(Math.random() * 0xffffffff));
+  const pick = pickForSlot(
+    candidates,
+    ctx.excludeSlugs,
+    ctx.categoryCount,
+    ctx.cuisineCount,
+    MAX_PER_CATEGORY_WEEK,
+    MAX_PER_CUISINE_WEEK,
+    rand,
+  );
+  if (!pick) return { recipe: null };
+  const { _totalMinutes, _type, _macroBoost, ...suggestion } = pick;
+  void _totalMinutes;
+  void _type;
+  void _macroBoost;
+  return { recipe: suggestion, reason: buildReason(ctx.targetMeal, pick) };
+}

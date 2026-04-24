@@ -9,7 +9,10 @@ vi.mock("@/lib/prisma", () => ({
   },
 }));
 
-import { RuleBasedMenuPlanner } from "@/lib/ai/menu-planner";
+import {
+  RuleBasedMenuPlanner,
+  regenerateSingleSlot,
+} from "@/lib/ai/menu-planner";
 import { prisma } from "@/lib/prisma";
 import type { WeeklyMenuInput } from "@/lib/ai/types";
 
@@ -384,6 +387,77 @@ describe("RuleBasedMenuPlanner", () => {
     expect(diverged).toBe(true);
     // And protein plan must contain at least one protein-tagged pick.
     expect(proteinDinners.some((s) => s.startsWith("p-"))).toBe(true);
+  });
+
+  describe("regenerateSingleSlot (v4.3)", () => {
+    it("returns a different candidate than the excluded slugs", async () => {
+      const pool = buildRichPool();
+      mockPool(pool);
+      const planner = new RuleBasedMenuPlanner();
+      const base = await planner.plan({
+        ingredients: ["tuz", "un"],
+        assumePantryStaples: true,
+        seed: "regen-a",
+      });
+      // Pick a filled dinner slot and its current slug.
+      const targetIdx = base.slots.findIndex(
+        (s) => s.mealType === "DINNER" && s.recipe !== null,
+      );
+      expect(targetIdx).toBeGreaterThanOrEqual(0);
+      const target = base.slots[targetIdx]!;
+      const excludeSlugs = new Set<string>();
+      const categoryCount = new Map<string, number>();
+      const cuisineCount = new Map<string, number>();
+      for (const s of base.slots) {
+        if (!s.recipe) continue;
+        if (s.dayOfWeek === target.dayOfWeek && s.mealType === target.mealType)
+          continue;
+        excludeSlugs.add(s.recipe.slug);
+        categoryCount.set(
+          s.recipe.categoryName,
+          (categoryCount.get(s.recipe.categoryName) ?? 0) + 1,
+        );
+        if (s.recipe.cuisine)
+          cuisineCount.set(
+            s.recipe.cuisine,
+            (cuisineCount.get(s.recipe.cuisine) ?? 0) + 1,
+          );
+      }
+      mockPool(pool);
+      const res = await regenerateSingleSlot(
+        { ingredients: ["tuz", "un"], assumePantryStaples: true },
+        {
+          targetMeal: "DINNER",
+          excludeSlugs,
+          categoryCount,
+          cuisineCount,
+        },
+      );
+      // Aday bulundu + önceki 20 slot slug'ından değil.
+      expect(res.recipe).not.toBeNull();
+      expect(excludeSlugs.has(res.recipe!.slug)).toBe(false);
+      // Kategori ve mutfak cap'leri aşılmasın.
+      if (res.recipe!.cuisine) {
+        const next = (cuisineCount.get(res.recipe!.cuisine) ?? 0) + 1;
+        expect(next).toBeLessThanOrEqual(3);
+      }
+      const nextCat = (categoryCount.get(res.recipe!.categoryName) ?? 0) + 1;
+      expect(nextCat).toBeLessThanOrEqual(2);
+    });
+
+    it("returns null when no candidate passes filters", async () => {
+      mockPool([]);
+      const res = await regenerateSingleSlot(
+        { ingredients: ["tuz"], assumePantryStaples: true },
+        {
+          targetMeal: "BREAKFAST",
+          excludeSlugs: new Set(),
+          categoryCount: new Map(),
+          cuisineCount: new Map(),
+        },
+      );
+      expect(res.recipe).toBeNull();
+    });
   });
 
   it("different seeds produce different plans (non-determinism across seeds)", async () => {

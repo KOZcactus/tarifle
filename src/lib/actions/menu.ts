@@ -4,10 +4,14 @@ import { MealType } from "@prisma/client";
 import { z } from "zod";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
-import { getMenuPlanner } from "@/lib/ai/menu-planner";
-import type { WeeklyMenuResponse } from "@/lib/ai/types";
+import {
+  getMenuPlanner,
+  regenerateSingleSlot,
+} from "@/lib/ai/menu-planner";
+import type { AiSuggestion, WeeklyMenuResponse } from "@/lib/ai/types";
 import {
   applyWeeklyMenuSchema,
+  regenerateMenuSlotSchema,
   weeklyMenuSchema,
   type ApplyWeeklyMenuInput,
 } from "@/lib/validators";
@@ -177,6 +181,62 @@ export async function applyWeeklyMenuAction(
   } catch (error: unknown) {
     const message =
       error instanceof Error ? error.message : "Menü kaydedilemedi.";
+    return { success: false, error: message };
+  }
+}
+
+/**
+ * v4.3 Tek-slot regenerate. Mevcut 20 dolu slot'u değiştirmeden
+ * `targetDay` + `targetMeal` hücresine yeni bir tarif çeker. Çakışma,
+ * kategori cap (2/hafta), mutfak cap (3/hafta) kuralları client'tan
+ * gönderilen `currentSlots`'tan rebuild edilir, böylece haftalık
+ * çeşitlilik disiplinini korur.
+ */
+export async function regenerateMenuSlotAction(
+  raw: unknown,
+): Promise<ActionResult<{ recipe: AiSuggestion | null; reason?: string }>> {
+  const session = await auth();
+  const ip = session?.user?.id ? null : await getClientIp();
+  const rate = await checkRateLimit(
+    "ai-menu-planner",
+    rateLimitIdentifier(session?.user?.id, ip),
+  );
+  if (!rate.success) {
+    return { success: false, error: rate.message ?? "Çok fazla istek." };
+  }
+
+  const parsed = regenerateMenuSlotSchema.safeParse(raw);
+  if (!parsed.success) {
+    return {
+      success: false,
+      error: parsed.error.issues[0]?.message ?? "Geçersiz veri.",
+    };
+  }
+  const { input, targetDay, targetMeal, currentSlots } = parsed.data;
+
+  // Hedef hücre dışındaki slotlardan exclude + cap sayaçları rebuild.
+  const excludeSlugs = new Set<string>();
+  const categoryCount = new Map<string, number>();
+  const cuisineCount = new Map<string, number>();
+  for (const s of currentSlots) {
+    if (s.dayOfWeek === targetDay && s.mealType === targetMeal) continue;
+    excludeSlugs.add(s.slug);
+    categoryCount.set(s.categoryName, (categoryCount.get(s.categoryName) ?? 0) + 1);
+    if (s.cuisine)
+      cuisineCount.set(s.cuisine, (cuisineCount.get(s.cuisine) ?? 0) + 1);
+  }
+
+  try {
+    const result = await regenerateSingleSlot(input, {
+      targetMeal,
+      excludeSlugs,
+      categoryCount,
+      cuisineCount,
+    });
+    return { success: true, data: result };
+  } catch (error: unknown) {
+    const message =
+      error instanceof Error ? error.message : "Slot yenilenemedi.";
     return { success: false, error: message };
   }
 }

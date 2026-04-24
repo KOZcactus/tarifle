@@ -340,3 +340,25 @@ export const applyWeeklyMenuSchema = z.object({
 });
 
 export type ApplyWeeklyMenuInput = z.infer<typeof applyWeeklyMenuSchema>;
+
+/** v4.3 Single-slot regenerate: mevcut 20 dolu slot'u koruyup yalnız hedef
+ *  hücrenin tarifini başka bir uygun adayla değiştirir. `currentSlots`
+ *  picker'a çakışma kontrolü + kategori/mutfak cap'lerini rebuild ettirir. */
+export const regenerateMenuSlotSchema = z.object({
+  input: weeklyMenuSchema,
+  targetDay: z.number().int().min(0).max(6),
+  targetMeal: z.enum(["BREAKFAST", "LUNCH", "DINNER"]),
+  currentSlots: z
+    .array(
+      z.object({
+        dayOfWeek: z.number().int().min(0).max(6),
+        mealType: z.enum(["BREAKFAST", "LUNCH", "DINNER"]),
+        slug: z.string().min(1).max(200),
+        categoryName: z.string().min(1).max(80),
+        cuisine: z.string().min(2).max(5).nullable(),
+      }),
+    )
+    .max(21),
+});
+
+export type RegenerateMenuSlotInput = z.infer<typeof regenerateMenuSlotSchema>;

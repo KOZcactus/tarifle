@@ -7,6 +7,7 @@ import {
   generateWeeklyMenuAction,
   applyWeeklyMenuAction,
   addRecipesToShoppingListAction,
+  regenerateMenuSlotAction,
 } from "@/lib/actions/menu";
 import type {
   MacroPreference,
@@ -78,6 +79,8 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
   const [isGenerating, startGenerate] = useTransition();
   const [isApplying, startApply] = useTransition();
   const [isShopping, startShopping] = useTransition();
+  const [isRegenerating, startRegenerate] = useTransition();
+  const [regeneratingKey, setRegeneratingKey] = useState<string | null>(null);
   const [replaceExisting, setReplaceExisting] = useState(false);
   const [shoppingStatus, setShoppingStatus] = useState<string | null>(null);
 
@@ -222,6 +225,67 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
     // Fresh seed each click; keeps form inputs as-is, just varies plan.
     const seed = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
     runGenerate(seed);
+  }
+
+  function handleRegenerateSlot(
+    day: number,
+    meal: "BREAKFAST" | "LUNCH" | "DINNER",
+  ) {
+    if (!result) return;
+    const key = `${day}-${meal}`;
+    setRegeneratingKey(key);
+    setError(null);
+    const currentSlots = result.slots
+      .filter(
+        (s): s is MenuSlot & { recipe: NonNullable<MenuSlot["recipe"]> } =>
+          s.recipe !== null,
+      )
+      .map((s) => ({
+        dayOfWeek: s.dayOfWeek,
+        mealType: s.mealType,
+        slug: s.recipe.slug,
+        categoryName: s.recipe.categoryName,
+        cuisine: s.recipe.cuisine,
+      }));
+    const ingredients = splitCsv(ingredientsText);
+    if (ingredients.length === 0) {
+      setError(t("errorNoIngredients"));
+      setRegeneratingKey(null);
+      return;
+    }
+    startRegenerate(async () => {
+      const res = await regenerateMenuSlotAction({
+        input: {
+          ingredients,
+          assumePantryStaples: assumeStaples,
+          personCount,
+          dietSlug: dietSlug || undefined,
+          cuisines: selectedCuisines.length > 0 ? selectedCuisines : undefined,
+          maxBreakfastMinutes: maxBreakfast,
+          maxLunchMinutes: maxLunch,
+          maxDinnerMinutes: maxDinner,
+          macroPreference,
+        },
+        targetDay: day,
+        targetMeal: meal,
+        currentSlots,
+      });
+      setRegeneratingKey(null);
+      if (!res.success || !res.data) {
+        setError(res.error ?? t("errorGeneric"));
+        return;
+      }
+      const { recipe, reason } = res.data;
+      setResult((prev) => {
+        if (!prev) return prev;
+        const nextSlots = prev.slots.map((s) =>
+          s.dayOfWeek === day && s.mealType === meal
+            ? { ...s, recipe, reason }
+            : s,
+        );
+        return { ...prev, slots: nextSlots };
+      });
+    });
   }
 
   function handleShoppingList() {
@@ -603,19 +667,60 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
                                 </td>
                               );
                             }
+                            const matchPct = Math.round(
+                              (slot.recipe.matchScore ?? 0) * 100,
+                            );
+                            const perfect =
+                              slot.recipe.missingIngredients.length === 0;
+                            const cellKey = `${dayIdx}-${meal}`;
+                            const isThisRegen = regeneratingKey === cellKey;
                             return (
                               <td key={meal} className="px-2 py-2">
-                                <div className="text-sm font-medium text-text">
-                                  {slot.recipe.emoji && (
-                                    <span aria-hidden className="mr-1">
-                                      {slot.recipe.emoji}
-                                    </span>
-                                  )}
-                                  {slot.recipe.title}
-                                </div>
-                                <div className="mt-0.5 text-xs text-text-muted">
-                                  {slot.recipe.totalMinutes} dk ·{" "}
-                                  {slot.reason}
+                                <div className="flex items-start justify-between gap-2">
+                                  <div className="min-w-0 flex-1">
+                                    <div className="text-sm font-medium text-text">
+                                      {slot.recipe.emoji && (
+                                        <span aria-hidden className="mr-1">
+                                          {slot.recipe.emoji}
+                                        </span>
+                                      )}
+                                      {slot.recipe.title}
+                                    </div>
+                                    <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-text-muted">
+                                      <span>{slot.recipe.totalMinutes} dk</span>
+                                      <span
+                                        className={`font-semibold ${
+                                          perfect
+                                            ? "text-accent-green"
+                                            : matchPct >= 70
+                                              ? "text-secondary"
+                                              : "text-text-muted"
+                                        }`}
+                                        aria-label={t("matchAria", {
+                                          percent: matchPct,
+                                        })}
+                                      >
+                                        %{matchPct} {t("matchLabel")}
+                                      </span>
+                                      {slot.reason && <span>· {slot.reason}</span>}
+                                    </div>
+                                  </div>
+                                  <button
+                                    type="button"
+                                    onClick={() =>
+                                      handleRegenerateSlot(dayIdx, meal)
+                                    }
+                                    disabled={
+                                      isRegenerating ||
+                                      isGenerating ||
+                                      isApplying
+                                    }
+                                    className="shrink-0 rounded-md border border-surface-muted bg-surface px-1.5 py-0.5 text-xs leading-none text-text-muted transition hover:border-primary/40 hover:text-primary disabled:cursor-not-allowed disabled:opacity-50"
+                                    aria-label={t("regenerateSlotAria")}
+                                    title={t("regenerateSlotTitle")}
+                                  >
+                                    {isThisRegen ? "⏳" : "🎲"}
+                                  </button>
                                 </div>
                               </td>
                             );

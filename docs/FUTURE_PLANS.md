@@ -147,18 +147,6 @@ Siteyi kırmaz (Report-Only), sadece rapor eder. Sonraki adımlar:
 
 İzleme süresince Sentry filter: `tag:csp.directive:*`.
 
-### Newsletter subscriber orphan cleanup (deleteAccountAction edge case)
-
-Audit tespiti: user delete edildiğinde `NewsletterSubscriber` email'e göre kayıt
-tutar, user.email ile orphan kalabilir. Kullanıcı `/ayarlar`'dan önceden unsubscribe
-olsa da edge case: hesabı direkt silerse newsletter gelmeye devam eder.
-
-Fix: `deleteAccountAction` transaction'ına ekle:
-```ts
-prisma.newsletterSubscriber.deleteMany({ where: { email: user.email } }),
-```
-
-5 dakikalık iş, düşük öncelik (kullanıcı zaten unsubscribe link'iyle durdurabilir).
 
 ### NPM audit 13 moderate vulnerability (postcss + uuid transient)
 
@@ -283,11 +271,11 @@ yakalandığında (1000+ DAU) tekrar aktifleştirilebilir:
 
 Oturum 16'da 26 → 30 yazı eklendi, 12/9/9 ideal denge. Sonraki adaylar:
 
-- [ ] **Blog 38+**: Makarna Çeşitleri (malzeme), Un Çeşitleri (malzeme),
-      Baharatlı Yemek Seviyeleri (rehber), Soğuk vs Sıcak Başlangıç (rehber),
-      Ev Yapımı Ekmek Tipleri (malzeme)
-- [ ] Hedef: **35-40 blog yazısı** açılış öncesi (mevcut 37, launch minimum
-      aşıldı) + opsiyonel 0-3 bonus
+- [ ] **Blog 39+**: Un Çeşitleri (malzeme), Baharatlı Yemek Seviyeleri (rehber),
+      Soğuk vs Sıcak Başlangıç (rehber), Ev Yapımı Ekmek Tipleri (malzeme),
+      Damaklı Yemek Dengesi (rehber)
+- [ ] Hedef: **35-40 blog yazısı** açılış öncesi (mevcut 38, launch minimum
+      aşıldı) + opsiyonel 0-2 bonus
 - [ ] **İç link ağı**: mevcut 30 yazının birbirine çapraz-referansları
       (Blog 19 kalıp boyutu → Blog 14 kek dönüşümü bağlantısı gibi)
 

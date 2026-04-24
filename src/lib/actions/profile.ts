@@ -404,6 +404,18 @@ export async function deleteAccountAction(
     }
   }
 
+  // User email'ine gore newsletter abonelik varsa transaction'a dahil et.
+  // Oturum 19 security audit edge case: email-bazli NewsletterSubscription
+  // user cascade'inde otomatik silinmiyordu (foreign key yumusak, user
+  // logged-out aboneligi destekliyor). Hesap silen kullanicinin mail
+  // kutusuna newsletter gelmesin.
+  const userEmail = (
+    await prisma.user.findUnique({
+      where: { id: user.id },
+      select: { email: true },
+    })
+  )?.email;
+
   // All gates cleared, do the deed. Ordered so FKs don't choke. Wrapped in
   // a transaction to keep the DB consistent if any step throws.
   await prisma.$transaction([
@@ -422,6 +434,14 @@ export async function deleteAccountAction(
       where: { uploaderId: user.id },
       data: { uploaderId: null },
     }),
+    // Newsletter orphan temizlik: email ile de bagli olanlari temizle.
+    ...(userEmail
+      ? [
+          prisma.newsletterSubscription.deleteMany({
+            where: { email: userEmail },
+          }),
+        ]
+      : []),
     prisma.user.delete({ where: { id: user.id } }),
   ]);
 

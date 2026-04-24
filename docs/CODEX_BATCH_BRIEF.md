@@ -1064,13 +1064,23 @@ etmen gereken şeyler:
 - JSON'daki `en.tipNote` set'inin size'ı tarif sayısına yakın mı?
   (100 tarif → 70+ unique beklenir, 5 altı = ciddi template fill)
 - `en.servingSuggestion` aynı şekilde
+- **`de.tipNote` VE `de.servingSuggestion` AYNI DISIPLIN** (oturum 19
+  Backfill-14 dersi). DE serving 98/100 unique çıktı, 2 çift dupe
+  ("Heiss in Schalen mit Minzbutter servieren" 2 yoğurtlu çorbada,
+  "Heiss mit Jasminreis und Fruehlingszwiebeln" 2 Çin wok'ta). Semantik
+  doğru ama ayrı tarifler ayrı DE metin hak eder. **Benzer tariflerde
+  bile en az 1 kelime farkla ayrılsın** (yan tabak, doku ipucu, garnitür
+  farkı, dilimleme tarzı vs).
+  - Backfill-15 örneği: Codex feedback'i aldı, 100/100 EN + 100/100 DE
+    unique teslim etti. Hedef seviye.
 - `en.ingredients[].name` + `en.steps[].instruction` → Türkçe harf
   (çğıöşü) var mı? Varsa düzelt (EN özel isim hariç: "karniyarik",
   "menemen" gibi yemek adı korunur ama yardımcı fiil/isim çevrilir)
 - Her slug için `en.steps.length === tr_step_count_from_csv`?
 
-Self-check'i teslim mesajına ekle: "grep temiz / unique tipNote=82 /
-step count tümü eşleşiyor".
+Self-check'i teslim mesajına ekle: "grep temiz / unique EN tip=100 /
+unique EN serv=100 / unique DE tip=100 / unique DE serv=100 / step
+count tümü eşleşiyor".
 
 ### Biçim detayları
 

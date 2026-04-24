@@ -1313,6 +1313,31 @@ sahte geçme.**
     "
     ```
 
+17. ⛔ **A+ KURALI (§5.0 madde 5, oturum 19 Retrofit-16 + Batch 37a dersi): TEMPLATE SMUGGLING YASAK.** Aynı suffix pattern'ini farklı tariflerde kullanma; slug/tarif adını değişken gibi başa koyup aynı cümle kalıbını tekrar etmek `template dup` gate'ini exact-match olduğu için atlatır, ama **kalite sıfıra düşer**. Retrofit-16'da 42/100 tarif step 1'de 5 suffix'i paylaştı (`"[TARIFADI] tepsisini hazırlayın, hamur oranı şaşmasın"`, `"[TARIFADI] servis bardaklarını hazırlayın, katmanlar kenardan akmasın"`, vb.). **Her tarifin step 1'i o tarifin gerçek ilk aksiyonu olmalı** — "Unu ve şekeri çırpın", "Elmaları 1 cm küp doğra", "Sütü 85°C'ye ısıt" gibi malzeme/tekniğe özel. "[TARIFADI] X hazırlayın" gibi generic scaffold YAZMA.
+
+    Kritik nokta notu (§15.7.4 / madde 4) step 1'e template olarak yerleştirilmez; tarif akışı içinde **doğal yerine** otur (ör. süt kaynatırken "sütün yanmaması için sürekli karıştırın"). Retrofit-06 🏆 örneği: her step spesifik, scaffold yok.
+
+    Bash (suffix frekans kontrolü — step 1'lerde tarif adı sonrası kalıp):
+    ```bash
+    node -e "
+    const recipes = require('./dist-seed-temp.js').recipes.slice(-50);
+    const freq = {};
+    recipes.forEach(r => {
+      const s1 = r.steps[0].instruction;
+      const suffix = s1.split(' ').slice(3).join(' '); // ilk 3 kelime (tarif adı) strip
+      freq[suffix] = (freq[suffix] || 0) + 1;
+    });
+    const top = Object.entries(freq).sort((a,b)=>b[1]-a[1])[0];
+    if (top && top[1] > 5) {
+      console.log('FAIL: step1 suffix dup', top[1]+'x:', top[0].slice(0,80));
+      process.exit(1);
+    }
+    console.log('PASS: step1 suffix dağılımı temiz');
+    "
+    ```
+
+    Aynı kontrol son step için de geçerli — servis/kapanış cümlesi de template olmasın.
+
 ### Pass 2, Çeviri kalitesi (EN + DE)
 
 1. ✅ EN + DE title + description dolu? (Mod A minimum; ingredients/steps
@@ -2189,6 +2214,28 @@ işaretlesin. **Herhangi biri ☐ ise teslim GERI ÇEVİR ve düzelt.**
 - ☐ UTF-8 no-BOM (dosya ilk byte `[`)
 - ☐ `?` karakter 0 (encoding kaynaklı smuggling yok)
 - ☐ Template dup 0 (aynı cümle 2+ tarifte yok)
+- ☐ **Suffix smuggling 0** (oturum 19 Retrofit-16 dersi): step 1 ve son
+  step'lerde "[TARIFADI] X hazırlayın/pişirin, Y olmasın" gibi tarif adı
+  başta + aynı suffix'in 5+ tarifte tekrar etmesi yasak. `template dup`
+  gate'i exact match olduğu için bu scaffold'u yakalayamıyor; her tarif
+  step 1 **kendi malzemesinin/tekniğinin ilk gerçek aksiyonu** olmalı
+  (örn. "Unu ve şekeri çırpın", "Elmaları 1 cm küp doğra"). Generic
+  hazırlık cümleleri ("servis bardaklarını hazırla") yasak. Retrofit-06
+  🏆 referans: her step tarif-spesifik, scaffold yok.
+- ☐ Bash suffix dup check (ilk 3 kelime strip, top freq ≤ 5 tarif):
+  ```bash
+  node -e "
+  const j = JSON.parse(require('fs').readFileSync('docs/retrofit-step-count-N.json'));
+  const freq = {};
+  j.forEach(r => {
+    const suffix = r.newSteps[0].instruction.split(' ').slice(3).join(' ');
+    freq[suffix] = (freq[suffix]||0) + 1;
+  });
+  const top = Object.entries(freq).sort((a,b)=>b[1]-a[1])[0];
+  if (top && top[1] > 5) { console.log('FAIL suffix smuggling', top[1]+'x:', top[0].slice(0,80)); process.exit(1) }
+  console.log('PASS suffix temiz');
+  "
+  ```
 
 **Gate 7 — Step kelime sayısı** (§15.7, oturum 19 gevşetme)
 - ☐ Her step instruction **4-40 kelime** arasında (hard min 4)

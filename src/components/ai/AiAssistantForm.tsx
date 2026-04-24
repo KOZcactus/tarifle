@@ -15,6 +15,8 @@ import {
 } from "@/lib/cuisines";
 import { ShareMenu } from "@/components/recipe/ShareMenu";
 import { PresetChips } from "@/components/ai/PresetChips";
+import { PantryHistoryChips } from "@/components/ai/PantryHistoryChips";
+import { pushToPantryHistory } from "@/lib/ai/pantry-history";
 
 /** Popular ingredients shown as quick-add chips when input is empty. */
 const POPULAR_INGREDIENTS = [
@@ -122,6 +124,7 @@ export function AiAssistantForm({
   const [cuisine, setCuisine] = useState<string>(initialPrefs.cuisine);
   const [dietSlug, setDietSlug] = useState<string>(initialPrefs.dietSlug);
   const [assumePantry, setAssumePantry] = useState(true);
+  const [historyBump, setHistoryBump] = useState(0);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [selectedSuggestionIdx, setSelectedSuggestionIdx] = useState(-1);
   const [sortMode, setSortMode] = useState<
@@ -357,6 +360,8 @@ export function AiAssistantForm({
       setCurrentInput("");
       setResult(response.data);
       saveSearch(finalIngredients);
+      pushToPantryHistory(finalIngredients);
+      setHistoryBump((x) => x + 1);
     });
   }
 
@@ -510,6 +515,16 @@ export function AiAssistantForm({
           <p className="mt-1.5 text-xs text-text-muted">
             {tForm("ingredientsHelper")}
           </p>
+          <PantryHistoryChips
+            className="mt-2"
+            refreshKey={historyBump}
+            onAdd={(name) => {
+              const alreadyIn = ingredients.some(
+                (i) => i.toLocaleLowerCase("tr") === name.toLocaleLowerCase("tr"),
+              );
+              if (!alreadyIn) setIngredients([...ingredients, name]);
+            }}
+          />
           {/* Popular ingredient quick-add chips */}
           {ingredients.length === 0 && (
             <div className="mt-2 flex flex-wrap gap-1.5">

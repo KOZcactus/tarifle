@@ -24,6 +24,11 @@ import {
 } from "@/components/ai/IngredientSuggestionBar";
 import { PresetChips } from "@/components/ai/PresetChips";
 import type { MenuPreset } from "@/lib/ai/presets";
+import {
+  PantryHistoryChips,
+  appendIngredient,
+} from "@/components/ai/PantryHistoryChips";
+import { pushToPantryHistory } from "@/lib/ai/pantry-history";
 
 type View = "form" | "preview";
 
@@ -79,6 +84,7 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
   const [maxLunch, setMaxLunch] = useState<number | undefined>(undefined);
   const [maxDinner, setMaxDinner] = useState<number | undefined>(undefined);
   const [macroPreference, setMacroPreference] = useState<MacroPreference>("none");
+  const [historyBump, setHistoryBump] = useState(0);
 
   function toggleCuisine(code: CuisineCode) {
     setSelectedCuisines((prev) =>
@@ -148,6 +154,8 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
       }
       setResult(res.data);
       setView("preview");
+      pushToPantryHistory(ingredients);
+      setHistoryBump((x) => x + 1);
     });
   }
 
@@ -301,6 +309,13 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
                   text={ingredientsText}
                   onReplaceLast={(name) =>
                     setIngredientsText((prev) => replaceLastToken(prev, name))
+                  }
+                />
+                <PantryHistoryChips
+                  className="mt-2"
+                  refreshKey={historyBump}
+                  onAdd={(name) =>
+                    setIngredientsText((prev) => appendIngredient(prev, name))
                   }
                 />
               </div>

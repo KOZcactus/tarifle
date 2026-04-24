@@ -157,6 +157,7 @@ export const ALLERGEN_RULES: AllergenRule[] = [
       "spagetti", "spaghetti", "penne", "fusilli", "fettuccine", "tagliatelle",
       "tagliolini", "linguine", "rigatoni", "farfalle", "lasagna", "lazanya",
       "udon", "gnocchi", "tortilla", "ravioli", "tortellini", "orzo", "pastitsio",
+      "pierogi",
       // Compound bread names where base "ekmek" substring won't catch:
       "tost", "bagel", "milfoy", "pita", "tandir ekmeg",
       // Regional breads + croutons + muffin variants:

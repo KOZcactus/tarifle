@@ -66,6 +66,24 @@
     },
     "seasonal": {
       "minutes": "dk"
+    },
+    "timeAware": {
+      "headline": {
+        "breakfastQuick": "☀️ Günaydın, hızlı bir kahvaltı?",
+        "lunchMedium": "🍲 Öğlen için sıcak öneriler",
+        "afternoonSnack": "🥨 İkindi atıştırmalığı",
+        "dinnerQuick": "⚡ Hızlı akşam yemeği",
+        "dinnerWeekendLong": "🍽️ Hafta sonu sofrası",
+        "lateNightSweet": "🍰 Gece tatlısı"
+      },
+      "subtitle": {
+        "breakfastQuick": "20 dk altı kahvaltılıklar, güne keyifli başla.",
+        "lunchMedium": "45 dk altı çorba ve sıcak yemekler.",
+        "afternoonSnack": "Çay saatine uyan hafif atıştırmalıklar.",
+        "dinnerQuick": "30 dk altı pratik akşam yemekleri.",
+        "dinnerWeekendLong": "Daha uzun pişirme süreniz var, klasikleri dene.",
+        "lateNightSweet": "15 dk altı küçük tatlılar, uykudan önce."
+      }
     }
   },
   "auth": {

@@ -66,6 +66,24 @@
     },
     "seasonal": {
       "minutes": "min"
+    },
+    "timeAware": {
+      "headline": {
+        "breakfastQuick": "☀️ Good morning, quick breakfast?",
+        "lunchMedium": "🍲 Warm picks for lunch",
+        "afternoonSnack": "🥨 Afternoon snacks",
+        "dinnerQuick": "⚡ Quick dinner tonight",
+        "dinnerWeekendLong": "🍽️ Weekend spread",
+        "lateNightSweet": "🍰 Late-night treats"
+      },
+      "subtitle": {
+        "breakfastQuick": "Under 20 min breakfast ideas to kick off the day.",
+        "lunchMedium": "Under 45 min soups and warm mains.",
+        "afternoonSnack": "Light snacks that pair with tea time.",
+        "dinnerQuick": "Under 30 min weeknight-friendly dinners.",
+        "dinnerWeekendLong": "You have more time, try the classics.",
+        "lateNightSweet": "Small sweets, under 15 min, before bed."
+      }
     }
   },
   "auth": {

@@ -33,10 +33,30 @@ export interface TimeHint {
   labelKey: string;
 }
 
+/**
+ * getTimeHint TR timezone UTC+3 kullanir, server'da UTC saati TR'ye
+ * cevrilir. Vercel edge UTC calisir, getHours() local TZ'e gore yanlis
+ * hour verebilir; bu yuzden explicit TR offset.
+ */
+export function getTimeHintTr(nowUtc: Date = new Date()): TimeHint {
+  const trMs = nowUtc.getTime() + 3 * 60 * 60 * 1000;
+  const tr = new Date(trMs);
+  return getTimeHintAt(tr.getUTCHours(), tr.getUTCDay());
+}
+
+export function getTimeHintAt(hour: number, day: number): TimeHint {
+  const isWeekend = day === 0 || day === 6;
+  return _computeHint(hour, isWeekend);
+}
+
 export function getTimeHint(now: Date = new Date()): TimeHint {
   const hour = now.getHours();
   const day = now.getDay(); // 0=Sun, 6=Sat
   const isWeekend = day === 0 || day === 6;
+  return _computeHint(hour, isWeekend);
+}
+
+function _computeHint(hour: number, isWeekend: boolean): TimeHint {
 
   // Geceyarısı sonrası / erken sabah: hızlı kahvaltı
   if (hour >= 6 && hour < 10) {

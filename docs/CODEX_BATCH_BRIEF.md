@@ -25,8 +25,22 @@
   riski azaldı)
 - Batch adı: **{N}a** ilk 50, **{N}b** sonraki 50 (örn. Batch 30a,
   30b; 31a, 31b). Kerem her yarıyı ayrı tetikler.
-- Dağılım: **~25 TR + ~25 uluslararası**, uluslararasıda eksik mutfaklardan çeşitlilik
-- TR'de **bölgesel çeşitlilik** zorunlu, sadece klasik değil, 7 bölgeden örnekler (Karadeniz, Ege, Güneydoğu, İç Anadolu, Doğu, Marmara, Akdeniz)
+- Dağılım: **~25 TR + ~25 uluslararası**. Sayı yaklaşık (23-27 TR kabul), tam matematiksel denge aranmaz.
+- **TR bölge dengesi KALDIRILDI (oturum 17 dersi, 33b+):** 7 bölgeden eşit
+  paylaşım zorunluluğu yok. Çoğu bölge catalog'da dolu. Özgün TR tarif
+  üretirken bölge karıştır ama "her bölgeden 3-4 tarif" matematik
+  dengesiyle uğraşma, iş yavaşlatıyor.
+- **Uluslararası ülkelerde bilinen/popüler öncelikli:** Endonezya nasi goreng,
+  Almanya bratwurst, Fransa ratatouille, Japonya katsu, Hindistan butter
+  chicken gibi arama yapınca kolay tanınan tarifler. Her ülkenin taşra mutfağı
+  keşfi değil, mainstream menü.
+- **⚠️ Tarif doğruluğu için web kaynak kontrolü ZORUNLU:** Özellikle
+  uluslararası tarifler + az bilinen TR yöresel tarifler için **yazmadan önce**
+  güvenilir kaynaktan (BBC Food, Serious Eats, Bon Appétit, yemek.com,
+  nefisyemektarifleri, resmi turizm/kültür siteleri) temel reçeteyi doğrula.
+  "Hayal edilen ingredient listesi" yasak, gerçek tarifle tutarlı olsun.
+  Malzeme oranları, pişirme sıcaklıkları, süreler gerçek referans ile
+  uyumlu. Yoksa yanlış bilgi + SEO zararı + kullanıcı güveni kaybı.
 - **isFeatured: her yarıda 3-5 tarif** (toplam batch için 5-10)
 - Eksik kategoriler için Kerem'e öncelik sor (kahvaltı/çorba/tatlı dengelensin)
 - Marker: `// ── BATCH 30a ──` (küçük `a`/`b` harf)

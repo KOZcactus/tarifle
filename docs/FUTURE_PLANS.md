@@ -15,6 +15,48 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
+### Legal + KVKK detay polish (launch öncesi, opsiyonel, 15-30 dk)
+
+Oturum 19 G paketi audit'i: Kerem KVKK/Gizlilik/Kullanım Koşulları/Çerez
+Politikası/Güvenlik/İletişim 6 sayfayı detaylı yazmış, 6698 referansı,
+veri sorumlusu, hukuki sebepler, işleme amaçları net.
+
+Minor polish noktaları (launch-blocker değil, Kerem kararı):
+
+1. **Veri sorumlusu kurumsal kimlik**: şu an "Tarifle platformu" + Kerem
+   iletişim email. Launch formalite için "Tarifle - [Kerem Öztürk,
+   Şahsi]" veya "Tarifle - [LTD ŞTİ adı]" ünvan eklenebilir. KVKK
+   uyumu zaten var, bu sadece görünüm.
+
+2. **lastUpdate tarihi**: 19 Nisan 2026 (6 gün eski). Bu oturumda CSP
+   Report-Only + X-Frame-Options + delete flow eklendi; bunlar gizlilik/
+   güvenlik yazılarına yansımadı. Minor: "Güvenlik" sayfasına "Content-
+   Security-Policy Report-Only mode aktif", "X-Frame-Options DENY"
+   satırları eklenebilir. Ve lastUpdate → 25 Nisan 2026.
+
+3. **İletişim email kurumsal**: koz.devs@gmail.com kişisel. Launch için
+   kvkk@tarifle.app + iletisim@tarifle.app alias'ları Resend/Cloudflare
+   Email Routing ile Kerem'in inbox'ına forward edilebilir. Güven sinyali.
+
+### Blog internal link ağı genişletme (launch öncesi, 1-2 saat)
+
+Oturum 19 H paketi audit'i: 36 blog yazısından sadece 4'ü (oturum 19'da
+yazılan 32, 33, 34, 35, 36) başka bloga internal link veriyor. 32 eski
+yazı birbirine referans vermiyor.
+
+Overlapping domain analizi:
+- Et güvenliği üçleme: soğuk-zincir + et-mühürleme + hijyen (3 yazı)
+- Hamur üçleme: pilav + maya-kabartma + un-helvasi (lalanga?)
+- Süt ürünleri dörtleme: yoğurt (fermentasyon) + tereyağı + peynir + zeytin ✅ (zaten link var)
+- Kahvaltı: Turk-kahvaltisinin-mantigi + ilgili süt ürünleri + kahve-demleme
+
+Her eski yazıya 1-3 internal link ekleme: 32 × 2 ort = ~64 link, 1-2
+saat manuel iş. SEO on-page authority + reader journey.
+
+Opsiyonel yaklaşım: blog detail sayfasına component seviyesinde "İlgili
+Yazılar" widget (kategori + tag match). Daha az manuel iş + dinamik
+update, ama editorial seçim kadar güçlü değil.
+
 ### DMARC kaydı ekle (launch öncesi, 5 dk DNS işi)
 
 Oturum 19 cron + observability audit'inde tespit edildi: `_dmarc.tarifle.app`

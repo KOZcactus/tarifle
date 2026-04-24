@@ -80,11 +80,43 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     keywords: post.tags.join(", "),
   };
 
+  // BreadcrumbList JSON-LD, Google SERP breadcrumb rich result + SEO.
+  // HTML breadcrumb asagida zaten var, JSON-LD arama motorlari icin
+  // structured data katmani (oturum 19 H paketi SEO gap fix).
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: t("breadcrumbHome"),
+        item: SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: t("breadcrumbBlog"),
+        item: `${SITE_URL}/blog`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: `${SITE_URL}/blog/${slug}`,
+      },
+    ],
+  };
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <nav aria-label="breadcrumb" className="mb-4 text-xs text-text-muted">

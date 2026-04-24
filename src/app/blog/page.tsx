@@ -6,6 +6,7 @@ import {
   type BlogPostListItem,
   type BlogCategoryMeta,
 } from "@/components/blog/BlogListingClient";
+import { SITE_URL } from "@/lib/constants";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("metadata.blog");
@@ -22,7 +23,10 @@ export async function generateMetadata(): Promise<Metadata> {
  * arşivi) + sağ tarafta filtrelenmiş liste.
  */
 export default async function BlogListingPage() {
-  const posts = await getAllBlogPosts();
+  const [posts, t] = await Promise.all([
+    getAllBlogPosts(),
+    getTranslations("blog"),
+  ]);
 
   const serializable: BlogPostListItem[] = posts.map((p) => ({
     slug: p.slug,
@@ -40,5 +44,34 @@ export default async function BlogListingPage() {
     emoji: c.emoji,
   }));
 
-  return <BlogListingClient posts={serializable} categories={categories} />;
+  // BreadcrumbList JSON-LD (oturum 19 H paketi): Google SERP rich result
+  // Home > Blog 2-item breadcrumb yapisi.
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: t("breadcrumbHome"),
+        item: SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: t("breadcrumbBlog"),
+        item: `${SITE_URL}/blog`,
+      },
+    ],
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <BlogListingClient posts={serializable} categories={categories} />
+    </>
+  );
 }

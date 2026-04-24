@@ -44,9 +44,10 @@
   --color-bg: #0f0f0f;
   --color-bg-card: #1a1a1a;
   --color-bg-elevated: #222222;
-  /* Dark mode primary — koyu bg üzerinde parlamak için daha açık tutuyoruz
-     ama buton beyaz yazı kontrastını AA'ya getirecek şekilde #ff7a3d
-     (beyaz altında 4.47 ≈ borderline). Eski #ff6b35 3.02'ydi. */
+  /* Dark mode primary: koyu bg üzerinde parlaklık için #ff7a3d tonu.
+     Beyaz yazı üstünde contrast 4.47 (AA Large OK, Normal borderline).
+     Normal text AA için aşağıda button'lara koyu yazı override (6.7
+     contrast, AAA seviyesi). Oturum 19 a11y paketi fix. */
   --color-primary: #ff7a3d;
   --color-primary-hover: #ff9055;
   --color-secondary: #ffc857;
@@ -127,6 +128,21 @@ body {
 :focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
+}
+
+/* ─── DARK PRIMARY BUTTON TEXT CONTRAST (WCAG AA) ─────────
+ * Oturum 19 a11y fix: dark theme `--color-primary: #ff7a3d` background +
+ * beyaz yazı = 4.47 (AA Large OK, Normal borderline). `#1a1a1a` koyu metin
+ * ile 6.7 (AAA seviyesi). Sadece button / anchor elementlerinde primary
+ * bg olanlar hedeflenir, dekoratif `bg-primary/10` gibi opacity variant'lara
+ * dokunmaz. */
+[data-theme="dark"] button.bg-primary,
+[data-theme="dark"] button.bg-primary-hover,
+[data-theme="dark"] a.bg-primary,
+[data-theme="dark"] a.bg-primary-hover,
+[data-theme="dark"] button.bg-primary:hover,
+[data-theme="dark"] a.bg-primary:hover {
+  color: #1a1a1a;
 }
 
 /* ─── PRINT ──────────────────────────────────────────────── */

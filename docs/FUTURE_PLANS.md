@@ -106,24 +106,6 @@ Kalan opsiyonel polish'ler:
    eklendi. messages/de.json yaratılmamış, gerektiğinde olur.
 
 
-### Dark theme primary renk contrast detay audit (launch sonrası, 1 saat)
-
-Oturum 19 a11y audit'inde tespit edildi: dark theme `--color-primary: #ff7a3d`
-+ beyaz metin contrast ratio ~4.47, WCAG AA normal text sınırı 4.5 hemen
-altında. Large text (≥14px bold, butonlar bu kategoride) için gereken 3.0
-zaten karşılanıyor, launch-blocker değil.
-
-Detay düzenleme seçenekleri:
-- Option A: dark primary'yi biraz koyulaştır (`#c65414` contrast ≈4.59 ama
-  renk mat, "marka sıcaklığı" etkilenir)
-- Option B: primary button text rengini koyu yap (`color: #1a1a1a` primary
-  bg üzerinde contrast ≈6.7 ✅), butonların visual weight değişir
-- Option C: Large text kategorisi üzerinden AA kanıtla (button text 14px
-  bold = WCAG large text, contrast 3.0 gate), mevcut durum yeterli belge
-  gönder
-
-Launch öncesi: Option C (documentation). Launch sonrası marka audit'inde
-A veya B.
 
 
 ### CSP Report-Only → enforce geçiş (oturum 19'da ship edildi, izleme aşaması)
@@ -268,11 +250,11 @@ yakalandığında (1000+ DAU) tekrar aktifleştirilebilir:
 
 Oturum 16'da 26 → 30 yazı eklendi, 12/9/9 ideal denge. Sonraki adaylar:
 
-- [ ] **Blog 39+**: Un Çeşitleri (malzeme), Baharatlı Yemek Seviyeleri (rehber),
-      Soğuk vs Sıcak Başlangıç (rehber), Ev Yapımı Ekmek Tipleri (malzeme),
-      Damaklı Yemek Dengesi (rehber)
-- [ ] Hedef: **35-40 blog yazısı** açılış öncesi (mevcut 38, launch minimum
-      aşıldı) + opsiyonel 0-2 bonus
+- [ ] **Blog 40+**: Baharatlı Yemek Seviyeleri (rehber), Soğuk vs Sıcak
+      Başlangıç (rehber), Ev Yapımı Ekmek Tipleri (malzeme), Damaklı Yemek
+      Dengesi (rehber), Mikro Otlar (malzeme)
+- [ ] Hedef: **35-40 blog yazısı** açılış öncesi (mevcut 39, launch minimum
+      aşıldı) + opsiyonel 0-1 bonus
 - [ ] **İç link ağı**: mevcut 30 yazının birbirine çapraz-referansları
       (Blog 19 kalıp boyutu → Blog 14 kek dönüşümü bağlantısı gibi)
 

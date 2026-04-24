@@ -540,17 +540,25 @@ Her birinin yerine ölçü + zaman + görsel sinyal kombinasyonu.
 ✅ "8 dakika hafifçe pembeleşene kadar kavur" (hafif + ölçü + görsel)
 ❌ "hafifçe kavur" (somut değil)
 
-**4. Kritik nokta / neden-sonuç notu (§15.7.4 referans)**
+**4. Kritik nokta / neden-sonuç notu (§15.7.4 ZORUNLU, Retrofit-02 dersi)**
 
-Her tarifte minimum 1 kritik detay step'lerinden birinin içinde
-belirtilsin. Neden önemli anlatılsın:
+**Batch genelinde minimum %60 tarifte** en az 1 step'te neden-sonuç
+açıklaması olmalı. Retrofit-02'de bu oran %10'da kaldı, A+'ya
+ulaşamadı. Her tarif için 1 kritik nokta hedef.
 
-✅ "Yoğurdu eklemeden önce eti soğutun, yoğurt kesilmesin."
-✅ "Hamuru 20 dakika dinlendirin, gluten gevşesin."
-✅ "Tereyağını ocaktan aldıktan sonra ekleyin, beurre monté kesilmesin."
+✅ "Yoğurdu eklemeden önce eti soğutun, **yoğurt kesilmesin**."
+✅ "Hamuru 20 dakika dinlendirin, **gluten gevşesin** ve açması kolaylaşsın."
+✅ "Tereyağını ocaktan aldıktan sonra ekleyin, **beurre monté kesilmesin**."
+✅ "Tavayı önceden kızdırın, sebze **haşlanmasın buğusuz kalsın**."
+✅ "Çorbaya limonu ocak kapandıktan sonra sıkın, **aksi halde acılaşır**."
+
+**Tetikleyici pattern'lar (self-check §8 madde 15):**
+`yoksa | olmasın | kesilmesin | gelişmesin | gevşesin | çatlamasın |
+kaymasın | dağılmasın | yanmasın | sertleşmesin | pişmesin | akmasın |
+aksi halde | aksi takdirde | diye | böylece | çünkü`
 
 Basit tariflerde servis notu kabul: "Sıcak servis edin, soğuyunca
-doku kayar."
+doku kayar." Pattern'lardan biri içeriyor olmalı.
 
 **5. Step kalitesi: somut ölçü + zaman + sıcaklık + görsel sinyal
 (§15.7 referans)**
@@ -1264,7 +1272,18 @@ sahte geçme.**
     grep -En 'kısa süre[^0-9]|bir süre[^0-9]|uygun kıvam|dilediğin kadar|yeterince(?![^.]*\d)' scripts/seed-recipes.ts | tail -20
     ```
 
-15. ✅ **A+ KURALI (§5.0 madde 4): Kritik nokta / neden-sonuç notu.** Her tarifte en az 1 step içinde neden-sonuç açıklama olsun ("yoğurt kesilmesin", "gluten gevşesin", "dokusu kaymasın"). Batch genelinde minimum %60 tarifte bulunmalı. Otomatik grep zor, manuel spot-check + Codex teslim mesajında toplam sayı beyanı.
+15. ✅ **A+ KURALI (§5.0 madde 4): Kritik nokta / neden-sonuç notu.** Her tarifte en az 1 step içinde neden-sonuç açıklama olsun ("yoğurt kesilmesin", "gluten gevşesin", "dokusu kaymasın"). Batch genelinde minimum **%60 tarifte bulunmalı** (Retrofit-02'de %10 kaldı, A- not; Retrofit-03+ %60 zorunlu). Pattern bash ile ölçülür:
+    ```bash
+    # seed dist export + son 50 tarifte kritik nokta oran
+    node -e "
+    const recipes = require('./dist-seed-temp.js').recipes.slice(-50);
+    const REASON = /yoksa|olmasın|kesilmesin|gelişmesin|gevşesin|çatlamasın|kaymasın|dağılmasın|yanmasın|sertleşmesin|pişmesin|akmasın|aksi halde|aksi takdirde|diye|böylece|çünkü/i;
+    const hit = recipes.filter(r => r.steps.some(s => REASON.test(s.instruction)));
+    const pct = hit.length / recipes.length;
+    console.log('Kritik nokta:', hit.length + '/' + recipes.length, '(' + (pct*100).toFixed(0) + '%)');
+    if (pct < 0.6) { console.log('FAIL: %60 altı'); process.exit(1); }
+    "
+    ```
 
 16. ✅ **A+ KURALI (§14.7 + §15.8): Template dup.** Aynı cümle 2+ tarifte geçmesin. Batch 36b'de 2 dup vardı — tekrar etme.
     ```bash
@@ -2329,20 +2348,44 @@ Self-check §15.9 madde 13 grep ile yakalar.
 somut süre + görsel ile dengelenmiş). "hafif dokulu" tek başına FAIL —
 dokulu kelimesi net değil.
 
-### 15.7.4 Kritik nokta / neden-sonuç notu (A+ eğitici yön)
+### 15.7.4 Kritik nokta / neden-sonuç notu (A+ ZORUNLU, Retrofit-02 dersi)
 
-Tarifin başarısı için kritik bir detay varsa, step içinde kısa bir
-neden-sonuç ekle (parantez veya virgülle). Kullanıcı niye bu adım
-önemli anlamalı:
+**Minimum %60 tarifte** en az 1 step içinde kısa bir neden-sonuç
+açıklaması bulunmalı. Retrofit-02'de bu oran %10'da kaldı — A+ için
+açıkça yetersiz, Retrofit-03+ mutlaka %60+ yakala.
 
-✅ "Nohutları bir gece ıslatın, kabukları hızlı çıksın diye." (neden)
-✅ "Hamuru 20 dakika dinlendirin, gluten gevşeyip açılması kolaylaşır."
-✅ "Yoğurt ve eti karıştırmadan önce eti soğutun, yoğurt kesilmesin."
-✅ "Tereyağını eklemeden ocağı kapatın, beurre monté kesilmesin."
+Tarifin başarısı için kritik bir detay niye önemli, kullanıcı anlamalı.
+Kısa formlar kabul:
+- `"..., yoğurt kesilmesin."`
+- `"..., gluten gevşesin diye."`
+- `"..., dokusu kaymasın."`
+- `"..., aksi halde yanar."`
+- `"..., böylece kabardığında çökmez."`
 
-**Her tarifte minimum 1 kritik nokta** step'lerinden birinin içinde
-belirt (zorunlu değil ama A+ için beklenen). Basit tariflerde servis
-tavsiyesi de kabul: "Sıcak servis edin, soğuyunca dokusu kayar."
+**Tetikleyici pattern'lar (Codex self-check ile ölçer):**
+`yoksa | olmasın | kesilmesin | gelişmesin | gevşesin | çatlamasın |
+kaymasın | dağılmasın | yanmasın | sertleşmesin | pişmesin | akmasın |
+aksi halde | aksi takdirde | diye | böylece | çünkü | sonra ... daha`
+
+**Tarif tipine göre beklenen kritik nokta örnekleri:**
+
+| Tarif türü | Kritik nokta örneği |
+|---|---|
+| Et (mühürleme) | "Eti önce oda sıcaklığına getirin, kesitinde eşit pişsin." |
+| Yoğurtlu sos | "Sosa yoğurdu ocak kapalıyken ekleyin, kesilmesin." |
+| Hamur | "Hamuru 20 dakika dinlendirin, gluten gevşesin ve açılması kolaylaşsın." |
+| Fırın tatlı | "Fırını açmayın, ilk 15 dakikada kabarmayı kesmeyin." |
+| Sote | "Tavayı önceden kızdırın, sebze haşlanmasın buğusuz kalsın." |
+| Çorba | "Çorbaya limonu ocak kapandıktan sonra sıkın, aksi halde acılaşır." |
+| Kızartma | "Yağa parça parça atın, sıcaklık düşmesin ve yağ emmesin." |
+| Salata | "Domatesi soslamadan hemen önce kesin, suyunu salıp kıvamı bozmasın." |
+| Içecek | "Buzu shake sırasında ekleyin, hemen içilsin, yoksa sulanır." |
+
+**Her tarifte 1 kritik nokta hedef; batch genelinde %60+ kapsam
+zorunlu.** Tarif çok basit ise (tek adımlı içecek) servis notu kabul
+edilir: "Sıcak servis edin, soğuyunca doku kayar."
+
+Self-check §15.9 madde 15 bu pattern'ı grep ile ölçer, <%60 ise FAIL.
 
 ### 15.7.5 Ingredient miktar tekrarı (mantıklı yerlerde)
 
@@ -2522,6 +2565,23 @@ const empty=j.filter(r=>!r.notes).length;
 if(empty>0){console.log('FAIL:',empty,'item notes undefined');process.exit(1)}
 console.log('Notes dolu: 100%')
 "
+
+# 15) A+ KURALI: Kritik nokta / neden-sonuç (§15.7.4) min %60 tarif
+# Retrofit-02'de bu %10'da kalmıştı (B+ → A- not). Retrofit-03'ten
+# itibaren zorunlu gate. Pattern tariflerin step'lerinde aranır.
+node -e "
+const j=JSON.parse(require('fs').readFileSync('$FILE','utf8'));
+const REASON = /yoksa|olmasın|kesilmesin|gelişmesin|gevşesin|çatlamasın|kaymasın|dağılmasın|yanmasın|sertleşmesin|pişmesin|akmasın|aksi halde|aksi takdirde|diye|böylece|çünkü/i;
+const withReason = j.filter(r => r.newSteps.some(s => REASON.test(s.instruction)));
+const pct = withReason.length / j.length;
+console.log('Kritik nokta:', withReason.length + '/' + j.length, '(' + (pct*100).toFixed(0) + '%)');
+if (pct < 0.6) {
+  console.log('FAIL: Kritik nokta %60 altı, §15.7.4 yetersiz kapsamı.');
+  console.log('Yapilacak: her tarifte ≥1 step\"te \"yoğurt kesilmesin / gluten gevşesin / dokusu kaymasın\" tarzi neden-sonuc ekle.');
+  console.log('Ornek patternlar: yoksa, olmasın, kesilmesin, gevşesin, çatlamasın, kaymasın, yanmasın, diye, böylece, aksi halde');
+  process.exit(1);
+}
+"
 ```
 
 Hepsi PASS ise teslim. Bir tanesi FAIL ise sorunu gider, tekrar koş.
@@ -2531,7 +2591,8 @@ Hepsi PASS ise teslim. Bir tanesi FAIL ise sorunu gider, tekrar koş.
 - Madde 11 + 14: notes zorunlu, min 40 char
 - Madde 12: pişirme step'inde timer zorunlu
 - Madde 13: genişletilmiş muğlak yasak liste
-Bu 4 gate Retrofit-01 B+ notunu A+ çıkarır.
+- **Madde 15: kritik nokta / neden-sonuç min %60 tarif** (Retrofit-02 dersi)
+Bu 5 gate Retrofit-01 B+ → Retrofit-02 A- → Retrofit-03 A+ çıkarır.
 
 ### 15.10 Kurala uyan tarifler (DOKUNMA)
 

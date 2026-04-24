@@ -280,6 +280,9 @@ export const ALLERGEN_RULES: AllergenRule[] = [
       // "kek" substring "pirinç keki"ni yakalar, Asian rice cake yumurtasız
       // (pirinç + tuz + su, vegan; GLUTEN excludePatterns'de de aynı exclude):
       "pirinç keki",
+      // "kete" substring "keten tohumu"nu yakalar, keten tohumu bitkisel
+      // yumurtasız, sağlıklı tahıl (Kopenhag Yulaf Kup 32a false-positive):
+      "keten", "keten tohumu",
     ],
   },
   {

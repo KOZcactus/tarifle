@@ -1854,6 +1854,23 @@
     "recentSearches": "Son aramalar",
     "form": {
       "personalizedHint": "Tercihlerinize göre mutfak ve diyet seçildi, istediğiniz gibi değiştirebilirsiniz.",
+      "timeHint": {
+        "breakfastQuick": "Sabah saatleri, hızlı bir kahvaltı ister misin?",
+        "lunchMedium": "Öğle arası, orta sürede bir şeyler denemek ister misin?",
+        "afternoonSnack": "İkindi atıştırmalığı için hafif tarifler önerebiliriz.",
+        "dinnerQuick": "Akşam yemeği vakti, hafta içi hızlı tarif ister misin?",
+        "dinnerWeekendLong": "Hafta sonu akşamı, daha uzun pişen misafir tarifleri bugün rahat oturur.",
+        "lateNightSweet": "Gece saati, hızlı bir atıştırmalık veya tatlı ister misin?",
+        "none": "",
+        "apply": "≤{minutes} dk uygula",
+        "dismiss": "Kapat"
+      },
+      "voice": {
+        "button": "Sesli ekle",
+        "listening": "Dinleniyor…",
+        "start": "Sesli malzeme eklemeye başla",
+        "stop": "Dinlemeyi durdur"
+      },
       "ingredientsLabel": "Elindeki malzemeler",
       "ingredientsHelper": "Virgül ya da Enter'a basarak her malzemeyi ayrı ekle.",
       "ingredientsPlaceholderEmpty": "Örn. domates, soğan, yumurta (virgül veya Enter'la ekle)",

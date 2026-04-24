@@ -21,6 +21,7 @@ import {
   readV3FormState,
   saveV3FormState,
 } from "@/lib/ai/form-persistence";
+import { getTimeHint, type TimeHint } from "@/lib/ai/time-context";
 
 /** Popular ingredients shown as quick-add chips when input is empty. */
 const POPULAR_INGREDIENTS = [
@@ -141,6 +142,75 @@ export function AiAssistantForm({
   const formRef = useRef<HTMLFormElement>(null);
   const searchParams = useSearchParams();
   const hasInitedFromUrl = useRef(false);
+  // #11 Saate göre öneri ipucu. Mount'ta hesaplanır + her saatte bir
+  // yenilenebilir ama zaten single-page form, mount yeterli.
+  const [timeHint, setTimeHint] = useState<TimeHint | null>(null);
+  const [timeHintDismissed, setTimeHintDismissed] = useState(false);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setTimeHint(getTimeHint());
+  }, []);
+  // #7 Sesli malzeme girişi: Web Speech API. Desteklenmezse button gizli.
+  // SpeechRecognition type'ı lib.dom'da yok, minimal interface + window cast.
+  interface MinSpeechRecognition {
+    lang: string;
+    continuous: boolean;
+    interimResults: boolean;
+    onresult: (e: { results: { [i: number]: { [j: number]: { transcript: string } } } }) => void;
+    onend: () => void;
+    onerror: () => void;
+    start: () => void;
+    stop: () => void;
+  }
+  const [isListening, setIsListening] = useState(false);
+  const speechRef = useRef<MinSpeechRecognition | null>(null);
+  const speechSupported =
+    typeof window !== "undefined" &&
+    ("SpeechRecognition" in window || "webkitSpeechRecognition" in window);
+
+  function handleVoiceInput() {
+    if (!speechSupported) return;
+    if (isListening) {
+      speechRef.current?.stop();
+      return;
+    }
+    const win = window as unknown as {
+      SpeechRecognition?: new () => MinSpeechRecognition;
+      webkitSpeechRecognition?: new () => MinSpeechRecognition;
+    };
+    const SR = win.SpeechRecognition ?? win.webkitSpeechRecognition;
+    if (!SR) return;
+    const recognition = new SR();
+    recognition.lang = "tr-TR";
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.onresult = (e) => {
+      const transcript = e.results[0]?.[0]?.transcript ?? "";
+      // "tavuk domates pirinç" veya "tavuk, domates ve pirinç"
+      const parts = transcript
+        .split(/[,\s]+|\s+ve\s+/gi)
+        .map((p: string) => p.trim())
+        .filter((p: string) => p.length > 1);
+      if (parts.length > 0) {
+        setIngredients((prev) => [
+          ...prev,
+          ...parts.filter(
+            (p: string) =>
+              !prev.some(
+                (existing) =>
+                  existing.toLocaleLowerCase("tr") ===
+                  p.toLocaleLowerCase("tr"),
+              ),
+          ),
+        ]);
+      }
+    };
+    recognition.onend = () => setIsListening(false);
+    recognition.onerror = () => setIsListening(false);
+    speechRef.current = recognition;
+    setIsListening(true);
+    recognition.start();
+  }
 
   // Load state from URL params (shared link).
   // setState inside this effect is intentional: we sync one-time from an
@@ -456,6 +526,41 @@ export function AiAssistantForm({
         onSubmit={handleSubmit}
         className="rounded-2xl border border-border bg-bg-card p-5 sm:p-6"
       >
+        {/* #11 Saate göre öneri banner'ı. Hint kind "none" değilse ve
+            kullanıcı kapatmadıysa üstte ince bant. suggestedMaxMinutes
+            varsa tek tıkla maxMinutes filter'ı uygulanır. */}
+        {timeHint &&
+          timeHint.kind !== "none" &&
+          !timeHintDismissed && (
+            <div className="mb-4 flex flex-wrap items-center gap-2 rounded-md border border-sky-200/60 bg-sky-50/70 px-3 py-2 text-xs text-sky-900 dark:border-sky-500/30 dark:bg-sky-950/30 dark:text-sky-200">
+              <span aria-hidden>🕒</span>
+              <span className="flex-1">
+                {tForm(`timeHint.${timeHint.labelKey}`)}
+              </span>
+              {timeHint.suggestedMaxMinutes && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMaxMinutes(String(timeHint.suggestedMaxMinutes));
+                    setTimeHintDismissed(true);
+                  }}
+                  className="rounded-md border border-sky-400/60 bg-sky-100 px-2 py-0.5 font-medium text-sky-900 transition hover:bg-sky-200 dark:border-sky-500/40 dark:bg-sky-900/60 dark:text-sky-100"
+                >
+                  {tForm("timeHint.apply", {
+                    minutes: timeHint.suggestedMaxMinutes,
+                  })}
+                </button>
+              )}
+              <button
+                type="button"
+                onClick={() => setTimeHintDismissed(true)}
+                className="text-sky-700/70 transition hover:text-sky-900 dark:text-sky-300/70 dark:hover:text-sky-200"
+                aria-label={tForm("timeHint.dismiss")}
+              >
+                ✕
+              </button>
+            </div>
+          )}
         <PresetChips
           mode="single"
           className="mb-4"
@@ -471,9 +576,29 @@ export function AiAssistantForm({
         />
         {/* Ingredients chips input */}
         <div>
-          <label className="mb-2 block text-sm font-medium text-text">
-            {tForm("ingredientsLabel")}
-          </label>
+          <div className="mb-2 flex items-center justify-between gap-2">
+            <label className="block text-sm font-medium text-text">
+              {tForm("ingredientsLabel")}
+            </label>
+            {/* #7 Sesli malzeme girişi: desteklenen tarayıcılarda 🎤 buton,
+                tıklayınca SpeechRecognition TR-TR dinlemeye başlar, sonuç
+                ingredients'a eklenir. Desteklenmeyen platformda gizli. */}
+            {speechSupported && (
+              <button
+                type="button"
+                onClick={handleVoiceInput}
+                aria-label={tForm(isListening ? "voice.stop" : "voice.start")}
+                className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-xs font-medium transition ${
+                  isListening
+                    ? "border-red-400/60 bg-red-50 text-red-700 dark:border-red-500/40 dark:bg-red-950/40 dark:text-red-300"
+                    : "border-primary/30 bg-primary/5 text-primary hover:bg-primary/10"
+                }`}
+              >
+                <span aria-hidden>{isListening ? "⏺" : "🎤"}</span>
+                {tForm(isListening ? "voice.listening" : "voice.button")}
+              </button>
+            )}
+          </div>
           <div className="flex flex-wrap items-center gap-2 rounded-lg border border-border bg-bg-elevated px-3 py-2 focus-within:border-primary">
             {ingredients.map((ing, i) => (
               <span

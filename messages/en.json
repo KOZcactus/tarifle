@@ -1854,6 +1854,23 @@
     "recentSearches": "Recent searches",
     "form": {
       "personalizedHint": "Cuisine and diet pre-filled from your preferences, change as you like.",
+      "timeHint": {
+        "breakfastQuick": "Morning hours, want a quick breakfast?",
+        "lunchMedium": "Lunch time, want to try something medium-length?",
+        "afternoonSnack": "Afternoon snack, we can suggest lighter bites.",
+        "dinnerQuick": "Dinner time, want a weeknight-quick recipe?",
+        "dinnerWeekendLong": "Weekend evening, longer guest-ready recipes sit well tonight.",
+        "lateNightSweet": "Late hour, want a quick snack or dessert?",
+        "none": "",
+        "apply": "Apply ≤{minutes} min",
+        "dismiss": "Dismiss"
+      },
+      "voice": {
+        "button": "Voice",
+        "listening": "Listening…",
+        "start": "Start voice ingredient input",
+        "stop": "Stop listening"
+      },
       "ingredientsLabel": "Ingredients you have",
       "ingredientsHelper": "Press comma or Enter to add each ingredient separately.",
       "ingredientsPlaceholderEmpty": "e.g. tomato, onion, egg (add with comma or Enter)",

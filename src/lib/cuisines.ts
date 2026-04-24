@@ -33,6 +33,14 @@ export const CUISINE_CODES = [
   "gb",
   "pl",
   "au",
+  // Oturum 17: Codex 33a v2 teslim ettikten sonra eklendi, gerçek
+  // mutfak çeşitliliği (24 → 30).
+  "de",
+  "ir",
+  "pk",
+  "id",
+  "et",
+  "ng",
 ] as const;
 
 export type CuisineCode = (typeof CUISINE_CODES)[number];
@@ -62,6 +70,12 @@ export const CUISINE_LABEL: Record<CuisineCode, string> = {
   gb: "İngiliz",
   pl: "Polonya",
   au: "Avustralya",
+  de: "Alman",
+  ir: "İran",
+  pk: "Pakistan",
+  id: "Endonezya",
+  et: "Etiyopya",
+  ng: "Nijerya",
 };
 
 /**
@@ -95,6 +109,12 @@ export const CUISINE_SLUG: Record<CuisineCode, string> = {
   gb: "ingiliz",
   pl: "polonya",
   au: "avustralya",
+  de: "alman",
+  ir: "iran",
+  pk: "pakistan",
+  id: "endonezya",
+  et: "etiyopya",
+  ng: "nijerya",
 };
 
 /** URL slug → kod ters lookup. Slug bilinmiyorsa null. */
@@ -136,6 +156,12 @@ export const CUISINE_DESCRIPTION_TR: Record<CuisineCode, string> = {
   gb: "İngiliz mutfağı ev rahatlığı klasikleri: fish and chips, shepherd's pie, full breakfast, scones. Hafta sonu roast dinner ve five o'clock tea geleneksel.",
   pl: "Polonya mutfağı doyurucu ve tahıl-etli: pierogi, bigos, żurek, placki ziemniaczane. Turşulanmış sebzeler, kapuska ve ekşi krema sofranın sabiti.",
   au: "Avustralya mutfağı deniz ürünleri, BBQ kültürü ve güçlü kahve ekosistemi. Meat pie, lamington, avocado toast, Vegemite, İngiliz mirası üzerine modern Avustralya.",
+  de: "Alman mutfağı tahıl yoğun, sosis ve köfte merkezli klasikleri barındırır: schnitzel, bratwurst, sauerkraut, pretzel. Karabuğday, patates ve hardal sofranın temeli.",
+  ir: "İran mutfağı zafer safranı, narenciye notaları ve yoğun pilavlarla tanınır: tahdig, ghormeh sabzi, fesenjan, kebab koobideh. Kuru limon ve gül suyu karakteristik aromalar.",
+  pk: "Pakistan mutfağı Hindistan ile tarih paylaşır ama daha bol et, bol baharatlı: biryani, nihari, haleem, chapli kebap. Kırmızı et ve masala derinlik anahtarı.",
+  id: "Endonezya mutfağı adalar arası lezzet mozaiği: nasi goreng, rendang, sate, soto. Hindistan cevizi sütü, acı sambal ve ketjap manis karakteristik.",
+  et: "Etiyopya mutfağı bereket sofrası: injera ekmeği, doro wat, berbere baharatı, tibs. Ekşi maya ve yoğun baharat karışımı Doğu Afrika imzası.",
+  ng: "Nijerya mutfağı Batı Afrika'nın renk paleti: jollof rice, egusi çorbası, suya, plantain kızartması. Hindistan cevizi yağı, acı biber ve iç erkek fıstığı yaygın.",
 };
 
 /** EN description, aynı set, kısa SEO metni. */
@@ -164,6 +190,12 @@ export const CUISINE_DESCRIPTION_EN: Record<CuisineCode, string> = {
   gb: "British cuisine offers home-comfort classics: fish and chips, shepherd's pie, full breakfast, scones. Weekend roast dinners and five o'clock tea are tradition.",
   pl: "Polish cuisine is hearty and grain-forward: pierogi, bigos, żurek, potato pancakes. Pickles, sauerkraut and sour cream stay on the table.",
   au: "Australian cuisine blends seafood, BBQ culture and strong coffee. Meat pie, lamington, avocado toast, Vegemite, modern Australia on a British base.",
+  de: "German cuisine is grain-heavy and meat-forward: schnitzel, bratwurst, sauerkraut, pretzel. Rye, potato and mustard are the backbone.",
+  ir: "Iranian cuisine features saffron, citrus notes and rich pilafs: tahdig, ghormeh sabzi, fesenjan, kebab koobideh. Dried lime and rose water shape the aromatics.",
+  pk: "Pakistani cuisine shares history with India but leans meatier and more spiced: biryani, nihari, haleem, chapli kebab. Red meat and masala depth are key.",
+  id: "Indonesian cuisine is an archipelago flavor mosaic: nasi goreng, rendang, sate, soto. Coconut milk, sambal chili and ketjap manis define the palate.",
+  et: "Ethiopian cuisine is a feast of sharing: injera flatbread, doro wat, berbere spice, tibs. Sour fermented dough and bold spice blends are the East African signature.",
+  ng: "Nigerian cuisine paints West Africa's palette: jollof rice, egusi soup, suya, fried plantain. Palm oil, chili and ground melon seeds appear often.",
 };
 
 export const CUISINE_FLAG: Record<CuisineCode, string> = {
@@ -191,6 +223,12 @@ export const CUISINE_FLAG: Record<CuisineCode, string> = {
   gb: "🇬🇧",
   pl: "🇵🇱",
   au: "🇦🇺",
+  de: "🇩🇪",
+  ir: "🇮🇷",
+  pk: "🇵🇰",
+  id: "🇮🇩",
+  et: "🇪🇹",
+  ng: "🇳🇬",
 };
 
 /**
@@ -228,6 +266,12 @@ export const CUISINE_REGION: Record<CuisineCode, string> = {
   gb: "west-europe",
   us: "anglo-americas",
   au: "anglo-americas",
+  de: "west-europe",
+  ir: "mediterranean-levant",
+  pk: "south-asia",
+  id: "east-asia",
+  et: "east-africa",
+  ng: "west-africa",
 };
 
 // ─── Inference engine ───────────────────────────────────────

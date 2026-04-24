@@ -573,6 +573,12 @@ Her step'te:
   olana kadar", "salgısını çekene kadar", "kabardığında")
 - ✅ **5-40 kelime arası** instruction uzunluğu
 
+**A+ somut örnek + checklist + evrim tablosu için**: §15.1.1 (pipeline
+evrim), §15.1.2 (7 gate checklist), §15.1.3 (notes format örnekleri),
+§15.1.4 (full-stack A+ step örneği), §15.1.5 ("şüphe ettiğinde" somut).
+Mod F için yazılmış ama **Mod A için de birebir geçerli** — Batch
+37a+ teslim ederken §15.1.2 gate checklist'i satır satır işaretle.
+
 ### 5.1 Kaynak kontrolü Mod A'da (yeni tarif üretirken de)
 
 Mod A yeni tarif yazıyor, Mod F gibi retrofit değil — ama web kaynağı
@@ -2098,6 +2104,162 @@ batch'lerde TEKRARLANMAYACAK:
 **A+ = 4 temel:** doğru (web kaynak) · detaylı (adım + ölçü + zaman +
 sıcaklık + görsel sinyal) · çeşitli (step sayısı + ifade varyasyonu) ·
 eğitici (kritik nokta + neden-sonuç açıklama).
+
+### 15.1.1 A+ pipeline evrim tablosu (Retrofit-01 → 06, Codex dersleri)
+
+6 ardışık batch'te pipeline evrildi. Bu tablo Codex'e **hangi sorunun
+hangi brief güncellemesiyle çözüldüğünü** gösterir, aynı hatayı
+tekrarlamamak için kalıcı referans:
+
+| Batch | Not | Ana güçlükler | Brief müdahalesi |
+|---|---|---|---|
+| **01** | B+ | Step dist `{4:100}` (varyasyon 0), notes 0/100, muğlak var | §15.5.1 varyasyon zorunluluğu + §15.6.2 notes ZORUNLU + §15.7.3 muğlak yasak liste |
+| **02** | A- | Varyasyon ✓ + notes ✓ ama **kritik nokta %10** | §15.7.4 kritik nokta **%60 ZORUNLU gate** (Retrofit-02 dersi) |
+| **03** | 🏆 **A+** | Kritik nokta **%65** (10 → 65, 6.5× sıçrama), tüm gate PASS | Gate'ler kanıtlandı |
+| **04** | A | Kritik nokta %63 ✓ ama 3 minor kelime (<5) | Kelime sayı uyarı |
+| **05** | A- | Kritik nokta %70 ✓ ama 15 servis step'i <5 kelime | Brief kelime min 5 katı, servis step'lerini de 5+ yaz |
+| **06** | 🏆 **A+ (0 SORUN)** | Tüm gate PASS, kelime ihlal 0, kritik nokta %63 | Codex disiplini tam oturdu |
+
+**Dersler (Codex için özet)**:
+1. **Step sayısı tek değerde kilitlenme** (§15.5.1) — min 3 distinct,
+   dominant ≤%60
+2. **Notes 100% dolu + min 40 char** (§15.6.2) — chat'te "baktım"
+   demek yetmez, per-item format
+3. **Muğlak ifade bir daha** (§15.7.3) — 13 kelime listesi + somut
+   ölçü/zaman eşliğinde kullan
+4. **Kritik nokta %60 gate** (§15.7.4) — "yoksa/olmasın/kesilmesin"
+   vb. 13 pattern'dan en az 1 step'te, minimum 60 tarifte
+5. **Kelime sayı 5-40** (§15.7) — servis/ekleme step'i bile 5+ kelime,
+   "Karabiberle servis edin" (3) yerine "Dilimleyip karabiberle
+   sıcak tabakta servis edin" (6)
+
+### 15.1.2 A+ teslim checklist (Codex gözle kontrol)
+
+Codex teslim mesajında JSON'u atmadan önce bu checklist'i satır satır
+işaretlesin. **Herhangi biri ☐ ise teslim GERI ÇEVİR ve düzelt.**
+
+**Gate 1 — Step varyasyonu** (§15.5.1)
+- ☐ Batch içinde **min 3 farklı** step sayısı kullanıldı
+- ☐ Hiçbir tek değer **%60'ı geçmiyor** (100 tarif için max 60)
+- ☐ Per-type dağılım önerisi takip edildi (APERATIF %30-4 + %40-5 + %20-6)
+
+**Gate 2 — Notes 100% dolu** (§15.6.2)
+- ☐ Her item'da `notes` alanı **DOLU** (undefined veya "" yasak)
+- ☐ Her notes **min 40 karakter**
+- ☐ Format: `{kaynak1} + {kaynak2}; {doğrulanan_aspekt}; {değişiklik_varsa}`
+- ☐ En az 2 kaynak adı her notes'ta
+
+**Gate 3 — Pişirme timer** (§15.7.2)
+- ☐ Pişirme verbi içeren her step'te `timerSeconds` **null DEĞİL**
+- ☐ Dinlendirme/mayalanma/ıslatma step'lerinde de timer var
+- ☐ Servis/ekleme/süsleme step'lerinde timer opsiyonel (null OK)
+
+**Gate 4 — Muğlak yasak** (§15.7.3)
+- ☐ 13 kelime listesi GREP ile tarandı (kısa süre, biraz, iyice, vs.)
+- ☐ Her bulunan kelime **somut ölçü** eşliğinde kullanıldı (sayı/°C/
+  dakika/saniye/kaşık/bardak)
+- ☐ Tek başına muğlak kelime YOK
+
+**Gate 5 — Kritik nokta** (§15.7.4)
+- ☐ Batch'te **min %60 tarifte** ≥1 step'te neden-sonuç notu var
+- ☐ Pattern listesi: yoksa / olmasın / kesilmesin / gelişmesin /
+  gevşesin / çatlamasın / kaymasın / dağılmasın / yanmasın /
+  sertleşmesin / pişmesin / akmasın / aksi halde / diye / böylece
+- ☐ Her kritik nokta tarif türüne özel (yoğurtlu sosta "kesilmesin",
+  hamurda "gluten gevşesin", tatlıda "çatlamasın")
+
+**Gate 6 — Dil disiplini** (§15.8)
+- ☐ Em-dash (—) 0 eşleşme
+- ☐ En-dash (–) 0 eşleşme
+- ☐ UTF-8 no-BOM (dosya ilk byte `[`)
+- ☐ `?` karakter 0 (encoding kaynaklı smuggling yok)
+- ☐ Template dup 0 (aynı cümle 2+ tarifte yok)
+
+**Gate 7 — Step kelime sayısı** (§15.7)
+- ☐ Her step instruction **5-40 kelime** arasında
+- ☐ Servis step'i bile 5+ kelime (ölçü + görsel + bağlam ekle)
+- ☐ 40 kelimeyi geçen step 2'ye böl
+
+### 15.1.3 A+ örnek notes formatları (Retrofit-06'dan gerçek)
+
+**Örnek 1 (uluslararası klasik)**:
+```json
+"notes": "Serious Eats falafel + BBC Good Food roasted chickpeas;
+nohut kurutma, 200C civarı fırın ve gevrek yüzey doğrulandı, detay arttı"
+```
+→ 2 kaynak + 3 aspekt (kurutma/sıcaklık/doku) + değişiklik yok
+
+**Örnek 2 (yöresel TR)**:
+```json
+"notes": "Yemek.com meze arşivi + Nefis Yemek Tarifleri ezme tarifleri;
+haşlama, ezme ve soğuk servis sırası doğrulandı, oran korundu"
+```
+→ 2 TR kaynak + 3 aspekt (haşlama/ezme/servis) + oran notu
+
+**Örnek 3 (düzeltme ile)**:
+```json
+"notes": "BBC Good Food mini quiches + Real Simple quiche; 180-200C kör
+pişirme ve yumurta-krema dolgu oranı doğrulandı, 150C→180C sıcaklık
+düzeltildi (CSV'de yanlış sıcaklık)"
+```
+→ 2 kaynak + 2 aspekt + 1 düzeltme (neyin neye döndüğü)
+
+**Yanlış format örnekleri (GERİ ÇEVİR)**:
+```json
+"notes": ""                                   // boş
+"notes": "web kaynakları kontrol edildi"      // belirsiz
+"notes": "BBC Good Food"                      // tek kaynak, aspekt yok
+"notes": "baktım"                             // minimum 40 char'ın altı
+```
+
+### 15.1.4 A+ örnek step kalitesi (full-stack)
+
+Aşağıdaki adım **tüm A+ kriterleri** bir arada taşır. Codex step
+yazarken bu formatı hedefler:
+
+```json
+{
+  "stepNumber": 3,
+  "instruction": "Kıyılmış soğanı 2 yemek kaşığı zeytinyağında orta
+    ateşte 6 dakika pembeleşene kadar kavurun, aksi halde daha sonra
+    eklenecek et salgısını çekmez.",
+  "timerSeconds": 360
+}
+```
+
+**Neyi barındırır?**
+- ✅ **Somut verbi** (kavurun)
+- ✅ **Ölçü** (2 yemek kaşığı)
+- ✅ **Süre** (6 dakika) + **timerSeconds** (360)
+- ✅ **Sıcaklık** (orta ateşte)
+- ✅ **Görsel sinyal** (pembeleşene kadar)
+- ✅ **Kritik nokta / neden-sonuç** ("aksi halde et salgısını
+  çekmez" → pişirme mantığı öğretir)
+- ✅ **Kelime sayısı** 23 (5-40 aralığında)
+- ✅ **Em-dash yok, BOM yok, muğlak yok**
+
+**Zayıf varyant (GERİ ÇEVİR, muhtelif gate FAIL)**:
+```json
+{ "stepNumber": 3, "instruction": "Soğanı kavurun.", "timerSeconds": null }
+```
+- ❌ Ölçü yok, süre yok, sıcaklık yok, görsel sinyal yok
+- ❌ Kelime sayı 2 (<5)
+- ❌ Pişirme verbi + null timer (§15.7.2)
+- ❌ Kritik nokta yok
+
+### 15.1.5 A+ "şüphe ettiğinde" ek kural
+
+Emin değilsen **somuta git**:
+- Süre verilecek mi? → **Ver** (aralık OK: "6-8 dakika")
+- Sıcaklık belirsiz → **Tahmin et + web'den doğrula**
+- Görsel sinyal var mı? → **En az bir tane ekle** ("altın rengi",
+  "köpük bırakana kadar", "parmakla basınca geri gelene kadar")
+- Kelime sayısı sınırda (4) → **5+'a çıkar**, ikinci bir detay ekle
+- Kritik nokta ekleyebilir miyim? → **En azından %60 tarifte ekle**
+
+**İlke**: A+ batch = **hiçbir step kullanıcının tahmin yapmak zorunda
+kalmayacağı kadar net**. Ölçü belirsizse ölçü ver, süre belirsizse
+süre ver, niye önemli belirsizse nedenini açıkla.
 
 ### 15.2 Girdi (Kerem sana ne verir)
 

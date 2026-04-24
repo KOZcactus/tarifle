@@ -95,7 +95,7 @@ const checkSeg = (label: string, seg: typeof recipes) => {
 
 const preFails = checkSeg("Pre-30a (batch 1-29, eski MVP + klasik)", pre30a);
 const midFails = checkSeg("30a-34b (10 batch, oturum 16-17)", range30a34b);
-const newFails = checkSeg("35a+35b+36a (3 batch, oturum 17 sonu, min step kurali VAR)", range35a36a);
+void checkSeg("35a+35b+36a (3 batch, oturum 17 sonu, min step kurali VAR)", range35a36a);
 
 // Kritik: sadece 4-step fails (retrofit kolay)
 console.log("\n--- 30a-34b 4-step ihlalleri (retrofit adayi) ---");

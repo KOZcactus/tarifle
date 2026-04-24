@@ -13,14 +13,15 @@ vi.mock("@/lib/prisma", () => ({
   },
 }));
 
-const mockAuth = vi.fn();
-vi.mock("@/lib/auth", () => ({ auth: (...args: unknown[]) => mockAuth(...args) }));
-
-const mockCheckRateLimit = vi.fn();
-const mockIdentifier = vi.fn(() => "test-user-id");
+const { mockAuth, mockCheckRateLimit, mockIdentifier } = vi.hoisted(() => ({
+  mockAuth: vi.fn(),
+  mockCheckRateLimit: vi.fn(),
+  mockIdentifier: vi.fn(() => "test-user-id"),
+}));
+vi.mock("@/lib/auth", () => ({ auth: mockAuth }));
 vi.mock("@/lib/rate-limit", () => ({
-  checkRateLimit: (...args: unknown[]) => mockCheckRateLimit(...args),
-  rateLimitIdentifier: (...args: unknown[]) => mockIdentifier(...args),
+  checkRateLimit: mockCheckRateLimit,
+  rateLimitIdentifier: mockIdentifier,
 }));
 
 vi.mock("next/cache", () => ({ revalidatePath: vi.fn() }));
@@ -34,13 +35,13 @@ import {
 } from "@/lib/actions/pantry";
 import { prisma } from "@/lib/prisma";
 
-type M<T extends (...a: unknown[]) => unknown> = ReturnType<typeof vi.fn>;
+type MockFn = ReturnType<typeof vi.fn>;
 const pantryMock = prisma.userPantryItem as unknown as {
-  findMany: M<typeof vi.fn>;
-  findUnique: M<typeof vi.fn>;
-  upsert: M<typeof vi.fn>;
-  update: M<typeof vi.fn>;
-  delete: M<typeof vi.fn>;
+  findMany: MockFn;
+  findUnique: MockFn;
+  upsert: MockFn;
+  update: MockFn;
+  delete: MockFn;
 };
 
 function rowFactory(overrides: Record<string, unknown> = {}) {

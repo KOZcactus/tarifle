@@ -35,6 +35,74 @@
 >
 > Oturum 7 sonu (28 commit), 1701 tarif prod canlı. 8 blok: Mod B batch 13-17 (600 tarif EN+DE), Mod A batch 15-17 (1401→1701), foryou sort, pagination redesign, super-admin protection, /admin/yorumlar, /kategoriler, legal hub /yasal, editör rozeti, similar-recipes v2, 44 programatik landing, profil zenginleştirme, /menu-planlayici, RSS + HowTo schema, AI Asistan v2, blog MDX + 3 makale, rekabet analizi doc, newsletter double-opt-in altyapı, codex brief 3 clarify.
 
+## 24 Nisan 2026 (oturum 18, 30 commit, AI paketi A-I 9 özellik + Mod F pipeline + Pantry miktar döngüsü)
+
+> En geniş tek gün AI + retrofit günü. **AI paketi A-I 9 özellik** (Pişirdim→decrement, TTS kadın/erkek, SKT widget, dinamik zaman banner, "Beğenmedim", v3 miktar rozeti, favori boost, home 🎒 CTA, benzer filter chip) + **Mod F retrofit pipeline** (6/27 batch, B+→A-→A+→A→A-→A+) + **Mod A seed 35a/35b/36a/36b** (+200 tarif, 3252→3452) + **Mod B Backfill-11/12/13** (+250 çeviri, ~%93) + **Brief A+ standardı** (5 self-check gate, kritik nokta %60 zorunlu) + **Pantry miktar farkındalığı döngüsü** (match util + rozet + SKT opt-in + alışveriş→pantry + Pişirdim→decrement) + **TTS voice pref**. **752/752 test PASS, 27 migration.**
+
+**A · Mod F Step Count Retrofit altyapısı** (`9af3bbf`): Brief §15 self-contained 11 alt bölüm + 27 CSV paket + 3 script (`audit-step-count.ts`, `generate-retrofit-csv.ts`, `apply-retrofit.ts`). 2660 tarif kapsam, tip bazlı min/max tablosu, 9 bash self-check.
+
+**B · Seed Mod A 35a/35b/36a + Backfill-11/12 apply** (`1ba7a1b`): 150 yeni tarif + 200 çeviri apply, prod 3252 → 3402. Working tree'deki Codex teslimleri audit + apply.
+
+**C · CI fix pantry-actions vi.hoisted** (`c61b0ba`): vi.fn() generic never[] constraint TS2556, hoisted mock pattern'ine geçiş, 17 pantry unit test PASS.
+
+**D · Miktar farkındalığı MVP** (`9541e1f`): `src/lib/pantry/match.ts` quantity-aware util (parseAmount, normalizeUnit, convertAmount gr↔kg ml↔lt, 4 status covered/partial/present_unknown/missing) + 45 unit test + `/tarif/[slug]` rozet + server helper `getPantryMatchForRecipe`.
+
+**E · Pantry i18n fix** (`fe2212f`): `shoppingList.categories` (çoğul) → `shoppingList.category` (tekil), oturum 17'de eklenen PantryClient'te typo, manuel QA'da yakalandı.
+
+**F · Pantry SKT opt-in** (`4931d93`): User.pantryExpiryTracking Boolean migration, `/ayarlar` toggle card, default kapalı. Açıksa `/dolap`'ta inline tarih input + urgent border + expiring banner; kapalıyken UI sadeleşir (sadece isim + miktar + birim).
+
+**G · Alışveriş → Pantry senkron** (`8c85751`): Alışveriş listesinde "🎒 Dolaba geçir" butonu, işaretli item'ları atomic transaction ile UserPantry'ye upsert + listeden sil. `moveCheckedToPantry` query helper + action.
+
+**H · Menu planner quantity-aware + filter** (`ef80b38`): `WeeklyMenuInput.pantryStock` + `requireFullyStocked`, session user otomatik pantry inject, "Sadece dolabıma yetecek" AI Asistan toggle, shopping diff miktar detay (top 3 shortage).
+
+**I · Retrofit-01 + Backfill-13 + Mod A 36b apply** (`de7f7fd`): 100 APERATIF retrofit (B+ baseline), 50 çeviri, 50 yeni tarif. Prod 3402 → 3452.
+
+**J · Brief A+ standardı Mod F §15** (`f4797fa`): Retrofit-01 B+ dersleri. §15.5.1 step varyasyon zorunluluğu (min 3 distinct, dominant ≤%60), §15.6.2 notes ZORUNLU (min 40 char, kaynak + aspekt format), §15.7.2 pişirme timer zorunlu, §15.7.3 muğlak yasak liste (13 kelime), §15.7.4 kritik nokta notu. §15.9 self-check 9 → 14 bash.
+
+**K · Brief A+ standardı Mod A §5** (`d5af278`): Batch 36b B+ dersleri. §5.0 A+ kalite standardı 5 kural + §5.1 kaynak kontrolü + §22 default özet + §8 Pass 1 self-check 11 → 16 madde.
+
+**L · TTS voice preference** (`47b1d39`): User.ttsVoicePreference String default "female" migration. `pickTtsVoice` util (TR voice filter + cinsiyet classify pattern), `/ayarlar` Kadın/Erkek radio, CookingMode `utterance.voice` prop'a göre 4-seviye fallback chain. 13 unit test.
+
+**M · A: Pişirdim → Pantry decrement** (`3508f89`): `src/lib/pantry/consume.ts` computeConsume util (scaling + unit conversion + clamp to 0), 10 unit test. `consumeRecipeFromPantryAction` atomic transaction. `CookedButton` component (rozet altında, servings input, feedback 3-tone).
+
+**N · B: Sesli tarif okuma TTS** (`0e45572`): CookingMode Web Speech API TR-TR (`speakText` util + `stopSpeaking`), step header'a 🔊 Oku / ⏹ Sustur toggle + Otomatik oku checkbox (localStorage persist). Step değişiminde cancel + yeni utterance.
+
+**O · Retrofit-02 apply** (`f1f3d1e`): 100 APERATIF + ATISTIRMALIK, A- not. Step varyasyon `{4:32,5:45,6:23}` ✅, Notes 100/100 ✅, muğlak 0 ✅, dup 0 ✅. Kritik nokta %10 (Retrofit-03 hedefi).
+
+**P · Brief §15.7.4 kritik nokta %60 gate** (`ccdb7ee`): Retrofit-02 dersi. Pattern listesi 13 kelime (yoksa/olmasın/kesilmesin/gevşesin/...), tarif türü bazında örnek tablo (et/yoğurtlu/hamur/fırın/sote/çorba/...), self-check madde 15 bash ölçüm (<%60 FAIL).
+
+**Q · H: Home 🎒 CTA + autoPantry** (`0336d6e`): Login + pantry dolu kullanıcı için "🎒 Dolabımdaki {N} malzemeden tarif öner" home CTA, `/ai-asistan?autoPantry=1` redirect, AiAssistantForm mount effect'te pantry auto-load. 2 tık → 1 tık.
+
+**R · F: AI v3 miktar rozeti + shopping diff** (`768ad26`): suggestRecipesAction login user'da session pantry fetch + batch recipe ingredient fetch + computePantryMatch inject. Suggestion card'a 🎒 X/Y rozet + shortage chips + "+N yok". v4 ile tutarlılık.
+
+**S · Retrofit-03 apply** (`f85910c`): İlk TAM A+. CORBA+KAHVALTI 100 tarif. Step dist `{4:32,5:45,6:23}`, kritik nokta **%65** (Retrofit-02 %10 → %65, brief gate etkili). Tüm 5 self-check gate PASS.
+
+**T · D: Home dinamik "Şu saatte ne yesek"** (`6852c3f`): `getTimeHintTr` TR timezone UTC+3, 6 senaryo (kahvaltı-hızlı / öğle / ikindi / akşam / hafta sonu / gece-tatlı), kategori mapping + top 4 popüler (viewCount desc), 15 dk unstable_cache.
+
+**U · C: SKT uyarı widget** (`a75708f`): Opt-in gate (login + pantryExpiryTracking=true + yaklaşan SKT ≥1), raw SQL OR-chain ingredient match, 3 gün içinde dolan malzemeleri içeren top 4 tarif, amber vurgu.
+
+**V · G: Favori tarif → AI boost** (`189f476`): `preference-boost.ts` util (cuisine +0.12, tag +0.05 cap 0.15, implicit bookmark +0.025) + `preference-profile-server.ts` (son 20 bookmark frequency map). AI v3 sonuçları preference ile re-rank. 10 unit test.
+
+**W · E: "Beğenmedim, farklı dene"** (`fed58a8`): `aiSuggestSchema.excludeSlugs` (max 60) + `rejectRound`. Provider filter chain'e eklendi. AiAssistantForm rejectedSlugs Set + reject round sayacı + 👎 toolbar + rejectRound≥2 hint banner.
+
+**X · CI fix content:validate pantry staple** (`1d34ef7`): 17 CI fail kök neden. content:validate 34 ERROR (32 tuz/karabiber staple step'te + 2 "biraz" muğlak). tuz+karabiber severity ERROR → WARNING (AI matcher staple prensibi), 2 tarifte "biraz" → "3 yemek kaşığı" / "1 su bardağı". 8 pre-existing em-dash kod yorumu temizlendi.
+
+**Y · CookedButton skip feedback bug fix** (`6131605`): Integration test senaryo 5'te null quantity item "yok" sayılıyordu. Fix: decisions.length===0 şubesi skippedUnknownQuantity + skippedIncompatibleUnit için ayrı feedback. "X malzeme dolabında var ama miktarsız, atlandı".
+
+**Z · Retrofit-04 + 05 apply** (`973f477`): CORBA 100'er (toplam 200). Retrofit-04 A, Retrofit-05 A-. Kritik nokta %63 / %70 (gate tutturuldu). Kelime sayı 3+15 minor ihlal (servis step'leri).
+
+**AA · I: Benzer tarifler filter chip** (`e519ce4`): SimilarRecipeCard type (ingredientCount eklendi), client component SimilarRecipesClient. 4 chip: Önerilen / ⚡ Daha hızlı / 🧺 Daha az malzeme / 🔥 Daha az kalori. useMemo client sort.
+
+**BB · Retrofit-06 apply 🏆** (`6116c10`): İLK 0 SORUN A+. CORBA+KAHVALTI+ICECEK 100 tarif. Tüm gate PASS (step varyasyon + notes + muğlak + dup + em-dash + kelime sayı 0 ihlal + kritik nokta %63). Codex brief kelime min 5 kuralına tam uyum.
+
+**Apply pipeline özet (oturum 18)**:
+- Prod 3252 → **3452 tarif** (Mod A +200 seed)
+- Mod B ≈%93 (+250 çeviri, 200 slug kaldı)
+- Retrofit 6/27 (600 tarif retrofit, B+ → A- → A+ → A → A- → A+)
+- 9 AI özelliği (A-I) + voice pref ship
+- 752/752 test PASS (674 + 78 yeni: 45 pantry-match, 10 pantry-consume, 13 voice-picker, 10 pref-boost)
+- 2 migration (add_pantry_expiry_tracking + add_tts_voice_pref)
+
 ## 24 Nisan 2026 (oturum 17, 32 commit, AI v4.3 + UserPantry + Mod A x5 + Blog redesign + Cuisine 30)
 
 > En büyük tek gün sprint. **AI v4.3 ailesi 16 özellikle ship** (v3 ve

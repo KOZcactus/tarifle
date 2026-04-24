@@ -15,58 +15,52 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
-### Mod F Retrofit, Step Count (oturum 18 başlangıcı, Codex'e hazır)
+### Mod F Retrofit Step Count (oturum 18 devam, 6/27 bitti)
 
-**En büyük aktif iş paketi.** Oturum 18'de step count audit 2660 tarifte
-min kural ihlali buldu (%78.6). Kural oturum 16-17'de konulmuştu ama
-30a-34b aralığında (297 tarif) uygulanmamış, pre-30a'da (2363 tarif)
-zaten kural yoktu. Kerem direktifi: **tüm 2660 tarif kurala uygun hale**.
+Retrofit pipeline A+ standardında stabil çalışıyor. Brief §15 self-check
+5 gate (varyasyon / notes / timer / muğlak / kritik nokta %60) Retrofit-03+
+için geçerli. Son 4 batch (03-06) her biri kritik nokta gate'i geçti.
 
-Mod F self-contained brief §15'te, 27 CSV paketi hazır:
-- `docs/retrofit-step-count-01.csv` .. `retrofit-step-count-27.csv`
-- Her paket ~100 tarif, son paket 60 tarif
-- Tip dağılımı: YEMEK 919, TATLI 449, KAHVALTI 395, CORBA 294, SALATA 256,
-  APERATIF 176, KOKTEYL 97, ATISTIRMALIK 70, ICECEK 4
+**Tamamlanan (600 tarif retrofit, dev + prod)**:
+- [x] Retrofit-01 100 APERATIF B+ (baseline, brief A+ öncesi)
+- [x] Retrofit-02 100 APERATIF+ATISTIRMALIK A- (varyasyon + notes PASS,
+      kritik nokta %10 gap'i brief §15.7.4 gate'ine dönüştü)
+- [x] Retrofit-03 100 CORBA A+ (kritik nokta %65, ilk TAM A+)
+- [x] Retrofit-04 100 CORBA A (3 kelime minor)
+- [x] Retrofit-05 100 CORBA A- (15 kelime servis step'leri)
+- [x] Retrofit-06 100 CORBA+KAHVALTI+ICECEK 🏆 A+ 0 sorun (kelime 0 ihlal,
+      Codex kural disiplini tam)
 
-Kerem Codex'e "Mod F. Retrofit-01" diye tetikler → Codex brief §15 + CSV
-okur → JSON teslim eder → Claude `scripts/apply-retrofit.ts` ile dev+prod
-apply.
+**Kalan**: 21 batch, 2060 tarif. Tip dağılımı şu an kalan CSV'ler:
+- `docs/retrofit-step-count-07.csv` .. `27.csv`
+- KAHVALTI devam (~339), TATLI 449, SALATA 256, KOKTEYL 97,
+  ATISTIRMALIK 70, YEMEK 919 (son dalga)
 
-Özellikler (§15'te detay):
-- Type bazlı min/max: YEMEK 5-10, CORBA 5-10, SALATA 5-8, TATLI 5-10,
-  KAHVALTI 5-8, APERATIF 4-8, KOKTEYL 4-6, ICECEK 3-6, SOS 3-6
-- Web kaynağı kontrolü ZORUNLU (Türkçe Wikipedia, NefisYemekTarifleri,
-  BBC Good Food, NYT Cooking, Serious Eats, her tarifte en az 2 kaynak)
-- Ciddi malzeme/oran hatası düzeltme + `notes` alanına yazma
-- Step kalite kuralları (somut verbi, ölçü, zaman, sıcaklık, görsel sinyal)
-- Em-dash + en-dash yasak, BOM yasak, zayıf pattern yasak
-- 9 adımlı self-check bash teslim öncesi PASS zorunlu
+Codex'e tek tek tetik: `"Mod F. Retrofit-07"`, JSON gelince
+`scripts/apply-retrofit.ts --batch 7 --apply` + prod.
 
-- [ ] Codex Retrofit-01 teslim → dev+prod apply
-- [ ] ...27 tekrar
-- [ ] Tümü sonrası audit 0 ihlal olur
+### Mod B Backfill-14 + 15 (200 slug, Codex'e hazır)
 
-Hedef: 2-3 hafta (paralel session + autonomous apply yetkisi), launch
-öncesi tamamlanır.
+35a+35b+36a+36b (oturum 18 seed) = 200 yeni slug, Mod B gap. CSV'ler üretildi:
+- `docs/translations-backfill-14.csv` (100 slug)
+- `docs/translations-backfill-15.csv` (100 slug)
 
-### Codex Mod B Backfill-11 / 12 / 13 (oturum 17 sonu, Codex teslim etti)
+Codex'e `"Mod B. Backfill-14"` + `"Backfill-15"` diye tetikle, JSON gelince
+`scripts/import-translations-b.ts --file ... --apply` + prod.
 
-Working tree'de 11 + 12 JSON dolu (Codex teslim etmiş), 13 stub halinde.
-Audit + apply bekliyor.
+Apply sonrası Mod B **3452/3452 %100** olur.
 
-- [ ] Backfill-11 dry-run + dev+prod apply
-- [ ] Backfill-12 dry-run + dev+prod apply
-- [ ] Backfill-13 kontrol (stub mu dolu mu) → apply veya yeniden talep
-- [ ] Apply sonrası Mod B 3252/3252 %100 olur
+- [ ] Codex Backfill-14 teslim → dev+prod apply
+- [ ] Codex Backfill-15 teslim → dev+prod apply
 
-### Mod A Batch 35a + 35b + 36a apply (oturum 18, Codex teslim etti)
+### Mod A Batch 37a+ (launch hedefi 3500+)
 
-Working tree seed-recipes.ts'te 3 batch (150 yeni tarif) hazır. Audit
-0 fail (step count kurala uyuyor). Apply'a hazır.
+Prod 3452 tarif, launch hedef **3500+** için 48 kısa. Codex 37a veya 37a/b
+ile ~100 yeni tarif gelebilir. Brief §5 A+ standardı aktif (varyasyon +
+timer + muğlak yasak + kritik nokta + web kaynak).
 
-- [ ] Dry-run + dev+prod seed (scripts/seed-recipes.ts)
-- [ ] Apply sonrası prod 3252 → 3402 (150 yeni)
-- [ ] Backfill-14/15 CSV üretilecek (yeni 150 slug çevirisi için)
+- [ ] Kerem Codex'e `"Mod A. Batch 37a"` tetikle
+- [ ] seed-recipes.ts apply + Backfill-16 CSV üret
 
 ### Neon → Vercel Marketplace migration cleanup (30 Nis 2026, 6 gün kaldı)
 
@@ -120,27 +114,24 @@ yakalandığında (1000+ DAU) tekrar aktifleştirilebilir:
 
 ### Teknik + kalite
 
-- [ ] **AI Asistan v4.3 polish fikirleri** (v4 TAM SHIP'lendi oturum 16'da):
-      - Single-slot regenerate (7×3 grid'de her hücreye 🎲 emoji tek
-        slot yeni tarif)
-      - iCal export (haftalık menü → takvim dosyası)
-      - WhatsApp paylaş (preview → metin formatında URL'li paylaşım)
-      - Commentary personalization (kullanıcı geçmişiyle karşılaştırma)
-      - Claude Haiku ile serbest metin sorgulama (Pro tier sonrası)
+- [ ] **AI v5 LLM katmanı** (launch sonrası, Pro tier):
+      - Tarif uyarlama asistanı ("bu tarifi vegan yap" / "gluten-free
+        yap" / "3 kişilik yap" → Claude Haiku ile re-write)
+      - Serbest metin sorgu ("akşama karides ve havucumla ne yapsam?")
+      - Fotoğraftan malzeme tanıma (Vision API)
 - [ ] **Cache Components (PPR) full refactor** (oturum 12'de denendi,
       `cacheComponents: true` Tarifle'de 30+ `force-dynamic` export ile
       çakıştı, paradigm shift 8-12 saat). Site açılış sonrası dedicated
       sprint'te. Beklenen kazanç: Fluid Active CPU %40-50 azalma + perf
       score 73 → 90+.
-- [ ] **Tarif uyarlama asistanı** (premium LLM feature): tarif açıkken
-      "bu tarifi vegan yap" / "gluten-free yap" / "3 kişilik yap" →
-      Claude Haiku ile malzeme+adım re-write. Pro tier açılışı sonrası.
+- [ ] **Brief kelime sayı min 4'e gevşet** (oturum 18 Retrofit-05 dersi,
+      "Karabiberle servis edin" 3 kelime anlamlı ama kural 5+ reject;
+      yapay uzatma faydasız). §15.7 kuralı güncelleme 5 dk iş.
 
 ### İçerik
 
-- [ ] **Batch 32b gerçek içerikle + Batch 33a/33b+**: Mod A pipeline
-      devam (yeni 50/50 yarı batch mimarisi), hedef 3500+ tarif açılış
-      öncesi (şu an 3021)
+- [ ] **Mod A Batch 37a+**: launch hedef 3500+ (şu an 3452, 48 kısa).
+      Brief §5 A+ standardı aktif.
 - [ ] **Fotoğraf dalgası**: top 100 tarife Cloudinary'den görsel yükle
       (placeholder emoji değil, gerçek foto)
 
@@ -226,6 +217,29 @@ Oturum 16'da 26 → 30 yazı eklendi, 12/9/9 ideal denge. Sonraki adaylar:
 - Recipe remix feature (otomatik vegan/glutensiz/hızlı versiyon)
 
 ---
+
+## ✅ Oturum 18'de tamamlananlar (referans, detay PROJECT_STATUS.md)
+
+**AI paketi 9 özellik A-I + voice pref (rule-based, sıfır LLM)**:
+- A: Pişirdim → Pantry decrement (miktar döngüsü)
+- B: Sesli tarif okuma TTS (Web Speech API TR-TR, kadın/erkek toggle)
+- C: SKT süresi dolan öneri widget (zero-waste UX)
+- D: Home dinamik "Şu saatte ne yesek" (TR timezone)
+- E: "Beğenmedim, farklı dene" feedback (excludeSlugs)
+- F: AI v3 miktar rozeti + shopping diff (v4 tutarlılık)
+- G: Favori tarif → AI öneri boost (explicit + bookmark)
+- H: Home 🎒 CTA + autoPantry flow (2 tık → 1 tık)
+- I: Benzer tarifler filter chip (hızlı/az malzeme/az kalori)
+
+**Mod F altyapı + 6 retrofit apply**: 600/2660 tarif (B+→A-→A+→A→A-→A+)
+**Mod A seed**: 35a/35b/36a/36b (+200 tarif, 3252 → 3452)
+**Mod B Backfill**: 11/12/13 apply (+250 çeviri, ~%93 tam)
+**Backfill-14/15 CSV üretildi** (Codex'e bekliyor)
+**Pantry miktar farkındalığı**: match util + rozet + SKT opt-in +
+alışveriş→pantry senkron + Pişirdim→decrement (tüm döngü)
+**Brief A+ standardı**: §5 Mod A + §15 Mod F, 5 self-check gate
+**CI fix dalgası**: pantry test vi.hoisted + content:validate staple
+severity + "biraz" muğlak fix + em-dash kod yorumu temizliği
 
 ## ✅ Oturum 16'da tamamlananlar (referans, detay PROJECT_STATUS.md)
 

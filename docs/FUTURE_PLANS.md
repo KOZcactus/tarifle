@@ -15,7 +15,18 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
-### Neon → Vercel Marketplace migration cleanup (30 Nis 2026 civarı)
+### Codex Batch 32b REJECT + re-teslim (oturum 16 sonu, acil)
+
+Codex 32b'yi **stub/placeholder content** ile teslim etti: 50 tarif,
+hepsi aynı template ("Ana malzeme / Destek malzeme / Zeytinyağı / Tuz"
++ aynı 4 generic step + aynı description cümlesi). EN title = TR title
+aynen (gerçek çeviri yok). Apply edilmedi, `git stash` içinde bekliyor.
+
+- [ ] Codex'e reject mesajı + gerçek içerikle re-teslim iste
+- [ ] Yeni teslim gelince: validate + seed + allergen audit + commit
+- [ ] 32b apply edildiğinde Backfill-09 açılır (50 slug yeni çeviri gap)
+
+### Neon → Vercel Marketplace migration cleanup (30 Nis 2026, 5 gün kaldı)
 
 Oturum 15'te standalone Neon (ep-broad-pond + ep-dry-bread) Vercel-managed
 Neon'a (ep-icy-mountain + ep-jolly-haze) taşındı, tasarruf $20/ay = $240/yıl.
@@ -37,26 +48,6 @@ Neon'a (ep-icy-mountain + ep-jolly-haze) taşındı, tasarruf $20/ay = $240/yıl
 Gating koşul: 1 hafta boyunca prod `tarifle.app` + dev smoke test temiz
 olması + Sentry error hacminin baseline'da kalması. 30 Nis 2026 sonrası
 trigger.
-
-
-
-### Codex Mod E (step kalitesi sistematik revize)
-
-Brief `docs/CODEX_BATCH_BRIEF.md` §14 (B6+ ince ayar oturum 14'te
-tamamlandı, B16 dersleri §14.5 + §14.7'ye işlendi: UTF-8 no-BOM +
-cümle tekrar yasağı). Pipeline oturdu, B1-B29 apply (2900 tarif
-revize, ~%95 kalite-düşük catalog kapsandı). **Mod E bitti.**
-
-B30 CSV'si (38 "few-steps" score 1 kısa içecek/kokteyl/aperatif)
-silindi çünkü Mod A Batch 30a/30b ile numara çakışması karışıklık
-yaratıyordu + bu tarifler type minimum eşiğine oturtuldu zaten
-(ICECEK 3+, KOKTEYL/APERATIF 4+), revize marginal katkı. Gelecekte
-trafikte düşük CWV fark edilirse ayrı "few-steps refresh" pass
-açılır.
-- [ ] Apply akışı: dry-run → TR karakter scan → spot check → dev+prod
-- [ ] Fix script gerekirse tek-seferlik auto-clean (B8 v3 + B12 v3 pattern)
-- [ ] Cache invalidate: apply sonrası Vercel deploy otomatik (unstable_cache
-      reset)
 
 ### Hero A/B test DURDURULDU (oturum 15)
 
@@ -81,57 +72,45 @@ yakalandığında (1000+ DAU) tekrar aktifleştirilebilir:
 
 ---
 
-## 📋 Planlı (site açılışı öncesi, oturum 15-22)
+## 📋 Planlı (site açılışı öncesi, oturum 16-22)
 
 ### Teknik + kalite
 
-- [ ] **AI Asistan v4**: "Haftalık menü önerisi" - kullanıcı pantry +
-      prefs + kişi sayısı + süre → 7×3 öğün önerisi. Mevcut v3 tek
-      tarif veriyor, v4 çok-öğün menü planı.
-      - [x] Core algoritma: `src/lib/ai/menu-planner.ts` (oturum 16,
-            rule-based, deterministic seed, breakfast/lunch/dinner ayrı
-            havuz, hafta içi çeşitlilik cap 2 kategori + 3 cuisine).
-      - [x] Types: `src/lib/ai/types.ts` WeeklyMenuInput/Response/
-            MenuSlot/AiMenuPlanner interfaceleri eklendi.
-      - [ ] Server action: `src/lib/actions/menu.ts`
-            `generateWeeklyMenuAction(input)` + rate limit + Zod.
-      - [ ] UI: `/menu-planlayici` sayfasına "✨ AI ile Doldur" button,
-            form modal (pantry + kişi sayısı + diyet + cuisine), 21 öğün
-            preview tablosu, "Uygula" → mevcut MealPlan'a yaz.
-      - [ ] i18n: messages/{tr,en}.json aiMenuPlanner namespace.
-      - [ ] Unit test: menu-planner 21 slot invariant, cap disiplini,
-            seed determinism, Prisma mock.
-      - [ ] Playwright E2E: demo pantry ile grid doldurma happy path.
-- [ ] **Admin Tarif Düzenle UX iyileştirmeleri**: drag-drop reorder
-      (ingredient/step), çift onay modal silme için, gerçek zamanlı
-      preview
+- [ ] **AI Asistan v4.3 polish fikirleri** (v4 TAM SHIP'lendi oturum 16'da):
+      - Single-slot regenerate (7×3 grid'de her hücreye 🎲 emoji tek
+        slot yeni tarif)
+      - iCal export (haftalık menü → takvim dosyası)
+      - WhatsApp paylaş (preview → metin formatında URL'li paylaşım)
+      - Commentary personalization (kullanıcı geçmişiyle karşılaştırma)
+      - Claude Haiku ile serbest metin sorgulama (Pro tier sonrası)
 - [ ] **Cache Components (PPR) full refactor** (oturum 12'de denendi,
       `cacheComponents: true` Tarifle'de 30+ `force-dynamic` export ile
       çakıştı, paradigm shift 8-12 saat). Site açılış sonrası dedicated
       sprint'te. Beklenen kazanç: Fluid Active CPU %40-50 azalma + perf
       score 73 → 90+.
+- [ ] **Tarif uyarlama asistanı** (premium LLM feature): tarif açıkken
+      "bu tarifi vegan yap" / "gluten-free yap" / "3 kişilik yap" →
+      Claude Haiku ile malzeme+adım re-write. Pro tier açılışı sonrası.
 
 ### İçerik
 
-- [ ] **Batch 30a/30b ve sonrası**: Codex Mod A pipeline devam
-      (yeni 50/50 yarı batch mimarisi, B30'dan itibaren her batch
-      iki yarıya bölünüyor), hedef 3500+ tarif açılış öncesi
-- [ ] **Mod B backfill temizlik**: eski batch'lerden kalan translation
-      açığı varsa son pass (gen-modb-backfill-csv.ts tarama)
+- [ ] **Batch 32b gerçek içerikle + Batch 33a/33b+**: Mod A pipeline
+      devam (yeni 50/50 yarı batch mimarisi), hedef 3500+ tarif açılış
+      öncesi (şu an 3021)
 - [ ] **Fotoğraf dalgası**: top 100 tarife Cloudinary'den görsel yükle
       (placeholder emoji değil, gerçek foto)
 
 ### Blog kategorisi genişletme
 
-Oturum 14'te 4 → 25 yazı eklendi, 11/7/7 denge. Sonraki aday konular:
+Oturum 16'da 26 → 30 yazı eklendi, 12/9/9 ideal denge. Sonraki adaylar:
 
-- [ ] **Blog 26+**: Ramazan Sofrası (rehber 8), Yoğurt ve Tereyağı
-      Yapımı (malzeme 8), Fırın Kullanımı Raf Isı (pişirme 12), Bayram
-      Sofrası (rehber), Sarımsak Doğru Kullanımı (pişirme), Kahvaltı
-      Sonrası Kahve/Çay Eşleştirme (rehber)
-- [ ] Hedef: **30-40 blog yazısı** açılış öncesi (mevcut 25 + 5-15 yeni).
-- [ ] **İç link ağı**: mevcut 25 yazının birbirine çapraz-referansları
-      eklenebilir (Blog 19 kalıp boyutu → Blog 14 kek dönüşümü bağlantısı gibi)
+- [ ] **Blog 31+**: Yoğurt ve Tereyağı Yapımı (malzeme),
+      Kahvaltı Sonrası Kahve/Çay Eşleştirme (rehber),
+      Soğuk Zincir + Kırmızı Et Güvenliği (pişirme),
+      Domates Çeşitleri (malzeme), Zeytin Çeşitleri (malzeme)
+- [ ] Hedef: **35-40 blog yazısı** açılış öncesi (mevcut 30 + 5-10 yeni)
+- [ ] **İç link ağı**: mevcut 30 yazının birbirine çapraz-referansları
+      (Blog 19 kalıp boyutu → Blog 14 kek dönüşümü bağlantısı gibi)
 
 ### A11y + UX polish
 
@@ -203,6 +182,27 @@ Oturum 14'te 4 → 25 yazı eklendi, 11/7/7 denge. Sonraki aday konular:
 - Recipe remix feature (otomatik vegan/glutensiz/hızlı versiyon)
 
 ---
+
+## ✅ Oturum 16'da tamamlananlar (referans, detay PROJECT_STATUS.md)
+
+- AI Asistan v4 TAM SHIP (core + UI + test + v4.1 cuisine + v4.2
+  regenerate + macro + shopping + person count scaling + plan
+  favorites + pantry history + autocomplete + preset chips) ✅
+- Admin Tarif Düzenle: drag-drop reorder + çift onay modal silme +
+  canlı preview pane ✅
+- Mod A Batch 31a/31b + 32a apply (150 yeni tarif, 2872 → 3021) ✅
+- Mod B Backfill-03/04/05/06/07/08 apply (485 çeviri) → **Mod B %100
+  kapanış**, 3021/3021 tam çevirili ✅
+- Blog 27-30 (4 yeni yazı, 12/9/9 ideal kategori denge) ✅
+- Allergen 2 tur spot-fix + audit rule genişletme → prod RESULT PASS ✅
+- PWA install events Sentry → Vercel Analytics taşındı (info-level
+  spam durdu) ✅
+- Tarif basit/lüks varyant paneli /tarif/[slug] ✅
+- Codex Brief 2 önemli netleştirme (Backfill scope + renumber +
+  translation script yasağı) ✅
+
+**Kalan:** Batch 32b stub reject (gerçek içerikle re-teslim),
+30 Nis Neon cleanup, Blog 31+, Codex 33a/33b+, v4.3 polish fikirleri.
 
 ## 🟢 Oturum 15 erken (silinmeden önce referans)
 

@@ -1,6 +1,8 @@
 # Tarifle, Proje Durumu
 
-> Son güncelleme: **Oturum 15 sonu (23 Nis 2026)**, 50+ commit, en yoğun altyapı + içerik günü. **Neon → Vercel Marketplace migration** ($240/yıl tasarruf) + **Vercel Analytics aktif** + Mod E B14-B29 apply (1600 tarif, **Mod E pipeline kapandı 2900 tarif revize ~%95 kalite-düşük catalog**) + **Mod A Batch 30a + 30b apply** (100 yeni tarif, 2772 → 2872 → 2952 source) + **Hero A/B durduruldu default A** + **Tailwind 4 dark variant fix** + **Blog 26 Ramazan Sofrası** (25 → 26, kategori 11/7/8) + Mod B Backfill 01 + 02 apply (200 çeviri) + CODEX_BRIEF §14.5 + §14.7 dersleri (UTF-8 no-BOM + cümle tekrar yasağı) + Mod A 100→50 yarı batch pattern (30a/30b, 31a/31b). **2952 tarif source (prod 2872), Mod E bitti, 26 blog**. **Sonraki:** Codex B31a/31b + Mod B Backfill-03/04/05 + Blog 27 + 30 Nis eski Neon cleanup.
+> Son güncelleme: **Oturum 16 sonu (23-24 Nis 2026)**, 32 commit, büyük sprint: **AI v4 haftalık menü planlayıcı** (core + UI + unit/E2E test + v4.1 cuisine multi-select + v4.2 regenerate + macro preference + shopping integration + person count scaling + plan favorites + pantry history + autocomplete + preset chips) + **Admin Tarif Düzenle UX** (drag-drop reorder + çift onay modal + real-time preview) + **Mod A Batch 31a/31b + 32a apply** (150 yeni tarif, 2872 → 3021 prod) + **Mod B Backfill-03/04/05/06/07/08 apply** (485 çeviri, **Mod B %100 kapanış**) + **Blog 27-30** (Fırın Kullanımı + Sarımsak + Baharat Öğütme + Bayram Sofrası, kategori 12/9/9 denge) + **Allergen audit iki tur spot-fix** (prod audit PASS 0 CRITICAL) + **PWA analytics Sentry → Vercel** + **Tarif basit/lüks varyant paneli**. **3021 tarif prod, Mod B %100, 30 blog, AI v4 tam ship**. **Sonraki:** Batch 32b gerçek içerik (stub reject), 30 Nis Neon cleanup, AI v4.3 polish.
+
+> Oturum 15 sonu (23 Nis 2026), 50+ commit, en yoğun altyapı + içerik günü. **Neon → Vercel Marketplace migration** ($240/yıl tasarruf) + **Vercel Analytics aktif** + Mod E B14-B29 apply (1600 tarif, **Mod E pipeline kapandı 2900 tarif revize ~%95 kalite-düşük catalog**) + **Mod A Batch 30a + 30b apply** (100 yeni tarif, 2772 → 2872 → 2952 source) + **Hero A/B durduruldu default A** + **Tailwind 4 dark variant fix** + **Blog 26 Ramazan Sofrası** (25 → 26, kategori 11/7/8) + Mod B Backfill 01 + 02 apply (200 çeviri) + CODEX_BRIEF §14.5 + §14.7 dersleri (UTF-8 no-BOM + cümle tekrar yasağı) + Mod A 100→50 yarı batch pattern (30a/30b, 31a/31b). **2952 tarif source (prod 2872), Mod E bitti, 26 blog**.
 
 > Oturum 14 sonu (22-23 Nis 2026), 40 commit, içerik + Mod E apply akışı. Admin Tarif Düzenle formu + AI Asistan v3 (reason chip + cuisine diversity cap) + Hero "24 mutfak, N farklı yemek çeşidi" çeşitlilik vurgusu + Mod E Brief §14 B6+ ince ayarlar + Mod E B1-B13 apply (1300 tarif, ~%45 catalog) + 20 yeni blog yazısı (Blog 5-25).
 
@@ -19,6 +21,138 @@
 > Oturum 8 sonu (30 commit), 2320 tarif prod canlı. 10 blok: 6 Codex batch Mod A (1701→2320), 3 Mod B batch (batch 18-20 çeviri 600→900), rekabet §8 kısa 6/6 ✅ + orta 5/5 ✅, topluluk loop tam (follow + feed + fan-out + followers list + suggested cooks + collection/variation share + PWA banner + Pinterest rich pin + user-photos flag), admin analytics + bulk moderation + search log, PDF export + llms.txt, 18 migration.
 >
 > Oturum 7 sonu (28 commit), 1701 tarif prod canlı. 8 blok: Mod B batch 13-17 (600 tarif EN+DE), Mod A batch 15-17 (1401→1701), foryou sort, pagination redesign, super-admin protection, /admin/yorumlar, /kategoriler, legal hub /yasal, editör rozeti, similar-recipes v2, 44 programatik landing, profil zenginleştirme, /menu-planlayici, RSS + HowTo schema, AI Asistan v2, blog MDX + 3 makale, rekabet analizi doc, newsletter double-opt-in altyapı, codex brief 3 clarify.
+
+## 23-24 Nisan 2026 (oturum 16, 32 commit, AI v4 + Mod A/B kapanış + Admin UX)
+
+> Uzun tek oturum. AI Asistan v4 (haftalık menü planlayıcı) baştan
+> sona inşa edildi (core + UI + test + 5 iterasyon), Mod A Batch
+> 31a/31b/32a apply edildi, Mod B tüm 6 Backfill (03-08) apply ile
+> **%100 kapanışa ulaştı** (3021/3021 tarif tam çevirili), Admin
+> Tarif Düzenle drag-drop + confirm modal + canlı preview eklendi,
+> 4 yeni blog yazısı, 2 tur allergen spot-fix ile prod audit PASS,
+> PWA event'leri Sentry'den Vercel Analytics'e taşındı, tarif
+> sayfasına basit/lüks varyant paneli eklendi.
+
+**A · AI Asistan v4 "Haftalık menü planlayıcı"** (5+ commit):
+- Core algoritma + types (`efa1ff4`): 7×3 = 21 slot, rule-based,
+  `mulberry32` seeded PRNG, kategori cap 2/hafta + cuisine cap 3/hafta,
+  breakfast/lunch/dinner ayrı havuz
+- Server action + UI (`67bc7ca`): `generateWeeklyMenuAction` +
+  `applyWeeklyMenuAction` (Zod + rate limit + MealPlan upsert),
+  `AiFillModal` dialog iki ekran (form + preview 7-gün tablo)
+- Unit + E2E test (`5b9117b`): vi.mock Prisma, 8 test (21 slot,
+  unique, cap, seed determinism, empty pool, max time, provider)
+- v4.1 cuisine multi-select (`7442604`): 24 cuisine chip grid
+- v4.2 regenerate + cuisine filter test (`8468266`): preview'de
+  "🎲 Tekrar üret" button, yeni seed ile aynı input farklı plan
+- Shopping integration (`1ce7638`): preview'den "🛒 Listeye ekle"
+  doğrudan, plan kaydetmeden
+- Macro preference (`ee9ebb6`): high-protein/low-calorie/high-fiber
+  composite score (matchScore + macroBoost × 0.25)
+- Person count scaling (`978ea03`): servingScale = personCount /
+  recipe.servingCount, amount string parse (number/fraction/range)
+
+**B · AI quality-of-life polish** (4 commit):
+- Ingredient autocomplete API + v4 suggestion bar (`305923d`): 10 dk
+  cache, TR locale, startsWith+includes, 120/dk rate limit
+- Audience preset chips v3+v4 (`4688205`): 6 single preset (Misafir/
+  Çocuk/Hafif/Pratik/Aperatif/Tatlı) + 6 menu preset (Vejetaryen/
+  Vegan/Glutensiz/Akdeniz/Dünya/Hızlı Hafta), tek tıkla senaryo
+- Pantry history chips (`81015f3`): localStorage LRU max 12, v3+v4
+- Plan favorites (`8474aa3`): v4 Modal localStorage şablonları,
+  inline overlay kaydet modal, form'da chip olarak geri yükle
+
+**C · Admin Tarif Düzenle UX** (2 commit):
+- Drag-drop + çift onay modal (`d970aa8`): `@dnd-kit/core+sortable+
+  utilities` kuruldu, ingredient + step sortable grip handle, silme
+  için native `<dialog>` modal ("X silinsin mi?" "Vazgeç / Evet sil")
+- Canlı preview pane (`fe4262e`): sağda sticky, keystroke'ta anlık
+  update (4 section: malzeme, adım, püf, servis)
+
+**D · Mod A Batch 31a + 31b + 32a apply** (2 commit):
+- 31a+31b (`32e1741`): 100 yeni tarif dev+prod (2872 → 2971)
+- 32a (`478b060`): 50 yeni tarif + 9 allergen anomaly fix (5 over-tag
+  + 4 missing), TS helper signature fix (Codex type annotation eksikti)
+- 32b: **STUB REJECT** (Codex placeholder template — "Ana malzeme /
+  Destek malzeme" 50 tarifte aynı content). Stash'te duruyor, gerçek
+  içerikle re-teslim bekleniyor
+
+**E · Mod B Backfill-03/04/05/06/07/08 apply - %100 kapanış** (5 commit):
+- 03 + 05 (`d8ada33`): 135 çeviri
+- 04 (`fda9958`): 100 çeviri
+- 06 + 07 (`30c65db`): 200 çeviri
+- 08 (`5f4a6ad`): 50 çeviri + **Mod B gap count: 0**
+- Prod DB'deki 3021 tarif tümü EN + DE tam çevirili (title +
+  description + tipNote + servingSuggestion + ingredients + steps)
+
+**F · Blog 27-30** (4 commit, kategori 11/7/7 → 12/9/9 ideal denge):
+- Blog 27 Fırın Kullanımı (`51e6ef9`): pişirme-teknikleri, 1266 kelime,
+  7 kaynak (King Arthur + ThermoWorks + Food Network + Maytag vs.)
+- Blog 28 Sarımsak (`fc332b6`): malzeme-tanima, 1298 kelime, 9 kaynak
+  (Linus Pauling + Wikipedia Allicin + ScienceDaily 2007 + PMC vs.)
+- Blog 29 Baharat Öğütme (`5a04b4d`): malzeme-tanima, 1188 kelime,
+  8 kaynak
+- Blog 30 Bayram Sofrası (`454c2db`): mutfak-rehberi, 1384 kelime,
+  9 kaynak, 10 iç link (8 tarif + 2 blog)
+
+**G · Allergen audit iki tur spot-fix** (2 commit):
+- Over-tag v2 (`44cf3c7`): 6 prod drift → 1 kaldı (Lamington composite)
+- YUMURTA rule genişletme (`8bd9392`): kek/kurabiye/muffin keyword +
+  exclude kekik/keşkek/pirinç keki, 4 tarif source+DB sync
+- 10 CRITICAL spot-fix (`784c51d`): source'ta doğruydu DB sync eksikti;
+  8 allergen ekleme + 2 ingredient rename (passiflora→Maracuya, Tavuk
+  baget→Tavuk but). **Prod audit-deep: RESULT PASS, 0 CRITICAL**
+
+**H · PWA analytics Sentry → Vercel** (`af61286`):
+- `pwa.install.dismissed` Sentry info-level spam bildirimleri durdu
+- 5 `Sentry.captureMessage` → `track()` (Vercel Analytics, 100k/ay)
+- `beforeSend` defansif filter (eski release fallback)
+
+**I · Tarif basit/lüks varyant paneli** (`01e6081`):
+- `/tarif/[slug]` sayfasına "Bu tarifin başka sürümleri" section
+- Aynı kategori + type pool → simpler (az step+ingredient) / fancier
+  (çok step veya isFeatured)
+- `unstable_cache` 30 dk TTL, rule-based
+
+**J · Codex Brief güncellemeleri** (2 commit):
+- Mod B Backfill netleştirme (`1abad04`): scope + renumber uyarısı +
+  "güvenilir kaynak yok" itirazı geçersiz (Codex Backfill-03 v1
+  yanlış yorumlama dersi)
+- Translation script yasağı (`0696326`): §97 "Codex script/otomasyon
+  yazamaz, görevi kendin yap" (Backfill-03 v2 dersi)
+
+### Prod skor kartı (oturum 16 sonu, son commit 01e6081)
+
+- **3021 tarif prod** (2872 → +150 Mod A 31a/31b + 32a)
+- **Mod B %100 tam çevirili** (3021/3021 EN + DE)
+- **30 blog yazı** (12 pişirme / 9 mutfak / 9 malzeme - **ideal denge**)
+- 24 cuisine, 17 kategori, 10 allergen, 15 tag, 11 rozet
+- **648/648 unit test PASS** (+18 oturum 16: menu-planner 12 + macro 1 +
+  shopping-scale 6 - eski 6 kaldı sayı toplam 648)
+- 22 formal migration
+- **Pre-push 5 katman sabit** (lint/content/em-dash/allergen/tsc)
+- tsc 0 error, lint 0 warning
+- A11y 100/100 stabil, Performance ~73
+- **Mod A 5 modu + Mod E aktif** (A devam, B %100, C v1, D bitti,
+  E pipeline kapandı)
+- **AI v4 TAM SHIP**: form + preview + apply + regenerate + shopping
+  + person count + macro + favorites + pantry history + autocomplete
+- **Admin Tarif Düzenle v3**: drag-drop + confirm modal + canlı preview
+- Prod audit-deep: **RESULT PASS, 0 CRITICAL**
+
+### Bekleyen (oturum 17)
+
+1. **Codex Batch 32b REJECT + re-teslim**: stub content (placeholder
+   "Ana malzeme / Destek malzeme" 50 tarifte aynı). Gerçek içerikle
+   yeniden istenmeli. Stash'te duruyor.
+2. **30 Nisan 2026 Neon cleanup** (5 gün kaldı): eski Neon org cancel +
+   DATABASE_URL_OLD sil + db-env prefix temizle
+3. **Blog 31+** (denge 13/9/9 veya 12/10/9)
+4. **Codex 33a/33b+ Mod A** (açılışa 500+ tarif kalan)
+5. **Vercel Fluid CPU 7-day teyit** (cache TTL + Mod E + v4 sonrası)
+6. **Color contrast WCAG AA detaylı tarama**
+7. **AI v4.3 fikirleri**: single-slot regenerate, calendar export,
+   WhatsApp paylaş, Claude Haiku ile serbest metin sorgulama
 
 ## 23 Nisan 2026 (oturum 15, 50+ commit, Altyapı taşıma + Mod E kapanışı)
 

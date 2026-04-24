@@ -61,6 +61,9 @@
       "heading": "👨‍🍳 Önerilen Aşçılar",
       "subtitle": "Son 30 günde uyarlama paylaşan ve topluluğun takip ettiği kişiler.",
       "viewAll": "Keşfet"
+    },
+    "seasonal": {
+      "minutes": "dk"
     }
   },
   "auth": {
@@ -1567,7 +1570,13 @@
       "regenerateSlotAria": "Bu öğünü başka bir tarifle değiştir",
       "regenerateSlotTitle": "Bu öğünü yeniden seç",
       "matchLabel": "uyum",
-      "matchAria": "%{percent} malzeme uyumu"
+      "matchAria": "%{percent} malzeme uyumu",
+      "personalizedPrefix": "Senin son {count} planının ortalaması {avgMinutes} dk / {avgCalories} kcal.",
+      "personalizedCurrent": "Bu plan {curMinutes} dk / {curCalories} kcal.",
+      "personalizedDelta": "Süre {timeLabel}, kalori {calLabel}.",
+      "personalizedUst": "%{percent} üzerinde",
+      "personalizedAlt": "%{percent} altında",
+      "personalizedBenzer": "benzer"
     }
   },
   "ingredientSuggestion": {

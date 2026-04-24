@@ -84,4 +84,101 @@ export function readRecentSlugs(windowDays = DEFAULT_WINDOW_DAYS): string[] {
 export function clearMenuHistory(): void {
   if (typeof window === "undefined") return;
   window.localStorage.removeItem(KEY);
+  window.localStorage.removeItem(METRICS_KEY);
+}
+
+// ── Plan metrics snapshot (#4 Commentary personalization) ────────────
+//
+// Her plan üretiminde dolu slot'ların ortalama süresi + ortalama
+// kalorisi kaydedilir. Bir sonraki plan commentary'sinde kullanıcıya
+// "senin son 5 planın ort 35 dk, bu plan 42 dk (%20 üzeri)" tarzı
+// kişisel karşılaştırma sunulur. Zero-LLM, tamamen client-side LRU.
+
+const METRICS_KEY = "tarifle.menu.metrics.v1";
+const MAX_METRIC_SNAPSHOTS = 10;
+
+export interface PlanMetricsSnapshot {
+  /** Unix ms, insertion-order + LRU trim için. */
+  at: number;
+  /** Plan'daki dolu slot ortalamaları. fillCount=0 ise snapshot atılmaz. */
+  avgMinutes: number;
+  avgCalories: number;
+  fillCount: number;
+}
+
+function readMetrics(): PlanMetricsSnapshot[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = window.localStorage.getItem(METRICS_KEY);
+    if (!raw) return [];
+    const arr = JSON.parse(raw);
+    if (!Array.isArray(arr)) return [];
+    return arr.filter(
+      (s): s is PlanMetricsSnapshot =>
+        typeof s === "object" &&
+        s !== null &&
+        typeof (s as PlanMetricsSnapshot).at === "number" &&
+        typeof (s as PlanMetricsSnapshot).avgMinutes === "number" &&
+        typeof (s as PlanMetricsSnapshot).avgCalories === "number" &&
+        typeof (s as PlanMetricsSnapshot).fillCount === "number",
+    );
+  } catch {
+    return [];
+  }
+}
+
+function writeMetrics(arr: PlanMetricsSnapshot[]): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(METRICS_KEY, JSON.stringify(arr));
+  } catch {
+    // Storage dolu / privacy modu; sessizce geç.
+  }
+}
+
+/**
+ * Yeni üretilen plan'ın makro snapshot'ını history'ye ekler. LRU max 10.
+ * Commentary bu snapshot'lardan ortalamaları okur.
+ */
+export function pushPlanMetrics(snapshot: {
+  avgMinutes: number;
+  avgCalories: number;
+  fillCount: number;
+}): void {
+  if (snapshot.fillCount <= 0) return;
+  const current = readMetrics();
+  const next: PlanMetricsSnapshot[] = [
+    { ...snapshot, at: Date.now() },
+    ...current,
+  ].slice(0, MAX_METRIC_SNAPSHOTS);
+  writeMetrics(next);
+}
+
+export interface PersonalizedStats {
+  /** Geçmiş snapshot'ların ortalaması (yeni plan hariç). */
+  avgMinutes: number;
+  avgCalories: number;
+  /** Kaç önceki plan snapshot'ı ile hesaplandı. */
+  sampleSize: number;
+}
+
+/**
+ * Son N önceki plan snapshot'ının ortalamasını hesaplar. İlk plan için
+ * null döner (henüz geçmiş yok). Snapshot'ları weighted ortalamıyor,
+ * her plan eşit ağırlık (kullanıcının tipik menü yapısı → basit mean
+ * yeterli sinyal verir).
+ */
+export function readAveragePlanMetrics(
+  maxSnapshots = 5,
+): PersonalizedStats | null {
+  const snapshots = readMetrics().slice(0, maxSnapshots);
+  if (snapshots.length === 0) return null;
+  const n = snapshots.length;
+  const sumMin = snapshots.reduce((acc, s) => acc + s.avgMinutes, 0);
+  const sumCal = snapshots.reduce((acc, s) => acc + s.avgCalories, 0);
+  return {
+    avgMinutes: Math.round(sumMin / n),
+    avgCalories: Math.round(sumCal / n),
+    sampleSize: n,
+  };
 }

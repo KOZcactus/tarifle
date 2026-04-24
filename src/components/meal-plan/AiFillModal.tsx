@@ -33,6 +33,9 @@ import { pushToPantryHistory } from "@/lib/ai/pantry-history";
 import {
   pushGeneratedSlugs,
   readRecentSlugs,
+  pushPlanMetrics,
+  readAveragePlanMetrics,
+  type PersonalizedStats,
 } from "@/lib/ai/menu-history";
 import {
   addMenuPlanFavorite,
@@ -85,6 +88,10 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
   const [isShopping, startShopping] = useTransition();
   const [isRegenerating, startRegenerate] = useTransition();
   const [regeneratingKey, setRegeneratingKey] = useState<string | null>(null);
+  /** #4 Commentary personalization: bu generate'den ÖNCE okunan
+   *  geçmiş plan ortalamaları. Yeni plan'la karşılaştırıp
+   *  "senin tipik menün vs bu plan" kişisel satırı gösterir. */
+  const [prevStats, setPrevStats] = useState<PersonalizedStats | null>(null);
   const [replaceExisting, setReplaceExisting] = useState(false);
   const [shoppingStatus, setShoppingStatus] = useState<string | null>(null);
 
@@ -200,6 +207,10 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
     // v4.3 anti-repeat: son 14 gün içinde önerilmiş tariflerden kaçın.
     // Her üretim sonrası yeni slug'lar history'ye eklenir.
     const excludeSlugs = readRecentSlugs();
+    // #4 Commentary: bu üretimden ÖNCEKİ ortalamayı not et (yeni
+    // snapshot henüz push edilmedi). Yeni plan bu çıpa ile karşılaştırılır.
+    const statsBeforeThisPlan = readAveragePlanMetrics(5);
+    setPrevStats(statsBeforeThisPlan);
     startGenerate(async () => {
       const res = await generateWeeklyMenuAction({
         ingredients,
@@ -224,10 +235,26 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
       setHistoryBump((x) => x + 1);
       // Yeni planın dolu slot slug'larını history'ye push, bir sonraki
       // generate'de bu tarifler çıkarılır.
-      const newSlugs = res.data.slots
-        .map((s) => s.recipe?.slug)
-        .filter((slug): slug is string => Boolean(slug));
+      const filled = res.data.slots.filter(
+        (s): s is MenuSlot & { recipe: NonNullable<MenuSlot["recipe"]> } =>
+          s.recipe !== null,
+      );
+      const newSlugs = filled.map((s) => s.recipe.slug);
       if (newSlugs.length > 0) pushGeneratedSlugs(newSlugs);
+      // #4 Commentary personalization: bu plan'ın makro snapshot'ını
+      // geçmişe ekle (bir sonraki plan ile karşılaştırılmak üzere).
+      if (filled.length > 0) {
+        const sumMin = filled.reduce((acc, s) => acc + s.recipe.totalMinutes, 0);
+        const sumCal = filled.reduce(
+          (acc, s) => acc + (s.recipe.averageCalories ?? 0),
+          0,
+        );
+        pushPlanMetrics({
+          avgMinutes: Math.round(sumMin / filled.length),
+          avgCalories: Math.round(sumCal / filled.length),
+          fillCount: filled.length,
+        });
+      }
     });
   }
 
@@ -646,6 +673,72 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
               <div className="rounded-md bg-surface-muted/40 px-3 py-2 text-sm text-text">
                 {result.commentary}
               </div>
+
+              {(() => {
+                if (!prevStats) return null;
+                const filled = result.slots.filter(
+                  (s): s is MenuSlot & { recipe: NonNullable<MenuSlot["recipe"]> } =>
+                    s.recipe !== null,
+                );
+                if (filled.length === 0) return null;
+                const curMin = Math.round(
+                  filled.reduce((acc, s) => acc + s.recipe.totalMinutes, 0) /
+                    filled.length,
+                );
+                const curCal = Math.round(
+                  filled.reduce(
+                    (acc, s) => acc + (s.recipe.averageCalories ?? 0),
+                    0,
+                  ) / filled.length,
+                );
+                const minDelta = prevStats.avgMinutes
+                  ? Math.round(
+                      ((curMin - prevStats.avgMinutes) / prevStats.avgMinutes) *
+                        100,
+                    )
+                  : 0;
+                const calDelta = prevStats.avgCalories
+                  ? Math.round(
+                      ((curCal - prevStats.avgCalories) /
+                        prevStats.avgCalories) *
+                        100,
+                    )
+                  : 0;
+                const minLabel =
+                  Math.abs(minDelta) < 5
+                    ? t("personalizedBenzer")
+                    : minDelta > 0
+                      ? t("personalizedUst", { percent: minDelta })
+                      : t("personalizedAlt", { percent: Math.abs(minDelta) });
+                const calLabel =
+                  Math.abs(calDelta) < 5
+                    ? t("personalizedBenzer")
+                    : calDelta > 0
+                      ? t("personalizedUst", { percent: calDelta })
+                      : t("personalizedAlt", { percent: Math.abs(calDelta) });
+                return (
+                  <div className="rounded-md border border-sky-200/60 bg-sky-50/60 px-3 py-2 text-xs text-sky-900 dark:border-sky-500/30 dark:bg-sky-950/30 dark:text-sky-200">
+                    <span className="mr-1" aria-hidden>📊</span>
+                    {t("personalizedPrefix", {
+                      count: prevStats.sampleSize,
+                      avgMinutes: prevStats.avgMinutes,
+                      avgCalories: prevStats.avgCalories,
+                    })}{" "}
+                    <span className="font-medium">
+                      {t("personalizedCurrent", {
+                        curMinutes: curMin,
+                        curCalories: curCal,
+                      })}
+                    </span>{" "}
+                    <span className="text-sky-700 dark:text-sky-300">
+                      {t("personalizedDelta", {
+                        timeLabel: minLabel,
+                        calLabel,
+                      })}
+                    </span>
+                  </div>
+                );
+              })()}
 
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse text-left text-sm">

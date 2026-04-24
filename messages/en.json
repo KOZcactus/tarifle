@@ -61,6 +61,9 @@
       "heading": "👨‍🍳 Suggested Cooks",
       "subtitle": "Cooks who shared adaptations in the last 30 days and are followed by the community.",
       "viewAll": "Browse"
+    },
+    "seasonal": {
+      "minutes": "min"
     }
   },
   "auth": {
@@ -1567,7 +1570,13 @@
       "regenerateSlotAria": "Swap this meal for a different recipe",
       "regenerateSlotTitle": "Re-roll this meal",
       "matchLabel": "match",
-      "matchAria": "{percent}% ingredient match"
+      "matchAria": "{percent}% ingredient match",
+      "personalizedPrefix": "Your last {count} plans averaged {avgMinutes} min / {avgCalories} kcal.",
+      "personalizedCurrent": "This plan: {curMinutes} min / {curCalories} kcal.",
+      "personalizedDelta": "Time {timeLabel}, calories {calLabel}.",
+      "personalizedUst": "{percent}% higher",
+      "personalizedAlt": "{percent}% lower",
+      "personalizedBenzer": "similar"
     }
   },
   "ingredientSuggestion": {

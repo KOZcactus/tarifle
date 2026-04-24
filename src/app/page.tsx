@@ -6,6 +6,7 @@ import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
 import { FeaturedShelf } from "@/components/home/FeaturedShelf";
 import { RecipeOfTheDay } from "@/components/home/RecipeOfTheDay";
+import { SeasonalBanner } from "@/components/home/SeasonalBanner";
 import { HeroVariantInit } from "@/components/home/HeroVariantInit";
 import {
   HERO_VARIANT_COOKIE,
@@ -215,6 +216,14 @@ export default async function HomePage() {
           <RandomRecipeBanner initial={randomRecipe} />
         </section>
       )}
+
+      {/* Sezon / bayram seçkisi (#2): mevsime veya yaklaşan bayrama göre
+          4-6 tarif bannerı. Boşsa hiç render etmez. */}
+      <section className="py-6">
+        <Suspense fallback={null}>
+          <SeasonalBanner />
+        </Suspense>
+      </section>
 
       {/* Popular recipes, en çok görüntülenen */}
       {popular.length > 0 && (

@@ -25,6 +25,13 @@ export interface AiSuggestInput {
    *  vegan/vejetaryen/alkolsuz tag bazlı filtre, glutensiz/sutsuz allergen
    *  exclusion. Empty/undefined = kısıt yok. */
   dietSlug?: string;
+  /** E: "Beğenmedim, farklı dene" akışında reddedilen slug'lar. Her
+   *  tıklamada önceki sonuçlardaki slug'lar bu listeye eklenir; provider
+   *  sonuçlardan bunları çıkarır. Max 60 ile sınırlı (schema guard). */
+  excludeSlugs?: string[];
+  /** E: Reddet sayacı — kaç kez "Beğenmedim" tıklandı? 2+ ise UI filter
+   *  paneline doğru hint banner gösterir. Provider bilmez, sadece log. */
+  rejectRound?: number;
 }
 
 /**

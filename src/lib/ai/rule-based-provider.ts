@@ -162,6 +162,12 @@ export class RuleBasedProvider implements AiProvider {
           ? true
           : !recipeContainsExcluded(s._ingredients, excludeList),
       )
+      // E: Reddedilmiş slug'ları çıkar ("Beğenmedim, farklı dene")
+      .filter((s) =>
+        input.excludeSlugs && input.excludeSlugs.length > 0
+          ? !input.excludeSlugs.includes(s.slug)
+          : true,
+      )
       .filter((s) => s.matchScore >= MIN_SCORE)
       .sort((a, b) => {
         if (b.matchScore !== a.matchScore) return b.matchScore - a.matchScore;

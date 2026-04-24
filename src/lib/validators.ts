@@ -219,6 +219,12 @@ export const aiSuggestSchema = z.object({
     .array(z.string().min(1).max(80))
     .max(10, "En fazla 10 hariç tutulan malzeme.")
     .optional(),
+  // E: "Beğenmedim, farklı dene" için client-side biriktirilen rejected
+  // slug listesi. Provider sonuçlardan bunları çıkarır.
+  excludeSlugs: z.array(z.string().min(1).max(200)).max(60).optional(),
+  // E: "Beğenmedim, farklı dene" sayaç (client-side UX, provider bilmez
+  // ama schema'ya eklemek action logging'de faydalı).
+  rejectRound: z.number().int().min(0).max(10).optional(),
 });
 
 export const passwordChangeSchema = z

@@ -153,6 +153,11 @@ export function AiAssistantForm({
   const [result, setResult] = useState<AiSuggestResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
+  // E: "Beğenmedim, farklı dene" state. Rejected slug seti biriktirir,
+  // her reject'te önceki sonuçlardaki slug'lar eklenir + form resubmit.
+  // rejectRound 2+ ise UI daha spesifik filter hint'i gösterir.
+  const [rejectedSlugs, setRejectedSlugs] = useState<Set<string>>(new Set());
+  const [rejectRound, setRejectRound] = useState(0);
   const [recentSearches, setRecentSearches] = useState<string[][]>([]);
   const formRef = useRef<HTMLFormElement>(null);
   const searchParams = useSearchParams();
@@ -509,6 +514,30 @@ export function AiAssistantForm({
       return;
     }
 
+    submitWithOptions(finalIngredients, {
+      resetRejects: true,
+    });
+  }
+
+  function submitWithOptions(
+    finalIngredients: string[],
+    opts: { resetRejects?: boolean; addRejects?: string[] } = {},
+  ) {
+    let nextRejected = rejectedSlugs;
+    let nextRound = rejectRound;
+    if (opts.resetRejects) {
+      nextRejected = new Set();
+      nextRound = 0;
+      setRejectedSlugs(nextRejected);
+      setRejectRound(nextRound);
+    } else if (opts.addRejects && opts.addRejects.length > 0) {
+      nextRejected = new Set(rejectedSlugs);
+      opts.addRejects.forEach((s) => nextRejected.add(s));
+      nextRound = rejectRound + 1;
+      setRejectedSlugs(nextRejected);
+      setRejectRound(nextRound);
+    }
+
     startTransition(async () => {
       const payload = {
         ingredients: finalIngredients,
@@ -519,6 +548,8 @@ export function AiAssistantForm({
         cuisines: cuisine ? (cuisine === "all" ? undefined : [cuisine]) : undefined,
         dietSlug: dietSlug || undefined,
         excludeIngredients: excludeIngredients.length > 0 ? excludeIngredients : undefined,
+        excludeSlugs: nextRejected.size > 0 ? Array.from(nextRejected) : undefined,
+        rejectRound: nextRound > 0 ? nextRound : undefined,
       };
       const response = await suggestRecipesAction(payload);
       if (!response.success || !response.data) {
@@ -539,6 +570,14 @@ export function AiAssistantForm({
         setCompletions([]);
       }
     });
+  }
+
+  // E: "Beğenmedim, farklı dene" — mevcut result slug'larını reddet
+  // setine ekle, form'u ingredient listesi ile yeniden submit.
+  function handleRejectResults() {
+    if (!result || result.suggestions.length === 0) return;
+    const slugsToExclude = result.suggestions.map((s) => s.slug);
+    submitWithOptions(ingredients, { addRejects: slugsToExclude });
   }
 
   return (
@@ -1140,6 +1179,36 @@ export function AiAssistantForm({
                 </p>
               )}
             </>
+          )}
+
+          {/* E: "Beğenmedim, farklı dene" toolbar. Yalnızca result dolu
+              ve kullanıcı zaten 0+ defa reddetmediyse göster (resubmit
+              sonrasında rejectRound artsa da yine render). */}
+          {result.suggestions.length > 0 && (
+            <div className="mb-4 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border bg-bg-card px-3 py-2 text-xs">
+              <span className="text-text-muted">
+                {rejectRound > 0
+                  ? tResult("rejectStatus", { count: rejectRound })
+                  : tResult("rejectHint")}
+              </span>
+              <button
+                type="button"
+                onClick={handleRejectResults}
+                disabled={isPending}
+                className="inline-flex items-center gap-1 rounded-full border border-border bg-bg px-3 py-1 font-medium text-text-muted transition-colors hover:border-accent-blue hover:text-accent-blue disabled:opacity-60"
+              >
+                <span aria-hidden>👎</span>
+                {tResult("rejectButton")}
+              </button>
+            </div>
+          )}
+
+          {/* E: 2+ reddet sonrası filter hint banner */}
+          {rejectRound >= 2 && result.suggestions.length > 0 && (
+            <div className="mb-4 rounded-xl border border-accent-blue/30 bg-accent-blue/5 p-3 text-xs text-accent-blue">
+              <span className="mr-1" aria-hidden>💡</span>
+              {tResult("rejectRefineHint")}
+            </div>
           )}
 
           {result.suggestions.length === 0 ? (

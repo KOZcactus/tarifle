@@ -38,6 +38,8 @@ import { RecipeVariantsPanel } from "@/components/recipe/RecipeVariantsPanel";
 import { isBookmarked, getLikedVariationIds } from "@/lib/queries/user";
 import { getCollectionsForRecipe } from "@/lib/queries/collection";
 import { auth } from "@/lib/auth";
+import { getPantryMatchForRecipe } from "@/lib/pantry/server";
+import { PantryMatchBadge } from "@/components/pantry/PantryMatchBadge";
 import { isValidLocale, type Locale } from "@/i18n/config";
 import {
   hasFullTranslation,
@@ -243,21 +245,39 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
 
   const session = await auth();
   const variationIds = recipe.variations?.map((v) => v.id) ?? [];
-  const [bookmarked, userCollections, similarRecipes, likedVariationIds, userPhotosEnabled, variants] =
-    await Promise.all([
-      session?.user?.id
-        ? isBookmarked(session.user.id, recipe.id)
-        : Promise.resolve(false),
-      session?.user?.id
-        ? getCollectionsForRecipe(session.user.id, recipe.id)
-        : Promise.resolve([]),
-      getSimilarRecipes(recipe.id, 6),
-      session?.user?.id
-        ? getLikedVariationIds(session.user.id, variationIds)
-        : Promise.resolve(new Set<string>()),
-      isUserPhotosEnabled(),
-      getRecipeVariants(recipe.slug),
-    ]);
+  const [
+    bookmarked,
+    userCollections,
+    similarRecipes,
+    likedVariationIds,
+    userPhotosEnabled,
+    variants,
+    pantryMatch,
+  ] = await Promise.all([
+    session?.user?.id
+      ? isBookmarked(session.user.id, recipe.id)
+      : Promise.resolve(false),
+    session?.user?.id
+      ? getCollectionsForRecipe(session.user.id, recipe.id)
+      : Promise.resolve([]),
+    getSimilarRecipes(recipe.id, 6),
+    session?.user?.id
+      ? getLikedVariationIds(session.user.id, variationIds)
+      : Promise.resolve(new Set<string>()),
+    isUserPhotosEnabled(),
+    getRecipeVariants(recipe.slug),
+    session?.user?.id
+      ? getPantryMatchForRecipe(
+          session.user.id,
+          recipe.ingredients.map((i) => ({
+            name: i.name,
+            amount: i.amount,
+            unit: i.unit,
+            isOptional: i.isOptional,
+          })),
+        ).catch(() => null)
+      : Promise.resolve(null),
+  ]);
 
   // Surface admin/moderator UI inline on community variations so a moderator
   // can hide a clearly-bad post without leaving the recipe page. `session.user.role`
@@ -500,6 +520,14 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
         <PrintButton />
         <PdfDownloadButton slug={recipe.slug} />
       </div>
+
+      {/* Pantry match: giris yapmis kullanicinin dolabi ile bu tarifin
+          malzeme karsilastirmasi. Yeter mi, ne eksik? */}
+      {pantryMatch && pantryMatch.total > 0 && (
+        <div className="mb-8">
+          <PantryMatchBadge summary={pantryMatch} />
+        </div>
+      )}
 
       {/* Ingredients + Steps, Side by Side on Desktop */}
       <div className="grid gap-8 lg:grid-cols-5">

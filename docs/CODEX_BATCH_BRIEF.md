@@ -41,21 +41,35 @@
   "Hayal edilen ingredient listesi" yasak, gerçek tarifle tutarlı olsun.
   Malzeme oranları, pişirme sıcaklıkları, süreler gerçek referans ile
   uyumlu. Yoksa yanlış bilgi + SEO zararı + kullanıcı güveni kaybı.
-- **⚠️ Minimum step sayısı (§14 Mod E tablosu Mod A'ya uygulanır,
-  oturum 17 sonu dersi):** Son 3 batch'te YEMEK ortalama 3.8 step,
-  yetersiz. Type'a göre minimum:
+- **⚠️ Step count kuralı (§14.6 + §5.0 A+ kuralları):**
 
-  | Type | Minimum | İdeal |
-  |---|---|---|
-  | ICECEK | 3 | 3-4 |
-  | KOKTEYL | 4 | 4-5 |
-  | APERATIF | 4 | 4-6 |
-  | **YEMEK / CORBA / SALATA / TATLI / KAHVALTI** | **5** | **5-7** |
+  | Type | Min | Max | İdeal |
+  |---|---|---|---|
+  | ICECEK / SOS | 3 | 6 | 3-5 |
+  | KOKTEYL | 4 | 6 | 4-5 |
+  | APERATIF / ATISTIRMALIK | 4 | 8 | 4-6 |
+  | SALATA / KAHVALTI | 5 | 8 | 5-7 |
+  | **YEMEK / CORBA / TATLI** | **5** | **10** | 5-8 |
 
   3-step bir YEMEK/TATLI/KAHVALTI tarifi REJECT. Composite step'i böl:
   "Sebzeleri doğra ve kavur" → 2 adım ("Soğanı doğra" + "Soğan+biber+
   domatesi 8 dk kavur"). Hamur işi 6-9, fırın yemeği 6-8, kebap/
   güveç 5-8 ideal.
+
+- **⭐ A+ KURALLARI (§5.0 tam detay, oturum 18 Batch 36b + Retrofit-01 dersi):**
+  1. **Step sayısı çeşitlilik:** Batch içinde tek değerde kilitlenme, min 3 farklı
+     değer kullan. Batch 36b'de 50/50 hepsi 6-step = FAIL — tekrar etme. YEMEK için
+     önerilen dağılım: %15-5 / %40-6 / %25-7 / %15-8+.
+  2. **Pişirme step'inde `timerSeconds` zorunlu:** Fırın/ocak/tava/mühürleme/
+     haşlama/dinlendirme/ıslatma verbi → timerSeconds DOLU. 36b'de 13 step eksikti.
+  3. **Muğlak ifade yasak (somut ölçü yoksa):** "kısa süre, biraz bekle, uygun kıvam,
+     dilediğin kadar, yeterince, iyice" tek başına = FAIL. Yerine ölçü + zaman
+     + görsel.
+  4. **Kritik nokta / neden-sonuç:** Her tarifte ≥1 step'te neden açıklaması
+     ("yoğurt kesilmesin", "gluten gevşesin"). %60+ tarif kapsamalı.
+  5. **Template dup yasak:** Aynı cümle 2+ tarifte geçmesin (batch içi). 36b'de
+     2 dup vardı — tekrar etme.
+
 - **isFeatured: her yarıda 3-5 tarif** (toplam batch için 5-10)
 - Eksik kategoriler için Kerem'e öncelik sor (kahvaltı/çorba/tatlı dengelensin)
 - Marker: `// ── BATCH 30a ──` (küçük `a`/`b` harf)
@@ -495,6 +509,76 @@ geri dönüş referansı.
 ---
 
 ## 5. Mod A, Yeni TR tarif yazma
+
+### 5.0 A+ kalite standardı (oturum 18 Batch 36b + Retrofit-01 dersleri, ZORUNLU)
+
+Batch 36b ve Retrofit-01 audit'lerinde ortak örüntü: **Codex minimum
+kuralı karşılıyor, "ideal" aralığa taşma yok**. Sonuç B+ not. Mod A
+batch'leri (37a+) bu 5 A+ kuralını ihlalsiz karşılamalı.
+
+**1. Step sayısı çeşitlilik (§15.5.1 referans)**
+
+Bir batch içinde step sayısı tek değerde kilitlenmez. 50 tarif için
+en az **3 farklı step sayısı** kullan. YEMEK/CORBA/TATLI için önerilen
+dağılım: %15-5 step / %40-6 / %25-7 / %15-8+. Type bazlı min/max
+§14.6'da. **Tek değer dominant (≥%60) = FAIL.**
+
+**2. Pişirme step'inde `timerSeconds` ZORUNLU (§15.7.2 referans)**
+
+Fırın / ocak / tava / ızgara / mühürleme / haşlama / dinlendirme /
+mayalanma / ıslatma içeren her step'te `timerSeconds` alanı DOLU
+olmalı (null yasak). 36b'de 13 pişirme step'inde timer eksikti —
+tekrar etme.
+
+**3. Muğlak ifade genişletilmiş yasak liste (§15.7.3 referans)**
+
+Bu kelimeler somut ölçü yoksa YASAK: "kısa süre", "bir süre", "biraz
+bekle", "uygun kıvam", "dilediğin kadar", "yeterince", "uygun ölçüde",
+"iyice" (tek başına), "hafif dokulu", "hafifçe" (tek başına).
+Her birinin yerine ölçü + zaman + görsel sinyal kombinasyonu.
+
+✅ "8 dakika hafifçe pembeleşene kadar kavur" (hafif + ölçü + görsel)
+❌ "hafifçe kavur" (somut değil)
+
+**4. Kritik nokta / neden-sonuç notu (§15.7.4 referans)**
+
+Her tarifte minimum 1 kritik detay step'lerinden birinin içinde
+belirtilsin. Neden önemli anlatılsın:
+
+✅ "Yoğurdu eklemeden önce eti soğutun, yoğurt kesilmesin."
+✅ "Hamuru 20 dakika dinlendirin, gluten gevşesin."
+✅ "Tereyağını ocaktan aldıktan sonra ekleyin, beurre monté kesilmesin."
+
+Basit tariflerde servis notu kabul: "Sıcak servis edin, soğuyunca
+doku kayar."
+
+**5. Step kalitesi: somut ölçü + zaman + sıcaklık + görsel sinyal
+(§15.7 referans)**
+
+Her step'te:
+- ✅ **Somut eylem verbi** (doğra, kavur, ezle, mühürle, süz, dinlendir)
+- ✅ **Ölçü** gereken yerde yazılı ("2 yemek kaşığı yağ")
+- ✅ **Süre** gereken yerde yazılı ("5 dakika", "1 gece 8 saat")
+- ✅ **Sıcaklık** gereken yerde yazılı ("180°C", "kısık ateş",
+  "kızgın yağ 170°C")
+- ✅ **Görsel/duyusal sinyal** pişirme step'inde ("kenarlar altın
+  olana kadar", "salgısını çekene kadar", "kabardığında")
+- ✅ **5-40 kelime arası** instruction uzunluğu
+
+### 5.1 Kaynak kontrolü Mod A'da (yeni tarif üretirken de)
+
+Mod A yeni tarif yazıyor, Mod F gibi retrofit değil — ama web kaynağı
+kontrolü YİNE ZORUNLU. Codex tarif kurgularken en az 1 güvenilir
+kaynağa bakmalı (bölgesel ise T.C. Kültür Bakanlığı / yöre valiliği;
+uluslararası klasik ise Wikipedia + BBC Good Food / NYT Cooking /
+Serious Eats / o mutfağın önde gelen sitesi).
+
+**Codex teslim mesajında chat'te belirtsin:** her batch için
+"aşağıdaki kaynaklara baktım" özet + 5-10 tarif için per-slug kaynak
+(özellikle bölgesel/şüpheli). JSON/seed içine eklemeye gerek yok.
+
+**Uydurma malzeme / oran / teknik YASAK.** Şüpheliysen atla veya
+Kerem'e sor.
 
 ### Scope (Kerem'in açık talimatı yoksa default'u uygula)
 
@@ -1151,6 +1235,47 @@ sahte geçme.**
     "
     ```
     **UNDER veya OVER = 0 olmalı.** Oturum 16-17'de 30a-34b aralığında bu self-check atlandığı için 297 tarif kural dışı üretildi → Mod F ile retrofit edildi. Aynı hata tekrarı YASAK.
+
+12. ✅ **A+ KURALI (§5.0 madde 1): Step sayısı çeşitlilik.** Bir batch içinde step sayısı tek değerde kilitlenmez, min 3 farklı değer kullanılmalı. Tek değer dominant (≥%60) = FAIL. Batch 36b'de 50/50 tam 6-step oldu — tekrar etme. Bash (scripts/validate-batch.ts benzeri):
+    ```bash
+    # Son N tarife (yeni batch) step count dağılımı ölç
+    node -e "
+    const recipes = require('./dist-seed-temp.js').recipes.slice(-50);
+    const dist = recipes.reduce((a,r)=>{a[r.steps.length]=(a[r.steps.length]||0)+1;return a},{});
+    const uniq = Object.keys(dist).length;
+    const max = Math.max(...Object.values(dist));
+    if(uniq<3 || max/50>0.6){ console.log('FAIL varyasyon', JSON.stringify(dist)); process.exit(1) }
+    "
+    ```
+
+13. ✅ **A+ KURALI (§5.0 madde 2): Pişirme step'inde `timerSeconds` zorunlu.** Fırın/ocak/tava/ızgara/mühürleme/haşlama/dinlendirme/mayalanma/ıslatma verbi içeren step'te `timerSeconds` null olamaz. Batch 36b'de 13 step timer eksikti — tekrar etme.
+    ```bash
+    node -e "
+    const recipes = require('./dist-seed-temp.js').recipes.slice(-50);
+    const COOK = /(pişir|kavur|haşla|mühürle|kızart|mayala|fırınla|közle|dinlendir|ıslat|bekletin)/i;
+    let fails = 0;
+    recipes.forEach(r=>r.steps.forEach(s=>{ if(COOK.test(s.instruction) && !s.timerSeconds){ fails++; console.log(r.slug, 'step'+s.stepNumber) } }));
+    if(fails>0) process.exit(1)
+    "
+    ```
+
+14. ✅ **A+ KURALI (§5.0 madde 3): Muğlak ifade yasak liste.** "kısa süre, bir süre, biraz bekle, uygun kıvam, dilediğin kadar, yeterince, uygun ölçüde, iyice (tek başına), hafif dokulu" kelimeleri yalnızca somut ölçü (sayı/°C/dakika/saniye/kaşık/bardak) eşliğinde kullan, tek başına YASAK.
+    ```bash
+    grep -En 'kısa süre[^0-9]|bir süre[^0-9]|uygun kıvam|dilediğin kadar|yeterince(?![^.]*\d)' scripts/seed-recipes.ts | tail -20
+    ```
+
+15. ✅ **A+ KURALI (§5.0 madde 4): Kritik nokta / neden-sonuç notu.** Her tarifte en az 1 step içinde neden-sonuç açıklama olsun ("yoğurt kesilmesin", "gluten gevşesin", "dokusu kaymasın"). Batch genelinde minimum %60 tarifte bulunmalı. Otomatik grep zor, manuel spot-check + Codex teslim mesajında toplam sayı beyanı.
+
+16. ✅ **A+ KURALI (§14.7 + §15.8): Template dup.** Aynı cümle 2+ tarifte geçmesin. Batch 36b'de 2 dup vardı — tekrar etme.
+    ```bash
+    node -e "
+    const recipes = require('./dist-seed-temp.js').recipes.slice(-50);
+    const m = new Map();
+    recipes.forEach(r=>r.steps.forEach(s=>{ if(!m.has(s.instruction)) m.set(s.instruction, new Set()); m.get(s.instruction).add(r.slug) }));
+    const dups = [...m.entries()].filter(([,s])=>s.size>1);
+    if(dups.length>0){ dups.forEach(([t,s])=>console.log(s.size+'x:', t.slice(0,60))); process.exit(1) }
+    "
+    ```
 
 ### Pass 2, Çeviri kalitesi (EN + DE)
 

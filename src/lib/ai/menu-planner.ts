@@ -18,6 +18,7 @@
 import type { RecipeType } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
 import { computeMatch, recipeContainsExcluded } from "./matcher";
+import { computePantryMatch, type PantryMatchSummary } from "@/lib/pantry/match";
 import { dietConfigBySlug } from "@/lib/diets";
 import type {
   AiMenuPlanner,
@@ -183,6 +184,21 @@ async function fetchCandidates(
         input.ingredients,
         { assumePantryStaples: input.assumePantryStaples },
       );
+      // v4.3+ quantity-aware match (sadece pantryStock supplied ise).
+      // UI shopping diff'te miktar detay icin + requireFullyStocked
+      // filter'i icin kullanilir.
+      let pantryMatch: PantryMatchSummary | undefined;
+      if (input.pantryStock && input.pantryStock.length > 0) {
+        pantryMatch = computePantryMatch(
+          recipe.ingredients.map((i) => ({
+            name: i.name,
+            amount: i.amount,
+            unit: i.unit,
+            isOptional: i.isOptional,
+          })),
+          input.pantryStock,
+        );
+      }
       return {
         recipeId: recipe.id,
         slug: recipe.slug,
@@ -199,6 +215,7 @@ async function fetchCandidates(
         matchScore: match.score,
         matchedIngredients: match.matched,
         missingIngredients: match.missing,
+        pantryMatch,
         tags: recipe.tags.map((t) => t.tag.slug),
         _totalMinutes: recipe.totalMinutes,
         _type: recipe.type,
@@ -219,6 +236,14 @@ async function fetchCandidates(
           ),
     )
     .filter((s) => s.matchScore >= MIN_SCORE)
+    // v4.3+ requireFullyStocked: pantry quantity summary aciktan eksik
+    // yoksa (partial + missing > 0 degilse) aday olarak kal. pantryStock
+    // yoksa sessiz bypass.
+    .filter((s) => {
+      if (!input.requireFullyStocked) return true;
+      if (!s.pantryMatch) return true;
+      return s.pantryMatch.missing === 0 && s.pantryMatch.partial === 0;
+    })
     .map((s) => {
       const full = s as ScoredRecipe & {
         _ingredients: unknown;

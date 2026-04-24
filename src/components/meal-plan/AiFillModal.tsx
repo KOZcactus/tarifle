@@ -111,6 +111,7 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
 
   const [ingredientsText, setIngredientsText] = useState("");
   const [assumeStaples, setAssumeStaples] = useState(true);
+  const [requireFullyStocked, setRequireFullyStocked] = useState(false);
   const [personCount, setPersonCount] = useState<number>(2);
   const [dietSlug, setDietSlug] = useState<string>("");
   const [selectedCuisines, setSelectedCuisines] = useState<CuisineCode[]>([]);
@@ -362,6 +363,7 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
         maxDinnerMinutes: maxDinner,
         macroPreference,
         excludeSlugs: excludeSlugs.length > 0 ? excludeSlugs : undefined,
+        requireFullyStocked: requireFullyStocked || undefined,
       });
       if (!res.success || !res.data) {
         setError(res.error ?? t("errorGeneric"));
@@ -839,6 +841,27 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
                 {t("assumeStaplesLabel")}
               </label>
 
+              {/* v4.3+ dolap tam uyum filter. Yalnizca login user icin
+                  anlamli; kullanici UserPantry'ye ekleme yapmamissa her
+                  tarif missing cikar ve plan bos kalir. Gui'de acikca
+                  not ediyoruz. */}
+              {isAuthenticated && (
+                <label className="flex items-start gap-2 text-sm text-text">
+                  <input
+                    type="checkbox"
+                    checked={requireFullyStocked}
+                    onChange={(e) => setRequireFullyStocked(e.target.checked)}
+                    className="mt-0.5 h-4 w-4 rounded border-surface-muted text-primary focus:ring-primary"
+                  />
+                  <span>
+                    {t("requireFullyStockedLabel")}
+                    <span className="ml-1 text-xs text-text-muted">
+                      {t("requireFullyStockedHint")}
+                    </span>
+                  </span>
+                </label>
+              )}
+
               <div>
                 <div className="mb-2 flex items-center justify-between">
                   <span className="text-sm font-medium text-text">
@@ -1157,6 +1180,12 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
                       if (filled.length === 0) return t("shoppingHint");
                       const missing = new Set<string>();
                       const have = new Set<string>();
+                      // v4.3+ quantity breakdown: pantryMatch varsa top shortage
+                      // satir eklenir. Sadece ilk 3, mini detay.
+                      const shortageMap = new Map<
+                        string,
+                        { total: number; unit: string }
+                      >();
                       for (const s of filled) {
                         for (const m of s.recipe.missingIngredients) {
                           missing.add(m.toLocaleLowerCase("tr"));
@@ -1164,12 +1193,38 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
                         for (const m of s.recipe.matchedIngredients) {
                           have.add(m.toLocaleLowerCase("tr"));
                         }
+                        if (s.recipe.pantryMatch?.shortages) {
+                          for (const sh of s.recipe.pantryMatch.shortages) {
+                            const key = sh.name.toLocaleLowerCase("tr");
+                            const existing = shortageMap.get(key);
+                            if (existing && existing.unit === sh.unit) {
+                              existing.total += sh.shortage;
+                            } else if (!existing) {
+                              shortageMap.set(key, {
+                                total: sh.shortage,
+                                unit: sh.unit,
+                              });
+                            }
+                          }
+                        }
                       }
-                      return t("shoppingDiffSummary", {
+                      const baseLine = t("shoppingDiffSummary", {
                         recipeCount: filled.length,
                         missingCount: missing.size,
                         haveCount: have.size,
                       });
+                      if (shortageMap.size === 0) return baseLine;
+                      const top = Array.from(shortageMap.entries())
+                        .sort((a, b) => b[1].total - a[1].total)
+                        .slice(0, 3)
+                        .map(([name, v]) => {
+                          const total = Number.isInteger(v.total)
+                            ? String(v.total)
+                            : v.total.toFixed(1).replace(/\.0$/, "");
+                          return `${name} (${total}${v.unit ? " " + v.unit : ""})`;
+                        })
+                        .join(", ");
+                      return `${baseLine} · En çok eksik: ${top}`;
                     })()}
                 </div>
                 <div className="flex flex-wrap items-center gap-1.5">

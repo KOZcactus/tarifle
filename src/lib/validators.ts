@@ -323,6 +323,10 @@ export const weeklyMenuSchema = z.object({
     .array(z.string().min(1).max(200))
     .max(300, "Son 300 slug ile sınırlı.")
     .optional(),
+  // v4.3+ requireFullyStocked: true ise sadece pantry'nin tam karsiladigi
+  // adaylar. pantryStock action tarafindan session.user ile otomatik
+  // enjekte edilir, UI'dan gelmez (private data gereksiz hop).
+  requireFullyStocked: z.boolean().optional(),
 });
 
 export type WeeklyMenuFormInput = z.infer<typeof weeklyMenuSchema>;

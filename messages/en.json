@@ -1558,6 +1558,8 @@
       "dietDairyFree": "Dairy-free",
       "dietAlcoholFree": "Alcohol-free",
       "assumeStaplesLabel": "Basics available (salt, oil, water, pepper)",
+      "requireFullyStockedLabel": "Only recipes my pantry can cover",
+      "requireFullyStockedHint": "Skips any recipe where your pantry quantities fall short. Turn on when you want to cook without extra shopping.",
       "cuisinesLabel": "Cuisines",
       "cuisinesHintAll": "All cuisines included. Pick the ones you want to limit to.",
       "cuisinesHintSelected": "{count} cuisines selected, only those will appear.",

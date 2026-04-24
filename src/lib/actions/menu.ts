@@ -22,6 +22,7 @@ import {
 } from "@/lib/rate-limit";
 import { getActiveMealPlan, getMondayOfWeek } from "@/lib/queries/meal-plan";
 import { addItemsFromRecipe } from "@/lib/queries/shopping-list";
+import { getUserPantryStock } from "@/lib/pantry/server";
 import { revalidatePath } from "next/cache";
 
 interface ActionResult<T = undefined> {
@@ -57,8 +58,19 @@ export async function generateWeeklyMenuAction(
   }
 
   try {
+    // v4.3+ miktar farkindaligi: giris yapmis kullanici icin UserPantry
+    // stock'unu fetch et + planner'a inject. Boylece her aday icin
+    // quantity-aware pantryMatch hesaplanir (UI shopping diff detayi) +
+    // requireFullyStocked filter'i calisir.
+    const pantryStock = session?.user?.id
+      ? await getUserPantryStock(session.user.id).catch(() => [])
+      : [];
+
     const planner = getMenuPlanner();
-    const result = await planner.plan(parsed.data);
+    const result = await planner.plan({
+      ...parsed.data,
+      pantryStock,
+    });
     return { success: true, data: result };
   } catch (error: unknown) {
     const message =

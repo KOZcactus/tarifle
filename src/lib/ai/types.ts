@@ -1,4 +1,5 @@
 import type { Difficulty, RecipeType } from "@prisma/client";
+import type { PantryMatchSummary, PantryStockItem } from "@/lib/pantry/match";
 
 /**
  * Input a user provides to the AI assistant.
@@ -50,6 +51,10 @@ export interface AiSuggestion {
   matchedIngredients: string[];
   /** Ingredient names the user needs to buy. */
   missingIngredients: string[];
+  /** v4.3+ quantity-aware pantry match summary. Only present when
+   *  WeeklyMenuInput.pantryStock supplied. UI shopping diff'te miktar
+   *  detay icin kullanilir. */
+  pantryMatch?: PantryMatchSummary;
   /** Recipe tag slugs for display (pratik, 30-dakika-alti, vegan...). */
   tags: string[];
   /** Optional per-recipe AI commentary (empty for rule-based provider). */
@@ -135,6 +140,15 @@ export interface WeeklyMenuInput {
   /** v4.3 anti-repeat: son 14 gün içinde önerilmiş slug'lar, planner
    *  bu pool'dan seçmez. Client localStorage history'den gelir. */
   excludeSlugs?: string[];
+  /** v4.3+ miktar farkindaligi: kullanici UserPantry stock'unu server'a
+   *  gecirir (quantity + unit ile). Varsa planner her aday icin
+   *  computePantryMatch ile quantity-aware summary hesaplar. Yoksa
+   *  eski binary match korunur. */
+  pantryStock?: PantryStockItem[];
+  /** v4.3+ filter: true ise sadece pantry'nin tam (veya yeterince)
+   *  karsiladigi adaylari plana al. `pantryStock` gereklidir, yoksa
+   *  sessizce gormezden gelinir. */
+  requireFullyStocked?: boolean;
 }
 
 /** One slot in the 7×3 grid. */

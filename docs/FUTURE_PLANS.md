@@ -139,11 +139,10 @@ yakalandığında (1000+ DAU) tekrar aktifleştirilebilir:
 
 Oturum 16'da 26 → 30 yazı eklendi, 12/9/9 ideal denge. Sonraki adaylar:
 
-- [ ] **Blog 33+**: Yoğurt ve Tereyağı Yapımı (malzeme),
-      Kahvaltı Sonrası Kahve/Çay Eşleştirme (rehber),
+- [ ] **Blog 34+**: Kahvaltı Sonrası Kahve/Çay Eşleştirme (rehber),
       Zeytin Çeşitleri (malzeme), Peynir Çeşitleri (malzeme),
-      Balık Mevsimleri (rehber)
-- [ ] Hedef: **35-40 blog yazısı** açılış öncesi (mevcut 32 + 3-8 yeni)
+      Balık Mevsimleri (rehber), Makarna Çeşitleri (malzeme)
+- [ ] Hedef: **35-40 blog yazısı** açılış öncesi (mevcut 33 + 2-7 yeni)
 - [ ] **İç link ağı**: mevcut 30 yazının birbirine çapraz-referansları
       (Blog 19 kalıp boyutu → Blog 14 kek dönüşümü bağlantısı gibi)
 

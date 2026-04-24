@@ -158,7 +158,7 @@ export default async function RootLayout({
             {announcements.length > 0 && (
               <AnnouncementBanner announcements={announcements} />
             )}
-            <main className="flex-1 print:pt-0">{children}</main>
+            <main id="main-content" className="flex-1 print:pt-0">{children}</main>
             <Footer />
             <CookieBanner />
             <PWAInstallBanner />

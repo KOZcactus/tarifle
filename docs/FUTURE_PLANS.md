@@ -15,6 +15,25 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
+### Dark theme primary renk contrast detay audit (launch sonrası, 1 saat)
+
+Oturum 19 a11y audit'inde tespit edildi: dark theme `--color-primary: #ff7a3d`
++ beyaz metin contrast ratio ~4.47, WCAG AA normal text sınırı 4.5 hemen
+altında. Large text (≥14px bold, butonlar bu kategoride) için gereken 3.0
+zaten karşılanıyor, launch-blocker değil.
+
+Detay düzenleme seçenekleri:
+- Option A: dark primary'yi biraz koyulaştır (`#c65414` contrast ≈4.59 ama
+  renk mat, "marka sıcaklığı" etkilenir)
+- Option B: primary button text rengini koyu yap (`color: #1a1a1a` primary
+  bg üzerinde contrast ≈6.7 ✅), butonların visual weight değişir
+- Option C: Large text kategorisi üzerinden AA kanıtla (button text 14px
+  bold = WCAG large text, contrast 3.0 gate), mevcut durum yeterli belge
+  gönder
+
+Launch öncesi: Option C (documentation). Launch sonrası marka audit'inde
+A veya B.
+
 ### Multi-line recipe cuisine field drift (569 WARNING, ~1-2 saat)
 
 Oturum 19'da tespit edildi: content:validate 569 "cuisine alanı boş" WARNING

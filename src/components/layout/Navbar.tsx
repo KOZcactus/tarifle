@@ -64,7 +64,22 @@ export function Navbar({ notificationSlot, features }: NavbarProps = {}) {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-bg/80 backdrop-blur-md">
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      {/*
+        Skip-to-content link (WCAG 2.4.1 Bypass Blocks, oturum 19 a11y audit).
+        Varsayilan olarak ekrandan gizli; klavye ile Tab'e basildiginda
+        gorunur olur ve main-content anchor'ina sicrar. Screen reader
+        kullanicilari ve klavye navigasyonunda hizli atlama saglar.
+      */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-white focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+      >
+        Ana içeriğe atla
+      </a>
+      <nav
+        className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
+        aria-label="Ana navigasyon"
+      >
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <span className="font-heading text-xl font-bold text-primary">

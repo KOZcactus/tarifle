@@ -8,6 +8,7 @@ import { FeaturedShelf } from "@/components/home/FeaturedShelf";
 import { RecipeOfTheDay } from "@/components/home/RecipeOfTheDay";
 import { SeasonalBanner } from "@/components/home/SeasonalBanner";
 import { TimeAwareBanner } from "@/components/home/TimeAwareBanner";
+import { ExpiringSoonBanner } from "@/components/home/ExpiringSoonBanner";
 import { HeroVariantInit } from "@/components/home/HeroVariantInit";
 import {
   HERO_VARIANT_COOKIE,
@@ -246,6 +247,14 @@ export default async function HomePage() {
       <section className="py-6">
         <Suspense fallback={null}>
           <SeasonalBanner />
+        </Suspense>
+      </section>
+
+      {/* C: Login + SKT takibi opt-in user'da dolaptaki yaklaşan son
+          kullanma tarihli malzemeleri içeren tarifler. Zero-waste UX. */}
+      <section className="py-4">
+        <Suspense fallback={null}>
+          <ExpiringSoonBanner session={session} />
         </Suspense>
       </section>
 

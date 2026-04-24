@@ -67,6 +67,11 @@
     "seasonal": {
       "minutes": "min"
     },
+    "expiringSoon": {
+      "headline": "{count} pantry items expire soon",
+      "subtitle": "{names} approaching their expiry date. Try the recipes below.",
+      "manageLink": "Manage my pantry"
+    },
     "timeAware": {
       "headline": {
         "breakfastQuick": "☀️ Good morning, quick breakfast?",

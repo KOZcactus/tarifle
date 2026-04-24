@@ -67,6 +67,11 @@
     "seasonal": {
       "minutes": "dk"
     },
+    "expiringSoon": {
+      "headline": "Bu hafta bitirmen gereken {count} malzeme var",
+      "subtitle": "{names} son kullanma tarihine yaklaşıyor. Aşağıdaki tariflerle değerlendir.",
+      "manageLink": "Dolabımı düzenle"
+    },
     "timeAware": {
       "headline": {
         "breakfastQuick": "☀️ Günaydın, hızlı bir kahvaltı?",

@@ -14,7 +14,7 @@
  *   - docs/PROJECT_STATUS.md (commit başlıklarında tarihsel)
  *   - docs/CHANGELOG.md (tarihsel kayıt)
  *
- * Tarama kapsamı: .ts, .tsx, .js, .jsx, .json, .md. Skipped: node_modules,
+ * Tarama kapsamı: .ts, .tsx, .js, .jsx, .json, .md, .mdx. Skipped: node_modules,
  * .next, .git, test-results, playwright-report, prisma/migrations.
  *
  * Exit 0 temiz, exit 1 eşleşme bulundu. Pre-push hook'tan çağrılır.
@@ -25,7 +25,7 @@ import { join, relative } from "node:path";
 const EM_DASH = "\u2014";
 // U+2013 en-dash range separator olarak legitimate (`1–2`, `2.7–3.3 s`),
 // bu yüzden yasak listesinde değil. Yasak sadece em-dash.
-const EXTENSIONS = new Set([".ts", ".tsx", ".js", ".jsx", ".json", ".md"]);
+const EXTENSIONS = new Set([".ts", ".tsx", ".js", ".jsx", ".json", ".md", ".mdx"]);
 const SKIP_DIRS = new Set([
   "node_modules",
   ".next",

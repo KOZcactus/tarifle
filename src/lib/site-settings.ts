@@ -14,6 +14,7 @@ import { prisma } from "@/lib/prisma";
 
 export const SITE_SETTING_KEYS = {
   USER_PHOTOS_ENABLED: "userPhotosEnabled",
+  LEADERBOARD_ENABLED: "leaderboardEnabled",
 } as const;
 
 export type SiteSettingKey =
@@ -46,6 +47,14 @@ export async function getBooleanSetting(
 /** Tek-çağrıda user-photos feature flag'i okur, hot path helper. */
 export async function isUserPhotosEnabled(): Promise<boolean> {
   return getBooleanSetting(SITE_SETTING_KEYS.USER_PHOTOS_ENABLED, false);
+}
+
+/** Leaderboard (Liderlik tablosu) özelliği aktif mi? Default kapalı,
+ *  admin /admin/ayarlar'dan açar. Kapalıyken /leaderboard 404,
+ *  Navbar link gizli, cron yine çalışır (skor hesabı arka planda
+ *  birikir, flag açıldığında anında hazır). */
+export async function isLeaderboardEnabled(): Promise<boolean> {
+  return getBooleanSetting(SITE_SETTING_KEYS.LEADERBOARD_ENABLED, false);
 }
 
 /**

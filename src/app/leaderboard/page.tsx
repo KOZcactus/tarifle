@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { getLeaderboard, type ScorePeriod } from "@/lib/leaderboard/score";
+import { isLeaderboardEnabled } from "@/lib/site-settings";
 
 interface LeaderboardPageProps {
   searchParams: Promise<{ period?: string }>;
@@ -17,12 +19,19 @@ function parsePeriod(value: string | undefined): ScorePeriod {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("metadata.leaderboard");
+  const [t, enabled] = await Promise.all([
+    getTranslations("metadata.leaderboard"),
+    isLeaderboardEnabled(),
+  ]);
   return {
     title: t("title"),
     description: t("description"),
     alternates: { canonical: "/leaderboard" },
-    robots: { index: true, follow: true },
+    // Feature flag kapalıyken sayfa 404 verir, aynı zamanda meta
+    // robots noindex ile arama motorlarına da "yok" diyor.
+    robots: enabled
+      ? { index: true, follow: true }
+      : { index: false, follow: false },
   };
 }
 
@@ -40,6 +49,11 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function LeaderboardPage({
   searchParams,
 }: LeaderboardPageProps) {
+  // Feature flag kapalı ise sayfa 404. Admin /admin/ayarlar'dan
+  // açtığında anında görünür hale gelir (cache 60s TTL).
+  const enabled = await isLeaderboardEnabled();
+  if (!enabled) notFound();
+
   const sp = await searchParams;
   const period = parsePeriod(sp.period);
   const [entries, t] = await Promise.all([

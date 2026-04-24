@@ -496,7 +496,22 @@
       "announcements": "Duyurular",
       "notification": "Bildirim",
       "log": "Log",
+      "features": "Özellikler",
       "sentryTest": "Sentry Test"
+    },
+    "features": {
+      "pageTitle": "Özellik Ayarları | Yönetim Paneli",
+      "heading": "⚙️ Özellik Ayarları",
+      "subtitle": "Site çapındaki runtime feature flag'leri. Değişiklik anında etkiye girer (cache 60 sn).",
+      "leaderboard": {
+        "heading": "🏆 Liderlik Tablosu",
+        "helper": "Kapalıyken /leaderboard sayfası 404 verir ve Navbar'da link gizlenir. Skor cron'u arka planda çalışmaya devam eder, açtığında veri hazır.",
+        "toggleTurnOff": "Kapat",
+        "toggleTurnOn": "Aç",
+        "stateOn": "Açık",
+        "stateOff": "Kapalı",
+        "status": "Mevcut durum: {state}"
+      }
     },
     "userPhotos": {
       "pageTitle": "Topluluk Fotoğrafları | Yönetim Paneli",

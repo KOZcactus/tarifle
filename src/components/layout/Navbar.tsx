@@ -14,7 +14,7 @@ const NAV_LINK_KEYS = [
   { href: "/tarifler", key: "recipes" },
   { href: "/kategoriler", key: "categories" },
   { href: "/kesfet", key: "discover" },
-  { href: "/leaderboard", key: "leaderboard" },
+  { href: "/leaderboard", key: "leaderboard", featureFlag: "leaderboard" as const },
   { href: "/akis", key: "feed", requiresAuth: true as const },
   { href: "/menu-planlayici", key: "mealPlanner" },
   { href: "/blog", key: "blog" },
@@ -29,9 +29,17 @@ interface NavbarProps {
    * to hide the bell entirely.
    */
   notificationSlot?: React.ReactNode;
+  /**
+   * Feature flags from the server (leaderboard vs). Navbar client-side
+   * olduğu için server'da okunan bayrak prop ile geçiyor. Toggle sonrası
+   * layout re-render edilir, bayrak tazelenir.
+   */
+  features?: {
+    leaderboard?: boolean;
+  };
 }
 
-export function Navbar({ notificationSlot }: NavbarProps = {}) {
+export function Navbar({ notificationSlot, features }: NavbarProps = {}) {
   const { data: session } = useSession();
   const pathname = usePathname();
   const t = useTranslations("nav");
@@ -68,6 +76,13 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
         <div className="hidden items-center gap-6 md:flex">
           {NAV_LINK_KEYS.map((link) => {
             if ("requiresAuth" in link && link.requiresAuth && !session?.user?.id) {
+              return null;
+            }
+            if (
+              "featureFlag" in link &&
+              link.featureFlag === "leaderboard" &&
+              !features?.leaderboard
+            ) {
               return null;
             }
             const isActive = pathname === link.href || pathname.startsWith(link.href + "/");
@@ -212,6 +227,16 @@ export function Navbar({ notificationSlot }: NavbarProps = {}) {
         >
           <div className="flex flex-col gap-3">
             {NAV_LINK_KEYS.map((link) => {
+              if ("requiresAuth" in link && link.requiresAuth && !session?.user?.id) {
+                return null;
+              }
+              if (
+                "featureFlag" in link &&
+                link.featureFlag === "leaderboard" &&
+                !features?.leaderboard
+              ) {
+                return null;
+              }
               const isActive = pathname === link.href || pathname.startsWith(link.href + "/");
               return (
                 <Link

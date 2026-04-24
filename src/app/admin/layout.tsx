@@ -50,6 +50,7 @@ export default async function AdminLayout({
         <NavLink href="/admin/duyurular">{t("announcements")}</NavLink>
         <NavLink href="/admin/bildirim-gonder">{t("notification")}</NavLink>
         <NavLink href="/admin/moderasyon-logu">{t("log")}</NavLink>
+        <NavLink href="/admin/ayarlar">{t("features")}</NavLink>
         <NavLink href="/sentry-test">{t("sentryTest")}</NavLink>
       </nav>
 

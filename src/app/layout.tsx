@@ -8,6 +8,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { NotificationBellLoader } from "@/components/notifications/NotificationBellLoader";
 import { AnnouncementBanner } from "@/components/announcement/AnnouncementBanner";
 import { getActiveAnnouncements } from "@/lib/queries/admin";
+import { isLeaderboardEnabled } from "@/lib/site-settings";
 import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/legal/CookieBanner";
 import { PWAInstallBanner } from "@/components/pwa/PWAInstallBanner";
@@ -115,12 +116,14 @@ export default async function RootLayout({
   // Aktif duyurular RSC olarak burada çekilir, client banner sadece
   // localStorage dismissal state'ini izler. Boş liste ise banner hiç render
   // edilmez (hydration sonrası). Cache: RSC per-request.
-  const [announcements, locale, messages, tMeta] = await Promise.all([
-    getActiveAnnouncements(),
-    getLocale(),
-    getMessages(),
-    getTranslations("metadata.site"),
-  ]);
+  const [announcements, locale, messages, tMeta, leaderboardOn] =
+    await Promise.all([
+      getActiveAnnouncements(),
+      getLocale(),
+      getMessages(),
+      getTranslations("metadata.site"),
+      isLeaderboardEnabled(),
+    ]);
 
   // Site-wide JSON-LD: WebSite (SearchAction → sitelinks search box) +
   // Organization (logo, sameAs → knowledge panel). Tarif detay sayfaları
@@ -148,7 +151,10 @@ export default async function RootLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Providers>
             <BfCacheRestore />
-            <Navbar notificationSlot={<NotificationBellLoader />} />
+            <Navbar
+              notificationSlot={<NotificationBellLoader />}
+              features={{ leaderboard: leaderboardOn }}
+            />
             {announcements.length > 0 && (
               <AnnouncementBanner announcements={announcements} />
             )}

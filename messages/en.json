@@ -496,7 +496,22 @@
       "announcements": "Announcements",
       "notification": "Notifications",
       "log": "Log",
+      "features": "Features",
       "sentryTest": "Sentry Test"
+    },
+    "features": {
+      "pageTitle": "Feature Settings | Admin Panel",
+      "heading": "⚙️ Feature Settings",
+      "subtitle": "Site-wide runtime feature flags. Changes propagate within 60s cache window.",
+      "leaderboard": {
+        "heading": "🏆 Leaderboard",
+        "helper": "When off, /leaderboard returns 404 and the Navbar link is hidden. The score cron keeps running in the background so data is ready when re-enabled.",
+        "toggleTurnOff": "Turn off",
+        "toggleTurnOn": "Turn on",
+        "stateOn": "On",
+        "stateOff": "Off",
+        "status": "Current state: {state}"
+      }
     },
     "userPhotos": {
       "pageTitle": "User Photos | Admin Panel",

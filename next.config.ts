@@ -71,6 +71,15 @@ const nextConfig: NextConfig = {
           key: "Permissions-Policy",
           value: "camera=(), microphone=(), geolocation=()",
         },
+        // Oturum 19 security audit (oturum 19): clickjacking koruma.
+        // Modern CSP frame-ancestors henuz aktif degil (full CSP ayri paket
+        // Report-Only mode ile ship edilecek), bu arada eski-browser uyumlu
+        // X-Frame-Options tum browser'larda iframe sarmalamayi tamamen engeller.
+        // iframe: kullanilmiyor, DENY zero-risk.
+        {
+          key: "X-Frame-Options",
+          value: "DENY",
+        },
       ],
     },
   ],

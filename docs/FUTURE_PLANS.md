@@ -15,6 +15,48 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
+### Content-Security-Policy (CSP) Report-Only mode (launch öncesi, 1-2 saat)
+
+Oturum 19 security audit'inde tespit edildi: CSP header yok. HSTS + X-Content-Type-Options
++ Referrer-Policy + Permissions-Policy + X-Frame-Options zaten prod'da aktif, ama CSP
+XSS'e karşı en güçlü katman.
+
+Direkt enforce CSP Next.js 16 inline script/React runtime için `unsafe-inline`
+veya nonce-based gerekli. Breaking risk var.
+
+Güvenli akış:
+1. next.config.ts'e `Content-Security-Policy-Report-Only` ekle (siteyi kırmaz, violation'ları raporlar)
+2. `report-uri` Sentry CSP violation endpoint'i
+3. 1-2 hafta izle, gerçek 3rd party whitelist çıkar (Vercel Analytics, Sentry, Google Fonts, Cloudinary)
+4. Kırılmayacak safe CSP yaz + Report-Only → enforce geçiş
+
+**Blocklama noktaları**: Vercel runtime, Sentry tunnel, Google Analytics (eğer eklenirse),
+Cloudinary image domains, next-auth Google OAuth callback. Launch öncesi değerli,
+launch-blocker değil.
+
+### Newsletter subscriber orphan cleanup (deleteAccountAction edge case)
+
+Audit tespiti: user delete edildiğinde `NewsletterSubscriber` email'e göre kayıt
+tutar, user.email ile orphan kalabilir. Kullanıcı `/ayarlar`'dan önceden unsubscribe
+olsa da edge case: hesabı direkt silerse newsletter gelmeye devam eder.
+
+Fix: `deleteAccountAction` transaction'ına ekle:
+```ts
+prisma.newsletterSubscriber.deleteMany({ where: { email: user.email } }),
+```
+
+5 dakikalık iş, düşük öncelik (kullanıcı zaten unsubscribe link'iyle durdurabilir).
+
+### NPM audit 13 moderate vulnerability (postcss + uuid transient)
+
+`npm audit`: 0 critical / 0 high, 13 moderate. Kök: `next@>=9.3.4` transient postcss
++ `svix → uuid`. Breaking fix: `next@9.3.3` (major downgrade) veya `resend@6.1.3`.
+Launch öncesi yapılmaz. Sonraki Next major upgrade'te otomatik düzelir muhtemelen.
+
+Monitor: her ay `npm audit` çalıştır, yeni critical/high çıkarsa derhal incelemek.
+
+
+
 
 
 ### Mod F Retrofit Step Count (oturum 18 devam, 6/27 bitti)

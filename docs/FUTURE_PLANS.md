@@ -51,19 +51,6 @@ Detay düzenleme seçenekleri:
 Launch öncesi: Option C (documentation). Launch sonrası marka audit'inde
 A veya B.
 
-### Translations drift (Mod B %100 oldu, WARNING'ler seed drift)
-
-Oturum 19'da Backfill-14 + 15 tam apply edildi, Mod B DB'de 3452/3452
-%100. Ama content:validate 1032 "translations eksik" WARNING hâlâ var
-çünkü **seed-recipes.ts source of truth** bu çevirileri içermiyor (Mod B
-shallow merge DB'ye yazar, seed'e yazmaz).
-
-Bu seed drift yukaridaki multi-line cuisine drift ile aynı problemin
-başka varyasyonu: DB dolu, seed eksik, content:validate seed üstünden
-çalışıyor.
-
-Fix: seed-recipes.ts'te tüm tariflere DB'den translations mapping
-enjeksiyonu (AST-aware edit, ~1-2 saat cuisine drift fix ile ortak).
 
 ### Content-Security-Policy (CSP) Report-Only mode (launch öncesi, 1-2 saat)
 

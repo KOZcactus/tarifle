@@ -1576,7 +1576,10 @@
       "personalizedDelta": "Süre {timeLabel}, kalori {calLabel}.",
       "personalizedUst": "%{percent} üzerinde",
       "personalizedAlt": "%{percent} altında",
-      "personalizedBenzer": "benzer"
+      "personalizedBenzer": "benzer",
+      "antiRepeatWarning": "{count} slot boş kaldı. Son 14 gün tariflerini gizleyen filtre pool'u daralttı.",
+      "antiRepeatClearButton": "Geçmişi temizle + tekrar üret",
+      "shoppingDiffSummary": "{recipeCount} tarif · {missingCount} eksik malzeme · {haveCount} dolabında"
     }
   },
   "ingredientSuggestion": {

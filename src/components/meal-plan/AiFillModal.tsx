@@ -35,6 +35,7 @@ import {
   readRecentSlugs,
   pushPlanMetrics,
   readAveragePlanMetrics,
+  clearMenuHistory,
   type PersonalizedStats,
 } from "@/lib/ai/menu-history";
 import {
@@ -674,6 +675,33 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
                 {result.commentary}
               </div>
 
+              {/* #6 edge UX: anti-repeat filter çok agresif davranıp
+                  pool'u tüketirse kullanıcı "hep aynı boş slot" görür.
+                  3+ unfilled + en az 1 history snapshot varsa temizle +
+                  yeniden üret butonu göster. */}
+              {result.unfilledCount >= 3 &&
+                readRecentSlugs().length > 0 && (
+                  <div className="flex flex-wrap items-center gap-3 rounded-md border border-amber-300/60 bg-amber-50 px-3 py-2 text-xs text-amber-900 dark:border-amber-500/40 dark:bg-amber-950/40 dark:text-amber-200">
+                    <span className="flex-1">
+                      <span aria-hidden className="mr-1">♻️</span>
+                      {t("antiRepeatWarning", { count: result.unfilledCount })}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        clearMenuHistory();
+                        runGenerate(
+                          `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+                        );
+                      }}
+                      disabled={isGenerating || isApplying || isRegenerating}
+                      className="shrink-0 rounded-md border border-amber-400/60 bg-amber-100 px-2 py-1 text-xs font-semibold text-amber-900 transition hover:bg-amber-200 disabled:cursor-not-allowed disabled:opacity-60 dark:border-amber-500/40 dark:bg-amber-900/60 dark:text-amber-100 dark:hover:bg-amber-900"
+                    >
+                      {t("antiRepeatClearButton")}
+                    </button>
+                  </div>
+                )}
+
               {(() => {
                 if (!prevStats) return null;
                 const filled = result.slots.filter(
@@ -854,7 +882,33 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
 
               <div className="flex flex-wrap items-center gap-3 rounded-md border border-surface-muted bg-surface-muted/30 px-3 py-2">
                 <div className="flex-1 text-xs text-text">
-                  {shoppingStatus ?? t("shoppingHint")}
+                  {shoppingStatus ??
+                    (() => {
+                      // #9 Alışveriş diff özeti: plan'daki dolu slot
+                      // recipe'lerinden benzersiz eksik + dolap malzeme
+                      // sayısı. shoppingHint fallback yerine dinamik
+                      // satır, "X eksik, Y dolabında".
+                      const filled = result.slots.filter(
+                        (s): s is MenuSlot & { recipe: NonNullable<MenuSlot["recipe"]> } =>
+                          s.recipe !== null,
+                      );
+                      if (filled.length === 0) return t("shoppingHint");
+                      const missing = new Set<string>();
+                      const have = new Set<string>();
+                      for (const s of filled) {
+                        for (const m of s.recipe.missingIngredients) {
+                          missing.add(m.toLocaleLowerCase("tr"));
+                        }
+                        for (const m of s.recipe.matchedIngredients) {
+                          have.add(m.toLocaleLowerCase("tr"));
+                        }
+                      }
+                      return t("shoppingDiffSummary", {
+                        recipeCount: filled.length,
+                        missingCount: missing.size,
+                        haveCount: have.size,
+                      });
+                    })()}
                 </div>
                 <button
                   type="button"

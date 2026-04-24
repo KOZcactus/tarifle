@@ -1576,7 +1576,10 @@
       "personalizedDelta": "Time {timeLabel}, calories {calLabel}.",
       "personalizedUst": "{percent}% higher",
       "personalizedAlt": "{percent}% lower",
-      "personalizedBenzer": "similar"
+      "personalizedBenzer": "similar",
+      "antiRepeatWarning": "{count} slots left empty. The last-14-days filter narrowed the pool.",
+      "antiRepeatClearButton": "Clear history and retry",
+      "shoppingDiffSummary": "{recipeCount} recipes · {missingCount} missing ingredients · {haveCount} already at home"
     }
   },
   "ingredientSuggestion": {

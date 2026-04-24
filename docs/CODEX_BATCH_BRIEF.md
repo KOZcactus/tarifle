@@ -571,7 +571,8 @@ Her step'te:
   "kızgın yağ 170°C")
 - ✅ **Görsel/duyusal sinyal** pişirme step'inde ("kenarlar altın
   olana kadar", "salgısını çekene kadar", "kabardığında")
-- ✅ **5-40 kelime arası** instruction uzunluğu
+- ✅ **4-40 kelime arası** instruction uzunluğu (hard min 4, 5+ ideal;
+  kısa servis kapanışı 4 kelime yeterli)
 
 **A+ somut örnek + checklist + evrim tablosu için**: §15.1.1 (pipeline
 evrim), §15.1.2 (7 gate checklist), §15.1.3 (notes format örnekleri),
@@ -1700,10 +1701,12 @@ dokunmaz.
 - `steps` array zorunlu (type bazli min: ICECEK 3+, KOKTEYL/APERATIF 4+,
   diger 5+; ideal 5-7, max 12).
 - `stepNumber` ardışık 1, 2, 3, ... (boşluk yok).
-- `instruction` her step için zorunlu, **5-25 kelime ideal**. Son
-  servis step'i 3-4 kelime OK ("Çorbayı sıcak servis edin", "Tostları
-  ılık servis edin"). Ana pişirme adımlarında 5+ kelime hedef, kısa
-  servis kapanışı esnek. Hard minimum 3 kelime.
+- `instruction` her step için zorunlu, **5-25 kelime ideal**, **hard
+  minimum 4 kelime** (oturum 19 gevşetme, Retrofit-05 dersi). Ana
+  pişirme adımlarında 5+ kelime hedef (ölçü + görsel sinyal + süre);
+  kısa servis kapanışı 4 kelime yeterli ("Karabiberle sıcak servis
+  edin", "Dilimleyip sıcak tabakta sunun"). 3 kelimelik step'i 4'e
+  tamamla, yapay uzatma yapma.
 - `timerSeconds` opsiyonel ama **pişirme/dinlendirme/marine adımlarında
   ekle**. Saniye cinsinden integer (30 dk = 1800, 1 saat = 3600, 18 dk
   = 1080). UI dahili zamanlayıcıda kullanır.
@@ -2035,7 +2038,7 @@ Type ne olursa olsun, **her adım somut + bilgi yoğun + ölçü + zaman + yönt
       Uydurma sayi yemegi yakar/cig birakir. Gorsel sinyal zayiflik degil GUC.
 - [ ] stepNumber ardışık 1..N (eksik veya tekrar yok).
 - [ ] Em-dash grep: 0 eşleşme.
-- [ ] Her step 5-25 kelime arası.
+- [ ] Her step 4-25 kelime arası (hard min 4, 5+ ideal; oturum 19 gevşetme).
 - [ ] Pişirme step'inde sıcaklık + zaman var.
 - [ ] CSV'deki ingredient'ların TÜMÜ step'lerde geçiyor.
 - [ ] **BOM kontrolü** (B16 dersi):
@@ -2129,9 +2132,11 @@ tekrarlamamak için kalıcı referans:
    ölçü/zaman eşliğinde kullan
 4. **Kritik nokta %60 gate** (§15.7.4) — "yoksa/olmasın/kesilmesin"
    vb. 13 pattern'dan en az 1 step'te, minimum 60 tarifte
-5. **Kelime sayı 5-40** (§15.7) — servis/ekleme step'i bile 5+ kelime,
-   "Karabiberle servis edin" (3) yerine "Dilimleyip karabiberle
-   sıcak tabakta servis edin" (6)
+5. **Kelime sayı 4-40** (§15.7, oturum 19 gevşetme) — hard minimum 4,
+   ana pişirme step'leri 5+ hedef. "Karabiberle servis edin" (3) yerine
+   "Karabiberle sıcak servis edin" (4) yeterli, ideal "Dilimleyip
+   karabiberle sıcak tabakta servis edin" (6). Yapay uzatma değil,
+   anlamlı bağlam ekle.
 
 ### 15.1.2 A+ teslim checklist (Codex gözle kontrol)
 
@@ -2175,9 +2180,11 @@ işaretlesin. **Herhangi biri ☐ ise teslim GERI ÇEVİR ve düzelt.**
 - ☐ `?` karakter 0 (encoding kaynaklı smuggling yok)
 - ☐ Template dup 0 (aynı cümle 2+ tarifte yok)
 
-**Gate 7 — Step kelime sayısı** (§15.7)
-- ☐ Her step instruction **5-40 kelime** arasında
-- ☐ Servis step'i bile 5+ kelime (ölçü + görsel + bağlam ekle)
+**Gate 7 — Step kelime sayısı** (§15.7, oturum 19 gevşetme)
+- ☐ Her step instruction **4-40 kelime** arasında (hard min 4)
+- ☐ Ana pişirme step'i 5+ kelime hedef (ölçü + görsel + bağlam)
+- ☐ Kısa servis kapanışı 4 kelime yeterli ("Karabiberle sıcak servis edin")
+- ☐ 3 kelimelik step'i 4'e tamamla (yapay uzatma değil, anlamlı bağlam)
 - ☐ 40 kelimeyi geçen step 2'ye böl
 
 ### 15.1.3 A+ örnek notes formatları (Retrofit-06'dan gerçek)
@@ -2326,7 +2333,7 @@ Alanlar:
 - `originalStepCount` (int, zorunlu): CSV'deki currentStepCount
 - `newSteps` (array, zorunlu): min 3, max 10 eleman
   - `stepNumber` (int, 1..N ardışık, zorunlu)
-  - `instruction` (string, 5-40 kelime, zorunlu)
+  - `instruction` (string, 4-40 kelime, zorunlu; hard min 4, 5+ ideal)
   - `timerSeconds` (int veya null, opsiyonel)
 - `notes` (string, opsiyonel): web kaynağı doğrulama özeti, eğer mevcut
   tarifte düzeltme yaptıysan açıklama
@@ -2461,7 +2468,7 @@ Her step şöyle olmalı:
 ✅ **Süre** gerektiren yerde YAZILI ("5 dakika", "30 saniye", "1 gece 8 saat")
 ✅ **Sıcaklık** gerektiren yerde YAZILI ("180°C önceden ısıtılmış fırın", "kısık ateş", "orta ateş", "kızgın yağ 170°C", "soğuk su")
 ✅ **Görsel/duyusal sinyal** eklenmeli pişirme/hazırlama step'lerinde ("kenarlar altın olana kadar", "salgısını çekene kadar", "kabaran şekilde", "parmakla basınca geri gelene kadar", "köpük bırakana kadar", "yüzeyi çatlayana kadar")
-✅ **5-40 kelime arası** (çok kısa = yetersiz, çok uzun = karmaşık)
+✅ **4-40 kelime arası** (hard min 4, 5+ ideal; çok kısa = yetersiz, çok uzun = karmaşık). Servis kapanışı 4 kelime OK, ana pişirme 5+ hedef.
 
 ❌ **"pişirin" tek başına** yeterli değil (nasıl, kaç dk, hangi ateş, görsel sinyal?)
 ❌ **"hazırlayın" tek başına** belirsiz (neyi nasıl?)

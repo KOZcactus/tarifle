@@ -74,6 +74,7 @@ export function BlogListingClient({ posts, categories }: BlogListingClientProps)
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [activeArchive, setActiveArchive] = useState<string | null>(null);
+  const [activeTag, setActiveTag] = useState<string | null>(null);
 
   const normalizedQuery = query.trim().length >= 2 ? normalize(query) : "";
 
@@ -110,10 +111,29 @@ export function BlogListingClient({ posts, categories }: BlogListingClientProps)
     return m;
   }, [posts]);
 
+  // Aktif kategorideki alt tag listesi, frekansa göre sıralı. Kategori
+  // seçili değilken tüm posts'ın tag'leri (de zoom-out görünüm).
+  const relevantTags = useMemo<{ tag: string; count: number }[]>(() => {
+    const freq = new Map<string, number>();
+    const pool = activeCategory
+      ? posts.filter((p) => p.category === activeCategory)
+      : posts;
+    for (const p of pool) {
+      for (const tag of p.tags ?? []) {
+        freq.set(tag, (freq.get(tag) ?? 0) + 1);
+      }
+    }
+    return Array.from(freq.entries())
+      .map(([tag, count]) => ({ tag, count }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 12); // top 12 tag, sidebar taşmasın
+  }, [posts, activeCategory]);
+
   // Filtre uygulanmış liste.
   const filtered = useMemo(() => {
     return posts.filter((p) => {
       if (activeCategory && p.category !== activeCategory) return false;
+      if (activeTag && !(p.tags ?? []).includes(activeTag)) return false;
       if (activeArchive) {
         const d = new Date(p.date);
         const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
@@ -127,14 +147,18 @@ export function BlogListingClient({ posts, categories }: BlogListingClientProps)
       }
       return true;
     });
-  }, [posts, activeCategory, activeArchive, normalizedQuery]);
+  }, [posts, activeCategory, activeTag, activeArchive, normalizedQuery]);
 
   const hasActiveFilter =
-    query.length > 0 || activeCategory !== null || activeArchive !== null;
+    query.length > 0 ||
+    activeCategory !== null ||
+    activeTag !== null ||
+    activeArchive !== null;
 
   function resetFilters() {
     setQuery("");
     setActiveCategory(null);
+    setActiveTag(null);
     setActiveArchive(null);
   }
 
@@ -214,9 +238,12 @@ export function BlogListingClient({ posts, categories }: BlogListingClientProps)
                   <li key={c.slug}>
                     <button
                       type="button"
-                      onClick={() =>
-                        setActiveCategory(active ? null : c.slug)
-                      }
+                      onClick={() => {
+                        setActiveCategory(active ? null : c.slug);
+                        // Kategori değişince tag seçimini sıfırla,
+                        // tag başka kategoride geçerli olabilir.
+                        setActiveTag(null);
+                      }}
                       className={`flex w-full items-center justify-between rounded-md px-2 py-1.5 text-sm transition-colors ${
                         active
                           ? "bg-primary/10 font-medium text-primary"
@@ -237,6 +264,42 @@ export function BlogListingClient({ posts, categories }: BlogListingClientProps)
               })}
             </ul>
           </div>
+
+          {/* Alt konular (aktif kategorideki tag'ler, yoksa tüm) */}
+          {relevantTags.length > 0 && (
+            <div>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-text-muted">
+                {activeCategory
+                  ? t("sidebar.subtopicsForCategory", {
+                      category: tCat(activeCategory),
+                    })
+                  : t("sidebar.subtopicsLabel")}
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {relevantTags.map(({ tag, count }) => {
+                  const active = activeTag === tag;
+                  return (
+                    <button
+                      key={tag}
+                      type="button"
+                      onClick={() => setActiveTag(active ? null : tag)}
+                      className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs transition-colors ${
+                        active
+                          ? "border-primary bg-primary/10 font-medium text-primary"
+                          : "border-border bg-bg text-text-muted hover:border-primary/40 hover:text-text"
+                      }`}
+                      aria-pressed={active}
+                    >
+                      <span>#{tag}</span>
+                      <span className="tabular-nums text-text-muted/70">
+                        {count}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
           {/* Arşiv (ay bazlı) */}
           {archive.length > 1 && (
@@ -365,6 +428,23 @@ export function BlogListingClient({ posts, categories }: BlogListingClientProps)
                         <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-text-muted">
                           {post.description}
                         </p>
+                        {post.tags.length > 0 && (
+                          <div className="mt-2 flex flex-wrap gap-1">
+                            {post.tags.slice(0, 4).map((tag) => (
+                              <span
+                                key={tag}
+                                className="inline-flex items-center rounded-full border border-border bg-bg px-2 py-0.5 text-[10px] text-text-muted"
+                              >
+                                #{tag}
+                              </span>
+                            ))}
+                            {post.tags.length > 4 && (
+                              <span className="inline-flex items-center text-[10px] text-text-muted/70">
+                                +{post.tags.length - 4}
+                              </span>
+                            )}
+                          </div>
+                        )}
                       </div>
                     </div>
                   </Link>

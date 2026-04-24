@@ -288,11 +288,15 @@ function checkCompositeCommaRows(r: SeedRecipe, issues: Issue[]): void {
  * flag as ERROR. Catches the "manti step says 'tuzla yoğurun' but no Tuz
  * in the ingredient list" class of bugs.
  */
-const STEP_BASELINES: { re: RegExp; kws: string[]; label: string }[] = [
-  { re: /(?:^|[\s,;.!?/()\-])tuz(?=$|[\s,;.!?/()\-lu])/i, kws: ["tuz"], label: "tuz" },
-  { re: /(?:^|[\s,;.!?/()\-])karabiber(?=$|[\s,;.!?/()\-li])/i, kws: ["karabiber"], label: "karabiber" },
-  { re: /(?:^|[\s,;.!?/()\-])pul biber(?=$|[\s,;.!?/()\-li])/i, kws: ["pul biber"], label: "pul biber" },
-  { re: /(?:^|[\s,;.!?/()\-])un(?=$|[\s,;.!?/()\-lu])/i, kws: ["un"], label: "un" },
+// tuz + karabiber pantry staple sayılır (AI matcher PANTRY_STAPLES +
+// assumePantryStaples prensibi); step'te geçip ingredient listesinde
+// olmasa bile sadece WARNING. Un + pul biber ana malzeme olabilir
+// (ekmek/börek/pide/Adana), bunlar ERROR kalır.
+const STEP_BASELINES: { re: RegExp; kws: string[]; label: string; severity: Severity }[] = [
+  { re: /(?:^|[\s,;.!?/()\-])tuz(?=$|[\s,;.!?/()\-lu])/i, kws: ["tuz"], label: "tuz", severity: "WARNING" },
+  { re: /(?:^|[\s,;.!?/()\-])karabiber(?=$|[\s,;.!?/()\-li])/i, kws: ["karabiber"], label: "karabiber", severity: "WARNING" },
+  { re: /(?:^|[\s,;.!?/()\-])pul biber(?=$|[\s,;.!?/()\-li])/i, kws: ["pul biber"], label: "pul biber", severity: "ERROR" },
+  { re: /(?:^|[\s,;.!?/()\-])un(?=$|[\s,;.!?/()\-lu])/i, kws: ["un"], label: "un", severity: "ERROR" },
 ];
 
 function checkStepIngredientMismatch(r: SeedRecipe, issues: Issue[]): void {
@@ -307,7 +311,7 @@ function checkStepIngredientMismatch(r: SeedRecipe, issues: Issue[]): void {
       if (found) continue;
       flagged.add(bl.label);
       issues.push({
-        severity: "ERROR",
+        severity: bl.severity,
         field: `steps[${step.stepNumber - 1}].instruction`,
         message: `Step ${step.stepNumber} mentions "${bl.label}" but ingredient list has no match, add ingredient or revise step`,
       });

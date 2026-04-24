@@ -29,7 +29,7 @@ export interface AiSuggestInput {
    *  tıklamada önceki sonuçlardaki slug'lar bu listeye eklenir; provider
    *  sonuçlardan bunları çıkarır. Max 60 ile sınırlı (schema guard). */
   excludeSlugs?: string[];
-  /** E: Reddet sayacı — kaç kez "Beğenmedim" tıklandı? 2+ ise UI filter
+  /** E: Reddet sayacı, kaç kez "Beğenmedim" tıklandı? 2+ ise UI filter
    *  paneline doğru hint banner gösterir. Provider bilmez, sadece log. */
   rejectRound?: number;
 }

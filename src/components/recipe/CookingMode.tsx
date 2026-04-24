@@ -97,7 +97,7 @@ export function CookingMode({
     };
   }, [timerRunning, timer]);
 
-  // TTS (text-to-speech) — Web Speech API, TR-TR.
+  // TTS (text-to-speech), Web Speech API TR-TR.
   // Okuma: utterance queue'ya girer; step değişince veya kapanışta cancel.
   const stopSpeaking = useCallback(() => {
     if (typeof window === "undefined") return;
@@ -187,7 +187,7 @@ export function CookingMode({
   }, [isOpen, close, goNext, goPrev]);
 
   // Auto-read: adim degisince ve toggle aciksa TTS oku. İlk acılısta da
-  // otomatik başlamaz — kullanıcı ya autoRead toggle'ı açmış olmalı ya
+  // otomatik başlamaz; kullanıcı ya autoRead toggle'ı açmış olmalı ya
   // manuel 🔊 butonuna basmış. Tip varsa instruction'dan sonra okunur.
   useEffect(() => {
     if (!isOpen || !autoRead) return;

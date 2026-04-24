@@ -9,7 +9,7 @@ interface CookedButtonProps {
 }
 
 /**
- * "Pişirdim" butonu — recipe sayfasındaki pantry rozeti altında render olur.
+ * "Pişirdim" butonu: recipe sayfasındaki pantry rozeti altında render olur.
  * Kullanıcı pişirdiği porsiyon sayısını (default recipe.servingCount) girer,
  * confirm eder, server action pantry'den düşer.
  *

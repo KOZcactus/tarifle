@@ -572,7 +572,7 @@ export function AiAssistantForm({
     });
   }
 
-  // E: "Beğenmedim, farklı dene" — mevcut result slug'larını reddet
+  // E: "Beğenmedim, farklı dene", mevcut result slug'larını reddet
   // setine ekle, form'u ingredient listesi ile yeniden submit.
   function handleRejectResults() {
     if (!result || result.suggestions.length === 0) return;

@@ -9,7 +9,7 @@
  *   - Varsa, recipe ingredient amount × (servingsCooked / recipe.servingCount)
  *     kadar düş.
  *   - Unit dönüşüm mümkünse yap (gr↔kg), değilse skip (not found).
- *   - Pantry quantity null ise (miktar belirsiz) dokunma — belirsizde
+ *   - Pantry quantity null ise (miktar belirsiz) dokunma, belirsizde
  *     "hala var" varsayımı daha güvenli.
  *   - Sonuç quantity ≤ 0 olursa 0'a set (item korunur, kullanıcı
  *     manuel silsin veya yeniden doldursun).

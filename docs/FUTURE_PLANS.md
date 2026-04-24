@@ -15,32 +15,58 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
-### Codex Mod B Backfill-11 / 12 / 13 (oturum 17 sonu, Codex'te)
+### Mod F Retrofit, Step Count (oturum 18 başlangıcı, Codex'e hazır)
 
-32b + 33a v2 + 33b + 34a + 34b apply sonrası prod'da 250 slug çeviri
-gap'i. 3 CSV Codex kuyruğunda:
-- `docs/translations-backfill-11.csv` (100 slug, 34a ikinci yarı +
-  kalan)
-- `docs/translations-backfill-12.csv` (100 slug, 34b ilk yarı +
-  marjinal)
-- `docs/translations-backfill-13.csv` (50 slug, 34b kalan)
+**En büyük aktif iş paketi.** Oturum 18'de step count audit 2660 tarifte
+min kural ihlali buldu (%78.6). Kural oturum 16-17'de konulmuştu ama
+30a-34b aralığında (297 tarif) uygulanmamış, pre-30a'da (2363 tarif)
+zaten kural yoktu. Kerem direktifi: **tüm 2660 tarif kurala uygun hale**.
 
-Her biri için Codex "Mod B. Backfill-NN" talimatı bekliyor.
+Mod F self-contained brief §15'te, 27 CSV paketi hazır:
+- `docs/retrofit-step-count-01.csv` .. `retrofit-step-count-27.csv`
+- Her paket ~100 tarif, son paket 60 tarif
+- Tip dağılımı: YEMEK 919, TATLI 449, KAHVALTI 395, CORBA 294, SALATA 256,
+  APERATIF 176, KOKTEYL 97, ATISTIRMALIK 70, ICECEK 4
 
-- [ ] Codex 11 teslim → apply dev + prod
-- [ ] Codex 12 teslim → apply dev + prod
-- [ ] Codex 13 teslim → apply dev + prod
+Kerem Codex'e "Mod F. Retrofit-01" diye tetikler → Codex brief §15 + CSV
+okur → JSON teslim eder → Claude `scripts/apply-retrofit.ts` ile dev+prod
+apply.
+
+Özellikler (§15'te detay):
+- Type bazlı min/max: YEMEK 5-10, CORBA 5-10, SALATA 5-8, TATLI 5-10,
+  KAHVALTI 5-8, APERATIF 4-8, KOKTEYL 4-6, ICECEK 3-6, SOS 3-6
+- Web kaynağı kontrolü ZORUNLU (Türkçe Wikipedia, NefisYemekTarifleri,
+  BBC Good Food, NYT Cooking, Serious Eats, her tarifte en az 2 kaynak)
+- Ciddi malzeme/oran hatası düzeltme + `notes` alanına yazma
+- Step kalite kuralları (somut verbi, ölçü, zaman, sıcaklık, görsel sinyal)
+- Em-dash + en-dash yasak, BOM yasak, zayıf pattern yasak
+- 9 adımlı self-check bash teslim öncesi PASS zorunlu
+
+- [ ] Codex Retrofit-01 teslim → dev+prod apply
+- [ ] ...27 tekrar
+- [ ] Tümü sonrası audit 0 ihlal olur
+
+Hedef: 2-3 hafta (paralel session + autonomous apply yetkisi), launch
+öncesi tamamlanır.
+
+### Codex Mod B Backfill-11 / 12 / 13 (oturum 17 sonu, Codex teslim etti)
+
+Working tree'de 11 + 12 JSON dolu (Codex teslim etmiş), 13 stub halinde.
+Audit + apply bekliyor.
+
+- [ ] Backfill-11 dry-run + dev+prod apply
+- [ ] Backfill-12 dry-run + dev+prod apply
+- [ ] Backfill-13 kontrol (stub mu dolu mu) → apply veya yeniden talep
 - [ ] Apply sonrası Mod B 3252/3252 %100 olur
 
-### Codex Mod A Batch 35a+ (oturum 18+, Kerem tetikleyecek)
+### Mod A Batch 35a + 35b + 36a apply (oturum 18, Codex teslim etti)
 
-Launch öncesi hedef 3500+ tarif. Şu an 3252, 248 kısa. Brief'te
-oturum 17 dersleri aktif (§d-helper-yasak + helper tip + allergen
-self-check + TR bölge denge kaldırıldı + uluslararası bilinen +
-web kaynak + minimum step YEMEK ≥5).
+Working tree seed-recipes.ts'te 3 batch (150 yeni tarif) hazır. Audit
+0 fail (step count kurala uyuyor). Apply'a hazır.
 
-- [ ] Kerem Codex 35a tetikler template ile
-- [ ] Apply dev + prod, Backfill-14 açılır
+- [ ] Dry-run + dev+prod seed (scripts/seed-recipes.ts)
+- [ ] Apply sonrası prod 3252 → 3402 (150 yeni)
+- [ ] Backfill-14/15 CSV üretilecek (yeni 150 slug çevirisi için)
 
 ### Neon → Vercel Marketplace migration cleanup (30 Nis 2026, 6 gün kaldı)
 

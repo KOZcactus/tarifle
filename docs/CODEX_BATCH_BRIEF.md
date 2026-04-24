@@ -235,7 +235,7 @@ flag'lemeye gerek yok, "acaba" diye durma.
   - **TAM REPLACEMENT:** Mevcut steps tamamen silinir, yenileri yazılır.
     Partial yok, tek adım dokunmak için bile tüm steps yazılır.
   - **slug:** CSV'den aynen kopyala.
-  - **steps:** ardışık 1..N stepNumber, **type bazli minimum** (Kerem karari): **ICECEK 3+, KOKTEYL/APERATIF 4+, diger (YEMEK/CORBA/SALATA/TATLI/KAHVALTI) 5+**. Max 12. Detay §14.6.
+  - **steps:** ardışık 1..N stepNumber, **type bazli min/max** (Kerem oturum 18 direktifi): **YEMEK/CORBA/TATLI min 5 max 10**, **SALATA/KAHVALTI min 5 max 8**, **APERATIF/ATISTIRMALIK min 4 max 8**, **KOKTEYL min 4 max 6**, **ICECEK/SOS min 3 max 6**. Detay §14.6 + §15.5. **OVER = şişirme yasak**, ideal aralıkta tut.
   - **Ingredient listesi DOKUNULMAZ** (Mod E sadece steps; ingredient
     listesi sabit).
   - **tipNote + servingSuggestion DOKUNULMAZ** (Mod D alanı).
@@ -1142,6 +1142,15 @@ sahte geçme.**
    tatlı 150-500)?
 9. ✅ `isFeatured` sadece en güçlü 5-10 tarifte `true` (batch %5-10)?
 10. ✅ Description 100-150 char + 3 element + banned kalıp yok?
+11. ✅ **Step count type kuralına uyuyor mu?** (§14.6): YEMEK/CORBA/SALATA/TATLI/KAHVALTI **min 5 max 10**, APERATIF/KOKTEYL/ATISTIRMALIK **min 4 max 8**, ICECEK/SOS **min 3 max 6**. **Oturum 18 dersi: teslim öncesi bash ile ölç:**
+    ```bash
+    node -e "
+    const MIN={YEMEK:5,CORBA:5,SALATA:5,TATLI:5,KAHVALTI:5,APERATIF:4,ATISTIRMALIK:4,KOKTEYL:4,ICECEK:3,SOS:3};
+    const MAX={YEMEK:10,CORBA:10,SALATA:8,TATLI:10,KAHVALTI:8,APERATIF:8,ATISTIRMALIK:8,KOKTEYL:6,ICECEK:6,SOS:6};
+    // ...bach dosyani parse et, her tarif icin type + steps.length kontrol et, FAIL sayisi yazdir
+    "
+    ```
+    **UNDER veya OVER = 0 olmalı.** Oturum 16-17'de 30a-34b aralığında bu self-check atlandığı için 297 tarif kural dışı üretildi → Mod F ile retrofit edildi. Aynı hata tekrarı YASAK.
 
 ### Pass 2, Çeviri kalitesi (EN + DE)
 
@@ -1813,16 +1822,22 @@ Servis adımı tarifin kültürüne göre özgünleşmeli.
   gibi "jenerik" sahnelerde de malzeme karakterine göre varyasyon
   üret.
 
-### 14.6 Adım sayısı kararı (Kerem direktifi, type bazli kademeli)
+### 14.6 Adım sayısı kararı (Kerem oturum 18 direktifi, type bazli min/max KATI)
 
-**Tarif type'ına göre minimum step sayısı:**
+**Tarif type'ına göre min / max / ideal step sayısı:**
 
-| Type | Minimum | İdeal | Mantık |
-|---|---|---|---|
-| **ICECEK** (cin tonik, smoothie, ferahlatıcı) | **3** | 3-4 | Çok basit, hazırlık + birleştirme + servis yeter |
-| **KOKTEYL** (whiskey sour, margarita) | **4** | 4-5 | Ölçü + buz + shake + süsleme + servis ayrı adımlar |
-| **APERATIF** (humus, dolmalık) | **4** | 4-6 | Hazırlık + ana iş + son dokunuş + servis |
-| **YEMEK / CORBA / SALATA / TATLI / KAHVALTI** | **5** | 5-7 | Asıl tarif, detaylı |
+| Type | Min | Max | İdeal | Mantık |
+|---|---|---|---|---|
+| **ICECEK** (cin tonik, smoothie, ferahlatıcı) | **3** | **6** | 3-5 | Çok basit, hazırlık + birleştirme + servis |
+| **SOS** | **3** | **6** | 3-5 | Malzeme + pişirme/karıştırma + ayar + servis |
+| **KOKTEYL** (whiskey sour, margarita) | **4** | **6** | 4-5 | Ölçü + buz + shake + süsleme + servis |
+| **APERATIF** (humus, dolmalık) | **4** | **8** | 4-6 | Hazırlık + ana iş + son dokunuş + servis |
+| **ATISTIRMALIK** (cips, kroket) | **4** | **8** | 4-6 | Hazırlık + pişirme + servis |
+| **SALATA** | **5** | **8** | 5-7 | Yıka/doğra + sos + karıştır + dinlendir + servis |
+| **KAHVALTI** | **5** | **8** | 5-7 | Hazırlık + pişirme + ayar + servis |
+| **YEMEK / CORBA / TATLI** | **5** | **10** | 5-8 | Asıl tarif, detaylı |
+
+**Hard cap: hiçbir tarif 10 step'i geçemez** (KOKTEYL/SALATA/KAHVALTI/APERATIF/ATISTIRMALIK/SOS/ICECEK için max 6-8). Şişirme yasak, ideal aralıkta tut.
 
 Genel rehber (minimum eşiklerin üstü):
 - **İçecek (basit):** 3-4 step
@@ -1896,4 +1911,320 @@ Type ne olursa olsun, **her adım somut + bilgi yoğun + ölçü + zaman + yönt
 Apply sonrası Claude `scripts/apply-step-revisions.ts` ile DB'ye atomic
 transaction yazar (eski steps delete + yenileri create), dosya tracking'de
 kalır.
+
+---
+
+## 15. Mod F, Step Count Retrofit (self-contained, 2660 tarif)
+
+**Kerem direktifi (oturum 18):** Step count min kuralı oturum 16-17'de
+konuldu ama 30a-34b aralığında (10 batch × 50 tarif = 500 tarif) sadece
+son 3 batch'te (35a/35b/36a) uygulandı. Pre-30a dönemindeki 2363 tarif
++ 30a-34b 297 tarif = **2660 tarif kurala uymuyor**. Mod F amacı: hepsini
+kurala uygun hale getirmek. Scope dar değil, geniş — en doğru tarifleri
+üretmek için.
+
+### 15.1 Amaç ve prensip
+
+Mevcut tariflerin **step sayısını artır + kaliteli detaylandır**, ama
+orijinal malzeme ve oranları koru. Eğer web kaynağı kontrolünde mevcut
+malzeme/oran/mantık hatası bulursan düzelt + `notes` alanına yaz.
+
+Temel prensip: **tarif içeriği DAHA DOĞRU, DAHA DETAYLI ve DAHA
+EĞİTİCİ olur.** Şu anki kısa step'ler kullanıcıya yetersiz rehberlik
+veriyor; "sebzeleri kavurun" gibi tek adım 3-4 ayrı adıma bölünür
+(doğra + ısıt + kavur + baharat ekle).
+
+### 15.2 Girdi (Kerem sana ne verir)
+
+Kerem bir CSV ile scope bildirir:
+- `docs/retrofit-step-count-NN.csv` (NN = 01..27)
+- Her satır: `slug, type, currentStepCount, minTarget, currentTitle, currentStepsJson`
+
+Her CSV ~100 tarif içerir (son batch 60 tarif). Kerem komutu:
+```
+Mod F. Retrofit-NN
+```
+(NN yerine 01-27 numara). Bu komut brief §15 + CSV'yi okumak için yeter.
+
+### 15.3 Çıktı dosyası
+
+`docs/retrofit-step-count-NN.json` (NN = girdi CSV ile aynı).
+
+Her batch tek JSON dosyası. UTF-8 no-BOM. Tek satıra sıkıştırma — pretty
+2-space indent.
+
+### 15.4 Item şeması
+
+```json
+[
+  {
+    "slug": "etli-nohut",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Nohutları bir gece 8 saat boyunca suda ıslatıp ertesi gün süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı yemeklik doğrayıp zeytinyağında orta ateşte 5 dakika hafifçe pembeleştirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kuşbaşı eti soğanın üzerine ekleyip 6 dakika mühürleyin ve salgısını çekmesini bekleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Domates salçası, nohut ve 3 su bardağı sıcak su ekleyip kapağı kapatın ve 45 dakika kısık ateşte pişirin.",
+        "timerSeconds": 2700
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tuz ve karabiberi son 5 dakikada ayarlayıp pilav yanında sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ],
+    "notes": "NYT Cooking: etli nohut versiyonlarında et önce soğandan sonra mühürlenir, doğrulandı. TR Wikipedia 'nohut' maddesi: ıslatma süresi 8 saat."
+  }
+]
+```
+
+Alanlar:
+- `slug` (string, zorunlu): CSV'den birebir
+- `type` (enum, zorunlu): CSV'den birebir
+- `originalStepCount` (int, zorunlu): CSV'deki currentStepCount
+- `newSteps` (array, zorunlu): min 3, max 10 eleman
+  - `stepNumber` (int, 1..N ardışık, zorunlu)
+  - `instruction` (string, 5-40 kelime, zorunlu)
+  - `timerSeconds` (int veya null, opsiyonel)
+- `notes` (string, opsiyonel): web kaynağı doğrulama özeti, eğer mevcut
+  tarifte düzeltme yaptıysan açıklama
+
+### 15.5 Step count kuralı (type bazında, KATI)
+
+| Type | Min | Max | İdeal |
+|---|---|---|---|
+| **YEMEK** | 5 | **10** | 5-8 |
+| **CORBA** | 5 | **10** | 5-8 |
+| **SALATA** | 5 | **8** | 5-7 |
+| **TATLI** | 5 | **10** | 5-8 |
+| **KAHVALTI** | 5 | **8** | 5-7 |
+| **APERATIF** | 4 | **8** | 4-6 |
+| **ATISTIRMALIK** | 4 | **8** | 4-6 |
+| **KOKTEYL** | 4 | **6** | 4-5 |
+| **ICECEK** | 3 | **6** | 3-5 |
+| **SOS** | 3 | **6** | 3-5 |
+
+**Hard cap: hiçbir tarif 10 step'i geçemez** (SOS/ICECEK için 6).
+Gereksiz şişirme yasak — ideal aralıkta tut, max'a dayanmak zorunda değilsin.
+
+### 15.6 Doğruluk — web kaynağı kontrolü (ZORUNLU)
+
+Her tarif için **en az 2 güvenilir kaynak** kontrol et ve tariften emin ol.
+
+**Türk mutfağı (bölgesel/klasik) için:**
+- Türkçe Wikipedia tarif sayfası
+- Nefis Yemek Tarifleri (nefisyemektarifleri.com) — popülerlik + yorum
+- Yemek.com
+- Mutfak Sırları (mutfaksirlari.com)
+- T.C. Kültür ve Turizm Bakanlığı yemek kültürü sayfaları
+- İl valilikleri / belediye kültür sayfaları (yöresel tarifler için)
+- Sahrap Soysal, Vedat Başaran, Refika Birgül gibi referans şefler
+
+**Uluslararası klasikler için:**
+- Wikipedia EN/DE/FR (o mutfağın dili)
+- BBC Good Food (bbcgoodfood.com)
+- NYT Cooking (cooking.nytimes.com)
+- Serious Eats (seriouseats.com) — Kenji López-Alt method ağırlıklı
+- Epicurious (epicurious.com)
+- The Kitchn (thekitchn.com)
+- o ülkenin önde gelen yemek sitesi (İtalyan: Giallo Zafferano,
+  Alman: Chefkoch, Fransız: Marmiton, Japon: Just One Cookbook)
+
+**Bölgesel/yöresel Türk tariflerinde ekstra:**
+- Akademik gastronomi makaleleri (Dergipark, Google Scholar)
+- Yöre sakini blog + YouTube (güvenilir video tarifler)
+
+### 15.6.1 Kaynak kontrolünde ne arıyoruz?
+
+1. **Malzeme listesi doğru mu?** (kritik bir malzeme eksik mi, yanlış mı?)
+2. **Oranlar makul mu?** (su/un oranı, tuz miktarı, pişirme suyu vs.)
+3. **Adım sırası mantıklı mı?** (et mühürleme → sebze → sıvı sırası doğru mu?)
+4. **Sıcaklık doğru mu?** (150°C mi 180°C mi 220°C mi?)
+5. **Süre doğru mu?** (pişirme 20 dk mı 45 dk mı?)
+6. **Bölgesel otantiklik var mı?** (Adana kebabı kıyma mı yoksa kuşbaşı mı gibi)
+
+Mevcut step'te **ciddi hata** bulursan (ör: "100°C fırında 10 dk" → aslında
+"200°C 30 dk"): düzelt + `notes`'a sebebi yaz.
+
+**Küçük drift** (ör: step'te "tuz" eksik, malzeme listesinde var):
+step'i genişletirken doğal ekle, notes'a yazmaya gerek yok.
+
+### 15.7 Step kalite kuralları
+
+Her step şöyle olmalı:
+
+✅ **Somut eylem verbi** (doğra, kavur, ezle, haşla, mühürle, süz, karıştır, dinlendir, şekillendir)
+✅ **Ölçü veya zaman** mantıklıysa ("2 yemek kaşığı yağ", "5 dakika", "orta ateşte")
+✅ **Sıcaklık varsa eklenmiş** ("180°C önceden ısıtılmış fırın", "kısık ateş", "orta ateş", "kızgın yağ")
+✅ **Görsel/duyusal işaret** eklenebilir ("kenarlar altın rengi olana kadar", "salgısını çekene kadar", "köpük bırakana kadar")
+✅ **5-40 kelime arası** (çok kısa = yetersiz, çok uzun = karmaşık)
+
+❌ **"pişirin" tek başına** yeterli değil (nasıl, kaç dk, hangi ateş, görsel sinyal?)
+❌ **"hazırlayın" tek başına** belirsiz (neyi nasıl?)
+❌ **"karıştırın" tek başına** belirsiz (neyle, ne kadar?)
+❌ **"servis edin" tek başına** zayıf (neyle, sıcak mı soğuk mı, yan tabak?)
+
+### 15.7.1 Step-split örnekleri (eski → yeni)
+
+**Örnek 1, sebze kavurma:**
+- Eski: "Sebzeleri kavurun."
+- Yeni (2 step):
+  - "Soğanı yemeklik, biberi ince doğrayın."
+  - "Zeytinyağını orta ateşte ısıtıp soğan + biberi 6 dakika pembeleşene kadar kavurun."
+
+**Örnek 2, pişirme:**
+- Eski: "Fırında 20 dakika pişirin."
+- Yeni (2 step):
+  - "Fırını önceden 200°C'ye ısıtın."
+  - "Tepsiyi orta rafa alıp 20 dakika kenarları altın olana kadar pişirin."
+
+**Örnek 3, servis:**
+- Eski: "Servis edin."
+- Yeni (1-2 step):
+  - "5 dakika dinlendirip sıcak servis edin."
+  - "Yanında ayran ve piyazla tabaklayın."
+
+### 15.8 Dil kuralları (§em-dash-ban + §14.5 tekrar)
+
+🚫 **Em-dash (—) U+2014 YASAK** — tüm dosyada 0 eşleşme
+🚫 **En-dash (–) U+2013 YASAK** — tüm dosyada 0 eşleşme
+✅ Tire (-) kelimelerde OK (ör: "fire-and-forget", "yarı-pişmiş", "ön-ısıtma")
+
+✅ **Türkçe karakter disiplini** — ç, ğ, ı, İ, ö, ş, ü UTF-8 no-BOM
+🚫 **BOM (Byte Order Mark)** dosya başında yasak
+🚫 **Bozuk/ASCII kalıntı** — "pisirdikten" (ı yerine i), "yumusayan" (ş yerine s) yasak
+🚫 **? karakter smuggling** — encoding bozukluğu nedeniyle `?` yasak
+
+✅ **Aynı cümle 2+ step'te tekrarlanamaz** (tarif içinde)
+✅ **Aynı cümle 2+ tarifte tekrarlanamaz** (batch genelinde)
+✅ **"ya da" veya "veya" dozunda** — batch başına en fazla 5 legitimate kullanım
+
+### 15.9 Self-check (teslim öncesi, ZORUNLU)
+
+Codex teslim ÖNCE bu bash komutlarını dosyasında koşar. Hepsi temiz çıkmalı:
+
+```bash
+FILE=docs/retrofit-step-count-NN.json
+
+# 1) Em-dash yasağı
+grep -F "—" $FILE && echo "FAIL em-dash" && exit 1
+
+# 2) En-dash yasağı
+grep -F "–" $FILE && echo "FAIL en-dash" && exit 1
+
+# 3) BOM yasağı
+node -e "const r=require('fs').readFileSync('$FILE','utf8');process.exit(r.charCodeAt(0)===0xFEFF?1:0)"
+
+# 4) ? karakter smuggling yasağı
+grep -c "?" $FILE | awk '$1>5{exit 1}'
+
+# 5) Step count min-max kuralı
+node -e "
+const j=JSON.parse(require('fs').readFileSync('$FILE','utf8'));
+const MIN={YEMEK:5,CORBA:5,SALATA:5,TATLI:5,KAHVALTI:5,APERATIF:4,ATISTIRMALIK:4,KOKTEYL:4,ICECEK:3,SOS:3};
+const MAX={YEMEK:10,CORBA:10,SALATA:8,TATLI:10,KAHVALTI:8,APERATIF:8,ATISTIRMALIK:8,KOKTEYL:6,ICECEK:6,SOS:6};
+let fail=0;
+j.forEach(r=>{
+  const n=r.newSteps.length;
+  if(n<MIN[r.type]){console.log('UNDER',r.slug,r.type,n,'<',MIN[r.type]);fail++}
+  if(n>MAX[r.type]){console.log('OVER',r.slug,r.type,n,'>',MAX[r.type]);fail++}
+});
+process.exit(fail?1:0)
+"
+
+# 6) stepNumber ardışıklığı (1..N, eksik/tekrar yok)
+node -e "
+const j=JSON.parse(require('fs').readFileSync('$FILE','utf8'));
+let fail=0;
+j.forEach(r=>{
+  const nums=r.newSteps.map(s=>s.stepNumber);
+  const exp=Array.from({length:nums.length},(_,i)=>i+1);
+  if(JSON.stringify(nums)!==JSON.stringify(exp)){console.log('STEPNUM',r.slug,nums);fail++}
+});
+process.exit(fail?1:0)
+"
+
+# 7) Template dup (aynı cümle ≥2 tarifte)
+node -e "
+const j=JSON.parse(require('fs').readFileSync('$FILE','utf8'));
+const m={};
+j.forEach(r=>r.newSteps.forEach(s=>{m[s.instruction]=m[s.instruction]||new Set();m[s.instruction].add(r.slug);}));
+const dup=Object.entries(m).filter(([,set])=>set.size>1);
+console.log('Tekrar:',dup.length);
+dup.slice(0,5).forEach(([t,s])=>console.log(s.size+'x:',t.slice(0,80)));
+process.exit(dup.length?1:0)
+"
+
+# 8) Yasaklı pattern: "pişirin." tek başına
+grep -Ei '"(pişirin|hazırlayın|karıştırın|servis edin)\.?"' $FILE && echo "FAIL zayif step" && exit 1
+
+# 9) Slug CSV ile eşleşiyor mu (çıktıda CSV'de olmayan slug yok)
+# (Claude apply sırasında ayrıca kontrol eder)
+```
+
+Hepsi PASS ise teslim. Bir tanesi FAIL ise sorunu gider, tekrar koş.
+
+### 15.10 Kurala uyan tarifler (DOKUNMA)
+
+Scope'a **DAHİL DEĞİL**:
+- Son 150 tarif (batch 35a + 35b + 36a) — zaten min step kurala uyan
+- Min step kuralını tutan eski tarifler (5+ step YEMEK, 4+ step APERATIF, 3+ step ICECEK vs.)
+
+CSV'de **sadece ihlal eden slug'lar** var. CSV'den çıkma — kurala uyan
+tarifleri "daha da iyileştiririm" diye yeniden yazma. Scope stabil.
+
+### 15.11 Apply prosedürü (Claude otomatik)
+
+Codex JSON teslim ettikten sonra Claude:
+
+1. **Dry-run**: `npx tsx scripts/apply-retrofit.ts --file docs/retrofit-step-count-NN.json --dry-run`
+   - Slug mevcut mu, Zod valid mi, step count kurala uygun mu, 0 CRITICAL/WARNING
+2. **Dev apply**: `--apply` (dev DB'ye yazar, eski step'ler silinir, yenileri insert edilir, transaction)
+3. **Dev audit**: `/tarif/[slug]` sayfası açılıyor mu, step sayısı doğru mu (random spot check)
+4. **Prod apply** (autonomous yetki, oturum 7 Kerem direktifi): `--apply --confirm-prod`
+5. **Commit**: `feat(retrofit): Mod F Retrofit-NN apply (N tarif step genişletildi, dev + prod)`
+6. **FUTURE_PLANS.md güncelle**: Retrofit-NN tamamlandı işaretle
+
+### 15.12 Paralel session koordinasyonu
+
+Mod F tek Codex session'dan yürür (Mod A farklı session, çakışma yok).
+Kerem birden fazla session açarsa:
+- Session 1: Retrofit-01, 02, 03...
+- Session 2: Retrofit-15, 16, 17...
+- Aynı slug listesi 2 session'a verilmez (CSV'ler ayrı)
+
+### 15.13 Özet — tek satırda Mod F akışı
+
+```
+Kerem: "Mod F. Retrofit-01"
+  ↓
+Codex: brief §15 + docs/retrofit-step-count-01.csv okur
+  ↓
+Codex: her slug için web kaynağı kontrol + step genişlet + kalite fix
+  ↓
+Codex: self-check (9 bash) PASS alır
+  ↓
+Codex: docs/retrofit-step-count-01.json teslim
+  ↓
+Claude: dry-run → dev apply → dev audit → prod apply → commit
+  ↓
+FUTURE_PLANS güncelle, Retrofit-02 hazır
+```
+
+27 döngü sonrası 2660 tarif min/max kural altında, en doğru hali.
 

@@ -1919,6 +1919,8 @@
       "hungerBarTitle": "Tokluk skoru {value}/10 (porsiyon başı)",
       "emptyTitle": "Hiç eşleşme yok. Daha az filtre dene veya malzeme ekle.",
       "emptyComboHint": "Bu kombinasyonları dene:",
+      "completionHint": "Dolabına bunları eklersen daha iyi eşleşir:",
+      "completionRecipeCount": "{count, plural, =1 {1 tarifte} other {# tarifte}}",
       "matchPercent": "%{percent}",
       "calories": "~{kcal} kcal",
       "missingPrefix": "Eksik:",

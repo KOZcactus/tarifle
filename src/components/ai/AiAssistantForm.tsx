@@ -17,6 +17,10 @@ import { ShareMenu } from "@/components/recipe/ShareMenu";
 import { PresetChips } from "@/components/ai/PresetChips";
 import { PantryHistoryChips } from "@/components/ai/PantryHistoryChips";
 import { pushToPantryHistory } from "@/lib/ai/pantry-history";
+import {
+  readV3FormState,
+  saveV3FormState,
+} from "@/lib/ai/form-persistence";
 
 /** Popular ingredients shown as quick-add chips when input is empty. */
 const POPULAR_INGREDIENTS = [
@@ -193,6 +197,50 @@ export function AiAssistantForm({
       // localStorage unavailable or corrupt, ignore
     }
   }, []);
+
+  // #5 Form persistence: son ziyaretten değerleri geri yükle. URL
+  // paramlarından gelen değerler (shared link) persistence'dan önce
+  // çalıştığı için öncelikli, burada URL init zaten olmadıysa kaydedilen
+  // form state'ini hydrate ediyoruz.
+  useEffect(() => {
+    if (hasInitedFromUrl.current) return;
+    const saved = readV3FormState();
+    if (!saved) return;
+    if (saved.ingredients?.length > 0) setIngredients(saved.ingredients);
+    if (saved.excludeIngredients?.length > 0)
+      setExcludeIngredients(saved.excludeIngredients);
+    if (saved.type) setType(saved.type);
+    if (saved.difficulty) setDifficulty(saved.difficulty);
+    if (saved.maxMinutes) setMaxMinutes(saved.maxMinutes);
+    if (saved.cuisine) setCuisine(saved.cuisine);
+    if (saved.dietSlug) setDietSlug(saved.dietSlug);
+    if (typeof saved.assumePantry === "boolean")
+      setAssumePantry(saved.assumePantry);
+  }, []);
+
+  // Her form state değişikliğinde localStorage'a kaydet (debounce'suz,
+  // write sık ama localStorage sync ucuz, onChange'de lag yok).
+  useEffect(() => {
+    saveV3FormState({
+      ingredients,
+      excludeIngredients,
+      type,
+      difficulty,
+      maxMinutes,
+      cuisine,
+      dietSlug,
+      assumePantry,
+    });
+  }, [
+    ingredients,
+    excludeIngredients,
+    type,
+    difficulty,
+    maxMinutes,
+    cuisine,
+    dietSlug,
+    assumePantry,
+  ]);
   /* eslint-enable react-hooks/set-state-in-effect */
 
   const saveSearch = useCallback((ings: string[]) => {
@@ -793,6 +841,66 @@ export function AiAssistantForm({
               </p>
             </div>
           )}
+
+          {/* #10 "Dolabını tamamla" önerisi: mevcut tariflerin en sık
+              eksik ingredient'ları. Ortalama match <%60 VE en az 3 öneri
+              varsa, kullanıcıya "X ingredient eklersen kaç tarif tam
+              match olur" chip'i. Click → ingredient ekle + otomatik
+              tekrar submit. */}
+          {(() => {
+            if (result.suggestions.length < 3) return null;
+            const avgMatch =
+              result.suggestions.reduce((sum, s) => sum + s.matchScore, 0) /
+              result.suggestions.length;
+            if (avgMatch >= 0.6) return null;
+            // Top missing ingredient frequency + her biri kaç tarifi tam
+            // match'e çevirir hesabı.
+            const freq = new Map<string, number>();
+            const existingLower = new Set(
+              ingredients.map((i) => i.toLocaleLowerCase("tr")),
+            );
+            for (const s of result.suggestions) {
+              for (const m of s.missingIngredients) {
+                const k = m.toLocaleLowerCase("tr");
+                if (existingLower.has(k)) continue;
+                freq.set(k, (freq.get(k) ?? 0) + 1);
+              }
+            }
+            if (freq.size === 0) return null;
+            const top = Array.from(freq.entries())
+              .sort((a, b) => b[1] - a[1])
+              .slice(0, 3);
+            return (
+              <div className="mb-6 rounded-xl border border-amber-300/60 bg-amber-50/70 p-4 dark:border-amber-500/30 dark:bg-amber-950/30">
+                <p className="mb-2 text-xs font-medium text-amber-900 dark:text-amber-200">
+                  <span className="mr-1" aria-hidden>💡</span>
+                  {tResult("completionHint")}
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {top.map(([ing, count]) => (
+                    <button
+                      key={ing}
+                      type="button"
+                      onClick={() => {
+                        setIngredients([...ingredients, ing]);
+                        setCurrentInput("");
+                        setTimeout(
+                          () => formRef.current?.requestSubmit(),
+                          50,
+                        );
+                      }}
+                      className="inline-flex items-center gap-1 rounded-full border border-amber-400/60 bg-amber-100 px-2.5 py-1 text-xs font-medium text-amber-900 transition hover:bg-amber-200 dark:border-amber-500/40 dark:bg-amber-900/60 dark:text-amber-100 dark:hover:bg-amber-900"
+                    >
+                      <span>+{ing}</span>
+                      <span className="text-amber-700 dark:text-amber-300">
+                        {tResult("completionRecipeCount", { count })}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
 
           {/* Sort toggle */}
           {result.suggestions.length > 1 && (

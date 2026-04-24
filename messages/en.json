@@ -1919,6 +1919,8 @@
       "hungerBarTitle": "Fullness score {value}/10 (per serving)",
       "emptyTitle": "No matches. Try fewer filters or add another ingredient.",
       "emptyComboHint": "Try these combinations:",
+      "completionHint": "Adding these to your pantry would match better:",
+      "completionRecipeCount": "{count, plural, =1 {in 1 recipe} other {in # recipes}}",
       "matchPercent": "{percent}%",
       "calories": "~{kcal} kcal",
       "missingPrefix": "Missing:",

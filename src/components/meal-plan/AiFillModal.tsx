@@ -46,6 +46,10 @@ import {
   removeMenuPlanFavorite,
   type MenuPlanFavorite,
 } from "@/lib/ai/menu-plan-favorites";
+import {
+  readV4FormState,
+  saveV4FormState,
+} from "@/lib/ai/form-persistence";
 
 type View = "form" | "preview";
 
@@ -148,6 +152,71 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setFavorites(readMenuPlanFavorites());
   }, [open]);
+
+  // #5 v4 form persistence: modal ilk açıldığında son form state'ini
+  // hydrate et. Modal kapat + aç senaryosunda kullanıcı aynı ayarları
+  // yeniden girmek zorunda kalmaz.
+  const hasHydratedRef = useRef(false);
+  useEffect(() => {
+    if (!open || hasHydratedRef.current) return;
+    hasHydratedRef.current = true;
+    const saved = readV4FormState();
+    if (!saved) return;
+    // Mount-once sync from localStorage into state (same pattern as the
+    // favorites effect above); hasHydratedRef guards against re-runs.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (saved.ingredientsText) setIngredientsText(saved.ingredientsText);
+    if (typeof saved.assumeStaples === "boolean")
+      setAssumeStaples(saved.assumeStaples);
+    if (typeof saved.personCount === "number")
+      setPersonCount(saved.personCount);
+    if (typeof saved.dietSlug === "string") setDietSlug(saved.dietSlug);
+    if (Array.isArray(saved.selectedCuisines)) {
+      setSelectedCuisines(
+        saved.selectedCuisines.filter((c): c is CuisineCode =>
+          (CUISINE_CODES as readonly string[]).includes(c),
+        ),
+      );
+    }
+    if (typeof saved.maxBreakfast === "number")
+      setMaxBreakfast(saved.maxBreakfast);
+    if (typeof saved.maxLunch === "number") setMaxLunch(saved.maxLunch);
+    if (typeof saved.maxDinner === "number") setMaxDinner(saved.maxDinner);
+    if (
+      saved.macroPreference === "none" ||
+      saved.macroPreference === "high-protein" ||
+      saved.macroPreference === "low-calorie" ||
+      saved.macroPreference === "high-fiber"
+    ) {
+      setMacroPreference(saved.macroPreference);
+    }
+  }, [open]);
+
+  // Değer değiştikçe localStorage'a yaz. Modal kapalıyken de hydrate
+  // değerlerin yazımı olur (idempotent), cost düşük.
+  useEffect(() => {
+    saveV4FormState({
+      ingredientsText,
+      assumeStaples,
+      personCount,
+      dietSlug,
+      selectedCuisines,
+      maxBreakfast,
+      maxLunch,
+      maxDinner,
+      macroPreference,
+    });
+  }, [
+    ingredientsText,
+    assumeStaples,
+    personCount,
+    dietSlug,
+    selectedCuisines,
+    maxBreakfast,
+    maxLunch,
+    maxDinner,
+    macroPreference,
+  ]);
 
   function applyFavorite(fav: MenuPlanFavorite) {
     const p = fav.payload;

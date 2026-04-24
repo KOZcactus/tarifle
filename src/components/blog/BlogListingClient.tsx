@@ -36,28 +36,118 @@ function normalize(s: string): string {
     .replaceAll("ç", "c");
 }
 
-const TR_MONTHS = [
-  "Ocak",
-  "Şubat",
-  "Mart",
-  "Nisan",
-  "Mayıs",
-  "Haziran",
-  "Temmuz",
-  "Ağustos",
-  "Eylül",
-  "Ekim",
-  "Kasım",
-  "Aralık",
-];
-
-interface ArchiveBucket {
-  key: string; // "2026-04"
-  year: number;
-  month: number; // 0-11
-  label: string; // "Nisan 2026"
-  count: number;
+interface TopicGroup {
+  key: string;
+  emoji: string;
+  label: string;
+  slugs: string[];
 }
+
+/**
+ * Konu grupları: ana malzeme / tema bazında blog yazılarını kümeleyen
+ * sidebar navigasyon. "Aylara göre" arşiv launch öncesinde değer vermiyor
+ * (tüm yazılar yakın tarihlerde), oturum 19'da bununla değiştirildi.
+ *
+ * Slug-based mapping: yeni blog eklenince bu liste güncellenmeli; ileride
+ * frontmatter'a `topicGroup` alanı eklenerek otomatize edilebilir.
+ */
+const TOPIC_GROUPS: TopicGroup[] = [
+  {
+    key: "et-balik",
+    emoji: "🥩",
+    label: "Et & Balık",
+    slugs: [
+      "et-muhurlemenin-bilimi",
+      "soguk-zincir-kirmizi-et-guvenligi",
+      "balik-secimi-temizlik-ve-pisirme",
+      "balik-mevsimleri-turkiye-denizleri-rehberi",
+    ],
+  },
+  {
+    key: "sut-urunleri",
+    emoji: "🥛",
+    label: "Süt Ürünleri",
+    slugs: [
+      "tereyagi-cesitleri-evde-yapimi-pisirmede-kullanim",
+      "peynir-cesitleri-turk-mutfagi-rehberi",
+      "fermentasyon-temelleri-yogurt-tursu-eksi-maya",
+    ],
+  },
+  {
+    key: "hamur-ekmek",
+    emoji: "🌾",
+    label: "Hamur & Ekmek",
+    slugs: [
+      "un-cesitleri-protein-kullanim-rehberi",
+      "makarna-cesitleri-sos-eslestirme-rehberi",
+      "pilavin-bilimi",
+      "maya-kabartma-tozu-karbonat-farki",
+    ],
+  },
+  {
+    key: "sebze-baharat",
+    emoji: "🌿",
+    label: "Sebze & Baharat",
+    slugs: [
+      "domates-cesitleri-hangi-tarif-icin-hangi-tip",
+      "zeytin-cesitleri-sofralik-meze-rehberi",
+      "soganin-dogru-kavrulmasi",
+      "sarimsak-dogru-kullanimi-kimya-pisirme-saklama",
+      "baharat-dolabi-temelleri-secim-saklama-kullanim",
+      "baharat-ogutme-taze-hazir-kavurma-saklama",
+      "tuz-cesitleri-ve-kullanimi",
+      "zeytinyagi-secimi",
+    ],
+  },
+  {
+    key: "icecek",
+    emoji: "🫖",
+    label: "İçecek",
+    slugs: [
+      "kahve-mi-cay-mi-secim-rehberi",
+      "kahve-demlemesi-turk-espresso-french-press-v60",
+      "turk-cayi-kulturu-demleme-sofra-sosyal-hayat",
+    ],
+  },
+  {
+    key: "kultur",
+    emoji: "🏺",
+    label: "Türk Mutfağı Kültürü",
+    slugs: [
+      "turk-kahvaltisinin-mantigi",
+      "turk-mutfaginin-yedi-bolgesi",
+      "anadolunun-unutulmus-yemekleri",
+      "bayram-sofrasi-ramazan-kurban-yemek-gelenekleri",
+      "ramazan-sofrasi-iftar-sahur-kultur",
+      "turk-mutfaginda-dugun-sofrasi",
+      "turk-mutfaginda-tatli-felsefesi",
+      "turk-mutfaginda-zeytinyagli-yemek-gelenegi",
+    ],
+  },
+  {
+    key: "pisirme-temelleri",
+    emoji: "🔥",
+    label: "Pişirme Temelleri",
+    slugs: [
+      "yumurta-pisirme-7-yontem",
+      "firin-kullanimi-raf-isi-on-isitma",
+      "mutfak-ocaklari-induksiyon-gaz-elektrik-dokum",
+      "su-ve-mutfak-sert-yumusak-su-pisirmeye-etkisi",
+      "evde-tarif-uyarlama-porsiyon-olcu-degiskenler",
+      "evde-dondurma-ve-dondurucu-saklama-rehberi",
+    ],
+  },
+  {
+    key: "mutfak-pratik",
+    emoji: "🔪",
+    label: "Mutfak Pratik",
+    slugs: [
+      "mutfak-bicagi-secimi-ve-kullanimi",
+      "mutfak-ekipman-olmazsa-olmazlari",
+      "ev-mutfagi-hijyen-temelleri",
+    ],
+  },
+];
 
 function formatDate(isoDate: string): string {
   const d = new Date(isoDate);
@@ -73,33 +163,21 @@ export function BlogListingClient({ posts, categories }: BlogListingClientProps)
   const tCat = useTranslations("blog.categories");
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
-  const [activeArchive, setActiveArchive] = useState<string | null>(null);
+  const [activeTopicGroup, setActiveTopicGroup] = useState<string | null>(null);
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
   const normalizedQuery = query.trim().length >= 2 ? normalize(query) : "";
 
-  // Arşiv: ay bazlı gruplanmış post sayısı, yeni → eski.
-  const archive = useMemo<ArchiveBucket[]>(() => {
-    const map = new Map<string, ArchiveBucket>();
-    for (const p of posts) {
-      const d = new Date(p.date);
-      const y = d.getFullYear();
-      const m = d.getMonth();
-      const key = `${y}-${String(m + 1).padStart(2, "0")}`;
-      const existing = map.get(key);
-      if (existing) {
-        existing.count += 1;
-      } else {
-        map.set(key, {
-          key,
-          year: y,
-          month: m,
-          label: `${TR_MONTHS[m]} ${y}`,
-          count: 1,
-        });
-      }
+  // Konu grupları: her grup icin aktif (DB'de bulunan) post sayisini hesapla.
+  // Sidebar rozet + 0 sayili grup gizleme icin.
+  const topicGroupCounts = useMemo(() => {
+    const slugSet = new Set(posts.map((p) => p.slug));
+    const out = new Map<string, number>();
+    for (const g of TOPIC_GROUPS) {
+      const count = g.slugs.filter((s) => slugSet.has(s)).length;
+      out.set(g.key, count);
     }
-    return Array.from(map.values()).sort((a, b) => b.key.localeCompare(a.key));
+    return out;
   }, [posts]);
 
   // Kategori başına count (sidebar rozet için).
@@ -129,16 +207,19 @@ export function BlogListingClient({ posts, categories }: BlogListingClientProps)
       .slice(0, 12); // top 12 tag, sidebar taşmasın
   }, [posts, activeCategory]);
 
+  // Aktif topic group'un slug set'i (filter'de membership check icin).
+  const activeTopicSlugs = useMemo(() => {
+    if (!activeTopicGroup) return null;
+    const g = TOPIC_GROUPS.find((x) => x.key === activeTopicGroup);
+    return g ? new Set(g.slugs) : null;
+  }, [activeTopicGroup]);
+
   // Filtre uygulanmış liste.
   const filtered = useMemo(() => {
     return posts.filter((p) => {
       if (activeCategory && p.category !== activeCategory) return false;
       if (activeTag && !(p.tags ?? []).includes(activeTag)) return false;
-      if (activeArchive) {
-        const d = new Date(p.date);
-        const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
-        if (key !== activeArchive) return false;
-      }
+      if (activeTopicSlugs && !activeTopicSlugs.has(p.slug)) return false;
       if (normalizedQuery) {
         const haystack = normalize(
           `${p.title} ${p.description} ${p.tags.join(" ")}`,
@@ -147,19 +228,19 @@ export function BlogListingClient({ posts, categories }: BlogListingClientProps)
       }
       return true;
     });
-  }, [posts, activeCategory, activeTag, activeArchive, normalizedQuery]);
+  }, [posts, activeCategory, activeTag, activeTopicSlugs, normalizedQuery]);
 
   const hasActiveFilter =
     query.length > 0 ||
     activeCategory !== null ||
     activeTag !== null ||
-    activeArchive !== null;
+    activeTopicGroup !== null;
 
   function resetFilters() {
     setQuery("");
     setActiveCategory(null);
     setActiveTag(null);
-    setActiveArchive(null);
+    setActiveTopicGroup(null);
   }
 
   return (
@@ -301,38 +382,43 @@ export function BlogListingClient({ posts, categories }: BlogListingClientProps)
             </div>
           )}
 
-          {/* Arşiv (ay bazlı) */}
-          {archive.length > 1 && (
-            <div>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-text-muted">
-                {t("sidebar.archiveLabel")}
-              </p>
-              <ul className="space-y-1">
-                {archive.map((b) => {
-                  const active = activeArchive === b.key;
-                  return (
-                    <li key={b.key}>
-                      <button
-                        type="button"
-                        onClick={() => setActiveArchive(active ? null : b.key)}
-                        className={`flex w-full items-center justify-between rounded-md px-2 py-1.5 text-sm transition-colors ${
-                          active
-                            ? "bg-primary/10 font-medium text-primary"
-                            : "text-text-muted hover:bg-bg-elevated hover:text-text"
-                        }`}
-                        aria-pressed={active}
-                      >
-                        <span>{b.label}</span>
-                        <span className="tabular-nums text-xs text-text-muted">
-                          {b.count}
-                        </span>
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          )}
+          {/* Konu grupları (ana malzeme/tema bazlı) */}
+          <div>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-text-muted">
+              {t("sidebar.topicGroupsLabel")}
+            </p>
+            <ul className="space-y-1">
+              {TOPIC_GROUPS.map((g) => {
+                const count = topicGroupCounts.get(g.key) ?? 0;
+                if (count === 0) return null;
+                const active = activeTopicGroup === g.key;
+                return (
+                  <li key={g.key}>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setActiveTopicGroup(active ? null : g.key)
+                      }
+                      className={`flex w-full items-center justify-between rounded-md px-2 py-1.5 text-sm transition-colors ${
+                        active
+                          ? "bg-primary/10 font-medium text-primary"
+                          : "text-text-muted hover:bg-bg-elevated hover:text-text"
+                      }`}
+                      aria-pressed={active}
+                    >
+                      <span className="flex items-center gap-1.5">
+                        <span aria-hidden>{g.emoji}</span>
+                        {g.label}
+                      </span>
+                      <span className="tabular-nums text-xs text-text-muted">
+                        {count}
+                      </span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
 
           {hasActiveFilter && (
             <button

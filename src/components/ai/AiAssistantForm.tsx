@@ -1410,15 +1410,42 @@ function SuggestionCard({
           )}
         </div>
 
-        {/* Missing liste: reason chip "Tek eksik: X" 1-2 eksik için yeterli,
-           detay liste sadece 3+ eksik'te (isim isim görsün). */}
-        {s.missingIngredients.length > 2 && (
-          <p className="text-xs text-text-muted">
-            <span className="font-medium text-warning">{tResult("missingPrefix")}</span>{" "}
-            {s.missingIngredients.slice(0, 4).join(", ")}
-            {s.missingIngredients.length > 4 &&
-              ` ${tResult("missingMore", { count: s.missingIngredients.length - 4 })}`}
-          </p>
+        {/* F: pantryMatch varsa (login user + UserPantry dolu) quantity-aware
+           shortage detayı göster. Yoksa eski binary missing listesi. */}
+        {s.pantryMatch && s.pantryMatch.total > 0 ? (
+          <div className="flex flex-wrap items-center gap-1.5 text-xs">
+            <span className="rounded-full border border-emerald-300/60 bg-emerald-50 px-2 py-0.5 font-medium text-emerald-900 dark:border-emerald-700/60 dark:bg-emerald-950/40 dark:text-emerald-100">
+              🎒 {s.pantryMatch.covered + s.pantryMatch.presentUnknown + s.pantryMatch.partial}/{s.pantryMatch.total}
+            </span>
+            {s.pantryMatch.shortages.slice(0, 2).map((sh) => {
+              const amt = Number.isInteger(sh.shortage)
+                ? String(sh.shortage)
+                : sh.shortage.toFixed(1).replace(/\.0$/, "");
+              return (
+                <span
+                  key={sh.name}
+                  className="rounded-full border border-amber-300/60 bg-amber-50 px-2 py-0.5 font-medium text-amber-900 dark:border-amber-700/60 dark:bg-amber-950/40 dark:text-amber-100"
+                >
+                  {sh.name} ({amt}
+                  {sh.unit ? ` ${sh.unit}` : ""} eksik)
+                </span>
+              );
+            })}
+            {s.pantryMatch.missing > 0 && (
+              <span className="rounded-full border border-gray-300/60 bg-gray-50 px-2 py-0.5 font-medium text-gray-900 dark:border-gray-700 dark:bg-gray-900/60 dark:text-gray-100">
+                +{s.pantryMatch.missing} yok
+              </span>
+            )}
+          </div>
+        ) : (
+          s.missingIngredients.length > 2 && (
+            <p className="text-xs text-text-muted">
+              <span className="font-medium text-warning">{tResult("missingPrefix")}</span>{" "}
+              {s.missingIngredients.slice(0, 4).join(", ")}
+              {s.missingIngredients.length > 4 &&
+                ` ${tResult("missingMore", { count: s.missingIngredients.length - 4 })}`}
+            </p>
+          )
         )}
         {s.note && (
           <p className="mt-0.5 text-xs italic text-accent-blue">, {s.note}</p>

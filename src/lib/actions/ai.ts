@@ -12,6 +12,8 @@ import {
   getClientIp,
   rateLimitIdentifier,
 } from "@/lib/rate-limit";
+import { getUserPantryStock } from "@/lib/pantry/server";
+import { computePantryMatch } from "@/lib/pantry/match";
 
 interface ActionResult<T = undefined> {
   success: boolean;
@@ -43,6 +45,47 @@ export async function suggestRecipesAction(
   try {
     const provider = getAiProvider();
     const result = await provider.suggest(parsed.data);
+
+    // F: v3'e miktar rozeti + shopping diff. Login user'in pantry
+    // stock'u varsa her suggestion icin quantity-aware match hesapla
+    // ve suggestion.pantryMatch'a enjekte et. v4 (menu-planner) ile
+    // tutarlilik saglanir.
+    if (session?.user?.id && result.suggestions.length > 0) {
+      const stock = await getUserPantryStock(session.user.id).catch(() => []);
+      if (stock.length > 0) {
+        const recipeIds = result.suggestions.map((s) => s.recipeId);
+        const ingredientRows = await prisma.recipeIngredient.findMany({
+          where: { recipeId: { in: recipeIds } },
+          select: {
+            recipeId: true,
+            name: true,
+            amount: true,
+            unit: true,
+            isOptional: true,
+          },
+        });
+        const byRecipe = new Map<string, typeof ingredientRows>();
+        for (const row of ingredientRows) {
+          if (!byRecipe.has(row.recipeId)) byRecipe.set(row.recipeId, []);
+          byRecipe.get(row.recipeId)!.push(row);
+        }
+        result.suggestions = result.suggestions.map((s) => {
+          const ings = byRecipe.get(s.recipeId) ?? [];
+          if (ings.length === 0) return s;
+          const pantryMatch = computePantryMatch(
+            ings.map((i) => ({
+              name: i.name,
+              amount: i.amount,
+              unit: i.unit,
+              isOptional: i.isOptional,
+            })),
+            stock,
+          );
+          return { ...s, pantryMatch };
+        });
+      }
+    }
+
     return { success: true, data: result };
   } catch (error: unknown) {
     const message =

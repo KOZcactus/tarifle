@@ -86,6 +86,16 @@ export default async function HomePage() {
     getTranslations("nav"),
   ]);
 
+  // H: Home 🎒 CTA. Login user'in pantry doluluk kontrolu; boşsa kart
+  // gizlenir. Sadece count fetch, payload küçük kalsın.
+  const pantryCount = userId
+    ? await (
+        await import("@/lib/prisma")
+      ).prisma.userPantryItem
+        .count({ where: { userId } })
+        .catch(() => 0)
+    : 0;
+
   // Tarif sayısı olan kategorileri önce göster
   const sortedCategories = [...categories].sort(
     (a, b) => b._count.recipes - a._count.recipes,
@@ -156,6 +166,19 @@ export default async function HomePage() {
           {t("heroSecondaryCta")}
           <span aria-hidden="true">→</span>
         </Link>
+
+        {/* H: Login + pantry dolu kullanıcıya 🎒 CTA. 2 tıklamayı
+            (AI Asistan'a git → Dolabımı getir) tek tıkla
+            birleştirir. Misafir veya dolap boşsa gizli. */}
+        {userId && pantryCount > 0 && (
+          <Link
+            href="/ai-asistan?autoPantry=1"
+            className="mt-3 inline-flex items-center gap-2 rounded-xl border border-emerald-300/60 bg-emerald-50 px-5 py-2 text-sm font-medium text-emerald-900 transition-colors hover:border-emerald-500 hover:bg-emerald-100 dark:border-emerald-700/60 dark:bg-emerald-950/40 dark:text-emerald-100 dark:hover:border-emerald-500"
+          >
+            <span aria-hidden="true">🎒</span>
+            {t("heroPantryCta", { count: pantryCount })}
+          </Link>
+        )}
       </section>
 
       {/* Sana özel, giriş yapmış + tercihleri dolu user için kişiselleştirilmiş

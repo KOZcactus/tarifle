@@ -21,6 +21,7 @@ import { ShareMenu } from "@/components/recipe/ShareMenu";
 import { PresetChips } from "@/components/ai/PresetChips";
 import { PantryHistoryChips } from "@/components/ai/PantryHistoryChips";
 import { LoadPantryButton } from "@/components/ai/LoadPantryButton";
+import { getUserPantryAction } from "@/lib/actions/pantry";
 import { pushToPantryHistory } from "@/lib/ai/pantry-history";
 import {
   readV3FormState,
@@ -94,6 +95,10 @@ interface AiAssistantFormProps {
   initialPrefs?: InitialPrefs;
   /** Oturum varsa UserPantry "Dolabımı getir" buton görünür. */
   isAuthenticated?: boolean;
+  /** Home'dan `?autoPantry=1` ile geliniyorsa mount effect'te pantry
+   *  otomatik yüklenir, kullanıcı hiç tıklamadan ingredient listesi
+   *  hazır. H: hızlı win. */
+  autoLoadPantry?: boolean;
 }
 
 /**
@@ -117,6 +122,7 @@ export function AiAssistantForm({
   knownIngredients = [],
   initialPrefs = DEFAULT_PREFS,
   isAuthenticated = false,
+  autoLoadPantry = false,
 }: AiAssistantFormProps) {
   const t = useTranslations("aiAssistant");
   const tForm = useTranslations("aiAssistant.form");
@@ -128,6 +134,7 @@ export function AiAssistantForm({
   const tCard = useTranslations("recipes.card");
   const tCuisine = useTranslations("cuisines");
   const [ingredients, setIngredients] = useState<string[]>([]);
+  const hasAutoPantryRef = useRef(false);
   const [currentInput, setCurrentInput] = useState("");
   const [excludeIngredients, setExcludeIngredients] = useState<string[]>([]);
   const [excludeInput, setExcludeInput] = useState("");
@@ -294,6 +301,24 @@ export function AiAssistantForm({
       // localStorage unavailable or corrupt, ignore
     }
   }, []);
+
+  // H: Home 🎒 CTA'dan ?autoPantry=1 ile gelinirse mount'ta pantry
+  // otomatik yüklenir. URL'den gelen m= param'ı varsa ona saygı göster
+  // (çakışmasın), sadece ingredient listesi boşsa dolduralım.
+  useEffect(() => {
+    if (!autoLoadPantry || !isAuthenticated) return;
+    if (hasAutoPantryRef.current) return;
+    hasAutoPantryRef.current = true;
+    (async () => {
+      const res = await getUserPantryAction();
+      if (!res.success || !res.data || res.data.length === 0) return;
+      const names = res.data
+        .map((item) => item.ingredientName)
+        .filter((n): n is string => typeof n === "string" && n.length > 0);
+      // Yalnızca başka ingredient eklenmemişse auto-doldur.
+      setIngredients((prev) => (prev.length > 0 ? prev : names));
+    })();
+  }, [autoLoadPantry, isAuthenticated]);
 
   // #5 Form persistence: son ziyaretten değerleri geri yükle. URL
   // paramlarından gelen değerler (shared link) persistence'dan önce

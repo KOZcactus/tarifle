@@ -82,8 +82,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function AiAsistanPage() {
+export default async function AiAsistanPage({
+  searchParams,
+}: AiAsistanPageProps) {
   const session = await auth();
+  const params = await searchParams;
+  const autoPantry = params.autoPantry === "1";
   const [knownIngredients, t, userPrefs] = await Promise.all([
     getUniqueIngredientNames(),
     getTranslations("aiAssistant"),
@@ -123,6 +127,7 @@ export default async function AiAsistanPage() {
         knownIngredients={knownIngredients}
         initialPrefs={initialPrefs}
         isAuthenticated={Boolean(session?.user?.id)}
+        autoLoadPantry={autoPantry}
       />
     </main>
   );

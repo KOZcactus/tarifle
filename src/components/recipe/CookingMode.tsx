@@ -3,6 +3,26 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useTranslations } from "next-intl";
 
+const TTS_AUTO_READ_KEY = "tarifle:cooking-mode:auto-read";
+
+function readAutoReadPref(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    return window.localStorage.getItem(TTS_AUTO_READ_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+function writeAutoReadPref(val: boolean): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(TTS_AUTO_READ_KEY, val ? "1" : "0");
+  } catch {
+    // storage unavailable, ignore
+  }
+}
+
 interface Step {
   id: string;
   stepNumber: number;
@@ -24,6 +44,8 @@ export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProp
   const [currentStep, setCurrentStep] = useState(0);
   const [timer, setTimer] = useState<number | null>(null);
   const [timerRunning, setTimerRunning] = useState(false);
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [autoRead, setAutoRead] = useState(false);
   const wakeLockRef = useRef<WakeLockSentinel | null>(null);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -65,12 +87,36 @@ export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProp
     };
   }, [timerRunning, timer]);
 
+  // TTS (text-to-speech) — Web Speech API, TR-TR.
+  // Okuma: utterance queue'ya girer; step değişince veya kapanışta cancel.
+  const stopSpeaking = useCallback(() => {
+    if (typeof window === "undefined") return;
+    if (window.speechSynthesis) {
+      window.speechSynthesis.cancel();
+    }
+    setIsSpeaking(false);
+  }, []);
+
+  const speakText = useCallback((text: string) => {
+    if (typeof window === "undefined" || !window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = "tr-TR";
+    utter.rate = 0.95;
+    utter.pitch = 1;
+    utter.onend = () => setIsSpeaking(false);
+    utter.onerror = () => setIsSpeaking(false);
+    window.speechSynthesis.speak(utter);
+    setIsSpeaking(true);
+  }, []);
+
   // Open/close
   const open = useCallback(() => {
     setIsOpen(true);
     setCurrentStep(0);
     setTimer(null);
     setTimerRunning(false);
+    setAutoRead(readAutoReadPref());
     requestWakeLock();
     document.body.style.overflow = "hidden";
   }, [requestWakeLock]);
@@ -79,9 +125,10 @@ export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProp
     setIsOpen(false);
     setTimerRunning(false);
     setTimer(null);
+    stopSpeaking();
     releaseWakeLock();
     document.body.style.overflow = "";
-  }, [releaseWakeLock]);
+  }, [releaseWakeLock, stopSpeaking]);
 
   // Step navigation, declared before the effect below so the keyboard
   // handler can close over a stable identity via useCallback. Using plain
@@ -92,16 +139,18 @@ export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProp
       setCurrentStep((s) => s + 1);
       setTimer(null);
       setTimerRunning(false);
+      stopSpeaking();
     }
-  }, [currentStep, totalSteps]);
+  }, [currentStep, totalSteps, stopSpeaking]);
 
   const goPrev = useCallback(() => {
     if (currentStep > 0) {
       setCurrentStep((s) => s - 1);
       setTimer(null);
       setTimerRunning(false);
+      stopSpeaking();
     }
-  }, [currentStep]);
+  }, [currentStep, stopSpeaking]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -117,6 +166,20 @@ export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProp
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
   }, [isOpen, close, goNext, goPrev]);
+
+  // Auto-read: adim degisince ve toggle aciksa TTS oku. İlk acılısta da
+  // otomatik başlamaz — kullanıcı ya autoRead toggle'ı açmış olmalı ya
+  // manuel 🔊 butonuna basmış. Tip varsa instruction'dan sonra okunur.
+  useEffect(() => {
+    if (!isOpen || !autoRead) return;
+    const current = steps[currentStep];
+    if (!current) return;
+    const text = current.tip
+      ? `${current.instruction} İpucu: ${current.tip}`
+      : current.instruction;
+    speakText(text);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentStep, isOpen, autoRead]);
 
   const startTimer = (seconds: number) => {
     setTimer(seconds);
@@ -180,12 +243,54 @@ export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProp
       {/* Step Content */}
       <main className="flex flex-1 flex-col items-center justify-center px-6 py-8 sm:px-12">
         <div className="w-full max-w-2xl text-center">
-          {/* Step indicator */}
-          <div className="mb-6 flex items-center justify-center gap-2">
+          {/* Step indicator + TTS controls */}
+          <div className="mb-6 flex items-center justify-center gap-3">
             <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-lg font-bold text-white sm:h-12 sm:w-12 sm:text-xl">
               {step.stepNumber}
             </span>
             <span className="text-sm text-text-muted">/ {totalSteps}</span>
+            <button
+              type="button"
+              onClick={() => {
+                if (isSpeaking) {
+                  stopSpeaking();
+                } else {
+                  const text = step.tip
+                    ? `${step.instruction} İpucu: ${step.tip}`
+                    : step.instruction;
+                  speakText(text);
+                }
+              }}
+              aria-pressed={isSpeaking}
+              aria-label={
+                isSpeaking ? t("ttsStop") : t("ttsRead")
+              }
+              className={`inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
+                isSpeaking
+                  ? "border-accent-blue bg-accent-blue/20 text-accent-blue"
+                  : "border-border bg-bg-elevated text-text-muted hover:border-accent-blue hover:text-accent-blue"
+              }`}
+            >
+              <span aria-hidden>{isSpeaking ? "⏹" : "🔊"}</span>
+              {isSpeaking ? t("ttsStop") : t("ttsRead")}
+            </button>
+            <label
+              className="ml-2 flex cursor-pointer items-center gap-1.5 text-xs text-text-muted"
+              title={t("ttsAutoReadHint")}
+            >
+              <input
+                type="checkbox"
+                checked={autoRead}
+                onChange={(e) => {
+                  const next = e.target.checked;
+                  setAutoRead(next);
+                  writeAutoReadPref(next);
+                  if (!next) stopSpeaking();
+                }}
+                className="h-3.5 w-3.5 rounded border-border text-primary focus:ring-primary"
+              />
+              {t("ttsAutoRead")}
+            </label>
           </div>
 
           {/* Instruction */}

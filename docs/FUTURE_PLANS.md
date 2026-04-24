@@ -51,29 +51,6 @@ Detay düzenleme seçenekleri:
 Launch öncesi: Option C (documentation). Launch sonrası marka audit'inde
 A veya B.
 
-### Multi-line recipe cuisine field drift (569 WARNING, ~1-2 saat)
-
-Oturum 19'da tespit edildi: content:validate 569 "cuisine alanı boş" WARNING
-veriyor. DB'de 0 NULL cuisine (3452/3452 dolu, retrofit önceki oturumlarda
-yapılmıştı). Sorun **seed-recipes.ts source of truth drift**:
-
-- 1521 TEK-satır recipe (`r({ ... })` format): cuisine dolu ✅
-- 569 MULTI-satır recipe (`{ \n title: ... \n slug: ... \n ... \n }` format):
-  cuisine field eksik, DB'den mapping ile doldurulması gerek.
-
-Line-based regex multi-line bloklarda `cuisine:` başka satırda olunca
-duplicate property TS error veriyordu (ilk denemede 734 "fix" attı → 174'ü
-duplicate çıkarttı). Doğru yaklaşım AST-aware:
-
-1. Recipe bloğunu tam scope et (`{ ... },` top-level array item, nested
-   helper `t()/ing()/st()` bloklarını karıştırmadan)
-2. Block içinde `cuisine:` ara, yoksa `slug:` satırından sonra ekle
-3. Prettier ile format et
-4. tsc + validate PASS
-
-Sonuç: 569 WARNING → 0, push raporu temizlenir. Launch-blocker değil ama
-push gürültüsü belirgin azalır.
-
 ### Translations drift (Mod B %100 oldu, WARNING'ler seed drift)
 
 Oturum 19'da Backfill-14 + 15 tam apply edildi, Mod B DB'de 3452/3452

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useTranslations } from "next-intl";
+import { pickTtsVoice, type TtsGender } from "@/lib/tts/voice-picker";
 
 const TTS_AUTO_READ_KEY = "tarifle:cooking-mode:auto-read";
 
@@ -35,9 +36,18 @@ interface CookingModeProps {
   steps: Step[];
   recipeTitle: string;
   recipeEmoji: string | null;
+  // Kullanicinin /ayarlar'daki TTS ses tercihi. Default female (misafir
+  // veya eski kullanici). Cooking Mode speakText cagrilarinda utterance.
+  // voice alani bu tercihe gore secilir.
+  ttsVoicePreference?: TtsGender;
 }
 
-export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProps) {
+export function CookingMode({
+  steps,
+  recipeTitle,
+  recipeEmoji,
+  ttsVoicePreference = "female",
+}: CookingModeProps) {
   const t = useTranslations("cookingMode");
   const tCard = useTranslations("recipes.card");
   const [isOpen, setIsOpen] = useState(false);
@@ -97,18 +107,27 @@ export function CookingMode({ steps, recipeTitle, recipeEmoji }: CookingModeProp
     setIsSpeaking(false);
   }, []);
 
-  const speakText = useCallback((text: string) => {
-    if (typeof window === "undefined" || !window.speechSynthesis) return;
-    window.speechSynthesis.cancel();
-    const utter = new SpeechSynthesisUtterance(text);
-    utter.lang = "tr-TR";
-    utter.rate = 0.95;
-    utter.pitch = 1;
-    utter.onend = () => setIsSpeaking(false);
-    utter.onerror = () => setIsSpeaking(false);
-    window.speechSynthesis.speak(utter);
-    setIsSpeaking(true);
-  }, []);
+  const speakText = useCallback(
+    (text: string) => {
+      if (typeof window === "undefined" || !window.speechSynthesis) return;
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = "tr-TR";
+      utter.rate = 0.95;
+      utter.pitch = 1;
+      // Kullanıcı tercihine göre voice seç. Bazı platformlarda voices
+      // asenkron yüklenir; getVoices ilk çağrıda boş olabilir, bu durumda
+      // browser default ses kullanılır.
+      const voices = window.speechSynthesis.getVoices();
+      const voice = pickTtsVoice(voices, ttsVoicePreference);
+      if (voice) utter.voice = voice;
+      utter.onend = () => setIsSpeaking(false);
+      utter.onerror = () => setIsSpeaking(false);
+      window.speechSynthesis.speak(utter);
+      setIsSpeaking(true);
+    },
+    [ttsVoicePreference],
+  );
 
   // Open/close
   const open = useCallback(() => {

@@ -24,6 +24,12 @@ const pantryPrefsSchema = z.object({
 
 export type PantryPrefsInput = z.infer<typeof pantryPrefsSchema>;
 
+const ttsVoiceSchema = z.object({
+  ttsVoicePreference: z.enum(["female", "male"]),
+});
+
+export type TtsVoiceInput = z.infer<typeof ttsVoiceSchema>;
+
 export interface PantryPrefsActionResult {
   success: boolean;
   error?: string;
@@ -63,4 +69,33 @@ export async function getUserPantryPreferences(userId: string): Promise<{
     select: { pantryExpiryTracking: true },
   });
   return { pantryExpiryTracking: row?.pantryExpiryTracking ?? false };
+}
+
+/**
+ * Pişirme Modu TTS ses tercihi güncelle.
+ * Default "female"; kullanıcı ayarlar kartından "male"ye çevirebilir.
+ */
+export async function updateTtsVoicePreferenceAction(
+  input: TtsVoiceInput,
+): Promise<PantryPrefsActionResult> {
+  const session = await auth();
+  if (!session?.user?.id) {
+    return { success: false, error: "unauthorized" };
+  }
+
+  const parsed = ttsVoiceSchema.safeParse(input);
+  if (!parsed.success) {
+    return {
+      success: false,
+      error: parsed.error.issues[0]?.message ?? "invalid input",
+    };
+  }
+
+  await prisma.user.update({
+    where: { id: session.user.id },
+    data: { ttsVoicePreference: parsed.data.ttsVoicePreference },
+  });
+
+  revalidatePath("/ayarlar");
+  return { success: true };
 }

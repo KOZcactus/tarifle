@@ -194,6 +194,10 @@ model User {
   // uyarı banner'ı görünür. Kapalıyken inline SKT gizlenir, dolap
   // sadeleşir. /ayarlar'daki toggle ile değişir.
   pantryExpiryTracking Boolean  @default(false)
+  // Pişirme modu TTS ses tercihi. "female" (default) veya "male".
+  // Platform'un TR-TR ses paketinden uygun cinsiyet aranır, yoksa ilk
+  // TR voice fallback olur.
+  ttsVoicePreference String     @default("female") @db.VarChar(10)
   createdAt          DateTime   @default(now())
   updatedAt          DateTime   @updatedAt
 

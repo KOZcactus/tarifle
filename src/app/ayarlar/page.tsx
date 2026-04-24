@@ -50,6 +50,7 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
       showActivity: true,
       showFollowCounts: true,
       pantryExpiryTracking: true,
+      ttsVoicePreference: true,
       accounts: {
         where: { provider: "google" },
         select: { id: true },
@@ -116,6 +117,9 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
 
         <PantryPreferencesCard
           initialPantryExpiryTracking={user.pantryExpiryTracking}
+          initialTtsVoicePreference={
+            user.ttsVoicePreference === "male" ? "male" : "female"
+          }
         />
 
         <DeleteAccountCard

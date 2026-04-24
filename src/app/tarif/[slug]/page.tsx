@@ -254,6 +254,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
     userPhotosEnabled,
     variants,
     pantryMatch,
+    userVoicePref,
   ] = await Promise.all([
     session?.user?.id
       ? isBookmarked(session.user.id, recipe.id)
@@ -278,6 +279,19 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
           })),
         ).catch(() => null)
       : Promise.resolve(null),
+    // TTS voice preference for Cooking Mode. Default female (misafir
+    // veya pref yoksa).
+    session?.user?.id
+      ? (async () => {
+          const row = await import("@/lib/prisma").then((m) =>
+            m.prisma.user.findUnique({
+              where: { id: session.user!.id },
+              select: { ttsVoicePreference: true },
+            }),
+          );
+          return row?.ttsVoicePreference === "male" ? "male" : "female";
+        })()
+      : Promise.resolve<"female" | "male">("female"),
   ]);
 
   // Surface admin/moderator UI inline on community variations so a moderator
@@ -517,6 +531,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
           steps={translatedSteps}
           recipeTitle={translatedTitle}
           recipeEmoji={recipe.emoji}
+          ttsVoicePreference={userVoicePref}
         />
         <PrintButton />
         <PdfDownloadButton slug={recipe.slug} />

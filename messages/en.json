@@ -1233,10 +1233,14 @@
       "errorMessage": "Could not save, try again"
     },
     "pantry": {
-      "heading": "Pantry preferences",
-      "subtitle": "We keep your pantry as simple as possible. Turn on advanced features like expiry tracking here.",
+      "heading": "Pantry and cooking preferences",
+      "subtitle": "We keep your pantry as simple as possible. Turn on advanced features like expiry tracking or pick a cooking-mode voice here.",
       "expiryTrackingLabel": "Track expiry dates",
       "expiryTrackingDescription": "When on, the /dolap page shows a date field for each ingredient and a banner highlights items about to expire. When off you only manage amount and unit.",
+      "ttsVoiceLabel": "Cooking mode voice",
+      "ttsVoiceDescription": "Gender of the Turkish voice used when the cooking mode reads steps aloud. If your platform lacks that gender a Turkish voice, the available one is used.",
+      "ttsVoiceFemale": "Female voice (default)",
+      "ttsVoiceMale": "Male voice",
       "savedMessage": "Saved",
       "errorMessage": "Could not save, try again"
     },

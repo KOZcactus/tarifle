@@ -1233,10 +1233,14 @@
       "errorMessage": "Kaydedilemedi, tekrar dene"
     },
     "pantry": {
-      "heading": "Dolap tercihleri",
-      "subtitle": "Dolabını mümkün olduğunca sade tutuyoruz. Son kullanma tarihi takibi gibi ileri özellikleri burada açabilirsin.",
+      "heading": "Dolap ve pişirme tercihleri",
+      "subtitle": "Dolabını mümkün olduğunca sade tutuyoruz. Son kullanma tarihi takibi, pişirme modu ses tercihi gibi ileri ayarları burada yönet.",
       "expiryTrackingLabel": "Son kullanma tarihi takibi",
       "expiryTrackingDescription": "Açınca /dolap sayfasında her malzeme için tarih girişi görünür ve yaklaşan ürünler için uyarı banner'ı çıkar. Kapalıyken sadece miktar ve birim yönetirsin.",
+      "ttsVoiceLabel": "Pişirme modu ses tercihi",
+      "ttsVoiceDescription": "Pişirme modunda adımları sesli okutunca tercih ettiğin ses cinsiyeti. Platformunda o cinsiyete ait Türkçe ses paketi yoksa mevcut Türkçe ses kullanılır.",
+      "ttsVoiceFemale": "Kadın sesi (varsayılan)",
+      "ttsVoiceMale": "Erkek sesi",
       "savedMessage": "Kaydedildi",
       "errorMessage": "Kaydedilemedi, tekrar dene"
     },

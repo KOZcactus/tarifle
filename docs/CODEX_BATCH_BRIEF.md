@@ -31,6 +31,66 @@
 - Eksik kategoriler için Kerem'e öncelik sor (kahvaltı/çorba/tatlı dengelensin)
 - Marker: `// ── BATCH 30a ──` (küçük `a`/`b` harf)
 
+**⚠️ Helper parametre tipleri ZORUNLU (oturum 17 / 32b+33a v2 dersi, TEKRARLAMA):**
+
+Append ettiğin IIFE içinde 4 helper (t, ing, st, r) tanımlarsan
+**parametrelere TypeScript tipi yazmak zorundasın**. 32b ve 33a v2
+retrofit'lerinde Codex helper'ları implicit-any bıraktı, local
+tsc filter nedeniyle gözden kaçtı, Vercel prod build 3 kez fail
+etti (commit 9f2d307 33a bloğu silinmek zorunda kaldı).
+
+Zorunlu signature (aynen kopyala):
+```ts
+const t = (enTitle: string, enDescription: string, deTitle: string, deDescription: string) => ({
+  en: { title: enTitle, description: enDescription },
+  de: { title: deTitle, description: deDescription },
+});
+const ing = (specs: string[]) => specs.map((s, i) => {
+  const [name, amount, unit] = s.split("|");
+  return { name, amount, unit, sortOrder: i + 1 };
+});
+const st = (specs: string[]) => specs.map((s, i) => {
+  const [instruction, timer] = s.split("||");
+  return timer
+    ? { stepNumber: i + 1, instruction, timerSeconds: Number(timer) }
+    : { stepNumber: i + 1, instruction };
+});
+const r = (o: Omit<SeedRecipe, "ingredients" | "steps"> & { ingredients: string[]; steps: string[] }) => ({
+  ...o,
+  ingredients: ing(o.ingredients),
+  steps: st(o.steps),
+});
+```
+
+**⚠️ Allergen self-check ZORUNLU (oturum 17 / 32b+33a v2 dersi):**
+
+Self-check raporuna mutlaka ekle, teslim öncesi PASS olmalı:
+```bash
+npx tsx scripts/check-allergen-source.ts
+# Sonuç: ✅ TEMIZ, 0 over-tag, 0 missing
+```
+
+Sık yakalanan Codex hataları (32b+33a v2'de 9 bulgu):
+- Tereyağı ingredient = SUT allergen eksik
+- Kestane, ceviz, fındık = KUSUYEMIS eksik
+- Bulgur, un, yufka, pierogi = GLUTEN eksik
+- Tahin = SUSAM eksik
+- Kabak çekirdeği KUSUYEMIS DEĞİL (ayrı allergen kategorisi)
+- Mısır unu + mısır ekmeği gluten-FREE (GLUTEN over-tag yapma)
+
+Hem over-tag hem missing aynı anda kontrol et.
+
+**⚠️ İki session koordinasyonu (oturum 17 dersi):**
+
+Kerem bazen iki Codex session'ını aynı anda tetikler (farklı batch
+numaralarıyla). Aynı dosyada (seed-recipes.ts) paralel çalışırsanız
+konflikt olur. Kural:
+- Her session'a **sadece kendi batch ID'si** verilir (32b / 33a / 33b)
+- Append noktası her session için farklı (önce A bitirir, sonra B
+  onun üstüne append)
+- Self-check RAPORU TESLİMİN PARÇASI, sen kendi batch ID'ni verify
+  et, diğer session'ın eklediği batch'lere dokunma
+
 ### Mod B default (Kerem sadece "Mod B" veya "batch N çevirisi" derse):
 - Kerem CSV dosya yolu verir: `docs/translations-batch-N.csv`
 - Sen aynı isimli **JSON** üretirsin: `docs/translations-batch-N.json`

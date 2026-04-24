@@ -1,6 +1,8 @@
 # Tarifle, Proje Durumu
 
-> Son güncelleme: **Oturum 16 sonu (23-24 Nis 2026)**, 32 commit, büyük sprint: **AI v4 haftalık menü planlayıcı** (core + UI + unit/E2E test + v4.1 cuisine multi-select + v4.2 regenerate + macro preference + shopping integration + person count scaling + plan favorites + pantry history + autocomplete + preset chips) + **Admin Tarif Düzenle UX** (drag-drop reorder + çift onay modal + real-time preview) + **Mod A Batch 31a/31b + 32a apply** (150 yeni tarif, 2872 → 3021 prod) + **Mod B Backfill-03/04/05/06/07/08 apply** (485 çeviri, **Mod B %100 kapanış**) + **Blog 27-30** (Fırın Kullanımı + Sarımsak + Baharat Öğütme + Bayram Sofrası, kategori 12/9/9 denge) + **Allergen audit iki tur spot-fix** (prod audit PASS 0 CRITICAL) + **PWA analytics Sentry → Vercel** + **Tarif basit/lüks varyant paneli**. **3021 tarif prod, Mod B %100, 30 blog, AI v4 tam ship**. **Sonraki:** Batch 32b gerçek içerik (stub reject), 30 Nis Neon cleanup, AI v4.3 polish.
+> Son güncelleme: **Oturum 17 (24 Nis 2026, devam ediyor)**, 13+ commit: **AI v4.3 genişleme** (8 özellik: single-slot regenerate + uyum skoru badge + reason chip renk kodu + anti-repeat seed + edge UX + seasonal/bayram banner + commentary personalization + alışveriş diff özeti) + **Liderlik feature flag** (admin panelden aç/kapa, default kapalı) + **SEO/Sentry fix dalgası** (Prisma findFirst bug + GSC 206+ uyarı kapatıldı: noindex AI-asistan + /giris canonical + rel=nofollow) + **Mod A Batch 32b + 33a v2 apply** (100 yeni tarif, 3002 → 3102, d-helper retrofit + 9 allergen fix + pierogi audit rule) + **Brief §d-helper-yasak + helper tip + allergen self-check** (oturum 17 dersleri). **Sonraki:** Backfill-09 (100 yeni slug çeviri), 33b yeni batch, AI iCal/WhatsApp polish, 30 Nis Neon cleanup.
+
+> Oturum 16 sonu (23-24 Nis 2026), 32 commit: **AI v4 haftalık menü planlayıcı** tam ship (core + UI + test + v4.1-v4.2 iterasyon + macro + shopping + person count scaling + favoriler + pantry history + autocomplete + preset chips) + **Admin Tarif Düzenle v3** (drag-drop + çift onay + canlı preview) + **Mod A 31a/31b/32a apply** (150 yeni, 2872 → 3021) + **Mod B Backfill-03/04/05/06/07/08 apply** (485 çeviri, **Mod B %100 kapanış**) + **Blog 27-30** (12/9/9 ideal denge) + Allergen 2 tur spot-fix prod audit PASS + PWA Sentry → Vercel Analytics + Tarif basit/lüks varyant paneli. **3021 tarif, Mod B %100, 30 blog, AI v4 tam ship**.
 
 > Oturum 15 sonu (23 Nis 2026), 50+ commit, en yoğun altyapı + içerik günü. **Neon → Vercel Marketplace migration** ($240/yıl tasarruf) + **Vercel Analytics aktif** + Mod E B14-B29 apply (1600 tarif, **Mod E pipeline kapandı 2900 tarif revize ~%95 kalite-düşük catalog**) + **Mod A Batch 30a + 30b apply** (100 yeni tarif, 2772 → 2872 → 2952 source) + **Hero A/B durduruldu default A** + **Tailwind 4 dark variant fix** + **Blog 26 Ramazan Sofrası** (25 → 26, kategori 11/7/8) + Mod B Backfill 01 + 02 apply (200 çeviri) + CODEX_BRIEF §14.5 + §14.7 dersleri (UTF-8 no-BOM + cümle tekrar yasağı) + Mod A 100→50 yarı batch pattern (30a/30b, 31a/31b). **2952 tarif source (prod 2872), Mod E bitti, 26 blog**.
 
@@ -22,7 +24,78 @@
 >
 > Oturum 7 sonu (28 commit), 1701 tarif prod canlı. 8 blok: Mod B batch 13-17 (600 tarif EN+DE), Mod A batch 15-17 (1401→1701), foryou sort, pagination redesign, super-admin protection, /admin/yorumlar, /kategoriler, legal hub /yasal, editör rozeti, similar-recipes v2, 44 programatik landing, profil zenginleştirme, /menu-planlayici, RSS + HowTo schema, AI Asistan v2, blog MDX + 3 makale, rekabet analizi doc, newsletter double-opt-in altyapı, codex brief 3 clarify.
 
-## 23-24 Nisan 2026 (oturum 16, 32 commit, AI v4 + Mod A/B kapanış + Admin UX)
+## 24 Nisan 2026 (oturum 17, 13+ commit devam, AI v4.3 + SEO + Liderlik flag + 32b+33a v2)
+
+> Tek uzun oturum. **AI v4.3 ailesi** 8 yeni özellikle genişledi
+> (regenerate, match badge, reason renk, anti-repeat, edge UX,
+> seasonal, commentary, alışveriş diff), **Liderlik** admin feature
+> flag'ine bağlandı (default kapalı), **GSC 206+ uyarı** 3 net fix'le
+> kapatıldı, **Sentry Prisma findFirst bug** /tarif/[slug]'de çözüldü,
+> **Codex 32b + 33a v2** retrofit edildi (100 yeni tarif, d-helper
+> reject iki kere yenilendi), brief'e kalıcı 3 ders eklendi.
+
+**A · AI v4.3 batch 1** (`5f4cb93`): Single-slot regenerate
+(`menu-planner.regenerateSingleSlot` + `regenerateMenuSlotAction` +
+`regenerateMenuSlotSchema` + AiFillModal 🎲 butonları, client 20
+slot cap rebuild, fresh random seed) + uyum skoru rozeti (v4 preview
+match% renk kodlu: 100%=green, ≥70%=secondary). 15/15 test PASS.
+
+**B · AI v4.3 batch 2** (`feeea98`, `e5841ee`, `39657d5`):
+- Reason chip kind + renk kodu (AiReason type, time=mavi, pantry=yeşil,
+  cuisine=mor, dark mode uyumlu)
+- Anti-repeat seed (`menu-history.ts` localStorage LRU 200 slug 14 gün
+  window, planner excludeSlugs)
+- Anti-repeat edge UX (unfilled ≥3 + history varsa "geçmişi temizle"
+  butonu)
+- Seasonal/bayram banner (`lib/seasonal.ts` 2026-2028 Ramazan/Kurban
+  tarihleri + 4 mevsim, 24 Nis için Bahar Sofrası + kategori filter,
+  `seasonal-recipes.ts` unstable_cache 6s TTL, home RandomRecipeBanner
+  altı)
+- Commentary personalization (plan metrics LRU 10 snapshot, preview
+  "Senin son N planının ort X dk/Y kcal. Bu plan A dk/B kcal, süre
+  %Z üzeri/altı/benzer")
+- Alışveriş diff özeti (shoppingHint dinamik: "X tarif · Y eksik · Z
+  dolabında" matched+missing set)
+- **#7 #8 zaten ship**: Alışveriş kategori gruplama (oturum 15/16) +
+  Pişirme Modu (`CookingMode.tsx` 349 satır, WakeLock + timer + step
+  nav) plan listesinden çıktı.
+
+**C · SEO + Sentry fix dalgası** (`8d0d2af`, `2e167d0`, `a5626a8`):
+- `recipe-variants.ts` bozuk `findFirst({take:30})` query'lerini sil
+  (Prisma "take must be 1 or -1" /tarif/[slug] 500 prod error)
+- robots.txt `/ai-asistan?*` Disallow (GSC 150 noindex uyarısı)
+- `/giris` generateMetadata robots:index=false + canonical /giris +
+  ReviewsSection Link rel=nofollow (GSC 55 duplicate + 1 redirect
+  error /akis kaynağı çözüldü)
+
+**D · Liderlik feature flag** (`c0afa37`): SiteSetting
+LEADERBOARD_ENABLED key + `isLeaderboardEnabled()` helper (default
+false) + `toggleLeaderboardFeatureAction` (admin/moderator guard) +
+`LeaderboardFeatureToggle` switch component + `/admin/ayarlar` yeni
+sayfa + admin layout "Özellikler" nav link + Navbar features prop +
+`/leaderboard` notFound() + metadata noindex. Cron arka planda skor
+birikimine devam eder, flag açıldığında veri hazır.
+
+**E · Mod A Batch 32b + 33a v2 apply** (`1fcfb0b`, `9f2d307`,
+`f215c4d`): 32b + 33a ilk teslimler d-helper pattern (50 tarif aynı
+emoji/makro/tag, template EN/DE) iki kere reject. Brief'e kalıcı
+§d-helper-yasak bölümü + 11 alan per-recipe + 3 self-check bash
+(EN dup, emoji ≥8, macro ≥10). 33a v1 d-helper seed'e kazara
+girince Vercel tsc 3 deploy fail (union tipi uyumsuz), acil fix bloğu
+sildi. Codex v2 retrofit (100 unique slug, EN/DE 100/100, emoji 32,
+kalori 52 unique range 120-465), 9 Claude allergen fix (5 missing
+SUT/KUSUYEMIS/GLUTEN/SUSAM + 4 over-tag) + pierogi audit rule
+eklendi. Dev + prod apply, **3002 → 3102 tarif**.
+
+**F · Brief oturum 17 3 ders** (`1fcfb0b`, brief §d-helper-yasak +
+Mod A default genişleme): (a) d/default-helper yasağı + 11 alan per
+recipe zorunlu + self-check bash, (b) helper parametre tipleri
+zorunlu (t, ing, st, r string/SeedRecipe generic), (c) allergen
+source guard self-check teslim öncesi PASS zorunlu, (d) iki session
+koordinasyon (aynı dosyaya paralel yazma + her session kendi batch
+ID + append point farklı).
+
+
 
 > Uzun tek oturum. AI Asistan v4 (haftalık menü planlayıcı) baştan
 > sona inşa edildi (core + UI + test + 5 iterasyon), Mod A Batch

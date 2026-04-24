@@ -15,16 +15,27 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
-### Codex Batch 32b REJECT + re-teslim (oturum 16 sonu, acil)
+### Codex Batch 33b (oturum 17 sonu, Kerem tetikleyecek)
 
-Codex 32b'yi **stub/placeholder content** ile teslim etti: 50 tarif,
-hepsi aynı template ("Ana malzeme / Destek malzeme / Zeytinyağı / Tuz"
-+ aynı 4 generic step + aynı description cümlesi). EN title = TR title
-aynen (gerçek çeviri yok). Apply edilmedi, `git stash` içinde bekliyor.
+Mod A pipeline devam, 33a v2 apply sonrası sırada 33b. Brief'e
+oturum 17 dersleri eklendi (§d-helper-yasak + helper tip zorunlu +
+allergen self-check). 33b teslim edildiğinde:
 
-- [ ] Codex'e reject mesajı + gerçek içerikle re-teslim iste
-- [ ] Yeni teslim gelince: validate + seed + allergen audit + commit
-- [ ] 32b apply edildiğinde Backfill-09 açılır (50 slug yeni çeviri gap)
+- [ ] Workspace append point satır ~14082 (33a bitişi)
+- [ ] Self-check: d helper yok, emoji ≥8, kalori ≥10 farklı,
+      EN/DE description 50 unique, allergen guard TEMIZ
+- [ ] Apply dev + prod, commit, Backfill-11 açılır
+
+### Mod B Backfill-09 (oturum 17 sonu, 32b+33a v2 apply sonrası)
+
+32b + 33a v2 prod apply sonrası 100 yeni slug için EN+DE çeviri gap
+oluşur. `scripts/gen-modb-backfill-csv.ts --start 9 --confirm-prod`
+çalıştırılıp `docs/translations-backfill-09.csv` üretilir, Codex
+"Mod B. Backfill-09" ile tetiklenir.
+
+- [ ] Gap üret CSV
+- [ ] Codex Mod B retrofit (hem EN hem DE tüm alanlar)
+- [ ] Apply dev + prod, Mod B %100 durumu geri kazanılır
 
 ### Neon → Vercel Marketplace migration cleanup (30 Nis 2026, 5 gün kaldı)
 

@@ -1,6 +1,15 @@
 # Tarifle, Proje Durumu
 
-> Oturum 18 devam (24 Nis 2026), 6 commit: **Mod F altyapısı** (Step Count Retrofit, brief §15 self-contained + 27 CSV paket + 3 script, 2660 tarif kapsamı) + **Mod A Batch 35a/35b/36a seed apply** (150 yeni, **3252 → 3402 prod**) + **Mod B Backfill-11/12 apply** (200 çeviri) + **Miktar farkındalığı MVP** (pantry-match util quantity-aware + /tarif rozet + 45 unit test) + **Pantry SKT opt-in** (/ayarlar toggle, default kapalı, inline tarih gizlenir) + **CI fix** (pantry test vi.hoisted) + **i18n fix** (PantryClient shoppingList.category tekil). **Sonraki:** Codex Mod F Retrofit-01..27 teslim bekleniyor, Backfill-13 + Mod A 36b Codex'te.
+> Oturum 18 devam (24 Nis 2026), **23 commit**, en geniş AI paketi + A+ retrofit pipeline günü.
+> **Mod F altyapısı + Retrofit-01/02/03 apply** (300/2660 tarif, B+ → A- → A+ A+ brief gate etkili) +
+> **Mod A Batch 35a/35b/36a/36b seed apply** (200 yeni, **3252 → 3452 prod**) +
+> **Mod B Backfill-11/12/13 apply** (250 çeviri, Mod B ≈%93, 200 slug kaldı) +
+> **Backfill-14/15 CSV üretildi** (Codex'te bekliyor) +
+> **AI paketi 7 özellik** (A Pişirdim→decrement / B sesli TTS kadın-erkek toggle / C SKT uyarı widget / D home dinamik "şu saatte ne yesek" / E "Beğenmedim, farklı dene" feedback / F v3 miktar rozeti + shopping diff / G favori boost collaborative filter / H home 🎒 CTA autoPantry) +
+> **Pantry miktar farkındalığı** (quantity-aware util + 45 test + rozet + SKT opt-in + alışveriş→pantry senkron) +
+> **Brief A+ standardı** (§15 Mod F + §5 Mod A, 5 self-check gate: varyasyon/notes/timer/muğlak/kritik nokta %60). 
+> **752/752 test PASS, tsc clean, lint clean.**
+> **Sonraki:** Codex Retrofit-04+ / Mod A 37a / Backfill-14+15 teslimleri + Vercel deploy sonrası F prod test.
 
 > Son güncelleme: **Oturum 17 sonu (24 Nis 2026)**, 32 commit, en büyük tek gün sprint: **AI v4.3 ailesi 16 özellik** (single-slot regenerate + uyum skoru rozeti + reason chip renk kodu + anti-repeat seed + edge UX + seasonal/bayram banner + commentary personalization + alışveriş diff özeti + iCal export + WhatsApp paylaş + form persistence + dolabını tamamla + saate göre filtre + sesli giriş + URL-state v4 + fırsat öneri) + **UserPantry DB + /dolap + AI entegrasyon** (kalıcı dolap modeli, cihazlar arası senkron, 🎒 tek tık AI'ya aktar, 17 unit test) + **Mod A Batch 32b/33a v2/33b/34a/34b apply** (250 yeni tarif, 3002 → **3252 tarif prod**) + **CUISINE_CODES 24 → 30** (de/ir/pk/id/et/ng yeni mutfak) + **Mod B Backfill-09/10 apply** (200 çeviri) + **Liderlik feature flag** (admin toggle, default kapalı) + **Blog redesign** (sol sidebar + kategori + arşiv + alt konular + tag chip'leri) + **Blog 31** Soğuk Zincir + Et Güvenliği + **SEO/Sentry fix dalgası** (Prisma N+1 + GSC 206+ uyarı + /ai-asistan query noindex + /giris canonical) + **Brief oturum 17 dersleri** (d-helper yasağı + helper tip + allergen self-check + TR bölge denge kaldırıldı + uluslararası bilinen öncelikli + web kaynak doğrulama). **Sonraki:** Backfill-11/12/13 Codex'te (250 çeviri), 35a+ yeni Mod A, 30 Nis Neon cleanup, AI v5 LLM katmanı launch sonrası.
 

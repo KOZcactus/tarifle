@@ -52,24 +52,23 @@ Launch öncesi: Option C (documentation). Launch sonrası marka audit'inde
 A veya B.
 
 
-### Content-Security-Policy (CSP) Report-Only mode (launch öncesi, 1-2 saat)
+### CSP Report-Only → enforce geçiş (oturum 19'da ship edildi, izleme aşaması)
 
-Oturum 19 security audit'inde tespit edildi: CSP header yok. HSTS + X-Content-Type-Options
-+ Referrer-Policy + Permissions-Policy + X-Frame-Options zaten prod'da aktif, ama CSP
-XSS'e karşı en güçlü katman.
+Oturum 19'da ship edildi:
+- `Content-Security-Policy-Report-Only` header aktif (next.config.ts)
+- `/api/csp-report` endpoint Sentry'ye violation forward
+- Rate limit scope `csp-report`: 60/dk per IP
+- İlk whitelist: Vercel Analytics + Sentry + Cloudinary + Google Fonts + Google OAuth avatar
 
-Direkt enforce CSP Next.js 16 inline script/React runtime için `unsafe-inline`
-veya nonce-based gerekli. Breaking risk var.
+Siteyi kırmaz (Report-Only), sadece rapor eder. Sonraki adımlar:
 
-Güvenli akış:
-1. next.config.ts'e `Content-Security-Policy-Report-Only` ekle (siteyi kırmaz, violation'ları raporlar)
-2. `report-uri` Sentry CSP violation endpoint'i
-3. 1-2 hafta izle, gerçek 3rd party whitelist çıkar (Vercel Analytics, Sentry, Google Fonts, Cloudinary)
-4. Kırılmayacak safe CSP yaz + Report-Only → enforce geçiş
+1. **1-2 hafta izle**: Sentry'de "csp-violation" etiketli issues toplansın
+2. Analiz: hangi directive en çok blok ediyor, whitelist eksik mi, 3rd party'ler değişti mi
+3. Gerçek blocked_uri'leri policy'ye ekle (örn. yeni CDN, yeni font provider)
+4. **Enforce geçiş**: header name `Content-Security-Policy-Report-Only` → `Content-Security-Policy`, Report-Only kaldır
+5. `'unsafe-inline'` + `'unsafe-eval'` son aşamada nonce-based'e taşınmalı (Next.js 16 nonce pattern, ayrı iş paketi)
 
-**Blocklama noktaları**: Vercel runtime, Sentry tunnel, Google Analytics (eğer eklenirse),
-Cloudinary image domains, next-auth Google OAuth callback. Launch öncesi değerli,
-launch-blocker değil.
+İzleme süresince Sentry filter: `tag:csp.directive:*`.
 
 ### Newsletter subscriber orphan cleanup (deleteAccountAction edge case)
 

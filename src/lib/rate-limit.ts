@@ -34,7 +34,8 @@ export type RateLimitScope =
   | "ingredient-autocomplete"
   | "review-submit"
   | "recipePhotoUpload"
-  | "pantry-mutation";
+  | "pantry-mutation"
+  | "csp-report";
 
 interface ScopeConfig {
   /** Human-readable window length for log messages */
@@ -157,6 +158,15 @@ const SCOPE_CONFIG: Record<RateLimitScope, ScopeConfig> = {
     description: "6 fotoğraf / 1 saat",
     limit: 6,
     window: "1 h",
+  },
+  "csp-report": {
+    // CSP violation endpoint (/api/csp-report). Normal durumda sayfa basina
+    // 1-3 violation olur; sayfa navigasyonunda burst olabilir. 60/dk + IP
+    // basli hem Report-Only toplama asamasinda gercek trafigi kapsar hem
+    // misconfigured extension veya bot flood'una karsi kalkan.
+    description: "60 CSP raporu / 1 dk",
+    limit: 60,
+    window: "1 m",
   },
 };
 

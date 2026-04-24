@@ -108,22 +108,6 @@ feature + blog referansı). Kalan polish işleri launch sonrası:
    eklendi. Codex veya sonraki iterasyon DE çevirisi yazabilir
    (messages/de.json yaratılmamış, gerektiğinde olur).
 
-### Sub-route error boundary genişletme (launch sonrası polish, ~30 dk)
-
-Oturum 19 error boundary audit: root `app/error.tsx` + `global-error.tsx`
-+ `not-found.tsx` kaliteli + Sentry entegre. Ama sub-route'larda özel
-error.tsx yok. Crash durumunda navbar + footer yıkılıyor, kullanıcı tüm
-sayfayı kaybediyor.
-
-Kritik sub-route'lar için özel error.tsx eklenirse UX iyileşir:
-- `/tarif/[slug]`: tarif DB hatası, silinmiş, draft → sadece içerik
-  alanında error, navbar + similar recipes + related content sağlam kalır
-- `/dolap`: pantry sorgu hatası, rate limit
-- `/ai-asistan`: provider fail (ileride LLM eklendiğinde kritik)
-- `/admin/*`: admin crash'leri ayrı izolasyon
-
-Launch-blocker değil; root error.tsx artık Sentry'ye raporluyor, minimum
-kapsam var. Launch sonrası UX polish paketi.
 
 ### Dark theme primary renk contrast detay audit (launch sonrası, 1 saat)
 

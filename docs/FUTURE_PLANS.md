@@ -15,6 +15,32 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
+### DMARC kaydı ekle (launch öncesi, 5 dk DNS işi)
+
+Oturum 19 cron + observability audit'inde tespit edildi: `_dmarc.tarifle.app`
+TXT kaydı YOK (NXDOMAIN). Modern Gmail/Outlook DMARC olmayan domain'lerin
+email'ini agresif filter'lar, inbox yerine spam veya direkt reject.
+
+**Ship edilmiş tarafı**:
+- Resend DKIM: `resend._domainkey.tarifle.app` p= public key ✅
+- Resend SPF: `send.tarifle.app` TXT `v=spf1 include:amazonses.com ~all` ✅
+- Resend bounce MX: `send.tarifle.app` 10 feedback-smtp.eu-west-1.amazonses.com ✅
+
+**Eksik**: DMARC policy. Cloudflare DNS panel üzerinden eklenmeli (Kerem):
+
+```
+Host:  _dmarc
+Type:  TXT
+Value: v=DMARC1; p=none; rua=mailto:dmarc@tarifle.app; fo=1
+TTL:   3600
+```
+
+`p=none` başlangıçta (monitor mode, mail bloklamaz sadece rapor alır).
+1 ay izleme sonrası `p=quarantine`, 3 ay sonra `p=reject` geçişi.
+rua@ adresine haftada 1-2 rapor gelir, deliverability doğrulama için.
+
+Opsiyonel: `p=none` DMARC çoğu durumda launch için yeterli.
+
 ### Sub-route error boundary genişletme (launch sonrası polish, ~30 dk)
 
 Oturum 19 error boundary audit: root `app/error.tsx` + `global-error.tsx`

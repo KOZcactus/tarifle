@@ -389,6 +389,37 @@ describe("RuleBasedMenuPlanner", () => {
     expect(proteinDinners.some((s) => s.startsWith("p-"))).toBe(true);
   });
 
+  it("excludeSlugs pool'dan baştan eler (anti-repeat seed, v4.3)", async () => {
+    const pool = buildRichPool();
+    mockPool(pool);
+    const baseline = new RuleBasedMenuPlanner();
+    const baseRun = await baseline.plan({
+      ingredients: ["tuz", "un"],
+      assumePantryStaples: true,
+      seed: "anti-a",
+    });
+    const baseSlugs = new Set(
+      baseRun.slots
+        .map((s) => s.recipe?.slug)
+        .filter((x): x is string => Boolean(x)),
+    );
+    mockPool(pool);
+    // Aynı seed ile ama tüm baseline slug'ları exclude ederek çalıştır.
+    const excluded = await baseline.plan({
+      ingredients: ["tuz", "un"],
+      assumePantryStaples: true,
+      seed: "anti-a",
+      excludeSlugs: Array.from(baseSlugs),
+    });
+    const excludedSlugs = excluded.slots
+      .map((s) => s.recipe?.slug)
+      .filter((x): x is string => Boolean(x));
+    // Seçilen hiçbir slug baseline'da olmamalı.
+    for (const s of excludedSlugs) {
+      expect(baseSlugs.has(s)).toBe(false);
+    }
+  });
+
   describe("regenerateSingleSlot (v4.3)", () => {
     it("returns a different candidate than the excluded slugs", async () => {
       const pool = buildRichPool();

@@ -56,8 +56,19 @@ export interface AiSuggestion {
   note?: string;
   /** Kural tabanlı explain chip'ler, "neden bu tarif" bilgisi. Kısa (4
    *  kelimeden az), localize edilmiş. UI chip olarak sıralar. Örn:
-   *  ["Tek eksik: un", "⚡ 18 dakikada hazır"]. v3 sıkılaştırma eklendi. */
-  reasons?: string[];
+   *  [{kind:"pantry", text:"Tek eksik: un"}, {kind:"time", text:"⚡ 18 dakikada hazır"}].
+   *  v3 sıkılaştırma eklendi, v4.3'te kind eklendi (UI renk + emoji prefix). */
+  reasons?: AiReason[];
+}
+
+/** AI reason chip kategorisi. UI kind'a göre renk + emoji verir:
+ *   - "time": ⏱ mavi (süre urgency)
+ *   - "pantry": 🧺 yeşil (dolap uyumu)
+ *   - "cuisine": 🌍 mor (mutfak + diyet bağlam, şu an reserve) */
+export type AiReasonKind = "time" | "pantry" | "cuisine";
+export interface AiReason {
+  kind: AiReasonKind;
+  text: string;
 }
 
 /**
@@ -121,6 +132,9 @@ export interface WeeklyMenuInput {
   seed?: string;
   /** Optional macro bias to weight recipe picking. */
   macroPreference?: MacroPreference;
+  /** v4.3 anti-repeat: son 14 gün içinde önerilmiş slug'lar, planner
+   *  bu pool'dan seçmez. Client localStorage history'den gelir. */
+  excludeSlugs?: string[];
 }
 
 /** One slot in the 7×3 grid. */

@@ -31,6 +31,10 @@ import {
 } from "@/components/ai/PantryHistoryChips";
 import { pushToPantryHistory } from "@/lib/ai/pantry-history";
 import {
+  pushGeneratedSlugs,
+  readRecentSlugs,
+} from "@/lib/ai/menu-history";
+import {
   addMenuPlanFavorite,
   readMenuPlanFavorites,
   removeMenuPlanFavorite,
@@ -193,6 +197,9 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
       return;
     }
     setError(null);
+    // v4.3 anti-repeat: son 14 gün içinde önerilmiş tariflerden kaçın.
+    // Her üretim sonrası yeni slug'lar history'ye eklenir.
+    const excludeSlugs = readRecentSlugs();
     startGenerate(async () => {
       const res = await generateWeeklyMenuAction({
         ingredients,
@@ -205,6 +212,7 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
         maxLunchMinutes: maxLunch,
         maxDinnerMinutes: maxDinner,
         macroPreference,
+        excludeSlugs: excludeSlugs.length > 0 ? excludeSlugs : undefined,
       });
       if (!res.success || !res.data) {
         setError(res.error ?? t("errorGeneric"));
@@ -214,6 +222,12 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
       setView("preview");
       pushToPantryHistory(ingredients);
       setHistoryBump((x) => x + 1);
+      // Yeni planın dolu slot slug'larını history'ye push, bir sonraki
+      // generate'de bu tarifler çıkarılır.
+      const newSlugs = res.data.slots
+        .map((s) => s.recipe?.slug)
+        .filter((slug): slug is string => Boolean(slug));
+      if (newSlugs.length > 0) pushGeneratedSlugs(newSlugs);
     });
   }
 
@@ -285,6 +299,9 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
         );
         return { ...prev, slots: nextSlots };
       });
+      // v4.3 anti-repeat: yeni seçilen slug da history'ye eklensin,
+      // bir sonraki tam plan üretiminde bu tarif çıkarılır.
+      if (recipe?.slug) pushGeneratedSlugs([recipe.slug]);
     });
   }
 

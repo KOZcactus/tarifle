@@ -1008,17 +1008,28 @@ function SuggestionCard({
           </div>
         )}
 
-        {/* Reason chips, "neden bu tarif?" açıklaması (v3). */}
+        {/* Reason chips, "neden bu tarif?" açıklaması (v3 + v4.3 renk kodu).
+         *  kind → renk: time=mavi, pantry=yeşil, cuisine=mor. Görsel hiyerarşi
+         *  kullanıcıya tek bakışta hangi sinyalin dolap uyumu hangisinin süre
+         *  olduğunu söyler. */}
         {s.reasons && s.reasons.length > 0 && (
           <div className="flex flex-wrap gap-1">
-            {s.reasons.map((reason, idx) => (
-              <span
-                key={idx}
-                className="rounded-full border border-primary/20 bg-primary/5 px-2 py-0.5 text-[10px] font-medium text-primary"
-              >
-                {reason}
-              </span>
-            ))}
+            {s.reasons.map((reason, idx) => {
+              const chipClass =
+                reason.kind === "time"
+                  ? "border-sky-300/60 bg-sky-50 text-sky-700 dark:border-sky-500/40 dark:bg-sky-950/40 dark:text-sky-300"
+                  : reason.kind === "pantry"
+                    ? "border-emerald-300/60 bg-emerald-50 text-emerald-700 dark:border-emerald-500/40 dark:bg-emerald-950/40 dark:text-emerald-300"
+                    : "border-purple-300/60 bg-purple-50 text-purple-700 dark:border-purple-500/40 dark:bg-purple-950/40 dark:text-purple-300";
+              return (
+                <span
+                  key={idx}
+                  className={`rounded-full border px-2 py-0.5 text-[10px] font-medium ${chipClass}`}
+                >
+                  {reason.text}
+                </span>
+              );
+            })}
           </div>
         )}
 

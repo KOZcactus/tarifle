@@ -310,7 +310,9 @@ export class RuleBasedMenuPlanner implements AiMenuPlanner {
     const seed = input.seed ? hashString(input.seed) : Date.now();
     const rand = mulberry32(seed);
 
-    const usedSlugs = new Set<string>();
+    // v4.3 anti-repeat: client'tan gelen son 14 gün history slug'ları
+    // pool'dan baştan çıkarılır. Cap'leri etkilemez (sadece çakışma).
+    const usedSlugs = new Set<string>(input.excludeSlugs ?? []);
     const categoryCount = new Map<string, number>();
     const cuisineCount = new Map<string, number>();
 

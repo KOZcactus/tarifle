@@ -319,6 +319,10 @@ export const weeklyMenuSchema = z.object({
   macroPreference: z
     .enum(["none", "high-protein", "low-calorie", "high-fiber"])
     .optional(),
+  excludeSlugs: z
+    .array(z.string().min(1).max(200))
+    .max(300, "Son 300 slug ile sınırlı.")
+    .optional(),
 });
 
 export type WeeklyMenuFormInput = z.infer<typeof weeklyMenuSchema>;

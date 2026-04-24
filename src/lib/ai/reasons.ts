@@ -10,7 +10,7 @@
  * urgency (15 dk altı = "⚡ hızlı").
  */
 import { getTranslations } from "next-intl/server";
-import type { AiSuggestInput, AiSuggestion } from "./types";
+import type { AiReason, AiSuggestInput, AiSuggestion } from "./types";
 
 const FAST_THRESHOLD_MIN = 15;
 const QUICK_THRESHOLD_MIN = 30;
@@ -29,39 +29,42 @@ function truncate(text: string, max: number): string {
 export async function buildReasons(
   suggestion: Pick<AiSuggestion, "matchedIngredients" | "missingIngredients" | "totalMinutes">,
   input: Pick<AiSuggestInput, "maxMinutes">,
-): Promise<string[]> {
+): Promise<AiReason[]> {
   const t = await getTranslations("aiAssistant.result.reasons");
-  const reasons: string[] = [];
+  const reasons: AiReason[] = [];
 
   const missingCount = suggestion.missingIngredients.length;
   const matchedCount = suggestion.matchedIngredients.length;
   const totalCount = matchedCount + missingCount;
 
-  // 1. Missing vurgu
+  // 1. Missing vurgu - pantry kind (yeşil, dolap uyumu sinyali)
   if (missingCount === 0 && totalCount > 0) {
-    reasons.push(t("allMatched"));
+    reasons.push({ kind: "pantry", text: t("allMatched") });
   } else if (missingCount === 1) {
     const ing = truncate(suggestion.missingIngredients[0]!, MAX_INGREDIENT_LABEL_CHARS);
-    reasons.push(t("oneMissing", { ingredient: ing }));
+    reasons.push({ kind: "pantry", text: t("oneMissing", { ingredient: ing }) });
   } else if (missingCount === 2) {
     const list = suggestion.missingIngredients
       .slice(0, 2)
       .map((x) => truncate(x, MAX_INGREDIENT_LABEL_CHARS))
       .join(", ");
-    reasons.push(t("twoMissing", { list }));
+    reasons.push({ kind: "pantry", text: t("twoMissing", { list }) });
   } else if (missingCount > 0 && matchedCount > 0) {
-    reasons.push(t("fewMissing", { matched: matchedCount, total: totalCount }));
+    reasons.push({
+      kind: "pantry",
+      text: t("fewMissing", { matched: matchedCount, total: totalCount }),
+    });
   }
 
-  // 2. Süre urgency
+  // 2. Süre urgency - time kind (mavi, "hemen yapabilirim" sinyali)
   const mins = suggestion.totalMinutes;
   if (mins > 0) {
     if (mins <= FAST_THRESHOLD_MIN) {
-      reasons.push(t("veryFast", { minutes: mins }));
+      reasons.push({ kind: "time", text: t("veryFast", { minutes: mins }) });
     } else if (mins <= QUICK_THRESHOLD_MIN) {
-      reasons.push(t("quick", { minutes: mins }));
+      reasons.push({ kind: "time", text: t("quick", { minutes: mins }) });
     } else if (input.maxMinutes && mins <= input.maxMinutes) {
-      reasons.push(t("withinTime", { minutes: mins }));
+      reasons.push({ kind: "time", text: t("withinTime", { minutes: mins }) });
     }
   }
 

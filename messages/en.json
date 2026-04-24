@@ -1232,6 +1232,14 @@
       "savedMessage": "Saved",
       "errorMessage": "Could not save, try again"
     },
+    "pantry": {
+      "heading": "Pantry preferences",
+      "subtitle": "We keep your pantry as simple as possible. Turn on advanced features like expiry tracking here.",
+      "expiryTrackingLabel": "Track expiry dates",
+      "expiryTrackingDescription": "When on, the /dolap page shows a date field for each ingredient and a banner highlights items about to expire. When off you only manage amount and unit.",
+      "savedMessage": "Saved",
+      "errorMessage": "Could not save, try again"
+    },
     "profile": {
       "emailLabel": "Email",
       "emailVerified": "Verified",

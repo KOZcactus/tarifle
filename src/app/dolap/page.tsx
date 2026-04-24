@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { auth } from "@/lib/auth";
+import { prisma } from "@/lib/prisma";
 import { getUserPantryAction } from "@/lib/actions/pantry";
 import { PantryClient } from "@/components/pantry/PantryClient";
 
@@ -29,12 +30,17 @@ export default async function PantryPage() {
     redirect("/giris?callbackUrl=/dolap");
   }
 
-  const [res, t] = await Promise.all([
+  const [res, t, userPrefs] = await Promise.all([
     getUserPantryAction(),
     getTranslations("pantry"),
+    prisma.user.findUnique({
+      where: { id: session.user.id },
+      select: { pantryExpiryTracking: true },
+    }),
   ]);
 
   const items = res.success && res.data ? res.data : [];
+  const showExpiry = userPrefs?.pantryExpiryTracking ?? false;
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
@@ -47,7 +53,7 @@ export default async function PantryPage() {
         </h1>
         <p className="mt-2 text-sm text-text-muted">{t("subtitle")}</p>
       </header>
-      <PantryClient initialItems={items} />
+      <PantryClient initialItems={items} showExpiry={showExpiry} />
     </main>
   );
 }

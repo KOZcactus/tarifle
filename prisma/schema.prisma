@@ -189,6 +189,11 @@ model User {
   showChefScore      Boolean    @default(true)
   showActivity       Boolean    @default(true)
   showFollowCounts   Boolean    @default(true)
+  // Dolap son kullanma tarihi takibi — kullanıcı opt-in. Default kapalı.
+  // Açıksa /dolap sayfasında her item için SKT input ve yaklaşan SKT
+  // uyarı banner'ı görünür. Kapalıyken inline SKT gizlenir, dolap
+  // sadeleşir. /ayarlar'daki toggle ile değişir.
+  pantryExpiryTracking Boolean  @default(false)
   createdAt          DateTime   @default(now())
   updatedAt          DateTime   @updatedAt
 

@@ -9,6 +9,7 @@ import { PasswordChangeCard } from "@/components/profile/PasswordChangeCard";
 import { LanguagePreferenceCard } from "@/components/profile/LanguagePreferenceCard";
 import { PreferencesCard } from "@/components/profile/PreferencesCard";
 import { PrivacyCard } from "@/components/profile/PrivacyCard";
+import { PantryPreferencesCard } from "@/components/profile/PantryPreferencesCard";
 import { DeleteAccountCard } from "@/components/profile/DeleteAccountCard";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -48,6 +49,7 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
       showChefScore: true,
       showActivity: true,
       showFollowCounts: true,
+      pantryExpiryTracking: true,
       accounts: {
         where: { provider: "google" },
         select: { id: true },
@@ -110,6 +112,10 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
           initialShowChefScore={user.showChefScore}
           initialShowActivity={user.showActivity}
           initialShowFollowCounts={user.showFollowCounts}
+        />
+
+        <PantryPreferencesCard
+          initialPantryExpiryTracking={user.pantryExpiryTracking}
         />
 
         <DeleteAccountCard

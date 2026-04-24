@@ -18,6 +18,9 @@ import {
 
 interface PantryClientProps {
   initialItems: UserPantryItemView[];
+  // User'in /ayarlar'daki opt-in tercihi. Kapaliysa SKT input + expiry
+  // banner gizlenir, dolap sadelesir. Default false.
+  showExpiry?: boolean;
 }
 
 function splitCsv(raw: string): string[] {
@@ -27,7 +30,7 @@ function splitCsv(raw: string): string[] {
     .filter((s) => s.length > 0);
 }
 
-export function PantryClient({ initialItems }: PantryClientProps) {
+export function PantryClient({ initialItems, showExpiry = false }: PantryClientProps) {
   const t = useTranslations("pantry");
   const tCat = useTranslations("shoppingList.category");
   const [items, setItems] = useState<UserPantryItemView[]>(initialItems);
@@ -38,10 +41,14 @@ export function PantryClient({ initialItems }: PantryClientProps) {
   const [statusMsg, setStatusMsg] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
 
-  // Yaklaşan son kullanma (0-3 gün) bannerı
+  // Yaklaşan son kullanma (0-3 gün) bannerı. Sadece kullanıcı SKT takibini
+  // açtiysa hesaplanir + gosterilir; yoksa daima boş.
   const expiringSoon = useMemo(
-    () => items.filter((i) => i.daysToExpiry !== null && i.daysToExpiry <= 3),
-    [items],
+    () =>
+      showExpiry
+        ? items.filter((i) => i.daysToExpiry !== null && i.daysToExpiry <= 3)
+        : [],
+    [items, showExpiry],
   );
 
   // Kategori bazlı gruplama
@@ -269,10 +276,15 @@ export function PantryClient({ initialItems }: PantryClientProps) {
                 </h3>
                 <ul className="space-y-2">
                   {groupItems.map((item) => {
+                    // Expiry renk uyarilari sadece user SKT takibini actiysa.
                     const urgent =
-                      item.daysToExpiry !== null && item.daysToExpiry <= 3;
+                      showExpiry &&
+                      item.daysToExpiry !== null &&
+                      item.daysToExpiry <= 3;
                     const expired =
-                      item.daysToExpiry !== null && item.daysToExpiry < 0;
+                      showExpiry &&
+                      item.daysToExpiry !== null &&
+                      item.daysToExpiry < 0;
                     return (
                       <li
                         key={item.id}
@@ -322,22 +334,24 @@ export function PantryClient({ initialItems }: PantryClientProps) {
                           className="w-20 rounded-md border border-border bg-surface px-2 py-1 text-xs text-text focus:border-primary focus:outline-none"
                           aria-label={t("unitAria", { name: item.displayName })}
                         />
-                        <input
-                          type="date"
-                          value={item.expiryDate ?? ""}
-                          onChange={(e) =>
-                            handleExpiryChange(item.id, e.target.value)
-                          }
-                          disabled={isPending}
-                          className={`rounded-md border bg-surface px-2 py-1 text-xs focus:border-primary focus:outline-none ${
-                            expired
-                              ? "border-red-400 text-red-700 dark:text-red-300"
-                              : urgent
-                                ? "border-amber-400 text-amber-800 dark:text-amber-200"
-                                : "border-border text-text"
-                          }`}
-                          aria-label={t("expiryAria", { name: item.displayName })}
-                        />
+                        {showExpiry && (
+                          <input
+                            type="date"
+                            value={item.expiryDate ?? ""}
+                            onChange={(e) =>
+                              handleExpiryChange(item.id, e.target.value)
+                            }
+                            disabled={isPending}
+                            className={`rounded-md border bg-surface px-2 py-1 text-xs focus:border-primary focus:outline-none ${
+                              expired
+                                ? "border-red-400 text-red-700 dark:text-red-300"
+                                : urgent
+                                  ? "border-amber-400 text-amber-800 dark:text-amber-200"
+                                  : "border-border text-text"
+                            }`}
+                            aria-label={t("expiryAria", { name: item.displayName })}
+                          />
+                        )}
                         <button
                           type="button"
                           onClick={() => handleRemove(item.id)}

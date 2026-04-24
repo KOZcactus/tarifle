@@ -15,22 +15,6 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
-### Vegan tag + SUT allergen çelişkisi (4 tarif, oturum 19'da tespit)
-
-audit-deep.ts 4 CRITICAL raporladı: "vegan" tag ama allergens içinde SUT.
-Backfill-14 bağlantısı yok, pre-existing seed drift. Her tarif için karar:
-vegan mi yanlış (ingredient'te süt var → vegan tag kaldır), SUT mu yanlış
-(ingredient'te süt yok → allergen kaldır)?
-
-- [ ] `selanik-fasulyeli-gigantes`: Yunan fasulye yemeği, klasik vegan
-- [ ] `elazig-orcikli-pestil-sarma`: ceviz+pestil, klasik vegan
-- [ ] `kirklareli-hardalli-lahana-salatasi`: hardallı salata, yoğurt sosu varsa SUT doğru
-- [ ] `antalya-turunclu-kereviz-salatasi`: kereviz turunç, yoğurt sos varsa SUT doğru
-
-Çözüm yolu: seed-recipes.ts her tarifin ingredient listesine bak,
-süt/yoğurt/peynir/tereyağı varsa vegan tag kaldır; yoksa SUT allergen kaldır.
-Fix sonrası dev + prod apply + audit-deep PASS. ~30 dk iş.
-
 
 
 ### Mod F Retrofit Step Count (oturum 18 devam, 6/27 bitti)

@@ -83,30 +83,27 @@ rua@ adresine haftada 1-2 rapor gelir, deliverability doğrulama için.
 
 Opsiyonel: `p=none` DMARC çoğu durumda launch için yeterli.
 
-### E. Onboarding polish (launch sonrası, 1-2 saat)
+### E. Onboarding polish kalanlar (launch sonrası opsiyonel)
 
-Oturum 19 E paketi core ship edildi: **welcome email** register sonrası
-fire-and-forget gidiyor (Dolap + AI Asistan + Favoriler/Koleksiyon 3
-feature + blog referansı). Kalan polish işleri launch sonrası:
+Oturum 19 E paketi büyük ölçüde ship edildi:
+- **Welcome email** register sonrası fire-and-forget (Dolap + AI Asistan +
+  Favoriler/Koleksiyon 3 feature + blog referansı) ✅
+- **Profil eksik tamamla banner** (home sayfasında login + bio/avatar NULL
+  ise dismissable prompt) ✅
 
-1. **İlk giriş guided tour** (30-45 dk): Kayıt sonrası ilk giriş
-   algılanıp (User.tourCompletedAt NULL), anasayfada 3-4 step'li
-   floating overlay tour (Dolap'a git → Favorilere kaydet → AI
-   Asistan'ı dene). Skip edilebilir. Intro.js veya shepherd.js gibi
-   kütüphane değil, custom lightweight.
+Kalan opsiyonel polish'ler:
 
-2. **Profil eksik tamamla banner** (15-30 dk): Kullanıcı profilinde
-   bio, avatar, diyet tercihleri boşsa üstte küçük banner: "Profilini
-   tamamla → AI önerileri daha isabetli olur". Dismissable.
+1. **İlk giriş guided tour** (30-45 dk): User.tourCompletedAt kolonu
+   eklenip 3-4 step'li floating overlay tour (Dolap'a git → Favorilere
+   kaydet → AI Asistan'ı dene). Skip edilebilir, custom lightweight.
 
-3. **Empty state CTA polish** (20 dk): /dolap boş → "İlk malzemeni ekle"
+2. **Empty state CTA polish** (20 dk): /dolap boş → "İlk malzemeni ekle"
    büyük CTA + örnek 5 malzeme öneri. /favoriler boş → "İlk tarifini
-   bookmark et" + popüler 3 tarif carousel. /koleksiyon boş → "İlk
-   koleksiyonunu oluştur" + template öneri (hafta sonu / çocuk dostu).
+   bookmark et" + popüler 3 tarif carousel. /koleksiyon boş → template
+   öneri (hafta sonu / çocuk dostu).
 
-4. **Welcome email i18n polish**: DE dosyası yok, sadece TR + EN
-   eklendi. Codex veya sonraki iterasyon DE çevirisi yazabilir
-   (messages/de.json yaratılmamış, gerektiğinde olur).
+3. **Welcome email i18n polish**: DE dosyası yok, sadece TR + EN
+   eklendi. messages/de.json yaratılmamış, gerektiğinde olur.
 
 
 ### Dark theme primary renk contrast detay audit (launch sonrası, 1 saat)

@@ -28,6 +28,8 @@ import { getSearchSuggestions } from "@/lib/queries/search-suggestions";
 import { getRandomRecipe } from "@/lib/queries/random-recipe";
 import { RandomRecipeBanner } from "@/components/discovery/RandomRecipeBanner";
 import { CountUp } from "@/components/ui/CountUp";
+import { ProfileIncompleteBanner } from "@/components/home/ProfileIncompleteBanner";
+import { prisma } from "@/lib/prisma";
 import {
   getSuggestedCooks,
   getFollowingUserIds,
@@ -50,6 +52,18 @@ export default async function HomePage() {
   // (~50ms); waterfall alt-sınırı minimum.
   const session = await auth();
   const userId = session?.user?.id ?? null;
+
+  // Profil eksik banner kontrolu (oturum 19 E paketi onboarding polish).
+  // Login + bio NULL veya avatarUrl NULL ise banner gosterilir. Anonim
+  // kullanicida ek DB call yok, userId NULL ise default false.
+  const profileIncomplete = userId
+    ? await prisma.user
+        .findUnique({
+          where: { id: userId },
+          select: { bio: true, avatarUrl: true },
+        })
+        .then((u) => !u?.bio || !u?.avatarUrl)
+    : false;
 
   // Hero A/B variant pick (oturum 13 minimal kurulum). Cookie varsa onu
   // kullanir, yoksa rastgele 50/50; HeroVariantInit client component
@@ -107,6 +121,11 @@ export default async function HomePage() {
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       {/* A/B variant cookie persist + Sentry tag tracker (render etmez). */}
       <HeroVariantInit variant={heroVariant} />
+
+      {/* Profil eksik banner (login + bio/avatar NULL), dismissable */}
+      <div className="pt-4">
+        <ProfileIncompleteBanner incomplete={profileIncomplete} />
+      </div>
 
       {/* Hero */}
       <section className="flex flex-col items-center py-16 text-center lg:py-24">

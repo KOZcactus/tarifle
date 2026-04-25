@@ -23,6 +23,7 @@ const RECIPE_SLUGS = [
 const BLOG_SLUGS = [
   "et-muhurlemenin-bilimi",
   "kahve-mi-cay-mi-secim-rehberi",
+  "diyet-skoru-nasil-hesaplanir",
 ];
 
 test.describe("Recipe detail visual baseline", () => {

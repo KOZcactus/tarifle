@@ -41,11 +41,16 @@ stable (carbs proxy fallback + %86 USDA).
 scorer.ts içinde `isBeta = profile.requiresEnrichedData && profile.slug !== "dusuk-seker"` mantığı; 4 preset için override eklenebilir veya
 requiresEnrichedData=false yapılabilir.
 
-### Top 131-200 ingredient seed (Faz 3 polish, opsiyonel)
+### Top 201-300 ingredient seed (Faz 3 polish, opsiyonel)
 
-Mevcut 130 ingredient (%92 coverage). 131-200 seed'i %96+'ya çıkarır.
-Hand-curated USDA SR Legacy + Foundation Foods, batch 4 olarak.
-audit-top-ingredients.ts ile öncelik listesi alınır.
+Oturum 21'de batch 4 (top 80 + alias'lar) seedlendi, **210 ingredient**
+prod, coverage **%92 → %97** (3357/3471 tarif matchedRatio>=0.5,
+0-match 6 → 4). Plus TR-aware fold root cause fix (ı↔i, ş↔s, ç↔c, ğ↔g,
+ü↔u, ö↔o) `aggregate.ts` + `audit-top-ingredients.ts`'e eklendi.
+
+Sonraki dalga (opsiyonel): top 201-300, ortalama 5-10x freq, %97 → %98+
+gain marjinal. Uzun-kuyruk 1257 unmatched ingredient'in çoğu 1-3x freq.
+audit-top-ingredients.ts gerçek gap'i gösterir.
 
 ### Vercel env DATABASE_URL_OLD kontrolü (Kerem dashboard işi)
 

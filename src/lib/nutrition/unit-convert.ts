@@ -223,7 +223,7 @@ export function convertToGrams(
 
 /** Turkce karakterleri ASCII'ye fold et: ş->s, ı->i, ç->c, vb. Karsilastirma
  *  amacli, gosterim degil. */
-function asciiFold(s: string): string {
+export function asciiFold(s: string): string {
   return s
     .replace(/ı/g, "i")
     .replace(/İ/g, "i")

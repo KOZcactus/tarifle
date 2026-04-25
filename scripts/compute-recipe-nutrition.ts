@@ -24,6 +24,7 @@ import {
   aggregateNutrition,
   type NutritionLookup,
 } from "../src/lib/nutrition/aggregate";
+import { asciiFold } from "../src/lib/nutrition/unit-convert";
 
 dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
 neonConfig.webSocketConstructor = ws;
@@ -55,7 +56,8 @@ async function main() {
   });
   const lookup = new Map<string, NutritionLookup>();
   for (const r of nutritionRows) {
-    lookup.set(r.name.toLowerCase().trim(), {
+    const key = asciiFold(r.name.toLowerCase().trim());
+    lookup.set(key, {
       caloriesPer100g: Number(r.caloriesPer100g),
       proteinPer100g: Number(r.proteinPer100g),
       carbsPer100g: Number(r.carbsPer100g),

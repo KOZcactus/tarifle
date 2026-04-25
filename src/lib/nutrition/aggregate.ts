@@ -9,7 +9,7 @@
  * 0.7+ saglikli, 0.5- yaklaşık disclaimer.
  */
 
-import { convertToGrams } from "./unit-convert";
+import { asciiFold, convertToGrams } from "./unit-convert";
 
 export interface IngredientInput {
   name: string;
@@ -76,7 +76,7 @@ export function aggregateNutrition(
   const totalCount = ingredients.length;
 
   for (const ing of ingredients) {
-    const lookup = nutritionLookup.get(ing.name.toLowerCase().trim());
+    const lookup = nutritionLookup.get(asciiFold(ing.name.toLowerCase().trim()));
     if (!lookup) continue;
     matchedCount++;
 

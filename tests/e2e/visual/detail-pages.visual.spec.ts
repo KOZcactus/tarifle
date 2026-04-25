@@ -24,6 +24,11 @@ const BLOG_SLUGS = [
   "et-muhurlemenin-bilimi",
   "kahve-mi-cay-mi-secim-rehberi",
   "diyet-skoru-nasil-hesaplanir",
+  "baharatli-yemek-seviyeleri",
+  "soguk-vs-sicak-baslangic",
+  "ev-yapimi-ekmek-tipleri",
+  "damak-yemek-dengesi",
+  "mikro-otlar",
 ];
 
 test.describe("Recipe detail visual baseline", () => {

@@ -1,5 +1,18 @@
 # Tarifle, Proje Durumu
 
+> Oturum 21 ara (26 Nis 2026), **11 commit**, Mod F finale yaklaşıyor +
+> blog 5 yeni yazı + diet-score Faz 4 coverage tepe. **Mod F 25/27 prod**
+> (22r + 23 + 24 + 25 apply, kalan 26/27), USDA batch 4+5 prod (210 →
+> **311 ingredient**, coverage **%92 → %99.97**), TR-fold root cause
+> fix (`asciiFold` aggregate.ts + audit-top-ingredients.ts), 41 blog
+> yazısına **123 internal link** + 5 yeni yazı (baharatli-yemek-seviyeleri
+> + soguk-vs-sicak-baslangic + ev-yapimi-ekmek-tipleri + damak-yemek-
+> dengesi + mikro-otlar) → **blog 41 → 46**, PWA install banner UX fix
+> (ilk dismiss permanent + 10 dakika delay + /ayarlar manuel install
+> card). Visual baseline 15 → 20 (5 yeni blog), pre-push 6 katman temiz,
+> 84 unit test PASS, prod 3471 tarif. **Sonraki:** Mod F 26 + 27 final
+> kapanış (Mod F 27/27 toplam pipeline hedef).
+
 > Oturum 20 sonu (25 Nis 2026), **30 commit**, mutlak rekor gün:
 > **Diet-score Faz 1 + Faz 2 + polish + Lighthouse CI**, 10 preset prod canli.
 > **Faz 1 (14 modul)**: schema + 6 preset engine + 54 unit test + 17 yuzey UI

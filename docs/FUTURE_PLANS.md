@@ -316,7 +316,7 @@ mevcut yazılarla overlap yok, evergreen + yüksek arama hacmi):
       kullanım
 
 **pisirme-teknikleri:**
-- [ ] **Sote vs Kavurma vs Buğulama** - üç teknik farkları + uygulama
+- [x] ~~**Sote vs Kavurma vs Buğulama**~~ ✅ ship (oturum 21, blog 48)
 - [ ] **Salamura ve Marine Bilimi** - işlem süresi, malzeme oranı,
       yumuşatıcı etki
 - [ ] **Kızartma Yağı Yönetimi** - sıcaklık kontrol, filtreleme, ne

@@ -47,6 +47,7 @@ const TITLES = {
   "ramazan-sofrasi-iftar-sahur-kultur": "Ramazan Sofrası: İftar, Sahur",
   "sarimsak-dogru-kullanimi-kimya-pisirme-saklama": "Sarımsak Doğru Kullanımı",
   "soganin-dogru-kavrulmasi": "Soğanın Doğru Kavrulması",
+  "sote-vs-kavurma-vs-bugulama": "Sote vs Kavurma vs Buğulama",
   "soguk-zincir-kirmizi-et-guvenligi": "Soğuk Zincir ve Kırmızı Et Güvenliği",
   "su-ve-mutfak-sert-yumusak-su-pisirmeye-etkisi": "Su ve Mutfak",
   "tereyagi-cesitleri-evde-yapimi-pisirmede-kullanim": "Tereyağı: Çeşitleri ve Kullanımı",
@@ -90,6 +91,11 @@ const RELATED = {
     ["zeytinyagi-secimi", "zeytinyaginin sizma vs rafine kullanimi"],
     ["et-muhurlemenin-bilimi", "yuksek isi muhurlemede dogru yag"],
     ["tereyagi-cesitleri-evde-yapimi-pisirmede-kullanim", "tereyaginin mutfaktaki yeri"],
+  ],
+  "sote-vs-kavurma-vs-bugulama": [
+    ["soganin-dogru-kavrulmasi", "kavurmanin derinlemesine ornegi"],
+    ["et-muhurlemenin-bilimi", "yuksek isi tavada Maillard"],
+    ["mutfak-ocaklari-induksiyon-gaz-elektrik-dokum", "isi kontrolunun teknige etkisi"],
   ],
   "soguk-vs-sicak-baslangic": [
     ["turk-mutfaginda-dugun-sofrasi", "buyuk sofralarda corbanin islevi"],

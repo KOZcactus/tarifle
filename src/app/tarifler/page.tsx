@@ -34,7 +34,11 @@ import { logSearchQuery } from "@/lib/queries/search-log";
 import { ITEMS_PER_PAGE } from "@/lib/constants";
 import { ALLERGEN_ORDER } from "@/lib/allergens";
 import { getSearchSuggestions } from "@/lib/queries/search-suggestions";
-import { getDietBadgesForRecipes, getUserDietContext } from "@/lib/queries/diet-score";
+import {
+  getDietBadgesForRecipes,
+  getUserDietContext,
+  getDietSortedRecipeIds,
+} from "@/lib/queries/diet-score";
 import type { Metadata } from "next";
 
 export async function generateMetadata({ searchParams }: TariflerPageProps): Promise<Metadata> {
@@ -117,6 +121,7 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
     "most-filling",
     "relevance",
     "foryou",
+    "diet-fit",
   ] as const;
   type SortOption = (typeof allowedSorts)[number];
   const sortBy: SortOption | undefined = allowedSorts.includes(
@@ -201,9 +206,27 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
   // allergens) only runs over the relevant subset. When no query is
   // present we skip this entirely and let getRecipes do its plain
   // listing (catalog browse mode).
-  const rankedIds = query
+  let rankedIds = query
     ? (await searchRecipeIds({ query })).map((r) => r.id)
     : undefined;
+
+  // Diyet kullanici context'i + diet-fit sort (oturum 20).
+  // sortBy=diet-fit + login + dietProfile varsa: diyet skoruna gore
+  // siralanmis recipe ID'leri rankedIds'e koyup sortBy'i relevance'a
+  // map ediyoruz (relevance branch'i zaten recipeIds dizi sirasini
+  // koruyacak sekilde tum filtrelenmis sonuclari client-side sortluyor).
+  const userDietContext = session?.user?.id
+    ? await getUserDietContext(session.user.id)
+    : null;
+  // diet-fit URL'den gelir ama getRecipes'e ulasmadan relevance/
+  // alphabetical'a remap edilir; tip narrow.
+  type ResolvedSort = Exclude<SortOption, "diet-fit">;
+  let resolvedSort: ResolvedSort =
+    activeSort === "diet-fit" ? "alphabetical" : activeSort;
+  if (activeSort === "diet-fit" && userDietContext) {
+    rankedIds = await getDietSortedRecipeIds(userDietContext.dietProfile);
+    resolvedSort = "relevance";
+  }
 
   const [{ recipes, total }, categories, tags, searchSuggestions, t] = await Promise.all([
     getRecipes({
@@ -216,13 +239,13 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
       cuisines: cuisines.length > 0 ? cuisines : undefined,
       recipeIds: rankedIds,
       hungerBarMin,
-      sortBy: activeSort,
+      sortBy: resolvedSort,
       boostTagSlugs:
-        activeSort === "foryou" && favoriteTagSlugs.length > 0
+        resolvedSort === "foryou" && favoriteTagSlugs.length > 0
           ? favoriteTagSlugs
           : undefined,
       boostCuisines:
-        activeSort === "foryou" && favoriteCuisines.length > 0
+        resolvedSort === "foryou" && favoriteCuisines.length > 0
           ? favoriteCuisines
           : undefined,
       limit: ITEMS_PER_PAGE,
@@ -236,11 +259,8 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
 
   const totalPages = Math.ceil(total / ITEMS_PER_PAGE);
 
-  // Diyet badge'leri (oturum 20). Login + dietProfile + showDietBadge
-  // true ise tum gorunen tariflerin compact skor verisini batch fetch.
-  const userDietContext = session?.user?.id
-    ? await getUserDietContext(session.user.id)
-    : null;
+  // Diyet badge'leri (oturum 20). userDietContext yukarida resolve edildi
+  // (diet-fit sort routing icin). Burada batch badge fetch.
   const dietBadges = userDietContext
     ? await getDietBadgesForRecipes(
         recipes.map((r) => r.id),
@@ -315,6 +335,12 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
           // tamamen gizli: dropdown'u yemleyen login duvarı gereksiz.
           ...(!query && hasPersonalizationSignal
             ? [{ key: "foryou", label: t("sort.foryou") } as const]
+            : []),
+          // "Diyetime uygun" chip, yalniz logged-in + dietProfile set'li
+          // user'lara gorunur (oturum 20). userDietContext yukarida
+          // resolve edildi; null ise misafir veya tercih yok.
+          ...(!query && userDietContext
+            ? [{ key: "diet-fit", label: "Diyetime uygun" } as const]
             : []),
           { key: "alphabetical", label: t("sort.alphabetical") } as const,
           { key: "newest", label: t("sort.newest") } as const,

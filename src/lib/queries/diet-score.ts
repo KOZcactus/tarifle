@@ -112,6 +112,25 @@ export async function getUserDietContext(
 }
 
 /**
+ * Diyet skoruna gore siralanmis recipe ID listesini doner. /tarifler
+ * "Diyetime uygun" sort opsiyonu kullanir; relevance branch'iyle ayni
+ * mantigi paylasiyor (recipeIds dizi sirasina gore JS sort).
+ *
+ * Score DESC + tie-break score DESC (computedAt rastgele degil, deterministic).
+ * Misafir veya dietSlug bilinmiyorsa bos liste.
+ */
+export async function getDietSortedRecipeIds(
+  dietSlug: string,
+): Promise<string[]> {
+  const rows = await prisma.recipeDietScore.findMany({
+    where: { dietSlug },
+    select: { recipeId: true },
+    orderBy: [{ score: "desc" }, { recipeId: "asc" }],
+  });
+  return rows.map((r) => r.recipeId);
+}
+
+/**
  * Convenience: listeleme sayfasi user session'ini + recipe ID listesini
  * verir, diyet badge Map'i alir. Misafir veya dietProfile yoksa bos Map.
  */

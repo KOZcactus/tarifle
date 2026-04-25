@@ -1317,26 +1317,40 @@ sahte geçme.**
 
     Kritik nokta notu (§15.7.4 / madde 4) step 1'e template olarak yerleştirilmez; tarif akışı içinde **doğal yerine** otur (ör. süt kaynatırken "sütün yanmaması için sürekli karıştırın"). Retrofit-06 🏆 örneği: her step spesifik, scaffold yok.
 
-    Bash (suffix frekans kontrolü — step 1'lerde tarif adı sonrası kalıp):
+    Bash suffix frekans kontrolü (step 1'lerde tarif adı sonrası kalıp).
+    **Eşik: ≤10 PASS, >10 FAIL** (oturum 19 Retrofit-17 dersi).
+
+    Mantık: aynı suffix 4-5 tarifte doğal (ortak pişirme adımı, "tencereye
+    alın", "yıkayıp süzün"), 10'a kadar çıkabilir farklı tariflerin paralel
+    aksiyonu olarak. 10 üstü = scaffold şüphesi yüksek, malzeme/teknik
+    ayırt ediciliği kaybolur. Retrofit-16 v1 örneği: 12 tarifin step 1'i
+    "[TARIFADI] tepsisini hazırlayın, hamur oranı şaşmasın" kapanışı
+    paylaşıyordu, FAIL.
+
     ```bash
     node -e "
     const recipes = require('./dist-seed-temp.js').recipes.slice(-50);
     const freq = {};
     recipes.forEach(r => {
       const s1 = r.steps[0].instruction;
-      const suffix = s1.split(' ').slice(3).join(' '); // ilk 3 kelime (tarif adı) strip
+      const suffix = s1.split(' ').slice(3).join(' ');
       freq[suffix] = (freq[suffix] || 0) + 1;
     });
     const top = Object.entries(freq).sort((a,b)=>b[1]-a[1])[0];
-    if (top && top[1] > 5) {
-      console.log('FAIL: step1 suffix dup', top[1]+'x:', top[0].slice(0,80));
+    if (top && top[1] > 10) {
+      console.log('FAIL: step1 suffix scaffold', top[1]+'x:', top[0].slice(0,80));
       process.exit(1);
     }
-    console.log('PASS: step1 suffix dağılımı temiz');
+    console.log('PASS: step1 suffix dağılımı doğal');
     "
     ```
 
-    Aynı kontrol son step için de geçerli — servis/kapanış cümlesi de template olmasın.
+    Asıl test: **step 1'in başlangıcı tarif-spesifik mi?** "Bulguru yıkayıp...",
+    "Ayvaları bölüp...", "Cevizi kırın..." gibi malzeme öncelikli aksiyonlar
+    OK; "[TARIFADI] tepsisini hazırlayın" generic scaffold YASAK.
+
+    Son step için de aynı eşik geçerli, servis/kapanış cümlesi farklı
+    tariflerde benzer biçim alabilir.
 
 ### Pass 2, Çeviri kalitesi (EN + DE)
 
@@ -2222,7 +2236,10 @@ işaretlesin. **Herhangi biri ☐ ise teslim GERI ÇEVİR ve düzelt.**
   (örn. "Unu ve şekeri çırpın", "Elmaları 1 cm küp doğra"). Generic
   hazırlık cümleleri ("servis bardaklarını hazırla") yasak. Retrofit-06
   🏆 referans: her step tarif-spesifik, scaffold yok.
-- ☐ Bash suffix dup check (ilk 3 kelime strip, top freq ≤ 5 tarif):
+- ☐ Bash suffix dup check 3-katmanlı (oturum 19 Retrofit-17 dersi):
+  - ≤10 freq: PASS (gerçek ortak aksiyon, tarif-spesifik başlangıçla)
+  - 11-15: WARN, manuel inceleme (step 1 başı tarif-spesifik mi?)
+  - \>15: FAIL (kesin scaffold, Retrofit-16 v1 örneği 12x)
   ```bash
   node -e "
   const j = JSON.parse(require('fs').readFileSync('docs/retrofit-step-count-N.json'));
@@ -2232,8 +2249,9 @@ işaretlesin. **Herhangi biri ☐ ise teslim GERI ÇEVİR ve düzelt.**
     freq[suffix] = (freq[suffix]||0) + 1;
   });
   const top = Object.entries(freq).sort((a,b)=>b[1]-a[1])[0];
-  if (top && top[1] > 5) { console.log('FAIL suffix smuggling', top[1]+'x:', top[0].slice(0,80)); process.exit(1) }
-  console.log('PASS suffix temiz');
+  if (top && top[1] > 15) { console.log('FAIL scaffold', top[1]+'x:', top[0].slice(0,80)); process.exit(1) }
+  else if (top && top[1] > 10) { console.log('WARN', top[1]+'x manuel inceleme'); }
+  else { console.log('PASS suffix doğal'); }
   "
   ```
 

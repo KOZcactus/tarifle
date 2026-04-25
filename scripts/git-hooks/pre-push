@@ -35,6 +35,20 @@ fi
 
 echo "✅ pre-push: content:validate clean"
 
+# JSON duplicate top-level key guard (oturum 19 PWA i18n bug dersi).
+# messages/*.json'da duplicate top-level key sessizce override ediyor,
+# tum namespace kayboluyor. Oturum 19'da 'home' namespace iki kere
+# yazildi, prod'da raw key'ler goruldu. Bu guard aynı hatayi onler.
+echo "🔍 pre-push: messages JSON duplicate key guard"
+if ! node scripts/check-json-dupe-keys.mjs; then
+  echo ""
+  echo "   Duplicate top-level key var, JSON.parse override eder."
+  echo "   Fix: ikinci key'i birinci namespace icine tasi."
+  exit 1
+fi
+
+echo "✅ pre-push: messages JSON clean"
+
 # Em-dash (U+2014) guard.
 # User-facing metinlerde em-dash "AI yazdı" hissi veriyor, kural olarak
 # yasak (bkz. AGENTS.md "Em-dash yasak"). Birkaç dosya istisna:

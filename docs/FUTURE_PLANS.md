@@ -15,6 +15,8 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
+
+
 ### Legal + KVKK detay polish (launch öncesi, opsiyonel, 15-30 dk)
 
 Oturum 19 G paketi audit'i: Kerem KVKK/Gizlilik/Kullanım Koşulları/Çerez

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
+import { getDietBadgesIfApplicable } from "@/lib/queries/diet-score";
 import { Pagination } from "@/components/listing/Pagination";
 import { LandingBreadcrumb } from "@/components/landing/LandingBreadcrumb";
 import {
@@ -128,6 +129,11 @@ export default async function MutfakLandingPage({
     cuisineStats.find((s) => s.code === code)?.count ?? filteredTotal;
   const totalPages = Math.max(1, Math.ceil(filteredTotal / ITEMS_PER_PAGE));
 
+  const dietBadges = await getDietBadgesIfApplicable(
+    session?.user?.id ?? null,
+    recipes.map((r) => r.id),
+  );
+
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: t("breadcrumbHome"), url: "/" },
     { name: t("breadcrumbCuisines"), url: "/tarifler" },
@@ -205,7 +211,11 @@ export default async function MutfakLandingPage({
         <>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {recipes.map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
+              <RecipeCard
+                key={recipe.id}
+                recipe={recipe}
+                dietBadge={dietBadges.get(recipe.id)}
+              />
             ))}
           </div>
 

@@ -13,6 +13,7 @@ import { getCategories } from "@/lib/queries/category";
 import { getCuisineStats } from "@/lib/queries/cuisine-stats";
 import { getSearchSuggestions } from "@/lib/queries/search-suggestions";
 import { auth } from "@/lib/auth";
+import { getDietBadgesIfApplicable } from "@/lib/queries/diet-score";
 import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -63,6 +64,16 @@ export default async function KesfetPage() {
     .sort((a, b) => b._count.recipes - a._count.recipes)
     .slice(0, 8);
 
+  // Diyet badge'leri (oturum 20). Tum 4 shelf'in recipe ID'leri
+  // birleştirilip tek batched fetch.
+  const allShelfRecipeIds = [
+    ...featured.map((r) => r.id),
+    ...quick.map((r) => r.id),
+    ...popular.map((r) => r.id),
+    ...personalized.recipes.map((r) => r.id),
+  ];
+  const dietBadges = await getDietBadgesIfApplicable(userId, allShelfRecipeIds);
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <h1 className="font-heading text-3xl font-bold">{t("pageTitle")}</h1>
@@ -105,7 +116,11 @@ export default async function KesfetPage() {
           </div>
           <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {personalized.recipes.map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
+              <RecipeCard
+                key={recipe.id}
+                recipe={recipe}
+                dietBadge={dietBadges.get(recipe.id)}
+              />
             ))}
           </div>
         </section>
@@ -122,7 +137,11 @@ export default async function KesfetPage() {
           </div>
           <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {featured.map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
+              <RecipeCard
+                key={recipe.id}
+                recipe={recipe}
+                dietBadge={dietBadges.get(recipe.id)}
+              />
             ))}
           </div>
         </section>
@@ -134,7 +153,11 @@ export default async function KesfetPage() {
           <h2 className="font-heading text-xl font-bold">{t("sectionQuick")}</h2>
           <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {quick.map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
+              <RecipeCard
+                key={recipe.id}
+                recipe={recipe}
+                dietBadge={dietBadges.get(recipe.id)}
+              />
             ))}
           </div>
         </section>
@@ -146,7 +169,11 @@ export default async function KesfetPage() {
           <h2 className="font-heading text-xl font-bold">{t("sectionPopular")}</h2>
           <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {popular.map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
+              <RecipeCard
+                key={recipe.id}
+                recipe={recipe}
+                dietBadge={dietBadges.get(recipe.id)}
+              />
             ))}
           </div>
         </section>

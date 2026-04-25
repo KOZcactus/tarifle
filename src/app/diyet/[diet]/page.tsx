@@ -6,6 +6,8 @@ import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { Pagination } from "@/components/listing/Pagination";
 import { LandingBreadcrumb } from "@/components/landing/LandingBreadcrumb";
 import { getRecipes } from "@/lib/queries/recipe";
+import { auth } from "@/lib/auth";
+import { getDietBadgesIfApplicable } from "@/lib/queries/diet-score";
 import { ITEMS_PER_PAGE } from "@/lib/constants";
 import { generateBreadcrumbJsonLd } from "@/lib/seo";
 import { buildRecipeListSchema, buildFaqPageSchema } from "@/lib/seo/structured-data";
@@ -82,6 +84,13 @@ export default async function DiyetLandingPage({
 
   const totalPages = Math.max(1, Math.ceil(total / ITEMS_PER_PAGE));
 
+  // Diyet badge'leri (oturum 20)
+  const session = await auth();
+  const dietBadges = await getDietBadgesIfApplicable(
+    session?.user?.id ?? null,
+    recipes.map((r) => r.id),
+  );
+
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: t("breadcrumbHome"), url: "/" },
     { name: t("breadcrumbDiets"), url: "/tarifler" },
@@ -153,7 +162,11 @@ export default async function DiyetLandingPage({
         <>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {recipes.map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
+              <RecipeCard
+                key={recipe.id}
+                recipe={recipe}
+                dietBadge={dietBadges.get(recipe.id)}
+              />
             ))}
           </div>
 

@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
+import { getDietBadgesIfApplicable } from "@/lib/queries/diet-score";
 import { AllergenFilter } from "@/components/search/AllergenFilter";
 import { DietFilter } from "@/components/search/DietFilter";
 import { CuisineFilter } from "@/components/search/CuisineFilter";
@@ -117,6 +118,11 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
   });
 
   const totalPages = Math.max(1, Math.ceil(total / ITEMS_PER_PAGE));
+
+  const dietBadges = await getDietBadgesIfApplicable(
+    session?.user?.id ?? null,
+    recipes.map((r) => r.id),
+  );
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: "Ana Sayfa", url: "/" },
@@ -244,7 +250,11 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {recipes.map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
+              <RecipeCard
+                key={recipe.id}
+                recipe={recipe}
+                dietBadge={dietBadges.get(recipe.id)}
+              />
             ))}
           </div>
 

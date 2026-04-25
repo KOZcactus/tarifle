@@ -52,3 +52,75 @@ export async function getRecipeDietScoresForSlugs(
   }
   return result;
 }
+
+/**
+ * Kompakt diyet badge verisi (RecipeCard.dietBadge prop'una uyar). Tam
+ * ScoreResult yerine sadece score + rating + isBeta dondurur, payload
+ * minimum (listeleme sayfalarinda 24+ tarif paralel).
+ */
+export interface DietBadgeData {
+  score: number;
+  rating: ScoreResult["rating"];
+  isBeta: boolean;
+}
+
+/**
+ * Listeleme sayfalari icin batched diyet badge fetcher. Bir kullanicinin
+ * dietSlug'ina gore N tarifin compact skor verisini Map olarak doner.
+ * Kullanici dietProfile yoksa ya da showDietBadge false ise cagirilmamali
+ * (boolean wrap ile sayfada erken donus).
+ */
+export async function getDietBadgesForRecipes(
+  recipeIds: string[],
+  dietSlug: string,
+): Promise<Map<string, DietBadgeData>> {
+  const result = new Map<string, DietBadgeData>();
+  if (recipeIds.length === 0) return result;
+
+  const rows = await prisma.recipeDietScore.findMany({
+    where: { recipeId: { in: recipeIds }, dietSlug },
+    select: { recipeId: true, score: true, breakdown: true },
+  });
+  for (const row of rows) {
+    const breakdown = row.breakdown as unknown as {
+      rating: ScoreResult["rating"];
+      isBeta: boolean;
+    };
+    result.set(row.recipeId, {
+      score: row.score,
+      rating: breakdown.rating,
+      isBeta: breakdown.isBeta,
+    });
+  }
+  return result;
+}
+
+/**
+ * Kullanici diyet tercihini ve badge gorunurluk toggle'ini ozet getirir.
+ * Listeleme sayfalari early-return guard icin kullanir; null donuyorsa
+ * misafir veya dietProfile bos.
+ */
+export async function getUserDietContext(
+  userId: string,
+): Promise<{ dietProfile: string; showDietBadge: boolean } | null> {
+  const row = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { dietProfile: true, showDietBadge: true },
+  });
+  if (!row?.dietProfile || !row.showDietBadge) return null;
+  return { dietProfile: row.dietProfile, showDietBadge: row.showDietBadge };
+}
+
+/**
+ * Convenience: listeleme sayfasi user session'ini + recipe ID listesini
+ * verir, diyet badge Map'i alir. Misafir veya dietProfile yoksa bos Map.
+ */
+export async function getDietBadgesIfApplicable(
+  userId: string | null,
+  recipeIds: string[],
+): Promise<Map<string, DietBadgeData>> {
+  if (!userId || recipeIds.length === 0) return new Map();
+  const ctx = await getUserDietContext(userId);
+  if (!ctx) return new Map();
+  return getDietBadgesForRecipes(recipeIds, ctx.dietProfile);
+}

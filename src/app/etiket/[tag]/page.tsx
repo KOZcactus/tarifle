@@ -7,6 +7,7 @@ import { Pagination } from "@/components/listing/Pagination";
 import { LandingBreadcrumb } from "@/components/landing/LandingBreadcrumb";
 import { getRecipes, resolveDefaultAllergenAvoidances } from "@/lib/queries/recipe";
 import { getTags } from "@/lib/queries/tag";
+import { getDietBadgesIfApplicable } from "@/lib/queries/diet-score";
 import { prisma } from "@/lib/prisma";
 import { auth } from "@/lib/auth";
 import { ITEMS_PER_PAGE } from "@/lib/constants";
@@ -77,6 +78,11 @@ export default async function EtiketLandingPage({
 
   const totalPages = Math.max(1, Math.ceil(total / ITEMS_PER_PAGE));
 
+  const dietBadges = await getDietBadgesIfApplicable(
+    session?.user?.id ?? null,
+    recipes.map((r) => r.id),
+  );
+
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: t("breadcrumbHome"), url: "/" },
     { name: t("breadcrumbTags"), url: "/tarifler" },
@@ -122,7 +128,11 @@ export default async function EtiketLandingPage({
         <>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {recipes.map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
+              <RecipeCard
+                key={recipe.id}
+                recipe={recipe}
+                dietBadge={dietBadges.get(recipe.id)}
+              />
             ))}
           </div>
 

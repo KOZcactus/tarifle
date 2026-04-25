@@ -6,8 +6,20 @@ import { Badge } from "@/components/ui/Badge";
 import { CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
 import type { RecipeCard as RecipeCardType } from "@/types/recipe";
 
+interface DietBadgeData {
+  /** 0-100 toplam skor */
+  score: number;
+  /** Gorsel rating, 5 katman */
+  rating: "excellent" | "good" | "fair" | "weak" | "poor";
+  /** Beta etiketi (Faz 1, USDA enrichment sonrasi false) */
+  isBeta: boolean;
+}
+
 interface RecipeCardProps {
   recipe: RecipeCardType;
+  /** Login + dietProfile + showDietBadge true ise card uzerine kucuk skor
+   *  chip render edilir. Pre-computed RecipeDietScore'tan gelir. */
+  dietBadge?: DietBadgeData;
 }
 
 const DIFFICULTY_VARIANT = {
@@ -22,7 +34,15 @@ const DIFFICULTY_KEY = {
   HARD: "difficultyHard",
 } as const;
 
-export function RecipeCard({ recipe }: RecipeCardProps) {
+const DIET_RATING_STYLE: Record<DietBadgeData["rating"], string> = {
+  excellent: "bg-emerald-500/90 text-white",
+  good: "bg-emerald-400/90 text-white",
+  fair: "bg-amber-400/90 text-white",
+  weak: "bg-orange-400/90 text-white",
+  poor: "bg-red-400/90 text-white",
+};
+
+export function RecipeCard({ recipe, dietBadge }: RecipeCardProps) {
   const t = useTranslations("recipes.card");
   const tCuisine = useTranslations("cuisines");
 
@@ -54,6 +74,33 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
           <span className="absolute left-3 top-3 rounded-full bg-bg/80 px-2.5 py-1 text-xs font-medium backdrop-blur-sm">
             {recipe.category.emoji} {recipe.category.name}
           </span>
+
+          {/* Diyet uyumu skoru chip (oturum 20, DIET_SCORE_PLAN). Sol alt
+              kose, kategori badge'inin altinda. Beta mini rozet skor
+              chip'in yaninda kucuk; veri proxy oldugu surece kullanici
+              uyarilir. Kart sayfasi tiklamada tarif detay "Diyet Uyumu"
+              kartina yonlenir. */}
+          {dietBadge && (
+            <div className="absolute bottom-3 left-3 flex items-center gap-1.5">
+              <span
+                title={`Diyet uyumu ${dietBadge.score}/100`}
+                className={
+                  "inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold backdrop-blur-sm " +
+                  DIET_RATING_STYLE[dietBadge.rating]
+                }
+              >
+                <span aria-hidden="true" className="mr-1">
+                  🎯
+                </span>
+                {dietBadge.score}
+              </span>
+              {dietBadge.isBeta && (
+                <span className="rounded-full bg-amber-100/95 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-900 backdrop-blur-sm">
+                  Beta
+                </span>
+              )}
+            </div>
+          )}
 
           {/* Sağ üst köşe: cuisine flag + editör rozeti. İkisi de varsa
               flag solda (cuisine kimliği), rozet sağda (Tarifle kürasyonu).

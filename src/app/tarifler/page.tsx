@@ -34,6 +34,7 @@ import { logSearchQuery } from "@/lib/queries/search-log";
 import { ITEMS_PER_PAGE } from "@/lib/constants";
 import { ALLERGEN_ORDER } from "@/lib/allergens";
 import { getSearchSuggestions } from "@/lib/queries/search-suggestions";
+import { getDietBadgesForRecipes, getUserDietContext } from "@/lib/queries/diet-score";
 import type { Metadata } from "next";
 
 export async function generateMetadata({ searchParams }: TariflerPageProps): Promise<Metadata> {
@@ -235,6 +236,18 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
 
   const totalPages = Math.ceil(total / ITEMS_PER_PAGE);
 
+  // Diyet badge'leri (oturum 20). Login + dietProfile + showDietBadge
+  // true ise tum gorunen tariflerin compact skor verisini batch fetch.
+  const userDietContext = session?.user?.id
+    ? await getUserDietContext(session.user.id)
+    : null;
+  const dietBadges = userDietContext
+    ? await getDietBadgesForRecipes(
+        recipes.map((r) => r.id),
+        userDietContext.dietProfile,
+      )
+    : new Map();
+
   // Search log: query varsa ve ilk sayfa ise (pagination-1 = yeniden log
   // yazmayalım, aynı arama 5 sayfa → 5 kayıt). Fire-and-forget; insert
   // DB'ye her başarısız olursa listing akışını engellemez.
@@ -359,7 +372,11 @@ export default async function TariflerPage({ searchParams }: TariflerPageProps) 
           <h2 className="sr-only">{t("listAria")}</h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {recipes.map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
+              <RecipeCard
+                key={recipe.id}
+                recipe={recipe}
+                dietBadge={dietBadges.get(recipe.id)}
+              />
             ))}
           </div>
 

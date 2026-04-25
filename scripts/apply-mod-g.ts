@@ -76,7 +76,7 @@ function validateQualityRules(items: z.infer<typeof BatchSchema>): {
           `[${item.slug}] tipNote ${wc} kelime (8-25 dısı): "${item.tipNote.slice(0, 60)}..."`,
         );
       }
-      if (/—|–/.test(item.tipNote)) {
+      if (/[\u2014\u2013]/.test(item.tipNote)) {
         errors.push(`[${item.slug}] tipNote em-dash içeriyor`);
       }
       tipSeen.set(item.tipNote, (tipSeen.get(item.tipNote) ?? 0) + 1);
@@ -88,7 +88,7 @@ function validateQualityRules(items: z.infer<typeof BatchSchema>): {
           `[${item.slug}] servingSuggestion ${wc} kelime (8-30 dısı)`,
         );
       }
-      if (/—|–/.test(item.servingSuggestion)) {
+      if (/[\u2014\u2013]/.test(item.servingSuggestion)) {
         errors.push(`[${item.slug}] servingSuggestion em-dash içeriyor`);
       }
       sugSeen.set(

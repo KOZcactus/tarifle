@@ -40,7 +40,7 @@ const prisma = new PrismaClient({
 
 const APPLY = process.argv.includes("--apply");
 
-// Yasak akademik/teknik jargon (Brief §18.3 Kural 5 — Türk teyze testi)
+// Yasak akademik/teknik jargon (Brief §18.3 Kural 5 (Türk teyze testi)
 const JARGON_BLACKLIST = [
   "emülsiyon",
   "emulsiyon",
@@ -91,7 +91,7 @@ function validateQuality(items: z.infer<typeof BatchSchema>): {
     if (wc < 8 || wc > 40) {
       errors.push(`[${item.name}] whyUsed ${wc} kelime (8-40 dısı)`);
     }
-    if (/—|–/.test(item.whyUsed)) {
+    if (/[\u2014\u2013]/.test(item.whyUsed)) {
       errors.push(`[${item.name}] whyUsed em-dash içeriyor`);
     }
     const lower = item.whyUsed.toLocaleLowerCase("tr-TR");
@@ -105,7 +105,7 @@ function validateQuality(items: z.infer<typeof BatchSchema>): {
       if (wcN < 8 || wcN > 40) {
         errors.push(`[${item.name}] notes ${wcN} kelime (8-40 dısı)`);
       }
-      if (/—|–/.test(item.notes)) {
+      if (/[\u2014\u2013]/.test(item.notes)) {
         errors.push(`[${item.name}] notes em-dash içeriyor`);
       }
       const lowerN = item.notes.toLocaleLowerCase("tr-TR");

@@ -30,7 +30,7 @@ kalite kuralı: tarif-özgü ref + min/max kelime + YASAK kalıplar +
 WEB TEYIT + boilerplate engelleyici + tip/sug ayrımı + anlaşılır dil).
 Input: docs/mod-g-boilerplate-slugs.txt'den ilk 100 slug'ı al.
 Output: docs/mod-g-batch-1.json (sema §17.2'de).
-Self-check 7 madde §17.5 — bitince "Mod G Batch 1 hazır" + özet.
+Self-check 7 madde §17.5; bitince "Mod G Batch 1 hazır" + özet.
 ```
 
 ### Mod H Batch 1 (Codex tetik bekler, oturum 22+ başlangıç)
@@ -58,7 +58,7 @@ Self-check 8 madde §18.5.
      single-line + 1 duplicate kayıt), source 3694 → 3635 unique slug.
      Source vs dev DB diff şu an 0 source-only (perfect sync). Tek
      anomali: dev-only `dublin-soda-bread` (1 slug DB'de var, source'ta
-     yok) — kapsam dışı, opsiyonel ayrı cleanup. -->
+     yok), kapsam dışı, opsiyonel ayrı cleanup. -->
 
 ### Dev-only slug `dublin-soda-bread` (opsiyonel, ~5 dk)
 

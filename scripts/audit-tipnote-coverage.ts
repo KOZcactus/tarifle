@@ -80,6 +80,31 @@ async function main() {
       .filter(([, n]) => n >= 5)
       .sort((a, b) => b[1] - a[1])
       .slice(0, 20);
+    // Boilerplate-eslesen tarifler (Mod G batch input)
+    const boilerplateTipText = new Set(
+      topDuplicatesTip.map(([t]) => t),
+    );
+    const boilerplateServText = new Set(
+      topDuplicatesServ.map(([s]) => s),
+    );
+    const boilerplateRows = rows
+      .filter(
+        (r) =>
+          (r.tipNote && boilerplateTipText.has(r.tipNote)) ||
+          (r.servingSuggestion &&
+            boilerplateServText.has(r.servingSuggestion)),
+      )
+      .map((r) => {
+        const flags = [];
+        if (r.tipNote && boilerplateTipText.has(r.tipNote)) flags.push("TIP");
+        if (
+          r.servingSuggestion &&
+          boilerplateServText.has(r.servingSuggestion)
+        )
+          flags.push("SUG");
+        return `${r.slug}\t${r.title}\t${flags.join(",")}`;
+      });
+
     let out = `TOTAL: ${rows.length} tarif\n\n`;
     out += `tipNote boş: ${emptyTip} (%${((emptyTip / rows.length) * 100).toFixed(1)})\n`;
     out += `servingSuggestion boş: ${emptyServ} (%${((emptyServ / rows.length) * 100).toFixed(1)})\n`;
@@ -93,8 +118,17 @@ async function main() {
       out += `  [${n}x] ${s}\n`;
     }
     out += `\nfirst 20 empty-tip slugs:\n${emptyTipSlugs.slice(0, 20).map((s) => "  " + s).join("\n")}\n`;
+    out += `\n📊 Boilerplate eslesen tarif: ${boilerplateRows.length}\n`;
     fs.writeFileSync("tmp-tipnote-audit.txt", out, "utf-8");
+    fs.writeFileSync(
+      "docs/mod-g-boilerplate-slugs.txt",
+      `# Mod G Batch input (oturum 21 prep)\n# Toplam boilerplate: ${boilerplateRows.length}\n# Kolonlar: slug \\t title \\t flags (TIP=tipNote boilerplate, SUG=servingSuggestion boilerplate)\n\n${boilerplateRows.join("\n")}\n`,
+      "utf-8",
+    );
     console.log(out);
+    console.log(
+      `\n✅ docs/mod-g-boilerplate-slugs.txt yazildi (${boilerplateRows.length} slug)`,
+    );
   } finally {
     await prisma.$disconnect();
   }

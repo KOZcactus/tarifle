@@ -3134,3 +3134,142 @@ Claude: commit + push, FUTURE_PLANS Retrofit-N revize tamam işaretle
 
 4 batch (12r/13r/14r/15r) sonrası 400 tarif scaffold'dan arındırılmış olur. **Mod FA pipeline kapanır.**
 
+---
+
+## 17. Mod G, tipNote + servingSuggestion BOILERPLATE → tarif-özgü revize (oturum 21)
+
+### 17.1 Hedef
+
+Mod A teslimleri zamanla `tipNote` ve `servingSuggestion` alanlarını
+DOLDURDU (%100 coverage). Ama **kalite homojen değil**: ~417 tarifte
+generic boilerplate cümleler tekrarlanıyor:
+
+- `"Soğuk servis edin."` → 105 tarif
+- `"Sıcak servis edin."` → 96 tarif
+- `"Ilık servis edin."` → 63 tarif
+- `"Pişmeye başlamadan önce tüm malzemeleri doğrayıp tezgahta dizmek tat dengesini bozmadan akışı korur."` → 8 tarif (tip)
+- `"Taze dilimlenmiş ekmek ve yanında mevsim yeşillikleriyle derin tabakta verin."` → 18 tarif
+- ... (5+ kullanım eşiği üstü tüm boilerplate'ler)
+
+Bu cümleler "doğru ama bilgi vermez" tipinde. Bir muhallebi tarifinde
+"Soğuk servis edin." otomatik anlaşılır, kullanıcıya değer katmaz.
+Mod G hedefi: **boilerplate'leri tarif-özgü cümleyle değiştirmek**.
+
+**ÖNEMLİ İLKE (Kerem direktifi)**: Her tarife yeni cümle yazılmaz;
+**sadece tarifin gerçek içeriğine UYGUN, tarif-özgü cümle anlam**
+**katacaksa** yazılır. Tarif gerçeği bozmaması, yanlış bilgi vermemesi
+şart. Generic doğru cümle, tarife uymayan "renkli" cümleden iyidir.
+
+### 17.2 Input + Output
+
+**Input dosyası**: `docs/mod-g-boilerplate-slugs.txt`
+- Her satır: `slug \t title \t flags` (TIP veya SUG veya TIP,SUG)
+- audit-tipnote-coverage.ts üretir, oturum başına 1 kez koşturulur
+
+**Output JSON**: `docs/mod-g-batch-NN.json`
+```json
+[
+  {
+    "slug": "tahin-pekmez-bazlama-tostu-konya-usulu",
+    "tipNote": "Tahini erken karıştırmak pekmezin akıcılığını korur, hamur fazla yapışmaz.",
+    "servingSuggestion": "Bazlamayı kalın dilimleyip yan tarafa bir bardak demli çay ve bir kaşık tereyağı koyun."
+  },
+  {
+    "slug": "lorlu-patatesli-firin-borek-eskisehir-usulu",
+    "tipNote": null,
+    "servingSuggestion": "Sıcakken üstüne çörek otu serpip yanına bir kase soğuk yoğurt ve naneli ezme ile tabağa alın."
+  }
+]
+```
+
+- Sadece değiştirilecek alan (`tipNote` veya `servingSuggestion`) yer alır
+- `null` = mevcut kalır (sadece bir alan revize ediliyorsa)
+- Tarif başka alanlarına dokunulmaz
+
+### 17.3 Kalite kuralları (ZORUNLU)
+
+**1. Tarif-özgü kelime referansı (en az bir):**
+   - Tarif başlığında geçen ana malzeme adı (örn. "tahin", "patates")
+   - Pişirme yöntemi (örn. "fırın", "ızgara", "kavurma")
+   - Bölgesel/kültürel referans (örn. "Konya", "İftar sofrası")
+   - Servis bağlamı (örn. "demli çay", "ayran", "limon dilimi")
+
+**2. Minimum kelime sayısı:**
+   - tipNote: ≥ 8 kelime (somut ipucu)
+   - servingSuggestion: ≥ 8 kelime (somut servis sahnesi)
+   - "Soğuk servis edin." (3 kelime) → REJECT
+
+**3. Maksimum kelime sayısı:**
+   - tipNote: ≤ 25 kelime (tek cümle)
+   - servingSuggestion: ≤ 30 kelime (tek-iki cümle)
+
+**4. YASAK kalıplar:**
+   - Generic "...servis edin." başlangıcı (tek başına)
+   - "Yanına ... ile ikram edebilirsiniz." (uzatma cümlesi)
+   - "Misafirleriniz çok sevecek." (subjective satış cümlesi)
+   - "Mutlaka deneyin." (komut)
+   - "Çok kolay!" (yargı)
+   - Em-dash (—)
+
+**5. Doğruluk (kritik):**
+   - Tarifin GERÇEK ingredient + step listesine bak
+   - Cümlede geçen yan-malzeme listede yoksa YAZMA (örn. "yanına nar dilimi"
+     ekleme, eğer tarif nar içermiyorsa)
+   - Pişirme yöntemini (fırın/ocak/buğulama) tarifin step'lerinden teyit et
+   - Bölgesel referans tarif başlığındaki yöre ile uyumlu olmalı
+     (Konya tarifi → Mardin referansı YASAK)
+
+**6. Boilerplate engelleyici:**
+   - Aynı cümleyi iki tarif için kullanma (slug bazlı unique)
+   - "Soğuk/Sıcak/Ilık servis edin" 3-4 kelime YASAK
+   - Önceki batch'lerde kullanılan boilerplate'leri tekrar etme
+
+**7. tipNote vs servingSuggestion ayrımı:**
+   - **tipNote** = pişirme sırasında kullanıcıya bilim/teknik ipucu
+     (örn. "Bademi fazla koyu çekmemek macun gibi sertleşmesini önler.")
+   - **servingSuggestion** = tabağa ne ekleyip nasıl servis edileceği
+     (örn. "Tabağı tahta zemine alıp yanına ince dilimlenmiş limon koyun.")
+   - İki alan farklı amaç, karıştırma
+
+### 17.4 Pipeline (Claude apply)
+
+```
+Kerem: "Mod G. Batch N" tetik (Claude'a)
+  ↓
+Claude: docs/mod-g-boilerplate-slugs.txt'den 100 slug al (chunk N)
+  ↓
+Claude: Codex'e brief §17 + 100 slug listesi + her slug için mevcut
+        tipNote/servingSuggestion + ingredient/step özeti gönder
+  ↓
+Codex: 100 entry JSON döner (sadece revize edilecek alanlar)
+  ↓
+Claude: docs/mod-g-batch-N.json kaydet
+  ↓
+Claude: scripts/apply-mod-g.ts --file docs/mod-g-batch-N.json (dry-run)
+  ↓
+Claude: --apply dev, audit-deep PASS doğrula
+  ↓
+Claude: --apply --confirm-prod
+  ↓
+Claude: commit + push, FUTURE_PLANS Mod G N tamam işaretle
+```
+
+### 17.5 Self-check (Codex teslim öncesi)
+
+1. **Boilerplate engellemesi**: Hiçbir cümle 5+ tarif için tekrar
+   etmemeli (`uniq` ile kontrol).
+2. **Kelime sayısı**: Her tipNote 8-25, her servingSuggestion 8-30.
+3. **Tarif-özgü ref**: Her cümle slug/title'da geçen en az bir
+   anahtar kelimeyi içeriyor (manuel spot check 10 örnek).
+4. **Em-dash**: 0 (— U+2014).
+5. **Yan-malzeme yanlışı**: Cümlede geçen ingredient gerçek listede
+   var mı (10 örnek manuel kontrol).
+
+### 17.6 Beklenen output
+
+- 4-5 batch × 100 tarif = 400-500 tarif revize, ~417 boilerplate
+  tarif tamam (oturum 21'de tespit edilen sayı)
+- Her tarifin tipNote + servingSuggestion'ı tarif-özgü, anlam katar
+- Tarifin gerçeğine UYGUN (yanlış malzeme/yöntem yok)
+- Site açılışı öncesi son kalite katmanı
+

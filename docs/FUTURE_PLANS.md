@@ -15,18 +15,32 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
-<!-- Source-side duplicate cleanup ✅ TAMAM (oturum 21)
-     - audit-duplicate-titles.ts ile 72 grup duplicate (Yuvalama 3+,
-       Gazpacho 3+, harput kofte 3+, vs)
-     - pick-duplicate-canonical.ts auto-pick (en zengin = en cok
-       ingredient/step + en yeni createdAt)
-     - 78 tarif prod rollback (4 chunk x 20, AuditLog timeout
-       sebebiyle), 62 entry source seed-recipes.ts'ten silindi
-     - 16 source-only-yoktu (drift birikimi prod-only kayit)
-     - Prod 3714 -> 3636 tarif net (-78), recompute 36360
-       RecipeDietScore. -->
+### Source-side duplicate cleanup KISMEN tamam (oturum 21)
 
+**Prod KAPALI** (78 tarif silindi, 3714 → 3636), **source AÇIK**:
 
+Yapılanlar:
+- audit-duplicate-titles 72 grup tespit
+- pick-duplicate-canonical.ts ile auto-pick (en zengin)
+- Prod rollback 4 chunk × 20 = 78 tarif silindi (AuditLog'lu)
+- Recompute: nutrition 3636 + diet-score 36360
+
+**Source AÇIK** (yapılması gereken):
+remove-source-slugs.mjs **sadece tek-satır** tarif format'ında çalıştı.
+Eski multi-line tarif kayıtlarında (`{\n    title: ...\n    cuisine: ...\n  }`)
+sadece slug satırı silindi, kalan satırlar orphan oldu, tsc parse fail.
+
+**Çözüm**: git checkout 1bb258e ile source 39a sağlam haline döndü
+(78 entry hala source'ta), ama prod'da yok. **Bir sonraki seed-recipes
+çalışmasında silinmiş slug'lar GERİ GELECEK** (idempotent skip değil,
+slug DB'de yok eklenecek).
+
+**Aksiyon**: Multi-line tarif tespit edip blok bazlı (regex/AST) silen
+yeni script. Geçici workaround: yeni Mod A batch'ler Brief Kural 16
+(dup-check) ile yeni tarifler için duplicate önler, eski source drift'i
+sonraki cleanup pass'e ertelenir.
+
+Tahmini iş: 30 dk (smart-source-clean.mjs script + spot test).
 
 ### Mod FA pipeline TAMAM (oturum 20)
 

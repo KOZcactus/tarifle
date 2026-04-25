@@ -586,39 +586,96 @@ değiştirilebilir veya tamamen kaldırılabilir (Kerem kararı).
 - Haftalık menü planlayıcı "bu haftanın ort. skor" özet
 - AI Asistan "diyet filtresi" artık binary değil, ağırlıklı öneri
 
-## 13. Faz 2 ilerleme (oturum 20 sonu)
+## 13. Faz 2 ilerleme (oturum 20 sonu, COMPLETE)
 
-Faz 2 USDA enrichment baslatildi:
+Faz 2 USDA enrichment tamamlandi (oturum 20 boyunca single-day ship).
 
-**Tamamlanan**:
+**Tamamlanan (14 modul)**:
 - NutritionData schema 5 yeni kolon migration (sugar / fiber / sodium /
   satFat / glycemicIndex)
-- USDA seed JSON (data/nutrition-usda-seed.json), top 30 ingredient
-  hand-curated, FDC ID + license + source attribution
-- scripts/seed-nutrition-data.ts (idempotent upsert), dev + prod 30 row
-- Tag retrofit allergen guard fix (oturum 20 audit-deep 26 CRITICAL),
-  cleanup-wrong-veg-tags.ts ile prod'da 48 yanlis tag temizlendi
+- USDA seed JSON: top 130 ingredient (3 batch, 130 row prod'da)
+- scripts/seed-nutrition-data.ts (idempotent upsert + glob loader)
+- src/lib/nutrition/unit-convert.ts (amount parser, 30 unit test PASS)
+- src/lib/nutrition/aggregate.ts (recipe-level aggregate compute)
+- RecipeNutrition tablosu + migration + relation
+- scripts/compute-recipe-nutrition.ts pipeline (3471 row prod)
+- profiles.ts: 6 -> 10 preset (yuksek-lif, dusuk-sodyum, akdeniz,
+  keto-hassas yeni; dusuk-seker proxy -> real)
+- Smart Beta etiketi (scorer.ts isBeta = profile.requiresEnrichedData
+  && slug !== dusuk-seker; Faz 1 stable + dusuk-seker stable)
+- Dinamik approximationFlag (matchedRatio < 0.5 ise ek uyari)
+- compute-diet-scores include nutrition relation, 34710 satir prod
+- Tag retrofit allergen guard fix (audit-deep 26 CRITICAL)
+- cleanup-wrong-veg-tags.ts (48 yanlis tag temizlendi)
+- NutritionInfo component genisleme (sugar/fiber/sodium/satFat ek satir)
+- Blog 41 (diyet-skoru-nasil-hesaplanir) update: 10 preset + Faz 2 detayi
 
-**Kalan (~3 oturum)**:
-- Top 100 ingredient genisletme (70 tane daha hand-curated USDA degerleri)
-- src/lib/nutrition/unit-convert.ts (amount free-text -> gram parser:
-  "1 su bardagi" / "2 yemek kasigi" / "orta boy" / "tutam" gibi)
-- scripts/compute-recipe-nutrition.ts (recipe-level aggregate, per-porsiyon
-  sugar / fiber / sodium / satFat hesaplama, 3471 tarif x 100ish ingredient)
-- profiles.ts dusuk-seker proxy -> real sugar (carb-yuzdesi yerine
-  per-porsiyon sugar miktari < 10g hard floor)
-- 4 yeni preset acma: yuksek-lif (≥8g fiber), dusuk-sodyum (≤600mg/porsiyon),
-  akdeniz (zeytinyagi + balik + lif + dusuk satFat composite), keto-hassas
-  (net carb ≤10g)
-- Beta etiketi dusuk-seker uzerinden kaldirma (Faz 1.5 milestone)
+**Coverage final (top 130 sonrasi prod)**:
+- Tarif sayisi (matchedRatio>=0.5): %92 (3361 sample)
+- Tarif sayisi (0 match): 26 -> 7 (büyük iyilesme)
+- avg per-porsiyon: sugar 6.2g, fiber 2.1g, sodium 195mg, satFat 3.2g
 
-**Coverage tahmini**: top 30 ingredient = ~%43 RecipeIngredient row coverage.
-Top 100 ile ~%75-80, top 200 ile ~%92. Faz 2 hedefi top 100 + amount parser
-+ aggregate. Top 200 Faz 3 polish.
+**Skor son durum (10 preset, prod)**:
+- dengeli 37.9 | yuksek-protein 32.4 | dusuk-kalori 71.9 (Faz 1, stable)
+- vejetaryen-dengeli 52.4 | vegan-dengeli 41.3 (Faz 1, stable)
+- dusuk-seker 64.3 (Faz 2, stable, USDA+proxy fallback)
+- yuksek-lif 28.0 | dusuk-sodyum 76.2 | akdeniz 49.8 | keto-hassas 39.0
+  (Faz 2, Beta korur, kullanicilar dinamik flag uyarisi gorur)
 
-**Veri doğruluk yaklaşım**: hand-curated USDA SR Legacy + Foundation Foods
-public-domain values. AI veya scraping degil; FDC ID ile traceability.
-Recipe-level aggregate olusturulurken eslesmeyen ingredient'lar "yaklaşık"
-flag set eder, kullanici disclaimer goruyor (DietFitCard
-approximationFlag).
+**Kalan (Faz 3 polish, opsiyonel)**:
+- Beta etiketi 4 preset'ten kaldirma (launch sonrasi 1-2 hafta izleme
+  sonrasi, yanlis skor sikayet yoksa)
+- Top 131-200 ingredient (kapsam %92 -> %96+)
+- Glycemic Load detayli skor (carbs * GI / 100)
+- Mikronutrient (B12, demir, kalsiyum) Faz 3 katmani
+- Custom diet builder (kullanici kendi agirliklarini sec)
+
+**Veri doğruluk yaklaşım**: 130 ingredient hand-curated USDA SR Legacy +
+Foundation Foods public-domain values. AI veya scraping degil; FDC ID
+ile traceability. Recipe-level aggregate olusturulurken eslesmeyen
+ingredient'lar "yaklaşık" flag set eder, kullanici disclaimer goruyor
+(DietFitCard approximationFlag dinamik).
+
+## 14. Oturum 20 final ship listesi
+
+24 commit, mutlak rekor gun:
+
+**Faz 1** (14 modul, launch-ready):
+1. Schema migration (User.dietProfile + showDietBadge + RecipeDietScore)
+2. Scoring engine + 6 preset + 54 unit test
+3. Pre-compute pipeline (20826 -> 34710 prod skor)
+4. /ayarlar DietPreferenceCard (Beta -> stable)
+5. Tarif detay DietFitCard
+6. RecipeCard badge + 6 listing yuzeyi
+7. Anasayfa 3 shelf
+8. Tag retrofit (vejetaryen %48->%72, vegan %22->%31)
+9. /tarifler "Diyetime uygun" sort tab
+10. AI Asistan + Menu Planner integration
+11. PrivacyCard showDietBadge toggle
+12. DietProfilePromptBanner anasayfa onboarding
+13. E2E test 4 senaryo
+14. Visual regression baseline (15 PNG)
+
+**Faz 2** (14 modul, launch-ready):
+1-14: yukarida listelendi
+
+**Codex retrofit**:
+- Mod F 19/20/21 prod (Mod F 21/27, 2100 tarif retrofit total)
+- Mod FA 12r/13r/14r prod (Mod FA 3/4, 300 tarif scaffold cleanup)
+
+**Cleanup + bug fix + infrastructure**:
+- 3 Sentry prod bug fix (updateTag / CSP worker-src / OG image cookies)
+- 48 yanlis vegan/vejetaryen tag cleanup (allergen guard)
+- DMARC TXT live + 10 Sentry issue temizlik + inbound filter rule
+- Hunger-bar retrofit 1017 tarif
+
+**Icerik**:
+- Blog 41 "Diyet Skoru Nasil Hesaplanir" 1691 kelime
+- DIET_SCORE_PLAN.md 14 bolum (this doc)
+
+**Sonraki oturum (21+) icin**:
+- Codex Mod FA 15r + Mod F 22-23
+- Lighthouse CI kurulum (~1 saat)
+- Beta etiketi 4 preset'ten kaldirma karari
+- 30 Nis 2026 Neon cleanup
 

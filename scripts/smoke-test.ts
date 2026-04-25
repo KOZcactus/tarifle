@@ -67,6 +67,9 @@ async function testCriticalPages(): Promise<void> {
     { path: "/giris", contains: "Giriş" },
     { path: "/kayit", contains: "Kayıt" },
     { path: "/yasal", contains: "Yasal" },
+    // Diyet skoru endpoint'leri (oturum 20 Faz 1+2)
+    { path: "/blog/diyet-skoru-nasil-hesaplanir", contains: "Diyet" },
+    { path: "/tarifler?siralama=diet-fit", contains: "tarif" },
   ];
 
   for (const p of pages) {

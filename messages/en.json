@@ -1359,6 +1359,14 @@
       "errorChange": "Could not change the password.",
       "errorSet": "Could not add the password."
     },
+    "installApp": {
+      "title": "Install the app",
+      "subtitle": "Add Tarifle to your phone or desktop as an app. It opens faster and works offline.",
+      "installed": "Installed as an app. Open it from your home screen.",
+      "nativeCta": "Install App",
+      "iosBody": "In Safari, tap the Share button, scroll down and choose \"Add to Home Screen\".",
+      "fallbackBody": "Use your browser menu's \"Install app\" or \"Add to home screen\" option. In Chrome, look for the install icon in the address bar."
+    },
     "delete": {
       "title": "Danger zone",
       "description": "You can permanently delete your account. This action can't be undone. Your adaptations, collections, likes and notifications will be removed.",

@@ -10,6 +10,10 @@ import {
   trackIosFallbackShown,
   trackPromptAvailable,
 } from "@/lib/pwa-analytics";
+import {
+  setStoredPrompt,
+  type BeforeInstallPromptEventLike,
+} from "@/lib/pwa-prompt-store";
 
 /**
  * "Ana ekrana ekle" promosyon bandı, mobil retention loop.
@@ -22,41 +26,30 @@ import {
  * gerekiyor. User-agent'tan iOS Safari tespiti yapılıp talimat modu
  * render edilir ("Paylaş → Ana Ekrana Ekle").
  *
- * Zamanlama kuralları (session 11 refinement):
- *   - İlk ziyarette GÖSTERILMEZ. Kullanıcı siteyi tanımadan install
- *     teklifi conversion'ı düşürür (premature commitment).
- *   - 2. ziyaret veya aynı ziyarette 45s+ aktif süre → banner uygun.
- *   - 3s güvenlik gecikmesi (CLS'yi bozmasın) + engagement check.
+ * Zamanlama kuralları (session 21 refinement, kullanıcı geri bildirim):
+ *   - İlk ziyaret: 45s engagement gate.
+ *   - 2+ ziyaret: 3 dakika delay (kullanıcı siteye odaklansın, banner
+ *     anında çıkıp dikkati dağıtmasın).
  *
- * Dismissal progressive:
- *   - 1. dismiss → 30 gün cooldown
- *   - 2. dismiss → 90 gün cooldown
- *   - 3. dismiss → kalıcı, hiç gösterilmez (ısrar karşıtı hedef kitle).
+ * Dismissal:
+ *   - 1 dismiss → kalıcı sessizlik. Banner bir daha kendiliğinden çıkmaz.
+ *   - Kullanıcı `/ayarlar` sayfasında "Uygulamayı Yükle" buton ile
+ *     manuel olarak install isteyebilir (deferredPrompt shared store).
  *
  * Zaten installed (`display-mode: standalone`) veya iOS
  * `navigator.standalone` true ise hiç render edilmez.
  */
 
-interface BeforeInstallPromptEvent extends Event {
-  prompt: () => Promise<void>;
-  userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
-}
+type BeforeInstallPromptEvent = BeforeInstallPromptEventLike;
 
 const DISMISS_KEY = "pwa-install-dismissed-at";
-const DISMISS_COUNT_KEY = "pwa-install-dismiss-count";
 const VISIT_COUNT_KEY = "pwa-visit-count";
 const VISIT_SEEN_KEY = "pwa-visit-session-seen";
 
-// Progressive cooldown: 1→30 gün, 2→90 gün, 3+→kalıcı sessizlik
-const DISMISS_COOLDOWNS_MS = [
-  30 * 24 * 60 * 60 * 1000,
-  90 * 24 * 60 * 60 * 1000,
-];
-
-const SHOW_DELAY_MS = 3000;
-// Engagement gate: 2+ ziyaret VEYA aynı session'da 45s+ aktif süre
+// 1 dismiss → kalıcı sessizlik. Manuel istek /ayarlar sayfasında.
+const SHOW_DELAY_MS = 180_000; // 2+ ziyarette 3 dakika
 const MIN_VISITS = 2;
-const ENGAGEMENT_MS = 45_000;
+const ENGAGEMENT_MS = 45_000; // İlk ziyaret minimum aktif süre
 
 type Mode = "hidden" | "native" | "ios";
 
@@ -77,18 +70,9 @@ function isStandalone(): boolean {
   return nav.standalone === true;
 }
 
-function wasRecentlyDismissed(): boolean {
+function wasDismissed(): boolean {
   try {
-    const raw = localStorage.getItem(DISMISS_KEY);
-    if (!raw) return false;
-    const ts = Number(raw);
-    if (!Number.isFinite(ts)) return false;
-    const count = Number(localStorage.getItem(DISMISS_COUNT_KEY) ?? "1");
-    // 3+ dismiss → kalıcı sessizlik (hiçbir cooldown eşleşmesin)
-    if (count >= DISMISS_COOLDOWNS_MS.length + 1) return true;
-    const cooldown =
-      DISMISS_COOLDOWNS_MS[Math.min(count - 1, DISMISS_COOLDOWNS_MS.length - 1)];
-    return Date.now() - ts < cooldown;
+    return localStorage.getItem(DISMISS_KEY) !== null;
   } catch {
     return false;
   }
@@ -117,8 +101,6 @@ function bumpVisitCount(): number {
 function recordDismiss(): void {
   try {
     localStorage.setItem(DISMISS_KEY, String(Date.now()));
-    const count = Number(localStorage.getItem(DISMISS_COUNT_KEY) ?? "0") + 1;
-    localStorage.setItem(DISMISS_COUNT_KEY, String(count));
   } catch {
     /* no-op */
   }
@@ -132,9 +114,11 @@ export function PWAInstallBanner() {
   );
 
   useEffect(() => {
-    if (isStandalone() || wasRecentlyDismissed()) return;
+    if (isStandalone()) return;
+    const dismissed = wasDismissed();
 
-    // Engagement gate: önce visit count'u bump et, sonra karar ver.
+    // Visit count'u her zaman bump et (analytics + manuel install için
+    // store yine de besin). Banner sadece dismiss edilmemişse render.
     const visits = bumpVisitCount();
     const engagedByVisits = visits >= MIN_VISITS;
 
@@ -164,15 +148,18 @@ export function PWAInstallBanner() {
       event.preventDefault();
       const evt = event as BeforeInstallPromptEvent;
       setDeferredPrompt(evt);
+      // Manuel install (profil) icin shared store besle, dismiss durumu
+      // banner'i bastirsa bile profil card kullanabilsin.
+      setStoredPrompt(evt);
       trackPromptAvailable();
-      scheduleReveal("native");
+      if (!dismissed) scheduleReveal("native");
     };
 
     window.addEventListener("beforeinstallprompt", onBeforeInstallPrompt);
 
     // iOS Safari için native event yok, engagement gate ile banner'ı
-    // gecikmeli göster.
-    if (isIosSafari()) {
+    // gecikmeli göster (dismiss edilmemisse).
+    if (!dismissed && isIosSafari()) {
       const showIos = () => {
         reveal("ios");
         trackIosFallbackShown();
@@ -189,6 +176,7 @@ export function PWAInstallBanner() {
 
     const onAppInstalled = () => {
       setMode("hidden");
+      setStoredPrompt(null);
       trackAppInstalled();
     };
     window.addEventListener("appinstalled", onAppInstalled);
@@ -209,6 +197,7 @@ export function PWAInstallBanner() {
     const choice = await deferredPrompt.userChoice;
     setDeferredPrompt(null);
     setMode("hidden");
+    setStoredPrompt(null);
     if (choice.outcome === "accepted") {
       trackInstallAccepted();
     } else {

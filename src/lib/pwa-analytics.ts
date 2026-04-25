@@ -77,8 +77,11 @@ export function trackInstallAccepted(): void {
   });
 }
 
-/** Event 3b: native sheet outcome = dismissed, VEYA banner X basıldı. */
-export function trackInstallDismissed(source: "prompt-sheet" | "banner-x"): void {
+/** Event 3b: native sheet outcome = dismissed, VEYA banner X basıldı,
+ *  VEYA /ayarlar manuel install card'da reddedildi. */
+export function trackInstallDismissed(
+  source: "prompt-sheet" | "banner-x" | "manual-card",
+): void {
   Sentry.setTag("pwa.install.outcome", "dismissed");
   Sentry.addBreadcrumb({
     category: "pwa",

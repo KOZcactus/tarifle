@@ -11,6 +11,7 @@ import { PreferencesCard } from "@/components/profile/PreferencesCard";
 import { PrivacyCard } from "@/components/profile/PrivacyCard";
 import { PantryPreferencesCard } from "@/components/profile/PantryPreferencesCard";
 import { DietPreferenceCard } from "@/components/profile/DietPreferenceCard";
+import { InstallAppCard } from "@/components/profile/InstallAppCard";
 import { DeleteAccountCard } from "@/components/profile/DeleteAccountCard";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -127,6 +128,8 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
         />
 
         <DietPreferenceCard initialDietProfile={user.dietProfile} />
+
+        <InstallAppCard />
 
         <DeleteAccountCard
           username={user.username}

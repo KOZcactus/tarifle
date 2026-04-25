@@ -1,0 +1,3309 @@
+[
+  {
+    "slug": "erikli-seftali-salata-canakkale-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Şeftalileri ve erikleri yıkayıp kurulayın, çekirdeklerini çıkararak 1 cm kalınlığında dilimleyin."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Rokayı sirkeli suda 5 dakika bekletip iki kez durulayın, yapraklar ıslak kalırsa meyve suyunu inceltir.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Zeytinyağı, limon suyu, az bal ve tuzu küçük kasede 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Meyve dilimlerini roka ve taze nane ile geniş kasede alttan üste doğru harmanlayın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sosu servis öncesi gezdirin, iri dilimleri ezmeden tabağa aktarın ve bekletmeden sunun, böylece şeftali ve erik dilimleri sulanmadan parlak kalır."
+      }
+    ],
+    "notes": "CSV kaynak adımları, Yemek.com mevsim salatası ve Nefis Yemek Tarifleri semizotu salatası; yıkama, kurutma ve sosu son anda ekleme doğrulandı."
+  },
+  {
+    "slug": "erikli-semizotu-salatasi-ayvalik-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Semizotunun kalın saplarını ayıklayın, yaprakları bol suda yıkayıp süzgeçte kurutun."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Erikleri ikiye bölüp çekirdeklerini çıkarın, ince ay dilimleri halinde doğrayın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Süzme yoğurt, ezilmiş sarımsak, zeytinyağı ve tuzu 45 saniye pürüzsüz olana kadar çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Semizotunu yoğurtlu sosla nazikçe karıştırın, yapraklar kırılırsa salata çabuk sulanır."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Erik dilimlerini üstte bırakın, pul biber ve zeytinyağı gezdirip soğuk servis edin, böylece erik dilimleri yoğurtlu tabanı sulandırmaz."
+      }
+    ],
+    "notes": "CSV kaynak adımları, Nefis Yemek Tarifleri yoğurtlu semizotu ve Yemek.com mevsim salatası; semizotu kurutma ve yoğurtlu sos tekniği kontrol edildi."
+  },
+  {
+    "slug": "erikli-tavuk-salata-kocaeli-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pişmiş tavuk etini lif lif ayırın, iri parçaları 2 cm boyunda kısaltın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Erikleri çekirdeklerinden ayırıp ince dilimleyin, yeşillikleri yıkayıp tamamen süzdürün."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hardal, limon suyu, zeytinyağı ve tuzu kapaklı kavanozda 30 saniye çalkalayın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tavuğu sosun yarısıyla karıştırın, et kuru kalmasın diye 5 dakika bekletin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yeşillik, erik ve tavuğu birleştirin, kalan sosu gezdirip fazla ezmeden servis edin."
+      }
+    ],
+    "notes": "CSV kaynak adımları, Yemek.com hardallı patates salatası ve Tasting Table gỏi gà; proteinli salatada soslama ve bekletme sırası doğrulandı."
+  },
+  {
+    "slug": "erikli-yarma-salata-igdir-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yarmayı yıkayıp bol suda 18 dakika diri kalacak şekilde haşlayın.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Süzülen yarmayı tepsiye yayın ve 10 dakika soğutun, sıcak kalırsa erik yumuşar.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Erikleri çekirdeklerinden ayırın, ekşi tadı dengeli dağılsın diye ince doğrayın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Maydanoz, taze soğan, limon suyu ve zeytinyağını yarmayla karıştırın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Erikleri en son ekleyin, tuzunu ayarlayıp oda sıcaklığında servis tabağına alın."
+      }
+    ],
+    "notes": "CSV kaynak adımları, Yemek.com kısır ve Yemek.com kuru börülce salatası; tahılın diri kalması, soğutma ve ekşili sos dengesi doğrulandı."
+  },
+  {
+    "slug": "eristeli-yesil-mercimek-salatasi-kayseri-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yeşil mercimeği yıkayıp 15 dakika orta ateşte diri kalacak şekilde haşlayın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Erişteyi ayrı tencerede 8 dakika haşlayın, süzüp bir kaşık zeytinyağıyla karıştırın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Mercimeği soğuk sudan geçirin, kabukları dağılmasın diye süzgeçte fazla çevirmeyin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Maydanoz, taze soğan, kornişon ve limonlu sosu geniş kasede hazırlayın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Mercimek ve erişteyi sosla birleştirin, 5 dakika oda sıcaklığında bekletip servis edin.",
+        "timerSeconds": 300
+      }
+    ],
+    "notes": "CSV kaynak adımları, Yemek.com nohut salatası ve Yemek.com kısır; bakliyatlı salatada ayrı haşlama ve sosu emdirme sırası doğrulandı."
+  },
+  {
+    "slug": "fattoush",
+    "type": "SALATA",
+    "originalStepCount": 4,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pita ekmeğini iri parçalayın, zeytinyağı ve tuzla harmanlayıp 180°C fırında 8 dakika kızartın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sumak, limon suyu, nar ekşisi, sarımsak ve zeytinyağını 1 dakika çırpın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Marul, salatalık, domates, turp ve taze soğanı lokmalık doğrayıp geniş kaseye alın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sebzeleri sosun üçte biriyle karıştırın, fazla sos pitaları yumuşatmasın diye kalanını ayırın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kızarmış pitayı servis anında ekleyin, nane ve maydanozla son kez hafifçe çevirin."
+      }
+    ],
+    "notes": "Bon Appetit fattoush ve Serious Eats Orta Doğu salata pratikleri; pita kızartma, sumaklı sos ve ekmeği son anda ekleme doğrulandı."
+  },
+  {
+    "slug": "fava-izmir-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuru iç baklayı yıkayın, soğanı iri doğrayıp baklayla birlikte tencereye alın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sıcak su, zeytinyağı, şeker ve tuzu ekleyip baklayı 30 dakika yumuşayana kadar pişirin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karışımı blenderdan geçirin, koyu olursa birkaç kaşık sıcak suyla açın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon suyunu ekleyin ve favayı 20 cm genişliğinde kaba yayın, yüzeyi çatlamasın diye üstünü düzleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Oda sıcaklığına gelen favayı 30 dakika buzdolabında bekletin, dereotu ve kırmızı soğanla servis edin.",
+        "timerSeconds": 1800
+      }
+    ],
+    "notes": "Yemek.com fava ve CSV kaynak adımları; kuru bakla pişirme süresi, kıvamın soğudukça sertleşmesi ve dereotlu servis doğrulandı."
+  },
+  {
+    "slug": "feslegenli-karpuz-salatasi-antalya-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karpuzu çekirdeklerinden ayırıp 2 cm küpler halinde kesin, fazla suyunu süzgeçte 5 dakika bekletin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Fesleğen yapraklarını yıkayıp kurulayın, iri yaprakları elinizle ikiye bölün."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Beyaz peynir veya lor parçalarını soğuk tutun, sıcak karpuzla birleşirse dokusu kaymasın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon suyu, zeytinyağı ve az tuzu 30 saniye çırpıp ince bir sos hazırlayın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karpuz, fesleğen ve peyniri tabakta katmanlayın, sosu en son gezdirip hemen sunun."
+      }
+    ],
+    "notes": "CSV kaynak adımları, Yemek.com mevsim salatası ve Bon Appetit yaz salataları; sulu meyveyi süzdürme ve sosu son anda verme doğrulandı."
+  },
+  {
+    "slug": "findikli-elma-salatasi-sinop-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Elmaları kabuklu ince dilimleyin ve kararmasın diye limonlu suyla 1 dakika harmanlayın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Fındıkları iri kırın, küçük parçalar elmanın ferahlığını bastırmasın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Marul veya roka yapraklarını yıkayıp kurutun, servis kasesinin tabanına yayın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yoğurt, bal, limon suyu ve zeytinyağını 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Elma dilimlerini yeşillikle karıştırın, fındık ve sosu üstten ekleyip bekletmeden servis edin."
+      }
+    ],
+    "notes": "CSV kaynak adımları, Yemek.com mevsim salatası ve Nefis Yemek Tarifleri elmalı salata pratikleri; elmayı limonla koruma ve fındığı iri bırakma kontrol edildi."
+  },
+  {
+    "slug": "findikli-pancar-salatasi-ordu-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pancarları kabuklarıyla 25 dakika haşlayın, bıçak zorlanmadan girince sudan alın.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pancarları soğutup kabuklarını soyun, iri rendeleyin ve fazla suyunu hafifçe süzdürün."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Süzme yoğurt, sarımsak, tuz ve zeytinyağını 1 dakika çırpın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Rendelenmiş pancarı yoğurtlu sosla karıştırın, renk eşit dağılana kadar spatula kullanın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Fındığı iri kırıp üstüne serpin, yağını salmasın diye servis öncesi ekleyin."
+      }
+    ],
+    "notes": "Yemek.com yoğurtlu pancar salatası ve CSV kaynak adımları; pancarı yumuşatma, yoğurtlu sos ve kuruyemişi son anda ekleme doğrulandı."
+  },
+  {
+    "slug": "firikli-kabak-kisiri-gaziantep-bag-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Firiği yıkayıp sıcak suyla 12 dakika kısık ateşte yumuşatın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kabağı küçük küp doğrayın, bir kaşık zeytinyağıyla 6 dakika kavurun.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Firiki süzüp tepsiye yayın, buharı çıkmadan yeşillik eklerseniz yapraklar söner."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Domates salçası, nar ekşisi, limon suyu ve pul biberi 45 saniye karıştırın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Firik, kabak, maydanoz ve taze soğanı sosla birleştirin, marulla servis edin, böylece firik taneleri ezilmeden ekşi sosu taşır."
+      }
+    ],
+    "notes": "Yemek.com kısır ve CSV kaynak adımları; tahılı şişirme, kabak dokusunu koruma ve nar ekşili sos oranı doğrulandı."
+  },
+  {
+    "slug": "gavurdagi-salatasi",
+    "type": "SALATA",
+    "originalStepCount": 4,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Domates, salatalık, biber ve soğanı 5 mm küpler halinde doğrayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı sumak ve tuzla 1 dakika ovun, keskinliği yumuşasın diye kenara alın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nar ekşisi, limon suyu, zeytinyağı ve isotla parlak bir sos hazırlayın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Doğranmış sebzeleri sosla karıştırın, domates suyunu salmadan servis tabağına alın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Cevizi iri kırıp üstüne serpin, kıtırlık kaybolmasın diye son anda ekleyin."
+      }
+    ],
+    "notes": "Yemek.com Gavurdağı salatası ve Borsa Restaurant Gavurdağı; küçük doğrama, nar ekşili sos ve cevizi servis öncesi ekleme doğrulandı."
+  },
+  {
+    "slug": "gaziantep-omac",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yufka veya kuru ekmeği avuç içiyle iri ufalayın, çok inceltmeyin ki doku kalsın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Domatesi rendeleyin, biber ve maydanozu ince doğrayıp ayrı kasede toplayın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nar ekşisi, zeytinyağı, pul biber ve tuzu domates suyuyla karıştırın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ufalanmış ekmeği sosla 2 dakika yoğurun, parçalar dağılmasın diye avuçla bastırarak ilerleyin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yeşillikleri ekleyip son kez harmanlayın, kıvam nemli ama hamurlaşmamışken servis edin."
+      }
+    ],
+    "notes": "CSV kaynak adımları, Yemek.com kısır ve Yemek.com Gavurdağı; ekmekli salatada nemlendirme, ekşi sos ve yoğurma dokusu doğrulandı."
+  },
+  {
+    "slug": "giresun-misirli-pancar-diblesi",
+    "type": "SALATA",
+    "originalStepCount": 4,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pancar yapraklarını ayıklayıp bol suda yıkayın, sert sapları 1 cm parçalara kesin."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sapları 6 dakika haşlayın, yaprakları son 2 dakikada ekleyin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Mısır tanelerini süzün, soğanı ince doğrayıp zeytinyağında 5 dakika kavurun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pancar yapraklarını soğan ve mısırla birleştirin, fazla karıştırmayın ki yapraklar ezilmesin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Limon suyu ve pul biberle tatlandırın, ılık ya da oda sıcaklığında servis edin, böylece pancar yaprağı rengini kaybetmeden mısır tatlılığıyla dengelenir."
+      }
+    ],
+    "notes": "CSV kaynak adımları, Yemek.com kuru börülce salatası ve Karadeniz pancar diblesi pratikleri; sap-yaprak sıralaması ve mısırla harmanlama doğrulandı."
+  },
+  {
+    "slug": "goi-cuon",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pirinç vermicellisini 4 dakika haşlayın, soğuk sudan geçirip süzün.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karides, marul, nane, fesleğen ve salatalığı ayrı tabaklara dizin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinç kağıdını ılık suda 8 saniye yumuşatın, fazla beklerse sararken yırtılır.",
+        "timerSeconds": 8
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Marul, erişte, otlar ve karidesi kağıdın alt üçte birine yerleştirin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yanları içe katlayıp sıkı rulo yapın, fıstıklı sos veya nuoc cham ile servis edin, böylece pirinç kağıdı yırtılmadan dolguyu sıkı tutar."
+      }
+    ],
+    "notes": "Vietnam Travel Documents gỏi cuốn ve Travel Food Atlas gỏi cuốn; pirinç kağıdını kısa ıslatma, taze ot ve karidesli sarım doğrulandı."
+  },
+  {
+    "slug": "goi-du-du-tom-vietnam-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yeşil papayayı soyup çekirdeklerini çıkarın, jülyen doğrayıp buzlu suda 10 dakika bekletin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karidesleri kaynar tuzlu suda 2 dakika haşlayın ve hemen soğuk suya alın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Balık sosu, lime suyu, şeker, sarımsak ve biberi şeker eriyene kadar karıştırın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Papaya ve havucu süzün, sosun yarısıyla 2 dakika ovalayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karides, nane ve kişnişi ekleyin, fıstık ve kızarmış arpacıkla servis edin, böylece papaya gevrek kalır ve karides fazla sosla sertleşmez."
+      }
+    ],
+    "notes": "Los Angeles Times gỏi đu đủ tôm ve Vietnamese Cuisines mango salata tekniği; papayayı buzda gevretme ve karidesi kısa haşlama doğrulandı."
+  },
+  {
+    "slug": "goi-ga",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuk etini ince didikleyin, kalın parçaları sosu eşit alması için küçültün."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lahanayı çok ince kıyın, havucu jülyen doğrayın ve kırmızı soğanı tuzla 1 dakika ovun.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Balık sosu, lime suyu, pirinç sirkesi, şeker, sarımsak ve biberi karıştırın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tavuğu sosun yarısıyla 5 dakika bekletin, lifler lezzeti içine alsın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Lahana, havuç, taze nane ve kişnişi tavukla birleştirin, fıstıkla servis edin, böylece lahana diri kalır ve tavuk lifleri sosu eşit taşır."
+      }
+    ],
+    "notes": "Tasting Table gỏi gà ve Bon Appetit gỏi tôm bắp cải; lahanalı taban, balık soslu lime dengesi ve fıstıklı servis doğrulandı."
+  },
+  {
+    "slug": "goi-ga-bap-cai",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Beyaz lahanayı ince şeritler halinde kıyın, havuçla birlikte geniş kaseye alın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Didiklenmiş tavuğu oda sıcaklığına getirin, soğuk tavuk sosu yüzeyde bırakır."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Balık sosu, lime suyu, şeker, sirke ve ezilmiş sarımsağı 1 dakika çırpın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Lahanayı sosun üçte biriyle 2 dakika yoğurun, sertlik kırılıp sulanma başlamasın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tavuk, nane, kişniş ve kızarmış soğanı ekleyin, kalan sosu kontrollü gezdirin, böylece kızarmış soğan nemlenmeden çıtır kalır."
+      }
+    ],
+    "notes": "Tasting Table gỏi gà ve Bon Appetit gỏi tôm bắp cải; lahana masajı, tavuk ekleme sırası ve nước chấm benzeri sos doğrulandı."
+  },
+  {
+    "slug": "goi-xoai-vietnam-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yeşil mangoyu soyup jülyen kesin, lifleri kısa tutmak için çekirdeğe paralel ilerleyin."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Havuç ve salatalığı aynı kalınlıkta doğrayın, fazla suyunu kağıt havluyla alın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karides kullanıyorsanız 2 dakika haşlayıp soğutun, sertleşmemesi için sürede kalın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Balık sosu, lime, şeker, sarımsak ve acı biberi şeker eriyene kadar çırpın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Mango, sebze, otlar ve sosu birleştirin, fıstıkla üstünü tamamlayıp hemen servis edin, böylece mango ekşi diriliğini kaybetmeden fıstıkla birleşir."
+      }
+    ],
+    "notes": "Vietnam Online gỏi xoài ve Vietnamese Cuisines yeşil mango salatası; sert mango seçimi, lime-balıklı sos ve fıstıklı bitiriş doğrulandı."
+  },
+  {
+    "slug": "gravad-patates-salatasi-isvec-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesleri kabuklu halde 18 dakika haşlayın, çatlamadan yumuşayınca süzün.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Patatesleri 10 dakika soğutun ve 1,5 cm küpler halinde doğrayın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hardal, dereotu, limon suyu, zeytinyağı ve az balı 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Patatesleri sosla karıştırın, ezilmemesi için kaşık yerine spatula kullanın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Gravad somon dilimlerini üstte bırakın, dereotu ve kapariyle soğuk servis edin, böylece somon tuzu patates sosunu bastırmaz."
+      }
+    ],
+    "notes": "Yemek.com hardallı patates salatası ve BBC Good Food Niçoise patates yöntemi; patatesi soğutma, hardallı sos ve balıklı servis doğrulandı."
+  },
+  {
+    "slug": "hamsi-pastirmasi-salatasi-trabzon-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Hamsi pastırmasını ince şeritler halinde kesin, tuzu yoğun parçaları ayırın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Roka, maydanoz ve taze soğanı yıkayıp kurutun, balık tuzu yeşilliği söndürmesin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Limon suyu, zeytinyağı ve az karabiberi 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yeşillikleri sosla hafifçe harmanlayın, hamsi şeritlerini üstüne yerleştirin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Mısır ekmeği kırıntısı veya ince turp dilimiyle servis edin, ek sos eklemeyin, böylece hamsi tuzu yeşilliğin tazeliğini gölgelemez."
+      }
+    ],
+    "notes": "CSV kaynak adımları, Yemek.com mevsim salatası ve BBC Good Food Niçoise; balıklı salatada tuz dengesi, yeşilliği kurutma ve sosu ölçülü kullanma doğrulandı."
+  },
+  {
+    "slug": "hardaliyeli-kabak-salatasi-tekirdag-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabakları yarım ay doğrayın, tuzla 5 dakika bekletip fazla suyunu alın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kabakları geniş tavada 6 dakika kavurun, parçalar yumuşayıp ezilmesin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hardal, yoğurt, limon suyu, dereotu ve zeytinyağını 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ilıyan kabağı hardallı sosla karıştırın, sıcak kabak yoğurdu gevşetmesin diye acele etmeyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Dereotu ve pul biberle tamamlayın, soğuk ya da ılık servis edin."
+      }
+    ],
+    "notes": "Yemek.com hardallı patates salatası ve Nefis Yemek Tarifleri yoğurtlu kabak salatası; kabak suyunu alma ve yoğurtlu hardal sos doğrulandı."
+  },
+  {
+    "slug": "hardaliyeli-lahana-salatasi-kirklareli-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Beyaz lahanayı ince kıyın, havuç ve kırmızı soğanı aynı incelikte hazırlayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lahanayı tuz ve sirkeyle 2 dakika ovun, lifleri kırılıp çiğ sertlik azalsın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hardal, zeytinyağı, limon suyu ve az balı küçük kasede karıştırın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Havuç ve soğanı lahanaya ekleyin, sosu azar azar gezdirerek harmanlayın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Maydanoz ve tane karabiberle tamamlayın, 10 dakika serin yerde bekletip servis edin, böylece lahana hardalı içine alır ama suyunu bırakmaz.",
+        "timerSeconds": 600
+      }
+    ],
+    "notes": "Yemek.com mevsim salatası ve Yemek.com hardallı patates salatası; lahanayı ovma, hardallı sos ve kısa bekletme doğrulandı."
+  },
+  {
+    "slug": "hardalli-balik-salatasi-amasra-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ayıklanmış balığı iri lokmalara ayırın, kılçık kalmadığını parmak ucuyla kontrol edin."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Marul, roka ve kırmızı soğanı yıkayıp kurutun, soğanı ince piyazlık doğrayın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hardal, limon suyu, zeytinyağı, kapari ve karabiberi 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yeşillikleri sosun azıyla karıştırın, balığı üstte bırakarak parçalanmasını önleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Turp dilimleri ve dereotuyla servis edin, kalan sosu sofrada ayrıca verin, böylece balık parçaları dağılmadan sosla temas eder."
+      }
+    ],
+    "notes": "BBC Good Food Niçoise ve Yemek.com mevsim salatası; balıklı salatada kılçık kontrolü, hardallı asitli sos ve üstten servis doğrulandı."
+  },
+  {
+    "slug": "hardalli-elma-havuc-salatasi-tekirdag-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Havuçları iri rendeleyin, elmaları ince jülyen kesin ve limonla karıştırın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hardal, süzme yoğurt, zeytinyağı ve elma sirkesini 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Havuç ve elmayı sosla birleştirin, elma kırılmasın diye spatulayla çevirin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Maydanoz ve az ceviz ekleyin, hardal acılığı dengelensin diye 5 dakika bekletin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tuzunu son kez kontrol edin, serin tabakta porsiyonlayıp servis edin."
+      }
+    ],
+    "notes": "Yemek.com hardallı patates salatası ve Yemek.com mevsim salatası; hardallı yoğurt sos, elmayı limonlama ve havuç dokusu doğrulandı."
+  },
+  {
+    "slug": "hardalli-kok-sebze-salatasi-isvec-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pancar, havuç ve kerevizi küçük küpler halinde kesin, boyları eşit olsun."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kök sebzeleri tuzlu suda 12 dakika haşlayın, diri kalınca süzüp soğutun.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hardal, sirke, zeytinyağı ve dereotunu 1 dakika çırpın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Soğuyan sebzeleri sosla karıştırın, pancar renginin her şeyi boyamaması için nazik davranın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Turşu küpleri ve taze soğanla tamamlayın, buzdolabında 15 dakika bekletip servis edin, böylece kök sebzeler sosu çekerken küp formunu korur.",
+        "timerSeconds": 900
+      }
+    ],
+    "notes": "Yemek.com hardallı patates salatası ve BBC Good Food patatesli salata teknikleri; kök sebzeyi diri haşlama ve hardal-sirke sos doğrulandı."
+  },
+  {
+    "slug": "hardalli-lufer-salatasi-canakkale-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lüfer etini iri parçalar halinde ayıklayın, deri ve kılçık kalıntılarını temizleyin."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Roka, marul ve dereotunu yıkayıp kurutun, balıkla birleşmeden önce serin tutun."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hardal, limon suyu, zeytinyağı ve kapariyi 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yeşillikleri sosun yarısıyla harmanlayın, lüferi üstüne yerleştirip kalan sosu damlatın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "İnce kırmızı soğan ve limon kabuğu rendesiyle servis edin, balığı tekrar karıştırmayın, böylece lüfer lifleri kırılmadan tabakta belirgin kalır."
+      }
+    ],
+    "notes": "BBC Good Food Niçoise ve Yemek.com mevsim salatası; balığı üstte bırakma, hardal-limon dengesi ve yeşilliği kurutma doğrulandı."
+  },
+  {
+    "slug": "hardalli-pancar-salatasi-isvec-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pancarları kabuklu halde 25 dakika haşlayın, soğuk sudan geçirip soyun.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pancarları iri küp doğrayın, elma sirkesiyle 5 dakika bekletin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hardal, süzme yoğurt, dereotu ve zeytinyağını 1 dakika çırpın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pancarları sosla karıştırın, rengin açılmaması için yoğurdu azar azar ekleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kornişon ve taze soğanla tamamlayın, soğuk servis edin, böylece pancar rengi sosu boyar ama turşu çıtırlığı kaybolmaz."
+      }
+    ],
+    "notes": "Yemek.com yoğurtlu pancar salatası ve Yemek.com hardallı patates salatası; pancar haşlama, sirkeyle dengeleme ve hardallı yoğurt doğrulandı."
+  },
+  {
+    "slug": "hardalli-patates-salatasi-isvec-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesleri kabuklu şekilde 20 dakika haşlayın, çatlamadan yumuşayınca süzün.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Patatesleri 10 dakika soğutup kabuklarını soyun ve iri küpler halinde kesin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hardal, sirke, zeytinyağı, dereotu ve az balı 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ilık patatesleri sosla buluşturun, nişasta sosu çeksin diye 5 dakika bekletin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kornişon, taze soğan ve karabiber ekleyip soğuk servis edin."
+      }
+    ],
+    "notes": "Yemek.com hardallı patates salatası ve BBC Good Food patatesli Niçoise; patatesi kabuklu haşlama, hardal-sirke sos ve ılık soslama doğrulandı."
+  },
+  {
+    "slug": "hashasli-pancar-salatasi-afyon-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pancarları 25 dakika haşlayın, soğuyunca kabuklarını soyup iri rendeleyin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Haşhaşı kuru tavada 2 dakika kokusu çıkana kadar kavurun.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yoğurt, sarımsak, limon suyu ve tuzu 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pancarı yoğurtlu sosla karıştırın, haşhaşı üstte bırakın ki tane dokusu kaybolmasın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Zeytinyağı ve dereotuyla tamamlayın, serin servis edin."
+      }
+    ],
+    "notes": "Yemek.com yoğurtlu pancar salatası ve CSV kaynak adımları; pancar haşlama, yoğurtlu bağlama ve haşhaşı kavurarak aroma çıkarma doğrulandı."
+  },
+  {
+    "slug": "hashasli-yogurtlu-patates-eskisehir-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesleri kabuklu halde 22 dakika haşlayın, süzüp 10 dakika soğutun.",
+        "timerSeconds": 1320
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Patatesleri iri küp doğrayın, tuz ve limonla hafifçe tatlandırın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Haşhaşı kuru tavada 2 dakika kavurun, acılaşmaması için rengi dönmeden alın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Süzme yoğurt, sarımsak, zeytinyağı ve dereotunu 45 saniye karıştırın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Patatesleri yoğurtlu sosla birleştirin, haşhaşı üstüne serpip soğuk servis edin, böylece haşhaş taneleri yoğurdun içinde yumuşamaz."
+      }
+    ],
+    "notes": "Yemek.com hardallı yoğurtlu patates salatası ve CSV kaynak adımları; patatesi soğutma, yoğurtlu sos ve haşhaş dokusu doğrulandı."
+  },
+  {
+    "slug": "hasselback-pancar-salatasi-isvec-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pancarları kabuklu halde 25 dakika haşlayın ve tamamen soğuyunca soyun.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Her pancarı tabanını koparmadan 4 mm aralıklarla dilimleyin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Zeytinyağı, sirke, hardal ve tuzu 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sosu pancar dilimlerinin arasına fırçayla sürün, aralar kuru kalmasın diye yavaş ilerleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Dereotu, kornişon ve yoğurtla tabağa alın, dilimleri bozmadan servis edin."
+      }
+    ],
+    "notes": "Yemek.com yoğurtlu pancar salatası ve Yemek.com hardallı patates salatası; pancar haşlama, hardallı asit ve hasselback dilimleme doğrulandı."
+  },
+  {
+    "slug": "hatay-nar-eksili-zahter-salatasi",
+    "type": "SALATA",
+    "originalStepCount": 4,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Taze zahteri ayıklayın, sert sapları çıkarıp yaprakları soğuk suda yıkayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Zahteri 5 dakika sirkeli suda bekletin, toprak kokusu kalmasın diye iki kez durulayın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Domates, salatalık ve kırmızı soğanı küçük küpler halinde doğrayın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Nar ekşisi, zeytinyağı, limon suyu ve pul biberi 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Zahter ve sebzeleri sosla harmanlayın, cevizi üstte bırakıp bekletmeden servis edin."
+      }
+    ],
+    "notes": "Yemek.com Gavurdağı salatası ve CSV kaynak adımları; nar ekşili sos, ince sebze doğrama ve aromatik otu fazla bekletmeme doğrulandı."
+  },
+  {
+    "slug": "hellimli-salata",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Hellimi 1 cm kalınlığında dilimleyin, yüzeyindeki fazla tuzu kağıt havluyla alın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavayı ısıtıp hellimleri her yüzü 90 saniye kızarana kadar pişirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Marul, roka, domates ve salatalığı yıkayıp kurutun, iri lokmalık doğrayın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon suyu, zeytinyağı, kekik ve karabiberi 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yeşillikleri sosla karıştırın, sıcak hellimi üstüne yerleştirip hemen servis edin, böylece hellim sıcaklığını korurken yeşillik sönmez."
+      }
+    ],
+    "notes": "Greek Boston horiatiki ve Yemek.com mevsim salatası; peynirli Akdeniz salatasında yeşilliği kurutma, limonlu sos ve hellimi son anda ekleme doğrulandı."
+  },
+  {
+    "slug": "horiatiki-salatasi",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Domatesleri iri kama, salatalığı kalın yarım ay, biberi halka şeklinde doğrayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kırmızı soğanı ince dilimleyin, acılığı yumuşasın diye 5 dakika soğuk suda bekletin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Zeytinyağı, sirke, tuz ve kekiği kavanozda 30 saniye çalkalayın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sebzeleri zeytinle karıştırın, domateslerin suyu boşa akmasın diye ezmeden çevirin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Feta dilimini üstüne koyun, kekik serpip sosun kalanını peynirin çevresine gezdirin."
+      }
+    ],
+    "notes": "Greek Boston horiatiki ve Piedmont Healthcare horiatiki; iri doğrama, zeytin-feta dizimi ve basit zeytinyağı sos doğrulandı."
+  },
+  {
+    "slug": "incirli-kekikli-semizotu-salatasi-aydin-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Semizotu demetini ayıklayın, yıkadıktan sonra yaprakları süzgeçte tamamen kurutun."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "İncirleri dörde bölün, çok olgun parçaları servis üstü için ayırın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Zeytinyağı, limon suyu, taze kekik ve az balı 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Semizotunu kekikli sosun yarısıyla karıştırın, yapraklar sulanmasın diye kısa çevirin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "İncirleri ve lor parçalarını üstte bırakın, kekik serpip bekletmeden servis edin."
+      }
+    ],
+    "notes": "Nefis Yemek Tarifleri semizotu salatası ve Yemek.com mevsim salatası; semizotunu kurutma, meyveyi üstte bırakma ve hafif sos doğrulandı."
+  },
+  {
+    "slug": "izgara-sardalyali-arapsaci-salatasi-izmir-korfez-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Arapsaçını ayıklayın, sert sapları ince kıyıp yaprakları ayrı tutun."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sardalyaları yağlı ızgarada her yüzü 3 dakika pişirin, et kurumasın diye fazla çevirmeyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Arapsaçı saplarını kaynar suda 2 dakika haşlayın, yaprakları son 30 saniyede ekleyin.",
+        "timerSeconds": 150
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon suyu, zeytinyağı ve sarımsağı çırpıp arapsaçıyla karıştırın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sardalyaları salatanın üstüne yerleştirin, balığı parçalamadan limon dilimiyle servis edin."
+      }
+    ],
+    "notes": "BBC Good Food Niçoise ve Yemek.com deniz börülcesi; balıklı salata dizimi, yeşil otu kısa haşlama ve limon-zeytinyağı sos doğrulandı."
+  },
+  {
+    "slug": "kabak-cicegi-salatasi-mugla-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabak çiçeklerinin iç saplarını nazikçe çıkarın, yaprakları yırtmadan soğuk suda çalkalayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Çiçekleri kağıt havlu üzerinde 5 dakika kurutun, ıslak kalırsa sos yaprakları söndürür.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Körpe kabakları ince şeritler halinde doğrayın, lor ve dereotunu hazırlayın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon suyu, zeytinyağı ve az sarımsağı 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kabak şeritlerini sosla harmanlayın, çiçekleri ve loru üstte bırakıp hemen servis edin, böylece çiçek yaprakları yırtılmadan tabakta görünür kalır."
+      }
+    ],
+    "notes": "Yemek.com mevsim salatası ve Ege kabak çiçeği hazırlık pratikleri; narin çiçeği yıkama, kurutma ve sosu son anda verme doğrulandı."
+  },
+  {
+    "slug": "karalahanali-yogurtlu-salata-bartin-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karalahananın kalın damarlarını çıkarın, yaprakları ince şeritler halinde doğrayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karalahanayı tuzlu kaynar suda 4 dakika haşlayın ve soğuk suya alın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yaprakları avuçla sıkıp fazla suyunu çıkarın, yoğurt sulanmasın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Süzme yoğurt, sarımsak, limon suyu ve zeytinyağını 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karalahanayı sosla karıştırın, pul biberli yağ gezdirip soğuk servis edin, böylece karalahana suyu yoğurtlu sosu gevşetmez."
+      }
+    ],
+    "notes": "Nefis Yemek Tarifleri yoğurtlu semizotu ve Yemek.com deniz börülcesi; yeşil yaprağı kısa haşlama, su sıkma ve yoğurtlu sos doğrulandı."
+  },
+  {
+    "slug": "kavrulmus-patlican-salatasi-urfa-usulu",
+    "type": "SALATA",
+    "originalStepCount": 4,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patlıcanları birkaç yerinden delin ve közde ya da ocak üstünde 15 dakika közleyin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Közlenen patlıcanları kapaklı kapta 5 dakika bekletin, kabukları kolay ayrılsın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kabukları soyup fazla suyunu süzün, iri bıçak darbeleriyle doğrayın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Domates, biber, soğan, limon suyu, nar ekşisi ve zeytinyağını ekleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "İsot ve maydanozla tatlandırın, patlıcan lifleri ezilmeden karıştırıp servis edin, böylece köz patlıcan lifleri ezilmeden isli tadı taşır."
+      }
+    ],
+    "notes": "Yemek.com patlıcan salatası ve Yemek.com köz patlıcan salatası; patlıcanı közleme, kabuk soyma ve fazla suyu süzdürme doğrulandı."
+  },
+  {
+    "slug": "kekikli-patlican-sogurtme-denizli-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patlıcanları közde 15 dakika yumuşayana kadar közleyin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kabuklarını soyup süzgeçte 5 dakika bekletin, acı su tabağı sulandırmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Patlıcanı iri doğrayın, limon suyu ve zeytinyağıyla karıştırın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Taze kekik, sarımsak ve tuzu ekleyin, lifleri ezmeden harmanlayın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Domates küpleriyle tabağa alın, kekik dalı ve zeytinyağıyla servis edin, böylece kekik aroması patlıcanın köz tadını örtmez."
+      }
+    ],
+    "notes": "Yemek.com patlıcan salatası ve Yemek.com köz patlıcan salatası; közleme süresi, süzgeçte bekletme ve limonlu sos doğrulandı."
+  },
+  {
+    "slug": "kekikli-taze-badem-salatasi-antalya-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Taze bademleri ikiye bölün, sert iç kabuk kalmışsa uçlarını temizleyin."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Roka, marul ve taze kekiği yıkayıp kurutun, yaprakları iri bırakın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Limon suyu, zeytinyağı, bal ve tuzu 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yeşillikleri sosun yarısıyla karıştırın, bademleri üstte bırakın ki çıtırlık kaybolmasın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Taze kekik ve ince peynir kırığıyla tamamlayıp bekletmeden servis edin."
+      }
+    ],
+    "notes": "Yemek.com mevsim salatası ve Bon Appetit yaz salataları; yeşilliği kurutma, limonlu sos ve kuruyemişi son anda ekleme doğrulandı."
+  },
+  {
+    "slug": "kerevizli-elma-cheddar-salatasi-ingiltere-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kereviz saplarını ince ay şeklinde doğrayın, lifli dış kısımları sıyırın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Elmaları jülyen kesin ve limon suyuyla 1 dakika karıştırın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Cheddar peynirini ince çubuklar halinde kesin, cevizleri iri kırın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yoğurt, hardal, elma sirkesi ve zeytinyağını 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kereviz, elma ve peyniri sosla birleştirin, cevizle üstünü tamamlayıp servis edin, böylece elma kararmadan cheddar ve kerevizle dengelenir."
+      }
+    ],
+    "notes": "Yemek.com hardallı patates salatası ve BBC Good Food salata sos pratikleri; hardallı kremamsı sos, elmayı limonlama ve cevizli bitiriş doğrulandı."
+  },
+  {
+    "slug": "kinoa-pancar-bowl-avustralya-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kinoayı ince süzgeçte yıkayın, acı kabuk tadı kalmasın diye 1 dakika ovalayın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kinoayı 2 ölçü suda 12 dakika pişirin, kapağı kapalı 5 dakika bekletin.",
+        "timerSeconds": 1020
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hazır pancarı küp doğrayın, roka ve salatalığı kurutarak hazırlayın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon suyu, zeytinyağı, hardal ve balı 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kinoa, pancar, yeşillik ve sosu kasede katmanlayın, peynir kırığıyla servis edin."
+      }
+    ],
+    "notes": "Yemek.com yoğurtlu pancar salatası ve BBC Good Food kinoa bowl pratikleri; kinoayı yıkama, demlendirme ve pancarlı katmanlama doğrulandı."
+  },
+  {
+    "slug": "kinoa-salatalik-salatasi-peru-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kinoayı yıkayıp 12 dakika haşlayın, süzgeçte 5 dakika buharını attırın.",
+        "timerSeconds": 1020
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Salatalığı çekirdekli kısmı sulandırmasın diye ortadan kazıyıp küp doğrayın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kırmızı soğanı lime suyunda 5 dakika bekletin, keskinliği dengelensin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kişniş, zeytinyağı, lime suyu ve tuzu kinoayla karıştırın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Salatalık ve soğanı ekleyin, avokado dilimleriyle ezmeden servis edin."
+      }
+    ],
+    "notes": "BBC Good Food kinoa salata pratikleri ve Yemek.com mevsim salatası; kinoayı süzdürme, salatalık suyunu kontrol etme ve lime sos doğrulandı."
+  },
+  {
+    "slug": "kinoa-salatasi",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kinoayı bol suda yıkayıp 12 dakika haşlayın, taneler açılınca süzün.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Süzülen kinoayı geniş tepsiye yayın ve 8 dakika soğutun.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Domates, salatalık, taze soğan, maydanoz ve naneyi küçük doğrayın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon suyu, zeytinyağı ve tuzu 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kinoa ve sebzeleri sosla harmanlayın, taneler ezilmeden servis tabağına alın, böylece kinoa taneleri ayrık kalır ve sebze suyu dibe çökmez."
+      }
+    ],
+    "notes": "Yemek.com kısır ve BBC Good Food kinoa salata pratikleri; tahılı soğutma, küçük doğrama ve limon-zeytinyağı sos doğrulandı."
+  },
+  {
+    "slug": "kirklareli-hardalli-lahana-salatasi",
+    "type": "SALATA",
+    "originalStepCount": 4,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lahanayı ince kıyın, havuç ve maydanozu ayrı kapta hazırlayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lahanayı tuz, sirke ve bir çay kaşığı şekerle 3 dakika ovun.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hardal, yoğurt, zeytinyağı ve limon suyunu 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Havuç ve maydanozu lahanaya katın, sosu ekleyip yapraklar kırılmadan karıştırın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kornişon küpleriyle tamamlayın, 10 dakika serin yerde bekletip servis edin, böylece hardallı sos lahanaya işler ama kornişon kıtır kalır.",
+        "timerSeconds": 600
+      }
+    ],
+    "notes": "Yemek.com mevsim salatası ve Yemek.com hardallı patates salatası; lahanayı ovma, hardallı yoğurt sos ve kısa bekletme doğrulandı."
+  },
+  {
+    "slug": "kirmizi-pancarli-kefir-kasesi-polonya-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pancarı 25 dakika haşlayın, soğuyunca soyup iri rendeleyin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kefir, süzme yoğurt, sarımsak ve dereotunu 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Rendelenmiş pancarı kefirli karışıma ekleyin, renk eşit dağılana kadar karıştırın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Salatalık küplerini ve sert yumurta dilimlerini hazırlayın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kaseyi salatalık, yumurta ve dereotuyla tamamlayın, soğuk servis edin."
+      }
+    ],
+    "notes": "Yemek.com yoğurtlu pancar salatası ve Polish Meals mizeria; pancar haşlama, kefirli soğuk taban ve dereotlu servis doğrulandı."
+  },
+  {
+    "slug": "kisir",
+    "type": "SALATA",
+    "originalStepCount": 4,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "İnce bulguru geniş kaseye alın, sıcak suyu ekleyip üstünü kapatın ve 12 dakika şişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Şişen bulguru çatalla havalandırın, topak kalırsa salça eşit dağılmaz."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Domates salçası, zeytinyağı, tuz ve pul biberi bulgura yedirin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon suyu ve nar ekşisini ekleyin, ekşilik bulgurun her tarafına geçene kadar karıştırın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Taze soğan, maydanoz ve naneyi en son ekleyin, yeşillikler solmadan marulla servis edin."
+      }
+    ],
+    "notes": "Yemek.com kısır ve CSV kaynak adımları; bulguru 10-15 dakika şişirme, salçayı yedirme ve yeşilliği son anda ekleme doğrulandı."
+  },
+  {
+    "slug": "kongnamul-muchim",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soya filizlerini ayıklayın, kabuk kalıntılarını soğuk suda yüzdürerek temizleyin."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Filizleri kapaklı tencerede 7 dakika haşlayın, kapağı erken açmayın ki çiğ koku kalmasın.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Süzülen filizleri soğuk suyla kısa şoklayın ve fazla suyunu bastırmadan alın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sarımsak, susam yağı, tuz, gochugaru ve taze soğanı kasede karıştırın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Filizleri sosla 1 dakika harmanlayın, kavrulmuş susamla servis edin.",
+        "timerSeconds": 60
+      }
+    ],
+    "notes": "Maangchi kongnamul muchim ve Korean Bapsang soya filizi salatası; kapaklı haşlama, susam yağı ve kısa harmanlama doğrulandı."
+  },
+  {
+    "slug": "kornisonlu-yumurta-salatasi-kocaeli-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yumurtaları kaynar suda 9 dakika haşlayın, soğuk suya alıp kabuklarını soyun.",
+        "timerSeconds": 540
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kornişonları küçük küp doğrayın, fazla turşu suyunu süzün."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yumurta sarılarını yoğurt, hardal, zeytinyağı ve karabiberle ezin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yumurta beyazlarını küp doğrayın, kornişon ve dereotuyla sosun içine katın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tuzunu turşuya göre ayarlayın, ekmek üstü ya da marul yaprağında soğuk servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Yumurta karışımını 8 dakika buzdolabında bekletin, kornişon tuzu sosa dengeli geçsin."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Servis öncesi dereotunu yenileyin, yeşil aroma ağır yumurta kokusunu bastırsın."
+      }
+    ],
+    "notes": "Yemek.com hardallı patates salatası ve BBC Good Food Niçoise yumurta tekniği; yumurta haşlama, kornişon tuzu ve hardallı bağlama doğrulandı."
+  },
+  {
+    "slug": "koruklu-marul-salatasi-tekirdag-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Marul yapraklarını ayırıp sirkeli suda 5 dakika bekletin, sonra kurutun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Koruğu havanda hafifçe ezin, çekirdekleri kırmamaya dikkat edin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Koruk suyu, zeytinyağı, tuz ve az pekmezi 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Marul, salatalık ve taze soğanı iri doğrayın, sosla kısa karıştırın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ekşilik keskinse birkaç domates dilimi ekleyin, bekletmeden servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Marulu sosladıktan sonra 3 dakika içinde tabağa alın, koruk asidi yaprakları yumuşatmasın."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Servis tabağının altına kuru marul yaprakları serin, altta biriken sos çıtırlığı bozmasın."
+      }
+    ],
+    "notes": "Yemek.com mevsim salatası ve CSV kaynak adımları; yeşilliği kurutma, koruk ekşisini kontrollü verme ve hızlı servis doğrulandı."
+  },
+  {
+    "slug": "koruklu-mercimek-piyazi-izmir-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yeşil mercimeği 15 dakika diri kalacak şekilde haşlayın ve süzün.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kırmızı soğanı piyazlık doğrayın, tuzla 1 dakika ovup acılığını azaltın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Koruk suyu, zeytinyağı, sumak ve karabiberi küçük kasede karıştırın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Mercimeği ılıkken sosla buluşturun, ekşilik tanelere işlesin diye 5 dakika bekletin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Maydanoz ve soğanı ekleyin, yumurta dilimiyle servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Mercimek ılıkken sosu çektiği için yeşillikleri bekleme sonunda ekleyin."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Piyazı servis tabağına yayarken yumurta dilimlerini üste alın, sarılar sosu bulandırmasın."
+      }
+    ],
+    "notes": "Yemek.com nohut salatası ve Yemek.com kuru börülce salatası; bakliyatı diri haşlama, soğan ovma ve ekşili sos emdirme doğrulandı."
+  },
+  {
+    "slug": "koruklu-pancar-salatasi-manisa-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pancarları 25 dakika haşlayın, soğuyunca kabuklarını soyup küp doğrayın.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Koruk suyunu zeytinyağı, tuz ve az bal ile 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pancarları sosla karıştırıp 10 dakika bekletin, ekşi tat içine geçsin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Roka ve taze soğanı yıkayıp kurutun, pancarın üstüne ekleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ceviz veya fındık kırığıyla tamamlayın, renk bulaşmasını azaltmak için son kez çevirmeyin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Pancar marine olurken kaseyi bir kez çevirin, koruk ekşisi küplerin her yüzüne değsin."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Yeşillikleri servis anında ekleyin, pancar rengi yaprakları tamamen boyamasın."
+      }
+    ],
+    "notes": "Yemek.com yoğurtlu pancar salatası ve Yemek.com narlı cevizli pancar salatası; pancar haşlama, ekşili marine ve kuruyemiş bitirişi doğrulandı."
+  },
+  {
+    "slug": "koz-karnabahar-salatasi",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karnabaharı küçük çiçeklere ayırın, kalın sapları ince dilimleyin."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karnabaharı zeytinyağı ve tuzla karıştırıp 200°C fırında 22 dakika kızartın.",
+        "timerSeconds": 1320
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sarımsaklı yoğurt, limon suyu ve tahini 1 dakika çırpın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ilıyan karnabaharı yoğurtlu sosla tabağa alın, sıcak kalırsa sos gevşer."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Nar ekşisi, maydanoz ve kavrulmuş susamla servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Karnabaharı tek kat dizin, parçalar üst üste gelirse kızarmak yerine buharda yumuşar."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Tahinli sosu tabağın altına yayın, kızarmış karnabahar üstte kalınca kenarlar yumuşamaz."
+      }
+    ],
+    "notes": "Yemek.com köz patlıcan salatası ve Bon Appetit roasted vegetable salad pratikleri; fırında kızartma, ılıtma ve yoğurtlu tahinli sos doğrulandı."
+  },
+  {
+    "slug": "koz-misirli-esquites-kase-meksika-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mısır tanelerini tavaya alın, yüksek ateşte 6 dakika yer yer kızarana kadar kavurun.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Köz tadı çıkan mısırı 5 dakika ılıtın, sıcak kalırsa mayonezli sos ayrılır.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yoğurt, az mayonez, lime suyu, acı biber ve tuzu karıştırın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Mısırı sosla birleştirin, kişniş ve taze soğan ekleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Peynir kırığı, lime dilimi ve toz biberle kase içinde servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Mısırı tavada tek kat tutun, tane yüzeyi renk alsın diye sık karıştırmayın."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Peynir ve lime dilimini servis anında ekleyin, sıcak mısır peyniri tamamen eritmesin."
+      }
+    ],
+    "notes": "Serious Eats esquites ve Bon Appetit mısır salatası pratikleri; mısırı kavurma, sosu ılıkken bağlama ve lime-acı dengesi doğrulandı."
+  },
+  {
+    "slug": "kuru-borulce-salatasi-aydin-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuru börülceyi yıkayın, bol suda 35 dakika yumuşayana kadar haşlayın.",
+        "timerSeconds": 2100
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Börülceyi süzüp 10 dakika soğutun, kabuklar ayrılmasın diye karıştırmayın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kırmızı soğanı sumak ve tuzla 1 dakika ovun.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon suyu, nar ekşisi, zeytinyağı ve karabiberi karıştırın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Börülce, soğan, maydanoz ve cevizi sosla birleştirip oda sıcaklığında servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Börülce sosu çektikten sonra tuzu yeniden kontrol edin, bakliyat beklerken ekşiyi dengeler."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Cevizi sofraya çıkmadan hemen önce serpin, yağlı sos içinde yumuşayıp kaybolmasın."
+      }
+    ],
+    "notes": "Yemek.com kuru börülce salatası ve Yemek.com nohut salatası; börülce haşlama, soğan ovma ve nar ekşili sos doğrulandı."
+  },
+  {
+    "slug": "kurutlu-pancar-borani-erzincan-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pancarları kabuklu halde 25 dakika haşlayın, soğutup iri rendeleyin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kurutu ılık suyla açın, pütür kalmasın diye 1 dakika çırpın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sarımsak, zeytinyağı ve tuzu kurutlu sosa ekleyin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pancarı sosla karıştırın, kurut yoğun olduğu için azar azar ekleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ceviz ve pul biberli yağla tamamlayın, soğuk servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kurutlu sos koyu kalırsa pancar suyundan bir kaşık ekleyin, doku kesilmesin."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Boraniyi tabağa yaydıktan sonra ceviz serpin, pütürlü sosun üstü canlı görünsün."
+      }
+    ],
+    "notes": "Yemek.com yoğurtlu pancar salatası ve CSV kaynak adımları; pancar haşlama, kurutu ılık suyla açma ve sarımsaklı borani dokusu doğrulandı."
+  },
+  {
+    "slug": "larb-gai",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yapışmaz tavada tavuk kıymasını 6 dakika suyunu salıp çekene kadar pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kavrulmuş pirinç tozunu hazırlayın, iri kalırsa salatanın dokusu kumlu olur."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Balık sosu, lime suyu, acı biber ve az şekeri karıştırın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ilık tavuk kıymasını sosla buluşturun, aromalar içine işlesin diye 3 dakika bekletin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Arpacık soğan, nane, kişniş ve pirinç tozunu ekleyip marul yapraklarıyla servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tavuk ılıkken otları ekleyin, çok sıcak et nane ve kişnişi karartmasın."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Marul yapraklarını kuru tutun, larb suyu yaprakta birikirse servis elde dağılır."
+      }
+    ],
+    "notes": "Serious Eats Thai chicken larb ve The Guardian larb rehberi; tavuk kıymasını kısa pişirme, lime-balıklı sos ve kavrulmuş pirinç tozu doğrulandı."
+  },
+  {
+    "slug": "lazotlu-kabak-salatasi-artvin-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabakları iri rendeleyin, tuzla 5 dakika bekletip suyunu sıkın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mısır tanelerini tavada 5 dakika kavurun, tatlı kokusu çıkınca alın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kabağı zeytinyağında 6 dakika kavurun, fazla yumuşamadan ocaktan alın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yoğurt, sarımsak ve dereotunu 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ilıyan kabak, mısır ve yoğurtlu sosu karıştırıp pul biberle servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kabak ve mısırı aynı sıcaklığa getirin, yoğurtlu sos bir tarafta gevşemesin."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Pul biberli yağı üstten gezdirin, karıştırırsanız mısır taneleri yoğurt içinde kaybolur."
+      }
+    ],
+    "notes": "Nefis Yemek Tarifleri yoğurtlu kabak salatası ve Serious Eats esquites; kabak suyunu sıkma, mısırı kavurma ve yoğurtla ılıkken birleştirme doğrulandı."
+  },
+  {
+    "slug": "lemongrass-tofu-rice-salad-vietnam-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pirinci yıkayıp 12 dakika haşlayın, süzüp 10 dakika soğutun.",
+        "timerSeconds": 1320
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tofuyu küp doğrayın, limon otu, sarımsak ve soya sosuyla 10 dakika bekletin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tofu küplerini tavada 6 dakika kızartın, dışı renk alınca kenara alın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Salatalık, havuç, nane ve kişnişi ince doğrayın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pirinç, sebze, tofu ve lime sosunu kasede birleştirip fıstıkla servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kızaran tofuyu kağıt havluya alın, fazla yağ pirinç tanelerini ağırlaştırmasın."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Lime sosunu pirince azar azar ekleyin, erişkin ot tadı dengede kalsın diye tadına bakın."
+      }
+    ],
+    "notes": "Bon Appetit gỏi tôm bắp cải ve Vietnam Online gỏi xoài; Vietnam usulü taze ot, lime-balıklı sos dengesi ve tofu pirinç kasesi yapısı doğrulandı."
+  },
+  {
+    "slug": "lima-fasulyeli-kinoa-salata-peru-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kinoayı yıkayıp 12 dakika haşlayın, taneler açılınca süzün.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lima fasulyesini 8 dakika ısıtıp yumuşatın, kabukları dağılmadan süzün.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kırmızı soğan, kişniş, domates ve salatalığı küçük doğrayın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Lime suyu, zeytinyağı, kimyon ve tuzu 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kinoa, fasulye ve sebzeleri sosla karıştırın, avokadoyu üstte bırakarak servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Fasulyeyi kinoaya spatulayla katın, kabukları ayrılırsa kase görünümü bulanıklaşır."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Avokadoyu servis anında ekleyin, lime asidiyle temas süresi uzarsa kenarları kararır."
+      }
+    ],
+    "notes": "BBC Good Food kinoa salata pratikleri ve Yemek.com nohut salatası; tahıl-bakliyat uyumu, lime sos ve fasulyeyi dağıtmadan karıştırma doğrulandı."
+  },
+  {
+    "slug": "lima-mor-misirli-tavuk-salatasi",
+    "type": "SALATA",
+    "originalStepCount": 4,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pişmiş tavuk etini iri didikleyin, kuru kalan parçaları ayırın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mor mısır ve lima fasulyesini 5 dakika ısıtıp süzün.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kırmızı soğanı lime suyunda 5 dakika bekletin, salatayı acılaştırmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Zeytinyağı, lime, kişniş, kimyon ve tuzu 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tavuk, mısır, fasulye, soğan ve sosu birleştirin, avokadoyla servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tavuk ve fasulyeyi sosla önce buluşturun, mısır rengi diğer malzemeyi boyamasın."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Avokado dilimlerini en üste dizin, altta kalırsa karıştırma sırasında ezilir."
+      }
+    ],
+    "notes": "Tasting Table gỏi gà ve BBC Good Food kinoa bowl pratikleri; proteinli salatada soğanı asitle yumuşatma ve bakliyatı ezmeden harmanlama doğrulandı."
+  },
+  {
+    "slug": "limonlu-enginar-salatasi-ege-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Enginarları limonlu suda 12 dakika yumuşayana kadar haşlayın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Enginarları soğutup ince dilimleyin, kararmasın diye üstüne limon gezdirin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Dereotu, taze soğan, zeytinyağı ve limon suyunu kasede karıştırın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Enginar dilimlerini sosla buluşturun, lifleri kırılmasın diye tek yönde çevirin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Bezelye veya iç bakla ile tamamlayın, soğuk servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Enginar dilimlerini limonlu sosla kaplayın, açık yüzeyler beklerken kararmaz."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Dereotunu servis anında serpin, limon asidinde uzun kalırsa kokusu keskinleşir."
+      }
+    ],
+    "notes": "Yemek.com mevsim salatası ve Ege zeytinyağlı enginar pratikleri; enginarı limonlu suda tutma, kısa haşlama ve dereotlu servis doğrulandı."
+  },
+  {
+    "slug": "limonlu-kinoa-salatasi-peru-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kinoayı ince süzgeçte yıkayın ve 12 dakika haşlayın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kinoayı tepsiye yayıp 8 dakika soğutun, buharı kalırsa otlar solar.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Salatalık, domates, taze soğan ve maydanozu küçük doğrayın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon suyu, zeytinyağı, hardal ve tuzu 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kinoa ve sebzeleri sosla karıştırın, limon kabuğu rendesiyle servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kinoayı soslamadan önce tamamen soğutun, sıcak taneler salatalığı yumuşatır."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Limon kabuğunu son anda rendeleyin, uçucu aroma kaybolmadan servis edilsin."
+      }
+    ],
+    "notes": "BBC Good Food kinoa salata pratikleri ve Yemek.com kısır; kinoayı yıkama, soğutma ve limonlu otlu sos doğrulandı."
+  },
+  {
+    "slug": "limonlu-nohutlu-semizotu-mersin-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Semizotunu ayıklayıp yıkayın, yaprakları süzgeçte tamamen kurutun."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Nohutları süzün, kabukları ayrılmış olanları ayıklayın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Limon suyu, zeytinyağı, sarımsak, kimyon ve tuzu 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Nohutu sosla 5 dakika bekletin, ekşilik içine geçsin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Semizotu ve taze soğanı nohuta katın, yaprakları ezmeden servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Nohut sosu çekerken semizotunu ayrı tutun, yapraklar bekleme sırasında diriliğini kaybetmesin."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Servisten önce kasede bir kez alttan üste çevirin, nohutlar dibe toplanmasın."
+      }
+    ],
+    "notes": "Nefis Yemek Tarifleri semizotu salatası ve Yemek.com nohut salatası; semizotu kurutma, nohutlu sos bekletme ve limon dengesi doğrulandı."
+  },
+  {
+    "slug": "limonlu-zeytinli-bulgur-kisiri-mersin-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "İnce bulguru sıcak suyla 12 dakika kapalı şekilde şişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bulguru çatalla ayırın, topak kalırsa limonlu sos eşit yayılmaz."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Limon suyu, zeytinyağı, salça ve pul biberi bulgura yedirin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yeşil zeytinleri halka doğrayın, taze soğan ve maydanozu ince kıyın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Zeytin ve yeşillikleri en son ekleyin, tuzu zeytine göre ayarlayıp servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Zeytini bulgurdan sonra ekleyin, tuzu erken salınırsa ekşilik dengesi şaşar."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Kısırı 5 dakika kapalı bekletin, limon ve zeytin aroması bulgura geçsin."
+      }
+    ],
+    "notes": "Yemek.com kısır ve CSV kaynak adımları; bulguru şişirme, limonlu salçalı sos ve zeytin tuzunu dengeleme doğrulandı."
+  },
+  {
+    "slug": "lisbon-nohutlu-morina-salatasi",
+    "type": "SALATA",
+    "originalStepCount": 4,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tuzlu morinayı kullanıyorsanız suyunu değiştirerek tuzunu alın, hazır balığı iri parçalayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Nohutları süzün, dağılmış kabukları ayıklayın ve oda sıcaklığına getirin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kırmızı soğanı sirke ve limon suyunda 5 dakika bekletin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Zeytinyağı, limon suyu, maydanoz ve karabiberi 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Nohut, morina, soğan ve sosu birleştirin, yumurta dilimleriyle servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Morina parçalarını en son katın, karıştırma uzarsa balık lifleri nohut arasında kaybolur."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Yumurta dilimlerini tabağın kenarına alın, sarılar sosu bulandırmasın."
+      }
+    ],
+    "notes": "BBC Good Food Niçoise ve Yemek.com nohut salatası; balıklı bakliyat salatasında tuz kontrolü, soğanı asitleme ve yumurtalı servis doğrulandı."
+  },
+  {
+    "slug": "lorlu-kabak-salatasi-mugla-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabakları yarım ay doğrayın, zeytinyağında 6 dakika diri kalacak şekilde kavurun.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kabağı geniş tabağa alın ve 8 dakika ılıtın, sıcak kalırsa lor sulanır.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lor, dereotu, limon kabuğu ve karabiberi ayrı kasede karıştırın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kabakları limon suyu ve zeytinyağıyla harmanlayın, lorlu karışımı üstüne yayın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ceviz veya badem kırığıyla tamamlayıp ılık servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Lorun bir kısmını servis üstüne ayırın, kabakla karışan peynir görünümü ağırlaştırmasın."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Ilık servis edecekseniz tabağı önceden serinletin, kabak buharı loru sulandırmasın."
+      }
+    ],
+    "notes": "Nefis Yemek Tarifleri yoğurtlu kabak salatası ve Yemek.com mevsim salatası; kabakları diri kavurma, ılıtma ve loru son anda ekleme doğrulandı."
+  },
+  {
+    "slug": "lorlu-zahter-salatasi-kilis-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Zahteri ayıklayın, sert sapları çıkarıp yaprakları bol suda yıkayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yıkanmış zahteri 5 dakika sirkeli suda bekletin ve tamamen süzdürün.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lor peynirini zeytinyağı, pul biber ve limon kabuğuyla karıştırın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Domates ve salatalığı küçük doğrayın, zahterle birlikte kaseye alın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Nar ekşili zeytinyağı sosunu gezdirin, loru üstte bırakıp bekletmeden servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Zahter yapraklarını soslamadan önce kurulayın, su kalırsa nar ekşisi incelir."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Loru son katmanda bırakın, aromatik yaprakların arasında ezilip hamurlaşmasın."
+      }
+    ],
+    "notes": "Yemek.com Gavurdağı salatası ve CSV kaynak adımları; aromatik otu temizleme, nar ekşili sos ve lorlu servis doğrulandı."
+  },
+  {
+    "slug": "mamzana-tekirdag-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patlıcan ve biberleri ocak üstünde 15 dakika közleyin, kabukları kabarınca alın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Közlenen sebzeleri kapaklı kapta 5 dakika bekletin, kabuklar kolay soyulsun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Patlıcan, biber ve domatesi soyup küçük doğrayın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sarımsak, sirke, zeytinyağı ve tuzu karıştırıp sebzelerin üstüne gezdirin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Maydanozla tamamlayın, köz tadı kaybolmasın diye soğuk servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Köz sebzeleri doğradıktan sonra 5 dakika süzgeçte bekletin, tabakta acı su birikmesin."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Sirkeyi azar azar ekleyin, köz tadı korunurken asit öne fırlamasın."
+      }
+    ],
+    "notes": "Yemek.com patlıcan salatası ve Yemek.com köz patlıcan salatası; közleme, kapaklı kapta bekletme ve sarımsaklı sirke sos doğrulandı."
+  },
+  {
+    "slug": "marakes-kayisili-kuskus-salatasi",
+    "type": "SALATA",
+    "originalStepCount": 4,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuskusu sıcak su ve tuzla kapatın, 8 dakika şişmesini bekleyin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kuskusu çatalla havalandırın, topaklar kalırsa sos eşit dağılmaz."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kuru kayısıyı küçük küp doğrayın, bademi iri kırın ve maydanozu kıyın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon suyu, zeytinyağı, tarçın, kimyon ve az balı 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kuskus, kayısı, badem, nohut ve sosu karıştırıp nane ile servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kayısıyı sosla 5 dakika bekletin, kuruluk yumuşasın ve baharatı içine alsın."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Nane yapraklarını son anda koparın, kuskusun sıcaklığı ferah kokuyu azaltmasın."
+      }
+    ],
+    "notes": "The Guardian kayısılı kuskus pratikleri ve Yemek.com kısır; kuskusu şişirme, çatalla havalandırma ve tatlı-ekşi baharat dengesi doğrulandı."
+  },
+  {
+    "slug": "maydanozlu-fasulye-piyazi-sinop-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuru fasulyeyi yumuşayana kadar 35 dakika haşlayın ve süzün.",
+        "timerSeconds": 2100
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kırmızı soğanı piyazlık doğrayın, sumak ve tuzla 1 dakika ovun.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Maydanozu ince kıyın, sert yumurtayı dilimleyin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon suyu, sirke, zeytinyağı ve karabiberi 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Fasulye, soğan ve maydanozu sosla karıştırın, yumurta dilimleriyle servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Fasulyeyi sosladıktan sonra 8 dakika dinlendirin, kabuklar ekşiyi içine alsın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Yumurta ve maydanozu servis anında ekleyin, sarılar sosla dağılıp görüntüyü bozmasın."
+      }
+    ],
+    "notes": "Yemek.com nohut salatası ve Yemek.com kuru börülce salatası; bakliyatı diri haşlama, soğan ovma ve piyaz tipi ekşili sos doğrulandı."
+  },
+  {
+    "slug": "maydanozlu-findikli-fasulye-salatasi-giresun-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Taze fasulyeyi ayıklayıp 7 dakika diri kalacak şekilde haşlayın.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Fasulyeyi soğuk suya alın, rengi matlaşmasın diye 2 dakika bekletin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Fındığı iri kırın, maydanoz ve taze soğanı ince doğrayın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon suyu, zeytinyağı, sarımsak ve tuzu 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Fasulye, yeşillik ve sosu karıştırın, fındığı son anda ekleyip servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Fasulyeleri kuruladıktan sonra soslayın, su damlaları zeytinyağını yüzeyden iter."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Fındığı iri bırakın, küçük kırıklar sosu emer ve taze fasulye dokusu geride kalır."
+      }
+    ],
+    "notes": "Yemek.com kuru börülce salatası ve BBC Good Food Niçoise; fasulyeyi kısa haşlama, soğuk suyla renk koruma ve fındıklı servis doğrulandı."
+  },
+  {
+    "slug": "maydanozlu-peynir-ezmesi-tekirdag-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Beyaz peyniri çatalla ezin, çok tuzluysa 5 dakika suda bekletip süzün.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Maydanoz, dereotu ve taze soğanı ince kıyın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Zeytinyağı, limon suyu, pul biber ve karabiberi peynirle karıştırın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yeşillikleri ekleyin, peyniri kremaya çevirmeden pütürlü bırakın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ceviz kırığı ve zeytinyağıyla tabağa yayın, kızarmış ekmekle servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Peynir ezmesini 10 dakika serinde bekletin, yağ ve baharat dengeli yayılsın."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Ekmekle servis edecekseniz üstüne son zeytinyağını gezdirin, yüzey kurumasın."
+      }
+    ],
+    "notes": "Yemek.com mevsim salatası ve Akdeniz peynir ezmesi pratikleri; tuz dengeleme, bol maydanoz ve pütürlü ezme dokusu doğrulandı."
+  },
+  {
+    "slug": "mechouia-salatasi",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Biber, domates, soğan ve sarımsağı 200°C fırında 25 dakika közleyin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sebzeleri kapaklı kapta 5 dakika bekletin, kabukları kolay soyulsun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kabukları ve biber çekirdeklerini temizleyin, sebzeleri bıçakla iri kıyın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Zeytinyağı, limon suyu, kimyon, kişniş ve tuzla köz sebzeleri karıştırın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tuna, yumurta, zeytin ve kapariyle üstünü tamamlayıp oda sıcaklığında servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Köz sebzeleri fazla püre yapmayın, mechouia karakteri hafif parçalı kalınca korunur."
+      }
+    ],
+    "notes": "FoodieAtlas mechouia ve Tunisia S.O.S. slata mechouia; köz biber-domates tabanı, kabuk soyma ve tuna-yumurta garnitürü doğrulandı."
+  },
+  {
+    "slug": "mevsim-salatasi",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Marul, mor lahana ve maydanozu sirkeli suda 5 dakika bekletip iyice kurutun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Havucu iri rendeleyin, mor lahanayı çok ince şeritler halinde kesin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Zeytinyağı, limon suyu, nar ekşisi, sirke, tuz ve karabiberi 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Marul, lahana, havuç ve maydanozu geniş kasede birleştirin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sosu servis öncesi ekleyin, yapraklar diriliğini kaybetmeden tabağa alın."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Mor lahanayı sosla kısa ovun, sertliği kırılırken marul yaprakları ezilmesin."
+      }
+    ],
+    "notes": "Yemek.com mevsim salatası ve restoran usulü mevsim salatası; sirkeli su, ince doğrama ve sosu son anda ekleme doğrulandı."
+  },
+  {
+    "slug": "mizeria-polonya-yaz-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Salatalıkları ince halka doğrayın, tuzla karıştırıp 15 dakika bekletin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Salatalıkların suyunu nazikçe sıkın, fazla su kremalı sosu inceltmesin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ekşi krema veya yoğurt, limon suyu, dereotu, şeker ve karabiberi çırpın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Salatalıkları sosla karıştırın, dilimler kırılmasın diye spatulayla çevirin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Üstünü kapatıp 10 dakika soğutun, dereotuyla servis edin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kremalı sosu salatalığa yedirdikten sonra tadına bakın, tuzla çıkan su lezzeti seyreltebilir."
+      }
+    ],
+    "notes": "Polish Meals mizeria ve Polonist mizeria; salatalığı tuzla sulandırma, kremalı dereotu sos ve soğuk servis doğrulandı."
+  },
+  {
+    "slug": "mugla-koruklu-deniz-borulcesi",
+    "type": "SALATA",
+    "originalStepCount": 4,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Deniz börülcesini bol suda yıkayın, sirkeli suda 15 dakika bekletin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kaynar suda 18 dakika haşlayın, rengini koruması için soğuk suya alın.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Saplarından tutup kılçıklarını sıyırın, yumuşak kısımları servis tabağına alın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Koruk suyu, zeytinyağı ve ezilmiş sarımsağı 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sosu börülcenin üstüne gezdirin, tuzu kontrollü kullanıp limon dilimiyle servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Börülce kendi tuzunu taşıdığı için koruklu sosu ekledikten sonra tuzu en son kontrol edin."
+      }
+    ],
+    "notes": "Yemek.com deniz börülcesi ve Yemek.com deniz börülcesi salatası; 15-20 dakika haşlama, kılçık ayıklama ve tuz kontrolü doğrulandı."
+  },
+  {
+    "slug": "naneli-bulgurlu-kabak-salatasi-sanliurfa-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "İnce bulguru sıcak suyla 10 dakika kapalı şekilde şişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kabağı küçük küp doğrayıp zeytinyağında 6 dakika kavurun.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bulguru çatalla havalandırın, kabak sıcakken eklenirse topaklanmasın diye 5 dakika bekletin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon suyu, nar ekşisi, kuru nane ve pul biberi karıştırın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Bulgur, kabak, taze soğan ve sosu birleştirip marulla servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Naneyi elinizle koparıp en son ekleyin, bıçak izi ve sıcak bulgur aromayı karartmasın."
+      }
+    ],
+    "notes": "Yemek.com kısır ve Nefis Yemek Tarifleri yoğurtlu kabak salatası; bulguru şişirme, kabağı diri kavurma ve naneli ekşi sos doğrulandı."
+  },
+  {
+    "slug": "naneli-kabakli-kuskus-salata-avustralya-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuskusu sıcak suyla kapatıp 8 dakika şişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kabağı yarım ay doğrayıp tavada 5 dakika kavurun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kuskusu çatalla ayırın ve 5 dakika soğutun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Nane, limon suyu, zeytinyağı ve karabiberi 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kuskus, kabak, nohut ve sosu karıştırın, beyaz peynirle servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kuskusu soslamadan önce tanelendirin, topak kalırsa kabak ve nane eşit dağılmaz."
+      }
+    ],
+    "notes": "The Guardian kuskus salata pratikleri ve Yemek.com kısır; kuskusu şişirme, kabağı kısa kavurma ve naneli limon sos doğrulandı."
+  },
+  {
+    "slug": "nar-eksili-cokelek-salatasi-hatay-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Çökeleği çatalla iri parçalayın, çok kuruysa bir kaşık zeytinyağıyla yumuşatın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Domates, salatalık, biber ve taze soğanı küçük küpler halinde doğrayın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nar ekşisi, zeytinyağı, zahter ve pul biberi 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sebzeleri sosla karıştırın, çökeleği üstte bırakın ki pütürlü dokusu kaybolmasın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Maydanoz ve cevizle tamamlayın, lavaş yanında bekletmeden servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Çökeleği tuzluysa sosun tuzunu azaltın, nar ekşisiyle birleşince keskinlik artmasın."
+      }
+    ],
+    "notes": "Yemek.com Gavurdağı salatası ve CSV kaynak adımları; nar ekşili sebze tabanı, çökeleği ezmeden ekleme ve zahterli bitiriş doğrulandı."
+  },
+  {
+    "slug": "nar-eksili-karnabahar-salatasi-levant-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karnabaharı küçük çiçeklere ayırın, zeytinyağı ve tuzla harmanlayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karnabaharı 200°C fırında 22 dakika kızartın, kenarları renk alınca çıkarın.",
+        "timerSeconds": 1320
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tahin, limon suyu, nar ekşisi ve sarımsağı 1 dakika çırpın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ilıyan karnabaharı sosla birleştirin, sıcak kalırsa tahinli sos ayrılır."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Maydanoz, nar tanesi ve sumakla servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Nar tanelerini servis anında ekleyin, sıcak karnabahar üzerinde renkleri solmasın."
+      }
+    ],
+    "notes": "Bon Appetit Levant salata pratikleri ve Yemek.com mevsim salatası; karnabaharı kızartma, tahin-nar ekşisi sos ve ılıtma doğrulandı."
+  },
+  {
+    "slug": "nar-eksili-kisir-salatasi-orta-dogu-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Orta Doğu usulü kısır için ince bulguru sıcak suyla 12 dakika kapalı şekilde şişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bulguru çatalla ayırın, salça ve zeytinyağını tanelere yedirin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nar ekşisi, limon suyu, sumak ve pul biberi ekleyip karıştırın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Maydanoz, nane, taze soğan ve domatesi küçük doğrayın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yeşillikleri en son ekleyin, taneler ezilmeden marul yaprağıyla servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Bulguru nar ekşisiyle 5 dakika bekletin, sumak ve ekşi tat tanelere yerleşsin."
+      }
+    ],
+    "notes": "Yemek.com kısır ve Bon Appetit fattoush; bulguru şişirme, nar ekşisi-sumak dengesi ve yeşilliği son anda ekleme doğrulandı."
+  },
+  {
+    "slug": "nar-eksili-kuru-domates-salatasi-diyarbakir-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuru domatesleri sıcak suda 10 dakika bekletin, yumuşayınca süzün.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Domatesleri ince şeritler halinde doğrayın, ceviz ve maydanozu hazırlayın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nar ekşisi, zeytinyağı, sarımsak ve isotla koyu bir sos yapın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kuru domatesi sosla karıştırıp 5 dakika bekletin, ekşilik liflere geçsin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ceviz, maydanoz ve taze soğan ekleyip oda sıcaklığında servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kuru domatesleri sos içinde kısa bekletin, lifler açılır ve cevizle daha dengeli olur."
+      }
+    ],
+    "notes": "Yemek.com Gavurdağı salatası ve CSV kaynak adımları; nar ekşili sos, kuru domatesi yumuşatma ve cevizli servis doğrulandı."
+  },
+  {
+    "slug": "nar-eksili-kuru-domates-salatasi-siirt-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuru domatesleri 10 dakika sıcak suda bekletin ve süzün.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Domatesleri iri doğrayın, yeşil soğan ve maydanozu ince kıyın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nar ekşisi, limon suyu, zeytinyağı ve pul biberi 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Domatesleri sosla 5 dakika bekletin, tuzunu domatesin tuzuna göre ayarlayın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ceviz ve yeşillikleri ekleyip lavaş yanında servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Maydanozu servis öncesi ekleyin, kuru domatesin yoğun yağı yaprakları soldurmasın."
+      }
+    ],
+    "notes": "Yemek.com Gavurdağı salatası ve CSV kaynak adımları; kuru domatesi sıcak suda açma, nar ekşili sos ve cevizli bitiriş doğrulandı."
+  },
+  {
+    "slug": "narenciyeli-avokado-salatasi-kuba-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Portakal ve greyfurtu zarlarından ayırarak dilimleyin, akan suyunu sos için saklayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Avokadoyu yarım ay dilimleyin ve kararmasın diye lime suyuyla kaplayın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Narenciye suyu, zeytinyağı, lime, tuz ve acı biberi 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Marul ve kırmızı soğanı tabağa yayın, avokado ve narenciyeyi üstüne dizin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sosu servis öncesi gezdirin, avokado ezilmesin diye salatayı karıştırmayın."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Narenciye suyunu tabakta biriktirmeyin, avokado dilimleri kayıp üst üste binmesin."
+      }
+    ],
+    "notes": "Yemek.com mevsim salatası ve Bon Appetit narenciyeli salata pratikleri; avokadoyu lime ile koruma, narenciyeyi fileto çıkarma ve üstten soslama doğrulandı."
+  },
+  {
+    "slug": "narenciyeli-semizotu-salatasi-antalya-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Semizotunu ayıklayın, yıkayıp tamamen kurutun."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Portakal dilimlerini zarlarından ayırın, suyunu sos kasesine alın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Portakal suyu, limon, zeytinyağı ve tuzu 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Semizotunu narenciyeli sosun yarısıyla buluşturun, yapraklar sulanmasın diye kısa çevirin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Narenciye dilimleri ve badem kırığıyla tamamlayıp bekletmeden servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Bademi servis anında serpin, narenciye sosunda beklerse çıtır dokusu kaybolur."
+      }
+    ],
+    "notes": "Nefis Yemek Tarifleri semizotu salatası ve Yemek.com mevsim salatası; semizotunu kurutma, narenciye sosu ve kuruyemiş bitirişi doğrulandı."
+  },
+  {
+    "slug": "narli-bulgur-kisiri-mardin-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mardin usulü bulgur tabanı için ince bulguru sıcak suyla 12 dakika kapalı şekilde şişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Şişen bulguru çatalla taneleyin, salça ve zeytinyağını renk eşitlenene kadar yedirin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nar ekşisi, limon, sumak ve pul biberi ekleyip karıştırın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Maydanoz, taze soğan ve naneyi ince kıyın, nar tanelerini ayıklayın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yeşillik ve narı bulgura katın, nar taneleri ezilmeden servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Nar tanelerini bulgur soğuduktan sonra ekleyin, sıcaklık taneleri yumuşatmasın."
+      }
+    ],
+    "notes": "Yemek.com kısır ve Yemek.com Gavurdağı salatası; bulguru şişirme, nar ekşisi-sumak dengesi ve narı ezmeden ekleme doğrulandı."
+  },
+  {
+    "slug": "narli-bulgur-kofte-kasesi-adiyaman-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "İnce bulguru sıcak suyla 10 dakika şişirin ve salçayla yoğurun.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bulgurdan küçük köfteler sıkın, çatlamasın diye avucunuzu hafif ıslatın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Köfteleri kaynar suda 6 dakika haşlayın, yüzeye çıkınca süzün.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Nar ekşisi, limon suyu, zeytinyağı ve pul biberi karıştırın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Köfteleri sos ve yeşillikle kaseye alın, nar taneleriyle servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Bulgur köftelerini süzdükten sonra 5 dakika ılıtın, sıcak köfte yeşillikleri soldurmasın."
+      }
+    ],
+    "notes": "Yemek.com kısır ve Anadolu bulgur köftesi pratikleri; bulguru şişirme, küçük köfte sıkma ve kısa haşlama doğrulandı."
+  },
+  {
+    "slug": "narli-reyhanli-bulgur-salatasi-diyarbakir-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bulguru sıcak suyla 12 dakika kapalı şekilde şişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Şişen bulguru zeytinyağı, salça ve sumakla karıştırın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Reyhan yapraklarını ince kıyın, nar tanelerini ayıklayın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon suyu ve nar ekşisini bulgura ekleyin, ekşilik dengelenene kadar tadın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Reyhan ve narı en son katın, reyhan kararmadan servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Reyhanı avuç içinde ezmeden katın, yapraklar kararırsa salatanın ferahlığı azalır."
+      }
+    ],
+    "notes": "Yemek.com kısır ve Yemek.com Gavurdağı salatası; bulgur salatasında nar ekşisi, sumak ve taze otu son anda ekleme doğrulandı."
+  },
+  {
+    "slug": "narli-turplu-maydanoz-salata-diyarbakir-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Maydanozu yaprak yaprak ayıklayın, yıkayıp tamamen kurutun."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Turpları ince yarım ay doğrayın, acılığı azalması için 5 dakika soğuk suda bekletin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nar tanelerini ayıklayın, beyaz zar kalırsa acılık verir."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Nar ekşisi, limon suyu, zeytinyağı ve sumakla sos hazırlayın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Maydanoz, turp ve narı sosla hafifçe karıştırıp bekletmeden servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Turpları süzüp kuruladıktan sonra ekleyin, sulu kalırsa nar ekşisi sosu incelir."
+      }
+    ],
+    "notes": "Yemek.com mevsim salatası ve Yemek.com Gavurdağı salatası; maydanozu kurutma, turbu suda yumuşatma ve nar ekşili sos doğrulandı."
+  },
+  {
+    "slug": "nicoise-salatasi",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesleri 12 dakika, yumurtaları aynı tencerede 8 dakika haşlayın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Fasulyeleri son 4 dakikada tencereye ekleyin, hepsini süzüp soğuk sudan geçirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yumurtaları soyup dörde bölün, patatesleri kalın dilimleyin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Zeytinyağı, sirke, hardal, sarımsak ve ançüezi 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Marul, patates, fasulye, domates, ton balığı, zeytin ve yumurtayı tabakta bölümler halinde dizin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Sosu üstten gezdirin, ton balığını ezmeden hemen servis edin."
+      }
+    ],
+    "notes": "BBC Good Food salade Niçoise ve Guardian Niçoise rehberi; patates-yumurta-fasulye haşlama, ton balığı ve ançüezli sos doğrulandı."
+  },
+  {
+    "slug": "nohut-salatasi",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Nohutları süzün, kabukları ayrılmış taneleri ayıklayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kırmızı soğanı küçük doğrayın, kornişon ve mısırı hazırlayın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Maydanoz, nane ve dereotunu ince kıyın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Zeytinyağı, nar ekşisi, limon suyu ve tuzu 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Nohut, sebze, yeşillik ve sosu birleştirin, 5 dakika bekletip servis edin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Nohut salatasını kısa bekletin, nar ekşisi tanelere işlerken yeşillikler hala canlı kalır."
+      }
+    ],
+    "notes": "Yemek.com nohut salatası ve Yemek.com kuru börülce salatası; nohutlu salatada ekşili sos, yeşillik ve kısa bekletme doğrulandı."
+  },
+  {
+    "slug": "nohutlu-semizotu-borani-aydin-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Semizotunu ayıklayıp yıkayın, süzgeçte tamamen kurutun."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Nohutları süzün, kabukları ayrılmış taneleri çıkarın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Süzme yoğurt, sarımsak, limon suyu ve zeytinyağını 1 dakika çırpın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Nohutu yoğurtlu sosla karıştırın, semizotunu en son ekleyin ki yapraklar ezilmesin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pul biberli zeytinyağı ve dereotuyla soğuk servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Yoğurtlu karışımı soğuk tutun, semizotu eklendiğinde yapraklar daha diri kalır."
+      }
+    ],
+    "notes": "Nefis Yemek Tarifleri yoğurtlu semizotu ve Yemek.com nohut salatası; semizotunu kurutma, nohutlu borani ve yoğurtlu sos doğrulandı."
+  },
+  {
+    "slug": "nom-hoa-chuoi",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Muz çiçeğinin sert dış yapraklarını ayırın, iç kısmı ince jülyen doğrayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Doğranmış muz çiçeğini limonlu soğuk suda 15 dakika bekletin, kararma olmasın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tavuk veya karidesi lokmalık hazırlayın, nane, kişniş ve fasulye filizini yıkayın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Balık sosu, lime, şeker, sarımsak ve biberi şeker eriyene kadar karıştırın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Muz çiçeğini süzün, protein, otlar ve sosla harmanlayıp fıstıkla servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Muz çiçeğini süzdükten sonra kağıt havluyla alın, su kalırsa balık sosu seyrelir."
+      }
+    ],
+    "notes": "Vietnam Online nộm hoa chuối ve VietnamNet banana blossom salad; muz çiçeğini limonlu suda bekletme, taze ot ve balık soslu karışım doğrulandı."
+  },
+  {
+    "slug": "olivier-salatasi",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patates ve havucu 18 dakika haşlayın, bıçak girince süzüp soğutun.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yumurtaları 9 dakika haşlayın, soğuk suda bekletip soyun.",
+        "timerSeconds": 540
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Patates, havuç, yumurta, turşu ve tavuk veya salamı küçük küpler halinde doğrayın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Bezelye, mayonez, yoğurt, tuz ve karabiberi ekleyip spatulayla karıştırın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Salatayı 20 dakika buzdolabında bekletin, küpler sosla bütünleşince servis edin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Küpleri aynı boyda tutun, mayonezli sos her parçayı eşit kaplasın."
+      }
+    ],
+    "notes": "Food.com Russian Olivier salad ve BBC Good Food patates salatası pratikleri; patates-havuç-yumurta haşlama, küçük küp doğrama ve soğuk dinlendirme doğrulandı."
+  },
+  {
+    "slug": "otlu-bademli-roka-salata-mugla-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Rokayı ve taze otları yıkayın, salata kurutucuda tamamen kurutun."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bademleri kuru tavada 3 dakika kavurun, kokusu çıkınca soğutun.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Limon suyu, zeytinyağı, çiçek balı ve tuzu 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Roka ve otları sosun yarısıyla karıştırın, yaprakların üstüne fazla yük bindirmeyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Badem ve lor kırığıyla tamamlayın, kalan sosu sofrada ayrıca verin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Bademi soğuduktan sonra ekleyin, sıcak kuruyemiş roka yapraklarını soldurmasın."
+      }
+    ],
+    "notes": "Yemek.com mevsim salatası ve Bon Appetit yaz salataları; rokayı kurutma, bademi kısa kavurma ve sosu kontrollü verme doğrulandı."
+  },
+  {
+    "slug": "otlu-kelek-salatasi-van-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Keleği soyup çekirdek yatağını çıkarın, ince yarım ay dilimleyin."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Dilimleri tuzla 5 dakika bekletin, fazla suyunu kağıt havluyla alın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Dereotu, reyhan, maydanoz ve taze soğanı ince doğrayın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon suyu, zeytinyağı, pul biber ve sumakla sos hazırlayın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kelek ve otları sosla birleştirin, çıtır doku kaybolmadan servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Keleği servis öncesi bir kez süzün, tuzla çıkan su ekşi sosu inceltmesin."
+      }
+    ],
+    "notes": "Yemek.com mevsim salatası ve Polonist mizeria; sulu sebzeyi tuzla bekletme, otlu ekşi sos ve hızlı servis doğrulandı."
+  },
+  {
+    "slug": "otlu-pirinc-eristesi-salata-vietnam-usulu",
+    "type": "SALATA",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pirinç eriştesini kaynar suda 4 dakika haşlayın, soğuk sudan geçirip süzün.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Nane, kişniş, Tay fesleğeni, salatalık ve havucu ince doğrayın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Balık sosu, lime suyu, şeker, sarımsak ve biberi şeker eriyene kadar çırpın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Erişteyi sosun yarısıyla karıştırın, topaklanmasın diye iki çatal kullanın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Otlar ve sebzeleri ekleyin, fıstık ve kızarmış soğanla servis edin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Erişteyi sosladıktan sonra otları ekleyin, lime asidi taze yaprakları soldurmasın."
+      }
+    ],
+    "notes": "Vietnam Travel Documents gỏi cuốn ve Bon Appetit gỏi tôm bắp cải; pirinç eriştesini kısa haşlama, taze otlar ve lime-balıklı sos doğrulandı."
+  }
+]

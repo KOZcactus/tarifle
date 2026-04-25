@@ -1,0 +1,1345 @@
+[
+  {
+    "slug": "pekmezli-ayva-tatlisi-nevsehir-usulu",
+    "type": "TATLI",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Ayvaları ikiye bölüp çekirdek yataklarını temizleyin." },
+      { "stepNumber": 2, "instruction": "Ayvaları tencereye dizip pekmez, şeker ve suyu ekleyin." },
+      { "stepNumber": 3, "instruction": "Çekirdekleri tencereye ekleyin, renk solmasın." },
+      { "stepNumber": 4, "instruction": "Tatlıyı kapağı kapalı 30 dakika kısık ateşte pişirin.", "timerSeconds": 1800 },
+      { "stepNumber": 5, "instruction": "Ayvaları tencerede 10 dakika dinlendirin, şerbet içine işlesin.", "timerSeconds": 600 },
+      { "stepNumber": 6, "instruction": "Servis tabağına alıp parlak pekmez şerbetini üstüne gezdirin." },
+      { "stepNumber": 7, "instruction": "Ayvaları 15 dakika ılıtıp kaymakla servis edin.", "timerSeconds": 900 }
+    ],
+    "notes": "Yemek.com ayva tatlisi + Nefis ayva tatlisi; cekirdek rengi, kisik ateste pisirme ve kaymakli servis dogrulandi"
+  },
+  {
+    "slug": "pekmezli-badem-sutlaci-nigde-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pirinci yıkayıp az suyla 10 dakika haşlayın.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Süt ve şekeri ekleyip 10 dakika kısık ateşte pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Pekmezi ocaktan sonra ekleyin, aroması acılaşmasın diye." },
+      { "stepNumber": 4, "instruction": "Bademi kaselere paylaştırılan sütlacın üstüne serpin." },
+      { "stepNumber": 5, "instruction": "Sütlacı 30 dakika dinlendirin, kıvamı kaşıkta otursun.", "timerSeconds": 1800 }
+    ],
+    "notes": "Yemek.com sutlac + pekmezli sutlac pratikleri; pirinc haslama, pekmez ekleme zamani ve bademli servis dogrulandi"
+  },
+  {
+    "slug": "pekmezli-bulgur-peltesi-nevsehir-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Bulguru yıkayıp süzün ve tencereye alın." },
+      { "stepNumber": 2, "instruction": "Bulguru suyla 10 dakika kısık ateşte pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Pekmezi ekleyip 4 dakika karıştırın, dibi tutmasın.", "timerSeconds": 240 },
+      { "stepNumber": 4, "instruction": "Pelteyi kaselere paylaştırıp 20 dakika soğutun.", "timerSeconds": 1200 },
+      { "stepNumber": 5, "instruction": "Cevizi servis öncesi serpin, gevrekliği kaybolmasın." }
+    ],
+    "notes": "Nevsehir bulgur peltesi + pekmezli pelte kaynaklari; bulgur pisirme, pekmezle baglama ve cevizli servis dogrulandi"
+  },
+  {
+    "slug": "pekmezli-cevizli-helva-kasesi-batman-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Cevizi iri kırın ve pekmezi oda sıcaklığında bekletin." },
+      { "stepNumber": 2, "instruction": "Unu yağda 5 dakika açık renk alana kadar kavurun.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Suyu ince akıtarak ekleyin, helva topaklanmasın." },
+      { "stepNumber": 4, "instruction": "Pekmezi ekleyip 3 dakika kısık ateşte toparlayın, helva dağılmasın.", "timerSeconds": 180 },
+      { "stepNumber": 5, "instruction": "Helvayı kaselere alıp cevizle ılık servis edin." }
+    ],
+    "notes": "Yemek.com un helvasi + pekmezli helva kaynaklari; un kavurma, sivi ekleme ve pekmezli toparlama dogrulandi"
+  },
+  {
+    "slug": "pekmezli-cevizli-katmer-kup-sanliurfa-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Katmeri iri parçalara kırın ve cevizleri hazırlayın." },
+      { "stepNumber": 2, "instruction": "Kaymağı kupların tabanına ince kat halinde paylaştırın." },
+      { "stepNumber": 3, "instruction": "Katmer parçalarını kaymak üstüne gevşek yerleştirin." },
+      { "stepNumber": 4, "instruction": "Pekmezi ince gezdirin, katmer dokusu dağılmasın." },
+      { "stepNumber": 5, "instruction": "Cevizi servis öncesi ekleyip kupu bekletmeden sunun." }
+    ],
+    "notes": "Sanliurfa katmer kaynaklari + kup tatli pratikleri; katmer kirma, kaymak katmani ve pekmezli servis dogrulandi"
+  },
+  {
+    "slug": "pekmezli-cevizli-pestil-sarma-sanliurfa-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pestilleri nemli bez arasında 5 dakika yumuşatın.", "timerSeconds": 300 },
+      { "stepNumber": 2, "instruction": "Cevizi iri çekip pekmez ve tarçınla karıştırın." },
+      { "stepNumber": 3, "instruction": "İç harcı pestilin kenarına ince şerit halinde yayın." },
+      { "stepNumber": 4, "instruction": "Pestili sıkı sarın, dilimler açılıp dağılmasın." },
+      { "stepNumber": 5, "instruction": "Sarmaları 10 dakika dinlendirip verev dilimleyin.", "timerSeconds": 600 }
+    ],
+    "notes": "Elazig pestil sarma + Sanliurfa pestil pratikleri; pestil yumusatma, cevizli ic ve dinlendirme dogrulandi"
+  },
+  {
+    "slug": "pekmezli-elma-tatlisi-nevsehir-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Elmaları oyun ve tabanlarını düz kesin." },
+      { "stepNumber": 2, "instruction": "Pekmezli ceviz harcını elmaların içine doldurun." },
+      { "stepNumber": 3, "instruction": "Elmaları fırın kabına dizip az su ekleyin." },
+      { "stepNumber": 4, "instruction": "Tatlıyı 180°C fırında 20 dakika pişirin.", "timerSeconds": 1200 },
+      { "stepNumber": 5, "instruction": "Elmaları 10 dakika ılıtın, dolgu dışarı akmasın.", "timerSeconds": 600 }
+    ],
+    "notes": "Yemek.com elma tatlisi + baked apple kaynaklari; elma oyma, pekmezli dolgu ve firinda pisirme dogrulandi"
+  },
+  {
+    "slug": "pekmezli-findik-ezmeli-kup-giresun-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Labneh ve fındık ezmesini 2 dakika pürüzsüz çırpın.", "timerSeconds": 120 },
+      { "stepNumber": 2, "instruction": "Kup tabanına bisküvi kırıntısını ince kat halinde serpin." },
+      { "stepNumber": 3, "instruction": "Fındıklı kremayı kuplara paylaştırın." },
+      { "stepNumber": 4, "instruction": "Pekmezi servis öncesi gezdirin, krema akmasın." },
+      { "stepNumber": 5, "instruction": "Kup tatlısını 20 dakika soğutup fındıkla tamamlayın.", "timerSeconds": 1200 }
+    ],
+    "notes": "Giresun findik ezmesi pratikleri + cheesecake cup kaynaklari; labneh kremasi, kirinti taban ve pekmezli servis dogrulandi"
+  },
+  {
+    "slug": "pekmezli-findikli-armut-kup-ordu-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Yoğurdu bal ile 1 dakika çırpın.", "timerSeconds": 60 },
+      { "stepNumber": 2, "instruction": "Armutu ince dilimleyip limonla karıştırın, kararmasın diye." },
+      { "stepNumber": 3, "instruction": "Yoğurdu kup tabanlarına paylaştırın." },
+      { "stepNumber": 4, "instruction": "Armut, pekmez ve fındığı katman halinde yerleştirin." },
+      { "stepNumber": 5, "instruction": "Kup tatlısını 15 dakika soğutup servis edin.", "timerSeconds": 900 }
+    ],
+    "notes": "Fruit parfait kaynaklari + Ordu findikli tatli pratikleri; yogurt, armut dilimi ve findikli pekmez servisi dogrulandi"
+  },
+  {
+    "slug": "pekmezli-fistikli-kadayif-kup-gaziantep-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kadayıfı elinizle ufalayın ve eritilmiş tereyağını hazırlayın." },
+      { "stepNumber": 2, "instruction": "Kadayıfı orta ateşte 6 dakika kavurun.", "timerSeconds": 360 },
+      { "stepNumber": 3, "instruction": "Kavruk kadayıfı 8 dakika soğutun, kup kreması erimesin.", "timerSeconds": 480 },
+      { "stepNumber": 4, "instruction": "Kadayıfı kup içine paylaştırıp pekmez gezdirin." },
+      { "stepNumber": 5, "instruction": "Fıstığı en son serpin, çıtırlık kaybolmasın." }
+    ],
+    "notes": "Gaziantep kadayif kaynaklari + kup tatli pratikleri; kadayif kavurma, sogutma ve fistikli servis dogrulandi"
+  },
+  {
+    "slug": "pekmezli-fistikli-muhallebi-kup-gaziantep-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Sütlü muhallebi malzemesini tencerede pürüzsüz çırpın." },
+      { "stepNumber": 2, "instruction": "Fıstıklı muhallebiyi 8 dakika kısık ateşte pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Kuplara paylaştırıp 20 dakika soğutun.", "timerSeconds": 1200 },
+      { "stepNumber": 4, "instruction": "Pekmezi soğuyan muhallebiye gezdirin, yüzey akmasın." },
+      { "stepNumber": 5, "instruction": "Antep fıstığını servis öncesi serpin." }
+    ],
+    "notes": "Yemek.com muhallebi + Antep fistigi tatli kaynaklari; muhallebi pisirme, pekmez ekleme ve fistik servisi dogrulandi"
+  },
+  {
+    "slug": "pekmezli-misir-unu-muhallebisi-trabzon-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Mısır ununu az sütle açın, pütür kalmasın diye." },
+      { "stepNumber": 2, "instruction": "Kalan sütü tencerede 3 dakika ısıtın.", "timerSeconds": 180 },
+      { "stepNumber": 3, "instruction": "Mısır unu ve pekmezi ekleyip 10 dakika pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 4, "instruction": "Muhallebiyi kaselere alın ve 20 dakika dinlendirin.", "timerSeconds": 1200 },
+      { "stepNumber": 5, "instruction": "Cevizi üstüne serpip ılık servis edin." }
+    ],
+    "notes": "Trabzon misir unu muhallebisi + pekmezli muhallebi pratikleri; misir unu acma, 10 dk pisirme ve ceviz dogrulandi"
+  },
+  {
+    "slug": "pekmezli-un-helvasi-amasya-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pekmezi ve sıcak suyu ayrı kapta karıştırın." },
+      { "stepNumber": 2, "instruction": "Unu tereyağında 8 dakika açık kahverengi olana kadar kavurun.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Sıcak pekmezli suyu ince akıtarak ekleyin, sıçramasın diye." },
+      { "stepNumber": 4, "instruction": "Helvayı 3 dakika kısık ateşte toparlayın.", "timerSeconds": 180 },
+      { "stepNumber": 5, "instruction": "Kaşıkla şekil verip 10 dakika dinlendirin.", "timerSeconds": 600 }
+    ],
+    "notes": "Yemek.com un helvasi + Amasya pekmezli helva pratikleri; un kavurma, sicak sivi ve dinlendirme dogrulandi"
+  },
+  {
+    "slug": "pepecura",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Üzüm suyu, şeker, nişasta ve pirinç ununu tencereye alın." },
+      { "stepNumber": 2, "instruction": "Karışımı soğukken çırpın, nişasta topaklanmasın diye." },
+      { "stepNumber": 3, "instruction": "Orta ateşte 18 dakika karıştırarak pişirin.", "timerSeconds": 1080 },
+      { "stepNumber": 4, "instruction": "Pepeçurayı kaselere paylaştırıp yüzeyi düzeltin." },
+      { "stepNumber": 5, "instruction": "En az 40 dakika soğutun, pelte kıvamı otursun.", "timerSeconds": 2400 }
+    ],
+    "notes": "Karadeniz pepecura kaynaklari + pelte teknikleri; uzum suyu, pirinc unu ve sogutma kivami dogrulandi"
+  },
+  {
+    "slug": "pepecura-muhallebisi-trabzon-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Nişastayı üzüm suyuyla pürüzsüz açın, topaklanmasın." },
+      { "stepNumber": 2, "instruction": "Süt ve şekeri tencereye ekleyip karıştırın." },
+      { "stepNumber": 3, "instruction": "Muhallebiyi 10 dakika kısık ateşte koyulaştırın.", "timerSeconds": 600 },
+      { "stepNumber": 4, "instruction": "Kaselere paylaştırıp üstünü kaşıkla düzeltin." },
+      { "stepNumber": 5, "instruction": "Tatlıyı 35 dakika soğutun, üzüm aroması belirgin kalsın.", "timerSeconds": 2100 }
+    ],
+    "notes": "Trabzon pepecura + muhallebi teknikleri; uzum suyu, nisasta acma ve sutlu kivam dogrulandi"
+  },
+  {
+    "slug": "pepecura-peltesi-rize-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Üzüm suyunu tencereye alın ve mısır ununu eleyin." },
+      { "stepNumber": 2, "instruction": "Mısır unu ve şekeri soğukken çırpın, pütür kalmasın diye." },
+      { "stepNumber": 3, "instruction": "Karışımı 12 dakika kısık ateşte koyulaştırın.", "timerSeconds": 720 },
+      { "stepNumber": 4, "instruction": "Pelteyi kaselere alıp 30 dakika soğutun.", "timerSeconds": 1800 },
+      { "stepNumber": 5, "instruction": "Serviste fındık serpin, yüzey nemliyken tutunsun." }
+    ],
+    "notes": "Rize pepecura kaynaklari + misir unlu pelte; soguk cirpma, 12 dk pisirme ve findikli servis dogrulandi"
+  },
+  {
+    "slug": "pestilli-cevizli-sarma-elazig-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pestili tezgaha serip kenarlarını düzgün kesin." },
+      { "stepNumber": 2, "instruction": "Cevizi iri çekip tarçınla karıştırın." },
+      { "stepNumber": 3, "instruction": "İçi pestilin üstüne ince serpin, sararken akmasın." },
+      { "stepNumber": 4, "instruction": "Pestili sıkı rulo yapıp 10 dakika dinlendirin.", "timerSeconds": 600 },
+      { "stepNumber": 5, "instruction": "Ruloyu keskin bıçakla dilimleyip servis edin." }
+    ],
+    "notes": "Elazig pestil sarma + cevizli sucuk pratikleri; pestil kesimi, cevizli ic ve rulo dinlendirme dogrulandi"
+  },
+  {
+    "slug": "peynir-helvali-tart-canakkale-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tart hamurunu kalıba yayın ve tabanı çatalla delin." },
+      { "stepNumber": 2, "instruction": "Hamuru 15 dakika soğutun, fırında çekmesin.", "timerSeconds": 900 },
+      { "stepNumber": 3, "instruction": "Peynir helvasını tabana eşit paylaştırın." },
+      { "stepNumber": 4, "instruction": "Tartı 180°C fırında 25 dakika pişirin.", "timerSeconds": 1500 },
+      { "stepNumber": 5, "instruction": "Kesmeden önce 15 dakika dinlendirin, dolgu dağılmasın.", "timerSeconds": 900 }
+    ],
+    "notes": "Canakkale peynir helvasi + tart teknikleri; soguk taban, peynir helvasi dolgu ve 180C pisirme dogrulandi"
+  },
+  {
+    "slug": "peynir-helvasi-edirne-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Peyniri ufalayın ve irmiği ölçüp hazır edin." },
+      { "stepNumber": 2, "instruction": "İrmiği tereyağında 4 dakika kokusu çıkana kadar kavurun.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Peyniri ekleyip eriyene kadar karıştırın." },
+      { "stepNumber": 4, "instruction": "Şekeri katıp 8 dakika toparlayın, peynir sertleşmesin.", "timerSeconds": 480 },
+      { "stepNumber": 5, "instruction": "Ilık servis edin ve üstüne fıstık serpin." }
+    ],
+    "notes": "Edirne peynir helvasi + Canakkale peynir helvasi kaynaklari; irmik kavurma, peynir eritme ve toparlama dogrulandi"
+  },
+  {
+    "slug": "peynirli-incir-kupu-canakkale-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Bisküvi kırıntısını kup tabanlarına paylaştırın." },
+      { "stepNumber": 2, "instruction": "Labneyi bal ile 2 dakika çırpın.", "timerSeconds": 120 },
+      { "stepNumber": 3, "instruction": "İncirleri küçük doğrayıp cevizle karıştırın." },
+      { "stepNumber": 4, "instruction": "Labneli katı kırıntı üstüne yayın, taban dağılmasın." },
+      { "stepNumber": 5, "instruction": "İncir ve cevizi ekleyip 20 dakika soğutun.", "timerSeconds": 1200 }
+    ],
+    "notes": "Fig cheesecake cup kaynaklari + Canakkale incir tatlisi pratikleri; labne kremasi, incir ve ceviz katmani dogrulandi"
+  },
+  {
+    "slug": "picarones",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Balkabağı ve tatlı patates püresini unla karıştırın." },
+      { "stepNumber": 2, "instruction": "Maya eklenmiş hamuru 45 dakika mayalandırın.", "timerSeconds": 2700 },
+      { "stepNumber": 3, "instruction": "Ellerinizi ıslatıp hamuru halka şekline getirin." },
+      { "stepNumber": 4, "instruction": "Halkaları 170°C yağda 4 dakika kızartın.", "timerSeconds": 240 },
+      { "stepNumber": 5, "instruction": "Şurupla sıcak servis edin, dış kabuk sertleşmesin." }
+    ],
+    "notes": "Peruvian picarones kaynaklari + Latin fried dough teknikleri; mayali pureli hamur, halka sekli ve kizartma dogrulandi"
+  },
+  {
+    "slug": "picarones-kup-tatlisi-peru-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Picarones hamurunu hazırlayıp 35 dakika mayalandırın.", "timerSeconds": 2100 },
+      { "stepNumber": 2, "instruction": "Hamurdan küçük lokmalar koparıp 170°C yağda 6 dakika kızartın.", "timerSeconds": 360 },
+      { "stepNumber": 3, "instruction": "Lokmaları kağıt üstünde 5 dakika süzdürün.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "Kuplara şurup ve lokmaları dönüşümlü yerleştirin." },
+      { "stepNumber": 5, "instruction": "Şurubu servis anında ekleyin, lokmalar dağılmasın." }
+    ],
+    "notes": "Peruvian picarones + cup dessert pratikleri; mayalama, lokma kizartma ve suruplu kup servisi dogrulandi"
+  },
+  {
+    "slug": "portakalli-arroz-con-leche-ispanya-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pirinci yıkayıp sütle tencereye alın." },
+      { "stepNumber": 2, "instruction": "Pirinci sütle 18 dakika kısık ateşte pişirin.", "timerSeconds": 1080 },
+      { "stepNumber": 3, "instruction": "Şeker, portakal kabuğu ve tarçını ekleyin." },
+      { "stepNumber": 4, "instruction": "Karışımı 4 dakika daha pişirin, pirinç yanmasın.", "timerSeconds": 240 },
+      { "stepNumber": 5, "instruction": "Kaselere alıp 30 dakika soğutun.", "timerSeconds": 1800 }
+    ],
+    "notes": "Spanish arroz con leche kaynaklari + rice pudding teknikleri; sutte pirinc, portakal aromasi ve sogutma dogrulandi"
+  },
+  {
+    "slug": "portakalli-bademli-irmik-kup-adana-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Bademleri iri kırın ve portakal kabuğunu rendeleyin." },
+      { "stepNumber": 2, "instruction": "İrmiği sütle 8 dakika karıştırarak pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Portakal kabuğunu ocaktan sonra ekleyin, aroma acılaşmasın diye." },
+      { "stepNumber": 4, "instruction": "İrmikli karışımı kuplara paylaştırıp badem serpin." },
+      { "stepNumber": 5, "instruction": "Kup tatlısını 25 dakika soğutun ve servis edin.", "timerSeconds": 1500 }
+    ],
+    "notes": "Yemek.com sutlu irmik tatlisi + citrus pudding kaynaklari; irmik pisirme, portakal kabugu ve badem dogrulandi"
+  },
+  {
+    "slug": "portakalli-crema-kup-ispanya-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Sütü portakal kabuğuyla 4 dakika ısıtın.", "timerSeconds": 240 },
+      { "stepNumber": 2, "instruction": "Yumurta sarısı ve şekeri 2 dakika çırpın.", "timerSeconds": 120 },
+      { "stepNumber": 3, "instruction": "Sıcak sütü yavaş ekleyin, yumurta kesilmesin." },
+      { "stepNumber": 4, "instruction": "Kremayı 5 dakika koyulaştırıp kuplara paylaştırın.", "timerSeconds": 300 },
+      { "stepNumber": 5, "instruction": "Kup kremasını 1 saat soğutup servis edin.", "timerSeconds": 3600 }
+    ],
+    "notes": "Crema catalana kaynaklari + Spanish custard teknikleri; portakalli sut, yumurta dengeleme ve sogutma dogrulandi"
+  },
+  {
+    "slug": "portakalli-irmik-helvasi-antakya-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Portakal suyunu şekerle karıştırıp sıcak tutun." },
+      { "stepNumber": 2, "instruction": "İrmiği tereyağında 8 dakika kavurun.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Portakallı şerbeti ince akıtarak ekleyin, helva sıçramasın diye." },
+      { "stepNumber": 4, "instruction": "Helvayı 5 dakika kısık ateşte toparlayın.", "timerSeconds": 300 },
+      { "stepNumber": 5, "instruction": "10 dakika dinlendirip ılık servis edin.", "timerSeconds": 600 }
+    ],
+    "notes": "Yemek.com irmik helvasi + portakalli helva kaynaklari; irmik kavurma, sicak serbet ve dinlendirme dogrulandi"
+  },
+  {
+    "slug": "portakalli-irmik-keki-adana-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Adana usulü kek için yumurta ve şekeri 3 dakika çırpın.", "timerSeconds": 180 },
+      { "stepNumber": 2, "instruction": "İrmik, un ve Adana portakal kabuğunu hamura ekleyin." },
+      { "stepNumber": 3, "instruction": "Harcı kalıba döküp 5 dakika bekletin, irmik sıvıyı çeksin diye.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "Adana irmik kekini 180°C fırında 24 dakika pişirin.", "timerSeconds": 1440 },
+      { "stepNumber": 5, "instruction": "Kalıpta 15 dakika dinlendirip dilimleyin.", "timerSeconds": 900 }
+    ],
+    "notes": "Yemek.com irmik keki + orange semolina cake kaynaklari; irmik bekletme, 180C pisirme ve dinlendirme dogrulandi"
+  },
+  {
+    "slug": "portakalli-irmik-keki-yunan-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Yoğurt, yumurta ve şekeri pürüzsüz çırpın." },
+      { "stepNumber": 2, "instruction": "İrmik ve portakal kabuğunu karışıma ekleyin." },
+      { "stepNumber": 3, "instruction": "Yunan usulü irmik hamurunu kalıba döküp yüzeyi düzeltin." },
+      { "stepNumber": 4, "instruction": "Yunan irmik kekini 180°C fırında 26 dakika pişirin.", "timerSeconds": 1560 },
+      { "stepNumber": 5, "instruction": "Keki 15 dakika dinlendirin, şerbet dökülecekse dağılmasın.", "timerSeconds": 900 }
+    ],
+    "notes": "Greek orange semolina cake + ravani kaynaklari; yogurtlu hamur, portakal aromasi ve 180C pisirme dogrulandi"
+  },
+  {
+    "slug": "portakalli-irmik-muhallebisi-mugla-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Süt, irmik ve şekeri tencerede çırpın." },
+      { "stepNumber": 2, "instruction": "Muhallebiyi orta ateşte 8 dakika koyulaştırın.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Portakal suyu ve kabuğunu ocaktan sonra ekleyin." },
+      { "stepNumber": 4, "instruction": "Kaplara paylaştırın, aroma acılaşmasın diye sıcak bekletmeyin." },
+      { "stepNumber": 5, "instruction": "Portakallı muhallebiyi 30 dakika soğutup servis edin.", "timerSeconds": 1800 }
+    ],
+    "notes": "Yemek.com irmik muhallebisi + portakalli muhallebi kaynaklari; irmik kivami, portakal ekleme ve sogutma dogrulandi"
+  },
+  {
+    "slug": "portakalli-kladdkaka",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tereyağını eritip 5 dakika ılıtın.", "timerSeconds": 300 },
+      { "stepNumber": 2, "instruction": "Yumurta, şeker, kakao ve portakal kabuğunu karıştırın." },
+      { "stepNumber": 3, "instruction": "Eritilmiş tereyağını ekleyip hamuru kalıba dökün." },
+      { "stepNumber": 4, "instruction": "Kladdkakayı 180°C fırında 18 dakika pişirin.", "timerSeconds": 1080 },
+      { "stepNumber": 5, "instruction": "Keki 25 dakika soğutun, ortası akışkan kalsın diye.", "timerSeconds": 1500 }
+    ],
+    "notes": "Swedish kladdkaka kaynaklari + BBC Good Food chocolate cake; eritilmis tereyagi, nemli merkez ve 18 dk pisirme dogrulandi"
+  },
+  {
+    "slug": "portakalli-krema-kup-ispanya-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kremayı portakal kabuğuyla 3 dakika ısıtın.", "timerSeconds": 180 },
+      { "stepNumber": 2, "instruction": "Vanilyayı ekleyip karışımı 5 dakika ılıtın.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Kremayı süzün, kabuk parçaları ağıza gelmesin diye." },
+      { "stepNumber": 4, "instruction": "Kuplara paylaştırıp yüzeyi düzeltin." },
+      { "stepNumber": 5, "instruction": "Kup kremasını 1 saat soğutun ve portakalla servis edin.", "timerSeconds": 3600 }
+    ],
+    "notes": "Spanish orange custard + cream cup teknikleri; krema infuze, suzme ve soguk servis dogrulandi"
+  },
+  {
+    "slug": "portakalli-tahinli-irmik-kek-mersin-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Yumurta, şeker ve tahini 2 dakika çırpın.", "timerSeconds": 120 },
+      { "stepNumber": 2, "instruction": "İrmik, un ve tahinli portakal kabuğunu hamura ekleyin." },
+      { "stepNumber": 3, "instruction": "Harcı kalıba dökün ve üstünü susamla kaplayın." },
+      { "stepNumber": 4, "instruction": "Tahinli irmik kekini 180°C fırında 24 dakika pişirin.", "timerSeconds": 1440 },
+      { "stepNumber": 5, "instruction": "15 dakika dinlendirin, tahinli doku bıçakta dağılmasın.", "timerSeconds": 900 }
+    ],
+    "notes": "Tahinli kek kaynaklari + orange semolina cake; tahinli hamur, irmik ve 180C pisirme dogrulandi"
+  },
+  {
+    "slug": "portakalli-tarcinli-irmik-kup-fas-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Sütlü irmik tabanını tencereye alın." },
+      { "stepNumber": 2, "instruction": "Tabanı 10 dakika karıştırarak pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Portakal kabuğu ve tarçını ocaktan sonra ekleyin." },
+      { "stepNumber": 4, "instruction": "Kuplara paylaştırın, baharat acılaşmasın diye sıcak bekletmeyin." },
+      { "stepNumber": 5, "instruction": "Tarçınlı irmik kupunu 25 dakika soğutup servis edin.", "timerSeconds": 1500 }
+    ],
+    "notes": "Moroccan orange semolina dessert + sutlu irmik teknikleri; irmik tabani, tarcin ve sogutma dogrulandi"
+  },
+  {
+    "slug": "portakalli-un-helvasi-hatay-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Portakal kabuğunu rendeleyip şekerli suyu sıcak tutun." },
+      { "stepNumber": 2, "instruction": "Unu tereyağında 10 dakika açık kahverengi kavurun.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Şekerli suyu ince akıtarak ekleyin, helva sıçramasın diye." },
+      { "stepNumber": 4, "instruction": "Portakal kabuğunu katıp 3 dakika toparlayın.", "timerSeconds": 180 },
+      { "stepNumber": 5, "instruction": "Helvayı 10 dakika dinlendirip ılık servis edin.", "timerSeconds": 600 }
+    ],
+    "notes": "Yemek.com un helvasi + portakalli helva kaynaklari; un kavurma, sicak serbet ve portakal aromasi dogrulandi"
+  },
+  {
+    "slug": "portokalopita",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Yufkaları kurutup küçük parçalara ayırın." },
+      { "stepNumber": 2, "instruction": "Yoğurtlu portakal harcını çırpıp yufkayla karıştırın." },
+      { "stepNumber": 3, "instruction": "Karışımı tepsiye yayın, kuru yufka topaklanmasın diye." },
+      { "stepNumber": 4, "instruction": "Portokalopitayı 180°C fırında 40 dakika pişirin.", "timerSeconds": 2400 },
+      { "stepNumber": 5, "instruction": "Sıcak keke soğuk portakal şerbeti dökün." },
+      { "stepNumber": 6, "instruction": "Tatlıyı 30 dakika dinlendirin, şerbet eşit dağılsın.", "timerSeconds": 1800 }
+    ],
+    "notes": "Greek portokalopita kaynaklari + syrup cake teknikleri; kuru yufka, yogurtlu harc ve soguk serbet dogrulandi"
+  },
+  {
+    "slug": "prinsesstarta",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Keki yatay katlara ayırın ve kırıntıları temizleyin." },
+      { "stepNumber": 2, "instruction": "Alt kata reçel, üst katlara krema yayın." },
+      { "stepNumber": 3, "instruction": "Pastayı kubbe şeklinde sıvayın." },
+      { "stepNumber": 4, "instruction": "Pastayı 40 dakika soğutun, badem ezmesi kaymasın.", "timerSeconds": 2400 },
+      { "stepNumber": 5, "instruction": "Badem ezmesini açıp pastanın üstüne kaplayın." },
+      { "stepNumber": 6, "instruction": "Kenarları düzeltip servis öncesi pudra şekeri serpin." }
+    ],
+    "notes": "Swedish prinsesstarta kaynaklari + layer cake teknikleri; kek katlari, krema kubbe ve marzipan kaplama dogrulandi"
+  },
+  {
+    "slug": "profiterol",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Su ve tereyağını kaynatıp unu ekleyin." },
+      { "stepNumber": 2, "instruction": "Hamuru 3 dakika tencerede pişirin, un kokusu kalmasın diye.", "timerSeconds": 180 },
+      { "stepNumber": 3, "instruction": "Ilıyan hamura yumurtaları tek tek yedirin." },
+      { "stepNumber": 4, "instruction": "Topları tepsiye sıkıp 190°C fırında 25 dakika pişirin.", "timerSeconds": 1500 },
+      { "stepNumber": 5, "instruction": "Pastacı kremasını 8 dakika pişirip soğutun.", "timerSeconds": 480 },
+      { "stepNumber": 6, "instruction": "Topları kremayla doldurup çikolata sosuyla kaplayın." }
+    ],
+    "notes": "BBC Good Food profiteroles + choux pastry teknikleri; hamur pisirme, yumurta yedirme ve 190C firin dogrulandi"
+  },
+  {
+    "slug": "ptichye-moloko",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Sütlü tabanı hazırlayıp 20 dakika soğutun.", "timerSeconds": 1200 },
+      { "stepNumber": 2, "instruction": "Yumurta aklarını şekerle 4 dakika köpürtün.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Köpüğü sütlü karışıma spatulayla katın, hacim sönmesin diye." },
+      { "stepNumber": 4, "instruction": "Tatlıyı kalıba alıp 2 saat soğutun.", "timerSeconds": 7200 },
+      { "stepNumber": 5, "instruction": "Çikolata kaplamayı üstüne yayın ve 20 dakika bekletin.", "timerSeconds": 1200 }
+    ],
+    "notes": "Russian ptichye moloko kaynaklari + souffle cake teknikleri; yumurta kopugu, sogutma ve cikolata kaplama dogrulandi"
+  },
+  {
+    "slug": "pudin-de-pan-kuba-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Ekmeği küp doğrayıp sütlü karışımda 15 dakika bekletin.", "timerSeconds": 900 },
+      { "stepNumber": 2, "instruction": "Yumurta, şeker ve tarçını ekleyip karıştırın." },
+      { "stepNumber": 3, "instruction": "Karışımı yağlanmış kalıba dökün." },
+      { "stepNumber": 4, "instruction": "Tatlıyı 180°C fırında 26 dakika pişirin.", "timerSeconds": 1560 },
+      { "stepNumber": 5, "instruction": "Pudingi 20 dakika dinlendirin, dilimler dağılmasın.", "timerSeconds": 1200 }
+    ],
+    "notes": "Cuban pudin de pan + bread pudding kaynaklari; ekmek islatma, yumurtali harc ve 180C pisirme dogrulandi"
+  },
+  {
+    "slug": "queijadinha",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Hindistan cevizi, peynir, yumurta ve şekeri karıştırın." },
+      { "stepNumber": 2, "instruction": "Karışımı 5 dakika dinlendirin, hindistan cevizi nemi çeksin diye.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Harcı muffin kalıplarına paylaştırın." },
+      { "stepNumber": 4, "instruction": "Queijadinhayı 180°C fırında 25 dakika pişirin.", "timerSeconds": 1500 },
+      { "stepNumber": 5, "instruction": "Kalıpta 10 dakika soğutup çıkarın.", "timerSeconds": 600 }
+    ],
+    "notes": "Brazilian queijadinha kaynaklari + coconut custard teknikleri; hindistan cevizi, peynirli harc ve 180C pisirme dogrulandi"
+  },
+  {
+    "slug": "quindim",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Yumurta sarılarını süzgeçten geçirin, koku azalır." },
+      { "stepNumber": 2, "instruction": "Şeker ve hindistan ceviziyle nazikçe karıştırın." },
+      { "stepNumber": 3, "instruction": "Yağlanmış kalıplara harcı paylaştırın." },
+      { "stepNumber": 4, "instruction": "Quindimi benmaride 180°C fırında 35 dakika pişirin.", "timerSeconds": 2100 },
+      { "stepNumber": 5, "instruction": "Kalıpta 20 dakika soğutup ters çevirin, parlak yüzey çatlamasın.", "timerSeconds": 1200 },
+      { "stepNumber": 6, "instruction": "Soğuk servis edin, parlak yüzey bozulmasın." }
+    ],
+    "notes": "Brazilian quindim kaynaklari + custard bain marie teknikleri; yumurta sarisi suzme, benmari ve kalip dogrulandi"
+  },
+  {
+    "slug": "rakoczi-turos",
+    "type": "TATLI",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Un ve tereyağıyla tabanı hazırlayıp kalıba bastırın." },
+      { "stepNumber": 2, "instruction": "Lor, şeker, yumurta ve vanilyayla iç harcı karıştırın." },
+      { "stepNumber": 3, "instruction": "İç harcı tabana yayın ve yüzeyi düzeltin." },
+      { "stepNumber": 4, "instruction": "Tatlıyı 180°C fırında 30 dakika pişirin.", "timerSeconds": 1800 },
+      { "stepNumber": 5, "instruction": "Bezeyi üstüne yayın ve 6 dakika kızartın.", "timerSeconds": 360 },
+      { "stepNumber": 6, "instruction": "10 dakika dinlendirin, beze katı çatlamasın.", "timerSeconds": 600 }
+    ],
+    "notes": "Hungarian Rakoczi turos kaynaklari + meringue tart teknikleri; lorlu ic, taban ve beze kizartma dogrulandi"
+  },
+  {
+    "slug": "raventli-krem-kup-ingiltere-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Raventi küçük parçalara kesin ve şekerle tencereye alın." },
+      { "stepNumber": 2, "instruction": "Raventi 6 dakika pişirin.", "timerSeconds": 360 },
+      { "stepNumber": 3, "instruction": "Raventi 15 dakika soğutun, krema akmasın.", "timerSeconds": 900 },
+      { "stepNumber": 4, "instruction": "Kremayı vanilya ile 2 dakika çırpın.", "timerSeconds": 120 },
+      { "stepNumber": 5, "instruction": "Kek, ravent ve kremayı kuplara katmanlayın." }
+    ],
+    "notes": "BBC Good Food rhubarb fool + trifle cup kaynaklari; ravent pisirme, krema cirpma ve kup katmani dogrulandi"
+  },
+  {
+    "slug": "raventli-vanilyali-trifle-kup-ingiltere-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Raventi şekerle 5 dakika pişirin.", "timerSeconds": 300 },
+      { "stepNumber": 2, "instruction": "Raventi 10 dakika soğutun, keki dağıtmasın.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Kup tabanına keki iri parçalar halinde paylaştırın." },
+      { "stepNumber": 4, "instruction": "Vanilyalı kremayı kek ve raventle katmanlayın." },
+      { "stepNumber": 5, "instruction": "Trifle kupu 25 dakika soğutup servis edin.", "timerSeconds": 1500 }
+    ],
+    "notes": "BBC Good Food trifle + rhubarb dessert kaynaklari; ravent kompotu, kek tabani ve vanilyali krema dogrulandi"
+  },
+  {
+    "slug": "red-bean-soup-cin-tatli-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Fasulyeyi yıkayıp tencereye suyla alın." },
+      { "stepNumber": 2, "instruction": "Fasulyeyi 40 dakika kısık ateşte pişirin.", "timerSeconds": 2400 },
+      { "stepNumber": 3, "instruction": "Taneleri kaşıkla ezin, çorba koyulaşsın diye." },
+      { "stepNumber": 4, "instruction": "Şeker ekleyip 5 dakika daha kaynatın.", "timerSeconds": 300 },
+      { "stepNumber": 5, "instruction": "Tatlıyı 10 dakika dinlendirip sıcak servis edin.", "timerSeconds": 600 }
+    ],
+    "notes": "Chinese red bean soup kaynaklari + sweet soup teknikleri; fasulye pisirme, seker ekleme ve kivam dogrulandi"
+  },
+  {
+    "slug": "revani",
+    "type": "TATLI",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Şeker ve suyu 10 dakika kaynatıp limonla şerbeti soğutun.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Revani için yumurta ve şekeri 3 dakika çırpın.", "timerSeconds": 180 },
+      { "stepNumber": 3, "instruction": "Yoğurt, irmik, un ve kabartma tozunu ekleyin." },
+      { "stepNumber": 4, "instruction": "Hamuru yağlı tepsiye döküp yüzeyi düzeltin." },
+      { "stepNumber": 5, "instruction": "Revanıyı 180°C fırında 28 dakika pişirin.", "timerSeconds": 1680 },
+      { "stepNumber": 6, "instruction": "Sıcak keke soğuk şerbet dökün, revani dağılmasın." }
+    ],
+    "notes": "Yemek.com revani + Turkish syrup cake kaynaklari; soguk serbet, irmikli kek ve 180C pisirme dogrulandi"
+  },
+  {
+    "slug": "rhubarb-yogurt-fool-ingiliz-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Ravendi küçük doğrayıp şekerle tencereye alın." },
+      { "stepNumber": 2, "instruction": "Ravendi 6 dakika pişirin.", "timerSeconds": 360 },
+      { "stepNumber": 3, "instruction": "Karışımı 20 dakika soğutun, yoğurt kesilmesin.", "timerSeconds": 1200 },
+      { "stepNumber": 4, "instruction": "Yoğurdu raventle mermer görünümünde katlayın." },
+      { "stepNumber": 5, "instruction": "Fool tatlısını kuplara alıp soğuk servis edin." }
+    ],
+    "notes": "BBC Good Food rhubarb fool + yogurt fool teknikleri; ravent kompotu, sogutma ve yogurtla katlama dogrulandi"
+  },
+  {
+    "slug": "risgrynsgrot",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pirinç ve suyu tencereye alın." },
+      { "stepNumber": 2, "instruction": "Pirinci 10 dakika pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Sütü ekleyip 35 dakika kısık ateşte pişirin.", "timerSeconds": 2100 },
+      { "stepNumber": 4, "instruction": "Ara ara karıştırın, süt tencere dibinde yanmasın." },
+      { "stepNumber": 5, "instruction": "Şeker ve tarçınla ılık servis edin." }
+    ],
+    "notes": "Swedish risgrynsgrot kaynaklari + rice pudding teknikleri; suyla on pisirme, sut ekleme ve tarcinli servis dogrulandi"
+  },
+  {
+    "slug": "sac-arasi",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Yufkaları tereyağıyla yağlayıp ceviz serpin." },
+      { "stepNumber": 2, "instruction": "Katları tepsiye sıkı yerleştirin." },
+      { "stepNumber": 3, "instruction": "Tatlıyı 180°C fırında 25 dakika pişirin.", "timerSeconds": 1500 },
+      { "stepNumber": 4, "instruction": "Su ve şekeri 8 dakika kaynatıp şerbet hazırlayın.", "timerSeconds": 480 },
+      { "stepNumber": 5, "instruction": "Şerbeti sıcak tatlıya dökün, kuru kat kalmasın diye." },
+      { "stepNumber": 6, "instruction": "20 dakika dinlendirip dilimleyin.", "timerSeconds": 1200 }
+    ],
+    "notes": "Konya sac arasi kaynaklari + serbetli yufka tatlisi; yufka katlama, 180C pisirme ve serbet dogrulandi"
+  },
+  {
+    "slug": "sac-arasi-kayseri-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Yufkaları yağlayıp aralarına cevizli harç serin." },
+      { "stepNumber": 2, "instruction": "Tepsiyi sıkı tamamlayıp dilim izleri açın." },
+      { "stepNumber": 3, "instruction": "Sac arasını 185°C fırında 30 dakika pişirin.", "timerSeconds": 1800 },
+      { "stepNumber": 4, "instruction": "Şerbeti 8 dakika kaynatıp ılıtın.", "timerSeconds": 480 },
+      { "stepNumber": 5, "instruction": "Ilık şerbeti sıcak tatlıya gezdirin." },
+      { "stepNumber": 6, "instruction": "Tatlıyı 20 dakika dinlendirin, yufkalar şerbeti çeksin diye.", "timerSeconds": 1200 }
+    ],
+    "notes": "Kayseri sac arasi + Konya sac arasi kaynaklari; cevizli kat, firin sicakligi ve serbetleme dogrulandi"
+  },
+  {
+    "slug": "safranli-kaju-kheer-kup-hindistan-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pirinci yıkayıp 10 dakika az suda pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Süt ve safranı ekleyip 20 dakika kısık ateşte pişirin.", "timerSeconds": 1200 },
+      { "stepNumber": 3, "instruction": "Şekeri ekleyip 5 dakika karıştırın.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "Kaju parçalarını ekleyin, dibe çökmesin diye karıştırın." },
+      { "stepNumber": 5, "instruction": "Kuplara paylaştırıp 30 dakika soğutun.", "timerSeconds": 1800 },
+      { "stepNumber": 6, "instruction": "Serviste birkaç safran teliyle tamamlayın." }
+    ],
+    "notes": "BBC Good Food kheer + Indian kheer kaynaklari; pirinc, safranli sut ve kaju ekleme dogrulandi"
+  },
+  {
+    "slug": "sakarya-findikli-kabak-tatlisi-kup",
+    "type": "TATLI",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Bal kabağı ve şekeri tencerede 20 dakika pişirin.", "timerSeconds": 1200 },
+      { "stepNumber": 2, "instruction": "Kabağı çatalla ezip tarçınla karıştırın." },
+      { "stepNumber": 3, "instruction": "Kabak püresini 15 dakika soğutun, kup katmanı akmasın.", "timerSeconds": 900 },
+      { "stepNumber": 4, "instruction": "Fındığı iri kırıp kupların tabanına paylaştırın." },
+      { "stepNumber": 5, "instruction": "Kabak püresi ve tahinle katları tamamlayın." },
+      { "stepNumber": 6, "instruction": "Serviste üstüne fındık serpin." }
+    ],
+    "notes": "Yemek.com kabak tatlisi + findikli kup pratikleri; kabak pisirme, pure sogutma ve tahinli katman dogrulandi"
+  },
+  {
+    "slug": "sakizli-badem-sutlac-cesme-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pirinci yıkayıp 10 dakika haşlayın.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Süt ve şekerle 15 dakika kısık ateşte pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 3, "instruction": "Damla sakızını ezip bademle birlikte ekleyin." },
+      { "stepNumber": 4, "instruction": "Sütlacı 3 dakika karıştırın, sakız dibe yapışmasın diye.", "timerSeconds": 180 },
+      { "stepNumber": 5, "instruction": "Kaselere paylaştırıp 30 dakika dinlendirin.", "timerSeconds": 1800 },
+      { "stepNumber": 6, "instruction": "Serviste badem serpin." }
+    ],
+    "notes": "Yemek.com sakizli sutlac + Cesme sakizli tatli kaynaklari; pirinc, damla sakizi ve badem dogrulandi"
+  },
+  {
+    "slug": "sakizli-bademli-muhallebi-cesme-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Bademli muhallebi için süt, nişasta ve şekeri tencerede çırpın." },
+      { "stepNumber": 2, "instruction": "Damla sakızını bademli karışıma ezerek ekleyin." },
+      { "stepNumber": 3, "instruction": "Bademli muhallebiyi 10 dakika kısık ateşte pişirin, sakız topaklanmasın.", "timerSeconds": 600 },
+      { "stepNumber": 4, "instruction": "Bademi ekleyip kaselere paylaştırın." },
+      { "stepNumber": 5, "instruction": "Tatlıyı 35 dakika soğutun, sakız aroması otursun.", "timerSeconds": 2100 }
+    ],
+    "notes": "Yemek.com sakizli muhallebi + bademli muhallebi; damla sakizi ezme, nisasta baglama ve sogutma dogrulandi"
+  },
+  {
+    "slug": "sakizli-erikli-muhallebi-cesme-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Erikleri küçük doğrayıp kenara alın." },
+      { "stepNumber": 2, "instruction": "Sakızlı muhallebiyi 8 dakika karıştırarak pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Muhallebiyi 10 dakika ılıtın, erikli katman akmasın.", "timerSeconds": 600 },
+      { "stepNumber": 4, "instruction": "Erikleri kaselere paylaştırıp muhallebiyle kapatın." },
+      { "stepNumber": 5, "instruction": "Tatlıyı 30 dakika soğutun.", "timerSeconds": 1800 }
+    ],
+    "notes": "Sakizli muhallebi kaynaklari + plum pudding cup pratikleri; muhallebi, erik ekleme ve sogutma dogrulandi"
+  },
+  {
+    "slug": "sakizli-incir-muhallebisi-cesme-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Sakızlı muhallebi için incirleri 5 dakika ılık sütte bekletin.", "timerSeconds": 300 },
+      { "stepNumber": 2, "instruction": "Sütlü karışımı ocakta 10 dakika koyulaştırın.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Damla sakızını ekleyip 1 dakika karıştırın.", "timerSeconds": 60 },
+      { "stepNumber": 4, "instruction": "İnciri kaselere paylaştırın, doku dibe toplanmasın." },
+      { "stepNumber": 5, "instruction": "Muhallebiyi üstüne döküp 35 dakika soğutun.", "timerSeconds": 2100 }
+    ],
+    "notes": "Sakizli muhallebi + incirli sutlu tatli kaynaklari; incir yumusatma, sakiz aromasi ve sogutma dogrulandi"
+  },
+  {
+    "slug": "sakizli-incir-parfe-cesme-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Krema ve labneyi soğuk kapta 2 dakika çırpın, parfe akmasın.", "timerSeconds": 120 },
+      { "stepNumber": 2, "instruction": "Damla sakızı aroması ve balı ekleyin." },
+      { "stepNumber": 3, "instruction": "İnciri küçük doğrayıp kremaya katlayın." },
+      { "stepNumber": 4, "instruction": "Karışımı kalıba alın, incirler tek yerde toplanmasın." },
+      { "stepNumber": 5, "instruction": "Parfeyi 2 saat dondurun.", "timerSeconds": 7200 },
+      { "stepNumber": 6, "instruction": "Servisten 5 dakika önce çıkarıp dilimleyin.", "timerSeconds": 300 }
+    ],
+    "notes": "Parfait teknikleri + Cesme sakizli incir tatlisi; soguk krema, incir katlama ve dondurma suresi dogrulandi"
+  },
+  {
+    "slug": "sakizli-kavun-kasesi-cesme-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kavunu küp doğrayıp 10 dakika soğutun.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Yoğurtlu sakızlı karışımı 1 dakika çırpın.", "timerSeconds": 60 },
+      { "stepNumber": 3, "instruction": "Kavunu kaselere paylaştırın." },
+      { "stepNumber": 4, "instruction": "Yoğurtlu karışımı üstüne ekleyin, kavun katı akmasın." },
+      { "stepNumber": 5, "instruction": "Tatlıyı bekletmeden soğuk servis edin." }
+    ],
+    "notes": "Melon yogurt dessert kaynaklari + sakizli tatli pratikleri; kavun sogutma, yogurtlu sos ve soguk servis dogrulandi"
+  },
+  {
+    "slug": "sakizli-lor-tatlisi-izmir-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Süt ve şekeri 4 dakika ısıtıp damla sakızını ekleyin.", "timerSeconds": 240 },
+      { "stepNumber": 2, "instruction": "Lor peynirini süzüp tencereye alın." },
+      { "stepNumber": 3, "instruction": "Lor karışımını 8 dakika kısık ateşte pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 4, "instruction": "Kaselere paylaştırın, lor parçaları dibe çökmesin diye karıştırın." },
+      { "stepNumber": 5, "instruction": "Tatlıyı 30 dakika soğutup servis edin.", "timerSeconds": 1800 }
+    ],
+    "notes": "Izmir lor tatlisi + sakizli sutlu tatli kaynaklari; lor pisirme, sakiz aromasi ve kaseleme dogrulandi"
+  },
+  {
+    "slug": "sakizli-muhallebi-cesme-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Süt, nişasta ve şekeri tencerede pürüzsüz çırpın." },
+      { "stepNumber": 2, "instruction": "Damla sakızını sade muhallebiye ezerek ekleyin." },
+      { "stepNumber": 3, "instruction": "Karışımı 10 dakika koyulaştırın.", "timerSeconds": 600 },
+      { "stepNumber": 4, "instruction": "Sakızlı muhallebiyi kaselere paylaştırıp yüzeyi düzeltin." },
+      { "stepNumber": 5, "instruction": "Muhallebiyi 35 dakika soğutun, sakız aroması keskinleşsin.", "timerSeconds": 2100 }
+    ],
+    "notes": "Yemek.com sakizli muhallebi + Cesme sakiz kaynaklari; nisasta baglama, sakiz ekleme ve sogutma dogrulandi"
+  },
+  {
+    "slug": "samsades-tatlisi-izmir-usulu",
+    "type": "TATLI",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Un ve suyla hamur yoğurup 20 dakika dinlendirin.", "timerSeconds": 1200 },
+      { "stepNumber": 2, "instruction": "Lor harcını hazırlayıp hamuru ince açın." },
+      { "stepNumber": 3, "instruction": "Hamuru yarım ay biçiminde kapatın, kenarlar açılıp dağılmasın." },
+      { "stepNumber": 4, "instruction": "Samsadesleri 170°C yağda 6 dakika kızartın.", "timerSeconds": 360 },
+      { "stepNumber": 5, "instruction": "Tatlıları şerbete 1 dakika alıp çıkarın.", "timerSeconds": 60 },
+      { "stepNumber": 6, "instruction": "Tarçınla sıcak servis edin." }
+    ],
+    "notes": "Izmir samsades kaynaklari + serbetli kizartma teknikleri; hamur dinlendirme, lor dolgu ve kisa serbet dogrulandi"
+  },
+  {
+    "slug": "san-sebastian-cheesecake",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Krem peyniri ve şekeri 3 dakika pürüzsüz çırpın.", "timerSeconds": 180 },
+      { "stepNumber": 2, "instruction": "Yumurta, krema, un ve vanilini sırayla ekleyin." },
+      { "stepNumber": 3, "instruction": "Karışımı yağlı kağıtlı kalıba süzerek dökün." },
+      { "stepNumber": 4, "instruction": "Cheesecake'i 220°C fırında 32 dakika pişirin.", "timerSeconds": 1920 },
+      { "stepNumber": 5, "instruction": "Oda sıcaklığında 1 saat dinlendirin, merkezi çökerken çatlamasın.", "timerSeconds": 3600 },
+      { "stepNumber": 6, "instruction": "Kesmeden önce en az 3 saat soğutun.", "timerSeconds": 10800 }
+    ],
+    "notes": "BBC Good Food burnt Basque cheesecake + San Sebastian kaynaklari; yuksek isi, krem peynir ve sogutma dogrulandi"
+  },
+  {
+    "slug": "sekerpare",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Şeker ve suyu 10 dakika kaynatıp şerbeti ılıtın.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Hamur malzemelerini yoğurup ceviz boyu parçalar şekillendirin." },
+      { "stepNumber": 3, "instruction": "Her parçaya fındık yerleştirip tepsiye dizin." },
+      { "stepNumber": 4, "instruction": "Şekerpareleri 180°C fırında 28 dakika pişirin.", "timerSeconds": 1680 },
+      { "stepNumber": 5, "instruction": "Ilık şerbeti sıcak tatlıya dökün, içi kuru kalmasın diye." },
+      { "stepNumber": 6, "instruction": "25 dakika dinlendirip servis edin.", "timerSeconds": 1500 }
+    ],
+    "notes": "Yemek.com sekerpare + Turkish serbetli tatli kaynaklari; ilik serbet, 180C pisirme ve dinlendirme dogrulandi"
+  },
+  {
+    "slug": "sellou-fas-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Unu tavada 10 dakika kokusu çıkana kadar kavurun.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Bademi 5 dakika ayrı kavurun.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Susamı 3 dakika kavurun, yanmasın.", "timerSeconds": 180 },
+      { "stepNumber": 4, "instruction": "Kavrulan malzemeyi baharat ve balla karıştırın." },
+      { "stepNumber": 5, "instruction": "Sellouyu küçük porsiyonlara sıkıştırıp servis edin." },
+      { "stepNumber": 6, "instruction": "Üstüne badem serpin." }
+    ],
+    "notes": "Moroccan sellou kaynaklari + toasted flour dessert teknikleri; un, badem ve susam kavurma dogrulandi"
+  },
+  {
+    "slug": "semla",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Mayalı hamuru yoğurup 45 dakika mayalandırın.", "timerSeconds": 2700 },
+      { "stepNumber": 2, "instruction": "Hamuru yuvarlayıp tepside 20 dakika ikinci kez mayalandırın.", "timerSeconds": 1200 },
+      { "stepNumber": 3, "instruction": "Çörekleri 200°C fırında 15 dakika pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 4, "instruction": "Soğuyan çöreklerin kapaklarını kesin." },
+      { "stepNumber": 5, "instruction": "Bademli iç ve kremayla doldurun, kapaklar çatlamasın." },
+      { "stepNumber": 6, "instruction": "Pudra şekeriyle servis edin." }
+    ],
+    "notes": "Swedish semla kaynaklari + BBC Good Food sweet buns; mayalanma, 200C pisirme ve bademli dolgu dogrulandi"
+  },
+  {
+    "slug": "sernik-kavanozu-polonya-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Krem peynir ve şekeri 2 dakika çırpın.", "timerSeconds": 120 },
+      { "stepNumber": 2, "instruction": "Kavanoz tabanlarına bisküvi kırıntısı serpin." },
+      { "stepNumber": 3, "instruction": "Peynirli kremayı kırıntı üstüne paylaştırın." },
+      { "stepNumber": 4, "instruction": "Meyve sosunu ekleyin, katlar birbirine akmasın." },
+      { "stepNumber": 5, "instruction": "Kavanozları 30 dakika soğutup servis edin.", "timerSeconds": 1800 },
+      { "stepNumber": 6, "instruction": "Serviste üstüne limon kabuğu rendeleyin." }
+    ],
+    "notes": "Polish sernik kaynaklari + no bake cheesecake jar; krem peynir, kirinti taban ve sogutma dogrulandi"
+  },
+  {
+    "slug": "sernik-krakowski",
+    "type": "TATLI",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Un ve tereyağıyla taban hamurunu hazırlayın." },
+      { "stepNumber": 2, "instruction": "Hamurun bir kısmını üst kafes için ayırın." },
+      { "stepNumber": 3, "instruction": "Lor peyniri, şeker, yumurta ve vanilyayla iç harcı karıştırın." },
+      { "stepNumber": 4, "instruction": "Harcı kalıba döküp üstüne hamur kafesi yapın." },
+      { "stepNumber": 5, "instruction": "Serniki 180°C fırında 40 dakika pişirin.", "timerSeconds": 2400 },
+      { "stepNumber": 6, "instruction": "Tam soğumadan dilimlemeyin, lor dolgu dağılmasın." }
+    ],
+    "notes": "Polish sernik krakowski kaynaklari + cheesecake teknikleri; kafes hamur, lor dolgu ve 180C pisirme dogrulandi"
+  },
+  {
+    "slug": "sernik-na-zimno-cilekli-polonya-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Bisküvi tabanını kalıba dizin." },
+      { "stepNumber": 2, "instruction": "Peynirli dolguyu 2 dakika çırpın.", "timerSeconds": 120 },
+      { "stepNumber": 3, "instruction": "Dolguyu tabana yayın, taban yerinden kaymasın." },
+      { "stepNumber": 4, "instruction": "Çilekleri üstüne dizip jel katını ekleyin." },
+      { "stepNumber": 5, "instruction": "Pastayı 4 saat soğutun.", "timerSeconds": 14400 },
+      { "stepNumber": 6, "instruction": "Kalıptan çıkarıp soğuk dilimleyin." }
+    ],
+    "notes": "Polish sernik na zimno + no bake cheesecake teknikleri; biskuvi taban, peynirli dolgu ve jel sogutma dogrulandi"
+  },
+  {
+    "slug": "sesame-balls",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pirinç unu, şeker ve suyla pürüzsüz hamur hazırlayın." },
+      { "stepNumber": 2, "instruction": "Hamuru 10 dakika dinlendirin, şekil verirken çatlamasın.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Parçaları fasulye ezmesiyle doldurup kapatın." },
+      { "stepNumber": 4, "instruction": "Topları susama bulayın." },
+      { "stepNumber": 5, "instruction": "Topları 160°C yağda 14 dakika kızartın.", "timerSeconds": 840 },
+      { "stepNumber": 6, "instruction": "Kağıt üstünde 5 dakika süzdürüp servis edin.", "timerSeconds": 300 }
+    ],
+    "notes": "Chinese sesame balls kaynaklari + glutinous rice dough teknikleri; susam kaplama, dusuk isi kizartma ve dolgu dogrulandi"
+  },
+  {
+    "slug": "shire-toffee-puding-ingiliz-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Hurmaları sıcak suda 15 dakika yumuşatıp ezin.", "timerSeconds": 900 },
+      { "stepNumber": 2, "instruction": "Shire puding hamurunu hurma püresiyle karıştırın." },
+      { "stepNumber": 3, "instruction": "Shire puding harcını kalıba döküp yüzeyi düzeltin." },
+      { "stepNumber": 4, "instruction": "Keki 180°C fırında 25 dakika pişirin.", "timerSeconds": 1500 },
+      { "stepNumber": 5, "instruction": "Kremalı toffee sosu 4 dakika kaynatın.", "timerSeconds": 240 },
+      { "stepNumber": 6, "instruction": "Sosu sıcak kekin üstüne dökün, içi kuru kalmasın diye." }
+    ],
+    "notes": "BBC Good Food sticky toffee pudding + date cake teknikleri; hurma islatma, 180C kek ve toffee sos dogrulandi"
+  },
+  {
+    "slug": "siyez-unlu-elma-keki-kastamonu-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Elmaları ince dilimleyip tarçınla karıştırın." },
+      { "stepNumber": 2, "instruction": "Siyez kekinde yumurta ve şekeri 3 dakika çırpın.", "timerSeconds": 180 },
+      { "stepNumber": 3, "instruction": "Siyez unu ve sıvı malzemeleri hamura ekleyin." },
+      { "stepNumber": 4, "instruction": "Elmaları kalıba dizip hamuru üstüne dökün." },
+      { "stepNumber": 5, "instruction": "Siyez unlu elma kekini 180°C fırında 26 dakika pişirin.", "timerSeconds": 1560 },
+      { "stepNumber": 6, "instruction": "15 dakika dinlendirin, elmalı taban dağılmasın.", "timerSeconds": 900 }
+    ],
+    "notes": "BBC Good Food apple cake + siyez unlu kek pratikleri; elma dizme, 180C pisirme ve kalip dinlendirme dogrulandi"
+  },
+  {
+    "slug": "somloi-galuska",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Keki iri parçalara ayırın." },
+      { "stepNumber": 2, "instruction": "Krema ve cevizli katmanı hazırlayın." },
+      { "stepNumber": 3, "instruction": "Kek, krema ve cevizi geniş kaseye katmanlayın." },
+      { "stepNumber": 4, "instruction": "Tatlıyı 1 saat soğutun, katlar birbirine geçsin diye.", "timerSeconds": 3600 },
+      { "stepNumber": 5, "instruction": "Çikolata sosu ekleyip soğuk servis edin." },
+      { "stepNumber": 6, "instruction": "Serviste ekstra ceviz serpin." }
+    ],
+    "notes": "Hungarian somloi galuska kaynaklari + trifle teknikleri; kek parcasi, krema katmani ve cikolata sos dogrulandi"
+  },
+  {
+    "slug": "somloi-kup-tatlisi-macar-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Somloi kup tabanına kek parçalarını yerleştirin." },
+      { "stepNumber": 2, "instruction": "Kremayı 2 dakika çırpın.", "timerSeconds": 120 },
+      { "stepNumber": 3, "instruction": "Cevizi kek katının üstüne serpin." },
+      { "stepNumber": 4, "instruction": "Krema ve kek katlarını dönüşümlü yerleştirin." },
+      { "stepNumber": 5, "instruction": "Kakaoyu servis öncesi serpin, yüzey nemlenmesin diye." },
+      { "stepNumber": 6, "instruction": "Kup tatlısını 30 dakika soğutun.", "timerSeconds": 1800 }
+    ],
+    "notes": "Hungarian somloi galuska + kup tatli pratikleri; kek tabani, krema, ceviz ve kakao servisi dogrulandi"
+  },
+  {
+    "slug": "sticky-ginger-cake-ingiliz-cay-saati-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kuru malzemeleri zencefil ve baharatlarla karıştırın." },
+      { "stepNumber": 2, "instruction": "Sıvı malzemeleri ılık halde kuru karışıma ekleyin." },
+      { "stepNumber": 3, "instruction": "Zencefilli hamuru kalıba döküp yüzeyi düzeltin." },
+      { "stepNumber": 4, "instruction": "Zencefilli keki 180°C fırında 26 dakika pişirin.", "timerSeconds": 1560 },
+      { "stepNumber": 5, "instruction": "Keki 20 dakika kalıpta dinlendirin, yapışkan doku otursun diye.", "timerSeconds": 1200 },
+      { "stepNumber": 6, "instruction": "Ilık dilimleyip çayla servis edin." }
+    ],
+    "notes": "BBC Good Food sticky ginger cake + tea cake teknikleri; baharatli hamur, 180C pisirme ve dinlendirme dogrulandi"
+  },
+  {
+    "slug": "sticky-toffee-pudding-ingiliz-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Hurmaları sıcak suda 15 dakika bekletip ezin.", "timerSeconds": 900 },
+      { "stepNumber": 2, "instruction": "Sticky toffee kek hamurunu hurma püresiyle karıştırın." },
+      { "stepNumber": 3, "instruction": "Sticky toffee hamurunu kalıba döküp yüzeyi düzeltin." },
+      { "stepNumber": 4, "instruction": "Keki 180°C fırında 30 dakika pişirin.", "timerSeconds": 1800 },
+      { "stepNumber": 5, "instruction": "Toffee sosu 5 dakika kaynatın.", "timerSeconds": 300 },
+      { "stepNumber": 6, "instruction": "Sosu sıcak kekin üstüne gezdirin, içi kuru kalmasın diye." }
+    ],
+    "notes": "BBC Good Food sticky toffee pudding + date pudding kaynaklari; hurma islatma, 180C kek ve toffee sos dogrulandi"
+  },
+  {
+    "slug": "sticky-toffee-pudding-kup-ingiliz-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Sticky toffee kekini iri parçalar halinde kesin." },
+      { "stepNumber": 2, "instruction": "Toffee sosu 4 dakika ısıtın.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Sticky toffee kup tabanına kek parçalarını yerleştirin." },
+      { "stepNumber": 4, "instruction": "Sos ve kremayı kekle katmanlayın." },
+      { "stepNumber": 5, "instruction": "Ilık servis edin, sos keke fazla emilmesin." },
+      { "stepNumber": 6, "instruction": "Üstüne az krema ekleyin." }
+    ],
+    "notes": "BBC Good Food sticky toffee pudding + cup dessert pratikleri; kek parcasi, ilik sos ve kremali servis dogrulandi"
+  },
+  {
+    "slug": "sua-chua-nep-cam-kadeh-vietnam-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Mor pirinci yıkayıp tencereye alın." },
+      { "stepNumber": 2, "instruction": "Pirinci 18 dakika pişirin.", "timerSeconds": 1080 },
+      { "stepNumber": 3, "instruction": "Pirinci 20 dakika soğutun, yoğurt kesilmesin.", "timerSeconds": 1200 },
+      { "stepNumber": 4, "instruction": "Kadehlere yoğurt ve pirinci katmanlayın." },
+      { "stepNumber": 5, "instruction": "Serviste üstüne az bal gezdirin." },
+      { "stepNumber": 6, "instruction": "Tatlıyı soğuk sunun." }
+    ],
+    "notes": "Vietnamese sua chua nep cam kaynaklari + black sticky rice yogurt; pirinc pisirme, sogutma ve yogurt katmani dogrulandi"
+  },
+  {
+    "slug": "sua-chua-nep-cam-vietnam-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Mor pirinci yıkayıp bol suyla tencereye alın." },
+      { "stepNumber": 2, "instruction": "Pirinci 20 dakika yumuşayana kadar pişirin.", "timerSeconds": 1200 },
+      { "stepNumber": 3, "instruction": "Şekerle karıştırıp 20 dakika soğutun.", "timerSeconds": 1200 },
+      { "stepNumber": 4, "instruction": "Yoğurdu kaselere paylaştırın." },
+      { "stepNumber": 5, "instruction": "Pirinci yoğurtla buluşturun, yoğurt kesilmesin diye soğuk tutun." },
+      { "stepNumber": 6, "instruction": "Serviste susam veya hindistan cevizi serpin." }
+    ],
+    "notes": "Vietnamese black sticky rice yogurt + sua chua nep cam; mor pirinc, sekerleme ve yogurtlu servis dogrulandi"
+  },
+  {
+    "slug": "summer-pudding",
+    "type": "TATLI",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Meyveleri şekerle 5 dakika kısık ateşte pişirin.", "timerSeconds": 300 },
+      { "stepNumber": 2, "instruction": "Kalıbı ekmek dilimleriyle boşluk kalmadan kaplayın." },
+      { "stepNumber": 3, "instruction": "Meyveli karışımı kalıba doldurun." },
+      { "stepNumber": 4, "instruction": "Üstünü ekmekle kapatıp ağırlık koyun." },
+      { "stepNumber": 5, "instruction": "Tatlıyı buzdolabında 4 saat dinlendirin.", "timerSeconds": 14400 },
+      { "stepNumber": 6, "instruction": "Ters çevirip krema ile soğuk servis edin, kalıp dağılmasın." }
+    ],
+    "notes": "BBC Good Food summer pudding + British pudding teknikleri; meyve kompotu, ekmek kalip ve agirlikla dinlendirme dogrulandi"
+  },
+  {
+    "slug": "susamli-armut-tatlisi-bursa-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Armutları soyup ikiye bölün ve çekirdeklerini çıkarın." },
+      { "stepNumber": 2, "instruction": "Şekerli limonlu suyu tencereye alın." },
+      { "stepNumber": 3, "instruction": "Armutları 15 dakika kısık ateşte pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 4, "instruction": "Armutları 10 dakika şerbette dinlendirin.", "timerSeconds": 600 },
+      { "stepNumber": 5, "instruction": "Kavrulmuş susamı servis öncesi serpin, aroması sönmesin diye." }
+    ],
+    "notes": "Poached pear kaynaklari + susamli tatli pratikleri; armut soyma, limonlu serbet ve susamli servis dogrulandi"
+  },
+  {
+    "slug": "susamli-tahin-helvasi-aksaray-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Şeker ve suyu 5 dakika kaynatın.", "timerSeconds": 300 },
+      { "stepNumber": 2, "instruction": "Tahin ve susamı ayrı kapta karıştırın." },
+      { "stepNumber": 3, "instruction": "Sıcak şerbeti tahine yavaş ekleyin, yağ ayrışmasın diye." },
+      { "stepNumber": 4, "instruction": "Helvayı spatulayla 3 dakika toparlayın.", "timerSeconds": 180 },
+      { "stepNumber": 5, "instruction": "Kalıba bastırıp 30 dakika dinlendirin.", "timerSeconds": 1800 },
+      { "stepNumber": 6, "instruction": "Dilimleyip susamla servis edin." }
+    ],
+    "notes": "Tahin helvasi kaynaklari + sesame halva teknikleri; seker serbeti, tahin emulsyonu ve kalipta dinlendirme dogrulandi"
+  },
+  {
+    "slug": "suspiro-limeno-peru-lima-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Süt ve şekeri 12 dakika koyulaşana kadar pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 2, "instruction": "Karamelli kremayı kuplara paylaştırın." },
+      { "stepNumber": 3, "instruction": "Yumurta aklarını şekerle 4 dakika çırpın.", "timerSeconds": 240 },
+      { "stepNumber": 4, "instruction": "Bezeyi kremanın üstüne sıkın." },
+      { "stepNumber": 5, "instruction": "Tatlıyı 30 dakika soğutun, beze kremaya gömülmesin diye.", "timerSeconds": 1800 },
+      { "stepNumber": 6, "instruction": "Tarçınla servis edin." }
+    ],
+    "notes": "Peruvian suspiro limeno kaynaklari + meringue custard teknikleri; sutlu karamel, beze ve sogutma dogrulandi"
+  },
+  {
+    "slug": "sut-recelli-ekmek-tatlisi-bilecik-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Ekmeği dilimleyip tavada 4 dakika kızartın.", "timerSeconds": 240 },
+      { "stepNumber": 2, "instruction": "Ekmek tatlısı için sütlü sosu 8 dakika kısık ateşte pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Kızarmış ekmekleri servis tabağına alın." },
+      { "stepNumber": 4, "instruction": "Sütlü sosu ekmeklere dökün, içleri kuru kalmasın diye." },
+      { "stepNumber": 5, "instruction": "Süt reçeli gezdirip 10 dakika dinlendirin.", "timerSeconds": 600 }
+    ],
+    "notes": "Ekmek tatlisi kaynaklari + milk caramel dessert; ekmek kizartma, sutlu sos ve sut receli servisi dogrulandi"
+  },
+  {
+    "slug": "sutlac",
+    "type": "TATLI",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pirinci yıkayıp 1 su bardağı suda 10 dakika haşlayın.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Sıcak sütü yumuşamış pirince ekleyin." },
+      { "stepNumber": 3, "instruction": "Şeker ve soğuk sütte çözülmüş nişastayı ekleyin." },
+      { "stepNumber": 4, "instruction": "Sütlacı 15 dakika karıştırarak koyulaştırın, dibi yanmasın.", "timerSeconds": 900 },
+      { "stepNumber": 5, "instruction": "Kaselere paylaştırıp tepsiye sıcak su koyun." },
+      { "stepNumber": 6, "instruction": "200°C fırında 15 dakika üstü kızarana kadar pişirin.", "timerSeconds": 900 }
+    ],
+    "notes": "Yemek.com sutlac + firin sutlac kaynaklari; pirinc haslama, nisasta baglama ve 200C ust kizartma dogrulandi"
+  },
+  {
+    "slug": "sutlu-balkabagi-tatlisi-bursa-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kabakları dilimleyip şekerle tencereye alın." },
+      { "stepNumber": 2, "instruction": "Tatlıyı 22 dakika kısık ateşte pişirin.", "timerSeconds": 1320 },
+      { "stepNumber": 3, "instruction": "Kabakları 15 dakika ılıtın, krema kesilmesin.", "timerSeconds": 900 },
+      { "stepNumber": 4, "instruction": "Kremayı ekleyip nazikçe karıştırın." },
+      { "stepNumber": 5, "instruction": "Tatlıyı cevizle soğuk servis edin." }
+    ],
+    "notes": "Yemek.com kabak tatlisi + creamy pumpkin dessert; kabak pisirme, kremayi ilik ekleme ve cevizli servis dogrulandi"
+  },
+  {
+    "slug": "sutlu-hurmali-ekmek-kasigi-kirklareli-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Ekmeği küp doğrayıp servis kaselerine paylaştırın." },
+      { "stepNumber": 2, "instruction": "Hurmalı süt sosunu 8 dakika kısık ateşte pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Hurmaları küçük doğrayıp sosa ekleyin." },
+      { "stepNumber": 4, "instruction": "Sosu ekmeklerin üstüne dökün, kuru parça kalmasın diye." },
+      { "stepNumber": 5, "instruction": "Tatlıyı 15 dakika dinlendirip kaşıkla servis edin.", "timerSeconds": 900 }
+    ],
+    "notes": "Bread pudding kaynaklari + hurmali sutlu tatli pratikleri; ekmek, sutlu sos ve hurma ekleme dogrulandi"
+  },
+  {
+    "slug": "szarlotka-kup-polonya-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Elmayı şeker ve tarçınla 8 dakika pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 2, "instruction": "Elmayı 15 dakika soğutun, krema erimesin.", "timerSeconds": 900 },
+      { "stepNumber": 3, "instruction": "Bisküviyi iri ufalayın ve kremayı çırpın." },
+      { "stepNumber": 4, "instruction": "Kupalara bisküvi, elma ve kremayı katmanlayın." },
+      { "stepNumber": 5, "instruction": "Tatlıyı 25 dakika soğutup servis edin.", "timerSeconds": 1500 }
+    ],
+    "notes": "Polish szarlotka + apple crumble cup; elma pisirme, biskuvi katmani ve kremali sogutma dogrulandi"
+  },
+  {
+    "slug": "szarlotka-polonya-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Hamuru yoğurup 20 dakika dinlendirin.", "timerSeconds": 1200 },
+      { "stepNumber": 2, "instruction": "Elmaları tarçınla 8 dakika soteleyin.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Hamurun yarısını kalıba yayın ve elmalı içi ekleyin." },
+      { "stepNumber": 4, "instruction": "Kalan hamuru üstüne rendeleyin." },
+      { "stepNumber": 5, "instruction": "Szarlotkayı 180°C fırında 35 dakika pişirin.", "timerSeconds": 2100 },
+      { "stepNumber": 6, "instruction": "20 dakika soğutup dilimleyin, elma katı dağılmasın.", "timerSeconds": 1200 }
+    ],
+    "notes": "Polish szarlotka kaynaklari + apple pie teknikleri; hamur dinlendirme, elmali ic ve 180C pisirme dogrulandi"
+  },
+  {
+    "slug": "tahin-pekmezli-nevzine-kup-kayseri-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Nevzine tabanını küçük kırıntılar halinde hazırlayın." },
+      { "stepNumber": 2, "instruction": "Kup içine kırıntıları gevşek paylaştırın." },
+      { "stepNumber": 3, "instruction": "Tahin ve pekmezi 1 dakika karıştırın.", "timerSeconds": 60 },
+      { "stepNumber": 4, "instruction": "Sosu kırıntıların üstüne gezdirin, taban dağılmasın." },
+      { "stepNumber": 5, "instruction": "Ceviz ekleyip 15 dakika soğutun.", "timerSeconds": 900 }
+    ],
+    "notes": "Yemek.com nevzine + tahin pekmez kup pratikleri; kirinti taban, tahin pekmez sos ve ceviz dogrulandi"
+  },
+  {
+    "slug": "tahinli-elma-tatlisi-konya-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Elmaları oyup tarçın ve balla harmanlayın." },
+      { "stepNumber": 2, "instruction": "Elmaları fırın kabına dizin." },
+      { "stepNumber": 3, "instruction": "Elmaları 190°C fırında 18 dakika pişirin.", "timerSeconds": 1080 },
+      { "stepNumber": 4, "instruction": "Tatlıyı 10 dakika ılıtın, tahin akmasın.", "timerSeconds": 600 },
+      { "stepNumber": 5, "instruction": "Tahin ve cevizle doldurup servis edin." }
+    ],
+    "notes": "Baked apple kaynaklari + tahinli elma tatlisi pratikleri; elma oyma, 190C pisirme ve tahinli servis dogrulandi"
+  },
+  {
+    "slug": "tahinli-incir-muhallebisi-adana-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "İncirleri küçük doğrayıp 5 dakika ılık sütte bekletin.", "timerSeconds": 300 },
+      { "stepNumber": 2, "instruction": "Muhallebi bazını tencerede pürüzsüz çırpın." },
+      { "stepNumber": 3, "instruction": "Muhallebiyi 8 dakika kısık ateşte pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 4, "instruction": "Tahin ve inciri ekleyin, incir dibe çökmesin diye karıştırın." },
+      { "stepNumber": 5, "instruction": "Tahinli incir muhallebisini 30 dakika soğutun.", "timerSeconds": 1800 }
+    ],
+    "notes": "Tahinli muhallebi + incirli sutlu tatli kaynaklari; incir yumusatma, muhallebi ve tahin ekleme dogrulandi"
+  },
+  {
+    "slug": "tahinli-kabak-tatlisi-antalya-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kabağı dilimleyip şekerle tencereye alın." },
+      { "stepNumber": 2, "instruction": "Kabağı 25 dakika kısık ateşte pişirin.", "timerSeconds": 1500 },
+      { "stepNumber": 3, "instruction": "Kabakları servis tabağına alıp 10 dakika ılıtın.", "timerSeconds": 600 },
+      { "stepNumber": 4, "instruction": "Tahin gezdirin, sıcak kabakta yağ ayrışmasın diye." },
+      { "stepNumber": 5, "instruction": "Cevizle tamamlayıp servis edin." }
+    ],
+    "notes": "Yemek.com kabak tatlisi + tahinli kabak tatlisi kaynaklari; kabak pisirme, ilitma ve tahinli servis dogrulandi"
+  },
+  {
+    "slug": "tahinli-kuru-elma-tatlisi-nigde-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kuru elmaları ılık suda 10 dakika bekletin.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Elmaları tahin, bal ve tarçınla harmanlayın." },
+      { "stepNumber": 3, "instruction": "Karışımı küçük fırın kabına yayın." },
+      { "stepNumber": 4, "instruction": "Tatlıyı 180°C fırında 15 dakika pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 5, "instruction": "Cevizi servis öncesi serpin, dokusu sertleşmesin." }
+    ],
+    "notes": "Dried apple dessert kaynaklari + tahinli tatli pratikleri; kuru elma islatma, tahinli kaplama ve firinlama dogrulandi"
+  },
+  {
+    "slug": "tahinli-pide",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Un, maya ve suyla hamur yoğurup 35 dakika mayalandırın.", "timerSeconds": 2100 },
+      { "stepNumber": 2, "instruction": "Hamuru ince açıp tepsiye alın." },
+      { "stepNumber": 3, "instruction": "Tahin ve şekeri hamurun üstüne yayın." },
+      { "stepNumber": 4, "instruction": "Kenarları içe kıvırın, tahin fırında akmasın." },
+      { "stepNumber": 5, "instruction": "Pideyi 220°C fırında 18 dakika pişirin.", "timerSeconds": 1080 }
+    ],
+    "notes": "Tahinli pide kaynaklari + mayali pide teknikleri; hamur mayalama, tahinli ic ve 220C pisirme dogrulandi"
+  },
+  {
+    "slug": "tangyuan",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pirinç unu ve suyla pürüzsüz hamur yoğurun." },
+      { "stepNumber": 2, "instruction": "Hamuru 10 dakika dinlendirin, yuvarlarken çatlamasın.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Parçaları susam ezmesiyle doldurup kapatın." },
+      { "stepNumber": 4, "instruction": "Topları kaynar suya bırakın." },
+      { "stepNumber": 5, "instruction": "Tangyuanları 6 dakika yüzeye çıkana kadar haşlayın.", "timerSeconds": 360 },
+      { "stepNumber": 6, "instruction": "Sıcak şurup içinde servis edin." }
+    ],
+    "notes": "Chinese tangyuan kaynaklari + glutinous rice ball teknikleri; pirinc unu hamuru, susam dolgu ve haslama dogrulandi"
+  },
+  {
+    "slug": "tarcinli-ananas-kup-peru-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Ananası küçük küpler halinde doğrayın." },
+      { "stepNumber": 2, "instruction": "Ananası tarçınla 4 dakika soteleyin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Ananası 10 dakika soğutun, yoğurt akmasın.", "timerSeconds": 600 },
+      { "stepNumber": 4, "instruction": "Yoğurtlu tabanı kuplara paylaştırın." },
+      { "stepNumber": 5, "instruction": "Ananası üstüne ekleyip tarçınla servis edin." },
+      { "stepNumber": 6, "instruction": "Kup tatlısını bekletmeden sunun." }
+    ],
+    "notes": "Pineapple yogurt cup kaynaklari + Peruvian fruit dessert pratikleri; ananas soteleme, sogutma ve yogurt katmani dogrulandi"
+  },
+  {
+    "slug": "tarcinli-erik-kremasi-polonya-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Süt, nişasta ve şekeri tencerede çırpın." },
+      { "stepNumber": 2, "instruction": "Kremayı 6 dakika kısık ateşte pişirin.", "timerSeconds": 360 },
+      { "stepNumber": 3, "instruction": "Doğranmış erik ve tarçını ekleyip 3 dakika koyulaştırın.", "timerSeconds": 180 },
+      { "stepNumber": 4, "instruction": "Kremayı kaselere paylaştırın." },
+      { "stepNumber": 5, "instruction": "30 dakika soğutun, erik parçaları dibe çökmesin diye.", "timerSeconds": 1800 },
+      { "stepNumber": 6, "instruction": "Tarçın serperek servis edin." }
+    ],
+    "notes": "Polish plum pudding kaynaklari + custard teknikleri; nisasta kremasi, erik ekleme ve sogutma dogrulandi"
+  },
+  {
+    "slug": "tarcinli-mor-misir-muhallebisi-peru-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Mor mısır suyunu tarçın ve karanfille 5 dakika kaynatın.", "timerSeconds": 300 },
+      { "stepNumber": 2, "instruction": "Nişastayı ayrı kapta soğuk suyla açın." },
+      { "stepNumber": 3, "instruction": "Nişastayı tencereye ekleyin, topaklanmasın diye sürekli çırpın." },
+      { "stepNumber": 4, "instruction": "Muhallebiyi 6 dakika koyulaştırın.", "timerSeconds": 360 },
+      { "stepNumber": 5, "instruction": "Mor mısır muhallebisini kaselerde 30 dakika soğutun.", "timerSeconds": 1800 },
+      { "stepNumber": 6, "instruction": "Serviste tarçın serpin." }
+    ],
+    "notes": "Peruvian mazamorra morada + starch pudding teknikleri; mor misir, baharatli kaynatma ve nisasta baglama dogrulandi"
+  },
+  {
+    "slug": "tarcinli-quinoa-puding-peru-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Quinoayı bol suyla yıkayın." },
+      { "stepNumber": 2, "instruction": "Süt, şeker ve tarçınla tencereye alın." },
+      { "stepNumber": 3, "instruction": "Quinoayı 20 dakika kısık ateşte pişirin.", "timerSeconds": 1200 },
+      { "stepNumber": 4, "instruction": "Tarçın çubuğunu çıkarın, aroma acılaşmasın." },
+      { "stepNumber": 5, "instruction": "Pudingi kaselere alıp 20 dakika dinlendirin.", "timerSeconds": 1200 },
+      { "stepNumber": 6, "instruction": "Ilık veya soğuk servis edin." }
+    ],
+    "notes": "Peruvian quinoa pudding kaynaklari + rice pudding teknikleri; quinoa yikama, sutle pisirme ve tarcin dogrulandi"
+  },
+  {
+    "slug": "tarta-de-santiago-kup-ispanya-usulu",
+    "type": "TATLI",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Badem unu, yumurta, şeker ve limon kabuğunu karıştırın." },
+      { "stepNumber": 2, "instruction": "Karışımı küçük fırın kaplarına paylaştırın." },
+      { "stepNumber": 3, "instruction": "Kapları 180°C fırında 15 dakika pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 4, "instruction": "Kup tatlılarını 10 dakika ılıtın, bademli iç çökmesin.", "timerSeconds": 600 },
+      { "stepNumber": 5, "instruction": "Pudra şekeriyle ılık servis edin." },
+      { "stepNumber": 6, "instruction": "Serviste limon kabuğu rendesi ekleyin." }
+    ],
+    "notes": "Spanish tarta de Santiago kaynaklari + almond cake teknikleri; badem unu, 180C pisirme ve pudra sekeri dogrulandi"
+  }
+]

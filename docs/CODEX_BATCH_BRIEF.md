@@ -2999,6 +2999,32 @@ Tarif **doğru pişme** üretmeli. Sürelerde, sıcaklıklarda, miktarlarda hata
 Şüphede kaldığında **somut sayı yazma yerine "kıvam alana kadar"**. Ama "kıvam alana kadar" tek başına muğlak (§15.7.3); bu yüzden somut sayı + görsel sinyal birleşik:
 > "10 dakika orta ateşte, mahlep koyu sarı renge dönene kadar kavurun." (süre + sıcaklık + sinyal)
 
+#### 5. **Tatlı / şerbetli tariflerde step 1 ana malzeme aksiyonu (§16.2 oturum 20 ek)**
+
+Tatlı tariflerinde step 1 "şerbet hazırla / taban hazırla / kup hazırla" gibi yan eleman hazırlığı ile başlamamalı. Bu paterndeki tarifler aynı template'i 6-11 tarif arasında paylaşıyor, scaffold smuggling'in yumuşak versiyonu.
+
+❌ YASAK pattern (Retrofit-15 v1'de tespit edildi):
+```
+"[TARIFADI] şerbeti için su, şeker ve pekmezi ayrı kapta karıştırıp hazır tutun."  ← 11 tarif aynı
+"[TARIFADI] Kup tabanı için tencereye alın, şeker ve kuru malzemeyi soğukken çırpın."  ← 6 tarif aynı
+"[TARIFADI] Kup için lokmalık hazırlayın ve fazla nemini peçeteyle alın."  ← 3 tarif aynı
+```
+
+Bu cümleler şerbet veya taban malzemesi karıştırmasını step 1'e iter, gerçek tarifin başlangıç akışıyla ilgisi yoktur.
+
+✅ DOĞRU pattern (gerçek tatlı tarif akışı):
+```
+"Cevizleri iri kırın ve karıştırma kabına alın."
+"Sütü 85°C'ye ısıtıp şekeri çözdürün."
+"Yumurta beyazlarını çırpıcıyla 4 dakika sert tepecik gelene kadar çırpın."
+"Hamuru yoğurun ve 30 dakika buzdolabında dinlendirin."
+"Ayvaları soyup ikiye bölün, çekirdek yataklarını temizleyin."
+```
+
+Şerbet hazırlama klasik tatlı tarifte step 4-5'te (pişerken ya da pişme sonrası) gelir. Mod FA Retrofit-15 revize 2 (15r2) için bu kural sıkı uygulanır.
+
+**Doğrulama metriği**: aynı template'i (kelimesi kelimesine) ≥6 tarif paylaşıyorsa scaffold sayılır, FAIL.
+
 ### 16.3 Self-check (teslim öncesi 9 bash, §15.9 + Kural 17 + ek)
 
 Mod F bash'lerin hepsi koşar **ve ek**:

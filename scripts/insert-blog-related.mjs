@@ -16,6 +16,9 @@ const BLOG_DIR = path.resolve(process.cwd(), "content/blog");
 // Kisa baslik (dosyada yer alacak), her yazi icin 2-3 ilgili yazi
 const TITLES = {
   "anadolunun-unutulmus-yemekleri": "Anadolu'nun Unutulmuş Yemekleri",
+  "baharatli-yemek-seviyeleri": "Baharatlı Yemek Seviyeleri",
+  "soguk-vs-sicak-baslangic": "Soğuk vs Sıcak Başlangıç",
+  "ev-yapimi-ekmek-tipleri": "Ev Yapımı Ekmek Tipleri",
   "baharat-dolabi-temelleri-secim-saklama-kullanim": "Baharat Dolabı Temelleri",
   "baharat-ogutme-taze-hazir-kavurma-saklama": "Baharat Öğütme",
   "balik-mevsimleri-turkiye-denizleri-rehberi": "Balık Mevsimleri",
@@ -64,6 +67,21 @@ const RELATED = {
     ["turk-mutfaginin-yedi-bolgesi", "yedi bölge tat haritasi"],
     ["turk-mutfaginda-dugun-sofrasi", "geleneksel kazan ve toplu mutfak"],
     ["turk-mutfaginda-tatli-felsefesi", "tarihsel tatli mirasi"],
+  ],
+  "baharatli-yemek-seviyeleri": [
+    ["baharat-dolabi-temelleri-secim-saklama-kullanim", "kuru biberlerin saklanmasi"],
+    ["baharat-ogutme-taze-hazir-kavurma-saklama", "pul biberi ogutme ve kavurma"],
+    ["tuz-cesitleri-ve-kullanimi", "tuzun lezzet dengesindeki rolu"],
+  ],
+  "soguk-vs-sicak-baslangic": [
+    ["turk-mutfaginda-dugun-sofrasi", "buyuk sofralarda corbanin islevi"],
+    ["turk-mutfaginda-zeytinyagli-yemek-gelenegi", "klasik soguk meze repertuvari"],
+    ["bayram-sofrasi-ramazan-kurban-yemek-gelenekleri", "buyuk gun sofra sirasi"],
+  ],
+  "ev-yapimi-ekmek-tipleri": [
+    ["un-cesitleri-protein-kullanim-rehberi", "un protein orani ve sonuc"],
+    ["maya-kabartma-tozu-karbonat-farki", "uc kabarticinin kimyasi"],
+    ["fermentasyon-temelleri-yogurt-tursu-eksi-maya", "eksi maya baslaticisi"],
   ],
   "baharat-dolabi-temelleri-secim-saklama-kullanim": [
     ["baharat-ogutme-taze-hazir-kavurma-saklama", "ogutme zamani ve teknigi"],

@@ -15,6 +15,42 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
+### Source-side duplicate cleanup (Mod A 38a/38b drift, oturum 21 sonu)
+
+Validate-batch sırasında tespit: scripts/seed-recipes.ts içinde aynı
+yemeğin 3-4 farklı slug ile tekrarlanmış kayıtları var (Mod A
+batch'lerinin birbirini takip etmesi sırasında benzer tarif önerisi
+katmanlanmış):
+
+- **Yuvalama (4 kayıt)**:
+  - `yuvalama-corbasi` (line ~5195, eski)
+  - `antep-yogurtlu-yuvalama` (line ~15327, Mod A 38a)
+  - `gaziantep-yuvalama-yogurtlu` (line ~15772, Mod A 38a başka batch)
+  - `antep-yuvalama-yogurtlu` (line ~16069, Mod A 38b)
+
+- **Gazpacho (4 kayıt)**:
+  - `gazpacho` (line ~4355, eski)
+  - `seville-gazpacho-andaluz` (line ~15647)
+  - `andaluz-gazpacho` (line ~15793)
+  - `sevilla-gazpacho` (line ~16095)
+
+Bunların prod-DB durumu karışık (bazıları gerçekten apply, bazıları
+source-only). audit-deep'in `duplicate-titles` raporuyla aynı
+kategorideki gerçek duplicate'ler tespit edilebilir; source ve prod
+ayrı temizlemek gerekir.
+
+**Aksiyon planı**:
+1. `audit-duplicate-titles.ts` ile prod'da gerçek duplicate'leri çıkar
+2. Hangisini "kanonik" tutacağına karar ver (en güncel + en zengin
+   versiyon)
+3. Diğerlerini `rollback-batch` ile sil (slug bazlı, AuditLog'lu)
+4. seed-recipes.ts'ten karşılık gelen entry'leri kaldır
+5. Mod A 39a brief'inde "yeni tarif önerirken son 100 başlık kontrol"
+   self-check ekle (zaten Kural 6 + 7 eklendi oturum 21'de)
+
+Tahmini iş: 30-45 dk (audit + spot fix + commit). Kerem onayı +
+rollback-batch koşum gerek.
+
 ### Mod FA pipeline TAMAM (oturum 20)
 
 Tüm 4 batch revize prod'da (12r + 13r + 14r + 15r v2), 400 tarif scaffold

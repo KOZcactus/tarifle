@@ -582,6 +582,41 @@ evrim), §15.1.2 (7 gate checklist), §15.1.3 (notes format örnekleri),
 Mod F için yazılmış ama **Mod A için de birebir geçerli** — Batch
 37a+ teslim ederken §15.1.2 gate checklist'i satır satır işaretle.
 
+**6. Step ↔ Ingredient eşleşme katmanı (oturum 21 Mod A 38a/b dersi)**
+
+Bir step'te geçen malzeme adı ingredient list'inde de olmalı; aksi
+halde validate-batch ERROR atar (`step mentions X but ingredient list
+has no match`). 4 staple özel kontrol:
+
+- **`un` (ERROR severity)**: Step'te "un" kelimesi geçiyorsa ingredient
+  list'inde un türevi (tip 550, kepekli un, mısır unu, badem unu, vb.)
+  olmalı. **"iri un gibi", "un kıvamında" gibi simile kullanma** —
+  validate engine simile algılamaz, false-positive değil ERROR. Yerine
+  "iri toz halinde", "ince taneli kıvam" yaz.
+- **`pul biber` (ERROR)**: Aynı disiplin; pul biber stepte varsa
+  ingredient'ta da olsun.
+- **`tuz` + `karabiber` (WARNING)**: Pantry staple sayılır ama hala
+  ingredient list'e eklemek tercih edilir (1-2 satır extra; staple
+  WARNING ekran karışıklığı yapar, ERROR değil).
+
+**7. Alkollü malzeme + tag eşleşmesi (oturum 21 Mod A 38a dersi)**
+
+Validate engine `ALCOHOL_WORDS` listesi (votka, raki, rom, gin, cin,
+likor, sarap, bira, viski, tekila, brendi, kanyak, prosecco, sampanya,
+bitters, vermut, kampari) ile ingredient'ta alkol arar; varsa
+"alkollu" tag ZORUNLU (18+ yaş gate tetiklenmesi için). Aksi halde
+ERROR.
+
+**Önemli istisna**: `şarap sirkesi` ingredient'ı `sarap` substring
+match yapar ve false-positive verir. Sirke alkol değildir; **bu durumda
+"şarap sirkesi" yerine "üzüm sirkesi" veya "kırmızı şarap sirkesi"
+hatta `kırmızı sirke` yaz** (validate hâlâ tetikler — "şarap" geçmesin).
+En temizi `üzüm sirkesi` (Türk mutfağı yaygın eşdeğer).
+
+Aynı şekilde "rom köküm" gibi kompozit isimler dikkat. Şüphede aday
+kelimeyi normalize edip (aksansız lowercase) `\bword\b` regex testi
+yap → ingredient'a alternatif isim koy.
+
 ### 5.1 Kaynak kontrolü Mod A'da (yeni tarif üretirken de)
 
 Mod A yeni tarif yazıyor, Mod F gibi retrofit değil — ama web kaynağı

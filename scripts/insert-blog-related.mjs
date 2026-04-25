@@ -36,6 +36,7 @@ const TITLES = {
   "firin-kullanimi-raf-isi-on-isitma": "Fırın Kullanımı",
   "kahve-demlemesi-turk-espresso-french-press-v60": "Kahve Demlemesi",
   "kahve-mi-cay-mi-secim-rehberi": "Kahve mi, Çay mı?",
+  "limon-ve-limon-suyu": "Limon ve Limon Suyu",
   "makarna-cesitleri-sos-eslestirme-rehberi": "Makarna Çeşitleri",
   "maya-kabartma-tozu-karbonat-farki": "Maya, Kabartma Tozu, Karbonat",
   "mikro-otlar": "Mikro Otlar",
@@ -96,6 +97,11 @@ const RELATED = {
     ["soganin-dogru-kavrulmasi", "kavurmanin derinlemesine ornegi"],
     ["et-muhurlemenin-bilimi", "yuksek isi tavada Maillard"],
     ["mutfak-ocaklari-induksiyon-gaz-elektrik-dokum", "isi kontrolunun teknige etkisi"],
+  ],
+  "limon-ve-limon-suyu": [
+    ["damak-yemek-dengesi", "asit ekseninin tat dengesindeki rolu"],
+    ["tuz-cesitleri-ve-kullanimi", "limon ile tuzun ortak alani"],
+    ["balik-secimi-temizlik-ve-pisirme", "balikta limon kullanimi"],
   ],
   "soguk-vs-sicak-baslangic": [
     ["turk-mutfaginda-dugun-sofrasi", "buyuk sofralarda corbanin islevi"],

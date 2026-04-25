@@ -303,8 +303,7 @@ mevcut yazılarla overlap yok, evergreen + yüksek arama hacmi):
 **malzeme-tanima (öncelik):**
 - [ ] **Acı Sos Yapımı ve Çeşitleri** - fermente sos vs taze, kapsaisin
       sıkıştırma, ev yapımı sürekli kullanım sosu
-- [ ] **Limon ve Limon Suyu Rehberi** - taze vs paket, asitlik yönetimi,
-      kabuk değerlendirme, dondurma
+- [x] ~~**Limon ve Limon Suyu Rehberi**~~ ✅ ship (oturum 21, blog 49)
 - [x] ~~**Yağ Kimyası ve Duman Noktaları**~~ ✅ ship (oturum 21, blog 47)
 - [ ] **Tahıl Çeşitleri Karşılaştırma** - bulgur/pirinç/karabuğday/
       kinoa/yulaf yan yana

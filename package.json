@@ -28,7 +28,8 @@
     "content:validate": "tsx scripts/validate-batch.ts",
     "content:rollback": "tsx scripts/rollback-batch.ts",
     "content:sync-emojis": "tsx scripts/sync-emojis.ts",
-    "setup:hooks": "git config core.hooksPath scripts/git-hooks"
+    "setup:hooks": "git config core.hooksPath scripts/git-hooks",
+    "smoke": "tsx scripts/smoke-test.ts"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.1",

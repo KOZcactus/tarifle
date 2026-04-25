@@ -95,7 +95,10 @@ export async function POST(request: Request): Promise<NextResponse> {
     );
   });
 
-  return NextResponse.json({ ok: true }, { status: 204 });
+  // 204 No Content with NO body, illegal HTTP olur eger body yazarsak
+  // (NextResponse.json bunu yapiyordu, 500 ile sonuclaniyordu - oturum 19
+  // smoke test ile yakalandi). Standart CSP report endpoint pattern: 204.
+  return new NextResponse(null, { status: 204 });
 }
 
 // Tarayicilar `Content-Type: application/csp-report` ile POST eder; Next.js

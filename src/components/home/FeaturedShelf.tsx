@@ -4,9 +4,13 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import type { RecipeCard as RecipeCardType } from "@/types/recipe";
+import type { DietBadgeData } from "@/lib/queries/diet-score";
 
 interface FeaturedShelfProps {
   recipes: RecipeCardType[];
+  /** Recipe ID -> diet badge map. Login + dietProfile yoksa undefined ya
+   *  da bos Map. RecipeCard kosullu render eder. */
+  dietBadges?: Map<string, DietBadgeData>;
 }
 
 /**
@@ -27,7 +31,7 @@ interface FeaturedShelfProps {
  * Desktop grid kodu minimal farkla aynı, CSS media query tek sayfada
  * conditional render.
  */
-export function FeaturedShelf({ recipes }: FeaturedShelfProps) {
+export function FeaturedShelf({ recipes, dietBadges }: FeaturedShelfProps) {
   const t = useTranslations("home");
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -77,7 +81,7 @@ export function FeaturedShelf({ recipes }: FeaturedShelfProps) {
             key={recipe.id}
             className="w-[85%] shrink-0 snap-start"
           >
-            <RecipeCard recipe={recipe} />
+            <RecipeCard recipe={recipe} dietBadge={dietBadges?.get(recipe.id)} />
           </div>
         ))}
       </div>
@@ -130,7 +134,11 @@ export function FeaturedShelf({ recipes }: FeaturedShelfProps) {
       {/* Desktop: grid */}
       <div className="hidden gap-6 sm:grid sm:grid-cols-2 lg:grid-cols-3">
         {recipes.map((recipe) => (
-          <RecipeCard key={recipe.id} recipe={recipe} />
+          <RecipeCard
+            key={recipe.id}
+            recipe={recipe}
+            dietBadge={dietBadges?.get(recipe.id)}
+          />
         ))}
       </div>
     </div>

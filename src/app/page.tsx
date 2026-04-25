@@ -26,6 +26,7 @@ import { auth } from "@/lib/auth";
 import { getCuisineStats } from "@/lib/queries/cuisine-stats";
 import { getSearchSuggestions } from "@/lib/queries/search-suggestions";
 import { getRandomRecipe } from "@/lib/queries/random-recipe";
+import { getDietBadgesIfApplicable } from "@/lib/queries/diet-score";
 import { RandomRecipeBanner } from "@/components/discovery/RandomRecipeBanner";
 import { CountUp } from "@/components/ui/CountUp";
 import { ProfileIncompleteBanner } from "@/components/home/ProfileIncompleteBanner";
@@ -116,6 +117,15 @@ export default async function HomePage() {
   const sortedCategories = [...categories].sort(
     (a, b) => b._count.recipes - a._count.recipes,
   );
+
+  // Diyet badge'leri (oturum 20). Tum 3 shelf'in (featured + popular +
+  // personalized) recipe ID'leri tek batched fetch.
+  const homeRecipeIds = [
+    ...featured.map((r) => r.id),
+    ...popular.map((r) => r.id),
+    ...personalized.recipes.map((r) => r.id),
+  ];
+  const homeDietBadges = await getDietBadgesIfApplicable(userId, homeRecipeIds);
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -223,7 +233,11 @@ export default async function HomePage() {
           </div>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {personalized.recipes.map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
+              <RecipeCard
+                key={recipe.id}
+                recipe={recipe}
+                dietBadge={homeDietBadges.get(recipe.id)}
+              />
             ))}
           </div>
         </section>
@@ -250,7 +264,7 @@ export default async function HomePage() {
               {t("seeAll")}
             </Link>
           </div>
-          <FeaturedShelf recipes={featured} />
+          <FeaturedShelf recipes={featured} dietBadges={homeDietBadges} />
         </section>
       )}
 
@@ -299,7 +313,11 @@ export default async function HomePage() {
           </div>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {popular.map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
+              <RecipeCard
+                key={recipe.id}
+                recipe={recipe}
+                dietBadge={homeDietBadges.get(recipe.id)}
+              />
             ))}
           </div>
         </section>

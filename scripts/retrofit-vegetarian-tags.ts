@@ -18,7 +18,7 @@
  *   npx tsx scripts/retrofit-vegetarian-tags.ts --apply         # dev
  *   npx tsx scripts/retrofit-vegetarian-tags.ts --apply --confirm-prod
  */
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, Allergen } from "@prisma/client";
 import { PrismaNeon } from "@prisma/adapter-neon";
 import { neonConfig } from "@neondatabase/serverless";
 import ws from "ws";
@@ -108,10 +108,18 @@ async function main() {
       id: true,
       slug: true,
       title: true,
+      allergens: true,
       ingredients: { select: { name: true } },
       tags: { select: { tagId: true, tag: { select: { slug: true } } } },
     },
   });
+
+  // Allergen-bazli guard (oturum 20 audit-deep 26 CRITICAL bug fix).
+  // Recipe.allergens enum source-of-truth, ingredient name pattern
+  // matching'i tek basina yetersiz ("sardalyali" gibi ek-isimleri
+  // kacirmis, "Yumurta" varken vegan tag'lemis).
+  const VEGAN_BLOCKING: Allergen[] = ["YUMURTA", "SUT", "DENIZ_URUNLERI"];
+  const VEGETARIAN_BLOCKING: Allergen[] = ["DENIZ_URUNLERI"];
 
   console.log("📊 " + recipes.length + " tarif analiz ediliyor");
   console.log("⚙️  Mode: " + (APPLY ? "APPLY" : "DRY-RUN") + "\n");
@@ -127,14 +135,20 @@ async function main() {
   for (const r of recipes) {
     const tagSlugs = new Set(r.tags.map((t) => t.tag.slug));
     const meatHit = r.ingredients.some((i) => hasMeat(i.name));
-    if (meatHit) {
+
+    // Allergen-bazli ek guard. Ingredient pattern kacirsa bile allergen
+    // enum'da DENIZ_URUNLERI varsa bu tarif kesinlikle vejetaryen degil.
+    const allergenSeafood = VEGETARIAN_BLOCKING.some((a) => r.allergens.includes(a));
+    const allergenAnimal = VEGAN_BLOCKING.some((a) => r.allergens.includes(a));
+
+    if (meatHit || allergenSeafood) {
       omnivore++;
       continue;
     }
 
     // Vejetaryen aday
     const animalHit = r.ingredients.some((i) => hasAnimalProduct(i.name));
-    const isVegan = !animalHit;
+    const isVegan = !animalHit && !allergenAnimal;
 
     // Vejetaryen tag eklenecek mi
     if (!tagSlugs.has("vejetaryen") && !tagSlugs.has("vegetarian")) {

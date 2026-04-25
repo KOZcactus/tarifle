@@ -42,16 +42,17 @@ stable (carbs proxy fallback + %86 USDA).
 scorer.ts içinde `isBeta = profile.requiresEnrichedData && profile.slug !== "dusuk-seker"` mantığı; 4 preset için override eklenebilir veya
 requiresEnrichedData=false yapılabilir.
 
-### Top 201-300 ingredient seed (Faz 3 polish, opsiyonel)
+### Uzun-kuyruk ingredient seed (Faz 4, opsiyonel, launch sonrası)
 
-Oturum 21'de batch 4 (top 80 + alias'lar) seedlendi, **210 ingredient**
-prod, coverage **%92 → %97** (3357/3471 tarif matchedRatio>=0.5,
-0-match 6 → 4). Plus TR-aware fold root cause fix (ı↔i, ş↔s, ç↔c, ğ↔g,
-ü↔u, ö↔o) `aggregate.ts` + `audit-top-ingredients.ts`'e eklendi.
+Oturum 21'de batch 4 (top 80) + batch 5 (top 101) seedlendi, **311
+ingredient** prod, coverage **%92 → %99.97** (3470/3471 tarif
+matchedRatio>=0.5, 0-match 1). Plus TR-aware fold root cause fix
+(`aggregate.ts` + `audit-top-ingredients.ts`).
 
-Sonraki dalga (opsiyonel): top 201-300, ortalama 5-10x freq, %97 → %98+
-gain marjinal. Uzun-kuyruk 1257 unmatched ingredient'in çoğu 1-3x freq.
-audit-top-ingredients.ts gerçek gap'i gösterir.
+Geriye kalan ~1075 unmatched ingredient'in çoğu 1-5x freq, uzun-kuyruk.
+Tek bir tarifte iki kez geçen marjinal malzeme. Ek seed gain marjinal,
+launch sonrası kullanıcı şikayetine göre devam edilir. audit-top-
+ingredients.ts ile gerçek gap görülebilir.
 
 ### Vercel env DATABASE_URL_OLD kontrolü (Kerem dashboard işi)
 

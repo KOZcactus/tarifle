@@ -17,6 +17,7 @@ const BLOG_DIR = path.resolve(process.cwd(), "content/blog");
 const TITLES = {
   "anadolunun-unutulmus-yemekleri": "Anadolu'nun Unutulmuş Yemekleri",
   "baharatli-yemek-seviyeleri": "Baharatlı Yemek Seviyeleri",
+  "damak-yemek-dengesi": "Damak Yemek Dengesi",
   "soguk-vs-sicak-baslangic": "Soğuk vs Sıcak Başlangıç",
   "ev-yapimi-ekmek-tipleri": "Ev Yapımı Ekmek Tipleri",
   "baharat-dolabi-temelleri-secim-saklama-kullanim": "Baharat Dolabı Temelleri",
@@ -72,6 +73,11 @@ const RELATED = {
     ["baharat-dolabi-temelleri-secim-saklama-kullanim", "kuru biberlerin saklanmasi"],
     ["baharat-ogutme-taze-hazir-kavurma-saklama", "pul biberi ogutme ve kavurma"],
     ["tuz-cesitleri-ve-kullanimi", "tuzun lezzet dengesindeki rolu"],
+  ],
+  "damak-yemek-dengesi": [
+    ["baharatli-yemek-seviyeleri", "acilik ekseni dengesi"],
+    ["tuz-cesitleri-ve-kullanimi", "tuzlulugun temel rolu"],
+    ["soguk-vs-sicak-baslangic", "sicaklik katmaninin sofrada uygulamasi"],
   ],
   "soguk-vs-sicak-baslangic": [
     ["turk-mutfaginda-dugun-sofrasi", "buyuk sofralarda corbanin islevi"],

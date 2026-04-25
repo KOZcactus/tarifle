@@ -429,72 +429,56 @@ const VEGAN_DENGELI: DietProfile = {
 };
 
 /**
- * Preset 6: Düşük Şeker (Faz 1 BETA, Faz 2'de USDA enrichment ile geliştirilir).
+ * Preset 6: Düşük Şeker (Faz 2 USDA enrichment ile real sugar verisi).
  *
- * Faz 1 yaklaşım (proxy):
- * - Carbs %35'e kadar makul (yüksek şeker tarifin carb'ı yüksek olur)
- * - Toplam kalori 250-450 (porsiyon kontrolü)
- * - Yüksek protein bonus (tatlıyı dengeler)
- *
- * Faz 2'de eklenecek (sugar verisi gelince):
- * - sugar ≤ 10g/porsiyon hard gate
- * - glycemic load hesaplama
- * - rafine şeker ingredient ceza (toz şeker, pudra şeker, şurup)
+ * RecipeNutrition.sugarPerServing varsa o kullanilir; yoksa carbs proxy
+ * fallback. Top 30 ingredient seed sonrasi tariflerin %78'inde sugar
+ * verisi mevcut.
  */
 const DUSUK_SEKER: DietProfile = {
   slug: "dusuk-seker",
-  name: "Düşük Şeker (Beta)",
+  name: "Düşük Şeker",
   description: "Şeker yükü düşük tarifler. Kan şekerini ani yükseltmeyen, dengeli karbonhidrat. Diyabet dostu yaklaşım.",
   emoji: "🩺",
   phase: 2,
   requiresEnrichedData: true,
   criteria: [
     {
-      slug: "carb-moderate",
-      label: "Karbonhidrat ölçülü (proxy)",
-      max: 35,
+      slug: "sugar-low",
+      label: "Şeker miktarı",
+      max: 50,
       compute: (r) => {
+        const sugar = r.sugarPerServing;
+        if (sugar !== undefined && sugar !== null) {
+          // Real veri: ≤10g/porsiyon ideal, 20g'da yarı puan
+          const fit = fitUpper(sugar, 10);
+          return {
+            score: Math.round(fit * 50),
+            fit,
+            status: fit >= 0.8 ? "ok" : fit >= 0.5 ? "warning" : "bad",
+            note: `${sugar} g şeker / porsiyon`,
+          };
+        }
+        // Fallback: carbs proxy
         const carbs = Number(r.carbs ?? 999);
-        // Düşük carb hedefli, fit_upper(carbs, 30g)
         const fit = fitUpper(carbs, 30);
         return {
-          score: Math.round(fit * 35),
+          score: Math.round(fit * 50),
           fit,
           status: fit >= 0.8 ? "ok" : fit >= 0.5 ? "warning" : "bad",
-          note: `${carbs} g karbonhidrat (Faz 2'de şeker ayrı hesap)`,
-        };
-      },
-    },
-    {
-      slug: "carb-percent",
-      label: "Karbonhidrat oranı",
-      max: 25,
-      compute: (r) => {
-        const m = macroPercents(
-          Number(r.protein ?? 0),
-          Number(r.carbs ?? 0),
-          Number(r.fat ?? 0),
-        );
-        if (!m.valid) return { score: 0, fit: 0, status: "bad", note: "Makro verisi yok" };
-        // %40'a kadar OK, üstü ceza
-        const fit = fitUpper(m.carbsPct, 0.40);
-        return {
-          score: Math.round(fit * 25),
-          fit,
-          status: fit >= 0.8 ? "ok" : fit >= 0.5 ? "warning" : "bad",
-          note: `Karbonhidrat %${Math.round(m.carbsPct * 100)}`,
+          note: `${carbs} g karbonhidrat (şeker verisi yok, proxy)`,
         };
       },
     },
     {
       slug: "protein-balance",
       label: "Protein dengesi",
-      max: 20,
+      max: 25,
       compute: (r) => {
         const protein = Number(r.protein ?? 0);
         const fit = fitLower(protein, 18);
         return {
-          score: Math.round(fit * 20),
+          score: Math.round(fit * 25),
           fit,
           status: fit >= 0.7 ? "ok" : fit >= 0.4 ? "warning" : "bad",
           note: `${protein} g protein, kan şekerini dengeler`,
@@ -504,14 +488,399 @@ const DUSUK_SEKER: DietProfile = {
     {
       slug: "calorie-portion",
       label: "Porsiyon kontrolü",
-      max: 20,
+      max: 15,
       compute: (r) => {
         const fit = fitRange(r.averageCalories, { min: 200, ideal: 400, max: 550 });
+        return {
+          score: Math.round(fit * 15),
+          fit,
+          status: fit >= 0.7 ? "ok" : "warning",
+          note: `${r.averageCalories ?? "?"} kcal/porsiyon`,
+        };
+      },
+    },
+    {
+      slug: "fiber-bonus",
+      label: "Lif bonusu",
+      max: 10,
+      compute: (r) => {
+        const fiber = r.fiberPerServing;
+        if (fiber === undefined || fiber === null) {
+          return {
+            score: 0,
+            fit: 0,
+            status: "warning",
+            note: "Lif verisi yok",
+          };
+        }
+        const fit = fitLower(fiber, 5);
+        return {
+          score: Math.round(fit * 10),
+          fit,
+          status: fit >= 0.7 ? "ok" : fit >= 0.4 ? "warning" : "bad",
+          note: `${fiber} g lif (yüksek lif kan şekerini yavaşlatır)`,
+        };
+      },
+    },
+  ],
+};
+
+/**
+ * Preset 7: Yüksek Lif (Faz 2 USDA enrichment).
+ * Hedef: ≥8g fiber/porsiyon, tam tahıl + baklagil + sebze ağırlıklı.
+ */
+const YUKSEK_LIF: DietProfile = {
+  slug: "yuksek-lif",
+  name: "Yüksek Lif",
+  description: "Sindirim sağlığı için lif yoğun tarifler. Tam tahıl, baklagil, sebze ağırlıklı; tokluk uzun sürer.",
+  emoji: "🌾",
+  phase: 2,
+  requiresEnrichedData: true,
+  criteria: [
+    {
+      slug: "fiber-high",
+      label: "Lif miktarı",
+      max: 50,
+      compute: (r) => {
+        const fiber = r.fiberPerServing;
+        if (fiber === undefined || fiber === null) {
+          return {
+            score: 0,
+            fit: 0,
+            status: "bad",
+            note: "Lif verisi yok",
+          };
+        }
+        const fit = fitLower(fiber, 8);
+        return {
+          score: Math.round(fit * 50),
+          fit,
+          status: fit >= 0.8 ? "ok" : fit >= 0.5 ? "warning" : "bad",
+          note: `${fiber} g lif / porsiyon`,
+        };
+      },
+    },
+    {
+      slug: "satiety",
+      label: "Doyuruculuk",
+      max: 20,
+      compute: (r) => {
+        const fit = fitRange(r.hungerBar, { min: 5, ideal: 8, max: 10 });
         return {
           score: Math.round(fit * 20),
           fit,
           status: fit >= 0.7 ? "ok" : "warning",
-          note: `${r.averageCalories ?? "?"} kcal/porsiyon`,
+          note: r.hungerBar !== null ? `Açlık skoru ${r.hungerBar}/10` : "Doyuruculuk verisi yok",
+        };
+      },
+    },
+    {
+      slug: "calorie-reasonable",
+      label: "Makul kalori",
+      max: 15,
+      compute: (r) => {
+        const fit = fitRange(r.averageCalories, { min: 300, ideal: 500, max: 700 });
+        return {
+          score: Math.round(fit * 15),
+          fit,
+          status: fit >= 0.7 ? "ok" : "warning",
+          note: `${r.averageCalories ?? "?"} kcal`,
+        };
+      },
+    },
+    {
+      slug: "protein-floor",
+      label: "Yeterli protein",
+      max: 15,
+      compute: (r) => {
+        const protein = Number(r.protein ?? 0);
+        const fit = fitLower(protein, 12);
+        return {
+          score: Math.round(fit * 15),
+          fit,
+          status: fit >= 0.7 ? "ok" : "warning",
+          note: `${protein} g protein`,
+        };
+      },
+    },
+  ],
+};
+
+/**
+ * Preset 8: Düşük Sodyum (kalp sağlığı, hipertansiyon).
+ * Hedef: ≤600mg sodium/porsiyon (DASH diyet hedefi 2300mg/gün, /4 öğün).
+ */
+const DUSUK_SODYUM: DietProfile = {
+  slug: "dusuk-sodyum",
+  name: "Düşük Sodyum",
+  description: "Kalp sağlığı, hipertansiyon dostu. Tuz tüketimini sınırlar, fazla işlenmiş ürün içermez.",
+  emoji: "❤️",
+  phase: 2,
+  requiresEnrichedData: true,
+  criteria: [
+    {
+      slug: "sodium-low",
+      label: "Sodyum miktarı",
+      max: 55,
+      compute: (r) => {
+        const sodium = r.sodiumPerServing;
+        if (sodium === undefined || sodium === null) {
+          return {
+            score: 0,
+            fit: 0,
+            status: "bad",
+            note: "Sodyum verisi yok",
+          };
+        }
+        const fit = fitUpper(sodium, 600);
+        return {
+          score: Math.round(fit * 55),
+          fit,
+          status: fit >= 0.8 ? "ok" : fit >= 0.5 ? "warning" : "bad",
+          note: `${sodium} mg sodyum / porsiyon`,
+        };
+      },
+    },
+    {
+      slug: "satfat-moderate",
+      label: "Doymuş yağ ölçülü",
+      max: 20,
+      compute: (r) => {
+        const satFat = r.satFatPerServing;
+        if (satFat === undefined || satFat === null) {
+          // Fallback: toplam yağ ile
+          const fat = Number(r.fat ?? 0);
+          const fit = fitUpper(fat, 20);
+          return {
+            score: Math.round(fit * 20),
+            fit,
+            status: fit >= 0.7 ? "ok" : "warning",
+            note: `${fat} g toplam yağ (doymuş yağ verisi yok)`,
+          };
+        }
+        const fit = fitUpper(satFat, 7);
+        return {
+          score: Math.round(fit * 20),
+          fit,
+          status: fit >= 0.7 ? "ok" : fit >= 0.4 ? "warning" : "bad",
+          note: `${satFat} g doymuş yağ`,
+        };
+      },
+    },
+    {
+      slug: "calorie-balanced",
+      label: "Kalori dengesi",
+      max: 15,
+      compute: (r) => {
+        const fit = fitRange(r.averageCalories, { min: 250, ideal: 450, max: 650 });
+        return {
+          score: Math.round(fit * 15),
+          fit,
+          status: fit >= 0.7 ? "ok" : "warning",
+          note: `${r.averageCalories ?? "?"} kcal`,
+        };
+      },
+    },
+    {
+      slug: "fiber-bonus",
+      label: "Lif bonusu",
+      max: 10,
+      compute: (r) => {
+        const fiber = r.fiberPerServing;
+        if (fiber === undefined || fiber === null) {
+          return { score: 0, fit: 0, status: "warning", note: "Lif verisi yok" };
+        }
+        const fit = fitLower(fiber, 4);
+        return {
+          score: Math.round(fit * 10),
+          fit,
+          status: fit >= 0.7 ? "ok" : "warning",
+          note: `${fiber} g lif`,
+        };
+      },
+    },
+  ],
+};
+
+/**
+ * Preset 9: Akdeniz Diyeti.
+ * Zeytinyağı + balık + tahıl + lif + düşük doymuş yağ composite.
+ */
+const AKDENIZ: DietProfile = {
+  slug: "akdeniz",
+  name: "Akdeniz Diyeti",
+  description: "Akdeniz beslenme paterni: zeytinyağı, balık, sebze, tam tahıl, baklagil. Yüksek lif + sağlıklı yağ + düşük doymuş yağ.",
+  emoji: "🫒",
+  phase: 2,
+  requiresEnrichedData: true,
+  criteria: [
+    {
+      slug: "satfat-low",
+      label: "Doymuş yağ düşük",
+      max: 25,
+      compute: (r) => {
+        const satFat = r.satFatPerServing;
+        if (satFat === undefined || satFat === null) {
+          return { score: 0, fit: 0, status: "warning", note: "Doymuş yağ verisi yok" };
+        }
+        const fit = fitUpper(satFat, 5);
+        return {
+          score: Math.round(fit * 25),
+          fit,
+          status: fit >= 0.8 ? "ok" : fit >= 0.5 ? "warning" : "bad",
+          note: `${satFat} g doymuş yağ`,
+        };
+      },
+    },
+    {
+      slug: "fiber-good",
+      label: "Yeterli lif",
+      max: 25,
+      compute: (r) => {
+        const fiber = r.fiberPerServing;
+        if (fiber === undefined || fiber === null) {
+          return { score: 0, fit: 0, status: "warning", note: "Lif verisi yok" };
+        }
+        const fit = fitLower(fiber, 6);
+        return {
+          score: Math.round(fit * 25),
+          fit,
+          status: fit >= 0.7 ? "ok" : fit >= 0.4 ? "warning" : "bad",
+          note: `${fiber} g lif`,
+        };
+      },
+    },
+    {
+      slug: "macro-balance",
+      label: "Akdeniz makro paterni",
+      max: 25,
+      compute: (r) => {
+        const m = macroPercents(
+          Number(r.protein ?? 0),
+          Number(r.carbs ?? 0),
+          Number(r.fat ?? 0),
+        );
+        if (!m.valid) return { score: 0, fit: 0, status: "bad", note: "Makro verisi yok" };
+        // Akdeniz: protein %15-20, carb %45-55, fat %30-40 (yüksek mono-unsat)
+        const pFit = fitRange(m.proteinPct, { min: 0.10, ideal: 0.18, max: 0.25 });
+        const cFit = fitRange(m.carbsPct, { min: 0.40, ideal: 0.50, max: 0.60 });
+        const fFit = fitRange(m.fatPct, { min: 0.25, ideal: 0.35, max: 0.45 });
+        const fit = (pFit + cFit + fFit) / 3;
+        return {
+          score: Math.round(fit * 25),
+          fit,
+          status: fit >= 0.7 ? "ok" : fit >= 0.4 ? "warning" : "bad",
+          note: `Protein %${Math.round(m.proteinPct * 100)} · Carb %${Math.round(m.carbsPct * 100)} · Fat %${Math.round(m.fatPct * 100)}`,
+        };
+      },
+    },
+    {
+      slug: "calorie-balanced",
+      label: "Kalori dengesi",
+      max: 15,
+      compute: (r) => {
+        const fit = fitRange(r.averageCalories, { min: 350, ideal: 550, max: 750 });
+        return {
+          score: Math.round(fit * 15),
+          fit,
+          status: fit >= 0.7 ? "ok" : "warning",
+          note: `${r.averageCalories ?? "?"} kcal`,
+        };
+      },
+    },
+    {
+      slug: "sodium-moderate",
+      label: "Sodyum ölçülü",
+      max: 10,
+      compute: (r) => {
+        const sodium = r.sodiumPerServing;
+        if (sodium === undefined || sodium === null) {
+          return { score: 0, fit: 0, status: "warning", note: "Sodyum verisi yok" };
+        }
+        const fit = fitUpper(sodium, 800);
+        return {
+          score: Math.round(fit * 10),
+          fit,
+          status: fit >= 0.7 ? "ok" : "warning",
+          note: `${sodium} mg sodyum`,
+        };
+      },
+    },
+  ],
+};
+
+/**
+ * Preset 10: Keto Hassas.
+ * Hedef: net carb (carbs - fiber) ≤10g, fat ≥70% kalori.
+ */
+const KETO_HASSAS: DietProfile = {
+  slug: "keto-hassas",
+  name: "Keto Hassas",
+  description: "Net karbonhidrat çok düşük, yağ ağırlıklı. Ketogenik beslenme prensiplerine yakın tarifler.",
+  emoji: "🥑",
+  phase: 2,
+  requiresEnrichedData: true,
+  criteria: [
+    {
+      slug: "net-carb-low",
+      label: "Net karbonhidrat",
+      max: 50,
+      compute: (r) => {
+        const carbs = Number(r.carbs ?? 999);
+        const fiber = r.fiberPerServing;
+        const netCarb = fiber !== undefined && fiber !== null ? carbs - fiber : carbs;
+        const fit = fitUpper(netCarb, 10);
+        const noteSuffix =
+          fiber !== undefined && fiber !== null
+            ? `${netCarb.toFixed(1)} g net carb (toplam ${carbs} - lif ${fiber})`
+            : `${carbs} g toplam karbonhidrat (lif verisi yok)`;
+        return {
+          score: Math.round(fit * 50),
+          fit,
+          status: fit >= 0.8 ? "ok" : fit >= 0.5 ? "warning" : "bad",
+          note: noteSuffix,
+        };
+      },
+    },
+    {
+      slug: "fat-ratio",
+      label: "Yağ oranı",
+      max: 30,
+      compute: (r) => {
+        const m = macroPercents(
+          Number(r.protein ?? 0),
+          Number(r.carbs ?? 0),
+          Number(r.fat ?? 0),
+        );
+        if (!m.valid) return { score: 0, fit: 0, status: "bad", note: "Makro verisi yok" };
+        // Keto: fat ≥70% kalori, fitLower
+        const fit = fitLower(m.fatPct, 0.7);
+        return {
+          score: Math.round(fit * 30),
+          fit,
+          status: fit >= 0.8 ? "ok" : fit >= 0.5 ? "warning" : "bad",
+          note: `Yağ kalori payı %${Math.round(m.fatPct * 100)}`,
+        };
+      },
+    },
+    {
+      slug: "protein-moderate",
+      label: "Protein ölçülü",
+      max: 20,
+      compute: (r) => {
+        const m = macroPercents(
+          Number(r.protein ?? 0),
+          Number(r.carbs ?? 0),
+          Number(r.fat ?? 0),
+        );
+        if (!m.valid) return { score: 0, fit: 0, status: "bad", note: "Makro verisi yok" };
+        // Keto: protein 15-25%, ne çok düşük ne çok yüksek
+        const fit = fitRange(m.proteinPct, { min: 0.10, ideal: 0.20, max: 0.30 });
+        return {
+          score: Math.round(fit * 20),
+          fit,
+          status: fit >= 0.7 ? "ok" : "warning",
+          note: `Protein %${Math.round(m.proteinPct * 100)}`,
         };
       },
     },
@@ -525,6 +894,10 @@ export const DIET_PROFILES: ReadonlyArray<DietProfile> = [
   VEJETARYEN_DENGELI,
   VEGAN_DENGELI,
   DUSUK_SEKER,
+  YUKSEK_LIF,
+  DUSUK_SODYUM,
+  AKDENIZ,
+  KETO_HASSAS,
 ];
 
 export function getDietProfile(slug: string): DietProfile | null {

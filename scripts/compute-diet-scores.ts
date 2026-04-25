@@ -66,6 +66,15 @@ async function main() {
       hungerBar: true,
       allergens: true,
       tags: { select: { tag: { select: { slug: true } } } },
+      nutrition: {
+        select: {
+          sugarPerServing: true,
+          fiberPerServing: true,
+          sodiumPerServing: true,
+          satFatPerServing: true,
+          matchedRatio: true,
+        },
+      },
     },
   });
 
@@ -88,6 +97,7 @@ async function main() {
   }> = [];
 
   for (const r of recipes) {
+    const n = r.nutrition;
     const recipeForScoring: RecipeForScoring = {
       averageCalories: r.averageCalories,
       protein: r.protein === null ? null : Number(r.protein),
@@ -96,6 +106,26 @@ async function main() {
       hungerBar: r.hungerBar,
       tagSlugs: r.tags.map((t) => t.tag.slug),
       allergens: r.allergens,
+      sugarPerServing:
+        n?.sugarPerServing === undefined || n?.sugarPerServing === null
+          ? null
+          : Number(n.sugarPerServing),
+      fiberPerServing:
+        n?.fiberPerServing === undefined || n?.fiberPerServing === null
+          ? null
+          : Number(n.fiberPerServing),
+      sodiumPerServing:
+        n?.sodiumPerServing === undefined || n?.sodiumPerServing === null
+          ? null
+          : Number(n.sodiumPerServing),
+      satFatPerServing:
+        n?.satFatPerServing === undefined || n?.satFatPerServing === null
+          ? null
+          : Number(n.satFatPerServing),
+      nutritionMatchedRatio:
+        n?.matchedRatio === undefined || n?.matchedRatio === null
+          ? null
+          : Number(n.matchedRatio),
     };
 
     for (const profile of DIET_PROFILES) {

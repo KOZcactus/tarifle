@@ -116,8 +116,8 @@ describe("fit functions", () => {
 });
 
 describe("DIET_PROFILES integrity", () => {
-  it("has 6 profiles", () => {
-    expect(DIET_PROFILES.length).toBe(6);
+  it("has 10 profiles", () => {
+    expect(DIET_PROFILES.length).toBe(10);
   });
   it("each profile criteria sums to 100", () => {
     const result = validateProfilesIntegrity();
@@ -130,8 +130,8 @@ describe("DIET_PROFILES integrity", () => {
     const slugs = DIET_PROFILES.map((p) => p.slug);
     expect(new Set(slugs).size).toBe(slugs.length);
   });
-  it("listAvailableDietSlugs returns all 6", () => {
-    expect(listAvailableDietSlugs()).toHaveLength(6);
+  it("listAvailableDietSlugs returns all 10", () => {
+    expect(listAvailableDietSlugs()).toHaveLength(10);
   });
   it("getDietProfile returns null for unknown slug", () => {
     expect(getDietProfile("unknown-slug")).toBeNull();

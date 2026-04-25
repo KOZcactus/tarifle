@@ -22,6 +22,14 @@ export interface RecipeForScoring {
   tagSlugs: string[];
   /** Allergen flag'leri, vegan/vejetaryen tutarlılık için */
   allergens: Allergen[];
+  /** Faz 2 enrichment alanlari, RecipeNutrition tablosundan gelir.
+   *  Null = NutritionData esleseme yetersiz, scorer proxy'ye fallback. */
+  sugarPerServing?: number | null;
+  fiberPerServing?: number | null;
+  sodiumPerServing?: number | null;
+  satFatPerServing?: number | null;
+  /** Eslesme orani 0-1, approximationFlag karari icin. */
+  nutritionMatchedRatio?: number | null;
 }
 
 /**

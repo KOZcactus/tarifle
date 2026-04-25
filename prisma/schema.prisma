@@ -406,6 +406,7 @@ model Recipe {
   userPhotos      RecipePhoto[]
   viewDaily       RecipeViewDaily[]
   dietScores      RecipeDietScore[]
+  nutrition       RecipeNutrition?
 
   @@index([categoryId])
   @@index([status])
@@ -700,6 +701,32 @@ model NutritionData {
   source          String?  @db.VarChar(100)
 
   @@map("nutrition_data")
+}
+
+/// Recipe-level besin agregat (oturum 20 Faz 2, DIET_SCORE_PLAN).
+/// RecipeIngredient + NutritionData JOIN ile per-porsiyon sugar / fiber /
+/// sodium / satFat hesabi pre-compute. Ingredient amount free-text parse
+/// edilir (src/lib/nutrition/unit-convert.ts), eslesmeyen ingredient'lar
+/// "yaklasik" flag set eder. Recipe.protein/carbs/fat seed'den geldigi
+/// icin bu tabloya eklenmiyor; sadece Faz 2 enrichment alanlari.
+model RecipeNutrition {
+  id               String   @id @default(cuid())
+  recipeId         String   @unique
+  /// Per-porsiyon seker (g). Null = NutritionData esleseme yetersiz, score
+  /// hesabinda fallback proxy.
+  sugarPerServing  Decimal? @db.Decimal(6, 2)
+  fiberPerServing  Decimal? @db.Decimal(6, 2)
+  /// Per-porsiyon sodyum (mg).
+  sodiumPerServing Decimal? @db.Decimal(7, 2)
+  satFatPerServing Decimal? @db.Decimal(6, 2)
+  /// Eslesme orani (0-1), kac ingredient NutritionData'da bulundu / toplam.
+  /// Skor yaklaşıklık disclaimer'i bu degeri kullanir.
+  matchedRatio     Decimal? @db.Decimal(4, 3)
+  computedAt       DateTime @default(now())
+
+  recipe Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+
+  @@map("recipe_nutrition")
 }
 
 /// Diyet skoru pre-compute tablosu, oturum 20 DIET_SCORE_PLAN. Her

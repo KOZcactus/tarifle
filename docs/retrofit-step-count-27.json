@@ -1,0 +1,826 @@
+[
+  {
+    "slug": "thit-kho",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Şekeri 2 yemek kaşığı suyla orta ateşte amber karamel rengine gelene kadar eritin.", "timerSeconds": 360 },
+      { "stepNumber": 2, "instruction": "Domuz etini karamele ekleyip yüzeyi renk alana kadar 5 dakika çevirin.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Balık sosu, soya sosu, Hindistan cevizi suyu ve sarımsağı ekleyip tencereyi kaynatın.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "Eti kısık ateşte 45 dakika pişirin, sıvı çok hızlı azalmasın diye kapağı aralık bırakın.", "timerSeconds": 2700 },
+      { "stepNumber": 5, "instruction": "Haşlanmış yumurtaları tencereye alıp 20 dakika daha pişirin, sarılar sertleşip parçalanmasın.", "timerSeconds": 1200 },
+      { "stepNumber": 6, "instruction": "Sosu parlak ve koyu kıvamdayken buharda pilavla sıcak servis edin." }
+    ],
+    "notes": "Serious Eats ve The Woks of Life; karamel taban, yumurtalı braise ve uzun kısık ateş süresi doğrulandı."
+  },
+  {
+    "slug": "tirit",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kemikli eti soğan, tuz ve 5 su bardağı suyla tencereye alın.", "timerSeconds": 120 },
+      { "stepNumber": 2, "instruction": "Eti kısık ateşte 90 dakika haşlayın, suyu bulanıklaşmasın diye köpüğünü alın.", "timerSeconds": 5400 },
+      { "stepNumber": 3, "instruction": "Eti lif lif didikleyin ve et suyunu ince süzgeçten geçirin." },
+      { "stepNumber": 4, "instruction": "Bayat ekmeği küp doğrayıp 180°C fırında 8 dakika kurutun.", "timerSeconds": 480 },
+      { "stepNumber": 5, "instruction": "Ekmeği sıcak et suyuyla ıslatın, tabanda hamurlaşmasın diye suyu azar azar verin." },
+      { "stepNumber": 6, "instruction": "Didiklenmiş et, sarımsaklı yoğurt ve tereyağlı biberle hemen servis edin." }
+    ],
+    "notes": "Yemek.com ve Nefis Yemek Tarifleri; et suyu, bayat ekmek ıslatma ve yoğurtlu servis akışı doğrulandı."
+  },
+  {
+    "slug": "tiritli-tavuk-kapama-samsun-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavuğu soğan, tuz ve defneyle tencereye alıp üzerini geçecek kadar su ekleyin.", "timerSeconds": 120 },
+      { "stepNumber": 2, "instruction": "Tavuğu orta ateşte 25 dakika haşlayın ve berrak su için yüzey köpüğünü alın.", "timerSeconds": 1500 },
+      { "stepNumber": 3, "instruction": "Pideyi iri parçalara bölüp servis tabağına yayın ve sıcak tavuk suyuyla ıslatın." },
+      { "stepNumber": 4, "instruction": "Tavuğu kemiklerinden ayırıp didikleyin, pideye eşit yayın." },
+      { "stepNumber": 5, "instruction": "Tereyağını pul biberle 2 dakika kızdırıp tavuğun üzerine gezdirin.", "timerSeconds": 120 },
+      { "stepNumber": 6, "instruction": "Kapamayı 5 dakika dinlendirin, pide suyu çekip tabakta dağılmasın.", "timerSeconds": 300 }
+    ],
+    "notes": "Samsun yerel tarifleri ve Nefis Yemek Tarifleri; tavuk haşlama, pide ıslatma ve tereyağlı son dokunuş doğrulandı."
+  },
+  {
+    "slug": "tofulu-kabak-noodle",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kabakları spiral kesiciyle ince şeritlere ayırın ve kağıt havluyla fazla suyunu alın." },
+      { "stepNumber": 2, "instruction": "Tofuyu küp doğrayıp 1 yemek kaşığı soya sosuyla 10 dakika dinlendirin.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Tofuyu kızgın tavada 6 dakika renk alana kadar pişirin.", "timerSeconds": 360 },
+      { "stepNumber": 4, "instruction": "Sarımsak, zencefil ve kabak şeritlerini ekleyip yüksek ateşte 3 dakika çevirin.", "timerSeconds": 180 },
+      { "stepNumber": 5, "instruction": "Kalan soya sosu, susam yağı ve taze soğanı ekleyin, kabak yumuşayıp su salmasın diye hemen alın." }
+    ],
+    "notes": "BBC Good Food ve Cookie and Kate; tofu mühürleme, kabak noodle'ın kısa pişmesi ve soya soslu bitiş doğrulandı."
+  },
+  {
+    "slug": "tokat-kebabi",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kuzu etini kuşbaşı doğrayıp tuz ve zeytinyağıyla 20 dakika dinlendirin.", "timerSeconds": 1200 },
+      { "stepNumber": 2, "instruction": "Patlıcan, patates, biber ve domatesi iri parçalar halinde hazırlayın." },
+      { "stepNumber": 3, "instruction": "Et ve sebzeleri şişlere sıra ile dizin, parçalar sıkışıp içi çiğ kalmasın." },
+      { "stepNumber": 4, "instruction": "Şişleri 200°C fırında 45 dakika pişirin ve tepside biriken suyu ara sıra gezdirin.", "timerSeconds": 2700 },
+      { "stepNumber": 5, "instruction": "Sarımsağı tepsiye ekleyip 10 dakika daha kızartın.", "timerSeconds": 600 },
+      { "stepNumber": 6, "instruction": "Kebabı tırnak pide üzerinde sebze suyu ile sıcak servis edin." }
+    ],
+    "notes": "Kültür Portalı ve Yemek.com; Tokat kebabında şiş dizimi, sebze sırası ve fırın pişirme süresi doğrulandı."
+  },
+  {
+    "slug": "tokat-yapragi-dolmasi",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Salamura yaprakları sıcak suda 3 dakika bekletip tuzunu azaltın.", "timerSeconds": 180 },
+      { "stepNumber": 2, "instruction": "Pirinç, kıyma, soğan, salça ve baharatları 6 dakika yoğurarak iç harcı hazırlayın.", "timerSeconds": 360 },
+      { "stepNumber": 3, "instruction": "Yaprakların damarlı yüzüne harç koyup ince sarın, fazla harç dolmaların patlamasına neden olmasın." },
+      { "stepNumber": 4, "instruction": "Dolmaları tencereye sık dizip üzerine tabak kapatın." },
+      { "stepNumber": 5, "instruction": "Sıcak su ve zeytinyağı ekleyip kısık ateşte 55 dakika pişirin.", "timerSeconds": 3300 },
+      { "stepNumber": 6, "instruction": "Tencerede 10 dakika dinlendirin ve yoğurtla servis edin.", "timerSeconds": 600 }
+    ],
+    "notes": "Kültür Portalı ve Nefis Yemek Tarifleri; salamura yaprak hazırlığı, ince sarım ve kısık ateş pişirme doğrulandı."
+  },
+  {
+    "slug": "tonkatsu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Domuz pirzolalarını 1,5 cm kalınlığa inceltip kenar yağlarını birkaç yerinden çizin." },
+      { "stepNumber": 2, "instruction": "Eti tuzlayıp 10 dakika dinlendirin, kaplama sırasında yüzey kuru kalsın.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Etleri sırasıyla una, çırpılmış yumurtaya ve pankoya bulayın." },
+      { "stepNumber": 4, "instruction": "170°C kızgın yağda tonkatsuyu 6 dakika kızartın ve bir kez çevirin.", "timerSeconds": 360 },
+      { "stepNumber": 5, "instruction": "Eti tel ızgarada 4 dakika dinlendirin, kaplama alttan buharla yumuşamasın.", "timerSeconds": 240 },
+      { "stepNumber": 6, "instruction": "Dilimleyip lahana salatası ve tonkatsu sosuyla servis edin." }
+    ],
+    "notes": "Just One Cookbook ve Serious Eats; panko kaplama, 170°C yağ ve kızartma sonrası dinlendirme doğrulandı."
+  },
+  {
+    "slug": "tottori-curry",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavuk, patates, havuç ve soğanı eşit lokmalık parçalar halinde doğrayın." },
+      { "stepNumber": 2, "instruction": "Tavuğu tencerede orta ateşte 5 dakika mühürleyin.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Sebzeleri ekleyip 7 dakika kavurun, soğan yanmasın diye ateşi orta seviyede tutun.", "timerSeconds": 420 },
+      { "stepNumber": 4, "instruction": "Suyu ekleyip sebzeler yumuşayana kadar 20 dakika pişirin.", "timerSeconds": 1200 },
+      { "stepNumber": 5, "instruction": "Ocağı kısın, köri bloğunu ekleyip 5 dakika karıştırarak eritin.", "timerSeconds": 300 },
+      { "stepNumber": 6, "instruction": "Köriyi 5 dakika dinlendirip sıcak pilav üzerinde servis edin.", "timerSeconds": 300 }
+    ],
+    "notes": "Just One Cookbook ve Japan Centre; Japon köri bloğu, sebze pişirme sırası ve dinlendirme doğrulandı."
+  },
+  {
+    "slug": "trabzon-hurmali-misir-ekmegi",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Hurmaları çekirdeklerinden ayırıp küçük küpler halinde doğrayın." },
+      { "stepNumber": 2, "instruction": "Mısır unu, kabartma tozu ve tuzu geniş kapta harmanlayın." },
+      { "stepNumber": 3, "instruction": "Yoğurt, yumurta ve zeytinyağını ekleyip yoğun hamur kıvamına gelene kadar karıştırın." },
+      { "stepNumber": 4, "instruction": "Hurmaları hamura katın, parçalar dibe çökmemesi için kısa karıştırın." },
+      { "stepNumber": 5, "instruction": "Hamuru yağlı kalıba yayıp 180°C fırında 30 dakika pişirin.", "timerSeconds": 1800 },
+      { "stepNumber": 6, "instruction": "Ekmeği kalıpta 10 dakika dinlendirin, dilimler kesilirken dağılmasın.", "timerSeconds": 600 }
+    ],
+    "notes": "Trabzon yöresel mısır ekmeği kaynakları ve Nefis Yemek Tarifleri; mısır unu hamuru ve 180°C pişirme doğrulandı."
+  },
+  {
+    "slug": "turlu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Patlıcan, kabak, patates, biber ve domatesi benzer boyda doğrayın." },
+      { "stepNumber": 2, "instruction": "Soğanı zeytinyağında orta ateşte 4 dakika yumuşatın.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Patates ve patlıcanı ekleyip 5 dakika çevirin, sert sebzeler önce yumuşasın.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "Kabak, biber, domates ve salçayı tencereye ekleyin." },
+      { "stepNumber": 5, "instruction": "Tuz ve 1 su bardağı sıcak su ekleyip kısık ateşte 38 dakika pişirin.", "timerSeconds": 2280 },
+      { "stepNumber": 6, "instruction": "Türlüyü 10 dakika dinlendirip zeytinyağı gezdirerek servis edin.", "timerSeconds": 600 }
+    ],
+    "notes": "Yemek.com ve Nefis Yemek Tarifleri; sebze sırası, kısık ateşte pişirme ve zeytinyağlı dinlendirme doğrulandı."
+  },
+  {
+    "slug": "turos-csusza-macar-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Erişteyi tuzlu kaynar suda 8 dakika haşlayın ve yarım bardak suyunu ayırın.", "timerSeconds": 480 },
+      { "stepNumber": 2, "instruction": "Pastırma veya bacon küplerini tavada 6 dakika çıtırlaştırın.", "timerSeconds": 360 },
+      { "stepNumber": 3, "instruction": "Tereyağı ve ekşi kremayı aynı tavada 2 dakika ısıtın.", "timerSeconds": 120 },
+      { "stepNumber": 4, "instruction": "Erişteyi sosa alın, ayrılan sudan ekleyip kaplama kıvamını açın." },
+      { "stepNumber": 5, "instruction": "Lor peynirini ekleyip 1 dakika çevirin, peynir tamamen eriyip dokusu kaymasın.", "timerSeconds": 60 },
+      { "stepNumber": 6, "instruction": "Çıtır pastırmayla sıcak servis edin." }
+    ],
+    "notes": "Offbeat Budapest ve Taste Hungary; csusza eriştesi, túró peyniri, ekşi krema ve çıtır pastırma tekniği doğrulandı."
+  },
+  {
+    "slug": "turos-csusza-tava-macar-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Erişteyi tuzlu suda 8 dakika haşlayıp süzün.", "timerSeconds": 480 },
+      { "stepNumber": 2, "instruction": "Lor peyniri, ekşi krema ve karabiberi kapta karıştırın." },
+      { "stepNumber": 3, "instruction": "Tereyağını geniş tavada 2 dakika eritin.", "timerSeconds": 120 },
+      { "stepNumber": 4, "instruction": "Erişteyi tavaya alıp 3 dakika çevirin, kenarları hafif kızarsın.", "timerSeconds": 180 },
+      { "stepNumber": 5, "instruction": "Peynirli karışımı ekleyip 2 dakika ısıtın, yüksek ateş peyniri kesmesin.", "timerSeconds": 120 },
+      { "stepNumber": 6, "instruction": "Üzerine kızarmış pastırma kırıntısı serperek servis edin." }
+    ],
+    "notes": "Taste Hungary ve The Spruce Eats; Macar erişte, lorlu sos ve tavada kısa ısıtma akışı doğrulandı."
+  },
+  {
+    "slug": "turp-otu-kavurmasi",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Turp otunu ayıklayıp bol suda yıkayın ve kalın saplarını ayırın." },
+      { "stepNumber": 2, "instruction": "Otları tuzlu kaynar suda 5 dakika haşlayıp süzün.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Süzülen otları doğrayın ve fazla suyunu sıkın, tavada sulanmasın." },
+      { "stepNumber": 4, "instruction": "Soğanı zeytinyağında orta ateşte 6 dakika kavurun.", "timerSeconds": 360 },
+      { "stepNumber": 5, "instruction": "Turp otunu ekleyip 8 dakika çevirin, limon suyu ve pul biberle servis edin.", "timerSeconds": 480 }
+    ],
+    "notes": "Ege ot yemekleri kaynakları ve Yemek.com; turp otu haşlama, sıkma ve soğanla kavurma yöntemi doğrulandı."
+  },
+  {
+    "slug": "tutu-de-feijao",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pişmiş fasulyeyi kendi suyuyla birlikte ezip pütürlü püre haline getirin." },
+      { "stepNumber": 2, "instruction": "Soğan ve sarımsağı orta ateşte 5 dakika kavurun.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Ezilmiş fasulyeyi tavaya alıp 5 dakika kaynatın.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "Manyok ununu azar azar serpin, topaklanmasın diye sürekli karıştırın.", "timerSeconds": 300 },
+      { "stepNumber": 5, "instruction": "Karışımı kısık ateşte 10 dakika pişirin ve tuzunu ayarlayın.", "timerSeconds": 600 },
+      { "stepNumber": 6, "instruction": "Tutu de feijao'yu pirinç, yeşillik ve kızarmış yumurtayla servis edin." }
+    ],
+    "notes": "Panelinha ve TudoGostoso; fasulye püresi, manyok unuyla koyulaştırma ve Brezilya servis eşlikleri doğrulandı."
+  },
+  {
+    "slug": "uborkali-patates-kofte-macar-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Patatesleri kabuklarıyla tuzlu suda 25 dakika haşlayın.", "timerSeconds": 1500 },
+      { "stepNumber": 2, "instruction": "Patatesleri soyup ezin ve 10 dakika buharını atması için dinlendirin.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Un, yumurta, tuz ve karabiber ekleyip yumuşak köfte harcı hazırlayın." },
+      { "stepNumber": 4, "instruction": "Harçtan oval köfteler yapın, fazla un eklemeyin ki doku sertleşmesin." },
+      { "stepNumber": 5, "instruction": "Köfteleri yağlı tavada her yüzü 4 dakika kızarana kadar pişirip uborka salatasıyla servis edin.", "timerSeconds": 480 }
+    ],
+    "notes": "Taste Hungary ve Hungarian Tidbits; patates köfte hamuru, tavada kızartma ve salatalık eşliği doğrulandı."
+  },
+  {
+    "slug": "uskumrulu-bulgur-pilavi-canakkale-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Uskumruyu kılçıklarından ayırıp iri parçalara bölün." },
+      { "stepNumber": 2, "instruction": "Soğanı zeytinyağında orta ateşte 4 dakika pembeleşene kadar kavurun.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Bulguru ekleyip 2 dakika çevirin, taneler yağla kaplansın.", "timerSeconds": 120 },
+      { "stepNumber": 4, "instruction": "Sıcak su, tuz ve karabiberi ekleyip 10 dakika kısık ateşte pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 5, "instruction": "Uskumru parçalarını pilava yerleştirip 8 dakika daha pişirin, balık parçalanmasın.", "timerSeconds": 480 },
+      { "stepNumber": 6, "instruction": "Pilavı 10 dakika demlendirip maydanozla servis edin.", "timerSeconds": 600 }
+    ],
+    "notes": "Çanakkale yöresel pilav kaynakları ve Yemek.com; bulgur pilavı tabanı, balığın sonradan eklenmesi doğrulandı."
+  },
+  {
+    "slug": "uzumlu-dugun-pilavi-nevsehir-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pirinci ılık tuzlu suda 20 dakika bekletip berrak su akana kadar yıkayın.", "timerSeconds": 1200 },
+      { "stepNumber": 2, "instruction": "Kuru üzümleri sıcak suda 10 dakika bekletip süzün.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Pirinci tereyağında 3 dakika çevirin, taneler kırılmasın diye nazik karıştırın.", "timerSeconds": 180 },
+      { "stepNumber": 4, "instruction": "Üzüm, tuz ve sıcak suyu ekleyip kapağı kapatın." },
+      { "stepNumber": 5, "instruction": "Pilavı kısık ateşte 15 dakika pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 6, "instruction": "Tencereyi ocaktan alıp 10 dakika demlendirin.", "timerSeconds": 600 },
+      { "stepNumber": 7, "instruction": "Pilavı çatalla havalandırıp et yemeği yanında servis edin." }
+    ],
+    "notes": "Nevşehir yöresel düğün pilavı kaynakları ve Nefis Yemek Tarifleri; üzüm hazırlığı, pirinç kavurma ve demleme doğrulandı."
+  },
+  {
+    "slug": "uzumlu-tavuk-kapama-manisa-sultaniye-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavuk parçalarını tuz ve karabiberle ovup 10 dakika dinlendirin.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Soğanı ve tavuğu geniş tencerede 8 dakika çevirin.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Pirinci yıkayıp süzün ve tavukların arasına yayın." },
+      { "stepNumber": 4, "instruction": "Sultaniye üzümü ve sıcak tavuk suyunu ekleyin, pirinç tabana yapışmasın diye düzleyin." },
+      { "stepNumber": 5, "instruction": "Yemeği kısık ateşte 18 dakika pişirin.", "timerSeconds": 1080 },
+      { "stepNumber": 6, "instruction": "Kapağı kapalı 10 dakika demlendirip sıcak servis edin.", "timerSeconds": 600 }
+    ],
+    "notes": "Manisa mutfağı kaynakları ve Yemek.com; tavuk kapama sırası, pirinç ve üzümle pişirme süresi doğrulandı."
+  },
+  {
+    "slug": "vaca-frita",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Dana etini soğan, defne ve tuzla tencereye alıp üzerini suyla kapatın.", "timerSeconds": 120 },
+      { "stepNumber": 2, "instruction": "Eti kısık ateşte 90 dakika haşlayın ve kolay liflenene kadar pişirin.", "timerSeconds": 5400 },
+      { "stepNumber": 3, "instruction": "Eti didikleyip lime suyu, sarımsak ve kimyonla 15 dakika marine edin.", "timerSeconds": 900 },
+      { "stepNumber": 4, "instruction": "Soğanı tavada 5 dakika yumuşatıp kenara alın.", "timerSeconds": 300 },
+      { "stepNumber": 5, "instruction": "Didiklenmiş eti kızgın tavada 8 dakika çıtır kenarlar oluşana kadar kızartın.", "timerSeconds": 480 },
+      { "stepNumber": 6, "instruction": "Soğanı geri ekleyin, et kurumasın diye 1 dakika sonra ocaktan alın.", "timerSeconds": 60 }
+    ],
+    "notes": "Serious Eats ve Cocina Cubana; haşlama sonrası lime marinasyon, didikleme ve tavada çıtırlaştırma doğrulandı."
+  },
+  {
+    "slug": "vaca-frita-cubana",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pişmiş dana etini liflerine ayırıp geniş kaba alın." },
+      { "stepNumber": 2, "instruction": "Sarımsak, lime suyu, portakal suyu ve tuzla eti 20 dakika dinlendirin.", "timerSeconds": 1200 },
+      { "stepNumber": 3, "instruction": "Soğanı ayçiçek yağında 5 dakika çevirip ayrı tabağa alın.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "Eti aynı tavaya yayıp orta yüksek ateşte 7 dakika kızartın.", "timerSeconds": 420 },
+      { "stepNumber": 5, "instruction": "Eti sadece bir kez çevirin, çıtır kenarlar kopup dağılmasın." },
+      { "stepNumber": 6, "instruction": "Soğanı etle birleştirip siyah fasulye ve pilavla servis edin." }
+    ],
+    "notes": "Cocina Cubana ve Serious Eats; mojo aroması, tek kat kızartma ve klasik pilav fasulye servisi doğrulandı."
+  },
+  {
+    "slug": "vaca-frita-de-pollo-kuba-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pişmiş tavuk etini iri liflere ayırın." },
+      { "stepNumber": 2, "instruction": "Tavuğu lime suyu, sarımsak, kimyon ve tuzla 15 dakika marine edin.", "timerSeconds": 900 },
+      { "stepNumber": 3, "instruction": "Soğanı geniş tavada 3 dakika çevirip yumuşatın.", "timerSeconds": 180 },
+      { "stepNumber": 4, "instruction": "Tavuğu tavaya yayıp 8 dakika kızartın, lifler sık karıştırılırsa çıtırlaşmasın.", "timerSeconds": 480 },
+      { "stepNumber": 5, "instruction": "Soğanı tavukla karıştırıp 2 dakika daha ısıtın.", "timerSeconds": 120 },
+      { "stepNumber": 6, "instruction": "Lime dilimi ve beyaz pilavla sıcak servis edin." }
+    ],
+    "notes": "Cuban Recipes ve My Colombian Recipes; tavuklu vaca frita için lime marinasyon ve hızlı tavada kızartma doğrulandı."
+  },
+  {
+    "slug": "valensiya-biberli-nohutlu-fideua",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Safranı sıcak sebze suyunda 5 dakika bekletin.", "timerSeconds": 300 },
+      { "stepNumber": 2, "instruction": "Kapya biberi zeytinyağında orta ateşte 6 dakika soteleyin.", "timerSeconds": 360 },
+      { "stepNumber": 3, "instruction": "Kısa erişteyi tavaya ekleyip 2 dakika hafif kavurun.", "timerSeconds": 120 },
+      { "stepNumber": 4, "instruction": "Nohut ve safranlı suyu ekleyin, erişteler üst üste yığılmasın diye yayın." },
+      { "stepNumber": 5, "instruction": "Fideuà'yı orta ateşte 12 dakika pişirin ve karıştırmadan suyunu çektirin.", "timerSeconds": 720 },
+      { "stepNumber": 6, "instruction": "Tavayı 5 dakika dinlendirip limon dilimleriyle servis edin.", "timerSeconds": 300 }
+    ],
+    "notes": "Spain on a Fork ve BBC Good Food; fideuà eriştesinin kavrulması, safranlı su ve dinlendirme doğrulandı."
+  },
+  {
+    "slug": "vareniki",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Un, yumurta, su ve tuzla pürüzsüz hamur yoğurun.", "timerSeconds": 480 },
+      { "stepNumber": 2, "instruction": "Hamuru 20 dakika dinlendirin, gluten gevşesin ve açarken geri toplanmasın.", "timerSeconds": 1200 },
+      { "stepNumber": 3, "instruction": "Ezilmiş patates, soğan ve tereyağıyla iç harcı hazırlayın." },
+      { "stepNumber": 4, "instruction": "Hamuru açıp yuvarlaklar kesin, patatesli içle yarım ay şeklinde kapatın." },
+      { "stepNumber": 5, "instruction": "Varenikileri tuzlu kaynar suda 10 dakika haşlayın.", "timerSeconds": 600 },
+      { "stepNumber": 6, "instruction": "Tereyağı, ekşi krema ve kızarmış soğanla sıcak servis edin." }
+    ],
+    "notes": "Natasha's Kitchen ve Olga's Flavor Factory; dinlenen hamur, patatesli iç ve kaynar suda haşlama doğrulandı."
+  },
+  {
+    "slug": "vasterbotten-patates-grateni-isvec-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Patatesleri 2 mm kalınlıkta ince dilimleyin." },
+      { "stepNumber": 2, "instruction": "Krema, sarımsak, tuz ve karabiberi kapta karıştırın." },
+      { "stepNumber": 3, "instruction": "Patatesleri yağlı fırın kabına kat kat dizip aralarına Västerbotten peyniri serpin." },
+      { "stepNumber": 4, "instruction": "Kremayı kalıba dökün, patateslerin üstü açık kalmasın diye yüzeyi bastırın." },
+      { "stepNumber": 5, "instruction": "Grateni 190°C fırında 35 dakika pişirin.", "timerSeconds": 2100 },
+      { "stepNumber": 6, "instruction": "Fırından çıkınca 10 dakika dinlendirin, dilimler servis tabağında kaymasın.", "timerSeconds": 600 }
+    ],
+    "notes": "Swedish Food ve ICA İsveç; Västerbotten peynirli gratende ince dilim, kremalı katman ve fırın süresi doğrulandı."
+  },
+  {
+    "slug": "vasterbotten-payi",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Un, soğuk tereyağı ve suyla kırıntılı pay hamuru hazırlayın." },
+      { "stepNumber": 2, "instruction": "Hamuru kalıba bastırıp buzdolabında 20 dakika dinlendirin.", "timerSeconds": 1200 },
+      { "stepNumber": 3, "instruction": "Tabanı 200°C fırında 10 dakika ön pişirin, ıslak harçla hamur kalmasın.", "timerSeconds": 600 },
+      { "stepNumber": 4, "instruction": "Yumurta, krema ve rendelenmiş Västerbotten peynirini çırpın." },
+      { "stepNumber": 5, "instruction": "Harçlı payı 190°C fırında 28 dakika pişirin.", "timerSeconds": 1680 },
+      { "stepNumber": 6, "instruction": "Payı 10 dakika dinlendirip dereotu veya soğan salatasıyla servis edin.", "timerSeconds": 600 }
+    ],
+    "notes": "Swedish Food ve Visit Sweden; peynirli pay tabanı, ön pişirme ve yumurtalı krema harcı doğrulandı."
+  },
+  {
+    "slug": "vatapa",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Bayat ekmeği Hindistan cevizi sütünde 10 dakika bekletin.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Ekmek, yer fıstığı, kaju ve sütü blenderdan pürüzlü kremaya çekin." },
+      { "stepNumber": 3, "instruction": "Soğan, sarımsak ve zencefili palm yağında 5 dakika kavurun.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "Ekmekli karışımı tencereye alıp kısık ateşte 12 dakika koyulaştırın.", "timerSeconds": 720 },
+      { "stepNumber": 5, "instruction": "Karidesleri ekleyip 8 dakika pişirin, uzun pişerse lastik gibi sertleşmesin.", "timerSeconds": 480 },
+      { "stepNumber": 6, "instruction": "Vatapá'yı pirinç ve taze kişnişle sıcak servis edin." }
+    ],
+    "notes": "Brazilian Kitchen Abroad ve Panelinha; ekmekle koyulaştırma, karides ekleme zamanı ve Bahia usulü servis doğrulandı."
+  },
+  {
+    "slug": "yakisoba",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Yakisoba noodleını sıcak suda 2 dakika açıp süzün.", "timerSeconds": 120 },
+      { "stepNumber": 2, "instruction": "Et dilimlerini kızgın tavada 3 dakika mühürleyin.", "timerSeconds": 180 },
+      { "stepNumber": 3, "instruction": "Lahana, havuç ve soğanı ekleyip 5 dakika soteleyin.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "Noodleı tavaya alın, sebzeler ezilmesin diye maşa ile karıştırın." },
+      { "stepNumber": 5, "instruction": "Yakisoba sosunu ekleyip 4 dakika yüksek ateşte çevirin, beni shoga veya susamla servis edin.", "timerSeconds": 240 }
+    ],
+    "notes": "Just One Cookbook ve Japan Centre; noodle hazırlığı, sebzeli yüksek ateş sote ve yakisoba sosu doğrulandı."
+  },
+  {
+    "slug": "yakitori",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavuk but etini 3 cm parçalar halinde doğrayın." },
+      { "stepNumber": 2, "instruction": "Tavuk ve taze soğanı şişlere dönüşümlü dizin, parçalar sıkışıp içi çiğ kalmasın." },
+      { "stepNumber": 3, "instruction": "Soya sosu, mirin, sake ve şekeri 8 dakika kaynatıp tare sosu hazırlayın.", "timerSeconds": 480 },
+      { "stepNumber": 4, "instruction": "Şişleri orta harlı ızgarada 8 dakika pişirin ve iki kez çevirin.", "timerSeconds": 480 },
+      { "stepNumber": 5, "instruction": "Tare sosunu sürüp 4 dakika daha ızgaralayın.", "timerSeconds": 240 },
+      { "stepNumber": 6, "instruction": "Yakitoriyi sıcak servis edin ve kalan sosu yanında verin." }
+    ],
+    "notes": "Just One Cookbook ve Serious Eats; tare sos, tavuk soğan şişleme ve ızgara aşamaları doğrulandı."
+  },
+  {
+    "slug": "yesil-mercimek-yemegi",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Yeşil mercimeği yıkayıp 10 dakika haşlayın ve kara suyunu süzün.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Soğanı zeytinyağında orta ateşte 4 dakika kavurun.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Salçayı ekleyip 2 dakika kokusu çıkana kadar kavurun.", "timerSeconds": 120 },
+      { "stepNumber": 4, "instruction": "Mercimek, sıcak su, tuz ve kimyonu ekleyin." },
+      { "stepNumber": 5, "instruction": "Yemeği kısık ateşte 28 dakika pişirin, mercimekler parçalanıp çorba olmasın.", "timerSeconds": 1680 },
+      { "stepNumber": 6, "instruction": "Ocaktan alıp 10 dakika dinlendirin ve limonla servis edin.", "timerSeconds": 600 }
+    ],
+    "notes": "Yemek.com ve Nefis Yemek Tarifleri; kara suyu alma, salçalı taban ve kısık ateşte mercimek pişirme doğrulandı."
+  },
+  {
+    "slug": "yesil-mercimekli-bulgur-pilavi-kirsehir-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Yeşil mercimeği 15 dakika haşlayıp süzün.", "timerSeconds": 900 },
+      { "stepNumber": 2, "instruction": "Soğan ve salçayı tereyağında 4 dakika çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Bulguru ekleyip 2 dakika kavurun, taneler yağla kaplansın.", "timerSeconds": 120 },
+      { "stepNumber": 4, "instruction": "Mercimek, sıcak su ve tuzu ekleyip kapağı kapatın." },
+      { "stepNumber": 5, "instruction": "Pilavı kısık ateşte 14 dakika pişirin.", "timerSeconds": 840 },
+      { "stepNumber": 6, "instruction": "Tencereyi 10 dakika dinlendirin, bulgur şişip tane tane kalsın.", "timerSeconds": 600 }
+    ],
+    "notes": "Kırşehir yöresel pilav kaynakları ve Yemek.com; mercimeği ön haşlama, bulgur kavurma ve demleme doğrulandı."
+  },
+  {
+    "slug": "yesil-mercimekli-kete-erzurum-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Un, su, maya ve tuzla yumuşak hamur yoğurun.", "timerSeconds": 480 },
+      { "stepNumber": 2, "instruction": "Hamuru 30 dakika mayalandırın, gluten gevşesin ve kolay açılabilsin.", "timerSeconds": 1800 },
+      { "stepNumber": 3, "instruction": "Haşlanmış mercimeği soğanla 8 dakika kavurup iç harcı soğutun.", "timerSeconds": 480 },
+      { "stepNumber": 4, "instruction": "Hamuru bezelere ayırıp açın ve mercimekli içle kapatın." },
+      { "stepNumber": 5, "instruction": "Keteleri tepsiye dizip üzerine yağ sürün." },
+      { "stepNumber": 6, "instruction": "200°C fırında 20 dakika kızarana kadar pişirin.", "timerSeconds": 1200 },
+      { "stepNumber": 7, "instruction": "Fırından çıkınca 8 dakika dinlendirip ayranla servis edin.", "timerSeconds": 480 }
+    ],
+    "notes": "Erzurum kete kaynakları ve Nefis Yemek Tarifleri; mayalı hamur, mercimekli iç ve 200°C fırın süresi doğrulandı."
+  },
+  {
+    "slug": "yesil-tay-korisi",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Köri ezmesini yağda orta ateşte 2 dakika kavurun.", "timerSeconds": 120 },
+      { "stepNumber": 2, "instruction": "Tavuk parçalarını ekleyip 6 dakika renkleri dönene kadar pişirin.", "timerSeconds": 360 },
+      { "stepNumber": 3, "instruction": "Hindistan cevizi sütünün kalın kısmını ekleyip 4 dakika kaynatın.", "timerSeconds": 240 },
+      { "stepNumber": 4, "instruction": "Patlıcan, bambu filizi ve kalan sütü ekleyin." },
+      { "stepNumber": 5, "instruction": "Köriyi kısık ateşte 15 dakika pişirin, süt kesilmesin diye hızlı kaynatmayın.", "timerSeconds": 900 },
+      { "stepNumber": 6, "instruction": "Balık sosu, şeker ve Tay fesleğeniyle tamamlayıp pilavla servis edin." }
+    ],
+    "notes": "Hot Thai Kitchen ve ThaiTable; köri ezmesini kavurma, Hindistan cevizi sütü ve fesleğenli bitiş doğrulandı."
+  },
+  {
+    "slug": "yogurtlu-kabak-keskegi-sivas-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Aşurelik buğdayı yıkayıp 15 dakika sıcak suda bekletin.", "timerSeconds": 900 },
+      { "stepNumber": 2, "instruction": "Buğdayı tencereye alıp üzerini geçecek suyla 25 dakika pişirin.", "timerSeconds": 1500 },
+      { "stepNumber": 3, "instruction": "Kabakları küp doğrayıp buğdaya ekleyin ve 15 dakika daha pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 4, "instruction": "Yoğurdu bir kepçe sıcak suyla ılıtın, tencereye eklerken kesilmesin.", "timerSeconds": 120 },
+      { "stepNumber": 5, "instruction": "Yoğurtlu karışımı yemeğe katıp 5 dakika kısık ateşte ısıtın.", "timerSeconds": 300 },
+      { "stepNumber": 6, "instruction": "Tereyağında nane yakıp keşkeğin üzerine gezdirerek servis edin.", "timerSeconds": 120 }
+    ],
+    "notes": "Sivas yöresel yemek kaynakları ve Nefis Yemek Tarifleri; buğday pişirme, kabak ekleme ve yoğurt ılıtma doğrulandı."
+  },
+  {
+    "slug": "yogurtlu-nohut-yahni-konya-ova-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Haşlanmış nohudu sıcak suyla tencereye alıp kaynatın.", "timerSeconds": 300 },
+      { "stepNumber": 2, "instruction": "Yoğurt, un ve yumurtayı pürüzsüz terbiye olana kadar çırpın." },
+      { "stepNumber": 3, "instruction": "Terbiyeye sıcak nohut suyundan iki kepçe ekleyip ılıtın, yoğurt kesilmesin.", "timerSeconds": 120 },
+      { "stepNumber": 4, "instruction": "Ilıyan terbiyeyi tencereye ince akıtarak karıştırın." },
+      { "stepNumber": 5, "instruction": "Yahniyi kısık ateşte 10 dakika pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 6, "instruction": "Tereyağında nane ve pul biberi 2 dakika kızdırıp üzerine gezdirin.", "timerSeconds": 120 }
+    ],
+    "notes": "Konya yöresel yemek kaynakları ve Yemek.com; nohutlu yoğurt terbiyesi, ılıtma ve baharatlı yağ doğrulandı."
+  },
+  {
+    "slug": "yu-xiang-qiezi",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Patlıcanları uzun şeritler halinde doğrayıp tuzla 10 dakika bekletin.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Patlıcanları kurulayın, tavada orta yüksek ateşte 10 dakika pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Sarımsak, zencefil ve acı fasulye ezmesini 1 dakika kavurun.", "timerSeconds": 60 },
+      { "stepNumber": 4, "instruction": "Soya sosu, sirke, şeker ve nişastalı suyu ekleyin." },
+      { "stepNumber": 5, "instruction": "Patlıcanları sosla 5 dakika çevirin, sos parlaklaşınca daha fazla pişirip ezmeyin.", "timerSeconds": 300 },
+      { "stepNumber": 6, "instruction": "Taze soğanla tamamlayıp pirinç yanında sıcak servis edin." }
+    ],
+    "notes": "The Woks of Life ve China Sichuan Food; patlıcan ön pişirme, yu xiang sos dengesi ve nişastalı bitiş doğrulandı."
+  },
+  {
+    "slug": "yuca-con-mojo",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Manyoku soyup iri parçalara bölün ve orta lifini çıkarın." },
+      { "stepNumber": 2, "instruction": "Manyoku tuzlu suda 30 dakika haşlayın, çatalla kolay dağılacak kadar yumuşasın.", "timerSeconds": 1800 },
+      { "stepNumber": 3, "instruction": "Sarımsağı zeytinyağında kısık ateşte 2 dakika çevirin.", "timerSeconds": 120 },
+      { "stepNumber": 4, "instruction": "Turunç suyu veya lime portakal karışımını yağa ekleyip 1 dakika ısıtın.", "timerSeconds": 60 },
+      { "stepNumber": 5, "instruction": "Süzülen manyoku mojo sosuyla harmanlayın, parçalar kırılmasın diye geniş kaşık kullanın." },
+      { "stepNumber": 6, "instruction": "Kişniş ve soğanla ılık servis edin." }
+    ],
+    "notes": "Cocina Cubana ve Serious Eats; yuca haşlama, orta lif çıkarma ve sarımsaklı mojo sos doğrulandı."
+  },
+  {
+    "slug": "yuca-siyah-fasulye-tavasi-kuba-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Yucayı soyup orta lifini çıkarın ve iri küpler halinde doğrayın." },
+      { "stepNumber": 2, "instruction": "Yucayı tuzlu suda 15 dakika haşlayıp süzün.", "timerSeconds": 900 },
+      { "stepNumber": 3, "instruction": "Sarımsağı zeytinyağında 1 dakika çevirin.", "timerSeconds": 60 },
+      { "stepNumber": 4, "instruction": "Haşlanmış yuca küplerini tavaya alıp 5 dakika kızartın.", "timerSeconds": 300 },
+      { "stepNumber": 5, "instruction": "Siyah fasulyeyi ekleyip 4 dakika ısıtın, yuca parçaları ezilmesin.", "timerSeconds": 240 },
+      { "stepNumber": 6, "instruction": "Lime suyu ve taze kişnişle servis edin." }
+    ],
+    "notes": "Cuban Recipes ve My Dominican Kitchen; yuca lifini çıkarma, ön haşlama ve fasulyeyle kısa tava pişirmesi doğrulandı."
+  },
+  {
+    "slug": "yufkali-hasir-pilavi-konya-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pirinci ılık tuzlu suda 20 dakika bekletip yıkayın.", "timerSeconds": 1200 },
+      { "stepNumber": 2, "instruction": "Pirinci tereyağında 4 dakika çevirin, taneler kırılmasın diye nazik karıştırın.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Sıcak su ve tuz ekleyip 15 dakika kısık ateşte pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 4, "instruction": "Pilavı 10 dakika demlendirip çatalla havalandırın.", "timerSeconds": 600 },
+      { "stepNumber": 5, "instruction": "Yufkayı tepsiye serip pilavı içine yayın ve kenarlarını kapatın." },
+      { "stepNumber": 6, "instruction": "Yufkalı pilavı 180°C fırında 12 dakika kızartın.", "timerSeconds": 720 }
+    ],
+    "notes": "Konya pilav kaynakları ve Nefis Yemek Tarifleri; pirinç demleme, yufkaya sarma ve kısa fırınlama doğrulandı."
+  },
+  {
+    "slug": "yumurtali-eriste-kavurmasi-kirsehir-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Erişteyi tuzlu kaynar suda 8 dakika haşlayıp süzün.", "timerSeconds": 480 },
+      { "stepNumber": 2, "instruction": "Tereyağını yayvan tavada 2 dakika köpürene kadar eritin.", "timerSeconds": 120 },
+      { "stepNumber": 3, "instruction": "Erişteyi tavaya alıp 3 dakika kavurun.", "timerSeconds": 180 },
+      { "stepNumber": 4, "instruction": "Yumurtaları tuz ve karabiberle çırpıp eriştenin üzerine gezdirin." },
+      { "stepNumber": 5, "instruction": "Yumurtayı 2 dakika karıştırarak pişirin, fazla pişerse kuru ve parçalı olmasın.", "timerSeconds": 120 },
+      { "stepNumber": 6, "instruction": "Maydanoz veya pul biberle sıcak servis edin." }
+    ],
+    "notes": "Kırşehir erişte kaynakları ve Yemek.com; erişte haşlama, tereyağında kavurma ve yumurtayı kısa pişirme doğrulandı."
+  },
+  {
+    "slug": "zahterli-tavuk-sis-hatay-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavuk but etini 3 cm küpler halinde doğrayın." },
+      { "stepNumber": 2, "instruction": "Zahter, zeytinyağı, yoğurt, sarımsak ve limon suyuyla marinasyon hazırlayın." },
+      { "stepNumber": 3, "instruction": "Tavuğu marinasyonla karıştırıp 30 dakika buzdolabında dinlendirin.", "timerSeconds": 1800 },
+      { "stepNumber": 4, "instruction": "Tavukları şişlere dizin, parçalar sıkışmasın ki ısı aralarına girsin." },
+      { "stepNumber": 5, "instruction": "Şişleri orta harlı ızgarada 12 dakika pişirin ve birkaç kez çevirin.", "timerSeconds": 720 },
+      { "stepNumber": 6, "instruction": "Lavaş, sumaklı soğan ve köz biberle sıcak servis edin." }
+    ],
+    "notes": "Hatay mutfağı kaynakları ve Nefis Yemek Tarifleri; zahterli yoğurt marinasyonu, şişleme ve ızgara süresi doğrulandı."
+  },
+  {
+    "slug": "zapiekanka",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Mantarları ince dilimleyip tereyağında 6 dakika soteleyin.", "timerSeconds": 360 },
+      { "stepNumber": 2, "instruction": "Bagetleri uzunlamasına ikiye bölüp kesik yüzlerini hafifçe yağlayın." },
+      { "stepNumber": 3, "instruction": "Mantarları bagetlerin üzerine yayın ve rendelenmiş peynir serpin." },
+      { "stepNumber": 4, "instruction": "Zapiekankayı 200°C fırında 12 dakika pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 5, "instruction": "Peynir eriyince fırından alın, ekmek sertleşmesin diye daha fazla kurutmayın." },
+      { "stepNumber": 6, "instruction": "Ketçap ve doğranmış frenk soğanıyla sıcak servis edin." }
+    ],
+    "notes": "Polish Housewife ve Culture.pl; açık baget, mantar peynir katmanı ve fırında eritme süresi doğrulandı."
+  },
+  {
+    "slug": "zaru-soba",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Soba noodleını tuz eklemeden kaynar suda 6 dakika haşlayın.", "timerSeconds": 360 },
+      { "stepNumber": 2, "instruction": "Noodleı soğuk su altında 1 dakika yıkayın, nişastası gitmezse yapışır.", "timerSeconds": 60 },
+      { "stepNumber": 3, "instruction": "Soba noodleını süzgeçte 5 dakika soğutun.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "Mentsuyu sosunu soğuk suyla açıp küçük kaselere paylaştırın." },
+      { "stepNumber": 5, "instruction": "Noodleı bambu süzgeçte porsiyonlayıp taze soğan, wasabi ve noriyle soğuk servis edin." }
+    ],
+    "notes": "Just One Cookbook ve Japan Centre; sobayı soğuk yıkama, mentsuyu sosu ve zaru sunumu doğrulandı."
+  },
+  {
+    "slug": "zerdecalli-balikli-pirinc-noodle-vietnam-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Balığı zerdeçal, lime suyu, balık sosu ve sarımsakla 8 dakika marine edin.", "timerSeconds": 480 },
+      { "stepNumber": 2, "instruction": "Pirinç noodleını sıcak suda 5 dakika yumuşatıp süzün.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Tavayı kızdırıp balığı 6 dakika pişirin.", "timerSeconds": 360 },
+      { "stepNumber": 4, "instruction": "Dereotu ve taze soğanı ekleyip 1 dakika çevirin.", "timerSeconds": 60 },
+      { "stepNumber": 5, "instruction": "Noodleı tavaya alın, balık parçaları dağılmasın diye maşa ile karıştırın ve otlarla servis edin." }
+    ],
+    "notes": "Vietnam Coracle ve The Woks of Life; zerdeçallı balık, dereotu kullanımı ve pirinç noodle hazırlığı doğrulandı."
+  },
+  {
+    "slug": "zeytinli-beyaz-fasulye-guvec-ispanya-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Soğan ve kapya biberi zeytinyağında 4 dakika çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 2, "instruction": "Sarımsak ve paprika ekleyip 1 dakika kokusu çıkana kadar kavurun.", "timerSeconds": 60 },
+      { "stepNumber": 3, "instruction": "Domates püresi ve beyaz fasulyeyi tencereye alın." },
+      { "stepNumber": 4, "instruction": "Güveci kısık ateşte 12 dakika pişirin, fasulyeler parçalanıp lapa olmasın.", "timerSeconds": 720 },
+      { "stepNumber": 5, "instruction": "Zeytinleri ekleyip 4 dakika daha kaynatın, maydanoz ve zeytinyağıyla servis edin.", "timerSeconds": 240 }
+    ],
+    "notes": "Spain on a Fork ve BBC Good Food; beyaz fasulye, paprika domates tabanı ve zeytinli bitiş doğrulandı."
+  },
+  {
+    "slug": "zeytinli-cokelek-bazlama-mugla-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Çökeleği çatalla ezip doğranmış zeytin ve zeytinyağıyla karıştırın." },
+      { "stepNumber": 2, "instruction": "Domates dilimlerinin çekirdekli sulu kısmını alın, bazlama içi ıslanmasın." },
+      { "stepNumber": 3, "instruction": "Bazlamaları ortadan açıp çökelekli harcı ve domatesi içlerine paylaştırın." },
+      { "stepNumber": 4, "instruction": "Bazlamaları kapatıp hafif yağlı tavada 4 dakika ısıtın.", "timerSeconds": 240 },
+      { "stepNumber": 5, "instruction": "Çevirip diğer yüzünü 3 dakika kızartın ve sıcak bazlamayı taze kekikle servis edin.", "timerSeconds": 180 }
+    ],
+    "notes": "Muğla kahvaltılık kaynakları ve Nefis Yemek Tarifleri; çökelekli zeytin harcı ve tavada bazlama ısıtma doğrulandı."
+  },
+  {
+    "slug": "zeytinli-domatesli-bazlama-mugla-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Bazlamaları ortadan açın ve iç yüzeylerini zeytinyağıyla hafifçe yağlayın." },
+      { "stepNumber": 2, "instruction": "Domatesi küp doğrayıp çekirdekli suyunu süzün." },
+      { "stepNumber": 3, "instruction": "Zeytin, peynir, domates ve kekikleri kapta karıştırın." },
+      { "stepNumber": 4, "instruction": "Harcı bazlamaların içine paylaştırın, fazla doldurmayın ki tavada taşmasın." },
+      { "stepNumber": 5, "instruction": "Bazlamaları tavada 6 dakika çevirerek ısıtın ve peynir yumuşayınca ılık servis edin.", "timerSeconds": 360 }
+    ],
+    "notes": "Muğla bazlama kaynakları ve Yemek.com; domates suyunu süzme, zeytin peynir harcı ve tavada ısıtma doğrulandı."
+  },
+  {
+    "slug": "zeytinli-enginar-guveci-yalova-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Enginarları temizleyip limonlu suda 10 dakika bekletin.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Soğanı zeytinyağında 4 dakika saydamlaşana kadar yumuşatın.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Enginar, zeytin, havuç ve bezelyeyi güveç kabına alın." },
+      { "stepNumber": 4, "instruction": "Limon suyu, zeytinyağı ve sıcak su ekleyin, enginar kararmasın diye yüzeyi kapatın." },
+      { "stepNumber": 5, "instruction": "Güveci 180°C fırında 25 dakika pişirin ve oda sıcaklığına gelince dereotuyla servis edin.", "timerSeconds": 1500 }
+    ],
+    "notes": "Yalova zeytinyağlı kaynakları ve Nefis Yemek Tarifleri; limonlu enginar hazırlığı, güveçte fırınlama doğrulandı."
+  },
+  {
+    "slug": "zeytinli-kabak-sinkonta-foca-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kabakları iri yarım ay dilimleyin ve soğanı piyazlık doğrayın." },
+      { "stepNumber": 2, "instruction": "Soğanı zeytinyağında 5 dakika yumuşatın.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Kabak, zeytin, sarımsak ve domates rendesini tavaya ekleyin." },
+      { "stepNumber": 4, "instruction": "Kapağı kapalı halde 18 dakika kısık ateşte pişirin.", "timerSeconds": 1080 },
+      { "stepNumber": 5, "instruction": "Kapağı açıp 3 dakika suyunu çektirin, kabak ezilip püre olmasın; zeytinyağıyla servis edin.", "timerSeconds": 180 }
+    ],
+    "notes": "Foça ve Ege sinkonta kaynakları, Yemek.com; kabaklı zeytinyağlı pişirme ve kısa suyunu çektirme doğrulandı."
+  },
+  {
+    "slug": "zeytinli-keskek-aydin-bahce-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Aşurelik buğdayı yıkayıp 30 dakika sıcak suda bekletin.", "timerSeconds": 1800 },
+      { "stepNumber": 2, "instruction": "Buğdayı tencereye alıp üzerini geçecek su ekleyin." },
+      { "stepNumber": 3, "instruction": "Karışımı kısık ateşte 35 dakika pişirin.", "timerSeconds": 2100 },
+      { "stepNumber": 4, "instruction": "Buğdayı tahta kaşıkla 8 dakika ezin, taneler kremsi bağ oluştursun.", "timerSeconds": 480 },
+      { "stepNumber": 5, "instruction": "Zeytin ve zeytinyağını ekleyip 3 dakika pişirin, keşkeği 10 dakika dinlendirip servis edin.", "timerSeconds": 780 }
+    ],
+    "notes": "Aydın keşkek kaynakları ve Nefis Yemek Tarifleri; buğdayı uzun pişirme, ezme ve zeytinli bitiş doğrulandı."
+  },
+  {
+    "slug": "zeytinli-nohutlu-tavuk-guvec-ispanya-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavuk parçalarını tuzlayıp zeytinyağında 6 dakika mühürleyin.", "timerSeconds": 360 },
+      { "stepNumber": 2, "instruction": "Soğan ve sarımsağı ekleyip 4 dakika kavurun.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Domates püresi, paprika ve sıcak suyu tencereye alın." },
+      { "stepNumber": 4, "instruction": "Tavuğu sos içinde 12 dakika pişirin, içi çiğ kalmasın.", "timerSeconds": 720 },
+      { "stepNumber": 5, "instruction": "Nohut ve zeytini ekleyip 8 dakika daha kaynatın, maydanoz ve limon kabuğuyla servis edin.", "timerSeconds": 480 }
+    ],
+    "notes": "Spain on a Fork ve Olive Magazine; tavuk mühürleme, paprika domates sosu, nohut ve zeytin ekleme doğrulandı."
+  },
+  {
+    "slug": "zeytinli-patates-empanadilla-ispanya-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Patatesi tuzlu suda 18 dakika haşlayıp ezin.", "timerSeconds": 1080 },
+      { "stepNumber": 2, "instruction": "Ezilmiş patatese doğranmış zeytin, paprika ve zeytinyağı ekleyin." },
+      { "stepNumber": 3, "instruction": "İç harcı 10 dakika soğutun, sıcak harç hamuru yırtmasın.", "timerSeconds": 600 },
+      { "stepNumber": 4, "instruction": "Harcı empanadilla hamurlarına paylaştırıp kenarlarını çatalla kapatın." },
+      { "stepNumber": 5, "instruction": "Empanadillaları 200°C fırında 16 dakika pişirin ve 5 dakika dinlendirip servis edin.", "timerSeconds": 1260 }
+    ],
+    "notes": "Spanish Sabores ve Spain on a Fork; patatesli iç, zeytinli harç ve empanadilla fırın süresi doğrulandı."
+  },
+  {
+    "slug": "zeytinli-patlican-tava-ayvalik-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Patlıcanı küp doğrayıp tuzlu suda 15 dakika bekletin.", "timerSeconds": 900 },
+      { "stepNumber": 2, "instruction": "Patlıcanı kurulayın ve zeytinyağında 8 dakika çevirin.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Domates, sarımsak ve zeytini tavaya ekleyin." },
+      { "stepNumber": 4, "instruction": "Yemeği orta ateşte 6 dakika daha pişirin.", "timerSeconds": 360 },
+      { "stepNumber": 5, "instruction": "Tavayı ocaktan alıp 10 dakika dinlendirin, patlıcan sosu çeksin ve dağılmasın.", "timerSeconds": 600 }
+    ],
+    "notes": "Ayvalık zeytinyağlı kaynakları ve Yemek.com; patlıcanı tuzlu suda bekletme, zeytinli domatesli tava doğrulandı."
+  },
+  {
+    "slug": "zeytinli-peynirli-katmer-kilis-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Un, su, tuz ve zeytinyağıyla yumuşak hamur yoğurun.", "timerSeconds": 420 },
+      { "stepNumber": 2, "instruction": "Hamuru 20 dakika dinlendirin, gluten gevşesin ve ince açılabilsin.", "timerSeconds": 1200 },
+      { "stepNumber": 3, "instruction": "Zeytin ve peyniri küçük doğrayıp pul biberle karıştırın." },
+      { "stepNumber": 4, "instruction": "Hamuru ince açın, harcı yayın ve katlayarak kapatın." },
+      { "stepNumber": 5, "instruction": "Katmeri yağlı tavada her yüzü 8 dakika kızarana kadar pişirin.", "timerSeconds": 960 },
+      { "stepNumber": 6, "instruction": "Sıcak katmeri dilimleyip ayranla servis edin." }
+    ],
+    "notes": "Kilis katmer kaynakları ve Nefis Yemek Tarifleri; dinlenen hamur, zeytin peynir harcı ve tavada pişirme doğrulandı."
+  },
+  {
+    "slug": "zeytinyagli-bamya",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Bamyaların başlarını koni biçiminde ayıklayıp limonlu suda 10 dakika bekletin.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Soğanı zeytinyağında 4 dakika yumuşatın.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Domatesi ekleyip 3 dakika suyunu bırakana kadar pişirin.", "timerSeconds": 180 },
+      { "stepNumber": 4, "instruction": "Bamya, limon suyu, tuz ve şekeri tencereye alın." },
+      { "stepNumber": 5, "instruction": "Yemeği kısık ateşte 32 dakika pişirin, bamya karıştırılırsa salyalanıp dağılmasın.", "timerSeconds": 1920 }
+    ],
+    "notes": "Yemek.com ve Nefis Yemek Tarifleri; bamya ayıklama, limonlu bekletme ve karıştırmadan pişirme doğrulandı."
+  },
+  {
+    "slug": "zeytinyagli-fasulye",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Taze fasulyeleri ayıklayıp ikiye kırın ve yıkayın." },
+      { "stepNumber": 2, "instruction": "Soğanı zeytinyağında 5 dakika saydamlaşana kadar kavurun.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Doğranmış domatesleri ekleyip 4 dakika pişirin.", "timerSeconds": 240 },
+      { "stepNumber": 4, "instruction": "Fasulye, tuz, şeker ve 1 su bardağı sıcak suyu ekleyin." },
+      { "stepNumber": 5, "instruction": "Kısık ateşte 35 dakika pişirin, fasulye diri kalmasın ama ezilmesin; oda sıcaklığında servis edin.", "timerSeconds": 2100 }
+    ],
+    "notes": "Yemek.com ve Refika'nın Mutfağı; zeytinyağlı fasulyede domatesli taban, şeker dengesi ve kısık ateş doğrulandı."
+  },
+  {
+    "slug": "zeytinyagli-ic-bakla",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "İç baklaları yıkayıp kararmaması için limonlu suda 10 dakika bekletin.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Yemeklik soğanı zeytinyağında orta ateşte 4 dakika saydamlaşana kadar pişirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Bakla, tuz, şeker ve sıcak suyu tencereye ekleyin." },
+      { "stepNumber": 4, "instruction": "Yemeği kısık ateşte 20 dakika pişirin.", "timerSeconds": 1200 },
+      { "stepNumber": 5, "instruction": "Ocaktan alınca kapağı kapalı 15 dakika dinlendirin, baklalar dağılmasın; dereotuyla servis edin.", "timerSeconds": 900 }
+    ],
+    "notes": "Yemek.com ve Nefis Yemek Tarifleri; iç baklada limonlu bekletme, şekerli zeytinyağlı pişirme doğrulandı."
+  },
+  {
+    "slug": "zeytinyagli-imam-bayildi",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Patlıcanları alacalı soyup tuzlu suda 20 dakika bekletin.", "timerSeconds": 1200 },
+      { "stepNumber": 2, "instruction": "Patlıcanları kurulayın ve kızgın yağda 8 dakika kızartın.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Soğan, sarımsak ve biberi zeytinyağında 8 dakika yumuşatın.", "timerSeconds": 480 },
+      { "stepNumber": 4, "instruction": "Domates ve şekeri ekleyip iç harcı 7 dakika pişirin.", "timerSeconds": 420 },
+      { "stepNumber": 5, "instruction": "Patlıcanların ortasını açıp harcı doldurun, kabuk yırtılmasın diye bastırmayın." },
+      { "stepNumber": 6, "instruction": "Tencereye dizip kısık ateşte 25 dakika pişirin.", "timerSeconds": 1500 },
+      { "stepNumber": 7, "instruction": "Oda sıcaklığına gelince maydanozla servis edin." }
+    ],
+    "notes": "Yemek.com ve Refika'nın Mutfağı; patlıcanı tuzlama, soğanlı iç harç ve tencerede zeytinyağlı pişirme doğrulandı."
+  },
+  {
+    "slug": "zeytinyagli-kereviz",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kerevizleri soyup dilimleyin ve limonlu suda 10 dakika bekletin.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Havuç, patates ve soğanı benzer kalınlıkta doğrayın." },
+      { "stepNumber": 3, "instruction": "Sebzeleri tencereye yerleştirip zeytinyağı, portakal suyu, tuz ve şeker ekleyin." },
+      { "stepNumber": 4, "instruction": "Kapağı kapalı şekilde kısık ateşte 28 dakika pişirin.", "timerSeconds": 1680 },
+      { "stepNumber": 5, "instruction": "Kerevizleri tencerede 15 dakika dinlendirin, sıcak sıcak alınırsa kırılmasın; dereotuyla servis edin.", "timerSeconds": 900 }
+    ],
+    "notes": "Yemek.com ve Nefis Yemek Tarifleri; limonlu kereviz hazırlığı, portakal suyuyla zeytinyağlı pişirme doğrulandı."
+  },
+  {
+    "slug": "zeytinyagli-limonlu-arpa-sehriye-pilavi-aydin-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Arpa şehriyeyi zeytinyağında orta ateşte 3 dakika çevirin.", "timerSeconds": 180 },
+      { "stepNumber": 2, "instruction": "Limon kabuğu rendesi ve tuzu ekleyip 30 saniye karıştırın.", "timerSeconds": 30 },
+      { "stepNumber": 3, "instruction": "Sıcak su ve limon suyunu tencereye ekleyin." },
+      { "stepNumber": 4, "instruction": "Pilavı kısık ateşte 11 dakika pişirin.", "timerSeconds": 660 },
+      { "stepNumber": 5, "instruction": "Tencereyi 8 dakika demlendirin, şehriyeler ezilip hamurlaşmasın; dereotuyla servis edin.", "timerSeconds": 480 }
+    ],
+    "notes": "Aydın pilav kaynakları ve Yemek.com; arpa şehriye kavurma, limonlu su ve kısa demleme doğrulandı."
+  },
+  {
+    "slug": "zeytinyagli-pazi-sarmasi",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pazı yapraklarını kaynar suda 20 saniye bekletip soğuk suya alın.", "timerSeconds": 20 },
+      { "stepNumber": 2, "instruction": "Pirinç, soğan, zeytinyağı, salça, nane ve tuzu karıştırarak iç hazırlayın." },
+      { "stepNumber": 3, "instruction": "Pazı damarlarını inceltip yapraklara iç paylaştırın." },
+      { "stepNumber": 4, "instruction": "Sarmaları gevşek sarın, pirinç şişince yapraklar patlamasın." },
+      { "stepNumber": 5, "instruction": "Tencereye dizip limonlu sıcak su ekleyin ve tabakla bastırın." },
+      { "stepNumber": 6, "instruction": "Sarmaları kısık ateşte 32 dakika pişirin.", "timerSeconds": 1920 },
+      { "stepNumber": 7, "instruction": "Tencerede 15 dakika dinlendirip zeytinyağıyla servis edin.", "timerSeconds": 900 }
+    ],
+    "notes": "Yemek.com ve Nefis Yemek Tarifleri; pazıyı kısa haşlama, pirinçli iç ve kısık ateşte sarma pişirme doğrulandı."
+  }
+]

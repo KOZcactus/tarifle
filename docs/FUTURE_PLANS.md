@@ -216,14 +216,16 @@ Codex'e tek tek tetik: `"Mod F. Retrofit-07"`, JSON gelince
 `scripts/apply-retrofit.ts --batch 7 --apply` + prod.
 
 
-### Mod A Batch 37a+ (launch hedefi 3500+)
+### Mod A Batch 37b+ (launch hedef 3500+ AŞILDI ✅)
 
-Prod 3452 tarif, launch hedef **3500+** için 48 kısa. Codex 37a veya 37a/b
-ile ~100 yeni tarif gelebilir. Brief §5 A+ standardı aktif (varyasyon +
-timer + muğlak yasak + kritik nokta + web kaynak).
+Mod A Batch 37a prod canlı (oturum 21, 50 yeni tarif: 25 TR + 25
+uluslararası, kategori dengeli). **Prod 3471 → 3521 tarif**, launch
+hedef 3500+ aşıldı (+21). Hunger-bar + nutrition aggregate + diet-score
+recompute pipeline koştu (35210 RecipeDietScore total). Smoke
+sao-paulo-pao-de-queijo + madrid-patatas-bravas 200 OK.
 
-- [ ] Kerem Codex'e `"Mod A. Batch 37a"` tetikle
-- [ ] seed-recipes.ts apply + Backfill-16 CSV üret
+Sonraki Mod A batch (opsiyonel, launch sonrası katalog büyütme):
+37b veya 38a tetiklenebilir. Brief §5 A+ standardı aktif.
 
 ### Neon → Vercel Marketplace migration cleanup (TAMAM, oturum 20)
 

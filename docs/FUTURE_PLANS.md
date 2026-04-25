@@ -15,6 +15,51 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
+### Retrofit-12 / 13 / 14 / 15 suffix smuggling spot audit (launch sonrası polish, ~30 dk)
+
+Oturum 19'da Retrofit-16 v1 reject edildi: 42/100 tarif aynı 5 suffix
+pattern'ini paylaşıyordu (`"[TARIFADI] tepsisini hazırlayın, hamur oranı
+şaşmasın"` vb.). Brief'e Kural 17 eklendi, v2 mükemmel revize geldi
+(suffix freq 12 → 1).
+
+**Endişe**: Retrofit-12, 13, 14, 15 batch'leri aynı dönemde Codex
+tarafından üretildi ve aynı scaffold'u içeriyor olabilir. Bu batch'ler
+**zaten prod'a apply edildi** (geri alınamaz, DB'de step yazıldı).
+Yüzeysel gate'lerden geçti (kritik nokta %100 yapay yüksek olduğu için
+prod-blocker olarak görünmedi).
+
+Spot audit yöntem:
+```bash
+# Her batch için suffix freq + max
+for n in 12 13 14 15; do
+  npx tsx -e "
+  const j = JSON.parse(require('fs').readFileSync('docs/retrofit-step-count-${n}.json'));
+  const freq = {};
+  j.forEach(r => {
+    const suffix = r.newSteps[0].instruction.split(' ').slice(3).join(' ');
+    freq[suffix] = (freq[suffix]||0) + 1;
+  });
+  const top = Object.entries(freq).sort((a,b)=>b[1]-a[1])[0];
+  console.log('Retrofit-${n}: top suffix ' + top[1] + 'x: ' + top[0].slice(0,80));
+  "
+done
+```
+
+Eğer top freq > 5 ise o batch suffix smuggling içeriyor demektir. Çözüm
+yolları:
+1. **Yumuşak**: kabul et (kullanıcı şikayet etmediyse, kalite ek polish
+   olarak ileride). Kritik nokta yapay olsa da step doğru, tarifin
+   genel akışı pişme açısından çalışıyor.
+2. **Sert**: Codex'ten Retrofit-N+1 olarak revize teslim al, brief Kural
+   17 ile aynı tarif slug'lara yeni JSON üret. Bu 4 batch için 4 yeni
+   teslim demek.
+
+Launch öncesi hızlı karar: Yumuşak yaklaşım (revize launch sonrası).
+Mevcut kalite "iyi değil" değil, "mükemmel değil"; kullanıcılar fark
+etmeyecek nokta kalite katmanı.
+
+
+
 
 
 ### Legal + KVKK detay polish (launch öncesi, opsiyonel, 15-30 dk)

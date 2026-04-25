@@ -543,6 +543,25 @@ Kapsamlı iş, acele edip yanlış yapmayalım. Plan onaylanınca hızlı implem
 - Faz 2 limited: top 100 ingredient USDA enrichment + **tek ek preset: düşük-şeker** (kullanıcının en öne çıkan isteği)
 - Faz 3'e erteleme: yüksek-lif (fiber enrichment daha geniş), düşük-sodyum, akdeniz, keto-hassas
 
+### Beta tag (oturum 20 ek karar, Kerem önerisi)
+Diyet skoru ilk yayında **"Beta"** etiketiyle çıkacak. Sebep: USDA enrichment
+Faz 2'de tamamlanacak, Faz 1'de mevcut macro verisi (calories+protein+carbs+fat)
+ile düşük şeker / yüksek lif gibi profillere fallback approximation ile yaklaşım
+veriyoruz; %100 doğru değil. "Beta" rozeti kullanıcı beklentisi yönetimi:
+sonuç yanlış görünse bile site terk edilmesin, "geliştiriliyor" mesajı verir.
+
+Beta UI yerleşimi:
+- Recipe card badge: skor chip yanında küçük "BETA" mini-rozet
+- Detail "Diyet Uyumu" kartı: başlıkta "🎯 Yüksek Protein Uyumu (Beta)" formatı
+- `/ayarlar/diyet` sayfasında banner: "Diyet skoru beta aşamasında, sonuçlar
+  zamanla iyileşecek. Hatalı bulduğun skor için geri bildirim formu."
+- Geri bildirim: lightweight, "Bu skor sence uygun mu?" toggle (yararlı / değil)
+  → analytics event, Faz 2 sonrası kapanır
+
+Faz 2 USDA enrichment + 6. preset (düşük şeker) ship edildikten 1-2 hafta
+sonra "Beta" etiketi düşürülür. Stable rozet "Geliştirilmiş hesaplama" ile
+değiştirilebilir veya tamamen kaldırılabilir (Kerem kararı).
+
 ### Diğer kararlar (K2-K6)
 - **K2**: Diyet badge default açık, `/ayarlar/gizlilik` altında `showDietBadge` toggle
 - **K3**: USDA mapping hibrit, Codex Mod G draft + Kerem + Eren review (top 100 ~ 3-4 oturumda)

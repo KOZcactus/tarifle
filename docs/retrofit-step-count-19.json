@@ -1,0 +1,1377 @@
+[
+  {
+    "slug": "barramundi-tava-avustralya-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Barramundi filetolarını kağıt havluyla kurulayın, deri tarafını tuz ve karabiberle ovun." },
+      { "stepNumber": 2, "instruction": "Geniş tavayı 2 dakika ısıtıp tereyağı ve zeytinyağını köpürene kadar eritin.", "timerSeconds": 120 },
+      { "stepNumber": 3, "instruction": "Filetoları deri tarafı alta gelecek şekilde tavaya alın ve spatulayla bastırın, deri kıvrılmasın diye." },
+      { "stepNumber": 4, "instruction": "İlk yüzü orta yüksek ateşte 4 dakika altın renk alana kadar pişirin.", "timerSeconds": 240 },
+      { "stepNumber": 5, "instruction": "Filetoları çevirip 4 dakika daha pişirin, limon suyu ve maydanozla sıcak servis edin.", "timerSeconds": 240 }
+    ],
+    "notes": "Kaynak kontrolü: Australian fish pan fry yöntemleri ve mevcut CSV; kurutma, deri tarafı ve 4+4 dakika tava süresi korundu."
+  },
+  {
+    "slug": "bastilla",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavuğu soğan, zencefil ve safranlı suda 35 dakika haşlayın.", "timerSeconds": 2100 },
+      { "stepNumber": 2, "instruction": "Tavuğu didikleyip haşlama suyunu 10 dakika çektirin, harç sulu kalmasın diye.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Yumurtaları tencereye kırıp tavuklu sosla 6 dakika koyulaştırın.", "timerSeconds": 360 },
+      { "stepNumber": 4, "instruction": "Kavrulmuş badem, tarçın ve pudra şekerini tavuk harcına dengeli serpin." },
+      { "stepNumber": 5, "instruction": "Yağlanmış yufkaları kalıba kat kat yerleştirip harcı kapatın." },
+      { "stepNumber": 6, "instruction": "Bastilla'yı 190°C fırında 35 dakika kızarana kadar pişirin.", "timerSeconds": 2100 }
+    ],
+    "notes": "Kaynak kontrolü: Moroccan bastilla tarifleri ve mevcut CSV; tavuk, yumurtalı bağlayıcı, bademli tarçınlı katman doğrulandı."
+  },
+  {
+    "slug": "beef-chow-fun",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Dana etini ince dilimleyip soya sosu, nişasta ve az yağla 15 dakika bekletin.", "timerSeconds": 900 },
+      { "stepNumber": 2, "instruction": "Pirinç eriştelerini elinizle ayırın, kırılan parçalar wokta hamurlaşmasın diye." },
+      { "stepNumber": 3, "instruction": "Wok'u 2 dakika çok yüksek ateşte ısıtıp eti tek kat halinde ekleyin.", "timerSeconds": 120 },
+      { "stepNumber": 4, "instruction": "Eti 4 dakika mühürleyip kenara alın, tavada su birikmesine izin vermeyin.", "timerSeconds": 240 },
+      { "stepNumber": 5, "instruction": "Erişte, fasulye filizi ve soya sosunu wokta 5 dakika çevirin.", "timerSeconds": 300 },
+      { "stepNumber": 6, "instruction": "Eti geri ekleyip yeşil soğanla 1 dakika harmanlayın ve sıcak servis edin.", "timerSeconds": 60 }
+    ],
+    "notes": "Kaynak kontrolü: Woks of Life beef chow fun ve mevcut CSV; yüksek ateş, kısa mühürleme ve erişte sırası doğrulandı."
+  },
+  {
+    "slug": "beef-stroganoff-klasik",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Dana etini ince şerit doğrayıp tuz, karabiber ve az unla kaplayın." },
+      { "stepNumber": 2, "instruction": "Eti geniş tavada 5 dakika mühürleyin, parçalar üst üste gelmesin diye.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Mantar ve soğanı aynı tavada 10 dakika suyunu çekene kadar pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 4, "instruction": "Et suyu, hardal ve mühürlenen eti tavaya alıp 6 dakika kaynatın.", "timerSeconds": 360 },
+      { "stepNumber": 5, "instruction": "Ekşi kremayı kısık ateşte ekleyip 5 dakika ısıtın, sos kesilmesin.", "timerSeconds": 300 }
+    ],
+    "notes": "Kaynak kontrolü: BBC Good Food stroganoff ve klasik Rus stroganoff kaynakları; etin hızlı mühürlenmesi ve kremanın düşük ateşi doğrulandı."
+  },
+  {
+    "slug": "beetroot-burger-avustralya-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kıymayı tuz ve karabiberle yoğurmadan toparlayıp iki köfte haline getirin." },
+      { "stepNumber": 2, "instruction": "Köftelerin ortasını hafifçe bastırın, pişerken kubbe gibi şişmesin diye." },
+      { "stepNumber": 3, "instruction": "Köfteleri kızgın tavada toplam 8 dakika pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 4, "instruction": "Burger ekmeklerini kesik yüzleri tavaya değecek şekilde 2 dakika kızartın.", "timerSeconds": 120 },
+      { "stepNumber": 5, "instruction": "Ekmeğe marul, köfte, pancar dilimi ve domates koyup bekletmeden servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Australian burger with beetroot kaynakları ve mevcut CSV; pancar dilimi, köfte süresi ve ekmek kızartma sırası korundu."
+  },
+  {
+    "slug": "beetroot-relish-burger-avustralya-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kıymayı porsiyonlayıp köfteleri 2 cm kalınlığında şekillendirin." },
+      { "stepNumber": 2, "instruction": "Köftelerin iki yüzünü tuzlayın ve tavayı 2 dakika yüksek ateşte ısıtın.", "timerSeconds": 120 },
+      { "stepNumber": 3, "instruction": "Köfteleri toplam 10 dakika pişirin, içi sulu kalsın diye sık sık bastırmayın.", "timerSeconds": 600 },
+      { "stepNumber": 4, "instruction": "Ekmekleri 2 dakika kesik yüzlerinden kızartıp pancar relish'i hazırlayın.", "timerSeconds": 120 },
+      { "stepNumber": 5, "instruction": "Köfte, marul ve pancar relish'i ekmeğe dizip sıcak servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Avustralya pancarlı burger kaynakları ve mevcut CSV; relish kullanımı, 10 dakika köfte süresi ve sıcak servis doğrulandı."
+  },
+  {
+    "slug": "besamelli-tavuk",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavukları kuşbaşı doğrayıp mantarla birlikte tavaya alın." },
+      { "stepNumber": 2, "instruction": "Tavuk ve mantarı 10 dakika suyunu çekene kadar soteleyin.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Ayrı tencerede tereyağını eritip unu 2 dakika kokusu çıkana kadar kavurun.", "timerSeconds": 120 },
+      { "stepNumber": 4, "instruction": "Sütü azar azar ekleyip 5 dakika çırpın, beşamel topaklanmasın.", "timerSeconds": 300 },
+      { "stepNumber": 5, "instruction": "Tavuklu karışımı fırın kabına alıp beşamel ve kaşarla kaplayın." },
+      { "stepNumber": 6, "instruction": "Yemeği 190°C fırında 20 dakika üstü kızarana kadar pişirin.", "timerSeconds": 1200 }
+    ],
+    "notes": "Kaynak kontrolü: Yemek.com beşamelli tavuk ve mevcut CSV; tavuk sote, roux tekniği ve 190C fırın süresi doğrulandı."
+  },
+  {
+    "slug": "beyti-sarma",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kıyma, rendelenmiş soğan, sarımsak, kimyon ve tuzu geniş kapta birleştirin." },
+      { "stepNumber": 2, "instruction": "Köfte harcını 10 dakika yoğurun, lifli yapı toparlansın diye.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Harcı uzun köfteler halinde şekillendirip ızgara tavayı 3 dakika ısıtın.", "timerSeconds": 180 },
+      { "stepNumber": 4, "instruction": "Köfteleri 12 dakika çevirerek pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 5, "instruction": "Lavaşları ısıtıp köfteleri sıkıca sarın ve dilimleyin." },
+      { "stepNumber": 6, "instruction": "Domates sosunu 5 dakika kaynatıp beyti dilimlerinin üstüne gezdirin, yoğurtla servis edin.", "timerSeconds": 300 }
+    ],
+    "notes": "Kaynak kontrolü: Beyti kebabı tarifleri ve mevcut CSV; köfte yoğurma, lavaşa sarma, domates sos ve yoğurt servisi doğrulandı."
+  },
+  {
+    "slug": "biang-biang-mian",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Un, su ve tuzu pürüzsüz hamur olana kadar 8 dakika yoğurun.", "timerSeconds": 480 },
+      { "stepNumber": 2, "instruction": "Hamuru yağlayıp 45 dakika dinlendirin, gluten gevşesin ve noodle kolay uzasın.", "timerSeconds": 2700 },
+      { "stepNumber": 3, "instruction": "Hamuru şeritlere ayırıp tezgaha vurarak geniş noodle çekin." },
+      { "stepNumber": 4, "instruction": "Noodle'ları kaynar suda 3 dakika haşlayın.", "timerSeconds": 180 },
+      { "stepNumber": 5, "instruction": "Soya sosu, sirke, sarımsak ve pul biberi kaselerde hazırlayın." },
+      { "stepNumber": 6, "instruction": "Kızgın yağı 1 dakika baharatların üstüne döküp noodle ile karıştırın.", "timerSeconds": 60 }
+    ],
+    "notes": "Kaynak kontrolü: Xi'an biang biang mian kaynakları ve mevcut CSV; hamur dinlendirme, geniş noodle çekme ve kızgın yağ tekniği doğrulandı."
+  },
+  {
+    "slug": "biberiyeli-tavuklu-firik-pilavi-mersin-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavuğu kuşbaşı doğrayıp firik bulgurunu süzgeçte yıkayın." },
+      { "stepNumber": 2, "instruction": "Tavuğu tencerede 6 dakika rengi dönene kadar soteleyin.", "timerSeconds": 360 },
+      { "stepNumber": 3, "instruction": "Firik, sıcak su ve biberiyeyi ekleyip tencerenin kapağını kapatın." },
+      { "stepNumber": 4, "instruction": "Pilavı kısık ateşte 12 dakika pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 5, "instruction": "Tencereyi ocaktan alıp 10 dakika demlendirin, firik taneleri kırılmasın.", "timerSeconds": 600 }
+    ],
+    "notes": "Kaynak kontrolü: Mersin firik pilavı kaynakları ve mevcut CSV; tavuk soteleme, firik suyu ve demlendirme adımı doğrulandı."
+  },
+  {
+    "slug": "biberli-ekmek-hatay-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Un, su, maya ve tuzu 7 dakika yumuşak hamur olana kadar yoğurun.", "timerSeconds": 420 },
+      { "stepNumber": 2, "instruction": "Hamuru 20 dakika mayalandırın, üstünü örtün ki yüzeyi kurumasın.", "timerSeconds": 1200 },
+      { "stepNumber": 3, "instruction": "Biber salçası, rendelenmiş soğan, susam, zeytinyağı ve tuzu karıştırın." },
+      { "stepNumber": 4, "instruction": "Hamuru ince açıp biberli harcı kenarlara kadar yayın." },
+      { "stepNumber": 5, "instruction": "Biberli ekmeği 230°C fırında 12 dakika kenarları kızarana kadar pişirin.", "timerSeconds": 720 }
+    ],
+    "notes": "Kaynak kontrolü: Hatay biberli ekmek tarifleri ve mevcut CSV; salçalı soğanlı harç, susam ve yüksek ısı fırın süresi doğrulandı."
+  },
+  {
+    "slug": "biberli-tavuk-guvec-adana-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavuğu iri parçalar halinde doğrayıp biber, domates ve soğanı hazırlayın." },
+      { "stepNumber": 2, "instruction": "Güvecin tabanına soğan ve biberi yayın, tavuk parçalarını üstüne yerleştirin." },
+      { "stepNumber": 3, "instruction": "Domates, salça, tuz ve pul biberi ekleyip malzemeyi ezmeden karıştırın." },
+      { "stepNumber": 4, "instruction": "Güveci 200°C fırında 20 dakika tavuk yumuşayana kadar pişirin.", "timerSeconds": 1200 },
+      { "stepNumber": 5, "instruction": "Fırından çıkınca 8 dakika dinlendirin, sosu tavuğun içine çekilsin.", "timerSeconds": 480 }
+    ],
+    "notes": "Kaynak kontrolü: Adana usulü tavuk güveç kaynakları ve mevcut CSV; sebze tabanı, salçalı sos ve fırın süresi doğrulandı."
+  },
+  {
+    "slug": "biberli-tavuk-pirinc-tava-ispanyol-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavuğu kuşbaşı doğrayıp pirinci berrak su akana kadar yıkayın." },
+      { "stepNumber": 2, "instruction": "Tavuğu geniş tavada 6 dakika mühürleyin.", "timerSeconds": 360 },
+      { "stepNumber": 3, "instruction": "Biberleri ve baharatı ekleyip 4 dakika soteleyin.", "timerSeconds": 240 },
+      { "stepNumber": 4, "instruction": "Pirinci tavaya alıp 2 dakika yağla çevirin, tane tane kalsın diye.", "timerSeconds": 120 },
+      { "stepNumber": 5, "instruction": "Sıcak suyu ekleyip kapağı kapalı halde 12 dakika pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 6, "instruction": "Tavayı ocaktan alıp 10 dakika dinlendirin ve maydanozla servis edin.", "timerSeconds": 600 }
+    ],
+    "notes": "Kaynak kontrolü: Spanish chicken rice skillet kaynakları ve mevcut CSV; tavuk mühürleme, pirinci yağla çevirme ve kapaklı pişirme doğrulandı."
+  },
+  {
+    "slug": "biberli-zeytinli-empanada-kuba-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Biberi küçük doğrayıp tavayı orta ateşte ısıtın." },
+      { "stepNumber": 2, "instruction": "Biberi zeytinyağında 6 dakika yumuşayana kadar pişirin.", "timerSeconds": 360 },
+      { "stepNumber": 3, "instruction": "Zeytin ve peyniri biberle karıştırıp harcı soğutun, hamur ıslanmasın diye." },
+      { "stepNumber": 4, "instruction": "Harcı empanada hamurlarına paylaştırıp kenarları çatalla kapatın." },
+      { "stepNumber": 5, "instruction": "Empanadaları 200°C fırında 15 dakika kızarana kadar pişirin.", "timerSeconds": 900 }
+    ],
+    "notes": "Kaynak kontrolü: Cuban empanada kaynakları ve mevcut CSV; biberli harç, zeytin, kapatma ve 200C fırın süresi doğrulandı."
+  },
+  {
+    "slug": "bibimbap",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pirinci yıkayıp ölçülü suyla 18 dakika pişirin.", "timerSeconds": 1080 },
+      { "stepNumber": 2, "instruction": "Ispanak, havuç ve kabak gibi sebzeleri ayrı kaplarda hazırlayın." },
+      { "stepNumber": 3, "instruction": "Sebzeleri ayrı ayrı 3 dakika soteleyin, renkleri birbirine karışmasın diye.", "timerSeconds": 180 },
+      { "stepNumber": 4, "instruction": "Kıymayı soya sosu ve sarımsakla 8 dakika pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 5, "instruction": "Yumurtayı 3 dakika akı toparlanana kadar tavada pişirin.", "timerSeconds": 180 },
+      { "stepNumber": 6, "instruction": "Kaselere pirinç, sebze, et, yumurta ve gochujang yerleştirip servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Maangchi bibimbap ve mevcut CSV; ayrı sebze pişirme, kıymalı üstlük, yumurta ve gochujang doğrulandı."
+  },
+  {
+    "slug": "birria-de-res",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kuru biberlerin sap ve çekirdeklerini temizleyip sıcak suda 20 dakika bekletin.", "timerSeconds": 1200 },
+      { "stepNumber": 2, "instruction": "Biberleri domates, sarımsak ve baharatla pürüzsüz sos haline getirin." },
+      { "stepNumber": 3, "instruction": "Eti tuzlayıp tencerede 8 dakika her yüzü renk alana kadar mühürleyin.", "timerSeconds": 480 },
+      { "stepNumber": 4, "instruction": "Sosu etin üstüne döküp defne ve su ekleyin." },
+      { "stepNumber": 5, "instruction": "Eti kısık ateşte 3 saat lif lif ayrılana kadar pişirin.", "timerSeconds": 10800 },
+      { "stepNumber": 6, "instruction": "Eti didikleyip sıcak consome içinde 10 dakika dinlendirin, sosu içine çeksin.", "timerSeconds": 600 }
+    ],
+    "notes": "Kaynak kontrolü: Mexican birria de res kaynakları ve mevcut CSV; kuru biber sosu, uzun pişirme ve etin didiklenmesi doğrulandı."
+  },
+  {
+    "slug": "bo-kho",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Dana etini iri küp doğrayıp soya sosu, beş baharat ve sarımsakla 10 dakika harmanlayın.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Tencerede eti 8 dakika rengi dönene kadar kavurun.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Domates püresi ve limon otu ekleyip 7 dakika sos koyulaşana kadar pişirin.", "timerSeconds": 420 },
+      { "stepNumber": 4, "instruction": "Havuç ve sıcak suyu ekleyip kapağı kapatın." },
+      { "stepNumber": 5, "instruction": "Yemeği 60 dakika kısık ateşte et yumuşayana kadar pişirin.", "timerSeconds": 3600 },
+      { "stepNumber": 6, "instruction": "Üstündeki fazla yağı alıp kişniş ve lime ile sıcak servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Vietnamese bo kho kaynakları ve mevcut CSV; limon otu, domatesli taban, havuç ve 60 dakika pişirme doğrulandı."
+  },
+  {
+    "slug": "bo-la-lot-limonotlu-vietnam-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kıyma, limon otu, sarımsak, balık sosu ve tuzu 4 dakika yoğurun.", "timerSeconds": 240 },
+      { "stepNumber": 2, "instruction": "La lot yapraklarını silip parlak yüzleri dışta kalacak şekilde hazırlayın." },
+      { "stepNumber": 3, "instruction": "Harcı yapraklara paylaştırıp sıkı rulolar sarın, pişerken açılmasın diye." },
+      { "stepNumber": 4, "instruction": "Ruloları hafif yağlanmış tavada toplam 8 dakika ızgaralayın.", "timerSeconds": 480 },
+      { "stepNumber": 5, "instruction": "Ruloları 5 dakika dinlendirip pirinç eriştesi ve otlarla servis edin.", "timerSeconds": 300 }
+    ],
+    "notes": "Kaynak kontrolü: Vietnamese bo la lot kaynakları ve mevcut CSV; limon otlu kıyma, yaprağa sarma ve 8 dakika pişirme doğrulandı."
+  },
+  {
+    "slug": "bo-la-lot-vietnam-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kıymayı sarımsak, lime suyu, balık sosu ve tuzla karıştırın." },
+      { "stepNumber": 2, "instruction": "Harcı 5 dakika yoğurun, rulo içinde dağılmasın diye.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "La lot yapraklarına birer kaşık harç koyup ince rulolar sarın." },
+      { "stepNumber": 4, "instruction": "Ruloları tavada toplam 8 dakika çevirerek pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 5, "instruction": "Pişen ruloları 4 dakika dinlendirip taze ot ve lime ile servis edin.", "timerSeconds": 240 }
+    ],
+    "notes": "Kaynak kontrolü: Bo la lot tarifleri ve mevcut CSV; yaprağa sarma, kıymalı harç ve tavada kısa pişirme sırası doğrulandı."
+  },
+  {
+    "slug": "bo-luc-lac",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Dana etini iri küp doğrayıp soya sosu, sarımsak ve az şekerle 20 dakika marine edin.", "timerSeconds": 1200 },
+      { "stepNumber": 2, "instruction": "Marul, domates ve soğanı servis tabağına yerleştirin." },
+      { "stepNumber": 3, "instruction": "Tavayı 2 dakika çok yüksek ateşte ısıtın, et suyunu salmasın diye.", "timerSeconds": 120 },
+      { "stepNumber": 4, "instruction": "Eti tavada 8 dakika sallayarak pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 5, "instruction": "Lime suyu ve karabiberli dip sosu küçük kapta karıştırın." },
+      { "stepNumber": 6, "instruction": "Sıcak eti sebzelerin üstüne alıp dip sosla hemen servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Vietnamese shaking beef kaynakları ve mevcut CSV; küp et, yüksek ateş ve lime karabiber sos doğrulandı."
+  },
+  {
+    "slug": "bobo-de-camarao",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Manyoku soyup iri doğrayın ve tuzlu suda 25 dakika haşlayın.", "timerSeconds": 1500 },
+      { "stepNumber": 2, "instruction": "Yumuşayan manyoku ezip ayırdığınız sıcak suyla pürüzsüz doku verin." },
+      { "stepNumber": 3, "instruction": "Domates, soğan ve biberi tencerede 6 dakika pişirin.", "timerSeconds": 360 },
+      { "stepNumber": 4, "instruction": "Karidesi ekleyip 3 dakika rengi dönene kadar pişirin, sertleşmesin.", "timerSeconds": 180 },
+      { "stepNumber": 5, "instruction": "Manyok püresi ve Hindistan cevizi sütünü ekleyip 10 dakika kaynatın.", "timerSeconds": 600 }
+    ],
+    "notes": "Kaynak kontrolü: Brazilian bobo de camarao kaynakları ve mevcut CSV; manyok püresi, karidesin kısa pişmesi ve kokos sütü doğrulandı."
+  },
+  {
+    "slug": "boeuf-bourguignon",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Dana etini iri parçalara ayırıp kağıt havluyla kurulayın." },
+      { "stepNumber": 2, "instruction": "Eti tereyağı ve az yağda 10 dakika her yüzü renk alana kadar kızartın.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Unu ekleyip 2 dakika kavurun, sos daha sonra pürüzsüz bağlansın.", "timerSeconds": 120 },
+      { "stepNumber": 4, "instruction": "Şarap, soğan, havuç ve mantarı tencereye ekleyin." },
+      { "stepNumber": 5, "instruction": "Yemeği kısık ateşte 2 saat 30 dakika et yumuşayana kadar pişirin.", "timerSeconds": 9000 },
+      { "stepNumber": 6, "instruction": "Sosu 8 dakika açıkta çektirip maydanozla servis edin.", "timerSeconds": 480 }
+    ],
+    "notes": "Kaynak kontrolü: Julia Child boeuf bourguignon ve BBC kaynakları; et mühürleme, unla bağlama ve uzun pişirme doğrulandı."
+  },
+  {
+    "slug": "bolu-mengen-pilavi",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pirinci 20 dakika ılık tuzlu suda bekletip süzün.", "timerSeconds": 1200 },
+      { "stepNumber": 2, "instruction": "Kuzu etini tencerede 12 dakika suyunu çekene kadar kavurun.", "timerSeconds": 720 },
+      { "stepNumber": 3, "instruction": "Mantar ve soğanı ekleyip 8 dakika daha pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 4, "instruction": "Pirinci ekleyip 3 dakika yağla çevirin, taneler kırılmasın diye.", "timerSeconds": 180 },
+      { "stepNumber": 5, "instruction": "Sıcak suyu ekleyip pilavı 25 dakika kısık ateşte pişirin.", "timerSeconds": 1500 },
+      { "stepNumber": 6, "instruction": "Pilavı 10 dakika demlendirip dereotu veya maydanozla servis edin.", "timerSeconds": 600 }
+    ],
+    "notes": "Kaynak kontrolü: Bolu Mengen pilavı kaynakları ve mevcut CSV; pirinç ıslatma, etli mantarlı taban ve demlendirme doğrulandı."
+  },
+  {
+    "slug": "borulce-eksilemesi",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Börülceleri ayıklayıp yıkayın, domatesleri küçük küp doğrayın." },
+      { "stepNumber": 2, "instruction": "Soğanı zeytinyağında 4 dakika şeffaflaşana kadar çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Domatesi ekleyip 5 dakika sos kıvamı alana kadar pişirin.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "Börülce ve sıcak suyu tencereye alıp 30 dakika pişirin.", "timerSeconds": 1800 },
+      { "stepNumber": 5, "instruction": "Limon suyu ve tuzu ekleyip 5 dakika dinlendirin, ekşilik yemeğe yayılsın.", "timerSeconds": 300 }
+    ],
+    "notes": "Kaynak kontrolü: Ege börülce ekşilemesi tarifleri ve mevcut CSV; domatesli zeytinyağlı taban, limon ve dinlendirme doğrulandı."
+  },
+  {
+    "slug": "borulceli-bulgur-pilavi-aydin-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Börülceleri ayıklayıp yıkayın, bulguru süzgeçte kısa yıkayın." },
+      { "stepNumber": 2, "instruction": "Soğanı zeytinyağında 4 dakika çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Börülce ve domatesi ekleyip 4 dakika daha pişirin.", "timerSeconds": 240 },
+      { "stepNumber": 4, "instruction": "Bulguru tencereye katıp 2 dakika yağlı harçla karıştırın.", "timerSeconds": 120 },
+      { "stepNumber": 5, "instruction": "Sıcak suyu ekleyip pilavı 18 dakika kısık ateşte pişirin.", "timerSeconds": 1080 },
+      { "stepNumber": 6, "instruction": "Pilavı 10 dakika demlendirin, bulgur taneleri ezilmesin.", "timerSeconds": 600 }
+    ],
+    "notes": "Kaynak kontrolü: Aydın börülceli bulgur pilavı kaynakları ve mevcut CSV; börülce, domates ve bulgurun demlenmesi doğrulandı."
+  },
+  {
+    "slug": "borulceli-domates-sogurtmesi-aydin-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Domatesleri rendeleyin, sarımsağı ezin ve börülceyi ayıklayın." },
+      { "stepNumber": 2, "instruction": "Sarımsağı zeytinyağında 1 dakika kokusu çıkana kadar çevirin.", "timerSeconds": 60 },
+      { "stepNumber": 3, "instruction": "Domatesi tavaya ekleyip 5 dakika suyunu hafif çekene kadar pişirin.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "Börülceyi sosa ekleyip tuzunu ayarlayın." },
+      { "stepNumber": 5, "instruction": "Yemeği 12 dakika kısık ateşte pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 6, "instruction": "Ocaktan alınca 6 dakika dinlendirin, domates sosu börülceye işlesin.", "timerSeconds": 360 }
+    ],
+    "notes": "Kaynak kontrolü: Aydın söğürtme ve börülceli domates yemekleri kaynakları; sarımsaklı domates tabanı ve kısa pişirme doğrulandı."
+  },
+  {
+    "slug": "borulceli-domates-yahnisi",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Börülceleri ayıklayıp ikiye bölün, domates ve soğanı doğrayın." },
+      { "stepNumber": 2, "instruction": "Soğanı zeytinyağında 3 dakika yumuşatın.", "timerSeconds": 180 },
+      { "stepNumber": 3, "instruction": "Domatesi ekleyip 3 dakika daha pişirin.", "timerSeconds": 180 },
+      { "stepNumber": 4, "instruction": "Börülce ve sıcak suyu tencereye ekleyip kapağı kapatın." },
+      { "stepNumber": 5, "instruction": "Yahniyi kısık ateşte 25 dakika börülce yumuşayana kadar pişirin.", "timerSeconds": 1500 },
+      { "stepNumber": 6, "instruction": "Tuzunu ayarlayıp 8 dakika dinlendirin, sosu durulsun diye.", "timerSeconds": 480 }
+    ],
+    "notes": "Kaynak kontrolü: Börülceli domates yahnisi kaynakları ve mevcut CSV; domatesli taban, sıcak su ve 25 dakika pişirme doğrulandı."
+  },
+  {
+    "slug": "borulceli-eksileme-izmir-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Börülceyi ayıklayıp yıkayın, limon suyunu servis öncesi için ayırın." },
+      { "stepNumber": 2, "instruction": "Soğanı zeytinyağında 4 dakika yumuşayana kadar çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Börülce ve domatesi tencereye ekleyip 5 dakika pişirin.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "Sıcak suyu ekleyip yemeği 18 dakika kısık ateşte pişirin.", "timerSeconds": 1080 },
+      { "stepNumber": 5, "instruction": "Limon suyunu ocaktan sonra ekleyin, taze ekşilik kaybolmasın diye." }
+    ],
+    "notes": "Kaynak kontrolü: İzmir börülce ekşileme kaynakları ve mevcut CSV; zeytinyağlı pişirme, domates ve limonun sonradan eklenmesi doğrulandı."
+  },
+  {
+    "slug": "borulceli-kabak-mucveri-mugla-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kabağı rendeleyip 10 dakika tuzla bekletin.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Kabağın suyunu sıkın, mücver hamuru sulanmasın diye." },
+      { "stepNumber": 3, "instruction": "Börülce, yumurta, un, dereotu ve kabağı karıştırarak harcı hazırlayın." },
+      { "stepNumber": 4, "instruction": "Tavaya kaşık kaşık harç paylaştırıp yassılaştırın." },
+      { "stepNumber": 5, "instruction": "Mücverlerin her yüzünü 4 dakika altın renk alana kadar pişirin.", "timerSeconds": 480 }
+    ],
+    "notes": "Kaynak kontrolü: Muğla kabak mücveri ve börülceli mücver kaynakları; kabak suyunu sıkma ve 4 dakika yüz pişirme doğrulandı."
+  },
+  {
+    "slug": "bossam",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Domuz veya dana etini tencereye alıp sarımsak, zencefil ve soya sosu ekleyin." },
+      { "stepNumber": 2, "instruction": "Eti aromalı suda 90 dakika kısık ateşte haşlayın.", "timerSeconds": 5400 },
+      { "stepNumber": 3, "instruction": "Eti tencereden çıkarıp 10 dakika dinlendirin, dilimler dağılmasın.", "timerSeconds": 600 },
+      { "stepNumber": 4, "instruction": "Marul yapraklarını yıkayıp kurulayın, yanına sarımsak ve biber hazırlayın." },
+      { "stepNumber": 5, "instruction": "Eti ince dilimleyip marul yaprakları, kimchi ve sosla servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Maangchi bossam ve mevcut CSV; aromalı uzun haşlama, dinlendirme, ince dilimleme ve marul servisi doğrulandı."
+  },
+  {
+    "slug": "briam",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Patates, kabak ve patlıcanı eş kalınlıkta halka doğrayın." },
+      { "stepNumber": 2, "instruction": "Sebzeleri fırın kabına üst üste binmeyecek şekilde dizin." },
+      { "stepNumber": 3, "instruction": "Domates, sarımsak, zeytinyağı ve kekiği sebzelerin üstüne gezdirin." },
+      { "stepNumber": 4, "instruction": "Kabı yağlı kağıtla örtün, sebzelerin üstü erken yanmasın diye." },
+      { "stepNumber": 5, "instruction": "Briam'ı 180°C fırında 60 dakika sebzeler yumuşayana kadar pişirin.", "timerSeconds": 3600 }
+    ],
+    "notes": "Kaynak kontrolü: Greek briam kaynakları ve mevcut CSV; halka sebze dizimi, domatesli zeytinyağlı sos ve 180C uzun fırın doğrulandı."
+  },
+  {
+    "slug": "budae-jjigae",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kimchi, sosis, tofu ve lahanayı tencereye bölümler halinde yerleştirin." },
+      { "stepNumber": 2, "instruction": "Gochujang, soya sosu, sarımsak ve suyu ayrı kapta karıştırın." },
+      { "stepNumber": 3, "instruction": "Soslu suyu tencereye döküp 15 dakika kaynatın.", "timerSeconds": 900 },
+      { "stepNumber": 4, "instruction": "Noodle'ı ekleyip 5 dakika pişirin, fazla beklerse çorbayı koyulaştırmasın.", "timerSeconds": 300 },
+      { "stepNumber": 5, "instruction": "Üstüne yeşil soğan serpip tencereyle sıcak servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Korean budae jjigae kaynakları ve mevcut CSV; kimchi, sosis, gochujang suyu ve noodle'ın sonradan eklenmesi doğrulandı."
+  },
+  {
+    "slug": "budapeste-paprikali-nohut-tavasi",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kapya biberi şerit doğrayıp nohutları süzün." },
+      { "stepNumber": 2, "instruction": "Biberi sıvı yağda 5 dakika yumuşayana kadar soteleyin.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Domates ve paprikayı ekleyip 6 dakika sos kıvamına getirin.", "timerSeconds": 360 },
+      { "stepNumber": 4, "instruction": "Nohudu tavaya katıp 7 dakika ısıtın.", "timerSeconds": 420 },
+      { "stepNumber": 5, "instruction": "Tavayı 5 dakika dinlendirin, paprika aroması nohuda işlesin.", "timerSeconds": 300 },
+      { "stepNumber": 6, "instruction": "Maydanoz serpip yoğurt veya ekmekle sıcak servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Hungarian paprika nohut tava kaynakları ve mevcut CSV; kapya biber, domates, paprika ve nohut ısıtma sırası doğrulandı."
+  },
+  {
+    "slug": "bulgogi",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Dana etini çok ince dilimleyip soğan ve yeşil soğanı hazırlayın." },
+      { "stepNumber": 2, "instruction": "Soya sosu, armut püresi, susam yağı, sarımsak ve şekerle marinadı karıştırın." },
+      { "stepNumber": 3, "instruction": "Eti marinadla 30 dakika bekletin, armut eti yumuşatsın diye.", "timerSeconds": 1800 },
+      { "stepNumber": 4, "instruction": "Tavayı yüksek ateşte 2 dakika ısıtın.", "timerSeconds": 120 },
+      { "stepNumber": 5, "instruction": "Eti tavada 10 dakika karamelize olana kadar pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 6, "instruction": "Susam ve yeşil soğanla tamamlayıp pilav üstünde servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Maangchi bulgogi ve Korean Bapsang; armutlu marinad, ince et ve yüksek ateşte kısa pişirme doğrulandı."
+  },
+  {
+    "slug": "bulgur-pilavi",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Bulguru süzgeçte yıkayıp fazla suyunu süzdürün." },
+      { "stepNumber": 2, "instruction": "Soğanı yağda 5 dakika yumuşayana kadar kavurun.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Salçaları ekleyip 1 dakika kokusu çıkana kadar kavurun.", "timerSeconds": 60 },
+      { "stepNumber": 4, "instruction": "Bulguru tencereye alıp 2 dakika salçalı yağla karıştırın.", "timerSeconds": 120 },
+      { "stepNumber": 5, "instruction": "Sıcak suyu ekleyip kaynayınca kısık ateşte 15 dakika pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 6, "instruction": "Tencere kapağının altına havlu koyup 10 dakika demlendirin, pilav lapa olmasın.", "timerSeconds": 600 }
+    ],
+    "notes": "Kaynak kontrolü: Türk bulgur pilavı kaynakları ve mevcut CSV; salça kavurma, sıcak su ve kapak altında demlendirme doğrulandı."
+  },
+  {
+    "slug": "bulgurlu-kabak-borani-mardin-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kabağı rendeleyip bulguru yıkayın, sarımsaklı yoğurdu ayrı kapta hazırlayın." },
+      { "stepNumber": 2, "instruction": "Rendelenmiş kabağı zeytinyağında 6 dakika çevirin.", "timerSeconds": 360 },
+      { "stepNumber": 3, "instruction": "Bulguru ekleyip kapağı kapalı halde 8 dakika şişirin.", "timerSeconds": 480 },
+      { "stepNumber": 4, "instruction": "Karışımı 7 dakika ılıtın, yoğurt sıcakta kesilmesin diye.", "timerSeconds": 420 },
+      { "stepNumber": 5, "instruction": "Sarımsaklı yoğurdu üstüne gezdirip pul biberli yağla ılık servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Mardin borani ve kabak borani kaynakları; bulgurun şişirilmesi, yoğurdun ılık eklenmesi ve sarımsak doğrulandı."
+  },
+  {
+    "slug": "bulgurlu-kabak-cicegi-dolmasi-antalya-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kabak çiçeklerinin içindeki sert kısımları nazikçe çıkarın." },
+      { "stepNumber": 2, "instruction": "Bulgur, soğan, domates, zeytinyağı ve naneyi karıştırarak iç harcı hazırlayın." },
+      { "stepNumber": 3, "instruction": "Çiçekleri yarıya kadar doldurun, bulgur şişince yapraklar yırtılmasın diye." },
+      { "stepNumber": 4, "instruction": "Dolmaları tencereye yan yana dizip az sıcak su ekleyin." },
+      { "stepNumber": 5, "instruction": "Dolmaları 16 dakika kısık ateşte pişirin.", "timerSeconds": 960 },
+      { "stepNumber": 6, "instruction": "Tencerede 10 dakika dinlendirip zeytinyağı ve limonla servis edin.", "timerSeconds": 600 }
+    ],
+    "notes": "Kaynak kontrolü: Antalya kabak çiçeği dolması kaynakları ve mevcut CSV; çiçek temizleme, yarım doldurma ve kısa pişirme doğrulandı."
+  },
+  {
+    "slug": "bun-cha",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kıyma, balık sosu, sarımsak ve az şekerle köfte harcını yoğurun." },
+      { "stepNumber": 2, "instruction": "Harcı küçük yassı köftelere ayırıp 10 dakika dinlendirin.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Köfteleri ızgara tavada 15 dakika çevirerek pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 4, "instruction": "Pirinç eriştesini 4 dakika haşlayıp soğuk sudan geçirin, yapışmasın diye.", "timerSeconds": 240 },
+      { "stepNumber": 5, "instruction": "Sirke, şeker, balık sosu ve suyla servis sosunu karıştırın." },
+      { "stepNumber": 6, "instruction": "Erişte, köfte, yeşillik ve sosu ayrı kaplarla servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Vietnamese bun cha kaynakları ve mevcut CSV; ızgara köfte, pirinç eriştesi, otlar ve nuoc cham sos doğrulandı."
+  },
+  {
+    "slug": "bun-thit-nuong-vietnam-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Eti ince dilimleyip limon otu, sarımsak ve balık sosuyla harmanlayın." },
+      { "stepNumber": 2, "instruction": "Eti 20 dakika marine edin, aromalar yüzeye tutunsun diye.", "timerSeconds": 1200 },
+      { "stepNumber": 3, "instruction": "Pirinç eriştesini 4 dakika haşlayıp soğuk sudan geçirin.", "timerSeconds": 240 },
+      { "stepNumber": 4, "instruction": "Eti yüksek ateşte 6 dakika pişirin.", "timerSeconds": 360 },
+      { "stepNumber": 5, "instruction": "Kaseye erişte, otlar, salatalık ve pişen eti yerleştirin." },
+      { "stepNumber": 6, "instruction": "Üstüne nuoc cham gezdirip fıstıkla servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Bun thit nuong kaynakları ve mevcut CSV; limon otlu et, erişteyi soğutma ve kase servisi doğrulandı."
+  },
+  {
+    "slug": "bursa-inegol-kofte",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kıyma, karbonat, soğan suyu ve tuzu geniş kapta birleştirin." },
+      { "stepNumber": 2, "instruction": "Harcı 8 dakika yoğurun, köfte elastik yapı kazansın diye.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Harcı buzdolabında 6 saat dinlendirin.", "timerSeconds": 21600 },
+      { "stepNumber": 4, "instruction": "Köfteleri parmak uzunluğunda şekillendirip ızgarayı ısıtın." },
+      { "stepNumber": 5, "instruction": "Köfteleri ızgarada 15 dakika çevirerek pişirin.", "timerSeconds": 900 }
+    ],
+    "notes": "Kaynak kontrolü: İnegöl köfte kaynakları ve mevcut CSV; karbonat, soğan suyu, uzun dinlendirme ve ızgara pişirme doğrulandı."
+  },
+  {
+    "slug": "bursa-pideli-kofte",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kıymayı tuz, karabiber ve rendelenmiş soğanla 6 dakika yoğurun.", "timerSeconds": 360 },
+      { "stepNumber": 2, "instruction": "Köfteleri yassı şekillendirip 10 dakika buzdolabında dinlendirin.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Pideleri küp doğrayıp servis tabağına yayın." },
+      { "stepNumber": 4, "instruction": "Köfteleri ızgarada 12 dakika pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 5, "instruction": "Domates sosunu 6 dakika kaynatıp pidelerin üstüne gezdirin.", "timerSeconds": 360 },
+      { "stepNumber": 6, "instruction": "Köfte ve eritilmiş tereyağını tabağa ekleyip yoğurtla servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Bursa pideli köfte kaynakları ve mevcut CSV; pide tabanı, domates sos, köfte ve tereyağı servisi doğrulandı."
+  },
+  {
+    "slug": "butter-chicken",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavuğu yoğurt, limon suyu, sarımsak ve baharatla kaplayın." },
+      { "stepNumber": 2, "instruction": "Tavuğu 30 dakika marine edin, yoğurt eti yumuşatsın diye.", "timerSeconds": 1800 },
+      { "stepNumber": 3, "instruction": "Tavukları tavada 10 dakika mühürleyip kenara alın.", "timerSeconds": 600 },
+      { "stepNumber": 4, "instruction": "Butter chicken sosu için domates püresi, tereyağı ve baharatları 12 dakika pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 5, "instruction": "Tavuğu sosa geri alıp 8 dakika kısık ateşte pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 6, "instruction": "Kremayı ekleyip 5 dakika ısıtın, sos kaynayıp kesilmesin.", "timerSeconds": 300 }
+    ],
+    "notes": "Kaynak kontrolü: Indian butter chicken kaynakları ve mevcut CSV; yoğurtlu marinasyon, domatesli tereyağlı sos ve krema doğrulandı."
+  },
+  {
+    "slug": "ca-kho-to",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Balığı iri parçalara ayırıp kağıt havluyla kurulayın." },
+      { "stepNumber": 2, "instruction": "Şekeri tencerede 3 dakika kehribar renge dönene kadar eritin.", "timerSeconds": 180 },
+      { "stepNumber": 3, "instruction": "Soya sosu, balık sosu ve az suyu karamele ekleyin." },
+      { "stepNumber": 4, "instruction": "Balığı sosa yerleştirip 25 dakika kısık ateşte pişirin.", "timerSeconds": 1500 },
+      { "stepNumber": 5, "instruction": "Sosu 3 dakika açıkta çektirin, balık parçaları dağılmasın diye fazla karıştırmayın.", "timerSeconds": 180 }
+    ],
+    "notes": "Kaynak kontrolü: Vietnamese ca kho to kaynakları ve mevcut CSV; karamel tabanı, balık sosu ve kısık ateşte braise doğrulandı."
+  },
+  {
+    "slug": "ca-ri-ga-vietnam-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavuğu iri doğrayıp köri tozu, sarımsak ve tuzla ovun." },
+      { "stepNumber": 2, "instruction": "Tavuğu tencerede 6 dakika mühürleyin.", "timerSeconds": 360 },
+      { "stepNumber": 3, "instruction": "Patates, havuç ve limon otunu ekleyip 3 dakika çevirin.", "timerSeconds": 180 },
+      { "stepNumber": 4, "instruction": "Hindistan cevizi sütü ve suyu ekleyip kapağı kapatın." },
+      { "stepNumber": 5, "instruction": "Yemeği 18 dakika tavuk ve sebze yumuşayana kadar pişirin.", "timerSeconds": 1080 },
+      { "stepNumber": 6, "instruction": "Lime suyu ve kişnişle tamamlayıp pilavla servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Vietnamese chicken curry kaynakları ve mevcut CSV; köri tozu, limon otu, kokos sütü ve sebzeli pişirme doğrulandı."
+  },
+  {
+    "slug": "cajun-tavuk",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavukları eş kalınlıkta şerit doğrayıp fazla nemini alın." },
+      { "stepNumber": 2, "instruction": "Tavuğu yağ, Cajun baharatı ve tuzla kaplayın." },
+      { "stepNumber": 3, "instruction": "Geniş tavayı 3 dakika ısıtın, tavuklar üst üste binmesin diye.", "timerSeconds": 180 },
+      { "stepNumber": 4, "instruction": "Tavukları 12 dakika çevirerek pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 5, "instruction": "Tavayı ocaktan alıp 4 dakika dinlendirin ve limonla servis edin.", "timerSeconds": 240 }
+    ],
+    "notes": "Kaynak kontrolü: Cajun chicken skillet kaynakları ve mevcut CSV; baharat kaplama, geniş tavada tek sıra ve kısa dinlendirme doğrulandı."
+  },
+  {
+    "slug": "camarao-na-moranga",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Balkabağının üstünü kapak gibi kesip çekirdeklerini temizleyin." },
+      { "stepNumber": 2, "instruction": "Kabağı 45 dakika 190°C fırında yumuşayana kadar fırınlayın.", "timerSeconds": 2700 },
+      { "stepNumber": 3, "instruction": "Soğan, domates ve biberi tencerede 8 dakika pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 4, "instruction": "Karidesi ekleyip 4 dakika rengi dönene kadar pişirin, sertleşmesin.", "timerSeconds": 240 },
+      { "stepNumber": 5, "instruction": "Kremalı karides dolguyu kabağın içine alın." },
+      { "stepNumber": 6, "instruction": "Dolgulu kabağı 10 dakika daha fırınlayıp sıcak servis edin.", "timerSeconds": 600 }
+    ],
+    "notes": "Kaynak kontrolü: Brazilian camarao na moranga kaynakları ve mevcut CSV; kabağı önden fırınlama, karidesli krema ve son fırın doğrulandı."
+  },
+  {
+    "slug": "cantik-bursa-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Un, su, maya ve tuzu 8 dakika yumuşak hamur olana kadar yoğurun.", "timerSeconds": 480 },
+      { "stepNumber": 2, "instruction": "Hamuru 20 dakika mayalandırın, bezeler kolay açılsın diye.", "timerSeconds": 1200 },
+      { "stepNumber": 3, "instruction": "Kıyma, soğan, domates, tuz ve karabiberi sulu kalacak şekilde karıştırın." },
+      { "stepNumber": 4, "instruction": "Hamurları küçük oval açıp kıymalı harcı ortalarına yayın." },
+      { "stepNumber": 5, "instruction": "Cantıkları 220°C fırında 16 dakika kenarları kızarana kadar pişirin.", "timerSeconds": 960 }
+    ],
+    "notes": "Kaynak kontrolü: Bursa cantık kaynakları ve mevcut CSV; mayalı hamur, sulu kıymalı harç ve yüksek ısı fırın süresi doğrulandı."
+  },
+  {
+    "slug": "cantik-pidesi-bursa-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Un, su, maya ve tuzla hamuru 8 dakika yoğurun.", "timerSeconds": 480 },
+      { "stepNumber": 2, "instruction": "Hamuru 30 dakika mayalandırın, içi pişerken kuru kalmasın diye.", "timerSeconds": 1800 },
+      { "stepNumber": 3, "instruction": "Kıyma, domates, soğan, tuz ve karabiberle iç harcı hazırlayın." },
+      { "stepNumber": 4, "instruction": "Hamuru oval açıp ortasına harcı yayın ve kenarlarını hafif yükseltin." },
+      { "stepNumber": 5, "instruction": "Pideleri 220°C fırında 16 dakika pişirin.", "timerSeconds": 960 },
+      { "stepNumber": 6, "instruction": "Fırından çıkınca kenarlarına tereyağı sürüp sıcak servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Bursa cantık pidesi kaynakları ve mevcut CSV; mayalama, kıymalı iç, oval şekil ve 220C fırın doğrulandı."
+  },
+  {
+    "slug": "cao-lau",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Domuz veya tavuk etini soya sosu, sarımsak ve beş baharatla 20 dakika bekletin.", "timerSeconds": 1200 },
+      { "stepNumber": 2, "instruction": "Eti tavada 10 dakika kızartıp kenara alın.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Cao lau eriştesini sıcak suda 3 dakika yumuşatın.", "timerSeconds": 180 },
+      { "stepNumber": 4, "instruction": "Kaseye taze ot, fasulye filizi ve erişteyi yerleştirin." },
+      { "stepNumber": 5, "instruction": "Eti dilimleyip az tava sosuyla kaseye ekleyin, erişte suda yüzmesin diye." }
+    ],
+    "notes": "Kaynak kontrolü: Hoi An cao lau kaynakları ve mevcut CSV; baharatlı et, kalın erişte, az sos ve taze ot servisi doğrulandı."
+  },
+  {
+    "slug": "cape-town-mercimek-bobotie",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Mercimeği yıkayıp 20 dakika yumuşayana kadar haşlayın.", "timerSeconds": 1200 },
+      { "stepNumber": 2, "instruction": "Soğan, sarımsak, köri ve zerdeçalı tavada 5 dakika kavurun.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Mercimek, kuru üzüm ve ekmek içini baharatlı tabanla karıştırın." },
+      { "stepNumber": 4, "instruction": "Karışımı fırın kabına bastırın, üst katman ayrılmasın diye." },
+      { "stepNumber": 5, "instruction": "Yumurta ve sütü çırpıp mercimeğin üstüne dökün." },
+      { "stepNumber": 6, "instruction": "Bobotie'yi 180°C fırında 25 dakika üstü tutana kadar pişirin.", "timerSeconds": 1500 }
+    ],
+    "notes": "Kaynak kontrolü: South African bobotie kaynakları ve mevcut CSV; körili taban, kuru üzüm, yumurtalı üst ve fırınlama doğrulandı."
+  },
+  {
+    "slug": "carne-asada",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Eti portakal suyu, lime, sarımsak, kimyon ve yağla kaplayın." },
+      { "stepNumber": 2, "instruction": "Eti 40 dakika marine edin, asit yüzeyi fazla parçalamadan lezzet versin.", "timerSeconds": 2400 },
+      { "stepNumber": 3, "instruction": "Izgara tavayı 3 dakika çok yüksek ateşte ısıtın.", "timerSeconds": 180 },
+      { "stepNumber": 4, "instruction": "Eti toplam 8 dakika iki yüzü kızarana kadar pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 5, "instruction": "Eti 8 dakika dinlendirip liflere ters yönde dilimleyin.", "timerSeconds": 480 }
+    ],
+    "notes": "Kaynak kontrolü: Mexican carne asada kaynakları ve mevcut CSV; narenciye marinadı, yüksek ateş ızgara ve dinlendirme doğrulandı."
+  },
+  {
+    "slug": "carne-de-panela",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Dana etini iri kuşbaşı doğrayıp tuz ve karabiberle ovun." },
+      { "stepNumber": 2, "instruction": "Eti tencerede 8 dakika her yüzü renk alana kadar mühürleyin.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Soğan, sarımsak ve domatesi ekleyip 6 dakika pişirin.", "timerSeconds": 360 },
+      { "stepNumber": 4, "instruction": "Patates, havuç ve sıcak suyu tencereye ekleyin." },
+      { "stepNumber": 5, "instruction": "Yemeği 70 dakika kısık ateşte et yumuşayana kadar pişirin.", "timerSeconds": 4200 },
+      { "stepNumber": 6, "instruction": "Sosu 5 dakika açıkta çektirin, sebzeler ezilmesin diye nazikçe karıştırın.", "timerSeconds": 300 }
+    ],
+    "notes": "Kaynak kontrolü: Brazilian carne de panela kaynakları ve mevcut CSV; et mühürleme, domatesli taban ve uzun tencere pişirme doğrulandı."
+  },
+  {
+    "slug": "cassoulet",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kuru fasulyeyi bir gece suda bekletip süzün.", "timerSeconds": 28800 },
+      { "stepNumber": 2, "instruction": "Fasulyeyi temiz suda 45 dakika yarı yumuşak olana kadar haşlayın.", "timerSeconds": 2700 },
+      { "stepNumber": 3, "instruction": "Et, sosis, soğan ve sarımsağı güveç kabına yerleştirin." },
+      { "stepNumber": 4, "instruction": "Fasulye ve sıcak et suyunu ekleyip üstünü hafif kapatın." },
+      { "stepNumber": 5, "instruction": "Cassoulet'yi kısık ısıda 2 saat 30 dakika pişirin.", "timerSeconds": 9000 },
+      { "stepNumber": 6, "instruction": "Üst kabuğu kaşıkla içe bastırıp 20 dakika daha fırınlayın, lezzet sosla birleşsin.", "timerSeconds": 1200 }
+    ],
+    "notes": "Kaynak kontrolü: French cassoulet kaynakları ve mevcut CSV; fasulye ıslatma, etli güveç ve uzun düşük ısı pişirme doğrulandı."
+  },
+  {
+    "slug": "cauliflower-cheese-pie-ingiliz-firin-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Karnabaharı küçük çiçeklere ayırıp tuzlu suda 6 dakika haşlayın.", "timerSeconds": 360 },
+      { "stepNumber": 2, "instruction": "Karnabaharı süzüp 8 dakika buharını attırın, hamur ıslanmasın diye.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Peynirli sosu süt, peynir ve az unla tencerede 5 dakika koyulaştırın.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "Hamuru kalıba yerleştirip karnabahar ve sosu içine yayın." },
+      { "stepNumber": 5, "instruction": "Pie'ı 190°C fırında 24 dakika hamur kızarana kadar pişirin.", "timerSeconds": 1440 }
+    ],
+    "notes": "Kaynak kontrolü: English cauliflower cheese pie kaynakları ve mevcut CSV; karnabahar haşlama, peynir sos ve fırın süresi doğrulandı."
+  },
+  {
+    "slug": "cevizli-bulgur-koftesi-yalova-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "İnce bulguru sıcak suyla 10 dakika şişirin.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Cevizi iri kırıp salçayı bulgurun üstüne ekleyin." },
+      { "stepNumber": 3, "instruction": "Bulgur harcını 8 dakika yoğurun, tepsiye basınca çatlamasın diye.", "timerSeconds": 480 },
+      { "stepNumber": 4, "instruction": "Harcı yağlanmış tepsiye bastırıp yüzeyini düzeltin." },
+      { "stepNumber": 5, "instruction": "Köfteyi 190°C fırında 20 dakika pişirin.", "timerSeconds": 1200 },
+      { "stepNumber": 6, "instruction": "Fırından sonra 10 dakika dinlendirip dilimleyerek servis edin.", "timerSeconds": 600 }
+    ],
+    "notes": "Kaynak kontrolü: Yalova cevizli bulgur köftesi ve mevcut CSV; bulgur şişirme, cevizli salçalı harç ve fırınlama doğrulandı."
+  },
+  {
+    "slug": "cevizli-bulgur-sarmasi-amasya-bag-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Asma yapraklarını fazla tuzundan arındırıp 5 dakika sıcak suda bekletin.", "timerSeconds": 300 },
+      { "stepNumber": 2, "instruction": "Bulgur, ceviz, soğan, salça ve baharatla iç harcı hazırlayın." },
+      { "stepNumber": 3, "instruction": "Yapraklara ince harç koyup sıkı sarın, pişerken açılmasın diye." },
+      { "stepNumber": 4, "instruction": "Sarmaları tencereye yan yana dizip üstüne tabak kapatın." },
+      { "stepNumber": 5, "instruction": "Sarmaları 20 dakika kısık ateşte pişirin.", "timerSeconds": 1200 }
+    ],
+    "notes": "Kaynak kontrolü: Amasya yaprak sarma ve cevizli bulgur harcı kaynakları; yaprak hazırlığı, sıkı sarma ve 20 dakika pişirme doğrulandı."
+  },
+  {
+    "slug": "cevizli-goce-icli-borek-sivas-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Göceyi yıkayıp tuzlu suda 10 dakika haşlayın.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Yumuşayan göceyi süzüp ceviz ve tereyağıyla karıştırın." },
+      { "stepNumber": 3, "instruction": "İç harcı 8 dakika soğutun, yufkayı yumuşatmasın diye.", "timerSeconds": 480 },
+      { "stepNumber": 4, "instruction": "Yufkaya harcı yayıp böreği sıkı rulo halinde sarın." },
+      { "stepNumber": 5, "instruction": "Böreği 190°C fırında 24 dakika kızarana kadar pişirin.", "timerSeconds": 1440 }
+    ],
+    "notes": "Kaynak kontrolü: Sivas göce içli börek ve cevizli börek kaynakları; göce haşlama, cevizli iç ve 190C fırın doğrulandı."
+  },
+  {
+    "slug": "cevizli-kabak-sinkonta-burdur-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kabakları kalın yarım ay doğrayıp fırın kabına tek sıra yayın." },
+      { "stepNumber": 2, "instruction": "Ceviz, sarımsak, zeytinyağı ve tuzu küçük kapta karıştırın." },
+      { "stepNumber": 3, "instruction": "Cevizli karışımı kabakların üstüne gezdirin, her parça yağlansın diye." },
+      { "stepNumber": 4, "instruction": "Kabağı 190°C fırında 25 dakika yumuşayana kadar pişirin.", "timerSeconds": 1500 },
+      { "stepNumber": 5, "instruction": "Fırından sonra 6 dakika dinlendirip yoğurtla servis edin.", "timerSeconds": 360 }
+    ],
+    "notes": "Kaynak kontrolü: Burdur kabak sinkonta kaynakları ve mevcut CSV; yarım ay kabak, cevizli sarımsaklı karışım ve fırın süresi doğrulandı."
+  },
+  {
+    "slug": "cevizli-narli-kofte-siirt-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "İnce bulguru ılık suyla 10 dakika şişirin.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Bulgura kıyma, ceviz, nar ekşisi ve baharat ekleyip 8 dakika yoğurun.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Harcı küçük köfteler halinde şekillendirin, çatlak kalmasın diye avucunuzu ıslatın." },
+      { "stepNumber": 4, "instruction": "Köfteleri kaynar suda 8 dakika haşlayın.", "timerSeconds": 480 },
+      { "stepNumber": 5, "instruction": "Nar ekşili sosu üstüne gezdirip cevizle servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Siirt narlı köfte ve bulgurlu köfte kaynakları; bulgur yoğurma, ceviz, nar ekşisi ve haşlama doğrulandı."
+  },
+  {
+    "slug": "cevizli-pazi-sarmasi-artvin-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pazı yapraklarını 1 dakika sıcak suda yumuşatın.", "timerSeconds": 60 },
+      { "stepNumber": 2, "instruction": "Yaprakları soğuk sudan geçirip kalın damarlarını inceltin." },
+      { "stepNumber": 3, "instruction": "Bulgur, ceviz ve ince doğranmış soğanla iç harcı hazırlayın." },
+      { "stepNumber": 4, "instruction": "Pazı yapraklarını fazla doldurmadan sarın, bulgur pişerken taşmasın diye." },
+      { "stepNumber": 5, "instruction": "Sarmaları limonlu suyla 20 dakika kısık ateşte pişirin.", "timerSeconds": 1200 },
+      { "stepNumber": 6, "instruction": "Tencerede 10 dakika dinlendirip ılık servis edin.", "timerSeconds": 600 }
+    ],
+    "notes": "Kaynak kontrolü: Artvin pazı sarması kaynakları ve mevcut CSV; pazıyı şoklama, bulgurlu cevizli iç ve limonlu pişirme doğrulandı."
+  },
+  {
+    "slug": "cevizli-tirit-samsun-ocak-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Bayat ekmeği lokmalık parçalara ayırıp servis tabağına yayın." },
+      { "stepNumber": 2, "instruction": "Et suyunu 8 dakika kaynar sıcaklığa gelene kadar ısıtın.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Sıcak et suyunu ekmeğin üstüne gezdirin, kuru parça kalmasın diye." },
+      { "stepNumber": 4, "instruction": "Sarımsaklı yoğurdu ayrı kapta pürüzsüz çırpın." },
+      { "stepNumber": 5, "instruction": "Tereyağını 2 dakika cevizle köpürtün.", "timerSeconds": 120 },
+      { "stepNumber": 6, "instruction": "Yoğurt, cevizli tereyağı ve pul biberle tirit tabağını tamamlayın." }
+    ],
+    "notes": "Kaynak kontrolü: Samsun tirit ve cevizli tirit kaynakları; ekmeği et suyuyla ıslatma, yoğurt ve cevizli yağ servisi doğrulandı."
+  },
+  {
+    "slug": "chana-masala",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Soğanı ince doğrayıp zencefil ve sarımsağı ezin." },
+      { "stepNumber": 2, "instruction": "Soğan, zencefil ve sarımsağı 6 dakika kavurun.", "timerSeconds": 360 },
+      { "stepNumber": 3, "instruction": "Domates ve baharatları ekleyip 8 dakika koyu masala olana kadar pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 4, "instruction": "Nohudu ve az sıcak suyu tencereye ekleyin." },
+      { "stepNumber": 5, "instruction": "Yemeği 25 dakika kısık ateşte pişirin, nohut baharatı içine çeksin.", "timerSeconds": 1500 },
+      { "stepNumber": 6, "instruction": "Limon suyu ve kişnişle tamamlayıp pilavla servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Indian chana masala kaynakları ve mevcut CSV; soğanlı masala tabanı, nohut ve uzun sos pişirme doğrulandı."
+  },
+  {
+    "slug": "char-siu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Eti uzun şeritler halinde kesip fazla yağını düzeltin." },
+      { "stepNumber": 2, "instruction": "Soya sosu, bal, susam yağı, sarımsak ve beş baharatla marinadı hazırlayın." },
+      { "stepNumber": 3, "instruction": "Eti marinadda 30 dakika bekletin, yüzeyi eşit kaplansın diye.", "timerSeconds": 1800 },
+      { "stepNumber": 4, "instruction": "Eti 200°C fırında 25 dakika pişirin.", "timerSeconds": 1500 },
+      { "stepNumber": 5, "instruction": "Kalan sosu sürüp 10 dakika daha fırınlayın.", "timerSeconds": 600 },
+      { "stepNumber": 6, "instruction": "Eti 8 dakika dinlendirip ince dilimleyin.", "timerSeconds": 480 }
+    ],
+    "notes": "Kaynak kontrolü: Chinese char siu kaynakları ve mevcut CSV; tatlı soyalı marinad, iki aşamalı fırınlama ve dinlendirme doğrulandı."
+  },
+  {
+    "slug": "char-siu-chicken-cin-firin-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavuk parçalarını kurulayın ve derili yüzleri yukarı gelecek şekilde hazırlayın." },
+      { "stepNumber": 2, "instruction": "Bal, soya sosu, sarımsak, zencefil ve susam yağıyla marinadı karıştırın." },
+      { "stepNumber": 3, "instruction": "Tavuğu marinadla 25 dakika bekletin, sos yüzeyde tutunsun diye.", "timerSeconds": 1500 },
+      { "stepNumber": 4, "instruction": "Tavuğu 200°C fırında 16 dakika pişirin.", "timerSeconds": 960 },
+      { "stepNumber": 5, "instruction": "Kalan sosu sürüp 10 dakika daha pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 6, "instruction": "Fırından sonra 6 dakika dinlendirip yeşil soğanla servis edin.", "timerSeconds": 360 }
+    ],
+    "notes": "Kaynak kontrolü: Char siu chicken kaynakları ve mevcut CSV; ballı soya marinadı, 200C fırın ve ikinci soslama doğrulandı."
+  },
+  {
+    "slug": "chermoula-tavuk",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kişniş, maydanoz, sarımsak, limon suyu ve zeytinyağını ince çekin." },
+      { "stepNumber": 2, "instruction": "Tavuğu chermoula ile kaplayıp 20 dakika dinlendirin.", "timerSeconds": 1200 },
+      { "stepNumber": 3, "instruction": "Tavuğu fırın kabına tek sıra yerleştirin, parçalar buharda kalmasın diye." },
+      { "stepNumber": 4, "instruction": "Tavuğu 200°C fırında 35 dakika pişirin.", "timerSeconds": 2100 },
+      { "stepNumber": 5, "instruction": "Fırın suyunu üstüne gezdirip 5 dakika dinlendirin ve limonla servis edin.", "timerSeconds": 300 }
+    ],
+    "notes": "Kaynak kontrolü: Moroccan chermoula chicken kaynakları ve mevcut CSV; otlu limonlu marinad, tek sıra fırın ve dinlendirme doğrulandı."
+  },
+  {
+    "slug": "chicken-and-waffles",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavuğu tuz, paprika ve sarımsak tozuyla tatlandırın." },
+      { "stepNumber": 2, "instruction": "Tavukları una, yumurtaya ve tekrar una bulayın, kaplama boşluk bırakmasın diye." },
+      { "stepNumber": 3, "instruction": "Tavuğu 170°C yağda 15 dakika kızartın.", "timerSeconds": 900 },
+      { "stepNumber": 4, "instruction": "Kızaran tavukları tel ızgarada 5 dakika dinlendirin.", "timerSeconds": 300 },
+      { "stepNumber": 5, "instruction": "Waffle hamurunu makinede 4 dakika pişirin.", "timerSeconds": 240 },
+      { "stepNumber": 6, "instruction": "Waffle üstüne tavuk koyup akçaağaç şurubu veya balla servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Southern chicken and waffles kaynakları ve mevcut CSV; çift kaplama, 170C kızartma ve waffle servisi doğrulandı."
+  },
+  {
+    "slug": "chicken-paprikash",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavuk parçalarını tuzlayıp tencereyi orta yüksek ateşte ısıtın." },
+      { "stepNumber": 2, "instruction": "Tavukları 8 dakika mühürleyip kenara alın.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Soğanı aynı tencerede 6 dakika yumuşayana kadar kavurun.", "timerSeconds": 360 },
+      { "stepNumber": 4, "instruction": "Paprikayı ekleyip 1 dakika çevirin, yanarsa acılaşmasın.", "timerSeconds": 60 },
+      { "stepNumber": 5, "instruction": "Tavuk ve az suyu ekleyip 35 dakika kısık ateşte pişirin.", "timerSeconds": 2100 },
+      { "stepNumber": 6, "instruction": "Ekşi kremayı ateş kısıkken ekleyip 3 dakika ısıtın.", "timerSeconds": 180 }
+    ],
+    "notes": "Kaynak kontrolü: Hungarian chicken paprikash kaynakları ve mevcut CSV; paprika yakmadan çevirme, tavuk braise ve ekşi krema doğrulandı."
+  },
+  {
+    "slug": "chicken-tikka-masala",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavuğu yoğurt, limon, garam masala ve sarımsakla kaplayın." },
+      { "stepNumber": 2, "instruction": "Tavuğu 30 dakika marine edin, yoğurt baharatı ete taşısın diye.", "timerSeconds": 1800 },
+      { "stepNumber": 3, "instruction": "Tavuk parçalarını tavada 8 dakika kızartıp kenara alın.", "timerSeconds": 480 },
+      { "stepNumber": 4, "instruction": "Tikka masala sosu için domates püresi, tereyağı ve baharatları 12 dakika pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 5, "instruction": "Tavuk ve kremayı sosa ekleyip 18 dakika kısık ateşte pişirin.", "timerSeconds": 1080 }
+    ],
+    "notes": "Kaynak kontrolü: Chicken tikka masala kaynakları ve mevcut CSV; yoğurt marinadı, tavada kızartma ve domates kremalı sos doğrulandı."
+  },
+  {
+    "slug": "chilorio-tavuklu-taco-meksika-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavuğu tuzlu suda 12 dakika pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 2, "instruction": "Tavuğu 5 dakika dinlendirip liflerine ayırın.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Kuru biberli sosu sirke, sarımsak ve kimyonla karıştırın." },
+      { "stepNumber": 4, "instruction": "Didiklenmiş tavuğu sosla 6 dakika tavada çevirin, et sosu içine çeksin.", "timerSeconds": 360 },
+      { "stepNumber": 5, "instruction": "Tortillaları 1 dakika ısıtıp tavuklu harcı paylaştırın.", "timerSeconds": 60 },
+      { "stepNumber": 6, "instruction": "Taco'ları soğan, kişniş ve lime ile servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Mexican chilorio ve chicken taco kaynakları; eti liflerine ayırma, biberli sosla çevirme ve tortilla servisi doğrulandı."
+  },
+  {
+    "slug": "ciborek",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Çibörek hamuru için un, su ve tuzu 7 dakika yoğurun.", "timerSeconds": 420 },
+      { "stepNumber": 2, "instruction": "Hamuru 20 dakika dinlendirin, açarken yırtılmasın diye.", "timerSeconds": 1200 },
+      { "stepNumber": 3, "instruction": "Kıyma, soğan, tuz, karabiber ve az suyla sulu iç hazırlayın." },
+      { "stepNumber": 4, "instruction": "Hamurları ince açıp harcı yarısına yayın ve kenarları sıkıca kapatın." },
+      { "stepNumber": 5, "instruction": "Çibörekleri kızgın yağda 4 dakika iki yüzü kızarana kadar kızartın.", "timerSeconds": 240 },
+      { "stepNumber": 6, "instruction": "Kağıt havlu üstünde 2 dakika bekletip sıcak servis edin.", "timerSeconds": 120 }
+    ],
+    "notes": "Kaynak kontrolü: Eskişehir çibörek kaynakları ve mevcut CSV; dinlenen hamur, sulu kıymalı iç ve kısa kızartma doğrulandı."
+  },
+  {
+    "slug": "ciger-sote",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Ciğeri zarlarından ayırıp küçük doğrayın ve fazla kanını süzdürün." },
+      { "stepNumber": 2, "instruction": "Soğan ve biberleri zeytinyağında 5 dakika soteleyin.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Ciğeri tavaya ekleyip yüksek ateşte 4 dakika çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 4, "instruction": "Domates ve baharatı ekleyip 5 dakika pişirin.", "timerSeconds": 300 },
+      { "stepNumber": 5, "instruction": "Ocağı kapatıp 4 dakika dinlendirin, ciğer sertleşmesin.", "timerSeconds": 240 }
+    ],
+    "notes": "Kaynak kontrolü: Türk ciğer sote kaynakları ve mevcut CSV; zar temizleme, sebze soteleme ve kısa ciğer pişirme doğrulandı."
+  },
+  {
+    "slug": "cigerli-arpa-sehriye-pilavi-edirne-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Ciğeri küçük doğrayıp zar ve damarlarını temizleyin." },
+      { "stepNumber": 2, "instruction": "Ciğeri yüksek ateşte 4 dakika çevirip kenara alın.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Arpa şehriyeyi tereyağında 5 dakika altın renk alana kadar kavurun.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "Soğan ve sıcak suyu tencereye ekleyin." },
+      { "stepNumber": 5, "instruction": "Pilavı 12 dakika kısık ateşte pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 6, "instruction": "Ciğeri pilava ekleyip 10 dakika demlendirin, ciğer fazla pişmesin.", "timerSeconds": 600 }
+    ],
+    "notes": "Kaynak kontrolü: Edirne ciğerli pilav kaynakları ve mevcut CSV; ciğeri önden çevirme, arpa şehriye kavurma ve demlendirme doğrulandı."
+  },
+  {
+    "slug": "cigerli-bulgur-pilavi-edirne-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Bulguru yıkayıp süzün, ciğeri küçük küp doğrayın." },
+      { "stepNumber": 2, "instruction": "Soğanı tereyağında 4 dakika kavurun.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Ciğeri ekleyip 5 dakika soteleyin.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "Bulguru tencereye alıp 2 dakika yağlı harçla çevirin.", "timerSeconds": 120 },
+      { "stepNumber": 5, "instruction": "Ciğerli bulgur pilavına sıcak su ekleyip 15 dakika pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 6, "instruction": "Pilavı 10 dakika demlendirin, bulgur ciğerin suyunu çeksin.", "timerSeconds": 600 }
+    ],
+    "notes": "Kaynak kontrolü: Edirne ciğerli bulgur pilavı kaynakları ve mevcut CSV; soğan, ciğer sote, bulgur ve demlendirme doğrulandı."
+  },
+  {
+    "slug": "cin-hot-pot",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavuk suyunu soya sosu, acı biber ve zencefille tencereye alın." },
+      { "stepNumber": 2, "instruction": "Et, mantar, lahana ve tofu gibi malzemeleri ince doğrayıp tabaklara dizin." },
+      { "stepNumber": 3, "instruction": "Et suyunu 10 dakika kaynatın, baharat tadı suya geçsin diye.", "timerSeconds": 600 },
+      { "stepNumber": 4, "instruction": "Tencereyi masada düşük ateşte sıcak tutun." },
+      { "stepNumber": 5, "instruction": "Malzemeleri porsiyon porsiyon 2 dakika sıcak et suyunda pişirin.", "timerSeconds": 120 },
+      { "stepNumber": 6, "instruction": "Pişen parçaları susamlı veya soyalı soslarla servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Chinese hot pot kaynakları ve mevcut CSV; aromalı broth, ince doğranmış malzeme ve masada porsiyon pişirme doğrulandı."
+  },
+  {
+    "slug": "cin-usulu-yumurtali-pilav",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Soğuk pişmiş pirinci elinizle ufalayın, topak kalmasın diye." },
+      { "stepNumber": 2, "instruction": "Yumurtaları wokta 1 dakika karıştırarak pişirin.", "timerSeconds": 60 },
+      { "stepNumber": 3, "instruction": "Pirinç ve bezelyeyi ekleyip 6 dakika yüksek ateşte kavurun.", "timerSeconds": 360 },
+      { "stepNumber": 4, "instruction": "Soya sosu ve az susam yağını wok'un kenarından gezdirin." },
+      { "stepNumber": 5, "instruction": "Yeşil soğanı katıp 1 dakika daha çevirin.", "timerSeconds": 60 }
+    ],
+    "notes": "Kaynak kontrolü: Chinese egg fried rice kaynakları ve mevcut CSV; soğuk pirinç, hızlı yumurta pişirme ve yüksek ateş doğrulandı."
+  },
+  {
+    "slug": "cintar-kavurmasi-mugla-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Çıntar mantarlarını fırçayla temizleyip iri parçalara ayırın." },
+      { "stepNumber": 2, "instruction": "Zeytinyağında sarımsağı 1 dakika kokusu çıkana kadar çevirin.", "timerSeconds": 60 },
+      { "stepNumber": 3, "instruction": "Mantarları tavaya ekleyip yayarak yerleştirin." },
+      { "stepNumber": 4, "instruction": "Kavurmayı 10 dakika suyunu çekip kızarana kadar pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 5, "instruction": "Tuz ve limonu ocaktan sonra ekleyin, mantar sulanmasın diye." }
+    ],
+    "notes": "Kaynak kontrolü: Muğla çıntar kavurması kaynakları ve mevcut CSV; mantarı temizleme, sarımsaklı yağ ve kısa kavurma doğrulandı."
+  },
+  {
+    "slug": "cive-mersin-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kabak ve domatesi iri doğrayıp bulguru yıkayın." },
+      { "stepNumber": 2, "instruction": "Tencereye kabak, domates, zeytinyağı ve tuzu alın." },
+      { "stepNumber": 3, "instruction": "Sebzeleri 6 dakika kendi suyuyla pişirin.", "timerSeconds": 360 },
+      { "stepNumber": 4, "instruction": "Bulgur ve sıcak suyu ekleyip kapağı kapatın." },
+      { "stepNumber": 5, "instruction": "Yemeği 18 dakika kısık ateşte pişirin.", "timerSeconds": 1080 },
+      { "stepNumber": 6, "instruction": "Eriği ocaktan sonra ekleyip 8 dakika dinlendirin, ekşiliği taze kalsın.", "timerSeconds": 480 }
+    ],
+    "notes": "Kaynak kontrolü: Mersin cive kaynakları ve mevcut CSV; kabak, domates, bulgur ve ekşi eriğin sonradan eklenmesi doğrulandı."
+  },
+  {
+    "slug": "cokelekli-biber-dolmasi-mugla-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Biberlerin kapaklarını kesip çekirdeklerini temizleyin." },
+      { "stepNumber": 2, "instruction": "Çökelek, maydanoz, zeytinyağı ve baharatı karıştırın." },
+      { "stepNumber": 3, "instruction": "Biberleri çökelekli harçla doldurun, üstte 1 cm boşluk bırakın." },
+      { "stepNumber": 4, "instruction": "Biberleri tepsiye dizip üstlerine az zeytinyağı gezdirin." },
+      { "stepNumber": 5, "instruction": "Dolmaları 190°C fırında 24 dakika biberler yumuşayana kadar pişirin.", "timerSeconds": 1440 },
+      { "stepNumber": 6, "instruction": "Fırından sonra 7 dakika dinlendirin, iç harç akmasın.", "timerSeconds": 420 }
+    ],
+    "notes": "Kaynak kontrolü: Muğla çökelekli biber dolması kaynakları ve mevcut CSV; çökelekli iç, tepsi dizimi ve fırın süresi doğrulandı."
+  },
+  {
+    "slug": "cokelekli-katmer-tokat-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Katmer hamuru için un, su ve tuzu 7 dakika yoğurun.", "timerSeconds": 420 },
+      { "stepNumber": 2, "instruction": "Hamuru 20 dakika dinlendirin, katmer ince açılabilsin diye.", "timerSeconds": 1200 },
+      { "stepNumber": 3, "instruction": "Çökelek, maydanoz ve zeytinyağını karıştırarak iç hazırlayın." },
+      { "stepNumber": 4, "instruction": "Hamuru açıp içi yayın ve katmer şeklinde kapatın." },
+      { "stepNumber": 5, "instruction": "Katmeri sacda toplam 12 dakika iki yüzü kızarana kadar pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 6, "instruction": "Üstüne tereyağı sürüp 3 dakika dinlendirin ve dilimleyin.", "timerSeconds": 180 }
+    ],
+    "notes": "Kaynak kontrolü: Tokat çökelekli katmer kaynakları ve mevcut CSV; dinlenen hamur, çökelekli iç ve sacda pişirme doğrulandı."
+  },
+  {
+    "slug": "cokertme-kebabi-mugla-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Patatesleri ince kibrit doğrayıp soğuk suda 10 dakika bekletin.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Patatesleri kurutup ayçiçek yağında 6 dakika kızartın.", "timerSeconds": 360 },
+      { "stepNumber": 3, "instruction": "Yoğurt ve sarımsağı çırpıp servis tabağına yayın." },
+      { "stepNumber": 4, "instruction": "Dana jülyeni tereyağı ve tuzla tavada 8 dakika soteleyin.", "timerSeconds": 480 },
+      { "stepNumber": 5, "instruction": "Domates püresini 4 dakika ısıtıp kıvamlandırın.", "timerSeconds": 240 },
+      { "stepNumber": 6, "instruction": "Patates, yoğurt, et ve domates sosunu üst üste koyup bekletmeden servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Muğla çökertme kebabı kaynakları ve mevcut CSV; kibrit patates, sarımsaklı yoğurt, et sote ve domates sos doğrulandı."
+  },
+  {
+    "slug": "com-tam",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kırık pirinci yıkayıp 20 dakika pişirin.", "timerSeconds": 1200 },
+      { "stepNumber": 2, "instruction": "Eti soya sosu, sarımsak ve şekerle 20 dakika marine edin.", "timerSeconds": 1200 },
+      { "stepNumber": 3, "instruction": "Eti ızgara tavada 10 dakika pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 4, "instruction": "Yumurtayı tavada 3 dakika kenarı kızarana kadar pişirin.", "timerSeconds": 180 },
+      { "stepNumber": 5, "instruction": "Pilavı et, yumurta, salatalık ve turşuyla tabaklayın." },
+      { "stepNumber": 6, "instruction": "Nuoc cham sosunu üstüne gezdirin, pirinç fazla ıslanmasın diye yanında da verin." }
+    ],
+    "notes": "Kaynak kontrolü: Vietnamese com tam kaynakları ve mevcut CSV; kırık pirinç, ızgara et, yumurta ve nuoc cham servisi doğrulandı."
+  },
+  {
+    "slug": "comlek-fasulyeli-tirit-konya-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Pişmiş fasulyeyi et suyuyla çömlek veya kalın tencereye alın." },
+      { "stepNumber": 2, "instruction": "Fasulyeyi et suyunda 8 dakika ısıtın.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Bayat ekmeği iri parçalara ayırıp servis kabına yayın." },
+      { "stepNumber": 4, "instruction": "Sıcak fasulyeli suyu ekmeğin üstüne gezdirin, kuru köşe kalmasın diye." },
+      { "stepNumber": 5, "instruction": "Tiridi 5 dakika dinlendirip maydanoz ve pul biberle servis edin.", "timerSeconds": 300 }
+    ],
+    "notes": "Kaynak kontrolü: Konya tirit ve fasulyeli tirit kaynakları; et suyunda fasulye ısıtma, ekmek üstüne dökme ve dinlendirme doğrulandı."
+  },
+  {
+    "slug": "cop-sis-izmir-ocak-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kuzu etini küçük küpler halinde kesip zeytinyağı, kekik ve tuzla karıştırın." },
+      { "stepNumber": 2, "instruction": "Eti 20 dakika dinlendirin, şişe dizerken parçalar parçalanmasın diye.", "timerSeconds": 1200 },
+      { "stepNumber": 3, "instruction": "Etleri çöp şişlere sıkıştırmadan dizin." },
+      { "stepNumber": 4, "instruction": "Şişleri yüksek ateşte toplam 8 dakika pişirin.", "timerSeconds": 480 },
+      { "stepNumber": 5, "instruction": "Biberleri 5 dakika közleyip şişleri lavaşla servis edin.", "timerSeconds": 300 }
+    ],
+    "notes": "Kaynak kontrolü: İzmir çöp şiş kaynakları ve mevcut CSV; küçük kuzu parçaları, kısa marinasyon, yüksek ateş ve lavaş servisi doğrulandı."
+  },
+  {
+    "slug": "coq-au-vin",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavuk parçalarını kurulayın ve tuzla hafifçe ovun." },
+      { "stepNumber": 2, "instruction": "Tavukları tereyağında 8 dakika kızartıp kenara alın.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Mantar ve soğanı aynı tencerede 6 dakika kavurun.", "timerSeconds": 360 },
+      { "stepNumber": 4, "instruction": "Unu serpip 2 dakika karıştırın, sos daha sonra topaklanmasın.", "timerSeconds": 120 },
+      { "stepNumber": 5, "instruction": "Şarap ve tavuk suyunu ekleyip tavuğu tencereye geri alın." },
+      { "stepNumber": 6, "instruction": "Yemeği kısık ateşte 85 dakika pişirin.", "timerSeconds": 5100 },
+      { "stepNumber": 7, "instruction": "Sosu 5 dakika açıkta çektirip maydanozla servis edin.", "timerSeconds": 300 }
+    ],
+    "notes": "Kaynak kontrolü: French coq au vin kaynakları ve mevcut CSV; tavuğu kızartma, mantar soğan, şaraplı uzun pişirme doğrulandı."
+  },
+  {
+    "slug": "cornish-pasty",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Hamuru yoğurup 30 dakika buzdolabında dinlendirin.", "timerSeconds": 1800 },
+      { "stepNumber": 2, "instruction": "Patates, soğan ve eti küçük küp doğrayın." },
+      { "stepNumber": 3, "instruction": "İç harcı tuz ve karabiberle harmanlayın, çiğ malzeme eş pişsin diye eş boyda kesin." },
+      { "stepNumber": 4, "instruction": "Hamuru açıp iç harcı yarısına yerleştirin." },
+      { "stepNumber": 5, "instruction": "Pastyleri yarım ay kapatıp kenarlarını kıvırarak sıkıca kapatın." },
+      { "stepNumber": 6, "instruction": "Pastyleri 190°C fırında 45 dakika pişirin.", "timerSeconds": 2700 },
+      { "stepNumber": 7, "instruction": "Fırından sonra 10 dakika dinlendirip servis edin.", "timerSeconds": 600 }
+    ],
+    "notes": "Kaynak kontrolü: Cornish pasty kaynakları ve mevcut CSV; dinlenen hamur, çiğ küp iç, kıvrımlı kapama ve 190C pişirme doğrulandı."
+  },
+  {
+    "slug": "corti-asili-bulgur-pilavi-tunceli-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Bulguru yıkayın, cortiyi fazla tuzundan arındırıp küçük doğrayın." },
+      { "stepNumber": 2, "instruction": "Soğanı yağda 4 dakika yumuşayana kadar çevirin.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Cortiyi ekleyip 3 dakika kokusu çıkana kadar pişirin.", "timerSeconds": 180 },
+      { "stepNumber": 4, "instruction": "Bulguru tencereye katıp 2 dakika karıştırın." },
+      { "stepNumber": 5, "instruction": "Cortili bulgur pilavına sıcak su ekleyip 15 dakika pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 6, "instruction": "Pilavı 10 dakika demlendirin, cortinin ekşiliği bulgura dağılsın.", "timerSeconds": 600 }
+    ],
+    "notes": "Kaynak kontrolü: Tunceli corti aşı ve bulgur pilavı kaynakları; corti hazırlığı, bulgur ve 15 dakika pişirme doğrulandı."
+  },
+  {
+    "slug": "corum-keskek",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Buğdayı bir gece suda bekletip süzün.", "timerSeconds": 28800 },
+      { "stepNumber": 2, "instruction": "Buğday ve eti tencereye alıp üstünü geçecek kadar su ekleyin." },
+      { "stepNumber": 3, "instruction": "Karışımı 3 saat kısık ateşte pişirin.", "timerSeconds": 10800 },
+      { "stepNumber": 4, "instruction": "Eti liflerine ayırıp buğdayla 15 dakika dövün.", "timerSeconds": 900 },
+      { "stepNumber": 5, "instruction": "Kıvamı koyuysa sıcak suyla açın, dibi tutmasın diye sürekli karıştırın." },
+      { "stepNumber": 6, "instruction": "Tereyağını pul biberle 2 dakika köpürtüp keşkeğin üstüne dökün.", "timerSeconds": 120 },
+      { "stepNumber": 7, "instruction": "Keşkeği 5 dakika dinlendirip sıcak servis edin.", "timerSeconds": 300 }
+    ],
+    "notes": "Kaynak kontrolü: Çorum keşkek kaynakları ve mevcut CSV; buğday ıslatma, etle uzun pişirme, dövme ve biberli yağ doğrulandı."
+  },
+  {
+    "slug": "couscous-royal",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kuzu eti ve tavuk butunu tencereye alıp baharatlı su ekleyin." },
+      { "stepNumber": 2, "instruction": "Etleri 50 dakika kısık ateşte haşlayın.", "timerSeconds": 3000 },
+      { "stepNumber": 3, "instruction": "Havuç, kabak ve nohudu tencereye ekleyin." },
+      { "stepNumber": 4, "instruction": "Sebzeleri et suyunda 25 dakika pişirin.", "timerSeconds": 1500 },
+      { "stepNumber": 5, "instruction": "Kuskusu sıcak et suyuyla 10 dakika dinlendirin.", "timerSeconds": 600 },
+      { "stepNumber": 6, "instruction": "Kuskusu çatalla kabartın, taneler ezilmesin diye bastırmayın." },
+      { "stepNumber": 7, "instruction": "Et, sebze ve merguez varsa sosisleri kuskusun üstünde servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Moroccan couscous royal kaynakları ve mevcut CSV; et suyu, sebze, nohut ve kuskusun ayrı dinlendirilmesi doğrulandı."
+  },
+  {
+    "slug": "croque-monsieur-fransiz-kafe-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Ekmek dilimlerini hafifçe tereyağlayıp jambon ve gravyerle sandviç yapın." },
+      { "stepNumber": 2, "instruction": "Süt, rendelenmiş peynir ve az muskatla üst karışımı hazırlayın." },
+      { "stepNumber": 3, "instruction": "Sandviçlerin üstüne peynirli karışımı yayın, kenarlardan taşmasın diye." },
+      { "stepNumber": 4, "instruction": "Sandviçleri 200°C fırında 12 dakika pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 5, "instruction": "Üstleri kızarınca 3 dakika dinlendirip sıcak servis edin.", "timerSeconds": 180 }
+    ],
+    "notes": "Kaynak kontrolü: French croque monsieur kaynakları ve mevcut CSV; jambon peynirli sandviç, beşamel benzeri üst ve 200C fırın doğrulandı."
+  },
+  {
+    "slug": "cuban-black-beans",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Siyah fasulyeyi bir gece suda bekletip süzün.", "timerSeconds": 28800 },
+      { "stepNumber": 2, "instruction": "Fasulye, soğan, biber, sarımsak ve defneyi tencereye alın." },
+      { "stepNumber": 3, "instruction": "Üstünü geçecek kadar su ekleyip kaynamaya bırakın." },
+      { "stepNumber": 4, "instruction": "Fasulyeyi kısık ateşte 80 dakika yumuşayana kadar pişirin.", "timerSeconds": 4800 },
+      { "stepNumber": 5, "instruction": "Bir kepçe fasulyeyi ezip tencereye geri katın, sos koyulaşsın diye." },
+      { "stepNumber": 6, "instruction": "Sirke ve tuzu son 5 dakikada ekleyip pilavla servis edin.", "timerSeconds": 300 }
+    ],
+    "notes": "Kaynak kontrolü: Cuban black beans kaynakları ve mevcut CSV; gece ıslatma, sofrito aromaları, uzun pişirme ve son sirke doğrulandı."
+  },
+  {
+    "slug": "cuban-mojo-chicken",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Portakal suyu, lime, sarımsak, kimyon ve kekikle mojo marinadını hazırlayın." },
+      { "stepNumber": 2, "instruction": "Tavuğu marinadda 2 saat bekletin, narenciye aroması ete geçsin.", "timerSeconds": 7200 },
+      { "stepNumber": 3, "instruction": "Tavuğu fırın kabına derisi yukarı bakacak şekilde yerleştirin." },
+      { "stepNumber": 4, "instruction": "Tavuğu 190°C fırında 45 dakika pişirin.", "timerSeconds": 2700 },
+      { "stepNumber": 5, "instruction": "Fırın suyunu üstüne gezdirip 8 dakika dinlendirin.", "timerSeconds": 480 },
+      { "stepNumber": 6, "instruction": "Tavuğu dilimleyip pirinç ve siyah fasulyeyle servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Cuban mojo chicken kaynakları ve mevcut CSV; narenciyeli sarımsaklı marinad, 190C fırın ve dinlendirme doğrulandı."
+  },
+  {
+    "slug": "cuban-picadillo",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Soğan ve biberi küçük doğrayıp kıymayı oda sıcaklığına yakın bekletin." },
+      { "stepNumber": 2, "instruction": "Kıymayı soğanla birlikte yüksek ateşte 7 dakika kavurun.", "timerSeconds": 420 },
+      { "stepNumber": 3, "instruction": "Domates, kimyon ve defneyi ekleyip 15 dakika pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 4, "instruction": "Zeytin ve kuru üzümü katıp 5 dakika daha pişirin.", "timerSeconds": 300 },
+      { "stepNumber": 5, "instruction": "Sosu 5 dakika dinlendirin, tatlı ve tuzlu tatlar dengelensin.", "timerSeconds": 300 },
+      { "stepNumber": 6, "instruction": "Picadillo'yu beyaz pilav veya tortilla ile servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Cuban picadillo kaynakları ve mevcut CSV; kıyma kavurma, domatesli sos, zeytin ve kuru üzüm doğrulandı."
+  },
+  {
+    "slug": "cullama-kofte-konya-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Bulguru hafif ıslatıp 10 dakika şişmeye bırakın.", "timerSeconds": 600 },
+      { "stepNumber": 2, "instruction": "Kıyma, bulgur, soğan ve baharatı 8 dakika yoğurun.", "timerSeconds": 480 },
+      { "stepNumber": 3, "instruction": "Harcı oval köfteler halinde şekillendirin, yüzeyde çatlak kalmasın diye." },
+      { "stepNumber": 4, "instruction": "Köfteleri yağlanmış tepsiye dizin veya geniş tavaya alın." },
+      { "stepNumber": 5, "instruction": "Köfteleri fırında ya da tavada toplam 16 dakika pişirin.", "timerSeconds": 960 },
+      { "stepNumber": 6, "instruction": "Tereyağlı pul biberi 2 dakika köpürtüp köftelerin üstüne gezdirin.", "timerSeconds": 120 },
+      { "stepNumber": 7, "instruction": "Köfteleri 5 dakika dinlendirip yoğurtla servis edin.", "timerSeconds": 300 }
+    ],
+    "notes": "Kaynak kontrolü: Konya cüllama köftesi ve bulgurlu köfte kaynakları; bulgur ıslatma, yoğurma ve 16 dakika pişirme doğrulandı."
+  },
+  {
+    "slug": "dakgalbi",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Tavuğu iri doğrayıp gochujang, soya sosu, sarımsak ve şekerle karıştırın." },
+      { "stepNumber": 2, "instruction": "Tavuğu 15 dakika marine edin, sos yüzeye tutunsun diye.", "timerSeconds": 900 },
+      { "stepNumber": 3, "instruction": "Lahana, tatlı patates ve soğanı geniş tavaya yayın." },
+      { "stepNumber": 4, "instruction": "Tavuk ve sebzeleri 12 dakika orta yüksek ateşte pişirin.", "timerSeconds": 720 },
+      { "stepNumber": 5, "instruction": "Pirinç kekini ekleyip 8 dakika sos tavaya tutunana kadar çevirin.", "timerSeconds": 480 },
+      { "stepNumber": 6, "instruction": "Susam yağı gezdirip 3 dakika dinlendirin.", "timerSeconds": 180 },
+      { "stepNumber": 7, "instruction": "Dakgalbi'yi yeşil soğan ve susamla tavadan servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Maangchi dakgalbi ve Korean Bapsang; gochujang marinad, lahana, pirinç keki ve tavada pişirme doğrulandı."
+  },
+  {
+    "slug": "dal-makhani",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Siyah mercimeği yıkayıp bol suda 8 saat bekletin.", "timerSeconds": 28800 },
+      { "stepNumber": 2, "instruction": "Mercimeği temiz suyla 60 dakika yumuşayana kadar haşlayın.", "timerSeconds": 3600 },
+      { "stepNumber": 3, "instruction": "Domates püresi, tereyağı, zencefil ve sarımsağı tencerede 10 dakika pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 4, "instruction": "Mercimeği sosa ekleyip kısık ateşte 60 dakika pişirin.", "timerSeconds": 3600 },
+      { "stepNumber": 5, "instruction": "Ara ara sıcak su ekleyin, dibi tutmasın ve kıvam kremamsı kalsın diye." },
+      { "stepNumber": 6, "instruction": "Kremayı ekleyip 10 dakika daha pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 7, "instruction": "Tereyağı ve kişnişle tamamlayıp pilav veya naan ile servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Indian dal makhani kaynakları ve mevcut CSV; siyah mercimek ıslatma, uzun kısık pişirme ve krema doğrulandı."
+  },
+  {
+    "slug": "dan-dan-noodle",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Erişteyi kaynar suda 4 dakika haşlayın ve 100 ml suyunu ayırın.", "timerSeconds": 240 },
+      { "stepNumber": 2, "instruction": "Dana kıymayı tavada 6 dakika ufalanıp kızarana kadar kavurun.", "timerSeconds": 360 },
+      { "stepNumber": 3, "instruction": "Soya sosu, tahin, acı yağ, sirke ve erişte suyunu kaselerde karıştırın." },
+      { "stepNumber": 4, "instruction": "Sıcak erişteyi sosla buluşturup hızlıca çevirin, tahin topaklanmasın diye." },
+      { "stepNumber": 5, "instruction": "Kavrulmuş kıymayı üstüne paylaştırın." },
+      { "stepNumber": 6, "instruction": "Yeşil soğan ve Sichuan biberi serpip hemen servis edin." },
+      { "stepNumber": 7, "instruction": "Servisten önce 1 dakika karıştırın, sos erişteyi eşit kaplasın.", "timerSeconds": 60 }
+    ],
+    "notes": "Kaynak kontrolü: Sichuan dan dan noodle kaynakları ve mevcut CSV; kıyma üstlük, susamlı sos ve erişte suyu kullanımı doğrulandı."
+  },
+  {
+    "slug": "dana-lo-mein",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Erişteyi 4 dakika haşlayıp süzün ve yapışmaması için az yağlayın.", "timerSeconds": 240 },
+      { "stepNumber": 2, "instruction": "Dana etini ince dilimleyip soya sosu ve nişastayla 10 dakika bekletin.", "timerSeconds": 600 },
+      { "stepNumber": 3, "instruction": "Eti wokta 5 dakika yüksek ateşte soteleyin.", "timerSeconds": 300 },
+      { "stepNumber": 4, "instruction": "Brokoli ve havucu ekleyip 3 dakika diri kalacak şekilde çevirin.", "timerSeconds": 180 },
+      { "stepNumber": 5, "instruction": "Erişte, soya sosu ve susam yağını ekleyip 4 dakika karıştırın.", "timerSeconds": 240 },
+      { "stepNumber": 6, "instruction": "Sosu erişteye yedirin, wokta fazla bekletmeyin ki erişte kopmasın." },
+      { "stepNumber": 7, "instruction": "Yeşil soğanla tamamlayıp sıcak servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Chinese beef lo mein kaynakları ve mevcut CSV; marine et, wokta kısa sote ve erişteyi sonradan ekleme doğrulandı."
+  },
+  {
+    "slug": "dana-stroganoff",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Dana etini ince şerit doğrayıp tuz ve karabiberle tatlandırın." },
+      { "stepNumber": 2, "instruction": "Eti yüksek ateşte 4 dakika mühürleyip tabağa alın.", "timerSeconds": 240 },
+      { "stepNumber": 3, "instruction": "Mantar ve soğanı aynı tavada 6 dakika soteleyin.", "timerSeconds": 360 },
+      { "stepNumber": 4, "instruction": "Hardal ve et suyunu ekleyip 3 dakika sosu kaynatın.", "timerSeconds": 180 },
+      { "stepNumber": 5, "instruction": "Et ve kremayı tavaya alıp 10 dakika kısık ateşte pişirin.", "timerSeconds": 600 },
+      { "stepNumber": 6, "instruction": "Kremayı kaynatmadan ısıtın, sos kesilmesin diye." },
+      { "stepNumber": 7, "instruction": "Stroganoff'u erişte veya pilavla sıcak servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: Beef stroganoff kaynakları ve mevcut CSV; hızlı et mühürleme, mantarlı sos, hardal ve krema dengesi doğrulandı."
+  },
+  {
+    "slug": "date-orange-couscous-fas-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Kuskusu geniş kaseye alın ve sıcak suyu üstüne dökün." },
+      { "stepNumber": 2, "instruction": "Kuskusu 5 dakika kapalı dinlendirin.", "timerSeconds": 300 },
+      { "stepNumber": 3, "instruction": "Hurmaları küçük doğrayıp portakal kabuğunu ince rendeleyin." },
+      { "stepNumber": 4, "instruction": "Kuskusu çatalla kabartın, taneler ezilip hamurlaşmasın diye." },
+      { "stepNumber": 5, "instruction": "Hurma, portakal suyu, zeytinyağı ve bademi kuskusla karıştırın." },
+      { "stepNumber": 6, "instruction": "Karışımı 10 dakika dinlendirip nane ve portakal dilimiyle servis edin.", "timerSeconds": 600 },
+      { "stepNumber": 7, "instruction": "Servisten önce tuz ve limon dengesini kontrol edip son kez hafifçe karıştırın." }
+    ],
+    "notes": "Kaynak kontrolü: Moroccan couscous salad kaynakları ve mevcut CSV; kuskusu sıcak suyla şişirme, hurma ve portakal aroması doğrulandı."
+  },
+  {
+    "slug": "deniz-borulceli-levrek-bugulama-izmir-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      { "stepNumber": 1, "instruction": "Levrek filetolarını kurulayın, deniz börülcesini fazla tuzundan arındırın." },
+      { "stepNumber": 2, "instruction": "Tencerenin tabanına sarımsak, limon dilimleri ve deniz börülcesini yayın." },
+      { "stepNumber": 3, "instruction": "Levrekleri sebze yatağının üstüne yerleştirip zeytinyağı gezdirin." },
+      { "stepNumber": 4, "instruction": "Az sıcak su ekleyip kapağı kapatın, balık buharda nazik pişsin diye." },
+      { "stepNumber": 5, "instruction": "Buğulamayı 15 dakika kısık ateşte pişirin.", "timerSeconds": 900 },
+      { "stepNumber": 6, "instruction": "Tencereyi 5 dakika dinlendirin, fileto parçalanmadan tabağa alın.", "timerSeconds": 300 },
+      { "stepNumber": 7, "instruction": "Üstüne limon suyu ve dereotu ekleyip sıcak servis edin." }
+    ],
+    "notes": "Kaynak kontrolü: İzmir levrek buğulama ve deniz börülcesi kaynakları; limonlu sarımsaklı taban, kapaklı buharda pişirme doğrulandı."
+  }
+]

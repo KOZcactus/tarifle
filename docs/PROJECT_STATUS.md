@@ -1,24 +1,27 @@
 # Tarifle, Proje Durumu
 
-> Oturum 21 devam ediyor (26 Nis 2026), **22+ commit**, Mod F retrofit
-> pipeline KAPANIŞ + Mod A 100 yeni tarif (3471→3569) + 9 yeni blog
-> yazısı (41→50) + diet-score Faz 4 coverage tepe + PWA
-> install UX fix + Legal/KVKK kurumsal polish. **Mod F 27/27 prod**
-> (22r + 23 + 24 + 25 + 26 + 27, ~2660 tarif step retrofit oturum 18'de
-> başlayıp oturum 21'de kapandı), USDA batch 4 + 5 prod (130 → **311
-> ingredient**, coverage **%92 → %99.97**, 0-match 6 → 1), TR-fold
-> root cause fix (`asciiFold` aggregate.ts + audit-top-ingredients.ts),
-> 41 blog yazısına **123 internal link + 6 inline anchor** + **5 yeni
-> yazı** (baharatli-yemek-seviyeleri + soguk-vs-sicak-baslangic +
-> ev-yapimi-ekmek-tipleri + damak-yemek-dengesi + mikro-otlar) →
-> **blog 41 → 46**, PWA install banner UX fix (ilk dismiss permanent +
-> 10 dakika delay + /ayarlar manuel install card 4 mod), 6 yasal
-> sayfada kurumsal email aliases (kvkk@/iletisim@/security@) + KVKK
-> şahsi platform ünvan netleştirme + Güvenlik sayfasına CSP/X-Frame
-> kartı + lastUpdate refresh 26 Nis. Visual baseline 15 → 20, pre-push
-> 6 katman temiz, 84 unit test PASS, prod 3471 tarif. **Sonraki:**
-> Cloudflare Email Routing 3 alias (Kerem dashboard), Mod A 37a (3500+
-> hedef), CSP enforce geçiş (1-2 hafta izleme).
+> Oturum 21 sonu (26 Nis 2026), **38 commit**, mutlak rekor maraton:
+> Mod F retrofit pipeline KAPANIŞ + Mod A 5 batch (37a/37b/38a/38b/
+> 39a) 195 yeni tarif + 78 duplicate sil + amlou/aam panna sil = **prod
+> 3471 → 3636 net** + USDA batch 4 + 5 (130 → 311 ingredient, coverage
+> %92 → **%99.97**) + TR-fold root cause fix + **10 yeni blog** (41 →
+> 50: baharatli + soguk-sicak + ev ekmek + damak + mikro otlar + yag
+> kimyasi + sote-kavurma + limon + sirke + 4 inline link bonus) + 41
+> blog yazisi Ilgili Yazilar bolumu (123 link) + PWA install UX (1
+> dismiss permanent + 10 dk delay + /ayarlar manuel install card 4
+> mod) + Legal/KVKK kurumsal polish (kvkk@/iletisim@/security@ alias
+> CANLI Cloudflare Email Routing) + **CSP ENFORCE mode CANLI**
+> (Report-Only -> enforce, 14 gun 0 violation izleme sonrasi) +
+> Settings UX revize (dil kompakt + PreferencesCard accordion +
+> PrivacyCard kompakt) + admin panel 4 yeni filter (cuisine + category
+> + type + featured) + Onboarding empty state CTA polish (pantry +
+> bookmark + koleksiyon, 5 quick-add chip) + **Mod G + Mod H altyapi**
+> (brief CODEX_BATCH_BRIEF §17 + §18, schema migration, audit + apply
+> script) + source duplicate cleanup (audit-duplicate-titles +
+> pick-canonical + 78 prod sil). Visual baseline 15 → 24, pre-push
+> 6 katman temiz, 84 unit test PASS. **Sonraki oturum 22+ baslangic:**
+> Mod G Batch 1 (boilerplate revize), Mod H Batch 1 (ingredient
+> enrichment), source duplicate smart cleanup (multi-line tarif).
 
 > Oturum 20 sonu (25 Nis 2026), **30 commit**, mutlak rekor gün:
 > **Diet-score Faz 1 + Faz 2 + polish + Lighthouse CI**, 10 preset prod canli.
@@ -92,13 +95,33 @@
 >
 > Oturum 7 sonu (28 commit), 1701 tarif prod canlı. 8 blok: Mod B batch 13-17 (600 tarif EN+DE), Mod A batch 15-17 (1401→1701), foryou sort, pagination redesign, super-admin protection, /admin/yorumlar, /kategoriler, legal hub /yasal, editör rozeti, similar-recipes v2, 44 programatik landing, profil zenginleştirme, /menu-planlayici, RSS + HowTo schema, AI Asistan v2, blog MDX + 3 makale, rekabet analizi doc, newsletter double-opt-in altyapı, codex brief 3 clarify.
 
-## 26 Nisan 2026 (oturum 21 ara, 14 commit'e kadar, Mod F PIPELINE KAPANIŞ + 5 yeni blog + Faz 4 USDA + PWA UX + Legal polish)
+## 26 Nisan 2026 (oturum 21 SONU, 38 commit, MUTLAK REKOR maraton)
 
-> Oturum henüz kapanmadı, devam ediyor. 14 commit'e kadar Mod F
-> retrofit pipeline 4 oturumdan
-> sonra kapandı (27/27, ~2660 tarif), USDA seed iki batch ile coverage
-> %92 → %99.97'ye çıktı, blog 41 → 46, PWA install banner UX revize,
-> 6 yasal sayfada kurumsal email + güvenlik kartı.
+> Oturum 21 KAPANDI, 38 commit. Kategori toplam:
+> - **Mod F retrofit pipeline KAPANIŞ** (27/27, ~2660 tarif step,
+>   oturum 18-21 arası 4 oturum)
+> - **Mod A 5 batch (37a/37b/38a/38b/39a)**: 195 yeni tarif - 2 sil
+>   (amlou + aam panna) - 78 duplicate sil = **prod 3471 → 3636 net
+>   +165**
+> - **USDA batch 4 + 5**: 130 → 311 ingredient, coverage **%92 → %99.97**
+> - **TR-fold root cause fix** (asciiFold aggregate.ts + audit)
+> - **10 yeni blog** (41 → 50): baharatli + soguk-sicak + ev ekmek +
+>   damak + mikro otlar + yag kimyasi + sote-kavurma + limon + sirke
+> - 41 blog Ilgili Yazılar bölümü (123 internal link) + 6 inline anchor
+> - **PWA install UX** (1 dismiss permanent + 10 dk delay + /ayarlar
+>   manuel install card 4 mod)
+> - **Legal/KVKK polish** + Cloudflare Email Routing 3 alias (kvkk@/
+>   iletisim@/security@) CANLI
+> - **CSP ENFORCE mode CANLI** (Report-Only → enforce, 14 gün 0
+>   violation izleme sonrası)
+> - **Settings UX** (dil kompakt + PreferencesCard accordion +
+>   PrivacyCard kompakt + sıralama mantıksal kümeler)
+> - **Admin panel filter** (cuisine + category + type + featured)
+> - **Onboarding empty state CTA** (pantry + bookmark + koleksiyon)
+> - **Mod G + Mod H altyapı** (brief §17 + §18, schema migration,
+>   audit + apply script)
+> - Source duplicate cleanup (78 prod sil, source kısmen)
+> - Visual baseline 15 → 24, pre-push 6 katman temiz, 84 unit PASS
 
 **A · Mod F Retrofit-22 revize prod** (`e939ac7`): Codex 22 reject
 sonrası v2, suffix max 11x → 2x temizlik (oturum 20 brief Kural 17
@@ -273,11 +296,95 @@ eklendi. Legal sayfalardaki kurumsal alias'lar (oturum 21 N paketi)
 artık gerçek inbox'a düşüyor, bouncback yok. Catch-all Disabled
 (opsiyonel, gerek görülmedi).
 
-**Sonraki oturum başlangıcı:**
-- CSP Report-Only → enforce geçiş (1-2 hafta izleme sonrası)
-- Mod A 38a opsiyonel (katalog büyütme, launch sonrası)
-- Onboarding polish (guided tour + empty state + DE i18n)
-- Yeni blog yazıları (Salamura, Çorba Bilimi, Bal Türleri, Meal Prep)
+**W · Mod A 5 batch zinciri ve sil-temizle** (`bfc5d07` + `10d8871` +
+`8ff00d6` + `52ad6b9` + `64a819f` + `1bb258e`): 195 yeni tarif (37a/
+37b/38a/38b/39a) + amlou + aam-panna sil = +193 net (3471 → 3664). Her
+batch sonrası recompute pipeline (hunger-bar + nutrition + diet-score)
+otomatik. Smoke kontroller temiz. 38a sırasında 95 yeni eklendi (drift
+birikimi 45 ekstra, 38b'de 0 yeni — source-prod senkron oldu). 39a
+sonrası 36640 → 37140 RecipeDietScore. RandomRecipeBanner anasayfada
+AI Asistan altına taşındı (kullanıcı geri bildirim, sürekli öneri
+yorgunluğu).
+
+**X · Settings UX accordion + kompakt + onboarding empty state** (`4984708`
++ `a93c077`): PreferencesCard 55 chip tek liste → 3 accordion bölüm
+(default kapalı, seçili sayı badge); PrivacyCard toggle row büyük border
++ p-3 → divide-y satır listesi (kart 320 → 200px). Onboarding empty
+state CTA polish: /dolap PantryClient (🎒 + 5 quick-add chip) + profil
+bookmark (🔖 + büyük CTA) + profil koleksiyon (📁 + accent CTA).
+
+**Y · CSP enforce mode CANLI + admin filter genişletme** (`81f1ccc` +
+`2c6e26c`): Sentry 14 gün 0 violation izleme sonrası header
+`Content-Security-Policy-Report-Only` → `Content-Security-Policy`. XSS
++ 3rd party compromise koruma gerçek. Report-uri aktif kaldı (regresyon
+yakalama). Admin /admin/tarifler 4 yeni filter (cuisine 30 kod + category
++ type 10 + featured 3-state). 3700+ tarif yorgun ekran rahatladı.
+
+**Z · Source duplicate cleanup KISMEN tamam** (`992402c`): audit-
+duplicate-titles 72 grup tespit (Yuvalama 4 + Gazpacho 4 + Harput 3+
+vs). pick-duplicate-canonical.ts auto-pick (en zengin = en çok ingredient/
+step + en yeni). 78 tarif prod rollback (4 chunk × 20, AuditLog timeout
+sebebiyle bölündü). Source 62 entry seed-recipes.ts'ten silindi (16
+source-only-yoktu drift birikimi). Recompute prod 3636 → diet-score
+36360. **NOT**: Source-side multi-line tarif format'ı remove-source-
+slugs.mjs'de bozuldu, git checkout 1bb258e ile geri yüklendi. Yarınki
+iş: smart-source-clean.mjs (regex/AST blok bazlı silme).
+
+**AA · Mod G + Mod H altyapı** (`1c7b5f9` + `d5dc6ed` + `8d774f9`):
+İki yeni Codex modu için brief + script + schema hazırlandı.
+
+- **Mod G** (tipNote/servingSuggestion boilerplate revize): brief
+  CODEX_BATCH_BRIEF.md §17, scripts/apply-mod-g.ts (8 kalite kuralı +
+  7 self-check + sema validate). Audit: tipNote/servingSuggestion %100
+  dolu, ama 417 tarif boilerplate ("Soğuk servis edin." 105x, "Sıcak
+  servis edin." 96x, vs.). Mod G hedefi: tarif-özgü cümleyle revize.
+  Brief Kural 5 (web teyit ZORUNLU + sözde-bilim YASAK) + Kural 8
+  (anlaşılır dil, jargon yasak: emülsiyon/Maillard/polifenol/viskozite
+  vb. + Türk teyze heuristic). docs/mod-g-boilerplate-slugs.txt input
+  hazır.
+
+- **Mod H** (ingredient enrichment - "neden + yerine"): brief §18,
+  scripts/apply-mod-h.ts (7 kalite + 8 self-check + 14 jargon yasak
+  list + sema validate), yeni schema `IngredientGuide` model + migration
+  `20260426060000_ingredient_guide` dev + prod canlı. AI Asistan v5 +
+  tarif detay hover backend için "kuş üzümün yok mu? kuru üzüm kullan"
+  tipi öneri katmanı. docs/mod-h-ingredient-list.txt top 50 ingredient
+  prep hazır (zeytinyağı 781x, su 740x, tereyağı 727x, vs.).
+
+**AB · NPM audit incele** (oturum 21 sonu, no-commit): 17 advisory (0
+critical + 0 high + 14 moderate + 3 low). Tümü transitive devDep ya da
+prod'da çalıştırılmayan code path. Fix önerileri MAJOR DOWNGRADE (next
+@9, prisma@6, lhci@0.6) - uygulanamaz. Aylık monitor kalır, yeni next
+minor patch otomatik düzeltir muhtemelen.
+
+**AC · Brief Kural 6 + 7 + 16 (Mod A drift fix)** (`1f3089f`): Mod A
+38a/38b push pre-validate'inde 3 ERROR (Gaziantep Yuvalama "un gibi"
+simile + Sevilla Gazpacho "şarap sirkesi" alkol false-positive +
+Chennai Masala). Codex 38b zaten spot-fix yapmış ama brief'e de
+yansıdı: Kural 6 (step ↔ ingredient eşleşme + simile YASAK), Kural 7
+(alkol tag + şarap sirkesi → üzüm sirkesi istisna), Kural 16
+(duplicate title-check yeni tarif önerirken).
+
+**Oturum 21 sonu skor (NET):**
+- Prod **3636 tarif** (3471 → 195 ekleme - 80 sil/duplicate = +165 net)
+- USDA seed 130 → **311 ingredient** (%92 → %99.97 coverage)
+- Blog **41 → 50** (10 yeni + 41 yazıya 123 internal link + 6 inline)
+- Visual baseline 15 → **24**
+- Mod F retrofit **27/27 KAPANIŞ** (~2660 tarif step)
+- Mod G + Mod H altyapı tam (brief + script + schema), batch tetikten
+  başlamayı bekler
+- CSP **Enforce CANLI** ✅ + Cloudflare Email Routing 3 alias CANLI ✅
+- Settings UX + PWA UX + Legal/KVKK + Empty state polish rafine
+- Pre-push 6 katman temiz, 84 unit test PASS, prod audit-deep PASS
+
+**Sonraki oturum 22+ başlangıcı:**
+- **Mod G Batch 1** (Kerem tetik, Codex okur §17 brief, 100 boilerplate
+  tarif → JSON, Claude apply pipeline)
+- **Mod H Batch 1** (Kerem tetik, top 50 ingredient → JSON, apply)
+- **Source duplicate smart cleanup** (multi-line tarif AST/regex blok
+  silme, 30 dk script + spot test)
+- **Yeni blog yazısı** (Salamura, Çorba Bilimi, Bal Türleri, Meal Prep)
+- **Codex Mod A 39b+** opsiyonel (Brief Kural 6+7+16 disiplinli)
 
 ## 25 Nisan 2026 (oturum 20, 30 commit, Diet-Score Faz 1+2 + Lighthouse CI + Mod FA pipeline kapaniş)
 

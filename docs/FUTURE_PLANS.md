@@ -15,7 +15,43 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
-### Source-side duplicate cleanup KISMEN tamam (oturum 21)
+### Mod G Batch 1 (Codex tetik bekler, oturum 22 başlangıç)
+
+Brief CODEX_BATCH_BRIEF.md §17 (oturum 21'de yazıldı). Hedef: 417
+boilerplate tarifin tipNote/servingSuggestion alanlarını tarif-özgü
+cümleyle revize. Input: docs/mod-g-boilerplate-slugs.txt. Apply:
+scripts/apply-mod-g.ts (sema + 8 kalite kuralı + 7 self-check).
+
+Kerem tetik mesajı (kopyala-yapıştır):
+```
+Mod G. Batch 1.
+Brief docs/CODEX_BATCH_BRIEF.md §17 ZORUNLU oku (özellikle §17.3 8
+kalite kuralı: tarif-özgü ref + min/max kelime + YASAK kalıplar +
+WEB TEYIT + boilerplate engelleyici + tip/sug ayrımı + anlaşılır dil).
+Input: docs/mod-g-boilerplate-slugs.txt'den ilk 100 slug'ı al.
+Output: docs/mod-g-batch-1.json (sema §17.2'de).
+Self-check 7 madde §17.5 — bitince "Mod G Batch 1 hazır" + özet.
+```
+
+### Mod H Batch 1 (Codex tetik bekler, oturum 22+ başlangıç)
+
+Brief §18, schema migration `IngredientGuide` dev + prod canlı. Top 50
+ingredient için "neden + yerine" notları, AI Asistan v5 backend.
+Input: docs/mod-h-ingredient-list.txt (top 50 freq + sample slug'lar).
+Apply: scripts/apply-mod-h.ts (sema + 7 kalite + 14 jargon yasak liste +
+8 self-check).
+
+Kerem tetik mesajı:
+```
+Mod H. Batch 1.
+Brief docs/CODEX_BATCH_BRIEF.md §18 ZORUNLU oku.
+Input: docs/mod-h-ingredient-list.txt 50 ingredient.
+Her ingredient: whyUsed (8-40 kelime) + substitutes (2-4 alternatif)
++ notes (opsiyonel). Output: docs/mod-h-batch-1.json (sema §18.2'de).
+Self-check 8 madde §18.5.
+```
+
+### Source-side duplicate smart cleanup (oturum 22 başında, 30 dk)
 
 **Prod KAPALI** (78 tarif silindi, 3714 → 3636), **source AÇIK**:
 

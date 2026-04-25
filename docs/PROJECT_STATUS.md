@@ -1,11 +1,17 @@
 # Tarifle, Proje Durumu
 
-> Oturum 22 başı (26 Nis 2026): Source duplicate cleanup KAPANIŞ.
+> Oturum 22 başı (26 Nis 2026): Source duplicate cleanup KAPANIŞ +
+> em-dash hijyeni + Blog 51 (Salamura ve Marine Bilimi).
 > `scripts/smart-source-clean.mjs` (indent-aware brace-counting, 5
 > tarif format'ı tek algoritma), 59 source-only slug temizlendi
 > (3 multi-line + 57 single-line + 1 dup), source 3694 → 3635 unique.
-> Oturum 21 multi-line bozulma artığı kapatıldı; sonraki seed-recipes
-> çalışmasında silinmiş duplicate'lar geri gelmeyecek.
+> Em-dash regex literal'leri (`/[—–]/`) unicode escape'e çevrildi
+> (`/[—–]/`), pre-push em-dash guard pre-existing kalıntı 0.
+> Blog 51 salamura-ve-marine-bilimi (1294 kelime, pisirme-teknikleri):
+> tuz proteinle ne yapar, yaş vs kuru salamura oranları, marine asit
+> + enzim mekaniği, süre rehberi, Türk salamura geleneği (turşu +
+> asma yaprağı + peynir), USDA gıda güvenliği, 5 kaynak + 3 İlgili
+> Yazı. Visual baseline 24 → 25, smoke endpoint genişledi.
 
 > Oturum 21 sonu (26 Nis 2026), **38 commit**, mutlak rekor maraton:
 > Mod F retrofit pipeline KAPANIŞ + Mod A 5 batch (37a/37b/38a/38b/

@@ -75,6 +75,7 @@ async function testCriticalPages(): Promise<void> {
     { path: "/blog/sote-vs-kavurma-vs-bugulama", contains: "Sote" },
     { path: "/blog/limon-ve-limon-suyu", contains: "Limon" },
     { path: "/blog/sirke-cesitleri", contains: "Sirke" },
+    { path: "/blog/salamura-ve-marine-bilimi", contains: "Salamura" },
   ];
 
   for (const p of pages) {

@@ -33,6 +33,7 @@ const BLOG_SLUGS = [
   "sote-vs-kavurma-vs-bugulama",
   "limon-ve-limon-suyu",
   "sirke-cesitleri",
+  "salamura-ve-marine-bilimi",
 ];
 
 test.describe("Recipe detail visual baseline", () => {

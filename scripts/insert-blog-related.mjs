@@ -65,6 +65,7 @@ const TITLES = {
   "yumurta-pisirme-7-yontem": "Yumurta Pişirme: 7 Yöntem",
   "zeytin-cesitleri-sofralik-meze-rehberi": "Zeytin Çeşitleri",
   "zeytinyagi-secimi": "Zeytinyağı Seçimi",
+  "salamura-ve-marine-bilimi": "Salamura ve Marine Bilimi",
 };
 
 // Her yazi -> 3 ilgili (slug, kisa baglam aciklamasi)
@@ -108,6 +109,11 @@ const RELATED = {
     ["limon-ve-limon-suyu", "asit ekseninin kardesi"],
     ["fermentasyon-temelleri-yogurt-tursu-eksi-maya", "sirkenin fermentasyon sureci"],
     ["damak-yemek-dengesi", "asitin lezzet dengesindeki rolu"],
+  ],
+  "salamura-ve-marine-bilimi": [
+    ["et-muhurlemenin-bilimi", "salamura sonrasi muhurleme akisi"],
+    ["soguk-zincir-kirmizi-et-guvenligi", "salamura sirasinda sicaklik disiplini"],
+    ["tuz-cesitleri-ve-kullanimi", "salamura icin dogru tuz secimi"],
   ],
   "soguk-vs-sicak-baslangic": [
     ["turk-mutfaginda-dugun-sofrasi", "buyuk sofralarda corbanin islevi"],

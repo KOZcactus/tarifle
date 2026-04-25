@@ -213,20 +213,15 @@ Codex'e tek tek tetik: `"Mod F. Retrofit-07"`, JSON gelince
 `scripts/apply-retrofit.ts --batch 7 --apply` + prod.
 
 
-### Mod A Batch 38b+ (launch hedef AŞILDI ✅, katalog büyümeye devam)
+### Mod A Batch 39a+ (launch hedef AŞILDI ✅, source-prod senkronize)
 
-Mod A Batch 37a + 37b + 38a prod canlı (oturum 21, ~195 yeni tarif).
-**Prod 3471 → 3664 tarif** net (+193, amlou/aam panna sil dahil).
-Hunger-bar + nutrition aggregate + diet-score recompute pipeline
-her batch için koştu (36640 RecipeDietScore total). Smoke
-havana-cuban-sandwich + tokyo-shoyu-ramen + marakes-harira-corbasi
-+ sao-paulo-pao-de-queijo 200 OK.
+Mod A Batch 37a + 37b + 38a + 38b prod canlı (oturum 21, ~195 yeni
+tarif). **Prod 3471 → 3664 tarif** net (+193, amlou/aam panna sil
+dahil). 38b apply'inda prod'a 0 yeni eklendi (38a drift birikimi 45
+ekstra zaten 38b tariflerini icermisti); source-prod uyumu sağlandı.
+36640 RecipeDietScore (3664 x 10 preset). Smoke kontroller temiz.
 
-NOT (38a sirasinda): Codex 50 tarif teslim ettiyse bile prod'da 95
-yeni eklendi (source-prod drift birikimi 45 ekstra). Idempotent seed
-sayesinde sorun degil; bir sonraki batch'te source-prod uyumlu kalir.
-
-Sonraki Mod A batch (opsiyonel): 38b tetiklenebilir. Brief §5 A+
+Sonraki Mod A batch (opsiyonel): 39a tetiklenebilir. Brief §5 A+
 standardı aktif.
 
 ### Neon → Vercel Marketplace migration cleanup (TAMAM, oturum 20)

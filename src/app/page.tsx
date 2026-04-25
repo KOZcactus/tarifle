@@ -277,13 +277,6 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* Random recipe shuffle */}
-      {randomRecipe && (
-        <section className="py-4">
-          <RandomRecipeBanner initial={randomRecipe} />
-        </section>
-      )}
-
       {/* Sezon / bayram seçkisi (#2): mevsime veya yaklaşan bayrama göre
           4-6 tarif bannerı. Boşsa hiç render etmez. */}
       <section className="py-6">
@@ -360,6 +353,15 @@ export default async function HomePage() {
           </span>
         </Link>
       </section>
+
+      {/* Random recipe shuffle (oturum 21 yer degisiklik): kullanici geri
+          bildirim sonrasi anasayfa ust kismindan AI Asistan altina tasindi,
+          kesfet kumesinin kalbinde duruyor. */}
+      {randomRecipe && (
+        <section className="py-4">
+          <RandomRecipeBanner initial={randomRecipe} />
+        </section>
+      )}
 
       {/* Önerilen Aşçılar, topluluk loop açısı. Boşsa section kendini
           gizler (SuggestedCooksSection içinde). Anonymous kullanıcı için

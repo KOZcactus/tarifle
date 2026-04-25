@@ -586,3 +586,39 @@ değiştirilebilir veya tamamen kaldırılabilir (Kerem kararı).
 - Haftalık menü planlayıcı "bu haftanın ort. skor" özet
 - AI Asistan "diyet filtresi" artık binary değil, ağırlıklı öneri
 
+## 13. Faz 2 ilerleme (oturum 20 sonu)
+
+Faz 2 USDA enrichment baslatildi:
+
+**Tamamlanan**:
+- NutritionData schema 5 yeni kolon migration (sugar / fiber / sodium /
+  satFat / glycemicIndex)
+- USDA seed JSON (data/nutrition-usda-seed.json), top 30 ingredient
+  hand-curated, FDC ID + license + source attribution
+- scripts/seed-nutrition-data.ts (idempotent upsert), dev + prod 30 row
+- Tag retrofit allergen guard fix (oturum 20 audit-deep 26 CRITICAL),
+  cleanup-wrong-veg-tags.ts ile prod'da 48 yanlis tag temizlendi
+
+**Kalan (~3 oturum)**:
+- Top 100 ingredient genisletme (70 tane daha hand-curated USDA degerleri)
+- src/lib/nutrition/unit-convert.ts (amount free-text -> gram parser:
+  "1 su bardagi" / "2 yemek kasigi" / "orta boy" / "tutam" gibi)
+- scripts/compute-recipe-nutrition.ts (recipe-level aggregate, per-porsiyon
+  sugar / fiber / sodium / satFat hesaplama, 3471 tarif x 100ish ingredient)
+- profiles.ts dusuk-seker proxy -> real sugar (carb-yuzdesi yerine
+  per-porsiyon sugar miktari < 10g hard floor)
+- 4 yeni preset acma: yuksek-lif (≥8g fiber), dusuk-sodyum (≤600mg/porsiyon),
+  akdeniz (zeytinyagi + balik + lif + dusuk satFat composite), keto-hassas
+  (net carb ≤10g)
+- Beta etiketi dusuk-seker uzerinden kaldirma (Faz 1.5 milestone)
+
+**Coverage tahmini**: top 30 ingredient = ~%43 RecipeIngredient row coverage.
+Top 100 ile ~%75-80, top 200 ile ~%92. Faz 2 hedefi top 100 + amount parser
++ aggregate. Top 200 Faz 3 polish.
+
+**Veri doğruluk yaklaşım**: hand-curated USDA SR Legacy + Foundation Foods
+public-domain values. AI veya scraping degil; FDC ID ile traceability.
+Recipe-level aggregate olusturulurken eslesmeyen ingredient'lar "yaklaşık"
+flag set eder, kullanici disclaimer goruyor (DietFitCard
+approximationFlag).
+

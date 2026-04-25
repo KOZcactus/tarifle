@@ -1,6 +1,6 @@
 ---
 title: "Diyet Skoru Nasıl Hesaplanır: Tarifle'nin Yöntemi ve Sınırları"
-description: "Tarifle her tarife 0-100 arası diyet uyum skoru veriyor. Dengeli, yüksek protein, düşük şeker gibi profillerde skor neye göre çıkıyor, neden Beta etiketi var, sınırlar nereden gelir? Yöntemi şeffaf anlatan rehber."
+description: "Tarifle her tarife 0-100 arası diyet uyum skoru veriyor. 10 profil: dengeli, yüksek protein, düşük şeker, yüksek lif, Akdeniz, keto hassas. Skor neye göre çıkıyor, hangi profiller stable hangileri Beta, USDA verisi nasıl kullanılıyor? Yöntemi şeffaf anlatan rehber."
 date: "2026-04-25"
 author: "Tarifle Editörleri"
 tags: ["beslenme", "diyet", "skor", "yontem", "seffaflik"]
@@ -16,14 +16,23 @@ Tarifle bu sorunu kullanıcıya bırakmadan, otomatik bir skor üretiyor: seçti
 
 Diyet skoru bir tarifin sağlıklı olup olmadığını söylemiyor. "Düşük kalori" diyetiyle "yüksek protein" diyeti farklı şeyleri ödüllendirir. Aynı tarif birinde 92, diğerinde 35 alabilir. Skor "bu tarif **senin seçtiğin diyete** ne kadar uyuyor" sorusunun cevabı, mutlak bir kalite ölçüsü değil.
 
-Şu an altı diyet profili var:
+Şu an on diyet profili var, beşi macro veriyle stabil hesaplanıyor, beşi USDA besin değerleriyle çalışan Faz 2 profilleri.
+
+**Stable beş profil** (porsiyon başı kalori/protein/karbonhidrat/yağ verisi yeterli):
 
 - **Dengeli Beslenme**: Protein %15-25, karbonhidrat %45-55, yağ %25-35 oranlı tabaklar
 - **Yüksek Protein**: Porsiyon başı 25g+ protein hedefli
 - **Düşük Kalori**: 350 kalori altı, doyurucu tarifler
 - **Vejetaryen Dengeli**: Et içermeyen + makro dengesi yerinde
 - **Vegan Dengeli**: Hayvansal ürün içermeyen + bitki proteini yeterli
-- **Düşük Şeker (Beta)**: Kan şekerini ani yükseltmeyen, dengeli karbonhidrat
+
+**USDA verisiyle çalışan beş profil** (porsiyon başı şeker / lif / sodyum / doymuş yağ):
+
+- **Düşük Şeker**: Kan şekerini ani yükseltmeyen tarifler. Şeker miktarı USDA FoodData Central değerlerinden hesaplanır, ek olarak protein dengesi ve lif bonusu.
+- **Yüksek Lif (Beta)**: 8g+ lif/porsiyon hedefli. Tam tahıl, baklagil, sebze ağırlıklı.
+- **Düşük Sodyum (Beta)**: 600mg altı/porsiyon. Kalp sağlığı, hipertansiyon dostu. DASH diyet hedefine yakın.
+- **Akdeniz Diyeti (Beta)**: Düşük doymuş yağ, yeterli lif, balanced macro, sebze ve zeytinyağı ağırlıklı.
+- **Keto Hassas (Beta)**: Net karbonhidrat (toplam carb - lif) ≤10g/porsiyon, yağ kalori payı ≥%70.
 
 Her profil için farklı kriterler farklı ağırlıklarla toplanır. Toplam her zaman 100 üzerinden hesaplanır.
 
@@ -59,11 +68,30 @@ Tarif kartında küçük bir renkli chip bu katmanları yansıtır: yeşil yüks
 
 ## Beta etiketi neden duruyor?
 
-Skor sistemi açık ve şeffaf, ama veri tarafı henüz tam değil. Beta etiketinin sebebi bu boşluk.
+Beş profil "stable", beşi "Beta" etiketinde. Fark veri kapsamından geliyor.
 
-Tarif veritabanımızda her tarif için kalori, protein, karbonhidrat ve yağ değerleri var. Bu yeterli mi? Çoğu skor için evet. Ama düşük şeker hesabı için **şeker miktarı**, yüksek lif için **lif miktarı** ayrı bir veri. Şu an o kolonlar bizde boş. Faz 2 olarak adlandırdığımız sonraki adımda [USDA FoodData Central](https://fdc.nal.usda.gov/) verilerini malzemeye eşliyoruz. O zaman düşük şeker skoru gerçekten şekere göre hesaplanacak, şu anki "karbonhidrat oranı düşük" proxy yöntemi yerine.
+Stable beş profilin (Dengeli, Yüksek Protein, Düşük Kalori, Vejetaryen Dengeli, Vegan Dengeli) ihtiyaç duyduğu veri zaten elimizde: porsiyon başı kalori, protein, karbonhidrat, yağ. Tariflerin %100'ünde bu veri var, skor güvenilir.
 
-Yani bugün düşük şeker skoru yaklaşıktır. Yüksek lif skoru bu yüzden daha yayında değil. Beta etiketi bunu söylüyor: skor çalışıyor, ama bazı diyetlerde gerçek hassasiyete ulaşmadı. Faz 2 tamamlandığında etiket düşürülür.
+USDA verisiyle çalışan beş profilin ihtiyaç duyduğu veri ise daha derin: porsiyon başı şeker, lif, sodyum, doymuş yağ. Bu değerleri tariflerden değil, malzemelerden hesaplıyoruz. Her bir malzemenin [USDA FoodData Central](https://fdc.nal.usda.gov/) veritabanında karşılığını bulup, miktarına göre porsiyona düşeni topluyoruz.
+
+Bu eşleme şu anda **%86 tarifte yeterli**. Top 80 en sık kullanılan malzemeyi USDA değerleriyle eşledik (zeytinyağı, un, soğan, yumurta, tavuk göğsü, mercimek, vb. ana kalemler). Eşleşmesi olmayan tariflerde skor "yaklaşık" olarak işaretleniyor; tarif detay sayfasında görünen "Diyet Uyumu" kartında veri eşleşme yüzdesi gösteriliyor.
+
+Düşük Şeker profili biraz daha sağlam çünkü USDA verisi yoksa karbonhidrat oranı **fallback proxy** olarak kullanılıyor; bu yüzden Beta etiketinden çıkardık. Diğer dört USDA profili (Yüksek Lif, Düşük Sodyum, Akdeniz, Keto Hassas) henüz Beta'da çünkü onların proxy'si yok, eşleşmesi düşük tariflerde skor sıkıntılı çıkar.
+
+Faz 2'nin sonraki adımı top 100-200 ingredient eşlemesi; eşleşme oranı %92+'ye çıkınca o dört etiket de düşer.
+
+## Veri tarafı: 80 ingredient, %86 kapsam
+
+Tarifle'nin malzeme listesinde 1387 farklı ingredient adı var. En sık kullanılan 80'i top frekanslı: zeytinyağı, su, tereyağı, un, soğan, yumurta, tuz, süt, sarımsak, yoğurt, şeker, domates, patates, pirinç gibi ana kalemler kapatıldı. Bu 80 ingredient, RecipeIngredient tablosunun **%85'ini** oluşturuyor.
+
+Her ingredient için saklanan değerler:
+
+- Per-100g kalori, protein, karbonhidrat, yağ
+- Per-100g şeker, lif, sodyum, doymuş yağ
+- Glisemik indeks (varsa)
+- Birim dönüştürme (1 yumurta = 50g, 1 su bardağı = 200ml)
+
+Tarif aggregate hesabı şu adımları izliyor: malzeme listesi → her ingredient için NutritionData lookup → amount string'i ("1 su bardağı", "500 gr", "yarım çay kaşığı") gram değerine parse → per-100g değerleri × gram / 100 → toplam → porsiyon sayısına böl. Sonuç: porsiyon başı şeker / lif / sodyum / doymuş yağ.
 
 Diğer bir nokta porsiyon hesabı. Tarifin 4 kişilik versiyonu ile 8 kişilik versiyonu arasında kalori başına protein oranı aynı kalsa da, mutlak değerler değişir. Skoru porsiyon başı hesaplıyoruz, tarif sayfasındaki "Kişi" değerine bağlı. Sayı yanlışsa skor da kayıyor. Tariflerin %95'inde porsiyon doğru ama hata payını sıfırlayamıyoruz.
 
@@ -82,28 +110,27 @@ Bu otomatik tag ekleme yüzde yüz doğru değil. "Et suyu" gibi kısa kelimeler
 
 ## Skor neye göre güvenilir?
 
-Faz 1 olarak çıkardığımız altı profil için güvenilirlik dereceleri farklı.
+On profil iki güvenilirlik seviyesinde gruplanır.
 
-Yüksek güven (mevcut veri yeterli):
+**Stable (mevcut veri yeterli, Beta etiketi yok):**
 
+- Dengeli Beslenme
 - Yüksek Protein
 - Düşük Kalori
 - Vejetaryen Dengeli
-- Vegan Dengeli (B12 sinyali eksik, ek uyarı eklenecek)
-- Dengeli Beslenme
+- Vegan Dengeli (B12 sinyali eksik, gelecek sürümde ek uyarı)
+- Düşük Şeker (USDA + carb fallback, %86 kapsama)
 
-Orta güven (proxy ile çalışıyor):
-
-- Düşük Şeker (karbonhidrat oranını şekere yaklaşık alıyor; Faz 2'de USDA verisi gelince netlik artar)
-
-Faz 2'ye sakladığımız profiller (veri eksik):
+**USDA verisi gerektiren, Beta:**
 
 - Yüksek Lif
 - Düşük Sodyum
 - Akdeniz
-- Keto Hassas (net karb hesabı için lif değeri lazım)
+- Keto Hassas
 
-Bu yaklaşımı seçmemizin sebebi yanlış sonucu doğru göstermekten kaçınmak. Bir kullanıcı "düşük sodyum" seçtiğinde bizim sodyum verimiz yoksa skor uydurmaktan iyidir. Faz 2'de o veriyi eklediğimizde profili açacağız.
+Beta profilleri tariflerin %86'sında çalışıyor; eşleşme oranı düşük tariflerde detay sayfasındaki "Diyet Uyumu" kartı altında "%X eşleşme, sınırlı veri" uyarısı görünür. Üst seviyeye çıkarmak için ingredient kapsamını %92+'ye taşımak yeterli, sonraki USDA seed dalgasında (top 80 → top 130) etiket düşer.
+
+Bu kademeli yaklaşımı seçmemizin sebebi yanlış sonucu doğru göstermekten kaçınmak. Bir kullanıcı "Düşük Sodyum" seçtiğinde sodyum eşleşmesi olmayan tarifte skor uydurmak yerine "%30 eşleşme, sınırlı veri" yazıp şeffaf kalmak daha doğru.
 
 ## Sınırlar ve doğru kullanım
 

@@ -74,19 +74,37 @@ export function scoreRecipe(
   const totalScore = criteria.reduce((a, c) => a + c.score, 0);
   const clampedScore = Math.max(0, Math.min(100, totalScore));
 
-  // Beta etiketi sadece USDA enrichment'a bagimli preset'lerde gosterilir.
-  // Faz 1 preset'leri (mevcut macro veri yeterli) Beta degil. Faz 2 yeni
-  // 4 preset (yuksek-lif/dusuk-sodyum/akdeniz/keto-hassas) ve dusuk-seker
-  // requiresEnrichedData=true; oraya Beta gosterilir cunku %86 coverage
-  // tariflerin hepsinde sugar/fiber/sodium veri var degil.
-  const isBeta = profile.requiresEnrichedData;
+  // Beta etiketi USDA enrichment'a bagimli preset'lerde gosterilir.
+  // Istisna: dusuk-seker preset'i top 80 ingredient seed sonrasi %86
+  // coverage'a ulasti, eslesmeyen tariflerde carbs proxy zaten fallback;
+  // kullanici icin stable kabul edilir (oturum 20 Faz 2 polish karari).
+  // Diger Faz 2 preset'leri (yuksek-lif/dusuk-sodyum/akdeniz/keto-hassas)
+  // proxy fallback'i yok, Beta korunur kullanici uyarilsin.
+  const isBeta = profile.requiresEnrichedData && profile.slug !== "dusuk-seker";
+
+  // Dinamik approximationFlag (oturum 20 Faz 2 polish):
+  // Recipe.nutritionMatchedRatio dusukse + Faz 2 preset ise ek uyari
+  // ekle, ilgili tarifin skor guvenilirlik seviyesini netlestir.
+  let flag = approximationFlagFor(dietSlug);
+  if (
+    profile.requiresEnrichedData &&
+    typeof recipe.nutritionMatchedRatio === "number" &&
+    recipe.nutritionMatchedRatio < 0.5
+  ) {
+    const pct = Math.round(recipe.nutritionMatchedRatio * 100);
+    const ratioWarning =
+      "Bu tarif için besin verisi eşleşmesi %" +
+      pct +
+      ", skor sınırlı veri ile hesaplandı. Veri eşleşmesi yüksek tariflerde daha güvenilir.";
+    flag = flag ? flag + " " + ratioWarning : ratioWarning;
+  }
 
   return {
     score: clampedScore,
     rating: ratingFromScore(clampedScore),
     criteria,
     isBeta,
-    approximationFlag: approximationFlagFor(dietSlug),
+    approximationFlag: flag,
   };
 }
 

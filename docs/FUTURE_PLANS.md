@@ -239,30 +239,22 @@ timer + muğlak yasak + kritik nokta + web kaynak).
 - [ ] Kerem Codex'e `"Mod A. Batch 37a"` tetikle
 - [ ] seed-recipes.ts apply + Backfill-16 CSV üret
 
-### Neon → Vercel Marketplace migration cleanup (30 Nis 2026, 6 gün kaldı)
-
-### Neon → Vercel Marketplace migration cleanup (30 Nis 2026, 5 gün kaldı)
+### Neon → Vercel Marketplace migration cleanup (TAMAM, oturum 20)
 
 Oturum 15'te standalone Neon (ep-broad-pond + ep-dry-bread) Vercel-managed
-Neon'a (ep-icy-mountain + ep-jolly-haze) taşındı, tasarruf $20/ay = $240/yıl.
-1 hafta paralel izleme dönemi sonrası cleanup:
+Neon'a (ep-icy-mountain + ep-jolly-haze) taşındı. Oturum 20'de cleanup
+tamamlandı (5 günlük stabilite kanıtı sonrası, finansal aciliyet yoktu
+çünkü Vercel Pro DB credits yeni branch'leri karşılıyor):
 
-- [ ] **Eski Neon standalone organization cancel** (console.neon.tech,
-      billing durdur, fatura kesilir)
-- [ ] Vercel env `DATABASE_URL_OLD` satırlarını sil (Production + Preview)
-- [ ] `scripts/lib/db-env.ts` PROD_HOST_PREFIXES + DEV_HOST_PREFIXES
-      dizilerinden eski prefix'leri çıkar (`ep-broad-pond`, `ep-dry-bread`),
-      tek-prefix'e geri dön
-- [ ] Lokal backup dosyalarını sil: `.env.local.bak-oturum15-neon-migration`,
-      `.env.production.local.bak-oturum15-neon-migration`
-- [ ] `scripts/tmp-migration/` dizinini temizle (prod.dump + dev.dump +
-      connections.json + test-fetch scripts)
-- [ ] İsterse Neon console'da yeni project'in password rotate (dump
-      sırasında chat'e password yapıştırıldı, güvenli rotation hijyen)
-
-Gating koşul: 1 hafta boyunca prod `tarifle.app` + dev smoke test temiz
-olması + Sentry error hacminin baseline'da kalması. 30 Nis 2026 sonrası
-trigger.
+- [x] Eski Neon `tarifle` project (curly-hill-43162204) silindi
+      console.neon.tech "Kerem's projects" org boş kaldı
+- [x] `scripts/lib/db-env.ts` PROD_HOST_PREFIXES + DEV_HOST_PREFIXES
+      eski prefix'ler kaldırıldı (`ep-broad-pond`, `ep-dry-bread`)
+- [x] Lokal backup dosyaları silindi (`.env.*.bak-oturum15-neon-migration`)
+- [x] `scripts/tmp-migration/` dizini silindi
+- [ ] Vercel env `DATABASE_URL_OLD` (varsa, Kerem dashboard'tan kontrol)
+- [ ] Yeni project password rotate (opsiyonel hijyen, dump sırasında
+      chat'e password yapıştırıldıysa rotate)
 
 ### Hero A/B test DURDURULDU (oturum 15)
 

@@ -78,22 +78,21 @@ const nextConfig: NextConfig = {
           key: "X-Frame-Options",
           value: "DENY",
         },
-        // Content-Security-Policy Report-Only mode (oturum 19 security paket).
-        // Siteyi kirmaz, sadece violation'lari /api/csp-report'a POST eder.
+        // Content-Security-Policy ENFORCE mode (oturum 21 itibariyla).
+        // Onceden Report-Only mode (oturum 19 ship). 14 gunluk izleme
+        // sonrasi Sentry'de 0 violation: policy stabil, whitelist dogru
+        // kalibre, enforce'a guvenle gecildi.
         //
-        // **OTURUM 21 IZLEME RAPORU**: Sentry'de son 14 gun **0 CSP
-        // violation**. Policy whitelist mevcut altyapi (Vercel Analytics +
-        // Sentry + Cloudinary + Google OAuth avatar + Google Fonts) icin
-        // dogru kalibre. Enforce'a gecis riski dusuk.
+        // **Davranis**: Tarayici whitelist disinda script/stil/img/font
+        // kaynaklarini BLOKLAR. report-uri hala aktif: bloklamadan once
+        // /api/csp-report -> Sentry'ye violation forward edilir, regresyon
+        // hizli yakalanir.
         //
-        // **ENFORCE'A GECIS** (Kerem onayi ile, 1 satir degisiklik):
-        // 1. Asagidaki `key: "Content-Security-Policy-Report-Only"` satirini
-        //    `key: "Content-Security-Policy"` yap.
-        // 2. `report-uri /api/csp-report` satirini KALDIR (enforce mode'da
-        //    direktifin ek anlami yok; report-to header ayri standart).
-        // 3. Vercel preview deploy ile sanity check, sonra prod merge.
-        // 4. Sentry'yi 1 hafta daha ek izle (yeni ozellik gelir, beklenmedik
-        //    3rd party script eklenirse).
+        // **Eger gercek violation gelirse**: Sentry'de yeni issue acilir,
+        // bir ozellik kirildiysa kullanici Sentry alert tetikler. Hizli
+        // cozum: whitelist'e ekle (asagidaki value array) + commit + push.
+        // Geri donus icin tek satir: header key "Content-Security-Policy"
+        // -> "Content-Security-Policy-Report-Only".
         //
         // Whitelist kaynaklari:
         // - 'self': Tarifle origin
@@ -107,7 +106,7 @@ const nextConfig: NextConfig = {
         // - fonts.googleapis.com + fonts.gstatic.com: web fontlar (ileride)
         // - data:, blob:: inline icon, avatar blob upload
         {
-          key: "Content-Security-Policy-Report-Only",
+          key: "Content-Security-Policy",
           value: [
             "default-src 'self'",
             "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://*.sentry-cdn.com",

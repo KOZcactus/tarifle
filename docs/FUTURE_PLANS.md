@@ -193,24 +193,19 @@ Kalan opsiyonel polish'ler:
 
 
 
-### CSP Report-Only → enforce geçiş (oturum 21 izleme TAMAM, Kerem onayı bekler)
+### CSP ENFORCE CANLI ✅ (oturum 21)
 
-**Oturum 21 izleme sonucu**: Sentry'de son 14 gün **0 CSP violation**.
-Policy whitelist mevcut altyapı (Vercel Analytics + Sentry + Cloudinary +
-Google OAuth avatar + Google Fonts) için doğru kalibre. Enforce'a geçiş
-riski düşük, prod kullanıcı sayısı henüz minimal (henüz public açılmadı).
+Sentry'de 14 gün 0 violation izleme sonrası enforce'a geçildi. Header
+artık `Content-Security-Policy` (Report-Only kaldırıldı). Whitelist
+disinda script/stil/img/font BLOKLANIR. Report-uri aktif: bloklamadan
+once Sentry'ye violation forward edilir. Geri dönüs için tek satir:
+header key reverse.
 
-**Aksiyon**: next.config.ts'de tek satır değişikliği (yorum bloğunda
-detaylı):
-1. `key: "Content-Security-Policy-Report-Only"` → `key: "Content-Security-Policy"`
-2. `report-uri /api/csp-report` satırını kaldır (opsiyonel, enforce'da
-   gerekmez ama kalsa zarar yok)
+**Sonraki 1 hafta izlem**: yeni özellik / 3rd party script eklenince
+beklenmedik violation Sentry alert ile yakalanır, hızlı whitelist
+extend.
 
-Kerem onayı ile commit + push, Vercel deploy 2 dk. Sonraki 1 hafta
-ek Sentry izlem (yeni özellik veya 3rd party script eklenince
-beklenmedik violation çıkabilir).
-
-### CSP Report-Only ESKİ NOT (oturum 19'da ship edildi, izleme aşaması)
+### CSP Report-Only ESKİ NOT (oturum 19'da ship edildi, oturum 21'de enforce)
 
 Oturum 19'da ship edildi:
 - `Content-Security-Policy-Report-Only` header aktif (next.config.ts)

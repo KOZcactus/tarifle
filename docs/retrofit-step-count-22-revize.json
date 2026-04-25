@@ -1,0 +1,3375 @@
+[
+  {
+    "slug": "japchae",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Japchae başlangıcı olarak erişteyi 7 dakika haşlayıp süzün.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sebzeleri tavada 8 dakika soteleyin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Japchae sosunu erişteyle buluşturmadan önce tuzunu kontrol edin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Erişte, sebze, soya sosu ve susam yağını karıştırın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Japchae eriştesini sosla 2 dakika tavada çevirin, kaplama yüzeye tutunsun.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Japchae sıcak servis edilirken susam, yeşillik veya sosla tamamlayın."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Japchae son kontrolünde tuz, ekşilik veya yağ dengesini servis öncesi ayarlayın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Japchae tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "japon-susamli-edamame-pirinc-kasesi",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Japon Susamlı Edamame Pirinç Kasesi başlangıcı olarak edamameyi kaynar suda 3 dakika haşlayıp süzün.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soya sosu ve susam yağını küçük kasede karıştırın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sıcak pirinci kaselere paylaştırıp edamame ekleyin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Japon Susamlı Edamame Pirinç Kasesi tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Japon Susamlı Edamame Pirinç Kasesi pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın, böylece Japon Susamlı Edamame Pirinç Kasesi servis dengesi korunur.",
+        "timerSeconds": 480
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Japon Susamlı Edamame Pirinç Kasesi tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "jeyuk-bokkeum",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Jeyuk Bokkeum başlangıcı olarak eti marinasyonla 30 dakika bekletin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Eti yüksek ateşte 15 dakika soteleyin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Jeyuk Bokkeum tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Susam ve taze soğanla servis edin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Jeyuk Bokkeum ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Jeyuk Bokkeum servisinde tavadaki yoğun sosu malzemenin üzerine paylaştırın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Jeyuk Bokkeum tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "jjajangmyeon",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Jjajangmyeon başlangıcı olarak et ve sebzeleri 8 dakika soteleyin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Siyah fasulye ezmesini ekleyip 10 dakika pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sosu pişmiş noodle üzerine dökün.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Jjajangmyeon sosunu erişteyle buluşturmadan önce tuzunu kontrol edin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Jjajangmyeon eriştesini sosla 2 dakika tavada çevirin, kaplama yüzeye tutunsun.",
+        "timerSeconds": 120
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Jjajangmyeon tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kabak-boranisi-gaziantep-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabak Boranisi başlangıcı olarak kabukları alınmış kabağı iri küp doğrayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kabağı zeytinyağında 12 dakika yumuşayana kadar pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kabak Boranisi tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yoğurt, sarımsak ve nane ile birleştirip ılık servis edin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kabak Boranisi 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kabak Boranisi servisinde üstüne taze ot veya kızgın yağ gezdirin, böylece Kabak Boranisi servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kabak Boranisi tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kabak-cicegi-dolmasi",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabak çiçeklerini yıkayıp iç kısımlarını temizleyin."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinçli iç hazırlayıp çiçekleri doldurun."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tencerede 25 dakika pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kabak Çiçeği Dolması harcını doldururken üstte 1 parmak boşluk bırakın, pişerken şişip dağılmasın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kabak Çiçeği Dolması tenceresine sıcak suyu kenardan verin ve dolmaları oynatmadan kapağı kapatın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kabak Çiçeği Dolması tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kabak-cicekli-bulgur-pilavi-mugla-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabak Çiçekli Bulgur Pilavı için soğanı zeytinyağında çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bulgur ve suyu ekleyip pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kabak Çiçekli Bulgur Pilavı tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kabak çiçeklerini ekleyip 4 dakika dinlendirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kabak Çiçekli Bulgur Pilavı pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kabak Çiçekli Bulgur Pilavı tanelerini ezmeden alttan üste havalandırıp servis edin."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Kabak Çiçekli Bulgur Pilavı son kontrolünde tuz, ekşilik veya yağ dengesini servis öncesi ayarlayın, böylece Kabak Çiçekli Bulgur Pilavı servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kabak Çiçekli Bulgur Pilavı tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kabak-cicekli-lor-pilavi-izmir-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabak Çiçekli Lor Pilavı başlangıcı olarak pirinci zeytinyağında 3 dakika çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sıcak su ekleyip pilavı 10 dakika pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lor, dereotu ve kabak çiçeklerini katıp 5 dakika demlendirerek servis edin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kabak Çiçekli Lor Pilavı tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kabak Çiçekli Lor Pilavı pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın, böylece Kabak Çiçekli Lor Pilavı servis dengesi korunur.",
+        "timerSeconds": 480
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kabak Çiçekli Lor Pilavı tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kabak-cicekli-peynirli-borek-mugla-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabak Çiçekli Peynirli Börek için iç harcı hazırlayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kabak Çiçekli Peynirli Börek için yufkaları çiçeklerle katlayın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kabak Çiçekli Peynirli Börek hamurunu kapatırken kenarları parmak ucuyla bastırın, iç harç fırında akmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Böreği 22 dakika pişirin.",
+        "timerSeconds": 1320
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kabak Çiçekli Peynirli Börek tepsisini yağlayıp parçaları aralıklı dizin, sıcak hava aralarından geçsin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kabak Çiçekli Peynirli Börek piştikten sonra 5 dakika beklesin, katları keserken ezilmesin.",
+        "timerSeconds": 300
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kabak Çiçekli Peynirli Börek tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kabak-kalye",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabak Kalye başlangıcı olarak soğanı zeytinyağında 4 dakika kavurun.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kabak, domates ve nohudu ekleyin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yemeği 25-30 dakika kısık ateşte pişirip dereotu ekleyin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kabak Kalye tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kabak Kalye 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın, böylece Kabak Kalye servis dengesi korunur.",
+        "timerSeconds": 300
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kabak Kalye tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kabak-mucveri",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabakları rendeleyin, tuzlayıp 10 dakika bekletin, suyunu sıkın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yumurta, un, doğranmış dereotu ve ufalanmış peyniri ekleyip karıştırın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kabak Mücveri tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kaşık kaşık alıp kızgın yağda her iki tarafını kızartın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kabak Mücveri ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kabak Mücveri servisinde tavadaki yoğun sosu malzemenin üzerine paylaştırın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kabak Mücveri tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kabakli-bulgur-dolmasi-diyarbakir-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Diyarbakır Kabaklı Bulgur Dolması başlangıcı olarak kabakların içini dikkatlice oyun."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bulgurlu iç harcı hazırlayıp kabaklara doldurun."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Dolmaları domatesli sosta 24 dakika pişirin.",
+        "timerSeconds": 1440
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Diyarbakır Kabaklı Bulgur Dolması harcını doldururken üstte 1 parmak boşluk bırakın, pişerken şişip dağılmasın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Diyarbakır Kabaklı Bulgur Dolması tenceresine sıcak suyu kenardan verin ve dolmaları oynatmadan kapağı kapatın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Diyarbakır Kabaklı Bulgur Dolması tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kabakli-bulgur-pilavi-antalya-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Antalya Kabaklı Bulgur Pilavı başlangıcı olarak soğanı zeytinyağında 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bulgur, domates ve 2.5 su bardağı sıcak suyu ekleyin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Antalya Kabaklı Bulgur Pilavı tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Doğranmış kabağı son 8 dakikada katıp pilavı pişirerek servis edin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Antalya Kabaklı Bulgur Pilavı pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Antalya Kabaklı Bulgur Pilavı tanelerini ezmeden alttan üste havalandırıp servis edin."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Antalya Kabaklı Bulgur Pilavı son kontrolünde tuz, ekşilik veya yağ dengesini servis öncesi ayarlayın, böylece Antalya Kabaklı Bulgur Pilavı servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Antalya Kabaklı Bulgur Pilavı tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kabakli-yalanci-manti-kocaeli-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabaklı Yalancı Mantı başlangıcı olarak hamuru hazırlayıp küçük parçalar kesin."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kabakla birlikte parçaları haşlayın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yoğurt ve naneli yağ ile servis edin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kabaklı Yalancı Mantı hamurunu kapatırken kenarları parmak ucuyla bastırın, iç harç fırında akmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kabaklı Yalancı Mantı tepsisini yağlayıp parçaları aralıklı dizin, sıcak hava aralarından geçsin."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kabaklı Yalancı Mantı tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kabune-pilavi-isparta-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Isparta Kabune Pilavı başlangıcı olarak eti ve soğanı tencerede 10 dakika çevirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinci ve nohudu ekleyip tereyağıyla karıştırın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Isparta Kabune Pilavı tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "3 su bardağı sıcak su ekleyip pilavı 22 dakika pişirin, sonra demlendirin.",
+        "timerSeconds": 1320
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Isparta Kabune Pilavı pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Isparta Kabune Pilavı tanelerini ezmeden alttan üste havalandırıp servis edin, böylece Isparta Kabune Pilavı servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Isparta Kabune Pilavı tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kaburga-dolmasi",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kaburga Dolması başlangıcı olarak pirinç, badem ve kuş üzümüyle iç pilav hazırlayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pilavı kaburganın içine doldurup dikin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kapalı tencerede 3 saat pişirin.",
+        "timerSeconds": 10800
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kaburga Dolması harcını doldururken üstte 1 parmak boşluk bırakın, pişerken şişip dağılmasın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kaburga Dolması tenceresine sıcak suyu kenardan verin ve dolmaları oynatmadan kapağı kapatın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kaburga Dolması tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kagit-kebabi",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kağıt Kebabı başlangıcı olarak dana etini zeytinyağında 8 dakika mühürleyin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sebzeleri etle karıştırıp yağlı kağıt paketlerine paylaştırın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kağıt Kebabı tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Paketleri 180°C fırında 55-60 dakika pişirin.",
+        "timerSeconds": 3600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kağıt Kebabı 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kağıt Kebabı servisinde üstüne taze ot veya kızgın yağ gezdirin, böylece Kağıt Kebabı servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kağıt Kebabı tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kai-yang",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kai Yang başlangıcı olarak soya sosu, bal, ince kıyılmış limon otu ve sarımsağı karıştırıp tavuğu marine edin."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Marine edilmiş tavuğu 15 dakika dinlendirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Izgarada ya da döküm tavada her yüzünü 10-12 dakika pişirin.",
+        "timerSeconds": 1440
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kai Yang tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kai Yang 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın, böylece Kai Yang servis dengesi korunur.",
+        "timerSeconds": 300
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kai Yang tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kalops-isvec-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kalops başlangıcı olarak eti ve soğanı tencereye alın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Baharatları ve et suyunu ekleyin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kalops kabında sıcak suyu veya sosu kenardan ekleyin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yahniyi 50 dakika pişirin.",
+        "timerSeconds": 3000
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kalops piştikten sonra 10 dakika dinlensin, et suyu kesilince dışarı akmasın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kalops servisinde koyu pişme suyunu ana malzemenin üzerine gezdirin."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Kalops son kontrolünde tuz, ekşilik veya yağ dengesini servis öncesi ayarlayın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kalops tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kanelbullar",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kanelbullar başlangıcı olarak hamuru yoğurup 15 dakika dinlendirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Açıp tereyağı ve tarçın sürerek rulo yapın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Dilimleyip 190°C fırında 18-20 dakika pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kanelbullar hamurunu kapatırken kenarları parmak ucuyla bastırın, iç harç fırında akmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kanelbullar tepsisini yağlayıp parçaları aralıklı dizin, sıcak hava aralarından geçsin."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kanelbullar tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kapali-pide-carsamba-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Çarşamba Kapalı Pide başlangıcı olarak hamuru yoğurup 20 dakika dinlendirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kıyma, soğan ve baharatla iç harcı hazırlayın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Çarşamba Kapalı Pide hamurunu kapatırken kenarları parmak ucuyla bastırın, iç harç fırında akmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamura iç koyup kapatarak pideleri 220°C fırında 15 dakika pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Çarşamba Kapalı Pide tepsisini yağlayıp parçaları aralıklı dizin, sıcak hava aralarından geçsin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Çarşamba Kapalı Pide piştikten sonra 5 dakika beklesin, katları keserken ezilmesin.",
+        "timerSeconds": 300
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Çarşamba Kapalı Pide tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kapali-sembusek-mardin-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mardin Sembusek başlangıcı olarak hamuru yoğurup 20 dakika dinlendirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kıyma, soğan ve salçayı 5 dakika çevirip iç harcı hazırlayın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru açıp harcı koyun, yarım ay kapatın ve sembusekleri 220°C fırında 18 dakika pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Mardin Sembusek hamurunu kapatırken kenarları parmak ucuyla bastırın, iç harç fırında akmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Mardin Sembusek tepsisini yağlayıp parçaları aralıklı dizin, sıcak hava aralarından geçsin."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Mardin Sembusek tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kapros-zoldbabfozelek-macar-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kapros Zöldbabfőzelék başlangıcı olarak fasulyeyi doğrayıp 12 dakika haşlayın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Krema ve unu çırpın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kapros Zöldbabfőzelék tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sosu ve dereotunu fasulyeye ekleyip kısa pişirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kapros Zöldbabfőzelék 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kapros Zöldbabfőzelék servisinde üstüne taze ot veya kızgın yağ gezdirin, böylece Kapros Zöldbabfőzelék servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kapros Zöldbabfőzelék tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kapuska",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kapuska başlangıcı olarak soğan ve kıymayı zeytinyağında 8 dakika kavurun.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Salça, doğranmış lahana, pirinç, sıcak su ve tuzu ekleyin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kısık ateşte lahana yumuşayana kadar 35-40 dakika pişirin.",
+        "timerSeconds": 2400
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kapuska tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kapuska 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın, böylece Kapuska servis dengesi korunur.",
+        "timerSeconds": 300
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kapuska tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "karaage",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karaage başlangıcı olarak tavuğu soya sosu ve zencefille 25 dakika marine edin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karaage için tavuğu nişastaya bulayın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karaage tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Parçaları 170°C yağda 12-15 dakika kızartın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karaage ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Karaage servisinde tavadaki yoğun sosu malzemenin üzerine paylaştırın."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Karaage son kontrolünde tuz, ekşilik veya yağ dengesini servis öncesi ayarlayın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Karaage tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "karabiberli-lahana-dana-tava-polonya-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karabiberli Lahana Dana Tava başlangıcı olarak dana etini tereyağında 5 dakika mühürleyin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve lahanayı ekleyip 7 dakika çevirmeye devam edin.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karabiberi katıp kapağı kapalı şekilde 4 dakika pişirerek servis edin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karabiberli Lahana Dana Tava tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karabiberli Lahana Dana Tava ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Karabiberli Lahana Dana Tava tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "karabugdayli-kofte-tava-rus-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karabuğdaylı Köfte Tava başlangıcı olarak kıymayı galeta unu ve soğanla yoğurup köfteler hazırlayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Köfteleri tavada 6 dakika mühürleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karabuğdaylı Köfte Tava tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karabuğday ve suyu ekleyip 12 dakika pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karabuğdaylı Köfte Tava ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Karabuğdaylı Köfte Tava servisinde tavadaki yoğun sosu malzemenin üzerine paylaştırın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Karabuğdaylı Köfte Tava tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "karabugdayli-tavuk-firini-rus-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karabuğdaylı Tavuk Fırını başlangıcı olarak karabuğdayı kuru tavada 3 dakika kavurun.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mantar ve soğanı 6 dakika soteleyip fırın kabına alın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tavuk ve suyu ekleyip 190 derecede 35 dakika pişirin.",
+        "timerSeconds": 2100
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karabuğdaylı Tavuk Fırını tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karabuğdaylı Tavuk Fırını 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın, böylece Karabuğdaylı Tavuk Fırını servis dengesi korunur.",
+        "timerSeconds": 300
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Karabuğdaylı Tavuk Fırını tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "karadeniz-lahana-sarmasi",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lahana yapraklarını 5 dakika haşlayıp süzün.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bulgur, soğan ve salçayla iç hazırlayın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lahana Sarması harcını doldururken üstte 1 parmak boşluk bırakın, pişerken şişip dağılmasın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sarmaları tencereye dizip 50 dakika pişirin.",
+        "timerSeconds": 3000
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Lahana Sarması tenceresine sıcak suyu kenardan verin ve dolmaları oynatmadan kapağı kapatın."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Lahana Sarması piştikten sonra 8 dakika dinlensin, iç harç yaprağa tutunsun.",
+        "timerSeconds": 480
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Lahana Sarması tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "karadeniz-pidesi",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karadeniz Pidesi başlangıcı olarak un, maya ve suyla hamur yoğurup 35 dakika mayalandırın.",
+        "timerSeconds": 2100
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru açıp peynir ve tereyağıyla doldurun."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "230°C fırında 18 dakika pişirip yumurta ekleyin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karadeniz Pidesi hamurunu kapatırken kenarları parmak ucuyla bastırın, iç harç fırında akmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karadeniz Pidesi tepsisini yağlayıp parçaları aralıklı dizin, sıcak hava aralarından geçsin."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Karadeniz Pidesi tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "karalahana-diblesi-giresun-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karalahana Diblesi başlangıcı olarak soğanı zeytinyağında 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karalahana ve pirinci ekleyin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karalahana Diblesi tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Suyu katıp yemeği 18 dakika pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karalahana Diblesi 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Karalahana Diblesi servisinde üstüne taze ot veya kızgın yağ gezdirin."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Karalahana Diblesi son kontrolünde tuz, ekşilik veya yağ dengesini servis öncesi ayarlayın, böylece Karalahana Diblesi servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Karalahana Diblesi tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "karalahana-sarmasi-karadeniz-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karalahana yapraklarını 2 dakika haşlayıp süzün.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinç, soğan, salça, zeytinyağı ve tuzu karıştırıp iç harcı hazırlayın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yapraklara harç sarın ve sarmaları 30 dakika pişirip yoğurtla servis edin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karalahana Sarması harcını doldururken üstte 1 parmak boşluk bırakın, pişerken şişip dağılmasın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karalahana Sarması tenceresine sıcak suyu kenardan verin ve dolmaları oynatmadan kapağı kapatın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Karalahana Sarması tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "karalahanali-barbunya-diblesi-giresun-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karalahanalı Barbunya Diblesi için soğanı kısa çevirin."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Barbunya, lahana ve pirinci ekleyin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karalahanalı Barbunya Diblesi tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yemeği 20 dakika pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karalahanalı Barbunya Diblesi 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Karalahanalı Barbunya Diblesi servisinde üstüne taze ot veya kızgın yağ gezdirin, böylece Karalahanalı Barbunya Diblesi servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Karalahanalı Barbunya Diblesi tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "karalahanali-kuru-fasulye-diblesi-rize-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Rize Karalahanalı Kuru Fasulye Diblesi başlangıcı olarak soğanı 4 dakika yağda çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karalahana ve fasulyeyi ekleyip 8 dakika pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinç ve 1.5 su bardağı su ekleyip yemeği 16 dakika pişirin.",
+        "timerSeconds": 960
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Rize Karalahanalı Kuru Fasulye Diblesi tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Rize Karalahanalı Kuru Fasulye Diblesi 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın, böylece Rize Karalahanalı Kuru Fasulye Diblesi servis dengesi korunur.",
+        "timerSeconds": 300
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Rize Karalahanalı Kuru Fasulye Diblesi tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "karalahanali-lorlu-gozleme-trabzon-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karalahanalı Lorlu Gözleme başlangıcı olarak karalahanayı 3 dakika çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Harcı yufkaya pay edin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karalahanalı Lorlu Gözleme hamurunu kapatırken kenarları parmak ucuyla bastırın, iç harç fırında akmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Gözlemeyi 10 dakika pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karalahanalı Lorlu Gözleme tepsisini yağlayıp parçaları aralıklı dizin, sıcak hava aralarından geçsin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Karalahanalı Lorlu Gözleme piştikten sonra 5 dakika beklesin, katları keserken ezilmesin.",
+        "timerSeconds": 300
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Karalahanalı Lorlu Gözleme tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "karalahanali-pirincli-tava-giresun-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Giresun Karalahanalı Pirinçli Tava için lahanayı ince doğrayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı yağda 4 dakika çevirip lahanayı ekleyin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinci ve 1.5 su bardağı sıcak suyu katıp 15 dakika pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Giresun Karalahanalı Pirinçli Tava tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Giresun Karalahanalı Pirinçli Tava pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın, böylece Giresun Karalahanalı Pirinçli Tava servis dengesi korunur.",
+        "timerSeconds": 480
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Giresun Karalahanalı Pirinçli Tava tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "karamel-biberli-tavuk-pirinci-vietnam-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Şekeri tavada karamelize edin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavuğu ekleyip 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karamel Biberli Tavuk Pirinci tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pirinçle birlikte servis edin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karamel Biberli Tavuk Pirinci 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Karamel Biberli Tavuk Pirinci servisinde üstüne taze ot veya kızgın yağ gezdirin."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Karamel Biberli Tavuk Pirinci son kontrolünde tuz, ekşilik veya yağ dengesini servis öncesi ayarlayın, böylece Karamel Biberli Tavuk Pirinci servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Karamel Biberli Tavuk Pirinci tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "karamelize-soganli-pirojki-rus-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karamelize Soğanlı Pirojki başlangıcı olarak hamuru yoğurup 20 dakika dinlendirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı tavada 10 dakika karamelize edin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirojkileri kapatıp 190 derecede 16 dakika pişirin.",
+        "timerSeconds": 960
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karamelize Soğanlı Pirojki hamurunu kapatırken kenarları parmak ucuyla bastırın, iç harç fırında akmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karamelize Soğanlı Pirojki tepsisini yağlayıp parçaları aralıklı dizin, sıcak hava aralarından geçsin.",
+        "timerSeconds": 300
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Karamelize Soğanlı Pirojki tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "karidesli-safranli-pirinc-tava-ispanya-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karidesli Safranlı Pirinç Tava başlangıcı olarak karidesi 3 dakika çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinç ve safranı ekleyin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karidesli Safranlı Pirinç Tava tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tavayı 14 dakika pişirin.",
+        "timerSeconds": 840
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karidesli Safranlı Pirinç Tava pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Karidesli Safranlı Pirinç Tava tanelerini ezmeden alttan üste havalandırıp servis edin, böylece Karidesli Safranlı Pirinç Tava servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Karidesli Safranlı Pirinç Tava tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kasarli-eriste-tavasi-kars-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kars Kaşarlı Erişte Tavası başlangıcı olarak erişteyi 8 dakika haşlayıp süzün.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tereyağında erişteyi 2 dakika çevirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kaşarı ekleyip eriyene kadar karıştırarak servis edin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kars Kaşarlı Erişte Tavası tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kars Kaşarlı Erişte Tavası ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kars Kaşarlı Erişte Tavası tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kasarli-rocoto-empanada-peru-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kaşarlı Rocoto Empanada başlangıcı olarak soğan ve rocotoyu 5 dakika çevirip iç harcı hazırlayın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Peyniri ekleyip harcı hamurların içine paylaştırın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kaşarlı Rocoto Empanada hamurunu kapatırken kenarları parmak ucuyla bastırın, iç harç fırında akmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Empanadaları 200 derecede 18 dakika pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kaşarlı Rocoto Empanada tepsisini yağlayıp parçaları aralıklı dizin, sıcak hava aralarından geçsin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kaşarlı Rocoto Empanada piştikten sonra 5 dakika beklesin, katları keserken ezilmesin.",
+        "timerSeconds": 300
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kaşarlı Rocoto Empanada tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kasha-grechka",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kasha Grechka başlangıcı olarak karabuğdayı kuru tavada 3 dakika kavurun.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve mantarı tereyağında 8 dakika pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karabuğdayla birlikte 20 dakika pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kasha Grechka tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kasha Grechka pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın, böylece Kasha Grechka servis dengesi korunur.",
+        "timerSeconds": 480
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kasha Grechka tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kasha-grechnevaya-rus-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kasha Grechnevaya başlangıcı olarak karabuğdayı 3 dakika kavurun.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Su ve tuzu ekleyin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kasha Grechnevaya tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pilavı 15 dakika pişirip tereyağıyla tamamlayın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kasha Grechnevaya pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kasha Grechnevaya tanelerini ezmeden alttan üste havalandırıp servis edin."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Kasha Grechnevaya son kontrolünde tuz, ekşilik veya yağ dengesini servis öncesi ayarlayın, böylece Kasha Grechnevaya servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kasha Grechnevaya tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kastamonu-banduma",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kastamonu Banduma başlangıcı olarak hindi etini 90 dakika haşlayıp didikleyin.",
+        "timerSeconds": 5400
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yufkaları et suyuna batırıp tepsiye dizin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hindi, ceviz ve tereyağıyla katları tamamlayın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kastamonu Banduma tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kastamonu Banduma 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın, böylece Kastamonu Banduma servis dengesi korunur.",
+        "timerSeconds": 300
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kastamonu Banduma tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kavurmali-bulgur-kapama-kirsehir-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soğanı tereyağında 3 dakika çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kavurma ve bulguru ekleyip 2 dakika kavurun.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bu tarif tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Et suyunu katıp pilavı 14 dakika pişirin.",
+        "timerSeconds": 840
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kavurmalı Bulgur Kapama pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Bu tarif tanelerini ezmeden alttan üste havalandırıp servis edin, böylece Bu tarif servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kavurmalı Bulgur Kapama tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kavurmali-bulgur-tava-erzincan-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kavurmayı tavada 3 dakika ısıtın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve biberi ekleyip 4 dakika pişirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bulgur ve suyu katıp kapağı kapalı şekilde 12 dakika pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Bu tarif tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kavurmalı Bulgur Tava pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın, böylece Kavurmalı Bulgur Tava servis dengesi korunur.",
+        "timerSeconds": 480
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kavurmalı Bulgur Tava tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kavurmali-eriste-pilavi-kars-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kavurmalı Erişte Pilavı için erişteyi yağda kavurun.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kavurmalı Erişte Pilavı için suyu ekleyip pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bu tarif tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kavurmayla 4 dakika daha çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kavurmalı Erişte Pilavı pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Bu tarif tanelerini ezmeden alttan üste havalandırıp servis edin, böylece Bu tarif servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kavurmalı Erişte Pilavı tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kayisi-yahni-malatya-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Malatya Kayısı Yahnisi başlangıcı olarak eti tereyağında yüksek ateşte 6 dakika mühürleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve su ekleyip eti 25 dakika pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kayısı ve tarçını ekleyip yemeği 10 dakika daha pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Malatya Kayısı Yahnisi kabında sıcak suyu veya sosu kenardan ekleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Malatya Kayısı Yahnisi piştikten sonra 10 dakika dinlensin, et suyu kesilince dışarı akmasın.",
+        "timerSeconds": 600
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Malatya Kayısı Yahnisi tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kayisili-irmik-pilavi-macaristan-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kayısılı İrmik Pilavı için irmiği kavurun.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kayısı ve suyu ekleyin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kayısılı İrmik Pilavı tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pilavı 8 dakika pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kayısılı İrmik Pilavı pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kayısılı İrmik Pilavı tanelerini ezmeden alttan üste havalandırıp servis edin."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Kayısılı İrmik Pilavı son kontrolünde tuz, ekşilik veya yağ dengesini servis öncesi ayarlayın, böylece Kayısılı İrmik Pilavı servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kayısılı İrmik Pilavı tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kayisili-kuzu-sote-malatya-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kayısılı Kuzu Sote başlangıcı olarak eti 8 dakika mühürleyin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kayısılı Kuzu Sote için soğanı ekleyin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kayısıyla birlikte 10 dakika pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kayısılı Kuzu Sote tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kayısılı Kuzu Sote ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kayısılı Kuzu Sote tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kayisili-yarma-pilavi-malatya-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kayısılı Yarma Pilavı için soğanı kısa çevirin."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yarma ve suyu ekleyin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kayısılı Yarma Pilavı tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kayısıyla birlikte 18 dakika pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kayısılı Yarma Pilavı pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kayısılı Yarma Pilavı tanelerini ezmeden alttan üste havalandırıp servis edin, böylece Kayısılı Yarma Pilavı servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kayısılı Yarma Pilavı tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kayseri-mantisi-otantik",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kayseri Mantısı Otantik başlangıcı olarak un, yumurta ve suyla sert hamur yoğurun."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru küçük karelere kesip kıymalı içle kapatın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Mantıları 12-15 dakika haşlayıp yoğurtla servis edin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kayseri Mantısı Otantik hamurunu kapatırken kenarları parmak ucuyla bastırın, iç harç fırında akmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kayseri Mantısı Otantik tepsisini yağlayıp parçaları aralıklı dizin, sıcak hava aralarından geçsin."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kayseri Mantısı Otantik tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kayseri-pastirmali-nohutlu-tava",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kayseri Pastırmalı Nohutlu Tava başlangıcı olarak soğanı tereyağında 4 dakika yumuşatın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Domatesi ekleyip suyunu çekene kadar 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kayseri Pastırmalı Nohutlu Tava tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Nohudu tavaya katıp 8 dakika ısıtın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kayseri Pastırmalı Nohutlu Tava ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kayseri Pastırmalı Nohutlu Tava servisinde tavadaki yoğun sosu malzemenin üzerine paylaştırın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kayseri Pastırmalı Nohutlu Tava tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kayseri-poc",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kayseri Pöç başlangıcı olarak eti tavada kısa mühürleyin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Domates, biber, sarımsak ve tuzla fırın kabına alın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yemeği 170°C fırında 170 dakika pişirin.",
+        "timerSeconds": 10200
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kayseri Pöç kabında sıcak suyu veya sosu kenardan ekleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kayseri Pöç piştikten sonra 10 dakika dinlensin, et suyu kesilince dışarı akmasın.",
+        "timerSeconds": 600
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kayseri Pöç tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kayseri-yag-mantisi",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kayseri Yağ Mantısı başlangıcı olarak un ve suyla hamur yoğurup 20 dakika dinlendirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kıyma ve soğanla iç hazırlayıp mantıları kapatın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kayseri Yağ Mantısı hamurunu kapatırken kenarları parmak ucuyla bastırın, iç harç fırında akmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Mantıları 12 dakika haşlayın ve sarımsaklı yoğurt ile salçalı yağla servis edin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kayseri Yağ Mantısı tepsisini yağlayıp parçaları aralıklı dizin, sıcak hava aralarından geçsin."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kayseri Yağ Mantısı piştikten sonra 5 dakika beklesin, katları keserken ezilmesin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Kayseri Yağ Mantısı son kontrolünde tuz, ekşilik veya yağ dengesini servis öncesi ayarlayın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kayseri Yağ Mantısı tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kayseri-yaglamasi",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kayseri Yağlaması başlangıcı olarak un ve mayayla hamur yoğurup 40 dakika mayalandırın.",
+        "timerSeconds": 2400
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bezeleri ince açıp tavada pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kıyma ve domatesi 20 dakika pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kayseri Yağlaması hamurunu kapatırken kenarları parmak ucuyla bastırın, iç harç fırında akmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kayseri Yağlaması tepsisini yağlayıp parçaları aralıklı dizin, sıcak hava aralarından geçsin."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kayseri Yağlaması tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kaytaz-boregi-hatay-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kaytaz Böreği başlangıcı olarak un, su ve mayayla hamur yoğurup 20 dakika dinlendirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kıyma, rendelenmiş soğan, domates, salça ve tuzu karıştırarak iç harcı hazırlayın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kaytaz Böreği tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamurdan küçük bezeler açıp harcı üstlerine yayın ve kenarlarını hafif yükseltin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kaytaz Böreği 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kaytaz Böreği servisinde üstüne taze ot veya kızgın yağ gezdirin, böylece Kaytaz Böreği servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kaytaz Böreği tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kaz-etli-bulgur-tava-ardahan-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kaz Etli Bulgur Tava başlangıcı olarak soğanı 3 dakika çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bulgur ve suyu ekleyin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kaz etiyle birlikte 14 dakika pişirin.",
+        "timerSeconds": 840
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kaz Etli Bulgur Tava tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kaz Etli Bulgur Tava pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın, böylece Kaz Etli Bulgur Tava servis dengesi korunur.",
+        "timerSeconds": 480
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kaz Etli Bulgur Tava tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "keci-peynirli-biber-dolmasi-antalya-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Keçi Peynirli Biber Dolması için iç harcı hazırlayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Biberleri doldurup tencereye alın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Keçi Peynirli Biber Dolması harcını doldururken üstte 1 parmak boşluk bırakın, pişerken şişip dağılmasın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Dolmaları 18 dakika pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Keçi Peynirli Biber Dolması tenceresine sıcak suyu kenardan verin ve dolmaları oynatmadan kapağı kapatın."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Keçi Peynirli Biber Dolması piştikten sonra 8 dakika dinlensin, iç harç yaprağa tutunsun.",
+        "timerSeconds": 480
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Keçi Peynirli Biber Dolması tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kefta-tagine",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kefta Tagine başlangıcı olarak kıyma ve kimyonla küçük köfteler hazırlayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Domates rendesini tavada 10 dakika pişirin ve köfteleri ekleyin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yumurtaları kırıp yemeği 8 dakika daha pişirin ve maydanozla servis edin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kefta Tagine kabında sıcak suyu veya sosu kenardan ekleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kefta Tagine piştikten sonra 10 dakika dinlensin, et suyu kesilince dışarı akmasın.",
+        "timerSeconds": 600
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kefta Tagine tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "keftali-bulgur-tava-fas-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Keftalı Bulgur Tava başlangıcı olarak kıymayı köfte şeklinde hazırlayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bulgur ve domatesi tavaya alın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Keftalı Bulgur Tava tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Köftelerle birlikte 14 dakika pişirin.",
+        "timerSeconds": 840
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Keftalı Bulgur Tava pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Keftalı Bulgur Tava tanelerini ezmeden alttan üste havalandırıp servis edin."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Keftalı Bulgur Tava son kontrolünde tuz, ekşilik veya yağ dengesini servis öncesi ayarlayın, böylece Keftalı Bulgur Tava servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Keftalı Bulgur Tava tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kekikli-biber-dolmasi-denizli-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Denizli Kekikli Biber Dolması için biberlerin içini temizleyin."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinçli harcı hazırlayıp biberleri doldurun."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Dolmaları 190°C fırında 30 dakika pişirin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Denizli Kekikli Biber Dolması harcını doldururken üstte 1 parmak boşluk bırakın, pişerken şişip dağılmasın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Denizli Kekikli Biber Dolması tenceresine sıcak suyu kenardan verin ve dolmaları oynatmadan kapağı kapatın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Denizli Kekikli Biber Dolması tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kekikli-cipura-izgara-bodrum-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kekikli Çipura Izgara için balığı marine edin."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Izgarada ilk yüzünü 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kekikli Çipura Izgara tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Çevirip 6 dakika daha pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kekikli Çipura Izgara ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kekikli Çipura Izgara servisinde tavadaki yoğun sosu malzemenin üzerine paylaştırın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kekikli Çipura Izgara tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kekikli-dana-arpacik-tava-denizli-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kekikli Dana Arpacık Tava başlangıcı olarak eti 6 dakika mühürleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kekikli Dana Arpacık Tava için soğanı ekleyin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kekikle birlikte 10 dakika pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kekikli Dana Arpacık Tava tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kekikli Dana Arpacık Tava ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kekikli Dana Arpacık Tava tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kekikli-dana-firinda-patlican-bodrum-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kekikli Dana Fırında Patlıcan başlangıcı olarak patlıcanı 6 dakika mühürleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Et ve sosu ekleyin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kekikli Dana Fırında Patlıcan tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tepsiyi 18 dakika pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kekikli Dana Fırında Patlıcan 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kekikli Dana Fırında Patlıcan servisinde üstüne taze ot veya kızgın yağ gezdirin, böylece Kekikli Dana Fırında Patlıcan servis dengesi korunur.",
+        "timerSeconds": 300
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kekikli Dana Fırında Patlıcan tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kekikli-lorlu-gozleme-isparta-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kekikli Lorlu Gözleme başlangıcı olarak un ve suyla hamur yoğurup 15 dakika dinlendirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lor peyniri ve kekiği karıştırıp açtığınız hamura yayın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Gözlemeyi sacda 8 dakika pişirip sıcak servis edin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kekikli Lorlu Gözleme hamurunu kapatırken kenarları parmak ucuyla bastırın, iç harç fırında akmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kekikli Lorlu Gözleme tepsisini yağlayıp parçaları aralıklı dizin, sıcak hava aralarından geçsin."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kekikli Lorlu Gözleme tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kekikli-mantar-guveci-denizli-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Denizli Kekikli Mantar Güveci başlangıcı olarak mantarları iri bırakıp sarımsak ve yağla karıştırın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kekiği ekleyip karışımı güvece aktarın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Denizli Kekikli Mantar Güveci tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "180°C fırında 20 dakika pişirip ekmekle servis edin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Denizli Kekikli Mantar Güveci 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Denizli Kekikli Mantar Güveci servisinde üstüne taze ot veya kızgın yağ gezdirin."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Denizli Kekikli Mantar Güveci son kontrolünde tuz, ekşilik veya yağ dengesini servis öncesi ayarlayın, böylece Denizli Kekikli Mantar Güveci servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Denizli Kekikli Mantar Güveci tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kekikli-nohutlu-pilav-mersin-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kekikli Nohutlu Pilav için pirinci yıkayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Su ve nohutu ekleyin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pilavı 14 dakika pişirip dinlendirin.",
+        "timerSeconds": 840
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kekikli Nohutlu Pilav tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kekikli Nohutlu Pilav pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın, böylece Kekikli Nohutlu Pilav servis dengesi korunur.",
+        "timerSeconds": 480
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kekikli Nohutlu Pilav tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kekikli-tavuklu-kuskus-tava-izmir-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kekikli Tavuklu Kuskus Tava başlangıcı olarak tavuğu 6 dakika soteleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kuskus ve suyu ekleyin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kekikli Tavuklu Kuskus Tava tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kekikle birlikte 10 dakika pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kekikli Tavuklu Kuskus Tava pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kekikli Tavuklu Kuskus Tava tanelerini ezmeden alttan üste havalandırıp servis edin, böylece Kekikli Tavuklu Kuskus Tava servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kekikli Tavuklu Kuskus Tava tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kelecos-van-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Van Kelecoş başlangıcı olarak mercimeği 20 dakika haşlayın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yoğurdu sarımsak ve tuzla çırpın, lavaşı iri parçalayın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lavaş, mercimek ve yoğurdu kat kat yerleştirip tereyağlı nane ile servis edin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Van Kelecoş tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Van Kelecoş 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın, böylece Van Kelecoş servis dengesi korunur.",
+        "timerSeconds": 300
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Van Kelecoş tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kengerli-bulgur-tavasi-bingol-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kengerli Bulgur Tavası başlangıcı olarak kengeri 5 dakika haşlayın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve salçayı çevirin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kengerli Bulgur Tavası tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Bulgurla birlikte 14 dakika pişirin.",
+        "timerSeconds": 840
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kengerli Bulgur Tavası pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kengerli Bulgur Tavası tanelerini ezmeden alttan üste havalandırıp servis edin, böylece Kengerli Bulgur Tavası servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kengerli Bulgur Tavası tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kengerli-kuzu-sote-erzincan-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kengerli Kuzu Sote başlangıcı olarak eti 8 dakika mühürleyin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve kengeri ekleyin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Az suyla 12 dakika pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kengerli Kuzu Sote tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kengerli Kuzu Sote ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kengerli Kuzu Sote tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kereviz-sapli-barbunya-tava-balikesir-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soğan ve kereviz sapını zeytinyağında 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Domatesi ekleyip 5 dakika pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kereviz Saplı Barbunya Tava tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Barbunyayı katıp 7 dakika daha çevirerek servis edin.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kereviz Saplı Barbunya Tava ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kereviz Saplı Barbunya Tava servisinde tavadaki yoğun sosu malzemenin üzerine paylaştırın."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Kereviz Saplı Barbunya Tava son kontrolünde tuz, ekşilik veya yağ dengesini servis öncesi ayarlayın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kereviz Saplı Barbunya Tava tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "keskek-aydin-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Keşkek başlangıcı olarak dövme buğdayı yumuşayana kadar bol suda haşlayın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavuğu ayrı tencerede haşlayıp etini didikleyin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Buğday ve eti tuzla birlikte ezerek 20 dakika daha pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Keşkek kabında sıcak suyu veya sosu kenardan ekleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Keşkek piştikten sonra 10 dakika dinlensin, et suyu kesilince dışarı akmasın.",
+        "timerSeconds": 600
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Keşkek tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "keskek-usulu-tavuklu-bartin",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bartın Tavuklu Keşkek başlangıcı olarak dövmeyi 15 dakika sıcak suda bekletin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Dövme ve tavuğu tencereye alıp su ekleyin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bartın Tavuklu Keşkek kabında sıcak suyu veya sosu kenardan ekleyin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Keşkeği 70 dakika pişirip didiklenmiş tavuk ve tereyağıyla servis edin.",
+        "timerSeconds": 4200
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Bartın Tavuklu Keşkek piştikten sonra 10 dakika dinlensin, et suyu kesilince dışarı akmasın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Bartın Tavuklu Keşkek servisinde koyu pişme suyunu ana malzemenin üzerine gezdirin."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Bartın Tavuklu Keşkek tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "keskekli-istavrit-tava-sinop-liman-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Sinop Keşkekli İstavrit Tava başlangıcı olarak buğdayı yumuşayana kadar haşlayıp ezin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "İstavriti unlayıp tavada 8 dakika kızartın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Keşkeği tabağa alıp balığı üstüne yerleştirerek servis edin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sinop Keşkekli İstavrit Tava kabında sıcak suyu veya sosu kenardan ekleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sinop Keşkekli İstavrit Tava piştikten sonra 10 dakika dinlensin, et suyu kesilince dışarı akmasın.",
+        "timerSeconds": 600
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Sinop Keşkekli İstavrit Tava tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kesli-cevizli-eriste-bolu-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bolu Keşli Cevizli Erişte başlangıcı olarak erişteyi haşlayıp suyunun birazını ayırın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tereyağını eritip erişteyi tavaya alın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bolu Keşli Cevizli Erişte sosunu erişteyle buluşturmadan önce tuzunu kontrol edin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Keş ve cevizi ekleyip 3 dakika karıştırarak sıcak servis edin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Bolu Keşli Cevizli Erişte eriştesini sosla 2 dakika tavada çevirin, kaplama yüzeye tutunsun.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Bolu Keşli Cevizli Erişte sıcak servis edilirken susam, yeşillik veya sosla tamamlayın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Bolu Keşli Cevizli Erişte tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kesme-kete-erzincan-firin",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Erzincan Kesme Kete başlangıcı olarak un, süt, maya ve tuzla yumuşak bir hamur yoğurup 30 dakika mayalandırın.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru açıp eritilmiş tereyağını sürerek rulo yapın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ruloyu dilimleyip tepsiye dizin ve üstüne yumurta sürün."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Erzincan Kesme Kete hamurunu kapatırken kenarları parmak ucuyla bastırın, iç harç fırında akmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Erzincan Kesme Kete tepsisini yağlayıp parçaları aralıklı dizin, sıcak hava aralarından geçsin."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Erzincan Kesme Kete tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kestaneli-hamsi-pilavi-zonguldak-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kestaneli Hamsi Pilavı için soğanı kavurun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinci ve kestaneyi ekleyin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kestaneli Hamsi Pilavı tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamsilerle birlikte 16 dakika pişirin.",
+        "timerSeconds": 960
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kestaneli Hamsi Pilavı pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kestaneli Hamsi Pilavı tanelerini ezmeden alttan üste havalandırıp servis edin."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Kestaneli Hamsi Pilavı son kontrolünde tuz, ekşilik veya yağ dengesini servis öncesi ayarlayın, böylece Kestaneli Hamsi Pilavı servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kestaneli Hamsi Pilavı tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kestaneli-kereviz-yahnisi-bursa-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bursa Kestaneli Kereviz Yahnisi başlangıcı olarak soğanı yağda 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kereviz ve kestaneyi ekleyip 5 dakika soteleyin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Suyu ekleyip yemeği 20 dakika pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Bursa Kestaneli Kereviz Yahnisi kabında sıcak suyu veya sosu kenardan ekleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Bursa Kestaneli Kereviz Yahnisi piştikten sonra 10 dakika dinlensin, et suyu kesilince dışarı akmasın.",
+        "timerSeconds": 600
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Bursa Kestaneli Kereviz Yahnisi tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kestaneli-mantar-sote-bilecik-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kestaneli Mantar Sote için mantarı tavaya alın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kestaneli Mantar Sote için 5 dakika soteleyin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kestaneli Mantar Sote tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kestane ile birlikte 5 dakika daha çevirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kestaneli Mantar Sote ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kestaneli Mantar Sote servisinde tavadaki yoğun sosu malzemenin üzerine paylaştırın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kestaneli Mantar Sote tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kestaneli-mantarli-pilav-bolu-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kestaneli Mantarlı Pilav başlangıcı olarak pirinci yıkayıp tereyağında 2 dakika çevirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mantar ve kestaneyi ekleyip 3 dakika kavurun.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Suyu katıp pilavı 15 dakika pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kestaneli Mantarlı Pilav tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kestaneli Mantarlı Pilav pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın, böylece Kestaneli Mantarlı Pilav servis dengesi korunur.",
+        "timerSeconds": 480
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kestaneli Mantarlı Pilav tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kestaneli-tavuk-kapama-bursa-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kestaneli Tavuk Kapama başlangıcı olarak tavuğu tavada 6 dakika mühürleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinç ve kestaneyi tereyağında çevirip fırın kabına alın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kestaneli Tavuk Kapama kabında sıcak suyu veya sosu kenardan ekleyin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tavuk suyunu ekleyip yemeği 200 derecede 22 dakika pişirin.",
+        "timerSeconds": 1320
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kestaneli Tavuk Kapama piştikten sonra 10 dakika dinlensin, et suyu kesilince dışarı akmasın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kestaneli Tavuk Kapama servisinde koyu pişme suyunu ana malzemenin üzerine gezdirin."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kestaneli Tavuk Kapama tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "khao-man-gai-tay-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Khao Man Gai başlangıcı olarak tavuğu suda 18 dakika haşlayın.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinci aynı suyla pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tavuğu dilimleyip pirinçle servis edin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Khao Man Gai tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Khao Man Gai 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın, böylece Khao Man Gai servis dengesi korunur.",
+        "timerSeconds": 300
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Khao Man Gai tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "khao-pad",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Khao Pad başlangıcı olarak tavuk parçalarını wokta 5 dakika pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yumurtayı ekleyip 1 dakika karıştırın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Khao Pad tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pirinç, bezelye ve soya sosunu ekleyip 4 dakika kavurun.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Khao Pad ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Khao Pad servisinde tavadaki yoğun sosu malzemenin üzerine paylaştırın."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Khao Pad son kontrolünde tuz, ekşilik veya yağ dengesini servis öncesi ayarlayın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Khao Pad tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kibbeh",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kibbeh başlangıcı olarak bulguru 15 dakika sıcak suda bekletin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Dış harcı kıyma ile 10 dakika yoğurun.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "İç harcı soğan, kıyma ve cevizle 12 dakika pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kibbeh harcını doldururken üstte 1 parmak boşluk bırakın, pişerken şişip dağılmasın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kibbeh tenceresine sıcak suyu kenardan verin ve dolmaları oynatmadan kapağı kapatın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kibbeh tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kibe-mumbar",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kibe Mumbar başlangıcı olarak sakatatı temizleyip tuzlu suda bekletin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinç, kıyma ve baharatla iç hazırlayın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kibe Mumbar harcını doldururken üstte 1 parmak boşluk bırakın, pişerken şişip dağılmasın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Doldurulan parçaları 100 dakika pişirin.",
+        "timerSeconds": 6000
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kibe Mumbar tenceresine sıcak suyu kenardan verin ve dolmaları oynatmadan kapağı kapatın."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kibe Mumbar piştikten sonra 8 dakika dinlensin, iç harç yaprağa tutunsun.",
+        "timerSeconds": 480
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kibe Mumbar tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kilis-eksili-yesil-mercimek-tavasi",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kilis Ekşili Yeşil Mercimek Tavası başlangıcı olarak mercimeği 18-20 dakika diri kalacak şekilde haşlayın.",
+        "timerSeconds": 1140
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı zeytinyağında 5 dakika yumuşayana kadar kavurun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Biber salçasını ekleyip 2 dakika kokusunu çıkarın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kilis Ekşili Yeşil Mercimek Tavası tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kilis Ekşili Yeşil Mercimek Tavası ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kilis Ekşili Yeşil Mercimek Tavası tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kilis-oruk",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kilis Oruk başlangıcı olarak bulgur ve kıymayı yoğurup dış harç hazırlayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kilis Oruk için cevizli içi kavurun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kilis Oruk harcını doldururken üstte 1 parmak boşluk bırakın, pişerken şişip dağılmasın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Orukları doldurup 25 dakika kızartın.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kilis Oruk tenceresine sıcak suyu kenardan verin ve dolmaları oynatmadan kapağı kapatın."
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kilis Oruk piştikten sonra 8 dakika dinlensin, iç harç yaprağa tutunsun.",
+        "timerSeconds": 480
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kilis Oruk tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kilis-tava-firin-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kilis Tava başlangıcı olarak kıyma, biberler, domates, sarımsak, tuz ve kırmızı toz biberi yoğurun."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Harci tepsiye bastırıp üstüne kuru soğan halkaları yerleştirin."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kilis tavayı 200°C fırında 22 dakika pişirin.",
+        "timerSeconds": 1320
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kilis Tava tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kilis Tava ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kilis Tava tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kimchi-bokkeumbap",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kimchiyi doğrayıp susam yağıyla 3 dakika kavurun.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinç ve soya sosunu ekleyip 6 dakika karıştırarak pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kimchi Bokkeumbap tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ayrı tavada yumurtaları pişirip pilavın üzerine koyun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kimchi Bokkeumbap ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kimchi Bokkeumbap servisinde tavadaki yoğun sosu malzemenin üzerine paylaştırın."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Kimchi Bokkeumbap son kontrolünde tuz, ekşilik veya yağ dengesini servis öncesi ayarlayın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kimchi Bokkeumbap tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kimyonlu-yesil-mercimekli-bulgur-pilavi-konya-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kimyonlu Yeşil Mercimekli Bulgur Pilavı başlangıcı olarak soğanı tereyağında 3 dakika çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bulgur ve kimyonu ekleyip 2 dakika kavurun.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Mercimek ve suyu katıp pilavı 12 dakika pişirerek demlendirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kimyonlu Yeşil Mercimekli Bulgur Pilavı tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kimyonlu Yeşil Mercimekli Bulgur Pilavı pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın, böylece Kimyonlu Yeşil Mercimekli Bulgur Pilavı servis dengesi korunur.",
+        "timerSeconds": 480
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kimyonlu Yeşil Mercimekli Bulgur Pilavı tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kiraz-yaprakli-kofte-malatya-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Malatya Kiraz Yapraklı Köfte başlangıcı olarak bulgur ve unla küçük köfteler hazırlayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kiraz yapraklarını kısa haşlayıp tencereye dizin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Malatya Kiraz Yapraklı Köfte tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Köfteleri salçalı suda 15 dakika pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Malatya Kiraz Yapraklı Köfte 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Malatya Kiraz Yapraklı Köfte servisinde üstüne taze ot veya kızgın yağ gezdirin, böylece Malatya Kiraz Yapraklı Köfte servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Malatya Kiraz Yapraklı Köfte tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kiraz-yaprakli-sarma-malatya-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Malatya Kiraz Yapraklı Sarma başlangıcı olarak yaprakları sıcak suda 1 dakika yumuşatın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinçli içi hazırlayıp yapraklara sarın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sarmaları limonlu suyla 20 dakika pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Malatya Kiraz Yapraklı Sarma harcını doldururken üstte 1 parmak boşluk bırakın, pişerken şişip dağılmasın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Malatya Kiraz Yapraklı Sarma tenceresine sıcak suyu kenardan verin ve dolmaları oynatmadan kapağı kapatın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Malatya Kiraz Yapraklı Sarma tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kiremitte-mantar-kavurma-zonguldak-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bu tarif için mantarı iri doğrayın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Biber ve sarımsağı yağda 2 dakika çevirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bu tarif tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Mantarı ekleyip 10 dakika yüksek ateşte pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Zonguldak Kiremitte Mantar Kavurma ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Bu tarif servisinde tavadaki yoğun sosu malzemenin üzerine paylaştırın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Zonguldak Kiremitte Mantar Kavurma tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kirmizi-erikli-taze-fasulye-manisa-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Manisa Kırmızı Erikli Taze Fasulye başlangıcı olarak soğanı zeytinyağında 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Fasulye ve domatesi ekleyip 10 dakika pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Erikleri katıp yemeği 12 dakika daha pişirerek servis edin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Manisa Kırmızı Erikli Taze Fasulye tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Manisa Kırmızı Erikli Taze Fasulye 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın, böylece Manisa Kırmızı Erikli Taze Fasulye servis dengesi korunur.",
+        "timerSeconds": 300
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Manisa Kırmızı Erikli Taze Fasulye tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kitsune-udon",
+    "type": "YEMEK",
+    "originalStepCount": 4,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kitsune Udon başlangıcı olarak tofuyu soya sosuyla 12 dakika pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kitsune Udon için sebze suyunu kaynatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kitsune Udon sosunu erişteyle buluşturmadan önce tuzunu kontrol edin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Udon eriştesini 8 dakika haşlayın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kitsune Udon eriştesini sosla 2 dakika tavada çevirin, kaplama yüzeye tutunsun.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kitsune Udon sıcak servis edilirken susam, yeşillik veya sosla tamamlayın."
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Kitsune Udon son kontrolünde tuz, ekşilik veya yağ dengesini servis öncesi ayarlayın."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kitsune Udon tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kluski-slaskie-polonya-usulu",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kluski Śląskie başlangıcı olarak patatesleri ezin, nişasta, yumurta ve tuzla yoğurun."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamurdan küçük toplar yapıp ortasını başparmakla bastırın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kaynar suda 4 dakika haşlayın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kluski Śląskie hamurunu kapatırken kenarları parmak ucuyla bastırın, iç harç fırında akmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kluski Śląskie tepsisini yağlayıp parçaları aralıklı dizin, sıcak hava aralarından geçsin."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kluski Śląskie tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kol-boregi",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kol Böreği başlangıcı olarak peynir ve maydanozu karıştırın."
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yufkaları soslayıp peynirli harçla rulo sarın."
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kol Böreği tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin."
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ruloları tepsiye dizip 180°C fırında 30-35 dakika pişirin.",
+        "timerSeconds": 2100
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kol Böreği 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kol Böreği servisinde üstüne taze ot veya kızgın yağ gezdirin, böylece Kol Böreği servis dengesi korunur."
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kol Böreği tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  },
+  {
+    "slug": "kolbaszli-lecso",
+    "type": "YEMEK",
+    "originalStepCount": 3,
+    "newSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kolbászlı Lecsó için soğanları yağda yumuşatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Biberleri ve dilimlenmiş Macar sosisi ekleyip 8 dakika soteleyin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Domates ve toz biberle 20 dakika pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kolbászlı Lecsó tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın."
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kolbászlı Lecsó ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      }
+    ],
+    "notes": "Revize kaynak kontrolü: mevcut CSV akışı ve klasik Kolbászlı Lecsó tekniği esas alındı; step 1 gerçek ilk aksiyona çekildi, kısa adımlar genişletildi, timer ve kritik nokta gate'leri temizlendi."
+  }
+]

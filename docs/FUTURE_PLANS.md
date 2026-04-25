@@ -21,21 +21,14 @@ Tüm 4 batch revize prod'da (12r + 13r + 14r + 15r v2), 400 tarif scaffold
 cleanup. Pipeline 4/4 KAPANIŞ. Brief §16.2 Kural 5 (tatlı scaffold yasağı)
 oturum 20'de eklendi (15r v1 reject sonrası ders).
 
-### Codex Mod F 22-27 (5 batch kalan, oturum 20'den sonra)
+### Codex Mod F 23-27 (4 batch + 1 final kalan, oturum 21+)
 
-Mod F 21/27 prod (07-21 apply edildi). 22 reject (suffix max 11x + 14
-words<4 ihlal), revize tetiği gerekli. Sonraki: 22r/23/24/25/26/27.
+Mod F 22r prod canlı (oturum 21, 100 YEMEK, suffix max 2x, audit-deep
+PASS). Mod F **22/27** prod (07-21 + 22r), kalan: 23/24/25/26/27.
 
-Retrofit-22 revize Codex tetik mesajı (oturum 20'de hazırlandı):
-```
-Mod F. Retrofit-22 revize
-Brief §15 + Kural 17 (suffix smuggling).
-Önceki teslim: suffix max 11x scaffold + 14 step <4 kelime ihlal.
-Yeni teslim: tarif-spesifik step 1, ≥6 tarif aynı template paylaşmasın,
-word count ≥4. Slug listesi aynı, dosya: retrofit-step-count-22-revize.json
-```
-
-23-27 sıralı: 22r kapandıktan sonra `Mod F. Retrofit-23` tetik.
+Codex tetik formatı (sırayla): `Mod F. Retrofit-23` → JSON gelince
+`scripts/apply-retrofit.ts --file docs/retrofit-step-count-NN.json`
+ile dry-run + dev apply + audit-deep + prod apply.
 
 ### Beta etiketi 4 preset'ten kaldırma (launch sonrası 1-2 hafta izleme)
 

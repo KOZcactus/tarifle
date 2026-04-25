@@ -198,6 +198,17 @@ model User {
   // Platform'un TR-TR ses paketinden uygun cinsiyet aranır, yoksa ilk
   // TR voice fallback olur.
   ttsVoicePreference String     @default("female") @db.VarChar(10)
+  // Diyet profili, oturum 20 DIET_SCORE_PLAN. Null = seçim yok (badge
+  // görünmez). Seçilirse src/lib/diet-scoring/profiles.ts'deki 6 preset
+  // slug'ından biri ("dengeli", "yuksek-protein", "dusuk-kalori",
+  // "vejetaryen-dengeli", "vegan-dengeli", "dusuk-seker"). Yeni preset
+  // ekledikçe bu slug genişler. UI /ayarlar/diyet'ten set edilir,
+  // onboarding banner'ı home'da gösterir.
+  dietProfile        String?    @db.VarChar(50)
+  // Diyet badge görünürlük toggle, default açık (K2 kararı). Kapalıysa
+  // recipe card'lardaki skor chip'i gizlenir, sadece detail sayfası
+  // "Diyet Uyumu" kartı görünür. /ayarlar/gizlilik'ten değiştirilir.
+  showDietBadge      Boolean    @default(true)
   createdAt          DateTime   @default(now())
   updatedAt          DateTime   @updatedAt
 
@@ -394,6 +405,7 @@ model Recipe {
   mealPlanItems   MealPlanItem[]
   userPhotos      RecipePhoto[]
   viewDaily       RecipeViewDaily[]
+  dietScores      RecipeDietScore[]
 
   @@index([categoryId])
   @@index([status])
@@ -671,11 +683,48 @@ model NutritionData {
   proteinPer100g  Decimal  @db.Decimal(5, 2)
   carbsPer100g    Decimal  @db.Decimal(5, 2)
   fatPer100g      Decimal  @db.Decimal(5, 2)
+  // Diyet skoru ek alanları, oturum 20 DIET_SCORE_PLAN Faz 2 (B* hibrit).
+  // Null = USDA mapping henüz yok, skor hesabında "yaklaşık" flag set edilir.
+  // Faz 1'de bu alanlar boş kalabilir (5 preset mevcut macro'yla hesaplanır);
+  // Faz 2'de top 100 ingredient USDA'dan seed edilir.
+  sugarPer100g    Decimal? @db.Decimal(5, 2)
+  fiberPer100g    Decimal? @db.Decimal(5, 2)
+  // Sodyum mg, 100g ingredient başı. Normal range 0-2500mg (tuz ~38700mg/100g).
+  sodiumPer100g   Decimal? @db.Decimal(7, 2)
+  satFatPer100g   Decimal? @db.Decimal(5, 2)
+  // Glycemic index 0-100, yüksek = kan şekerini hızlı yükseltir. Diyabetik
+  // skorda kullanılır. Null = bilinmiyor, proxy olarak carbs-fiber kullanılır.
+  glycemicIndex   Int?
   defaultUnit     String?  @db.VarChar(50)
   gramsPerUnit    Decimal? @db.Decimal(7, 2)
   source          String?  @db.VarChar(100)
 
   @@map("nutrition_data")
+}
+
+/// Diyet skoru pre-compute tablosu, oturum 20 DIET_SCORE_PLAN. Her
+/// (recipe, dietSlug) çifti için 0-100 skor + kriter breakdown JSON. Yeni
+/// tarif eklendiğinde veya nutrition güncellendiğinde targeted recompute
+/// (edit hook), haftalık cron idempotent replay (drift catch).
+///
+/// Skor hesaplama mantığı src/lib/diet-scoring/scorer.ts'de. Breakdown
+/// JSON şeması: { <criterionSlug>: { score: number, max: number, note?: string } }
+/// UI'da breakdown Diyet Uyumu kartında listelenir.
+model RecipeDietScore {
+  id         String   @id @default(cuid())
+  recipeId   String
+  dietSlug   String   @db.VarChar(50)
+  score      Int
+  breakdown  Json
+  computedAt DateTime @default(now())
+
+  recipe Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+
+  @@unique([recipeId, dietSlug])
+  // Listeleme "diyetime en uygun" sort'u için, dietSlug filtresiyle
+  // skor-desc sorgular <50ms olsun.
+  @@index([dietSlug, score(sort: Desc)])
+  @@map("recipe_diet_scores")
 }
 
 // ─── COLLECTIONS & SHOPPING LIST (Faz 2) ─────────────────

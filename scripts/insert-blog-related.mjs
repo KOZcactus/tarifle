@@ -38,6 +38,7 @@ const TITLES = {
   "kahve-mi-cay-mi-secim-rehberi": "Kahve mi, Çay mı?",
   "makarna-cesitleri-sos-eslestirme-rehberi": "Makarna Çeşitleri",
   "maya-kabartma-tozu-karbonat-farki": "Maya, Kabartma Tozu, Karbonat",
+  "mikro-otlar": "Mikro Otlar",
   "mutfak-bicagi-secimi-ve-kullanimi": "Mutfak Bıçağı Seçimi",
   "mutfak-ekipman-olmazsa-olmazlari": "Mutfak Ekipman Olmazsa Olmazları",
   "mutfak-ocaklari-induksiyon-gaz-elektrik-dokum": "Mutfak Ocakları",
@@ -78,6 +79,11 @@ const RELATED = {
     ["baharatli-yemek-seviyeleri", "acilik ekseni dengesi"],
     ["tuz-cesitleri-ve-kullanimi", "tuzlulugun temel rolu"],
     ["soguk-vs-sicak-baslangic", "sicaklik katmaninin sofrada uygulamasi"],
+  ],
+  "mikro-otlar": [
+    ["baharat-dolabi-temelleri-secim-saklama-kullanim", "kuru otlarin saklama disiplini"],
+    ["damak-yemek-dengesi", "otsu serinligin denge rolu"],
+    ["mutfak-bicagi-secimi-ve-kullanimi", "keskin bicakla ot dograma"],
   ],
   "soguk-vs-sicak-baslangic": [
     ["turk-mutfaginda-dugun-sofrasi", "buyuk sofralarda corbanin islevi"],

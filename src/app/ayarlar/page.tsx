@@ -10,6 +10,7 @@ import { LanguagePreferenceCard } from "@/components/profile/LanguagePreferenceC
 import { PreferencesCard } from "@/components/profile/PreferencesCard";
 import { PrivacyCard } from "@/components/profile/PrivacyCard";
 import { PantryPreferencesCard } from "@/components/profile/PantryPreferencesCard";
+import { DietPreferenceCard } from "@/components/profile/DietPreferenceCard";
 import { DeleteAccountCard } from "@/components/profile/DeleteAccountCard";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -51,6 +52,7 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
       showFollowCounts: true,
       pantryExpiryTracking: true,
       ttsVoicePreference: true,
+      dietProfile: true,
       accounts: {
         where: { provider: "google" },
         select: { id: true },
@@ -121,6 +123,8 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
             user.ttsVoicePreference === "male" ? "male" : "female"
           }
         />
+
+        <DietPreferenceCard initialDietProfile={user.dietProfile} />
 
         <DeleteAccountCard
           username={user.username}

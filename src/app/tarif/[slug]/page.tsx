@@ -41,6 +41,8 @@ import { auth } from "@/lib/auth";
 import { getPantryMatchForRecipe } from "@/lib/pantry/server";
 import { PantryMatchBadge } from "@/components/pantry/PantryMatchBadge";
 import { CookedButton } from "@/components/pantry/CookedButton";
+import { getRecipeDietScore } from "@/lib/queries/diet-score";
+import { DietFitCard } from "@/components/recipe/DietFitCard";
 import { isValidLocale, type Locale } from "@/i18n/config";
 import {
   hasFullTranslation,
@@ -280,19 +282,41 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
         ).catch(() => null)
       : Promise.resolve(null),
     // TTS voice preference for Cooking Mode. Default female (misafir
-    // veya pref yoksa).
+    // veya pref yoksa). Also bundle dietProfile + showDietBadge for the
+    // Diyet Uyumu kart (DIET_SCORE_PLAN, oturum 20).
     session?.user?.id
       ? (async () => {
           const row = await import("@/lib/prisma").then((m) =>
             m.prisma.user.findUnique({
               where: { id: session.user!.id },
-              select: { ttsVoicePreference: true },
+              select: {
+                ttsVoicePreference: true,
+                dietProfile: true,
+                showDietBadge: true,
+              },
             }),
           );
-          return row?.ttsVoicePreference === "male" ? "male" : "female";
+          return {
+            ttsVoice: (row?.ttsVoicePreference === "male" ? "male" : "female") as
+              | "female"
+              | "male",
+            dietProfile: row?.dietProfile ?? null,
+            showDietBadge: row?.showDietBadge ?? true,
+          };
         })()
-      : Promise.resolve<"female" | "male">("female"),
+      : Promise.resolve({
+          ttsVoice: "female" as const,
+          dietProfile: null as string | null,
+          showDietBadge: true,
+        }),
   ]);
+
+  // Diyet skoru (oturum 20). Login + dietProfile set + showDietBadge true
+  // ise pre-computed RecipeDietScore'tan oku, render et.
+  const dietScore =
+    userVoicePref.dietProfile && userVoicePref.showDietBadge
+      ? await getRecipeDietScore(recipe.id, userVoicePref.dietProfile)
+      : null;
 
   // Surface admin/moderator UI inline on community variations so a moderator
   // can hide a clearly-bad post without leaving the recipe page. `session.user.role`
@@ -531,7 +555,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
           steps={translatedSteps}
           recipeTitle={translatedTitle}
           recipeEmoji={recipe.emoji}
-          ttsVoicePreference={userVoicePref}
+          ttsVoicePreference={userVoicePref.ttsVoice}
         />
         <PrintButton />
         <PdfDownloadButton slug={recipe.slug} />
@@ -612,6 +636,15 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
       {recipe.hungerBar != null && (
         <div className="mt-6">
           <HungerBar value={recipe.hungerBar} />
+        </div>
+      )}
+
+      {/* Diyet uyumu kartı (oturum 20, DIET_SCORE_PLAN). Sadece login +
+          dietProfile set + showDietBadge true + DB'de pre-computed skor
+          var ise render eder. Skor 0-100 + breakdown + Beta uyarısı. */}
+      {dietScore && userVoicePref.dietProfile && (
+        <div className="mt-6">
+          <DietFitCard dietSlug={userVoicePref.dietProfile} result={dietScore} />
         </div>
       )}
 

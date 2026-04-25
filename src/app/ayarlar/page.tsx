@@ -85,6 +85,10 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
       </header>
 
       <div className="space-y-6">
+        {/* Sira mantigi (oturum 21 revize): kullanici geri bildirimi sonrasi
+            mantiksal kumeler -- Profil > Hesap > Tercihler > Gizlilik >
+            Uygulama > Gorunum > Tehlikeli alan. Dil tercihi her gun
+            kullanilmaz, kompakt ve asagida. */}
         <ProfileSettingsForm
           initialName={user.name ?? ""}
           initialUsername={user.username}
@@ -102,15 +106,19 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
 
         <PasswordChangeCard hasPassword={!!user.passwordHash} />
 
-        {/* Language preference, placeholder until Faz 3 i18n wiring.
-            Placed before the destructive "delete account" card so it
-            stays in the "everyday settings" cluster, not next to danger. */}
-        <LanguagePreferenceCard />
-
         <PreferencesCard
           initialFavoriteTags={user.favoriteTags}
           initialAllergenAvoidances={user.allergenAvoidances}
           initialFavoriteCuisines={user.favoriteCuisines}
+        />
+
+        <DietPreferenceCard initialDietProfile={user.dietProfile} />
+
+        <PantryPreferencesCard
+          initialPantryExpiryTracking={user.pantryExpiryTracking}
+          initialTtsVoicePreference={
+            user.ttsVoicePreference === "male" ? "male" : "female"
+          }
         />
 
         <PrivacyCard
@@ -120,16 +128,9 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
           initialShowDietBadge={user.showDietBadge}
         />
 
-        <PantryPreferencesCard
-          initialPantryExpiryTracking={user.pantryExpiryTracking}
-          initialTtsVoicePreference={
-            user.ttsVoicePreference === "male" ? "male" : "female"
-          }
-        />
-
-        <DietPreferenceCard initialDietProfile={user.dietProfile} />
-
         <InstallAppCard />
+
+        <LanguagePreferenceCard />
 
         <DeleteAccountCard
           username={user.username}

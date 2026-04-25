@@ -28,38 +28,44 @@ export function LanguagePreferenceCard() {
   };
 
   return (
-    <section className="rounded-xl border border-border bg-bg-card p-5">
-      <header className="mb-3">
-        <h2 className="font-heading text-base font-semibold text-text">
-          {t("languageTitle")}
-        </h2>
-      </header>
+    <section className="rounded-xl border border-border bg-bg-card p-4">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="min-w-0 flex-1">
+          <h2 className="font-heading text-sm font-semibold text-text">
+            {t("languageTitle")}
+          </h2>
+          <p className="mt-0.5 text-xs text-text-muted">
+            {t("languageDescription")}
+          </p>
+        </div>
 
-      <p className="mb-3 text-sm text-text-muted">{t("languageDescription")}</p>
-
-      <div role="radiogroup" className="flex flex-col gap-2 sm:flex-row">
-        {LOCALES.map((code) => {
-          const meta = LOCALE_LABELS[code];
-          const active = code === locale;
-          return (
-            <button
-              key={code}
-              type="button"
-              role="radio"
-              aria-checked={active}
-              onClick={() => handleChange(code)}
-              disabled={pending}
-              className={`flex flex-1 items-center justify-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-medium transition-colors disabled:opacity-60 ${
-                active
-                  ? "border-primary bg-primary/10 text-primary"
-                  : "border-border bg-bg text-text hover:bg-bg-elevated"
-              }`}
-            >
-              <span aria-hidden>{meta.flag}</span>
-              <span>{meta.name}</span>
-            </button>
-          );
-        })}
+        <div
+          role="radiogroup"
+          className="inline-flex shrink-0 rounded-lg border border-border bg-bg p-0.5"
+        >
+          {LOCALES.map((code) => {
+            const meta = LOCALE_LABELS[code];
+            const active = code === locale;
+            return (
+              <button
+                key={code}
+                type="button"
+                role="radio"
+                aria-checked={active}
+                onClick={() => handleChange(code)}
+                disabled={pending}
+                className={`flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-medium transition-colors disabled:opacity-60 ${
+                  active
+                    ? "bg-primary/10 text-primary"
+                    : "text-text-muted hover:bg-bg-elevated hover:text-text"
+                }`}
+              >
+                <span aria-hidden>{meta.flag}</span>
+                <span>{meta.name}</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

@@ -56,8 +56,24 @@ interface SeedFile {
 async function main() {
   assertDbTarget("seed-nutrition-data");
 
-  const seedPath = path.resolve(process.cwd(), "data/nutrition-usda-seed.json");
-  const seed: SeedFile = JSON.parse(fs.readFileSync(seedPath, "utf8"));
+  // Tum seed dosyalarini yukle (batch1, batch2, ...). data/ klasorunde
+  // nutrition-usda-seed*.json glob pattern; idempotent upsert sayesinde
+  // ayni name iki dosyadaysa son okunan kazanir, kaynak alani guncellenir.
+  const dataDir = path.resolve(process.cwd(), "data");
+  const seedFiles = fs
+    .readdirSync(dataDir)
+    .filter((f) => /^nutrition-usda-seed.*\.json$/.test(f))
+    .sort();
+  const seed: SeedFile = { _meta: {}, items: [] };
+  for (const file of seedFiles) {
+    const part: SeedFile = JSON.parse(fs.readFileSync(path.join(dataDir, file), "utf8"));
+    seed.items.push(...part.items);
+    console.log("📂 " + file + " (" + part.items.length + " items)");
+  }
+  if (seed.items.length === 0) {
+    console.error("❌ Hiç seed dosyası bulunamadı");
+    process.exit(1);
+  }
 
   console.log("📄 Source: " + seed._meta.source);
   console.log("📊 Item count: " + seed.items.length);

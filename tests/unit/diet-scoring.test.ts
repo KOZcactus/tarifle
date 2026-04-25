@@ -152,7 +152,8 @@ describe("scoreRecipe", () => {
       expect(result).not.toBeNull();
       expect(result!.score).toBeGreaterThanOrEqual(70);
       expect(result!.rating).toMatch(/^(good|excellent)$/);
-      expect(result!.isBeta).toBe(true);
+      // Faz 1 preset'leri (mevcut macro veri yeterli) Beta degil
+      expect(result!.isBeta).toBe(false);
     });
 
     it("scores extreme high-fat recipe lower", () => {

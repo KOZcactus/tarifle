@@ -24,14 +24,24 @@ function ratingFromScore(score: number): ScoreResult["rating"] {
 }
 
 /**
- * Eksik veri uyarısı, requiresEnrichedData true preset'ler için Faz 1
- * BETA'da gösterilir. Faz 2 sonrası USDA enrichment ile kaldırılır.
+ * Eksik veri uyarisi, requiresEnrichedData true preset'lerde gosterilir.
+ * Faz 2 USDA enrichment ile %86 tarif coverage, %14 hala proxy fallback.
  */
 function approximationFlagFor(profileSlug: string): string | undefined {
-  if (profileSlug === "dusuk-seker") {
-    return "Şeker hesaplaması Faz 1'de proxy (karbonhidrat oranı). USDA enrichment sonrası kesinleşecek.";
+  switch (profileSlug) {
+    case "dusuk-seker":
+      return "Şeker miktarı USDA verilerine göre hesaplanır. Eşleşmesi olmayan tariflerde karbonhidrat oranı proxy olarak kullanılır.";
+    case "yuksek-lif":
+      return "Lif ölçümü USDA verilerine bağlıdır. Eşleşme yetersizse skor tahmini olabilir, kesinlik için verisi olan tariflerde güvenli.";
+    case "dusuk-sodyum":
+      return "Sodyum tahmini USDA değerlerinden gelir. Tuz miktarı tarif kullanıcısına göre değişir; bu değerler ortalama serpiş için geçerli.";
+    case "akdeniz":
+      return "Akdeniz uyumu çok kriterli, USDA veri kapsamı %86. Eksik veri profili biraz değiştirebilir.";
+    case "keto-hassas":
+      return "Net karbonhidrat = toplam karbonhidrat - lif. Lif verisi eşleşmiyorsa toplam karbonhidrat baz alınır, daha sıkı çıkar.";
+    default:
+      return undefined;
   }
-  return undefined;
 }
 
 /**
@@ -64,13 +74,18 @@ export function scoreRecipe(
   const totalScore = criteria.reduce((a, c) => a + c.score, 0);
   const clampedScore = Math.max(0, Math.min(100, totalScore));
 
+  // Beta etiketi sadece USDA enrichment'a bagimli preset'lerde gosterilir.
+  // Faz 1 preset'leri (mevcut macro veri yeterli) Beta degil. Faz 2 yeni
+  // 4 preset (yuksek-lif/dusuk-sodyum/akdeniz/keto-hassas) ve dusuk-seker
+  // requiresEnrichedData=true; oraya Beta gosterilir cunku %86 coverage
+  // tariflerin hepsinde sugar/fiber/sodium veri var degil.
+  const isBeta = profile.requiresEnrichedData;
+
   return {
     score: clampedScore,
     rating: ratingFromScore(clampedScore),
     criteria,
-    // Faz 1'de tüm preset'ler beta. Faz 2 stable sonrası Kerem manuel
-    // kapatabilir (profiles.ts'e isStable flag eklenir o aşamada).
-    isBeta: true,
+    isBeta,
     approximationFlag: approximationFlagFor(dietSlug),
   };
 }

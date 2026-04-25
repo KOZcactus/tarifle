@@ -7,21 +7,19 @@
  * DATABASE_URL set edilmişse oraya yazar. Yanlışlıkla prod'a yazmamak için
  * her destructive script başlatırken `assertDbTarget()` çağırır.
  *
- * Oturum 15 Neon -> Vercel Marketplace taşıması ile host prefix'leri değişti.
- * Eski standalone Neon prefix'leri 1 hafta rollback rezervi için listede kalıyor;
- * 30 Nis sonrası eski prefix'ler kaldırılabilir.
+ * Oturum 15 Neon -> Vercel Marketplace taşıması, oturum 20'de eski prefix'ler
+ * kaldırıldı (5 günlük stabilite kanıtı sonrası, finansal aciliyet yok çünkü
+ * Vercel Pro DB credits yeni branch'leri karşılıyor).
  */
 
-/** Production Neon branch host prefix'leri (yeni öncelikli, eski rollback rezervi). */
+/** Production Neon branch host prefix'leri (Vercel-managed Neon). */
 const PROD_HOST_PREFIXES = [
-  "ep-icy-mountain", // yeni, Vercel-managed Neon main branch (23 Nis 2026+)
-  "ep-broad-pond", // eski standalone Neon production (1 hafta rollback rezervi)
+  "ep-icy-mountain", // Vercel-managed Neon main branch (23 Nis 2026+)
 ] as const;
 
-/** Dev Neon branch host prefix'leri (yeni öncelikli, eski rollback rezervi). */
+/** Dev Neon branch host prefix'leri (Vercel-managed Neon child branch). */
 const DEV_HOST_PREFIXES = [
-  "ep-jolly-haze", // yeni, Vercel-managed Neon dev branch (23 Nis 2026+)
-  "ep-dry-bread", // eski standalone Neon dev (1 hafta rollback rezervi)
+  "ep-jolly-haze", // Vercel-managed Neon dev branch (23 Nis 2026+)
 ] as const;
 
 export type DbBranch = "production" | "dev" | "unknown";

@@ -252,11 +252,12 @@ yakalandığında (1000+ DAU) tekrar aktifleştirilebilir:
 
 Oturum 16'da 26 → 30 yazı eklendi, 12/9/9 ideal denge. Sonraki adaylar:
 
-- [ ] **Blog 40+**: Baharatlı Yemek Seviyeleri (rehber), Soğuk vs Sıcak
-      Başlangıç (rehber), Ev Yapımı Ekmek Tipleri (malzeme), Damaklı Yemek
-      Dengesi (rehber), Mikro Otlar (malzeme)
-- [ ] Hedef: **35-40 blog yazısı** açılış öncesi (mevcut 39, launch minimum
-      aşıldı) + opsiyonel 0-1 bonus
+- [ ] **Blog 41+** (launch sonrası, opsiyonel): Baharatlı Yemek Seviyeleri
+      (rehber), Soğuk vs Sıcak Başlangıç (rehber), Ev Yapımı Ekmek Tipleri
+      (malzeme), Damaklı Yemek Dengesi (rehber), Mikro Otlar (malzeme)
+- [ ] **40 blog hedefi tamamlandı** (mevcut 40, launch minimum 35 + 5 bonus)
+- [ ] Et bölgeleri diyagramı (Eren tarafından çizilecek illustration veya
+      Cloudinary'den public domain görsel) Blog 40'a eklenecek
 - [ ] **İç link ağı**: mevcut 30 yazının birbirine çapraz-referansları
       (Blog 19 kalıp boyutu → Blog 14 kek dönüşümü bağlantısı gibi)
 

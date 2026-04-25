@@ -58,6 +58,7 @@ const TOPIC_GROUPS: TopicGroup[] = [
     label: "Et & Balık",
     slugs: [
       "et-muhurlemenin-bilimi",
+      "et-bolgeleri-rehberi-dana-hangi-pisirme",
       "soguk-zincir-kirmizi-et-guvenligi",
       "balik-secimi-temizlik-ve-pisirme",
       "balik-mevsimleri-turkiye-denizleri-rehberi",

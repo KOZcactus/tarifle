@@ -64,6 +64,14 @@ export interface AiSuggestion {
   pantryMatch?: PantryMatchSummary;
   /** Recipe tag slugs for display (pratik, 30-dakika-alti, vegan...). */
   tags: string[];
+  /** v4.4+ kullanicinin diyet profili varsa pre-computed RecipeDietScore'tan
+   *  enjekte edilen kompakt skor verisi (oturum 20, DIET_SCORE_PLAN). Suggest
+   *  + menu planner action'larinda inject edilir, UI'da kart kosenle chip. */
+  dietBadge?: {
+    score: number;
+    rating: "excellent" | "good" | "fair" | "weak" | "poor";
+    isBeta: boolean;
+  };
   /** Optional per-recipe AI commentary (empty for rule-based provider). */
   note?: string;
   /** Kural tabanlı explain chip'ler, "neden bu tarif" bilgisi. Kısa (4

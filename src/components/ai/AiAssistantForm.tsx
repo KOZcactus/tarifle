@@ -1406,6 +1406,32 @@ function SuggestionCard({
                 style={{ width: `${matchPercent}%` }}
               />
             </div>
+            {/* Diyet uyumu chip (oturum 20). dietBadge field action'da
+                inject edilir; login + dietProfile + showDietBadge true
+                user'larda gorunur. */}
+            {s.dietBadge && (
+              <div
+                className="mt-1.5 flex items-center justify-end gap-1"
+                title={`Diyet uyumu ${s.dietBadge.score}/100`}
+              >
+                <span
+                  className={`rounded-full px-1.5 py-0.5 text-[10px] font-bold ${
+                    s.dietBadge.rating === "excellent" || s.dietBadge.rating === "good"
+                      ? "bg-emerald-100 text-emerald-900 dark:bg-emerald-900/40 dark:text-emerald-200"
+                      : s.dietBadge.rating === "fair"
+                        ? "bg-amber-100 text-amber-900 dark:bg-amber-900/40 dark:text-amber-200"
+                        : "bg-orange-100 text-orange-900 dark:bg-orange-900/40 dark:text-orange-200"
+                  }`}
+                >
+                  🎯 {s.dietBadge.score}
+                </span>
+                {s.dietBadge.isBeta && (
+                  <span className="rounded-full bg-amber-50 px-1 py-0.5 text-[8px] font-semibold uppercase tracking-wide text-amber-900 dark:bg-amber-900/30 dark:text-amber-200">
+                    Beta
+                  </span>
+                )}
+              </div>
+            )}
           </div>
         </div>
 

@@ -1125,6 +1125,21 @@ export function AiFillModal({ dayLabels, mealLabels }: AiFillModalProps) {
                                       >
                                         %{matchPct} {t("matchLabel")}
                                       </span>
+                                      {slot.recipe.dietBadge && (
+                                        <span
+                                          className={`rounded-full px-1.5 py-0 text-[10px] font-bold ${
+                                            slot.recipe.dietBadge.rating === "excellent" ||
+                                            slot.recipe.dietBadge.rating === "good"
+                                              ? "bg-emerald-100 text-emerald-900 dark:bg-emerald-900/40 dark:text-emerald-200"
+                                              : slot.recipe.dietBadge.rating === "fair"
+                                                ? "bg-amber-100 text-amber-900 dark:bg-amber-900/40 dark:text-amber-200"
+                                                : "bg-orange-100 text-orange-900 dark:bg-orange-900/40 dark:text-orange-200"
+                                          }`}
+                                          title={`Diyet uyumu ${slot.recipe.dietBadge.score}/100`}
+                                        >
+                                          🎯 {slot.recipe.dietBadge.score}
+                                        </span>
+                                      )}
                                       {slot.reason && <span>· {slot.reason}</span>}
                                     </div>
                                   </div>

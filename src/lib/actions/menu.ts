@@ -22,6 +22,7 @@ import {
 } from "@/lib/rate-limit";
 import { getActiveMealPlan, getMondayOfWeek } from "@/lib/queries/meal-plan";
 import { addItemsFromRecipe } from "@/lib/queries/shopping-list";
+import { getDietBadgesIfApplicable } from "@/lib/queries/diet-score";
 import { getUserPantryStock } from "@/lib/pantry/server";
 import { revalidatePath } from "next/cache";
 
@@ -71,6 +72,30 @@ export async function generateWeeklyMenuAction(
       ...parsed.data,
       pantryStock,
     });
+
+    // Diyet badge enjeksiyonu (oturum 20, DIET_SCORE_PLAN). Login +
+    // dietProfile + showDietBadge true ise menu plan'daki her recipe
+    // slot'una compact skor verisi yerlestirilir; UI menu plannerda
+    // her tarif kartinda kucuk chip gosterilir.
+    if (session?.user?.id) {
+      const recipeIds = result.slots
+        .map((slot) => slot.recipe?.recipeId)
+        .filter((id): id is string => Boolean(id));
+      const dietBadges = await getDietBadgesIfApplicable(
+        session.user.id,
+        recipeIds,
+      );
+      if (dietBadges.size > 0) {
+        for (const slot of result.slots) {
+          if (!slot.recipe) continue;
+          const badge = dietBadges.get(slot.recipe.recipeId);
+          if (badge) {
+            (slot.recipe as { dietBadge?: typeof badge }).dietBadge = badge;
+          }
+        }
+      }
+    }
+
     return { success: true, data: result };
   } catch (error: unknown) {
     const message =

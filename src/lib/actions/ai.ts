@@ -16,6 +16,7 @@ import { getUserPantryStock } from "@/lib/pantry/server";
 import { computePantryMatch } from "@/lib/pantry/match";
 import { loadUserPreferenceProfile } from "@/lib/ai/preference-profile-server";
 import { applyBoostAndSort } from "@/lib/ai/preference-boost";
+import { getDietBadgesIfApplicable } from "@/lib/queries/diet-score";
 
 interface ActionResult<T = undefined> {
   success: boolean;
@@ -94,6 +95,21 @@ export async function suggestRecipesAction(
       // çünkü sort ranking değişikliği en son uygulanmalı.
       if (prefProfile) {
         result.suggestions = applyBoostAndSort(result.suggestions, prefProfile);
+      }
+      // H: Diyet badge enjeksiyonu (oturum 20, DIET_SCORE_PLAN). Login +
+      // dietProfile + showDietBadge true ise her suggestion'a compact
+      // skor verisi yerlestirilir; UI suggestion kartinda kucuk chip
+      // gosterilir. Sort'u degistirmiyor (kullanici match score'u
+      // baz alarak siralanmis tariflerden secsin), sadece bilgi katmani.
+      const dietBadges = await getDietBadgesIfApplicable(
+        session.user.id,
+        result.suggestions.map((s) => s.recipeId),
+      );
+      if (dietBadges.size > 0) {
+        result.suggestions = result.suggestions.map((s) => {
+          const badge = dietBadges.get(s.recipeId);
+          return badge ? { ...s, dietBadge: badge } : s;
+        });
       }
     }
 

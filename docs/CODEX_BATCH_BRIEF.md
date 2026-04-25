@@ -3301,3 +3301,171 @@ Claude: commit + push, FUTURE_PLANS Mod G N tamam işaretle
 - Tarifin gerçeğine UYGUN (yanlış malzeme/yöntem yok)
 - Site açılışı öncesi son kalite katmanı
 
+---
+
+## 18. Mod H, Ingredient enrichment - "neden + yerine" (oturum 21)
+
+### 18.1 Hedef
+
+Tarifle'nin AI Asistan v5 + tarif detay sayfasında ingredient hover/
+click ile "kuş üzümün yok mu? kuru üzüm kullan" tipi öneriler için
+veri katmanı kuruyoruz. Codex Mod H, **top 50 ingredient** için
+"neden bu malzeme + yerine ne kullanılabilir" notları yazar.
+
+İlk batch: top 50 frequency ingredient (zeytinyağı, su, tereyağı,
+soğan, un, yumurta, tuz, süt, sarımsak, limon suyu, yoğurt, şeker,
+domates, patates, pirinç, buz, maydanoz, dana kıyma, karabiber, ceviz,
+bal, dereotu, toz şeker, soya sosu, tarçın, sıvı yağ, krema, haşlanmış
+nohut, domates salçası, havuç, kimyon, kuru soğan, nane, ince bulgur,
+tavuk göğsü, lime suyu, lor peyniri, kabak, beyaz peynir, tahin, pul
+biber, domates püresi, taze soğan, yeşil biber, irmik, mantar, tavuk
+but, salatalık, susam, soda).
+
+İkinci batch onayı sonrası top 51-100 ile devam edilir.
+
+### 18.2 Input + Output
+
+**Input dosyası**: `docs/mod-h-ingredient-list.txt`
+- Her satır: `rank \t freq \t name \t sample_slugs (3 örnek)`
+- audit-mod-h-prep.ts üretir, oturum başına 1 kez koşturulur
+
+**Output JSON**: `docs/mod-h-batch-NN.json`
+```json
+[
+  {
+    "name": "Kuş üzümü",
+    "whyUsed": "Pilav, dolma ve gülaç gibi tatlımsı tariflerde küçük tatlı topakçıklar olarak kullanılır, sulu yapıyla birlikte yumuşar.",
+    "substitutes": ["kuru üzüm", "kuş kirazı", "kuru vişne", "kayısı"],
+    "notes": "Pilavda 1 yemek kaşığı yeter; aşırı kullanırsan tatlılık baskın olur."
+  },
+  {
+    "name": "Tahin",
+    "whyUsed": "Susamdan ezilmiş ezme, humus ve helva gibi tariflerin temelinde yağlı, hafif acımsı bir yoğunluk verir.",
+    "substitutes": ["fındık ezmesi", "yer fıstığı ezmesi", "badem ezmesi"],
+    "notes": null
+  }
+]
+```
+
+- `name` = standart Türkçe ad (NutritionData ile aynı yazılım tercih)
+- `whyUsed` = 1-2 cümle, mutlaka tarif kullanım gerekçesi
+- `substitutes` = 2-4 alternatif (en yakından en uzağa)
+- `notes` = opsiyonel ek uyarı (oran, sıcaklık, vb.)
+
+### 18.3 Kalite kuralları (ZORUNLU)
+
+**1. Anlaşılır dil (Mod G ile aynı disiplin):**
+   - Cümle **günlük TR mutfak konuşması** olmalı
+   - YASAK kelime: "emülsiyon", "denatüre", "karamelizasyon", "polifenol",
+     "viskozite", "uçucu yağ", "Maillard", "denitrifikasyon", "hidrasyon",
+     "antioksidan", "kapsaisin", "flavonoid"
+   - apply-mod-h.ts script bu kelimelerden birini bulursa ERROR atar
+   - Türk teyze heuristic: "kullanıcı yemek yapmaya yeni başlıyor olabilir"
+
+**2. Web kaynak teyit (whyUsed + substitutes için):**
+   - Her ingredient için "neden bu malzeme" gerekçesi WEB ARAŞTIRMA
+     ile teyit edilir (Serious Eats, Cook's Illustrated, BBC Food,
+     yemek.com, Wikipedia food article)
+   - Substitute önerileri **gerçekten işe yarayan alternatif olmalı**
+     (örn. "tahini yerine bal" YASAK — yağlı vs sıvı, tarif bozulur)
+   - Substitute sırası: en yakın → en uzak (ilki tipik standart alternatif)
+
+**3. Kelime sayısı:**
+   - whyUsed: 8-40 kelime (1-2 cümle)
+   - notes: 8-40 kelime (opsiyonel)
+   - substitute her biri: 1-8 kelime ("kuru üzüm" ✅, "tarçın benzeri
+     ama biraz daha keskin aromalı kekik" ❌ uzun)
+
+**4. Substitute count:**
+   - Min 2, max 4 alternatif
+   - Tek alternatif yetmez (kullanıcıya seçenek sunmuyor)
+   - 5+ alternatif fazla (karar vermesi zor)
+   - Format: düz string array `["alt1", "alt2", "alt3"]`
+   - İçinde parantez ile küçük not OK: `["kuru üzüm (en yakın)", "vişne"]`
+
+**5. Tarif-bağlamı zorunlu:**
+   - whyUsed cümlesinde **bu malzemeyi içeren bir tarif tipine** referans
+     ver (örn. "Pilav, dolma ve gülaç gibi tariflerde...")
+   - Genel kimya açıklaması YASAK (örn. "Şeker karbonhidrat içerir,
+     enerji kaynağıdır" — bu ders kitabı, mutfak değil)
+
+**6. YASAK kalıplar:**
+   - "Mutlaka kullan." (komut)
+   - "Tarifin olmazsa olmazı." (subjective)
+   - "Sağlık için harika." (sağlık iddiası)
+   - "Bilmediğin bir şey öğrenmek ister misin?" (filler)
+   - Em-dash (—)
+
+**7. Boilerplate engelleyici:**
+   - Aynı whyUsed cümlesini iki ingredient için kullanma
+   - Aynı substitutes array (örn. ["A", "B", "C"]) birden fazla
+     ingredient'ta tekrar etmesin
+
+### 18.4 Pipeline (Claude apply)
+
+```
+Kerem: "Mod H. Batch N" tetik (Claude'a)
+  ↓
+Claude: docs/mod-h-ingredient-list.txt'den ingredient chunk al
+        (Batch 1 = top 50, Batch 2 = top 51-100, vs.)
+  ↓
+Claude: Codex'e brief §18 + ingredient listesi + her ingredient için
+        sample tarif slug'ları (kontekst için) gönder
+  ↓
+Codex: 50 entry JSON döner (her ingredient için whyUsed + substitutes
+       + opsiyonel notes)
+  ↓
+Claude: docs/mod-h-batch-N.json kaydet
+  ↓
+Claude: scripts/apply-mod-h.ts --file docs/mod-h-batch-N.json --batch N (dry-run)
+  ↓
+Claude: --apply dev, sema + kalite validate PASS dogrula
+  ↓
+Claude: --apply --confirm-prod
+  ↓
+Claude: commit + push, FUTURE_PLANS Mod H N tamam isaretle
+```
+
+### 18.5 Self-check (Codex teslim öncesi)
+
+1. **Anlaşılır dil**: Her whyUsed + notes günlük TR mutfak dili.
+   Yasak jargon listesi (apply-mod-h.ts otomatik kontrol).
+2. **Web teyit**: Her ingredient için web kaynağından doğrula.
+   Sözde-bilim YASAK.
+3. **Kelime sayısı**: whyUsed 8-40, notes 8-40, substitute 1-8.
+4. **Substitute count**: 2-4 alternatif (Min 2, max 4).
+5. **Tarif-bağlamı**: whyUsed'da en az bir tarif tipi referansı.
+6. **Boilerplate engelleyici**: Aynı whyUsed cümlesi tek ingredient'ta.
+7. **Em-dash**: 0 (— U+2014).
+8. **Substitute makullük**: Her alternatif gerçekten o ingredient'ın
+   yerine geçer (oran/yöntem benzer).
+
+### 18.6 Beklenen output
+
+- **Batch 1**: top 50 ingredient (oturum 21 prep, mevcut)
+- **Batch 2-3** (opsiyonel, launch sonrası): top 51-150 ingredient
+- AI Asistan v5 backend hazır (gelecek geliştirme)
+- Tarif detay sayfasında ingredient hover/click → "yerine X kullan"
+  öneri popover (UI ayrı pass)
+- IngredientGuide tablosu (ayrı tablo, schema migration
+  20260426060000_ingredient_guide ile dev + prod hazır)
+
+### 18.7 Schema referans
+
+`prisma/schema.prisma` `IngredientGuide` model:
+```prisma
+model IngredientGuide {
+  id          String   @id @default(cuid())
+  name        String   @unique @db.VarChar(200)
+  whyUsed     String   @db.VarChar(500)
+  substitutes Json     // string[]
+  notes       String?  @db.VarChar(500)
+  source      String?  @db.VarChar(100)  // "Mod H Batch N"
+  updatedAt   DateTime @updatedAt
+  @@map("ingredient_guides")
+}
+```
+
+Apply script `apply-mod-h.ts` upsert by `name` (mevcut update, yoksa
+create). Source tag `"Mod H Batch N"` her teslim için işaretlenir.
+

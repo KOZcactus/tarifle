@@ -703,6 +703,36 @@ model NutritionData {
   @@map("nutrition_data")
 }
 
+/// Ingredient kullanim rehberi (oturum 21 Mod H). Ingredient adina bagli
+/// "neden bu malzeme" + "yerine ne kullanilabilir" notlari. AI Asistan v5
+/// onerilerinde + tarif detay sayfasinda ingredient hover/click ile
+/// kullanilir. Codex Mod H batch'i top 50 frequency ingredient ile
+/// baslatir, zamanla diger malzemelere genisletilir. NutritionData ile
+/// 1:1 eslesir (ayni name unique key) ama ayri tablo: NutritionData =
+/// veri (kalori/yag), IngredientGuide = kullanici yonelik metin.
+model IngredientGuide {
+  id          String   @id @default(cuid())
+  /// Ingredient standart adi (lowercase tercih edilir, NutritionData.name
+  /// ile uyum hedef ama zorunlu degil; tarif RecipeIngredient.name freeform
+  /// olabilir, eslesme TR-aware ASCII fold ile yapilir).
+  name        String   @unique @db.VarChar(200)
+  /// "Neden bu malzeme" - 1-2 cumle, gunluk TR mutfak dili. Tarif kullanim
+  /// gerekcesi (lezzet rolu, doku katki, beslenme degeri vb.).
+  whyUsed     String   @db.VarChar(500)
+  /// Yerine ne kullanilabilir - 2-4 alternatif (string array). Her
+  /// alternatif kisa bir aciklama ile, ornek format:
+  /// ["kuru uzum", "vişne", "kayisi"] veya
+  /// ["kuru uzum (en yakin)", "vişne (daha eksi)", "kayisi (daha tatli)"]
+  substitutes Json
+  /// Opsiyonel ek not (oran degisikligi, sicaklik etkisi, vb.)
+  notes       String?  @db.VarChar(500)
+  /// Codex batch revision tracking (Mod H Batch 1, 2, ...).
+  source      String?  @db.VarChar(100)
+  updatedAt   DateTime @updatedAt
+
+  @@map("ingredient_guides")
+}
+
 /// Recipe-level besin agregat (oturum 20 Faz 2, DIET_SCORE_PLAN).
 /// RecipeIngredient + NutritionData JOIN ile per-porsiyon sugar / fiber /
 /// sodium / satFat hesabi pre-compute. Ingredient amount free-text parse

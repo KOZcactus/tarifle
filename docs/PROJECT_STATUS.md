@@ -1,27 +1,36 @@
 # Tarifle, Proje Durumu
 
-> Oturum 20 sonu (25 Nis 2026), **23 commit**, mutlak rekor gün:
-> **Diet-score Faz 1 + Faz 2 ana + polish**, 10 preset prod canli.
+> Oturum 20 sonu (25 Nis 2026), **30 commit**, mutlak rekor gün:
+> **Diet-score Faz 1 + Faz 2 + polish + Lighthouse CI**, 10 preset prod canli.
 > **Faz 1 (14 modul)**: schema + 6 preset engine + 54 unit test + 17 yuzey UI
-> entegrasyon (anasayfa 3 shelf + 6 listing + sort tab + tarif detay + AI
-> Asistan + menu planner + settings + onboarding banner + privacy toggle) +
-> tag retrofit (vejetaryen %48->%72, vegan %22->%31) + 4 E2E senaryo +
-> blog 41 (1691 kelime).
-> **Faz 2**: RecipeNutrition tablosu + amount parser (30 unit test) +
-> aggregate compute pipeline (%86 coverage, 2974 tarif) + USDA seed top
-> 80 ingredient + 4 yeni preset (yuksek-lif/dusuk-sodyum/akdeniz/
-> keto-hassas) + dusuk-seker proxy->real + smart Beta etiketi + dinamik
-> approximationFlag + tarif detay NutritionInfo genisleme.
+> (anasayfa 3 shelf + 6 listing + sort tab + tarif detay + AI Asistan +
+> menu planner + settings + onboarding banner + privacy toggle) + tag
+> retrofit (vejetaryen %48->%72, vegan %22->%31) + 4 E2E senaryo + blog 41.
+> **Faz 2 (14 modul)**: RecipeNutrition tablosu + amount parser (30 unit
+> test) + aggregate compute (%92 coverage, 3361 sample) + USDA seed top
+> 130 ingredient + 4 yeni preset (yuksek-lif/dusuk-sodyum/akdeniz/keto-hassas)
+> + dusuk-seker proxy->real (Beta dusuruldu) + smart Beta etiketi +
+> dinamik approximationFlag (matchedRatio<0.5 ek uyari) + tarif detay
+> NutritionInfo genisleme.
 > **Codex retrofit**: Mod F 19/20/21 prod (Mod F 21/27, 2100 tarif) +
-> Mod FA 12r/13r/14r prod (Mod FA 3/4, 300 tarif scaffold temizlik).
-> **Cleanup + bug fix**: 48 yanlis vegan/vejetaryen tag (allergen guard
-> eklendi) + audit-deep FAIL->PASS + 3 Sentry prod bug fix + DMARC TXT
-> live + 10 Sentry issue temizlik + inbound filter rule.
+> Mod FA 12r/13r/14r/15r v2 prod (**Mod FA pipeline 4/4 KAPANIS**, 400
+> tarif scaffold cleanup).
+> **Cleanup + bug fix**: 48 yanlis vegan/vejetaryen tag (allergen guard) +
+> audit-deep FAIL->PASS + 3 Sentry prod bug fix (updateTag/CSP worker-src/
+> OG image cookies) + DMARC TXT live + 10 Sentry issue + inbound filter +
+> Hunger-bar retrofit 1017 tarif + Neon old org cleanup TAMAM (eski
+> standalone Neon project silindi, db-env.ts + lokal backup'lar
+> temizlendi).
+> **Lighthouse CI** kuruldu (5 URL threshold Perf>=70 / A11y>=95 /
+> SEO>=95 / BP>=90, local Perf 98-100 / A11y 96-100 / SEO 100 /
+> BP 96 sonuc).
 > **Pre-push 6 katman temiz, prod 3471 tarif, 41 blog, 10 diyet preset,
-> 34710 RecipeDietScore, 3471 RecipeNutrition.**
-> **Sonraki:** Top 81-130 ingredient seed (kapsam %86->%93+),
-> 4 Beta preset stable'a, Codex Mod FA 15r + Mod F 22-23, Lighthouse CI,
-> 30 Nis Neon cleanup.
+> 34710 RecipeDietScore, 3471 RecipeNutrition, 130 NutritionData
+> ingredient, 84 unit + 4 E2E + 15 visual baseline + smoke + Lighthouse.**
+> **Sonraki:** Codex Mod F 22-27 (22 reject 11x suffix, revize bekler,
+> 5 batch kalan), Beta etiketi 4 preset'ten kaldirma (launch sonrasi
+> 1-2 hafta izleme), Vercel env DATABASE_URL_OLD kontrol (varsa sil,
+> opsiyonel hijyen).
 
 > Oturum 19 sonu (24-25 Nis 2026), **37 commit**, en geniş kalite + test günü.
 > **Mod B %100 KAPANIŞ** (3452/3452 tam çeviri, Backfill-14/15 apply) +
@@ -62,6 +71,167 @@
 > Oturum 8 sonu (30 commit), 2320 tarif prod canlı. 10 blok: 6 Codex batch Mod A (1701→2320), 3 Mod B batch (batch 18-20 çeviri 600→900), rekabet §8 kısa 6/6 ✅ + orta 5/5 ✅, topluluk loop tam (follow + feed + fan-out + followers list + suggested cooks + collection/variation share + PWA banner + Pinterest rich pin + user-photos flag), admin analytics + bulk moderation + search log, PDF export + llms.txt, 18 migration.
 >
 > Oturum 7 sonu (28 commit), 1701 tarif prod canlı. 8 blok: Mod B batch 13-17 (600 tarif EN+DE), Mod A batch 15-17 (1401→1701), foryou sort, pagination redesign, super-admin protection, /admin/yorumlar, /kategoriler, legal hub /yasal, editör rozeti, similar-recipes v2, 44 programatik landing, profil zenginleştirme, /menu-planlayici, RSS + HowTo schema, AI Asistan v2, blog MDX + 3 makale, rekabet analizi doc, newsletter double-opt-in altyapı, codex brief 3 clarify.
+
+## 25 Nisan 2026 (oturum 20, 30 commit, Diet-Score Faz 1+2 + Lighthouse CI + Mod FA pipeline kapaniş)
+
+> Mutlak rekor gün, 30 commit. Diet-score özelliği baştan sona ship: Faz 1
+> (14 modül) + Faz 2 (14 modül) prod canlı. Mod FA pipeline 4/4 kapandı,
+> Lighthouse CI kuruldu, Neon migration cleanup tamamlandı.
+
+**A · Diet-score plan + Faz 0** (`7b4e829`): DIET_SCORE_PLAN.md (~14 bölüm)
+yazıldı, K1=B* hibrit karar (5-6 oturum delivery), schema migration (User.
+dietProfile + showDietBadge + RecipeDietScore + NutritionData 5 yeni kolon),
+audit-diet-readiness.ts coverage raporu (macro %100, NutritionData boş).
+
+**B · Faz 1 scoring engine** (`36b5d05`): src/lib/diet-scoring/ 4 dosya
+(types + fit smooth + 6 preset profiles + scorer saf fonksiyon), 54 unit
+test PASS (fit edge cases + integrity check + her preset + null safety).
+20826 prod skor (3471 × 6). Pre-compute pipeline `compute-diet-scores.ts`.
+
+**C · Faz 1 UI ilk dalga** (`96fc11c`): /ayarlar DietPreferenceCard 6 preset
++ "Şimdilik yok" + setDietProfileAction server action. Tarif detay
+DietFitCard breakdown + Beta header + Sentry tag'li reset CTA. Query
+helper `getRecipeDietScore` unstable_cache 30 dk TTL.
+
+**D · RecipeCard badge + 6 listing entegrasyon** (`c030c98`): RecipeCard
+optional dietBadge prop (skor chip + Beta mini rozet sol alt köşe).
+/tarifler + /diyet/[diet] + /etiket/[tag] + /mutfak/[cuisine] +
+/tarifler/[kategori] + /kesfet (4 shelf) wired. getDietBadgesIfApplicable
+helper batch fetch.
+
+**E · Tag retrofit + diet score recompute** (`467fb8a`): vejetaryen
+%48->%72 (+842 tag), vegan %22->%31 (+314 tag), 1156 yeni tag prod.
+audit-vegetarian-coverage.ts + retrofit-vegetarian-tags.ts ingredient
+pattern matching (et/balik/kümes/kabuklu deniz urun + cheese-by-name
+genisletilmis). Vejetaryen-dengeli avg 48.8->52.7, vegan-dengeli avg
+38.0->41.6.
+
+**F · Anasayfa shelf entegrasyon** (`dc2d401`): FeaturedShelf component
+optional dietBadges Map prop + RecipeCard pass-through (mobile carousel +
+desktop grid). Personalized + Featured + Popular 3 shelf tek batched
+fetch. Faz 1 UI 14 yuzey.
+
+**G · /tarifler diet-fit sort** (`5ff7103`): "Diyetime uygun" sort tab
+(yalniz login + dietProfile set'li user'lara gorunur). getDietSortedRecipeIds
+RecipeDietScore tablodan score DESC, "relevance" branch'i recipeIds
+order korur. ResolvedSort = Exclude<SortOption, "diet-fit"> tip narrow.
+
+**H · AI Asistan + Menu Planner integration** (`7e1c64c`): AiSuggestion'a
+dietBadge field, suggestRecipesAction + generateWeeklyMenuAction
+getDietBadgesIfApplicable inject. AiAssistantForm SuggestionCard kucuk
+chip + Beta + AiFillModal slot kompakt chip.
+
+**I · PrivacyCard toggle + onboarding banner** (`8658d62`): showDietBadge
+4. toggle (default acik, opt-out). DietProfilePromptBanner anasayfa CTA
+(login + dietProfile NULL + dismissable). E2E 4 senaryo PASS (anonim
+redirect / preset save / toggle persistence / banner anon-hide).
+
+**J · Blog 41 ship** (`8fe52a3`): "Diyet Skoru Nasıl Hesaplanır" 1358
+kelime, mutfak-rehberi, 9 H2, 4 kaynak (WHO Europe Nutrient Profile +
+USDA FoodData Central + Harvard Glycemic Index + TÜBER 2022). Blog
+sidebar Mutfak Pratik grup'a eklendi. Preview test PASS.
+
+**K · Visual regression baseline** (`1dcc9d6`): tests/e2e/visual/
+diet-score.visual.spec.ts (3 senaryo, 2 baseline + 1 conditional skip),
+detail-pages BLOG_SLUGS'e blog 41 eklendi. Login user dietProfile=
+yuksek-protein test fixture.
+
+**L · Cleanup 48 yanlis tag + Mod FA 13r prod** (`7bf9a29`): audit-deep
+FAIL 26 CRITICAL (vegan tag YUMURTA/SUT/DENIZ_URUNLERI flagli tariflere
+eklenmis). cleanup-wrong-veg-tags.ts allergen guard ile prod -27 vegan
+-21 vejetaryen tag silindi. retrofit-vegetarian-tags.ts'e VEGAN_BLOCKING
++ VEGETARIAN_BLOCKING enum guard. Mod FA Retrofit-13 revize prod (suffix
+33x->4x, en kotu scaffold temizligi).
+
+**M · Faz 2 baslangic + Mod F 21** (`b909fde`): NutritionData top 30
+ingredient hand-curated USDA seed (data/nutrition-usda-seed.json + FDC
+ID + Public Domain license + source). seed-nutrition-data.ts idempotent
+upsert. Mod F Retrofit-21 prod (100 YEMEK, 596 step). DIET_SCORE_PLAN
+§13 Faz 2 progress notu.
+
+**N · Faz 2 ana ship 4 yeni preset** (`6591aa2`): RecipeNutrition tablosu
++ migration (sugarPerServing/fiberPerServing/sodiumPerServing/satFat
+PerServing/matchedRatio). src/lib/nutrition/unit-convert.ts amount parser
+(parseQuantity range/fraction/word number + convertToGrams weight/volume/
+count/orta-boy + TR-aware ASCII fold). aggregate.ts saf fonksiyon
+(matchedRatio guard 0.3+). compute-recipe-nutrition.ts pipeline (3471
+prod, %78 coverage, sugar avg 4.7g + fiber 1.0g + sodium 142mg + satFat
+2.4g). profiles.ts 6->10 preset (dusuk-seker proxy->real + 4 yeni
+yuksek-lif/dusuk-sodyum/akdeniz/keto-hassas). 34710 prod skor.
+
+**O · Mod FA 14r prod** (`f4df30a`): Mod FA pipeline 3/4 (12r+13r+14r
+tamam, 100 TATLI suffix max 2x).
+
+**P · Faz 2 polish smart Beta** (`8e56d90`): top 80 ingredient seed
+(batch 2, 50 yeni). Smart Beta etiketi (scorer.ts isBeta = profile.
+requiresEnrichedData && slug !== dusuk-seker; Faz 1 stable + dusuk-seker
+stable + diger 4 Faz 2 preset Beta korur). Dinamik approximationFlag
+her preset icin ozel mesaj. Coverage %78->%86, 5 Faz 2 preset skor +1
+ile +9 puan iyilesti (dusuk-sodyum 65.7->74.4 en buyuk).
+
+**Q · Faz 2 polish son + blog 41 update** (`3617798`): Beta etiketi
+dusuk-seker'den kaldirildi (proxy fallback + %86 coverage stable). Dinamik
+approximationFlag matchedRatio<0.5 ise her tarife ozel uyari. Blog 41
+1691 kelime (1358->1691, +333), 10 H2, 10 preset detayi + USDA mention +
+"%86 ingredient kapsam" yontemi seffaf. Preview test PASS.
+
+**R · Tarif detay nutrition genisleme + visual + status** (`14e3c3a`):
+NutritionInfo component sugar/fiber/sodium/satFat optional prop'lar +
+matchedRatio<0.5 "yaklasik veri" uyari. Ana macro grid altinda emoji
+ikonlu satir (🍬🌾🧂🧈). RecipeDetail type + getRecipeBySlug query
+nutrition relation. Visual baseline ayarlar-diet-preference 6->10 preset
+refresh. PROJECT_STATUS oturum 20 header.
+
+**S · Top 130 USDA seed batch 3** (`544d290`): 50 yeni ingredient (bayat
+ekmek/lavas/bezelye/eksi krema/avokado/ekmek/ispanak/sicak su/hindistan
+cevizi sutu/kuzu kusbasi/sebze suyu/dana eti/kuru nane/pancar/...).
+Coverage %86->%92, 0-match 26->7. avg sugar 5.2->6.2g, fiber 1.7->2.1g,
+sodium 173->195mg. Skor: yuksek-lif 25.4->28.0 / dusuk-sodyum 74.4->76.2
+/ akdeniz 47.9->49.8.
+
+**T · Smoke test + plan dokumani Faz 2 final** (`b703eec`): smoke-test.ts
+2 yeni endpoint (/blog/diyet-skoru-nasil-hesaplanir + /tarifler?siralama=
+diet-fit). DIET_SCORE_PLAN.md §13 Faz 2 COMPLETE listesi (14 modul) +
+§14 oturum 20 final ship listesi.
+
+**U · Mod FA brief Kural 5 (15r v1 reject sonrasi)** (`7c3a0a8`): tatli
+scaffold yasagi eklendi (§16.2). 15r v1'de 11 tarif "[X] serbeti icin
+su, seker..." template'iyle basliyordu (Mod FA amaci scaffold temizlemek
+idi, gri alan). Yeni kural: tatli step 1 ana malzeme aksiyonu olmali
+(seker hazirlamak step 4-5'te). Aynı template'i ≥6 tarif paylasirsa FAIL.
+
+**V · Lighthouse CI launch readiness** (`1200481`): @lhci/cli +
+GitHub Actions workflow + lighthouserc.json. 5 URL (anasayfa/tarifler/
+blog/blog detay/yasal), thresholds Perf>=0.7 / A11y>=0.95 / BP>=0.9 /
+SEO>=0.95. Local sonuc: Perf 98-100 / A11y 96-100 / BP 96 / SEO 100, 0
+assertion fail. PR'larda otomatik gerileme yakalama.
+
+**W · Neon old org cleanup baslangic** (`16502be`): db-env.ts eski prefix
+kaldirildi (ep-broad-pond + ep-dry-bread). Lokal backup dosyalari +
+scripts/tmp-migration/ silindi. 5 gunluk stabilite kanitlandi (Vercel
+Pro DB credits + idle Free tier $0). 30 Nis trigger date 5 gun erken
+karsilandi.
+
+**X · FUTURE_PLANS Neon cleanup TAMAM** (`9769343`): Eski Neon
+standalone "Kerem's projects" org'unda tarifle project (curly-hill-
+43162204) Kerem tarafindan silindi (Settings -> Delete project). Boş
+org sakli (free tier, 0 cost, ileride lazim olabilir). DATABASE_URL_OLD
+kontrol + password rotate Kerem dashboard isi opsiyonel.
+
+**Y · Mod FA 15r v2 prod, pipeline 4/4 KAPANIS** (`560f060`): 15r v1
+reject sonrasi (suffix 6x + tatli scaffold), v2 brief Kural 5 ile
+yeniden teslim. Audit: suffix max 2x + dominant 7% + tatli scaffold 0
+tarif + words<4 0. Apply prod 100 TATLI 552 step. Mod FA toplam 400
+tarif scaffold cleanup, pipeline 4/4 KAPANIS.
+
+**Apply pipeline ozet (oturum 20)**:
+- Prod 3471 tarif (Mod F 22 reject, +0)
+- Mod F **21/27 batch, 2100 tarif retrofit** (07-21 prod, 22 revize bekler)
+- Mod FA **4/4 KAPANIS** (12r+13r+14r+15r v2, 400 tarif scaffold cleanup)
+- Hunger-bar retrofit 1017 tarif (top 100 hedef coverage)
+- 10 diyet preset prod (5 stable + 5 USDA Beta, dusuk-seker stable)
+- 130 ingredient USDA seed (top 130, %92 RecipeIngredient row coverage)
+- 84 unit + 4 E2E + 15 visual baseline + smoke + Lighthouse CI
 
 ## 24-25 Nisan 2026 (oturum 19, 37 commit, kalite + test + Mod B %100 + 9 blog + Mod FA tasarımı)
 

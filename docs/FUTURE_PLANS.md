@@ -15,67 +15,56 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
-### Retrofit-12 / 13 / 14 / 15 revize (Mod FA, launch öncesi öncelikli)
+### Mod FA pipeline TAMAM (oturum 20)
 
-**Brief §16 Mod FA hazır** (oturum 19 sonu eklendi). Codex tetikleme:
-`"Mod FA. Retrofit-12 revize"`, `"Mod FA. Retrofit-13 revize"`, vb.
+Tüm 4 batch revize prod'da (12r + 13r + 14r + 15r v2), 400 tarif scaffold
+cleanup. Pipeline 4/4 KAPANIŞ. Brief §16.2 Kural 5 (tatlı scaffold yasağı)
+oturum 20'de eklendi (15r v1 reject sonrası ders).
 
-Ölçülmüş suffix freq:
-- **Retrofit-12: 27x** scaffold "[TARIFADI] için geniş kase, süzgeç..."
-- **Retrofit-13: 33x** scaffold (en kötü)
-- **Retrofit-14: 10x** sınır
-- **Retrofit-15: 15x** scaffold
+### Codex Mod F 22-27 (5 batch kalan, oturum 20'den sonra)
 
-Apply sırası: 12r → 13r → 14r → 15r. Her revize ~30 dk Codex + 5 dk
-apply pipeline. Brief §16 tetik mesajı net, scaffold yasağı + tarif-
-spesifik step zorunluluk + web kaynak doğrulama. Schema aynı, dosya
-adı `retrofit-step-count-N-revize.json`.
+Mod F 21/27 prod (07-21 apply edildi). 22 reject (suffix max 11x + 14
+words<4 ihlal), revize tetiği gerekli. Sonraki: 22r/23/24/25/26/27.
 
-400 tarif (4 batch x 100) tarif-spesifik step'lerle prod'a yenilenir.
-Mod FA pipeline kapanır. Aşağıdaki spot audit task'ı silinir.
-
-### Retrofit-12 / 13 / 14 / 15 suffix smuggling spot audit (launch sonrası polish, ~30 dk)
-
-Oturum 19'da Retrofit-16 v1 reject edildi: 42/100 tarif aynı 5 suffix
-pattern'ini paylaşıyordu (`"[TARIFADI] tepsisini hazırlayın, hamur oranı
-şaşmasın"` vb.). Brief'e Kural 17 eklendi, v2 mükemmel revize geldi
-(suffix freq 12 → 1).
-
-**Endişe**: Retrofit-12, 13, 14, 15 batch'leri aynı dönemde Codex
-tarafından üretildi ve aynı scaffold'u içeriyor olabilir. Bu batch'ler
-**zaten prod'a apply edildi** (geri alınamaz, DB'de step yazıldı).
-Yüzeysel gate'lerden geçti (kritik nokta %100 yapay yüksek olduğu için
-prod-blocker olarak görünmedi).
-
-Spot audit yöntem:
-```bash
-# Her batch için suffix freq + max
-for n in 12 13 14 15; do
-  npx tsx -e "
-  const j = JSON.parse(require('fs').readFileSync('docs/retrofit-step-count-${n}.json'));
-  const freq = {};
-  j.forEach(r => {
-    const suffix = r.newSteps[0].instruction.split(' ').slice(3).join(' ');
-    freq[suffix] = (freq[suffix]||0) + 1;
-  });
-  const top = Object.entries(freq).sort((a,b)=>b[1]-a[1])[0];
-  console.log('Retrofit-${n}: top suffix ' + top[1] + 'x: ' + top[0].slice(0,80));
-  "
-done
+Retrofit-22 revize Codex tetik mesajı (oturum 20'de hazırlandı):
+```
+Mod F. Retrofit-22 revize
+Brief §15 + Kural 17 (suffix smuggling).
+Önceki teslim: suffix max 11x scaffold + 14 step <4 kelime ihlal.
+Yeni teslim: tarif-spesifik step 1, ≥6 tarif aynı template paylaşmasın,
+word count ≥4. Slug listesi aynı, dosya: retrofit-step-count-22-revize.json
 ```
 
-Eğer top freq > 5 ise o batch suffix smuggling içeriyor demektir. Çözüm
-yolları:
-1. **Yumuşak**: kabul et (kullanıcı şikayet etmediyse, kalite ek polish
-   olarak ileride). Kritik nokta yapay olsa da step doğru, tarifin
-   genel akışı pişme açısından çalışıyor.
-2. **Sert**: Codex'ten Retrofit-N+1 olarak revize teslim al, brief Kural
-   17 ile aynı tarif slug'lara yeni JSON üret. Bu 4 batch için 4 yeni
-   teslim demek.
+23-27 sıralı: 22r kapandıktan sonra `Mod F. Retrofit-23` tetik.
 
-Launch öncesi hızlı karar: Yumuşak yaklaşım (revize launch sonrası).
-Mevcut kalite "iyi değil" değil, "mükemmel değil"; kullanıcılar fark
-etmeyecek nokta kalite katmanı.
+### Beta etiketi 4 preset'ten kaldırma (launch sonrası 1-2 hafta izleme)
+
+Faz 2'nin 4 preset'i (yuksek-lif/dusuk-sodyum/akdeniz/keto-hassas) Beta
+korur cunku proxy fallback'i yok, eslesmesi yetersiz tariflerde skor
+sikintili. Coverage %92 (top 130 ingredient), launch sonrası 1-2 hafta
+gözlem ile yanlış skor şikayet yoksa Beta düşürülür. Düşük şeker zaten
+stable (carbs proxy fallback + %86 USDA).
+
+scorer.ts içinde `isBeta = profile.requiresEnrichedData && profile.slug !== "dusuk-seker"` mantığı; 4 preset için override eklenebilir veya
+requiresEnrichedData=false yapılabilir.
+
+### Top 131-200 ingredient seed (Faz 3 polish, opsiyonel)
+
+Mevcut 130 ingredient (%92 coverage). 131-200 seed'i %96+'ya çıkarır.
+Hand-curated USDA SR Legacy + Foundation Foods, batch 4 olarak.
+audit-top-ingredients.ts ile öncelik listesi alınır.
+
+### Vercel env DATABASE_URL_OLD kontrolü (Kerem dashboard işi)
+
+Vercel → Project Settings → Environment Variables → ara `DATABASE_URL_OLD`
+veya benzer eski referans, varsa sil (Neon migration sonrası). Pratikte
+muhtemelen yok ama kontrol değer.
+
+### Yeni Neon project password rotate (opsiyonel hijyen)
+
+Vercel-managed Neon'un (`neon-citron-clock`, ID `dawn-leaf-12415691`)
+password'unu rotate. Oturum 15 dump akışında password chat'e geçtiyse
+hijyen gereği. Pratik risk düşük, kurumsal güvenlik standart.
 
 
 

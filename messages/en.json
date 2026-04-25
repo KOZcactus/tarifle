@@ -89,6 +89,12 @@
         "dinnerWeekendLong": "You have more time, try the classics.",
         "lateNightSweet": "Small sweets, under 15 min, before bed."
       }
+    },
+    "profileBanner": {
+      "title": "Complete your profile",
+      "body": "A short bio and avatar sharpen AI suggestions and make your profile page feel more alive.",
+      "cta": "Settings",
+      "dismiss": "Dismiss"
     }
   },
   "auth": {
@@ -440,14 +446,6 @@
       "securityDescription": "What you can do to protect your account and the measures we take on our side.",
       "contactNoticeTitle": "Contact Privacy Notice",
       "contactNoticeDescription": "Specific notice on how your data is processed when you reach us by email."
-    }
-  },
-  "home": {
-    "profileBanner": {
-      "title": "Complete your profile",
-      "body": "A short bio and avatar sharpen AI suggestions and make your profile page feel more alive.",
-      "cta": "Settings",
-      "dismiss": "Dismiss"
     }
   },
   "email": {

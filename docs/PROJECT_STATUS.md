@@ -1,5 +1,12 @@
 # Tarifle, Proje Durumu
 
+> Oturum 22 başı (26 Nis 2026): Source duplicate cleanup KAPANIŞ.
+> `scripts/smart-source-clean.mjs` (indent-aware brace-counting, 5
+> tarif format'ı tek algoritma), 59 source-only slug temizlendi
+> (3 multi-line + 57 single-line + 1 dup), source 3694 → 3635 unique.
+> Oturum 21 multi-line bozulma artığı kapatıldı; sonraki seed-recipes
+> çalışmasında silinmiş duplicate'lar geri gelmeyecek.
+
 > Oturum 21 sonu (26 Nis 2026), **38 commit**, mutlak rekor maraton:
 > Mod F retrofit pipeline KAPANIŞ + Mod A 5 batch (37a/37b/38a/38b/
 > 39a) 195 yeni tarif + 78 duplicate sil + amlou/aam panna sil = **prod

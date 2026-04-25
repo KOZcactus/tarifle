@@ -51,32 +51,26 @@ Her ingredient: whyUsed (8-40 kelime) + substitutes (2-4 alternatif)
 Self-check 8 madde §18.5.
 ```
 
-### Source-side duplicate smart cleanup (oturum 22 başında, 30 dk)
+<!-- Source-side duplicate smart cleanup ✅ TAMAM (oturum 22)
+     scripts/smart-source-clean.mjs (indent-aware brace-counting), 5
+     tarif format'ı (multi-line / single-line literal / r({...})) tek
+     algoritma ile. 59 source-only slug temizlendi (3 multi-line + 57
+     single-line + 1 duplicate kayıt), source 3694 → 3635 unique slug.
+     Source vs dev DB diff şu an 0 source-only (perfect sync). Tek
+     anomali: dev-only `dublin-soda-bread` (1 slug DB'de var, source'ta
+     yok) — kapsam dışı, opsiyonel ayrı cleanup. -->
 
-**Prod KAPALI** (78 tarif silindi, 3714 → 3636), **source AÇIK**:
+### Dev-only slug `dublin-soda-bread` (opsiyonel, ~5 dk)
 
-Yapılanlar:
-- audit-duplicate-titles 72 grup tespit
-- pick-duplicate-canonical.ts ile auto-pick (en zengin)
-- Prod rollback 4 chunk × 20 = 78 tarif silindi (AuditLog'lu)
-- Recompute: nutrition 3636 + diet-score 36360
+Source 3635 unique, dev DB 3636 unique. 1 slug fark: `dublin-soda-bread`
+dev'de var, source'ta yok. Olası sebep: önceki batch'te eklenmiş, sonra
+source'tan yanlışlıkla silinmiş. Bir sonraki seed çalışmasında DB'den
+silinmez (idempotent always-add). İki seçenek:
 
-**Source AÇIK** (yapılması gereken):
-remove-source-slugs.mjs **sadece tek-satır** tarif format'ında çalıştı.
-Eski multi-line tarif kayıtlarında (`{\n    title: ...\n    cuisine: ...\n  }`)
-sadece slug satırı silindi, kalan satırlar orphan oldu, tsc parse fail.
+1. Source'a geri ekle (Codex teslim ya da elle Dublin soda bread tarifi)
+2. Dev'den sil (rollback-batch script, AuditLog'lu)
 
-**Çözüm**: git checkout 1bb258e ile source 39a sağlam haline döndü
-(78 entry hala source'ta), ama prod'da yok. **Bir sonraki seed-recipes
-çalışmasında silinmiş slug'lar GERİ GELECEK** (idempotent skip değil,
-slug DB'de yok eklenecek).
-
-**Aksiyon**: Multi-line tarif tespit edip blok bazlı (regex/AST) silen
-yeni script. Geçici workaround: yeni Mod A batch'ler Brief Kural 16
-(dup-check) ile yeni tarifler için duplicate önler, eski source drift'i
-sonraki cleanup pass'e ertelenir.
-
-Tahmini iş: 30 dk (smart-source-clean.mjs script + spot test).
+Opsiyonel, launch-blocker değil.
 
 ### Mod FA pipeline TAMAM (oturum 20)
 

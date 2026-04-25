@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { revalidatePath, updateTag } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { auth } from "@/lib/auth";
 
 /**
@@ -57,7 +57,7 @@ export async function GET(request: Request): Promise<NextResponse> {
 
   if (slugParam) {
     revalidatePath(`/tarif/${slugParam}`);
-    updateTag("recipes");
+    revalidateTag("recipes", "default");
     actions.push(`path:/tarif/${slugParam}`, `tag:recipes`);
   }
   if (pathParam) {
@@ -65,7 +65,7 @@ export async function GET(request: Request): Promise<NextResponse> {
     actions.push(`path:${pathParam}`);
   }
   if (tagParam) {
-    updateTag(tagParam);
+    revalidateTag(tagParam, "default");
     actions.push(`tag:${tagParam}`);
   }
 

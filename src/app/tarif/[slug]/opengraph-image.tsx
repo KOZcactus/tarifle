@@ -8,6 +8,8 @@ import { pickRecipeTitle } from "@/lib/recipe/translate";
 export const contentType = "image/png";
 export const size = { width: 1200, height: 630 };
 
+export const dynamic = "force-dynamic";
+
 interface Props {
   params: Promise<{ slug: string }>;
   id: Promise<string>;

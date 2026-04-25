@@ -56,17 +56,14 @@ Tek bir tarifte iki kez geçen marjinal malzeme. Ek seed gain marjinal,
 launch sonrası kullanıcı şikayetine göre devam edilir. audit-top-
 ingredients.ts ile gerçek gap görülebilir.
 
-### Vercel env DATABASE_URL_OLD kontrolü (Kerem dashboard işi)
+<!-- Vercel env DATABASE_URL_OLD kontrol ✅ YOK (oturum 21'de doğrulandı)
+     Eski standalone Neon kalıntısı Vercel env'de yok, mevcut DATABASE_URL
+     Vercel-managed Neon (ep-icy-mountain). Cleanup TAMAM. -->
 
-Vercel → Project Settings → Environment Variables → ara `DATABASE_URL_OLD`
-veya benzer eski referans, varsa sil (Neon migration sonrası). Pratikte
-muhtemelen yok ama kontrol değer.
-
-### Yeni Neon project password rotate (opsiyonel hijyen)
-
-Vercel-managed Neon'un (`neon-citron-clock`, ID `dawn-leaf-12415691`)
-password'unu rotate. Oturum 15 dump akışında password chat'e geçtiyse
-hijyen gereği. Pratik risk düşük, kurumsal güvenlik standart.
+<!-- Neon password rotate ✅ GEREKSIZ (oturum 21'de netleşti)
+     Vercel-managed Neon connection string'i Vercel otomatik yönetiyor;
+     manuel password rotation gerekmiyor. Eski standalone Neon (manuel
+     password'lu) zaten silindi. -->
 
 
 

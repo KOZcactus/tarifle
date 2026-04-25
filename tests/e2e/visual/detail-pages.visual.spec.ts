@@ -29,6 +29,10 @@ const BLOG_SLUGS = [
   "ev-yapimi-ekmek-tipleri",
   "damak-yemek-dengesi",
   "mikro-otlar",
+  "yag-kimyasi-ve-duman-noktalari",
+  "sote-vs-kavurma-vs-bugulama",
+  "limon-ve-limon-suyu",
+  "sirke-cesitleri",
 ];
 
 test.describe("Recipe detail visual baseline", () => {

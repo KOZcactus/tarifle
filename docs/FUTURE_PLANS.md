@@ -21,12 +21,13 @@ Tüm 4 batch revize prod'da (12r + 13r + 14r + 15r v2), 400 tarif scaffold
 cleanup. Pipeline 4/4 KAPANIŞ. Brief §16.2 Kural 5 (tatlı scaffold yasağı)
 oturum 20'de eklendi (15r v1 reject sonrası ders).
 
-### Codex Mod F 23-27 (4 batch + 1 final kalan, oturum 21+)
+### Codex Mod F 24-27 (4 batch kalan, oturum 21+)
 
-Mod F 22r prod canlı (oturum 21, 100 YEMEK, suffix max 2x, audit-deep
-PASS). Mod F **22/27** prod (07-21 + 22r), kalan: 23/24/25/26/27.
+Mod F 22r + 23 prod canlı (oturum 21). 23: 100 YEMEK, 626 step, kritik
+nokta 75/100, dup 0, audit-deep PASS. Mod F **23/27** prod (07-21 +
+22r + 23), kalan: 24/25/26/27.
 
-Codex tetik formatı (sırayla): `Mod F. Retrofit-23` → JSON gelince
+Codex tetik formatı (sırayla): `Mod F. Retrofit-24` → JSON gelince
 `scripts/apply-retrofit.ts --file docs/retrofit-step-count-NN.json`
 ile dry-run + dev apply + audit-deep + prod apply.
 

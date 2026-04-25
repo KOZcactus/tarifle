@@ -1,0 +1,145 @@
+---
+title: "Diyet Skoru Nasıl Hesaplanır: Tarifle'nin Yöntemi ve Sınırları"
+description: "Tarifle her tarife 0-100 arası diyet uyum skoru veriyor. Dengeli, yüksek protein, düşük şeker gibi profillerde skor neye göre çıkıyor, neden Beta etiketi var, sınırlar nereden gelir? Yöntemi şeffaf anlatan rehber."
+date: "2026-04-25"
+author: "Tarifle Editörleri"
+tags: ["beslenme", "diyet", "skor", "yontem", "seffaflik"]
+category: "mutfak-rehberi"
+coverEmoji: "🎯"
+---
+
+Bir tarif, bir kullanıcı için ne kadar uygun? Bu sorunun cevabı kullanıcıya bağlı. Vejetaryen biri için iyi olan tarif, yüksek protein arayan birine yetersiz gelebilir. Düşük şeker hedefli biri için sağlıklı görünen bir kek, kan şekerini hızla yükseltebilir.
+
+Tarifle bu sorunu kullanıcıya bırakmadan, otomatik bir skor üretiyor: seçtiğin diyet profiline göre her tarife 0 ile 100 arası bir uyum puanı. Skor recipe kartında küçük bir chip, detay sayfasında detaylı bir kartla görünür. Yanında Beta etiketi var. Bu yazı skorun arkasındaki yöntemi, Beta etiketinin neden orada durduğunu, nereye kadar güvenebileceğini açıklar.
+
+## Skor neyi ölçüyor?
+
+Diyet skoru bir tarifin sağlıklı olup olmadığını söylemiyor. "Düşük kalori" diyetiyle "yüksek protein" diyeti farklı şeyleri ödüllendirir. Aynı tarif birinde 92, diğerinde 35 alabilir. Skor "bu tarif **senin seçtiğin diyete** ne kadar uyuyor" sorusunun cevabı, mutlak bir kalite ölçüsü değil.
+
+Şu an altı diyet profili var:
+
+- **Dengeli Beslenme**: Protein %15-25, karbonhidrat %45-55, yağ %25-35 oranlı tabaklar
+- **Yüksek Protein**: Porsiyon başı 25g+ protein hedefli
+- **Düşük Kalori**: 350 kalori altı, doyurucu tarifler
+- **Vejetaryen Dengeli**: Et içermeyen + makro dengesi yerinde
+- **Vegan Dengeli**: Hayvansal ürün içermeyen + bitki proteini yeterli
+- **Düşük Şeker (Beta)**: Kan şekerini ani yükseltmeyen, dengeli karbonhidrat
+
+Her profil için farklı kriterler farklı ağırlıklarla toplanır. Toplam her zaman 100 üzerinden hesaplanır.
+
+## Nasıl hesaplanıyor?
+
+Skor [açık kurallı](https://en.wikipedia.org/wiki/Rule-based_system) bir motor üretir. Yapay zeka değil, deterministik matematik. Aynı tarif, aynı diyet, her zaman aynı skoru alır.
+
+Her diyetin kendi kriter listesi var. Mesela "Yüksek Protein" için:
+
+- **Protein miktarı (45 puan)**: Porsiyon başı 25g+ tam puan, altında lineer azalır
+- **Protein yoğunluğu (25 puan)**: Kalori başına protein oranı düşük (≤12 kcal/g) iyi
+- **Doyuruculuk (20 puan)**: Açlık skoru 5-10 arası ideal
+- **Makul kalori (10 puan)**: 300-800 arası kalori
+
+"Vejetaryen Dengeli" için kriterler değişir:
+
+- **Vejetaryen uyumu (35 puan)**: Tarif et içermiyorsa tam puan, içiyorsa sıfır
+- **Bitki proteini yeterli (25 puan)**: 15g+ protein
+- **Makro denge (25 puan)**: Üç makroyu da hedef aralıkta tutmak
+- **Kalori aralığı (15 puan)**: 300-700 kcal arası
+
+Her kriter "smooth fit" denen yumuşak bir geçişle puanlanır. Hedef değere yaklaştıkça oran artar, hedefin ortasında tam puan, üstüne çıktıkça hafif ceza. Binary "geçti / kaldı" yerine "ne kadar yakın" sorgusu. Bu yaklaşım [nutrient profiling literatüründe](https://www.who.int/europe/publications/i/item/WHO-EURO-2024-9367-49139-73332) WHO'nun da önerdiği yöntem.
+
+Skor 5 katmana bölünür:
+
+- **85-100**: Mükemmel uyum
+- **70-84**: İyi uyum
+- **50-69**: Orta uyum
+- **30-49**: Zayıf uyum
+- **0-29**: Uyumsuz
+
+Tarif kartında küçük bir renkli chip bu katmanları yansıtır: yeşil yüksek, sarı orta, kırmızı düşük.
+
+## Beta etiketi neden duruyor?
+
+Skor sistemi açık ve şeffaf, ama veri tarafı henüz tam değil. Beta etiketinin sebebi bu boşluk.
+
+Tarif veritabanımızda her tarif için kalori, protein, karbonhidrat ve yağ değerleri var. Bu yeterli mi? Çoğu skor için evet. Ama düşük şeker hesabı için **şeker miktarı**, yüksek lif için **lif miktarı** ayrı bir veri. Şu an o kolonlar bizde boş. Faz 2 olarak adlandırdığımız sonraki adımda [USDA FoodData Central](https://fdc.nal.usda.gov/) verilerini malzemeye eşliyoruz. O zaman düşük şeker skoru gerçekten şekere göre hesaplanacak, şu anki "karbonhidrat oranı düşük" proxy yöntemi yerine.
+
+Yani bugün düşük şeker skoru yaklaşıktır. Yüksek lif skoru bu yüzden daha yayında değil. Beta etiketi bunu söylüyor: skor çalışıyor, ama bazı diyetlerde gerçek hassasiyete ulaşmadı. Faz 2 tamamlandığında etiket düşürülür.
+
+Diğer bir nokta porsiyon hesabı. Tarifin 4 kişilik versiyonu ile 8 kişilik versiyonu arasında kalori başına protein oranı aynı kalsa da, mutlak değerler değişir. Skoru porsiyon başı hesaplıyoruz, tarif sayfasındaki "Kişi" değerine bağlı. Sayı yanlışsa skor da kayıyor. Tariflerin %95'inde porsiyon doğru ama hata payını sıfırlayamıyoruz.
+
+## Etiket retrofit'i ne yaptı?
+
+İlk yayında "Vejetaryen Dengeli" skorunda fark ettik: vegetaryen tarifler %48'inde gerçekten vejetaryen tag'i vardı, geri kalanı et içermediği halde tag'lenmemişti. Bu durumda skor olduğundan düşük çıkıyordu. Sebep insan eli, bazı tariflerde tag eklenmemişti.
+
+Çözüm otomatik bir kontrol oldu. Her tarifin malzeme listesini taradık, et / kümes hayvanı / balık / kabuklu deniz ürünü kalıplarına bakan bir motor yazdık. Bulamadığında o tarife `vejetaryen` tag'i ekledik. Aynı motor süt ürünü, yumurta ve balı da kontrol ediyor; hiçbiri yoksa `vegan` tag'i de ekleniyor. Bu işlem 1156 yeni tag attı.
+
+Sonuç dağılımı:
+
+- Vejetaryen: %48 → **%72**
+- Vegan: %22 → **%31**
+
+Bu otomatik tag ekleme yüzde yüz doğru değil. "Et suyu" gibi kısa kelimeler edge-case yaratıyor, manuel revizyon ileride yapılacak. Şimdilik agresif yerine dikkatli kalıp tutuyoruz: emin olmadığımızda tag eklemiyoruz. Yani hâlâ tag'i olmayan vejetaryen tarif vardır, ama tag olan tariflerin neredeyse hepsi gerçekten vejetaryen.
+
+## Skor neye göre güvenilir?
+
+Faz 1 olarak çıkardığımız altı profil için güvenilirlik dereceleri farklı.
+
+Yüksek güven (mevcut veri yeterli):
+
+- Yüksek Protein
+- Düşük Kalori
+- Vejetaryen Dengeli
+- Vegan Dengeli (B12 sinyali eksik, ek uyarı eklenecek)
+- Dengeli Beslenme
+
+Orta güven (proxy ile çalışıyor):
+
+- Düşük Şeker (karbonhidrat oranını şekere yaklaşık alıyor; Faz 2'de USDA verisi gelince netlik artar)
+
+Faz 2'ye sakladığımız profiller (veri eksik):
+
+- Yüksek Lif
+- Düşük Sodyum
+- Akdeniz
+- Keto Hassas (net karb hesabı için lif değeri lazım)
+
+Bu yaklaşımı seçmemizin sebebi yanlış sonucu doğru göstermekten kaçınmak. Bir kullanıcı "düşük sodyum" seçtiğinde bizim sodyum verimiz yoksa skor uydurmaktan iyidir. Faz 2'de o veriyi eklediğimizde profili açacağız.
+
+## Sınırlar ve doğru kullanım
+
+Skor bir öneri sistemi, tıbbi tavsiye değil. Diyabetik bir kullanıcı [Glisemik İndeks tablosunu](https://www.health.harvard.edu/diseases-and-conditions/glycemic-index-and-glycemic-load-for-100-foods) ve diyetisyenini skoru yerine ikame edemez. Bizim "Düşük Şeker" skorumuz porsiyon başı toplam karbonhidratı hesaba katar, hızlı sindirilen rafine şeker ile yavaş sindirilen tam tahıl arasındaki farkı tam ayırt edemez. Bu ayrımı Faz 2'de glikemik indeks katmanı ile getireceğiz.
+
+Diğer sınırlar:
+
+- **Kişiye özel kalori hesabı yok**. "Düşük Kalori" 350 kcal eşiğini kabul ediyor; yaşam, kilo, aktivite seviyene göre senin için "düşük" eşiği farklı olabilir.
+- **Gluten, laktoz, fındık gibi alerjenler diyet skoruna girmez**. Onlar ayrı bir filtre, /tarifler sayfasında "alerjen hariç tut" seçeneğiyle çalışır.
+- **Mikronutrient (vitamin, mineral) hesabı yok**. Demir, B12, kalsiyum gibi değerler Faz 3'te skoru zenginleştirecek.
+
+Genel kural, skoru "ipucu" olarak görmek. 90 alan bir tarif diyetine "uygun olabilir" diyor, "ye" demiyor. 30 alan bir tarif "diyetine uygun değil" diyor, "yeme" demiyor. Tek tip çıktıya değil, profilin yönüne bakmak iyi alışkanlık.
+
+## Skoru nasıl en iyi kullanılır?
+
+Skoru aktif eden kullanıcı tariflere üç farklı yerden bakar: tarif kartında küçük bir chip, detay sayfasında detaylı bir kart, listeleme sayfasında sıralama tabı.
+
+**Tarif kartında**: Sadece skoru ve renk seviyesini görürsün, hızlı keşif için. Listede gözüne yeşil bir tarif çarpıyorsa "bunu açıp daha detaylı bakayım" sinyali.
+
+**Detay sayfasında**: 0-100 progress bar + her kriterin alt puanı. Niye skor düşük çıkmış, hangi kriter eksik, açıkça görürsün. "Vejetaryen olduğu için 35/35 aldı, ama protein 8g, hedef 15g, o yüzden 25/25 yerine 13/25" gibi.
+
+**Listeleme sayfasında**: `/tarifler` adresine giderken sıralama seçeneklerinde "Diyetime uygun" yeni bir seçenek var (sadece diyet seçtiysen görünür). Tıklarsan tüm tarifler senin profiline göre yüksekten düşüğe sıralanır. Filtre seçimleri (kategori, mutfak, alerjen) bu sıralamayla birlikte çalışır.
+
+AI Asistan'a malzeme listenle gittiğinde de aynı veri çalışır. Önerilen tarifin yanında küçük bir chip, "bu öneri diyetine ne kadar uyuyor" hızlı bir göz mesafesinden anlatır.
+
+## Şeffaflık ve geri bildirim
+
+Skor algoritması açık. Eşikler, ağırlıklar, hesap mantığı kaynak kodda görünür ve [GitHub'da](https://github.com/) yakında public açılacak. Bir tarifin skorunu fazla düşük ya da yüksek bulursan ayarlar sayfasında "Diyetimi değiştir" linki var, profilini geçici olarak değiştirip karşılaştırabilirsin.
+
+İleriki sürümlerde geri bildirim formu ekleyeceğiz: "Bu skor sence uygun mu?" gibi tek tıklı bir kontrol. Cevaplar Faz 2 ve sonrası eşik ayarlarını kalibre etmemizi sağlayacak.
+
+Şu an Beta'da olmasının pratik yansıması: skoru kullan, ama tek başına karar verici olarak kullanma. Tarifin malzeme listesine, kalori değerine, kendi tabağındaki dengeye bakmak da gerek.
+
+## Kaynaklar
+
+- [WHO Europe Nutrient Profile Model 2024](https://www.who.int/europe/publications/i/item/WHO-EURO-2024-9367-49139-73332): Sağlıklı beslenme skorlama yöntemi için Avrupa düzeyinde önerilen yaklaşım, "fit fonksiyonu" mantığının kaynağı.
+- [USDA FoodData Central](https://fdc.nal.usda.gov/): 300 binden fazla gıda için besin değeri veritabanı, Faz 2'de Tarifle'ye eşlenecek temel kaynak.
+- [Glycemic Index for 100 Foods, Harvard Health](https://www.health.harvard.edu/diseases-and-conditions/glycemic-index-and-glycemic-load-for-100-foods): Düşük Şeker profili için referans, glikemik indeks pratik kullanım.
+- [Türkiye Beslenme Rehberi (TÜBER) 2022](https://hsgm.saglik.gov.tr/tr/beslenme/turkiye-beslenme-rehberi.html): Türk yetişkinlerine özel makro hedefleri, profil eşiklerinin yerel uyarlaması.

@@ -146,6 +146,7 @@ const TOPIC_GROUPS: TopicGroup[] = [
       "mutfak-bicagi-secimi-ve-kullanimi",
       "mutfak-ekipman-olmazsa-olmazlari",
       "ev-mutfagi-hijyen-temelleri",
+      "diyet-skoru-nasil-hesaplanir",
     ],
   },
 ];

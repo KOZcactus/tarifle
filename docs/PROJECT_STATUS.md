@@ -1,15 +1,20 @@
 # Tarifle, Proje Durumu
 
-> Oturum 18 devam (24 Nis 2026), **23 commit**, en geniş AI paketi + A+ retrofit pipeline günü.
-> **Mod F altyapısı + Retrofit-01/02/03 apply** (300/2660 tarif, B+ → A- → A+ A+ brief gate etkili) +
-> **Mod A Batch 35a/35b/36a/36b seed apply** (200 yeni, **3252 → 3452 prod**) +
-> **Mod B Backfill-11/12/13 apply** (250 çeviri, Mod B ≈%93, 200 slug kaldı) +
-> **Backfill-14/15 CSV üretildi** (Codex'te bekliyor) +
-> **AI paketi 7 özellik** (A Pişirdim→decrement / B sesli TTS kadın-erkek toggle / C SKT uyarı widget / D home dinamik "şu saatte ne yesek" / E "Beğenmedim, farklı dene" feedback / F v3 miktar rozeti + shopping diff / G favori boost collaborative filter / H home 🎒 CTA autoPantry) +
-> **Pantry miktar farkındalığı** (quantity-aware util + 45 test + rozet + SKT opt-in + alışveriş→pantry senkron) +
-> **Brief A+ standardı** (§15 Mod F + §5 Mod A, 5 self-check gate: varyasyon/notes/timer/muğlak/kritik nokta %60). 
-> **752/752 test PASS, tsc clean, lint clean.**
-> **Sonraki:** Codex Retrofit-04+ / Mod A 37a / Backfill-14+15 teslimleri + Vercel deploy sonrası F prod test.
+> Oturum 19 sonu (24-25 Nis 2026), **37 commit**, en geniş kalite + test günü.
+> **Mod B %100 KAPANIŞ** (3452/3452 tam çeviri, Backfill-14/15 apply) +
+> **Mod F Retrofit 17/27 batch** (1700 tarif retrofit, 07-17 prod apply) +
+> **Brief Kural 17 + yeni Mod FA** (suffix smuggling yasağı, 4 batch revize bekliyor) +
+> **9 yeni blog (32-40)** "launch 40 hedefi tamamlandı" 14 pişirme/14 malzeme/12 rehber denge +
+> **Test paketi**: 5 P1 E2E spec + 12 visual regression baseline + smoke-test.ts + JSON dupe pre-push guard +
+> **Security paketi**: X-Frame-Options DENY + CSP Report-Only mode + 4 sub-route error boundary +
+> **Onboarding E paketi**: welcome email (TR+EN) + ProfileIncompleteBanner +
+> **A11y paketi**: skip link + main anchor + nav aria-label + dark primary contrast fix +
+> **Content drift toplu temizlik**: cuisine 569→0 + translations 1032→0 (1647→46 WARNING %97 azalma) +
+> **Bug fix**: PWA i18n home dupe namespace + CSP endpoint 500 + 4 vegan+SUT drift +
+> **Blog sidebar refactor**: "Aylara göre" → 8 konu grubu (Et&Balık, Süt Ürünleri, Hamur&Ekmek, ...) +
+> **Pre-push 6 katman** (lint + content:validate + JSON dupe + em-dash + allergen + tsc).
+> **752+ unit + 21 E2E + 12 visual + smoke test PASS.**
+> **Sonraki:** Codex Mod FA Retrofit-12r/13r/14r/15r (4 batch revize), Codex Mod F Retrofit-18+, Lighthouse CI, 30 Nis Neon cleanup.
 
 > Son güncelleme: **Oturum 17 sonu (24 Nis 2026)**, 32 commit, en büyük tek gün sprint: **AI v4.3 ailesi 16 özellik** (single-slot regenerate + uyum skoru rozeti + reason chip renk kodu + anti-repeat seed + edge UX + seasonal/bayram banner + commentary personalization + alışveriş diff özeti + iCal export + WhatsApp paylaş + form persistence + dolabını tamamla + saate göre filtre + sesli giriş + URL-state v4 + fırsat öneri) + **UserPantry DB + /dolap + AI entegrasyon** (kalıcı dolap modeli, cihazlar arası senkron, 🎒 tek tık AI'ya aktar, 17 unit test) + **Mod A Batch 32b/33a v2/33b/34a/34b apply** (250 yeni tarif, 3002 → **3252 tarif prod**) + **CUISINE_CODES 24 → 30** (de/ir/pk/id/et/ng yeni mutfak) + **Mod B Backfill-09/10 apply** (200 çeviri) + **Liderlik feature flag** (admin toggle, default kapalı) + **Blog redesign** (sol sidebar + kategori + arşiv + alt konular + tag chip'leri) + **Blog 31** Soğuk Zincir + Et Güvenliği + **SEO/Sentry fix dalgası** (Prisma N+1 + GSC 206+ uyarı + /ai-asistan query noindex + /giris canonical) + **Brief oturum 17 dersleri** (d-helper yasağı + helper tip + allergen self-check + TR bölge denge kaldırıldı + uluslararası bilinen öncelikli + web kaynak doğrulama). **Sonraki:** Backfill-11/12/13 Codex'te (250 çeviri), 35a+ yeni Mod A, 30 Nis Neon cleanup, AI v5 LLM katmanı launch sonrası.
 
@@ -34,6 +39,110 @@
 > Oturum 8 sonu (30 commit), 2320 tarif prod canlı. 10 blok: 6 Codex batch Mod A (1701→2320), 3 Mod B batch (batch 18-20 çeviri 600→900), rekabet §8 kısa 6/6 ✅ + orta 5/5 ✅, topluluk loop tam (follow + feed + fan-out + followers list + suggested cooks + collection/variation share + PWA banner + Pinterest rich pin + user-photos flag), admin analytics + bulk moderation + search log, PDF export + llms.txt, 18 migration.
 >
 > Oturum 7 sonu (28 commit), 1701 tarif prod canlı. 8 blok: Mod B batch 13-17 (600 tarif EN+DE), Mod A batch 15-17 (1401→1701), foryou sort, pagination redesign, super-admin protection, /admin/yorumlar, /kategoriler, legal hub /yasal, editör rozeti, similar-recipes v2, 44 programatik landing, profil zenginleştirme, /menu-planlayici, RSS + HowTo schema, AI Asistan v2, blog MDX + 3 makale, rekabet analizi doc, newsletter double-opt-in altyapı, codex brief 3 clarify.
+
+## 24-25 Nisan 2026 (oturum 19, 37 commit, kalite + test + Mod B %100 + 9 blog + Mod FA tasarımı)
+
+> En geniş kalite + test paketi günü. **Mod B %100 kapanış** (Backfill-14/15 prod apply, 3452/3452 tam çeviri rozeti) + **Mod F Retrofit 7→17 batch** (1100 yeni retrofit, 07-17, dörtlü %100 kritik nokta rekor 12-13-14-15 ama suffix smuggling tespit edildi sonradan) + **9 yeni blog 32-40** (Domates, Tereyağı, Peynir, Kahve/Çay, Zeytin, Balık Mevsimleri, Makarna, Un, Et Bölgeleri) "launch 40 blog hedefi TAM" + **8 paket audit** (A-H) + **5 P1 E2E spec** + **Visual regression baseline 12 PNG** + **Mod FA yeni mod tasarımı** (Retrofit revize, brief §16). **Pre-push 6 katman, prod 3452 tarif, 40 blog.**
+
+**A · Brief §15.7 kelime min 5 → 4 gevşetme** (`a54d90b`): Retrofit-05 servis step'lerinde "Karabiberle servis edin" 3 kelime anlamlı ama gate'i delemiyordu. Hard min 4, ana pişirme 5+ ideal.
+
+**B · audit-batch-latest.ts refactor** (`aea2f04`): tmp scripts/audit-batch-36b.ts → parametreli `--last N` + `--label` argv. WORD_MIN=4 yeni standart.
+
+**C · Blog 32 Domates Çeşitleri** (`8ff284b`): 1019 kelime, malzeme kategorisi.
+
+**D · Em-dash MDX guard fix + 32 em-dash temizlik** (`a7d76cc`): scripts/check-emdash.mjs `.mdx` taramıyordu, 6 eski blog yazısında 32 em-dash gizliydi. Pattern replace ' — ' → ', '.
+
+**E · Blog 33 Tereyağı + Blog 34 Peynir Çeşitleri** (`a6a394b`, `291d223`): malzeme kategorisi, fermentasyon ile yoğurt overlap'i bağlandı.
+
+**F · Mod B Backfill-14 prod apply** (`d81019e`): 100 tarif EN/DE, audit temiz, DE serving 98/100 unique 2 minor dupe (Codex feedback).
+
+**G · 4 vegan+SUT drift fix** (`6810a28`): audit-deep CRITICAL 4 tarif (selanik-gigantes, elazig-pestil, kirklareli-lahana, antalya-kereviz) — ingredient'te süt var ama vegan tag'liydi. Vegan tag kaldırıldı dev+prod.
+
+**H · Security audit + X-Frame-Options DENY** (`cfb6bc7`): npm audit 0 high, KVKK delete flow mükemmel, HSTS+nosniff+referrer+permissions tam, X-Frame-Options eksikti zero-risk eklendi. CSP Report-Only paket flag.
+
+**I · Mod B Backfill-15 prod apply 🎉** (`4282c06`): **Mod B 3452/3452 %100 KAPANIŞ**. Codex DE unique feedback'i mükemmel uyguladı.
+
+**J · Brief Mod B DE unique gate** (`922490b`): EN ile aynı disiplin DE tipNote/serving 100/100 unique zorunlu, Backfill-14 dersi.
+
+**K · A11y skip link + main anchor + nav aria-label** (`a33efc5`): WCAG 2.4.1 Bypass Blocks ihlali kapatıldı. Tab ile "Ana içeriğe atla" görünür.
+
+**L · Blog 35 Kahve mi Çay mı + error.tsx Sentry** (`1636d94`, `6fabb55`): rehber kategorisi 1258 kelime + root error.tsx'e Sentry.captureException + digest UI'da gösterim.
+
+**M · CSP Report-Only mode ship** (`0ba3148`): next.config.ts CSP header + /api/csp-report endpoint (Sentry forward + rate limit 60/dk) + 1-2 hafta izleme sonra enforce geçiş plan.
+
+**N · Blog 36 Zeytin Çeşitleri** (`e05452f`): malzeme kategorisi, süt ürünleri trilojisi (yoğurt+tereyağı+peynir+zeytin) tamam.
+
+**O · Cron + observability audit + DMARC flag** (`d5822e6`): 4 cron auth guard 401 doğrulandı, Sentry + Resend DKIM/SPF/MX OK, **DMARC kaydı YOK** (Cloudflare DNS panelinden eklenecek).
+
+**P · BreadcrumbList JSON-LD blog** (`fd5542b`): Article zaten vardı, BreadcrumbList eksikti. SEO rich result kazanç.
+
+**Q · E paketi welcome email + ProfileIncompleteBanner** (`8702bbd`, `6f7bf33`): Register sonrası fire-and-forget welcome email TR+EN (3 feature: Dolap+AI Asistan+Favoriler) + login + bio/avatar NULL → home banner dismissable + useSyncExternalStore localStorage pattern.
+
+**R · Mod F Retrofit 07-15 prod apply** (toplam 9 batch, 850 tarif): 07 (KAHVALTI %59 sınır), 08 (%70), 09 (🏆 %78 dominant %46), 10a (50 KAHVALTI+KOKTEYL %76), 10b (50 KOKTEYL %86 rekor), 11 (KOKTEYL+SALATA %74), 12-13-14-15 dörtlü %100 (sonradan suffix smuggling tespit).
+
+**S · Cuisine drift fix 569 → 0** (`d5a26bc`): seed-recipes.ts source drift. Block-aware AST script (multi-line + tek-satır recipe ayrı handle) + DB'den slug→cuisine mapping.
+
+**T · Translations seed sync 1032 → 0** (`d4fb842`): Aynı block-aware teknik. tek-satır recipe için `lastIndexOf('}')` + `[...steps], translations: {...}, }` pattern. content:validate **1647 → 46 WARNING (%97 azalma)**.
+
+**U · Blog 37 Balık Mevsimleri + 4 sub-route error boundary** (`09a6fa3`, `cc459c9`): rehber kategorisi 1491 kelime, 12 aylık kalender + Karadeniz/Marmara/Ege/Akdeniz haritası. /tarif/[slug], /dolap, /ai-asistan, /admin için error.tsx (Sentry tag + reset CTA).
+
+**V · Newsletter orphan cleanup + Blog 38 Makarna** (`108f65d`): deleteAccountAction transaction'a NewsletterSubscription email cleanup + malzeme blog 1293 kelime.
+
+**W · Mod F Retrofit-15 + ProfileIncompleteBanner** (`683ccf1`): 100 TATLI dörtlü %100 rekor (sonradan suffix smuggling şüpheli) + Banner ship.
+
+**X · Dark primary contrast fix + Blog 39 Un Çeşitleri** (`cb3a59c`): globals.css `[data-theme="dark"] button.bg-primary` color #1a1a1a (4.47 → 6.7 AAA) + malzeme blog 1249 kelime.
+
+**Y · Blog sidebar konu grupları** (`dfee5a9`): "Aylara göre" arşiv silindi → 8 konu grubu (Et&Balık, Süt Ürünleri, Hamur&Ekmek, Sebze&Baharat, İçecek, Türk Mutfağı Kültürü, Pişirme Temelleri, Mutfak Pratik).
+
+**Z · Mod F Retrofit-16 v1 reject + Brief Kural 17 + 37a revert** (`bf93867`): Codex 16 v1 teslim suffix smuggling 12x scaffold ("[TARIFADI] tepsisini hazırlayın, hamur oranı şaşmasın"). 100 TATLI reject. Mod A 37a seed Codex'in eklediği 50 tarif suffix dominant %82 (gate ihlal) + 5 timer eksik, git checkout revert. Brief §5.0 Kural 17 + §15 Gate 6 suffix smuggling yasağı eklendi.
+
+**AA · PWA i18n home dupe bug fix** (`c2f0249`): 🚨 Kritik prod bug. messages/tr.json + en.json'a `home` namespace iki kere yazılmıştı (ProfileIncompleteBanner eklerken). JSON.parse() ikinci home'u override ediyor → tüm home.* keyler undefined → ekranda raw key görünüyor (PWA standalone modunda yakalandı). Fix: ikinci home silindi, profileBanner birinci home'a taşındı.
+
+**BB · JSON dupe pre-push guard** (`580c785`): scripts/check-json-dupe-keys.mjs + pre-push hook'a yeni katman. Aynı bug'ı önler. Pre-push 6 katman.
+
+**CC · Test plan + smoke-test.ts + CSP endpoint 500 fix** (`b969eb4`): docs/TEST_PLAN.md (11 bölüm: smoke/E2E/visual/Lighthouse/DB/security/email/PWA/cron/checklist/öncelik). scripts/smoke-test.ts (~17s, 27 test). 🚨 SMOKE TEST GERÇEK BUG YAKALADI: /api/csp-report HTTP 500 (NextResponse.json + status 204 illegal HTTP). Fix `new NextResponse(null, 204)`.
+
+**DD · Blog 40 Et Bölgeleri 🎯** (`75c2b19`): rehber kategorisi 1590 kelime, dana anatomi haritası + bölge×pişirme×Türk yemek tablosu (12 bölge) + kasap diyalog + dry/wet aging. **LAUNCH 40 BLOG HEDEFİ TAMAMLANDI** 14 pişirme/14 malzeme/12 rehber.
+
+**EE · 5 P1 E2E spec ship** (`7b8504c`): csp-report-endpoint, profile-banner, kvkk-delete-account, welcome-email-flow, error-boundary-recovery. helpers/test-user.ts pattern + Prisma DB fixture cleanup.
+
+**FF · Visual regression baseline + Brief Kural 17 esnetme + max 12** (`6b1637c`, `0f1eb08`): 12 PNG baseline (8 public + 2 tarif + 2 blog detay), animations:disabled + maxDiffPixelRatio 0.02. Brief Kural 17 eşik gevşetildi: top suffix freq ≤10 PASS (önceki 5 idi arbitrary). YEMEK/CORBA/TATLI step max 10 → **12** (Kerem direktifi, kompleks tarifler için).
+
+**GG · Brief §16 yeni Mod FA** (`75ff955`): Retrofit-12/13/14/15 için revize teslim akışı. Mod F + 4 ek zorunluluk (step 1 tarif-spesifik, kritik nokta doğal, web kaynak zorunlu, doğruluk > yaratıcılık). Tetik: `"Mod FA. Retrofit-12 revize"`. 4 batch × 100 tarif = 400 tarif scaffold'dan arındırılır.
+
+**Apply pipeline özet (oturum 19)**:
+- Prod 3452 tarif (37a revert oldu, +0)
+- Mod B **3452/3452 %100 KAPANIŞ** (Backfill-14/15 apply)
+- Mod F **17/27 batch, 1700 tarif retrofit** (07-17, 12-15 suffix smuggling şüphesi → Mod FA revize bekler)
+- 40 blog (launch hedef tam karşılandı)
+- 8 paket audit kapandı (A content drift, B a11y, C empty state, D security, E onboarding, F cron, G legal, H blog SEO)
+- 5 P1 E2E spec + 12 visual baseline + smoke test
+- 752+ unit test stable, tsc clean, lint clean
+- Pre-push 6 katman (JSON dupe yeni)
+- 27 migration (oturum 18'den eklenen yok)
+
+**Önemli eklenmiş feature'lar (oturum 19)**:
+- Welcome email register sonrası
+- Profile incomplete banner home
+- 4 sub-route error boundary (Sentry tag'li)
+- CSP Report-Only mode + /api/csp-report
+- X-Frame-Options DENY
+- Skip-to-content + nav aria-label
+- Dark primary button text contrast (AAA)
+- Blog konu grupları sidebar
+- BreadcrumbList JSON-LD blog detail+listing
+- Newsletter orphan cleanup deleteAccountAction
+- Smoke test scripti (npm run smoke)
+- 12 visual regression baseline PNG
+
+**Kritik dersler (oturum 19, kalıcı)**:
+1) JSON.parse() duplicate top-level key sessizce override eder; tüm namespace kaybolur. PWA i18n bug bu yüzden yaşandı, pre-push guard eklendi.
+2) NextResponse.json + status 204 illegal HTTP, runtime crash. CSP endpoint bu yüzden 500'lüyordu.
+3) Codex shortcut alabilir: "[TARIFADI] X hazırlayın" gibi scaffold ile slug/tarif adını değişken gibi başa koyup aynı suffix'i 27-33 tarifte tekrar edebilir. `template dup` exact match olduğu için yakalamaz; suffix freq check Kural 17 zorunlu.
+4) Block-aware AST script (multi-line + tek-satır recipe ayrı handle) seed-recipes.ts toplu fix için en güvenli yöntem.
+5) Smoke test gerçek bug yakalar (CSP 500), her deploy sonrası 30 sn yatırım büyük değer.
+6) Visual regression baseline launch öncesi şart, CSS regression görünmez kalır.
+7) Pre-push katman sayısı arttıkça kalite artar; 6 katman maliyet ~5-10s, faydası prod-blocker bug önleme.
 
 ## 24 Nisan 2026 (oturum 18, 30 commit, AI paketi A-I 9 özellik + Mod F pipeline + Pantry miktar döngüsü)
 

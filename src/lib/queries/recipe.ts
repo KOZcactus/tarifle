@@ -746,6 +746,18 @@ async function _getRecipeBySlugInner(slug: string): Promise<RecipeDetail | null>
         },
         orderBy: { likeCount: "desc" },
       },
+      // Faz 2 enrichment (oturum 20): RecipeNutrition 1:1, USDA bazli
+      // per-porsiyon sugar / fiber / sodium / satFat. NutritionInfo
+      // component bu degerleri ana macro grid'inin altinda render eder.
+      nutrition: {
+        select: {
+          sugarPerServing: true,
+          fiberPerServing: true,
+          sodiumPerServing: true,
+          satFatPerServing: true,
+          matchedRatio: true,
+        },
+      },
       _count: {
         select: {
           // Only count what the public actually sees, HIDDEN/PENDING_REVIEW
@@ -762,11 +774,21 @@ async function _getRecipeBySlugInner(slug: string): Promise<RecipeDetail | null>
   if (!recipe || recipe.status !== "PUBLISHED") return null;
 
   // Decimal → number dönüşümü
+  const n = recipe.nutrition;
   return {
     ...recipe,
     protein: recipe.protein ? Number(recipe.protein) : null,
     carbs: recipe.carbs ? Number(recipe.carbs) : null,
     fat: recipe.fat ? Number(recipe.fat) : null,
+    nutrition: n
+      ? {
+          sugarPerServing: n.sugarPerServing ? Number(n.sugarPerServing) : null,
+          fiberPerServing: n.fiberPerServing ? Number(n.fiberPerServing) : null,
+          sodiumPerServing: n.sodiumPerServing ? Number(n.sodiumPerServing) : null,
+          satFatPerServing: n.satFatPerServing ? Number(n.satFatPerServing) : null,
+          matchedRatio: n.matchedRatio ? Number(n.matchedRatio) : null,
+        }
+      : null,
     createdAt: recipe.createdAt.toISOString(),
   } as RecipeDetail;
 }

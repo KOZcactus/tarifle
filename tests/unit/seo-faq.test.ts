@@ -40,6 +40,7 @@ const baseRecipe: RecipeDetail = {
   allergens: ["GLUTEN", "SUT"],
   cuisine: "tr",
   hungerBar: 7,
+  nutrition: null,
   translations: null,
   createdAt: "2026-01-01",
   category: { id: "c1", name: "Et Yemekleri", slug: "et-yemekleri", emoji: "🥩" },

@@ -620,13 +620,18 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
         </div>
       )}
 
-      {/* Nutrition */}
+      {/* Nutrition (Faz 2 ek alanlari, oturum 20) */}
       <div className="mt-6">
         <NutritionInfo
           calories={recipe.averageCalories}
           protein={recipe.protein}
           carbs={recipe.carbs}
           fat={recipe.fat}
+          sugar={recipe.nutrition?.sugarPerServing ?? null}
+          fiber={recipe.nutrition?.fiberPerServing ?? null}
+          sodium={recipe.nutrition?.sodiumPerServing ?? null}
+          satFat={recipe.nutrition?.satFatPerServing ?? null}
+          matchedRatio={recipe.nutrition?.matchedRatio ?? null}
         />
       </div>
 

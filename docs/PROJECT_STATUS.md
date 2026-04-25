@@ -1,5 +1,28 @@
 # Tarifle, Proje Durumu
 
+> Oturum 20 sonu (25 Nis 2026), **23 commit**, mutlak rekor gün:
+> **Diet-score Faz 1 + Faz 2 ana + polish**, 10 preset prod canli.
+> **Faz 1 (14 modul)**: schema + 6 preset engine + 54 unit test + 17 yuzey UI
+> entegrasyon (anasayfa 3 shelf + 6 listing + sort tab + tarif detay + AI
+> Asistan + menu planner + settings + onboarding banner + privacy toggle) +
+> tag retrofit (vejetaryen %48->%72, vegan %22->%31) + 4 E2E senaryo +
+> blog 41 (1691 kelime).
+> **Faz 2**: RecipeNutrition tablosu + amount parser (30 unit test) +
+> aggregate compute pipeline (%86 coverage, 2974 tarif) + USDA seed top
+> 80 ingredient + 4 yeni preset (yuksek-lif/dusuk-sodyum/akdeniz/
+> keto-hassas) + dusuk-seker proxy->real + smart Beta etiketi + dinamik
+> approximationFlag + tarif detay NutritionInfo genisleme.
+> **Codex retrofit**: Mod F 19/20/21 prod (Mod F 21/27, 2100 tarif) +
+> Mod FA 12r/13r/14r prod (Mod FA 3/4, 300 tarif scaffold temizlik).
+> **Cleanup + bug fix**: 48 yanlis vegan/vejetaryen tag (allergen guard
+> eklendi) + audit-deep FAIL->PASS + 3 Sentry prod bug fix + DMARC TXT
+> live + 10 Sentry issue temizlik + inbound filter rule.
+> **Pre-push 6 katman temiz, prod 3471 tarif, 41 blog, 10 diyet preset,
+> 34710 RecipeDietScore, 3471 RecipeNutrition.**
+> **Sonraki:** Top 81-130 ingredient seed (kapsam %86->%93+),
+> 4 Beta preset stable'a, Codex Mod FA 15r + Mod F 22-23, Lighthouse CI,
+> 30 Nis Neon cleanup.
+
 > Oturum 19 sonu (24-25 Nis 2026), **37 commit**, en geniş kalite + test günü.
 > **Mod B %100 KAPANIŞ** (3452/3452 tam çeviri, Backfill-14/15 apply) +
 > **Mod F Retrofit 17/27 batch** (1700 tarif retrofit, 07-17 prod apply) +

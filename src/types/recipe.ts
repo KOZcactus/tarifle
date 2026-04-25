@@ -58,6 +58,19 @@ export interface RecipeDetail {
    */
   hungerBar: number | null;
   /**
+   * Faz 2 enrichment (oturum 20). RecipeNutrition 1:1, USDA bazli
+   * per-porsiyon sugar/fiber/sodium/satFat. NutritionInfo component
+   * gosterir. Null = compute pipeline henuz isletilmemis veya tarif
+   * yeni eklendi.
+   */
+  nutrition: {
+    sugarPerServing: number | null;
+    fiberPerServing: number | null;
+    sodiumPerServing: number | null;
+    satFatPerServing: number | null;
+    matchedRatio: number | null;
+  } | null;
+  /**
    * Recipe.translations Json?, locale-keyed bundle
    * ({ en?: { title, description, ingredients[], steps[], tipNote,
    * servingSuggestion } }). Schema in prisma/schema.prisma. Runtime shape

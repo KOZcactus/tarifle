@@ -56,6 +56,7 @@ const TITLES = {
   "turk-mutfaginda-tatli-felsefesi": "Türk Mutfağında Tatlı Felsefesi",
   "turk-mutfaginda-zeytinyagli-yemek-gelenegi": "Türk Mutfağında Zeytinyağlı Yemek Geleneği",
   "turk-mutfaginin-yedi-bolgesi": "Türk Mutfağının Yedi Bölgesi",
+  "yag-kimyasi-ve-duman-noktalari": "Yağ Kimyası ve Duman Noktaları",
   "tuz-cesitleri-ve-kullanimi": "Tuz Çeşitleri ve Kullanımı",
   "un-cesitleri-protein-kullanim-rehberi": "Un Çeşitleri",
   "yumurta-pisirme-7-yontem": "Yumurta Pişirme: 7 Yöntem",
@@ -84,6 +85,11 @@ const RELATED = {
     ["baharat-dolabi-temelleri-secim-saklama-kullanim", "kuru otlarin saklama disiplini"],
     ["damak-yemek-dengesi", "otsu serinligin denge rolu"],
     ["mutfak-bicagi-secimi-ve-kullanimi", "keskin bicakla ot dograma"],
+  ],
+  "yag-kimyasi-ve-duman-noktalari": [
+    ["zeytinyagi-secimi", "zeytinyaginin sizma vs rafine kullanimi"],
+    ["et-muhurlemenin-bilimi", "yuksek isi muhurlemede dogru yag"],
+    ["tereyagi-cesitleri-evde-yapimi-pisirmede-kullanim", "tereyaginin mutfaktaki yeri"],
   ],
   "soguk-vs-sicak-baslangic": [
     ["turk-mutfaginda-dugun-sofrasi", "buyuk sofralarda corbanin islevi"],

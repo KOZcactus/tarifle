@@ -303,8 +303,7 @@ mevcut yazılarla overlap yok, evergreen + yüksek arama hacmi):
       sıkıştırma, ev yapımı sürekli kullanım sosu
 - [ ] **Limon ve Limon Suyu Rehberi** - taze vs paket, asitlik yönetimi,
       kabuk değerlendirme, dondurma
-- [ ] **Yağ Kimyası ve Duman Noktaları** - hangi yağ hangi sıcaklıkta,
-      kızartma yağı, omega oran
+- [x] ~~**Yağ Kimyası ve Duman Noktaları**~~ ✅ ship (oturum 21, blog 47)
 - [ ] **Tahıl Çeşitleri Karşılaştırma** - bulgur/pirinç/karabuğday/
       kinoa/yulaf yan yana
 - [ ] **Bal Türleri ve Mutfak Kullanımı** - çiçek/orman/karakovan/

@@ -91,24 +91,19 @@ Minor polish noktaları (launch-blocker değil, Kerem kararı):
    kvkk@tarifle.app + iletisim@tarifle.app alias'ları Resend/Cloudflare
    Email Routing ile Kerem'in inbox'ına forward edilebilir. Güven sinyali.
 
-### Blog internal link ağı genişletme (launch öncesi, 1-2 saat)
+### Blog inline paragraf-içi link bonus (opsiyonel polish)
 
-Oturum 19 H paketi audit'i: 36 blog yazısından sadece 4'ü (oturum 19'da
-yazılan 32, 33, 34, 35, 36) başka bloga internal link veriyor. 32 eski
-yazı birbirine referans vermiyor.
+Oturum 21'de tüm 41 blog yazısına "## İlgili Yazılar" mini-bölümü
+(yazı sonu, Kaynaklar öncesi) eklendi: editorial seçim, her yazıya 3
+ilgili link, toplam 123 yeni internal link. SEO on-page authority +
+reader journey ✅. `scripts/insert-blog-related.mjs` map'i kayıtlı,
+yeni blog 42+ eklenince map'e bir entry yeterli.
 
-Overlapping domain analizi:
-- Et güvenliği üçleme: soğuk-zincir + et-mühürleme + hijyen (3 yazı)
-- Hamur üçleme: pilav + maya-kabartma + un-helvasi (lalanga?)
-- Süt ürünleri dörtleme: yoğurt (fermentasyon) + tereyağı + peynir + zeytin ✅ (zaten link var)
-- Kahvaltı: Turk-kahvaltisinin-mantigi + ilgili süt ürünleri + kahve-demleme
-
-Her eski yazıya 1-3 internal link ekleme: 32 × 2 ort = ~64 link, 1-2
-saat manuel iş. SEO on-page authority + reader journey.
-
-Opsiyonel yaklaşım: blog detail sayfasına component seviyesinde "İlgili
-Yazılar" widget (kategori + tag match). Daha az manuel iş + dinamik
-update, ama editorial seçim kadar güçlü değil.
+Bonus polish (opsiyonel, launch öncesi yapılmaz, sonrası yapılabilir):
+kritik bağlamlarda paragraf-içi inline link de ekle (sadece 5-10
+yazıda en güçlü bağ noktasına, örnek: et-mühürleme yazısının "iç
+sıcaklık" paragrafında soğuk-zincir yazısına inline anchor). Section
+linki zaten kapsayıcı, inline ek SEO ve reader katkısı marjinal.
 
 ### DMARC kaydı ekle (launch öncesi, 5 dk DNS işi)
 

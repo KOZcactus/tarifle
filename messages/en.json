@@ -1860,6 +1860,8 @@
     "usSection": "What we do",
     "httpsHeading": "Encrypted connection",
     "httpsBody": "All traffic to and from tarifle.app travels over an encrypted channel. If you arrive on an unencrypted address, your browser is redirected to the secure one automatically, so nobody on the network can eavesdrop on what you do.",
+      "headersHeading": "Security headers",
+      "headersBody": "The HTTP responses we send to your browser carry headers that block hostile sites from wrapping Tarifle. X-Frame-Options DENY prevents another site from embedding Tarifle inside an iframe (clickjacking protection), Content-Security-Policy in report-only mode audits which scripts and resources load and reports unexpected attempts, and headers like Referrer-Policy and Permissions-Policy add another layer of privacy.",
     "passwordHashHeading": "Passwords stored in an irreversible form",
     "passwordHashBody": "Your password is never stored in plain text. It is transformed with an industry-standard one-way process. Even if a database snapshot somehow leaked, nobody could turn it back into the original password. That is why a forgotten password leads to a reset link instead of revealing the old one.",
     "emailVerifyHeading": "Email verification and password reset",
@@ -1873,11 +1875,11 @@
     "backupHeading": "Backups and recovery",
     "backupBody": "The database is backed up automatically. We can roll back to any point within the last 7 days, which means an unexpected loss is recoverable. Development and production are kept separate; nothing from testing ever touches the live site.",
     "reportHeading": "Reporting a vulnerability",
-    "reportBody": "If you notice a security issue, email koz.devs@gmail.com with the subject \"Security\". We reply within 48 hours. We appreciate researchers who help; please give us a chance to fix the issue before publishing it."
+    "reportBody": "If you notice a security issue, email security@tarifle.app with the subject \"Security\". We reply within 48 hours. We appreciate researchers who help; please give us a chance to fix the issue before publishing it."
   },
   "legalContactNotice": {
     "pageTitle": "Contact Privacy Notice",
-    "subtitle": "When you email us at koz.devs@gmail.com, we process your data only for responding to you and only within the scope of your message. Details below.",
+    "subtitle": "When you email us at iletisim@tarifle.app, we process your data only for responding to you and only within the scope of your message. Details below.",
     "kapsamHeading": "Scope",
     "kapsamBody": "This notice applies to anyone, visitor or member, who reaches us through email, outside the Tarifle membership flow. General platform data processing is covered by the KVKK Privacy Notice as a separate document.",
     "dataHeading": "Data we process",

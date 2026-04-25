@@ -30,7 +30,7 @@ export default async function CerezPolitikasiPage() {
     <article className="max-w-3xl">
       <header className="mb-8">
         <h1 className="font-heading text-3xl font-bold">{t("pageTitle")}</h1>
-        <LegalDocMeta version="1.1" lastUpdate="20 Nisan 2026" />
+        <LegalDocMeta version="1.2" lastUpdate="26 Nisan 2026" />
         <p className="mt-3 text-sm text-text-muted">{t("subtitle")}</p>
       </header>
 

@@ -18,7 +18,7 @@ export default function KullanimKosullariPage() {
     <article className="max-w-3xl">
       <header className="mb-8">
         <h1 className="font-heading text-3xl font-bold">Kullanım Koşulları</h1>
-        <LegalDocMeta version="1.0" lastUpdate="19 Nisan 2026" />
+        <LegalDocMeta version="1.1" lastUpdate="26 Nisan 2026" />
       </header>
 
       <div className="space-y-6 text-sm leading-relaxed text-text-muted">

@@ -34,10 +34,10 @@ export default async function IletisimPage() {
           <h2 className="text-lg font-semibold text-text">{t("emailHeading")}</h2>
           <p className="mt-2 text-sm text-text-muted">{t("emailHelp")}</p>
           <a
-            href="mailto:koz.devs@gmail.com"
+            href="mailto:iletisim@tarifle.app"
             className="mt-3 inline-block text-sm font-medium text-primary underline-offset-4 hover:underline"
           >
-            koz.devs@gmail.com
+            iletisim@tarifle.app
           </a>
         </section>
 
@@ -45,10 +45,10 @@ export default async function IletisimPage() {
           <h2 className="text-lg font-semibold text-text">{t("kvkkHeading")}</h2>
           <p className="mt-2 text-sm text-text-muted">{t("kvkkHelp")}</p>
           <a
-            href="mailto:koz.devs@gmail.com?subject=KVKK%20Veri%20Talebi"
+            href="mailto:kvkk@tarifle.app?subject=KVKK%20Veri%20Talebi"
             className="mt-3 inline-block text-sm font-medium text-primary underline-offset-4 hover:underline"
           >
-            koz.devs@gmail.com
+            kvkk@tarifle.app
           </a>
         </section>
 

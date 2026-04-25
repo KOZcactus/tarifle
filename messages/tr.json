@@ -1860,6 +1860,8 @@
     "usSection": "Bizim yaptıklarımız",
     "httpsHeading": "Şifreli bağlantı",
     "httpsBody": "tarifle.app üzerinden tüm trafik şifreli bir kanaldan akar. Şifresiz bir bağlantıyla girdiğinde tarayıcın otomatik olarak güvenli kanala yönlendirir; böylece ağdaki kimse seninle site arasındaki konuşmayı okuyamaz.",
+      "headersHeading": "Güvenlik başlıkları",
+      "headersBody": "Tarayıcına gönderdiğimiz HTTP yanıtları kötü amaçlı sayfaların Tarifle'yi sarmalamasını engelleyen başlıklar taşır. X-Frame-Options DENY ile başka bir site Tarifle'yi iframe içine yerleştiremez (clickjacking koruması), Content-Security-Policy izleme modunda hangi script ve kaynak yüklendiğini denetleyip beklenmedik girişimleri raporlar, Referrer-Policy ve Permissions-Policy gibi başlıklar da gizliliğini ek olarak korur.",
     "passwordHashHeading": "Şifreler geri çözülemez biçimde saklanır",
     "passwordHashBody": "Şifren asla düz metin olarak saklanmaz. Endüstri standardı tek yönlü bir yöntemle dönüştürülür; veritabanı bir şekilde sızsa bile ham şifreye kimse ulaşamaz. Bu yüzden \"şifreni unuttum\" dediğinde eski şifreni göstermek yerine sıfırlama bağlantısı gönderiyoruz.",
     "emailVerifyHeading": "E-posta doğrulama ve şifre sıfırlama",
@@ -1873,11 +1875,11 @@
     "backupHeading": "Yedekleme ve kurtarma",
     "backupBody": "Veritabanı otomatik olarak yedeklenir. Son 7 gün içindeki herhangi bir ana geri dönebilmek mümkün, yani beklenmedik bir veri kaybında kurtarma yapabiliriz. Geliştirme ve canlı ortam ayrı tutulur; deneme amaçlı değişiklikler asla canlı siteye dokunmaz.",
     "reportHeading": "Güvenlik açığı bildirimi",
-    "reportBody": "Bir güvenlik zafiyeti fark edersen koz.devs@gmail.com adresine \"Security\" konu satırıyla ileti gönder. 48 saat içinde döneriz. Bize yardım etmek isteyen araştırmacılara teşekkür ederiz; lütfen bulguyu kamuya açıklamadan önce düzeltme fırsatı tanı."
+    "reportBody": "Bir güvenlik zafiyeti fark edersen security@tarifle.app adresine \"Security\" konu satırıyla ileti gönder. 48 saat içinde döneriz. Bize yardım etmek isteyen araştırmacılara teşekkür ederiz; lütfen bulguyu kamuya açıklamadan önce düzeltme fırsatı tanı."
   },
   "legalContactNotice": {
     "pageTitle": "İletişim Aydınlatma Metni",
-    "subtitle": "Bize koz.devs@gmail.com üzerinden yazdığında yalnız iletişim amaçlı ve mesajının içeriği kadarıyla verilerini işliyoruz. Kapsam aşağıda.",
+    "subtitle": "Bize iletisim@tarifle.app üzerinden yazdığında yalnız iletişim amaçlı ve mesajının içeriği kadarıyla verilerini işliyoruz. Kapsam aşağıda.",
     "kapsamHeading": "Kapsam",
     "kapsamBody": "Bu metin, Tarifle üyelik sistemi dışında, iletişim kanalı (e-posta) ile bize ulaşan ziyaretçi ve üye tüm kişiler için geçerlidir. Genel platform işlemesi için KVKK Aydınlatma Metni ayrı bir belgedir.",
     "dataHeading": "İşlenen veriler",

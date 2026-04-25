@@ -21,6 +21,7 @@ export default async function GuvenlikPage() {
    *  data-driven render ediliyor. */
   const usItems = [
     { titleKey: "httpsHeading", bodyKey: "httpsBody", emoji: "🔒" },
+    { titleKey: "headersHeading", bodyKey: "headersBody", emoji: "🧱" },
     { titleKey: "passwordHashHeading", bodyKey: "passwordHashBody", emoji: "🔑" },
     { titleKey: "emailVerifyHeading", bodyKey: "emailVerifyBody", emoji: "✉️" },
     { titleKey: "rateLimitHeading", bodyKey: "rateLimitBody", emoji: "⏱️" },
@@ -34,7 +35,7 @@ export default async function GuvenlikPage() {
     <article className="max-w-3xl">
       <header className="mb-8">
         <h1 className="font-heading text-3xl font-bold">{t("pageTitle")}</h1>
-        <LegalDocMeta version="1.0" lastUpdate="19 Nisan 2026" />
+        <LegalDocMeta version="1.1" lastUpdate="26 Nisan 2026" />
         <p className="mt-3 text-sm text-text-muted">{t("subtitle")}</p>
       </header>
 

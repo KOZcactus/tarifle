@@ -18,7 +18,7 @@ export default function GizlilikPage() {
     <article className="max-w-3xl">
       <header className="mb-8">
         <h1 className="font-heading text-3xl font-bold">Gizlilik Politikası</h1>
-        <LegalDocMeta version="1.0" lastUpdate="19 Nisan 2026" />
+        <LegalDocMeta version="1.1" lastUpdate="26 Nisan 2026" />
       </header>
 
       <div className="space-y-6 text-sm leading-relaxed text-text-muted">
@@ -232,10 +232,10 @@ export default function GizlilikPage() {
           </Link>{" "}
           bize ulaşabilir veya{" "}
           <a
-            href="mailto:koz.devs@gmail.com"
+            href="mailto:iletisim@tarifle.app"
             className="text-primary underline-offset-4 hover:underline"
           >
-            koz.devs@gmail.com
+            iletisim@tarifle.app
           </a>{" "}
           adresine yazabilirsiniz.
         </p>

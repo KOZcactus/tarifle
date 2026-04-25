@@ -18,16 +18,17 @@ export default function KVKKPage() {
     <article className="max-w-3xl">
       <header className="mb-8">
         <h1 className="font-heading text-3xl font-bold">KVKK Aydınlatma Metni</h1>
-        <LegalDocMeta version="1.0" lastUpdate="19 Nisan 2026" />
+        <LegalDocMeta version="1.1" lastUpdate="26 Nisan 2026" />
       </header>
 
       <div className="space-y-6 text-sm leading-relaxed text-text-muted">
         <section>
           <h2 className="mb-2 text-lg font-semibold text-text">1. Veri Sorumlusu</h2>
           <p>
-            {SITE_NAME} platformu; 6698 sayılı Kişisel Verilerin Korunması Kanunu
-            (&ldquo;KVKK&rdquo;) 3. maddesi uyarınca veri sorumlusu sıfatıyla hareket
-            etmektedir.
+            {SITE_NAME} adıyla yayımlanan, gerçek kişi tarafından işletilen
+            şahsi platform; 6698 sayılı Kişisel Verilerin Korunması Kanunu
+            (&ldquo;KVKK&rdquo;) 3. maddesi uyarınca veri sorumlusu sıfatıyla
+            hareket etmektedir.
           </p>
           <ul className="mt-3 ml-4 list-disc space-y-1">
             <li>
@@ -40,15 +41,24 @@ export default function KVKKPage() {
               </a>
             </li>
             <li>
-              İletişim:{" "}
+              KVKK başvuru:{" "}
               <a
-                href="mailto:koz.devs@gmail.com"
+                href="mailto:kvkk@tarifle.app?subject=KVKK%20Veri%20Talebi"
                 className="text-primary underline-offset-4 hover:underline"
               >
-                koz.devs@gmail.com
+                kvkk@tarifle.app
               </a>{" "}
-              (KVKK talepleriniz için aynı adrese e-posta konusuyla
-              &ldquo;KVKK Veri Talebi&rdquo; olarak başvurabilirsiniz)
+              (e-posta konusu olarak &ldquo;KVKK Veri Talebi&rdquo; ile
+              başvurabilirsiniz)
+            </li>
+            <li>
+              Genel iletişim:{" "}
+              <a
+                href="mailto:iletisim@tarifle.app"
+                className="text-primary underline-offset-4 hover:underline"
+              >
+                iletisim@tarifle.app
+              </a>
             </li>
             <li>
               Detaylı iletişim:{" "}
@@ -203,10 +213,10 @@ export default function KVKKPage() {
           <p>
             Haklarınızı kullanmak için{" "}
             <a
-              href="mailto:koz.devs@gmail.com?subject=KVKK%20Veri%20Talebi"
+              href="mailto:kvkk@tarifle.app?subject=KVKK%20Veri%20Talebi"
               className="text-primary underline-offset-4 hover:underline"
             >
-              koz.devs@gmail.com
+              kvkk@tarifle.app
             </a>{" "}
             adresine e-posta atmanız yeterlidir. Başvurularınızı KVKK 13/2
             uyarınca talebin niteliğine göre en geç{" "}

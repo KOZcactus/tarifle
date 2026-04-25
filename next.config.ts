@@ -80,8 +80,20 @@ const nextConfig: NextConfig = {
         },
         // Content-Security-Policy Report-Only mode (oturum 19 security paket).
         // Siteyi kirmaz, sadece violation'lari /api/csp-report'a POST eder.
-        // 1-2 hafta veri toplama sonrasi enforce geciş (full CSP header adi:
-        // `Content-Security-Policy`, Report-Only kaldirilir).
+        //
+        // **OTURUM 21 IZLEME RAPORU**: Sentry'de son 14 gun **0 CSP
+        // violation**. Policy whitelist mevcut altyapi (Vercel Analytics +
+        // Sentry + Cloudinary + Google OAuth avatar + Google Fonts) icin
+        // dogru kalibre. Enforce'a gecis riski dusuk.
+        //
+        // **ENFORCE'A GECIS** (Kerem onayi ile, 1 satir degisiklik):
+        // 1. Asagidaki `key: "Content-Security-Policy-Report-Only"` satirini
+        //    `key: "Content-Security-Policy"` yap.
+        // 2. `report-uri /api/csp-report` satirini KALDIR (enforce mode'da
+        //    direktifin ek anlami yok; report-to header ayri standart).
+        // 3. Vercel preview deploy ile sanity check, sonra prod merge.
+        // 4. Sentry'yi 1 hafta daha ek izle (yeni ozellik gelir, beklenmedik
+        //    3rd party script eklenirse).
         //
         // Whitelist kaynaklari:
         // - 'self': Tarifle origin

@@ -8,6 +8,8 @@ import {
 } from "@/lib/queries/admin";
 import { SortableHeader } from "@/components/admin/SortableHeader";
 import { PaginationBar } from "@/components/admin/PaginationBar";
+import { prisma } from "@/lib/prisma";
+import { CUISINE_CODES, CUISINE_FLAG } from "@/lib/cuisines";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("admin.pageTitles");
@@ -25,6 +27,19 @@ const DIFFICULTY_KEY = {
 const PAGE_SIZE = 50;
 
 const STATUSES = ["PUBLISHED", "DRAFT", "PENDING_REVIEW", "HIDDEN", "REJECTED"] as const;
+
+const RECIPE_TYPES = [
+  "YEMEK",
+  "CORBA",
+  "TATLI",
+  "KAHVALTI",
+  "SALATA",
+  "APERATIF",
+  "ATISTIRMALIK",
+  "ICECEK",
+  "KOKTEYL",
+  "SOS",
+] as const;
 
 interface PageProps {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
@@ -50,6 +65,12 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
   const order: "asc" | "desc" = firstStr(sp.order, "desc") === "asc" ? "asc" : "desc";
   const status = firstStr(sp.status);
   const search = firstStr(sp.q);
+  const cuisine = firstStr(sp.cuisine);
+  const categorySlug = firstStr(sp.category);
+  const recipeType = firstStr(sp.type);
+  const featuredRaw = firstStr(sp.featured);
+  const featured: boolean | undefined =
+    featuredRaw === "1" ? true : featuredRaw === "0" ? false : undefined;
   const page = Math.max(1, parseInt(firstStr(sp.page, "1"), 10) || 1);
 
   const params: AdminRecipeListParams = {
@@ -57,18 +78,36 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
     order,
     status: status || undefined,
     search: search || undefined,
+    cuisine: cuisine || undefined,
+    categorySlug: categorySlug || undefined,
+    type: recipeType || undefined,
+    featured,
     page,
     pageSize: PAGE_SIZE,
   };
 
-  const [{ recipes, total }, t, tActions, tDashboard, tCard, locale] = await Promise.all([
-    getAdminRecipesList(params),
-    getTranslations("admin.recipes"),
-    getTranslations("admin.actions"),
-    getTranslations("admin.dashboard"),
-    getTranslations("recipes.card"),
-    getLocale(),
-  ]);
+  const [{ recipes, total }, allCategories, t, tActions, tDashboard, tCard, locale] =
+    await Promise.all([
+      getAdminRecipesList(params),
+      prisma.category.findMany({
+        select: { slug: true, name: true },
+        orderBy: { name: "asc" },
+      }),
+      getTranslations("admin.recipes"),
+      getTranslations("admin.actions"),
+      getTranslations("admin.dashboard"),
+      getTranslations("recipes.card"),
+      getLocale(),
+    ]);
+
+  const hasAnyFilter = !!(
+    search ||
+    status ||
+    cuisine ||
+    categorySlug ||
+    recipeType ||
+    featured !== undefined
+  );
 
   // Helper, preserve other search params when building next URL
   function buildHref(overrides: Record<string, string | number | null>) {
@@ -77,6 +116,11 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
     if (order !== "desc") out.set("order", order);
     if (status) out.set("status", status);
     if (search) out.set("q", search);
+    if (cuisine) out.set("cuisine", cuisine);
+    if (categorySlug) out.set("category", categorySlug);
+    if (recipeType) out.set("type", recipeType);
+    if (featured === true) out.set("featured", "1");
+    if (featured === false) out.set("featured", "0");
     if (page > 1) out.set("page", String(page));
     for (const [k, v] of Object.entries(overrides)) {
       if (v === null || v === "" || v === 0) {
@@ -112,7 +156,8 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
         </a>
       </div>
 
-      {/* Filters */}
+      {/* Filters - oturum 21 genisletme: cuisine + category + type +
+          isFeatured chip filter eklendi (3700+ tarif yorgunlugu icin) */}
       <form
         method="get"
         action="/admin/tarifler"
@@ -123,7 +168,7 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
           defaultValue={search}
           placeholder={t("searchPlaceholder")}
           aria-label={t("searchPlaceholder")}
-          className="min-w-[200px] rounded-lg border border-border bg-bg-card px-3 py-1.5 text-sm focus:border-primary focus:outline-none"
+          className="min-w-[180px] rounded-lg border border-border bg-bg-card px-3 py-1.5 text-sm focus:border-primary focus:outline-none"
         />
         <select
           name="status"
@@ -138,6 +183,55 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
             </option>
           ))}
         </select>
+        <select
+          name="cuisine"
+          defaultValue={cuisine}
+          aria-label="Mutfak"
+          className="rounded-lg border border-border bg-bg-card px-3 py-1.5 text-sm focus:border-primary focus:outline-none"
+        >
+          <option value="">Tüm mutfaklar</option>
+          {CUISINE_CODES.map((c) => (
+            <option key={c} value={c}>
+              {CUISINE_FLAG[c]} {c}
+            </option>
+          ))}
+        </select>
+        <select
+          name="category"
+          defaultValue={categorySlug}
+          aria-label="Kategori"
+          className="rounded-lg border border-border bg-bg-card px-3 py-1.5 text-sm focus:border-primary focus:outline-none"
+        >
+          <option value="">Tüm kategoriler</option>
+          {allCategories.map((c) => (
+            <option key={c.slug} value={c.slug}>
+              {c.name}
+            </option>
+          ))}
+        </select>
+        <select
+          name="type"
+          defaultValue={recipeType}
+          aria-label="Tip"
+          className="rounded-lg border border-border bg-bg-card px-3 py-1.5 text-sm focus:border-primary focus:outline-none"
+        >
+          <option value="">Tüm tipler</option>
+          {RECIPE_TYPES.map((tp) => (
+            <option key={tp} value={tp}>
+              {tp}
+            </option>
+          ))}
+        </select>
+        <select
+          name="featured"
+          defaultValue={featuredRaw}
+          aria-label="Öne çıkan"
+          className="rounded-lg border border-border bg-bg-card px-3 py-1.5 text-sm focus:border-primary focus:outline-none"
+        >
+          <option value="">Tümü</option>
+          <option value="1">⭐ Öne çıkan</option>
+          <option value="0">Sade</option>
+        </select>
         {/* Preserve sort on submit */}
         {sort !== "createdAt" && <input type="hidden" name="sort" value={sort} />}
         {order !== "desc" && <input type="hidden" name="order" value={order} />}
@@ -147,7 +241,7 @@ export default async function AdminRecipesPage({ searchParams }: PageProps) {
         >
           {tActions("apply")}
         </button>
-        {(search || status) && (
+        {hasAnyFilter && (
           <Link
             href="/admin/tarifler"
             className="rounded-lg border border-border px-3 py-1.5 text-sm text-text-muted hover:bg-bg-elevated"

@@ -826,6 +826,14 @@ export interface AdminRecipeListParams {
   order?: "asc" | "desc";
   status?: string; // "PUBLISHED" | "DRAFT" | "PENDING_REVIEW" | "HIDDEN" | "REJECTED"
   search?: string; // title ilike
+  /** Cuisine kodu (tr/it/fr/...). Bos ise hepsi. */
+  cuisine?: string;
+  /** Category slug. Bos ise hepsi. */
+  categorySlug?: string;
+  /** Recipe type (YEMEK / CORBA / TATLI / ...). Bos ise hepsi. */
+  type?: string;
+  /** Sadece featured (true) veya degil (false). Undefined = hepsi. */
+  featured?: boolean;
   page?: number; // 1-indexed
   pageSize?: number;
 }
@@ -836,6 +844,10 @@ export async function getAdminRecipesList(params: AdminRecipeListParams) {
     order = "desc",
     status,
     search,
+    cuisine,
+    categorySlug,
+    type,
+    featured,
     page = 1,
     pageSize = 50,
   } = params;
@@ -846,6 +858,18 @@ export async function getAdminRecipesList(params: AdminRecipeListParams) {
   }
   if (search && search.trim()) {
     where.title = { contains: search.trim(), mode: "insensitive" };
+  }
+  if (cuisine && cuisine.trim()) {
+    where.cuisine = cuisine.trim();
+  }
+  if (categorySlug && categorySlug.trim()) {
+    where.category = { slug: categorySlug.trim() };
+  }
+  if (type && type.trim()) {
+    where.type = type.trim();
+  }
+  if (featured !== undefined) {
+    where.isFeatured = featured;
   }
 
   // Relation counts need `_count` orderBy in Prisma.

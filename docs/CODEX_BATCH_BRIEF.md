@@ -3251,19 +3251,27 @@ Mod G hedefi: **boilerplate'leri tarif-özgü cümleyle değiştirmek**.
    - Cümle yüksek sesle okunduğunda doğal mı? (Kerem heuristik testi:
      Türk teyzeden duyabileceğin tarz mı?)
 
-### 17.4 Pipeline (Claude apply)
+### 17.4 Pipeline (Claude apply, oturum 22 güncel)
 
 ```
 Kerem: "Mod G. Batch N" tetik (Claude'a)
   ↓
-Claude: docs/mod-g-boilerplate-slugs.txt'den 100 slug al (chunk N)
+Claude: scripts/prepare-mod-g-input.ts --batch N --size 100 --offset M
+        koşar. docs/mod-g-batch-N-input.json üretir (her slug için
+        DB'den mevcut tipNote/sug + ingredient (12 örnek) + step
+        (8 örnek) + cuisine + categorySlug + type çekilir).
   ↓
-Claude: Codex'e brief §17 + 100 slug listesi + her slug için mevcut
-        tipNote/servingSuggestion + ingredient/step özeti gönder
+Kerem: ChatGPT Max'ta yeni chat aç. docs/CODEX_NEW_CHAT_INTRO.md'deki
+       başlangıç mesajını paste eder. Codex "Anladım" der. Sonra
+       Mod G tetik şablonunu (intro doc'unun §3) paste eder.
   ↓
-Codex: 100 entry JSON döner (sadece revize edilecek alanlar)
+Codex: docs/mod-g-batch-N-input.json'u okur (aynı klasör, lokal disk),
+       brief §17.3 + §17.5 disiplin ile her tarif için tarif-özgü
+       tipNote/servingSuggestion yazar. WEB TEYIT zorunlu (tipNote
+       için). Anlaşılır dil (jargon yasak).
   ↓
-Claude: docs/mod-g-batch-N.json kaydet
+Codex: docs/mod-g-batch-N.json yazar (lokal disk'e). Self-check 7
+       madde PASS bildirir.
   ↓
 Claude: scripts/apply-mod-g.ts --file docs/mod-g-batch-N.json (dry-run)
   ↓
@@ -3273,6 +3281,11 @@ Claude: --apply --confirm-prod
   ↓
 Claude: commit + push, FUTURE_PLANS Mod G N tamam işaretle
 ```
+
+**Önkoşul not:** prepare-mod-g-input.ts'in DB içeriğini Codex'e
+göndermesi gerek; körlemesine slug listesi yetmez (oturum 21 brief
+§17.3 madde 5 doğruluk kuralı). Codex tarif gerçeğine UYGUN cümle
+yazmak için ingredient + step listesini görmeli.
 
 ### 17.5 Self-check (Codex teslim öncesi)
 
@@ -3401,21 +3414,28 @@ but, salatalık, susam, soda).
    - Aynı substitutes array (örn. ["A", "B", "C"]) birden fazla
      ingredient'ta tekrar etmesin
 
-### 18.4 Pipeline (Claude apply)
+### 18.4 Pipeline (Claude apply, oturum 22 güncel)
 
 ```
 Kerem: "Mod H. Batch N" tetik (Claude'a)
   ↓
-Claude: docs/mod-h-ingredient-list.txt'den ingredient chunk al
-        (Batch 1 = top 50, Batch 2 = top 51-100, vs.)
+Claude: scripts/prepare-mod-h-input.ts --batch N --size 50 --offset M
+        koşar. docs/mod-h-batch-N-input.json üretir (her ingredient
+        için sample tarif slug + tarif tipi dağılımı + frequency +
+        NutritionData eşleşmesi DB'den çekilir).
   ↓
-Claude: Codex'e brief §18 + ingredient listesi + her ingredient için
-        sample tarif slug'ları (kontekst için) gönder
+Kerem: ChatGPT Max'ta yeni chat aç. docs/CODEX_NEW_CHAT_INTRO.md'deki
+       başlangıç mesajını paste eder. Codex "Anladım" der. Sonra
+       Mod H tetik şablonunu (intro doc'unun §4) paste eder.
   ↓
-Codex: 50 entry JSON döner (her ingredient için whyUsed + substitutes
-       + opsiyonel notes)
+Codex: docs/mod-h-batch-N-input.json'u okur (aynı klasör, lokal disk),
+       brief §18.3 + §18.5 disiplin ile her ingredient için whyUsed
+       (8-40 kelime, tarif tipi referanslı) + substitutes (2-4) +
+       opsiyonel notes yazar. WEB TEYIT ZORUNLU (gerekçe için).
+       Anlaşılır dil (jargon yasak listesi otomatik kontrol).
   ↓
-Claude: docs/mod-h-batch-N.json kaydet
+Codex: docs/mod-h-batch-N.json yazar (lokal disk'e). Self-check 8
+       madde PASS bildirir.
   ↓
 Claude: scripts/apply-mod-h.ts --file docs/mod-h-batch-N.json --batch N (dry-run)
   ↓
@@ -3425,6 +3445,12 @@ Claude: --apply --confirm-prod
   ↓
 Claude: commit + push, FUTURE_PLANS Mod H N tamam isaretle
 ```
+
+**Önkoşul not:** prepare-mod-h-input.ts'in tarif tipi dağılımını
+Codex'e göndermesi gerek. Codex whyUsed cümlesinde tarif tipi
+referansı verecek (brief §18.3 madde 5: "Pilav, dolma ve gülaç gibi
+tariflerde..."), bu yüzden hangi tarif tipinde geçtiğini bilmesi
+şart.
 
 ### 18.5 Self-check (Codex teslim öncesi)
 

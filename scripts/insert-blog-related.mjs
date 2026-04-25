@@ -66,6 +66,7 @@ const TITLES = {
   "zeytin-cesitleri-sofralik-meze-rehberi": "Zeytin Çeşitleri",
   "zeytinyagi-secimi": "Zeytinyağı Seçimi",
   "salamura-ve-marine-bilimi": "Salamura ve Marine Bilimi",
+  "bal-turleri-ve-mutfak-kullanimi": "Bal Türleri ve Mutfak Kullanımı",
 };
 
 // Her yazi -> 3 ilgili (slug, kisa baglam aciklamasi)
@@ -114,6 +115,11 @@ const RELATED = {
     ["et-muhurlemenin-bilimi", "salamura sonrasi muhurleme akisi"],
     ["soguk-zincir-kirmizi-et-guvenligi", "salamura sirasinda sicaklik disiplini"],
     ["tuz-cesitleri-ve-kullanimi", "salamura icin dogru tuz secimi"],
+  ],
+  "bal-turleri-ve-mutfak-kullanimi": [
+    ["damak-yemek-dengesi", "tatlilik ekseninin sofrada yeri"],
+    ["sirke-cesitleri", "asit-tatli denge icin karsi eksen"],
+    ["turk-mutfaginda-tatli-felsefesi", "geleneksel tatlandiricilar ve bal"],
   ],
   "soguk-vs-sicak-baslangic": [
     ["turk-mutfaginda-dugun-sofrasi", "buyuk sofralarda corbanin islevi"],

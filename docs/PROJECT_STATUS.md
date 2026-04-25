@@ -1,7 +1,7 @@
 # Tarifle, Proje Durumu
 
 > Oturum 22 başı (26 Nis 2026): Source duplicate cleanup KAPANIŞ +
-> em-dash hijyeni + Blog 51 (Salamura ve Marine Bilimi).
+> em-dash hijyeni + Blog 51 (Salamura) + Blog 52 (Bal Türleri).
 > `scripts/smart-source-clean.mjs` (indent-aware brace-counting, 5
 > tarif format'ı tek algoritma), 59 source-only slug temizlendi
 > (3 multi-line + 57 single-line + 1 dup), source 3694 → 3635 unique.
@@ -11,7 +11,11 @@
 > tuz proteinle ne yapar, yaş vs kuru salamura oranları, marine asit
 > + enzim mekaniği, süre rehberi, Türk salamura geleneği (turşu +
 > asma yaprağı + peynir), USDA gıda güvenliği, 5 kaynak + 3 İlgili
-> Yazı. Visual baseline 24 → 25, smoke endpoint genişledi.
+> Yazı. Blog 52 bal-turleri-ve-mutfak-kullanimi (1372 kelime,
+> malzeme-tanima): 4 ana Türk balı (çiçek + çam + karakovan + kestane)
+> + Anzer + glikoz/fruktoz kimyası + kristalleşme + ham vs ısıtılmış +
+> mutfakta hangi bal nereye + sahtecilik kontrol, 5 kaynak + 3 İlgili
+> Yazı. Visual baseline 24 → 26, smoke endpoint genişledi.
 
 > Oturum 21 sonu (26 Nis 2026), **38 commit**, mutlak rekor maraton:
 > Mod F retrofit pipeline KAPANIŞ + Mod A 5 batch (37a/37b/38a/38b/

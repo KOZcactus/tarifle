@@ -34,6 +34,7 @@ const BLOG_SLUGS = [
   "limon-ve-limon-suyu",
   "sirke-cesitleri",
   "salamura-ve-marine-bilimi",
+  "bal-turleri-ve-mutfak-kullanimi",
 ];
 
 test.describe("Recipe detail visual baseline", () => {

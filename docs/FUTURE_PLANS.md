@@ -309,8 +309,7 @@ mevcut yazılarla overlap yok, evergreen + yüksek arama hacmi):
       kinoa/yulaf yan yana
 - [ ] **Bal Türleri ve Mutfak Kullanımı** - çiçek/orman/karakovan/
       petek farkları, ısıya dayanıklılık
-- [ ] **Sirke Çeşitleri** - elma/üzüm/balsamik/şarap/pirinç kullanım
-      haritası
+- [x] ~~**Sirke Çeşitleri**~~ ✅ ship (oturum 21, blog 50)
 - [ ] **Yumurta Tazeliği ve Saklama** - su testi, tarih kontrolü, oda
       vs buzdolabı
 - [ ] **Kuruyemiş Çeşitleri** - kavurma teknikleri, saklama, pişirmede

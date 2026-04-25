@@ -47,6 +47,7 @@ const TITLES = {
   "pilavin-bilimi": "Pilavın Bilimi",
   "ramazan-sofrasi-iftar-sahur-kultur": "Ramazan Sofrası: İftar, Sahur",
   "sarimsak-dogru-kullanimi-kimya-pisirme-saklama": "Sarımsak Doğru Kullanımı",
+  "sirke-cesitleri": "Sirke Çeşitleri",
   "soganin-dogru-kavrulmasi": "Soğanın Doğru Kavrulması",
   "sote-vs-kavurma-vs-bugulama": "Sote vs Kavurma vs Buğulama",
   "soguk-zincir-kirmizi-et-guvenligi": "Soğuk Zincir ve Kırmızı Et Güvenliği",
@@ -102,6 +103,11 @@ const RELATED = {
     ["damak-yemek-dengesi", "asit ekseninin tat dengesindeki rolu"],
     ["tuz-cesitleri-ve-kullanimi", "limon ile tuzun ortak alani"],
     ["balik-secimi-temizlik-ve-pisirme", "balikta limon kullanimi"],
+  ],
+  "sirke-cesitleri": [
+    ["limon-ve-limon-suyu", "asit ekseninin kardesi"],
+    ["fermentasyon-temelleri-yogurt-tursu-eksi-maya", "sirkenin fermentasyon sureci"],
+    ["damak-yemek-dengesi", "asitin lezzet dengesindeki rolu"],
   ],
   "soguk-vs-sicak-baslangic": [
     ["turk-mutfaginda-dugun-sofrasi", "buyuk sofralarda corbanin islevi"],

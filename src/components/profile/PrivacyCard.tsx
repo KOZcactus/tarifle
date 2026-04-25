@@ -6,11 +6,14 @@ import {
   updateUserPrivacyAction,
   type PrivacyInput,
 } from "@/lib/actions/user-privacy";
+import { setShowDietBadgeAction } from "@/lib/actions/user-diet-profile";
 
 interface PrivacyCardProps {
   initialShowChefScore: boolean;
   initialShowActivity: boolean;
   initialShowFollowCounts: boolean;
+  /** Diyet badge gorunurluk toggle (oturum 20). Default true. */
+  initialShowDietBadge: boolean;
 }
 
 /**
@@ -24,6 +27,7 @@ export function PrivacyCard(props: PrivacyCardProps) {
   const [chef, setChef] = useState(props.initialShowChefScore);
   const [activity, setActivity] = useState(props.initialShowActivity);
   const [follow, setFollow] = useState(props.initialShowFollowCounts);
+  const [dietBadge, setDietBadge] = useState(props.initialShowDietBadge);
   const [isPending, startTransition] = useTransition();
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -66,6 +70,22 @@ export function PrivacyCard(props: PrivacyCardProps) {
       showFollowCounts: next,
     });
   }
+  /** Diyet badge toggle (oturum 20). Ayri server action, privacy
+   *  schema'dan bagimsiz. */
+  function toggleDietBadge(next: boolean) {
+    setDietBadge(next);
+    setStatus("idle");
+    setErrorMessage(null);
+    startTransition(async () => {
+      const result = await setShowDietBadgeAction(next);
+      if (result.success) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+        setErrorMessage(result.error ?? "unknown");
+      }
+    });
+  }
 
   return (
     <section className="rounded-xl border border-border bg-bg-card p-5">
@@ -96,6 +116,13 @@ export function PrivacyCard(props: PrivacyCardProps) {
           description={t("followCountsDescription")}
           checked={follow}
           onChange={toggleFollow}
+          disabled={isPending}
+        />
+        <ToggleRow
+          label="Diyet uyumu rozeti"
+          description="Tarif kartlarında diyet skoru chip'i ve detay sayfasında uyum kartı gösterilsin (Beta)."
+          checked={dietBadge}
+          onChange={toggleDietBadge}
           disabled={isPending}
         />
       </div>

@@ -53,6 +53,7 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
       pantryExpiryTracking: true,
       ttsVoicePreference: true,
       dietProfile: true,
+      showDietBadge: true,
       accounts: {
         where: { provider: "google" },
         select: { id: true },
@@ -115,6 +116,7 @@ export default async function AyarlarPage({ searchParams }: AyarlarPageProps) {
           initialShowChefScore={user.showChefScore}
           initialShowActivity={user.showActivity}
           initialShowFollowCounts={user.showFollowCounts}
+          initialShowDietBadge={user.showDietBadge}
         />
 
         <PantryPreferencesCard

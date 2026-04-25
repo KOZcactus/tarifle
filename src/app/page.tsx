@@ -30,6 +30,7 @@ import { getDietBadgesIfApplicable } from "@/lib/queries/diet-score";
 import { RandomRecipeBanner } from "@/components/discovery/RandomRecipeBanner";
 import { CountUp } from "@/components/ui/CountUp";
 import { ProfileIncompleteBanner } from "@/components/home/ProfileIncompleteBanner";
+import { DietProfilePromptBanner } from "@/components/home/DietProfilePromptBanner";
 import { prisma } from "@/lib/prisma";
 import {
   getSuggestedCooks,
@@ -57,14 +58,21 @@ export default async function HomePage() {
   // Profil eksik banner kontrolu (oturum 19 E paketi onboarding polish).
   // Login + bio NULL veya avatarUrl NULL ise banner gosterilir. Anonim
   // kullanicida ek DB call yok, userId NULL ise default false.
-  const profileIncomplete = userId
+  // Diyet profili kontrolu (oturum 20). Login + dietProfile NULL ise
+  // ayri bir CTA banner gosterilir; tek user query ile birlikte cek.
+  const userOnboardingFlags = userId
     ? await prisma.user
         .findUnique({
           where: { id: userId },
-          select: { bio: true, avatarUrl: true },
+          select: { bio: true, avatarUrl: true, dietProfile: true },
         })
-        .then((u) => !u?.bio || !u?.avatarUrl)
-    : false;
+        .then((u) => ({
+          profileIncomplete: !u?.bio || !u?.avatarUrl,
+          dietProfileMissing: !u?.dietProfile,
+        }))
+    : { profileIncomplete: false, dietProfileMissing: false };
+  const profileIncomplete = userOnboardingFlags.profileIncomplete;
+  const dietProfileMissing = userOnboardingFlags.dietProfileMissing;
 
   // Hero A/B variant pick (oturum 13 minimal kurulum). Cookie varsa onu
   // kullanir, yoksa rastgele 50/50; HeroVariantInit client component
@@ -135,6 +143,7 @@ export default async function HomePage() {
       {/* Profil eksik banner (login + bio/avatar NULL), dismissable */}
       <div className="pt-4">
         <ProfileIncompleteBanner incomplete={profileIncomplete} />
+        <DietProfilePromptBanner show={dietProfileMissing} />
       </div>
 
       {/* Hero */}

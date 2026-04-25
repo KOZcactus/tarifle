@@ -16,6 +16,8 @@
 | **"Mod C"**, "Kategori SEO", "SEO copy", "landing intro + FAQ" | **MOD C**, landing sayfaları için özgün TR giriş + FAQ yaz | §12 | `docs/seo-copy-v1.json` (17 kategori + 16 mutfak + 5 diyet = 38 item array) |
 | **"Mod D"**, "editoryal revize", "top 200 duzelt", "tipNote drift fix" | **MOD D**, mevcut tariflerin tipNote + servingSuggestion revize JSON | §13 | `docs/editorial-revisions-batch-N.json` (slug bazlı update array) |
 | **"Mod E"**, "step revize", "adım kalitesi düzelt", "boilerplate steps" | **MOD E**, mevcut tariflerin steps array'ini yeniden yaz + opsiyonel ingredient düzeltme (araştırmaya göre eksik malzeme/yanlış oran) | §14 | `docs/step-revisions-batch-N.json` (slug + steps + opsiyonel ingredients) |
+| **"Mod F"**, "Retrofit-N", "step count retrofit" | **MOD F**, mevcut tariflerin step sayısını min/max kuralına çekmek + kalite gate (varyasyon, notes, timer, muğlak yasak, kritik nokta) | §15 | `docs/retrofit-step-count-N.json` (slug + newSteps + notes) |
+| **"Mod FA"**, "Retrofit-N revize", "FA Batch N", "Retrofit revize-N" | **MOD FA**, daha önce Mod F ile teslim edilmiş bir batch'i SCAFFOLD'dan arındırarak DOĞRULUK önceliğiyle yeniden teslim et (suffix smuggling temizlik + tarif-spesifik step + web kaynak doğrulama zorunlu) | §16 | `docs/retrofit-step-count-N-revize.json` (aynı slug listesi, temiz newSteps) |
 
 **Default'lar (soru sorma, direkt başla):**
 
@@ -2886,4 +2888,188 @@ FUTURE_PLANS güncelle, Retrofit-02 hazır
 ```
 
 27 döngü sonrası 2660 tarif min/max kural altında, en doğru hali.
+
+---
+
+## 16. Mod FA, Retrofit Annotation/Audit (önceki Mod F batch'lerinin revize teslimi)
+
+**Tetikleyici cümleler:** "Mod FA. Retrofit-N revize", "Mod FA. Batch N", "FA Retrofit-N", "Retrofit-N revize" (örn. "Mod FA. Retrofit-12 revize").
+
+**Amaç:** Mod F sürecinde bazı batch'lerde tespit edilen **suffix smuggling** (slug/tarif adını başa koyup aynı kapanış cümlesini 27-33 tarif arası tekrar etme) sorunu nedeniyle Retrofit-12, 13, 14, 15 batch'leri **prod'a apply edildi ama kalite hedefini tam karşılamıyor**. Mod FA bu batch'leri **aynı slug listesiyle** ama **temiz** ve **doğruluk öncelikli** revize teslim eder.
+
+### 16.1 Tetik akışı
+
+```
+Kerem: "Mod FA. Retrofit-12 revize"
+  ↓
+Codex: brief §16 + (orijinal) docs/retrofit-step-count-12.json okur
+  ↓
+Codex: aynı slug listesini al, ama step'leri SIFIRDAN tarif-spesifik yaz
+  ↓
+Codex: web kaynak doğrulama (her tarif için 1+ otoriter referans)
+  ↓
+Codex: §15 Mod F TÜM gate'leri + Kural 17 suffix freq ≤10 self-check
+  ↓
+Codex: docs/retrofit-step-count-12-revize.json teslim (yeni dosya, eski silinmez)
+  ↓
+Claude: dry-run → bağımsız audit → dev apply → prod apply → commit
+```
+
+### 16.2 Mod FA = Mod F + ek 4 zorunluluk
+
+Mod F'in tüm kuralları (§15.1 - §15.13) **aynı şekilde geçerli**:
+- Step count type bazlı min/max (§15.5)
+- Notes 100% dolu min 40 char (§15.6.2)
+- Pişirme step'inde timer zorunlu (§15.7.2)
+- Muğlak ifade yasak liste (§15.7.3)
+- Kritik nokta %60 gate (§15.7.4)
+- Varyasyon min 3 distinct + dominant ≤%60 (§15.5.1)
+- Em-dash / en-dash 0 (§15.8)
+- Suffix smuggling top freq ≤10 (Kural 17)
+
+**Mod FA'ya ek 4 zorunluluk** (revize batch'in nedeni bunlar):
+
+#### 1. **Step 1 tarif-spesifik gerçek aksiyon, scaffold YASAK**
+
+❌ YASAK pattern:
+```
+"[TARIFADI] için geniş kase, süzgeç ve sos kabını hazırlayın, doğranan malzeme sulanmasın"
+"[TARIFADI] tepsisini ve karıştırma kabını hazırlayın, hamur oranı şaşmasın"
+"[TARIFADI] kup bardaklarını hazırlayın, katmanlar kenardan akmasın"
+"[TARIFADI] servis bardaklarını hazırlayın, katmanlar kenardan akmasın"
+"[TARIFADI] tenceresini ve çırpıcıyı hazırlayın, sütlü taban topaklanmasın diye"
+```
+
+Bu cümleler tarif adı dışında HER ŞEY aynı, generic kalıp doldurma. Retrofit-12'de **27 tarif**, Retrofit-13'te **33 tarif** aynı suffix'i kullanıyordu.
+
+✅ DOĞRU pattern:
+```
+"Bulguru yıkayıp süzün ve tencereye alın."
+"Ayvaları ikiye bölüp çekirdek yataklarını temizleyin."
+"Cevizi iri kırın ve kaymağı buzdolabında tutun."
+"Pirinci yıkayıp az suyla 10 dakika haşlayın."
+"Sütü 85°C'ye ısıtıp şekeri çözdürün."
+```
+
+Her step 1 **o tarifin ana malzemesinin gerçek ilk aksiyonu**. Bulgur/ceviz/ayva/pirinç gibi malzeme adıyla başlar veya o tarife özel bir teknik (közleme, marine, dinlendirme) ile.
+
+#### 2. **Kritik nokta DOĞAL yerine, scaffold yerleştirme YASAK**
+
+❌ YASAK: Step 1'in sonuna mekanik olarak "...şaşmasın", "...akmasın", "...sulanmasın" eklemek (kritik nokta gate'ini suni yükseltmek için):
+```
+"[TARIFADI] için kabı hazırlayın, doğranan malzeme sulanmasın." ← scaffold
+```
+
+Retrofit-14, 15, 16 v1'de kritik nokta **%100 yapay yüksek** çıkıyordu çünkü her step 1'in kapanışına olmasın/şaşmasın eklenmişti — gerçek tarif akışıyla ilgisi yoktu.
+
+✅ DOĞRU: Kritik nokta **tarif akışı içinde gerçekten kritik olduğu yerde** yer alır:
+```
+"Yumurtaları sıcak süte yavaş yavaş ekleyin, sıcak süt yumurtayı pişirip kesilmesin."
+"Hamuru 10 dakika dinlendirin, gluten gevşesin ve açma kolaylaşsın."
+"Şerbeti tatlının üzerine soğukken dökün, hamur cıvımasın."
+```
+
+Brief §15.7.4 pattern listesi (yoksa/olmasın/kesilmesin/...) sadece **gerçek bir nedenle** eklenir, batch genelinde min %60 tarifte bulunması organik dağılımdan gelir, scaffold doldurmadan değil.
+
+#### 3. **Web kaynak doğrulama ZORUNLU (her tarif için 1+ otoriter referans)**
+
+Mod F'te web araştırma "iyi olur" idi, **Mod FA'da ZORUNLU**. Her tarif için **notes** alanına araştırma kaynağı yazılır:
+
+✅ Format örneği:
+```json
+{
+  "slug": "ayva-tatlisi-nevsehir-usulu",
+  "notes": "Yemek.com 'Pekmezli Ayva Tatlısı', Nefisyemektarifleri 'Ayva Tatlısı Nasıl Yapılır'; pişirme süresi (45 dk yumuşamak için), şerbet sıcaklık (oda sıcaklığında dökme) iki kaynak da onaylıyor. Ayvanın çekirdek yataklarının temizlenmesi step 1, klasik yöntem."
+}
+```
+
+Notes asgari **40 karakter** + **2 kaynak adı** + **doğrulanan aspekt** (süre/sıcaklık/teknik) + (varsa değişiklik notu).
+
+Genel kabul gören Türk yemek siteleri (yemek.com, nefisyemektarifleri, hurriyet yemek, mutfaksırları), ulusal kasap/şefler (Kenji López-Alt, Harold McGee), uluslararası kaynaklar (Serious Eats, BBC Good Food, Bon Appetit) doğrulama için kullanılabilir.
+
+**Sınır**: Wikipedia tek kaynak yeterli değil (genel referans olabilir, spesifik tarif için ikincil kaynak gerekli).
+
+#### 4. **Doğruluk > yaratıcılık**
+
+Tarif **doğru pişme** üretmeli. Sürelerde, sıcaklıklarda, miktarlarda hata yapma:
+- Sıcaklık: 180°C fırın, kısık ateş, kızgın yağ 170°C ↔ kaynaklara göre tutarlı
+- Süre: 10 dk haşlama, 1 saat dinlendirme ↔ kaynaklara göre, sallayan değil
+- Miktar: 1 su bardağı ≈ 200 ml, 1 tatlı kaşığı ≈ 5 ml ↔ Türk standart ölçü
+
+Şüphede kaldığında **somut sayı yazma yerine "kıvam alana kadar"**. Ama "kıvam alana kadar" tek başına muğlak (§15.7.3); bu yüzden somut sayı + görsel sinyal birleşik:
+> "10 dakika orta ateşte, mahlep koyu sarı renge dönene kadar kavurun." (süre + sıcaklık + sinyal)
+
+### 16.3 Self-check (teslim öncesi 9 bash, §15.9 + Kural 17 + ek)
+
+Mod F bash'lerin hepsi koşar **ve ek**:
+
+```bash
+# Suffix freq Kural 17 (top freq <=10 PASS)
+node -e "
+const j = JSON.parse(require('fs').readFileSync('docs/retrofit-step-count-N-revize.json'));
+const freq = {};
+j.forEach(r => {
+  const suffix = r.newSteps[0].instruction.split(' ').slice(3).join(' ');
+  freq[suffix] = (freq[suffix]||0) + 1;
+});
+const top = Object.entries(freq).sort((a,b)=>b[1]-a[1])[0];
+if (top && top[1] > 10) { console.log('FAIL scaffold', top[1]+'x:', top[0].slice(0,80)); process.exit(1) }
+console.log('PASS suffix doğal');
+"
+
+# Notes minimum 40 char + en az 2 kaynak adı (Mod FA spesifik)
+node -e "
+const j = JSON.parse(require('fs').readFileSync('docs/retrofit-step-count-N-revize.json'));
+const fails = j.filter(r => !r.notes || r.notes.length < 40);
+if (fails.length > 0) { console.log('FAIL notes eksik/<40 char:', fails.length); process.exit(1) }
+const noSource = j.filter(r => !/[A-ZÇĞİÖŞÜ][a-zçğıöşü]+(\.com|\.net| veya | ve )/.test(r.notes));
+if (noSource.length > 5) { console.log('WARN notes kaynak sinyali zayıf:', noSource.length); }
+console.log('PASS notes 40+ char hepsi dolu');
+"
+```
+
+### 16.4 Çıktı
+
+`docs/retrofit-step-count-N-revize.json` (yeni dosya, orijinal `retrofit-step-count-N.json` silmez). Schema **aynı** (slug + type + originalStepCount + newSteps + notes). Apply pipeline aynı (`scripts/apply-retrofit.ts --file docs/retrofit-step-count-N-revize.json --apply [--confirm-prod]`).
+
+### 16.5 Sıra ve hedef
+
+Mevcut **revize bekleyen 4 batch**:
+
+| Batch | Type | Slug sayısı | Eski suffix freq |
+|---|---|---|---|
+| **Retrofit-12 revize** | SALATA 100 | 100 | 27x scaffold |
+| **Retrofit-13 revize** | SALATA+TATLI 100 | 100 | 33x scaffold |
+| **Retrofit-14 revize** | TATLI 100 | 100 | 10x sınır |
+| **Retrofit-15 revize** | TATLI 100 | 100 | 15x scaffold |
+
+Sıra: Kerem tetikler. **Retrofit-12 revize → 13 → 14 → 15** mantıklı (en kötü ihlalden başla).
+
+### 16.6 Tek satırda Mod FA akışı
+
+```
+Kerem: "Mod FA. Retrofit-12 revize"
+  ↓
+Codex: brief §15 + §16 + docs/retrofit-step-count-12.json (eski) okur
+  ↓
+Codex: aynı 100 slug listesi, sıfırdan tarif-spesifik step yaz
+  ↓
+Codex: her tarif için 1+ web kaynak doğrula, notes detaylı yaz
+  ↓
+Codex: 15 self-check (Mod F 9 + Kural 17 + Mod FA 5) PASS
+  ↓
+Codex: docs/retrofit-step-count-12-revize.json teslim
+  ↓
+Claude: dry-run + bağımsız audit + suffix freq check
+  ↓
+Claude: dev apply (Recipe.steps üzerine yazar, eski Mod F step'leri yenilenir)
+  ↓
+Claude: audit-deep PASS doğrula
+  ↓
+Claude: prod apply --confirm-prod
+  ↓
+Claude: commit + push, FUTURE_PLANS Retrofit-N revize tamam işaretle
+```
+
+4 batch (12r/13r/14r/15r) sonrası 400 tarif scaffold'dan arındırılmış olur. **Mod FA pipeline kapanır.**
 

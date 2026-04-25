@@ -15,6 +15,25 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
+### Retrofit-12 / 13 / 14 / 15 revize (Mod FA, launch öncesi öncelikli)
+
+**Brief §16 Mod FA hazır** (oturum 19 sonu eklendi). Codex tetikleme:
+`"Mod FA. Retrofit-12 revize"`, `"Mod FA. Retrofit-13 revize"`, vb.
+
+Ölçülmüş suffix freq:
+- **Retrofit-12: 27x** scaffold "[TARIFADI] için geniş kase, süzgeç..."
+- **Retrofit-13: 33x** scaffold (en kötü)
+- **Retrofit-14: 10x** sınır
+- **Retrofit-15: 15x** scaffold
+
+Apply sırası: 12r → 13r → 14r → 15r. Her revize ~30 dk Codex + 5 dk
+apply pipeline. Brief §16 tetik mesajı net, scaffold yasağı + tarif-
+spesifik step zorunluluk + web kaynak doğrulama. Schema aynı, dosya
+adı `retrofit-step-count-N-revize.json`.
+
+400 tarif (4 batch x 100) tarif-spesifik step'lerle prod'a yenilenir.
+Mod FA pipeline kapanır. Aşağıdaki spot audit task'ı silinir.
+
 ### Retrofit-12 / 13 / 14 / 15 suffix smuggling spot audit (launch sonrası polish, ~30 dk)
 
 Oturum 19'da Retrofit-16 v1 reject edildi: 42/100 tarif aynı 5 suffix

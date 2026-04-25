@@ -23,6 +23,16 @@ interface PantryClientProps {
   showExpiry?: boolean;
 }
 
+// Empty-state quick-add: en sik kullanilan 5 mutfak temeli. Sabit TR
+// liste; pantry input zaten TR autocomplete uzerinde calisir.
+const EMPTY_QUICK_ADD = [
+  "yumurta",
+  "soğan",
+  "sarımsak",
+  "domates",
+  "tuz",
+] as const;
+
 function splitCsv(raw: string): string[] {
   return raw
     .split(/[,\n]/g)
@@ -250,8 +260,47 @@ export function PantryClient({ initialItems, showExpiry = false }: PantryClientP
       </section>
 
       {items.length === 0 ? (
-        <div className="rounded-xl border border-dashed border-border px-6 py-12 text-center">
-          <p className="text-sm text-text-muted">{t("emptyBody")}</p>
+        <div className="rounded-xl border border-dashed border-border bg-bg px-6 py-10 text-center">
+          <div
+            className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-xl bg-accent-blue/10 text-3xl"
+            aria-hidden="true"
+          >
+            🎒
+          </div>
+          <h3 className="font-heading text-base font-semibold text-text">
+            {t("emptyTitle")}
+          </h3>
+          <p className="mx-auto mt-2 max-w-md text-sm text-text-muted">
+            {t("emptyBody")}
+          </p>
+          <p className="mt-5 text-xs font-medium uppercase tracking-wide text-text-muted">
+            {t("emptyQuickAddLabel")}
+          </p>
+          <div className="mt-3 flex flex-wrap justify-center gap-2">
+            {EMPTY_QUICK_ADD.map((name) => (
+              <button
+                key={name}
+                type="button"
+                onClick={() => {
+                  setNewName(name);
+                  // dogrudan handleQuickAdd quick-add yapar
+                  startTransition(async () => {
+                    const res = await addPantryItemAction({ name });
+                    if (!res.success || !res.data) {
+                      setError(res.error ?? t("errors.add"));
+                      return;
+                    }
+                    setItems((prev) => [res.data!, ...prev]);
+                    setNewName("");
+                  });
+                }}
+                disabled={isPending}
+                className="rounded-full border border-border bg-bg-card px-3 py-1.5 text-xs font-medium text-text transition-colors hover:border-accent-blue/40 hover:bg-accent-blue/5 hover:text-accent-blue disabled:opacity-60"
+              >
+                + {name}
+              </button>
+            ))}
+          </div>
         </div>
       ) : (
         <div className="space-y-4">

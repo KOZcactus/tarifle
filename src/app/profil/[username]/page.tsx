@@ -232,9 +232,32 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
             )}
           </div>
           {collections.length === 0 ? (
-            <p className="text-sm text-text-muted">
-              {isOwner ? t("collectionsEmptyOwner") : t("collectionsEmptyPublic")}
-            </p>
+            isOwner ? (
+              <div className="rounded-xl border border-dashed border-border bg-bg px-6 py-10 text-center">
+                <div
+                  className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-xl bg-accent-blue/10 text-3xl"
+                  aria-hidden="true"
+                >
+                  📁
+                </div>
+                <h3 className="font-heading text-base font-semibold text-text">
+                  {t("collectionsEmptyOwnerTitle")}
+                </h3>
+                <p className="mx-auto mt-2 max-w-md text-sm text-text-muted">
+                  {t("collectionsEmptyOwner")}
+                </p>
+                <Link
+                  href="/tarifler"
+                  className="mt-4 inline-flex items-center gap-2 rounded-lg bg-accent-blue px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-blue/90"
+                >
+                  {t("collectionsEmptyOwnerCta")}
+                </Link>
+              </div>
+            ) : (
+              <p className="text-sm text-text-muted">
+                {t("collectionsEmptyPublic")}
+              </p>
+            )
           ) : (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {collections.map((c) => (
@@ -467,12 +490,26 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
         <section>
           <h2 className="mb-4 font-heading text-xl font-bold text-text">{t("bookmarksTitle")}</h2>
           {bookmarks.length === 0 ? (
-            <p className="text-sm text-text-muted">
-              {t("bookmarksEmpty")}{" "}
-              <Link href="/tarifler" className="text-primary hover:text-primary-hover">
+            <div className="rounded-xl border border-dashed border-border bg-bg px-6 py-10 text-center">
+              <div
+                className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-3xl"
+                aria-hidden="true"
+              >
+                🔖
+              </div>
+              <h3 className="font-heading text-base font-semibold text-text">
+                {t("bookmarksEmptyTitle")}
+              </h3>
+              <p className="mx-auto mt-2 max-w-md text-sm text-text-muted">
+                {t("bookmarksEmpty")}
+              </p>
+              <Link
+                href="/tarifler"
+                className="mt-4 inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
+              >
                 {t("bookmarksEmptyLink")}
               </Link>
-            </p>
+            </div>
           ) : (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {bookmarks.map((b) => (

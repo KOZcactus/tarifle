@@ -28,8 +28,8 @@ import {
  *
  * Zamanlama kuralları (session 21 refinement, kullanıcı geri bildirim):
  *   - İlk ziyaret: 45s engagement gate.
- *   - 2+ ziyaret: 3 dakika delay (kullanıcı siteye odaklansın, banner
- *     anında çıkıp dikkati dağıtmasın).
+ *   - 2+ ziyaret: 10 dakika delay (kullanıcı siteyi gerçekten kullansın,
+ *     banner odaklanan kullanıcıyı rahatsız etmesin).
  *
  * Dismissal:
  *   - 1 dismiss → kalıcı sessizlik. Banner bir daha kendiliğinden çıkmaz.
@@ -47,7 +47,7 @@ const VISIT_COUNT_KEY = "pwa-visit-count";
 const VISIT_SEEN_KEY = "pwa-visit-session-seen";
 
 // 1 dismiss → kalıcı sessizlik. Manuel istek /ayarlar sayfasında.
-const SHOW_DELAY_MS = 180_000; // 2+ ziyarette 3 dakika
+const SHOW_DELAY_MS = 600_000; // 2+ ziyarette 10 dakika
 const MIN_VISITS = 2;
 const ENGAGEMENT_MS = 45_000; // İlk ziyaret minimum aktif süre
 

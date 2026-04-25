@@ -68,10 +68,10 @@ const MIN: Record<string, number> = {
   SOS: 3,
 };
 const MAX: Record<string, number> = {
-  YEMEK: 10,
-  CORBA: 10,
+  YEMEK: 12,
+  CORBA: 12,
   SALATA: 8,
-  TATLI: 10,
+  TATLI: 12,
   KAHVALTI: 8,
   APERATIF: 8,
   ATISTIRMALIK: 8,

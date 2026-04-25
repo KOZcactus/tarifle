@@ -49,7 +49,7 @@
   | KOKTEYL | 4 | 6 | 4-5 |
   | APERATIF / ATISTIRMALIK | 4 | 8 | 4-6 |
   | SALATA / KAHVALTI | 5 | 8 | 5-7 |
-  | **YEMEK / CORBA / TATLI** | **5** | **10** | 5-8 |
+  | **YEMEK / CORBA / TATLI** | **5** | **12** | 5-8 |
 
   3-step bir YEMEK/TATLI/KAHVALTI tarifi REJECT. Composite step'i böl:
   "Sebzeleri doğra ve kavur" → 2 adım ("Soğanı doğra" + "Soğan+biber+
@@ -249,7 +249,7 @@ flag'lemeye gerek yok, "acaba" diye durma.
   - **TAM REPLACEMENT:** Mevcut steps tamamen silinir, yenileri yazılır.
     Partial yok, tek adım dokunmak için bile tüm steps yazılır.
   - **slug:** CSV'den aynen kopyala.
-  - **steps:** ardışık 1..N stepNumber, **type bazli min/max** (Kerem oturum 18 direktifi): **YEMEK/CORBA/TATLI min 5 max 10**, **SALATA/KAHVALTI min 5 max 8**, **APERATIF/ATISTIRMALIK min 4 max 8**, **KOKTEYL min 4 max 6**, **ICECEK/SOS min 3 max 6**. Detay §14.6 + §15.5. **OVER = şişirme yasak**, ideal aralıkta tut.
+  - **steps:** ardışık 1..N stepNumber, **type bazli min/max** (Kerem oturum 18-19 direktifi): **YEMEK/CORBA/TATLI min 5 max 12** (ideal 5-8, kompleks tariflerde 12'ye kadar genişler), **SALATA/KAHVALTI min 5 max 8**, **APERATIF/ATISTIRMALIK min 4 max 8**, **KOKTEYL min 4 max 6**, **ICECEK/SOS min 3 max 6**. Detay §14.6 + §15.5. **OVER = şişirme yasak**, ideal aralıkta tut.
   - **Ingredient listesi DOKUNULMAZ** (Mod E sadece steps; ingredient
     listesi sabit).
   - **tipNote + servingSuggestion DOKUNULMAZ** (Mod D alanı).
@@ -1251,7 +1251,7 @@ sahte geçme.**
    tatlı 150-500)?
 9. ✅ `isFeatured` sadece en güçlü 5-10 tarifte `true` (batch %5-10)?
 10. ✅ Description 100-150 char + 3 element + banned kalıp yok?
-11. ✅ **Step count type kuralına uyuyor mu?** (§14.6): YEMEK/CORBA/SALATA/TATLI/KAHVALTI **min 5 max 10**, APERATIF/KOKTEYL/ATISTIRMALIK **min 4 max 8**, ICECEK/SOS **min 3 max 6**. **Oturum 18 dersi: teslim öncesi bash ile ölç:**
+11. ✅ **Step count type kuralına uyuyor mu?** (§14.6): YEMEK/CORBA/TATLI **min 5 max 12** (kompleks tarifler için), SALATA/KAHVALTI **min 5 max 8**, APERATIF/KOKTEYL/ATISTIRMALIK **min 4 max 8**, ICECEK/SOS **min 3 max 6**. **Oturum 18 dersi: teslim öncesi bash ile ölç:**
     ```bash
     node -e "
     const MIN={YEMEK:5,CORBA:5,SALATA:5,TATLI:5,KAHVALTI:5,APERATIF:4,ATISTIRMALIK:4,KOKTEYL:4,ICECEK:3,SOS:3};
@@ -2037,9 +2037,9 @@ Servis adımı tarifin kültürüne göre özgünleşmeli.
 | **ATISTIRMALIK** (cips, kroket) | **4** | **8** | 4-6 | Hazırlık + pişirme + servis |
 | **SALATA** | **5** | **8** | 5-7 | Yıka/doğra + sos + karıştır + dinlendir + servis |
 | **KAHVALTI** | **5** | **8** | 5-7 | Hazırlık + pişirme + ayar + servis |
-| **YEMEK / CORBA / TATLI** | **5** | **10** | 5-8 | Asıl tarif, detaylı |
+| **YEMEK / CORBA / TATLI** | **5** | **12** | 5-8 | Asıl tarif, detaylı (kompleks tarifte 12'ye kadar) |
 
-**Hard cap: hiçbir tarif 10 step'i geçemez** (KOKTEYL/SALATA/KAHVALTI/APERATIF/ATISTIRMALIK/SOS/ICECEK için max 6-8). Şişirme yasak, ideal aralıkta tut.
+**Hard cap: YEMEK/CORBA/TATLI için 12 step, diğer type'lar için 6-8** (KOKTEYL/SALATA/KAHVALTI/APERATIF/ATISTIRMALIK/SOS/ICECEK). Şişirme yasak, ideal aralıkta tut, ama börek/baklava/ayrılmış sos gibi gerçekten kompleks tarifte 10-12 step doğal.
 
 Genel rehber (minimum eşiklerin üstü):
 - **İçecek (basit):** 3-4 step
@@ -2417,10 +2417,10 @@ Alanlar:
 
 | Type | Min | Max | İdeal |
 |---|---|---|---|
-| **YEMEK** | 5 | **10** | 5-8 |
-| **CORBA** | 5 | **10** | 5-8 |
+| **YEMEK** | 5 | **12** | 5-8 |
+| **CORBA** | 5 | **12** | 5-8 |
 | **SALATA** | 5 | **8** | 5-7 |
-| **TATLI** | 5 | **10** | 5-8 |
+| **TATLI** | 5 | **12** | 5-8 |
 | **KAHVALTI** | 5 | **8** | 5-7 |
 | **APERATIF** | 4 | **8** | 4-6 |
 | **ATISTIRMALIK** | 4 | **8** | 4-6 |

@@ -90,13 +90,13 @@ export function PrivacyCard(props: PrivacyCardProps) {
   return (
     <section className="rounded-xl border border-border bg-bg-card p-5">
       <header className="mb-3">
-        <h2 className="font-heading text-lg font-semibold text-text">
+        <h2 className="font-heading text-base font-semibold text-text">
           {t("heading")}
         </h2>
         <p className="mt-1 text-sm text-text-muted">{t("subtitle")}</p>
       </header>
 
-      <div className="space-y-3">
+      <div className="divide-y divide-border rounded-lg border border-border">
         <ToggleRow
           label={t("chefScoreLabel")}
           description={t("chefScoreDescription")}
@@ -152,28 +152,36 @@ interface ToggleRowProps {
   disabled?: boolean;
 }
 
-function ToggleRow({ label, description, checked, onChange, disabled }: ToggleRowProps) {
+function ToggleRow({
+  label,
+  description,
+  checked,
+  onChange,
+  disabled,
+}: ToggleRowProps) {
   return (
-    <label className="flex cursor-pointer items-start justify-between gap-4 rounded-lg border border-border bg-bg p-3 transition-colors hover:border-primary/40">
-      <span className="flex-1">
+    <label className="flex cursor-pointer items-center justify-between gap-3 px-3 py-2.5 transition-colors hover:bg-bg-elevated">
+      <span className="min-w-0 flex-1">
         <span className="block text-sm font-medium text-text">{label}</span>
-        <span className="mt-0.5 block text-xs text-text-muted">{description}</span>
+        <span className="mt-0.5 block text-xs text-text-muted">
+          {description}
+        </span>
       </span>
-      <span className="relative inline-flex shrink-0 items-center pt-1">
+      <span className="relative inline-flex shrink-0 items-center">
         <input
           type="checkbox"
-          className="sr-only peer"
+          className="peer sr-only"
           checked={checked}
           onChange={(e) => onChange(e.target.checked)}
           disabled={disabled}
         />
         <span
           aria-hidden="true"
-          className="block h-6 w-11 rounded-full bg-bg-elevated transition-colors peer-checked:bg-primary peer-disabled:opacity-50"
+          className="block h-5 w-9 rounded-full bg-bg-elevated transition-colors peer-checked:bg-primary peer-disabled:opacity-50"
         />
         <span
           aria-hidden="true"
-          className="absolute left-0.5 top-1.5 inline-block h-5 w-5 rounded-full bg-white shadow transition-transform peer-checked:translate-x-5"
+          className="absolute left-0.5 top-0.5 inline-block h-4 w-4 rounded-full bg-white shadow transition-transform peer-checked:translate-x-4"
         />
       </span>
     </label>

@@ -17,14 +17,14 @@ import { ALLERGEN_ORDER, ALLERGEN_EMOJI } from "@/lib/allergens";
 /**
  * Personal preferences card, /ayarlar sayfasında render edilir.
  *
- * Üç bölüm (toggle chips, çoklu seçim):
+ * Üç bölüm (toggle chips, çoklu seçim) accordion'da:
  *   - favoriteTags        → ilgilendiğin etiketler (vejetaryen, dusuk-kalorili…)
  *   - allergenAvoidances  → kaçındığın alerjenler (GLUTEN, SUT…)
  *   - favoriteCuisines    → favori mutfakların (tr/it/fr…)
  *
- * MVP turunda yalnızca kaydeder; listing/discover filtering ayrı pass.
- * Canonical tag listesi ikinci tur'da Tag tablosundan fetch edilebilir;
- * şimdilik en sık kullanılan 15 slug inline.
+ * Oturum 21 revize: 55 chip (15+10+30) tek liste yerine 3 accordion
+ * başlığı; kapalıyken seçili sayı badge'i, açıkken chip ızgarası.
+ * Default: hepsi kapalı, kullanıcı ihtiyaç duyunca açar.
  */
 
 const FAVORITE_TAG_SLUGS = [
@@ -51,6 +51,57 @@ interface PreferencesCardProps {
   initialFavoriteCuisines: string[];
 }
 
+interface AccordionSectionProps {
+  label: string;
+  count: number;
+  open: boolean;
+  onToggle: () => void;
+  children: React.ReactNode;
+}
+
+function AccordionSection({
+  label,
+  count,
+  open,
+  onToggle,
+  children,
+}: AccordionSectionProps) {
+  return (
+    <div className="border-b border-border last:border-b-0">
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={open}
+        className="flex w-full items-center justify-between gap-3 py-3 text-left"
+      >
+        <span className="flex items-center gap-2 text-sm font-medium text-text">
+          {label}
+          {count > 0 && (
+            <span className="inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-primary/10 px-1.5 text-xs font-semibold text-primary">
+              {count}
+            </span>
+          )}
+        </span>
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+          className={`shrink-0 text-text-muted transition-transform ${open ? "rotate-180" : ""}`}
+        >
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      {open && <div className="pb-4">{children}</div>}
+    </div>
+  );
+}
+
 export function PreferencesCard({
   initialFavoriteTags,
   initialAllergenAvoidances,
@@ -68,10 +119,17 @@ export function PreferencesCard({
   const [favoriteCuisines, setFavoriteCuisines] = useState<string[]>(
     initialFavoriteCuisines,
   );
+  const [openSection, setOpenSection] = useState<
+    "tags" | "allergens" | "cuisines" | null
+  >(null);
   const [pending, startTransition] = useTransition();
   const [feedback, setFeedback] = useState<
     { kind: "success" | "error"; message: string } | null
   >(null);
+
+  const toggleSection = (s: "tags" | "allergens" | "cuisines") => {
+    setOpenSection((current) => (current === s ? null : s));
+  };
 
   const toggleIn = <T extends string>(
     list: T[],
@@ -112,122 +170,139 @@ export function PreferencesCard({
 
   return (
     <section className="rounded-xl border border-border bg-bg-card p-5">
-      <header className="mb-4">
+      <header className="mb-3">
         <h2 className="font-heading text-base font-semibold text-text">
           {t("title")}
         </h2>
         <p className="mt-1 text-sm text-text-muted">{t("description")}</p>
       </header>
 
-      {/* Favorite tags */}
-      <div className="mb-5">
-        <p className="mb-2 text-sm font-medium text-text">{t("tagsTitle")}</p>
-        <p className="mb-3 text-xs text-text-muted">{t("tagsHelp")}</p>
-        <div className="flex flex-wrap gap-2">
-          {FAVORITE_TAG_SLUGS.map((slug) => {
-            const active = favoriteTags.includes(slug);
-            const label = tTags.has(slug) ? tTags(slug) : slug;
-            return (
-              <button
-                key={slug}
-                type="button"
-                aria-pressed={active}
-                onClick={() =>
-                  toggleIn(favoriteTags, slug, (next) => setFavoriteTags(next))
-                }
-                disabled={pending}
-                className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors disabled:opacity-60 ${
-                  active
-                    ? "border-primary bg-primary/10 text-primary"
-                    : "border-border bg-bg text-text-muted hover:border-primary/50 hover:text-text"
-                }`}
-              >
-                {active && <span className="mr-1" aria-hidden="true">✓</span>}
-                #{label}
-              </button>
-            );
-          })}
-        </div>
-      </div>
+      <div className="rounded-lg border border-border">
+        <AccordionSection
+          label={t("tagsTitle")}
+          count={favoriteTags.length}
+          open={openSection === "tags"}
+          onToggle={() => toggleSection("tags")}
+        >
+          <p className="mb-3 px-1 text-xs text-text-muted">{t("tagsHelp")}</p>
+          <div className="flex flex-wrap gap-2 px-1">
+            {FAVORITE_TAG_SLUGS.map((slug) => {
+              const active = favoriteTags.includes(slug);
+              const label = tTags.has(slug) ? tTags(slug) : slug;
+              return (
+                <button
+                  key={slug}
+                  type="button"
+                  aria-pressed={active}
+                  onClick={() =>
+                    toggleIn(favoriteTags, slug, (next) =>
+                      setFavoriteTags(next),
+                    )
+                  }
+                  disabled={pending}
+                  className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors disabled:opacity-60 ${
+                    active
+                      ? "border-primary bg-primary/10 text-primary"
+                      : "border-border bg-bg text-text-muted hover:border-primary/50 hover:text-text"
+                  }`}
+                >
+                  {active && (
+                    <span className="mr-1" aria-hidden="true">
+                      ✓
+                    </span>
+                  )}
+                  #{label}
+                </button>
+              );
+            })}
+          </div>
+        </AccordionSection>
 
-      {/* Allergen avoidances */}
-      <div className="mb-5">
-        <p className="mb-2 text-sm font-medium text-text">
-          {t("allergensTitle")}
-        </p>
-        <p className="mb-3 text-xs text-text-muted">{t("allergensHelp")}</p>
-        <div className="flex flex-wrap gap-2">
-          {ALLERGEN_ORDER.map((allergen) => {
-            const active = allergenAvoidances.includes(allergen);
-            const label = tAllergens.has(allergen)
-              ? tAllergens(allergen)
-              : allergen;
-            return (
-              <button
-                key={allergen}
-                type="button"
-                aria-pressed={active}
-                onClick={() =>
-                  toggleIn(allergenAvoidances, allergen, (next) =>
-                    setAllergenAvoidances(next),
-                  )
-                }
-                disabled={pending}
-                className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors disabled:opacity-60 ${
-                  active
-                    ? "border-error bg-error/10 text-error"
-                    : "border-border bg-bg text-text-muted hover:border-error/50 hover:text-text"
-                }`}
-              >
-                <span aria-hidden="true" className="mr-1">
-                  {ALLERGEN_EMOJI[allergen]}
-                </span>
-                {label}
-              </button>
-            );
-          })}
-        </div>
-      </div>
+        <AccordionSection
+          label={t("allergensTitle")}
+          count={allergenAvoidances.length}
+          open={openSection === "allergens"}
+          onToggle={() => toggleSection("allergens")}
+        >
+          <p className="mb-3 px-1 text-xs text-text-muted">
+            {t("allergensHelp")}
+          </p>
+          <div className="flex flex-wrap gap-2 px-1">
+            {ALLERGEN_ORDER.map((allergen) => {
+              const active = allergenAvoidances.includes(allergen);
+              const label = tAllergens.has(allergen)
+                ? tAllergens(allergen)
+                : allergen;
+              return (
+                <button
+                  key={allergen}
+                  type="button"
+                  aria-pressed={active}
+                  onClick={() =>
+                    toggleIn(allergenAvoidances, allergen, (next) =>
+                      setAllergenAvoidances(next),
+                    )
+                  }
+                  disabled={pending}
+                  className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors disabled:opacity-60 ${
+                    active
+                      ? "border-error bg-error/10 text-error"
+                      : "border-border bg-bg text-text-muted hover:border-error/50 hover:text-text"
+                  }`}
+                >
+                  <span aria-hidden="true" className="mr-1">
+                    {ALLERGEN_EMOJI[allergen]}
+                  </span>
+                  {label}
+                </button>
+              );
+            })}
+          </div>
+        </AccordionSection>
 
-      {/* Favorite cuisines */}
-      <div className="mb-5">
-        <p className="mb-2 text-sm font-medium text-text">
-          {t("cuisinesTitle")}
-        </p>
-        <p className="mb-3 text-xs text-text-muted">{t("cuisinesHelp")}</p>
-        <div className="flex flex-wrap gap-2">
-          {CUISINE_CODES.map((code) => {
-            const active = favoriteCuisines.includes(code);
-            const label = tCuisines.has(code) ? tCuisines(code) : code;
-            return (
-              <button
-                key={code}
-                type="button"
-                aria-pressed={active}
-                onClick={() =>
-                  toggleIn(favoriteCuisines, code, (next) =>
-                    setFavoriteCuisines(next),
-                  )
-                }
-                disabled={pending}
-                className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors disabled:opacity-60 ${
-                  active
-                    ? "border-accent-blue bg-accent-blue/10 text-accent-blue"
-                    : "border-border bg-bg text-text-muted hover:border-accent-blue/50 hover:text-text"
-                }`}
-              >
-                <span aria-hidden="true" className="mr-1">
-                  {CUISINE_FLAG[code]}
-                </span>
-                {label}
-              </button>
-            );
-          })}
-        </div>
+        <AccordionSection
+          label={t("cuisinesTitle")}
+          count={favoriteCuisines.length}
+          open={openSection === "cuisines"}
+          onToggle={() => toggleSection("cuisines")}
+        >
+          <p className="mb-3 px-1 text-xs text-text-muted">
+            {t("cuisinesHelp")}
+          </p>
+          <div className="flex flex-wrap gap-2 px-1">
+            {CUISINE_CODES.map((code) => {
+              const active = favoriteCuisines.includes(code);
+              const label = tCuisines.has(code) ? tCuisines(code) : code;
+              return (
+                <button
+                  key={code}
+                  type="button"
+                  aria-pressed={active}
+                  onClick={() =>
+                    toggleIn(favoriteCuisines, code, (next) =>
+                      setFavoriteCuisines(next),
+                    )
+                  }
+                  disabled={pending}
+                  className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors disabled:opacity-60 ${
+                    active
+                      ? "border-accent-blue bg-accent-blue/10 text-accent-blue"
+                      : "border-border bg-bg text-text-muted hover:border-accent-blue/50 hover:text-text"
+                  }`}
+                >
+                  <span aria-hidden="true" className="mr-1">
+                    {CUISINE_FLAG[code]}
+                  </span>
+                  {label}
+                </button>
+              );
+            })}
+          </div>
+        </AccordionSection>
       </div>
 
       {/* Save button + feedback */}
-      <div className="flex flex-wrap items-center gap-3">
+      <div className="mt-4 flex flex-wrap items-center gap-3">
         <button
           type="button"
           onClick={handleSave}

@@ -1,8 +1,8 @@
 # Tarifle, Proje Durumu
 
-> Oturum 21 devam ediyor (26 Nis 2026), **14 commit'e kadar**, Mod F
-> retrofit pipeline KAPANIŞ + 5 yeni blog yazısı + diet-score Faz 4
-> coverage tepe + PWA
+> Oturum 21 devam ediyor (26 Nis 2026), **22+ commit**, Mod F retrofit
+> pipeline KAPANIŞ + Mod A 100 yeni tarif (3471→3569) + 9 yeni blog
+> yazısı (41→50) + diet-score Faz 4 coverage tepe + PWA
 > install UX fix + Legal/KVKK kurumsal polish. **Mod F 27/27 prod**
 > (22r + 23 + 24 + 25 + 26 + 27, ~2660 tarif step retrofit oturum 18'de
 > başlayıp oturum 21'de kapandı), USDA batch 4 + 5 prod (130 → **311
@@ -202,13 +202,82 @@ sayfa, version bump 1.x → 1.x+0.1). Güvenlik sayfasına yeni
 CSP Report-Only + Referrer-Policy + Permissions-Policy. NOT: Kerem
 Cloudflare Email Routing'de 3 alias'ı kurmalı (5 dk dashboard işi).
 
-**Oturum 21 devam eden iş (henüz kapanmadı):**
-- Cloudflare Email Routing 3 alias kurulum (Kerem dashboard, 5 dk)
-- Mod A Batch 37a (3500+ launch hedef için 29 kısa, Codex tetik)
-- Vercel env DATABASE_URL_OLD kontrol + Neon password rotate (Kerem)
+**O · Settings UX revize** (`2df06a6`): Kullanıcı geri bildirimi, dil
+tercihi /ayarlar sayfasında çok üstte ve geniş yer kaplıyor. Mantıksal
+küme yeniden sıralaması: profil → hesap → tercihler → diyet → pantry →
+gizlilik → uygulama → görünüm (dil) → tehlikeli alan. Dil kartı
+LanguagePreferenceCard kompakt segmented control'e geçti (yükseklik
+~140px → ~64px).
+
+**P · Yeni blog yazıları + asit ekseni cluster** (`69c61a1` + `34a7e83`
++ `0db2561` + `fa5fca2`): 4 yeni yazı blog 46 → 50.
+- 47 yag-kimyasi-ve-duman-noktalari (1365 kelime, malzeme): doymuş/
+  doymamış + 13 yağ duman noktası tablosu + tarif eşleştirme + saklama
+- 48 sote-vs-kavurma-vs-bugulama (1304 kelime, teknik): 3 tekniği
+  ayıran 3 eksen (yağ + sıvı + ısı/süre) + Türk mutfağı örnekleri
+- 49 limon-ve-limon-suyu (1345 kelime, malzeme): asit ekseni başlat,
+  sitrik asit pH 2-3 + suyu/kabuğu/eti + saklama + sodyum alternatifi
+- 50 sirke-cesitleri (1380 kelime, malzeme): asit ekseni kardeşi,
+  6 klasik çeşit + Türk mutfağı + sağlık penceresi
+**Asit ekseni mini-cluster** (limon + sirke) cross-link.
+
+**R · Mod A Batch 37a + 37b prod** (`bfc5d07` + `10d8871`): 100 yeni
+tarif (50+50 = 25+25 TR + 25+25 uluslararası), kategori dengeli.
+**Prod 3471 → 3571 tarif**, launch hedef 3500+ aşıldı (+71). Hunger-bar
++ nutrition aggregate + diet-score recompute pipeline her iki batch
+için koştu (35710 RecipeDietScore). Smoke örnekler 200 OK (sao-paulo-
+pao-de-queijo + madrid-patatas-bravas + marakes-harira-corbasi).
+Kaynaklar: yemek.com (Kayseri Yağlaması, Tokat Kebabı, Hatay Tepsi
+Kebabı, Mengen pilavı, Analı Kızlı, Çökertme kebabı) + BBC Good Food
+(Pizza Margherita, Currywurst, Okonomiyaki, Beef Stroganoff) + Serious
+Eats (ratatouille, chicken katsu).
+
+**S · Cleanup: amlou + aam panna sil + RandomBanner anasayfa taşı**
+(`8ff00d6`): Kullanıcı geri bildirimi. amlou ve aam-panna-hindistan-
+usulu rollback-batch.ts ile dev + prod silindi (AuditLog), source
+drift önlemek için seed-recipes.ts'ten 2 entry kaldırıldı (prod 3571
+→ 3569). RandomRecipeBanner FeaturedShelf altından (sayfanın çok
+üstü, sürekli öneri yorgunluğu) AI Asistan banner altına taşındı
+(keşfet kümesinin kalbi).
+
+**T · Visual baseline genişletme + FUTURE_PLANS cleanup** (`d381712`):
+detail-pages.visual.spec.ts BLOG_SLUGS 8 → 12 (4 yeni blog 47-50
+baseline PNG). Public-pages 8/8 PASS diff yok (RandomBanner viewport
+dışında, fullPage:false ile korundu). Visual baseline 20 → 24.
+FUTURE_PLANS'tan DATABASE_URL_OLD + Neon password rotate maddeleri
+silindi (oturum 21 doğrulandı: Vercel env'de eski Neon kalıntısı yok,
+Vercel-managed Neon'da manuel password yok).
+
+**U · Smoke test endpoint genişletme + Lighthouse threshold raise**
+(`oturum 21 sonu`): smoke-test.ts pages listesine 4 yeni blog endpoint
+eklendi (yag-kimyasi/sote-vs-kavurma/limon/sirke). lighthouserc.json
+performance threshold 0.7 → 0.85 (warn level, lokal sonuç 98-100 ile
+margin sağlıklı).
+
+**Oturum 21 sonu skor:**
+- 22+ commit, **prod 3471 → 3569 tarif** (Mod A 100 yeni - amlou/aam
+  panna 2 = +98 net)
+- USDA seed 130 → 311 ingredient, coverage **%92 → %99.97**
+- **Mod F retrofit pipeline KAPANIŞ** (27/27, ~2660 tarif step retrofit
+  oturum 18-21 arası 4 oturum)
+- **Blog 41 → 50** (9 yeni yazı + 41 yazıya 123 internal link + 6
+  inline anchor)
+- **Visual baseline 15 → 24**
+- Settings UX + PWA UX + Legal/KVKK + RandomBanner taşıma rafine
+- Pre-push 6 katman temiz, 84 unit test PASS
+
+**V · Cloudflare Email Routing 3 alias canlı** (Kerem dashboard,
+oturum 21 sonu): kvkk@ + iletisim@ + security@ → koz.devs@gmail.com
+Active. MX (route1/2/3.mx.cloudflare.net) + DKIM + SPF DNS otomatik
+eklendi. Legal sayfalardaki kurumsal alias'lar (oturum 21 N paketi)
+artık gerçek inbox'a düşüyor, bouncback yok. Catch-all Disabled
+(opsiyonel, gerek görülmedi).
+
+**Sonraki oturum başlangıcı:**
 - CSP Report-Only → enforce geçiş (1-2 hafta izleme sonrası)
-- Onboarding polish kalanları (guided tour + empty state CTA + DE i18n)
-- Yeni blog konu havuzu (FUTURE_PLANS yeni adaylar, paralel yazım)
+- Mod A 38a opsiyonel (katalog büyütme, launch sonrası)
+- Onboarding polish (guided tour + empty state + DE i18n)
+- Yeni blog yazıları (Salamura, Çorba Bilimi, Bal Türleri, Meal Prep)
 
 ## 25 Nisan 2026 (oturum 20, 30 commit, Diet-Score Faz 1+2 + Lighthouse CI + Mod FA pipeline kapaniş)
 

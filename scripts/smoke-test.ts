@@ -70,6 +70,11 @@ async function testCriticalPages(): Promise<void> {
     // Diyet skoru endpoint'leri (oturum 20 Faz 1+2)
     { path: "/blog/diyet-skoru-nasil-hesaplanir", contains: "Diyet" },
     { path: "/tarifler?siralama=diet-fit", contains: "tarif" },
+    // Oturum 21 yeni blog yazıları (47-50)
+    { path: "/blog/yag-kimyasi-ve-duman-noktalari", contains: "Yağ" },
+    { path: "/blog/sote-vs-kavurma-vs-bugulama", contains: "Sote" },
+    { path: "/blog/limon-ve-limon-suyu", contains: "Limon" },
+    { path: "/blog/sirke-cesitleri", contains: "Sirke" },
   ];
 
   for (const p of pages) {

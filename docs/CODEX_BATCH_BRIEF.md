@@ -3218,6 +3218,15 @@ Mod G hedefi: **boilerplate'leri tarif-özgü cümleyle değiştirmek**.
    - Pişirme yöntemini (fırın/ocak/buğulama) tarifin step'lerinden teyit et
    - Bölgesel referans tarif başlığındaki yöre ile uyumlu olmalı
      (Konya tarifi → Mardin referansı YASAK)
+   - **İPUCU UYDURMA YASAK** (tipNote için en kritik): yazılan ipucunun
+     gerçekten o tarifte işe yaradığından **WEB ARAŞTIRMASIYLA EMİN OL**.
+     "Bademi fazla koyu çekmemek macun gibi sertleşmesini önler" gibi
+     spesifik bir ipucu söyleyeceksen Serious Eats / Cook's Illustrated /
+     yemek.com / nefisyemektarifleri / ilgili yöre kültür sitesi gibi
+     kaynaktan teyit et. Kafadan "salla" tipinde sözde-bilim cümleleri
+     YASAK (örn. "Yoğurdu ters çevirip karıştırın, daha kremalı olur"
+     anlamsız). Şüpheliysen tipNote yazma; servingSuggestion'a
+     odaklan (servis daha az tehlikeli alan).
 
 **6. Boilerplate engelleyici:**
    - Aynı cümleyi iki tarif için kullanma (slug bazlı unique)
@@ -3230,6 +3239,17 @@ Mod G hedefi: **boilerplate'leri tarif-özgü cümleyle değiştirmek**.
    - **servingSuggestion** = tabağa ne ekleyip nasıl servis edileceği
      (örn. "Tabağı tahta zemine alıp yanına ince dilimlenmiş limon koyun.")
    - İki alan farklı amaç, karıştırma
+
+**8. Anlaşılır dil (Kerem direktifi, oturum 21):**
+   - Cümle **günlük TR mutfak konuşması** olmalı, akademik/teknik
+     jargon kullanma. Kullanıcı yemek yapmaya yeni başlıyor olabilir.
+   - YASAK kelime örnekleri: "emülsiyon", "denatüre", "karamelizasyon"
+     (kavurma de), "polifenol", "viskozite" (kıvam de), "uçucu yağ"
+     (aroma de), "Maillard" (kahverengileşme de), "denitrifikasyon"...
+   - Akıcı pratik anlatım: "tencere kapağını sıkı kapat, buhar çıkmasın"
+     ✅ vs. "kapalı sistemde basınç kontrolü sağla" ❌
+   - Cümle yüksek sesle okunduğunda doğal mı? (Kerem heuristik testi:
+     Türk teyzeden duyabileceğin tarz mı?)
 
 ### 17.4 Pipeline (Claude apply)
 
@@ -3264,6 +3284,14 @@ Claude: commit + push, FUTURE_PLANS Mod G N tamam işaretle
 4. **Em-dash**: 0 (— U+2014).
 5. **Yan-malzeme yanlışı**: Cümlede geçen ingredient gerçek listede
    var mı (10 örnek manuel kontrol).
+6. **Web kaynak teyidi (tipNote için ZORUNLU)**: Her tipNote ipucu
+   için "bu gerçek mi?" kontrol et — Serious Eats / Cook's Illustrated
+   / yemek.com / nefisyemektarifleri / yöre kültür sitesi. Sözde-bilim
+   uydurma ipucu YASAK. Şüpheliysen tipNote yazma, sadece
+   servingSuggestion revize et.
+7. **Anlaşılır dil**: Akademik/teknik jargon yok (emülsiyon, Maillard,
+   polifenol, viskozite vb.). Türk teyzeden duyabileceğin günlük
+   mutfak Türkçesi.
 
 ### 17.6 Beklenen output
 

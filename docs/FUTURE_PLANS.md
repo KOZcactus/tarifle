@@ -292,16 +292,72 @@ yakalandığında (1000+ DAU) tekrar aktifleştirilebilir:
 
 ### Blog kategorisi genişletme
 
-Oturum 16'da 26 → 30 yazı eklendi, 12/9/9 ideal denge. Sonraki adaylar:
+Oturum 21'de 41 → 46 yazı, ilk 5 aday (baharatli + soguk-sicak + ev
+ekmek + damak dengesi + mikro otlar) ship edildi. Mevcut denge
+yaklaşık: mutfak-rehberi 18 / pisirme-teknikleri 14 / malzeme-tanima
+14. Yeni dalga için aday havuzu (her kategoriden dengeli ilerleme,
+mevcut yazılarla overlap yok, evergreen + yüksek arama hacmi):
 
-- [ ] **Blog 41+** (launch sonrası, opsiyonel): Baharatlı Yemek Seviyeleri
-      (rehber), Soğuk vs Sıcak Başlangıç (rehber), Ev Yapımı Ekmek Tipleri
-      (malzeme), Damaklı Yemek Dengesi (rehber), Mikro Otlar (malzeme)
-- [ ] **40 blog hedefi tamamlandı** (mevcut 40, launch minimum 35 + 5 bonus)
-- [ ] Et bölgeleri diyagramı (Eren tarafından çizilecek illustration veya
-      Cloudinary'den public domain görsel) Blog 40'a eklenecek
-- [ ] **İç link ağı**: mevcut 30 yazının birbirine çapraz-referansları
-      (Blog 19 kalıp boyutu → Blog 14 kek dönüşümü bağlantısı gibi)
+**malzeme-tanima (öncelik):**
+- [ ] **Acı Sos Yapımı ve Çeşitleri** - fermente sos vs taze, kapsaisin
+      sıkıştırma, ev yapımı sürekli kullanım sosu
+- [ ] **Limon ve Limon Suyu Rehberi** - taze vs paket, asitlik yönetimi,
+      kabuk değerlendirme, dondurma
+- [ ] **Yağ Kimyası ve Duman Noktaları** - hangi yağ hangi sıcaklıkta,
+      kızartma yağı, omega oran
+- [ ] **Tahıl Çeşitleri Karşılaştırma** - bulgur/pirinç/karabuğday/
+      kinoa/yulaf yan yana
+- [ ] **Bal Türleri ve Mutfak Kullanımı** - çiçek/orman/karakovan/
+      petek farkları, ısıya dayanıklılık
+- [ ] **Sirke Çeşitleri** - elma/üzüm/balsamik/şarap/pirinç kullanım
+      haritası
+- [ ] **Yumurta Tazeliği ve Saklama** - su testi, tarih kontrolü, oda
+      vs buzdolabı
+- [ ] **Kuruyemiş Çeşitleri** - kavurma teknikleri, saklama, pişirmede
+      kullanım
+
+**pisirme-teknikleri:**
+- [ ] **Sote vs Kavurma vs Buğulama** - üç teknik farkları + uygulama
+- [ ] **Salamura ve Marine Bilimi** - işlem süresi, malzeme oranı,
+      yumuşatıcı etki
+- [ ] **Kızartma Yağı Yönetimi** - sıcaklık kontrol, filtreleme, ne
+      zaman değiştirilir
+- [ ] **Düdüklü Tencere Kullanımı** - güvenlik, süre kalibrasyonu,
+      hangi yemek
+- [ ] **Çorba Bilimi: Tabandan Servise** - kemik suyu, sebze suyu,
+      püre, terbiye
+- [ ] **Sos Kalınlaştırma Yöntemleri** - un/nişasta/yumurta sarısı/
+      krema/bağlayıcı redüksiyon
+- [ ] **Ekmek Hamuru Yoğurma Teknikleri** - el / makine / katlama,
+      glüten gelişimi (ev-yapimi-ekmek-tipleri yazısının pratik devamı)
+
+**mutfak-rehberi:**
+- [ ] **Yemek Saklama ve Donmuş Hazırlık (meal prep)** - bir günde
+      hafta yemeği planı
+- [ ] **Kış Sebzeleri Mutfağı** - lahana/karnabahar/pancar/karalahana
+      sezon haritası
+- [ ] **Ev Yapımı Turşu Çeşitleri** - lahana/salatalık/biber/karışık,
+      tuz oranı, fermentasyon süresi
+- [ ] **Çocuk Dostu Yemekler** - sebze gizleme, sunum, beslenme dengesi
+- [ ] **Yaz Sıcağında Hafif Mutfak** - soğuk çorba/salata/no-cook
+- [ ] **Misafir Sofrası Planlama** - mevsim + ana yemek + tatlı uyumu
+- [ ] **Tek Kişilik Yemek Pişirme** - porsiyon ölçeği + saklama
+- [ ] **Bütçe Mutfağı** - ucuz protein + dolgun yemek + atıksız mutfak
+
+**Mevsimsel (zamana bağlı, tarih hassas):**
+- [ ] **Ramazan Sahurunda Doyurucu Tabak** (Ramazan öncesi)
+- [ ] **Kurban Etini Doğru Değerlendirmek** (Kurban Bayramı öncesi)
+- [ ] **Yaz Sofrası: Pikinik ve Bahçe Yemekleri** (Mayıs-Haziran)
+
+**Bonus (görsel + Cloudinary):**
+- [ ] Et bölgeleri diyagramı (et-bolgeleri-rehberi yazısına ek görsel,
+      Eren çizimi veya public domain)
+- [ ] Mutfak ekipman ölçü diyagramı (mutfak-ekipman yazısına)
+
+**Süreç notu:** Her oturum 1-2 yazı, kategori dengesini koru
+(rehber/teknik/malzeme yaklaşık 1:1:1). Yeni yazı yazılırken
+`scripts/insert-blog-related.mjs` map'e entry eklemek + visual
+baseline güncellemek standart akış.
 
 ### A11y + UX polish
 

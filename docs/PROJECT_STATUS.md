@@ -1,17 +1,24 @@
 # Tarifle, Proje Durumu
 
-> Oturum 21 ara (26 Nis 2026), **11 commit**, Mod F finale yaklaşıyor +
-> blog 5 yeni yazı + diet-score Faz 4 coverage tepe. **Mod F 25/27 prod**
-> (22r + 23 + 24 + 25 apply, kalan 26/27), USDA batch 4+5 prod (210 →
-> **311 ingredient**, coverage **%92 → %99.97**), TR-fold root cause
-> fix (`asciiFold` aggregate.ts + audit-top-ingredients.ts), 41 blog
-> yazısına **123 internal link** + 5 yeni yazı (baharatli-yemek-seviyeleri
-> + soguk-vs-sicak-baslangic + ev-yapimi-ekmek-tipleri + damak-yemek-
-> dengesi + mikro-otlar) → **blog 41 → 46**, PWA install banner UX fix
-> (ilk dismiss permanent + 10 dakika delay + /ayarlar manuel install
-> card). Visual baseline 15 → 20 (5 yeni blog), pre-push 6 katman temiz,
-> 84 unit test PASS, prod 3471 tarif. **Sonraki:** Mod F 26 + 27 final
-> kapanış (Mod F 27/27 toplam pipeline hedef).
+> Oturum 21 devam ediyor (26 Nis 2026), **14 commit'e kadar**, Mod F
+> retrofit pipeline KAPANIŞ + 5 yeni blog yazısı + diet-score Faz 4
+> coverage tepe + PWA
+> install UX fix + Legal/KVKK kurumsal polish. **Mod F 27/27 prod**
+> (22r + 23 + 24 + 25 + 26 + 27, ~2660 tarif step retrofit oturum 18'de
+> başlayıp oturum 21'de kapandı), USDA batch 4 + 5 prod (130 → **311
+> ingredient**, coverage **%92 → %99.97**, 0-match 6 → 1), TR-fold
+> root cause fix (`asciiFold` aggregate.ts + audit-top-ingredients.ts),
+> 41 blog yazısına **123 internal link + 6 inline anchor** + **5 yeni
+> yazı** (baharatli-yemek-seviyeleri + soguk-vs-sicak-baslangic +
+> ev-yapimi-ekmek-tipleri + damak-yemek-dengesi + mikro-otlar) →
+> **blog 41 → 46**, PWA install banner UX fix (ilk dismiss permanent +
+> 10 dakika delay + /ayarlar manuel install card 4 mod), 6 yasal
+> sayfada kurumsal email aliases (kvkk@/iletisim@/security@) + KVKK
+> şahsi platform ünvan netleştirme + Güvenlik sayfasına CSP/X-Frame
+> kartı + lastUpdate refresh 26 Nis. Visual baseline 15 → 20, pre-push
+> 6 katman temiz, 84 unit test PASS, prod 3471 tarif. **Sonraki:**
+> Cloudflare Email Routing 3 alias (Kerem dashboard), Mod A 37a (3500+
+> hedef), CSP enforce geçiş (1-2 hafta izleme).
 
 > Oturum 20 sonu (25 Nis 2026), **30 commit**, mutlak rekor gün:
 > **Diet-score Faz 1 + Faz 2 + polish + Lighthouse CI**, 10 preset prod canli.
@@ -84,6 +91,124 @@
 > Oturum 8 sonu (30 commit), 2320 tarif prod canlı. 10 blok: 6 Codex batch Mod A (1701→2320), 3 Mod B batch (batch 18-20 çeviri 600→900), rekabet §8 kısa 6/6 ✅ + orta 5/5 ✅, topluluk loop tam (follow + feed + fan-out + followers list + suggested cooks + collection/variation share + PWA banner + Pinterest rich pin + user-photos flag), admin analytics + bulk moderation + search log, PDF export + llms.txt, 18 migration.
 >
 > Oturum 7 sonu (28 commit), 1701 tarif prod canlı. 8 blok: Mod B batch 13-17 (600 tarif EN+DE), Mod A batch 15-17 (1401→1701), foryou sort, pagination redesign, super-admin protection, /admin/yorumlar, /kategoriler, legal hub /yasal, editör rozeti, similar-recipes v2, 44 programatik landing, profil zenginleştirme, /menu-planlayici, RSS + HowTo schema, AI Asistan v2, blog MDX + 3 makale, rekabet analizi doc, newsletter double-opt-in altyapı, codex brief 3 clarify.
+
+## 26 Nisan 2026 (oturum 21 ara, 14 commit'e kadar, Mod F PIPELINE KAPANIŞ + 5 yeni blog + Faz 4 USDA + PWA UX + Legal polish)
+
+> Oturum henüz kapanmadı, devam ediyor. 14 commit'e kadar Mod F
+> retrofit pipeline 4 oturumdan
+> sonra kapandı (27/27, ~2660 tarif), USDA seed iki batch ile coverage
+> %92 → %99.97'ye çıktı, blog 41 → 46, PWA install banner UX revize,
+> 6 yasal sayfada kurumsal email + güvenlik kartı.
+
+**A · Mod F Retrofit-22 revize prod** (`e939ac7`): Codex 22 reject
+sonrası v2, suffix max 11x → 2x temizlik (oturum 20 brief Kural 17
+disiplin sonrası). 100 YEMEK 567 step, dry-run + dev + audit-deep PASS
++ prod apply (ep-icy-mountain), smoke japchae 200 OK.
+
+**B · Diet-score Faz 3 polish** (`9a9294c`): USDA batch 4 (top 80
+ingredient + 5 alias = 85 entry), 130 → 210 ingredient prod. **TR-fold
+root cause fix** (asciiFold export, aggregate.ts + audit-top-
+ingredients.ts'e foldlu lookup); önceden "ıspanak" (USDA) ↔ "ispanak"
+(recipe) farklı code point'ten eşleşmiyordu. Coverage %92 → %97
+(3185 → 3357 tarif matchedRatio>=0.5, 0-match 6 → 4). yuksek-lif avg
+28.0 → 30.5 / dusuk-sodyum 76.2 → 77.5 / akdeniz 49.8 → 51.4. 84
+unit test PASS.
+
+**C · 41 blog yazisina Ilgili Yazılar bölümü** (`8e4de55`): Editorial
+seçim, her yazıya 3 ilgili link, **toplam 123 yeni internal link**.
+`scripts/insert-blog-related.mjs` (idempotent map, "## Kaynaklar"
+varsa öncesine, yoksa sonuna). 8 ana overlap kümesi: et güvenliği
+üçlemesi + hamur üçlemesi + süt ürünleri + zeytin/yağ + kahvaltı +
+çay/kahve + bayram/Ramazan + mutfak ekipman.
+
+**D · Mod F Retrofit-23 prod** (`ea7f29e`): Codex teslim, kontroller
+temiz. 100 YEMEK, 626 step (5/6/7 step 10/54/36), kritik nokta
+75/100, dup 0. Dev + prod apply, smoke kolotlu-mantar-guveci-artvin-
+usulu 200 OK. Mod F 23/27.
+
+**E · PWA banner UX refactor + manuel install card** (`c7b036c`):
+Kullanıcı geri bildirim - banner site açar açmaz çıkıyor + 30 sn
+sonra geri geliyor. Yeni davranış: 2+ ziyarette delay 3s → **3 dk**
+(sonra 10 dk yapıldı), progressive cooldown (30/90/permanent) →
+**1 dismiss = kalıcı sessizlik**. Yeni `InstallAppCard.tsx` /ayarlar
+sayfasında 4 mod (installed / native Chromium / iOS Safari talimat /
+fallback tarayıcı menü). Shared `pwa-prompt-store.ts` (banner event'i
+yakalar, profil card useSyncExternalStore ile okur). i18n
+settings.installApp 6 key TR + EN.
+
+**F · PWA banner delay 3 → 10 dakika** (`fbf6893`): Kullanıcı geri
+bildirim "10 dakika yapsak, isteyen profilden basar zaten". Tek
+sabit değişimi (180_000 → 600_000), preview test 8sn'de banner false
+beklendiği gibi.
+
+**G · Mod F Retrofit-24 prod** (`bb74655`): 100 YEMEK, 580 step,
+kritik nokta 60/100 (eşik = 60, sınırda PASS), audit-deep PASS,
+smoke mercimekli-kabak-sote 200 OK. Mod F 24/27.
+
+**H · Inline blog link bonus 5 yazıda 6 link** (`180a823`):
+Editorial inline anchor en güçlü bağlam noktalarında - et-mühürleme/
+soğuk-zincir karşılıklı, maya-kabartma → un-cesitleri (un protein
+hamur), pilav → su-ve-mutfak (sertlik), kahvaltı → yumurta-pisirme +
+peynir-cesitleri çift link. Yazı sonu Ilgili Yazılar bölümünü
+tamamlayan paragraf-içi anchor.
+
+**I · 3 yeni blog yazısı** (`742eaf9`): FUTURE_PLANS Blog 41+
+adaylarından ilk üç (mutfak-rehberi + malzeme-tanima):
+- baharatli-yemek-seviyeleri (1147 kelime): Scoville birimi, Türk
+  biber haritası (Antep/Maraş/Urfa/Cayenne), kapsaisin kimyası,
+  doz/zaman/çekirdek ayarı.
+- soguk-vs-sicak-baslangic (1109 kelime): Soğuk vs sıcak başlangıç
+  mantığı, Türk meze geleneği, 7 adımlı klasik servis sırası
+  (Escoffier), mevsime göre seçim.
+- ev-yapimi-ekmek-tipleri (1214 kelime): 4 temel + baker's
+  percentage + 7 klasik tip + 4 pişirme yöntemi.
+Her birinde Kaynaklar (4-5) + Ilgili Yazılar bölümü.
+
+**J · USDA batch 5 + Blog 45 damak dengesi** (`9e0750e`): Top
+201-300 frequency hand-curate (101 entry batch5), **311 ingredient
+prod**, coverage %97 → **%99.97** (3470/3471 tarif, 0-match 4 → 1).
+Blog 45 damak-yemek-dengesi (1166 kelime, mutfak-rehberi): 5 temel
+tat (umami dahil), 4 doku ailesi, 3 sıcaklık katmanı, renk ekseni,
+Türk sofra denge örnekleri, evde 3 adımlı kontrol.
+
+**K · Mod F Retrofit-25 + Blog 46 mikro otlar** (`f7e8a05`): 25:
+100 YEMEK 563 step, audit-deep PASS, smoke peynirli-biberiyeli-
+bazlama-isparta-usulu 200 OK. Blog 46 mikro-otlar (1261 kelime,
+malzeme-tanima): 9 klasik mutfak otu (maydanoz/dereotu/nane/
+fesleğen/kekik/biberiye/adaçayı/kişniş/limon otu), taze vs kuru
+oran 1:4, 3 saklama yöntemi, doğru kesim ve ekleme zamanı.
+
+**L · Visual baseline refresh + PROJECT_STATUS ara** (`44839bf`):
+detail-pages.visual.spec.ts BLOG_SLUGS 3 → 8 (5 yeni baseline PNG),
+mevcut 3 blog + diet-score baseline diff yok (yazı sonu Ilgili
+Yazılar viewport screenshot dışında). Visual 15 → 20.
+
+**M · Mod F Retrofit 26 + 27 prod - PIPELINE 27/27 KAPANIŞ**
+(`e7ddef3`): 26: 100 YEMEK 605 step / 27: 60 YEMEK 344 step (kucuk
+final). Audit-deep PASS, smoke sivas-hingel + thit-kho 200 OK.
+**Mod F retrofit pipeline TAMAMLANDI**: 27 batch ~2660 tarif step
+retrofit, oturum 18'de başlayıp oturum 21'de kapandı (4 oturum
+sürdü, en uzun pipeline kuyruğu).
+
+**N · Legal/KVKK polish - kurumsal alias + lastUpdate + güvenlik
+kartı** (`883684e`): 3 kurumsal email alias - kvkk@tarifle.app
+(KVKK başvuru) + iletisim@tarifle.app (genel) + security@tarifle.app
+(zafiyet bildirimi). 6 yasal sayfa + /iletisim hub'ında koz.devs@
+gmail.com → kurumsal alias'lara geçti. KVKK ünvan netleştirme
+"Tarifle adıyla yayımlanan, gerçek kişi tarafından işletilen şahsi
+platform" (KVKK 3. madde). lastUpdate refresh 19 Nis → 26 Nis (6
+sayfa, version bump 1.x → 1.x+0.1). Güvenlik sayfasına yeni
+"Güvenlik başlıkları" kartı (TR+EN i18n): X-Frame-Options DENY +
+CSP Report-Only + Referrer-Policy + Permissions-Policy. NOT: Kerem
+Cloudflare Email Routing'de 3 alias'ı kurmalı (5 dk dashboard işi).
+
+**Oturum 21 devam eden iş (henüz kapanmadı):**
+- Cloudflare Email Routing 3 alias kurulum (Kerem dashboard, 5 dk)
+- Mod A Batch 37a (3500+ launch hedef için 29 kısa, Codex tetik)
+- Vercel env DATABASE_URL_OLD kontrol + Neon password rotate (Kerem)
+- CSP Report-Only → enforce geçiş (1-2 hafta izleme sonrası)
+- Onboarding polish kalanları (guided tour + empty state CTA + DE i18n)
+- Yeni blog konu havuzu (FUTURE_PLANS yeni adaylar, paralel yazım)
 
 ## 25 Nisan 2026 (oturum 20, 30 commit, Diet-Score Faz 1+2 + Lighthouse CI + Mod FA pipeline kapaniş)
 

@@ -1,54 +1,154 @@
 # Mod H prep input (oturum 21)
-# Top 50 ingredient by frequency
+# Top 150 ingredient by frequency
 # Kolonlar: rank \t freq \t name \t sample_slugs (3 ornek)
 
-1	781	Zeytinyağı	coban-salatasi, imam-bayildi, humus
-2	740	Su	mercimek-corbasi, baklava, turk-kahvesi
-3	727	Tereyağı	mercimek-corbasi, menemen, baklava
-4	668	Soğan	karniyarik, mercimek-corbasi, tavuk-sote
-5	647	Un	hunkar-begendi, kabak-mucveri, yayla-corbasi
-6	590	Yumurta	menemen, kabak-mucveri, yayla-corbasi
-7	575	Tuz	karniyarik, mercimek-corbasi, menemen
-8	406	Süt	hunkar-begendi, su-boregi, sutlac
-9	371	Sarımsak	karniyarik, imam-bayildi, humus
-10	346	Limon suyu	humus, baklava, tavuk-sis
-11	341	Yoğurt	ayran, tavuk-sis, yayla-corbasi
-12	319	Şeker	imam-bayildi, baklava, turk-kahvesi
-13	312	Domates	karniyarik, menemen, tavuk-sote
-14	232	Patates	mercimek-corbasi, tavuk-sote, patates-oturtma
-15	215	Pirinç	yaprak-sarma, ezogelin-corbasi, yayla-corbasi
+1	788	Zeytinyağı	coban-salatasi, imam-bayildi, humus
+2	758	Su	mercimek-corbasi, baklava, turk-kahvesi
+3	753	Tereyağı	mercimek-corbasi, menemen, baklava
+4	687	Soğan	karniyarik, mercimek-corbasi, tavuk-sote
+5	665	Un	hunkar-begendi, kabak-mucveri, yayla-corbasi
+6	613	Tuz	karniyarik, mercimek-corbasi, menemen
+7	601	Yumurta	menemen, kabak-mucveri, yayla-corbasi
+8	409	Süt	hunkar-begendi, su-boregi, sutlac
+9	387	Sarımsak	karniyarik, imam-bayildi, humus
+10	351	Limon suyu	humus, baklava, tavuk-sis
+11	351	Yoğurt	ayran, tavuk-sis, yayla-corbasi
+12	321	Şeker	imam-bayildi, baklava, turk-kahvesi
+13	317	Domates	karniyarik, menemen, tavuk-sote
+14	234	Patates	mercimek-corbasi, tavuk-sote, patates-oturtma
+15	220	Pirinç	yaprak-sarma, ezogelin-corbasi, yayla-corbasi
 16	199	Buz	mojito, margarita, aperol-spritz
-17	193	Maydanoz	coban-salatasi, sigara-boregi, imam-bayildi
-18	174	Dana kıyma	hasanpasa-koftesi, kabak-dolmasi, kiymali-pide
-19	159	Karabiber	karniyarik, mercimek-corbasi, menemen
-20	159	Ceviz	yulaf-lapasi, gullac, waldorf-salatasi
-21	158	Bal	mango-smoothie, muzlu-milkshake, cilekli-smoothie
-22	157	Dereotu	kabak-mucveri, zeytinyagli-enginar, firinda-mucver
-23	143	Toz şeker	zencefilli-limonata, tatli-eksi-tavuk, umm-ali
-24	140	Soya sosu	tavuklu-noodle, pad-thai, sebzeli-noodle
-25	134	Tarçın	sahlep, yulafli-granola-bar, yulaf-lapasi
-26	133	Sıvı yağ	karniyarik, tavuk-sote, kuru-fasulye
-27	125	Krema	kremali-mantar-corbasi, cilekli-magnolia, tiramisu
-28	123	Haşlanmış nohut	humus, toyga-corbasi, nohutlu-ispanak
-29	122	Domates salçası	mercimek-corbasi, kuru-fasulye, yaprak-sarma
-30	117	Havuç	mercimek-corbasi, tas-kebabi, zeytinyagli-enginar
-31	116	Kimyon	mercimek-corbasi, humus, adana-kebap
-32	113	Kuru soğan	zeytin-piyazi-antalya-usulu, acili-ezme-guneydogu-usulu, gobete-eskisehir-usulu
-33	112	Nane	limonata, yaprak-sarma, ezogelin-corbasi
-34	111	İnce bulgur	ezogelin-corbasi, kisir, cig-kofte
-35	108	Tavuk göğsü	tavuk-sote, tavuk-sis, cerkez-tavugu
-36	106	Lime suyu	margarita, pina-colada, guacamole
-37	96	Lor peyniri	pierogi, lor-mantisi, syrniki
-38	95	Kabak	kabak-mucveri, kabak-dolmasi, sebzeli-kuskus
-39	90	Beyaz peynir	sigara-boregi, kabak-mucveri, su-boregi
-40	90	Tahin	humus, piyaz, firinda-balkabagi
-41	90	Pul biber	menemen, kuru-fasulye, humus
-42	85	Domates püresi	spaghetti-bolognese, gnocchi-alla-sorrentina, osso-buco
-43	84	Taze soğan	kisir, cig-kofte, mercimek-koftesi
-44	82	Yeşil biber	sac-kavurma, gavurdagi-salatasi, kiymali-pide
-45	79	İrmik	revani, sekerpare, irmik-helvasi
-46	77	Mantar	mantarli-risotto, besamelli-tavuk, dana-stroganoff
-47	76	Tavuk but	tavuk-kapama, tavuk-doner, tavuklu-keskek
-48	74	Salatalık	coban-salatasi, mevsim-salatasi, hellimli-salata
-49	72	Susam	falafel, yulafli-granola-bar, sebzeli-noodle
-50	68	Soda	mojito, aperol-spritz, whiskey-highball
+17	198	Maydanoz	coban-salatasi, sigara-boregi, imam-bayildi
+18	178	Dana kıyma	hasanpasa-koftesi, kabak-dolmasi, kiymali-pide
+19	169	Karabiber	karniyarik, mercimek-corbasi, menemen
+20	159	Dereotu	kabak-mucveri, zeytinyagli-enginar, firinda-mucver
+21	159	Ceviz	yulaf-lapasi, gullac, waldorf-salatasi
+22	158	Bal	mango-smoothie, muzlu-milkshake, cilekli-smoothie
+23	148	Toz şeker	zencefilli-limonata, tatli-eksi-tavuk, umm-ali
+24	144	Sıvı yağ	karniyarik, tavuk-sote, kuru-fasulye
+25	143	Soya sosu	tavuklu-noodle, pad-thai, sebzeli-noodle
+26	134	Tarçın	sahlep, yulafli-granola-bar, yulaf-lapasi
+27	127	Domates salçası	mercimek-corbasi, kuru-fasulye, yaprak-sarma
+28	126	Krema	kremali-mantar-corbasi, cilekli-magnolia, tiramisu
+29	124	Haşlanmış nohut	humus, toyga-corbasi, nohutlu-ispanak
+30	121	Kimyon	mercimek-corbasi, humus, adana-kebap
+31	119	Havuç	mercimek-corbasi, tas-kebabi, zeytinyagli-enginar
+32	115	İnce bulgur	ezogelin-corbasi, kisir, cig-kofte
+33	113	Kuru soğan	zeytin-piyazi-antalya-usulu, acili-ezme-guneydogu-usulu, gobete-eskisehir-usulu
+34	112	Tavuk göğsü	tavuk-sote, tavuk-sis, cerkez-tavugu
+35	112	Nane	limonata, yaprak-sarma, ezogelin-corbasi
+36	108	Lime suyu	margarita, pina-colada, guacamole
+37	101	Pul biber	menemen, kuru-fasulye, humus
+38	97	Lor peyniri	pierogi, lor-mantisi, syrniki
+39	95	Kabak	kabak-mucveri, kabak-dolmasi, sebzeli-kuskus
+40	91	Beyaz peynir	sigara-boregi, kabak-mucveri, su-boregi
+41	90	Tahin	humus, piyaz, firinda-balkabagi
+42	90	Domates püresi	spaghetti-bolognese, gnocchi-alla-sorrentina, osso-buco
+43	89	Taze soğan	kisir, cig-kofte, mercimek-koftesi
+44	84	Yeşil biber	sac-kavurma, gavurdagi-salatasi, kiymali-pide
+45	80	İrmik	revani, sekerpare, irmik-helvasi
+46	78	Tavuk but	tavuk-kapama, tavuk-doner, tavuklu-keskek
+47	78	Mantar	mantarli-risotto, besamelli-tavuk, dana-stroganoff
+48	75	Salatalık	coban-salatasi, mevsim-salatasi, hellimli-salata
+49	73	Susam	falafel, yulafli-granola-bar, sebzeli-noodle
+50	70	Mısır unu	kuymak, kabak-cipsi, hamsi-tava
+51	69	Patlıcan	karniyarik, imam-bayildi, hunkar-begendi
+52	68	Soda	mojito, aperol-spritz, whiskey-highball
+53	68	Kişniş	falafel, kuzu-koftesi, salsa-roja
+54	67	Yufka	sigara-boregi, pacanga-boregi, patatesli-borek
+55	66	Limon	coban-salatasi, limonata, salgam-suyu
+56	61	Et suyu	sogan-corbasi, macar-gulasi, dana-stroganoff
+57	58	Kaşar peyniri	hunkar-begendi, kasarli-tost, firinda-karnabahar
+58	58	Zencefil	balkabagi-corbasi, masala-cayi, tavuklu-biryani
+59	58	Yeşil mercimek	yesil-mercimek-yemegi, mercimekli-bulgur-pilavi, mercimekli-karnabahar
+60	58	Badem	perde-pilavi, romesco-sos, keskul
+61	56	Biber salçası	karniyarik, kuru-fasulye, iskender-kebap
+62	56	Elma	elmali-tart, elmali-tarcinli-komposto, elma-cipsi
+63	55	Tavuk suyu	tavuk-kapama, cerkez-tavugu, sehriye-corbasi
+64	55	Yumurta sarısı	dugun-corbasi, peynirli-pogaca, acma
+65	55	Susam yağı	tavuklu-noodle, sebzeli-noodle, bibimbap
+66	52	Sumak	gavurdagi-salatasi, piyaz, patates-salatasi
+67	52	Mısır nişastası	sogan-halkasi, crema-catalana, korean-fried-chicken
+68	52	Kapya biber	lorlu-biberli-krep, kolbaszli-lecso, white-bean-shakshuka
+69	50	Nar ekşisi	kisir, gavurdagi-salatasi, hellimli-salata
+70	50	Ayçiçek yağı	furikake-popcorn, baharatli-patlamis-misir, kai-jeow
+71	49	Erişte	firin-turos-csusza, kongguksu, tutmac-corbasi
+72	45	Hardal	atom-sos, sezar-salata, balli-hardalli-tavuk
+73	45	Kuru maya	kiymali-pide, acma, bazlama
+74	45	Karides	pad-thai, deniz-mahsullu-paella, bouillabaisse
+75	45	Domates rendesi	gigantes-plaki, sebit-yaglamasi, kefta-tagine
+76	44	Kuru nane	yayla-corbasi, haydari, kabak-dolmasi
+77	43	Pilavlık bulgur	mercimekli-bulgur-pilavi, taze-fasulyeli-bulgur-pilavi, firik-pilavi-gaziantep-usulu
+78	43	Ekşi krema	macar-gulasi, borscht, pelmeni
+79	42	Kekik	tavuk-sis, firinda-tavuk-baget, citir-patates
+80	42	Muz	muzlu-milkshake, cilekli-smoothie, yulaf-lapasi
+81	42	Ispanak	ispanak-yemegi, nohutlu-ispanak, ispanakli-borek
+82	42	Kırmızı biber	sebzeli-kuskus, tavuklu-noodle, empanada
+83	40	Bezelye	zeytinyagli-enginar, orman-kebabi, rosto-kofte
+84	39	Ceviz içi	baklava, cerkez-tavugu, gavurdagi-salatasi
+85	39	Ilık su	kiymali-pide, acma, bazlama
+86	38	Sıcak su	kuru-fasulye, oralet, tas-kebabi
+87	38	Kuzu kuşbaşı	etli-guvec, souvlaki, maqluba
+88	38	Portakal suyu	zeytinyagli-kereviz, yesil-smoothie, havuc-zencefil-corbasi
+89	37	Bayat ekmek	yumurtali-ekmek, ribollita, tirit
+90	36	Lavaş	beyti-sarma, ciger-sote, tavuk-shawarma
+91	36	Kırmızı soğan	gavurdagi-salatasi, piyaz, guacamole
+92	36	Avokado	avokadolu-tost, guacamole, avokadolu-kakao-smoothie
+93	35	Hindistan cevizi sütü	yesil-tay-korisi, banh-xeo, moqueca
+94	34	Dana kuşbaşı	tas-kebabi, orman-kebabi, boeuf-bourguignon
+95	34	Ekmek	sezar-salata, sogan-corbasi, shakshuka-yumurta
+96	33	Sebze suyu	kremali-mantar-corbasi, mantarli-risotto, brokoli-corbasi
+97	33	Kereviz sapı	spaghetti-bolognese, sebze-corbasi, waldorf-salatasi
+98	32	Kakao	tiramisu, mozaik-pasta, sicak-cikolata
+99	32	Dana eti	kagit-kebabi, macar-gulasi, etli-kuru-fasulye
+100	32	Kaymak	ekmek-kadayifi, ayva-tatlisi, antep-katmeri
+101	31	Mayonez	atom-sos, sezar-salata, tavuklu-sezar-wrap
+102	31	Galeta unu	hasanpasa-koftesi, sogan-halkasi, izmir-kofte
+103	31	Marul	sezar-salata, mevsim-salatasi, tavuklu-salata
+104	31	Safran	safranli-risotto, sebzeli-paella, deniz-mahsullu-paella
+105	31	Pancar	pancar-corbasi, pancar-cipsi, borscht
+106	31	Arpa şehriye	arpa-sehriye-salatasi, arpa-sehriyeli-pilav, arpa-sehriyeli-nohut-pilavi
+107	30	Pişmiş pirinç	kimbap, kimchi-bokkeumbap, khao-pad
+108	29	Süzme yoğurt	iskender-kebap, ali-nazik, haydari
+109	29	Antep fıstığı	kunefe, cannoli, kunafa-arap-usulu
+110	29	Sirke	cilbir, iskembe-corbasi, kelle-paca-corbasi
+111	28	Kabartma tozu	revani, falafel, pankek
+112	28	Yeşil zeytin	martini, tavuk-tagine, cirpilmis-zeytin-salatasi
+113	27	Pazı	zeytinyagli-pazi-sarmasi, pazi-kavurmasi, nohutlu-pazi
+114	27	Zerdeçal	tavuk-tagine, zerdecal-latte, banh-xeo
+115	27	Üzüm pekmezi	cevizli-sucuk, haside-tatlisi, nevzine-tatlisi
+116	26	Vanilya	sutlac, panna-cotta, creme-brulee
+117	26	Fındık	asure, yulafli-granola-bar, sekerpare
+118	25	Kıyma	karniyarik, patates-oturtma, lahmacun
+119	25	Kırmızı mercimek	mercimek-corbasi, ezogelin-corbasi, mercimek-koftesi
+120	25	Pırasa	pirasa-yemegi, pot-au-feu, leek-and-potato-soup-british
+121	24	Kuru kayısı	asure, kuzu-tagine, kaymakli-kayisi-tatlisi
+122	24	Kuru üzüm	asure, yulafli-granola-bar, panettone
+123	24	Pirinç unu	kazandibi, tavuk-gogsu, keskul
+124	24	Yer fıstığı	pad-thai, mole-poblano, som-tam
+125	24	Instant maya	langos-budapeste-usulu, picarones, bafra-pidesi-samsun-usulu
+126	23	Tarçın çubuğu	visne-kompostosu, demirhindi-serbeti, elmali-tarcinli-komposto
+127	23	Cin	negroni, martini, french-75
+128	23	Beyaz lahana	kapuska, coleslaw, goi-ga
+129	23	Balık sosu	pad-thai, kimchi, tom-yum
+130	23	Defne yaprağı	kagit-kebabi, feijoada, ukha
+131	23	Firik	firik-pilavi, firik-pilavi-gaziantep-usulu, firikli-kabakli-pilav-mardin-usulu
+132	23	İsot	isotlu-sogan-kavurmasi-sanliurfa-usulu, isotlu-mercimek-ezmesi-sanliurfa-usulu, isotlu-kabak-borani-sanliurfa-usulu
+133	22	Taze fasulye	zeytinyagli-fasulye, turlu, tod-mun-pla
+134	22	Karanfil	visne-kompostosu, reyhan-serbeti, demirhindi-serbeti
+135	22	Erik	kompot, kekikli-erik-kompostosu-mugla-usulu, erikli-poppyseed-kup-polonya-usulu
+136	22	Haşlanmış tavuk	avgolemono-corbasi, enchiladas-rojas, tamale
+137	22	Yulaf	kakaolu-enerji-lokmalari, orman-meyveli-kefir-smoothie, fistik-ezmeli-muz-smoothie
+138	21	Taze nane	naneli-limonata, salatalikli-naneli-ayran, tabbouleh
+139	21	Balkabağı	balkabagi-corbasi, firinda-balkabagi, hobakjuk
+140	21	Milföy hamuru	peynirli-milfoy, talas-boregi, tarte-tatin
+141	21	Siyah zeytin	akdeniz-salatasi, nicoise-salatasi, zeytin-tapenade
+142	21	Lahana	okonomiyaki, sebzeli-dumpling, dakgalbi
+143	21	Zahter	manakish, zahterli-zeytin-salatasi-hatay-usulu, zahterli-yumurta-ekmegi-hatay-usulu
+144	21	Yoğunlaştırılmış süt	vietnam-buzlu-kahvesi, brigadeiro, sinh-to-bo
+145	21	Kabak çiçeği	kabak-cicegi-dolmasi, kabak-cicegi-salatasi-mugla-usulu, kabak-cicegi-dolmasi-izmir-usulu
+146	21	Tatlı paprika	chicken-paprikash, babgulyas, paprikali-nohut-gulas-macar-usulu
+147	20	Aşurelik buğday	asure, tavuklu-keskek, toyga-corbasi
+148	20	Fesleğen	pizza-margherita, ratatouille, caprese-salatasi
+149	20	Taze zencefil	zencefilli-limonata, zencefil-cayi, teriyaki-tavuk
+150	20	Limon kabuğu	zencefilli-limonata, limonlu-posset, whiskey-highball

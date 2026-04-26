@@ -1,0 +1,302 @@
+[
+  {
+    "name": "Mısır unu",
+    "whyUsed": "Kuymak, hamsi tava, cips ve bazı kahvaltılıklarda çıtır kaplama, sarı renk ve hafif taneli doku verir.",
+    "substitutes": ["ince mısır irmiği", "galeta unu", "pirinç unu", "buğday unu"],
+    "notes": "Kuymakta mısır unu yerine buğday unu kullanma; kıvam ve geleneksel tat belirgin değişir."
+  },
+  {
+    "name": "Patlıcan",
+    "whyUsed": "Karnıyarık, imam bayıldı, beğendi ve mezelerde közlenince yumuşak gövde verir, yağlı sosu iyi taşır.",
+    "substitutes": ["kabak", "mantar", "dolmalık biber", "patates"],
+    "notes": "Kızartmada patlıcan çok yağ çekebilir; tuzlayıp bekletmek ve kurulamak daha dengeli sonuç verir."
+  },
+  {
+    "name": "Kişniş",
+    "whyUsed": "Köfte, falafel, salsa ve salatalarda taze ot tadı verir, limonlu ve baharatlı tarifleri daha canlı yapar.",
+    "substitutes": ["maydanoz", "taze nane", "dereotu", "fesleğen"],
+    "notes": "Kişniş tadı belirgindir; sevmeyenler için maydanoz en güvenli ve tanıdık alternatiftir."
+  },
+  {
+    "name": "Yufka",
+    "whyUsed": "Börek, tatlı, kahvaltılık ve fırın yemeklerinde ince katlar oluşturur, harcı sarar ve pişince çıtırlaşır.",
+    "substitutes": ["baklavalık yufka", "lavaş", "milföy hamuru", "tortilla"],
+    "notes": "Baklavalık yufka çok incedir; börekte birkaç katı birlikte kullanmak gerekir."
+  },
+  {
+    "name": "Limon",
+    "whyUsed": "Salata, içecek, kokteyl ve çorbalarda ekşi tazelik verir, yağlı ya da tatlı tadı dengeler.",
+    "substitutes": ["lime", "limon suyu", "elma sirkesi", "greyfurt"],
+    "notes": "Sirke limon gibi kokmaz; salata dışında önce az miktar ekleyip tadına bak."
+  },
+  {
+    "name": "Et suyu",
+    "whyUsed": "Yemek, çorba, yahni ve soslarda et tadını güçlendirir, pirinç ve sebzeye daha dolu bir arka tat verir.",
+    "substitutes": ["tavuk suyu", "sebze suyu", "kemik suyu", "su"],
+    "notes": "Hazır et suyu tuzlu olabilir; yemeğe ayrıca tuz eklemeden önce mutlaka tadına bak."
+  },
+  {
+    "name": "Kaşar peyniri",
+    "whyUsed": "Tost, fırın yemeği, kahvaltılık ve gratenlerde eriyen tuzlu katman verir, sıcak servislerde uzayan doku sağlar.",
+    "substitutes": ["dil peyniri", "mozzarella", "taze kaşar", "gouda"],
+    "notes": "Mozzarella daha az tuzludur; tostta kullanırsan yanında daha tuzlu bir harç iyi gider."
+  },
+  {
+    "name": "Zencefil",
+    "whyUsed": "Çay, çorba, tavuk ve köri yemeklerinde keskin sıcaklık verir, tatlımsı ve baharatlı sosları canlandırır.",
+    "substitutes": ["toz zencefil", "havlıcan", "limon kabuğu", "tarçın"],
+    "notes": "Toz zencefil tazeden daha yoğun olabilir; taze zencefilin yarısı kadar kullanmakla başla."
+  },
+  {
+    "name": "Yeşil mercimek",
+    "whyUsed": "Mercimek yemeği, pilav, çorba ve salatalarda diri bakliyat dokusu verir, doyurucu bir taban kurar.",
+    "substitutes": ["kahverengi mercimek", "haşlanmış nohut", "haşlanmış barbunya", "maş fasulyesi"],
+    "notes": "Kırmızı mercimek çabuk dağılır; yeşil mercimek yerine salatada iyi sonuç vermez."
+  },
+  {
+    "name": "Badem",
+    "whyUsed": "Tatlı, pilav, sos ve kahvaltılıklarda hafif tatlı kuruyemiş tadı verir, dilimlenince çıtır doku katar.",
+    "substitutes": ["fındık", "ceviz", "kaju", "çam fıstığı"],
+    "notes": "Kuruyemiş alerjisi olan sofralarda badem yerine kabak çekirdeği daha güvenli seçenek olabilir."
+  },
+  {
+    "name": "Biber salçası",
+    "whyUsed": "Kuru fasulye, kebap, kahvaltılık ve sulu yemeklerde koyu renk, biber tadı ve sıcak bir sos tabanı verir.",
+    "substitutes": ["domates salçası", "acı biber ezmesi", "tatlı toz biber", "harissa"],
+    "notes": "Harissa ve acı biber ezmesi daha keskin olabilir; miktarı salçadan az tut."
+  },
+  {
+    "name": "Elma",
+    "whyUsed": "Tatlı, komposto, salata ve atıştırmalıklarda sulu tatlılık verir, tarçınlı ve yoğurtlu tariflerle iyi birleşir.",
+    "substitutes": ["armut", "ayva", "şeftali", "muz"],
+    "notes": "Muz elma gibi diri kalmaz; tart ve salatada armut daha yakın doku verir."
+  },
+  {
+    "name": "Tavuk suyu",
+    "whyUsed": "Çorba, pilav, kapama ve soslarda tavuk tadını büyütür, sade suya göre daha dolu bir sonuç verir.",
+    "substitutes": ["et suyu", "sebze suyu", "kemik suyu", "su"],
+    "notes": "Tavuk suyu tuzluysa pilav ve çorbada tuzu en son ayarlamak daha güvenlidir."
+  },
+  {
+    "name": "Yumurta sarısı",
+    "whyUsed": "Tatlı, çorba terbiyesi, poğaça ve soslarda zenginlik verir, yüzeyde parlak ve sarı bir görünüm oluşturur.",
+    "substitutes": ["tam yumurta", "süt", "yoğurt", "krema"],
+    "notes": "Terbiyede yumurta sarısını sıcak sıvıyla alıştır; doğrudan tencereye girerse kesilebilir."
+  },
+  {
+    "name": "Susam yağı",
+    "whyUsed": "Noodle, bibimbap, sote ve Asya usulü soslarda kavruk susam kokusu verir, az miktarla yemeği belirginleştirir.",
+    "substitutes": ["yer fıstığı yağı", "ayçiçek yağı", "zeytinyağı", "susam ezmesi"],
+    "notes": "Kavrulmuş susam yağı güçlüdür; pişirme yağı gibi bol kullanmak tadı ağırlaştırır."
+  },
+  {
+    "name": "Sumak",
+    "whyUsed": "Salata, piyaz, kebap ve soğanlı mezelerde ekşi baharat tadı verir, limonsuz ferahlık katar.",
+    "substitutes": ["limon suyu", "nar ekşisi", "limon kabuğu", "sirke"],
+    "notes": "Nar ekşisi tatlılık ekler; sadece ekşilik isteniyorsa limon suyu daha yakın olur."
+  },
+  {
+    "name": "Mısır nişastası",
+    "whyUsed": "Tatlı, krema, kızartma kaplaması ve soslarda hızlı kıvam verir, kızartmada daha çıtır yüzey oluşturur.",
+    "substitutes": ["patates nişastası", "buğday nişastası", "pirinç unu", "un"],
+    "notes": "Nişastayı soğuk sıvıyla açıp ekle; sıcak tencereye kuru atılırsa topaklanır."
+  },
+  {
+    "name": "Kapya biber",
+    "whyUsed": "Yemek, kahvaltılık, meze ve salatalarda tatlı biber tadı verir, közlenince soslara yumuşaklık katar.",
+    "substitutes": ["kırmızı biber", "çarliston biber", "dolmalık biber", "köz biber"],
+    "notes": "Yeşil biber daha keskin kokar; kapya yerine kullanırsan yemeğin tatlılığı azalır."
+  },
+  {
+    "name": "Nar ekşisi",
+    "whyUsed": "Kısır, Gavurdağı salatası, piyaz ve etli yemeklerde tatlı ekşilik verir, salata sosunu koyulaştırır.",
+    "substitutes": ["limon suyu", "sumak", "üzüm sirkesi", "balsamik sirke"],
+    "notes": "Balsamik sirke farklı aroma verir; nar ekşisi yerine kullanırken miktarı azalt."
+  },
+  {
+    "name": "Ayçiçek yağı",
+    "whyUsed": "Kızartma, kek, kahvaltılık ve yemeklerde nötr yağ sağlar, baharat ve ana malzemenin önüne geçmez.",
+    "substitutes": ["kanola yağı", "mısır yağı", "sıvı yağ", "zeytinyağı"],
+    "notes": "Zeytinyağı daha belirgin tat verir; tatlı ve nötr keklerde ayçiçek yağı daha uyumludur."
+  },
+  {
+    "name": "Erişte",
+    "whyUsed": "Çorba, pilav ve ana yemeklerde hamurlu tane doku verir, sosu ve suyu çekerek tabağı doyurur.",
+    "substitutes": ["tel şehriye", "arpa şehriye", "makarna", "noodle"],
+    "notes": "Tel şehriye erişteden ince olduğu için çorbada daha kısa sürede yumuşar."
+  },
+  {
+    "name": "Hardal",
+    "whyUsed": "Salata sosu, tavuk, sandviç ve dip soslarda keskin ekşilik verir, ballı ve yoğurtlu sosları dengeler.",
+    "substitutes": ["Dijon hardalı", "taneli hardal", "hardal tozu", "yaban turpu sosu"],
+    "notes": "Yaban turpu sosu daha yakıcıdır; hardal yerine çok az eklemek yeterli olur."
+  },
+  {
+    "name": "Kuru maya",
+    "whyUsed": "Pide, açma, bazlama ve mayalı tatlılarda hamuru kabartır, dinlenince daha yumuşak ekmek dokusu sağlar.",
+    "substitutes": ["instant maya", "yaş maya", "ekşi maya", "kabartma tozu"],
+    "notes": "Kabartma tozu maya tadı vermez; ekmekte değil, hızlı hamur işlerinde daha uygundur."
+  },
+  {
+    "name": "Karides",
+    "whyUsed": "Paella, Pad Thai, çorba ve mezelerde kısa sürede pişen deniz ürünü tadı ve diri et dokusu verir.",
+    "substitutes": ["kalamar", "beyaz balık", "tavuk göğsü", "mantar"],
+    "notes": "Karides çabuk sertleşir; yerine balık kullanırsan pişirme süresini tarife göre yeniden ayarla."
+  },
+  {
+    "name": "Domates rendesi",
+    "whyUsed": "Yahni, çorba, kebap ve soslarda taze domates suyu verir, salçaya göre daha hafif bir taban kurar.",
+    "substitutes": ["domates püresi", "konserve domates", "rendelenmiş taze domates", "domates salçası"],
+    "notes": "Salça çok yoğundur; domates rendesi yerine kullanırken su ekleyip tadını aç."
+  },
+  {
+    "name": "Kuru nane",
+    "whyUsed": "Yayla çorbası, dolma, haydari ve yoğurtlu soslarda tanıdık nane kokusu verir, sıcak yağda hemen açılır.",
+    "substitutes": ["taze nane", "kekik", "maydanoz", "dereotu"],
+    "notes": "Taze nane daha yumuşaktır; kuru nane yerine kullanırken miktarı artırmak gerekebilir."
+  },
+  {
+    "name": "Pilavlık bulgur",
+    "whyUsed": "Bulgur pilavı, sebzeli yemek ve dolgun yan tabaklarda iri tane doku verir, sosu pirinçten farklı emer.",
+    "substitutes": ["orta bulgur", "pirinç", "kuskus", "karabuğday"],
+    "notes": "Pirinç bulgur gibi tok kalmaz; salçalı pilavda su oranını yeniden ayarlamak gerekir."
+  },
+  {
+    "name": "Ekşi krema",
+    "whyUsed": "Gulaş, borscht, pelmeni ve soslarda serin ekşilik verir, sıcak yemeğin üzerine kremalı bir dokunuş katar.",
+    "substitutes": ["süzme yoğurt", "yoğurt", "labne", "krema"],
+    "notes": "Yoğurt sıcak soslarda kesilebilir; tabağa aldıktan sonra eklemek daha güvenli olur."
+  },
+  {
+    "name": "Kekik",
+    "whyUsed": "Fırın tavuk, patates, şiş ve soslarda kuru ot tadı verir, et ve sebzeye Akdeniz kokusu katar.",
+    "substitutes": ["mercanköşk", "biberiye", "fesleğen", "zahter"],
+    "notes": "Biberiye kekikten daha baskındır; tavuk ve patateste az kullanmak yeterli olur."
+  },
+  {
+    "name": "Muz",
+    "whyUsed": "Smoothie, milkshake, yulaf ve tatlılarda doğal tatlılık verir, blenderda içeceği koyulaştırır.",
+    "substitutes": ["olgun armut", "mango", "avokado", "elma püresi"],
+    "notes": "Avokado kıvam verir ama tatlılık vermez; içecekte ayrıca bal ya da şeker gerekebilir."
+  },
+  {
+    "name": "Ispanak",
+    "whyUsed": "Ispanak yemeği, börek, kahvaltılık ve çorbalarda yeşil yaprak dokusu verir, harca hacim katar.",
+    "substitutes": ["pazı", "kara lahana", "semizotu", "roka"],
+    "notes": "Roka acımsı kalır; sıcak yemek yerine salata ve hızlı sote için daha uygundur."
+  },
+  {
+    "name": "Kırmızı biber",
+    "whyUsed": "Noodle, empanada, sebze yemeği ve kahvaltılıklarda tatlı biber tadı, renk ve diri parça doku verir.",
+    "substitutes": ["kapya biber", "dolmalık biber", "çarliston biber", "köz biber"],
+    "notes": "Köz biber daha yumuşak ve isli gelir; çiğ çıtırlık gereken salatada kullanma."
+  },
+  {
+    "name": "Bezelye",
+    "whyUsed": "Orman kebabı, enginar, köfte ve çorbalarda küçük tatlı taneler verir, sebze karışımına renk katar.",
+    "substitutes": ["iç bakla", "edamame", "mısır", "haşlanmış nohut"],
+    "notes": "Konserve bezelye yumuşaktır; uzun pişen yemekte sonlara doğru eklemek daha iyi olur."
+  },
+  {
+    "name": "Ceviz içi",
+    "whyUsed": "Baklava, Çerkez tavuğu, salata ve kahvaltılıklarda yağlı kuruyemiş tadı verir, iri kırılınca çıtır kalır.",
+    "substitutes": ["fındık içi", "badem içi", "Antep fıstığı", "kabak çekirdeği içi"],
+    "notes": "Antep fıstığı tatlıda iyi gider ama tuzlu mezede rengi ve tadı daha baskın olabilir."
+  },
+  {
+    "name": "Ilık su",
+    "whyUsed": "Açma, bazlama, pide ve mayalı hamurlarda maya ile unu buluşturur, hamurun daha rahat yoğrulmasını sağlar.",
+    "substitutes": ["oda sıcaklığında su", "ılık süt", "maden suyu", "ılık ayran"],
+    "notes": "Su çok sıcak olursa maya zayıflar; el yakmayan ılık seviye daha güvenlidir."
+  },
+  {
+    "name": "Sıcak su",
+    "whyUsed": "Kuru fasulye, tas kebabı, içecek ve sulu yemeklerde pişmeyi hızlandırır, tencerenin sıcaklığını düşürmez.",
+    "substitutes": ["kaynar su", "tavuk suyu", "et suyu", "sebze suyu"],
+    "notes": "Bakliyata soğuk su eklemek pişmeyi yavaşlatabilir; sıcak yemeklerde sıcak sıvı kullan."
+  },
+  {
+    "name": "Kuzu kuşbaşı",
+    "whyUsed": "Güveç, maqluba, şiş ve sulu yemeklerde yağlı et tadı verir, uzun pişince yumuşak parça doku bırakır.",
+    "substitutes": ["dana kuşbaşı", "kuzu incik eti", "tavuk but", "mantar"],
+    "notes": "Dana kuşbaşı daha geç yumuşar; kuzu yerine kullanırken pişirme süresini uzat."
+  },
+  {
+    "name": "Portakal suyu",
+    "whyUsed": "Zeytinyağlı kereviz, smoothie, çorba ve tatlılarda tatlı ekşilik verir, havuç ve kerevizle iyi birleşir.",
+    "substitutes": ["mandalina suyu", "limon suyu", "elma suyu", "greyfurt suyu"],
+    "notes": "Limon suyu daha keskindir; portakal yerine kullanırken su ya da bal ile dengele."
+  },
+  {
+    "name": "Bayat ekmek",
+    "whyUsed": "Tirit, ribollita, yumurtalı ekmek ve köftede sıvıyı emer, yemeğe gövde ve ekmek dokusu katar.",
+    "substitutes": ["galeta unu", "tost ekmeği", "kruton", "panko"],
+    "notes": "Galeta unu kuru olduğu için köfte harcında az ekleyip kıvamı bekleyerek kontrol et."
+  },
+  {
+    "name": "Lavaş",
+    "whyUsed": "Döner, beyti, kahvaltılık ve dürümlerde esnek sarma tabanı olur, et ve sosu elde tutar.",
+    "substitutes": ["tortilla", "yufka", "pide", "bazlama"],
+    "notes": "Bazlama kalındır; dürüm yerine sandviç gibi kullanmak daha rahat olur."
+  },
+  {
+    "name": "Kırmızı soğan",
+    "whyUsed": "Piyaz, Gavurdağı salatası, guacamole ve mezelerde çiğ tatlı soğan tadı verir, tabağa renk katar.",
+    "substitutes": ["kuru soğan", "arpacık soğan", "taze soğan", "frenk soğanı"],
+    "notes": "Kuru soğan daha serttir; salatada kullanmadan önce tuzla ovup acısını azalt."
+  },
+  {
+    "name": "Avokado",
+    "whyUsed": "Guacamole, tost, salata ve smoothie tariflerinde kremamsı gövde verir, limonlu ve baharatlı sosu yumuşatır.",
+    "substitutes": ["bezelye püresi", "humus", "labne", "muz"],
+    "notes": "Muz yalnızca smoothie ve tatlılarda yakın durur; tuzlu tostta labne daha iyi seçenektir."
+  },
+  {
+    "name": "Hindistan cevizi sütü",
+    "whyUsed": "Köri, moqueca, çorba ve tatlılarda sütlü tropik tat verir, baharatlı sosu yumuşak ve akıcı yapar.",
+    "substitutes": ["hindistan cevizi kreması", "krema", "süt", "badem sütü"],
+    "notes": "Krema aynı aromayı vermez; köride kullanırsan hindistan cevizi tadı belirgin azalır."
+  },
+  {
+    "name": "Dana kuşbaşı",
+    "whyUsed": "Tas kebabı, orman kebabı, gulaş ve fırın yemeklerinde etli parça doku verir, uzun pişirmede sosla yumuşar.",
+    "substitutes": ["kuzu kuşbaşı", "dana rosto", "hindi kuşbaşı", "mantar"],
+    "notes": "Kuzu eti daha yağlı ve kokuludur; dana yerine kullanırken baharatı ona göre seç."
+  },
+  {
+    "name": "Ekmek",
+    "whyUsed": "Kahvaltı, çorba, salata ve mezelerde taban ya da eşlikçi olur, sosu emip tabağı doyurur.",
+    "substitutes": ["pide", "lavaş", "tost ekmeği", "kraker"],
+    "notes": "Çorbada kıtır isteniyorsa taze ekmek yerine fırınlanmış kruton daha iyi durur."
+  },
+  {
+    "name": "Sebze suyu",
+    "whyUsed": "Çorba, risotto, pilav ve sebze yemeklerinde su yerine hafif aromalı pişirme sıvısı sağlar.",
+    "substitutes": ["tavuk suyu", "et suyu", "mantar suyu", "su"],
+    "notes": "Et ve tavuk suyu sebze suyundan daha baskındır; vejetaryen tariflerde su kullanmak daha güvenlidir."
+  },
+  {
+    "name": "Kereviz sapı",
+    "whyUsed": "Bolognese, sebze çorbası, salata ve sulu yemeklerde taze sebze kokusu ve hafif çıtır doku verir.",
+    "substitutes": ["pırasa", "havuç", "rezene sapı", "salatalık sapı"],
+    "notes": "Salatalık sapı sadece çiğ salatada yakın durur; sıcak yemekte kereviz sapı gibi davranmaz."
+  },
+  {
+    "name": "Kakao",
+    "whyUsed": "Tiramisu, mozaik pasta, sıcak çikolata ve tatlılarda koyu çikolata tadı ve renk verir.",
+    "substitutes": ["şekersiz kakao", "eritilmiş bitter çikolata", "keçiboynuzu tozu", "çikolata parçaları"],
+    "notes": "Eritilmiş çikolata yağ ve şeker ekler; tarifteki yağ veya şekeri biraz azaltmak gerekebilir."
+  },
+  {
+    "name": "Dana eti",
+    "whyUsed": "Kağıt kebabı, gulaş, kuru fasulye ve sulu yemeklerde güçlü et tadı verir, uzun pişince lif lif yumuşar.",
+    "substitutes": ["dana kuşbaşı", "kuzu eti", "hindi eti", "mantar"],
+    "notes": "Mantar et tadını tam vermez; sadece vejetaryen gövde gerektiğinde iyi bir yoldur."
+  },
+  {
+    "name": "Kaymak",
+    "whyUsed": "Katmer, ekmek kadayıfı, ayva tatlısı ve kahvaltıda yoğun süt tadı verir, tatlı şerbeti yumuşatır.",
+    "substitutes": ["mascarpone", "krema", "labne", "süt kaymağı"],
+    "notes": "Labne daha ekşidir; şerbetli tatlıda kullanırsan tadı kaymaktan farklı olur."
+  }
+]

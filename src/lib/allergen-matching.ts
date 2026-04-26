@@ -1,11 +1,13 @@
 /**
- * Single source of truth for allergen detection logic.
+ * Single source of truth for allergen detection logic across the project.
  *
- * Previously split across:
- *   - src/lib/allergens.ts: simple substring match with TR normalize
- *   - scripts/audit-deep.ts: richer excludePatterns + customMatch
- *
- * Unified here so retrofit, audit, and fix scripts share the same rules.
+ * History (oturum 23 birlestirme):
+ *   - Earlier split across src/lib/allergens.ts (UI), src/lib/allergen-
+ *     matching.ts (yeni unified), scripts/audit-deep.ts (CLI audit + pre-
+ *     push guard). audit-deep ve allergen-matching paralel evrildi, drift
+ *     riski yarattigindan kalibrasyon iki dosyaya da uygulanmak zorunda
+ *     kaliyordu (oturum 23'te firinda-tavuk-baget incidence). Bu dosya
+ *     artik tek kaynaktir; audit-deep, allergens, vd. buradan import eder.
  *
  * Design:
  *   - Rule = { allergen, keywords, excludePatterns?, customMatch? }
@@ -19,13 +21,13 @@
  */
 import type { Allergen } from "@prisma/client";
 
-// ── Turkish-aware string helpers ────────────────────────────────────
+// ── Turkish-aware string helpers (exported for re-use in audit/seed scripts) ──
 
-function trLower(s: string): string {
+export function trLower(s: string): string {
   return s.toLocaleLowerCase("tr-TR");
 }
 
-function asciiNormalize(s: string): string {
+export function asciiNormalize(s: string): string {
   return trLower(s)
     .replace(/ç/g, "c")
     .replace(/ğ/g, "g")
@@ -35,7 +37,7 @@ function asciiNormalize(s: string): string {
     .replace(/ü/g, "u");
 }
 
-function hasStandaloneWord(text: string, word: string): boolean {
+export function hasStandaloneWord(text: string, word: string): boolean {
   const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const re = new RegExp(
     `(?:^|\\s|[,;.!?/()\\-])${escaped}(?:$|\\s|[,;.!?/()\\-])`,
@@ -57,70 +59,91 @@ export const ALLERGEN_RULES: AllergenRule[] = [
   {
     allergen: "GLUTEN",
     keywords: [
+      // Core wheat + Turkish staples:
       "buğday", "bulgur", "yufka", "galeta", "kadayıf", "pide", "lavaş",
       "börek", "irmik", "çavdar", "kepek", "kraker", "bisküvi", "kek",
       "hamur", "simit", "şehriye", "kuş başı", "baklava",
+      // Regional TR wheat derivatives (session 11 + 23 audit):
+      "baget", "bazlama", "dövme", "firik", "yarma", "gavut",
+      "tarhana", "keşkek", "keşkeklik", "dövülmüş buğday",
+      "göce", "gendime", "katmer", "tandır ekmeği", "tandir ekmeg",
+      "mantı", "kete", "kavut", "açma", "poğaça", "çörek", "lahmacun hamuru",
+      "pizza tabanı",
+      // International wheat breads + finished goods:
+      "crumpet", "scone", "hurmalı kek", "tunnbröd", "tunnbrod", "kvas",
+      "krep", "crepe", "pancake", "palacsinta", "blini", "panqueca",
+      "pandispanya", "wrap", "tarhonya", "cornbread", "corn bread",
+      "csiga", "pasty", "pierogi",
+      // Composite TR desserts (finished goods used as ingredient; oturum 12):
+      "revani",
+      // Grains + cereals (wheat-contaminated or wheat-derived):
       "yulaf", "granola", "kuskus", "freekeh",
-      // TR yoresel ingredient'lar (oturum 23 ek coverage):
-      "bazlama", "kete", "revani", "açma", "poğaça", "çörek", "tandır ekmeği",
-      "lahmacun hamuru", "pizza tabanı", "lavash", "tortilla ekmeği",
-      // Krep / palacsinta: hamur unla yapilir, gluten icerir.
-      "krep", "palacsinta", "blini", "panqueca", "crepe",
+      // Asian noodles/wrappers (mostly wheat-based):
       "noodle", "wonton", "yakisoba",
+      // Codex-observed pasta/noodle names that weren't caught by customMatch:
       "spagetti", "spaghetti", "penne", "fusilli", "fettuccine",
       "tagliatelle", "tagliolini", "linguine", "rigatoni", "farfalle",
       "lasagna", "lazanya", "udon", "gnocchi", "tortilla", "ravioli",
       "tortellini", "orzo", "pastitsio",
-      "tost", "bagel", "milfoy", "pita", "tandir ekmeg",
+      // Compound bread names where base "ekmek" substring won't catch:
+      "tost", "bagel", "milfoy", "pita", "lavash", "tortilla ekmeği",
+      // Regional breads + croutons + muffin variants:
       "muffin", "kruton", "güllaç", "misugaru",
-      // "arpa" intentionally excluded, false positive with "arpacık soğan"
+      // NOTE: "ramen noodle" intentionally NOT excluded, actually wheat-based.
+      // NOTE: "arpa" intentionally excluded, matches "arpacık soğan" as
+      //   substring; real arpa ingredients caught via standalone match in
+      //   customMatch (hasStandaloneWord) and via "bulgur"/"un"/"şehriye".
     ],
     excludePatterns: [
+      // Gluten-free starch/flour/noodle, do NOT flag as GLUTEN
       "pirinç unu", "mısır unu", "pirinç eriştesi", "pirinç nişastası",
       "mısır nişastası", "patates nişastası", "tatlı patates nişastası",
       "nohut unu", "badem unu", "hindistan cevizi unu", "karabuğday",
       "yapışkan pirinç unu", "manyok unu", "manyok nişastası",
-      "pirinç keki", "pirinç noodle", "cam noodle",
+      "tapyoka unu", "tapyoka nişastası", "tapiyoka unu", "tapyoka",
+      "hindistancevizi unu",
+      "pirinç keki", "mısır yarma", "mısır yarması", "mısır yarmalı",
+      // Gluten-free rice/glass noodle variants:
+      "pirinç noodle", "cam noodle",
+      // Gluten-free tortilla variants (Mexican tortilla chips are corn-based):
       "mısır tortilla", "tortilla cipsi",
-      // Tapyoka = manyoktan elde edilen, gluten-free. "Tapyoka unu"
-      // false positive yapiyordu (Brezilya pão de queijo waffle).
-      "tapyoka unu", "tapyoka nişastası", "tapyoka",
-      // "kek" substring "kekik" (oregano), "kekikli" gibi baharat
-      // isimlerinde false positive yapiyordu; kek standalone gluten'li
-      // ama kekik gluten icermez. excludePatterns ilk degerlendiriliyor.
-      "kekik", "kekikli", "nane kekik", "kekik dali",
-      // "çörek" GLUTEN keyword'u "çörekotu" (nigella sativa, gluten-
-      // free baharat) icin false positive yapiyordu. Çörekotu Mercimek
-      // Çorbasi false positive kalkti.
+      // Herb "kekik" (thyme) is gluten-free, collides with "kek" substring:
+      "kekik", "taze kekik", "kuru kekik", "kekik otu",
+      // Çörekotu (nigella sativa) is a spice, gluten-free; collides with
+      // "çörek" substring (which IS gluten in standalone form).
       "çörekotu", "çörek otu", "corekotu", "corek otu",
-      // "Tavuk baget" = tavuk parcasi (ekmek baget degil). Tek basina
-      // "baget" ekmek olur ama tavuk + baget kombosu degildir.
+      // "Tavuk baget" = tavuk parcasi (drumstick), gluten yok; "baget"
+      // tek basina ekmek baget olur ama tavuk + baget kombosu degildir.
       "tavuk baget", "tavuk bageti",
-      // NOTE: "ramen noodle" intentionally NOT excluded, wheat-based
     ],
     customMatch: (name) => {
       const lower = trLower(name);
       const ascii = asciiNormalize(name);
       const glutenFreeExempt = [
         "pirinç", "mısır", "patates", "nohut", "badem", "hindistan",
-        "karabuğday", "yapışkan", "manyok", "tatlı patates",
+        "hindistancevizi", "karabuğday", "yapışkan", "manyok",
+        "tapyoka", "tapiyoka", "tatlı patates",
       ];
       if (glutenFreeExempt.some((ex) => lower.startsWith(ex))) return false;
       // "Nişasta" tek basina TR mutfaginda neredeyse her zaman misir
-      // nisastasi (gluten-free). Bilesik formlar (bugday nisastasi gibi)
-      // ayri keyword'le yakalanir. Onceki davranis "lower === 'nişasta'
-      // -> true" idi, false positive yapiyordu (Sicak Cikolata).
-      if (lower === "nişasta" || lower === "nisasta") return false;
-      if (lower.includes("buğday nişastası") || lower.includes("bugday nisastasi")) return true;
-      if (lower.includes("nişasta") || lower.includes("nisasta")) return false;
+      // nisastasi (gluten-free); sadece "buğday nişastası" GLUTEN.
+      if (lower.includes("buğday nişastası") || lower.includes("bugday nisastasi")) {
+        return true;
+      }
+      if (lower.includes("nişasta")) return false;
+      // "erişte", only GLUTEN if NOT rice/glass/sweet potato noodle
       if (lower.includes("erişte")) {
         const gf = ["pirinç", "cam", "tatlı patates", "soba"];
         return !gf.some((g) => lower.includes(g));
       }
+      // "makarna", only GLUTEN if NOT rice-based
       if (lower.includes("makarna")) return !lower.includes("pirinç");
+      // "ekmek" + inflected "ekmeği" (ASCII "ekmegi"), GLUTEN
       if (ascii.includes("ekmek") || ascii.includes("ekmeg")) return true;
+      // "un" / "arpa" as standalone word (word boundary):
       if (hasStandaloneWord(lower, "un")) return true;
       if (lower.endsWith(" unu")) return true;
+      if (hasStandaloneWord(lower, "arpa")) return true;
       return false;
     },
   },
@@ -130,15 +153,20 @@ export const ALLERGEN_RULES: AllergenRule[] = [
       "yoğurt", "krema", "peynir", "kaymak", "tereyağı", "labne", "lor",
       "kaşar", "ayran", "dondurma", "mozzarella", "parmesan", "ricotta",
       "mascarpone", "feta", "pecorino", "cheddar",
+      // Fermented milk products:
       "kefir", "filmjölk", "smetana", "kırmızı peynir", "krem peynir",
-      // TR yoresel sut urunleri (oturum 23 ek coverage):
-      "çökelek", "hellim", "çecil", "mihaliç", "tulum peyniri", "ezine peyniri",
+      // Turkish curd cheeses + international soft cheeses:
+      "çökelek", "kurut", "hellim", "halloumi", "twarog", "tvorog",
+      "turos", "turós", "minci", "çecil", "mihaliç",
+      "tulum peyniri", "ezine peyniri",
       "çiğ süt", "manda yoğurdu", "süzme yoğurt",
     ],
     excludePatterns: [
-      "hindistan cevizi sütü", "hindistan cevizi kreması", "badem sütü",
-      "yulaf sütü", "pirinç sütü", "soya sütü", "kokos sütü",
-      "kokos kreması",
+      "hindistan cevizi sütü", "hindistan cevizi kreması",
+      "badem sütü", "yulaf sütü", "pirinç sütü", "soya sütü",
+      "kokos sütü", "kokos kreması",
+      // "kurut" substring "kurutulmuş"u yakalar (dried, not dairy):
+      "kurutulmuş",
     ],
     customMatch: (name) => {
       const lower = trLower(name);
@@ -151,31 +179,61 @@ export const ALLERGEN_RULES: AllergenRule[] = [
   },
   {
     allergen: "YUMURTA",
-    keywords: ["yumurta", "mayonez"],
+    keywords: [
+      "yumurta", "mayonez",
+      // Egg-containing prepared goods (session 11 audit):
+      "beze", "kek küpü", "kek kupu", "pandispanya", "tart hamuru",
+      "kek hamuru", "kurabiye hamuru", "krep", "kete",
+      // Composite TR desserts with egg:
+      "revani", "hazır kek",
+      // Composite bakery ingredients (Lamington over-tag dersi):
+      "kek", "kurabiye", "muffin",
+    ],
+    excludePatterns: [
+      // "beze" substring "bezelye"yi yakalar, bezelye baklagil (YUMURTA yok):
+      "bezelye",
+      // "kek" substring "kekik"i yakalar, kekik otu yumurtasiz:
+      "kekik", "taze kekik", "kuru kekik", "kekik otu",
+      // "kek" substring "keşkek" ve "keşkeklik"i yakalar:
+      "keşkek", "keşkeklik", "keşkeklik buğday",
+      // "kek" substring "pirinç keki"ni yakalar:
+      "pirinç keki",
+      // "kete" substring "keten tohumu"nu yakalar:
+      "keten", "keten tohumu",
+    ],
   },
   {
     allergen: "KUSUYEMIS",
     keywords: [
       "ceviz", "badem", "fındık", "antep fıstığı", "kaju", "pekan",
       "çam fıstığı", "macadamia", "dolmalık fıstık", "kestane",
+      // Pistacia terebinthus family + prepared nut products:
+      "menengiç", "menengic", "turron", "turrón", "nougat",
     ],
     excludePatterns: [
+      // Hindistan cevizi (coconut) is NOT a tree nut. Both spaced and
+      // conjoined forms appear in DB.
       "hindistan cevizi", "hindistan cevizi sütü", "hindistan cevizi rendesi",
       "hindistan cevizi yağı", "hindistan cevizi kreması",
       "hindistan cevizi unu",
-      // Boşluksuz TR yazimi ("Hindistancevizi sütü", "Hindistancevizi
-      // rendesi"). Eski excludePatterns sadece bosluklu varyanti yakaliyordu;
-      // mutfaktaki "hindistancevizi" tek kelime yazim KUSUYEMIS false
-      // positive yapiyordu (Lamington, Vietnam shaker).
       "hindistancevizi", "hindistancevizi sütü", "hindistancevizi rendesi",
       "hindistancevizi yağı", "hindistancevizi kreması",
       "hindistancevizi unu",
-      "kokos", "kestane mantarı", "kestane mantar",
+      "kokos",
+      // Kestane mantarı is a mushroom, not a chestnut:
+      "kestane mantarı", "kestane mantar",
     ],
     customMatch: (name) => {
       const lower = trLower(name);
-      if (lower.includes("ceviz") && lower.includes("hindistan")) return false;
-      if (lower.includes("kestane") && lower.includes("mantar")) return false;
+      if (lower.includes("ceviz")) {
+        if (lower.includes("hindistan")) return false;
+        if (lower.includes("hindistancevizi")) return false;
+        return true;
+      }
+      if (lower.includes("kestane")) {
+        if (lower.includes("mantar")) return false;
+        return true;
+      }
       return false;
     },
   },
@@ -186,8 +244,10 @@ export const ALLERGEN_RULES: AllergenRule[] = [
   {
     allergen: "SOYA",
     keywords: [
-      "soya", "tofu", "miso", "edamame", "gochujang", "chunjang",
-      "siyah fasulye ezmesi", "tonkatsu sosu", "japon köri", "misugaru",
+      "soya", "tofu", "miso", "edamame",
+      // Korean/Japanese soy-based pastes + sauces:
+      "gochujang", "chunjang", "siyah fasulye ezmesi",
+      "tonkatsu sosu", "japon köri", "misugaru",
     ],
   },
   {
@@ -196,15 +256,27 @@ export const ALLERGEN_RULES: AllergenRule[] = [
       "balık", "somon", "levrek", "hamsi", "karides", "midye", "kalamar",
       "ahtapot", "karidesli", "palamut", "istavrit",
       "yengeç", "deniz tarağı", "ançüez", "bonito", "istiridye",
+      // "ton" alone collides with "tonik suyu", use "ton balığı" possessive:
       "ton balığı",
-      // Generic seafood family wording (from unit tests + UX):
-      "deniz ürünleri", "deniz ürünü", "deniz mahsulü", "alabalık",
-      "mezgit", "uskumru", "sardalya", "çipura", "ıstakoz",
+      // Generic seafood family wording:
+      "deniz ürünleri", "deniz ürünü", "deniz mahsulü",
+      // Regional + international fish names:
+      "sardalya", "barramundi", "kefal", "çipura", "cipura", "uskumru",
+      "ringa", "lüfer", "lufer", "kılıç", "kilic",
+      "morina", "alabalık", "alabalik", "istakoz", "ıstakoz", "mezgit",
+    ],
+    excludePatterns: [
+      // "kefal" substring "kefalotiri" peynirini yakalar (Yunan peyniri):
+      "kefalotiri",
     ],
   },
   {
     allergen: "SUSAM",
-    keywords: ["susam", "tahin", "furikake", "zaatar"],
+    keywords: [
+      "susam", "tahin", "furikake", "zaatar", "zahter",
+      // Sesame-topped breads + spreads:
+      "simit", "humus",
+    ],
   },
   {
     allergen: "KEREVIZ",

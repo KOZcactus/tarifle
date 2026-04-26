@@ -70,6 +70,7 @@ const TITLES = {
   "yumurta-tazeligi-ve-saklama": "Yumurta Tazeliği ve Saklama",
   "tahil-cesitleri-karsilastirma": "Tahıl Çeşitleri Karşılaştırma",
   "corba-bilimi-tabandan-servise": "Çorba Bilimi: Tabandan Servise",
+  "kokteyl-bilimi-aletler-teknikler-karistirma": "Kokteyl Bilimi: Aletler ve Teknikler",
 };
 
 // Her yazi -> 3 ilgili (slug, kisa baglam aciklamasi)
@@ -348,6 +349,11 @@ const RELATED = {
     ["salamura-ve-marine-bilimi", "tuz + asit + sure prensipleri"],
     ["yumurta-tazeligi-ve-saklama", "terbiye icin taze yumurta"],
     ["su-ve-mutfak-sert-yumusak-su-pisirmeye-etkisi", "corba tabaninin baslangici"],
+  ],
+  "kokteyl-bilimi-aletler-teknikler-karistirma": [
+    ["salamura-ve-marine-bilimi", "tuz asit sure disiplini paralel"],
+    ["corba-bilimi-tabandan-servise", "koyulastirma + asit dengesi paralel teknik"],
+    ["tahil-cesitleri-karsilastirma", "malzeme + teknik eslestirme ornegi"],
   ],
 };
 

@@ -46,6 +46,7 @@ import { getPantryMatchForRecipe } from "@/lib/pantry/server";
 import { PantryMatchBadge } from "@/components/pantry/PantryMatchBadge";
 import { CookedButton } from "@/components/pantry/CookedButton";
 import { RecipeCookedToggle } from "@/components/recipe/RecipeCookedToggle";
+import { RecipeTimeline } from "@/components/recipe/RecipeTimeline";
 import {
   isCookedByUser,
   getCookedCount,
@@ -599,6 +600,17 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
           <CookedButton recipeId={recipe.id} defaultServings={recipe.servingCount} />
         </div>
       )}
+
+      {/* Tarif zaman cizelgesi (oturum 23 yeni). Hazirlik + Bekleme/Marine
+          + Pisirme orantili bar. Sauerbraten gibi uzun marine'li tariflerde
+          "buna 3 gun lazim" gorsel olarak vurgulanir. */}
+      <div className="mb-8">
+        <RecipeTimeline
+          prepMinutes={recipe.prepMinutes}
+          cookMinutes={recipe.cookMinutes}
+          totalMinutes={recipe.totalMinutes}
+        />
+      </div>
 
       {/* Ingredients + Steps, Side by Side on Desktop */}
       <div className="grid gap-8 lg:grid-cols-5">

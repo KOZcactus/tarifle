@@ -172,7 +172,11 @@ export default async function HomePage() {
         {/* Search */}
         <div className="mt-8 w-full max-w-xl">
           <Suspense>
-            <SearchBar placeholder={t("searchPlaceholder")} suggestions={searchSuggestions} />
+            <SearchBar
+              placeholder={t("searchPlaceholder")}
+              suggestions={searchSuggestions}
+              submitOnType={false}
+            />
           </Suspense>
         </div>
 

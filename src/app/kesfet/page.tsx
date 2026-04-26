@@ -82,7 +82,11 @@ export default async function KesfetPage() {
       {/* Search + popular queries */}
       <div className="mt-6">
         <Suspense>
-          <SearchBar placeholder={t("searchPlaceholder")} suggestions={searchSuggestions} />
+          <SearchBar
+            placeholder={t("searchPlaceholder")}
+            suggestions={searchSuggestions}
+            submitOnType={false}
+          />
         </Suspense>
         <div className="mt-3 flex flex-wrap gap-2">
           {["tavuk", "çorba", "makarna", "tatlı", "salata", "kokteyl", "vegan"].map((term) => (

@@ -23,12 +23,21 @@ interface SearchBarProps {
   className?: string;
   /** Pre-fetched suggestions for autocomplete. */
   suggestions?: { recipes: string[]; ingredients: string[] };
+  /**
+   * Yazi yazarken otomatik /tarifler'e yonlendir mi?
+   * - true (default): /tarifler sayfasi davranisi, debounced inline filter.
+   * - false: Ana sayfa / Kesfet davranisi, sadece Enter veya suggestion
+   *   click ile yonlendir. Boylece kullanici "menemen" yazarken her
+   *   harfte sayfa atlamaz, ifadeyi bitirip Enter'a basar.
+   */
+  submitOnType?: boolean;
 }
 
 export function SearchBar({
   placeholder = "Yemek çeşidi, malzeme veya kategori ara...",
   className = "",
   suggestions,
+  submitOnType = true,
 }: SearchBarProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -67,6 +76,20 @@ export function SearchBar({
     return results;
   })();
 
+  const navigateWithQuery = useCallback(
+    (value: string) => {
+      const params = new URLSearchParams(searchParams.toString());
+      if (value.trim()) {
+        params.set("q", value.trim());
+      } else {
+        params.delete("q");
+      }
+      params.delete("page");
+      router.push(`/tarifler?${params.toString()}`);
+    },
+    [router, searchParams],
+  );
+
   const handleSearch = useCallback(
     (value: string) => {
       setQuery(value);
@@ -75,20 +98,17 @@ export function SearchBar({
 
       if (debounceTimer) clearTimeout(debounceTimer);
 
+      // submitOnType=false (ana sayfa, kesfet): kullanici Enter'a basana
+      // veya suggestion'a tiklayana kadar route degistirme.
+      if (!submitOnType) return;
+
       const timer = setTimeout(() => {
-        const params = new URLSearchParams(searchParams.toString());
-        if (value.trim()) {
-          params.set("q", value.trim());
-        } else {
-          params.delete("q");
-        }
-        params.delete("page");
-        router.push(`/tarifler?${params.toString()}`);
+        navigateWithQuery(value);
       }, SEARCH_DEBOUNCE_MS);
 
       setDebounceTimer(timer);
     },
-    [router, searchParams, debounceTimer],
+    [debounceTimer, submitOnType, navigateWithQuery],
   );
 
   function selectSuggestion(label: string) {
@@ -105,6 +125,25 @@ export function SearchBar({
   }
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+    // Enter: suggestion seciliyse onu se, secili degilse mevcut query
+    // ile /tarifler'e yonlendir. submitOnType=false durumunda kullanici
+    // Enter'a basmadan route degismez, bu satir yonlendirmenin tek yolu.
+    if (e.key === "Enter") {
+      if (showSuggestions && selectedIdx >= 0 && filtered[selectedIdx]) {
+        e.preventDefault();
+        selectSuggestion(filtered[selectedIdx]!.label);
+        return;
+      }
+      if (query.trim()) {
+        e.preventDefault();
+        if (debounceTimer) clearTimeout(debounceTimer);
+        setShowSuggestions(false);
+        setSelectedIdx(-1);
+        navigateWithQuery(query);
+      }
+      return;
+    }
+
     if (!showSuggestions || filtered.length === 0) return;
 
     if (e.key === "ArrowDown") {
@@ -117,9 +156,6 @@ export function SearchBar({
       setSelectedIdx((prev) =>
         prev > 0 ? prev - 1 : filtered.length - 1,
       );
-    } else if (e.key === "Enter" && selectedIdx >= 0) {
-      e.preventDefault();
-      selectSuggestion(filtered[selectedIdx]!.label);
     } else if (e.key === "Escape") {
       setShowSuggestions(false);
       setSelectedIdx(-1);

@@ -2426,6 +2426,18 @@
       "servingUp": "Porsiyon artır",
       "optional": "(isteğe bağlı)"
     },
+    "measureConverter": {
+      "title": "Ölçü dönüştürücü",
+      "domainLabel": "Birim tipi",
+      "volume": "Sıvı",
+      "weight": "Ağırlık",
+      "amountLabel": "Miktar",
+      "fromUnitLabel": "Kaynak birim",
+      "toUnitLabel": "Hedef birim",
+      "swap": "Birimleri değiştir",
+      "showQuickRef": "Yaygın çevrimleri göster",
+      "hideQuickRef": "Yaygın çevrimleri gizle"
+    },
     "steps": {
       "title": "Yapılışı",
       "tipLabel": "💡 İpucu:"

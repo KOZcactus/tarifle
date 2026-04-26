@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Badge } from "@/components/ui/Badge";
 import { IngredientList } from "@/components/recipe/IngredientList";
+import { MeasureConverter } from "@/components/recipe/MeasureConverter";
 import { AllergenBadges } from "@/components/recipe/AllergenBadges";
 import { RecipeSteps } from "@/components/recipe/RecipeSteps";
 import { NutritionInfo } from "@/components/recipe/NutritionInfo";
@@ -579,6 +580,9 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
               ingredients={translatedIngredients}
               baseServingCount={recipe.servingCount}
             />
+            <div className="mt-3">
+              <MeasureConverter locale={locale === "en" ? "en" : "tr"} />
+            </div>
             {/* AI Asistan cross-link */}
             <Link
               href={`/ai-asistan?m=${recipe.ingredients

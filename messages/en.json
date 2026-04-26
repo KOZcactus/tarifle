@@ -2426,6 +2426,18 @@
       "servingUp": "Increase servings",
       "optional": "(optional)"
     },
+    "measureConverter": {
+      "title": "Measure converter",
+      "domainLabel": "Unit type",
+      "volume": "Volume",
+      "weight": "Weight",
+      "amountLabel": "Amount",
+      "fromUnitLabel": "From unit",
+      "toUnitLabel": "To unit",
+      "swap": "Swap units",
+      "showQuickRef": "Show common conversions",
+      "hideQuickRef": "Hide common conversions"
+    },
     "steps": {
       "title": "Instructions",
       "tipLabel": "💡 Tip:"

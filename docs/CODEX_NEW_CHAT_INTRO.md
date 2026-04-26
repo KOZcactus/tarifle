@@ -1,8 +1,14 @@
 # Codex yeni chat başlangıç + tetik mesajları
 
 Bu dosya, ChatGPT Max'ta her yeni Codex oturumunda Kerem'in kopyala
-yapıştır kullanacağı **standart başlangıç mesajı** + **3 aktif mod
-için detaylı tetik şablonlarını** içerir. Oturum bazlı güncellenir.
+yapıştır kullanacağı **standart başlangıç mesajı** + **aktif modlar
+için tetik şablonlarını** içerir. Oturum bazlı güncellenir.
+
+**Felsefe**: Detay kurallar `docs/CODEX_BATCH_BRIEF.md`'de tek
+referans halinde tutulur. Tetik mesajları kısadır (genelde tek
+satır), Codex brief'in ilgili bölümünü açıp kuralları orada okur.
+Kuralları tetik mesajının içine kopyalamak DRY ihlalidir, drift
+sebebidir.
 
 ---
 
@@ -13,12 +19,14 @@ Selam. Tarifle (tarifle.app) projesinde bu oturumda sen
 çalışıyorsun. GitHub repo'da docs/CODEX_BATCH_BRIEF.md senin
 için yazıldı: proje tanıtımı, aktif modlar (Mod A yeni TR
 tarif §5, Mod G boilerplate revize §17, Mod H ingredient
-enrichment §18), dosya kuralları, kalite çıtası, çift
-self-review, geçmiş hatalar ve yasaklar hepsi orada. Mod
-B/C/D/E/F/FA KAPANDI (referans için brief'te detay korundu).
+enrichment §18, Mod M marine süresi §19), dosya kuralları,
+kalite çıtası, çift self-review, geçmiş hatalar ve yasaklar
+hepsi orada. Mod B/C/D/E/F/FA/I/IA/IB KAPANDI (referans için
+brief'te ve docs/MOD_*_TRIGGER.md dosyalarında detay korundu).
 
 Oku, "Anladım" de, sonra hangi modu + batch numarasını
-vereceğim, sen default akışla direkt başlayacaksın.
+vereceğim, sen brief'in ilgili bölümünü açıp default akışla
+direkt başlayacaksın.
 
 Doğruluk > kapsam > hız. Şüphedeysen sor, sahte yazma.
 Em-dash karakteri (U+2014) yasak (AGENTS.md), yerine virgül,
@@ -266,8 +274,34 @@ Batch N hazır" + özet:
   alternatifin oran/yöntem benzerliği)
 ```
 
+---
 
+## 5. Mod M tetik şablonu (marine süresi)
 
+**Önkoşul**: `docs/mod-m-candidates.md` ve `docs/CODEX_BATCH_BRIEF.md
+§19` mevcut (oturum 23 sonu hazır). Codex web araştırma yapacağı
+için ChatGPT'de browse capability açık olmalı.
+
+**Tetik mesajı tek satır** (sadece batch numarasını değiştir):
+
+```
+Mod M Batch 1.
+```
+
+Codex bu mesajı görünce brief §19'u (kalite kuralları, JSON format,
+self-check) ve `docs/mod-m-candidates.md`'yi (167 aday detay liste,
+batch sırası) okur. Çıktı `docs/mod-m-batch-1.json` doğrudan disk'e
+yazılır. Bitince "Mod M Batch 1 hazır" + özet (toplam, marine eklendi
+high/medium/low, SKIP).
+
+**Batch dağılımı**: Batch 1 ilk 50, Batch 2 sıradaki 50, Batch 3
+sıradaki 50, Batch 4 son ~17 (toplam 167 aday).
+
+**Kerem hatırlatma**: kuralları tetik mesajına yapıştırma. Brief §19
+zaten hepsini detayda tutuyor. "Mod M Batch N." yeter; Codex brief'i
+açar.
+
+---
 
 
 
@@ -309,18 +343,19 @@ Batch N hazır" + özet:
 | Mod I | KAPANDI | docs/MOD_I_TRIGGER.md | 5/5 cluster (oturum 23, 107 sil) |
 | Mod IA | KAPANDI | docs/MOD_IA_TRIGGER.md | 3 batch pair audit (oturum 23, 26 sil) |
 | Mod IB | KAPANDI | docs/MOD_IB_TRIGGER.md | 2 batch UNCERTAIN+cross-language (oturum 23, 28 sil + 2 manuel) |
-| Mod M | **Batch 1 bekler** | docs/MOD_M_TRIGGER.md | 167 marine aday, 4 batch (oturum 23 sonu hazır) |
+| Mod M | **Batch 1 bekler** | brief §19 + docs/MOD_M_TRIGGER.md (kısa pointer) | 167 marine aday, 4 batch (oturum 23 sonu hazır) |
 
 ## Aktif paketler (oturum 24+)
 
 **Mod M (Marine).** En öncelikli Codex iş, oturum 23 sonu hazır.
 4 batch, 167 marine aday. Her tarif için **en az 2 farklı web
 kaynağından marine süresi teyit zorunda** (halüsinasyon yasak).
-Tetik: `docs/MOD_M_TRIGGER.md` §"Yeni chat başlangıç mesajı".
+Detay: `docs/CODEX_BATCH_BRIEF.md §19`. Tetik: tek satır
+`Mod M Batch 1.` (Bölüm 5).
 
 **Mod K (yeni, opsiyonel).** Description expansion, quality
-dashboard low-score tarifler için Codex iş. Henüz brief yazılmadı,
-gerek olunca docs/MOD_K_TRIGGER.md oluşturulur.
+dashboard low-score tarifler için Codex iş. Henüz brief'e §20
+eklenmedi, gerek olunca yazılır.
 
 **Mod A 40+.** Yeni TR + uluslararası tarif batch'leri devam,
 Brief §5 + Kural 6/7/16. Marine'li tarif önerisi (RecipeTimeline 3

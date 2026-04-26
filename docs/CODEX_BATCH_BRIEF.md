@@ -3495,3 +3495,197 @@ model IngredientGuide {
 Apply script `apply-mod-h.ts` upsert by `name` (mevcut update, yoksa
 create). Source tag `"Mod H Batch N"` her teslim için işaretlenir.
 
+## 19. Mod M, Marine süresi ekleme (oturum 23 sonu hazır, 24+ aktif)
+
+### 19.1 Hedef
+
+Tarifle kataloğunda marine içeren tariflerde **doğru bekleme süresini**
+modellemek. Aday tespiti yapıldı (`scripts/find-marine-candidates.ts`,
+14 keyword: marine, marina, marinasyon, salamura, soslama, terbiye,
+marinade, yoğurtla bekletin, sirke ile bekletin vb.). 167 tarif
+adayında çoğunda marine süresi eksik veya 0 (yalnız 15'inde wait
+modellenmiş).
+
+Apply sonrası `recipe.totalMinutes = prep + cook + marineMinutes`
+hesaplanır, RecipeTimeline `Hazırlık | Bekleme/Marine | Pişirme`
+3 segment görünür hale gelir (Sauerbraten 3 gün marine demo gibi
+~120-150 tarif).
+
+### 19.2 Input + Output
+
+**Input dosyası**: `docs/mod-m-candidates.md`
+- 167 marine adayı, batch sırası: time pattern olanlar +
+  alreadyHasWaitTime=false üstte
+- Her aday: slug, title, cuisine, type, prep + cook + total + wait,
+  marine ile eşleşen field (description / step / tipNote)
+
+**Output JSON**: `docs/mod-m-batch-N.json` (batch numarası 1-4)
+
+```json
+[
+  {
+    "slug": "tavuk-sis",
+    "marineMinutes": 240,
+    "marineDescription": "Yoğurt + zeytinyağı + baharat marine, en az 4 saat",
+    "tipNote_addition": "Marine süresini en az 4 saat tutun; bir gece bekletmek ekstra yumuşatır.",
+    "sources": [
+      "https://www.example.com/tavuk-sis-tr",
+      "https://yemek.com/tarif/tavuk-sis"
+    ],
+    "confidence": "high",
+    "reason": "Source A 3-4h, Source B 4-6h. 4 saat bilinen ortalama."
+  },
+  {
+    "slug": "menemen",
+    "classification": "SKIP",
+    "reason": "Menemen marine içermez, audit script keyword false positive."
+  }
+]
+```
+
+**Field açıklamaları:**
+
+- `slug` (zorunlu): aday tarifin canonical slug'u, mod-m-candidates.md'den
+- `marineMinutes` (zorunlu, SKIP değilse): tam marine bekleme süresi
+  dakika cinsinden (240 = 4 saat, 1440 = 24 saat = 1 gün, 4320 = 3 gün).
+  Range: 5 ≤ x ≤ 10080 (7 gün, schema cap). Sadece marine süresi,
+  prep/cook'a EK olarak hesaplanır
+- `marineDescription` (opsiyonel): kısa Türkçe (20-200 char) marine açıklama,
+  RecipeTimeline tooltip için ileride kullanılabilir
+- `tipNote_addition` (opsiyonel): mevcut tipNote'a EKLENECEK marine notu
+  (max 240 char). Apply pipeline mevcut tipNote ile " " ile birleştirir,
+  zaten içindeyse tekrarlamaz (idempotent)
+- `sources` (zorunlu, SKIP değilse): tam URL listesi, **en az 2 farklı
+  domain** (aynı sitenin farklı sayfaları sayılmaz)
+- `confidence` (zorunlu, SKIP değilse): "high" (2 kaynak net aynı süre),
+  "medium" (kaynaklar arası fark var, ortalama alındı), "low"
+  (1 net kaynak + 1 dolaylı, yakın takip)
+- `reason` (zorunlu): Türkçe kısa gerekçe (20-400 char)
+- `classification` (sadece SKIP için): "SKIP" işareti, marineMinutes/sources
+  gereksiz
+
+### 19.3 Kalite kuralları (ZORUNLU)
+
+**1. Doğruluk öncelik (halüsinasyon yasak):**
+   - Her tarif için **minimum 2 farklı web domain** zorunlu
+   - Aynı sitenin farklı URL'leri sayılmaz (serious eats × 2 ❌;
+     serious eats + bbc good food ✓)
+   - Genel ifadeler yerine kaynaktan spesifik süre alıntıla
+     ("genelde 4-6 saat" ❌; "Source A 4h, Source B 6h, ortalama 5h" ✓)
+   - Kaynak yetersiz veya emin değilseniz: classification "SKIP",
+     marineMinutes 0, reason zorunlu
+
+**2. Güvenilir kaynak öncelikli:**
+   - Profesyonel cooking sites: Serious Eats, BBC Good Food, NYT
+     Cooking, Food52, Bon Appétit, America's Test Kitchen, Cook's
+     Illustrated
+   - Ulusal mutfak referansları: TR için Yemek.com, Nefis Yemek
+     Tarifleri (cross-validate); İtalyan için Giallo Zafferano,
+     Hint için Tarla Dalal, Japon için Just One Cookbook, Kore
+     için Maangchi
+   - Wikipedia (özellikle uluslararası tarifler için temel kaynak)
+   - Kitap referansı (Mark Bittman How to Cook, Julia Child,
+     Ottolenghi)
+
+**3. marineMinutes range:**
+   - Minimum 5 dk (kısa quick marine, örn. balık üzerine limon)
+   - Maximum 10080 dk (7 gün, schema cap)
+   - Tipik aralıklar: 30 dk (hızlı), 240 dk = 4 saat (standart),
+     480 dk = 8 saat (overnight), 1440 dk = 24 saat (gün), 4320 dk
+     = 3 gün (Sauerbraten gibi)
+   - apply-mod-m-batch.ts script `prep + cook + marineMinutes >
+     10080` ise BLOCKED atar
+
+**4. Anlaşılır dil (Mod G/H ile aynı disiplin):**
+   - marineDescription + tipNote_addition + reason **günlük TR mutfak
+     konuşması** olmalı
+   - YASAK kelime: "emülsiyon", "denatüre", "karamelizasyon",
+     "polifenol", "viskozite", "uçucu yağ", "Maillard", "denitrifikasyon",
+     "hidrasyon", "antioksidan", "kapsaisin", "flavonoid"
+   - "scaled", "hyperscale" tarzı yabancı jargon YASAK
+
+**5. Em-dash karakteri (U+2014) ve en-dash (U+2013) YASAK** (AGENTS.md):
+   - marineDescription + tipNote_addition + reason hiçbirinde em-dash
+     yok
+   - verify-mod-m-pairs.ts script otomatik kontrol eder, em-dash
+     bulursa BLOCKED
+
+**6. SKIP disiplini:**
+   - Marine içermeyen veya kaynak yetersiz tarifler için classification
+     "SKIP" işaretle, sahte veri yazma
+   - SKIP'lar için marineMinutes/sources/confidence gereksiz, sadece
+     reason zorunlu (min 20 char açıklama)
+
+### 19.4 Pipeline (Claude apply, oturum 23 hazır)
+
+Codex teslim sonrası Claude tarafı:
+
+1. **Verify** (BLOCKED entry varsa apply yapılmaz):
+   ```
+   npx tsx scripts/verify-mod-m-pairs.ts --batch 1
+   ```
+   Çıktı: `docs/mod-m-verify-report.md` markdown rapor + console summary
+   (apply clean sayısı, high/medium/low dağılımı, SKIP, BLOCKED).
+
+2. **Kullanıcı onay** (özet sun):
+   - Apply clean count + high/medium/low confidence dağılımı
+   - SKIP listesi (Codex gerekçesi makul mu)
+   - BLOCKED varsa ayrıntı (Codex'e geri bildirim)
+
+3. **Dev apply** (idempotent + DB transaction):
+   ```
+   npx tsx scripts/apply-mod-m-batch.ts --batch 1 --apply
+   ```
+   Her entry için: `recipe.totalMinutes` update + `tipNote` merge +
+   `AuditLog action=MARINE_APPLY` metadata (sources + confidence + reason).
+
+4. **Smoke test**: Sauerbraten + 3 random marine'li tarif 200 OK +
+   RecipeTimeline 3-segment görsel doğrulama (preview anasayfa).
+
+5. **Prod apply** (db-env.ts guard + --confirm-prod zorunlu):
+   ```
+   npx tsx scripts/apply-mod-m-batch.ts --batch 1 --apply --confirm-prod
+   ```
+
+6. **Sentry watch** 24h: marine apply sonrası performans regression
+   var mı kontrol.
+
+Source seed-recipes.ts senkronu ayrı bir iştir (Mod I/IB pattern'iyle
+sonradan, totalMinutes + tipNote source'a yansımalı).
+
+### 19.5 Self-check (Codex teslim öncesi)
+
+1. **Sources count**: Her non-SKIP entry için >= 2 farklı domain.
+2. **Marine range**: 5 ≤ marineMinutes ≤ 10080.
+3. **Confidence**: "high" / "medium" / "low" değerlerinden biri.
+4. **Reason**: 20-400 char, gerçek alıntı veya açıklama.
+5. **SKIP disiplini**: classification="SKIP" ise reason zorunlu,
+   marineMinutes=0 veya yok, sources gereksiz.
+6. **Em-dash**: 0 (— U+2014, – U+2013) tüm string field'larda.
+7. **Anlaşılır dil**: jargon yasak listesi (Mod G/H ile aynı).
+8. **Slug evren**: docs/mod-m-candidates.md içinde olan slug'lar.
+   batch dışı slug yazma.
+9. **Batch boyutu**: ~50 entry (Batch 1: ilk 50, Batch 2: 51-100,
+   Batch 3: 101-150, Batch 4: 151-167 son 17).
+
+Bitince "Mod M Batch N hazır" + özet:
+- Toplam: 50 (veya batch boyutu)
+- Marine eklendi (high): X
+- Marine eklendi (medium): Y
+- Marine eklendi (low): Z
+- SKIP: W
+
+### 19.6 Beklenen output
+
+- **Batch 1**: ilk 50 marine adayı (öncelik: time pattern + already-
+  wait-time olmayanlar)
+- **Batch 2-3**: sıradaki 50'şer
+- **Batch 4**: son ~17
+- **Apply sonrası kapanış kriterleri**:
+  - 4 batch tamamlandı, verify + apply PASS
+  - find-marine-candidates.ts yeniden koşulduğunda total > prep+cook
+    olan tarif sayısı 100+ (eskiden 15)
+  - RecipeTimeline browser test 3-segment görselli marine'li tariflerde
+    doğru render (Sauerbraten patrnı)
+  - AuditLog action=MARINE_APPLY 100+ kayıt
+

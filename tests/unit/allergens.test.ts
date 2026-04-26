@@ -57,6 +57,58 @@ describe("inferAllergensFromIngredients", () => {
     expect(r).not.toContain("YER_FISTIGI");
   });
 
+  describe("oturum 23 false positive fixes", () => {
+    it("'kekik' (oregano) is NOT GLUTEN", () => {
+      const r = inferAllergensFromIngredients(ingr("kekik"));
+      expect(r).not.toContain("GLUTEN");
+    });
+
+    it("'kekikli zeytinyagi' is NOT GLUTEN", () => {
+      const r = inferAllergensFromIngredients(ingr("kekikli zeytinyağı"));
+      expect(r).not.toContain("GLUTEN");
+    });
+
+    it("'nişasta' standalone is NOT GLUTEN (TR varsayim: misir nisastasi)", () => {
+      const r = inferAllergensFromIngredients(ingr("nişasta"));
+      expect(r).not.toContain("GLUTEN");
+    });
+
+    it("'buğday nişastası' IS GLUTEN", () => {
+      const r = inferAllergensFromIngredients(ingr("buğday nişastası"));
+      expect(r).toContain("GLUTEN");
+    });
+
+    it("'mısır nişastası' is NOT GLUTEN", () => {
+      const r = inferAllergensFromIngredients(ingr("mısır nişastası"));
+      expect(r).not.toContain("GLUTEN");
+    });
+
+    it("'Hindistancevizi sütü' (boşluksuz TR yazim) is NOT KUSUYEMIS", () => {
+      const r = inferAllergensFromIngredients(ingr("Hindistancevizi sütü"));
+      expect(r).not.toContain("KUSUYEMIS");
+    });
+
+    it("'Hindistancevizi rendesi' (boşluksuz) is NOT KUSUYEMIS", () => {
+      const r = inferAllergensFromIngredients(ingr("Hindistancevizi rendesi"));
+      expect(r).not.toContain("KUSUYEMIS");
+    });
+
+    it("'hindistan cevizi sütü' (boşluklu) hala NOT KUSUYEMIS (regression)", () => {
+      const r = inferAllergensFromIngredients(ingr("hindistan cevizi sütü"));
+      expect(r).not.toContain("KUSUYEMIS");
+    });
+
+    it("'kek' standalone IS GLUTEN (gerek tarif kek hamuru)", () => {
+      const r = inferAllergensFromIngredients(ingr("kakaolu kek küpü"));
+      expect(r).toContain("GLUTEN");
+    });
+
+    it("'badem' / 'ceviz' KUSUYEMIS regression (gerek aileye dahil)", () => {
+      const r = inferAllergensFromIngredients(ingr("badem", "ceviz"));
+      expect(r).toContain("KUSUYEMIS");
+    });
+  });
+
   it("'yer fıstığı' is YER_FISTIGI, not KUSUYEMIS", () => {
     const r = inferAllergensFromIngredients(ingr("yer fıstığı"));
     expect(r).toContain("YER_FISTIGI");

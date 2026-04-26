@@ -61,6 +61,9 @@ export const ALLERGEN_RULES: AllergenRule[] = [
       "börek", "irmik", "çavdar", "kepek", "kraker", "bisküvi", "kek",
       "hamur", "simit", "şehriye", "kuş başı", "baklava",
       "yulaf", "granola", "kuskus", "freekeh",
+      // TR yoresel ingredient'lar (oturum 23 ek coverage):
+      "bazlama", "kete", "revani", "açma", "poğaça", "çörek", "tandır ekmeği",
+      "lahmacun hamuru", "pizza tabanı", "lavash", "tortilla ekmeği",
       "noodle", "wonton", "yakisoba",
       "spagetti", "spaghetti", "penne", "fusilli", "fettuccine",
       "tagliatelle", "tagliolini", "linguine", "rigatoni", "farfalle",
@@ -77,6 +80,10 @@ export const ALLERGEN_RULES: AllergenRule[] = [
       "yapışkan pirinç unu", "manyok unu", "manyok nişastası",
       "pirinç keki", "pirinç noodle", "cam noodle",
       "mısır tortilla", "tortilla cipsi",
+      // "kek" substring "kekik" (oregano), "kekikli" gibi baharat
+      // isimlerinde false positive yapiyordu; kek standalone gluten'li
+      // ama kekik gluten icermez. excludePatterns ilk degerlendiriliyor.
+      "kekik", "kekikli", "nane kekik", "kekik dali",
       // NOTE: "ramen noodle" intentionally NOT excluded, wheat-based
     ],
     customMatch: (name) => {
@@ -87,7 +94,13 @@ export const ALLERGEN_RULES: AllergenRule[] = [
         "karabuğday", "yapışkan", "manyok", "tatlı patates",
       ];
       if (glutenFreeExempt.some((ex) => lower.startsWith(ex))) return false;
-      if (lower.includes("nişasta")) return lower === "nişasta";
+      // "Nişasta" tek basina TR mutfaginda neredeyse her zaman misir
+      // nisastasi (gluten-free). Bilesik formlar (bugday nisastasi gibi)
+      // ayri keyword'le yakalanir. Onceki davranis "lower === 'nişasta'
+      // -> true" idi, false positive yapiyordu (Sicak Cikolata).
+      if (lower === "nişasta" || lower === "nisasta") return false;
+      if (lower.includes("buğday nişastası") || lower.includes("bugday nisastasi")) return true;
+      if (lower.includes("nişasta") || lower.includes("nisasta")) return false;
       if (lower.includes("erişte")) {
         const gf = ["pirinç", "cam", "tatlı patates", "soba"];
         return !gf.some((g) => lower.includes(g));
@@ -106,6 +119,9 @@ export const ALLERGEN_RULES: AllergenRule[] = [
       "kaşar", "ayran", "dondurma", "mozzarella", "parmesan", "ricotta",
       "mascarpone", "feta", "pecorino", "cheddar",
       "kefir", "filmjölk", "smetana", "kırmızı peynir", "krem peynir",
+      // TR yoresel sut urunleri (oturum 23 ek coverage):
+      "çökelek", "hellim", "çecil", "mihaliç", "tulum peyniri", "ezine peyniri",
+      "çiğ süt", "manda yoğurdu", "süzme yoğurt",
     ],
     excludePatterns: [
       "hindistan cevizi sütü", "hindistan cevizi kreması", "badem sütü",
@@ -134,7 +150,15 @@ export const ALLERGEN_RULES: AllergenRule[] = [
     excludePatterns: [
       "hindistan cevizi", "hindistan cevizi sütü", "hindistan cevizi rendesi",
       "hindistan cevizi yağı", "hindistan cevizi kreması",
-      "hindistan cevizi unu", "kokos", "kestane mantarı", "kestane mantar",
+      "hindistan cevizi unu",
+      // Boşluksuz TR yazimi ("Hindistancevizi sütü", "Hindistancevizi
+      // rendesi"). Eski excludePatterns sadece bosluklu varyanti yakaliyordu;
+      // mutfaktaki "hindistancevizi" tek kelime yazim KUSUYEMIS false
+      // positive yapiyordu (Lamington, Vietnam shaker).
+      "hindistancevizi", "hindistancevizi sütü", "hindistancevizi rendesi",
+      "hindistancevizi yağı", "hindistancevizi kreması",
+      "hindistancevizi unu",
+      "kokos", "kestane mantarı", "kestane mantar",
     ],
     customMatch: (name) => {
       const lower = trLower(name);

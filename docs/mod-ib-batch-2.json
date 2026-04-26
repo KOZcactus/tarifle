@@ -1,0 +1,484 @@
+[
+  {
+    "pair": ["aside-tatlisi-erzurum-usulu", "haside-tatlisi"],
+    "classification": "DUPLICATE",
+    "winner": "aside-tatlisi-erzurum-usulu",
+    "loser": "haside-tatlisi",
+    "swap_canonical": false,
+    "reason": "Aside ve haside aynı unlu tatlı gövdesini taşıyor; fark yöre adı ve küçük süre farkı."
+  },
+  {
+    "pair": ["kasik-helvasi-denizli-usulu", "hasuta-erzurum-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "kasik-helvasi-denizli-usulu",
+    "loser": "hasuta-erzurum-usulu",
+    "swap_canonical": false,
+    "reason": "Un, yağ ve tatlandırıcı tabanı aynı; kaşık helvası ve hasuta ad farkıyla ayrılıyor."
+  },
+  {
+    "pair": ["kayisili-un-helvasi-karaman-usulu", "uzumlu-aside-tatlisi-nevsehir-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Kayısı ile üzüm ana meyve profilini değiştiriyor; helva tabanı benzer olsa da varyant."
+  },
+  {
+    "pair": ["portakalli-irmik-muhallebisi-mugla-usulu", "narenciyeli-sutlu-irmik-adana-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "portakalli-irmik-muhallebisi-mugla-usulu",
+    "loser": "narenciyeli-sutlu-irmik-adana-usulu",
+    "swap_canonical": false,
+    "reason": "Sütlü irmik tabanı ve narenciye aroması aynı; portakal sadece daha özel adlandırma."
+  },
+  {
+    "pair": ["mafis-tatlisi-balikesir-usulu", "mafis-antalya-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "mafis-tatlisi-balikesir-usulu",
+    "loser": "mafis-antalya-usulu",
+    "swap_canonical": false,
+    "reason": "Mafiş hamuru ve kızartma tekniği aynı; fark Balıkesir ve Antalya yöre adında kalıyor."
+  },
+  {
+    "pair": ["urfa-nar-eksili-bostana", "sanliurfa-bostana-salatasi"],
+    "classification": "DUPLICATE",
+    "winner": "urfa-nar-eksili-bostana",
+    "loser": "sanliurfa-bostana-salatasi",
+    "swap_canonical": false,
+    "reason": "Bostana salatası, nar ekşisi ve doğrama düzeni aynı; Urfa adlandırması tekrarlı."
+  },
+  {
+    "pair": ["ankara-tava-eristeli-kuzu", "ankara-tava-arpa-sehriyeli"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Erişte ve arpa şehriye ana nişasta formunu değiştiriyor; aynı Ankara tava varyantı."
+  },
+  {
+    "pair": ["kuru-kayisili-etli-yahni-malatya-usulu", "erikli-kuzu-yahni-van-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Kayısı yerine erik kullanımı yahniye farklı ekşi tat verir; etli teknik aynı kalsa da varyant."
+  },
+  {
+    "pair": ["firin-kabakli-bulgur-pilavi-burdur-usulu", "kabak-cicekli-bulgur-pilavi-mugla-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Kabak ve kabak çiçeği farklı ana sebze dokusu verir; bulgur pilavı tabanı ortak."
+  },
+  {
+    "pair": ["sidney-lamington", "sydney-lamington-kareleri"],
+    "classification": "DUPLICATE",
+    "winner": "sidney-lamington",
+    "loser": "sydney-lamington-kareleri",
+    "swap_canonical": false,
+    "reason": "Lamington keki, çikolata ve hindistancevizi aynı; Sidney yazımı ve kare adı fark yaratmıyor."
+  },
+  {
+    "pair": ["terbiyeli-nohut-corbasi-burdur-usulu", "nohutlu-yogurtlu-sorgun-corbasi-burdur-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "terbiyeli-nohut-corbasi-burdur-usulu",
+    "loser": "nohutlu-yogurtlu-sorgun-corbasi-burdur-usulu",
+    "swap_canonical": false,
+    "reason": "Nohutlu yoğurt terbiyesi aynı çorbayı kuruyor; sorgun adı yerel etiket gibi kalıyor."
+  },
+  {
+    "pair": ["beyran-corbasi", "bitlis-buryan-corbasi"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Beyran ve büryan farklı yöresel et çorbası tekniği taşır; süre farkı da belirgin."
+  },
+  {
+    "pair": ["tarhanali-nohut-corbasi-kahramanmaras-usulu", "borulceli-dag-tarhana-corbasi-mugla-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Nohut ve börülce ana bakliyatı değiştiriyor; tarhana tabanı ortak olsa da varyant."
+  },
+  {
+    "pair": ["fasulyeli-misir-yarmasi-corbasi-ordu-usulu", "misir-yarmali-nohut-corbasi-sinop-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Fasulye ve nohut çorbanın bakliyat karakterini değiştiriyor; mısır yarması ortak."
+  },
+  {
+    "pair": ["karadeniz-muhlama-misir-unlu", "trabzon-kuymak-telli"],
+    "classification": "DUPLICATE",
+    "winner": "karadeniz-muhlama-misir-unlu",
+    "loser": "trabzon-kuymak-telli",
+    "swap_canonical": false,
+    "reason": "Mısır unu, tereyağı ve telli peynir aynı tavada pişiyor; kuymak ve mıhlama eşdeğer."
+  },
+  {
+    "pair": ["rize-telli-muhlama", "karadeniz-muhlama-misir-unlu"],
+    "classification": "DUPLICATE",
+    "winner": "rize-telli-muhlama",
+    "loser": "karadeniz-muhlama-misir-unlu",
+    "swap_canonical": false,
+    "reason": "Telli peynirli mısır unlu tava tekniği aynı; Rize etiketi bölgesel ad farkı."
+  },
+  {
+    "pair": ["rize-telli-muhlama", "trabzon-kuymak-telli"],
+    "classification": "DUPLICATE",
+    "winner": "rize-telli-muhlama",
+    "loser": "trabzon-kuymak-telli",
+    "swap_canonical": false,
+    "reason": "Peynirin uzatıldığı mısır unlu kahvaltılık aynı; Trabzon ve Rize adları çakışıyor."
+  },
+  {
+    "pair": ["elderflower-gin-spritz-ingiltere-usulu", "cinli-murver-fizz-ingiltere-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "elderflower-gin-spritz-ingiltere-usulu",
+    "loser": "cinli-murver-fizz-ingiltere-usulu",
+    "swap_canonical": false,
+    "reason": "Cin, mürver ve gazlı içecek profili aynı; spritz ve fizz adı servis dili farkı."
+  },
+  {
+    "pair": ["avokadolu-patates-causa-peru-usulu", "causa-verde-peru-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "avokadolu-patates-causa-peru-usulu",
+    "loser": "causa-verde-peru-usulu",
+    "swap_canonical": false,
+    "reason": "Patatesli causa ve avokado katmanı aynı; verde adı aynı yeşil içeriği özetliyor."
+  },
+  {
+    "pair": ["kayseri-sebit-yaglamasi-katli", "kayseri-yaglama-kiymali"],
+    "classification": "DUPLICATE",
+    "winner": "kayseri-sebit-yaglamasi-katli",
+    "loser": "kayseri-yaglama-kiymali",
+    "swap_canonical": false,
+    "reason": "Şebit, kıymalı sulu harç ve yoğurt servisi aynı; katlı ve kıymalı adları örtüşüyor."
+  },
+  {
+    "pair": ["ankara-incikli-sehriye-tava", "ankara-tava-arpa-sehriyeli"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "İncik kullanımı et parçası ve pişirme karakterini değiştiriyor; şehriye tabanı ortak."
+  },
+  {
+    "pair": ["diyarbakir-duvakli-pilav", "edirne-bademli-ciger-pilavi"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Duvaklı pilav ve ciğer pilavı farklı üst malzeme ve yöresel servis kuruyor."
+  },
+  {
+    "pair": ["konya-sac-arasi-tatlisi", "bilecik-buzme-tatlisi-cevizli"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Sac arası ve büzme tatlısı yufka katlama tekniğinde ayrılıyor; ceviz tabanı ortak."
+  },
+  {
+    "pair": ["bafra-pidesi-samsun-usulu", "agzi-acik-sanliurfa-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Bafra pidesi kapalı pide tekniğine, ağzı açık ise açık hamur formuna dayanıyor."
+  },
+  {
+    "pair": ["hingel-kars-usulu", "patatesli-hangel-ardahan-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "hingel-kars-usulu",
+    "loser": "patatesli-hangel-ardahan-usulu",
+    "swap_canonical": false,
+    "reason": "Hıngel ve hangel aynı haşlama hamur mantığına dayanıyor; patatesli iç ortaklaşmış görünüyor."
+  },
+  {
+    "pair": ["bingol-sorina-pel-yogurtlu", "gumushane-siron-yogurtlu"],
+    "classification": "DUPLICATE",
+    "winner": "bingol-sorina-pel-yogurtlu",
+    "loser": "gumushane-siron-yogurtlu",
+    "swap_canonical": false,
+    "reason": "Yufka, yoğurt ve tereyağlı servis aynı; sorina pel ve siron yöresel ad farkı."
+  },
+  {
+    "pair": ["nevsehir-pekmezli-aside", "haside-tatlisi"],
+    "classification": "DUPLICATE",
+    "winner": "nevsehir-pekmezli-aside",
+    "loser": "haside-tatlisi",
+    "swap_canonical": false,
+    "reason": "Pekmezli aside ve haside aynı unlu tava tatlısı çizgisinde; fark isim ve yöre."
+  },
+  {
+    "pair": ["agzi-acik-sanliurfa-usulu", "kapali-pide-carsamba-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Açık hamur formu ile kapalı pide tekniği farklı servis ve pişirme sonucu verir."
+  },
+  {
+    "pair": ["fasulye-diblesi-trabzon-usulu", "dible-ordu-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "fasulye-diblesi-trabzon-usulu",
+    "loser": "dible-ordu-usulu",
+    "swap_canonical": false,
+    "reason": "Fasulye diblesi aynı pirinçli sebze tekniğiyle kuruluyor; Ordu adı genel dible etiketi."
+  },
+  {
+    "pair": ["aside-tatlisi-erzurum-usulu", "dolaz-ordu-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Aside ve dolaz benzer unlu tatlı olsa da kavurma dokusu ve yöresel servis ayrışıyor."
+  },
+  {
+    "pair": ["aside-mugla-usulu", "kasik-helvasi-denizli-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "aside-mugla-usulu",
+    "loser": "kasik-helvasi-denizli-usulu",
+    "swap_canonical": false,
+    "reason": "Unlu kaşık tatlısı tabanı aynı; Muğla aside ve Denizli kaşık helvası ad farkı."
+  },
+  {
+    "pair": ["helle-tatlisi-tokat-usulu", "kasik-helvasi-denizli-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "helle-tatlisi-tokat-usulu",
+    "loser": "kasik-helvasi-denizli-usulu",
+    "swap_canonical": false,
+    "reason": "Helle ve kaşık helvası aynı unlu tatlı yapısında; ölçü ve bölge adı dışında fark yok."
+  },
+  {
+    "pair": ["aside-mugla-usulu", "hasuta-erzurum-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "aside-mugla-usulu",
+    "loser": "hasuta-erzurum-usulu",
+    "swap_canonical": false,
+    "reason": "Aside ve hasuta aynı kavrulmuş un tatlısı hattında; yöre adı temel içeriği değiştirmiyor."
+  },
+  {
+    "pair": ["helle-tatlisi-tokat-usulu", "hasuta-erzurum-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "helle-tatlisi-tokat-usulu",
+    "loser": "hasuta-erzurum-usulu",
+    "swap_canonical": false,
+    "reason": "Helle ve hasuta aynı unlu kıvam tatlısı gibi duruyor; kalori ve süre çok yakın."
+  },
+  {
+    "pair": ["portakalli-un-helvasi-hatay-usulu", "hasuta-erzurum-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Portakal aroması un helvasının ana koku profilini değiştiriyor; hasuta daha sade kalıyor."
+  },
+  {
+    "pair": ["kuru-borulce-salatasi-aydin-usulu", "maydanozlu-fasulye-piyazi-sinop-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Börülce ve fasulye farklı ana bakliyat; piyaz çizgisi ortak olsa da ayrı salata."
+  },
+  {
+    "pair": ["orman-kebabi", "tas-kebabi"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Orman kebabı sebze karışımıyla öne çıkar, tas kebabı daha sade et yahnisi tekniği taşır."
+  },
+  {
+    "pair": ["icli-kofte", "sini-koftesi"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "İçli köfte tekli doldurma formu, sini köftesi tepsi katmanı ve pişirme tekniğiyle ayrılır."
+  },
+  {
+    "pair": ["tereyagli-yesil-mercimekli-ic-pilav-osmaniye-usulu", "kestaneli-mantarli-pilav-bolu-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Yeşil mercimek ile kestane mantar ikilisi pilavın ana lezzetini farklılaştırıyor."
+  },
+  {
+    "pair": ["sumakli-mahluta-corbasi-mardin-usulu", "mercimekli-sumakli-sogan-corbasi-mardin-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "sumakli-mahluta-corbasi-mardin-usulu",
+    "loser": "mercimekli-sumakli-sogan-corbasi-mardin-usulu",
+    "swap_canonical": false,
+    "reason": "Mercimek, sumak ve soğan profili aynı; mahluta adı aynı Mardin çorbasını topluyor."
+  },
+  {
+    "pair": ["eristeli-kara-lahana-corbasi-ordu-usulu", "barbunyali-karalahana-corbasi-ordu-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Erişte ve barbunya çorbanın ana doyurucu unsurunu değiştiriyor; karalahana ortak."
+  },
+  {
+    "pair": ["cagla-asi-erzincan-usulu", "bugdayli-yogurtlu-ayran-corbasi-erzincan-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Çağla aşı meyvemsi ekşi karakter taşır; ayran çorbası buğdaylı yoğurt tabanında kalır."
+  },
+  {
+    "pair": ["tarhanali-nohut-corbasi-kahramanmaras-usulu", "yoruk-tarhana-corbasi-burdur-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Nohut eklenen tarhana daha bakliyatlı bir gövde kuruyor; Yörük tarhana daha sade."
+  },
+  {
+    "pair": ["kizilcik-eksili-tarhana-corbasi-bolu-usulu", "kirazli-tarhana-corbasi-konya-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Kızılcık ekşiliği ile kiraz aroması tarhana çorbasında farklı meyve profili yaratıyor."
+  },
+  {
+    "pair": ["eristeli-kara-lahana-corbasi-ordu-usulu", "yesil-mercimekli-eriste-corbasi-yozgat-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Karalahana ve yeşil mercimek ana malzeme olarak ayrılıyor; erişte tek başına eşitlemez."
+  },
+  {
+    "pair": ["nohutlu-semizotu-corbasi-gaziantep-usulu", "semizotlu-nohut-corbasi-manisa-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "nohutlu-semizotu-corbasi-gaziantep-usulu",
+    "loser": "semizotlu-nohut-corbasi-manisa-usulu",
+    "swap_canonical": false,
+    "reason": "Nohut ve semizotu aynı çorba gövdesini veriyor; kelime sırası ve yöre adı değişmiş."
+  },
+  {
+    "pair": ["kiren-serbeti-gumushane-usulu", "kirenli-elma-hosafi-gumushane-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Elma eklenen hoşaf, sade kiren şerbetinden meyve dokusu ve servis biçimiyle ayrılıyor."
+  },
+  {
+    "pair": ["trabzon-kayganasi", "misir-unlu-pankek-rize-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "trabzon-kayganasi",
+    "loser": "misir-unlu-pankek-rize-usulu",
+    "swap_canonical": false,
+    "reason": "Kaygana ve mısır unlu pankek aynı tavada pişen yumurtalı hamur yapısını taşıyor."
+  },
+  {
+    "pair": ["trabzon-kayganasi", "pazili-kaygana-rize-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Pazı eklenen kaygana yeşillikli bir varyant oluşturuyor; sade Trabzon kayganası ayrı."
+  },
+  {
+    "pair": ["trabzon-kayganasi", "kaymakli-kaygana-bolu-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Kaymak eklemesi yağlı süt dokusunu değiştiriyor; sade kaygana ile aynı kayıt sayılmaz."
+  },
+  {
+    "pair": ["kars-ketesi", "lorlu-kete-erzurum-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Lor dolgusu kete içeriğini belirgin değiştiriyor; Kars ketesi daha sade hamur odağında."
+  },
+  {
+    "pair": ["peynirli-kabakli-borek-kocaeli-usulu", "kabakli-gozleme-bilecik-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Börek ve gözleme farklı hamur pişirme tekniği kullanıyor; kabak dolgusu ortak kalıyor."
+  },
+  {
+    "pair": ["kuymak", "sahanda-mihlama"],
+    "classification": "DUPLICATE",
+    "winner": "kuymak",
+    "loser": "sahanda-mihlama",
+    "swap_canonical": false,
+    "reason": "Mısır unu, tereyağı ve peynir aynı sahanda uzatılıyor; kuymak ve mıhlama eş içerik."
+  },
+  {
+    "pair": ["rize-telli-muhlama", "sahanda-mihlama"],
+    "classification": "DUPLICATE",
+    "winner": "rize-telli-muhlama",
+    "loser": "sahanda-mihlama",
+    "swap_canonical": false,
+    "reason": "Telli peynirli mıhlama ile sahanda mıhlama aynı kahvaltılık; fark servis adı."
+  },
+  {
+    "pair": ["lorlu-kete-erzurum-usulu", "kete-erzurum-tava-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Lor dolgusu ve tava pişirme odağı farklı kete sonuçları verir; süre farkı da belirgin."
+  },
+  {
+    "pair": ["yumurtali-ekmek-trakya-usulu", "zahterli-yumurta-ekmegi-kilis-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Zahter baharatı yumurtalı ekmeğin ana aroma profilini değiştiriyor; sade versiyon ayrı."
+  },
+  {
+    "pair": ["patatesli-dereotlu-pierogi-polonya-usulu", "kopytka-polonya-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Pierogi doldurulmuş hamur, kopytka patatesli lokma formudur; teknikleri farklı."
+  },
+  {
+    "pair": ["elderflower-gin-cooler-ingiliz-usulu", "cinli-murver-fizz-ingiltere-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "elderflower-gin-cooler-ingiliz-usulu",
+    "loser": "cinli-murver-fizz-ingiltere-usulu",
+    "swap_canonical": false,
+    "reason": "Cin, mürver ve gazlı ferah içim aynı; cooler ve fizz adı küçük servis farkı."
+  },
+  {
+    "pair": ["narenciyeli-rakili-fizz-izmir-usulu", "mandalinali-rakili-spritz-bodrum-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "narenciyeli-rakili-fizz-izmir-usulu",
+    "loser": "mandalinali-rakili-spritz-bodrum-usulu",
+    "swap_canonical": false,
+    "reason": "Rakılı narenciye ve gazlı kokteyl profili aynı; mandalina narenciyenin alt türü."
+  },
+  {
+    "pair": ["reyhanli-pisco-cooler-peru-usulu", "pisco-ginger-fizz-peru-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Reyhan ve zencefil kokteylin ana aromatik yönünü değiştiriyor; pisco ortak kalıyor."
+  },
+  {
+    "pair": ["matchali-muzlu-smoothie", "matcha-smoothie"],
+    "classification": "DUPLICATE",
+    "winner": "matchali-muzlu-smoothie",
+    "loser": "matcha-smoothie",
+    "swap_canonical": false,
+    "reason": "Matcha smoothie içinde muzlu gövde aynı görünüyor; biri Türkçe açıklayıcı ad taşıyor."
+  },
+  {
+    "pair": ["apple-tvorog-bake-rus-usulu", "tvorog-zapekanka-rus-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Elma eklenen tvorog bake, sade zapekankadan meyve katmanı ve tat profiliyle ayrılır."
+  },
+  {
+    "pair": ["kayseri-yaglamasi-sebit", "kayseri-katli-yaglama-tavasi"],
+    "classification": "DUPLICATE",
+    "winner": "kayseri-yaglamasi-sebit",
+    "loser": "kayseri-katli-yaglama-tavasi",
+    "swap_canonical": false,
+    "reason": "Kat kat şebit ve kıymalı sulu harç aynı; tava adı sunum farkı gibi kalıyor."
+  },
+  {
+    "pair": ["pekmezli-cevizli-pestil-sarma-sanliurfa-usulu", "pestilli-cevizli-sarma-elazig-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "pekmezli-cevizli-pestil-sarma-sanliurfa-usulu",
+    "loser": "pestilli-cevizli-sarma-elazig-usulu",
+    "swap_canonical": false,
+    "reason": "Pestil ve ceviz sarma içeriği aynı; pekmezli ad sadece malzemeyi daha açık söylüyor."
+  },
+  {
+    "pair": ["yesil-mercimek-yemegi", "mercimekli-bulgur-pilavi"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Sulu mercimek yemeği ile bulgur pilavı farklı yemek formu; mercimek ortak olsa da ayrılır."
+  },
+  {
+    "pair": ["yesil-mercimek-yemegi", "kuru-borulce-yemegi"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Yeşil mercimek ve kuru börülce ana bakliyatı değiştiriyor; yemek tekniği benzer."
+  },
+  {
+    "pair": ["cantik-pidesi-bursa-usulu", "agzi-acik-sanliurfa-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Cantık pidesi ve ağzı açık farklı bölgesel hamur formu kullanıyor; etli iç ortak."
+  },
+  {
+    "pair": ["corum-iskilip-dolmasi-lenger", "bitlis-buryan-pilav"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "İskilip dolması uzun buhar pilavı, büryan pilavı ise farklı et pişirme geleneği taşır."
+  },
+  {
+    "pair": ["cevizli-biberli-patlican-dip-kirklareli-usulu", "cevizli-kapya-ezme-hatay-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Patlıcan dip ve kapya ezme farklı ana sebzeye dayanıyor; ceviz ortaklığı yeterli değil."
+  },
+  {
+    "pair": ["zencefilli-ihlamur", "limonlu-zencefil-cayi"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Ihlamur tabanı ile limonlu zencefil çayı farklı içecek gövdesi kuruyor; zencefil ortak."
+  }
+]

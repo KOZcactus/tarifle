@@ -1,5 +1,13 @@
 # Tarifle, Proje Durumu
 
+> Oturum 23 polish 3 (26 Nis 2026), **Mod IB final duplicate pass.**
+> 2 batch (UNCERTAIN refinement DB-enriched + cross-language pass) /
+> 90 pair → 38 DUPLICATE + 52 VARIANT. 36 raw clean (28 unique
+> dedup) auto sil. 2 manuel review (butter-chicken swap_canonical +
+> kayseri katli yaglama featured) Mod IB sonrasi manuel ele alinacak.
+> Prod 3546 → 3518 (-28). Mod I + IA + IB toplam: 3679 → 3518
+> (-161 net duplike sil + 11 canonical rename).
+
 > Oturum 23 polish 2 (26 Nis 2026), **Mod IA pair-level audit.**
 > Mod I cluster-based pipeline sonrasinda kalan 92 strict pair (post-Mod I
 > tarama) Codex'e teslim edildi (3 batch). Verify pipeline (yeni script

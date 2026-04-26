@@ -1,0 +1,136 @@
+[
+  {
+    "pair": ["kuymak", "trabzon-kuymak-telli"],
+    "classification": "DUPLICATE",
+    "winner": "kuymak",
+    "loser": "trabzon-kuymak-telli",
+    "swap_canonical": false,
+    "reason": "Malzeme ve tava tekniği aynı; fark peynir, su ve tereyağı ölçüsünde kalıyor."
+  },
+  {
+    "pair": ["cevizli-kabak-mezesi-mardin-usulu", "cevizli-sarimsakli-kabak-ezme-igdir-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Biri iri bırakılan meze, diğeri sarımsağı artırılıp ezilen sürülebilir formda."
+  },
+  {
+    "pair": ["corum-iskilip-dolmasi-lenger", "corum-iskilip-dolmasi"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Kuzu lenger 220 dk buhar tekniği, dana etli sade pilavdan belirgin ayrılıyor."
+  },
+  {
+    "pair": ["balikesir-tirit", "tirit"],
+    "classification": "DUPLICATE",
+    "winner": "tirit",
+    "loser": "balikesir-tirit",
+    "swap_canonical": false,
+    "reason": "Dana et, ekmek, yoğurt ve biberli yağ aynı; fark bölge adı ve küçük ölçüler."
+  },
+  {
+    "pair": ["tokyo-katsu-curry-pilav", "tokyo-chicken-katsu-curry"],
+    "classification": "DUPLICATE",
+    "winner": "tokyo-chicken-katsu-curry",
+    "loser": "tokyo-katsu-curry-pilav",
+    "swap_canonical": false,
+    "reason": "Tavuk katsu, panko, köri sosu ve pirinç aynı; patates farkı tamamlayıcı kalıyor."
+  },
+  {
+    "pair": ["ordu-findikli-fasulye-kavurmasi", "findikli-fasulye-kavurmasi-ordu-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Mısır unu kavurma gövdesini değiştiriyor; kalori farkı da yüzde 20 üstünde."
+  },
+  {
+    "pair": ["cokertme-kebabi-mugla-usulu", "mugla-cokertme-kebabi"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Sodalı marine ve bonfile ölçüsü ile kalori farkı büyük; teknik aynı tabaktan ayrılıyor."
+  },
+  {
+    "pair": ["beetroot-relish-burger-avustralya-usulu", "beetroot-burger-avustralya-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Relish ve cheddar kullanan burger, pancar dilimli sade formdan servis ve sos olarak ayrılıyor."
+  },
+  {
+    "pair": ["aydin-kuru-incirli-lor-tatlisi", "incirli-lor-tatlisi-aydin-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Biri bütün inciri dolduruyor, diğeri yumurtalı lor harcıyla farklı form kuruyor."
+  },
+  {
+    "pair": ["beirut-falafel-pita", "beyrut-tahinli-falafel-pita-kasesi"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Pita sandviç ve kase sunumu ayrılıyor; nohut tabanı aynı olsa da son form farklı."
+  },
+  {
+    "pair": ["golden-gaytime-kup-avustralya-usulu", "golden-gaytime-kadeh-tatlisi-avustralya-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Pudingli katman ile çırpılmış kremalı kadeh farklı sütlü taban ve teknik kullanıyor."
+  },
+  {
+    "pair": ["fistikli-sutlu-irmik-tatlisi-kahramanmaras-usulu", "antep-fistikli-sutlu-irmik-kasesi-gaziantep-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "fistikli-sutlu-irmik-tatlisi-kahramanmaras-usulu",
+    "loser": "antep-fistikli-sutlu-irmik-kasesi-gaziantep-usulu",
+    "swap_canonical": false,
+    "reason": "İrmik, süt, şeker ve Antep fıstığı aynı; fark kase adı ve ölçeklerde kalıyor."
+  },
+  {
+    "pair": ["salep", "salep-latte"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Espresso eklenen latte, klasik tarçınlı salepten ana içecek profiliyle ayrılıyor."
+  },
+  {
+    "pair": ["muzlu-tapyoka-kup-vietnam-usulu", "muzlu-hindistancevizli-tapyoka-kup-vietnam-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "muzlu-hindistancevizli-tapyoka-kup-vietnam-usulu",
+    "loser": "muzlu-tapyoka-kup-vietnam-usulu",
+    "swap_canonical": false,
+    "reason": "Tapyoka, muz ve hindistancevizi sütü aynı; bal ve şeker küçük tatlandırıcı farkı."
+  },
+  {
+    "pair": ["elmali-hashasli-kup-polonya-usulu", "elmali-hashasli-kek-kup-polonya-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Kek küpü katmanı, pişmiş elmalı kremalı kuptan yapı ve ağız hissi olarak ayrılıyor."
+  },
+  {
+    "pair": ["dut-pekmezli-un-helvasi-erzurum-usulu", "pekmezli-un-helvasi-amasya-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Dut pekmezi ile üzüm pekmezi ana tat profilini değiştiriyor; kalori farkı da yüksek."
+  },
+  {
+    "pair": ["kayseri-yaglamasi-sebit", "kayseri-sebit-yaglamasi-katli"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Mayalı sütlü şebit ve salçalı harç, biberli su hamurlu versiyondan ayrılıyor."
+  },
+  {
+    "pair": ["tarta-de-santiago-minik-usulu", "tarta-de-santiago-kup-ispanya-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "tarta-de-santiago-minik-usulu",
+    "loser": "tarta-de-santiago-kup-ispanya-usulu",
+    "swap_canonical": false,
+    "reason": "Badem unu, yumurta, şeker ve limon aynı; kup adı porsiyon farkı, teknik yine fırın."
+  },
+  {
+    "pair": ["domatesli-kuzu-orzo-tava-balikesir-usulu", "domatesli-etli-arpa-sehriye-tava-balikesir-usulu"],
+    "classification": "VARIANT",
+    "swap_canonical": false,
+    "reason": "Kuzu eti ve dana eti ana proteini değiştiriyor; orzo ve arpa şehriye benzer kalsa da varyant."
+  },
+  {
+    "pair": ["butter-chicken", "delhi-butter-chicken"],
+    "classification": "DUPLICATE",
+    "winner": "butter-chicken",
+    "loser": "delhi-butter-chicken",
+    "swap_canonical": true,
+    "reason": "Delhi içerik kaju, zencefil ve fırın marineyle zengin; temel domates tereyağ sosu aynı."
+  }
+]

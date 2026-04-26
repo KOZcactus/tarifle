@@ -373,6 +373,41 @@ const _getRecipesInner = async (options: GetRecipesOptions = {}): Promise<{
   // default always pushed drinks to the top because their timestamps
   // happened to be last in the final seed run).
   //
+  // Alphabetical sort case-insensitive olmali (oturum 23 bug fix): Postgres
+  // default ORDER BY title byte-order'da sıralar, "ANZAC Bisküvisi" tüm
+  // caps oldugu icin "Acaraje" gibi normal-case başlıklardan once geliyor
+  // (ASCII A < a). Çözüm: 2-step pattern, light id+title fetch + JS-side
+  // localeCompare("tr", { sensitivity: "base" }) sort + id IN detay fetch.
+  // 3572 tarif olceginde ~30ms ek; cache 30dk TTL zaten istegi nadiren tetikler.
+  if (sortBy === "alphabetical" || (sortBy === "relevance" && recipeIds === undefined)) {
+    const allMatches = await prisma.recipe.findMany({
+      where,
+      select: { id: true, title: true },
+    });
+    const sortedIds = allMatches
+      .slice()
+      .sort((a, b) =>
+        a.title.localeCompare(b.title, "tr", { sensitivity: "base" }),
+      )
+      .slice(offset, offset + limit)
+      .map((r) => r.id);
+    if (sortedIds.length === 0) {
+      return { recipes: [], total: allMatches.length };
+    }
+    const detail = await prisma.recipe.findMany({
+      where: { id: { in: sortedIds } },
+      select: recipeCardSelect,
+    });
+    const byId = new Map(detail.map((r) => [r.id, r]));
+    const ordered = sortedIds
+      .map((id) => byId.get(id))
+      .filter((r): r is NonNullable<typeof r> => r !== undefined);
+    return {
+      recipes: ordered as unknown as RecipeCard[],
+      total: allMatches.length,
+    };
+  }
+
   // "most-variations" siralamasi Prisma'nin orderBy._count'unu kullanir,
   // filtered where desteklemedigi icin HIDDEN/PENDING_REVIEW variation'lar
   // da siralamaya etki eder. Fark genelde kucuktur; modere edilmis tariflerde
@@ -391,7 +426,7 @@ const _getRecipesInner = async (options: GetRecipesOptions = {}): Promise<{
                 // desc sıralamada sona düşer (nulls last default). Tie-break
                 // title asc, kararlı sıralama için.
                 [{ hungerBar: "desc" as const }, { title: "asc" as const }]
-              : // alphabetical (default, relevance fallback w/o recipeIds)
+              : // fallback (kullanicinin gormeyecegi yedek)
                 { title: "asc" as const };
 
   const [recipes, total] = await Promise.all([

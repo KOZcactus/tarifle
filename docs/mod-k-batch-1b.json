@@ -1,0 +1,661 @@
+[
+  {
+    "slug": "aji-de-gallina",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: adımlarda soğan ve sarımsak kullanılıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" }
+      ]
+    },
+    "sources": [
+      "https://www.eatperu.com/aji-de-gallina/",
+      "https://peruvianimport.com/recipes/aji-de-gallina/"
+    ],
+    "confidence": "high",
+    "reason": "Kaynaklarda ají amarillo, ekmek, süt, ceviz, tavuk, soğan ve sarımsak birlikte geçiyor. Tarif doğru, yalnız adımda kullanılan iki aromatik malzeme listede eksik."
+  },
+  {
+    "slug": "aji-de-quinua-peru-usulu",
+    "verdict": "PASS",
+    "reason": "Kinoa, patates ve aji biberiyle kurulan pratik Peru esintili çorba tutarlı. Süre, vegan etiketleri, kalori ve alerjen bildirimi mevcut ingredient listesine göre makul.",
+    "sources": [
+      "https://www.seriouseats.com/essential-peruvian-cuisine",
+      "https://www.thespruceeats.com/peruvian-quinoa-soup-recipe-3029285"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "aji-lime-patates-salata-peru-usulu",
+    "verdict": "PASS",
+    "reason": "Patates, aji biberi, lime ve kişniş kombinasyonu Peru mutfağındaki acılı patates tabaklarıyla uyumlu. Vegan etiketleri ve süre değerleri içerikle çelişmiyor.",
+    "sources": [
+      "https://www.eatperu.com/papa-a-la-huancaina/",
+      "https://www.seriouseats.com/essential-peruvian-cuisine"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "aji-panca-soslu-tavuklu-pirinc-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: ilk adımda sarımsak ve limon kullanılıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.thespruceeats.com/aji-panca-peruvian-red-pepper-3029289",
+      "https://www.peru.travel/gastronomy/en/recipes/entrees/anticucho.html"
+    ],
+    "confidence": "high",
+    "reason": "Aji panca Peru mutfağında sarımsak, asit ve baharatla marineye sık giriyor. Tarif mantıklı, ancak adımda geçen sarımsak ve limon malzeme listesine eklenmeli."
+  },
+  {
+    "slug": "aji-panca-tavuk-tava-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: servis adımında lime suyu ve kişniş kullanılıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Lime suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Kişniş", "amount": "0.25", "unit": "demet" }
+      ]
+    },
+    "sources": [
+      "https://www.thespruceeats.com/aji-panca-peruvian-red-pepper-3029289",
+      "https://www.eatperu.com/aji-verde-sauce/"
+    ],
+    "confidence": "high",
+    "reason": "Aji panca tavuk kurgusu tutarlı, fakat son adımda kullanılan lime ve kişniş alışveriş listesinde görünmüyor. Kullanıcı için iki malzeme eklenmeli."
+  },
+  {
+    "slug": "aji-verde-tavuk-patates-kasesi-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: aji verde sos adımında sarımsak kullanılıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" }
+      ]
+    },
+    "sources": [
+      "https://www.eatperu.com/aji-verde-sauce/",
+      "https://www.dartagnan.com/aji-verde-peruvian-green-sauce-recipe.html"
+    ],
+    "confidence": "high",
+    "reason": "Aji verde kaynaklarında kişniş, biber, sarımsak ve asit temel bileşenler arasında. Tarifin yoğurtlu yorumu kabul edilebilir, eksik olan sarımsak listelenmeli."
+  },
+  {
+    "slug": "ajili-tavuk-anticucho-bowl-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: adımda aji panca kullanılıyor ama ingredient listesinde aji amarillo yazıyor",
+      "ingredients: anticucho marinadı için adımda geçen sirke ve kimyon listede yok"
+    ],
+    "corrections": {
+      "ingredients_remove": ["Aji amarillo ezmesi"],
+      "ingredients_add": [
+        { "name": "Aji panca ezmesi", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sirke", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Kimyon", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.limaeasy.com/peruvian-food-guide/typical-starter-appetizer/anticuchos",
+      "https://www.peru.travel/gastronomy/en/recipes/entrees/anticucho.html"
+    ],
+    "confidence": "high",
+    "reason": "Anticucho kaynakları aji panca, sirke, sarımsak ve kimyonlu marineyi doğruluyor. Mevcut adım da panca diyor, bu yüzden ingredient listesi düzeltilmeli."
+  },
+  {
+    "slug": "ajo-blanco-corbasi-ispanyol-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: son adımda 30 dakika soğutma var ama totalMinutes 12 dakika görünüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 42
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/ajo-blanco/",
+      "https://www.andalucia.com/taste/gazpacho/rec3.htm"
+    ],
+    "confidence": "high",
+    "reason": "Ajo blanco badem, ekmek, sarımsak, zeytinyağı ve sirkeyle soğutularak servis edilir. İçerik doğru, fakat 30 dakikalık soğutma toplam süreye eklenmeli."
+  },
+  {
+    "slug": "ajvar",
+    "verdict": "PASS",
+    "reason": "Közlenmiş kapya biber, patlıcan, yağ ve sirke ile uzun pişirme ajvar kaynaklarıyla uyumlu. Vegan etiketleri, süre ve alerjen bildirimi makul görünüyor.",
+    "sources": [
+      "https://www.chilipeppermadness.com/recipes/ajvar/",
+      "https://www.millcityfarmersmarket.org/recipes/ajvar-roasted-pepper-and-eggplant-caviar/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "akdeniz-salatasi",
+    "verdict": "PASS",
+    "reason": "Yeşillik, domates, salatalık, zeytin, beyaz peynir ve limonlu zeytinyağı dengesi klasik Akdeniz salatasına uygun. Süt alerjeni peynir nedeniyle doğru.",
+    "sources": [
+      "https://www.themediterraneandish.com/mediterranean-salad/",
+      "https://www.bbcgoodfood.com/recipes/mediterranean-salad"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "albondigas",
+    "verdict": "PASS",
+    "reason": "Kıyma, ekmek kırıntısı, yumurta ve domates sosunda pişirme İspanyol albondigas tarifleriyle tutarlı. Gluten ve yumurta alerjenleri doğru işaretlenmiş.",
+    "sources": [
+      "https://www.spanish-fiestas.com/recipes/meatballs/",
+      "https://www.thespanishchef.com/recipes/spanish-meatballs-in-tomato-sauce"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "alfajores-peru-usulu",
+    "verdict": "PASS",
+    "reason": "Un, mısır nişastası, tereyağı, yumurta sarısı ve süt reçeliyle yapılan sandviç kurabiye kurgusu alfajores kaynaklarıyla uyumlu. Alerjenler doğru.",
+    "sources": [
+      "https://www.theguardian.com/food/2023/nov/27/alfajores-de-dulce-de-leche-recipe-by-ana-ortiz",
+      "https://www.eatperu.com/alfajores/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "ali-nazik-gaziantep-usulu",
+    "verdict": "PASS",
+    "reason": "Köz patlıcan, sarımsaklı yoğurt, tereyağlı et ve pideyle servis Gaziantep usulü Ali Nazik çizgisine uygun. Süt ve gluten alerjenleri doğru.",
+    "sources": [
+      "https://yemek.com/tarif/ali-nazik/",
+      "https://www.kulturportali.gov.tr/turkiye/gaziantep/neyenir/alinazik"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "aloo-gobi",
+    "verdict": "PASS",
+    "reason": "Patates, karnabahar, domates, zerdeçal ve baharatlı pişirme aloo gobi kaynaklarıyla uyumlu. Vegan, vejetaryen ve alerjensiz kayıt doğru görünüyor.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/punjabi-cauliflower-with-potatoes-aloo-gobi",
+      "https://www.bonappetit.com/story/roasted-aloo-gobi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "altin-sut",
+    "verdict": "PASS",
+    "reason": "Süt, zerdeçal, zencefil ve bal ile kısa ısıtma golden milk tarifleriyle tutarlı. Süt alerjeni doğru, süre ve porsiyon değeri makul.",
+    "sources": [
+      "https://www.healthline.com/nutrition/golden-milk-turmeric",
+      "https://www.verywellhealth.com/golden-milk-benefits-8727756"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "amasra-peynirli-misir-tavasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: adımlardaki süt ve mısır unu miktarı ingredient listesiyle çelişiyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "300 ml sütü tavada orta ateşte 3 dakika ısıtın.",
+          "timerSeconds": 180
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "1 su bardağı mısır ununu çırparak ekleyin, topak kalmasın diye yavaş dökün."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/muhlama-kuymak-tarifi/",
+      "https://yemek.com/tarif/muhlama/"
+    ],
+    "confidence": "medium",
+    "reason": "Peynirli mısır unu tavası teknik olarak muhlamaya yakın ve içerik makul. Sorun kültürel değil, adımların ingredient miktarlarıyla çelişmesi."
+  },
+  {
+    "slug": "amasya-bakla-dolmasi-yarmali",
+    "verdict": "PASS",
+    "reason": "Kuru bakla, yarma, az bulgur, kıyma, asma yaprağı ve kemik üstünde pişirme Amasya kaynaklarıyla örtüşüyor. Süre, gluten ve porsiyon dengesi makul.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/amasya/neyenir/amasya-bakla-dolmasi",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/baklali-dolma-amasya/7645"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "amasya-cevizli-corek",
+    "verdict": "PASS",
+    "reason": "Mayalı hamur, haşhaş ezmesi, ceviz ve yağlı içle katlama Amasya çöreği tanımlarıyla uyumlu. Gluten, kuruyemiş ve yumurta alerjenleri doğru.",
+    "sources": [
+      "https://www.sehrinmeshuru.com/amasya-burma-cevizli-hashasli-coregi.html",
+      "https://www.nefisyemektarifleri.com/hashasli-cevizli-corek/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "amasya-coregi",
+    "verdict": "PASS",
+    "reason": "Sütlü mayalı hamur, ceviz ve haşhaşlı iç Amasya çöreğiyle uyumlu. Süt, gluten ve kuruyemiş alerjenleri ingredient listesine göre doğru.",
+    "sources": [
+      "https://www.sehrinmeshuru.com/amasya-burma-cevizli-hashasli-coregi.html",
+      "https://www.nefisyemektarifleri.com/hashasli-cevizli-corek/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "amasya-keskek",
+    "verdict": "PASS",
+    "reason": "Aşurelik buğday ve tavukla uzun pişirme, ardından ezerek bütünleştirme keşkek tekniğine uygun. Gluten ve süt alerjenleri içerikle uyumlu.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/amasya/neyenir/keskek",
+      "https://www.nefisyemektarifleri.com/keskek-tarifi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "amatrice-bucatini-amatriciana",
+    "verdict": "PASS",
+    "reason": "Bucatini, guanciale, domates, acı biber ve pecorino omurgası Amatriciana kaynaklarıyla uyumlu. Pastırma yerel alternatif olarak verilmiş, ana tarif bozulmuyor.",
+    "sources": [
+      "https://www.lacucinaitaliana.com/italian-food/italian-dishes/how-to-make-bucatini-allamatriciana",
+      "https://www.goodcookingshow.com/recipes/amatriciana"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "americano",
+    "verdict": "PASS",
+    "reason": "Espresso ve sıcak sudan oluşan oran, suyu önce koyup espresso ekleme yöntemiyle tutarlı. Kalori, vegan etiketleri ve kısa süre makul.",
+    "sources": [
+      "https://www.foodandwine.com/americano-coffee-7099361",
+      "https://coffee-guide.jp/en/recipe/americano-recipe-guide"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "anali-kizli-corbasi",
+    "verdict": "PASS",
+    "reason": "Büyük içli köfte, küçük bulgur köftesi, nohut ve salçalı su kurgusu analı kızlı kaynaklarıyla uyumlu. Süre ve gluten alerjeni makul.",
+    "sources": [
+      "https://tarifmotoru.com/tarif/anali-kizli-corbasi/",
+      "https://www.lezzet.com.tr/lezzetten-haberler/anali-kizli-corbasi-icinde-ne-var"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "ananasli-hindistan-cevizi-smoothie",
+    "verdict": "PASS",
+    "reason": "Ananas, Hindistan cevizi sütü, lime ve buzla blenderda hazırlama tropik smoothie tarifleriyle uyumlu. Vegan alerjen bildirimi ve süre makul.",
+    "sources": [
+      "https://www.theblendergirl.com/recipe/pineapple-coconut-smoothie/",
+      "https://www.lovefood.com/recipes/57290/pineapple-and-coconut-smoothie"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "ananasli-lime-agua-fresca-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: agua fresca için blender ve süzme adımı belirsiz, son adımda ılık servis ifadesi yanıltıcı"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Ananas, lime suyu, su ve şekeri blenderda 45 saniye pürüzsüz çekin.",
+          "timerSeconds": 45
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "İçeceği süzüp bol buzla soğuk servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.food.com/recipe/pineapple-and-lime-agua-fresca-231837",
+      "https://www.epicurious.com/expert-advice/how-to-make-agua-fresca-article"
+    ],
+    "confidence": "high",
+    "reason": "Agua fresca meyve, su ve asitle blenderdan geçirilip süzülerek buzla servis edilir. Mevcut ılık servis ifadesi içecek türü için yanıltıcı."
+  },
+  {
+    "slug": "ananasli-rom-highball-tayland-usulu",
+    "verdict": "PASS",
+    "reason": "Rom, ananas suyu, soda ve bol buzla hazırlanan uzun bardak kokteyl highball mantığına uygun. Alkollü etiketi, vegan kayıt ve süre doğru.",
+    "sources": [
+      "https://www.liquor.com/recipes/pineapple-rum-cocktail/",
+      "https://www.bbcgoodfood.com/recipes/rum-punch"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "ananasli-smoothie",
+    "verdict": "PASS",
+    "reason": "Ananas, muz, meyve suyu, limon ve buzla kısa blender işlemi smoothie tekniğine uygun. Vegan etiketleri ve alerjensiz kayıt tutarlı.",
+    "sources": [
+      "https://www.prevention.com/food-nutrition/recipes/a37349146/green-pineapple-coconut-smoothie-recipe/",
+      "https://elsupermarkets.com/pineapple-coconut-smoothie/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "ananasli-zencefil-agua-fresca-kuba-usulu",
+    "verdict": "PASS",
+    "reason": "Ananas, su, taze zencefil, lime ve buzla hazırlama agua fresca kaynaklarıyla uyumlu. Vegan etiketleri, kısa süre ve kalori değeri makul.",
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/pineapple-ginger-agua-fresca-359792",
+      "https://www.flavourandsavour.com/pineapple-ginger-agua-fresca-sugar-free/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "andaluz-gazpacho",
+    "verdict": "PASS",
+    "reason": "Domates, biber, salatalık, bayat ekmek, sirke ve zeytinyağıyla soğuk servis Endülüs gazpacho kaynaklarıyla uyumlu. Toplam süre beklemeyi içeriyor.",
+    "sources": [
+      "https://www.olivemagazine.com/recipes/vegan/andalucian-gazpacho/",
+      "https://www.peta.org/recipes/traditional-andalusian-gazpacho/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "ankara-beypazari-kurusu",
+    "verdict": "PASS",
+    "reason": "Mayalı, tarçınlı sert hamuru önce pişirip düşük ısıda kurutma Beypazarı kurusu yapısıyla uyumlu. Süt ve gluten alerjenleri doğru.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/ankara/neyenir/beypazari-kurusu",
+      "https://www.nefisyemektarifleri.com/beypazari-kurusu-tarifi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "ankara-incikli-sehriye-tava",
+    "verdict": "PASS",
+    "reason": "Kuzu incik suyu, kavrulmuş arpa şehriye, domates, biber ve fırınlama Ankara tava kaynaklarıyla uyumlu. Süre ve alerjenler makul.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/ankara/neyenir/ankara-tava",
+      "https://www.nefisyemektarifleri.com/ankara-tava-tarifi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "ankara-kimyonlu-nohutlu-eriste-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "tags: erişte genellikle yumurtalı hamurdan yapıldığı için vegan etiketi riskli",
+      "allergens: erişte kullanımı yumurta alerjeni gerektirebilir"
+    ],
+    "corrections": {
+      "tags_remove": ["vegan"],
+      "allergens_add": ["YUMURTA"]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/eriste-tarifi-ev-yapimi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/corba-tarifleri/corba-tarifleri/eriste-corbasi"
+    ],
+    "confidence": "medium",
+    "reason": "Türk mutfağında erişte çoğunlukla yumurtalı hamurla hazırlanır. Bu nedenle vegan etiketi riskli, yumurta alerjeni eklenmesi daha güvenli olur."
+  },
+  {
+    "slug": "ankara-tava-arpa-sehriyeli",
+    "verdict": "PASS",
+    "reason": "Kuzu eti, arpa şehriye, domates, biber, et suyu ve fırında çektirme Ankara tava kaynaklarıyla uyumlu. Süt ve gluten alerjenleri doğru.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/ankara/neyenir/ankara-tava",
+      "https://www.nefisyemektarifleri.com/ankara-tava-tarifi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "ankara-tava-eristeli-kuzu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "title/ingredient: tarif erişteli adını taşıyor ama ingredient listesinde arpa şehriye var",
+      "description: erişte yerine arpa şehriye tarif ediliyor, mevcut içerikle çelişiyor"
+    ],
+    "corrections": {
+      "description": "Ankara tava, kuzu incik veya kuşbaşı eti arpa şehriye, domates ve biberle fırında demleyerek hazırlanan doyurucu başkent yemeğidir."
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/ankara/neyenir/ankara-tava",
+      "https://www.nefisyemektarifleri.com/ankara-tava-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "İçerik ve adımlar arpa şehriyeli Ankara tava anlatıyor. Description içinde erişte çağrışımı yaratmadan mevcut ingredient listesiyle uyumlu kalmalı."
+  },
+  {
+    "slug": "antalya-bergamotlu-tahinli-piyaz",
+    "verdict": "PASS",
+    "reason": "Kuru fasulye, tahinli asitli sos, haşlanmış yumurta ve maydanoz Antalya piyazı yapısıyla uyumlu. Bergamot turunçgil yorumu, alerjenler doğru.",
+    "sources": [
+      "https://www.yasemin.com/yemek/haber/2856516-tahinli-piyaz-nasil-yapilir",
+      "https://antalyacityzone.com/galeri/antalyanin-en-ozel-iki-lezzetinin-tarifi-piyaz-ve-tahinli-kabak-tatlisi/1280"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "antalya-hibes-mezesi",
+    "verdict": "PASS",
+    "reason": "Tahin, limon, sarımsak, kimyon ve kırmızı biberle boza kıvamı tutturma Antalya hibeş kaynaklarıyla birebir uyumlu. Susam alerjeni doğru.",
+    "sources": [
+      "https://antalya.ktb.gov.tr/TR-307271/hibes.html",
+      "https://ye-mek.net/tarif/hibes"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "antalya-kulakli-corba",
+    "verdict": "PASS",
+    "reason": "Unlu yumurtalı hamurdan küçük mantı, kıyma, nohut, yoğurt terbiyesi ve naneli tereyağı Antalya kulaklı çorba yapısıyla uyumlu.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/antalya/neyenir/kulakli-corba",
+      "https://www.lezzet.com.tr/yemek-tarifleri/corba-tarifleri/corba-tarifleri/kulakli-corba"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "antalya-piyaz-tahinli",
+    "verdict": "PASS",
+    "reason": "Fasulye, tahin, limon, sirke, yumurta, domates ve maydanoz Antalya piyazı kaynaklarıyla uyumlu. Susam ve yumurta alerjenleri doğru.",
+    "sources": [
+      "https://www.yasemin.com/yemek/haber/2856516-tahinli-piyaz-nasil-yapilir",
+      "https://ye-mek.net/story/tahinli-piyaz"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "antalya-serpme-borek-peynirli",
+    "verdict": "PASS",
+    "reason": "Un, su ve tuz hamurunun yağlı zeminde ince açılıp peynirli içle pişirilmesi Antalya serpme börek kaynaklarıyla uyumlu. Alerjenler doğru.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/antalya/nealinir/serpme-borek",
+      "https://antalya.ktb.gov.tr/TR-366093/antalya-usulu-serpme-borek-ve-serpme-borekcilik.html"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "antalya-turunclu-kereviz-salatasi",
+    "verdict": "PASS",
+    "reason": "Kereviz, yoğurt, turunç suyu, ceviz ve zeytinyağı salata kurgusu tutarlı. Süt ve kuruyemiş bildirimi doğru, kereviz mevcut sistemde ayrıca tutulmuş.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kereviz-salatasi-tarifi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/kereviz-salatasi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "antep-katikli-dolma",
+    "verdict": "PASS",
+    "reason": "Kabak, bulgurlu kıymalı iç ve sarımsaklı yoğurtla servis Antep katıklı dolma çizgisine uygun. Gluten ve süt alerjenleri doğru.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/katikli-dolma-gaziantep-usulu/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/sebze-yemekleri/dolma-sarma-tarifleri/katikli-dolma"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "antep-katmeri",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: hamur adımında su kullanılıyor ama ingredient listesinde yok",
+      "steps: step 3 tatlıyla ilgisiz zeytinyağı, limon ve tuz sosu tarif ediyor",
+      "steps: katmer sıcak servis edilen bir tatlıyken son adım soğutmayı öneriyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Su", "amount": "150", "unit": "ml" }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 3,
+          "instruction": "İnce açılan hamurun ortasına kaymak, Antep fıstığı ve şekeri eşit serpin."
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Katmeri tavadan alın, dilimleyip sıcakken servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/katmer/",
+      "https://www.seckinzade.com/urun/antep-fistikli-katmer/"
+    ],
+    "confidence": "high",
+    "reason": "Katmer kaymak, fıstık ve şekerle doldurulan sıcak bir tatlıdır. Mevcut limonlu zeytinyağı sosu açık drift, su da hamur için listede eksik."
+  },
+  {
+    "slug": "antep-yogurtlu-yuvalama",
+    "verdict": "PASS",
+    "reason": "Pirinç unu ve kıymadan minik köfteler, et, nohut, yoğurt ve yumurtalı terbiye Antep yuvalama kaynaklarıyla uyumlu. Alerjenler doğru.",
+    "sources": [
+      "https://www.yoredenlezzetler.com/post/antep-yuvalamasi-tarifi",
+      "https://mygaziantep.com/gaziantep-yemekleri/yuvarlama-2.html"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "antep-yuvalama-yogurtlu",
+    "verdict": "PASS",
+    "reason": "Pirinçli kıymalı yuvalama köftesi, et, nohut, süzme yoğurt, yumurta sarısı ve naneli yağ Gaziantep yuvalama kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.yoredenlezzetler.com/post/antep-yuvalamasi-tarifi",
+      "https://www.turkgun.com/yemek-tarifleri/gaziantepin-bayram-sultani-cografi-isaretli-yuvalama-tarifi/365443"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "anticuchos-de-pollo-peru-usulu",
+    "verdict": "PASS",
+    "reason": "Tavuk, acı biber püresi, sirke, yağ ve kısa ızgara yöntemi anticuchos kaynaklarındaki marine ve şiş tekniğiyle uyumlu. Süre marineyi içeriyor.",
+    "sources": [
+      "https://www.limaeasy.com/peruvian-food-guide/typical-starter-appetizer/anticuchos",
+      "https://www.peru.travel/gastronomy/en/recipes/entrees/anticucho.html"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "anticuchos-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: adımda aji panca, kimyon ve oregano kullanılıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Aji panca ezmesi", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Kimyon", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Oregano", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.limaeasy.com/peruvian-food-guide/typical-starter-appetizer/anticuchos",
+      "https://www.peru.travel/gastronomy/en/recipes/entrees/anticucho.html"
+    ],
+    "confidence": "high",
+    "reason": "Peru anticuchos marinadı aji panca, sirke, sarımsak, kimyon ve oregano ile doğrulanıyor. Mevcut adım doğru bileşenleri söylüyor, listede üçü eksik."
+  },
+  {
+    "slug": "anzac-biscuits",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: adımda karbonatlı su kullanılıyor ama karbonat ve su ingredient listesinde yok",
+      "steps: son iki adım bisküvi yerine katmanlı dolgulu tatlı anlatıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Karbonat", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Kaynar su", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 5,
+          "instruction": "Bisküvileri tepside 5 dakika bekletin, dağılmadan sertleşsin."
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Tamamen soğuyunca tel ızgaraya alın ve çayla servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.awm.gov.au/articles/encyclopedia/anzac/biscuit/recipe",
+      "https://anzacspirit.com.au/blog/anzac-biscuits"
+    ],
+    "confidence": "high",
+    "reason": "ANZAC bisküvisinde yulaf, un, hindistan cevizi, altın şurup, tereyağı ve karbonatlı su temel. Dolgu katmanı adımları tarifle ilgisiz."
+  },
+  {
+    "slug": "anzac-crumble-square-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: adımda Hindistan cevizi ve bal kullanılıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Hindistan cevizi", "amount": "0.75", "unit": "su bardağı" },
+        { "name": "Bal", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.awm.gov.au/articles/encyclopedia/anzac/biscuit/recipe",
+      "https://www.multix.com.au/recipe/anzac-biscuit/"
+    ],
+    "confidence": "medium",
+    "reason": "ANZAC tarzı yulaflı karede hindistan cevizi ve şurup ya da bal mantıklı. Mevcut adımlar bu iki malzemeyi kullanıyor, listede görünmeleri gerekir."
+  },
+  {
+    "slug": "anzak-biskuvili-kup-avustralya-usulu",
+    "verdict": "PASS",
+    "reason": "ANZAC bisküvisi kırığı, krema, bal ve hindistan ceviziyle kupta katmanlama modern tatlı yorumu olarak tutarlı. Süt ve gluten alerjenleri doğru.",
+    "sources": [
+      "https://www.awm.gov.au/articles/encyclopedia/anzac/biscuit/recipe",
+      "https://www.bonappetit.com/recipe/anzac-biscuits"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "aperol-spritz",
+    "verdict": "PASS",
+    "reason": "90 ml prosecco, 60 ml Aperol, 30 ml soda, buz ve portakal 3:2:1 Aperol Spritz oranıyla uyumlu. Alkollü, vegan ve pratik etiketleri doğru.",
+    "sources": [
+      "https://www.aperol.com/en-us/aperol-spritz-cocktail/",
+      "https://www.barschool.net/recipes/aperol-spritz"
+    ],
+    "confidence": "high"
+  }
+]

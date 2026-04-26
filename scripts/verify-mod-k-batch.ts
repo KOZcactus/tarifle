@@ -123,9 +123,11 @@ const VALID_TAGS = new Set([
   "butce-dostu", "vegan", "vejetaryen", "alkollu", "alkolsuz",
   "kis-tarifi", "yaz-tarifi",
 ]);
+// Prisma schema enum Allergen (10 deger). KABUKLU_DENIZ/BALIK/FISTIK
+// yanlistir; dogru karsiliklar DENIZ_URUNLERI / YER_FISTIGI / KEREVIZ.
 const VALID_ALLERGENS = new Set([
-  "GLUTEN", "SUT", "YUMURTA", "SOYA", "FISTIK", "KUSUYEMIS",
-  "BALIK", "KABUKLU_DENIZ", "SUSAM", "HARDAL",
+  "GLUTEN", "SUT", "YUMURTA", "KUSUYEMIS", "YER_FISTIGI",
+  "SOYA", "DENIZ_URUNLERI", "SUSAM", "KEREVIZ", "HARDAL",
 ]);
 
 function isHttpUrl(u: string): boolean {

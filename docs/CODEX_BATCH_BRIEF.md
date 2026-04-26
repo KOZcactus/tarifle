@@ -3903,8 +3903,12 @@ HER ALAN dahil):**
   - `protein` / `carbs` / `fat`: yeni macro (gram, porsiyon başına)
   - `tags_add`: eklenecek tag enum'lar (15 enum'dan, brief §5)
   - `tags_remove`: silinecek tag enum'lar
-  - `allergens_add`: eklenecek allergen enum'lar (10 enum'dan)
-  - `allergens_remove`: silinecek allergen enum'lar
+  - `allergens_add`: eklenecek allergen enum'lar (Prisma schema'daki 10
+    enum: GLUTEN, SUT, YUMURTA, KUSUYEMIS, YER_FISTIGI, SOYA,
+    DENIZ_URUNLERI, SUSAM, KEREVIZ, HARDAL). DENIZ_URUNLERI hem balik
+    hem kabuklu deniz icindir; KABUKLU_DENIZ/BALIK/FISTIK ayri enum
+    YOK
+  - `allergens_remove`: silinecek allergen enum'lar (ayni 10 enum'dan)
 - `sources` (zorunlu): en az 2 farklı domain (Mod M ile aynı)
 - `confidence` (zorunlu): "high" / "medium" / "low"
 - `reason` (zorunlu): 50-300 char Türkçe açıklama

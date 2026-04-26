@@ -2474,6 +2474,12 @@
       "doneTitle": "{title} step finished",
       "doneBody": "Timer for step {step} is complete."
     },
+    "ingredientGuide": {
+      "toggleAria": "Info about {name}",
+      "dialogAria": "{name} info card",
+      "substitutesLabel": "You can swap with",
+      "noteLabel": "Note:"
+    },
     "allergenConfidence": {
       "possibleExtraTitle": "Possible extra allergen",
       "possibleExtraBody": "Ingredient list mentions {list} but the recipe author did not declare it. Re-check labels and your sensitivity.",

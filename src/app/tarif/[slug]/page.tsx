@@ -4,6 +4,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { Badge } from "@/components/ui/Badge";
 import { IngredientList } from "@/components/recipe/IngredientList";
 import { MeasureConverter } from "@/components/recipe/MeasureConverter";
+import { getAllIngredientGuides } from "@/lib/recipe/ingredient-guide";
 import { AllergenBadges } from "@/components/recipe/AllergenBadges";
 import { AllergenConfidenceNote } from "@/components/recipe/AllergenConfidenceNote";
 import { computeAllergenConfidence } from "@/lib/recipe/allergen-confidence";
@@ -231,6 +232,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
     recipe.translations,
     locale,
   );
+  const ingredientGuides = await getAllIngredientGuides();
   const translatedSteps = mapTranslatedSteps(
     recipe.steps,
     recipe.translations,
@@ -581,6 +583,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
             <IngredientList
               ingredients={translatedIngredients}
               baseServingCount={recipe.servingCount}
+              guides={ingredientGuides}
             />
             <div className="mt-3">
               <MeasureConverter locale={locale === "en" ? "en" : "tr"} />

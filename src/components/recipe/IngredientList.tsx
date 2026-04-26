@@ -3,6 +3,11 @@
 import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { formatIngredientAmount } from "@/lib/recipe/format-amount";
+import {
+  findGuide,
+  type IngredientGuide,
+} from "@/lib/recipe/ingredient-guide";
+import { IngredientGuidePopover } from "@/components/recipe/IngredientGuidePopover";
 
 interface Ingredient {
   id: string;
@@ -21,6 +26,13 @@ interface Ingredient {
 interface IngredientListProps {
   ingredients: Ingredient[];
   baseServingCount: number;
+  /**
+   * Mod H ingredient guides (Batch 1+2 = top 100). Server tarafinda
+   * unstable_cache ile yuklenir, props ile gecirilir. Her ingredient
+   * adina karsi findGuide ile lookup yapilir; bulunan guide'ler icin
+   * yaninda kucuk (i) buton render olur.
+   */
+  guides?: Record<string, IngredientGuide>;
 }
 
 function bucketByGroup(
@@ -51,7 +63,11 @@ function bucketByGroup(
   }));
 }
 
-export function IngredientList({ ingredients, baseServingCount }: IngredientListProps) {
+export function IngredientList({
+  ingredients,
+  baseServingCount,
+  guides,
+}: IngredientListProps) {
   const t = useTranslations("recipe.ingredients");
   const [servingCount, setServingCount] = useState(baseServingCount);
   const multiplier = servingCount / baseServingCount;
@@ -115,6 +131,10 @@ export function IngredientList({ ingredients, baseServingCount }: IngredientList
                       {t("optional")}
                     </span>
                   )}
+                  {guides && (() => {
+                    const g = findGuide(ing.name, guides);
+                    return g ? <IngredientGuidePopover guide={g} /> : null;
+                  })()}
                 </span>
               </li>
             ))}

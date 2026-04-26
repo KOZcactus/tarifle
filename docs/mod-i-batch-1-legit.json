@@ -1,0 +1,62 @@
+[
+  {
+    "cuisine": "br",
+    "type": "APERATIF",
+    "slugs": ["coxinha", "sao-paulo-tavuklu-coxinha"],
+    "reason": "İkisi de coxinha olsa da Sao Paulo versiyonunda patatesli hamur ve daha farklı iç yapı var; sil listesine alınmadı."
+  },
+  {
+    "cuisine": "br",
+    "type": "TATLI",
+    "slugs": ["brigadeiro", "brigadeiro-de-colher"],
+    "reason": "Brigadeiro top halinde yuvarlanıyor, Brigadeiro de Colher kaşıkla yenen yumuşak kase tatlısı; servis formu ve kıvam ayrı."
+  },
+  {
+    "cuisine": "br",
+    "type": "YEMEK",
+    "slugs": ["feijoada", "rio-feijoada-completa", "rio-hizli-feijoada"],
+    "reason": "Completa domuz eti, pirinç ve portakalla tam servis tablosu kuruyor; Hızlı versiyon haşlanmış fasulye ile süreyi değiştiriyor."
+  },
+  {
+    "cuisine": "br",
+    "type": "YEMEK",
+    "slugs": ["moqueca-de-banana-brezilya-usulu", "moqueca-de-palmito-brezilya-usulu", "moqueca-de-peixe"],
+    "reason": "Banana, palmito ve peixe ana malzemeleri farklı; aynı moqueca ailesi olsalar da ayrı ana içeriklere dayanıyorlar."
+  },
+  {
+    "cuisine": "cn",
+    "type": "YEMEK",
+    "slugs": ["mapo-tofu", "sichuan-mapo-tofu"],
+    "reason": "Sichuan versiyonunda doubanjiang, dana kıyma, Sichuan biberi, sarımsak ve zencefil açıkça var; generic kayıt daha sade."
+  },
+  {
+    "cuisine": "cn",
+    "type": "YEMEK",
+    "slugs": ["dan-dan-noodle", "sichuan-dan-dan-noodle", "sanghay-susamli-dan-dan-noodle"],
+    "reason": "Dan dan ailesi aynı olsa da Sichuan ve Şanghay kayıtlarında sos yoğunluğu, salatalık, yer fıstığı ve baharat dengesi farklı."
+  },
+  {
+    "cuisine": "cu",
+    "type": "YEMEK",
+    "slugs": ["vaca-frita-cubana", "vaca-frita-de-pollo-kuba-usulu"],
+    "reason": "Vaca Frita Cubana dana etiyle, de Pollo tavukla yapılıyor; ana protein farklı olduğu için legit varyant."
+  },
+  {
+    "cuisine": "cu",
+    "type": "TATLI",
+    "slugs": ["flan-de-coco-cubano", "coconut-lime-flan-kuba-usulu"],
+    "reason": "Coconut Lime Flan lime kabuğu ile farklı aroma kuruyor; Hindistan cevizli flan ailesinde olsa da birebir duplicate sayılmadı."
+  },
+  {
+    "cuisine": "cu",
+    "type": "KOKTEYL",
+    "slugs": ["mojito", "guava-mojito-kuba-usulu", "naneli-guava-mojito-kuba-usulu"],
+    "reason": "Guava kullanılan mojitolar meyve profiliyle klasik mojitodan ayrılıyor; naneli guava kaydı da ayrı servis profili taşıyor."
+  },
+  {
+    "cuisine": "au",
+    "type": "YEMEK",
+    "slugs": ["barramundi-paket-avustralya-usulu", "barramundi-tava-avustralya-usulu", "barramundi-sebze-tepsi-avustralya-usulu"],
+    "reason": "Aynı balık kullanılsa da paket, tava ve sebze tepsi yöntemleri farklı pişirme tekniği ve servis veriyor."
+  }
+]

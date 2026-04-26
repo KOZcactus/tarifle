@@ -1,5 +1,19 @@
 # Tarifle, Proje Durumu
 
+> Oturum 23 başı (26 Nis 2026), Mod I Batch 1 PIPELINE KAPANIŞ.
+> ChatGPT'den lokale gelen 16 cluster / 28 sil önerisi DB deep verify
+> (yeni script `scripts/verify-mod-i-batch.ts`, cluster × titleJacc +
+> ingJacc + stepDiff + calDiff threshold doğrulama). Manuel triaj
+> sonucu 14 kesin sil (A grubu 8 + B grubu 5 + Pekin chicken 1):
+> `damper-ekmegi`, `bal-kabakli-...corba`, `avokadolu-...mucver-stack`,
+> `picadillo-cubano`, `siyah-fasulyeli-pilav-bowl`, `tea-egg`,
+> `siyah-fasulye-corbasi`, `flan-de-coco-kuba-usulu`,
+> `melbourne-lamington-kareleri`, `rio-feijoada`, `rio-feijoada-fasulye`,
+> `moqueca-de-peixe`, `havana-picadillo-cubano`, `pekin-kung-pao-chicken`.
+> Prod 3679 → 3665. AuditLog kayıtlı. Source 14 satır azaldı
+> (smart-source-clean). Sıradaki: Mod I Batch 2-5 Codex tetik
+> (cuisine d-i / j-n / p-r / s-z) veya polish phase paketi.
+
 > Oturum 22 sonu (26 Nis 2026), **35+ commit**, mutlak rekor günü.
 > **Mod G PIPELINE KAPANIŞ (417/417 boilerplate %100) + Mod H
 > PIPELINE KAPANIŞ (250/250 ingredient %100) + Mod A 39b prod (50

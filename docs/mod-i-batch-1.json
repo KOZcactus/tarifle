@@ -1,0 +1,190 @@
+[
+  {
+    "cuisine": "au",
+    "type": "CORBA",
+    "canonicalSlug": "balkabakli-hindistancevizli-corba-avustralya-usulu",
+    "canonicalTitle": "Balkabaklı Hindistancevizli Çorba",
+    "duplicateSlugs": ["bal-kabakli-hindistancevizli-corba-avustralya-usulu"],
+    "duplicateTitles": ["Bal Kabaklı Hindistancevizli Çorba"],
+    "confidence": "medium",
+    "reason": "Başlık aynı tarifin yazım farkı gibi duruyor; balkabağı, Hindistan cevizi sütü, zencefil ve blender adımları örtüşüyor, canonical tarif soğanla daha zengin."
+  },
+  {
+    "cuisine": "au",
+    "type": "KAHVALTI",
+    "canonicalSlug": "avokadolu-misir-mucveri-avustralya-usulu",
+    "canonicalTitle": "Avokadolu Mısır Mücveri",
+    "duplicateSlugs": ["avokadolu-misir-mucver-stack-avustralya-usulu"],
+    "duplicateTitles": ["Avokadolu Mısır Mücver Stack"],
+    "confidence": "medium",
+    "reason": "Mısır, yumurta, un ve avokado tabanı aynı; pişirme akışı iki yüzlü mücver ve avokadolu servis olarak örtüşüyor, stack farkı servis formu gibi."
+  },
+  {
+    "cuisine": "au",
+    "type": "KAHVALTI",
+    "canonicalSlug": "damper",
+    "canonicalTitle": "Damper",
+    "duplicateSlugs": ["damper-ekmegi-avustralya-usulu"],
+    "duplicateTitles": ["Damper Ekmeği"],
+    "confidence": "high",
+    "reason": "Un, süt, kabartma tozu ve tuzla yapılan aynı Avustralya damper ekmeği; hamuru yuvarlama, üstünü çizme ve 200°C fırında pişirme adımları aynı."
+  },
+  {
+    "cuisine": "au",
+    "type": "TATLI",
+    "canonicalSlug": "lamington",
+    "canonicalTitle": "Lamington",
+    "duplicateSlugs": [
+      "melbourne-lamington-kareleri",
+      "sidney-lamington",
+      "sydney-lamington-kareleri"
+    ],
+    "duplicateTitles": [
+      "Melbourne Lamington",
+      "Sidney Lamington",
+      "Sydney Lamington Kareleri"
+    ],
+    "confidence": "medium",
+    "reason": "Featured canonical Lamington ile aynı sünger kek, kakaolu veya çikolatalı kaplama ve Hindistan cevizi bulama akışı var; şehir adı gerçek tarif farkı göstermiyor."
+  },
+  {
+    "cuisine": "br",
+    "type": "APERATIF",
+    "canonicalSlug": "sao-paulo-pao-de-queijo",
+    "canonicalTitle": "Sao Paulo Pao De Queijo",
+    "duplicateSlugs": ["pao-de-queijo"],
+    "duplicateTitles": ["Pao de Queijo"],
+    "confidence": "medium",
+    "reason": "İki tarif de manyok veya tapioka nişastası, süt, yumurta ve peynirle aynı fırın peynir topu akışını kullanıyor; canonical daha fazla ingredient ve step içeriyor."
+  },
+  {
+    "cuisine": "br",
+    "type": "YEMEK",
+    "canonicalSlug": "feijoada",
+    "canonicalTitle": "Feijoada",
+    "duplicateSlugs": ["rio-feijoada", "rio-feijoada-fasulye"],
+    "duplicateTitles": ["Rio Feijoada", "Rio Siyah Fasulyeli Feijoada"],
+    "confidence": "medium",
+    "reason": "Featured canonical ile aynı siyah fasulye, et, sosis, soğan, sarımsak ve defne tabanı var; Rio adlandırması tarifin ana yapısını değiştirmiyor."
+  },
+  {
+    "cuisine": "br",
+    "type": "YEMEK",
+    "canonicalSlug": "rio-moqueca-balik",
+    "canonicalTitle": "Rio Moqueca Balık",
+    "duplicateSlugs": ["moqueca", "moqueca-de-peixe"],
+    "duplicateTitles": ["Moqueca", "Moqueca de Peixe"],
+    "confidence": "medium",
+    "reason": "Beyaz balık, biber, domates, Hindistan cevizi sütü, lime ve kişnişli aynı moqueca akışı; Rio versiyonu ingredient ve step olarak daha açıklayıcı."
+  },
+  {
+    "cuisine": "cn",
+    "type": "KAHVALTI",
+    "canonicalSlug": "tea-eggs-cin-atistirmalik-usulu",
+    "canonicalTitle": "Tea Eggs",
+    "duplicateSlugs": ["tea-egg"],
+    "duplicateTitles": ["Tea Egg"],
+    "confidence": "high",
+    "reason": "Tekil ve çoğul başlık dışında aynı çay yumurtası; yumurta, siyah çay, soya sosu ve yıldız anason tabanı ile haşlama ve kabuk çatlatma akışı aynı."
+  },
+  {
+    "cuisine": "cn",
+    "type": "YEMEK",
+    "canonicalSlug": "beijing-kung-pao-chicken",
+    "canonicalTitle": "Beijing Kung Pao Chicken",
+    "duplicateSlugs": [
+      "kung-pao-tavuk",
+      "sichuan-kung-pao-tavuk",
+      "pekin-kung-pao-tavuk",
+      "pekin-kung-pao-chicken"
+    ],
+    "duplicateTitles": [
+      "Kung Pao Tavuk",
+      "Sichuan Kung Pao Tavuk",
+      "Pekin Kung Pao Tavuk",
+      "Pekin Kung Pao Chicken"
+    ],
+    "confidence": "medium",
+    "reason": "Featured canonical ile aynı tavuk, soya sosu, sirke, kuru biber ve fıstık veya kaju wok yemeği; Beijing ve Pekin adları aynı şehir yazımı, farklar ölçü ve kuruyemiş düzeyinde."
+  },
+  {
+    "cuisine": "cu",
+    "type": "ATISTIRMALIK",
+    "canonicalSlug": "maduros",
+    "canonicalTitle": "Maduros",
+    "duplicateSlugs": ["platanos-maduros-fritos"],
+    "duplicateTitles": ["Platanos Maduros Fritos"],
+    "confidence": "medium",
+    "reason": "Olgun plantain veya muz dilimlerini yağda karamelleştirerek hazırlayan aynı Küba atıştırmalığı; canonical daha açıklayıcı step ve tuz dengesi içeriyor."
+  },
+  {
+    "cuisine": "cu",
+    "type": "CORBA",
+    "canonicalSlug": "sopa-de-frijoles-negros-kuba-usulu",
+    "canonicalTitle": "Sopa de Frijoles Negros",
+    "duplicateSlugs": ["black-bean-soup", "siyah-fasulye-corbasi-kuba-usulu"],
+    "duplicateTitles": ["Black Bean Soup", "Siyah Fasulye Çorbası"],
+    "confidence": "medium",
+    "reason": "Üç tarif de siyah fasulye, soğan, su veya sebze suyu ile pişip bir kısmı ezilerek koyulaştırılan aynı çorba; canonical biber ve kimyonla daha zengin."
+  },
+  {
+    "cuisine": "cu",
+    "type": "YEMEK",
+    "canonicalSlug": "cuban-picadillo",
+    "canonicalTitle": "Cuban Picadillo",
+    "duplicateSlugs": ["picadillo-cubano", "havana-picadillo-cubano"],
+    "duplicateTitles": ["Picadillo Cubano", "Havana Picadillo"],
+    "confidence": "medium",
+    "reason": "Featured canonical ile aynı dana kıyma, domates, zeytin ve kuru üzüm temeli var; Havana versiyonundaki patates ve kapari zenginleştirme gibi, ayrı ana tarif değil."
+  },
+  {
+    "cuisine": "cu",
+    "type": "YEMEK",
+    "canonicalSlug": "ropa-vieja-pirinc-bowl-kuba-usulu",
+    "canonicalTitle": "Ropa Vieja Pirinç Bowl",
+    "duplicateSlugs": [
+      "ropa-vieja",
+      "havana-ropa-vieja-tabagi",
+      "havana-ropa-vieja-dana",
+      "havana-pilavli-ropa-vieja"
+    ],
+    "duplicateTitles": [
+      "Ropa Vieja",
+      "Havana Ropa Vieja Tabağı",
+      "Havana Ropa Vieja",
+      "Havana Pilavlı Ropa Vieja"
+    ],
+    "confidence": "medium",
+    "reason": "Featured canonical dahil tüm tarifler didiklenmiş dana etini biberli domates sosunda pişiriyor; pilav veya tabak ifadesi servis katmanı olarak görünüyor."
+  },
+  {
+    "cuisine": "cu",
+    "type": "YEMEK",
+    "canonicalSlug": "siyah-fasulyeli-pirinc-tava-kuba-usulu",
+    "canonicalTitle": "Siyah Fasulyeli Pirinç Tava",
+    "duplicateSlugs": ["siyah-fasulyeli-pilav-bowl-kuba-usulu"],
+    "duplicateTitles": ["Siyah Fasulyeli Pilav Bowl"],
+    "confidence": "medium",
+    "reason": "Pirinç, siyah fasulye, soğan, su ve dinlendirme adımları aynı; bowl ve tava farkı servis dili gibi, canonical yeşil biber ve kavurma adımıyla daha belirgin."
+  },
+  {
+    "cuisine": "cu",
+    "type": "YEMEK",
+    "canonicalSlug": "vaca-frita-cubana",
+    "canonicalTitle": "Vaca Frita Cubana",
+    "duplicateSlugs": ["vaca-frita"],
+    "duplicateTitles": ["Vaca Frita"],
+    "confidence": "medium",
+    "reason": "İki tarif de haşlanmış veya didiklenmiş dana eti, lime, sarımsak ve soğanla tavada çıtırlaştırılan aynı Küba yemeği; canonical ingredient listesi daha zengin."
+  },
+  {
+    "cuisine": "cu",
+    "type": "TATLI",
+    "canonicalSlug": "flan-de-coco-cubano",
+    "canonicalTitle": "Flan de Coco Cubano",
+    "duplicateSlugs": ["flan-de-coco-kuba-usulu"],
+    "duplicateTitles": ["Flan de Coco"],
+    "confidence": "medium",
+    "reason": "İki tarif de Hindistan cevizi sütü, yumurta ve karamel tabanlı aynı benmari flan akışını kullanıyor; canonical soğutma ve ters çevirme adımlarıyla daha ayrıntılı."
+  }
+]

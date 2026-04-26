@@ -20,7 +20,7 @@ B/C/D/E/F/FA KAPANDI (referans için brief'te detay korundu).
 Oku, "Anladım" de, sonra hangi modu + batch numarasını
 vereceğim, sen default akışla direkt başlayacaksın.
 
-Doğruluk > hız > kapsam. Şüphedeysen sor, sahte yazma.
+Doğruluk > kapsam > hız. Şüphedeysen sor, sahte yazma.
 Em-dash karakteri (U+2014) yasak (AGENTS.md), yerine virgül,
 noktalı virgül, nokta, parantez, iki nokta.
 
@@ -34,8 +34,9 @@ Tamamlama sonrası git status'te değişiklik görünmeli.
 
 ## 2. Mod A tetik şablonu (yeni TR + uluslararası tarif)
 
-```
-Mod A. Batch {BATCH_ID}.
+🌍
+
+Mod A. Batch N.
 Brief §5 Mod A default'u uygula (50 tarif). Önemli güncellemeler
 (oturum 17 + 21 dersleri, docs/CODEX_BATCH_BRIEF.md oku):
 - Dağılım ~25 TR + ~25 uluslararası. Kesin matematiksel denge YOK.
@@ -77,7 +78,7 @@ satıra bak, önceki batch'in IIFE kapanışı + `];`. Append yeri:
     ];
 `];` yerinde kalır, üstüne yeni IIFE:
       })(),
-      // ── BATCH {BATCH_ID} ── (tarih: YYYY-MM-DD, 50 tarif, Codex)
+      // ── BATCH N ── (tarih: YYYY-MM-DD, 50 tarif, Codex)
       ...(() => {
         const t = (enTitle: string, enDescription: string,
                    deTitle: string, deDescription: string) => ({...});
@@ -127,7 +128,7 @@ Self-check (v2 teslim öncesi ZORUNLU, 16 madde):
     Köfte gibi ana yemek adları kontrol)
 16. ⭐ existing-slugs.txt + son 400 satır slug tekrarı yok
 
-Bitince "Batch {BATCH_ID} hazır" + özet: TR/int'l, kategori
+Bitince "Batch N hazır" + özet: TR/int'l, kategori
 dağılım, isFeatured, emoji unique, kalori range, **min step
 PASS**, allergen PASS, **Kural 6 + 7 + 16 PASS**.
 ```
@@ -136,18 +137,27 @@ PASS**, allergen PASS, **Kural 6 + 7 + 16 PASS**.
 
 ## 3. Mod G tetik şablonu (boilerplate revize)
 
+**Kullanım kuralı:** Sadece **ilk satırdaki `N` değerini değiştir**
+(örn. `Mod G. Batch 2.`). Mesaj içinde geçen diğer `N` placeholder'ları
+**aynı sayı** demektir, Codex bağlamdan çıkarır. Dosya yollarındaki
+`N` ile başlıktaki `N` aynı olmalı.
+
 **Önkoşul:** Claude `npx tsx scripts/prepare-mod-g-input.ts --batch N
 --size 100` koşmuş olmalı, `docs/mod-g-batch-N-input.json` üretilmiş
 olmalı (her slug için mevcut tipNote/sug + ingredient + step özeti).
 
-```
-Mod G. Batch {BATCH_ID}.
+🌍 *****************************************************************************************************************
+
+Mod G. Batch N.
+(Bu mesajda "N" geçen TÜM yerlerde, başlıktaki batch numarasını kullan.
+Tutarsızlık olursa dur, sor.)
+
 Brief docs/CODEX_BATCH_BRIEF.md §17 ZORUNLU oku
 (özellikle §17.3 8 kalite kuralı + §17.5 7 self-check).
-Input: docs/mod-g-batch-{BATCH_ID}-input.json (Claude
+Input: docs/mod-g-batch-N-input.json (Claude
 zenginleştirdi: 100 slug + her tarifin mevcut tipNote/
 servingSuggestion + ingredient (12 örnek) + step (8 örnek)).
-Output: docs/mod-g-batch-{BATCH_ID}.json (sema §17.2'de).
+Output: docs/mod-g-batch-N.json (sema §17.2'de).
 
 ⚠️ KRITIK NOKTALAR:
 - Tarif-özgü ref ZORUNLU: cümle slug/title anahtar kelimesi
@@ -178,7 +188,7 @@ Output: docs/mod-g-batch-{BATCH_ID}.json (sema §17.2'de).
   bırak (sadece tipNote veya sadece sug revize)
 
 Self-check 7 madde §17.5 hepsi PASS olduktan sonra "Mod G
-Batch {BATCH_ID} hazır" + özet:
+Batch N hazır" + özet:
 - N tipNote revize / N servingSuggestion revize
 - ortalama tipNote kelime / ortalama sug kelime
 - dup count (5+ tarifte aynı cümle = 0 olmalı)
@@ -195,14 +205,15 @@ Batch {BATCH_ID} hazır" + özet:
 olmalı (her ingredient için sample tarif + tarif tipi dağılımı +
 NutritionData eşleşmesi).
 
-```
-Mod H. Batch {BATCH_ID}.
+🌍 **************************************************************************************************
+
+Mod H. Batch N.
 Brief docs/CODEX_BATCH_BRIEF.md §18 ZORUNLU oku
 (özellikle §18.3 7 kalite kuralı + §18.5 8 self-check).
-Input: docs/mod-h-batch-{BATCH_ID}-input.json (Claude
+Input: docs/mod-h-batch-N-input.json (Claude
 zenginleştirdi: 50 ingredient + sample tarif slug + tarif
 tipi dağılımı + frequency + NutritionData eşleşmesi).
-Output: docs/mod-h-batch-{BATCH_ID}.json (sema §18.2'de).
+Output: docs/mod-h-batch-N.json (sema §18.2'de).
 
 ⚠️ KRITIK NOKTALAR:
 - whyUsed: 8-40 kelime, 1-2 cümle. EN AZ BİR tarif tipi
@@ -234,7 +245,7 @@ Output: docs/mod-h-batch-{BATCH_ID}.json (sema §18.2'de).
   oran/sıcaklık uyarısı.
 
 Self-check 8 madde §18.5 hepsi PASS olduktan sonra "Mod H
-Batch {BATCH_ID} hazır" + özet:
+Batch N hazır" + özet:
 - 50 ingredient hepsi entry yazıldı
 - ortalama whyUsed kelime / ortalama notes kelime
 - ortalama substitute count (2-4 aralığı)
@@ -252,7 +263,10 @@ Batch {BATCH_ID} hazır" + özet:
 2. **Bölüm 1'i kopyala-yapıştır** (başlangıç mesajı)
 3. Codex "Anladım" der
 4. **İlgili mod tetik şablonunu yapıştır** (Bölüm 2 / 3 / 4)
-5. `{BATCH_ID}` placeholder'ları doldur (örn. `39b`, `1`, `2`)
+5. **Sadece ilk satırdaki `Batch N` değerini değiştir** (örn. `Batch 40a`,
+   `Batch 2`). Mesajın içinde geçen diğer `N` placeholder'larına dokunma,
+   Codex başlıktan çıkarır. Bu şekilde dosya yolu (`docs/mod-g-batch-N.json`)
+   tutarsızlığı önlenir.
 6. Mod G/H için Claude'a önce "input prep koş" de, dosya
    üretilince Codex tetiği gönder
 7. Codex teslim edince Claude apply pipeline koşar

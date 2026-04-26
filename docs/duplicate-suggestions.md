@@ -1,20 +1,10 @@
-Total recipes: 3679
-Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calDiff<=30%): 166
-
-══ [tr/TATLI] titleJacc=0.67 ingJacc=1.00 stepDiff=0 calDiff=3%
-  ⭐ KEEP [kestaneli-irmik-kup-bursa-usulu] "Kestaneli İrmik Kup" (4i/5s, 20dk, 232kcal)
-     SIL  [kestaneli-sutlu-irmik-tatli-bursa-usulu] "Kestaneli Sütlü İrmik Tatlı" (4i/5s, 20dk, 224kcal)
-     shared title tokens: kestaneli, irmik
+Total recipes: 3572
+Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calDiff<=30%): 92
 
 ══ [tr/KAHVALTI] titleJacc=0.50 ingJacc=1.00 stepDiff=2 calDiff=5%
   ⭐ KEEP [kars-ketesi] "Kars Ketesi" (5i/7s, 90dk, 310kcal)
      SIL  [kete-erzurum-tava-usulu] "Erzurum Tava Ketesi" (4i/5s, 48dk, 294kcal)
      shared title tokens: ketesi
-
-══ [ru/KAHVALTI] titleJacc=0.50 ingJacc=1.00 stepDiff=1 calDiff=10%
-  ⭐ KEEP [syrniki] "Syrniki" (4i/6s, 27dk, 290kcal)
-     SIL  [balli-syrniki] "Ballı Syrniki" (4i/5s, 27dk, 260kcal)
-     shared title tokens: syrniki
 
 ══ [tr/TATLI] titleJacc=0.67 ingJacc=1.00 stepDiff=1 calDiff=7%
   ⭐ KEEP [elmali-irmik-dolgu-kup-kirsehir-usulu] "Elmalı İrmik Dolgu Kup" (5i/7s, 20dk, 224kcal)
@@ -36,100 +26,20 @@ Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calD
      SIL  [cevizli-tahinli-kabak-tatlisi-hatay-usulu] "Cevizli Tahinli Kabak Tatlısı" (4i/6s, 36dk, 236kcal)
      shared title tokens: tahinli, kabak
 
-══ [hu/YEMEK] titleJacc=0.50 ingJacc=1.00 stepDiff=1 calDiff=20%
-  ⭐ KEEP [turos-csusza-macar-usulu] "Túrós Csusza" (4i/6s, 25dk, 336kcal)
-     SIL  [firin-turos-csusza] "Fırın Túrós Csusza" (4i/5s, 30dk, 420kcal)
-     shared title tokens: csusza
-
-══ [tr/KAHVALTI] titleJacc=1.00 ingJacc=1.00 stepDiff=0 calDiff=21%
-  ⭐ KEEP [murtuga] "Murtuğa" (4i/5s, 15dk, 248kcal)
-     SIL  [murtuga-van-usulu] "Van Murtuğa" (4i/5s, 15dk, 312kcal)
-     shared title tokens: murtuga
-
-══ [tr/KAHVALTI] titleJacc=0.50 ingJacc=1.00 stepDiff=1 calDiff=0%
-  ⭐ KEEP [rize-telli-muhlama] "Rize Telli Muhlama" (5i/5s, 20dk, 360kcal)
-     SIL  [rize-muhlama-telli-peynirli] "Rize Muhlama" (5i/6s, 22dk, 360kcal)
-     shared title tokens: muhlama
-
-══ [tr/KAHVALTI] titleJacc=1.00 ingJacc=1.00 stepDiff=1 calDiff=16%
-  ⭐ KEEP [rize-muhlama-telli-peynirli] "Rize Muhlama" (5i/6s, 22dk, 360kcal)
-     SIL  [rize-muhlama-tava] "Rize Tava Muhlama" (5i/5s, 18dk, 430kcal)
-     shared title tokens: muhlama
-
-══ [it/YEMEK] titleJacc=0.67 ingJacc=1.00 stepDiff=1 calDiff=5%
-  ⭐ KEEP [naples-pizza-margherita] "Napoli Pizza Margherita" (8i/7s, 180dk, 590kcal)
-     SIL  [pizza-margherita] "Pizza Margherita" (8i/6s, 72dk, 620kcal)
-     shared title tokens: pizza, margherita
-
-══ [tr/KAHVALTI] titleJacc=0.67 ingJacc=1.00 stepDiff=1 calDiff=23%
-  ⭐ KEEP [trabzon-kuymak-telli] "Trabzon Kuymak" (5i/6s, 17dk, 325kcal)
-     SIL  [trabzon-misir-unlu-kuymak] "Trabzon Mısır Unlu Kuymak" (5i/5s, 19dk, 420kcal)
-     shared title tokens: trabzon, kuymak
-
-══ [tr/KAHVALTI] titleJacc=0.67 ingJacc=1.00 stepDiff=0 calDiff=24%
-  ⭐ KEEP [trabzon-kuymak-telli] "Trabzon Kuymak" (5i/6s, 17dk, 325kcal)
-     SIL  [trabzon-kuymak-tavasi] "Trabzon Kuymak Tavası" (5i/6s, 20dk, 430kcal)
-     shared title tokens: trabzon, kuymak
-
 ══ [tr/YEMEK] titleJacc=0.67 ingJacc=1.00 stepDiff=0 calDiff=1%
   ⭐ KEEP [tavuklu-nohutlu-arpa-pilavi-ankara-usulu] "Tavuklu Nohutlu Arpa Pilavı" (4i/7s, 32dk, 314kcal)
      SIL  [tavuklu-nohutlu-sehriye-pilavi-siirt-usulu] "Tavuklu Nohutlu Şehriye Pilavı" (4i/7s, 32dk, 318kcal)
      shared title tokens: tavuklu, nohutlu
-
-══ [tr/YEMEK] titleJacc=1.00 ingJacc=1.00 stepDiff=0 calDiff=12%
-  ⭐ KEEP [corum-iskilip-dolmasi-ev] "Çorum İskilip Dolması Ev Usulü" (7i/5s, 215dk, 690kcal)
-     SIL  [corum-iskilip-dolmasi] "Çorum İskilip Dolması" (7i/5s, 105dk, 610kcal)
-     shared title tokens: corum, iskilip
-
-══ [pe/YEMEK] titleJacc=0.50 ingJacc=1.00 stepDiff=0 calDiff=13%
-  ⭐ KEEP [lima-lomo-saltado-patatesi] "Lima Lomo Saltado Patatesi" (7i/5s, 38dk, 560kcal)
-     SIL  [lima-lomo-saltado] "Lima Lomo Saltado" (7i/5s, 38dk, 640kcal)
-     shared title tokens: saltado
-
-══ [tr/YEMEK] titleJacc=0.50 ingJacc=0.88 stepDiff=1 calDiff=20%
-  ⭐ KEEP [eskisehir-cig-borek-kiymali] "Eskişehir Çibörek" (8i/7s, 53dk, 415kcal)
-     SIL  [ciborek] "Çibörek" (7i/6s, 55dk, 520kcal)
-     shared title tokens: ciborek
-
-══ [tr/YEMEK] titleJacc=0.50 ingJacc=0.88 stepDiff=1 calDiff=2%
-  ⭐ KEEP [perde-pilavi] "Perde Pilavı" (8i/7s, 95dk, 520kcal)
-     SIL  [siirt-perde-pilavi-boregi] "Siirt Perde Pilavı Böreği" (7i/6s, 100dk, 510kcal)
-     shared title tokens: perde
-
-══ [tr/CORBA] titleJacc=0.50 ingJacc=0.86 stepDiff=1 calDiff=16%
-  ⭐ KEEP [kulak-corbasi] "Kulak Çorbası" (6i/6s, 65dk, 260kcal)
-     SIL  [manisa-kulak-corbasi] "Manisa Kulak Çorbası" (7i/7s, 80dk, 310kcal)
-     shared title tokens: kulak
 
 ══ [pl/YEMEK] titleJacc=0.50 ingJacc=0.86 stepDiff=0 calDiff=29%
   ⭐ KEEP [pierogi] "Pierogi" (7i/6s, 80dk, 430kcal)
      SIL  [pierogi-ruskie] "Pierogi Ruskie" (6i/6s, 50dk, 304kcal)
      shared title tokens: pierogi
 
-══ [it/YEMEK] titleJacc=0.67 ingJacc=0.83 stepDiff=1 calDiff=13%
-  ⭐ KEEP [gnocchi-alla-sorrentina] "Gnocchi Alla Sorrentina" (5i/6s, 50dk, 420kcal)
-     SIL  [napoli-gnocchi-alla-sorrentina] "Napoli Gnocchi alla Sorrentina" (6i/5s, 40dk, 480kcal)
-     shared title tokens: gnocchi, sorrentina
-
-══ [tr/SALATA] titleJacc=0.50 ingJacc=0.83 stepDiff=1 calDiff=2%
-  ⭐ KEEP [patlican-salatasi] "Patlıcan Salatası" (6i/5s, 30dk, 90kcal)
-     SIL  [patlican-sogurme-sanliurfa-usulu] "Patlıcan Söğürme" (5i/6s, 25dk, 88kcal)
-     shared title tokens: patlican
-
-══ [kr/YEMEK] titleJacc=0.50 ingJacc=0.83 stepDiff=1 calDiff=0%
-  ⭐ KEEP [seoul-bulgogi-marul-wrap] "Seul Bulgogi Marul Wrap" (7i/5s, 90dk, 430kcal)
-     SIL  [bulgogi] "Bulgogi" (5i/6s, 47dk, 430kcal)
-     shared title tokens: bulgogi
-
 ══ [me/SALATA] titleJacc=0.67 ingJacc=0.83 stepDiff=1 calDiff=26%
   ⭐ KEEP [nar-eksili-kisir-salatasi-orta-dogu-usulu] "Nar Ekşili Kısır Salatası" (5i/6s, 14dk, 182kcal)
      SIL  [beyrut-nar-eksili-kisir-kasesi] "Beyrut Nar Ekşili Kısır Kasesi" (6i/5s, 20dk, 245kcal)
      shared title tokens: eksili, kisir
-
-══ [tr/CORBA] titleJacc=0.50 ingJacc=0.83 stepDiff=0 calDiff=1%
-  ⭐ KEEP [toyga-corbasi-anadolu-usulu] "Anadolu Usulü Toyga Çorbası" (6i/6s, 50dk, 196kcal)
-     SIL  [toyga-asi-corbasi-yozgat-usulu] "Toyga Aşı Çorbası" (5i/6s, 36dk, 194kcal)
-     shared title tokens: toyga
 
 ══ [gr/YEMEK] titleJacc=0.67 ingJacc=0.82 stepDiff=1 calDiff=11%
   ⭐ KEEP [atina-musakka-patlicanli] "Atina Musakka" (11i/7s, 140dk, 540kcal)
@@ -151,11 +61,6 @@ Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calD
      SIL  [irmikli-peynir-helvasi-canakkale-usulu] "İrmikli Peynir Helvası" (5i/5s, 26dk, 288kcal)
      shared title tokens: peynir, helvasi
 
-══ [in/ICECEK] titleJacc=1.00 ingJacc=0.80 stepDiff=0 calDiff=14%
-  ⭐ KEEP [mango-lassi] "Mango Lassi" (5i/3s, 6dk, 220kcal)
-     SIL  [mango-lassi-shake] "Mango Lassi Shake" (4i/3s, 7dk, 190kcal)
-     shared title tokens: mango, lassi
-
 ══ [tr/YEMEK] titleJacc=0.67 ingJacc=0.80 stepDiff=1 calDiff=11%
   ⭐ KEEP [sakizli-kabak-cicegi-dolmasi-mugla-usulu] "Sakızlı Kabak Çiçeği Dolması" (5i/6s, 50dk, 196kcal)
      SIL  [kabak-cicegi-dolmasi] "Kabak Çiçeği Dolması" (4i/5s, 70dk, 220kcal)
@@ -165,26 +70,6 @@ Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calD
   ⭐ KEEP [kayseri-pastirmali-yumurta] "Kayseri Pastırmalı Yumurta" (5i/6s, 11dk, 260kcal)
      SIL  [pastirmali-yumurta] "Pastırmalı Yumurta" (4i/6s, 13dk, 300kcal)
      shared title tokens: pastirmali, yumurta
-
-══ [tr/ATISTIRMALIK] titleJacc=0.75 ingJacc=0.80 stepDiff=1 calDiff=6%
-  ⭐ KEEP [firinda-nohut-cipsi] "Fırında Nohut Cipsi" (5i/6s, 40dk, 180kcal)
-     SIL  [baharatli-nohut-cipsi] "Baharatlı Fırında Nohut Cipsi" (4i/5s, 40dk, 170kcal)
-     shared title tokens: firinda, nohut, cipsi
-
-══ [tr/TATLI] titleJacc=0.50 ingJacc=0.80 stepDiff=1 calDiff=0%
-  ⭐ KEEP [zerde-edirne-usulu] "Zerde" (5i/6s, 40dk, 162kcal)
-     SIL  [zerde-sakarya-usulu] "Sakarya Zerde Tatlısı" (4i/5s, 35dk, 162kcal)
-     shared title tokens: zerde
-
-══ [pe/KOKTEYL] titleJacc=0.50 ingJacc=0.80 stepDiff=1 calDiff=13%
-  ⭐ KEEP [chilcano-de-pisco-narenciyeli-peru-usulu] "Chilcano de Pisco" (5i/5s, 5dk, 154kcal)
-     SIL  [chilcano-peru-usulu] "Chilcano" (4i/4s, 5dk, 176kcal)
-     shared title tokens: chilcano
-
-══ [au/KAHVALTI] titleJacc=1.00 ingJacc=0.80 stepDiff=1 calDiff=18%
-  ⭐ KEEP [damper] "Damper" (5i/6s, 40dk, 168kcal)
-     SIL  [damper-ekmegi-avustralya-usulu] "Damper Ekmeği" (4i/5s, 34dk, 206kcal)
-     shared title tokens: damper
 
 ══ [tr/APERATIF] titleJacc=0.67 ingJacc=0.80 stepDiff=0 calDiff=18%
   ⭐ KEEP [cevizli-kabak-mezesi-mardin-usulu] "Cevizli Kabak Mezesi" (5i/4s, 22dk, 156kcal)
@@ -211,80 +96,25 @@ Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calD
      SIL  [konya-etli-ekmek-ocak] "Konya Etli Ekmek Ocak" (7i/5s, 45dk, 510kcal)
      shared title tokens: konya
 
-══ [fr/YEMEK] titleJacc=0.67 ingJacc=0.78 stepDiff=1 calDiff=24%
-  ⭐ KEEP [paris-ratatouille-tenceresi] "Paris Ratatouille Tenceresi" (8i/6s, 65dk, 250kcal)
-     SIL  [paris-ratatouille-guvec] "Paris Ratatouille Güveç" (8i/5s, 70dk, 190kcal)
-     shared title tokens: paris, ratatouille
-
-══ [mx/SOS] titleJacc=0.50 ingJacc=0.75 stepDiff=1 calDiff=16%
-  ⭐ KEEP [oaxaca-guacamole-klasik] "Oaxaca Klasik Guacamole" (7i/5s, 12dk, 160kcal)
-     SIL  [guacamole] "Guacamole" (7i/4s, 10dk, 190kcal)
-     shared title tokens: guacamole
-
-══ [tr/TATLI] titleJacc=1.00 ingJacc=0.75 stepDiff=1 calDiff=24%
-  ⭐ KEEP [nevzine-kayseri-usulu] "Nevzine" (7i/6s, 50dk, 246kcal)
-     SIL  [nevzine-tatlisi] "Nevzine Tatlısı" (7i/5s, 60dk, 322kcal)
-     shared title tokens: nevzine
-
 ══ [tr/ICECEK] titleJacc=0.50 ingJacc=0.75 stepDiff=0 calDiff=3%
   ⭐ KEEP [ayran] "Ayran" (3i/3s, 3dk, 60kcal)
      SIL  [yarpuzlu-ayran-igdir-usulu] "Yarpuzlu Ayran" (4i/3s, 5dk, 58kcal)
      shared title tokens: ayran
 
-══ [tr/YEMEK] titleJacc=0.50 ingJacc=0.75 stepDiff=0 calDiff=0%
-  ⭐ KEEP [ankara-beypazari-guveci] "Ankara Beypazarı Güveci" (7i/5s, 120dk, 540kcal)
-     SIL  [beypazari-etli-guvec] "Beypazarı Etli Güveç" (7i/5s, 145dk, 540kcal)
-     shared title tokens: beypazari
-
-══ [us/YEMEK] titleJacc=0.67 ingJacc=0.75 stepDiff=0 calDiff=0%
-  ⭐ KEEP [new-orleans-jambalaya] "New Orleans Jambalaya" (7i/5s, 65dk, 520kcal)
-     SIL  [new-orleans-tavuklu-jambalaya] "New Orleans Tavuklu Jambalaya" (7i/5s, 56dk, 520kcal)
-     shared title tokens: orleans, jambalaya
-
-══ [us/KAHVALTI] titleJacc=1.00 ingJacc=0.75 stepDiff=1 calDiff=0%
-  ⭐ KEEP [new-york-lox-bagel-tabagi] "New York Bagel Lox" (7i/6s, 16dk, 520kcal)
-     SIL  [new-york-bagel-lox] "New York Lox Bagel" (7i/5s, 15dk, 520kcal)
-     shared title tokens: bagel
+══ [tr/YEMEK] titleJacc=0.67 ingJacc=0.75 stepDiff=1 calDiff=0%
+  ⭐ KEEP [corum-iskilip-dolmasi-lenger] "Çorum İskilip Dolması Lenger" (7i/6s, 220dk, 610kcal)
+     SIL  [corum-iskilip-dolmasi] "Çorum İskilip Dolması" (7i/5s, 105dk, 610kcal)
+     shared title tokens: corum, iskilip
 
 ══ [tr/YEMEK] titleJacc=0.67 ingJacc=0.75 stepDiff=0 calDiff=0%
   ⭐ KEEP [mugla-cokertme-kebabi] "Muğla Çökertme Kebabı" (7i/5s, 70dk, 620kcal)
      SIL  [mugla-cokertme-kebabi-citir] "Muğla Çıtır Çökertme Kebabı" (7i/5s, 45dk, 620kcal)
      shared title tokens: mugla, cokertme
 
-══ [tr/YEMEK] titleJacc=0.67 ingJacc=0.75 stepDiff=1 calDiff=12%
-  ⭐ KEEP [corum-iskilip-dolmasi-lenger] "Çorum İskilip Dolması Lenger" (7i/6s, 220dk, 610kcal)
-     SIL  [corum-iskilip-dolmasi-ev] "Çorum İskilip Dolması Ev Usulü" (7i/5s, 215dk, 690kcal)
-     shared title tokens: corum, iskilip
-
-══ [tr/YEMEK] titleJacc=0.67 ingJacc=0.73 stepDiff=0 calDiff=9%
-  ⭐ KEEP [hatay-tepsi-kebabi-antakya] "Hatay Tepsi Kebabı Antakya" (8i/6s, 60dk, 430kcal)
-     SIL  [hatay-tepsi-kebabi-domatesli] "Hatay Tepsi Kebabı" (11i/6s, 57dk, 390kcal)
-     shared title tokens: hatay, tepsi
-
-══ [tr/YEMEK] titleJacc=0.67 ingJacc=0.73 stepDiff=2 calDiff=11%
-  ⭐ KEEP [siirt-perde-pilavi-bademli] "Siirt Bademli Perde Pilavı" (9i/5s, 105dk, 760kcal)
-     SIL  [siirt-perde-pilavi] "Siirt Perde Pilavı" (10i/7s, 120dk, 680kcal)
-     shared title tokens: siirt, perde
-
-══ [it/CORBA] titleJacc=0.50 ingJacc=0.71 stepDiff=1 calDiff=23%
-  ⭐ KEEP [floransa-ribollita-corba] "Floransa Ribollita Çorba" (7i/5s, 80dk, 310kcal)
-     SIL  [ribollita] "Ribollita" (5i/6s, 65dk, 240kcal)
-     shared title tokens: ribollita
-
 ══ [tr/YEMEK] titleJacc=0.67 ingJacc=0.71 stepDiff=1 calDiff=20%
   ⭐ KEEP [fasulye-diblesi-giresun-usulu] "Giresun Usulü Fasulye Diblesi" (6i/6s, 45dk, 232kcal)
      SIL  [fasulye-diblesi-ordu-usulu] "Fasulye Diblesi" (6i/5s, 36dk, 186kcal)
      shared title tokens: fasulye, diblesi
-
-══ [gr/YEMEK] titleJacc=0.50 ingJacc=0.71 stepDiff=2 calDiff=9%
-  ⭐ KEEP [spanakopita] "Spanakopita" (5i/5s, 70dk, 310kcal)
-     SIL  [atina-spanakopita] "Atina Spanakopita" (7i/7s, 80dk, 340kcal)
-     shared title tokens: spanakopita
-
-══ [in/ICECEK] titleJacc=1.00 ingJacc=0.71 stepDiff=0 calDiff=14%
-  ⭐ KEEP [masala-chai] "Masala Chai" (5i/3s, 15dk, 140kcal)
-     SIL  [masala-cayi] "Masala Çayı" (7i/3s, 17dk, 120kcal)
-     shared title tokens: masala
 
 ══ [tr/TATLI] titleJacc=0.50 ingJacc=0.71 stepDiff=1 calDiff=4%
   ⭐ KEEP [kunefe] "Künefe" (7i/5s, 35dk, 450kcal)
@@ -295,21 +125,6 @@ Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calD
   ⭐ KEEP [balikesir-tirit] "Balıkesir Tirit" (7i/5s, 90dk, 520kcal)
      SIL  [tirit] "Tirit" (5i/6s, 115dk, 480kcal)
      shared title tokens: tirit
-
-══ [kr/APERATIF] titleJacc=0.67 ingJacc=0.71 stepDiff=2 calDiff=15%
-  ⭐ KEEP [busan-haemul-pajeon] "Busan Haemul Pajeon" (7i/6s, 29dk, 340kcal)
-     SIL  [haemul-pajeon] "Haemul Pajeon" (5i/4s, 35dk, 290kcal)
-     shared title tokens: haemul, pajeon
-
-══ [jp/YEMEK] titleJacc=0.50 ingJacc=0.71 stepDiff=0 calDiff=17%
-  ⭐ KEEP [kyoto-oyakodon] "Kyoto Oyakodon" (7i/6s, 25dk, 520kcal)
-     SIL  [oyakodon] "Oyakodon" (5i/6s, 30dk, 430kcal)
-     shared title tokens: oyakodon
-
-══ [pe/YEMEK] titleJacc=0.50 ingJacc=0.71 stepDiff=1 calDiff=5%
-  ⭐ KEEP [lima-lomo-saltado-patatesi] "Lima Lomo Saltado Patatesi" (7i/5s, 38dk, 560kcal)
-     SIL  [lomo-saltado] "Lomo Saltado" (5i/6s, 45dk, 530kcal)
-     shared title tokens: saltado
 
 ══ [tr/TATLI] titleJacc=0.67 ingJacc=0.71 stepDiff=1 calDiff=6%
   ⭐ KEEP [balikesir-hosmerim-tatlisi] "Balıkesir Höşmerim Tatlısı" (6i/6s, 35dk, 340kcal)
@@ -326,21 +141,6 @@ Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calD
      SIL  [tokyo-chicken-katsu-curry] "Tokyo Chicken Katsu Curry" (8i/5s, 60dk, 690kcal)
      shared title tokens: tokyo, katsu, curry
 
-══ [ru/YEMEK] titleJacc=1.00 ingJacc=0.70 stepDiff=1 calDiff=0%
-  ⭐ KEEP [moscow-beef-stroganoff] "Moskova Beef Stroganoff" (9i/7s, 50dk, 520kcal)
-     SIL  [moskova-dana-stroganoff] "Moskova Dana Stroganoff" (8i/6s, 45dk, 520kcal)
-     shared title tokens: moskova, stroganoff
-
-══ [id/YEMEK] titleJacc=0.67 ingJacc=0.70 stepDiff=1 calDiff=14%
-  ⭐ KEEP [jakarta-nasi-goreng-ayamli] "Jakarta Nasi Goreng Ayam" (9i/6s, 30dk, 445kcal)
-     SIL  [jakarta-nasi-goreng-ayam] "Jakarta Tavuklu Nasi Goreng" (8i/5s, 33dk, 520kcal)
-     shared title tokens: jakarta, goreng
-
-══ [gr/CORBA] titleJacc=1.00 ingJacc=0.67 stepDiff=1 calDiff=15%
-  ⭐ KEEP [fasolada-yunan-usulu] "Fasolada" (5i/6s, 47dk, 216kcal)
-     SIL  [fasolada-corbasi-yunan-usulu] "Fasolada Çorbası" (5i/5s, 36dk, 184kcal)
-     shared title tokens: fasolada
-
 ══ [tr/YEMEK] titleJacc=1.00 ingJacc=0.67 stepDiff=1 calDiff=28%
   ⭐ KEEP [ordu-findikli-fasulye-kavurmasi] "Ordu Fındıklı Fasulye Kavurması" (5i/6s, 30dk, 245kcal)
      SIL  [findikli-fasulye-kavurmasi-ordu-usulu] "Fındıklı Fasulye Kavurması" (5i/5s, 30dk, 176kcal)
@@ -350,11 +150,6 @@ Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calD
   ⭐ KEEP [patatesli-yumurta] "Patatesli Yumurta" (5i/5s, 30dk, 290kcal)
      SIL  [patatesli-yumurta-tavasi-erzurum-usulu] "Patatesli Yumurta Tavası" (5i/5s, 25dk, 242kcal)
      shared title tokens: patatesli, yumurta
-
-══ [cu/YEMEK] titleJacc=0.67 ingJacc=0.67 stepDiff=0 calDiff=9%
-  ⭐ KEEP [siyah-fasulyeli-pilav-bowl-kuba-usulu] "Siyah Fasulyeli Pilav Bowl" (5i/5s, 30dk, 226kcal)
-     SIL  [siyah-fasulyeli-pirinc-tava-kuba-usulu] "Siyah Fasulyeli Pirinç Tava" (5i/5s, 30dk, 248kcal)
-     shared title tokens: siyah, fasulyeli
 
 ══ [tr/YEMEK] titleJacc=0.50 ingJacc=0.67 stepDiff=1 calDiff=29%
   ⭐ KEEP [cokertme-kebabi-mugla-usulu] "Çökertme Kebabı" (8i/6s, 45dk, 438kcal)
@@ -366,25 +161,10 @@ Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calD
      SIL  [trabzon-kayganasi] "Trabzon Kayganası" (4i/7s, 20dk, 220kcal)
      shared title tokens: kayganasi
 
-══ [se/TATLI] titleJacc=0.50 ingJacc=0.67 stepDiff=0 calDiff=4%
-  ⭐ KEEP [ostkaka] "Ostkaka" (5i/5s, 65dk, 248kcal)
-     SIL  [ostkaka-smaland-usulu] "Smaland Ostkaka" (5i/5s, 75dk, 258kcal)
-     shared title tokens: ostkaka
-
 ══ [tr/TATLI] titleJacc=0.50 ingJacc=0.67 stepDiff=0 calDiff=11%
   ⭐ KEEP [muhallebi] "Muhallebi" (5i/5s, 20dk, 190kcal)
      SIL  [karayemisli-muhallebi-trabzon-usulu] "Karayemişli Muhallebi" (5i/5s, 22dk, 214kcal)
      shared title tokens: muhallebi
-
-══ [ma/CORBA] titleJacc=0.50 ingJacc=0.67 stepDiff=1 calDiff=22%
-  ⭐ KEEP [harira-kuzey-afrika-usulu] "Harira" (5i/6s, 44dk, 238kcal)
-     SIL  [nohutlu-harira-corbasi-fas-usulu] "Nohutlu Harira Çorbası" (5i/5s, 36dk, 186kcal)
-     shared title tokens: harira
-
-══ [ru/SALATA] titleJacc=0.50 ingJacc=0.67 stepDiff=1 calDiff=4%
-  ⭐ KEEP [dereotlu-olivier-salatasi] "Dereotlu Olivier Salatası" (6i/7s, 40dk, 250kcal)
-     SIL  [olivier-salatasi] "Olivier Salatası" (4i/6s, 45dk, 260kcal)
-     shared title tokens: olivier
 
 ══ [tr/TATLI] titleJacc=0.50 ingJacc=0.67 stepDiff=1 calDiff=8%
   ⭐ KEEP [sutlac] "Sütlaç" (5i/6s, 40dk, 220kcal)
@@ -396,20 +176,10 @@ Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calD
      SIL  [akcaabat-koftesi] "Akçaabat Köftesi" (4i/6s, 40dk, 470kcal)
      shared title tokens: akcaabat
 
-══ [in/TATLI] titleJacc=1.00 ingJacc=0.67 stepDiff=0 calDiff=1%
-  ⭐ KEEP [gajar-halwa-kup-hint-usulu] "Gajar Halwa Kup" (5i/6s, 32dk, 214kcal)
-     SIL  [gajar-halwa-hint-kis-usulu] "Gajar Halwa" (5i/6s, 42dk, 212kcal)
-     shared title tokens: gajar, halwa
-
 ══ [au/YEMEK] titleJacc=0.67 ingJacc=0.67 stepDiff=0 calDiff=8%
   ⭐ KEEP [beetroot-relish-burger-avustralya-usulu] "Beetroot Relish Burger" (5i/5s, 30dk, 338kcal)
      SIL  [beetroot-burger-avustralya-usulu] "Beetroot Burger" (5i/5s, 25dk, 366kcal)
      shared title tokens: beetroot, burger
-
-══ [ma/CORBA] titleJacc=1.00 ingJacc=0.67 stepDiff=0 calDiff=5%
-  ⭐ KEEP [bessara-kis-corbasi-fas-usulu] "Bessara Kış Çorbası" (5i/5s, 40dk, 198kcal)
-     SIL  [bessara-fas-usulu] "Bessara" (5i/5s, 45dk, 188kcal)
-     shared title tokens: bessara
 
 ══ [tr/TATLI] titleJacc=0.50 ingJacc=0.67 stepDiff=0 calDiff=18%
   ⭐ KEEP [tahinli-kuru-elma-tatlisi-nigde-usulu] "Niğde Tahinli Kuru Elma Tatlısı" (5i/5s, 30dk, 194kcal)
@@ -435,11 +205,6 @@ Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calD
   ⭐ KEEP [tereyagli-pazi-diblesi-trabzon-usulu] "Tereyağlı Pazı Diblesi" (5i/7s, 34dk, 212kcal)
      SIL  [kuzu-etli-pazi-diblesi-amasya-usulu] "Kuzu Etli Pazı Diblesi" (5i/6s, 42dk, 302kcal)
      shared title tokens: diblesi
-
-══ [in/YEMEK] titleJacc=0.50 ingJacc=0.67 stepDiff=0 calDiff=9%
-  ⭐ KEEP [rajma-masala-hint-usulu] "Rajma Masala" (5i/5s, 40dk, 248kcal)
-     SIL  [rajma] "Rajma" (5i/5s, 50dk, 272kcal)
-     shared title tokens: rajma
 
 ══ [cu/KOKTEYL] titleJacc=0.67 ingJacc=0.67 stepDiff=2 calDiff=4%
   ⭐ KEEP [naneli-guava-mojito-kuba-usulu] "Naneli Guava Mojito" (5i/6s, 6dk, 176kcal)
@@ -471,30 +236,15 @@ Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calD
      SIL  [portakalli-un-helvasi-hatay-usulu] "Portakallı Un Helvası" (5i/5s, 24dk, 244kcal)
      shared title tokens: helvasi
 
-══ [tr/KAHVALTI] titleJacc=1.00 ingJacc=0.67 stepDiff=1 calDiff=23%
-  ⭐ KEEP [van-murtuga-kahvaltisi] "Van Murtuğa Kahvaltısı" (6i/6s, 15dk, 320kcal)
-     SIL  [murtuga] "Murtuğa" (4i/5s, 15dk, 248kcal)
-     shared title tokens: murtuga
-
 ══ [tr/YEMEK] titleJacc=0.67 ingJacc=0.67 stepDiff=0 calDiff=1%
   ⭐ KEEP [nar-eksili-kuru-patlican-pilavi-mardin-usulu] "Nar Ekşili Kuru Patlıcan Pilavı" (5i/6s, 36dk, 226kcal)
      SIL  [nar-eksili-kuru-patlican-dolgusu-gaziantep-usulu] "Nar Ekşili Kuru Patlıcan Dolgusu" (5i/6s, 44dk, 224kcal)
      shared title tokens: eksili, patlican
 
-══ [in/YEMEK] titleJacc=0.67 ingJacc=0.67 stepDiff=1 calDiff=15%
-  ⭐ KEEP [mumbai-pav-bhaji-tereyagli] "Mumbai Pav Bhaji" (9i/6s, 65dk, 480kcal)
-     SIL  [mumbai-sebzeli-pav-bhaji] "Mumbai Sebzeli Pav Bhaji" (7i/5s, 56dk, 410kcal)
-     shared title tokens: mumbai, bhaji
-
 ══ [tr/TATLI] titleJacc=0.50 ingJacc=0.67 stepDiff=0 calDiff=25%
   ⭐ KEEP [aydin-kuru-incirli-lor-tatlisi] "Aydın Kuru İncirli Lor Tatlısı" (5i/5s, 22dk, 285kcal)
      SIL  [incirli-lor-tatlisi-aydin-usulu] "İncirli Lor Tatlısı" (5i/5s, 30dk, 214kcal)
      shared title tokens: incirli
-
-══ [it/YEMEK] titleJacc=1.00 ingJacc=0.67 stepDiff=2 calDiff=10%
-  ⭐ KEEP [milan-risotto-alla-milanese] "Milano Risotto alla Milanese" (8i/7s, 40dk, 430kcal)
-     SIL  [milano-risotto-milanese] "Milano Risotto Milanese" (7i/5s, 38dk, 480kcal)
-     shared title tokens: milano, risotto, milanese
 
 ══ [hu/CORBA] titleJacc=0.50 ingJacc=0.67 stepDiff=1 calDiff=7%
   ⭐ KEEP [budapeste-paprikali-gulyas-corbasi] "Budapeşte Gulyás Çorbası" (8i/6s, 110dk, 420kcal)
@@ -521,11 +271,6 @@ Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calD
      SIL  [kestaneli-tavuk-kapama-bursa-usulu] "Kestaneli Tavuk Kapama" (5i/6s, 50dk, 418kcal)
      shared title tokens: kestaneli, tavuk
 
-══ [kr/YEMEK] titleJacc=1.00 ingJacc=0.64 stepDiff=2 calDiff=15%
-  ⭐ KEEP [seul-bibimbap-kasesi] "Seul Bibimbap Kasesi" (9i/7s, 50dk, 475kcal)
-     SIL  [seul-bibimbap] "Seul Bibimbap" (9i/5s, 52dk, 560kcal)
-     shared title tokens: bibimbap
-
 ══ [tr/YEMEK] titleJacc=0.50 ingJacc=0.63 stepDiff=1 calDiff=13%
   ⭐ KEEP [imam-bayildi] "İmam Bayıldı" (8i/6s, 60dk, 200kcal)
      SIL  [zeytinyagli-imam-bayildi] "Zeytinyağlı İmam Bayıldı" (5i/7s, 70dk, 230kcal)
@@ -536,15 +281,10 @@ Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calD
      SIL  [erzurum-kadayif-dolmasi] "Erzurum Kadayıf Dolması" (7i/5s, 48dk, 390kcal)
      shared title tokens: kadayif
 
-══ [it/YEMEK] titleJacc=1.00 ingJacc=0.63 stepDiff=2 calDiff=0%
-  ⭐ KEEP [spaghetti-carbonara] "Spaghetti Carbonara" (6i/5s, 25dk, 650kcal)
-     SIL  [rome-carbonara] "Roma Spaghetti Carbonara" (7i/7s, 30dk, 650kcal)
-     shared title tokens: spaghetti, carbonara
-
-══ [it/YEMEK] titleJacc=0.67 ingJacc=0.63 stepDiff=1 calDiff=8%
-  ⭐ KEEP [sicilya-pasta-alla-norma] "Sicilya Pasta Alla Norma" (8i/5s, 46dk, 480kcal)
-     SIL  [pasta-alla-norma] "Pasta Alla Norma" (5i/6s, 45dk, 520kcal)
-     shared title tokens: pasta, norma
+══ [kr/YEMEK] titleJacc=1.00 ingJacc=0.63 stepDiff=1 calDiff=7%
+  ⭐ KEEP [seoul-bulgogi] "Seul Bulgogi" (9i/7s, 95dk, 460kcal)
+     SIL  [bulgogi] "Bulgogi" (5i/6s, 47dk, 430kcal)
+     shared title tokens: bulgogi
 
 ══ [tr/SALATA] titleJacc=0.50 ingJacc=0.63 stepDiff=0 calDiff=0%
   ⭐ KEEP [urfa-nar-eksili-bostana] "Urfa Nar Ekşili Bostana" (8i/5s, 18dk, 95kcal)
@@ -560,11 +300,6 @@ Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calD
   ⭐ KEEP [balikesir-hosmerim-peynir-tatlisi] "Balıkesir Höşmerim" (7i/7s, 45dk, 310kcal)
      SIL  [balikesir-hosmerim-tatlisi] "Balıkesir Höşmerim Tatlısı" (6i/6s, 35dk, 340kcal)
      shared title tokens: balikesir, hosmerim
-
-══ [ma/YEMEK] titleJacc=0.60 ingJacc=0.63 stepDiff=1 calDiff=17%
-  ⭐ KEEP [kazablanka-limonlu-tavuk-tajin] "Kazablanka Limonlu Tavuk Tajin" (8i/6s, 80dk, 520kcal)
-     SIL  [kazablanka-limonlu-tavuk-tagine] "Kazablanka Limonlu Tavuk Tagine" (7i/5s, 75dk, 430kcal)
-     shared title tokens: kazablanka, limonlu, tavuk
 
 ══ [tr/TATLI] titleJacc=0.67 ingJacc=0.63 stepDiff=0 calDiff=5%
   ⭐ KEEP [bursa-tahinli-pide-cevizli] "Bursa Cevizli Tahinli Pide" (7i/5s, 53dk, 430kcal)
@@ -585,11 +320,6 @@ Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calD
   ⭐ KEEP [golden-gaytime-kup-avustralya-usulu] "Golden Gaytime Kup" (4i/6s, 72dk, 226kcal)
      SIL  [golden-gaytime-kadeh-tatlisi-avustralya-usulu] "Golden Gaytime Kadeh Tatlısı" (4i/6s, 14dk, 292kcal)
      shared title tokens: golden, gaytime
-
-══ [pe/ICECEK] titleJacc=0.67 ingJacc=0.60 stepDiff=0 calDiff=4%
-  ⭐ KEEP [chicha-morada-spritz-peru-usulu] "Chicha Morada Spritz" (4i/3s, 6dk, 48kcal)
-     SIL  [chicha-morada-fizz-peru-usulu] "Chicha Morada Fizz" (4i/3s, 6dk, 46kcal)
-     shared title tokens: chicha, morada
 
 ══ [tr/TATLI] titleJacc=0.60 ingJacc=0.60 stepDiff=1 calDiff=9%
   ⭐ KEEP [fistikli-sutlu-irmik-tatlisi-kahramanmaras-usulu] "Kahramanmaraş Fıstıklı Sütlü İrmik Tatlısı" (4i/6s, 22dk, 214kcal)
@@ -621,11 +351,6 @@ Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calD
      SIL  [limonlu-zencefil-cayi] "Limonlu Zencefil Çayı" (3i/3s, 12dk, 18kcal)
      shared title tokens: zencefil
 
-══ [jp/ICECEK] titleJacc=0.67 ingJacc=0.60 stepDiff=0 calDiff=27%
-  ⭐ KEEP [kavrulmus-hojicha-latte] "Kavrulmuş Hojicha Latte" (4i/3s, 10dk, 95kcal)
-     SIL  [hojicha-latte] "Hojicha Latte" (4i/3s, 10dk, 130kcal)
-     shared title tokens: hojicha, latte
-
 ══ [tr/ICECEK] titleJacc=0.50 ingJacc=0.60 stepDiff=0 calDiff=16%
   ⭐ KEEP [salep] "Salep" (4i/3s, 15dk, 190kcal)
      SIL  [salep-latte] "Salep Latte" (4i/3s, 12dk, 160kcal)
@@ -635,11 +360,6 @@ Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calD
   ⭐ KEEP [adacayli-uzum-kompostosu-denizli-usulu] "Adaçaylı Üzüm Kompostosu" (4i/3s, 18dk, 64kcal)
      SIL  [adacayli-seftali-kompostosu-manisa-usulu] "Adaçaylı Şeftali Kompostosu" (4i/3s, 20dk, 58kcal)
      shared title tokens: adacayli, kompostosu
-
-══ [se/YEMEK] titleJacc=1.00 ingJacc=0.60 stepDiff=1 calDiff=0%
-  ⭐ KEEP [pyttipanna-med-agg] "Pyttipanna med Ägg" (4i/6s, 35dk, 360kcal)
-     SIL  [pyttipanna] "Pyttipanna" (4i/5s, 40dk, 360kcal)
-     shared title tokens: pyttipanna
 
 ══ [tr/TATLI] titleJacc=0.50 ingJacc=0.60 stepDiff=0 calDiff=16%
   ⭐ KEEP [tahinli-kabak-tatlisi-antalya-usulu] "Tahinli Kabak Tatlısı" (4i/5s, 40dk, 226kcal)
@@ -665,16 +385,6 @@ Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calD
   ⭐ KEEP [elmali-hashasli-kup-polonya-usulu] "Elmalı Haşhaşlı Kup" (4i/7s, 16dk, 206kcal)
      SIL  [elmali-hashasli-kek-kup-polonya-usulu] "Elmalı Haşhaşlı Kek Kup" (4i/7s, 10dk, 224kcal)
      shared title tokens: elmali, hashasli
-
-══ [in/ICECEK] titleJacc=0.50 ingJacc=0.60 stepDiff=0 calDiff=5%
-  ⭐ KEEP [zerdecalli-altin-sut] "Zerdeçallı Altın Süt" (4i/3s, 10dk, 114kcal)
-     SIL  [altin-sut] "Altın Süt" (4i/3s, 12dk, 120kcal)
-     shared title tokens: altin
-
-══ [hu/YEMEK] titleJacc=1.00 ingJacc=0.60 stepDiff=0 calDiff=13%
-  ⭐ KEEP [turos-csusza-tava-macar-usulu] "Túrós Csusza Tava" (4i/6s, 22dk, 294kcal)
-     SIL  [turos-csusza-macar-usulu] "Túrós Csusza" (4i/6s, 25dk, 336kcal)
-     shared title tokens: csusza
 
 ══ [in/YEMEK] titleJacc=0.67 ingJacc=0.60 stepDiff=1 calDiff=6%
   ⭐ KEEP [delhi-butter-chicken] "Delhi Butter Chicken" (10i/7s, 275dk, 520kcal)
@@ -711,16 +421,6 @@ Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calD
      SIL  [cevizli-goce-icli-borek-sivas-usulu] "Cevizli Göce İçli Börek" (4i/5s, 44dk, 276kcal)
      shared title tokens: cevizli
 
-══ [kr/YEMEK] titleJacc=0.50 ingJacc=0.60 stepDiff=0 calDiff=0%
-  ⭐ KEEP [seoul-bulgogi] "Seul Bulgogi" (9i/7s, 95dk, 460kcal)
-     SIL  [seul-bulgogi-marul-sarma] "Seul Bulgogi Marul Sarma" (8i/7s, 95dk, 460kcal)
-     shared title tokens: bulgogi
-
-══ [et/YEMEK] titleJacc=1.00 ingJacc=0.60 stepDiff=1 calDiff=21%
-  ⭐ KEEP [addis-ababa-misir-wat] "Addis Ababa Misir Wat" (8i/6s, 60dk, 260kcal)
-     SIL  [addis-ababa-misir-wot] "Addis Ababa Misir Wot" (8i/5s, 47dk, 330kcal)
-     shared title tokens: addis, ababa, misir
-
 ══ [tr/YEMEK] titleJacc=0.67 ingJacc=0.60 stepDiff=2 calDiff=14%
   ⭐ KEEP [tokat-yaprak-sarmasi-etli] "Tokat Etli Yaprak Sarma" (10i/7s, 180dk, 360kcal)
      SIL  [tokat-baklali-yaprak-sarma] "Tokat Baklalı Yaprak Sarma" (7i/5s, 100dk, 310kcal)
@@ -741,11 +441,6 @@ Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calD
      SIL  [domatesli-etli-arpa-sehriye-tava-balikesir-usulu] "Domatesli Etli Arpa Şehriye Tava" (4i/7s, 34dk, 322kcal)
      shared title tokens: domatesli
 
-══ [ru/YEMEK] titleJacc=1.00 ingJacc=0.60 stepDiff=0 calDiff=0%
-  ⭐ KEEP [moskova-pelmeni-kasesi] "Moskova Pelmeni Kasesi" (8i/6s, 72dk, 520kcal)
-     SIL  [moskova-pelmeni] "Moskova Pelmeni" (8i/6s, 67dk, 520kcal)
-     shared title tokens: moskova, pelmeni
-
 ══ [tr/APERATIF] titleJacc=1.00 ingJacc=0.60 stepDiff=0 calDiff=7%
   ⭐ KEEP [cevizli-sarimsakli-kabak-ezme-igdir-usulu] "Cevizli Sarımsaklı Kabak Ezme" (4i/4s, 20dk, 128kcal)
      SIL  [sarimsakli-cevizli-kabak-dip-igdir-usulu] "Sarımsaklı Cevizli Kabak Dip" (4i/4s, 18dk, 138kcal)
@@ -753,6 +448,6 @@ Strict pairs (titleJacc>=0.6 OR shortAllOverlap, ingJacc>=0.6, stepDiff<=2, calD
 
 
 === SUMMARY ===
-Total strict pairs: 166
-Unique SIL slug count: 150
-Estimated prod: 3679 -> 3529
+Total strict pairs: 92
+Unique SIL slug count: 89
+Estimated prod: 3572 -> 3483

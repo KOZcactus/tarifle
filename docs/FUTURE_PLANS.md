@@ -55,10 +55,12 @@ Sıradaki kullanıcı UX'i zenginleştirme:
 3. **Newsletter haftalık scheduled send** ~1 saat
    - Resend zaten bağlı, scheduler aktif et (Vercel cron)
 
-4. **Recipe step image upload altyapı** ~3-4 saat
-   - Admin'den step başına Cloudinary
-   - Schema RecipeStep.imageUrl
-   - Visual cooking gelecek için temel
+4. ~~**Recipe step image upload altyapı**~~. KARAR: yapılmayacak (oturum
+   23). Kerem feedback: "Her adıma fotoğraf zorlaması karışıklık,
+   tarifi en sonda final fotoğrafla bitirmek daha sade". `RecipeStep.
+   imageUrl` schema'da hazır kalır (ileride gerek olursa), ama UI
+   eklenmiyor. Final fotoğraf zaten `recipe.imageUrl` + kullanıcı
+   fotoğrafları (`RecipePhoto`) ile karşılanıyor.
 
 5. **Quality dashboard'dan top 10 tarif manuel rafine** ~30dk-1 saat
    - /admin/kalite'den en yüksek skorlu 10 tarifin tipNote/sug/step

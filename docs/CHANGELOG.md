@@ -2,7 +2,9 @@
 
 Her iş, ait olduğu kategorinin altında tek satırlık özet. Yeni iş ilgili kategorinin **en altına** eklenir. Kronolojik takip için `docs/PROJECT_STATUS.md`.
 
-> Son güncelleme: **Oturum 23 polish (26 Nis 2026).** **Canonical rename pipeline** (Mod I follow-up): 11 coğrafi prefix'li canonical → global slug rename (palak-paneer, chana-masala, gnocchi-alla-sorrentina, pasta-alla-norma, pizza-margherita, oyakodon, haemul-pajeon, ful-medames, lomo-saltado, kulak-corbasi, perde-pilavi). Yeni scripts: `identify-canonical-rename.ts` + `apply-canonical-rename.ts` + `rename-source-slugs.mjs`. next.config.ts 11 permanent redirect. AuditLog action=CANONICAL_RENAME. Detay: `docs/PROJECT_STATUS.md`.
+> Son güncelleme: **Oturum 23 polish 2 (26 Nis 2026).** **Mod IA pair-level audit** (Mod I cluster sonrasi 92 strict pair → Codex 3 batch → 27 DUPLICATE + 43 VARIANT + 19 UNCERTAIN). 26 clean auto sil (1 blocked atlandi). Prod 3572 → 3546 (-26). 19 UNCERTAIN Mod IB'ye. Detay: `docs/PROJECT_STATUS.md`.
+
+> Oturum 23 polish (26 Nis 2026). **Canonical rename pipeline** (Mod I follow-up): 11 coğrafi prefix'li canonical → global slug rename (palak-paneer, chana-masala, gnocchi-alla-sorrentina, pasta-alla-norma, pizza-margherita, oyakodon, haemul-pajeon, ful-medames, lomo-saltado, kulak-corbasi, perde-pilavi). Yeni scripts: `identify-canonical-rename.ts` + `apply-canonical-rename.ts` + `rename-source-slugs.mjs`. next.config.ts 11 permanent redirect. AuditLog action=CANONICAL_RENAME. Detay: `docs/PROJECT_STATUS.md`.
 
 > **Oturum 23 (26 Nis 2026).** **Mod I PIPELINE 5/5 TAM KAPANIŞ** (137 cluster / 248 sil önerisi → otomatik kategorize `scripts/classify-mod-i-pairs.ts` → 107 net sil: B1 14 + B2 32 + B3 18 + B4 14 + B5 29). Prod 3679 → 3572 (-107). Source 442 satır azaldı, AuditLog kayıtlı. rollback-batch.ts transaction timeout fix (5s → 120s). 24 cuisine kapsamı tamam (au+br+cn+cu+de+es+et+fr+gr+hu+id+in+it+jp+kr+ma+me+mx+ng+pe+pk+pl+ru+se+th+tr+us+vn). Detay: `docs/PROJECT_STATUS.md`.
 

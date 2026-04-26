@@ -1,0 +1,212 @@
+[
+  {
+    "pair": ["kars-ketesi", "kete-erzurum-tava-usulu"],
+    "classification": "VARIANT",
+    "winner": "",
+    "loser": "",
+    "reason": "Aynı kete ailesi ama Erzurum tava tekniği ve süre farkı var; bölgesel varyant gibi duruyor."
+  },
+  {
+    "pair": ["elmali-irmik-dolgu-kup-kirsehir-usulu", "elmali-irmik-kup-aksaray-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "elmali-irmik-dolgu-kup-kirsehir-usulu",
+    "loser": "elmali-irmik-kup-aksaray-usulu",
+    "reason": "Elma ve irmik tabanı aynı, süre eşit; dolgu ifadesi servis adı farkı gibi."
+  },
+  {
+    "pair": ["mardin-kaburga-pilavi", "kaburga-dolmasi"],
+    "classification": "DUPLICATE",
+    "winner": "mardin-kaburga-pilavi",
+    "loser": "kaburga-dolmasi",
+    "reason": "Kaburga, pilav ve pişirme tabanı aynı; kalori çok yakın, ad farkı geleneksel isim farkı."
+  },
+  {
+    "pair": ["kuymak", "trabzon-kuymak-telli"],
+    "classification": "UNCERTAIN",
+    "winner": "",
+    "loser": "",
+    "reason": "İçerik aynı görünse de kalori farkı yüksek; peynir oranı veya porsiyon farkı manuel bakılmalı."
+  },
+  {
+    "pair": ["tahinli-kabak-tatlisi-antalya-usulu", "cevizli-tahinli-kabak-tatlisi-hatay-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "tahinli-kabak-tatlisi-antalya-usulu",
+    "loser": "cevizli-tahinli-kabak-tatlisi-hatay-usulu",
+    "reason": "Tahinli kabak tatlısı tabanı aynı, ingredient örtüşmesi tam; ceviz başlık detayı gibi."
+  },
+  {
+    "pair": ["tavuklu-nohutlu-arpa-pilavi-ankara-usulu", "tavuklu-nohutlu-sehriye-pilavi-siirt-usulu"],
+    "classification": "VARIANT",
+    "winner": "",
+    "loser": "",
+    "reason": "Arpa ve şehriye ana tahıl farkı yaratıyor; süre ve kalori yakın olsa da ayrı pilav."
+  },
+  {
+    "pair": ["pierogi", "pierogi-ruskie"],
+    "classification": "VARIANT",
+    "winner": "",
+    "loser": "",
+    "reason": "Ruskie patatesli peynirli alt tür; kalori farkı da yüksek, klasik pierogi ile ayrı varyant."
+  },
+  {
+    "pair": ["nar-eksili-kisir-salatasi-orta-dogu-usulu", "beyrut-nar-eksili-kisir-kasesi"],
+    "classification": "VARIANT",
+    "winner": "",
+    "loser": "",
+    "reason": "Aynı kısır ailesi ama kase formu ve kalori farkı belirgin; Beyrut yorumu ayrı tutulmalı."
+  },
+  {
+    "pair": ["atina-musakka-patlicanli", "atina-musakka-firini"],
+    "classification": "DUPLICATE",
+    "winner": "atina-musakka-patlicanli",
+    "loser": "atina-musakka-firini",
+    "reason": "Atina musakka tabanı aynı, step ve kalori yakın; fırın ifadesi teknik değil ad uzatması."
+  },
+  {
+    "pair": ["sakizli-muhallebi-cesme-usulu", "sakizli-bademli-muhallebi-cesme-usulu"],
+    "classification": "VARIANT",
+    "winner": "",
+    "loser": "",
+    "reason": "Badem başlıkta ana aroma gibi duruyor; aynı muhallebi ailesi olsa da varyant sayılmalı."
+  },
+  {
+    "pair": ["cevizli-batirik-karaman-usulu", "batirik"],
+    "classification": "DUPLICATE",
+    "winner": "cevizli-batirik-karaman-usulu",
+    "loser": "batirik",
+    "reason": "Batırık tabanı aynı, kalori çok yakın; cevizli kayıt daha zengin canonical görünüyor."
+  },
+  {
+    "pair": ["peynir-helvasi-edirne-usulu", "irmikli-peynir-helvasi-canakkale-usulu"],
+    "classification": "VARIANT",
+    "winner": "",
+    "loser": "",
+    "reason": "İrmik başlıkta ana fark; Edirne ve Çanakkale peynir helvası ayrı yerel yorum olabilir."
+  },
+  {
+    "pair": ["sakizli-kabak-cicegi-dolmasi-mugla-usulu", "kabak-cicegi-dolmasi"],
+    "classification": "VARIANT",
+    "winner": "",
+    "loser": "",
+    "reason": "Sakız aroması ve Muğla yorumu ana fark oluşturuyor; generic dolmadan ayrı tutulmalı."
+  },
+  {
+    "pair": ["kayseri-pastirmali-yumurta", "pastirmali-yumurta"],
+    "classification": "DUPLICATE",
+    "winner": "kayseri-pastirmali-yumurta",
+    "loser": "pastirmali-yumurta",
+    "reason": "Pastırmalı yumurta tabanı aynı, step sayısı eşit; Kayseri prefix canonical ad gibi."
+  },
+  {
+    "pair": ["cevizli-kabak-mezesi-mardin-usulu", "cevizli-sarimsakli-kabak-ezme-igdir-usulu"],
+    "classification": "UNCERTAIN",
+    "winner": "",
+    "loser": "",
+    "reason": "Meze ve ezme çok yakın ama sarımsak, bölge ve kalori farkı var; manuel içerik bakılmalı."
+  },
+  {
+    "pair": ["delhi-butter-chicken", "delhi-makhani-tavuk-korisi"],
+    "classification": "DUPLICATE",
+    "winner": "delhi-butter-chicken",
+    "loser": "delhi-makhani-tavuk-korisi",
+    "reason": "Butter chicken ve makhani aynı Delhi tavuk körisi; ingredient ve kalori yakın."
+  },
+  {
+    "pair": ["narenciyeli-raki-fizz-alanya-usulu", "narenciyeli-raki-spritz-adana-usulu"],
+    "classification": "VARIANT",
+    "winner": "",
+    "loser": "",
+    "reason": "Fizz ve spritz kokteylde farklı servis tekniği olabilir; aynı narenciye tabanı yeterli değil."
+  },
+  {
+    "pair": ["havana-ropa-vieja-dana", "havana-ropa-vieja-tabagi"],
+    "classification": "DUPLICATE",
+    "winner": "havana-ropa-vieja-dana",
+    "loser": "havana-ropa-vieja-tabagi",
+    "reason": "Başlık aynı, tabak sadece servis formu; ingredient, step ve kalori farkı düşük."
+  },
+  {
+    "pair": ["konya-etli-ekmek", "konya-etli-ekmek-ocak"],
+    "classification": "DUPLICATE",
+    "winner": "konya-etli-ekmek",
+    "loser": "konya-etli-ekmek-ocak",
+    "reason": "Konya etli ekmek aynı tarif, ocak ifadesi pişirme ortamı; kalori ve ad çok yakın."
+  },
+  {
+    "pair": ["ayran", "yarpuzlu-ayran-igdir-usulu"],
+    "classification": "VARIANT",
+    "winner": "",
+    "loser": "",
+    "reason": "Yarpuz ana aroma farkı yaratıyor; sade ayranla aynı içecek ailesi ama ayrı varyant."
+  },
+  {
+    "pair": ["corum-iskilip-dolmasi-lenger", "corum-iskilip-dolmasi"],
+    "classification": "UNCERTAIN",
+    "winner": "",
+    "loser": "",
+    "reason": "Lenger servis kabı olabilir ama süre farkı çok büyük; içerik detayı olmadan silinmemeli."
+  },
+  {
+    "pair": ["mugla-cokertme-kebabi", "mugla-cokertme-kebabi-citir"],
+    "classification": "DUPLICATE",
+    "winner": "mugla-cokertme-kebabi",
+    "loser": "mugla-cokertme-kebabi-citir",
+    "reason": "Aynı Muğla çökertme, ingredient ve kalori eşit; çıtır sıfatı gerçek varyant göstermiyor."
+  },
+  {
+    "pair": ["fasulye-diblesi-giresun-usulu", "fasulye-diblesi-ordu-usulu"],
+    "classification": "VARIANT",
+    "winner": "",
+    "loser": "",
+    "reason": "Giresun ve Ordu diblesi yakın ama kalori farkı sınırda; yerel yorum olarak korunsun."
+  },
+  {
+    "pair": ["kunefe", "hasir-kunefe"],
+    "classification": "VARIANT",
+    "winner": "",
+    "loser": "",
+    "reason": "Hasır künefe şekil ve teknik olarak ayrı alt tür olabilir; generic künefeyle silinmemeli."
+  },
+  {
+    "pair": ["balikesir-tirit", "tirit"],
+    "classification": "UNCERTAIN",
+    "winner": "",
+    "loser": "",
+    "reason": "Tirit bölgesel farklılaşan bir yemek; metrikler yakın ama generic kayıt manuel incelenmeli."
+  },
+  {
+    "pair": ["balikesir-hosmerim-tatlisi", "balikesir-hosmerim-peynirli"],
+    "classification": "DUPLICATE",
+    "winner": "balikesir-hosmerim-tatlisi",
+    "loser": "balikesir-hosmerim-peynirli",
+    "reason": "Aynı Balıkesir höşmerimi, peynirli ifade tarifin doğası; süre ve kalori yakın."
+  },
+  {
+    "pair": ["kayseri-nevzine-tatlisi-cevizli", "nevzine-kayseri-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "kayseri-nevzine-tatlisi-cevizli",
+    "loser": "nevzine-kayseri-usulu",
+    "reason": "Nevzine aynı Kayseri tatlısı, cevizli kayıt daha açıklayıcı; metrikler yakın."
+  },
+  {
+    "pair": ["tokyo-katsu-curry-pilav", "tokyo-chicken-katsu-curry"],
+    "classification": "UNCERTAIN",
+    "winner": "",
+    "loser": "",
+    "reason": "Katsu curry aynı olabilir ama chicken açık protein farkı taşıyor; içerik detayı gerekir."
+  },
+  {
+    "pair": ["ordu-findikli-fasulye-kavurmasi", "findikli-fasulye-kavurmasi-ordu-usulu"],
+    "classification": "UNCERTAIN",
+    "winner": "",
+    "loser": "",
+    "reason": "Başlık aynı ama kalori farkı yüksek ve ingredient örtüşmesi düşük; silmeden önce DB bakılmalı."
+  },
+  {
+    "pair": ["patatesli-yumurta", "patatesli-yumurta-tavasi-erzurum-usulu"],
+    "classification": "DUPLICATE",
+    "winner": "patatesli-yumurta",
+    "loser": "patatesli-yumurta-tavasi-erzurum-usulu",
+    "reason": "Patatesli yumurta aynı tava kahvaltısı, step sayısı eşit; Erzurum eki gerçek fark göstermiyor."
+  }
+]

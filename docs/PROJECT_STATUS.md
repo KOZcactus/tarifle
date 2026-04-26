@@ -1,5 +1,13 @@
 # Tarifle, Proje Durumu
 
+> Oturum 23 polish 2 (26 Nis 2026), **Mod IA pair-level audit.**
+> Mod I cluster-based pipeline sonrasinda kalan 92 strict pair (post-Mod I
+> tarama) Codex'e teslim edildi (3 batch). Verify pipeline (yeni script
+> `verify-mod-ia-pairs.ts`) sonucu: 89 pair → 27 DUPLICATE + 43 VARIANT
+> + 19 UNCERTAIN. 26 clean DUPLICATE auto sil (1 blocked: butter-chicken
+> featured + global slug, manuel review icin Mod IB'ye birakildi).
+> Prod 3572 → 3546 (-26). UNCERTAIN'lar Mod IB ek pass'inde ele alinacak.
+
 > Oturum 23 polish (26 Nis 2026), **Canonical rename pipeline.**
 > Mod I sonrası 11 coğrafi prefix'li canonical slug + title global'e
 > rename: `mumbai-palak-paneer` → `palak-paneer`, `naples-pizza-

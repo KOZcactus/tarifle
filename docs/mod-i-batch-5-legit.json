@@ -1,0 +1,104 @@
+[
+  {
+    "cuisine": "se",
+    "type": "KAHVALTI",
+    "slugs": ["kanelbulle", "kanelbullar"],
+    "reason": "Ayni Isvec tursu tarcinli corek ailesi olsa da biri KAHVALTI, digeri YEMEK grubunda; Mod I kuralina gore cross-type silinmedi."
+  },
+  {
+    "cuisine": "se",
+    "type": "YEMEK",
+    "slugs": ["dereotlu-kofte-patates-tava-isvec-usulu", "dereotlu-kofte-patates-tepsisi-isvec-usulu", "dereotlu-kofte-tava-isvec-usulu"],
+    "reason": "Kofte tabani yakin, fakat patatesli tava, patatesli tepsi ve sade kremali tava farkli pisirme veya eslik kurgusu tasiyor."
+  },
+  {
+    "cuisine": "th",
+    "type": "SALATA",
+    "slugs": ["som-tam", "bangkok-yesil-mangolu-som-tam", "som-tam-misirli-tay-usulu"],
+    "reason": "Som tam ailesi ayni ama papaya, mango ve misir ana sebze farklari var; gercek varyant kabul edildi."
+  },
+  {
+    "cuisine": "th",
+    "type": "YEMEK",
+    "slugs": ["bangkok-pad-krapow-tavuklu", "pad-krapow", "pad-kra-pao-tofu-tay-usulu"],
+    "reason": "Pad Krapow ailesi yakin, fakat tavuk, dana ve tofu ana proteinleri farkli; sil listesine alinmadi."
+  },
+  {
+    "cuisine": "th",
+    "type": "TATLI",
+    "slugs": ["mango-sticky-rice", "mangolu-pirinc-kremasi-kup-tayland-usulu"],
+    "reason": "Mango ve pirinc ortak, fakat biri yapiskan pirinc klasik tabak, digeri pirinc kremasi kup formu; servis ve doku farkli."
+  },
+  {
+    "cuisine": "us",
+    "type": "CORBA",
+    "slugs": ["new-orleans-gumbo", "new-orleans-gumbo-tavuk-sosis"],
+    "reason": "Gumbo tabani ayni olsa da biri deniz mahsullu, digeri tavuk ve sosisli; ana protein farkli."
+  },
+  {
+    "cuisine": "us",
+    "type": "KOKTEYL",
+    "slugs": ["bourbon-cherry-smash-amerikan-usulu", "bourbon-elma-smash-amerikan-usulu"],
+    "reason": "Bourbon smash formu ayni ama visne suyu ve elma suyu ana meyve farki yaratiyor."
+  },
+  {
+    "cuisine": "us",
+    "type": "ICECEK",
+    "slugs": ["fistik-ezmeli-muz-smoothie", "hurmali-fistik-ezmeli-smoothie"],
+    "reason": "Fistik ezmesi ve muz ortak, fakat hurma eklenen kayit tatlandirma ve govdeyi degistiriyor; smoothie varyanti olarak korundu."
+  },
+  {
+    "cuisine": "us",
+    "type": "ICECEK",
+    "slugs": ["mocha", "mocha-protein-shake"],
+    "reason": "Mocha sicak espresso-sut icecegi, protein shake soguk filtre kahve ve protein tozuyla farkli amaca hizmet ediyor."
+  },
+  {
+    "cuisine": "vn",
+    "type": "ICECEK",
+    "slugs": ["ca-phe-sua-da", "ca-phe-sua-da-smoothie-vietnam-usulu"],
+    "reason": "Ayni kahve tabani olsa da smoothie kaydi buzlu kahveyi blender icecegine ceviriyor; form farki nedeniyle ana sil listesine alinmadi."
+  },
+  {
+    "cuisine": "vn",
+    "type": "KAHVALTI",
+    "slugs": ["otlu-yumurta-banh-mi-vietnam-usulu", "yesil-soganli-omlet-banh-mi-tost-vietnam-usulu"],
+    "reason": "Ikisi yumurtali banh mi olsa da biri taze otlu sandvic, digeri yesil soganli omlet tost; kucuk ama gercek form farki var."
+  },
+  {
+    "cuisine": "vn",
+    "type": "TATLI",
+    "slugs": ["muzlu-tapyoka-kup-vietnam-usulu", "muzlu-susamli-tapiyoka-kase-vietnam-usulu"],
+    "reason": "Susamli kase kaydi kavrulmus susam ve kase sunumuyla ayriliyor; yakin ama suphede LEGIT-VARIANT."
+  },
+  {
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "slugs": ["kuymak", "trabzon-kuymak-telli", "rize-telli-muhlama"],
+    "reason": "Misir unu, tereyagi ve peynir tabani cok yakin, fakat Kuymak ve Muhlama adlari bolgesel varyant olarak hassas; sadece ayni il icindeki tekrarlar sil listesine alindi."
+  },
+  {
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "slugs": ["kars-ketesi", "kete-erzurum-tava-usulu"],
+    "reason": "Kete ailesi yakin, fakat Kars firin ketesi ve Erzurum tava ketesi pisirme formu farkli; suphede silinmedi."
+  },
+  {
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "slugs": ["sakizli-kabak-cicegi-dolmasi-mugla-usulu", "kabak-cicegi-dolmasi"],
+    "reason": "Kabak cicegi dolmasi ayni aile, fakat damla sakizi Mugla kaydinda belirgin aroma farki kuruyor."
+  },
+  {
+    "cuisine": "tr",
+    "type": "TATLI",
+    "slugs": ["tahinli-kabak-tatlisi-antalya-usulu", "kabak-tatlisi", "cevizli-tahinli-kabak-tatlisi-hatay-usulu"],
+    "reason": "Kabak tatlisi ailesi yakin, fakat tahin, ceviz ve bolge sunumu belirgin; suphede sil listesine alinmadi."
+  },
+  {
+    "cuisine": "tr",
+    "type": "TATLI",
+    "slugs": ["un-helvasi-tekirdag-usulu", "bayburt-tel-helvasi", "kastamonu-top-helvasi", "portakalli-un-helvasi-hatay-usulu"],
+    "reason": "Helva ailesi yakin, fakat un helvasi, tel helvasi, top helvasi ve portakalli versiyon farkli teknik veya aroma tasiyor."
+  }
+]

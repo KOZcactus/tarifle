@@ -1,0 +1,452 @@
+[
+  {
+    "cuisine": "se",
+    "type": "APERATIF",
+    "canonicalSlug": "dereotlu-kur-somon",
+    "canonicalTitle": "Dereotlu Kür Somon",
+    "duplicateSlugs": ["gravlax-iskandinav-usulu"],
+    "duplicateTitles": ["Gravlax"],
+    "confidence": "high",
+    "reason": "Somon fileto, tuz, seker ve dereotuyla buzdolabinda kurleme akisi birebir ayni; ikisi de featured, listede once gelen canonical secildi."
+  },
+  {
+    "cuisine": "se",
+    "type": "APERATIF",
+    "canonicalSlug": "skagen-toast",
+    "canonicalTitle": "Skagen Toast",
+    "duplicateSlugs": ["toast-skagen", "skagenrora"],
+    "duplicateTitles": ["Toast Skagen", "Skagenröra"],
+    "confidence": "high",
+    "reason": "Karides, mayonez, ekmek ve dereotu veya eksi krema ile ayni Skagen karidesli tost; ad yazimi ve servis dili farkli."
+  },
+  {
+    "cuisine": "se",
+    "type": "CORBA",
+    "canonicalSlug": "artsoppa-isvec-usulu",
+    "canonicalTitle": "Ärtsoppa",
+    "duplicateSlugs": ["hardalli-artsoppa", "sari-bezelye-corbasi-stockholm-usulu"],
+    "duplicateTitles": ["Hardallı Ärtsoppa", "Sarı Bezelye Çorbası"],
+    "confidence": "medium",
+    "reason": "Sari bezelye, sogan, defne veya havuc ile pisirilen ayni Isvec bezelye corbasi; hardal servis ayrintisi ana tarifi degistirmiyor."
+  },
+  {
+    "cuisine": "se",
+    "type": "CORBA",
+    "canonicalSlug": "nyponsoppa-bademli-isvec-usulu",
+    "canonicalTitle": "Nyponsoppa",
+    "duplicateSlugs": ["rosehip-soup-iskandinav-usulu"],
+    "duplicateTitles": ["Rosehip Soup"],
+    "confidence": "high",
+    "reason": "Kusburnu puresi, su, seker ve nisastayla koyulastirilan ayni Isvec rosehip soup; biri yerel ad, biri Ingilizce ad."
+  },
+  {
+    "cuisine": "se",
+    "type": "TATLI",
+    "canonicalSlug": "kladdkaka-portakalli-isvec-usulu",
+    "canonicalTitle": "Kladdkaka",
+    "duplicateSlugs": ["portakalli-kladdkaka"],
+    "duplicateTitles": ["Portakallı Kladdkaka"],
+    "confidence": "medium",
+    "reason": "Tereyagi, seker, un, kakao ve firinda kisa pisirme ile ayni kladdkaka; portakal vurgusu iki kayitta da servis/aroma ayrintisi gibi duruyor."
+  },
+  {
+    "cuisine": "se",
+    "type": "TATLI",
+    "canonicalSlug": "ostkaka-smaland-usulu",
+    "canonicalTitle": "Smaland Ostkaka",
+    "duplicateSlugs": ["ostkaka"],
+    "duplicateTitles": ["Ostkaka"],
+    "confidence": "high",
+    "reason": "Lor peyniri, yumurta, krema, seker ve bademle firinlanan ayni Isvec peynir tatlisi; Smaland kaydi daha bolgesel adla tekrarliyor."
+  },
+  {
+    "cuisine": "se",
+    "type": "YEMEK",
+    "canonicalSlug": "pyttipanna-med-agg",
+    "canonicalTitle": "Pyttipanna med Ägg",
+    "duplicateSlugs": ["pyttipanna", "pytt-i-panna-iskandinav-usulu"],
+    "duplicateTitles": ["Pyttipanna", "Pytt i Panna"],
+    "confidence": "high",
+    "reason": "Patates, dana eti, sogan ve yumurtali tavada kizartma akisi ayni pyttipanna; yumurta zaten servis cekirdeginin parcasi."
+  },
+  {
+    "cuisine": "se",
+    "type": "YEMEK",
+    "canonicalSlug": "stockholm-swedish-meatballs",
+    "canonicalTitle": "Stockholm İsveç Köftesi",
+    "duplicateSlugs": ["kottbullar"],
+    "duplicateTitles": ["Köttbullar"],
+    "confidence": "medium",
+    "reason": "Dana kiyma, ekmek kirintisi, yumurta, sut veya krema ve kremali sosla ayni Isvec koftesi; Stockholm kaydi sosu daha tam kuruyor."
+  },
+  {
+    "cuisine": "th",
+    "type": "CORBA",
+    "canonicalSlug": "bangkok-tom-kha-gai-klasik",
+    "canonicalTitle": "Bangkok Tom Kha Gai Klasik",
+    "duplicateSlugs": ["tom-kha-gai"],
+    "duplicateTitles": ["Tom Kha Gai"],
+    "confidence": "high",
+    "reason": "Tavuk, Hindistan cevizi sutu veya kokos icecegi, galangal, lime ve mantarli ayni Tom Kha Gai corbasi; Bangkok kaydi daha ayrintili."
+  },
+  {
+    "cuisine": "th",
+    "type": "CORBA",
+    "canonicalSlug": "tom-yum",
+    "canonicalTitle": "Tom Yum",
+    "duplicateSlugs": ["bangkok-tom-yum-goong"],
+    "duplicateTitles": ["Bangkok Tom Yum Goong"],
+    "confidence": "high",
+    "reason": "Karides, limon otu, lime yapragi, mantar, balik sosu ve lime suyuyla ayni Tom Yum Goong; featured Tom Yum canonical secildi."
+  },
+  {
+    "cuisine": "th",
+    "type": "CORBA",
+    "canonicalSlug": "chiang-mai-khao-soi-tavuk",
+    "canonicalTitle": "Chiang Mai Khao Soi Tavuk",
+    "duplicateSlugs": ["khao-soi"],
+    "duplicateTitles": ["Khao Soi"],
+    "confidence": "high",
+    "reason": "Tavuk but, yumurtali eriste, Hindistan cevizi sutu veya kremasi, sari kori ezmesi ve lime ile ayni Khao Soi; featured kayit daha tamamlanmis."
+  },
+  {
+    "cuisine": "th",
+    "type": "YEMEK",
+    "canonicalSlug": "pad-thai",
+    "canonicalTitle": "Pad Thai",
+    "duplicateSlugs": ["bangkok-pad-thai-karidesli"],
+    "duplicateTitles": ["Bangkok Karidesli Pad Thai"],
+    "confidence": "medium",
+    "reason": "Pirinc eristesi, karides, yumurta, soya veya balik sosu, taze sogan ve kuruyemisle ayni Pad Thai; Bangkok kaydi demirhindi ve kajuyla daha ayrintili."
+  },
+  {
+    "cuisine": "th",
+    "type": "YEMEK",
+    "canonicalSlug": "bangkok-pad-see-ew",
+    "canonicalTitle": "Bangkok Pad See Ew",
+    "duplicateSlugs": ["pad-see-ew"],
+    "duplicateTitles": ["Pad See Ew"],
+    "confidence": "high",
+    "reason": "Pirinc noodle, tavuk, yumurta, koyu soya sosu ve yesil sebzeyle wokta cevirmeye dayanan ayni Pad See Ew."
+  },
+  {
+    "cuisine": "us",
+    "type": "CORBA",
+    "canonicalSlug": "boston-clam-chowder",
+    "canonicalTitle": "Boston Clam Chowder",
+    "duplicateSlugs": ["clam-chowder-abd-sahil-usulu"],
+    "duplicateTitles": ["Clam Chowder"],
+    "confidence": "medium",
+    "reason": "Midye, patates, sogan, un, sut veya krema ile ayni New England clam chowder; Boston kaydi daha zengin olculendirilmis."
+  },
+  {
+    "cuisine": "us",
+    "type": "CORBA",
+    "canonicalSlug": "new-orleans-gumbo",
+    "canonicalTitle": "New Orleans Deniz Mahsullü Gumbo",
+    "duplicateSlugs": ["louisiana-karidesli-gumbo"],
+    "duplicateTitles": ["Louisiana Karidesli Gumbo"],
+    "confidence": "high",
+    "reason": "Karides, tutsulenmis sosis, un-yag roux, kereviz, yesil biber ve pirinc servisli ayni deniz mahsullu gumbo."
+  },
+  {
+    "cuisine": "us",
+    "type": "KAHVALTI",
+    "canonicalSlug": "new-york-lox-bagel-tabagi",
+    "canonicalTitle": "New York Bagel Lox",
+    "duplicateSlugs": ["new-york-bagel-lox"],
+    "duplicateTitles": ["New York Lox Bagel"],
+    "confidence": "high",
+    "reason": "Bagel, krem peynir, fume somon, kapari, kirmizi sogan, dereotu ve limon birebir ayni New York lox bagel."
+  },
+  {
+    "cuisine": "us",
+    "type": "YEMEK",
+    "canonicalSlug": "new-orleans-creole-jambalaya",
+    "canonicalTitle": "New Orleans Creole Jambalaya",
+    "duplicateSlugs": ["new-orleans-jambalaya", "new-orleans-tavuklu-jambalaya", "jambalaya"],
+    "duplicateTitles": ["New Orleans Jambalaya", "New Orleans Tavuklu Jambalaya", "Jambalaya"],
+    "confidence": "medium",
+    "reason": "Pirinc, tavuk, tutsulenmis sosis, kereviz, yesil biber, domates ve Cajun/Creole pisirme akisi ayni jambalaya; karides varligi servis zenginligi gibi duruyor."
+  },
+  {
+    "cuisine": "vn",
+    "type": "APERATIF",
+    "canonicalSlug": "banh-tom-vietnam-usulu",
+    "canonicalTitle": "Bánh Tôm",
+    "duplicateSlugs": ["banh-tom"],
+    "duplicateTitles": ["Banh Tom"],
+    "confidence": "high",
+    "reason": "Karides, tatli patates, un ve pirinc unuyla kizartilan ayni Vietnam Banh Tom; fark sadece aksanli yazim."
+  },
+  {
+    "cuisine": "vn",
+    "type": "CORBA",
+    "canonicalSlug": "pho-bo",
+    "canonicalTitle": "Pho Bo",
+    "duplicateSlugs": ["hanoi-pho-bo"],
+    "duplicateTitles": ["Hanoi Pho Bo"],
+    "confidence": "medium",
+    "reason": "Dana kemik suyu, pirinc eristesi, dana dilimleri, sogan, zencefil ve yildiz anasonla ayni Pho Bo; Hanoi kaydi daha ayrintili."
+  },
+  {
+    "cuisine": "vn",
+    "type": "CORBA",
+    "canonicalSlug": "pho-ga",
+    "canonicalTitle": "Pho Ga",
+    "duplicateSlugs": ["hanoi-tavuklu-pho", "tavuk-pho-hizli-tencere-vietnam-usulu"],
+    "duplicateTitles": ["Hanoi Tavuklu Pho", "Tavuk Pho Hızlı Tencere"],
+    "confidence": "medium",
+    "reason": "Tavuk, pirinc eristesi, zencefil, sogan veya tavuk suyu ile ayni tavuk pho; hizli tencere kaydi yontemi kisaltiyor ama yemek ayni."
+  },
+  {
+    "cuisine": "vn",
+    "type": "ICECEK",
+    "canonicalSlug": "ca-phe-sua-da",
+    "canonicalTitle": "Cà Phê Sữa Đá",
+    "duplicateSlugs": ["vietnam-buzlu-kahvesi"],
+    "duplicateTitles": ["Vietnam Buzlu Kahvesi"],
+    "confidence": "high",
+    "reason": "Vietnam kahvesi, yogunlastirilmis sut ve buzla ayni buzlu kahve; biri yerel ad, digeri Turkce acik ad."
+  },
+  {
+    "cuisine": "vn",
+    "type": "ICECEK",
+    "canonicalSlug": "egg-coffee",
+    "canonicalTitle": "Egg Coffee",
+    "duplicateSlugs": ["vietnam-yumurta-kahvesi"],
+    "duplicateTitles": ["Vietnam Yumurta Kahvesi"],
+    "confidence": "high",
+    "reason": "Sert kahve, yumurta sarisi, yogunlastirilmis sut ve sekerle cirpilan ayni Vietnam yumurta kahvesi."
+  },
+  {
+    "cuisine": "vn",
+    "type": "SALATA",
+    "canonicalSlug": "goi-ga-bap-cai",
+    "canonicalTitle": "Goi Ga Bap Cai",
+    "duplicateSlugs": ["goi-ga"],
+    "duplicateTitles": ["Goi Ga"],
+    "confidence": "medium",
+    "reason": "Haslanmis tavuk, beyaz lahana, lime ve yer fistigiyle ayni Vietnam tavuk lahana salatasi; Bap Cai kaydi havuc ve soya sosuyla daha zengin."
+  },
+  {
+    "cuisine": "vn",
+    "type": "SALATA",
+    "canonicalSlug": "goi-du-du-tom-vietnam-usulu",
+    "canonicalTitle": "Goi Du Du Tom",
+    "duplicateSlugs": ["yesil-papayali-karides-salatasi-vietnam-usulu"],
+    "duplicateTitles": ["Yeşil Papayalı Karides Salatası"],
+    "confidence": "high",
+    "reason": "Yesil papaya, karides, lime suyu ve nane ile ayni papaya karides salatasi; biri Vietnamca ad, biri Turkce acik ad."
+  },
+  {
+    "cuisine": "vn",
+    "type": "TATLI",
+    "canonicalSlug": "muzlu-tapyoka-kup-vietnam-usulu",
+    "canonicalTitle": "Muzlu Tapyoka Kup",
+    "duplicateSlugs": ["muzlu-hindistancevizli-tapyoka-kup-vietnam-usulu", "muzlu-tapiyoka-kup-vietnam-usulu"],
+    "duplicateTitles": ["Muzlu Hindistancevizli Tapyoka Kup", "Muzlu Tapiyoka Kup"],
+    "confidence": "high",
+    "reason": "Tapyoka veya tapiyoka incisi, muz, Hindistan cevizi sutu ve seker veya bal ile ayni soguk kup tatlisi; yazim farki tarif farki yaratmiyor."
+  },
+  {
+    "cuisine": "vn",
+    "type": "TATLI",
+    "canonicalSlug": "sua-chua-nep-cam-kadeh-vietnam-usulu",
+    "canonicalTitle": "Sữa Chua Nếp Cẩm",
+    "duplicateSlugs": ["sua-chua-nep-cam-vietnam-usulu"],
+    "duplicateTitles": ["Sua Chua Nep Cam"],
+    "confidence": "high",
+    "reason": "Mor pirinc, yogurt ve sekerle ayni Vietnam yogurtlu siyah pirinc tatlisi; fark aksanli yazim ve kadeh sunumu."
+  },
+  {
+    "cuisine": "vn",
+    "type": "YEMEK",
+    "canonicalSlug": "bo-la-lot-limonotlu-vietnam-usulu",
+    "canonicalTitle": "Bò Lá Lốt",
+    "duplicateSlugs": ["bo-la-lot-vietnam-usulu"],
+    "duplicateTitles": ["Bo La Lot"],
+    "confidence": "high",
+    "reason": "Dana kiyma, yaprak sarma formu, sarimsak ve lime veya limonotu aromali ayni Bo La Lot; featured aksanli kayit canonical secildi."
+  },
+  {
+    "cuisine": "vn",
+    "type": "YEMEK",
+    "canonicalSlug": "hanoi-bun-cha",
+    "canonicalTitle": "Hanoi Bun Cha",
+    "duplicateSlugs": ["hanoi-bun-cha-kasesi", "bun-cha"],
+    "duplicateTitles": ["Hanoi Bun Cha Kasesi", "Bun Cha"],
+    "confidence": "high",
+    "reason": "Kiyma koftesi, pirinc eristesi, balik soslu veya eksili tatli sos ve taze otlarla ayni Bun Cha; Hanoi kaydi en zengin olculu versiyon."
+  },
+  {
+    "cuisine": "tr",
+    "type": "ATISTIRMALIK",
+    "canonicalSlug": "firinda-nohut-cipsi",
+    "canonicalTitle": "Fırında Nohut Cipsi",
+    "duplicateSlugs": ["baharatli-nohut-cipsi"],
+    "duplicateTitles": ["Baharatlı Fırında Nohut Cipsi"],
+    "confidence": "high",
+    "reason": "Haslanmis nohut, zeytinyagi, kirmizi biber ve kimyonla 190°C firinda citirlatilan ayni nohut cipsi."
+  },
+  {
+    "cuisine": "tr",
+    "type": "CORBA",
+    "canonicalSlug": "manisa-kulak-corbasi",
+    "canonicalTitle": "Manisa Kulak Çorbası",
+    "duplicateSlugs": ["kulak-corbasi"],
+    "duplicateTitles": ["Kulak Çorbası"],
+    "confidence": "medium",
+    "reason": "Unlu yumurtali hamur, dana kiyma, nohut, yogurt ve tereyagi tabani ayni kulak corbasi; Manisa kaydi daha ayrintili."
+  },
+  {
+    "cuisine": "tr",
+    "type": "CORBA",
+    "canonicalSlug": "toyga-corbasi-anadolu-usulu",
+    "canonicalTitle": "Toyga Çorbası",
+    "duplicateSlugs": ["toyga-asi-corbasi-yozgat-usulu"],
+    "duplicateTitles": ["Toyga Aşı Çorbası"],
+    "confidence": "high",
+    "reason": "Yogurt, dovme bugday, nohut, yumurta ve nane ile ayni toyga corbasi; Yozgat adi tarif cekirdegini degistirmiyor."
+  },
+  {
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "canonicalSlug": "rize-telli-muhlama",
+    "canonicalTitle": "Rize Telli Muhlama",
+    "duplicateSlugs": ["rize-muhlama-telli-peynirli", "rize-muhlama-tava"],
+    "duplicateTitles": ["Rize Muhlama", "Rize Tava Muhlama"],
+    "confidence": "high",
+    "reason": "Tereyagi, misir unu, su, kolot peyniri ve tel tel uzayan kisa tava pisirme akisi ayni Rize muhlamasi."
+  },
+  {
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "canonicalSlug": "trabzon-kuymak-telli",
+    "canonicalTitle": "Trabzon Kuymak",
+    "duplicateSlugs": ["trabzon-misir-unlu-kuymak", "trabzon-kuymak-tavasi"],
+    "duplicateTitles": ["Trabzon Mısır Unlu Kuymak", "Trabzon Kuymak Tavası"],
+    "confidence": "high",
+    "reason": "Misir unu, tereyagi, kolot peyniri, su ve tuzla ayni Trabzon kuymak tavası; fark ad ve adim ayrintisi."
+  },
+  {
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "canonicalSlug": "van-murtuga-kahvaltisi",
+    "canonicalTitle": "Van Murtuğa Kahvaltısı",
+    "duplicateSlugs": ["murtuga", "murtuga-van-usulu"],
+    "duplicateTitles": ["Murtuğa", "Van Murtuğa"],
+    "confidence": "medium",
+    "reason": "Un, tereyagi, yumurta ve tuzla ayni murtuga tabani; Van kahvalti kaydi bal ve kaymakla daha zengin servis veriyor."
+  },
+  {
+    "cuisine": "tr",
+    "type": "SALATA",
+    "canonicalSlug": "patlican-salatasi",
+    "canonicalTitle": "Patlıcan Salatası",
+    "duplicateSlugs": ["patlican-sogurme-sanliurfa-usulu"],
+    "duplicateTitles": ["Patlıcan Söğürme"],
+    "confidence": "medium",
+    "reason": "Koz patlican, sarimsak, zeytinyagi, limon suyu ve tuzla ezilen ayni soguk patlican salatasi; Urfa adi ana malzemeyi degistirmiyor."
+  },
+  {
+    "cuisine": "tr",
+    "type": "TATLI",
+    "canonicalSlug": "kestaneli-irmik-kup-bursa-usulu",
+    "canonicalTitle": "Kestaneli İrmik Kup",
+    "duplicateSlugs": ["kestaneli-sutlu-irmik-tatli-bursa-usulu"],
+    "duplicateTitles": ["Kestaneli Sütlü İrmik Tatlı"],
+    "confidence": "high",
+    "reason": "Irmik, sut, haslanmis kestane ve sekerle ayni pisirilip sogutulan tatli; kup ve tatli adi servis farki."
+  },
+  {
+    "cuisine": "tr",
+    "type": "TATLI",
+    "canonicalSlug": "zerde-edirne-usulu",
+    "canonicalTitle": "Zerde",
+    "duplicateSlugs": ["zerde-sakarya-usulu"],
+    "duplicateTitles": ["Sakarya Zerde Tatlısı"],
+    "confidence": "high",
+    "reason": "Pirinc, seker, su ve zerdecalla pisirilip sogutulan ayni zerde tatlisi; Sakarya adi tarif cekirdegini degistirmiyor."
+  },
+  {
+    "cuisine": "tr",
+    "type": "TATLI",
+    "canonicalSlug": "kayseri-nevzine-tatlisi-cevizli",
+    "canonicalTitle": "Kayseri Nevzine Tatlısı",
+    "duplicateSlugs": ["nevzine-kayseri-usulu", "nevzine-tatlisi"],
+    "duplicateTitles": ["Nevzine", "Nevzine Tatlısı"],
+    "confidence": "medium",
+    "reason": "Un, tahin, ceviz, tereyagi, pekmez ve sekerli serbetle ayni nevzine; Kayseri kaydi en zengin ve tam olculu versiyon."
+  },
+  {
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "canonicalSlug": "corum-iskilip-dolmasi-lenger",
+    "canonicalTitle": "Çorum İskilip Dolması Lenger",
+    "duplicateSlugs": ["corum-iskilip-dolmasi", "corum-iskilip-dolmasi-ev"],
+    "duplicateTitles": ["Çorum İskilip Dolması", "Çorum İskilip Dolması Ev Usulü"],
+    "confidence": "medium",
+    "reason": "Pirinç, et, tereyagi, sogan, et suyu ve uzun pisme ile ayni Iskilip dolmasi; lenger kaydi featured ve daha zengin."
+  },
+  {
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "canonicalSlug": "eskisehir-cig-borek-kiymali",
+    "canonicalTitle": "Eskişehir Çibörek",
+    "duplicateSlugs": ["ciborek"],
+    "duplicateTitles": ["Çibörek"],
+    "confidence": "high",
+    "reason": "Unlu hamur, sulu dana kiymali soganli harc ve kizgin yagda yarim ay kizartma akisi ayni ciborek."
+  },
+  {
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "canonicalSlug": "siirt-perde-pilavi",
+    "canonicalTitle": "Siirt Perde Pilavı",
+    "duplicateSlugs": ["perde-pilavi", "siirt-perde-pilavi-boregi", "siirt-perde-pilavi-bademli"],
+    "duplicateTitles": ["Perde Pilavı", "Siirt Perde Pilavı Böreği", "Siirt Bademli Perde Pilavı"],
+    "confidence": "medium",
+    "reason": "Tavuklu, bademli, kus uzumlu ic pilavin yumurta ve yogurtlu hamurla kalipta firinlanmasi ayni perde pilavi; Siirt kaydi en belirgin ana tarif."
+  },
+  {
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "canonicalSlug": "konya-etli-ekmek",
+    "canonicalTitle": "Konya Etli Ekmek",
+    "duplicateSlugs": ["konya-etli-ekmek-ocak"],
+    "duplicateTitles": ["Konya Etli Ekmek Ocak"],
+    "confidence": "high",
+    "reason": "Uzun ince hamur, dana kiyma, sogan, domates, yesil biber ve maydanozlu harcla yuksek isida pisirilen ayni Konya etli ekmek."
+  },
+  {
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "canonicalSlug": "beypazari-etli-guvec",
+    "canonicalTitle": "Beypazarı Etli Güveç",
+    "duplicateSlugs": ["ankara-beypazari-guveci"],
+    "duplicateTitles": ["Ankara Beypazarı Güveci"],
+    "confidence": "high",
+    "reason": "Kuzu eti, pirinc, domates, yesil biber, sogan ve et suyuyla kapali guvecte uzun firin pisme ayni Beypazari guveci."
+  },
+  {
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "canonicalSlug": "mugla-cokertme-kebabi",
+    "canonicalTitle": "Muğla Çökertme Kebabı",
+    "duplicateSlugs": ["mugla-cokertme-kebabi-citir"],
+    "duplicateTitles": ["Muğla Çıtır Çökertme Kebabı"],
+    "confidence": "high",
+    "reason": "Dana bonfile, kibrit patates, sarimsakli yogurt ve domatesli tereyagli sosla ayni Cokertme kebabi."
+  },
+  {
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "canonicalSlug": "hatay-tepsi-kebabi-antakya",
+    "canonicalTitle": "Hatay Tepsi Kebabı Antakya",
+    "duplicateSlugs": ["hatay-tepsi-kebabi-domatesli"],
+    "duplicateTitles": ["Hatay Tepsi Kebabı"],
+    "confidence": "high",
+    "reason": "Kuzu kiyma, biber, sogan, sarimsak, maydanoz, biber salcasi ve domatesle tepsiye bastirilip firinlanan ayni Hatay tepsi kebabi."
+  }
+]

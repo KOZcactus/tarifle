@@ -1,20 +1,21 @@
 # Tarifle, Proje Durumu
 
-> Oturum 23 (26 Nis 2026), Mod I Batch 1 + 2 + 3 + 4 PIPELINE KAPANIŞ.
-> 92 cluster / 188 sil önerisi DB deep verify + otomatik kategorize
+> Oturum 23 (26 Nis 2026), **Mod I PIPELINE 5/5 TAM KAPANIŞ.**
+> 137 cluster / 248 sil önerisi DB deep verify + otomatik kategorize
 > (yeni scripts: `verify-mod-i-batch.ts` + `classify-mod-i-pairs.ts`).
-> Toplam 78 net sil (B1: 14 + B2: 32 + B3: 18 + B4: 14). Prod
-> 3679 → 3601 (-78). AuditLog kayıtlı. Source 314 satır azaldı
-> (smart-source-clean multi-line + single-line). rollback-batch.ts
-> transaction timeout 5s → 120s. C_ATLA grubu 110 slug gerçek varyant
-> olarak korundu. Codex Mod I Batch 5 (cuisine s-z) tetik bekler.
+> **107 net sil** dağılımı: B1 14 (au+br+cn+cu) + B2 32 (de+es+et+
+> fr+gr+hu+id+in+it) + B3 18 (jp+kr+ma+me+mx+ng) + B4 14 (pe+pk+pl+
+> ru) + B5 29 (se+th+tr+us+vn). **Prod 3679 → 3572** (-107).
+> AuditLog kayıtlı. Source 442 satır azaldı (smart-source-clean
+> multi-line + single-line). rollback-batch.ts transaction timeout
+> 5s → 120s. C_ATLA grubu 141 slug gerçek varyant olarak korundu.
 > **Polish phase notu**: bazı global slug'lar (pizza-margherita,
 > guacamole, palak-paneer, bibimbap, ful-medames, koshari, rajma,
-> lomo-saltado, balli-syrniki, olivier-salatasi vb.) coğrafi prefix'li
-> canonical lehine silindi; site public açılmadığı için 404 etkisi
-> yok ama post-Mod I canonical rename polish önerilir. Sıradaki:
-> Codex Batch 5 teslim ederse apply, ya da polish paketi (newsletter
-> / pişirdim rozet / timeline / quality top 10 refine).
+> lomo-saltado, balli-syrniki, olivier-salatasi, perde-pilavi vb.)
+> coğrafi prefix'li canonical lehine silindi; site public açılmadığı
+> için 404 etkisi yok ama post-Mod I canonical rename polish
+> önerilir. Sıradaki: polish phase paketi (newsletter cron / pişirdim
+> rozet / timeline / quality top 10 refine / canonical rename).
 
 > Oturum 22 sonu (26 Nis 2026), **35+ commit**, mutlak rekor günü.
 > **Mod G PIPELINE KAPANIŞ (417/417 boilerplate %100) + Mod H

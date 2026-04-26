@@ -3720,3 +3720,256 @@ Bitince "Mod M Batch N hazır" + özet:
     doğru render (Sauerbraten patrnı)
   - AuditLog action=MARINE_APPLY 100+ kayıt
 
+## 20. Mod K, Tarif Kontrol (oturum 24 sonu, "Kontrol" K harfinden)
+
+### 20.1 Hedef
+
+Mevcut 3517 tarifin **doğruluk + içerik tutarlılığı + kritik bilgi**
+kontrolü. Codex her tarif için web research yapar, mevcut içeriği
+gerçek tarifle kıyaslar, **gerçek hata** veya **yanıltıcı bilgi**
+varsa düzeltme önerir. Sorun yoksa PASS işaretler.
+
+**Kritik prensip: ŞİŞİRME YASAK.** Kerem net direktif (oturum 24):
+tarif description'larını uzatmak kullanıcıyı bunaltır. Mod K hedefi
+**zenginlik katmak değil**, **var olan içeriği teyit etmek**.
+Description max %20 uzar veya aynı kalır. Yeni "tarihte X yıllık"
+gibi süs cümleleri YASAK.
+
+**Mod K kapsamı (full check):**
+- description: yanlış köken, yanıltıcı yöntem ifadesi, hatalı
+  kültürel bilgi (örn "Osmanlı'dan kalma" değilse onu yazma)
+- ingredients: kritik bir malzeme eksik mi (klasik tarifin temel
+  taşı, örn carbonara'da yumurta sarısı)
+- ingredients: yanlış malzeme yazılmış mı (örn klasik moussaka'da
+  patatesle değil patlıcanla yapılır)
+- steps: yanlış sıralama (yumurta beyazını çırptıktan SONRA un
+  eklersen kabarmaz)
+- steps: yanlış sıcaklık veya süre (tavuk göğsü 200°C'de 5 dk kurur)
+- steps: kritik adım eksikliği (et mühürleme, marine, dinlendirme)
+- prepMinutes/cookMinutes/totalMinutes: makul mü (15 dk'da fırın
+  kebabı pişmez)
+- tipNote: yanlış teknik veya jargon
+- isFeatured: featured ama içerik zayıf mı (manuel review için flag)
+
+**Mod K alt-modlar (gelecek, ihtiyaç olunca):**
+- **Mod KA**: Sadece description doğruluk pass'i (hızlı tarama,
+  ~50 batch)
+- **Mod KB**: Ingredient + step doğruluk (orta scope)
+- **Mod KC**: Times + tipNote tutarlılık (kısa scope)
+- Mod K (tam) yerine odaklı alt-mod tercih edilebilir
+
+### 20.2 Input + Output
+
+**Input dosyası**: `docs/mod-k-batch-N-input.json`
+- Claude `prepare-mod-k-input.ts --batch N --size 100` koşturur
+- Her tarif için: slug, title, cuisine, type, description,
+  ingredients (full list), steps (full list), prepMinutes,
+  cookMinutes, totalMinutes, tipNote, isFeatured, allergens
+- 100 tarif batch boyutu (35 batch toplam)
+
+**Output JSON**: `docs/mod-k-batch-N.json`
+
+```json
+[
+  {
+    "slug": "carbonara",
+    "verdict": "PASS",
+    "reason": "Klasik Roma carbonara: yumurta + pecorino + guanciale + biber. Mevcut tarif doğru, kaynaklar uyuşuyor.",
+    "sources": [
+      "https://www.bonappetit.com/recipe/carbonara",
+      "https://www.giallozafferano.it/spaghetti-carbonara"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "moussaka",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: 'patates' yazılı ama klasik Yunan moussaka'sında patates ana malzeme değil, isteğe bağlı katman",
+      "step 4: '180°C 30 dk' yazılı ama beşamel sosun üstü için 25 dk yeterli, son 5 dk grill önerilir"
+    ],
+    "corrections": {
+      "ingredients_remove": ["patates"],
+      "steps_replace": [
+        {
+          "stepNumber": 4,
+          "instruction": "Moussakayı 180°C fırında 25 dakika pişirin, son 5 dakika grill açıp beşamelin üstünü kızartın."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/moussaka",
+      "https://www.seriouseats.com/moussaka-eggplant-greek-recipe"
+    ],
+    "confidence": "high",
+    "reason": "BBC Good Food ve Serious Eats moussaka'da patates kullanmaz, klasik tarif sadece patlıcan + et + beşamel. Patates yöresel varyant, ana tarifte yok."
+  },
+  {
+    "slug": "menemen",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "description: 'Türk omleti' yazıyor; menemen ile omlet farklı tariflerdir, yanıltıcı"
+    ],
+    "corrections": {
+      "description": "Menemen, domates ve biberin yumurtayla pişirildiği klasik Türk kahvaltı yemeğidir."
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/menemen-tarifi",
+      "https://en.wikipedia.org/wiki/Menemen"
+    ],
+    "confidence": "high",
+    "reason": "Mevcut description menemeni omlet olarak tanımlamış, yanıltıcı. Yumurta birlikte pişer ama menemen ne omlet ne sahanda yumurtadır, ayrı kategori."
+  }
+]
+```
+
+**Field açıklamaları:**
+
+- `slug` (zorunlu): input'taki tarif slug'u
+- `verdict` (zorunlu): "PASS" / "CORRECTION" / "MAJOR_ISSUE"
+  - PASS: tarif doğru, dokunma. Kaynak göster (en az 2),
+    1 cümle reason
+  - CORRECTION: küçük-orta düzeltme (1-3 alan)
+  - MAJOR_ISSUE: yanıltıcı içerik (description yanlış köken,
+    yanlış mutfak iddiası, sahte tarihçe). Manuel review zorunlu
+- `issues` (CORRECTION + MAJOR_ISSUE): tespit edilen sorunların
+  listesi
+- `corrections` (CORRECTION + MAJOR_ISSUE):
+  - `description` (opsiyonel): yeni description (mevcut + max %20
+    uzar veya aynı uzunluk; ŞİŞİRME YASAK)
+  - `ingredients_add` (opsiyonel): eklenecek ingredient'lar
+    `[{ name, amount, unit, group? }]`
+  - `ingredients_remove` (opsiyonel): silinecek ingredient adları
+  - `steps_replace` (opsiyonel): değişecek step'ler
+    `[{ stepNumber, instruction, timerSeconds? }]`
+  - `tipNote` (opsiyonel): yeni tipNote (mevcut + max %20 uzar)
+  - `prepMinutes` / `cookMinutes` / `totalMinutes` (opsiyonel):
+    yeni süre
+- `sources` (zorunlu): en az 2 farklı domain (Mod M ile aynı)
+- `confidence` (zorunlu): "high" / "medium" / "low"
+- `reason` (zorunlu): 50-300 char Türkçe açıklama
+
+### 20.3 Kalite kuralları (ZORUNLU)
+
+**1. ŞİŞİRME YASAK (en kritik kural):**
+   - description max **%20** uzar veya aynı uzunluk kalır.
+     Yeni description uzunluk(yeni) <= 1.2 × uzunluk(eski) zorunlu
+   - tipNote max **%20** uzar veya aynı uzunluk
+   - Süs cümle YASAK ("Tarihte X yıllık geleneğin", "Anadolu'nun
+     unutulmaz...", "Damaklarda iz bırakan...") — somut bilgi
+     olmayan boş cümleler
+   - Sadece **gerçek bilgi** ekle, **gerçek hata** düzelt
+
+**2. Web research zorunlu (Mod M ile aynı):**
+   - Her tarif için **minimum 2 farklı domain** zorunlu (PASS dahil)
+   - Aynı sitenin farklı sayfaları sayılmaz
+   - Güvenilir kaynak listesi (Mod M §19.3 ile aynı): Serious Eats,
+     BBC Good Food, NYT Cooking, Bon Appetit, ATK, yemek.com,
+     nefisyemektarifleri, Giallo Zafferano (İtalyan), Tarla Dalal
+     (Hint), Just One Cookbook (Japon), Maangchi (Kore), Wikipedia
+   - Halüsinasyon YASAK: "muhtemelen klasik" gibi belirsiz ifade
+     yerine kaynak alıntıla
+
+**3. Türkçe karakter ZORUNLU (Mod M Batch 1-3 dersi):**
+   - description / tipNote / step instruction / reason hepsinde
+     ç, ğ, ı, ö, ş, ü doğru kullanılmalı
+   - ASCII fold YASAK ("yumusatir" yerine "yumuşatır")
+
+**4. Em-dash (U+2014) ve en-dash (U+2013) YASAK** (AGENTS.md):
+   - Tüm string field'larda 0
+   - verify-mod-k script otomatik kontrol
+
+**5. Anlaşılır dil (Mod G/H/M ile aynı):**
+   - Yasak jargon: "emülsiyon", "denatüre", "karamelizasyon",
+     "polifenol", "viskozite", "Maillard", "antioksidan",
+     "kapsaisin", "flavonoid", "uçucu yağ", "hidrasyon"
+   - Türk teyze testi: günlük TR mutfak konuşması
+
+**6. Minimum müdahale prensibi:**
+   - PASS verdict: kaynak doğrulandı + içerik makul = dokunma
+   - Sadece **net hata** veya **kritik eksiklik** için CORRECTION
+   - Tarz/uslubı düzeltme YASAK (kötü yazılmış ama doğru
+     bilgi = PASS)
+   - Beklenti: 100 tarif batch'inde **5-15 CORRECTION + 1-3
+     MAJOR_ISSUE + geri kalan PASS** (~%75-85 PASS oranı)
+
+**7. SKIP yok (Mod M'den farklı):**
+   - Her tarif için bir verdict zorunlu (PASS minimum)
+   - Mod K'de SKIP kategorisi YOKTUR; tarif inceleme dışı bırakılmaz
+
+**8. Slug evren:**
+   - docs/mod-k-batch-N-input.json'da gönderilen slug'lar
+   - Batch dışı slug yazma
+
+### 20.4 Pipeline (Claude apply)
+
+1. **Prep** (her batch öncesi):
+   ```
+   npx tsx scripts/prepare-mod-k-input.ts --batch N --size 100
+   ```
+   `docs/mod-k-batch-N-input.json` üretir (slug + full content özet).
+
+2. **Codex tetik**: `Mod K. Batch N.` (CODEX_NEW_CHAT_INTRO Bölüm 6).
+   Codex web research yapar, JSON output yazar.
+
+3. **Verify** (read-only):
+   ```
+   npx tsx scripts/verify-mod-k-batch.ts --batch N
+   ```
+   Format check (sources >= 2, em-dash 0, TR karakter doğru,
+   description max %20 uzar). `docs/mod-k-verify-report.md` üretir.
+
+4. **Manual review** (kullanıcı):
+   - PASS sayısı + CORRECTION sayısı + MAJOR_ISSUE sayısı özeti
+   - MAJOR_ISSUE'lar tek tek incelenir (yanıltıcı içerik dikkat)
+   - CORRECTION'lar gözden geçirilir (cherry-pick olabilir)
+
+5. **Apply** (cherry-pick veya toplu):
+   ```
+   npx tsx scripts/apply-mod-k-batch.ts --batch N --apply              # dev
+   npx tsx scripts/apply-mod-k-batch.ts --batch N --apply --confirm-prod
+   ```
+   Onaylanan correction'lar DB'ye yazılır, AuditLog
+   action="MOD_K_APPLY" metadata: slug + verdict + corrections +
+   sources + confidence + reason.
+
+6. **Smoke test**: 5 random düzeltilmiş tarif preview, 200 OK +
+   içerik doğru render.
+
+### 20.5 Self-check (Codex teslim öncesi)
+
+1. **Verdict**: Her tarif için PASS / CORRECTION / MAJOR_ISSUE.
+2. **Sources**: Her entry için >= 2 farklı domain (PASS dahil).
+3. **Confidence**: high / medium / low.
+4. **Reason**: 50-300 char Türkçe.
+5. **Şişirme**: description ve tipNote max %20 uzunluk artışı.
+6. **Türkçe karakter**: ASCII fold 0.
+7. **Em-dash**: 0.
+8. **Jargon**: yasak liste 0.
+9. **CORRECTION/MAJOR_ISSUE**: corrections objesi en az 1 alan
+   içeriyor.
+10. **Slug evren**: input dışı slug yazılmadı.
+
+Bitince "Mod K Batch N hazır" + özet:
+- Toplam: 100
+- PASS: X
+- CORRECTION: Y
+- MAJOR_ISSUE: Z
+- Confidence dağılımı (high/medium/low)
+- Web research kaynak çeşitliliği
+
+### 20.6 Beklenen output
+
+- 35 batch × 100 = 3500 tarif kontrol (kalan ~17 son batch)
+- Her batch: ~5-15 CORRECTION + 1-3 MAJOR_ISSUE + ~75-85 PASS
+- Toplam beklenti: ~200-500 CORRECTION + ~30-100 MAJOR_ISSUE
+- AuditLog MOD_K_APPLY: ~250-600 kayıt (sadece onaylanan
+  correction'lar)
+
+Mod K kapanış kriterleri:
+- 35 batch tamamlandı, verify + manual review + apply PASS
+- MAJOR_ISSUE'ların hepsi manuel ele alındı
+- Quality dashboard composite skorlarda iyileşme (top 50
+  low-score tarif yeniden değerlendirilir)
+
+

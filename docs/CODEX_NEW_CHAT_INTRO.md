@@ -303,6 +303,41 @@ açar.
 
 ---
 
+## 6. Mod K tetik şablonu (tarif kontrol, "Kontrol" K harfinden)
+
+**Önkoşul**: `docs/CODEX_BATCH_BRIEF.md §20` mevcut. Claude
+`prepare-mod-k-input.ts --batch N --size 100` koşturarak
+`docs/mod-k-batch-N-input.json` üretmiş olmalı (her tarifin full
+content özeti). Codex web research için ChatGPT browse açık.
+
+**Tetik mesajı tek satır**:
+
+```
+Mod K. Batch N.
+```
+
+Codex bu mesajı görünce brief §20'yi (kalite kuralları, ŞİŞİRME
+YASAK kuralı, JSON format, self-check) ve
+`docs/mod-k-batch-N-input.json`'ı okur. Her tarif için web
+research yapar (min 2 farklı domain), verdict (PASS / CORRECTION /
+MAJOR_ISSUE) verir. Çıktı `docs/mod-k-batch-N.json` diske yazılır.
+Bitince "Mod K Batch N hazır" + özet (PASS / CORRECTION /
+MAJOR_ISSUE sayısı).
+
+**Batch dağılımı**: 100'lü batch, 3517 tarif / 100 = ~35 batch.
+Sıralama opsiyonel (alfabetik veya quality dashboard low-score
+öncelikli).
+
+**Mod K alt-modlar (gelecek)**: Mod KA (sadece description), Mod
+KB (ingredient + step), Mod KC (times + tipNote). Brief §20.1
+detayında.
+
+**Kritik prensip**: ŞİŞİRME YASAK. Description ve tipNote max %20
+uzar. "Tarihte X yıllık" gibi süs cümleleri yasak. Sadece **gerçek
+hata** veya **yanıltıcı bilgi** düzeltilir.
+
+---
+
 
 
 
@@ -343,19 +378,22 @@ açar.
 | Mod I | KAPANDI | docs/MOD_I_TRIGGER.md | 5/5 cluster (oturum 23, 107 sil) |
 | Mod IA | KAPANDI | docs/MOD_IA_TRIGGER.md | 3 batch pair audit (oturum 23, 26 sil) |
 | Mod IB | KAPANDI | docs/MOD_IB_TRIGGER.md | 2 batch UNCERTAIN+cross-language (oturum 23, 28 sil + 2 manuel) |
-| Mod M | **Batch 1 bekler** | brief §19 + docs/MOD_M_TRIGGER.md (kısa pointer) | 167 marine aday, 4 batch (oturum 23 sonu hazır) |
+| Mod M | **Batch 1-4 yeniden istenecek** | brief §19 + docs/MOD_M_TRIGGER.md | 167 marine aday, oturum 24'te Batch 1-3 quality issue revert edildi (TR karakter + redundancy), brief §19 yeni Kural 7+8 ile yeniden istenir |
+| Mod K | **Hazır, batch bekler** | brief §20 | 3517 tarif kontrol, 35 batch × 100, ŞİŞİRME YASAK, prep script gerek |
 
 ## Aktif paketler (oturum 24+)
 
-**Mod M (Marine).** En öncelikli Codex iş, oturum 23 sonu hazır.
-4 batch, 167 marine aday. Her tarif için **en az 2 farklı web
-kaynağından marine süresi teyit zorunda** (halüsinasyon yasak).
-Detay: `docs/CODEX_BATCH_BRIEF.md §19`. Tetik: tek satır
-`Mod M Batch 1.` (Bölüm 5).
+**Mod M (Marine).** Batch 1-3 quality revert edildi (oturum 24,
+52/57 entry TR karakter eksik + redundancy). Brief §19'a Kural 7
+(TR karakter zorunlu) + Kural 8 (redundancy yasağı) eklendi.
+Yeniden istenecek: `Mod M Batch 1.` ile başla (Bölüm 5).
 
-**Mod K (yeni, opsiyonel).** Description expansion, quality
-dashboard low-score tarifler için Codex iş. Henüz brief'e §20
-eklenmedi, gerek olunca yazılır.
+**Mod K (Tarif Kontrol).** Yeni paket (oturum 24 sonu). 3517 tarifin
+doğruluk + içerik tutarlılık kontrolü. Codex web research yapar,
+PASS / CORRECTION / MAJOR_ISSUE verdict. ŞİŞİRME YASAK (description
+max %20 uzar). Detay: brief §20. Tetik: `Mod K. Batch N.` (Bölüm 6).
+Önkoşul: `prepare-mod-k-input.ts` script üretildikten sonra. İleri:
+Mod KA / KB / KC alt-modlar (odaklı pass'ler).
 
 **Mod A 40+.** Yeni TR + uluslararası tarif batch'leri devam,
 Brief §5 + Kural 6/7/16. Marine'li tarif önerisi (RecipeTimeline 3

@@ -15,33 +15,42 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
-### Mod M (Marine, oturum 24 Batch 1 yeniden apply, kalan 2/3/4)
+### Mod M PIPELINE TAM KAPANIŞ ✅ (oturum 24)
 
-**Durum**: Batch 1 yeniden teslim apply edildi (36 marine prod, %100
-TR karakter). Brief §19'a Kural 7 (TR karakter) + Kural 8 (redundancy)
-eklendi. **Kalan**: Batch 2 (51-100), Batch 3 (101-150), Batch 4
-(151-167 son 17). Tetik tek satır `Mod M Batch 2.` (CODEX_NEW_CHAT_
-INTRO Bölüm 5).
+**Durum**: 4 batch hepsi prod canlı, 75 marine apply (167 aday SKIP
+çıkartıldıktan sonra). Brief §19 Kural 7 (TR karakter) + Kural 8
+(redundancy) ile kalite stabil. RecipeTimeline 3 segment ~75+ tarif
+görünür: lechon-asado/char-siu 8s + tacos-al-pastor 5s + hanoi-bun-
+cha + oltu-cag-kebabi +4 saat + sauerbraten 3 gün marine demo.
 
-Apply pipeline: verify-mod-m-pairs.ts + apply-mod-m-batch.ts (--env
-prod desteği var). RecipeTimeline 3 segment kazanım hedef ~120-150
-tarif (mevcut 36 + sıradaki batch'lerde toplam).
+Mod M kapandı, sıradaki Codex paketi Mod A 40+ veya Mod K devam.
 
-### Mod K (Tarif Kontrol, oturum 24 aktif, 350/3517 = %10 kontrol)
+### Mod K (Tarif Kontrol, oturum 24 aktif, 400/3517 = %11.4 kontrol)
 
-**Durum**: 6 sub-batch tam pipeline (1a+1b+2a+2b+3a+3b+4a = 122
-correction prod, 5 MAJOR_ISSUE manuel rev). 71 sub-batch input
-dosyası önceden üretildi (4 mevcut + 67 yeni). Codex tetik tek satır
-`Mod K. Batch Nx.` (CODEX_NEW_CHAT_INTRO Bölüm 6).
+**Durum**: 8 sub-batch tam pipeline (1a+1b+2a+2b+3a+3b+4a+4b = 168
+correction prod, 9 MAJOR_ISSUE). 71 sub-batch input dosyası önceden
+üretildi (4 mevcut + 67 yeni). Codex tetik tek satır `Mod K. Batch
+Nx.` (CODEX_NEW_CHAT_INTRO Bölüm 6). 64 sub-batch kalan.
 
-**Kalan**: 65 sub-batch (4b-36b). Sıradaki büyük tarama 2/3 oranında
-PASS, 1/3 oranında CORRECTION (Kural 6 ihlal kapama + tag/allergen
-fix), nadir MAJOR_ISSUE (yanıltıcı içerik tespiti).
+**PASS oranı serisi**: 79/79/58/54/72/46/64/62 (ortalama %64.3,
+brief §20.6 hedefi %75-85 alt sınırı).
 
-**Apply scriptte cuisine field eksik**: bobo-de-camarao + boeuf-
-bourguignon manuel one-off script ile fix edildi. Sonraki MAJOR_ISSUE
-cuisine fix gerekirse aynı pattern (manuel one-off) veya apply
-script'e cuisine field eklenebilir.
+**Cuisine field altyapı kuruldu (oturum 24)**: apply-mod-k-batch.ts
++ verify-mod-k-batch.ts + brief §20.2. Gelecek MAJOR_ISSUE cuisine
+fix'leri otomatik apply, manuel one-off gereksiz. Mevcut 30 cuisine
+kod (CUISINE_CODES). Bilinmeyen kod (tn/ar) önermek YASAK; Codex
+bunda description fix önerip MAJOR_ISSUE bayrak bırakır.
+
+### CUISINE_CODES tn + ar genişletme (~30 dk, opsiyonel)
+
+Manuel cuisine fix'ler (brik tn, provoleta ar) DB'de manuel uygulandı
+ama `src/lib/cuisines.ts`'deki 7 map'te tn/ar yok = `/mutfak/tunus`
+ve `/mutfak/arjantin` 404. CUISINE_CODES + CUISINE_LABEL + CUISINE_
+SLUG + CUISINE_FLAG + CUISINE_DESCRIPTION_TR/EN + CUISINE_REGION
+güncellenmesi + i18n ek.
+
+Etki: gelecek Mod K MAJOR_ISSUE cuisine fix'lerinde tn/ar valid
+olur, /mutfak/tunus + /mutfak/arjantin landing'leri çalışır.
 
 ### Polish phase TAMAMLANDI ✅ (oturum 23 sonu)
 

@@ -1,13 +1,15 @@
 # Tarifle, Proje Durumu
 
-> **Oturum 24 SONU (27 Nis 2026), 22+ commit.**
-> **Personal "Pişirdiklerim" anasayfa shelf + Mod M Batch 1-3 revert
-> sonra Batch 1 yeniden apply (36 marine) + Mod K (Tarif Kontrol) tam
-> paket (brief §20 + 3 script + 71 input dosyası + Batch 1a-4a apply
-> 122 correction + 5 MAJOR_ISSUE) + butter-chicken Delhi merge +
-> 3 yeni blog (yumurta tazeliği + tahıl çeşitleri + çorba bilimi) +
-> remark-gfm MDX desteği + Mod K cuisine fix manuel.** Prod tarif sayısı
-> sabit 3517, içerik kalitesi 122 correction ile yenilendi. Pre-push
+> **Oturum 24 SONU (27 Nis 2026), 35+ commit, çift-pipeline maraton.**
+> **Personal "Pişirdiklerim" anasayfa shelf + Mod M PIPELINE TAM
+> KAPANIŞ (Batch 1-4 = 75 marine prod) + Mod K (Tarif Kontrol) tam
+> paket (brief §20 + 3 script + 71 input dosyası + Batch 1a-4b apply
+> 168 correction + 9 MAJOR_ISSUE) + butter-chicken Delhi merge +
+> 4 yeni blog (yumurta tazeliği + tahıl çeşitleri + çorba bilimi +
+> kokteyl bilimi) + remark-gfm MDX desteği + 7 çeşitleri yazısı table
+> format (15 table) + Mod K cuisine field altyapı + Sentry "Connection
+> closed" filter.** Prod tarif sayısı sabit 3517, içerik kalitesi 168
+> Mod K correction + 75 Mod M marine apply ile yenilendi. Pre-push
 > 6 katman temiz, tsc 0 error.
 
 > ## Oturum 24 detay (A-K paketler)
@@ -78,12 +80,56 @@
 > Yeni chat başlangıç mesajına Mod K §20 listede. Bölüm 6 Mod K tetik
 > şablonu (tek satır "Mod K. Batch Nx.").
 >
+> **L. Mod M PIPELINE TAM KAPANIŞ (Batch 1-4 = 75 marine prod)**
+> Batch 1 yeniden (36) + Batch 2 (9) + Batch 3 (13) + Batch 4 (17) =
+> 75 marine. 167 adaydan SKIP çıkartıldıktan sonra. TR karakter %100,
+> redundancy yok, 0 BLOCKED. En büyük marine: rhein-sauerbraten 1655dk,
+> sauerbraten 4530dk (3 gün), hanoi-bun-cha +4 saat, oltu-cag-kebabi
+> +4 saat. RecipeTimeline 3-segment ~75+ tarif görünür.
+>
+> **M. Mod K Batch 4b apply (27 correction inc 4 MAJOR + cuisine fix)**
+> Batch 4b: 50/31/15/4/0. 4 MAJOR_ISSUE: borulceli-mucveri (vegan tag
+> + yumurta yanıltıcı), bossam (Kore klasik domuz), brik (cuisine
+> cn→tn manuel), buenos-aires-provoleta (cuisine mx→ar manuel). 19
+> CORRECTION + 2 cuisine fix (one-off script). Mod K kümülatif:
+> 1a-4b = 168 correction prod, 400/3517 tarif (%11.4) kontrol, 64
+> sub-batch kalan.
+>
+> **N. Mod K cuisine field altyapı** apply-mod-k-batch.ts'ye `cuisine`
+> alan desteği + verify-mod-k-batch.ts'ye 30-cuisine enum check
+> (VALID_CUISINES set) + brief §20.2 cuisine alanı + valid kod listesi.
+> Etki: gelecek MAJOR_ISSUE cuisine fix'leri otomatik apply, manuel
+> one-off script gereksiz. Mevcut 30 kod (tn/ar dışı, gelecek
+> genişletme FUTURE_PLANS'da).
+>
+> **O. Çeşitleri yazıları table format (15 table 7 yazıda)** remark-gfm
+> aktif sonrası: tahıl (2) + un (3) + domates (1) + peynir (3) + sirke
+> (1) + zeytin (2) + makarna (3) = 15 table. Tereyağı + tuz uygun
+> değil (narrative format). Liste formatı table'a dönüştü, kompakt
+> karşılaştırma okuması hızlandı.
+>
+> **P. Kokteyl Bilimi blog yazısı (55→56)** pisirme-teknikleri (15→16,
+> mutfak-rehberi 18 yakalandı, denge ileri). 8 bölüm: Aletler 7×3 +
+> Shake/Stir 5×3 + Sallama tekniği + Karıştırma + Buz 5×4 + Jigger
+> 3×4 + Garnitür + 5 maddelik checklist = 4 table. 8 kaynak (MasterClass
+> + EBS + Tom Macy + Wolfe & Kensington + SevenFifty + Morgenthaler
+> + 360training + WebstaurantStore).
+>
+> **Q. Sentry "Connection closed" filter** Next 16 + Turbopack RSC
+> streaming kopukluğu (kullanıcı orta-yazma navigation, /tarifler?q=
+> tavukl). handled=yes, sayfa kodu hatası değil. instrumentation-
+> client.ts ignoreErrors'a "Connection closed" + "Connection closed."
+> eklendi. Sentry spam durdu.
+>
 > ### Sıradaki oturum 25 başı (öncelik):
-> 1. Mod K Batch 4b-36b devam (sen tetikler, ben pipeline)
-> 2. Mod M Batch 2/3/4 tetik (Codex, paralel)
-> 3. Çeşitleri yazılarına table format (peynir/makarna/sirke/tuz/un/
->    domates/zeytin) — quick wins
-> 4. Yeni blog yazıları (kategori dengesi)
+> 1. **Mod K Batch 5a-36b devam** (sen tetikler, ben pipeline; 64
+>    sub-batch kalan, ortalama PASS %65)
+> 2. **Mod A 40+** (yeni tarif batch, prod 3517 → 3600+)
+> 3. **CUISINE_CODES tn + ar genişletme** (cuisines.ts 7 map +
+>    i18n; manuel cuisine fix yerine otomatik desteği için)
+> 4. **Yeni blog yazıları**: Kuruyemiş Çeşitleri (malzeme-tanima)
+>    veya Sos Kalınlaştırma (pisirme-teknikleri devam)
+> 5. **Quality dashboard top 50** Mod K sonrası yeniden değerlendirme
 
 > **Oturum 23 SONU (26 Nis 2026), 28 commit, mutlak rekor maraton.**
 > **Mod I PIPELINE 5/5 KAPANIŞ + Mod IA pair audit + Mod IB final pass

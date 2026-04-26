@@ -5,69 +5,67 @@ Toplam entry: 50
 
 ## Ozet
 
-- Apply'a hazir (clean): **9**
+- Apply'a hazir (clean): **13**
   - high confidence: 4
-  - medium confidence: 5
-  - low confidence: 0
-- SKIP: 41
+  - medium confidence: 8
+  - low confidence: 1
+- SKIP: 37
 - BLOCKED (issue var): 0
 
 ## SKIP (Codex marine icermiyor dedi)
 
 | Slug | Reason |
 |---|---|
-| `gravad-patates-salatasi-isvec-usulu` | Tarifte marine somon hazir malzeme olarak kullaniliyor; patates salatasi icin yeni bekletme suresi yok. |
-| `kopenhag-smorrebrod-ringa` | Marine ringa hazir urun olarak suzuluyor; evde yapilan ayri marine bekleme adimi bulunmuyor. |
-| `stockholm-dereotlu-patates-salatasi` | Patatesleri ilikken soslamak teknik bir adimdir; toplam sureye eklenecek bekleme yok. |
-| `bangkok-yesil-mangolu-som-tam` | Som tam servis oncesi soslanir; tarifte marine veya dinlendirme suresi modellenmemeli. |
-| `cirpilmis-zeytin-salatasi` | Adaylik soslama kelimesinden geliyor; salatada ayri bekletme veya marine adimi yok. |
-| `acili-ezme-guneydogu-usulu` | Acili ezme soslanarak servis edilir; marine edilecek protein veya bekletme adimi yok. |
-| `akdeniz-salatasi` | Bu salatada sadece soslama hazirligi var; marine suresi olarak eklenecek bekleme bulunmuyor. |
-| `toyga-corbasi-anadolu-usulu` | Yogurtlu terbiye corbaya alistiriliyor; bu marine degil, pisirme teknigi. |
-| `dereotlu-cubuk-tursu-salatasi-ankara-usulu` | Cubuk tursusu hazir salamura malzeme; salatada yeni marine bekletmesi yok. |
-| `antalya-kulakli-corba` | Adaylik terbiye kelimesinden geliyor; corba icin marine suresi eklenmemeli. |
-| `terbiyeli-nohut-corbasi-antalya-usulu` | Limonlu terbiye corbayi baglamak icin kullaniliyor; bekletilen marine adimi yok. |
-| `arpa-yarmali-yogurt-corbasi-eskisehir-usulu` | Yogurt terbiyesi sicak suyla ilitiliyor; marine veya dinlendirme suresi degil. |
-| `ayran-asi-corbasi-erzurum-usulu` | Corba terbiyesi kesilmesin diye ilitiliyor; toplam sureye bekleme eklenmez. |
-| `ayvali-hardalli-yesil-salata-yalova-usulu` | Salatada hardalli soslama var, fakat marine olarak bekletilen bir adim yok. |
-| `balik-corbasi` | Balik corbasinda limonlu terbiye pisirme teknigidir; marine beklemesi bulunmuyor. |
-| `zeytin-ezmeli-patates-salata-bodrum-usulu` | Patates ilikken sosu cekiyor; tarifte ayri bekletme veya marine suresi yok. |
-| `bostana-bulgur-salatasi-sanliurfa-usulu` | Bostana bulgur salatasi soslanarak hazirlanir; marine edilecek bir ana malzeme yok. |
-| `bursa-muradiye-corbasi-tavuklu` | Yogurtlu terbiye corbanin baglayicisidir; marine bekletmesi olarak modellenmemeli. |
-| `cevizli-batirik-karaman-usulu` | Batirik salata gibi karistirilir; marine beklemesi veya bekletilen protein yok. |
-| `caglali-kurutlu-bulgur-salatasi-malatya-usulu` | Adaylik soslama kelimesinden geliyor; bulgur salatasinda yeni marine suresi yok. |
-| `canakkale-ovmac-corbasi` | Yogurt terbiyesi corbaya katiliyor; bu pisirme asamasi, marine beklemesi degil. |
-| `cubuk-tursulu-patates-salatasi-ankara-usulu` | Patates hafif ilikken soslanir; ayrica bekletilmesi gereken marine sureci yok. |
-| `diyarbakir-lebeniyesi` | Lebeniye corbasindaki terbiye yogurtlu pisirme teknigidir; marine suresi eklenmez. |
-| `nohutlu-yogurt-corbasi-diyarbakir-usulu` | Yogurtlu terbiye sicak suyla ilitiliyor; bekletme veya marine adimi bulunmuyor. |
-| `domatesli-lebeniye-corbasi-gaziantep-usulu` | Terbiye corbaya kesilmeden katilmak icin hazirlanir; marine olarak modellenmemeli. |
-| `dugun-corbasi` | Dugun corbasindaki terbiye sicak et suyuyla ilitiliyor; bekleme suresi degil. |
-| `eksili-kofte` | Tarif terbiyesiz eksili kofte olarak geciyor; marine veya bekletme adimi yok. |
-| `elma-sirkeli-lahana-salatasi-tekirdag-usulu` | Lahana salatasi soslaniyor, fakat marine bekletmesi olarak eklenecek sure bulunmuyor. |
-| `erikli-marul-piyazi-sakarya-usulu` | Marul servis aninda soslaniyor; bekletmek gevrekligi bozabilecegi icin marine suresi yok. |
-| `borani-erzincan-usulu` | Borani soslama kelimesinden yakalanmis; marine edilecek ayri malzeme veya sure yok. |
-| `erzincan-kesme-corbasi` | Corbadaki yogurt terbiyesi pisirme teknigidir; bekleme sureci olarak modellenmemeli. |
-| `erzincan-kesme-corbasi-yogurtlu` | Yogurt terbiyesi sicak suyla aciliyor; marine veya dinlendirme suresi yok. |
-| `evelikli-eriste-corbasi-kars-usulu` | Evelikli eriste corbasinda terbiye corbaya katilir; marine beklemesi degildir. |
-| `gaziantep-siveydiz` | Siveydizde yogurtlu terbiye pisirme asamasidir; marine beklemesi veya dinlendirme yok. |
-| `antep-yuvalama-yogurtlu` | Yuvalama corbasinda terbiye sicak et suyuyla dengelenir; marine suresi eklenmemeli. |
-| `gendime-corbasi` | Terbiye bugday suyuyla ilitiliyor; bu corba teknigi, marine beklemesi degil. |
-| `hamsi-pastirmasi-salatasi-trabzon-usulu` | Marine hamsi hazir malzeme olarak kullaniliyor; salatada yeni bekletme suresi yok. |
-| `hashasli-yogurt-corbasi-afyon-usulu` | Yogurt terbiyesi sicak pirinc suyuyla ilitiliyor; marine veya bekletme suresi yok. |
-| `hatay-nar-eksili-zahter-salatasi` | Zahter servis oncesi soslaniyor; diri kalmasi icin bekletme suresi eklenmemeli. |
-| `iskembe-corbasi` | Iskembe corbasindaki terbiye yumurta veya yogurtlu baglama asamasidir; marine beklemesi yok. |
-| `karalahana-misirli-ayran-corbasi-trabzon-usulu` | Ayranli terbiye corbaya ilitilerek eklenir; marine suresi olarak modellenmemeli. |
+| `kars-evelik-asi` | Evelik asi corbasinda terbiye corbaya karistiriliyor; marine veya bekleme suresi yok. |
+| `kastamonu-pastirmali-ecevit-corbasi` | Ecevit corbasindaki yogurt terbiyesi pisirme teknigidir; marine suresi olarak modellenmemeli. |
+| `kayseri-pastirmali-yarma-corbasi` | Yarma corbasinda terbiye sicak corbayla ilitiliyor; bekletilen marine adimi yok. |
+| `kerevizli-yogurt-corbasi-edirne-usulu` | Yogurt terbiyesi corbaya sicak suyla alistirilir; marine beklemesi olarak eklenmez. |
+| `lorlu-zahter-salatasi-kilis-usulu` | Zahter yapraklari soslanmadan once kurutuluyor; bekletilen marine adimi bulunmuyor. |
+| `yogurtlu-nohut-yahni-konya-ova-usulu` | Yogurtlu nohut yahnide terbiye pisirme asamasi; marine veya dinlendirme suresi yok. |
+| `koruklu-pancar-salatasi-manisa-usulu` | Pancar sosla karistirilir, fakat kaynakli net bekletme suresi yok; sahte marine eklenmemeli. |
+| `kulak-corbasi` | Kulak corbasinda yogurtlu terbiye pisirme teknigidir; marine suresi eklenmez. |
+| `lebeniye-corbasi` | Lebeniye corbasindaki terbiye sicak suyla ilitilir; bekletme veya marine adimi yok. |
+| `eksili-kofte-malatya-usulu` | Eksili kofte limonlu terbiye ile piser; marine edilen bir malzeme veya bekleme yok. |
+| `nohutlu-sarimsakli-yogurt-corbasi-gaziantep-usulu` | Yogurtlu terbiye corbaya karistirilir; bekletilecek marine suresi yok. |
+| `nohutlu-sevketibostan-izmir-usulu` | Sevketibostan limonlu terbiye ile piser; marine veya dinlendirme adimi bulunmuyor. |
+| `rize-fasulye-tursulu-kavurma` | Salamura fasulye hazir tursu olarak kullaniliyor; tarifte yeni bekletme suresi yok. |
+| `roka-salatasi` | Roka soslanmadan once kurutuluyor; bekletme veya marine suresi eklenmemeli. |
+| `erikli-hamsi-salatasi-samsun-usulu` | Marine hamsi hazir malzeme olarak geciyor; salata icin yeni marine beklemesi yok. |
+| `katikli-patates-corbasi-sivas-usulu` | Yogurt terbiyesi sicak patates suyuyla ilitiliyor; marine suresi degildir. |
+| `siveydiz` | Siveydizde yogurtlu karisim pisirme teknigi olarak kullanilir; bekletme adimi yok. |
+| `tavuk-suyu-corbasi` | Tavuk suyu corbasinda limonlu terbiye sicak suyla ilitilir; marine beklemesi yok. |
+| `terbiyeli-nohut-corbasi-burdur-usulu` | Nohut corbasindaki terbiye kesilmesin diye ilitilir; marine veya bekleme suresi yok. |
+| `yogurtlu-semizotu-corbasi-tire-usulu` | Semizotu corbasinda terbiye kisa pisirilir; marine beklemesi olarak modellenmemeli. |
+| `tokat-bakla-dolmasi` | Salamura asma yapragi hazir malzeme olarak kullaniliyor; yeni marine suresi yok. |
+| `tokat-baklali-yaprak-sarma` | Sarma hazir salamura yaprakla kuruluyor; toplam sureye marine beklemesi eklenmez. |
+| `tokat-yaprak-sarmasi-etli` | Salamura yaprak kullanimi false positive; tarifte yeni bekleme veya marine yok. |
+| `tokat-yapragi-dolmasi` | Yapraklar tuzu azalsin diye 3 dakika sicak suda bekler; bu marine degil, hazirlik adimi. |
+| `toyga-corbasi` | Toyga corbasinda yogurt terbiyesi sicak corbayla ilitilir; bekleme suresi yok. |
+| `tutmac-corbasi` | Tutmac corbasinda terbiye tencerede pisirilir; marine veya dinlendirme adimi degil. |
+| `unlu-eriste-corbasi-kirsehir-usulu` | Unlu terbiye topaklanmasin diye ilitiliyor; marine suresi olarak eklenmemeli. |
+| `van-ayran-asi-kislik` | Ayran asi corbasinda terbiye tencereye eklenir; bekletilen marine adimi yok. |
+| `yayla-corbasi` | Yayla corbasinda yogurtlu karisim terbiye olarak kullanilir; marine beklemesi yok. |
+| `yogurtlu-eriste-corbasi-cankiri-usulu` | Yogurt terbiyesi sicak eriste suyuyla ilitilir; bekletme veya marine adimi yok. |
+| `yogurtlu-kabak-corbasi-konya-usulu` | Kabak corbasinda terbiye tencereye eklenir; marine suresi olarak modellenmez. |
+| `yogurtlu-pirasa-corbasi-edirne-usulu` | Pirasa corbasinda yogurtlu terbiye pisirme asamasidir; bekleme suresi yok. |
+| `yogurtlu-yarma-corbasi-sivas-usulu` | Yarma corbasinda terbiye sicak suyla dengelenir; marine beklemesi bulunmuyor. |
+| `yuvalama-corbasi` | Yuvalama corbasinda yogurtlu terbiye kisa pisirilir; marine veya dinlendirme yok. |
+| `zeytin-yaprakli-lor-sarma-izmir-usulu` | Salamura zeytin yapragi hazir malzeme olarak kullaniliyor; yeni marine beklemesi yok. |
+| `cranberry-chicken-salad-abd-delicatessen-usulu` | Chicken salad soslanarak karistirilir; marine edilecek cig protein veya bekleme suresi yok. |
+| `banh-mi` | Banh mi kaydinda salamura sebze hazir bileşen olarak kullaniliyor; yeni marine suresi yok. |
 
 ## Apply hazir (sample)
 
 | Slug | Marine min | Eski total | Yeni total | Conf | Sources |
 |---|---:|---:|---:|---|---|
-| `kai-yang` | 180 | 45 | 225 | high | foodie-trail.com, brasswok.com |
-| `adana-turunclu-tavuk-sis` | 30 | 34 | 64 | medium | sofra.com.tr, lezzet.com.tr |
-| `balli-hardalli-tavuk` | 30 | 33 | 63 | high | gastrotarifler.com, 30seconds.com |
-| `ceviche` | 10 | 25 | 35 | high | theguardian.com, southernliving.com |
-| `firinda-soslu-tavuk-kanat` | 60 | 55 | 115 | medium | hizlitarifim.com, youtube.com |
-| `firinda-tavuk-baget` | 30 | 55 | 85 | medium | habergazetesi.com.tr, lezzet.com.tr |
-| `firinda-tavuk-pirzola` | 30 | 65 | 95 | high | pirzola.gen.tr, tavukyemekleri.gen.tr |
-| `hardaliyeli-istavrit-tava-tekirdag-usulu` | 12 | 22 | 34 | medium | yemektebalikvar.com, thebetterfish.com |
-| `isotlu-tavuk-sis-sanliurfa-usulu` | 30 | 30 | 60 | medium | isot.tr, lezzet.com.tr |
+| `kekikli-cipura-izgara-bodrum-usulu` | 15 | 28 | 43 | low | sosy.co, thebetterfish.com |
+| `limonlu-susamli-tavuk-sis-durumu-mersin-usulu` | 30 | 28 | 58 | medium | lezzet.com.tr, knorr.com |
+| `mesir-baharatli-tavuk-manisa-usulu` | 30 | 40 | 70 | medium | lezzet.com.tr, tavukyemekleri.gen.tr |
+| `mugla-cokertme-kebabi` | 30 | 70 | 100 | medium | nefisyemektarifleri.com, yemek.com |
+| `narenciyeli-levrek-sis-alanya-usulu` | 10 | 28 | 38 | medium | thebetterfish.com, simplyrecipes.com |
+| `tavuk-doner` | 120 | 45 | 165 | high | lezizyemeklerim.com, sendeyapsana.com |
+| `tavuk-sis` | 120 | 35 | 155 | high | lezzet.com.tr, knorr.com |
+| `zahterli-tavuk-sis-hatay-usulu` | 30 | 28 | 58 | medium | lezzet.com.tr, knorr.com |
+| `seattle-teriyaki-salmon` | 20 | 22 | 42 | high | foodnetwork.com, alphafoodie.com |
+| `bo-luc-lac` | 20 | 35 | 55 | medium | wokandkin.com, saveur.com |
+| _...3 entry daha_ | | | | | |

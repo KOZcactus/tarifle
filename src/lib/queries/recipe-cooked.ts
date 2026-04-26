@@ -72,6 +72,31 @@ export async function getUserCookedRecipeIds(
   return new Set(rows.map((r) => r.recipeId));
 }
 
+/**
+ * Son N gunde en cok pisirilen tarifler. Anasayfa "Bu hafta en cok
+ * pisirilenler" shelf'i icin. Distinct user count desc, ekstrem populeri
+ * top'a tasir. Yeni sitede cooked verisi az olabilir, sonuc bos ise
+ * shelf gizlenir (caller karar verir).
+ *
+ * Performans: tek SQL query (raw, GROUP BY + COUNT(DISTINCT)). recipe_
+ * cooked.recipeId index var; cookedAt filter (BETWEEN) da hizli.
+ */
+export async function getMostCookedRecentlyRecipeIds(
+  options: { days?: number; limit?: number } = {},
+): Promise<string[]> {
+  const { days = 7, limit = 8 } = options;
+  const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000);
+  const rows = await prisma.$queryRaw<{ recipeId: string }[]>`
+    SELECT "recipeId"
+    FROM "recipe_cooked"
+    WHERE "cookedAt" >= ${since}
+    GROUP BY "recipeId"
+    ORDER BY COUNT(DISTINCT "userId") DESC, MAX("cookedAt") DESC
+    LIMIT ${limit}
+  `;
+  return rows.map((r) => r.recipeId);
+}
+
 interface UserCookedListItem {
   id: string;
   recipeId: string;

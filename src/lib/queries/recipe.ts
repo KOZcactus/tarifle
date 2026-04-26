@@ -2,7 +2,10 @@ import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import type { Allergen, Difficulty } from "@prisma/client";
 import type { RecipeCard, RecipeDetail } from "@/types/recipe";
-import { getCookedCountsForRecipes } from "@/lib/queries/recipe-cooked";
+import {
+  getCookedCountsForRecipes,
+  getMostCookedRecentlyRecipeIds,
+} from "@/lib/queries/recipe-cooked";
 
 /**
  * Recipe card listing'lerine "Pisirdim" sayisini batch ile ekle.
@@ -585,6 +588,30 @@ export async function getQuickRecipes(limit = 8): Promise<RecipeCard[]> {
   });
 
   return attachCookedCounts(recipes as unknown as RecipeCard[]);
+}
+
+/**
+ * Bu hafta en cok pisirilen tarifler (oturum 23 yeni). Anasayfa
+ * "Pisirdiklerimiz" sosyal kanit shelf'i. Son 7 gunde distinct user
+ * count desc. Yeni sitede cooked verisi az olabilir, sonuc bos ise
+ * caller shelf'i gizler.
+ */
+export async function getMostCookedRecentlyRecipes(
+  options: { days?: number; limit?: number } = {},
+): Promise<RecipeCard[]> {
+  const { days = 7, limit = 8 } = options;
+  const ids = await getMostCookedRecentlyRecipeIds({ days, limit });
+  if (ids.length === 0) return [];
+  const recipes = await prisma.recipe.findMany({
+    where: { id: { in: ids }, status: "PUBLISHED" },
+    select: recipeCardSelect,
+  });
+  // ID list order preserve (en cok pisirilen en ust)
+  const byId = new Map(recipes.map((r) => [r.id, r]));
+  const ordered = ids
+    .map((id) => byId.get(id))
+    .filter((r): r is NonNullable<typeof r> => r !== undefined);
+  return attachCookedCounts(ordered as unknown as RecipeCard[]);
 }
 
 /** En çok görüntülenen tarifler, viewCount desc */

@@ -20,6 +20,7 @@ import {
   getRecipes,
   getPopularRecipes,
   getPersonalizedRecipes,
+  getMostCookedRecentlyRecipes,
 } from "@/lib/queries/recipe";
 import { getCategories } from "@/lib/queries/category";
 import { auth } from "@/lib/auth";
@@ -92,6 +93,7 @@ export default async function HomePage() {
     personalized,
     suggestedCooks,
     viewerFollowingIds,
+    mostCookedRecently,
     t,
     tNav,
   ] = await Promise.all([
@@ -107,6 +109,7 @@ export default async function HomePage() {
       : Promise.resolve({ recipes: [], hasPrefs: false }),
     getSuggestedCooks(userId, 6),
     userId ? getFollowingUserIds(userId) : Promise.resolve<string[]>([]),
+    getMostCookedRecentlyRecipes({ days: 7, limit: 6 }),
     getTranslations("home"),
     getTranslations("nav"),
   ]);
@@ -287,6 +290,31 @@ export default async function HomePage() {
             </Link>
           </div>
           <FeaturedShelf recipes={featured} dietBadges={homeDietBadges} />
+        </section>
+      )}
+
+      {/* Bu hafta en cok pisirilenler shelf (oturum 23 yeni). Sosyal kanit:
+          son 7 gunde distinct user count desc. Yeni sitede cooked verisi
+          azsa bos liste doner, shelf gizlenir. */}
+      {mostCookedRecently.length > 0 && (
+        <section className="py-8">
+          <div className="mb-6 flex items-end justify-between gap-4">
+            <div>
+              <h2 className="font-heading text-2xl font-bold text-text">
+                <span aria-hidden>👨‍🍳</span> Bu hafta en çok pişirilenler
+              </h2>
+              <p className="mt-2 text-sm text-text-muted">
+                Tarifle topluluğunun bu hafta en çok pişirdiği tarifler.
+              </p>
+            </div>
+            <Link
+              href="/tarifler?siralama=popular"
+              className="shrink-0 text-sm text-primary hover:underline"
+            >
+              {t("seeAll")}
+            </Link>
+          </div>
+          <FeaturedShelf recipes={mostCookedRecently} />
         </section>
       )}
 

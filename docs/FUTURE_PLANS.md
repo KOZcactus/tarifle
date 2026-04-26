@@ -15,62 +15,54 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
-### Mod G Batch 1 (Codex tetik bekler, oturum 22 başlangıç)
+### Mod I (duplicate audit, Codex tetik bekler, oturum 22 sonu)
 
-Brief CODEX_BATCH_BRIEF.md §17 (oturum 21'de yazıldı). Hedef: 417
-boilerplate tarifin tipNote/servingSuggestion alanlarını tarif-özgü
-cümleyle revize. Input: docs/mod-g-boilerplate-slugs.txt. Apply:
-scripts/apply-mod-g.ts (sema + 8 kalite kuralı + 7 self-check).
+**docs/MOD_I_TRIGGER.md** içinde tam tetik şablonu. 5 batch akış
+(cuisine harf aralığı a-c / d-i / j-n / p-r / s-z, toplam 235
+cuisine+type grup tara). Codex docs/all-recipe-titles.md'den (3679
+tarif) duplicate cluster JSON üretir, Claude DB ingredient + step
+deep verify yapar, kullanıcı approve sonrası rollback.
 
-Kerem tetik mesajı (kopyala-yapıştır):
-```
-Mod G. Batch 1.
-Brief docs/CODEX_BATCH_BRIEF.md §17 ZORUNLU oku (özellikle §17.3 8
-kalite kuralı: tarif-özgü ref + min/max kelime + YASAK kalıplar +
-WEB TEYIT + boilerplate engelleyici + tip/sug ayrımı + anlaşılır dil).
-Input: docs/mod-g-boilerplate-slugs.txt'den ilk 100 slug'ı al.
-Output: docs/mod-g-batch-1.json (sema §17.2'de).
-Self-check 7 madde §17.5; bitince "Mod G Batch 1 hazır" + özet.
-```
+**Cross-validation pattern**: Claude paralel `find-duplicates-claude.
+ts` (sıkı pair-only, 166 strict pair, 150 unique sil önerisi) +
+Codex Mod I high confidence cluster = kesin duplicate listesi.
 
-### Mod H Batch 1 (Codex tetik bekler, oturum 22+ başlangıç)
+**Tetik akışı (Kerem):**
+1. Yeni chat aç ChatGPT Max
+2. docs/MOD_I_TRIGGER.md başlangıç mesajı paste
+3. Codex "Anladım" deyince Mod I Batch N tetik şablonu paste
+4. Codex docs/mod-i-batch-N.json + opsiyonel mod-i-batch-N-legit
+   .json yazar
+5. Claude verify + onay + rollback + recompute + commit
 
-Brief §18, schema migration `IngredientGuide` dev + prod canlı. Top 50
-ingredient için "neden + yerine" notları, AI Asistan v5 backend.
-Input: docs/mod-h-ingredient-list.txt (top 50 freq + sample slug'lar).
-Apply: scripts/apply-mod-h.ts (sema + 7 kalite + 14 jargon yasak liste +
-8 self-check).
+### Polish phase devam (oturum 23+, 2-3 saat)
 
-Kerem tetik mesajı:
-```
-Mod H. Batch 1.
-Brief docs/CODEX_BATCH_BRIEF.md §18 ZORUNLU oku.
-Input: docs/mod-h-ingredient-list.txt 50 ingredient.
-Her ingredient: whyUsed (8-40 kelime) + substitutes (2-4 alternatif)
-+ notes (opsiyonel). Output: docs/mod-h-batch-1.json (sema §18.2'de).
-Self-check 8 madde §18.5.
-```
+Mod G + Mod H KAPANDI, Mod A 39b prod, duplicate cleanup yolda.
+Sıradaki kullanıcı UX'i zenginleştirme:
 
-<!-- Source-side duplicate smart cleanup ✅ TAMAM (oturum 22)
-     scripts/smart-source-clean.mjs (indent-aware brace-counting), 5
-     tarif format'ı (multi-line / single-line literal / r({...})) tek
-     algoritma ile. 59 source-only slug temizlendi (3 multi-line + 57
-     single-line + 1 duplicate kayıt), source 3694 → 3635 unique slug.
-     Source vs dev DB diff şu an 0 source-only (perfect sync). Tek
-     anomali: dev-only `dublin-soda-bread` (1 slug DB'de var, source'ta
-     yok), kapsam dışı, opsiyonel ayrı cleanup. -->
+1. **Tarif zaman çizelgesi (timeline visual)** ~2 saat
+   - prep + marine + cook görsel bar
+   - Sauerbraten gibi uzun marine'li tariflerde "buna 3 gün lazım"
+     net görünür
+   - timer + measure + popover ile sinerji
 
-### Dev-only slug `dublin-soda-bread` (opsiyonel, ~5 dk)
+2. **Pişirdim ✓ rozet sistemi** ~2-3 saat
+   - UserCooked tablosu (schema migration)
+   - "X kişi pişirdi" sosyal kanıt tarif sayfasında
+   - Profil tab "Pişirdiklerim"
+   - "Pişirdim" sonrası küçük yorum CTA
 
-Source 3635 unique, dev DB 3636 unique. 1 slug fark: `dublin-soda-bread`
-dev'de var, source'ta yok. Olası sebep: önceki batch'te eklenmiş, sonra
-source'tan yanlışlıkla silinmiş. Bir sonraki seed çalışmasında DB'den
-silinmez (idempotent always-add). İki seçenek:
+3. **Newsletter haftalık scheduled send** ~1 saat
+   - Resend zaten bağlı, scheduler aktif et (Vercel cron)
 
-1. Source'a geri ekle (Codex teslim ya da elle Dublin soda bread tarifi)
-2. Dev'den sil (rollback-batch script, AuditLog'lu)
+4. **Recipe step image upload altyapı** ~3-4 saat
+   - Admin'den step başına Cloudinary
+   - Schema RecipeStep.imageUrl
+   - Visual cooking gelecek için temel
 
-Opsiyonel, launch-blocker değil.
+5. **Quality dashboard'dan top 10 tarif manuel rafine** ~30dk-1 saat
+   - /admin/kalite'den en yüksek skorlu 10 tarifin tipNote/sug/step
+     manuel düzelt
 
 ### Mod FA pipeline TAMAM (oturum 20)
 

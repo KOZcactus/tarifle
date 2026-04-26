@@ -1,25 +1,23 @@
 # Tarifle, Proje Durumu
 
-> Oturum 22 başı (26 Nis 2026): Source duplicate cleanup KAPANIŞ +
-> em-dash hijyeni + Blog 51 (Salamura) + Blog 52 (Bal Türleri) +
-> Mod G + Mod H altyapı v2 (input prep + intro + tetik şablonları
-> "N" placeholder) + Mod A 39b prod (50 yeni, 3636 → 3686) + Mod G
-> Batch 1 prod (100 tarif tipNote/sug revize) + Ölçü dönüştürücü
-> widget (tarif sayfası).
-> `scripts/smart-source-clean.mjs` (indent-aware brace-counting, 5
-> tarif format'ı tek algoritma), 59 source-only slug temizlendi
-> (3 multi-line + 57 single-line + 1 dup), source 3694 → 3635 unique.
-> Em-dash regex literal'leri (`/[—–]/`) unicode escape'e çevrildi
-> (`/[—–]/`), pre-push em-dash guard pre-existing kalıntı 0.
-> Blog 51 salamura-ve-marine-bilimi (1294 kelime, pisirme-teknikleri):
-> tuz proteinle ne yapar, yaş vs kuru salamura oranları, marine asit
-> + enzim mekaniği, süre rehberi, Türk salamura geleneği (turşu +
-> asma yaprağı + peynir), USDA gıda güvenliği, 5 kaynak + 3 İlgili
-> Yazı. Blog 52 bal-turleri-ve-mutfak-kullanimi (1372 kelime,
-> malzeme-tanima): 4 ana Türk balı (çiçek + çam + karakovan + kestane)
-> + Anzer + glikoz/fruktoz kimyası + kristalleşme + ham vs ısıtılmış +
-> mutfakta hangi bal nereye + sahtecilik kontrol, 5 kaynak + 3 İlgili
-> Yazı. Visual baseline 24 → 26, smoke endpoint genişledi.
+> Oturum 22 sonu (26 Nis 2026), **35+ commit**, mutlak rekor günü.
+> **Mod G PIPELINE KAPANIŞ (417/417 boilerplate %100) + Mod H
+> PIPELINE KAPANIŞ (250/250 ingredient %100) + Mod A 39b prod (50
+> yeni, 3636 → 3686) + Tavuklu Pilav manuel (3686 → 3687) + 8
+> duplicate sil (ANZAC + Ali Nazik + Alfajores + Antalya Hibeş +
+> Amasya Bakla Dolması + Anticucho de Pollo) prod 3679 +
+> Mod I altyapı (duplicate audit Codex + Claude paralel)** +
+> Pratik UX paketi (ölçü dönüştürücü + pişirme zamanlayıcı + ingredient
+> hover popover) + Recipe quality dashboard /admin/kalite +
+> Allergen confidence note (declared vs inferred uyarı) + 2 yeni blog
+> (Salamura, Bal Türleri) + ProfileIncompleteBanner messages prop
+> Sentry transient fix + Sentry CSP issue resolve + Dublin-soda-bread
+> source restore + smart-source-clean.mjs (5 format tek algoritma).
+> **Sonraki oturum 23+ başlangıç:** Mod I Codex tetik (kullanıcı
+> ChatGPT Max'ta), polish phase devam (timeline / pişirdim rozet /
+> newsletter scheduled / step image upload).
+
+> Oturum 21 sonu (26 Nis 2026), **38 commit**, mutlak rekor maraton:
 
 > Oturum 21 sonu (26 Nis 2026), **38 commit**, mutlak rekor maraton:
 > Mod F retrofit pipeline KAPANIŞ + Mod A 5 batch (37a/37b/38a/38b/
@@ -115,6 +113,224 @@
 > Oturum 8 sonu (30 commit), 2320 tarif prod canlı. 10 blok: 6 Codex batch Mod A (1701→2320), 3 Mod B batch (batch 18-20 çeviri 600→900), rekabet §8 kısa 6/6 ✅ + orta 5/5 ✅, topluluk loop tam (follow + feed + fan-out + followers list + suggested cooks + collection/variation share + PWA banner + Pinterest rich pin + user-photos flag), admin analytics + bulk moderation + search log, PDF export + llms.txt, 18 migration.
 >
 > Oturum 7 sonu (28 commit), 1701 tarif prod canlı. 8 blok: Mod B batch 13-17 (600 tarif EN+DE), Mod A batch 15-17 (1401→1701), foryou sort, pagination redesign, super-admin protection, /admin/yorumlar, /kategoriler, legal hub /yasal, editör rozeti, similar-recipes v2, 44 programatik landing, profil zenginleştirme, /menu-planlayici, RSS + HowTo schema, AI Asistan v2, blog MDX + 3 makale, rekabet analizi doc, newsletter double-opt-in altyapı, codex brief 3 clarify.
+
+## 26 Nisan 2026 (oturum 22 SONU, 35+ commit)
+
+> Oturum 22 KAPANDI, 35+ commit. Kategori toplam:
+> - **Mod G PIPELINE KAPANIŞ** (5/5 batch, 417 boilerplate tipNote/
+>   serv-sug revize prod %100)
+> - **Mod H PIPELINE KAPANIŞ** (5/5 batch, 250 ingredient
+>   IngredientGuide prod %100)
+> - **Mod A 39b prod** (50 yeni, 3636 → 3686)
+> - **Tavuklu Pilav manuel** klasik tarif (3686 → 3687)
+> - **8 duplicate sil** (ANZAC Biscuit/Bisküvisi + Ali Nazik Kebabı +
+>   Alfajores Peruanos + Antalya Hibeş + Amasya Bakla Dolması x2 +
+>   Anticucho Tavuk Şiş) prod 3687 → 3679
+> - **Mod I altyapı**: duplicate audit pipeline (Codex tetik +
+>   Claude paralel script), `docs/all-recipe-titles.md` 3679 tarif
+>   235 cuisine/type grubu, `docs/duplicate-suggestions.md` 166
+>   strict pair (Claude paralel)
+> - **Source duplicate smart cleanup**: `scripts/smart-source-clean.
+>   mjs` indent-aware brace-counting, 5 tarif format'ı (multi-line /
+>   single-line literal / r({...})) tek algoritma, 59 source-only
+>   slug temizlendi
+> - **Em-dash hijyeni**: regex literal'leri unicode escape'e
+>   (`/[—–]/` → `/[—–]/`)
+> - **Pratik UX paketi**:
+>   - Ölçü dönüştürücü widget (tarif sayfası, 14 birim Türk + uluslararası
+>     + weight, 16 unit test)
+>   - Pişirme zamanlayıcı (StepTimer + Notification API + Web Audio
+>     beep, 9 unit test)
+>   - Ingredient hover popover (Mod H backend UI bağlantısı, findGuide
+>     lookup, 7 unit test)
+>   - Allergen confidence note (declared vs inferred uyarı tarif
+>     detay, 5 unit test)
+> - **Recipe quality dashboard** `/admin/kalite` (composite skor,
+>   en zayıf 50 tarif sıralı, RBAC ADMIN/MODERATOR)
+> - **2 yeni blog yazısı (51 + 52)**: Salamura ve Marine Bilimi (1294
+>   kelime, pisirme-teknikleri) + Bal Türleri ve Mutfak Kullanımı
+>   (1372 kelime, malzeme-tanima)
+> - **Color contrast WCAG AA spot fix** (StepTimer button kontrast
+>   4.36 → 7.5+:1, axe-core spot test light + dark 0 violation)
+> - **Dublin-soda-bread restore** (source DRIFT block, 1 slug source
+>   ile DB sync)
+> - **ProfileIncompleteBanner messages prop refactor** (Sentry
+>   transient race fix, getTranslations server-side prop pattern)
+> - **Sentry CSP + ProfileIncompleteBanner issue resolve** (API ile)
+> - **Codex Mod G + Mod H altyapı v2** (intro + 5 batch input prep +
+>   tetik şablonları "N" placeholder, "tutarsızlık olursa dur" rule)
+> - **Tüm 3679 tarif başlık dump** `docs/all-recipe-titles.md`
+>   (cuisine + type alfabetik gruplanmış, Mod I + manual audit baz)
+
+**A · Source duplicate smart cleanup KAPANIŞ** (`cd41472`): Oturum 21
+multi-line bozulma artığı kapandı. `scripts/smart-source-clean.mjs`
+yazıldı (indent-aware brace-counting), 59 source-only slug temizlendi
+(3 multi-line + 57 single-line + 1 duplicate kayıt). Source 3694 →
+3635 unique. tsc PASS, validate-batch PASS.
+
+**B · Em-dash hijyeni** (`e4c9730`): Pre-push em-dash guard 7 eşleşme
+(1 yeni FUTURE_PLANS + 6 pre-existing apply-mod-g/h regex
+literal'leri). Hepsi `/[—–]/` unicode escape pattern'e
+çevrildi.
+
+**C · Mod G + Mod H workflow polish** (`91cb0cb`):
+- `scripts/prepare-mod-g-input.ts` (yeni): docs/mod-g-boilerplate-
+  slugs.txt'den N slug + DB context (mevcut tipNote/sug + ingredient
+  + step + cuisine + type) zenginleştirme
+- `scripts/prepare-mod-h-input.ts` (yeni): docs/mod-h-ingredient-list.
+  txt'den N ingredient + sample slug + tip dağılımı + frequency +
+  NutritionData eşleşmesi
+- `docs/CODEX_NEW_CHAT_INTRO.md` (yeni): yeni chat başlangıç + 3 mod
+  detaylı tetik şablonu
+- Brief §17.4 + §18.4 pipeline güncel (Claude prepare-input adımı)
+
+**D · Mod A Batch 39b prod** (`3ff8e14`): 50 yeni tarif, prod 3636 →
+3686. Recompute pipeline tam (hunger-bar 50 + nutrition 3686 + diet-
+score 36860). Smoke /tarif/agri-abdigor-koftesi 200 OK. Brief Kural
+6 + 7 + 16 disiplinli.
+
+**E · Mod G Batch 1 prod** (`0e5a203`): 100 tarif tipNote/sug revize
+(2 tip + 99 sug). Intro N placeholder fix (`{BATCH_ID}` → `N`,
+"Sadece ilk satırdaki Batch N değerini değiştir" kuralı, "tutarsızlık
+olursa dur, sor" güvenlik).
+
+**F · Mod G batch 2-5 input prep** (`36b673d`): docs/mod-g-batch-2/3/
+4/5-input.json üretildi (4 ardışık batch, 100+100+100+17 = 317 slug
+context). Codex tetik bekler.
+
+**G · Pişirme zamanlayıcı** (`597c3b4`):
+- src/lib/recipe/notifications.ts (yeni): Browser Notification API +
+  Web Audio beep + SSR/unsupported guard
+- src/components/recipe/StepTimer.tsx (yeni): 4 state (idle/running/
+  paused/done) + countdown MM:SS + bitince beep + push + ARIA
+- RecipeSteps.tsx: timerSeconds > 0 her step için interaktif timer
+- 9 unit test (notifications) + 16 measure-conversion + smoke verify
+
+**H · Mod G Batch 2 prod** (`ce0dc93`): 100 tarif daha (3 tip + 98
+sug). N placeholder akışı temiz çalıştı.
+
+**I · A11y color contrast WCAG AA spot fix** (`4ec2288`): StepTimer
+button "bg-accent-blue/20 text-accent-blue" pattern kontrast 4.36
+(hedef 4.5:1). Solid bg + white text font-semibold pattern (light +
+dark 0 violation). axe-core spot test (`tests/e2e/a11y-contrast-spot
+.spec.ts`) yeni.
+
+**J · Dublin-soda-bread restore** (`14f3303`): Source vs DB diff:
+dublin-soda-bread DB'de PUBLISHED ama seed-recipes.ts'ten eksikti.
+restore-missing-slugs-to-seed.ts ile DRIFT RESTORE bloğu eklendi.
+
+**K · Allergen confidence note** (`edc1fbc`):
+- src/lib/recipe/allergen-confidence.ts (yeni): declared vs inferred
+  diff (extraInferred = potansiyel kaçırılan tag, extraDeclared =
+  matcher tespit edemez)
+- src/components/recipe/AllergenConfidenceNote.tsx (yeni): warning
+  ⚠ + info ℹ surface, allergen detail expand'e
+- page.tsx allergen detail koşulu IIFE wrapper ile (declared bos +
+  inferred extra varsa expand olusur)
+- 5 unit test + audit script (find-allergen-mismatch.ts)
+- Bulunan mismatch: 69 extra-inferred + 165 extra-declared = 234
+  tarifte uyarı görünür (~%6 prod sample)
+
+**L · Mod G Batch 3 + 4 prod** (`8ec153b`): 200 tarif daha (3 + 1
+tip + 99 + 99 sug). Mod G ilerleme: 400/417 = %96.
+
+**M · Recipe quality dashboard `/admin/kalite`** (`5bf56c2`):
+- Server component RBAC ADMIN/MODERATOR
+- Composite skor: kısa desc / az kelime / tipNote yok / serv-sug yok
+  / step yetersiz / allergen extraInferred / extraDeclared
+- Top 50 issue sırası (totalScore desc), Stat row (yayında/sorunlu/
+  listelenen/en yüksek skor)
+- Tablo: Title link + Type + Issues bullet + Score
+- Nav bar "Kalite" link (Tarifler ile Kullanıcılar arası)
+
+**N · Tavuklu Pilav klasik manuel** (`ee5f54c`): Kullanıcı tespitiyle
+"temel Tavuklu Pilav" eksikti (16 yöresel/varyant var). Klasik 6 step
+(haşla → pirinç beklet → kavur → su+demle → didikle), 4 kişilik 420
+kcal, isFeatured. Prod 3686 → 3687, smoke 200 OK.
+
+**O · Mod H Batch 1 prod** (`6ac8c12`): 50 ingredient enrichment.
+IngredientGuide tablosuna "neden + yerine + notes" entry. Codex
+self-check + Claude deep kalite kontrol (avg whyUsed 14.9w, avg
+notes 12.2w, jargon 0, em-dash 0, dup 0).
+
+**P · Codex memory + deep kalite kontrol direktifi** (memory
+`reference_codex_workflow.md`): Her batch teslim sonrası deep audit
+ZORUNLU (sema validate yetmez). Mod A/G/H specific metrik liste.
+
+**R · Mod G Batch 5 prod final** (`fd35569`): 17 tarif (final, 0 tip
++ 17 sug). **Mod G PIPELINE KAPANIŞ**, 417/417 boilerplate %100.
+Cross-batch B1+B2+B3+B4+B5 = 420 entry, dup 0.
+
+**S · Mod H Batch 2 prod** (`4212ab8`): 100 ingredient toplam (top
+51-100). Cross-batch dup 0, name overlap 0.
+
+**T · Ingredient hover popover** (`8db3cdf`):
+- src/lib/recipe/ingredient-guide.ts (yeni): unstable_cache 30dk +
+  findGuide lookup (exact / last-word / any-word / substring fallback)
+- src/components/recipe/IngredientGuidePopover.tsx (yeni): (i) buton
+  ml-1 inline + click toggle + outside/Escape kapanış + ARIA
+  role=dialog + aria-expanded
+- IngredientList: guides prop optional, findGuide ile lookup
+- 7 unit test PASS
+- Verify Adana Kebap: 6 (i) buton + "Dana kıyma" popover (whyUsed +
+  4 substitute chip + Not)
+
+**U · Mod H Batch 3 + 4 prod** (`c99918c`): 100 ingredient daha,
+toplam 200. Cross-batch B1+B2+B3+B4 (200 entry): name overlap 0,
+dup 0.
+
+**V · ProfileIncompleteBanner messages prop refactor** (`ad8d7be`):
+Sentry "Failed to call useTranslations" tek seferlik dev hata
+(count=1, userCount=0, env=development), transient SSR fallback race.
+Defansif fix: useTranslations kaldır, server-side getTranslations
+labels prop pattern (canonical Next-intl client component pattern).
+
+**W · Mod H Batch 5 prod final** (`c2c6f7a`): 50 ingredient
+(top 201-250 final). **Mod H PIPELINE KAPANIŞ**, 250/250 ingredient
+%100 hedef coverage. Cross-batch B1-B5 (250 entry) name overlap 0,
+dup 0. Top 250 ingredient ~%95+ tarif kapsamı (USDA Faz 4 paralel).
+
+**X · 8 duplicate sil + ANZAC title** (`714522f`): Kullanıcı
+tespitiyle (ANZAC Biscuit/Biscuits/Bisküvisi 3 duplicate, Ali Nazik,
+Alfajores, Antalya Hibeş, Amasya Bakla Dolması x2, Anticucho de
+Pollo). Pipeline rollback-batch dev + prod (--confirm-prod), title
+update slug=anzac-biscuits "ANZAC Bisküvisi", smart-source-clean
++ recompute pipeline. Prod 3687 → 3679. Yeni audit scriptleri:
+- scripts/find-aggressive-duplicates.ts (Jaccard + cuisine + type)
+- scripts/check-user-duplicates.ts (manuel verify)
+- scripts/dump-recipe-titles.ts (docs/all-recipe-titles.md, 3679
+  tarif 235 grup)
+
+**Y · Cache invalidate** (`bd54654`): boş commit Vercel redeploy
+sonrası getSearchSuggestions unstable_cache 10dk TTL beklendi.
+
+**Z · Mod I duplicate audit altyapı** (`3e6a5e8`):
+- docs/MOD_I_TRIGGER.md: Codex tetik şablonu (yeni chat baslangic +
+  5 batch akış a-c / d-i / j-n / p-r / s-z cuisine harf aralığı)
+- scripts/find-duplicates-claude.ts: sıkı pair-only audit (titleJacc
+  >=0.6 + ingJacc>=0.6 + stepDiff<=2 + calDiff<=30%)
+- docs/duplicate-suggestions.md: 166 strict pair, 150 unique sil
+  önerisi (false positive %30-50, Codex Mod I cross-check ile
+  filtrelenecek)
+- Cross-validation pattern: Codex Mod I high-confidence cluster +
+  Claude pair list = kesin duplicate
+
+**Oturum 22 sonu skor:**
+- 35+ commit, **prod 3636 → 3679 tarif** net (+43, Mod A 39b 50 +
+  Tavuklu Pilav 1 - 8 duplicate)
+- **Mod G PIPELINE KAPANIŞ** (417/417 boilerplate %100)
+- **Mod H PIPELINE KAPANIŞ** (250/250 ingredient %100)
+- **2 yeni blog** (52 toplam, 41 → 50 → 52)
+- **Yeni componentler**: ölçü dönüştürücü + StepTimer + Allergen
+  confidence note + IngredientGuidePopover
+- **Yeni admin route**: /admin/kalite
+- **Yeni Mod**: Mod I duplicate audit (altyapı hazır, batch tetik
+  bekler)
+- **84 + 16 + 9 + 5 + 7 unit test PASS** (toplam 121, pre-mevcut
+  ekleri ile)
+- Pre-push 6 katman temiz, em-dash 0, tsc 0 error
+
+---
 
 ## 26 Nisan 2026 (oturum 21 SONU, 38 commit, MUTLAK REKOR maraton)
 

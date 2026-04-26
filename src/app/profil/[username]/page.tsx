@@ -20,6 +20,7 @@ import { ProfileActivity } from "@/components/profile/ProfileActivity";
 import { FollowButton } from "@/components/profile/FollowButton";
 import { DeleteOwnVariationButton } from "@/components/recipe/DeleteOwnVariationButton";
 import { getFollowCounts, isFollowing } from "@/lib/queries/follow";
+import { getUserCookedRecipes } from "@/lib/queries/recipe-cooked";
 
 interface ProfilePageProps {
   params: Promise<{ username: string }>;
@@ -83,6 +84,7 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
     followCounts,
     viewerFollows,
     userScore,
+    cookedRecipes,
   ] = await Promise.all([
     isOwner ? getUserBookmarks(user.id) : Promise.resolve([]),
     getUserVariations(user.id, isOwner),
@@ -95,6 +97,7 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
       ? isFollowing(session.user.id, user.id)
       : Promise.resolve(false),
     getUserScore(user.id),
+    isOwner ? getUserCookedRecipes(user.id, 100) : Promise.resolve([]),
   ]);
 
   // Owner-only fields (TS narrowing, only present when isOwner === true)
@@ -482,6 +485,42 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
               })}
             </ul>
           )}
+        </section>
+      )}
+
+      {/* Pisirdiklerim (only visible to owner), oturum 23 yeni feature.
+          Kullanici "Pisirdim" toggle'ini kullandigi tariflerin kronolojik
+          (en son pisirme ustte) listesi. Sosyal kanit + kullanicinin kendi
+          deneme gecmisi. */}
+      {isOwner && cookedRecipes.length > 0 && (
+        <section className="mb-10">
+          <h2 className="mb-4 font-heading text-xl font-bold text-text">
+            <span aria-hidden>👨‍🍳</span> Pişirdiklerim
+            <span className="ml-2 text-sm font-normal text-text-muted">
+              ({cookedRecipes.length})
+            </span>
+          </h2>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {cookedRecipes.map((c) => (
+              <Link
+                key={c.id}
+                href={`/tarif/${c.recipe.slug}`}
+                className="rounded-lg border border-border bg-bg-card p-4 transition-colors hover:bg-bg-elevated"
+              >
+                <p className="font-medium text-text">
+                  {c.recipe.emoji} {c.recipe.title}
+                </p>
+                <p className="mt-1 text-xs text-text-muted">
+                  {new Date(c.cookedAt).toLocaleDateString("tr-TR", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  })}
+                  {c.servings ? ` · ${c.servings} porsiyon` : ""}
+                </p>
+              </Link>
+            ))}
+          </div>
         </section>
       )}
 

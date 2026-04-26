@@ -45,6 +45,11 @@ import { auth } from "@/lib/auth";
 import { getPantryMatchForRecipe } from "@/lib/pantry/server";
 import { PantryMatchBadge } from "@/components/pantry/PantryMatchBadge";
 import { CookedButton } from "@/components/pantry/CookedButton";
+import { RecipeCookedToggle } from "@/components/recipe/RecipeCookedToggle";
+import {
+  isCookedByUser,
+  getCookedCount,
+} from "@/lib/queries/recipe-cooked";
 import { getRecipeDietScore } from "@/lib/queries/diet-score";
 import { DietFitCard } from "@/components/recipe/DietFitCard";
 import { isValidLocale, type Locale } from "@/i18n/config";
@@ -262,6 +267,8 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
     variants,
     pantryMatch,
     userVoicePref,
+    cookedCount,
+    isCookedByMe,
   ] = await Promise.all([
     session?.user?.id
       ? isBookmarked(session.user.id, recipe.id)
@@ -314,6 +321,10 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
           dietProfile: null as string | null,
           showDietBadge: true,
         }),
+    getCookedCount(recipe.id),
+    session?.user?.id
+      ? isCookedByUser(session.user.id, recipe.id)
+      : Promise.resolve(false),
   ]);
 
   // Diyet skoru (oturum 20). Login + dietProfile set + showDietBadge true
@@ -569,6 +580,19 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
       {/* Pantry match: giris yapmis kullanicinin dolabi ile bu tarifin
           malzeme karsilastirmasi. Yeter mi, ne eksik?
           Altinda "Pisirdim" butonu ile pantry'den dusurme akisi. */}
+      {/* Pisirdim rozet sistemi (oturum 23): toggle + "X kisi pisirdi"
+          sosyal kanit. Anonymous kullanici icin gizlenmiyor (count daima
+          gosterilir, login degilse butonun feedback'i "Onceden giris yap"). */}
+      <div className="mb-4">
+        <RecipeCookedToggle
+          recipeId={recipe.id}
+          slug={recipe.slug}
+          initialCount={cookedCount}
+          initialIsCooked={isCookedByMe}
+          isLoggedIn={!!session?.user?.id}
+        />
+      </div>
+
       {pantryMatch && pantryMatch.total > 0 && (
         <div className="mb-8">
           <PantryMatchBadge summary={pantryMatch} />

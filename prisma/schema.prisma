@@ -236,6 +236,9 @@ model User {
   followers               Follow[]                 @relation("following")
   following               Follow[]                 @relation("follower")
   pantryItems             UserPantryItem[]
+  // "Pişirdim" rozet sistemi (oturum 23). Tarif başına unique kayıt,
+  // toggle on/off. count(distinct user) → "X kişi pişirdi" sosyal kanıt.
+  cookedRecipes           RecipeCooked[]
 
   @@map("users")
 }
@@ -399,6 +402,7 @@ model Recipe {
   tags            RecipeTag[]
   variations      Variation[]
   bookmarks       Bookmark[]
+  cookedBy        RecipeCooked[]
   collectionItems CollectionItem[]
   videoJobs       VideoJob[]
   reviews         Review[]
@@ -547,6 +551,28 @@ model Bookmark {
 
   @@unique([userId, recipeId])
   @@map("bookmarks")
+}
+
+// "Pişirdim" rozet sistemi — oturum 23 yeni feature. Bookmark'a benzer
+// shape: kullanıcı tarif başına en fazla bir kayıt tutar (@@unique). Tarif
+// detay sayfasında toggle "Pişirdim ✓" + sosyal kanıt count "X kişi
+// pişirdi", profil sayfasında "Pişirdiklerim" tab. Servings opsiyonel:
+// kullanıcı CookedButton ile dolaptan düşerken kaç porsiyon pişirdiğini
+// belirtir, son tutulan değer kayıt edilir (toggle off + on'da overwrite).
+model RecipeCooked {
+  id        String   @id @default(cuid())
+  userId    String
+  recipeId  String
+  cookedAt  DateTime @default(now())
+  servings  Int?
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  recipe Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, recipeId])
+  @@index([recipeId])
+  @@index([userId, cookedAt(sort: Desc)])
+  @@map("recipe_cooked")
 }
 
 // Review — kullanıcı tarife 1-5 yıldız + opsiyonel yorum bırakır. Her

@@ -493,7 +493,7 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
           (en son pisirme ustte) listesi. Sosyal kanit + kullanicinin kendi
           deneme gecmisi. */}
       {isOwner && cookedRecipes.length > 0 && (
-        <section className="mb-10">
+        <section id="pisirdiklerim" className="mb-10 scroll-mt-24">
           <h2 className="mb-4 font-heading text-xl font-bold text-text">
             <span aria-hidden>👨‍🍳</span> Pişirdiklerim
             <span className="ml-2 text-sm font-normal text-text-muted">

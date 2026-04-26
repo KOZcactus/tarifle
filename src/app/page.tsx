@@ -21,9 +21,11 @@ import {
   getPopularRecipes,
   getPersonalizedRecipes,
   getMostCookedRecentlyRecipes,
+  getUserRecentlyCookedRecipes,
 } from "@/lib/queries/recipe";
 import { getCategories } from "@/lib/queries/category";
 import { auth } from "@/lib/auth";
+import type { RecipeCard as RecipeCardType } from "@/types/recipe";
 import { getCuisineStats } from "@/lib/queries/cuisine-stats";
 import { getSearchSuggestions } from "@/lib/queries/search-suggestions";
 import { getRandomRecipe } from "@/lib/queries/random-recipe";
@@ -94,6 +96,7 @@ export default async function HomePage() {
     suggestedCooks,
     viewerFollowingIds,
     mostCookedRecently,
+    personalCooked,
     t,
     tNav,
   ] = await Promise.all([
@@ -110,6 +113,9 @@ export default async function HomePage() {
     getSuggestedCooks(userId, 6),
     userId ? getFollowingUserIds(userId) : Promise.resolve<string[]>([]),
     getMostCookedRecentlyRecipes({ days: 7, limit: 6 }),
+    userId
+      ? getUserRecentlyCookedRecipes(userId, 6)
+      : Promise.resolve<RecipeCardType[]>([]),
     getTranslations("home"),
     getTranslations("nav"),
   ]);
@@ -268,6 +274,36 @@ export default async function HomePage() {
         </section>
       )}
 
+      {/* Son pisirdiklerin (oturum 24 yeni). Login user'in kendi cooked
+          gecmisi, kronolojik desc. Yeniden pisirme prompt + kisisel arsiv
+          carki. Pisirilen yoksa shelf gizli (yeni siteye dair geri bildirim:
+          ilk pisirmeden once gorunmuyor). Personalized'in altinda cunku
+          tercihlere gore kuratoryel oneri once, sonra "kendi gecmisin". */}
+      {userId && session?.user?.username && personalCooked.length > 0 && (
+        <section className="py-8">
+          <div className="mb-6 flex items-end justify-between gap-4">
+            <div>
+              <h2 className="font-heading text-2xl font-bold text-text">
+                {t("sectionPersonalCooked")}
+              </h2>
+              <p className="mt-2 text-sm text-text-muted">
+                {t("sectionPersonalCookedSubtitle")}
+              </p>
+            </div>
+            <Link
+              href={`/profil/${session.user.username}#pisirdiklerim`}
+              className="shrink-0 text-sm text-primary hover:underline"
+            >
+              {t("personalCookedSeeAll")}
+            </Link>
+          </div>
+          <FeaturedShelf
+            recipes={personalCooked}
+            ariaLabel={t("sectionPersonalCooked")}
+          />
+        </section>
+      )}
+
       {/* Editör Seçimi, Tarifle editörlerinin haftalık kürasyon shelf'i.
           Rotasyonel (getFeaturedPool + hafta indeksi). Başlık + subtitle
           ikilisi Tarifle ton'unu pekiştirir; altın rozet RecipeCard
@@ -314,7 +350,10 @@ export default async function HomePage() {
               {t("seeAll")}
             </Link>
           </div>
-          <FeaturedShelf recipes={mostCookedRecently} />
+          <FeaturedShelf
+            recipes={mostCookedRecently}
+            ariaLabel="Bu hafta en çok pişirilenler"
+          />
         </section>
       )}
 

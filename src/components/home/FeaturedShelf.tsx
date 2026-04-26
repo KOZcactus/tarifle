@@ -11,6 +11,11 @@ interface FeaturedShelfProps {
   /** Recipe ID -> diet badge map. Login + dietProfile yoksa undefined ya
    *  da bos Map. RecipeCard kosullu render eder. */
   dietBadges?: Map<string, DietBadgeData>;
+  /** Carousel aria-label override. Default "⭐ Editör Seçimi" (i18n key
+   *  sectionFeatured). "Bu hafta en cok pisirilenler" / "Son
+   *  pisirdiklerin" shelf'leri kendi heading'leriyle gecmek icin
+   *  ariaLabel prop'u kullanir. */
+  ariaLabel?: string;
 }
 
 /**
@@ -31,8 +36,13 @@ interface FeaturedShelfProps {
  * Desktop grid kodu minimal farkla aynı, CSS media query tek sayfada
  * conditional render.
  */
-export function FeaturedShelf({ recipes, dietBadges }: FeaturedShelfProps) {
+export function FeaturedShelf({
+  recipes,
+  dietBadges,
+  ariaLabel,
+}: FeaturedShelfProps) {
   const t = useTranslations("home");
+  const carouselLabel = ariaLabel ?? t("sectionFeatured");
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -74,7 +84,7 @@ export function FeaturedShelf({ recipes, dietBadges }: FeaturedShelfProps) {
       <div
         ref={scrollRef}
         className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 sm:hidden [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-        aria-label={t("sectionFeatured")}
+        aria-label={carouselLabel}
       >
         {recipes.map((recipe) => (
           <div

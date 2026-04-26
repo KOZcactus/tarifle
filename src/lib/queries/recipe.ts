@@ -614,6 +614,40 @@ export async function getMostCookedRecentlyRecipes(
   return attachCookedCounts(ordered as unknown as RecipeCard[]);
 }
 
+/**
+ * Login user'in son pisirdigi tariflerin kart formati listesi (oturum 24).
+ * Anasayfa "Son pisirdiklerin" kisisel shelf'i icin. Kronolojik desc
+ * (en son pisirilen en ust). Sonuc bos ise caller shelf'i gizler.
+ *
+ * `recipe-cooked.getUserCookedRecipes` profil tab icin lightweight format
+ * dondururdu (slug/title/emoji/...); buradaki helper RecipeCard sema'sinda
+ * (cookedCount + diet badge uyumlu) doner. Iki ayri kaynak: profil tab
+ * arastirma listesi (limit 100), anasayfa shelf (limit 8).
+ */
+export async function getUserRecentlyCookedRecipes(
+  userId: string,
+  limit = 8,
+): Promise<RecipeCard[]> {
+  const cookedRows = await prisma.recipeCooked.findMany({
+    where: { userId, recipe: { status: "PUBLISHED" } },
+    orderBy: { cookedAt: "desc" },
+    take: limit,
+    select: { recipeId: true },
+  });
+  if (cookedRows.length === 0) return [];
+  const ids = cookedRows.map((r) => r.recipeId);
+  const recipes = await prisma.recipe.findMany({
+    where: { id: { in: ids } },
+    select: recipeCardSelect,
+  });
+  // RecipeCooked.cookedAt order preserve (en son pisen en ust)
+  const byId = new Map(recipes.map((r) => [r.id, r]));
+  const ordered = ids
+    .map((id) => byId.get(id))
+    .filter((r): r is NonNullable<typeof r> => r !== undefined);
+  return attachCookedCounts(ordered as unknown as RecipeCard[]);
+}
+
 /** En çok görüntülenen tarifler, viewCount desc */
 export async function getPopularRecipes(limit = 8): Promise<RecipeCard[]> {
   const recipes = await prisma.recipe.findMany({

@@ -3735,46 +3735,71 @@ tarif description'larını uzatmak kullanıcıyı bunaltır. Mod K hedefi
 Description max %20 uzar veya aynı kalır. Yeni "tarihte X yıllık"
 gibi süs cümleleri YASAK.
 
-**Mod K kapsamı (full check):**
-- description: yanlış köken, yanıltıcı yöntem ifadesi, hatalı
-  kültürel bilgi (örn "Osmanlı'dan kalma" değilse onu yazma)
-- ingredients: kritik bir malzeme eksik mi (klasik tarifin temel
-  taşı, örn carbonara'da yumurta sarısı)
-- ingredients: yanlış malzeme yazılmış mı (örn klasik moussaka'da
-  patatesle değil patlıcanla yapılır)
-- steps: yanlış sıralama (yumurta beyazını çırptıktan SONRA un
-  eklersen kabarmaz)
-- steps: yanlış sıcaklık veya süre (tavuk göğsü 200°C'de 5 dk kurur)
-- steps: kritik adım eksikliği (et mühürleme, marine, dinlendirme)
-- prepMinutes/cookMinutes/totalMinutes: makul mü (15 dk'da fırın
-  kebabı pişmez)
-- tipNote: yanlış teknik veya jargon
-- isFeatured: featured ama içerik zayıf mı (manuel review için flag)
+**Mod K kapsamı (TAM CHECK, oturum 24 sonu Kerem net):
+HER ALAN dahil):**
+- **description**: yanlış köken, yanıltıcı yöntem, hatalı kültürel
+  bilgi (örn "Osmanlı'dan kalma" değilse onu yazma)
+- **ingredients - kompozisyon**: kritik malzeme eksik mi (örn
+  carbonara'da yumurta sarısı), yanlış malzeme yazılmış mı (klasik
+  moussaka patlıcanla yapılır, patatesle değil)
+- **ingredients - amount**: miktar makul mü (4 kişilik tarif için 1
+  kg un absurt, 100 gr çok az), klasikle uyumlu mu
+- **ingredients - unit**: birim doğru mu (yk vs tk vs su bardağı vs
+  gram), measurement system tutarlı mı
+- **steps - sıralama**: yumurta beyazını çırptıktan SONRA un eklersen
+  kabarmaz tarzı sıralama hataları
+- **steps - sıcaklık + süre**: tavuk göğsü 200°C'de 5 dk kurur
+  tarzı yanlış parametreler
+- **steps - kritik adım eksikliği**: et mühürleme, marine,
+  dinlendirme, beklenen tav (yumurta köpürene kadar)
+- **prepMinutes/cookMinutes/totalMinutes**: makul mü (15 dk'da fırın
+  kebabı pişmez), birbirinden tutarlı mı
+- **servingCount**: tarif sayısıyla amount'lar uyumlu mu (4 kişilik
+  yazıyor ama amount 8 kişilik kıvamda)
+- **averageCalories**: kalori makul mü (porsiyon başına; tatlı 100
+  kcal absurt, salata 800 kcal absurt)
+- **protein / carbs / fat (gram)**: macro nutrition tutarlı mı
+  (toplam kalori = 4×protein + 4×carbs + 9×fat ≈ averageCalories,
+  %20 toleransla; porsiyon başına gram makul mü)
+- **tags**: tarif gerçekten o tag'i hak ediyor mu (vegan tag ama
+  yumurta var; 30-dakika-alti tag ama totalMinutes 60 dk; yuksek-
+  protein tag ama protein 8g sadece); fazla / eksik tag
+- **allergens**: declared allergen doğru mu (gluten yazıyor ama un
+  yok; sut yazıyor ama tereyağı + süt + krema var ama declare yok)
+- **tipNote**: yanlış teknik, jargon, sözde-bilim
+- **servingSuggestion**: tutarlı mı, garip eşleştirme yok mu
+- **isFeatured**: featured ama içerik zayıf mı (manuel review flag)
 
 **Mod K alt-modlar (gelecek, ihtiyaç olunca):**
-- **Mod KA**: Sadece description doğruluk pass'i (hızlı tarama,
-  ~50 batch)
-- **Mod KB**: Ingredient + step doğruluk (orta scope)
-- **Mod KC**: Times + tipNote tutarlılık (kısa scope)
+- **Mod KA**: Sadece description doğruluk pass'i (hızlı tarama)
+- **Mod KB**: Ingredient kompozisyon + amount + unit + step doğruluk
+- **Mod KC**: Times + macro nutrition + tags + allergens
+- **Mod KD**: tipNote + servingSuggestion + featured manuel
 - Mod K (tam) yerine odaklı alt-mod tercih edilebilir
 
 ### 20.2 Input + Output
 
-**Input dosyası**: `docs/mod-k-batch-N-input.json`
-- Claude `prepare-mod-k-input.ts --batch N --size 100` koşturur
+**Input dosyası**: `docs/mod-k-batch-Nx-input.json` (Nx = "1a", "1b",
+"2a", "2b" ...)
+- Claude `prepare-mod-k-input.ts --batch 1a --size 50` koşturur
 - Her tarif için: slug, title, cuisine, type, description,
-  ingredients (full list), steps (full list), prepMinutes,
-  cookMinutes, totalMinutes, tipNote, isFeatured, allergens
-- 100 tarif batch boyutu (35 batch toplam)
+  ingredients (full list + amount + unit), steps (full list),
+  prepMinutes, cookMinutes, totalMinutes, servingCount,
+  averageCalories, protein, carbs, fat, tipNote, servingSuggestion,
+  tags, allergens, isFeatured
+- **50 tarif batch boyutu** (oturum 24 dersi: 100 derinleşmek için
+  fazla, 50 odaklı kalır). Sub-batch naming "1a" (ilk 50) + "1b"
+  (sıradaki 50) ile Mod A pattern'iyle paralel
+- Toplam: 3517 tarif / 50 = ~71 sub-batch (1a-36b)
 
-**Output JSON**: `docs/mod-k-batch-N.json`
+**Output JSON**: `docs/mod-k-batch-Nx.json` (Nx = "1a", "1b" ...)
 
 ```json
 [
   {
     "slug": "carbonara",
     "verdict": "PASS",
-    "reason": "Klasik Roma carbonara: yumurta + pecorino + guanciale + biber. Mevcut tarif doğru, kaynaklar uyuşuyor.",
+    "reason": "Klasik Roma carbonara: yumurta + pecorino + guanciale + biber. Macro değerler ve süreler makul, tags + allergens doğru.",
     "sources": [
       "https://www.bonappetit.com/recipe/carbonara",
       "https://www.giallozafferano.it/spaghetti-carbonara"
@@ -3782,27 +3807,54 @@ gibi süs cümleleri YASAK.
     "confidence": "high"
   },
   {
+    "slug": "vegan-yumurtali-omlet",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "tag: 'vegan' yazılı ama tarif yumurta içeriyor; vegan tag yanıltıcı",
+      "allergen: 'YUMURTA' declare edilmemiş, ingredient list'te yumurta var"
+    ],
+    "corrections": {
+      "tags_remove": ["vegan"],
+      "allergens_add": ["YUMURTA"]
+    },
+    "sources": [
+      "https://www.veganrecipes.com/definition",
+      "https://www.fda.gov/food/food-allergens"
+    ],
+    "confidence": "high",
+    "reason": "Vegan tanımı hayvansal ürün içermez, yumurta hayvansal. Tag kaldırılmalı, ayrıca yumurta allergen olarak declare edilmeli."
+  },
+  {
     "slug": "moussaka",
     "verdict": "CORRECTION",
     "issues": [
-      "ingredient: 'patates' yazılı ama klasik Yunan moussaka'sında patates ana malzeme değil, isteğe bağlı katman",
-      "step 4: '180°C 30 dk' yazılı ama beşamel sosun üstü için 25 dk yeterli, son 5 dk grill önerilir"
+      "ingredient: 'patates' yazılı ama klasik Yunan moussaka ana malzeme değil, isteğe bağlı katman",
+      "ingredient amount: 'Et 200 gr' yazılı, 6 kişilik için az (klasik 600-800 gr)",
+      "step 4: '180°C 30 dk' yazılı ama beşamel sosun üstü için 25 dk + 5 dk grill önerilir",
+      "calories: 850 kcal/porsiyon yüksek; klasik moussaka ~550-650 kcal aralığında"
     ],
     "corrections": {
       "ingredients_remove": ["patates"],
+      "ingredients_amount_change": [
+        { "name": "Dana kıyma", "newAmount": "600", "newUnit": "gr" }
+      ],
       "steps_replace": [
         {
           "stepNumber": 4,
           "instruction": "Moussakayı 180°C fırında 25 dakika pişirin, son 5 dakika grill açıp beşamelin üstünü kızartın."
         }
-      ]
+      ],
+      "averageCalories": 580,
+      "protein": 28,
+      "carbs": 18,
+      "fat": 38
     },
     "sources": [
       "https://www.bbcgoodfood.com/recipes/moussaka",
       "https://www.seriouseats.com/moussaka-eggplant-greek-recipe"
     ],
     "confidence": "high",
-    "reason": "BBC Good Food ve Serious Eats moussaka'da patates kullanmaz, klasik tarif sadece patlıcan + et + beşamel. Patates yöresel varyant, ana tarifte yok."
+    "reason": "BBC Good Food ve Serious Eats moussaka klasik halini referans alır: patates yok, ana et ~600 gr, kalori ~580 kcal/porsiyon, beşamel + grill bitiş."
   },
   {
     "slug": "menemen",
@@ -3834,17 +3886,25 @@ gibi süs cümleleri YASAK.
     yanlış mutfak iddiası, sahte tarihçe). Manuel review zorunlu
 - `issues` (CORRECTION + MAJOR_ISSUE): tespit edilen sorunların
   listesi
-- `corrections` (CORRECTION + MAJOR_ISSUE):
-  - `description` (opsiyonel): yeni description (mevcut + max %20
-    uzar veya aynı uzunluk; ŞİŞİRME YASAK)
-  - `ingredients_add` (opsiyonel): eklenecek ingredient'lar
-    `[{ name, amount, unit, group? }]`
-  - `ingredients_remove` (opsiyonel): silinecek ingredient adları
-  - `steps_replace` (opsiyonel): değişecek step'ler
-    `[{ stepNumber, instruction, timerSeconds? }]`
-  - `tipNote` (opsiyonel): yeni tipNote (mevcut + max %20 uzar)
-  - `prepMinutes` / `cookMinutes` / `totalMinutes` (opsiyonel):
-    yeni süre
+- `corrections` (CORRECTION + MAJOR_ISSUE), opsiyonel alanlar:
+  - `description`: yeni description (max %20 uzar; ŞİŞİRME YASAK)
+  - `ingredients_add`: eklenecek `[{ name, amount, unit, group? }]`
+  - `ingredients_remove`: silinecek ingredient adları
+  - `ingredients_amount_change`: amount/unit düzeltmesi
+    `[{ name, newAmount, newUnit }]` (mevcut name match,
+    case-insensitive)
+  - `steps_replace`: değişecek `[{ stepNumber, instruction,
+    timerSeconds? }]`
+  - `tipNote`: yeni tipNote (max %20 uzar)
+  - `servingSuggestion`: yeni serving suggestion (max %20 uzar)
+  - `prepMinutes` / `cookMinutes` / `totalMinutes`: yeni süre
+  - `servingCount`: yeni porsiyon sayısı
+  - `averageCalories`: yeni kalori (porsiyon başına)
+  - `protein` / `carbs` / `fat`: yeni macro (gram, porsiyon başına)
+  - `tags_add`: eklenecek tag enum'lar (15 enum'dan, brief §5)
+  - `tags_remove`: silinecek tag enum'lar
+  - `allergens_add`: eklenecek allergen enum'lar (10 enum'dan)
+  - `allergens_remove`: silinecek allergen enum'lar
 - `sources` (zorunlu): en az 2 farklı domain (Mod M ile aynı)
 - `confidence` (zorunlu): "high" / "medium" / "low"
 - `reason` (zorunlu): 50-300 char Türkçe açıklama
@@ -3960,16 +4020,22 @@ Bitince "Mod K Batch N hazır" + özet:
 
 ### 20.6 Beklenen output
 
-- 35 batch × 100 = 3500 tarif kontrol (kalan ~17 son batch)
-- Her batch: ~5-15 CORRECTION + 1-3 MAJOR_ISSUE + ~75-85 PASS
-- Toplam beklenti: ~200-500 CORRECTION + ~30-100 MAJOR_ISSUE
-- AuditLog MOD_K_APPLY: ~250-600 kayıt (sadece onaylanan
+- 71 sub-batch × 50 = 3550 tarif kontrol (kalan ~17 son sub-batch)
+  - Sub-batch naming: 1a / 1b / 2a / 2b / ... / 35a / 35b / 36a
+    (Mod A pattern paralel)
+- Her sub-batch: ~3-8 CORRECTION + 1-3 MAJOR_ISSUE + ~40-45 PASS
+- Toplam beklenti: ~200-500 CORRECTION + ~30-150 MAJOR_ISSUE
+- AuditLog MOD_K_APPLY: ~250-700 kayıt (sadece onaylanan
   correction'lar)
 
 Mod K kapanış kriterleri:
-- 35 batch tamamlandı, verify + manual review + apply PASS
+- 71 sub-batch tamamlandı, verify + manual review + apply PASS
 - MAJOR_ISSUE'ların hepsi manuel ele alındı
 - Quality dashboard composite skorlarda iyileşme (top 50
   low-score tarif yeniden değerlendirilir)
+- Macro nutrition tutarlılığı: tüm tariflerde 4×P + 4×C + 9×F ≈
+  averageCalories (%20 toleransla)
+- Allergen + tag declare tutarlılığı: 0 vegan-yumurtalı, 0 gluten
+  declare-eksik tarif
 
 

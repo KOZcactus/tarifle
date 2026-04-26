@@ -1,20 +1,25 @@
 /**
  * Mod K (Tarif Kontrol) input prep script.
- * Codex web research yapacagi 100'lu batch icin tarif full content
- * ozetini JSON olarak diske yazar (docs/mod-k-batch-N-input.json).
+ * Codex web research yapacagi 50'li sub-batch icin tarif full content
+ * ozetini (macro nutrition + amount + tags + allergens dahil) JSON
+ * olarak diske yazar (docs/mod-k-batch-Nx-input.json, Nx="1a","1b"...).
+ *
+ * Sub-batch naming Mod A pattern paralel: her ana batch (1, 2, ...)
+ * 50 + 50 = 100 tarif olarak iki yarımya bolunur. "1a" = ilk 50,
+ * "1b" = sonraki 50. Toplam 36 ana batch × 2 = 71 sub-batch (son 1
+ * yarım).
  *
  * Codex bu input'u okur, brief §20 kurallariyla web research yapar,
  * her tarif icin verdict (PASS / CORRECTION / MAJOR_ISSUE) ve
  * gerekirse correction onerisi yazar.
  *
- * Batch siralamasi: alfabetik slug ASC (deterministik). 35 batch,
- * 3517 tarif. Quality dashboard low-score onceligi gelecek bir
- * iyilestirme (--priority quality flag eklenebilir).
- *
  * Usage:
- *   npx tsx scripts/prepare-mod-k-input.ts --batch 1                # default size 100
- *   npx tsx scripts/prepare-mod-k-input.ts --batch 1 --size 50
- *   npx tsx scripts/prepare-mod-k-input.ts --info                   # batch sayisi + ozet
+ *   npx tsx scripts/prepare-mod-k-input.ts --batch 1a               # ilk 50
+ *   npx tsx scripts/prepare-mod-k-input.ts --batch 1b               # sonraki 50
+ *   npx tsx scripts/prepare-mod-k-input.ts --batch 2a               # 101-150
+ *   npx tsx scripts/prepare-mod-k-input.ts --info                   # toplam ozet
+ *
+ * SIZE sabit 50 (brief §20.2 dersi: 100 fazla, 50 odaklı kalır).
  */
 import { PrismaClient } from "@prisma/client";
 import { PrismaNeon } from "@prisma/adapter-neon";
@@ -41,9 +46,13 @@ interface ModKInputEntry {
   totalMinutes: number;
   servingCount: number;
   averageCalories: number | null;
+  protein: number | null;
+  carbs: number | null;
+  fat: number | null;
   isFeatured: boolean;
   tipNote: string | null;
   servingSuggestion: string | null;
+  tags: string[];
   allergens: string[];
   ingredients: Array<{
     name: string;
@@ -58,18 +67,16 @@ interface ModKInputEntry {
   }>;
 }
 
-function parseSizeArg(): number {
-  const idx = process.argv.indexOf("--size");
-  if (idx === -1 || !process.argv[idx + 1]) return 100;
-  const n = Number.parseInt(process.argv[idx + 1], 10);
-  return Number.isFinite(n) && n > 0 ? n : 100;
-}
+const SIZE = 50; // brief §20.2 sabit (oturum 24 dersi)
 
-function parseBatchArg(): number | null {
+// Sub-batch parser: "1a" -> { batch: 1, half: "a" }, "12b" -> { batch: 12, half: "b" }
+function parseBatchArg(): { batch: number; half: "a" | "b" } | null {
   const idx = process.argv.indexOf("--batch");
   if (idx === -1 || !process.argv[idx + 1]) return null;
-  const n = Number.parseInt(process.argv[idx + 1], 10);
-  return Number.isFinite(n) && n > 0 ? n : null;
+  const raw = process.argv[idx + 1].toLowerCase().trim();
+  const m = raw.match(/^(\d+)([ab])$/);
+  if (!m) return null;
+  return { batch: Number.parseInt(m[1], 10), half: m[2] as "a" | "b" };
 }
 
 async function main() {
@@ -83,32 +90,38 @@ async function main() {
   });
 
   const INFO = process.argv.includes("--info");
-  const SIZE = parseSizeArg();
-  const BATCH = parseBatchArg();
+  const parsed = parseBatchArg();
 
   const total = await prisma.recipe.count({ where: { status: "PUBLISHED" } });
-  const totalBatch = Math.ceil(total / SIZE);
+  const totalSubBatch = Math.ceil(total / SIZE);
+  const totalMainBatch = Math.ceil(totalSubBatch / 2);
   console.log(`Toplam PUBLISHED tarif: ${total}`);
-  console.log(`Batch boyutu: ${SIZE}`);
-  console.log(`Toplam batch: ${totalBatch}`);
+  console.log(`Sub-batch boyutu: ${SIZE}`);
+  console.log(`Toplam sub-batch: ${totalSubBatch} (1a-${totalMainBatch}b)`);
+  console.log(`Ana batch sayisi: ${totalMainBatch}`);
 
   if (INFO) {
     await prisma.$disconnect();
     return;
   }
-  if (!BATCH) {
-    console.error("--batch N bayrağı zorunlu (veya --info ile özet al)");
-    await prisma.$disconnect();
-    process.exit(1);
-  }
-  if (BATCH > totalBatch) {
-    console.error(`Batch ${BATCH} > toplam ${totalBatch}`);
+  if (!parsed) {
+    console.error("--batch Nx bayrağı zorunlu (örn: --batch 1a, --batch 2b)");
+    console.error("Veya --info ile özet al");
     await prisma.$disconnect();
     process.exit(1);
   }
 
-  const offset = (BATCH - 1) * SIZE;
-  console.log(`Batch ${BATCH}: offset ${offset}, take ${SIZE}`);
+  const { batch, half } = parsed;
+  // 1a -> sub-batch index 1, 1b -> 2, 2a -> 3, 2b -> 4
+  const subBatchIndex = (batch - 1) * 2 + (half === "a" ? 1 : 2);
+  if (subBatchIndex > totalSubBatch) {
+    console.error(`Sub-batch ${batch}${half} > toplam ${totalSubBatch}`);
+    await prisma.$disconnect();
+    process.exit(1);
+  }
+
+  const offset = (subBatchIndex - 1) * SIZE;
+  console.log(`Sub-batch ${batch}${half}: index ${subBatchIndex}, offset ${offset}, take ${SIZE}`);
   console.log("");
 
   // Alfabetik slug ASC, deterministik
@@ -125,9 +138,13 @@ async function main() {
       totalMinutes: true,
       servingCount: true,
       averageCalories: true,
+      protein: true,
+      carbs: true,
+      fat: true,
       isFeatured: true,
       tipNote: true,
       servingSuggestion: true,
+      tags: { select: { tag: { select: { slug: true } } } },
       allergens: true,
       ingredients: {
         select: { name: true, amount: true, unit: true, group: true },
@@ -154,9 +171,13 @@ async function main() {
     totalMinutes: r.totalMinutes,
     servingCount: r.servingCount,
     averageCalories: r.averageCalories,
+    protein: r.protein === null ? null : Number(r.protein),
+    carbs: r.carbs === null ? null : Number(r.carbs),
+    fat: r.fat === null ? null : Number(r.fat),
     isFeatured: r.isFeatured,
     tipNote: r.tipNote,
     servingSuggestion: r.servingSuggestion,
+    tags: r.tags.map((t) => t.tag.slug),
     allergens: r.allergens as string[],
     ingredients: r.ingredients.map((i) => ({
       name: i.name,
@@ -171,19 +192,21 @@ async function main() {
     })),
   }));
 
+  const batchKey = `${batch}${half}`;
   const outPath = path.resolve(
     process.cwd(),
-    `docs/mod-k-batch-${BATCH}-input.json`,
+    `docs/mod-k-batch-${batchKey}-input.json`,
   );
   fs.writeFileSync(outPath, JSON.stringify(entries, null, 2), "utf-8");
   console.log(`Yazildi: ${outPath}`);
   console.log(`Entry sayisi: ${entries.length}`);
+  console.log(`Slug aralik: ${entries[0]?.slug} ... ${entries[entries.length - 1]?.slug}`);
   console.log("");
   console.log("Codex tetik:");
-  console.log(`  Mod K. Batch ${BATCH}.`);
+  console.log(`  Mod K. Batch ${batchKey}.`);
   console.log("");
   console.log(
-    `Codex teslim sonrasi: npx tsx scripts/verify-mod-k-batch.ts --batch ${BATCH}`,
+    `Codex teslim sonrasi: npx tsx scripts/verify-mod-k-batch.ts --batch ${batchKey}`,
   );
 
   await prisma.$disconnect();

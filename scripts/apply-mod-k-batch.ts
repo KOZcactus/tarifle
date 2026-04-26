@@ -49,24 +49,36 @@ interface ModKEntry {
     description?: string;
     ingredients_add?: Array<{ name: string; amount: string; unit: string; group?: string }>;
     ingredients_remove?: string[];
+    ingredients_amount_change?: Array<{ name: string; newAmount: string; newUnit?: string }>;
     steps_replace?: Array<{ stepNumber: number; instruction: string; timerSeconds?: number | null }>;
     tipNote?: string;
+    servingSuggestion?: string;
     prepMinutes?: number;
     cookMinutes?: number;
     totalMinutes?: number;
+    servingCount?: number;
+    averageCalories?: number;
+    protein?: number;
+    carbs?: number;
+    fat?: number;
+    tags_add?: string[];
+    tags_remove?: string[];
+    allergens_add?: string[];
+    allergens_remove?: string[];
   };
   sources?: string[];
   confidence?: "high" | "medium" | "low";
   reason?: string;
 }
 
-function parseBatchArg(): number[] | null {
+// Sub-batch keys: "1a", "1b" ...
+function parseBatchArg(): string[] | null {
   const idx = process.argv.indexOf("--batch");
   if (idx === -1 || !process.argv[idx + 1]) return null;
   return process.argv[idx + 1]
     .split(",")
-    .map((s) => Number.parseInt(s.trim(), 10))
-    .filter((n) => Number.isFinite(n) && n > 0);
+    .map((s) => s.trim().toLowerCase())
+    .filter((s) => /^\d+[ab]$/.test(s));
 }
 
 function parseSlugsArg(): Set<string> | null {
@@ -75,18 +87,18 @@ function parseSlugsArg(): Set<string> | null {
   return new Set(process.argv[idx + 1].split(",").map((s) => s.trim()).filter(Boolean));
 }
 
-function discoverBatchFiles(filter: number[] | null): string[] {
+function discoverBatchFiles(filter: string[] | null): string[] {
   const docsDir = path.resolve(process.cwd(), "docs");
   const all = fs
     .readdirSync(docsDir)
-    .filter((f) => /^mod-k-batch-\d+\.json$/.test(f))
+    .filter((f) => /^mod-k-batch-\d+[ab]\.json$/.test(f))
     .sort();
   if (!filter) return all.map((f) => path.join(docsDir, f));
   const set = new Set(filter);
   return all
     .filter((f) => {
-      const m = f.match(/^mod-k-batch-(\d+)\.json$/);
-      return m && set.has(Number.parseInt(m[1], 10));
+      const m = f.match(/^mod-k-batch-(\d+[ab])\.json$/);
+      return m && set.has(m[1]);
     })
     .map((f) => path.join(docsDir, f));
 }
@@ -142,11 +154,19 @@ async function main() {
         slug: true,
         description: true,
         tipNote: true,
+        servingSuggestion: true,
         prepMinutes: true,
         cookMinutes: true,
         totalMinutes: true,
+        servingCount: true,
+        averageCalories: true,
+        protein: true,
+        carbs: true,
+        fat: true,
+        tags: { select: { tag: { select: { slug: true } } } },
+        allergens: true,
         status: true,
-        ingredients: { select: { id: true, name: true, sortOrder: true } },
+        ingredients: { select: { id: true, name: true, amount: true, unit: true, sortOrder: true } },
       },
     });
     if (!recipe || recipe.status !== "PUBLISHED") {
@@ -156,13 +176,7 @@ async function main() {
     }
 
     const c = e.corrections!;
-    const updateData: {
-      description?: string;
-      tipNote?: string | null;
-      prepMinutes?: number;
-      cookMinutes?: number;
-      totalMinutes?: number;
-    } = {};
+    const updateData: Record<string, unknown> = {};
 
     let hasChange = false;
     if (c.description && c.description !== recipe.description) {
@@ -171,6 +185,10 @@ async function main() {
     }
     if (c.tipNote && c.tipNote !== recipe.tipNote) {
       updateData.tipNote = c.tipNote;
+      hasChange = true;
+    }
+    if (c.servingSuggestion && c.servingSuggestion !== recipe.servingSuggestion) {
+      updateData.servingSuggestion = c.servingSuggestion;
       hasChange = true;
     }
     if (c.prepMinutes !== undefined && c.prepMinutes !== recipe.prepMinutes) {
@@ -185,12 +203,60 @@ async function main() {
       updateData.totalMinutes = c.totalMinutes;
       hasChange = true;
     }
+    if (c.servingCount !== undefined && c.servingCount !== recipe.servingCount) {
+      updateData.servingCount = c.servingCount;
+      hasChange = true;
+    }
+    if (c.averageCalories !== undefined && c.averageCalories !== recipe.averageCalories) {
+      updateData.averageCalories = c.averageCalories;
+      hasChange = true;
+    }
+    // Decimal alanlar Prisma'dan Decimal donerken, comparison icin Number()
+    const currentProtein = recipe.protein === null ? null : Number(recipe.protein);
+    const currentCarbs = recipe.carbs === null ? null : Number(recipe.carbs);
+    const currentFat = recipe.fat === null ? null : Number(recipe.fat);
+    if (c.protein !== undefined && c.protein !== currentProtein) {
+      updateData.protein = c.protein;
+      hasChange = true;
+    }
+    if (c.carbs !== undefined && c.carbs !== currentCarbs) {
+      updateData.carbs = c.carbs;
+      hasChange = true;
+    }
+    if (c.fat !== undefined && c.fat !== currentFat) {
+      updateData.fat = c.fat;
+      hasChange = true;
+    }
+
+    // Tags relation (RecipeTag join table) + allergens (enum array)
+    const currentTagSlugs = new Set(recipe.tags.map((t) => t.tag.slug));
+    const currentAllergens = new Set((recipe.allergens ?? []) as string[]);
+    const tagsAdd = c.tags_add ?? [];
+    const tagsRemove = c.tags_remove ?? [];
+    const allergensAdd = c.allergens_add ?? [];
+    const allergensRemove = c.allergens_remove ?? [];
+    let tagsChanged = false;
+    let allergensChanged = false;
+    const finalTagSlugs = new Set(currentTagSlugs);
+    for (const t of tagsAdd) if (!finalTagSlugs.has(t)) { finalTagSlugs.add(t); tagsChanged = true; }
+    for (const t of tagsRemove) if (finalTagSlugs.has(t)) { finalTagSlugs.delete(t); tagsChanged = true; }
+    for (const a of allergensAdd) if (!currentAllergens.has(a)) { currentAllergens.add(a); allergensChanged = true; }
+    for (const a of allergensRemove) if (currentAllergens.has(a)) { currentAllergens.delete(a); allergensChanged = true; }
+    if (allergensChanged) {
+      updateData.allergens = [...currentAllergens];
+      hasChange = true;
+    }
+    if (tagsChanged) {
+      hasChange = true;
+      // Tags update transaction icinde RecipeTag.create/delete olarak yapilir
+    }
 
     const ingsAdd = c.ingredients_add ?? [];
     const ingsRemove = c.ingredients_remove ?? [];
+    const ingsAmountChange = c.ingredients_amount_change ?? [];
     const stepsReplace = c.steps_replace ?? [];
 
-    if (!hasChange && ingsAdd.length === 0 && ingsRemove.length === 0 && stepsReplace.length === 0) {
+    if (!hasChange && ingsAdd.length === 0 && ingsRemove.length === 0 && ingsAmountChange.length === 0 && stepsReplace.length === 0) {
       console.log(`SKIP ${e.slug} (zaten guncel)`);
       skipped++;
       continue;
@@ -200,11 +266,20 @@ async function main() {
       const summary: string[] = [];
       if (updateData.description) summary.push("description");
       if (updateData.tipNote) summary.push("tipNote");
+      if (updateData.servingSuggestion) summary.push("servingSuggestion");
       if (updateData.prepMinutes !== undefined) summary.push(`prep ${recipe.prepMinutes}->${updateData.prepMinutes}`);
       if (updateData.cookMinutes !== undefined) summary.push(`cook ${recipe.cookMinutes}->${updateData.cookMinutes}`);
       if (updateData.totalMinutes !== undefined) summary.push(`total ${recipe.totalMinutes}->${updateData.totalMinutes}`);
+      if (updateData.servingCount !== undefined) summary.push(`servings ${recipe.servingCount}->${updateData.servingCount}`);
+      if (updateData.averageCalories !== undefined) summary.push(`kcal ${recipe.averageCalories}->${updateData.averageCalories}`);
+      if (updateData.protein !== undefined) summary.push(`P ${recipe.protein}->${updateData.protein}`);
+      if (updateData.carbs !== undefined) summary.push(`C ${recipe.carbs}->${updateData.carbs}`);
+      if (updateData.fat !== undefined) summary.push(`F ${recipe.fat}->${updateData.fat}`);
+      if (tagsChanged) summary.push(`tags ±${tagsAdd.length + tagsRemove.length}`);
+      if (allergensChanged) summary.push(`allergens ±${allergensAdd.length + allergensRemove.length}`);
       if (ingsAdd.length > 0) summary.push(`+${ingsAdd.length} ing`);
       if (ingsRemove.length > 0) summary.push(`-${ingsRemove.length} ing`);
+      if (ingsAmountChange.length > 0) summary.push(`~${ingsAmountChange.length} ing-amount`);
       if (stepsReplace.length > 0) summary.push(`~${stepsReplace.length} step`);
       console.log(`DRY ${e.slug} | ${summary.join(", ")}`);
       continue;
@@ -214,6 +289,33 @@ async function main() {
       // Recipe field updates
       if (Object.keys(updateData).length > 0) {
         await tx.recipe.update({ where: { id: recipe.id }, data: updateData });
+      }
+
+      // Tags relation update (RecipeTag join table)
+      if (tagsChanged) {
+        // Eklenecek tag'lerin Tag tablosundaki id'lerini bul (slug match)
+        const slugsToAdd = tagsAdd.filter((s) => !currentTagSlugs.has(s));
+        if (slugsToAdd.length > 0) {
+          const tagRows = await tx.tag.findMany({
+            where: { slug: { in: slugsToAdd } },
+            select: { id: true, slug: true },
+          });
+          for (const tagRow of tagRows) {
+            await tx.recipeTag.create({
+              data: { recipeId: recipe.id, tagId: tagRow.id },
+            });
+          }
+        }
+        // Silinecek tag'ler: RecipeTag rows ile join
+        const slugsToRemove = tagsRemove.filter((s) => currentTagSlugs.has(s));
+        if (slugsToRemove.length > 0) {
+          await tx.recipeTag.deleteMany({
+            where: {
+              recipeId: recipe.id,
+              tag: { slug: { in: slugsToRemove } },
+            },
+          });
+        }
       }
 
       // Ingredient remove (case-insensitive name match)
@@ -241,6 +343,22 @@ async function main() {
             group: ing.group ?? null,
           },
         });
+      }
+
+      // Ingredient amount/unit change (case-insensitive name match)
+      for (const ac of ingsAmountChange) {
+        const target = recipe.ingredients.find(
+          (i) => i.name.toLocaleLowerCase("tr") === ac.name.toLocaleLowerCase("tr"),
+        );
+        if (target) {
+          await tx.recipeIngredient.update({
+            where: { id: target.id },
+            data: {
+              amount: ac.newAmount,
+              ...(ac.newUnit !== undefined ? { unit: ac.newUnit } : {}),
+            },
+          });
+        }
       }
 
       // Step replace (find by stepNumber + recipeId, update instruction)
@@ -273,9 +391,15 @@ async function main() {
             corrections_applied: {
               description: !!updateData.description,
               tipNote: !!updateData.tipNote,
+              servingSuggestion: !!updateData.servingSuggestion,
               times: !!(updateData.prepMinutes || updateData.cookMinutes || updateData.totalMinutes),
+              servingCount: !!updateData.servingCount,
+              macros: !!(updateData.averageCalories || updateData.protein || updateData.carbs || updateData.fat),
+              tags_changed: tagsChanged,
+              allergens_changed: allergensChanged,
               ingredients_added: ingsAdd.length,
               ingredients_removed: ingsRemove.length,
+              ingredients_amount_changed: ingsAmountChange.length,
               steps_replaced: stepsReplace.length,
             },
             sources: e.sources ?? [],

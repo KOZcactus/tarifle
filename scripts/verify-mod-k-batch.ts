@@ -38,11 +38,22 @@ interface ModKEntry {
     description?: string;
     ingredients_add?: Array<{ name: string; amount: string; unit: string; group?: string }>;
     ingredients_remove?: string[];
+    ingredients_amount_change?: Array<{ name: string; newAmount: string; newUnit?: string }>;
     steps_replace?: Array<{ stepNumber: number; instruction: string; timerSeconds?: number | null }>;
     tipNote?: string;
+    servingSuggestion?: string;
     prepMinutes?: number;
     cookMinutes?: number;
     totalMinutes?: number;
+    servingCount?: number;
+    averageCalories?: number;
+    protein?: number;
+    carbs?: number;
+    fat?: number;
+    tags_add?: string[];
+    tags_remove?: string[];
+    allergens_add?: string[];
+    allergens_remove?: string[];
   };
   sources?: string[];
   confidence?: "high" | "medium" | "low";
@@ -54,6 +65,7 @@ interface DbRecipe {
   slug: string;
   description: string;
   tipNote: string | null;
+  servingSuggestion: string | null;
   status: string;
 }
 
@@ -78,30 +90,43 @@ const ASCII_FOLD_HINTS = [
   "isiyla", "guzel", "lezzetli", "duzenli",
 ];
 
-function parseBatchArg(): number[] | null {
+// Sub-batch keys: "1a", "1b", "2a", "2b" ...
+function parseBatchArg(): string[] | null {
   const idx = process.argv.indexOf("--batch");
   if (idx === -1 || !process.argv[idx + 1]) return null;
   return process.argv[idx + 1]
     .split(",")
-    .map((s) => Number.parseInt(s.trim(), 10))
-    .filter((n) => Number.isFinite(n) && n > 0);
+    .map((s) => s.trim().toLowerCase())
+    .filter((s) => /^\d+[ab]$/.test(s));
 }
 
-function discoverBatchFiles(filter: number[] | null): string[] {
+function discoverBatchFiles(filter: string[] | null): string[] {
   const docsDir = path.resolve(process.cwd(), "docs");
   const all = fs
     .readdirSync(docsDir)
-    .filter((f) => /^mod-k-batch-\d+\.json$/.test(f))
+    .filter((f) => /^mod-k-batch-\d+[ab]\.json$/.test(f))
     .sort();
   if (!filter) return all.map((f) => path.join(docsDir, f));
   const set = new Set(filter);
   return all
     .filter((f) => {
-      const m = f.match(/^mod-k-batch-(\d+)\.json$/);
-      return m && set.has(Number.parseInt(m[1], 10));
+      const m = f.match(/^mod-k-batch-(\d+[ab])\.json$/);
+      return m && set.has(m[1]);
     })
     .map((f) => path.join(docsDir, f));
 }
+
+// Tarifle enum'lar (brief §5)
+const VALID_TAGS = new Set([
+  "pratik", "30-dakika-alti", "dusuk-kalorili", "yuksek-protein",
+  "firinda", "tek-tencere", "misafir-sofrasi", "cocuk-dostu",
+  "butce-dostu", "vegan", "vejetaryen", "alkollu", "alkolsuz",
+  "kis-tarifi", "yaz-tarifi",
+]);
+const VALID_ALLERGENS = new Set([
+  "GLUTEN", "SUT", "YUMURTA", "SOYA", "FISTIK", "KUSUYEMIS",
+  "BALIK", "KABUKLU_DENIZ", "SUSAM", "HARDAL",
+]);
 
 function isHttpUrl(u: string): boolean {
   try {
@@ -200,13 +225,70 @@ function validateEntry(entry: ModKEntry, db: DbRecipe | null): string[] {
     if (!entry.corrections || Object.keys(entry.corrections).length === 0) {
       issues.push("CORRECTION/MAJOR_ISSUE icin corrections en az 1 alan icermeli");
     } else {
-      // Sisirme yasagi: description ve tipNote max %20 uzar
-      if (entry.corrections.description) {
-        const newLen = entry.corrections.description.length;
+      const c = entry.corrections;
+
+      // Sisirme yasagi: description / tipNote / servingSuggestion max %20 uzar
+      if (c.description) {
+        const newLen = c.description.length;
         const oldLen = db.description.length;
         if (oldLen > 0 && newLen > oldLen * SHISIRME_MAX_RATIO) {
           issues.push(`description sisirildi (${oldLen} -> ${newLen}, max ${Math.floor(oldLen * SHISIRME_MAX_RATIO)})`);
         }
+      }
+      if (c.servingSuggestion && db.servingSuggestion) {
+        const newLen = c.servingSuggestion.length;
+        const oldLen = db.servingSuggestion.length;
+        if (oldLen > 0 && newLen > oldLen * SHISIRME_MAX_RATIO) {
+          issues.push(`servingSuggestion sisirildi (${oldLen} -> ${newLen}, max ${Math.floor(oldLen * SHISIRME_MAX_RATIO)})`);
+        }
+      }
+
+      // tag enum check
+      for (const t of c.tags_add ?? []) {
+        if (!VALID_TAGS.has(t)) issues.push(`tags_add gecersiz enum: ${t}`);
+      }
+      for (const t of c.tags_remove ?? []) {
+        if (!VALID_TAGS.has(t)) issues.push(`tags_remove gecersiz enum: ${t}`);
+      }
+
+      // allergen enum check
+      for (const a of c.allergens_add ?? []) {
+        if (!VALID_ALLERGENS.has(a)) issues.push(`allergens_add gecersiz enum: ${a}`);
+      }
+      for (const a of c.allergens_remove ?? []) {
+        if (!VALID_ALLERGENS.has(a)) issues.push(`allergens_remove gecersiz enum: ${a}`);
+      }
+
+      // macro nutrition makul aralik
+      if (c.averageCalories !== undefined && (c.averageCalories < 10 || c.averageCalories > 2000)) {
+        issues.push(`averageCalories aralik disi: ${c.averageCalories} (10-2000)`);
+      }
+      if (c.protein !== undefined && (c.protein < 0 || c.protein > 200)) {
+        issues.push(`protein aralik disi: ${c.protein} g (0-200)`);
+      }
+      if (c.carbs !== undefined && (c.carbs < 0 || c.carbs > 300)) {
+        issues.push(`carbs aralik disi: ${c.carbs} g (0-300)`);
+      }
+      if (c.fat !== undefined && (c.fat < 0 || c.fat > 200)) {
+        issues.push(`fat aralik disi: ${c.fat} g (0-200)`);
+      }
+
+      // Macro tutarlilik (kalori = 4P + 4C + 9F, %25 toleransla)
+      if (c.averageCalories !== undefined && c.protein !== undefined && c.carbs !== undefined && c.fat !== undefined) {
+        const calculated = 4 * c.protein + 4 * c.carbs + 9 * c.fat;
+        const diff = Math.abs(calculated - c.averageCalories);
+        const tolerance = c.averageCalories * 0.25;
+        if (diff > tolerance) {
+          issues.push(`macro tutarsiz: 4P+4C+9F=${calculated} vs avg ${c.averageCalories} (fark ${Math.round(diff)}, tolerance ${Math.round(tolerance)})`);
+        }
+      }
+
+      // servingCount makul
+      if (c.servingCount !== undefined && (c.servingCount < 1 || c.servingCount > 20)) {
+        issues.push(`servingCount aralik disi: ${c.servingCount} (1-20)`);
+      }
+      // tipNote (eski check, korunur)
+      if (c.tipNote && db.tipNote) {
       }
       if (entry.corrections.tipNote && db.tipNote) {
         const newLen = entry.corrections.tipNote.length;
@@ -223,9 +305,13 @@ function validateEntry(entry: ModKEntry, db: DbRecipe | null): string[] {
     ["reason", entry.reason],
     ["corrections.description", entry.corrections?.description],
     ["corrections.tipNote", entry.corrections?.tipNote],
+    ["corrections.servingSuggestion", entry.corrections?.servingSuggestion],
   ];
   for (const step of entry.corrections?.steps_replace ?? []) {
     stringFields.push([`step ${step.stepNumber}.instruction`, step.instruction]);
+  }
+  for (const ing of entry.corrections?.ingredients_add ?? []) {
+    stringFields.push([`ingredients_add[${ing.name}].name`, ing.name]);
   }
 
   for (const [name, val] of stringFields) {
@@ -275,7 +361,7 @@ async function main() {
   const slugs = [...new Set(all.map((e) => e.slug).filter(Boolean))];
   const dbRows = await prisma.recipe.findMany({
     where: { slug: { in: slugs } },
-    select: { id: true, slug: true, description: true, tipNote: true, status: true },
+    select: { id: true, slug: true, description: true, tipNote: true, servingSuggestion: true, status: true },
   });
   const dbMap = new Map<string, DbRecipe>();
   for (const r of dbRows) dbMap.set(r.slug, r as DbRecipe);

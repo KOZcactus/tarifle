@@ -67,6 +67,7 @@ const TITLES = {
   "zeytinyagi-secimi": "Zeytinyağı Seçimi",
   "salamura-ve-marine-bilimi": "Salamura ve Marine Bilimi",
   "bal-turleri-ve-mutfak-kullanimi": "Bal Türleri ve Mutfak Kullanımı",
+  "yumurta-tazeligi-ve-saklama": "Yumurta Tazeliği ve Saklama",
 };
 
 // Her yazi -> 3 ilgili (slug, kisa baglam aciklamasi)
@@ -330,6 +331,11 @@ const RELATED = {
     ["zeytin-cesitleri-sofralik-meze-rehberi", "zeytinin sofralik formu"],
     ["turk-mutfaginda-zeytinyagli-yemek-gelenegi", "zeytinyagli yemek gelenegi"],
     ["tereyagi-cesitleri-evde-yapimi-pisirmede-kullanim", "yag alternatifleri"],
+  ],
+  "yumurta-tazeligi-ve-saklama": [
+    ["yumurta-pisirme-7-yontem", "tazeligi dogruladiktan sonra pisirme"],
+    ["salamura-ve-marine-bilimi", "gida guvenligi ve sogutma disiplini"],
+    ["soguk-zincir-kirmizi-et-guvenligi", "buzdolabi sicakligi ve dagitim"],
   ],
 };
 

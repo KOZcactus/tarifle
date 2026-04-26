@@ -188,10 +188,10 @@ export const seedRecipeSchema = z
     // default to empty, the retrofit script then fills them.
     allergens: z.array(z.enum(ALLERGEN)).max(10).default([]),
 
-    // Cuisine origin code, one of the 14 supported codes (see
-    // src/lib/cuisines.ts). Optional + nullable: legacy seed entries
-    // default to null, the retrofit script fills them. New Codex batches
-    // should include this explicitly.
+    // Cuisine origin code, one of the supported codes (see
+    // src/lib/cuisines.ts, 32 kod oturum 25 itibariyle). Optional +
+    // nullable: legacy seed entries default to null, the retrofit script
+    // fills them. New Codex batches should include this explicitly.
     cuisine: z.enum(CUISINE_CODES).optional().nullable(),
 
     // Hunger bar, 1-10 integer tokluk puanı (porsiyon başı). Default

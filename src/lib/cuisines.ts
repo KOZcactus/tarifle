@@ -41,6 +41,14 @@ export const CUISINE_CODES = [
   "id",
   "et",
   "ng",
+  // Oturum 25: Mod K Batch 1-4 cuisine fix'leri sonrasi (brik Tunus,
+  // provoleta Arjantin) DB'de cuisine='tn' / 'ar' yazildi ama label/
+  // slug/desc/flag/region eksikti, /mutfak/tunus + /mutfak/arjantin
+  // 404 doniyordu. tn = Tunus mustakil cuisine (Kuzey Afrika ma'dan
+  // ayri, Akdeniz hatti); ar = Arjantin (Pampas + asado + chimichurri,
+  // latin-america region).
+  "tn",
+  "ar",
 ] as const;
 
 export type CuisineCode = (typeof CUISINE_CODES)[number];
@@ -76,6 +84,8 @@ export const CUISINE_LABEL: Record<CuisineCode, string> = {
   id: "Endonezya",
   et: "Etiyopya",
   ng: "Nijerya",
+  tn: "Tunus",
+  ar: "Arjantin",
 };
 
 /**
@@ -115,6 +125,8 @@ export const CUISINE_SLUG: Record<CuisineCode, string> = {
   id: "endonezya",
   et: "etiyopya",
   ng: "nijerya",
+  tn: "tunus",
+  ar: "arjantin",
 };
 
 /** URL slug → kod ters lookup. Slug bilinmiyorsa null. */
@@ -162,6 +174,8 @@ export const CUISINE_DESCRIPTION_TR: Record<CuisineCode, string> = {
   id: "Endonezya mutfağı adalar arası lezzet mozaiği: nasi goreng, rendang, sate, soto. Hindistan cevizi sütü, acı sambal ve ketjap manis karakteristik.",
   et: "Etiyopya mutfağı bereket sofrası: injera ekmeği, doro wat, berbere baharatı, tibs. Ekşi maya ve yoğun baharat karışımı Doğu Afrika imzası.",
   ng: "Nijerya mutfağı Batı Afrika'nın renk paleti: jollof rice, egusi çorbası, suya, plantain kızartması. Hindistan cevizi yağı, acı biber ve iç erkek fıstığı yaygın.",
+  tn: "Tunus mutfağı Akdeniz'in güney kıyısındaki sıcak baharatlı mirası: brik (yumurtalı çıtır börek), kuskus, harissa, mechouia salatası. Zeytinyağı, kimyon ve acı biber Berberi köklerini Akdeniz tatlarıyla birleştirir.",
+  ar: "Arjantin mutfağı Pampas ovalarının et kültürü ve göçmen mutfaklarının buluşması: asado (ızgara et), empanada, chimichurri sosu, milanesa. Sığır eti, dana parça ızgara ve İtalyan mirası makarna sofrasının temeli.",
 };
 
 /** EN description, aynı set, kısa SEO metni. */
@@ -196,6 +210,8 @@ export const CUISINE_DESCRIPTION_EN: Record<CuisineCode, string> = {
   id: "Indonesian cuisine is an archipelago flavor mosaic: nasi goreng, rendang, sate, soto. Coconut milk, sambal chili and ketjap manis define the palate.",
   et: "Ethiopian cuisine is a feast of sharing: injera flatbread, doro wat, berbere spice, tibs. Sour fermented dough and bold spice blends are the East African signature.",
   ng: "Nigerian cuisine paints West Africa's palette: jollof rice, egusi soup, suya, fried plantain. Palm oil, chili and ground melon seeds appear often.",
+  tn: "Tunisian cuisine joins the Mediterranean's southern shore with Berber heat: brik (egg-stuffed pastry), couscous, harissa, mechouia salad. Olive oil, cumin and red chili thread Berber roots through Mediterranean palates.",
+  ar: "Argentine cuisine fuses Pampas beef culture with immigrant kitchens: asado (grilled meats), empanadas, chimichurri sauce, milanesa. Beef, parrilla cuts and Italian-rooted pasta anchor the table.",
 };
 
 export const CUISINE_FLAG: Record<CuisineCode, string> = {
@@ -229,6 +245,8 @@ export const CUISINE_FLAG: Record<CuisineCode, string> = {
   id: "🇮🇩",
   et: "🇪🇹",
   ng: "🇳🇬",
+  tn: "🇹🇳",
+  ar: "🇦🇷",
 };
 
 /**
@@ -272,6 +290,8 @@ export const CUISINE_REGION: Record<CuisineCode, string> = {
   id: "east-asia",
   et: "east-africa",
   ng: "west-africa",
+  tn: "mediterranean-levant",
+  ar: "latin-america",
 };
 
 // ─── Inference engine ───────────────────────────────────────
@@ -500,7 +520,9 @@ const TEXT_KEYWORDS: readonly { cuisine: CuisineCode; keywords: string[] }[] = [
   { cuisine: "cn", keywords: ["çin"] },
   { cuisine: "us", keywords: ["amerikan", "amerika"] },
   { cuisine: "me", keywords: ["orta doğu", "ortadoğu", "arap", "lübnan", "suriye"] },
-  { cuisine: "ma", keywords: ["kuzey afrika", "fas mutfağı", "fas usulü", "tunus", "cezayir"] },
+  { cuisine: "ma", keywords: ["kuzey afrika", "fas mutfağı", "fas usulü", "cezayir"] },
+  { cuisine: "tn", keywords: ["tunus", "tunuslu", "tunus mutfağı", "tunus usulü"] },
+  { cuisine: "ar", keywords: ["arjantin", "arjantinli", "arjantin mutfağı", "arjantin usulü", "pampas", "asado"] },
   { cuisine: "vn", keywords: ["vietnam"] },
   { cuisine: "br", keywords: ["brezilya"] },
   { cuisine: "cu", keywords: ["küba"] },

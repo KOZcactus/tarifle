@@ -17,6 +17,7 @@ import {
 } from "@/lib/cuisines";
 import { getRecipes, resolveDefaultAllergenAvoidances } from "@/lib/queries/recipe";
 import { getCuisineStats } from "@/lib/queries/cuisine-stats";
+import { prisma } from "@/lib/prisma";
 import { auth } from "@/lib/auth";
 import { ITEMS_PER_PAGE } from "@/lib/constants";
 import { ALLERGEN_ORDER } from "@/lib/allergens";
@@ -59,8 +60,16 @@ export async function generateMetadata({
   // ama o hook detay sayfada allergen filter uygulanıyordu; metadata her
   // kullanıcıya aynı başlığı göstermeli. GPT dış audit'inde "ana sayfa
   // 1541 vs mutfak detay 1407" olarak yakalanan tutarsızlığın kök nedeni.
+  // Fallback: getCuisineStats homepage için ≥3 tarifli cuisine'leri
+  // gösterir (filter), yeni eklenen tn/ar gibi 1-2 tarifli cuisine'ler
+  // stats'ta yok. Bu durumda direkt prisma.count ile gerçek değeri çek
+  // (title-body tutarsızlığı, oturum 25 fix).
   const stats = await getCuisineStats();
-  const total = stats.find((s) => s.code === code)?.count ?? 0;
+  const total =
+    stats.find((s) => s.code === code)?.count ??
+    (await prisma.recipe.count({
+      where: { status: "PUBLISHED", cuisine: code },
+    }));
 
   return {
     title: t("cuisineMetaTitle", { label, count: total }),

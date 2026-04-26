@@ -197,6 +197,35 @@ describe("inferCuisineFromRecipe", () => {
     ).toBe("se");
   });
 
+  // ─── Tunisian + Argentine (oturum 25) ──────────────────────
+
+  test("Tunisian title keyword → tn", () => {
+    expect(
+      inferCuisineFromRecipe(
+        recipe({ title: "Tunus Usulü Brik", slug: "tunus-brik" }),
+      ),
+    ).toBe("tn");
+  });
+
+  test("Argentine title keyword → ar", () => {
+    expect(
+      inferCuisineFromRecipe(
+        recipe({ title: "Arjantin Usulü Asado", slug: "arjantin-asado" }),
+      ),
+    ).toBe("ar");
+  });
+
+  test("Argentine description keyword (asado) → ar", () => {
+    expect(
+      inferCuisineFromRecipe(
+        recipe({
+          slug: "kasarli-tost",
+          description: "Pampas asado kültüründen esinlenmiş bir tarif.",
+        }),
+      ),
+    ).toBe("ar");
+  });
+
   // ─── Default to Turkish ───────────────────────────────────
 
   test("no international markers → default tr", () => {
@@ -239,8 +268,8 @@ describe("inferCuisineFromRecipe", () => {
 });
 
 describe("cuisine constants", () => {
-  test("CUISINE_CODES has 30 entries", () => {
-    expect(CUISINE_CODES).toHaveLength(30);
+  test("CUISINE_CODES has 32 entries", () => {
+    expect(CUISINE_CODES).toHaveLength(32);
   });
 
   test("every code has a label", () => {

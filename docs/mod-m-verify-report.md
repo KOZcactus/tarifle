@@ -5,45 +5,69 @@ Toplam entry: 50
 
 ## Ozet
 
-- Apply'a hazir (clean): **35**
-  - high confidence: 12
-  - medium confidence: 21
-  - low confidence: 2
-- SKIP: 15
+- Apply'a hazir (clean): **9**
+  - high confidence: 4
+  - medium confidence: 5
+  - low confidence: 0
+- SKIP: 41
 - BLOCKED (issue var): 0
 
 ## SKIP (Codex marine icermiyor dedi)
 
 | Slug | Reason |
 |---|---|
-| `naneli-kabakli-kuskus-salata-avustralya-usulu` | Adaylik sadece soslama kelimesinden geliyor; tarifte ayrica bekletilen bir marine adimi yok. |
-| `avokadolu-lahana-salata-kuba-usulu` | Soslama hazirligi var ama bekletilen marine veya salamura sureci yok; total sureye eklenmemeli. |
-| `ensalada-fria-de-papa-kuba-usulu` | Patates salatasinda soslama geciyor, fakat aday kaydinda bekleme suresi veya marine zorunlulugu yok. |
-| `yuca-con-mojo` | Yuca sicakken mojo sosla karistiriliyor; tarifte toplam sureye eklenecek ayri bekleme adimi yok. |
-| `gilda-pintxos` | Marine ringa veya salamura urun kullanimi var; evde yapilan yeni bir bekletme suresi modellenmiyor. |
-| `csalamade` | Bu kayit hazir turşu benzeri salata baglamindan yakalanmis; adayda net bir ev tipi bekletme suresi yok. |
-| `edamame-kinoa-salatasi` | Salatada sadece soslama hazirligi var; bekletilmesi gereken marine adimi bulunmuyor. |
-| `chermoula-patates-salatasi-fas-usulu` | Patates salatasi sosla karistiriliyor; marine bekleme suresi olarak modellenmesi gereken ayri bir adim yok. |
-| `chermoula-sos` | Bu kayit bir sos tarifidir; kendisi marine sosu olsa da bekletilecek ana malzeme yok. |
-| `lima-fasulyeli-kinoa-salata-peru-usulu` | Kinoayi soslamak aromayi artirir, ancak ayrica bekletilen marine suresi yok. |
-| `limonlu-kinoa-salatasi-peru-usulu` | Soslamadan once sogutma adimi var; bu marine bekleme suresi olarak modellenmemeli. |
-| `aji-lime-patates-salata-peru-usulu` | Patatesin ilikken soslanmasi tarif teknigidir; ayrica bekletme veya marine suresi yok. |
-| `dereotlu-patates-salatasi-polonya-usulu` | Ilik patatesi soslamak lezzet icindir, fakat toplam sureye eklenecek marine beklemesi bulunmuyor. |
-| `erikli-lahana-salata-polonya-usulu` | Adaylik soslama kelimesinden geliyor; salatada ayrica bekletme adimi tarif edilmemis. |
-| `patates-elma-salatasi-polonya-usulu` | Hardalli sos sicak patatese yediriliyor; marine suresi olarak yeni bir bekleme eklenmemeli. |
+| `gravad-patates-salatasi-isvec-usulu` | Tarifte marine somon hazir malzeme olarak kullaniliyor; patates salatasi icin yeni bekletme suresi yok. |
+| `kopenhag-smorrebrod-ringa` | Marine ringa hazir urun olarak suzuluyor; evde yapilan ayri marine bekleme adimi bulunmuyor. |
+| `stockholm-dereotlu-patates-salatasi` | Patatesleri ilikken soslamak teknik bir adimdir; toplam sureye eklenecek bekleme yok. |
+| `bangkok-yesil-mangolu-som-tam` | Som tam servis oncesi soslanir; tarifte marine veya dinlendirme suresi modellenmemeli. |
+| `cirpilmis-zeytin-salatasi` | Adaylik soslama kelimesinden geliyor; salatada ayri bekletme veya marine adimi yok. |
+| `acili-ezme-guneydogu-usulu` | Acili ezme soslanarak servis edilir; marine edilecek protein veya bekletme adimi yok. |
+| `akdeniz-salatasi` | Bu salatada sadece soslama hazirligi var; marine suresi olarak eklenecek bekleme bulunmuyor. |
+| `toyga-corbasi-anadolu-usulu` | Yogurtlu terbiye corbaya alistiriliyor; bu marine degil, pisirme teknigi. |
+| `dereotlu-cubuk-tursu-salatasi-ankara-usulu` | Cubuk tursusu hazir salamura malzeme; salatada yeni marine bekletmesi yok. |
+| `antalya-kulakli-corba` | Adaylik terbiye kelimesinden geliyor; corba icin marine suresi eklenmemeli. |
+| `terbiyeli-nohut-corbasi-antalya-usulu` | Limonlu terbiye corbayi baglamak icin kullaniliyor; bekletilen marine adimi yok. |
+| `arpa-yarmali-yogurt-corbasi-eskisehir-usulu` | Yogurt terbiyesi sicak suyla ilitiliyor; marine veya dinlendirme suresi degil. |
+| `ayran-asi-corbasi-erzurum-usulu` | Corba terbiyesi kesilmesin diye ilitiliyor; toplam sureye bekleme eklenmez. |
+| `ayvali-hardalli-yesil-salata-yalova-usulu` | Salatada hardalli soslama var, fakat marine olarak bekletilen bir adim yok. |
+| `balik-corbasi` | Balik corbasinda limonlu terbiye pisirme teknigidir; marine beklemesi bulunmuyor. |
+| `zeytin-ezmeli-patates-salata-bodrum-usulu` | Patates ilikken sosu cekiyor; tarifte ayri bekletme veya marine suresi yok. |
+| `bostana-bulgur-salatasi-sanliurfa-usulu` | Bostana bulgur salatasi soslanarak hazirlanir; marine edilecek bir ana malzeme yok. |
+| `bursa-muradiye-corbasi-tavuklu` | Yogurtlu terbiye corbanin baglayicisidir; marine bekletmesi olarak modellenmemeli. |
+| `cevizli-batirik-karaman-usulu` | Batirik salata gibi karistirilir; marine beklemesi veya bekletilen protein yok. |
+| `caglali-kurutlu-bulgur-salatasi-malatya-usulu` | Adaylik soslama kelimesinden geliyor; bulgur salatasinda yeni marine suresi yok. |
+| `canakkale-ovmac-corbasi` | Yogurt terbiyesi corbaya katiliyor; bu pisirme asamasi, marine beklemesi degil. |
+| `cubuk-tursulu-patates-salatasi-ankara-usulu` | Patates hafif ilikken soslanir; ayrica bekletilmesi gereken marine sureci yok. |
+| `diyarbakir-lebeniyesi` | Lebeniye corbasindaki terbiye yogurtlu pisirme teknigidir; marine suresi eklenmez. |
+| `nohutlu-yogurt-corbasi-diyarbakir-usulu` | Yogurtlu terbiye sicak suyla ilitiliyor; bekletme veya marine adimi bulunmuyor. |
+| `domatesli-lebeniye-corbasi-gaziantep-usulu` | Terbiye corbaya kesilmeden katilmak icin hazirlanir; marine olarak modellenmemeli. |
+| `dugun-corbasi` | Dugun corbasindaki terbiye sicak et suyuyla ilitiliyor; bekleme suresi degil. |
+| `eksili-kofte` | Tarif terbiyesiz eksili kofte olarak geciyor; marine veya bekletme adimi yok. |
+| `elma-sirkeli-lahana-salatasi-tekirdag-usulu` | Lahana salatasi soslaniyor, fakat marine bekletmesi olarak eklenecek sure bulunmuyor. |
+| `erikli-marul-piyazi-sakarya-usulu` | Marul servis aninda soslaniyor; bekletmek gevrekligi bozabilecegi icin marine suresi yok. |
+| `borani-erzincan-usulu` | Borani soslama kelimesinden yakalanmis; marine edilecek ayri malzeme veya sure yok. |
+| `erzincan-kesme-corbasi` | Corbadaki yogurt terbiyesi pisirme teknigidir; bekleme sureci olarak modellenmemeli. |
+| `erzincan-kesme-corbasi-yogurtlu` | Yogurt terbiyesi sicak suyla aciliyor; marine veya dinlendirme suresi yok. |
+| `evelikli-eriste-corbasi-kars-usulu` | Evelikli eriste corbasinda terbiye corbaya katilir; marine beklemesi degildir. |
+| `gaziantep-siveydiz` | Siveydizde yogurtlu terbiye pisirme asamasidir; marine beklemesi veya dinlendirme yok. |
+| `antep-yuvalama-yogurtlu` | Yuvalama corbasinda terbiye sicak et suyuyla dengelenir; marine suresi eklenmemeli. |
+| `gendime-corbasi` | Terbiye bugday suyuyla ilitiliyor; bu corba teknigi, marine beklemesi degil. |
+| `hamsi-pastirmasi-salatasi-trabzon-usulu` | Marine hamsi hazir malzeme olarak kullaniliyor; salatada yeni bekletme suresi yok. |
+| `hashasli-yogurt-corbasi-afyon-usulu` | Yogurt terbiyesi sicak pirinc suyuyla ilitiliyor; marine veya bekletme suresi yok. |
+| `hatay-nar-eksili-zahter-salatasi` | Zahter servis oncesi soslaniyor; diri kalmasi icin bekletme suresi eklenmemeli. |
+| `iskembe-corbasi` | Iskembe corbasindaki terbiye yumurta veya yogurtlu baglama asamasidir; marine beklemesi yok. |
+| `karalahana-misirli-ayran-corbasi-trabzon-usulu` | Ayranli terbiye corbaya ilitilerek eklenir; marine suresi olarak modellenmemeli. |
 
 ## Apply hazir (sample)
 
 | Slug | Marine min | Eski total | Yeni total | Conf | Sources |
 |---|---:|---:|---:|---|---|
-| `cuban-mojo-chicken` | 480 | 80 | 560 | medium | tastingtable.com, asassyspoon.com |
-| `lechon-asado` | 480 | 225 | 705 | high | loisa.com, epicurious.com |
-| `erzurum-tavada-cag-kebabi` | 120 | 41 | 161 | medium | erzurumca.com, nefisyemektarifleri.com |
-| `beijing-kung-pao-chicken` | 10 | 27 | 37 | high | cafedelites.com, tastemade.com |
-| `char-siu` | 480 | 75 | 555 | medium | masterclass.com, epicurious.com |
-| `char-siu-chicken-cin-firin-usulu` | 30 | 40 | 70 | medium | onceuponachef.com, omnivorescookbook.com |
-| `kung-pao-tavuk` | 10 | 35 | 45 | high | cafedelites.com, tastemade.com |
-| `sichuan-kung-pao-tavuk` | 10 | 25 | 35 | high | cafedelites.com, theguardian.com |
-| `vaca-frita` | 180 | 125 | 305 | medium | amigofoods.com, food.com |
-| `vaca-frita-de-pollo-kuba-usulu` | 30 | 32 | 62 | medium | asassyspoon.com, cook2eatwell.com |
-| _...25 entry daha_ | | | | | |
+| `kai-yang` | 180 | 45 | 225 | high | foodie-trail.com, brasswok.com |
+| `adana-turunclu-tavuk-sis` | 30 | 34 | 64 | medium | sofra.com.tr, lezzet.com.tr |
+| `balli-hardalli-tavuk` | 30 | 33 | 63 | high | gastrotarifler.com, 30seconds.com |
+| `ceviche` | 10 | 25 | 35 | high | theguardian.com, southernliving.com |
+| `firinda-soslu-tavuk-kanat` | 60 | 55 | 115 | medium | hizlitarifim.com, youtube.com |
+| `firinda-tavuk-baget` | 30 | 55 | 85 | medium | habergazetesi.com.tr, lezzet.com.tr |
+| `firinda-tavuk-pirzola` | 30 | 65 | 95 | high | pirzola.gen.tr, tavukyemekleri.gen.tr |
+| `hardaliyeli-istavrit-tava-tekirdag-usulu` | 12 | 22 | 34 | medium | yemektebalikvar.com, thebetterfish.com |
+| `isotlu-tavuk-sis-sanliurfa-usulu` | 30 | 30 | 60 | medium | isot.tr, lezzet.com.tr |

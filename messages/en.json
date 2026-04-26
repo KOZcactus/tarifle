@@ -2451,6 +2451,12 @@
       "doneTitle": "{title} step finished",
       "doneBody": "Timer for step {step} is complete."
     },
+    "allergenConfidence": {
+      "possibleExtraTitle": "Possible extra allergen",
+      "possibleExtraBody": "Ingredient list mentions {list} but the recipe author did not declare it. Re-check labels and your sensitivity.",
+      "declaredOnlyTitle": "Author-declared",
+      "declaredOnlyBody": "Recipe author declared {list} but our matcher did not find it in the ingredient list. May come from brand or variety."
+    },
     "nutrition": {
       "title": "Nutrition (per serving)",
       "calorieUnit": "kcal calories",

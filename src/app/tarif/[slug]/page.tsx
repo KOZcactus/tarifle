@@ -5,6 +5,8 @@ import { Badge } from "@/components/ui/Badge";
 import { IngredientList } from "@/components/recipe/IngredientList";
 import { MeasureConverter } from "@/components/recipe/MeasureConverter";
 import { AllergenBadges } from "@/components/recipe/AllergenBadges";
+import { AllergenConfidenceNote } from "@/components/recipe/AllergenConfidenceNote";
+import { computeAllergenConfidence } from "@/lib/recipe/allergen-confidence";
 import { RecipeSteps } from "@/components/recipe/RecipeSteps";
 import { NutritionInfo } from "@/components/recipe/NutritionInfo";
 import { HungerBar } from "@/components/recipe/HungerBar";
@@ -666,28 +668,38 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
           <details>/<summary> = accessible keyboard toggling + no JS.
           "İçerebilir" framing reflects the fact that inference is
           rule-based and can miss niche ingredients. */}
-      {recipe.allergens.length > 0 && (
-        <details className="group mt-4 rounded-xl border border-border bg-bg-card">
-          <summary className="flex cursor-pointer items-center justify-between gap-3 px-4 py-3 text-sm text-text-muted hover:text-text focus:outline-none focus-visible:ring-2 focus-visible:ring-primary [&::-webkit-details-marker]:hidden">
-            <span>
-              <span aria-hidden="true" className="mr-1.5">⚠</span>
-              {t("allergenDisclosure")}
-            </span>
-            <span
-              aria-hidden="true"
-              className="text-xs transition-transform group-open:rotate-180"
-            >
-              ▾
-            </span>
-          </summary>
-          <div className="border-t border-border px-4 pb-4 pt-3">
-            <AllergenBadges allergens={recipe.allergens} tone="subtle" />
-            <p className="mt-3 text-xs text-text-muted">
-              {t("allergenDisclaimer")}
-            </p>
-          </div>
-        </details>
-      )}
+      {(() => {
+        const allergenConfidence = computeAllergenConfidence(
+          recipe.allergens,
+          recipe.ingredients,
+        );
+        const showAllergenSection =
+          recipe.allergens.length > 0 || !allergenConfidence.inSync;
+        if (!showAllergenSection) return null;
+        return (
+          <details className="group mt-4 rounded-xl border border-border bg-bg-card">
+            <summary className="flex cursor-pointer items-center justify-between gap-3 px-4 py-3 text-sm text-text-muted hover:text-text focus:outline-none focus-visible:ring-2 focus-visible:ring-primary [&::-webkit-details-marker]:hidden">
+              <span>
+                <span aria-hidden="true" className="mr-1.5">⚠</span>
+                {t("allergenDisclosure")}
+              </span>
+              <span
+                aria-hidden="true"
+                className="text-xs transition-transform group-open:rotate-180"
+              >
+                ▾
+              </span>
+            </summary>
+            <div className="border-t border-border px-4 pb-4 pt-3">
+              <AllergenBadges allergens={recipe.allergens} tone="subtle" />
+              <AllergenConfidenceNote confidence={allergenConfidence} />
+              <p className="mt-3 text-xs text-text-muted">
+                {t("allergenDisclaimer")}
+              </p>
+            </div>
+          </details>
+        );
+      })()}
 
       {/* User-uploaded photos (flag-gated).
           Server component UserPhotoGrid fetches VISIBLE photos; upload

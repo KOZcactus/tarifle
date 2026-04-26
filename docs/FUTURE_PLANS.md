@@ -208,8 +208,14 @@ Kalan opsiyonel polish'ler:
    bookmark et" + popüler 3 tarif carousel. /koleksiyon boş → template
    öneri (hafta sonu / çocuk dostu).
 
-3. **Welcome email i18n polish**: DE dosyası yok, sadece TR + EN
-   eklendi. messages/de.json yaratılmamış, gerektiğinde olur.
+3. **DE locale tam ship** (~4-5 saat, launch sonrası):
+   `LOCALES = ["tr", "en"]` aktif, "de" yok. Welcome email DE eklemek
+   için sadece email key'leri yetmez; tüm `messages/de.json` (2400+
+   key TR'den çevrilmiş hali) + `LOCALES` güncellemesi + middleware
+   + `LOCALE_LABELS` gerek. Recipe.translations'da DE içerik zaten
+   var (oturum 6+ Mod B eklemesi), sadece UI metinleri eksik. Codex
+   Mod B benzeri ile messages/de.json full çeviri batch'i.
+   Launch öncesi gereksiz scope, oturum 22'de skip.
 
 
 

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import { getTranslations } from "next-intl/server";
 import {
   BLOG_CATEGORIES,
@@ -10,6 +11,15 @@ import {
 } from "@/lib/blog";
 import { mdxComponents } from "@/components/blog/mdxComponents";
 import { SITE_URL } from "@/lib/constants";
+
+// MDX remarkPlugins config: GFM table + strikethrough + autolink desteği.
+// Tum bloglar bu config ile render olur, table syntax artik raw text yerine
+// gercek HTML <table> uretir.
+const mdxOptions = {
+  mdxOptions: {
+    remarkPlugins: [remarkGfm],
+  },
+};
 
 interface BlogDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -169,7 +179,11 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
       </header>
 
       <article className="prose-blog">
-        <MDXRemote source={post.content} components={mdxComponents} />
+        <MDXRemote
+          source={post.content}
+          components={mdxComponents}
+          options={mdxOptions}
+        />
       </article>
 
       <footer className="mt-10 border-t border-border pt-6">

@@ -69,6 +69,7 @@ const TITLES = {
   "bal-turleri-ve-mutfak-kullanimi": "Bal Türleri ve Mutfak Kullanımı",
   "yumurta-tazeligi-ve-saklama": "Yumurta Tazeliği ve Saklama",
   "tahil-cesitleri-karsilastirma": "Tahıl Çeşitleri Karşılaştırma",
+  "corba-bilimi-tabandan-servise": "Çorba Bilimi: Tabandan Servise",
 };
 
 // Her yazi -> 3 ilgili (slug, kisa baglam aciklamasi)
@@ -342,6 +343,11 @@ const RELATED = {
     ["pilavin-bilimi", "pirinc pisirme teknigi ve oranlari"],
     ["un-cesitleri-protein-kullanim-rehberi", "tahillardan elde edilen unlar"],
     ["fermentasyon-temelleri-yogurt-tursu-eksi-maya", "tahil bazli fermentasyon"],
+  ],
+  "corba-bilimi-tabandan-servise": [
+    ["salamura-ve-marine-bilimi", "tuz + asit + sure prensipleri"],
+    ["yumurta-tazeligi-ve-saklama", "terbiye icin taze yumurta"],
+    ["su-ve-mutfak-sert-yumusak-su-pisirmeye-etkisi", "corba tabaninin baslangici"],
   ],
 };
 

@@ -1,7 +1,11 @@
 # Tarifle, Proje Durumu
 
 > Oturum 22 başı (26 Nis 2026): Source duplicate cleanup KAPANIŞ +
-> em-dash hijyeni + Blog 51 (Salamura) + Blog 52 (Bal Türleri).
+> em-dash hijyeni + Blog 51 (Salamura) + Blog 52 (Bal Türleri) +
+> Mod G + Mod H altyapı v2 (input prep + intro + tetik şablonları
+> "N" placeholder) + Mod A 39b prod (50 yeni, 3636 → 3686) + Mod G
+> Batch 1 prod (100 tarif tipNote/sug revize) + Ölçü dönüştürücü
+> widget (tarif sayfası).
 > `scripts/smart-source-clean.mjs` (indent-aware brace-counting, 5
 > tarif format'ı tek algoritma), 59 source-only slug temizlendi
 > (3 multi-line + 57 single-line + 1 dup), source 3694 → 3635 unique.

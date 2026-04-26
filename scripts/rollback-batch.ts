@@ -368,6 +368,12 @@ async function main(): Promise<void> {
 
     const deleted = await executeRollback(prisma, rows);
     console.log(`✅ ${deleted} tarif silindi, AuditLog kaydedildi.\n`);
+    if (deleted > 0) {
+      console.log(
+        `💡 Tarif listesi TXT'sini guncellemek icin:\n` +
+          `   npx tsx scripts/dump-tarif-listesi.ts\n`,
+      );
+    }
   } finally {
     await prisma.$disconnect();
   }

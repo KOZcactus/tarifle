@@ -1,0 +1,315 @@
+[
+  {
+    "slug": "gravad-patates-salatasi-isvec-usulu",
+    "classification": "SKIP",
+    "reason": "Adaylık hazır gravad somon kullanımından geliyor; patates salatasında ek marine bekleme süresi yok."
+  },
+  {
+    "slug": "kopenhag-smorrebrod-ringa",
+    "classification": "SKIP",
+    "reason": "Tarif hazır marine ringayı sandviçe ekliyor; evde yeni bir salamura veya bekleme adımı yok."
+  },
+  {
+    "slug": "stockholm-dereotlu-patates-salatasi",
+    "classification": "SKIP",
+    "reason": "Adaylık soslama ifadesinden geliyor; patates salatası için marine bekletme süresi bulunmuyor."
+  },
+  {
+    "slug": "bangkok-yesil-mangolu-som-tam",
+    "classification": "SKIP",
+    "reason": "Som tam servis öncesi soslanır; bekletme salatanın çıtırlığını bozacağı için marine süresi eklenmez."
+  },
+  {
+    "slug": "cirpilmis-zeytin-salatasi",
+    "classification": "SKIP",
+    "reason": "Adaylık soslama hazırlığından geliyor; zeytin salatasında süreli marinasyon adımı yok."
+  },
+  {
+    "slug": "kai-yang",
+    "marineMinutes": 180,
+    "marineDescription": "Limon otu, sarımsak, soya sosu ve balık soslu marine, tavuğu ızgara öncesi Tay usulü aromayla kaplar.",
+    "tipNote_addition": "Tavuğu önce buzdolabında 3 saat bekletin, sonra pişirmeden önce 15 dakika oda ısısına yakınlaştırın.",
+    "sources": [
+      "https://www.brasswok.com/gai-yang-thai-grilled-chicken/",
+      "https://www.thai-food-online.co.uk/blogs/thai-food-online-blog/gai-yang-recipe-thai-grilled-chicken"
+    ],
+    "confidence": "high",
+    "reason": "BrassWok en az 1 saat, daha iyi 3 saat veya gece der; Thai Food Online en az 3 saat önerir. Bu yüzden 180 dakika güvenli seçim."
+  },
+  {
+    "slug": "acili-ezme-guneydogu-usulu",
+    "classification": "SKIP",
+    "reason": "Adaylık soslama kelimesinden geliyor; acılı ezme doğranıp karıştırılır, marine bekleme süresi gerektirmez."
+  },
+  {
+    "slug": "adana-turunclu-tavuk-sis",
+    "marineMinutes": 60,
+    "marineDescription": "Turunç suyu, yağ ve baharatlı marine tavuk kuşbaşının dışını kısa sürede kokulu ve sulu tutar.",
+    "tipNote_addition": "Turunç suyu güçlü olduğu için 1 saat yeterlidir; daha uzun bekletirseniz tavuk yüzeyi fazla yumuşayabilir.",
+    "sources": [
+      "https://yemek.com/tarif/marine-tavuk-sis-ezme/",
+      "https://www.nefistarif.net/firinda-tavuk-sis-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Yemek.com tavuk şiş için 1-6 saat, Nefis Tarif 1-2 saat dinlendirme verir. Turunç asidi nedeniyle alt sınır olan 60 dakika seçildi."
+  },
+  {
+    "slug": "akdeniz-salatasi",
+    "classification": "SKIP",
+    "reason": "Tarifte yalnızca servis öncesi soslama var; salata için ayrı marine bekleme süresi yok."
+  },
+  {
+    "slug": "toyga-corbasi-anadolu-usulu",
+    "classification": "SKIP",
+    "reason": "Buradaki terbiye yoğurtlu çorba bağlama tekniğidir; marine veya bekletme süresi değildir."
+  },
+  {
+    "slug": "dereotlu-cubuk-tursu-salatasi-ankara-usulu",
+    "classification": "SKIP",
+    "reason": "Adaylık soslama ifadesinden geliyor; hazır turşu salatada ayrıca bekletilmiyor."
+  },
+  {
+    "slug": "antalya-kulakli-corba",
+    "classification": "SKIP",
+    "reason": "Çorbadaki terbiye pişirme sırasında eklenen yoğurtlu karışımdır; marine süresi yok."
+  },
+  {
+    "slug": "terbiyeli-nohut-corbasi-antalya-usulu",
+    "classification": "SKIP",
+    "reason": "Nohut çorbasındaki terbiye sıcak çorbaya alıştırılır; süreli marinasyon anlamına gelmez."
+  },
+  {
+    "slug": "arpa-yarmali-yogurt-corbasi-eskisehir-usulu",
+    "classification": "SKIP",
+    "reason": "Yoğurtlu terbiye çorbanın kesilmesini önleyen pişirme adımıdır; marine bekleme süresi yoktur."
+  },
+  {
+    "slug": "ayran-asi-corbasi-erzurum-usulu",
+    "classification": "SKIP",
+    "reason": "Terbiye burada yoğurdu sıcak suyla ılıtma tekniğidir; marine veya dinlendirme adımı değildir."
+  },
+  {
+    "slug": "ayvali-hardalli-yesil-salata-yalova-usulu",
+    "classification": "SKIP",
+    "reason": "Adaylık soslama hazırlığından geliyor; yeşil salata bekletilmeden servis edilir."
+  },
+  {
+    "slug": "balik-corbasi",
+    "classification": "SKIP",
+    "reason": "Balık çorbasındaki limonlu terbiye pişirme sırasında bağlama içindir; marine süresi eklenmez."
+  },
+  {
+    "slug": "balli-hardalli-tavuk",
+    "marineMinutes": 30,
+    "marineDescription": "Bal, hardal ve limonlu marine tavuk filetoda tatlı ekşi yüzey oluşturur ve tavada kurumayı azaltır.",
+    "tipNote_addition": "Filetolar inceyse 30 dakika yeterlidir; kalın parçada marineyi 60 dakikaya çıkarabilirsiniz.",
+    "sources": [
+      "https://whitneybond.com/honey-mustard-chicken/",
+      "https://30seconds.com/food/tip/43618/Honey-Mustard-Marinade-Recipe-The-Best-Chicken-Marinade-Recipe-Ever"
+    ],
+    "confidence": "high",
+    "reason": "Whitney Bond 30-60 dakika, 30Seconds en az 30 dakika verir. İnce fileto ve limonlu hardal için 30 dakika doğru alt sınırdır."
+  },
+  {
+    "slug": "zeytin-ezmeli-patates-salata-bodrum-usulu",
+    "classification": "SKIP",
+    "reason": "Patatesin ılıkken soslanması aroma için yeterli; tarifte bekletilen bir marine adımı yok."
+  },
+  {
+    "slug": "bostana-bulgur-salatasi-sanliurfa-usulu",
+    "classification": "SKIP",
+    "reason": "Bostana taze karıştırılan bir salatadır; adaylık soslama kelimesinden geliyor, marine süresi yok."
+  },
+  {
+    "slug": "bursa-muradiye-corbasi-tavuklu",
+    "classification": "SKIP",
+    "reason": "Muradiye çorbasında terbiye yoğurtlu bağlama adımıdır; tavuk veya sebze marine edilmiyor."
+  },
+  {
+    "slug": "ceviche",
+    "marineMinutes": 15,
+    "marineDescription": "Lime suyu, balığın dışını kısa sürede sıkılaştırır ve cevicheye parlak ekşi tat verir.",
+    "tipNote_addition": "Balığı 15 dakikadan sonra tadıp servis edin; uzun bekleme dokuyu lastiksi yapabilir.",
+    "sources": [
+      "https://www.theguardian.com/food/2023/may/17/how-to-make-ceviche-recipe-felicity-cloake",
+      "https://flavor365.com/the-ultimate-ceviche-recipe-everything-you-need-to-know/"
+    ],
+    "confidence": "high",
+    "reason": "The Guardian 10 dakika, Flavor365 15-25 dakika aralığını verir. Mevcut tarifin 15 dakikası taze balık için doğru kısa marinasyondur."
+  },
+  {
+    "slug": "cevizli-batirik-karaman-usulu",
+    "classification": "SKIP",
+    "reason": "Batırıkta soslama ve karıştırma var; marine bekletme veya salamura süresi yok."
+  },
+  {
+    "slug": "caglali-kurutlu-bulgur-salatasi-malatya-usulu",
+    "classification": "SKIP",
+    "reason": "Adaylık soslama aşamasından geliyor; bulgur salatası için ek marine süresi gerekmiyor."
+  },
+  {
+    "slug": "canakkale-ovmac-corbasi",
+    "classification": "SKIP",
+    "reason": "Yoğurtlu terbiye sıcak çorbaya katılmadan önce ılıtılır; marine bekleme adımı değildir."
+  },
+  {
+    "slug": "cubuk-tursulu-patates-salatasi-ankara-usulu",
+    "classification": "SKIP",
+    "reason": "Patatesin sosla buluşması servis dokusu içindir; tarifte süreli marine yoktur."
+  },
+  {
+    "slug": "diyarbakir-lebeniyesi",
+    "classification": "SKIP",
+    "reason": "Lebeniye terbiyesi yoğurdun kesilmemesi için uygulanır; marine süresi olarak modellenmemeli."
+  },
+  {
+    "slug": "nohutlu-yogurt-corbasi-diyarbakir-usulu",
+    "classification": "SKIP",
+    "reason": "Adaylık çorba terbiyesinden geliyor; nohut veya yoğurt için bekleme marinasyonu yok."
+  },
+  {
+    "slug": "domatesli-lebeniye-corbasi-gaziantep-usulu",
+    "classification": "SKIP",
+    "reason": "Terbiye burada sıcak suyla ılıtılan yoğurt karışımıdır; marine süresi eklenmez."
+  },
+  {
+    "slug": "dugun-corbasi",
+    "classification": "SKIP",
+    "reason": "Düğün çorbasında terbiye pişirme sonunda bağlayıcıdır; et için marine veya bekletme yok."
+  },
+  {
+    "slug": "eksili-kofte",
+    "classification": "SKIP",
+    "reason": "Adaylık terbiye kelimesinden geliyor ama tarif sade ekşili köfte; marine bekleme adımı yok."
+  },
+  {
+    "slug": "elma-sirkeli-lahana-salatasi-tekirdag-usulu",
+    "classification": "SKIP",
+    "reason": "Sirkeli soslama salatanın servis adımıdır; kaynaklı bir marine bekleme süresi yok."
+  },
+  {
+    "slug": "erikli-marul-piyazi-sakarya-usulu",
+    "classification": "SKIP",
+    "reason": "Marul servis anında soslanır; bekletme çıtırlığı bozacağı için marine süresi eklenmez."
+  },
+  {
+    "slug": "borani-erzincan-usulu",
+    "classification": "SKIP",
+    "reason": "Adaylık soslama hazırlığından geliyor; borani salatasında süreli marinasyon yok."
+  },
+  {
+    "slug": "erzincan-kesme-corbasi",
+    "classification": "SKIP",
+    "reason": "Yoğurt terbiyesi sıcak suyla alıştırılan pişirme karışımıdır; marine süresi değildir."
+  },
+  {
+    "slug": "erzincan-kesme-corbasi-yogurtlu",
+    "classification": "SKIP",
+    "reason": "Çorbadaki yoğurt terbiyesi bekletilmez; pişirme sırasında kesilmeyi önlemek için eklenir."
+  },
+  {
+    "slug": "evelikli-eriste-corbasi-kars-usulu",
+    "classification": "SKIP",
+    "reason": "Terbiye burada yoğurtlu çorba tekniği anlamında; marine veya salamura süresi yok."
+  },
+  {
+    "slug": "firinda-soslu-tavuk-kanat",
+    "marineMinutes": 120,
+    "marineDescription": "Yoğurt, salça, sarımsak ve baharatlı sos kanatları fırında kızarırken daha sulu tutar.",
+    "tipNote_addition": "Kanatları kapalı kapta 2 saat bekletin; sos deriye yapışır ve fırında daha dengeli kızarır.",
+    "sources": [
+      "https://yemek.com/tarif/firinda-soslu-kanat-2/",
+      "https://hizlitarifim.com/tarifler/firinda-soslu-kanat"
+    ],
+    "confidence": "high",
+    "reason": "Yemek.com birkaç saat, hızlıtarifim en az 30 dakika tercihen 2 saat verir. Kanat için 120 dakika en iyi uyumlu değerdir."
+  },
+  {
+    "slug": "firinda-tavuk-baget",
+    "marineMinutes": 30,
+    "marineDescription": "Yoğurtlu baharat sosu bagetlerin dışını kaplar ve fırında içinin kurumadan pişmesine yardım eder.",
+    "tipNote_addition": "Vaktiniz varsa 2 saate çıkarın, ama hızlı fırın baget için 30 dakika güvenli alt sınırdır.",
+    "sources": [
+      "https://www.habergazetesi.com.tr/enfes-baget-tavuk-tarifi",
+      "https://www.beykana.com/firinda-baharatli-tavuk-baget-nasil-yapilir-disi-kizarmis-ici-sulu-mukemmel-tarif/"
+    ],
+    "confidence": "medium",
+    "reason": "Haber Gazetesi 15-30 dakika, Beykana en az 30 dakika tercihen 2 saat verir. Baget tarifi için 30 dakika alt sınır uygundur."
+  },
+  {
+    "slug": "firinda-tavuk-pirzola",
+    "marineMinutes": 60,
+    "marineDescription": "Yoğurtlu baharat marinadı tavuk pirzolayı kaplayıp fırında daha yumuşak pişmesini sağlar.",
+    "tipNote_addition": "Pirzolaları streçli kapta 1 saat dinlendirin; daha kalın parçaları 2 saate kadar bekletebilirsiniz.",
+    "sources": [
+      "https://yemek.com/tarif/firinda-tavuk-pirzola/",
+      "https://www.nefisyemektarifleri.com/firinda-tavuk-pirzola/"
+    ],
+    "confidence": "high",
+    "reason": "Yemek.com en az 1 saat, Nefis Yemek Tarifleri yaklaşık 2 saat dinlendirme verir. Mevcut 30 dakika notuna 60 dakika daha doğru toplamdır."
+  },
+  {
+    "slug": "gaziantep-siveydiz",
+    "classification": "SKIP",
+    "reason": "Şiveydizde terbiye yoğurdun pişerken kesilmemesi için eklenir; marine bekleme süresi değildir."
+  },
+  {
+    "slug": "antep-yuvalama-yogurtlu",
+    "classification": "SKIP",
+    "reason": "Yuvalama terbiyesi yoğurtlu pişirme karışımıdır; köfte veya et marine edilmiyor."
+  },
+  {
+    "slug": "gendime-corbasi",
+    "classification": "SKIP",
+    "reason": "Terbiye çorba kıvamını bağlamak için sıcak suyla alıştırılır; marine süresi yoktur."
+  },
+  {
+    "slug": "hamsi-pastirmasi-salatasi-trabzon-usulu",
+    "classification": "SKIP",
+    "reason": "Tarif hazır marine hamsiyi salatada kullanıyor; bu batch içinde yeni hamsi marine süresi modellenmemeli."
+  },
+  {
+    "slug": "hardaliyeli-istavrit-tava-tekirdag-usulu",
+    "marineMinutes": 12,
+    "marineDescription": "Hardaliye ve kısa asitli marine istavritin yüzeyine ferah üzüm ekşiliği verir.",
+    "tipNote_addition": "Balığı 12 dakikadan uzun bekletmeyin; küçük istavritte asit tadı hızlı yükselir.",
+    "sources": [
+      "https://yemektebalikvar.com/tarif/istavrit-izgara-tarifi",
+      "https://www.leroyseafood.com/tr/lezzetli-deniz-urunleri/lezzetli-tarifler/hardal-sos/"
+    ],
+    "confidence": "low",
+    "reason": "İstavrit kaynakları balığın marine edilebildiğini, hardal sos kaynağı balıkta 1 saat bekletmeyi gösterir. Hardaliye için mevcut 12 dakika korunmalı."
+  },
+  {
+    "slug": "hashasli-yogurt-corbasi-afyon-usulu",
+    "classification": "SKIP",
+    "reason": "Yoğurt terbiyesi pişirme tekniği olarak kullanılıyor; marine veya dinlendirme süresi yok."
+  },
+  {
+    "slug": "hatay-nar-eksili-zahter-salatasi",
+    "classification": "SKIP",
+    "reason": "Zahter servis öncesi soslanır; bekletme taze ot dokusunu bozacağı için marine süresi eklenmez."
+  },
+  {
+    "slug": "isotlu-tavuk-sis-sanliurfa-usulu",
+    "marineMinutes": 60,
+    "marineDescription": "İsot, sarımsak ve yağlı marine tavuk kuşbaşına Urfa usulü acı ve isli tat verir.",
+    "tipNote_addition": "Tavuğu 1 saat buzdolabında bekletin; isot tadı oturur ama et fazla yumuşamaz.",
+    "sources": [
+      "https://yemek.com/tarif/marine-tavuk-sis-ezme/",
+      "https://www.nefisyemektarifleri.com/tavuk-sis-ozel-marine-edilmis/"
+    ],
+    "confidence": "high",
+    "reason": "Yemek.com isotlu tavuk şişte 1-6 saat, Nefis Yemek Tarifleri 2 saat bekletme verir. Kısa yoğun marine için 60 dakika uygun."
+  },
+  {
+    "slug": "iskembe-corbasi",
+    "classification": "SKIP",
+    "reason": "İşkembe çorbasında terbiye yumurta ve yoğurt karışımını kesmeden ekleme tekniğidir; marinasyon yoktur."
+  },
+  {
+    "slug": "karalahana-misirli-ayran-corbasi-trabzon-usulu",
+    "classification": "SKIP",
+    "reason": "Ayranlı çorba terbiyesi pişirme sırasında ılıtılır; bekletilen marine adımı bulunmaz."
+  }
+]

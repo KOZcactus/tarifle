@@ -5,13 +5,13 @@ Toplam entry: 50
 
 ## Ozet (verdict)
 
-- PASS: **32** (64.0%)
-- CORRECTION: 14 (28.0%)
+- PASS: **31** (62.0%)
+- CORRECTION: 15 (30.0%)
 - MAJOR_ISSUE: 4 (8.0%)
 
 ## Confidence
 
-- high: 28, medium: 22, low: 0
+- high: 32, medium: 18, low: 0
 
 ## Format integrity
 
@@ -20,61 +20,62 @@ Toplam entry: 50
 
 ## MAJOR_ISSUE (manuel review zorunlu)
 
-### `biscuit-gravy-tepsi-amerikan-usulu`
+### `borulceli-kabak-mucveri-mugla-usulu`
 
-**Reason**: Biscuits and gravy klasik olarak sosisli sütlü gravy ile yapılır; tarif sosis pişiriyor ama listede yok ve vejetaryen etiketi yanıltıcı.
+**Reason**: Mücver yumurta ile bağlanmış; bu hem ingredient hem alerjen listesinde eksik, ayrıca vegan etiketini açık biçimde yanlış yapıyor.
 
 **Issues**:
-- ingredients: step 1 kahvaltılık sosis kullanıyor ama ingredient listesinde sosis yok
-- tags: vejetaryen etiketi sosisli gravy nedeniyle yanlış
+- tags: vegan etiketi var ama step 3 yumurta kullanıyor
+- ingredients: yumurta step'te geçiyor ama ingredient listesinde yok
+- allergen: yumurta kullanıldığı halde YUMURTA alerjeni yok
 
 **Corrections** (sample):
 - ingredients_add: 1
 
-### `bo-la-lot-vietnam-usulu`
+### `bossam`
 
-**Reason**: Yaprak türü tarifin kimliğini değiştiriyor; lá lốt yerine asma yaprağı yazılması ve balık sosunun eksik olması yanıltıcı.
-
-**Issues**:
-- ingredients: asma yaprağı yazılı ama bò lá lốt geleneksel olarak lá lốt yaprağıyla yapılır
-- ingredients: step'lerde balık sosu kullanılıyor ama listede yok
-- allergen: balık sosu eklendiğinde DENIZ_URUNLERI alerjeni de eklenmeli
-
-**Corrections** (sample):
-- ingredients_add: 1
-
-### `bobo-de-camarao`
-
-**Reason**: Bobó de camarão Brezilya karides ve manyok yemeğidir; mutfak alanı yanlış, ayrıca kullanılan soğan ve biber listede eksik.
+**Reason**: Bossam kimliği haşlanmış domuz eti ve sarma servisidir; dana uyarlaması olabilir ama mevcut liste ve adımlar birbiriyle çelişiyor.
 
 **Issues**:
-- cuisine: input cuisine 'tr' görünüyor ama bobó de camarão Brezilya mutfağına aittir
-- ingredients: step'lerde soğan ve biber kullanılıyor ama listede yok
+- ingredients: klasik Kore bossam domuz etiyle yapılır; mevcut listede yalnız dana döş var
+- ingredients: step'lerde zencefil, kimchi ve sos geçiyor ama listede yok
+- steps: step 1 'domuz veya dana' diyor, ingredient listesiyle çelişiyor
 
 **Corrections** (sample):
-- ingredients_add: 2
+- ingredients_add: 4
+- ingredients_remove: Dana döş
 
-### `boeuf-bourguignon`
+### `brik`
 
-**Reason**: Tarifin içerik ve yöntem kısmı makul, ancak mutfak kodu yemeğin kökeniyle çelişiyor; apply şeması cuisine alanını desteklemiyor.
+**Reason**: Tarif içeriği Tunus brik ile uyumlu, fakat mutfak kodu Çin görünüyor; bu köken bilgisi kullanıcıyı yanıltır.
 
 **Issues**:
-- cuisine: input cuisine 'me' görünüyor ama boeuf bourguignon Fransız mutfağına aittir
+- cuisine: input cuisine 'cn' görünüyor ama brik Tunus mutfağına aittir
 
 **Corrections** (sample):
-- description: "Boeuf bourguignon, Burgonya'nın kırmızı şarapta pişen dana yahnisi; mantar ve arpacık soğanla zenginleşir...."
+- description: "Brik, Tunus sokaklarında ince hamurun içinde yumurta ve ton balığıyla kızaran çıtır üçgendir...."
+
+### `buenos-aires-kabakli-provoleta`
+
+**Reason**: Provoleta Arjantin ızgara peyniridir; içerik makul olsa da mutfak kodunun Meksika görünmesi köken bilgisini bozar.
+
+**Issues**:
+- cuisine: input cuisine 'mx' görünüyor ama provoleta Arjantin mutfağına aittir
+
+**Corrections** (sample):
+- description: "Arjantin usulü kabaklı provoleta, eriyen peyniri kabak, kekik ve domatesle sıcak paylaşım tabağına dönüştürür...."
 
 ## CORRECTION sample (ilk 10)
 
 | Slug | Conf | Issues count | Corrections fields |
 |---|---|---:|---|
-| `biberli-cevizli-ekmek-asi-hatay-usulu` | medium | 1 | steps_replace |
-| `biberli-ekmek-antakya-usulu` | high | 1 | ingredients_add |
-| `biberli-katik-pidesi-adiyaman-usulu` | medium | 2 | ingredients_add, allergens_add |
-| `biberli-tavuk-guvec-adana-usulu` | high | 2 | ingredients_add, cookMinutes, totalMinutes, steps_replace |
-| `biberli-zeytinli-ekmek-hatay-usulu` | medium | 2 | ingredients_add, ingredients_amount_change |
-| `bibimbap` | high | 2 | ingredients_add |
-| `bici-bici` | high | 2 | totalMinutes, tags_remove |
-| `bilecik-buzme-tatlisi-cevizli` | high | 2 | ingredients_add, allergens_add |
-| `birria-de-res` | high | 2 | ingredients_add |
-| `blueberry-cheesecake-jar-amerikan-usulu` | high | 3 | ingredients_add, totalMinutes, tags_remove |
+| `bolu-mengen-pilavi` | high | 1 | ingredients_add |
+| `bolu-mengen-pilavi-etli` | high | 1 | totalMinutes |
+| `borulce-ezmesi-aydin-usulu` | medium | 1 | totalMinutes |
+| `borulceli-koruklu-fennel-salata-urla-usulu` | medium | 2 | steps_replace |
+| `boulevardier` | high | 1 | steps_replace |
+| `bourbon-cherry-smash-amerikan-usulu` | medium | 2 | ingredients_add, steps_replace |
+| `bourbon-elma-smash-amerikan-usulu` | medium | 2 | ingredients_add, steps_replace |
+| `boza` | high | 1 | totalMinutes |
+| `bozali-irmik-kup-istanbul-usulu` | high | 2 | totalMinutes, tags_remove |
+| `briam` | high | 1 | ingredients_add |

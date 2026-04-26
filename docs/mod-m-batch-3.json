@@ -1,0 +1,343 @@
+[
+  {
+    "slug": "kars-evelik-asi",
+    "classification": "SKIP",
+    "reason": "Adaylık çorba terbiyesinden geliyor; evelik aşında marine veya bekletme süresi yok."
+  },
+  {
+    "slug": "kastamonu-pastirmali-ecevit-corbasi",
+    "classification": "SKIP",
+    "reason": "Yoğurt terbiyesi sıcak çorba suyuyla alıştırılan pişirme adımıdır; marinasyon değildir."
+  },
+  {
+    "slug": "kayseri-pastirmali-yarma-corbasi",
+    "classification": "SKIP",
+    "reason": "Terbiye burada yoğurdun kesilmesini önleyen çorba tekniğidir; süreli marine yoktur."
+  },
+  {
+    "slug": "kekikli-cipura-izgara-bodrum-usulu",
+    "marineMinutes": 60,
+    "marineDescription": "Kekik, limon ve zeytinyağlı marine çipuranın yüzeyine hafif ot kokusu verir.",
+    "tipNote_addition": "Balığı kurulayıp 1 saat bekletin; fazla uzun marine narenciye tadını balığın önüne geçirir.",
+    "sources": [
+      "https://www.devletsah.com/arsiv/izgara-cipura/",
+      "https://www.nefisyemekler.net/cipura-izgara"
+    ],
+    "confidence": "high",
+    "reason": "Devletşah en az 1 saat, Nefis Yemekler 2 saat dinlendirme verir. Bodrum usulü hafif narenciyeli ızgara için 60 dakika dengeli."
+  },
+  {
+    "slug": "kerevizli-yogurt-corbasi-edirne-usulu",
+    "classification": "SKIP",
+    "reason": "Kerevizli yoğurt çorbasındaki terbiye pişirme sırasında eklenir; marine beklemesi yoktur."
+  },
+  {
+    "slug": "lorlu-zahter-salatasi-kilis-usulu",
+    "classification": "SKIP",
+    "reason": "Zahter yaprakları sadece soslanmadan önce kurulanıyor; süreli marinasyon adımı yok."
+  },
+  {
+    "slug": "yogurtlu-nohut-yahni-konya-ova-usulu",
+    "classification": "SKIP",
+    "reason": "Yoğurt, un ve yumurta terbiyesi yemeği bağlamak içindir; nohut marine edilmiyor."
+  },
+  {
+    "slug": "koruklu-pancar-salatasi-manisa-usulu",
+    "classification": "SKIP",
+    "reason": "Adaylık pancarın sosla çevrilmesinden geliyor; kaynaklı ve net süreli marine adımı bulunmuyor."
+  },
+  {
+    "slug": "kulak-corbasi",
+    "classification": "SKIP",
+    "reason": "Kulak çorbasında terbiye yoğurtlu pişirme karışımıdır; marine süresi olarak modellenmemeli."
+  },
+  {
+    "slug": "lebeniye-corbasi",
+    "classification": "SKIP",
+    "reason": "Lebeniye terbiyesi sıcak suyla ılıtılıp tencereye eklenir; bekletme marinasyonu yoktur."
+  },
+  {
+    "slug": "limonlu-susamli-tavuk-sis-durumu-mersin-usulu",
+    "marineMinutes": 60,
+    "marineDescription": "Limon, sarımsak ve yağlı marine tavuk kuşbaşını dürüm için sulu ve kokulu tutar.",
+    "tipNote_addition": "Susamı marine sonunda ekleyin; 1 saatlik bekleme limon tadını verirken susamın yanmasını önler.",
+    "sources": [
+      "https://www.atolyemutfak.com.tr/tarifler/balli-limonlu-tavuk-sis-tarifi/",
+      "https://yemek.com/tarif/marine-tavuk-sis-ezme/"
+    ],
+    "confidence": "high",
+    "reason": "Atölye Mutfak limonlu tavuk şişte 1 saat, Yemek.com tavuk şişte 1-6 saat aralığı verir. Bu tarif için 60 dakika doğru alt sınır."
+  },
+  {
+    "slug": "eksili-kofte-malatya-usulu",
+    "classification": "SKIP",
+    "reason": "Ekşili köftedeki terbiye limonlu pişirme suyudur; köfte veya et marine edilmiyor."
+  },
+  {
+    "slug": "mesir-baharatli-tavuk-manisa-usulu",
+    "marineMinutes": 30,
+    "marineDescription": "Yoğurt ve mesir baharatlı marine tavuk parçalarının yüzeyine sıcak baharat tadı taşır.",
+    "tipNote_addition": "Baharatı yoğurtla açıp tavuğa yedirin; 30 dakika kısa fırın pişirmesi için yeterli tabaka bırakır.",
+    "sources": [
+      "https://www.tavukyemekleri.gen.tr/tavuk-marine.html",
+      "https://yemek.com/tarif/yogurt-soslu-tavuk-2/"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk marine rehberi asitli soslarda 30 dakika alt sınır verir, Yemek.com yoğurtlu tavukta 2 saat önerir. Mevcut kısa tarif için 30 dakika korunabilir."
+  },
+  {
+    "slug": "mugla-cokertme-kebabi",
+    "marineMinutes": 30,
+    "marineDescription": "Soğan suyu, soda ve zeytinyağıyla kısa marine edilen ince et şeritleri tavada daha yumuşak kızarır.",
+    "tipNote_addition": "Eti çok ince kesin; 30 dakikalık marine hızlı pişen bonfilede yeterli yumuşaklık sağlar.",
+    "sources": [
+      "https://migrostv.migros.com.tr/cokertme-kebabi",
+      "https://www.kirazinmutfagi.com.tr/tarif/cokertme-kebabi-bodrum-mugla"
+    ],
+    "confidence": "high",
+    "reason": "MigrosTV en az yarım saat, Kirazın Mutfağı 20 dakika marine verir. Mevcut 30 dakika adımı iki kaynakla uyumlu."
+  },
+  {
+    "slug": "narenciyeli-levrek-sis-alanya-usulu",
+    "marineMinutes": 10,
+    "marineDescription": "Portakal ve limonlu kısa marine levreğe ferah koku verir, balığın dokusunu diri bırakır.",
+    "tipNote_addition": "Levrek şeritlerini 10 dakika bekletin; narenciye daha uzun kalırsa balık fazla sertleşebilir.",
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/et-yemekleri/balik-yemekleri/levrek-marin-tarifi",
+      "https://sosy.co/levrek-marin-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Lezzet 5 dakika, Sosy ilk limon aşamasında 10 dakika bekletir. Şişlik levrek için kısa narenciye marinasyonu 10 dakika olmalı."
+  },
+  {
+    "slug": "nohutlu-sarimsakli-yogurt-corbasi-gaziantep-usulu",
+    "classification": "SKIP",
+    "reason": "Yoğurtlu terbiye sıcak çorba suyuyla ılıtılır; marine veya dinlendirme adımı değildir."
+  },
+  {
+    "slug": "nohutlu-sevketibostan-izmir-usulu",
+    "classification": "SKIP",
+    "reason": "Limonlu terbiye yemeğin pişirme bağlayıcısıdır; nohut veya şevketibostan marine edilmiyor."
+  },
+  {
+    "slug": "rize-fasulye-tursulu-kavurma",
+    "classification": "SKIP",
+    "reason": "Tarif hazır salamura fasulyeyi kavuruyor; evde yeni salamura veya bekleme süresi yok."
+  },
+  {
+    "slug": "roka-salatasi",
+    "classification": "SKIP",
+    "reason": "Roka servis öncesi soslanır; bekletme yaprakları solduracağı için marine süresi eklenmez."
+  },
+  {
+    "slug": "erikli-hamsi-salatasi-samsun-usulu",
+    "classification": "SKIP",
+    "reason": "Tarif hazır marine hamsi kullanıyor; salata içinde yeni hamsi marine süresi modellenmiyor."
+  },
+  {
+    "slug": "katikli-patates-corbasi-sivas-usulu",
+    "classification": "SKIP",
+    "reason": "Patates çorbasındaki terbiye sıcak suyla ılıtılan yoğurt karışımıdır; marinasyon değildir."
+  },
+  {
+    "slug": "siveydiz",
+    "classification": "SKIP",
+    "reason": "Şiveydizde terbiye yoğurdun kesilmeden pişmesi içindir; marine bekleme süresi yoktur."
+  },
+  {
+    "slug": "tavuk-doner",
+    "marineMinutes": 120,
+    "marineDescription": "Yoğurt, soğan suyu ve baharatlı marine tavuk dilimlerine döner tadı ve yumuşaklık verir.",
+    "tipNote_addition": "Marine sonrası rulo yapıp ayrıca 2 saat dondurun; bu süre dilimleme içindir, marine yerine geçmez.",
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/et-yemekleri/tavuk-yemekleri/soslu-tavuk-doner-tarifi",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/ev-yapimi-tavuk-doner-marine-edilmis/16026"
+    ],
+    "confidence": "high",
+    "reason": "Lezzet en az 2 saat, Leziz Yemeklerim en az 2 saat buzdolabı dinlendirmesi verir. Dondurucu süresi ayrıca dilimleme adımıdır."
+  },
+  {
+    "slug": "tavuk-suyu-corbasi",
+    "classification": "SKIP",
+    "reason": "Limonlu terbiye çorbayı bağlamak için sıcak suyla alıştırılır; marine süresi yoktur."
+  },
+  {
+    "slug": "tavuk-sis",
+    "marineMinutes": 120,
+    "marineDescription": "Yoğurt, zeytinyağı, baharat ve limonlu marine tavuk şişi ızgarada daha sulu tutar.",
+    "tipNote_addition": "Tavuğu kapalı kapta 2 saat bekletin; gece bekletecekseniz limon miktarını azaltın.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/tavuk-sis-ozel-marine-edilmis/",
+      "https://yemek.com/tarif/marine-tavuk-sis-ezme/"
+    ],
+    "confidence": "high",
+    "reason": "Nefis Yemek Tarifleri 2 saat, Yemek.com 1-6 saat aralığı önerir. Tarifin kendi notundaki en az 2 saat kaynakla örtüşüyor."
+  },
+  {
+    "slug": "terbiyeli-nohut-corbasi-burdur-usulu",
+    "classification": "SKIP",
+    "reason": "Buradaki terbiye yoğurdun kesilmemesi için ılıtılır; marine veya bekletme süresi değildir."
+  },
+  {
+    "slug": "yogurtlu-semizotu-corbasi-tire-usulu",
+    "classification": "SKIP",
+    "reason": "Semizotu çorbasındaki terbiye kısık ateşte eklenen yoğurtlu karışımdır; marinasyon yoktur."
+  },
+  {
+    "slug": "tokat-bakla-dolmasi",
+    "classification": "SKIP",
+    "reason": "Adaylık hazır salamura asma yaprağından geliyor; tarif yeni salamura süresi istemiyor."
+  },
+  {
+    "slug": "tokat-baklali-yaprak-sarma",
+    "classification": "SKIP",
+    "reason": "Salamura yaprak hazır malzeme olarak kullanılıyor; evde süreli salamura adımı yok."
+  },
+  {
+    "slug": "tokat-yaprak-sarmasi-etli",
+    "classification": "SKIP",
+    "reason": "Tarif salamura asma yaprağı kullanıyor ama yeni salamura veya marine bekleme süresi içermiyor."
+  },
+  {
+    "slug": "tokat-yapragi-dolmasi",
+    "classification": "SKIP",
+    "reason": "Sıcak suda 3 dakika bekletme tuz giderme işlemidir; marine veya salamura süresi olarak eklenmemeli."
+  },
+  {
+    "slug": "toyga-corbasi",
+    "classification": "SKIP",
+    "reason": "Toyga çorbasında terbiye sıcak çorba suyuyla alıştırılır; marine bekleme süresi yoktur."
+  },
+  {
+    "slug": "tutmac-corbasi",
+    "classification": "SKIP",
+    "reason": "Tutmaç çorbasındaki yoğurt terbiyesi pişirme bağlayıcısıdır; marinasyon değildir."
+  },
+  {
+    "slug": "unlu-eriste-corbasi-kirsehir-usulu",
+    "classification": "SKIP",
+    "reason": "Unlu terbiye çorbanın kıvamını bağlamak için eklenir; bekletilen marine adımı yoktur."
+  },
+  {
+    "slug": "van-ayran-asi-kislik",
+    "classification": "SKIP",
+    "reason": "Ayran aşı terbiyesi sıcak çorba suyuyla ılıtılır; marine süresi olarak modellenmez."
+  },
+  {
+    "slug": "yayla-corbasi",
+    "classification": "SKIP",
+    "reason": "Yayla çorbasındaki terbiye yoğurdun kesilmemesi için yapılan pişirme tekniğidir."
+  },
+  {
+    "slug": "yogurtlu-eriste-corbasi-cankiri-usulu",
+    "classification": "SKIP",
+    "reason": "Yoğurtlu erişte çorbasında terbiye tencereye alıştırılır; marine bekleme süresi yoktur."
+  },
+  {
+    "slug": "yogurtlu-kabak-corbasi-konya-usulu",
+    "classification": "SKIP",
+    "reason": "Terbiye kabağa pişirme sırasında eklenen yoğurtlu karışımdır; marinasyon değildir."
+  },
+  {
+    "slug": "yogurtlu-pirasa-corbasi-edirne-usulu",
+    "classification": "SKIP",
+    "reason": "Pırasa çorbasındaki terbiye sıcak suyla ılıtılır; bekletilen marine adımı bulunmaz."
+  },
+  {
+    "slug": "yogurtlu-yarma-corbasi-sivas-usulu",
+    "classification": "SKIP",
+    "reason": "Yarma çorbasındaki yoğurt terbiyesi pişirme tekniğidir; marine süresi yoktur."
+  },
+  {
+    "slug": "yuvalama-corbasi",
+    "classification": "SKIP",
+    "reason": "Yuvalama çorbasında terbiye yoğurtlu bağlama içindir; köfte veya et marine edilmiyor."
+  },
+  {
+    "slug": "zahterli-tavuk-sis-hatay-usulu",
+    "marineMinutes": 180,
+    "marineDescription": "Zahter, yoğurt, sarımsak ve zeytinyağlı marine tavuk şişe Hatay usulü otlu aroma verir.",
+    "tipNote_addition": "Zahterin kokusu yoğurtta açılır; 3 saat bekletmek kısa pişen şişte tadı daha dengeli yapar.",
+    "sources": [
+      "https://www.sofra.com.tr/tarifler/tavuk-yemekleri/zahterli-tavuk",
+      "https://www.tavukyemekleri.gen.tr/tavuk-marine.html"
+    ],
+    "confidence": "high",
+    "reason": "Sofra zahterli tavukta 3-24 saat verir, tavuk marine rehberi yoğurtlu marinelerde daha uzun süreyi destekler. 180 dakika doğru alt sınır."
+  },
+  {
+    "slug": "zeytin-yaprakli-lor-sarma-izmir-usulu",
+    "classification": "SKIP",
+    "reason": "Salamura zeytin yaprağı hazır malzeme olarak kullanılıyor; yeni salamura bekleme süresi yok."
+  },
+  {
+    "slug": "cranberry-chicken-salad-abd-delicatessen-usulu",
+    "classification": "SKIP",
+    "reason": "Adaylık soslama hazırlığından geliyor; chicken salad için marine bekleme süresi bulunmuyor."
+  },
+  {
+    "slug": "seattle-teriyaki-salmon",
+    "marineMinutes": 10,
+    "marineDescription": "Teriyaki sosla kısa bekleyen somon parlak, tuzlu tatlı bir yüzey kazanır.",
+    "tipNote_addition": "Somonu 10 dakikadan uzun tutmayın; ince fileto sosu hızlı alır ve tuz tadı artabilir.",
+    "sources": [
+      "https://iswanting.com/15-minute-teriyaki-salmon/",
+      "https://www.justonecookbook.com/teriyaki-salmon-recipe/"
+    ],
+    "confidence": "medium",
+    "reason": "Iswanting teriyaki somonda 10 dakika bekletir, Just One Cookbook Japon teriyakide marine gerekmediğini belirtir. Bu yüzden 10 dakika üst sınır gibi tutuldu."
+  },
+  {
+    "slug": "banh-mi",
+    "classification": "SKIP",
+    "reason": "Banh mi hazır salamura sebze ve pişmiş etle kuruluyor; bu adayda yeni bekleme süresi yok."
+  },
+  {
+    "slug": "bo-luc-lac",
+    "marineMinutes": 30,
+    "marineDescription": "Soya sosu, istiridye sosu, sarımsak ve az şeker dana küplerini hızlı tavada kızarmaya hazırlar.",
+    "tipNote_addition": "Eti iri küp kesin; 30 dakika marine yüksek ateşte dışını kızartıp içini sulu bırakmaya yeter.",
+    "sources": [
+      "https://www.bigoven.com/recipe/bo-luc-lac-vietnamese-shaking-beef/165218",
+      "https://www.chilipeppermadness.com/recipes/bo-luc-lac/"
+    ],
+    "confidence": "high",
+    "reason": "BigOven 30 dakika veya daha fazla, Chili Pepper Madness en az 30 dakika verir. Mevcut 20 dakikaya göre 30 dakika daha kaynaklıdır."
+  },
+  {
+    "slug": "bo-ne-vietnam-usulu",
+    "marineMinutes": 15,
+    "marineDescription": "Soya sosu, istiridye sosu ve sarımsaklı kısa marine ince dana dilimlerini kahvaltı tavasına hazırlar.",
+    "tipNote_addition": "Et ince dilimliyse 15 dakika yeterlidir; daha kalın kesitte süreyi 30 dakikaya çıkarabilirsiniz.",
+    "sources": [
+      "https://savourthepho.com/bo-ne-vietnamese-steak-and-eggs/",
+      "https://kbeesrecipes.com/recipes/dinner-recipes/sizzling-steak-eggs-vietnamese-bo-ne/"
+    ],
+    "confidence": "high",
+    "reason": "Savour the Pho 15 dakika, KBees en az 15 dakika ve genelde 1 saat verir. İnce kahvaltılık et için 15 dakika uygundur."
+  },
+  {
+    "slug": "bun-thit-nuong-vietnam-usulu",
+    "marineMinutes": 30,
+    "marineDescription": "Balık sosu, sarımsak, şeker ve limon otlu marine ince eti noodle kasesi için kokulu kızartır.",
+    "tipNote_addition": "Eti ince dilimleyin; 30 dakika bekleme yüzeyi tatlandırır, gece bekleme daha derin aroma verir.",
+    "sources": [
+      "https://bunbobae.com/vietnamese-lemongrass-grilled-pork-thit-nuong/",
+      "https://www.aliettedebodard.com/recipes/bun-thit-nuong-barbecued-pork-rice-noodles/"
+    ],
+    "confidence": "high",
+    "reason": "Bun Bo Bae en az 30 dakika, Aliette de Bodard en az 30 dakika verir. Mevcut 20 dakikanın yerine 30 dakika daha güvenli."
+  },
+  {
+    "slug": "com-tam",
+    "marineMinutes": 30,
+    "marineDescription": "Soya sosu, sarımsak ve şekerli Vietnam usulü marine etin kırık pirinç yanında kızarmasını sağlar.",
+    "tipNote_addition": "İnce dilim et 30 dakikada tadı alır; pişirmeden önce fazla marinadı süzdürün ki tava sulanmasın.",
+    "sources": [
+      "https://www.simplyrecipes.com/andrea-nguyen-grilled-lemongrass-pork-chops-recipe-8689595",
+      "https://bunbobae.com/vietnamese-lemongrass-grilled-pork-thit-nuong/"
+    ],
+    "confidence": "medium",
+    "reason": "Simply Recipes Vietnam usulü ince et için 20-30 dakikayı yeterli görür, Bun Bo Bae en az 30 dakika verir. Com tam için 30 dakika uygun."
+  }
+]

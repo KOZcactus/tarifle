@@ -1,0 +1,708 @@
+[
+  {
+    "slug": "apple-tvorog-bake-rus-usulu",
+    "verdict": "PASS",
+    "reason": "Tvorog, yumurta, irmik ve elma ile fırınlanan yapı Rus tvoroglu güveç çizgisiyle uyumlu. Süre, kalori, alerjen ve fırın etiketi makul görünüyor.",
+    "sources": [
+      "https://www.olgasflavorfactory.com/recipes/sweets/desserts/tvorog-cake-with-apples/",
+      "https://natashaskitchen.com/russian-cheese-pancakes-syrniki/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "arabasi-corbasi-yozgat-usulu",
+    "verdict": "PASS",
+    "reason": "Yozgat kaynakları arabaşı için tavuklu acılı çorba ve ayrı soğutulan un hamurunu doğruluyor. Malzeme, süre ve gluten bildirimi tutarlı.",
+    "sources": [
+      "https://www.rotayozgat.com/neler-yenir/arabasi-corbasi",
+      "https://lezzetler.com/arabasi-corbasi-yozgat-tarif-179062"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "arabasi-hamuru",
+    "verdict": "PASS",
+    "reason": "Arabaşı hamuru un, su ve tuzla pişirilip tepside soğutulan sade bir eşlikçidir. Vegan etiket, gluten alerjeni ve bekletme adımı doğru.",
+    "sources": [
+      "https://www.rotayozgat.com/neler-yenir/arabasi-corbasi",
+      "https://lezzetler.com/arabasi-corbasi-yozgat-tarif-179062"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "arak-limon-kokteyli-levant-usulu",
+    "verdict": "PASS",
+    "reason": "Arakın limon, buz ve soda ile seyreltilmesi Levant içki servisleriyle uyumlu. Alkol etiketi, süre ve alerjen boşluğu içerikle çelişmiyor.",
+    "sources": [
+      "https://www.self.com/story/thirsty-thursday-eden-grinspan-sambuca-cocktail-recipe",
+      "https://www.thespruceeats.com/arak-middle-eastern-aniseed-liquor-2355512"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "arancini",
+    "verdict": "PASS",
+    "reason": "Arancini için pirinç, peynir dolgusu, yumurta, galeta unu ve kızartma yöntemi kaynaklarla örtüşüyor. Alerjenler ve kalori aralığı makul.",
+    "sources": [
+      "https://www.kitchenstories.com/en/recipes/easy-mozzarella-arancini",
+      "https://www.theguardian.com/lifeandstyle/wordofmouth/2014/jul/09/how-to-make-perfect-arancini-italian-fried-rice-balls"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "arap-asi-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "description: tarif Arap mutfağı değil, arabaşı geleneğiyle İç Anadolu çorbası olarak anlatılmalı"
+    ],
+    "corrections": {
+      "description": "Arabaşı, acılı tavuk çorbası ve soğuk hamuruyla İç Anadolu'da kış sofralarında yenir."
+    },
+    "sources": [
+      "https://www.rotayozgat.com/neler-yenir/arabasi-corbasi",
+      "https://lezzetler.com/arabasi-corbasi-yozgat-tarif-179062"
+    ],
+    "confidence": "high",
+    "reason": "Kaynaklar yemeği Yozgat ve İç Anadolu arabaşı geleneği olarak veriyor. Mevcut metin genel olarak doğru, ancak adlandırma daha açık olmalı."
+  },
+  {
+    "slug": "arayes-lubnan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: adımda sarımsak ve zeytinyağı kullanılıyor ama ingredient listesinde yok",
+      "step 6: yoğurtlu tahin sos yazıyor, ingredient listesinde yoğurt veya tahin yok ve servingSuggestion yoğurtsuz tahin diyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 6,
+          "instruction": "Tahin sos veya salatayla sıcak servis edin, iç buharı ekmeği yumuşatmadan."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.mediterranos.com/arayes",
+      "https://www.chocolatesandchai.com/arayes-lebanese-meat-stuffed-pitas/"
+    ],
+    "confidence": "high",
+    "reason": "Arayes kaynakları kıyma, soğan, sarımsak ve yağlanmış pita kullanımını doğruluyor. Tarif doğru, fakat iki malzeme eksik ve sos ifadesi çelişkili."
+  },
+  {
+    "slug": "arepa",
+    "verdict": "PASS",
+    "reason": "Ön pişirilmiş mısır unu, su ve peynirle hazırlanan arepa kurgusu Kolombiya ve Venezuela tarifleriyle uyumlu. Süt alerjeni peynir nedeniyle doğru.",
+    "sources": [
+      "https://www.mycolombianrecipes.com/cheese-cornmeal-patties-arepas-de-queso/",
+      "https://www.whats4eats.com/breads/arepas-recipe"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "arequipe-flan",
+    "verdict": "PASS",
+    "reason": "Arequipe veya dulce de leche flan; yumurta, süt ve karamel tabanı ile kaynaklara uyuyor. Benmari, süre ve süt yumurta alerjenleri tutarlı.",
+    "sources": [
+      "https://www.mycolombianrecipes.com/flan-de-arequipe-dulce-de-leche-flan/",
+      "https://elpais.com/us/proyecto-cocina/2024-12-30/flan-de-dulce-de-leche.html"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "armutlu-ihlamur-soguk-cay-bilecik-usulu",
+    "verdict": "PASS",
+    "reason": "Ihlamur demleme, bal, limon ve armutla soğuk servis edilen içecek teknik olarak tutarlı. Süre, düşük kalori ve alerjen boşluğu makul.",
+    "sources": [
+      "https://www.thespruceeats.com/linden-tea-benefits-and-side-effects-4687073",
+      "https://www.bbcgoodfood.com/recipes/collection/iced-tea-recipes"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "armutlu-irmik-tatlisi-bilecik-usulu",
+    "verdict": "PASS",
+    "reason": "İrmik, süt, şeker, tereyağı ve meyve ile pişen muhallebi tipi tatlı yerel yorum olarak makul. Gluten ve süt alerjenleri doğru.",
+    "sources": [
+      "https://www.yemek.com/tarif/irmik-tatlisi/",
+      "https://www.nefisyemektarifleri.com/sutlu-irmik-tatlisi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "armutlu-tarcin-komposto-polonya-usulu",
+    "verdict": "PASS",
+    "reason": "Armut, tarçın, karanfil ve bal ile kısa pişen komposto Polonya kompot geleneğiyle uyumlu. Vegan etiketi yok, alerjen boşluğu makul.",
+    "sources": [
+      "https://www.polonist.com/kompot/",
+      "https://www.everyday-delicious.com/polish-kompot/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "armutlu-vermut-fizz-istanbul-usulu",
+    "verdict": "PASS",
+    "reason": "Vermut, meyve suyu, soda ve buzla hazırlanan fizz yapısı kokteyl tekniği açısından tutarlı. Alkollü etiketi ve kısa hazırlık süresi doğru.",
+    "sources": [
+      "https://www.liquor.com/recipes/vermouth-cassis/",
+      "https://www.diffordsguide.com/cocktails/recipe/2040/vermouth-fizz"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "armutlu-zencefil-smoothie",
+    "verdict": "PASS",
+    "reason": "Armut, zencefil, limon ve suyla yapılan süt ürünsüz smoothie sade ve tutarlı. Vegan, alkolsüz ve düşük kalorili etiketler içerikle uyumlu.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/collection/smoothie-recipes",
+      "https://www.eatingwell.com/recipes/17949/drinks/smoothies/fruit/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "arnold-palmer",
+    "verdict": "PASS",
+    "reason": "Arnold Palmer buzlu çay ve limonata karışımıdır. Mevcut tarif çay, limon, şeker ve suyla aynı yapıyı kuruyor; alkolsüz ve vegan etiketler doğru.",
+    "sources": [
+      "https://www.thebar.com/en/recipes/arnold-palmer",
+      "https://www.allrecipes.com/recipe/220527/arnold-palmer/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "arpa-sehriye-salatasi",
+    "verdict": "PASS",
+    "reason": "Arpa şehriye, sebze, mısır, maydanoz ve limonla hazırlanan salata Türkiye tarifleriyle uyumlu. Vegan etiketi ve gluten alerjeni doğru.",
+    "sources": [
+      "https://www.yemek.com/tarif/arpa-sehriye-salatasi/",
+      "https://www.nefisyemektarifleri.com/arpa-sehriye-salatasi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "arpa-sehriyeli-eriste-pilavi-kars-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 tuz ekliyor ama ingredient listesinde tuz yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/eriste-pilavi-tarifi/",
+      "https://www.yemek.com/tarif/eriste-pilavi/"
+    ],
+    "confidence": "high",
+    "reason": "Erişte pilavı için tereyağı, şehriye veya erişte, su ve tuz standarttır. Mevcut adım tuz diyor, alışveriş listesinde görünmüyor."
+  },
+  {
+    "slug": "arpa-sehriyeli-nohut-pilavi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 sıcak su ekliyor ama ingredient listesinde su yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "2.5", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/nohutlu-pilav/",
+      "https://www.nefisyemektarifleri.com/nohutlu-pilav-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Nohutlu pilavda pirinç, nohut, yağ, su ve tuz gerekir. Mevcut tarifin oranları makul, fakat pişirme sıvısı listede eksik."
+  },
+  {
+    "slug": "arpa-sehriyeli-pilav",
+    "verdict": "PASS",
+    "reason": "Pirinç, arpa şehriye, tereyağı, sıcak su ve dinlendirme akışı klasik şehriyeli pilavla uyumlu. Gluten ve süt alerjenleri doğru.",
+    "sources": [
+      "https://www.yemek.com/tarif/sehriyeli-pilav/",
+      "https://www.nefisyemektarifleri.com/arpa-sehriyeli-pirinc-pilavi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "arpa-yarmali-yogurt-corbasi-eskisehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 terbiyede un kullanıyor ama ingredient listesinde un yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Un", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/yogurt-corbasi/",
+      "https://www.nefisyemektarifleri.com/yogurt-corbasi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurt çorbası terbiyesinde yoğurt, yumurta ve un yaygın kullanılır. Step açıkça un diyor, bu yüzden ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "arroz-carreteiro",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 biber kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kapya biber", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://cookonloop.com/recipe/brazilian-arroz-de-carreteiro",
+      "https://www.196flavors.com/brazil-arroz-carreteiro/"
+    ],
+    "confidence": "medium",
+    "reason": "Arroz carreteiro pirinç, kurutulmuş et, soğan, domates ve biberle uyumlu bir tek tencere yemeğidir. Adımdaki biber listede eksik."
+  },
+  {
+    "slug": "arroz-chaufa-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 sarımsak, zencefil ve yeşil soğan kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Taze zencefil", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Yeşil soğan", "amount": "3", "unit": "dal" }
+      ]
+    },
+    "sources": [
+      "https://www.eatperu.com/arroz-chaufa-de-pollo-peruvian-rice/",
+      "https://www.usarice.com/thinkrice/recipes/arroz-chaufa"
+    ],
+    "confidence": "high",
+    "reason": "Chaufa kaynakları tavuk, yumurta, soya sosu, zencefil, sarımsak ve yeşil soğanı birlikte veriyor. Üç aromatik malzeme listede eksik."
+  },
+  {
+    "slug": "arroz-con-elote-meksika-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 yağda kavurma ve step 3 tuz kullanıyor ama ingredient listesinde yağ ve tuz yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.mexicoinmykitchen.com/mexican-rice-with-corn/",
+      "https://www.foodnetwork.com/recipes/food-network-kitchen/arroz-rojo-3675746"
+    ],
+    "confidence": "medium",
+    "reason": "Mısırlı Meksika pilavı pirinç, mısır, soğan, sıvı yağ ve tuzla pişer. Adımlar iki temel malzemeyi kullanıyor, listeye eklenmeli."
+  },
+  {
+    "slug": "arroz-con-leche-cubano",
+    "verdict": "PASS",
+    "reason": "Pirinç, süt, şeker ve tarçınla koyulaştırılan arroz con leche kaynaklarla uyumlu. Süt alerjeni, süre ve tatlı tipi doğru görünüyor.",
+    "sources": [
+      "https://www.pbs.org/food/recipes/arroz-con-leche",
+      "https://www.mybigfatcubanfamily.com/2016/07/arroz-con-leche-recipe/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "arroz-con-pina-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 soğanı yağda kavuruyor ama ingredient listesinde soğan ve yağ yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "0.5", "unit": "adet" },
+        { "name": "Sıvı yağ", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.mycolombianrecipes.com/arroz-con-pina-pineapple-rice/",
+      "https://www.allrecipes.com/recipe/232718/pineapple-rice/"
+    ],
+    "confidence": "medium",
+    "reason": "Ananaslı pirinç yorumu makul, ancak adımda soğan ve yağ kullanımı açık. Kullanıcı alışveriş listesinde bu iki malzemeyi görmeli."
+  },
+  {
+    "slug": "arroz-con-pollo-cubano",
+    "verdict": "PASS",
+    "reason": "Tavuk, pirinç, soğan, biber, domates, bezelye ve safranlı tek tencere akışı arroz con pollo ile uyumlu. Makro ve süreler makul.",
+    "sources": [
+      "https://www.cookingclassy.com/arroz-con-pollo/",
+      "https://www.epicurious.com/recipes/food/views/arroz-con-pollo-51190840"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "arroz-con-pollo-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 sarımsak, step 3 soğan ve yağ kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.eatperu.com/arroz-con-pollo/",
+      "https://peru.info/en-us/gastronomy/blogperu/2/45/easy-arroz-con-pollo-recipe-a-stepbystep-guide-to-a-peruvian-classic"
+    ],
+    "confidence": "high",
+    "reason": "Peru arroz con pollo kaynakları kişnişli yeşil sos, soğan, sarımsak ve tavuklu pirinç yapısını doğruluyor. Üç kullanılan malzeme eksik."
+  },
+  {
+    "slug": "arroz-congri",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: adımlarda biber, sarımsak, zeytinyağı, oregano ve defne kullanılıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kapya biber", "amount": "1", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "tatlı kaşığı" },
+        { "name": "Oregano", "amount": "1", "unit": "çimdik" },
+        { "name": "Defne yaprağı", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://www.amigofoods.com/blogs/cuban-recipes-recetas-cubanas/arroz-congri",
+      "https://recipes.net/main-dish/rice/arroz-congri-cuban-rice-and-black-beans-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Congri kaynaklarında pirinç ve siyah fasulyeye soğan, biber, sarımsak, kimyon, oregano ve defne eşlik ediyor. Adımdaki malzemeler listede yok."
+  },
+  {
+    "slug": "arroz-rojo-meksika-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 yağda kavuruyor, step 4 tuz ve sebze ekliyor ama ingredient listesinde yağ, tuz ve sebze yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Havuç ve bezelye", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.foodnetwork.com/recipes/food-network-kitchen/arroz-rojo-3675746",
+      "https://www.epicurious.com/recipes/food/views/classic-red-rice-108057"
+    ],
+    "confidence": "high",
+    "reason": "Arroz rojo için pirinci yağda kavurup domates, sarımsak ve sıvıyla pişirmek doğru. Mevcut adımların kullandığı üç malzeme listede eksik."
+  },
+  {
+    "slug": "artsoppa-isvec-usulu",
+    "verdict": "PASS",
+    "reason": "Sarı bezelye, soğan, havuç ve defneyle yapılan etsiz ärtsoppa yorumuna kaynaklarda yer var. Vegan etiket ve süreler içerikle uyumlu.",
+    "sources": [
+      "https://swedishfood.com/swedish-food-recipes-starters/134-pea-soup",
+      "https://www.eatright.org/recipes/soups-and-stews/slow-cooked-yellow-pea-soup-recipe"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "artvin-cevizli-kara-lahana-kavurmasi",
+    "verdict": "PASS",
+    "reason": "Karalahana haşlanıp soğanla kavruluyor, ceviz sonradan ekleniyor. Yöresel sebze yemeği olarak tutarlı; kuruyemiş alerjeni doğru.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/karalahana-kavurmasi/",
+      "https://www.youtube.com/watch?v=4nU4Tct7zQI"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "artvin-pucuko-kurutulmus-fasulye",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: puçuko kaynaklarında bulgur veya aşurelik buğday temel bileşen, mevcut listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Bulgur veya aşurelik buğday", "amount": "0.5", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.artvinli.com/icerik/pucuko-yemegi.html",
+      "https://chefmutfakta.com/artvin-mutfaginin-cografi-isaretli-yemegi-pucuko/"
+    ],
+    "confidence": "high",
+    "reason": "Artvin kaynakları puçukoda kurutulmuş fasulyeye bulgur veya aşurelik buğday eklendiğini açıkça söylüyor. Mevcut tarifte bu ana bileşen eksik."
+  },
+  {
+    "slug": "aside-mugla-usulu",
+    "verdict": "PASS",
+    "reason": "Un, tereyağı, su ve tatlandırıcıyla pişirilen aside yapısı yöresel helva türleriyle uyumlu. Ceviz, gluten ve süt alerjenleri doğru.",
+    "sources": [
+      "https://ye-mek.net/tarif/aside-tatlisi",
+      "https://www.nefisyemektarifleri.com/aside-tatlisi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "aside-tatlisi-erzurum-usulu",
+    "verdict": "PASS",
+    "reason": "Pekmez, un, tereyağı ve cevizle hazırlanan aside kaynaklarla uyumlu. Kıvam, kısa pişirme süresi ve alerjen bildirimi doğru görünüyor.",
+    "sources": [
+      "https://ye-mek.net/tarif/aside-tatlisi",
+      "https://www.nefisyemektarifleri.com/pekmezli-aside-tatlisi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "asma-yapragi-corbasi-tokat-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 kavurma için yağ, step 4 pişirme için su kullanıyor ama ingredient listesinde yok",
+      "ingredients: step 5 sıcak servis öncesi tuz dengesi gerekir, tuz listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Su", "amount": "1", "unit": "litre" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://ye-mek.net/amp/asma-yapragi-corbasi",
+      "https://www.tokatsalamurayaprak.com/asma-yapragi-yemegi/"
+    ],
+    "confidence": "high",
+    "reason": "Asma yaprağı çorbasında yağla kavurma, suyla pişirme ve tuz temel akışta yer alıyor. Mevcut step bu malzemeleri kullanıyor, liste eksik."
+  },
+  {
+    "slug": "asure",
+    "verdict": "PASS",
+    "reason": "Buğday, nohut, fasulye, kuru meyve, şeker, ceviz ve fındıklı aşure yapısı kaynaklarla örtüşüyor. Vegan tag, gluten ve kuruyemiş bildirimi doğru.",
+    "sources": [
+      "https://www.allaboutturkey.com/dessert-asure.html",
+      "https://www.lezzet.com.tr/en/recipe/ashure"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "atina-ispanakli-arpa-sehriye",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 sıcak su ve tuz ekliyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "2.5", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.olivetomato.com/greek-spinach-rice-spanakorizo/",
+      "https://www.mygreekdish.com/recipe/spanakorizo-greek-spinach-rice/"
+    ],
+    "confidence": "medium",
+    "reason": "Ispanaklı tahıl pilavı yorumu spanakorizo çizgisiyle uyumlu. Ancak pişirme adımında kullanılan sıcak su ve tuz ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "atina-kabakli-feta-koftesi",
+    "verdict": "PASS",
+    "reason": "Kabak, feta, yumurta, un ve otlarla yapılan kızartma köfteleri Yunan kolokithokeftedes tarifleriyle uyumlu. Alerjenler doğru.",
+    "sources": [
+      "https://www.mygreekdish.com/recipe/greek-zucchini-balls-recipe-kolokithokeftedes/",
+      "https://www.olivetomato.com/greek-zucchini-fritters-kolokithokeftedes/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "atina-moussaka",
+    "verdict": "PASS",
+    "reason": "Patlıcan, kıyma, domates sosu ve beşamelli fırın yapısı klasik Yunan moussaka ile uyumlu. Süt ve gluten alerjenleri doğru.",
+    "sources": [
+      "https://www.bonappetit.com/recipe/moussaka",
+      "https://www.mygreekdish.com/recipe/mousakas/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "atina-musakka-patlicanli",
+    "verdict": "PASS",
+    "reason": "Patlıcan, patates, kıymalı domates sosu ve yumurtalı beşamel Yunan musakka kaynaklarıyla uyumlu. Süre ve alerjen bildirimi makul.",
+    "sources": [
+      "https://www.mygreekdish.com/recipe/mousakas/",
+      "https://www.bonappetit.com/recipe/moussaka"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "atina-tavuk-souvlaki",
+    "verdict": "CORRECTION",
+    "issues": [
+      "tags: totalMinutes 57 olduğu için 30-dakika-alti tag'i yanıltıcı"
+    ],
+    "corrections": {
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.recipetineats.com/chicken-souvlaki-tzatziki/",
+      "https://www.sidechef.com/recipes/5330/chicken_souvlaki/"
+    ],
+    "confidence": "high",
+    "reason": "Souvlaki içeriği doğru, fakat toplam süre 57 dakika görünüyor. Bu nedenle 30 dakika altı etiketi filtrelerde kullanıcıyı yanıltır."
+  },
+  {
+    "slug": "atom-mezesi-bodrum-usulu",
+    "verdict": "PASS",
+    "reason": "Süzme yoğurt, sarımsak, yağda çevrilmiş kuru biber ve pideyle servis edilen atom mezesi Türkiye kaynaklarıyla uyumlu. Alerjenler doğru.",
+    "sources": [
+      "https://www.yemek.com/tarif/atom-meze/",
+      "https://www.nefisyemektarifleri.com/atom-meze/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "atom-sos",
+    "verdict": "PASS",
+    "reason": "Yoğurt, mayonez, sarımsak, hardal ve pul biberle yapılan soğuk acı sos tutarlı. Süt, yumurta ve hardal alerjenleri doğru.",
+    "sources": [
+      "https://www.yemek.com/tarif/atom-meze/",
+      "https://www.nefisyemektarifleri.com/atom-meze/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "australian-meat-pie",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 salça kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Domates salçası", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.recipetineats.com/meat-pie-recipe/",
+      "https://www.taste.com.au/recipes/aussie-meat-pies/2e2a7934-f2f1-4f8d-b305-2b3e9ef03f90"
+    ],
+    "confidence": "high",
+    "reason": "Australian meat pie için kıymalı koyu harç ve milföy yapısı doğru. Ancak adımda salça geçiyor, ingredient listesinde görünmüyor."
+  },
+  {
+    "slug": "avci-yahni-kasesi-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 mantar kullanıyor ama ingredient listesinde yok",
+      "ingredients: step 4 et suyu diyor ama listede sadece su var"
+    ],
+    "corrections": {
+      "ingredients_remove": ["Su"],
+      "ingredients_add": [
+        { "name": "Mantar", "amount": "200", "unit": "gr" },
+        { "name": "Et suyu", "amount": "1.5", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.polonist.com/bigos-polish-hunters-stew/",
+      "https://www.thespruceeats.com/polish-hunters-stew-bigos-recipe-1136771"
+    ],
+    "confidence": "medium",
+    "reason": "Polonya avcı yahnisi mantar, lahana ve etli yoğun yapıya dayanır. Mevcut adımlar mantar ve et suyu kullanıyor, liste bunları karşılamıyor."
+  },
+  {
+    "slug": "avena-peruana-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: ingredient listesinde 1 su bardağı yulaf var, step 2 yarım su bardağı diyor",
+      "steps: ingredient listesinde 1 tatlı kaşığı bal var, step 3 1 yemek kaşığı diyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "1 su bardağı yulafı ekleyip kısık ateşte 8 dakika karıştırarak pişirin.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Kıvam koyulaşınca 1 tatlı kaşığı balı ekleyin, bal yanmasın diye ocak düşük kalsın."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.eatperu.com/quaker-peruvian-oatmeal-drink/",
+      "https://www.thespruceeats.com/avena-colombiana-oatmeal-drink-3029297"
+    ],
+    "confidence": "medium",
+    "reason": "Avena tarzı yulaflı sütlü içecek veya kase mantıklı. Sorun tarif doğruluğu değil, ingredient miktarıyla step miktarının çelişmesi."
+  },
+  {
+    "slug": "avgolemono-corbasi",
+    "verdict": "PASS",
+    "reason": "Tavuk suyu, pirinç, yumurta ve limonla yapılan avgolemono kaynaklarla örtüşüyor. Yumurtayı ılıştırma adımı ve alerjen bildirimi doğru.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Avgolemono",
+      "https://www.allrecipes.com/article/what-is-avgolemono/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "aviation",
+    "verdict": "PASS",
+    "reason": "Cin, maraschino, limon ve crème de violette oranları Aviation kokteylinin klasik çekirdeğiyle uyumlu. Alkollü ve vegan etiketleri makul.",
+    "sources": [
+      "https://www.liquor.com/recipes/aviation/",
+      "https://www.diffordsguide.com/cocktails/recipe/103/aviation-cocktail"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "avocado-smash-toast-australian",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 4 zeytinyağı ve taze ot kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Taze ot", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.recipetineats.com/avocado-toast/",
+      "https://www.bbcgoodfood.com/recipes/avocado-toast"
+    ],
+    "confidence": "high",
+    "reason": "Avokado tost içeriği doğru ve Avustralya brunch bağlamıyla uyumlu. Ancak son adımda kullanılan yağ ve taze ot listede eksik."
+  },
+  {
+    "slug": "avokadolu-cancha-bowl-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 domates ve kişniş kullanıyor ama ingredient listesinde yok",
+      "ingredients: step 5 zeytinyağı ve tuz kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Domates", "amount": "1", "unit": "adet" },
+        { "name": "Kişniş", "amount": "0.25", "unit": "demet" },
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.eatperu.com/cancha/",
+      "https://www.seriouseats.com/peruvian-style-corn-nuts-cancha-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Cancha ve avokadolu kase fikri Peru atıştırmalıklarıyla uyumlu. Açık sorun, son adımlarda kullanılan dört malzemenin listede olmaması."
+  }
+]

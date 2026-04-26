@@ -3616,6 +3616,31 @@ hesaplanır, RecipeTimeline `Hazırlık | Bekleme/Marine | Pişirme`
    - SKIP'lar için marineMinutes/sources/confidence gereksiz, sadece
      reason zorunlu (min 20 char açıklama)
 
+**7. Türkçe karakter ZORUNLU (oturum 24 sonu, Batch 1-3 dersi):**
+   - tipNote_addition + marineDescription + reason hepsinde
+     Türkçe karakterler (ç, ğ, ı, ö, ş, ü, Ç, Ğ, İ, Ö, Ş, Ü)
+     **doğru kullanılmalı**
+   - ASCII fold YASAK: "yumusatir" yerine "yumuşatır", "tavugu"
+     yerine "tavuğu", "kalir" yerine "kalır"
+   - Sebep: Mod M Batch 1-3 teslimlerinde 52/57 entry'de tipNote_
+     addition ASCII-only geldi (Tavugu/yogurtlu/sarimsak), kullanıcıya
+     gözüken metinde Türkçe doğal akmadı. Karışık metin (mevcut TR +
+     ASCII Codex) çirkin görünüyor
+   - Codex JSON output'unda Türkçe karakter UTF-8 olarak yaz, kaçış
+     yapma
+
+**8. Redundancy yasağı (oturum 24 sonu, Batch 1-3 dersi):**
+   - tipNote_addition mevcut tipNote ile **içerik tekrarı yapmasın**
+   - Mevcut tipNote zaten "marine süresi 30 dk" diyorsa, addition
+     "30 dakika bekletin" yazma; **YENİ bilgi** ekle: yöntem detayı
+     ("yoğurda biraz yağ ekleyin"), tat profili ("acı biber tonunu
+     dengeler"), alternatif marine ("aceleyse 30 dk, ideal 4 saat")
+   - Mevcut tipNote'u Codex apply pipeline öncesi DB'den okuyabilir
+     (gerek olursa input JSON'da current_tipNote alanı eklenir)
+   - Pratik kontrol: Codex addition yazınca mevcut tipNote'u zihninde
+     birleştir; "ikisi aynı şeyi söylüyor mu?" diye sor. Aynı ise
+     yeniden yaz
+
 ### 19.4 Pipeline (Claude apply, oturum 23 hazır)
 
 Codex teslim sonrası Claude tarafı:
@@ -3667,6 +3692,12 @@ sonradan, totalMinutes + tipNote source'a yansımalı).
    batch dışı slug yazma.
 9. **Batch boyutu**: ~50 entry (Batch 1: ilk 50, Batch 2: 51-100,
    Batch 3: 101-150, Batch 4: 151-167 son 17).
+10. **Türkçe karakter**: tipNote_addition + marineDescription + reason
+    hepsinde ç/ğ/ı/ö/ş/ü doğru kullanılmış (ASCII fold 0). Spot check:
+    "yumuşatır" yazıyorsa OK, "yumusatir" yazıyorsa FAIL.
+11. **Redundancy**: tipNote_addition mevcut tipNote ile içerik tekrarı
+    yapmıyor. Yeni bilgi (yöntem, tat profili, alternatif süre)
+    içermeli. Sadece "X dakika bekletin" tekrarı YASAK.
 
 Bitince "Mod M Batch N hazır" + özet:
 - Toplam: 50 (veya batch boyutu)

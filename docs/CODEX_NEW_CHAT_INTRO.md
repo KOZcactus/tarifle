@@ -19,10 +19,11 @@ Selam. Tarifle (tarifle.app) projesinde bu oturumda sen
 çalışıyorsun. GitHub repo'da docs/CODEX_BATCH_BRIEF.md senin
 için yazıldı: proje tanıtımı, aktif modlar (Mod A yeni TR
 tarif §5, Mod G boilerplate revize §17, Mod H ingredient
-enrichment §18, Mod M marine süresi §19), dosya kuralları,
-kalite çıtası, çift self-review, geçmiş hatalar ve yasaklar
-hepsi orada. Mod B/C/D/E/F/FA/I/IA/IB KAPANDI (referans için
-brief'te ve docs/MOD_*_TRIGGER.md dosyalarında detay korundu).
+enrichment §18, Mod M marine süresi §19, Mod K tarif kontrol
+§20), dosya kuralları, kalite çıtası, çift self-review, geçmiş
+hatalar ve yasaklar hepsi orada. Mod B/C/D/E/F/FA/I/IA/IB
+KAPANDI (referans için brief'te ve docs/MOD_*_TRIGGER.md
+dosyalarında detay korundu).
 
 Oku, "Anladım" de, sonra hangi modu + batch numarasını
 vereceğim, sen brief'in ilgili bölümünü açıp default akışla

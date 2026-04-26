@@ -49,12 +49,17 @@ export async function getCookedCountsForRecipes(
   recipeIds: readonly string[],
 ): Promise<Map<string, number>> {
   if (recipeIds.length === 0) return new Map();
-  const rows = await prisma.recipeCooked.groupBy({
-    by: ["recipeId"],
-    where: { recipeId: { in: [...recipeIds] } },
-    _count: { recipeId: true },
-  });
-  return new Map(rows.map((r) => [r.recipeId, r._count.recipeId]));
+  // Raw SQL: Prisma groupBy bazi versiyonlarda LATERAL subquery
+  // genisletmesi yapip Sentry'de N+1 query olarak gozukebiliyor
+  // (oturum 23 alarm, /tarifler sayfasi). Garantili tek query icin
+  // $queryRaw + ANY($1::text[]) kullaniyoruz; ayni semantik, 1 SQL.
+  const rows = await prisma.$queryRaw<
+    { recipeId: string; cnt: bigint }[]
+  >`SELECT "recipeId", COUNT(*)::bigint AS cnt
+    FROM "recipe_cooked"
+    WHERE "recipeId" = ANY(${[...recipeIds]}::text[])
+    GROUP BY "recipeId"`;
+  return new Map(rows.map((r) => [r.recipeId, Number(r.cnt)]));
 }
 
 export async function getUserCookedRecipeIds(

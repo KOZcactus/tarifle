@@ -25,10 +25,13 @@ interface SearchBarProps {
   suggestions?: { recipes: string[]; ingredients: string[] };
   /**
    * Yazi yazarken otomatik /tarifler'e yonlendir mi?
-   * - true (default): /tarifler sayfasi davranisi, debounced inline filter.
-   * - false: Ana sayfa / Kesfet davranisi, sadece Enter veya suggestion
-   *   click ile yonlendir. Boylece kullanici "menemen" yazarken her
-   *   harfte sayfa atlamaz, ifadeyi bitirip Enter'a basar.
+   * - false (default): Sadece Enter veya suggestion click ile yonlendir.
+   *   Kullanici "tavuklu pilav" yazarken her harfte sayfa atlamaz, hatta
+   *   space tusuna basinca da kalir; ifadeyi bitirip Enter'a basar.
+   *   /tarifler sayfasinda da bu davranis: URL ?q= sadece Enter sonrasi
+   *   update olur (oturum 23 ikinci kullanici geri bildirimi).
+   * - true: Eski debounced inline filter davranisi. Su an hicbir caller
+   *   tarafindan kullanilmiyor, geriye uyumluluk icin korundu.
    */
   submitOnType?: boolean;
 }
@@ -37,7 +40,7 @@ export function SearchBar({
   placeholder = "Yemek çeşidi, malzeme veya kategori ara...",
   className = "",
   suggestions,
-  submitOnType = true,
+  submitOnType = false,
 }: SearchBarProps) {
   const router = useRouter();
   const searchParams = useSearchParams();

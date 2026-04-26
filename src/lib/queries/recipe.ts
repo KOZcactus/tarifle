@@ -10,7 +10,7 @@ import { getCookedCountsForRecipes } from "@/lib/queries/recipe-cooked";
  * artar). Recipe set bos ise erken don. Performans: tek group by query
  * (recipe_cooked.recipeId index var).
  */
-async function attachCookedCounts(
+export async function attachCookedCounts(
   recipes: RecipeCard[],
 ): Promise<RecipeCard[]> {
   if (recipes.length === 0) return recipes;
@@ -533,18 +533,20 @@ const getFeaturedPool = unstable_cache(
 export async function getFeaturedRecipes(limit = 6): Promise<RecipeCard[]> {
   const pool = await getFeaturedPool();
 
+  let result: typeof pool;
   if (pool.length <= limit) {
-    return pool as unknown as RecipeCard[];
+    result = pool;
+  } else {
+    const offset = getWeekIndex() % pool.length;
+    const rotated: typeof pool = [];
+    for (let i = 0; i < limit; i++) {
+      const idx = (offset + i) % pool.length;
+      const item = pool[idx];
+      if (item) rotated.push(item);
+    }
+    result = rotated;
   }
-
-  const offset = getWeekIndex() % pool.length;
-  const rotated: typeof pool = [];
-  for (let i = 0; i < limit; i++) {
-    const idx = (offset + i) % pool.length;
-    const item = pool[idx];
-    if (item) rotated.push(item);
-  }
-  return rotated as unknown as RecipeCard[];
+  return attachCookedCounts(result as unknown as RecipeCard[]);
 }
 
 /**
@@ -570,7 +572,7 @@ export async function getRecentRecipes(
     orderBy: { createdAt: "desc" },
     take: limit,
   });
-  return recipes as unknown as RecipeCard[];
+  return attachCookedCounts(recipes as unknown as RecipeCard[]);
 }
 
 /** 30 dakika altı hızlı tarifler */
@@ -582,7 +584,7 @@ export async function getQuickRecipes(limit = 8): Promise<RecipeCard[]> {
     take: limit,
   });
 
-  return recipes as unknown as RecipeCard[];
+  return attachCookedCounts(recipes as unknown as RecipeCard[]);
 }
 
 /** En çok görüntülenen tarifler, viewCount desc */
@@ -594,7 +596,7 @@ export async function getPopularRecipes(limit = 8): Promise<RecipeCard[]> {
     take: limit,
   });
 
-  return recipes as unknown as RecipeCard[];
+  return attachCookedCounts(recipes as unknown as RecipeCard[]);
 }
 
 /** Kişiselleştirme tur 2, User.favoriteCuisines / favoriteTags /

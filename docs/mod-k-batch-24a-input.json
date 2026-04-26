@@ -1,0 +1,4415 @@
+[
+  {
+    "slug": "oaxaca-quesadilla",
+    "title": "Oaxaca Quesadilla",
+    "cuisine": "mx",
+    "type": "APERATIF",
+    "description": "Quesadilla, mısır tortillasını Oaxaca peyniri, mantar ve köz biberle doldurup tavada eriten pratik Meksika atıştırmalığıdır.",
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "totalMinutes": 22,
+    "servingCount": 4,
+    "averageCalories": 280,
+    "protein": 12,
+    "carbs": 30,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Peyniri tel tel ayırmak tortillanın içinde hızlı ve eşit erimesini sağlar.",
+    "servingSuggestion": "Salsa roja, avokado ve lime dilimleriyle sıcak servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Mısır tortilla",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Oaxaca peyniri",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Mantar",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Közlenmiş biber",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kişniş",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mantar ve soğanı ince doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mantarları yağda 6 dakika suyunu çekene kadar pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Köz biber ve kişnişi mantara karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tortillaların yarısına peynir ve mantarlı harç koyun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tortillaları kapatıp tavada her yüzü 2 dakika kızartın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Peynir eriyince üçgen kesip sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "ojja-merguez",
+    "title": "Ojja Merguez",
+    "cuisine": "ma",
+    "type": "KAHVALTI",
+    "description": "Tunus ojja yemeği, acılı domates sosunda merguez ve yumurtayı hızlı bir tavada buluşturur.",
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "totalMinutes": 35,
+    "servingCount": 4,
+    "averageCalories": 390,
+    "protein": 22,
+    "carbs": 11,
+    "fat": 28,
+    "isFeatured": false,
+    "tipNote": "Yumurtaları kırdıktan sonra kapağı kapatıp düşük ateşte pişirin; akı donarken sarısı kremamsı kalır.",
+    "servingSuggestion": "Sıcak ekmek ile tabaktan yiyerek servis edin.",
+    "tags": [
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana merguez sucuk",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Harissa",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ojja Merguez başlangıcında kuru ve yaş malzemeleri ayrı tutun, karıştırma aşaması temiz ilerlesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Ojja Merguez için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sucukları tavada 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Domates ve harissayı ekleyip 10 dakika kaynatın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yumurtaları kırıp 4 dakika pişirin, ojja-merguez akışı için.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Ojja Merguez parçalarını ılık tabaklara alın, yanında çayla hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "okonomiyaki",
+    "title": "Okonomiyaki",
+    "cuisine": "jp",
+    "type": "APERATIF",
+    "description": "Osaka'nın lahana ağırlıklı tuzlu pankeki, sos ve palamut rendesiyle sokak yemeği karakteri taşır.",
+    "prepMinutes": 20,
+    "cookMinutes": 18,
+    "totalMinutes": 38,
+    "servingCount": 4,
+    "averageCalories": 370,
+    "protein": 12,
+    "carbs": 39,
+    "fat": 15,
+    "isFeatured": false,
+    "tipNote": "Lahanayı ince kıyın; pankek tavada eşit kalınlıkta pişer.",
+    "servingSuggestion": "Üzerine sos ve taze soğan ekleyin.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA",
+      "SOYA",
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Lahana",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Palamut rendesi",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lahana, un, yumurta ve suyu karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karışımı tavaya yayıp 7 dakika pişirin.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Çevirip diğer yüzünü 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Soya sosu ve palamut rendesiyle servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "okroshka-kefirli-rus-usulu",
+    "title": "Okroshka",
+    "cuisine": "ru",
+    "type": "CORBA",
+    "description": "Okroshka, kefiri haşlanmış sebze ve yumurtayla birleştirerek serin, hafif ekşi ve yaz sıcaklarına uygun bir Rus çorbası yapar.",
+    "prepMinutes": 14,
+    "cookMinutes": 12,
+    "totalMinutes": 26,
+    "servingCount": 4,
+    "averageCalories": 146,
+    "protein": 7,
+    "carbs": 13,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Malzemeleri küçük ve eşit doğramak çorbanın kaşıkta dengeli gelmesini sağlar.",
+    "servingSuggestion": "Çorbayı çok soğuk sunun, üstüne dereotu serpip hemen verin.",
+    "tags": [
+      "30-dakika-alti",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Kefir",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Salatalık",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patates ve yumurtayı orta ateşte 12 dakika haşlayın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğuyan patates ve yumurtayı soğutup küçük küp doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Salatalık ve taze soğanı aynı boyda doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Doğranan malzemeleri kefirle karıştırın, doku sulanmasın diye nazikçe çevirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Çorbayı 30 dakika buzdolabında dinlendirip soğuk servis edin.",
+        "timerSeconds": 1800
+      }
+    ]
+  },
+  {
+    "slug": "oladi",
+    "title": "Oladi",
+    "cuisine": "ru",
+    "type": "KAHVALTI",
+    "description": "Rus minik pankekleri oladi, kefirli hamuruyla kalın ve yumuşak bir kahvaltı lokması verir.",
+    "prepMinutes": 10,
+    "cookMinutes": 15,
+    "totalMinutes": 25,
+    "servingCount": 4,
+    "averageCalories": 236,
+    "protein": 7,
+    "carbs": 30,
+    "fat": 9,
+    "isFeatured": true,
+    "tipNote": "Hamuru fazla çırpmayın; hafif pütürlü kalırsa oladi daha kabarık olur.",
+    "servingSuggestion": "Yanına ekşi krema ve reçel koyarak servis edin.",
+    "tags": [
+      "vejetaryen",
+      "cocuk-dostu"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Kefir",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Oladi için malzemeleri ölçüp tezgaha alın, sonraki adımlar aksamadan ilerlesin diye kapları hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Oladi için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kefir, yumurta ve şekeri çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Unu ekleyip karıştırın, Oladi için hazır tutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Hamurdan kaşıkla tavaya döküp iki yüzünü 6-7 dakika pişirin.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Oladi kıvamı oturunca servis edin, fazla bekletmek peynirli dokuyu sertleştirir.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Oladi tamamlanınca 3 dakika dinlendirin, iç sıcaklık dengelensin diye sonra dilimleyin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "old-fashioned",
+    "title": "Old Fashioned",
+    "cuisine": "us",
+    "type": "KOKTEYL",
+    "description": "Burbon, şeker ve bitterle hazırlanan güçlü klasik kokteyl.",
+    "prepMinutes": 5,
+    "cookMinutes": 0,
+    "totalMinutes": 5,
+    "servingCount": 1,
+    "averageCalories": 175,
+    "protein": 0,
+    "carbs": 5,
+    "fat": 0,
+    "isFeatured": true,
+    "tipNote": "Buz eklemeden önce şekerin bitterle çözünmesini sağlayın; tat dengeli olur.",
+    "servingSuggestion": "Portakal kabuğu ile servis edin.",
+    "tags": [
+      "alkollu",
+      "misafir-sofrasi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Burbon viski",
+        "amount": "60",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Kesme şeker",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Angostura bitter",
+        "amount": "3",
+        "unit": "damla",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "büyük küp",
+        "group": null
+      },
+      {
+        "name": "Portakal kabuğu",
+        "amount": "1",
+        "unit": "parça",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Old Fashioned karışımına başlamadan bardağı soğutun, aromalar ısınmadan dengede kalsın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Old Fashioned için şeker ve bitteri bardakta 20 saniye ezin, kristal kalmasın.",
+        "timerSeconds": 20
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Old Fashioned bardağına büyük buz ve viskiyi ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Old Fashioned kokteylini 20 saniye karıştırıp portakal kabuğu ekleyin, böylece buz erirse denge bozulmasın.",
+        "timerSeconds": 20
+      }
+    ]
+  },
+  {
+    "slug": "oliang-kahvesi",
+    "title": "Oliang Kahvesi",
+    "cuisine": "th",
+    "type": "ICECEK",
+    "description": "Tayland sokaklarında buzla servis edilen oliang, koyu kahvenin hafif baharatlı ve tatlı bir yorumu olarak içilir.",
+    "prepMinutes": 5,
+    "cookMinutes": 5,
+    "totalMinutes": 10,
+    "servingCount": 2,
+    "averageCalories": 75,
+    "protein": 1,
+    "carbs": 18,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Kahveyi kuvvetli demleyin; buz eriyince tadı hâlâ belirgin kalmalı.",
+    "servingSuggestion": "Uzun bardakta bol buz ve 1 yemek kaşığı yoğunlaştırılmış sütle servis edin.",
+    "tags": [
+      "pratik",
+      "yaz-tarifi",
+      "30-dakika-alti",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Koyu demlenmiş kahve",
+        "amount": "300",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kahveyi demleyip şekeri içinde çözün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kahveyi 5 dakika soğutun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Buz dolu bardaklara paylaştırıp servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "oltu-cag-kebabi-yatay-sis",
+    "title": "Oltu Cağ Kebabı Yatay Şiş",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Cağ kebabı, soğan suyu ve yoğurtlu baharatla marine edilen kuzu etini yatay şiş mantığında yüksek ısıda kızartan Erzurum kebabıdır.",
+    "prepMinutes": 35,
+    "cookMinutes": 20,
+    "totalMinutes": 535,
+    "servingCount": 5,
+    "averageCalories": 520,
+    "protein": 38,
+    "carbs": 18,
+    "fat": 34,
+    "isFeatured": false,
+    "tipNote": "Eti bir gece marine etmek liflerin yumuşamasına yardım eder.",
+    "servingSuggestion": "Lavaş, köz domates ve sumaklı soğanla şişten sıcak çıkarın.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "SUT",
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuzu but",
+        "amount": "900",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan suyu",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "2",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Lavaş",
+        "amount": "5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yeşil biber",
+        "amount": "5",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuzu etini ince uzun dilimler halinde kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan suyu, yoğurt, tuz ve karabiberle eti ovun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Eti kapalı kapta 8 saat buzdolabında dinlendirin.",
+        "timerSeconds": 28800
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Et dilimlerini metal şişlere sıkı dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Şişleri çok sıcak ızgarada toplam 16-18 dakika çevirerek pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Közlenmiş domates, biber ve lavaşla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "omurice",
+    "title": "Omurice",
+    "cuisine": "jp",
+    "type": "KAHVALTI",
+    "description": "Japon omurice, domatesli tavuklu pilavın yumuşak omletle sarıldığı ev tipi bir tabaktır.",
+    "prepMinutes": 20,
+    "cookMinutes": 20,
+    "totalMinutes": 40,
+    "servingCount": 2,
+    "averageCalories": 520,
+    "protein": 19,
+    "carbs": 58,
+    "fat": 22,
+    "isFeatured": false,
+    "tipNote": "Derili kısım için ters tarafı aşağı koyup pişirmeye başlayın, yağ yavaş çıkıp derisi çıtır olur.",
+    "servingSuggestion": "Omuriceyi sıcak sunun, üstüne ketçap çizgisi çekip hemen verin.",
+    "tags": [
+      "cocuk-dostu"
+    ],
+    "allergens": [
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Pişmiş pirinç",
+        "amount": "2",
+        "unit": "kase",
+        "group": null
+      },
+      {
+        "name": "Tavuk göğsü",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ketçap",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Omurice akışı için tava, kase ve ölçüleri hazır edin, pişirme başlayınca ritim bozulmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavuk ve pirinci ketçapla 8 dakika kavurun.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yumurtaları çırpıp yumuşak omlet pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pilavı omletle sarıp servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Omurice kıvamı oturunca servis edin, fazla bekletmek peynirli dokuyu sertleştirir.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "onigiri",
+    "title": "Onigiri",
+    "cuisine": "jp",
+    "type": "ATISTIRMALIK",
+    "description": "Japonların pratik pirinç üçgeni; ton balığı dolgusu ve nori sarımıyla öğün arası taşınır.",
+    "prepMinutes": 20,
+    "cookMinutes": 18,
+    "totalMinutes": 38,
+    "servingCount": 4,
+    "averageCalories": 210,
+    "protein": 4,
+    "carbs": 40,
+    "fat": 2,
+    "isFeatured": false,
+    "tipNote": "Ellerinizi tuzlu suyla ıslatın; pirinç yapışmadan şekil alır.",
+    "servingSuggestion": "Nori yumuşamadan servis edin.",
+    "tags": [
+      "pratik"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Japon pirinci",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ton balığı",
+        "amount": "160",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Mayonez",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Nori",
+        "amount": "4",
+        "unit": "şerit",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Japon pirincini 15-18 dakika pişirip kapağı kapalı 10 dakika dinlendirin.",
+        "timerSeconds": 1620
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Ton balığı ve mayonezi küçük kapta iç harç olana kadar karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ellerinizi hafif tuzlayıp ılık pirinçten avuç içine bir miktar yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ortaya ton balıklı harç koyup pirinci üçgen onigiri şeklinde kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Her pirinç üçgeninin altına nori şeridi sarıp hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "oralet",
+    "title": "Oralet",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Portakal tozuyla hazırlanan nostaljik sıcak içecek.",
+    "prepMinutes": 2,
+    "cookMinutes": 3,
+    "totalMinutes": 5,
+    "servingCount": 1,
+    "averageCalories": 80,
+    "protein": 0,
+    "carbs": 20,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Tozu sıcak suya azar azar karıştırın; içecek topaksız ve parlak kalır.",
+    "servingSuggestion": "İnce belli bardakta, yanında sade kurabiye ile sıcak servis edin.",
+    "tags": [
+      "pratik",
+      "30-dakika-alti",
+      "cocuk-dostu",
+      "kis-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Oralet tozu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sıcak su",
+        "amount": "200",
+        "unit": "ml",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kupaya 2 tatlı kaşığı oralet tozu koyup 200 ml sıcak su hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Suyu kupaya döküp 20 saniye karıştırın, toz dibe çökmeyecek kadar çözünsün.",
+        "timerSeconds": 20
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "İçimi yakmasın diye 2 dakika bekletip sıcak servis edin.",
+        "timerSeconds": 120
+      }
+    ]
+  },
+  {
+    "slug": "orange-blossom-milk-pudding-fas-usulu",
+    "title": "Portakal Çiçekli Sütlü Tatlı",
+    "cuisine": "ma",
+    "type": "TATLI",
+    "description": "Portakal çiçekli sütlü tatlı, sütü portakal çiçeği suyu ve tarçınla koyulaştırarak hafif çiçeksi, serin ve Fas esintili bir kaşık tatlısı sunar.",
+    "prepMinutes": 10,
+    "cookMinutes": 10,
+    "totalMinutes": 20,
+    "servingCount": 6,
+    "averageCalories": 172,
+    "protein": 4,
+    "carbs": 24,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Portakal çiçeği suyunu ocaktan aldıktan sonra eklemek aromanın daha temiz kalmasını sağlar.",
+    "servingSuggestion": "Muhallebiyi soğuk sunun, üstüne badem ve portakal çiçeği serpin.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Mısır nişastası",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Portakal çiçeği suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Süt, nişasta ve şekeri tencerede pürüzsüz çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Muhallebiyi 8 dakika kısık ateşte pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Portakal çiçeği suyunu ocaktan sonra ekleyin, aroma uçmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kaselere paylaştırıp yüzeyi düzeltin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tatlıyı 1 saat soğutun ve fıstıkla servis edin.",
+        "timerSeconds": 3600
+      }
+    ]
+  },
+  {
+    "slug": "orange-mint-cooler-orta-dogu-usulu",
+    "title": "Orange Mint Cooler",
+    "cuisine": "me",
+    "type": "ICECEK",
+    "description": "Orange mint cooler, portakal ve naneyi birleştirerek Orta Doğu esintili ferah bir soğuk içecek çıkarır.",
+    "prepMinutes": 8,
+    "cookMinutes": 0,
+    "totalMinutes": 8,
+    "servingCount": 4,
+    "averageCalories": 74,
+    "protein": 1,
+    "carbs": 17,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Naneyi ezmeden karıştırmak acılaşmasını önler.",
+    "servingSuggestion": "Bol buzla verin, bardağı portakal dilimi ve nane ile tamamlayın.",
+    "tags": [
+      "30-dakika-alti",
+      "alkolsuz",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Portakal suyu",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "8",
+        "unit": "yaprak",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Malzemeleri karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Buz ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "İçeceği servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "ordu-findikli-fasulye-kavurmasi",
+    "title": "Ordu Fındıklı Fasulye Kavurması",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Ordu usulü fındıklı fasulye kavurması, haşlanmış taze fasulyeyi soğan, mısır unu ve iri fındıkla Karadeniz kokulu bir tavaya taşır.",
+    "prepMinutes": 12,
+    "cookMinutes": 18,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 245,
+    "protein": 8,
+    "carbs": 26,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Fındığı son dakikada eklemek çıtırlığını korur.",
+    "servingSuggestion": "Mısır ekmeğiyle sıcak servis edin.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Taze fasulye",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Fındık",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Mısır unu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Taze fasulyeyi ayıklayın, verev doğrayın ve tuzlu suda 12 dakika haşlayın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Fasulyeyi süzün, soğuk sudan geçirip rengini sabitleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğanı tereyağında 6 dakika kavurun.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Fasulyeyi tavaya ekleyip 8 dakika kavurun, suyu kalmasın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kırık fındığı ekleyip 2 dakika çevirin, fındık yanmasın diye geç katın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Ocaktan alıp 5 dakika dinlendirin ve ılık servis edin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "ordu-findikli-pazi-sarmasi",
+    "title": "Ordu Fındıklı Pazı Sarması",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Ordu usulü fındıklı pazı sarması, pazı yapraklarını pirinç, kavrulmuş fındık ve dereotlu içle zarif bir zeytinyağlıya taşır.",
+    "prepMinutes": 28,
+    "cookMinutes": 34,
+    "totalMinutes": 62,
+    "servingCount": 5,
+    "averageCalories": 285,
+    "protein": 7,
+    "carbs": 38,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Pazıyı kısa haşlamak yaprağı yumuşatır ama rengini soldurmaz.",
+    "servingSuggestion": "Limon dilimi ve yoğurtla ılık servis edin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi",
+      "vegan"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Pazı",
+        "amount": "2",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Fındık",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pazı yapraklarını kaynar suda 40 saniye haşlayıp süzün.",
+        "timerSeconds": 40
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı zeytinyağında 5 dakika yumuşayana kadar pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinç, kıyılmış fındık ve dereotunu soğanla karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pazı yapraklarına iç koyup ince sarın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tencereye dizip kısık ateşte 28-30 dakika pişirin.",
+        "timerSeconds": 1740
+      }
+    ]
+  },
+  {
+    "slug": "ordu-galdirik-kavurmasi-yumurtali",
+    "title": "Ordu Galdirik Kavurması",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Galdirik kavurması, haşlanmış galdirik saplarını soğan, pul biber ve yumurtayla kısa sürede kavuran Ordu ot yemeğidir.",
+    "prepMinutes": 12,
+    "cookMinutes": 13,
+    "totalMinutes": 25,
+    "servingCount": 4,
+    "averageCalories": 190,
+    "protein": 8,
+    "carbs": 12,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Haşlanan galdiriği soğuk sudan geçirmek rengini ve diri dokusunu korur.",
+    "servingSuggestion": "Mısır ekmeği ve yoğurtla kahvaltı ya da hafif öğün olarak sunun.",
+    "tags": [
+      "30-dakika-alti",
+      "dusuk-kalorili"
+    ],
+    "allergens": [
+      "YUMURTA",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Galdirik sapı",
+        "amount": "1",
+        "unit": "bağ",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Pul biber",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Galdirik saplarını temizleyip 3 cm parçalar halinde doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tuzlu kaynar suda 5 dakika haşlayıp soğuk sudan geçirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğanları yağlarda 5 dakika yumuşatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Galdiriği ekleyip 4 dakika kavurun.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Çırpılmış yumurtayı tavaya dökün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Yumurta 2 dakika toparlanınca maydanoz ve pul biberle servis edin.",
+        "timerSeconds": 120
+      }
+    ]
+  },
+  {
+    "slug": "ordu-karalahana-sarmasi-misirli",
+    "title": "Ordu Mısırlı Karalahana Sarması",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Ordu karalahana sarması, haşlanmış yaprakları mısır yarması, pirinç ve soğanlı harçla sarıp kısık ateşte pişiren Karadeniz klasiğidir.",
+    "prepMinutes": 45,
+    "cookMinutes": 55,
+    "totalMinutes": 100,
+    "servingCount": 6,
+    "averageCalories": 280,
+    "protein": 8,
+    "carbs": 48,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Karalahanayı fazla haşlamamak yaprağın sararken yırtılmasını önler.",
+    "servingSuggestion": "Sarımsaklı yoğurt veya sade ayranla ılık servis edin.",
+    "tags": [
+      "vegan",
+      "kis-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Karalahana yaprağı",
+        "amount": "2",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Mısır yarması",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates salçası",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karalahana yapraklarını kaynar suda 4 dakika yumuşatın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mısır yarması ve pirinci yıkayıp süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğanı zeytinyağında salçayla 5 dakika kavurun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yarma, pirinç, nane ve tuzu harca ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yaprakları sarıp tencereye dizin, sıcak su ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kısık ateşte 45-50 dakika iç yumuşayana kadar pişirin.",
+        "timerSeconds": 2850
+      }
+    ]
+  },
+  {
+    "slug": "ordu-pancar-corbasi",
+    "title": "Ordu Pancar Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Ordu pancar çorbası, kara lahana, mısır yarması ve fasulyeyle Karadeniz'in koyu yeşil kasesidir.",
+    "prepMinutes": 25,
+    "cookMinutes": 55,
+    "totalMinutes": 80,
+    "servingCount": 6,
+    "averageCalories": 230,
+    "protein": 9,
+    "carbs": 38,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Kara lahanayı ince doğrayın; kalın yapraklar geç yumuşar.",
+    "servingSuggestion": "Mısır ekmeği ve acı biber turşusuyla servis edin.",
+    "tags": [
+      "vegan",
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Kara lahana",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Mısır yarması",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış fasulye",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mısır yarmasını yıkayın, kara lahanayı ince doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mısır yarmasını orta ateşte 30 dakika haşlayın.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kara lahana ve önceden yumuşatılmış fasulyeyi tencereye ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Çorbayı 25 dakika daha pişirin, lahana lifleri diri kalmasın.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tuzunu ayarlayıp mısır ekmeğiyle sıcak servis edin, ordu pancar dengesi bozulmasın, ordu pancar dokusu kaymasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "ordu-pancar-diblesi",
+    "title": "Ordu Pancar Diblesi",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Pancar diblesi, karalahana, pirinç, soğan ve zeytinyağını az suyla pişiren, tane tane kalan Karadeniz sebze yemeğidir.",
+    "prepMinutes": 15,
+    "cookMinutes": 25,
+    "totalMinutes": 40,
+    "servingCount": 4,
+    "averageCalories": 210,
+    "protein": 5,
+    "carbs": 32,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Karalahanayı ince kıymak pirinçle aynı sürede yumuşamasını sağlar.",
+    "servingSuggestion": "Yoğurtsuz, limon ve mısır ekmeğiyle ılık servis edin.",
+    "tags": [
+      "vegan",
+      "tek-tencere"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Karalahana",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Pul biber",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karalahanayı ayıklayıp ince şeritler halinde doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinci yıkayıp 10 dakika suda bekletin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğanı zeytinyağında 5 dakika yumuşatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karalahanayı ekleyip 6 dakika hacmi inene kadar çevirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pirinç ve sıcak suyu katıp kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Diblesi 18 dakika kısık ateşte pişirip 10 dakika dinlendirin.",
+        "timerSeconds": 1680
+      }
+    ]
+  },
+  {
+    "slug": "ordu-pazili-misir-unu-kayganasi",
+    "title": "Ordu Pazılı Mısır Unu Kayganası",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Ordu pazılı mısır unu kayganası, pazı yapraklarını mısır unlu yumurtalı harçla tavada pişirerek Karadeniz kahvaltısına tuzlu bir krep ekler.",
+    "prepMinutes": 12,
+    "cookMinutes": 12,
+    "totalMinutes": 24,
+    "servingCount": 4,
+    "averageCalories": 210,
+    "protein": 9,
+    "carbs": 24,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Pazıyı ince kıymak kaygananın çevrilirken kırılmasını azaltır.",
+    "servingSuggestion": "Sıcak çay ve lor peyniriyle servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen",
+      "butce-dostu"
+    ],
+    "allergens": [
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Pazı",
+        "amount": "1",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Mısır unu",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pazıyı ince kıyıp fazla suyunu sıkın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mısır unu, yumurta, su ve tuzu pürüzsüz çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pazıyı harca katıp karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tavaya harcı ince yayın ve 5 dakika pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kayganayı çevirip diğer yüzünü 4-5 dakika kızartın.",
+        "timerSeconds": 270
+      }
+    ]
+  },
+  {
+    "slug": "orman-kebabi",
+    "title": "Orman Kebabı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Kuşbaşı etin bezelye, havuç ve patatesle tencerede ağır ağır piştiği doyurucu yemek.",
+    "prepMinutes": 20,
+    "cookMinutes": 70,
+    "totalMinutes": 90,
+    "servingCount": 5,
+    "averageCalories": 430,
+    "protein": 30,
+    "carbs": 28,
+    "fat": 20,
+    "isFeatured": false,
+    "tipNote": "Eti sebzelerden önce mühürleyin; et suyu yemeğin içinde kalır ve sos daha yoğun olur.",
+    "servingSuggestion": "Yanında sade pilavla servis edin.",
+    "tags": [
+      "tek-tencere",
+      "misafir-sofrasi"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Dana kuşbaşı",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Havuç",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Bezelye",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Domates salçası",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sıcak su",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Eti kuşbaşı doğrayın, sebzeleri benzer büyüklükte küp kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Eti tencerede 8 dakika mühürleyin, suyunu çekince soğanı ekleyin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğanı 4 dakika kavurun, havuç ve patatesi ekleyip 5 dakika çevirin.",
+        "timerSeconds": 540
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Salça, bezelye ve sıcak suyu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yemeği 35 dakika kısık ateşte pişirin, sebzeler dağılmasın diye sık karıştırmayın.",
+        "timerSeconds": 2100
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kapağı kapalı 10 dakika dinlendirin ve kekikle servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "orman-meyveli-kefir-smoothie",
+    "title": "Orman Meyveli Kefir Smoothie",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Kefirli orman meyveli smoothie, ekşi süt tadını donuk meyvelerle tok tutan bir içeceğe çevirir.",
+    "prepMinutes": 6,
+    "cookMinutes": 0,
+    "totalMinutes": 6,
+    "servingCount": 2,
+    "averageCalories": 185,
+    "protein": 9,
+    "carbs": 31,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Donuk meyveyi çözdürmeden kullanın; smoothie buz eklemeden koyu kalır.",
+    "servingSuggestion": "Soğuk bardakta sunun, üstüne birkaç böğürtlen ve nane ekleyin.",
+    "tags": [
+      "alkolsuz",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT",
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Kefir",
+        "amount": "300",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Donuk orman meyvesi",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Muz",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yulaf",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kefir, meyve, muz ve yulafı blendera alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karışımı 50 saniye çekin.",
+        "timerSeconds": 50
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kıvam koyuysa 2 yemek kaşığı kefir ekleyin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "orman-meyveli-protein-shake",
+    "title": "Orman Meyveli Protein Shake",
+    "cuisine": "cn",
+    "type": "ICECEK",
+    "description": "Antrenman sonrası için yoğurt, orman meyvesi ve protein tozuyla yoğun bir shake.",
+    "prepMinutes": 5,
+    "cookMinutes": 0,
+    "totalMinutes": 5,
+    "servingCount": 2,
+    "averageCalories": 260,
+    "protein": 24,
+    "carbs": 22,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Protein tozunu sıvıların arasına ekleyin; blenderda topak kalmaz.",
+    "servingSuggestion": "Uzun bardakta, üstüne birkaç böğürtlen ekleyip antrenman sonrası iyice soğuk sunun.",
+    "tags": [
+      "yuksek-protein",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Orman meyvesi",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "250",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Protein tozu",
+        "amount": "30",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Orman Meyveli Protein Shake için orman bazını ve kalan malzemeleri blender kabına alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Orman Meyveli Protein Shake karışımını 35-60 saniye pürüzsüz kıvam alıncaya kadar çekin.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Orman Meyveli Protein Shake içeceğini soğuk bardaklara paylaştırıp bekletmeden servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "oruk-kebabi-kilis-usulu",
+    "title": "Oruk Kebabı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Kilis oruk kebabı, ince bulguru baharatlı kıyma ile yoğurup şişte pişirerek dışı kızarmış, içi sulu güçlü bir kebap sunar.",
+    "prepMinutes": 24,
+    "cookMinutes": 14,
+    "totalMinutes": 38,
+    "servingCount": 4,
+    "averageCalories": 334,
+    "protein": 24,
+    "carbs": 14,
+    "fat": 20,
+    "isFeatured": true,
+    "tipNote": "Harcı uzun yoğurmak şişe daha iyi tutunmasını ve pürüzsüz bir doku sağlar.",
+    "servingSuggestion": "Kebabı sıcak verin, yanına sumaklı soğan ve lavaş koyun.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana kıyma",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "İnce bulgur",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Pul biber",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "İnce bulguru az sıcak suyla 10 dakika ıslatın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kıyma, soğan, biber salçası ve baharatı bulgurla 8 dakika yoğurun.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Harcı şişlere sıkıca bastırın, boşluk kalmasın ki ızgarada düşmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Şişleri kızgın ızgarada ilk yüzünden 5 dakika pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Çevirip ikinci yüzü 5 dakika pişirin ve sumaklı soğanla servis edin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "osaka-okonomiyaki-lahana",
+    "title": "Osaka Okonomiyaki",
+    "cuisine": "jp",
+    "type": "APERATIF",
+    "description": "Okonomiyaki, lahana, yumurta, un ve et veya karidesi tavada kalın pankek gibi pişirip sos ve mayonezle tamamlayan Japon yemeğidir.",
+    "prepMinutes": 15,
+    "cookMinutes": 15,
+    "totalMinutes": 30,
+    "servingCount": 2,
+    "averageCalories": 520,
+    "protein": 24,
+    "carbs": 46,
+    "fat": 28,
+    "isFeatured": false,
+    "tipNote": "Lahanayı ince kıymak pankekin ortasının eşit pişmesini sağlar.",
+    "servingSuggestion": "Okonomi sos, mayonez, nori ve taze soğanla sıcak servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA",
+      "DENIZ_URUNLERI",
+      "SOYA"
+    ],
+    "ingredients": [
+      {
+        "name": "Lahana",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Karides",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Taze soğan",
+        "amount": "3",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Okonomi sos",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Mayonez",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lahanayı çok ince kıyıp taze soğanla karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Un, yumurta, soya sosu ve 0.5 su bardağı suyu çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lahana ve karidesi hamura katın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karışımı yağlı tavaya kalın disk halinde yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "İlk yüzünü 6 dakika kapaklı pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Çevirip ikinci yüzünü 5 dakika pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Sos, mayonez ve taze soğanla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "osaka-okonomiyaki-tavasi",
+    "title": "Osaka Okonomiyaki Tavası",
+    "cuisine": "jp",
+    "type": "KAHVALTI",
+    "description": "Osaka okonomiyaki tavası, lahana, yumurta ve unlu harcı tavada kalın pişirip tatlı tuzlu sos ve mayonezle tamamlayan Japon sokak yemeğidir.",
+    "prepMinutes": 18,
+    "cookMinutes": 18,
+    "totalMinutes": 36,
+    "servingCount": 3,
+    "averageCalories": 390,
+    "protein": 17,
+    "carbs": 42,
+    "fat": 18,
+    "isFeatured": false,
+    "tipNote": "Lahanayı ince kıymak pankekin dağılmadan çevrilmesini sağlar.",
+    "servingSuggestion": "Okonomiyaki sosu, mayonez ve taze soğanla sıcak servis edin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Lahana",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dashi suyu",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Okonomiyaki sosu",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Mayonez",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Taze soğan",
+        "amount": "3",
+        "unit": "dal",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lahanayı çok ince kıyıp taze soğanla karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Un, yumurta ve dashi suyunu pürüzsüz çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lahanayı harca ekleyip kalın pankek gibi tavaya yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Orta ateşte bir yüzünü 7-8 dakika pişirin.",
+        "timerSeconds": 450
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Çevirip 6-7 dakika daha pişirin, sosla servis edin.",
+        "timerSeconds": 390
+      }
+    ]
+  },
+  {
+    "slug": "osaka-takoyaki-ahtapotlu",
+    "title": "Osaka Takoyaki",
+    "cuisine": "jp",
+    "type": "APERATIF",
+    "description": "Takoyaki, dashi aromalı unlu hamuru ahtapot, taze soğan ve zencefille küre kalıpta pişiren Osaka sokak lezzetidir.",
+    "prepMinutes": 35,
+    "cookMinutes": 25,
+    "totalMinutes": 60,
+    "servingCount": 6,
+    "averageCalories": 260,
+    "protein": 13,
+    "carbs": 32,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Kalıbı bol yağlamak topların düzgün dönmesini ve dış kabuğun çıtırlaşmasını sağlar.",
+    "servingSuggestion": "Takoyaki sosu, mayonez, nori ve bonito yerine susamla sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "butce-dostu"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA",
+      "DENIZ_URUNLERI",
+      "SOYA",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dashi suyu",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış ahtapot",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Taze soğan",
+        "amount": "4",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Turşu zencefil",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Takoyaki sosu",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Mayonez",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Susam",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, yumurta, dashi suyu ve soya sosunu pürüzsüz çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Ahtapotu küçük küpler halinde doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Taze soğan ve turşu zencefili ince kıyın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Takoyaki kalıbını yağlayıp 3 dakika dumanı çıkmadan ısıtın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Hamuru gözlere döküp ahtapot, soğan ve zencefil ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Topları şişle çevirerek 12 dakika her yanı kızarana kadar pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Sos, mayonez ve susamla sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "oslo-frenk-soganli-somon-patates",
+    "title": "Oslo Frenk Soğanlı Somon Patates",
+    "cuisine": "se",
+    "type": "YEMEK",
+    "description": "Norveç usulü frenk soğanlı somon patates, fırın somonu patates, yoğurt ve frenk soğanıyla sade ama güçlü bir ana tabağa taşır.",
+    "prepMinutes": 12,
+    "cookMinutes": 24,
+    "totalMinutes": 36,
+    "servingCount": 4,
+    "averageCalories": 410,
+    "protein": 30,
+    "carbs": 32,
+    "fat": 18,
+    "isFeatured": false,
+    "tipNote": "Somonu patatesin üstünde pişirmek tabağa ekstra buhar verir.",
+    "servingSuggestion": "Limon dilimleriyle sıcak servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Somon fileto",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Frenk soğanı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesleri kabuklu halde 18 dakika haşlayın, süzüp ikiye bölün.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Somon filetolarını kurulayın, tuz ve limon kabuğuyla ovun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Patatesleri tereyağında 6 dakika çevirin, kenarları renk alsın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Somonu tavaya alın ve derili yüzünü 5 dakika pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Çevirip 3 dakika daha pişirin, içi sulu kalsın diye fazla bekletmeyin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Frenk soğanı ve limon suyunu patatesle somonun üstüne servis anında ekleyin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "osmaniye-tirsik-corbasi-mayali",
+    "title": "Osmaniye Tırşık Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Tırşık çorbası, yılan pancarı otunu dövme, nohut, ayran ve unla mayalandırıp uzun pişiren Osmaniye klasiğidir.",
+    "prepMinutes": 35,
+    "cookMinutes": 240,
+    "totalMinutes": 755,
+    "servingCount": 8,
+    "averageCalories": 340,
+    "protein": 13,
+    "carbs": 58,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Mayalanma sırasında tencereyi sıcak tutmak otun acılığını azaltır ve ekşi kıvamı geliştirir.",
+    "servingSuggestion": "Ilık ya da sıcak, yanında mısır ekmeği ve turşuyla servis edin.",
+    "tags": [
+      "kis-tarifi",
+      "tek-tencere"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Tırşık otu",
+        "amount": "1.5",
+        "unit": "kg",
+        "group": null
+      },
+      {
+        "name": "Dövme buğday",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ayran",
+        "amount": "1",
+        "unit": "litre",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "2",
+        "unit": "litre",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tırşık otunu eldivenle ince doğrayıp bol suda yıkayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Dövme buğday ve nohudu tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ayran, un ve ılık suyu pürüzsüz çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tırşık otunu ve ayranlı karışımı tencereye ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tencerenin kapağını kapatıp sıcak ortamda 8 saat mayalandırın.",
+        "timerSeconds": 28800
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Çorbayı kısık ateşte 4 saat pişirin, ara ara karıştırın.",
+        "timerSeconds": 14400
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Tuzunu son bölümde ekleyip 15 dakika dinlendirin.",
+        "timerSeconds": 900
+      }
+    ]
+  },
+  {
+    "slug": "osso-buco",
+    "title": "Osso Buco",
+    "cuisine": "it",
+    "type": "YEMEK",
+    "description": "Milano usulü kemikli dana incik, sebze ve domatesle ağır ateşte pişen gösterişli bir ana yemek.",
+    "prepMinutes": 25,
+    "cookMinutes": 120,
+    "totalMinutes": 145,
+    "servingCount": 4,
+    "averageCalories": 470,
+    "protein": 36,
+    "carbs": 10,
+    "fat": 29,
+    "isFeatured": true,
+    "tipNote": "İnciği unladıktan sonra kızartın; bu adım sosun gövdeli olmasını sağlar.",
+    "servingSuggestion": "Risotto veya sade pilavla servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "KEREVIZ"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana incik",
+        "amount": "4",
+        "unit": "dilim",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "40",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Havuç",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kereviz sapı",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates püresi",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "İncik dilimlerini kurulayın, tuzlayın ve una hafifçe bulayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Eti tencerede her yüzü 4 dakika olacak şekilde mühürleyin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğan, havuç ve kerevizi aynı tencerede 7 dakika kavurun.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Şarap veya et suyunu ekleyip tencerenin dibini kazıyın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Domates ve sıcak et suyunu ekleyip kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Osso bucoyu 120 dakika çok kısık ateşte pişirin, et kemiğinden ayrılacak kadar yumuşasın.",
+        "timerSeconds": 7200
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Gremolatayı servis anında serpin, taze aroma beklerken kaybolmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "ostkaka-smaland-usulu",
+    "title": "Smaland Ostkaka",
+    "cuisine": "se",
+    "type": "TATLI",
+    "description": "Smaland ostkaka, lor benzeri pıhtılı yapısıyla cheesecake ile sütlü tatlı arasında duran, geleneksel İsveç taşra mutfağının özel tatlılarından biridir.",
+    "prepMinutes": 25,
+    "cookMinutes": 50,
+    "totalMinutes": 75,
+    "servingCount": 8,
+    "averageCalories": 258,
+    "protein": 11,
+    "carbs": 18,
+    "fat": 15,
+    "isFeatured": false,
+    "tipNote": "Karışımı kalıba dökmeden önce 10 dakika dinlendirmek hava kabarcıklarını azaltır.",
+    "servingSuggestion": "Üzerine reçel ve krema ile ılık servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT",
+      "YUMURTA",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "1",
+        "unit": "lt",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "150",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Badem",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lor, süt, yumurta ve kremayı geniş kapta karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bademi ekleyip karışımı kalıba dökün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yüzeyi düzeltin, kalın yerler geç pişmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ostkakayı 175°C fırında 50 dakika pişirin.",
+        "timerSeconds": 3000
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "20 dakika dinlendirip ılık servis edin.",
+        "timerSeconds": 1200
+      }
+    ]
+  },
+  {
+    "slug": "ostsmorgas-isvec-usulu",
+    "title": "Ostsmörgås",
+    "cuisine": "se",
+    "type": "KAHVALTI",
+    "description": "Ostsmörgås, kızarmış ekmeği peynirle buluşturarak sade, tuzlu ve sıcak bir İskandinav kahvaltısı kurar.",
+    "prepMinutes": 6,
+    "cookMinutes": 4,
+    "totalMinutes": 10,
+    "servingCount": 2,
+    "averageCalories": 224,
+    "protein": 9,
+    "carbs": 16,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Ekmeği çok kurutmamak iç yumuşaklık bırakır.",
+    "servingSuggestion": "Tostu sıcak sunun, yanına salatalık dilimleri ve turp koyun.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Ekmek dilimi",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Peynir",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "10",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ostsmörgås yapmadan önce ana malzemeleri ayırın, sıcak adımlar sırasında arama yapılmasın diye tezgahı düzenleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Ostsmörgås için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ekmeğe tereyağı sürün, Ostsmörgås için hazır tutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Peyniri üzerine yerleştirin, Ostsmörgås için hazır tutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tostlayıp servis edin, Ostsmörgås için hazır tutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Ostsmörgås yüzeyi parlakken sıcak servis edin, soğursa buharı gevrek dokuyu yumuşatır.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "otlu-bademli-roka-salata-mugla-usulu",
+    "title": "Otlu Bademli Roka Salata",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Muğla usulü otlu bademli roka salata, roka ve taze otları bademle buluşturarak gevrek, hafif ve ferah bir salata kurar.",
+    "prepMinutes": 10,
+    "cookMinutes": 2,
+    "totalMinutes": 12,
+    "servingCount": 4,
+    "averageCalories": 118,
+    "protein": 3,
+    "carbs": 7,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Bademi 2 dakika tavada çevirmek salatada daha net bir aroma verir.",
+    "servingSuggestion": "Salatayı serin verin, üstüne badem serpip limonla tamamlayın.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Roka",
+        "amount": "1",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Badem",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Rokayı ve taze otları yıkayın, salata kurutucuda tamamen kurutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bademleri kuru tavada 3 dakika kavurun, kokusu çıkınca soğutun.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Limon suyu, zeytinyağı, çiçek balı ve tuzu 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Roka ve otları sosun yarısıyla karıştırın, yaprakların üstüne fazla yük bindirmeyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Badem ve lor kırığıyla tamamlayın, kalan sosu sofrada ayrıca verin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Bademi soğuduktan sonra ekleyin, sıcak kuruyemiş roka yapraklarını soldurmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "otlu-cirpma-yumurtasi-izmir-usulu",
+    "title": "İzmir Otlu Çırpma Yumurtası",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "İzmir otlu çırpma yumurtası, taze otları lor ve yumurtayla birleştirerek Ege sofralarına hafif, kokulu ve hızlı hazırlanan bir sabah tavası taşır.",
+    "prepMinutes": 8,
+    "cookMinutes": 8,
+    "totalMinutes": 16,
+    "servingCount": 2,
+    "averageCalories": 218,
+    "protein": 15,
+    "carbs": 4,
+    "fat": 15,
+    "isFeatured": false,
+    "tipNote": "Otları tavaya erken değil yumurtayla birlikte eklemek taze kokuların korunmasına yardım eder.",
+    "servingSuggestion": "Yanına zeytin ve ekşi mayalı ekmekle sıcak servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "SUT",
+      "YUMURTA",
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Yumurta",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Ekşi mayalı ekmek",
+        "amount": "2",
+        "unit": "dilim",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "İzmir Otlu Çırpma Yumurtası için kullanılacak kapları hazırlayın, hamur veya yumurta bekleyip dokusunu kaybetmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Otları ince kıyın ve yumurtaları çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lor ve otları yumurtaya ekleyip tavaya alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karışımı 4 dakika karıştırarak pişirip ekmekle servis edin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "İzmir Otlu Çırpma Yumurtası yüzeyi parlakken sıcak servis edin, soğursa buharı gevrek dokuyu yumuşatır.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "otlu-cokelek-krep-denizli-usulu",
+    "title": "Otlu Çökelek Krep",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Denizli usulü otlu çökelek krep, ince krepleri çökelek ve dereotu ile buluşturarak hafif ama tok bir kahvaltı tabağı yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 10,
+    "totalMinutes": 22,
+    "servingCount": 3,
+    "averageCalories": 246,
+    "protein": 11,
+    "carbs": 24,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Krep hamurunu 5 dakika dinlendirmek tavada daha düzgün yüzey almasını sağlar.",
+    "servingSuggestion": "Üzerine ek dereotu serpip ılık servis edin.",
+    "tags": [
+      "vejetaryen",
+      "pratik"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Çökelek",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Otlu Çökelek Krep başlangıcında kuru ve yaş malzemeleri ayrı tutun, karıştırma aşaması temiz ilerlesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Un, yumurta ve sütü pürüzsüz olana kadar çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Krepleri tavada toplam 6 dakika içinde iki yüzünü pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Çökelek ve dereotunu içine paylaştırıp katlayarak servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Otlu Çökelek Krep parçalarını ılık tabaklara alın, yanında çayla hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "otlu-kasarli-yufka-tostu-van-usulu",
+    "title": "Otlu Kaşarlı Yufka Tostu",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Van usulü otlu kaşarlı yufka tostu, ince yufkayı otlu peynir ve kaşarla buluşturarak sıcak, uzayan ve hızlı bir kahvaltı çıkarır.",
+    "prepMinutes": 8,
+    "cookMinutes": 6,
+    "totalMinutes": 14,
+    "servingCount": 2,
+    "averageCalories": 252,
+    "protein": 12,
+    "carbs": 18,
+    "fat": 15,
+    "isFeatured": false,
+    "tipNote": "Yufkayı katlamadan önce kenarlarını hafif ıslatmak tostun tavada açılmasını önler.",
+    "servingSuggestion": "Tostu sıcak sunun, yanına domates dilimleri ve çay koyun.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Yufka",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Otlu peynir",
+        "amount": "100",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kaşar peyniri",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Otlu Kaşarlı Yufka Tostu için malzemeleri ölçüp tezgaha alın, sonraki adımlar aksamadan ilerlesin diye kapları hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Otlu Kaşarlı Yufka Tostu için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Otlu Kaşarlı Yufka Tostu iç harcını ekmek ya da yufka yüzeyine eşit paylaştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Otlu Kaşarlı Yufka Tostu yufkasını zarf gibi kapatın, peynir tavaya akmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Otlu Kaşarlı Yufka Tostu parçasını orta ateşte 6 dakika iki yüzlü pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Otlu Kaşarlı Yufka Tostu tamamlanınca 3 dakika dinlendirin, iç sıcaklık dengelensin diye sonra dilimleyin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "otlu-kelek-salatasi-van-usulu",
+    "title": "Otlu Kelek Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Van otlu kelek salatası, sert kavunu taze ot ve limonla buluşturarak çıtır, ferah ve yaz sıcağına uygun bir salata yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 0,
+    "totalMinutes": 12,
+    "servingCount": 4,
+    "averageCalories": 128,
+    "protein": 3,
+    "carbs": 18,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Keleği çok ince değil iri doğramak salatada diri bir ısırık bırakır.",
+    "servingSuggestion": "Salatayı serin sunun, üstüne maydanoz serpip limon ekleyin.",
+    "tags": [
+      "vegan",
+      "yaz-tarifi",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Kelek",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Keleği soyup çekirdek yatağını çıkarın, ince yarım ay dilimleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Dilimleri tuzla 5 dakika bekletin, fazla suyunu kağıt havluyla alın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Dereotu, reyhan, maydanoz ve taze soğanı ince doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon suyu, zeytinyağı, pul biber ve sumakla sos hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kelek ve otları sosla birleştirin, çıtır doku kaybolmadan servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Keleği servis öncesi bir kez süzün, tuzla çıkan su ekşi sosu inceltmesin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "otlu-kete-dilimi-kars-usulu",
+    "title": "Otlu Kete Dilimi",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Kars usulü otlu kete dilimi, kat kat hamuru otlu iç ve tereyağıyla buluşturarak gevrek, kokulu ve doyurucu bir hamur işi yapar.",
+    "prepMinutes": 20,
+    "cookMinutes": 24,
+    "totalMinutes": 44,
+    "servingCount": 6,
+    "averageCalories": 284,
+    "protein": 8,
+    "carbs": 31,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Hamuru kısa dinlendirmek kete katlarının fırında daha rahat açılmasını sağlar.",
+    "servingSuggestion": "Keteyi ılık verin, yanına çay, zeytin ve domates koyun.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "100",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Karışık ot",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Otlu Kete Dilimi akışı için tava, kase ve ölçüleri hazır edin, pişirme başlayınca ritim bozulmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Otlu Kete Dilimi hamurunu unlu tezgahta 4 dakika yoğurun, yüzeyi pürüzsüzleşsin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Otlu içle katlayın, Otlu Kete Dilimi için hazır tutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Otlu Kete Dilimi ketesini 190°C fırında 24 dakika pişirin, katları ayrışsın.",
+        "timerSeconds": 1440
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Otlu Kete Dilimi tamamlanınca 3 dakika dinlendirin, iç sıcaklık dengelensin diye sonra dilimleyin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "otlu-lavas-durumu-van-usulu",
+    "title": "Van Otlu Lavaş Dürümü",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Van otlu Lavaş dürümü, otlu peynir ve ince yeşillikleri sıcak lavaşla sararak bölgenin kahvaltı geleneğini taşınabilir, kokulu bir sabah lokmasına çevirir.",
+    "prepMinutes": 10,
+    "cookMinutes": 4,
+    "totalMinutes": 14,
+    "servingCount": 2,
+    "averageCalories": 268,
+    "protein": 11,
+    "carbs": 23,
+    "fat": 14,
+    "isFeatured": true,
+    "tipNote": "Lavaşı sadece kısa ısıtmak peynirin erirken hamurun kurumasını önler.",
+    "servingSuggestion": "Demli çayla sıcak servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Lavaş",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Otlu peynir",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Taze soğan",
+        "amount": "2",
+        "unit": "dal",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Van Otlu Lavaş Dürümü yapmadan önce ana malzemeleri ayırın, sıcak adımlar sırasında arama yapılmasın diye tezgahı düzenleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yeşillikleri ince kıyın ve peynirle karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lavaşları kuru tavada 1 dakika ısıtın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "İçi paylaştırıp dürüm yaparak servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Van Otlu Lavaş Dürümü yüzeyi parlakken sıcak servis edin, soğursa buharı gevrek dokuyu yumuşatır.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "otlu-lorlu-kete-artvin-usulu",
+    "title": "Otlu Lorlu Kete",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Artvin otlu lorlu kete, ince açılmış hamuru lor ve yayla otlarıyla doldurarak katmanlı, kokulu ve çaylık bir hamur işi sunar.",
+    "prepMinutes": 20,
+    "cookMinutes": 20,
+    "totalMinutes": 40,
+    "servingCount": 6,
+    "averageCalories": 246,
+    "protein": 7,
+    "carbs": 28,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "İç harcı kuru tutmak ketenin katmanlarının fırında gevrek kalmasını sağlar.",
+    "servingSuggestion": "Keteyi ılık sunun, yanına ayran ve salatalık dilimleri koyun.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Karışık ot",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "50",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Otlu Lorlu Kete için kullanılacak kapları hazırlayın, hamur veya yumurta bekleyip dokusunu kaybetmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Otlu Lorlu Kete için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru yoğurup dinlendirin, Otlu Lorlu Kete için hazır tutun.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "İç harcıyla hamuru kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Otlu Lorlu Kete ketesini 190°C fırında 18 dakika pişirin, üstü kızarsın.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Otlu Lorlu Kete kıvamı oturunca servis edin, fazla bekletmek peynirli dokuyu sertleştirir.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "otlu-misir-mucveri-van-usulu",
+    "title": "Van Otlu Mısır Mücveri",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Van otlu mısır mücveri, mısır unu ve yöresel otları tavada kızartarak kenarı çıtır, içi yumuşak bir atıştırmalık sunar.",
+    "prepMinutes": 12,
+    "cookMinutes": 12,
+    "totalMinutes": 24,
+    "servingCount": 4,
+    "averageCalories": 182,
+    "protein": 5,
+    "carbs": 19,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Harcı çok sıvı bırakmamak tavada dağılmasını önler.",
+    "servingSuggestion": "Mücverleri ılık verin, yanına sarımsaklı yoğurt ve nane koyun.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Mısır unu",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Taze ot karışımı",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Van Otlu Mısır Mücveri için Mısır unu 1 su bardağı hazırlığını yapıp fazla suyunu elinizle sıkın, harç sulanmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Van Otlu Mısır Mücveri harcına yumurta, un ve yeşillikleri ekleyip 2 dakika koyu kıvam alana kadar karıştırın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Van Otlu Mısır Mücveri karışımını 5 dakika dinlendirin, un nemi çeksin ve tavada dağılmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Van Otlu Mısır Mücveri için yağı orta ateşte 2 dakika ısıtıp harçtan kaşıkla küçük porsiyonlar bırakın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Van Otlu Mısır Mücveri parçalarını orta ateşte her yüzü kızarana kadar toplam 7 dakika pişirin.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Van Otlu Mısır Mücveri porsiyonlarını kağıt havluya alıp 3 dakika dinlendirin ve ılık servis edin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "otlu-pancar-mucveri-van-gol-usulu",
+    "title": "Van Otlu Pancar Mücveri",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Van otlu pancar mücveri, pancarı yöresel otlar ve yumurtayla tavada pişirerek renkli ve yumuşak bir atıştırmalık çıkarır.",
+    "prepMinutes": 12,
+    "cookMinutes": 10,
+    "totalMinutes": 22,
+    "servingCount": 4,
+    "averageCalories": 168,
+    "protein": 5,
+    "carbs": 16,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Pancarı rendeledikten sonra suyunu sıkmak mücverin dağılmasını azaltır.",
+    "servingSuggestion": "Oda sıcaklığında servis edin, tadını öne çıkarır; yanına kıtır ekmek veya lavaş dilimleri koyun.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Pancar",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Taze ot karışımı",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Van Otlu Pancar Mücveri için Pancar 2 adet hazırlığını yapıp fazla suyunu elinizle sıkın, harç sulanmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Van Otlu Pancar Mücveri harcına yumurta, un ve yeşillikleri ekleyip 2 dakika koyu kıvam alana kadar karıştırın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Van Otlu Pancar Mücveri karışımını 5 dakika dinlendirin, un nemi çeksin ve tavada dağılmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Van Otlu Pancar Mücveri için yağı orta ateşte 2 dakika ısıtıp harçtan kaşıkla küçük porsiyonlar bırakın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Van Otlu Pancar Mücveri parçalarını orta ateşte her yüzü kızarana kadar toplam 7 dakika pişirin.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Van Otlu Pancar Mücveri porsiyonlarını kağıt havluya alıp 3 dakika dinlendirin ve ılık servis edin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "otlu-peynirli-tandir-boregi-van-usulu",
+    "title": "Otlu Peynirli Tandır Böreği",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Van usulü otlu peynirli tandır böreği, ince hamuru otlu peynirle doldurarak gevrek, tuzlu ve paylaşmalık bir hamur işi sunar.",
+    "prepMinutes": 20,
+    "cookMinutes": 24,
+    "totalMinutes": 44,
+    "servingCount": 6,
+    "averageCalories": 276,
+    "protein": 10,
+    "carbs": 28,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Otlu peyniri süzmek böreğin tabanında fazla nem birikmesini önler.",
+    "servingSuggestion": "Böreği sıcak sunun, yanına çay ve domates dilimleri koyun.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Otlu peynir",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Otlu Peynirli Tandır Böreği başlangıcında kuru ve yaş malzemeleri ayrı tutun, karıştırma aşaması temiz ilerlesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru yoğurup dinlendirin, Otlu Peynirli Tandır Böreği için hazır tutun.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Peynirli içi yerleştirip kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Otlu Peynirli Tandır Böreği böreğini 190°C fırında 24 dakika pişirin, altı gevrekleşsin.",
+        "timerSeconds": 1440
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Otlu Peynirli Tandır Böreği kıvamı oturunca servis edin, fazla bekletmek peynirli dokuyu sertleştirir.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "otlu-peynirli-yumurta-durumu-van-usulu",
+    "title": "Otlu Peynirli Yumurta Dürümü",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Van usulü otlu peynirli yumurta dürümü, yumurtayı otlu peynir ve lavaşla buluşturarak sabaha uygun, tok bir dürüm yapar.",
+    "prepMinutes": 8,
+    "cookMinutes": 8,
+    "totalMinutes": 16,
+    "servingCount": 2,
+    "averageCalories": 286,
+    "protein": 15,
+    "carbs": 19,
+    "fat": 16,
+    "isFeatured": false,
+    "tipNote": "Otlu peyniri son anda eklemek tavada fazla eriyip tuz salmasını önler.",
+    "servingSuggestion": "Otlu peynirli yumurta dürümünü sıkı sarıp peynirli yumurta kesitini açık bırakın.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Yumurta",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Otlu peynir",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Lavaş",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Otlu Peynirli Yumurta Dürümü için malzemeleri ölçüp tezgaha alın, sonraki adımlar aksamadan ilerlesin diye kapları hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Otlu Peynirli Yumurta Dürümü için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Otlu Peynirli Yumurta Dürümü için yumurtayı orta ateşte 4 dakika pişirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Otlu Peynirli Yumurta Dürümü peynirini sıcak yumurtanın üstüne yayın, erimesi için kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Lavaşa sarıp servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Otlu Peynirli Yumurta Dürümü yüzeyi parlakken sıcak servis edin, soğursa buharı gevrek dokuyu yumuşatır.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Otlu Peynirli Yumurta Dürümü parçalarını ılık tabaklara alın, yanında çayla hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "otlu-pirinc-eristesi-salata-vietnam-usulu",
+    "title": "Otlu Pirinç Eriştesi Salata",
+    "cuisine": "vn",
+    "type": "SALATA",
+    "description": "Vietnam usulü otlu pirinç eriştesi salata, pirinç eriştesini taze otlar ve lime ile buluşturarak serin bir tabak yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 6,
+    "totalMinutes": 18,
+    "servingCount": 4,
+    "averageCalories": 168,
+    "protein": 3,
+    "carbs": 29,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Erişteyi haşladıktan sonra soğuk sudan geçirmek yapışmasını önler.",
+    "servingSuggestion": "Otlu pirinç eriştesi salatasını soğuk kasede sunup nane ve kişnişi üstte bırakın.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Pirinç eriştesi",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Kişniş",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Lime suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Salatalık",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pirinç eriştesini kaynar suda 4 dakika haşlayın, soğuk sudan geçirip süzün.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Nane, kişniş, Tay fesleğeni, salatalık ve havucu ince doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Balık sosu, lime suyu, şeker, sarımsak ve biberi şeker eriyene kadar çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Erişteyi sosun yarısıyla karıştırın, topaklanmasın diye iki çatal kullanın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Otlar ve sebzeleri ekleyin, fıstık ve kızarmış soğanla servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Erişteyi sosladıktan sonra otları ekleyin, lime asidi taze yaprakları soldurmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "otlu-pirinc-frittata-yunan-usulu",
+    "title": "Otlu Pirinç Frittata",
+    "cuisine": "gr",
+    "type": "KAHVALTI",
+    "description": "Yunan usulü otlu pirinç frittata, dereotu, maydanoz ve pişmiş pirinci yumurtayla bağlayarak yeşil, doyurucu bir tava yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 14,
+    "totalMinutes": 26,
+    "servingCount": 4,
+    "averageCalories": 226,
+    "protein": 11,
+    "carbs": 24,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Otları salata kurutucuda 1 dakika kurutmak frittatanın ortasının sulu kalmasını önler.",
+    "servingSuggestion": "Yoğurt ve turpla ılık servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "YUMURTA",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Pişmiş pirinç",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Otlu Pirinç Frittata akışı için tava, kase ve ölçüleri hazır edin, pişirme başlayınca ritim bozulmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Otlu Pirinç Frittata için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yumurta ve yoğurdu pürüzsüz olana kadar çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pirinç ve ince kıyılmış otları karışıma ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Frittatayı kapaklı tavada 12-14 dakika kısık ateşte pişirin.",
+        "timerSeconds": 780
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Otlu Pirinç Frittata parçalarını ılık tabaklara alın, yanında çayla hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "otlu-tava-artvin-usulu",
+    "title": "Artvin Otlu Tava",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Artvin otlu tava, dağ otlarını yumurta ve mısır unuyla tavada toparlayarak Karadeniz yaylalarının kısa ama kuvvetli kahvaltı tabaklarından birine dönüşür.",
+    "prepMinutes": 12,
+    "cookMinutes": 10,
+    "totalMinutes": 22,
+    "servingCount": 3,
+    "averageCalories": 182,
+    "protein": 7,
+    "carbs": 14,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Otları tavaya almadan önce fazla suyunu almak karışımın daha çabuk toparlanmasını sağlar.",
+    "servingSuggestion": "Yanına mısır ekmeğiyle sıcak servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Karışık ot",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Mısır unu",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "20",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Artvin Otlu Tava yapmadan önce ana malzemeleri ayırın, sıcak adımlar sırasında arama yapılmasın diye tezgahı düzenleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Otları ince doğrayıp 2 dakika tavada soldurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yumurta ve mısır ununu ekleyip karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karışımı toplam 6 dakika pişirip sıcak servis edin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Artvin Otlu Tava parçalarını ılık tabaklara alın, yanında çayla hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "otlu-tulumlu-lavas-tostu-van-usulu",
+    "title": "Otlu Tulumlu Lavaş Tostu",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Van usulü otlu tulumlu lavaş tostu, ince lavaşı otlu peynir ve tulumla buluşturarak eriyen, tuzlu ve hızlı bir kahvaltı tabağı kurar.",
+    "prepMinutes": 8,
+    "cookMinutes": 6,
+    "totalMinutes": 14,
+    "servingCount": 2,
+    "averageCalories": 246,
+    "protein": 11,
+    "carbs": 19,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Lavaşın kenarını hafif suyla kapatmak tostun tavada dağılmasını önler.",
+    "servingSuggestion": "Otlu tulumlu lavaş tostunu çapraz kesip eriyen peynirli kesiti açık bırakın.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Lavaş",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Otlu peynir",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tulum peyniri",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Otlu Tulumlu Lavaş Tostu için kullanılacak kapları hazırlayın, hamur veya yumurta bekleyip dokusunu kaybetmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "İç harcı lavaşa pay edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Otlu Tulumlu Lavaş Tostu tostunu sıkıca kapatın, dolgu kenarlardan taşmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Otlu Tulumlu Lavaş Tostu parçasını orta ateşte 6 dakika iki yüzlü pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Otlu Tulumlu Lavaş Tostu kıvamı oturunca servis edin, fazla bekletmek peynirli dokuyu sertleştirir.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "otlu-yumurta-banh-mi-vietnam-usulu",
+    "title": "Otlu Yumurta Banh Mi",
+    "cuisine": "vn",
+    "type": "KAHVALTI",
+    "description": "Vietnam usulü otlu yumurta banh mi, bageti yumurta ve taze otlarla buluşturarak çıtır, tok bir sandviç yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 8,
+    "totalMinutes": 18,
+    "servingCount": 2,
+    "averageCalories": 292,
+    "protein": 13,
+    "carbs": 24,
+    "fat": 15,
+    "isFeatured": true,
+    "tipNote": "Otları servis anında eklemek sandviçte tazelik hissini korur.",
+    "servingSuggestion": "Otlu yumurta banh mi'yi ikiye kesip salatalık ve yeşillikleri baget içinde gösterin.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Baget",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Salatalık",
+        "amount": "0.5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Kişniş",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Otlu Yumurta Banh Mi başlangıcında kuru ve yaş malzemeleri ayrı tutun, karıştırma aşaması temiz ilerlesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Otlu Yumurta Banh Mi için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Otlu Yumurta Banh Mi için yumurtayı orta ateşte 4 dakika pişirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Otlu Yumurta Banh Mi ekmeğini boyuna açın, içi parçalanmasın diye bıçağı bastırmayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Otlarla doldurup servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Otlu Yumurta Banh Mi yüzeyi parlakken sıcak servis edin, soğursa buharı gevrek dokuyu yumuşatır.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "otlu-yumurta-tava-van-usulu",
+    "title": "Otlu Yumurta Tava",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Van usulü otlu yumurta tava, taze otları yumurta ve çökelekle buluşturarak kısa sürede doyurucu bir kahvaltı hazırlar.",
+    "prepMinutes": 10,
+    "cookMinutes": 8,
+    "totalMinutes": 18,
+    "servingCount": 2,
+    "averageCalories": 248,
+    "protein": 15,
+    "carbs": 6,
+    "fat": 17,
+    "isFeatured": false,
+    "tipNote": "Otları tavaya atmadan önce iyice kurulamak yumurtanın sulanmasını önler.",
+    "servingSuggestion": "Otlu yumurta tavayı sıcak tabakta sunup çökelek ve yeşillikleri yumurtanın üstünde bırakın.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Yumurta",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Çökelek",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Taze soğan",
+        "amount": "2",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Otlu Yumurta Tava için malzemeleri ölçüp tezgaha alın, sonraki adımlar aksamadan ilerlesin diye kapları hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Otları ince doğrayıp çökelekle karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tereyağında otlu harcı 2 dakika çevirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yumurtaları kırıp kapağı kapalı şekilde 4 dakika pişirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Otlu Yumurta Tava yüzeyi parlakken sıcak servis edin, soğursa buharı gevrek dokuyu yumuşatır.",
+        "timerSeconds": null
+      }
+    ]
+  }
+]

@@ -1,0 +1,4619 @@
+[
+  {
+    "slug": "sesame-balls",
+    "title": "Sesame Balls",
+    "cuisine": "cn",
+    "type": "TATLI",
+    "description": "Çin susam topları, yapışkan pirinç hamurunun tatlı fasulye ezmesiyle dolup kızarmasıyla hazırlanır.",
+    "prepMinutes": 35,
+    "cookMinutes": 15,
+    "totalMinutes": 50,
+    "servingCount": 6,
+    "averageCalories": 190,
+    "protein": 3,
+    "carbs": 26,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Kuru baklagili gece boyunca ılık suda bekletmek pişme süresini yarıya indirir, gaz yapma etkisini de azaltır.",
+    "servingSuggestion": "Sıcakken, çay eşliğinde servis edin.",
+    "tags": [
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Yapışkan pirinç unu",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kırmızı fasulye ezmesi",
+        "amount": "180",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Susam",
+        "amount": "100",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "60",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Ilık su",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pirinç unu, şeker ve suyla pürüzsüz hamur hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 10 dakika dinlendirin, şekil verirken çatlamasın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Parçaları fasulye ezmesiyle doldurup kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Topları susama bulayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Topları 160°C yağda 14 dakika kızartın.",
+        "timerSeconds": 840
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kağıt üstünde 5 dakika süzdürüp servis edin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "sesame-noodles-cin-soguk-usulu",
+    "title": "Sesame Noodles",
+    "cuisine": "cn",
+    "type": "YEMEK",
+    "description": "Sesame noodles, erişteyi susamlı sosla birleştirerek serin ve doyurucu bir Çin usulü noodle salatası hazırlar.",
+    "prepMinutes": 10,
+    "cookMinutes": 8,
+    "totalMinutes": 18,
+    "servingCount": 4,
+    "averageCalories": 288,
+    "protein": 9,
+    "carbs": 39,
+    "fat": 10,
+    "isFeatured": true,
+    "tipNote": "Erişteyi durulayıp çok az yağlamak sosun topaklanmasını azaltır.",
+    "servingSuggestion": "Tabağın yanına bir parça kıtır ekmek koyup sosun sıyrılmasını tamamlayın.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen",
+      "yaz-tarifi",
+      "vegan"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUSAM",
+      "SOYA"
+    ],
+    "ingredients": [
+      {
+        "name": "Erişte",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Susam yağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Salatalık",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Erişteyi 7 dakika haşlayın ve soğuk sudan geçirin.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Susam ezmesi, soya sosu, sirke ve az sıcak suyu çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sosu erişteyle karıştırın, gerekirse 1 yemek kaşığı suyla açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Salatalığı ince şeritler halinde doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Erişteyi salatalık ve susamla tamamlayın, soğuk servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "seul-bibimbap-kasesi",
+    "title": "Seul Bibimbap Kasesi",
+    "cuisine": "kr",
+    "type": "YEMEK",
+    "description": "Bibimbap, sıcak pirincin üstüne ayrı pişmiş sebzeler, yumurta, kimchi, susam yağı ve gochujang sos dizen Kore kasesidir.",
+    "prepMinutes": 25,
+    "cookMinutes": 25,
+    "totalMinutes": 50,
+    "servingCount": 4,
+    "averageCalories": 475,
+    "protein": 18,
+    "carbs": 58,
+    "fat": 19,
+    "isFeatured": false,
+    "tipNote": "Sebzeleri ayrı ayrı pişirmek renklerini ve dokularını belirgin tutar.",
+    "servingSuggestion": "Gochujang sosu yanında verip sofrada karıştırarak servis edin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "YUMURTA",
+      "SOYA",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Pişmiş sushi pirinci",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Havuç",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kabak",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ispanak",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Mantar",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Gochujang",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Susam yağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kimchi",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Havuç ve kabağı ince şeritler halinde doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mantarları susam yağında 4 dakika soteleyin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Havuç ve kabağı ayrı ayrı 2 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ispanağı 30 saniye soldurup soya sosuyla tatlandırın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yumurtaları sarısı akışkan kalacak şekilde pişirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Pirinçleri kaselere paylaştırıp sebzeleri bölmeler halinde dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Yumurta, kimchi, susam ve gochujangla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "seul-gochujangli-tofu-tost",
+    "title": "Seul Gochujanglı Tofu Tost",
+    "cuisine": "kr",
+    "type": "KAHVALTI",
+    "description": "Kore usulü gochujanglı tofu tost, kızarmış tofuyu acı biber ezmesi, salatalık ve susamla ekmek arasında hızlı bir kahvaltıya taşır.",
+    "prepMinutes": 10,
+    "cookMinutes": 18,
+    "totalMinutes": 28,
+    "servingCount": 2,
+    "averageCalories": 315,
+    "protein": 17,
+    "carbs": 34,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Tofuyu bastırarak kurutmak tavada daha iyi kızarmasını sağlar.",
+    "servingSuggestion": "Kimchi ve yeşil çayla servis edin.",
+    "tags": [
+      "vegan",
+      "yuksek-protein",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SOYA",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Tost ekmeği",
+        "amount": "4",
+        "unit": "dilim",
+        "group": null
+      },
+      {
+        "name": "Sert tofu",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Gochujang",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Salatalık",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Susam yağı",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Seul Gochujanglı Tofu Tost başlangıcında ana malzemeleri gözden geçirin, eksik ölçü kalmasın diye kapları sıraya dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Seul Gochujanglı Tofu Tost için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tofuyu kağıt havluda 10 dakika bastırarak kurutun.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tofuyu dilimleyip tavada 6 dakika kızartın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Gochujang ve susam yağını karıştırıp ekmeğe sürün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tofu ve salatalıkla tostları kapatıp servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "seul-kimchi-jjigae-domuzlu",
+    "title": "Seul Kimchi Jjigae",
+    "cuisine": "kr",
+    "type": "CORBA",
+    "description": "Kimchi jjigae, olgun kimchi, domuz eti, tofu, gochugaru, soya sosu ve susam yağıyla yapılan Kore usulü acı yahni çorbasıdır.",
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "totalMinutes": 45,
+    "servingCount": 4,
+    "averageCalories": 360,
+    "protein": 24,
+    "carbs": 16,
+    "fat": 23,
+    "isFeatured": false,
+    "tipNote": "Olgun kimchi kullanmak yahniye ekşi derinlik verir ve fazla baharat ihtiyacını azaltır.",
+    "servingSuggestion": "Buharda pirinç, taze soğan ve ekstra kimchiyle sıcak servis edin.",
+    "tags": [
+      "kis-tarifi",
+      "tek-tencere"
+    ],
+    "allergens": [
+      "SOYA",
+      "SUSAM",
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Olgun kimchi",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Domuz göbek eti",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumuşak tofu",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Gochugaru",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Susam yağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ançuez suyu veya balık sosu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Taze soğan",
+        "amount": "3",
+        "unit": "dal",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Domuz etini lokmalık doğrayıp susam yağında 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kimchiyi ekleyip 3 dakika kavurun.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Gochugaru, soya sosu ve balık sosunu katın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "2.5 su bardağı su ekleyip kapağı kapalı 18 dakika pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tofuyu iri parçalar halinde tencereye bırakın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Yahniyi 5 dakika daha kaynatıp taze soğanla servis edin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "seul-kimchili-pirinc-tavasi",
+    "title": "Seul Kimchi Bokkeumbap",
+    "cuisine": "kr",
+    "type": "YEMEK",
+    "description": "Kimchi bokkeumbap, ekşi kimchi ve soğuk pirinci gochujang, susam yağı ve yumurtayla tavada çeviren Kore ev yemeğidir.",
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "totalMinutes": 22,
+    "servingCount": 3,
+    "averageCalories": 480,
+    "protein": 16,
+    "carbs": 70,
+    "fat": 16,
+    "isFeatured": false,
+    "tipNote": "Kimchi suyunu eklemek pirince ekşi ve acı derinlik verir.",
+    "servingSuggestion": "Üzerine kızarmış yumurta ve nori serpip sıcak servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "butce-dostu",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "YUMURTA",
+      "SUSAM",
+      "SOYA"
+    ],
+    "ingredients": [
+      {
+        "name": "Pişmiş soğuk pirinç",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kimchi",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kimchi suyu",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Gochujang",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Susam yağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Taze soğan",
+        "amount": "3",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Nori",
+        "amount": "2",
+        "unit": "yaprak",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kimchiyi küçük doğrayıp suyunu ayırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavada kimchiyi 3 dakika kokusu yoğunlaşana kadar çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinç, kimchi suyu ve gochujangı ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pirinci yüksek ateşte 5 dakika tane tane kızartın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Susam yağı ve taze soğanı son anda karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kızarmış yumurta ve nori parçalarıyla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "seul-susamli-patates-jeon",
+    "title": "Seul Susamlı Patates Jeon",
+    "cuisine": "kr",
+    "type": "APERATIF",
+    "description": "Kore usulü susamlı patates jeon, rendelenmiş patatesi soya sosu, taze soğan ve susamla gevrek kenarlı bir tavaya dönüştürür.",
+    "prepMinutes": 12,
+    "cookMinutes": 14,
+    "totalMinutes": 26,
+    "servingCount": 3,
+    "averageCalories": 220,
+    "protein": 5,
+    "carbs": 36,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Patates suyunu süzüp nişastasını geri katmak jeonu bağlar.",
+    "servingSuggestion": "Soya soslu dip ile sıcak servis edin.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SOYA",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Patates",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Taze soğan",
+        "amount": "3",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Susam",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Susam yağı",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesleri rendeleyip suyunu kaseye sıkın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kasedeki nişasta dibe çökünce suyu dikkatlice dökün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Patates, nişasta, taze soğan, soya sosu ve susamı karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Harçtan tavaya ince parçalar yayıp 8-10 dakika kızartın.",
+        "timerSeconds": 540
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Susam yağı gezdirip jeonları sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sevilla-bademli-soguk-ajo-blanco",
+    "title": "Sevilla Bademli Soğuk Ajo Blanco",
+    "cuisine": "es",
+    "type": "CORBA",
+    "description": "Endülüs usulü bademli ajo blanco, badem, ekmek ve sarımsağı üzümle ferahlayan ipeksi bir soğuk çorbaya dönüştürür.",
+    "prepMinutes": 15,
+    "cookMinutes": 0,
+    "totalMinutes": 15,
+    "servingCount": 4,
+    "averageCalories": 260,
+    "protein": 7,
+    "carbs": 22,
+    "fat": 17,
+    "isFeatured": false,
+    "tipNote": "Bademi önceden ıslatmak çorbanın dokusunu pürüzsüz yapar.",
+    "servingSuggestion": "Soğuk üzüm ve zeytinyağıyla servis edin.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "KUSUYEMIS",
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Badem",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Bayat ekmek içi",
+        "amount": "2",
+        "unit": "dilim",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "1",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Üzüm",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sirke",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bademleri sıcak suda 10 dakika bekletip kabuklarını soyun.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Ekmek içini az suyla yumuşatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Badem, ekmek, sarımsak, sirke ve suyu blenderdan geçirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Zeytinyağını ince akıtarak çorbayı pürüzsüz çekin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kaselere paylaştırıp üzümle soğuk servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sevilla-gazpacho",
+    "title": "Sevilla Gazpacho",
+    "cuisine": "es",
+    "type": "CORBA",
+    "description": "Gazpacho, olgun domates, biber, salatalık, ekmek, sarımsak, zeytinyağı ve sirkeyi soğuk İspanyol çorbasında buluşturur.",
+    "prepMinutes": 20,
+    "cookMinutes": 0,
+    "totalMinutes": 140,
+    "servingCount": 6,
+    "averageCalories": 135,
+    "protein": 3,
+    "carbs": 15,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Çorbayı en az 2 saat soğutmak domates asidini dengeler ve lezzeti toparlar.",
+    "servingSuggestion": "Küp salatalık, biber ve zeytinyağı gezdirerek buz gibi servis edin.",
+    "tags": [
+      "vegan",
+      "yaz-tarifi",
+      "dusuk-kalorili"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Domates",
+        "amount": "1",
+        "unit": "kg",
+        "group": null
+      },
+      {
+        "name": "Salatalık",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kırmızı biber",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Bayat ekmek",
+        "amount": "2",
+        "unit": "dilim",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "5",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Elma sirkesi",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ekmeği 5 dakika soğuk suda yumuşatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Domates, salatalık ve biberi iri doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sebzeleri ekmek, sarımsak, zeytinyağı, sirke ve tuzla blenderdan geçirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kıvamı gerekirse soğuk suyla açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Gazpacho'yu 2 saat buzdolabında soğutun.",
+        "timerSeconds": 7200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Serviste zeytinyağı ve küçük sebze küpleri ekleyin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sevilla-nohutlu-ispanak-tavasi",
+    "title": "Sevilla Nohutlu Ispanak Tavası",
+    "cuisine": "es",
+    "type": "YEMEK",
+    "description": "Endülüs usulü nohutlu ıspanak tavası, haşlanmış nohudu ıspanak, sarımsak ve füme paprika ile kısa sürede doyurucu bir yemeğe çevirir.",
+    "prepMinutes": 10,
+    "cookMinutes": 18,
+    "totalMinutes": 28,
+    "servingCount": 4,
+    "averageCalories": 298,
+    "protein": 13,
+    "carbs": 36,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Ispanağı yıkadıktan sonra iyi süzmek tavanın sulanmasını önler.",
+    "servingSuggestion": "Sevilla nohutlu ıspanak tavasını geniş tabakta yayın, nohutlar ıspanak arasında diri görünsün.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ispanak",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Füme paprika",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Sarımsağı ince doğrayın, nohudu süzün ve ıspanağı yıkayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sarımsağı zeytinyağında 1 dakika yakmadan çevirin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nohut ve füme paprikayı tavaya ekleyip 3 dakika ısıtın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ispanağı katıp 5 dakika sönene kadar pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Limon suyunu ocak kapalıyken ekleyin, ıspanak rengini kaybetmesin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sevilla-salmorejo-yumurtali",
+    "title": "Sevilla Salmorejo",
+    "cuisine": "es",
+    "type": "CORBA",
+    "description": "Salmorejo, domates, ekmek, sarımsak, zeytinyağı ve sirkeyi pürüzsüz soğuk çorbaya çevirip yumurta ve jambonla tamamlar.",
+    "prepMinutes": 18,
+    "cookMinutes": 10,
+    "totalMinutes": 88,
+    "servingCount": 4,
+    "averageCalories": 240,
+    "protein": 8,
+    "carbs": 16,
+    "fat": 16,
+    "isFeatured": false,
+    "tipNote": "Ekmeği domates suyunda yumuşatmak çorbayı su eklemeden kremamsı yapar.",
+    "servingSuggestion": "Doğranmış haşlanmış yumurta, jambon ve zeytinyağıyla soğuk servis edin.",
+    "tags": [
+      "yaz-tarifi",
+      "dusuk-kalorili"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Domates",
+        "amount": "1",
+        "unit": "kg",
+        "group": null
+      },
+      {
+        "name": "Beyaz ekmek",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "75",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Elma sirkesi",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dana jambon",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yumurtaları 9 dakika haşlayıp soğutun.",
+        "timerSeconds": 540
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Domatesleri doğrayıp ekmekle 5 dakika bekletin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Domates, ekmek, sarımsak, zeytinyağı, sirke ve tuzu blenderdan geçirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Çorbayı pürüzsüz olana kadar 2 dakika karıştırın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Salmorejo'yu 1 saat buzdolabında soğutun.",
+        "timerSeconds": 3600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Üzerine yumurta ve jambon doğrayıp servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sevketibostan-yemegi",
+    "title": "Şevketibostan Yemeği",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Ege'nin şevketibostanı zeytinyağı, limon ve kuzu etiyle hafif ekşi bir bahar yemeği verir.",
+    "prepMinutes": 30,
+    "cookMinutes": 45,
+    "totalMinutes": 75,
+    "servingCount": 4,
+    "averageCalories": 240,
+    "protein": 14,
+    "carbs": 12,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Eti ocaktan aldıktan sonra alüminyum folyoyla örtüp 5 dakika dinlendirmek suları eşit dağıtır.",
+    "servingSuggestion": "Taze dereotu ve zeytinyağıyla porselen tabakta soğuk tüketin; lezzet ertesi gün daha derin olur.",
+    "tags": [
+      "yaz-tarifi"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Şevketibostan",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kuzu kuşbaşı",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "60",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Şevketibostanı temizleyip iri doğrayın, kuzu etini kuşbaşı hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kuzu etini zeytinyağında 10 dakika kavurun.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Şevketibostanı ekleyip 3 dakika çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sıcak su ve tuzu katıp 30 dakika pişirin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Limon suyunu ekleyip 5 dakika daha pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "5 dakika dinlendirin, ekşi tat et suyuna dengeli yayılsın.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "sevketibostanli-bulgur-pilavi-ayvalik-usulu",
+    "title": "Şevketibostanlı Bulgur Pilavı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Ayvalık şevketibostanlı bulgur pilavı, iri bulguru şevketibostan ve domatesle pişirerek aromatik, tane tane ve zeytinyağlı bir Ege yemeği yapar.",
+    "prepMinutes": 14,
+    "cookMinutes": 20,
+    "totalMinutes": 34,
+    "servingCount": 4,
+    "averageCalories": 204,
+    "protein": 5,
+    "carbs": 34,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Şevketibostanı önceden kısa haşlamak pilavda sert kalmasını önler.",
+    "servingSuggestion": "Üzerine kavrulmuş dolmalık fıstık ve kuş üzümü serpip Osmanlı sofrası sunumu hazırlayın.",
+    "tags": [
+      "vegan",
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Pilavlık bulgur",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şevketibostan",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Şevketibostanı temizleyin ve 5 dakika haşlayıp süzün.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı yağda 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bulgur ve domatesi ekleyip 2 dakika kavurun.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Şevketibostan ve sıcak suyu katın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pilavı 15 dakika kısık ateşte pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "10 dakika dinlendirin, bulgur otu ezmeden şişsin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "sevketibostanli-tavuk-sote-aydin-usulu",
+    "title": "Şevketibostanlı Tavuk Sote",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Aydın usulü şevketibostanlı tavuk sote, tavuk parçalarını dikenli ot ve limonla buluşturarak hafif ekşi, sulu ve Ege akşamına uygun bir ana yemek yapar.",
+    "prepMinutes": 16,
+    "cookMinutes": 18,
+    "totalMinutes": 34,
+    "servingCount": 4,
+    "averageCalories": 286,
+    "protein": 25,
+    "carbs": 10,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Şevketibostanı ön haşlamak tencerede daha yumuşak bir doku verir.",
+    "servingSuggestion": "Pirinç pilavı veya buharı çekmiş bulgurla birlikte, yanında limonlu yeşillik karışımıyla tamamlayın.",
+    "tags": [
+      "yuksek-protein",
+      "tek-tencere"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Tavuk göğsü",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Şevketibostan",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuğu kuşbaşı doğrayın, şevketibostanı temizleyip 4 cm kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavuğu tavada 6 dakika soteleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğanı ekleyip 4 dakika yumuşatın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Şevketibostanı ve az sıcak suyu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Limonla birlikte 8 dakika pişirin, ot diri kalıp acılaşmasın.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "sezar-salata",
+    "title": "Sezar Salata",
+    "cuisine": "us",
+    "type": "SALATA",
+    "description": "Marul, tavuk, kruton ve parmesanla hazırlanan klasik Sezar salata.",
+    "prepMinutes": 20,
+    "cookMinutes": 12,
+    "totalMinutes": 32,
+    "servingCount": 2,
+    "averageCalories": 520,
+    "protein": 35,
+    "carbs": 25,
+    "fat": 32,
+    "isFeatured": true,
+    "tipNote": "Marulu yıkadıktan sonra tamamen kurutun; ıslak yaprak sosu tutmaz.",
+    "servingSuggestion": "Ana öğün olarak soğuk servis edin.",
+    "tags": [
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA",
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk göğsü",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Marul",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ekmek",
+        "amount": "2",
+        "unit": "dilim",
+        "group": null
+      },
+      {
+        "name": "Parmesan peyniri",
+        "amount": "50",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Mayonez",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": "Sos için"
+      },
+      {
+        "name": "Hardal",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": "Sos için"
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": "Sos için"
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": "Sos için"
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "1",
+        "unit": "diş",
+        "group": "Sos için"
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Marulu yıkayıp iyice kurutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Krutonları 190°C fırında 8 dakika kızartın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sezar sosunu ayrı kapta hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Marul, kruton ve sosu servis öncesi karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Salatayı hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sfenj",
+    "title": "Sfenj",
+    "cuisine": "ma",
+    "type": "ATISTIRMALIK",
+    "description": "Sfenj, sulu mayalı hamurun halka biçiminde kızartıldığı ve dışı çıtır bırakılan Kuzey Afrika sokak hamurudur.",
+    "prepMinutes": 20,
+    "cookMinutes": 15,
+    "totalMinutes": 35,
+    "servingCount": 6,
+    "averageCalories": 248,
+    "protein": 5,
+    "carbs": 36,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Hamurun ele yapışan yumuşak kıvamı sfenjin içinin boşluklu çıkmasını sağlar.",
+    "servingSuggestion": "Dışı çıtırken sıcak servis edin.",
+    "tags": [
+      "vegan",
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kuru maya",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "320",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Ayçiçek yağı",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, maya, şeker, tuz ve suyu kaşıkla 5 dakika yapışkan hamur olana kadar karıştırın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 45 dakika mayalandırın, hacmi artsın ve içi gözenekli olsun.",
+        "timerSeconds": 2700
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ellerinizi yağlayıp hamurdan parçalar koparın ve ortasını açarak halka yapın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "170°C yağda halkaları toplam 6 dakika iki yüzü kızarana kadar kızartın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Halkaları tel üzerinde 3 dakika süzdürüp sıcak servis edin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "shakshuka-yumurta",
+    "title": "Shakshuka Yumurta",
+    "cuisine": "ma",
+    "type": "KAHVALTI",
+    "description": "Domatesli biber sosunda yumurtaların piştiği Orta Doğu kahvaltısı.",
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "totalMinutes": 30,
+    "servingCount": 3,
+    "averageCalories": 260,
+    "protein": 12,
+    "carbs": 12,
+    "fat": 18,
+    "isFeatured": true,
+    "tipNote": "Yumurtaları sos koyulaştıktan sonra kırın; beyazlar dağılmadan pişer.",
+    "servingSuggestion": "Taze ekmekle sıcak servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "YUMURTA",
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Yumurta",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kırmızı biber",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ekmek",
+        "amount": "4",
+        "unit": "dilim",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Shakshuka Yumurta için malzemeleri ölçüp ayrı kaplara alın, sıcak adımlarda arama yapılmasın diye tezgahı düzenleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan, biber ve sarımsağı zeytinyağında 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Domatesleri ekleyip sosu 10 dakika koyulaştırın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yumurtaları kırıp kapak kapalı şekilde 5 dakika pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Shakshuka Yumurta son dokusunu kontrol edip tabaklayın, sıcak servis dokuyu korur.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "shanghai-xiaolongbao-domuzlu",
+    "title": "Şanghay Xiaolongbao",
+    "cuisine": "cn",
+    "type": "YEMEK",
+    "description": "Xiaolongbao, ince hamurun içine domuz kıyması ve jelatinleşmiş et suyunu kapatıp buharda pişiren Şanghay mantısıdır.",
+    "prepMinutes": 70,
+    "cookMinutes": 25,
+    "totalMinutes": 125,
+    "servingCount": 6,
+    "averageCalories": 360,
+    "protein": 18,
+    "carbs": 42,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Et suyu jölesini tam soğutmak mantıları kapatırken sıvının akmasını önler.",
+    "servingSuggestion": "Siyah üzüm sirkesi, ince zencefil ve sıcak çayla hemen servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "butce-dostu"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SOYA",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sıcak su",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğuk su",
+        "amount": "0.33",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Domuz kıyma",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Et suyu jölesi",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Taze zencefil",
+        "amount": "25",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Taze soğan",
+        "amount": "4",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Susam yağı",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Üzüm sirkesi",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Unu sıcak suyla karıştırıp soğuk suyu azar azar ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 8 dakika yoğurup 30 dakika dinlendirin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Domuz kıyma, zencefil, taze soğan, soya sosu, susam yağı ve tuzu karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Et suyu jölesini küçük küpler halinde doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Jöleyi kıymalı harca nazikçe katın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Hamuru küçük bezelere ayırıp ince yuvarlaklar açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Her yufkaya harç koyup üstünü pileli kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 8,
+        "instruction": "Xiaolongbao mantılarını yağlı kağıt üstünde 8-10 dakika buharda pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 9,
+        "instruction": "Üzüm sirkesi ve zencefille sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "shawarma-pilavi",
+    "title": "Shawarma Pilavı",
+    "cuisine": "me",
+    "type": "YEMEK",
+    "description": "Orta Doğu baharatlı tavuk parçaları, pirinç ve sarımsaklı yoğurtla doyurucu bir tabak kurar.",
+    "prepMinutes": 25,
+    "cookMinutes": 35,
+    "totalMinutes": 90,
+    "servingCount": 4,
+    "averageCalories": 540,
+    "protein": 30,
+    "carbs": 58,
+    "fat": 20,
+    "isFeatured": false,
+    "tipNote": "Tavuğu pişirmeden önce kağıt havluyla iyice kurulamak dış yüzeyin kızarmasını sağlar. Tavuğu ince şerit kesin; 30 dakika bekleme pilav üstünde kuru kalmasını azaltır.",
+    "servingSuggestion": "Pirinç pilavı veya buharı çekmiş bulgurla birlikte, yanında limonlu yeşillik karışımıyla tamamlayın.",
+    "tags": [
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk but",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kimyon",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuğu baharat, yoğurt ve limonla 15 dakika marine edin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinci yıkayın ve pilav için tereyağında 2 dakika çevirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sıcak suyu ekleyip pilavı 20 dakika pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tavuğu tavada 12 dakika pişirin, marinasyon içte çiğ tat bırakmasın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tavuğu 3 dakika dinlendirin, sonra dilimleyin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Pilavın üzerine tavuğu alın, yoğurtlu sosu sıcak pilavı sulandırmasın diye yanında verin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "shchi",
+    "title": "Shchi",
+    "cuisine": "ru",
+    "type": "CORBA",
+    "description": "Rus lahana çorbası, et suyu ve kök sebzelerle sade ama derin bir kış kasesidir.",
+    "prepMinutes": 20,
+    "cookMinutes": 70,
+    "totalMinutes": 90,
+    "servingCount": 6,
+    "averageCalories": 140,
+    "protein": 7,
+    "carbs": 15,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Eti ocaktan aldıktan sonra alüminyum folyoyla örtüp 5 dakika dinlendirmek suları eşit dağıtır.",
+    "servingSuggestion": "Taze doğranmış dereotu ve bir damla zeytinyağıyla sunum kurun, yanına kıtır ekmek iliştirin.",
+    "tags": [
+      "kis-tarifi"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Lahana",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Dana eti",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Havuç",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Dana etini suyla tencereye alın ve 45 dakika haşlayın.",
+        "timerSeconds": 2700
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lahana, havuç ve patatesi doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sebzeleri et suyuna ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Çorbayı 25 dakika pişirin, lahana lifleri diri kalmasın.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Eti didikleyip çorbaya geri alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Ekşi krema ve dereotuyla sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "shepherds-pie-ingiliz-usulu",
+    "title": "İngiliz Shepherd's Pie",
+    "cuisine": "gb",
+    "type": "YEMEK",
+    "description": "İngiliz shepherd's pie, kıymalı harcı patates püresi altında fırınlayarak yumuşak, sıcak ve doyurucu bir ev yemeği çıkarır.",
+    "prepMinutes": 22,
+    "cookMinutes": 35,
+    "totalMinutes": 57,
+    "servingCount": 6,
+    "averageCalories": 338,
+    "protein": 18,
+    "carbs": 23,
+    "fat": 18,
+    "isFeatured": true,
+    "tipNote": "Püreyi ince çatalla çizmek üstte daha iyi renk alır.",
+    "servingSuggestion": "Kenara közlenmiş biber ve ince dilimlenmiş limon koyarak ev sofrası tabağı kurgulayın.",
+    "tags": [
+      "misafir-sofrasi",
+      "firinda"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuzu kıyma",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "30",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesleri tuzlu suda 18 dakika haşlayın.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Patatesi süt ve tereyağıyla ezin, püreyi sıcak tutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kıymayı soğanla 8 dakika kavurun.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Domates salçası ve bezelyeyi ekleyip 5 dakika pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kıymalı harcı kaba yayın, üstünü püreyle kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "200°C fırında 25 dakika pişirin ve 8 dakika dinlendirin, püre keserken kaymasın.",
+        "timerSeconds": 1980
+      }
+    ]
+  },
+  {
+    "slug": "shire-toffee-puding-ingiliz-usulu",
+    "title": "Shire Toffee Puding",
+    "cuisine": "gb",
+    "type": "TATLI",
+    "description": "Shire toffee puding, hurmalı yumuşak kek dokusunu sıcak toffee sosuyla birleştirerek Britanya tatlı geleneğinde çok sevilen yoğun bir kapanış sunar.",
+    "prepMinutes": 20,
+    "cookMinutes": 30,
+    "totalMinutes": 50,
+    "servingCount": 8,
+    "averageCalories": 268,
+    "protein": 4,
+    "carbs": 38,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Kekin üstüne sosu fırından çıkar çıkmaz dökmek içe daha iyi çekmesini sağlar.",
+    "servingSuggestion": "Shire toffee pudingi sıcak dilimleyip kremalı sosu hurmalı kekin üstünden gezdirerek sunun.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Hurma",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Esmer şeker",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Hurmaları sıcak suda 15 dakika yumuşatıp ezin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Shire puding hamurunu hurma püresiyle karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Shire puding harcını kalıba döküp yüzeyi düzeltin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Keki 180°C fırında 25 dakika pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kremalı toffee sosu 4 dakika kaynatın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Sosu sıcak kekin üstüne dökün, içi kuru kalmasın diye.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "shirley-temple",
+    "title": "Shirley Temple",
+    "cuisine": "us",
+    "type": "ICECEK",
+    "description": "Grenadin ve zencefilli gazozla hazırlanan Shirley Temple, alkolsüz klasik Amerikan bar içeceklerinden biridir.",
+    "prepMinutes": 5,
+    "cookMinutes": 0,
+    "totalMinutes": 5,
+    "servingCount": 1,
+    "averageCalories": 104,
+    "protein": 0,
+    "carbs": 26,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Gazı kaçmaması için karışımı bardakta hafifçe çevirin, çalkalamayın.",
+    "servingSuggestion": "Buz ve kokteyl kirazıyla servis edin.",
+    "tags": [
+      "alkolsuz",
+      "yaz-tarifi",
+      "cocuk-dostu",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Zencefilli gazoz",
+        "amount": "200",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Grenadin",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kokteyl kirazı",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bardağı buzla doldurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Gazoz ve grenadini ekleyip hafifçe karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kokteyl kirazıyla tamamlayıp servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "shish-barak",
+    "title": "Shish Barak",
+    "cuisine": "me",
+    "type": "YEMEK",
+    "description": "Shish barak, küçük etli mantıların sarımsaklı yoğurt sosunda piştiği, Levant mutfağında hem çorba hem ana yemek hissi taşıyan geleneksel bir tencere işidir.",
+    "prepMinutes": 35,
+    "cookMinutes": 25,
+    "totalMinutes": 60,
+    "servingCount": 6,
+    "averageCalories": 304,
+    "protein": 14,
+    "carbs": 24,
+    "fat": 16,
+    "isFeatured": false,
+    "tipNote": "Mantıları yoğurt sosuna almadan önce kısa fırınlamak açılmadan form tutmalarını kolaylaştırır.",
+    "servingSuggestion": "Shish barak mantılarını yoğurtlu sosuyla birlikte derin tabağa alıp sarımsaklı yüzeyi parlak bırakın.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Su",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Kıyma",
+        "amount": "250",
+        "unit": "gr",
+        "group": "İç için"
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": "Sos için"
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "3",
+        "unit": "diş",
+        "group": "Sos için"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Hamuru yoğurun ve küçük yuvarlaklar kesmeden önce 20 dakika dinlendirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kıymalı iç harcı soğanla 5 dakika kavurun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamur yuvarlaklarını doldurup mantı gibi kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Mantıları 190°C fırında 10 dakika hafif kurutun.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yoğurtlu sosu kısık ateşte ısıtın, sürekli karıştırın ki kesilmesin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Mantıları sosun içinde 8 dakika pişirin.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "shish-tawook",
+    "title": "Shish Tawook",
+    "cuisine": "me",
+    "type": "YEMEK",
+    "description": "Shish tawook, yoğurt, limon ve sarımsakla marine edilen tavuk şişlerin ızgara halidir.",
+    "prepMinutes": 35,
+    "cookMinutes": 15,
+    "totalMinutes": 170,
+    "servingCount": 4,
+    "averageCalories": 330,
+    "protein": 36,
+    "carbs": 8,
+    "fat": 17,
+    "isFeatured": false,
+    "tipNote": "Tavuğu 2 saat marine edin; yoğurt eti yumuşatır. Tavuğu 2 saat buzdolabında bekletin; şişe dizerken fazla marinadı hafifçe sıyırın.",
+    "servingSuggestion": "Toum, lavaş ve sumaklı soğanla servis edin.",
+    "tags": [
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk göğsü",
+        "amount": "800",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "200",
+        "unit": "gr",
+        "group": "Marine için"
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": "Marine için"
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "4",
+        "unit": "diş",
+        "group": "Marine için"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuğu iri küp doğrayın, yoğurt, limon, sarımsak ve baharatla karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavuğu 2 saat buzdolabında marine edin.",
+        "timerSeconds": 7200
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tavukları şişlere aralıklı dizin, parçalar birbirini çiğ bırakmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Izgarayı ısıtın ve şişleri 15 dakika çevirerek pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Şişleri 4 dakika dinlendirin.",
+        "timerSeconds": 240
+      }
+    ]
+  },
+  {
+    "slug": "shoyu-ramen",
+    "title": "Shoyu Ramen",
+    "cuisine": "jp",
+    "type": "CORBA",
+    "description": "Tokyo usulü soya soslu ramen, tavuk suyu, erişte ve yumurtayla derin ama dengeli bir kase sunar.",
+    "prepMinutes": 35,
+    "cookMinutes": 90,
+    "totalMinutes": 125,
+    "servingCount": 4,
+    "averageCalories": 520,
+    "protein": 24,
+    "carbs": 62,
+    "fat": 17,
+    "isFeatured": true,
+    "tipNote": "Erişteyi ayrı haşlayın; çorba içinde beklerse nişasta suyu bulanıklaştırır.",
+    "servingSuggestion": "Yumurta, taze soğan ve noriyle servis edin.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SOYA",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Ramen eriştesi",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tavuk suyu",
+        "amount": "6",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Taze soğan",
+        "amount": "4",
+        "unit": "dal",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuk suyunu soya sosuyla orta ateşte 30 dakika kaynatın.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yumurtaları 7 dakika haşlayıp soğuk suya alın.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Erişteyi ayrı tencerede 4 dakika haşlayın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kaselere önce shoyu tabanı, sonra sıcak suyu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Erişteyi kaseye alın, fazla bekletmeyin ki hamurlaşmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Yumurta ve garnitürlerle sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sicak-cikolata",
+    "title": "Sıcak Çikolata",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Kakao, bitter çikolata ve sütle hazırlanan yoğun kıvamlı sıcak içecek.",
+    "prepMinutes": 5,
+    "cookMinutes": 8,
+    "totalMinutes": 13,
+    "servingCount": 2,
+    "averageCalories": 260,
+    "protein": 8,
+    "carbs": 32,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Çikolatayı ocaktan aldıktan sonra ekleyin; doğrudan kaynarsa tadı acılaşır.",
+    "servingSuggestion": "Üzerine rendelenmiş çikolata serperek servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti",
+      "kis-tarifi"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "500",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Kakao",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Bitter çikolata",
+        "amount": "60",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Nişasta",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Süt, kakao, şeker ve nişastayı tencerede çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Orta ateşte 6-8 dakika koyulaşana kadar pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ocaktan alın ve doğranmış çikolatayı ekleyip eriyene kadar karıştırın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sicak-elma-punch",
+    "title": "Sıcak Elma Punch",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Kış pazarlarını andıran tarçınlı elma suyu; karanfil ve portakal kabuğu bardakta ısınır.",
+    "prepMinutes": 5,
+    "cookMinutes": 15,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 110,
+    "protein": 0,
+    "carbs": 27,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Kaynatmak yerine hafif ateşte tutun; elma aroması taze kalır.",
+    "servingSuggestion": "Elma dilimi ve tarçın çubuğuyla servis edin.",
+    "tags": [
+      "vegan",
+      "alkolsuz",
+      "kis-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Elma suyu",
+        "amount": "1",
+        "unit": "litre",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "2",
+        "unit": "çubuk",
+        "group": null
+      },
+      {
+        "name": "Karanfil",
+        "amount": "5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Portakal kabuğu",
+        "amount": "2",
+        "unit": "şerit",
+        "group": null
+      },
+      {
+        "name": "Akçaağaç şurubu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Elma suyu, tarçın, karanfil ve portakal kabuğunu tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "15 dakika hafif ateşte ısıtın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Süzüp sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sichuan-dan-dan-noodle",
+    "title": "Sichuan Dan Dan Noodle",
+    "cuisine": "cn",
+    "type": "YEMEK",
+    "description": "Dan dan noodle, buğday eriştesini Sichuan biberli acı yağ, susam ezmesi, soya sosu ve kıymalı çıtır harçla buluşturur.",
+    "prepMinutes": 20,
+    "cookMinutes": 18,
+    "totalMinutes": 38,
+    "servingCount": 4,
+    "averageCalories": 560,
+    "protein": 24,
+    "carbs": 62,
+    "fat": 24,
+    "isFeatured": false,
+    "tipNote": "Erişte suyundan birkaç kaşık eklemek sosu parlak ve akışkan tutar.",
+    "servingSuggestion": "Taze soğan, salatalık şeridi ve ekstra Sichuan yağıyla sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "tek-tencere"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SOYA",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Buğday eriştesi",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Dana kıyma",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Sichuan biberi",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Acı biber yağı",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Susam ezmesi",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Siyah sirke",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Taze soğan",
+        "amount": "4",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Salatalık",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Sichuan biberini tavada 1 dakika kokulandırıp ezin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kıymayı tavada 7 dakika çıtırlaşana kadar kavurun.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soya sosu, siyah sirke, susam ezmesi ve acı yağı çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Erişteyi tuzlu suda 5 dakika haşlayın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sostan kaselere paylaştırıp birkaç kaşık erişte suyu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Erişteyi sosla harmanlayıp üstüne kıymalı harcı koyun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Taze soğan ve salatalıkla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sichuan-kung-pao-tavuk",
+    "title": "Sichuan Kung Pao Tavuk",
+    "cuisine": "cn",
+    "type": "YEMEK",
+    "description": "Kung pao tavuk, kuşbaşı tavuğu kuru chili, Sichuan biberi, soya sosu ve yer fıstığıyla wokta hızlı çeviren acı tatlı yemektir.",
+    "prepMinutes": 15,
+    "cookMinutes": 10,
+    "totalMinutes": 35,
+    "servingCount": 4,
+    "averageCalories": 420,
+    "protein": 32,
+    "carbs": 18,
+    "fat": 25,
+    "isFeatured": false,
+    "tipNote": "Tavuğu küçük doğramak yüksek ateşte kurumadan pişmesini sağlar. Sosu hazırlarken tavuk dinlensin; bu süre nişastanın yüzeye yapışması için yeterlidir.",
+    "servingSuggestion": "Buharda jasmin pirinci ve salatalık dilimleriyle servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "SOYA",
+      "YER_FISTIGI"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk but kuşbaşı",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Siyah sirke",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kuru chili",
+        "amount": "10",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sichuan biberi",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yer fıstığı",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "3",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Mısır nişastası",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuğu soya sosu ve nişastayla 10 dakika marine edin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soya sosu, sirke, şeker ve az suyla sos hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Woku yüksek ateşte ısıtıp kuru chili ve Sichuan biberini 30 saniye çevirin.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tavuğu ekleyip 5 dakika mühürleyerek pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sarımsak ve sosu ekleyip 2 dakika koyulaştırın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Yer fıstığını son anda katıp karıştırın ve servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sichuan-mapo-tofu",
+    "title": "Sichuan Mapo Tofu",
+    "cuisine": "cn",
+    "type": "YEMEK",
+    "description": "Mapo tofu, yumuşak tofuyu doubanjiang, Sichuan biberi, sarımsak ve az kıymalı sosla kısa sürede pişiren uyuşturucu acılıktaki yemektir.",
+    "prepMinutes": 15,
+    "cookMinutes": 12,
+    "totalMinutes": 27,
+    "servingCount": 3,
+    "averageCalories": 310,
+    "protein": 19,
+    "carbs": 14,
+    "fat": 20,
+    "isFeatured": false,
+    "tipNote": "Tofuyu tuzlu suda kısa bekletmek tencerede kırılmadan ısınmasına yardım eder.",
+    "servingSuggestion": "Buharda pirinç ve salatalık turşusuyla sıcak servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "SOYA"
+    ],
+    "ingredients": [
+      {
+        "name": "Yumuşak tofu",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Dana kıyma",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Doubanjiang",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sichuan biberi",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "3",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zencefil",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Mısır nişastası",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tofuyu 2 cm küpler kesip tuzlu sıcak suda 5 dakika bekletin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sichuan biberini kuru tavada 1 dakika kokusu çıkana kadar çevirip ezin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kıymayı wokta 3 dakika kavurun.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sarımsak, zencefil ve doubanjiang ekleyip 1 dakika kavurun.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Soya sosu ve yarım su bardağı suyu ekleyip kaynatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tofuyu sosa alıp 4 dakika nazikçe pişirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Nişastalı suyla sosu bağlayıp Sichuan biberiyle bitirin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sichuan-yesil-fasulye",
+    "title": "Sichuan Yeşil Fasulye",
+    "cuisine": "cn",
+    "type": "YEMEK",
+    "description": "Sichuan tavalarında kabaran yeşil fasulye, sarımsak ve acı biberle keskin bir garnitüre döner.",
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "totalMinutes": 22,
+    "servingCount": 4,
+    "averageCalories": 140,
+    "protein": 4,
+    "carbs": 10,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Fasulyeleri tavada tek kat yayın; kabukları buruşurken içleri canlı kalır.",
+    "servingSuggestion": "Pirinç pilavı ve tofu yemekleriyle sunun.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SOYA",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Yeşil fasulye",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "4",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Susam yağı",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Acı biber",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yeşil fasulyeleri kurulayın, sarımsak ve acı biberi hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Fasulyeleri kızgın tavada 7 dakika soteleyin, yüzey buruşsun ve içi sulu kalmasın.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Fasulye kabarcık görünüm alınca sarımsak ve acı biberi ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "2 dakika çevirin, sarımsak yanmasın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Soya sosu ve susam yağını ekleyip 1 dakika pişirin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Hemen servis edin, fasulye beklerse çıtırlığını kaybeder.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sicilya-caponata-patlicanli",
+    "title": "Sicilya Caponata",
+    "cuisine": "it",
+    "type": "APERATIF",
+    "description": "Caponata, patlıcan, domates, kereviz, kapari, zeytin, kuru üzüm ve üzüm sirkesini tatlı ekşi Sicilya mezesinde toplar.",
+    "prepMinutes": 30,
+    "cookMinutes": 55,
+    "totalMinutes": 85,
+    "servingCount": 6,
+    "averageCalories": 240,
+    "protein": 5,
+    "carbs": 22,
+    "fat": 15,
+    "isFeatured": false,
+    "tipNote": "Caponatayı ılık dinlendirmek sirke, zeytin ve patlıcan tadını dengeler.",
+    "servingSuggestion": "Kızarmış ekmek ve fesleğenle oda sıcaklığında servis edin.",
+    "tags": [
+      "vegan",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "KEREVIZ",
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Patlıcan",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kereviz sapı",
+        "amount": "3",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kapari",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yeşil zeytin",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru üzüm",
+        "amount": "0.33",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Üzüm sirkesi",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ekmek dilimi",
+        "amount": "6",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patlıcanları 2 cm küpler halinde doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Patlıcanları zeytinyağında 15 dakika yumuşayana kadar pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğan ve kereviz sapını aynı tencerede 6 dakika kavurun.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Domatesleri ekleyip 10 dakika sos gibi pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Patlıcan, kapari, zeytin, kuru üzüm, sirke ve şekeri ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Caponatayı kapağı kapalı 20 dakika kısık ateşte pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Ilık dinlendirip kızarmış ekmekle servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sidecar",
+    "title": "Sidecar",
+    "cuisine": "fr",
+    "type": "KOKTEYL",
+    "description": "Paris ve Londra bar mirasının brendi, portakal likörü ve limonla kurduğu keskin klasik.",
+    "prepMinutes": 5,
+    "cookMinutes": 0,
+    "totalMinutes": 5,
+    "servingCount": 1,
+    "averageCalories": 190,
+    "protein": 0,
+    "carbs": 10,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Kadeh kenarındaki şekeri ince tutun; kokteyli ağırlaştırmaz.",
+    "servingSuggestion": "Şekerli kenarlı coupe kadehte servis edin.",
+    "tags": [
+      "alkollu",
+      "30-dakika-alti",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Brendi",
+        "amount": "50",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Portakal likörü",
+        "amount": "25",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "20",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Sidecar karışımına başlamadan bardağı soğutun, aromalar ısınmadan dengede kalsın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sidecar kadeh kenarını limonla ıslatıp şekere batırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sidecar brendi, portakal likörü ve limonu buzla 12 saniye çalkalayın.",
+        "timerSeconds": 12
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sidecar karışımını soğuk kadehe süzün, şekerli kenar bozulmasın, böylece buz erirse denge bozulmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sidney-lamington",
+    "title": "Sidney Lamington",
+    "cuisine": "au",
+    "type": "TATLI",
+    "description": "Lamington, sünger keki çikolata sosuna batırıp Hindistan ceviziyle kaplayan sevilen bir Avustralya çay saati tatlısıdır.",
+    "prepMinutes": 30,
+    "cookMinutes": 25,
+    "totalMinutes": 55,
+    "servingCount": 12,
+    "averageCalories": 280,
+    "protein": 5,
+    "carbs": 42,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Keki soğutup küp kesmek çikolata sosunda parçalanmasını önler.",
+    "servingSuggestion": "Çay veya kahve yanında oda sıcaklığında servis edin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kakao",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Hindistan cevizi",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yumurta ve şekeri 5 dakika köpürene kadar çırpın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Un ve eritilmiş tereyağını ekleyip kek harcı hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "180°C fırında 22-25 dakika sünger kek pişirin.",
+        "timerSeconds": 1410
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Soğuyan keki küp doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Küpleri kakaolu sosa batırıp Hindistan cevizine bulayın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sigara-boregi",
+    "title": "Sigara Böreği",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Çıtır çıtır, peynirli veya patatesli hazırlanan klasik Türk böreği.",
+    "prepMinutes": 20,
+    "cookMinutes": 15,
+    "totalMinutes": 35,
+    "servingCount": 4,
+    "averageCalories": 280,
+    "protein": 10,
+    "carbs": 24,
+    "fat": 16,
+    "isFeatured": true,
+    "tipNote": "Yufka ucunu suyla kapatın; kızarırken rulo açılmadan sıkı kalır.",
+    "servingSuggestion": "Yanına limon dilimi ve yoğurtlu dip koyup sıcak servis edin.",
+    "tags": [
+      "vejetaryen",
+      "cocuk-dostu"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Yufka",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Beyaz peynir",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "1",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Kızartma yağı",
+        "amount": "",
+        "unit": "",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Sigara Böreği ana malzemelerini ölçüp hazırlayın, pişecek parçaları eşit boyda doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sigara Böreği sosunu veya bağlayıcı harcını ayrı kapta 2 dakika pürüzsüz karıştırın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sigara Böreği parçalarını harçla birleştirin ve şekil verecek kıvama gelene kadar toparlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sigara Böreği orta ateşte veya fırında dışı kızarana kadar pişsin, kalabalık pişirme yapmayın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sigara Böreği 3 dakika dinlensin; sıcak veya ılık servis edin, dokusu gevrek kalsın.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "sigeumchi-namul",
+    "title": "Sigeumchi Namul",
+    "cuisine": "kr",
+    "type": "SALATA",
+    "description": "Kore sofralarında ıspanağı birkaç net dokunuşla parlatan susamlı banchan.",
+    "prepMinutes": 8,
+    "cookMinutes": 2,
+    "totalMinutes": 10,
+    "servingCount": 4,
+    "averageCalories": 70,
+    "protein": 3,
+    "carbs": 4,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Ispanağı haşladıktan sonra suyunu avuç içinde sıkın; sos yapraklara daha net tutunur.",
+    "servingSuggestion": "Soğuk banchan tabağı olarak servis edin.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "dusuk-kalorili",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SOYA",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Ispanak",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Susam yağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "1",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Susam",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ispanağı kaynar suda 90 saniye haşlayıp soğuk suya alın, sos dengesi bozulmasın diye fazla suyunu süzdürün.",
+        "timerSeconds": 90
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sigeumchi Namul malzemelerini lokmalık kesin ve fazla suyunu süzdürün, sos tabakta incelmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sigeumchi Namul sosu için zeytinyağını limon suyu ve tuzla çırpın, sigeumchi tadı öne çıksın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sigeumchi Namul ana malzemelerini sosla 1 dakika ezmeden harmanlayın, parçalar dağılmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sigeumchi Namul salatasını servis tabağına alın ve sos parlakken sofraya çıkarın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "siirt-buryan-kebabi",
+    "title": "Siirt Büryan Kebabı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Siirt'te kuzu eti kuyuda uzun pişer; ev versiyonunda kapalı fırın kabı aynı sade lezzeti yakalar.",
+    "prepMinutes": 20,
+    "cookMinutes": 180,
+    "totalMinutes": 200,
+    "servingCount": 6,
+    "averageCalories": 510,
+    "protein": 37,
+    "carbs": 4,
+    "fat": 35,
+    "isFeatured": false,
+    "tipNote": "Eti kemikli kullanın; uzun pişirme sırasında suyuna daha dolgun lezzet geçer.",
+    "servingSuggestion": "Tandır ekmeği ve sumaklı soğanla servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Kemikli kuzu eti",
+        "amount": "1.5",
+        "unit": "kg",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tandır ekmeği",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuzu etini tuz ve karabiberle ovun, 20 dakika oda sıcaklığında bekletin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kapalı fırın kabına az su ekleyin ve eti yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "160°C fırında 3 saat pişirin.",
+        "timerSeconds": 10800
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Eti 15 dakika dinlendirin, lifler keserken dağılmasın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Et suyunu ekmeğe gezdirin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "siirt-fistikli-perde-pilavi",
+    "title": "Siirt Fıstıklı Perde Pilavı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Perde pilavı, badem ve Antep fıstıklı tavuklu iç pilavı ince hamurla kaplayıp fırında kızartan görkemli Siirt yemeğidir.",
+    "prepMinutes": 50,
+    "cookMinutes": 55,
+    "totalMinutes": 105,
+    "servingCount": 8,
+    "averageCalories": 640,
+    "protein": 26,
+    "carbs": 72,
+    "fat": 28,
+    "isFeatured": true,
+    "tipNote": "Kalıbı yağlayıp kuruyemişleri dizmek perde pilavının düzgün çıkmasını sağlar.",
+    "servingSuggestion": "Ters çevirip dilimleyin, yanında ayranla sıcak servis edin.",
+    "tags": [
+      "firinda",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Pirinç",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tavuk eti",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Badem",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Antep fıstığı",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuğu haşlayıp didikleyin, suyunu pilav için ayırın.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinci tereyağında kavurup tavuk suyuyla 12 dakika pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tavuk, badem ve Antep fıstığını pilava karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Un, yumurta, yoğurt ve tereyağıyla yumuşak hamur yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kalıba hamuru serip pilavı doldurun ve üstünü kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "180°C fırında 35-40 dakika hamur kızarana kadar pişirin.",
+        "timerSeconds": 2400
+      }
+    ]
+  },
+  {
+    "slug": "siirt-kitel",
+    "title": "Siirt Kitel",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Siirt kiteli, ince bulgurlu dışı ve kıymalı içiyle haşlanarak pişen iri bir yöresel köftedir.",
+    "prepMinutes": 75,
+    "cookMinutes": 25,
+    "totalMinutes": 100,
+    "servingCount": 6,
+    "averageCalories": 430,
+    "protein": 23,
+    "carbs": 48,
+    "fat": 15,
+    "isFeatured": false,
+    "tipNote": "Dış harcı avuç içinde ince açın; kalın dış kabuk iç harcın tadını bastırır.",
+    "servingSuggestion": "Sarımsaklı yoğurt ve sumakla servis edin.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "İnce bulgur",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": "Dış için"
+      },
+      {
+        "name": "İrmik",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": "Dış için"
+      },
+      {
+        "name": "Dana kıyma",
+        "amount": "450",
+        "unit": "gr",
+        "group": "İç için"
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": "İç için"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bulgur ve irmiği sıcak suyla 20 dakika ıslatın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kıymalı içi soğanla 8 dakika kavurun.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bulgurlu hamuru 6 dakika yoğurun, çatlamasın diye elinizi ıslatın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamurdan parçalar açın, iç harcı koyup kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kitelleri kaynar suda 25 dakika haşlayın, bulgur kabuğu iç harcı çiğ bırakmasın.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Süzüp tereyağı veya yoğurtla sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "siirt-mini-kalipta-perde-pilavi",
+    "title": "Siirt Mini Kalıpta Perde Pilavı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Siirt mini kalıpta perde pilavı, tavuklu bademli iç pilavı ince hamurla kapatıp porsiyonluk, çıtır kabuklu bir misafir yemeğine dönüştürür.",
+    "prepMinutes": 55,
+    "cookMinutes": 48,
+    "totalMinutes": 103,
+    "servingCount": 6,
+    "averageCalories": 610,
+    "protein": 28,
+    "carbs": 72,
+    "fat": 24,
+    "isFeatured": true,
+    "tipNote": "Kalıpları bol yağlamak perde pilavının ters çevrilirken yırtılmasını önler.",
+    "servingSuggestion": "Ayran ve mevsim salatasıyla sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "firinda"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Pirinç",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış tavuk",
+        "amount": "350",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Badem",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pirinci 20 dakika tuzlu suda bekletip süzün.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bademleri tereyağında 3 dakika hafifçe kavurun.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinç, tavuk ve baharatla diri bir iç pilav hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Un, yumurta ve yoğurtla hamur yoğurup ince açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kalıpları hamurla kaplayıp pilavı doldurun ve 180°C fırında 35-40 dakika pişirin.",
+        "timerSeconds": 2250
+      }
+    ]
+  },
+  {
+    "slug": "sikhye",
+    "title": "Sikhye",
+    "cuisine": "kr",
+    "type": "ICECEK",
+    "description": "Kore'de yemek sonrası içilen sikhye, malt suyunun pirinçle verdiği hafif tatlı ve serin bir içecektir.",
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "totalMinutes": 45,
+    "servingCount": 6,
+    "averageCalories": 90,
+    "protein": 0,
+    "carbs": 22,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Pirinç taneleri yüzeye çıkmaya başladığında sikhye klasik görünümünü kazanır; bu aşamayı kaçırmayın.",
+    "servingSuggestion": "Buzdolabında 1 saat soğutup birkaç çam fıstığıyla bardakta servis edin.",
+    "tags": [
+      "alkolsuz",
+      "yaz-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Pişmiş pirinç",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Malt tozu",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1.5",
+        "unit": "litre",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Malt tozunu ılık suda çözdürüp 10 dakika dinlendirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sıvıyı süzüp pirinçle birlikte 20 dakika ılık ortamda bekletin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Şeker ekleyip 10 dakika kaynatın, soğutup servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "silor-ardahan-usulu",
+    "title": "Ardahan Silor",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Ardahan siloru, fırınlanmış yufka rulolarını sarımsaklı yoğurt ve tereyağlı sosla yumuşatarak sofraya taşıyan Kuzeydoğu Anadolu işidir.",
+    "prepMinutes": 25,
+    "cookMinutes": 20,
+    "totalMinutes": 45,
+    "servingCount": 6,
+    "averageCalories": 256,
+    "protein": 8,
+    "carbs": 27,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Yufkaları kurutup sonra ısıtmak sosu verdiğinizde formunu tamamen kaybetmemesini sağlar.",
+    "servingSuggestion": "Üzerine pul biberli tereyağı gezdirerek sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Yufka",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "30",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pul biber",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yufkaları rulo yapıp parmak kalınlığında kesin ve tepsiye dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Siloru 190°C fırında 12 dakika kurutup hafif kızartın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sıcak suyu yufkaların üzerine azar azar gezdirin, hamurlaşmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yoğurt ve sarımsağı çırpıp sıcak yufkaların üstüne dökün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tereyağını pul biberle 2 dakika kızdırın.",
+        "timerSeconds": 120
+      }
+    ]
+  },
+  {
+    "slug": "simit-kebabi-gaziantep-usulu",
+    "title": "Simit Kebabı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Gaziantep simit kebabı, ince bulgur ve kıymanın yoğrulup şişe sarıldığı, köz tadına açık bir kebaptır.",
+    "prepMinutes": 25,
+    "cookMinutes": 15,
+    "totalMinutes": 40,
+    "servingCount": 4,
+    "averageCalories": 316,
+    "protein": 22,
+    "carbs": 18,
+    "fat": 16,
+    "isFeatured": false,
+    "tipNote": "Bulguru suya boğmayın; hafif nemlenen simit kebabı şişte daha iyi tutunur.",
+    "servingSuggestion": "Yanına maydanoz ve limon koyarak servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana kıyma",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "İnce bulgur",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "3",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Limon",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "İnce bulguru 10 dakika az suyla dinlendirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kıyma, bulgur, sarımsak, tuz ve baharatı 8 dakika yoğurun.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Harcı şişlere bastırarak sarın, boşluk kalmasın ki kebap düşmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Izgarayı yüksek ateşte ısıtın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kebabı 12 dakika çevirerek pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Maydanoz, sumaklı soğan ve limonla sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "simit-tost",
+    "title": "Simit Tost",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Simit tost, sokak simidini kaşar ve domatesle bastırıp daha çıtır ve daha tok bir kahvaltıya dönüştürür.",
+    "prepMinutes": 8,
+    "cookMinutes": 8,
+    "totalMinutes": 16,
+    "servingCount": 2,
+    "averageCalories": 360,
+    "protein": 16,
+    "carbs": 36,
+    "fat": 16,
+    "isFeatured": true,
+    "tipNote": "Simit içini çok doldurmayın; preslenirken peynir dışarı taşmaz.",
+    "servingSuggestion": "Yanına sıcak çayla servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "cocuk-dostu",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUSAM",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Simit",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kaşar peyniri",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Simit Tost akışında kullanılacak tava, kase ve spatulayı hazırlayın, pişirme başlayınca ritim bozulmasın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Simidi yatay kesip içini hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Peynir ve domatesi koyup tost makinesine alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Simitleri 5 dakika bastırarak kızartın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Simit Tost tamamlanınca 3 dakika dinlendirin, iç sıcaklık dengelensin diye sonra servis edin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "simsir-coregi-kirsehir-usulu",
+    "title": "Kırşehir Şimşir Çöreği",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Kırşehir şimşir çöreği, mayalı hamurun sade ama aromatik yapısıyla uzun kahvaltılarda paylaşılan, İç Anadolu'nun yumuşak ve tok çöreklerinden biridir.",
+    "prepMinutes": 25,
+    "cookMinutes": 25,
+    "totalMinutes": 50,
+    "servingCount": 8,
+    "averageCalories": 244,
+    "protein": 6,
+    "carbs": 32,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "İkinci mayayı 15 dakika vermek çöreğin fırında daha dengeli kabarmasını sağlar.",
+    "servingSuggestion": "Dilimleyip çay yanında ılık servis edin.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "60",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Instant maya",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kırşehir Şimşir Çöreği yapmadan önce kuru ve yaş malzemeleri ayırın, karıştırma aşaması temiz ilerlesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru yoğurup 20 dakika mayalandırın, simsir-coregi-kirsehir-usulu akışı için.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Çöreğe şekil verip 15 dakika daha dinlendirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Şimşir çöreğini 185°C fırında 25 dakika pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kırşehir Şimşir Çöreği yüzeyi parlakken sıcak servis edin, soğursa gevrek kenarlar yumuşar.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sinh-to-bo",
+    "title": "Sinh To Bo",
+    "cuisine": "vn",
+    "type": "ICECEK",
+    "description": "Vietnam avokado smoothie yoğun süt ve buzla kremamsı, serin bir içeceğe dönüşür.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "totalMinutes": 10,
+    "servingCount": 2,
+    "averageCalories": 260,
+    "protein": 4,
+    "carbs": 22,
+    "fat": 18,
+    "isFeatured": false,
+    "tipNote": "Soğuk servis edilecekse karışımı buzdolabında en az 2 saat dinlendirmek aromanın oturmasını sağlar.",
+    "servingSuggestion": "Sinh to bo'yu buzlu bardakta sunup avokadolu sütlü kıvamı pipetle içilecek yoğunlukta bırakın.",
+    "tags": [
+      "pratik",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Avokado",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "250",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Yoğunlaştırılmış süt",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Avokadoları ikiye bölüp çekirdeklerini çıkarın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Avokado, süt, yoğunlaştırılmış süt ve buzu blendera alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pürüzsüz kıvam alana kadar 45 saniye çekin.",
+        "timerSeconds": 45
+      }
+    ]
+  },
+  {
+    "slug": "sinh-to-xoai",
+    "title": "Sinh Tố Xoài",
+    "cuisine": "vn",
+    "type": "ICECEK",
+    "description": "Vietnam mango smoothie, olgun mango ve sütün pürüzsüz birleşimiyle serin ve yoğun bir içecek verir.",
+    "prepMinutes": 5,
+    "cookMinutes": 0,
+    "totalMinutes": 5,
+    "servingCount": 2,
+    "averageCalories": 246,
+    "protein": 5,
+    "carbs": 25,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Mangoyu önceden soğutursanız buz kullanmadan daha yoğun bir kıvam elde edilir.",
+    "servingSuggestion": "Soğuk bardakta birkaç mango küpüyle servis edin.",
+    "tags": [
+      "yaz-tarifi",
+      "pratik",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Mango",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğunlaştırılmış süt",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mango, süt ve yoğunlaştırılmış sütü blender kabına alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Buzu ekleyip karışım ipeksi olana kadar 20 saniye çekin.",
+        "timerSeconds": 20
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "İçeceği bardaklara döküp çok soğuk servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sini-koftesi",
+    "title": "Sini Köftesi",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Hatay sini köftesi, ince bulgur hamuru ve kıymalı içle tepside bastırılıp fırında kızarır.",
+    "prepMinutes": 55,
+    "cookMinutes": 35,
+    "totalMinutes": 90,
+    "servingCount": 8,
+    "averageCalories": 400,
+    "protein": 22,
+    "carbs": 28,
+    "fat": 22,
+    "isFeatured": false,
+    "tipNote": "Yağlı parçalar için eklenti yağa gerek yok, kendi yağıyla kızarır ve karamelize olur.",
+    "servingSuggestion": "Sini köftesini kare dilimleyip cevizli kıymalı içi bozulmadan sıcak tabağa alın.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "İnce bulgur",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Dana kıyma",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bulguru sıcak suyla 20 dakika dinlendirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kıyma, soğan ve cevizi 8 dakika kavurarak iç harcı hazırlayın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bulgurlu hamuru 6 dakika yoğurun, tepside çatlamasın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamurun yarısını yağlı tepsiye bastırın, iç harcı yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kalan hamurla üstünü kapatın ve dilim izleri verin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "190°C fırında 35 dakika pişirin.",
+        "timerSeconds": 2100
+      }
+    ]
+  },
+  {
+    "slug": "sinkonta-izmir-usulu",
+    "title": "Sinkonta",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "İzmir sinkonta, kabağı soğan ve salçayla ağır ağır pişirerek hafif tatlı, yumuşak dokulu ve ev tipi bir sebze yemeği çıkarır.",
+    "prepMinutes": 12,
+    "cookMinutes": 26,
+    "totalMinutes": 38,
+    "servingCount": 4,
+    "averageCalories": 132,
+    "protein": 3,
+    "carbs": 16,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Kabağı iri doğramak uzun pişirmede tamamen erimesini önler.",
+    "servingSuggestion": "Soğuk bekletip ertesi gün derin tabağa alıp üzerine taze fesleğen yaprağı ekleyerek servis edin.",
+    "tags": [
+      "tek-tencere",
+      "vegan",
+      "kis-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Balkabağı",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates salçası",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabağı iri dilimleyin, soğanı piyazlık doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı zeytinyağında 5 dakika çevirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Salça ve sarımsağı ekleyip 2 dakika kavurun.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kabakları tavaya alın, sosla kaplayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kısık ateşte 18 dakika pişirin, kabaklar fazla karışırsa dağılır.",
+        "timerSeconds": 1080
+      }
+    ]
+  }
+]

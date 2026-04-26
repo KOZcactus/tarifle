@@ -79,52 +79,11 @@ function parseBatchArg(): { batch: number; half: "a" | "b" } | null {
   return { batch: Number.parseInt(m[1], 10), half: m[2] as "a" | "b" };
 }
 
-async function main() {
-  const url = process.env.DATABASE_URL!;
-  if (!url) {
-    console.error("DATABASE_URL yok");
-    process.exit(1);
-  }
-  const prisma = new PrismaClient({
-    adapter: new PrismaNeon({ connectionString: url }),
-  });
-
-  const INFO = process.argv.includes("--info");
-  const parsed = parseBatchArg();
-
-  const total = await prisma.recipe.count({ where: { status: "PUBLISHED" } });
-  const totalSubBatch = Math.ceil(total / SIZE);
-  const totalMainBatch = Math.ceil(totalSubBatch / 2);
-  console.log(`Toplam PUBLISHED tarif: ${total}`);
-  console.log(`Sub-batch boyutu: ${SIZE}`);
-  console.log(`Toplam sub-batch: ${totalSubBatch} (1a-${totalMainBatch}b)`);
-  console.log(`Ana batch sayisi: ${totalMainBatch}`);
-
-  if (INFO) {
-    await prisma.$disconnect();
-    return;
-  }
-  if (!parsed) {
-    console.error("--batch Nx bayrağı zorunlu (örn: --batch 1a, --batch 2b)");
-    console.error("Veya --info ile özet al");
-    await prisma.$disconnect();
-    process.exit(1);
-  }
-
-  const { batch, half } = parsed;
-  // 1a -> sub-batch index 1, 1b -> 2, 2a -> 3, 2b -> 4
-  const subBatchIndex = (batch - 1) * 2 + (half === "a" ? 1 : 2);
-  if (subBatchIndex > totalSubBatch) {
-    console.error(`Sub-batch ${batch}${half} > toplam ${totalSubBatch}`);
-    await prisma.$disconnect();
-    process.exit(1);
-  }
-
-  const offset = (subBatchIndex - 1) * SIZE;
-  console.log(`Sub-batch ${batch}${half}: index ${subBatchIndex}, offset ${offset}, take ${SIZE}`);
-  console.log("");
-
-  // Alfabetik slug ASC, deterministik
+async function fetchBatchEntries(
+  prisma: PrismaClient,
+  offset: number,
+  size: number,
+): Promise<ModKInputEntry[]> {
   const recipes = await prisma.recipe.findMany({
     where: { status: "PUBLISHED" },
     select: {
@@ -157,10 +116,10 @@ async function main() {
     },
     orderBy: { slug: "asc" },
     skip: offset,
-    take: SIZE,
+    take: size,
   });
 
-  const entries: ModKInputEntry[] = recipes.map((r) => ({
+  return recipes.map((r) => ({
     slug: r.slug,
     title: r.title,
     cuisine: r.cuisine,
@@ -191,6 +150,93 @@ async function main() {
       timerSeconds: s.timerSeconds,
     })),
   }));
+}
+
+async function main() {
+  const url = process.env.DATABASE_URL!;
+  if (!url) {
+    console.error("DATABASE_URL yok");
+    process.exit(1);
+  }
+  const prisma = new PrismaClient({
+    adapter: new PrismaNeon({ connectionString: url }),
+  });
+
+  const INFO = process.argv.includes("--info");
+  const ALL = process.argv.includes("--all");
+  const SKIP_EXISTING = process.argv.includes("--skip-existing");
+  const parsed = parseBatchArg();
+
+  const total = await prisma.recipe.count({ where: { status: "PUBLISHED" } });
+  const totalSubBatch = Math.ceil(total / SIZE);
+  const totalMainBatch = Math.ceil(totalSubBatch / 2);
+  console.log(`Toplam PUBLISHED tarif: ${total}`);
+  console.log(`Sub-batch boyutu: ${SIZE}`);
+  console.log(`Toplam sub-batch: ${totalSubBatch} (1a-${totalMainBatch}b)`);
+  console.log(`Ana batch sayisi: ${totalMainBatch}`);
+
+  if (INFO) {
+    await prisma.$disconnect();
+    return;
+  }
+
+  if (ALL) {
+    // Tum sub-batch'leri tek PrismaClient ile uret. Mevcut --skip-existing
+    // ile zaten olan dosyalari atla (rerun maliyeti dusuk).
+    console.log("");
+    console.log(`--all modu: ${totalSubBatch} sub-batch icin input uretiliyor`);
+    if (SKIP_EXISTING) console.log("--skip-existing: mevcut dosyalar atlanir");
+    console.log("");
+    let written = 0;
+    let skipped = 0;
+    for (let idx = 1; idx <= totalSubBatch; idx++) {
+      const mainBatch = Math.ceil(idx / 2);
+      const halfChar = idx % 2 === 1 ? "a" : "b";
+      const batchKey = `${mainBatch}${halfChar}`;
+      const outPath = path.resolve(
+        process.cwd(),
+        `docs/mod-k-batch-${batchKey}-input.json`,
+      );
+      if (SKIP_EXISTING && fs.existsSync(outPath)) {
+        console.log(`SKIP ${batchKey} (zaten var)`);
+        skipped++;
+        continue;
+      }
+      const offset = (idx - 1) * SIZE;
+      const entries = await fetchBatchEntries(prisma, offset, SIZE);
+      fs.writeFileSync(outPath, JSON.stringify(entries, null, 2), "utf-8");
+      console.log(
+        `OK ${batchKey} (${entries.length} entry: ${entries[0]?.slug} ... ${entries[entries.length - 1]?.slug})`,
+      );
+      written++;
+    }
+    console.log("");
+    console.log(`Summary: ${written} written, ${skipped} skipped`);
+    await prisma.$disconnect();
+    return;
+  }
+
+  if (!parsed) {
+    console.error("--batch Nx bayrağı zorunlu (örn: --batch 1a, --batch 2b)");
+    console.error("Veya --info, --all ile toplu üretim");
+    await prisma.$disconnect();
+    process.exit(1);
+  }
+
+  const { batch, half } = parsed;
+  // 1a -> sub-batch index 1, 1b -> 2, 2a -> 3, 2b -> 4
+  const subBatchIndex = (batch - 1) * 2 + (half === "a" ? 1 : 2);
+  if (subBatchIndex > totalSubBatch) {
+    console.error(`Sub-batch ${batch}${half} > toplam ${totalSubBatch}`);
+    await prisma.$disconnect();
+    process.exit(1);
+  }
+
+  const offset = (subBatchIndex - 1) * SIZE;
+  console.log(`Sub-batch ${batch}${half}: index ${subBatchIndex}, offset ${offset}, take ${SIZE}`);
+  console.log("");
+
+  const entries = await fetchBatchEntries(prisma, offset, SIZE);
 
   const batchKey = `${batch}${half}`;
   const outPath = path.resolve(

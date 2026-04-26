@@ -1,0 +1,4181 @@
+[
+  {
+    "slug": "emoliente-peru-usulu",
+    "title": "Emoliente",
+    "cuisine": "pe",
+    "type": "ICECEK",
+    "description": "Emoliente, arpaya tarçın ve limon eşlik ettirerek yumuşak içimli, baharatlı ve Peru sokaklarına özgü sıcak bir içecek yapar.",
+    "prepMinutes": 8,
+    "cookMinutes": 18,
+    "totalMinutes": 26,
+    "servingCount": 4,
+    "averageCalories": 72,
+    "protein": 2,
+    "carbs": 15,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Arpayı kısa ön haşlama içeceğin bulanık değil daha parlak görünmesini sağlar.",
+    "servingSuggestion": "Kalın bardakta, üstüne limon dilimi koyarak ılık ya da soğuk sunun.",
+    "tags": [
+      "alkolsuz",
+      "kis-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Arpa",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tarçın çubuğu",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Arpayı suyla 15 dakika kaynatın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tarçın ve balı ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Limonla tamamlayıp servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "empadao-de-frango",
+    "title": "Empadão de Frango",
+    "cuisine": "br",
+    "type": "YEMEK",
+    "description": "Empadão de frango, tavuklu içi kapalı hamur kabuğunda pişiren ve dilimlenerek servis edilen Brezilya turtasıdır.",
+    "prepMinutes": 35,
+    "cookMinutes": 35,
+    "totalMinutes": 70,
+    "servingCount": 8,
+    "averageCalories": 344,
+    "protein": 18,
+    "carbs": 34,
+    "fat": 16,
+    "isFeatured": false,
+    "tipNote": "İçi soğutup yerleştirmek, alt hamurun gevrek kalmasına yardım eder.",
+    "servingSuggestion": "Yanına maydanoz yaprakları koyarak sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "500",
+        "unit": "gr",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "150",
+        "unit": "gr",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Haşlanmış tavuk eti",
+        "amount": "400",
+        "unit": "gr",
+        "group": "İç için"
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": "İç için"
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": "Servis için"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, tereyağı, yumurta ve suyla tart hamurunu yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 20 dakika dinlendirin, kalıba yayarken çatlamasın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tavuk, soğan ve domatesi tavada 12 dakika pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Harcı maydanozla karıştırıp 5 dakika soğutun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Hamurun yarısını kalıba yayın, iç harcı doldurup üst hamurla kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Empadãoyu 190°C fırında 30 dakika pişirin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Turtayı 10 dakika dinlendirin, tavuklu iç dilimden akmasın.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "empanada",
+    "title": "Empanada",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Kıymalı iç harçla doldurulan yarım ay şeklinde fırın hamur işi.",
+    "prepMinutes": 45,
+    "cookMinutes": 25,
+    "totalMinutes": 70,
+    "servingCount": 6,
+    "averageCalories": 350,
+    "protein": 13,
+    "carbs": 31,
+    "fat": 18,
+    "isFeatured": true,
+    "tipNote": "İç harcı soğutmadan hamura koymayın; sıcak harç hamuru yumuşatır.",
+    "servingSuggestion": "Domatesli acı sosla servis edin.",
+    "tags": [
+      "firinda",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "100",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Dana kıyma",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kırmızı biber",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yumurta sarısı",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, tereyağı ve suyla hamur yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 20 dakika dinlendirin, açarken kenarlar çatlamasın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kıyma, soğan ve biberi 10 dakika kavurup harcı soğutun.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamuru yuvarlak kesip harçla doldurun ve kenarlarını bastırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Üstlerine yumurta sürüp 190°C fırında 24 dakika pişirin.",
+        "timerSeconds": 1440
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Empanadaları 5 dakika telde bekletin, hamur altı nemlenmesin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "enchiladas-rojas",
+    "title": "Enchiladas Rojas",
+    "cuisine": "mx",
+    "type": "YEMEK",
+    "description": "Kırmızı biber sosuna batırılan tortilla ruloları, Meksika sofralarında peynirle fırınlanır.",
+    "prepMinutes": 30,
+    "cookMinutes": 30,
+    "totalMinutes": 60,
+    "servingCount": 4,
+    "averageCalories": 480,
+    "protein": 22,
+    "carbs": 39,
+    "fat": 25,
+    "isFeatured": false,
+    "tipNote": "Tortillaları kısa süre ısıtın; soğuk tortilla sararken çatlar.",
+    "servingSuggestion": "Ekşi krema ve marulla servis edin.",
+    "tags": [
+      "firinda",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Mısır tortilla",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış tavuk",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kırmızı biber sosu",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Rende peynir",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tortillaları yağsız tavada her yüzü 20 saniye ısıtın.",
+        "timerSeconds": 40
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavuk ve soğanlı iç harcı tortillaların ortasına paylaştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tortillaları rulo sarıp fırın kabına ek yeri alta gelecek şekilde dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kırmızı sosu ruloların üstüne yayın, kuru kenar kalmasın diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Peyniri serpip 190°C fırında 20 dakika pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Enchiladaları 5 dakika dinlendirin, kırmızı sos keserken yayılmasın.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "enerji-toplari",
+    "title": "Enerji Topları",
+    "cuisine": "tr",
+    "type": "ATISTIRMALIK",
+    "description": "Hurma, yulaf, kakao ve fındıkla hazırlanan pişmeyen atıştırmalık toplar.",
+    "prepMinutes": 15,
+    "cookMinutes": 0,
+    "totalMinutes": 15,
+    "servingCount": 8,
+    "averageCalories": 210,
+    "protein": 6,
+    "carbs": 24,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Hurmalar sertse 10 dakika sıcak suda bekletin; karışım daha kolay toparlanır.",
+    "servingSuggestion": "Kahve yanında soğuk servis edin.",
+    "tags": [
+      "vegan",
+      "pratik",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Hurma",
+        "amount": "12",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yulaf ezmesi",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Fındık",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kakao",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Hurmaların çekirdeklerini çıkarıp 5 dakika sıcak suda yumuşatın ve süzün.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hurma, yulaf, fındık ve kakaoyu robotta 1 dakika yapışkan harç olana kadar çekin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Harçtan küçük toplar yuvarlayın, elinizi ıslatırsanız yüzey daha düzgün olur.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Topları 15 dakika buzdolabında dinlendirip soğuk servis edin.",
+        "timerSeconds": 900
+      }
+    ]
+  },
+  {
+    "slug": "enginarli-arpa-sehriye-corbasi-aydin-usulu",
+    "title": "Enginarlı Arpa Şehriye Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Aydın enginarlı arpa şehriye çorbası, enginarı arpa şehriye ve limonla buluşturarak hafif, parlak ve Ege usulü bir başlangıç sunar.",
+    "prepMinutes": 10,
+    "cookMinutes": 18,
+    "totalMinutes": 28,
+    "servingCount": 4,
+    "averageCalories": 142,
+    "protein": 4,
+    "carbs": 23,
+    "fat": 3,
+    "isFeatured": false,
+    "tipNote": "Limonu en sonda eklemek enginarın taze tadını belirgin tutar.",
+    "servingSuggestion": "Çorbayı sıcak derin kasede sunun, üstüne dereotu serperek servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Enginar kalbi",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Arpa şehriye",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "3 enginar kalbini küçük küp doğrayın, dereotunu ince kıyın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "0.75 su bardağı arpa şehriyeyi 5 su bardağı suda 8 dakika haşlayın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Enginarları ekleyip orta ateşte 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "1 yemek kaşığı limon suyunu ekleyin, enginar rengi kararmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Dereotunu son anda karıştırın ve 2 dakika dinlendirin.",
+        "timerSeconds": 120
+      }
+    ]
+  },
+  {
+    "slug": "enginarli-bakla-ezmesi-aydin-usulu",
+    "title": "Enginarlı Bakla Ezmesi",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Aydın usulü enginarlı bakla ezmesi, iç baklayı enginar ve zeytinyağıyla buluşturarak hafif, ipeksi ve meze tabaklarına uygun bir aperatif hazırlar.",
+    "prepMinutes": 12,
+    "cookMinutes": 16,
+    "totalMinutes": 28,
+    "servingCount": 4,
+    "averageCalories": 144,
+    "protein": 5,
+    "carbs": 16,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Baklayı kabuksuz kullanmak ezmede daha pürüzsüz bir sonuç verir.",
+    "servingSuggestion": "Enginarlı bakla ezmesini sığ tabağa yayıp limonlu zeytinyağını üstünden gezdirin.",
+    "tags": [
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "İç bakla",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Enginar kalbi",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Baklayı tuzlu suda 12 dakika yumuşayana kadar haşlayıp süzün.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Enginarı küçük doğrayıp baklayla birlikte ezilecek kıvama getirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karışımı zeytinyağı ve limonla açıp pürüzsüz ama tok bir ezme yapın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ezmesini soğuk tabağa alın, üstüne dereotu serpip servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "enginarli-borulce-guveci-izmir-bag-usulu",
+    "title": "İzmir Enginarlı Börülce Güveci",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "İzmir enginarlı börülce güveci, taze börülce ve enginarı zeytinyağında pişirerek hafif, sulu ve Ege kokulu bir sebze yemeği hazırlar.",
+    "prepMinutes": 15,
+    "cookMinutes": 25,
+    "totalMinutes": 40,
+    "servingCount": 4,
+    "averageCalories": 176,
+    "protein": 6,
+    "carbs": 18,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Enginarı limonlu suda bekletmek rengini korur.",
+    "servingSuggestion": "Güveci ılık servis edin, üstüne zeytinyağı gezdirerek sofraya çıkarın.",
+    "tags": [
+      "vegan",
+      "yaz-tarifi",
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Taze börülce",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Enginar",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Enginarları dilimleyin, börülceyi ayıklayıp yıkayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "İzmir güveci için soğanı zeytinyağında 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Enginar, börülce ve domatesi güveç kabına alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Zeytinyağı, tuz ve sıcak suyu ekleyip kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Güveci 20 dakika kısık ateşte pişirin, enginar kararmasın diye limonu sona bırakın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Limon suyunu ekleyip 8 dakika dinlendirin.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "enginarli-domatesli-pide-manisa-usulu",
+    "title": "Enginarlı Domatesli Pide",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Manisa usulü enginarlı domatesli pide, ince hamuru enginar ve domatesle buluşturarak hafif, parlak ve fırın kokulu bir hamur işi çıkarır.",
+    "prepMinutes": 18,
+    "cookMinutes": 18,
+    "totalMinutes": 36,
+    "servingCount": 6,
+    "averageCalories": 254,
+    "protein": 7,
+    "carbs": 31,
+    "fat": 10,
+    "isFeatured": true,
+    "tipNote": "Domatesi çekirdeklerini alarak kullanmak pidenin ortasının sulanmasını önler.",
+    "servingSuggestion": "Enginarlı domatesli pideyi uzun dilimleyip enginar kalpleri ezilmeden tahta servis tahtasına alın.",
+    "tags": [
+      "misafir-sofrasi",
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Enginar kalbi",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mayalı pide hamurunu bezelere ayırıp 15 dakika dinlendirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Enginarı ince dilimleyin, domatesin fazla suyunu süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru uzun açıp iç yüzeye zeytinyağı sürün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Enginar ve domatesi hamura ince yayın, kenarları kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pideyi 220°C fırında 18 dakika pişirin, tabanı hamur olmasın.",
+        "timerSeconds": 1080
+      }
+    ]
+  },
+  {
+    "slug": "enginarli-fava-izmir-usulu",
+    "title": "Enginarlı Fava",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "İzmir enginarlı fava, baklayı enginar ve zeytinyağıyla ezerek pürüzsüz, serin ve meyhane masasına uygun bir Ege mezesi kurar.",
+    "prepMinutes": 14,
+    "cookMinutes": 20,
+    "totalMinutes": 34,
+    "servingCount": 6,
+    "averageCalories": 142,
+    "protein": 6,
+    "carbs": 18,
+    "fat": 5,
+    "isFeatured": true,
+    "tipNote": "Favayı blenderdan çok geçirmemek enginarın hafif dokusunu korur.",
+    "servingSuggestion": "Favayı serin sunun, üstüne zeytinyağı gezdirip dereotu serpin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Kuru bakla",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Enginar kalbi",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bakla ve soğanı yumuşayana kadar haşlayıp suyunu kontrollü bırakın.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Enginarı ekleyip 5 dakika daha pişirerek aromaların birleşmesini sağlayın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karışımı blenderdan geçirip zeytinyağıyla parlak, dökülebilir fava kıvamına getirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Favayı kalıba döküp soğutun ve dilimleyerek servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "enginarli-ic-pilav-ayvalik-usulu",
+    "title": "Enginarlı İç Pilav",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Ayvalık enginarlı iç pilav, pirinci enginar ve dereotuyla buluşturarak tane tane, aromatik ve zeytinyağlı bir Ege pilavı yapar.",
+    "prepMinutes": 16,
+    "cookMinutes": 20,
+    "totalMinutes": 36,
+    "servingCount": 4,
+    "averageCalories": 214,
+    "protein": 5,
+    "carbs": 31,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Enginarı küçük kuşbaşı doğramak pilavda daha eşit dağılmasını sağlar.",
+    "servingSuggestion": "Pilavı ılık servis edin, yanında yoğurt ya da yeşillik sunun.",
+    "tags": [
+      "misafir-sofrasi",
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Pirinç",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Enginar kalbi",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ayvalık pilavı için pirinci 15 dakika ılık suda bekletin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Enginarları küçük küp doğrayıp limonlu suda tutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinci ve enginarı zeytinyağında 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kuş üzümü, baharat ve sıcak suyu ekleyip kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pilavı 15 dakika pişirin, enginar parçaları dağılmasın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tencereyi 10 dakika dinlendirip dereotuyla servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "enginarli-kuskus-salatasi-izmir-usulu",
+    "title": "Enginarlı Kuskus Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "İzmir enginarlı kuskus salatası, tane kuskusu enginar ve limonlu otlarla buluşturarak ferah, taneli ve Ege esintili bir tabak kurar.",
+    "prepMinutes": 14,
+    "cookMinutes": 10,
+    "totalMinutes": 24,
+    "servingCount": 4,
+    "averageCalories": 196,
+    "protein": 5,
+    "carbs": 28,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Enginarı son anda eklemek salatada dağılmadan kalmasını sağlar.",
+    "servingSuggestion": "Salatayı serin verin, üstüne dereotu serperek servis edin.",
+    "tags": [
+      "vegan",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuskus",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Enginar kalbi",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Enginarlı Kuskus Salatası hazırlığında geniş kase ve süzgeci çıkarın, yıkanan malzeme sulanıp dokuyu bozmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kuskusu 8 dakika haşlayın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Enginar ve otları doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Malzemeleri limonlu sosla karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Enginarlı Kuskus Salatası karışımını geniş tabağa alın, yeşillikler ezilmesin diye üstten bastırmayın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "ensalada-de-aguacate",
+    "title": "Ensalada de Aguacate",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Küba avokado salatası kırmızı soğan, limon ve zeytinyağıyla et yemeklerinin yanında serinlik verir.",
+    "prepMinutes": 15,
+    "cookMinutes": 0,
+    "totalMinutes": 15,
+    "servingCount": 4,
+    "averageCalories": 170,
+    "protein": 2,
+    "carbs": 9,
+    "fat": 15,
+    "isFeatured": false,
+    "tipNote": "Soğuk servis için malzemeleri doğramadan önce buzlu suda 2 dakika bekletin, çıtırlık korunur.",
+    "servingSuggestion": "Salatayı serin sunun, üstüne lime sıkarak hemen servis edin.",
+    "tags": [
+      "vegan",
+      "pratik",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Avokado",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kırmızı soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ensalada de Aguacate için kesme tahtasını ve servis tabağını hazırlayın, doğranan malzeme bekleyip kararmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Ensalada de Aguacate avokadolarını iri dilimleyin, karıştırırken ezilmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ensalada de Aguacate kırmızı soğanını ince doğrayın, acılığı lokmada baskınlaşmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ensalada de Aguacate avokado, soğan, limon ve zeytinyağını nazikçe karıştırın, avokado ezilmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ensalada de Aguacate son tuz ve asit dengesini kontrol edin, beklerse su salmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Ensalada de Aguacate soslandıktan sonra bekletmeden servis edin, çıtır doku bozulmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Ensalada de Aguacate servis öncesi 5 dakika dinlendirin, sos tanelere işlesin diye sonra tabaklayın.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "ensalada-fria-de-coditos-kuba-usulu",
+    "title": "Ensalada Fría de Coditos",
+    "cuisine": "cu",
+    "type": "SALATA",
+    "description": "Ensalada fría de coditos, makarnayı mayonez ve sebzeyle soğuk birleştirerek serin, kremamsı ve piknik masasına uygun bir Küba salatası yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 10,
+    "totalMinutes": 22,
+    "servingCount": 4,
+    "averageCalories": 236,
+    "protein": 6,
+    "carbs": 29,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Makarnayı tamamen soğutmak mayonezin parlak ve sıkı kalmasını sağlar.",
+    "servingSuggestion": "Makarnalı salatayı soğuk verin, yanında ana yemeğe eşlik ederek sunun.",
+    "tags": [
+      "30-dakika-alti",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Dirsek makarna",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Mayonez",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Bezelye",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Havuç",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kırmızı biber",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ensalada Fría de Coditos başlamadan sos malzemelerini ayırın, salata birleşince hızlı servis edilsin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Makarnayı 8 dakika haşlayın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ensalada Fría de Coditos sebzelerini hazırlayıp makarnayla karıştırın, parçalar aynı boyda olsun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ensalada Fría de Coditos mayonezle tamamlayıp 10 dakika soğutun, sos makarnaya tutunsun.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ensalada Fría de Coditos soslandıktan sonra bekletmeden servis edin, çıtır doku bozulmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "ensalada-fria-de-papa-kuba-usulu",
+    "title": "Ensalada Fría de Papa",
+    "cuisine": "cu",
+    "type": "SALATA",
+    "description": "Ensalada fría de papa, patates ve mayonezi buluşturarak serin, yumuşak ve çok sade bir Küba salatası çıkarır.",
+    "prepMinutes": 14,
+    "cookMinutes": 14,
+    "totalMinutes": 28,
+    "servingCount": 4,
+    "averageCalories": 184,
+    "protein": 3,
+    "carbs": 18,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Patatesi tam soğutup karıştırın.",
+    "servingSuggestion": "Patates salatasını soğuk verin, üstüne maydanoz serperek servis edin.",
+    "tags": [
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Patates",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Mayonez",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Bezelye",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.25",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ensalada Fría de Papa için yeşillikleri ve ana malzemeleri ayırın, soslama aşamasında kase kalabalıklaşmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Ensalada Fría de Papa patateslerini 15 dakika haşlayıp küp doğrayın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ensalada Fría de Papa bezelyesini ekleyin, patatesleri ezmeden karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ensalada Fría de Papa mayonez ve tuzla karıştırıp 10 dakika soğutun.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ensalada Fría de Papa servis öncesi 5 dakika dinlendirin, sos tanelere işlesin diye sonra tabaklayın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Ensalada Fría de Papa karışımını geniş tabağa alın, yeşillikler ezilmesin diye üstten bastırmayın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erik-eksili-mercimek-koftesi-malatya-usulu",
+    "title": "Erik Ekşili Mercimek Köftesi",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Malatya erik ekşili mercimek köftesi, ince bulguru yeşil mercimek ve erik ekşisiyle buluşturarak canlı, taneli ve hafif ekşi bir meze yapar.",
+    "prepMinutes": 18,
+    "cookMinutes": 16,
+    "totalMinutes": 34,
+    "servingCount": 6,
+    "averageCalories": 182,
+    "protein": 7,
+    "carbs": 28,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Erik ekşisini yoğurma sonunda eklemek parlak tadını daha belirgin tutar.",
+    "servingSuggestion": "Köfteleri marul yapraklarıyla, serin meze tabağında servis edin.",
+    "tags": [
+      "vegan",
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "İnce bulgur",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yeşil mercimek",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Erik ekşisi",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kırmızı mercimeği 15 dakika yumuşayana kadar haşlayın ve sıcak bırakın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bulguru mercimeğe ekleyip kapağı kapalı halde şişmesini bekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğanlı salça karışımını ekleyip harcı ele yapışan kıvama gelene kadar yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Erik ekşisi ve maydanozu katıp köfteleri sıkın, marulla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erik-konsantreli-soguk-serbet-elazig-usulu",
+    "title": "Erik Konsantreli Soğuk Şerbet",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Elazığ usulü erik konsantreli soğuk şerbet, eriği limon ve buzla buluşturarak canlı, ferah bir yaz içeceği yapar.",
+    "prepMinutes": 8,
+    "cookMinutes": 6,
+    "totalMinutes": 14,
+    "servingCount": 4,
+    "averageCalories": 48,
+    "protein": 0,
+    "carbs": 12,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Şerbeti süzmek bardakta daha pürüzsüz bir yapı verir.",
+    "servingSuggestion": "Erik konsantreli soğuk şerbeti buzlu bardakta sunup limonlu kokusu kaybolmadan çıkarın.",
+    "tags": [
+      "alkolsuz",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Erik",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "2",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Erik Konsantreli Soğuk Şerbet için erik suyu, şeker ve aromatik tabanı karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Erik Konsantreli Soğuk Şerbet içeceğine su ekleyip 10 dakika dinlendirerek tadını dengeleyin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Erik Konsantreli Soğuk Şerbet içeceğini süzüp buzla birlikte servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erikli-bulgurlu-dolma-bilecik-usulu",
+    "title": "Bilecik Erikli Bulgurlu Dolma",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Bilecik erikli bulgurlu dolma, biberleri ekşi erik ve bulgurlu içle doldurarak Marmara mutfağına meyvemsi ve hafif asiditeli bir yaz yemeği kazandırır.",
+    "prepMinutes": 20,
+    "cookMinutes": 30,
+    "totalMinutes": 50,
+    "servingCount": 5,
+    "averageCalories": 184,
+    "protein": 4,
+    "carbs": 28,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "İç harcı çok bastırmadan doldurmak bulgurun pişerken rahatça şişmesini sağlar.",
+    "servingSuggestion": "Dolmaları ılık servis edin, yanında yoğurt ya da limon sunun.",
+    "tags": [
+      "vegan",
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Dolmalık biber",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Pilavlık bulgur",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kırmızı erik",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bulguru yıkayıp süzün, kuru erikleri ikiye bölün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan, salça, bulgur ve baharatı zeytinyağıyla karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Dolmalık sebzeleri harçla gevşek doldurun, bulgur şişince iç dağılmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Erikleri dolmaların arasına yerleştirip sıcak su ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Dolmaları 30 dakika kısık ateşte pişirin.",
+        "timerSeconds": 1800
+      }
+    ]
+  },
+  {
+    "slug": "erikli-dana-yahni-edirne-usulu",
+    "title": "Erikli Dana Yahni",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Edirne usulü erikli dana yahni, eti taze erik ve soğanla buluşturarak dengeli ekşilik taşıyan bir ana yemek yapar.",
+    "prepMinutes": 16,
+    "cookMinutes": 44,
+    "totalMinutes": 60,
+    "servingCount": 4,
+    "averageCalories": 336,
+    "protein": 27,
+    "carbs": 13,
+    "fat": 19,
+    "isFeatured": true,
+    "tipNote": "Erikleri son 10 dakikada eklemek tencerede tamamen dağılmalarını önler.",
+    "servingSuggestion": "Erikli dana yahniyi sıcak kasede sunup erik parçalarını dana etinin yanına alın.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Dana kuşbaşı",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Erik",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Salça",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Dana etini iri kuşbaşı doğrayıp kurulayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Edirne yahni eti tencerede 7 dakika mühürleyin.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Edirne yahnisi için soğanı ekleyip 5 dakika kavurun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sıcak su ve kuru eriği katıp kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yahniyi 55 dakika pişirin, erikler dağılmasın diye son 20 dakikada karıştırın.",
+        "timerSeconds": 3300
+      }
+    ]
+  },
+  {
+    "slug": "erikli-eksili-tavuk-bursa-usulu",
+    "title": "Erikli Ekşili Tavuk",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Erikli ekşili tavuk, tavuk etini taze erik ve soğanla pişirerek Bursa sofralarında yaza uygun hafif ekşili bir ana yemek kurar.",
+    "prepMinutes": 20,
+    "cookMinutes": 30,
+    "totalMinutes": 50,
+    "servingCount": 4,
+    "averageCalories": 284,
+    "protein": 27,
+    "carbs": 12,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Erikleri çok erken eklememek pişme sonunda formunu koruyup yemeği bulandırmamasını sağlar.",
+    "servingSuggestion": "Yanına sade pirinç pilavıyla sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Tavuk but kuşbaşı",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yeşil erik",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Pirinç pilavı",
+        "amount": "4",
+        "unit": "porsiyon",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuk parçalarını tuz ve karabiberle ovup tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavuğu yağda 6 dakika mühürleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğan ve domatesi ekleyip 5 dakika pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Erik, limon suyu ve sıcak suyu tencereye ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yemeği 28 dakika pişirin, tavuk kemikten kolay ayrılsın.",
+        "timerSeconds": 1680
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Sosu 5 dakika dinlendirip pilavla servis edin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "erikli-feslegen-serbeti-yalova-usulu",
+    "title": "Erikli Fesleğen Şerbeti",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Yalova usulü erikli fesleğen şerbeti, eriği fesleğen ve soğuk suyla buluşturarak parlak renkli, hafif ekşi bir içecek yapar.",
+    "prepMinutes": 8,
+    "cookMinutes": 8,
+    "totalMinutes": 16,
+    "servingCount": 4,
+    "averageCalories": 36,
+    "protein": 0,
+    "carbs": 9,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Fesleğeni son aşamada eklemek kokusunun daha taze kalmasını sağlar.",
+    "servingSuggestion": "Uzun bardakta, fesleğen yaprakları ve bol buzla soğuk servis edin.",
+    "tags": [
+      "alkolsuz",
+      "yaz-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Erik",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Fesleğen",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Erikli Fesleğen Şerbeti için erik suyu, şeker ve aromatik tabanı karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Erikli Fesleğen Şerbeti içeceğine su ekleyip 10 dakika dinlendirerek tadını dengeleyin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Erikli Fesleğen Şerbeti içeceğini süzüp buzla birlikte servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erikli-hamsi-salatasi-samsun-usulu",
+    "title": "Samsun Erikli Hamsi Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Samsun erikli hamsi salatası, marine hamsiyi taze erik ve yeşillikle buluşturarak kıyıya ekşi meyveli ve hafif bir tabak getirir.",
+    "prepMinutes": 15,
+    "cookMinutes": 0,
+    "totalMinutes": 15,
+    "servingCount": 4,
+    "averageCalories": 142,
+    "protein": 11,
+    "carbs": 7,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Eriği servisten hemen önce eklemek salatanın sulanmasını azaltır.",
+    "servingSuggestion": "Salatayı serin verin, üstüne limon sıkarak meze olarak sunun.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein",
+      "yaz-tarifi"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Marine hamsi",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kırmızı erik",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Roka",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Samsun Erikli Hamsi Salatası hazırlığında geniş kase ve süzgeci çıkarın, yıkanan malzeme sulanıp dokuyu bozmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Erikleri ince dilimleyin ve rokayı hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Samsun Erikli Hamsi Salatası hamsisini yeşilliklerin üstüne yerleştirin, balık parçalanmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Samsun Erikli Hamsi Salatası sosunu gezdirip soğuk servis edin, roka diriliğini korusun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Samsun Erikli Hamsi Salatası karışımını geniş tabağa alın, yeşillikler ezilmesin diye üstten bastırmayın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erikli-hamsi-salatasi-trabzon-usulu",
+    "title": "Erikli Hamsi Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Trabzon erikli hamsi salatası, hamsiyi yeşil erik ve roka ile buluşturarak tuzlu, keskin ve bahar sofralarına uygun bir salata yapar.",
+    "prepMinutes": 14,
+    "cookMinutes": 6,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 164,
+    "protein": 12,
+    "carbs": 6,
+    "fat": 10,
+    "isFeatured": true,
+    "tipNote": "Hamsiyi kısa süre tavada çevirmek salatada diri ve sulu bir sonuç bırakır.",
+    "servingSuggestion": "Salatayı serin servis edin, üstüne limon gezdirerek sofraya çıkarın.",
+    "tags": [
+      "30-dakika-alti",
+      "yaz-tarifi"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Hamsi fileto",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yeşil erik",
+        "amount": "6",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Roka",
+        "amount": "1",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Erikli Hamsi Salatası için kesme tahtasını ve servis tabağını hazırlayın, doğranan malzeme bekleyip kararmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Erikli Hamsi Salatası hamsisini orta ateşte 4 dakika pişirin, eti kurumadan alın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Erikli Hamsi Salatası eriklerini dilimleyip rokayı kurulayın, su sosu inceltmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Erikli Hamsi Salatası malzemelerini 1 dakika nazikçe karıştırıp servis edin, doku ezilmesin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Erikli Hamsi Salatası son tuz ve asit dengesini kontrol edin, beklerse su salmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Erikli Hamsi Salatası soslandıktan sonra bekletmeden servis edin, çıtır doku bozulmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erikli-hashasli-irmik-kup-macar-usulu",
+    "title": "Erikli Haşhaşlı İrmik Kup",
+    "cuisine": "hu",
+    "type": "TATLI",
+    "description": "Macar usulü erikli haşhaşlı irmik kup, irmiği erik ve haşhaşla buluşturarak yumuşak, meyvemsi ve küçük porsiyonluk bir tatlı çıkarır.",
+    "prepMinutes": 10,
+    "cookMinutes": 8,
+    "totalMinutes": 18,
+    "servingCount": 4,
+    "averageCalories": 218,
+    "protein": 4,
+    "carbs": 31,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Erikleri kısa pişirmek kup içinde canlı bir meyve dokusu bırakır.",
+    "servingSuggestion": "Kup tatlıyı soğuk verin, üstüne haşhaş serperek servis edin.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "İrmik",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Erik",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Haşhaş",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Erikleri çekirdeklerinden ayırıp küçük dilimlere kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Süt, irmik, şeker ve haşhaşı tencerede soğukken çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "İrmikli tabanı 8 dakika karıştırarak pişirin, haşhaş dibe çökmesin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Erikleri tavada 3 dakika yumuşatın ve suyunu koyulaştırın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kup bardaklarına irmik tabanı ve eriği paylaştırıp katlar kaymasın diye soğuk servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Üst katmana birkaç haşhaş tanesi serpip erik rengini açık bırakın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erikli-hashasli-krem-kup-polonya-usulu",
+    "title": "Erikli Haşhaşlı Krem Kup",
+    "cuisine": "pl",
+    "type": "TATLI",
+    "description": "Polonya usulü erikli haşhaşlı krem kup, sütlü kremayı erik ve haşhaşla buluşturarak yumuşak bir kaşık tatlısı kurar.",
+    "prepMinutes": 10,
+    "cookMinutes": 10,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 204,
+    "protein": 4,
+    "carbs": 27,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Erikleri çok küçük doğramamak kup içinde meyvenin ayrı katman gibi hissedilmesini sağlar.",
+    "servingSuggestion": "Üzerine haşhaş serpip soğuk servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT",
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "İrmik",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Erik",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Haşhaş",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Erikleri zar büyüklüğünde doğrayıp haşhaş tohumu ile karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Süt, irmik ve şekeri tencerede pürüzsüz olana kadar çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kremayı 7 dakika orta ateşte pişirin, dibinin tutmaması için karıştırın.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Erik ve haşhaşı kremaya katıp 2 dakika daha pişirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karışımı kuplara alıp üstünü streçle kapatın ve 45 dakika soğutun, yüzeyde kabuk olmasın.",
+        "timerSeconds": 2700
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Soğuyan kupları kaşıkla hafif karıştırmadan erik dilimiyle tamamlayın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erikli-ihlamur-serbeti-yalova-usulu",
+    "title": "Erikli Ihlamur Şerbeti",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Yalova usulü erikli ıhlamur şerbeti, eriği ıhlamur ve soğuk suyla buluşturarak yumuşak, çiçeksi ve serin bir içecek kurar.",
+    "prepMinutes": 8,
+    "cookMinutes": 10,
+    "totalMinutes": 18,
+    "servingCount": 5,
+    "averageCalories": 36,
+    "protein": 0,
+    "carbs": 9,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Ihlamuru ocaktan aldıktan sonra 5 dakika demlemek aromayı daha temiz tutar.",
+    "servingSuggestion": "Kalın bardakta, erik dilimi ve bol buzla soğuk servis edin.",
+    "tags": [
+      "alkolsuz",
+      "yaz-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Erik",
+        "amount": "6",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ihlamur",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Erikli Ihlamur Şerbeti için erik suyu, şeker ve aromatik tabanı karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Erikli Ihlamur Şerbeti içeceğine su ekleyip 10 dakika dinlendirerek tadını dengeleyin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Erikli Ihlamur Şerbeti içeceğini süzüp buzla birlikte servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erikli-kuskus-salata-sakarya-usulu",
+    "title": "Sakarya Erikli Kuskus Salata",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Sakarya erikli kuskus salata, kuskusu yeşil erik ve otlarla buluşturarak ekşi ferah bir bahar salatası yapar.",
+    "prepMinutes": 14,
+    "cookMinutes": 10,
+    "totalMinutes": 24,
+    "servingCount": 4,
+    "averageCalories": 176,
+    "protein": 5,
+    "carbs": 29,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Erikleri çok erken eklememek diri kalmalarına yardım eder.",
+    "servingSuggestion": "Kuskus salatasını serin verin, üstüne nane serperek servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "yaz-tarifi",
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuskus",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yeşil erik",
+        "amount": "6",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Sakarya Erikli Kuskus Salata başlamadan sos malzemelerini ayırın, salata birleşince hızlı servis edilsin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sakarya Erikli Kuskus Salata kuskusunu 8 dakika demleyip çatalla havalandırın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Erikleri ince doğrayın, ekşi suyu kuskusa dengeli geçsin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sakarya Erikli Kuskus Salata malzemelerini 1 dakika nazikçe karıştırıp servis edin, doku ezilmesin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sakarya Erikli Kuskus Salata soslandıktan sonra bekletmeden servis edin, çıtır doku bozulmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erikli-kuzu-yahni-van-usulu",
+    "title": "Erikli Kuzu Yahni",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Van usulü erikli kuzu yahni, kuzu etini kuru erik ve soğanla buluşturarak hafif tatlı, dengeli ve uzun sofralara uygun bir ana yemek yapar.",
+    "prepMinutes": 18,
+    "cookMinutes": 26,
+    "totalMinutes": 44,
+    "servingCount": 4,
+    "averageCalories": 318,
+    "protein": 24,
+    "carbs": 16,
+    "fat": 17,
+    "isFeatured": false,
+    "tipNote": "Eriği son 10 dakikada eklemek formunu korumasına yardım eder.",
+    "servingSuggestion": "Yahniyi sıcak servis edin, yanında pilav ya da ekmek sunun.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuşbaşı kuzu eti",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kuru erik",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuzu etini iri parçalar halinde doğrayıp kurulayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Van kuzu yahnisi için eti tencerede 6 dakika mühürleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Van yahnisi için soğanı ekleyip 5 dakika kavurun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kuru erik ve sıcak suyu ekleyip kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yahniyi 50 dakika kısık ateşte pişirin, erik eti ekşili tatsın.",
+        "timerSeconds": 3000
+      }
+    ]
+  },
+  {
+    "slug": "erikli-kuzu-yahnisi-malatya-usulu",
+    "title": "Erikli Kuzu Yahnisi",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Malatya erikli kuzu yahnisi, kuzuyu kuru erik ve soğanla pişirerek tatlı-ekşi dengesi yüksek, sulu bir Doğu Anadolu yemeği kurar.",
+    "prepMinutes": 16,
+    "cookMinutes": 30,
+    "totalMinutes": 46,
+    "servingCount": 4,
+    "averageCalories": 336,
+    "protein": 24,
+    "carbs": 12,
+    "fat": 20,
+    "isFeatured": false,
+    "tipNote": "Erikleri son bölümde eklemek yahnide dağılmadan canlı kalmalarına yardım eder.",
+    "servingSuggestion": "Yahniyi sıcak verin, yanında pilav ve salata ile servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuzu kuşbaşı",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kuru erik",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "20",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuzu etini tuzlayıp tencereye tek kat yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Eti 7 dakika mühürleyin.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Malatya yahnisi için soğan ve salçayı ekleyip 4 dakika kavurun.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Malatya kuru eriğini ve sıcak suyu tencereye katın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yahniyi 50 dakika kısık ateşte pişirin, et sert kalmasın.",
+        "timerSeconds": 3000
+      }
+    ]
+  },
+  {
+    "slug": "erikli-lahana-salata-polonya-usulu",
+    "title": "Erikli Lahana Salata",
+    "cuisine": "pl",
+    "type": "SALATA",
+    "description": "Polonya usulü erikli lahana salata, lahanayı taze erik ve dereotuyla buluşturarak tatlı ekşi bir salata yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "totalMinutes": 10,
+    "servingCount": 4,
+    "averageCalories": 92,
+    "protein": 2,
+    "carbs": 15,
+    "fat": 3,
+    "isFeatured": false,
+    "tipNote": "Eriği ince dilimlemek lahanayla daha kolay karışmasını sağlar.",
+    "servingSuggestion": "Erikli lahana salatasını soğuk kasede sunup erik dilimlerini dereotunun üstüne yerleştirin.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Beyaz lahana",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Erik",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Elma sirkesi",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Erikli Lahana Salata için yeşillikleri ve ana malzemeleri ayırın, soslama aşamasında kase kalabalıklaşmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Erikli Lahana Salata lahanasını ince doğrayıp 1 dakika tuzla ovun, lifler yumuşasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Erikleri dilimleyip sosu hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Erikli Lahana Salata malzemelerini 1 dakika nazikçe karıştırıp servis edin, doku ezilmesin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Erikli Lahana Salata servis öncesi 5 dakika dinlendirin, sos tanelere işlesin diye sonra tabaklayın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Erikli Lahana Salata karışımını geniş tabağa alın, yeşillikler ezilmesin diye üstten bastırmayın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erikli-makowiec-kup-polonya-usulu",
+    "title": "Erikli Makowiec Kup",
+    "cuisine": "pl",
+    "type": "TATLI",
+    "description": "Erikli makowiec kup, haşhaşlı kek kırıntısını erik ve krema ile katmanlayarak Polonya esintili kaşıklık bir tatlı yapar.",
+    "prepMinutes": 14,
+    "cookMinutes": 0,
+    "totalMinutes": 14,
+    "servingCount": 4,
+    "averageCalories": 236,
+    "protein": 4,
+    "carbs": 25,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Erik katını soğuk kullanmak kupun daha net katmanlı görünmesini sağlar.",
+    "servingSuggestion": "Kup tatlıyı soğuk sunun, üstüne haşhaş serperek servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Haşhaşlı kek kırıntısı",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Erik",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Makowiec dilimlerini iri küplere ayırın ve kırıntılarını saklayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Erikleri ince doğrayıp 3 dakika şekerle yumuşatın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kremayı yumuşak tepe oluşana kadar çırpın, fazla çırpıp kesmeyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kup içine kek küpü, erik ve kremayı katmanlayın, kek dağılmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Üstüne makowiec kırıntısı serpip 20 dakika soğukta dinlendirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Servisten önce erik katının kup kenarında görünmesine dikkat edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erikli-marul-piyazi-sakarya-usulu",
+    "title": "Erikli Marul Piyazı",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Sakarya erikli marul piyazı, marulu yeşil erik ve soğanla buluşturarak gevrek, ferah ve ilkbaharlık bir salata yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "totalMinutes": 10,
+    "servingCount": 4,
+    "averageCalories": 72,
+    "protein": 1,
+    "carbs": 8,
+    "fat": 4,
+    "isFeatured": true,
+    "tipNote": "Marulu servis anında soslamak gevrekliğini korur.",
+    "servingSuggestion": "Salatayı serin verin, üstüne limon sıkarak servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "vegan",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Marul",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yeşil erik",
+        "amount": "6",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "0.5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Erikli Marul Piyazı hazırlığında geniş kase ve süzgeci çıkarın, yıkanan malzeme sulanıp dokuyu bozmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Erikli Marul Piyazı malzemelerini küçük ve eş boy doğrayın, sos her parçaya tutunsun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Erikli Marul Piyazı sosunu ekleyip 1 dakika karıştırın, yeşillikler ezilmesin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Erikli Marul Piyazı karışımını 1 dakika karıştırıp servis edin, yapraklar ezilmesin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Erikli Marul Piyazı karışımını geniş tabağa alın, yeşillikler ezilmesin diye üstten bastırmayın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erikli-nohut-yahnisi-malatya-bahce-usulu",
+    "title": "Malatya Erikli Nohut Yahni",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Malatya erikli nohut yahni, nohudu ekşi erik ve soğanla pişirerek canlı tatlı ekşi dengeli bir tencere yemeği kurar.",
+    "prepMinutes": 12,
+    "cookMinutes": 22,
+    "totalMinutes": 34,
+    "servingCount": 4,
+    "averageCalories": 204,
+    "protein": 9,
+    "carbs": 28,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Eriği son bölümde eklemek dağılmasını azaltır.",
+    "servingSuggestion": "Yahniyi sıcak servis edin, yanında pilav ya da ekmek sunun.",
+    "tags": [
+      "tek-tencere",
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yeşil erik",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Nohudu süzüp kuru erikleri yıkayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve salçayı yağda 5 dakika kavurun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nohut, erik ve sıcak suyu tencereye ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yahniyi 25 dakika pişirin, nohut erik tadını içine alsın.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tuzunu ayarlayıp 8 dakika dinlendirin ve sıcak servis edin.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "erikli-pancar-kavurmasi-samsun-usulu",
+    "title": "Samsun Erikli Pancar Kavurması",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Samsun erikli pancar kavurması, pancarı ekşi erik ve soğanla tavada çevirerek Karadeniz'de meyvemsi, parlak ve hafif tatlı ekşili bir sebze yemeği kurar.",
+    "prepMinutes": 14,
+    "cookMinutes": 16,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 124,
+    "protein": 2,
+    "carbs": 16,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Eriği son dakikalarda eklemek tavada eriyip tamamen kaybolmasını önler.",
+    "servingSuggestion": "Kavurmayı ılık ya da serin verin, üstüne dereotu serperek sunun.",
+    "tags": [
+      "vegan",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Pancar",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kırmızı erik",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pancarları ince doğrayıp erikleri küçük parçalara ayırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Samsun pancarı için soğanı tavada 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pancarı ekleyip 12 dakika kavurun.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Erikleri ve az sıcak suyu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karışımı 8 dakika pişirin, pancar tencereye yapışmasın.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "erikli-pazi-salatasi-sakarya-usulu",
+    "title": "Erikli Pazı Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Sakarya erikli pazı salatası, haşlanmış pazıyı yeşil erik ve cevizle birleştirerek ekşi, serin ve mevsimlik bir Marmara salatası yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 4,
+    "totalMinutes": 16,
+    "servingCount": 4,
+    "averageCalories": 116,
+    "protein": 3,
+    "carbs": 8,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Pazıyı fazla haşlamamak salatada canlı rengin korunmasına yardım eder.",
+    "servingSuggestion": "Salatayı serin servis edin, üstüne ceviz serpiştirerek sofraya çıkarın.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen",
+      "yaz-tarifi",
+      "vegan"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Pazı",
+        "amount": "1",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Yeşil erik",
+        "amount": "5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Erikli Pazı Salatası için kesme tahtasını ve servis tabağını hazırlayın, doğranan malzeme bekleyip kararmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Erikli Pazı Salatası pazısını 2 dakika haşlayıp soğuk sudan geçirin, rengi solmasın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Erikli Pazı Salatası eriklerini ince dilimleyin, ekşi suyu salataya dengeli dağılsın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Erikli Pazı Salatası malzemelerini 1 dakika harmanlayıp servis edin, sos dipte kalmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Erikli Pazı Salatası son tuz ve asit dengesini kontrol edin, beklerse su salmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Erikli Pazı Salatası soslandıktan sonra bekletmeden servis edin, çıtır doku bozulmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erikli-peynirli-krep-polonya-usulu",
+    "title": "Erikli Peynirli Krep",
+    "cuisine": "pl",
+    "type": "YEMEK",
+    "description": "Polonya usulü erikli peynirli krep, ince krebi erik ve peynirle buluşturarak hafif tatlı, yumuşak bir hamur işi yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 12,
+    "totalMinutes": 24,
+    "servingCount": 4,
+    "averageCalories": 238,
+    "protein": 8,
+    "carbs": 24,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Erikleri küçük doğramak krep içinde daha dengeli yayılır.",
+    "servingSuggestion": "Erikli peynirli krepi ikiye katlayıp erik parçaları ve lor dolgusu görünecek şekilde sunun.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Erik",
+        "amount": "6",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "100",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, süt ve yumurtayla pürüzsüz krep hamuru çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 15 dakika dinlendirin, tavada yırtılmasın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Krepleri ince tavada her yüzü 1 dakika pişirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Peynir ve erik parçalarını karıştırıp kreplerin ortasına yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Dolu krepleri tavada 3 dakika ısıtın ve sıcak servis edin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "erikli-poppyseed-kup-polonya-usulu",
+    "title": "Polonya Erikli Poppyseed Kup",
+    "cuisine": "pl",
+    "type": "TATLI",
+    "description": "Polonya erikli poppyseed kup, erik püresini haşhaşlı krema ile katlayarak serin ve hafif taneli bir tatlı sunar.",
+    "prepMinutes": 12,
+    "cookMinutes": 8,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 184,
+    "protein": 3,
+    "carbs": 21,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Erik püresini tamamen soğutmak kupta katların net görünmesini sağlar.",
+    "servingSuggestion": "Kup tatlıyı soğuk verin, üstüne haşhaş serperek servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Erik",
+        "amount": "5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Haşhaş",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Erikleri ikiye bölüp ince ay şeklinde dilimleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Erikleri şekerle 6 dakika pişirin, suyunu parlak sos kıvamına getirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kremayı haşhaş tohumu ile çırpın, taneler eşit dağılsın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kup bardaklarına erik sosu ve haşhaşlı kremayı katmanlayın, mor sos karışmasın diye yavaş çalışın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tatlıyı 25 dakika soğutun ve üstüne birkaç haşhaş tanesi serpin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kupun en üstüne bir erik dilimi koyup kremayı ezmeden sunun.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erikli-rezene-salatasi-izmir-usulu",
+    "title": "Erikli Rezene Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "İzmir erikli rezene salatası, ince rezene dilimlerini yeşil erik ve dereotuyla buluşturarak ferah, gevrek ve Ege usulü bir yan tabak hazırlar.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "totalMinutes": 10,
+    "servingCount": 4,
+    "averageCalories": 86,
+    "protein": 2,
+    "carbs": 9,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Rezeneyi çok ince dilimlemek salatada daha hafif bir ağız hissi verir.",
+    "servingSuggestion": "Salatayı serin verin, üstüne dereotu serperek servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "vegan",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Rezene",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yeşil erik",
+        "amount": "6",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Erikli Rezene Salatası başlamadan sos malzemelerini ayırın, salata birleşince hızlı servis edilsin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Erikli Rezene Salatası rezenesini ince dilimleyin, sert damarlar ağıza gelmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Erikli Rezene Salatası erik ve sosunu ekleyip 1 dakika karıştırın, rezene kırılmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Erikli Rezene Salatası karışımını 1 dakika karıştırıp servis edin, yapraklar ezilmesin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Erikli Rezene Salatası soslandıktan sonra bekletmeden servis edin, çıtır doku bozulmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Erikli Rezene Salatası servis öncesi 5 dakika dinlendirin, sos tanelere işlesin diye sonra tabaklayın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Erikli Rezene Salatası karışımını geniş tabağa alın, yeşillikler ezilmesin diye üstten bastırmayın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erikli-seftali-salata-canakkale-usulu",
+    "title": "Çanakkale Erikli Şeftali Salata",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Çanakkale erikli şeftali salata, şeftali ve eriği yeşillikle birleştirerek boğaz sofralarına sulu ve meyvemsi bir yaz tabağı getirir.",
+    "prepMinutes": 12,
+    "cookMinutes": 0,
+    "totalMinutes": 12,
+    "servingCount": 4,
+    "averageCalories": 86,
+    "protein": 1,
+    "carbs": 19,
+    "fat": 1,
+    "isFeatured": false,
+    "tipNote": "Meyveyi servis öncesi doğramak salatanın su salmasını azaltır.",
+    "servingSuggestion": "Meyveli salatayı serin sunun, üstüne zeytinyağı gezdirerek servis edin.",
+    "tags": [
+      "vegan",
+      "yaz-tarifi",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Şeftali",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kırmızı erik",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Roka",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Şeftalileri ve erikleri yıkayıp kurulayın, çekirdeklerini çıkararak 1 cm kalınlığında dilimleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Rokayı sirkeli suda 5 dakika bekletip iki kez durulayın, yapraklar ıslak kalırsa meyve suyunu inceltir.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Zeytinyağı, limon suyu, az bal ve tuzu küçük kasede 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Meyve dilimlerini roka ve taze nane ile geniş kasede alttan üste doğru harmanlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sosu servis öncesi gezdirin, iri dilimleri ezmeden tabağa aktarın ve bekletmeden sunun, böylece şeftali ve erik dilimleri sulanmadan parlak kalır.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erikli-semizotu-salatasi-ayvalik-usulu",
+    "title": "Erikli Semizotu Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Ayvalık erikli semizotu salatası, semizotunu yeşil erik ve zeytinyağıyla buluşturarak ekşi, serin ve deniz kıyısına yakışan bir yaz salatası yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "totalMinutes": 10,
+    "servingCount": 4,
+    "averageCalories": 74,
+    "protein": 2,
+    "carbs": 7,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Erikleri son anda eklemek salatanın su bırakmadan çıtır kalmasını sağlar.",
+    "servingSuggestion": "Semizotu salatasını serin verin, üstüne sumak serperek servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "vegan",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Semizotu",
+        "amount": "1",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Yeşil erik",
+        "amount": "6",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Semizotunun kalın saplarını ayıklayın, yaprakları bol suda yıkayıp süzgeçte kurutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Erikleri ikiye bölüp çekirdeklerini çıkarın, ince ay dilimleri halinde doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Süzme yoğurt, ezilmiş sarımsak, zeytinyağı ve tuzu 45 saniye pürüzsüz olana kadar çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Semizotunu yoğurtlu sosla nazikçe karıştırın, yapraklar kırılırsa salata çabuk sulanır.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Erik dilimlerini üstte bırakın, pul biber ve zeytinyağı gezdirip soğuk servis edin, böylece erik dilimleri yoğurtlu tabanı sulandırmaz.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erikli-tavuk-paprikas-macar-usulu",
+    "title": "Erikli Tavuk Paprikas",
+    "cuisine": "hu",
+    "type": "YEMEK",
+    "description": "Macar usulü erikli tavuk paprikas, tavuğu erik ve paprika ile buluşturarak tatlı ekşi bir ana yemek yapar.",
+    "prepMinutes": 15,
+    "cookMinutes": 24,
+    "totalMinutes": 39,
+    "servingCount": 4,
+    "averageCalories": 314,
+    "protein": 27,
+    "carbs": 14,
+    "fat": 15,
+    "isFeatured": false,
+    "tipNote": "Erikleri son bölümde eklemek sos içinde tamamen erimesini önler.",
+    "servingSuggestion": "Erikli tavuk paprikası sıcak tabakta sunup erik dilimlerini kremalı tavukların yanına alın.",
+    "tags": [
+      "yuksek-protein",
+      "tek-tencere"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk kalça",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Erik",
+        "amount": "6",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tatlı paprika",
+        "amount": "1.5",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuk parçalarını tuzlayıp fazla nemini alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı yağda 5 dakika kavurun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Paprika ve tavuğu ekleyip 6 dakika mühürleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Erik ve sıcak suyu katıp kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tavuğu 25 dakika pişirin, paprika yanık tat vermesin diye ateşi kısın.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Ekşi kremayı ılık sosla açıp tencereye karıştırın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erikli-tavuk-salata-kocaeli-usulu",
+    "title": "Kocaeli Erikli Tavuk Salata",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Kocaeli erikli tavuk salata, haşlanmış tavuğu erik ve yeşillikle buluşturarak sanayi mutfağına hafif, meyvemsi ve öğleye uygun bir tabak hazırlar.",
+    "prepMinutes": 15,
+    "cookMinutes": 12,
+    "totalMinutes": 27,
+    "servingCount": 4,
+    "averageCalories": 198,
+    "protein": 18,
+    "carbs": 11,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Eriği en son eklemek salatanın sulu kalıp gevşemesini engeller.",
+    "servingSuggestion": "Salatayı soğuk verin, üstüne limon sıkarak öğle öğününde sunun.",
+    "tags": [
+      "yuksek-protein",
+      "30-dakika-alti"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Haşlanmış tavuk göğsü",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kırmızı erik",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kıvırcık",
+        "amount": "0.5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pişmiş tavuk etini lif lif ayırın, iri parçaları 2 cm boyunda kısaltın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Erikleri çekirdeklerinden ayırıp ince dilimleyin, yeşillikleri yıkayıp tamamen süzdürün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hardal, limon suyu, zeytinyağı ve tuzu kapaklı kavanozda 30 saniye çalkalayın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tavuğu sosun yarısıyla karıştırın, et kuru kalmasın diye 5 dakika bekletin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yeşillik, erik ve tavuğu birleştirin, kalan sosu gezdirip fazla ezmeden servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erikli-tavuk-sote-kirklareli-usulu",
+    "title": "Erikli Tavuk Sote",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Kırklareli usulü erikli tavuk sote, tavuğu taze erik ve soğanla buluşturarak tatlı ekşi dengeli bir tava yemeği yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 14,
+    "totalMinutes": 26,
+    "servingCount": 4,
+    "averageCalories": 286,
+    "protein": 27,
+    "carbs": 11,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Eriği son 4 dakikada eklemek meyvenin tavada tamamen dağılmasını önler.",
+    "servingSuggestion": "Yanında sade pirinç pilavıyla sıcak servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Tavuk göğsü",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Erik",
+        "amount": "5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kekik",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuğu kuşbaşı doğrayıp erikleri ikiye bölün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kırklareli sotesi için tavuğu tavada 6 dakika soteleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğan ve biberi ekleyip 5 dakika pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Erikleri ve az sıcak suyu tavaya katın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Soteyi 10 dakika kısık ateşte pişirin, erikler dağılmasın.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "erikli-yaprak-sarma-yalova-usulu",
+    "title": "Yalova Erikli Yaprak Sarma",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Yalova erikli yaprak sarma, pirinçli iç harca erik ekleyerek hafif ekşi, sulu ve yazlık bir zeytinyağlı sarma çıkarır.",
+    "prepMinutes": 24,
+    "cookMinutes": 35,
+    "totalMinutes": 59,
+    "servingCount": 5,
+    "averageCalories": 182,
+    "protein": 4,
+    "carbs": 28,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Erikleri çok küçük doğramak içte eşit dağılır.",
+    "servingSuggestion": "Sarmaları serin servis edin, yanında limon ve yoğurt sunun.",
+    "tags": [
+      "misafir-sofrasi",
+      "yaz-tarifi",
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Asma yaprağı",
+        "amount": "20",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Erik",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.75",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Asma yapraklarını sıcak suda 3 dakika haşlayıp süzün.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinç, soğan, erik parçaları ve baharatla iç harcı karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yapraklara harç koyup ince sarın, pirinç şişince yaprak patlamasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sarmaları tencereye dizip üstüne sıcak su ve zeytinyağı ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sarmayı 35 dakika kısık ateşte pişirin.",
+        "timerSeconds": 2100
+      }
+    ]
+  },
+  {
+    "slug": "erikli-yarma-salata-igdir-usulu",
+    "title": "Iğdır Erikli Yarma Salata",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Iğdır erikli yarma salata, haşlanmış yarmayı kırmızı erik ve nane ile buluşturarak yazlık ve tane tane bir soğuk tabak kurar.",
+    "prepMinutes": 12,
+    "cookMinutes": 20,
+    "totalMinutes": 32,
+    "servingCount": 4,
+    "averageCalories": 158,
+    "protein": 4,
+    "carbs": 28,
+    "fat": 2,
+    "isFeatured": false,
+    "tipNote": "Yarmayı soğutarak kullanmak erikle birleşince salatanın gevşemesini önler.",
+    "servingSuggestion": "Yarma salatasını serin verin, üstüne nane serperek servis edin.",
+    "tags": [
+      "vegan",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Yarma",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kırmızı erik",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yarmayı yıkayıp bol suda 18 dakika diri kalacak şekilde haşlayın.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Süzülen yarmayı tepsiye yayın ve 10 dakika soğutun, sıcak kalırsa erik yumuşar.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Erikleri çekirdeklerinden ayırın, ekşi tadı dengeli dağılsın diye ince doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Maydanoz, taze soğan, limon suyu ve zeytinyağını yarmayla karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Erikleri en son ekleyin, tuzunu ayarlayıp oda sıcaklığında servis tabağına alın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erikli-yogurt-asi-igdir-usulu",
+    "title": "Iğdır Erikli Yoğurt Aşı",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Iğdır erikli yoğurt aşı, buğday ve yoğurdu ekşi erikle buluşturarak yaz sofralarına serin, hafif ekşili ve besleyici bir çorba getirir.",
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "totalMinutes": 35,
+    "servingCount": 5,
+    "averageCalories": 148,
+    "protein": 6,
+    "carbs": 19,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Yoğurdu ocağa almadan önce ılıştırmak kesilmesini önler.",
+    "servingSuggestion": "Çorbayı ılık kasede sunun, üstüne nane serperek servis edin.",
+    "tags": [
+      "vejetaryen",
+      "yaz-tarifi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Aşurelik buğday",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kırmızı erik",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "0.75 su bardağı aşurelik buğdayı yıkayıp 5 su bardağı suda kaynatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Buğdayı orta ateşte 18 dakika haşlayın.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "1.5 su bardağı yoğurdu iki kepçe sıcak buğday suyuyla ılıtın, kesilmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yoğurdu tencereye ekleyip kısık ateşte 5 dakika karıştırarak pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "4 kırmızı eriği dilimleyip nane ile ekleyin, meyve dağılmasın diye 2 dakika ısıtın.",
+        "timerSeconds": 120
+      }
+    ]
+  },
+  {
+    "slug": "erikli-yogurtlu-tarhana-eskisehir-usulu",
+    "title": "Eskişehir Erikli Yoğurtlu Tarhana",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Eskişehir erikli yoğurtlu tarhana, tarhanayı yoğurt ve erikle yumuşatarak ekşili ve serinletici bir yaz çorbası haline getirir.",
+    "prepMinutes": 10,
+    "cookMinutes": 15,
+    "totalMinutes": 25,
+    "servingCount": 5,
+    "averageCalories": 132,
+    "protein": 5,
+    "carbs": 19,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Yoğurdu tencereye eklemeden önce ılıştırmak kesilmesini önler.",
+    "servingSuggestion": "Çorbayı ılık verin, üstüne nane serperek kasede servis edin.",
+    "tags": [
+      "vejetaryen",
+      "yaz-tarifi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Tarhana",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kırmızı erik",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "4 yemek kaşığı tarhanayı 1 su bardağı soğuk suyla açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tarhanayı kalan 3 su bardağı suyla kısık ateşte 12 dakika pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "1 su bardağı yoğurdu 1 kepçe sıcak çorbayla ılıtın, kesilmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yoğurdu tencereye ekleyip 2 dakika karıştırarak ısıtın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "3 kırmızı eriği dilimleyip ekleyin ve tencereyi ocaktan alın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "erikli-zeytinyagli-pirasa-ayvalik-usulu",
+    "title": "Ayvalık Erikli Zeytinyağlı Pırasa",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Ayvalık erikli zeytinyağlı pırasa, pırasayı ekşi erikle buluşturarak Ege zeytinyağlılarına ferah ve meyvemsi bir yön kazandırır.",
+    "prepMinutes": 15,
+    "cookMinutes": 25,
+    "totalMinutes": 40,
+    "servingCount": 4,
+    "averageCalories": 128,
+    "protein": 2,
+    "carbs": 14,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Eriği son bölümde eklemek dağılmadan hafif diri kalmasını sağlar.",
+    "servingSuggestion": "Pırasayı ılık ya da serin verin, üstüne zeytinyağı gezdirin.",
+    "tags": [
+      "vegan",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Pırasa",
+        "amount": "5",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Kuru erik",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Havuç",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pırasayı verev doğrayın, eriği ve havucu hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Havucu zeytinyağında 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pırasa ve pirinci ekleyip 3 dakika kavurun.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Erik, sıcak su ve tuzu tencereye katıp kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yemeği 22 dakika pişirin, pırasa lifleri ezilmesin.",
+        "timerSeconds": 1320
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Limon suyunu ocaktan sonra ekleyip 10 dakika dinlendirin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "eriste-corbasi-kastamonu-usulu",
+    "title": "Erişte Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Kastamonu usulü erişte çorbası, ev eriştesini tavuk suyu ve karabiberle hafif ama toparlayıcı bir kâseye dönüştürür.",
+    "prepMinutes": 10,
+    "cookMinutes": 18,
+    "totalMinutes": 28,
+    "servingCount": 4,
+    "averageCalories": 164,
+    "protein": 7,
+    "carbs": 24,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Erişteyi son aşamada eklemek tencerede fazla şişmesini engeller.",
+    "servingSuggestion": "Üzerine karabiber çekerek sıcak servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "kis-tarifi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Erişte",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tavuk suyu",
+        "amount": "1",
+        "unit": "lt",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "15",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "1 litre tavuk suyunu tencerede kaynama noktasına getirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "1 su bardağı erişte ve yarım çay kaşığı tuzu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Erişteyi orta ateşte 10 dakika pişirin, hamurlaşmasın diye fazla fokurdatmayın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "15 gr tereyağını küçük tavada 1 dakika köpürtün.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tereyağı ve karabiberi çorbaya gezdirip 3 dakika dinlendirin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "eriste-ustu-kurutlu-yumurta-van-usulu",
+    "title": "Van Erişte Üstü Kurutlu Yumurta",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Van erişte üstü kurutlu yumurta, tereyağlı eriştenin üstüne kurut ve yumurta koyarak doğu kahvaltılarına yoğun, sıcak ve tok bir tabak kurar.",
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "totalMinutes": 22,
+    "servingCount": 3,
+    "averageCalories": 286,
+    "protein": 13,
+    "carbs": 26,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Kurutu sıcak suyla kısa açmak tabağa daha rahat yayılmasını sağlar.",
+    "servingSuggestion": "Tabağı sıcak servis edin, yanında ekmek ya da ayran sunun.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Erişte",
+        "amount": "220",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kurut",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "25",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "220 gr erişteyi tuzlu suda 8 dakika haşlayıp süzün.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "80 gr kurutu az sıcak suyla ezip akışkan sos haline getirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "25 gr tereyağını tavada eritip erişteyi 2 dakika çevirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kurut sosunu eriştenin üstüne yayın, sos sıcak erişteyle açılsın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "3 yumurtayı tavada 3 dakika pişirip eriştenin üstüne alın, sos kurumasın.",
+        "timerSeconds": 180
+      }
+    ]
+  }
+]

@@ -1,0 +1,4214 @@
+[
+  {
+    "slug": "cevizli-bulgur-koftesi-yalova-usulu",
+    "title": "Yalova Cevizli Bulgur Köftesi",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Yalova cevizli bulgur köftesi, ince bulguru ceviz ve baharatla yoğurarak tane tane ve doyurucu bir tepsi köftesi çıkarır.",
+    "prepMinutes": 18,
+    "cookMinutes": 20,
+    "totalMinutes": 38,
+    "servingCount": 5,
+    "averageCalories": 218,
+    "protein": 6,
+    "carbs": 27,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Bulguru sıcak suyla tam şişirmek köftenin çatlamasını önler.",
+    "servingSuggestion": "Yanına yoğurtlu dip koyup köfteyi ılık ana tabağa çıkarın.",
+    "tags": [
+      "vegan",
+      "firinda",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "İnce bulgur",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Biber salçası",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "İnce bulguru sıcak suyla 10 dakika şişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Cevizi iri kırıp salçayı bulgurun üstüne ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bulgur harcını 8 dakika yoğurun, tepsiye basınca çatlamasın diye.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Harcı yağlanmış tepsiye bastırıp yüzeyini düzeltin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Köfteyi 190°C fırında 20 dakika pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Fırından sonra 10 dakika dinlendirip dilimleyerek servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-bulgur-sarmasi-amasya-bag-usulu",
+    "title": "Amasya Cevizli Bulgur Sarması",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Amasya cevizli bulgur sarması, asma yaprağını cevizli bulgur harcıyla sararak hafif ekşi ve aromatik bir içli dolma kurar.",
+    "prepMinutes": 22,
+    "cookMinutes": 24,
+    "totalMinutes": 46,
+    "servingCount": 4,
+    "averageCalories": 236,
+    "protein": 6,
+    "carbs": 25,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Harca çok su eklememek sarmaların formunu korur.",
+    "servingSuggestion": "Üstüne limon sıkıp sarmaları ılık ya da serin halde sunun.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Asma yaprağı",
+        "amount": "12",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "İnce bulgur",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Asma yapraklarını fazla tuzundan arındırıp 5 dakika sıcak suda bekletin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bulgur, ceviz, soğan, salça ve baharatla iç harcı hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yapraklara ince harç koyup sıkı sarın, pişerken açılmasın diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sarmaları tencereye yan yana dizip üstüne tabak kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sarmaları 20 dakika kısık ateşte pişirin.",
+        "timerSeconds": 1200
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-cokelek-ezmesi",
+    "title": "Cevizli Çökelek Ezmesi",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Çökelek, ceviz ve yeşillikle hazırlanan bu kırsal kahvaltılık, Ege ve İç Anadolu sofralarında ekmeğe sürülerek yenir.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "totalMinutes": 10,
+    "servingCount": 4,
+    "averageCalories": 156,
+    "protein": 8,
+    "carbs": 4,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Cevizi son anda eklemek ezmenin dişe gelen dokusunu korur.",
+    "servingSuggestion": "Kızarmış ekmek üstünde, çökelek ezmesini serin meze olarak servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Çökelek",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.25",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Çökeleği çatalla ezip pütürleri küçültün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Cevizi bıçakla iri kıyın, yağını salmasın diye rondodan geçirmeyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Maydanoz, zeytinyağı, pul biber ve tuzu çökeleğe ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karışımı 1 dakika ezerek karıştırın, sürülebilir kıvam oluşsun.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Cevizle süsleyip kızarmış ekmekle servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-corek-dilimi-tokat-usulu",
+    "title": "Cevizli Çörek Dilimi",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Tokat usulü cevizli çörek dilimi, yumuşak hamuru pekmez ve cevizle buluşturarak kahve yanına uygun bir dilim verir.",
+    "prepMinutes": 25,
+    "cookMinutes": 25,
+    "totalMinutes": 50,
+    "servingCount": 6,
+    "averageCalories": 246,
+    "protein": 6,
+    "carbs": 33,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Hamuru rulo yaparken çok sıkmamak içinin katmanlı kalmasına yardım eder.",
+    "servingSuggestion": "Cevizli çörek dilimini ılık sunup pekmezli cevizli yüzeyi tabağın üstüne bakacak şekilde koyun.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Pekmez",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ceviz içi",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mayalı hamuru 8 dakika yoğurup 30 dakika mayalandırın.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru açmadan önce 5 dakika dinlendirin, geri toplamasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pekmez ve cevizi karıştırıp hamurun üstüne yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamuru rulo yapıp dilimleyin ve tepsiye dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "190°C fırında 22 dakika kızarana kadar pişirin.",
+        "timerSeconds": 1320
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Çörek dilimlerini 10 dakika dinlendirip ılık servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-corek-trakya-usulu",
+    "title": "Cevizli Çörek",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Trakya usulü cevizli çörek, yumuşak mayalı hamurun ceviz ve tarçınla sarılarak fırında kabardığı mis kokulu bir çay çöreğidir.",
+    "prepMinutes": 35,
+    "cookMinutes": 25,
+    "totalMinutes": 60,
+    "servingCount": 8,
+    "averageCalories": 322,
+    "protein": 7,
+    "carbs": 40,
+    "fat": 15,
+    "isFeatured": false,
+    "tipNote": "Ruloyu çok sıkı sarmamak çöreğin iç katlarının pişerken nefes almasını sağlar.",
+    "servingSuggestion": "Yanına sıcak çayla ılık servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "550",
+        "unit": "gr",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Süt",
+        "amount": "240",
+        "unit": "ml",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Kuru maya",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Ceviz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": "İç için"
+      },
+      {
+        "name": "Tarçın",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": "İç için"
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": "İç için"
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "50",
+        "unit": "gr",
+        "group": "İç için"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, süt, yumurta ve maya ile yumuşak bir hamur yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 25 dakika mayalandırın, hacim artsın ve çörek sıkı kalmasın.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ceviz, tarçın, şeker ve tereyağını iç harç için karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamuru açıp harcı yayın, rulo yaparak eşit dilimlere kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Çörekleri 190°C fırında 22 dakika pişirin.",
+        "timerSeconds": 1320
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-domatesli-biber-dip-hatay-usulu",
+    "title": "Cevizli Domatesli Biber Dip",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Hatay usulü cevizli domatesli biber dip, kapya biberi domates ve cevizle buluşturarak yoğun, ekşi ve sofrayı açan bir meze hazırlar.",
+    "prepMinutes": 10,
+    "cookMinutes": 10,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 146,
+    "protein": 3,
+    "carbs": 10,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Domatesi çekirdeksiz kullanmak dip içinde sulu bir doku oluşmasını azaltır.",
+    "servingSuggestion": "Cevizli domatesli biber dipini küçük kaseye yayıp ceviz kırıklarını en son serpin.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Kapya biber",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Biber ve domatesi közleyip kabuklarını soyun, fazla suyunu süzdürün.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Cevizi ince çekin ve sarımsağı tuzla ezerek aromayı açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Köz sebzeleri ceviz ve sarımsakla karıştırıp hafif pütürlü bırakın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Dipi zeytinyağıyla parlatın, 10 dakika dinlendirip lavaş yanında sunun.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-ekmek-mengen-usulu",
+    "title": "Mengen Cevizli Ekmek",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Mengen cevizli ekmek, Bolu'nun aşçılarıyla bilinen ilçesinde kahvaltı masasına çıkan, iri ceviz parçalarıyla dokusu zenginleşen yumuşak bir köy ekmeğidir.",
+    "prepMinutes": 20,
+    "cookMinutes": 35,
+    "totalMinutes": 55,
+    "servingCount": 10,
+    "averageCalories": 198,
+    "protein": 5,
+    "carbs": 24,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Cevizi yoğurmanın sonuna bırakmak hamurun rengini fazla koyulaştırmadan iri parçaları korur.",
+    "servingSuggestion": "Dilimleyip tereyağı ve bal ile servis edin.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "KUSUYEMIS",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru maya",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "20",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, su, maya ve tuzla ekmek hamurunu 10 dakika yoğurun.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 30 dakika mayalandırın, ceviz eklenince doku sıkışmasın.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "İri kıyılmış cevizi hamura katıp somun şekli verin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Somunu 15 dakika ikinci mayaya bırakın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "190°C fırında 35 dakika kabuk kızarana kadar pişirin.",
+        "timerSeconds": 2100
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Ekmeği 20 dakika tel üstünde dinlendirip dilimleyin.",
+        "timerSeconds": 1200
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-erik-tatlisi-erzincan-usulu",
+    "title": "Erzincan Cevizli Erik Tatlısı",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Erzincan cevizli erik tatlısı, kuru eriği cevizle doldurup hafif şerbetle pişirerek Doğu Anadolu mutfağında meyveli tatlı geleneğini sürdürür.",
+    "prepMinutes": 15,
+    "cookMinutes": 12,
+    "totalMinutes": 27,
+    "servingCount": 6,
+    "averageCalories": 176,
+    "protein": 2,
+    "carbs": 24,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Erikleri kısa süre ıslatmak doldururken yırtılmalarını azaltır.",
+    "servingSuggestion": "Üstüne kaymak koyup eriği ılık tatlı tabağında servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "KUSUYEMIS",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuru erik",
+        "amount": "18",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kaymak",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuru erikleri 10 dakika ılık suda bekletin, çatlamadan açılacak hale gelsin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Eriklerin çekirdek boşluklarına iri ceviz parçaları yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Şekerli suyu tencerede 5 dakika kaynatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Doldurulmuş erikleri şuruba alıp 10 dakika pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tatlıyı kaymakla servis etmeden önce 10 dakika ılıtın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kaymağı tabağın kenarına koyun, sıcak şurup kaymağı eritmesin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-eriste-boregi-sivas-usulu",
+    "title": "Cevizli Erişte Böreği",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Sivas cevizli erişte böreği, haşlanmış erişteyi cevizli içle fırınlayarak şaşırtıcı, katmanlı ve doyurucu bir hamur işi hazırlar.",
+    "prepMinutes": 20,
+    "cookMinutes": 22,
+    "totalMinutes": 42,
+    "servingCount": 6,
+    "averageCalories": 278,
+    "protein": 8,
+    "carbs": 31,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Erişteyi diri haşlamak börekte hamurlaşmayı önler.",
+    "servingSuggestion": "Böreği dilimleyip yanında çayla, fırından sonra ılık servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "KUSUYEMIS",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Erişte",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yufka",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "30",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Erişteyi kaynar tuzlu suda 6 dakika haşlayıp süzün.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tereyağını tavada 1 dakika eritip erişteyi yağla karıştırın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tepsiye erişte, ceviz ve peynir katlarını sıralayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Üstüne çırpılmış yumurtalı sütü dökün, katlar kuru kalmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "190°C fırında 18 dakika üstü kızarana kadar pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Böreği 8 dakika dinlendirip kare dilimleyin.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-eriste-salatasi-kirsehir-bag-usulu",
+    "title": "Cevizli Erişte Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Kırşehir usulü cevizli erişte salatası, haşlanmış erişteyi yoğurt ve cevizle buluşturarak serin, yumuşak ve paylaşmalık bir salata yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 10,
+    "totalMinutes": 22,
+    "servingCount": 4,
+    "averageCalories": 218,
+    "protein": 7,
+    "carbs": 24,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Erişteyi soğuk sudan geçirmek salatada birbirine yapışmasını azaltır.",
+    "servingSuggestion": "Üstüne ceviz serpip erişte salatasını soğuk meze tabağında sunun.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Erişte",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "1",
+        "unit": "diş",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Cevizli Erişte Salatası hazırlığında geniş kase ve süzgeci çıkarın, yıkanan malzeme sulanıp dokuyu bozmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Cevizli Erişte Salatası eriştesini 8 dakika haşlayıp soğuk sudan geçirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Cevizli Erişte Salatası yoğurtlu sosunu 1 dakika çırpın, cevizle pürüzsüz birleşsin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Cevizli Erişte Salatası eriştesini ceviz ve sosla karıştırın, soğuk servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Cevizli Erişte Salatası karışımını geniş tabağa alın, yeşillikler ezilmesin diye üstten bastırmayın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-gavut-kup-tatlisi-kars-usulu",
+    "title": "Cevizli Gavut Kup Tatlısı",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Kars usulü cevizli gavut kup tatlısı, kavrulmuş unlu karışımı ceviz ve sütlü tabanla buluşturarak kıtır, tok ve küçük porsiyonluk bir tatlı yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 8,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 238,
+    "protein": 5,
+    "carbs": 24,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Gavut kırıntısını son anda eklemek kup içinde çıtırlığı korur.",
+    "servingSuggestion": "Kup bardakta soğuk verin, üstüne ceviz serperek tatlı sonunda sunun.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Gavut",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Gavutu kuru tavada 3 dakika ısıtın, kokusu açılsın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sütü 4 dakika hafifçe ısıtın, kaynatmayın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kup tabanına gavut serpin ve ılık sütle nemlendirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Cevizi iri kırıp katmanların arasına paylaştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tatlıyı 15 dakika dinlendirin, gavut sütü çekince servis edin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Üst katı kuru cevizle tamamlayın, gavut dokusu kaşıkta belirgin kalsın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-goce-icli-borek-sivas-usulu",
+    "title": "Cevizli Göce İçli Börek",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Sivas usulü cevizli göce içli börek, ince yufkayı göce ve cevizli harçla buluşturarak kıtır, tok ve kışlık bir hamur işi çıkarır.",
+    "prepMinutes": 20,
+    "cookMinutes": 24,
+    "totalMinutes": 44,
+    "servingCount": 6,
+    "averageCalories": 276,
+    "protein": 8,
+    "carbs": 30,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Göceyi önceden 10 dakika haşlamak börekte sert çekirdek kalmasını önler.",
+    "servingSuggestion": "Böreği dilimleyip yanında ayranla ılık olarak hemen servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Yufka",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Göce",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Göceyi yıkayıp tuzlu suda 10 dakika haşlayın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yumuşayan göceyi süzüp ceviz ve tereyağıyla karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "İç harcı 8 dakika soğutun, yufkayı yumuşatmasın diye.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yufkaya harcı yayıp böreği sıkı rulo halinde sarın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Böreği 190°C fırında 24 dakika kızarana kadar pişirin.",
+        "timerSeconds": 1440
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-havuclu-labne-dip-bilecik-usulu",
+    "title": "Cevizli Havuçlu Labne Dip",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Bilecik usulü cevizli havuçlu labne dip, havucu labne ve cevizle buluşturarak yumuşak, hafif tatlı ve sürülebilir bir dip yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 8,
+    "totalMinutes": 18,
+    "servingCount": 4,
+    "averageCalories": 154,
+    "protein": 5,
+    "carbs": 10,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Havucu ince rendelemek labne içinde daha kolay birleşmesini sağlar.",
+    "servingSuggestion": "Kızarmış ekmek ve sebze çubuklarıyla soğuk dip olarak servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Havuç",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Labne",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Havucu rendeleyip tavada az yağla 4 dakika yumuşayana kadar çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Cevizi ince çekin, labnenin sulanmaması için havucu tamamen ılıtın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Labne, havuç ve cevizi tuzla karıştırıp kremsi bir dip hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Dipi soğuk tabağa alın, üstüne ceviz serpip kıtır ekmekle servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-irmik-helvasi-kahramanmaras-usulu",
+    "title": "Kahramanmaraş Cevizli İrmik Helvası",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Kahramanmaraş cevizli irmik helvası, irmiği ceviz ve tereyağıyla kavurarak sıcak ve dolgun bir tatlı yapar.",
+    "prepMinutes": 8,
+    "cookMinutes": 18,
+    "totalMinutes": 26,
+    "servingCount": 6,
+    "averageCalories": 248,
+    "protein": 5,
+    "carbs": 28,
+    "fat": 13,
+    "isFeatured": true,
+    "tipNote": "İrmiği orta ateşte kavurmak yanmadan derin aroma kazandırır.",
+    "servingSuggestion": "Kaşıkla paylaştırıp üstüne ceviz serperek ılık helvayı servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "İrmik",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "40",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "İrmiği ve cevizi tereyağında tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karışımı 10 dakika kavurun, ceviz yanmadan fındık kokusu gelsin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sıcak şerbeti azar azar ekleyin, buhar çıkışı için tencereye fazla yaklaşmayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Helvayı 8 dakika kısık ateşte pişirin, irmik sıvıyı tamamen çeksin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kapağını kapatıp 10 dakika dinlendirin ve kaşıkla şekillendirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Servis tabağında tarçın yerine ekstra ceviz kullanın, ceviz aroması öne çıksın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-kabak-ezmesi",
+    "title": "Cevizli Kabak Ezmesi",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Fırınlanmış kabak ve ceviz bir araya gelince ekmeğe sürülen, tatlıya kaçmadan yumuşak bir meze oluşur.",
+    "prepMinutes": 12,
+    "cookMinutes": 25,
+    "totalMinutes": 37,
+    "servingCount": 4,
+    "averageCalories": 155,
+    "protein": 4,
+    "carbs": 12,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Kabağı fazla püre yapmadan ezin; hafif lifli doku mezeye daha iyi yakışır.",
+    "servingSuggestion": "Üstüne ceviz kırığı ve zeytinyağı gezdirerek serin servis edin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "KUSUYEMIS",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Balkabağı",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "70",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Labne",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabağı iri parçalar halinde doğrayıp 180°C fırında yumuşayana kadar pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pişen kabağın fazla suyunu süzdürün ve ılıkken çatalla ezin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ceviz ve labneyi ekleyip ezmeyi kremamsı ama hafif dokulu kalacak şekilde karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kabak ezmesini soğutup servis tabağına alın ve üstünü zeytinyağıyla tamamlayın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-kabak-mezesi-mardin-usulu",
+    "title": "Cevizli Kabak Mezesi",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Mardin cevizli kabak mezesi, kabağı ceviz ve sarımsakla karıştırarak tatlımsı, yoğun ve taş fırın yemeklerine eşlik eden bir meze yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 10,
+    "totalMinutes": 22,
+    "servingCount": 4,
+    "averageCalories": 156,
+    "protein": 4,
+    "carbs": 10,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Kabağı ezmek yerine iri bırakmak cevizle birlikte daha canlı bir doku verir.",
+    "servingSuggestion": "Mezeyi yanında ekmekle, serin halde ana meze tabağında sunun.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Kabak",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "1",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabağı rendeleyip fazla suyunu sıkın, böylece meze sulanmaz.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kabağı tavada 6 dakika yumuşayıp kokusu çıkana kadar soteleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ceviz ve sarımsağı ekleyip karışımı tuzla dengeleyerek kısa süre çevirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Mezeyi tamamen soğutup tabağa yayın ve ceviz kırığıyla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-kabak-mucver-burdur-usulu",
+    "title": "Cevizli Kabak Mücver",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Burdur usulü cevizli kabak mücver, rendelenmiş kabağı ceviz ve dereotuyla tavada kızartarak çıtır kenarlı bir meze yapar.",
+    "prepMinutes": 14,
+    "cookMinutes": 12,
+    "totalMinutes": 26,
+    "servingCount": 4,
+    "averageCalories": 214,
+    "protein": 7,
+    "carbs": 18,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Kabağın suyunu avuç içinde 20 saniye sıkmak mücverin yağ çekmeden kızarmasını sağlar.",
+    "servingSuggestion": "Sarımsaklı yoğurtla ılık servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "KUSUYEMIS",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Kabak",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Cevizli Kabak Mücver için kesme tahtasını ve servis tabağını hazırlayın, doğranan malzeme bekleyip kararmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Rendelenmiş kabağın suyunu avuç içinde 20 saniye sıkın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ceviz, yumurta, un ve dereotunu ekleyip harcı karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Mücverleri tavada iki yüzü toplam 8-10 dakika kızartın.",
+        "timerSeconds": 540
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Cevizli Kabak Mücver son tuz ve asit dengesini kontrol edin, beklerse su salmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Cevizli Kabak Mücver soslandıktan sonra bekletmeden servis edin, çıtır doku bozulmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-kabak-sinkonta-burdur-usulu",
+    "title": "Burdur Cevizli Kabak Sinkonta",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Burdur cevizli kabak sinkonta, kabağı ceviz ve sarımsakla fırınlayarak Akdeniz içlerinde hafif tatlı, yumuşak ve meze gibi de yenebilen bir sebze tabağı kurar.",
+    "prepMinutes": 15,
+    "cookMinutes": 25,
+    "totalMinutes": 40,
+    "servingCount": 4,
+    "averageCalories": 172,
+    "protein": 4,
+    "carbs": 10,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Kabakları çok ince kesmemek fırında tamamen dağılmalarını önler.",
+    "servingSuggestion": "Sinkontayı ılık ya da serin verin, üstüne ceviz serperek servis edin.",
+    "tags": [
+      "vegan",
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Kabak",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabakları kalın yarım ay doğrayıp fırın kabına tek sıra yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Ceviz, sarımsak, zeytinyağı ve tuzu küçük kapta karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Cevizli karışımı kabakların üstüne gezdirin, her parça yağlansın diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kabağı 190°C fırında 25 dakika yumuşayana kadar pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Fırından sonra 6 dakika dinlendirip yoğurtla servis edin.",
+        "timerSeconds": 360
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-kapya-ezme-hatay-usulu",
+    "title": "Cevizli Kapya Ezme",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Hatay usulü cevizli kapya ezme, köz kapya biberi ceviz ve sarımsakla buluşturarak hafif isli, yoğun ve sofrayı açan bir meze yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 10,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 142,
+    "protein": 3,
+    "carbs": 9,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Kapya biberi doğradıktan sonra süzgeçte 3 dakika bekletmek ezmede fazla su kalmasını önler.",
+    "servingSuggestion": "Lavaş ya da kızarmış ekmekle kapya ezmesini soğuk servis edin.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Köz kapya biber",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "1",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kapya biberleri doğrayıp köz kokusu için tavada kısa süre yumuşatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Cevizi ince çekin, birkaç iri kırığı son dokunuş için ayırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Biber, ceviz, sarımsak ve zeytinyağını ezerek yoğun kıvamlı karışım yapın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kapya ezmeyi 10 dakika dinlendirin ve üstüne ayrılan cevizleri serpin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-kayisi-ezmesi-malatya-usulu",
+    "title": "Malatya Cevizli Kayısı Ezmesi",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Malatya cevizli kayısı ezmesi, kuru kayısıyı ceviz ve bal ile ezerek meyvemsi ve sürülebilir bir tatlı hazırlar.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "totalMinutes": 10,
+    "servingCount": 4,
+    "averageCalories": 182,
+    "protein": 3,
+    "carbs": 25,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Kayısıları 10 dakika suda bekletmek ezmenin daha pürüzsüz olmasını sağlar.",
+    "servingSuggestion": "Küçük tabakta, yanında kahveyle kayısı ezmesini serin sunun.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuru kayısı",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuru kayısıları 10 dakika ılık suda bekletin ve süzün.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kayısıları küçük doğrayıp bal ya da şekerle tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karışımı 8 dakika pişirin, kayısı ezilecek kadar yumuşasın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Cevizi iri kırıp ılık kayısı ezmesine katın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ezme karışımını 20 dakika soğutun ve küçük porsiyonlara ayırın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Porsiyonları yağlı kağıt üzerinde toparlayın, kayısı ezmesi ele yapışmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-keskul-bursa-usulu",
+    "title": "Bursa Cevizli Keşkül",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Bursa cevizli keşkül, sütlü tatlıyı cevizle derinleştirerek Osmanlı etkili mutfak hafızasında yumuşak dokulu zarif bir kapanış sunar.",
+    "prepMinutes": 10,
+    "cookMinutes": 15,
+    "totalMinutes": 25,
+    "servingCount": 6,
+    "averageCalories": 186,
+    "protein": 5,
+    "carbs": 18,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Keşkülü ocaktan aldıktan sonra 2 dakika daha karıştırmak üstte kabuk bağlamasını geciktirir.",
+    "servingSuggestion": "Kaselerde soğuk verin, üstüne ceviz serperek keşkülü servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Pirinç unu",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Süt, şeker ve pirinç ununu tencerede soğukken çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karışımı 12 dakika pişirin, pirinç unu kokusu kaybolsun.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Cevizin yarısını ince çekip keşküle ekleyin, yağını salması için 2 dakika karıştırın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Keşkülü kaselere paylaştırın ve yüzeyi kabuklanmadan ılıtın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kalan cevizi üstüne serpip 1 saat soğutun.",
+        "timerSeconds": 3600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Servisten önce kaselerin kenarını silin, keşkül yüzeyi temiz görünsün.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-lokum-afyon-usulu",
+    "title": "Afyon Cevizli Lokum",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Afyon cevizli lokum, nişasta bazlı lokumu bol cevizle birleştirerek kentin şekerleme geleneğini ev yapımı bir tatlıya taşıyan klasik bir ikramlıktır.",
+    "prepMinutes": 15,
+    "cookMinutes": 25,
+    "totalMinutes": 40,
+    "servingCount": 16,
+    "averageCalories": 96,
+    "protein": 1,
+    "carbs": 16,
+    "fat": 3,
+    "isFeatured": false,
+    "tipNote": "Nişastayı soğuk suda açmak lokumun topaksız bağlanmasına yardım eder.",
+    "servingSuggestion": "Küçük küpler halinde verin, yanında kahveyle lokumu servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Nişasta",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Nişastayı 1 su bardağı soğuk suyla açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kalan su ve şekeri 8 dakika kaynatıp şeffaf şurup hazırlayın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nişastalı karışımı şuruba ince akıtıp sürekli çırpın, topak oluşmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Lokumu 18 dakika kısık ateşte pişirin, spatuladan kalın şerit halinde aksın.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Cevizi ekleyip kalıba dökün ve tamamen soğutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Lokumu nişastaya bulayıp fazla nişastayı silkeleyin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-lorlu-havuclu-dip-bilecik-usulu",
+    "title": "Cevizli Lorlu Havuçlu Dip",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Bilecik usulü cevizli lorlu havuçlu dip, havucu lor ve cevizle buluşturarak kremamsı, hafif tatlı ve mezelik bir dip yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 8,
+    "totalMinutes": 18,
+    "servingCount": 4,
+    "averageCalories": 144,
+    "protein": 6,
+    "carbs": 9,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Havucu tavada 4 dakika çevirmek sertliğini alırken rengini canlı tutar.",
+    "servingSuggestion": "Kızarmış ekmek ve krakerle, dipi soğuk meze olarak servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Havuç",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Havucu ince rendeleyip suyunu hafifçe sıkın ve tavaya alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Havucu zeytinyağında 4 dakika yumuşayana kadar çevirip ılıtın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lor ve cevizi ekleyip dip kıvamı alana kadar nazikçe karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karışımı soğuk servis tabağına yayın ve üstünü cevizle tamamlayın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-lorlu-kuru-biber-dolmasi-diyarbakir-usulu",
+    "title": "Diyarbakır Cevizli Lorlu Kuru Biber Dolması",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Diyarbakır cevizli lorlu kuru biber dolması, kuru biberi lor ve cevizle doldurarak yoğun, hafif ekşi ve dokulu bir meze verir.",
+    "prepMinutes": 20,
+    "cookMinutes": 10,
+    "totalMinutes": 30,
+    "servingCount": 6,
+    "averageCalories": 164,
+    "protein": 6,
+    "carbs": 9,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Biberleri kısa haşlamak diri yapı bırakır.",
+    "servingSuggestion": "Üzerine sumak serpip ılık servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuru dolmalık biber",
+        "amount": "12",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sumak",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuru biberleri kaynar suda 6 dakika yumuşatıp süzün ve soğumaya bırakın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lor peynirini ceviz, sumak ve zeytinyağıyla ezmeden karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Biberlerin içini lorlu harçla doldurun, ağızlarını taşmayacak şekilde açık bırakın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Dolmaları servis tabağına dizip üstlerine zeytinyağı gezdirerek soğuk sunun.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-medovik",
+    "title": "Cevizli Medovik",
+    "cuisine": "ru",
+    "type": "TATLI",
+    "description": "İnce katmanlı ballı Medovik, bekledikçe yumuşayan yapısıyla sabırlı tatlıların en ödüllendiricilerinden biridir.",
+    "prepMinutes": 60,
+    "cookMinutes": 25,
+    "totalMinutes": 85,
+    "servingCount": 10,
+    "averageCalories": 320,
+    "protein": 6,
+    "carbs": 39,
+    "fat": 16,
+    "isFeatured": true,
+    "tipNote": "Katları çok kalın açmayın; Medovik bekledikçe incelikle yumuşamalı.",
+    "servingSuggestion": "Bir gece dinlendirip dilimleri soğuk ya da serin halde servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "KUSUYEMIS",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "450",
+        "unit": "gr",
+        "group": "Katlar için"
+      },
+      {
+        "name": "Bal",
+        "amount": "120",
+        "unit": "gr",
+        "group": "Katlar için"
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": "Katlar için"
+      },
+      {
+        "name": "Ekşi krema",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Ceviz içi",
+        "amount": "100",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bal aromalı kek katlarını ufalayıp bir kısmını kaplama için ayırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Ekşi kremayı şekerle 2 dakika çırpın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kek katlarını krema ile üst üste dizin ve aralara ceviz serpin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Üstünü kırıntı ve cevizle kaplayın, açık yer kalmasın diye hafif bastırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Medoviki 8 saat buzdolabında dinlendirin, katlar yumuşasın.",
+        "timerSeconds": 28800
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Dilimlemeden önce bıçağı ılık suyla silin, katlar ezilmesin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-misir-unu-helvasi-artvin-usulu",
+    "title": "Cevizli Mısır Unu Helvası",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Artvin usulü cevizli mısır unu helvası, mısır ununu ceviz ve pekmezle buluşturarak kavruk, tok ve kaşıkla yenilen bir tatlı kurar.",
+    "prepMinutes": 8,
+    "cookMinutes": 14,
+    "totalMinutes": 22,
+    "servingCount": 6,
+    "averageCalories": 226,
+    "protein": 4,
+    "carbs": 24,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Mısır ununu sabırla kavurmak helvaya derin bir koku verir.",
+    "servingSuggestion": "Kaşıkla paylaştırıp üstüne ceviz serperek ılık helvayı servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Mısır unu",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Pekmez",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ayçiçek yağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mısır ununu tereyağı erimiş tavaya alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mısır ununu 6 dakika kavurun, kokusu çıkınca rengi hafif koyulaşsın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pekmezli suyu ayrı kapta karıştırıp ılık tutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sıvıyı mısır ununa yavaşça ekleyin, sıçrama olmasın diye sürekli karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Cevizi katıp 3 dakika toparlayın ve sıcak servis edin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Servis ederken pekmezden ince çizgi gezdirin, mısır unu tadı dengelensin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-muz-kadayifi-alanya-usulu",
+    "title": "Alanya Cevizli Muz Kadayıfı",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Alanya cevizli muz kadayıfı, tel kadayıfı muz ve cevizle buluşturarak sahil tatlılarına çıtır, meyvemsi ve sıcak servislik bir yorum kazandırır.",
+    "prepMinutes": 18,
+    "cookMinutes": 22,
+    "totalMinutes": 40,
+    "servingCount": 6,
+    "averageCalories": 248,
+    "protein": 4,
+    "carbs": 31,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Muzu en son eklemek fırında tamamen püreye dönmesini önler.",
+    "servingSuggestion": "Kadayıfı dilimleyip yanında sütle, fırından sonra ılık servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Tel kadayıf",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Muz",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "60",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kadayıfı elinizle açıp eritilmiş tereyağıyla harmanlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kadayıfın yarısını tepsiye bastırarak yayın, alt kat gevrek kalsın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Muz dilimleri ve cevizi ara kata yerleştirin, kenarlara taşırmayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kalan kadayıfı kapatıp tatlıyı 190°C fırında 22 dakika pişirin.",
+        "timerSeconds": 1320
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Fırından çıkınca 10 dakika dinlendirin ve pudra şekeriyle servis edin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Muzlu katı sıcak servis etmeyin, meyve kokusu ağırlaşmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-narli-kofte-siirt-usulu",
+    "title": "Siirt Cevizli Narlı Köfte",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Siirt cevizli narlı köfte, ince bulgur köftelerini nar ekşisi ve cevizle buluşturarak ekşi tatlı dengeli bir tabak yapar.",
+    "prepMinutes": 18,
+    "cookMinutes": 12,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 236,
+    "protein": 7,
+    "carbs": 30,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Nar ekşisini servis öncesi eklemek tazeliğini artırır.",
+    "servingSuggestion": "Üstüne nar taneleri serpip köfteyi ılık meze tabağında servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "İnce bulgur",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Nar ekşisi",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "İnce bulguru ılık suyla 10 dakika şişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bulgura kıyma, ceviz, nar ekşisi ve baharat ekleyip 8 dakika yoğurun.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Harcı küçük köfteler halinde şekillendirin, çatlak kalmasın diye avucunuzu ıslatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Köfteleri kaynar suda 8 dakika haşlayın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Nar ekşili sosu üstüne gezdirip cevizle servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-pancar-dip-zonguldak-usulu",
+    "title": "Cevizli Pancar Dip",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Zonguldak usulü cevizli pancar dip, haşlanmış pancarı süzme yoğurt ve cevizle buluşturarak renkli, serin ve sofrayı açan bir aperatif çıkarır.",
+    "prepMinutes": 10,
+    "cookMinutes": 8,
+    "totalMinutes": 18,
+    "servingCount": 4,
+    "averageCalories": 146,
+    "protein": 5,
+    "carbs": 10,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Pancarı rendeledikten sonra tel süzgeçte 2 dakika bekletmek dip içinde sulanmayı önler.",
+    "servingSuggestion": "Kızarmış ekmek ve krakerle pancar dipini soğuk servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Haşlanmış pancar",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Süzme yoğurt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "1",
+        "unit": "diş",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Haşlanmış pancarı ince rendeleyip fazla suyunu süzdürün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yoğurtlu tabanı sarımsak ve tuzla çırparak pürüzsüz hale getirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pancar ve cevizi yoğurda ekleyip rengini homojen dağılana kadar karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Dipi 10 dakika soğutup üstüne ceviz serpin ve servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-pancar-muhlama-ekmegi-ordu-usulu",
+    "title": "Cevizli Pancar Muhlama Ekmeği",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Ordu usulü cevizli pancar muhlama ekmeği, pancarlı peynirli tabanı ceviz ve mısır ekmeğiyle buluşturarak tok bir kahvaltı yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 8,
+    "totalMinutes": 20,
+    "servingCount": 2,
+    "averageCalories": 298,
+    "protein": 11,
+    "carbs": 23,
+    "fat": 18,
+    "isFeatured": false,
+    "tipNote": "Pancarı ince rendelemek peynirli tabanda daha dengeli yayılmasını sağlar.",
+    "servingSuggestion": "Cevizli pancar muhlama ekmeğini sıcak sunup kolot peynirli yüzeyi ekmeğin üstünde bırakın.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Mısır ekmeği",
+        "amount": "4",
+        "unit": "dilim",
+        "group": null
+      },
+      {
+        "name": "Kolot peyniri",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış pancar",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ceviz içi",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pancarı ince rendeleyip suyunu sıkın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tereyağında pancarı orta ateşte 2 dakika çevirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Peyniri ekleyip kısık ateşte 4 dakika uzayana kadar pişirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Cevizi serpin, ceviz yağını yakmamak için tavada uzun tutmayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sıcak mısır ekmeğinin üstüne pay edip hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-patates-bastisi-igdir-usulu",
+    "title": "Cevizli Patates Bastısı",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Iğdır usulü cevizli patates bastısı, haşlanmış patatesi ceviz ve hafif tereyağıyla buluşturarak tok, sade ve paylaşmalık bir aperatif hazırlar.",
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "totalMinutes": 22,
+    "servingCount": 4,
+    "averageCalories": 172,
+    "protein": 4,
+    "carbs": 20,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Patatesi iri ezmek bastıda daha rustik bir doku bırakır.",
+    "servingSuggestion": "Yanına yoğurt koyup patates bastısını ılık ana tabakta servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Patates",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesi 12 dakika haşlayıp bıçak kolay girince süzün.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Patatesi sıcakken iri ezin ve cevizle birlikte hafif taneli bırakın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karışımı servis tabağına bastırarak yayın ve yüzeyini kaşıkla düzeltin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Üzerine kızdırılmış tereyağı gezdirin ve sıcaklığı geçmeden servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-patates-corbasi-bilecik-usulu",
+    "title": "Bilecik Cevizli Patates Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Bilecik cevizli patates çorbası, patatesi ceviz ve soğanla pişirerek Marmara geçiş mutfağına tok, kremamsı ve hafif kavruk bir başlangıç kazandırır.",
+    "prepMinutes": 12,
+    "cookMinutes": 22,
+    "totalMinutes": 34,
+    "servingCount": 5,
+    "averageCalories": 174,
+    "protein": 4,
+    "carbs": 19,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Cevizi en son eklemek çorbada yağının baskınlaşmasını önler.",
+    "servingSuggestion": "Üstüne ceviz serperek patates çorbasını sıcak derin kasede sunun.",
+    "tags": [
+      "vejetaryen",
+      "kis-tarifi",
+      "vegan"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Patates",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1",
+        "unit": "lt",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soğanı zeytinyağında 3 dakika çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Patates ve suyu ekleyip 18 dakika pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Cevizi tavada 2 dakika kokusu çıkana kadar ısıtın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Cevizi çorbaya ekleyip blenderdan geçirin, yağlı ceviz kıvamı bağlasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ceviz kırığıyla sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-patlican-sote-mardin-usulu",
+    "title": "Mardin Cevizli Patlıcan Sote",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Mardin cevizli patlıcan sote, patlıcanı ceviz ve sarımsakla tavada buluşturarak taş mutfaklarda etsiz ama derin aromalı bir ara tabak kurar.",
+    "prepMinutes": 12,
+    "cookMinutes": 16,
+    "totalMinutes": 28,
+    "servingCount": 4,
+    "averageCalories": 178,
+    "protein": 4,
+    "carbs": 11,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Patlıcanı çok küçük doğramamak tavada ezilmeden kalmasına yardım eder.",
+    "servingSuggestion": "Yanına sıcak ekmek koyup patlıcan soteyi ılık meze tabağında sunun.",
+    "tags": [
+      "vegan",
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Patlıcan",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patlıcanı küp doğrayıp acısını almak için tuzlu suda kısa süre bekletin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Süzülen patlıcanı tavada yağla 10 dakika yumuşayıp kızarana kadar pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ceviz ve sarımsağı ekleyip 2 dakika kokusu çıkana kadar çevirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Soteyi ılık servis tabağına alın ve üstüne taze ot serpin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-pazi-sarmasi-artvin-usulu",
+    "title": "Artvin Cevizli Pazı Sarması",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Artvin cevizli pazı sarması, pazı yapraklarını bulgur ve cevizle doldurarak yayla mutfağında ekşilikle dengelenen hafif ama karakterli bir tencere yemeğine dönüşür.",
+    "prepMinutes": 25,
+    "cookMinutes": 25,
+    "totalMinutes": 50,
+    "servingCount": 5,
+    "averageCalories": 206,
+    "protein": 5,
+    "carbs": 24,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "İç harcı çok sıkı doldurmamak pazıların pişerken daha düzgün sarılı kalmasını sağlar.",
+    "servingSuggestion": "Üzerine limon gezdirerek ılık servis edin.",
+    "tags": [
+      "vegan",
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Pazı yaprağı",
+        "amount": "14",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "İnce bulgur",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pazı yapraklarını 1 dakika sıcak suda yumuşatın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yaprakları soğuk sudan geçirip kalın damarlarını inceltin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bulgur, ceviz ve ince doğranmış soğanla iç harcı hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pazı yapraklarını fazla doldurmadan sarın, bulgur pişerken taşmasın diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sarmaları limonlu suyla 20 dakika kısık ateşte pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tencerede 10 dakika dinlendirip ılık servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-sarimsakli-kabak-ezme-igdir-usulu",
+    "title": "Cevizli Sarımsaklı Kabak Ezme",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Iğdır usulü cevizli sarımsaklı kabak ezme, kabağı ceviz ve sarımsakla buluşturarak hafif, sürülebilir bir meze yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 10,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 128,
+    "protein": 3,
+    "carbs": 9,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Kabağın suyunu sıkmak ezmenin sulu kalmasını önler.",
+    "servingSuggestion": "Cevizli sarımsaklı kabak ezmesini sığ kaseye yayıp ceviz kırıklarını üstte bırakın.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Kabak",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabağı rendeleyip fazla suyunu sıkın ve tavaya alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kabağı 8 dakika soteleyerek yumuşatın ve suyunu çektirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ceviz ve sarımsağı ekleyip karışımı tok kıvam alana kadar ezin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ezmesini ılık ya da soğuk servis edin, üstüne zeytinyağı gezdirin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-sarimsakli-kopuk-biber-ezme-hatay-usulu",
+    "title": "Cevizli Sarımsaklı Köpük Biber Ezme",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Hatay usulü cevizli sarımsaklı köpük biber ezme, biberi ceviz ve sarımsakla buluşturarak yoğun, hafif köpüklü bir meze yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 6,
+    "totalMinutes": 16,
+    "servingCount": 4,
+    "averageCalories": 138,
+    "protein": 3,
+    "carbs": 8,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Blenderda kısa çekmek ezmede hava kalsa da biber dokusunu korur.",
+    "servingSuggestion": "Lavaş eşliğinde biber ezmesini serin meze tabağında sunun.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Kapya biber",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Biberi köz tadı alana kadar 6 dakika çevirin ve kabuğunu soyun.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Ceviz ve sarımsağı ekleyip karışımı iri parçalı kalacak şekilde hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Biberleri kısa aralıklarla çekin, köpüksü ama sulu olmayan bir doku bırakın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ezmesini tabağa alıp 10 dakika dinlendirin ve lavaşla servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-sogan-mucveri-siirt-usulu",
+    "title": "Siirt Cevizli Soğan Mücveri",
+    "cuisine": "tr",
+    "type": "ATISTIRMALIK",
+    "description": "Siirt cevizli soğan mücveri, soğanı ceviz ve unla tavada kızartarak dışı gevrek ve içi yumuşak bir atıştırmalık çıkarır.",
+    "prepMinutes": 15,
+    "cookMinutes": 12,
+    "totalMinutes": 27,
+    "servingCount": 4,
+    "averageCalories": 186,
+    "protein": 5,
+    "carbs": 14,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Soğanı tuzlayıp 5 dakika bekletmek fazla suyunu salmasına yardım eder.",
+    "servingSuggestion": "Yanına yoğurtlu dip koyup mücverleri ılık halde servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuru soğan",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Siirt Cevizli Soğan Mücveri için Kuru soğan 3 adet hazırlığını yapıp fazla suyunu elinizle sıkın, harç sulanmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Siirt Cevizli Soğan Mücveri harcına yumurta, un ve yeşillikleri ekleyip 2 dakika koyu kıvam alana kadar karıştırın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Siirt Cevizli Soğan Mücveri karışımını 5 dakika dinlendirin, un nemi çeksin ve tavada dağılmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Siirt Cevizli Soğan Mücveri için yağı orta ateşte 2 dakika ısıtıp harçtan kaşıkla küçük porsiyonlar bırakın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Siirt Cevizli Soğan Mücveri parçalarını orta ateşte her yüzü kızarana kadar toplam 7 dakika pişirin.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Siirt Cevizli Soğan Mücveri porsiyonlarını kağıt havluya alıp 3 dakika dinlendirin ve ılık servis edin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-sucuk",
+    "title": "Cevizli Sucuk",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Anadolu kış hazırlıklarında ceviz dizileri üzüm pekmezli köftüre bulanır, kurudukça keskinleşir.",
+    "prepMinutes": 60,
+    "cookMinutes": 25,
+    "totalMinutes": 85,
+    "servingCount": 12,
+    "averageCalories": 230,
+    "protein": 4,
+    "carbs": 43,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Köftür kaşıktan kalın şerit halinde akınca cevizleri kaplayacak kıvama gelmiştir.",
+    "servingSuggestion": "İnce dilimleyip yanında kahveyle, oda sıcaklığında servis edin.",
+    "tags": [
+      "vegan",
+      "kis-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Ceviz",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Üzüm pekmezi",
+        "amount": "1",
+        "unit": "litre",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "500",
+        "unit": "ml",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Cevizleri sağlam ipe aralıklı dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pekmez, su ve unu tencerede soğukken çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karışımı 25 dakika pişirin, bulamaç kaşığı kalın kaplasın.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ceviz dizilerini sıcak bulamaca batırıp süzdürün, kaplama eşit olsun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sucukları serin yerde 2 gün kurutun ve dilimleyin.",
+        "timerSeconds": 172800
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kuruyan sucukları hava alan bez torbada saklayın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-sutlu-kadayif-amasya-usulu",
+    "title": "Amasya Cevizli Sütlü Kadayıf",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Amasya usulü cevizli sütlü kadayıf, kızarmış tel kadayıfı sütlü şerbetle yumuşatarak kuru tatlı ile sütlü tatlı arasında dengeli bir tabak kurar.",
+    "prepMinutes": 20,
+    "cookMinutes": 25,
+    "totalMinutes": 45,
+    "servingCount": 8,
+    "averageCalories": 274,
+    "protein": 5,
+    "carbs": 29,
+    "fat": 15,
+    "isFeatured": false,
+    "tipNote": "Kadayıfı tam kızartıp sütü sonra vermek tatlının lapa olmadan yumuşamasını sağlar.",
+    "servingSuggestion": "Dilimleyip yanında çayla, kadayıfı ılık tatlı olarak servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Tel kadayıf",
+        "amount": "350",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kadayıfı tel tel ayırıp eritilmiş tereyağıyla harmanlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kadayıfın yarısını tepsiye bastırın, ceviz serpip kalanını kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tatlıyı 180°C fırında 20 dakika pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Süt ve şekeri 5 dakika ısıtıp sütlü şerbet hazırlayın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ilık şerbeti kadayıfa döküp 10 dakika dinlendirin, şerbet eşit çekilsin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Üst cevizi şerbet çekildikten sonra serpin, gevrekliği kaybolmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-tava-ekmegi-sirnak-usulu",
+    "title": "Şırnak Cevizli Tava Ekmeği",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Şırnak cevizli tava ekmeği, ince hamuru ceviz ve baharatla tavada kapatarak dağ mutfağına çıtır kenarlı, doyurucu ve kolay paylaşılan bir ekmek işi taşır.",
+    "prepMinutes": 20,
+    "cookMinutes": 15,
+    "totalMinutes": 35,
+    "servingCount": 6,
+    "averageCalories": 248,
+    "protein": 6,
+    "carbs": 28,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "İç malzemeyi hamurun ortasında toplamak pişerken kenarlardan taşmasını azaltır.",
+    "servingSuggestion": "Dilimleyip yanında ayranla, tava ekmeğini sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1.25",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Pul biber",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, su ve tuzla tava ekmeği hamurunu 7 dakika yoğurun.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 20 dakika dinlendirin, açarken kenarlar çatlamasın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Cevizi iri kıyıp hamurun ortasına yayın ve kenarları kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ekmeği yağsız tavada orta ateşte bir yüzü 5 dakika pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Çevirip diğer yüzünü 5 dakika kızartın, iç ceviz ısınsın.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-tirit-samsun-ocak-usulu",
+    "title": "Samsun Cevizli Tirit",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Samsun cevizli tirit, et suyuna bastırılmış ekmeği ceviz ve yoğurtla buluşturarak yumuşak, sıcak ve doyurucu bir Karadeniz tabağı kurar.",
+    "prepMinutes": 18,
+    "cookMinutes": 22,
+    "totalMinutes": 40,
+    "servingCount": 4,
+    "averageCalories": 286,
+    "protein": 14,
+    "carbs": 24,
+    "fat": 15,
+    "isFeatured": false,
+    "tipNote": "Ekmeği suya kısa süre batırmak dağılmasını önler.",
+    "servingSuggestion": "Üstüne ceviz serperek tiriti ılık ana tabakta hemen servis edin.",
+    "tags": [
+      "tek-tencere",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Bayat ekmek",
+        "amount": "4",
+        "unit": "dilim",
+        "group": null
+      },
+      {
+        "name": "Et suyu",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "20",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bayat ekmeği lokmalık parçalara ayırıp servis tabağına yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Et suyunu 8 dakika kaynar sıcaklığa gelene kadar ısıtın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sıcak et suyunu ekmeğin üstüne gezdirin, kuru parça kalmasın diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sarımsaklı yoğurdu ayrı kapta pürüzsüz çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tereyağını 2 dakika cevizle köpürtün.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Yoğurt, cevizli tereyağı ve pul biberle tirit tabağını tamamlayın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-yulaf-kavurmasi-kastamonu-usulu",
+    "title": "Kastamonu Cevizli Yulaf Kavurması",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Kastamonu cevizli yulaf kavurması, yulafı ceviz ve soğanla tavada çevirerek sabaha sıcak, tok ve hafif kavruk aromalı bir kâse bırakır.",
+    "prepMinutes": 8,
+    "cookMinutes": 10,
+    "totalMinutes": 18,
+    "servingCount": 2,
+    "averageCalories": 236,
+    "protein": 6,
+    "carbs": 21,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Yulafı tavada 2 dakika kuru çevirmek daha belirgin kavruk aroma verir.",
+    "servingSuggestion": "Sahan tabakta, yanında yoğurtla yulaf kavurmasını ılık servis edin.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Yulaf",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "0.5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soğanı 1 yemek kaşığı yağda orta ateşte 3 dakika yumuşatın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yulaf ve iri cevizleri ekleyip 4 dakika kavurun.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yarım çay bardağı sıcak suyu serpin, yulaf yanmasın ve buharla yumuşasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tavayı kapatıp 2 dakika dinlendirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karabiber ve maydanozla sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cevizli-zahter-salatasi-hatay-usulu",
+    "title": "Hatay Cevizli Zahter Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Hatay usulü cevizli zahter salatası, taze zahteri ceviz ve nar ekşisiyle birleştirerek kahvaltıdan meze tabağına uzanan canlı bir tabak kurar.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "totalMinutes": 10,
+    "servingCount": 4,
+    "averageCalories": 132,
+    "protein": 3,
+    "carbs": 5,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Zahteri çok ince kıymadan bırakmak salatanın taze ot karakterini daha açık hissettirir.",
+    "servingSuggestion": "Yanına sıcak pideyle serin servis edin.",
+    "tags": [
+      "vegan",
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "KUSUYEMIS",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Taze zahter",
+        "amount": "1",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Nar ekşisi",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.25",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Pide",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Hatay Cevizli Zahter Salatası başlamadan sos malzemelerini ayırın, salata birleşince hızlı servis edilsin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Taze zahteri yıkayıp iri kıyın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ceviz, nar ekşisi, zeytinyağı ve tuzu zahterle karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Salatayı 5 dakika dinlendirip pideyle servis edin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Hatay Cevizli Zahter Salatası soslandıktan sonra bekletmeden servis edin, çıtır doku bozulmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "cha-gio",
+    "title": "Cha Gio",
+    "cuisine": "vn",
+    "type": "APERATIF",
+    "description": "Vietnam kızarmış sarmaları pirinç kağıdında kıyma, sebze ve cam erişteyle çıtır bir atıştırmalık olur.",
+    "prepMinutes": 35,
+    "cookMinutes": 15,
+    "totalMinutes": 50,
+    "servingCount": 6,
+    "averageCalories": 260,
+    "protein": 12,
+    "carbs": 22,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Sarmaları yağda küçük partiler halinde pişirin; pirinç kağıdı birbirine yapışmaz.",
+    "servingSuggestion": "Marul ve naneli sosla servis edin.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "YUMURTA",
+      "SOYA"
+    ],
+    "ingredients": [
+      {
+        "name": "Pirinç kağıdı",
+        "amount": "20",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dana kıyma",
+        "amount": "350",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Cam erişte",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Havuç",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kıyma, cam erişte, havuç, yumurta ve soya sosunu dolgu kıvamında karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinç kağıtlarını hafif nemlendirip harcı uç kısmına ince şerit halinde yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sarmaları sıkı rulo yapın ve uçlarını kızartırken açılmayacak şekilde kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Cha gio rulolarını 170°C yağda 12-15 dakika çıtırlaşana kadar kızartın.",
+        "timerSeconds": 900
+      }
+    ]
+  },
+  {
+    "slug": "chai-latte",
+    "title": "Chai Latte",
+    "cuisine": "in",
+    "type": "ICECEK",
+    "description": "Siyah çay, süt ve sıcak baharatlarla hazırlanan kremamsı içecek.",
+    "prepMinutes": 5,
+    "cookMinutes": 12,
+    "totalMinutes": 17,
+    "servingCount": 2,
+    "averageCalories": 140,
+    "protein": 4,
+    "carbs": 19,
+    "fat": 5,
+    "isFeatured": true,
+    "tipNote": "Baharatları süt eklemeden demleyin; aromasını suya daha net bırakır.",
+    "servingSuggestion": "Üzerine tarçın serperek servis edin.",
+    "tags": [
+      "vejetaryen",
+      "alkolsuz",
+      "kis-tarifi"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Siyah çay",
+        "amount": "2",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tarçın çubuğu",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kakule",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Karanfil",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "2",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Su, çay, tarçın, kakule ve karanfili 5 dakika kaynatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sütü ekleyip 5-7 dakika kısık ateşte ısıtın.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "İçeceği süzüp bal ile tatlandırın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "champurrado",
+    "title": "Champurrado",
+    "cuisine": "mx",
+    "type": "ICECEK",
+    "description": "Meksika'nın çikolatalı sıcak mısır içeceği champurrado, tarçınla birlikte yoğun ve tok bir bardak verir.",
+    "prepMinutes": 10,
+    "cookMinutes": 15,
+    "totalMinutes": 25,
+    "servingCount": 4,
+    "averageCalories": 223,
+    "protein": 6,
+    "carbs": 34,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Masa harinayı önce az suyla açın; doğrudan tencereye eklenirse topaklanır.",
+    "servingSuggestion": "Kalın bardakta, üstüne tarçın serperek sıcak içecek olarak servis edin.",
+    "tags": [
+      "kis-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Masa harina",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Bitter çikolata",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "1",
+        "unit": "çubuk",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Masa harinayı birkaç kaşık sütle açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kalan süt ve tarçınla birlikte 10 dakika pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Çikolatayı ekleyip eritin ve sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "chana-masala",
+    "title": "Chana Masala",
+    "cuisine": "in",
+    "type": "YEMEK",
+    "description": "Chana masala, nohudu soğan, domates, zencefil, sarımsak ve garam masala ile koyu kıvamlı pişiren baharatlı Hint yemeğidir.",
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "totalMinutes": 50,
+    "servingCount": 5,
+    "averageCalories": 260,
+    "protein": 12,
+    "carbs": 38,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Nohudun bir kısmını ezmek sosu un eklemeden koyulaştırır.",
+    "servingSuggestion": "Basmati pirinç, limon ve kişnişle sıcak servis edin.",
+    "tags": [
+      "vegan",
+      "butce-dostu"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "3",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zencefil",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Garam masala",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kimyon",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kişniş",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soğan, sarımsak, zencefil ve yeşil biberi püre yapın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan püresini yağda 8 dakika kokusu tatlılaşana kadar pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kimyon, kişniş, zerdeçal ve garam masalayı ekleyip 2 dakika kavurun.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Domatesleri katıp sosu 8 dakika koyulaştırın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Nohut ve 1 su bardağı sıcak suyu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Yemeği 15 dakika kısık ateşte pişirip nohutun bir kısmını ezin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Limon suyu ve kişnişle bitirip servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "chao-ga",
+    "title": "Chao Ga",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Vietnam tavuklu pirinç lapası zencefil kokusuyla sade, yumuşak ve doyurucu bir kase olur.",
+    "prepMinutes": 10,
+    "cookMinutes": 55,
+    "totalMinutes": 65,
+    "servingCount": 4,
+    "averageCalories": 240,
+    "protein": 18,
+    "carbs": 24,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Tavuk ve pirinci uzun pişirin; lapa kendi nişastasıyla doğal kıvam alır.",
+    "servingSuggestion": "Üstüne taze soğan ve karabiber serpip sıcak kasede servis edin.",
+    "tags": [
+      "butce-dostu"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Pirinç",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tavuk but",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Zencefil",
+        "amount": "20",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Taze soğan",
+        "amount": "2",
+        "unit": "dal",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pirinç, tavuk, zencefil ve 6 su bardağı suyu tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karışımı kısık ateşte 45 dakika pişirin, pirinçler lapa dokusuna açılsın.",
+        "timerSeconds": 2700
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tavuğu çıkarıp didikleyin, kemik parçası kalmasın diye kontrol edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Didiklenmiş tavuğu tencereye döndürüp 10 dakika daha pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Balık sosu, taze soğan ve kızarmış soğanla sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "char-siu",
+    "title": "Char Siu",
+    "cuisine": "cn",
+    "type": "YEMEK",
+    "description": "Kanton mutfağının parlak fırın domuz eti, soya, bal ve beş baharatla tatlı-tuzlu kızarır.",
+    "prepMinutes": 40,
+    "cookMinutes": 35,
+    "totalMinutes": 315,
+    "servingCount": 4,
+    "averageCalories": 420,
+    "protein": 29,
+    "carbs": 18,
+    "fat": 24,
+    "isFeatured": false,
+    "tipNote": "Eti pişerken iki kez soslayın; yüzeyi parlak ve yapışkan olur. Vaktiniz varsa eti 4 saat dinlendirin; daha kısa bekleme yalnızca yüzey tadı bırakır.",
+    "servingSuggestion": "Pirinç ve buharda sebzeyle servis edin.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "SOYA",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Domuz bonfile",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": "Marine için"
+      },
+      {
+        "name": "Bal",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": "Marine için"
+      },
+      {
+        "name": "Susam yağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": "Marine için"
+      },
+      {
+        "name": "Beş baharat",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": "Marine için"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Eti uzun şeritler halinde kesip fazla yağını düzeltin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soya sosu, bal, susam yağı, sarımsak ve beş baharatla marinadı hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Eti marinadda 30 dakika bekletin, yüzeyi eşit kaplansın diye.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Eti 200°C fırında 25 dakika pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kalan sosu sürüp 10 dakika daha fırınlayın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Eti 8 dakika dinlendirip ince dilimleyin.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "char-siu-bao",
+    "title": "Char Siu Bao",
+    "cuisine": "cn",
+    "type": "APERATIF",
+    "description": "Kanton dim sum arabalarının buharlı çöreği; tatlı soya soslu dana içi yumuşak hamurda saklanır.",
+    "prepMinutes": 60,
+    "cookMinutes": 18,
+    "totalMinutes": 78,
+    "servingCount": 8,
+    "averageCalories": 290,
+    "protein": 11,
+    "carbs": 39,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Buhar sepetinin kapağını pişirme bitene kadar açmayın; hamur sönmez.",
+    "servingSuggestion": "Sıcak dim sum tabağı olarak servis edin.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SOYA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "400",
+        "unit": "gr",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Maya",
+        "amount": "7",
+        "unit": "gr",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Dana eti",
+        "amount": "350",
+        "unit": "gr",
+        "group": "İç için"
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": "İç için"
+      },
+      {
+        "name": "Bal",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": "İç için"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, maya ve suyla yumuşak hamur yoğurup 40 dakika kabarana kadar mayalandırın.",
+        "timerSeconds": 2400
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Dana etini soya sosu ve balla 12 dakika pişirip küçük küpler halinde doğrayın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru bezelere ayırıp iç harcı ortaya koyun ve ağızlarını sıkıca kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Bao parçalarını buharda 15 dakika pişirin ve kapağı açmadan 2 dakika dinlendirin.",
+        "timerSeconds": 900
+      }
+    ]
+  }
+]

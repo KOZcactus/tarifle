@@ -1,0 +1,4244 @@
+[
+  {
+    "slug": "sutlu-balkabagi-tatlisi-bursa-usulu",
+    "title": "Sütlü Balkabağı Tatlısı",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Bursa sütlü balkabağı tatlısı, balkabağını hafif şerbet ve süt kremasıyla buluşturarak yumuşak, parlak ve kaşıklık bir tatlıya dönüştürür.",
+    "prepMinutes": 12,
+    "cookMinutes": 26,
+    "totalMinutes": 38,
+    "servingCount": 6,
+    "averageCalories": 228,
+    "protein": 4,
+    "carbs": 30,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Kabağı çok karıştırmadan pişirmek dilimlerin formunu korur.",
+    "servingSuggestion": "Üstüne iri kıyılmış çiğ fındık ve bir damla gül suyuyla sunum kurun.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Bal kabağı",
+        "amount": "800",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Süt kreması",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabakları dilimleyip şekerle tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tatlıyı 22 dakika kısık ateşte pişirin.",
+        "timerSeconds": 1320
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kabakları 15 dakika ılıtın, krema kesilmesin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kremayı ekleyip nazikçe karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tatlıyı cevizle soğuk servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sutlu-hurmali-ekmek-kasigi-kirklareli-usulu",
+    "title": "Sütlü Hurmalı Ekmek Kaşığı",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Kırklareli usulü sütlü hurmalı ekmek kaşığı, yumuşak ekmeği hurma ve sütlü sosla buluşturarak hafif, nostaljik ve kaşıkla yenilen bir tatlı yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 10,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 214,
+    "protein": 4,
+    "carbs": 31,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Ekmeği küçük küp kesmek sütlü sosu 10 dakikada daha dengeli çekmesini sağlar.",
+    "servingSuggestion": "Sütlü hurmalı ekmek kaşığını ılık kaselere paylaştırıp hurma parçalarını üstte bırakın.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Ekmek",
+        "amount": "6",
+        "unit": "dilim",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Hurma",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ekmeği küp doğrayıp servis kaselerine paylaştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hurmalı süt sosunu 8 dakika kısık ateşte pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hurmaları küçük doğrayıp sosa ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sosu ekmeklerin üstüne dökün, kuru parça kalmasın diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tatlıyı 15 dakika dinlendirip kaşıkla servis edin.",
+        "timerSeconds": 900
+      }
+    ]
+  },
+  {
+    "slug": "sutlu-irmik-corbasi-aksaray-usulu",
+    "title": "Aksaray Sütlü İrmik Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Aksaray sütlü irmik çorbası, süt ve irmiği nane ile bağlayarak bozkır mutfağında hem sıcaklık hem yumuşaklık veren alışılmadık bir kış çorbası kurar.",
+    "prepMinutes": 8,
+    "cookMinutes": 15,
+    "totalMinutes": 23,
+    "servingCount": 4,
+    "averageCalories": 154,
+    "protein": 5,
+    "carbs": 18,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "İrmiği azar azar eklemek tencerede topak kalmasını önler.",
+    "servingSuggestion": "Sütlü irmik çorbasını kaseye alıp naneli tereyağını irmikli yüzeyin ortasına bırakın.",
+    "tags": [
+      "vejetaryen",
+      "kis-tarifi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "500",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "500",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "İrmik",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "15",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Süt ve suyu tencereye alın, irmiği ölçün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sütlü karışımı orta ateşte 4 dakika ısıtın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "İrmiği çırparak ekleyin, topak oluşmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karışımı 10 dakika koyulaşana kadar pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tereyağı ve naneyi 1 dakika kızdırın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Naneli yağı üstüne gezdirip sıcak servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Kaselere pay ederken irmikli tabanı eşit dağıtın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sutlu-kete-bingol-usulu",
+    "title": "Sütlü Kete",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Bingöl sütlü kete, yumuşak hamuru sütlü içle pişirerek katmanlı, hafif tatlımsı ve çay sofralık bir doğu çöreği sunar.",
+    "prepMinutes": 18,
+    "cookMinutes": 22,
+    "totalMinutes": 40,
+    "servingCount": 6,
+    "averageCalories": 236,
+    "protein": 6,
+    "carbs": 30,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Sütlü içi çok sıvı bırakmamak ketenin tabanının hamur kalmasını önler.",
+    "servingSuggestion": "Sütlü keteyi ılık dilimleyip tereyağlı katları ayrılmadan küçük servis tabağına alın.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "40",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Sütlü Kete için servis tabağını ve yan malzemeleri hazırlayın, sıcak ürün bekleyip dokusunu kaybetmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sütlü Kete için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sütlü Kete hamurunu 6 dakika yoğurup 15 dakika kapalı dinlendirin, gluten gevşesin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "İçi hazırlayıp hamura kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Keteyi 190°C fırında 20 dakika pişirin, üstü kızarıp katları açılsın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Sütlü Kete kıvamı oturunca servis edin, fazla beklerse peynirli doku sertleşir.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sutlu-turk-kahvesi",
+    "title": "Sütlü Türk Kahvesi",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Sütlü Türk kahvesi, cezvede pişen kahveye daha yumuşak ve kremamsı bir içim kazandıran klasik bir varyasyondur.",
+    "prepMinutes": 3,
+    "cookMinutes": 4,
+    "totalMinutes": 7,
+    "servingCount": 2,
+    "averageCalories": 74,
+    "protein": 4,
+    "carbs": 6,
+    "fat": 3,
+    "isFeatured": false,
+    "tipNote": "Sütü yüksek ateşte değil, yavaşça ısıtmak köpüğü daha dengeli tutar.",
+    "servingSuggestion": "Küçük fincanlarda sıcak servis edin.",
+    "tags": [
+      "alkolsuz",
+      "kis-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Türk kahvesi",
+        "amount": "2",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "220",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kahve, süt ve şekeri cezveye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karışımı kabarmaya yaklaşana kadar ısıtın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kahveyi fincanlara paylaştırıp servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sweet-corn-chowder-amerikan-usulu",
+    "title": "Sweet Corn Chowder",
+    "cuisine": "us",
+    "type": "CORBA",
+    "description": "Sweet corn chowder, mısırı patates ve süt ile buluşturarak yumuşak, kremamsı ve Amerikan usulü bir çorba kurar.",
+    "prepMinutes": 10,
+    "cookMinutes": 18,
+    "totalMinutes": 28,
+    "servingCount": 4,
+    "averageCalories": 196,
+    "protein": 6,
+    "carbs": 24,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Mısırın yarısını blenderdan geçirmek çorbada dengeli bir gövde oluşturur.",
+    "servingSuggestion": "Porselen derin kaseye boşaltıp kenarına haşlanmış bir dilim yumurta ve taze soğan koyun.",
+    "tags": [
+      "vejetaryen",
+      "tek-tencere"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Mısır tanesi",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mısırı, patatesi ve soğanı hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı orta ateşte 4 dakika çevirin, sweet corn chowder tabanı çiğ kalmasın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Patates, mısır ve suyu ekleyip 12 dakika pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sütün bir kısmını unla açıp tencereye ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Çorbayı 5 dakika koyulaşana kadar pişirin, süt dibi tutmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Sıcak servis edin, sweet corn chowder dokusu beklerken ağırlaşmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Üstüne karabiber çekerek tatlı mısır tadını dengeleyin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sweetcorn-fritter-stack-avustralya-usulu",
+    "title": "Avustralya Sweetcorn Fritter Stack",
+    "cuisine": "au",
+    "type": "KAHVALTI",
+    "description": "Avustralya sweetcorn fritter stack, mısır taneli kızarmış pankekleri üst üste koyarak brunch sofralarına gevrek kenarlı ve yumuşak ortalı bir tabak kurar.",
+    "prepMinutes": 12,
+    "cookMinutes": 12,
+    "totalMinutes": 24,
+    "servingCount": 3,
+    "averageCalories": 238,
+    "protein": 8,
+    "carbs": 27,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Hamuru çok karıştırmamak fritterların daha hafif kalmasına yardım eder.",
+    "servingSuggestion": "Kahvaltı tabağında domates, salatalık, yeşillik ve bir fincan sade kahveyle tamamlayın.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Mısır",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Taze soğan",
+        "amount": "2",
+        "unit": "dal",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Avustralya Sweetcorn Fritter Stack başlangıcında ana malzemeleri gözden geçirin, eksik ölçü kalmasın diye kapları sıraya dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Avustralya Sweetcorn Fritter Stack için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tüm malzemeyi karıştırıp koyu bir hamur hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamurdan kaşıkla alıp tavaya dökün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Fritterları iki yüzü kızarana kadar 8 dakika pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Avustralya Sweetcorn Fritter Stack son dokusunu kontrol edip tabaklayın, sıcak servis dokuyu korur.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "sydney-meat-pie",
+    "title": "Sydney Meat Pie",
+    "cuisine": "au",
+    "type": "YEMEK",
+    "description": "Avustralya meat pie, kıymalı koyu gravy harcını milföy ve tart hamuru arasında pişiren, elde yenebilen doyurucu etli turtadır.",
+    "prepMinutes": 40,
+    "cookMinutes": 55,
+    "totalMinutes": 95,
+    "servingCount": 6,
+    "averageCalories": 560,
+    "protein": 25,
+    "carbs": 48,
+    "fat": 31,
+    "isFeatured": false,
+    "tipNote": "İç harcı soğutarak koymak hamurun yağını eritmeden kabarmasına yardım eder.",
+    "servingSuggestion": "Domates sosu ve yeşil salatayla sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "firinda"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana kıyma",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Havuç",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Domates salçası",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Worcestershire sos",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Et suyu",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Milföy hamuru",
+        "amount": "6",
+        "unit": "yaprak",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soğan ve havucu 6 dakika yumuşatın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kıymayı ekleyip 8 dakika kavurun.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Un ve salçayı katıp 2 dakika karıştırın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Et suyu ve Worcestershire sosu ekleyip harcı 18 dakika koyulaştırın.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Harcı tamamen soğutun.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tart kalıplarına hamur yerleştirip iç harcı paylaştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Milföy kapakları kapatıp yumurta sürün ve 200°C fırında 25 dakika pişirin.",
+        "timerSeconds": 1500
+      }
+    ]
+  },
+  {
+    "slug": "sydney-pavlova-meyveli",
+    "title": "Sydney Meyveli Pavlova",
+    "cuisine": "au",
+    "type": "TATLI",
+    "description": "Pavlova, dışı çıtır içi yumuşak beze tabanını krem şanti ve taze meyvelerle tamamlayan hafif görünümlü Avustralya tatlısıdır.",
+    "prepMinutes": 25,
+    "cookMinutes": 75,
+    "totalMinutes": 100,
+    "servingCount": 8,
+    "averageCalories": 310,
+    "protein": 5,
+    "carbs": 48,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Bezeyi fırında soğutmak yüzey çatlaklarını azaltır.",
+    "servingSuggestion": "Krema, çilek, kivi ve passion fruit ile soğuk servis edin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "YUMURTA",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Yumurta akı",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "1.25",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Mısır nişastası",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sirke",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Çilek",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kivi",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yumurta aklarını yumuşak tepe olana kadar çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Şekeri azar azar ekleyip parlak sert beze yapın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nişasta ve sirkeyi spatulayla nazikçe karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Bezeyi yuvarlak yayıp 120°C fırında 70-75 dakika kurutun.",
+        "timerSeconds": 4350
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Soğuyan tabanı krema ve meyvelerle tamamlayın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "syrniki",
+    "title": "Syrniki",
+    "cuisine": "ru",
+    "type": "KAHVALTI",
+    "description": "Rus lor pankekleri yumuşak peynirli hamurdan hazırlanır, tavada kızarınca kahvaltıya tatlı bir tabak olur.",
+    "prepMinutes": 15,
+    "cookMinutes": 12,
+    "totalMinutes": 27,
+    "servingCount": 4,
+    "averageCalories": 290,
+    "protein": 14,
+    "carbs": 26,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Yumurtayı sıvı yerine bir parça tereyağda pişirmek iç dokuyu nemli tutar.",
+    "servingSuggestion": "Tabakta yumurta, peynir, bal-kaymak üçlüsü ve bir bardak sıcak sahlep eşlik ettiğinde tamamlanır.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT",
+      "YUMURTA",
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Lor peyniri",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Syrniki için malzemeleri ölçüp ayrı kaplara alın, sıcak adımlarda arama yapılmasın diye tezgahı düzenleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Syrniki için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lor, yumurta, un ve şekeri karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Küçük diskler hazırlayın, Syrniki için hazır tutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tavada iki yüzünü 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Syrniki tamamlanınca 3 dakika dinlendirin, iç sıcaklık dengelensin diye sonra servis edin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "syrniki-yaban-mersin-soslu-rus-usulu",
+    "title": "Yaban Mersin Soslu Syrniki",
+    "cuisine": "ru",
+    "type": "KAHVALTI",
+    "description": "Yaban mersin soslu syrniki, lorlu küçük pankekleri meyve sosuyla buluşturarak sütlü, yumuşak ve tatlı-ekşi bir Rus kahvaltısı kurar.",
+    "prepMinutes": 14,
+    "cookMinutes": 10,
+    "totalMinutes": 24,
+    "servingCount": 4,
+    "averageCalories": 232,
+    "protein": 10,
+    "carbs": 21,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Tavayı çok kızdırmamak iç kısmı kurutmaz.",
+    "servingSuggestion": "Tabakta yumurta, peynir, bal-kaymak üçlüsü ve bir bardak sıcak sahlep eşlik ettiğinde tamamlanır.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT",
+      "YUMURTA",
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Lor peyniri",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yaban mersini",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yaban Mersin Soslu Syrniki akışında kullanılacak tava, kase ve spatulayı hazırlayın, pişirme başlayınca ritim bozulmasın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yaban Mersin Soslu Syrniki için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lor, yumurta ve unu karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Küçük pankekler yapıp tavada pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Mersini şekerle kısa kaynatıp üstüne dökün.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Yaban Mersin Soslu Syrniki yüzeyi parlakken sıcak servis edin, soğursa gevrek kenarlar yumuşar.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "szarlotka-kup-polonya-usulu",
+    "title": "Polonya Szarlotka Kup",
+    "cuisine": "pl",
+    "type": "TATLI",
+    "description": "Polonya szarlotka kup, tarçınlı elmayı bisküvi ve krema katlarıyla birleştirerek elmalı pastanın serin, bardakta sunulan bir yorumunu verir.",
+    "prepMinutes": 15,
+    "cookMinutes": 10,
+    "totalMinutes": 25,
+    "servingCount": 4,
+    "averageCalories": 236,
+    "protein": 3,
+    "carbs": 31,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Elmaları 1-2 dakika eksik pişirmek kup içinde püreleşmelerini önler.",
+    "servingSuggestion": "Szarlotka kupunu cam bardakta sunup elma ve tarçınlı bisküvi katlarını görünür bırakın.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Elma",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Bisküvi",
+        "amount": "10",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Elmayı şeker ve tarçınla 8 dakika pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Elmayı 15 dakika soğutun, krema erimesin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bisküviyi iri ufalayın ve kremayı çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kupalara bisküvi, elma ve kremayı katmanlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tatlıyı 25 dakika soğutup servis edin.",
+        "timerSeconds": 1500
+      }
+    ]
+  },
+  {
+    "slug": "szarlotka-polonya-usulu",
+    "title": "Szarlotka",
+    "cuisine": "pl",
+    "type": "TATLI",
+    "description": "Szarlotka, tarçınlı elma dolgusu ve kırılgan hamur katlarıyla Polonya ev pastacılığının en tanınan, en rahatlatıcı tatlılarından biridir.",
+    "prepMinutes": 25,
+    "cookMinutes": 35,
+    "totalMinutes": 60,
+    "servingCount": 8,
+    "averageCalories": 252,
+    "protein": 4,
+    "carbs": 31,
+    "fat": 12,
+    "isFeatured": true,
+    "tipNote": "Elmalı harcı fazla sulu bırakmamak alt tabanın gevrekliğini korur.",
+    "servingSuggestion": "Dilimleyip ılık servis edin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Elma",
+        "amount": "5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Hamuru yoğurup 20 dakika dinlendirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Elmaları tarçınla 8 dakika soteleyin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamurun yarısını kalıba yayın ve elmalı içi ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kalan hamuru üstüne rendeleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Szarlotkayı 180°C fırında 35 dakika pişirin.",
+        "timerSeconds": 2100
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "20 dakika soğutup dilimleyin, elma katı dağılmasın.",
+        "timerSeconds": 1200
+      }
+    ]
+  },
+  {
+    "slug": "tabbouleh",
+    "title": "Tabbouleh",
+    "cuisine": "me",
+    "type": "SALATA",
+    "description": "Lübnan sofralarında maydanozun başrolde olduğu, bulgur ve limonla ferahlayan ince salata.",
+    "prepMinutes": 25,
+    "cookMinutes": 0,
+    "totalMinutes": 25,
+    "servingCount": 4,
+    "averageCalories": 180,
+    "protein": 4,
+    "carbs": 24,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Maydanozu keskin bıçakla ince kıyın; ezilirse salata sulu olur.",
+    "servingSuggestion": "Marul yapraklarıyla servis edin.",
+    "tags": [
+      "vegan",
+      "yaz-tarifi",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "İnce bulgur",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "2",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Taze nane",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bulguru sıcak suyla 10 dakika ıslatın, sos dengesi bozulmasın diye fazla suyunu süzdürün.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tabbouleh malzemelerini lokmalık kesin ve fazla suyunu süzdürün, sos tabakta incelmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tabbouleh sosu için zeytinyağını limon suyu ve tuzla çırpın, tabbouleh tadı öne çıksın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tabbouleh ana malzemelerini sosla 1 dakika ezmeden harmanlayın, parçalar dağılmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tabbouleh salatasını servis tabağına alın ve sos parlakken sofraya çıkarın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "tacos-al-pastor",
+    "title": "Tacos al Pastor",
+    "cuisine": "mx",
+    "type": "YEMEK",
+    "description": "Mexico City taquerialarından ananaslı marine dana eti, mısır tortillasında canlı bir sokak klasiği.",
+    "prepMinutes": 35,
+    "cookMinutes": 25,
+    "totalMinutes": 300,
+    "servingCount": 4,
+    "averageCalories": 430,
+    "protein": 22,
+    "carbs": 36,
+    "fat": 20,
+    "isFeatured": true,
+    "tipNote": "Eti ince dilimleyin; marine kısa sürede yüzeye işler ve tavada hızlı kızarır. Eti ince dilimleyin; 4 saat bekleme ananas ve biber aromasını dengeli taşır.",
+    "servingSuggestion": "Kişniş, soğan ve lime ile servis edin.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Dana eti",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Mısır tortilla",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ananas",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Acı biber püresi",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Eti acı biber püresi ve ananasla 30 dakika marine edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tacos al Pastor için kalan malzemeleri ölçün ve kesilecek sebze veya etleri aynı boyda hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tacos al Pastor için eti tavada 12-15 dakika pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tortillaları ısıtıp et, soğan ve ananasla doldurun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tacos al Pastor için son tuz, yağ ve ekşi dengesini kontrol edin, baskın tat olmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tacos al Pastor servis öncesi 5 dakika dinlendirin, tabakta su salıp dokusu kaymasın.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "tacu-tacu",
+    "title": "Tacu Tacu",
+    "cuisine": "pe",
+    "type": "YEMEK",
+    "description": "Tacu tacu, önceki günden kalan pirinç ve fasulyenin tavada kızartılarak yeni bir ana öğüne çevrildiği, Peru ev mutfağının yaratıcı ve doyurucu yemeklerinden biridir.",
+    "prepMinutes": 15,
+    "cookMinutes": 15,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 296,
+    "protein": 9,
+    "carbs": 42,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Karışımı tavada çevirmeden önce 4 dakika sabit bırakmak alt yüzün tek parça kızarmasını sağlar.",
+    "servingSuggestion": "Üstüne sahanda yumurta ile sıcak servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Haşlanmış pirinç",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış fasulye",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tacu Tacu için soğanı kavurup pirinç ve fasulyeyi ekleyin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tacu Tacu için kalan malzemeleri ölçün ve kesilecek sebze veya etleri aynı boyda hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tacu Tacu için karışımı tavada sıkıştırıp iki yüzünü kızartın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tacu Tacu için üstüne yumurta koyarak servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tacu Tacu için son tuz, yağ ve ekşi dengesini kontrol edin, baskın tat olmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tacu Tacu servis öncesi 5 dakika dinlendirin, tabakta su salıp dokusu kaymasın.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "tacu-tacu-sebzeli-peru-usulu",
+    "title": "Tacu Tacu Sebzeli",
+    "cuisine": "pe",
+    "type": "YEMEK",
+    "description": "Tacu tacu sebzeli, fasulye ve pirinci tavada mühürleyerek dışı hafif çıtır, içi yumuşak ve Peru usulü tok bir tabak kurar.",
+    "prepMinutes": 12,
+    "cookMinutes": 14,
+    "totalMinutes": 26,
+    "servingCount": 4,
+    "averageCalories": 238,
+    "protein": 9,
+    "carbs": 38,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Karışımı tavada bastırmak alt yüzeyde karakteristik kabuk oluşmasını sağlar.",
+    "servingSuggestion": "Üzerine yoğurt kaşığı ve bol maydanozla birlikte ılıklığında sunun.",
+    "tags": [
+      "30-dakika-alti",
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Haşlanmış fasulye",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış pirinç",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Aji amarillo ezmesi",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tacu Tacu Sebzeli için soğanı ve ezmeyi tavada çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tacu Tacu Sebzeli için kalan malzemeleri ölçün ve kesilecek sebze veya etleri aynı boyda hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tacu Tacu Sebzeli için pirinç ve fasulyeyi ekleyip karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tacu Tacu Sebzeli için karışımı 8 dakika mühürleyin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tacu Tacu Sebzeli için son tuz, yağ ve ekşi dengesini kontrol edin, baskın tat olmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tacu Tacu Sebzeli servis öncesi 5 dakika dinlendirin, tabakta su salıp dokusu kaymasın.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "taflan-serbeti-ordu-usulu",
+    "title": "Ordu Taflan Şerbeti",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Ordu taflan şerbeti, karayemişi limon ve az şekerle kaynatıp soğutarak Karadeniz yazlarında ferah, koyu renkli ve hafif buruk bir içecek sunar.",
+    "prepMinutes": 10,
+    "cookMinutes": 15,
+    "totalMinutes": 25,
+    "servingCount": 6,
+    "averageCalories": 72,
+    "protein": 0,
+    "carbs": 18,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Karayemişi uzun kaynatmamak buruk tadın aşırı sertleşmesini önler.",
+    "servingSuggestion": "Ordu taflan şerbetini soğuk bardaklara paylaştırıp karayemiş rengini gösterecek biçimde ışıkta sunun.",
+    "tags": [
+      "alkolsuz",
+      "yaz-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Karayemiş",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1.5",
+        "unit": "lt",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karayemişi yıkayıp tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Su ve şekerle birlikte 12 dakika kaynatın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Limon suyunu ekleyip süzün, tamamen soğutarak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "taflan-tursulu-patates-tava-ordu-usulu",
+    "title": "Taflan Turşulu Patates Tava",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Ordu usulü taflan turşulu patates tava, kızaran patatesi meyvemsi turşu dokunuşuyla buluşturarak ekşi, çıtır ve paylaşmalık bir aperatif yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 14,
+    "totalMinutes": 26,
+    "servingCount": 4,
+    "averageCalories": 192,
+    "protein": 3,
+    "carbs": 28,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Turşuyu servis öncesi eklemek patatesin çıtırlığını korur.",
+    "servingSuggestion": "Tabakta küçük kaselerde veya ayrı bölümlerde sunun; yanına limon dilimi, taze ekmek ve bir kase zeytin yerleştirin.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Patates",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Taflan turşusu",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Pul biber",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Taflan Turşulu Patates Tava ana malzemelerini ölçüp hazırlayın, pişecek parçaları eşit boyda doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Taflan Turşulu Patates Tava sosunu veya bağlayıcı harcını ayrı kapta 2 dakika pürüzsüz karıştırın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Taflan Turşulu Patates Tava parçalarını harçla birleştirin ve şekil verecek kıvama gelene kadar toparlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Taflan Turşulu Patates Tava orta ateşte veya fırında dışı kızarana kadar pişsin, kalabalık pişirme yapmayın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Taflan Turşulu Patates Tava 3 dakika dinlensin; sıcak veya ılık servis edin, dokusu gevrek kalsın.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "taflanli-reyhan-serbeti-ordu-usulu",
+    "title": "Taflanlı Reyhan Şerbeti",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Ordu usulü taflanlı reyhan şerbeti, taflan meyvesini mor reyhan ve buzla buluşturarak meyvemsi, serin ve canlı renkli bir içecek sunar.",
+    "prepMinutes": 8,
+    "cookMinutes": 0,
+    "totalMinutes": 8,
+    "servingCount": 4,
+    "averageCalories": 38,
+    "protein": 0,
+    "carbs": 9,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Taflan özünü süzerek kullanmak içecekte daha temiz bir görünüm sağlar.",
+    "servingSuggestion": "Taflanlı reyhan şerbetini ince bardaklara paylaştırıp mor reyhan rengini ışıkta gösterin.",
+    "tags": [
+      "alkolsuz",
+      "30-dakika-alti",
+      "yaz-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Taflan suyu",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Mor reyhan",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Taflanlı Reyhan Şerbeti için taflan suyu, şeker ve aromatik tabanı karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Taflanlı Reyhan Şerbeti içeceğine su ekleyip 10 dakika dinlendirerek tadını dengeleyin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Taflanlı Reyhan Şerbeti içeceğini süzüp buzla birlikte servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "tahin-pekmez-bazlama-tostu-konya-usulu",
+    "title": "Tahin Pekmez Bazlama Tostu",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Konya usulü tahin pekmez bazlama tostu, sıcak bazlamayı tahin ve pekmezle buluşturarak tatlı, tok ve hızlı bir kahvaltı çıkarır.",
+    "prepMinutes": 6,
+    "cookMinutes": 4,
+    "totalMinutes": 10,
+    "servingCount": 2,
+    "averageCalories": 264,
+    "protein": 6,
+    "carbs": 27,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Bazlamayı 2 dakika ısıtmak tahin ve pekmezin daha iyi yayılmasını sağlar.",
+    "servingSuggestion": "Bazlama tostunu üçgen kesip tahin ve pekmez akmadan ılık tabakta hemen sunun.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Bazlama",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Pekmez",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tahin Pekmez Bazlama Tostu yapmadan önce kuru ve yaş malzemeleri ayırın, karıştırma aşaması temiz ilerlesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tahin Pekmez Bazlama Tostu için geniş kaseyi hazırlayın, dolgu ezilmesin diye karıştırmayı sona bırakın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tahin Pekmez Bazlama Tostu bazlamasını kuru tavada 2 dakika ısıtın, iç yüzü yumuşasın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tahin ve pekmezi sürün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tahin Pekmez Bazlama Tostu bazlamasını katlayıp bastırmadan kesin, tahin dışarı akmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tahin Pekmez Bazlama Tostu parçalarını ılık tabaklara alın, yanında çayla hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "tahin-pekmezli-nevzine-kup-kayseri-usulu",
+    "title": "Tahin Pekmezli Nevzine Kup",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Kayseri usulü tahin pekmezli nevzine kup, cevizli tabanı tahin ve pekmezle buluşturarak yoğun, nemli ve küçük porsiyonluk bir tatlı kurar.",
+    "prepMinutes": 12,
+    "cookMinutes": 10,
+    "totalMinutes": 22,
+    "servingCount": 4,
+    "averageCalories": 248,
+    "protein": 5,
+    "carbs": 27,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Pekmezi servis anında gezdirmek kup içinde iki katmanlı bir tat bırakır.",
+    "servingSuggestion": "Tahin pekmezli nevzine kupunu cam bardakta sunup cevizli kırıntıları üstte bırakın.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "KUSUYEMIS",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Bisküvi kırıntısı",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Üzüm pekmezi",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Nevzine tabanını küçük kırıntılar halinde hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kup içine kırıntıları gevşek paylaştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tahin ve pekmezi 1 dakika karıştırın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sosu kırıntıların üstüne gezdirin, taban dağılmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ceviz ekleyip 15 dakika soğutun.",
+        "timerSeconds": 900
+      }
+    ]
+  },
+  {
+    "slug": "tahin-pekmezli-pankek",
+    "title": "Tahin Pekmezli Pankek",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Pankek üstüne dökülen tahin ve pekmez, tanıdık kahvaltı tatlarını daha yumuşak bir tabakta toplar.",
+    "prepMinutes": 12,
+    "cookMinutes": 12,
+    "totalMinutes": 24,
+    "servingCount": 3,
+    "averageCalories": 340,
+    "protein": 9,
+    "carbs": 42,
+    "fat": 15,
+    "isFeatured": false,
+    "tipNote": "Pankek hamurunu karıştırdıktan sonra 5 dakika bekletin; kabartma daha eşit çalışır.",
+    "servingSuggestion": "Üzerine ceviz serperek servis edin.",
+    "tags": [
+      "cocuk-dostu",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "180",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": "Üzeri için"
+      },
+      {
+        "name": "Pekmez",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": "Üzeri için"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tahin Pekmezli Pankek için servis tabağını ve yan malzemeleri hazırlayın, sıcak ürün bekleyip dokusunu kaybetmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tahin Pekmezli Pankek için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pankek hamurunu çırpıp 5 dakika bekletin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pankekleri tavada iki yüzlü pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tahin ve pekmezi üstüne gezdirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tahin Pekmezli Pankek kıvamı oturunca servis edin, fazla beklerse peynirli doku sertleşir.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "tahin-pekmezli-yulaf",
+    "title": "Tahin Pekmezli Yulaf",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Yulaf, süt, tahin ve pekmezle hazırlanan sıcak kahvaltı kasesi.",
+    "prepMinutes": 5,
+    "cookMinutes": 8,
+    "totalMinutes": 13,
+    "servingCount": 2,
+    "averageCalories": 380,
+    "protein": 12,
+    "carbs": 46,
+    "fat": 16,
+    "isFeatured": false,
+    "tipNote": "Tahin ve pekmezi pişirme sonunda ekleyin; aromaları daha belirgin kalır.",
+    "servingSuggestion": "Üzerine muz dilimleri ekleyin.",
+    "tags": [
+      "vejetaryen",
+      "pratik"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Yulaf ezmesi",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Pekmez",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Muz",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tahin Pekmezli Yulaf başlangıcında ana malzemeleri gözden geçirin, eksik ölçü kalmasın diye kapları sıraya dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tahin Pekmezli Yulaf için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yulaf ve sütü tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karışımı 6-8 dakika kısık ateşte pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tahin, pekmez, muz ve tarçın ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tahin Pekmezli Yulaf son dokusunu kontrol edip tabaklayın, sıcak servis dokuyu korur.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "tahin-sos",
+    "title": "Tahin Sos",
+    "cuisine": "tr",
+    "type": "SOS",
+    "description": "Tahin, limon ve sarımsakla hazırlanan kremamsı vegan sos.",
+    "prepMinutes": 8,
+    "cookMinutes": 0,
+    "totalMinutes": 8,
+    "servingCount": 4,
+    "averageCalories": 170,
+    "protein": 4,
+    "carbs": 7,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Suyu azar azar ekleyin; tahin önce koyulaşır sonra açılır.",
+    "servingSuggestion": "Falafel, salata veya fırın sebzelerle servis edin.",
+    "tags": [
+      "vegan",
+      "pratik",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Tahin",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "1",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tahin, limon suyu, ezilmiş sarımsak ve tuzu kasede karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Suyu azar azar ekleyerek sosu akışkan ama yoğun bir kıvama getirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karışımı birkaç dakika bekletip tahinin suyu çekmesini sağlayın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tahin sosu et ya da salata yanında servis etmek üzere hazır tutun.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-cevizli-kahvalti-durumu",
+    "title": "Tahinli Cevizli Kahvaltı Dürümü",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Tahinli ve cevizli dürüm, Anadolu'nun susam ve üzüm pekmezi alışkanlığını taşınabilir bir sabah lokmasına çevirir.",
+    "prepMinutes": 8,
+    "cookMinutes": 2,
+    "totalMinutes": 10,
+    "servingCount": 2,
+    "averageCalories": 314,
+    "protein": 8,
+    "carbs": 24,
+    "fat": 21,
+    "isFeatured": false,
+    "tipNote": "Lavaşı çok ısıtmadan yumuşatmak tahinin dışarı taşmasını önler.",
+    "servingSuggestion": "Yanına sıcak çayla ılık servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "KUSUYEMIS",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Lavaş",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Üzüm pekmezi",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tahinli Cevizli Kahvaltı Dürümü için malzemeleri ölçüp ayrı kaplara alın, sıcak adımlarda arama yapılmasın diye tezgahı düzenleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tahinli Cevizli Kahvaltı Dürümü için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lavaşları kuru tavada 1 dakika ısıtın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tahin, ceviz ve pekmezi lavaşlara yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Dürümleri sarıp hemen servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tahinli Cevizli Kahvaltı Dürümü tamamlanınca 3 dakika dinlendirin, iç sıcaklık dengelensin diye sonra servis edin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-elma-tatlisi-konya-usulu",
+    "title": "Tahinli Elma Tatlısı",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Konya usulü tahinli elma tatlısı, fırınlanmış elmayı tahin ve cevizle buluşturarak kısa sürede zengin bir tatlı sunar.",
+    "prepMinutes": 12,
+    "cookMinutes": 22,
+    "totalMinutes": 34,
+    "servingCount": 4,
+    "averageCalories": 236,
+    "protein": 4,
+    "carbs": 28,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Elmaları çok ince oymamak fırında formunu korumasını sağlar.",
+    "servingSuggestion": "Tahinli elma tatlısını ılık tabakta sunup cevizleri tahinli elma üstüne serpin.",
+    "tags": [
+      "vejetaryen",
+      "firinda"
+    ],
+    "allergens": [
+      "SUSAM",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Elma",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ceviz içi",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Elmaları oyup tarçın ve balla harmanlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Elmaları fırın kabına dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Elmaları 190°C fırında 18 dakika pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tatlıyı 10 dakika ılıtın, tahin akmasın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tahin ve cevizle doldurup servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-incir-muhallebisi-adana-usulu",
+    "title": "Tahinli İncir Muhallebisi",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Adana tahinli incir muhallebisi, sütlü tabanı tahin ve kuru incirle koyulaştırarak karamelimsi ve serin bir tatlı kâsesi hazırlar.",
+    "prepMinutes": 12,
+    "cookMinutes": 12,
+    "totalMinutes": 24,
+    "servingCount": 6,
+    "averageCalories": 214,
+    "protein": 4,
+    "carbs": 24,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "İnciri küçük doğrayıp son aşamada eklemek pütürlü ama dengeli bir yapı verir.",
+    "servingSuggestion": "Tahinli incir muhallebisini soğuk kasede sunup kuru incir parçalarını üstte bırakın.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kuru incir",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Pirinç unu",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "İncirleri küçük doğrayıp 5 dakika ılık sütte bekletin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Muhallebi bazını tencerede pürüzsüz çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Muhallebiyi 8 dakika kısık ateşte pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tahin ve inciri ekleyin, incir dibe çökmesin diye karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tahinli incir muhallebisini 30 dakika soğutun.",
+        "timerSeconds": 1800
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-incirli-krep-denizli-usulu",
+    "title": "Denizli Tahinli İncirli Krep",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Denizli tahinli incirli krep, ince krepleri tahin ve kuru incirle doldurarak sabaha meyvemsi ve susam kokulu bir tabak hazırlar.",
+    "prepMinutes": 15,
+    "cookMinutes": 12,
+    "totalMinutes": 27,
+    "servingCount": 4,
+    "averageCalories": 244,
+    "protein": 6,
+    "carbs": 27,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Krep hamurunu 5 dakika dinlendirmek tavada daha ince açılmasını sağlar.",
+    "servingSuggestion": "Tahta tepsiye yerleştirip bir sürahi portakal suyu ve karmaşık tane ekmek dilimleri ekleyin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kuru incir",
+        "amount": "6",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Denizli Tahinli İncirli Krep akışında kullanılacak tava, kase ve spatulayı hazırlayın, pişirme başlayınca ritim bozulmasın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Denizli Tahinli İncirli Krep için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Un, yumurta ve suyu çırpıp hamur hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "İnce krepleri tavada 6 dakika pişirin, tahinli-incirli-krep-denizli-usulu akışı için.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tahin ve doğranmış inciri paylaştırıp sararak servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Denizli Tahinli İncirli Krep yüzeyi parlakken sıcak servis edin, soğursa gevrek kenarlar yumuşar.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-isotlu-kabak-dip-adiyaman-usulu",
+    "title": "Tahinli İsotlu Kabak Dip",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Adıyaman usulü tahinli isotlu kabak dip, kabağı tahin ve isotla buluşturarak yoğun, hafif isli bir meze yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 10,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 134,
+    "protein": 3,
+    "carbs": 9,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "İsotu servis öncesi üstüne serpmek rengini daha canlı tutar.",
+    "servingSuggestion": "Tahinli isotlu kabak dipini sığ kaseye yayıp isot rengini tahinli yüzeyde bırakın.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Kabak",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "İsot",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tahinli İsotlu Kabak Dip ana sebzesini hazırlayın, gerekiyorsa 8-18 dakika yumuşayana kadar haşlayıp süzün.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tahinli İsotlu Kabak Dip sosu için sarımsak, yoğurt, tahin veya zeytinyağını pürüzsüz karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tahinli İsotlu Kabak Dip sebzesini ezip sosla birleştirin, tuz ve ekşiliği aynı kapta ayarlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tahinli İsotlu Kabak Dip servis tabağına yayılsın; üstüne yağı gezdirip 15 dakika buzdolabında dinlendirin.",
+        "timerSeconds": 900
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-isotlu-koplenmis-biber-ezme-adiyaman-usulu",
+    "title": "Tahinli İsotlu Köplenmiş Biber Ezme",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Adıyaman usulü tahinli isotlu köpüklenmiş biber ezme, biberi tahin ve isotla buluşturarak yoğun, hafif dumanlı ve sürülebilir bir meze yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 8,
+    "totalMinutes": 18,
+    "servingCount": 4,
+    "averageCalories": 132,
+    "protein": 3,
+    "carbs": 9,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Biberi blenderda 20 saniyeden uzun çekmemek ezmede fazla hava oluşmasını önler.",
+    "servingSuggestion": "Tahinli isotlu biber ezmesini sığ kaseye yayıp isot rengini tahinli yüzeyde gösterin.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Köz kapya biber",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "İsot",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tahinli İsotlu Köplenmiş Biber Ezme ana sebzesini hazırlayın, gerekiyorsa 8-18 dakika yumuşayana kadar haşlayıp süzün.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tahinli İsotlu Köplenmiş Biber Ezme sosu için sarımsak, yoğurt, tahin veya zeytinyağını pürüzsüz karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tahinli İsotlu Köplenmiş Biber Ezme sebzesini ezip sosla birleştirin, tuz ve ekşiliği aynı kapta ayarlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tahinli İsotlu Köplenmiş Biber Ezme servis tabağına yayılsın; üstüne yağı gezdirip 15 dakika buzdolabında dinlendirin.",
+        "timerSeconds": 900
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-kabak-basti-antalya-usulu",
+    "title": "Tahinli Kabak Bastı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Antalya usulü tahinli kabak bastı, kabağı tahinli sos ve sarımsakla buluşturarak hafif ama karakterli bir sebze yemeği sunar.",
+    "prepMinutes": 12,
+    "cookMinutes": 20,
+    "totalMinutes": 32,
+    "servingCount": 4,
+    "averageCalories": 174,
+    "protein": 5,
+    "carbs": 12,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Kabağı iri yarım ay kesmek pişerken dağılmadan kalmasına yardım eder.",
+    "servingSuggestion": "Tahinli kabak bastıyı ılık tabakta sunup sarımsaklı tahin sosunu üstünden gezdirin.",
+    "tags": [
+      "vegan",
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Kabak",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabağı ve sarımsağı tencerede 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tahinli Kabak Bastı için kalan malzemeleri ölçün ve kesilecek sebze veya etleri aynı boyda hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Su ekleyip yemeği 12 dakika kısık ateşte pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tahin ve limonla hazırlanan sosu üzerine gezdirip dinlendirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tahinli Kabak Bastı için son tuz, yağ ve ekşi dengesini kontrol edin, baskın tat olmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tahinli Kabak Bastı servis öncesi 5 dakika dinlendirin, tabakta su salıp dokusu kaymasın.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-kabak-mezesi-antalya-usulu",
+    "title": "Antalya Tahinli Kabak Mezesi",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Antalya tahinli kabak mezesi, sotelenmiş kabağı tahin ve limonla birleştirerek serin, dolgun ve paylaşmalık bir meze yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 8,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 168,
+    "protein": 4,
+    "carbs": 9,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Kabağı suyunu salmadan yüksek ateşte çevirmek lezzeti yoğun tutar.",
+    "servingSuggestion": "Tabakta küçük kaselerde veya ayrı bölümlerde sunun; yanına limon dilimi, taze ekmek ve bir kase zeytin yerleştirin.",
+    "tags": [
+      "30-dakika-alti",
+      "vegan",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Kabak",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Antalya Tahinli Kabak Mezesi ana sebzesini hazırlayın, gerekiyorsa 8-18 dakika yumuşayana kadar haşlayıp süzün.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Antalya Tahinli Kabak Mezesi sosu için sarımsak, yoğurt, tahin veya zeytinyağını pürüzsüz karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Antalya Tahinli Kabak Mezesi sebzesini ezip sosla birleştirin, tuz ve ekşiliği aynı kapta ayarlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Antalya Tahinli Kabak Mezesi servis tabağına yayılsın; üstüne yağı gezdirip 15 dakika buzdolabında dinlendirin.",
+        "timerSeconds": 900
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-kabak-tatlisi-antalya-usulu",
+    "title": "Tahinli Kabak Tatlısı",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Antalya tahinli kabak tatlısı, yumuşayan kabağı tahin ve cevizle tamamlayarak karamelimsi, serin ve katmanlı bir Akdeniz tatlısı sunar.",
+    "prepMinutes": 10,
+    "cookMinutes": 30,
+    "totalMinutes": 40,
+    "servingCount": 6,
+    "averageCalories": 226,
+    "protein": 4,
+    "carbs": 28,
+    "fat": 11,
+    "isFeatured": true,
+    "tipNote": "Kabağı tamamen dağılmadan pişirmek tahinle buluştuğunda daha iyi doku verir.",
+    "servingSuggestion": "Tahinli kabak tatlısını soğumuş kabak dilimleriyle tabağa alıp tahin ve cevizi üstte bırakın.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "SUSAM",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Balkabağı",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabağı dilimleyip şekerle tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kabağı 25 dakika kısık ateşte pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kabakları servis tabağına alıp 10 dakika ılıtın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tahin gezdirin, sıcak kabakta yağ ayrışmasın diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Cevizle tamamlayıp servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-kapya-biber-dip-urla-usulu",
+    "title": "Tahinli Kapya Biber Dip",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Urla usulü tahinli kapya biber dip, köz biberi tahin ve limonla buluşturarak yumuşak, yoğun ve sürülebilir bir meze yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 6,
+    "totalMinutes": 16,
+    "servingCount": 4,
+    "averageCalories": 132,
+    "protein": 3,
+    "carbs": 8,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Tahin miktarını ölçülü tutmak biber tadını geriye düşürmez.",
+    "servingSuggestion": "Tahinli kapya biber dipini sığ kaseye yayıp limonlu tahin yüzeyini pürüzsüz bırakın.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Kapya biber",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "1",
+        "unit": "diş",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tahinli Kapya Biber Dip ana sebzesini hazırlayın, gerekiyorsa 8-18 dakika yumuşayana kadar haşlayıp süzün.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tahinli Kapya Biber Dip sosu için sarımsak, yoğurt, tahin veya zeytinyağını pürüzsüz karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tahinli Kapya Biber Dip sebzesini ezip sosla birleştirin, tuz ve ekşiliği aynı kapta ayarlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tahinli Kapya Biber Dip servis tabağına yayılsın; üstüne yağı gezdirip 15 dakika buzdolabında dinlendirin.",
+        "timerSeconds": 900
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-kereviz-salatasi-antalya-bahce-usulu",
+    "title": "Antalya Tahinli Kereviz Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Antalya tahinli kereviz salatası, kerevizi tahin ve portakal dokunuşuyla buluşturarak ferah bir kış salatası yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 8,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 146,
+    "protein": 3,
+    "carbs": 11,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Portakalı ince kullanmak tahin tadını dengelemeye yardım eder.",
+    "servingSuggestion": "Tahinli kereviz salatasını soğuk tabakta yayın, portakal sosunu kerevizin üstüne gezdirin.",
+    "tags": [
+      "30-dakika-alti",
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUSAM",
+      "KEREVIZ"
+    ],
+    "ingredients": [
+      {
+        "name": "Kereviz",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Portakal suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kerevizi ince doğrayın, rengi kararmasın diye bekletmeden soslayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Antalya Tahinli Kereviz tahinini limon suyu ve 2 yemek kaşığı suyla akışkan hale getirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Antalya Tahinli Kereviz tahinli sosunu limon ve zeytinyağıyla parlaklaşana kadar karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Antalya Tahinli Kereviz Salatası ana malzemelerini sosla 1 dakika ezmeden harmanlayın, parçalar dağılmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Antalya Tahinli Kereviz koyu sosunu 1 yemek kaşığı soğuk suyla açın, sebzeyi kaplasın ama akmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Antalya Tahinli Kereviz Salatasını servis tabağına alın ve sos parlakken sofraya çıkarın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-koz-patlican-salatasi-hatay-usulu",
+    "title": "Tahinli Köz Patlıcan Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Hatay usulü tahinli köz patlıcan salatası, köz patlıcanı tahin ve limonla buluşturarak kremamsı, hafif isli ve sofrayı açan bir salata yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 8,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 148,
+    "protein": 3,
+    "carbs": 11,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Patlıcanı süzgeçte 5 dakika bekletmek tahinli sosun ağırlaşmasını önler.",
+    "servingSuggestion": "Tabakta kümeler halinde dizip üzerine iri dilimlenmiş zeytin ve beyaz peynir ekleyerek sunun.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Közlenmiş patlıcan",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "1",
+        "unit": "diş",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patlıcanı ince kıyın, rengi kararmasın diye bekletmeden soslayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tahinli Köz Patlıcan patlıcanını tahta bıçakla iri kıyın ve acı suyunu süzdürün.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tahinli Köz Patlıcan tahinli sosunu limon ve zeytinyağıyla parlaklaşana kadar karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tahinli Köz Patlıcan Salatası ana malzemelerini sosla 1 dakika ezmeden harmanlayın, parçalar dağılmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tahinli Köz Patlıcan Salatasını servis tabağına alın ve sos parlakken sofraya çıkarın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-kuru-elma-lokmasi-nevsehir-usulu",
+    "title": "Nevşehir Tahinli Kuru Elma Lokması",
+    "cuisine": "tr",
+    "type": "ATISTIRMALIK",
+    "description": "Nevşehir tahinli kuru elma lokması, kuru elmayı tahinle sarıp küçük toplar halinde hazırlayarak Kapadokya sofrasına yoğun ve taşınabilir bir atıştırmalık sunar.",
+    "prepMinutes": 12,
+    "cookMinutes": 0,
+    "totalMinutes": 12,
+    "servingCount": 4,
+    "averageCalories": 148,
+    "protein": 3,
+    "carbs": 17,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Elmaları sıcak suda kısa bekletmek kolay şekil almalarını sağlar.",
+    "servingSuggestion": "Geniş porselen tabakta, yanına yoğurtlu bir sos ve bir bardak ayran eşliğinde servis yapın.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuru elma",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "0.25",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Susam",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "150 gr kuru elmayı ılık suda 5 dakika bekletip süzün.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Elmayı küçük doğrayıp tahin ve tarçınla karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karışımdan lokmalar yuvarlayın, böylece tahin kuru elmayı bağlar.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Lokmaları susama bulayıp 10 dakika serin yerde dinlendirin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-kuru-elma-tatlisi-nigde-usulu",
+    "title": "Niğde Tahinli Kuru Elma Tatlısı",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Niğde tahinli kuru elma tatlısı, kuru elmayı tahin ve tarçınla fırınlayarak Orta Anadolu'da meyveyi yoğun, koyu ve sıcak bir tatlıya dönüştürür.",
+    "prepMinutes": 12,
+    "cookMinutes": 18,
+    "totalMinutes": 30,
+    "servingCount": 5,
+    "averageCalories": 194,
+    "protein": 3,
+    "carbs": 25,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Elmaları fırın kabına tek sıra dizmek tahinin eşit dağılmasını sağlar.",
+    "servingSuggestion": "Üzerine ceviz serperek ılık servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUSAM",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuru elma",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuru elmaları ılık suda 10 dakika bekletin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Elmaları tahin, bal ve tarçınla harmanlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karışımı küçük fırın kabına yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tatlıyı 180°C fırında 15 dakika pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Cevizi servis öncesi serpin, dokusu sertleşmesin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-muzlu-gozleme-alanya-usulu",
+    "title": "Tahinli Muzlu Gözleme",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Alanya usulü tahinli muzlu gözleme, ince hamuru tahin ve muzla buluşturarak hafif tatlı, sıcak ve sahil kahvaltılarına uygun bir hamur işi yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 8,
+    "totalMinutes": 20,
+    "servingCount": 3,
+    "averageCalories": 258,
+    "protein": 6,
+    "carbs": 29,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Muzu ince dilimlemek gözleme içinde daha dengeli yayılmasını sağlar.",
+    "servingSuggestion": "Tabakta yumurta, peynir, bal-kaymak üçlüsü ve bir bardak sıcak sahlep eşlik ettiğinde tamamlanır.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti",
+      "vegan"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Yufka",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Muz",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tahinli Muzlu Gözleme yapmadan önce kuru ve yaş malzemeleri ayırın, karıştırma aşaması temiz ilerlesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tahinli Muzlu Gözleme için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Muzu ince dilimleyin, Tahinli Muzlu Gözleme için hazır tutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yufkaya tahin sürüp muz yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Gözlemeyi orta ateşte 6 dakika pişirin, muz ısınsın ama yufka yanmasın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tahinli Muzlu Gözleme parçalarını ılık tabaklara alın, yanında çayla hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-muzlu-irmik-kasesi-alanya-usulu",
+    "title": "Tahinli Muzlu İrmik Kasesi",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Alanya usulü tahinli muzlu irmik kasesi, yumuşak irmik tabanını muz ve tahinle buluşturarak tok, hafif tatlı ve güne yumuşak başlayan bir kahvaltı kurar.",
+    "prepMinutes": 8,
+    "cookMinutes": 10,
+    "totalMinutes": 18,
+    "servingCount": 2,
+    "averageCalories": 268,
+    "protein": 7,
+    "carbs": 31,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Tahin miktarını az tutmak muzun tadını dengede bırakır.",
+    "servingSuggestion": "Kahvaltı tabağında domates, salatalık, yeşillik ve bir fincan sade kahveyle tamamlayın.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT",
+      "SUSAM",
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "İrmik",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Muz",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tahinli Muzlu İrmik Kasesi için servis tabağını ve yan malzemeleri hazırlayın, sıcak ürün bekleyip dokusunu kaybetmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tahinli Muzlu İrmik Kasesi için geniş kaseyi hazırlayın, dolgu ezilmesin diye karıştırmayı sona bırakın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "İrmiği sütle koyulaştırın, Tahinli Muzlu İrmik Kasesi için hazır tutun.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tahinli Muzlu İrmik Kasesi irmiğini sıcak kaseye alın, üst malzeme erimeden yayılmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tahinli Muzlu İrmik Kasesi üstüne muz ve tahini ekleyip bekletmeden servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tahinli Muzlu İrmik Kasesi kıvamı oturunca servis edin, fazla beklerse peynirli doku sertleşir.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-nohutlu-piyaz-antalya-usulu",
+    "title": "Tahinli Nohutlu Piyaz",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Antalya tahinli nohutlu piyaz, haşlanmış nohudu tahinli limonlu sosla buluşturarak tok, kremamsı ve sahil lokantası hissi veren bir salata yapar.",
+    "prepMinutes": 14,
+    "cookMinutes": 0,
+    "totalMinutes": 14,
+    "servingCount": 4,
+    "averageCalories": 242,
+    "protein": 10,
+    "carbs": 24,
+    "fat": 12,
+    "isFeatured": true,
+    "tipNote": "Tahinli sosu suyla azar azar açmak salatada parlak bir kıvam verir.",
+    "servingSuggestion": "Tahinli nohutlu piyazı sığ tabakta yayın, kırmızı soğan ve maydanozu üstte gösterin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi",
+      "30-dakika-alti",
+      "vegan"
+    ],
+    "allergens": [
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kırmızı soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tahini limon suyu ve suyla açın, taneler ezilmesin diye süzme aşamasını tamamlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tahinli Nohutlu Piyaz tahinini limon suyu ve 2 yemek kaşığı suyla akışkan hale getirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tahinli Nohutlu Piyaz tahinli sosunu limon ve zeytinyağıyla parlaklaşana kadar karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tahinli Nohutlu Piyaz ana malzemelerini sosla 1 dakika ezmeden harmanlayın, parçalar dağılmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tahinli Nohutlu Piyaz salatasını 10 dakika dinlendirip oda sıcaklığında servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-pancar-ezme-kirsehir-usulu",
+    "title": "Tahinli Pancar Ezme",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Kırşehir usulü tahinli pancar ezme, pancarı tahin ve limonla buluşturarak yumuşak, yoğun ve sofralık bir meze yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 18,
+    "totalMinutes": 28,
+    "servingCount": 4,
+    "averageCalories": 132,
+    "protein": 3,
+    "carbs": 11,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Pancarı soğuttuktan sonra tahinle çekmek ezmede daha pürüzsüz bir doku verir.",
+    "servingSuggestion": "Tahinli pancar ezmesini sığ kaseye yayıp pancarın rengini tahinli yüzeyde belirgin bırakın.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Pancar",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "1",
+        "unit": "diş",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tahinli Pancar Ezme ana sebzesini hazırlayın, gerekiyorsa 8-18 dakika yumuşayana kadar haşlayıp süzün.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tahinli Pancar Ezme sosu için sarımsak, yoğurt, tahin veya zeytinyağını pürüzsüz karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tahinli Pancar Ezme sebzesini ezip sosla birleştirin, tuz ve ekşiliği aynı kapta ayarlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tahinli Pancar Ezme servis tabağına yayılsın; üstüne yağı gezdirip 15 dakika buzdolabında dinlendirin.",
+        "timerSeconds": 900
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-patlican-corbasi-hatay-usulu",
+    "title": "Tahinli Patlıcan Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Hatay tahinli patlıcan çorbası, köz patlıcanı tahin ve sarımsakla birleştirerek dumanlı, yoğun ve meze gibi içimli bir Akdeniz çorbası yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 18,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 178,
+    "protein": 5,
+    "carbs": 11,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Tahini kaynamanın sonunda eklemek çorbanın kesilmeden parlak kalmasına yardım eder.",
+    "servingSuggestion": "Porselen derin kaseye boşaltıp kenarına haşlanmış bir dilim yumurta ve taze soğan koyun.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Közlenmiş patlıcan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "1",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patlıcanı közleyip doğrayın, tahin ve limonu hazır edin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Patlıcanı suyla tencereye alıp 10 dakika ısıtın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Çorbayı blenderdan kısa çekin, tahinli patlıcan için ölçü şaşmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tahini sıcak çorba suyuyla ayrı kapta açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tahin ve limonu ocak kapalıyken ekleyin, tahin keskinleşmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Sıcak servis edin, tahinli patlıcan dokusu beklerken ağırlaşmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Üstüne köz patlıcandan küçük parça ayırıp dokulu sunun.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-pekmezli-krep-sakarya-usulu",
+    "title": "Tahinli Pekmezli Krep",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Sakarya usulü tahinli pekmezli krep, ince krepleri tahin ve üzüm pekmeziyle buluşturarak sıcak bir sabah tatlısı yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 10,
+    "totalMinutes": 22,
+    "servingCount": 2,
+    "averageCalories": 268,
+    "protein": 8,
+    "carbs": 29,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Krep hamurunu 5 dakika dinlendirmek tavada daha düzgün yayılmasını sağlar.",
+    "servingSuggestion": "Tahinli pekmezli krepi katlayıp tahin ve pekmez çizgileri görünecek şekilde ılık sunun.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Üzüm pekmezi",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tahinli Pekmezli Krep başlangıcında ana malzemeleri gözden geçirin, eksik ölçü kalmasın diye kapları sıraya dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tahinli Pekmezli Krep için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Krep hamurunu çırpıp 5 dakika dinlendirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamurdan ince krepler pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Krepleri tahin ve pekmezle katlayarak servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tahinli Pekmezli Krep son dokusunu kontrol edip tabaklayın, sıcak servis dokuyu korur.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-peynirli-pide-tekirdag-usulu",
+    "title": "Tahinli Peynirli Pide",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Tekirdağ usulü tahinli peynirli pide, ince hamuru beyaz peynir ve tahinle buluşturarak tatlı tuzlu dengesi kuran bir fırın işi sunar.",
+    "prepMinutes": 22,
+    "cookMinutes": 16,
+    "totalMinutes": 38,
+    "servingCount": 4,
+    "averageCalories": 304,
+    "protein": 10,
+    "carbs": 33,
+    "fat": 14,
+    "isFeatured": true,
+    "tipNote": "Tahini pidenin ortasına ince sürmek kenarların gevrek kalmasına yardım eder.",
+    "servingSuggestion": "Susam serperek sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru maya",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Beyaz peynir",
+        "amount": "160",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Susam",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tahinli Peynirli Pide için hamuru yoğurup 20 dakika dinlendirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tahinli Peynirli Pide için kalan malzemeleri ölçün ve kesilecek sebze veya etleri aynı boyda hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru oval açıp peynir ve tahini ortasına yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pideyi 220°C fırında 14 dakika pişirip susam serperek servis edin.",
+        "timerSeconds": 840
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tahinli Peynirli Pide için son tuz, yağ ve ekşi dengesini kontrol edin, baskın tat olmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tahinli Peynirli Pide servis öncesi 5 dakika dinlendirin, tabakta su salıp dokusu kaymasın.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-pide",
+    "title": "Tahinli Pide",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "İç Anadolu tahinli pidesi ince hamurun üzerinde tahin ve şekerle fırında kokulu bir tatlı olur.",
+    "prepMinutes": 45,
+    "cookMinutes": 18,
+    "totalMinutes": 63,
+    "servingCount": 6,
+    "averageCalories": 390,
+    "protein": 8,
+    "carbs": 48,
+    "fat": 18,
+    "isFeatured": false,
+    "tipNote": "Mayalı hamursa kabardıktan sonra hafifçe yumruk atıp tekrar bekletmek iç dokuyu düzenler.",
+    "servingSuggestion": "Yanına kuru incir dilimi ve bir kaşık yoğurtla kontrastlı tadım tabağı oluşturun.",
+    "tags": [
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Maya",
+        "amount": "7",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, maya ve suyla hamur yoğurup 35 dakika mayalandırın.",
+        "timerSeconds": 2100
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru ince açıp tepsiye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tahin ve şekeri hamurun üstüne yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kenarları içe kıvırın, tahin fırında akmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pideyi 220°C fırında 18 dakika pişirin.",
+        "timerSeconds": 1080
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-piyaz-antalya-usulu",
+    "title": "Tahinli Piyaz",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Antalya usulü tahinli piyaz, haşlanmış fasulyeyi sirke ve tahinli sosla buluşturarak sıradan salatayı ana tabağa yaklaşan güçlü bir meze yapar.",
+    "prepMinutes": 15,
+    "cookMinutes": 0,
+    "totalMinutes": 15,
+    "servingCount": 4,
+    "averageCalories": 242,
+    "protein": 10,
+    "carbs": 22,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Tahinli sosu azar azar açmak kesilmeden parlak kalmasını sağlar.",
+    "servingSuggestion": "Üzerine haşlanmış yumurta dilimleri koyarak soğuk servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUSAM",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Haşlanmış kuru fasulye",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sirke",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tahin, sarımsak, limon suyu, sirke ve zeytinyağını çırparak sosu hazırlayın, sos dengesi bozulmasın diye fazla suyunu süzdürün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tahinli Piyaz tahinini limon suyu ve 2 yemek kaşığı suyla akışkan hale getirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tahinli Piyaz tahinli sosunu limon ve zeytinyağıyla parlaklaşana kadar karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tahinli Piyaz ana malzemelerini sosla 1 dakika ezmeden harmanlayın, parçalar dağılmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tahinli Piyaz koyu sosunu 1 yemek kaşığı soğuk suyla açın, sebzeyi kaplasın ama akmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tahinli Piyaz salatasını servis tabağına alın ve sos parlakken sofraya çıkarın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-portakal-cilbiri-antalya-usulu",
+    "title": "Antalya Tahinli Portakal Çılbırı",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Antalya tahinli portakal çılbırı, poşe yumurtayı portakal ve tahinli sosla buluşturarak Akdeniz kahvaltılarına parlak, kremamsı ve doyurucu bir tabak getirir.",
+    "prepMinutes": 12,
+    "cookMinutes": 8,
+    "totalMinutes": 20,
+    "servingCount": 2,
+    "averageCalories": 244,
+    "protein": 12,
+    "carbs": 10,
+    "fat": 16,
+    "isFeatured": false,
+    "tipNote": "Yumurtayı çok kaynatmamak akışkan sarının sosla birleşmesini sağlar.",
+    "servingSuggestion": "Antalya tahinli portakal çılbırını yumurtalar dağılmadan tabağa alıp tahin sosunu üstünden gezdirin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "YUMURTA",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Yumurta",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Portakal suyu",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "1",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Antalya Tahinli Portakal Çılbırı için malzemeleri ölçüp ayrı kaplara alın, sıcak adımlarda arama yapılmasın diye tezgahı düzenleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Antalya Tahinli Portakal Çılbırı için geniş kaseyi hazırlayın, dolgu ezilmesin diye karıştırmayı sona bırakın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tahin, portakal suyu ve sarımsağı karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yumurtaları kaynar suda 3 dakika poşe edin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sosu tabağa yayıp yumurtaları üzerine alarak servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Antalya Tahinli Portakal Çılbırı tamamlanınca 3 dakika dinlendirin, iç sıcaklık dengelensin diye sonra servis edin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "tahinli-soganlama-kayseri-usulu",
+    "title": "Kayseri Tahinli Soğanlama",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Kayseri tahinli soğanlama, karamelleşen soğanı tahinle buluşturarak yoğun ve sürülebilir bir kahvaltılık tabak yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 14,
+    "totalMinutes": 24,
+    "servingCount": 4,
+    "averageCalories": 156,
+    "protein": 3,
+    "carbs": 11,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Soğanı sabırla pişirmek tatlı dengesini artırır.",
+    "servingSuggestion": "Kayseri tahinli soğanlamayı küçük tabakta yayın, tahinli soğanlar parlak görünürken sunun.",
+    "tags": [
+      "30-dakika-alti",
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuru soğan",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.25",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kayseri Tahinli Soğanlama akışında kullanılacak tava, kase ve spatulayı hazırlayın, pişirme başlayınca ritim bozulmasın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kayseri Tahinli Soğanlama için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğanı ince doğrayın, Kayseri Tahinli Soğanlama için hazır tutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Soğanı 10 dakika pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tahinle karıştırıp servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kayseri Tahinli Soğanlama yüzeyi parlakken sıcak servis edin, soğursa gevrek kenarlar yumuşar.",
+        "timerSeconds": null
+      }
+    ]
+  }
+]

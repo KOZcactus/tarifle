@@ -1,0 +1,4713 @@
+[
+  {
+    "slug": "nevsehir-divil-patatesli",
+    "title": "Nevşehir Dıvıl",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Dıvıl, haşlanmış patatesi ince bulgur, un, yumurta ve baharatla yoğurup kızartan Nevşehir köftesidir.",
+    "prepMinutes": 30,
+    "cookMinutes": 20,
+    "totalMinutes": 50,
+    "servingCount": 5,
+    "averageCalories": 330,
+    "protein": 10,
+    "carbs": 48,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Patatesi tamamen soğutmak köfte harcının yağda dağılmadan kızarmasını sağlar.",
+    "servingSuggestion": "Sarımsaklı yoğurt ve yeşil salatayla sıcak servis edin.",
+    "tags": [
+      "vejetaryen",
+      "butce-dostu"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Patates",
+        "amount": "5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "İnce bulgur",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Kimyon",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Pul biber",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesleri 20 dakika haşlayıp ezin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "İnce bulguru sıcak suyla 10 dakika şişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Patates, bulgur, un, yumurta, rendelenmiş soğan, maydanoz ve baharatı yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Harcı yassı köfteler halinde şekillendirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yağı 175°C'ye ısıtın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Dıvılları her yüzü 3 dakika kızartın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Kağıt havluya alıp yoğurtla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "nevsehir-pekmezli-aside",
+    "title": "Nevşehir Pekmezli Aside",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Nevşehir pekmezli aside, üzüm pekmezini un ve tereyağıyla kavurup kaşıkla yenebilen parlak, yoğun bir kış tatlısına dönüştürür.",
+    "prepMinutes": 8,
+    "cookMinutes": 16,
+    "totalMinutes": 24,
+    "servingCount": 6,
+    "averageCalories": 260,
+    "protein": 4,
+    "carbs": 44,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Unu açık fındık kokusu gelene kadar kavurmak tadı derinleştirir.",
+    "servingSuggestion": "Ceviz ve tarçınla ılık servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen",
+      "butce-dostu"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Üzüm pekmezi",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tereyağını eritip unu 6 dakika açık renk kavurun.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pekmez ve suyu ayrı kapta pürüzsüz karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pekmezli karışımı una azar azar ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kısık ateşte 8-10 dakika koyulaşana kadar karıştırın.",
+        "timerSeconds": 540
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ceviz ve tarçınla ılık servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "nevsehir-testi-kebabi",
+    "title": "Nevşehir Testi Kebabı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Testi kebabı, kuzu eti, arpacık soğan, domates, biber, sarımsak ve tereyağını kapalı testide uzun süre pişiren Kapadokya yemeğidir.",
+    "prepMinutes": 35,
+    "cookMinutes": 95,
+    "totalMinutes": 130,
+    "servingCount": 5,
+    "averageCalories": 610,
+    "protein": 38,
+    "carbs": 26,
+    "fat": 39,
+    "isFeatured": true,
+    "tipNote": "Testinin ağzını hamurla kapatmak buharı içeride tutar ve eti kendi suyunda yumuşatır.",
+    "servingSuggestion": "Testiyi masada kırıp lavaş, köz biber ve pirinç pilavıyla servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "SUT",
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuzu kuşbaşı",
+        "amount": "1",
+        "unit": "kg",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Arpacık soğan",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yeşil biber",
+        "amount": "6",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "20",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Maya",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1",
+        "unit": "çay bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuzu etini iri kuşbaşı doğrayıp tuz ve karabiberle ovun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Domatesleri küp, biberleri halka doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Et, sebze, sarımsak ve tereyağını testinin içine yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Un, maya, su ve tuzla sert kapatma hamuru yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Testinin ağzını hamurla hava almayacak şekilde kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Testiyi 200°C fırında 90 dakika pişirin.",
+        "timerSeconds": 5400
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "10 dakika dinlendirip dikkatle kırarak servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "new-orleans-creole-jambalaya",
+    "title": "New Orleans Creole Jambalaya",
+    "cuisine": "us",
+    "type": "YEMEK",
+    "description": "Creole jambalaya, tavuk, tütsülenmiş sosis, domates, biber ve pirinci tek tencerede baharatlı Louisiana usulü pişirir.",
+    "prepMinutes": 20,
+    "cookMinutes": 45,
+    "totalMinutes": 65,
+    "servingCount": 5,
+    "averageCalories": 540,
+    "protein": 32,
+    "carbs": 62,
+    "fat": 18,
+    "isFeatured": true,
+    "tipNote": "Pirinci ekledikten sonra kapağı sık açmamak tanelerin eşit pişmesini sağlar.",
+    "servingSuggestion": "Taze soğan ve acı sosla sıcak kaselerde servis edin.",
+    "tags": [
+      "tek-tencere",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "KEREVIZ"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk but eti",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tütsülenmiş sosis",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Domates püresi",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kereviz sapı",
+        "amount": "2",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Yeşil biber",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Cajun baharatı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuk parçalarını tencerede 6 dakika mühürleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sosis, soğan, kereviz ve biberi ekleyip 6 dakika kavurun.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinç, domates püresi, baharat ve sıcak suyu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kapağı kapalı şekilde 22-25 dakika pirinç yumuşayana kadar pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tencereyi 8 dakika dinlendirip taze soğanla servis edin.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "new-orleans-gumbo",
+    "title": "New Orleans Deniz Mahsullü Gumbo",
+    "cuisine": "us",
+    "type": "CORBA",
+    "description": "Gumbo, koyu roux, kereviz, biber, soğan, karides ve sosisle ağır ağır pişen yoğun aromalı bir New Orleans tenceresidir.",
+    "prepMinutes": 30,
+    "cookMinutes": 90,
+    "totalMinutes": 120,
+    "servingCount": 6,
+    "averageCalories": 510,
+    "protein": 31,
+    "carbs": 36,
+    "fat": 27,
+    "isFeatured": false,
+    "tipNote": "Roux rengini acele etmeden koyulaştırmak gumbonun temel lezzetini verir.",
+    "servingSuggestion": "Beyaz pirinç ve taze soğanla sıcak kaselerde sunun.",
+    "tags": [
+      "tek-tencere",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DENIZ_URUNLERI",
+      "KEREVIZ"
+    ],
+    "ingredients": [
+      {
+        "name": "Karides",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tütsülenmiş sosis",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kereviz sapı",
+        "amount": "3",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Yeşil biber",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tavuk suyu",
+        "amount": "6",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un ve yağı tencerede 20-25 dakika koyu kahverengi roux yapın.",
+        "timerSeconds": 1350
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan, biber ve kerevizi roux içinde 8 dakika yumuşatın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sosisleri ekleyip 5 dakika çevirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tavuk suyunu azar azar ekleyip 45 dakika kaynatın.",
+        "timerSeconds": 2700
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karidesleri katıp 4-5 dakika pembeleşene kadar pişirin.",
+        "timerSeconds": 270
+      }
+    ]
+  },
+  {
+    "slug": "new-orleans-gumbo-tavuk-sosis",
+    "title": "New Orleans Tavuklu Gumbo",
+    "cuisine": "us",
+    "type": "CORBA",
+    "description": "Gumbo, tavuk, tütsülü sosis, kereviz, biber, soğan, okra, roux ve Cajun baharatını koyu bir Louisiana güvecinde toplar.",
+    "prepMinutes": 25,
+    "cookMinutes": 55,
+    "totalMinutes": 80,
+    "servingCount": 6,
+    "averageCalories": 490,
+    "protein": 36,
+    "carbs": 28,
+    "fat": 26,
+    "isFeatured": false,
+    "tipNote": "Roux rengini fıstık ezmesine döndürmek gumbo tabanına derinlik verir; yanarsa baştan yapmak gerekir.",
+    "servingSuggestion": "Beyaz pirinç üstüne kepçeyle alıp taze soğan ve acı sosla servis edin.",
+    "tags": [
+      "tek-tencere",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "KEREVIZ"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk but eti",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tütsülü sosis",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "5",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kereviz sapı",
+        "amount": "2",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Yeşil biber",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Okra",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tavuk suyu",
+        "amount": "1.2",
+        "unit": "litre",
+        "group": null
+      },
+      {
+        "name": "Cajun baharatı",
+        "amount": "2",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yağ ve unu tencerede 12 dakika fıstık ezmesi rengine kadar kavurun.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan, kereviz ve biberi ekleyip 6 dakika yumuşatın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tavuk parçalarını ekleyip 5 dakika çevirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sosis, Cajun baharatı ve tavuk suyunu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Gumbo'yu 25 dakika kısık ateşte pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Okrayı ekleyip 12 dakika daha pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Tuzunu ayarlayıp pirinç üzerinde servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "new-orleans-misirli-karides-corbasi",
+    "title": "New Orleans Mısırlı Karides Çorbası",
+    "cuisine": "us",
+    "type": "CORBA",
+    "description": "Amerikan güney usulü mısırlı karides çorbası, karides, tatlı mısır ve kerevizli kremalı tabanı sıcak, doyurucu bir kaseye taşır.",
+    "prepMinutes": 12,
+    "cookMinutes": 22,
+    "totalMinutes": 34,
+    "servingCount": 4,
+    "averageCalories": 340,
+    "protein": 24,
+    "carbs": 29,
+    "fat": 16,
+    "isFeatured": false,
+    "tipNote": "Karidesi son dakikada eklemek çorbada yumuşak kalmasını sağlar.",
+    "servingSuggestion": "Taze soğanla sıcak servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "tek-tencere"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI",
+      "SUT",
+      "GLUTEN",
+      "KEREVIZ"
+    ],
+    "ingredients": [
+      {
+        "name": "Karides",
+        "amount": "350",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tane mısır",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kereviz sapı",
+        "amount": "2",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kereviz sapını küçük doğrayın, karidesleri ayıklayıp kurulayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kerevizi tencerede orta ateşte 5 dakika yumuşatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Unu ekleyip 1 dakika kokusu çıkana kadar karıştırın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Mısır ve sıcak suyu katıp 12 dakika kaynatın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karides ve kremayı ekleyip 4 dakika pişirin, karides lastikleşmesin, new orleans mısırlı karides dengesi bozulmasın, new orleans mısırlı karides dokusu kaymasın.",
+        "timerSeconds": 240
+      }
+    ]
+  },
+  {
+    "slug": "new-orleans-shrimp-etouffee",
+    "title": "New Orleans Karides Etouffee",
+    "cuisine": "us",
+    "type": "YEMEK",
+    "description": "Etouffee, karidesi koyu roux, soğan, kereviz, biber, domates ve Cajun baharatıyla pirinç üstüne taşıyan Louisiana yemeğidir.",
+    "prepMinutes": 25,
+    "cookMinutes": 40,
+    "totalMinutes": 65,
+    "servingCount": 6,
+    "averageCalories": 520,
+    "protein": 30,
+    "carbs": 58,
+    "fat": 18,
+    "isFeatured": false,
+    "tipNote": "Roux'u fındık rengine getirmek sosun yanmadan derinleşmesini sağlar.",
+    "servingSuggestion": "Beyaz pirinç, taze soğan ve acı sosla sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI",
+      "GLUTEN",
+      "SUT",
+      "KEREVIZ"
+    ],
+    "ingredients": [
+      {
+        "name": "Karides",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "0.33",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kereviz sapı",
+        "amount": "2",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Yeşil biber",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates püresi",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Karides suyu",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Cajun baharatı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Pişmiş pirinç",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Taze soğan",
+        "amount": "3",
+        "unit": "dal",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tereyağını eritip unu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Roux'u orta ateşte 10 dakika fındık rengine gelene kadar karıştırın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğan, kereviz sapı ve biberi ekleyip 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Domates püresi, karides suyu ve Cajun baharatını katın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sosu 15 dakika koyulaştırın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Karidesleri ekleyip 5 dakika pembeleşene kadar pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Etouffee'yi pirinç üstünde taze soğanla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "new-york-cheesecake",
+    "title": "New York Cheesecake",
+    "cuisine": "us",
+    "type": "TATLI",
+    "description": "New York cheesecake, bisküvi tabanı üstünde krem peynir, yumurta, ekşi krema, vanilya ve limonlu dolguyu ağır fırınlar.",
+    "prepMinutes": 25,
+    "cookMinutes": 70,
+    "totalMinutes": 635,
+    "servingCount": 12,
+    "averageCalories": 430,
+    "protein": 8,
+    "carbs": 38,
+    "fat": 28,
+    "isFeatured": false,
+    "tipNote": "Cheesecake'i fırında kademeli soğutmak yüzey çatlamasını azaltır.",
+    "servingSuggestion": "Bir gece dinlendirip kırmızı meyve sosuyla soğuk dilimleyin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Bisküvi",
+        "amount": "180",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "85",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Krem peynir",
+        "amount": "900",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Vanilya",
+        "amount": "1.5",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon kabuğu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yumurta sarısı",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ekşi krema",
+        "amount": "280",
+        "unit": "ml",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bisküviyi ufalayıp eritilmiş tereyağıyla karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tabanı kalıba bastırıp 180°C fırında 10 dakika pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Krem peynir, şeker, un, vanilya ve limon kabuğunu çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yumurtaları tek tek ekleyip düşük hızda karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ekşi kremayı ekleyip dolguyu tabanın üstüne dökün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Cheesecake'i 160°C fırında 60 dakika pişirin.",
+        "timerSeconds": 3600
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Fırın kapağı aralık 2 saat soğutup 8 saat buzdolabında dinlendirin.",
+        "timerSeconds": 36000
+      }
+    ]
+  },
+  {
+    "slug": "new-york-chicken-parmesan",
+    "title": "New York Chicken Parmesan",
+    "cuisine": "us",
+    "type": "YEMEK",
+    "description": "Chicken parmesan, panelenmiş tavuk pirzolayı domates sos, mozzarella ve parmesanla kızartıp ızgara altında eriten İtalyan Amerikan tabağıdır.",
+    "prepMinutes": 20,
+    "cookMinutes": 18,
+    "totalMinutes": 38,
+    "servingCount": 4,
+    "averageCalories": 560,
+    "protein": 43,
+    "carbs": 34,
+    "fat": 28,
+    "isFeatured": false,
+    "tipNote": "Tavuğu eşit kalınlıkta dövmek pane kabuğu yanmadan içinin pişmesini sağlar.",
+    "servingSuggestion": "Spagetti ve fesleğenli domates sosla sıcak servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk göğsü",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Galeta unu",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Parmesan",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Mozzarella",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Domates sosu",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuk göğüslerini ince pirzola kalınlığında dövün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavukları un, yumurta ve parmesanlı galetaya bulayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tavukları tavada her yüzü 4-5 dakika kızartın.",
+        "timerSeconds": 540
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Domates sosunu fırın kabına yayıp tavukları yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Mozzarella ekleyip ızgara altında 3-4 dakika eritin.",
+        "timerSeconds": 240
+      }
+    ]
+  },
+  {
+    "slug": "new-york-lox-bagel-tabagi",
+    "title": "New York Bagel Lox",
+    "cuisine": "us",
+    "type": "KAHVALTI",
+    "description": "Bagel lox, kızarmış bageli krem peynir, füme somon, kapari, kırmızı soğan ve dereotuyla dolduran klasik New York kahvaltısıdır.",
+    "prepMinutes": 12,
+    "cookMinutes": 4,
+    "totalMinutes": 16,
+    "servingCount": 2,
+    "averageCalories": 520,
+    "protein": 27,
+    "carbs": 58,
+    "fat": 21,
+    "isFeatured": false,
+    "tipNote": "Bageli kesik yüzünden kızartmak krem peynirin erimeden tutunmasını sağlar.",
+    "servingSuggestion": "Limon dilimi ve taze dereotuyla açık sandviç gibi sunun.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Bagel",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Krem peynir",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Füme somon",
+        "amount": "160",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kapari",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kırmızı soğan",
+        "amount": "0.5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Limon",
+        "amount": "0.5",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bagelleri ortadan ikiye kesip kesik yüzlerini kızartın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Krem peyniri yumuşaması için 2 dakika oda sıcaklığında bekletin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kırmızı soğanı ince halkalar halinde doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Bagel yüzlerine krem peyniri eşit sürün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Füme somon, kapari, soğan ve dereotunu üstüne yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Limon suyu sıkarak hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "nice-firin-ratatouille",
+    "title": "Nice Fırın Ratatouille",
+    "cuisine": "fr",
+    "type": "YEMEK",
+    "description": "Fransız fırın ratatouille, patlıcan, kabak, biber ve domatesi zeytinyağıyla ağır pişirip Akdeniz kokulu, sebze ağırlıklı bir ana tabak yapar.",
+    "prepMinutes": 22,
+    "cookMinutes": 45,
+    "totalMinutes": 67,
+    "servingCount": 4,
+    "averageCalories": 240,
+    "protein": 5,
+    "carbs": 28,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Sebzeleri benzer kalınlıkta kesmek fırında eşit yumuşamalarını sağlar.",
+    "servingSuggestion": "Kızarmış ekmek veya ızgara balık yanında ılık servis edin.",
+    "tags": [
+      "vegan",
+      "firinda",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Patlıcan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kabak",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kırmızı biber",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "3",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "5",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patlıcan, kabak, biber ve domatesleri benzer kalınlıkta doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve sarımsağı zeytinyağında 5 dakika yumuşatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sebzeleri fırın kabına katmanlı şekilde yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Üzerine zeytinyağı, tuz ve kekik gezdirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "180°C fırında 40-45 dakika sebzeler yumuşayana kadar pişirin.",
+        "timerSeconds": 2550
+      }
+    ]
+  },
+  {
+    "slug": "nice-salade-nicoise",
+    "title": "Nice Salade Niçoise",
+    "cuisine": "fr",
+    "type": "SALATA",
+    "description": "Salade niçoise, ton balığı, yumurta, zeytin, taze fasulye, patates, domates ve hardallı sosu birleştiren Akdeniz salatasıdır.",
+    "prepMinutes": 25,
+    "cookMinutes": 18,
+    "totalMinutes": 43,
+    "servingCount": 4,
+    "averageCalories": 390,
+    "protein": 24,
+    "carbs": 28,
+    "fat": 21,
+    "isFeatured": false,
+    "tipNote": "Fasulyeyi haşladıktan sonra buzlu suya almak rengini ve diri dokusunu korur.",
+    "servingSuggestion": "Geniş tabakta malzemeleri ayrı kümeler halinde dizip sosu servis anında gezdirin.",
+    "tags": [
+      "dusuk-kalorili",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI",
+      "YUMURTA",
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "Ton balığı",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Taze fasulye",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Küçük patates",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Siyah zeytin",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Dijon hardalı",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesleri 15 dakika yumuşayana kadar haşlayın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yumurtaları 8 dakika haşlayıp soğuk suya alın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Taze fasulyeyi 4 dakika haşlayıp buzlu suya çıkarın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Zeytinyağı, limon suyu, Dijon ve tuzu çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Domatesleri dilimleyip ton balığını iri parçalara ayırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Patates, fasulye, domates, zeytin, yumurta ve balığı tabağa dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Sosu servis anında salatanın üstüne gezdirin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "nicoise-salatasi",
+    "title": "Niçoise Salatası",
+    "cuisine": "fr",
+    "type": "SALATA",
+    "description": "Ton balığı, yumurta, patates ve yeşil fasulyeyle hazırlanan Fransız salatası.",
+    "prepMinutes": 25,
+    "cookMinutes": 20,
+    "totalMinutes": 45,
+    "servingCount": 4,
+    "averageCalories": 310,
+    "protein": 19,
+    "carbs": 13,
+    "fat": 20,
+    "isFeatured": false,
+    "tipNote": "Patates ve fasulyeyi ayrı haşlayın; ikisi farklı sürede yumuşar.",
+    "servingSuggestion": "Zeytinyağlı hardal sosla servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI",
+      "YUMURTA",
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "Ton balığı",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yeşil fasulye",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Siyah zeytin",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Hardal",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesleri 12 dakika, yumurtaları aynı tencerede 8 dakika haşlayın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Fasulyeleri son 4 dakikada tencereye ekleyin, hepsini süzüp soğuk sudan geçirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yumurtaları soyup dörde bölün, patatesleri kalın dilimleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Zeytinyağı, sirke, hardal, sarımsak ve ançüezi 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Marul, patates, fasulye, domates, ton balığı, zeytin ve yumurtayı tabakta bölümler halinde dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Sosu üstten gezdirin, ton balığını ezmeden hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "nigde-pekmezli-armut-boranasi",
+    "title": "Niğde Pekmezli Armut Boranası",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Niğde usulü pekmezli armut boranası, sert armutları pekmez, tereyağı ve tarçınla parlak, ılık bir meyve tatlısına dönüştürür.",
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 250,
+    "protein": 2,
+    "carbs": 52,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Sert armut kullanmak pişerken dilimlerin dağılmasını önler.",
+    "servingSuggestion": "Kaymak veya yoğurtla ılık servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Armut",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Pekmez",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Armutları soyup kalın dilimler halinde kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tereyağını geniş tavada 1 dakika eritin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Armut dilimlerini tavaya alıp 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pekmez, su ve tarçını ekleyip 12 dakika kısık ateşte pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Şerbet koyulaşınca tatlıyı 5 dakika dinlendirin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "nigde-sogurmeli-yumurta",
+    "title": "Niğde Söğürmeli Yumurta",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Niğde usulü söğürmeli yumurta, köz biber ve domatesin tavada yumurtayla birleştiği, sabaha sıcaklık katan Anadolu işi bir kahvaltılıktır.",
+    "prepMinutes": 10,
+    "cookMinutes": 10,
+    "totalMinutes": 20,
+    "servingCount": 3,
+    "averageCalories": 182,
+    "protein": 10,
+    "carbs": 7,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Sebzeleri önce hafif suyunu çektirmek yumurta kırıldığında tavanın sulu kalmasını önler.",
+    "servingSuggestion": "Tavayı sıcak verin, yanına köy ekmeği ve çay koyun.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Yumurta",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kapya biber",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "20",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ekmek",
+        "amount": "6",
+        "unit": "dilim",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Niğde Söğürmeli Yumurta için malzemeleri ölçüp tezgaha alın, sonraki adımlar aksamadan ilerlesin diye kapları hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kapya biberleri közleyip doğrayın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Biber ve domatesi tereyağında 5 dakika pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yumurtaları tavaya kırıp tuz ekleyin ve 4 dakika pişirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Niğde söğürmeli yumurtayı ekmekle sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "nigde-tava-kuzu-tepsi",
+    "title": "Niğde Tava",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Niğde tava, kuzu etini kuyruk yağı, sarımsak, biber, domates ve salçalı suyla fırın tepsisinde lokum gibi pişirir.",
+    "prepMinutes": 20,
+    "cookMinutes": 55,
+    "totalMinutes": 75,
+    "servingCount": 6,
+    "averageCalories": 560,
+    "protein": 36,
+    "carbs": 14,
+    "fat": 39,
+    "isFeatured": false,
+    "tipNote": "Kuyruk yağını tepsinin tabanına yaymak etin fırında kurumadan kızarmasını sağlar.",
+    "servingSuggestion": "Lavaş, köz biber ve ayranla tepsiden sıcak servis edin.",
+    "tags": [
+      "firinda",
+      "yuksek-protein"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Kuzu kuşbaşı",
+        "amount": "1",
+        "unit": "kg",
+        "group": null
+      },
+      {
+        "name": "Kuyruk yağı",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "6",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Çarliston biber",
+        "amount": "7",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates salçası",
+        "amount": "1.5",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sıcak su",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Pul biber",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuyruk yağını küçük doğrayıp tepsinin tabanına yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kuzu etini ve sarımsakları tepsiye yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tepsiyi 180°C fırında 15 dakika ön pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Biber ve domatesleri iri doğrayıp tepsiye ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Salça, sıcak su, yağ, tuz, karabiber ve pul biberi karıştırıp yemeğin üstüne gezdirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Niğde tavayı 200°C fırında 40 dakika suyunu çekene kadar pişirin.",
+        "timerSeconds": 2400
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Fırından çıkınca 5 dakika dinlendirip servis edin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "nikujaga",
+    "title": "Nikujaga",
+    "cuisine": "jp",
+    "type": "YEMEK",
+    "description": "Japon nikujaga, ince dana eti ve patatesi soya soslu hafif tatlı suda yumuşak pişirir.",
+    "prepMinutes": 20,
+    "cookMinutes": 35,
+    "totalMinutes": 55,
+    "servingCount": 4,
+    "averageCalories": 350,
+    "protein": 20,
+    "carbs": 25,
+    "fat": 18,
+    "isFeatured": false,
+    "tipNote": "Patatesleri iri kesmek uzun pişimde dağılmadan şekillerini korumalarını sağlar.",
+    "servingSuggestion": "Yemeği sıcak sunun, üstüne taze soğan serpip pirinçle verin.",
+    "tags": [
+      "tek-tencere"
+    ],
+    "allergens": [
+      "SOYA"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana eti",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patates, havuç ve soğanı iri parçalar halinde doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "İnce dilim eti tencerede 3 dakika mühürleyin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sebzeleri ekleyip 4 dakika çevirin, yüzeyleri yağla kaplansın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Dashi, soya sosu, mirin ve şekeri ekleyip 18 dakika kısık ateşte pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tencereyi 8 dakika dinlendirin, patatesler sosu çeksin ve dağılmasın.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "nohut-salatasi",
+    "title": "Nohut Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Haşlanmış nohut, taze sebze ve limonlu sosla hazırlanan doyurucu salata.",
+    "prepMinutes": 15,
+    "cookMinutes": 0,
+    "totalMinutes": 15,
+    "servingCount": 4,
+    "averageCalories": 240,
+    "protein": 9,
+    "carbs": 29,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Nohutları sosla karıştırdıktan sonra 10 dakika bekletin; limon aroması içine işler.",
+    "servingSuggestion": "Izgara sebze yanında servis edin.",
+    "tags": [
+      "vegan",
+      "pratik",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Salatalık",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kırmızı soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Nohutları süzün, kabukları ayrılmış taneleri ayıklayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kırmızı soğanı küçük doğrayın, kornişon ve mısırı hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Maydanoz, nane ve dereotunu ince kıyın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Zeytinyağı, nar ekşisi, limon suyu ve tuzu 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Nohut, sebze, yeşillik ve sosu birleştirin, 5 dakika bekletip servis edin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Nohut salatasını kısa bekletin, nar ekşisi tanelere işlerken yeşillikler hala canlı kalır.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "nohut-unlu-protein-krep",
+    "title": "Nohut Unlu Protein Krep",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Nohut unlu protein krep, klasik una alternatif olarak bakliyat tabanı kullanan tuzlu bir kahvaltı tarifidir.",
+    "prepMinutes": 10,
+    "cookMinutes": 10,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 188,
+    "protein": 12,
+    "carbs": 20,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Hamuru 5 dakika dinlendirmek nohut ununun sıvıyı çekmesini sağlar.",
+    "servingSuggestion": "Krepleri sıcak verin, yanına yoğurt ve taze otlar koyun.",
+    "tags": [
+      "yuksek-protein",
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Nohut unu",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "120",
+        "unit": "ml",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Nohut Unlu Protein Krep akışı için tava, kase ve ölçüleri hazır edin, pişirme başlayınca ritim bozulmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Nohut Unlu Protein Krep için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tüm malzemeyi pürüzsüz olana kadar çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamuru 5 dakika dinlendirin, nohut-unlu-protein-krep akışı için.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Krepleri tavada iki yüz pişirip yoğurtla servis edin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Nohut Unlu Protein Krep kıvamı oturunca servis edin, fazla bekletmek peynirli dokuyu sertleştirir.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "nohutlu-alaca-corba-gaziantep-usulu",
+    "title": "Nohutlu Alaca Çorba",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Gaziantep usulü nohutlu alaca çorba, mercimek ve nohudu dövme ile buluşturarak koyu, besleyici ve kış akşamlarına uygun bir çorba sunar.",
+    "prepMinutes": 12,
+    "cookMinutes": 26,
+    "totalMinutes": 38,
+    "servingCount": 4,
+    "averageCalories": 204,
+    "protein": 10,
+    "carbs": 32,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Dövmeyi önceden ıslatmak çorbanın daha eşit pişmesini sağlar.",
+    "servingSuggestion": "Çorbayı sıcak sunun, üstüne nane serpip yanında limon verin.",
+    "tags": [
+      "tek-tencere",
+      "kis-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kırmızı mercimek",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Dövme",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Nohut ve bakliyatı süzün, soğanı yemeklik doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı tencerede orta ateşte 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bakliyat ve 5 su bardağı sıcak suyu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Çorbayı orta ateşte 20 dakika pişirin, bakliyat taneleri çatlamasın diye karıştırın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tuzunu ayarlayıp sıcak servis edin, nohutlu alaca için ölçü şaşmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "nohutlu-bulgur-kapama-ankara-usulu",
+    "title": "Ankara Nohutlu Bulgur Kapama",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Ankara nohutlu bulgur kapama, bulguru nohut ve soğanla aynı tencerede pişirerek bozkır sofrasına sade, tok ve bütçe dostu bir ana yemek kurar.",
+    "prepMinutes": 12,
+    "cookMinutes": 22,
+    "totalMinutes": 34,
+    "servingCount": 5,
+    "averageCalories": 212,
+    "protein": 8,
+    "carbs": 34,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Nohudu sonradan eklemek tencerede fazla ezilip dağılmasını önler.",
+    "servingSuggestion": "Yemeği sıcak verin, yanına turşu ve ayran koyun.",
+    "tags": [
+      "butce-dostu",
+      "tek-tencere",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Pilavlık bulgur",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Salça",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bulguru ayıklayın, nohudu süzün ve sıcak tavuk suyunu hazır tutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Ankara kapama için soğanı tereyağında 5 dakika kavurun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bulguru ekleyip 4 dakika kavurun, taneler yağla kaplansın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Nohut, tuz ve sıcak suyu ekleyip kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kapamayı 16 dakika kısık ateşte pişirin, kapağı açmayın ki buhar kaçmasın.",
+        "timerSeconds": 960
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Pilavı 10 dakika dinlendirip çatalla havalandırın.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "nohutlu-firikli-semsek-gaziantep-usulu",
+    "title": "Gaziantep Nohutlu Firikli Semsek",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Gaziantep nohutlu firikli semsek, ince hamuru firik ve nohutla doldurarak çıtır ve isli aromalı bir Antep böreği çıkarır.",
+    "prepMinutes": 22,
+    "cookMinutes": 18,
+    "totalMinutes": 40,
+    "servingCount": 6,
+    "averageCalories": 244,
+    "protein": 8,
+    "carbs": 31,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "İçi fazla doldurmamak semseklerin kızarırken açılmasını önler.",
+    "servingSuggestion": "Semsekleri sıcak sunun, yanına ayran ve sumaklı soğan koyun.",
+    "tags": [
+      "misafir-sofrasi",
+      "firinda",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Firik",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Gaziantep Nohutlu Firikli Semsek için hamur veya yufkayı tezgaha alıp ana iç malzemeleri ince doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Gaziantep Nohutlu Firikli Semsek iç harcını 2 yemek kaşığı zeytinyağıyla 5 dakika orta ateşte çevirip soğutun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Gaziantep Nohutlu Firikli Semsek hamurunu porsiyonlara ayırıp kenarları kurumadan örtülü bekletin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Gaziantep Nohutlu Firikli Semsek parçalarına harcı paylaştırın, kenarları açılmayacak biçimde kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Gaziantep Nohutlu Firikli Semsek üstüne yumurta sürüp önceden ısıtılmış fırında altı kızarana kadar pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Gaziantep Nohutlu Firikli Semsek fırından çıkınca 5 dakika dinlendirin, hamur yırtılmadan ılık servis edin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "nohutlu-ispanak",
+    "title": "Nohutlu Ispanak",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Ispanak ve haşlanmış nohutun salçalı sosla birleştiği besleyici tencere yemeği.",
+    "prepMinutes": 15,
+    "cookMinutes": 25,
+    "totalMinutes": 40,
+    "servingCount": 4,
+    "averageCalories": 300,
+    "protein": 13,
+    "carbs": 38,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Ispanağı tencereye ekledikten sonra kısa sürede pişirin; rengi koyulaşmadan yemeği tamamlayın.",
+    "servingSuggestion": "Yemeği ılık verin, yanına yoğurt ve ekmek koyun.",
+    "tags": [
+      "vegan",
+      "tek-tencere",
+      "butce-dostu",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Ispanak",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates salçası",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sıcak su",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ispanağı bol suda yıkayın, saplarıyla birlikte iri doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı zeytinyağında 5 dakika kavurun, salçayı ekleyip 2 dakika çevirin.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ispanağı tencereye parça parça ekleyin ve 5 dakika söndürün.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Nohut, tuz ve az sıcak suyu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yemeği 15 dakika kısık ateşte pişirin, ıspanak rengini kaybetmeden ocaktan alın.",
+        "timerSeconds": 900
+      }
+    ]
+  },
+  {
+    "slug": "nohutlu-kabak-basti-adana-usulu",
+    "title": "Nohutlu Kabak Bastı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Adana usulü nohutlu kabak bastı, kabak dilimlerini nohut ve domatesle buluşturarak hafif sulu, yumuşak ve günlük sofraya uygun bir sebze yemeği kurar.",
+    "prepMinutes": 12,
+    "cookMinutes": 22,
+    "totalMinutes": 34,
+    "servingCount": 4,
+    "averageCalories": 176,
+    "protein": 6,
+    "carbs": 22,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Kabakları kalın dilimlemek tencerede dağılmalarını önler.",
+    "servingSuggestion": "Kabak bastıyı sıcak sunun, yanına yoğurt ve limon koyun.",
+    "tags": [
+      "vegan",
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Kabak",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabakları iri dilimleyin, nohudu süzün ve dereotunu ince kıyın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı zeytinyağında 5 dakika kavurun, salça kullanıyorsanız 2 dakika daha çevirin.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kabakları tencereye dizin, üstüne nohut ve tuzu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Az sıcak su ekleyip 18 dakika kısık ateşte pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Dereotunu son anda serpin ve 5 dakika dinlendirin, kabaklar karıştırırken dağılmasın.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "nohutlu-kabak-boranisi-adiyaman-usulu",
+    "title": "Adıyaman Nohutlu Kabak Boranisi",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Adıyaman nohutlu kabak boranisi, kabağı nohut ve sarımsaklı yoğurtla birleştirerek hafif ekşi ve kaşıkla yenilen bir Güneydoğu yemeği kurar.",
+    "prepMinutes": 12,
+    "cookMinutes": 14,
+    "totalMinutes": 26,
+    "servingCount": 4,
+    "averageCalories": 188,
+    "protein": 8,
+    "carbs": 20,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Kabağı diri bırakmak boranide daha canlı bir doku verir.",
+    "servingSuggestion": "Ilık sunun, üstüne sarımsaklı yoğurt gezdirip nane serpin.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Kabak",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabakları küp doğrayın, nohudu süzün ve yoğurdu oda sıcaklığına alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı yağda 5 dakika kavurun, kabakları ekleyip 6 dakika pişirin.",
+        "timerSeconds": 660
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nohut ve az sıcak suyu ekleyip 10 dakika kısık ateşte pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yoğurdu sarımsakla çırpın ve yemeğin ilk sıcaklığı geçince üstüne gezdirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tereyağında pul biberi 1 dakika kızdırıp boraninin üstüne dökün.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Yoğurdu kaynar yemeğe katmayın, kesilmesin diye servis tabağında birleştirin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "nohutlu-kereviz-corbasi-mardin-usulu",
+    "title": "Nohutlu Kereviz Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Mardin usulü nohutlu kereviz çorbası, kerevizi nohut ve limonla buluşturarak hafif ama tok bir çorba hazırlar.",
+    "prepMinutes": 12,
+    "cookMinutes": 20,
+    "totalMinutes": 32,
+    "servingCount": 4,
+    "averageCalories": 144,
+    "protein": 6,
+    "carbs": 17,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Kerevizi küçük küp kesmek nohutla aynı sürede yumuşamasını sağlar.",
+    "servingSuggestion": "Nohutlu kereviz çorbasını sıcak kaseye alıp nohutları limonlu yüzeyde bırakın.",
+    "tags": [
+      "vegan",
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "KEREVIZ"
+    ],
+    "ingredients": [
+      {
+        "name": "Kereviz",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "1 kerevizi küçük küp doğrayın, 1 su bardağı nohudu süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve kerevizi orta ateşte 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nohut ve 5 su bardağı suyu ekleyip 12 dakika kaynatın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "1 yemek kaşığı limon suyunu katıp 3 dakika pişirin, kereviz tadı dengelensin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sıcak servis edin, nohutlu kereviz dokusu beklerken ağırlaşmasın, nohutlu kereviz dengesi bozulmasın, nohutlu kereviz dokusu kaymasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "nohutlu-keskek-bingol-usulu",
+    "title": "Bingöl Nohutlu Keşkek",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Bingöl nohutlu Keşkek, buğday ve nohudu uzun pişirerek doğu sofrasına kaşığa dolgun, sade ve çok doyurucu bir ana yemek getirir.",
+    "prepMinutes": 15,
+    "cookMinutes": 45,
+    "totalMinutes": 60,
+    "servingCount": 5,
+    "averageCalories": 228,
+    "protein": 9,
+    "carbs": 35,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Buğdayı önceden ıslatmak tencerede daha hızlı dağılmasını sağlar.",
+    "servingSuggestion": "Keşkeği sıcak verin, üstüne tereyağı gezdirip karabiber serpin.",
+    "tags": [
+      "butce-dostu",
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Aşurelik buğday",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "20",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Dövme buğdayı geceden ıslatın, nohudu haşlanmış olarak hazır edin.",
+        "timerSeconds": 28800
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Buğdayı tencereye alın, üstünü geçecek sıcak suyla 45 dakika pişirin.",
+        "timerSeconds": 2700
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nohut ve tuzu ekleyip 20 dakika daha kısık ateşte pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Keşkeği tahta kaşıkla 8 dakika döverek karıştırın, taneler kremamsı bağlansın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tereyağını kızdırıp üstüne gezdirin ve 10 dakika dinlendirin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "nohutlu-kuru-bamya-yahnisi-konya-usulu",
+    "title": "Konya Nohutlu Kuru Bamya Yahnisi",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Konya nohutlu kuru bamya yahnisi, kuru bamyayı nohut ve limonla pişirerek ekşimsi, sulu ve uzun kaşıklanan bir tencere yemeği bırakır.",
+    "prepMinutes": 16,
+    "cookMinutes": 40,
+    "totalMinutes": 56,
+    "servingCount": 5,
+    "averageCalories": 172,
+    "protein": 7,
+    "carbs": 24,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Kuru bamyayı limonlu suda haşlamak iyi sonuç verir.",
+    "servingSuggestion": "Yahniyi sıcak sunun, yanına pirinç pilavı ve limon koyun.",
+    "tags": [
+      "tek-tencere",
+      "butce-dostu",
+      "kis-tarifi",
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Kuru bamya",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates salçası",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuru bamyaları ipinden çıkarın ve limonlu kaynar suda 8 dakika haşlayın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı tereyağında 5 dakika kavurun, salçayı ekleyip 2 dakika çevirin.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nohut ve sıcak suyu ekleyip 10 dakika kaynatın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Bamyayı tencereye alın ve limon suyunu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yahniyi 18 dakika kısık ateşte pişirin, bamyaları karıştırmayın ki salyalanmasın.",
+        "timerSeconds": 1080
+      }
+    ]
+  },
+  {
+    "slug": "nohutlu-otlu-borek-aydin-usulu",
+    "title": "Aydın Nohutlu Otlu Börek",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Aydın nohutlu otlu Börek, ince yufkayı nohut ve Ege otlarıyla doldurarak çıtır, hafif ve öğünlük bir fırın işi kurar.",
+    "prepMinutes": 22,
+    "cookMinutes": 25,
+    "totalMinutes": 47,
+    "servingCount": 6,
+    "averageCalories": 236,
+    "protein": 8,
+    "carbs": 28,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Otları kavurmadan eklemek böreğin içinde daha canlı bir doku bırakır.",
+    "servingSuggestion": "Böreği ılık verin, yanına ayran ve domates dilimleri koyun.",
+    "tags": [
+      "vejetaryen",
+      "firinda"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Yufka",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Karışık Ege otu",
+        "amount": "1",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Aydın Nohutlu Otlu Börek için hamur veya yufkayı tezgaha alıp ana iç malzemeleri ince doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Aydın Nohutlu Otlu Börek iç harcını 2 yemek kaşığı zeytinyağıyla 5 dakika orta ateşte çevirip soğutun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Aydın Nohutlu Otlu Börek hamurunu porsiyonlara ayırıp kenarları kurumadan örtülü bekletin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Aydın Nohutlu Otlu Börek parçalarına harcı paylaştırın, kenarları açılmayacak biçimde kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Aydın Nohutlu Otlu Börek üstüne yumurta sürüp önceden ısıtılmış fırında altı kızarana kadar pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Aydın Nohutlu Otlu Börek fırından çıkınca 5 dakika dinlendirin, hamur yırtılmadan ılık servis edin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "nohutlu-pancar-bulguru-ankara-usulu",
+    "title": "Ankara Nohutlu Pancar Bulguru",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Ankara nohutlu pancar bulguru, bulguru nohut ve pancarla birleştirerek bozkıra renkli ve tok bir tek tencere yemeği kazandırır.",
+    "prepMinutes": 12,
+    "cookMinutes": 22,
+    "totalMinutes": 34,
+    "servingCount": 4,
+    "averageCalories": 204,
+    "protein": 8,
+    "carbs": 31,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Pancarı küçük küp doğramak bulgurla aynı sürede yumuşamasını sağlar.",
+    "servingSuggestion": "Pilavı ılık sunun, üstüne maydanoz serpip yoğurtla verin.",
+    "tags": [
+      "vegan",
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Pilavlık bulgur",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Pancar",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pancarı küçük küpler halinde doğrayın, bulguru yıkayıp süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pancarlı bulgur tabanı için soğanı tereyağında 5 dakika kavurun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pancarı ekleyip 6 dakika çevirin, rengi yağa geçsin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Bulgur ve nohudu ekleyip 3 dakika kavurun.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sıcak su ve tuzu ekleyip 17 dakika kısık ateşte pişirin.",
+        "timerSeconds": 1020
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tencereyi 10 dakika dinlendirin, pancar buharıyla bulgur taneleri yumuşasın.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "nohutlu-pazi",
+    "title": "Nohutlu Pazı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Pazı yapraklarının nohutla buluştuğu bu yumuşak tencere yemeği, hafif ama tok bir ev klasiğidir.",
+    "prepMinutes": 15,
+    "cookMinutes": 25,
+    "totalMinutes": 40,
+    "servingCount": 4,
+    "averageCalories": 210,
+    "protein": 9,
+    "carbs": 24,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Pazıyı son bölümde ekleyin; uzun pişen yaprak tadını kaybeder.",
+    "servingSuggestion": "Sarımsaklı yoğurtla servis edin.",
+    "tags": [
+      "tek-tencere",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Pazı",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "350",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Nohutlu yemek için pazıyı yıkayın, saplarını ince, yapraklarını iri doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı zeytinyağında 5 dakika kavurun, pazı saplarını ekleyip 3 dakika pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pazı yapraklarını parça parça ekleyin ve 4 dakika söndürün.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Nohut, tuz ve az sıcak suyu ekleyip kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yemeği 12 dakika kısık ateşte pişirin, yapraklar rengini kaybetmeden ocaktan alın.",
+        "timerSeconds": 720
+      }
+    ]
+  },
+  {
+    "slug": "nohutlu-sarimsakli-yogurt-corbasi-gaziantep-usulu",
+    "title": "Nohutlu Sarımsaklı Yoğurt Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Gaziantep usulü nohutlu sarımsaklı yoğurt çorbası, yoğurdu haşlanmış nohut ve sarımsakla buluşturarak yumuşak ama tok bir kase kurar.",
+    "prepMinutes": 10,
+    "cookMinutes": 18,
+    "totalMinutes": 28,
+    "servingCount": 4,
+    "averageCalories": 176,
+    "protein": 8,
+    "carbs": 17,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Yoğurtlu karışıma 1 kepçe sıcak su eklemek tencereye girince kesilmesini önler.",
+    "servingSuggestion": "Yanında sıcak pide ile servis edin.",
+    "tags": [
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Yoğurt",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yoğurt, yumurta ve ezilmiş sarımsağı pürüzsüz çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Nohudu 5 su bardağı suda orta ateşte 8 dakika pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sıcak çorba suyundan 2 kepçe alıp yoğurtlu terbiyeyi ılıtın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Terbiyeyi tencereye döküp kısık ateşte 4 dakika karıştırarak pişirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tuzunu ayarlayın ve yoğurt kesilmesin diye çorbayı kaynatmadan servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "nohutlu-semizotu-borani-aydin-usulu",
+    "title": "Aydın Nohutlu Semizotu Borani",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Aydın nohutlu semizotu borani, semizotunu yoğurt ve nohutla buluşturarak Ege sofrasına serin, hafif ekşili ve tok tutan bir salata kazandırır.",
+    "prepMinutes": 12,
+    "cookMinutes": 0,
+    "totalMinutes": 12,
+    "servingCount": 4,
+    "averageCalories": 148,
+    "protein": 7,
+    "carbs": 14,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Semizotunu sosla son anda karıştırmak yaprakların diri kalmasını sağlar.",
+    "servingSuggestion": "Boraniyi serin verin, üstüne zeytinyağı gezdirip ekmek sunun.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Semizotu",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "1",
+        "unit": "diş",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Semizotunu ayıklayıp yıkayın, süzgeçte tamamen kurutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Nohutları süzün, kabukları ayrılmış taneleri çıkarın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Süzme yoğurt, sarımsak, limon suyu ve zeytinyağını 1 dakika çırpın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Nohutu yoğurtlu sosla karıştırın, semizotunu en son ekleyin ki yapraklar ezilmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pul biberli zeytinyağı ve dereotuyla soğuk servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Yoğurtlu karışımı soğuk tutun, semizotu eklendiğinde yapraklar daha diri kalır.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "nohutlu-semizotu-corbasi-gaziantep-usulu",
+    "title": "Nohutlu Semizotu Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Gaziantep usulü nohutlu semizotu çorbası, semizotunu nohut ve sarımsakla buluşturarak ferah ama tok bir çorba çıkarır.",
+    "prepMinutes": 12,
+    "cookMinutes": 18,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 162,
+    "protein": 7,
+    "carbs": 20,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Semizotunu en son eklemek yeşil renginin canlı kalmasına yardımcı olur.",
+    "servingSuggestion": "Nohutlu semizotu çorbasını sıcak kaseye alıp nohutları semizotu yaprakları arasında gösterin.",
+    "tags": [
+      "vegan",
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Semizotu",
+        "amount": "1",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Semizotunu ayıklayın, nohudu süzün ve sarımsağı ezin, nohutlu semizotu için ölçü şaşmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve sarımsağı orta ateşte 3 dakika soteleyin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nohut ve 5 su bardağı suyu ekleyip 10 dakika kaynatın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Semizotunu katıp 4 dakika pişirin, yapraklar fazla kararmasın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Çorbayı sıcak servis edin, nohutlu semizotu taneleri dibe çökmesin, nohutlu semizotu dengesi bozulmasın, nohutlu semizotu dokusu kaymasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "nohutlu-sevketibostan-izmir-usulu",
+    "title": "Nohutlu Şevketibostan",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "İzmir usulü nohutlu şevketibostan, baharlı otu haşlanmış nohut ve limonlu terbiye ile buluşturarak Ege kokulu bir tencere yapar.",
+    "prepMinutes": 18,
+    "cookMinutes": 28,
+    "totalMinutes": 46,
+    "servingCount": 4,
+    "averageCalories": 186,
+    "protein": 7,
+    "carbs": 24,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Şevketibostanı limonlu suda bekletmek rengini korur ve acılığını yumuşatır.",
+    "servingSuggestion": "Ilık servis edip üzerine limon gezdirin.",
+    "tags": [
+      "vegan",
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Şevketibostan",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Şevketibostanı temizleyin, iri parçaları ikiye bölün ve limonlu suda bekletin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "İzmir usulü zeytinyağlı taban için soğanı 5 dakika kavurun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Şevketibostanı ekleyip 6 dakika çevirin, sert lifleri yağla yumuşamaya başlasın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Nohut, sıcak su, tuz ve limon suyunu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yemeği 28 dakika kısık ateşte pişirin, kök kısımları bıçakla kolay delinmeli.",
+        "timerSeconds": 1680
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Zeytinyağlı tadı otursun diye 10 dakika kapalı dinlendirin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "nohutlu-topalak",
+    "title": "Nohutlu Topalak",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "İç Anadolu topalak çorbası bulgur köfteleri, nohut ve salçalı suyla doyurucu bir tencere kurar.",
+    "prepMinutes": 40,
+    "cookMinutes": 35,
+    "totalMinutes": 75,
+    "servingCount": 6,
+    "averageCalories": 350,
+    "protein": 12,
+    "carbs": 48,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Sıvıyı ılık eklemek ve sürekli çırpmak çorbayı pürüzsüz bir dokuda tutar.",
+    "servingSuggestion": "Topalağı sıcak sunun, üstüne nane serpip yanında limon verin.",
+    "tags": [
+      "butce-dostu",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "İnce bulgur",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Nohut",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Domates salçası",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bulgur ve unu ılık suyla yoğurup küçük köfteler yapın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Köfteleri nohut büyüklüğünde sıkıştırın, pişerken dağılmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Salçalı suyu orta ateşte 6 dakika kaynatın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Nohut ve köfteleri tencereye ekleyip 25 dakika pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Çorbayı 5 dakika dinlendirip sıcak servis edin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "nohutlu-yahni-konya-usulu",
+    "title": "Konya Nohutlu Yahni",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Konya usulü nohutlu yahni, etli nohut tenceresini az malzemeyle kurup uzun pişmeyle derinleştiren sade ve doyurucu bir Anadolu yemeğidir.",
+    "prepMinutes": 20,
+    "cookMinutes": 55,
+    "totalMinutes": 75,
+    "servingCount": 6,
+    "averageCalories": 312,
+    "protein": 19,
+    "carbs": 24,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Nohudu önceden haşlanmış kullanmak etin pişme süresiyle daha dengeli bir tencere kurar.",
+    "servingSuggestion": "Yahniyi sıcak verin, yanına pirinç pilavı ve turşu koyun.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuzu kuşbaşı",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates salçası",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "25",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Pilav",
+        "amount": "6",
+        "unit": "porsiyon",
+        "group": null
+      },
+      {
+        "name": "Turşu",
+        "amount": "1",
+        "unit": "küçük tabak",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Nohudu bir gece ıslatın ve süzün.",
+        "timerSeconds": 28800
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Eti tencerede 8 dakika mühürleyin, suyunu salıp çekmesini bekleyin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğanı ekleyip 5 dakika kavurun, salçayı 2 dakika çevirin.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Nohut ve sıcak suyu ekleyip kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yahniyi 50 dakika kısık ateşte pişirin, nohutlar yumuşayınca tuzu ekleyin.",
+        "timerSeconds": 3000
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tencereyi 10 dakika dinlendirin, et lifleri servis sırasında kurumaz.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "nohutlu-yogurt-corbasi-diyarbakir-usulu",
+    "title": "Diyarbakır Nohutlu Yoğurt Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Diyarbakır nohutlu yoğurt çorbası, nohudu yoğurtlu terbiye ile bağlayarak Güneydoğu sofrasına yumuşak, hafif ekşili ve doyurucu bir başlangıç kazandırır.",
+    "prepMinutes": 10,
+    "cookMinutes": 18,
+    "totalMinutes": 28,
+    "servingCount": 5,
+    "averageCalories": 154,
+    "protein": 7,
+    "carbs": 16,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Yoğurdu tencereden birkaç kaşık suyla ılıştırmak çorbanın kesilmesini önler.",
+    "servingSuggestion": "Çorbayı sıcak sunun, üstüne nane serpip yanında ekmek verin.",
+    "tags": [
+      "vejetaryen",
+      "kis-tarifi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Nohudu 1 litre suda orta ateşte 8 dakika kaynatın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yoğurt ve unu ayrı kapta pürüzsüz çırpın, diyarbakır nohutlu yoğurt için ölçü şaşmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sıcak sudan 2 kepçe ekleyerek terbiyeyi ılıtın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Terbiyeyi tencereye katıp 4 dakika kısık ateşte pişirin, yoğurt kesilmesin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Naneyi ekleyip sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "nohutlu-yogurt-ezmesi-kirikkale-usulu",
+    "title": "Nohutlu Yoğurt Ezmesi",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Kırıkkale usulü nohutlu yoğurt ezmesi, haşlanmış nohudu sarımsaklı yoğurt ve nane ile buluşturarak serin, tok ve meze sofralarına uygun bir tabak kurar.",
+    "prepMinutes": 8,
+    "cookMinutes": 0,
+    "totalMinutes": 8,
+    "servingCount": 4,
+    "averageCalories": 154,
+    "protein": 7,
+    "carbs": 18,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Nohudun yarısını ezip yarısını bütün bırakmak tabakta daha dengeli doku verir.",
+    "servingSuggestion": "Ezmeyi serin sunun, üstüne zeytinyağı gezdirip ekmek koyun.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "1",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Nohutlu Yoğurt Ezmesi ana sebzesini hazırlayın, gerekiyorsa 8-18 dakika yumuşayana kadar haşlayıp süzün.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Nohutlu Yoğurt Ezmesi sosu için sarımsak, yoğurt, tahin veya zeytinyağını pürüzsüz karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nohutlu Yoğurt Ezmesi sebzesini ezip sosla birleştirin, tuz ve ekşiliği aynı kapta ayarlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Nohutlu Yoğurt Ezmesi servis tabağına yayılsın; üstüne yağı gezdirip 15 dakika buzdolabında dinlendirin.",
+        "timerSeconds": 900
+      }
+    ]
+  },
+  {
+    "slug": "nokul-samsun-usulu",
+    "title": "Samsun Nokulu",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Samsun nokulu, mayalı hamurun cevizli ve üzümlü içle sarıldığı, Karadeniz'de çay saatine en çok yakışan tatlı-tuzlu geçişli çöreklerden biridir.",
+    "prepMinutes": 30,
+    "cookMinutes": 25,
+    "totalMinutes": 55,
+    "servingCount": 10,
+    "averageCalories": 264,
+    "protein": 5,
+    "carbs": 33,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "İçi kenarlara çok taşırmamak dilimlerken rulonun dağılmasını önler.",
+    "servingSuggestion": "Dilimleyip çayla ılık servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ilık süt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Instant maya",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru üzüm",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "50",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Samsun Nokulu yapmadan önce ana malzemeleri ayırın, sıcak adımlar sırasında arama yapılmasın diye tezgahı düzenleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru yoğurup 20 dakika mayalandırın, nokul-samsun-usulu akışı için.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru açıp ceviz, üzüm ve eritilmiş tereyağını yayarak rulo yapın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Nokulu dilimleyip 190°C fırında 25 dakika pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Samsun Nokulu kıvamı oturunca servis edin, fazla bekletmek peynirli dokuyu sertleştirir.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "nom-hoa-chuoi",
+    "title": "Nom Hoa Chuoi",
+    "cuisine": "vn",
+    "type": "SALATA",
+    "description": "Vietnam muz çiçeği salatası, taze otlar ve yer fıstığıyla gevrek, ekşi ve ferah bir tabak verir.",
+    "prepMinutes": 30,
+    "cookMinutes": 0,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 160,
+    "protein": 4,
+    "carbs": 16,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Soğuk servis için malzemeleri doğramadan önce buzlu suda 2 dakika bekletin, çıtırlık korunur.",
+    "servingSuggestion": "Salatayı serin sunun, üstüne yer fıstığı serpip limon ekleyin.",
+    "tags": [
+      "vegan",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "YER_FISTIGI",
+      "SOYA"
+    ],
+    "ingredients": [
+      {
+        "name": "Muz çiçeği",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Havuç",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yer fıstığı",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Taze nane",
+        "amount": "1",
+        "unit": "tutam",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Muz çiçeğinin sert dış yapraklarını ayırın, iç kısmı ince jülyen doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Doğranmış muz çiçeğini limonlu soğuk suda 15 dakika bekletin, kararma olmasın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tavuk veya karidesi lokmalık hazırlayın, nane, kişniş ve fasulye filizini yıkayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Balık sosu, lime, şeker, sarımsak ve biberi şeker eriyene kadar karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Muz çiçeğini süzün, protein, otlar ve sosla harmanlayıp fıstıkla servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Muz çiçeğini süzdükten sonra kağıt havluyla alın, su kalırsa balık sosu seyrelir.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "nom-yen",
+    "title": "Nom Yen",
+    "cuisine": "th",
+    "type": "ICECEK",
+    "description": "Tay pembe süt içeceği nom yen, sala şurubu ve sütün birleştiği nostaljik bir yaz klasiğidir.",
+    "prepMinutes": 5,
+    "cookMinutes": 0,
+    "totalMinutes": 5,
+    "servingCount": 2,
+    "averageCalories": 165,
+    "protein": 6,
+    "carbs": 24,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Sala şurubunu az ekleyin; parlak rengi alması için çok miktar gerekmiyor.",
+    "servingSuggestion": "Bol buzla saydam bardakta servis edin.",
+    "tags": [
+      "pratik",
+      "yaz-tarifi",
+      "cocuk-dostu",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "400",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Sala şurubu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yoğunlaştırılmış süt",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Süt, sala şurubu ve yoğunlaştırılmış sütü karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karışımı buzla birlikte kısa süre blenderdan geçirin.",
+        "timerSeconds": 20
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hemen bardaklara alıp servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "nuoc-cham",
+    "title": "Nuoc Cham",
+    "cuisine": "vn",
+    "type": "SOS",
+    "description": "Vietnam nuoc cham sosu, lime, şeker ve balık sosuyla taze sarma ve noodle kaselerini parlatır.",
+    "prepMinutes": 8,
+    "cookMinutes": 0,
+    "totalMinutes": 8,
+    "servingCount": 6,
+    "averageCalories": 35,
+    "protein": 1,
+    "carbs": 7,
+    "fat": 0,
+    "isFeatured": true,
+    "tipNote": "Şekeri önce ılık suda eritin; tanecik kalırsa denge değişir.",
+    "servingSuggestion": "Goi cuon, bun cha veya ızgara tavuk yanında küçük kaselerde servis edin.",
+    "tags": [
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Balık sosu",
+        "amount": "60",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Lime suyu",
+        "amount": "60",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "40",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Kırmızı biber",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Balık sosu, lime suyu ve şeker malzemelerini ölçüp kullanıma hazır edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Şekeri 80 ml ılık suda eritin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Balık sosu ve lime suyunu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sarımsak ve biberi ince kıyıp sosa karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Nuoc Cham sosu küçük kaseye alıp aroması oturduğunda servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "nyponsoppa-bademli-isvec-usulu",
+    "title": "Nyponsoppa",
+    "cuisine": "se",
+    "type": "CORBA",
+    "description": "Nyponsoppa, kuşburnunu hafif koyulaştırıp bademle tamamlayarak tatlı-ekşi dengeli, sıcak ya da soğuk içilen bir İsveç çorbası sunar.",
+    "prepMinutes": 8,
+    "cookMinutes": 14,
+    "totalMinutes": 22,
+    "servingCount": 4,
+    "averageCalories": 118,
+    "protein": 2,
+    "carbs": 18,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Kuşburnunu uzun kaynatmamak canlı rengini ve meyve kokusunu korur.",
+    "servingSuggestion": "Çorbayı ılık sunun, üstüne badem serpip yanında krema verin.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuşburnu püresi",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Badem",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Mısır nişastası",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuşburnu püresini ve suyu tencereye alın, bademi servis için ayırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karışımı orta ateşte 10 dakika pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Şeker dengesini kontrol edin ve çorbayı pürüzsüz çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Çorbayı 20 dakika soğutun, kıvamı otursun.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Bademle tamamlayıp ılık veya soğuk servis edin, nyponsoppa dengesi bozulmasın, nyponsoppa dokusu kaymasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "nyponsoppa-parfe-isvec-usulu",
+    "title": "Nyponsoppa Parfe",
+    "cuisine": "se",
+    "type": "TATLI",
+    "description": "Nyponsoppa parfe, kuşburnu çorbasını kremayla dondurarak meyvemsi, serin ve yumuşak bir İskandinav tatlısı yapar.",
+    "prepMinutes": 15,
+    "cookMinutes": 0,
+    "totalMinutes": 135,
+    "servingCount": 6,
+    "averageCalories": 206,
+    "protein": 3,
+    "carbs": 19,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Parfeyi tam donmadan önce kısa karıştırmak buzlanmayı azaltır.",
+    "servingSuggestion": "Parfeyi soğuk verin, üstüne kuşburnu sosu ve badem ekleyin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuşburnu püresi",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Krema ve şekeri 2 dakika yumuşak kıvamda çırpın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kuşburnu püresini spatulayla kremaya katın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karışımı kalıba döküp yüzeyi düzeltin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Parfeyi 2 saat dondurun, keserken formu bozulmasın.",
+        "timerSeconds": 7200
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Servisten 5 dakika önce çıkarıp dilimleyin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "oatcake-mushroom-stack-ingiliz-usulu",
+    "title": "İngiliz Oatcake Mushroom Stack",
+    "cuisine": "gb",
+    "type": "KAHVALTI",
+    "description": "İngiliz oatcake mushroom stack, yulaflı ince kekleri mantar sotesiyle katlayarak Britanya kahvaltılarına topraksı, doyurucu ve sıcak bir kule kurar.",
+    "prepMinutes": 16,
+    "cookMinutes": 18,
+    "totalMinutes": 34,
+    "servingCount": 3,
+    "averageCalories": 224,
+    "protein": 7,
+    "carbs": 29,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Yulaf hamurunu birkaç dakika bekletmek tavada daha düzgün pişmesini sağlar.",
+    "servingSuggestion": "Stacki sıcak sunun, yanına yeşil salata ve hardal koyun.",
+    "tags": [
+      "vegan",
+      "pratik",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Yulaf unu",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Mantar",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Taze kekik",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "İngiliz Oatcake Mushroom Stack için kullanılacak kapları hazırlayın, hamur veya yumurta bekleyip dokusunu kaybetmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yulaf unu ve suyla akışkan bir hamur hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "İnce oatcake'leri tavada pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Mantarı soteleyip kat kat dizerek servis edin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "İngiliz Oatcake Mushroom Stack tamamlanınca 3 dakika dinlendirin, iç sıcaklık dengelensin diye sonra dilimleyin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "oaxaca-guacamole-klasik",
+    "title": "Oaxaca Klasik Guacamole",
+    "cuisine": "mx",
+    "type": "SOS",
+    "description": "Guacamole, olgun avokadoyu lime, kişniş, jalapeno, domates ve soğanla ezerek hazırlanan taze Meksika dip sosudur.",
+    "prepMinutes": 12,
+    "cookMinutes": 0,
+    "totalMinutes": 12,
+    "servingCount": 4,
+    "averageCalories": 160,
+    "protein": 3,
+    "carbs": 8,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Avokadoyu püre yapmadan iri ezmek dip sosa taze ve kaşığa gelen doku verir.",
+    "servingSuggestion": "Tortilla cipsi, taco veya ızgara etlerin yanında hemen servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "vegan",
+      "pratik"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Avokado",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kırmızı soğan",
+        "amount": "0.25",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Jalapeno",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kişniş",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Lime suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soğan, domates, jalapeno ve kişnişi ince doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Avokadoları ikiye bölüp çekirdeklerini çıkarın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Avokado etini çatalla iri parçalı ezin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Lime suyu ve tuzu ekleyip kararmaması için hemen karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Doğranmış sebzeleri nazikçe katıp servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "oaxaca-kabak-cekirdekli-tavuk-mole",
+    "title": "Oaxaca Kabak Çekirdekli Tavuk Mole",
+    "cuisine": "mx",
+    "type": "YEMEK",
+    "description": "Meksika usulü kabak çekirdekli tavuk mole, haşlanmış tavuğu yeşil kabak çekirdeği sosuyla kaplayarak yoğun aromalı bir ana yemek sunar.",
+    "prepMinutes": 25,
+    "cookMinutes": 45,
+    "totalMinutes": 70,
+    "servingCount": 5,
+    "averageCalories": 465,
+    "protein": 31,
+    "carbs": 28,
+    "fat": 24,
+    "isFeatured": false,
+    "tipNote": "Kabak çekirdeğini kısa kavurmak sosun yağlı kokusunu dengeler.",
+    "servingSuggestion": "Pirinç ve lime ile sıcak servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk but",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kabak çekirdeği",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kişniş",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Yeşil biber",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Susam",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabak çekirdeğini kuru tavada 4 dakika kavurun, patlamaya başlayınca alın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tomatillo, biber, soğan ve sarımsağı 8 dakika közleyin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yumuşayan sebzeleri kabak çekirdeği ve tavuk suyuyla pürüzsüz çekin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sosu tencerede 12 dakika pişirin, çekirdek tabana tutmasın diye karıştırın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pişmiş tavuk parçalarını sosa ekleyip 10 dakika kısık ateşte pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Moleyı 5 dakika dinlendirin ve sıcak tortilla ile servis edin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "oaxaca-moleli-tavuk",
+    "title": "Oaxaca Moleli Tavuk",
+    "cuisine": "mx",
+    "type": "YEMEK",
+    "description": "Meksika moleli tavuk, kuru biber, susam, yer fıstığı, kakao ve baharatlı koyu sosu haşlanmış tavukla buluşturan zengin bir Oaxaca tabağıdır.",
+    "prepMinutes": 35,
+    "cookMinutes": 55,
+    "totalMinutes": 90,
+    "servingCount": 6,
+    "averageCalories": 560,
+    "protein": 34,
+    "carbs": 28,
+    "fat": 36,
+    "isFeatured": false,
+    "tipNote": "Mole sosunu süzmek pürüzsüz ve parlak bir kıvam sağlar.",
+    "servingSuggestion": "Pirinç, tortilla ve susam serpintisiyle sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "YER_FISTIGI",
+      "SUSAM",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk but",
+        "amount": "900",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kuru ancho biber",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Susam",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yer fıstığı",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Badem",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kakao",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tavuk suyu",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuk butları tuzlu suda 30 dakika haşlayıp suyunu ayırın.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kuru biberleri sıcak suda 15 dakika yumuşatın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Susam, yer fıstığı ve bademi tavada 3 dakika kavurun.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Biber, kuruyemiş, kakao ve tavuk suyunu pürüzsüz çekip süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sosu tavukla 20 dakika kısık ateşte kaynatın.",
+        "timerSeconds": 1200
+      }
+    ]
+  }
+]

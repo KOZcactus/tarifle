@@ -1,0 +1,4483 @@
+[
+  {
+    "slug": "kapuska",
+    "title": "Kapuska",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Lahana, kıyma ve pirinçle hazırlanan ekonomik ve doyurucu tencere yemeği.",
+    "prepMinutes": 20,
+    "cookMinutes": 40,
+    "totalMinutes": 60,
+    "servingCount": 5,
+    "averageCalories": 260,
+    "protein": 16,
+    "carbs": 25,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Lahanayı ekledikten sonra tencerenin kapağını kapatın; hacmi kısa sürede azalır.",
+    "servingSuggestion": "Yoğurt ve pul biberle servis edin.",
+    "tags": [
+      "tek-tencere",
+      "butce-dostu"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Beyaz lahana",
+        "amount": "1",
+        "unit": "kg",
+        "group": null
+      },
+      {
+        "name": "Dana kıyma",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Domates salçası",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sıcak su",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kapuska başlangıcı olarak soğan ve kıymayı zeytinyağında 8 dakika kavurun.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Salça, doğranmış lahana, pirinç, sıcak su ve tuzu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kısık ateşte lahana yumuşayana kadar 35-40 dakika pişirin.",
+        "timerSeconds": 2400
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kapuska tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kapuska 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın, böylece Kapuska servis dengesi korunur.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "karaage",
+    "title": "Karaage",
+    "cuisine": "jp",
+    "type": "YEMEK",
+    "description": "Japon karaage tavuk parçaları soya ve zencefil marinasyonundan sonra çıtır kızarır.",
+    "prepMinutes": 35,
+    "cookMinutes": 15,
+    "totalMinutes": 80,
+    "servingCount": 4,
+    "averageCalories": 380,
+    "protein": 28,
+    "carbs": 14,
+    "fat": 22,
+    "isFeatured": false,
+    "tipNote": "Tavuğun iç sıcaklığı 74 dereceye ulaştığında pişmiştir; kalın bölgeden termometre ile kontrol edin. Tavuğu 30 dakika bekletip süzdürün; fazla ıslak yüzey nişastanın çıtırlığını azaltır.",
+    "servingSuggestion": "Sıcak servis edin, yanında limon dilimleri ve mayonezli dip sunun.",
+    "tags": [
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "SOYA"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk but",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": "Marine için"
+      },
+      {
+        "name": "Zencefil",
+        "amount": "20",
+        "unit": "gr",
+        "group": "Marine için"
+      },
+      {
+        "name": "Patates nişastası",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karaage başlangıcı olarak tavuğu soya sosu ve zencefille 25 dakika marine edin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karaage için tavuğu nişastaya bulayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karaage tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Parçaları 170°C yağda 12-15 dakika kızartın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karaage ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Karaage servisinde tavadaki yoğun sosu malzemenin üzerine paylaştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Karaage son kontrolünde tuz, ekşilik veya yağ dengesini servis öncesi ayarlayın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "karabiberli-lahana-dana-tava-polonya-usulu",
+    "title": "Karabiberli Lahana Dana Tava",
+    "cuisine": "pl",
+    "type": "YEMEK",
+    "description": "Polonya usulü karabiberli lahana dana tava, dana etini lahana ve bol karabiberle buluşturarak kısa sürede doyurucu bir tabak kurar.",
+    "prepMinutes": 14,
+    "cookMinutes": 18,
+    "totalMinutes": 32,
+    "servingCount": 4,
+    "averageCalories": 312,
+    "protein": 23,
+    "carbs": 11,
+    "fat": 18,
+    "isFeatured": false,
+    "tipNote": "Lahanayı ince değil, kalın şerit doğramak tavada tamamen sönmeden diri kalmasını sağlar.",
+    "servingSuggestion": "Üzerine karabiber çekip sıcak servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "tek-tencere"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana kuşbaşı",
+        "amount": "450",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Beyaz lahana",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karabiberli Lahana Dana Tava başlangıcı olarak dana etini tereyağında 5 dakika mühürleyin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve lahanayı ekleyip 7 dakika çevirmeye devam edin.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karabiberi katıp kapağı kapalı şekilde 4 dakika pişirerek servis edin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karabiberli Lahana Dana Tava tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karabiberli Lahana Dana Tava ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "karabugdayli-kofte-tava-rus-usulu",
+    "title": "Karabuğdaylı Köfte Tava",
+    "cuisine": "ru",
+    "type": "YEMEK",
+    "description": "Rus usulü karabuğdaylı köfte tava, köfteyi karabuğday ve soğanla buluşturarak sade ama tok bir ana yemek yapar.",
+    "prepMinutes": 14,
+    "cookMinutes": 18,
+    "totalMinutes": 32,
+    "servingCount": 4,
+    "averageCalories": 316,
+    "protein": 20,
+    "carbs": 22,
+    "fat": 16,
+    "isFeatured": false,
+    "tipNote": "Köfte harcını kısa dinlendirmek tavada daha kolay şekil almasını sağlar.",
+    "servingSuggestion": "Karabuğdaylı köfte tavayı sıcak tabakta dizip karabuğdaylı iç dokusu ezilmeden sunun.",
+    "tags": [
+      "tek-tencere",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana kıyma",
+        "amount": "450",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Karabuğday",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Galeta unu",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karabuğdaylı Köfte Tava başlangıcı olarak kıymayı galeta unu ve soğanla yoğurup köfteler hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Köfteleri tavada 6 dakika mühürleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karabuğdaylı Köfte Tava tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karabuğday ve suyu ekleyip 12 dakika pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karabuğdaylı Köfte Tava ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Karabuğdaylı Köfte Tava servisinde tavadaki yoğun sosu malzemenin üzerine paylaştırın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "karabugdayli-tavuk-firini-rus-usulu",
+    "title": "Karabuğdaylı Tavuk Fırını",
+    "cuisine": "ru",
+    "type": "YEMEK",
+    "description": "Rus usulü karabuğdaylı tavuk fırını, tavuk butlarını karabuğday ve mantarla aynı kapta pişirerek doyurucu bir akşam yemeği kurar.",
+    "prepMinutes": 16,
+    "cookMinutes": 42,
+    "totalMinutes": 58,
+    "servingCount": 4,
+    "averageCalories": 418,
+    "protein": 30,
+    "carbs": 36,
+    "fat": 17,
+    "isFeatured": false,
+    "tipNote": "Karabuğdayı önceden kavurmak fırında tane tane kalmasına yardım eder.",
+    "servingSuggestion": "Dereotlu yoğurtla sıcak servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "tek-tencere"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Tavuk but",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Karabuğday",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Mantar",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tavuk suyu",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karabuğdaylı Tavuk Fırını başlangıcı olarak karabuğdayı kuru tavada 3 dakika kavurun.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mantar ve soğanı 6 dakika soteleyip fırın kabına alın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tavuk ve suyu ekleyip 190 derecede 35 dakika pişirin.",
+        "timerSeconds": 2100
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karabuğdaylı Tavuk Fırını tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karabuğdaylı Tavuk Fırını 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın, böylece Karabuğdaylı Tavuk Fırını servis dengesi korunur.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "karabuk-cevizli-kesli-yayim",
+    "title": "Karabük Cevizli Keşli Yayım",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Cevizli keşli yayım, ev eriştesini haşlayıp kurutulmuş keş, ceviz ve kızgın tereyağıyla tamamlayan Karabük hamur yemeğidir.",
+    "prepMinutes": 25,
+    "cookMinutes": 25,
+    "totalMinutes": 50,
+    "servingCount": 6,
+    "averageCalories": 540,
+    "protein": 15,
+    "carbs": 58,
+    "fat": 28,
+    "isFeatured": false,
+    "tipNote": "Keşi en son serpmek sıcak eriştenin üzerinde eriyip kokusunu korumasını sağlar.",
+    "servingSuggestion": "Yanına ayran ve turşuyla geniş tabakta sıcak servis edin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Ev eriştesi",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Keş",
+        "amount": "100",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Ceviz içi",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "3",
+        "unit": "litre",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Suyu tencerede kaynatıp tuzu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Erişteleri kaynar suda 8 dakika diri kalacak şekilde haşlayın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Erişteleri süzüp sıcak servis tabağına alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Cevizi iri dövün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tereyağını tavada fındık kokusu gelene kadar köpürtün.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Keş ve cevizi eriştenin üstüne serpin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Kızgın tereyağını gezdirip bekletmeden servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "karachi-biryani-tavuklu",
+    "title": "Karachi Tavuk Biryani",
+    "cuisine": "pk",
+    "type": "YEMEK",
+    "description": "Tavuk biryani, baharatlı yoğurt marineli tavuğu basmati pirinci, safran, kızarmış soğan ve otlarla kat kat buharda pişirir.",
+    "prepMinutes": 45,
+    "cookMinutes": 55,
+    "totalMinutes": 160,
+    "servingCount": 6,
+    "averageCalories": 680,
+    "protein": 38,
+    "carbs": 78,
+    "fat": 24,
+    "isFeatured": false,
+    "tipNote": "Pirinci tam pişirmeden süzmek dum aşamasında lapa olmasını önler.",
+    "servingSuggestion": "Raita, salatalık, limon ve kızarmış soğanla geniş tabakta servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk but",
+        "amount": "1",
+        "unit": "kg",
+        "group": null
+      },
+      {
+        "name": "Basmati pirinci",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zencefil sarımsak ezmesi",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Biryani baharatı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Safran",
+        "amount": "0.25",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuğu yoğurt, baharat, zencefil sarımsak ve tuzla 1 saat marine edin.",
+        "timerSeconds": 3600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanları ince doğrayıp 12 dakika kızartın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tavuğu domatesle 25 dakika sosu koyulaşana kadar pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pirinci tuzlu suda yüzde 70 pişecek şekilde 7 dakika haşlayın.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tencereye tavuk, pirinç, kızarmış soğan, nane ve safranı kat kat dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kapağı kapatıp kısık ateşte 20 dakika dum pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Pilavı 10 dakika dinlendirip katları bozmadan servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "karachi-chapli-kebab",
+    "title": "Karachi Chapli Kebab",
+    "cuisine": "pk",
+    "type": "YEMEK",
+    "description": "Chapli kebab, dana veya kuzu kıymayı kişniş tohumu, kimyon, domates, soğan ve taze otlarla yoğurup yassı kızartan Pakistan kebabıdır.",
+    "prepMinutes": 35,
+    "cookMinutes": 15,
+    "totalMinutes": 50,
+    "servingCount": 6,
+    "averageCalories": 410,
+    "protein": 26,
+    "carbs": 18,
+    "fat": 27,
+    "isFeatured": false,
+    "tipNote": "Domatesi küçük doğrayıp suyunu süzmek kebabın tavada dağılmasını önler.",
+    "servingSuggestion": "Raita, naan, limon ve ince soğanla sıcak sıcak servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana kıyma",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kişniş tohumu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kimyon tohumu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yeşil biber",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ekmek kırıntısı",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Taze kişniş",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Naan ekmeği",
+        "amount": "6",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yoğurtlu raita",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kişniş ve kimyon tohumlarını 3 dakika kavurup iri ezin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kıyma, baharat, soğan, biber, ekmek kırıntısı ve otları yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Domatesi küçük doğrayıp harca nazikçe ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Harcı 6 yassı köfte halinde şekillendirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tavada yağı ısıtıp kebapları her yüzü 4 dakika kızartın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kebapları 3 dakika dinlendirip raita ve naanla servis edin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "karadeniz-hamsi-kayganasi",
+    "title": "Karadeniz Hamsi Kayganası",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Karadeniz tavalarında hamsi, mısır unu ve yumurtayla kahvaltılık çıtır bir kaygana olur.",
+    "prepMinutes": 20,
+    "cookMinutes": 12,
+    "totalMinutes": 32,
+    "servingCount": 4,
+    "averageCalories": 290,
+    "protein": 21,
+    "carbs": 9,
+    "fat": 17,
+    "isFeatured": false,
+    "tipNote": "Hamsileri kılçıksız ayıklayın; kaygana dilimlenirken dağılmaz.",
+    "servingSuggestion": "Roka ve limonla servis edin.",
+    "tags": [
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Hamsi",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Masa harina",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Limon",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "500 gr hamsiyi ayıklayıp doğrayın ve kağıt havluyla kurulayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "3 yumurta, masa harina ve maydanozu kasede karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamsiyi harca katıp tavaya ince tabaka halinde yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kayganayı orta ateşte ilk yüzü 3 dakika pişirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Çevirip ikinci yüzü 3 dakika pişirin, hamsi çiğ kalmasın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Limonla sıcak servis edin, balık kokusu dengelensin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "karadeniz-hamsili-pilav-tepsisi",
+    "title": "Karadeniz Hamsili Pilav Tepsisi",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Karadeniz hamsili pilav tepsisi, tarçınlı fıstıklı iç pilavı hamsiyle kaplayıp fırında parlak ve doyurucu bir balık yemeği yapar.",
+    "prepMinutes": 42,
+    "cookMinutes": 38,
+    "totalMinutes": 80,
+    "servingCount": 6,
+    "averageCalories": 470,
+    "protein": 31,
+    "carbs": 50,
+    "fat": 17,
+    "isFeatured": false,
+    "tipNote": "Hamsileri kurulamak tepsinin dibinde fazla su birikmesini önler.",
+    "servingSuggestion": "Roka, limon ve turşuyla sıcak servis edin.",
+    "tags": [
+      "firinda",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Ayıklanmış hamsi",
+        "amount": "900",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dolmalık fıstık",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kuş üzümü",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pirinci 20 dakika ılık suda bekletip süzün.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve dolmalık fıstığı zeytinyağında 6 dakika kavurun.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinç, kuş üzümü ve baharatla diri bir iç pilav hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yağlı tepsiye hamsileri parlak yüzü dışa gelecek şekilde dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pilavı doldurup hamsiyle kapatın, 190°C fırında 30-35 dakika pişirin.",
+        "timerSeconds": 1950
+      }
+    ]
+  },
+  {
+    "slug": "karadeniz-lahana-sarmasi",
+    "title": "Lahana Sarması",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Karadeniz kara lahanası bulgurlu içle sarılır, tencerede ekşi ve doyurucu bir yemek olur.",
+    "prepMinutes": 50,
+    "cookMinutes": 55,
+    "totalMinutes": 105,
+    "servingCount": 6,
+    "averageCalories": 260,
+    "protein": 10,
+    "carbs": 24,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Pilavı ateşten alınca kapağın altına temiz bir bez koyup 10 dakika dinlendirmek nemi alır, taneler kabarır.",
+    "servingSuggestion": "Sıcak servis edin, yanında yoğurt ve limon dilimleri sunun.",
+    "tags": [
+      "butce-dostu",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Kara lahana",
+        "amount": "2",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Bulgur",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates salçası",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lahana yapraklarını 5 dakika haşlayıp süzün.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bulgur, soğan ve salçayla iç hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lahana Sarması harcını doldururken üstte 1 parmak boşluk bırakın, pişerken şişip dağılmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sarmaları tencereye dizip 50 dakika pişirin.",
+        "timerSeconds": 3000
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Lahana Sarması tenceresine sıcak suyu kenardan verin ve dolmaları oynatmadan kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Lahana Sarması piştikten sonra 8 dakika dinlensin, iç harç yaprağa tutunsun.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "karadeniz-misir-ekmegi",
+    "title": "Mısır Ekmeği",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Karadeniz mısır ekmeği yoğun dokulu, sıcak çorba ve yoğurtlu yemeklere güçlü bir eşlikçidir.",
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "totalMinutes": 50,
+    "servingCount": 8,
+    "averageCalories": 210,
+    "protein": 4,
+    "carbs": 32,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Hamuru çok cıvık bırakmayın, mısır ekmeği dilimlenirken dağılabilir.",
+    "servingSuggestion": "Ilık servis edin, yanında tereyağı, peynir ve çay sunabilirsiniz.",
+    "tags": [
+      "butce-dostu",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Mısır unu",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "80",
+        "unit": "ml",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mısır unu, yoğurt, yumurta ve yağı geniş kapta pütürsüz karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamurun kıvamını koyu kek hamuru gibi olacak şekilde sıcak suyla ayarlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru yağlanmış tepsiye yayın ve yüzeyini düzeltin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "190°C fırında 35 dakika üstü kızarana kadar pişirin ve dilimleyin.",
+        "timerSeconds": 2100
+      }
+    ]
+  },
+  {
+    "slug": "karadeniz-pidesi",
+    "title": "Karadeniz Pidesi",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Taş fırın ruhunu taşıyan Karadeniz pidesi, tereyağı ve peynirle ortası açık pişer.",
+    "prepMinutes": 45,
+    "cookMinutes": 18,
+    "totalMinutes": 63,
+    "servingCount": 4,
+    "averageCalories": 480,
+    "protein": 22,
+    "carbs": 49,
+    "fat": 21,
+    "isFeatured": false,
+    "tipNote": "Hamuru en az 20 dakika dinlendirmek gluteni gevşetir, açımda elastik olmasını sağlar.",
+    "servingSuggestion": "Sıcak servis edin, yanında ayran ya da çay sunabilirsiniz.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Maya",
+        "amount": "7",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Trabzon peyniri",
+        "amount": "350",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "60",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karadeniz Pidesi başlangıcı olarak un, maya ve suyla hamur yoğurup 35 dakika mayalandırın.",
+        "timerSeconds": 2100
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru açıp peynir ve tereyağıyla doldurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "230°C fırında 18 dakika pişirip yumurta ekleyin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karadeniz Pidesi hamurunu kapatırken kenarları parmak ucuyla bastırın, iç harç fırında akmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karadeniz Pidesi tepsisini yağlayıp parçaları aralıklı dizin, sıcak hava aralarından geçsin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "karadutlu-votka-fizz-polonya-usulu",
+    "title": "Karadutlu Votka Fizz",
+    "cuisine": "pl",
+    "type": "KOKTEYL",
+    "description": "Polonya usulü karadutlu votka fizz, votkayı karadut ve soda ile buluşturarak canlı bir kokteyl yapar.",
+    "prepMinutes": 6,
+    "cookMinutes": 0,
+    "totalMinutes": 6,
+    "servingCount": 2,
+    "averageCalories": 172,
+    "protein": 0,
+    "carbs": 11,
+    "fat": 0,
+    "isFeatured": true,
+    "tipNote": "Karadudu ezip süzmek içecekte parlak bir renk bırakır.",
+    "servingSuggestion": "Karadutlu votka fizz'i buzlu bardakta hazırlayıp soda köpüğü sönmeden hemen sunun.",
+    "tags": [
+      "alkollu",
+      "30-dakika-alti",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Votka",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Karadut",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soda",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karadutlu Votka Fizz için bardağı buzla 1 dakika soğutun, servis anında sulanmasın diye buzu boşaltın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karadutlu Votka Fizz karadudunu 15 saniye ezin ve süzün, çekirdekli posa geçmesin.",
+        "timerSeconds": 15
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karadutlu Votka Fizz votka ve karadut suyunu buzlu bardağa alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karadutlu Votka Fizz üstünü sodayla tamamlayıp servis edin, gazı sönmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karadutlu Votka Fizz bardağını peçeteyle temizleyin, aroması kaçmadan soğuk servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "karalahana-corbasi-ordu-usulu",
+    "title": "Karalahana Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Karalahana çorbası, Karadeniz'in güçlü yapraklarını mısır ve fasulyeyle birleştirerek Ordu sofralarında koyu kıvamlı, doyurucu bir kış çorbası kurar.",
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "totalMinutes": 50,
+    "servingCount": 6,
+    "averageCalories": 148,
+    "protein": 6,
+    "carbs": 22,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Lahanayı çok ince doğramak çorbanın içinde daha dengeli dağılmasını sağlar.",
+    "servingSuggestion": "Yanına mısır ekmeğiyle sıcak servis edin.",
+    "tags": [
+      "vejetaryen",
+      "kis-tarifi"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Karalahana",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış barbunya",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Mısır yarması",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "20",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Mısır ekmeği",
+        "amount": "6",
+        "unit": "dilim",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "400 gr karalahanayı ince kıyın, 1 soğanı yemeklik doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karalahana ve soğanı 20 gr tereyağında 5 dakika çevirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yarım su bardağı mısır yarması ve 1.5 litre suyu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Çorbayı orta ateşte 30 dakika pişirin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "1 su bardağı pişmiş barbunyayı son 8 dakikada katın, tane yapısı dağılmasın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Mısır ekmeği dilimleriyle sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "karalahana-diblesi-giresun-usulu",
+    "title": "Karalahana Diblesi",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Giresun karalahana diblesi, karalahanayı pirinçle pişirerek hafif sulu, tane tane ve yeşil aroması belirgin bir kış tenceresi kurar.",
+    "prepMinutes": 12,
+    "cookMinutes": 22,
+    "totalMinutes": 34,
+    "servingCount": 4,
+    "averageCalories": 172,
+    "protein": 4,
+    "carbs": 24,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Lahanayı ince kıymak pirinçle daha dengeli dağılmasını sağlar.",
+    "servingSuggestion": "Ilık servis edin, yanında yoğurt ya da turşu sunabilirsiniz.",
+    "tags": [
+      "tek-tencere",
+      "vegan",
+      "kis-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Karalahana",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karalahana Diblesi başlangıcı olarak soğanı zeytinyağında 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karalahana ve pirinci ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karalahana Diblesi tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Suyu katıp yemeği 18 dakika pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karalahana Diblesi 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Karalahana Diblesi servisinde üstüne taze ot veya kızgın yağ gezdirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Karalahana Diblesi son kontrolünde tuz, ekşilik veya yağ dengesini servis öncesi ayarlayın, böylece Karalahana Diblesi servis dengesi korunur.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "karalahana-misirli-ayran-corbasi-trabzon-usulu",
+    "title": "Karalahana Mısırlı Ayran Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Trabzon usulü karalahana mısırlı ayran çorbası, ince kıyılmış lahanayı mısır ve yoğurtla birleştirerek ekşi ferah bir kase kurar.",
+    "prepMinutes": 14,
+    "cookMinutes": 26,
+    "totalMinutes": 40,
+    "servingCount": 5,
+    "averageCalories": 148,
+    "protein": 6,
+    "carbs": 20,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Yoğurdu sıcak çorba suyuyla ılıtmak kesilmeyi önler.",
+    "servingSuggestion": "Üzerine nane gezdirip sıcak servis edin.",
+    "tags": [
+      "vejetaryen",
+      "tek-tencere"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Karalahana",
+        "amount": "1",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış mısır",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "1 demet karalahanayı ince kıyın, 1 su bardağı pişmiş mısırı süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karalahanayı 5 su bardağı suda 12 dakika yumuşatın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Mısırı ekleyip 6 dakika daha kaynatın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "1.5 su bardağı yoğurt ve 1 yemek kaşığı unu çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Terbiyeyi sıcak suyla ılıtın, yoğurt kesilmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Terbiyeyi tencereye ekleyip 5 dakika karıştırarak pişirin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "karalahana-patates-corbasi-bartin-usulu",
+    "title": "Bartın Karalahana Patates Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Bartın karalahana patates çorbası, lahanayı patates ve sarımsakla kaynatıp püre kıvamına getirerek Karadeniz'e koyu, sıcak ve doyurucu bir kış kâsesi kazandırır.",
+    "prepMinutes": 12,
+    "cookMinutes": 22,
+    "totalMinutes": 34,
+    "servingCount": 5,
+    "averageCalories": 132,
+    "protein": 3,
+    "carbs": 19,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Patatesi küçük doğramak lahanayla aynı sürede tam yumuşamasını sağlar.",
+    "servingSuggestion": "Çorbayı sıcak verin, yanında mısır ekmeği ve limon sunun.",
+    "tags": [
+      "vegan",
+      "kis-tarifi",
+      "butce-dostu",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Karalahana",
+        "amount": "350",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "350 gr karalahanayı şerit, 2 patatesi iri küp doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "2 diş sarımsağı 1 yemek kaşığı zeytinyağında 1 dakika çevirin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lahana ve patatesi ekleyip 3 dakika karıştırın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "1 litre suyu katıp 18 dakika kaynatın.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Patatesin bir kısmını kaşıkla ezin, böylece çorba kremasız koyulaşır.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Lahana fazla kararmasın diye ocaktan alınca 5 dakika dinlendirin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "karalahana-sarmasi-karadeniz-usulu",
+    "title": "Karalahana Sarması",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Karadeniz usulü karalahana sarması, yaprakların pirinçli içle sarılıp ekşili suda ağır ağır piştiği yerel bir tencere yemeğidir.",
+    "prepMinutes": 35,
+    "cookMinutes": 40,
+    "totalMinutes": 75,
+    "servingCount": 6,
+    "averageCalories": 248,
+    "protein": 6,
+    "carbs": 32,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Lahana yapraklarını kısa haşlayın; fazla yumuşarsa sararken yırtılır.",
+    "servingSuggestion": "Yanına yoğurt koyarak sıcak servis edin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Karalahana",
+        "amount": "18",
+        "unit": "yaprak",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates salçası",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karalahana yapraklarını 2 dakika haşlayıp süzün.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinç, soğan, salça, zeytinyağı ve tuzu karıştırıp iç harcı hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yapraklara harç sarın ve sarmaları 30 dakika pişirip yoğurtla servis edin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karalahana Sarması harcını doldururken üstte 1 parmak boşluk bırakın, pişerken şişip dağılmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karalahana Sarması tenceresine sıcak suyu kenardan verin ve dolmaları oynatmadan kapağı kapatın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "karalahanali-barbunya-corbasi-giresun-usulu",
+    "title": "Karalahanalı Barbunya Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Giresun usulü karalahanalı barbunya çorbası, karalahanayı barbunya ve zeytinyağıyla buluşturarak tok bir Karadeniz çorbası çıkarır.",
+    "prepMinutes": 12,
+    "cookMinutes": 24,
+    "totalMinutes": 36,
+    "servingCount": 4,
+    "averageCalories": 168,
+    "protein": 7,
+    "carbs": 21,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Karalahanayı ince kıymak yaprakların 15 dakikada yumuşamasını kolaylaştırır.",
+    "servingSuggestion": "Üzerine zeytinyağı gezdirip sıcak servis edin.",
+    "tags": [
+      "vegan",
+      "tek-tencere"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Karalahana",
+        "amount": "1",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış barbunya",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "1 demet karalahanayı ince kıyın, 1.5 su bardağı barbunyayı süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "1 soğanı 2 yemek kaşığı zeytinyağında 3 dakika çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karalahanayı ekleyip 4 dakika söndürün.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "5 su bardağı suyu katıp lahanayı 15 dakika kaynatın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Barbunyayı ekleyip 6 dakika pişirin, taneler parçalanmasın.",
+        "timerSeconds": 360
+      }
+    ]
+  },
+  {
+    "slug": "karalahanali-barbunya-diblesi-giresun-usulu",
+    "title": "Karalahanalı Barbunya Diblesi",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Giresun karalahanalı barbunya diblesi, barbunyayı karalahana ve pirinçle pişirerek sulu, tane tane ve kışlık bir Karadeniz yemeği kurar.",
+    "prepMinutes": 14,
+    "cookMinutes": 24,
+    "totalMinutes": 38,
+    "servingCount": 4,
+    "averageCalories": 208,
+    "protein": 8,
+    "carbs": 30,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Karalahanayı ince kıymak barbunya ile aynı kaşıkta dengeli doku verir.",
+    "servingSuggestion": "Ilık servis edin, yanında yoğurt ve turşu bulundurabilirsiniz.",
+    "tags": [
+      "tek-tencere",
+      "vegan",
+      "kis-tarifi"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Barbunya",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Karalahana",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karalahanalı Barbunya Diblesi için soğanı kısa çevirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Barbunya, lahana ve pirinci ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karalahanalı Barbunya Diblesi tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yemeği 20 dakika pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karalahanalı Barbunya Diblesi 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Karalahanalı Barbunya Diblesi servisinde üstüne taze ot veya kızgın yağ gezdirin, böylece Karalahanalı Barbunya Diblesi servis dengesi korunur.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "karalahanali-kuru-fasulye-diblesi-rize-usulu",
+    "title": "Rize Karalahanalı Kuru Fasulye Diblesi",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Rize karalahanalı kuru fasulye diblesi, fasulye ve karalahanayı pirinçle birleştirerek Karadeniz'e yeşil tonlu ve tok bir tek tencere yemeği kurar.",
+    "prepMinutes": 15,
+    "cookMinutes": 28,
+    "totalMinutes": 43,
+    "servingCount": 5,
+    "averageCalories": 214,
+    "protein": 9,
+    "carbs": 33,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Pirinci yıkayıp son aşamada eklemek tencerede fazla ezilmesini önler.",
+    "servingSuggestion": "Sıcak servis edin, yanında ayran ya da turşu sunabilirsiniz.",
+    "tags": [
+      "tek-tencere",
+      "butce-dostu",
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Karalahana",
+        "amount": "1",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış kuru fasulye",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Rize Karalahanalı Kuru Fasulye Diblesi başlangıcı olarak soğanı 4 dakika yağda çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karalahana ve fasulyeyi ekleyip 8 dakika pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinç ve 1.5 su bardağı su ekleyip yemeği 16 dakika pişirin.",
+        "timerSeconds": 960
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Rize Karalahanalı Kuru Fasulye Diblesi tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Rize Karalahanalı Kuru Fasulye Diblesi 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın, böylece Rize Karalahanalı Kuru Fasulye Diblesi servis dengesi korunur.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "karalahanali-lorlu-gozleme-trabzon-usulu",
+    "title": "Karalahanalı Lorlu Gözleme",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Trabzon usulü karalahanalı lorlu gözleme, ince hamuru kara lahana ve lorla buluşturarak sıcak, yumuşak ve doyurucu bir hamur işi yapar.",
+    "prepMinutes": 18,
+    "cookMinutes": 16,
+    "totalMinutes": 34,
+    "servingCount": 4,
+    "averageCalories": 266,
+    "protein": 9,
+    "carbs": 29,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Karalahanayı tavada 3 dakika çevirmek iç harcın sulanmasını azaltır.",
+    "servingSuggestion": "Karalahanalı lorlu gözlemeyi üçgen kesip lorlu yeşil iç harcı görünen yüzü öne alın.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Yufka",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kara lahana",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karalahanalı Lorlu Gözleme başlangıcı olarak karalahanayı 3 dakika çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Harcı yufkaya pay edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karalahanalı Lorlu Gözleme hamurunu kapatırken kenarları parmak ucuyla bastırın, iç harç fırında akmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Gözlemeyi 10 dakika pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karalahanalı Lorlu Gözleme tepsisini yağlayıp parçaları aralıklı dizin, sıcak hava aralarından geçsin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Karalahanalı Lorlu Gözleme piştikten sonra 5 dakika beklesin, katları keserken ezilmesin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "karalahanali-pirincli-tava-giresun-usulu",
+    "title": "Giresun Karalahanalı Pirinçli Tava",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Giresun karalahanalı pirinçli tava, karalahanayı pirinç ve soğanla bağlayarak Karadeniz ev mutfağına sade, tok ve hafif topraksı bir ana tabak getirir.",
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "totalMinutes": 35,
+    "servingCount": 4,
+    "averageCalories": 176,
+    "protein": 4,
+    "carbs": 26,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Lahanayı fazla ezmeden çevirmek tavada canlı yeşil kalmasına yardım eder.",
+    "servingSuggestion": "Ilık servis edin, yanında mısır ekmeği ve yoğurt sunun.",
+    "tags": [
+      "vegan",
+      "tek-tencere",
+      "butce-dostu",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Karalahana",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Giresun Karalahanalı Pirinçli Tava için lahanayı ince doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı yağda 4 dakika çevirip lahanayı ekleyin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinci ve 1.5 su bardağı sıcak suyu katıp 15 dakika pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Giresun Karalahanalı Pirinçli Tava tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Giresun Karalahanalı Pirinçli Tava pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın, böylece Giresun Karalahanalı Pirinçli Tava servis dengesi korunur.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "karalahanali-yogurtlu-salata-bartin-usulu",
+    "title": "Karalahanalı Yoğurtlu Salata",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Bartın usulü karalahanalı yoğurtlu salata, haşlanmış kara lahanayı sarımsaklı yoğurtla buluşturarak ferah, hafif ve sofrayı açan bir salata yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 8,
+    "totalMinutes": 18,
+    "servingCount": 4,
+    "averageCalories": 126,
+    "protein": 5,
+    "carbs": 10,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Kara lahanayı 4 dakika haşlamak canlı rengini korumasına yardım eder.",
+    "servingSuggestion": "Soğuk servis edin, üstüne zeytinyağı gezdirip yanında ekmek sunun.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Kara lahana",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "1",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karalahananın kalın damarlarını çıkarın, yaprakları ince şeritler halinde doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karalahanayı tuzlu kaynar suda 4 dakika haşlayın ve soğuk suya alın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yaprakları avuçla sıkıp fazla suyunu çıkarın, yoğurt sulanmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Süzme yoğurt, sarımsak, limon suyu ve zeytinyağını 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karalahanayı sosla karıştırın, pul biberli yağ gezdirip soğuk servis edin, böylece karalahana suyu yoğurtlu sosu gevşetmez.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "karaman-batirik-tahinli",
+    "title": "Karaman Batırık",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Batırık, ince bulgur, tahin, domates, yeşillik, ceviz ve soğuk suyla hazırlanan Karaman çevresine ait ferah bulgur yemeğidir.",
+    "prepMinutes": 30,
+    "cookMinutes": 0,
+    "totalMinutes": 30,
+    "servingCount": 6,
+    "averageCalories": 290,
+    "protein": 9,
+    "carbs": 34,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Tahin ve domatesi bulgura önce yedirmek su ekleyince tadın dağılmasını önler.",
+    "servingSuggestion": "Marul yaprakları, salatalık ve limonla sulu veya katı halde servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "vegan",
+      "yaz-tarifi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUSAM",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "İnce bulgur",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ceviz içi",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Taze soğan",
+        "amount": "4",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soğuk su",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Marul",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "İnce bulguru rendelenmiş domatesle 15 dakika şişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tahin, limon suyu ve tuzu bulgura yedirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Cevizi iri kırıp yeşillikleri ince doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ceviz ve yeşillikleri bulgur karışımına katın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Katı servis için karışımı marul yapraklarına paylaştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Sulu servis için soğuk suyu azar azar ekleyip kaselere alın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "karamel-biberli-tavuk-pirinci-vietnam-usulu",
+    "title": "Karamel Biberli Tavuk Pirinci",
+    "cuisine": "vn",
+    "type": "YEMEK",
+    "description": "Vietnam usulü karamel biberli tavuk pirinci, tavuğu hafif karamel sosu ve pirinçle buluşturarak parlak, dengeli ve doyurucu bir ana yemek kurar.",
+    "prepMinutes": 12,
+    "cookMinutes": 18,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 318,
+    "protein": 24,
+    "carbs": 27,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Karameli koyulaştırmadan tavaya almak sosun yanık acılığına kaçmasını önler.",
+    "servingSuggestion": "Sıcak servis edin, yanında salatalık dilimleri ve lime sunun.",
+    "tags": [
+      "yuksek-protein",
+      "tek-tencere"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Tavuk göğsü",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Şekeri tavada karamelize edin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavuğu ekleyip 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karamel Biberli Tavuk Pirinci tenceresinde sıvıyı malzemelerin hizasına kadar ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pirinçle birlikte servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karamel Biberli Tavuk Pirinci 5 dakika dinlensin, sıcaklık malzemenin içine dengeli dağılsın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Karamel Biberli Tavuk Pirinci servisinde üstüne taze ot veya kızgın yağ gezdirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Karamel Biberli Tavuk Pirinci son kontrolünde tuz, ekşilik veya yağ dengesini servis öncesi ayarlayın, böylece Karamel Biberli Tavuk Pirinci servis dengesi korunur.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "karamelize-soganli-pirojki-rus-usulu",
+    "title": "Karamelize Soğanlı Pirojki",
+    "cuisine": "ru",
+    "type": "YEMEK",
+    "description": "Rus usulü karamelize soğanlı pirojki, yumuşak hamuru tatlı soğanlı içle buluşturarak tok bir hamur işi yapar.",
+    "prepMinutes": 24,
+    "cookMinutes": 18,
+    "totalMinutes": 42,
+    "servingCount": 4,
+    "averageCalories": 286,
+    "protein": 7,
+    "carbs": 33,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Soğanı düşük ateşte pişirmek iç harçta daha yuvarlak bir tat kurar.",
+    "servingSuggestion": "Soğanlı pirojkileri ılık tabakta dizip mayalı hamurun kızarmış yüzü yukarı gelecek şekilde sunun.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru maya",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karamelize Soğanlı Pirojki başlangıcı olarak hamuru yoğurup 20 dakika dinlendirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı tavada 10 dakika karamelize edin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirojkileri kapatıp 190 derecede 16 dakika pişirin.",
+        "timerSeconds": 960
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karamelize Soğanlı Pirojki hamurunu kapatırken kenarları parmak ucuyla bastırın, iç harç fırında akmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karamelize Soğanlı Pirojki tepsisini yağlayıp parçaları aralıklı dizin, sıcak hava aralarından geçsin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "karanfilli-erik-kompostosu-polonya-usulu",
+    "title": "Karanfilli Erik Kompostosu",
+    "cuisine": "pl",
+    "type": "ICECEK",
+    "description": "Karanfilli erik kompostosu, eriği karanfil ve az şekerle kaynatarak tatlı-ekşi, koyu renkli ve serin içimli bir meyve suyu hazırlar.",
+    "prepMinutes": 8,
+    "cookMinutes": 12,
+    "totalMinutes": 20,
+    "servingCount": 5,
+    "averageCalories": 58,
+    "protein": 0,
+    "carbs": 14,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Erikleri çok fazla karıştırmamak kompostoda meyve formunu korur.",
+    "servingSuggestion": "Soğuk servis edin, bardağa birkaç erik tanesi ve buz ekleyin.",
+    "tags": [
+      "alkolsuz",
+      "30-dakika-alti",
+      "yaz-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Erik",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Karanfil",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karanfilli Erik Kompostosu için erik ve kalan malzemeleri tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karanfilli Erik Kompostosu karışımını meyve tadı belirginleşene kadar 8-12 dakika kaynatın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karanfilli Erik Kompostosu içeceğini süzüp tamamen soğutarak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "karayemis-kompostosu-trabzon-usulu",
+    "title": "Karayemiş Kompostosu",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Trabzon karayemiş kompostosu, karayemişi tarçınla kaynatarak hafif buruk, serin ve yaz sonrası sofralara uygun bir Karadeniz içeceği hazırlar.",
+    "prepMinutes": 8,
+    "cookMinutes": 14,
+    "totalMinutes": 22,
+    "servingCount": 5,
+    "averageCalories": 62,
+    "protein": 1,
+    "carbs": 14,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Meyveyi ezmeden kaynatmak kompostonun rengi koyulaşırken suyunun berrak kalmasını sağlar.",
+    "servingSuggestion": "Soğuk servis edin, sürahide birkaç karayemiş tanesi bırakabilirsiniz.",
+    "tags": [
+      "alkolsuz",
+      "yaz-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Karayemiş",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tarçın çubuğu",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karayemiş Kompostosu için karayemiş ve kalan malzemeleri tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karayemiş Kompostosu karışımını meyve tadı belirginleşene kadar 8-12 dakika kaynatın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karayemiş Kompostosu içeceğini süzüp tamamen soğutarak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "karayemisli-muhallebi-trabzon-usulu",
+    "title": "Karayemişli Muhallebi",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Trabzon usulü karayemişli muhallebi, karayemiş püresini sütlü tabanla buluşturarak meyveli bir tatlı yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 10,
+    "totalMinutes": 22,
+    "servingCount": 4,
+    "averageCalories": 214,
+    "protein": 4,
+    "carbs": 31,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Karayemiş püresini süzmek muhallebi içinde kabuk parçası kalmasını önler.",
+    "servingSuggestion": "Karayemişli muhallebiyi soğuk kasede sunup karayemişleri beyaz yüzeyin üstünde bırakın.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Karayemiş",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Nişasta",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Vanilin",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karayemişleri çekirdeklerinden ayırıp püre haline getirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karayemişli taban için süt, nişasta ve şekeri soğukken çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karayemişe uygun sütlü tabanı 8 dakika koyulaşana kadar pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karayemiş püresini ocaktan sonra karıştırın, rengi matlaşmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karayemişli muhallebiyi kaselere paylaştırıp 45 dakika soğutun.",
+        "timerSeconds": 2700
+      }
+    ]
+  },
+  {
+    "slug": "karayemisli-soguk-cay-ordu-usulu",
+    "title": "Karayemişli Soğuk Çay",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Ordu usulü karayemişli soğuk çay, demli çayı karayemiş özü ve buzla buluşturarak meyvemsi, serin ve yazlık bir içecek yapar.",
+    "prepMinutes": 8,
+    "cookMinutes": 0,
+    "totalMinutes": 8,
+    "servingCount": 4,
+    "averageCalories": 34,
+    "protein": 0,
+    "carbs": 8,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Karayemiş özünü süzerek eklemek bardakta daha temiz bir renk verir.",
+    "servingSuggestion": "Karayemişli soğuk çayı buzlu bardakta sunup çay ve karayemiş rengini birlikte gösterin.",
+    "tags": [
+      "alkolsuz",
+      "30-dakika-alti",
+      "yaz-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Demli çay",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Karayemiş suyu",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karayemişli Soğuk Çay için çay bazını hazırlayıp 4-6 dakika demleyin, sonra süzün.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karayemişli Soğuk Çay içine karayemiş ve aromatik notaları ekleyip içeceği tamamen soğutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karayemişli Soğuk Çay içeceğini buzla doldurulmuş bardaklarda servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "kardamomlu-elma-coplari-isvec-usulu",
+    "title": "İsveç Kardamomlu Elma Çöpleri",
+    "cuisine": "se",
+    "type": "ATISTIRMALIK",
+    "description": "İsveç kardamomlu elma çöpleri, elma çubuklarını kakule ve şekerle fırınlayarak kuzey tatlılarına hafif, kokulu ve paylaşmalık bir atıştırmalık katar.",
+    "prepMinutes": 10,
+    "cookMinutes": 15,
+    "totalMinutes": 25,
+    "servingCount": 4,
+    "averageCalories": 118,
+    "protein": 1,
+    "carbs": 27,
+    "fat": 1,
+    "isFeatured": false,
+    "tipNote": "Elmaları eşit kalınlıkta kesmek aynı sürede karamelleşmelerini sağlar.",
+    "servingSuggestion": "Ilık servis edin, yanında vanilyalı yoğurt ya da krema sunun.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Elma",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kakule",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "4 elmayı kabuklu halde kalın çubuklara kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Şeker, kakule ve limon suyunu elmalarla kaplayın, böylece limon kararmayı azaltır.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Elma çubuklarını yağlı kağıda aralıklı dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "190°C fırında 15 dakika, kenarlar renk alınca çıkarın.",
+        "timerSeconds": 900
+      }
+    ]
+  },
+  {
+    "slug": "kardemummali-elma-crumble-isvec-usulu",
+    "title": "Kardemummalı Elma Crumble",
+    "cuisine": "se",
+    "type": "TATLI",
+    "description": "Kardemummalı elma crumble, elmayı tereyağlı kırıntı ve kakule ile buluşturarak sıcak, gevrek ve rahatlatıcı bir tatlı yapar.",
+    "prepMinutes": 14,
+    "cookMinutes": 24,
+    "totalMinutes": 38,
+    "servingCount": 6,
+    "averageCalories": 228,
+    "protein": 3,
+    "carbs": 30,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Elmayı çok ince dilimlememek fırında diri kalmasına yardım eder.",
+    "servingSuggestion": "Ilık servis edin, yanında vanilyalı dondurma ya da krema sunun.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen",
+      "firinda"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Elma",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "90",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kakule",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Elmaları ince dilimleyip kakule ve şekerle karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Un, tereyağı ve yulafı parmak ucuyla kırıntı haline getirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Elmalı harcı fırın kabına yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kırıntıyı üstüne serpin, meyveyi tamamen ezmeyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Crumble'ı 180°C fırında 24 dakika üstü kızarana kadar pişirin.",
+        "timerSeconds": 1440
+      }
+    ]
+  },
+  {
+    "slug": "karidesli-safranli-pirinc-tava-ispanya-usulu",
+    "title": "Karidesli Safranlı Pirinç Tava",
+    "cuisine": "es",
+    "type": "YEMEK",
+    "description": "İspanya usulü karidesli safranlı pirinç tava, pirinci karides ve safranla buluşturarak parlak, deniz kokulu bir ana yemek yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 18,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 296,
+    "protein": 19,
+    "carbs": 29,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Safranı ılık suda açmak tavada daha eşit renk verir.",
+    "servingSuggestion": "Karidesli safranlı pirinç tavayı geniş tabağa alıp karidesleri pirincin üstüne eşit dizin.",
+    "tags": [
+      "tek-tencere",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Karides",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Safran",
+        "amount": "1",
+        "unit": "çimdik",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karidesli Safranlı Pirinç Tava başlangıcı olarak karidesi 3 dakika çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinç ve safranı ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karidesli Safranlı Pirinç Tava tenceresinde sıcak suyu ölçülü ekleyin ve kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tavayı 14 dakika pişirin.",
+        "timerSeconds": 840
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karidesli Safranlı Pirinç Tava pilavını 8 dakika demleyin, buhar tanelerin içine dengeli dağılsın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Karidesli Safranlı Pirinç Tava tanelerini ezmeden alttan üste havalandırıp servis edin, böylece Karidesli Safranlı Pirinç Tava servis dengesi korunur.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "karidesli-smorrebrod",
+    "title": "Karidesli Smørrebrød",
+    "cuisine": "se",
+    "type": "KAHVALTI",
+    "description": "Açık yüzlü karidesli smørrebrød, çavdar ekmeği üstünde yumurta ve otlarla sakin ama zengin bir İskandinav sabahı kurar.",
+    "prepMinutes": 15,
+    "cookMinutes": 8,
+    "totalMinutes": 23,
+    "servingCount": 2,
+    "averageCalories": 320,
+    "protein": 20,
+    "carbs": 25,
+    "fat": 15,
+    "isFeatured": true,
+    "tipNote": "Ekmeği hafif kızartın; yumurta ve karides nemi tabanı gevşetmez.",
+    "servingSuggestion": "Yanına dereotlu salatalık koyarak servis edin.",
+    "tags": [
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA",
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Çavdar ekmeği",
+        "amount": "4",
+        "unit": "dilim",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış karides",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "2 yumurtayı 7 dakika haşlayıp soğuk suya alın.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Çavdar ekmeği dilimlerini tavada 2 dakika ısıtın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yumurtaları dilimleyip ekmeklerin üstüne yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "120 gr pişmiş karidesi yumurtaların üstüne paylaştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Dereotu ve limon suyuyla tamamlayın, açık sandviçler bekleyince sulanmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "karniyarik",
+    "title": "Karnıyarık",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Türk mutfağının vazgeçilmez et yemeklerinden biri. Kızartılmış patlıcanların arasına kıymalı harç doldurularak fırında pişirilir.",
+    "prepMinutes": 20,
+    "cookMinutes": 40,
+    "totalMinutes": 60,
+    "servingCount": 4,
+    "averageCalories": 320,
+    "protein": 18,
+    "carbs": 22,
+    "fat": 15,
+    "isFeatured": true,
+    "tipNote": "Patlıcanları tuzlu suda bekletmek hem acılığını alır hem de yağ çekmesini azaltır.",
+    "servingSuggestion": "Pirinç pilavı ve cacıkla, salçalı suyunu üstüne gezdirerek sunun.",
+    "tags": [
+      "firinda",
+      "misafir-sofrasi"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Patlıcan",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kıyma",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Biber salçası",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sivri biber",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "3",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patlıcanları alacalı soyup yarın ve tuzlu suda 15-20 dakika bekletin.",
+        "timerSeconds": 1050
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Patlıcanları kurulayarak tavada ya da 200°C fırında 20 dakika yumuşatın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğanı kavurup kıymayı ekleyin, suyunu çekince domates, salça ve sarımsağı katın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "İç harcı 8-10 dakika pişirip tuz ve karabiberle dengeleyin.",
+        "timerSeconds": 540
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Patlıcanların karnını açıp kıymalı harcı yerleştirin, sivri biberleri üste koyun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Karnıyarığı 180°C fırında 25 dakika pişirip sıcak servis edin.",
+        "timerSeconds": 1500
+      }
+    ]
+  },
+  {
+    "slug": "karpuzlu-agua-fresca",
+    "title": "Karpuzlu Agua Fresca",
+    "cuisine": "mx",
+    "type": "ICECEK",
+    "description": "Karpuz, misket limonu ve naneyle hazırlanan Meksika usulü hafif içecek.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "totalMinutes": 10,
+    "servingCount": 4,
+    "averageCalories": 45,
+    "protein": 1,
+    "carbs": 11,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Karpuz çekirdeklerini ayıklayın; süzme işlemi daha temiz sonuç verir.",
+    "servingSuggestion": "Uzun bardakta buzla servis edin.",
+    "tags": [
+      "vegan",
+      "yaz-tarifi",
+      "alkolsuz",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Karpuz",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğuk su",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Misket limonu suyu",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "8",
+        "unit": "yaprak",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karpuz, su, misket limonu suyu ve şekeri blenderdan geçirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karışımı ince süzgeçten geçirip sürahiye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nane ve buz ekleyip hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "kars-evelik-asi",
+    "title": "Kars Evelik Aşı",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Evelik aşı, kurutulmuş evelik otunu yarma, yeşil mercimek ve yoğurtla pişiren ekşi ferah Kars çorbasıdır.",
+    "prepMinutes": 15,
+    "cookMinutes": 55,
+    "totalMinutes": 70,
+    "servingCount": 6,
+    "averageCalories": 275,
+    "protein": 12,
+    "carbs": 43,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Kuru eveliği kısa ıslatmak toprağını bırakır ve çabuk yumuşatır.",
+    "servingSuggestion": "Üzerine naneli tereyağı gezdirip sıcak servis edin.",
+    "tags": [
+      "kis-tarifi",
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT",
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuru evelik",
+        "amount": "2",
+        "unit": "avuç",
+        "group": null
+      },
+      {
+        "name": "Yarma",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yeşil mercimek",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kuru nane",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Eveliği ılık suda 10 dakika bekletip süzün.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yarmayı 35 dakika yumuşayana kadar haşlayın.",
+        "timerSeconds": 2100
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Mercimeği ekleyip 15 dakika daha pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yoğurt ve unu pürüzsüz çırpıp sıcak suyla ılıtın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Terbiyeyi çorbaya karıştırarak ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Evelik ve naneli tereyağını katıp 8 dakika kısık ateşte pişirin.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "kars-hangel-eriste-yogurtlu",
+    "title": "Kars Yoğurtlu Erişte Hangel",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Kars hangeli, ince kesilmiş hamur parçalarını haşlayıp sarımsaklı yoğurt ve soğanlı tereyağıyla tamamlayan sade ama güçlü bir hamur yemeğidir.",
+    "prepMinutes": 35,
+    "cookMinutes": 18,
+    "totalMinutes": 53,
+    "servingCount": 4,
+    "averageCalories": 540,
+    "protein": 16,
+    "carbs": 72,
+    "fat": 21,
+    "isFeatured": false,
+    "tipNote": "Hamuru ince açmak hangelin ağırlaşmadan haşlanmasını sağlar.",
+    "servingSuggestion": "Soğanlı tereyağı ve sarımsaklı yoğurtla sıcak servis edin.",
+    "tags": [
+      "vejetaryen",
+      "butce-dostu"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, yumurta, tuz ve suyla sert hamur yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 20 dakika dinlendirip ince açın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru kare parçalar halinde kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hangel parçalarını kaynar tuzlu suda 7-8 dakika haşlayın.",
+        "timerSeconds": 450
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Soğanı tereyağında 8 dakika karamelize edin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Hamuru yoğurt ve soğanlı tereyağıyla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "kars-kaz-etli-arpa-corbasi",
+    "title": "Kars Kaz Etli Arpa Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Kars usulü kaz etli arpa çorbası, didiklenmiş kaz etini arpa şehriye, havuç ve karabiberle kışlık, güçlü bir kaseye taşır.",
+    "prepMinutes": 18,
+    "cookMinutes": 48,
+    "totalMinutes": 66,
+    "servingCount": 5,
+    "averageCalories": 355,
+    "protein": 25,
+    "carbs": 32,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Kaz etini önceden haşlamak çorbanın yağını kontrol etmeyi kolaylaştırır.",
+    "servingSuggestion": "Karabiber ve limonla sıcak servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "kis-tarifi"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Haşlanmış kaz eti",
+        "amount": "350",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Arpa şehriye",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Havuç",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kaz suyu",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soğan ve havucu küçük küp doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sebzeleri az kaz yağıyla 6 dakika yumuşatın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kaz suyu ve arpa şehriyeyi ekleyip 14 dakika kaynatın.",
+        "timerSeconds": 840
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Didiklenmiş kaz etini tencereye katıp 8 dakika pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karabiberle tatlandırıp çorbayı sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "kars-kaz-etli-pilav",
+    "title": "Kars Kaz Etli Pilav",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Kars kaz etli pilav, tuzlanmış kazı haşlayıp suyuyla bulgur ya da pirinci pişiren güçlü aromalı kış pilavıdır.",
+    "prepMinutes": 20,
+    "cookMinutes": 110,
+    "totalMinutes": 130,
+    "servingCount": 6,
+    "averageCalories": 650,
+    "protein": 36,
+    "carbs": 62,
+    "fat": 28,
+    "isFeatured": false,
+    "tipNote": "Kaz suyunun yağını ölçülü kullanmak pilavı parlak yapar ama ağırlaştırmaz.",
+    "servingSuggestion": "Kaz etini pilavın üstüne didikleyip turşu ve ayranla sunun.",
+    "tags": [
+      "kis-tarifi",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Kaz eti",
+        "amount": "1",
+        "unit": "kg",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kaz suyu",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kaz etini bol suda 75 dakika yumuşayana kadar haşlayın.",
+        "timerSeconds": 4500
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Eti sudan alıp iri parçalara didikleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinci yıkayıp 20 dakika ılık suda bekletin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Soğanı tereyağında 5 dakika yumuşatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pirinci ekleyip 4 dakika tane tane kavurun.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Sıcak kaz suyunu ekleyip pilavı 18 dakika kısık ateşte pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Kaz etini üstüne yayıp pilavı 10 dakika dinlendirin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "kars-kazli-bulgur-pilavi",
+    "title": "Kars Kazlı Bulgur Pilavı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Kars kazlı bulgur pilavı, didiklenmiş kaz etini tereyağlı bulgur ve soğanla buluşturarak kış sofralarına güçlü bir ana yemek çıkarır.",
+    "prepMinutes": 25,
+    "cookMinutes": 95,
+    "totalMinutes": 120,
+    "servingCount": 6,
+    "averageCalories": 540,
+    "protein": 34,
+    "carbs": 58,
+    "fat": 20,
+    "isFeatured": true,
+    "tipNote": "Kaz etini haşlama suyunda ılıtmak pilavı daha kokulu yapar.",
+    "servingSuggestion": "Turşu ve ayranla sıcak servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "misafir-sofrasi",
+      "kis-tarifi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Kaz eti",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pilavlık bulgur",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kaz suyu",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kaz etini tuzlu suda 70-80 dakika yumuşayana kadar haşlayın.",
+        "timerSeconds": 4500
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Eti ılıtıp iri parçalar halinde didikleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğanı tereyağında 5 dakika saydamlaşana kadar kavurun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Bulgur ve kaz suyunu ekleyip kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pilavı 18-20 dakika pişirip kaz etiyle 10 dakika dinlendirin.",
+        "timerSeconds": 1140
+      }
+    ]
+  },
+  {
+    "slug": "kars-ketesi",
+    "title": "Kars Ketesi",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Kars kahvaltılarının tereyağlı ketesi, kavrulmuş un içiyle kat kat ve tok bir hamur işidir.",
+    "prepMinutes": 60,
+    "cookMinutes": 30,
+    "totalMinutes": 90,
+    "servingCount": 8,
+    "averageCalories": 310,
+    "protein": 8,
+    "carbs": 35,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "İç unu kokusu çıkana kadar kavurun; çiğ un tadı kalmaz.",
+    "servingSuggestion": "Çay ve peynirle servis edin.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Süt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "150",
+        "unit": "gr",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "4 su bardağı un, süt ve yumurtayla hamur yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 30 dakika dinlendirin, açarken elastik kalsın.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "İç için 1 su bardağı unu tereyağında 8 dakika kavurun.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamuru açıp kavrulmuş içi yayın ve kenarları kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ketenin üstünü yumurtayla fırçalayın, yüzey parlak kızarsın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Keteyi 190°C fırında 28 dakika pişirin.",
+        "timerSeconds": 1680
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "10 dakika dinlendirip dilimleyin, kavrulmuş iç dökülmesin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "kars-piti-nohutlu",
+    "title": "Kars Piti",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Kars piti, kuzu incik, nohut, sarımsak ve safranlı et suyunu ekmek üstünde servis eden uzun pişmiş yöresel yemektir.",
+    "prepMinutes": 25,
+    "cookMinutes": 150,
+    "totalMinutes": 175,
+    "servingCount": 6,
+    "averageCalories": 610,
+    "protein": 40,
+    "carbs": 44,
+    "fat": 31,
+    "isFeatured": false,
+    "tipNote": "Nohudu geceden ıslatmak etle aynı sürede yumuşamasını sağlar.",
+    "servingSuggestion": "Kuru lavaş parçaları üstünde sumaklı soğanla servis edin.",
+    "tags": [
+      "kis-tarifi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuzu incik",
+        "amount": "6",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Nohut",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "6",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Safran",
+        "amount": "1",
+        "unit": "çimdik",
+        "group": null
+      },
+      {
+        "name": "Kuru lavaş",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sumak",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "3",
+        "unit": "litre",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Nohudu geceden bol suda ıslatın.",
+        "timerSeconds": 28800
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kuzu incikleri ve nohudu tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Su ve tuz ekleyip kısık ateşte 2 saat pişirin.",
+        "timerSeconds": 7200
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sarımsak ve safranı tencereye ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Et kemikten ayrılana kadar 30 dakika daha pişirin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kuru lavaşları servis tabaklarına kırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Et suyunu lavaşların üstüne gezdirip et ve nohutla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "kars-yogurtlu-hangel",
+    "title": "Kars Yoğurtlu Hangel",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Kars hangeli, kare kesilmiş sade hamurları haşlayıp sarımsaklı yoğurt, soğanlı tereyağı ve pul biberle servis eden yalın bir hamur yemeğidir.",
+    "prepMinutes": 35,
+    "cookMinutes": 20,
+    "totalMinutes": 55,
+    "servingCount": 4,
+    "averageCalories": 470,
+    "protein": 15,
+    "carbs": 72,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Hamuru çok ince açmak haşlama sırasında parçalanmasına yol açar.",
+    "servingSuggestion": "Yoğurt ve soğanlı tereyağı üstteyken hemen sıcak servis edin.",
+    "tags": [
+      "vejetaryen",
+      "butce-dostu"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Pul biber",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un ve suyla sert bir hamur yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 20 dakika dinlendirip orta kalınlıkta açın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru küçük kareler halinde kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kareleri kaynar suda 8-10 dakika haşlayın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Soğanı tereyağında 8 dakika karamelize edin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Hangelin üzerine sarımsaklı yoğurt ve soğanlı yağ gezdirin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "kasarli-biberli-pide-tekirdag-usulu",
+    "title": "Kaşarlı Biberli Pide",
+    "cuisine": "tr",
+    "type": "ATISTIRMALIK",
+    "description": "Tekirdağ usulü kaşarlı biberli pide, yumuşak hamuru kapya biber ve kaşarla buluşturarak kızarmış, sıcak ve paylaşmalık bir fırın işi sunar.",
+    "prepMinutes": 18,
+    "cookMinutes": 16,
+    "totalMinutes": 34,
+    "servingCount": 4,
+    "averageCalories": 286,
+    "protein": 11,
+    "carbs": 31,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Biberi önceden 3 dakika çevirmek pidenin orta kısmını ıslatmaz.",
+    "servingSuggestion": "Dilimleyip sıcak servis edin, yanında ayran ya da çay sunun.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kaşar peyniri",
+        "amount": "180",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kapya biber",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pide hamurunu unlu tezgahta ince oval açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Biberleri ince doğrayıp kaşarla karıştırın, peynir erirken dolgu kenardan akmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Harcı hamurun ortasına yayın, kenarları 2 cm içe kıvırıp uçları kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pideyi 220°C fırında 16 dakika, kenarı kızarana kadar pişirin.",
+        "timerSeconds": 960
+      }
+    ]
+  },
+  {
+    "slug": "kasarli-eriste-tavasi-kars-usulu",
+    "title": "Kars Kaşarlı Erişte Tavası",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Kars kaşarlı erişte tavası, ev eriştesini tereyağı ve kaşarla buluşturarak yüksek rakım mutfağında tok, uzayan ve sıcak bir akşam tabağı kurar.",
+    "prepMinutes": 8,
+    "cookMinutes": 15,
+    "totalMinutes": 23,
+    "servingCount": 4,
+    "averageCalories": 286,
+    "protein": 11,
+    "carbs": 31,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Erişteyi çok yumuşatmadan süzmek tavada kaşarla karışırken diri kalmasına yardım eder.",
+    "servingSuggestion": "Üzerine karabiber serpip sıcak servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Erişte",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kaşar peyniri",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "30",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kars Kaşarlı Erişte Tavası başlangıcı olarak erişteyi 8 dakika haşlayıp süzün.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tereyağında erişteyi 2 dakika çevirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kaşarı ekleyip eriyene kadar karıştırarak servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kars Kaşarlı Erişte Tavası tavasında sosu kenarlardan ortaya toplayın, tabanda yanmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kars Kaşarlı Erişte Tavası ocaktan sonra 3 dakika beklesin, sıcak sos tabağa sulu yayılmasın.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "kasarli-fasulyeli-kahvalti-kase-ingiltere-usulu",
+    "title": "Kaşarlı Fasulyeli Kahvaltı Kase",
+    "cuisine": "gb",
+    "type": "KAHVALTI",
+    "description": "İngiltere usulü kaşarlı fasulyeli kahvaltı kase, fasulyeyi kaşar ve yumurtayla buluşturarak tok, sıcak bir kahvaltı yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "totalMinutes": 22,
+    "servingCount": 2,
+    "averageCalories": 298,
+    "protein": 16,
+    "carbs": 21,
+    "fat": 16,
+    "isFeatured": false,
+    "tipNote": "Kaşarı en sonda eklemek kasede daha uzun uzayan bir doku verir.",
+    "servingSuggestion": "Kaşarlı fasulyeli kahvaltı kasesini sıcak sunup yumurtaları fasulye sosunun üstüne alın.",
+    "tags": [
+      "yuksek-protein",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Fasulye sosu",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kaşar peyniri",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Ekmek",
+        "amount": "2",
+        "unit": "dilim",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "1.5 su bardağı fasulye sosunu küçük tencerede 4 dakika ısıtın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "2 yumurtayı tavada 4 dakika pişirin, akları tamamen tutsun.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "2 dilim ekmeği tostlayıp kasenin kenarına alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Fasulyeyi kaseye döküp 80 gr kaşarı üstüne serpin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yumurtayı ekleyip sıcak servis edin, kaşar fasulyenin ısısıyla erisin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "kasarli-ispanakli-gurme-tost-bursa-usulu",
+    "title": "Kaşarlı Ispanaklı Gurme Tost",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Bursa usulü kaşarlı ıspanaklı gurme tost, kalın ekmeği ıspanak ve kaşarla buluşturarak eriyen, sıcak ve kahvaltılık bir tabak kurar.",
+    "prepMinutes": 8,
+    "cookMinutes": 8,
+    "totalMinutes": 16,
+    "servingCount": 2,
+    "averageCalories": 252,
+    "protein": 12,
+    "carbs": 20,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Ispanağı tavada 3 dakika çevirmek tostun içinde su bırakmasını önler.",
+    "servingSuggestion": "Ilık servis edin, yanında domates dilimleri ve çay sunabilirsiniz.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Köy ekmeği",
+        "amount": "4",
+        "unit": "dilim",
+        "group": null
+      },
+      {
+        "name": "Kaşar peyniri",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Ispanak",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "150 gr ıspanağı yıkayıp kurulayın, tost içinde fazla su bırakmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tereyağını tavada eritip ıspanağı 3 dakika çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Köy ekmeği dilimlerine kaşar peyniri ve ıspanaklı harcı yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tostları makinede 4 dakika bastırarak pişirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tostu 1 dakika dinlendirip kesin, peynir akışı dengelensin.",
+        "timerSeconds": 60
+      }
+    ]
+  }
+]

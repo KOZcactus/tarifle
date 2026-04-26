@@ -1,0 +1,4540 @@
+[
+  {
+    "slug": "lod-chong-tay-tatli-usulu",
+    "title": "Lod Chong",
+    "cuisine": "th",
+    "type": "TATLI",
+    "description": "Lod chong, hindistan cevizi sütü ve yeşil nişasta şeritleriyle serin içimli bir Tay tatlısı kurar.",
+    "prepMinutes": 18,
+    "cookMinutes": 10,
+    "totalMinutes": 28,
+    "servingCount": 4,
+    "averageCalories": 184,
+    "protein": 2,
+    "carbs": 28,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Tatlıyı buzdolabında 45 dakika soğutmak nişasta şeritlerinin daha diri kalmasını sağlar.",
+    "servingSuggestion": "Soğuk servis edin, üstüne kırık buz ve hindistan cevizi ekleyin.",
+    "tags": [
+      "yaz-tarifi",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Hindistan cevizi sütü",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Pandan aromalı nişasta şeridi",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker şurubu",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lod chong şeritlerini kaynar suda 2 dakika haşlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Şeritleri soğuk suya alın, birbirine yapışmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hindistan cevizi sütü ve şurubu 3 dakika ısıtın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Şeritleri kaselere paylaştırıp sütlü şurubu üstüne dökün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Buzu servis anında ekleyin, tatlı sulanmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lohikeitto",
+    "title": "Lohikeitto",
+    "cuisine": "se",
+    "type": "CORBA",
+    "description": "Fin lohikeitto çorbası, somon, patates ve dereotunu kremalı yumuşak bir kasede toplar.",
+    "prepMinutes": 20,
+    "cookMinutes": 30,
+    "totalMinutes": 50,
+    "servingCount": 5,
+    "averageCalories": 310,
+    "protein": 22,
+    "carbs": 24,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Somonu son 5 dakikada ekleyin; uzun kaynarsa parçalar kurur.",
+    "servingSuggestion": "Çavdar ekmeği ve taze dereotu ile sıcak servis edin.",
+    "tags": [
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "SUT",
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Somon fileto",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "200",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "4 patatesi küçük küp doğrayın, 500 gr somonu 2 cm parçalar halinde kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Patatesleri 5 su bardağı suda orta ateşte 15 dakika haşlayın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "200 ml kremayı ekleyip 2 dakika ısıtın, krema kaynayıp ayrışmasın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Somon parçalarını katıp kısık ateşte 5 dakika pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yarım demet dereotunu son anda ekleyin ve somon dağılmadan sıcak servis edin, lohikeitto dengesi bozulmasın, lohikeitto dokusu kaymasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lokma-tatlisi",
+    "title": "Lokma Tatlısı",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Mayalı hamurun kızartılıp şerbete atılmasıyla hazırlanan çıtır geleneksel tatlı.",
+    "prepMinutes": 50,
+    "cookMinutes": 25,
+    "totalMinutes": 75,
+    "servingCount": 8,
+    "averageCalories": 340,
+    "protein": 4,
+    "carbs": 58,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Lokmaları sıcak yağdan çıkarıp soğuk şerbete alın; dışı çıtır kalır.",
+    "servingSuggestion": "Lokmaları sıcak verin, üstüne Antep fıstığı serpip hemen sunun.",
+    "tags": [
+      "vegan",
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Ilık su",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Kuru maya",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Şeker",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": "Şerbet için"
+      },
+      {
+        "name": "Su",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": "Şerbet için"
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": "Şerbet için"
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": "Hamur için"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Şeker ve suyu 10 dakika kaynatıp limonla şerbet hazırlayın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Un, maya ve suyu çırpıp akışkan hamur yapın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru 35 dakika mayalandırın, kabarcık gelişsin.",
+        "timerSeconds": 2100
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yağı 170°C'ye ısıtın ve hamuru küçük parçalar halinde bırakın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Lokmaları 5 dakika kızartın, içleri hamur kalmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Sıcak lokmayı soğuk şerbete alın ve 2 dakika bekletin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Süzdürüp tarçınla sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lomo-saltado",
+    "title": "Lomo Saltado",
+    "cuisine": "pe",
+    "type": "YEMEK",
+    "description": "Lomo saltado, dana şeritlerini soğan, domates, soya sosu ve sirkeyle wokta çevirip patates kızartması ve pirinçle sunan Peru klasiğidir.",
+    "prepMinutes": 20,
+    "cookMinutes": 18,
+    "totalMinutes": 38,
+    "servingCount": 4,
+    "averageCalories": 640,
+    "protein": 34,
+    "carbs": 58,
+    "fat": 28,
+    "isFeatured": false,
+    "tipNote": "Woku çok ısıtmak etin suyunu bırakmadan kızarmasını sağlar.",
+    "servingSuggestion": "Pirinç, patates kızartması ve kişnişle sıcak servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "SOYA"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana bonfile",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kırmızı soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sirke",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kişniş",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesleri çubuk kesip kızgın yağda 6 dakika kızartın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Dana etini kalın şeritler halinde kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Wokta eti yüksek ateşte 3 dakika mühürleyin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Soğan ve domatesi ekleyip 2 dakika diri bırakın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Soya sosu ve sirkeyle karıştırıp patates ve pirinçle servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "london-fish-and-chips",
+    "title": "Londra Fish and Chips",
+    "cuisine": "gb",
+    "type": "YEMEK",
+    "description": "Fish and chips, morina veya mezgiti biralı hamura batırıp çıtır kızartır, kalın patates ve bezelye ezmesiyle sunar.",
+    "prepMinutes": 30,
+    "cookMinutes": 35,
+    "totalMinutes": 65,
+    "servingCount": 4,
+    "averageCalories": 780,
+    "protein": 38,
+    "carbs": 76,
+    "fat": 36,
+    "isFeatured": false,
+    "tipNote": "Patatesi iki aşamada kızartmak içini yumuşak, dışını çıtır yapar.",
+    "servingSuggestion": "Malt sirkesi, limon ve naneli bezelye ezmesiyle kağıt üstünde servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein",
+      "alkollu"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI",
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Morina fileto",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "1",
+        "unit": "kg",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Bira",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kabartma tozu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Bezelye",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesleri kalın doğrayıp suda 10 dakika bekletin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Patatesleri 130°C yağda 6 dakika ön kızartın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Un, kabartma tozu, tuz ve birayla akışkan hamur yapın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Balık filetolarını kurutup hafif una bulayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Balığı hamura batırıp 180°C yağda 5 dakika kızartın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Patatesleri 180°C yağda 4 dakika çıtırlaştırın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Bezelyeyi 5 dakika haşlayıp tereyağı ve naneyle ezerek servis edin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "london-fog",
+    "title": "London Fog",
+    "cuisine": "gb",
+    "type": "ICECEK",
+    "description": "Kanada kafelerinden bergamot kokulu Earl Grey, vanilya ve süt köpüğüyle yumuşar.",
+    "prepMinutes": 5,
+    "cookMinutes": 5,
+    "totalMinutes": 10,
+    "servingCount": 2,
+    "averageCalories": 140,
+    "protein": 4,
+    "carbs": 22,
+    "fat": 3,
+    "isFeatured": false,
+    "tipNote": "Çayı 4 dakikadan uzun demlemeyin; bergamot acılığı yükselir.",
+    "servingSuggestion": "Geniş kupada, üstüne ince süt köpüğü bırakarak sıcak ve sade sunun.",
+    "tags": [
+      "alkolsuz",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Earl Grey çayı",
+        "amount": "2",
+        "unit": "poşet",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "250",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "250",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Vanilya",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Earl Grey çayını sıcak suda 4 dakika demleyin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sütü ısıtıp köpürtün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Çay, vanilya, bal ve sütü fincanlarda birleştirin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "london-mulligatawny-corbasi",
+    "title": "Londra Mulligatawny",
+    "cuisine": "gb",
+    "type": "CORBA",
+    "description": "Mulligatawny, tavuk, mercimek, elma, pirinç, köri ve hindistan cevizi sütünü Anglo Hint çorbasında birleştirir.",
+    "prepMinutes": 20,
+    "cookMinutes": 45,
+    "totalMinutes": 65,
+    "servingCount": 6,
+    "averageCalories": 380,
+    "protein": 22,
+    "carbs": 42,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Elmayı küçük doğramak çorbaya tatlılık verir ama dokuyu bastırmaz.",
+    "servingSuggestion": "Kişniş, lime ve yoğurtla sıcak servis edin.",
+    "tags": [
+      "tek-tencere",
+      "kis-tarifi"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk göğsü",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kırmızı mercimek",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Havuç",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Elma",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Köri tozu",
+        "amount": "2",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Hindistan cevizi sütü",
+        "amount": "300",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Tavuk suyu",
+        "amount": "1.5",
+        "unit": "litre",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kişniş",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soğan ve havucu yağda 6 dakika yumuşatın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Köri tozunu ekleyip 1 dakika kokulandırın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tavuk, mercimek, pirinç ve tavuk suyunu tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Çorbayı 25 dakika mercimek yumuşayana kadar pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tavuğu çıkarıp didikleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Elma ve hindistan cevizi sütünü ekleyip 8 dakika pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Tavuğu geri katıp yoğurt ve kişnişle servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "london-shepherds-pie",
+    "title": "Londra Shepherd's Pie",
+    "cuisine": "gb",
+    "type": "YEMEK",
+    "description": "Shepherd's pie, kuzu kıymalı sebze harcını kremalı patates püresiyle kaplayıp fırında üstü altın olana kadar pişiren İngiliz klasiğidir.",
+    "prepMinutes": 25,
+    "cookMinutes": 60,
+    "totalMinutes": 85,
+    "servingCount": 4,
+    "averageCalories": 650,
+    "protein": 34,
+    "carbs": 48,
+    "fat": 36,
+    "isFeatured": false,
+    "tipNote": "Kıymalı harcı koyulaştırmak pürenin fırında çökmesini önler.",
+    "servingSuggestion": "Bezelye veya yeşil fasulyeyle sıcak dilimler halinde servis edin.",
+    "tags": [
+      "firinda",
+      "kis-tarifi"
+    ],
+    "allergens": [
+      "SUT",
+      "KEREVIZ"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuzu kıyma",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "900",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Havuç",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kereviz sapı",
+        "amount": "1",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Et suyu",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesleri 18-20 dakika yumuşayana kadar haşlayın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Patatesi tereyağı ve sütle püre yapın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğan, havuç ve kerevizi 6 dakika soteleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kuzu kıymayı ekleyip 8 dakika kavurun.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Et suyuyla harcı 20 dakika koyulaştırın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Püreyle kaplayıp 200°C fırında 25 dakika kızartın.",
+        "timerSeconds": 1500
+      }
+    ]
+  },
+  {
+    "slug": "londra-balik-patates-kizartma",
+    "title": "Londra Balık Patates Kızartma",
+    "cuisine": "gb",
+    "type": "YEMEK",
+    "description": "Fish and chips, bira yerine sodalı hamura batırılmış beyaz balığı çıtır kızartıp kalın patatesle servis eden İngiliz pub klasiğidir.",
+    "prepMinutes": 20,
+    "cookMinutes": 25,
+    "totalMinutes": 45,
+    "servingCount": 4,
+    "averageCalories": 720,
+    "protein": 38,
+    "carbs": 78,
+    "fat": 28,
+    "isFeatured": false,
+    "tipNote": "Hamuru çok karıştırmamak kızartmada hafif kabuk verir.",
+    "servingSuggestion": "Sirke, bezelye püresi ve limonla sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Beyaz balık fileto",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soda",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kabartma tozu",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ayçiçek yağı",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Limon",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesleri kalın kesip 150°C yağda 6 dakika ön kızartın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Un, kabartma tozu, tuz ve soğuk sodayla akışkan hamur yapın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Balık filetolarını kurutup hafif una bulayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Balıkları hamura batırıp 180°C yağda 5-6 dakika kızartın.",
+        "timerSeconds": 330
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Patatesleri yeniden kızartıp balıkla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "londra-balikli-pie",
+    "title": "Londra Balıklı Pie",
+    "cuisine": "gb",
+    "type": "YEMEK",
+    "description": "İngiliz balıklı pie, beyaz balık ve somonu kremalı pırasa sosunda buluşturup patates püresi altında fırınlayan sıcak bir aile yemeğidir.",
+    "prepMinutes": 24,
+    "cookMinutes": 40,
+    "totalMinutes": 64,
+    "servingCount": 5,
+    "averageCalories": 520,
+    "protein": 34,
+    "carbs": 38,
+    "fat": 26,
+    "isFeatured": false,
+    "tipNote": "Balığı çiğden eklemek fırında fazla kurumasını önler.",
+    "servingSuggestion": "Bezelye ve limonla sıcak servis edin.",
+    "tags": [
+      "firinda",
+      "yuksek-protein",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI",
+      "SUT",
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Beyaz balık fileto",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Somon fileto",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "800",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pırasa",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesleri 18 dakika yumuşayana kadar haşlayıp ezin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pırasayı tereyağında 6 dakika yumuşatın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Un ve kremayı ekleyip sosu 4 dakika koyulaştırın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Balıkları fırın kabına alıp sosu üzerine yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Patates püresiyle kapatıp 200°C fırında 25 dakika kızartın.",
+        "timerSeconds": 1500
+      }
+    ]
+  },
+  {
+    "slug": "londra-bangers-and-mash",
+    "title": "Londra Bangers And Mash",
+    "cuisine": "gb",
+    "type": "YEMEK",
+    "description": "Bangers and mash, kızarmış sosisleri tereyağlı patates püresi ve soğanlı kahverengi sosla buluşturan İngiliz pub tabağıdır.",
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "totalMinutes": 50,
+    "servingCount": 4,
+    "averageCalories": 620,
+    "protein": 24,
+    "carbs": 58,
+    "fat": 32,
+    "isFeatured": false,
+    "tipNote": "Soğanı yavaş pişirmek sosu yakmadan tatlı ve koyu yapar.",
+    "servingSuggestion": "Bezelye ve hardalla sıcak pub tabağı şeklinde servis edin.",
+    "tags": [
+      "kis-tarifi",
+      "cocuk-dostu"
+    ],
+    "allergens": [
+      "SUT",
+      "GLUTEN",
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana sosis",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "1",
+        "unit": "kg",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "70",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Et suyu",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Hardal",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesleri soyup tuzlu suda 20 dakika haşlayın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sosisleri tavada 12 dakika çevirerek kızartın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğanları aynı tavada 12 dakika yumuşak kahverengi olana kadar pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Unu soğana ekleyip 1 dakika kavurun.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Et suyunu azar azar ekleyip sosu 8 dakika koyulaştırın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Patatesleri tereyağı ve sütle püre yapın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Püre, sosis ve soğan sosunu hardalla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "londra-cottage-pie-dana",
+    "title": "Londra Cottage Pie",
+    "cuisine": "gb",
+    "type": "YEMEK",
+    "description": "Cottage pie, kıymalı sebzeli koyu harcı patates püresiyle kapatıp fırında kızartan İngiliz ev yemeğidir.",
+    "prepMinutes": 25,
+    "cookMinutes": 55,
+    "totalMinutes": 80,
+    "servingCount": 6,
+    "averageCalories": 540,
+    "protein": 30,
+    "carbs": 46,
+    "fat": 26,
+    "isFeatured": false,
+    "tipNote": "Harcı koyulaştırmadan püreyle kapatırsanız tabak sulu kalır.",
+    "servingSuggestion": "Bezelye ve yeşil salatayla fırından çıktıktan 10 dakika sonra servis edin.",
+    "tags": [
+      "firinda",
+      "cocuk-dostu"
+    ],
+    "allergens": [
+      "SUT",
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana kıyma",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "1.2",
+        "unit": "kg",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Havuç",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Bezelye",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Et suyu",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "70",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesleri 20 dakika haşlayıp tereyağı ve sütle püre yapın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve havucu 6 dakika kavurun.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kıymayı ekleyip 8 dakika kahverengileştirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Unu serpip et suyu ve bezelyeyi ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Harcı 15 dakika koyulaştırın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Fırın kabına harcı yayıp püreyle kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Cottage pie'ı 200°C fırında 25 dakika kızartın.",
+        "timerSeconds": 1500
+      }
+    ]
+  },
+  {
+    "slug": "lor-dolgulu-pazi-sarma-erzurum-usulu",
+    "title": "Erzurum Lor Dolgulu Pazı Sarma",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Erzurum lor dolgulu pazı sarma, pazı yapraklarını lor ve bulgurla sararak hafif ekşili, yumuşak ve paylaşmalık bir tabak kurar.",
+    "prepMinutes": 20,
+    "cookMinutes": 24,
+    "totalMinutes": 44,
+    "servingCount": 4,
+    "averageCalories": 196,
+    "protein": 8,
+    "carbs": 19,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Pazıyı kısa haşlamak sarımı kolaylaştırır.",
+    "servingSuggestion": "Sarmaları ılık sunun, yanına sarımsaklı yoğurt ve pul biber koyun.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Pazı",
+        "amount": "1",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "İnce bulgur",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pazı yapraklarını yıkayın ve kalın damarlarını inceltin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pazıları kaynar suda 1 dakika haşlayıp soğuk suya alın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lor, yeşillik ve baharatı karıştırarak iç harcı hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yapraklara harç koyup gevşekçe sarın, lor pişerken sıkışıp dışarı taşmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sarmaları tencereye dizin, az sıcak su ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Sarmaları 20 dakika kısık ateşte pişirin ve limonla servis edin.",
+        "timerSeconds": 1200
+      }
+    ]
+  },
+  {
+    "slug": "lor-mantisi",
+    "title": "Lor Mantısı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Ege lor mantısı ince hamurun içine lorlu harç alır, yoğurt ve tereyağıyla hafif bir tabak olur.",
+    "prepMinutes": 60,
+    "cookMinutes": 15,
+    "totalMinutes": 75,
+    "servingCount": 4,
+    "averageCalories": 330,
+    "protein": 16,
+    "carbs": 33,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Hamuru ince açmak, lor dolgulu mantıların kısa haşlamada diri kalmasını sağlar.",
+    "servingSuggestion": "Sıcak sunun, üstüne sarımsaklı yoğurt ve kızdırılmış tereyağı gezdirin.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, yumurta ve suyla sertçe bir mantı hamuru yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 20 dakika dinlendirin, gluten gevşesin ve ince açılabilsin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru ince açın, karelere kesin ve lorlu içi paylaştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Mantıları sıkıca kapatın, kenarları suda açılmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Mantıları kaynar tuzlu suda 13 dakika haşlayın.",
+        "timerSeconds": 780
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Süzüp yoğurt ve tereyağlı sosla sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-biber-dolmasi-tekirdag-usulu",
+    "title": "Lorlu Biber Dolması",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Tekirdağ lorlu biber dolması, biberleri lorlu pirinç harcıyla doldurarak hafif, otlu ve yaz sofralarına uygun bir dolma sunar.",
+    "prepMinutes": 18,
+    "cookMinutes": 24,
+    "totalMinutes": 42,
+    "servingCount": 4,
+    "averageCalories": 208,
+    "protein": 8,
+    "carbs": 24,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Lorun fazla sulanmaması için iç harcı sıkı kıvamda bırakın.",
+    "servingSuggestion": "Lorlu biber dolmasını ılık tabakta dizip dereotlu lor harcı görünen yüzü üstte bırakın.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Dolmalık biber",
+        "amount": "6",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Biberlerin kapaklarını kesin, çekirdeklerini temizleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lor, pirinç veya bulgur, yeşillik ve baharatı karıştırarak iç harcı hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Biberleri harçla doldurun, üstte 1 parmak boşluk bırakın ki harç taşmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Dolmaları tencereye dik dizin ve az sıcak su ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Dolmaları 20 dakika kısık ateşte pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "10 dakika dinlendirip yoğurt veya domates sosuyla servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-biber-kavurmasi",
+    "title": "Lorlu Biber Kavurması",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Yeşil biber ve lorla hazırlanan bu kahvaltılık tava, Ege sofralarında az malzemeyle hızlıca kurulan tuzlu bir başlangıçtır.",
+    "prepMinutes": 8,
+    "cookMinutes": 10,
+    "totalMinutes": 18,
+    "servingCount": 3,
+    "averageCalories": 166,
+    "protein": 11,
+    "carbs": 8,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Biberi önce renk aldırmak loru eklediğinizde karışımın sulu kalmasını önler.",
+    "servingSuggestion": "Üzerine karabiber serpip sıcak servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Yeşil biber",
+        "amount": "5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "0.25",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.25",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lorlu Biber Kavurması için kullanılacak kapları hazırlayın, hamur veya yumurta bekleyip dokusunu kaybetmesin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Biberleri ince doğrayın, Lorlu Biber Kavurması için hazır tutun.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Biberleri zeytinyağında 6 dakika yumuşayana kadar pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Lor, tuz ve karabiberi ekleyip 2 dakika karıştırarak servis edin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Lorlu Biber Kavurması kıvamı oturunca servis edin, fazla bekletmek peynirli dokuyu sertleştirir.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-biberli-krep",
+    "title": "Lorlu Biberli Krep",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Lorlu biberli krep, hafta sonu kahvaltısında hafif peynirli içi ince bir hamura saran yumuşak bir tabaktır.",
+    "prepMinutes": 20,
+    "cookMinutes": 15,
+    "totalMinutes": 35,
+    "servingCount": 4,
+    "averageCalories": 280,
+    "protein": 14,
+    "carbs": 26,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Kapya biberi önceden soteleyin; çiğ bırakılırsa krebin içinde su salar.",
+    "servingSuggestion": "Üzerine dereotu serpip ılık servis edin.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "160",
+        "unit": "gr",
+        "group": "Krep için"
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": "Krep için"
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "180",
+        "unit": "gr",
+        "group": "İç için"
+      },
+      {
+        "name": "Kapya biber",
+        "amount": "2",
+        "unit": "adet",
+        "group": "İç için"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lorlu Biberli Krep başlangıcında kuru ve yaş malzemeleri ayrı tutun, karıştırma aşaması temiz ilerlesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lorlu Biberli Krep için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Krep hamurunu çırpıp 10 dakika dinlendirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Biberleri 5 dakika soteleyip lorla karıştırın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Krepleri pişirip içle doldurun.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Lorlu Biberli Krep yüzeyi parlakken sıcak servis edin, soğursa buharı gevrek dokuyu yumuşatır.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-biberli-sembusek-mardin-usulu",
+    "title": "Lorlu Biberli Sembusek",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Mardin usulü lorlu biberli sembusek, ince hamuru lor ve biberli harçla buluşturarak kıtır, baharatlı ve paylaşmalık bir hamur işi kurar.",
+    "prepMinutes": 18,
+    "cookMinutes": 18,
+    "totalMinutes": 36,
+    "servingCount": 6,
+    "averageCalories": 268,
+    "protein": 9,
+    "carbs": 29,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "İç harcı kuru tutmak sembuseğin kenarının iyi kapanmasını sağlar.",
+    "servingSuggestion": "Sıcak servis edin, yanına limon dilimi ve maydanoz koyun.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "160",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kapya biber",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, su ve tuzla yumuşak bir hamur yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 20 dakika dinlendirin, açarken yırtılmasın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lor, doğranmış biber ve baharatı karıştırarak iç harcı hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamuru açın, harcı yerleştirip yarım ay biçiminde kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sembusekleri 200°C fırında 18 dakika pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Fırından çıkınca 5 dakika dinlendirin ve sıcak servis edin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-dereotlu-krep-macar-usulu",
+    "title": "Macar Lorlu Dereotlu Krep",
+    "cuisine": "hu",
+    "type": "KAHVALTI",
+    "description": "Macar lorlu dereotlu krep, ince krepleri lor ve dereotu ile doldurarak hafif ve tuzlu bir kahvaltı tabağı sunar.",
+    "prepMinutes": 15,
+    "cookMinutes": 10,
+    "totalMinutes": 25,
+    "servingCount": 4,
+    "averageCalories": 224,
+    "protein": 9,
+    "carbs": 23,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Krep hamurunu 5 dakika dinlendirmek tavada daha düzgün yayılmasını sağlar.",
+    "servingSuggestion": "Krepleri ılık sunun, yanına yeşil salata ve yoğurt koyun.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Macar Lorlu Dereotlu Krep için malzemeleri ölçüp tezgaha alın, sonraki adımlar aksamadan ilerlesin diye kapları hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Macar Lorlu Dereotlu Krep krep hamurunu 2 dakika çırpın, un topakları açılsın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "İnce krepleri tavada 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Lor ve dereotuyla doldurup servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Macar Lorlu Dereotlu Krep yüzeyi parlakken sıcak servis edin, soğursa buharı gevrek dokuyu yumuşatır.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-enginar-boregi-urla-usulu",
+    "title": "Lorlu Enginar Böreği",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Urla usulü lorlu enginar böreği, ince yufkayı enginar ve lorla buluşturarak hafif, çıtır ve Ege kokulu bir hamur işi yapar.",
+    "prepMinutes": 18,
+    "cookMinutes": 22,
+    "totalMinutes": 40,
+    "servingCount": 6,
+    "averageCalories": 256,
+    "protein": 9,
+    "carbs": 26,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Enginarı küçük küp kesmek börekte eşit dağılmasına yardım eder.",
+    "servingSuggestion": "Lorlu enginar böreğini dilimledikten sonra enginar parçaları görünen yüzü yukarı gelecek şekilde sunun.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Yufka",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Enginar kalbi",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "180",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lorlu Enginar Böreği akışı için tava, kase ve ölçüleri hazır edin, pişirme başlayınca ritim bozulmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lorlu Enginar Böreği iç harcını kasede karıştırın, peynir ve otlar eşit dağılsın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yufkaları harçla katlayın, Lorlu Enginar Böreği için hazır tutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Böreği 22 dakika pişirin.",
+        "timerSeconds": 1320
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Lorlu Enginar Böreği parçalarını ılık tabaklara alın, yanında çayla hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-enginar-kizartmasi-izmir-usulu",
+    "title": "İzmir Lorlu Enginar Kızartması",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "İzmir lorlu enginar kızartması, enginarı ince kaplamayla kızartıp lorla tamamlayarak Ege'ye hafif gevrek ve sütlü bir meze sunar.",
+    "prepMinutes": 18,
+    "cookMinutes": 12,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 178,
+    "protein": 7,
+    "carbs": 16,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Enginarları kurulayıp öyle una bulamak kaplamanın tavada tutunmasını kolaylaştırır.",
+    "servingSuggestion": "Üzerine sızma zeytinyağı ve pul biber gezdirip küçük derin tabakta mezelik sunum kurun.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Enginar kalbi",
+        "amount": "6",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Enginarları kurulayın ve kararmamaları için limonla hafifçe ovun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Enginarları una bulayıp fazlasını silkeleyin, sonra çırpılmış yumurtaya batırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tavada iki yüzünü toplam 7 dakika kızarana kadar pişirin.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Üzerine lor serpin, zeytinyağı gezdirip ılık servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-firik-dolma-izmir-bostan-usulu",
+    "title": "İzmir Lorlu Firik Dolma",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "İzmir lorlu firik dolma, biberleri lor ve firikle doldurarak Ege esintili hafif isli bir dolma hazırlar.",
+    "prepMinutes": 18,
+    "cookMinutes": 28,
+    "totalMinutes": 46,
+    "servingCount": 4,
+    "averageCalories": 226,
+    "protein": 9,
+    "carbs": 23,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Firiği önceden kısa haşlamak dolmada eşit pişme sağlar.",
+    "servingSuggestion": "Dolmaları ılık verin, yanına limon dilimi ve yoğurt koyun.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT",
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Dolmalık biber",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Firik",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Firiği yıkayın ve 8 dakika haşlayıp süzün.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lor, yumuşamış firik, yeşillik ve baharatı karıştırarak iç hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Biberlerin çekirdeklerini temizleyin ve iç harcı paylaştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Dolmaları tencereye dizin, az sıcak su ve zeytinyağı ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Dolmaları 20 dakika kısık ateşte pişirin, lorlu iç taşmasın diye harlı ateş kullanmayın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tencereyi 10 dakika dinlendirin ve ılık servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-ispanakli-tandir-boregi-kars-usulu",
+    "title": "Lorlu Ispanaklı Tandır Böreği",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Kars usulü lorlu ıspanaklı tandır böreği, ince yufkayı lor ve ıspanakla buluşturarak çıtır, katmanlı ve güçlü bir börek hazırlar.",
+    "prepMinutes": 20,
+    "cookMinutes": 24,
+    "totalMinutes": 44,
+    "servingCount": 6,
+    "averageCalories": 274,
+    "protein": 9,
+    "carbs": 29,
+    "fat": 13,
+    "isFeatured": true,
+    "tipNote": "Ispanağın suyunu sıkmak böreğin içinde buhar birikmesini önler.",
+    "servingSuggestion": "Dilimleyip ılık sunun, yanına çay ve domates dilimleri koyun.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Yufka",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "180",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Ispanak",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ispanağı yıkayıp doğrayın, fazla suyunu süzdürün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Ispanağı tavada 6 dakika soteleyip suyunu çektirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ispanağı 5 dakika soğutun, lor eklenince sulanmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Lor ve baharatla harcı karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yufkaları harçla katlayıp tepsiye yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Ispanaklı tandır böreğini 190°C fırında 24 dakika pişirin.",
+        "timerSeconds": 1440
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-kabak-cicegi-tostu-izmir-usulu",
+    "title": "İzmir Lorlu Kabak Çiçeği Tostu",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "İzmir lorlu kabak çiçeği tostu, kabak çiçeğini lor ve otlarla ekmek arasında pişirerek Ege sabahlarına hafif, kokulu ve çıtır bir kahvaltı lokması getirir.",
+    "prepMinutes": 10,
+    "cookMinutes": 8,
+    "totalMinutes": 18,
+    "servingCount": 2,
+    "averageCalories": 234,
+    "protein": 10,
+    "carbs": 22,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Çiçekleri fazla doldurmamak tostun içinde eşit dağılmalarını sağlar.",
+    "servingSuggestion": "Tostu sıcak verin, yanına domates salatası ve limon dilimi koyun.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Sandviç ekmeği",
+        "amount": "4",
+        "unit": "dilim",
+        "group": null
+      },
+      {
+        "name": "Kabak çiçeği",
+        "amount": "6",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "İzmir Lorlu Kabak Çiçeği Tostu yapmadan önce ana malzemeleri ayırın, sıcak adımlar sırasında arama yapılmasın diye tezgahı düzenleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "İzmir Lorlu Kabak Çiçeği Tostu için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kabak çiçeklerini iri doğrayıp lorla karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Harçla ekmekleri doldurup dışına az yağ sürün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tostu tavada iki yüzünü toplam 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "İzmir Lorlu Kabak Çiçeği Tostu tamamlanınca 3 dakika dinlendirin, iç sıcaklık dengelensin diye sonra dilimleyin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-kabak-corbasi-edirne-usulu",
+    "title": "Lorlu Kabak Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Edirne usulü lorlu kabak çorbası, kabağı lor ve dereotuyla buluşturarak yumuşak, hafif ve kaşık kaşık içilen bir çorba kurar.",
+    "prepMinutes": 10,
+    "cookMinutes": 16,
+    "totalMinutes": 26,
+    "servingCount": 4,
+    "averageCalories": 152,
+    "protein": 6,
+    "carbs": 16,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Kabağı 10 dakika pişirip sonra loru eklemek çorbada pütürsüz bir kıvam sağlar.",
+    "servingSuggestion": "Çorbayı sıcak sunun, üstüne dereotu serpip yanında ekmek verin.",
+    "tags": [
+      "vejetaryen",
+      "tek-tencere"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Kabak",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "3 kabağı küçük küp doğrayın, 120 gr lor peynirini çatalla ufalayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "1 yemek kaşığı zeytinyağını orta ateşte ısıtıp kabağı 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "4 su bardağı sıcak suyu ekleyip kabakları 10 dakika pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Loru tencereye katıp kısık ateşte 2 dakika karıştırın, peynir topaklanmasın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Dereotunu serpip çorbayı sıcak servis edin, lorlu kabak dengesi bozulmasın, lorlu kabak dokusu kaymasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-kabak-salatasi-mugla-usulu",
+    "title": "Lorlu Kabak Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Muğla lorlu kabak salatası, sotelenmiş kabağı lor ve dereotuyla tamamlayarak hafif, serin ve otlu bir yaz salatası sunar.",
+    "prepMinutes": 12,
+    "cookMinutes": 8,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 118,
+    "protein": 6,
+    "carbs": 8,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Kabağı yüksek ateşte kısa çevirmek suyunu salmadan lezzet toplar.",
+    "servingSuggestion": "Salatayı serin sunun, üstüne zeytinyağı gezdirip ceviz serpin.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen",
+      "yaz-tarifi"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Kabak",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabakları yarım ay doğrayın, zeytinyağında 6 dakika diri kalacak şekilde kavurun.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kabağı geniş tabağa alın ve 8 dakika ılıtın, sıcak kalırsa lor sulanır.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lor, dereotu, limon kabuğu ve karabiberi ayrı kasede karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kabakları limon suyu ve zeytinyağıyla harmanlayın, lorlu karışımı üstüne yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ceviz veya badem kırığıyla tamamlayıp ılık servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Lorun bir kısmını servis üstüne ayırın, kabakla karışan peynir görünümü ağırlaştırmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Ilık servis edecekseniz tabağı önceden serinletin, kabak buharı loru sulandırmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-kete-erzurum-usulu",
+    "title": "Erzurum Lorlu Kete",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Erzurum lorlu kete, kat kat açılan hamurun lorlu iç ve tereyağıyla fırınlandığı, Doğu Anadolu misafir kahvaltılarında öne çıkan tok bir çörektir.",
+    "prepMinutes": 35,
+    "cookMinutes": 30,
+    "totalMinutes": 65,
+    "servingCount": 8,
+    "averageCalories": 298,
+    "protein": 8,
+    "carbs": 33,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Lorun fazla sulu olmaması ketenin katlarını hamurlaştırmadan korur.",
+    "servingSuggestion": "Dilerek çay yanında ılık servis edin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Süt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "250",
+        "unit": "gr",
+        "group": "İç için"
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "100",
+        "unit": "gr",
+        "group": "Katlar için"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Erzurum Lorlu Kete için kullanılacak kapları hazırlayın, hamur veya yumurta bekleyip dokusunu kaybetmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru yoğurup 20 dakika dinlendirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru açıp tereyağı sürün, lor serpip katlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Keteyi 185°C fırında 30 dakika pişirin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Erzurum Lorlu Kete tamamlanınca 3 dakika dinlendirin, iç sıcaklık dengelensin diye sonra dilimleyin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-kirmizi-biberli-acma-bursa-usulu",
+    "title": "Lorlu Kırmızı Biberli Açma",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Bursa usulü lorlu kırmızı biberli açma, yumuşak hamuru lor ve köz biberle buluşturarak hafif, tuzlu ve çay yanında sevilen bir hamur işi kurar.",
+    "prepMinutes": 18,
+    "cookMinutes": 20,
+    "totalMinutes": 38,
+    "servingCount": 6,
+    "averageCalories": 258,
+    "protein": 8,
+    "carbs": 30,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Lorun fazla suyunu almak açmanın içini hamurlaştırmaz.",
+    "servingSuggestion": "Lorlu kırmızı biberli açmayı ılık koparıp köz biberli lor dolgusu görünen yüzü öne alın.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "180",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Köz kırmızı biber",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "40",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lorlu Kırmızı Biberli Açma başlangıcında kuru ve yaş malzemeleri ayrı tutun, karıştırma aşaması temiz ilerlesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru yoğurun ve şekillendirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lorlu Kırmızı Biberli Açma iç harcını ekmek ya da yufka yüzeyine eşit paylaştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Açmaları 20 dakika pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Lorlu Kırmızı Biberli Açma yüzeyi parlakken sıcak servis edin, soğursa buharı gevrek dokuyu yumuşatır.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-pancar-ezme-kirsehir-usulu",
+    "title": "Lorlu Pancar Ezme",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Kırşehir usulü lorlu pancar ezme, haşlanmış pancarı lor ve sarımsakla buluşturarak renkli, hafif ve sofrayı açan bir meze yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 8,
+    "totalMinutes": 18,
+    "servingCount": 4,
+    "averageCalories": 126,
+    "protein": 6,
+    "carbs": 10,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Pancarı rendeledikten sonra 2 dakika süzmek ezmede sulu bir doku oluşmasını azaltır.",
+    "servingSuggestion": "Ezmeyi serin sunun, üstüne ceviz serpip kızarmış ekmek ekleyin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Haşlanmış pancar",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "1",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Haşlanmış pancarı rendeleyip fazla suyunu süzdürün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lor ve sarımsağı pancarla ezerek pembe, koyu kıvamlı karışım yapın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tuzunu ayarlayın ve zeytinyağını azar azar ekleyerek kıvamı açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ezmesini soğuk servis tabağına alın ve üstünü cevizle tamamlayın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-patatesli-firin-borek-eskisehir-usulu",
+    "title": "Lorlu Patatesli Fırın Börek",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Eskişehir usulü lorlu patatesli fırın börek, yufkayı lor ve patatesle buluşturarak yumuşak içli, kıtır üstlü bir fırın yemeği yapar.",
+    "prepMinutes": 16,
+    "cookMinutes": 20,
+    "totalMinutes": 36,
+    "servingCount": 6,
+    "averageCalories": 282,
+    "protein": 8,
+    "carbs": 31,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Patatesi ezip ılındırmak börek içinde harcın daha dengeli yayılmasını sağlar.",
+    "servingSuggestion": "Lorlu patatesli böreği fırından çıkınca dilimleyip üstü kızarmış yüzü görünecek şekilde tabağa alın.",
+    "tags": [
+      "firinda",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Yufka",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesi 20 dakika yumuşayana kadar haşlayın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Patatesi ezip 8 dakika soğutun, lor sıcakta sulanmasın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lor, patates, tuz ve baharatla iç harcı hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yufkaları harçla doldurup tepsiye dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Patatesli böreğin üstüne yağlı karışım sürün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Böreği 190°C fırında 20 dakika kızarana kadar pişirin.",
+        "timerSeconds": 1200
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-pazi-kavurmasi-artvin-usulu",
+    "title": "Lorlu Pazı Kavurması",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Artvin usulü lorlu pazı kavurması, pazıyı soğan ve lorla kısa sürede çevirerek kahvaltıya yeşil, doyurucu bir tava getirir.",
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "totalMinutes": 22,
+    "servingCount": 3,
+    "averageCalories": 168,
+    "protein": 10,
+    "carbs": 8,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Pazı saplarını yapraklardan iki dakika önce tavaya almak sertlik farkını dengeler.",
+    "servingSuggestion": "Mısır ekmeğiyle sıcak servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Pazı",
+        "amount": "1",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Pul biber",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lorlu Pazı Kavurması için malzemeleri ölçüp tezgaha alın, sonraki adımlar aksamadan ilerlesin diye kapları hazırlayın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lorlu Pazı Kavurması için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğanı zeytinyağında 4 dakika şeffaflaşana kadar çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kıyılmış pazı saplarını ekleyip 2 dakika kavurun.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pazı yaprakları ve loru katıp 5 dakika daha pişirerek servis edin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Lorlu Pazı Kavurması kıvamı oturunca servis edin, fazla bekletmek peynirli dokuyu sertleştirir.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Lorlu Pazı Kavurması tamamlanınca 3 dakika dinlendirin, iç sıcaklık dengelensin diye sonra dilimleyin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-yumurta-muffin",
+    "title": "Lorlu Yumurta Muffin",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Lorlu yumurta muffin, fırında pişen porsiyonluk kalıplarıyla yüksek proteinli kahvaltı hazırlığı için uygundur.",
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "totalMinutes": 30,
+    "servingCount": 6,
+    "averageCalories": 156,
+    "protein": 14,
+    "carbs": 4,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Karışımı kalıba üçte iki seviyede bırakmak taşmayı önler.",
+    "servingSuggestion": "Yanına maydanoz yaprakları koyarak sıcak servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Yumurta",
+        "amount": "6",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Ispanak",
+        "amount": "1",
+        "unit": "avuç",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lorlu Yumurta Muffin akışı için tava, kase ve ölçüleri hazır edin, pişirme başlayınca ritim bozulmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yumurta ve loru çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ispanak ve maydanozu karışıma ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karışımı kalıplara paylaştırıp 190°C fırında 18 dakika pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Lorlu Yumurta Muffin kıvamı oturunca servis edin, fazla bekletmek peynirli dokuyu sertleştirir.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-zahter-salatasi-kilis-usulu",
+    "title": "Kilis Lorlu Zahter Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Kilis lorlu zahter salatası, taze zahteri lor ve zeytinyağıyla buluşturarak aromatik, ferah ve hızlı bir salata yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "totalMinutes": 10,
+    "servingCount": 4,
+    "averageCalories": 142,
+    "protein": 7,
+    "carbs": 4,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Zahteri çok ince kıymamak yapısını korur.",
+    "servingSuggestion": "Salatayı serin verin, yanına zeytin ve ince pide dilimleri koyun.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen",
+      "yaz-tarifi"
+    ],
+    "allergens": [
+      "SUSAM",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Taze zahter",
+        "amount": "1",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Zahteri ayıklayın, sert sapları çıkarıp yaprakları bol suda yıkayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yıkanmış zahteri 5 dakika sirkeli suda bekletin ve tamamen süzdürün.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lor peynirini zeytinyağı, pul biber ve limon kabuğuyla karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Domates ve salatalığı küçük doğrayın, zahterle birlikte kaseye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Nar ekşili zeytinyağı sosunu gezdirin, loru üstte bırakıp bekletmeden servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Zahter yapraklarını soslamadan önce kurulayın, su kalırsa nar ekşisi incelir.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Loru son katmanda bırakın, aromatik yaprakların arasında ezilip hamurlaşmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-zahterli-yumurta-pide-antalya-usulu",
+    "title": "Lorlu Zahterli Yumurta Pide",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Antalya usulü lorlu zahterli yumurta pide, ince hamuru lor, zahter ve yumurtayla buluşturarak sıcak, kokulu ve tok bir kahvaltı yapar.",
+    "prepMinutes": 16,
+    "cookMinutes": 16,
+    "totalMinutes": 32,
+    "servingCount": 2,
+    "averageCalories": 312,
+    "protein": 15,
+    "carbs": 27,
+    "fat": 16,
+    "isFeatured": true,
+    "tipNote": "Yumurtayı son 6 dakikada kırmak sarısının diri kalmasını sağlar.",
+    "servingSuggestion": "Pideyi sıcak sunun, yanına domates dilimleri ve zeytin tabağı koyun.",
+    "tags": [
+      "firinda",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUSAM",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Pide hamuru",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zahter",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lorlu Zahterli Yumurta Pide yapmadan önce ana malzemeleri ayırın, sıcak adımlar sırasında arama yapılmasın diye tezgahı düzenleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lorlu Zahterli Yumurta Pide hamurunu unlu tezgahta ince oval açın, kenarlar yırtılmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lor ve zahteri yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Lorlu Zahterli Yumurta Pide pidesini 190°C fırında 16 dakika pişirin, yumurta setleşsin.",
+        "timerSeconds": 960
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Lorlu Zahterli Yumurta Pide tamamlanınca 3 dakika dinlendirin, iç sıcaklık dengelensin diye sonra dilimleyin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-zeytinli-katmer-izmir-usulu",
+    "title": "Lorlu Zeytinli Katmer",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "İzmir lorlu zeytinli katmer, ince hamuru lor ve zeytinle katlayarak dışı gevrek, içi yumuşak bir kahvaltı hamur işi çıkarır.",
+    "prepMinutes": 18,
+    "cookMinutes": 16,
+    "totalMinutes": 34,
+    "servingCount": 6,
+    "averageCalories": 236,
+    "protein": 7,
+    "carbs": 27,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Hamur katlarını az yağlayarak çalışmak katmerin gevrek ama ağır olmayan bir doku vermesini sağlar.",
+    "servingSuggestion": "Katmeri ılık verin, yanına domates, salatalık ve demli çay koyun.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Siyah zeytin",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lorlu Zeytinli Katmer için kullanılacak kapları hazırlayın, hamur veya yumurta bekleyip dokusunu kaybetmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lorlu Zeytinli Katmer için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru yoğurup dinlendirin, Lorlu Zeytinli Katmer için hazır tutun.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "İçi yerleştirip katmeri hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Katmeri 14 dakika pişirin.",
+        "timerSeconds": 840
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Lorlu Zeytinli Katmer parçalarını ılık tabaklara alın, yanında çayla hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lorlu-zeytinli-otlu-krep-izmir-usulu",
+    "title": "Lorlu Zeytinli Otlu Krep",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "İzmir usulü lorlu zeytinli otlu krep, ince krebi lor, zeytin ve taze otlarla buluşturarak hafif, tuzlu ve sabahlık bir tabak yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 8,
+    "totalMinutes": 18,
+    "servingCount": 2,
+    "averageCalories": 248,
+    "protein": 10,
+    "carbs": 21,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Krep hamurunu 5 dakika dinlendirmek tavada daha pürüzsüz açılmasını sağlar.",
+    "servingSuggestion": "Krepleri ılık sunun, yanına yeşillik ve süzme yoğurt koyun.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Zeytin",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lorlu Zeytinli Otlu Krep başlangıcında kuru ve yaş malzemeleri ayrı tutun, karıştırma aşaması temiz ilerlesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lorlu Zeytinli Otlu Krep krep hamurunu pürüzsüz olana kadar çırpın, topak kalmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "İnce krepleri 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "İç harçla katlayıp servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Lorlu Zeytinli Otlu Krep parçalarını ılık tabaklara alın, yanında çayla hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lorraine-kis-tart",
+    "title": "Lorraine Kiş Tart",
+    "cuisine": "fr",
+    "type": "YEMEK",
+    "description": "Quiche Lorraine, tereyağlı tart hamurunu pastırma, yumurta, krema ve peynirli harçla fırınlayan zengin Fransız klasiğidir.",
+    "prepMinutes": 45,
+    "cookMinutes": 45,
+    "totalMinutes": 90,
+    "servingCount": 6,
+    "averageCalories": 510,
+    "protein": 18,
+    "carbs": 34,
+    "fat": 34,
+    "isFeatured": false,
+    "tipNote": "Hamuru kör pişirmek kremalı harç eklenince tabanın ıslanmasını önler.",
+    "servingSuggestion": "Yeşil salata ve hardallı sosla ılık dilimler halinde servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "firinda"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğuk tereyağı",
+        "amount": "140",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "250",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Pastırma veya bacon",
+        "amount": "180",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Gruyere peyniri",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Muskat",
+        "amount": "0.25",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un ve tereyağını kum gibi ufalayıp az soğuk suyla hamur yapın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru kalıba yayıp 20 dakika soğutun.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru ağırlıkla 180°C fırında 15 dakika kör pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pastırmayı tavada 5 dakika hafif çıtırlaştırın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yumurta, krema, peynir, muskat ve karabiberi çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Pastırmayı tabana yayıp kremalı harcı dökün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Kişi 180°C fırında 28-30 dakika pişirin.",
+        "timerSeconds": 1800
+      }
+    ]
+  },
+  {
+    "slug": "loubia",
+    "title": "Loubia",
+    "cuisine": "ma",
+    "type": "YEMEK",
+    "description": "Fas beyaz fasulye yemeği domatesli sos ve kimyonla kış sofralarında doyurucu bir tencere olur.",
+    "prepMinutes": 20,
+    "cookMinutes": 75,
+    "totalMinutes": 95,
+    "servingCount": 5,
+    "averageCalories": 280,
+    "protein": 11,
+    "carbs": 33,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Kuru baklagili gece boyunca ılık suda bekletmek pişme süresini yarıya indirir, gaz yapma etkisini de azaltır.",
+    "servingSuggestion": "Yanına bulgur pilavı ve turşu koyarak derin kasede verin; üzerine pul biber gezdirin.",
+    "tags": [
+      "vegan",
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Kuru fasulye",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Domates püresi",
+        "amount": "300",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "3",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Kimyon",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuru fasulyeyi akşamdan ıslatıp ertesi gün süzün.",
+        "timerSeconds": 28800
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Domates, sarımsak, kimyon ve zeytinyağını tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Baharatlı domates tabanını 5 dakika pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Fasulye ve sıcak suyu ekleyip kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Loubia'yı 75 dakika kısık ateşte pişirin, fasulye kabuğu ayrılmasın diye taşırmayın.",
+        "timerSeconds": 4500
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "10 dakika dinlendirip ekmek veya pilavla servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "louisiana-karidesli-gumbo",
+    "title": "Louisiana Karidesli Gumbo",
+    "cuisine": "us",
+    "type": "CORBA",
+    "description": "Louisiana karidesli gumbo, koyu roux, kereviz, biber, soğan, sosis ve karidesle derin aromalı bir Güney çorbası hazırlar.",
+    "prepMinutes": 25,
+    "cookMinutes": 80,
+    "totalMinutes": 105,
+    "servingCount": 6,
+    "averageCalories": 470,
+    "protein": 28,
+    "carbs": 34,
+    "fat": 24,
+    "isFeatured": false,
+    "tipNote": "Rouxu sürekli karıştırmak yanık acılığı oluşmasını önler.",
+    "servingSuggestion": "Beyaz pirinç ve taze soğanla sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DENIZ_URUNLERI",
+      "KEREVIZ"
+    ],
+    "ingredients": [
+      {
+        "name": "Karides",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tütsülü sosis",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kereviz sapı",
+        "amount": "2",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Yeşil biber",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Pişmiş pirinç",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un ve yağı tencerede 18-20 dakika koyu kahverengi roux olana kadar karıştırın.",
+        "timerSeconds": 1140
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kereviz sapı, biber ve soğanı rouxa ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sosisleri katıp 6 dakika kavurun.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sıcak su ekleyip gumboyu 45 dakika kaynatın.",
+        "timerSeconds": 2700
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karidesleri ekleyip 5 dakika pişirin, pirinçle servis edin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "loukoumades",
+    "title": "Loukoumades",
+    "cuisine": "gr",
+    "type": "TATLI",
+    "description": "Yunan bal lokmaları kızgın yağda kabarır, üzerine bal ve tarçın gelince şenlik tatlısına döner.",
+    "prepMinutes": 45,
+    "cookMinutes": 15,
+    "totalMinutes": 60,
+    "servingCount": 6,
+    "averageCalories": 310,
+    "protein": 5,
+    "carbs": 48,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Hamuru 35 dakika mayalandırmak kızarırken içinin hafif ve boş kalmasını sağlar.",
+    "servingSuggestion": "Sıcak lokmaları bal gezdirip tarçın serptikten sonra küçük tabaklarda sunun.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "350",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Maya",
+        "amount": "7",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "250",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, maya ve sütle akışkan hamur hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 35 dakika mayalandırın, kızartmada kabarsın.",
+        "timerSeconds": 2100
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yağı 170°C'ye ısıtın ve kaşıkla hamur parçaları bırakın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Loukoumades parçalarını 4 dakika altın renk alana kadar kızartın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Fazla yağını süzdürüp bal ve tarçınla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lucuma-kremali-kup-peru-usulu",
+    "title": "Lucuma Kremalı Kup",
+    "cuisine": "pe",
+    "type": "TATLI",
+    "description": "Lucuma kremalı kup, lucuma püresini süt kreması ve vanilyayla buluşturarak karamelsi, serin ve kaşıklık bir tatlı çıkarır.",
+    "prepMinutes": 12,
+    "cookMinutes": 0,
+    "totalMinutes": 12,
+    "servingCount": 4,
+    "averageCalories": 244,
+    "protein": 4,
+    "carbs": 28,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Lucuma püresini aşırı çırpmamak kup içinde yoğun meyve tadını korur.",
+    "servingSuggestion": "Kupları iyice soğutun, üstüne lucuma püresi çizgisi ve bisküvi kırığı ekleyin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Lucuma püresi",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Vanilya",
+        "amount": "0.25",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kremayı soğuk kapta 2 dakika çırpın, kesilmesin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lucuma püresi ve vanilyayı kremaya spatulayla ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karışımı kuplara paylaştırıp yüzeyi düzeltin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kup tatlısını 30 dakika soğutun, krema sabitlensin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Serviste üstüne bisküvi kırıntısı serpin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lucuma-yogurt-kup-peru-usulu",
+    "title": "Lucuma Yoğurt Kup",
+    "cuisine": "pe",
+    "type": "TATLI",
+    "description": "Lucuma yoğurt kup, yoğurdu lucuma püresi ve bisküvi kırıntısıyla buluşturarak serin, hafif karamelimsi ve küçük porsiyonluk bir tatlı oluşturur.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "totalMinutes": 10,
+    "servingCount": 4,
+    "averageCalories": 208,
+    "protein": 5,
+    "carbs": 24,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Lucuma püresini yoğurda nazikçe katlamak kup içinde iki tonlu bir görünüm bırakır.",
+    "servingSuggestion": "Soğuk sunun, üst katmana bal gezdirip bisküvi kırıntısı serpin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Yoğurt",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Lucuma püresi",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Bisküvi kırıntısı",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yoğurt ve balı 1 dakika pürüzsüz çırpın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kup tabanına kırıntıyı ince kat halinde serpin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lucuma püresini yoğurtla dönüşümlü yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Katları kaşıkla düzeltin, ağırlık bir yana kaymasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tatlıyı 20 dakika soğutun ve meyveyle servis edin.",
+        "timerSeconds": 1200
+      }
+    ]
+  },
+  {
+    "slug": "lucumali-yogurt-kupu-peru-usulu",
+    "title": "Lucumalı Yoğurt Kupu",
+    "cuisine": "pe",
+    "type": "TATLI",
+    "description": "Peru usulü lucumalı yoğurt kupu, yoğurdu lucuma püresi ve bademle buluşturarak hafif ama aromalı bir tatlı yapar.",
+    "prepMinutes": 8,
+    "cookMinutes": 0,
+    "totalMinutes": 8,
+    "servingCount": 4,
+    "averageCalories": 182,
+    "protein": 6,
+    "carbs": 17,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Lucuma püresini yoğurda tamamen karıştırmayıp katmanlı bırakmak tadın daha belirgin gelmesini sağlar.",
+    "servingSuggestion": "Üzerine badem serpip soğuk servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Yoğurt",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Lucuma püresi",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Vanilya",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Badem",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yoğurdu bal ve vanilya ile 1 dakika çırpın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lucuma püresini ayrı kapta ezerek akışkan hale getirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kup tabanına yoğurt, üstüne lucuma püresi koyun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Bademi servis öncesi serpin, çıtırlığı kaybolmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kup tatlısını 20 dakika soğutun.",
+        "timerSeconds": 1200
+      }
+    ]
+  },
+  {
+    "slug": "lyon-hardalli-pirasa-graten",
+    "title": "Lyon Hardallı Pırasa Graten",
+    "cuisine": "fr",
+    "type": "YEMEK",
+    "description": "Fransız usulü hardallı pırasa graten, yumuşamış pırasayı krema, hardal ve peynirle fırında kremamsı bir sebze tabağına taşır.",
+    "prepMinutes": 14,
+    "cookMinutes": 34,
+    "totalMinutes": 48,
+    "servingCount": 4,
+    "averageCalories": 315,
+    "protein": 10,
+    "carbs": 20,
+    "fat": 23,
+    "isFeatured": false,
+    "tipNote": "Pırasayı önceden sotelemek gratende fazla su bırakmasını engeller.",
+    "servingSuggestion": "Lyon hardallı pırasa gratenini fırından çıkınca kaşarlı üstü bozulmadan kare dilimleyin.",
+    "tags": [
+      "vejetaryen",
+      "firinda"
+    ],
+    "allergens": [
+      "SUT",
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "Pırasa",
+        "amount": "5",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Hardal",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kaşar peyniri",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pırasaları verev doğrayıp tereyağında 8 dakika soteleyin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Krema ve hardalı küçük kasede çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pırasayı fırın kabına yayıp kremalı sosu dökün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kaşar peynirini üstüne serpin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "190°C fırında 22-25 dakika üstü kızarana kadar pişirin.",
+        "timerSeconds": 1410
+      }
+    ]
+  },
+  {
+    "slug": "lyon-quiche-lorraine",
+    "title": "Lyon Quiche Lorraine",
+    "cuisine": "fr",
+    "type": "YEMEK",
+    "description": "Quiche Lorraine, kör pişmiş tart tabanını pastırma, yumurta, krema ve gruyere dolguyla doldurup fırında set olan Fransız tuzlu tartıdır.",
+    "prepMinutes": 25,
+    "cookMinutes": 45,
+    "totalMinutes": 70,
+    "servingCount": 6,
+    "averageCalories": 580,
+    "protein": 24,
+    "carbs": 30,
+    "fat": 42,
+    "isFeatured": false,
+    "tipNote": "Dolguyu taşırmadan dökmek için tart kabını fırın tepsisinde doldurun.",
+    "servingSuggestion": "Ilık dilimleri yeşil salata ve hardalsız vinegretle servis edin.",
+    "tags": [
+      "firinda",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Tart hamuru",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dana pastırma",
+        "amount": "180",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Gruyere peyniri",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Muskat",
+        "amount": "0.25",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tart hamurunu kalıba yerleştirip 180°C fırında 12 dakika kör pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pastırmayı tavada 2 dakika hafif kızartın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yumurta, krema, süt, muskat ve peyniri çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pastırmayı tabana yayıp yumurtalı dolguyu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "180°C fırında 35-40 dakika dolgu set olana kadar pişirin.",
+        "timerSeconds": 2400
+      }
+    ]
+  },
+  {
+    "slug": "lyon-salata-lyonnaise",
+    "title": "Lyon Salata Lyonnaise",
+    "cuisine": "fr",
+    "type": "SALATA",
+    "description": "Salade lyonnaise, frisee yeşilliği, çıtır pastırma, kruton, poşe yumurta ve Dijonlu sosla yapılan klasik Fransız bistro salatasıdır.",
+    "prepMinutes": 20,
+    "cookMinutes": 12,
+    "totalMinutes": 32,
+    "servingCount": 4,
+    "averageCalories": 330,
+    "protein": 15,
+    "carbs": 18,
+    "fat": 23,
+    "isFeatured": false,
+    "tipNote": "Poşe yumurtayı 3 dakika tutmak sarısının salata sosuna karışmasını sağlar.",
+    "servingSuggestion": "Yumurtayı servis anında kesip sıcak krutonlarla hemen sunun.",
+    "tags": [
+      "misafir-sofrasi",
+      "dusuk-kalorili"
+    ],
+    "allergens": [
+      "YUMURTA",
+      "GLUTEN",
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "Frisee veya kıvırcık",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dana bacon veya pastırma",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Baget ekmek",
+        "amount": "4",
+        "unit": "dilim",
+        "group": null
+      },
+      {
+        "name": "Dijon hardalı",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Üzüm sirkesi",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Frenk soğanı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Baget küplerini tavada 4 dakika kıtırlaştırın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pastırmayı 5 dakika çıtır olana kadar pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hardal, sirke, zeytinyağı, tuz ve karabiberi çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yeşilliği sosun yarısıyla nazikçe harmanlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yumurtaları sirkeli suda 3 dakika poşe edin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Salatayı kruton, pastırma ve poşe yumurtayla tabaklayın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "maakouda-fas-usulu",
+    "title": "Maakouda",
+    "cuisine": "ma",
+    "type": "ATISTIRMALIK",
+    "description": "Maakouda, baharatlı patates harcını küçük köfteler halinde kızartarak Fas mutfağında çay saatiyle sokak atıştırması arasını bağlayan sevilen bir lokma yapar.",
+    "prepMinutes": 15,
+    "cookMinutes": 15,
+    "totalMinutes": 30,
+    "servingCount": 6,
+    "averageCalories": 164,
+    "protein": 4,
+    "carbs": 20,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Patates karışımını şekil vermeden önce 10 dakika soğutmak kızartırken dağılmayı azaltır.",
+    "servingSuggestion": "Limon ve acı sosla sıcak servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Patates",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Kimyon",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ayçiçek yağı",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "700 gr patatesi tuzlu suda 22 dakika haşlayıp süzün.",
+        "timerSeconds": 1320
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Patatesi ezip yumurta, kıyılmış maydanoz ve kimyonla karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Harcı 10 dakika dinlendirin, nişasta toparlansın ve köfteler dağılmasın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Küçük yassı köfteler yapıp tavada orta ateşte toplam 8 dakika kızartın.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "mac-and-cheese",
+    "title": "Mac and Cheese",
+    "cuisine": "us",
+    "type": "YEMEK",
+    "description": "Dirsek makarnanın peynirli krema sosla buluştuğu konforlu Amerikan yemeği.",
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 520,
+    "protein": 18,
+    "carbs": 48,
+    "fat": 28,
+    "isFeatured": false,
+    "tipNote": "Peyniri sos ocaktan inince ekleyin; yüksek ısı peynirin yağını ayırır.",
+    "servingSuggestion": "Fırınlanmış ekmek kırıntısıyla servis edin.",
+    "tags": [
+      "vejetaryen",
+      "cocuk-dostu"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Dirsek makarna",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Cheddar peyniri",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ekmek kırıntısı",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Makarnayı tuzlu suda 8 dakika haşlayıp süzün.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tereyağını eritin, unu ekleyip 2 dakika kavurun.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sütü azar azar ekleyip sosu 5 dakika çırparak pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Peyniri ocak kapalıyken ekleyin, yüksek ısıda yağ kusmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Makarnayı sosla karıştırın ve gerekirse 2 dakika kısık ateşte ısıtın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kremamsı kıvamdayken sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "macar-visneli-tarhonya-pilavi",
+    "title": "Macar Vişneli Tarhonya Pilavı",
+    "cuisine": "hu",
+    "type": "YEMEK",
+    "description": "Macar usulü vişneli tarhonya pilavı, kavrulmuş tarhonyayı vişne, soğan ve paprika ile tatlı ekşi bir garnitüre dönüştürür.",
+    "prepMinutes": 10,
+    "cookMinutes": 18,
+    "totalMinutes": 28,
+    "servingCount": 4,
+    "averageCalories": 325,
+    "protein": 9,
+    "carbs": 58,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Tarhonyayı önce kavurmak tanelerin pilav gibi ayrı kalmasını sağlar.",
+    "servingSuggestion": "Izgara tavuk yanında sıcak garnitür olarak servis edin.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Tarhonya",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Vişne",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tatlı paprika",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sebze suyu",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soğanı sıvı yağda 4 dakika yumuşayana kadar kavurun.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tarhonyayı ekleyip 3 dakika hafif renk alana kadar çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Paprika, vişne, sebze suyu ve tuzu tencereye katın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kısık ateşte 15-16 dakika suyunu çekene kadar pişirin.",
+        "timerSeconds": 930
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pilavı 8 dakika demlendirip servis edin.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "madartej",
+    "title": "Madártej",
+    "cuisine": "hu",
+    "type": "TATLI",
+    "description": "Madártej, vanilyalı süt içinde yüzen hafif beze parçalarıyla Macar mutfağının zarif ve nostaljik kaşık tatlılarından biridir.",
+    "prepMinutes": 20,
+    "cookMinutes": 20,
+    "totalMinutes": 40,
+    "servingCount": 6,
+    "averageCalories": 176,
+    "protein": 6,
+    "carbs": 24,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Beze parçalarını sütte uzun tutmamak formunun sönmesini önler.",
+    "servingSuggestion": "Tatlıyı buzdolabında en az 2 saat soğutup kaselerde servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "1",
+        "unit": "lt",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Vanilya",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yumurta aklarını şekerin yarısıyla 4 dakika sert köpük yapın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sütü vanilyayla 4 dakika ısıtın, kaynatıp taşırmayın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bezeleri süte kaşıkla bırakıp 2 dakika pişirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yumurta sarılarını kalan şekerle çırpıp sıcak sütle dengeleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kremayı 5 dakika kısık ateşte koyulaştırın, yumurta kesilmesin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Madárteji 1 saat soğutup bezelerle servis edin.",
+        "timerSeconds": 3600
+      }
+    ]
+  }
+]

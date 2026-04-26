@@ -1,0 +1,4456 @@
+[
+  {
+    "slug": "gyros",
+    "title": "Gyros",
+    "cuisine": "gr",
+    "type": "YEMEK",
+    "description": "Yunan sokaklarında pita, baharatlı et ve yoğurtlu sosla elde yenilen doyurucu dürüm.",
+    "prepMinutes": 25,
+    "cookMinutes": 20,
+    "totalMinutes": 65,
+    "servingCount": 4,
+    "averageCalories": 540,
+    "protein": 30,
+    "carbs": 40,
+    "fat": 26,
+    "isFeatured": false,
+    "tipNote": "Eti ince şerit kesin; yüksek ateşte kısa sürede kızarır. İnce kesilmiş ette 20 dakika yeterlidir; kalın parça kullanırsanız süreyi 1 saate çıkarın.",
+    "servingSuggestion": "Pita içinde domates, soğan ve tzatzikiyle servis edin.",
+    "tags": [
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana antrikot",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pita ekmeği",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kekik",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Eti ince şeritler halinde kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yoğurt, kekik ve tuzla eti karıştırıp 20 dakika marine edin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tavayı kızgın hale getirip eti tek kat halinde yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Eti 8 dakika pişirin, tavada kalabalık olmasın diye gerekirse iki parti yapın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pitaları 2 dakika ısıtın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Pitaları et, soğan ve isteğe göre yoğurtlu sosla doldurun.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "haemul-pajeon",
+    "title": "Haemul Pajeon",
+    "cuisine": "kr",
+    "type": "APERATIF",
+    "description": "Haemul pajeon, taze soğanlı hamuru karides ve kalamarla tavada çıtırlaştıran, soya sirkeli sosla yenilen Kore deniz mahsullü pankekidir.",
+    "prepMinutes": 15,
+    "cookMinutes": 14,
+    "totalMinutes": 29,
+    "servingCount": 4,
+    "averageCalories": 340,
+    "protein": 20,
+    "carbs": 38,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Tavayı iyi ısıtmak pajeonun ortası yumuşak kalırken kenarını çıtır yapar.",
+    "servingSuggestion": "Soya sirkeli dip sosla üçgen dilimler halinde sıcak servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA",
+      "DENIZ_URUNLERI",
+      "SOYA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Karides",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kalamar",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Taze soğan",
+        "amount": "8",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Pirinç sirkesi",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, yumurta ve soğuk suyla akışkan hamur hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Taze soğanları uzun parçalar halinde kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tavaya yağ koyup taze soğanları tek sıra yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamuru döküp deniz mahsullerini üzerine dağıtın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Her yüzü 5-6 dakika çıtır olana kadar pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Soya sosu ve sirkeyle hazırlanan sosla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "hakkari-doleme-balkabakli",
+    "title": "Hakkari Doleme",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Hakkari doleme, ince bulgurlu kıyma köftelerini bal kabağı, soğan, nane ve hafif tatlı suyla aynı tencerede pişirir.",
+    "prepMinutes": 35,
+    "cookMinutes": 35,
+    "totalMinutes": 70,
+    "servingCount": 6,
+    "averageCalories": 430,
+    "protein": 22,
+    "carbs": 54,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Köfteleri kabağın üstüne nazik yerleştirmek tencerede dağılmalarını önler.",
+    "servingSuggestion": "Yoğurt ve kuru nane ile derin tabakta sıcak servis edin.",
+    "tags": [
+      "tek-tencere",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana kıyma",
+        "amount": "350",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "İnce bulgur",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Bal kabağı",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kuru nane",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kimyon",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Pul biber",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kıyma, ince bulgur, yumurta, kimyon, pul biber ve tuzu 8 dakika yoğurun.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Harcı ceviz büyüklüğünde köftelere ayırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bal kabağını iri küp, soğanları yarım ay doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tencereye yağ, soğan ve kabağı katman halinde dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Köfteleri kabakların üstüne yerleştirip şeker ve nane serpin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "1.5 su bardağı sıcak su ekleyip kapağı kapalı 30 dakika pişirin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Tencereyi 5 dakika dinlendirip dağılmadan servis edin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "halaszle",
+    "title": "Halászlé",
+    "cuisine": "hu",
+    "type": "CORBA",
+    "description": "Halászlé, tatlı su balığı ve bol kırmızı biberle pişen, Macaristan'da özellikle nehir kıyılarında görülen parlak renkli bir balık çorbasıdır.",
+    "prepMinutes": 20,
+    "cookMinutes": 40,
+    "totalMinutes": 60,
+    "servingCount": 6,
+    "averageCalories": 214,
+    "protein": 24,
+    "carbs": 8,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Balığı ekledikten sonra tencereyi sert karıştırmamak etin dağılmasını önler.",
+    "servingSuggestion": "Yanına limon dilimleriyle sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Beyaz etli balık",
+        "amount": "800",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Toz kırmızı biber",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kapya biber",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "2 soğanı, 1 kapya biberi ve 2 domatesi küçük doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sebzeleri orta ateşte 10 dakika pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "2 yemek kaşığı kırmızı biberi ekleyip 30 saniye karıştırın, yanıp acılaşmasın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "1.2 litre suyu katıp 15 dakika kaynatın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "800 gr balığı iri parçalar halinde ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Balığı kısık ateşte 20 dakika pişirin, parçalar dağılmasın.",
+        "timerSeconds": 1200
+      }
+    ]
+  },
+  {
+    "slug": "hallongrottor",
+    "title": "Hallongrottor",
+    "cuisine": "se",
+    "type": "TATLI",
+    "description": "Hallongrottor, ortası reçelli küçük kurabiyeleriyle İsveç kahve saatlerinde servis edilen tereyağlı ve kırılgan bir tatlıdır.",
+    "prepMinutes": 15,
+    "cookMinutes": 15,
+    "totalMinutes": 30,
+    "servingCount": 16,
+    "averageCalories": 118,
+    "protein": 1,
+    "carbs": 14,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Hamuru fazla yoğurmamak kurabiyenin kısa ve kumlu dokusunu korur.",
+    "servingSuggestion": "Kahve yanında ılık ya da soğuk servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Vanilya",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ahududu reçeli",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tereyağını küp kesip oda sıcaklığında yumuşatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Un, şeker ve vanilyayla yumuşak kurabiye hamuru hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru küçük toplara ayırıp ortalarını başparmakla çukurlaştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Çukurlara frambuaz reçeli koyun, kenarlara taşırmayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kurabiyeleri 180°C fırında 13 dakika pişirin.",
+        "timerSeconds": 780
+      }
+    ]
+  },
+  {
+    "slug": "halloumi-izgara",
+    "title": "Halloumi Izgara",
+    "cuisine": "gr",
+    "type": "APERATIF",
+    "description": "Kıbrıs ve Levant tabaklarında tuzlu peynirin ızgarada çizgi çizgi kızaran sade hali.",
+    "prepMinutes": 5,
+    "cookMinutes": 6,
+    "totalMinutes": 11,
+    "servingCount": 4,
+    "averageCalories": 260,
+    "protein": 16,
+    "carbs": 4,
+    "fat": 19,
+    "isFeatured": false,
+    "tipNote": "Peyniri 1 cm kalınlığında kesin; daha ince dilimler tavada kurur.",
+    "servingSuggestion": "Limon, nane ve domatesle servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Halloumi peyniri",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "8",
+        "unit": "yaprak",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Halloumi peynirini 1 cm kalınlığında dilimleyip yüzeyini kurulayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Izgara tavayı iyice ısıtın ve peyniri tavaya aralıklı yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hallouminin her yüzünü 3 dakika ızgara izi çıkana kadar pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Zeytinyağı, limon ve nane ekleyerek peynir soğumadan servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "hamsi-kusu",
+    "title": "Hamsi Kuşu",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Hamsi kuşu, ayıklanmış hamsilerin yeşillikli içle kapatılıp tavada kızartıldığı Karadeniz işi bir lokmalıktır.",
+    "prepMinutes": 25,
+    "cookMinutes": 12,
+    "totalMinutes": 37,
+    "servingCount": 4,
+    "averageCalories": 228,
+    "protein": 20,
+    "carbs": 8,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Hamsileri bastırmadan kapatmak tavada iç kısmın açılmasını önler.",
+    "servingSuggestion": "Oda sıcaklığında servis edin, tadını öne çıkarır; yanına kıtır ekmek veya lavaş dilimleri koyun.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI",
+      "YUMURTA",
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Hamsi",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Hamsileri temizleyip kılçıklarını alın ve yaprak gibi açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Maydanozlu iç harcı hazırlayıp iki hamsinin arasına ince tabaka halinde yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Parçaları yumurta ve una bulayın, kaplamanın balığı tamamen tutmasını sağlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamsi kuşlarını 8 dakika kızartın ve limonla sıcak servis edin.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "hamsi-kususu-samsun-usulu",
+    "title": "Hamsi Kuşusu",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Samsun hamsi kuşusu, hamsiyi mısır unu ve soğanla birleştirip tavada kızartarak dışı çıtır, içi sulu bir kıyı lokması hazırlar.",
+    "prepMinutes": 18,
+    "cookMinutes": 10,
+    "totalMinutes": 28,
+    "servingCount": 4,
+    "averageCalories": 246,
+    "protein": 18,
+    "carbs": 12,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Hamsiyi ince doğramak karışımın tavada kolay şekil almasını sağlar.",
+    "servingSuggestion": "Deniz tuzu, zeytinyağı ve doğranmış dereotu üzerine gezdirip limon dilimleriyle süsleyin.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "YUMURTA",
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Hamsi fileto",
+        "amount": "350",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Mısır unu",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Hamsileri ayıklayıp kılçıklarını çıkarın ve kurulayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı ince doğrayıp yumurtayla çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamsileri yumurtalı karışıma ekleyip küçük parçalar halinde şekillendirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Parçaları tavaya aralıklı yerleştirin, birbirine yapışmasın diye boşluk bırakın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Hamsi kuşusunu toplam 8 dakika kızartın.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "hamsi-pastirmasi-salatasi-trabzon-usulu",
+    "title": "Hamsi Pastırması Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Trabzon hamsi pastırması salatası, marine hamsiyi roka ve soğanla buluşturarak tuzlu, keskin ve meze sofralarına uygun bir tabak yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 0,
+    "totalMinutes": 12,
+    "servingCount": 4,
+    "averageCalories": 142,
+    "protein": 12,
+    "carbs": 4,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Soğanı kısa süre limonda bekletmek salatadaki sertliği yumuşatır.",
+    "servingSuggestion": "Serin servis edin, yanında limon dilimleri ve kızarmış ekmek sunun.",
+    "tags": [
+      "30-dakika-alti",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Hamsi pastırması",
+        "amount": "180",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Roka",
+        "amount": "1",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Kırmızı soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Hamsi pastırmasını ince şeritler halinde kesin, tuzu yoğun parçaları ayırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Roka, maydanoz ve taze soğanı yıkayıp kurutun, balık tuzu yeşilliği söndürmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Limon suyu, zeytinyağı ve az karabiberi 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yeşillikleri sosla hafifçe harmanlayın, hamsi şeritlerini üstüne yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Mısır ekmeği kırıntısı veya ince turp dilimiyle servis edin, ek sos eklemeyin, böylece hamsi tuzu yeşilliğin tazeliğini gölgelemez.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "hamsi-tava",
+    "title": "Hamsi Tava",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Karadeniz tavalarında hamsi mısır ununa bulanır, tek parça çevrilerek altın renkli pişer.",
+    "prepMinutes": 20,
+    "cookMinutes": 12,
+    "totalMinutes": 32,
+    "servingCount": 4,
+    "averageCalories": 310,
+    "protein": 26,
+    "carbs": 8,
+    "fat": 18,
+    "isFeatured": false,
+    "tipNote": "Hamsileri iyice kurulayıp mısır ununa bulayın; tavada daha çıtır kızarır.",
+    "servingSuggestion": "Yanına roka, kırmızı soğan ve limon koyup sıcak servis edin.",
+    "tags": [
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Hamsi",
+        "amount": "800",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Mısır unu",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Hamsileri ayıklayıp yıkayın ve kağıt havluyla kurulayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mısır unu ve tuzu geniş tabakta karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamsileri mısır ununa bulayıp tavaya daire şeklinde dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamsilerin ilk yüzünü 6 dakika pişirin, balıklar dağılmasın diye kabuk tutsun.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kapakla çevirip diğer yüzünü 6 dakika pişirin.",
+        "timerSeconds": 360
+      }
+    ]
+  },
+  {
+    "slug": "hamsikoy-sutlaci",
+    "title": "Hamsiköy Sütlacı",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Hamsiköy sütlacı, bol süt ve az pirinçle ağır kıvam alıp üzeri fırında kızartılan Trabzon işi bir tatlıdır.",
+    "prepMinutes": 10,
+    "cookMinutes": 55,
+    "totalMinutes": 65,
+    "servingCount": 6,
+    "averageCalories": 256,
+    "protein": 8,
+    "carbs": 38,
+    "fat": 8,
+    "isFeatured": true,
+    "tipNote": "Pirinci çok diri bırakmayın; sütlaç fırın gördükten sonra toparlanırken tane tane kalmalıdır.",
+    "servingSuggestion": "Üzerine tarçın serperek ılık servis edin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "1.5",
+        "unit": "lt",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "180",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pirinci yıkayıp suyla 10 dakika yarı yumuşak haşlayın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sütü ekleyip kısık ateşte 35 dakika koyulaştırın.",
+        "timerSeconds": 2100
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Şekeri son bölümde katın, pirinç sertleşmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sütlacı fırın kaplarına paylaştırın ve tepsiye sıcak su ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "220°C fırında 10 dakika üstü beneklenene kadar kızartın.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "hamsili-ekmek-rize-usulu",
+    "title": "Hamsili Ekmek",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Hamsili ekmek, mısır unlu tabanın üzerine dizilen hamsilerle pişen ve Karadeniz kıyısında sıcak yenilen yerel bir tepsi yemeğidir.",
+    "prepMinutes": 25,
+    "cookMinutes": 30,
+    "totalMinutes": 55,
+    "servingCount": 6,
+    "averageCalories": 288,
+    "protein": 20,
+    "carbs": 24,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Tabanı kalın yaymayın; mısır unu fazla yükselirse hamsinin tadı geri düşer.",
+    "servingSuggestion": "Yanına maydanoz ve limon dilimleri koyarak servis edin.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Hamsi",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Mısır unu",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Hamsileri temizleyip kılçıklarını çıkarın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mısır unu, ince soğan, maydanoz ve tuzu karıştırarak taban harcı yapın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Harcı yağlanmış tepsiye yayın ve üstünü düzeltin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamsileri harcın üstüne sık dizin, ekmek yüzeyi açık kalmasın diye boşluk bırakmayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "200°C fırında 25 dakika pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tepsiyi 6 dakika dinlendirip dilimleyin, mısır unlu taban toparlansın.",
+        "timerSeconds": 360
+      }
+    ]
+  },
+  {
+    "slug": "hamsili-kabakli-firin-pilav-rize-usulu",
+    "title": "Hamsili Kabaklı Fırın Pilav",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Rize usulü hamsili kabaklı fırın pilav, hamsiyi kabak ve pirinçle buluşturarak sulu, hafif ve sofralık bir ana yemek yapar.",
+    "prepMinutes": 14,
+    "cookMinutes": 22,
+    "totalMinutes": 36,
+    "servingCount": 4,
+    "averageCalories": 304,
+    "protein": 19,
+    "carbs": 28,
+    "fat": 12,
+    "isFeatured": true,
+    "tipNote": "Kabağı ince dilimlemek pilav içinde fazla su bırakmasını azaltır.",
+    "servingSuggestion": "Sıcak servis edin, yanında limon dilimleri ve yeşil salata sunun.",
+    "tags": [
+      "misafir-sofrasi",
+      "firinda"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Hamsi fileto",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kabak",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pirinci berrak su gelene kadar yıkayıp süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kabağı küçük küpler halinde doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinci, kabağı ve sıcak suyu fırın kabında karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamsileri pilavın üstüne tek kat dizin, pirinç eşit pişsin diye yüzeyi kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kabı 190°C fırında 22 dakika pişirin.",
+        "timerSeconds": 1320
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Pilavı 8 dakika dinlendirip hamsileri bozmadan servis edin.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "hamsili-karalahana-sote-giresun-ev-usulu",
+    "title": "Giresun Hamsili Karalahana Sote",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Giresun hamsili karalahana sote, ince kıyılmış karalahanayı hamsiyle tavada birleştirerek tuzlu, yeşil ve kıyı karakterli bir yemek hazırlar.",
+    "prepMinutes": 14,
+    "cookMinutes": 16,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 198,
+    "protein": 16,
+    "carbs": 8,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Karalahanayı fazla uzun pişirmemek parlak rengini korur.",
+    "servingSuggestion": "Sıcak servis edin, yanında mısır ekmeği ve limon dilimleri sunun.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein",
+      "kis-tarifi"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Hamsi fileto",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Karalahana",
+        "amount": "1",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Mısır unu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karalahanayı ince doğrayıp hamsileri temizleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı zeytinyağında 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karalahanayı ve mısır ununu tavaya ekleyip 5 dakika soteleyin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamsileri tavaya katıp karalahana arasında nazikçe dağıtın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yemeği 6 dakika pişirin, hamsi dağılmasın diye fazla karıştırmayın.",
+        "timerSeconds": 360
+      }
+    ]
+  },
+  {
+    "slug": "hamsili-mantar-guveci-zonguldak-usulu",
+    "title": "Hamsili Mantar Güveç",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Zonguldak usulü hamsili mantar güveç, mantarı hamsi ve sarımsakla fırınlayarak sulu, tuzlu ve ekmek banmalık bir ana yemek ortaya çıkarır.",
+    "prepMinutes": 14,
+    "cookMinutes": 18,
+    "totalMinutes": 32,
+    "servingCount": 4,
+    "averageCalories": 238,
+    "protein": 20,
+    "carbs": 8,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Mantarları geniş doğramak fırında suyunu hemen bırakmasını önler.",
+    "servingSuggestion": "Taze limon ve roka ile soğumadan masaya götürün, yanına ılık patates eşlik etsin.",
+    "tags": [
+      "yuksek-protein",
+      "firinda"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Hamsi fileto",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kültür mantarı",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "3",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mantarları iri doğrayıp sarımsakla güveç kabına alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mantarları 200°C fırında 6 dakika ön pişirin, suyunu salıp güveci sulandırmasın diye açık bırakın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Temizlenmiş hamsileri mantarların üstüne tek kat yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Üstüne az zeytinyağı ve tuz gezdirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Güveci 12 dakika daha pişirin, hamsiler kurumasın.",
+        "timerSeconds": 720
+      }
+    ]
+  },
+  {
+    "slug": "hamsili-misir-ekmegi-tostu-samsun-usulu",
+    "title": "Hamsili Mısır Ekmeği Tostu",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Samsun usulü hamsili mısır ekmeği tostu, kızarmış mısır ekmeğini hamsi ve eriyen peynirle buluşturarak doyurucu bir kahvaltı hazırlar.",
+    "prepMinutes": 12,
+    "cookMinutes": 12,
+    "totalMinutes": 24,
+    "servingCount": 2,
+    "averageCalories": 332,
+    "protein": 23,
+    "carbs": 20,
+    "fat": 17,
+    "isFeatured": false,
+    "tipNote": "Hamsiyi tavadan aldıktan sonra 1 dakika bekletmek ekmeği ıslatmadan yerleştirmeyi kolaylaştırır.",
+    "servingSuggestion": "Yanında roka yapraklarıyla servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "SUT",
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Hamsi fileto",
+        "amount": "220",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Mısır ekmeği",
+        "amount": "4",
+        "unit": "dilim",
+        "group": null
+      },
+      {
+        "name": "Kaşar peyniri",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Roka",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "220 gr hamsi filetoyu kurulayıp tuzlayın, tavada su salmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tereyağını orta ateşte eritip hamsiyi 4 dakika pişirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Mısır ekmeği dilimlerini aynı tavada 2 dakika kızartın, balık yağı aroma versin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kaşarı sıcak ekmeklerin üstüne paylaştırın ve erimesi için kapak kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Hamsi ve rokayı ekmeklerin arasına yerleştirip hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "hamsili-misirli-pilav-giresun-usulu",
+    "title": "Hamsili Mısırlı Pilav",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Giresun usulü hamsili mısırlı pilav, pirinci mısır taneleri ve hamsiyle buluşturarak deniz kokulu, tane tane ve hafif bir ana yemek hazırlar.",
+    "prepMinutes": 14,
+    "cookMinutes": 18,
+    "totalMinutes": 32,
+    "servingCount": 4,
+    "averageCalories": 292,
+    "protein": 18,
+    "carbs": 28,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Hamsiyi son 8 dakikada eklemek pilavın içinde dağılmasını önler.",
+    "servingSuggestion": "Sıcak servis edin, yanında roka salatası ve limon sunun.",
+    "tags": [
+      "tek-tencere",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Hamsi fileto",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Mısır tanesi",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pirinci yıkayıp süzün ve 10 dakika bekletin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mısır taneleri ve pirinci tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sıcak suyu ekleyip pilavı 8 dakika pişirmeye başlayın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Temizlenmiş hamsileri pilavın üstüne dizin, karıştırınca balık dağılmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kapağı kapatıp 12 dakika daha pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Pilavı 8 dakika dinlendirip geniş kaşıkla servis edin.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "hamsili-patates-tavasi-sinop-usulu",
+    "title": "Sinop Hamsili Patates Tavası",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Sinop hamsili patates tavası, ince patates ve hamsiyi yumurtayla bağlayarak Karadeniz mutfağına dışı kızarmış, içi sulu bir tava ana yemeği kazandırır.",
+    "prepMinutes": 15,
+    "cookMinutes": 18,
+    "totalMinutes": 33,
+    "servingCount": 4,
+    "averageCalories": 264,
+    "protein": 18,
+    "carbs": 15,
+    "fat": 14,
+    "isFeatured": true,
+    "tipNote": "Patatesi önceden yarı pişirmek hamsiyle aynı sürede düzgün sonuç verir.",
+    "servingSuggestion": "Yanına roka ile sıcak servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Hamsi fileto",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Sinop tavası için patatesleri ince halka dilimleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Patatesleri tavada 6 dakika yumuşatın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamsileri temizleyip patateslerin üstüne yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Çırpılmış yumurtayı tavaya gezdirin, hamsiler dağılmasın diye patateslere bağlansın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tavayı kısık ateşte 8 dakika pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tavayı kapakla çevirip 2 dakika daha kızartın.",
+        "timerSeconds": 120
+      }
+    ]
+  },
+  {
+    "slug": "hamsili-patatesli-bulgur-pilavi-sinop-usulu",
+    "title": "Hamsili Patatesli Bulgur Pilavı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Sinop usulü hamsili patatesli bulgur pilavı, ince bulguru hamsi ve patatesle buluşturarak deniz kokulu, tane tane ve tok bir ana yemek hazırlar.",
+    "prepMinutes": 14,
+    "cookMinutes": 18,
+    "totalMinutes": 32,
+    "servingCount": 4,
+    "averageCalories": 296,
+    "protein": 18,
+    "carbs": 27,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Hamsiyi son 8 dakikada eklemek pilav içinde dağılmadan kalmasını sağlar.",
+    "servingSuggestion": "Sıcak servis edin, yanında ayran ve limon dilimleri sunun.",
+    "tags": [
+      "tek-tencere",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Hamsi fileto",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "İnce bulgur",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesi küçük küp doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Patatesi tencerede 5 dakika çevirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bulguru ve sıcak suyu ekleyip kaynatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pilavı 8 dakika pişirin, bulgur suyu çekmeye başlasın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Temizlenmiş hamsileri pilavın üstüne dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kapağı kapalı 12 dakika pişirin, hamsi dağılmasın diye buharda pişsin.",
+        "timerSeconds": 720
+      }
+    ]
+  },
+  {
+    "slug": "hamsili-pazi-sarma-trabzon-usulu",
+    "title": "Hamsili Pazı Sarma",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Trabzon hamsili pazı sarma, pazı yapraklarını pirinçli hamsi harcıyla sarıp buharda pişirerek tuzlu, yumuşak ve kıyı kokulu bir ana yemek sunar.",
+    "prepMinutes": 22,
+    "cookMinutes": 24,
+    "totalMinutes": 46,
+    "servingCount": 4,
+    "averageCalories": 286,
+    "protein": 24,
+    "carbs": 16,
+    "fat": 14,
+    "isFeatured": true,
+    "tipNote": "Pazı yapraklarını çok kalın bırakmamak sararken düzgün bir şekil verir.",
+    "servingSuggestion": "Taze limon ve roka ile soğumadan masaya götürün, yanına ılık patates eşlik etsin.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Pazı yaprağı",
+        "amount": "12",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Hamsi fileto",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pazı yapraklarını kaynar suda 1 dakika yumuşatıp süzün.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve pirinci 5 dakika çevirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamsiyi iç harca ekleyip nazikçe karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pazı yapraklarına iç koyup gevşek sarın, pirinç şişince sarma dağılmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sarmaları tencereye dizip az sıcak su ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Sarmaları 20 dakika buharda pişirin.",
+        "timerSeconds": 1200
+      }
+    ]
+  },
+  {
+    "slug": "hamsili-pazi-tava-rize-usulu",
+    "title": "Hamsili Pazı Tava",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Rize usulü hamsili pazı tava, pazıyı hamsi ve mısır unuyla buluşturarak kızarmış bir Karadeniz tavası yapar.",
+    "prepMinutes": 18,
+    "cookMinutes": 14,
+    "totalMinutes": 32,
+    "servingCount": 4,
+    "averageCalories": 274,
+    "protein": 21,
+    "carbs": 14,
+    "fat": 15,
+    "isFeatured": false,
+    "tipNote": "Pazının suyunu iyice sıkmak tavada kolay çevrilmesini sağlar.",
+    "servingSuggestion": "Hamsili pazı tavayı sıcak tabakta sunup hamsi filetolarını pazının üstünde bırakın.",
+    "tags": [
+      "yuksek-protein",
+      "pratik"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Hamsi fileto",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pazı",
+        "amount": "1",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Mısır unu",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pazıyı ince doğrayıp soğanı yemeklik kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pazı ve soğanı tavada 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamsi ve mısır ununu tavaya ekleyip harcı toparlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Harcı tavaya bastırarak yayın, çevrilirken dağılmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "İlk yüzü 5 dakika pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kapakla çevirip diğer yüzü 3 dakika pişirin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "hamsili-pilav-artvin-usulu",
+    "title": "Hamsili Pilav",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Hamsili pilav, pirinçli iç harcın taze hamsiyle kalıpta piştiği ve Doğu Karadeniz mutfağında denizle tarlayı aynı tabakta buluşturan özel bir yemektir.",
+    "prepMinutes": 30,
+    "cookMinutes": 35,
+    "totalMinutes": 65,
+    "servingCount": 6,
+    "averageCalories": 344,
+    "protein": 18,
+    "carbs": 30,
+    "fat": 16,
+    "isFeatured": false,
+    "tipNote": "Hamsileri sık dizmek pilav dilimlenirken formun korunmasına yardım eder.",
+    "servingSuggestion": "Yanına roka salatasıyla sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "SUT",
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Hamsi",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "35",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kuş üzümü",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Roka",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pirinci yıkayıp soğan, tereyağı, kuş üzümü ve tuzla iç pilav tabanı kurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "İç pilavı 12 dakika pişirin ve dereotunu ocaktan alınca ekleyin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamsileri temizleyip kalıbı balıkların parlak yüzü dışa bakacak şekilde kaplayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pilavı kalıba doldurun, pirinç dağılmasın diye sıkıştırmadan yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kalan hamsilerle üstünü kapatıp kenarları içe kıvırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Artvin pilavını 190°C fırında 30 dakika pişirin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Pilavı 10 dakika dinlendirip kalıptan ters çevirin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "hamsili-pilav-rize-usulu",
+    "title": "Rize Hamsili Pilav",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Rize hamsili pilav, iç pilavın taze hamsiyle kaplanıp fırında piştiği, Karadeniz mutfağında hem gösterişli hem de çok tanıdık bir misafir yemeğidir.",
+    "prepMinutes": 35,
+    "cookMinutes": 35,
+    "totalMinutes": 70,
+    "servingCount": 6,
+    "averageCalories": 338,
+    "protein": 19,
+    "carbs": 32,
+    "fat": 14,
+    "isFeatured": true,
+    "tipNote": "Hamsilerin kılçığını dikkatle ayıklamak pilavın servis sırasında bütün kalmasını kolaylaştırır.",
+    "servingSuggestion": "Yanına roka salatasıyla sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "KUSUYEMIS",
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Hamsi",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kuş üzümü",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Çam fıstığı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Hamsileri temizleyip kılçıklarını çıkarın ve kurulayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "İç pilavı pirinç, soğan ve baharatla yarı pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tepsinin tabanını hamsilerle sık kaplayın, pilav tepsiye yapışmasın diye boşluk bırakmayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pilavı hamsilerin üstüne yayın ve kalan hamsilerle kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "190°C fırında 30 dakika pişirin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tepsiyi 8 dakika dinlendirip geniş spatulayla servis edin.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "hamsili-pirasa-tava-sinop-usulu",
+    "title": "Hamsili Pırasa Tava",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Sinop usulü hamsili pırasa tava, pırasayı hamsi ve mısır unuyla buluşturarak kıyı mutfağından sade bir tava kurar.",
+    "prepMinutes": 14,
+    "cookMinutes": 16,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 238,
+    "protein": 19,
+    "carbs": 13,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Pırasayı ince ay doğramak hamsiyle aynı sürede yumuşayıp tavada bütünleşmesini sağlar.",
+    "servingSuggestion": "Yanında limon dilimleriyle sıcak servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Hamsi fileto",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pırasa",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Mısır unu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pırasayı ince halka doğrayıp yıkayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pırasayı zeytinyağında 5 dakika yumuşatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamsi ve mısır ununu ekleyip tavaya yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tavayı karıştırmadan 5 dakika pişirin, taban dağılmasın diye kabuk tutsun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Limon suyunu gezdirip 4 dakika daha pişirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tavayı 3 dakika bekletip dilimleyerek servis edin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "hamsili-pirincli-yesil-lahana-sarmasi-sinop-usulu",
+    "title": "Hamsili Pirinçli Yeşil Lahana Sarması",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Sinop hamsili pirinçli yeşil lahana sarması, lahanayı hamsi ve pirinçle sararak deniz kokulu, hafif sulu ve fırınsız bir kıyı yemeği yapar.",
+    "prepMinutes": 24,
+    "cookMinutes": 24,
+    "totalMinutes": 48,
+    "servingCount": 4,
+    "averageCalories": 248,
+    "protein": 15,
+    "carbs": 18,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Lahana yapraklarını kısa haşlamak sararken yırtılmalarını azaltır.",
+    "servingSuggestion": "Sıcak servis edin, yanında limon dilimleri ve yoğurt bulundurun.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Yeşil lahana",
+        "amount": "12",
+        "unit": "yaprak",
+        "group": null
+      },
+      {
+        "name": "Hamsi fileto",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yeşil lahana yapraklarını kaynar suda 3 dakika haşlayın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yaprakların kalın damarlarını inceltin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinçli iç harcı hazırlayıp hamsileri küçük parçalar halinde ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yapraklara iç koyup gevşek sarın, pirinç pişerken sarma dağılmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sarmaları tencereye dizip üstüne az sıcak su gezdirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Sarmaları 20 dakika pişirin.",
+        "timerSeconds": 1200
+      }
+    ]
+  },
+  {
+    "slug": "hamsili-taze-bezelye-pilavi-samsun-usulu",
+    "title": "Hamsili Taze Bezelye Pilavı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Samsun usulü hamsili taze bezelye pilavı, pirinci bezelye ve hamsiyle buluşturarak tane tane, deniz kokulu ve bahar sofralarına uygun bir tabak yapar.",
+    "prepMinutes": 16,
+    "cookMinutes": 18,
+    "totalMinutes": 34,
+    "servingCount": 4,
+    "averageCalories": 288,
+    "protein": 19,
+    "carbs": 27,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Hamsiyi pilavın son 8 dakikasında eklemek dağılmadan kalmasına yardım eder.",
+    "servingSuggestion": "Taze limon ve roka ile soğumadan masaya götürün, yanına ılık patates eşlik etsin.",
+    "tags": [
+      "misafir-sofrasi",
+      "tek-tencere"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Hamsi fileto",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Taze bezelye",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soğanı ince doğrayıp tencerede 3 dakika çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinci yıkayıp bezelyeyle birlikte tencereye ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sıcak suyu ekleyip pilavı 8 dakika pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamsileri pilavın üstüne dizin, balık dağılmasın diye pirinci karıştırmayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kapağı kapalı 14 dakika pişirin.",
+        "timerSeconds": 840
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Pilavı 8 dakika dinlendirip bezelyeleri ezmeden servis edin.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "hanoi-bun-cha",
+    "title": "Hanoi Bun Cha",
+    "cuisine": "vn",
+    "type": "YEMEK",
+    "description": "Bun cha, balık soslu tatlı ekşi marineli köfteleri pirinç eriştesi, otlar ve turşulu nuoc cham sosuyla sunan Hanoi yemeğidir.",
+    "prepMinutes": 35,
+    "cookMinutes": 18,
+    "totalMinutes": 53,
+    "servingCount": 4,
+    "averageCalories": 560,
+    "protein": 28,
+    "carbs": 62,
+    "fat": 22,
+    "isFeatured": false,
+    "tipNote": "Köfteleri yüksek ateşte kısa pişirmek karamelleşme verir; fazla pişerse kurur.",
+    "servingSuggestion": "Pirinç eriştesi, marul, nane, kişniş ve turşulu sosla kaselerde servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana kıyma",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç eriştesi",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Balık sosu",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Esmer şeker",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "3",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Lime suyu",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Havuç",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Turp",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Marul",
+        "amount": "1",
+        "unit": "küçük adet",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kıyma, balık sosu, şeker, sarımsak ve karabiberi yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Harcı küçük köftelere ayırıp 20 dakika dinlendirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Havuç ve turpu lime, şeker ve tuzla 15 dakika turşulayın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pirinç eriştesini paketine göre 6 dakika haşlayın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Köfteleri kızgın tavada her yüzü 4 dakika pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Balık sosu, lime, şeker, sarımsak ve suyla nuoc cham hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Köfte, erişte, otlar ve turşuyu sosla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "hanoi-limon-otlu-tavuk-bun",
+    "title": "Hanoi Limon Otlu Tavuk Bun",
+    "cuisine": "vn",
+    "type": "YEMEK",
+    "description": "Vietnam usulü limon otlu tavuk bun, pirinç eriştesini ızgara tavuk, taze otlar ve balık soslu sosla ferah bir kaseye taşır.",
+    "prepMinutes": 20,
+    "cookMinutes": 14,
+    "totalMinutes": 34,
+    "servingCount": 4,
+    "averageCalories": 365,
+    "protein": 27,
+    "carbs": 48,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Erişteyi soğuk sudan geçirmek kasede yapışmasını önler.",
+    "servingSuggestion": "Lime ve acı biberle ılık servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Pirinç eriştesi",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tavuk göğsü",
+        "amount": "450",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Limon otu",
+        "amount": "2",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Balık sosu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Taze nane",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Havuç",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuğu ince dilimleyip limon otu ve balık sosuyla ovun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavuğu 15 dakika buzdolabında dinlendirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinç eriştesini 5 dakika sıcak suda yumuşatıp süzün.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tavuğu tavada toplam 8-10 dakika pişirin.",
+        "timerSeconds": 540
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Erişteyi tavuk, nane ve rendelenmiş havuçla kaseleyin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "hanoi-pho-bo",
+    "title": "Hanoi Pho Bo",
+    "cuisine": "vn",
+    "type": "CORBA",
+    "description": "Pho bo, yıldız anason, tarçın, zencefil ve balık sosuyla kokulandırılmış et suyunda pirinç eriştesi ve ince dana eti sunan Vietnam çorbasıdır.",
+    "prepMinutes": 30,
+    "cookMinutes": 180,
+    "totalMinutes": 210,
+    "servingCount": 6,
+    "averageCalories": 410,
+    "protein": 32,
+    "carbs": 52,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Soğan ve zencefili közlemek et suyuna isli ve tatlı bir taban verir.",
+    "servingSuggestion": "Fesleğen, lime, filiz ve chili ile kaseleri sofrada tamamlayın.",
+    "tags": [
+      "yuksek-protein",
+      "kis-tarifi"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana kemik",
+        "amount": "1.5",
+        "unit": "kg",
+        "group": null
+      },
+      {
+        "name": "Dana antrikot",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç eriştesi",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zencefil",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yıldız anason",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "1",
+        "unit": "çubuk",
+        "group": null
+      },
+      {
+        "name": "Balık sosu",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Fasulye filizi",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Dana kemikleri 10 dakika kaynatıp suyunu dökün ve kemikleri durulayın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve zencefili ocakta közleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kemik, köz soğan, zencefil, anason ve tarçını 2.5 saat kısık ateşte kaynatın.",
+        "timerSeconds": 9000
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Et suyunu süzüp balık sosu ve tuzla tatlandırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pirinç eriştesini 6 dakika sıcak suda yumuşatın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Antrikotu çok ince dilimleyip kaselere paylaştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Kaynar et suyunu etin üstüne döküp filiz, lime ve otlarla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "hanoi-tavuklu-pho",
+    "title": "Hanoi Tavuklu Pho",
+    "cuisine": "vn",
+    "type": "CORBA",
+    "description": "Vietnam tavuklu pho, zencefil ve baharatla kokulandırılmış tavuk suyunu pirinç noodle, tavuk ve taze otlarla servis eder.",
+    "prepMinutes": 25,
+    "cookMinutes": 75,
+    "totalMinutes": 100,
+    "servingCount": 4,
+    "averageCalories": 430,
+    "protein": 30,
+    "carbs": 56,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Soğan ve zencefili közlemek pho suyuna derin ve temiz aroma verir.",
+    "servingSuggestion": "Fesleğen, lime ve filizlerle çok sıcak servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "kis-tarifi"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Tavuk but",
+        "amount": "800",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç noodle",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zencefil",
+        "amount": "40",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yıldız anason",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "1",
+        "unit": "çubuk",
+        "group": null
+      },
+      {
+        "name": "Lime",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Taze kişniş",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soğan ve zencefili ocakta közleyip tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavuk, baharatlar ve suyu ekleyip 60 dakika kaynatın.",
+        "timerSeconds": 3600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tavuğu çıkarıp didikleyin, suyu süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pirinç noodleı sıcak suda 8 dakika yumuşatın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Noodle, tavuk ve sıcak suyu otlarla kaselere paylaştırın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "hanoi-taze-otlu-pirinc-kagidi-omleti",
+    "title": "Hanoi Taze Otlu Pirinç Kağıdı Omleti",
+    "cuisine": "vn",
+    "type": "KAHVALTI",
+    "description": "Vietnam usulü taze otlu pirinç kağıdı omleti, çıtır pirinç kağıdı üzerinde yumurta, taze soğan ve balık sosuyla hızlı bir sokak kahvaltısı hazırlar.",
+    "prepMinutes": 12,
+    "cookMinutes": 10,
+    "totalMinutes": 22,
+    "servingCount": 2,
+    "averageCalories": 260,
+    "protein": 16,
+    "carbs": 24,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Pirinç kağıdını ıslatmadan kullanmak çıtır taban verir.",
+    "servingSuggestion": "Lime ve acı sosla sıcak servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "YUMURTA",
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Pirinç kağıdı",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Taze soğan",
+        "amount": "3",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Balık sosu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kişniş",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Taze soğan ve kişnişi ince kıyıp balık sosuyla hazır tutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinç kağıdını kuru tavaya alıp orta ateşte 30 saniye ısıtın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Üstüne 1 yumurta kırıp yüzeye yayın, pirinç kağıdı yırtılmasın diye hızlı çalışın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Balık sosu ve otları ekleyip omleti 3 dakika çıtır taban oluşana kadar pişirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Omleti katlayıp 30 saniye daha ısıtın, iç yumurta tam tutunsun.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kalan pirinç kağıtlarıyla aynı işlemi tekrarlayıp sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "hanoi-zencefilli-kabak-corbasi",
+    "title": "Hanoi Zencefilli Kabak Çorbası",
+    "cuisine": "vn",
+    "type": "CORBA",
+    "description": "Vietnam usulü zencefilli kabak çorbası, bal kabağını zencefil, pirinç ve hafif balık sosuyla ipeksi, sıcak bir kaseye dönüştürür.",
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 205,
+    "protein": 5,
+    "carbs": 34,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Pirinci az miktarda eklemek çorbayı krema kullanmadan koyulaştırır.",
+    "servingSuggestion": "Taze soğan ve lime ile sıcak servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "tek-tencere",
+      "dusuk-kalorili"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Bal kabağı",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zencefil",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Balık sosu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Taze soğan",
+        "amount": "2",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Sebze suyu",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Zencefili tencerede 1 dakika kokusu çıkana kadar çevirin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bal kabağı, pirinç ve sebze suyunu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Çorbayı 20 dakika bal kabağı yumuşayana kadar pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Blenderdan geçirip balık sosuyla lezzetini ayarlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Taze soğanla sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "har-gow",
+    "title": "Har Gow",
+    "cuisine": "cn",
+    "type": "APERATIF",
+    "description": "Kanton dim sum klasiği har gow, yarı saydam hamur içinde karidesli iç harçla buharda pişer.",
+    "prepMinutes": 50,
+    "cookMinutes": 10,
+    "totalMinutes": 60,
+    "servingCount": 6,
+    "averageCalories": 200,
+    "protein": 12,
+    "carbs": 24,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Hamuru sıcak suyla yoğurmak dumplinglerin buharda yarı saydam kalmasını sağlar.",
+    "servingSuggestion": "Sıcak servis edin, yanında hafif soya dip sosu sunun.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SOYA",
+      "DENIZ_URUNLERI",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Karides",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Buğday nişastası",
+        "amount": "180",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tapyoka nişastası",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Susam yağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Nişastaları sıcak suyla yoğurup elastik ve yarı saydam hamur hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karidesi soya sosu ve susam yağıyla karıştırıp dolgu haline getirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru ince açıp karidesli içle doldurun ve kenarlarını pileli kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Mantıları buharda 8-10 dakika hamur saydamlaşana kadar pişirin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "hardal-soslu-tavuk-pie-ingiltere-usulu",
+    "title": "Hardal Soslu Tavuk Pie",
+    "cuisine": "gb",
+    "type": "YEMEK",
+    "description": "Hardal soslu tavuk pie, tavuk ve pırasayı kremalı hardal sosla kapatıp hamur altında pişirerek Britanya usulü tok bir fırın yemeği kurar.",
+    "prepMinutes": 18,
+    "cookMinutes": 24,
+    "totalMinutes": 42,
+    "servingCount": 4,
+    "averageCalories": 338,
+    "protein": 23,
+    "carbs": 22,
+    "fat": 17,
+    "isFeatured": false,
+    "tipNote": "İç harcı kaşıktan ağır akacak kıvamda bırakmak pie dilimlenirken akmasını önler.",
+    "servingSuggestion": "Ilık servis edin, yanında bezelye ya da yeşil salata sunun.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk göğsü",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pırasa",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tane hardal",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Milföy hamuru",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuk parçalarını tavada 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve hardalı ekleyip 3 dakika çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kremalı sosu tavaya katıp 5 dakika koyulaştırın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "İç harcı fırın kabına alın ve 5 dakika ılıtın, hamur alttan yumuşamasın diye buharını azaltın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Milföy veya pie hamurunu kabın üstüne kapatıp kenarları bastırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Pieyi 200°C fırında 20 dakika pişirin.",
+        "timerSeconds": 1200
+      }
+    ]
+  },
+  {
+    "slug": "hardal-soslu-tavuk-pie-tepsi-ingiltere-usulu",
+    "title": "Hardal Soslu Tavuk Pie Tepsi",
+    "cuisine": "gb",
+    "type": "YEMEK",
+    "description": "İngiltere usulü hardal soslu tavuk pie tepsi, tavuk parçalarını hardallı iç harç ve hamurla buluşturarak zengin, fırın kokulu bir ana yemek yapar.",
+    "prepMinutes": 18,
+    "cookMinutes": 24,
+    "totalMinutes": 42,
+    "servingCount": 6,
+    "averageCalories": 292,
+    "protein": 18,
+    "carbs": 23,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "İç harcı 2 dakika daha çevirip kaşığın arkasını ince kaplayacak kıvama getirmek pie dilimlenirken akmasını önler.",
+    "servingSuggestion": "Ilık servis edin, yanında bezelye ve patates püresi sunabilirsiniz.",
+    "tags": [
+      "misafir-sofrasi",
+      "firinda"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "Milföy hamuru",
+        "amount": "6",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tavuk göğsü",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Hardal sosu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuk ve soğanı geniş tavada 8 dakika pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hardal ve kremayı ekleyip iç harcı 4 dakika koyulaştırın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Harcı tepsiye yayıp buharını 5 dakika attırın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamuru harcın üstüne serin, kenarlardan sos akmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Hamurun üstüne küçük buhar kesikleri açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Pieyi 200°C fırında 24 dakika pişirin.",
+        "timerSeconds": 1440
+      }
+    ]
+  },
+  {
+    "slug": "hardaliyeli-cin-fizz-kirklareli-usulu",
+    "title": "Kırklareli Hardaliyeli Cin Fizz",
+    "cuisine": "tr",
+    "type": "KOKTEYL",
+    "description": "Kırklareli hardaliyeli cin fizz, hardaliyenin üzüm ve hardal aromalarını cinle buluşturarak Trakya akşamlarına köpüklü, keskin ve meyvemsi bir kokteyl taşır.",
+    "prepMinutes": 8,
+    "cookMinutes": 0,
+    "totalMinutes": 8,
+    "servingCount": 2,
+    "averageCalories": 172,
+    "protein": 0,
+    "carbs": 11,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Hardaliyeyi çok sert çalkalamamak içeceğin doğal köpüğünü korur.",
+    "servingSuggestion": "Kırklareli hardaliyeli cin fizz'i buzlu bardakta karıştırıp soda köpüğü sönmeden sunun.",
+    "tags": [
+      "alkollu",
+      "yaz-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "Cin",
+        "amount": "90",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Hardaliye",
+        "amount": "150",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "20",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Soda",
+        "amount": "100",
+        "unit": "ml",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kırklareli Hardaliyeli Cin Fizz için taze buzu ve süslemeyi hazırlayın, bardak bekleyip ısınmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kırklareli Hardaliyeli Cin Fizz cin, hardaliye ve limonu buzla 12 saniye çalkalayın.",
+        "timerSeconds": 12
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kırklareli Hardaliyeli Cin Fizz karışımını soğuk bardaklara süzün, tortu geçmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kırklareli Hardaliyeli Cin Fizz sodayı ekleyip soğuk servis edin, gazlı yapı korunur.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kırklareli Hardaliyeli Cin Fizz yüzeyini kontrol edin, köpük veya katman bozulmadan masaya çıkarın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kırklareli Hardaliyeli Cin Fizz süslemesini ekleyip bekletmeden servis edin, buz erirse denge sulanır, böylece buz erirse denge bozulmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "hardaliyeli-istavrit-tava-tekirdag-usulu",
+    "title": "Hardaliyeli İstavrit Tava",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Tekirdağ hardaliyeli istavrit tava, istavriti hardaliye dokunuşuyla kızartarak ekşimsi, parlak ve kıyıya yakışan bir Marmara balığı sunar.",
+    "prepMinutes": 12,
+    "cookMinutes": 10,
+    "totalMinutes": 22,
+    "servingCount": 4,
+    "averageCalories": 248,
+    "protein": 21,
+    "carbs": 4,
+    "fat": 16,
+    "isFeatured": false,
+    "tipNote": "Hardaliyeyi marineye az eklemek balığın tadını bastırmadan ferah bir asidite verir.",
+    "servingSuggestion": "Sıcak servis edin, yanında roka salatası ve limon dilimleri sunun.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI",
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "İstavrit fileto",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Hardaliye",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Mısır unu",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "İstavritleri temizleyip kurulayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Balıkları hardaliyeyle 12 dakika marine edin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "İstavritleri una bulamadan önce fazla marinadı süzdürün, un topaklanmasın diye yüzeyi kuru tutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Balıkları ince un tabakasıyla kaplayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "İstavritleri kızgın tavada 8 dakika kızartın.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "hardaliyeli-kabak-salatasi-tekirdag-usulu",
+    "title": "Tekirdağ Hardaliyeli Kabak Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Tekirdağ hardaliyeli kabak salatası, haşlanmış kabağı hardaliye ile buluşturarak serin, hafif keskin ve taze bir Trakya salatası sunar.",
+    "prepMinutes": 12,
+    "cookMinutes": 8,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 96,
+    "protein": 2,
+    "carbs": 10,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Kabağı diri haşlamak salatayı sulu yapmaz.",
+    "servingSuggestion": "Serin servis edin, üstüne dereotu serpip yanında ekmek sunun.",
+    "tags": [
+      "yaz-tarifi",
+      "30-dakika-alti",
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "Kabak",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Hardaliye",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabakları yarım ay doğrayın, tuzla 5 dakika bekletip fazla suyunu alın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kabakları geniş tavada 6 dakika kavurun, parçalar yumuşayıp ezilmesin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hardal, yoğurt, limon suyu, dereotu ve zeytinyağını 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ilıyan kabağı hardallı sosla karıştırın, sıcak kabak yoğurdu gevşetmesin diye acele etmeyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Dereotu ve pul biberle tamamlayın, soğuk ya da ılık servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "hardaliyeli-lahana-salatasi-kirklareli-usulu",
+    "title": "Hardaliyeli Lahana Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Kırklareli hardaliyeli lahana salatası, ince lahana kıyımını hardaliye ile tatlandırarak serin, canlı ve bağ bozumu esintili bir salata sunar.",
+    "prepMinutes": 12,
+    "cookMinutes": 0,
+    "totalMinutes": 12,
+    "servingCount": 4,
+    "averageCalories": 96,
+    "protein": 2,
+    "carbs": 12,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Lahanayı sosa kısa süre dinlendirmek daha parlak ama diri bir sonuç verir.",
+    "servingSuggestion": "Soğuk servis edin, yanında ızgara köfte ya da tavuk sunun.",
+    "tags": [
+      "30-dakika-alti",
+      "vegan",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "Kırmızı lahana",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Hardaliye",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Elma sirkesi",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Beyaz lahanayı ince kıyın, havuç ve kırmızı soğanı aynı incelikte hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lahanayı tuz ve sirkeyle 2 dakika ovun, lifleri kırılıp çiğ sertlik azalsın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hardal, zeytinyağı, limon suyu ve az balı küçük kasede karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Havuç ve soğanı lahanaya ekleyin, sosu azar azar gezdirerek harmanlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Maydanoz ve tane karabiberle tamamlayın, 10 dakika serin yerde bekletip servis edin, böylece lahana hardalı içine alır ama suyunu bırakmaz.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "hardaliyeli-nohut-durumu-tekirdag-bag-usulu",
+    "title": "Tekirdağ Hardaliyeli Nohut Dürümü",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Tekirdağ hardaliyeli nohut dürümü, nohudu hardaliye dokunuşlu sosla sararak ekşi ve tok bir bağ evi öğünü yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 10,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 232,
+    "protein": 8,
+    "carbs": 31,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Hardaliyeyi az kullanmak dürümde dengeyi korur.",
+    "servingSuggestion": "Dürümleri ılık sunun, yanında ayran ve turşu ile servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "butce-dostu",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "Lavaş",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Hardaliye",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "1 kuru soğanı ince doğrayıp zeytinyağıyla tavaya alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı orta ateşte 4 dakika yumuşatın, rengi koyulaşmasın diye sık karıştırın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "2 su bardağı nohudu ekleyip 2 dakika daha çevirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "3 yemek kaşığı hardaliyeyi katıp harcı 1 dakika ısıtın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Harcı 4 lavaşa paylaştırıp sıkı sarın, sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "hardaliyeli-pancar-mezesi-kirklareli-usulu",
+    "title": "Kırklareli Hardaliyeli Pancar Mezesi",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Kırklareli hardaliyeli pancar mezesi, pancarı hardaliye ile açarak Trakya'ya mor renkli ve hafif baharlı bir meze taşır.",
+    "prepMinutes": 10,
+    "cookMinutes": 18,
+    "totalMinutes": 28,
+    "servingCount": 4,
+    "averageCalories": 88,
+    "protein": 2,
+    "carbs": 15,
+    "fat": 2,
+    "isFeatured": false,
+    "tipNote": "Pancarı tamamen soğutup karıştırmak mezenin rengini daha parlak tutar.",
+    "servingSuggestion": "Üzerine sızma zeytinyağı ve pul biber gezdirip küçük derin tabakta mezelik sunum kurun.",
+    "tags": [
+      "vegan",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "Pancar",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Hardaliye",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pancarı 18 dakika haşlayıp soğutun ve ince rendeleyin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Rendelenmiş pancarın fazla suyunu süzerek mezeyi yoğun kıvamda tutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hardaliye ve zeytinyağını ekleyip pancara eşit şekilde yedirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Dereotunu katıp mezeyi 10 dakika dinlendirin ve soğuk servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "hardaliyeli-tavuk-kapama-kirklareli-usulu",
+    "title": "Kırklareli Hardaliyeli Tavuk Kapama",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Kırklareli hardaliyeli tavuk kapama, pirinci ve tavuğu hardaliye aromasıyla aynı tencerede pişirerek hafif ekşi, sulu ve tok bir Trakya yemeği yapar.",
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "totalMinutes": 45,
+    "servingCount": 4,
+    "averageCalories": 336,
+    "protein": 24,
+    "carbs": 22,
+    "fat": 16,
+    "isFeatured": false,
+    "tipNote": "Hardaliyeyi son bölümde eklemek aromasını daha belirgin bırakır.",
+    "servingSuggestion": "Sıcak servis edin, yanında cacık ya da yeşil salata sunun.",
+    "tags": [
+      "tek-tencere",
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk but",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Hardaliye",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soğanı doğrayıp tavukla birlikte tencerede 8 dakika çevirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinci yıkayıp tencereye ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinci tavuk yağıyla 2 dakika karıştırın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hardaliye ve sıcak suyu ekleyip kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yemeği 20 dakika pişirin, pirinç sertleşmesin diye kapağı açmayın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kapamayı 10 dakika dinlendirip tavukları pilavın üstünde servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "hardaliyeli-uzum-hosafi-edirne-usulu",
+    "title": "Hardaliyeli Üzüm Hoşafı",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Edirne hardaliyeli üzüm hoşafı, siyah üzümü hardaliye mayasıyla buluşturarak keskin, serin ve farklı katmanlı bir içim hazırlar.",
+    "prepMinutes": 10,
+    "cookMinutes": 8,
+    "totalMinutes": 18,
+    "servingCount": 5,
+    "averageCalories": 60,
+    "protein": 0,
+    "carbs": 15,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Hardaliye suyunu kaynama sonrası eklemek hardal notasını canlı tutar.",
+    "servingSuggestion": "Soğuk servis edin, bardakta birkaç üzüm tanesiyle sunabilirsiniz.",
+    "tags": [
+      "30-dakika-alti",
+      "alkolsuz",
+      "yaz-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "Siyah üzüm",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Hardaliye suyu",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tane hardal",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Hardaliyeli Üzüm Hoşafı için tüm malzemeyi servis öncesi hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hardaliyeli Üzüm Hoşafı sıvılarını ve aromatiklerini dengeli biçimde karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hardaliyeli Üzüm Hoşafı içeceğini serin veya ılık biçimde servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "hardaliyeli-uzum-sorbesi-kirklareli-usulu",
+    "title": "Kırklareli Hardaliyeli Üzüm Sorbesi",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Kırklareli hardaliyeli üzüm sorbesi, koyu üzüm suyunu hardaliye aromasıyla dondurarak Trakya yazlarına serin, baharlı ve canlı bir kaşık tatlısı taşır.",
+    "prepMinutes": 15,
+    "cookMinutes": 5,
+    "totalMinutes": 200,
+    "servingCount": 6,
+    "averageCalories": 104,
+    "protein": 0,
+    "carbs": 25,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Karışımı dondururken iki kez çatalla kazımak kristal oluşumunu azaltır.",
+    "servingSuggestion": "En az 2 saat dondurup servis edin.",
+    "tags": [
+      "yaz-tarifi",
+      "alkolsuz",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "Üzüm suyu",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Hardaliye",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Üzüm suyunu süzüp hardaliye ile derin kapta birleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Şekeri ekleyip 3 dakika düşük ateşte eritin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karışımı tamamen soğutun, aksi halde kristal dokusu bozulur.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sığ kaba alıp 3 saat dondurun.",
+        "timerSeconds": 10800
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "İki kez çatalla kazıyıp her seferinde 1 saat tekrar dondurun.",
+        "timerSeconds": 7200
+      }
+    ]
+  },
+  {
+    "slug": "hardalli-artsoppa",
+    "title": "Hardallı Ärtsoppa",
+    "cuisine": "se",
+    "type": "CORBA",
+    "description": "Sarı bezelye ve et suyuyla pişen Ärtsoppa, İskandinav kış masalarında ağırlaşmadan doyuran klasik bir çorbadır.",
+    "prepMinutes": 15,
+    "cookMinutes": 75,
+    "totalMinutes": 90,
+    "servingCount": 6,
+    "averageCalories": 260,
+    "protein": 15,
+    "carbs": 30,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Bezelyeyi önceden ıslatmak hem pişme süresini kısaltır hem kabukların yumuşamasını sağlar.",
+    "servingSuggestion": "Üstüne tane hardal ekleyip sıcak servis edin.",
+    "tags": [
+      "tek-tencere"
+    ],
+    "allergens": [
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "Sarı bezelye",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Et suyu",
+        "amount": "1.5",
+        "unit": "litre",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Defne yaprağı",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Hardal",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "300 gr sarı bezelyeyi geceden ıslatıp süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bezelye, 1.5 litre et suyu, soğan ve defneyi tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Çorbayı kısık ateşte 70 dakika pişirin.",
+        "timerSeconds": 4200
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Bezelye yumuşayınca defneyi çıkarın ve çorbanın üçte birini ezin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "1 yemek kaşığı hardalı ekleyip 2 dakika ısıtın, keskinliği kaybolmasın.",
+        "timerSeconds": 120
+      }
+    ]
+  },
+  {
+    "slug": "hardalli-balik-salatasi-amasra-usulu",
+    "title": "Amasra Hardallı Balık Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Amasra hardallı balık salatası, haşlanmış balığı patates ve hardallı sosla buluşturarak kıyı mutfağında serin, canlı ve hafif asiditeli bir tabak kurar.",
+    "prepMinutes": 15,
+    "cookMinutes": 15,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 196,
+    "protein": 17,
+    "carbs": 10,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Balığı iri parçalara ayırmak karıştırırken tamamen dağılmasını engeller.",
+    "servingSuggestion": "Üzerine dereotu serperek serin servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "yaz-tarifi"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI",
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "Haşlanmış balık",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Hardal",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ayıklanmış balığı iri lokmalara ayırın, kılçık kalmadığını parmak ucuyla kontrol edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Marul, roka ve kırmızı soğanı yıkayıp kurutun, soğanı ince piyazlık doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hardal, limon suyu, zeytinyağı, kapari ve karabiberi 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yeşillikleri sosun azıyla karıştırın, balığı üstte bırakarak parçalanmasını önleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Turp dilimleri ve dereotuyla servis edin, kalan sosu sofrada ayrıca verin, böylece balık parçaları dağılmadan sosla temas eder.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "hardalli-elma-havuc-salatasi-tekirdag-usulu",
+    "title": "Hardallı Elma Havuç Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Tekirdağ usulü hardallı elma havuç salatası, havucu elma ve hardallı sosla buluşturarak gevrek, hafif tatlı-ekşi bir salata yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "totalMinutes": 10,
+    "servingCount": 4,
+    "averageCalories": 98,
+    "protein": 2,
+    "carbs": 13,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Elmayı servis anında rendelemek kararmayı ve su salmasını azaltır.",
+    "servingSuggestion": "Soğuk servis edin, yanında ızgara tavuk ya da ceviz sunun.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "Havuç",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Elma",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Hardal",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Havuçları iri rendeleyin, elmaları ince jülyen kesin ve limonla karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hardal, süzme yoğurt, zeytinyağı ve elma sirkesini 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Havuç ve elmayı sosla birleştirin, elma kırılmasın diye spatulayla çevirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Maydanoz ve az ceviz ekleyin, hardal acılığı dengelensin diye 5 dakika bekletin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tuzunu son kez kontrol edin, serin tabakta porsiyonlayıp servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "hardalli-elma-soslu-tavuk-ingiltere-usulu",
+    "title": "Hardallı Elma Soslu Tavuk",
+    "cuisine": "gb",
+    "type": "YEMEK",
+    "description": "İngiltere usulü hardallı elma soslu tavuk, tavuk göğsünü elma, hardal ve krema ile buluşturarak parlak bir tava yemeği yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 18,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 324,
+    "protein": 28,
+    "carbs": 12,
+    "fat": 18,
+    "isFeatured": true,
+    "tipNote": "Elmayı ince yarım ay kesmek tavuk pişmeden sosa tamamen dağılmasını önler.",
+    "servingSuggestion": "Elma sosunu üzerine gezdirip sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "SUT",
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk göğsü",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Elma",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Hardal",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuk parçalarını kurulayın ve tereyağında 6 dakika mühürleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Elma dilimlerini tavaya ekleyip 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hardalı tavaya katıp elmalarla karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kremayı ekleyip ateşi kısın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yemeği 6 dakika pişirin, krema yüksek ateşte kesilmesin.",
+        "timerSeconds": 360
+      }
+    ]
+  },
+  {
+    "slug": "hardalli-kabak-mucveri-edirne-usulu",
+    "title": "Edirne Hardallı Kabak Mücveri",
+    "cuisine": "tr",
+    "type": "ATISTIRMALIK",
+    "description": "Edirne hardallı kabak mücveri, rendelenmiş kabağı hardal ve dereotuyla karıştırarak Trakya sofralarına dışı kızaran, içi yumuşak bir tava lokması getirir.",
+    "prepMinutes": 15,
+    "cookMinutes": 12,
+    "totalMinutes": 27,
+    "servingCount": 4,
+    "averageCalories": 166,
+    "protein": 5,
+    "carbs": 13,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Kabağın suyunu iyi sıkmak mücverlerin tavada dağılmasını önler.",
+    "servingSuggestion": "Ilık servis edin, yanında sarımsaklı yoğurt ve dereotu sunun.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA",
+      "HARDAL"
+    ],
+    "ingredients": [
+      {
+        "name": "Kabak",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dijon hardal",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "3 kabağı rendeleyip 1 çay kaşığı tuzla 10 dakika bekletin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kabağı avuçla sıkıp suyunu alın, harç tavada dağılmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Un, 2 yumurta, Dijon hardal ve dereotunu kabakla karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kaşıkla parçalar alıp orta ateşte her yüzünü 5 dakika kızartın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Mücverleri tel üzerinde 3 dakika dinlendirin, altı terleyip yumuşamasın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Hardal tadı belirgin kalsın diye yoğurtla değil sade servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "hardalli-kok-sebze-salatasi-isvec-usulu",
+    "title": "Hardallı Kök Sebze Salatası",
+    "cuisine": "se",
+    "type": "SALATA",
+    "description": "Hardallı kök sebze salatası, kök sebzeleri hafif hardal sosla buluşturarak gevrek, topraksı ve öğle sofralarına uygun bir tabak yapar.",
+    "prepMinutes": 14,
+    "cookMinutes": 16,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 156,
+    "protein": 3,
+    "carbs": 24,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Sebzeleri diri haşlamak salatanın dokusunu canlı tutar.",
+    "servingSuggestion": "Serin servis edin, yanında füme balık ya da haşlanmış yumurta sunun.",
+    "tags": [
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "HARDAL",
+      "KEREVIZ"
+    ],
+    "ingredients": [
+      {
+        "name": "Patates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Havuç",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kereviz sapı",
+        "amount": "1",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Dijon hardalı",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pancar, havuç ve kerevizi küçük küpler halinde kesin, boyları eşit olsun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kök sebzeleri tuzlu suda 12 dakika haşlayın, diri kalınca süzüp soğutun.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hardal, sirke, zeytinyağı ve dereotunu 1 dakika çırpın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Soğuyan sebzeleri sosla karıştırın, pancar renginin her şeyi boyamaması için nazik davranın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Turşu küpleri ve taze soğanla tamamlayın, buzdolabında 15 dakika bekletip servis edin, böylece kök sebzeler sosu çekerken küp formunu korur.",
+        "timerSeconds": 900
+      }
+    ]
+  }
+]

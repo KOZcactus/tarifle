@@ -1,0 +1,4173 @@
+[
+  {
+    "slug": "pirasa-yemegi",
+    "title": "Pırasa Yemeği",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Pırasa, havuç ve pirinçle hazırlanan hafif zeytinyağlı tencere yemeği.",
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "totalMinutes": 45,
+    "servingCount": 4,
+    "averageCalories": 230,
+    "protein": 4,
+    "carbs": 24,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Pırasayı çapraz dilimleyin; hem daha hızlı pişer hem de tabakta dağılmaz.",
+    "servingSuggestion": "Limon suyu ile ılık veya soğuk servis edin.",
+    "tags": [
+      "vegan",
+      "dusuk-kalorili",
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Pırasa",
+        "amount": "1",
+        "unit": "kg",
+        "group": null
+      },
+      {
+        "name": "Havuç",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "0.5",
+        "unit": "çay bardağı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pırasaları ve havuçları çapraz dilimleyin, pirinci yıkayıp süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Havucu zeytinyağında 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pırasayı ekleyin ve 5 dakika orta ateşte yumuşatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pirinç, limon suyu, şeker, tuz ve 1 su bardağı sıcak suyu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kapağı kapalı 28 dakika kısık ateşte pişirin, pirinç çiğ kalmasın.",
+        "timerSeconds": 1680
+      }
+    ]
+  },
+  {
+    "slug": "pirasali-kesme-corbasi-bursa-usulu",
+    "title": "Pırasalı Kesme Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Bursa pırasalı kesme çorbası, kesme hamuru pırasa ve yoğurtla buluşturarak kıvamlı, sade ve ev usulü bir çorba yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 18,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 168,
+    "protein": 6,
+    "carbs": 25,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Kesme parçalarını kaynar suya azar azar atmak yapışmayı azaltır.",
+    "servingSuggestion": "Küçük bir kase yoğurt, yanında maydanoz yaprakları ve bir limon dilimiyle sunun.",
+    "tags": [
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Kesme erişte",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Pırasa",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pırasayı ince doğrayın, kesme erişteyi ölçün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pırasayı orta ateşte 4 dakika çevirin, pırasalı kesme için ölçü şaşmasın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Suyu ve kesme erişteyi ekleyip 8 dakika pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yoğurdu sıcak sudan 1 kepçeyle ılıtıp tencereye katın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Çorbayı kısık ateşte 4 dakika karıştırarak pişirin, yoğurt kesilmesin.",
+        "timerSeconds": 240
+      }
+    ]
+  },
+  {
+    "slug": "pirasali-mihalic-mucveri-bursa-usulu",
+    "title": "Pırasalı Mihaliç Mücveri",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Bursa pırasalı mihaliç mücveri, pırasayı mihaliç peyniriyle kızartarak dışı kızarmış, içi yumuşak bir Marmara atıştırmalığı yapar.",
+    "prepMinutes": 14,
+    "cookMinutes": 10,
+    "totalMinutes": 24,
+    "servingCount": 4,
+    "averageCalories": 202,
+    "protein": 8,
+    "carbs": 15,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Pırasayı ince kıymak mücverin tavada daha düzgün tutmasına yardım eder.",
+    "servingSuggestion": "Mücverleri ılık verin, yanına yoğurt ve dereotu koyun.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Pırasa",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Mihaliç peyniri",
+        "amount": "100",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pırasalı Mihaliç Mücveri için Pırasa 2 adet hazırlığını yapıp fazla suyunu elinizle sıkın, harç sulanmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pırasalı Mihaliç Mücveri harcına yumurta, un ve yeşillikleri ekleyip 2 dakika koyu kıvam alana kadar karıştırın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pırasalı Mihaliç Mücveri karışımını 5 dakika dinlendirin, un nemi çeksin ve tavada dağılmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pırasalı Mihaliç Mücveri için yağı orta ateşte 2 dakika ısıtıp harçtan kaşıkla küçük porsiyonlar bırakın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pırasalı Mihaliç Mücveri parçalarını orta ateşte her yüzü kızarana kadar toplam 7 dakika pişirin.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Pırasalı Mihaliç Mücveri porsiyonlarını kağıt havluya alıp 3 dakika dinlendirin ve ılık servis edin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "pirasali-misir-unlu-pide-samsun-usulu",
+    "title": "Pırasalı Mısır Unlu Pide",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Samsun usulü pırasalı mısır unlu pide, ince hamuru pırasa ve peynirle buluşturarak kıtır kenarlı, yumuşak içli ve güçlü bir hamur işi sunar.",
+    "prepMinutes": 18,
+    "cookMinutes": 20,
+    "totalMinutes": 38,
+    "servingCount": 6,
+    "averageCalories": 262,
+    "protein": 9,
+    "carbs": 29,
+    "fat": 11,
+    "isFeatured": true,
+    "tipNote": "Pırasayı önceden 5 dakika çevirip suyunu azaltmak pidenin tabanını kuru tutar.",
+    "servingSuggestion": "Pideyi ılık sunun, yanına ayran ve domates dilimleri koyun.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Mısır unu",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Pırasa",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Beyaz peynir",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Hamuru yoğurun ve 20 dakika dinlendirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pırasayı ince doğrayın ve tavada 5 dakika yumuşatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Mısır ununu pırasaya serpip 2 dakika kavurun, çiğ kokusu kalmasın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamuru oval açın ve pırasalı harcı ince yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kenarları kıvırın ve pideyi 210°C fırında 20 dakika pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Fırından çıkınca 4 dakika bekletip dilimleyin.",
+        "timerSeconds": 240
+      }
+    ]
+  },
+  {
+    "slug": "pirasali-patates-bulyon-ingiltere-usulu",
+    "title": "Pırasalı Patates Bulyon",
+    "cuisine": "gb",
+    "type": "CORBA",
+    "description": "İngiltere usulü pırasalı patates bulyon, pırasayı patates ve sebze suyuyla buluşturarak sakin, yumuşak ve günlük bir çorba yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 162,
+    "protein": 4,
+    "carbs": 24,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Pırasayı kısık ateşte çevirmek çorbada tatlı bir temel aroma verir.",
+    "servingSuggestion": "Bulyonu sıcak verin, üstüne karabiber çekip ekmek sunun.",
+    "tags": [
+      "vejetaryen",
+      "kis-tarifi",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Pırasa",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sebze suyu",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pırasayı ince dilimleyin, patatesi küçük küp doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pırasayı orta ateşte 4 dakika çevirin, pırasalı patates bulyon için ölçü şaşmasın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Patates ve sıcak suyu ekleyip 14 dakika pişirin.",
+        "timerSeconds": 840
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Çorbayı püre yapmadan ezin, patates bulyonu bağlasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sıcak servis edin, pırasalı patates bulyon dokusu beklerken ağırlaşmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "pirasali-patates-corbasi-ingiltere-usulu",
+    "title": "Pırasalı Patates Çorbası",
+    "cuisine": "gb",
+    "type": "CORBA",
+    "description": "İngiltere usulü pırasalı patates çorbası, pırasayı patates ve krema ile buluşturarak yumuşak, sıcak bir çorba yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 168,
+    "protein": 4,
+    "carbs": 22,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Pırasayı düşük ateşte çevirmek tatlılığını daha iyi ortaya çıkarır.",
+    "servingSuggestion": "Pırasalı patates çorbasını sıcak kaseye alıp krema çizgisini yüzeyde ince bırakın.",
+    "tags": [
+      "vejetaryen",
+      "tek-tencere"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Pırasa",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pırasayı yıkayıp ince dilimleyin, patatesi küp doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pırasayı orta ateşte 4 dakika çevirin, pırasalı patates için ölçü şaşmasın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Patatesi ekleyip 2 dakika karıştırın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Suyu katıp 16 dakika pişirin, patates tamamen ezilebilir hale gelsin.",
+        "timerSeconds": 960
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Blenderdan geçirip sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "pirasali-patates-pasty-ingiltere-usulu",
+    "title": "Pırasalı Patates Pasty",
+    "cuisine": "gb",
+    "type": "YEMEK",
+    "description": "İngiltere usulü pırasalı patates pasty, tereyağlı hamuru pırasa, patates ve cheddar ile doldurarak taşınabilir bir fırın işi yapar.",
+    "prepMinutes": 22,
+    "cookMinutes": 24,
+    "totalMinutes": 46,
+    "servingCount": 4,
+    "averageCalories": 332,
+    "protein": 10,
+    "carbs": 38,
+    "fat": 15,
+    "isFeatured": true,
+    "tipNote": "İç harcı soğutmadan hamura koymamak pasty kenarlarının açılmasını engeller.",
+    "servingSuggestion": "Hardallı yeşil salatayla ılık servis edin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Milföy hamuru",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Pırasa",
+        "amount": "2",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Cheddar",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta sarısı",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesi küçük küp doğrayıp 8 dakika diri kalacak şekilde haşlayın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pırasayı tereyağında 5 dakika yumuşatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Patates, pırasa ve cheddar peynirini karıştırıp harcı soğutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Milföy veya pasty hamurunu yuvarlak kesin ve harcı ortasına koyun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kenarları kapatıp kıvırın, dolgu fırında dışarı akmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "200°C fırında 20 dakika altın renk alana kadar pişirin.",
+        "timerSeconds": 1200
+      }
+    ]
+  },
+  {
+    "slug": "pirasali-tavuk-pie-ingiltere-usulu",
+    "title": "Pırasalı Tavuk Pie",
+    "cuisine": "gb",
+    "type": "YEMEK",
+    "description": "Pırasalı tavuk pie, tavuk ve pırasayı kremsi iç harçla buluşturarak kabuklu, sıcak ve İngiliz pub sofralarını andıran bir ana yemek hazırlar.",
+    "prepMinutes": 20,
+    "cookMinutes": 28,
+    "totalMinutes": 48,
+    "servingCount": 4,
+    "averageCalories": 318,
+    "protein": 24,
+    "carbs": 22,
+    "fat": 15,
+    "isFeatured": false,
+    "tipNote": "İç harcı koyu tutmak pie dilimlenirken akmasını önler.",
+    "servingSuggestion": "Pieyi sıcak verin, yanına bezelye ve patates püresi koyun.",
+    "tags": [
+      "misafir-sofrasi",
+      "firinda"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk but eti",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pırasa",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Milföy hamuru",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "0.25",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuğu kuşbaşı doğrayın, pırasayı ince halka kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavuk ve pırasayı tereyağında 8 dakika soteleyin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Un serpip 1 dakika kavurun, sos topaklanmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Krema veya tavuk suyunu ekleyip 5 dakika koyulaştırın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "İç harcı kaba alın, hamurla kapatın ve buhar deliği açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "200°C fırında 20 dakika pişirip 5 dakika dinlendirin, kremalı iç keserken akmasın.",
+        "timerSeconds": 1500
+      }
+    ]
+  },
+  {
+    "slug": "pirinc-patlagi-bar",
+    "title": "Pirinç Patlağı Bar",
+    "cuisine": "tr",
+    "type": "ATISTIRMALIK",
+    "description": "Pirinç patlağı, bal ve fıstık ezmesiyle kesilen pratik okul çantası barı.",
+    "prepMinutes": 15,
+    "cookMinutes": 5,
+    "totalMinutes": 20,
+    "servingCount": 10,
+    "averageCalories": 180,
+    "protein": 4,
+    "carbs": 25,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Karışımı kalıba bastırırken yağlı kağıt kullanın; yüzey düzgün olur.",
+    "servingSuggestion": "Dilimleyip kapalı kutuda saklayın.",
+    "tags": [
+      "30-dakika-alti",
+      "cocuk-dostu",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "YER_FISTIGI"
+    ],
+    "ingredients": [
+      {
+        "name": "Pirinç patlağı",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Fıstık ezmesi",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "100",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kuru üzüm",
+        "amount": "60",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bal ve fıstık ezmesini küçük tencerede kısık ateşte 5 dakika akışkan olana kadar ısıtın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinç patlağı ve kuru üzümü sıcak karışıma ekleyip her parçayı kaplayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karışımı yağlı kağıtlı kalıba bastırın, boşluk kalırsa bar keserken dağılır.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kalıbı 30 dakika buzdolabında soğutun.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Keskin bıçakla barlara kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Bıçağı her kesitte silin, yoksa yapışkan kenarlar parçalanır.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "pirinc-pilavi",
+    "title": "Tereyağlı Pirinç Pilavı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Tane tane, tereyağlı klasik pirinç pilavı. Her yemeğin yanına yakışır.",
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 210,
+    "protein": 4,
+    "carbs": 38,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Pirinci bol suda yıkayıp 30 dk sıcak tuzlu suda bekletin.",
+    "servingSuggestion": "Sade kebapların yanında, üstüne tane karabiber çekip sıcak servis edin.",
+    "tags": [
+      "pratik",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Pirinç",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Şehriye",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pirinci ılık tuzlu suda 20-30 dakika bekletip berraklaşana kadar durulayın.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tereyağında şehriyeyi altın renge dönene kadar kavurun.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Süzülen pirinci tencereye ekleyip 2 dakika tane tane çevirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sıcak su ve tuzu ekleyip pirinç pilavını 12-15 dakika pişirin.",
+        "timerSeconds": 810
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tereyağlı pilavı altına bez koyup 10 dakika demlendirdikten sonra servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "pirozhki",
+    "title": "Pirozhki",
+    "cuisine": "ru",
+    "type": "APERATIF",
+    "description": "Rus pirozhki çörekleri mayalı hamurun içine kıymalı ya da patatesli harç alıp fırında kızarır.",
+    "prepMinutes": 50,
+    "cookMinutes": 25,
+    "totalMinutes": 75,
+    "servingCount": 8,
+    "averageCalories": 320,
+    "protein": 10,
+    "carbs": 37,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Hamuru mutfak beziyle örtüp oda sıcaklığında bekletirseniz daha kolay açılır.",
+    "servingSuggestion": "Pirozhkileri ılık sunun, yanına ekşi krema ve turşu koyun.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Maya",
+        "amount": "7",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "250",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Dana kıyma",
+        "amount": "350",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pirozhki ana malzemelerini ölçüp hazırlayın, pişecek parçaları eşit boyda doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirozhki sosunu veya bağlayıcı harcını ayrı kapta 2 dakika pürüzsüz karıştırın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirozhki parçalarını harçla birleştirin ve şekil verecek kıvama gelene kadar toparlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pirozhki orta ateşte veya fırında dışı kızarana kadar pişsin, kalabalık pişirme yapmayın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pirozhki 3 dakika dinlensin; sıcak veya ılık servis edin, dokusu gevrek kalsın.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "pisco-ginger-fizz-peru-usulu",
+    "title": "Pisco Ginger Fizz",
+    "cuisine": "pe",
+    "type": "KOKTEYL",
+    "description": "Pisco ginger fizz, pisconun taze zencefil ve lime ile buluştuğu ferah, kısa içimli ve Peru usulü bir kokteyldir.",
+    "prepMinutes": 6,
+    "cookMinutes": 0,
+    "totalMinutes": 6,
+    "servingCount": 2,
+    "averageCalories": 176,
+    "protein": 0,
+    "carbs": 10,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Zencefili hafif ezmek kokteyle canlı ama baskın olmayan bir keskinlik verir.",
+    "servingSuggestion": "Bol buzla verin, bardağı lime ve zencefil dilimiyle tamamlayın.",
+    "tags": [
+      "alkollu",
+      "30-dakika-alti",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Pisco likör",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Lime suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Taze zencefil",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pisco Ginger Fizz karışımına başlamadan bardağı soğutun, aromalar ısınmadan dengede kalsın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pisco Ginger Fizz bardağını taze buzla doldurun, içecek ısınmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pisco Ginger Fizz sıvılarını ve zencefili buzun üstüne ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pisco Ginger Fizz karışımını 8 saniye karıştırıp servis edin, buz erirse denge bozulmasın.",
+        "timerSeconds": 8
+      }
+    ]
+  },
+  {
+    "slug": "pisco-sour",
+    "title": "Pisco Sour",
+    "cuisine": "pe",
+    "type": "KOKTEYL",
+    "description": "Lima barlarının köpüklü imzası; pisco brendi, lime ve yumurta akı ipeksi bir başlık oluşturur.",
+    "prepMinutes": 7,
+    "cookMinutes": 0,
+    "totalMinutes": 7,
+    "servingCount": 1,
+    "averageCalories": 210,
+    "protein": 3,
+    "carbs": 18,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Önce buzsuz çalkalayın; yumurta akı daha kalıcı köpük verir.",
+    "servingSuggestion": "Üzerine 2 damla bitters ekleyin.",
+    "tags": [
+      "alkollu",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Pisco brendi",
+        "amount": "60",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Lime suyu",
+        "amount": "25",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Şeker şurubu",
+        "amount": "20",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Yumurta akı",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Bitters",
+        "amount": "2",
+        "unit": "damla",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pisco Sour için kadehi buzla 1 dakika soğutun, servis anında sulanmasın diye buzu boşaltın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pisco Sour pisco, lime, şurup ve yumurta akını buzsuz 15 saniye çalkalayın.",
+        "timerSeconds": 15
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pisco Sour buz ekleyip 12 saniye çalkalayın, köpük soğukta sabitlensin.",
+        "timerSeconds": 12
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pisco Sour karışımını soğuk kadehe süzüp bitters damlatın, köpük bozulmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pisco Sour süslemesini ekleyip bekletmeden servis edin, buz erirse denge bozulmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "pisco-zencefil-fizz-peru-usulu",
+    "title": "Peru Pisco Zencefil Fizz",
+    "cuisine": "pe",
+    "type": "ICECEK",
+    "description": "Peru pisco zencefil fizz, piscoyu taze zencefil ve soda ile buluşturarak And gecelerine canlı, keskin ve serin bir kokteyl sunar.",
+    "prepMinutes": 6,
+    "cookMinutes": 0,
+    "totalMinutes": 6,
+    "servingCount": 1,
+    "averageCalories": 174,
+    "protein": 0,
+    "carbs": 10,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Zencefili ince rendelemek kokteylde daha dengeli bir keskinlik bırakır.",
+    "servingSuggestion": "Soğuk sunun, bardağı lime dilimi ve zencefille tamamlayın.",
+    "tags": [
+      "alkollu",
+      "30-dakika-alti",
+      "yaz-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Brendi",
+        "amount": "50",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Soda",
+        "amount": "100",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Taze zencefil",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Lime suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Brendiyi, lime suyu ve zencefili bardakta karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Buzu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soda ile tamamlayıp servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "pisto-yumurtali-kase-ispanya-usulu",
+    "title": "İspanya Pisto Yumurtalı Kâse",
+    "cuisine": "es",
+    "type": "YEMEK",
+    "description": "İspanya pisto yumurtalı kâse, domatesli sebze tabanını akışkan yumurtayla tamamlayarak yaz sebzelerine sıcak, sade ve doyurucu bir servis verir.",
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "totalMinutes": 35,
+    "servingCount": 3,
+    "averageCalories": 184,
+    "protein": 9,
+    "carbs": 12,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Sebzeleri fazla ezmeden pişirmek pistonun canlı dokusunu korur.",
+    "servingSuggestion": "Kaseyi ılık verin, üstüne zeytinyağı gezdirip ekmek sunun.",
+    "tags": [
+      "vejetaryen",
+      "yaz-tarifi"
+    ],
+    "allergens": [
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Kabak",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Patlıcan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabak, biber, soğan ve domatesi küçük küpler halinde doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve biberi zeytinyağında 5 dakika yumuşatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kabak ve domatesi ekleyip 15 dakika pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sebzeleri kaşıkla açın ve yumurtaları boşluklara kırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kapağı kapalı 4 dakika pişirin, sarılar fazla katılaşmasın.",
+        "timerSeconds": 240
+      }
+    ]
+  },
+  {
+    "slug": "piyaz",
+    "title": "Piyaz",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Haşlanmış kuru fasulye, soğan, yumurta ve tahinli sosla hazırlanan doyurucu salata.",
+    "prepMinutes": 20,
+    "cookMinutes": 40,
+    "totalMinutes": 60,
+    "servingCount": 4,
+    "averageCalories": 310,
+    "protein": 14,
+    "carbs": 35,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Fasulyeyi dağılmadan yumuşayana kadar haşlayın; salatada tane formunu koruması gerekir.",
+    "servingSuggestion": "Piyazı oda sıcaklığında verin, üstüne sumak serpip köfteyle sunun.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "YUMURTA",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuru fasulye",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kırmızı soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sumak",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Fasulyeyi bir gece ıslatın ve yumuşayana kadar 35-40 dakika haşlayın.",
+        "timerSeconds": 2400
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yumurtaları 10 dakika haşlayıp dilimleyin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kırmızı soğanı ince doğrayıp sumakla ovun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tahin, limon suyu, zeytinyağı ve tuzu çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Fasulye, soğan ve maydanozu sosla karıştırın, yumurta dilimleriyle servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "pizza-margherita",
+    "title": "Pizza Margherita",
+    "cuisine": "it",
+    "type": "YEMEK",
+    "description": "Pizza Margherita, ince mayalı hamuru domates, mozzarella, fesleğen ve zeytinyağıyla çok yüksek ısıda pişiren Napoli klasiğidir.",
+    "prepMinutes": 90,
+    "cookMinutes": 12,
+    "totalMinutes": 180,
+    "servingCount": 4,
+    "averageCalories": 590,
+    "protein": 25,
+    "carbs": 76,
+    "fat": 22,
+    "isFeatured": true,
+    "tipNote": "Taşı önceden kızdırmak ev fırınında tabanın yumuşamadan kabarmasını sağlar.",
+    "servingSuggestion": "Fırından çıkar çıkmaz taze fesleğen ve zeytinyağıyla dilimleyin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "3.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ilık su",
+        "amount": "1.25",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru maya",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Domates konservesi",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Mozzarella",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Fesleğen",
+        "amount": "1",
+        "unit": "avuç",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, su, maya, tuz ve zeytinyağıyla esnek hamur yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 1 saat mayalandırın.",
+        "timerSeconds": 3600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Domatesi tuzla ezip kısa bir sos hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Fırın taşını 250°C'de 30 dakika ısıtın.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Hamuru iki yuvarlak pizza olarak ince açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Domates sosu ve mozzarella parçalarını hamura yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Pizzaları 250°C fırında 10-12 dakika pişirip fesleğenle tamamlayın.",
+        "timerSeconds": 720
+      }
+    ]
+  },
+  {
+    "slug": "placki-z-cukinii-polonya-usulu",
+    "title": "Placki z Cukinii",
+    "cuisine": "pl",
+    "type": "APERATIF",
+    "description": "Placki z cukinii, kabağı un ve yumurtayla kızartarak kenarı kıtır, içi yumuşak bir Polonya tava atıştırmalığı çıkarır.",
+    "prepMinutes": 14,
+    "cookMinutes": 10,
+    "totalMinutes": 24,
+    "servingCount": 4,
+    "averageCalories": 184,
+    "protein": 6,
+    "carbs": 18,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Rendelenmiş kabağın suyunu sıkmak mücverlerin tavada dağılmasını önler.",
+    "servingSuggestion": "Mücverleri sıcak sunun, yanına ekşi krema ve dereotu koyun.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Kabak",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Placki z Cukinii ana malzemelerini ölçüp hazırlayın, pişecek parçaları eşit boyda doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Placki z Cukinii sosunu veya bağlayıcı harcını ayrı kapta 2 dakika pürüzsüz karıştırın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Placki z Cukinii parçalarını harçla birleştirin ve şekil verecek kıvama gelene kadar toparlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Placki z Cukinii orta ateşte veya fırında dışı kızarana kadar pişsin, kalabalık pişirme yapmayın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Placki z Cukinii 3 dakika dinlensin; sıcak veya ılık servis edin, dokusu gevrek kalsın.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "placki-ziemniaczane",
+    "title": "Placki Ziemniaczane",
+    "cuisine": "pl",
+    "type": "ATISTIRMALIK",
+    "description": "Placki ziemniaczane, rendelenmiş patates hamurunun tavada kızartılmasıyla hazırlanan ve Polonya'da sade ya da sos eşliğinde yenilen klasik patates pankekleridir.",
+    "prepMinutes": 15,
+    "cookMinutes": 15,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 226,
+    "protein": 5,
+    "carbs": 28,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Patatesin suyunu hafifçe sıkmak pankeklerin tavada daha iyi kızarmasını sağlar.",
+    "servingSuggestion": "Yanına ekşi krema ile sıcak servis edin.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Patates",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "0.5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ayçiçek yağı",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ekşi krema",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patates ve soğanın kabuklarını soyup rendeleyin, fazla suyunu hafifçe sıkın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Rendelenmiş karışıma un ve yumurtayı ekleyip koyu akışkan bir harç yapın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ayçiçek yağını tavada kızdırın, harçtan kaşık kaşık bırakıp yassıltın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Patates mücverlerini iki yüzü altın renk olana kadar 3-4 dakika kızartın.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Placki ziemniaczane'yi ekşi krema eşliğinde sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "plantain-black-bean-tost-kuba-usulu",
+    "title": "Küba Plantain Black Bean Tost",
+    "cuisine": "cu",
+    "type": "APERATIF",
+    "description": "Küba plantain black bean tost, siyah fasulyeyi kızarmış ekmek ve plantain ile buluşturarak tok bir Karayip atıştırmalığı yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 12,
+    "totalMinutes": 24,
+    "servingCount": 4,
+    "averageCalories": 218,
+    "protein": 7,
+    "carbs": 31,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Plantaini çok ince dilimlemek tavada daha hızlı ve eşit kızarmasını sağlar.",
+    "servingSuggestion": "Tostları sıcak verin, yanına siyah fasulye ve salsa koyun.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Ekmek dilimi",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış siyah fasulye",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Plantain",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Küba Plantain Black Bean Tost ana malzemelerini ölçüp hazırlayın, pişecek parçaları eşit boyda doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Küba Plantain Black Bean Tost sosunu veya bağlayıcı harcını ayrı kapta 2 dakika pürüzsüz karıştırın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Küba Plantain Black Bean Tost parçalarını harçla birleştirin ve şekil verecek kıvama gelene kadar toparlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Küba Plantain Black Bean Tost orta ateşte veya fırında dışı kızarana kadar pişsin, kalabalık pişirme yapmayın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Küba Plantain Black Bean Tost 3 dakika dinlensin; sıcak veya ılık servis edin, dokusu gevrek kalsın.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "platanos-maduros-fritos",
+    "title": "Platanos Maduros Fritos",
+    "cuisine": "cu",
+    "type": "ATISTIRMALIK",
+    "description": "Platanos maduros fritos, olgun muzların dışı karamelize olacak kadar kızartıldığı klasik bir Küba eşlikçisidir.",
+    "prepMinutes": 5,
+    "cookMinutes": 10,
+    "totalMinutes": 15,
+    "servingCount": 4,
+    "averageCalories": 188,
+    "protein": 1,
+    "carbs": 30,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Muzları çok ince dilimlememek dışı kızarırken içinin yumuşak kalmasını sağlar.",
+    "servingSuggestion": "Kenarları karamelizeyken sıcak servis edin.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Olgun muz",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ayçiçek yağı",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Olgun muzları soyup kalınca çapraz dilimleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "4 yemek kaşığı ayçiçek yağını orta ateşte ısıtın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Dilimleri tavaya tek sıra yerleştirin, şekerli yüzey üst üste kalırsa yapışır, böylece kabuk kopar.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Her yüzü 4 dakika kızarıp karamelleşene kadar pişirin.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "poha",
+    "title": "Poha",
+    "cuisine": "in",
+    "type": "KAHVALTI",
+    "description": "Hindistan'da sabah kahvaltısında yapılan poha, ince pirinç gevreğinin zerdeçal ve sebzeyle hafifçe kavrulmuş halidir.",
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "totalMinutes": 22,
+    "servingCount": 4,
+    "averageCalories": 241,
+    "protein": 6,
+    "carbs": 34,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Pohayı sudan geçirip uzun süre bekletmeyin; sadece yumuşaması yeterli.",
+    "servingSuggestion": "Üzerine taze kişniş ve limon suyu ekleyerek servis edin.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "butce-dostu",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "YER_FISTIGI"
+    ],
+    "ingredients": [
+      {
+        "name": "Poha",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yer fıstığı",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zerdeçal",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Poha yapmadan önce kuru ve yaş malzemeleri ayırın, karıştırma aşaması temiz ilerlesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pohayı süzgeçte sudan geçirip 5 dakika dinlendirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğanı ve yer fıstığını tavada 5 dakika çevirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Poha ve zerdeçalı ekleyip 3 dakika karıştırın, limonla servis edin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Poha yüzeyi parlakken sıcak servis edin, soğursa gevrek kenarlar yumuşar.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "pollo-al-ajillo-ispanya-usulu",
+    "title": "Pollo al Ajillo",
+    "cuisine": "es",
+    "type": "YEMEK",
+    "description": "Pollo al ajillo, tavuğu bol sarımsakla tavada pişirerek kokulu, sulu ve tavadan gelen bir İspanya klasiği çıkarır.",
+    "prepMinutes": 12,
+    "cookMinutes": 18,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 274,
+    "protein": 24,
+    "carbs": 5,
+    "fat": 17,
+    "isFeatured": false,
+    "tipNote": "Sarımsağı yakmamak için tavuğu önce pişirin.",
+    "servingSuggestion": "Tavuğu sıcak sosunun içinde bırakıp yanına ince kesilmiş yeşil yaprak salatayla verin.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Tavuk but",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "6",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.75",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuk parçalarını tuzlayın ve 10 dakika oda sıcaklığında bekletin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sarımsakları kabaca ezin, limon suyu ve maydanozu hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tavuğu zeytinyağında 12 dakika çevirerek kızartın, parçalar içte pembe kalmasın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sarımsağı ekleyip 2 dakika yakmadan çevirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Limon suyu veya az şarap ekleyip 4 dakika sosu toparlayın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Maydanozla bitirin, sarımsak yanarsa acılık oluşmasın diye hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "pollo-cacciatora-italyan-ev-usulu",
+    "title": "Pollo Cacciatora",
+    "cuisine": "it",
+    "type": "YEMEK",
+    "description": "Pollo cacciatora, tavuğu domates ve otlarla pişirerek İtalyan ev usulü sulu ve rahatlatıcı bir ana yemek sunar.",
+    "prepMinutes": 14,
+    "cookMinutes": 26,
+    "totalMinutes": 40,
+    "servingCount": 4,
+    "averageCalories": 312,
+    "protein": 27,
+    "carbs": 9,
+    "fat": 17,
+    "isFeatured": false,
+    "tipNote": "Tavuğu önce renk aldırmak sosun lezzetini belirginleştirir.",
+    "servingSuggestion": "Tavuğu sıcak verin, yanına polenta ya da ekmek koyun.",
+    "tags": [
+      "tek-tencere",
+      "yuksek-protein"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Tavuk but",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Domates püresi",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Kekik",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuk parçalarını tuzlayın, soğan ve biberi doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavuğu geniş tencerede 6 dakika mühürleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğan, biber ve sarımsağı ekleyip 5 dakika çevirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Domates, defne ve az suyu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kapağı aralık 25 dakika pişirin, sos tavukla bütünleşsin ve fazla sulu kalmasın.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tuzu ayarlayıp 5 dakika dinlendirin ve sıcak servis edin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "polonya-dereotlu-salatalik-corbasi",
+    "title": "Polonya Dereotlu Salatalık Çorbası",
+    "cuisine": "pl",
+    "type": "CORBA",
+    "description": "Polonya usulü dereotlu salatalık çorbası, rendelenmiş turşu salatalık, patates ve yoğurdu ekşi, sıcak bir kış kasesinde buluşturur.",
+    "prepMinutes": 8,
+    "cookMinutes": 18,
+    "totalMinutes": 26,
+    "servingCount": 4,
+    "averageCalories": 185,
+    "protein": 6,
+    "carbs": 24,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Turşu suyunu azar azar eklemek ekşiliği kontrol etmeyi kolaylaştırır.",
+    "servingSuggestion": "Dereotu ve karabiberle sıcak servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti",
+      "tek-tencere"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Salatalık turşusu",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Turşu suyu",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesleri küçük küp doğrayın, salatalık turşusunu rendeleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Patatesleri sebze suyunda 15 dakika pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Rendelenmiş turşuyu tereyağında 3 dakika çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Turşu ve turşu suyunu çorbaya ekleyip 5 dakika kaynatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yoğurdu sıcak çorba suyuyla ılıtıp tencereye karıştırın, kesilmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Dereotuyla sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "ponzu-sos",
+    "title": "Ponzu Sos",
+    "cuisine": "jp",
+    "type": "SOS",
+    "description": "Ponzu sos, soya sosu ve narenciyeyi balık, salata ve dumpling için parlak bir dip yapar.",
+    "prepMinutes": 8,
+    "cookMinutes": 0,
+    "totalMinutes": 8,
+    "servingCount": 6,
+    "averageCalories": 25,
+    "protein": 2,
+    "carbs": 4,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Sosu 15 dakika bekletin; narenciye asidi tuzu yumuşatır.",
+    "servingSuggestion": "Sashimi, gyoza veya ızgara mantar yanında dip sos olarak servis edin.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SOYA"
+    ],
+    "ingredients": [
+      {
+        "name": "Soya sosu",
+        "amount": "80",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "40",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Pirinç sirkesi",
+        "amount": "30",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Kombu",
+        "amount": "5",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soya sosu, limon suyu ve sirkeyi karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kombuyu sosun içinde 15 dakika bekletin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kombuyu çıkarıp sosu süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ponzu Sosu fazla koyu kalırsa birkaç damla su ekleyip yeniden çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ponzu Sosu küçük kaseye alıp aroması oturduğunda servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "porkolt",
+    "title": "Pörkölt",
+    "cuisine": "hu",
+    "type": "YEMEK",
+    "description": "Macar pörkölt, bol kırmızı biberle ağır ateşte pişen etin koyu ve yoğun tencere halidir.",
+    "prepMinutes": 15,
+    "cookMinutes": 75,
+    "totalMinutes": 90,
+    "servingCount": 4,
+    "averageCalories": 348,
+    "protein": 32,
+    "carbs": 10,
+    "fat": 20,
+    "isFeatured": false,
+    "tipNote": "Toz biberi sıcak yağda uzun bırakmayın; hemen sıvı eklemek rengini korur.",
+    "servingSuggestion": "Yanına haşlanmış patates veya nokedli ile servis edin.",
+    "tags": [
+      "tek-tencere",
+      "misafir-sofrasi"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Dana kuşbaşı",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tatlı kırmızı biber",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Domates püresi",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Eti kuşbaşı doğrayın, soğanı ince kıyın ve kırmızı biberi hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı yağda 8 dakika altın renk alana kadar kavurun.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Eti ekleyip 5 dakika çevirin, yüzeyi renk alsın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tencereyi ocaktan çekip kırmızı biberi ekleyin, baharat yanmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Domates püresi ve sıcak suyu ekleyip 60 dakika kısık ateşte pişirin.",
+        "timerSeconds": 3600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kapağı açık 8 dakika sosu yoğunlaştırın ve sıcak servis edin.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "portakal-cicekli-soguk-cay-fas-usulu",
+    "title": "Portakal Çiçekli Soğuk Çay",
+    "cuisine": "ma",
+    "type": "ICECEK",
+    "description": "Portakal çiçekli soğuk çay, siyah çayı portakal çiçeği suyu ve nane ile buluşturarak aromatik, hafif ve serin bir içim sunar.",
+    "prepMinutes": 8,
+    "cookMinutes": 0,
+    "totalMinutes": 8,
+    "servingCount": 4,
+    "averageCalories": 44,
+    "protein": 0,
+    "carbs": 11,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Portakal çiçeği suyunu damla damla eklemek sabunsu ağırlığı önler.",
+    "servingSuggestion": "Bol buzla sunun, bardağı portakal dilimi ve nane ile tamamlayın.",
+    "tags": [
+      "alkolsuz",
+      "30-dakika-alti",
+      "yaz-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Demli siyah çay",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Portakal çiçeği suyu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Portakal Çiçekli Soğuk Çay için çay bazını hazırlayıp 4-6 dakika demleyin, sonra süzün.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Portakal Çiçekli Soğuk Çay içine portakal ve aromatik notaları ekleyip içeceği tamamen soğutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Portakal Çiçekli Soğuk Çay içeceğini buzla doldurulmuş bardaklarda servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "portakal-pekmez-soda-antalya-usulu",
+    "title": "Portakal Pekmez Soda",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Antalya usulü portakal pekmez soda, portakal suyu ve az pekmezi soda ile buluşturarak tatlı-ekşi dengeli bir yaz içeceği oluşturur.",
+    "prepMinutes": 5,
+    "cookMinutes": 0,
+    "totalMinutes": 5,
+    "servingCount": 4,
+    "averageCalories": 38,
+    "protein": 0,
+    "carbs": 9,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Pekmezi çok az kullanmak sodayı ağırlaştırmadan renk ve gövde verir.",
+    "servingSuggestion": "Soğuk verin, bardağı portakal dilimi ve buzla tamamlayın.",
+    "tags": [
+      "alkolsuz",
+      "30-dakika-alti",
+      "yaz-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Portakal suyu",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soda",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Pekmez",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Portakal Pekmez Soda için bardakları buzla hazırlayın, portakal bazını önce ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Portakal Pekmez Soda içine gazlı kısmı sonradan döküp köpüğü söndürmeden hafifçe karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Portakal Pekmez Soda içeceğini bekletmeden serin servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "portakal-salatasi-antalya-usulu",
+    "title": "Antalya Portakal Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Antalya portakal salatası, turunçgilin soğan ve zeytinyağıyla birleştiği, özellikle balık sofralarında serinletici eşlikçi olarak kurulan yalın bir Akdeniz salatasıdır.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "totalMinutes": 10,
+    "servingCount": 4,
+    "averageCalories": 74,
+    "protein": 1,
+    "carbs": 15,
+    "fat": 1,
+    "isFeatured": false,
+    "tipNote": "Portakalı bıçakla fileto çıkarmak salatanın içinde acı beyaz zar bırakmaz.",
+    "servingSuggestion": "Üzerine zeytinyağı ve nane serperek soğuk servis edin.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Portakal",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kırmızı soğan",
+        "amount": "0.5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Portakalların kabuklarını soyup dilimleyin, sos dengesi bozulmasın diye fazla suyunu süzdürün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Antalya Portakal narenciyesinin beyaz zarını temizleyin ve akan suyunu sos için ayırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Antalya Portakal sosu için zeytinyağını limon suyu ve tuzla çırpın, antalya tadı öne çıksın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Antalya Portakal Salatası ana malzemelerini sosla 1 dakika ezmeden harmanlayın, parçalar dağılmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Antalya Portakal narenciye suyunu azar azar ekleyin, tabakta sulanmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Antalya Portakal Salatasını servis tabağına alın ve sos parlakken sofraya çıkarın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "portakalli-arroz-con-leche-ispanya-usulu",
+    "title": "Portakallı Arroz con Leche",
+    "cuisine": "es",
+    "type": "TATLI",
+    "description": "Portakallı arroz con leche, sütlü pirinci portakal kabuğu ve tarçınla buluşturarak kremalı, kokulu ve rahatlatıcı bir tatlı yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 24,
+    "totalMinutes": 34,
+    "servingCount": 4,
+    "averageCalories": 238,
+    "protein": 5,
+    "carbs": 32,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Portakal kabuğunu erken çıkarmak tatlıda acılık oluşmasını önler.",
+    "servingSuggestion": "Tatlıyı soğuk sunun, üstüne tarçın serpip küçük kaselerde verin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Pirinç",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Portakal kabuğu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pirinci yıkayıp sütle tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinci sütle 18 dakika kısık ateşte pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Şeker, portakal kabuğu ve tarçını ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karışımı 4 dakika daha pişirin, pirinç yanmasın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kaselere alıp 30 dakika soğutun.",
+        "timerSeconds": 1800
+      }
+    ]
+  },
+  {
+    "slug": "portakalli-bademli-irmik-kup-adana-usulu",
+    "title": "Portakallı Bademli İrmik Kup",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Adana usulü portakallı bademli irmik kup, irmiği portakal kabuğu ve bademle buluşturarak kokulu, serin ve zarif bir tatlı yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 8,
+    "totalMinutes": 18,
+    "servingCount": 4,
+    "averageCalories": 224,
+    "protein": 5,
+    "carbs": 28,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Portakal kabuğunu ince rendelemek kup içinde dengeli bir narenciye tonu bırakır.",
+    "servingSuggestion": "Kupları soğuk verin, üstüne badem serpip portakal kabuğu ekleyin.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "İrmik",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Badem",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Portakal",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bademleri iri kırın ve portakal kabuğunu rendeleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "İrmiği sütle 8 dakika karıştırarak pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Portakal kabuğunu ocaktan sonra ekleyin, aroma acılaşmasın diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "İrmikli karışımı kuplara paylaştırıp badem serpin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kup tatlısını 25 dakika soğutun ve servis edin.",
+        "timerSeconds": 1500
+      }
+    ]
+  },
+  {
+    "slug": "portakalli-crema-kup-ispanya-usulu",
+    "title": "İspanya Portakallı Crema Kup",
+    "cuisine": "es",
+    "type": "TATLI",
+    "description": "İspanya portakallı crema kup, kremayı portakal kabuğu ile buluşturarak yumuşak ve narenciye kokulu bir bardak tatlı sunar.",
+    "prepMinutes": 10,
+    "cookMinutes": 10,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 194,
+    "protein": 4,
+    "carbs": 18,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Portakal kabuğunu ince rendelemek kremada acı tat bırakmaz.",
+    "servingSuggestion": "Kupları soğuk sunun, üstüne portakal kabuğu ve tarçın serpin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta sarısı",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Portakal kabuğu rendesi",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Sütü portakal kabuğuyla 4 dakika ısıtın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yumurta sarısı ve şekeri 2 dakika çırpın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sıcak sütü yavaş ekleyin, yumurta kesilmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kremayı 5 dakika koyulaştırıp kuplara paylaştırın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kup kremasını 1 saat soğutup servis edin.",
+        "timerSeconds": 3600
+      }
+    ]
+  },
+  {
+    "slug": "portakalli-dana-picadillo-kuba-usulu",
+    "title": "Portakallı Dana Picadillo",
+    "cuisine": "cu",
+    "type": "YEMEK",
+    "description": "Küba usulü portakallı dana picadillo, kıymayı portakal, kapari ve zeytinle buluşturarak parlak bir tava yemeği yapar.",
+    "prepMinutes": 14,
+    "cookMinutes": 18,
+    "totalMinutes": 32,
+    "servingCount": 4,
+    "averageCalories": 328,
+    "protein": 23,
+    "carbs": 11,
+    "fat": 21,
+    "isFeatured": true,
+    "tipNote": "Portakal suyunu son bölümde eklemek tavada taze bir koku bırakır.",
+    "servingSuggestion": "Portakallı dana picadillo'yu sıcak tabağa alıp zeytin ve kapariyi üstte gösterin.",
+    "tags": [
+      "tek-tencere",
+      "yuksek-protein"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Dana kıyma",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yeşil zeytin",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kapari",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Portakal suyu",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soğanı doğrayın, portakal suyunu sıkın, zeytin ve kapariyi hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kıymayı soğanla geniş tavada 8 dakika kavurun.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kimyon ve sarımsağı ekleyip 1 dakika çevirin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Zeytin ve kapariyi katıp 5 dakika pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Portakal suyunu ekleyip 3 dakika parlak sos kalana kadar çektirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tuzu kontrol edin, kapari tuzu baskın olmasın diye sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "portakalli-havuc-salatasi-fas-usulu",
+    "title": "Portakallı Havuç Salatası",
+    "cuisine": "ma",
+    "type": "SALATA",
+    "description": "Fas usulü portakallı havuç salatası, rendelenmiş havucu portakal, kimyon ve zeytinyağıyla birleştirerek parlak aromalı bir meze yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "totalMinutes": 10,
+    "servingCount": 4,
+    "averageCalories": 96,
+    "protein": 1,
+    "carbs": 14,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Havucu sosla 10 dakika bekletmek portakal suyunu içine çekmesini sağlar.",
+    "servingSuggestion": "Nane yapraklarıyla soğuk servis edin.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Havuç",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Portakal",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kimyon",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Taze nane",
+        "amount": "6",
+        "unit": "yaprak",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Havuçları rendeleyip portakal dilimleriyle karıştırın, sos dengesi bozulmasın diye fazla suyunu süzdürün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Portakallı Havuç narenciyesinin beyaz zarını temizleyin ve akan suyunu sos için ayırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Portakallı Havuç sosu için zeytinyağını limon suyu ve tuzla çırpın, portakallı tadı öne çıksın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Portakallı Havuç Salatası ana malzemelerini sosla 1 dakika ezmeden harmanlayın, parçalar dağılmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Portakallı Havuç Salatasını servis tabağına alın ve sos parlakken sofraya çıkarın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "portakalli-havuc-suyu",
+    "title": "Portakallı Havuç Suyu",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Taze havuç ve portakal suyuyla hazırlanan parlak renkli içecek.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "totalMinutes": 10,
+    "servingCount": 3,
+    "averageCalories": 85,
+    "protein": 1,
+    "carbs": 21,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Havucu sıkmadan önce uçlarını kesin; topraksı tat azalır.",
+    "servingSuggestion": "Kahvaltıda soğuk servis edin.",
+    "tags": [
+      "vegan",
+      "alkolsuz",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Havuç",
+        "amount": "5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Portakal",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Havuçların uçlarını kesip yıkayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Havuç ve portakalları sıkacakta sıkın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Limon suyu ve buzla karıştırıp servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "portakalli-irmik-helvasi-antakya-usulu",
+    "title": "Antakya Portakallı İrmik Helvası",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Antakya portakallı irmik Helvası, irmiği portakal kabuğu ve suyu ile kavurarak Akdeniz'de narenciyeli, sıcak ve parlak aromalı bir tatlı sunar.",
+    "prepMinutes": 8,
+    "cookMinutes": 15,
+    "totalMinutes": 23,
+    "servingCount": 6,
+    "averageCalories": 202,
+    "protein": 3,
+    "carbs": 29,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Kabuğu ince rendelemek helvada acı notaların baskınlaşmasını önler.",
+    "servingSuggestion": "Helvayı ılık verin, üstüne ceviz serpip küçük tabakta sunun.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "İrmik",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "60",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Portakal suyu",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Portakal suyunu şekerle karıştırıp sıcak tutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "İrmiği tereyağında 8 dakika kavurun.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Portakallı şerbeti ince akıtarak ekleyin, helva sıçramasın diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Helvayı 5 dakika kısık ateşte toparlayın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "10 dakika dinlendirip ılık servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "portakalli-irmik-keki-adana-usulu",
+    "title": "Portakallı İrmik Keki",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Adana usulü portakallı irmik keki, irmiği portakal kabuğu ve yoğurtla buluşturarak nemli, hafif ve parlak bir kek yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 24,
+    "totalMinutes": 36,
+    "servingCount": 6,
+    "averageCalories": 238,
+    "protein": 5,
+    "carbs": 32,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Portakal kabuğunu ince rendelemek kekte acı tat bırakmaz.",
+    "servingSuggestion": "Keki ılık sunun, yanına çay ve portakal dilimi koyun.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "İrmik",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Portakal kabuğu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Adana usulü kek için yumurta ve şekeri 3 dakika çırpın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "İrmik, un ve Adana portakal kabuğunu hamura ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Harcı kalıba döküp 5 dakika bekletin, irmik sıvıyı çeksin diye.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Adana irmik kekini 180°C fırında 24 dakika pişirin.",
+        "timerSeconds": 1440
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kalıpta 15 dakika dinlendirip dilimleyin.",
+        "timerSeconds": 900
+      }
+    ]
+  },
+  {
+    "slug": "portakalli-irmik-muhallebisi-mugla-usulu",
+    "title": "Portakallı İrmik Muhallebisi",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Muğla usulü portakallı irmik muhallebisi, irmiği portakal kabuğu ve sütle buluşturarak hafif bir kaşık tatlısı yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "totalMinutes": 22,
+    "servingCount": 4,
+    "averageCalories": 206,
+    "protein": 5,
+    "carbs": 30,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Portakal kabuğunu ince rendelemek muhallebi içinde acı bir iz bırakmaz.",
+    "servingSuggestion": "Portakallı irmik muhallebisini soğuk kasede sunup portakal kabuğu rendesini üstte bırakın.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "İrmik",
+        "amount": "5",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Portakal kabuğu rendesi",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Portakal suyu",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Süt, irmik ve şekeri tencerede çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Muhallebiyi orta ateşte 8 dakika koyulaştırın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Portakal suyu ve kabuğunu ocaktan sonra ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kaplara paylaştırın, aroma acılaşmasın diye sıcak bekletmeyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Portakallı muhallebiyi 30 dakika soğutup servis edin.",
+        "timerSeconds": 1800
+      }
+    ]
+  },
+  {
+    "slug": "portakalli-krema-kup-ispanya-usulu",
+    "title": "Portakallı Krema Kup",
+    "cuisine": "es",
+    "type": "TATLI",
+    "description": "İspanya usulü portakallı krema kup, portakalı krema ve vanilyayla buluşturarak hafif, serin bir tatlı yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 6,
+    "totalMinutes": 16,
+    "servingCount": 4,
+    "averageCalories": 218,
+    "protein": 3,
+    "carbs": 22,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Portakal kabuğunu çok ince rendelemek tatlıda acılık oluşmasını önler.",
+    "servingSuggestion": "Portakallı krema kupunu soğuk bardakta sunup vanilyalı kremayı portakal kokusuyla bırakın.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Krema",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Portakal suyu",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Vanilya",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kremayı portakal kabuğuyla 3 dakika ısıtın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Vanilyayı ekleyip karışımı 5 dakika ılıtın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kremayı süzün, kabuk parçaları ağıza gelmesin diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kuplara paylaştırıp yüzeyi düzeltin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kup kremasını 1 saat soğutun ve portakalla servis edin.",
+        "timerSeconds": 3600
+      }
+    ]
+  },
+  {
+    "slug": "portakalli-labneli-krep-antalya-usulu",
+    "title": "Antalya Portakallı Labneli Krep",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Antalya portakallı labneli krep, portakal kabuğu ve labneyi ince kreplerle buluşturarak ferah ve kremamsı bir kahvaltı hazırlar.",
+    "prepMinutes": 15,
+    "cookMinutes": 10,
+    "totalMinutes": 25,
+    "servingCount": 4,
+    "averageCalories": 232,
+    "protein": 7,
+    "carbs": 23,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Portakal kabuğunu ince rendelemek kreplerde acı tat bırakmamasını sağlar.",
+    "servingSuggestion": "Krepleri ılık verin, üstüne bal gezdirip portakal ekleyin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Labne",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Portakal kabuğu rendesi",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Antalya Portakallı Labneli Krep başlangıcında ana malzemeleri gözden geçirin, eksik ölçü kalmasın diye kapları sıraya dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Un, yumurta ve suyu çırparak hamur hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "İnce krepleri tavada 6 dakika pişirin, portakalli-labneli-krep-antalya-usulu akışı için.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Labne ve portakal kabuğuyla doldurup servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Antalya Portakallı Labneli Krep kıvamı oturunca servis edin, fazla beklerse peynirli doku sertleşir.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "portakalli-sicak-cikolata",
+    "title": "Portakallı Sıcak Çikolata",
+    "cuisine": "fr",
+    "type": "ICECEK",
+    "description": "Bitter çikolataya portakal kabuğu eklendiğinde fincanda kısa süre kalan ama akılda uzun süren bir aroma çıkar.",
+    "prepMinutes": 5,
+    "cookMinutes": 8,
+    "totalMinutes": 13,
+    "servingCount": 2,
+    "averageCalories": 240,
+    "protein": 7,
+    "carbs": 25,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Portakal kabuğunun beyaz kısmını almamaya çalışın; acılık hızla öne çıkar.",
+    "servingSuggestion": "Üstüne ince portakal kabuğu rendesi ekleyerek servis edin.",
+    "tags": [
+      "cocuk-dostu",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "400",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Bitter çikolata",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Portakal kabuğu rendesi",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kakao",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Sütü tencerede ısıtın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Çikolatayı ekleyip eritin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Portakal kabuğu ve kakaoyu ekleyip servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "portakalli-tahinli-irmik-kek-mersin-usulu",
+    "title": "Portakallı Tahinli İrmik Kek",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Mersin usulü portakallı tahinli irmik kek, tahini portakal kabuğu ve irmikle buluşturarak nemli, aromalı ve yoğun bir tatlı dilimi kurar.",
+    "prepMinutes": 12,
+    "cookMinutes": 24,
+    "totalMinutes": 36,
+    "servingCount": 6,
+    "averageCalories": 242,
+    "protein": 6,
+    "carbs": 27,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Portakal kabuğunu ince rendelemek kekte keskinlik bırakmadan aroma verir.",
+    "servingSuggestion": "Portakallı tahinli irmik keki dilimleyip tahinli yüzeyi ve portakal kokusu öne çıkacak şekilde sunun.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "İrmik",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Portakal",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kabartma tozu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yumurta, şeker ve tahini 2 dakika çırpın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "İrmik, un ve tahinli portakal kabuğunu hamura ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Harcı kalıba dökün ve üstünü susamla kaplayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tahinli irmik kekini 180°C fırında 24 dakika pişirin.",
+        "timerSeconds": 1440
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "15 dakika dinlendirin, tahinli doku bıçakta dağılmasın.",
+        "timerSeconds": 900
+      }
+    ]
+  },
+  {
+    "slug": "portakalli-tarcinli-irmik-kup-fas-usulu",
+    "title": "Portakallı Tarçınlı İrmik Kup",
+    "cuisine": "ma",
+    "type": "TATLI",
+    "description": "Portakallı tarçınlı irmik kup, irmiği portakal ve tarçınla buluşturarak yumuşak, kokulu ve sade bir akşam tatlısı kurar.",
+    "prepMinutes": 10,
+    "cookMinutes": 14,
+    "totalMinutes": 24,
+    "servingCount": 4,
+    "averageCalories": 238,
+    "protein": 4,
+    "carbs": 32,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Portakal suyunu pişmenin sonunda eklemek ferah notayı daha canlı bırakır.",
+    "servingSuggestion": "Kupları soğuk sunun, üstüne tarçın serpip bademle tamamlayın.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "İrmik",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Portakal suyu",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Sütlü irmik tabanını tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tabanı 10 dakika karıştırarak pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Portakal kabuğu ve tarçını ocaktan sonra ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kuplara paylaştırın, baharat acılaşmasın diye sıcak bekletmeyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tarçınlı irmik kupunu 25 dakika soğutup servis edin.",
+        "timerSeconds": 1500
+      }
+    ]
+  },
+  {
+    "slug": "portakalli-tavuk-kapama-antalya-usulu",
+    "title": "Portakallı Tavuk Kapama",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Antalya usulü portakallı tavuk kapama, tavuk butları pirinç ve portakal suyuyla buluşturarak misafirlik bir fırın yemeği kurar.",
+    "prepMinutes": 18,
+    "cookMinutes": 34,
+    "totalMinutes": 52,
+    "servingCount": 4,
+    "averageCalories": 404,
+    "protein": 29,
+    "carbs": 28,
+    "fat": 19,
+    "isFeatured": true,
+    "tipNote": "Portakal suyunu sıcak tavuk suyuyla karıştırmak pirincin dibinde şekerli bir tabaka oluşmasını önler.",
+    "servingSuggestion": "Portakal dilimleriyle sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Tavuk but",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Portakal suyu",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Havuç",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tavuk suyu",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuk butlarını tuzlayın, pirinci yıkayıp süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavukları tavada 6 dakika mühürleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinç ve havucu fırın kabına yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Portakal suyu ve tavuk suyunu ekleyin, pirinç yüzeyi eşit ıslansın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tavukları üste yerleştirip 200°C fırında 24 dakika pişirin, pirinç alt katmanda kurumadan şişsin.",
+        "timerSeconds": 1440
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kapamayı 8 dakika dinlendirin, pirinç taneleri kırılmasın.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "portakalli-tavuk-kulbasti-antalya-usulu",
+    "title": "Portakallı Tavuk Külbastı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Antalya usulü portakallı tavuk külbastı, tavuk dilimlerini portakal suyu ve kekikle buluşturarak parlak, sulu ve yaz akşamına uygun bir ana yemek hazırlar.",
+    "prepMinutes": 14,
+    "cookMinutes": 14,
+    "totalMinutes": 28,
+    "servingCount": 4,
+    "averageCalories": 284,
+    "protein": 26,
+    "carbs": 10,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Portakal suyunu son bölümde eklemek tavukta canlı bir tat bırakır.",
+    "servingSuggestion": "Tavuğu sıcak verin, yanına bulgur pilavı ve roka koyun.",
+    "tags": [
+      "yuksek-protein",
+      "30-dakika-alti"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Tavuk göğsü",
+        "amount": "550",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Portakal suyu",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kekik",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuk külbastıları tuz, kekik ve portakal kabuğuyla ovun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavayı ısıtın ve tavukları ilk yüzü 4 dakika mühürleyin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Diğer yüzünü 3 dakika pişirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Portakal suyunu ekleyin ve 4 dakika sosu çektirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tavuğu 3 dakika dinlendirin, et suyu kesitte dışarı kaçmasın.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "portakalli-un-helvasi-hatay-usulu",
+    "title": "Portakallı Un Helvası",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Hatay usulü portakallı un helvası, kavrulan unu portakal kabuğu ve şerbetle buluşturarak parlak kokulu bir tatlı yapar.",
+    "prepMinutes": 8,
+    "cookMinutes": 16,
+    "totalMinutes": 24,
+    "servingCount": 4,
+    "averageCalories": 244,
+    "protein": 3,
+    "carbs": 29,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Portakal kabuğunu ateşi kapatmadan hemen önce eklemek kokusunu daha belirgin tutar.",
+    "servingSuggestion": "Portakallı un helvasını kaşıkla şekillendirip portakal kabuğu kokusu kaybolmadan ılık sunun.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Portakal kabuğu rendesi",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Portakal kabuğunu rendeleyip şekerli suyu sıcak tutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Unu tereyağında 10 dakika açık kahverengi kavurun.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Şekerli suyu ince akıtarak ekleyin, helva sıçramasın diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Portakal kabuğunu katıp 3 dakika toparlayın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Helvayı 10 dakika dinlendirip ılık servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "portokalopita",
+    "title": "Portokalopita",
+    "cuisine": "gr",
+    "type": "TATLI",
+    "description": "Yunan portakallı yufka tatlısı, yoğurtlu harç ve portakal şerbetiyle nemli bir doku alır.",
+    "prepMinutes": 30,
+    "cookMinutes": 40,
+    "totalMinutes": 70,
+    "servingCount": 10,
+    "averageCalories": 360,
+    "protein": 6,
+    "carbs": 48,
+    "fat": 15,
+    "isFeatured": false,
+    "tipNote": "Şerbet sıcak, tatlı fırından yeni çıkmışken dökülmeli; her iki taraf da sıcaksa hamur şerbeti hızlı emer.",
+    "servingSuggestion": "Oda sıcaklığında, üzerine pudra şekeri serperek servis edin.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Baklava yufkası",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Portakal suyu",
+        "amount": "300",
+        "unit": "ml",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yufkaları kurutup küçük parçalara ayırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yoğurtlu portakal harcını çırpıp yufkayla karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karışımı tepsiye yayın, kuru yufka topaklanmasın diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Portokalopitayı 180°C fırında 40 dakika pişirin.",
+        "timerSeconds": 2400
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sıcak keke soğuk portakal şerbeti dökün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tatlıyı 30 dakika dinlendirin, şerbet eşit dağılsın.",
+        "timerSeconds": 1800
+      }
+    ]
+  },
+  {
+    "slug": "pot-au-feu",
+    "title": "Pot-au-Feu",
+    "cuisine": "fr",
+    "type": "YEMEK",
+    "description": "Fransız pot-au-feu, dana eti ve kök sebzeleri berrak et suyunda ağır ağır yumuşatır.",
+    "prepMinutes": 30,
+    "cookMinutes": 150,
+    "totalMinutes": 180,
+    "servingCount": 6,
+    "averageCalories": 380,
+    "protein": 30,
+    "carbs": 12,
+    "fat": 22,
+    "isFeatured": false,
+    "tipNote": "Tuzlamayı pişirmeden hemen önce yapın, erken tuz et suyunu dışarı çeker ve kavurmayı zorlaştırır.",
+    "servingSuggestion": "Et suyunu ayrı kasede, et ve sebzeleri tabakta servis edin.",
+    "tags": [
+      "tek-tencere"
+    ],
+    "allergens": [
+      "KEREVIZ"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana incik",
+        "amount": "1",
+        "unit": "kg",
+        "group": null
+      },
+      {
+        "name": "Havuç",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Pırasa",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kereviz sapı",
+        "amount": "2",
+        "unit": "dal",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Dana etini soğuk suyla tencereye alın ve yavaşça kaynama noktasına getirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yüzey köpüklerini 10 dakika boyunca alın, et suyu berrak kalsın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğan, defne ve tane karabiberi ekleyip 90 dakika kısık ateşte pişirin.",
+        "timerSeconds": 5400
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Havuç, pırasa ve patatesi ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sebzeler yumuşayana kadar 60 dakika daha pişirin.",
+        "timerSeconds": 3600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Eti dinlendirip dilimleyin, suyu ve sebzelerle servis edin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "pozole-rojo",
+    "title": "Pozole Rojo",
+    "cuisine": "mx",
+    "type": "CORBA",
+    "description": "Meksika'nın kırmızı biberli mısır çorbası, uzun pişmiş et ve taze garnitürlerle kaseye gelir.",
+    "prepMinutes": 25,
+    "cookMinutes": 120,
+    "totalMinutes": 145,
+    "servingCount": 6,
+    "averageCalories": 310,
+    "protein": 19,
+    "carbs": 24,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Mısırı et suyunda en az 1 saat pişirin; taneler açılıp yumuşar.",
+    "servingSuggestion": "Turp, marul ve lime ile servis edin.",
+    "tags": [
+      "tek-tencere"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Dana eti",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış iri mısır",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru acı biber",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "3",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Marul",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Eti sarımsakla 60 dakika kısık ateşte haşlayın.",
+        "timerSeconds": 3600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kuru biberleri sıcak suda 10 dakika bekletin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Biberleri sarımsakla püre yapın ve süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Mısır ve biber püresini tencereye ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Çorbayı 60 dakika pişirin, et liflenip mısır tadı açılana kadar karıştırın.",
+        "timerSeconds": 3600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Lahana, turp ve lime ile sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  }
+]

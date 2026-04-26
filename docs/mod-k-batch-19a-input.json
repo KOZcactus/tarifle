@@ -1,0 +1,4603 @@
+[
+  {
+    "slug": "lagos-pepper-soup-dana",
+    "title": "Lagos Pepper Soup",
+    "cuisine": "ng",
+    "type": "CORBA",
+    "description": "Pepper soup, dana eti veya sakatatı uda tohumu, zencefil, acı biber ve kokulu baharatlı suda pişiren Nijerya çorbasıdır.",
+    "prepMinutes": 20,
+    "cookMinutes": 70,
+    "totalMinutes": 90,
+    "servingCount": 6,
+    "averageCalories": 360,
+    "protein": 34,
+    "carbs": 8,
+    "fat": 20,
+    "isFeatured": false,
+    "tipNote": "Baharatları kuru tavada kısa kavurmak çorbaya dumansı ve sıcak bir aroma verir.",
+    "servingSuggestion": "Haşlanmış yam veya pirinçle sıcak servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "tek-tencere"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Dana kuşbaşı",
+        "amount": "800",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zencefil",
+        "amount": "25",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "4",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Acı biber",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Uda tohumu",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ehuru veya muskat",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kuru kekik",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "2",
+        "unit": "litre",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Dana etini yıkayıp tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan, sarımsak, zencefil ve acı biberi ezin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Uda tohumu ve ehuruyu kuru tavada 1 dakika kokulandırın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ezilmiş aromalar, baharat ve suyu ete ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Çorbayı kapağı kapalı 60 dakika et yumuşayana kadar pişirin.",
+        "timerSeconds": 3600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tuzunu ayarlayıp 10 dakika kapağı açık kaynatın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Sıcak kaselerde servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lagos-suya-sis",
+    "title": "Lagos Suya Şiş",
+    "cuisine": "ng",
+    "type": "YEMEK",
+    "description": "Suya, ince dana şeritlerini yer fıstığı, acı biber, zencefil ve sarımsaklı baharatla kaplayıp ızgarada pişiren Nijerya sokak lezzetidir.",
+    "prepMinutes": 25,
+    "cookMinutes": 10,
+    "totalMinutes": 35,
+    "servingCount": 4,
+    "averageCalories": 430,
+    "protein": 36,
+    "carbs": 10,
+    "fat": 28,
+    "isFeatured": false,
+    "tipNote": "Eti çok ince kesmek kısa ızgara süresinde kurutmadan pişirir.",
+    "servingSuggestion": "Kırmızı soğan, domates ve lime ile sıcak servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "YER_FISTIGI"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana bonfile",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kavrulmuş yer fıstığı",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Acı biber tozu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zencefil",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak tozu",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kırmızı soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Lime",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Dana etini ince uzun şeritler halinde kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yer fıstığını baharatlarla ince toz haline getirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Eti yağ ve suya baharatıyla kaplayıp 15 dakika dinlendirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Et şeritlerini şişlere dalgalı şekilde dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kızgın ızgarada her yüzü 4-5 dakika pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Soğan, domates ve lime ile hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lagos-tavuklu-jollof-pilavi",
+    "title": "Lagos Tavuklu Jollof Pilavı",
+    "cuisine": "ng",
+    "type": "YEMEK",
+    "description": "Nijerya tavuklu jollof pilavı, pirinci domates, kırmızı biber, acı biber ve tavuk suyuyla tek tencerede kırmızı, baharatlı bir ana yemeğe dönüştürür.",
+    "prepMinutes": 20,
+    "cookMinutes": 45,
+    "totalMinutes": 65,
+    "servingCount": 6,
+    "averageCalories": 510,
+    "protein": 28,
+    "carbs": 66,
+    "fat": 15,
+    "isFeatured": true,
+    "tipNote": "Domates biber püresini iyi kavurmak jollof pilavının çiğ sos tadını giderir.",
+    "servingSuggestion": "Kızarmış plantain ve salatayla sıcak servis edin.",
+    "tags": [
+      "tek-tencere",
+      "yuksek-protein"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Pirinç",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tavuk but",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kırmızı biber",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Acı biber",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tavuk suyu",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Domates, kırmızı biber, acı biber ve bir soğanı püre yapın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavuk butları tencerede 10 dakika mühürleyin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğan ve domates biber püresini ekleyip 15 dakika kavurun.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pirinç ve tavuk suyunu katıp kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kısık ateşte 25-30 dakika pirinç suyunu çekene kadar pişirin.",
+        "timerSeconds": 1650
+      }
+    ]
+  },
+  {
+    "slug": "lagos-yer-fistikli-tatli-patates-guveci",
+    "title": "Lagos Yer Fıstıklı Tatlı Patates Güveci",
+    "cuisine": "ma",
+    "type": "YEMEK",
+    "description": "Nijerya usulü yer fıstıklı tatlı patates güveci, tatlı patatesi domates, ıspanak ve yer fıstığı ezmesiyle yoğun bir tencereye taşır.",
+    "prepMinutes": 16,
+    "cookMinutes": 30,
+    "totalMinutes": 46,
+    "servingCount": 4,
+    "averageCalories": 365,
+    "protein": 12,
+    "carbs": 48,
+    "fat": 15,
+    "isFeatured": false,
+    "tipNote": "Yer fıstığı ezmesini sıcak suyla açmak sosu pürüzsüz yapar.",
+    "servingSuggestion": "Buharda pirinçle sıcak servis edin.",
+    "tags": [
+      "vegan",
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "YER_FISTIGI"
+    ],
+    "ingredients": [
+      {
+        "name": "Tatlı patates",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yer fıstığı ezmesi",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Domates püresi",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ispanak",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Zencefil",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sebze suyu",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tatlı patatesleri iri küp doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Zencefili tencerede 1 dakika kokusu çıkana kadar çevirin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Domates püresi ve sebze suyunu ekleyip kaynatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tatlı patatesleri 18 dakika yumuşayana kadar pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yer fıstığı ezmesi ve ıspanağı katıp 6 dakika daha pişirin.",
+        "timerSeconds": 360
+      }
+    ]
+  },
+  {
+    "slug": "lahanali-mantar-guveci-zonguldak-maden-usulu",
+    "title": "Zonguldak Lahanalı Mantar Güveci",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Zonguldak lahanalı mantar güveci, lahanayı mantar ve domatesle ağır ağır pişirerek sulu ve toprak tonlu bir kış yemeği yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 28,
+    "totalMinutes": 40,
+    "servingCount": 4,
+    "averageCalories": 146,
+    "protein": 5,
+    "carbs": 14,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Mantarı yüksek ateşte başlatmak su salmasını geciktirir.",
+    "servingSuggestion": "Güveci sıcak sunun, yanına kalın dilim ekmek ve zeytinyağı koyun.",
+    "tags": [
+      "tek-tencere",
+      "vegan",
+      "kis-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Beyaz lahana",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Mantar",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lahanayı ince doğrayın, mantarları iri parçalar halinde kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve mantarı tencerede 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lahanayı ekleyip 5 dakika hacmi düşene kadar soteleyin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Domates, tuz ve az sıcak suyu ekleyip kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yemeği 18 dakika kısık ateşte pişirin, lahana diri kalmasın.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Güveci 5 dakika dinlendirip ekmekle sıcak servis edin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Lahanayı tabakta sıkıştırmayın, böylece mantarlı su kenarda birikmez.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lahmacun",
+    "title": "Lahmacun",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "İnce hamurun üzerine baharatlı kıyma harcı sürülerek fırında pişirilen Türk pizzası.",
+    "prepMinutes": 30,
+    "cookMinutes": 15,
+    "totalMinutes": 45,
+    "servingCount": 6,
+    "averageCalories": 230,
+    "protein": 12,
+    "carbs": 28,
+    "fat": 8,
+    "isFeatured": true,
+    "tipNote": "Hamuru mümkün olduğunca ince açın; 8 dakikada daha çıtır pişer.",
+    "servingSuggestion": "Sumaklı soğan, maydanoz ve ayranla fırından çıkar çıkmaz sunun.",
+    "tags": [
+      "cocuk-dostu"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Su",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Maya",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Kıyma",
+        "amount": "300",
+        "unit": "gr",
+        "group": "Harç için"
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": "Harç için"
+      },
+      {
+        "name": "Domates",
+        "amount": "2",
+        "unit": "adet",
+        "group": "Harç için"
+      },
+      {
+        "name": "Biber salçası",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": "Harç için"
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "1",
+        "unit": "demet",
+        "group": "Harç için"
+      },
+      {
+        "name": "Pul biber",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": "Harç için"
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": "Harç için"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, su, maya ve tuzu yoğurup hamur yapın. 30 dk dinlendirin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kıyma, ince doğranmış soğan, domates, salça, maydanoz ve baharatları karıştırarak harç hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru bezlere ayırın, çok ince açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Harcı ince bir tabaka halinde sürün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "250°C fırında 8-10 dakika pişirin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "lahor-biryani",
+    "title": "Lahor Biryani",
+    "cuisine": "pk",
+    "type": "YEMEK",
+    "description": "Biryani, baharatlı yoğurtla marine tavuk, yarı pişmiş basmati pirinç, safran ve kızarmış soğanı kat kat demleyen gösterişli pilavdır.",
+    "prepMinutes": 45,
+    "cookMinutes": 55,
+    "totalMinutes": 160,
+    "servingCount": 6,
+    "averageCalories": 610,
+    "protein": 34,
+    "carbs": 78,
+    "fat": 18,
+    "isFeatured": false,
+    "tipNote": "Pirinci tam pişirmeden süzmek demleme sırasında lapa olmasını önler.",
+    "servingSuggestion": "Raita, limon ve taze kişnişle büyük servis tabağına alın.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk but",
+        "amount": "900",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Basmati pirinç",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Garam masala",
+        "amount": "2",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Safran",
+        "amount": "1",
+        "unit": "tutam",
+        "group": null
+      },
+      {
+        "name": "Ghee",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuğu yoğurt, garam masala, sarımsak, zencefil ve tuzla 1 saat marine edin.",
+        "timerSeconds": 3600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanları ince doğrayıp ghee'de 12 dakika kızartın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinci tuzlu suda 6 dakika yarı pişirip süzün.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Marine tavuğu tencerede 18 dakika pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tavuk, pirinç, kızarmış soğan, nane ve safranlı sütü kat kat dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tencereyi kapatıp çok kısık ateşte 25 dakika demleyin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Biryaniyi alttan üste dağıtmadan havalandırıp servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lahor-chicken-karahi",
+    "title": "Lahor Chicken Karahi",
+    "cuisine": "pk",
+    "type": "YEMEK",
+    "description": "Chicken karahi, tavuğu bol domates, yeşil biber, zencefil ve karabiberle yüksek ateşte yağı ayrılana kadar pişiren Pakistan yemeğidir.",
+    "prepMinutes": 15,
+    "cookMinutes": 45,
+    "totalMinutes": 60,
+    "servingCount": 5,
+    "averageCalories": 430,
+    "protein": 39,
+    "carbs": 9,
+    "fat": 26,
+    "isFeatured": false,
+    "tipNote": "Domates sosu yağını bırakana kadar pişirmek karahinin parlak dokusunu verir.",
+    "servingSuggestion": "Basmati pirinç, lime dilimleri ve taze kişnişle karahi tavasında servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "tek-tencere"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Kemikli tavuk",
+        "amount": "1",
+        "unit": "kg",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "6",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yeşil chili",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zencefil",
+        "amount": "30",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "4",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Basmati pirinç",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Sıvı yağı karahi veya geniş tencerede ısıtın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavuğu ekleyip yüksek ateşte 8 dakika renk aldırın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Doğranmış domates, sarımsak ve tuzu tavuğa katın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kapağı kapatıp 18 dakika tavuğu domates suyunda pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kapağı açıp sos koyulaşana ve yağ ayrılana kadar 15 dakika pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Yeşil chili, zencefil şeritleri ve karabiberi ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Kişniş ve basmati pirinçle sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lahor-nihari-kuzu-incik",
+    "title": "Lahor Nihari",
+    "cuisine": "pk",
+    "type": "YEMEK",
+    "description": "Nihari, kuzu incikleri zencefil, sarımsak, kavrulmuş baharatlar ve unla bağlanmış koyu sos içinde saatlerce pişiren Pakistan yahnisidir.",
+    "prepMinutes": 25,
+    "cookMinutes": 240,
+    "totalMinutes": 265,
+    "servingCount": 6,
+    "averageCalories": 620,
+    "protein": 48,
+    "carbs": 22,
+    "fat": 38,
+    "isFeatured": false,
+    "tipNote": "Unlu bağlayıcıyı sıcak et suyuyla açmak sosta topak bırakmaz.",
+    "servingSuggestion": "Zencefil şeritleri, kişniş, limon ve naan ile servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "kis-tarifi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuzu incik",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı veya ghee",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zencefil",
+        "amount": "40",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "5",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Nihari masala",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Naan ekmeği",
+        "amount": "6",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Limon",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kişniş",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ghee içinde zencefil ve sarımsağı 2 dakika kokulandırın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kuzu incikleri ekleyip 10 dakika her yanını mühürleyin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nihari masalayı ekleyip 1 dakika kavurun.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "1.5 litre sıcak su koyup eti 3 saat kısık ateşte pişirin.",
+        "timerSeconds": 10800
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Unu 1 bardak sıcak et suyuyla çırpıp tencereye katın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Nihariyi 45 dakika daha koyulaştırın.",
+        "timerSeconds": 2700
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Zencefil, kişniş, limon ve naan ile servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lahor-nohutlu-palak-tavasi",
+    "title": "Lahor Nohutlu Palak Tavası",
+    "cuisine": "in",
+    "type": "YEMEK",
+    "description": "Pakistan usulü nohutlu palak tavası, ıspanağı nohut, zencefil ve garam masalayla yoğun baharatlı bir vejetaryen yemeğe dönüştürür.",
+    "prepMinutes": 12,
+    "cookMinutes": 24,
+    "totalMinutes": 36,
+    "servingCount": 4,
+    "averageCalories": 285,
+    "protein": 13,
+    "carbs": 35,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Ispanağı fazla pişirmemek tavanın rengini canlı tutar.",
+    "servingSuggestion": "Pirinç veya lavaşla sıcak servis edin.",
+    "tags": [
+      "vegan",
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Ispanak",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zencefil",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Garam masala",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ispanağı yıkayıp iri doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Zencefili yağda 1 dakika kokusu çıkana kadar çevirin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Domatesi ekleyip 7 dakika sos kıvamına getirin.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Nohut ve garam masalayı tavaya katın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ispanağı ekleyip 6 dakika sönene kadar pişirin.",
+        "timerSeconds": 360
+      }
+    ]
+  },
+  {
+    "slug": "lalanga-trakya-usulu",
+    "title": "Lalanga",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Trakya usulü lalanga, ince akışkan hamurun tavada kısa sürede pişirilip peynir ve bal ile kahvaltıya taşındığı sade bir ev işidir.",
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "totalMinutes": 22,
+    "servingCount": 4,
+    "averageCalories": 268,
+    "protein": 9,
+    "carbs": 33,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Hamuru 5 dakika dinlendirmek tavada daha düzgün yayılmasını sağlar.",
+    "servingSuggestion": "Beyaz peynir ve bal ile ılık servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "20",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lalanga için kullanılacak kapları hazırlayın, hamur veya yumurta bekleyip dokusunu kaybetmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lalanga için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Un, yoğurt, yumurta ve tuzu pürüzsüz olana kadar çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamuru 5 dakika dinlendirin, lalanga-trakya-usulu akışı için.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tereyağlı tavada ince parçalar halinde toplam 8 dakika pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Lalanga kıvamı oturunca servis edin, fazla bekletmek peynirli dokuyu sertleştirir.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lamington",
+    "title": "Lamington",
+    "cuisine": "au",
+    "type": "TATLI",
+    "description": "Lamington, kek küplerinin çikolata glazüre batırılıp hindistan ceviziyle kaplandığı, Avustralya'nın en tanınan pastane tatlılarından biridir.",
+    "prepMinutes": 25,
+    "cookMinutes": 25,
+    "totalMinutes": 50,
+    "servingCount": 12,
+    "averageCalories": 214,
+    "protein": 3,
+    "carbs": 29,
+    "fat": 10,
+    "isFeatured": true,
+    "tipNote": "Keki bir gün dinlendirmek glazüre batırırken dağılmasını azaltır.",
+    "servingSuggestion": "Kahve yanında oda sıcaklığında servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "250",
+        "unit": "gr",
+        "group": "Kek için"
+      },
+      {
+        "name": "Yumurta",
+        "amount": "3",
+        "unit": "adet",
+        "group": "Kek için"
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": "Kek için"
+      },
+      {
+        "name": "Bitter çikolata",
+        "amount": "120",
+        "unit": "gr",
+        "group": "Glazür için"
+      },
+      {
+        "name": "Süt",
+        "amount": "120",
+        "unit": "ml",
+        "group": "Glazür için"
+      },
+      {
+        "name": "Hindistan cevizi",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": "Kaplama için"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Sade keki pişirip tamamen soğutun, keserken kırıntı dağılmasın.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Keki eşit küplere kesin ve tel ızgara üstüne alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Çikolata, süt ve şekeri 4 dakika ısıtarak glazür hazırlayın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kek küplerini glazüre batırıp fazla sosu süzdürün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Küpleri hindistan cevizine bulayın, yüzey açık kalmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Lamingtonları 20 dakika dinlendirin, kaplama ele bulaşmasın.",
+        "timerSeconds": 1200
+      }
+    ]
+  },
+  {
+    "slug": "lamington-kakaolu-kup-avustralya-usulu",
+    "title": "Lamington Kakaolu Kup",
+    "cuisine": "au",
+    "type": "TATLI",
+    "description": "Avustralya usulü lamington kakaolu kup, kek parçalarını kakao ve hindistanceviziyle buluşturarak serin, yumuşak ve küçük porsiyonluk bir tatlı yapar.",
+    "prepMinutes": 8,
+    "cookMinutes": 0,
+    "totalMinutes": 8,
+    "servingCount": 4,
+    "averageCalories": 232,
+    "protein": 4,
+    "carbs": 29,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Keki iri küp kesmek kup içinde lamington hissini güçlendirir.",
+    "servingSuggestion": "Kupları iyice soğutun, üstüne hindistan cevizi serpip kaşıkla servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Kek küpü",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kakao",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Hindistancevizi rendesi",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kakaolu kremayı 2 dakika çırpın, fazla hava katıp kesilmesin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lamington kekini iri kırıntılar halinde kuplara paylaştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kakaolu kremayı kek üstüne yayın, kenarlarda boşluk kalmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hindistan cevizini ara katlara serpin, nemden hamurlaşmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kup tatlısını 25 dakika soğutun ve servis edin.",
+        "timerSeconds": 1500
+      }
+    ]
+  },
+  {
+    "slug": "lamington-krema-kup-avustralya-usulu",
+    "title": "Lamington Krema Kup",
+    "cuisine": "au",
+    "type": "TATLI",
+    "description": "Lamington krema kup, kek küplerini kakao, hindistan cevizi ve krema ile katmanlayarak Avustralya usulü serin bir tatlı yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 0,
+    "totalMinutes": 12,
+    "servingCount": 4,
+    "averageCalories": 248,
+    "protein": 3,
+    "carbs": 27,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Kek küplerini çok ıslatmamak kup içinde formunu korur.",
+    "servingSuggestion": "Kupları soğuk sunun, üst katmana hindistan cevizi ve kakao serpin.",
+    "tags": [
+      "30-dakika-alti",
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Kek küpü",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kakao",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Hindistan cevizi",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kremayı 2 dakika çırpın, yumuşak tepe kıvamında bırakın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lamington parçalarını kup tabanına bastırmadan yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Krema katını kek üstüne yayın, kırıntılar ezilmesin diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "İkinci kek katını ekleyip hindistan cevizi serpin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tatlıyı 30 dakika soğutun, krema kupta sabitlensin.",
+        "timerSeconds": 1800
+      }
+    ]
+  },
+  {
+    "slug": "lamington-trifle-kup-avustralya-usulu",
+    "title": "Lamington Trifle Kup",
+    "cuisine": "au",
+    "type": "TATLI",
+    "description": "Lamington trifle kup, kakaolu kek küplerini krema ve reçelle buluşturarak yumuşak, hafif nostaljik ve küçük porsiyonluk bir tatlı kurar.",
+    "prepMinutes": 12,
+    "cookMinutes": 0,
+    "totalMinutes": 12,
+    "servingCount": 4,
+    "averageCalories": 264,
+    "protein": 4,
+    "carbs": 31,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Kek küplerini çok büyük bırakmamak katmanları daha dengeli yapar.",
+    "servingSuggestion": "Soğuk servis edin, üstüne reçel çizgisi ve hindistan cevizi ekleyin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Kakaolu kek küpü",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Reçel",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Hindistancevizi rendesi",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kup tabanına lamington kek parçalarını eşit paylaştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Reçeli 1 dakika karıştırıp akışkan hale getirin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kremayı 2 dakika çırpın, katlar arasında yayılabilsin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kek, reçel ve kremayı sırayla katmanlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Hindistan cevizini en üste serpin, alt katlar nemlenmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Trifle kupu 30 dakika soğutun, katmanlar akmasın.",
+        "timerSeconds": 1800
+      }
+    ]
+  },
+  {
+    "slug": "lamington-yogurt-kup-avustralya-usulu",
+    "title": "Avustralya Lamington Yoğurt Kup",
+    "cuisine": "au",
+    "type": "TATLI",
+    "description": "Avustralya lamington yoğurt kup, kakaolu kek kırıntısını yoğurt ve hindistan ceviziyle buluşturarak serin bir bardak tatlı yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "totalMinutes": 10,
+    "servingCount": 4,
+    "averageCalories": 188,
+    "protein": 5,
+    "carbs": 23,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Kek kırıntısını son anda eklemek üst katmanda hafif bir doku bırakır.",
+    "servingSuggestion": "Soğuk sunun, üstüne hindistan cevizi serpip kahvaltı kasesi gibi verin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Kakaolu kek",
+        "amount": "4",
+        "unit": "dilim",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Hindistan cevizi",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lamington kekini iri parçalara ayırın, tamamen ufalamayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yoğurdu 1 dakika bal ile çırpın, pürüzlü kalmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kuplara yoğurt ve kek parçalarını dönüşümlü yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hindistan cevizini ara kata az serpin, yoğurt fazla koyulaşmasın diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kup tatlısını 20 dakika soğutun ve hemen servis edin.",
+        "timerSeconds": 1200
+      }
+    ]
+  },
+  {
+    "slug": "lancashire-hotpot-ingiliz-usulu",
+    "title": "Lancashire Hotpot",
+    "cuisine": "gb",
+    "type": "YEMEK",
+    "description": "Lancashire hotpot, et ve soğanı patates dilimleri altında pişirerek yumuşak, buharlı ve uzun süre tok tutan bir tencere yemeği çıkarır.",
+    "prepMinutes": 20,
+    "cookMinutes": 50,
+    "totalMinutes": 70,
+    "servingCount": 5,
+    "averageCalories": 324,
+    "protein": 22,
+    "carbs": 18,
+    "fat": 17,
+    "isFeatured": false,
+    "tipNote": "Patatesleri ince dilimlemek üst katmanın eşit pişmesini sağlar.",
+    "servingSuggestion": "Lancashire hotpot dilimini patates katları bozulmadan çıkarıp kuzu etli suyuyla birlikte sunun.",
+    "tags": [
+      "tek-tencere",
+      "kis-tarifi"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Kuzu kuşbaşı",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Et suyu",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Fırını 160°C'ye ısıtın, patatesleri ince dilimleyin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Et ve soğanı fırın kabına yerleştirin, tuz ve karabiber serpin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Et suyunu kaba ekleyin ve patates dilimlerini üstüne bindirerek dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kabı kapatıp 160°C fırında 80 dakika pişirin.",
+        "timerSeconds": 4800
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kapağı açın, patatesleri tereyağıyla fırçalayın ve 20 dakika kızartın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Hotpotu 10 dakika dinlendirin, sos tabağa akmasın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Patates kabuğunu servis kaşığıyla kırın, böylece üst katman çıtırlığını korur.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "langos",
+    "title": "Langos",
+    "cuisine": "hu",
+    "type": "APERATIF",
+    "description": "Macar langos kızarmış mayalı hamurun üzerine sarımsaklı yağ, ekşi krema ve peynir alır.",
+    "prepMinutes": 45,
+    "cookMinutes": 15,
+    "totalMinutes": 60,
+    "servingCount": 6,
+    "averageCalories": 390,
+    "protein": 10,
+    "carbs": 42,
+    "fat": 20,
+    "isFeatured": false,
+    "tipNote": "Hamuru mutfak beziyle örtüp oda sıcaklığında bekletirseniz daha kolay açılır.",
+    "servingSuggestion": "Sıcak sunun, üstüne sarımsaklı sos ve rendelenmiş peynir ekleyin.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Maya",
+        "amount": "7",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Ekşi krema",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kaşar peyniri",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, maya ve suyla hamur yoğurup 35 dakika kabarana kadar mayalandırın.",
+        "timerSeconds": 2100
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru parçalara ayırıp yağlı tezgahta ince yuvarlaklar halinde açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Açılan hamurları kızgın yağda 3-4 dakika iki yüzü kızarana kadar kızartın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Langosları süzdürüp üstlerine krema ve peynir ekleyerek sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "langos-budapeste-usulu",
+    "title": "Lángos",
+    "cuisine": "hu",
+    "type": "YEMEK",
+    "description": "Lángos, mayalı hamurun kızartılıp sarımsaklı krema ve peynirle tamamlandığı, Macaristan sokak tezgahlarının en sevilen sıcak atıştırmalıklarından biridir.",
+    "prepMinutes": 20,
+    "cookMinutes": 20,
+    "totalMinutes": 40,
+    "servingCount": 6,
+    "averageCalories": 288,
+    "protein": 8,
+    "carbs": 34,
+    "fat": 13,
+    "isFeatured": true,
+    "tipNote": "Hamuru çok ince açmamak kızarınca kenarların yumuşak kalmasını sağlar.",
+    "servingSuggestion": "Üzerine ekstra peynir serperek sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Instant maya",
+        "amount": "1",
+        "unit": "paket",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "250",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ayçiçek yağı",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ekşi krema",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Kaşar peyniri",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, maya, süt ve tuzla yumuşak bir hamur yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 45 dakika mayalandırın, hacmi belirgin artsın.",
+        "timerSeconds": 2700
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru bezelere ayırıp yağlı tezgahta 10 dakika dinlendirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Bezeleri ortası ince, kenarı hafif kalın diskler halinde açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Lángosları 175°C yağda her yüzü 2 dakika kızartın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Sarımsaklı yağ, ekşi krema ve kaşar peynirini üstüne ekleyip sıcak servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Kremayı kızgın ekmeğe ince sürün, böylece lángos ortası hamurlaşmaz.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "larb-gai",
+    "title": "Larb Gai",
+    "cuisine": "th",
+    "type": "SALATA",
+    "description": "Isaan sofralarından lime, nane ve kavrulmuş pirinç kokulu keskin tavuk salatası.",
+    "prepMinutes": 15,
+    "cookMinutes": 10,
+    "totalMinutes": 25,
+    "servingCount": 4,
+    "averageCalories": 280,
+    "protein": 23,
+    "carbs": 9,
+    "fat": 16,
+    "isFeatured": false,
+    "tipNote": "Kavrulmuş pirinci havanda iri toz yapın; salataya çıtır bir doku verir.",
+    "servingSuggestion": "Marul yaprakları ve salatalıkla servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Tavuk kıyma",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Lime suyu",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kavrulmuş pirinç",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "1",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Kırmızı soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yapışmaz tavada tavuk kıymasını 6 dakika suyunu salıp çekene kadar pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kavrulmuş pirinç tozunu hazırlayın, iri kalırsa salatanın dokusu kumlu olur.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Balık sosu, lime suyu, acı biber ve az şekeri karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ilık tavuk kıymasını sosla buluşturun, aromalar içine işlesin diye 3 dakika bekletin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Arpacık soğan, nane, kişniş ve pirinç tozunu ekleyip marul yapraklarıyla servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tavuk ılıkken otları ekleyin, çok sıcak et nane ve kişnişi karartmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Marul yapraklarını kuru tutun, larb suyu yaprakta birikirse servis elde dağılır.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "last-word",
+    "title": "Last Word",
+    "cuisine": "us",
+    "type": "KOKTEYL",
+    "description": "Last Word cin, yeşil Chartreuse, maraschino ve lime ile keskin bitişli klasik bir kokteyldir.",
+    "prepMinutes": 5,
+    "cookMinutes": 0,
+    "totalMinutes": 5,
+    "servingCount": 1,
+    "averageCalories": 170,
+    "protein": 0,
+    "carbs": 11,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Lime suyunu taze sıkın; şişe suyu bitkisel aromayı matlaştırır.",
+    "servingSuggestion": "Soğuk coupe bardakta lime kabuğu ile servis edin.",
+    "tags": [
+      "alkollu",
+      "30-dakika-alti",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Cin",
+        "amount": "25",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Yeşil Chartreuse",
+        "amount": "25",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Maraschino likörü",
+        "amount": "25",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Lime suyu",
+        "amount": "25",
+        "unit": "ml",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Last Word karışımına başlamadan bardağı soğutun, aromalar ısınmadan dengede kalsın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Last Word tüm malzemelerini buzla shaker'a koyun, eşit oran korunur.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Last Word shaker'ını 12 saniye çalkalayın, bitkisel notalar birleşsin.",
+        "timerSeconds": 12
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Last Word kokteylini soğuk bardağa süzün, berrak yüzey kalsın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lavantali-badem-sutlac-foca-usulu",
+    "title": "Lavantali Badem Sütlaç",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Foça lavantalı badem sütlaç, sütlacı lavanta ve bademle kokulandırarak nazik, serin ve Ege akşamına uygun bir tatlı yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 18,
+    "totalMinutes": 28,
+    "servingCount": 6,
+    "averageCalories": 198,
+    "protein": 5,
+    "carbs": 24,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Lavanta miktarını az tutmak tatlıyı sabunsu olmaktan korur.",
+    "servingSuggestion": "Soğuk servis edin, üstüne file badem serpip küçük kaselerde sunun.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Toz badem",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Lavanta",
+        "amount": "1",
+        "unit": "çimdik",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pirinci yıkayıp 10 dakika haşlayın, taneler sert kalmasın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Süt ve şekeri ekleyip 10 dakika kısık ateşte pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bademi katıp 5 dakika daha pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Lavanta aromasını ocaktan sonra ekleyin, koku acılaşmasın diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kaselere paylaştırıp 30 dakika dinlendirin.",
+        "timerSeconds": 1800
+      }
+    ]
+  },
+  {
+    "slug": "lavantali-limon-kremasi-kupu-ingiltere-usulu",
+    "title": "Lavantali Limon Kreması Kupu",
+    "cuisine": "gb",
+    "type": "TATLI",
+    "description": "İngiltere usulü lavantalı limon kreması kupu, sütlü kremayı limon kabuğu ve hafif lavanta şurubuyla buluşturarak ferah bir tatlı yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 8,
+    "totalMinutes": 18,
+    "servingCount": 4,
+    "averageCalories": 196,
+    "protein": 3,
+    "carbs": 21,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Lavanta şurubunu ölçülü kullanmak limon kokusunun tamamen kapanmasını önler.",
+    "servingSuggestion": "Üzerine limon kabuğu serpip soğuk servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Limon kabuğu rendesi",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Lavanta şurubu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Mısır nişastası",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Süt ve kremayı limon kabuğuyla 3 dakika ısıtın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Nişastayı az sütle açın, kremada topak oluşmasın diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nişasta ve lavanta şurubunu ekleyip 4 dakika koyulaştırın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kremayı 5 dakika ılıtın, kupa dökerken buhar yapmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Lavantalı kremayı kuplara paylaştırıp 1 saat soğutun.",
+        "timerSeconds": 3600
+      }
+    ]
+  },
+  {
+    "slug": "lavantali-limonata-isparta-usulu",
+    "title": "Lavantali Limonata",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Isparta usulü lavantalı limonata, limon suyunu lavanta ve buzla buluşturarak çiçeksi, serin ve yazlık bir içecek çıkarır.",
+    "prepMinutes": 8,
+    "cookMinutes": 0,
+    "totalMinutes": 8,
+    "servingCount": 4,
+    "averageCalories": 30,
+    "protein": 0,
+    "carbs": 7,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Lavanta tomurcuğunu suda 4 dakika bekletmek limonataya hafif bir koku verir.",
+    "servingSuggestion": "Bol buzla sunun, bardağı limon dilimi ve lavanta tomurcuğuyla tamamlayın.",
+    "tags": [
+      "alkolsuz",
+      "30-dakika-alti",
+      "yaz-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Lavanta",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lavantali Limonata için limon suyu, şeker ve aromatik tabanı karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lavantali Limonata içeceğine su ekleyip 10 dakika dinlendirerek tadını dengeleyin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lavantali Limonata içeceğini süzüp buzla birlikte servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lavantali-limonlu-soda-ingiltere-usulu",
+    "title": "Lavantali Limonlu Soda",
+    "cuisine": "gb",
+    "type": "ICECEK",
+    "description": "İngiltere usulü lavantalı limonlu soda, limonu lavanta şurubu ve soda ile buluşturarak hafif bir içecek yapar.",
+    "prepMinutes": 6,
+    "cookMinutes": 0,
+    "totalMinutes": 6,
+    "servingCount": 2,
+    "averageCalories": 48,
+    "protein": 0,
+    "carbs": 12,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Lavanta şurubunu az kullanmak içeceğin sabunsu bir tat almasını önler.",
+    "servingSuggestion": "Lavantalı limonlu sodayı buzlu bardakta sunup soda köpüğü sönmeden servis edin.",
+    "tags": [
+      "alkolsuz",
+      "30-dakika-alti",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Limon suyu",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Lavanta şurubu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soda",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bardağı buzla doldurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Limon suyu ve lavanta şurubunu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soda ile tamamlayıp servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lavas",
+    "title": "Lavaş",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Un, su ve tuzla yoğrulup tavada pişirilen ince ekmek.",
+    "prepMinutes": 20,
+    "cookMinutes": 15,
+    "totalMinutes": 35,
+    "servingCount": 8,
+    "averageCalories": 240,
+    "protein": 7,
+    "carbs": 47,
+    "fat": 2,
+    "isFeatured": false,
+    "tipNote": "Hamuru bezelere ayırdıktan sonra 15 dakika dinlendirin; daha ince açılır.",
+    "servingSuggestion": "Kebap, dürüm veya kahvaltılıklarla kullanın.",
+    "tags": [
+      "vegan",
+      "butce-dostu",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ilık su",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, su, tuz ve zeytinyağıyla pürüzsüz bir hamur yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 15 dakika dinlendirin, gluten gevşesin ve açması kolaylaşsın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru 8 bezeye ayırın ve her bezeyi ince yuvarlak açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tavayı yüksek ateşte 3 dakika ısıtın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Lavaşın ilk yüzünü 1 dakika pişirin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Çevirip ikinci yüzünü 1 dakika pişirin ve bez arasında yumuşak tutun.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Lavaşları üst üste kapatın, böylece buharı içinde kalıp kırılgan olmaz.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "laz-boregi-rize-usulu",
+    "title": "Laz Böreği",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Laz böreği, ince yufkalar arasındaki muhallebi dolgusu ve pudra şekeri dokunuşuyla Rize ve çevresinde çok sevilen sürprizli bir tatlıdır.",
+    "prepMinutes": 30,
+    "cookMinutes": 35,
+    "totalMinutes": 65,
+    "servingCount": 8,
+    "averageCalories": 316,
+    "protein": 7,
+    "carbs": 33,
+    "fat": 17,
+    "isFeatured": false,
+    "tipNote": "Muhallebiyi ılıtıp yufkaya koymak katların hamurlaşmasını önler.",
+    "servingSuggestion": "Dilimleyip üstüne pudra şekeri serperek servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Yufka",
+        "amount": "6",
+        "unit": "adet",
+        "group": "Katlar için"
+      },
+      {
+        "name": "Süt",
+        "amount": "500",
+        "unit": "ml",
+        "group": "Muhallebi için"
+      },
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": "Muhallebi için"
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": "Muhallebi için"
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": "Muhallebi için"
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "80",
+        "unit": "gr",
+        "group": "Katlar için"
+      },
+      {
+        "name": "Pudra şekeri",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": "Servis için"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Süt, un, şeker ve yumurtayı 8 dakika muhallebi kıvamına pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Muhallebiyi 20 dakika ılıtın, yufkaları yumuşatmasın diye.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yufkaları tereyağı sürerek tepsiye kat kat yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Muhallebiyi orta kata yayın ve üst yufkaları kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Laz böreğini 190°C fırında 30 dakika pişirin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tatlıyı 15 dakika dinlendirip pudra şekeriyle servis edin.",
+        "timerSeconds": 900
+      }
+    ]
+  },
+  {
+    "slug": "laz-otlu-tava-boregi-artvin-usulu",
+    "title": "Laz Otlu Tava Böreği",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Artvin laz otlu tava böreği, ince yufkayı dağ otları ve peynirle tavada kızartarak çıtır kenarlı, yumuşak içli bir yayla kahvaltısı kurar.",
+    "prepMinutes": 18,
+    "cookMinutes": 12,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 266,
+    "protein": 9,
+    "carbs": 24,
+    "fat": 15,
+    "isFeatured": false,
+    "tipNote": "İç harcı kuru tutmak böreğin tavada kolay çevrilmesini sağlar.",
+    "servingSuggestion": "Dilimleyip sıcak verin, yanına çay ve domates salatası koyun.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Yufka",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Karışık ot",
+        "amount": "1",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Beyaz peynir",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "20",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Laz Otlu Tava Böreği başlangıcında kuru ve yaş malzemeleri ayrı tutun, karıştırma aşaması temiz ilerlesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "İç harcı karıştırın, Laz Otlu Tava Böreği için hazır tutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yufkaları harçla kapatın, Laz Otlu Tava Böreği için hazır tutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Böreği tavada 10 dakika pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Laz Otlu Tava Böreği kıvamı oturunca servis edin, fazla bekletmek peynirli dokuyu sertleştirir.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lazanya",
+    "title": "Lazanya",
+    "cuisine": "it",
+    "type": "YEMEK",
+    "description": "Kat kat makarna, dana kıymalı ragu ve beşamel sosla pişen İtalyan fırın yemeği.",
+    "prepMinutes": 35,
+    "cookMinutes": 45,
+    "totalMinutes": 80,
+    "servingCount": 8,
+    "averageCalories": 560,
+    "protein": 29,
+    "carbs": 38,
+    "fat": 31,
+    "isFeatured": true,
+    "tipNote": "Raguyu sulu bırakın; lazanya yaprakları fırında bu sosla yumuşar.",
+    "servingSuggestion": "Dilimleri 10 dakika dinlendirip yeşil salata ve rendelenmiş parmesanla sıcak sunun.",
+    "tags": [
+      "firinda",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Lazanya yaprağı",
+        "amount": "12",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dana kıyma",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Domates sosu",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": "Beşamel için"
+      },
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": "Beşamel için"
+      },
+      {
+        "name": "Kaşar peyniri",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kıyma, soğan ve domates sosunu 20 dakika pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tereyağı ve unu 2 dakika kavurun.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sütü azar azar ekleyip beşameli 6 dakika pişirin, topaklanmasın diye sürekli çırpın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Fırın kabına beşamel, lazanya yaprağı ve kıymalı sosu kat kat dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Üst kata beşamel ve peynir yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Lazanyayı 180°C fırında 38 dakika pişirin.",
+        "timerSeconds": 2280
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Dilimlemeden önce 12 dakika dinlendirin, katmanlar dağılmasın.",
+        "timerSeconds": 720
+      }
+    ]
+  },
+  {
+    "slug": "lazotlu-kabak-salatasi-artvin-usulu",
+    "title": "Lazotlu Kabak Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Artvin usulü lazotlu kabak salatası, haşlanmış kabağı lazotu ve sarımsaklı yoğurtla buluşturarak ferah, hafif ve sofrayı açan bir salata kurar.",
+    "prepMinutes": 10,
+    "cookMinutes": 8,
+    "totalMinutes": 18,
+    "servingCount": 4,
+    "averageCalories": 118,
+    "protein": 4,
+    "carbs": 10,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Kabağı diri bırakmak salatada sulu bir ezilme oluşmasını önler.",
+    "servingSuggestion": "Salatayı serin sunun, üstüne ceviz serpip ekşi yoğurtla tamamlayın.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Kabak",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Lazotu",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "1",
+        "unit": "diş",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kabakları iri rendeleyin, tuzla 5 dakika bekletip suyunu sıkın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mısır tanelerini tavada 5 dakika kavurun, tatlı kokusu çıkınca alın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kabağı zeytinyağında 6 dakika kavurun, fazla yumuşamadan ocaktan alın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yoğurt, sarımsak ve dereotunu 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ilıyan kabak, mısır ve yoğurtlu sosu karıştırıp pul biberle servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kabak ve mısırı aynı sıcaklığa getirin, yoğurtlu sos bir tarafta gevşemesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Pul biberli yağı üstten gezdirin, karıştırırsanız mısır taneleri yoğurt içinde kaybolur.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lebeniye-corbasi",
+    "title": "Lebeniye Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Yoğurt, nohut, pirinç ve küçük köftelerle yapılan Antep çorbası.",
+    "prepMinutes": 25,
+    "cookMinutes": 35,
+    "totalMinutes": 60,
+    "servingCount": 6,
+    "averageCalories": 230,
+    "protein": 11,
+    "carbs": 24,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Yoğurtlu karışımı tencereye azar azar ekleyip karıştırın; çorba pürüzsüz kalır.",
+    "servingSuggestion": "Naneli tereyağı gezdirerek servis edin.",
+    "tags": [
+      "kis-tarifi",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Yoğurt",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Dana kıyma",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kuru nane",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yarım su bardağı pirinç ve 1 su bardağı nohudu 5 su bardağı suda 20 dakika haşlayın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "200 gr kıymadan küçük köfteler yapın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Köfteleri tencereye ekleyip 8 dakika pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "2 su bardağı yoğurt ve 1 yumurtayı çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Terbiyeyi sıcak sudan 2 kepçeyle ılıtın, yoğurt kesilmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Terbiyeyi tencereye ekleyip 10 dakika kısık ateşte pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Tereyağında naneyi 1 dakika kızdırıp çorbaya gezdirin.",
+        "timerSeconds": 60
+      }
+    ]
+  },
+  {
+    "slug": "leche-frita-ispanya-usulu",
+    "title": "Leche Frita",
+    "cuisine": "es",
+    "type": "TATLI",
+    "description": "Leche frita, koyu sütlü harcı dilimleyip kızartarak dışı ince çıtır, içi kremamsı bir İspanya tatlısı yapar.",
+    "prepMinutes": 18,
+    "cookMinutes": 10,
+    "totalMinutes": 148,
+    "servingCount": 6,
+    "averageCalories": 236,
+    "protein": 5,
+    "carbs": 26,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Harci tam soğutmadan kesmemek formu korur.",
+    "servingSuggestion": "Leche frita parçalarını kızarmış yüzleri üste gelecek şekilde tabağa alıp sıcaklığını düşürmeden sunun.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Süt, un ve şekeri 7 dakika koyulaşana kadar pişirin.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karışımı yağlı tepsiye yayın ve yüzeyi düzeltin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tepsiyi 2 saat soğutun, dilimler kızartmada dağılmasın.",
+        "timerSeconds": 7200
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Dilimleri yumurtaya ve una bulayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Dilimleri orta kızgın yağda 4 dakika kızartın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tarçınlı şekerle kaplayıp ılık servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "leche-merengada-ispanya-usulu",
+    "title": "Leche Merengada",
+    "cuisine": "es",
+    "type": "ICECEK",
+    "description": "Leche merengada, tarçınlı sütü hafif köpüklü dokuyla soğutarak tatlı, serin ve yaz öğlesine uygun bir İspanyol içeceği yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 8,
+    "totalMinutes": 18,
+    "servingCount": 4,
+    "averageCalories": 132,
+    "protein": 4,
+    "carbs": 18,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Sütü kaynatıp tamamen soğutmak baharatın tadını daha yuvarlak hale getirir.",
+    "servingSuggestion": "Tarçın serperek buz gibi sunun, yanında galeta kurabiyesi verin.",
+    "tags": [
+      "30-dakika-alti",
+      "alkolsuz",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta akı",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tarçın çubuğu",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Limon kabuğu",
+        "amount": "1",
+        "unit": "şerit",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Sütü tarçın ve limonla 6 dakika ısıtın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "İçeceği soğutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Köpük ekleyip servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lechon-asado",
+    "title": "Lechón Asado",
+    "cuisine": "cu",
+    "type": "YEMEK",
+    "description": "Küba lechón asado, narenciye ve sarımsakla marine edilen etin uzun fırınlanmış bayram yemeğidir.",
+    "prepMinutes": 45,
+    "cookMinutes": 180,
+    "totalMinutes": 705,
+    "servingCount": 8,
+    "averageCalories": 540,
+    "protein": 42,
+    "carbs": 6,
+    "fat": 38,
+    "isFeatured": false,
+    "tipNote": "Eti marine içinde bir gece bekletin; turunçgil asidi kalın parçaya yavaş işler. Eti kapalı kapta çevirerek bekletin; kalın parçanın her yüzü aynı aromayı alır.",
+    "servingSuggestion": "Moros y cristianos ve yuca con mojo ile servis edin.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Dana döş",
+        "amount": "1.5",
+        "unit": "kg",
+        "group": null
+      },
+      {
+        "name": "Portakal suyu",
+        "amount": "200",
+        "unit": "ml",
+        "group": "Marine için"
+      },
+      {
+        "name": "Lime suyu",
+        "amount": "80",
+        "unit": "ml",
+        "group": "Marine için"
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "8",
+        "unit": "diş",
+        "group": "Marine için"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Narenciye suyu, sarımsak, kekik ve tuzla mojo marinadı hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Eti marinada bulayıp buzdolabında 8 saat bekletin.",
+        "timerSeconds": 28800
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Eti fırın kabına alın ve marinadın bir kısmını tabana dökün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "160°C fırında 3 saat kapalı pişirin.",
+        "timerSeconds": 10800
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Eti açıp 20 dakika üstü kızarana kadar pişirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Eti 15 dakika dinlendirin ve lif yönüne karşı dilimleyin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Dilimlerin üstüne az mojo gezdirin, böylece narenciye aroması fırında uçmuş kalmaz.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lecso-macar-usulu",
+    "title": "Lecsó",
+    "cuisine": "hu",
+    "type": "YEMEK",
+    "description": "Lecsó, biber, domates ve soğanı birlikte pişirerek sulu ve paprika kokulu bir Macar sebze yemeği yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 20,
+    "totalMinutes": 32,
+    "servingCount": 4,
+    "averageCalories": 152,
+    "protein": 3,
+    "carbs": 13,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Biberleri iri bırakmak yemekte doku sağlar.",
+    "servingSuggestion": "Lecsóyu sıcak sunun, yanına rustik ekmek ve sosis dilimleri ekleyin.",
+    "tags": [
+      "30-dakika-alti",
+      "vegan",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Yeşil biber",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tatlı paprika",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soğanı yarım ay, biber ve domatesi iri parçalar halinde doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lecsó tabanı için soğanı yağda 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Biberi ekleyip 6 dakika yumuşayana kadar pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Domates ve tuzu ekleyin, domates su salınca paprika katın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yemeği 15 dakika kısık ateşte pişirin, paprika yanmasın diye yüksek ateş kullanmayın.",
+        "timerSeconds": 900
+      }
+    ]
+  },
+  {
+    "slug": "lecso-yumurtali-macar-usulu",
+    "title": "Lecsó Yumurtalı",
+    "cuisine": "hu",
+    "type": "YEMEK",
+    "description": "Lecsó yumurtalı, biber ve domatesi yumurtayla tamamlayarak sulu, hafif tatlı ve tavadan gelen bir Macar akşam yemeği kurar.",
+    "prepMinutes": 10,
+    "cookMinutes": 16,
+    "totalMinutes": 26,
+    "servingCount": 4,
+    "averageCalories": 186,
+    "protein": 8,
+    "carbs": 12,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Yumurtayı son anda eklemek lecsónun sulu yapısını korur.",
+    "servingSuggestion": "Sıcak servis edin, yanına rustik ekmek ve taze maydanoz koyun.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Kapya biber",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soğanı, biberi ve domatesi doğrayın; yumurtaları ayrı kasede çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve biberi yağda 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Domatesi ekleyip 8 dakika suyunu yoğunlaştırın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Paprika ve tuzu ekleyin, ardından çırpılmış yumurtayı gezdirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yumurtalı lecsóyu 4 dakika kısık ateşte pişirin, yumurta kuru kalmasın.",
+        "timerSeconds": 240
+      }
+    ]
+  },
+  {
+    "slug": "lecso-yumurtali-tava-macar-usulu",
+    "title": "Lecsó Yumurtalı Tava",
+    "cuisine": "hu",
+    "type": "KAHVALTI",
+    "description": "Macar usulü lecsó yumurtalı tava, biberli domatesli yahniyi yumurtayla bağlayarak ekmek banmalık sıcak bir kahvaltı kurar.",
+    "prepMinutes": 10,
+    "cookMinutes": 16,
+    "totalMinutes": 26,
+    "servingCount": 3,
+    "averageCalories": 224,
+    "protein": 12,
+    "carbs": 12,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Biberleri domatesten önce pişirmek yahninin sulu değil yoğun kalmasını sağlar.",
+    "servingSuggestion": "Lecsó yumurtalı tavayı yumurta parçaları dağılmadan küçük tavadan sıcak tabağa alın.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Yumurta",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kapya biber",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Toz paprika",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lecsó Yumurtalı Tava için malzemeleri ölçüp tezgaha alın, sonraki adımlar aksamadan ilerlesin diye kapları hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lecsó Yumurtalı Tava için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğan ve biberleri tavada 7 dakika yumuşatın.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Domates ve paprikayı ekleyip 6 dakika koyulaştırın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yumurtaları kırıp 3 dakika yumuşak kıvamda pişirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Lecsó Yumurtalı Tava yüzeyi parlakken sıcak servis edin, soğursa buharı gevrek dokuyu yumuşatır.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Lecsó Yumurtalı Tava parçalarını ılık tabaklara alın, yanında çayla hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "leek-and-potato-soup-british",
+    "title": "Leek and Potato Soup",
+    "cuisine": "gb",
+    "type": "CORBA",
+    "description": "Pırasa ve patates çorbası, Britanya ev mutfağında kremamsı kıvamı ve sade tadıyla kış günlerinin en rahatlatıcı kaselerinden biridir.",
+    "prepMinutes": 15,
+    "cookMinutes": 25,
+    "totalMinutes": 40,
+    "servingCount": 5,
+    "averageCalories": 172,
+    "protein": 4,
+    "carbs": 23,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Pırasayı renk aldırmadan çevirmek çorbanın beyaz ve nazik tadını korur.",
+    "servingSuggestion": "Üzerine taze çekilmiş karabiber serperek sıcak servis edin.",
+    "tags": [
+      "kis-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Pırasa",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "25",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Sebze suyu",
+        "amount": "1",
+        "unit": "lt",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "120",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "0.25",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "3 pırasayı ince, 3 patatesi küçük küp doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pırasayı 25 gr tereyağında 6 dakika renk almadan yumuşatın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Patates ve 1 litre sebze suyunu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Çorbayı 18 dakika kısık ateşte pişirin.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Blenderdan 1 dakika geçirin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "120 ml kremayı ekleyip 2 dakika ısıtın, kaynatmayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Karabiberle servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "leka-ispanakli-krep-isvec-usulu",
+    "title": "Leka Ispanaklı Krep",
+    "cuisine": "se",
+    "type": "YEMEK",
+    "description": "Leka ıspanaklı krep, ince krepleri ıspanaklı peynirli içle doldurarak İskandinav mutfağında fırınlanan yumuşak bir öğün tabağı oluşturur.",
+    "prepMinutes": 20,
+    "cookMinutes": 20,
+    "totalMinutes": 40,
+    "servingCount": 4,
+    "averageCalories": 266,
+    "protein": 11,
+    "carbs": 24,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Krepleri çok kalın dökmemek içle birlikte sarılmasını kolaylaştırır.",
+    "servingSuggestion": "Krepleri ılık sunun, yanına yeşil salata ve limon dilimi koyun.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": "Krep için"
+      },
+      {
+        "name": "Süt",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": "Krep için"
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": "Krep için"
+      },
+      {
+        "name": "Ispanak",
+        "amount": "300",
+        "unit": "gr",
+        "group": "İç için"
+      },
+      {
+        "name": "Beyaz peynir",
+        "amount": "120",
+        "unit": "gr",
+        "group": "İç için"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Krep hamurunu çırpın ve 10 dakika dinlendirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "İnce krepleri tavada her yüzü 1 dakika pişirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ispanağı tavada 5 dakika soteleyip suyunu çektirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ispanağı peynirle karıştırın, fazla su kalırsa krepler yırtılmasın diye süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Krepleri harçla doldurup fırın kabına dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "190°C fırında 10 dakika ısıtıp servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "lemon-myrtle-iced-tea-avustralya-usulu",
+    "title": "Lemon Myrtle Iced Tea",
+    "cuisine": "au",
+    "type": "ICECEK",
+    "description": "Lemon myrtle iced tea, çayı limon mersini kokusuyla soğutarak serin, narenciye aromalı ve yaz öğleden sonrasına uygun bir içecek yapar.",
+    "prepMinutes": 8,
+    "cookMinutes": 6,
+    "totalMinutes": 14,
+    "servingCount": 4,
+    "averageCalories": 42,
+    "protein": 0,
+    "carbs": 10,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Limon mersinini demlenme sonunda eklemek kokusunun daha temiz kalmasını sağlar.",
+    "servingSuggestion": "Uzun bardakta bol buzla sunun, içine ince limon dilimi bırakın.",
+    "tags": [
+      "30-dakika-alti",
+      "alkolsuz",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Siyah çay",
+        "amount": "2",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Lemon myrtle",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Çayı 5 dakika demleyin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Balı karıştırıp soğutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Buzla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lemon-myrtle-spritz-avustralya-usulu",
+    "title": "Lemon Myrtle Spritz",
+    "cuisine": "au",
+    "type": "KOKTEYL",
+    "description": "Lemon myrtle spritz, limon mersini aromasını köpüklü bir tabanda sunarak Avustralya kokteyl kültürüne ferah ve otlu bir bardak kazandırır.",
+    "prepMinutes": 8,
+    "cookMinutes": 0,
+    "totalMinutes": 8,
+    "servingCount": 2,
+    "averageCalories": 152,
+    "protein": 0,
+    "carbs": 9,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Lemon myrtle şurubunu fazla kullanmamak içkinin taze dengesini korur.",
+    "servingSuggestion": "Lemon myrtle spritz'i buzlu bardakta hazırlayıp soda köpüğünü bekletmeden masaya çıkarın.",
+    "tags": [
+      "alkollu",
+      "yaz-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Cin",
+        "amount": "80",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Lemon myrtle şurubu",
+        "amount": "40",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Soda",
+        "amount": "120",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lemon Myrtle Spritz için bardağı buzla 1 dakika soğutun, servis anında sulanmasın diye buzu boşaltın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lemon Myrtle Spritz cin ve şurubunu buzla 12 saniye karıştırın.",
+        "timerSeconds": 12
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Lemon Myrtle Spritz karışımını bardaklara paylaştırın, soda için boşluk bırakın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Lemon Myrtle Spritz sodayı ekleyip servis edin, gazı kaçmasın diye karıştırmayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Lemon Myrtle Spritz süslemesini ekleyip bekletmeden servis edin, buz erirse denge sulanır.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lemon-slice-avustralya-usulu",
+    "title": "Lemon Slice",
+    "cuisine": "au",
+    "type": "TATLI",
+    "description": "Lemon slice, bisküvili tabanı limonlu üst katla tamamlayarak keskin, serin ve kare dilimlenen bir Avustralya tatlısı sunar.",
+    "prepMinutes": 15,
+    "cookMinutes": 10,
+    "totalMinutes": 85,
+    "servingCount": 8,
+    "averageCalories": 198,
+    "protein": 3,
+    "carbs": 24,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Tam soğutmadan kesmemek düzgün dilim verir.",
+    "servingSuggestion": "Kare dilimleri soğuk sunun, yanına çırpılmış krema veya çay koyun.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Bisküvi kırığı",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "60",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yoğunlaştırılmış süt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bisküvi ve tereyağını karıştırıp tabana sıkıca bastırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tabanı 20 dakika buzdolabında soğutun, dolguya karışmasın diye.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Süt, limon suyu ve kabuğunu 2 dakika çırpın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limonlu dolguyu tabana yayın ve yüzeyi düzeltin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tatlıyı 10 dakika pişirin, dolgu kenardan taşmasın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tamamen soğutup kare dilimleyin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lemonato-tavuklu-orzo-yunan-usulu",
+    "title": "Lemonato Tavuklu Orzo",
+    "cuisine": "gr",
+    "type": "YEMEK",
+    "description": "Lemonato tavuklu orzo, küçük makarnayı tavuk ve limonla buluşturarak ferah, sulu ve Akdeniz akşamına uygun bir tencere yapar.",
+    "prepMinutes": 14,
+    "cookMinutes": 18,
+    "totalMinutes": 32,
+    "servingCount": 4,
+    "averageCalories": 292,
+    "protein": 24,
+    "carbs": 22,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Limonu ateşten aldıktan sonra eklemek orzoda parlak bir tat bırakır.",
+    "servingSuggestion": "Orzoyu derin tabakta sunun, üstüne dereotu serpip limon dilimi ekleyin.",
+    "tags": [
+      "yuksek-protein",
+      "tek-tencere"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk göğsü",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Orzo",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tavuk suyu",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuğu lokmalık doğrayın, limon kabuğu ve tuzla ovalayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavuğu tencerede 6 dakika soteleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Orzoyu ekleyip 2 dakika tavuk yağıyla çevirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tavuk suyu ve limon suyunu ekleyip kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tencereyi 12 dakika kısık ateşte pişirin, orzo dibe tutmasın diye ortada bir kez karıştırın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "5 dakika dinlendirin ve dereotu ya da maydanozla servis edin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "lemongrass-dana-pirinc-bowl-vietnam-usulu",
+    "title": "Lemongrass Dana Pirinç Bowl",
+    "cuisine": "vn",
+    "type": "YEMEK",
+    "description": "Lemongrass dana pirinç bowl, dana etini limon otu ve pirinçle buluşturarak kokulu, hafif tatlı-ekşi ve doyurucu bir ana yemek kurar.",
+    "prepMinutes": 14,
+    "cookMinutes": 12,
+    "totalMinutes": 26,
+    "servingCount": 4,
+    "averageCalories": 296,
+    "protein": 24,
+    "carbs": 24,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Limon otunu çok ince kıymak aromanın ete daha iyi geçmesini sağlar.",
+    "servingSuggestion": "Kaseyi sıcak sunun, üstüne kişniş ve lime dilimi koyun.",
+    "tags": [
+      "yuksek-protein",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SOYA"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana jülyen",
+        "amount": "450",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Limon otu",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Taze soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Dana etini ince dilimleyin, ezilmiş limon otu ve soya sosuyla 10 dakika dinlendirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinci yıkayıp buharda veya tencerede 15 dakika pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Dana etini kızgın tavada 6 dakika soteleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon otu parçalarını tavadan alın, sert lifler ağıza gelmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pirinç, dana eti, salatalık ve yeşilliği bowl içinde katmanlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Lime suyu ve sosla tamamlayıp sıcak pirinç üstünde servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Sebzeleri etin üstüne yerleştirin, böylece sıcak pirinç çıtır dokuyu soldurmaz.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lemongrass-tofu-rice-salad-vietnam-usulu",
+    "title": "Vietnam Lemongrass Tofu Rice Salad",
+    "cuisine": "vn",
+    "type": "SALATA",
+    "description": "Vietnam lemongrass tofu rice salad, limon otlu tofu ve pirinci buluşturarak ferah ve dengeli bir öğle kâsesi çıkarır.",
+    "prepMinutes": 15,
+    "cookMinutes": 12,
+    "totalMinutes": 27,
+    "servingCount": 4,
+    "averageCalories": 188,
+    "protein": 8,
+    "carbs": 23,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Tofuyu kağıt havluyla kurulamak tavada daha net renk almasını sağlar.",
+    "servingSuggestion": "Salatayı serin verin, üstüne kavrulmuş fıstık ve lime dilimi ekleyin.",
+    "tags": [
+      "vegan",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SOYA"
+    ],
+    "ingredients": [
+      {
+        "name": "Tofu",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış pirinç",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Limon otu",
+        "amount": "1",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Lime suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Havuç",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pirinci yıkayıp 12 dakika haşlayın, süzüp 10 dakika soğutun.",
+        "timerSeconds": 1320
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tofuyu küp doğrayın, limon otu, sarımsak ve soya sosuyla 10 dakika bekletin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tofu küplerini tavada 6 dakika kızartın, dışı renk alınca kenara alın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Salatalık, havuç, nane ve kişnişi ince doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pirinç, sebze, tofu ve lime sosunu kasede birleştirip fıstıkla servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kızaran tofuyu kağıt havluya alın, fazla yağ pirinç tanelerini ağırlaştırmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Lime sosunu pirince azar azar ekleyin, erişkin ot tadı dengede kalsın diye tadına bakın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "licuado-de-papaya",
+    "title": "Licuado de Papaya",
+    "cuisine": "mx",
+    "type": "ICECEK",
+    "description": "Papayalı Meksika sütlü içeceği, sabah büfelerinde hafif kahvaltılık bir smoothie gibi hazırlanır.",
+    "prepMinutes": 5,
+    "cookMinutes": 0,
+    "totalMinutes": 5,
+    "servingCount": 2,
+    "averageCalories": 184,
+    "protein": 7,
+    "carbs": 30,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Papaya çok olgunsa ekstra şeker eklemeden doğal tatlılık yeterli olur.",
+    "servingSuggestion": "Soğuk bardakta üstüne bir çimdik tarçın serperek servis edin.",
+    "tags": [
+      "pratik",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Papaya",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Papayayı küp doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tüm malzemeyi blenderda 45 saniye çekin.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hemen bardaklara alıp servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lima-aji-de-gallina",
+    "title": "Lima Aji de Gallina",
+    "cuisine": "pe",
+    "type": "YEMEK",
+    "description": "Aji de gallina, didiklenmiş tavuğu aji amarillo, ekmek, süt, ceviz ve parmesanla kremamsı sarı sosta pişiren Peru yemeğidir.",
+    "prepMinutes": 25,
+    "cookMinutes": 45,
+    "totalMinutes": 70,
+    "servingCount": 6,
+    "averageCalories": 560,
+    "protein": 34,
+    "carbs": 42,
+    "fat": 28,
+    "isFeatured": false,
+    "tipNote": "Ekmeği sütle ıslatıp pürelemek sosu pürüzsüz ve kadifemsi yapar.",
+    "servingSuggestion": "Haşlanmış patates, pirinç, zeytin ve yumurta dilimleriyle servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "KUSUYEMIS",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk göğsü",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Aji amarillo ezmesi",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Bayat ekmek",
+        "amount": "4",
+        "unit": "dilim",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ceviz içi",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Parmesan",
+        "amount": "60",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış yumurta",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Pirinç pilavı",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuğu 25 dakika haşlayıp didikleyin ve suyunu ayırın.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Ekmekleri sütle 10 dakika ıslatın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğanı yağda 6 dakika yumuşatın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Aji amarillo ezmesini ekleyip 2 dakika kavurun.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sütlü ekmek ve cevizi blenderdan geçirip tencereye katın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tavuk ve parmesanla sosu 10 dakika koyulaştırın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Patates, pirinç ve yumurta dilimleriyle servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lima-ceviche-clasico-levrek",
+    "title": "Lima Ceviche Clásico",
+    "cuisine": "pe",
+    "type": "SALATA",
+    "description": "Ceviche clásico, taze levreği lime suyu, kırmızı soğan, ají biberi ve kişnişle kısa sürede marine eden Peru tabağıdır.",
+    "prepMinutes": 25,
+    "cookMinutes": 0,
+    "totalMinutes": 33,
+    "servingCount": 4,
+    "averageCalories": 260,
+    "protein": 32,
+    "carbs": 18,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Balığı servis öncesi marine etmek dokusunun sertleşmesini önler. Balığı servis öncesi bekletin; 8 dakika diri doku için yeterlidir.",
+    "servingSuggestion": "Haşlanmış tatlı patates ve mısırla soğuk servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "yaz-tarifi"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Levrek fileto",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Lime suyu",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kırmızı soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ají biberi",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kişniş",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Tatlı patates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Mısır",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tatlı patatesi 20 dakika haşlayıp dilimleyin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mısırları 10 dakika haşlayıp tanelere ayırın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Levrek filetolarını 2 cm küpler halinde kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kırmızı soğanı ince piyazlık doğrayıp soğuk suda bekletin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Balığı lime suyu, ají, tuz ve kişnişle 8 dakika marine edin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Cevicheyi soğan, mısır ve tatlı patatesle soğuk servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lima-ceviche-klasik",
+    "title": "Lima Ceviche Klasik",
+    "cuisine": "pe",
+    "type": "SALATA",
+    "description": "Peru ceviche, çok taze beyaz balığı lime suyu, kırmızı soğan, acı biber ve kişnişle kısa sürede marine eden ferah bir tabaktır.",
+    "prepMinutes": 20,
+    "cookMinutes": 0,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 190,
+    "protein": 26,
+    "carbs": 12,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Balığı 12 dakikadan uzun bekletmemek dokusunu diri tutar. 10 dakikadan sonra tadına bakın; daha uzun bekleme balığın dokusunu sertleştirebilir.",
+    "servingSuggestion": "Haşlanmış tatlı patates, mısır ve marulla soğuk servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "dusuk-kalorili",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Beyaz balık fileto",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Lime suyu",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kırmızı soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Acı biber",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kişniş",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Tatlı patates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış mısır",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tatlı patatesleri 20 dakika haşlayıp soğutun.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Balığı 2 cm küpler halinde kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kırmızı soğanı ince piyazlık doğrayıp soğuk suda 5 dakika bekletin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Balığı lime suyu ve tuzla karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Acı biber, soğan ve kişnişi ekleyip 10 dakika marine edin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Cevicheyi tatlı patates ve mısırla hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "lima-fasulyeli-kinoa-salata-peru-usulu",
+    "title": "Lima Fasulyeli Kinoa Salata",
+    "cuisine": "pe",
+    "type": "SALATA",
+    "description": "Peru usulü lima fasulyeli kinoa salata, kinoayı lima fasulyesi ve lime ile buluşturarak parlak bir salata yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 12,
+    "totalMinutes": 24,
+    "servingCount": 4,
+    "averageCalories": 176,
+    "protein": 7,
+    "carbs": 24,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Kinoayı soğutmadan soslamak lime aromasını daha iyi içine çeker.",
+    "servingSuggestion": "Lima fasulyeli kinoa salatayı soğuk tabakta yayın, lime suyu parlaklığı kaybolmadan sunun.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Kinoa",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış lima fasulyesi",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kırmızı soğan",
+        "amount": "0.5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Lime suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kinoayı yıkayıp 12 dakika haşlayın, taneler açılınca süzün.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Lima fasulyesini 8 dakika ısıtıp yumuşatın, kabukları dağılmadan süzün.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kırmızı soğan, kişniş, domates ve salatalığı küçük doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Lime suyu, zeytinyağı, kimyon ve tuzu 30 saniye çırpın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kinoa, fasulye ve sebzeleri sosla karıştırın, avokadoyu üstte bırakarak servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Fasulyeyi kinoaya spatulayla katın, kabukları ayrılırsa kase görünümü bulanıklaşır.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Avokadoyu servis anında ekleyin, lime asidiyle temas süresi uzarsa kenarları kararır.",
+        "timerSeconds": null
+      }
+    ]
+  }
+]

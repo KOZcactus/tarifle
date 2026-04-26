@@ -1,0 +1,4347 @@
+[
+  {
+    "slug": "madeleine",
+    "title": "Madeleine",
+    "cuisine": "fr",
+    "type": "TATLI",
+    "description": "Fransız madeleine keki, tereyağlı hamurun deniz kabuğu kalıpta hafifçe kabarmasıyla hazırlanır.",
+    "prepMinutes": 25,
+    "cookMinutes": 12,
+    "totalMinutes": 37,
+    "servingCount": 8,
+    "averageCalories": 160,
+    "protein": 3,
+    "carbs": 18,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Hamuru kalıba paylaştırdıktan sonra 15 dakika dinlendirin; kubbesi daha belirgin kabarır.",
+    "servingSuggestion": "Ilık madeleineleri pudra şekeri serperek çay saatinde küçük porselen tabakta sunun.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yumurta ve şekeri 3 dakika kabarana kadar çırpın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Unu ekleyip eritilmiş tereyağını ince akıtarak karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru 20 dakika soğutun, madeleine çıkıntısı oluşsun.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kalıpları yağlayıp hamuru gözlere paylaştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Madeleineleri 190°C fırında 11 dakika pişirin.",
+        "timerSeconds": 660
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kalıptan çıkarıp telde 10 dakika dinlendirin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "madimak-yemegi",
+    "title": "Madımak Yemeği",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Sivas madımağı bulgur ve soğanla pişer, bahar otlarının keskin tadını tencereye taşır.",
+    "prepMinutes": 30,
+    "cookMinutes": 35,
+    "totalMinutes": 65,
+    "servingCount": 4,
+    "averageCalories": 170,
+    "protein": 8,
+    "carbs": 10,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Madımağı iri doğramak uzun pişimde yaprakların ezilmeden seçilmesini sağlar.",
+    "servingSuggestion": "Yemeği sıcak sunun, yanına sarımsaklı yoğurt ve köy ekmeği koyun.",
+    "tags": [
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Madımak",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Bulgur",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates salçası",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Madımağı ayıklayın, yıkayın ve ince doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı zeytinyağında 5 dakika kavurun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Salçayı ekleyip 2 dakika yağda açın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Madımak ve bulguru ekleyip 3 dakika çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Üzerini geçecek sıcak suyu ekleyip 30 dakika pişirin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "5 dakika dinlendirin, bulgur şişip yemeği fazla koyulaştırmasın diye sıcak suyla ayarlayın.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "madimakli-bulgur-pilavi-sivas-usulu",
+    "title": "Sivas Madımaklı Bulgur Pilavı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Sivas madımaklı bulgur pilavı, madımağın otsu tadını bulgurla birleştirerek İç Anadolu'nun kır kokusunu taşıyan sade ama doygun bir ana tabak kurar.",
+    "prepMinutes": 15,
+    "cookMinutes": 22,
+    "totalMinutes": 37,
+    "servingCount": 5,
+    "averageCalories": 188,
+    "protein": 5,
+    "carbs": 29,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Madımağı bulgura göre iri (1-2 cm) bırakmak pilavda kaybolmadan seçilmesini sağlar.",
+    "servingSuggestion": "Pilavı sıcak verin, yanına ayran ve turşu biber koyun.",
+    "tags": [
+      "vegan",
+      "tek-tencere",
+      "butce-dostu",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Madımak otu",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pilavlık bulgur",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Madımağı ayıklayıp doğrayın, bulguru yıkayıp süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı yağda 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Madımağı ekleyip 5 dakika soteleyin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Bulgur ve 2.5 su bardağı sıcak suyu ekleyip kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Madımaklı pilavı 15 dakika kısık ateşte pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "8 dakika dinlendirin, bulgur taneleri ezilmesin diye nazikçe havalandırın.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "madimakli-yumurta-sivas-usulu",
+    "title": "Sivas Madımaklı Yumurta",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Sivas madımaklı yumurta, dağ otunu tereyağı ve yumurtayla buluşturarak yeşil, yoğun ve tavadan gelen bir kahvaltı tabağı çıkarır.",
+    "prepMinutes": 12,
+    "cookMinutes": 10,
+    "totalMinutes": 22,
+    "servingCount": 3,
+    "averageCalories": 206,
+    "protein": 11,
+    "carbs": 5,
+    "fat": 15,
+    "isFeatured": false,
+    "tipNote": "Madımağı fazla çevirmemek taze tadı korur.",
+    "servingSuggestion": "Yanına tandır ekmeği koyarak sıcak servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen",
+      "kis-tarifi"
+    ],
+    "allergens": [
+      "SUT",
+      "YUMURTA",
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Madımak otu",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "20",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tandır ekmeği",
+        "amount": "3",
+        "unit": "dilim",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Sivas Madımaklı Yumurta için malzemeleri ölçüp tezgaha alın, sonraki adımlar aksamadan ilerlesin diye kapları hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Madımağı ayıklayıp iri doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tereyağında madımağı 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yumurtaları kırıp 4 dakika daha pişirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sivas Madımaklı Yumurta kıvamı oturunca servis edin, fazla bekletmek peynirli dokuyu sertleştirir.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "madrid-churros-cikolatali",
+    "title": "Madrid Churros Çikolatalı",
+    "cuisine": "es",
+    "type": "TATLI",
+    "description": "Churros, sıcak suyla hazırlanan hamuru yıldız uçtan sıkıp kızartır, tarçınlı şeker ve koyu sıcak çikolatayla sunar.",
+    "prepMinutes": 20,
+    "cookMinutes": 20,
+    "totalMinutes": 40,
+    "servingCount": 6,
+    "averageCalories": 330,
+    "protein": 6,
+    "carbs": 48,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Hamuru 5 dakika soğutmak yumurtayı eklerken pişmesini önler.",
+    "servingSuggestion": "Churrosları sıcak çikolataya batırarak hemen servis edin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Bitter çikolata",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ayçiçek yağı",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çimdik",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Su, tereyağı ve tuzu kaynatın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Unu ekleyip hamuru 2 dakika tencerede pişirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru 5 dakika soğutup yumurtaları tek tek yedirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamuru yıldız uçlu torbaya alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Şeritleri 175°C yağda 4 dakika kızartın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Süt ve çikolatayı 5 dakika ısıtarak koyu sos yapın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Churrosları tarçınlı şekere bulayıp sosla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "madrid-gambas-al-ajillo",
+    "title": "Madrid Gambas al Ajillo",
+    "cuisine": "es",
+    "type": "APERATIF",
+    "description": "Gambas al ajillo, karidesleri zeytinyağı, sarımsak, pul biber ve maydanozla çok kısa sürede pişiren klasik İspanyol tapas tabağıdır.",
+    "prepMinutes": 10,
+    "cookMinutes": 6,
+    "totalMinutes": 16,
+    "servingCount": 4,
+    "averageCalories": 260,
+    "protein": 24,
+    "carbs": 4,
+    "fat": 17,
+    "isFeatured": false,
+    "tipNote": "Karidesi opaklaşır opaklaşmaz ocaktan almak lastikleşmesini önler.",
+    "servingSuggestion": "Sarımsaklı yağı ekmekle sıyırmak için sıcak servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Karides",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "6",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Pul biber",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Limon",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karidesleri temizleyip kağıt havluyla kurulayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Zeytinyağında dilim sarımsakları 2 dakika kokusu çıkana kadar ısıtın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pul biber ve karidesleri tavaya ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karidesleri 3-4 dakika pembeleşene kadar çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Maydanoz ve limonla sıcak tapas olarak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "madrid-patatas-bravas",
+    "title": "Madrid Patatas Bravas",
+    "cuisine": "es",
+    "type": "APERATIF",
+    "description": "Patatas bravas, fırında çıtırlaştırılmış patates küplerini sarımsaklı, paprikalı ve hafif acı domates sosuyla buluşturan tapas tabağıdır.",
+    "prepMinutes": 15,
+    "cookMinutes": 45,
+    "totalMinutes": 60,
+    "servingCount": 6,
+    "averageCalories": 210,
+    "protein": 4,
+    "carbs": 35,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Patatesleri kurulamak fırında buhar yerine çıtır yüzey oluşturur.",
+    "servingSuggestion": "Sosu üstüne kaşıklayıp maydanoz ve limonla tapas tabağında sunun.",
+    "tags": [
+      "vegan",
+      "butce-dostu"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Patates",
+        "amount": "900",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Doğranmış domates",
+        "amount": "1",
+        "unit": "konserve",
+        "group": null
+      },
+      {
+        "name": "Domates salçası",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tatlı paprika",
+        "amount": "2",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Acı toz biber",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesleri 2 cm küpler halinde doğrayıp kurulayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Patatesleri yağ ve tuzla harmanlayıp 200°C fırında 40 dakika kızartın.",
+        "timerSeconds": 2400
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğanı zeytinyağında 5 dakika yumuşatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sarımsak, paprika, acı biber ve salçayı 1 dakika kavurun.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Domatesi ekleyip sosu 10 dakika koyulaştırın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Patatesleri tabağa alıp sıcak brava sosunu üstüne gezdirin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "madrid-sarimsakli-karides-tavasi",
+    "title": "Madrid Sarımsaklı Karides Tavası",
+    "cuisine": "es",
+    "type": "APERATIF",
+    "description": "İspanyol sarımsaklı karides tavası, karidesleri zeytinyağı, sarımsak ve acı biberle çok kısa sürede parlak bir tapas tabağına çevirir.",
+    "prepMinutes": 10,
+    "cookMinutes": 6,
+    "totalMinutes": 16,
+    "servingCount": 4,
+    "averageCalories": 260,
+    "protein": 24,
+    "carbs": 6,
+    "fat": 16,
+    "isFeatured": false,
+    "tipNote": "Karidesleri tavaya tek sıra koymak lastikleşmeden pişmelerini sağlar.",
+    "servingSuggestion": "Kızarmış ekmek ve limonla sıcak servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI",
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Ayıklanmış karides",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "5",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru acı biber",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Ekmek",
+        "amount": "4",
+        "unit": "dilim",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karidesleri kurulayın ve hafif tuzlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Zeytinyağında sarımsak ve acı biberi 1 dakika çevirin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karidesleri tek sıra tavaya ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karidesleri toplam 3-4 dakika pembeleşene kadar pişirin.",
+        "timerSeconds": 210
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Maydanoz serpip kızarmış ekmekle servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "madrid-tortilla-espanola",
+    "title": "Madrid Tortilla Española",
+    "cuisine": "es",
+    "type": "KAHVALTI",
+    "description": "Tortilla española, patates ve soğanı zeytinyağında yumuşatıp yumurtayla kalın bir İspanyol omletine dönüştürür.",
+    "prepMinutes": 18,
+    "cookMinutes": 25,
+    "totalMinutes": 43,
+    "servingCount": 4,
+    "averageCalories": 390,
+    "protein": 15,
+    "carbs": 34,
+    "fat": 22,
+    "isFeatured": false,
+    "tipNote": "Omleti çevirmeden önce kenarlarının tutmasını beklemek dağılmayı azaltır.",
+    "servingSuggestion": "Ilık dilimleyip domates salatası ve ekmekle servis edin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Patates",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "6",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patatesleri ince yarım ay, soğanı ince piyazlık doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Patates ve soğanı zeytinyağında 15 dakika yumuşayana kadar pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yumurtaları tuz ve karabiberle çırpıp patatesle karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karışımı tavaya alıp kısık ateşte 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Omleti çevirip diğer yüzünü 4-5 dakika tutturun.",
+        "timerSeconds": 270
+      }
+    ]
+  },
+  {
+    "slug": "maduros",
+    "title": "Maduros",
+    "cuisine": "cu",
+    "type": "ATISTIRMALIK",
+    "description": "Küba madurosu olgun plantain dilimlerinin yağda karamelleşerek tatlı bir garnitüre dönüşmesidir.",
+    "prepMinutes": 10,
+    "cookMinutes": 10,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 180,
+    "protein": 1,
+    "carbs": 33,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Maduros için plantainler kahverengi benekli olursa tavada daha tatlı ve yumuşak kızarır.",
+    "servingSuggestion": "Servis tabağının kenarına limon dilimi ve maydanoz dalları yerleştirerek renk ekleyin.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Olgun plantain",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "300",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Olgun plantainleri soyup 2 cm kalınlıkta çapraz dilimleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yağı orta ateşte 170°C'ye ısıtın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Dilimleri tek sıra halinde yağa bırakın, kalabalık olursa şeker yanar, böylece tat acılaşır.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Plantainleri toplam 8 dakika iki yüzü karamelleşene kadar kızartın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kağıt havluya alıp tuzu sıcakken serpin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "mafis-tatlisi-balikesir-usulu",
+    "title": "Balıkesir Mafiş Tatlısı",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Balıkesir mafiş tatlısı, kızaran hamur parçalarının şerbete alındığı, kıyı Ege ve Marmara arasında bayram sofralarına sıkça giren çıtır bir ev tatlısıdır.",
+    "prepMinutes": 20,
+    "cookMinutes": 15,
+    "totalMinutes": 35,
+    "servingCount": 8,
+    "averageCalories": 248,
+    "protein": 4,
+    "carbs": 34,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Kızaran parçaları ılık şerbete almak hamurun dışını diri tutarken içini çekmesini sağlar.",
+    "servingSuggestion": "Üzerine toz Antep fıstığı serperek servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Şeker ve suyu 10 dakika kaynatıp şerbeti ılıtın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Un, yumurta ve yoğurtla yumuşak hamur yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru 15 dakika dinlendirin, parçalar küçülmesin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamuru küçük parçalar halinde kesin ve tepsiye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Parçaları 170°C yağda 4 dakika kızartın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Ilık şerbete 2 dakika alıp süzdürerek servis edin.",
+        "timerSeconds": 120
+      }
+    ]
+  },
+  {
+    "slug": "magrip-nane-cayi",
+    "title": "Mağrip Nane Çayı",
+    "cuisine": "ma",
+    "type": "ICECEK",
+    "description": "Fas ve çevresinde yüksekten dökülerek köpürtülen nane çayı, belirgin ferahlığı ve şekeriyle tanınır.",
+    "prepMinutes": 5,
+    "cookMinutes": 10,
+    "totalMinutes": 15,
+    "servingCount": 4,
+    "averageCalories": 60,
+    "protein": 0,
+    "carbs": 15,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Naneyi en sonda ekleyin; uzun kaynarsa çayın rengi kalsa da ferahlığı azalır.",
+    "servingSuggestion": "Küçük cam bardaklarda sıcak servis edin.",
+    "tags": [
+      "kis-tarifi",
+      "alkolsuz",
+      "30-dakika-alti",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Yeşil çay",
+        "amount": "2",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Taze nane",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1",
+        "unit": "litre",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Suyu kaynatıp yeşil çayı 2 dakika demleyin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Şeker ve naneyi ekleyip 3 dakika daha bekletin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Çayı süzüp bardaklara yüksekten dökerek servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "magrip-saksukasi",
+    "title": "Mağrip Şakşukası",
+    "cuisine": "ma",
+    "type": "KAHVALTI",
+    "description": "Kuzey Afrika tavasında domates, biber ve yumurta baharatlı sosun içinde kabarır.",
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 180,
+    "protein": 6,
+    "carbs": 12,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Yumurtaları eklemeden önce sosu 12 dakika koyulaştırın; beyazlar sulu kalmaz.",
+    "servingSuggestion": "Kızarmış ekmekle tavadan servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "YUMURTA",
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Yumurta",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kırmızı biber",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kimyon",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ekmek",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mağrip Şakşukası akışı için tava, kase ve ölçüleri hazır edin, pişirme başlayınca ritim bozulmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mağrip Şakşukası için tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın diye yüzeyi yağlayın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Domates, biber ve kimyonu tavada 12 dakika pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sosta yuvalar açıp yumurtaları kırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kapak kapatıp 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Mağrip Şakşukası yüzeyi parlakken sıcak servis edin, soğursa buharı gevrek dokuyu yumuşatır.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "mahlepli-yesil-mercimek-corbasi-tokat-bag-usulu",
+    "title": "Tokat Mahlepli Yeşil Mercimek Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Tokat mahlepli yeşil mercimek çorbası, mercimeği mahlep kokusuyla kaynatarak sıcak, hafif aromatik ve farklı bir çorba sunar.",
+    "prepMinutes": 10,
+    "cookMinutes": 30,
+    "totalMinutes": 40,
+    "servingCount": 4,
+    "averageCalories": 188,
+    "protein": 11,
+    "carbs": 24,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Mahlebi ölçülü kullanmak baskın tat oluşmasını önler.",
+    "servingSuggestion": "Çorbayı sıcak verin, üstüne tereyağı gezdirip yanında ekmek sunun.",
+    "tags": [
+      "tek-tencere",
+      "kis-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Yeşil mercimek",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Mahlep",
+        "amount": "0.25",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "15",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "1 su bardağı yeşil mercimeği yıkayın, 1 soğanı yemeklik doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "15 gr tereyağında soğanı orta ateşte 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Mercimek ve 5 su bardağı suyu ekleyip 25 dakika pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Çeyrek çay kaşığı mahlebi ekleyip 2 dakika kaynatın, aroması baskınlaşmasın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tuzunu ayarlayıp sıcak servis edin, tokat mahlepli yeşil mercimek için ölçü şaşmasın, tokat mahlepli yeşil mercimek dengesi bozulmasın, tokat mahlepli yeşil mercimek dokusu kaymasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "mahluta-corbasi-hatay-usulu",
+    "title": "Mahluta Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Mahluta çorbası, kırmızı mercimeği pirinç ve kimyonla pişirip üzerine kavrulmuş soğan eklenen Hatay işi bir başlangıçtır.",
+    "prepMinutes": 10,
+    "cookMinutes": 35,
+    "totalMinutes": 45,
+    "servingCount": 6,
+    "averageCalories": 188,
+    "protein": 9,
+    "carbs": 28,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Mercimeği blenderdan geçirmeden önce birkaç dakika dinlendirmek kıvamı daha dengeli bırakır.",
+    "servingSuggestion": "Üzerine limon suyu damlatarak sıcak servis edin.",
+    "tags": [
+      "kis-tarifi",
+      "butce-dostu",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Kırmızı mercimek",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kimyon",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "1 su bardağı kırmızı mercimek ve çeyrek su bardağı pirinci yıkayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bakliyatı 5 su bardağı su ve tuzla orta ateşte 25 dakika pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "2 soğanı ince doğrayıp 2 yemek kaşığı zeytinyağında 8 dakika kavurun.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kimyonu soğana ekleyip 1 dakika çevirin, baharat yanmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Çorbayı pürüzsüz çekip kavrulmuş soğan ve 2 yemek kaşığı limon suyuyla sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "mai-tai",
+    "title": "Mai Tai",
+    "cuisine": "us",
+    "type": "KOKTEYL",
+    "description": "Tiki barların rom, lime ve badem şurubuyla kurduğu tropik ama dengeli klasiği.",
+    "prepMinutes": 5,
+    "cookMinutes": 0,
+    "totalMinutes": 5,
+    "servingCount": 1,
+    "averageCalories": 260,
+    "protein": 1,
+    "carbs": 18,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Badem şurubunu ölçülü kullanın; lime asidinin önüne geçmemeli.",
+    "servingSuggestion": "Kırık buz ve nane dalıyla servis edin.",
+    "tags": [
+      "alkollu",
+      "30-dakika-alti",
+      "yaz-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Rom",
+        "amount": "60",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Lime suyu",
+        "amount": "25",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Portakal likörü",
+        "amount": "15",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Badem şurubu",
+        "amount": "15",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mai Tai için bardağı buzla 1 dakika soğutun, servis anında sulanmasın diye buzu boşaltın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mai Tai sıvı malzemelerini shaker'a alın, orgeat dipte kalmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Mai Tai karışımını buzla 12 saniye çalkalayın, rom ve narenciye birleşsin.",
+        "timerSeconds": 12
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Mai Tai karışımını kırık buz dolu bardağa süzün, tropik aroma soğuk kalsın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Mai Tai yüzeyini kontrol edin, köpük veya katman bozulmadan masaya çıkarın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Mai Tai süslemesini ekleyip bekletmeden servis edin, buz erirse denge sulanır.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "makowiec-polonya-usulu",
+    "title": "Makowiec",
+    "cuisine": "pl",
+    "type": "TATLI",
+    "description": "Makowiec, haşhaş ezmeli rulo kek yapısıyla özellikle bayram dönemlerinde hazırlanan, Polonya mutfağının en klasik çörek tatlılarından biridir.",
+    "prepMinutes": 35,
+    "cookMinutes": 35,
+    "totalMinutes": 70,
+    "servingCount": 10,
+    "averageCalories": 292,
+    "protein": 6,
+    "carbs": 33,
+    "fat": 15,
+    "isFeatured": true,
+    "tipNote": "Haşhaşlı içi soğuk kullanmak rulonun pişerken hamuru yırtmasını azaltır.",
+    "servingSuggestion": "Dilimleyip çay ya da kahve yanında servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "3.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Haşhaş ezmesi",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "100",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mayalı hamuru yoğurup 30 dakika mayalandırın.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Haşhaşlı içi ince tabaka halinde hamura yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamuru sıkı rulo yapın, iç boşluk kalmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ruloyu tepside 20 dakika ikinci kez dinlendirin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Makowieci 185°C fırında 35 dakika pişirin.",
+        "timerSeconds": 2100
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Dilimlemeden önce 30 dakika soğutun, iç katman dağılmasın.",
+        "timerSeconds": 1800
+      }
+    ]
+  },
+  {
+    "slug": "makroudh",
+    "title": "Makroudh",
+    "cuisine": "ma",
+    "type": "TATLI",
+    "description": "Kuzey Afrika irmik tatlısı hurma dolgusu ve ballı şerbetle yoğun bir lokma sunar.",
+    "prepMinutes": 45,
+    "cookMinutes": 25,
+    "totalMinutes": 70,
+    "servingCount": 8,
+    "averageCalories": 340,
+    "protein": 4,
+    "carbs": 49,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "İrmikli hamuru fazla yoğurmamak kızarınca dışının gevrek kalmasına yardım eder.",
+    "servingSuggestion": "Makroudhları ılık sunun, üstüne susam serpip yanında kahve verin.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "İrmik",
+        "amount": "400",
+        "unit": "gr",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "120",
+        "unit": "gr",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Hurma ezmesi",
+        "amount": "250",
+        "unit": "gr",
+        "group": "Dolgu ve şerbet için"
+      },
+      {
+        "name": "Bal",
+        "amount": "200",
+        "unit": "gr",
+        "group": "Dolgu ve şerbet için"
+      },
+      {
+        "name": "Susam",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": "Hamur için"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "İrmik ve tereyağını ovalayıp kumlu hamur hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 15 dakika dinlendirin, irmik yağı çeksin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hurma ezmesini hamurun ortasına yerleştirip rulo yapın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ruloyu baklava dilimi şeklinde kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Dilimleri 170°C yağda 5 dakika kızartın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Sıcak dilimleri ballı şerbete 2 dakika alın.",
+        "timerSeconds": 120
+      }
+    ]
+  },
+  {
+    "slug": "malatya-kagit-kebabi-kuzu",
+    "title": "Malatya Kağıt Kebabı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Kağıt kebabı, kuzu eti, patates, domates, biber ve baharatı yağlı kağıtta kapalı pişiren yumuşak sulu bir fırın yemeğidir.",
+    "prepMinutes": 25,
+    "cookMinutes": 55,
+    "totalMinutes": 80,
+    "servingCount": 5,
+    "averageCalories": 460,
+    "protein": 30,
+    "carbs": 26,
+    "fat": 26,
+    "isFeatured": false,
+    "tipNote": "Kağıdı sıkı kapatmak buharı içeride tutar ve eti kurutmaz.",
+    "servingSuggestion": "Paketleri sofrada açıp yanında bulgur pilavıyla servis edin.",
+    "tags": [
+      "firinda",
+      "misafir-sofrasi"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Kuzu kuşbaşı",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yeşil biber",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "4",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kekik",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Et ve sebzeleri iri lokmalar halinde doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Zeytinyağı, tuz, karabiber ve kekikle harmanlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karışımı yağlı kağıt parçalarına porsiyonlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Paketleri hava kaçmayacak şekilde kapatıp tepsiye dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kebapları 190°C fırında 50 dakika pişirin.",
+        "timerSeconds": 3000
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Paketleri açıp 5 dakika daha üstünü hafif kızartın.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "malatya-kayisi-dolmasi",
+    "title": "Malatya Kayısı Dolması",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Malatya'nın gün kurusu kayısıları cevizle doldurulur, tereyağlı şerbette parıldar.",
+    "prepMinutes": 20,
+    "cookMinutes": 15,
+    "totalMinutes": 35,
+    "servingCount": 6,
+    "averageCalories": 240,
+    "protein": 3,
+    "carbs": 34,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Kayısıları sıcak suda 10 dakika bekletin; doldururken yırtılmaz.",
+    "servingSuggestion": "Kaymakla servis edin.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Gün kurusu kayısı",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "60",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kaymak",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kayısıları sıcak suda 10 dakika bekletin, açarken yırtılmasın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kayısıları süzüp cevizle doldurun ve tencereye dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tereyağı, şeker ve 200 ml suyu tencereye ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kayısı dolmasını kısık ateşte 15 dakika pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tatlıyı 10 dakika dinlendirin ve şerbetiyle servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "malatya-kayisili-kavurma",
+    "title": "Malatya Kayısılı Kavurma",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Malatya kayısılı kavurma, kuzu etini kuru kayısı, soğan ve hafif tarçınla kısık ateşte pişirip tatlı ekşi dengeli bir ana yemek sunar.",
+    "prepMinutes": 15,
+    "cookMinutes": 65,
+    "totalMinutes": 80,
+    "servingCount": 4,
+    "averageCalories": 510,
+    "protein": 34,
+    "carbs": 30,
+    "fat": 28,
+    "isFeatured": false,
+    "tipNote": "Kayısıları son 15 dakikada eklemek parçalanmadan yumuşamalarını sağlar.",
+    "servingSuggestion": "Tereyağlı pirinç pilavı ve ayranla sıcak servis edin.",
+    "tags": [
+      "tek-tencere",
+      "misafir-sofrasi"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Kuzu kuşbaşı",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kuru kayısı",
+        "amount": "12",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "0.25",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuru kayısıları 10 dakika ılık suda bekletin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kuzu etini zeytinyağında 8 dakika mühürleyin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğanı ekleyip 6 dakika yumuşayana kadar kavurun.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Az sıcak su, tuz ve baharatları ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kısık ateşte 45 dakika et yumuşayana kadar pişirin.",
+        "timerSeconds": 2700
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kayısıları ekleyip 12-15 dakika daha pişirin.",
+        "timerSeconds": 900
+      }
+    ]
+  },
+  {
+    "slug": "malatya-kayisili-tavuk-yahni",
+    "title": "Malatya Kayısılı Tavuk Yahni",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Malatya kayısılı tavuk yahni, tavuk butlarını kuru kayısı, soğan ve tarçınla pişirerek tatlı ekşi dengeli bir Anadolu tenceresi hazırlar.",
+    "prepMinutes": 18,
+    "cookMinutes": 42,
+    "totalMinutes": 60,
+    "servingCount": 4,
+    "averageCalories": 440,
+    "protein": 32,
+    "carbs": 34,
+    "fat": 18,
+    "isFeatured": false,
+    "tipNote": "Kayısıyı son 15 dakikada eklemek dağılmadan sosu tatlandırır.",
+    "servingSuggestion": "Bulgur pilavı ve yoğurtla sıcak servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "tek-tencere"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Tavuk but",
+        "amount": "800",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kuru kayısı",
+        "amount": "12",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates salçası",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "0.25",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tavuk suyu",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuk butlarını tencerede 8 dakika mühürleyin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı ekleyip 6 dakika yumuşatın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Salça, tarçın ve tavuk suyunu tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kapağı kapalı 25 dakika orta ateşte pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kayısıları ekleyip 12-15 dakika daha yumuşatın.",
+        "timerSeconds": 810
+      }
+    ]
+  },
+  {
+    "slug": "malatya-kiraz-yapragi-sarmasi",
+    "title": "Malatya Kiraz Yaprağı Sarması",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Kiraz yaprağı sarması, yarma hamurunu taze kiraz yaprağına sarıp yoğurtlu ekşi sos ve soğanlı tereyağıyla pişiren Malatya yemeğidir.",
+    "prepMinutes": 75,
+    "cookMinutes": 50,
+    "totalMinutes": 125,
+    "servingCount": 8,
+    "averageCalories": 340,
+    "protein": 12,
+    "carbs": 48,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Yoğurtlu sosu sürekli karıştırmak yumurtanın kesilmeden kıvam almasını sağlar.",
+    "servingSuggestion": "Karamelize soğanlı tereyağıyla derin tabakta sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Kiraz yaprağı",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yarma",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1.5",
+        "unit": "kg",
+        "group": null
+      },
+      {
+        "name": "Yumurta sarısı",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Erik ekşisi",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yarmayı tuz ve suyla yumuşak hamur gibi yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kiraz yapraklarını 5 dakika sıcak suda yumuşatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yapraklara fındık kadar hamur koyup ince kalem gibi sarın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sarmaları tencereye dizip üstünü geçecek kadar sıcak su ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sarmaları 25 dakika yumuşayana kadar haşlayın.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Yoğurt, un, yumurta sarısı ve erik ekşisini kısık ateşte karıştırarak pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Sarmaları yoğurtlu sosa alıp soğanlı tereyağıyla 10 dakika daha pişirin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "malinowy-kompot-polonya-usulu",
+    "title": "Polonya Malinowy Kompot",
+    "cuisine": "pl",
+    "type": "ICECEK",
+    "description": "Polonya malinowy kompot, ahududuyu hafif şekerli suda kaynatarak aile sofralarına serin, meyvemsi ve berrak bir ev içeceği bırakır.",
+    "prepMinutes": 5,
+    "cookMinutes": 10,
+    "totalMinutes": 15,
+    "servingCount": 5,
+    "averageCalories": 62,
+    "protein": 0,
+    "carbs": 15,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Ahududuyu fazla ezmemek kompotun berrak kalmasına yardım eder.",
+    "servingSuggestion": "Şeffaf sürahide sunmak içeceğin rengini öne çıkarır, bardakları yanına ayrı dizin.",
+    "tags": [
+      "alkolsuz",
+      "yaz-tarifi",
+      "30-dakika-alti",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Ahududu",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1.5",
+        "unit": "lt",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Su ve şekeri tencerede kaynatın, şeker tamamen erisin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Ahududuları ekleyin, meyve dağılmadan 8 dakika hafif ateşte pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Limon suyunu katıp kompostoyu tamamen soğutun, serin bardaklara dökün.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "mamzana-tekirdag-usulu",
+    "title": "Tekirdağ Mamzanası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Tekirdağ mamzanası, köz patlıcan ve biberin sirke ile açıldığı, Trakya sofralarında et yanına serin eşlikçi olarak kurulan canlı bir mezedir.",
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "totalMinutes": 35,
+    "servingCount": 4,
+    "averageCalories": 86,
+    "protein": 2,
+    "carbs": 9,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Patlıcanı çok ezmeden iri bırakmak mamzananın kaşıkta daha diri görünmesini sağlar.",
+    "servingSuggestion": "Tabakta kümeler halinde dizip üzerine iri dilimlenmiş zeytin ve beyaz peynir ekleyerek sunun.",
+    "tags": [
+      "vegan",
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Patlıcan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kapya biber",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Sirke",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patlıcan ve biberleri ocak üstünde 15 dakika közleyin, kabukları kabarınca alın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Közlenen sebzeleri kapaklı kapta 5 dakika bekletin, kabuklar kolay soyulsun.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Patlıcan, biber ve domatesi soyup küçük doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sarımsak, sirke, zeytinyağı ve tuzu karıştırıp sebzelerin üstüne gezdirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Maydanozla tamamlayın, köz tadı kaybolmasın diye soğuk servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Köz sebzeleri doğradıktan sonra 5 dakika süzgeçte bekletin, tabakta acı su birikmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Sirkeyi azar azar ekleyin, köz tadı korunurken asit öne fırlamasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "manakish",
+    "title": "Manakish",
+    "cuisine": "me",
+    "type": "YEMEK",
+    "description": "Lübnan fırınlarının zahterli yassı ekmeği, susamlı karışımıyla kahvaltıdan mezeye uzanır.",
+    "prepMinutes": 45,
+    "cookMinutes": 15,
+    "totalMinutes": 60,
+    "servingCount": 6,
+    "averageCalories": 340,
+    "protein": 11,
+    "carbs": 40,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Zahteri zeytinyağıyla sürülebilir kıvama getirin; kuru serperseniz fırında dökülür.",
+    "servingSuggestion": "Domates, salatalık ve labneyle servis edin.",
+    "tags": [
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru maya",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zahter",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Susam",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, maya, su ve tuzla yumuşak bir hamur yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 40 dakika mayalandırın.",
+        "timerSeconds": 2400
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Zahter, susam ve zeytinyağını kasede karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamuru bezelere ayırıp ince açın, kenarları çok inceltmeyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Zahterli karışımı hamura yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Manakishleri 220°C fırında 14 dakika pişirin.",
+        "timerSeconds": 840
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Fırından çıkınca 3 dakika dinlendirip sıcak servis edin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "mancar-diblesi-zonguldak-usulu",
+    "title": "Zonguldak Mancar Diblesi",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Zonguldak mancar diblesi, pancar yaprağını pirinç ve soğanla tek tencerede pişirerek Karadeniz ev mutfağına yumuşak dokulu, toprak kokulu bir sebze yemeği kurar.",
+    "prepMinutes": 15,
+    "cookMinutes": 28,
+    "totalMinutes": 43,
+    "servingCount": 4,
+    "averageCalories": 176,
+    "protein": 4,
+    "carbs": 24,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Yaprakları çok ince değil şerit doğramak pirinçle pişerken canlı görünmesini sağlar.",
+    "servingSuggestion": "Dibleyi sıcak verin, yanına yoğurt ve limon dilimi koyun.",
+    "tags": [
+      "vegan",
+      "tek-tencere",
+      "butce-dostu",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Pancar yaprağı",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mancarı yıkayıp iri doğrayın, pirinci süzgeçte yıkayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mancar diblesi için soğanı zeytinyağında 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Doğranmış yaprakları ekleyip 4 dakika soteleyin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pirinç ve 1.5 su bardağı sıcak suyu ekleyip kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Dibleyi 20 dakika kısık ateşte pişirin, pirinç dibi tutmasın diye ateşi düşük tutun.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "7 dakika dinlendirip sıcak veya ılık servis edin.",
+        "timerSeconds": 420
+      }
+    ]
+  },
+  {
+    "slug": "mandalinali-adacayi-fizz-bodrum-usulu",
+    "title": "Bodrum Mandalinalı Adaçayı Fizz",
+    "cuisine": "tr",
+    "type": "KOKTEYL",
+    "description": "Bodrum mandalinalı adaçayı fizz, adaçayı şurubunu mandalina ve cinle buluşturarak kıyı akşamlarına ferah, otsu ve narenciye ağırlıklı bir kokteyl taşır.",
+    "prepMinutes": 10,
+    "cookMinutes": 5,
+    "totalMinutes": 15,
+    "servingCount": 2,
+    "averageCalories": 164,
+    "protein": 0,
+    "carbs": 14,
+    "fat": 0,
+    "isFeatured": true,
+    "tipNote": "Adaçayı şurubunu tamamen soğutmak kokteylin bardağı sulandırmadan canlı kalmasına yardım eder.",
+    "servingSuggestion": "Bol buz ve mandalina kabuğuyla soğuk servis edin.",
+    "tags": [
+      "alkollu",
+      "yaz-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Cin",
+        "amount": "90",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Mandalina suyu",
+        "amount": "120",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Adaçayı",
+        "amount": "4",
+        "unit": "yaprak",
+        "group": null
+      },
+      {
+        "name": "Toz şeker",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soda",
+        "amount": "120",
+        "unit": "ml",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bodrum Mandalinalı Adaçayı Fizz malzemelerini ölçüp tezgaha alın, gazlı ekler sona kalsın diye sırayı hazırlayın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bodrum Mandalinalı Adaçayı Fizz adaçayı ve şekeri 5 dakika kaynatıp şurup yapın, yaprak acılaşmasın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bodrum Mandalinalı Adaçayı Fizz cin, mandalina suyu ve şurubu buzla 12 saniye çalkalayın.",
+        "timerSeconds": 12
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Bodrum Mandalinalı Adaçayı Fizz karışımını bardaklara süzüp soda ekleyin, gazı koruyun.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "mandalinali-kefir-smoothie-didim-usulu",
+    "title": "Didim Mandalinalı Kefir Smoothie",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Didim mandalinalı kefir smoothie, kefiri mandalina ve buzla çekerek kıyı sabahlarına ferah, hafif ekşili ve ipeksi bir içecek kazandırır.",
+    "prepMinutes": 5,
+    "cookMinutes": 0,
+    "totalMinutes": 5,
+    "servingCount": 2,
+    "averageCalories": 138,
+    "protein": 5,
+    "carbs": 21,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Mandalinanın beyaz zarını iyi ayıklamak içeceğin acılaşmasını önler.",
+    "servingSuggestion": "Soğuk bardakta sunun, üstüne mandalina kabuğu rendesi serpip hemen verin.",
+    "tags": [
+      "alkolsuz",
+      "30-dakika-alti",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Kefir",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Mandalina",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mandalinaları temizleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tüm malzemeyi blenderda çekin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Smoothieyi hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "mandalinali-reyhan-serbeti-aydin-usulu",
+    "title": "Mandalinalı Reyhan Şerbeti",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Aydın usulü mandalinalı reyhan şerbeti, mandalina suyunu taze reyhan ve buzla buluşturarak parlak, serin ve hoş kokulu bir içecek çıkarır.",
+    "prepMinutes": 8,
+    "cookMinutes": 0,
+    "totalMinutes": 8,
+    "servingCount": 4,
+    "averageCalories": 42,
+    "protein": 0,
+    "carbs": 10,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Reyhanı avuç içinde hafif ezmek aromanın içeceğe daha hızlı geçmesini sağlar.",
+    "servingSuggestion": "Bol buzla sunun, bardağı reyhan yaprakları ve mandalina dilimiyle tamamlayın.",
+    "tags": [
+      "alkolsuz",
+      "30-dakika-alti",
+      "yaz-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Mandalina suyu",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Reyhan",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mandalina suyunu süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Su ve reyhanla karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Buzla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "mandalinali-soguk-icecek-alanya-usulu",
+    "title": "Mandalinalı Soğuk İçecek",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Alanya usulü mandalinalı soğuk içecek, mandalinayı nane ve buzla buluşturarak serin, hafif tatlı bir içecek yapar.",
+    "prepMinutes": 6,
+    "cookMinutes": 0,
+    "totalMinutes": 6,
+    "servingCount": 2,
+    "averageCalories": 44,
+    "protein": 0,
+    "carbs": 11,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Mandalina suyunu taze sıkmak bardakta daha parlak bir tat bırakır.",
+    "servingSuggestion": "Buzlu bardakta servis edin, içine nane yaprakları ve mandalina dilimi bırakın.",
+    "tags": [
+      "alkolsuz",
+      "30-dakika-alti",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Mandalina suyu",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soda",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mandalinalı Soğuk İçecek için tüm malzemeyi servis öncesi hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mandalinalı Soğuk İçecek sıvılarını ve aromatiklerini dengeli biçimde karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Mandalinalı Soğuk İçecek içeceğini serin veya ılık biçimde servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "mandu",
+    "title": "Mandu",
+    "cuisine": "kr",
+    "type": "YEMEK",
+    "description": "Kore mandu mantıları kıyma, lahana ve sarımsaklı içle buharda ya da tavada pişer.",
+    "prepMinutes": 45,
+    "cookMinutes": 12,
+    "totalMinutes": 57,
+    "servingCount": 6,
+    "averageCalories": 310,
+    "protein": 14,
+    "carbs": 32,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Hazır yaprakların kenarını hafif ıslatmak buharda açılmadan kapanmalarını sağlar.",
+    "servingSuggestion": "Manduları sıcak sunun, yanına soya soslu susamlı dip sos koyun.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SOYA",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Mantı hamuru yaprağı",
+        "amount": "30",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dana kıyma",
+        "amount": "350",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Lahana",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Susam yağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Lahanayı ince kıyın, tuzla 10 dakika bekletip suyunu sıkın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kıyma, lahana, soya sosu ve susam yağını karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamur yapraklarına iç koyup kenarlarını suyla nemlendirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Manduları kapatın, kenarları açılmasın diye bastırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Manduları buharda 11 dakika pişirin.",
+        "timerSeconds": 660
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Soya sirkeli sosla sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "mango-chutney",
+    "title": "Mango Chutney",
+    "cuisine": "in",
+    "type": "SOS",
+    "description": "Mango chutney, meyveyi sirke, zencefil ve baharatla reçelsi ekşi tatlı bir sosa dönüştürür.",
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "totalMinutes": 50,
+    "servingCount": 8,
+    "averageCalories": 85,
+    "protein": 0,
+    "carbs": 21,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Mangoyu küçük küp doğrayın; iri parçalar sos koyulaşmadan diri kalır.",
+    "servingSuggestion": "Köri, pakora veya peynir tabağı yanında kaşıkla servis edin.",
+    "tags": [
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Mango",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Elma sirkesi",
+        "amount": "120",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Zencefil",
+        "amount": "20",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mangoları küçük küp doğrayın, zencefili ince rendeleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mango, elma sirkesi, şeker ve zencefili tencereye birlikte alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karışımı taşım taşım kaynatın, sonra kısık ateşte 30-35 dakika koyulaştırın.",
+        "timerSeconds": 1980
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Chutneyi ocaktan alıp tamamen soğutun, kıvamı bu sırada yoğunlaşacaktır.",
+        "timerSeconds": 1800
+      }
+    ]
+  },
+  {
+    "slug": "mango-korisi",
+    "title": "Mango Körisi",
+    "cuisine": "th",
+    "type": "YEMEK",
+    "description": "Tay usulü meyveli köri çizgisi; olgun mango acı köri macununu yumuşak bir tatlılıkla dengeler.",
+    "prepMinutes": 12,
+    "cookMinutes": 18,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 320,
+    "protein": 6,
+    "carbs": 44,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Mangonun yarısını püre yapın, yarısını küp bırakın; sos hem gövdeli hem parçalı olur.",
+    "servingSuggestion": "Jasmin pirinç pilavı ile servis edin.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Mango",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kokos içeceği",
+        "amount": "400",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Vegan köri ezmesi",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Nohut",
+        "amount": "240",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Ispanak",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mango püresini, mango küplerini ve nohudu ayrı kaplarda hazır edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Köri ezmesini yağda 2 dakika kavurun.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kokos içeceği, mango püresi ve nohudu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Köriyi 12 dakika kısık ateşte pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Mango küpleri ve ıspanağı ekleyip 3 dakika daha pişirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Ocaktan alın, 5 dakika dinlendirin ve pirinçle servis edin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "mango-lassi",
+    "title": "Mango Lassi",
+    "cuisine": "in",
+    "type": "ICECEK",
+    "description": "Hint lokantalarında baharatlı yemekleri serinleten yoğurtlu mango içeceği.",
+    "prepMinutes": 6,
+    "cookMinutes": 0,
+    "totalMinutes": 6,
+    "servingCount": 2,
+    "averageCalories": 220,
+    "protein": 7,
+    "carbs": 32,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Olgun mango kullanın; ek şeker ihtiyacı azalır.",
+    "servingSuggestion": "Üzerine kakule serpin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti",
+      "yaz-tarifi"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Mango",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "150",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kakule",
+        "amount": "1",
+        "unit": "tutam",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mango etini çıkarıp blendera alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yoğurt, süt, bal ve kakuleyi ekleyip 45 saniye karıştırın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğuk servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "mango-lassi-chia-hint-usulu",
+    "title": "Mango Lassi Chia",
+    "cuisine": "in",
+    "type": "ICECEK",
+    "description": "Mango lassi chia, mangolu yoğurt içeceğini chia ile daha tok bir kıvama getirerek serin bir Hint esintili bardak sunar.",
+    "prepMinutes": 8,
+    "cookMinutes": 0,
+    "totalMinutes": 8,
+    "servingCount": 3,
+    "averageCalories": 148,
+    "protein": 5,
+    "carbs": 24,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Chia'yı kısa dinlendirmek içeceğe hafif bir gövde kazandırır.",
+    "servingSuggestion": "Buz gibi sunun, üstüne chia ve ince mango küpleri serpin.",
+    "tags": [
+      "30-dakika-alti",
+      "alkolsuz",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Mango püresi",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Chia tohumu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mango Lassi Chia için mango bazını ve kalan malzemeleri blender kabına alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mango Lassi Chia karışımını pürüzsüz çekin, chia tohumunu 5 dakika şişmeye bırakın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Mango Lassi Chia içeceğini soğuk bardaklara paylaştırıp bekletmeden servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "mango-lime-soda-vietnam-usulu",
+    "title": "Vietnam Mango Lime Soda",
+    "cuisine": "vn",
+    "type": "ICECEK",
+    "description": "Vietnam mango lime soda, mangoyu lime ve soda ile buluşturarak tropik ve serin bir yaz içeceği hazırlar.",
+    "prepMinutes": 5,
+    "cookMinutes": 0,
+    "totalMinutes": 5,
+    "servingCount": 1,
+    "averageCalories": 96,
+    "protein": 1,
+    "carbs": 23,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Mango püresini ince süzmek içeceğin daha parlak görünmesini sağlar.",
+    "servingSuggestion": "Uzun bardakta bol buzla sunun, üstüne ince lime dilimi ekleyin.",
+    "tags": [
+      "alkolsuz",
+      "30-dakika-alti",
+      "yaz-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Mango püresi",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Lime suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soda",
+        "amount": "120",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mango püresi ve lime suyunu karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Buzu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soda ile tamamlayıp servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "mango-smoothie",
+    "title": "Mango Smoothie",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Taze mango, yoğurt ve bal ile hazırlanan tropik smoothie.",
+    "prepMinutes": 5,
+    "cookMinutes": 0,
+    "totalMinutes": 5,
+    "servingCount": 2,
+    "averageCalories": 180,
+    "protein": 4,
+    "carbs": 36,
+    "fat": 2,
+    "isFeatured": true,
+    "tipNote": "Dondurulmuş mango kullanırsanız buz eklemenize gerek kalmaz.",
+    "servingSuggestion": "Tahta tepsiye buzlu bardağı, yanına limon dilimleri ve taze nane sapıyla sunum kurun.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti",
+      "pratik",
+      "yaz-tarifi"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Mango",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "100",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "1 mangoyu soyup çekirdeğin iki yanından kesin ve iri küpler hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mango, yarım muz, 250 ml portakal suyu ve 4 buzu blendera alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "45 saniye pürüzsüz çekin, lif kalmasın diye hemen yüksek bardakta servis edin.",
+        "timerSeconds": 45
+      }
+    ]
+  },
+  {
+    "slug": "mango-sticky-rice",
+    "title": "Mango Sticky Rice",
+    "cuisine": "th",
+    "type": "TATLI",
+    "description": "Tayland'ın sokak tatlısı, yapışkan pirinç, hindistan cevizi sütü ve olgun mangoyla serin servis edilir.",
+    "prepMinutes": 30,
+    "cookMinutes": 25,
+    "totalMinutes": 55,
+    "servingCount": 4,
+    "averageCalories": 390,
+    "protein": 5,
+    "carbs": 62,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Pirinç buharda piştikten sonra sıcak halde tatlı sütü çeker.",
+    "servingSuggestion": "Susam serperek servis edin.",
+    "tags": [
+      "vegan",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Yapışkan pirinç",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kokos içeceği",
+        "amount": "400",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Mango",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Susam",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yapışkan pirinci yıkayıp 30 dakika suda bekletin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinci buharda 25 dakika pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hindistan cevizi sütü, şeker ve tuzu 4 dakika ısıtın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sıcak sosu pirince karıştırıp 15 dakika dinlendirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Mangoyu ince dilimleyin ve pirinçle tabağa alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Üst sosu servis anında gezdirin, pirinç lapa olmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "mango-zerdecal-smoothie",
+    "title": "Mango Zerdeçal Smoothie",
+    "cuisine": "us",
+    "type": "ICECEK",
+    "description": "Mango zerdeçal smoothie, parlak tropik tadı hafif baharatlı sıcaklıkla birleştiren canlı renkli bir bardaktır.",
+    "prepMinutes": 6,
+    "cookMinutes": 0,
+    "totalMinutes": 6,
+    "servingCount": 2,
+    "averageCalories": 166,
+    "protein": 3,
+    "carbs": 34,
+    "fat": 1,
+    "isFeatured": false,
+    "tipNote": "Zerdeçalı az tutmak mango aromasını öne çıkarır.",
+    "servingSuggestion": "Üzerine küçük mango küpleri serperek servis edin.",
+    "tags": [
+      "alkolsuz",
+      "yaz-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Mango",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Portakal suyu",
+        "amount": "250",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Zerdeçal",
+        "amount": "0.25",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mango parçalarını blender kabına alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Portakal suyu, zerdeçal ve limon suyunu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karışımı 35 saniye çekip soğuk servis edin.",
+        "timerSeconds": 35
+      }
+    ]
+  },
+  {
+    "slug": "mangolu-pirinc-kremasi-kup-tayland-usulu",
+    "title": "Mangolu Pirinç Kreması Kup",
+    "cuisine": "th",
+    "type": "TATLI",
+    "description": "Tayland usulü mangolu pirinç kreması kup, yumuşak pirinci mango ve hindistancevizi sütüyle buluşturarak serin, parlak bir tatlı yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "totalMinutes": 22,
+    "servingCount": 4,
+    "averageCalories": 212,
+    "protein": 3,
+    "carbs": 31,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Mangoyu küçük küp kesmek kup içinde her kaşıkta meyve hissi bırakır.",
+    "servingSuggestion": "Soğuk servis edin, üstüne mango küpleri ve hindistan cevizi serpin.",
+    "tags": [
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Haşlanmış pirinç",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Mango",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Hindistancevizi sütü",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pirinç kremasını tencerede 8 dakika karıştırarak pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kremayı 10 dakika ılıtın, mango suyunu salmasın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Mangoyu küçük küpler halinde doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kup içinde pirinç kreması ve mangoyu katmanlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tatlıyı 25 dakika soğutun, katmanlar sabitlensin.",
+        "timerSeconds": 1500
+      }
+    ]
+  },
+  {
+    "slug": "mangolu-tapyoka-kup-vietnam-usulu",
+    "title": "Mangolu Tapyoka Kup",
+    "cuisine": "vn",
+    "type": "TATLI",
+    "description": "Vietnam usulü mangolu tapyoka kup, tapyoka incilerini mango ve hindistancevizi sütüyle buluşturarak serin, parlak ve kaşıkla yenilen bir tatlı yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "totalMinutes": 22,
+    "servingCount": 4,
+    "averageCalories": 208,
+    "protein": 2,
+    "carbs": 31,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Tapyokayı şeffaflaşana kadar pişirmek kup içinde diri ama yumuşak bir doku verir.",
+    "servingSuggestion": "Kupları soğuk sunun, üstüne mango dilimleri ve hindistan cevizi ekleyin.",
+    "tags": [
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Tapyoka incisi",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Mango",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Hindistancevizi sütü",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tapyokayı bol suda 12 dakika şeffaflaşana kadar pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tapyokayı süzüp soğuk sudan geçirin, taneler yapışmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Mangolu kup için hindistan cevizi sütünü 3 dakika ısıtın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Mangoyu küp doğrayıp tapyokayla kuplara paylaştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kup tatlısını 20 dakika soğutun ve servis edin.",
+        "timerSeconds": 1200
+      }
+    ]
+  },
+  {
+    "slug": "manhattan",
+    "title": "Manhattan",
+    "cuisine": "us",
+    "type": "KOKTEYL",
+    "description": "Viski, tatlı vermut ve bitterle hazırlanan klasik karıştırma kokteyli.",
+    "prepMinutes": 5,
+    "cookMinutes": 0,
+    "totalMinutes": 5,
+    "servingCount": 1,
+    "averageCalories": 190,
+    "protein": 0,
+    "carbs": 5,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Manhattan çalkalanmaz; buzla karıştırmak berrak ve ipeksi doku verir.",
+    "servingSuggestion": "Soğutulmuş kokteyl kadehinde, kokteyl kirazı ile buzsuz servis edin.",
+    "tags": [
+      "alkollu",
+      "misafir-sofrasi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Rye viski",
+        "amount": "60",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Tatlı vermut",
+        "amount": "30",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Angostura bitter",
+        "amount": "2",
+        "unit": "damla",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kokteyl kirazı",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Manhattan karışımına başlamadan bardağı soğutun, aromalar ısınmadan dengede kalsın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Manhattan viski, vermut ve bitteri buz dolu karıştırma bardağına alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Manhattan karışımını 25 saniye karıştırın, berraklık bozulmadan soğusun.",
+        "timerSeconds": 25
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Manhattan karışımını soğuk kadehe süzüp kirazla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "manisa-kula-guveci",
+    "title": "Manisa Kula Güveci",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Kula güveci, kuzu eti, patlıcan, domates ve biberi toprak kapta ağır fırına verip kendi suyunda yumuşatan Manisa yemeğidir.",
+    "prepMinutes": 25,
+    "cookMinutes": 110,
+    "totalMinutes": 135,
+    "servingCount": 6,
+    "averageCalories": 500,
+    "protein": 32,
+    "carbs": 24,
+    "fat": 31,
+    "isFeatured": false,
+    "tipNote": "Sebzeleri iri bırakmak uzun fırın süresinde dağılmalarını önler.",
+    "servingSuggestion": "Yanında pirinç pilavı ve cacıkla sıcak servis edin.",
+    "tags": [
+      "firinda",
+      "tek-tencere"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Kuzu kuşbaşı",
+        "amount": "800",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Patlıcan",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yeşil biber",
+        "amount": "5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "5",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Patlıcanları iri doğrayıp 15 dakika suda bekletin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kuzu etini güveç tabanına yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sebzeleri, sarımsağı ve zeytinyağını etle karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Güvecin ağzını kapatıp 180°C fırında 90 dakika pişirin.",
+        "timerSeconds": 5400
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kapağı açıp 15 dakika daha suyunu yoğunlaştırın.",
+        "timerSeconds": 900
+      }
+    ]
+  },
+  {
+    "slug": "manisa-kulah-kapamasi",
+    "title": "Manisa Külah Kapaması",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Manisa külah kapaması, kıymalı pirinç harcını ince hamur külahlarına doldurup yoğurtlu sosla sunan eski usul bir fırın yemeğidir.",
+    "prepMinutes": 45,
+    "cookMinutes": 35,
+    "totalMinutes": 80,
+    "servingCount": 6,
+    "averageCalories": 520,
+    "protein": 21,
+    "carbs": 58,
+    "fat": 23,
+    "isFeatured": false,
+    "tipNote": "Külahları fazla doldurmamak pirincin fırında şişmesine yer bırakır.",
+    "servingSuggestion": "Sarımsaklı yoğurt ve tereyağlı biberle sıcak sunun.",
+    "tags": [
+      "misafir-sofrasi",
+      "firinda"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dana kıyma",
+        "amount": "350",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, yumurta, tuz ve suyla açılabilir hamur yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kıyma ve soğanı 7 dakika kavurun.",
+        "timerSeconds": 420
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinç ve sıcak su ekleyip harcı 10 dakika pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Hamuru ince açıp üçgen keserek külah şekli verin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Külahları harçla doldurup 190°C fırında 18-20 dakika pişirin.",
+        "timerSeconds": 1140
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Yoğurt ve tereyağlı sosla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "manisa-kuzu-etli-sehriye-pilavi",
+    "title": "Manisa Kuzu Etli Şehriye Pilavı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Manisa kuzu etli şehriye pilavı, arpa şehriyeyi küçük kuzu parçaları ve domatesle kavurarak kaşıklık, doyurucu bir pilav yapar.",
+    "prepMinutes": 18,
+    "cookMinutes": 38,
+    "totalMinutes": 56,
+    "servingCount": 5,
+    "averageCalories": 470,
+    "protein": 27,
+    "carbs": 52,
+    "fat": 17,
+    "isFeatured": false,
+    "tipNote": "Şehriyeyi koyu altın renge gelmeden bırakmak yanık tadı önler.",
+    "servingSuggestion": "Cacık ve yeşil salatayla sıcak servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "tek-tencere"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Arpa şehriye",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuzu kuşbaşı",
+        "amount": "450",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Domates rendesi",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Et suyu",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuzu etini tencerede 10 dakika suyunu çekene kadar kavurun.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı ekleyip 5 dakika yumuşatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Şehriyeyi katıp 4 dakika renk aldırın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Domates rendesi ve et suyunu tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kapağı kapalı 18-20 dakika şehriye yumuşayana kadar pişirin.",
+        "timerSeconds": 1140
+      }
+    ]
+  },
+  {
+    "slug": "mansaf",
+    "title": "Mansaf",
+    "cuisine": "me",
+    "type": "YEMEK",
+    "description": "Ürdün sofralarının tören yemeği; kuzu eti, fermente yoğurt sosu ve pilav geniş tepside buluşur.",
+    "prepMinutes": 25,
+    "cookMinutes": 120,
+    "totalMinutes": 145,
+    "servingCount": 6,
+    "averageCalories": 620,
+    "protein": 33,
+    "carbs": 46,
+    "fat": 31,
+    "isFeatured": false,
+    "tipNote": "Yoğurt sosunu kaynatırken sürekli çırpın; kesilmeden parlak kalır.",
+    "servingSuggestion": "Badem ve maydanozla geniş servis tepsisinde sunun.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuzu eti",
+        "amount": "900",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Süzme yoğurt",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Badem",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kakule",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuzu etini kakule, tuz ve suyla tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kuzu etini 90 dakika yumuşayana kadar haşlayın.",
+        "timerSeconds": 5400
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yoğurdu veya jameed sosunu et suyuyla azar azar açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yoğurt sosunu 20 dakika sürekli çırparak pişirin, kesilmesin diye ateşi orta seviyede tutun.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pilavı geniş tabağa alın, üstüne eti yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Yoğurt sosu, badem ve maydanozla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "mantar-dolmasi",
+    "title": "Mantar Dolması",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Fırında peynirli harçla pişen pratik ve sıcak mantar aperatifi.",
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "totalMinutes": 35,
+    "servingCount": 4,
+    "averageCalories": 170,
+    "protein": 9,
+    "carbs": 5,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Mantarları yıkadıktan sonra kurulayın; fazla su fırında harcı sulandırır.",
+    "servingSuggestion": "Sıcakken limon dilimiyle servis edin.",
+    "tags": [
+      "vejetaryen",
+      "firinda"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Büyük mantar",
+        "amount": "12",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kaşar peyniri",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "1",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mantar saplarını çıkarıp şapkaları fırın kabına çukur kısımları üste gelecek şekilde dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Peynir, tereyağı, maydanoz, sarımsak ve karabiberi karıştırarak dolgu hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Harcı mantarlara paylaştırın ve taşmaması için hafifçe bastırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Mantarları 190°C fırında 18-20 dakika peynir eriyene kadar pişirin.",
+        "timerSeconds": 1200
+      }
+    ]
+  },
+  {
+    "slug": "mantar-pate",
+    "title": "Mantar Pate",
+    "cuisine": "se",
+    "type": "SOS",
+    "description": "Tereyağıyla çevrilen mantarların ezilmesiyle oluşan bu sürülebilir karışım, soğuk masalarda sessiz ama etkili bir yer tutar.",
+    "prepMinutes": 12,
+    "cookMinutes": 15,
+    "totalMinutes": 27,
+    "servingCount": 6,
+    "averageCalories": 95,
+    "protein": 3,
+    "carbs": 5,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Mantarı yüksek ateşte soteleyin; suyunu bırakıp haşlanırsa pate gevşek kalır.",
+    "servingSuggestion": "Çavdar kraker ve taze kekikle servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Kestane mantarı",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "40",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "60",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mantarı iri doğrayın, soğanı ince kıyın, rondoyu tezgaha çıkarın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı tereyağında yumuşatın, mantarı ekleyip yüksek ateşte suyunu çektirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kremayı ilave edip karışımı 2-3 dakika daha çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Harç ılınınca rondodan geçirip pürüzsüz kıvam verin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pateyi buzdolabında 30 dakika dinlendirip sürmelik olarak servis edin.",
+        "timerSeconds": 1800
+      }
+    ]
+  },
+  {
+    "slug": "mantar-sote",
+    "title": "Mantar Sote",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Mantar, biber ve domatesin yüksek ateşte hızlı sotelenen pratik yemeği.",
+    "prepMinutes": 10,
+    "cookMinutes": 15,
+    "totalMinutes": 25,
+    "servingCount": 4,
+    "averageCalories": 150,
+    "protein": 4,
+    "carbs": 10,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Mantarları tavaya geniş yayın; kalabalık tavada suyunu bırakır.",
+    "servingSuggestion": "Pilav yanında sıcak servis edin.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Mantar",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yeşil biber",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mantarları iri doğrayıp kuru bezle temizleyin, suyla bekletmeyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve biberleri 4 dakika soteleyin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Mantarları ekleyip 6 dakika yüksek ateşte pişirin, suyunu hızlı çeksin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Domatesi ekleyin, tuz ve karabiberi ayarlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yemeği 5 dakika orta ateşte pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Ocaktan almadan önce 2 dakika açık ateşte yoğunlaştırıp servis edin.",
+        "timerSeconds": 120
+      }
+    ]
+  }
+]

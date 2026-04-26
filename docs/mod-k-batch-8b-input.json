@@ -1,0 +1,4532 @@
+[
+  {
+    "slug": "domatesli-makarna",
+    "title": "Domatesli Makarna",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Taze domates sosu ve fesleğenle hazırlanan sade makarna.",
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 390,
+    "protein": 11,
+    "carbs": 61,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Makarnayı sosun içinde 1 dakika çevirin; sos yüzeye daha iyi tutunur.",
+    "servingSuggestion": "Parmesan ve fesleğenle servis edin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Spagetti",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "5",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Fesleğen",
+        "amount": "8",
+        "unit": "yaprak",
+        "group": null
+      },
+      {
+        "name": "Parmesan peyniri",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Makarnayı bol tuzlu kaynar suda 9 dakika haşlayın.",
+        "timerSeconds": 540
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sarımsağı zeytinyağında 1 dakika çevirin, rengi yanmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Rendelenmiş domatesi ekleyip 12 dakika pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Makarnayı süzüp sos tavasına alın, yarım kepçe makarna suyu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Makarna ve sosu 2 dakika birlikte pişirin, parmesanla servis edin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Servis tabağında fesleğen ve zeytinyağı ekleyin, sosun kokusu tazelensin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "domatesli-mercimekli-borani-sanliurfa-usulu",
+    "title": "Şanlıurfa Domatesli Mercimekli Borani",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Şanlıurfa domatesli mercimekli borani, mercimeği domates ve sarımsaklı yoğurtla birleştirerek hafif ekşi ve doyurucu bir borani yorumu sunar.",
+    "prepMinutes": 12,
+    "cookMinutes": 18,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 198,
+    "protein": 10,
+    "carbs": 22,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Yoğurdu servis aşamasında eklemek kesilmesini önler.",
+    "servingSuggestion": "Üzerine yoğurt kaşığı ve bol maydanozla birlikte ılıklığında sunun.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Yeşil mercimek",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yeşil mercimeği yıkayıp tencerede 18 dakika haşlayın.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Domatesi yağda 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Mercimeği domatesli tavaya alıp 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sarımsaklı yoğurdu ayrı kasede çırpın, sıcak tencereye doğrudan girip kesilmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Mercimeği servis tabağına alın, yoğurdu üstüne gezdirip ılık servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Yoğurdun üstüne kızdırılmış yağ gezdirin, boraninin ekşisi dengelensin.",
+        "timerSeconds": 60
+      }
+    ]
+  },
+  {
+    "slug": "domatesli-mercimekli-cokertme-bilecik-usulu",
+    "title": "Bilecik Domatesli Mercimekli Çökertme",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Bilecik domatesli mercimekli çökertme, mercimeği domatesli sosta kısa pişirerek kaşıkla yenilen yumuşak bir tencere yemeği yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 22,
+    "totalMinutes": 32,
+    "servingCount": 4,
+    "averageCalories": 196,
+    "protein": 10,
+    "carbs": 25,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Mercimeği diri bırakmak yemekte daha canlı bir doku sağlar.",
+    "servingSuggestion": "Yemeği ılık servis edin, üstüne limon sıkarak sofraya çıkarın.",
+    "tags": [
+      "tek-tencere",
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Yeşil mercimek",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Mercimeği yıkayıp süzün, kabuk ve taş kontrolü yapın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve domatesi yağda 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Mercimek ve sıcak suyu ekleyip kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yemeği 15 dakika pişirin, mercimek dağılmasın diye ateşi kısın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Altını kapatıp 5 dakika dinlendirin ve yoğurtla servis edin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Çökertmeyi tabağa alırken mercimeği ezmeden geniş kaşık kullanın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "domatesli-misir-coregi-sakarya-usulu",
+    "title": "Sakarya Domatesli Mısır Çöreği",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Sakarya domatesli mısır çöreği, mısır ve buğday unlu harcı domatesle birleştirerek Marmara mutfağına kokulu, dilimlenebilir ve fırınlık bir ekmek çıkarır.",
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "totalMinutes": 45,
+    "servingCount": 6,
+    "averageCalories": 184,
+    "protein": 5,
+    "carbs": 28,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Domatesi çekirdeklerinden arındırmak hamurun gereksiz sulanmasını azaltır.",
+    "servingSuggestion": "Çöreği dilimleyip yanında çayla, oda sıcaklığında servis edin.",
+    "tags": [
+      "firinda",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Mısır unu",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Domatesleri küçük küpler halinde doğrayıp fazla suyunu süzdürün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Unlar, yumurta ve zeytinyağını domatesle karıştırarak yoğun harç hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Harcı yağlanmış kalıba yayın ve yüzeyini ıslak kaşıkla düzeltin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "180°C fırında 30 dakika pişirin, ılıklaşınca dilimleyerek servis edin.",
+        "timerSeconds": 1800
+      }
+    ]
+  },
+  {
+    "slug": "domatesli-sardalya-pilaki-canakkale-usulu",
+    "title": "Çanakkale Domatesli Sardalya Pilaki",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Çanakkale domatesli sardalya pilaki, sardalyayı domates ve sarımsakla ağır ağır pişirerek sulu, parlak ve sahil usulü bir tencere yemeği çıkarır.",
+    "prepMinutes": 12,
+    "cookMinutes": 20,
+    "totalMinutes": 32,
+    "servingCount": 4,
+    "averageCalories": 224,
+    "protein": 21,
+    "carbs": 6,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Balıkları tek sıra dizmek dağılmalarını azaltır.",
+    "servingSuggestion": "Pilakiyi ılık sunun, yanında ekmek ve limon dilimi verin.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein",
+      "tek-tencere"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Sardalya",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "3",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Sardalyaları temizleyip kılçık çevresini kontrol edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Domates ve sarımsağı tencerede 5 dakika çevirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sardalyaları sosun üstüne tek kat dizin, balıklar parçalanmasın diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kapağı kapatıp 12 dakika kısık ateşte pişirin.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Maydanozu ocaktan sonra serpin ve pilakiyi ılık servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Sardalyaları tabaktan alırken spatula kullanın, ince et parçalanmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "domatesli-sarimsak-corbasi-ispanya-usulu",
+    "title": "Domatesli Sarımsak Çorbası",
+    "cuisine": "es",
+    "type": "CORBA",
+    "description": "Domatesli sarımsak çorbası, ekmek parçalarını domates ve sarımsakla buluşturarak yoğun, ısıtan ve rustik bir akşam çorbası çıkarır.",
+    "prepMinutes": 10,
+    "cookMinutes": 18,
+    "totalMinutes": 28,
+    "servingCount": 4,
+    "averageCalories": 170,
+    "protein": 5,
+    "carbs": 24,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Ekmeği son kısımda eklemek çorbada hafif parça hissi bırakır.",
+    "servingSuggestion": "Çorbayı sıcak kasede verin, yanında kızarmış ekmek servis edin.",
+    "tags": [
+      "vejetaryen",
+      "tek-tencere",
+      "vegan"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Domates",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "4",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Köy ekmeği",
+        "amount": "3",
+        "unit": "dilim",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "4 diş sarımsağı ince dilimleyin, 3 dilim köy ekmeğini küp doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sarımsağı 1 yemek kaşığı zeytinyağında 2 dakika pembeleştirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "4 adet rendelenmiş domatesi ekleyip 5 dakika kaynatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "4 su bardağı sıcak suyu katıp orta ateşte 8 dakika pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ekmek küplerini ekleyip 5 dakika yumuşatın, çorba doğal olarak koyulaşsın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Ekmeği kaşıkla parçalayın ve sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "domatesli-tarhana-corbasi-trakya-usulu",
+    "title": "Domatesli Tarhana Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Trakya usulü domatesli tarhana çorbası, ekşi tarhanayı domates ve tereyağıyla buluşturarak sıcak, yuvarlak ve kışlık bir çorba hazırlar.",
+    "prepMinutes": 8,
+    "cookMinutes": 16,
+    "totalMinutes": 24,
+    "servingCount": 4,
+    "averageCalories": 156,
+    "protein": 5,
+    "carbs": 21,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Tarhanayı soğuk suyla açmak pürüzsüz kıvam verir.",
+    "servingSuggestion": "Çorbayı sıcak derin kasede sunun, yanında limon dilimi verin.",
+    "tags": [
+      "kis-tarifi",
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Tarhana",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Domates rendesi",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "4 yemek kaşığı tarhanayı geniş kasede 1 su bardağı soğuk suyla açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "1 yemek kaşığı tereyağını eritip 1 su bardağı domates rendesini 4 dakika pişirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tarhana karışımını tencereye ekleyip 1 dakika sürekli karıştırın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kalan 4 su bardağı suyu iki parçada dökün, topak oluşmasın diye karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Çorbayı kısık ateşte 12 dakika koyulaşana kadar pişirin.",
+        "timerSeconds": 720
+      }
+    ]
+  },
+  {
+    "slug": "domatesli-tavuklu-firik-pilavi-siirt-usulu",
+    "title": "Domatesli Tavuklu Firik Pilavı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Siirt usulü domatesli tavuklu firik pilavı, tavuğu firik ve domatesle buluşturarak isli, sulu ve tek tencerede pişen bir ana yemek çıkarır.",
+    "prepMinutes": 12,
+    "cookMinutes": 20,
+    "totalMinutes": 32,
+    "servingCount": 4,
+    "averageCalories": 312,
+    "protein": 24,
+    "carbs": 23,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Firiği önce 2 dakika çevirmek tane yapıyı korumasına yardım eder.",
+    "servingSuggestion": "Pilavi sıcak sunun, yanında yoğurtla ana öğünde servis edin.",
+    "tags": [
+      "tek-tencere",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk göğsü",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Firik",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Domates rendesi",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuğu küçük parçalar halinde doğrayıp tuz ve karabiberle hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavuğu tencerede 6 dakika soteleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Firiği ekleyip 2 dakika kavurun, dumanlı kokusu yağla açılsın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Domates rendesi ve sıcak suyu ekleyip kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pilavı 12 dakika pişirip 8 dakika dinlendirin, firik lapa olmasın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tavuklu firik pilavını çatalla havalandırın, tavuk parçaları altta kalmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "domatesli-uskumru-bugulama-tekirdag-usulu",
+    "title": "Domatesli Uskumru Buğulama",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Tekirdağ domatesli uskumru buğulama, uskumruyu domates ve defneyle pişirerek sulu, dengeli ve Marmara kıyısına özgü bir balık yemeği sunar.",
+    "prepMinutes": 14,
+    "cookMinutes": 20,
+    "totalMinutes": 34,
+    "servingCount": 4,
+    "averageCalories": 284,
+    "protein": 25,
+    "carbs": 8,
+    "fat": 17,
+    "isFeatured": false,
+    "tipNote": "Balığı domatesin üstüne almak tabakta dağılmadan kalmasına yardım eder.",
+    "servingSuggestion": "Buğulamayı sıcak servis edin, yanında ekmek ve limon dilimi sunun.",
+    "tags": [
+      "yuksek-protein",
+      "tek-tencere"
+    ],
+    "allergens": [
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Uskumru fileto",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Defne yaprağı",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Uskumruyu temizleyip iri parçalara ayırın ve hafif tuzlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı tencerede 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Domates ve defneyi ekleyip 5 dakika pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Balığı sosun üstüne yerleştirin, karıştırmayın ki et dağılmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kapağı kapatıp 14 dakika buğulama yapın.",
+        "timerSeconds": 840
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Uskumruyu 3 dakika dinlendirin, balık eti servis sırasında dağılmasın.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "domatesli-yarma-corbasi-konya-usulu",
+    "title": "Domatesli Yarma Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Konya usulü domatesli yarma çorbası, yarma buğdayı domates ve nane ile buluşturarak tok, sıcak ve sade bir çorba yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 24,
+    "totalMinutes": 34,
+    "servingCount": 4,
+    "averageCalories": 172,
+    "protein": 6,
+    "carbs": 27,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Yarmayı önceden 10 dakika suda bekletmek tencerede daha eşit pişme sağlar.",
+    "servingSuggestion": "Domatesli yarma çorbasını sıcak kaseye alıp yarma tanelerini domatesli yüzeyde bırakın.",
+    "tags": [
+      "tek-tencere",
+      "kis-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Yarma buğday",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Domates rendesi",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "1 su bardağı yarma buğdayı yıkayıp süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yarmayı 5 su bardağı suda orta ateşte 18 dakika haşlayın.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "1.5 su bardağı domates rendesini ekleyip 6 dakika kaynatın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yarmanın bir kısmını kaşıkla ezin, böylece çorba sulu kalmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yarım çay kaşığı naneyi ekleyip 3 dakika pişirin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "domatesli-yesil-mercimek-corbasi-konya-usulu",
+    "title": "Domatesli Yeşil Mercimek Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Konya usulü domatesli yeşil mercimek çorbası, mercimeği domates ve nane ile buluşturarak akışkan, tok ve sade bir çorba yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 164,
+    "protein": 8,
+    "carbs": 23,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Domatesi mercimek yumuşayınca eklemek çorbada parlak rengin kalmasını sağlar.",
+    "servingSuggestion": "Domatesli yeşil mercimek çorbasını sıcak kaseye alıp mercimekleri yüzeyde bırakın.",
+    "tags": [
+      "tek-tencere",
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Yeşil mercimek",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Domates rendesi",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "1 su bardağı yeşil mercimeği yıkayıp kara suyunu akıtın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mercimeği 5 su bardağı suda 14 dakika orta ateşte haşlayın.",
+        "timerSeconds": 840
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "1 su bardağı domates rendesini katıp 6 dakika kaynatın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Mercimek tanelerini kontrol edin, çatlayınca ateşi kısın, dağılmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yarım çay kaşığı naneyi ekleyip 2 dakika daha pişirin.",
+        "timerSeconds": 120
+      }
+    ]
+  },
+  {
+    "slug": "dorayaki-japon-kafe-usulu",
+    "title": "Dorayaki",
+    "cuisine": "jp",
+    "type": "TATLI",
+    "description": "Dorayaki, iki yumuşak pankeki tatlı fasulye dolgusu ile birleştirerek kafe tipi bir Japon tatlısı yapar.",
+    "prepMinutes": 14,
+    "cookMinutes": 10,
+    "totalMinutes": 24,
+    "servingCount": 6,
+    "averageCalories": 184,
+    "protein": 4,
+    "carbs": 32,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Pankekleri küçük tutmak klasik dorayaki oranını korur.",
+    "servingSuggestion": "Dorayakiyi yanında çayla, oda sıcaklığında ya da hafif serin sunun.",
+    "tags": [
+      "30-dakika-alti",
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tatlı fasulye ezmesi",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yumurta, şeker ve balı köpürmeden çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Un ve kabartma tozunu ekleyip hamuru 10 dakika dinlendirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tavayı hafif yağlayıp hamurdan küçük yuvarlaklar dökün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pankekleri toplam 6 dakika pişirin, yüzeyde kabarcık çıkınca çevirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "İki pankek arasına azuki ezmesi sürüp kenarlarını hafif kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Sandviçleri streçle sarıp 5 dakika bekletin, kenarlar birbirine yapışsın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "douhua",
+    "title": "Douhua",
+    "cuisine": "cn",
+    "type": "TATLI",
+    "description": "İpeksi tofu pudingi douhua, hafif şekerli şurup ve zencefille sade ama rafine bir tatlı sunar.",
+    "prepMinutes": 10,
+    "cookMinutes": 10,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 180,
+    "protein": 9,
+    "carbs": 20,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Tofuyu karıştırmadan ılık şurubu üstüne dökün; pürüzsüz yüzeyi korunur.",
+    "servingSuggestion": "Küçük kaselerde sıcak ya da ılık servis edin.",
+    "tags": [
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "SOYA"
+    ],
+    "ingredients": [
+      {
+        "name": "İpek tofu",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Esmer şeker",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Taze zencefil",
+        "amount": "4",
+        "unit": "dilim",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Zencefili ince dilimleyip şeker ve suyla tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Şurubu 8 dakika kaynatın, zencefil kokusu suya geçsin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yumuşak tofuyu servis kaselerine kırmadan paylaştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sıcak şurubu kaselere kenardan dökün, tofu yüzeyi parçalanmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Douhuayı sıcak ya da ılık servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Zencefil dilimlerini servis öncesi çıkarın, kaşıkta sert parça kalmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "İsterseniz üstüne az kavrulmuş susam ekleyin, tofu tadı dengelensin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "dublin-soda-bread",
+    "title": "Dublin Soda Bread",
+    "cuisine": "gb",
+    "type": "KAHVALTI",
+    "description": "İrlanda soda bread, ayran ve karbonatla mayasız kabaran, dışı kalın kabuklu ve içi yumuşak hızlı bir köy ekmeğidir.",
+    "prepMinutes": 12,
+    "cookMinutes": 35,
+    "totalMinutes": 47,
+    "servingCount": 8,
+    "averageCalories": 220,
+    "protein": 7,
+    "carbs": 42,
+    "fat": 3,
+    "isFeatured": false,
+    "tipNote": "Hamuru fazla yoğurmamak ekmeğin sertleşmesini önler.",
+    "servingSuggestion": "Tereyağı, reçel veya çorba yanında ılık dilimleyin.",
+    "tags": [
+      "vejetaryen",
+      "butce-dostu"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ayran",
+        "amount": "1.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Karbonat",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, karbonat ve tuzu geniş kapta karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Ayranı ekleyip hamuru sadece toparlanana kadar yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hamura yuvarlak şekil verip üstüne derin çarpı kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "200°C fırında 30-35 dakika kabuk sertleşene kadar pişirin.",
+        "timerSeconds": 1950
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ekmeği tel üzerinde 15 dakika dinlendirip dilimleyin.",
+        "timerSeconds": 900
+      }
+    ]
+  },
+  {
+    "slug": "duck-confit",
+    "title": "Duck Confit",
+    "cuisine": "fr",
+    "type": "YEMEK",
+    "description": "Güneybatı Fransa'nın ördek budu, kendi yağında düşük ısıda pişerek etinden ayrılan bir klasiktir.",
+    "prepMinutes": 20,
+    "cookMinutes": 180,
+    "totalMinutes": 200,
+    "servingCount": 4,
+    "averageCalories": 520,
+    "protein": 28,
+    "carbs": 6,
+    "fat": 39,
+    "isFeatured": false,
+    "tipNote": "Ördek butlarını düşük ısıda pişirin; yüksek ısı yağın eti sertleştirmesine yol açar.",
+    "servingSuggestion": "Fırın patates ve yeşil salatayla servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Ördek budu",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Ördek yağı",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "2",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Biberiye",
+        "amount": "4",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "4",
+        "unit": "diş",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ördek butlarını tuz, karabiber ve biberiyeyle ovun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Butları buzdolabında 30 dakika dinlendirin, tuz ete işlesin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ördek yağını ısıtıp butları tamamen örtecek şekilde kaba alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Butları 120°C fırında 3 saat pişirin, ördek eti sertleşmesin.",
+        "timerSeconds": 10800
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Servis öncesi deri tarafını tavada 5 dakika kızartın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Butları 4 dakika dinlendirin, derisi çıtır kalırken et suyu otursun.",
+        "timerSeconds": 240
+      }
+    ]
+  },
+  {
+    "slug": "dugulu-bulgur-pilavi-nevsehir-usulu",
+    "title": "Düğüülü Bulgur Pilavı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Nevşehir düğülü bulgur pilavı, ince bulguru soğan ve domatesle pişirerek tane yapısı belirgin, sade ve kırsal bir Orta Anadolu pilavı kurar.",
+    "prepMinutes": 8,
+    "cookMinutes": 18,
+    "totalMinutes": 26,
+    "servingCount": 4,
+    "averageCalories": 188,
+    "protein": 5,
+    "carbs": 31,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Bulguru kısa kavurmak pişerken lapa olmasını azaltır.",
+    "servingSuggestion": "Pilavi sıcak servis edin, yanında ayran ya da cacık sunun.",
+    "tags": [
+      "30-dakika-alti",
+      "vegan",
+      "butce-dostu",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Düğü bulgur",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bulguru ayıklayıp yıkayın ve süzgeçte bekletin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı zeytinyağında 3 dakika çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bulgur ve domatesi tencereye alıp 2 dakika kavurun.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Nevşehir bulgur pilavı için sıcak su ve tuzu ekleyip kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pilavı 15 dakika pişirin, bulgur lapa olmasın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tencereyi 8 dakika dinlendirip servis öncesi nazikçe karıştırın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Nevşehir pilavını tabakta bastırmadan yayın, bulgur taneleri ezilmesin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "dugun-corbasi",
+    "title": "Düğün Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Didiklenmiş kuzu eti ve yoğurtlu terbiye ile hazırlanan geleneksel etli çorba.",
+    "prepMinutes": 20,
+    "cookMinutes": 60,
+    "totalMinutes": 80,
+    "servingCount": 6,
+    "averageCalories": 260,
+    "protein": 20,
+    "carbs": 10,
+    "fat": 16,
+    "isFeatured": true,
+    "tipNote": "Terbiyeyi çorbaya eklemeden önce sıcak et suyuyla ılıtın; yoğurt kesilmez.",
+    "servingSuggestion": "Üstüne tereyağlı pul biber gezdirip limon dilimiyle sıcak derin kasede sunun.",
+    "tags": [
+      "misafir-sofrasi",
+      "kis-tarifi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "SUT",
+      "YUMURTA",
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuzu gerdan",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "6",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": "Terbiye için"
+      },
+      {
+        "name": "Yumurta sarısı",
+        "amount": "1",
+        "unit": "adet",
+        "group": "Terbiye için"
+      },
+      {
+        "name": "Un",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": "Terbiye için"
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": "Terbiye için"
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Pul biber",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuzu gerdanı suyla birlikte 50 dakika haşlayın.",
+        "timerSeconds": 3000
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Eti tencereden alın, didikleyin ve et suyunu süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yoğurt, yumurta sarısı, un ve limon suyunu pürüzsüz olana kadar çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Terbiyeye 1 kepçe sıcak et suyu ekleyip karıştırın, sonra tencereye dökün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Didiklenmiş eti ve tuzu ekleyip 10 dakika kısık ateşte pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Tereyağında pul biberi 30 saniye kızdırıp çorbanın üzerine gezdirin.",
+        "timerSeconds": 30
+      }
+    ]
+  },
+  {
+    "slug": "dut-pekmezli-bulgur-tatlisi-elazig-usulu",
+    "title": "Elazığ Dut Pekmezli Bulgur Tatlısı",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Elazığ dut pekmezli bulgur tatlısı, ince bulguru dut pekmeziyle pişirerek koyu, parlak ve kaşıkla yenilen bir yöresel tatlı yapar.",
+    "prepMinutes": 8,
+    "cookMinutes": 18,
+    "totalMinutes": 26,
+    "servingCount": 4,
+    "averageCalories": 214,
+    "protein": 4,
+    "carbs": 42,
+    "fat": 3,
+    "isFeatured": false,
+    "tipNote": "Pekmezi son aşamada eklemek acılaşmasını önler.",
+    "servingSuggestion": "Tatlıyı ılık verin, üstüne ceviz serperek servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "butce-dostu",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "İnce bulgur",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Dut pekmezi",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bulguru yıkayıp süzün ve suyla tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bulguru 10 dakika pişirin, taneler yumuşasın ama lapalaşmasın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Dut pekmezini ekleyip 5 dakika karıştırın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karışımı 10 dakika dinlendirin, pekmez bulgura işlesin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ceviz serperek ılık servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Bulgur sıcaklığını kaybedince servis tabağına alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Üst cevizi son anda serpin, pekmez nemi cevizi yumuşatmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "dut-pekmezli-cevizli-un-helvasi-erzurum-usulu",
+    "title": "Dut Pekmezli Cevizli Un Helvası",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Erzurum usulü dut pekmezli cevizli un helvası, unu tereyağı ve dut pekmeziyle kavurup cevizle tamamlayan yumuşak bir tatlıdır.",
+    "prepMinutes": 10,
+    "cookMinutes": 16,
+    "totalMinutes": 26,
+    "servingCount": 4,
+    "averageCalories": 262,
+    "protein": 5,
+    "carbs": 28,
+    "fat": 14,
+    "isFeatured": false,
+    "tipNote": "Pekmezi sütle açmak helvanın topaklanmadan daha parlak bağlanmasını sağlar.",
+    "servingSuggestion": "Dut pekmezli cevizli un helvasını kaşıkla şekillendirip cevizleri üstüne serpin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "100",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Dut pekmezi",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Unu tereyağı erimiş tavaya eleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Unu 10 dakika kavurun, yanmasın diye sürekli çevirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Süt ve dut pekmezini karıştırıp ılık halde una ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Helvayı 3 dakika pişirin, sıvıyı çekince ceviz katın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karışımı 10 dakika dinlendirip ılık servis edin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Helvayı küçük kaşık darbeleriyle şekillendirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Serviste dut pekmezini ayrıca gezdirmeyin, tat dengesi ağırlaşmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "dut-pekmezli-irmik-helvasi-elazig-usulu",
+    "title": "Dut Pekmezli İrmik Helvası",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Elazığ dut pekmezli irmik helvası, irmiği dut pekmeziyle buluşturarak karamelimsi, sıcak ve kaşıkta dağılan bir kış tatlısı çıkarır.",
+    "prepMinutes": 10,
+    "cookMinutes": 16,
+    "totalMinutes": 26,
+    "servingCount": 6,
+    "averageCalories": 228,
+    "protein": 4,
+    "carbs": 31,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Pekmezi son bölümde eklemek helvada yanık değil meyvemsi bir tat bırakır.",
+    "servingSuggestion": "Helvayi ılık verin, üstüne ceviz serperek servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen",
+      "kis-tarifi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "İrmik",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "50",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Dut pekmezi",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "İrmiği tereyağı erimiş tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "İrmiği 8 dakika kavurun, rengi açık altına dönsün.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pekmezli suyu azar azar ekleyin, buhar çıkışında elinizi koruyun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Helvayı 6 dakika pişirin, irmik şerbeti tamamen çeksin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kapağını kapatıp 10 dakika dinlendirin ve servis edin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Helvayı kalıba bastırmadan alın, irmik taneleri ezilmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Ceviz kullanacaksanız servis anında ekleyin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "dut-pekmezli-kesme-muhallebi-elazig-usulu",
+    "title": "Dut Pekmezli Kesme Muhallebi",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Elazığ usulü dut pekmezli kesme muhallebi, sütlü tabanı dut pekmeziyle buluşturarak yumuşak, koyu renkli ve dengeli tatlı bir sonuç verir.",
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "totalMinutes": 22,
+    "servingCount": 6,
+    "averageCalories": 212,
+    "protein": 4,
+    "carbs": 29,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Pekmezi ocaktan alırken eklemek rengin canlı kalmasını sağlar.",
+    "servingSuggestion": "Muhallebiyi soğuk servis edin, üstüne pekmez gezdirerek sunun.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Mısır nişastası",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Dut pekmezi",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kesme muhallebi için süt, nişasta ve şekeri tencerede soğukken çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Muhallebiyi 10 dakika pişirin, bıçakla kesilecek kadar koyulaşsın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Dut pekmezini ocaktan alınca ekleyin, aroması yanmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karışımı ıslatılmış kalıba dökün ve yüzeyi düzleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tatlıyı 3 saat soğutup küp kesin.",
+        "timerSeconds": 10800
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kalıptan çıkan muhallebiyi ıslak bıçakla kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Dilimleri pekmez çizgisiyle servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "dut-pekmezli-kete-kup-erzurum-usulu",
+    "title": "Dut Pekmezli Kete Kup",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Erzurum usulü dut pekmezli kete kup, ufalanmış kete parçalarını dut pekmezi ve kaymaklı tabanla buluşturarak yoğun, katmanlı ve çaylık bir tatlı yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "totalMinutes": 10,
+    "servingCount": 4,
+    "averageCalories": 244,
+    "protein": 4,
+    "carbs": 29,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Keteyi iri kırmak kup içinde katman hissini güçlendirir.",
+    "servingSuggestion": "Kup bardakta soğuk verin, üstüne kete kırıntısı serperek servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Kete",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dut pekmezi",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kaymak",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Keteyi iri kırın ve kuru kırıntıları ayırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kaymaklı tabanı 2 dakika çırpın, sürülebilir kıvama gelsin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kup tabanına kete kırığı, kaymak ve dut pekmezi katlarını yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pekmezi kenarlardan ince gezdirin, kete tamamen hamurlaşmasın diye fazla dökmeyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kup tatlısını 20 dakika dinlendirip cevizle servis edin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kete kırıntısının bir kısmını üst için kuru saklayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Kupları servis öncesi nazikçe sallamayın, katmanlar karışmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "dut-pekmezli-lor-kup-erzincan-usulu",
+    "title": "Erzincan Dut Pekmezli Lor Kup",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Erzincan dut pekmezli lor kup, lor peynirini dut pekmeziyle katlayarak serin ve sütlü bir dağ tatlısı hazırlar.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "totalMinutes": 10,
+    "servingCount": 4,
+    "averageCalories": 168,
+    "protein": 8,
+    "carbs": 18,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Loru çatalla ezmek kup içinde daha pürüzsüz bir doku sağlar.",
+    "servingSuggestion": "Kup bardakta soğuk servis edin, üstüne ceviz serperek sunun.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Lor peyniri",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Dut pekmezi",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Loru çatalla ezin ve iri parçaları dağıtın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Dut pekmezini küçük kapta 1 dakika akışkanlaşana kadar karıştırın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kup bardaklara lor ve pekmezi ince katlar halinde yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Cevizi iri kırıp ara kata serpin, beklerken yumuşamasın diye üst için biraz ayırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tatlıyı 15 dakika soğutup kalan cevizle servis edin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Pekmezi ince akıtın, lor katı tamamen kapanmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Servis kaşığını bardağın kenarından indirin, katmanlar bozulmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "dut-pekmezli-un-helvasi-erzurum-usulu",
+    "title": "Dut Pekmezli Un Helvası",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Erzurum usulü dut pekmezli un helvası, unu tereyağı ve dut pekmeziyle buluşturarak sıcak, yoğun ve kaşıklık bir tatlı yapar.",
+    "prepMinutes": 8,
+    "cookMinutes": 14,
+    "totalMinutes": 22,
+    "servingCount": 4,
+    "averageCalories": 248,
+    "protein": 3,
+    "carbs": 31,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Unu sabırla kavurmak helvada derin bir koku oluşturur.",
+    "servingSuggestion": "Dut pekmezli un helvasını kaşıkla şekillendirip pekmezli rengini gösterecek tabakta sunun.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Dut pekmezi",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Unu geniş tavaya eleyin ve tereyağıyla buluşturun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Unu 8 dakika kavurun, kokusu çıkınca ateşi kısın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Dut pekmezli suyu azar azar ekleyin, topaklanmasın diye sürekli karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Helvayı 4 dakika pişirin, kaşığa yapışmayan kıvam alsın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Helvayı 10 dakika dinlendirip cevizle servis edin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kaşık şekli verecekseniz helva sıcakken çalışın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Üstüne iri ceviz ekleyip pekmez tadını dengeleyin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "dut-serbetli-kadayif-kup-elazig-usulu",
+    "title": "Dut Şerbetli Kadayıf Kup",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Elazığ dut şerbetli kadayıf kup, kavrulmuş kadayıfı dut şerbeti ve krema ile katmanlayarak çıtır, serin ve gösterişli bir tatlı yapar.",
+    "prepMinutes": 16,
+    "cookMinutes": 8,
+    "totalMinutes": 24,
+    "servingCount": 5,
+    "averageCalories": 248,
+    "protein": 3,
+    "carbs": 29,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Kadayıfı tamamen soğutup katmanlamak çıtırlığını korur.",
+    "servingSuggestion": "Kup tatlıyı soğuk verin, üstüne kadayıf serperek servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Kadayıf",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Dut şerbeti",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Krema",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "20",
+        "unit": "gr",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kadayıfı tel tel ayırıp tavaya alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kadayıfı 6 dakika kavurun, rengi altın olsun ama yanmasın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Dut şerbetini 3 dakika ısıtıp akışkan hale getirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kup içine kadayıf, şerbet ve ceviz katlarını yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tatlıyı 20 dakika soğutun, kadayıf üst katı gevrek kalsın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kadayıfın bir kısmını üst süsleme için kuru bırakın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Serviste şerbeti ayrıca artırmayın, kup tabanı ağırlaşmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "dutlu-cevizli-un-helvasi-erzurum-usulu",
+    "title": "Dutlu Cevizli Un Helvası",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Erzurum usulü dutlu cevizli un helvası, kavrulmuş unu dut şerbeti ve cevizle buluşturarak sıcak, yoğun ve kışlık bir tatlı yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "totalMinutes": 22,
+    "servingCount": 4,
+    "averageCalories": 246,
+    "protein": 4,
+    "carbs": 30,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Unu 6 dakika kavurmak helvada çiğ tat kalmasını önler.",
+    "servingSuggestion": "Helvayi ılık sunun, üstüne ceviz serperek servis edin.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Dut pekmezi",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Unu tereyağıyla buluşturmak için geniş tavaya alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Unu 6 dakika kavurun, rengi açık kahveye dönsün.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Dut pekmezini ekleyip 2 dakika karıştırın, şeker yanmasın diye ateşi kısın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Cevizi katıp helvayı 3 dakika toparlayın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Helvayı 10 dakika dinlendirip ılık servis edin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Helvayı servis tabağına yaymadan önce ılıtın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Cevizi iri bırakın, dut pekmezi içinde kaybolmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "dutlu-pestil-sarma-elazig-usulu",
+    "title": "Dutlu Pestil Sarma",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Elazığ usulü dutlu pestil sarma, ince pestili dut özü ve cevizle buluşturarak çiğnemeli, yoğun ve küçük porsiyonluk bir tatlı çıkarır.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "totalMinutes": 10,
+    "servingCount": 8,
+    "averageCalories": 178,
+    "protein": 2,
+    "carbs": 21,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Pestili hafif nemlendirmek rulo yapılırken çatlamasını azaltır.",
+    "servingSuggestion": "Oda sıcaklığında servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "30-dakika-alti",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Pestil",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dut özü",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ceviz",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pestil yapraklarını nemli bez arasında 3 dakika yumuşatın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Cevizi iri çekin ve dut özüyle yapışkan bir iç hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pestile ince iç harç yayın, kenarlarda 1 cm boşluk bırakın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pestili sıkı rulo yapın, gevşek sararsanız dilimler açılır.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ruloyu 10 dakika dinlendirip keskin bıçakla dilimleyin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Ruloyu kesmeden önce birleşim yeri alta gelecek şekilde bekletin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Dilimleri tek sıra dizin, pestil yüzeyi birbirine yapışmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "duzce-mamursa-peynirli",
+    "title": "Düzce Mamursa",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Mamursa, mısır ununu suda koyulaştırıp tereyağı ve peynirle buluşturan Düzce ve Kafkas mutfağına yakın sıcak yemektir.",
+    "prepMinutes": 10,
+    "cookMinutes": 25,
+    "totalMinutes": 35,
+    "servingCount": 4,
+    "averageCalories": 390,
+    "protein": 12,
+    "carbs": 42,
+    "fat": 19,
+    "isFeatured": false,
+    "tipNote": "Mısır ununu azar azar eklemek topaklanmadan parlak kıvam verir.",
+    "servingSuggestion": "Sıcak tavada peynir uzarken servis edin.",
+    "tags": [
+      "vejetaryen",
+      "butce-dostu"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Mısır unu",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Çeçil peyniri",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Suyu tencerede kaynatıp tuzu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mısır ununu çırpma teliyle azar azar suya katın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karışımı 15 dakika sürekli karıştırarak koyulaştırın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Tereyağını ayrı tavada köpürtün.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Mamursayı servis tavasına alıp peynirleri içine yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kızgın tereyağını gezdirip 3 dakika peynir eriyene kadar bekletin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "duzce-mancarli-pide",
+    "title": "Düzce Mancarlı Pide",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Mancarlı pide, Karadeniz mancarı veya pazıyı soğanlı iç harç yapıp mayalı hamurla kapatan Düzce usulü otlu pidedir.",
+    "prepMinutes": 45,
+    "cookMinutes": 25,
+    "totalMinutes": 70,
+    "servingCount": 6,
+    "averageCalories": 360,
+    "protein": 10,
+    "carbs": 54,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Mancar harcını soğutmak hamurun içten ıslanıp açılmasını önler.",
+    "servingSuggestion": "Fırından çıkınca tereyağı sürüp ayran ve turşuyla servis edin.",
+    "tags": [
+      "vejetaryen",
+      "butce-dostu"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ilık su",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru maya",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Mancar veya pazı",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Pul biber",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Un, su, maya ve tuzla yumuşak hamur yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 35 dakika mayalandırın.",
+        "timerSeconds": 2100
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Mancarı yıkayıp ince doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Soğanı yağda 6 dakika yumuşatın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Mancarı ekleyip 8 dakika suyunu çektirin ve harcı soğutun.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Hamuru açıp harcı yerleştirin ve kenarları kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Pideleri 210°C fırında 18-20 dakika pişirip tereyağı sürün.",
+        "timerSeconds": 1200
+      }
+    ]
+  },
+  {
+    "slug": "earl-grey-collins-ingiltere-usulu",
+    "title": "Earl Grey Collins",
+    "cuisine": "gb",
+    "type": "KOKTEYL",
+    "description": "Earl Grey Collins, demli çayı cin ve limonla buluşturarak ferah, bergamot kokulu ve ince yapılı bir kokteyl hazırlar.",
+    "prepMinutes": 8,
+    "cookMinutes": 0,
+    "totalMinutes": 8,
+    "servingCount": 2,
+    "averageCalories": 152,
+    "protein": 0,
+    "carbs": 10,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Çayı önceden soğutmak kokteylin buz üzerinde sulanmasını yavaşlatır.",
+    "servingSuggestion": "Uzun bardakta bol buz ve limon kabuğuyla soğuk servis edin.",
+    "tags": [
+      "alkollu",
+      "30-dakika-alti",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Demli Earl Grey",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Cin",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soda",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Earl Grey Collins karışımına başlamadan bardağı soğutun, aromalar ısınmadan dengede kalsın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Earl Grey Collins bardağını taze buzla doldurun, içecek ısınmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Earl Grey Collins çay, cin ve limonu buzun üstüne ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Earl Grey Collins üstünü sodayla tamamlayıp bekletmeden servis edin, gazlı yapı korunur, buz erirse denge bozulmasın, böylece buz erirse denge bozulmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "edamame",
+    "title": "Edamame",
+    "cuisine": "jp",
+    "type": "APERATIF",
+    "description": "Kabuklu soya fasulyesinin tuzlu suda haşlandığı sade Japon atıştırmalığı.",
+    "prepMinutes": 5,
+    "cookMinutes": 6,
+    "totalMinutes": 11,
+    "servingCount": 4,
+    "averageCalories": 190,
+    "protein": 17,
+    "carbs": 15,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Edamameyi fazla haşlamayın; taneler parlak yeşil ve diri kalmalı.",
+    "servingSuggestion": "Deniz tuzu ve limonla servis edin.",
+    "tags": [
+      "vegan",
+      "yuksek-protein",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SOYA"
+    ],
+    "ingredients": [
+      {
+        "name": "Kabuklu edamame",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1.5",
+        "unit": "litre",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon",
+        "amount": "0.5",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Geniş tencerede suyu bol tuzla kaynatın ve edamameleri yıkayın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Edamameleri kaynar suya alıp 5-6 dakika parlak yeşil kalacak şekilde haşlayın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Baklaları süzüp fazla suyunu silkeleyin ve henüz sıcakken tuzlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon dilimleriyle servis edin, baklaların iç tanelerinin yenileceğini dikkate alın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "edamame-kinoa-salatasi",
+    "title": "Edamame Kinoa Salatası",
+    "cuisine": "jp",
+    "type": "SALATA",
+    "description": "Edamame kinoa salatası, bitkisel protein ve hafif tahıl tabanını aynı kasede buluşturan güncel bir öğle tabağıdır.",
+    "prepMinutes": 15,
+    "cookMinutes": 15,
+    "totalMinutes": 30,
+    "servingCount": 3,
+    "averageCalories": 248,
+    "protein": 12,
+    "carbs": 30,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Kinoayı tamamen soğutmak salatanın taneli kalmasını sağlar.",
+    "servingSuggestion": "Üzerine susam serperek serin servis edin.",
+    "tags": [
+      "vegan",
+      "yuksek-protein",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SOYA",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Kinoa",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Edamame",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Salatalık",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Susam",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Edamame Kinoa Salatası için yeşillikleri ve ana malzemeleri ayırın, soslama aşamasında kase kalabalıklaşmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kinoayı 12 dakika haşlayıp soğutun.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Edamame ve doğranmış salatalığı kinoaya ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon suyu ile karıştırıp susamla servis edin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Edamame Kinoa Salatası servis öncesi 5 dakika dinlendirin, sos tanelere işlesin diye sonra tabaklayın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Edamame Kinoa Salatası karışımını geniş tabağa alın, yeşillikler ezilmesin diye üstten bastırmayın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "edirne-arnavut-cigeri",
+    "title": "Edirne Arnavut Ciğeri",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Arnavut ciğeri, küp doğranmış dana ciğerini un ve baharatla kaplayıp kızgın yağda kısa sürede kızartan klasik mezedir.",
+    "prepMinutes": 20,
+    "cookMinutes": 12,
+    "totalMinutes": 32,
+    "servingCount": 4,
+    "averageCalories": 545,
+    "protein": 31,
+    "carbs": 26,
+    "fat": 34,
+    "isFeatured": false,
+    "tipNote": "Ciğeri fazla kızartmayın; 3 dakikadan sonra içi kuruyup sertleşir.",
+    "servingSuggestion": "Sumaklı soğan, maydanoz ve kızarmış patatesle ılık servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana ciğeri",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "çay bardağı",
+        "group": null
+      },
+      {
+        "name": "Karbonat",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Toz kırmızı biber",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Patates",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kırmızı soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sumak",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ciğerin zarını temizleyip 2 cm küpler halinde doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Ciğeri kağıt havluyla kurulayın, yağ sıçramasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Un, karbonat, kırmızı biber ve tuzu karıştırıp ciğeri bu karışıma bulayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Patatesleri küp doğrayıp 170°C yağda 6 dakika kızartın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ciğeri 180°C yağda 3 dakika kızartıp hemen süzün.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Soğanı sumak ve maydanozla ovup ciğerin yanında servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "edirne-badem-ezmesi-lokum",
+    "title": "Edirne Badem Ezmesi Lokum",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Edirne badem ezmesi, ince çekilmiş bademi şeker şerbetiyle yoğurup küçük lokum parçaları gibi kesen zarif bir ikramlıktır.",
+    "prepMinutes": 25,
+    "cookMinutes": 10,
+    "totalMinutes": 35,
+    "servingCount": 10,
+    "averageCalories": 210,
+    "protein": 6,
+    "carbs": 24,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Bademi fazla yağ saldırmadan çekmek ezmenin pürüzsüz kalmasını sağlar.",
+    "servingSuggestion": "Türk kahvesi yanında küçük dilimler halinde servis edin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi",
+      "vegan"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Badem",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bademleri sıcak suda 2 dakika bekletip kabuklarını soyun.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bademleri kurutup ince toz haline getirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Şeker ve suyu 8 dakika koyu şerbet olana kadar kaynatın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Badem tozunu şerbete ekleyip yoğrulabilir kıvam alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karışımı düzleyip soğuyunca küçük lokumlar halinde kesin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "edirne-bademli-ciger-pilavi",
+    "title": "Edirne Bademli Ciğer Pilavı",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Edirne bademli ciğer pilavı, ince doğranmış dana ciğerini bademli pirinç pilavıyla birleştirerek kokulu ve güçlü bir Trakya tabağı hazırlar.",
+    "prepMinutes": 22,
+    "cookMinutes": 30,
+    "totalMinutes": 52,
+    "servingCount": 5,
+    "averageCalories": 520,
+    "protein": 28,
+    "carbs": 58,
+    "fat": 20,
+    "isFeatured": false,
+    "tipNote": "Ciğeri fazla pişirmemek dokusunu yumuşak tutar.",
+    "servingSuggestion": "Maydanoz, limon ve ayranla sıcak servis edin.",
+    "tags": [
+      "yuksek-protein",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "KUSUYEMIS",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Pirinç",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Dana ciğeri",
+        "amount": "350",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Badem",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Et suyu",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pirinci 20 dakika ılık tuzlu suda bekletip süzün.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bademleri tereyağında 3 dakika açık renk kavurun.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinç ve et suyuyla pilavı 15 dakika pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ciğeri ayrı tavada 4-5 dakika hızlı soteleyin.",
+        "timerSeconds": 270
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ciğeri pilava katıp 10 dakika dinlendirerek servis edin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "edirne-bademli-kestane-tatlisi",
+    "title": "Edirne Bademli Kestane Tatlısı",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Edirne usulü bademli kestane tatlısı, haşlanmış kestaneyi badem, süt ve tarçınla kaşıklık, kış kokulu bir tatlıya dönüştürür.",
+    "prepMinutes": 20,
+    "cookMinutes": 35,
+    "totalMinutes": 55,
+    "servingCount": 6,
+    "averageCalories": 315,
+    "protein": 7,
+    "carbs": 48,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Kestaneyi sıcakken soymak iç zarın kolay ayrılmasını sağlar.",
+    "servingSuggestion": "Tarçın ve file bademle ılık servis edin.",
+    "tags": [
+      "vejetaryen",
+      "kis-tarifi"
+    ],
+    "allergens": [
+      "KUSUYEMIS",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Kestane",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Badem",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kestaneleri çizip 20 dakika haşlayın ve kabuklarını soyun.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Süt ve şekeri tencerede 5 dakika ısıtın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kestaneleri sütlü karışıma ekleyip 12 dakika yumuşatın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Badem ve tarçını katıp tatlıyı iri parçalı ezin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tatlıyı kaselere paylaştırıp 10 dakika dinlendirin.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "edirne-bademli-pirasali-borek",
+    "title": "Edirne Bademli Pırasalı Börek",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Edirne usulü bademli pırasalı börek, sotelenmiş pırasa, beyaz peynir ve bademi ince yufka katlarında çıtır bir tepsiye dönüştürür.",
+    "prepMinutes": 24,
+    "cookMinutes": 35,
+    "totalMinutes": 59,
+    "servingCount": 6,
+    "averageCalories": 330,
+    "protein": 11,
+    "carbs": 34,
+    "fat": 17,
+    "isFeatured": false,
+    "tipNote": "Pırasayı önceden söndürmek böreğin içini sulandırmaz.",
+    "servingSuggestion": "Ayran ve domatesle ılık servis edin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Yufka",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Pırasa",
+        "amount": "4",
+        "unit": "dal",
+        "group": null
+      },
+      {
+        "name": "Beyaz peynir",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Badem",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pırasaları ince doğrayıp bademleri iri kırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pırasayı tavada 8 dakika yumuşatın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pırasayı peynir ve bademle karıştırıp harcı soğutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yufkaları sütlü yumurtalı sosla katlayın, kuru kenar kalmasın diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Böreği 180°C fırında 34 dakika kızarana kadar pişirin.",
+        "timerSeconds": 2040
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Böreği 8 dakika dinlendirin, bademli pırasalı iç keserken dökülmesin.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "edirne-ciger-sarma-pilavli",
+    "title": "Edirne Ciğer Sarma",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Ciğer sarma, kuzu ciğerli iç pilavı gömlek yağına sarıp fırında kızartan Rumeli etkili Edirne yemeğidir.",
+    "prepMinutes": 40,
+    "cookMinutes": 45,
+    "totalMinutes": 85,
+    "servingCount": 6,
+    "averageCalories": 540,
+    "protein": 28,
+    "carbs": 42,
+    "fat": 29,
+    "isFeatured": false,
+    "tipNote": "Gömlek yağını ılık suda açmak sararken yırtılmasını azaltır.",
+    "servingSuggestion": "Limonlu kıvırcık salata ve yoğurtla sıcak sunun.",
+    "tags": [
+      "firinda",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuzu ciğeri",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Gömlek yağı",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dolmalık fıstık",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kuş üzümü",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yenibahar",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Gömlek yağını ılık suda 15 dakika yumuşatın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinci yıkayıp 20 dakika suda bekletin.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ciğeri küçük küp doğrayıp tereyağında 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Soğan, fıstık, pirinç, kuş üzümü ve baharatı ekleyip iç pilav hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Gömlek yağını parçalara ayırıp pilavı bohça gibi sarın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "190°C fırında 30-35 dakika üstü kızarana kadar pişirin.",
+        "timerSeconds": 2100
+      }
+    ]
+  },
+  {
+    "slug": "edirne-cigeri",
+    "title": "Edirne Ciğeri",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Edirne tava ciğeri, ince dana ciğerinin unlanıp kızgın yağda kısa sürede çıtırlaşmasıyla yapılır.",
+    "prepMinutes": 30,
+    "cookMinutes": 8,
+    "totalMinutes": 38,
+    "servingCount": 4,
+    "averageCalories": 430,
+    "protein": 28,
+    "carbs": 18,
+    "fat": 25,
+    "isFeatured": false,
+    "tipNote": "Ciğeri bıçak sırtı kalınlığında doğrayın; kalın kesilirse içi sertleşir, ince kesilirse çıtır olur.",
+    "servingSuggestion": "Yanına kızarmış biber ve sumaklı soğan koyup sıcak servis edin.",
+    "tags": [
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana ciğeri",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Ayçiçek yağı",
+        "amount": "500",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Kuru acı biber",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ciğeri çok ince yaprak doğrayıp kanını süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Ciğeri 10 dakika süzgeçte bekletin, un topaklanmasın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ciğer dilimlerini una bulayıp fazla unu silkeleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yağı 180°C civarına getirip ciğerleri tek kat bırakın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ciğerleri 3 dakika kızartın ve kağıt havluya alın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Ciğeri bekletmeden servis edin, ince dilimler sertleşmesin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "edirne-mutancana-osmanli",
+    "title": "Edirne Mutancana",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Mutancana, kuzu eti, arpacık soğan, kuru meyve, badem, bal ve sumağı aynı tencerede buluşturan Osmanlı mutfağı yemeğidir.",
+    "prepMinutes": 20,
+    "cookMinutes": 65,
+    "totalMinutes": 85,
+    "servingCount": 6,
+    "averageCalories": 610,
+    "protein": 32,
+    "carbs": 44,
+    "fat": 34,
+    "isFeatured": false,
+    "tipNote": "Kuru meyveleri son 15 dakikada eklemek parçalanmalarını önler.",
+    "servingSuggestion": "Sade pirinç pilavı ve tarçınlı hoşafla servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "tek-tencere"
+    ],
+    "allergens": [
+      "SUT",
+      "KUSUYEMIS",
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuzu kuşbaşı",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Arpacık soğan",
+        "amount": "12",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kuru kayısı",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kuru erik",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Çiğ badem",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sumak",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuzu etini tereyağında 10 dakika mühürleyin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Arpacık soğan ve sarımsağı ekleyip 6 dakika çevirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Unu serpip 1 dakika kavurun.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sıcak su ekleyip eti 40 dakika kısık ateşte pişirin.",
+        "timerSeconds": 2400
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kuru meyve, badem, bal ve sumağı ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Yemeği 15 dakika daha parlak sos oluşana kadar pişirin.",
+        "timerSeconds": 900
+      }
+    ]
+  },
+  {
+    "slug": "edirne-tava-ciger-yaprak",
+    "title": "Edirne Tava Ciğeri Yaprak",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Edirne tava ciğeri, zarından arındırılmış dana ciğerini yaprak inceliğinde kesip unlayarak kızgın yağda hızlı kızartan meşhur sakatat tabağıdır.",
+    "prepMinutes": 20,
+    "cookMinutes": 6,
+    "totalMinutes": 26,
+    "servingCount": 4,
+    "averageCalories": 390,
+    "protein": 32,
+    "carbs": 24,
+    "fat": 19,
+    "isFeatured": false,
+    "tipNote": "Ciğeri çok ince kesmek 3 dakikada kurumadan pişmesini sağlar.",
+    "servingSuggestion": "Kızarmış kuru acı biber, soğan piyazı ve yoğurtla sıcak servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana ciğeri",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ayçiçek yağı",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kuru acı biber",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sumak",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ciğerin zarını ve damarlarını temizleyip yaprak inceliğinde kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Dilimleri soğuk suda 20 dakika bekletip tamamen kurulayın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ciğerleri az tuzlayıp una bulayın ve fazla unu silkeleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yağı derin tavada 180°C'ye kadar kızdırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ciğerleri porsiyonlar halinde 3 dakika hızlı kızartın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kuru biberleri aynı yağda 45 saniye çevirin.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Ciğeri sumaklı soğan ve kızarmış biberle servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "edirne-tavuklu-mutancana",
+    "title": "Edirne Tavuklu Mutancana",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Edirne tavuklu mutancana, Osmanlı mutfağının kuru meyve, badem ve tarçın dengesini tavuk butla daha hafif bir ana yemeğe uyarlar.",
+    "prepMinutes": 18,
+    "cookMinutes": 42,
+    "totalMinutes": 60,
+    "servingCount": 4,
+    "averageCalories": 440,
+    "protein": 30,
+    "carbs": 26,
+    "fat": 24,
+    "isFeatured": false,
+    "tipNote": "Kuru meyveleri son 10 dakikada eklemek dağılmadan yumuşatır.",
+    "servingSuggestion": "Sade pirinç pilavıyla sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk but",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kuru kayısı",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kuru erik",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Badem",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tarçın",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.75",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuk butları tencerede iki yüzü renk alana kadar mühürleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı ekleyip 5 dakika yumuşatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sıcak su, tuz ve tarçınla tavuğu 25 dakika pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kuru kayısı, kuru erik, badem ve balı tencereye katın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sos hafif koyulaşana kadar 10-12 dakika daha pişirin.",
+        "timerSeconds": 660
+      }
+    ]
+  },
+  {
+    "slug": "edirne-yaprak-ciger-tava",
+    "title": "Edirne Yaprak Ciğer Tava",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Edirne tava ciğeri, ince yaprak kesilmiş dana ciğerini una bulayıp kızgın yağda çok kısa sürede çıtırlaştıran Trakya klasiğidir.",
+    "prepMinutes": 18,
+    "cookMinutes": 5,
+    "totalMinutes": 23,
+    "servingCount": 4,
+    "averageCalories": 390,
+    "protein": 32,
+    "carbs": 28,
+    "fat": 16,
+    "isFeatured": false,
+    "tipNote": "Ciğeri ince ve eşit kesmek içini kurutmadan pişirir.",
+    "servingSuggestion": "Kuru biber kızartması ve sumaklı soğanla sıcak servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "yuksek-protein"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Dana ciğeri",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Buğday unu",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "2",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Ayçiçek yağı",
+        "amount": "4",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru kırmızı biber",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Kırmızı soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sumak",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ciğerin zarını temizleyip yaprak inceliğinde uzun şeritler kesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Ciğerleri süzgeçte 10 dakika bekletip fazla kanını akıtın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Unu tuzla karıştırıp ciğerleri ince tabaka halinde una bulayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yağı 180°C'ye ısıtıp fazla unu silkeleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ciğerleri parti parti 2 dakika kızartın, fazla beklerse sertleşir.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kızarmış biber, sumaklı soğan ve tuzla hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "ege-otlu-gozleme",
+    "title": "Ege Otlu Gözleme",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Ege otlu gözleme, lor, pazı ve taze otları ince hamur arasında sacda pişirir.",
+    "prepMinutes": 40,
+    "cookMinutes": 18,
+    "totalMinutes": 58,
+    "servingCount": 4,
+    "averageCalories": 360,
+    "protein": 14,
+    "carbs": 48,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Otları tuzla ovalamayın; su salar ve hamuru ıslatır.",
+    "servingSuggestion": "Yanında domates ve salatalıkla sıcak servis edin.",
+    "tags": [
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Un",
+        "amount": "450",
+        "unit": "gr",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Su",
+        "amount": "240",
+        "unit": "ml",
+        "group": "Hamur için"
+      },
+      {
+        "name": "Lor peyniri",
+        "amount": "250",
+        "unit": "gr",
+        "group": "İç için"
+      },
+      {
+        "name": "Karışık Ege otu",
+        "amount": "250",
+        "unit": "gr",
+        "group": "İç için"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "450 gr un ve 240 ml suyla yumuşak hamur yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 15 dakika dinlendirin, ince açarken yırtılmasın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "250 gr lor ve 250 gr Ege otunu doğrayıp iç harcı karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Bezeleri ince açıp harcı yarısına yayın, diğer yarıyı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Gözlemeleri sacda 9 dakika iki yüzlü pişirin, otlar çiğ kalmasın.",
+        "timerSeconds": 540
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Sıcak gözlemeyi 2 dakika bekletip dilimleyin, otlu harç otursun.",
+        "timerSeconds": 120
+      }
+    ]
+  },
+  {
+    "slug": "ege-zeytinyagli-taze-bakla",
+    "title": "Ege Zeytinyağlı Taze Bakla",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Ege zeytinyağlı taze bakla, baklayı dereotu, limon ve soğanla ağır ateşte pişirerek serin servis edilen klasik bir bahar tabağı sunar.",
+    "prepMinutes": 18,
+    "cookMinutes": 35,
+    "totalMinutes": 53,
+    "servingCount": 4,
+    "averageCalories": 210,
+    "protein": 8,
+    "carbs": 26,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Unlu limonlu suda bekletmek baklanın rengini daha açık tutar.",
+    "servingSuggestion": "Sarımsaklı yoğurt ve dereotuyla soğuk servis edin.",
+    "tags": [
+      "vegan",
+      "tek-tencere",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Taze bakla",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Baklaları ayıklayıp limonlu suda 10 dakika bekletin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı zeytinyağında 5 dakika saydamlaşana kadar çevirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bakla, limon suyu, şeker ve sıcak suyu ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kısık ateşte 30-35 dakika baklalar yumuşayana kadar pişirin.",
+        "timerSeconds": 1950
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Dereotu ekleyip tencerede soğumaya bırakın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "egg-coffee",
+    "title": "Egg Coffee",
+    "cuisine": "vn",
+    "type": "ICECEK",
+    "description": "Yoğun kahvenin üstüne çırpılmış yumurtalı krema gelince Hanoi kafelerindeki o tatlı, yoğun fincan evde de kurulabilir.",
+    "prepMinutes": 8,
+    "cookMinutes": 5,
+    "totalMinutes": 13,
+    "servingCount": 2,
+    "averageCalories": 150,
+    "protein": 6,
+    "carbs": 17,
+    "fat": 6,
+    "isFeatured": true,
+    "tipNote": "Yumurta sarısını yeterince çırpın; üst katman kahveye oturmalı ama hemen sönmemeli.",
+    "servingSuggestion": "Küçük fincanda altı sıcak su dolu kâse içinde servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "YUMURTA",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Filtre kahve",
+        "amount": "160",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Yumurta sarısı",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yoğunlaştırılmış süt",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kahveyi sıcak hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yumurta sarısı ve yoğunlaştırılmış sütü 3 dakika çırpın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Köpüğü kahvenin üstüne döküp hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "egg-coffee-overnight-oats-vietnam-usulu",
+    "title": "Vietnam Egg Coffee Overnight Oats",
+    "cuisine": "vn",
+    "type": "KAHVALTI",
+    "description": "Vietnam egg coffee overnight oats, kahveli yulafı köpüklü yumurta kremasıyla buluşturarak sabaha serin, yoğun ve kafe esintili bir kâse bırakır.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "totalMinutes": 490,
+    "servingCount": 2,
+    "averageCalories": 248,
+    "protein": 10,
+    "carbs": 29,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Yulafı gece boyunca bekletmek kıvamın sabaha tam oturmasını sağlar.",
+    "servingSuggestion": "Kaseyi soğuk sunun, üstüne yumurta köpüğü koyarak servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Yulaf",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Demlenmiş kahve",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğunlaştırılmış süt",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yumurta sarısı",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "1 su bardağı yulafı kahve, süt ve yoğunlaştırılmış sütle karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Karışımı kapalı kavanozda 8 saat buzdolabında bekletin.",
+        "timerSeconds": 28800
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "2 yumurta sarısını ayrı kapta 2 dakika köpürene kadar çırpın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yumurta kremasını soğuk yulafın üstüne yayın, katlar karışmasın diye kaşığı yüzeyden çekin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kavanozu 5 dakika soğukta bekletip servis edin, krema yüzeyi toparlansın.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "egg-drop-soup",
+    "title": "Egg Drop Soup",
+    "cuisine": "cn",
+    "type": "CORBA",
+    "description": "Çin ev çorbasında çırpılmış yumurta, sıcak tavuk suyuna ince şeritler halinde akar.",
+    "prepMinutes": 10,
+    "cookMinutes": 10,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 90,
+    "protein": 6,
+    "carbs": 4,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Yumurtayi ince akıtın; kaynayan suda ipeksi şeritler daha net oluşur.",
+    "servingSuggestion": "Çorbayı sıcak kasede sunun, üstüne taze soğan serperek servis edin.",
+    "tags": [
+      "pratik",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "YUMURTA",
+      "SOYA"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk suyu",
+        "amount": "1",
+        "unit": "litre",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Mısır nişastası",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soya sosu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Taze soğan",
+        "amount": "2",
+        "unit": "dal",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "1 yemek kaşığı mısır nişastasını 3 yemek kaşığı soğuk suyla açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "1 litre tavuk suyunu 1 yemek kaşığı soya sosuyla kaynatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Nişastalı suyu ekleyip 2 dakika karıştırarak pişirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "3 yumurtayı kasede çırpın ve kaynamayı kısık ateşe indirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yumurtayı ince ip gibi akıtıp 30 saniye karıştırın, ipeksi şeritler oluşsun.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "2 dal taze soğanı ekleyip hemen servis edin, yumurta sertleşmesin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "egg-in-a-hole",
+    "title": "Egg in a Hole",
+    "cuisine": "us",
+    "type": "KAHVALTI",
+    "description": "Ortası delik ekmekte pişen yumurta, çocukluktan kalma bir Amerikan kahvaltı numarasını hala canlı tutar.",
+    "prepMinutes": 5,
+    "cookMinutes": 8,
+    "totalMinutes": 13,
+    "servingCount": 2,
+    "averageCalories": 250,
+    "protein": 11,
+    "carbs": 20,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Ekmek ortasını fazla büyük kesmeyin; yumurta tavaya akıp formu bozmaz.",
+    "servingSuggestion": "Taze karabiber ve az tereyağıyla servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "YUMURTA",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Sandviç ekmeği",
+        "amount": "4",
+        "unit": "dilim",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "0.25",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "4 ekmek diliminin ortasını küçük kalıpla çıkarıp kenarları bütün bırakın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tereyağını orta ateşte tavada eritin ve ekmekleri yerleştirin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ekmekleri 1 dakika kızartıp boşluklara yumurtaları kırın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yumurtaları 4 dakika pişirin, beyazı tutsun ve sarısı yumuşak kalsın.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karabiber serpip hemen servis edin, ekmek çıtırlığı bekleyince kayar.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "eggs-benedict",
+    "title": "Eggs Benedict",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Poşe yumurta, kızarmış ekmek ve hollandez sosla hazırlanan klasik kahvaltı.",
+    "prepMinutes": 20,
+    "cookMinutes": 15,
+    "totalMinutes": 35,
+    "servingCount": 2,
+    "averageCalories": 410,
+    "protein": 19,
+    "carbs": 25,
+    "fat": 26,
+    "isFeatured": false,
+    "tipNote": "Poşe yumurta suyuna sirke ekleyin; beyazlar sarının etrafında toplanır.",
+    "servingSuggestion": "Taze frenk soğanı ile servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "yuksek-protein",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Yumurta",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "İngiliz muffin",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "120",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Yumurta sarısı",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sirke",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "120 gr tereyağını kısık ateşte eritin, süt tortusu dibe çöksün.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "2 yumurta sarısını limon suyuyla benmaride 3 dakika çırpın.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Eritilmiş tereyağını ince akıtıp hollandez sosu bağlayın, kesilmesin diye sürekli çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sirkeli suyu kaynama altı sıcaklıkta tutup 4 yumurtayı 3 dakika poşeleyin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "İngiliz muffinleri kesip tavada 2 dakika kızartın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Muffinlerin üstüne yumurta ve hollandez sosu yerleştirip sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  }
+]

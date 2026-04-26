@@ -1,0 +1,4224 @@
+[
+  {
+    "slug": "fagioli-all-uccelletto",
+    "title": "Fagioli all'Uccelletto",
+    "cuisine": "it",
+    "type": "YEMEK",
+    "description": "Toskana usulü beyaz fasulye, adaçayı ve domatesle sade bir tencere yemeğine dönüşür.",
+    "prepMinutes": 10,
+    "cookMinutes": 25,
+    "totalMinutes": 35,
+    "servingCount": 4,
+    "averageCalories": 310,
+    "protein": 14,
+    "carbs": 38,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Fasulyeyi ezmeden çevirmek için tencereyi kaşıkla değil hafifçe sallayın.",
+    "servingSuggestion": "Izgara sosis ya da kızarmış ekmek eşliğinde servis edin.",
+    "tags": [
+      "vejetaryen",
+      "butce-dostu",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Haşlanmış beyaz fasulye",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Domates püresi",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Adaçayı",
+        "amount": "6",
+        "unit": "yaprak",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Sarımsak ve adaçayını zeytinyağında 2 dakika çevirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Domates püresini ekleyip 8 dakika kaynatın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Süzülmüş beyaz fasulyeyi sosa alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Fasulyeyi 12 dakika kısık ateşte pişirin, taneler dağılmasın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Zeytinyağı ve karabiberle tamamlayıp ılık servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "fairy-bread-avustralya-usulu",
+    "title": "Fairy Bread",
+    "cuisine": "au",
+    "type": "ATISTIRMALIK",
+    "description": "Fairy Bread, tereyağlı ekmeği renkli şekerlemeyle kaplayarak çocuk sofralarına neşeli, gevrek ve çok hızlı bir tatlı lokma bırakır.",
+    "prepMinutes": 5,
+    "cookMinutes": 0,
+    "totalMinutes": 5,
+    "servingCount": 4,
+    "averageCalories": 154,
+    "protein": 2,
+    "carbs": 21,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Şekerlemeyi ekmek tazeyken değil, tereyağı sürüldükten hemen sonra serpin.",
+    "servingSuggestion": "Hemen servis edin.",
+    "tags": [
+      "cocuk-dostu",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Sandviç ekmeği",
+        "amount": "4",
+        "unit": "dilim",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "30",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Renkli şekerleme",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Sandviç ekmeklerinin kenarlarını düzgün kesin, yumuşak iç kısım üstte kalsın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tereyağını oda sıcaklığında 5 dakika yumuşatıp ekmeklere ince ve eşit sürün.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Renkli şekerlemeyi geniş tabağa yayın ve ekmeklerin yağlı yüzünü bastırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Dilimleri üçgen kesin ve bekletmeden servis edin, şekerleme yüzeyi bozulmaz.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "falafel",
+    "title": "Falafel",
+    "cuisine": "me",
+    "type": "YEMEK",
+    "description": "Nohut, yeşillik ve baharatlarla hazırlanan, dışı çıtır Orta Doğu köftesi.",
+    "prepMinutes": 30,
+    "cookMinutes": 20,
+    "totalMinutes": 50,
+    "servingCount": 4,
+    "averageCalories": 360,
+    "protein": 13,
+    "carbs": 38,
+    "fat": 18,
+    "isFeatured": false,
+    "tipNote": "Konserve nohut kullanmayın; bir gece ıslatılmış çiğ nohut falafelin dağılmadan kızarmasını sağlar.",
+    "servingSuggestion": "Tahin sosu, lavaş ve turşuyla servis edin.",
+    "tags": [
+      "vegan",
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Nohut",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "3",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Kişniş",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Kimyon",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kabartma tozu",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Susam",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Nohudu bir gece suda bekletip ertesi gün tamamen süzün.",
+        "timerSeconds": 43200
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Nohut, soğan, sarımsak, maydanoz, kişniş, kimyon ve tuzu robotta çekin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kabartma tozunu ekleyip harcı buzdolabında 30 dakika dinlendirin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Harçtan küçük toplar yapıp susama bulayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Falafelleri 175°C yağda 4-5 dakika koyu altın renk alana kadar kızartın.",
+        "timerSeconds": 270
+      }
+    ]
+  },
+  {
+    "slug": "farinata-italyan-sokak-usulu",
+    "title": "Farinata",
+    "cuisine": "it",
+    "type": "YEMEK",
+    "description": "Farinata, nohut unlu ince hamuru fırında kızartarak İtalyan sokaklarına özgü hafif çıtır bir dilim sunar.",
+    "prepMinutes": 10,
+    "cookMinutes": 22,
+    "totalMinutes": 32,
+    "servingCount": 6,
+    "averageCalories": 154,
+    "protein": 6,
+    "carbs": 17,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Hamuru dinlendirmek nohut ununun suyu daha iyi çekmesini sağlar.",
+    "servingSuggestion": "Dilimleyip karabiber serpin, yanında soğuk beyaz şarap ya da zeytin sunun.",
+    "tags": [
+      "vegan",
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Nohut unu",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "0.25",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Nohut unu, su, zeytinyağı ve tuzu pürüzsüz çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Hamuru 1 saat dinlendirin, nohut unu suyu içine alsın.",
+        "timerSeconds": 3600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Fırın tepsisini yağlayıp 220°C fırında 5 dakika ısıtın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karışımı sıcak tepsiye ince dökün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Farinatayı 220°C fırında 22 dakika pişirin.",
+        "timerSeconds": 1320
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Üstünü karabiberleyip 5 dakika dinlendirin ve dilimleyin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "farofa",
+    "title": "Farofa",
+    "cuisine": "br",
+    "type": "SOS",
+    "description": "Kavrulmuş manyok unu, tereyağı ve soğanla Brezilya tabaklarına çıtır bir eşlikçi olur.",
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "totalMinutes": 22,
+    "servingCount": 6,
+    "averageCalories": 180,
+    "protein": 2,
+    "carbs": 18,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Manyok ununu orta ateşte kavurun; rengi altına dönünce aromasını verir.",
+    "servingSuggestion": "Feijoada ve ızgara et yanında servis edin.",
+    "tags": [
+      "pratik",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Manyok unu",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "60",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soğanı çok ince doğrayın, maydanozu da kıyıp kenarda hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tereyağını tavada eritin, soğanı yumuşayana kadar 4 dakika kavurun.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Manyok ununu ekleyin, kumlu yapı alıp hafif renk dönene kadar 5-6 dakika çevirin.",
+        "timerSeconds": 330
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Maydanozu son anda karıştırın, farofayı kuru dokusunu koruyarak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "fasolada-yunan-usulu",
+    "title": "Fasolada",
+    "cuisine": "gr",
+    "type": "CORBA",
+    "description": "Fasolada, kuru fasulyeyi domates ve zeytinyağıyla kaynatarak sade ama güçlü bir Yunan çorbası yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 35,
+    "totalMinutes": 47,
+    "servingCount": 4,
+    "averageCalories": 216,
+    "protein": 10,
+    "carbs": 29,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Fasulyeyi kısa ön haşlama ile çorbada daha eşit yumuşatabilirsiniz.",
+    "servingSuggestion": "Üzerine biraz zeytinyağı gezdirin, yanında kızarmış ekmekle sıcak servis edin.",
+    "tags": [
+      "vegan",
+      "tek-tencere",
+      "kis-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Haşlanmış kuru fasulye",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Domates püresi",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Havuç",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "1 havucu küçük küp doğrayın, 2 su bardağı pişmiş fasulyeyi süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Havucu 2 yemek kaşığı zeytinyağında 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "1 su bardağı domates püresini ekleyip 5 dakika kaynatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Fasulye ve 3 su bardağı suyu katıp 25 dakika pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Bir kepçe fasulyeyi ezin, böylece fasolada kremasız koyulaşır.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Zeytinyağı gezdirip sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "fasolakia",
+    "title": "Fasolakia",
+    "cuisine": "gr",
+    "type": "YEMEK",
+    "description": "Yunan usulü yeşil fasulye, domatesli zeytinyağlı sosta uzun pişerek ekmeğe banmalık bir sebze yemeği olur.",
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "totalMinutes": 50,
+    "servingCount": 4,
+    "averageCalories": 170,
+    "protein": 4,
+    "carbs": 14,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Fasulyeyi çok karıştırmadan pişirin; uzun pişme süresinde taneler diri kalır.",
+    "servingSuggestion": "Yanına feta ve limonlu patatesle servis edin.",
+    "tags": [
+      "vegan",
+      "butce-dostu",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Taze fasulye",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yeşil fasulyeyi ayıklayıp domatesleri rendeleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Fasolakia tabanı için soğanı zeytinyağında 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Domatesi ekleyip 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Fasulye ve az sıcak suyu tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kapağı kapalı 30 dakika pişirin, fasulye diri kalmasın.",
+        "timerSeconds": 1800
+      }
+    ]
+  },
+  {
+    "slug": "fasolka-po-bretonsku-polonya-usulu",
+    "title": "Fasolka po Bretońsku",
+    "cuisine": "pl",
+    "type": "YEMEK",
+    "description": "Fasolka po Bretońsku, kuru fasulyeyi domates ve sosisle pişirerek yoğun, kırmızı ve tok bir Polonya tenceresi kurar.",
+    "prepMinutes": 12,
+    "cookMinutes": 30,
+    "totalMinutes": 42,
+    "servingCount": 5,
+    "averageCalories": 268,
+    "protein": 12,
+    "carbs": 26,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Fasulyeyi ezmeden karıştırmak yapıyı korur.",
+    "servingSuggestion": "Derin tabakta sıcak sunun, yanında ekşi salatalık ve çavdar ekmeği verin.",
+    "tags": [
+      "tek-tencere",
+      "kis-tarifi"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Haşlanmış kuru fasulye",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Domates püresi",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Dana sosis",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.75",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soğanı ve sosisi küçük doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve sosisi tencerede 6 dakika çevirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Domates püresi ve paprika ekleyip 5 dakika pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Fasulyeyi sosa alıp sıcak suyla inceltin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tencereyi 20 dakika kısık ateşte pişirin, sos fasulyeye işlesin.",
+        "timerSeconds": 1200
+      }
+    ]
+  },
+  {
+    "slug": "fasulye-diblesi-giresun-usulu",
+    "title": "Giresun Usulü Fasulye Diblesi",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Giresun usulü fasulye diblesi, taze fasulyeyi pirinç ve dereotuyla hafif sulu bırakmadan pişiren ev işi bir Karadeniz yemeğidir.",
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "totalMinutes": 45,
+    "servingCount": 4,
+    "averageCalories": 232,
+    "protein": 6,
+    "carbs": 34,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Pirinç ekledikten sonra fazla karıştırmayın; taze fasulye diri kalır ve diblesi tane tane olur.",
+    "servingSuggestion": "Üzerine dereotu serperek ılık servis edin.",
+    "tags": [
+      "vejetaryen",
+      "yaz-tarifi",
+      "tek-tencere",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Taze fasulye",
+        "amount": "700",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Fasulyeleri ayıklayıp ince doğrayın, pirinci yıkayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğanı zeytinyağında 5 dakika çevirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Fasulyeyi ekleyip 5 dakika kapaklı pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pirinç, tuz ve sıcak suyu ekleyip kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Dibleyi 20 dakika pişirin, pirinç dibe tutmasın diye ateşi kısın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Dereotunu ekleyip 8 dakika dinlendirin.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "fasulye-diblesi-ordu-usulu",
+    "title": "Fasulye Diblesi",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Ordu fasulye diblesi, taze fasulyeyi pirinç ve dereotuyla ağır ateşte pişirerek tane tane, hafif sulu ve bahar kokulu bir Karadeniz yemeği sunar.",
+    "prepMinutes": 12,
+    "cookMinutes": 24,
+    "totalMinutes": 36,
+    "servingCount": 4,
+    "averageCalories": 186,
+    "protein": 4,
+    "carbs": 28,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Fasulyeyi kısa süre kavurmak tencerede dağılmadan pişmesini kolaylaştırır.",
+    "servingSuggestion": "Ilık servis edin, yanında yoğurt ya da turşu kavurması sunabilirsiniz.",
+    "tags": [
+      "tek-tencere",
+      "vegan",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Taze fasulye",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Fasulyeyi küçük doğrayıp pirinci yıkayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Fasulye diblesi için soğanı zeytinyağında 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Fasulye ve pirinci ekleyip 2 dakika karıştırın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Fasulye diblesi tenceresine sıcak su ve tuzu ekleyip kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yemeği 20 dakika pişirin, fasulye suyunu pirince versin.",
+        "timerSeconds": 1200
+      }
+    ]
+  },
+  {
+    "slug": "fasulye-diblesi-trabzon-usulu",
+    "title": "Trabzon Fasulye Diblesi",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Trabzon fasulye diblesi, taze fasulyeyi pirinç ve dereotuyla tencerede demleyerek Karadeniz mutfağına tane tane, yeşil ve hafif bir yaz yemeği bırakır.",
+    "prepMinutes": 18,
+    "cookMinutes": 24,
+    "totalMinutes": 42,
+    "servingCount": 4,
+    "averageCalories": 176,
+    "protein": 4,
+    "carbs": 28,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Fasulyeyi kısa tutmak diblede diri ve parlak bir sonuç verir.",
+    "servingSuggestion": "Yanına cacık koyarak ılık servis edin.",
+    "tags": [
+      "vegan",
+      "yaz-tarifi",
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Taze fasulye",
+        "amount": "600",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Fasulyeleri kılçıklarından ayırıp küçük parçalar halinde doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Trabzon diblesi için soğanı yağda 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Fasulye ve pirinci ekleyip 3 dakika kavurun.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sıcak su ve tuzu katıp kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tencereyi 20 dakika pişirin, pirinç fazla karıştırılmasın.",
+        "timerSeconds": 1200
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Dereotuyla 7 dakika dinlendirip servis edin.",
+        "timerSeconds": 420
+      }
+    ]
+  },
+  {
+    "slug": "fasulye-tursulu-cavdar-corbasi-ordu-usulu",
+    "title": "Fasulye Turşulu Çavdar Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Ordu fasulye turşulu çavdar çorbası, turşu fasulyeyi çavdar ve soğanla kaynatarak ekşiliği canlı, sulu ve kırsal bir Karadeniz çorbası sunar.",
+    "prepMinutes": 10,
+    "cookMinutes": 24,
+    "totalMinutes": 34,
+    "servingCount": 4,
+    "averageCalories": 166,
+    "protein": 5,
+    "carbs": 24,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Turşu fasulyeyi son bölümde eklemek çorbanın diriliğini ve ekşiliğini korur.",
+    "servingSuggestion": "Fasulye turşulu çavdar çorbasını sıcak kaseye alıp turşu parçalarını yüzeyde bırakın.",
+    "tags": [
+      "tek-tencere",
+      "kis-tarifi",
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Fasulye turşusu",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Çavdar yarma",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "0.75 su bardağı çavdar yarmasını yıkayıp 10 dakika sıcak suda bekletin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "1 soğanı 1 yemek kaşığı zeytinyağında 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Çavdar ve 5 su bardağı suyu ekleyip 25 dakika pişirin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "250 gr fasulye turşusunu sudan geçirip iri doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Turşuyu son 10 dakikada ekleyip kaynatın, ekşi tadı kaybolmasın.",
+        "timerSeconds": 600
+      }
+    ]
+  },
+  {
+    "slug": "fasulyeli-melocan-corbasi-ordu-usulu",
+    "title": "Fasulyeli Melocan Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Ordu usulü fasulyeli melocan çorbası, yabani melocanı kuru fasulye ve soğanla buluşturarak yumuşak, topraksı ve kışa uygun bir çorba kurar.",
+    "prepMinutes": 10,
+    "cookMinutes": 24,
+    "totalMinutes": 34,
+    "servingCount": 4,
+    "averageCalories": 176,
+    "protein": 8,
+    "carbs": 25,
+    "fat": 4,
+    "isFeatured": false,
+    "tipNote": "Melocanı son bölümde eklemek rengini ve diri dokusunu korur.",
+    "servingSuggestion": "Çorbayı sıcak verin, yanında mısır ekmeği dilimleriyle sofraya çıkarın.",
+    "tags": [
+      "tek-tencere",
+      "kis-tarifi",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Melocan otu",
+        "amount": "150",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış kuru fasulye",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "150 gr melocanı ayıklayıp iri doğrayın, fasulyeyi süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "1 soğanı orta ateşte 4 dakika şeffaflaşana kadar çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "5 su bardağı su ve 1.5 su bardağı fasulyeyi ekleyip 12 dakika kaynatın.",
+        "timerSeconds": 720
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Melocanı ekleyip 16 dakika pişirin.",
+        "timerSeconds": 960
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ot dokusu dağılmasın diye çorbayı ocaktan alınca 5 dakika kapalı bekletin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "fasulyeli-misir-ekmegi-durumu-trabzon-yayla-usulu",
+    "title": "Trabzon Fasulyeli Mısır Ekmeği Dürümü",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Trabzon fasulyeli mısır ekmeği dürümü, haşlanmış fasulyeyi mısır ekmeğine sararak tok, pratik ve kırsal bir öğün kurar.",
+    "prepMinutes": 10,
+    "cookMinutes": 10,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 228,
+    "protein": 8,
+    "carbs": 32,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Mısır ekmeğini tavada kısa ısıtmak sarımı kolaylaştırır.",
+    "servingSuggestion": "Dürümleri sıcak sunun, yanında ayran ya da turşu kavurması verin.",
+    "tags": [
+      "30-dakika-alti",
+      "butce-dostu",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Mısır ekmeği",
+        "amount": "4",
+        "unit": "dilim",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış kuru fasulye",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "20",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "2 su bardağı pişmiş fasulyeyi tereyağı ve karabiberle tavaya alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Fasulyeyi orta ateşte 5 dakika ısıtın, taneler ezilmesin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "4 dilim mısır ekmeğini ayrı tavada 2 dakika ısıtın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sıcak fasulyeyi ekmeklere paylaştırın, ekmek kırılmasın diye nazik sarın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Dürümleri ılık tabakta hemen servis edin, tereyağı donmadan yenilsin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "fasulyeli-misir-yarmasi-corbasi-ordu-usulu",
+    "title": "Fasulyeli Mısır Yarması Çorbası",
+    "cuisine": "tr",
+    "type": "CORBA",
+    "description": "Ordu usulü fasulyeli mısır yarması çorbası, haşlanmış kuru fasulyeyi mısır yarmasıyla bir araya getirerek koyu, sade ve kış günlerine uygun bir tencere kurar.",
+    "prepMinutes": 10,
+    "cookMinutes": 24,
+    "totalMinutes": 34,
+    "servingCount": 4,
+    "averageCalories": 186,
+    "protein": 9,
+    "carbs": 30,
+    "fat": 3,
+    "isFeatured": false,
+    "tipNote": "Mısır yarmasını önceden ıslatmak daha pürüzsüz bir kıvam verir.",
+    "servingSuggestion": "Fasulyeli mısır yarması çorbasını sıcak kaseye alıp fasulye tanelerini yüzeyde bırakın.",
+    "tags": [
+      "tek-tencere",
+      "vegan",
+      "kis-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Haşlanmış kuru fasulye",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Mısır yarması",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Nane",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "0.75 su bardağı mısır yarmasını yıkayıp süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "1 soğanı tencerede orta ateşte 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Mısır yarması ve 5 su bardağı suyu ekleyip 18 dakika kaynatın.",
+        "timerSeconds": 1080
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "1 su bardağı pişmiş fasulyeyi ekleyip 10 dakika pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yarım çay kaşığı naneyi ekleyin ve 5 dakika dinlendirin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "fasulyeli-pazi-diblesi-ordu-usulu",
+    "title": "Fasulyeli Pazı Diblesi",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Ordu fasulyeli pazı diblesi, taze fasulyeyi pazı ve pirinçle pişirerek sulu, tane tane ve kırsal bir Karadeniz tenceresi sunar.",
+    "prepMinutes": 14,
+    "cookMinutes": 24,
+    "totalMinutes": 38,
+    "servingCount": 4,
+    "averageCalories": 188,
+    "protein": 6,
+    "carbs": 27,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Pazıyı son bölümde eklemek diblenin rengini daha canlı tutar.",
+    "servingSuggestion": "Ilık servis edin, yanında sarımsaklı yoğurt ya da turşu sunun.",
+    "tags": [
+      "vegan",
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Taze fasulye",
+        "amount": "350",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pazı",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "2.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Fasulye ve pazıyı ayrı ayrı doğrayıp pirinci yıkayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Soğan ve fasulyeyi 5 dakika çevirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinci ve sıcak suyu ekleyip kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karışımı 10 dakika pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pazıyı ekleyip 5 dakika daha pişirin, yeşil yapraklar erimesin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "fatteh",
+    "title": "Fatteh",
+    "cuisine": "me",
+    "type": "KAHVALTI",
+    "description": "Şam kahvaltılarında çıtır ekmek, nohut ve sarımsaklı yoğurdun kat kat kurulduğu doyurucu tabak.",
+    "prepMinutes": 15,
+    "cookMinutes": 10,
+    "totalMinutes": 25,
+    "servingCount": 4,
+    "averageCalories": 410,
+    "protein": 16,
+    "carbs": 44,
+    "fat": 18,
+    "isFeatured": false,
+    "tipNote": "Ekmekleri servis anında ekleyin; çıtırlık yoğurt altında daha uzun kalır.",
+    "servingSuggestion": "Üzerine pul biberli tereyağı gezdirin.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "SUSAM"
+    ],
+    "ingredients": [
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pide ekmeği",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "400",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "2 pideyi küp doğrayıp 180°C fırında 8 dakika kızartın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "400 gr yoğurt, 2 yemek kaşığı tahin ve ezilmiş sarımsağı çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "400 gr nohudu küçük tencerede 5 dakika ısıtın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sıcak nohudu servis tabağına alın, üstüne kızarmış pide ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yoğurt sosunu son anda gezdirin, pide çıtırlığı kaymasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Fatteh'i 2 dakika içinde servis edin, sıcak nohut ve soğuk sos dengesi korunsun.",
+        "timerSeconds": 120
+      }
+    ]
+  },
+  {
+    "slug": "fatteh-djej",
+    "title": "Fatteh Djej",
+    "cuisine": "me",
+    "type": "YEMEK",
+    "description": "Fatteh djej, kızarmış ekmek, tavuk, nohut ve tahinli yoğurdu katmanlayarak Levant mutfağında kaşığa zengin gelen sıcak bir tabak kurar.",
+    "prepMinutes": 20,
+    "cookMinutes": 20,
+    "totalMinutes": 40,
+    "servingCount": 5,
+    "averageCalories": 348,
+    "protein": 22,
+    "carbs": 24,
+    "fat": 17,
+    "isFeatured": false,
+    "tipNote": "Ekmekleri son anda birleştirmek tabanın tamamen yumuşamasını geciktirir.",
+    "servingSuggestion": "Üstüne çam fıstığı serperek sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "SUSAM",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk göğsü",
+        "amount": "350",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pide ekmeği",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Haşlanmış nohut",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yoğurt",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tahin",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Çam fıstığı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pide ekmeğini küp kesip 180°C fırında 8 dakika kızartın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavuğu baharatlı suda 25 dakika pişirip didikleyin.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Tahinli yoğurt sosunu limon ve sarımsakla çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ekmek, nohut ve tavuğu servis kabında kat kat yerleştirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Yoğurt sosunu servis anında dökün, kızarmış ekmek yumuşamasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "fattoush",
+    "title": "Fattoush",
+    "cuisine": "me",
+    "type": "SALATA",
+    "description": "Lübnan'ın sumaklı ekmek salatası, kızarmış pita ve çıtır sebzeyle ekşi-ferah bir kase olur.",
+    "prepMinutes": 20,
+    "cookMinutes": 8,
+    "totalMinutes": 28,
+    "servingCount": 4,
+    "averageCalories": 160,
+    "protein": 4,
+    "carbs": 19,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Kızarmış pitayı servis anında ekleyin; salatanın içinde beklerse yumuşar.",
+    "servingSuggestion": "Izgara tavuk yanında servis edin.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Pita ekmeği",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Marul",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Domates",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Salatalık",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sumak",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pita ekmeğini iri parçalayın, zeytinyağı ve tuzla harmanlayıp 180°C fırında 8 dakika kızartın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sumak, limon suyu, nar ekşisi, sarımsak ve zeytinyağını 1 dakika çırpın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Marul, salatalık, domates, turp ve taze soğanı lokmalık doğrayıp geniş kaseye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Sebzeleri sosun üçte biriyle karıştırın, fazla sos pitaları yumuşatmasın diye kalanını ayırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kızarmış pitayı servis anında ekleyin, nane ve maydanozla son kez hafifçe çevirin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "fava-izmir-usulu",
+    "title": "Fava",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Fava, Ege sofralarında kuru baklanın zeytinyağıyla pürüzsüz ezildiği ve özellikle meze tabağında soğuk sunulan zarif bir İzmir klasiğidir.",
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "totalMinutes": 50,
+    "servingCount": 6,
+    "averageCalories": 168,
+    "protein": 8,
+    "carbs": 18,
+    "fat": 7,
+    "isFeatured": true,
+    "tipNote": "Baklayı tamamen yumuşatıp sıcakken çekmek daha ipeksi bir doku verir.",
+    "servingSuggestion": "Üzerine dereotu ve zeytinyağı gezdirerek soğuk servis edin.",
+    "tags": [
+      "vegan",
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Kuru iç bakla",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Dereotu",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuru iç baklayı yıkayın, soğanı iri doğrayıp baklayla birlikte tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sıcak su, zeytinyağı, şeker ve tuzu ekleyip baklayı 30 dakika yumuşayana kadar pişirin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Karışımı blenderdan geçirin, koyu olursa birkaç kaşık sıcak suyla açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon suyunu ekleyin ve favayı 20 cm genişliğinde kaba yayın, yüzeyi çatlamasın diye üstünü düzleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Oda sıcaklığına gelen favayı 30 dakika buzdolabında bekletin, dereotu ve kırmızı soğanla servis edin.",
+        "timerSeconds": 1800
+      }
+    ]
+  },
+  {
+    "slug": "fava-yunan-usulu",
+    "title": "Fava Yunan Usulü",
+    "cuisine": "gr",
+    "type": "APERATIF",
+    "description": "Santorini favası, sarı bezelyenin pürüzsüz ezmesiyle zeytinyağını öne çıkaran sade bir Yunan mezesidir.",
+    "prepMinutes": 10,
+    "cookMinutes": 40,
+    "totalMinutes": 50,
+    "servingCount": 6,
+    "averageCalories": 230,
+    "protein": 9,
+    "carbs": 28,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Bezelye tamamen yumuşayınca blender kullanmadan tel çırpıcıyla da ipeksi kıvam elde edebilirsiniz.",
+    "servingSuggestion": "Üzerine kırmızı soğan ve zeytinyağı ekleyip pita ile sunun.",
+    "tags": [
+      "vegan",
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Sarı bezelye",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "4",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Sarı bezelye ve doğranmış soğanı 4 su bardağı suda 35 dakika pişirin.",
+        "timerSeconds": 2100
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yumuşayan karışımı pürüzsüz olana kadar ezin ve kıvamı gerekirse sıcak suyla açın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Zeytinyağı ve limon suyunu ekleyip tuzunu ayarlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yunan usulü favayı oda sıcaklığında dinlendirip soğanla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "feijao-tropeiro-brezilya-usulu",
+    "title": "Feijão Tropeiro",
+    "cuisine": "br",
+    "type": "YEMEK",
+    "description": "Feijão tropeiro, fasulye ve manyok ununu tavada kavurarak Brezilya mutfağında tok ve kuru dokulu bir ana yemek oluşturur.",
+    "prepMinutes": 16,
+    "cookMinutes": 20,
+    "totalMinutes": 36,
+    "servingCount": 4,
+    "averageCalories": 298,
+    "protein": 12,
+    "carbs": 31,
+    "fat": 13,
+    "isFeatured": false,
+    "tipNote": "Manyok ununu azar azar eklemek yemeğin fazla kurumasını önler.",
+    "servingSuggestion": "Sıcak servis edin, yanında pirinç, portakal dilimleri ve lahana salatası sunun.",
+    "tags": [
+      "tek-tencere",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Haşlanmış fasulye",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Manyok unu",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Sıvı yağ",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soğanı tavada 4 dakika pişirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Yumurtayı tavaya kırıp 2 dakika karıştırarak pişirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Fasulyeyi ekleyip 5 dakika çevirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Manyok ununu azar azar serpin, karışım kuru topak olmasın diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karışımı 6 dakika kavurun ve yeşillikle servis edin.",
+        "timerSeconds": 360
+      }
+    ]
+  },
+  {
+    "slug": "feijao-tropeiro-vejetaryen-brezilya-usulu",
+    "title": "Feijão Tropeiro Vejetaryen",
+    "cuisine": "br",
+    "type": "YEMEK",
+    "description": "Feijão tropeiro vejetaryen, siyah fasulyeyi manyok unu ve otlarla buluşturarak tok, kuru dokulu ve Brezilya usulü bir baklagil yemeği çıkarır.",
+    "prepMinutes": 16,
+    "cookMinutes": 14,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 252,
+    "protein": 10,
+    "carbs": 34,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Manyok ununu son aşamada eklemek fasulyenin dağılmadan tane tane kalmasını sağlar.",
+    "servingSuggestion": "Sıcak verin, yanında pirinç, portakal dilimleri ve yeşil lahana sunun.",
+    "tags": [
+      "30-dakika-alti",
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Haşlanmış siyah fasulye",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Manyok unu",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soğanı ve biberi küçük doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Vejetaryen tropeiro için soğanı tavada 4 dakika çevirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Fasulyeyi ekleyip 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Manyok ununu ve otları karıştırın, un tavada kuru kalmasın diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karışımı 4 dakika kavurup sıcak servis edin.",
+        "timerSeconds": 240
+      }
+    ]
+  },
+  {
+    "slug": "feijoada",
+    "title": "Feijoada",
+    "cuisine": "br",
+    "type": "YEMEK",
+    "description": "Rio sofralarında siyah fasulye, dana eti ve tütsülü etler ağır ateşte koyu bir güvece dönüşür.",
+    "prepMinutes": 40,
+    "cookMinutes": 150,
+    "totalMinutes": 190,
+    "servingCount": 6,
+    "averageCalories": 590,
+    "protein": 36,
+    "carbs": 38,
+    "fat": 30,
+    "isFeatured": true,
+    "tipNote": "Fasulyeyi bir gece ıslatın; pişirme süresi kısalır ve taneler dağılmadan yumuşar.",
+    "servingSuggestion": "Pirinç pilavı, portakal dilimi ve farofa ile servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "tek-tencere"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Siyah fasulye",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Dana kuşbaşı",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Dana sucuk",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Defne yaprağı",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Siyah fasulyeyi bir gece suda bekletip süzün.",
+        "timerSeconds": 28800
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Fasulye, etler ve defne yaprağını tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Üstünü geçecek kadar su ekleyip 2 saat kısık ateşte pişirin.",
+        "timerSeconds": 7200
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Soğan ve sarımsağı ayrı tavada 6 dakika kavurun.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kavrulan karışımı tencereye ekleyip 30 dakika daha pişirin.",
+        "timerSeconds": 1800
+      }
+    ]
+  },
+  {
+    "slug": "feijoada-pirinc-koftesi-brezilya-usulu",
+    "title": "Feijoada Pirinç Köftesi",
+    "cuisine": "br",
+    "type": "APERATIF",
+    "description": "Brezilya usulü feijoada pirinç köftesi, siyah fasulye ve pirinci küçük köftelere çevirerek artan yemeği çıtır bir atıştırmalığa dönüştürür.",
+    "prepMinutes": 18,
+    "cookMinutes": 14,
+    "totalMinutes": 32,
+    "servingCount": 4,
+    "averageCalories": 246,
+    "protein": 8,
+    "carbs": 36,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Harcı 10 dakika soğutmak köftelerin tavada dağılmadan kızarmasını sağlar.",
+    "servingSuggestion": "Acı domates sosuyla sıcak servis edin.",
+    "tags": [
+      "vegan",
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Pişmiş pirinç",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Siyah fasulye",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Galeta unu",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "1",
+        "unit": "diş",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Fasulyeyi çatalla ezip pirinç, sarımsak ve maydanozla karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Galeta ununu ekleyip harcı 10 dakika soğutarak şekil almasını sağlayın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğuyan harçtan küçük köfteler yapıp yüzeylerini hafifçe bastırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Köfteleri tavada iki yüzü toplam 8-10 dakika kızarana kadar pişirin.",
+        "timerSeconds": 540
+      }
+    ]
+  },
+  {
+    "slug": "fellah-kofteli-ispanak-tavasi-mersin-usulu",
+    "title": "Fellah Köfteli Ispanak Tavası",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Mersin usulü fellah köfteli ıspanak tavası, bulgur köftelerini ıspanak ve domatesle buluşturarak ekşi, yumuşak ve kaşık isteyen bir ana yemek çıkarır.",
+    "prepMinutes": 20,
+    "cookMinutes": 18,
+    "totalMinutes": 38,
+    "servingCount": 4,
+    "averageCalories": 244,
+    "protein": 7,
+    "carbs": 36,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Köfteleri önce kısa haşlamak tavada dağılmalarını önler.",
+    "servingSuggestion": "Yanına közlenmiş sivri biber ve tuzlu yoğurtla ılık servis için tabakta düzenleyin.",
+    "tags": [
+      "tek-tencere",
+      "vejetaryen",
+      "vegan"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "İnce bulgur",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Ispanak",
+        "amount": "250",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Domates rendesi",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "2",
+        "unit": "diş",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bulgur, un ve salçayla fellah köftesi harcını yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Köftelere şekil verip 10 dakika bekletin, haşlamada çatlamasın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ispanaklı tavaya girecek köfteleri kaynar suda 5 dakika haşlayın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ispanağı sarımsaklı domates sosunda 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Köfteleri sosa alıp 8 dakika birlikte pişirin.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "fellah-kofteli-yesil-mercimek-tavasi-mersin-usulu",
+    "title": "Fellah Köfteli Yeşil Mercimek Tavası",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Mersin fellah köfteli yeşil mercimek tavası, yeşil mercimeği küçük bulgur köfteleriyle buluşturarak tok, canlı ve Akdeniz akşamına uygun bir tabak sunar.",
+    "prepMinutes": 20,
+    "cookMinutes": 18,
+    "totalMinutes": 38,
+    "servingCount": 4,
+    "averageCalories": 236,
+    "protein": 10,
+    "carbs": 34,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Köfteleri küçük yapmak tavada mercimekle daha dengeli dağılmalarını sağlar.",
+    "servingSuggestion": "Ilık servis edin, yanında limon dilimi ve yoğurtla sofraya çıkarın.",
+    "tags": [
+      "misafir-sofrasi",
+      "vegan",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Yeşil mercimek",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "İnce bulgur",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Domates salçası",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Yeşil mercimeği 15 dakika haşlayın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bulgurlu fellah köftelerini hazırlayıp küçük şekiller verin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Mercimekli tavaya girecek köfteleri kaynar suda 5 dakika haşlayın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Domatesli sosu tavada 6 dakika pişirin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Mercimek ve köfteleri sosa alıp 8 dakika birleştirin, köfteler dağılmasın.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "fellah-koftesi",
+    "title": "Fellah Köftesi",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Adana ve Mersin sofralarından ince bulgur köfteleri, sarımsaklı domates sosuyla kaplanır.",
+    "prepMinutes": 35,
+    "cookMinutes": 25,
+    "totalMinutes": 60,
+    "servingCount": 6,
+    "averageCalories": 290,
+    "protein": 7,
+    "carbs": 49,
+    "fat": 6,
+    "isFeatured": false,
+    "tipNote": "Köftelerin ortasına parmak izi bırakın; sos yüzeye daha iyi tutunur.",
+    "servingSuggestion": "Maydanoz ve limonla servis edin.",
+    "tags": [
+      "vegan",
+      "butce-dostu",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "İnce bulgur",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Domates salçası",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "4",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "İnce bulguru sıcak suyla 15 dakika bekletin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Bulgur, un, salça ve baharatı yoğurup elastik hamur yapın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Köfteleri parmakla çukur vererek şekillendirin, sos içinde tutunsun diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Köfteleri kaynar suda 10 dakika haşlayın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sarımsaklı domates sosunu 8 dakika pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Köfteleri sosla 3 dakika çevirip maydanozla servis edin.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "fellah-koftesi-mersin-usulu",
+    "title": "Mersin Fellah Köftesi",
+    "cuisine": "tr",
+    "type": "APERATIF",
+    "description": "Mersin fellah köftesi, ince bulgurdan yoğrulan minik köfteleri sarımsaklı domates sosuyla buluşturan, Akdeniz mutfağının iştah açan ana meze tabaklarından biridir.",
+    "prepMinutes": 25,
+    "cookMinutes": 15,
+    "totalMinutes": 40,
+    "servingCount": 6,
+    "averageCalories": 214,
+    "protein": 6,
+    "carbs": 34,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Köftelere başparmakla küçük çukur açmak sosun daha iyi tutunmasını sağlar.",
+    "servingSuggestion": "Üzerine maydanoz serperek ılık servis edin.",
+    "tags": [
+      "vegan",
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "İnce bulgur",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Domates püresi",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Sarımsak",
+        "amount": "3",
+        "unit": "diş",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Maydanoz",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Bulguru sıcak suyla ıslatıp unla birlikte elastik köfte harcı olana kadar yoğurun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Harcı minik toplar yapıp ortalarını parmakla hafifçe bastırarak şekillendirin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Köfteleri kaynar tuzlu suda 6 dakika yüzeye çıkana kadar haşlayın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Domates, sarımsak ve zeytinyağı sosunda köfteleri çevirip sıcak servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "fes-tavuk-tagine",
+    "title": "Fes Tavuk Tagine",
+    "cuisine": "ma",
+    "type": "YEMEK",
+    "description": "Tavuk tagine, tavuk butlarını zencefil, safran, korunmuş limon, zeytin ve ballı baharatlı sosla yavaş pişiren Fas yemeğidir.",
+    "prepMinutes": 20,
+    "cookMinutes": 85,
+    "totalMinutes": 105,
+    "servingCount": 5,
+    "averageCalories": 500,
+    "protein": 36,
+    "carbs": 38,
+    "fat": 22,
+    "isFeatured": false,
+    "tipNote": "Korunmuş limonu son yarıda eklemek acılığını sosun önüne geçirmez.",
+    "servingSuggestion": "Kuskus, nane ve limon dilimleriyle tagine kabında servis edin.",
+    "tags": [
+      "tek-tencere",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "name": "Tavuk but",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zencefil",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Safran",
+        "amount": "1",
+        "unit": "tutam",
+        "group": null
+      },
+      {
+        "name": "Korunmuş limon",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Yeşil zeytin",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Kuskus",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuk butlarını tuz, zencefil, kimyon ve karabiberle ovun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tavukları zeytinyağında her yüzü 5 dakika kızartın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğanı aynı kapta 8 dakika yumuşatın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Safranlı su, bal ve 1 su bardağı suyu ekleyip tavuğu geri koyun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tagineyi kapalı şekilde 50 dakika kısık ateşte pişirin.",
+        "timerSeconds": 3000
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Korunmuş limon ve zeytini ekleyip 15 dakika daha pişirin.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Kuskusu hazırlayıp tagine ile servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "feslegenli-karpuz-salatasi-antalya-usulu",
+    "title": "Fesleğenli Karpuz Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Antalya fesleğenli karpuz salatası, karpuzu beyaz peynir ve fesleğenle buluşturarak serin, tuzlu-tatlı dengeli bir yaz salatası yapar.",
+    "prepMinutes": 8,
+    "cookMinutes": 0,
+    "totalMinutes": 8,
+    "servingCount": 4,
+    "averageCalories": 104,
+    "protein": 4,
+    "carbs": 10,
+    "fat": 5,
+    "isFeatured": true,
+    "tipNote": "Karpuzu servis anında kesmek salatanın su bırakmasını azaltır.",
+    "servingSuggestion": "Salatayı soğuk sunun, üzerine ekstra fesleğen yaprakları serperek servis edin.",
+    "tags": [
+      "30-dakika-alti",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Karpuz",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Beyaz peynir",
+        "amount": "100",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Fesleğen",
+        "amount": "0.25",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karpuzu çekirdeklerinden ayırıp 2 cm küpler halinde kesin, fazla suyunu süzgeçte 5 dakika bekletin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Fesleğen yapraklarını yıkayıp kurulayın, iri yaprakları elinizle ikiye bölün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Beyaz peynir veya lor parçalarını soğuk tutun, sıcak karpuzla birleşirse dokusu kaymasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Limon suyu, zeytinyağı ve az tuzu 30 saniye çırpıp ince bir sos hazırlayın.",
+        "timerSeconds": 30
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karpuz, fesleğen ve peyniri tabakta katmanlayın, sosu en son gezdirip hemen sunun.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "feslegenli-limonata",
+    "title": "Fesleğenli Limonata",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Taze limon suyu ve fesleğenle hazırlanan aromatik yaz içeceği.",
+    "prepMinutes": 15,
+    "cookMinutes": 5,
+    "totalMinutes": 20,
+    "servingCount": 6,
+    "averageCalories": 65,
+    "protein": 0,
+    "carbs": 16,
+    "fat": 0,
+    "isFeatured": false,
+    "tipNote": "Fesleğeni sıcak şuruba ekleyip kısa demleyin; rengi kararmadan aroma verir.",
+    "servingSuggestion": "Buz ve limon dilimleriyle servis edin.",
+    "tags": [
+      "vegan",
+      "alkolsuz",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Fesleğen",
+        "amount": "12",
+        "unit": "yaprak",
+        "group": null
+      },
+      {
+        "name": "Buz",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Şeker ve 1 su bardağı suyu 5 dakika kaynatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Fesleğeni şuruba ekleyip 5 dakika demleyin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Şurubu limon suyu ve soğuk suyla karıştırın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "feslegenli-tavuklu-pirinc-tayland-usulu",
+    "title": "Fesleğenli Tavuklu Pirinç",
+    "cuisine": "th",
+    "type": "YEMEK",
+    "description": "Tayland usulü fesleğenli tavuklu pirinç, tavuğu fesleğen ve pirinçle buluşturarak kokulu, sulu ve hızlı bir ana yemek yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 18,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 302,
+    "protein": 23,
+    "carbs": 25,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Fesleğeni ocaktan almadan hemen önce ekleyin, yapraklar parlak ve kokulu kalır.",
+    "servingSuggestion": "Sıcak servis edin, yanında salatalık dilimleri ve lime parçaları sunun.",
+    "tags": [
+      "tek-tencere",
+      "yuksek-protein"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Tavuk göğsü",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Fesleğen",
+        "amount": "0.5",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Su",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tavuğu küçük doğrayın, pirinci yıkayıp süzün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tayland usulü pirinç için tavuğu tavada 6 dakika soteleyin.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pirinç ve sıcak suyu ekleyip kapağı kapatın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Pilavı 10 dakika pişirin, pirinç dibe tutmasın diye ateşi kısın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Fesleğeni ocaktan sonra karıştırın, kokusu uçmasın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "feta-zeytinli-yumurta-tava-yunan-usulu",
+    "title": "Feta Zeytinli Yumurta Tava",
+    "cuisine": "gr",
+    "type": "KAHVALTI",
+    "description": "Yunan usulü feta zeytinli yumurta tava, yumurtayı feta ve zeytinle buluşturarak tuzlu, sıcak ve sahil kahvaltısına uygun bir tabak yapar.",
+    "prepMinutes": 8,
+    "cookMinutes": 8,
+    "totalMinutes": 16,
+    "servingCount": 2,
+    "averageCalories": 246,
+    "protein": 11,
+    "carbs": 6,
+    "fat": 18,
+    "isFeatured": false,
+    "tipNote": "Fetayı son 2 dakikada eklemek tavada tamamen erimeden formunu korur.",
+    "servingSuggestion": "Tavayı sıcak sunun, yanında kızarmış ekmek ve birkaç domates dilimi verin.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT",
+      "YUMURTA"
+    ],
+    "ingredients": [
+      {
+        "name": "Yumurta",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Feta peyniri",
+        "amount": "100",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Zeytin",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "tatlı kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "8 zeytini dilimleyip 1 tatlı kaşığı zeytinyağıyla tavaya alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Zeytinleri orta ateşte 2 dakika ısıtın, aroması yağa geçsin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "3 yumurtayı tavaya kırıp akları yayılana kadar bekleyin, feta dibe çökmesin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "100 gr fetayı yumurtaların üstüne ufalayıp 4 dakika pişirin.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tavayı ocaktan alıp 1 dakika dinlendirin, feta tuzu yumurtaya geçsin.",
+        "timerSeconds": 60
+      }
+    ]
+  },
+  {
+    "slug": "fideua-ispanya-usulu",
+    "title": "Fideua",
+    "cuisine": "es",
+    "type": "YEMEK",
+    "description": "Fideua, kısa erişteyi deniz aromasıyla pişirerek hafif kavruk, sulu ve sahil usulü bir İspanya tavası yapar.",
+    "prepMinutes": 14,
+    "cookMinutes": 20,
+    "totalMinutes": 34,
+    "servingCount": 4,
+    "averageCalories": 286,
+    "protein": 14,
+    "carbs": 32,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Erişteyi önce kısa kavurmak, fideuanın daha tok ve aromalı olmasını sağlar.",
+    "servingSuggestion": "Limon dilimleriyle sıcak servis edin, yanında aioli ya da yeşil salata sunun.",
+    "tags": [
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DENIZ_URUNLERI"
+    ],
+    "ingredients": [
+      {
+        "name": "Kısa erişte",
+        "amount": "300",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Karides",
+        "amount": "200",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Balık suyu",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Domates püresi",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kısa erişteyi zeytinyağında 3 dakika çevirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Domatesi ekleyip 5 dakika pişirin.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sıcak balık suyunu tavaya döküp erişteyi eşit yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karidesi üstüne dizip 15 dakika pişirin, erişte karıştırılmasın.",
+        "timerSeconds": 900
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Tavayı 5 dakika dinlendirip limonla servis edin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "filmjolk-meyveli-smoothie",
+    "title": "Filmjölk Meyveli Smoothie",
+    "cuisine": "se",
+    "type": "ICECEK",
+    "description": "İskandinav fermente sütü filmjölk, orman meyvesiyle birleşince hafif ekşimsi ve serin bir kahvaltı içeceği olur.",
+    "prepMinutes": 5,
+    "cookMinutes": 0,
+    "totalMinutes": 5,
+    "servingCount": 2,
+    "averageCalories": 181,
+    "protein": 8,
+    "carbs": 26,
+    "fat": 5,
+    "isFeatured": false,
+    "tipNote": "Filmjölk yerine kefir kullanıyorsanız bal miktarını azaltın; ikisi de ekşimsi yapı verir.",
+    "servingSuggestion": "Soğuk bardakta üstüne birkaç yulaf tanesi serperek servis edin.",
+    "tags": [
+      "pratik",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT"
+    ],
+    "ingredients": [
+      {
+        "name": "Filmjölk",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Orman meyvesi",
+        "amount": "1.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Yulaf",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Tüm malzemeyi blendera alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "40 saniye pürüzsüz olana kadar çekin.",
+        "timerSeconds": 40
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Hemen servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "filmjolk-musli-kasesi-isvec-usulu",
+    "title": "Filmjölk Müslü Kasesi",
+    "cuisine": "se",
+    "type": "KAHVALTI",
+    "description": "Filmjölk müslü kasesi, ekşimsi süt ürünü ve yulafı meyveyle buluşturarak İsveç kahvaltılarında serin, hafif ve hızlı bir başlangıç sunar.",
+    "prepMinutes": 5,
+    "cookMinutes": 0,
+    "totalMinutes": 5,
+    "servingCount": 2,
+    "averageCalories": 188,
+    "protein": 7,
+    "carbs": 24,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "Müslüyü servis anında eklemek gevrekliğini korumasını sağlar.",
+    "servingSuggestion": "Soğuk kasede sunun, üstüne ekstra elma ve kavrulmuş badem ekleyin.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Filmjölk",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yulaflı müslü",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Elma",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Badem",
+        "amount": "0.25",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "1 elmayı küçük küp doğrayın, çekirdek kısmını tamamen ayırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "2 su bardağı filmjölkü soğuk kaselere eşit paylaştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "1 su bardağı müslüyü filmjölkün üstüne serpin, hemen karıştırmayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Elma ve çeyrek su bardağı bademi ekleyin, çıtırlık yumuşamasın diye hemen hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kaseleri 5 dakika soğukta bekletip servis edin.",
+        "timerSeconds": 300
+      }
+    ]
+  },
+  {
+    "slug": "filtre-kahve",
+    "title": "Filtre Kahve",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Öğütülmüş kahvenin sıcak suyla demlendiği sade filtre kahve.",
+    "prepMinutes": 3,
+    "cookMinutes": 4,
+    "totalMinutes": 7,
+    "servingCount": 2,
+    "averageCalories": 3,
+    "protein": 0,
+    "carbs": 0,
+    "fat": 0,
+    "isFeatured": true,
+    "tipNote": "Suyu kaynar halde dökmeyin; 92-96°C aralığı acılığı azaltır.",
+    "servingSuggestion": "Ön ısıtılmış kupada, yanında küçük su bardağıyla şekersiz servis edin.",
+    "tags": [
+      "vegan",
+      "alkolsuz",
+      "pratik",
+      "vejetaryen"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "name": "Filtre kahve",
+        "amount": "30",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Sıcak su",
+        "amount": "500",
+        "unit": "ml",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Filtre kağıdını sıcak suyla ıslatıp suyu dökün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Kahveyi filtreye koyup suyu dairesel hareketle dökün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kahvenin 3-4 dakika süzülmesini bekleyin.",
+        "timerSeconds": 240
+      }
+    ]
+  },
+  {
+    "slug": "findikli-ayva-muhallebisi-rize-usulu",
+    "title": "Fındıklı Ayva Muhallebisi",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Rize usulü fındıklı ayva muhallebisi, yumuşak ayvayı sütlü taban ve kavrulmuş fındıkla buluşturarak serin, zarif ve hafif bir tatlı yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 10,
+    "totalMinutes": 20,
+    "servingCount": 4,
+    "averageCalories": 218,
+    "protein": 4,
+    "carbs": 28,
+    "fat": 9,
+    "isFeatured": false,
+    "tipNote": "Ayvayı küçük küp kesmek muhallebi içinde kaşığa dengeli gelmesini sağlar.",
+    "servingSuggestion": "Soğuk servis edin, üstüne fındık serpip tarçınla tamamlayabilirsiniz.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Ayva",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Mısır nişastası",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Fındık",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ayvayı soyup küçük küp doğrayın ve limonla ovun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Ayvalı muhallebi için süt, nişasta ve şekeri soğukken çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Muhallebiyi 8 dakika karıştırarak pişirin, nişasta topak olmasın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ayva küplerini 4 dakika yumuşatın ve suyunu süzdürün.",
+        "timerSeconds": 240
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kaselere muhallebi, ayva ve fındığı paylaştırıp 40 dakika soğutun.",
+        "timerSeconds": 2400
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Ayva küplerini üstte bırakıp iri fındıkla doku verin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "findikli-elma-salatasi-sinop-usulu",
+    "title": "Fındıklı Elma Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Sinop usulü fındıklı elma salatası, ince doğranmış elmayı roka ve kavrulmuş fındıkla buluşturarak gevrek, ferah ve hafif tatlı bir tabak kurar.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "totalMinutes": 10,
+    "servingCount": 4,
+    "averageCalories": 164,
+    "protein": 3,
+    "carbs": 15,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Elmayı son anda dilimlemek salatada canlı rengin korunmasına yardım eder.",
+    "servingSuggestion": "Serin servis edin, yanında beyaz peynir ya da cevizli ekmek sunun.",
+    "tags": [
+      "vejetaryen",
+      "30-dakika-alti",
+      "yaz-tarifi",
+      "vegan"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Elma",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Roka",
+        "amount": "1",
+        "unit": "demet",
+        "group": null
+      },
+      {
+        "name": "Fındık",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Limon suyu",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Elmaları kabuklu ince dilimleyin ve kararmasın diye limonlu suyla 1 dakika harmanlayın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Fındıkları iri kırın, küçük parçalar elmanın ferahlığını bastırmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Marul veya roka yapraklarını yıkayıp kurutun, servis kasesinin tabanına yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yoğurt, bal, limon suyu ve zeytinyağını 45 saniye çırpın.",
+        "timerSeconds": 45
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Elma dilimlerini yeşillikle karıştırın, fındık ve sosu üstten ekleyip bekletmeden servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "findikli-fasulye-kavurmasi-ordu-usulu",
+    "title": "Fındıklı Fasulye Kavurması",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Ordu usulü fındıklı fasulye kavurması, haşlanmış taze fasulyeyi soğan ve kavrulmuş fındıkla çevirerek Karadeniz kokulu bir tabak yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 18,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 176,
+    "protein": 5,
+    "carbs": 16,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Fındığı son dakikada eklemek yumuşamadan kavruk aromasını korur.",
+    "servingSuggestion": "Mısır ekmeğiyle sıcak servis edin.",
+    "tags": [
+      "vegan",
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Taze fasulye",
+        "amount": "500",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Fındık",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Karabiber",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Fasulyeyi ayıklayıp kaynar suda 10 dakika haşlayın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Fasulyeyi süzüp soğuk sudan geçirin, rengi matlaşmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Soğanı zeytinyağında 5 dakika yumuşatın.",
+        "timerSeconds": 300
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Fasulye ve iri fındığı tavaya ekleyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Karışımı 4 dakika çevirip sıcak servis edin.",
+        "timerSeconds": 240
+      }
+    ]
+  },
+  {
+    "slug": "findikli-incir-kup-trabzon-usulu",
+    "title": "Fındıklı İncir Kup",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Trabzon usulü fındıklı incir kup, kuru inciri sütlü taban ve kavrulmuş fındıkla buluşturarak serin, yumuşak ve çay saatine uygun bir tatlı yapar.",
+    "prepMinutes": 10,
+    "cookMinutes": 8,
+    "totalMinutes": 18,
+    "servingCount": 4,
+    "averageCalories": 226,
+    "protein": 5,
+    "carbs": 28,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "İnciri küçük doğramak kup içinde dengeli lokmalar çıkarır.",
+    "servingSuggestion": "Soğuk servis edin, üstüne iri fındık serperek çay yanında sunun.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Kuru incir",
+        "amount": "8",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Mısır nişastası",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Fındık",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuru incirleri saplarından ayırıp küçük küpler halinde doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sütlü taban için süt, nişasta ve şekeri soğukken karıştırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sütlü tabanı 8 dakika koyulaşana kadar pişirin.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "İncirleri sıcak tabana ekleyip 1 dakika karıştırın, taneler dağılmasın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Kup bardaklarına alıp fındıkla tamamlayın ve soğutun.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "İncir parçaları üstte görünürken fındık kırığı serpin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "findikli-incir-uyutmasi-giresun-usulu",
+    "title": "Giresun Fındıklı İncir Uyutması",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Giresun fındıklı incir uyutması, sütü kuru incir ve fındıkla tatlandırarak Karadeniz'de soğuk servis edilen hafif, kaşığa yumuşak bir sütlü tatlıya dönüşür.",
+    "prepMinutes": 15,
+    "cookMinutes": 5,
+    "totalMinutes": 20,
+    "servingCount": 6,
+    "averageCalories": 168,
+    "protein": 5,
+    "carbs": 22,
+    "fat": 7,
+    "isFeatured": false,
+    "tipNote": "İnciri çok sıcak değil ılık süte eklemek tatlının daha düzgün tutmasına yardım eder.",
+    "servingSuggestion": "Üzerine iri kıyılmış fındık serperek soğuk servis edin.",
+    "tags": [
+      "vejetaryen",
+      "misafir-sofrasi"
+    ],
+    "allergens": [
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "1",
+        "unit": "lt",
+        "group": null
+      },
+      {
+        "name": "Kuru incir",
+        "amount": "10",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Fındık",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Kuru incirleri sıcak suda 10 dakika yumuşatın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Sütü yoğurt tutacak ılık sıcaklığa getirin, kaynamasına izin vermeyin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "İnciri az sütle çekip ılık süte karıştırın, enzim çalışsın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Karışımı kaselere paylaştırıp oda sıcaklığında 2 saat uyutun, incir sütü mayalasın diye sıcaklığı koruyun.",
+        "timerSeconds": 7200
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Üstüne fındık serpip buzdolabında 1 saat soğutun.",
+        "timerSeconds": 3600
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Kaseyi salladığınızda yüzey titriyorsa uyutma kıvamı oturmuştur.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "findikli-karalahana-sarmasi-giresun-usulu",
+    "title": "Giresun Fındıklı Karalahana Sarması",
+    "cuisine": "tr",
+    "type": "YEMEK",
+    "description": "Giresun fındıklı karalahana sarması, iç harca fındık ve pirinç ekleyerek yayla otunu kıvrımlı, aromatik ve tok bir sofralık hâline getirir.",
+    "prepMinutes": 28,
+    "cookMinutes": 30,
+    "totalMinutes": 58,
+    "servingCount": 5,
+    "averageCalories": 198,
+    "protein": 5,
+    "carbs": 23,
+    "fat": 10,
+    "isFeatured": false,
+    "tipNote": "Karalahanayı kısa haşlamak sararken yaprakların yırtılmasını azaltır.",
+    "servingSuggestion": "Üzerine birkaç damla limon sıkarak sıcak servis edin.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen",
+      "kis-tarifi",
+      "vegan"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Karalahana yaprağı",
+        "amount": "18",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Pirinç",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Fındık",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Kuru soğan",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "1",
+        "unit": "çay kaşığı",
+        "group": null
+      },
+      {
+        "name": "Limon",
+        "amount": "1",
+        "unit": "adet",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Karalahana yapraklarını 2 dakika haşlayıp soğuk sudan geçirin.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pirinç, soğan, fındık, yağ ve tuzla iç harcı hazırlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Yaprakların kalın damarlarını inceltin, sararken yırtılmasın diye.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Harç koyup yaprakları sıkı sarın ve tencereye dizin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Sarmaları 30 dakika pişirin.",
+        "timerSeconds": 1800
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Limon suyuyla 8 dakika dinlendirip servis edin.",
+        "timerSeconds": 480
+      }
+    ]
+  },
+  {
+    "slug": "findikli-kaygana-durumu-giresun-usulu",
+    "title": "Fındıklı Kaygana Dürümü",
+    "cuisine": "tr",
+    "type": "KAHVALTI",
+    "description": "Giresun usulü fındıklı kaygana dürümü, ince kayganayı peynir ve kırık fındıkla buluşturarak sıcak bir kahvaltı yapar.",
+    "prepMinutes": 12,
+    "cookMinutes": 10,
+    "totalMinutes": 22,
+    "servingCount": 2,
+    "averageCalories": 286,
+    "protein": 12,
+    "carbs": 21,
+    "fat": 16,
+    "isFeatured": false,
+    "tipNote": "Kayganayı tavadan alınca 1 dakika bekletmek dürüm sırasında kırılmasını azaltır.",
+    "servingSuggestion": "Fındıklı kaygana dürümünü sıkı sarıp peynirli fındık içini kesitte görünür bırakın.",
+    "tags": [
+      "30-dakika-alti",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Yumurta",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Un",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Beyaz peynir",
+        "amount": "80",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Kırık fındık",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "3 yumurta ve 3 yemek kaşığı unu pürüzsüz olana kadar çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Tereyağını tavada eritip kaygana harcını ince tabaka halinde yayın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Kayganayı ilk yüzü renk alana kadar 3 dakika pişirin.",
+        "timerSeconds": 180
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Kayganayı çevirip ikinci yüzünü 1 dakika pişirin.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Peynir ve kırık fındığı serpip dürüm yapın, dolgu dağılmasın diye sıkı sarın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "findikli-keskek-toplari-ordu-usulu",
+    "title": "Ordu Fındıklı Keşkek Topları",
+    "cuisine": "tr",
+    "type": "ATISTIRMALIK",
+    "description": "Ordu fındıklı Keşkek topları, aşurelik buğdayı fındık ve tereyağıyla yoğurarak Karadeniz'e tok, yumuşak ve paylaşmalık bir atıştırmalık çıkarır.",
+    "prepMinutes": 20,
+    "cookMinutes": 25,
+    "totalMinutes": 45,
+    "servingCount": 6,
+    "averageCalories": 176,
+    "protein": 4,
+    "carbs": 22,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Buğdayı süzdükten sonra 5 dakika dinlendirmek topların daha rahat şekil almasını sağlar.",
+    "servingSuggestion": "Ilık servis edin, yanında yoğurtlu dip ya da taze yeşillik sunun.",
+    "tags": [
+      "vejetaryen",
+      "butce-dostu"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Aşurelik buğday",
+        "amount": "1",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Fındık",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Tereyağı",
+        "amount": "20",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Tuz",
+        "amount": "0.5",
+        "unit": "çay kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Ordu Fındıklı Keşkek Topları ana malzemelerini ölçüp hazırlayın, pişecek parçaları eşit boyda doğrayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Ordu Fındıklı Keşkek Topları sosunu veya bağlayıcı harcını ayrı kapta 2 dakika pürüzsüz karıştırın.",
+        "timerSeconds": 120
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Ordu Fındıklı Keşkek Topları parçalarını harçla birleştirin ve şekil verecek kıvama gelene kadar toparlayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Ordu Fındıklı Keşkek Topları orta ateşte veya fırında dışı kızarana kadar pişsin, kalabalık pişirme yapmayın.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Ordu Fındıklı Keşkek Topları 3 dakika dinlensin; sıcak veya ılık servis edin, dokusu gevrek kalsın.",
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "slug": "findikli-laz-boregi-artvin-usulu",
+    "title": "Fındıklı Laz Böreği",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Artvin fındıklı Laz böreği, ince yufkayı muhallebi ve kavrulmuş fındıkla katlayarak çıtır yüzeyli, kremamsı ve çay saatine uygun bir tatlı yapar.",
+    "prepMinutes": 24,
+    "cookMinutes": 28,
+    "totalMinutes": 52,
+    "servingCount": 8,
+    "averageCalories": 248,
+    "protein": 5,
+    "carbs": 30,
+    "fat": 12,
+    "isFeatured": false,
+    "tipNote": "Muhallebiyi ılıtarak yaymak katların eşit kalınlıkta durmasını sağlar.",
+    "servingSuggestion": "Ilık servis edin, üstüne pudra şekeri serperek çayla birlikte sunun.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SUT",
+      "YUMURTA",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Yufka",
+        "amount": "4",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Süt",
+        "amount": "2",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Yumurta",
+        "amount": "2",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Fındık",
+        "amount": "0.75",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Şeker",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Fındıkları iri kırın ve yufka katları için kenarda bekletin.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Süt, yumurta, şeker ve nişastayı tencerede pürüzsüz çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Muhallebiyi 8 dakika pişirin, yumurta kesilmesin diye sürekli karıştırın.",
+        "timerSeconds": 480
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Yağlanmış yufka katlarına muhallebi ve fındığı yayın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Böreği 180°C fırında 28 dakika kızarana kadar pişirin.",
+        "timerSeconds": 1680
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Ilınınca pudra şekeriyle dilimleyin, muhallebi akmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Dilimleri fındık kırığıyla servis edin, iç krema akmadan tabakta kalsın.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "findikli-pancar-salatasi-ordu-usulu",
+    "title": "Ordu Fındıklı Pancar Salatası",
+    "cuisine": "tr",
+    "type": "SALATA",
+    "description": "Ordu fındıklı pancar salatası, haşlanmış pancarı fındık ve sirkeyle buluşturarak Karadeniz kıyısına toprak kokulu, keskin ve serin bir ara tabak getirir.",
+    "prepMinutes": 12,
+    "cookMinutes": 18,
+    "totalMinutes": 30,
+    "servingCount": 4,
+    "averageCalories": 126,
+    "protein": 3,
+    "carbs": 11,
+    "fat": 8,
+    "isFeatured": false,
+    "tipNote": "Pancarı tamamen soğuttuktan sonra doğramak salatanın daha temiz ve parlak kalmasını sağlar.",
+    "servingSuggestion": "Soğuk servis edin, üstüne dereotu serpip ekşi mayalı ekmekle sunun.",
+    "tags": [
+      "vegan",
+      "yaz-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Pancar",
+        "amount": "3",
+        "unit": "adet",
+        "group": null
+      },
+      {
+        "name": "Fındık",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Elma sirkesi",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Zeytinyağı",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pancarları kabuklarıyla 25 dakika haşlayın, bıçak zorlanmadan girince sudan alın.",
+        "timerSeconds": 1500
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Pancarları soğutup kabuklarını soyun, iri rendeleyin ve fazla suyunu hafifçe süzdürün.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Süzme yoğurt, sarımsak, tuz ve zeytinyağını 1 dakika çırpın.",
+        "timerSeconds": 60
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Rendelenmiş pancarı yoğurtlu sosla karıştırın, renk eşit dağılana kadar spatula kullanın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Fındığı iri kırıp üstüne serpin, yağını salmasın diye servis öncesi ekleyin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "findikli-sicak-cikolata",
+    "title": "Fındıklı Sıcak Çikolata",
+    "cuisine": "tr",
+    "type": "ICECEK",
+    "description": "Fındıklı sıcak çikolata, fındık ezmesiyle derinleşen kakao tadı sayesinde tatlı ihtiyacını tek fincanda karşılar.",
+    "prepMinutes": 5,
+    "cookMinutes": 7,
+    "totalMinutes": 12,
+    "servingCount": 2,
+    "averageCalories": 262,
+    "protein": 8,
+    "carbs": 22,
+    "fat": 16,
+    "isFeatured": false,
+    "tipNote": "Fındık ezmesini küçük miktar sütle açmak, içeceğe daha homojen yayılmasını sağlar.",
+    "servingSuggestion": "Üzerine çekilmiş fındık serperek sıcak servis edin.",
+    "tags": [
+      "alkolsuz",
+      "kis-tarifi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "400",
+        "unit": "ml",
+        "group": null
+      },
+      {
+        "name": "Bitter çikolata",
+        "amount": "70",
+        "unit": "gr",
+        "group": null
+      },
+      {
+        "name": "Fındık ezmesi",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Çekilmiş fındık",
+        "amount": "1",
+        "unit": "yemek kaşığı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Sütü küçük tencereye alın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Çikolata ve fındık ezmesini ekleyip 6 dakika karıştırın.",
+        "timerSeconds": 360
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "İçeceği fincanlara alıp çekilmiş fındıkla servis edin.",
+        "timerSeconds": null
+      }
+    ]
+  },
+  {
+    "slug": "findikli-sutlu-puding-kasesi-trabzon-usulu",
+    "title": "Fındıklı Sütlü Puding Kasesi",
+    "cuisine": "tr",
+    "type": "TATLI",
+    "description": "Trabzon usulü fındıklı sütlü puding kasesi, sütlü tabanı kavrulmuş fındık ve bal ile buluşturarak yumuşak, tok ve çay saatine uygun bir tatlı çıkarır.",
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "totalMinutes": 22,
+    "servingCount": 4,
+    "averageCalories": 228,
+    "protein": 5,
+    "carbs": 26,
+    "fat": 11,
+    "isFeatured": false,
+    "tipNote": "Fındığı servis öncesi serpmek kasenin üstünde diri bir doku bırakır.",
+    "servingSuggestion": "Soğuk servis edin, üstüne bal gezdirip iri fındık serperek sunun.",
+    "tags": [
+      "misafir-sofrasi",
+      "vejetaryen"
+    ],
+    "allergens": [
+      "SUT",
+      "KUSUYEMIS"
+    ],
+    "ingredients": [
+      {
+        "name": "Süt",
+        "amount": "3",
+        "unit": "su bardağı",
+        "group": null
+      },
+      {
+        "name": "Mısır nişastası",
+        "amount": "3",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Bal",
+        "amount": "2",
+        "unit": "yemek kaşığı",
+        "group": null
+      },
+      {
+        "name": "Fındık",
+        "amount": "0.5",
+        "unit": "su bardağı",
+        "group": null
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Fındıkları iri parçalar halinde kırıp servis için ayırın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Fındıklı puding tabanı için süt, nişasta ve şekeri soğukken çırpın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pudingi 10 dakika koyulaşana kadar pişirin.",
+        "timerSeconds": 600
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Balı ocaktan aldıktan sonra ekleyin, aroması uçmasın.",
+        "timerSeconds": null
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Trabzon pudingini kaselere paylaştırıp fındıkla süsleyin ve 45 dakika soğutun.",
+        "timerSeconds": 2700
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Servisten önce üstüne ince bal çizgisi çekin, puding yüzeyi boş kalmasın.",
+        "timerSeconds": null
+      }
+    ]
+  }
+]

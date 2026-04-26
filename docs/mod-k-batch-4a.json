@@ -1,0 +1,837 @@
+[
+  {
+    "slug": "biberiyeli-tavuklu-firik-pilavi-mersin-usulu",
+    "verdict": "PASS",
+    "reason": "Firik pilavında firik, tavuk ve sıcak su oranı makul; kısa sote, kapaklı pişirme ve demleme adımları pilav tekniğiyle uyumlu.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/firik-pilavi-tarifi/",
+      "https://www.yemek.com/tarif/firik-pilavi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "biberli-bulgur-omleti-adana-usulu",
+    "verdict": "PASS",
+    "reason": "Bulgurun ön ıslatılması, yumurtayla tavada pişirme süresi, alerjenler ve 30 dakika altı etiketi mevcut içerikle tutarlı.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/bulgurlu-omlet/",
+      "https://www.yemek.com/tarif/bulgurlu-omlet/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "biberli-cevizli-ekmek-asi-hatay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3: 'kısa süre' ifadesi somut süre vermiyor; Mod K step süresi kontrolünde belirsiz kalıyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 3,
+          "instruction": "Cevizi iri çekip sosa katın ve 2 dakika kaynatarak lezzeti yoğunlaştırın.",
+          "timerSeconds": 120
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bahcehobim.com/biberli-ekmek-tarifi/",
+      "https://www.karaca.com/blog/hatay-usulu-yumusacik-cevizli-ve-biberli-ekmek-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Malzeme kompozisyonu ekmek, biber salçası ve ceviz çizgisine uyuyor; yalnız pişirme adımındaki süre belirsizliği düzeltilmeli."
+  },
+  {
+    "slug": "biberli-ekmek-antakya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3: çörek otu kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Çörek otu",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/antakya-usulu-biberli-ekmek/6099",
+      "https://www.bahcehobim.com/biberli-ekmek-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Antakya biberli ekmekte çökelek, biber salçası, susam ve çörek otu olağan; tarifte kullanılan çörek otu listede eksik."
+  },
+  {
+    "slug": "biberli-ekmek-hatay-usulu",
+    "verdict": "PASS",
+    "reason": "Hatay biberli ekmek için hamur, biber salçası, soğan, susam ve zeytinyağı uyumlu; vegan ve alerjen etiketleri doğru.",
+    "sources": [
+      "https://ye-mek.net/story/biberli-ekmek",
+      "https://www.bahcehobim.com/biberli-ekmek-tarifi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "biberli-katik-pidesi-adiyaman-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step'lerde maya, biber salçası ve susam geçiyor ama listede yok",
+      "allergen: susam eklendiğinde SUSAM alerjeni de eklenmeli"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Kuru maya",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        },
+        {
+          "name": "Biber salçası",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Susam",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        }
+      ],
+      "allergens_add": [
+        "SUSAM"
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/antakya-usulu-biberli-ekmek/6099",
+      "https://ye-mek.net/story/biberli-ekmek"
+    ],
+    "confidence": "medium",
+    "reason": "Biberli pide harcı salça ve susamla kuruluyor; mevcut step'ler bu malzemeleri kullanıyor ama ingredient ve alerjen listesi eksik."
+  },
+  {
+    "slug": "biberli-lorlu-yufka-osmaniye-usulu",
+    "verdict": "PASS",
+    "reason": "Yufka, lor, biber ve kısa tava pişirmesi börek tarzı atıştırmalık için makul; süt ve gluten alerjenleri doğru.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/lorlu-yufka-boregi/",
+      "https://www.yemek.com/tarif/lorlu-borek/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "biberli-peynirli-borek-osmaniye-usulu",
+    "verdict": "PASS",
+    "reason": "Yufka, peynir, biber ve yumurtalı üst katmanı fırın böreğiyle uyumlu; süre, porsiyon ve alerjenler makul görünüyor.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/peynirli-borek-tarifi/",
+      "https://www.yemek.com/tarif/peynirli-borek/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "biberli-tavuk-guvec-adana-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step'lerde soğan, salça, tuz ve pul biber kullanılıyor ama listede yok",
+      "cookMinutes: 650 g tavuk kalça ve güveç için 20 dakika düşük; dinlenmeyle birlikte totalMinutes da eksik kalıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Soğan",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Domates salçası",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Pul biber",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "cookMinutes": 35,
+      "totalMinutes": 57,
+      "steps_replace": [
+        {
+          "stepNumber": 4,
+          "instruction": "Güveci 200°C fırında 35 dakika tavuk tamamen yumuşayana kadar pişirin.",
+          "timerSeconds": 2100
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/tavuk-guvec-tarifi/",
+      "https://www.yemek.com/tarif/tavuk-guvec/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk güveçte soğan ve salça temel harçta yer alır; mevcut step'ler eksik malzeme kullanıyor ve fırın süresi kısa kalıyor."
+  },
+  {
+    "slug": "biberli-tavuk-pirinc-tava-ispanyol-usulu",
+    "verdict": "PASS",
+    "reason": "Tavuk, pirinç, biber ve safranlı tek tava kurgusu İspanyol pilav tavalarına benziyor; süre ve makrolar makul.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/chicken-paella",
+      "https://www.seriouseats.com/paella-mixta-chicken-seafood-recipe"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "biberli-yumurta-katmeri-gaziantep-usulu",
+    "verdict": "PASS",
+    "reason": "Unlu katmer hamuru, tereyağı ve yumurtalı harç uyumlu; vejetaryen, gluten, süt ve yumurta alerjenleri doğru.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/katmer-tarifi/",
+      "https://www.yemek.com/tarif/katmer/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "biberli-zeytinli-ekmek-hatay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step'lerde maya, zeytinyağı ve kekik kullanılıyor ama listede yok",
+      "ingredients: listede zeytin ezmesi var, step doğranmış zeytin kullanıyor; malzeme adı tutarsız"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Kuru maya",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        },
+        {
+          "name": "Zeytinyağı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Kekik",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "ingredients_amount_change": [
+        {
+          "name": "Zeytin ezmesi",
+          "newAmount": "0.5",
+          "newUnit": "su bardağı"
+        }
+      ]
+    },
+    "sources": [
+      "https://ye-mek.net/story/biberli-ekmek",
+      "https://www.karaca.com/blog/hatay-usulu-yumusacik-cevizli-ve-biberli-ekmek-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Biberli ekmek harcında yağ, maya ve kekik beklenir; mevcut adımlar listede olmayan malzemelere dayanıyor."
+  },
+  {
+    "slug": "biberli-zeytinli-empanada-kuba-usulu",
+    "verdict": "PASS",
+    "reason": "Empanada hamuru, zeytin, peynir ve yumurta sarısı fırınlaması tutarlı; alerjen ve vejetaryen etiketi mevcut içerikle uyumlu.",
+    "sources": [
+      "https://www.allrecipes.com/recipe/215231/empanadas/",
+      "https://www.seriouseats.com/beef-empanadas-recipe"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "bibimbap",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: servis step'inde gochujang geçiyor ama ingredient listesinde yok",
+      "ingredients: step 2 kabak örneği veriyor ama listede kabak yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Gochujang",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Kabak",
+          "amount": "1",
+          "unit": "adet"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.koreanbapsang.com/2015/01/bibimbap.html",
+      "https://www.bonappetit.com/recipe/bibimbap"
+    ],
+    "confidence": "high",
+    "reason": "Bibimbap pirinç, sebze, et, yumurta ve gochujang ile servis edilir; tarif step'inde geçen iki öğe ingredient listesinde eksik."
+  },
+  {
+    "slug": "bici-bici",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step'lerde 2 saat soğutma var ama toplam süre 30 dakika görünüyor",
+      "tags: 30-dakika-alti etiketi 2 saatlik soğutma nedeniyle yanıltıcı"
+    ],
+    "corrections": {
+      "totalMinutes": 150,
+      "tags_remove": [
+        "30-dakika-alti"
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/bici-bici-tarifi/",
+      "https://www.yemek.com/tarif/bici-bici/"
+    ],
+    "confidence": "high",
+    "reason": "Bici bici tabanı soğutularak kesilir; mevcut 2 saatlik bekleme toplam süreye yansımadığı için süre etiketi yanlış."
+  },
+  {
+    "slug": "bilecik-buzme-tatlisi-cevizli",
+    "verdict": "CORRECTION",
+    "issues": [
+      "allergen: yöresel kaynaklarda susam da kullanılıyor; mevcut listede susam yok",
+      "allergen: susam eklenirse SUSAM alerjeni de eklenmeli"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Susam",
+          "amount": "0.5",
+          "unit": "su bardağı"
+        }
+      ],
+      "allergens_add": [
+        "SUSAM"
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/bilecik/neyenir/cevizli-buzme-tatlisi",
+      "https://turkiye.influence.cool/tr/bilecik/bozuyuk/yerel-lezzetler/buzme-tatlisi/"
+    ],
+    "confidence": "high",
+    "reason": "Bilecik cevizli büzme tatlısı kaynaklarında susam açıkça yer alıyor; mevcut tarif cevizli kısmı doğru ama susamı atlamış."
+  },
+  {
+    "slug": "bilecik-erikli-nohut-yahnisi",
+    "verdict": "PASS",
+    "reason": "Nohut, kuru erik, soğan ve salçalı yahni kurgusu tutarlı; vegan, tek tencere ve makro değerleri içerikle uyumlu.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/erikli-nohut-yahnisi/",
+      "https://www.yemek.com/tarif/erikli-nohut-yahnisi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "bilecik-nohutlu-manti-firin",
+    "verdict": "PASS",
+    "reason": "Nohutlu mantı için hamur, nohut içi, fırında kızartma, tavuk suyu ve sarımsaklı yoğurt kaynaklarla uyumlu.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/bilecik/neyenir/nohutlu-manti",
+      "https://www.e-sehir.com/yemek_tarifleri/nohutlu-manti-bilecik-tarifi.html"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "bingol-mastuva-yogurtlu",
+    "verdict": "PASS",
+    "reason": "Mastuva pirinç, yoğurt, su ve tereyağıyla yapılır; sürekli karıştırma ve sıcak servis adımları yöresel tarifle uyumlu.",
+    "sources": [
+      "https://www.sahrapsoysal.com/mastuva-tarifi-t-5423",
+      "https://www.kulturportali.gov.tr/turkiye/bingol/neyenir/mastuva"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "bingol-sorina-pel-yogurtlu",
+    "verdict": "PASS",
+    "reason": "Sorina pel yufka, sarımsaklı yoğurt ve tereyağıyla hazırlanır; tarifin yufka dizme ve yoğurtlama akışı kaynaklarla uyumlu.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/bingol/neyenir/sorina-pel",
+      "https://www.e-sehir.com/yemek_tarifleri/sorina-pel-bingol-tarifi.html"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "birria-de-res",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step'lerde sarımsak, defne ve su kullanılıyor ama listede yok",
+      "ingredients: birria sosunda sirke veya asit eksik, kaynaklardaki adobo dengesini zayıflatıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Sarımsak",
+          "amount": "4",
+          "unit": "diş"
+        },
+        {
+          "name": "Defne yaprağı",
+          "amount": "2",
+          "unit": "adet"
+        },
+        {
+          "name": "Elma sirkesi",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Su",
+          "amount": "4",
+          "unit": "su bardağı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.allrecipes.com/recipe/265338/birria-de-res-tacos-beef-birria-tacos/",
+      "https://platinumcookware.com/blogs/recipes/birria-de-res-con-chile-ancho-y-guajillo"
+    ],
+    "confidence": "high",
+    "reason": "Birria de res adobo sosunda kuru biber, sarımsak, baharat ve asit beklenir; tarifin adımları listede olmayan temel öğeleri kullanıyor."
+  },
+  {
+    "slug": "biscuit-gravy-tepsi-amerikan-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "ingredients: step 1 kahvaltılık sosis kullanıyor ama ingredient listesinde sosis yok",
+      "tags: vejetaryen etiketi sosisli gravy nedeniyle yanlış"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Kahvaltılık sosis",
+          "amount": "250",
+          "unit": "gr"
+        }
+      ],
+      "tags_remove": [
+        "vejetaryen"
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/biscuits-with-sausage-gravy",
+      "https://www.epicurious.com/recipes/food/views/biscuits-and-gravy"
+    ],
+    "confidence": "high",
+    "reason": "Biscuits and gravy klasik olarak sosisli sütlü gravy ile yapılır; tarif sosis pişiriyor ama listede yok ve vejetaryen etiketi yanıltıcı."
+  },
+  {
+    "slug": "biscuits-and-gravy",
+    "verdict": "PASS",
+    "reason": "Sosis, un, süt ve bisküvi ekmeği kompozisyonu Güney ABD kahvaltısıyla uyumlu; süre, alerjen ve kış etiketi makul.",
+    "sources": [
+      "https://www.bonappetit.com/recipe/biscuits-with-sausage-gravy",
+      "https://www.epicurious.com/recipes/food/views/biscuits-and-gravy"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "bissara",
+    "verdict": "PASS",
+    "reason": "Kuru bakla, sarımsak, kimyon ve zeytinyağı Fas bissara tarifinin temelini karşılıyor; vegan ve bütçe dostu etiketler doğru.",
+    "sources": [
+      "https://www.moroccoworldnews.com/2012/11/148356/moroccan-cuisine-a-recipe-for-bissara-dried-fava-beans-soup/",
+      "https://cookonloop.com/recipe/moroccan-bissara-with-fava-beans"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "bitlis-buryan-corbasi",
+    "verdict": "PASS",
+    "reason": "Kuzu eti, et suyu ve pirinçle kurulan çorba akışı makul; yüksek protein etiketi ve alerjen boşluğu içerikle uyumlu.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/bitlis/neyenir/buryan",
+      "https://www.nefisyemektarifleri.com/bitlis-buryan-kebabi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "bitlis-buryan-pilav",
+    "verdict": "PASS",
+    "reason": "Uzun pişmiş kuzu, et suyu, pirinç pilavı ve lavaş servisi Bitlis büryan bağlamına uyuyor; süre ve makrolar makul.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/bitlis/neyenir/buryan",
+      "https://www.nefisyemektarifleri.com/bitlis-buryan-kebabi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "bitlis-gari-asi-corbasi",
+    "verdict": "PASS",
+    "reason": "Ispanak, aşurelik buğday, sumak, un ve tereyağı dizilimi gari aşı çorbası kaynaklarıyla uyumlu; alerjenler doğru.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/bitlis/neyenir/gari-asi",
+      "https://www.nefisyemektarifleri.com/gari-asi-corbasi-bitlis/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "blabarssoppa-isvec-usulu",
+    "verdict": "PASS",
+    "reason": "Yaban mersini, su, şeker ve nişastayla hafif koyulaştırılan İsveç içeceği kaynaklarla uyumlu; vegan ve alkolsüz etiket doğru.",
+    "sources": [
+      "https://www.swedishfood.com/desserts/blueberry-soup",
+      "https://en.wikipedia.org/wiki/Bl%C3%A5b%C3%A4rssoppa"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "black-bean-soup",
+    "verdict": "PASS",
+    "reason": "Siyah fasulye, soğan, sarımsak ve sebze suyuyla kurulan çorba Küba tarzı siyah fasulye çorbasıyla uyumlu.",
+    "sources": [
+      "https://www.allrecipes.com/recipe/13965/black-bean-soup/",
+      "https://www.simplyrecipes.com/recipes/black_bean_soup/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "blackcurrant-fool-ingiliz-usulu",
+    "verdict": "PASS",
+    "reason": "Fool tekniğinde meyve püresi pişirilip soğutulur ve kremaya katlanır; süre, süt alerjeni ve vejetaryen etiketi tutarlı.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/collection/blackcurrant-recipes",
+      "https://www.deliaonline.com/recipes/main-ingredient/blackcurrants/blackcurrant-fool"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "blini",
+    "verdict": "PASS",
+    "reason": "Un, süt, yumurta ve tereyağıyla ince tavada pişen blini tarifi Rus pancake çizgisine uyuyor; alerjenler eksiksiz.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Blini",
+      "https://www.bbcgoodfood.com/recipes/blinis"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "bloody-mary",
+    "verdict": "PASS",
+    "reason": "Votka, domates suyu, limon, acı sos ve kereviz tuzu klasik Bloody Mary ile uyumlu; alkol ve kereviz alerjeni doğru.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Bloody_Mary_%28cocktail%29",
+      "https://www.barschool.net/recipes/bloody-mary"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "blueberry-cheesecake-jar-amerikan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 eritilmiş tereyağı kullanıyor ama listede yok",
+      "totalMinutes: 2 saat soğutma toplam süreye dahil edilmemiş",
+      "tags: 30-dakika-alti etiketi soğutma süresi nedeniyle yanıltıcı"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Tereyağı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "totalMinutes": 132,
+      "tags_remove": [
+        "30-dakika-alti"
+      ]
+    },
+    "sources": [
+      "https://www.wellbeing.com.au/recipes/blueberry-cheesecake-jars.html",
+      "https://www.keyingredient.com/recipes/1224785032/blueberry-cheesecake-jars/"
+    ],
+    "confidence": "high",
+    "reason": "Kavanoz cheesecake tabanı yağla bağlanır ve soğutularak oturur; mevcut tarif tereyağını ve iki saatlik beklemeyi kaçırmış."
+  },
+  {
+    "slug": "blueberry-oat-kup-amerikan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step'lerde 20 dakika dinlendirme ve 10 dakika soğutma var ama toplam süre 8 dakika",
+      "tags: 30-dakika-alti etiketi toplam 38 dakikaya çıkan akışla uyumsuz"
+    ],
+    "corrections": {
+      "totalMinutes": 38,
+      "tags_remove": [
+        "30-dakika-alti"
+      ]
+    },
+    "sources": [
+      "https://www.eatingwell.com/recipe/260987/blueberry-almond-overnight-oats/",
+      "https://www.bbcgoodfood.com/recipes/overnight-oats"
+    ],
+    "confidence": "high",
+    "reason": "Yulaflı kup bekletilerek yumuşuyor; adımlardaki toplam 30 dakikalık bekleme süre alanına yansımamış."
+  },
+  {
+    "slug": "bo-kho",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step'lerde beş baharat, sarımsak, limon otu, su, kişniş ve lime geçiyor ama listede yok",
+      "allergen: soya sosu kullanıldığı için SOYA doğru, ama kaynaklarda balık sosu yaygın olsa da mevcut tarifte listelenmemiş"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Limon otu",
+          "amount": "1",
+          "unit": "sap"
+        },
+        {
+          "name": "Sarımsak",
+          "amount": "3",
+          "unit": "diş"
+        },
+        {
+          "name": "Beş baharat",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Su",
+          "amount": "3",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Kişniş",
+          "amount": "0.25",
+          "unit": "demet"
+        },
+        {
+          "name": "Lime",
+          "amount": "1",
+          "unit": "adet"
+        }
+      ]
+    },
+    "sources": [
+      "https://nourishedkitchen.com/vietnamese-style-beef-stew-bo-kho/",
+      "https://everydaygourmet.tv/recipes/bo-kho-vietnamese-beef-stew"
+    ],
+    "confidence": "high",
+    "reason": "Bo kho limon otu, sarımsak, baharat, havuç ve uzun pişen dana yahnisi olarak tutarlı; yalnız step'lerdeki öğeler listede eksik."
+  },
+  {
+    "slug": "bo-la-lot-limonotlu-vietnam-usulu",
+    "verdict": "PASS",
+    "reason": "Dana kıyma, lá lốt yaprağı, limon otu, balık sosu ve kısa ızgara akışı Vietnam bò lá lốt tarifleriyle uyumlu.",
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/grilled-beef-wrapped-in-sesame-leaves-bo-la-lot",
+      "https://www.foodandwine.com/travel/9-must-try-dishes-vietnam"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "bo-la-lot-vietnam-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "ingredients: asma yaprağı yazılı ama bò lá lốt geleneksel olarak lá lốt yaprağıyla yapılır",
+      "ingredients: step'lerde balık sosu kullanılıyor ama listede yok",
+      "allergen: balık sosu eklendiğinde DENIZ_URUNLERI alerjeni de eklenmeli"
+    ],
+    "corrections": {
+      "ingredients_amount_change": [
+        {
+          "name": "Asma yaprağı",
+          "newAmount": "20",
+          "newUnit": "adet lá lốt yaprağı"
+        }
+      ],
+      "ingredients_add": [
+        {
+          "name": "Balık sosu",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "allergens_add": [
+        "DENIZ_URUNLERI"
+      ]
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/grilled-beef-wrapped-in-sesame-leaves-bo-la-lot",
+      "https://www.foodandwine.com/travel/9-must-try-dishes-vietnam"
+    ],
+    "confidence": "high",
+    "reason": "Yaprak türü tarifin kimliğini değiştiriyor; lá lốt yerine asma yaprağı yazılması ve balık sosunun eksik olması yanıltıcı."
+  },
+  {
+    "slug": "bo-luc-lac",
+    "verdict": "PASS",
+    "reason": "Dana küplerin soya ve sarımsakla marine edilip çok sıcak tavada çevrilmesi shaking beef tekniğiyle uyumlu; SOYA alerjeni doğru.",
+    "sources": [
+      "https://www.chilipeppermadness.com/recipes/bo-luc-lac/",
+      "https://www.foodandwine.com/cooking-techniques/shaking-beef-recipe-andrea-nguyen-fw-cooks"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "bo-ne-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "tags: totalMinutes 32 dakika olduğu için 30-dakika-alti etiketi yanlış"
+    ],
+    "corrections": {
+      "tags_remove": [
+        "30-dakika-alti"
+      ]
+    },
+    "sources": [
+      "https://www.vickypham.com/blog/vietnamese-sizzling-steak-and-eggs-bo-ne",
+      "https://www.hungryhuy.com/bo-ne/"
+    ],
+    "confidence": "high",
+    "reason": "Bò né et, yumurta ve bagetle servis edilen sıcak tava kahvaltısına uyuyor; tek net hata 32 dakikalık tarifteki 30 dakika etiketi."
+  },
+  {
+    "slug": "bobo-de-camarao",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "cuisine: input cuisine 'tr' görünüyor ama bobó de camarão Brezilya mutfağına aittir",
+      "ingredients: step'lerde soğan ve biber kullanılıyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Soğan",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Biber",
+          "amount": "1",
+          "unit": "adet"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.oliviascuisine.com/bobo-de-camarao/",
+      "https://www.tudogostoso.com.br/receita/1198-bobo-de-camarao.html"
+    ],
+    "confidence": "high",
+    "reason": "Bobó de camarão Brezilya karides ve manyok yemeğidir; mutfak alanı yanlış, ayrıca kullanılan soğan ve biber listede eksik."
+  },
+  {
+    "slug": "bodrum-cokertme-kebabi",
+    "verdict": "PASS",
+    "reason": "İnce et, çıtır patates, sarımsaklı yoğurt ve domates sosu Bodrum çökertme kebabı kaynaklarıyla uyumlu; süt alerjeni doğru.",
+    "sources": [
+      "https://www.gurmerehberi.com/tarifler/cokertme-kebabi/",
+      "https://www.kirazinmutfagi.com.tr/tarif/cokertme-kebabi-bodrum-mugla"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "boeuf-bourguignon",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "cuisine: input cuisine 'me' görünüyor ama boeuf bourguignon Fransız mutfağına aittir"
+    ],
+    "corrections": {
+      "description": "Boeuf bourguignon, Burgonya'nın kırmızı şarapta pişen dana yahnisi; mantar ve arpacık soğanla zenginleşir."
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/boeuf-bourguignon",
+      "https://www.seriouseats.com/boeuf-bourguignon-beef-burgundy-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Tarifin içerik ve yöntem kısmı makul, ancak mutfak kodu yemeğin kökeniyle çelişiyor; apply şeması cuisine alanını desteklemiyor."
+  },
+  {
+    "slug": "bogurtlen-kefir-smoothie",
+    "verdict": "PASS",
+    "reason": "Böğürtlen, kefir, muz ve baldan oluşan smoothie akışı tutarlı; süt alerjeni ve vejetaryen etiketi doğru, vegan etiketi yok.",
+    "sources": [
+      "https://www.eatingwell.com/recipe/252630/berry-kefir-smoothie/",
+      "https://www.allrecipes.com/recipe/215189/fruit-and-yogurt-smoothie/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "bogurtlenli-chia-smoothie",
+    "verdict": "PASS",
+    "reason": "Yoğurt, böğürtlen, chia ve bal bileşimi smoothie için makul; 5 dakikalık chia bekletme ve süt alerjeni doğru.",
+    "sources": [
+      "https://www.eatingwell.com/recipe/255705/berry-chia-smoothie/",
+      "https://www.bbcgoodfood.com/recipes/chia-berry-smoothie"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "bolo-de-fuba-brezilya-usulu",
+    "verdict": "PASS",
+    "reason": "Mısır unu, un, süt, yumurta, şeker ve kabartma tozu Brezilya bolo de fubá tarifleriyle uyumlu; alerjenler doğru.",
+    "sources": [
+      "https://www.goya.com/en/recipes/brazilian-cornmeal-cake",
+      "https://www.oliviascuisine.com/bolo-de-fuba/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "bolonya-lazanya-ragu",
+    "verdict": "PASS",
+    "reason": "Ragu, beşamel, lazanya yaprağı ve parmesan katmanları Bologna tarzı lazanyayla uyumlu; süre ve alerjenler makul.",
+    "sources": [
+      "https://www.giallozafferano.com/recipes/Lasagne-alla-Bolognese.html",
+      "https://www.bbcgoodfood.com/recipes/classic-lasagne"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "bolu-kaldirik-kavurmasi-yumurtali",
+    "verdict": "PASS",
+    "reason": "Kaldırık otunun haşlanıp soğanla kavrulması ve yumurtayla bağlanması Karadeniz-Bolu ot kavurması mantığıyla uyumlu.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kaldirik-kavurmasi/",
+      "https://www.yemek.com/tarif/kaldirik-kavurmasi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "bolu-kizilcikli-tarhana-corbasi",
+    "verdict": "PASS",
+    "reason": "Tarhana, yoğurt, kızılcık ekşisi ve naneli tereyağı kış çorbası kurgusuyla tutarlı; gluten ve süt alerjenleri doğru.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/tarhana-corbasi-tarifi/",
+      "https://www.yemek.com/tarif/tarhana-corbasi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "bolu-mengen-corbasi-bulgurlu",
+    "verdict": "PASS",
+    "reason": "Bulgur, soğan, un, salça ve et suyu Mengen çorbası kaynaklarıyla uyumlu; gluten alerjeni ve süre makul.",
+    "sources": [
+      "https://ye-mek.net/tarif/mengen-corbasi",
+      "https://kisikates.org/tarif/mengen-corbasi-tarifi-189"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "bolu-mengen-mantarli-et-sote",
+    "verdict": "CORRECTION",
+    "issues": [
+      "tags: totalMinutes 50 dakika olduğu için 30-dakika-alti etiketi yanlış"
+    ],
+    "corrections": {
+      "tags_remove": [
+        "30-dakika-alti"
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/mantarli-et-sote/",
+      "https://www.yemek.com/tarif/mantarli-et-sote/"
+    ],
+    "confidence": "high",
+    "reason": "Et, mantar, domates ve biberli sote kurgusu makul; tek açık hata 50 dakikalık toplam sürede 30 dakika altı etiketi."
+  }
+]

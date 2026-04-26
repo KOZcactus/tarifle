@@ -5,30 +5,42 @@ Toplam entry: 50
 
 ## Ozet (verdict)
 
-- PASS: **36** (72.0%)
-- CORRECTION: 14 (28.0%)
-- MAJOR_ISSUE: 0 (0.0%)
+- PASS: **23** (46.0%)
+- CORRECTION: 26 (52.0%)
+- MAJOR_ISSUE: 1 (2.0%)
 
 ## Confidence
 
-- high: 37, medium: 13, low: 0
+- high: 41, medium: 9, low: 0
 
 ## Format integrity
 
 - Apply'a hazir (clean format): **50**
 - BLOCKED (format issue): 0
 
+## MAJOR_ISSUE (manuel review zorunlu)
+
+### `berlin-currywurst-tabagi`
+
+**Reason**: Currywurst sosisli bir yemektir. Bratwurst içeren mevcut tarifte vegan ve vejetaryen tag'leri ciddi biçimde yanıltıcıdır.
+
+**Issues**:
+- tags: bratwurst içeren tarif vegan ve vejetaryen olamaz
+- description: sokak klasiği anlatımı doğru olsa da tag'ler kullanıcıyı yanıltır
+
+**Corrections** (sample):
+
 ## CORRECTION sample (ilk 10)
 
 | Slug | Conf | Issues count | Corrections fields |
 |---|---|---:|---|
-| `baharatli-yumurta-ekmegi-hindistan-usulu` | medium | 1 | ingredients_add |
-| `bakewell-tart-ingiliz-usulu` | high | 1 | averageCalories, protein, carbs, fat |
-| `bal-kabakli-eriste-tava-malatya-usulu` | medium | 2 | ingredients_add, allergens_add |
-| `bal-katli-medovik-kup-rus-usulu` | high | 2 | totalMinutes, tags_remove |
-| `bal-kremali-elma-kup-ingiltere-usulu` | medium | 1 | steps_replace |
-| `balikli-dereotu-pilaki-canakkale-usulu` | medium | 2 | ingredients_add |
-| `balkabakli-damper-toast-avustralya-usulu` | medium | 1 | steps_replace |
-| `balkabakli-tavuk-tepsi-firini-avustralya-usulu` | high | 2 | cookMinutes, totalMinutes, steps_replace |
-| `balli-armutlu-yulaf-lapasi-ingiltere-usulu` | high | 1 | steps_replace |
-| `balli-gin-fizz-ingiltere-usulu` | high | 1 | steps_replace |
+| `barramundi-sebze-tepsi-avustralya-usulu` | high | 1 | ingredients_add |
+| `barramundi-tava-avustralya-usulu` | medium | 1 | ingredients_add |
+| `barszcz-czerwony-polonya-usulu` | medium | 1 | servingSuggestion |
+| `bastilla` | high | 2 | ingredients_add |
+| `bat-tokat-usulu` | high | 1 | ingredients_add |
+| `batata-harra-beyrut-usulu` | high | 1 | ingredients_add |
+| `batido-de-mamey-kuba-usulu` | high | 1 | steps_replace |
+| `bazlama` | high | 1 | servingSuggestion |
+| `beef-chow-fun` | high | 1 | ingredients_add |
+| `beef-stroganoff-klasik` | high | 2 | ingredients_add, allergens_add |

@@ -1,0 +1,782 @@
+[
+  {
+    "slug": "barramundi-sebze-tepsi-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 4 limon ve ot kullanıyor ama ingredient listesinde bu malzemeler yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon", "amount": "1", "unit": "adet" },
+        { "name": "Taze ot", "amount": "2", "unit": "dal" }
+      ]
+    },
+    "sources": [
+      "https://www.taste.com.au/recipes/barramundi-baked-paper/58695e9c-43bf-4305-a3b6-6a0bb1b370b8",
+      "https://www.sbs.com.au/food/recipe/barramundi-baked-in-paper/sgxk7uwp8"
+    ],
+    "confidence": "high",
+    "reason": "Barramundi ve sebzeyi fırında pişirmek doğru. Mevcut adımlar limon ve otla tatlandırıyor, bu iki malzeme listede de görünmeli."
+  },
+  {
+    "slug": "barramundi-taco-avustralya-sahil-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.taste.com.au/recipes/fish-tacos/7ecfdf45-8192-4b0f-b2dd-5cf31a326682",
+      "https://www.recipetineats.com/fish-tacos/"
+    ],
+    "confidence": "high",
+    "reason": "Izgara beyaz balık, lime, lahana ve tortilla balık taco yapısıyla uyumlu. Süre, protein, GLUTEN ve DENIZ_URUNLERI allergenleri doğru."
+  },
+  {
+    "slug": "barramundi-tava-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 zeytinyağı, step 5 maydanoz kullanıyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Maydanoz", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.taste.com.au/recipes/pan-fried-barramundi-lemon-butter-sauce/53cc0610-a780-4cdb-8e42-d7b2c772ec60",
+      "https://www.sbs.com.au/food/recipe/pan-fried-barramundi-lemon-butter/9jc2o6q86"
+    ],
+    "confidence": "medium",
+    "reason": "Tereyağı ve limonla tavada barramundi tekniği makul. Adımların kullandığı zeytinyağı ve maydanoz listede eksik kalıyor."
+  },
+  {
+    "slug": "barselona-crema-catalana",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/crema-catalana",
+      "https://spanishsabores.com/crema-catalana-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Süt, yumurta sarısı, nişasta, tarçın ve narenciye kabuğu crema catalana için doğru. Soğutma süresi totalMinutes alanına yansımış."
+  },
+  {
+    "slug": "barselona-patatas-bravas",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/patatas-bravas",
+      "https://spanishsabores.com/patatas-bravas-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Patates, acılı domates sosu ve sarımsaklı mayonez patatas bravas yapısıyla uyumlu. YUMURTA allergeni mayonez nedeniyle doğru."
+  },
+  {
+    "slug": "barszcz-czerwony-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "servingSuggestion: ekşi krema öneriyor ama tarifte süt ürünü yok ve allergen SUT declare edilmemiş"
+    ],
+    "corrections": {
+      "servingSuggestion": "Sade olarak sıcak kaselerde, yanında uszka veya ekmekle sunun."
+    },
+    "sources": [
+      "https://www.polishyourkitchen.com/polish-red-borscht-barszcz-czerwony/",
+      "https://www.curiouscuisiniere.com/polish-beet-soup-barszcz/"
+    ],
+    "confidence": "medium",
+    "reason": "Pancarlı berrak barszcz yapısı makul. Ekşi krema servis önerisi allergen tarafında süt ürünü yaratıyor, sade servis daha tutarlı."
+  },
+  {
+    "slug": "bartin-pumpum-corbasi-misir-unlu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/bartin/neyenir/pumpum-corbasi",
+      "https://www.nefisyemektarifleri.com/pumpum-corbasi-bartin-yoresi/"
+    ],
+    "confidence": "high",
+    "reason": "Mısır unu, süt, et suyu, kıtır ekmek ve kaşarlı servis Bartın pumpum çorbasıyla uyumlu. SUT ve GLUTEN allergenleri doğru."
+  },
+  {
+    "slug": "basbousa",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/basbousa",
+      "https://cleobuttera.com/middle-eastern/basbousa/"
+    ],
+    "confidence": "high",
+    "reason": "İrmik, yoğurt, şerbet ve badem basbousa için doğru yapı. Pişirme süresi, şerbet adımı, GLUTEN, SUT ve KUSUYEMIS alanları tutarlı."
+  },
+  {
+    "slug": "bastilla",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 soğan, zencefil ve safran kullanıyor ama listede yok",
+      "ingredients: step 4 pudra şekeri kullanıyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Zencefil", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Safran", "amount": "1", "unit": "çimdik" },
+        { "name": "Pudra şekeri", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/moroccan-chicken-pie",
+      "https://www.thespruceeats.com/chicken-bastilla-recipe-2394641"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, badem, yumurta, tarçın ve yufka bastilla için doğru. Ancak adımlarda kullanılan aromatikler ve pudra şekeri ingredient listesinde eksik."
+  },
+  {
+    "slug": "bat-tokat-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 zeytinyağı kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/tokat/neyenir/bat",
+      "https://www.yemek.com/tarif/bat/"
+    ],
+    "confidence": "high",
+    "reason": "İnce bulgur, salça, yeşillik ve limon Tokat bat için uygun. Adımda kullanılan zeytinyağı listede eksik olduğu için eklenmeli."
+  },
+  {
+    "slug": "batata-harra-beyrut-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 4 limon suyu gezdiriyor ama listede limon yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/batata-harra/",
+      "https://feelgoodfoodie.net/recipe/batata-harra/"
+    ],
+    "confidence": "high",
+    "reason": "Patates, sarımsak, kişniş, acı biber ve zeytinyağı batata harra için doğru. Limon bitişi adımda var, listede de olmalı."
+  },
+  {
+    "slug": "batido-de-guayaba-kuba-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://icuban.com/food/batido_guayaba.html",
+      "https://www.cook2eatwell.com/guava-milkshake/"
+    ],
+    "confidence": "high",
+    "reason": "Guava, süt, şeker ve buzla blender içeceği Küba batido yapısına uyuyor. SUT allergeni, süre ve soğuk servis doğru."
+  },
+  {
+    "slug": "batido-de-mamey-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: her adımda tarif adının tekrarı user-facing metni gereksiz biçimde uzatıyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Mamey bazını ve kalan malzemeleri blender kabına alın."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Karışımı 35-60 saniye pürüzsüz kıvam alıncaya kadar çekin.",
+          "timerSeconds": 60
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "İçeceği soğuk bardaklara paylaştırıp bekletmeden servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://icuban.com/food/batido_mamey.html",
+      "https://www.cook2eatwell.com/mamey-shake/"
+    ],
+    "confidence": "high",
+    "reason": "Mamey, süt, tatlandırıcı ve buz Küba batido mantığına uygun. Düzeltme, teknik içeriği koruyup tekrar eden ad metnini temizliyor."
+  },
+  {
+    "slug": "bayburt-tel-helvasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/bayburt/neyenir/tel-helvasi",
+      "https://www.nefisyemektarifleri.com/tel-helvasi/"
+    ],
+    "confidence": "high",
+    "reason": "Kavrulmuş un ve ağdanın çekilerek tel haline getirilmesi Bayburt tel helvasıyla uyumlu. Süre ve GLUTEN, SUT allergenleri doğru."
+  },
+  {
+    "slug": "bazlama",
+    "verdict": "CORRECTION",
+    "issues": [
+      "servingSuggestion: tarif vegan tag'i taşıyor ama tereyağı ve peynirle servis öneriyor"
+    ],
+    "corrections": {
+      "servingSuggestion": "Zeytinyağı, zeytin ve domatesle tavadan çıkar çıkmaz sıcak sunun."
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/bazlama/",
+      "https://www.nefisyemektarifleri.com/bazlama-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Bazlama hamuru un, su, maya, şeker ve tuzla vegan kalabilir. Servis önerisindeki tereyağı ve peynir vegan tag'iyle çelişiyor."
+  },
+  {
+    "slug": "beef-chow-fun",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 nişasta ve yağ, step 6 yeşil soğan kullanıyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Mısır nişastası", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Yeşil soğan", "amount": "3", "unit": "dal" }
+      ]
+    },
+    "sources": [
+      "https://thewoksoflife.com/beef-chow-fun-noodles/",
+      "https://www.seriouseats.com/beef-chow-fun-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Geniş pirinç eriştesi, dana, soya ve filiz chow fun için doğru. Adımlar nişasta, yağ ve yeşil soğanı kullanıyor, liste tamamlanmalı."
+  },
+  {
+    "slug": "beef-stroganoff-klasik",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 un, step 4 et suyu ve hardal kullanıyor ama listede yok",
+      "allergen: un ve hardal eklenecekse GLUTEN ve HARDAL declare edilmeli"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Un", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Et suyu", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Dijon hardalı", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "allergens_add": ["GLUTEN", "HARDAL"]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/beef-stroganoff",
+      "https://www.recipetineats.com/beef-stroganoff/"
+    ],
+    "confidence": "high",
+    "reason": "Dana, mantar, soğan ve ekşi krema stroganoff için doğru. Adımlardaki un, et suyu ve hardal listede ve allergenlerde görünmeli."
+  },
+  {
+    "slug": "beef-wellington-mantarli",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/beef-wellington",
+      "https://www.seriouseats.com/the-ultimate-beef-wellington-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Dana fileto, mantar harcı, pastırma, hardal, milföy ve yumurta sarısı Beef Wellington için uyumlu. Süre ve allergenler doğru."
+  },
+  {
+    "slug": "bees-knees",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: her adımda kokteyl adının tekrarı kullanıcı metnini gereksiz hale getiriyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Karışıma başlamadan bardağı soğutun, aromalar ısınmadan dengeli kalsın."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Cin, limon suyu ve bal şurubunu shaker'a alın."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Karışımı buzla 12 saniye çalkalayın, bal şurubu tamamen açılsın.",
+          "timerSeconds": 12
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Soğuk bardağa ince süzün, köpük yüzeyde kalsın."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.diffordsguide.com/cocktails/recipe/190/bees-knees",
+      "https://www.liquor.com/recipes/bees-knees/"
+    ],
+    "confidence": "high",
+    "reason": "Cin, limon ve bal şurubu Bee's Knees için doğru. Düzeltme, kokteyl adının her adımda gereksiz tekrarını temizliyor."
+  },
+  {
+    "slug": "beetroot-burger-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 4 burger ekmeği ve 500 gr kıyma varken step 1 sadece iki köfte şekillendiriyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Kıymayı tuz ve karabiberle yoğurmadan toparlayıp dört köfte haline getirin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.taste.com.au/recipes/aussie-burger/0d4e4f51-dafe-4b74-b7d9-8bb655a5bd54",
+      "https://www.recipetineats.com/aussie-burger-with-the-lot/"
+    ],
+    "confidence": "high",
+    "reason": "Pancarlı burger Avustralya burger geleneğiyle uyumlu. Miktarlar dört porsiyon gösteriyor, köfte adımı da dört köfte demeli."
+  },
+  {
+    "slug": "beetroot-feta-fritter-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 taze ot kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Taze ot", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.taste.com.au/recipes/beetroot-feta-fritters/6fc4411d-69db-4ab7-bda7-8e589cf662a3",
+      "https://www.bbcgoodfood.com/recipes/beetroot-fritters"
+    ],
+    "confidence": "medium",
+    "reason": "Pancar, feta, un ve yumurtayla fritter mantığı doğru. Adımda kullanılan taze ot listede eksik kaldığı için küçük ekleme yeterli."
+  },
+  {
+    "slug": "beetroot-relish-burger-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: cheddar peyniri ingredient listesinde var ama burger kurulum adımında kullanılmıyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 5,
+          "instruction": "Köfte, cheddar, marul ve pancar relish'i ekmeğe dizip sıcak servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.taste.com.au/recipes/aussie-burger/0d4e4f51-dafe-4b74-b7d9-8bb655a5bd54",
+      "https://www.recipetineats.com/aussie-burger-with-the-lot/"
+    ],
+    "confidence": "high",
+    "reason": "Pancar relish ve peynirli burger yapısı tutarlı. Cheddar listede ve SUT allergeninde var, son kurulum adımında da kullanılmalı."
+  },
+  {
+    "slug": "beghrir",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 kabartma tozu ve tuz kullanıyor ama listede yok",
+      "ingredients: servis ballı tereyağı diyor ama tereyağı listede yok",
+      "allergen: tereyağı eklenecekse SUT declare edilmeli"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kabartma tozu", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çimdik" },
+        { "name": "Tereyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["SUT"]
+    },
+    "sources": [
+      "https://www.thespruceeats.com/beghrir-moroccan-semolina-pancakes-2394779",
+      "https://tasteofmaroc.com/beghrir-recipe-moroccan-semolina-pancakes/"
+    ],
+    "confidence": "high",
+    "reason": "Beghrir irmik, un, maya ve kabartıcıyla tek yüzlü pişer. Ballı tereyağı servisi de klasik, bu yüzden liste ve allergen tamamlanmalı."
+  },
+  {
+    "slug": "beijing-kung-pao-chicken",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 şeker, step 3 yağ kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Şeker", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://thewoksoflife.com/kung-pao-chicken/",
+      "https://www.seriouseats.com/gong-bao-ji-ding-sichuan-kung-pow-chicken-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, Sichuan biberi, kuru biber, siyah sirke, soya ve yer fıstığı kung pao için doğru. Şeker ve pişirme yağı listede eksik."
+  },
+  {
+    "slug": "beijing-scallion-oil-noodles",
+    "verdict": "PASS",
+    "sources": [
+      "https://thewoksoflife.com/soy-scallion-noodles-cong-ban-mian/",
+      "https://omnivorescookbook.com/scallion-oil-noodles/"
+    ],
+    "confidence": "high",
+    "reason": "Buğday eriştesi, taze soğan yağı, açık ve koyu soya sosu scallion oil noodles için doğru. Vegan, GLUTEN ve SOYA alanları tutarlı."
+  },
+  {
+    "slug": "beijinho",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.oliviascuisine.com/beijinho-de-coco/",
+      "https://www.thespruceeats.com/beijinho-de-coco-brazilian-coconut-kisses-3029727"
+    ],
+    "confidence": "high",
+    "reason": "Yoğunlaştırılmış süt, Hindistan cevizi, tereyağı ve karanfil beijinho için doğru. Süre, SUT allergeni ve 30 dakika altı tag'i makul."
+  },
+  {
+    "slug": "beirut-falafel-pita",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.themediterraneandish.com/how-to-make-falafel/",
+      "https://www.seriouseats.com/the-food-lab-vegan-experience-best-homemade-falafel-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Islatılmış kuru nohut, otlar, sarımsak, baharat ve kızartma falafel için doğru. TotalMinutes 12 saat ıslatmayı içeriyor."
+  },
+  {
+    "slug": "bergamotlu-soguk-cay-adana-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/iced-tea",
+      "https://www.thespruceeats.com/iced-tea-recipe-765441"
+    ],
+    "confidence": "medium",
+    "reason": "Siyah çay, bergamot kabuğu, limon ve buzla soğuk çay yapısı doğru. Vegan, alkolsüz ve yaz tarifi tag'leri içerikle uyumlu."
+  },
+  {
+    "slug": "berlin-bratwurst-sauerkraut-tavasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/bratwurst-sauerkraut",
+      "https://www.daringgourmet.com/bratwurst-and-sauerkraut/"
+    ],
+    "confidence": "high",
+    "reason": "Bratwurst, sauerkraut, elma, soğan, hardal ve tereyağı Alman tava tabağına uyuyor. HARDAL ve SUT allergenleri doğru."
+  },
+  {
+    "slug": "berlin-cavdarli-mantar-tostu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/cheese-mushroom-toastie",
+      "https://www.theguardian.com/food/2020/oct/28/how-to-make-the-perfect-cheese-toastie-felicity-cloake"
+    ],
+    "confidence": "medium",
+    "reason": "Çavdar ekmeği, mantar, hardal, peynir ve tereyağı sıcak tost için tutarlı. GLUTEN, SUT ve HARDAL allergenleri doğru."
+  },
+  {
+    "slug": "berlin-currywurst",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.daringgourmet.com/best-german-currywurst/",
+      "https://www.thespruceeats.com/currywurst-german-sausage-with-curry-ketchup-1447077"
+    ],
+    "confidence": "high",
+    "reason": "Bratwurst, domatesli köri sosu, ketçap, hardal ve patatesle servis Berlin currywurst için doğru. HARDAL allergeni yerinde."
+  },
+  {
+    "slug": "berlin-currywurst-tabagi",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "tags: bratwurst içeren tarif vegan ve vejetaryen olamaz",
+      "description: sokak klasiği anlatımı doğru olsa da tag'ler kullanıcıyı yanıltır"
+    ],
+    "corrections": {
+      "tags_remove": ["vegan", "vejetaryen"]
+    },
+    "sources": [
+      "https://www.daringgourmet.com/best-german-currywurst/",
+      "https://www.thespruceeats.com/currywurst-german-sausage-with-curry-ketchup-1447077"
+    ],
+    "confidence": "high",
+    "reason": "Currywurst sosisli bir yemektir. Bratwurst içeren mevcut tarifte vegan ve vejetaryen tag'leri ciddi biçimde yanıltıcıdır."
+  },
+  {
+    "slug": "berlin-kori-soslu-tavuk-doner",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/chicken-doner-kebab",
+      "https://www.seriouseats.com/doner-kebab-recipe"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk şeritleri, lavaş, lahana, yoğurt ve soslu döner kurgusu Berlin sokak yemeği çizgisine uyuyor. Allergenler ve süre makul."
+  },
+  {
+    "slug": "besamelli-tavuk",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.yemek.com/tarif/besamelli-tavuk/",
+      "https://www.nefisyemektarifleri.com/besamelli-tavuk/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, mantar, bezelye, beşamel ve kaşarla fırınlama Türk mutfağındaki beşamelli tavukla uyumlu. SUT ve GLUTEN doğru."
+  },
+  {
+    "slug": "besan-chilla-hint-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 zerdeçal ve tuz kullanıyor ama listede yok",
+      "steps: step 5 yoğurt öneriyor, vegan tag'iyle çelişiyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zerdeçal", "amount": "0.25", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 5,
+          "instruction": "Yeşil chutney ile sıcak servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.indianhealthyrecipes.com/cheela-recipe/",
+      "https://www.vegrecipesofindia.com/besan-cheela-recipe-besan-chilla/"
+    ],
+    "confidence": "high",
+    "reason": "Nohut unlu besan chilla vegan hazırlanabilir. Zerdeçal ve tuz listede eksik, yoğurtlu servis ise vegan tag'iyle çelişiyor."
+  },
+  {
+    "slug": "beurre-blanc",
+    "verdict": "CORRECTION",
+    "issues": [
+      "tipNote: brief'teki yasak jargon listesinde olan teknik terim kullanılmış"
+    ],
+    "corrections": {
+      "tipNote": "Tereyağını soğuk küpler halinde ekleyin; sos kesilmeden parlak kalır."
+    },
+    "sources": [
+      "https://www.seriouseats.com/beurre-blanc-recipe",
+      "https://www.bbcgoodfood.com/recipes/beurre-blanc"
+    ],
+    "confidence": "high",
+    "reason": "Arpacık soğan, sirke, limon ve tereyağı beurre blanc için doğru. Sadece tipNote kullanıcı dilinde daha sade ve yasak terimsiz olmalı."
+  },
+  {
+    "slug": "beypazari-etli-guvec",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/ankara/neyenir/beypazari-guveci",
+      "https://www.nefisyemektarifleri.com/beypazari-guveci/"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu eti, pirinç, domates, biber ve toprak kapta uzun fırınlama Beypazarı güveciyle uyumlu. Süre ve porsiyon değerleri makul."
+  },
+  {
+    "slug": "beyran-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/gaziantep/neyenir/beyran",
+      "https://www.yemek.com/tarif/beyran-corbasi/"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu gerdan, pirinç, sarımsak ve acılı et suyu Gaziantep beyranıyla uyumlu. Uzun haşlama süresi ve yüksek protein tag'i doğru."
+  },
+  {
+    "slug": "beyrut-firinli-kibbeh",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.themediterraneandish.com/kibbeh-recipe/",
+      "https://www.maureenabood.com/baked-kibbeh/"
+    ],
+    "confidence": "high",
+    "reason": "İnce bulgur, kıyma, soğan, dolmalık fıstık ve fırında tepsi tekniği baked kibbeh için uyumlu. Allergenler doğru."
+  },
+  {
+    "slug": "beyrut-nar-eksili-kisir-kasesi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.themediterraneandish.com/tabouli-salad/",
+      "https://www.yemek.com/tarif/kisir/"
+    ],
+    "confidence": "medium",
+    "reason": "İnce bulgur, domates, maydanoz, nane, nar ekşisi ve zeytinyağı kısır kasesi için tutarlı. Vegan tag'i ve GLUTEN allergeni doğru."
+  },
+  {
+    "slug": "beyrut-sumakli-kabak-mucver",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.yemek.com/tarif/mucver/",
+      "https://www.themediterraneandish.com/zucchini-fritters/"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak, yumurta, un, sumak ve yoğurtlu servis mücver yapısıyla uyumlu. GLUTEN, YUMURTA ve SUT allergenleri doğru."
+  },
+  {
+    "slug": "beyrut-tahinli-falafel-pita-kasesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 4 limon suyu kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/how-to-make-falafel/",
+      "https://www.seriouseats.com/the-food-lab-vegan-experience-best-homemade-falafel-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Falafel, tahin, pita ve salata kasesi doğru. Tahin sos adımında limon suyu kullanılıyor, ingredient listesinde de yer almalı."
+  },
+  {
+    "slug": "beyti-sarma",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.yemek.com/tarif/beyti-kebabi/",
+      "https://www.nefisyemektarifleri.com/beyti-kebabi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kıymalı köfte, lavaş, domates sosu, yoğurt ve tereyağı Beyti sarma için uyumlu. Süre, protein ve allergen alanları doğru."
+  },
+  {
+    "slug": "bezelyeli-cheddar-scone-ingiliz-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 kabartıcı ve tereyağı kullanıyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kabartma tozu", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Tereyağı", "amount": "60", "unit": "gr" }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/cheddar-scones",
+      "https://www.deliciousmagazine.co.uk/recipes/cheese-scones/"
+    ],
+    "confidence": "high",
+    "reason": "Un, cheddar, bezelye, yumurta ve süt scone için makul. Kabartıcı ve tereyağı adımda var, listede de olmalı."
+  },
+  {
+    "slug": "bezelyeli-nane-corbasi-ingiliz-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 zeytinyağı kullanıyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/pea-mint-soup",
+      "https://www.deliciousmagazine.co.uk/recipes/pea-and-mint-soup/"
+    ],
+    "confidence": "high",
+    "reason": "Bezelye, nane, soğan ve sütle yapılan çorba İngiliz tarzı bezelye çorbasına uyuyor. Pişirme yağının listede eksik olması düzeltilmeli."
+  },
+  {
+    "slug": "bezelyeli-naneli-ezme-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 5: yazım hatası var, 'Ezmeği' yerine 'Ezmeyi' olmalı"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 5,
+          "instruction": "Ezmeyi 10 dakika dinlendirip soğuk dip ya da meze gibi servis edin.",
+          "timerSeconds": 600
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/minty-mushy-peas",
+      "https://www.deliciousmagazine.co.uk/recipes/minted-pea-puree/"
+    ],
+    "confidence": "high",
+    "reason": "Bezelye, nane, limon ve zeytinyağı ezme için doğru. Tarif içeriği tutarlı, yalnızca kullanıcıya görünen yazım hatası düzeltilmeli."
+  },
+  {
+    "slug": "bhel-puri",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 4 sev kullanıyor ama ingredient listesinde yok",
+      "ingredients: servis kişniş öneriyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sev", "amount": "1", "unit": "su bardağı" },
+        { "name": "Kişniş", "amount": "0.25", "unit": "demet" }
+      ]
+    },
+    "sources": [
+      "https://www.vegrecipesofindia.com/bhel-puri-recipe/",
+      "https://www.indianhealthyrecipes.com/bhel-puri/"
+    ],
+    "confidence": "high",
+    "reason": "Puffed rice, patates, soğan, yer fıstığı, demirhindi sosu ve sev bhel puri için doğru. Sev ve kişniş listede eksik."
+  },
+  {
+    "slug": "biang-biang-mian",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: steps sirke, sarımsak, kızgın yağ ve taze soğan kullanıyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sirke", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Sıvı yağ", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Taze soğan", "amount": "2", "unit": "dal" }
+      ]
+    },
+    "sources": [
+      "https://thewoksoflife.com/biang-biang-noodles/",
+      "https://www.chinasichuanfood.com/biang-biang-mian-biang-biang-noodles/"
+    ],
+    "confidence": "high",
+    "reason": "El açması geniş noodle, soya, sirke, sarımsak ve acılı sıcak yağ biang biang mian için doğru. Listede birkaç kullanılan malzeme eksik."
+  },
+  {
+    "slug": "biber-salcali-lorlu-kahvalti-tava-kilis-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 4 pul biber ve maydanoz kullanıyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Maydanoz", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/lorlu-kahvaltilik/",
+      "https://www.nefisyemektarifleri.com/lorlu-kahvaltilik/"
+    ],
+    "confidence": "medium",
+    "reason": "Lor, biber salçası, domates ve zeytinyağı kahvaltı tavası olarak tutarlı. Adımda kullanılan pul biber ve maydanoz listede eksik."
+  },
+  {
+    "slug": "biberiyeli-mercimek-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 zeytinyağı kullanıyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/mercimek-corbasi/",
+      "https://www.bbcgoodfood.com/recipes/lentil-soup"
+    ],
+    "confidence": "high",
+    "reason": "Kırmızı mercimek, soğan, havuç ve biberiye ile çorba yapısı makul. Sote adımı yağ kullanıyor, ingredient listesi tamamlanmalı."
+  }
+]

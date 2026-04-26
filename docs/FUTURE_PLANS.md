@@ -15,56 +15,76 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
-### Mod I (duplicate audit, Codex tetik bekler, oturum 22 sonu)
+### Mod M (Marine, Codex tetik bekler, oturum 23 sonu)
 
-**docs/MOD_I_TRIGGER.md** içinde tam tetik şablonu. 5 batch akış
-(cuisine harf aralığı a-c / d-i / j-n / p-r / s-z, toplam 235
-cuisine+type grup tara). Codex docs/all-recipe-titles.md'den (3679
-tarif) duplicate cluster JSON üretir, Claude DB ingredient + step
-deep verify yapar, kullanıcı approve sonrası rollback.
+**docs/MOD_M_TRIGGER.md** içinde tam tetik şablonu. 4 batch'lik iş
+(167 marine adayı, 50/50/50/17). `find-marine-candidates.ts` 14
+keyword (marine/marina/marinasyon/salamura/soslama/terbiye/marinade/
+yoğurtla bekletin/sirke ile bekletin) tarayıp aday tespit etti.
 
-**Cross-validation pattern**: Claude paralel `find-duplicates-claude.
-ts` (sıkı pair-only, 166 strict pair, 150 unique sil önerisi) +
-Codex Mod I high confidence cluster = kesin duplicate listesi.
+**Kritik kural**: Codex her tarif için **en az 2 farklı web
+kaynağından** marine süresi ve yöntemi teyit zorunda. Halüsinasyon
+yasak. Önerilen kaynaklar: Serious Eats, BBC Good Food, NYT Cooking,
+Yemek.com, Giallo Zafferano, Tarla Dalal, Wikipedia.
 
-**Tetik akışı (Kerem):**
-1. Yeni chat aç ChatGPT Max
-2. docs/MOD_I_TRIGGER.md başlangıç mesajı paste
-3. Codex "Anladım" deyince Mod I Batch N tetik şablonu paste
-4. Codex docs/mod-i-batch-N.json + opsiyonel mod-i-batch-N-legit
-   .json yazar
-5. Claude verify + onay + rollback + recompute + commit
+**JSON output**: `{ slug, marineMinutes, marineDescription,
+tipNote_addition, sources[2+], confidence (high/medium/low), reason }`.
+SKIP seçeneği: marine içermiyorsa veya kaynak yetersizse.
 
-### Polish phase devam (oturum 23+, 2-3 saat)
+**Apply pipeline (Codex teslim sonrası, Claude tarafı)**:
+1. `verify-mod-m-pairs.ts`: sources URL valid + marineMinutes makul
+2. Kullanıcı onay (high confidence count + spot check)
+3. DB update: `totalMinutes = prep + cook + marineMinutes` + tipNote
+   merge + source senkron + AuditLog action=MARINE_APPLY
+4. RecipeTimeline 3 segment görünür: ~120-150 tarif
 
-Mod G + Mod H KAPANDI, Mod A 39b prod, duplicate cleanup yolda.
-Sıradaki kullanıcı UX'i zenginleştirme:
+### Polish phase TAMAMLANDI ✅ (oturum 23 sonu)
 
-1. **Tarif zaman çizelgesi (timeline visual)** ~2 saat
-   - prep + marine + cook görsel bar
-   - Sauerbraten gibi uzun marine'li tariflerde "buna 3 gün lazım"
-     net görünür
-   - timer + measure + popover ile sinerji
+Bu paketlerin hepsi yapıldı:
 
-2. **Pişirdim ✓ rozet sistemi** ~2-3 saat
-   - UserCooked tablosu (schema migration)
-   - "X kişi pişirdi" sosyal kanıt tarif sayfasında
-   - Profil tab "Pişirdiklerim"
-   - "Pişirdim" sonrası küçük yorum CTA
+1. ~~**Tarif zaman çizelgesi (timeline visual)**~~ ✅ oturum 23
+   - `RecipeTimeline.tsx` + `lib/recipe/timeline.ts` + 12 unit test
+   - Sauerbraten 3 gün marine demo prod
+2. ~~**Pişirdim ✓ rozet sistemi**~~ ✅ oturum 23
+   - RecipeCooked schema + toggle + count + profil tab + RecipeCard
+     badge + "Bu hafta en çok pişirilenler" anasayfa shelf
+3. ~~**Newsletter haftalık scheduled send**~~ ✅ önceki oturumlar
+   (audit oturum 23'te: zaten %100 aktif, vercel.json cron + Resend
+   template + test mail OK)
+4. ~~**Recipe step image upload altyapı**~~ ❌ İPTAL (oturum 23)
+   Kerem feedback: "Her adıma fotoğraf zorlaması karışıklık".
+5. ~~**Quality dashboard top 10 manuel rafine**~~ ✅ oturum 23
+   (Allergen calibration + Americano polish ile top 10 score 35-49 →
+   minimum 5 seviyesine düştü)
 
-3. **Newsletter haftalık scheduled send** ~1 saat
-   - Resend zaten bağlı, scheduler aktif et (Vercel cron)
+### Sıradaki büyük paketler (öneri, oturum 24+ için)
 
-4. ~~**Recipe step image upload altyapı**~~. KARAR: yapılmayacak (oturum
-   23). Kerem feedback: "Her adıma fotoğraf zorlaması karışıklık,
-   tarifi en sonda final fotoğrafla bitirmek daha sade". `RecipeStep.
-   imageUrl` schema'da hazır kalır (ileride gerek olursa), ama UI
-   eklenmiyor. Final fotoğraf zaten `recipe.imageUrl` + kullanıcı
-   fotoğrafları (`RecipePhoto`) ile karşılanıyor.
+1. **Mod K: Description expansion** (Codex iş, ~1-2 saat)
+   - Quality dashboard low-score tariflerin (~50 tarif) description
+     genişletme görevi. Americano gibi <50 char olanlar açıklayıcı
+     hale gelir.
+   - Codex iş, ben verify+apply.
 
-5. **Quality dashboard'dan top 10 tarif manuel rafine** ~30dk-1 saat
-   - /admin/kalite'den en yüksek skorlu 10 tarifin tipNote/sug/step
-     manuel düzelt
+2. **Mod A 40+: yeni tarif yazma** (Codex iş, 2-3 batch)
+   - 3517 → 3600+ hedef, Codex 50-100 yeni tarif
+   - Brief Kural 6/7/16 disiplinli
+   - Her batch sonrası dup audit + tarif-listesi.txt auto-update
+   - Önerilen marine'li tarifler: ekşi maya ekmek, sushi pirinç,
+     tandoori tavuk, ceviche, kore bulgogi (RecipeTimeline 3 segment
+     görünür)
+
+3. **Personal "Pişirdiklerim" anasayfa shelf** (login user, ~1 saat)
+   - Login user'ın kendi son cooked recipe'larını anasayfada shelf
+   - getUserCookedRecipes + RecipeCard format dönüşüm
+
+4. **butter-chicken swap içerik transfer** (~30 dk)
+   - delhi-butter-chicken silindi, butter-chicken kaldı
+   - Delhi içeriği (kaju + zencefil + fırın marine) butter-chicken'a
+     transfer et (opsiyonel zenginleştirme)
+
+5. **Cross-language pass tekrar** (~30 dk)
+   - Mod IB sonrası `find-cross-language-pairs.ts` yeniden koş
+   - Yeni eşleşme varsa tek tek manual review
 
 ### Mod FA pipeline TAMAM (oturum 20)
 

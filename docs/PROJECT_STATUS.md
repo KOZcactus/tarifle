@@ -1,5 +1,143 @@
 # Tarifle, Proje Durumu
 
+> **Oturum 23 SONU (26 Nis 2026), 28 commit, mutlak rekor maraton.**
+> **Mod I PIPELINE 5/5 KAPANIŞ + Mod IA pair audit + Mod IB final pass
+> + canonical rename + Pişirdim rozet sistemi + RecipeTimeline visual +
+> Sauerbraten 3 gün marine demo + StepTimer pause bug fix + Allergen
+> library single source of truth + 4 false positive fix + Mod M
+> (marine) altyapı.** Prod **3679 → 3517** (-162 net duplike sil + 11
+> canonical rename + 1 yeni Sauerbraten). Tüm pre-push 6 katman temiz,
+> tsc 0 error, 49 yeni unit test (21 timeline + recipe-cooked + allergen
+> calibration), 28 commit ile rekor.
+
+> ## Oturum 23 detay (A-Z paketler)
+>
+> **A. Mod I PIPELINE 5/5 TAM KAPANIŞ (137 cluster / 248 sil önerisi)**
+> 4 commit: B1 14 + B2 32 + B3 18 + B4 14 + B5 29 = **107 net sil**
+> (au+br+cn+cu+de+es+et+fr+gr+hu+id+in+it+jp+kr+ma+me+mx+ng+pe+pk+pl+
+> ru+se+th+tr+us+vn = 24 cuisine). Yeni scripts: `verify-mod-i-batch.
+> ts` (cluster threshold doğrulama) + `classify-mod-i-pairs.ts`
+> (otomatik A_KESIN/B_RISK/C_ATLA kategorize). Prod 3679 → 3572.
+>
+> **B. Canonical rename polish (11 rename)** Coğrafi prefix kaldı:
+> `mumbai-palak-paneer` → `palak-paneer`, `naples-pizza-margherita` →
+> `pizza-margherita`, `kyoto-oyakodon` → `oyakodon`, `busan-haemul-
+> pajeon` → `haemul-pajeon`, `kahire-ful-medames` → `ful-medames`,
+> `lima-lomo-saltado` → `lomo-saltado`, `manisa-kulak-corbasi` →
+> `kulak-corbasi`, `siirt-perde-pilavi` → `perde-pilavi`, vd. Yeni
+> scripts: `identify-canonical-rename.ts` + `apply-canonical-rename.
+> ts` + `rename-source-slugs.mjs`. next.config.ts'e 11 permanent
+> (308) redirect.
+>
+> **C. Mod IA pair audit (3 batch / 89 pair → 27 DUPLICATE + 43 VARIANT
+> + 19 UNCERTAIN)** Mod I cluster-based kaçırdığı pair'leri yakaladı.
+> 26 clean auto sil + 1 blocked (butter-chicken). Prod 3572 → 3546
+> (-26).
+>
+> **D. Mod IB final duplicate pass (90 pair / 38 DUPLICATE + 52 VARIANT)**
+> UNCERTAIN refinement DB-enriched + cross-language pass. 28 unique
+> sil (Codex multi-pair'de aynı slug'ı listelemişti, dedup). 2 manuel
+> review yapıldı (butter-chicken swap + kayseri yaglama featured fix).
+> Prod 3546 → 3516 (-30 toplam).
+>
+> **E. Allergen library single source of truth refactor** `src/lib/
+> allergen-matching.ts` ana kaynak, `scripts/audit-deep.ts` re-export
+> only. Önceki paralel ALLERGEN_RULES dağınıklığı kapandı, drift riski
+> kalıcı çözüm. ~283 satır audit-deep'ten silindi, helper'lar (trLower,
+> asciiNormalize, hasStandaloneWord) src/lib'den import.
+>
+> **F. Allergen calibration 2 round (10 yeni unit test)** GLUTEN false
+> positive: kekik, nişasta standalone (TR mutfak mısır nişasta varsayım),
+> tapyoka unu, çörekotu, tavuk baget. KUSUYEMIS: hindistancevizi
+> (boşluksuz). Krep/palacsinta/blini GLUTEN keyword (Macaristan/Rus
+> krepi). TR yöresel coverage: bazlama+kete+revani+açma+poğaça+çörek
+> + çökelek+hellim+çecil+mihaliç. Quality dashboard top 10 score 35-49
+> → 5 (en düşük seviye).
+>
+> **G. Recipe data fix (firinda-tavuk-baget GLUTEN kaldır)** "Tavuk
+> baget" tavuk parçası, ekmek değil. Declared GLUTEN yanlış, kaldırıldı
+> (dev + prod). Yeni script `fix-allergens-oturum23.ts`.
+>
+> **H. Alphabetik sort case-insensitive (ANZAC bug)** /tarifler
+> sayfası eski `ORDER BY title` byte-order sıralıyordu, ANZAC en
+> başta. `getRecipes` alphabetical branch 2-step pattern: light id+
+> title fetch + JS `localeCompare("tr", { sensitivity: "base" })` sort
+> + findMany id IN preserveOrder.
+>
+> **I. SearchBar Enter-only (default submitOnType=false)** Anasayfa +
+> Keşfet + /tarifler hepsi artık Enter veya suggestion click ile
+> redirect, yazma sırasında URL stabil. 2 kez kullanıcı geri bildirim
+> aldıktan sonra default'u false'a çekildi.
+>
+> **J. Sentry N+1 false positive fix** `getCookedCountsForRecipes`
+> Prisma groupBy LATERAL subquery genişletmesi Sentry'yi tetikliyordu.
+> `$queryRaw` + ANY($1::text[]) ile garantili tek SQL query.
+>
+> **K. Pişirdim rozet sistemi (yeni feature, Mod IB öncesi)** Yeni
+> RecipeCooked schema model + manuel SQL migration (drift sebebiyle
+> prisma migrate dev kullanılmadı). Backend: `recipe-cooked.ts`
+> (toggleRecipeCooked + getCookedCount + getUserCookedRecipes batch).
+> Server action: `toggleRecipeCookedAction`. Component:
+> `RecipeCookedToggle` (optimistic update + aria-pressed + anonymous
+> "Önce giriş yap" feedback). Tarif detay sayfası + profil
+> "Pişirdiklerim" tab.
+>
+> **L. RecipeCard "X kişi pişirdi" badge** `attachCookedCounts`
+> helper, `getRecipes` post-cache enrichment + 4 shelf query
+> (Featured/Recent/Quick/Popular) + getMostCookedRecentlyRecipes (yeni
+> shelf). Footer'da "👨‍🍳 N kişi pişirdi" badge cookedCount > 0 ise
+> görünür.
+>
+> **M. Anasayfa "Bu hafta en çok pişirilenler" shelf** Son 7 günde
+> distinct user count desc. Featured + sezon banner arası. Yeni sitede
+> cooked verisi azsa shelf gizli. Sosyal kanıt amplification.
+>
+> **N. RecipeTimeline visual (Hazırlık | Bekleme/Marine | Pişirme)**
+> 3 segment orantılı bar, prep + cook + (total - prep - cook) wait.
+> `formatTimelineMinutes`: "30 dk" / "1 sa 30 dk" / "3 gün 4 sa".
+> Min %3 width visibility (1dk vs 2 gün marine'da bile prep gözükür).
+> 12 unit test. Tarif detay sayfası IngredientList üstüne yerleşir.
+>
+> **O. Sauerbraten tarif (3 gün marine timeline demo)** prep 30 +
+> wait 4320 (3 gün) + cook 180 = 4530 dk total. Schema cap 1440 →
+> 10080 dk (7 gün). 10 ingredient + 6 step + EN/DE translations.
+> Featured ile timeline 3 segment net görünür.
+>
+> **P. StepTimer pause bug fix (interval orphan race)** Pause UI
+> değişti ama countdown durmuyordu. setInterval `useCallback` içinde
+> baş başlatılıyordu, StrictMode/re-create senaryolarında orphan
+> interval kalıyordu. Refactor: setInterval state-driven `useEffect`
+> içine taşındı, cleanup garantili clearInterval. Browser doğrulama:
+> Pause + 3sn → remaining stabil ✓.
+>
+> **Q. Mod J → Mod IA rename** Mod FA naming pattern (Mod F alpha
+> pass) ile uyumlu, alfabe Mod J/K/L için boş bırak.
+>
+> **R. tarif-listesi.txt** 3517 tarif alfabetik TR locale TXT,
+> manuel kontrol için (Ctrl+F). `dump-tarif-listesi.ts` script. Sil/
+> ekle sonrası `npx tsx scripts/dump-tarif-listesi.ts` regenerate
+> (rollback-batch sonu hint mesajı). Memory'ye reference eklendi.
+>
+> **S. Mod M (Marine) altyapı (yeni Codex paketi, hazır)** 167 marine
+> aday tespiti (`find-marine-candidates.ts`, 14 keyword: marine/
+> marina/salamura/soslama/terbiye/marinade/yoğurtla bekletin vd.). 4
+> batch'lik Codex tetik (`docs/MOD_M_TRIGGER.md`). **Kritik kural:
+> her tarif için en az 2 farklı web kaynağından marine süresi teyit
+> zorunda**, halüsinasyon yasak. Apply sonrası ~120-150 tarif
+> RecipeTimeline 3 segment görsel.
+>
+> **T. Step image upload paketi iptal (kullanıcı kararı)** "Her adıma
+> fotoğraf zorlaması karışıklık". `RecipeStep.imageUrl` schema'da
+> hazır kalır, UI eklenmiyor. FUTURE_PLANS not düşüldü.
+>
+> ### Sıradaki oturum 24 başı (öncelik):
+> 1. **Mod M Batch 1-4** (Codex tetik bekler, ChatGPT Max'ta)
+> 2. **Mod A 40+** (yeni tarif batch, prod 3517 → 3600+)
+> 3. **Mod K (yeni)**: Description expansion (top quality dashboard)
+> 4. **Personal "Pişirdiklerim" anasayfa shelf** (login user)
+> 5. **butter-chicken swap içerik transfer** (delhi-butter-chicken
+>    silindi, butter-chicken kaldı; içerik zenginleştirme opsiyonel)
+
 > Oturum 23 polish 3 (26 Nis 2026), **Mod IB final duplicate pass.**
 > 2 batch (UNCERTAIN refinement DB-enriched + cross-language pass) /
 > 90 pair → 38 DUPLICATE + 52 VARIANT. 36 raw clean (28 unique

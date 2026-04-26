@@ -135,6 +135,12 @@ PASS**, allergen PASS, **Kural 6 + 7 + 16 PASS**.
 
 ---
 
+
+
+
+
+
+
 ## 3. Mod G tetik şablonu (boilerplate revize)
 
 **Kullanım kuralı:** Sadece **ilk satırdaki `N` değerini değiştir**
@@ -194,9 +200,14 @@ Batch N hazır" + özet:
 - dup count (5+ tarifte aynı cümle = 0 olmalı)
 - jargon kontrol PASS
 - web teyit PASS (tipNote için her örnek)
-```
 
----
+
+
+
+
+
+
+
 
 ## 4. Mod H tetik şablonu (ingredient enrichment)
 
@@ -255,6 +266,15 @@ Batch N hazır" + özet:
   alternatifin oran/yöntem benzerliği)
 ```
 
+
+
+
+
+
+
+
+
+
 ---
 
 ## Kullanım akışı (Kerem)
@@ -273,16 +293,36 @@ Batch N hazır" + özet:
 
 ---
 
-## Mod durum özeti (oturum 22 başı)
+## Mod durum özeti (oturum 23 sonu)
 
-| Mod | Durum | Brief | Son batch |
+| Mod | Durum | Tetik dosyası | Son batch |
 |---|---|---|---|
-| Mod A | Aktif | §5 | 39a prod canlı (1bb258e) |
+| Mod A | Aktif | docs/CODEX_BATCH_BRIEF.md §5 | 39b prod (oturum 22) |
 | Mod B | KAPANDI | §6+§13 | 3471/3471 tam (oturum 19) |
 | Mod C | Single pass | §12 | seo-copy-v1.json (oturum 12) |
 | Mod D | KAPANDI | §13 | Batch 22 prod (oturum 13) |
 | Mod E | KAPANDI | §14 | B29 (oturum 15, 2900 tarif) |
 | Mod F | KAPANDI | §15 | 27/27 prod (oturum 21) |
 | Mod FA | KAPANDI | §16 | 4/4 prod (oturum 20) |
-| Mod G | Batch 1 bekler | §17 | input hazır, tetik bekliyor |
-| Mod H | Batch 1 bekler | §18 | input hazır, tetik bekliyor |
+| Mod G | KAPANDI | §17 | 5/5 batch, 417 boilerplate (oturum 22) |
+| Mod H | KAPANDI | §18 | 5/5 batch, 250 ingredient (oturum 22) |
+| Mod I | KAPANDI | docs/MOD_I_TRIGGER.md | 5/5 cluster (oturum 23, 107 sil) |
+| Mod IA | KAPANDI | docs/MOD_IA_TRIGGER.md | 3 batch pair audit (oturum 23, 26 sil) |
+| Mod IB | KAPANDI | docs/MOD_IB_TRIGGER.md | 2 batch UNCERTAIN+cross-language (oturum 23, 28 sil + 2 manuel) |
+| Mod M | **Batch 1 bekler** | docs/MOD_M_TRIGGER.md | 167 marine aday, 4 batch (oturum 23 sonu hazır) |
+
+## Aktif paketler (oturum 24+)
+
+**Mod M (Marine).** En öncelikli Codex iş, oturum 23 sonu hazır.
+4 batch, 167 marine aday. Her tarif için **en az 2 farklı web
+kaynağından marine süresi teyit zorunda** (halüsinasyon yasak).
+Tetik: `docs/MOD_M_TRIGGER.md` §"Yeni chat başlangıç mesajı".
+
+**Mod K (yeni, opsiyonel).** Description expansion, quality
+dashboard low-score tarifler için Codex iş. Henüz brief yazılmadı,
+gerek olunca docs/MOD_K_TRIGGER.md oluşturulur.
+
+**Mod A 40+.** Yeni TR + uluslararası tarif batch'leri devam,
+Brief §5 + Kural 6/7/16. Marine'li tarif önerisi (RecipeTimeline 3
+segment görsel için): ekşi maya ekmek, sushi pirinç, tandoori tavuk,
+ceviche, kore bulgogi.

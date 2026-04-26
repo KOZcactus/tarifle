@@ -110,6 +110,7 @@ export default async function HomePage() {
     getTranslations("home"),
     getTranslations("nav"),
   ]);
+  const tProfileBanner = await getTranslations("home.profileBanner");
 
   // H: Home 🎒 CTA. Login user'in pantry doluluk kontrolu; boşsa kart
   // gizlenir. Sadece count fetch, payload küçük kalsın.
@@ -142,7 +143,15 @@ export default async function HomePage() {
 
       {/* Profil eksik banner (login + bio/avatar NULL), dismissable */}
       <div className="pt-4">
-        <ProfileIncompleteBanner incomplete={profileIncomplete} />
+        <ProfileIncompleteBanner
+          incomplete={profileIncomplete}
+          labels={{
+            title: tProfileBanner("title"),
+            body: tProfileBanner("body"),
+            cta: tProfileBanner("cta"),
+            dismiss: tProfileBanner("dismiss"),
+          }}
+        />
         <DietProfilePromptBanner show={dietProfileMissing} />
       </div>
 

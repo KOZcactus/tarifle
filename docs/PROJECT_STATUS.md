@@ -1,5 +1,19 @@
 # Tarifle, Proje Durumu
 
+> Oturum 23 polish (26 Nis 2026), **Canonical rename pipeline.**
+> Mod I sonrası 11 coğrafi prefix'li canonical slug + title global'e
+> rename: `mumbai-palak-paneer` → `palak-paneer`, `naples-pizza-
+> margherita` → `pizza-margherita`, `kyoto-oyakodon` → `oyakodon`,
+> `lima-lomo-saltado` → `lomo-saltado`, `manisa-kulak-corbasi` →
+> `kulak-corbasi`, `siirt-perde-pilavi` → `perde-pilavi`, ve diğer
+> 5'i. Yeni scripts: `identify-canonical-rename.ts` (otomatik aday
+> tespit Mod I JSON'larından) + `apply-canonical-rename.ts` (slug +
+> title update + AuditLog) + `rename-source-slugs.mjs` (source
+> seed-recipes.ts in-place replace). next.config.ts'e 11 permanent
+> redirect (308) eklendi (eski slug → yeni slug). Prod 3572 slug
+> kayma yok ama 11 slug global isim aldı. AuditLog action=
+> CANONICAL_RENAME kayıtlı.
+
 > Oturum 23 (26 Nis 2026), **Mod I PIPELINE 5/5 TAM KAPANIŞ.**
 > 137 cluster / 248 sil önerisi DB deep verify + otomatik kategorize
 > (yeni scripts: `verify-mod-i-batch.ts` + `classify-mod-i-pairs.ts`).

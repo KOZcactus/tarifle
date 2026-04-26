@@ -50,6 +50,41 @@ const nextConfig: NextConfig = {
       permanent: true,
     },
     { source: "/gizlilik", destination: "/yasal/gizlilik", permanent: true },
+    // Mod I sonrası canonical rename redirects (oturum 23). Eski
+    // coğrafi prefix'li slug'lar global slug'a 301 yönlendir. Site
+    // public açılmadığı için index/bookmark riski düşük ama crawler
+    // disiplini için.
+    { source: "/tarif/mumbai-palak-paneer", destination: "/tarif/palak-paneer", permanent: true },
+    { source: "/tarif/punjab-chana-masala", destination: "/tarif/chana-masala", permanent: true },
+    {
+      source: "/tarif/napoli-gnocchi-alla-sorrentina",
+      destination: "/tarif/gnocchi-alla-sorrentina",
+      permanent: true,
+    },
+    {
+      source: "/tarif/sicilya-pasta-alla-norma",
+      destination: "/tarif/pasta-alla-norma",
+      permanent: true,
+    },
+    {
+      source: "/tarif/naples-pizza-margherita",
+      destination: "/tarif/pizza-margherita",
+      permanent: true,
+    },
+    { source: "/tarif/kyoto-oyakodon", destination: "/tarif/oyakodon", permanent: true },
+    {
+      source: "/tarif/busan-haemul-pajeon",
+      destination: "/tarif/haemul-pajeon",
+      permanent: true,
+    },
+    { source: "/tarif/kahire-ful-medames", destination: "/tarif/ful-medames", permanent: true },
+    { source: "/tarif/lima-lomo-saltado", destination: "/tarif/lomo-saltado", permanent: true },
+    {
+      source: "/tarif/manisa-kulak-corbasi",
+      destination: "/tarif/kulak-corbasi",
+      permanent: true,
+    },
+    { source: "/tarif/siirt-perde-pilavi", destination: "/tarif/perde-pilavi", permanent: true },
   ],
   // bf-cache: allow browsers to cache pages for back/forward navigation.
   // NextAuth's Set-Cookie still prevents full bfcache on dynamic pages,

@@ -1,0 +1,504 @@
+[
+  {
+    "slug": "cuban-mojo-chicken",
+    "marineMinutes": 120,
+    "marineDescription": "Portakal, lime, sarımsak ve kimyonlu mojo marinadı, tavukta narenciye kokusunu belirginleştirir.",
+    "tipNote_addition": "Narenciye asidi tavuğu uzun bekleyince fazla sıkılaştırabilir; 2 saat dengeli aroma verir.",
+    "sources": [
+      "https://www.tastingtable.com/1429647/cuban-mojo-roasted-chicken-recipe/",
+      "https://www.allrecipes.com/recipe/20456/mojo-grilling-marinade/"
+    ],
+    "confidence": "medium",
+    "reason": "Tasting Table gece bekletir, Allrecipes mojoyu uzun marine için verir. Mevcut tarif 2 saat dediği için narenciye asidini artırmadan 120 dakika seçildi."
+  },
+  {
+    "slug": "lechon-asado",
+    "marineMinutes": 480,
+    "marineDescription": "Mojo içinde uzun bekleyen domuz eti, sarımsak ve turunçgil tadını kalın parçaya taşır.",
+    "tipNote_addition": "Eti kapalı kapta çevirerek bekletin; kalın parçanın her yüzü aynı aromayı alır.",
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/lechon-asado",
+      "https://www.nuwavenow.com/blogs/recipes/lechon-asado"
+    ],
+    "confidence": "high",
+    "reason": "Epicurious mojo içinde birkaç saat veya gece bekletmeyi, NuWave gece marineyi önerir. Tarifin 8 saat adımı bu aralığın güvenli karşılığı."
+  },
+  {
+    "slug": "erzurum-tavada-cag-kebabi",
+    "marineMinutes": 240,
+    "marineDescription": "Soğan suyu ve yoğurtlu terbiye, kuzu dilimlerini tavada hızlı pişmeye hazırlar.",
+    "tipNote_addition": "Eti ince dilimleyin; 4 saatlik terbiye tavada kurumadan kızarmasına yardım eder.",
+    "sources": [
+      "https://www.dirilispostasi.com/erzurum-lezzeti-sofranizda-firinda-cag-kebabi-tarifi",
+      "https://www.haberturk.com/evde-cag-kebabi-nasil-yapilir-dogal-kolay-ve-lezzetli-ev-yapimi-cag-kebabi-tarifi-3864820"
+    ],
+    "confidence": "medium",
+    "reason": "Diriliş Postası 4-6 saat, Habertürk en az bir gece verir. Ev tipi tava versiyonunda 240 dakika alt sınır olarak doğru ve uygulanabilir."
+  },
+  {
+    "slug": "naneli-kabakli-kuskus-salata-avustralya-usulu",
+    "classification": "SKIP",
+    "reason": "Adaylık sadece soslama kelimesinden geliyor; tarifte bekleme veya marine süresi yok."
+  },
+  {
+    "slug": "beijing-kung-pao-chicken",
+    "marineMinutes": 10,
+    "marineDescription": "Soya sosu ve nişasta, tavuk parçalarını kısa sürede kaplayıp tavada sulu tutar.",
+    "tipNote_addition": "Nişastalı marineyi 10 dakikadan fazla uzatmanız gerekmez; tavuk küçük doğrandığı için çabuk kaplanır.",
+    "sources": [
+      "https://cafedelites.com/kung-pao-chicken/",
+      "https://www.daringgourmet.com/kung-pao-chicken/"
+    ],
+    "confidence": "high",
+    "reason": "Cafe Delites 10 dakika, Daring Gourmet en az 10 dakika marine verir. İki kaynak da kısa nişastalı marineyi destekliyor."
+  },
+  {
+    "slug": "char-siu",
+    "marineMinutes": 240,
+    "marineDescription": "Hoisin, bal ve beş baharatlı char siu marinadı, ete tatlı tuzlu parlak yüzey verir.",
+    "tipNote_addition": "Vaktiniz varsa eti 4 saat dinlendirin; daha kısa bekleme yalnızca yüzey tadı bırakır.",
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/char-siu-barbecue-pork",
+      "https://www.bonappetit.com/recipe/hoisin-marinated-pork-chops"
+    ],
+    "confidence": "medium",
+    "reason": "Epicurious char siu için marineyi temel kabul eder, Bon Appetit hoisinli domuzda çok uzun bekletir. Ev tipi tarif için 240 dakika dengeli seçildi."
+  },
+  {
+    "slug": "char-siu-chicken-cin-firin-usulu",
+    "marineMinutes": 30,
+    "marineDescription": "Hoisin, bal, soya sosu ve sarımsak tavuk yüzeyinde kısa sürede parlak bir tabaka kurar.",
+    "tipNote_addition": "Tavuğu oda sıcaklığında değil, kapalı kapta buzdolabında bekletin; sos daha güvenli tutunur.",
+    "sources": [
+      "https://www.onceuponachef.com/recipes/char-siu-chicken.html",
+      "https://recipes.net/main-dish/bbq-grilled/char-siu-chicken-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Once Upon a Chef en az 30 dakika, Recipes.net 30 dakika veya buzdolabında daha uzun süre verir. Bu tarifin kısa beklemesiyle uyumlu."
+  },
+  {
+    "slug": "kung-pao-tavuk",
+    "marineMinutes": 10,
+    "marineDescription": "Soya sosu ve nişasta, küçük tavuk küplerini tavada hızlı pişerken yumuşak bırakır.",
+    "tipNote_addition": "Tavuğu küçük küpler halinde kesin; 10 dakikalık bekleme her parçaya yeterli olur.",
+    "sources": [
+      "https://cafedelites.com/kung-pao-chicken/",
+      "https://www.daringgourmet.com/kung-pao-chicken/"
+    ],
+    "confidence": "high",
+    "reason": "Cafe Delites ve Daring Gourmet Kung Pao tavukta 10 dakikalık nişastalı marine önerir. Tarif adımıyla birebir uyumlu."
+  },
+  {
+    "slug": "sichuan-kung-pao-tavuk",
+    "marineMinutes": 10,
+    "marineDescription": "Soya soslu nişastalı kısa marine, Sichuan usulü tavuk parçalarını sosu tutacak hale getirir.",
+    "tipNote_addition": "Sosu hazırlarken tavuk dinlensin; bu süre nişastanın yüzeye yapışması için yeterlidir.",
+    "sources": [
+      "https://www.theguardian.com/food/2020/feb/19/how-to-make-the-perfect-kung-pao-gong-bao-chicken-recipe",
+      "https://www.daringgourmet.com/kung-pao-chicken/"
+    ],
+    "confidence": "high",
+    "reason": "Guardian kısa hazırlıkta nişasta, soya ve şarap kullanır; Daring Gourmet en az 10 dakika bekletir. 10 dakika doğru aralıkta."
+  },
+  {
+    "slug": "avokadolu-lahana-salata-kuba-usulu",
+    "classification": "SKIP",
+    "reason": "Sadece salata soslama hazırlığı yakalanmış; marine edilen ana malzeme ve bekleme adımı bulunmuyor."
+  },
+  {
+    "slug": "ensalada-fria-de-papa-kuba-usulu",
+    "classification": "SKIP",
+    "reason": "Adaylık kaseyi soslamaya hazırlama cümlesinden geliyor; patates salatasında ayrı marine süresi yok."
+  },
+  {
+    "slug": "vaca-frita",
+    "marineMinutes": 15,
+    "marineDescription": "Lime, sarımsak ve kimyonla kısa bekleme, didiklenmiş ete tavada kızarmadan önce canlı tat verir.",
+    "tipNote_addition": "Et zaten pişmiş olduğu için kısa bekletin; fazla lime tadı baskınlaşabilir.",
+    "sources": [
+      "https://www.food.com/recipe/vaca-frita-cuban-shredded-beef-82219",
+      "https://www.thespruceeats.com/cuban-vaca-frita-recipe-2138030"
+    ],
+    "confidence": "medium",
+    "reason": "Food.com gece bekletir, Spruce Eats lime ve sarımsakla kısa aromalandırma çizgisindedir. Mevcut tarifin 15 dakikası pişmiş et için makul."
+  },
+  {
+    "slug": "vaca-frita-de-pollo-kuba-usulu",
+    "marineMinutes": 15,
+    "marineDescription": "Lime, sarımsak ve kimyon kısa sürede didik tavuk yüzeyine ferah Küba tadı verir.",
+    "tipNote_addition": "Tavuğu lime içinde çok uzatmayın; didik et hızlı tat alır ve tavada kolay kızarır.",
+    "sources": [
+      "https://www.food.com/recipe/vaca-frita-cuban-shredded-beef-82219",
+      "https://www.thespruceeats.com/cuban-vaca-frita-recipe-2138030"
+    ],
+    "confidence": "medium",
+    "reason": "Klasik vaca frita kaynakları lime ve sarımsakla aromalandırmayı destekler. Tavuk varyantında pişmiş ve didik et için 15 dakika yeterli."
+  },
+  {
+    "slug": "yuca-con-mojo",
+    "classification": "SKIP",
+    "reason": "Burada mojo sıcak manyoka dökülen sos; marine bekleme süresi değil."
+  },
+  {
+    "slug": "gilda-pintxos",
+    "classification": "SKIP",
+    "reason": "Tarifte salamuralı hazır malzemeler süzülüyor; yeni bir marine süresi modellenmiyor."
+  },
+  {
+    "slug": "atina-tavuk-souvlaki",
+    "marineMinutes": 30,
+    "marineDescription": "Limon, zeytinyağı, kekik ve sarımsak tavuk şişe kısa sürede Yunan usulü aroma verir.",
+    "tipNote_addition": "Küp tavukta 30 dakika yeterli olur; daha uzun bekletecekseniz limonu çok artırmayın.",
+    "sources": [
+      "https://www.theseasonedmom.com/chicken-souvlaki/",
+      "https://www.theguardian.com/food/2019/sep/04/how-to-cook-the-perfect-souvlaki-greek-kebab"
+    ],
+    "confidence": "medium",
+    "reason": "The Seasoned Mom 30 dakika, Guardian birkaç saatlik souvlaki marinadını önerir. Küçük tavuk şiş için 30 dakika uygulanabilir alt sınır."
+  },
+  {
+    "slug": "gyros",
+    "marineMinutes": 20,
+    "marineDescription": "Yoğurt, kekik ve tuz et yüzeyini hızlı kaplayıp tavada gyros tadını destekler.",
+    "tipNote_addition": "İnce kesilmiş ette 20 dakika yeterlidir; kalın parça kullanırsanız süreyi 1 saate çıkarın.",
+    "sources": [
+      "https://www.theguardian.com/food/2019/sep/04/how-to-cook-the-perfect-souvlaki-greek-kebab",
+      "https://www.simplyrecipes.com/yogurt-chicken-marinade-tip-experts-8751057"
+    ],
+    "confidence": "low",
+    "reason": "Gyros için kaynaklar genelde daha uzun marine önerir; bu tarifte et ince ve mevcut adım 20 dakika olduğu için düşük güvenle korundu."
+  },
+  {
+    "slug": "souvlaki",
+    "marineMinutes": 60,
+    "marineDescription": "Limon, kekik, sarımsak ve zeytinyağı et şişlerine klasik souvlaki kokusu verir.",
+    "tipNote_addition": "Et parçalarını eşit kesin; 1 saatlik marine her şişin aynı hızda kızarmasını sağlar.",
+    "sources": [
+      "https://www.theguardian.com/food/2019/sep/04/how-to-cook-the-perfect-souvlaki-greek-kebab",
+      "https://vikalinka.com/chicken-souvlaki-recipe/"
+    ],
+    "confidence": "medium",
+    "reason": "Guardian birkaç saat, Vikalinka en az 3 saat veya gece önerir. Tarifle için 60 dakika orta yol olarak seçildi."
+  },
+  {
+    "slug": "csalamade",
+    "marineMinutes": 1440,
+    "marineDescription": "İnce doğranmış sebzeler sirkeli salamura içinde bekleyerek Macar usulü ekşi salata tadı kazanır.",
+    "tipNote_addition": "Sebzeleri benzer incelikte doğrayın; 1 gün bekleme ekşiliğin eşit dağılmasını sağlar.",
+    "sources": [
+      "https://www.hungariantidbits.com/hungarian-mixed-vegetable-pickle-csalamade/",
+      "https://dailynewshungary.com/recipe-of-the-week-csalamade-pickled-vegetables/"
+    ],
+    "confidence": "medium",
+    "reason": "Csalamade kaynakları sirkeli karışımda dinlendirmeyi ve turşu mantığını destekler. Hızlı salata yerine 1 gün bekleme güvenli değer."
+  },
+  {
+    "slug": "uborkasalata-macar-usulu",
+    "marineMinutes": 30,
+    "marineDescription": "İnce salatalık dilimleri sirke, şeker ve sarımsakla kısa sürede serin ekşi tat alır.",
+    "tipNote_addition": "Salatalığı tuzlayıp suyunu sıkın; 30 dakika dinlenince sos sulanmaz.",
+    "sources": [
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/cucumber-salad-uborkasalata/",
+      "https://www.bestofhungary.co.uk/blogs/recipes/cucumber-salad"
+    ],
+    "confidence": "high",
+    "reason": "Offbeat Budapest 30 dakika dinlendirme, Best of Hungary 15 dakika tuzlama ve 15 dakika buzdolabı beklemesi verir. Toplam 30 dakika net."
+  },
+  {
+    "slug": "cakarta-tavuk-satay-pirinc-kasesi",
+    "marineMinutes": 20,
+    "marineDescription": "Soya sosu ve susam yağı tavuk parçalarını satay kasesinde hızlıca tatlandırır.",
+    "tipNote_addition": "Tavuğu küçük doğrayın; 20 dakika bekleme sosun yüzeye tutunmasına yeter.",
+    "sources": [
+      "https://www.foodnetwork.com/recipes/sesame-chicken-satay-recipe-1945079",
+      "https://www.simplyrecipes.com/recipes/chicken_satay/"
+    ],
+    "confidence": "medium",
+    "reason": "Food Network satayda marineyi ana adım yapar, Simply Recipes daha uzun bekletir. Bu hızlı kase için 20 dakika makul alt sınır."
+  },
+  {
+    "slug": "butter-chicken",
+    "marineMinutes": 30,
+    "marineDescription": "Yoğurt ve baharatlı marine, tavuk parçalarını domatesli tereyağlı sosa daha yumuşak hazırlar.",
+    "tipNote_addition": "Yoğurtlu karışımı tavukla iyice kaplayın; 30 dakika kısa ama yeterli bir başlangıçtır.",
+    "sources": [
+      "https://www.indianhealthyrecipes.com/butter-chicken/",
+      "https://www.simplyrecipes.com/yogurt-chicken-marinade-tip-experts-8751057"
+    ],
+    "confidence": "medium",
+    "reason": "Indian Healthy Recipes yoğurtlu marineyi önerir, Simply Recipes yoğurdun tavuğu yumuşattığını açıklar. Mevcut 30 dakika kısa ama geçerli."
+  },
+  {
+    "slug": "chicken-tikka-masala",
+    "marineMinutes": 30,
+    "marineDescription": "Yoğurt, limon ve baharatlar tavuk tikka parçalarına sos öncesi temel tadı verir.",
+    "tipNote_addition": "30 dakika az gelirse 1 saate çıkarabilirsiniz; tavuk parçaları küçükse tarif bozulmaz.",
+    "sources": [
+      "https://www.noshtastic.com/chicken-tikka-masala/",
+      "https://www.masalaherb.com/chicken-tikka-masala-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Noshtastic ilk tuzlu limon beklemesini 30 dakika verir, Masala Herb 30 dakika opsiyonel marine gösterir. Tarif süresiyle uyumlu."
+  },
+  {
+    "slug": "tavuklu-biryani",
+    "marineMinutes": 60,
+    "marineDescription": "Yoğurt, baharat ve otlarla bekleyen tavuk, biryani katlarında daha belirgin lezzet bırakır.",
+    "tipNote_addition": "Tavuğu en az 1 saat bekletin; kısa vaktiniz varsa parçaları biraz daha küçük doğrayın.",
+    "sources": [
+      "https://flavor365.com/the-most-flavorful-yogurt-marinated-chicken-biryani/",
+      "https://www.indianhealthyrecipes.com/chicken-biryani-recipe/"
+    ],
+    "confidence": "medium",
+    "reason": "Flavor365 60 dakika, Indian Healthy Recipes daha uzun yoğurtlu marine önerir. Ev tipi hızlı biryani için 60 dakika doğru orta değer."
+  },
+  {
+    "slug": "edamame-kinoa-salatasi",
+    "classification": "SKIP",
+    "reason": "Adaylık soslama hazırlığından geliyor; edamame veya kinoa için marine bekleme adımı yok."
+  },
+  {
+    "slug": "karaage",
+    "marineMinutes": 30,
+    "marineDescription": "Soya sosu, zencefil ve sarımsaklı bekleme, karaage tavuğuna kızartma öncesi temel tadı verir.",
+    "tipNote_addition": "Tavuğu 30 dakika bekletip süzdürün; fazla ıslak yüzey nişastanın çıtırlığını azaltır.",
+    "sources": [
+      "https://www.justonecookbook.com/karaage/",
+      "https://www.seriouseats.com/japanese-style-fried-chicken-karaage"
+    ],
+    "confidence": "medium",
+    "reason": "Just One Cookbook ve Serious Eats karaage için soya, sake, zencefil tabanlı marine kullanır. 30 dakika güvenli ve pratik."
+  },
+  {
+    "slug": "dakgalbi",
+    "marineMinutes": 30,
+    "marineDescription": "Gochujanglı sos, tavuk parçalarını sebzelerle tavaya girmeden önce acılı tatla kaplar.",
+    "tipNote_addition": "Tavuğu sosla ovup 30 dakika bekletin; pirinç keki ve sebzelerle tadı daha dengeli yayılır.",
+    "sources": [
+      "https://korea.stripes.com/food-drink/dakgalbi-famous-korean-spicy-stir-fried-chicken-recipe.html",
+      "https://cook.stephbarkan.com/recipes/dakgalbi/"
+    ],
+    "confidence": "high",
+    "reason": "Stripes Korea tavuğu önce 30 dakika, sonra sosla 1 saat bekletir; Bon Appetit uyarlaması en az 30 dakika der. 30 dakika net alt sınır."
+  },
+  {
+    "slug": "galbi",
+    "marineMinutes": 240,
+    "marineDescription": "Armutlu soya sosu marinadı, kısa kaburga dilimlerini ızgarada hızlı pişecek kadar yumuşatır.",
+    "tipNote_addition": "Kaburgaları tek kat dizin; 4 saat bekleme armutlu sosun her yüzeye işlemesini sağlar.",
+    "sources": [
+      "https://www.maangchi.com/recipe/la-galbi",
+      "https://www.epicurious.com/recipes/food/views/lamb-bulgogi-with-asian-pear-dipping-sauce-359749"
+    ],
+    "confidence": "medium",
+    "reason": "Maangchi galbide uzun bekletme, Epicurious armutlu Kore marinadında en az 4 saat verir. 240 dakika güvenli ortak değer."
+  },
+  {
+    "slug": "jeyuk-bokkeum",
+    "marineMinutes": 30,
+    "marineDescription": "Gochujang, soya sosu ve sarımsak domuz dilimlerini tavada hızlı kızaracak şekilde tatlandırır.",
+    "tipNote_addition": "Eti ince dilimleyin; 30 dakika bekleme acı sosun yüzeye eşit dağılması için yeterlidir.",
+    "sources": [
+      "https://www.vivachefs.com/recipes/korean/jeyuk-bokkeum",
+      "https://cookonloop.com/recipe/korean-jeyuk-bokkeum"
+    ],
+    "confidence": "medium",
+    "reason": "Viva Chefs en az 30 dakika, Cookonloop en az 15 dakika marine verir. 30 dakika tarif için sağlam ve pratik değer."
+  },
+  {
+    "slug": "kore-armutlu-bulgogi-marul-kasesi",
+    "marineMinutes": 30,
+    "marineDescription": "Armut, soya sosu ve sarımsak ince dana dilimlerine tatlı tuzlu bulgogi tadı verir.",
+    "tipNote_addition": "Et çok inceyse 30 dakika yeter; kalın dilimde armutlu sosu 1 saate uzatın.",
+    "sources": [
+      "https://www.bonappetit.com/recipe/bulgogi-recipe",
+      "https://www.maangchi.com/recipe/bulgogi"
+    ],
+    "confidence": "medium",
+    "reason": "Bon Appetit ince etin marinadı hızlı aldığını vurgular, Maangchi bulgogide armutlu marine kullanır. 30 dakika uygulanabilir değer."
+  },
+  {
+    "slug": "seoul-japchae",
+    "marineMinutes": 10,
+    "marineDescription": "Soya sosu, sarımsak ve şeker ince dana etini japchae içinde kısa sürede tatlandırır.",
+    "tipNote_addition": "Eti erişte hazırlığı sırasında bekletin; ince dilimler 10 dakikada yeterli tat alır.",
+    "sources": [
+      "https://www.maangchi.com/recipe/japchae",
+      "https://mykoreankitchen.com/korean-glass-noodle-stir-fry-japchae/"
+    ],
+    "confidence": "medium",
+    "reason": "Maangchi ve My Korean Kitchen japchae etini soya soslu karışımla önceden tatlandırır. İnce et için 10 dakika yeterli kabul edildi."
+  },
+  {
+    "slug": "chermoula-patates-salatasi-fas-usulu",
+    "classification": "SKIP",
+    "reason": "Patates salatasında soslama var; ana malzemeyi bekleten ayrı marine süresi görünmüyor."
+  },
+  {
+    "slug": "chermoula-sos",
+    "classification": "SKIP",
+    "reason": "Bu tarif bir sos veya marinadın kendisi; bekletilecek ayrı protein ya da sebze yok."
+  },
+  {
+    "slug": "chermoula-tavuk",
+    "marineMinutes": 60,
+    "marineDescription": "Kişniş, maydanoz, sarımsak ve limonlu chermoula tavuk etine Fas usulü taze aroma verir.",
+    "tipNote_addition": "Marinadı derinin altındaki ete sürün; 1 saat bekleme aromayı daha içeri taşır.",
+    "sources": [
+      "https://grassrootscoop.com/blogs/recipes/chicken-chermoula",
+      "https://cookonloop.com/recipe/moroccan-chermoula-chicken"
+    ],
+    "confidence": "high",
+    "reason": "Grass Roots en az 1 saat, Cookonloop 30 dakika ile 2 saat arası marine önerir. 60 dakika iki kaynağın ortak güvenli noktası."
+  },
+  {
+    "slug": "shawarma-pilavi",
+    "marineMinutes": 30,
+    "marineDescription": "Yoğurt, limon ve baharatlı shawarma marinadı, tavuk parçalarını pilav üstü için tatlandırır.",
+    "tipNote_addition": "Tavuğu ince şerit kesin; 30 dakika bekleme pilav üstünde kuru kalmasını azaltır.",
+    "sources": [
+      "https://www.bonappetit.com/recipe/shawarma-roast-chicken-with-shallots-and-lemons",
+      "https://www.foodnetwork.com/recipes/food-network-kitchen/yogurt-marinated-grilled-chicken-shawarma-9961050"
+    ],
+    "confidence": "medium",
+    "reason": "Bon Appetit 30 dakika ile 12 saat arası, Food Network uzun yoğurtlu marine verir. Bu pilav kasesi için 30 dakika alt sınır uygun."
+  },
+  {
+    "slug": "shish-tawook",
+    "marineMinutes": 120,
+    "marineDescription": "Yoğurt, limon, sarımsak ve baharatlar tavuk şişi yumuşak ve kokulu hale getirir.",
+    "tipNote_addition": "Tavuğu 2 saat buzdolabında bekletin; şişe dizerken fazla marinadı hafifçe sıyırın.",
+    "sources": [
+      "https://www.cookingclassy.com/shish-tawook/",
+      "https://cupofyum.com/recipes/shish-tawook-recipe-1"
+    ],
+    "confidence": "high",
+    "reason": "Cooking Classy ve Cup of Yum shish tawook için 2 saat marine verir. Tarifin mevcut 2 saat adımıyla birebir uyumlu."
+  },
+  {
+    "slug": "tavuk-shawarma",
+    "marineMinutes": 30,
+    "marineDescription": "Yoğurt, sarımsak ve sıcak baharatlar tavuk shawarma dilimlerine hızlı sokak lezzeti verir.",
+    "tipNote_addition": "Baharatı yoğurda iyice yedirin; 30 dakika bekleme ince tavuk dilimlerinde yeterli olur.",
+    "sources": [
+      "https://www.bonappetit.com/recipe/shawarma-roast-chicken-with-shallots-and-lemons",
+      "https://platedfocus.com/chicken-shawarma-with-yogurt-based-marinade/"
+    ],
+    "confidence": "medium",
+    "reason": "Bon Appetit 30 dakika alt sınır verir, Plated Focus yoğurtlu shawarma marinadını kullanır. 30 dakika hızlı tarifle uyumlu."
+  },
+  {
+    "slug": "carne-asada",
+    "marineMinutes": 60,
+    "marineDescription": "Lime, portakal, sarımsak ve baharatlı marine, dana etine ızgara öncesi canlı Meksika tadı verir.",
+    "tipNote_addition": "Asitli marinadı 1 saatle sınırlamak ince etin yüzeyini fazla yumuşatmadan lezzet verir.",
+    "sources": [
+      "https://www.realsimple.com/what-is-carne-asada-8619146",
+      "https://www.bonappetit.com/recipe/carne-asada-recipe"
+    ],
+    "confidence": "medium",
+    "reason": "Real Simple 1-8 saat aralığını verir, Bon Appetit citrus çizgisini destekler. İnce dana için 60 dakika güvenli alt değer."
+  },
+  {
+    "slug": "tacos-al-pastor",
+    "marineMinutes": 240,
+    "marineDescription": "Achiote, kuru biber ve ananaslı marine, al pastor etine tatlı acı derinlik verir.",
+    "tipNote_addition": "Eti ince dilimleyin; 4 saat bekleme ananas ve biber aromasını dengeli taşır.",
+    "sources": [
+      "https://keviniscooking.com/al-pastor/",
+      "https://www.thecookingguy.com/recipes/al-pastor-tacos"
+    ],
+    "confidence": "high",
+    "reason": "Kevin Is Cooking 4 saat, The Cooking Guy en az 4 saat ile gece arası marine önerir. 240 dakika net ortak değer."
+  },
+  {
+    "slug": "ajili-tavuk-anticucho-bowl-peru-usulu",
+    "marineMinutes": 30,
+    "marineDescription": "Aji, sirke ve lime tavuğa anticucho tarzı acı ekşi bir yüzey tadı verir.",
+    "tipNote_addition": "Marinadı koyu tutun; 30 dakika bekleme tavukta daha belirgin kızarma sağlar.",
+    "sources": [
+      "https://rumbameats.com/recipe/rumba-meats-peruvian-anticuchos/",
+      "https://foodieatlas.com/peru/anticuchos/index.html"
+    ],
+    "confidence": "medium",
+    "reason": "Rumba Meats anticuchos için 1 saat, FoodieAtlas en az 2 saat verir. Tavuk bowl hızlı versiyonunda 30 dakika düşük ama kullanılabilir."
+  },
+  {
+    "slug": "anticuchos-peru-usulu",
+    "marineMinutes": 60,
+    "marineDescription": "Aji panca, sirke, sarımsak ve kimyon dana etini Peru usulü şişe hazırlar.",
+    "tipNote_addition": "Et parçalarını çok iri kesmeyin; 1 saat marine şişte dumanlı tadı belirginleştirir.",
+    "sources": [
+      "https://rumbameats.com/recipe/rumba-meats-peruvian-anticuchos/",
+      "https://foodieatlas.com/peru/anticuchos/index.html"
+    ],
+    "confidence": "high",
+    "reason": "Rumba Meats 1 saat, FoodieAtlas en az 2 saat veya gece önerir. 60 dakika anticuchos için güvenli alt sınır."
+  },
+  {
+    "slug": "anticuchos-de-pollo-peru-usulu",
+    "marineMinutes": 60,
+    "marineDescription": "Aji panca, sirke ve sarımsaklı marine tavuk şişe Peru usulü dumanlı tat verir.",
+    "tipNote_addition": "Tavuğu kuşbaşı doğrayın; 1 saat bekleme sirke tadını aşırı keskinleştirmeden işler.",
+    "sources": [
+      "https://rumbameats.com/recipe/rumba-meats-peruvian-anticuchos/",
+      "https://foodieatlas.com/peru/anticuchos/index.html"
+    ],
+    "confidence": "medium",
+    "reason": "Anticuchos kaynakları et için 1 saat ve üstünü destekler. Tavuk varyantında aynı sos ailesiyle 60 dakika makul uyarlama."
+  },
+  {
+    "slug": "lima-ceviche-clasico-levrek",
+    "marineMinutes": 8,
+    "marineDescription": "Taze levrek lime suyunda kısa bekleyerek diri, parlak ve ekşi Peru ceviche dokusu alır.",
+    "tipNote_addition": "Balığı servis öncesi bekletin; 8 dakika diri doku için yeterlidir.",
+    "sources": [
+      "https://www.machutravelperu.com/blog/peruvian-ceviche",
+      "https://www.southernliving.com/food/seafood/what-is-ceviche"
+    ],
+    "confidence": "high",
+    "reason": "Machu Travel Peru 10-15 dakika, Southern Living 10-25 dakika aralığını verir. Tarifin 8 dakikası kısa ve diri servis için yakın."
+  },
+  {
+    "slug": "lima-ceviche-klasik",
+    "marineMinutes": 10,
+    "marineDescription": "Beyaz balık, lime, soğan ve acı biberle kısa sürede ferah ceviche dokusu kazanır.",
+    "tipNote_addition": "10 dakikadan sonra tadına bakın; daha uzun bekleme balığın dokusunu sertleştirebilir.",
+    "sources": [
+      "https://www.machutravelperu.com/blog/peruvian-ceviche",
+      "https://www.southernliving.com/food/seafood/what-is-ceviche"
+    ],
+    "confidence": "high",
+    "reason": "Machu Travel Peru 10-15 dakika, Southern Living 10-25 dakika ceviche beklemesi verir. 10 dakika klasik kısa Peru servisine uygun."
+  },
+  {
+    "slug": "lima-fasulyeli-kinoa-salata-peru-usulu",
+    "classification": "SKIP",
+    "reason": "Adaylık kinoayı soslama notundan kaynaklanıyor; marine beklemesi modellenmemeli."
+  },
+  {
+    "slug": "limonlu-kinoa-salatasi-peru-usulu",
+    "classification": "SKIP",
+    "reason": "Bu tarifte soslama öncesi soğutma var; marine süresi içeren bir adım yok."
+  },
+  {
+    "slug": "aji-lime-patates-salata-peru-usulu",
+    "classification": "SKIP",
+    "reason": "Patatesi ılıkken soslama ipucu var; ayrı bir bekleme veya marine aşaması bulunmuyor."
+  },
+  {
+    "slug": "dereotlu-patates-salatasi-polonya-usulu",
+    "classification": "SKIP",
+    "reason": "Patatesi sosla buluşturma notu marine süresi değildir; bekleme adımı yok."
+  },
+  {
+    "slug": "erikli-lahana-salata-polonya-usulu",
+    "classification": "SKIP",
+    "reason": "Adaylık genel soslama hazırlığından geliyor; salatada marine edilen ana malzeme yok."
+  },
+  {
+    "slug": "patates-elma-salatasi-polonya-usulu",
+    "classification": "SKIP",
+    "reason": "Sıcak patatesi hardallı sosla buluşturma ipucu var; süreli marine aşaması yok."
+  }
+]

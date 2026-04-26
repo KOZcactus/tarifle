@@ -1,0 +1,727 @@
+[
+  {
+    "slug": "avokadolu-ispanak-smoothie",
+    "verdict": "PASS",
+    "reason": "Avokado, ıspanak, muz ve badem sütüyle yapılan smoothie kaynaklardaki yeşil smoothie yapısıyla uyumlu. Vegan etiket ve kuruyemiş alerjeni doğru.",
+    "sources": [
+      "https://www.kitchenaid.com/countertop-appliances/recipes/banana-spinach-avocado-smoothie",
+      "https://www.sunset.com/recipe/avocado-and-spinach-smoothie"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "avokadolu-kakao-smoothie",
+    "verdict": "PASS",
+    "reason": "Avokado, muz, kakao ve yulaf içeceğiyle kremsi smoothie kurulumu tutarlı. Yulaf içeceği nedeniyle gluten bildirimi ihtiyatlı ve kabul edilebilir.",
+    "sources": [
+      "https://minimalistbaker.com/creamy-chocolate-avocado-smoothie/",
+      "https://www.bbcgoodfood.com/recipes/collection/smoothie-recipes"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "avokadolu-lahana-salata-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 tuzla ovma yapıyor ama ingredient listesinde tuz yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.foodfidelity.com/cuban-avocado-salad/",
+      "https://www.epicurious.com/recipes/food/views/avocado-salad-em-ensalada-de-aguacate-em-364811"
+    ],
+    "confidence": "medium",
+    "reason": "Küba avokado salatası narenciye, ot ve sade sebze yapısıyla uyumlu. Tek açık hata, adımda kullanılan tuzun listede olmaması."
+  },
+  {
+    "slug": "avokadolu-misir-mucveri-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 taze ot, step 3 yağ ve step 5 limonlu avokado ezmesi kullanıyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Taze ot", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Limon suyu", "amount": "1", "unit": "tatlı kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.australianavocados.com.au/recipes/avocado-and-corn-fritters-with-poached-eggs/",
+      "https://avowest.com.au/recipes/corn-fritters-with-avocado-salsa/"
+    ],
+    "confidence": "high",
+    "reason": "Avokadolu mısır mücveri Avustralya brunch tarifleriyle uyumlu. Adımların kullandığı ot, yağ ve limon alışveriş listesinde eksik."
+  },
+  {
+    "slug": "avokadolu-narli-gavurdagi-salata-hatay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: Gavurdağı salatası için salatalık, biber, soğan, maydanoz, nar ekşisi ve zeytinyağı gibi temel öğeler eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Salatalık", "amount": "1", "unit": "adet" },
+        { "name": "Sivri biber", "amount": "2", "unit": "adet" },
+        { "name": "Kuru soğan", "amount": "0.5", "unit": "adet" },
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" },
+        { "name": "Nar ekşisi", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/gavurdagi-salatasi/",
+      "https://www.nefisyemektarifleri.com/gavurdagi-salatasi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Domates, ceviz ve nar doğru, fakat Gavurdağı salatasının temel taze sebze ve ekşili yağlı sos bileşenleri eksik kalmış."
+  },
+  {
+    "slug": "avokadolu-patates-causa-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: causa patates tabanı için aji amarillo veya acı biber ezmesi, yağ ve tuz gerekli ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Aji amarillo veya acı biber ezmesi", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.eatperu.com/causa-limena-de-pollo/",
+      "https://ivu.org/vegan-recipes-around-the-world/vegan-food-academy/front-page/item/causa-limena-peruvian-potato-salad.html"
+    ],
+    "confidence": "high",
+    "reason": "Causa için limonlu patates ve avokado doğru, ancak Peru kimliği veren aji amarillo ve temel tatlandırıcılar ingredient listesinde yok."
+  },
+  {
+    "slug": "avokadolu-ton-balikli-salata-kasesi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.seafoodnutrition.org/project/tuna-salad-with-avocado",
+      "https://www.food.com/recipe/tuna-and-avocado-salad-57648"
+    ],
+    "confidence": "high",
+    "reason": "Ton balıklı avokado salatası kaynaklarla uyumlu. Malzeme, süre, protein etiketi ve düşük kalorili salata kurgusu makul görünüyor."
+  },
+  {
+    "slug": "avokadolu-tost",
+    "verdict": "PASS",
+    "reason": "Avokado, yumurta, limon ve tam buğday ekmeğiyle kahvaltı tostu tutarlı. Gluten ve yumurta bildirimi, süre ve 30 dakika altı etiketi doğru.",
+    "sources": [
+      "https://www.recipetineats.com/avocado-toast/",
+      "https://www.bbcgoodfood.com/recipes/avocado-toast"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "avokadolu-turplu-tahinli-salata-hatay-usulu",
+    "verdict": "PASS",
+    "reason": "Avokado, turp, tahin ve limonlu salata sade ama tutarlı bir Hatay esintili meze yapısı kuruyor. Vegan etiket ve susam alerjeni doğru.",
+    "sources": [
+      "https://www.yemek.com/tarif/tahinli-turp-salatasi/",
+      "https://www.nefisyemektarifleri.com/tahinli-turp-salatasi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "avokadolu-yumurtali-tost-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 tuz ve karabiber, step 3 yağ, step 5 kişniş ve acı sos kullanıyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" },
+        { "name": "Sıvı yağ", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Kişniş", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Acı sos", "amount": "1", "unit": "tatlı kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.recipetineats.com/avocado-toast/",
+      "https://www.eatperu.com/peruvian-breakfasts/"
+    ],
+    "confidence": "medium",
+    "reason": "Avokadolu yumurtalı tost genel olarak tutarlı. Açık sorun, adımlarda geçen tatlandırıcı ve servis öğelerinin listede bulunmaması."
+  },
+  {
+    "slug": "avustralya-balkabakli-damper-muffin",
+    "verdict": "PASS",
+    "reason": "Un, kabartma tozu, süt, tereyağı, balkabağı ve cheddar ile fırınlanan damper muffin yorumu Avustralya quick bread çizgisiyle uyumlu.",
+    "sources": [
+      "https://www.taste.com.au/recipes/aussie-damper/5a1c21c2-d0dd-4b50-90ed-4c9aaf272f9e",
+      "https://www.womensweeklyfood.com.au/recipe/baking/pumpkin-scones-5782/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "aycekirdekli-bulgur-kofte-kirikkale-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 baharat, step 4 yağ kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kimyon", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/mercimek-koftesi/",
+      "https://www.nefisyemektarifleri.com/etsiz-cig-kofte-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Bulgurlu köfte yapısı vegan ve pratik bir yorum olarak makul. Fakat adımda kullanılan baharat ve tava yağı listede yok."
+  },
+  {
+    "slug": "aydin-cine-koftesi",
+    "verdict": "PASS",
+    "reason": "Kıyma, soğan suyu, tuz, karabiber, kimyon ve dinlendirme akışı Çine köftesi için makul. Süre ve yüksek protein etiketi içerikle uyumlu.",
+    "sources": [
+      "https://turkiye.influence.cool/tr/aydin/cine/yerel-lezzetler/cine-koftesi/",
+      "https://www.koftetarifi.gen.tr/aydin-cine-koftesi.html"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "aydin-enginarli-kuru-domatesli-pilav",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 5 sıcak su kullanıyor ama ingredient listesinde su yok",
+      "ingredients: pilav için tuz listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "2.25", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/enginarli-pilav/",
+      "https://www.nefisyemektarifleri.com/enginarli-pilav/"
+    ],
+    "confidence": "high",
+    "reason": "Enginar, pirinç, zeytinyağı ve dereotlu pilav doğru. Ancak pişirme sıvısı ve tuz alışveriş listesinde bulunmuyor."
+  },
+  {
+    "slug": "aydin-kuru-incirli-lor-tatlisi",
+    "verdict": "PASS",
+    "reason": "Kuru incir, lor, bal, ceviz ve tarçınla hazırlanan tatlı Aydın inciri bağlamıyla tutarlı. Süt ve kuruyemiş alerjenleri doğru.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/incir-dolmasi-tarifi/",
+      "https://www.yemek.com/tarif/cevizli-incir-tatlisi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "aydin-lorlu-patlican-bohcasi",
+    "verdict": "PASS",
+    "reason": "Patlıcanı fırında yumuşatıp lorlu içle bohça yapmak tutarlı bir vejetaryen ana yemek. Süt alerjeni ve fırın süresi makul.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/peynirli-patlican-sarma/",
+      "https://www.yemek.com/tarif/patlican-sarma/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "aydin-zeytinyagli-enginar-kalbi",
+    "verdict": "PASS",
+    "reason": "Enginar, havuç, bezelye, zeytinyağı, limon ve dereotu zeytinyağlı enginar tarifleriyle uyumlu. Vegan etiket ve süreler makul.",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/nefis-zeytinyagli-enginar-tarifi/19582",
+      "https://kitcheninred.com/recipe/zeytinyagli-enginar-tarifi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "ayran",
+    "verdict": "PASS",
+    "reason": "Yoğurt, su ve tuzla yapılan ayran klasik formüle uyuyor. Süt alerjeni, pratik etiket ve çok kısa hazırlık süresi doğru.",
+    "sources": [
+      "https://www.yemek.com/tarif/ayran/",
+      "https://www.nefisyemektarifleri.com/ayran-nasil-yapilir/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "ayran-asi-corbasi-erzurum-usulu",
+    "verdict": "PASS",
+    "reason": "Buğday, nohut, yoğurt, un, nane ve tuzla kurulan ayran aşı çorbası kaynaklarla uyumlu. Gluten ve süt alerjenleri doğru.",
+    "sources": [
+      "https://www.yemek.com/tarif/ayran-asi-corbasi/",
+      "https://www.nefisyemektarifleri.com/ayran-asi-corbasi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "ayran-asili-kesme-corbasi-erzincan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 ayranı unla çırpıyor ama ingredient listesinde un yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Un", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/ayran-asi-corbasi/",
+      "https://www.yemek.com/tarif/ayran-asi-corbasi/"
+    ],
+    "confidence": "high",
+    "reason": "Ayranlı kesme çorbası mantıklı, fakat terbiyede un kullanımı açıkça yazılmış. Ingredient listesinde aynı malzeme eksik."
+  },
+  {
+    "slug": "ayranli-bulgur-corbasi-erzurum-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 5 tuz ayarı yapıyor ama ingredient listesinde tuz yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/ayran-asi-corbasi/",
+      "https://www.nefisyemektarifleri.com/ayranli-bulgur-corbasi/"
+    ],
+    "confidence": "high",
+    "reason": "Bulgur ve ayranla yapılan çorba yöresel ayran aşı çizgisiyle uyumlu. Son adımda kullanılan tuz listeye eklenmeli."
+  },
+  {
+    "slug": "ayranli-evelik-corbasi-erzincan-usulu",
+    "verdict": "PASS",
+    "reason": "Evelik otu, buğday, yoğurt ve yumurtalı terbiye ile kurulan çorba Doğu Anadolu ayran aşı mantığıyla uyumlu. Alerjenler doğru.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/evelik-corbasi/",
+      "https://www.yemek.com/tarif/ayran-asi-corbasi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "ayranli-kete-agri-usulu",
+    "verdict": "PASS",
+    "reason": "Un, ayran, yumurta ve tereyağıyla hazırlanan fırın hamuru kete ailesi içinde makul. Gluten, süt ve yumurta alerjenleri doğru.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kete-tarifi/",
+      "https://www.yemek.com/tarif/kete/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "ayranli-yesil-bugday-asi-tunceli-usulu",
+    "verdict": "PASS",
+    "reason": "Yeşil buğday, ayran, su ve naneli çorba yapısı bölgesel ayran aşı çeşitleriyle uyumlu. Süt ve gluten bildirimi doğru.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/tunceli/neyenir",
+      "https://www.yemek.com/tarif/ayran-asi-corbasi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "ayranli-yesil-mercimek-corbasi-erzurum-yayla-usulu",
+    "verdict": "PASS",
+    "reason": "Yeşil mercimek, ayran, un ve naneli çorba besleyici yayla çorbası yorumuyla tutarlı. Gluten ve süt alerjenleri doğru.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/yesil-mercimekli-yogurt-corbasi/",
+      "https://www.yemek.com/tarif/yesil-mercimekli-yogurt-corbasi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "ayva-tatlisi",
+    "verdict": "PASS",
+    "reason": "Ayva, şeker, karanfil, çekirdek, kaymak ve cevizle pişen tatlı kaynaklarla uyumlu. Süt ve kuruyemiş alerjenleri doğru.",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/kaymakli-ayva-tatlisi-tarifi/19543",
+      "https://yemektarifleri.gumushaneliler.net/ayva-tatlisi-tarifi-kaymakli-cevizli/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "ayvali-bulgur-pilavi-konya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 4 tuz ekliyor ama ingredient listesinde tuz yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/ayvali-bulgur-pilavi/",
+      "https://www.yemek.com/tarif/bulgur-pilavi/"
+    ],
+    "confidence": "medium",
+    "reason": "Ayvalı bulgur pilavı Konya mutfağına uygun bir kış yorumu. Pişirme akışı doğru, ancak adımda geçen tuz listede yok."
+  },
+  {
+    "slug": "ayvali-hardalli-yesil-salata-yalova-usulu",
+    "verdict": "PASS",
+    "reason": "Ayva, yeşillik, hardal, limon ve zeytinyağıyla hızlı salata yapısı tutarlı. Vegan etiket ve hardal alerjeni doğru.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/collection/winter-salad-recipes",
+      "https://www.eatingwell.com/recipes/18091/salad/fruit/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "ayvali-kereviz-guveci-canakkale-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 ve 2 soğan kullanıyor ama ingredient listesinde yok",
+      "ingredients: step 4 limon suyu kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/ayvali-kereviz/",
+      "https://www.nefisyemektarifleri.com/ayvali-kereviz-yemegi/"
+    ],
+    "confidence": "high",
+    "reason": "Ayva ve kerevizli zeytinyağlı yapı doğru. Step içinde soğan ve limon açıkça kullanılıyor, bu iki temel malzeme listede eksik."
+  },
+  {
+    "slug": "ayvali-kestaneli-kup-bursa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: sütlü nişastalı taban için şeker kullanılması gerekir, ingredient listesinde tatlandırıcı yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Toz şeker", "amount": "0.33", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kestaneli-muhallebi/",
+      "https://www.yemek.com/tarif/muhallebi/"
+    ],
+    "confidence": "medium",
+    "reason": "Süt ve nişastalı kup tabanı için tatlandırıcı gerekir. Mevcut tatlıda ayva ve kestane var, fakat muhallebi şekersiz kalmış."
+  },
+  {
+    "slug": "ayvali-komposto-yozgat-usulu",
+    "verdict": "PASS",
+    "reason": "Ayva, su, şeker, tarçın ve karanfille pişen komposto klasik kış içeceği çizgisiyle uyumlu. Vegan etiket ve alerjen boşluğu doğru.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/ayva-kompostosu/",
+      "https://www.yemek.com/tarif/ayva-kompostosu/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "ayvali-kuzu-yahnisi-nevsehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 sıcak su kullanıyor ama ingredient listesinde yok",
+      "ingredients: etli yahni için tuz listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "2", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/ayvali-et-yemegi/",
+      "https://www.yemek.com/tarif/ayvali-kuzu/"
+    ],
+    "confidence": "medium",
+    "reason": "Ayva ve kuzu yahnisi Türk mutfağında makul bir kış yemeği. Pişirme sıvısı ve tuz adımda var ama listede görünmüyor."
+  },
+  {
+    "slug": "ayvali-tavuk-kapama-bursa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 tavukları tuzluyor ama ingredient listesinde tuz yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/tavuk-kapama/",
+      "https://www.nefisyemektarifleri.com/tavuk-kapama/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, pirinç, tereyağı ve tavuk suyuyla fırın kapama akışı doğru. Tek açık eksik, tuzun ingredient listesinde olmaması."
+  },
+  {
+    "slug": "ayvalik-papalina-tava",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 6 soğanla servis diyor ama ingredient listesinde soğan yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/balik-yemekleri/balik-tarifleri/papalina-tava",
+      "https://www.nefisyemektarifleri.com/hamsi-tava-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Küçük balığı unlayıp kızartma tekniği doğru. Servis adımında soğan geçiyor, alışveriş listesinde görünmüyor."
+  },
+  {
+    "slug": "ayvalik-tostu-klasik",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: klasik Ayvalık tostunda rus salatası yaygın bir bileşen, mevcut listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Rus salatası", "amount": "4", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.diyetkolik.com/yemek-tarifi/ayvalik-tostu",
+      "https://www.yanturalivedatbey.com/ayvalik-tostu"
+    ],
+    "confidence": "medium",
+    "reason": "Sucuk, sosis, salam, kaşar, turşu ve domates doğru. Klasik Ayvalık tostunda rus salatası çok yaygın, listede eksik kalmış."
+  },
+  {
+    "slug": "babagannus-gaziantep-usulu",
+    "verdict": "PASS",
+    "reason": "Köz patlıcan, biber, domates, sarımsak, zeytinyağı ve limonlu babagannuş Gaziantep tarzıyla uyumlu. Vegan etiket doğru.",
+    "sources": [
+      "https://www.yemek.com/tarif/babagannus/",
+      "https://www.nefisyemektarifleri.com/gaziantep-usulu-babagannus/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "babgulyas",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 soğan, step 4 sıcak su kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sıcak su", "amount": "5", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://chefreader.com/babgulyas-hungarian-bean-goulash-from-the-cauldron/",
+      "https://dailynewshungary.com/recipe-of-the-week-bean-soup-babgulyas/"
+    ],
+    "confidence": "high",
+    "reason": "Et, fasulye, patates ve paprika babgulyas için doğru. Adımlarda kullanılan soğan, su ve tuz listede bulunmadığı için eklenmeli."
+  },
+  {
+    "slug": "badem-ezmesi-edirne-usulu",
+    "verdict": "PASS",
+    "reason": "Badem, şeker ve suyla hazırlanan Edirne badem ezmesi resmi kaynaklardaki malzeme yapısıyla uyumlu. Vegan ve kuruyemiş bildirimi doğru.",
+    "sources": [
+      "https://www.edirne.gov.tr/badem-ezmesi",
+      "https://www.kulturportali.gov.tr/turkiye/edirne/neyenir/badem-ezmesi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "bademli-kabak-tatlisi-denizli-usulu",
+    "verdict": "PASS",
+    "reason": "Balkabağı, şeker, az su ve bademle pişen tatlı klasik kabak tatlısı yapısına uyuyor. Vegan etiket ve kuruyemiş alerjeni doğru.",
+    "sources": [
+      "https://www.yemek.com/tarif/kabak-tatlisi/",
+      "https://www.nefisyemektarifleri.com/kabak-tatlisi-tarifi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "bademli-muzlu-serinletici-alanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: mevcut adımlar çok genel ve ılık servis ifadesi soğuk içecek bağlamıyla çelişiyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Muzları iri doğrayıp badem sütü, bal ve buzla blender kabına alın."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Karışımı 45 saniye pürüzsüz ve soğuk kıvam alana kadar çekin.",
+          "timerSeconds": 45
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "İçeceği soğuk bardaklara paylaştırıp buz erimeden servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.kitchenaid.com/countertop-appliances/recipes/banana-spinach-avocado-smoothie",
+      "https://www.bbcgoodfood.com/recipes/collection/smoothie-recipes"
+    ],
+    "confidence": "high",
+    "reason": "Malzemeler soğuk smoothieye uygun, fakat adımlar tarif etmiyor ve ılık servis diyor. Kullanıcıya net blender akışı verilmeli."
+  },
+  {
+    "slug": "bademli-soguk-domates-corbasi-ispanya-usulu",
+    "verdict": "PASS",
+    "reason": "Domatesli soğuk çorba, badem, bayat ekmek, zeytinyağı ve sirke ile İspanyol gazpacho ve ajo blanco arasında makul bir yorumdur.",
+    "sources": [
+      "https://www.curiouscuisiniere.com/ajo-blanco-spanish-almond-soup/",
+      "https://www.theguardian.com/food/2021/jul/21/how-to-make-ajo-blanco-recipe-felicity-cloake"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "bademli-tavuk-pilavi-edirne-usulu",
+    "verdict": "PASS",
+    "reason": "Bademli tavuk pilavında pirinç, tavuk suyu, tereyağı, badem ve didik tavuk uyumlu. Süt ve kuruyemiş alerjenleri doğru.",
+    "sources": [
+      "https://www.yemek.com/tarif/bademli-tavuklu-pilav/",
+      "https://www.nefisyemektarifleri.com/bademli-tavuklu-pilav/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "bademli-zeytinli-salata-ispanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 5 asit ve tuz dengesi kontrol ediyor ama ingredient listesinde asit kaynağı ve tuz yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu veya sirke", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/collection/spanish-salad-recipes",
+      "https://www.seriouseats.com/marinated-olives-almonds-recipe"
+    ],
+    "confidence": "medium",
+    "reason": "Zeytin, badem, yeşillik ve zeytinyağlı salata İspanyol meze çizgisine uyuyor. Adımdaki asit ve tuz listede eksik."
+  },
+  {
+    "slug": "bafra-nokulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 maya ve tuz kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Instant maya", "amount": "1", "unit": "paket" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/samsun/neyenir/bafra-nokulu",
+      "https://www.nefisyemektarifleri.com/bafra-nokulu/"
+    ],
+    "confidence": "high",
+    "reason": "Bafra nokulunda cevizli üzümlü iç ve mayalı hamur doğru. Hamur adımında geçen maya ve tuz ingredient listesinde eksik."
+  },
+  {
+    "slug": "bafra-pidesi-samsun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 7 fırından çıkınca tereyağı sürüyor ama ingredient listesinde tereyağı yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bafrapidecisi.com/bafra-pidesi/",
+      "https://www.kulturportali.gov.tr/turkiye/samsun/neyenir/bafra-pidesi"
+    ],
+    "confidence": "high",
+    "reason": "Kapalı kıymalı Bafra pidesi yapısı doğru. Son adımda sürülen tereyağı alışveriş listesinde görünmüyor."
+  },
+  {
+    "slug": "baghrir",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 kabartma tozu ve tuz, step 5 tereyağı kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kabartma tozu", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" },
+        { "name": "Tereyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://tasteofmaroc.com/moroccan-beghrir-recipe/",
+      "https://www.thespruceeats.com/baghrir-moroccan-semolina-pancakes-2394818"
+    ],
+    "confidence": "high",
+    "reason": "İrmik, un, maya ve tek yüzlü pişirme baghrir için doğru. Adımlarda geçen kabartma tozu, tuz ve tereyağı listede eksik."
+  },
+  {
+    "slug": "baharatli-lor-ezmesi-edirne-usulu",
+    "verdict": "PASS",
+    "reason": "Lor, kırmızı biber, dereotu ve zeytinyağıyla hazırlanan hızlı ezme tutarlı. Süt alerjeni ve 30 dakika altı etiketi doğru.",
+    "sources": [
+      "https://www.yemek.com/tarif/lor-peyniri-ezmesi/",
+      "https://www.nefisyemektarifleri.com/lor-peyniri-ezmesi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "baharatli-misir-bardak",
+    "verdict": "PASS",
+    "reason": "Mısır, tereyağı, lime ve baharatla bardakta servis edilen atıştırmalık esquites çizgisine yakın. Süt alerjeni tereyağı nedeniyle doğru.",
+    "sources": [
+      "https://www.177milkstreet.com/recipes/mexican-style-corn-chili-lime-esquites",
+      "https://mexicanfoodjournal.com/mexican-street-corn-esquites/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "baharatli-patlamis-misir",
+    "verdict": "PASS",
+    "reason": "Yağda patlatılan mısırın paprika, sarımsak tozu ve limon kabuğuyla baharatlanması tutarlı. Vegan etiket ve alerjen boşluğu doğru.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/perfect-popcorn",
+      "https://www.allrecipes.com/recipe/246374/spiced-popcorn/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "baharatli-trail-mix",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 yağ kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.eatingwell.com/recipe/249151/spiced-nut-mix/",
+      "https://www.bbcgoodfood.com/recipes/collection/trail-mix-recipes"
+    ],
+    "confidence": "high",
+    "reason": "Kuruyemiş, çekirdek, kuru üzüm ve baharatlı karışım doğru. Yağ adımda var ama ingredient listesinde görünmüyor."
+  }
+]

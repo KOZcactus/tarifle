@@ -1,4 +1,4 @@
-# Mod J Pair-Level Duplicate Final Audit (Codex tetik şablonu)
+# Mod IA Pair-Level Duplicate Final Audit (Codex tetik şablonu)
 
 > Bu, Mod I cluster-based pipeline (5/5 KAPANIŞ, 107 sil) sonrasında
 > kalan **92 pair-level** kesin/şüpheli duplike çiftini Codex'in tek tek
@@ -9,14 +9,14 @@
 
 ## Yeni chat başlangıç mesajı (Codex'e ilk mesaj)
 
-> **Dikkat: Sadece ilk satırdaki Batch numarasını değiştir** (`Mod J Batch
-> 1` veya `Mod J Batch 2`). Diğer satırlar aynı kalmalı. Tutarsızlık
+> **Dikkat: Sadece ilk satırdaki Batch numarasını değiştir** (`Mod IA Batch
+> 1` veya `Mod IA Batch 2`). Diğer satırlar aynı kalmalı. Tutarsızlık
 > tespit edersen dur, kullanıcıya sor.
 
 ---
 
 ```
-Mod J Batch 1.
+Mod IA Batch 1.
 
 Tarifle, Türkçe tarif platformu. Mod I cluster-based duplicate pipeline
 (5/5 KAPANIŞ, 107 sil + 11 canonical rename) sonrasında kalan
@@ -26,7 +26,7 @@ Tarifle, Türkçe tarif platformu. Mod I cluster-based duplicate pipeline
 suggestions.md`'den çıkarılmış 92 pair) için her bir pair'i
 inceleyip "DUPLICATE", "VARIANT", veya "UNCERTAIN" olarak sınıflandır.
 
-**JSON çıktı formatı (`docs/mod-j-batch-N.json`):**
+**JSON çıktı formatı (`docs/mod-ia-batch-N.json`):**
 
 [
   {
@@ -80,7 +80,7 @@ karar ver. Eğer ek malzeme detayı gerekirse "UNCERTAIN" işaretle.
 - DUPLICATE için `winner + loser` zorunlu (boşsa hata).
 - VARIANT/UNCERTAIN için `winner/loser` boş.
 - Reason 50-150 karakter (kısa, jargon yasak liste'ye uy).
-- "Mod J Batch N hazır" + özet:
+- "Mod IA Batch N hazır" + özet:
   - Toplam pair: X
   - DUPLICATE: Y
   - VARIANT: Z
@@ -94,7 +94,7 @@ Hazır mısın? Onay verirsen Batch 1'i (ilk 30 pair) işlemeye başla.
 
 ## Pipeline (Codex teslim sonrası, Claude tarafı)
 
-1. **Claude verify** (`scripts/verify-mod-j-pairs.ts` yaz):
+1. **Claude verify** (`scripts/verify-mod-ia-pairs.ts` yaz):
    - DUPLICATE pair'lar: DB'den canonical+sil tarif çek, ingJacc + calDiff
      metric doğrula
    - VARIANT pair'ları skip
@@ -117,7 +117,7 @@ Hazır mısın? Onay verirsen Batch 1'i (ilk 30 pair) işlemeye başla.
 - Tahmini UNCERTAIN: 5-10
 - Net sil: ~30-40 tarif. Prod 3572 → ~3530-3540.
 
-## Mod J kapanış kriterleri
+## Mod IA kapanış kriterleri
 
 - 3 Codex batch tamamlanmış
 - DUPLICATE'leri Claude verify + apply
@@ -131,5 +131,6 @@ Hazır mısın? Onay verirsen Batch 1'i (ilk 30 pair) işlemeye başla.
 
 - Brief disiplin: em-dash yasak, 14 jargon yasak liste, tipNote/sug
   format kuralları (CODEX_BATCH_BRIEF.md §3-§5).
-- Mod J yalnızca pair-level audit, yeni tarif yazılmaz.
-- Mod I-Genişletilmiş = bu Mod J. İsim ayrımı sadece naming sade.
+- Mod IA yalnızca pair-level audit, yeni tarif yazılmaz.
+- Mod IA = Mod I'in pair-level alpha pass'i (Mod FA'nın Mod F'i tamamladığı
+  gibi). Naming uyumu: alfabe yer kalsın, ileride Mod J/K/L için.

@@ -49,20 +49,29 @@ export function StepTimer({
   const t = useTranslations("recipe.timer");
   const [state, setState] = useState<TimerState>("idle");
   const [remaining, setRemaining] = useState(totalSeconds);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  // Notification + beep effect side-effect'ini sadece bir kez tetiklemek
+  // icin guard. State done'a once geldiginde fired = true.
+  const finishedFiredRef = useRef(false);
 
-  const cleanup = useCallback(() => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    }
-  }, []);
+  // Tick interval: state="running" iken ve remaining > 0 oldugunda aktif.
+  // Pause edilince state="paused" -> useEffect re-run, cleanup clear
+  // Interval. Bu pattern useCallback + setInterval handler'a kıyasla
+  // StrictMode + closure race'lere karsi guvenilir. Eski sürüm pause'da
+  // bazi durumlarda orphan interval'in tick atmaya devam ettigi
+  // raporlanmisti (oturum 23 user feedback).
+  useEffect(() => {
+    if (state !== "running") return;
+    const id = setInterval(() => {
+      setRemaining((r) => (r > 0 ? r - 1 : 0));
+    }, 1000);
+    return () => clearInterval(id);
+  }, [state]);
 
-  useEffect(() => cleanup, [cleanup]);
-
+  // remaining 0'a dustugunde tek seferlik finish: beep + notification +
+  // state done. Effect tetiklenmek icin ref guard ile cift firing engellenir.
   const finishTimer = useCallback(() => {
-    cleanup();
-    setRemaining(0);
+    if (finishedFiredRef.current) return;
+    finishedFiredRef.current = true;
     setState("done");
     playBeep();
     showNotification(t("doneTitle", { title: recipeTitle }), {
@@ -70,9 +79,19 @@ export function StepTimer({
       tag: `recipe-timer-${stepNumber}`,
       vibrate: [200, 80, 200],
     });
-  }, [cleanup, recipeTitle, stepNumber, t]);
+  }, [recipeTitle, stepNumber, t]);
+
+  useEffect(() => {
+    if (state !== "running" || remaining !== 0) return;
+    // setState'i microtask ile defer et: effect rendering pipeline'inda
+    // sync state set cascading render uyarisi tetikler. queueMicrotask
+    // ile guvenli sirada calistir.
+    const id = setTimeout(finishTimer, 0);
+    return () => clearTimeout(id);
+  }, [state, remaining, finishTimer]);
 
   const start = useCallback(async () => {
+    finishedFiredRef.current = false;
     if (state === "done") {
       setRemaining(totalSeconds);
     }
@@ -80,27 +99,17 @@ export function StepTimer({
       await requestPermission();
     }
     setState("running");
-    intervalRef.current = setInterval(() => {
-      setRemaining((r) => {
-        if (r <= 1) {
-          finishTimer();
-          return 0;
-        }
-        return r - 1;
-      });
-    }, 1000);
-  }, [state, totalSeconds, finishTimer]);
+  }, [state, totalSeconds]);
 
   const pause = useCallback(() => {
-    cleanup();
     setState("paused");
-  }, [cleanup]);
+  }, []);
 
   const reset = useCallback(() => {
-    cleanup();
+    finishedFiredRef.current = false;
     setRemaining(totalSeconds);
     setState("idle");
-  }, [cleanup, totalSeconds]);
+  }, [totalSeconds]);
 
   const display = formatMMSS(remaining);
   const isRunning = state === "running";

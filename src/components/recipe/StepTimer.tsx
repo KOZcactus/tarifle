@@ -126,7 +126,7 @@ export function StepTimer({
         <button
           type="button"
           onClick={start}
-          className="rounded-full bg-accent-blue/20 px-2 py-0.5 text-[11px] hover:bg-accent-blue/30"
+          className="rounded-full bg-accent-blue px-2 py-0.5 text-[11px] font-semibold text-white hover:bg-accent-blue/90"
           aria-label={t("start")}
         >
           {t("start")}
@@ -138,7 +138,7 @@ export function StepTimer({
           <button
             type="button"
             onClick={pause}
-            className="rounded-full bg-accent-blue/20 px-2 py-0.5 text-[11px] hover:bg-accent-blue/30"
+            className="rounded-full bg-accent-blue px-2 py-0.5 text-[11px] font-semibold text-white hover:bg-accent-blue/90"
             aria-label={t("pause")}
           >
             {t("pause")}
@@ -146,7 +146,7 @@ export function StepTimer({
           <button
             type="button"
             onClick={reset}
-            className="rounded-full px-1.5 py-0.5 text-[11px] text-text-muted hover:text-text"
+            className="rounded-full px-1.5 py-0.5 text-[11px] text-text hover:text-primary"
             aria-label={t("reset")}
           >
             ↺
@@ -159,7 +159,7 @@ export function StepTimer({
           <button
             type="button"
             onClick={start}
-            className="rounded-full bg-accent-blue/20 px-2 py-0.5 text-[11px] hover:bg-accent-blue/30"
+            className="rounded-full bg-accent-blue px-2 py-0.5 text-[11px] font-semibold text-white hover:bg-accent-blue/90"
             aria-label={t("resume")}
           >
             {t("resume")}
@@ -167,7 +167,7 @@ export function StepTimer({
           <button
             type="button"
             onClick={reset}
-            className="rounded-full px-1.5 py-0.5 text-[11px] text-text-muted hover:text-text"
+            className="rounded-full px-1.5 py-0.5 text-[11px] text-text hover:text-primary"
             aria-label={t("reset")}
           >
             ↺
@@ -179,7 +179,7 @@ export function StepTimer({
         <button
           type="button"
           onClick={reset}
-          className="rounded-full bg-success/20 px-2 py-0.5 text-[11px] hover:bg-success/30"
+          className="rounded-full bg-success px-2 py-0.5 text-[11px] font-semibold text-white hover:bg-success/90"
           aria-label={t("restart")}
         >
           {t("restart")}

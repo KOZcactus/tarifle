@@ -15,28 +15,33 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
-### Mod M (Marine, Codex tetik bekler, oturum 23 sonu)
+### Mod M (Marine, oturum 24 Batch 1 yeniden apply, kalan 2/3/4)
 
-**docs/MOD_M_TRIGGER.md** içinde tam tetik şablonu. 4 batch'lik iş
-(167 marine adayı, 50/50/50/17). `find-marine-candidates.ts` 14
-keyword (marine/marina/marinasyon/salamura/soslama/terbiye/marinade/
-yoğurtla bekletin/sirke ile bekletin) tarayıp aday tespit etti.
+**Durum**: Batch 1 yeniden teslim apply edildi (36 marine prod, %100
+TR karakter). Brief §19'a Kural 7 (TR karakter) + Kural 8 (redundancy)
+eklendi. **Kalan**: Batch 2 (51-100), Batch 3 (101-150), Batch 4
+(151-167 son 17). Tetik tek satır `Mod M Batch 2.` (CODEX_NEW_CHAT_
+INTRO Bölüm 5).
 
-**Kritik kural**: Codex her tarif için **en az 2 farklı web
-kaynağından** marine süresi ve yöntemi teyit zorunda. Halüsinasyon
-yasak. Önerilen kaynaklar: Serious Eats, BBC Good Food, NYT Cooking,
-Yemek.com, Giallo Zafferano, Tarla Dalal, Wikipedia.
+Apply pipeline: verify-mod-m-pairs.ts + apply-mod-m-batch.ts (--env
+prod desteği var). RecipeTimeline 3 segment kazanım hedef ~120-150
+tarif (mevcut 36 + sıradaki batch'lerde toplam).
 
-**JSON output**: `{ slug, marineMinutes, marineDescription,
-tipNote_addition, sources[2+], confidence (high/medium/low), reason }`.
-SKIP seçeneği: marine içermiyorsa veya kaynak yetersizse.
+### Mod K (Tarif Kontrol, oturum 24 aktif, 350/3517 = %10 kontrol)
 
-**Apply pipeline (Codex teslim sonrası, Claude tarafı)**:
-1. `verify-mod-m-pairs.ts`: sources URL valid + marineMinutes makul
-2. Kullanıcı onay (high confidence count + spot check)
-3. DB update: `totalMinutes = prep + cook + marineMinutes` + tipNote
-   merge + source senkron + AuditLog action=MARINE_APPLY
-4. RecipeTimeline 3 segment görünür: ~120-150 tarif
+**Durum**: 6 sub-batch tam pipeline (1a+1b+2a+2b+3a+3b+4a = 122
+correction prod, 5 MAJOR_ISSUE manuel rev). 71 sub-batch input
+dosyası önceden üretildi (4 mevcut + 67 yeni). Codex tetik tek satır
+`Mod K. Batch Nx.` (CODEX_NEW_CHAT_INTRO Bölüm 6).
+
+**Kalan**: 65 sub-batch (4b-36b). Sıradaki büyük tarama 2/3 oranında
+PASS, 1/3 oranında CORRECTION (Kural 6 ihlal kapama + tag/allergen
+fix), nadir MAJOR_ISSUE (yanıltıcı içerik tespiti).
+
+**Apply scriptte cuisine field eksik**: bobo-de-camarao + boeuf-
+bourguignon manuel one-off script ile fix edildi. Sonraki MAJOR_ISSUE
+cuisine fix gerekirse aynı pattern (manuel one-off) veya apply
+script'e cuisine field eklenebilir.
 
 ### Polish phase TAMAMLANDI ✅ (oturum 23 sonu)
 
@@ -57,34 +62,36 @@ Bu paketlerin hepsi yapıldı:
    (Allergen calibration + Americano polish ile top 10 score 35-49 →
    minimum 5 seviyesine düştü)
 
-### Sıradaki büyük paketler (öneri, oturum 24+ için)
+### Sıradaki büyük paketler (öneri, oturum 25+ için)
 
-1. **Mod K: Description expansion** (Codex iş, ~1-2 saat)
-   - Quality dashboard low-score tariflerin (~50 tarif) description
-     genişletme görevi. Americano gibi <50 char olanlar açıklayıcı
-     hale gelir.
-   - Codex iş, ben verify+apply.
+1. **Mod K Batch 4b-36b devam** (Codex iş, ~65 sub-batch)
+   - Sen tetikler (1 satır), ben verify+apply pipeline
+   - Beklenen: 200-500 ek correction + 30-100 MAJOR_ISSUE
+   - 350/3517 → 3517/3517 = %100 tarif kontrol hedef
 
-2. **Mod A 40+: yeni tarif yazma** (Codex iş, 2-3 batch)
+2. **Mod M Batch 2-3-4 devam** (Codex iş, 3 batch)
+   - 117 marine adayı kaldı (51-167)
+   - Batch 1 yeniden apply'da Codex disiplini öğrendi (TR karakter +
+     redundancy fix), sonraki batch'ler doğrudan kalite
+
+3. **Mod A 40+: yeni tarif yazma** (Codex iş, 2-3 batch)
    - 3517 → 3600+ hedef, Codex 50-100 yeni tarif
    - Brief Kural 6/7/16 disiplinli
-   - Her batch sonrası dup audit + tarif-listesi.txt auto-update
    - Önerilen marine'li tarifler: ekşi maya ekmek, sushi pirinç,
-     tandoori tavuk, ceviche, kore bulgogi (RecipeTimeline 3 segment
-     görünür)
+     tandoori tavuk, ceviche, kore bulgogi (RecipeTimeline 3 segment)
 
-3. **Personal "Pişirdiklerim" anasayfa shelf** (login user, ~1 saat)
-   - Login user'ın kendi son cooked recipe'larını anasayfada shelf
-   - getUserCookedRecipes + RecipeCard format dönüşüm
+4. **Çeşitleri yazılarına table format** (~45 dk, Claude iş)
+   - peynir/makarna/sirke/tuz/un/domates/zeytin yazıları (~7-8)
+   - remark-gfm aktif, liste formatları table'a çevrilebilir
+   - Görsel zenginleştirme + okuma kalitesi
+   - Quick wins, kategori dengesi nötr
 
-4. **butter-chicken swap içerik transfer** (~30 dk)
-   - delhi-butter-chicken silindi, butter-chicken kaldı
-   - Delhi içeriği (kaju + zencefil + fırın marine) butter-chicken'a
-     transfer et (opsiyonel zenginleştirme)
-
-5. **Cross-language pass tekrar** (~30 dk)
-   - Mod IB sonrası `find-cross-language-pairs.ts` yeniden koş
-   - Yeni eşleşme varsa tek tek manual review
+5. **Yeni blog yazıları** (kategori dengesi)
+   - pisirme-teknikleri (15): Sos Kalınlaştırma Yöntemleri (Çorba
+     Bilimi devam), Kızartma Yağı Yönetimi, Düdüklü Tencere
+   - malzeme-tanima (16): Acı Sos Yapımı, Yumurta Tazeliği var,
+     Kuruyemiş Çeşitleri
+   - mutfak-rehberi (18): meal prep, kış sebzeleri, ev turşusu
 
 ### Mod FA pipeline TAMAM (oturum 20)
 

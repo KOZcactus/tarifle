@@ -1,5 +1,90 @@
 # Tarifle, Proje Durumu
 
+> **Oturum 24 SONU (27 Nis 2026), 22+ commit.**
+> **Personal "Pişirdiklerim" anasayfa shelf + Mod M Batch 1-3 revert
+> sonra Batch 1 yeniden apply (36 marine) + Mod K (Tarif Kontrol) tam
+> paket (brief §20 + 3 script + 71 input dosyası + Batch 1a-4a apply
+> 122 correction + 5 MAJOR_ISSUE) + butter-chicken Delhi merge +
+> 3 yeni blog (yumurta tazeliği + tahıl çeşitleri + çorba bilimi) +
+> remark-gfm MDX desteği + Mod K cuisine fix manuel.** Prod tarif sayısı
+> sabit 3517, içerik kalitesi 122 correction ile yenilendi. Pre-push
+> 6 katman temiz, tsc 0 error.
+
+> ## Oturum 24 detay (A-K paketler)
+>
+> **A. Personal "Pişirdiklerim" anasayfa shelf + a11y fix** Login user
+> kendi cooked geçmişi anasayfada kişisel shelf (Personalized altında).
+> `getUserRecentlyCookedRecipes` helper. Anonim/0-cooked'da gizli.
+> FeaturedShelf `ariaLabel` prop parametrik (Personal cooked + "Bu
+> hafta en çok pişirilenler" kendi heading). Profil sayfası
+> `#pisirdiklerim` anchor scroll-mt-24.
+>
+> **B. Mod M Batch 1-3 revert + Batch 1 yeniden apply (36 marine, TAM
+> TR + redundancy fix)** Batch 1-3 quality issue revert (52/57 ASCII
+> fold). Brief §19'a Kural 7 (TR karakter) + Kural 8 (redundancy) eklendi.
+> Codex Batch 1 yeniden teslim: 36 apply, %100 TR, yeni teknik bilgi.
+> lechon-asado/char-siu 8s + tacos-al-pastor 4s en uzun marine.
+>
+> **C. butter-chicken Delhi merge** Mod IB silinen delhi-butter-chicken
+> Delhi otantik versiyonu (zencefil + sarımsak + 3 saat marine tavsiyesi)
+> butter-chicken global slug'a transfer. Idempotent script + AuditLog
+> action="DELHI_BUTTER_MERGE".
+>
+> **D. Mod K (Tarif Kontrol) tam altyapı** Brief §20: 3517 tarif tam
+> content audit (description + ingredients amount/unit + steps + macro
+> + tags + allergens), ŞİŞİRME YASAK (max %20), 50'lik sub-batch
+> (1a-36b naming Mod A pattern), 3 verdict (PASS/CORRECTION/MAJOR_ISSUE),
+> alt-modlar yer (KA/KB/KC/KD). 3 script: prepare-mod-k-input + verify-
+> mod-k-batch + apply-mod-k-batch.
+>
+> **E. Mod K Batch 1a-4a apply (122 correction prod)** 7 sub-batch tam
+> pipeline: 1a+1b (19) + 2a (21) + 2b (23) + 3a (14) + 3b (27) + 4a
+> (18) = 122. PASS oranı serisi 79/79/58/54/72/46/64 (ortalama %64.6).
+> 5 MAJOR_ISSUE: currywurst vegan tag, biscuit-gravy vejetaryen+sosis,
+> bo-la-lot lá lốt, bobo-de-camarao + boeuf-bourguignon cuisine. Cuisine
+> field apply scriptte yok, manuel one-off script ile fix.
+>
+> **F. Mod K 71 sub-batch input önceden üretildi** prepare-mod-k-input.ts
+> --all + --skip-existing flag. 4 mevcut + 67 yeni = 71 dosya hazır
+> (~8 MB). Codex tetik tek satır "Mod K. Batch Nx." yeter.
+>
+> **G. Brief §19 Mod M Kural 7+8 + brief §20 Mod K (geniş kapsam)**
+> Mod K enum check düzeltildi (Prisma schema doğru: GLUTEN/SUT/YUMURTA/
+> KUSUYEMIS/YER_FISTIGI/SOYA/DENIZ_URUNLERI/SUSAM/KEREVIZ/HARDAL).
+>
+> **H. 3 yeni blog yazısı (52→55):**
+> - Yumurta Tazeliği ve Saklama (malzeme-tanima): su testi bilim, AB
+>   vs ABD yıkama. 6 kaynak (USDA × 3 + FDA + Flavor Bender + Egg
+>   Safety Center).
+> - Tahıl Çeşitleri Karşılaştırma (malzeme-tanima): bulgur/pirinç/
+>   karabuğday/kinoa/yulaf yan yana table. 8 kaynak (Whole Grains
+>   Council × 2 + Healthline × 3 + Diabetes Canada + Cook's Illustrated
+>   + Glycemic Index).
+> - Çorba Bilimi: Tabandan Servise (pisirme-teknikleri): kemik vs et
+>   suyu, 4 koyulaştırma yöntem, 10×4 çorba teknik haritası table.
+>   6 kaynak (Gourmend + Collagensei + Tasting Table + Kelly + Earth
+>   Food + Saving Room).
+>
+> **I. MDX remark-gfm desteği** `npm install remark-gfm@^4.0.1` +
+> MDXRemote `options.mdxOptions.remarkPlugins=[remarkGfm]`. Tüm bloglar
+> table syntax + strikethrough + autolink. Tahıl yazısı table format'a
+> geri yüklendi.
+>
+> **J. Cross-language pair audit yeniden** 38 pair çıktı, hepsi gerçek
+> varyant (orman vs tas kebabı, içli vs sini köfte, lorlu vs tava
+> kete). 0 silme önerisi. Mod IB pass etkili olduğu kanıtlandı.
+>
+> **K. CODEX_NEW_CHAT_INTRO.md Bölüm 1 + Bölüm 6 (Mod K) + durum tablosu**
+> Yeni chat başlangıç mesajına Mod K §20 listede. Bölüm 6 Mod K tetik
+> şablonu (tek satır "Mod K. Batch Nx.").
+>
+> ### Sıradaki oturum 25 başı (öncelik):
+> 1. Mod K Batch 4b-36b devam (sen tetikler, ben pipeline)
+> 2. Mod M Batch 2/3/4 tetik (Codex, paralel)
+> 3. Çeşitleri yazılarına table format (peynir/makarna/sirke/tuz/un/
+>    domates/zeytin) — quick wins
+> 4. Yeni blog yazıları (kategori dengesi)
+
 > **Oturum 23 SONU (26 Nis 2026), 28 commit, mutlak rekor maraton.**
 > **Mod I PIPELINE 5/5 KAPANIŞ + Mod IA pair audit + Mod IB final pass
 > + canonical rename + Pişirdim rozet sistemi + RecipeTimeline visual +

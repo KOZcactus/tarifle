@@ -181,6 +181,12 @@ export const ALLERGEN_RULES: AllergenRule[] = [
       "mısır tortilla", "tortilla cipsi",
       // Herb "kekik" (thyme) is gluten-free, collides with "kek" substring:
       "kekik", "taze kekik", "kuru kekik", "kekik otu",
+      // Çörekotu (nigella sativa) is a spice, gluten-free; collides with
+      // "çörek" substring (which IS gluten in standalone form).
+      "çörekotu", "çörek otu", "corekotu", "corek otu",
+      // "Tavuk baget" = tavuk parcasi (drumstick), gluten yok; "baget"
+      // tek basina ekmek baget olur ama tavuk + baget kombosu degildir.
+      "tavuk baget", "tavuk bageti",
       // NOTE: "ramen noodle" intentionally NOT excluded, actually wheat-based.
     ],
     customMatch: (name: string) => {

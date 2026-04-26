@@ -64,6 +64,8 @@ export const ALLERGEN_RULES: AllergenRule[] = [
       // TR yoresel ingredient'lar (oturum 23 ek coverage):
       "bazlama", "kete", "revani", "açma", "poğaça", "çörek", "tandır ekmeği",
       "lahmacun hamuru", "pizza tabanı", "lavash", "tortilla ekmeği",
+      // Krep / palacsinta: hamur unla yapilir, gluten icerir.
+      "krep", "palacsinta", "blini", "panqueca", "crepe",
       "noodle", "wonton", "yakisoba",
       "spagetti", "spaghetti", "penne", "fusilli", "fettuccine",
       "tagliatelle", "tagliolini", "linguine", "rigatoni", "farfalle",
@@ -80,10 +82,20 @@ export const ALLERGEN_RULES: AllergenRule[] = [
       "yapışkan pirinç unu", "manyok unu", "manyok nişastası",
       "pirinç keki", "pirinç noodle", "cam noodle",
       "mısır tortilla", "tortilla cipsi",
+      // Tapyoka = manyoktan elde edilen, gluten-free. "Tapyoka unu"
+      // false positive yapiyordu (Brezilya pão de queijo waffle).
+      "tapyoka unu", "tapyoka nişastası", "tapyoka",
       // "kek" substring "kekik" (oregano), "kekikli" gibi baharat
       // isimlerinde false positive yapiyordu; kek standalone gluten'li
       // ama kekik gluten icermez. excludePatterns ilk degerlendiriliyor.
       "kekik", "kekikli", "nane kekik", "kekik dali",
+      // "çörek" GLUTEN keyword'u "çörekotu" (nigella sativa, gluten-
+      // free baharat) icin false positive yapiyordu. Çörekotu Mercimek
+      // Çorbasi false positive kalkti.
+      "çörekotu", "çörek otu", "corekotu", "corek otu",
+      // "Tavuk baget" = tavuk parcasi (ekmek baget degil). Tek basina
+      // "baget" ekmek olur ama tavuk + baget kombosu degildir.
+      "tavuk baget", "tavuk bageti",
       // NOTE: "ramen noodle" intentionally NOT excluded, wheat-based
     ],
     customMatch: (name) => {

@@ -21,11 +21,11 @@ const __dirname2 = path.dirname(__filename2);
 dotenv.config({ path: path.resolve(__dirname2, "..", ".env.local") });
 
 const SLUGS = [
-  "sicak-cikolata",
-  "tavuk-sis",
-  "lamington-trifle-kup-avustralya-usulu",
-  "lamington-kakaolu-kup-avustralya-usulu",
-  "kahveli-hindistancevizli-shaker-vietnam-usulu",
+  "americano",
+  "pao-de-queijo-waffle-brezilya-usulu",
+  "corekotlu-mercimek-corbasi-kayseri-usulu",
+  "firinda-tavuk-baget",
+  "turos-palacsinta-kup-macaristan-usulu",
 ];
 
 async function main() {

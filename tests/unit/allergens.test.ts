@@ -107,6 +107,41 @@ describe("inferAllergensFromIngredients", () => {
       const r = inferAllergensFromIngredients(ingr("badem", "ceviz"));
       expect(r).toContain("KUSUYEMIS");
     });
+
+    it("'tapyoka unu' is NOT GLUTEN (manyok turevi, gluten-free)", () => {
+      const r = inferAllergensFromIngredients(ingr("tapyoka unu"));
+      expect(r).not.toContain("GLUTEN");
+    });
+
+    it("'çörekotu' is NOT GLUTEN (nigella sativa, baharat)", () => {
+      const r = inferAllergensFromIngredients(ingr("çörekotu"));
+      expect(r).not.toContain("GLUTEN");
+    });
+
+    it("'çörek otu' (boşluklu) is NOT GLUTEN", () => {
+      const r = inferAllergensFromIngredients(ingr("çörek otu"));
+      expect(r).not.toContain("GLUTEN");
+    });
+
+    it("'çörek' standalone IS GLUTEN (kalin disli unlu hamur)", () => {
+      const r = inferAllergensFromIngredients(ingr("çörek"));
+      expect(r).toContain("GLUTEN");
+    });
+
+    it("'tavuk baget' is NOT GLUTEN (tavuk parcasi)", () => {
+      const r = inferAllergensFromIngredients(ingr("tavuk baget"));
+      expect(r).not.toContain("GLUTEN");
+    });
+
+    it("'krep' IS GLUTEN (hamur unla yapilir)", () => {
+      const r = inferAllergensFromIngredients(ingr("krep"));
+      expect(r).toContain("GLUTEN");
+    });
+
+    it("'palacsinta' (macaristan krepi) IS GLUTEN", () => {
+      const r = inferAllergensFromIngredients(ingr("palacsinta"));
+      expect(r).toContain("GLUTEN");
+    });
   });
 
   it("'yer fıstığı' is YER_FISTIGI, not KUSUYEMIS", () => {

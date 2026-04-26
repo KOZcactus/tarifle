@@ -74,9 +74,9 @@ describe("formatConverted", () => {
     expect(formatConverted(29.57)).toBe("29.6");
   });
 
-  it("infinity ve NaN için tire döner", () => {
-    expect(formatConverted(NaN)).toBe("—");
-    expect(formatConverted(Infinity)).toBe("—");
+  it("infinity ve NaN için sorgu işareti döner", () => {
+    expect(formatConverted(NaN)).toBe("?");
+    expect(formatConverted(Infinity)).toBe("?");
   });
 });
 

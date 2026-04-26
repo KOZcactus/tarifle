@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { StepTimer } from "@/components/recipe/StepTimer";
 
 interface Step {
   id: string;
@@ -12,9 +13,10 @@ interface Step {
 
 interface RecipeStepsProps {
   steps: Step[];
+  recipeTitle: string;
 }
 
-export function RecipeSteps({ steps }: RecipeStepsProps) {
+export function RecipeSteps({ steps, recipeTitle }: RecipeStepsProps) {
   const t = useTranslations("recipe.steps");
   const tCard = useTranslations("recipes.card");
   return (
@@ -47,12 +49,17 @@ export function RecipeSteps({ steps }: RecipeStepsProps) {
                 </div>
               )}
 
-              {step.timerSeconds && (
-                <div className="mt-2">
-                  <span className="inline-flex items-center gap-1 rounded-full bg-accent-blue/15 px-2.5 py-1 text-xs font-medium text-accent-blue">
+              {step.timerSeconds && step.timerSeconds > 0 && (
+                <div className="mt-2 flex flex-wrap items-center gap-2">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-accent-blue/10 px-2.5 py-1 text-xs font-medium text-accent-blue print:inline-flex">
                     <TimerIcon />
                     {formatTimer(step.timerSeconds, tCard)}
                   </span>
+                  <StepTimer
+                    totalSeconds={step.timerSeconds}
+                    stepNumber={step.stepNumber}
+                    recipeTitle={recipeTitle}
+                  />
                 </div>
               )}
             </div>

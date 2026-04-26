@@ -599,7 +599,10 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
         </div>
         <div className="lg:col-span-3">
           <div className="rounded-xl border border-border bg-bg-card p-5">
-            <RecipeSteps steps={translatedSteps} />
+            <RecipeSteps
+              steps={translatedSteps}
+              recipeTitle={translatedTitle}
+            />
           </div>
         </div>
       </div>

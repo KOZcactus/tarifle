@@ -2442,6 +2442,15 @@
       "title": "Instructions",
       "tipLabel": "💡 Tip:"
     },
+    "timer": {
+      "start": "Start",
+      "pause": "Pause",
+      "resume": "Resume",
+      "reset": "Reset",
+      "restart": "Restart",
+      "doneTitle": "{title} step finished",
+      "doneBody": "Timer for step {step} is complete."
+    },
     "nutrition": {
       "title": "Nutrition (per serving)",
       "calorieUnit": "kcal calories",

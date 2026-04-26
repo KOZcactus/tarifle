@@ -207,7 +207,7 @@ export function convert(
  * Çok küçük (< 1) sayılarda 2 ondalık; aksi 1.
  */
 export function formatConverted(value: number): string {
-  if (!isFinite(value)) return "—";
+  if (!isFinite(value)) return "?";
   if (Math.abs(value - Math.round(value)) < 0.05) {
     return String(Math.round(value));
   }

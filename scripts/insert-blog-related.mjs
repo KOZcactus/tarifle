@@ -68,6 +68,7 @@ const TITLES = {
   "salamura-ve-marine-bilimi": "Salamura ve Marine Bilimi",
   "bal-turleri-ve-mutfak-kullanimi": "Bal Türleri ve Mutfak Kullanımı",
   "yumurta-tazeligi-ve-saklama": "Yumurta Tazeliği ve Saklama",
+  "tahil-cesitleri-karsilastirma": "Tahıl Çeşitleri Karşılaştırma",
 };
 
 // Her yazi -> 3 ilgili (slug, kisa baglam aciklamasi)
@@ -336,6 +337,11 @@ const RELATED = {
     ["yumurta-pisirme-7-yontem", "tazeligi dogruladiktan sonra pisirme"],
     ["salamura-ve-marine-bilimi", "gida guvenligi ve sogutma disiplini"],
     ["soguk-zincir-kirmizi-et-guvenligi", "buzdolabi sicakligi ve dagitim"],
+  ],
+  "tahil-cesitleri-karsilastirma": [
+    ["pilavin-bilimi", "pirinc pisirme teknigi ve oranlari"],
+    ["un-cesitleri-protein-kullanim-rehberi", "tahillardan elde edilen unlar"],
+    ["fermentasyon-temelleri-yogurt-tursu-eksi-maya", "tahil bazli fermentasyon"],
   ],
 };
 

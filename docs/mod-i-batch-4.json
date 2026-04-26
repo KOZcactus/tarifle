@@ -1,0 +1,282 @@
+[
+  {
+    "cuisine": "pe",
+    "type": "APERATIF",
+    "canonicalSlug": "causa-limena-peru-usulu",
+    "canonicalTitle": "Causa Limeña",
+    "duplicateSlugs": ["avokadolu-patates-causa-peru-usulu", "causa-limena-verde-peru-usulu", "causa-verde-peru-usulu"],
+    "duplicateTitles": ["Avokadolu Patates Causa", "Causa Limeña Verde", "Causa Verde"],
+    "confidence": "medium",
+    "reason": "Patates puresi, lime veya limon suyu ve avokadolu soguk katmanlama ayni causa tabani; canonical tavuk ve mayonezle en zengin versiyon."
+  },
+  {
+    "cuisine": "pe",
+    "type": "CORBA",
+    "canonicalSlug": "kinoali-sebze-corbasi-peru-usulu",
+    "canonicalTitle": "Kinoalı Sebze Çorbası",
+    "duplicateSlugs": ["aji-amarillolu-kinoa-corbasi-peru-usulu", "aji-de-quinua-peru-usulu"],
+    "duplicateTitles": ["Aji Amarillolu Kinoa Çorbası", "Ají de Quinua"],
+    "confidence": "medium",
+    "reason": "Kinoa, patates veya havuc ve aji amarillo biberiyle ayni Peru kinoa corbasi; sebzeli kayit malzeme tabanini daha acik veriyor."
+  },
+  {
+    "cuisine": "pe",
+    "type": "ICECEK",
+    "canonicalSlug": "chicha-morada-spritz-peru-usulu",
+    "canonicalTitle": "Chicha Morada Spritz",
+    "duplicateSlugs": ["chicha-morada-fizz-peru-usulu"],
+    "duplicateTitles": ["Chicha Morada Fizz"],
+    "confidence": "medium",
+    "reason": "Chicha morada, soda ve buzla ayni gazli soguk icecek; fark lime suyu yerine portakal suyu gibi kucuk aroma ayrintisi."
+  },
+  {
+    "cuisine": "pe",
+    "type": "KOKTEYL",
+    "canonicalSlug": "chilcano-de-pisco-narenciyeli-peru-usulu",
+    "canonicalTitle": "Chilcano de Pisco",
+    "duplicateSlugs": ["chilcano-peru-usulu", "pisco-ginger-fizz-peru-usulu"],
+    "duplicateTitles": ["Chilcano", "Pisco Ginger Fizz"],
+    "confidence": "medium",
+    "reason": "Pisco, lime veya narenciye, zencefil aromasi ve buzla kurulan ayni Chilcano/Pisco ginger highball ailesi; ad farki tarif cekirdegini degistirmiyor."
+  },
+  {
+    "cuisine": "pe",
+    "type": "SALATA",
+    "canonicalSlug": "lima-ceviche-clasico-levrek",
+    "canonicalTitle": "Lima Ceviche Clásico",
+    "duplicateSlugs": ["lima-ceviche-klasik"],
+    "duplicateTitles": ["Lima Ceviche Klasik"],
+    "confidence": "high",
+    "reason": "Beyaz balik veya levrek, lime suyu, kirmizi sogan, aci biber, kisnis, tatli patates ve misirla ayni klasik Lima ceviche."
+  },
+  {
+    "cuisine": "pe",
+    "type": "TATLI",
+    "canonicalSlug": "lucumali-yogurt-kupu-peru-usulu",
+    "canonicalTitle": "Lucumalı Yoğurt Kupu",
+    "duplicateSlugs": ["lucuma-yogurt-kup-peru-usulu"],
+    "duplicateTitles": ["Lucuma Yoğurt Kup"],
+    "confidence": "medium",
+    "reason": "Yogurt, lucuma puresi ve balla katmanlanan ayni soguk kup tatlisi; canonical vanilya ve bademle daha tamamlanmis."
+  },
+  {
+    "cuisine": "pe",
+    "type": "TATLI",
+    "canonicalSlug": "mazamorra-morada-peru-usulu",
+    "canonicalTitle": "Mazamorra Morada",
+    "duplicateSlugs": ["tarcinli-mor-misir-muhallebisi-peru-usulu"],
+    "duplicateTitles": ["Tarçınlı Mor Mısır Muhallebisi"],
+    "confidence": "high",
+    "reason": "Mor misir suyu veya ozu, nisasta, seker, tarcin ve koyulastirma akisi ayni mazamorra morada tatlisini veriyor."
+  },
+  {
+    "cuisine": "pe",
+    "type": "YEMEK",
+    "canonicalSlug": "lima-aji-de-gallina",
+    "canonicalTitle": "Lima Aji de Gallina",
+    "duplicateSlugs": ["aji-de-gallina"],
+    "duplicateTitles": ["Ají de Gallina"],
+    "confidence": "medium",
+    "reason": "Haslanmis tavuk, bayat ekmek, sut, aji amarillo, ceviz ve pirincle ayni aji de gallina; Lima kaydi patates, yumurta ve parmesanla daha zengin."
+  },
+  {
+    "cuisine": "pe",
+    "type": "YEMEK",
+    "canonicalSlug": "lima-lomo-saltado",
+    "canonicalTitle": "Lima Lomo Saltado",
+    "duplicateSlugs": ["lomo-saltado", "lima-lomo-saltado-patatesi", "lima-lomo-saltado-tabagi"],
+    "duplicateTitles": ["Lomo Saltado", "Lima Lomo Saltado Patatesi", "Lima Lomo Saltado Tabağı"],
+    "confidence": "high",
+    "reason": "Dana bonfile, patates kizartmasi, kirmizi sogan, domates, soya sosu ve sirkeyle ayni wokta lomo saltado akisi var."
+  },
+  {
+    "cuisine": "pk",
+    "type": "YEMEK",
+    "canonicalSlug": "lahor-chicken-karahi",
+    "canonicalTitle": "Lahor Chicken Karahi",
+    "duplicateSlugs": ["lahor-tavuk-karahi"],
+    "duplicateTitles": ["Lahor Tavuk Karahi"],
+    "confidence": "medium",
+    "reason": "Kemikli tavuk, domates, zencefil, sarimsak ve yesil biberle ayni Lahor tavuk karahi; Turkce ve Ingilizce ad farki disinda cekirdek ayni."
+  },
+  {
+    "cuisine": "pl",
+    "type": "CORBA",
+    "canonicalSlug": "barszcz-czerwony-polonya-usulu",
+    "canonicalTitle": "Barszcz Czerwony",
+    "duplicateSlugs": ["pancarli-barszcz-corbasi-polonya-usulu"],
+    "duplicateTitles": ["Pancarlı Barszcz Çorbası"],
+    "confidence": "medium",
+    "reason": "Pancar, et veya sebze suyu, ekşi denge ve kisa kaynatma akisi ayni barszcz corbasi; biri Turkce acik adla tekrarliyor."
+  },
+  {
+    "cuisine": "pl",
+    "type": "SALATA",
+    "canonicalSlug": "mizeria-polonya-yaz-usulu",
+    "canonicalTitle": "Mizeria",
+    "duplicateSlugs": ["salatalikli-yogurtlu-dereotu-salata-polonya-usulu"],
+    "duplicateTitles": ["Salatalıklı Yoğurtlu Dereotu Salata"],
+    "confidence": "high",
+    "reason": "Salatalik, yogurt veya eksi krema, dereotu ve limonlu soguk servis ayni Polonya mizeria salatasi."
+  },
+  {
+    "cuisine": "pl",
+    "type": "TATLI",
+    "canonicalSlug": "elmali-hashasli-kup-polonya-usulu",
+    "canonicalTitle": "Elmalı Haşhaşlı Kup",
+    "duplicateSlugs": ["elmali-hashasli-kek-kup-polonya-usulu"],
+    "duplicateTitles": ["Elmalı Haşhaşlı Kek Kup"],
+    "confidence": "medium",
+    "reason": "Elma, krema, hashash ve kup katmanlama ayni tatli; kek kup kaydi ayni yapinin kek kirintili versiyonu gibi duruyor."
+  },
+  {
+    "cuisine": "pl",
+    "type": "TATLI",
+    "canonicalSlug": "erikli-makowiec-kup-polonya-usulu",
+    "canonicalTitle": "Erikli Makowiec Kup",
+    "duplicateSlugs": ["erikli-hashasli-krem-kup-polonya-usulu", "erikli-poppyseed-kup-polonya-usulu"],
+    "duplicateTitles": ["Erikli Haşhaşlı Krem Kup", "Polonya Erikli Poppyseed Kup"],
+    "confidence": "medium",
+    "reason": "Erik, krema ve hashash veya poppyseed ile soguk kup katmanlama ayni makowiec esinli tatli ailesi; canonical kek kirintisiyla en belirgin versiyon."
+  },
+  {
+    "cuisine": "pl",
+    "type": "YEMEK",
+    "canonicalSlug": "esmer-tereyagli-kopytka-polonya-usulu",
+    "canonicalTitle": "Esmer Tereyağlı Kopytka",
+    "duplicateSlugs": ["kopytka-polonya-usulu"],
+    "duplicateTitles": ["Kopytka"],
+    "confidence": "high",
+    "reason": "Patates, un, tereyagi ve haslanmis patates hamuru parcalari ayni kopytka; canonical yumurta ve esmer tereyagi ile daha tam."
+  },
+  {
+    "cuisine": "pl",
+    "type": "YEMEK",
+    "canonicalSlug": "patatesli-dereotlu-pierogi-polonya-usulu",
+    "canonicalTitle": "Patatesli Dereotlu Pierogi",
+    "duplicateSlugs": ["dereotlu-patates-pierogi-polonya-usulu"],
+    "duplicateTitles": ["Dereotlu Patates Pierogi"],
+    "confidence": "high",
+    "reason": "Un hamuru, patates, dereotu ve tereyagiyla ayni patatesli dereotlu pierogi; ad sirasi disinda fark yok."
+  },
+  {
+    "cuisine": "pl",
+    "type": "YEMEK",
+    "canonicalSlug": "warsaw-pierogi-ruskie",
+    "canonicalTitle": "Varşova Pierogi Ruskie",
+    "duplicateSlugs": ["varsova-ruskie-pierogi-patatesli", "pierogi-ruskie", "krakow-peynirli-pierogi", "pierogi"],
+    "duplicateTitles": ["Varşova Ruskie Pierogi", "Pierogi Ruskie", "Krakow Peynirli Pierogi", "Pierogi"],
+    "confidence": "medium",
+    "reason": "Un hamuru icinde patates, lor veya beyaz peynir, sogan ve tereyagi dolgusuyla ayni ruskie/patates peynir pierogi; Varşova kaydi en zengin servisle canonical."
+  },
+  {
+    "cuisine": "pl",
+    "type": "YEMEK",
+    "canonicalSlug": "varsova-bigos-lahana",
+    "canonicalTitle": "Varsova Bigos",
+    "duplicateSlugs": ["varshova-bigos", "varsova-bigos-yahnisi", "varsova-lahanali-bigos"],
+    "duplicateTitles": ["Varşova Bigos", "Varşova Bigos Yahnisi", "Varşova Lahanalı Bigos"],
+    "confidence": "high",
+    "reason": "Lahana, lahana tursusu, sosis veya fume et, mantar ve uzun kisik pisme ayni bigos yahnisi; fark yazim ve zenginlik seviyesinde."
+  },
+  {
+    "cuisine": "pl",
+    "type": "YEMEK",
+    "canonicalSlug": "mantarli-karabugday-kasha-polonya-usulu",
+    "canonicalTitle": "Mantarlı Karabuğday Kasha",
+    "duplicateSlugs": ["mantarli-kasza-tava-polonya-usulu"],
+    "duplicateTitles": ["Mantarlı Kasza Tava"],
+    "confidence": "high",
+    "reason": "Karabugday, mantar, sogan ve suyla tavada/tencerede pisirilen ayni mantarli kasha; Kasza adi ayni yemegi Polonya yazimiyla tekrarlıyor."
+  },
+  {
+    "cuisine": "ru",
+    "type": "CORBA",
+    "canonicalSlug": "dana-solyanka",
+    "canonicalTitle": "Dana Solyanka",
+    "duplicateSlugs": ["solyanka-rus-usulu"],
+    "duplicateTitles": ["Solyanka"],
+    "confidence": "medium",
+    "reason": "Dana eti, tursu, domates puresi ve zeytin veya salamla eksili ayni solyanka corbasi; featured kayit canonical secildi."
+  },
+  {
+    "cuisine": "ru",
+    "type": "CORBA",
+    "canonicalSlug": "kefirli-soguk-okroshka-rus-usulu",
+    "canonicalTitle": "Kefirli Soğuk Okroshka",
+    "duplicateSlugs": ["okroshka-kefirli-rus-usulu"],
+    "duplicateTitles": ["Okroshka"],
+    "confidence": "high",
+    "reason": "Kefir, patates, salatalik, dereotu ve soguk servis ayni okroshka; ikinci kayit kisa adla ayni tarifi tekrarlıyor."
+  },
+  {
+    "cuisine": "ru",
+    "type": "ICECEK",
+    "canonicalSlug": "visneli-mors-rus-usulu",
+    "canonicalTitle": "Vişneli Mors",
+    "duplicateSlugs": ["mors-visneli-rus-usulu"],
+    "duplicateTitles": ["Mors"],
+    "confidence": "high",
+    "reason": "Visne, su ve sekerle kaynatilip sogutulan ayni mors icecegi; biri genel, biri visneli adla tekrarliyor."
+  },
+  {
+    "cuisine": "ru",
+    "type": "KAHVALTI",
+    "canonicalSlug": "syrniki",
+    "canonicalTitle": "Syrniki",
+    "duplicateSlugs": ["balli-syrniki"],
+    "duplicateTitles": ["Ballı Syrniki"],
+    "confidence": "high",
+    "reason": "Lor peyniri, yumurta, un ve sekerle hazirlanan ayni tavada syrniki; bal servis detayi ana tarifi degistirmiyor."
+  },
+  {
+    "cuisine": "ru",
+    "type": "SALATA",
+    "canonicalSlug": "dereotlu-olivier-salatasi",
+    "canonicalTitle": "Dereotlu Olivier Salatası",
+    "duplicateSlugs": ["olivier-salatasi"],
+    "duplicateTitles": ["Olivier Salatası"],
+    "confidence": "medium",
+    "reason": "Patates, havuc, bezelye ve mayonez tabani ayni Olivier salatasi; dereotlu kayit tursu ve dereotuyla daha tamamlanmis."
+  },
+  {
+    "cuisine": "ru",
+    "type": "TATLI",
+    "canonicalSlug": "medovik-rus-usulu",
+    "canonicalTitle": "Medovik",
+    "duplicateSlugs": ["medovik-kup-rus-usulu", "bal-katli-medovik-kup-rus-usulu"],
+    "duplicateTitles": ["Medovik Kupa", "Bal Katlı Medovik Kup"],
+    "confidence": "medium",
+    "reason": "Bal aromali kek veya katlar, krema ve dinlendirme/soguk kup sunumu ayni medovik cekirdeginden geliyor; canonical featured klasik Medovik."
+  },
+  {
+    "cuisine": "ru",
+    "type": "YEMEK",
+    "canonicalSlug": "moscow-beef-stroganoff",
+    "canonicalTitle": "Moskova Beef Stroganoff",
+    "duplicateSlugs": ["dana-stroganoff", "moskova-dana-stroganoff", "stroganoff-dana-kasesi-rus-usulu"],
+    "duplicateTitles": ["Dana Stroganoff", "Moskova Dana Stroganoff", "Stroganoff Dana Kasesi"],
+    "confidence": "high",
+    "reason": "Dana bonfile, mantar, sogan, krema veya eksi krema, hardal ve kisa soslu pisme ayni beef stroganoff; Moskova kaydi en zengin olculu versiyon."
+  },
+  {
+    "cuisine": "ru",
+    "type": "YEMEK",
+    "canonicalSlug": "moskova-pelmeni",
+    "canonicalTitle": "Moskova Pelmeni",
+    "duplicateSlugs": ["moskova-pelmeni-kasesi", "pelmeni", "moskova-eksi-kremali-pelmeni-tavasi"],
+    "duplicateTitles": ["Moskova Pelmeni Kasesi", "Pelmeni", "Moskova Ekşi Kremalı Pelmeni Tavası"],
+    "confidence": "medium",
+    "reason": "Un ve yumurtali hamur, kiyma, sogan, haslama ve smetana veya eksi kremali servis ayni pelmeni; tava kaydi servis bitirisinde kizarma ekliyor."
+  },
+  {
+    "cuisine": "ru",
+    "type": "YEMEK",
+    "canonicalSlug": "kasha-grechka",
+    "canonicalTitle": "Kasha Grechka",
+    "duplicateSlugs": ["mantarli-grechnevaya-kasha-rus-usulu", "grechka-s-gribami-rus-usulu"],
+    "duplicateTitles": ["Mantarlı Grechnevaya Kasha", "Greçka s Gribami"],
+    "confidence": "medium",
+    "reason": "Karabugday, mantar, sogan ve yagla ayni mantarli grechka/kasha tabagi; canonical tereyagiyla daha belirgin tarif."
+  }
+]

@@ -1,19 +1,20 @@
 # Tarifle, Proje Durumu
 
-> Oturum 23 (26 Nis 2026), Mod I Batch 1 + 2 + 3 PIPELINE KAPANIŞ.
-> 64 cluster / 142 sil önerisi DB deep verify + otomatik kategorize
+> Oturum 23 (26 Nis 2026), Mod I Batch 1 + 2 + 3 + 4 PIPELINE KAPANIŞ.
+> 92 cluster / 188 sil önerisi DB deep verify + otomatik kategorize
 > (yeni scripts: `verify-mod-i-batch.ts` + `classify-mod-i-pairs.ts`).
-> Toplam 64 net sil (Batch 1: 14 + Batch 2: 32 + Batch 3: 18). Prod
-> 3679 → 3615 (-64). AuditLog kayıtlı. Source 266 satır azaldı
+> Toplam 78 net sil (B1: 14 + B2: 32 + B3: 18 + B4: 14). Prod
+> 3679 → 3601 (-78). AuditLog kayıtlı. Source 314 satır azaldı
 > (smart-source-clean multi-line + single-line). rollback-batch.ts
-> transaction timeout 5s → 120s (50 batch sil için). C_ATLA grubu
-> 78 slug gerçek varyant olarak korundu. Codex Mod I Batch 4 + 5
-> tetik bekler. **Polish phase notu**: bazı global slug'lar (pizza-
-> margherita, guacamole, palak-paneer, bibimbap, ful-medames, koshari,
-> rajma) coğrafi prefix'li canonical lehine silindi; site public açıl-
-> madığı için 404 etkisi yok ama post-Mod I canonical rename polish
-> önerilir. Sıradaki: Mod I Batch 4 + 5 verify (Codex teslim ederse)
-> veya polish paketi (newsletter / pişirdim rozet / timeline).
+> transaction timeout 5s → 120s. C_ATLA grubu 110 slug gerçek varyant
+> olarak korundu. Codex Mod I Batch 5 (cuisine s-z) tetik bekler.
+> **Polish phase notu**: bazı global slug'lar (pizza-margherita,
+> guacamole, palak-paneer, bibimbap, ful-medames, koshari, rajma,
+> lomo-saltado, balli-syrniki, olivier-salatasi vb.) coğrafi prefix'li
+> canonical lehine silindi; site public açılmadığı için 404 etkisi
+> yok ama post-Mod I canonical rename polish önerilir. Sıradaki:
+> Codex Batch 5 teslim ederse apply, ya da polish paketi (newsletter
+> / pişirdim rozet / timeline / quality top 10 refine).
 
 > Oturum 22 sonu (26 Nis 2026), **35+ commit**, mutlak rekor günü.
 > **Mod G PIPELINE KAPANIŞ (417/417 boilerplate %100) + Mod H

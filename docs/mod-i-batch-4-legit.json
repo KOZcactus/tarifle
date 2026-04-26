@@ -1,0 +1,104 @@
+[
+  {
+    "cuisine": "pe",
+    "type": "SALATA",
+    "slugs": ["lima-papa-a-la-huancaina", "papa-a-la-huancaina-peru-usulu"],
+    "reason": "Ayni yemek olsa da biri SALATA, digeri APERATIF grubunda; Mod I kuralina gore yalniz ayni cuisine + type icinde silme yapildigi icin sil listesine alinmadi."
+  },
+  {
+    "cuisine": "pe",
+    "type": "SALATA",
+    "slugs": ["lima-patatesli-causa-tavuk", "causa-limena-peru-usulu"],
+    "reason": "Causa ailesi ayni, fakat biri SALATA, digeri APERATIF grubunda; bu batch kuralinda cross-type duplicate silinmedi."
+  },
+  {
+    "cuisine": "pe",
+    "type": "TATLI",
+    "slugs": ["picarones", "picarones-kup-tatlisi-peru-usulu"],
+    "reason": "Picarones klasik halka kizartma, kup tatlisi ise ayni lezzetin kup sunumu; servis formu farki nedeniyle medium sil listesine alinmadi."
+  },
+  {
+    "cuisine": "pe",
+    "type": "YEMEK",
+    "slugs": ["anticuchos-peru-usulu", "anticuchos-de-pollo-peru-usulu", "ajili-tavuk-anticucho-bowl-peru-usulu"],
+    "reason": "Anticuchos geleneksel et sis, Pollo ve bowl kayitlari tavuk veya kase sunumu; ana protein ve servis farki var."
+  },
+  {
+    "cuisine": "pe",
+    "type": "YEMEK",
+    "slugs": ["tacu-tacu", "tacu-tacu-sebzeli-peru-usulu"],
+    "reason": "Tacu Tacu temel pirinc fasulye tavasidir, sebzeli kayit sebze ekleyerek farkli varyant kuruyor; emin olunmadigi icin sil listesine alinmadi."
+  },
+  {
+    "cuisine": "pk",
+    "type": "YEMEK",
+    "slugs": ["karachi-biryani-tavuklu", "lahor-biryani"],
+    "reason": "Ikisi tavuk biryani olsa da Karachi ve Lahor baharat ve katman farklariyla bolgesel varyant kabul edildi."
+  },
+  {
+    "cuisine": "pl",
+    "type": "CORBA",
+    "slugs": ["barszcz-czerwony-polonya-usulu", "pancarli-elma-corba-polonya-usulu"],
+    "reason": "Pancar ortak, fakat elma ve dereotu ekli kayit daha farkli, hafif bir varyant; barszcz duplicate listesine alinmadi."
+  },
+  {
+    "cuisine": "pl",
+    "type": "ICECEK",
+    "slugs": ["visneli-kompot-polonya-usulu", "visneli-komposto-cooler-polonya-usulu"],
+    "reason": "Kompot kaynatilan klasik icecek, cooler soda ve buzla gazli servis; ayni meyve tabani farkli icecek formu."
+  },
+  {
+    "cuisine": "pl",
+    "type": "TATLI",
+    "slugs": ["szarlotka-polonya-usulu", "szarlotka-kup-polonya-usulu"],
+    "reason": "Szarlotka firinlanmis elmalı tart, kup kaydi biskuvi ve krema katmanli soguk sunum; yakin ama birebir duplicate degil."
+  },
+  {
+    "cuisine": "pl",
+    "type": "TATLI",
+    "slugs": ["sernik-krakowski", "sernik-kavanozu-polonya-usulu", "sernik-na-zimno-cilekli-polonya-usulu"],
+    "reason": "Sernik ailesi ayni olsa da firinlanmis Krakowski, kavanoz sunumu ve soguk cilekli cheesecake farkli formlar."
+  },
+  {
+    "cuisine": "pl",
+    "type": "YEMEK",
+    "slugs": ["kluski-slaskie-polonya-usulu", "kopytka-polonya-usulu"],
+    "reason": "Ikisi patates hamuru olsa da Kluski Slaskie nisastali yuvarlak dumpling, Kopytka kesilmis patates gnocchi formunda."
+  },
+  {
+    "cuisine": "pl",
+    "type": "YEMEK",
+    "slugs": ["mantarli-karabugday-kasha-polonya-usulu", "krakow-mantarli-karabugday-kaszotto"],
+    "reason": "Krakow kaszotto eksi krema, dereotu ve sebze suyuyla risotto benzeri daha kremali varyant; sade mantarli kashadan ayriliyor."
+  },
+  {
+    "cuisine": "ru",
+    "type": "TATLI",
+    "slugs": ["medovik-rus-usulu", "cevizli-medovik"],
+    "reason": "Cevizli Medovik aralara ceviz ve eksi krema karakteri ekliyor; featured iki kayit yakin ama ayri varyant olarak korundu."
+  },
+  {
+    "cuisine": "ru",
+    "type": "KAHVALTI",
+    "slugs": ["syrniki", "visneli-syrniki-rus-usulu", "syrniki-yaban-mersin-soslu-rus-usulu", "balli-hashasli-syrniki-rus-usulu"],
+    "reason": "Syrniki ailesi ayni, fakat visne, yaban mersini veya hashash gibi belirgin topping ve hamur farklari var; sadece sade Balli Syrniki duplicate sayildi."
+  },
+  {
+    "cuisine": "ru",
+    "type": "YEMEK",
+    "slugs": ["kasha-grechnevaya-rus-usulu", "kasha-grechka"],
+    "reason": "Kasha Grechnevaya sade karabugday pilavi, Kasha Grechka mantar ve sogan ekli; ana eslik malzemesi farkli."
+  },
+  {
+    "cuisine": "ru",
+    "type": "YEMEK",
+    "slugs": ["mushroom-stroganoff", "moscow-beef-stroganoff"],
+    "reason": "Mushroom Stroganoff etsiz mantar ana malzemeli, beef stroganoff dana etli; ana protein farkli."
+  },
+  {
+    "cuisine": "ru",
+    "type": "YEMEK",
+    "slugs": ["golubtsy", "moscow-golubtsi-lahana-sarma"],
+    "reason": "Başlık listesinde ayni grupta gorunse de source tarafinda golubtsy kaydi tr cuisine olarak duruyor; bu tutarsizlik nedeniyle sil listesine alinmadi."
+  }
+]

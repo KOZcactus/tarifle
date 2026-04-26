@@ -165,9 +165,12 @@ export const seedRecipeSchema = z
     type: z.enum(RECIPE_TYPES),
     difficulty: z.enum(DIFFICULTY),
 
+    // Marine'li tarifler (Sauerbraten 3 gun, ekşi maya ekmek 12 saat,
+    // tahin helvası dinlenme, vb.) icin cap 7 gun (10080 dk). Prep + cook
+    // hala 24 saat altinda; total marine/dinlenme dahil 7 gune kadar.
     prepMinutes: z.number().int().min(0).max(1440),
     cookMinutes: z.number().int().min(0).max(1440),
-    totalMinutes: z.number().int().min(1).max(1440),
+    totalMinutes: z.number().int().min(1).max(10080),
     servingCount: z.number().int().min(1).max(50),
 
     averageCalories: z.number().int().min(1).max(3000).optional().nullable(),

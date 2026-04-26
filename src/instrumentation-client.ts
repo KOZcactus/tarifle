@@ -57,6 +57,14 @@ if (dsn) {
       "NetworkError when attempting to fetch resource",
       "Load failed",
       "TypeError: Load failed",
+      // Next.js 16 + Turbopack RSC streaming kopukluklari (kullanici
+      // navigation, sekme kapatma, yavas wifi). react-server-dom-
+      // turbopack-client.browser.production.js'den gelen "Connection
+      // closed" handled=yes mechanism=generic. Sayfa kodu hatasi degil,
+      // beklenen network davranisi. Oturum 24'te tariflere arama
+      // sayfasinda gozlemlendi (q=tavukl gibi orta-yazma navigation).
+      "Connection closed.",
+      "Connection closed",
       // Safari autofill + navigation quirks
       "SecurityError: The operation is insecure",
       // Legacy / "Script error." CORS-blocked external JS (no source

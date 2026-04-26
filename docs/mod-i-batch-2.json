@@ -1,0 +1,532 @@
+[
+  {
+    "cuisine": "de",
+    "type": "APERATIF",
+    "canonicalSlug": "berlin-currywurst",
+    "canonicalTitle": "Berlin Currywurst",
+    "duplicateSlugs": ["berlin-currywurst-tabagi"],
+    "duplicateTitles": ["Berlin Currywurst Tabağı"],
+    "confidence": "medium",
+    "reason": "Bratwurst, domatesli köri sosu ve patates servis kurgusu aynı; canonical sosu passata, et suyu, hardal ve ketçapla daha ayrıntılı kuruyor."
+  },
+  {
+    "cuisine": "de",
+    "type": "YEMEK",
+    "canonicalSlug": "munih-bratwurst-lahana-tabagi",
+    "canonicalTitle": "Münih Bratwurst Lahana Tabağı",
+    "duplicateSlugs": ["munih-bratwurst-lahana"],
+    "duplicateTitles": ["Münih Lahanalı Bratwurst"],
+    "confidence": "medium",
+    "reason": "Bratwurst, lahana turşusu, soğan, patates ve tavada kızartma akışı aynı; fark bira veya sebze suyu gibi küçük sıvı seçimine iniyor."
+  },
+  {
+    "cuisine": "de",
+    "type": "YEMEK",
+    "canonicalSlug": "munich-schnitzel-patates-salatali",
+    "canonicalTitle": "Münih Schnitzel",
+    "duplicateSlugs": ["munih-patatesli-schnitzel-tabagi"],
+    "duplicateTitles": ["Münih Patatesli Schnitzel Tabağı"],
+    "confidence": "high",
+    "reason": "İki tarif de dana kontrfileyi un, yumurta ve galeta veya ekmek kırıntısıyla kaplayıp kızartıyor; patates salatası ve limon servisi de aynı."
+  },
+  {
+    "cuisine": "es",
+    "type": "APERATIF",
+    "canonicalSlug": "madrid-patatas-bravas",
+    "canonicalTitle": "Madrid Patatas Bravas",
+    "duplicateSlugs": ["patatas-bravas", "barselona-patatas-bravas"],
+    "duplicateTitles": ["Patatas Bravas", "Barselona Patatas Bravas"],
+    "confidence": "medium",
+    "reason": "Patatesleri kızartıp acılı domatesli brava sosuyla servis eden aynı tapas; canonical soğan, sarımsak, paprika ve salçayla en zengin sosu veriyor."
+  },
+  {
+    "cuisine": "es",
+    "type": "APERATIF",
+    "canonicalSlug": "madrid-gambas-al-ajillo",
+    "canonicalTitle": "Madrid Gambas al Ajillo",
+    "duplicateSlugs": ["madrid-sarimsakli-karides-tavasi"],
+    "duplicateTitles": ["Madrid Sarımsaklı Karides Tavası"],
+    "confidence": "high",
+    "reason": "Karides, bol zeytinyağı, sarımsak, acı biber ve maydanozla aynı tapas tavası; biri İspanyol adını, diğeri Türkçe açıklamasını kullanıyor."
+  },
+  {
+    "cuisine": "es",
+    "type": "CORBA",
+    "canonicalSlug": "sevilla-gazpacho",
+    "canonicalTitle": "Sevilla Gazpacho",
+    "duplicateSlugs": ["gazpacho", "andaluz-gazpacho", "seville-gazpacho-andaluz"],
+    "duplicateTitles": ["Gazpacho", "Andaluz Gazpacho", "Sevilla Gazpacho Andaluz"],
+    "confidence": "medium",
+    "reason": "Domates, salatalık, biber, ekmek, sarımsak, sirke ve zeytinyağıyla blenderda soğuk çorba akışı aynı; Sevilla kaydı en zengin ölçülü versiyon."
+  },
+  {
+    "cuisine": "es",
+    "type": "CORBA",
+    "canonicalSlug": "sevilla-bademli-soguk-ajo-blanco",
+    "canonicalTitle": "Sevilla Bademli Soğuk Ajo Blanco",
+    "duplicateSlugs": ["ajo-blanco-corbasi-ispanyol-usulu"],
+    "duplicateTitles": ["Ajo Blanco Çorbası"],
+    "confidence": "medium",
+    "reason": "Badem, bayat ekmek, sarımsak, zeytinyağı ve soğuk servis aynı ajo blanco temeli; canonical üzüm ve sirkeyle daha tamamlanmış."
+  },
+  {
+    "cuisine": "es",
+    "type": "CORBA",
+    "canonicalSlug": "sevilla-salmorejo-yumurtali",
+    "canonicalTitle": "Sevilla Salmorejo",
+    "duplicateSlugs": ["salmorejo-ispanya-usulu"],
+    "duplicateTitles": ["Salmorejo"],
+    "confidence": "medium",
+    "reason": "Domates, ekmek, zeytinyağı ve soğuk blender çorbası aynı; canonical yumurta, jambon ve sirkeyle daha zengin servis veriyor."
+  },
+  {
+    "cuisine": "es",
+    "type": "KAHVALTI",
+    "canonicalSlug": "tortilla-espanola",
+    "canonicalTitle": "Tortilla Espanola",
+    "duplicateSlugs": ["madrid-tortilla-espanola"],
+    "duplicateTitles": ["Madrid Tortilla Española"],
+    "confidence": "high",
+    "reason": "Patates, yumurta, soğan ve zeytinyağıyla tavada çevrilen aynı İspanyol omleti; Madrid adı içerik veya yöntem farkı yaratmıyor."
+  },
+  {
+    "cuisine": "es",
+    "type": "TATLI",
+    "canonicalSlug": "crema-catalana",
+    "canonicalTitle": "Crema Catalana",
+    "duplicateSlugs": ["barselona-crema-catalana", "crema-catalana-kavanozu-ispanyol-usulu", "limonlu-katalan-krem-kup-ispanya-usulu"],
+    "duplicateTitles": ["Barselona Crema Catalana", "Crema Catalana Kavanozu", "Limonlu Katalan Krem Kup"],
+    "confidence": "medium",
+    "reason": "Süt, yumurta sarısı, şeker, nişasta ve üstten karamelize edilen krem akışı aynı; kavanoz ve kup farkı servis formatı gibi duruyor."
+  },
+  {
+    "cuisine": "es",
+    "type": "YEMEK",
+    "canonicalSlug": "sevilla-nohutlu-ispanak-tavasi",
+    "canonicalTitle": "Sevilla Nohutlu Ispanak Tavası",
+    "duplicateSlugs": ["ispanakli-nohut-tava-ispanya-usulu"],
+    "duplicateTitles": ["Ispanaklı Nohut Tava"],
+    "confidence": "high",
+    "reason": "Haşlanmış nohut, ıspanak, sarımsak, paprika ve zeytinyağıyla aynı tavada pişirme akışı var; canonical füme paprika ve limonla daha açıklayıcı."
+  },
+  {
+    "cuisine": "es",
+    "type": "YEMEK",
+    "canonicalSlug": "valensiya-deniz-urunlu-paella",
+    "canonicalTitle": "Valensiya Deniz Ürünlü Paella",
+    "duplicateSlugs": ["deniz-mahsullu-paella"],
+    "duplicateTitles": ["Deniz Mahsullü Paella"],
+    "confidence": "medium",
+    "reason": "Paella pirinci, karides, midye, safran ve balık suyu tabanı aynı; canonical kalamar ve domatesle daha zengin deniz ürünü paellası."
+  },
+  {
+    "cuisine": "es",
+    "type": "YEMEK",
+    "canonicalSlug": "valensiya-paella-mixta",
+    "canonicalTitle": "Valensiya Paella Mixta",
+    "duplicateSlugs": ["valencia-paella-mixta"],
+    "duplicateTitles": ["Valencia Paella Mixta"],
+    "confidence": "high",
+    "reason": "Valencia ve Valensiya aynı yer adının iki yazımı; tavuk, deniz ürünü, pirinç, safran ve bezelye ile aynı paella mixta akışı var."
+  },
+  {
+    "cuisine": "es",
+    "type": "YEMEK",
+    "canonicalSlug": "valencia-paella-valenciana-tavuklu",
+    "canonicalTitle": "Valencia Paella Valenciana",
+    "duplicateSlugs": ["valencia-tavuklu-paella"],
+    "duplicateTitles": ["Valencia Tavuklu Paella"],
+    "confidence": "medium",
+    "reason": "Tavuk, paella pirinci, safran, tavuk suyu ve karıştırmadan pişirme akışı aynı; Valenciana kaydı yeşil fasulye ile daha geleneksel ve ayrıntılı."
+  },
+  {
+    "cuisine": "et",
+    "type": "YEMEK",
+    "canonicalSlug": "addis-ababa-misir-wat",
+    "canonicalTitle": "Addis Ababa Misir Wat",
+    "duplicateSlugs": ["addis-ababa-misir-wot"],
+    "duplicateTitles": ["Addis Ababa Misir Wot"],
+    "confidence": "high",
+    "reason": "Wat ve Wot aynı yemeğin yazım farkı; kırmızı mercimek, soğan, sarımsak, berbere ve salça ile aynı koyu mercimek yahnisini kuruyor."
+  },
+  {
+    "cuisine": "fr",
+    "type": "CORBA",
+    "canonicalSlug": "bouillabaisse",
+    "canonicalTitle": "Bouillabaisse",
+    "duplicateSlugs": ["marsilya-bouillabaisse-safranli"],
+    "duplicateTitles": ["Marsilya Bouillabaisse"],
+    "confidence": "medium",
+    "reason": "Featured canonical ile aynı beyaz balık, karides, balık suyu, rezene, domates, safran ve ekmek servisi var; Marsilya kaydı daha zengin deniz ürünü ekliyor."
+  },
+  {
+    "cuisine": "fr",
+    "type": "CORBA",
+    "canonicalSlug": "paris-sogan-corbasi",
+    "canonicalTitle": "Paris Soğan Çorbası",
+    "duplicateSlugs": ["sogan-corbasi"],
+    "duplicateTitles": ["Soğan Çorbası"],
+    "confidence": "medium",
+    "reason": "Soğanı tereyağıyla uzun kavurma, unla bağlama, et suyu ve peynirli ekmek servisi aynı; Paris kaydı Gruyere ve şarapla daha zengin."
+  },
+  {
+    "cuisine": "fr",
+    "type": "SALATA",
+    "canonicalSlug": "nice-salade-nicoise",
+    "canonicalTitle": "Nice Salade Niçoise",
+    "duplicateSlugs": ["nicoise-salatasi", "salade-nicoise-fransiz-bistro-usulu"],
+    "duplicateTitles": ["Niçoise Salatası", "Salade Niçoise"],
+    "confidence": "medium",
+    "reason": "Ton balığı, yumurta, yeşil fasulye, domates veya patates, zeytin ve hardallı sos kurgusu aynı; Nice kaydı en zengin ingredient ve step içeriyor."
+  },
+  {
+    "cuisine": "fr",
+    "type": "SALATA",
+    "canonicalSlug": "lyon-salata-lyonnaise",
+    "canonicalTitle": "Lyon Salata Lyonnaise",
+    "duplicateSlugs": ["salade-lyonnaise"],
+    "duplicateTitles": ["Salade Lyonnaise"],
+    "confidence": "medium",
+    "reason": "Frisee veya yeşillik, pastırma, poşe yumurta, kruton ve hardallı sos aynı salata yapısını veriyor; Lyon kaydı daha ayrıntılı."
+  },
+  {
+    "cuisine": "fr",
+    "type": "YEMEK",
+    "canonicalSlug": "coq-au-vin",
+    "canonicalTitle": "Coq au Vin",
+    "duplicateSlugs": ["burgonya-coq-au-vin"],
+    "duplicateTitles": ["Burgonya Coq au Vin"],
+    "confidence": "medium",
+    "reason": "Featured canonical ile aynı tavuk, kırmızı şarap, mantar, arpacık soğan, un ve uzun pişirme akışı var; Burgonya adı gerçek içerik farkı oluşturmuyor."
+  },
+  {
+    "cuisine": "fr",
+    "type": "YEMEK",
+    "canonicalSlug": "quiche-lorraine",
+    "canonicalTitle": "Quiche Lorraine",
+    "duplicateSlugs": ["lorraine-kis-tart", "lyon-quiche-lorraine"],
+    "duplicateTitles": ["Lorraine Kiş Tart", "Lyon Quiche Lorraine"],
+    "confidence": "medium",
+    "reason": "Tart hamuru, yumurta, krema, pastırma veya bacon ve fırında set olan dolgu aynı; peynir ve süt farkları küçük zenginleştirme düzeyinde."
+  },
+  {
+    "cuisine": "fr",
+    "type": "YEMEK",
+    "canonicalSlug": "gratin-dauphinois",
+    "canonicalTitle": "Gratin Dauphinois",
+    "duplicateSlugs": ["patates-graten"],
+    "duplicateTitles": ["Patates Graten"],
+    "confidence": "medium",
+    "reason": "İnce patates, krema, süt, sarımsak, muskat ve fırında katmanlı pişirme aynı; Patates Graten kaydı kaşar ekliyor ama ana tarif aynı."
+  },
+  {
+    "cuisine": "fr",
+    "type": "YEMEK",
+    "canonicalSlug": "paris-ratatouille-tenceresi",
+    "canonicalTitle": "Paris Ratatouille Tenceresi",
+    "duplicateSlugs": ["ratatouille", "nice-firin-ratatouille", "paris-ratatouille-guvec", "provence-ratatouille-tenceresi"],
+    "duplicateTitles": ["Ratatouille", "Nice Fırın Ratatouille", "Paris Ratatouille Güveç", "Provence Ratatouille Tenceresi"],
+    "confidence": "medium",
+    "reason": "Patlıcan, kabak, biber, domates, soğan, sarımsak ve zeytinyağıyla aynı ratatouille sebze yemeği; fırın, güveç veya tencere ifadeleri yöntem varyasyonu gibi duruyor."
+  },
+  {
+    "cuisine": "gr",
+    "type": "CORBA",
+    "canonicalSlug": "fasolada-yunan-usulu",
+    "canonicalTitle": "Fasolada",
+    "duplicateSlugs": ["fasolada-corbasi-yunan-usulu"],
+    "duplicateTitles": ["Fasolada Çorbası"],
+    "confidence": "high",
+    "reason": "Beyaz fasulye, havuç, domates, zeytinyağı ve bir kısmını ezerek koyulaştırma akışı aynı; başlıkta çorba eklenmesi ayrı tarif oluşturmuyor."
+  },
+  {
+    "cuisine": "gr",
+    "type": "YEMEK",
+    "canonicalSlug": "moussaka",
+    "canonicalTitle": "Moussaka",
+    "duplicateSlugs": ["atina-moussaka", "atina-musakka-patlicanli", "atina-musakka-firini", "atina-musakka-kasesi", "selanik-firin-musakka"],
+    "duplicateTitles": ["Atina Fırın Moussaka", "Atina Musakka", "Atina Musakka Fırını", "Atina Musakka Kasesi", "Selanik Fırın Musakka"],
+    "confidence": "medium",
+    "reason": "Featured canonical dahil tüm kayıtlar patlıcan, kıyma, domatesli sos ve beşamel katmanlarını fırında pişiriyor; patates veya kase farkı servis ve zenginleştirme düzeyinde."
+  },
+  {
+    "cuisine": "gr",
+    "type": "YEMEK",
+    "canonicalSlug": "spanakopita",
+    "canonicalTitle": "Spanakopita",
+    "duplicateSlugs": ["atina-spanakopita", "thessaloniki-spanakopita"],
+    "duplicateTitles": ["Atina Spanakopita", "Selanik Spanakopita"],
+    "confidence": "medium",
+    "reason": "Featured canonical ile aynı yufka veya filo, ıspanak, feta veya beyaz peynir, yumurta ve zeytinyağlı fırın böreği; şehir adı ana tarif farkı yaratmıyor."
+  },
+  {
+    "cuisine": "hu",
+    "type": "CORBA",
+    "canonicalSlug": "gulas-corbasi-macar-usulu",
+    "canonicalTitle": "Gulaş Çorbası",
+    "duplicateSlugs": ["budapeste-gulyas-corbasi", "budapeste-paprikali-gulyas-corbasi"],
+    "duplicateTitles": ["Budapeşte Gulyas Çorbası", "Budapeşte Gulyás Çorbası"],
+    "confidence": "medium",
+    "reason": "Featured canonical ile aynı dana eti, patates, soğan, paprika ve sulu çorba pişirme yapısı var; Budapeşte kayıtları daha uzun ve zengin ölçülü."
+  },
+  {
+    "cuisine": "hu",
+    "type": "TATLI",
+    "canonicalSlug": "dobos-torta",
+    "canonicalTitle": "Dobos Torta",
+    "duplicateSlugs": ["dobos-torte"],
+    "duplicateTitles": ["Dobos Torte"],
+    "confidence": "high",
+    "reason": "Başlık dili dışında aynı Dobos pastası; yumurta, un, şeker, tereyağı, bitter çikolata, katlı pandispanya ve karamelli üst akışı birebir örtüşüyor."
+  },
+  {
+    "cuisine": "hu",
+    "type": "YEMEK",
+    "canonicalSlug": "chicken-paprikash",
+    "canonicalTitle": "Chicken Paprikash",
+    "duplicateSlugs": ["paprikas-csirke-macar-usulu", "budapeste-tavuk-paprikash", "budapeste-tavuk-paprikas-nokedli"],
+    "duplicateTitles": ["Paprikás Csirke", "Budapeşte Tavuk Paprikash", "Budapeşte Tavuk Paprikaş Nokedli"],
+    "confidence": "medium",
+    "reason": "Tavuk, soğan, tatlı paprika ve ekşi krema ile aynı paprikash ana yemeği; nokedli yan servis olarak eklenmiş, ana tarif değişmiyor."
+  },
+  {
+    "cuisine": "hu",
+    "type": "YEMEK",
+    "canonicalSlug": "budapest-gulas-yahnisi",
+    "canonicalTitle": "Budapeşte Gulaş Yahnisi",
+    "duplicateSlugs": ["macar-gulasi"],
+    "duplicateTitles": ["Macar Gulaşı"],
+    "confidence": "medium",
+    "reason": "Dana eti, soğan, patates, paprika, domates ve uzun pişirme akışı aynı gulaş yahnisi; Budapeşte kaydı biber ve domatesle daha zengin."
+  },
+  {
+    "cuisine": "hu",
+    "type": "YEMEK",
+    "canonicalSlug": "turos-csusza-macar-usulu",
+    "canonicalTitle": "Túrós Csusza",
+    "duplicateSlugs": ["turos-csusza-tava-macar-usulu", "firin-turos-csusza"],
+    "duplicateTitles": ["Túrós Csusza Tava", "Fırın Túrós Csusza"],
+    "confidence": "medium",
+    "reason": "Erişte, lor peyniri, ekşi krema veya yoğurt ve tereyağıyla aynı Macar erişte tabağı; tava ve fırın adları pratik servis farkı gibi."
+  },
+  {
+    "cuisine": "id",
+    "type": "CORBA",
+    "canonicalSlug": "jakarta-soto-ayam-tavuklu",
+    "canonicalTitle": "Jakarta Soto Ayam",
+    "duplicateSlugs": ["surabaya-tavuk-soto"],
+    "duplicateTitles": ["Surabaya Tavuk Soto"],
+    "confidence": "medium",
+    "reason": "Tavuk but, pirinç noodle, yumurta, zerdeçal, limon otu, sarımsak, zencefil ve lime ile aynı tavuk soto çorbası; canonical daha fazla aromatik içeriyor."
+  },
+  {
+    "cuisine": "id",
+    "type": "YEMEK",
+    "canonicalSlug": "jakarta-nasi-goreng-ayamli",
+    "canonicalTitle": "Jakarta Nasi Goreng Ayam",
+    "duplicateSlugs": ["jakarta-nasi-goreng-ayam"],
+    "duplicateTitles": ["Jakarta Tavuklu Nasi Goreng"],
+    "confidence": "high",
+    "reason": "İki featured tarif de soğuk pirinç, tavuk, yumurta, kecap manis, soya sosu, arpacık soğan ve biberle aynı tavuklu nasi goreng."
+  },
+  {
+    "cuisine": "id",
+    "type": "YEMEK",
+    "canonicalSlug": "cakarta-yumurtali-nasi-goreng",
+    "canonicalTitle": "Cakarta Yumurtalı Nasi Goreng",
+    "duplicateSlugs": ["jakarta-nasi-goreng-telur"],
+    "duplicateTitles": ["Jakarta Nasi Goreng Telur"],
+    "confidence": "high",
+    "reason": "Cakarta ve Jakarta aynı şehir adının iki yazımı; soğuk pirinç, yumurta, kecap manis, soya sosu, sarımsak ve arpacık soğan tabanı aynı."
+  },
+  {
+    "cuisine": "in",
+    "type": "ICECEK",
+    "canonicalSlug": "masala-chai",
+    "canonicalTitle": "Masala Chai",
+    "duplicateSlugs": ["masala-cayi"],
+    "duplicateTitles": ["Masala Çayı"],
+    "confidence": "medium",
+    "reason": "Featured canonical ile siyah çay, süt, su, kakule ve tarçınlı aynı baharatlı çay; Masala Çayı kaydı zencefil ve şeker ekliyor."
+  },
+  {
+    "cuisine": "in",
+    "type": "ICECEK",
+    "canonicalSlug": "mango-lassi",
+    "canonicalTitle": "Mango Lassi",
+    "duplicateSlugs": ["mango-lassi-shake"],
+    "duplicateTitles": ["Mango Lassi Shake"],
+    "confidence": "high",
+    "reason": "Mango, yoğurt, süt ve kakule ile blenderda çekilen aynı içecek; shake kelimesi ayrı tarif farkı oluşturmuyor."
+  },
+  {
+    "cuisine": "in",
+    "type": "ICECEK",
+    "canonicalSlug": "altin-sut",
+    "canonicalTitle": "Altın Süt",
+    "duplicateSlugs": ["zerdecalli-altin-sut"],
+    "duplicateTitles": ["Zerdeçallı Altın Süt"],
+    "confidence": "medium",
+    "reason": "İki tarif de süt, zerdeçal, sıcak tencere ısıtması ve bal ile aynı altın süt içeceği; tarçın veya zencefil farkı küçük aroma değişimi."
+  },
+  {
+    "cuisine": "in",
+    "type": "KAHVALTI",
+    "canonicalSlug": "poha",
+    "canonicalTitle": "Poha",
+    "duplicateSlugs": ["poha-peanut-hint-kahvalti-usulu"],
+    "duplicateTitles": ["Poha Fıstıklı Kahvaltı"],
+    "confidence": "medium",
+    "reason": "Poha, soğan, yer fıstığı, zerdeçal ve limonlu aynı kahvaltı tavası; fıstık vurgusu canonical tarifte zaten mevcut."
+  },
+  {
+    "cuisine": "in",
+    "type": "TATLI",
+    "canonicalSlug": "gajar-halwa-hint-kis-usulu",
+    "canonicalTitle": "Gajar Halwa",
+    "duplicateSlugs": ["gajar-halwa-kup-hint-usulu"],
+    "duplicateTitles": ["Gajar Halwa Kup"],
+    "confidence": "medium",
+    "reason": "Havuç, süt, şeker ve kakuleyle pişen aynı halwa; kup kaydı servis kabı ve kaju farkı dışında ana tarifi değiştirmiyor."
+  },
+  {
+    "cuisine": "in",
+    "type": "YEMEK",
+    "canonicalSlug": "delhi-butter-chicken",
+    "canonicalTitle": "Delhi Butter Chicken",
+    "duplicateSlugs": ["butter-chicken", "delhi-makhani-tavuk-korisi", "delhi-tereyagli-tavuk-makhani"],
+    "duplicateTitles": ["Butter Chicken", "Delhi Butter Chicken Makhani", "Delhi Tereyağlı Tavuk"],
+    "confidence": "medium",
+    "reason": "Featured Delhi kaydıyla aynı yoğurt marine tavuk, domates püresi, tereyağı, krema ve garam masala tabanı var; makhani ve tereyağlı adları aynı yemeği işaret ediyor."
+  },
+  {
+    "cuisine": "in",
+    "type": "YEMEK",
+    "canonicalSlug": "mumbai-palak-paneer",
+    "canonicalTitle": "Mumbai Palak Paneer",
+    "duplicateSlugs": ["palak-paneer"],
+    "duplicateTitles": ["Palak Paneer"],
+    "confidence": "medium",
+    "reason": "Ispanak püresi, paneer, soğan, domates ve garam masala ile aynı palak paneer; Mumbai kaydı sarımsak, zencefil, zerdeçal ve krema ile daha ayrıntılı."
+  },
+  {
+    "cuisine": "in",
+    "type": "YEMEK",
+    "canonicalSlug": "punjab-chana-masala",
+    "canonicalTitle": "Punjab Chana Masala",
+    "duplicateSlugs": ["chana-masala"],
+    "duplicateTitles": ["Chana Masala"],
+    "confidence": "medium",
+    "reason": "Haşlanmış nohut, soğan, domates, zencefil, sarımsak ve garam masala tabanı aynı; Punjab kaydı daha fazla baharat ve step içeriyor."
+  },
+  {
+    "cuisine": "in",
+    "type": "YEMEK",
+    "canonicalSlug": "rajma",
+    "canonicalTitle": "Rajma",
+    "duplicateSlugs": ["rajma-masala-hint-usulu"],
+    "duplicateTitles": ["Rajma Masala"],
+    "confidence": "high",
+    "reason": "Haşlanmış barbunya, soğan, domates püresi, garam masala ve zencefil veya sarımsakla aynı rajma masala akışı var."
+  },
+  {
+    "cuisine": "in",
+    "type": "YEMEK",
+    "canonicalSlug": "mumbai-pav-bhaji-tereyagli",
+    "canonicalTitle": "Mumbai Pav Bhaji",
+    "duplicateSlugs": ["mumbai-sebzeli-pav-bhaji"],
+    "duplicateTitles": ["Mumbai Sebzeli Pav Bhaji"],
+    "confidence": "medium",
+    "reason": "Patates, karnabahar, bezelye, domates, pav bhaji baharatı, tereyağı ve ekmek servisi aynı; canonical daha zengin ve ölçülü."
+  },
+  {
+    "cuisine": "it",
+    "type": "ATISTIRMALIK",
+    "canonicalSlug": "suppli",
+    "canonicalTitle": "Suppli",
+    "duplicateSlugs": ["mini-arancini"],
+    "duplicateTitles": ["Mini Arancini"],
+    "confidence": "medium",
+    "reason": "Aynı type içinde soğuk risotto pirinci, mozzarella, yumurta, galeta unu ve kızartma akışı neredeyse aynı; canonical featured ve daha açıklayıcı."
+  },
+  {
+    "cuisine": "it",
+    "type": "CORBA",
+    "canonicalSlug": "floransa-ribollita-corbasi",
+    "canonicalTitle": "Floransa Ribollita Çorbası",
+    "duplicateSlugs": ["ribollita", "floransa-ribollita-corba"],
+    "duplicateTitles": ["Ribollita", "Floransa Ribollita Çorba"],
+    "confidence": "medium",
+    "reason": "Kara lahana, beyaz fasulye, bayat ekmek, soğan, havuç veya kereviz ve domatesli aynı ribollita çorbası; canonical en zengin kaydı veriyor."
+  },
+  {
+    "cuisine": "it",
+    "type": "TATLI",
+    "canonicalSlug": "tiramisu",
+    "canonicalTitle": "Tiramisu",
+    "duplicateSlugs": ["venedik-tiramisu-kup"],
+    "duplicateTitles": ["Venedik Tiramisu Kup"],
+    "confidence": "medium",
+    "reason": "Mascarpone kreması, kedidili, kahve ve kakao katmanları aynı; kup kaydı Marsala ve bardak servisiyle format değiştiriyor."
+  },
+  {
+    "cuisine": "it",
+    "type": "YEMEK",
+    "canonicalSlug": "spaghetti-carbonara",
+    "canonicalTitle": "Spaghetti Carbonara",
+    "duplicateSlugs": ["rome-carbonara"],
+    "duplicateTitles": ["Roma Spaghetti Carbonara"],
+    "confidence": "medium",
+    "reason": "Featured canonical ile spaghetti, yumurta, pecorino veya parmesan, pastırma veya guanciale ve karabiberli aynı carbonara akışı var."
+  },
+  {
+    "cuisine": "it",
+    "type": "YEMEK",
+    "canonicalSlug": "napoli-gnocchi-alla-sorrentina",
+    "canonicalTitle": "Napoli Gnocchi alla Sorrentina",
+    "duplicateSlugs": ["gnocchi-alla-sorrentina"],
+    "duplicateTitles": ["Gnocchi Alla Sorrentina"],
+    "confidence": "high",
+    "reason": "Patates gnocchi, domates püresi, mozzarella, parmesan ve fırında peynir eritme akışı aynı; Napoli adı içerik farkı yaratmıyor."
+  },
+  {
+    "cuisine": "it",
+    "type": "YEMEK",
+    "canonicalSlug": "sicilya-pasta-alla-norma",
+    "canonicalTitle": "Sicilya Pasta Alla Norma",
+    "duplicateSlugs": ["pasta-alla-norma"],
+    "duplicateTitles": ["Pasta Alla Norma"],
+    "confidence": "high",
+    "reason": "Penne, patlıcan, domates püresi, ricotta salata ve fesleğenle aynı Pasta alla Norma; Sicilya kaydı sarımsak ve zeytinyağıyla daha ayrıntılı."
+  },
+  {
+    "cuisine": "it",
+    "type": "YEMEK",
+    "canonicalSlug": "naples-pasta-puttanesca",
+    "canonicalTitle": "Napoli Pasta Puttanesca",
+    "duplicateSlugs": ["napoli-spaghetti-puttanesca"],
+    "duplicateTitles": ["Napoli Spaghetti Puttanesca"],
+    "confidence": "high",
+    "reason": "Spaghetti, domates püresi, siyah zeytin, kapari, ançuez, sarımsak ve maydanozla aynı puttanesca; biri pasta, biri spaghetti diye adlandırılmış."
+  },
+  {
+    "cuisine": "it",
+    "type": "YEMEK",
+    "canonicalSlug": "naples-pizza-margherita",
+    "canonicalTitle": "Napoli Pizza Margherita",
+    "duplicateSlugs": ["pizza-margherita"],
+    "duplicateTitles": ["Pizza Margherita"],
+    "confidence": "medium",
+    "reason": "Featured canonical ile aynı mayalı hamur, domates, mozzarella, fesleğen ve yüksek ısıda pizza pişirme akışı var; Napoli kaydı daha ayrıntılı."
+  },
+  {
+    "cuisine": "it",
+    "type": "YEMEK",
+    "canonicalSlug": "milan-risotto-alla-milanese",
+    "canonicalTitle": "Milano Risotto alla Milanese",
+    "duplicateSlugs": ["safranli-risotto", "milano-risotto-milanese"],
+    "duplicateTitles": ["Safranlı Risotto", "Milano Risotto Milanese"],
+    "confidence": "medium",
+    "reason": "Arborio pirinci, safran, sıcak su veya et suyu, tereyağı ve parmesanla aynı Milanese risotto akışı var; canonical en ayrıntılı yöntem içeriyor."
+  }
+]

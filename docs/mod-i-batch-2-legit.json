@@ -1,0 +1,92 @@
+[
+  {
+    "cuisine": "de",
+    "type": "YEMEK",
+    "slugs": ["munich-schnitzel-patates-salatali", "viena-tavuk-schnitzel"],
+    "reason": "Münih Schnitzel dana kontrfileyle, Viyana Tavuk Schnitzel tavuk göğsüyle yapılıyor; ana protein farklı."
+  },
+  {
+    "cuisine": "es",
+    "type": "CORBA",
+    "slugs": ["sopa-de-ajo", "domatesli-sarimsak-corbasi-ispanya-usulu"],
+    "reason": "Sopa de Ajo yumurta ve tavuk suyu içeren ekmekli sarımsak çorbası; domatesli kayıt domates ağırlıklı başka bir kase."
+  },
+  {
+    "cuisine": "es",
+    "type": "YEMEK",
+    "slugs": ["sebzeli-paella", "valencia-tavuklu-paella", "valensiya-deniz-urunlu-paella", "valensiya-paella-mixta"],
+    "reason": "Paella ailesi aynı olsa da sebzeli, tavuklu, deniz ürünlü ve mixtada ana protein veya ana içerik değişiyor."
+  },
+  {
+    "cuisine": "fr",
+    "type": "YEMEK",
+    "slugs": ["ratatouille", "ratatouille-orzo-fransiz-provans-usulu"],
+    "reason": "Ratatouille Orzo arpa şehriye ekleyip makarna pilavı gibi çalışıyor; sade sebze ratatouille ile birebir duplicate değil."
+  },
+  {
+    "cuisine": "gr",
+    "type": "YEMEK",
+    "slugs": ["souvlaki", "atina-tavuk-souvlaki"],
+    "reason": "Souvlaki kuzu kuşbaşıyla, Atina Tavuk Souvlaki tavuk göğsüyle hazırlanıyor; ana protein farklı."
+  },
+  {
+    "cuisine": "hu",
+    "type": "YEMEK",
+    "slugs": ["lecso-macar-usulu", "lecso-yumurtali-macar-usulu", "kolbaszli-lecso"],
+    "reason": "Sade lecsó sebze tavası, yumurtalı versiyon yumurta ekliyor, kolbászlı versiyon Macar sosisiyle ayrı ana karakter kazanıyor."
+  },
+  {
+    "cuisine": "hu",
+    "type": "YEMEK",
+    "slugs": ["paprikas-csirke-macar-usulu", "erikli-tavuk-paprikas-macar-usulu"],
+    "reason": "Erikli kayıt tatlı meyve ve krema dengesiyle klasik tavuk paprikash çizgisinden ayrılıyor."
+  },
+  {
+    "cuisine": "id",
+    "type": "YEMEK",
+    "slugs": ["jakarta-nasi-goreng-ayamli", "jakarta-nasi-goreng-telur"],
+    "reason": "Ayam tavuklu nasi goreng, telur yumurtalı nasi goreng; ana protein ve servis odağı farklı."
+  },
+  {
+    "cuisine": "in",
+    "type": "ICECEK",
+    "slugs": ["mango-lassi", "mango-lassi-chia-hint-usulu", "naneli-mango-lassi-spritz-hindistan-usulu"],
+    "reason": "Chia tohumu dokuyu değiştiriyor, spritz kaydı soda ve nane ile gazlı içecek formuna geçiyor."
+  },
+  {
+    "cuisine": "in",
+    "type": "ICECEK",
+    "slugs": ["masala-chai", "chai-latte"],
+    "reason": "Chai Latte daha sütlü kahve zinciri içeceği gibi konumlanıyor; Masala Chai klasik baharatlı çay."
+  },
+  {
+    "cuisine": "in",
+    "type": "YEMEK",
+    "slugs": ["butter-chicken", "chicken-tikka-masala"],
+    "reason": "İkisi kremalı domatesli tavuk olsa da tikka masala farklı baharat ve pişirme kimliğiyle ayrı yaygın yemek."
+  },
+  {
+    "cuisine": "in",
+    "type": "KAHVALTI",
+    "slugs": ["poha", "delhi-zerdecalli-patates-poha"],
+    "reason": "Delhi kaydı patatesi ana bileşen yapıyor; sade poha ile yakın ama aynı tarif olarak silinmedi."
+  },
+  {
+    "cuisine": "it",
+    "type": "KOKTEYL",
+    "slugs": ["negroni", "negroni-sbagliato"],
+    "reason": "Negroni cinle, Sbagliato prosecco ile yapılıyor; gazlı yapı ve alkol tabanı farklı."
+  },
+  {
+    "cuisine": "it",
+    "type": "YEMEK",
+    "slugs": ["safranli-risotto", "mantarli-risotto", "limonlu-ricotta-risotto-italyan-usulu"],
+    "reason": "Risotto ailesi aynı olsa da mantar, limonlu ricotta ve safranlı Milanese ana aroma ve malzeme açısından farklı."
+  },
+  {
+    "cuisine": "it",
+    "type": "YEMEK",
+    "slugs": ["naples-pizza-margherita", "napoli-marinara-pizza"],
+    "reason": "Margherita mozzarella içerir, Marinara peynirsiz domates, sarımsak ve oregano üstüne dayanır."
+  }
+]

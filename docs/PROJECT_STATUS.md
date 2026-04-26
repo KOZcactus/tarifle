@@ -1,18 +1,19 @@
 # Tarifle, Proje Durumu
 
-> Oturum 23 başı (26 Nis 2026), Mod I Batch 1 PIPELINE KAPANIŞ.
-> ChatGPT'den lokale gelen 16 cluster / 28 sil önerisi DB deep verify
-> (yeni script `scripts/verify-mod-i-batch.ts`, cluster × titleJacc +
-> ingJacc + stepDiff + calDiff threshold doğrulama). Manuel triaj
-> sonucu 14 kesin sil (A grubu 8 + B grubu 5 + Pekin chicken 1):
-> `damper-ekmegi`, `bal-kabakli-...corba`, `avokadolu-...mucver-stack`,
-> `picadillo-cubano`, `siyah-fasulyeli-pilav-bowl`, `tea-egg`,
-> `siyah-fasulye-corbasi`, `flan-de-coco-kuba-usulu`,
-> `melbourne-lamington-kareleri`, `rio-feijoada`, `rio-feijoada-fasulye`,
-> `moqueca-de-peixe`, `havana-picadillo-cubano`, `pekin-kung-pao-chicken`.
-> Prod 3679 → 3665. AuditLog kayıtlı. Source 14 satır azaldı
-> (smart-source-clean). Sıradaki: Mod I Batch 2-5 Codex tetik
-> (cuisine d-i / j-n / p-r / s-z) veya polish phase paketi.
+> Oturum 23 (26 Nis 2026), Mod I Batch 1 + 2 + 3 PIPELINE KAPANIŞ.
+> 64 cluster / 142 sil önerisi DB deep verify + otomatik kategorize
+> (yeni scripts: `verify-mod-i-batch.ts` + `classify-mod-i-pairs.ts`).
+> Toplam 64 net sil (Batch 1: 14 + Batch 2: 32 + Batch 3: 18). Prod
+> 3679 → 3615 (-64). AuditLog kayıtlı. Source 266 satır azaldı
+> (smart-source-clean multi-line + single-line). rollback-batch.ts
+> transaction timeout 5s → 120s (50 batch sil için). C_ATLA grubu
+> 78 slug gerçek varyant olarak korundu. Codex Mod I Batch 4 + 5
+> tetik bekler. **Polish phase notu**: bazı global slug'lar (pizza-
+> margherita, guacamole, palak-paneer, bibimbap, ful-medames, koshari,
+> rajma) coğrafi prefix'li canonical lehine silindi; site public açıl-
+> madığı için 404 etkisi yok ama post-Mod I canonical rename polish
+> önerilir. Sıradaki: Mod I Batch 4 + 5 verify (Codex teslim ederse)
+> veya polish paketi (newsletter / pişirdim rozet / timeline).
 
 > Oturum 22 sonu (26 Nis 2026), **35+ commit**, mutlak rekor günü.
 > **Mod G PIPELINE KAPANIŞ (417/417 boilerplate %100) + Mod H

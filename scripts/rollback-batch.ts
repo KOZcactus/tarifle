@@ -276,28 +276,34 @@ async function executeRollback(
   const toDelete = rows.filter((r) => !r.notFound && r.id);
   let deleted = 0;
 
-  await prisma.$transaction(async (tx) => {
-    for (const r of toDelete) {
-      if (!r.id) continue;
-      await tx.recipe.delete({ where: { id: r.id } });
-      await tx.auditLog.create({
-        data: {
-          action: "ROLLBACK_RECIPE",
-          targetType: "recipe",
-          targetId: r.id,
-          metadata: {
-            slug: r.slug,
-            title: r.title,
-            bookmarksCascaded: r.bookmarkCount,
-            collectionItemsCascaded: r.collectionItemCount,
-            variationsDetached: r.variationCount,
-            videoJobsDetached: r.videoJobCount,
+  await prisma.$transaction(
+    async (tx) => {
+      for (const r of toDelete) {
+        if (!r.id) continue;
+        await tx.recipe.delete({ where: { id: r.id } });
+        await tx.auditLog.create({
+          data: {
+            action: "ROLLBACK_RECIPE",
+            targetType: "recipe",
+            targetId: r.id,
+            metadata: {
+              slug: r.slug,
+              title: r.title,
+              bookmarksCascaded: r.bookmarkCount,
+              collectionItemsCascaded: r.collectionItemCount,
+              variationsDetached: r.variationCount,
+              videoJobsDetached: r.videoJobCount,
+            },
           },
-        },
-      });
-      deleted++;
-    }
-  });
+        });
+        deleted++;
+      }
+    },
+    {
+      maxWait: 10_000,
+      timeout: 120_000,
+    },
+  );
 
   return deleted;
 }

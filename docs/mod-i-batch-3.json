@@ -1,0 +1,290 @@
+[
+  {
+    "cuisine": "jp",
+    "type": "CORBA",
+    "canonicalSlug": "shoyu-ramen",
+    "canonicalTitle": "Shoyu Ramen",
+    "duplicateSlugs": ["tokyo-shoyu-ramen"],
+    "duplicateTitles": ["Tokyo Shoyu Ramen"],
+    "confidence": "medium",
+    "reason": "Ikisi de soya soslu tavuk suyu tabaninda ramen eristesi, yumurta ve taze soganla kurulan ayni shoyu ramen; Tokyo kaydi chashu, nori ve kombu ile daha zenginlestirilmis."
+  },
+  {
+    "cuisine": "jp",
+    "type": "ICECEK",
+    "canonicalSlug": "kavrulmus-hojicha-latte",
+    "canonicalTitle": "Kavrulmuş Hojicha Latte",
+    "duplicateSlugs": ["hojicha-latte"],
+    "duplicateTitles": ["Hojicha Latte"],
+    "confidence": "high",
+    "reason": "Hojicha tozu, sicak su, sut ve bal ayni; iki tarifte de hojicha sicak suyla cirpilip isitilmis sutle birlestiriliyor."
+  },
+  {
+    "cuisine": "jp",
+    "type": "YEMEK",
+    "canonicalSlug": "kyoto-oyakodon",
+    "canonicalTitle": "Kyoto Oyakodon",
+    "duplicateSlugs": ["oyakodon"],
+    "duplicateTitles": ["Oyakodon"],
+    "confidence": "medium",
+    "reason": "Tavuk, yumurta, pirinc, sogan ve soya soslu kisa pisirme akisi ayni; Kyoto kaydi dashi ve mirinle daha tam olculendirilmis."
+  },
+  {
+    "cuisine": "jp",
+    "type": "YEMEK",
+    "canonicalSlug": "kyoto-katsu-curry",
+    "canonicalTitle": "Kyoto Katsu Curry",
+    "duplicateSlugs": [
+      "tokyo-chicken-katsu-curry",
+      "tokyo-katsu-curry-pilav",
+      "tokyo-tavuk-katsu-kare"
+    ],
+    "duplicateTitles": [
+      "Tokyo Chicken Katsu Curry",
+      "Tokyo Katsu Curry",
+      "Tokyo Tavuk Katsu Kare"
+    ],
+    "confidence": "medium",
+    "reason": "Hepsi tavuk gogsu, panko, yumurta, un, pirinc ve Japon kori sosuyla ayni tavuk katsu curry tabagi; fark roux, patates veya sosun elde kurulmasi gibi kucuk ayrintilarda."
+  },
+  {
+    "cuisine": "kr",
+    "type": "APERATIF",
+    "canonicalSlug": "busan-haemul-pajeon",
+    "canonicalTitle": "Busan Haemul Pajeon",
+    "duplicateSlugs": ["busan-deniz-urunlu-pajeon", "haemul-pajeon"],
+    "duplicateTitles": ["Busan Deniz Ürünlü Pajeon", "Haemul Pajeon"],
+    "confidence": "high",
+    "reason": "Un, yumurta, taze sogan, karides veya kalamar ve soya soslu servis ayni deniz urunlu pajeon; Busan kaydi ayni tarifi daha acik adlandiriyor."
+  },
+  {
+    "cuisine": "kr",
+    "type": "CORBA",
+    "canonicalSlug": "busan-kimchi-jjigae",
+    "canonicalTitle": "Busan Kimchi Jjigae",
+    "duplicateSlugs": ["seul-kimchi-jjigae-domuzlu"],
+    "duplicateTitles": ["Seul Kimchi Jjigae"],
+    "confidence": "medium",
+    "reason": "Olgun kimchi, kimchi suyu, domuz eti, tofu, gochugaru ve susam yagi ayni kimchi jjigae akisini veriyor; Busan kaydi hamsi suyu ve gochujangla daha genis."
+  },
+  {
+    "cuisine": "kr",
+    "type": "YEMEK",
+    "canonicalSlug": "bibimbap",
+    "canonicalTitle": "Bibimbap",
+    "duplicateSlugs": ["seul-bibimbap"],
+    "duplicateTitles": ["Seul Bibimbap"],
+    "confidence": "medium",
+    "reason": "Pirinç, dana eti, yumurta, ispanak, havuc, susam yagi ve gochujangla ayni bibimbap kasesi; Seul adi tarif kimligini degistirmiyor."
+  },
+  {
+    "cuisine": "kr",
+    "type": "YEMEK",
+    "canonicalSlug": "seoul-bulgogi",
+    "canonicalTitle": "Seul Bulgogi",
+    "duplicateSlugs": [
+      "bulgogi",
+      "kore-armutlu-bulgogi-marul-kasesi",
+      "seul-bulgogi-marul-sarma",
+      "seoul-bulgogi-marul-wrap"
+    ],
+    "duplicateTitles": [
+      "Bulgogi",
+      "Kore Armutlu Bulgogi Marul Kasesi",
+      "Seul Bulgogi Marul Sarma",
+      "Seul Bulgogi Marul Wrap"
+    ],
+    "confidence": "medium",
+    "reason": "Dana antrikot veya ince dana eti, armut, soya sosu, sarimsak ve susam yagiyla marine edilip hizli pisirilen ayni bulgogi; marul kase veya wrap farki servis formatina iniyor."
+  },
+  {
+    "cuisine": "kr",
+    "type": "YEMEK",
+    "canonicalSlug": "seoul-japchae",
+    "canonicalTitle": "Seul Japchae",
+    "duplicateSlugs": ["japchae"],
+    "duplicateTitles": ["Japchae"],
+    "confidence": "medium",
+    "reason": "Tatli patates eristesi, ispanak, havuc, mantar, soya sosu ve susam yagi ayni japchae temelini veriyor; Seul kaydi dana ve yumurtayla daha zengin."
+  },
+  {
+    "cuisine": "kr",
+    "type": "YEMEK",
+    "canonicalSlug": "seul-kimchili-pirinc-tavasi",
+    "canonicalTitle": "Seul Kimchi Bokkeumbap",
+    "duplicateSlugs": ["kimchi-bokkeumbap", "seul-kimchi-fried-rice"],
+    "duplicateTitles": ["Kimchi Bokkeumbap", "Seul Kimchi Fried Rice"],
+    "confidence": "high",
+    "reason": "Pismis pirinc, kimchi, yumurta, susam yagi ve taze soganla ayni kimchi kizarmis pilav; Seul kaydi kimchi suyu, gochujang ve noriyle daha tam."
+  },
+  {
+    "cuisine": "ma",
+    "type": "CORBA",
+    "canonicalSlug": "bissara",
+    "canonicalTitle": "Bissara",
+    "duplicateSlugs": ["bessara-fas-usulu", "bessara-kis-corbasi-fas-usulu"],
+    "duplicateTitles": ["Bessara", "Bessara Kış Çorbası"],
+    "confidence": "high",
+    "reason": "Kuru bakla, sarimsak, kimyon ve zeytinyagiyla haslanip blenderdan gecirilen ayni Fas bakla corbasi; fark sadece Bessara ve Bissara yazimi."
+  },
+  {
+    "cuisine": "ma",
+    "type": "CORBA",
+    "canonicalSlug": "harira-kuzey-afrika-usulu",
+    "canonicalTitle": "Harira",
+    "duplicateSlugs": ["nohutlu-harira-kase-fas-usulu", "nohutlu-harira-corbasi-fas-usulu"],
+    "duplicateTitles": ["Nohutlu Harira Kase", "Nohutlu Harira Çorbası"],
+    "confidence": "medium",
+    "reason": "Nohut, domates, kimyon veya mercimek ve unla baglanan ayni harira corbasi ailesi; nohutlu kayitlar ana tarifi daha dar adla tekrarliyor."
+  },
+  {
+    "cuisine": "ma",
+    "type": "CORBA",
+    "canonicalSlug": "casablanca-harira",
+    "canonicalTitle": "Kazablanka Harira",
+    "duplicateSlugs": ["marakes-harira-corbasi"],
+    "duplicateTitles": ["Marakeş Harira Çorbası"],
+    "confidence": "medium",
+    "reason": "Dana eti, nohut, yesil mercimek, domates, kereviz, sogan, un ve kisnisle ayni etli harira akisi var; sehir adi disinda tarif cekirdegi ayni."
+  },
+  {
+    "cuisine": "ma",
+    "type": "KAHVALTI",
+    "canonicalSlug": "baghrir",
+    "canonicalTitle": "Baghrir",
+    "duplicateSlugs": ["beghrir"],
+    "duplicateTitles": ["Beghrir"],
+    "confidence": "high",
+    "reason": "Irmik, un, maya, su ve balla hazirlanan tek yuz pisirilmis ayni Fas pankeki; fark yalniz Baghrir ve Beghrir yazimi."
+  },
+  {
+    "cuisine": "ma",
+    "type": "KAHVALTI",
+    "canonicalSlug": "shakshuka-yumurta",
+    "canonicalTitle": "Shakshuka Yumurta",
+    "duplicateSlugs": ["magrip-saksukasi"],
+    "duplicateTitles": ["Mağrip Şakşukası"],
+    "confidence": "medium",
+    "reason": "Yumurta, domates, kirmizi biber, kimyon ve ekmekle ayni shakshuka kahvalti tabagi; featured kayit sogan ve sarimsakla daha tamamlanmis."
+  },
+  {
+    "cuisine": "ma",
+    "type": "SALATA",
+    "canonicalSlug": "mechouia-salatasi",
+    "canonicalTitle": "Mechouia Salatası",
+    "duplicateSlugs": ["slata-mechouia"],
+    "duplicateTitles": ["Tunisian Slata Mechouia"],
+    "confidence": "high",
+    "reason": "Kozlenmis biber, domates, sarimsak ve zeytinyagiyla yapilan ayni mechouia salatasi; ikinci kayit ayni adin Ingilizce/Tunusca yazimini kullaniyor."
+  },
+  {
+    "cuisine": "ma",
+    "type": "YEMEK",
+    "canonicalSlug": "kazablanka-limonlu-tavuk-tajin",
+    "canonicalTitle": "Kazablanka Limonlu Tavuk Tajin",
+    "duplicateSlugs": ["kazablanka-limonlu-tavuk-tagine", "limonlu-zeytinli-tavuk-tajin-fas-usulu"],
+    "duplicateTitles": ["Kazablanka Limonlu Tavuk Tagine", "Limonlu Zeytinli Tavuk Tajin"],
+    "confidence": "medium",
+    "reason": "Tavuk but, koruk limonu veya limon, yesil zeytin, sogan ve zencefilli yavas pisirme ayni limonlu tavuk tajinini veriyor; canonical daha zengin ve olculu."
+  },
+  {
+    "cuisine": "me",
+    "type": "CORBA",
+    "canonicalSlug": "firikli-ot-corbasi-lubnan-usulu",
+    "canonicalTitle": "Firikli Ot Çorbası",
+    "duplicateSlugs": ["freekeh-herb-soup-orta-dogu-usulu"],
+    "duplicateTitles": ["Freekeh Herb Soup"],
+    "confidence": "high",
+    "reason": "Firik, otlar, limon suyu ve sebze suyuyla ayni corba; biri Turkce, biri Ingilizce adla ayni tarifi tekrarliyor."
+  },
+  {
+    "cuisine": "me",
+    "type": "KAHVALTI",
+    "canonicalSlug": "kahire-ful-medames",
+    "canonicalTitle": "Kahire Ful Medames",
+    "duplicateSlugs": ["ful-medames"],
+    "duplicateTitles": ["Ful Medames"],
+    "confidence": "medium",
+    "reason": "Haslanmis bakla, kimyon, limon suyu ve zeytinyagiyla ayni ful medames tabani; Kahire kaydi tahin, sarimsak, yumurta ve pideyle daha zengin."
+  },
+  {
+    "cuisine": "me",
+    "type": "TATLI",
+    "canonicalSlug": "hurmali-tahinli-kup-levant-usulu",
+    "canonicalTitle": "Hurmalı Tahinli Kup",
+    "duplicateSlugs": ["hurmali-tahin-kup-orta-dogu-usulu"],
+    "duplicateTitles": ["Hurmalı Tahin Kup"],
+    "confidence": "medium",
+    "reason": "Hurma, tahin, labne veya labneh ve soguk kup sunumu ayni tatli cekirdegini kuruyor; canonical biskuvi kirintisi ve balla daha tamamlanmis."
+  },
+  {
+    "cuisine": "me",
+    "type": "YEMEK",
+    "canonicalSlug": "cairo-koshari-kasesi",
+    "canonicalTitle": "Kahire Koshari Kasesi",
+    "duplicateSlugs": ["koshari"],
+    "duplicateTitles": ["Koshari"],
+    "confidence": "medium",
+    "reason": "Pirinc, makarna, yesil mercimek, domates sosu ve sarimsakla ayni koshari katlari var; Kahire kaydi nohut, sogan ve sirkeyle daha ayrintili."
+  },
+  {
+    "cuisine": "mx",
+    "type": "ATISTIRMALIK",
+    "canonicalSlug": "esquites-con-queso",
+    "canonicalTitle": "Esquites con Queso",
+    "duplicateSlugs": ["esquites-meksika-usulu", "baharatli-misir-bardak"],
+    "duplicateTitles": ["Esquites", "Baharatlı Mısır Bardak"],
+    "confidence": "medium",
+    "reason": "Mısır, tereyagi, lime suyu ve baharatla bardakta servis edilen ayni esquites tarifi; canonical peynir ve mayonezle daha tamamlanmis."
+  },
+  {
+    "cuisine": "mx",
+    "type": "SOS",
+    "canonicalSlug": "oaxaca-guacamole-klasik",
+    "canonicalTitle": "Oaxaca Klasik Guacamole",
+    "duplicateSlugs": ["guacamole"],
+    "duplicateTitles": ["Guacamole"],
+    "confidence": "high",
+    "reason": "Avokado, lime suyu, domates, kirmizi sogan, jalapeno, kisnis ve tuz ayni guacamole sosunu olusturuyor; Oaxaca kaydi ayni tarifi daha ayrintili adimlarla veriyor."
+  },
+  {
+    "cuisine": "mx",
+    "type": "YEMEK",
+    "canonicalSlug": "meksiko-tacos-al-pastor",
+    "canonicalTitle": "Meksiko Tacos Al Pastor",
+    "duplicateSlugs": ["mexico-city-tacos-al-pastor"],
+    "duplicateTitles": ["Mexico City Tacos Al Pastor"],
+    "confidence": "high",
+    "reason": "Domuz omuz eti, misir tortilla, ananas, achiote, sirke, sogan ve kisnisle ayni al pastor taco; iki kayitta da Mexico City adlandirmasi ayni isi gosteriyor."
+  },
+  {
+    "cuisine": "mx",
+    "type": "YEMEK",
+    "canonicalSlug": "mole-poblano",
+    "canonicalTitle": "Mole Poblano",
+    "duplicateSlugs": ["puebla-mole-poblano"],
+    "duplicateTitles": ["Puebla Mole Poblano"],
+    "confidence": "medium",
+    "reason": "Tavuk but, kuru biber, susam, yer fistigi, cikolata ve tavuk suyuyla ayni mole poblano; Puebla kaydi ayni klasigi daha uzun olculendiriyor."
+  },
+  {
+    "cuisine": "mx",
+    "type": "YEMEK",
+    "canonicalSlug": "meksika-tavuk-enchiladas",
+    "canonicalTitle": "Meksika Tavuk Enchiladas",
+    "duplicateSlugs": ["enchiladas-rojas"],
+    "duplicateTitles": ["Enchiladas Rojas"],
+    "confidence": "medium",
+    "reason": "Mısır tortilla, haslanmis tavuk, kirmizi biber sosu, peynir ve firin akisi ayni kirmizi tavuk enchilada; canonical domates puresi ve kimyonla daha acik."
+  },
+  {
+    "cuisine": "ng",
+    "type": "YEMEK",
+    "canonicalSlug": "lagos-jollof-rice-firin",
+    "canonicalTitle": "Lagos Jollof Rice",
+    "duplicateSlugs": ["lagos-party-jollof-rice"],
+    "duplicateTitles": ["Lagos Party Jollof Rice"],
+    "confidence": "medium",
+    "reason": "Pirinc, domates, kapya biber, sogan, kekik ve defneyle ayni sade Lagos jollof rice; party kaydi ayni pilavi dumanli taban vurgusuyla tekrarliyor."
+  }
+]

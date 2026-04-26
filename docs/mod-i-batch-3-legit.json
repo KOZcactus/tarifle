@@ -1,0 +1,95 @@
+[
+  {
+    "cuisine": "jp",
+    "type": "APERATIF",
+    "slugs": ["okonomiyaki", "osaka-okonomiyaki-lahana", "osaka-okonomiyaki-tava"],
+    "reason": "Hepsi okonomiyaki ailesinde, fakat kayitlarda palamut rendesi, karides veya domuz pastirmasi gibi ana topping farklari var; bu nedenle sil listesine alinmadi."
+  },
+  {
+    "cuisine": "jp",
+    "type": "YEMEK",
+    "slugs": ["tavuk-katsu", "tonkatsu"],
+    "reason": "Tavuk Katsu tavuk gogsuyle, Tonkatsu dana kontrfileyle yapiliyor; panko teknigi ayni olsa da ana protein farkli."
+  },
+  {
+    "cuisine": "kr",
+    "type": "YEMEK",
+    "slugs": ["bibimbap", "seul-bibimbap-kasesi"],
+    "reason": "Seul Bibimbap Kasesi et yerine mantar, kimchi ve sebze agirlikli kuruldugu icin dana etli Bibimbap kaydindan ayriliyor."
+  },
+  {
+    "cuisine": "ma",
+    "type": "KAHVALTI",
+    "slugs": ["shakshuka-yumurta", "tunus-harissali-shakshuka"],
+    "reason": "Tunus kaydi harissa ile aci sos karakteri kuruyor; klasik Shakshuka Yumurta ile yakin ama ayri bir varyant."
+  },
+  {
+    "cuisine": "ma",
+    "type": "YEMEK",
+    "slugs": [
+      "kazablanka-limonlu-tavuk-tajin",
+      "fes-tavuk-tagine",
+      "marrakesh-chicken-tagine",
+      "casablanca-tavuk-tagine"
+    ],
+    "reason": "Tavuk tajin ailesi yakin, fakat Fes kaydinda bal ve safran, Marakes kaydinda tarcin ve badem, Casablanca kaydinda badem vurgusu var; sehir ve malzeme farklari nedeniyle toplu silinmedi."
+  },
+  {
+    "cuisine": "me",
+    "type": "ICECEK",
+    "slugs": ["hurmali-tahin-shake", "hurmali-tahin-smoothie"],
+    "reason": "Shake sut ve buzla sade icecek, smoothie muz ve badem icecegiyle daha yogun bir varyant; ayni hurma tahin tabani tek basina duplicate sayilmadi."
+  },
+  {
+    "cuisine": "me",
+    "type": "KAHVALTI",
+    "slugs": [
+      "labneli-zaatar-pide-orta-dogu-usulu",
+      "labneli-zaatar-tost-orta-dogu-usulu",
+      "zaatarli-labneh-gozleme-levant-usulu"
+    ],
+    "reason": "Labne ve zahter ortak, fakat biri firin pide, biri tost, biri tavada gozleme; hamur ve pisirme formu farkli."
+  },
+  {
+    "cuisine": "me",
+    "type": "YEMEK",
+    "slugs": ["tavuk-shawarma", "shawarma-pilavi"],
+    "reason": "Tavuk Shawarma lavas sarma, Shawarma Pilavi pirinc uzerinde servis edilen tabak; ana sunum ve karbonhidrat formu farkli."
+  },
+  {
+    "cuisine": "mx",
+    "type": "ATISTIRMALIK",
+    "slugs": ["elote", "esquites-meksika-usulu"],
+    "reason": "Elote misir kocani olarak izgara servis edilir, esquites bardakta tane misir kurgusudur; ayni mısır tabani olsa da form farki gercek."
+  },
+  {
+    "cuisine": "mx",
+    "type": "YEMEK",
+    "slugs": ["tacos-al-pastor", "meksiko-tacos-al-pastor", "mexico-city-tacos-al-pastor"],
+    "reason": "Featured Tacos al Pastor dana etiyle uyarlanmis, Meksiko ve Mexico City kayitlari domuz omuz etiyle klasik al pastor cizgisinde; ana protein farki nedeniyle featured kayit sil listesine alinmadi."
+  },
+  {
+    "cuisine": "mx",
+    "type": "YEMEK",
+    "slugs": ["birria-de-res", "guadalajara-birria-taco"],
+    "reason": "Birria de Res yahni, Guadalajara Birria Taco ayni etin tortilla ve consomeyle taco sunumu; yakin ama servis formu ayri."
+  },
+  {
+    "cuisine": "mx",
+    "type": "YEMEK",
+    "slugs": ["mole-poblano", "oaxaca-moleli-tavuk", "oaxaca-kabak-cekirdekli-tavuk-mole"],
+    "reason": "Mole ailesi yakin, fakat Oaxaca kayitlari kakao veya kabak cekirdegi temelli farkli sos karakteri tasiyor; Poblano ile birebir duplicate sayilmadi."
+  },
+  {
+    "cuisine": "mx",
+    "type": "YEMEK",
+    "slugs": ["enchiladas-rojas", "mexico-city-enchiladas-verdes"],
+    "reason": "Enchiladas Rojas kirmizi soslu, Mexico City Enchiladas Verdes tomatillo ve yesil biber soslu; sos rengi ve ana taban farkli."
+  },
+  {
+    "cuisine": "ng",
+    "type": "YEMEK",
+    "slugs": ["lagos-jollof-rice-firin", "lagos-tavuklu-jollof-pilavi"],
+    "reason": "Lagos Tavuklu Jollof Pilavi tavuk but ve tavuk suyuyla ana protein ekliyor; sade Lagos Jollof Rice ile ayni silme kumesine alinmadi."
+  }
+]

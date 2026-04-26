@@ -25,6 +25,13 @@ export interface RecipeCard {
   _count: {
     variations: number;
   };
+  /**
+   * "Pisirdim" toggle isaretleyen unique kullanici sayisi (oturum 23).
+   * Card footer'da "X kisi pisirdi" sosyal kanit olarak render edilir.
+   * Null/undefined = caller fetch etmemis (anasayfa shelf'leri henuz
+   * baglanmadi vb.); 0 = pisiren yok, badge gizlenir.
+   */
+  cookedCount?: number;
 }
 
 export interface RecipeDetail {

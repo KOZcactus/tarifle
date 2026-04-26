@@ -2,6 +2,21 @@ import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import type { Allergen, Difficulty } from "@prisma/client";
 import type { RecipeCard, RecipeDetail } from "@/types/recipe";
+import { getCookedCountsForRecipes } from "@/lib/queries/recipe-cooked";
+
+/**
+ * Recipe card listing'lerine "Pisirdim" sayisini batch ile ekle.
+ * Cache wrapper disinda calistigindan dinamik (yeni pisirme an itibariyla
+ * artar). Recipe set bos ise erken don. Performans: tek group by query
+ * (recipe_cooked.recipeId index var).
+ */
+async function attachCookedCounts(
+  recipes: RecipeCard[],
+): Promise<RecipeCard[]> {
+  if (recipes.length === 0) return recipes;
+  const counts = await getCookedCountsForRecipes(recipes.map((r) => r.id));
+  return recipes.map((r) => ({ ...r, cookedCount: counts.get(r.id) ?? 0 }));
+}
 
 /**
  * Comparator used by the "most-liked" sort. Extracted as a pure function so
@@ -447,13 +462,26 @@ const _getRecipesInner = async (options: GetRecipesOptions = {}): Promise<{
 // Session 11 tune: 5 dk → 10 dk. Kullanıcı tarama pattern'ı aynı
 // filter'ı kısa sürede tekrarlamaz, uzun TTL Neon query'sini azaltır.
 // Yeni tarif seed'i revalidateTag("recipes") ile invalidate edilir.
-export const getRecipes = unstable_cache(_getRecipesInner, ["get-recipes-v1"], {
+const getRecipesCached = unstable_cache(_getRecipesInner, ["get-recipes-v1"], {
   // Oturum 12 tune: 10 dk -> 30 dk. Vercel Free tier Fluid Active CPU
   // %75 seviyesine cikinca agresif cache. Tarif listing'i nadiren
   // degisir; admin edit + seed invalidate "recipes" tag zaten tetikler.
   revalidate: 1800,
   tags: ["recipes"],
 });
+
+/**
+ * getRecipes wrapper: cached recipe listing + post-cache cookedCount
+ * enrichment. Cooked count cache disinda dinamik fetch oldugu icin yeni
+ * "Pisirdim" toggle an itibariyla card badge'inde gozukur (oturum 23).
+ */
+export async function getRecipes(
+  options: GetRecipesOptions,
+): Promise<{ recipes: RecipeCard[]; total: number }> {
+  const cached = await getRecipesCached(options);
+  const enriched = await attachCookedCounts(cached.recipes);
+  return { recipes: enriched, total: cached.total };
+}
 
 /** Öne çıkan tarifler */
 /**

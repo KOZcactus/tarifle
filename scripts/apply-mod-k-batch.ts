@@ -47,6 +47,7 @@ interface ModKEntry {
   issues?: string[];
   corrections?: {
     description?: string;
+    cuisine?: string;
     ingredients_add?: Array<{ name: string; amount: string; unit: string; group?: string }>;
     ingredients_remove?: string[];
     ingredients_amount_change?: Array<{ name: string; newAmount: string; newUnit?: string }>;
@@ -153,6 +154,7 @@ async function main() {
         id: true,
         slug: true,
         description: true,
+        cuisine: true,
         tipNote: true,
         servingSuggestion: true,
         prepMinutes: true,
@@ -181,6 +183,10 @@ async function main() {
     let hasChange = false;
     if (c.description && c.description !== recipe.description) {
       updateData.description = c.description;
+      hasChange = true;
+    }
+    if (c.cuisine !== undefined && c.cuisine !== recipe.cuisine) {
+      updateData.cuisine = c.cuisine;
       hasChange = true;
     }
     if (c.tipNote && c.tipNote !== recipe.tipNote) {
@@ -265,6 +271,7 @@ async function main() {
     if (!APPLY) {
       const summary: string[] = [];
       if (updateData.description) summary.push("description");
+      if (updateData.cuisine) summary.push(`cuisine ${recipe.cuisine}->${updateData.cuisine}`);
       if (updateData.tipNote) summary.push("tipNote");
       if (updateData.servingSuggestion) summary.push("servingSuggestion");
       if (updateData.prepMinutes !== undefined) summary.push(`prep ${recipe.prepMinutes}->${updateData.prepMinutes}`);
@@ -390,6 +397,7 @@ async function main() {
             issues: e.issues ?? [],
             corrections_applied: {
               description: !!updateData.description,
+              cuisine: !!updateData.cuisine,
               tipNote: !!updateData.tipNote,
               servingSuggestion: !!updateData.servingSuggestion,
               times: !!(updateData.prepMinutes || updateData.cookMinutes || updateData.totalMinutes),

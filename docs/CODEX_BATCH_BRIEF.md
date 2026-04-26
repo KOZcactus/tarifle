@@ -3888,6 +3888,11 @@ HER ALAN dahil):**
   listesi
 - `corrections` (CORRECTION + MAJOR_ISSUE), opsiyonel alanlar:
   - `description`: yeni description (max %20 uzar; ŞİŞİRME YASAK)
+  - `cuisine`: yeni cuisine kodu (mevcut 30 koddan biri: tr, it,
+    fr, es, gr, jp, cn, kr, th, in, mx, us, me, ma, vn, br, cu,
+    ru, hu, se, pe, gb, pl, au, de, ir, pk, id, et, ng). Bilinmeyen
+    cuisine (örn tn/ar) önermek YASAK; bu durumda description fix
+    önerip MAJOR_ISSUE bayrağını manuel review için bırak
   - `ingredients_add`: eklenecek `[{ name, amount, unit, group? }]`
   - `ingredients_remove`: silinecek ingredient adları
   - `ingredients_amount_change`: amount/unit düzeltmesi

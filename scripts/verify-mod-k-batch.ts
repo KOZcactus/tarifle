@@ -36,6 +36,7 @@ interface ModKEntry {
   issues?: string[];
   corrections?: {
     description?: string;
+    cuisine?: string;
     ingredients_add?: Array<{ name: string; amount: string; unit: string; group?: string }>;
     ingredients_remove?: string[];
     ingredients_amount_change?: Array<{ name: string; newAmount: string; newUnit?: string }>;
@@ -128,6 +129,13 @@ const VALID_TAGS = new Set([
 const VALID_ALLERGENS = new Set([
   "GLUTEN", "SUT", "YUMURTA", "KUSUYEMIS", "YER_FISTIGI",
   "SOYA", "DENIZ_URUNLERI", "SUSAM", "KEREVIZ", "HARDAL",
+]);
+
+// Tarifle CUISINE_CODES (src/lib/cuisines.ts), 30 kod.
+const VALID_CUISINES = new Set([
+  "tr", "it", "fr", "es", "gr", "jp", "cn", "kr", "th", "in",
+  "mx", "us", "me", "ma", "vn", "br", "cu", "ru", "hu", "se",
+  "pe", "gb", "pl", "au", "de", "ir", "pk", "id", "et", "ng",
 ]);
 
 function isHttpUrl(u: string): boolean {
@@ -243,6 +251,13 @@ function validateEntry(entry: ModKEntry, db: DbRecipe | null): string[] {
         if (oldLen > 0 && newLen > oldLen * SHISIRME_MAX_RATIO) {
           issues.push(`servingSuggestion sisirildi (${oldLen} -> ${newLen}, max ${Math.floor(oldLen * SHISIRME_MAX_RATIO)})`);
         }
+      }
+
+      // cuisine enum check (30 mevcut kod, brief §20.2 listesi)
+      if (c.cuisine !== undefined && !VALID_CUISINES.has(c.cuisine)) {
+        issues.push(
+          `cuisine gecersiz kod: ${c.cuisine} (gecerli: ${[...VALID_CUISINES].join(",")})`,
+        );
       }
 
       // tag enum check

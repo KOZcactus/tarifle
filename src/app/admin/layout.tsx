@@ -42,6 +42,7 @@ export default async function AdminLayout({
         <NavLink href="/admin/yorumlar">{t("comments")}</NavLink>
         <NavLink href="/admin/raporlar">{t("reports")}</NavLink>
         <NavLink href="/admin/tarifler">{t("recipes")}</NavLink>
+        <NavLink href="/admin/kalite">{t("quality")}</NavLink>
         <NavLink href="/admin/kullanicilar">{t("users")}</NavLink>
         <NavLink href="/admin/topluluk-fotolari">{t("userPhotos")}</NavLink>
         <NavLink href="/admin/koleksiyonlar">{t("collections")}</NavLink>

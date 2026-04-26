@@ -547,6 +547,7 @@
       "comments": "Comments",
       "reports": "Reports",
       "recipes": "Recipes",
+      "quality": "Quality",
       "users": "Users",
       "userPhotos": "User Photos",
       "collections": "Collections",
@@ -557,6 +558,28 @@
       "log": "Log",
       "features": "Features",
       "sentryTest": "Sentry Test"
+    },
+    "quality": {
+      "heading": "🩺 Recipe Quality Dashboard",
+      "subtitle": "Lowest-quality published recipes ranked by issue weight. Refine top items first.",
+      "totalRecipes": "Published",
+      "withIssues": "With issues",
+      "listedTop": "Listed",
+      "highestScore": "Top score",
+      "colTitle": "Title",
+      "colType": "Type",
+      "colIssues": "Issues",
+      "colScore": "Score",
+      "emptyState": "🎉 All recipes pass quality checks.",
+      "issue": {
+        "shortDescription": "Short description",
+        "fewWords": "Few words",
+        "missingTip": "Missing tip",
+        "missingServing": "Missing serving",
+        "shortSteps": "Too few steps",
+        "missingAllergenTag": "Missing allergen tag",
+        "extraDeclaredAllergen": "Declared but not in ingredients"
+      }
     },
     "features": {
       "pageTitle": "Feature Settings | Admin Panel",

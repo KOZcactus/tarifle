@@ -547,6 +547,7 @@
       "comments": "Yorumlar",
       "reports": "Raporlar",
       "recipes": "Tarifler",
+      "quality": "Kalite",
       "users": "Kullanıcılar",
       "userPhotos": "Topluluk Foto",
       "collections": "Koleksiyonlar",
@@ -557,6 +558,28 @@
       "log": "Log",
       "features": "Özellikler",
       "sentryTest": "Sentry Test"
+    },
+    "quality": {
+      "heading": "🩺 Tarif Kalite Dashboard",
+      "subtitle": "En düşük kaliteli yayında tarifler. Editör panelinden öncelik sırasıyla refine et. Skor yüksek = öncelik yüksek.",
+      "totalRecipes": "Yayında tarif",
+      "withIssues": "Sorunlu",
+      "listedTop": "Listelenen",
+      "highestScore": "En yüksek skor",
+      "colTitle": "Başlık",
+      "colType": "Tip",
+      "colIssues": "Sorunlar",
+      "colScore": "Skor",
+      "emptyState": "🎉 Tüm tarifler kalite kriterlerini geçiyor.",
+      "issue": {
+        "shortDescription": "Kısa açıklama",
+        "fewWords": "Az kelime",
+        "missingTip": "İpucu yok",
+        "missingServing": "Servis önerisi yok",
+        "shortSteps": "Step yetersiz",
+        "missingAllergenTag": "Alerjen tag eksik",
+        "extraDeclaredAllergen": "Beyan-ingredient uyumsuz"
+      }
     },
     "features": {
       "pageTitle": "Özellik Ayarları | Yönetim Paneli",

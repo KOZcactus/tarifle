@@ -35,8 +35,16 @@ import { assertDbTarget } from "./lib/db-env";
 neonConfig.webSocketConstructor = ws;
 const __filename2 = fileURLToPath(import.meta.url);
 const __dirname2 = path.dirname(__filename2);
-dotenv.config({ path: path.resolve(__dirname2, "..", ".env.local") });
-dotenv.config({ path: path.resolve(__dirname2, "..", ".env") });
+
+// --env prod ile .env.production.local yuklenir (prod DB hedefler);
+// default .env.local (dev DB). migrate-prod.ts pattern'iyle paralel.
+const envIdx = process.argv.indexOf("--env");
+const envTarget = envIdx >= 0 && process.argv[envIdx + 1] === "prod" ? "prod" : "dev";
+const envFile = envTarget === "prod" ? ".env.production.local" : ".env.local";
+dotenv.config({
+  path: path.resolve(__dirname2, "..", envFile),
+  override: true,
+});
 
 interface MarineEntry {
   slug: string;

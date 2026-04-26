@@ -1,0 +1,1473 @@
+[
+  {
+    "rank": 151,
+    "freq": 20,
+    "name": "Elma sirkesi",
+    "sampleRecipes": [
+      {
+        "slug": "coleslaw",
+        "title": "Coleslaw",
+        "type": "SALATA"
+      },
+      {
+        "slug": "currywurst-sos",
+        "title": "Currywurst Sos",
+        "type": "SOS"
+      },
+      {
+        "slug": "mango-chutney",
+        "title": "Mango Chutney",
+        "type": "SOS"
+      }
+    ],
+    "typeDistribution": {
+      "SALATA": 13,
+      "SOS": 2,
+      "CORBA": 4,
+      "YEMEK": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 152,
+    "freq": 20,
+    "name": "Haşhaş",
+    "sampleRecipes": [
+      {
+        "slug": "hashasli-armut-tatlisi-afyon-usulu",
+        "title": "Afyon Haşhaşlı Armut Tatlısı",
+        "type": "TATLI"
+      },
+      {
+        "slug": "hashasli-elma-kompostosu-eskisehir-usulu",
+        "title": "Eskişehir Haşhaşlı Elma Kompostosu",
+        "type": "ICECEK"
+      },
+      {
+        "slug": "hashasli-cevizli-irmik-tatlisi-usak-usulu",
+        "title": "Uşak Haşhaşlı Cevizli İrmik Tatlısı",
+        "type": "TATLI"
+      }
+    ],
+    "typeDistribution": {
+      "YEMEK": 6,
+      "KAHVALTI": 13,
+      "TATLI": 16,
+      "ICECEK": 1,
+      "SALATA": 2,
+      "APERATIF": 1,
+      "CORBA": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 153,
+    "freq": 20,
+    "name": "Hurma",
+    "sampleRecipes": [
+      {
+        "slug": "sujeonggwa",
+        "title": "Sujeonggwa",
+        "type": "ICECEK"
+      },
+      {
+        "slug": "hurmali-tahin-smoothie",
+        "title": "Hurmalı Tahin Smoothie",
+        "type": "ICECEK"
+      },
+      {
+        "slug": "enerji-toplari",
+        "title": "Enerji Topları",
+        "type": "ATISTIRMALIK"
+      }
+    ],
+    "typeDistribution": {
+      "ATISTIRMALIK": 2,
+      "ICECEK": 6,
+      "TATLI": 13,
+      "YEMEK": 2
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 154,
+    "freq": 19,
+    "name": "Vişne",
+    "sampleRecipes": [
+      {
+        "slug": "visne-kompostosu",
+        "title": "Vişne Kompostosu",
+        "type": "ICECEK"
+      },
+      {
+        "slug": "meggyes-retes",
+        "title": "Meggyes Retes",
+        "type": "TATLI"
+      },
+      {
+        "slug": "visneli-kefir-smoothie",
+        "title": "Vişneli Kefir Smoothie",
+        "type": "ICECEK"
+      }
+    ],
+    "typeDistribution": {
+      "ICECEK": 12,
+      "TATLI": 10,
+      "CORBA": 1,
+      "KOKTEYL": 2,
+      "KAHVALTI": 1,
+      "YEMEK": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 155,
+    "freq": 19,
+    "name": "Lime",
+    "sampleRecipes": [
+      {
+        "slug": "mojito",
+        "title": "Mojito",
+        "type": "KOKTEYL"
+      },
+      {
+        "slug": "cajun-misir-cerezi",
+        "title": "Cajun Mısır Çerezi",
+        "type": "ATISTIRMALIK"
+      },
+      {
+        "slug": "khao-soi",
+        "title": "Khao Soi",
+        "type": "CORBA"
+      }
+    ],
+    "typeDistribution": {
+      "KOKTEYL": 14,
+      "SOS": 4,
+      "YEMEK": 15,
+      "CORBA": 6,
+      "SALATA": 13,
+      "ICECEK": 13,
+      "ATISTIRMALIK": 8,
+      "TATLI": 2,
+      "APERATIF": 4,
+      "KAHVALTI": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 156,
+    "freq": 19,
+    "name": "Nişasta",
+    "sampleRecipes": [
+      {
+        "slug": "cilekli-magnolia",
+        "title": "Çilekli Magnolia",
+        "type": "TATLI"
+      },
+      {
+        "slug": "sutlac",
+        "title": "Sütlaç",
+        "type": "TATLI"
+      },
+      {
+        "slug": "kazandibi",
+        "title": "Kazandibi",
+        "type": "TATLI"
+      }
+    ],
+    "typeDistribution": {
+      "TATLI": 54,
+      "APERATIF": 5,
+      "ICECEK": 4,
+      "YEMEK": 11,
+      "CORBA": 3,
+      "KAHVALTI": 2,
+      "ATISTIRMALIK": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 157,
+    "freq": 19,
+    "name": "Armut",
+    "sampleRecipes": [
+      {
+        "slug": "armutlu-irmik-tatlisi-bilecik-usulu",
+        "title": "Armutlu İrmik Tatlısı",
+        "type": "TATLI"
+      },
+      {
+        "slug": "armutlu-zencefil-smoothie",
+        "title": "Armutlu Zencefil Smoothie",
+        "type": "ICECEK"
+      },
+      {
+        "slug": "firin-tarcinli-armut",
+        "title": "Fırın Tarçınlı Armut",
+        "type": "TATLI"
+      }
+    ],
+    "typeDistribution": {
+      "YEMEK": 5,
+      "TATLI": 10,
+      "ICECEK": 6,
+      "KAHVALTI": 2,
+      "KOKTEYL": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 158,
+    "freq": 19,
+    "name": "Toz kırmızı biber",
+    "sampleRecipes": [
+      {
+        "slug": "tavuklu-keskek",
+        "title": "Tavuklu Keşkek",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "kabak-cipsi",
+        "title": "Kabak Cipsi",
+        "type": "APERATIF"
+      },
+      {
+        "slug": "sogan-halkasi",
+        "title": "Soğan Halkası",
+        "type": "APERATIF"
+      }
+    ],
+    "typeDistribution": {
+      "APERATIF": 3,
+      "YEMEK": 9,
+      "ATISTIRMALIK": 4,
+      "CORBA": 3
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 159,
+    "freq": 19,
+    "name": "Portakal kabuğu",
+    "sampleRecipes": [
+      {
+        "slug": "old-fashioned",
+        "title": "Old Fashioned",
+        "type": "KOKTEYL"
+      },
+      {
+        "slug": "negroni",
+        "title": "Negroni",
+        "type": "KOKTEYL"
+      },
+      {
+        "slug": "hibiskus-serbeti",
+        "title": "Hibiskus Şerbeti",
+        "type": "ICECEK"
+      }
+    ],
+    "typeDistribution": {
+      "KOKTEYL": 6,
+      "ICECEK": 6,
+      "TATLI": 12,
+      "KAHVALTI": 1,
+      "YEMEK": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 160,
+    "freq": 19,
+    "name": "Bitter çikolata",
+    "sampleRecipes": [
+      {
+        "slug": "mole-poblano",
+        "title": "Mole Poblano",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "brownie",
+        "title": "Brownie",
+        "type": "TATLI"
+      },
+      {
+        "slug": "sicak-cikolata",
+        "title": "Sıcak Çikolata",
+        "type": "ICECEK"
+      }
+    ],
+    "typeDistribution": {
+      "ICECEK": 8,
+      "TATLI": 9,
+      "YEMEK": 2
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 161,
+    "freq": 19,
+    "name": "Kefir",
+    "sampleRecipes": [
+      {
+        "slug": "orman-meyveli-kefir-smoothie",
+        "title": "Orman Meyveli Kefir Smoothie",
+        "type": "ICECEK"
+      },
+      {
+        "slug": "bogurtlen-kefir-smoothie",
+        "title": "Böğürtlen Kefir Smoothie",
+        "type": "ICECEK"
+      },
+      {
+        "slug": "kefirli-ayran",
+        "title": "Kefirli Ayran",
+        "type": "ICECEK"
+      }
+    ],
+    "typeDistribution": {
+      "ICECEK": 12,
+      "KAHVALTI": 2,
+      "CORBA": 3,
+      "TATLI": 1,
+      "SALATA": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 162,
+    "freq": 19,
+    "name": "Kuş üzümü",
+    "sampleRecipes": [
+      {
+        "slug": "kaburga-dolmasi",
+        "title": "Kaburga Dolması",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "perde-pilavi",
+        "title": "Perde Pilavı",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "ic-pilav",
+        "title": "İç Pilav",
+        "type": "YEMEK"
+      }
+    ],
+    "typeDistribution": {
+      "YEMEK": 18,
+      "TATLI": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 163,
+    "freq": 19,
+    "name": "Esmer şeker",
+    "sampleRecipes": [
+      {
+        "slug": "galbi",
+        "title": "Galbi",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "creme-brulee",
+        "title": "Crème Brûlée",
+        "type": "TATLI"
+      },
+      {
+        "slug": "pad-thai",
+        "title": "Pad Thai",
+        "type": "YEMEK"
+      }
+    ],
+    "typeDistribution": {
+      "YEMEK": 8,
+      "TATLI": 8,
+      "ICECEK": 2,
+      "SOS": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 164,
+    "freq": 19,
+    "name": "Labne",
+    "sampleRecipes": [
+      {
+        "slug": "labneli-somonlu-bagel",
+        "title": "Labneli Somonlu Bagel",
+        "type": "KAHVALTI"
+      },
+      {
+        "slug": "peynir-toplari",
+        "title": "Peynir Topları",
+        "type": "APERATIF"
+      },
+      {
+        "slug": "cevizli-kabak-ezmesi",
+        "title": "Cevizli Kabak Ezmesi",
+        "type": "APERATIF"
+      }
+    ],
+    "typeDistribution": {
+      "KAHVALTI": 10,
+      "APERATIF": 5,
+      "TATLI": 7,
+      "SOS": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 165,
+    "freq": 19,
+    "name": "Pirinç eriştesi",
+    "sampleRecipes": [
+      {
+        "slug": "pho-bo",
+        "title": "Pho Bo",
+        "type": "CORBA"
+      },
+      {
+        "slug": "pho-ga",
+        "title": "Pho Ga",
+        "type": "CORBA"
+      },
+      {
+        "slug": "pad-see-ew",
+        "title": "Pad See Ew",
+        "type": "YEMEK"
+      }
+    ],
+    "typeDistribution": {
+      "YEMEK": 11,
+      "CORBA": 7,
+      "SALATA": 3
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 166,
+    "freq": 18,
+    "name": "Kakule",
+    "sampleRecipes": [
+      {
+        "slug": "masala-cayi",
+        "title": "Masala Çayı",
+        "type": "ICECEK"
+      },
+      {
+        "slug": "chai-latte",
+        "title": "Chai Latte",
+        "type": "ICECEK"
+      },
+      {
+        "slug": "mansaf",
+        "title": "Mansaf",
+        "type": "YEMEK"
+      }
+    ],
+    "typeDistribution": {
+      "ICECEK": 11,
+      "YEMEK": 1,
+      "ATISTIRMALIK": 1,
+      "TATLI": 5
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 167,
+    "freq": 18,
+    "name": "Dana bonfile",
+    "sampleRecipes": [
+      {
+        "slug": "pho-bo",
+        "title": "Pho Bo",
+        "type": "CORBA"
+      },
+      {
+        "slug": "panang-curry",
+        "title": "Panang Curry",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "dana-stroganoff",
+        "title": "Dana Stroganoff",
+        "type": "YEMEK"
+      }
+    ],
+    "typeDistribution": {
+      "YEMEK": 16,
+      "CORBA": 1,
+      "KAHVALTI": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 168,
+    "freq": 18,
+    "name": "Garam masala",
+    "sampleRecipes": [
+      {
+        "slug": "tavuklu-biryani",
+        "title": "Tavuklu Biryani",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "samosa",
+        "title": "Samosa",
+        "type": "APERATIF"
+      },
+      {
+        "slug": "butter-chicken",
+        "title": "Butter Chicken",
+        "type": "YEMEK"
+      }
+    ],
+    "typeDistribution": {
+      "YEMEK": 15,
+      "APERATIF": 1,
+      "KAHVALTI": 2
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 169,
+    "freq": 18,
+    "name": "Acı biber",
+    "sampleRecipes": [
+      {
+        "slug": "pad-krapow",
+        "title": "Pad Krapow",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "som-tam",
+        "title": "Som Tam",
+        "type": "SALATA"
+      },
+      {
+        "slug": "salsa-roja",
+        "title": "Salsa Roja",
+        "type": "SOS"
+      }
+    ],
+    "typeDistribution": {
+      "SOS": 1,
+      "YEMEK": 21,
+      "CORBA": 4,
+      "SALATA": 4,
+      "ICECEK": 1,
+      "APERATIF": 2
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 170,
+    "freq": 18,
+    "name": "Haşhaş ezmesi",
+    "sampleRecipes": [
+      {
+        "slug": "hashasli-kaymakli-ekmek-afyon-usulu",
+        "title": "Haşhaşlı Kaymaklı Ekmek",
+        "type": "KAHVALTI"
+      },
+      {
+        "slug": "amasya-coregi",
+        "title": "Amasya Çöreği",
+        "type": "KAHVALTI"
+      },
+      {
+        "slug": "afyon-bukmesi",
+        "title": "Afyon Bükmesi",
+        "type": "YEMEK"
+      }
+    ],
+    "typeDistribution": {
+      "YEMEK": 6,
+      "KAHVALTI": 9,
+      "TATLI": 1,
+      "APERATIF": 1,
+      "CORBA": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 171,
+    "freq": 18,
+    "name": "Parmesan",
+    "sampleRecipes": [
+      {
+        "slug": "frittata-di-zucchine",
+        "title": "Frittata di Zucchine",
+        "type": "KAHVALTI"
+      },
+      {
+        "slug": "peynirli-mantar-dolmasi",
+        "title": "Peynirli Mantar Dolması",
+        "type": "APERATIF"
+      },
+      {
+        "slug": "limonlu-ricotta-risotto-italyan-usulu",
+        "title": "Limonlu Ricotta Risotto",
+        "type": "YEMEK"
+      }
+    ],
+    "typeDistribution": {
+      "SALATA": 3,
+      "YEMEK": 18,
+      "SOS": 1,
+      "APERATIF": 4,
+      "CORBA": 2,
+      "KAHVALTI": 1,
+      "TATLI": 1,
+      "ATISTIRMALIK": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 172,
+    "freq": 17,
+    "name": "Nohut",
+    "sampleRecipes": [
+      {
+        "slug": "falafel",
+        "title": "Falafel",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "asure",
+        "title": "Aşure",
+        "type": "TATLI"
+      },
+      {
+        "slug": "anali-kizli-corbasi",
+        "title": "Analı Kızlı Çorbası",
+        "type": "CORBA"
+      }
+    ],
+    "typeDistribution": {
+      "APERATIF": 9,
+      "YEMEK": 35,
+      "TATLI": 1,
+      "CORBA": 20,
+      "ATISTIRMALIK": 5,
+      "SALATA": 4,
+      "KAHVALTI": 5,
+      "SOS": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 173,
+    "freq": 17,
+    "name": "Espresso",
+    "sampleRecipes": [
+      {
+        "slug": "tiramisu",
+        "title": "Tiramisu",
+        "type": "TATLI"
+      },
+      {
+        "slug": "espresso-martini",
+        "title": "Espresso Martini",
+        "type": "KOKTEYL"
+      },
+      {
+        "slug": "caffe-latte",
+        "title": "Caffe Latte",
+        "type": "ICECEK"
+      }
+    ],
+    "typeDistribution": {
+      "TATLI": 1,
+      "KOKTEYL": 2,
+      "ICECEK": 14
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 174,
+    "freq": 17,
+    "name": "Roka",
+    "sampleRecipes": [
+      {
+        "slug": "hamsili-pilav-artvin-usulu",
+        "title": "Hamsili Pilav",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "roka-salatasi",
+        "title": "Roka Salatası",
+        "type": "SALATA"
+      },
+      {
+        "slug": "erikli-hamsi-salatasi-samsun-usulu",
+        "title": "Samsun Erikli Hamsi Salatası",
+        "type": "SALATA"
+      }
+    ],
+    "typeDistribution": {
+      "SALATA": 10,
+      "YEMEK": 3,
+      "KAHVALTI": 3,
+      "APERATIF": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 175,
+    "freq": 17,
+    "name": "Kolot peyniri",
+    "sampleRecipes": [
+      {
+        "slug": "sahanda-mihlama",
+        "title": "Sahanda Mıhlama",
+        "type": "KAHVALTI"
+      },
+      {
+        "slug": "kuymak",
+        "title": "Kuymak",
+        "type": "KAHVALTI"
+      },
+      {
+        "slug": "kolotlu-misir-ekmegi-trabzon-usulu",
+        "title": "Trabzon Kolotlu Mısır Ekmeği",
+        "type": "KAHVALTI"
+      }
+    ],
+    "typeDistribution": {
+      "KAHVALTI": 16,
+      "YEMEK": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 176,
+    "freq": 17,
+    "name": "Krem peynir",
+    "sampleRecipes": [
+      {
+        "slug": "smorgastarta",
+        "title": "Smörgåstårta",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "coxinha",
+        "title": "Coxinha",
+        "type": "APERATIF"
+      },
+      {
+        "slug": "san-sebastian-cheesecake",
+        "title": "San Sebastian Cheesecake",
+        "type": "TATLI"
+      }
+    ],
+    "typeDistribution": {
+      "TATLI": 4,
+      "APERATIF": 3,
+      "YEMEK": 1,
+      "ATISTIRMALIK": 1,
+      "KAHVALTI": 6,
+      "SOS": 2
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 177,
+    "freq": 17,
+    "name": "Arpacık soğan",
+    "sampleRecipes": [
+      {
+        "slug": "boeuf-bourguignon",
+        "title": "Boeuf Bourguignon",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "coq-au-vin",
+        "title": "Coq au Vin",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "beurre-blanc",
+        "title": "Beurre Blanc",
+        "type": "SOS"
+      }
+    ],
+    "typeDistribution": {
+      "SOS": 1,
+      "YEMEK": 15,
+      "SALATA": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 178,
+    "freq": 17,
+    "name": "Haşlanmış kuru fasulye",
+    "sampleRecipes": [
+      {
+        "slug": "ribollita",
+        "title": "Ribollita",
+        "type": "CORBA"
+      },
+      {
+        "slug": "jokai-bableves",
+        "title": "Jókai Bableves",
+        "type": "CORBA"
+      },
+      {
+        "slug": "babgulyas",
+        "title": "Babgulyas",
+        "type": "YEMEK"
+      }
+    ],
+    "typeDistribution": {
+      "CORBA": 7,
+      "YEMEK": 4,
+      "SALATA": 4,
+      "SOS": 1,
+      "KAHVALTI": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 179,
+    "freq": 17,
+    "name": "Hamsi fileto",
+    "sampleRecipes": [
+      {
+        "slug": "gilda-pintxos",
+        "title": "Gilda Pintxos",
+        "type": "APERATIF"
+      },
+      {
+        "slug": "hamsili-patates-tavasi-sinop-usulu",
+        "title": "Sinop Hamsili Patates Tavası",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "hamsili-karalahana-sote-giresun-ev-usulu",
+        "title": "Giresun Hamsili Karalahana Sote",
+        "type": "YEMEK"
+      }
+    ],
+    "typeDistribution": {
+      "APERATIF": 2,
+      "YEMEK": 13,
+      "SALATA": 1,
+      "KAHVALTI": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 180,
+    "freq": 16,
+    "name": "Kuşbaşı dana eti",
+    "sampleRecipes": [
+      {
+        "slug": "etli-madimak-kavurmasi-sivas-usulu",
+        "title": "Etli Madımak Kavurması",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "etli-nohut",
+        "title": "Etli Nohut",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "tandir-biberli-bulgur-kapama-batman-usulu",
+        "title": "Batman Tandır Biberli Bulgur Kapama",
+        "type": "YEMEK"
+      }
+    ],
+    "typeDistribution": {
+      "YEMEK": 13,
+      "CORBA": 3
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 181,
+    "freq": 16,
+    "name": "Pekmez",
+    "sampleRecipes": [
+      {
+        "slug": "tahin-pekmezli-yulaf",
+        "title": "Tahin Pekmezli Yulaf",
+        "type": "KAHVALTI"
+      },
+      {
+        "slug": "kayseri-nevzine",
+        "title": "Kayseri Nevzine",
+        "type": "TATLI"
+      },
+      {
+        "slug": "tahin-pekmezli-pankek",
+        "title": "Tahin Pekmezli Pankek",
+        "type": "KAHVALTI"
+      }
+    ],
+    "typeDistribution": {
+      "KAHVALTI": 10,
+      "TATLI": 42,
+      "ICECEK": 2
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 182,
+    "freq": 16,
+    "name": "Limon otu",
+    "sampleRecipes": [
+      {
+        "slug": "tom-yum",
+        "title": "Tom Yum",
+        "type": "CORBA"
+      },
+      {
+        "slug": "bun-bo-hue",
+        "title": "Bun Bo Hue",
+        "type": "CORBA"
+      },
+      {
+        "slug": "tom-kha-gai",
+        "title": "Tom Kha Gai",
+        "type": "CORBA"
+      }
+    ],
+    "typeDistribution": {
+      "CORBA": 9,
+      "YEMEK": 6,
+      "SALATA": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 183,
+    "freq": 16,
+    "name": "Damla sakızı",
+    "sampleRecipes": [
+      {
+        "slug": "maras-dondurmasi",
+        "title": "Maraş Dondurması",
+        "type": "TATLI"
+      },
+      {
+        "slug": "damla-sakizli-sicak-cikolata",
+        "title": "Damla Sakızlı Sıcak Çikolata",
+        "type": "ICECEK"
+      },
+      {
+        "slug": "sakizli-incir-kompostosu-mugla-usulu",
+        "title": "Muğla Sakızlı İncir Kompostosu",
+        "type": "ICECEK"
+      }
+    ],
+    "typeDistribution": {
+      "TATLI": 12,
+      "ICECEK": 2,
+      "KAHVALTI": 1,
+      "YEMEK": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 184,
+    "freq": 16,
+    "name": "Haşlanmış siyah fasulye",
+    "sampleRecipes": [
+      {
+        "slug": "black-bean-soup",
+        "title": "Black Bean Soup",
+        "type": "CORBA"
+      },
+      {
+        "slug": "caldo-de-feijao",
+        "title": "Caldo de Feijao",
+        "type": "CORBA"
+      },
+      {
+        "slug": "tutu-de-feijao",
+        "title": "Tutu de Feijao",
+        "type": "YEMEK"
+      }
+    ],
+    "typeDistribution": {
+      "YEMEK": 9,
+      "CORBA": 5,
+      "APERATIF": 1,
+      "KAHVALTI": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 185,
+    "freq": 16,
+    "name": "Haşlanmış yeşil mercimek",
+    "sampleRecipes": [
+      {
+        "slug": "afyon-bukmesi",
+        "title": "Afyon Bükmesi",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "hashasli-mercimekli-bukme-afyon-usulu",
+        "title": "Haşhaşlı Mercimekli Bükme",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "mercimekli-kabak-sote",
+        "title": "Mercimekli Kabak Sote",
+        "type": "YEMEK"
+      }
+    ],
+    "typeDistribution": {
+      "YEMEK": 13,
+      "KAHVALTI": 1,
+      "SOS": 1,
+      "CORBA": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 186,
+    "freq": 16,
+    "name": "Çökelek",
+    "sampleRecipes": [
+      {
+        "slug": "cokelekli-bazlama-sandvic-sivas-usulu",
+        "title": "Çökelekli Bazlama Sandviç",
+        "type": "KAHVALTI"
+      },
+      {
+        "slug": "cevizli-cokelek-ezmesi",
+        "title": "Cevizli Çökelek Ezmesi",
+        "type": "KAHVALTI"
+      },
+      {
+        "slug": "cokelekli-katmer-tokat-usulu",
+        "title": "Çökelekli Katmer",
+        "type": "YEMEK"
+      }
+    ],
+    "typeDistribution": {
+      "KAHVALTI": 11,
+      "YEMEK": 3,
+      "CORBA": 1,
+      "SALATA": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 187,
+    "freq": 16,
+    "name": "Kuru incir",
+    "sampleRecipes": [
+      {
+        "slug": "findikli-incir-uyutmasi-giresun-usulu",
+        "title": "Giresun Fındıklı İncir Uyutması",
+        "type": "TATLI"
+      },
+      {
+        "slug": "incir-uyutmasi-balikesir-usulu",
+        "title": "İncir Uyutması",
+        "type": "TATLI"
+      },
+      {
+        "slug": "incir-dolmasi-aydin-usulu",
+        "title": "Aydın İncir Dolması",
+        "type": "TATLI"
+      }
+    ],
+    "typeDistribution": {
+      "TATLI": 13,
+      "ICECEK": 1,
+      "KAHVALTI": 1,
+      "YEMEK": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 188,
+    "freq": 15,
+    "name": "Çilek",
+    "sampleRecipes": [
+      {
+        "slug": "cilekli-magnolia",
+        "title": "Çilekli Magnolia",
+        "type": "TATLI"
+      },
+      {
+        "slug": "granola-kasesi",
+        "title": "Granola Kasesi",
+        "type": "KAHVALTI"
+      },
+      {
+        "slug": "cilekli-smoothie",
+        "title": "Çilekli Smoothie",
+        "type": "ICECEK"
+      }
+    ],
+    "typeDistribution": {
+      "TATLI": 9,
+      "ICECEK": 3,
+      "KAHVALTI": 1,
+      "ATISTIRMALIK": 1,
+      "KOKTEYL": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 189,
+    "freq": 15,
+    "name": "Pastırma",
+    "sampleRecipes": [
+      {
+        "slug": "pacanga-boregi",
+        "title": "Paçanga Böreği",
+        "type": "APERATIF"
+      },
+      {
+        "slug": "pastirmali-yumurta",
+        "title": "Pastırmalı Yumurta",
+        "type": "KAHVALTI"
+      },
+      {
+        "slug": "pastirmali-nohutlu-bulgur-pilavi-kayseri-usulu",
+        "title": "Pastırmalı Nohutlu Bulgur Pilavı",
+        "type": "YEMEK"
+      }
+    ],
+    "typeDistribution": {
+      "APERATIF": 2,
+      "YEMEK": 14,
+      "SALATA": 4,
+      "KAHVALTI": 5,
+      "CORBA": 3
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 190,
+    "freq": 15,
+    "name": "Portakal",
+    "sampleRecipes": [
+      {
+        "slug": "negroni-sbagliato",
+        "title": "Negroni Sbagliato",
+        "type": "KOKTEYL"
+      },
+      {
+        "slug": "sangria",
+        "title": "Sangria",
+        "type": "KOKTEYL"
+      },
+      {
+        "slug": "portakalli-havuc-suyu",
+        "title": "Portakallı Havuç Suyu",
+        "type": "ICECEK"
+      }
+    ],
+    "typeDistribution": {
+      "KOKTEYL": 20,
+      "YEMEK": 11,
+      "ICECEK": 16,
+      "CORBA": 1,
+      "TATLI": 20,
+      "SALATA": 8,
+      "ATISTIRMALIK": 1,
+      "KAHVALTI": 2,
+      "APERATIF": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 191,
+    "freq": 15,
+    "name": "Karalahana",
+    "sampleRecipes": [
+      {
+        "slug": "karalahana-corbasi-ordu-usulu",
+        "title": "Karalahana Çorbası",
+        "type": "CORBA"
+      },
+      {
+        "slug": "karalahana-sarmasi-karadeniz-usulu",
+        "title": "Karalahana Sarması",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "karalahanali-pirincli-tava-giresun-usulu",
+        "title": "Giresun Karalahanalı Pirinçli Tava",
+        "type": "YEMEK"
+      }
+    ],
+    "typeDistribution": {
+      "YEMEK": 11,
+      "CORBA": 5,
+      "KAHVALTI": 1,
+      "SALATA": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 192,
+    "freq": 15,
+    "name": "Semizotu",
+    "sampleRecipes": [
+      {
+        "slug": "yogurtlu-semizotu-salatasi",
+        "title": "Yoğurtlu Semizotu Salatası",
+        "type": "SALATA"
+      },
+      {
+        "slug": "semizotlu-yumurta-tavasi-antalya-usulu",
+        "title": "Semizotlu Yumurta Tavası",
+        "type": "KAHVALTI"
+      },
+      {
+        "slug": "yogurtlu-semizotu-ezmesi-denizli-usulu",
+        "title": "Denizli Yoğurtlu Semizotu Ezmesi",
+        "type": "SOS"
+      }
+    ],
+    "typeDistribution": {
+      "SALATA": 9,
+      "KAHVALTI": 1,
+      "SOS": 1,
+      "CORBA": 4
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 193,
+    "freq": 15,
+    "name": "Reyhan",
+    "sampleRecipes": [
+      {
+        "slug": "reyhanli-bulgur-patlican-dolmasi-isparta-usulu",
+        "title": "Isparta Reyhanlı Bulgur Patlıcan Dolması",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "reyhanli-domates-asi-diyarbakir-usulu",
+        "title": "Diyarbakır Reyhanlı Domates Aşı",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "reyhanli-domates-pilavi-diyarbakir-usulu",
+        "title": "Diyarbakır Reyhanlı Domates Pilavı",
+        "type": "YEMEK"
+      }
+    ],
+    "typeDistribution": {
+      "ICECEK": 8,
+      "YEMEK": 9,
+      "CORBA": 1,
+      "SALATA": 3,
+      "KAHVALTI": 1,
+      "KOKTEYL": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 194,
+    "freq": 14,
+    "name": "Maya",
+    "sampleRecipes": [
+      {
+        "slug": "lahmacun",
+        "title": "Lahmacun",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "char-siu-bao",
+        "title": "Char Siu Bao",
+        "type": "APERATIF"
+      },
+      {
+        "slug": "loukoumades",
+        "title": "Loukoumades",
+        "type": "TATLI"
+      }
+    ],
+    "typeDistribution": {
+      "YEMEK": 33,
+      "ICECEK": 2,
+      "KAHVALTI": 26,
+      "TATLI": 9,
+      "ATISTIRMALIK": 3,
+      "APERATIF": 7
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 195,
+    "freq": 14,
+    "name": "Pudra şekeri",
+    "sampleRecipes": [
+      {
+        "slug": "bici-bici",
+        "title": "Bici Bici",
+        "type": "TATLI"
+      },
+      {
+        "slug": "cannoli",
+        "title": "Cannoli",
+        "type": "TATLI"
+      },
+      {
+        "slug": "kazandibi",
+        "title": "Kazandibi",
+        "type": "TATLI"
+      }
+    ],
+    "typeDistribution": {
+      "TATLI": 14
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 196,
+    "freq": 14,
+    "name": "Kuzu kıyma",
+    "sampleRecipes": [
+      {
+        "slug": "kuzu-koftesi",
+        "title": "Kuzu Köftesi",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "sogan-kebabi-tepsi-kilis-usulu",
+        "title": "Soğan Kebabı Tepsi",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "shepherds-pie-ingiliz-usulu",
+        "title": "İngiliz Shepherd's Pie",
+        "type": "YEMEK"
+      }
+    ],
+    "typeDistribution": {
+      "YEMEK": 15
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 197,
+    "freq": 14,
+    "name": "Tavuk kalça",
+    "sampleRecipes": [
+      {
+        "slug": "teriyaki-tavuk",
+        "title": "Teriyaki Tavuk",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "tavuklu-biryani",
+        "title": "Tavuklu Biryani",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "butter-chicken",
+        "title": "Butter Chicken",
+        "type": "YEMEK"
+      }
+    ],
+    "typeDistribution": {
+      "YEMEK": 14
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 198,
+    "freq": 14,
+    "name": "Beyaz balık fileto",
+    "sampleRecipes": [
+      {
+        "slug": "balik-corbasi",
+        "title": "Balık Çorbası",
+        "type": "CORBA"
+      },
+      {
+        "slug": "tod-mun-pla",
+        "title": "Tod Mun Pla",
+        "type": "APERATIF"
+      },
+      {
+        "slug": "bouillabaisse",
+        "title": "Bouillabaisse",
+        "type": "CORBA"
+      }
+    ],
+    "typeDistribution": {
+      "CORBA": 4,
+      "APERATIF": 1,
+      "YEMEK": 8,
+      "SALATA": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 199,
+    "freq": 14,
+    "name": "Enginar kalbi",
+    "sampleRecipes": [
+      {
+        "slug": "sebzeli-paella",
+        "title": "Sebzeli Paella",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "enginarli-ic-pilav-ayvalik-usulu",
+        "title": "Enginarlı İç Pilav",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "lorlu-enginar-kizartmasi-izmir-usulu",
+        "title": "İzmir Lorlu Enginar Kızartması",
+        "type": "APERATIF"
+      }
+    ],
+    "typeDistribution": {
+      "YEMEK": 7,
+      "APERATIF": 3,
+      "CORBA": 1,
+      "SALATA": 2,
+      "KAHVALTI": 1
+    },
+    "hasNutritionData": true
+  },
+  {
+    "rank": 200,
+    "freq": 14,
+    "name": "Haşlanmış patates",
+    "sampleRecipes": [
+      {
+        "slug": "pyttipanna-med-agg",
+        "title": "Pyttipanna med Ägg",
+        "type": "YEMEK"
+      },
+      {
+        "slug": "bubble-and-squeak-ingiliz-usulu",
+        "title": "Bubble and Squeak",
+        "type": "KAHVALTI"
+      },
+      {
+        "slug": "bhel-puri",
+        "title": "Bhel Puri",
+        "type": "ATISTIRMALIK"
+      }
+    ],
+    "typeDistribution": {
+      "YEMEK": 6,
+      "ATISTIRMALIK": 1,
+      "KAHVALTI": 5,
+      "APERATIF": 1,
+      "SALATA": 1
+    },
+    "hasNutritionData": true
+  }
+]

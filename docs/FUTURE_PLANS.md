@@ -15,6 +15,19 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
+### Test Campaign 7/8 done (oturum 26, K8 kullanıcı telefondan kaldı)
+
+8 kategori plan (docs/TEST_CAMPAIGN_OTURUM_26.md) + 7 detaylı rapor
+(docs/TEST_REPORT_OTURUM_26_KATEGORI_{1,2,3,4,5,6,7}.md). 0 P0, 5 P1
+(HEPSİ FIX), 18 P2 (15 fix), 6 P3 (1 fix). 5 yanlış tanı dokümante.
+Site LAUNCH-READY.
+
+**K8 kalan (Cross-browser + PWA, P2, ~45 dk)**: real cihaz test
+gerek (browser preview Chrome-only emulator). iOS Safari (TTS Web
+Speech API), Firefox (Gecko), Edge (Blink), Mobile Safari, Chrome
+Android, PWA install banner + standalone mode. Kullanıcı telefondan
+test eder, bulguları rapora geçirilir.
+
 ### P1 SEO landing intro derinlik (oturum 26 itibariyle top 12/38 done)
 
 Top 5 (oturum 25): aperatifler, corbalar, turk, vegan, glutensiz.
@@ -33,7 +46,16 @@ fransiz, japon. Multi-session iş, oturum 27-30+ tamamlanır.
 **Oturum 26 progress**: Batch 7a + 7b + 8a + 8b + 9a + 9b + 10a + 10b
 apply (commit `1c1dccf` + `f86789f`), 155 ek correction prod (84 + 71).
 PASS oranı 7a-9a %64 + 9b-10b %50, ortalama %57 (oturum 25 %48'in
-üstünde).
+üstünde). Plus 7 manuel mini-rev (3 oturum 25 BLOCKED + 4 oturum 26
+MAJOR, commit `6d40c38`): 2 PASS + 5 CORRECTION. Toplam ~480 Mod K
+v2 correction prod.
+
+**Codex 9 yeni batch teslim, working tree'de hazır** (oturum 26
+sırasında geldi, henüz verify+apply yapılmadı):
+- `docs/mod-k-batch-11a.json` + 11b + 12a + 12b + 13a + 13b + 14a +
+  14b + 15a (9 batch x 50 entry = 450 entry tahmin)
+- Sıradaki oturum verify+apply pipeline (~30-45 dk standart akış)
+- Mod K v2 20 → 29/71 sub-batch (%40+) progress hedef
 
 **4 yeni MAJOR_ISSUE manuel review listesi** (9b/10a/10b'den):
 
@@ -48,6 +70,25 @@ PASS oranı 7a-9a %64 + 9b-10b %50, ortalama %57 (oturum 25 %48'in
 - `findikli-keskek-toplari-ordu-usulu`: Scaffold steps + buğday
   süresi eksik (aşurelik buğday 25 dk yerine uzun veya ön ıslama).
   Step rewrite.
+
+### Test Campaign K8 + kalan polish (~3 saat toplam, opsiyonel)
+
+**K8 cross-browser + PWA** (kullanıcı telefondan):
+- iOS Safari TTS Web Speech API + reduced-motion
+- Firefox audio + animation
+- Edge gerçek cihaz
+- PWA install banner + standalone mode
+- 6 viewport (320/375/768/1024/1440/1920)
+
+**Test Campaign kalan P2 (3 madde, launch sonrası)**:
+- Newsletter input feedback inline timing detail
+- Servings adjuster ± 32×32 mobile (K6 P3 #6)
+- Action button mobile py-3 sweep'in başka yerlerinde
+
+**Test Campaign kalan P3 (5 madde, marjinal)**:
+- Profil 0-stat başka user (privacy controls var, default "show")
+- RSS atom:link type marjinal
+- Search query log monitoring
 
 **Mini-rev 7 tarif TAMAM ✅** (3 BLOCKED oturum 25 + 4 MAJOR oturum
 26): Manuel düzeltme + 2 web research agent + 2-3 kaynak/tarif teyit.

@@ -1,45 +1,76 @@
 # Tarifle, Proje Durumu
 
-> **Oturum 26 (28 Nis 2026, 9 commit, P1 SEO batch 2 + Mod K v2
-> 8 batch + manuel mini-rev 7 tarif + Test Campaign Kategori 3).**
-> Test Campaign başladı (commit `5cee0da`): docs/TEST_CAMPAIGN_OTURUM_
-> 26.md 8 kategori plan + Kategori 3 (Sayfa/Route Smoke + 404 Audit)
-> tamamlandı. Desktop 118/118 PASS (%100), 8 kritik route mobile
-> spot-check 0 horizontal overflow. 1 P1 (mobile breadcrumb touch
-> target ~18px height, WCAG 44x44 altı, Kategori 6 scope) + 1 P2
-> (React 19 dev warning false-positive JSON-LD pattern, monitoring).
-> Detaylı rapor: docs/TEST_REPORT_OTURUM_26_KATEGORI_3.md. Mod K v2 progress: 12 → 20/
-> 71 sub-batch done (%28.2). 9b + 10a + 10b apply (commit `f86789f`):
-> 150 entry, 75 PASS / 71 CORRECTION / 4 MAJOR / 0 BLOCKED. 4 yeni
-> MAJOR (erzsebet-sour, feijao-tropeiro, feslegenli-tavuklu-pirinc-
-> tayland, findikli-keskek-toplari) sonraki mini-rev batch'e bırakıldı. P1 SEO landing batch 2 (7 sayfa): tatlilar (470+),
-> kahvaltiliklar (310+), tavuk-yemekleri (yaklaşık 160), et-yemekleri
-> (350+), hamur-isleri (350+), italyan (yaklaşık 50), vejetaryen
-> (2400+). Browser smoke 7/7 PASS. Top 5 → top 12 done. Em-dash
-> guard NEW_SESSION_MESSAGE.md skip eklendi.
+> **Oturum 26 SONU (27 Nis 2026, oturum 25'in aynı gün devamı, 22
+> commit, Test Campaign 7/8 + Mod K v2 8 batch + manuel mini-rev 7 +
+> 16 fix paketi prod).**
 >
-> Mod K v2 Batch 7a + 7b + 8a + 8b + 9a apply (commit `1c1dccf`):
-> 250 entry, 161 PASS (%64) / 84 CORRECTION / 5 MAJOR_ISSUE / 0
-> BLOCKED. 84 prod CORRECTION uygulandı. Total Mod K progress 17/71
-> sub-batch (~405 correction prod).
+> **Test Campaign 8 kategori (~5 saat)**: K1 (Yeni Kullanıcı Onboarding)
+> + K2 (Returning User) + K3 (Sayfa/Route Smoke + 404) + K4 (Form Edge
+> Case) + K5 (Perf + SEO + Structured Data) + K6 (A11y Deep Audit) +
+> K7 (Bug Hunt + Security) DONE. K8 (Cross-browser + PWA) sen
+> telefondan test edeceksin (real cihaz iOS Safari + Android Chrome +
+> Firefox + Edge). Master plan + 7 detaylı rapor: docs/TEST_CAMPAIGN_
+> OTURUM_26.md + docs/TEST_REPORT_OTURUM_26_KATEGORI_{1,2,3,4,5,6,7}.md.
 >
-> Manuel mini-rev 7 tarif (3 BLOCKED oturum 25 + 4 MAJOR oturum 26):
+> **Bulgu özeti**: 0 P0 (launch blocker YOK), 5 P1 (HEPSİ FIX prod),
+> 18 P2 (15 fix prod, 3 kalan launch sonrası), 6 P3 (1 fix). 5 yanlış
+> tanı dokümante (K6 motion-safe globals.css zaten var, K5 aggregateRating
+> page.tsx zaten integrated, K2 SaveMenu state pattern zaten dinamik,
+> K1 P3 #9 profil 0-stat zaten privacy controls, K3 mobile breadcrumb
+> K6 birleşik fix'te DONE). Site **LAUNCH-READY**.
+>
+> **Mod K v2 progress: 12 → 20/71 sub-batch done (%28.2)**. 8 batch
+> (7a/7b/8a/8b/9a/9b/10a/10b) apply, ~155 yeni correction prod
+> (`1c1dccf` 5 batch 84 + `f86789f` 3 batch 71). Plus 7 manuel mini-
+> rev (3 BLOCKED oturum 25 + 4 MAJOR oturum 26, commit `6d40c38`):
 > 2 paralel web research agent ile 2-3 kaynak/tarif teyit edildi.
-> Verdict: 2 PASS + 5 CORRECTION (dark-and-stormy skip kalıcı).
-> ankara-tava (3 kaynak, BLOCKED override) ve anzac-biscuits (Kural
-> 9 BLOCK override, cooling pasif) PASS, sadece AuditLog. cevizli-
-> narli-kofte-siirt-usulu (kıyma+soğan ekle, vegan tag kaldır,
-> kitel otantik), denizli-yen-boregi (full rewrite mısır unu mayalı
-> hamur+kuzu kıyma+iç yağı+fırın 25-30 dk, total 58→115 mayalama
-> pasif), dereotlu-patates-rosti-isvec-usulu (title raggmunk rename
-> + süt+un ekle), domatesli-firik-pilavi-tekirdag-usulu (Tekirdağ
-> kaldır, Antep coğrafi işaret 728), eggs-benedict (cuisine tr→us
-> + Kanada jambonu ekle + vejetaryen tag kaldır). Tüm 7 tarif dev
-> + prod apply 7/7 PASS, AuditLog action="MOD_K_MANUAL_REV".
+> 2 PASS (ankara-tava + anzac-biscuits BLOCKED override) + 5 CORRECTION
+> (denizli-yen-boregi full rewrite mısır unu+kuzu+iç yağı+fırın 115 dk,
+> dereotlu raggmunk rename + süt+un, cevizli-narli-kofte-siirt
+> kıyma+soğan + vegan tag kaldır kitel otantik, firik pilavı Tekirdağ
+> kaldır Antep coğrafi işaret 728, eggs-benedict cuisine tr→us +
+> Kanada jambonu + vejetaryen tag kaldır). dark-and-stormy skip kalıcı
+> (Bermuda enum yok, 1 tarif). Toplam ~480 Mod K v2 correction prod.
 >
-> Commits: `c8aa01a` SEO batch2 + `3d31034` em-dash skip + `b81f9e3`
-> docs + `1c1dccf` Mod K 5 batch + `750d108` Mod K docs + (bu commit)
-> mini-rev 7 tarif docs.
+> **P1 SEO landing batch 2 (7 sayfa, commit `c8aa01a`)**: tatlilar
+> (470+) + kahvaltiliklar (310+) + tavuk-yemekleri (~160) + et-yemekleri
+> (350+) + hamur-isleri (350+) + italyan (~50) + vejetaryen (2400+)
+> intro derinleştirildi. Pattern oturum 25 top 5 ile aynı (150-250
+> kelime + USDA/Slow Food/Verace Pizza/AND 2016 otorite). **Top 5 →
+> top 12 done**, 26 sayfa kaldı.
+>
+> **Major fix paketleri (16 fix prod)**:
+> - K1 P1 4 fix (commit `8584665`): password maxLength + callbackUrl 5
+>   component + header "Kayıt" button + hero anonim CTA section
+> - K6 + K7 fix paketi (commit `472746e`): breadcrumb mobile 44px +
+>   HSTS includeSubDomains+preload + search query 200 char cap +
+>   nutrition recompute warning + USER /admin redirect toast
+> - K6 P2 polish 4 fix (commit `7a8cdbe`): newsletter input label
+>   sr-only + header icon mobile 44×44 (4 component) + action button
+>   mobile py-3 (SaveMenu/Pişirdim/servings) + dark mode muted
+>   contrast #a0→#b8
+> - K3 React 19 + JSON-LD XSS (commit `90a8bf3`): Sentry filter
+>   "Encountered a script tag" + 8 sayfa `<` → `<` escape
+>   (`</script>` injection guard, Next.js docs canonical pattern)
+> - K1 P2 password strength (commit `4138cbe`): 4 level indicator
+>   (zayıf/orta/iyi/güçlü) custom heuristic, no zxcvbn dep, min 8
+>   baseline (kullanıcı tercihi 12'den 8'e revert)
+> - K4 P2 a11y aria-live (commit `1892e8b`): NewsletterForm `role=
+>   "status"` + AiAssistantForm `role="alert" aria-live="assertive"`
+>
+> **Em-dash guard NEW_SESSION_MESSAGE.md skip** (commit `3d31034`):
+> kullanıcı session brief kopyaları için false-positive önlendi.
+>
+> Pre-push 6 katman tüm 22 commit'te tertemiz, tsc 0 error.
+>
+> Commits sırası: `8584665` K1 P1 + `c8aa01a` SEO batch2 + `3d31034`
+> em-dash skip + `b81f9e3` docs + `1c1dccf` Mod K 5 batch + `750d108`
+> Mod K docs + `6d40c38` mini-rev 7 + `f86789f` Mod K 3 batch +
+> `6cc530b` Mod K docs + `5cee0da` K3 smoke + `d9b4e57` K3 status +
+> `cd106bb` K1 raporu + `1be38e3` K2 raporu + `6c48343` K7 raporu +
+> `472746e` K6+K7 fix + `a712301` K5 raporu + `01ffdf5` K4 raporu +
+> `1892e8b` K4 a11y + `7a8cdbe` K6 polish + `90a8bf3` K3 + JSON-LD +
+> `9d21f5c` K1 P2 strength + `4138cbe` password 8 revert.
 
 > **Oturum 25 SONU (27 Nis 2026, oturum 24'ün devamı), 26 commit,
 > GPT 5 Pro audit + Mod K v2 maratonu.** **GPT 5 Pro tam analiz

@@ -1,0 +1,662 @@
+[
+  {
+    "slug": "acai-bowl",
+    "verdict": "PASS",
+    "reason": "Açai, donmuş muz, meyve, granola ve badem kullanımı kaynaklardaki bowl yapısıyla uyumlu; süre ve makrolar makul.",
+    "sources": [
+      "https://www.foodfaithfitness.com/acai-bowl/",
+      "https://www.backroadsgranola.com/acai-bowl/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "acaraje",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: acaraje Brezilya ve Bahia kökenli olduğu halde cuisine tr yazılmış",
+      "time: steps içinde 8 saat ıslatma var, totalMinutes 80 bunu kapsamıyor"
+    ],
+    "corrections": {
+      "cuisine": "br",
+      "prepMinutes": 540,
+      "cookMinutes": 20,
+      "totalMinutes": 560
+    },
+    "reason": "Acaraje Brezilya yemeği ve börülce ıslatma süresi toplam akışa dahil edilmeli; mevcut süre kullanıcıyı yanıltır.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/caraje-black-eyed-pea-fritters-shrimp-filling",
+      "https://www.goya.com/en/recipes/acaraje-brazilian-blackeye-pea-fritters/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "acik-agiz-boregi-kayseri-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "description: Kayseri iddiası kaynaklarda desteklenmedi; açık ağız formu kaynaklarda Şanlıurfa ağzı açık ile eşleşiyor"
+    ],
+    "corrections": {
+      "description": "Açık ağız böreği, üstü aralık bırakılmış kıymalı küçük hamurların sıcak servis edildiği yöresel bir hamur işidir."
+    },
+    "reason": "Kayseri yöre iddiası doğrulanamadı. Açık ağız formu Urfa kaynaklarıyla örtüşüyor, bu yüzden yöre bilgisi manuel incelenmeli.",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/agzi-acik-sanliurfa-yoresi/8442",
+      "https://www.sahrapsoysal.com/agzi-acik-tarifi-sanliurfa-t-6317"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "acili-eksili-corba",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: description Çin lokantası sıcak ekşi çorbası diyor ama cuisine th yazılmış"
+    ],
+    "corrections": {
+      "cuisine": "cn"
+    },
+    "reason": "Tofu, mantar, yumurta, soya sosu ve pirinç sirkesi Çin sıcak ekşi çorbası profiline uyuyor; cuisine cn olmalı.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/hot-sour-soup",
+      "https://www.196flavors.com/hot-sour-soup/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "acili-ezme-guneydogu-usulu",
+    "verdict": "PASS",
+    "reason": "Domates, biber, soğan, nar ekşisi ve zeytinyağı kaynaklardaki acılı ezme çizgisiyle uyumlu; vegan alerjen durumu doğru.",
+    "sources": [
+      "https://yemek.com/tarif/acili-ezme/",
+      "https://mutfakcini.com/recipe/acili-ezme-tarifi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "acili-susamli-yumurta-ekmegi-adiyaman-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: step 1 süt kullanıyor ama ingredient listesinde süt yok",
+      "allergen: süt step içinde geçtiği halde SUT alerjeni eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Süt", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["SUT"]
+    },
+    "reason": "Yumurtalı ekmekte süt kullanımı normal, ancak stepte geçen süt ingredient ve alerjen listesine eklenmeli.",
+    "sources": [
+      "https://yemek.com/tarif/yumurtali-ekmek-4/",
+      "https://ye-mek.net/amp/yumurtali-ekmek"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "acma",
+    "verdict": "PASS",
+    "reason": "Mayalı hamur, süt, sıvı yağ, tereyağı, ikinci dinlendirme ve fırın süresi açma kaynaklarıyla uyumlu; alerjenler doğru.",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/tereyagli-acma-tarifi/9297",
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/pogaca-tarifleri/tereyagli-acma-tarifi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "adacayli-elma-cayi",
+    "verdict": "PASS",
+    "reason": "Elma çayı ve adaçayı demleme süreleri kaynaklarla uyumlu; 8-10 dakika demleme içecek için makul görünüyor.",
+    "sources": [
+      "https://www.lezzet.com.tr/icecekler/sicak-icecekler/sicak-alkolsuz-icecekler/elma-cayi-531512",
+      "https://www.acibadem.com.tr/hayat/ada-cayi-faydalari"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "adacayli-greyfurt-serbeti-mersin-usulu",
+    "verdict": "PASS",
+    "reason": "Kısa adaçayı demleme, narenciye suyu ve bal dengesi içecek tekniği açısından tutarlı; alerjen gerektiren malzeme yok.",
+    "sources": [
+      "https://www.acibadem.com.tr/hayat/ada-cayi-faydalari",
+      "https://yemek.com/tarif/portakalli-limonata/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "adacayli-limonata-antalya-usulu",
+    "verdict": "PASS",
+    "reason": "Adaçayını kısa demleyip limonata bazına eklemek kaynaklardaki bitki çayı ve limonata tekniğiyle uyumlu.",
+    "sources": [
+      "https://www.acibadem.com.tr/hayat/ada-cayi-faydalari",
+      "https://yemek.com/tarif/portakalsiz-limonata/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "adacayli-lor-dip-balikesir-usulu",
+    "verdict": "PASS",
+    "reason": "Lor, zeytinyağı ve kısa süre ısıtılmış adaçayıyla yapılan dip güvenli görünüyor; süt ve gluten alerjenleri listede var.",
+    "sources": [
+      "https://www.acibadem.com.tr/hayat/ada-cayi-faydalari",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/meze-tarifleri/lor-peynirli-dip-sos"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "adacayli-portakalli-limonata-alanya-usulu",
+    "verdict": "PASS",
+    "reason": "Portakal, limon, şeker ve kısa adaçayı demlemesi ferah içecek yapısıyla tutarlı; süre ve düşük kalori makul.",
+    "sources": [
+      "https://yemek.com/tarif/portakalli-limonata/",
+      "https://www.gastrofill.com/gastrotarifler/portakalli-limonata/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "adacayli-seftali-icecegi-fethiye-usulu",
+    "verdict": "PASS",
+    "reason": "Şeftali püresi ve soğutulmuş adaçayı bazlı yaz içeceği teknik olarak tutarlı; vegan ve alerjen işaretleri doğru.",
+    "sources": [
+      "https://www.acibadem.com.tr/hayat/ada-cayi-faydalari",
+      "https://www.lezzet.com.tr/yemek-tarifleri/icecek-tarifleri/seftalili-soguk-cay"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "adacayli-seftali-kompostosu-manisa-usulu",
+    "verdict": "PASS",
+    "reason": "Şeftaliyi su ve şekerle kısa pişirme komposto kaynaklarıyla uyumlu; adaçayı eklemesi süre ve alerjen açısından sorunlu değil.",
+    "sources": [
+      "https://yemek.com/tarif/seftali-kompostosu/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/meyveli-tatlilar/seftali-kompostosu-tarifi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "adacayli-uzum-kompostosu-denizli-usulu",
+    "verdict": "PASS",
+    "reason": "Üzüm, su ve şekerle kısa kaynatma komposto mantığına uyuyor; adaçayı aroması süre ve alerjen açısından risk oluşturmuyor.",
+    "sources": [
+      "https://yemek.com/tarif/tarcinli-kuru-meyve-kompostosu/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/meyveli-tatlilar/kuru-uzum-hosafi-tarifi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "adana-anali-kizli-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: step 2 kıymayı soğanla kavuruyor ama ingredient listesinde soğan yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "reason": "Analı kızlıda soğanlı iç harç kaynaklarla uyumlu. Stepte geçen soğan ingredient listesine eklenmeli.",
+    "sources": [
+      "https://tarifmotoru.com/tarif/anali-kizli-corbasi/",
+      "https://www.kirazinmutfagi.com.tr/tarif/anali-kizli-corbasi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "adana-anali-kizli-kofte",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: salçalı su ve iç harç için soğan kullanımı kaynaklarda temel ama ingredient listesinde yok",
+      "ingredient: step 4 salçalı su diyor, salça ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Biber salçası", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "tatlı kaşığı" }
+      ]
+    },
+    "reason": "Analı kızlıda soğan ve salça ana lezzet omurgasıdır; mevcut ingredient listesi step anlatımıyla eksik kalıyor.",
+    "sources": [
+      "https://tarifmotoru.com/tarif/anali-kizli-corbasi/",
+      "https://www.kirazinmutfagi.com.tr/tarif/anali-kizli-corbasi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "adana-bici-bici-smoothie",
+    "verdict": "PASS",
+    "reason": "Bici biciye ait nişastalı doku, gül suyu ve buzlu servis fikri smoothie uyarlaması için tutarlı; süt alerjeni var.",
+    "sources": [
+      "https://yemek.com/tarif/bici-bici/",
+      "https://www.kulturportali.gov.tr/turkiye/adana/neyenir/bici-bici"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "adana-kebap",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: steps içinde 15 dakika yoğurma, 1 saat dinlendirme ve 15-20 dakika pişirme var; totalMinutes 50 bunu karşılamıyor",
+      "nutrition: 500 gr yağlı kıyma ve 100 gr kuyruk yağı için porsiyon başı fat 28 gr düşük görünüyor"
+    ],
+    "corrections": {
+      "prepMinutes": 90,
+      "cookMinutes": 20,
+      "totalMinutes": 110,
+      "averageCalories": 570,
+      "protein": 30,
+      "carbs": 5,
+      "fat": 48
+    },
+    "reason": "Adana kebapta uzun dinlendirme ve kuyruk yağı hesaba katılmalı; mevcut süre ve yağ değeri kullanıcıyı yanıltır.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/adana-kebab",
+      "https://www.sbs.com.au/food/recipes/adana-kebab"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "adana-salgamli-bulgur-salatasi",
+    "verdict": "PASS",
+    "reason": "İnce bulgurun sıcak sıvıyla şişirilmesi, şalgam ve nar ekşisiyle salata yapılması tutarlı; gluten alerjeni doğru.",
+    "sources": [
+      "https://yemek.com/tarif/kisir/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/salgamli-bulgur-salatasi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "adana-sarimsakli-fellah-koftesi",
+    "verdict": "PASS",
+    "reason": "Bulgur, un, yumurta, salça ve sarımsaklı domates sosu fellah köftesi kaynaklarıyla uyumlu; alerjenler doğru.",
+    "sources": [
+      "https://yemek.com/tarif/fellah-koftesi/",
+      "https://ye-mek.net/tarif/fellah-koftesi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "adana-sirdan-dolmasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "tags: tarif şırdan içerdiği halde vegan ve vejetaryen tagleri yazılmış"
+    ],
+    "corrections": {
+      "tags_remove": ["vegan", "vejetaryen"]
+    },
+    "reason": "Şırdan sakatat dolmasıdır. Vegan ve vejetaryen tagleri içerikle açıkça çelişiyor, kaldırılmalı.",
+    "sources": [
+      "https://yemek.com/tarif/sirdan-dolmasi/",
+      "https://www.kulturportali.gov.tr/turkiye/adana/neyenir/sirdan-dolmasi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "adana-turunclu-tavuk-sis",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: steps içinde 25 dakika marine, 12-14 dakika pişirme ve 5 dakika dinlendirme var; totalMinutes 34 eksik kalıyor"
+    ],
+    "corrections": {
+      "prepMinutes": 43,
+      "cookMinutes": 16,
+      "totalMinutes": 59
+    },
+    "reason": "Marine ve dinlendirme süresi tarif akışında açıkça geçiyor. Toplam süre aktif hazırlıktan daha uzun gösterilmeli.",
+    "sources": [
+      "https://yemek.com/tarif/tavuk-sis/",
+      "https://www.bbcgoodfood.com/recipes/chicken-skewers"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "adana-yuksuk-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: kaynaklarda yüksük çorbası su, nane, tuz ve ekşi unsur içeriyor; mevcut listede bunlar eksik",
+      "ingredient: description ekşi salçalı su diyor ama ekşi malzeme yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Su", "amount": "6", "unit": "su bardağı" },
+        { "name": "Kuru nane", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Limon suyu", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "reason": "Yüksük çorbasında su, nane ve ekşilik temel bileşenlerdir. Mevcut ingredient listesi description ile tutarsız.",
+    "sources": [
+      "https://www.knorr.com/tr/r/yksk-orbas-tarifi.html/208401",
+      "https://yemek.com/tarif/nohutlu-yuksuk-corbasi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "addis-ababa-beef-tibs",
+    "verdict": "PASS",
+    "reason": "Dana eti, soğan, biber, sarımsak, zencefil, berbere ve tereyağı kullanımı Etiyopya tibs kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://travelfoodatlas.com/ethiopian-beef-tibs-recipe",
+      "https://www.cuisinenoir.com/recipes/ethiopian-tibs-recipe/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "addis-ababa-doro-wat",
+    "verdict": "PASS",
+    "reason": "Tavuk, berbere, soğan, tereyağı ve haşlanmış yumurta doro wat kaynaklarıyla uyumlu; süre ve alerjenler makul.",
+    "sources": [
+      "https://www.masterclass.com/articles/doro-wat-recipe",
+      "https://www.177milkstreet.com/recipes/ethiopian-chicken-stew-doro-wat"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "addis-ababa-mercimekli-injera-rulosu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: title ve description Etiyopya diyor ama cuisine ma yazılmış"
+    ],
+    "corrections": {
+      "cuisine": "et"
+    },
+    "reason": "Injera, berbere ve mercimekli harç Etiyopya mutfağına ait. Mevcut ma kodu Fas mutfağına işaret ediyor.",
+    "sources": [
+      "https://www.foodandwine.com/ethiopian-recipes-11954742",
+      "https://www.simplyquinoa.com/ethiopian-lentils/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "addis-ababa-misir-wat",
+    "verdict": "PASS",
+    "reason": "Kırmızı mercimek, soğan, sarımsak, zencefil, berbere ve salça misir wat kaynaklarıyla uyumlu; vegan tag doğru.",
+    "sources": [
+      "https://www.chilipeppermadness.com/recipes/misir-wat/",
+      "https://www.simplyquinoa.com/ethiopian-lentils/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "addis-ababa-shiro-wat-nohutlu",
+    "verdict": "PASS",
+    "reason": "Nohut unu, soğan, sarımsak, domates ve berbere kullanımı shiro wat kaynaklarıyla uyumlu; vegan işareti doğru.",
+    "sources": [
+      "https://travelfoodatlas.com/ethiopian-shiro-wat-recipe",
+      "https://www.forksoverknives.com/recipes/vegan-soups-stews/shiro-wat-chickpea-flour-stew/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "adiyaman-besni-tava",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: step 3 tuz kullanıyor ama ingredient listesinde tuz yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "tatlı kaşığı" }
+      ]
+    },
+    "reason": "Besni tava kaynaklarında tuz temel malzeme olarak geçiyor. Stepte kullanılan tuz listeye eklenmeli.",
+    "sources": [
+      "https://ye-mek.net/tarif/besni-tava",
+      "https://www.kulturportali.gov.tr/turkiye/adiyaman/neyenir/besni-tava"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "adiyaman-cevizli-semsek",
+    "verdict": "PASS",
+    "reason": "İnce hamur, kıymalı iç, soğan, ceviz ve sacda pişirme mantığı semsek kaynaklarıyla uyumlu; alerjenler doğru.",
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/borek-tarifleri/semsek",
+      "https://www.kolaylezzet.com/kolay-cay-saati-tarifleri/hamur-isleri/697-sembusek-sembusek-tarifi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "aebleskiver",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "cuisine: tarif Danimarka çöreği ama cuisine se kodu İsveç izlenimi veriyor; valid cuisine listesinde dk yok",
+      "ingredient: step 1 kabartma tozu ve şeker kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "description": "Aebleskiver, yuvarlak gözlü tavada pişen Danimarka çöreğidir; İsveç tarifi değildir.",
+      "ingredients_add": [
+        { "name": "Kabartma tozu", "amount": "2", "unit": "çay kaşığı" },
+        { "name": "Şeker", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "reason": "Kaynaklar aebleskiveri Danimarka pancake topu olarak tanımlar. Kod sınırlı olduğu için manuel cuisine kararı gerekir.",
+    "sources": [
+      "https://sunset.com/recipe/danish-pancake-balls-aebleskiver",
+      "https://www.food.com/recipe/aebleskiver-danish-pancake-balls-414783"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "afyon-bukmesi",
+    "verdict": "PASS",
+    "reason": "Haşhaşlı hamur ve mercimekli iç Afyon bükmesi kaynaklarıyla uyumlu; vegan ve gluten işaretleri içerikle tutarlı.",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/afyon-bukmesi-tarifi/21429",
+      "https://www.lutfiye.net/yemek/afyon-usulu-hashasli-mercimekli-bukme-boregi-tarifi.html"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "afyon-ekmek-kadayifi-kaymakli",
+    "verdict": "PASS",
+    "reason": "Ekmek kadayıfını ıslatma, şerbet çektirme, dinlendirme ve kaymakla servis kaynaklarla uyumlu; süre toplamı doğru.",
+    "sources": [
+      "https://www.afyonturkeligazetesi.com/kaymakli-ekmek-kadayifi-tarifi/51193",
+      "https://www.kulturportali.gov.tr/portal/afyon-kaymakli-ekmek-kadayifi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "afyon-ilibada-dolmasi",
+    "verdict": "PASS",
+    "reason": "Labada yaprağı, bulgurlu iç ve sarımsaklı yoğurtla servis Afyon ilibada dolması kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/afyonkarahisar/neyenir/ilibada-dolmasi",
+      "https://www.lezzet.com.tr/yemek-tarifleri/sebze-yemekleri/sarma-ve-dolma-tarifleri/ilibada-dolmasi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "afyon-kaymakli-ekmek-kadayifi",
+    "verdict": "PASS",
+    "reason": "Şerbetli ekmek kadayıfı, kaymak ve ceviz servisi kaynaklarla uyumlu; süt, gluten ve kuruyemiş alerjenleri doğru.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/portal/afyon-kaymakli-ekmek-kadayifi",
+      "https://www.sahrapsoysal.com/afyonun-kaymakli-ekmek-kadayifi-tarifi-t-6124"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "afyon-kaymakli-ekmek-kadayifi-kup",
+    "verdict": "CORRECTION",
+    "issues": [
+      "tags: manda kaymağı içerdiği halde vegan tag yazılmış",
+      "allergen: manda kaymağı süt ürünü olduğu halde SUT alerjeni eksik",
+      "nutrition: 250 gr manda kaymağı için porsiyon başı fat 17 gr düşük görünüyor"
+    ],
+    "corrections": {
+      "tags_remove": ["vegan"],
+      "allergens_add": ["SUT"],
+      "averageCalories": 560,
+      "protein": 8,
+      "carbs": 70,
+      "fat": 28
+    },
+    "reason": "Manda kaymağı süt ürünüdür ve yüksek yağ taşır. Vegan tag, SUT alerjeni ve yağ değeri düzeltilmeli.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/portal/afyon-kaymakli-ekmek-kadayifi",
+      "https://www.afyonturkeligazetesi.com/kaymakli-ekmek-kadayifi-tarifi/51193"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "afyon-nohutlu-bukme",
+    "verdict": "PASS",
+    "reason": "Sirkeli hamur, haşhaşlı yağ ve bakliyatlı iç Afyon bükmesi kaynaklarıyla uyumlu; vegan ve gluten işaretleri doğru.",
+    "sources": [
+      "https://www.lutfiye.net/yemek/afyon-usulu-hashasli-mercimekli-bukme-boregi-tarifi.html",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/afyon-bukmesi-tarifi/21429"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "afyon-patatesli-bukme",
+    "verdict": "PASS",
+    "reason": "İnce hamur, patatesli soğanlı harç ve sac veya fırın pişirme bükme yapısıyla uyumlu; süt alerjeni tereyağından geliyor.",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/afyon-bukmesi-tarifi/21429",
+      "https://www.lutfiye.net/yemek/afyon-usulu-hashasli-mercimekli-bukme-boregi-tarifi.html"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "afyon-sakala-carpan-corbasi",
+    "verdict": "PASS",
+    "reason": "Yeşil mercimek, erişte, soğan, salça, tereyağı ve nane sakala çarpan çorbası kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/afyonkarahisar/neyenir/sakala-carpan-corbasi",
+      "https://www.lezzet.com.tr/yemek-tarifleri/corba-tarifleri/corba-tarifleri/sakala-carpan-corbasi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "afyon-sakalli-pogaca",
+    "verdict": "PASS",
+    "reason": "Mayalı poğaça, krem peynir ve maydanozla kenar kaplama sakallı poğaça yapısına uyuyor; alerjenler doğru.",
+    "sources": [
+      "https://yemek.com/tarif/sakalli-pogaca/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/pogaca-tarifleri/sakalli-pogaca"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "afyon-visneli-kaymakli-ekmek-kadayifi-kup",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step: step 2 beze kırmayı söylüyor ama tarifte beze yok; ekmek kadayıfı olmalı",
+      "time: steps toplamı 18 dakikayı aşıyor, 10 dakika soğuma ve ılık bekletme dahil edilmeli"
+    ],
+    "corrections": {
+      "prepMinutes": 25,
+      "cookMinutes": 10,
+      "totalMinutes": 35,
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Ekmek kadayıfını küçük küplere ayırın, vişneli sosu daha eşit çeksin."
+        }
+      ]
+    },
+    "reason": "Beze ifadesi Eton kupundan kalmış görünüyor. Ekmek kadayıfı ve bekleme süreleri tarifle uyumlu hale getirilmeli.",
+    "sources": [
+      "https://www.efsanetarifler.com/tarif/visneli-ekmek-kadayifi-tarifi",
+      "https://www.refikaninmutfagi.com/visneli-ekmek-kadayifi-tarifi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "agri-abdigor-koftesi",
+    "verdict": "PASS",
+    "reason": "Dövülmüş yağsız et, yumurta, soğan suyu ve uzun nazik pişirme Abdigor köftesi kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/agri/neyenir/abdigor-koftesi",
+      "https://www.lezzet.com.tr/yemek-tarifleri/et-yemekleri/kofte-tarifleri/abdigor-koftesi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "agua-de-jamaica",
+    "verdict": "PASS",
+    "reason": "Hibiskus, su, şeker ve lime ile yapılan soğuk içecek Meksika agua de jamaica kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.tastingtable.com/1172126/agua-de-jamaica-hibiscus-tea-recipe/",
+      "https://foodrevolution.org/recipes/agua-de-jamaica/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "agua-de-tamarindo-meksika-usulu",
+    "verdict": "PASS",
+    "reason": "Demirhindi, su ve şekerden oluşan temel yapı agua de tamarindo kaynaklarıyla uyumlu; vegan ve alkolsüz etiketleri doğru.",
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/agua-de-tamarindo-379463",
+      "https://www.muydelish.com/agua-de-tamarindo/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "agua-de-valencia-ispanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: klasik Agua de Valencia portakal suyu ve köpüklü şaraba ek olarak gin ve votka içerir; listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Gin", "amount": "50", "unit": "ml" },
+        { "name": "Votka", "amount": "50", "unit": "ml" }
+      ]
+    },
+    "reason": "Agua de Valencia kaynaklarda cava, portakal suyu, gin ve votka ile tanımlanıyor; iki temel içki listede eksik.",
+    "sources": [
+      "https://realfood.tesco.com/recipes/agua-de-valencia.html",
+      "https://www.cocktailmag.fr/en/cocktail-recipe/gin/agua-de-valencia"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "agzi-acik-sanliurfa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: step 3 isot kullanıyor ama ingredient listesinde isot yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "İsot", "amount": "1", "unit": "tatlı kaşığı", "group": "İç için" }
+      ]
+    },
+    "reason": "Şanlıurfa ağzı açık iç harcında isot ve baharat kaynaklarda yer alıyor. Stepteki isot listeye eklenmeli.",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/agzi-acik-sanliurfa-yoresi/8442",
+      "https://www.sahrapsoysal.com/agzi-acik-tarifi-sanliurfa-t-6317"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "ahududulu-eton-kup-ingiltere-usulu",
+    "verdict": "PASS",
+    "reason": "Beze, krema ve ahududu Eton mess yapısıyla uyumlu; süt ve yumurta alerjenleri doğru, hızlı servis mantıklı.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/eton-mess",
+      "https://www.jamieoliver.com/recipes/fruit-recipes/easy-eton-mess/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "ahududulu-kefir-smoothie",
+    "verdict": "PASS",
+    "reason": "Ahududu, kefir, muz ve az baldan oluşan smoothie yapısı tutarlı; süt alerjeni kefir nedeniyle doğru.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/raspberry-smoothie",
+      "https://www.eatingwell.com/recipe/252631/raspberry-kefir-power-smoothie/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "aji-amarillolu-karnabahar-salatasi-peru-usulu",
+    "verdict": "PASS",
+    "reason": "Aji amarillo, lime, kişniş ve zeytinyağı Peru lezzet profiline uyuyor; haşlama süresi ve vegan tag makul.",
+    "sources": [
+      "https://www.thespruceeats.com/aji-amarillo-peruvian-yellow-chile-pepper-3029288",
+      "https://www.epicurious.com/recipes/food/views/aji-amarillo-pineapple-salsa-108586"
+    ],
+    "confidence": "medium"
+  }
+]

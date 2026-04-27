@@ -5,13 +5,13 @@ Toplam entry: 50
 
 ## Ozet (verdict)
 
-- PASS: **31** (62.0%)
+- PASS: **33** (66.0%)
 - CORRECTION: 15 (30.0%)
-- MAJOR_ISSUE: 4 (8.0%)
+- MAJOR_ISSUE: 2 (4.0%)
 
 ## Confidence
 
-- high: 32, medium: 18, low: 0
+- high: 30, medium: 20, low: 0
 
 ## Format integrity
 
@@ -20,62 +20,39 @@ Toplam entry: 50
 
 ## MAJOR_ISSUE (manuel review zorunlu)
 
-### `borulceli-kabak-mucveri-mugla-usulu`
+### `acik-agiz-boregi-kayseri-usulu`
 
-**Reason**: Mücver yumurta ile bağlanmış; bu hem ingredient hem alerjen listesinde eksik, ayrıca vegan etiketini açık biçimde yanlış yapıyor.
-
-**Issues**:
-- tags: vegan etiketi var ama step 3 yumurta kullanıyor
-- ingredients: yumurta step'te geçiyor ama ingredient listesinde yok
-- allergen: yumurta kullanıldığı halde YUMURTA alerjeni yok
-
-**Corrections** (sample):
-- ingredients_add: 1
-
-### `bossam`
-
-**Reason**: Bossam kimliği haşlanmış domuz eti ve sarma servisidir; dana uyarlaması olabilir ama mevcut liste ve adımlar birbiriyle çelişiyor.
+**Reason**: Kayseri yöre iddiası doğrulanamadı. Açık ağız formu Urfa kaynaklarıyla örtüşüyor, bu yüzden yöre bilgisi manuel incelenmeli.
 
 **Issues**:
-- ingredients: klasik Kore bossam domuz etiyle yapılır; mevcut listede yalnız dana döş var
-- ingredients: step'lerde zencefil, kimchi ve sos geçiyor ama listede yok
-- steps: step 1 'domuz veya dana' diyor, ingredient listesiyle çelişiyor
+- description: Kayseri iddiası kaynaklarda desteklenmedi; açık ağız formu kaynaklarda Şanlıurfa ağzı açık ile eşleşiyor
 
 **Corrections** (sample):
-- ingredients_add: 4
-- ingredients_remove: Dana döş
+- description: "Açık ağız böreği, üstü aralık bırakılmış kıymalı küçük hamurların sıcak servis edildiği yöresel bir hamur işidir...."
 
-### `brik`
+### `aebleskiver`
 
-**Reason**: Tarif içeriği Tunus brik ile uyumlu, fakat mutfak kodu Çin görünüyor; bu köken bilgisi kullanıcıyı yanıltır.
+**Reason**: Kaynaklar aebleskiveri Danimarka pancake topu olarak tanımlar. Kod sınırlı olduğu için manuel cuisine kararı gerekir.
 
 **Issues**:
-- cuisine: input cuisine 'cn' görünüyor ama brik Tunus mutfağına aittir
+- cuisine: tarif Danimarka çöreği ama cuisine se kodu İsveç izlenimi veriyor; valid cuisine listesinde dk yok
+- ingredient: step 1 kabartma tozu ve şeker kullanıyor ama ingredient listesinde yok
 
 **Corrections** (sample):
-- description: "Brik, Tunus sokaklarında ince hamurun içinde yumurta ve ton balığıyla kızaran çıtır üçgendir...."
-
-### `buenos-aires-kabakli-provoleta`
-
-**Reason**: Provoleta Arjantin ızgara peyniridir; içerik makul olsa da mutfak kodunun Meksika görünmesi köken bilgisini bozar.
-
-**Issues**:
-- cuisine: input cuisine 'mx' görünüyor ama provoleta Arjantin mutfağına aittir
-
-**Corrections** (sample):
-- description: "Arjantin usulü kabaklı provoleta, eriyen peyniri kabak, kekik ve domatesle sıcak paylaşım tabağına dönüştürür...."
+- description: "Aebleskiver, yuvarlak gözlü tavada pişen Danimarka çöreğidir; İsveç tarifi değildir...."
+- ingredients_add: 2
 
 ## CORRECTION sample (ilk 10)
 
 | Slug | Conf | Issues count | Corrections fields |
 |---|---|---:|---|
-| `bolu-mengen-pilavi` | high | 1 | ingredients_add |
-| `bolu-mengen-pilavi-etli` | high | 1 | totalMinutes |
-| `borulce-ezmesi-aydin-usulu` | medium | 1 | totalMinutes |
-| `borulceli-koruklu-fennel-salata-urla-usulu` | medium | 2 | steps_replace |
-| `boulevardier` | high | 1 | steps_replace |
-| `bourbon-cherry-smash-amerikan-usulu` | medium | 2 | ingredients_add, steps_replace |
-| `bourbon-elma-smash-amerikan-usulu` | medium | 2 | ingredients_add, steps_replace |
-| `boza` | high | 1 | totalMinutes |
-| `bozali-irmik-kup-istanbul-usulu` | high | 2 | totalMinutes, tags_remove |
-| `briam` | high | 1 | ingredients_add |
+| `acaraje` | high | 2 | cuisine, prepMinutes, cookMinutes, totalMinutes |
+| `acili-eksili-corba` | high | 1 | cuisine |
+| `acili-susamli-yumurta-ekmegi-adiyaman-usulu` | high | 2 | ingredients_add, allergens_add |
+| `adana-anali-kizli-corbasi` | high | 1 | ingredients_add |
+| `adana-anali-kizli-kofte` | high | 2 | ingredients_add |
+| `adana-kebap` | high | 2 | prepMinutes, cookMinutes, totalMinutes, averageCalories, protein, carbs, fat |
+| `adana-sirdan-dolmasi` | high | 1 | tags_remove |
+| `adana-turunclu-tavuk-sis` | high | 1 | prepMinutes, cookMinutes, totalMinutes |
+| `adana-yuksuk-corbasi` | high | 2 | ingredients_add |
+| `addis-ababa-mercimekli-injera-rulosu` | high | 1 | cuisine |

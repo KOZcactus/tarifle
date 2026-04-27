@@ -66,14 +66,14 @@ Toplam Mod K v2 prod ~480 → ~876 correction. Nutrition anomaly
 'es' → 'pt' update. Mini-rev kuyruğu 46 → 44 (lisbon-nohutlu-morina
 + lizbon-portakalli-badem-keki otomatik fix).
 
-**Mini-rev kuyruğu 44 (4 önceki + 26 batch 11a-18b + 14 batch 19a-21b,
-2 lisbon/lizbon pt fix ile çözüldü):**
+**Mini-rev kuyruğu 40** (4 önceki paketi 1 ile kapandı, kuyrukta 26
+batch 11a-18b + 14 batch 19a-21b kalan):
 
-Önceki 4 (oturum 26 sonu):
-- `erzsebet-sour-macar-usulu`: Erzsebet adı + Macar köken kaynaksız
-- `feijao-tropeiro-brezilya-usulu`: Klasik etli (bacon/sosis), mevcut vegetarian
-- `feslegenli-tavuklu-pirinc-tayland-usulu`: Tayland soslu sote olmalı, mevcut sade pilav
-- `findikli-keskek-toplari-ordu-usulu`: Scaffold steps + buğday süresi eksik
+~~Önceki 4 (oturum 26 sonu, mini-rev paketi 1 ile çözüldü, commit `7db92af`)~~:
+- ~~`erzsebet-sour-macar-usulu`~~: ✅ DELETE (Codex halüsinasyonu, klasik kokteyl yok)
+- ~~`feijao-tropeiro-brezilya-usulu`~~: ✅ REWRITE (klasik etli, bacon + linguica + couve)
+- ~~`feslegenli-tavuklu-pirinc-tayland-usulu`~~: ✅ REWRITE (Pad Kra Pao Gai stir-fry)
+- ~~`findikli-keskek-toplari-ordu-usulu`~~: ✅ DELETE (Codex halüsinasyonu + scaffold)
 
 Yeni 26 (oturum 27, 11a-18b MAJOR identity/structural mismatch):
 

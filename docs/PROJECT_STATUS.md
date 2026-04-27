@@ -1,7 +1,19 @@
 # Tarifle, Proje Durumu
 
-> **Oturum 27 (27 Nis 2026, oturum 26'nın aynı gün devamı), 6 commit:
-> Mod K v2 22 batch apply (11a-21b) + CUISINE_CODES `pt` ekleme.**
+> **Oturum 27 (27 Nis 2026, oturum 26'nın aynı gün devamı), 7 commit:
+> Mod K v2 22 batch apply (11a-21b) + CUISINE_CODES `pt` ekleme + 4
+> mini-rev paketi 1.**
+>
+> **4 mini-rev paketi 1** (commit `7db92af`, kuyruk 44 → **40**):
+> 2 paralel web research agent + 8+ kaynak teyit. **2 REWRITE**:
+> feijao-tropeiro klasik etli (bacon + linguica calabresa + couve + 6
+> ingredient_add + 5 step), feslegenli-tavuklu-pirinc Pad Kra Pao Gai
+> stir-fry (10 ingredient_add, sade fesleğen + su çıkar, SOYA + YUMURTA
+> + DENIZ_URUNLERI allergen, 7 step). **2 DELETE** (kullanıcı onayı,
+> Codex halüsinasyonu): erzsebet-sour-macar (klasik Macar kokteyl yok),
+> findikli-keskek-toplari-ordu (yöresel yemek yok + scaffold steps).
+> Prod 3517 → **3515** tarif. Cascade delete (Recipe + RecipeStep +
+> Ingredient + Bookmark + Variation). docs/tarif-listesi.txt güncel.
 >
 > **CUISINE_CODES 36 → 37** (commit `43844f0`): `pt` (Portekiz)
 > eklendi (oturum 25 6 cuisine ekleme pattern'i ile). Codex Mod K

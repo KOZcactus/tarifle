@@ -1,0 +1,1344 @@
+[
+  {
+    "slug": "yumurtali-kenger-kavurmasi-elazig-usulu",
+    "verdict": "PASS",
+    "reason": "Kenger, yumurta ve yağla yapılan kavurma akışı kaynaklarla uyumlu. Elazığ’da kengerin kullanımı destekleniyor, süre ve allergen beyanı makul.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/yumurtali-kenger-kavurmasi/",
+      "https://www.kulturportali.gov.tr/turkiye/diyarbakir/neyenir/yumurtali-kenger"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "yumurtali-sogan-tavasi-yozgat-usulu",
+    "verdict": "PASS",
+    "reason": "Soğanı yağda yumuşatıp yumurtayla bağlama tekniği kaynaklarla örtüşüyor. Tereyağı ve yumurta allergenleri doğru, süre kısa kahvaltılık için makul.",
+    "sources": [
+      "https://www.altasyumurta.com/yumurtali-sogan-kavurma-tarifi",
+      "https://www.nefisyemektarifleri.com/yumurtali-sogan-kavurmasi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "yuvalama-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: ince bulgur ve un kullanıyor ama ingredient listesinde yok",
+      "steps: pirinç unu zaten listede varken köfte adımı bulgurla çelişiyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Pirinç unu ve kıymayı tuzla yoğurup sakızlanan bir köfte harcı yapın.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Harcı nohut büyüklüğünde yuvarlayıp unlanmamış geniş tepsiye tek kat dizin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Nohut ve köfteleri sıcak suda kısık ateşte yumuşayana kadar pişirin.",
+          "timerSeconds": 1800
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Yoğurt ve yumurtayı ayrı kapta çırpıp sıcak çorba suyuyla ılıtın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Terbiyeyi tencereye ince akıtarak ekleyin ve kesilmesin diye kısık ateşte karıştırın.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Tereyağını kuru naneyle köpürtüp çorbanın üzerine gezdirin.",
+          "timerSeconds": 45
+        }
+      ],
+      "ingredients_add": [
+        {
+          "name": "Kuru nane",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.gaziantephaberler.com/haber/24133438/gaziantepin-ozel-lezzeti-bayram-yuvalamasi-tarifi-ve-puf-noktalari",
+      "https://www.youtube.com/watch?v=Gn6EJN_Dcpo"
+    ],
+    "confidence": "high",
+    "reason": "Yuvalama pirinç unu, kıyma, nohut ve yoğurt terbiyesiyle uyumlu. Hata, stepte listede olmayan bulgur ve un kullanılması."
+  },
+  {
+    "slug": "yuzu-soda-japon-usulu",
+    "verdict": "PASS",
+    "reason": "Yuzu suyu, tatlandırıcı, buz ve soda birleşimi kaynaklardaki yuzu soda mantığıyla uyumlu. Kısa hazırlık süresi ve allergen boşluğu doğru.",
+    "sources": [
+      "https://thejapanstore.us/japanese-seasoning/honey-yuzu-soda/",
+      "https://cookery-store.ca/blogs/recipes/sparkling-yuzu-lemonade"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "zaalouk",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: Fas zaalouk için zeytinyağı ve tuz temel öğe, listede yok",
+      "ingredients: kaynaklarda paprika ve maydanoz sık kullanılıyor, mevcut tarif sade kalıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "3",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Tatlı toz biber",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Maydanoz",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "averageCalories": 138,
+      "fat": 11,
+      "carbs": 9,
+      "protein": 2
+    },
+    "sources": [
+      "https://tasteofmaroc.com/moroccan-zaalouk-recipe/",
+      "https://www.grocery.coop/recipes/zaalouk-moroccan-eggplant-tomato-salad"
+    ],
+    "confidence": "high",
+    "reason": "Patlıcan, domates, sarımsak ve kimyon tabanı doğru. Eksik kalan zeytinyağı, tuz ve baharatlar kaynakların ana akışıyla tamamlanmalı."
+  },
+  {
+    "slug": "zaatarli-labneh-gozleme-levant-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "servingSuggestion: bal, kaymak ve tereyağlı simit bu tuzlu Levant labneh akışıyla bağlam dışı"
+    ],
+    "corrections": {
+      "servingSuggestion": "Sıcak dilimleyip zeytin, domates ve salatalıkla servis edin."
+    },
+    "sources": [
+      "https://www.wholefoodsmarket.com/recipes/zaatar-spiked-labneh-flatbread",
+      "https://www.kingarthurbaking.com/recipes/zaatar-flatbread-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Hamur, labneh, zaatar ve zeytinyağı uyumlu. Sorun sadece tatlı ve ağır kahvaltı yanlarının tuzlu Levant profiline uymaması."
+  },
+  {
+    "slug": "zahter-salatasi-hatay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: sumak, limon ve tuz kullanıyor ama ingredient listesinde yok",
+      "allergens: taze zahter salatasında SUSAM beyanı zorunlu değil"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Limon suyu",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çimdik"
+        }
+      ],
+      "allergens_remove": [
+        "SUSAM"
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Zahteri ayıklayıp yıkayın, fazla suyunu süzdürün.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Domatesi küçük doğrayın, cevizi iri bırakın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Nar ekşisi, limon suyu, zeytinyağı ve tuzu kasede karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Zahter, domates ve cevizi sosla ezmeden harmanlayın.",
+          "timerSeconds": 60
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Salatayı bekletmeden servis tabağına alın.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.hataydanal.com/blog/zahter-salatasi-tarifi",
+      "https://www.nefisyemektarifleri.com/cevizli-zahter-kekik-salatasi/"
+    ],
+    "confidence": "high",
+    "reason": "Zahter, domates, ceviz, nar ekşisi ve zeytinyağı kaynaklarla uyumlu. Stepteki listede olmayan ekşiler temizlenmeli, susam over-tag kaldırılmalı."
+  },
+  {
+    "slug": "zahterli-domatesli-pide-hatay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: vegan tarifte yumurta sürme adımı var",
+      "steps: zeytinyağı miktarı ingredient listesiyle çelişiyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un, su ve tuzu yumuşak hamur olacak şekilde yoğurun.",
+          "timerSeconds": 360
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Domatesin çekirdekli sulu kısmını alın, zahter ve zeytinyağıyla karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Hamuru ince açıp domatesli zahter harcını üstüne yayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Pideyi kızgın fırında tabanı gevrekleşene kadar pişirin.",
+          "timerSeconds": 900
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Fırından çıkınca kısa dinlendirip ılık servis edin.",
+          "timerSeconds": 180
+        }
+      ],
+      "ingredients_add": [
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.hataykoy.com/blog/icerik/hatay-usulu-taze-zahter-salatasi-tarifi",
+      "https://www.kingarthurbaking.com/recipes/zaatar-flatbread-recipe"
+    ],
+    "confidence": "medium",
+    "reason": "Zahterli hamur işi fikri makul. Vegan tarifte yumurta sürme adımı açık hata ve yağ miktarı ingredient listesiyle uyumsuz."
+  },
+  {
+    "slug": "zahterli-katmer-durum-hatay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "servingSuggestion: bal, kaymak ve tereyağlı simit peynirli zahterli katmerle bağlam dışı"
+    ],
+    "corrections": {
+      "servingSuggestion": "Sıcak dilimleyip domates, salatalık ve zeytinle servis edin."
+    },
+    "sources": [
+      "https://www.hataydanal.com/blog/zahter-salatasi-tarifi",
+      "https://www.mccormickforchefs.com/en-us/recipes/appetizers/zaatar-flatbread"
+    ],
+    "confidence": "medium",
+    "reason": "Zahter, peynir, hamur ve zeytinyağı birlikteliği tutarlı. Servis önerisi tatlı ve sütlü yanlara kaydığı için tabak bağlamı düzeltilmeli."
+  },
+  {
+    "slug": "zahterli-koz-patlican-salatasi-kilis-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: köz patlıcan hazır ingredient olmasına rağmen 25 dakika süzdürme timerı toplam süreyle çelişiyor",
+      "steps: sumak geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Köz patlıcanı iri kıyıp fazla suyunu süzün.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Limon suyu, zeytinyağı, sarımsak ve zahteri küçük kapta karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Patlıcanı sosla ezmeden harmanlayın.",
+          "timerSeconds": 60
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Salatayı servis tabağına yayıp üzerine az zahter serpin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://tasteofmaroc.com/moroccan-zaalouk-recipe/",
+      "https://www.hataydanal.com/blog/zahter-salatasi-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Köz patlıcan, sarımsak, limon ve zahter uyumu makul. Hata, hazır köz patlıcanlı salatada gereksiz uzun timer ve listede olmayan sumak."
+  },
+  {
+    "slug": "zahterli-lor-tost-hatay-usulu",
+    "verdict": "PASS",
+    "reason": "Lor, zahter, domates ve ekmekten oluşan hızlı tost akışı tutarlı. Süre, süt ve gluten allergenleri, kısa servis önerisi ve kalori makul.",
+    "sources": [
+      "https://www.hataydanal.com/blog/zahter-salatasi-tarifi",
+      "https://www.seriouseats.com/guide-to-labaneh-labne-5225594"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "zahterli-lorlu-katmer-kilis-usulu",
+    "verdict": "PASS",
+    "reason": "Hamur, lor, zahter ve zeytinyağıyla yapılan tavada katmer akışı iç tutarlılığa sahip. Süre ve allergen beyanı mevcut malzemelerle uyumlu.",
+    "sources": [
+      "https://www.hataykoy.com/blog/icerik/hatay-usulu-taze-zahter-salatasi-tarifi",
+      "https://www.kingarthurbaking.com/recipes/zaatar-flatbread-recipe"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "zahterli-nohutlu-krep-hatay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: krep pişirmek için yağ ve temel tuz listede yok",
+      "steps: tüm krepleri tek 12 dakikalık adımda topluyor, işlem netliği zayıf"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un, yumurta, su, tuz ve yarım zahteri pürüzsüz çırpın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Nohudu kalan zahter ve az zeytinyağıyla çatalla ezin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Krep hamurunu hafif yağlı tavaya ince yayın.",
+          "timerSeconds": 180
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Krepleri iki yüzlü pişirip nohutlu harçla doldurun.",
+          "timerSeconds": 540
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Doldurulan krepleri ikiye katlayıp sıcak servis edin.",
+          "timerSeconds": null
+        }
+      ],
+      "averageCalories": 252,
+      "fat": 10
+    },
+    "sources": [
+      "https://www.hataydanal.com/blog/zahter-salatasi-tarifi",
+      "https://www.wholefoodsmarket.com/recipes/zaatar-spiked-labneh-flatbread"
+    ],
+    "confidence": "medium",
+    "reason": "Zahterli krep fikri uygulanabilir. Pişirme yağı ve tuz eksik, adımlar da krep pişirme ile nohutlu içi daha ayrık göstermeli."
+  },
+  {
+    "slug": "zahterli-peynir-durum-hatay-usulu",
+    "verdict": "PASS",
+    "reason": "Lavaş, taze peynir, zahter ve zeytinyağı kombinasyonu hızlı kahvaltı dürümü olarak tutarlı. Allergenler ve toplam süre makul görünüyor.",
+    "sources": [
+      "https://www.hataydanal.com/blog/zahter-salatasi-tarifi",
+      "https://www.seriouseats.com/guide-to-labaneh-labne-5225594"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "zahterli-susamli-yumurta-ekmegi-kilis-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: tavada kızartma için yağ yok, step sıcak tava işlemi içeriyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "averageCalories": 276,
+      "fat": 17
+    },
+    "sources": [
+      "https://www.altasyumurta.com/yumurtali-sogan-kavurma-tarifi",
+      "https://www.hataydanal.com/blog/zahter-salatasi-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Yumurtalı ekmek ve zahterli susam kaplama mantıklı. Net eksik, tavada kızartma için kullanılacak yağın ingredient listesinde olmaması."
+  },
+  {
+    "slug": "zahterli-tavuk-sis-hatay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step yoğurt ve limon suyu kullanıyor ama listede yok",
+      "totalMinutes: 30 dakikalık marinasyon toplam süreye yansımıyor",
+      "servingSuggestion: kuzu pembesi ifadesi tavuk şiş için yanlış"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Yoğurt",
+          "amount": "0.5",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Limon suyu",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "allergens_add": [
+        "SUT"
+      ],
+      "totalMinutes": 58,
+      "tags_remove": [
+        "30-dakika-alti"
+      ],
+      "servingSuggestion": "Lavaş, sumaklı soğan ve köz biberle sıcak servis edin."
+    },
+    "sources": [
+      "https://www.hataydanal.com/blog/zahter-salatasi-tarifi",
+      "https://www.foodandwine.com/cocktails-spirits/sparkling-yuzu-gimlet"
+    ],
+    "confidence": "high",
+    "reason": "Zahterli tavuk şiş makul, fakat marinasyonda yoğurt ve limon eksik. Bekleme süresi toplam süreye eklenmeli, servis metni tavukla uyumlanmalı."
+  },
+  {
+    "slug": "zahterli-yogurt-corbasi-hatay-koy-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: stepte toplam su miktarı 5 su bardağına çıkıyor ama listede 3 su bardağı",
+      "ingredients: pul biber stepte var ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_amount_change": [
+        {
+          "name": "Su",
+          "newAmount": "5",
+          "newUnit": "su bardağı"
+        }
+      ],
+      "ingredients_add": [
+        {
+          "name": "Pul biber",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/yogurt-corbasi-tarifi/",
+      "https://www.hataydanal.com/blog/zahter-salatasi-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurt, un, su, tereyağı ve zahterli çorba akışı tutarlı. Hata su miktarı ile stepteki pul biberin ingredient listesine yansımaması."
+  },
+  {
+    "slug": "zahterli-yumurta-ekmegi-hatay-usulu",
+    "verdict": "PASS",
+    "reason": "Bayat ekmeği yumurtalı zahterli karışıma batırıp tavada pişirme akışı tutarlı. Yağ, yumurta ve ekmek ingredientleri allergenlerle uyumlu.",
+    "sources": [
+      "https://www.altasyumurta.com/yumurtali-sogan-kavurma-tarifi",
+      "https://www.hataydanal.com/blog/zahter-salatasi-tarifi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "zahterli-yumurta-ekmegi-kilis-usulu",
+    "verdict": "PASS",
+    "reason": "Yumurta, süt, tereyağı, ekmek ve zahter kombinasyonu kahvaltılık yumurtalı ekmek olarak tutarlı. Allergen ve süre beyanı doğru aralıkta.",
+    "sources": [
+      "https://www.altasyumurta.com/yumurtali-sogan-kavurma-tarifi",
+      "https://www.hataydanal.com/blog/zahter-salatasi-tarifi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "zahterli-zeytin-salatasi-hatay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: salata için sıcak servis ve gevrek yüzey ifadeleri yanlış bağlamda",
+      "steps: gereksiz sıcak işlem hazırlığı soğuk zeytin salatasını bozuyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Yeşil zeytinleri çekirdek kalmayacak şekilde iri doğrayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Domatesi küçük doğrayıp fazla suyunu süzün.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Zahter, nar ekşisi ve zeytinyağını kasede karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Zeytin ve domatesi sosla harmanlayıp kısa dinlendirin.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Salatayı serin veya oda sıcaklığında servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://vidarbergum.com/recipe/olive-salad-with-pomegranate-molasses-zeytin-salatasi/",
+      "https://www.hataydanal.com/blog/zahter-salatasi-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Yeşil zeytin, domates, zahter ve nar ekşisi Hatay zeytin salatası kaynaklarıyla uyumlu. Sıcak servis kalıbı salata için hatalı."
+  },
+  {
+    "slug": "zapiekanka",
+    "verdict": "PASS",
+    "reason": "Baget, mantar, peynir ve ketçap temel yapısı klasik Polonya zapiekanka kaynaklarıyla örtüşüyor. Süre, allergen ve vejetaryen tag tutarlı.",
+    "sources": [
+      "https://cookinpolish.com/zapiekanka-roasted-baguette/",
+      "https://www.polishmeals.com/2010/11/zapiekanka/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "zaru-soba",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: servis stepinde taze soğan ve wasabi var ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Taze soğan",
+          "amount": "2",
+          "unit": "dal"
+        },
+        {
+          "name": "Wasabi",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://shop.woodlandfoods.com/recipes/zaru-soba",
+      "https://www.sidechef.com/recipes/9472/Zaru_Soba"
+    ],
+    "confidence": "high",
+    "reason": "Soba, soya sosu, mirin ve noriyle soğuk servis doğru. Eksik olan, servis adımında geçen taze soğan ve wasabinin listede olmaması."
+  },
+  {
+    "slug": "zencefil-cayi",
+    "verdict": "PASS",
+    "reason": "Taze zencefilin kaynatılıp limon ve balla servis edilmesi kaynaklarla uyumlu. Balın ılıkken eklenmesi doğru, süre ve allergen boşluğu makul.",
+    "sources": [
+      "https://www.bornovadan.com/2025/12/16/balli-zencefil-cayi-tarifi/",
+      "https://www.kivitadinda.com/2019/12/bagisiklik-sistemini-guclendiren-zencefil-cayi-tarifi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "zencefilli-bal-limon-cayi",
+    "verdict": "PASS",
+    "reason": "Zencefil, limon, bal ve suyla hazırlanan sıcak çay akışı kaynaklarla uyumlu. Bal kaynar suya doğrudan eklenmiyor, süre beyanı tutarlı.",
+    "sources": [
+      "https://www.bornovadan.com/2025/12/16/balli-zencefil-cayi-tarifi/",
+      "https://www.kivitadinda.com/2019/12/bagisiklik-sistemini-guclendiren-zencefil-cayi-tarifi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "zencefilli-ihlamur",
+    "verdict": "CORRECTION",
+    "issues": [
+      "servingSuggestion: sıcak içecek tarifinde soğuk bardak ve buzdolabı önerisi bağlam dışı"
+    ],
+    "corrections": {
+      "servingSuggestion": "Sıcak fincanda limon dilimiyle bekletmeden servis edin."
+    },
+    "sources": [
+      "https://www.bornovadan.com/2025/12/16/balli-zencefil-cayi-tarifi/",
+      "https://www.kivitadinda.com/2019/12/bagisiklik-sistemini-guclendiren-zencefil-cayi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Zencefil ve ıhlamur sıcak demleme olarak tutarlı. Tek sorun, servis önerisinin soğuk içecek hazırlığına kayıp tarif bağlamını bozması."
+  },
+  {
+    "slug": "zencefilli-limon-squash-avustralya-usulu",
+    "verdict": "PASS",
+    "reason": "Limon, taze zencefil, şeker ve sodanın buzla karıştırılması sparkling lemonade ve squash mantığıyla uyumlu. Süre kısa içecek için doğru.",
+    "sources": [
+      "https://streetsmartnutrition.com/sparkling-yuzu-lemonade/",
+      "https://cookery-store.ca/blogs/recipes/sparkling-yuzu-lemonade"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "zencefilli-limonata",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: stepte 1 saat soğutma var, toplam süreye yansımıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 85
+    },
+    "sources": [
+      "https://www.webanne.com/zencefilli-limonata.html",
+      "https://streetsmartnutrition.com/sparkling-yuzu-lemonade/"
+    ],
+    "confidence": "high",
+    "reason": "Zencefil şurubu ve limon suyu akışı doğru. Soğuk servis için verilen bekleme süresi toplam süreye eklenmediği için süre düzelmeli."
+  },
+  {
+    "slug": "zenzai",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: stepte tatlılığı dengeleyen tuz var ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çimdik"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.justonecookbook.com/recipes/zenzai-red-bean-soup/",
+      "https://www.japanesecooking101.com/zenzai-oshiruko-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Azuki, şeker ve mochiyle sıcak zenzai akışı kaynaklarla uyumlu. Eksik olan, stepte geçen bir çimdik tuzun ingredient listesine eklenmesi."
+  },
+  {
+    "slug": "zerde-edirne-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: stepte safran suyu, nişasta ve çam fıstığı var ama listede yok",
+      "totalMinutes: 2 saat soğutma toplam süreye yansımıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Safran",
+          "amount": "1",
+          "unit": "tutam"
+        },
+        {
+          "name": "Nişasta",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Çam fıstığı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "allergens_add": [
+        "KUSUYEMIS"
+      ],
+      "totalMinutes": 160
+    },
+    "sources": [
+      "https://yemek.com/tarif/zerde/",
+      "https://www.nefisyemektarifleri.com/zerde-tatlisi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Pirinçli zerde yapısı doğru. Stepte kullanılan safran, nişasta ve çam fıstığı listede yok, soğutma süresi de toplam süreye eklenmeli."
+  },
+  {
+    "slug": "zerdecal-latte",
+    "verdict": "PASS",
+    "reason": "Süt, zerdeçal, zencefil, bal ve karabiberle yapılan sıcak latte kaynaklardaki golden milk akışıyla uyumlu. Süt allergeni doğru.",
+    "sources": [
+      "https://feelgoodfoodie.net/recipe/golden-milk-turmeric/",
+      "https://www.sweetsteep.com/turmeric-latte-golden-milk-recipe/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "zerdecalli-balikli-pirinc-noodle-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: stepte balık sosu, sarımsak ve taze soğan var ama listede yok",
+      "ingredients: Vietnam cha ca kaynaklarında zencefil veya galangal aroması beklenir"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Balık sosu",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Sarımsak",
+          "amount": "2",
+          "unit": "diş"
+        },
+        {
+          "name": "Taze soğan",
+          "amount": "3",
+          "unit": "dal"
+        },
+        {
+          "name": "Taze zencefil",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        }
+      ],
+      "averageCalories": 348,
+      "protein": 28,
+      "carbs": 40,
+      "fat": 8
+    },
+    "sources": [
+      "https://delightfulplate.com/vietnamese-turmeric-fish-noodles-cha-ca/",
+      "https://www.eat-the-heat.com/recipes/vietnamese-turmeric-dill-fish-cha-ca-la-vong/"
+    ],
+    "confidence": "high",
+    "reason": "Balık, zerdeçal, dereotu ve pirinç noodle Vietnam cha ca çizgisine yakın. Stepte kullanılan temel aroma vericiler ingredient listesinde eksik."
+  },
+  {
+    "slug": "zeytin-ezmeli-kasarli-simit-tostu-bursa-usulu",
+    "verdict": "PASS",
+    "reason": "Simit, zeytin ezmesi, kaşar ve tereyağıyla tost yapmak iç tutarlılığa sahip. Gluten, susam ve süt allergenleri malzemelerle uyumlu.",
+    "sources": [
+      "https://www.simit.gen.tr/simit-tostu.html",
+      "https://vidarbergum.com/recipe/olive-salad-with-pomegranate-molasses-zeytin-salatasi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "zeytin-ezmeli-lorlu-katmer-ayvalik-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "regional_identity: Ayvalık usulü zeytin ezmeli lorlu katmer için güvenilir kaynak karşılığı bulunamadı",
+      "description: yöresel kesinlik iddiası kaynakla desteklenmiyor"
+    ],
+    "corrections": {
+      "description": "Zeytin ezmeli lorlu katmer, ince hamuru zeytin ezmesi ve lorla katlayarak gevrek, tuzlu ve kahvaltılık bir hamur işi sunar."
+    },
+    "sources": [
+      "https://vidarbergum.com/recipe/olive-salad-with-pomegranate-molasses-zeytin-salatasi/",
+      "https://www.mccormickforchefs.com/en-us/recipes/appetizers/zaatar-flatbread"
+    ],
+    "confidence": "low",
+    "reason": "Zeytin ve lorlu katmer teknik olarak yapılabilir, fakat Ayvalık usulü diye doğrulanamadı. Yöresel iddia manuel review gerektirir."
+  },
+  {
+    "slug": "zeytin-ezmeli-patates-salata-bodrum-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: tuz kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://vidarbergum.com/recipe/olive-salad-with-pomegranate-molasses-zeytin-salatasi/",
+      "https://www.nefisyemektarifleri.com/patates-salatasi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Patates, zeytin ezmesi, limon ve zeytinyağıyla salata akışı makul. Net hata, sos adımındaki tuzun ingredient listesinde olmaması."
+  },
+  {
+    "slug": "zeytin-piyazi-antalya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: bakliyat ifadesi zeytin piyazı ingredientleriyle ilgisiz",
+      "steps: sumak kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Soğanı piyazlık doğrayıp limon suyuyla ovun ve fazla suyunu süzün.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Siyah zeytinleri iri doğrayın, çekirdek kalmadığını kontrol edin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Zeytinyağı, limon suyu ve maydanozu kasede karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Zeytin ve soğanı sosla ezmeden harmanlayın.",
+          "timerSeconds": 60
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Salatayı soğuk veya oda sıcaklığında servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://vidarbergum.com/recipe/olive-salad-with-pomegranate-molasses-zeytin-salatasi/",
+      "https://www.odysea.com/recipes/green-olive-walnut-and-pomegranate-salad/"
+    ],
+    "confidence": "medium",
+    "reason": "Zeytin, soğan, limon ve zeytinyağı salatası makul. Bakliyat ve sumak adımları ingredient listesiyle uyuşmadığı için steps düzelmeli."
+  },
+  {
+    "slug": "zeytin-tapenade",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: tapenade pişmez, mevcut adımlar fırın veya tava pişirmesi tarif ediyor",
+      "steps: ezme yerine şekil verme ve dinlendirme kalıbı yanlış"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Zeytin, kapari ve sarımsağı mutfak robotuna alın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Limon suyu ve zeytinyağını ekleyip iri dokulu ezme halinde çekin.",
+          "timerSeconds": 60
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Kıvamı koyuysa az zeytinyağıyla açın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Tapenadeı kaseye alıp kızarmış baget dilimleriyle servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.196flavors.com/tapenade/",
+      "https://www.themediterraneandish.com/olive-tapenade/"
+    ],
+    "confidence": "high",
+    "reason": "Zeytin, kapari, sarımsak, zeytinyağı ve limonla vegan tapenade mümkün. Hata, pişmeyen ezmeye pişirme adımları yazılması."
+  },
+  {
+    "slug": "zeytin-yaprakli-lor-sarma-izmir-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "regional_identity: İzmir zeytin yapraklı lor sarma için güvenilir kaynak karşılığı bulunamadı",
+      "steps: soğuk sarma tarifinde fırın veya orta ateş pişirmesi anlatılıyor"
+    ],
+    "corrections": {
+      "description": "Zeytin yapraklı lor sarma, lorlu içi salamura yaprağa sararak tuzlu, otlu ve küçük lokmalık bir meze yapar.",
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Salamura yaprakları fazla tuzu gitsin diye suda bekletip süzün.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Lor, dereotu ve zeytinyağını çatalla ezerek karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Yaprakların içine lorlu harçtan paylaştırıp sıkı sarın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Sarmaları oda sıcaklığında kısa dinlendirip servis edin.",
+          "timerSeconds": 300
+        }
+      ]
+    },
+    "sources": [
+      "https://www.seriouseats.com/guide-to-labaneh-labne-5225594",
+      "https://vidarbergum.com/recipe/olive-salad-with-pomegranate-molasses-zeytin-salatasi/"
+    ],
+    "confidence": "low",
+    "reason": "Meze tekniği yapılabilir, fakat zeytin yaprağı ve İzmir usulü iddiası doğrulanamadı. Yapısal kaynak boşluğu manuel review gerektirir."
+  },
+  {
+    "slug": "zeytinli-acur-ezmesi-kilis-usulu",
+    "verdict": "PASS",
+    "reason": "Acur, zeytin, sarımsak, zeytinyağı ve limonla soğuk meze akışı iç tutarlılığa sahip. Vegan tag ve kısa süre beyanı makul.",
+    "sources": [
+      "https://vidarbergum.com/recipe/olive-salad-with-pomegranate-molasses-zeytin-salatasi/",
+      "https://www.hataydanal.com/blog/zahter-salatasi-tarifi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "zeytinli-beyaz-fasulye-guvec-ispanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: stepte zeytinyağı, sarımsak, paprika ve maydanoz var ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Sarımsak",
+          "amount": "2",
+          "unit": "diş"
+        },
+        {
+          "name": "Tatlı toz biber",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Maydanoz",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "averageCalories": 276,
+      "fat": 12
+    },
+    "sources": [
+      "https://www.centraltexasfoodbank.org/recipe/spanish-chickpea-stew",
+      "https://apnews.com/article/212b286af03e1deecce33833552cf3e3"
+    ],
+    "confidence": "medium",
+    "reason": "Baklagil, domates ve paprika çizgisi İspanyol güveçlerine yakın. Stepte kullanılan yağ, sarımsak, paprika ve maydanoz listeye eklenmeli."
+  },
+  {
+    "slug": "zeytinli-biber-ezmesi-hatay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: yoğurt veya tahin seçenekleri ingredient listesinde yok ve vegan allergen dengesini bozabilir",
+      "servingSuggestion: çam fıstığı ve dereotu mevcut Hatay biber ezmesi bağlamıyla uyumsuz"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Sarımsak",
+          "amount": "1",
+          "unit": "diş"
+        },
+        {
+          "name": "Limon suyu",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çimdik"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Köz biberleri süzüp iri parçalayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Biber, sarımsak, ceviz, limon suyu ve zeytinyağını iri dokulu ezin.",
+          "timerSeconds": 90
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Doğranmış zeytini sonradan ekleyip tuzunu ayarlayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Ezmenin üzerini zeytinyağıyla parlatıp oda sıcaklığında servis edin.",
+          "timerSeconds": null
+        }
+      ],
+      "servingSuggestion": "Kızarmış ekmek ve taze maydanozla oda sıcaklığında sunun."
+    },
+    "sources": [
+      "https://www.hataydanal.com/blog/zahter-salatasi-tarifi",
+      "https://www.nefisyemektarifleri.com/koz-biber-mezesi/"
+    ],
+    "confidence": "medium",
+    "reason": "Köz biber, zeytin ve cevizli ezme makul. Yoğurt, tahin ve çam fıstığı drift yaratıyor, vegan yapıyı koruyan adımlar gerekli."
+  },
+  {
+    "slug": "zeytinli-cokelek-bazlama-mugla-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: finalde taze kekik kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Taze kekik",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://vidarbergum.com/recipe/olive-salad-with-pomegranate-molasses-zeytin-salatasi/",
+      "https://www.seriouseats.com/guide-to-labaneh-labne-5225594"
+    ],
+    "confidence": "medium",
+    "reason": "Bazlama, çökelek, zeytin ve domatesle sıcak tava işi tutarlı. Sadece son servis adımında geçen taze kekik listede eksik."
+  },
+  {
+    "slug": "zeytinli-domatesli-bazlama-mugla-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: kekik kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Kekik",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://vidarbergum.com/recipe/olive-salad-with-pomegranate-molasses-zeytin-salatasi/",
+      "https://www.seriouseats.com/guide-to-labaneh-labne-5225594"
+    ],
+    "confidence": "medium",
+    "reason": "Bazlama, domates, zeytin ve beyaz peynir birleşimi tutarlı. Hata, harçta geçen kekiğin ingredient listesinde yer almaması."
+  },
+  {
+    "slug": "zeytinli-enginar-guveci-yalova-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: stepte soğan, havuç, bezelye, sıcak su ve dereotu var ama listede yok",
+      "regional_identity: Yalova iddiası güçlü kaynakla doğrulanamadı, ama zeytinyağlı enginar akışı doğru"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Soğan",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Havuç",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Bezelye",
+          "amount": "0.5",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Sıcak su",
+          "amount": "0.75",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Dereotu",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "averageCalories": 182,
+      "carbs": 17,
+      "fat": 11,
+      "protein": 4
+    },
+    "sources": [
+      "https://www.sofra.com.tr/tarif/zeytinyaglilar/firinda-zeytinyagli-enginar",
+      "https://yemek.com/tarif/enginar/"
+    ],
+    "confidence": "medium",
+    "reason": "Enginar, limon ve zeytinyağı temeli doğru. Stepte kullanılan garnitürler listede eksik, yöresel Yalova iddiası da zayıf kaynaklı."
+  },
+  {
+    "slug": "zeytinli-humuslu-bazlama-adana-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: sıcak ve gevrek tost kalıbı humuslu açık bazlama için gereksiz",
+      "steps: kısa dinlendirme humuslu bazlamayı ıslatabilir"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Bazlamaları ortadan açıp kuru tavada hafif ısıtın.",
+          "timerSeconds": 120
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Humusu bazlamaların iç yüzüne ince tabaka halinde yayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Siyah zeytinleri iri doğrayıp humusun üzerine serpin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Zeytinyağını gezdirip bazlamaları bekletmeden servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://vidarbergum.com/recipe/olive-salad-with-pomegranate-molasses-zeytin-salatasi/",
+      "https://www.themediterraneandish.com/olive-tapenade/"
+    ],
+    "confidence": "medium",
+    "reason": "Humus, zeytin ve bazlama birleşimi tutarlı. Tost kalıbından gelen dinlendirme ve gevreklik adımları humuslu servis için yanlış."
+  },
+  {
+    "slug": "zeytinli-kabak-sinkonta-foca-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: stepte sarımsak ve domates rendesi var ama listede yok",
+      "servingSuggestion: yoğurt önerisi vegan tag ile servis bağlamında karışıklık yaratır"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Sarımsak",
+          "amount": "2",
+          "unit": "diş"
+        },
+        {
+          "name": "Domates rendesi",
+          "amount": "0.5",
+          "unit": "su bardağı"
+        }
+      ],
+      "servingSuggestion": "Ilık ya da soğuk, dereotu ve zeytinyağıyla servis edin."
+    },
+    "sources": [
+      "https://ye-mek.net/tarif/kabak-sinkonta",
+      "https://www.sofra.com.tr/tarif/zeytinyaglilar/firinda-zeytinyagli-enginar"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak, soğan, zeytinyağı ve yavaş pişirme sinkonta çizgisine uyuyor. Eksik sarımsak ve domates rendesi listeye eklenmeli."
+  },
+  {
+    "slug": "zeytinli-keskek-aydin-bahce-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "regional_identity: Aydın zeytinli keşkek için güvenilir kaynak karşılığı bulunamadı",
+      "totalMinutes: 30 dakika bekletme ve 10 dakika dinlendirme toplam süreye yansımıyor"
+    ],
+    "corrections": {
+      "description": "Zeytinli keşkek, dövme buğdayı yeşil zeytin ve zeytinyağıyla pişirerek hafif ekşili bir keşkek yorumu sunar.",
+      "totalMinutes": 90,
+      "cookMinutes": 46
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/aydin/neyenir/keskek",
+      "https://www.nefisyemektarifleri.com/keskek-tarifi/"
+    ],
+    "confidence": "low",
+    "reason": "Keşkek buğdayla doğru, fakat zeytinli Aydın iddiası doğrulanamadı. Ayrıca bekletme ve dinlendirme süreleri toplam süreyi bozuyor."
+  },
+  {
+    "slug": "zeytinli-kirmizi-biber-salatasi-erdek-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: limon suyu ve tuz kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Limon suyu",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çimdik"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kozlenmis-kirmizi-biber-salatasi/",
+      "https://vidarbergum.com/recipe/olive-salad-with-pomegranate-molasses-zeytin-salatasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Köz kırmızı biber, zeytin, sarımsak ve zeytinyağıyla salata akışı tutarlı. Sos adımında geçen limon ve tuz listede eksik."
+  },
+  {
+    "slug": "zeytinli-koruklu-salata-ayvalik-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: limon suyu, tuz ve taze ot kullanıyor ama ingredient listesinde yok",
+      "servingSuggestion: ceviz ve nar taneli kış salatası önerisi yazlık koruklu salatayla uyumsuz"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Domatesleri küp doğrayıp zeytinleri ikiye kesin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Koruk suyu ve zeytinyağını küçük kapta karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Domates ve zeytini sosla ezmeden harmanlayın.",
+          "timerSeconds": 60
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Salatayı bekletmeden serin servis edin.",
+          "timerSeconds": null
+        }
+      ],
+      "servingSuggestion": "Serin tabakta, zeytinler ve domatesler diri kalırken servis edin."
+    },
+    "sources": [
+      "https://vidarbergum.com/recipe/olive-salad-with-pomegranate-molasses-zeytin-salatasi/",
+      "https://www.odysea.com/recipes/green-olive-walnut-and-pomegranate-salad/"
+    ],
+    "confidence": "medium",
+    "reason": "Zeytin, domates, koruk ve zeytinyağıyla yazlık salata makul. Mevcut steps ve servis önerisi listede olmayan öğelere kayıyor."
+  },
+  {
+    "slug": "zeytinli-labneli-kahvalti-ekmegi-fas-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "cuisine_identity: labneh ve zeytinli kahvaltı ekmeği Levant çizgisine yakın, Fas usulü iddiası güçlü kaynakla desteklenmiyor",
+      "regional_identity: cuisine ma manuel review gerektirir"
+    ],
+    "corrections": {
+      "description": "Zeytinli labneli kahvaltı ekmeği, sıcak ekmeği labne ve zeytinle buluşturarak yumuşak, tuzlu ve sade bir sabah tabağı yapar.",
+      "cuisine": "me"
+    },
+    "sources": [
+      "https://www.seriouseats.com/guide-to-labaneh-labne-5225594",
+      "https://www.realsimple.com/what-is-labneh-and-how-to-use-it-8700536"
+    ],
+    "confidence": "low",
+    "reason": "Labneh kahvaltı ve ekmekle Levant kaynaklarında destekleniyor. Fas atfı ve cuisine ma kodu doğrulanmadığı için manuel review gerekir."
+  },
+  {
+    "slug": "zeytinli-nohutlu-tavuk-guvec-ispanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: stepte zeytinyağı, sarımsak, paprika, sıcak su, maydanoz ve limon kabuğu var ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Sarımsak",
+          "amount": "2",
+          "unit": "diş"
+        },
+        {
+          "name": "Tatlı toz biber",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Sıcak su",
+          "amount": "0.5",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Maydanoz",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Limon kabuğu rendesi",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "averageCalories": 394,
+      "protein": 30,
+      "carbs": 19,
+      "fat": 22
+    },
+    "sources": [
+      "https://www.centraltexasfoodbank.org/recipe/spanish-chickpea-stew",
+      "https://www.bonappetit.com/recipe/easy-pollo-guisado"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk, nohut, zeytin ve domatesli güveç mantığı tutarlı. Stepte kullanılan yağ, baharat ve bitiş malzemeleri listede eksik."
+  }
+]

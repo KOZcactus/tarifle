@@ -1,0 +1,570 @@
+[
+  {
+    "slug": "zeytinli-patates-empanadilla-ispanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 zeytinyağı kullanıyor ama ingredient listesinde zeytinyağı yok",
+      "ingredients: step 1 tuzlu su diyor ama ingredient listesinde tuz yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/empanadillas/",
+      "https://www.foodandwine.com/cooking-techniques/katie-button-empanadillas-gallegas"
+    ],
+    "confidence": "high",
+    "reason": "Empanadilla yapısı hamur, paprika ve zeytinle uyumlu. Açık sorun, adımlarda kullanılan zeytinyağı ve tuzun listede bulunmaması."
+  },
+  {
+    "slug": "zeytinli-patlican-tava-ayvalik-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 tuzlu suda bekletme diyor ama ingredient listesinde tuz yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.rafinera.com/blog/diyet-yemek-tarifleri/zeytinyagli-patlican",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/zeytinyagli-patlican-yemegi-tarifi/13378"
+    ],
+    "confidence": "medium",
+    "reason": "Patlıcan, domates, sarımsak ve zeytinyağı çizgisi zeytinyağlı patlıcan kaynaklarıyla uyumlu. Eksik olan tek net öğe tuz."
+  },
+  {
+    "slug": "zeytinli-peynirli-katmer-kilis-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 su ve tuz kullanıyor ama ingredient listesinde yok",
+      "ingredients: step 3 pul biber kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Su",
+          "amount": "1",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Pul biber",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/peynirli-katmer/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/peynirli-katmer-tarifi/19225"
+    ],
+    "confidence": "medium",
+    "reason": "Peynirli katmer yapısı kaynaklarla uyumlu. Tarif içindeki su, tuz ve pul biber adımlarda geçiyor, listede eksik kalmış."
+  },
+  {
+    "slug": "zeytinli-pogaca",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 1 ve step 5 tarif dışı boilerplate cümle içeriyor",
+      "servingSuggestion: mevcut öneri fazla kısa ve bağlamı zayıf"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un, yoğurt, sıvı yağ, kabartma tozu ve tuzu 5 dakika yoğurup yumuşak bir hamur hazırlayın.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Hamuru 8 eşit parçaya ayırıp avuç içinde açın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Her parçanın ortasına zeytin ezmesi koyup kenarlarını kapatın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Üzerine yumurta sarısı sürüp 180°C fırında 25 dakika pişirin.",
+          "timerSeconds": 1500
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Poğaçaları fırından alıp 10 dakika ılıtın, iç harç yerleşince servis edin.",
+          "timerSeconds": 600
+        }
+      ],
+      "servingSuggestion": "Çay ve domatesle ılık sunun."
+    },
+    "sources": [
+      "https://www.misssgibi.com/zeytinli-pogaca-tarifi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/dereotu-zeytinli-pogaca-tarifi/19974"
+    ],
+    "confidence": "high",
+    "reason": "Mayasız zeytinli poğaça bileşimi ve 180°C pişirme kaynaklarla uyumlu. Düzeltme sadece boilerplate adımları temizliyor."
+  },
+  {
+    "slug": "zeytinli-yaglama-ayvalik-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 1, step 2, step 3 ve step 6 gereksiz tekrar ve boilerplate dil içeriyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Domatesleri ve nane yapraklarını 5 dakikada hazırlayıp ekmekleri tezgaha dizin.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Tavayı orta ateşte 2 dakika ısıtıp ekmeklerin iki yüzünü hafifçe yağlayın.",
+          "timerSeconds": 120
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Ekmekleri tavada 3 dakika kızartın, yüzeyleri zeytin ezmesini taşıyacak kadar sertleşsin.",
+          "timerSeconds": 180
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Kızarmış ekmeklere zeytin ezmesi sürüp domates dilimlerini yerleştirin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Zeytinyağı gezdirip nane yapraklarıyla ılık servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.sofra.com.tr/tarif/ekmek-ustu/zeytinli-ekmek-ustu",
+      "https://yemek.com/tarif/kahvaltilik-zeytinli-kuru-domates/"
+    ],
+    "confidence": "medium",
+    "reason": "Zeytinli ekmek üstü kahvaltılık yapı makul. Sorun tarif kimliğinden çok tekrar eden, işlem değeri düşük adımlarda."
+  },
+  {
+    "slug": "zeytinyagli-bamya",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 4 tuz kullanıyor ama ingredient listesinde tuz yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/zeytinyagli-bamya/",
+      "https://www.nefisyemektarifleri.com/zeytinyagli-etsiz-bamya/"
+    ],
+    "confidence": "high",
+    "reason": "Bamya, domates, limon ve zeytinyağı klasik zeytinyağlı bamya çizgisiyle uyumlu. Listede sadece tuz eksik."
+  },
+  {
+    "slug": "zeytinyagli-barbunya",
+    "verdict": "PASS",
+    "reason": "Barbunya, havuç, patates, domates, şeker ve zeytinyağı yapısı kaynaklarla uyumlu. Süre, porsiyon, makro ve vegan etiketler makul.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/zeytinyagli-barbunya/",
+      "https://yemek.com/tarif/kapakli-zeytinyagli-barbunya/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "zeytinyagli-enginar",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 5 bir su bardağı su kullanıyor ama ingredient listesinde su yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Su",
+          "amount": "1",
+          "unit": "su bardağı"
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/enginar/",
+      "https://www.nefisyemektarifleri.com/zeytinyagli-enginar-tarifi-199273/"
+    ],
+    "confidence": "high",
+    "reason": "Enginar, garnitür, limonlu sos ve dereotu kaynaklarla uyumlu. Açık eksik, pişirme suyunun ingredient listesinde yer almaması."
+  },
+  {
+    "slug": "zeytinyagli-fasulye",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 4 bir su bardağı sıcak su kullanıyor ama ingredient listesinde su yok",
+      "tipNote: mevcut not somut faydayı zayıf açıklıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Su",
+          "amount": "1",
+          "unit": "su bardağı"
+        }
+      ],
+      "tipNote": "Fasulyeyi ikiye kırmak domatesli sosu daha iyi tutar."
+    },
+    "sources": [
+      "https://yemek.com/amp/tarif/taze-fasulye/",
+      "https://www.nefisyemektarifleri.com/zeytinyagli-taze-fasulye-3368040/"
+    ],
+    "confidence": "high",
+    "reason": "Taze fasulye, domates, soğan, zeytinyağı ve şeker kaynaklarla uyumlu. Düzeltme su eksikliğini ve zayıf notu toparlıyor."
+  },
+  {
+    "slug": "zeytinyagli-ic-bakla",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 limonlu su kullanıyor ama limon suyu listede yok",
+      "ingredients: step 3 tuz, şeker ve sıcak su kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Limon suyu",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Şeker",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Su",
+          "amount": "1",
+          "unit": "su bardağı"
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/zeytinyagli-ic-bakla/",
+      "https://www.nefisyemektarifleri.com/zeytinyagli-taze-ic-bakla/"
+    ],
+    "confidence": "high",
+    "reason": "İç bakla, soğan, zeytinyağı ve dereotu ana çizgisi doğru. Step içindeki limon, tuz, şeker ve su listede eksik."
+  },
+  {
+    "slug": "zeytinyagli-kereviz",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 soğan kullanıyor ama ingredient listesinde soğan yok",
+      "ingredients: step 3 şeker kullanıyor ama ingredient listesinde şeker yok",
+      "ingredients: step 5 dereotu kullanıyor ama ingredient listesinde dereotu yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Soğan",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Şeker",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Dereotu",
+          "amount": "0.25",
+          "unit": "demet"
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/portakalli-kereviz",
+      "https://www.nefisyemektarifleri.com/portakalli-kereviz/"
+    ],
+    "confidence": "high",
+    "reason": "Kereviz, portakal suyu, havuç, patates ve limon çizgisi kaynaklarla uyumlu. Soğan, şeker ve dereotu adımlarda var ama listede yok."
+  },
+  {
+    "slug": "zeytinyagli-kereviz-silkelemesi-aydin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 3 mayonezli yoğurt sos diyor ama tarif vegan ve listede mayonez veya yoğurt yok",
+      "steps: mevcut akışta kerevizi önce haşlayıp sonra tekrar limonlu suda bekletme sırası tutarsız"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Kerevizi soyup ince doğrayın ve limonlu suda 5 dakika bekletin.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Kereviz dilimlerini az tuzlu suda 10 dakika haşlayıp süzün.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Zeytinyağı, limon suyu ve kıyılmış dereotunu geniş bir kasede karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Süzülmüş kerevizi sosla 1 dakika ezmeden harmanlayın.",
+          "timerSeconds": 60
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Kereviz silkelemesini ılık veya soğuk servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/portakal-sulu-zeytinyagli-kereviz/",
+      "https://www.nefisyemektarifleri.com/portakalli-kereviz/"
+    ],
+    "confidence": "medium",
+    "reason": "Zeytinyağlı kereviz fikri makul, fakat mevcut adımlar vegan listeyle çelişen yoğurtlu mayonez sos ve bozuk sıra içeriyor."
+  },
+  {
+    "slug": "zeytinyagli-limonlu-arpa-sehriye-pilavi-aydin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 limon kabuğu rendesi ve tuz kullanıyor ama ingredient listesinde yok",
+      "ingredients: step 5 dereotu kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Limon kabuğu rendesi",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.75",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Dereotu",
+          "amount": "0.25",
+          "unit": "demet"
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/zeytinyagli-arpa-sehriye-pilavi/",
+      "https://ye-mek.net/tarif/arpa-sehriye-pilavi"
+    ],
+    "confidence": "high",
+    "reason": "Arpa şehriye, zeytinyağı, sıcak su ve limonlu yapı kaynaklarla uyumlu. Limon kabuğu, tuz ve dereotu listede eksik."
+  },
+  {
+    "slug": "zeytinyagli-pazi-sarmasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "servingSuggestion: vegan etiketli tarifin servis önerisi sarımsaklı yoğurt içeriyor"
+    ],
+    "corrections": {
+      "servingSuggestion": "Limon dilimi ve maydanozla, oda sıcaklığında meze tabağında sunun."
+    },
+    "sources": [
+      "https://yemek.com/tarif/zeytinyagli-pazi-sarmasi/",
+      "https://www.nefisyemektarifleri.com/zeytinyagli-pazi-sarmasi/"
+    ],
+    "confidence": "high",
+    "reason": "Pazı, pirinçli iç ve 35 dakikalık pişirme kaynaklarla uyumlu. Vegan etiketle çelişen yoğurtlu servis önerisi düzeltilmeli."
+  },
+  {
+    "slug": "zingil-tatlisi-siirt-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "identity: kaynaklar zingili limonlu şerbetli hamur tatlısı olarak veriyor, mevcut tarif pekmezli şerbet iddiası taşıyor",
+      "ingredients: step 1 maya ve tuz kullanıyor ama ingredient listesinde yok",
+      "ingredients: kaynaklarda hamurda yumurta ve kabartma tozu yaygın, mevcut listede yok",
+      "nutrition: şerbetli kızartma tatlı için 244 kcal düşük, kaynak besin değeri daha yüksek"
+    ],
+    "corrections": {
+      "description": "Zingil tatlısı, yoğurtlu hamurun kızgın yağda küçük lokmalar halinde pişirilip limonlu şerbete alındığı bir hamur tatlısıdır.",
+      "ingredients_remove": [
+        "Pekmez"
+      ],
+      "ingredients_add": [
+        {
+          "name": "Yumurta",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Kabartma tozu",
+          "amount": "1",
+          "unit": "paket"
+        },
+        {
+          "name": "Şeker",
+          "amount": "2",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Limon suyu",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Şeker, su ve limon suyunu 10 dakika kaynatıp şerbeti ılımaya bırakın.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Yumurta, yoğurt, un ve kabartma tozunu akışkan hamur kıvamına gelene kadar çırpın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Sıvı yağı kızdırıp hamurdan tatlı kaşığıyla küçük parçalar bırakın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Hamur lokmalarını 25 dakika kontrollü kızartıp kevgirle çıkarın.",
+          "timerSeconds": 1500
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Sıcak lokmaları ılık şerbete batırıp 2 dakika içinde servis tabağına alın.",
+          "timerSeconds": 120
+        }
+      ],
+      "prepMinutes": 20,
+      "cookMinutes": 25,
+      "totalMinutes": 45,
+      "averageCalories": 410,
+      "protein": 4,
+      "carbs": 85,
+      "fat": 4
+    },
+    "sources": [
+      "https://yemek.com/tarif/zingil-tatlisi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/turkiye-turu/guneydogu-anadolu-yemekleri/zingil"
+    ],
+    "confidence": "high",
+    "reason": "Mevcut tarif hem pekmezli kimlik hem malzeme adım eşleşmesi açısından sorunlu. Şerbetli kızartma yapısı ve kalori daha yüksek olmalı."
+  },
+  {
+    "slug": "zonguldak-malay-misir-unlu",
+    "verdict": "PASS",
+    "reason": "Mısır unu, su, tereyağı, kaymak, soğan, tuz ve karabiber ölçüleri Zonguldak kaynaklarıyla neredeyse birebir uyumlu. Süreler makul.",
+    "sources": [
+      "https://www.visitzonguldak.com/neler-yenir/malay",
+      "https://lezzetler.com/tarif-115483"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "zurek-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 çavdar ekşi mayalı sıvı diyor ama ingredient listesi sadece çavdar unu veriyor",
+      "ingredients: step 2 defne, step 5 dereotu kullanıyor ama ingredient listesinde yok",
+      "ingredients: klasik żurek kaynaklarında mercanköşk temel baharat, mevcut listede yok"
+    ],
+    "corrections": {
+      "ingredients_remove": [
+        "Çavdar unu"
+      ],
+      "ingredients_add": [
+        {
+          "name": "Hazır çavdar ekşi mayası",
+          "amount": "1",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Defne yaprağı",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Mercanköşk",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Dereotu",
+          "amount": "0.25",
+          "unit": "demet"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Hazır çavdar ekşi mayasını 1 su bardağı soğuk suyla pürüzsüz açın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Sarımsak, defne yaprağı, mercanköşk ve 4 su bardağı suyu 10 dakika kaynatın.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Çavdarlı ekşi karışımı tencereye yavaş ekleyip 12 dakika kısık ateşte pişirin.",
+          "timerSeconds": 720
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Yoğurdu sıcak çorbayla ılıtıp tencereye ekleyin, asitli tabanda kesilmesin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Yumurta dilimleri ve dereotuyla sıcak servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.polonist.com/polish-zurek-soup/",
+      "https://www.everyday-delicious.com/zurek-recipe-polish-sour-rye-soup/"
+    ],
+    "confidence": "high",
+    "reason": "Vejetaryen uyarlama korunabilir, fakat żurek için hazır çavdar ekşi mayası, defne ve mercanköşk listede net görünmeli."
+  }
+]

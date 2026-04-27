@@ -1,0 +1,796 @@
+[
+  {
+    "slug": "visneli-gelincik-serbeti-elazig-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 seker kullaniyor ama ingredient listesinde yok",
+      "totalMinutes: step 2 icindeki 10 dakika dinlendirme toplam sureye yansimiyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Şeker", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "totalMinutes": 18
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/gelincik-serbeti/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/icecek-tarifleri/soguk-icecekler/gelincik-serbeti"
+    ],
+    "confidence": "medium",
+    "reason": "Şerbet mantığı kaynaklarla uyumlu. Net hata, stepte kullanılan şekerin listede olmaması ve 10 dakikalık dinlendirmenin toplam süreye eklenmemesi."
+  },
+  {
+    "slug": "visneli-irmik-kup-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 5 icindeki 45 dakika sogutma toplam sureye yansimiyor",
+      "tags: 45 dakika sogutma eklenince 30-dakika-alti etiketi yanlis kaliyor"
+    ],
+    "corrections": {
+      "totalMinutes": 65,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/visne-soslu-irmik-tatlisi/2698",
+      "https://www.visne.gen.tr/visne-soslu-irmik-tatlisi.html"
+    ],
+    "confidence": "high",
+    "reason": "Sütlü irmik ve vişne sosu akışı doğru. Soğuk kup tatlısında bekleme servis dokusunun parçası olduğu için toplam süre ve hızlı etiket düzelmeli."
+  },
+  {
+    "slug": "visneli-irmik-tatlisi-edirne-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 5 icindeki 2 saat sogutma toplam sureye dahil degil",
+      "tags: 2 saat sogutma nedeniyle 30-dakika-alti etiketi yanlis"
+    ],
+    "corrections": {
+      "totalMinutes": 146,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/visneli-irmik-tatlisi-tarifi/14218",
+      "https://www.irmik.gen.tr/visne-soslu-irmik-tatlisi.html"
+    ],
+    "confidence": "high",
+    "reason": "İrmik, süt ve vişne sosu bileşimi doğru. Kalıptan düzgün çıkması için verilen 2 saat soğutma toplam süreyi ve kısa tarif etiketini değiştiriyor."
+  },
+  {
+    "slug": "visneli-kefir-icecegi-sakarya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: yoğurt, su ve otlu dokunus diyor ama ingredient listesi kefir, visne suyu ve buzdan olusuyor",
+      "steps: step 2 kisa sure gibi muglak ifade kullaniyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kefir ve vişne suyunu soğuk blender kabına alın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Buzu ekleyip 30 saniye köpüklü ve homojen olana kadar çekin.", "timerSeconds": 30 },
+        { "stepNumber": 3, "instruction": "İçeceği soğuk bardaklara paylaştırıp bekletmeden servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.lifewaykefir.com/recipes/cherry-kefir-smoothie/",
+      "https://www.paeats.org/recipe/blueberry-oatmeal-smoothie/"
+    ],
+    "confidence": "high",
+    "reason": "Kefirli meyve içeceği doğru bir içecek kurgusu. Mevcut adımlar ingredient listesiyle uyuşmayan yoğurt, su ve ot ifadesi taşıyor."
+  },
+  {
+    "slug": "visneli-kefir-smoothie",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lifewaykefir.com/recipes/cherry-kefir-smoothie/",
+      "https://www.paeats.org/recipe/blueberry-oatmeal-smoothie/"
+    ],
+    "confidence": "high",
+    "reason": "Kefir, vişne, bal ve buzla blenderda hazırlanan smoothie akışı tutarlı. Süt allergen beyanı, süreler ve makrolar makul görünüyor."
+  },
+  {
+    "slug": "visneli-komposto-cooler-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: ingredient listesinde hazir visne kompostosu varken tencerede kaynatma anlatiyor",
+      "times: cookMinutes 0 ama step 2 kaynatma 8-12 dakika diyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Soğuk vişne kompostosu, limon suyu ve buzu sürahiye alın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Sodayı yavaşça ekleyip 15 saniye nazikçe karıştırın, gazı kaçmasın.", "timerSeconds": 15 },
+        { "stepNumber": 3, "instruction": "Cooler içeceğini buzlu bardaklara paylaştırıp hemen servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://traditional.recipes/kompot-czeresniowy-cherry-compote",
+      "https://www.swedishfood.com/desserts/cherry-compote"
+    ],
+    "confidence": "high",
+    "reason": "Polonya kompotu kaynaklarda pişmiş meyve içeceği. Cooler versiyonda hazır kompostoyu soda ile açmak gerekir, tekrar kaynatma süreyle çelişiyor."
+  },
+  {
+    "slug": "visneli-kompot-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: cookMinutes 10 olmasina ragmen adimlarda kaynatma pisme sureci anlatilmiyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Vişne, su, şeker ve tarçını tencereye alın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Karışımı 10 dakika hafif kaynatın, vişne tadı suya geçsin.", "timerSeconds": 600 },
+        { "stepNumber": 3, "instruction": "Kompotu süzüp ılık veya soğuk servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://traditional.recipes/kompot-czeresniowy-cherry-compote",
+      "https://www.swedishfood.com/desserts/cherry-compote"
+    ],
+    "confidence": "high",
+    "reason": "Vişneli kompot kısa süre kaynatılan meyve içeceği olarak doğru. Mevcut steps pişirme aşamasını atladığı için cookMinutes ile uyumsuz kalıyor."
+  },
+  {
+    "slug": "visneli-lorlu-kup-edirne-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 yoğurt ve bal kullaniyor ama listede yok",
+      "ingredients: step 5 cevizle servis ediyor ama listede yok",
+      "allergens: ceviz eklenirse KUSUYEMIS beyanı gerekir",
+      "totalMinutes: 15 dakika sos sogutma toplam sureye dahil degil"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yoğurt", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Bal", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Ceviz", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["KUSUYEMIS"],
+      "totalMinutes": 35
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/visne-soslu-irmik-tatlisi/2698",
+      "https://www.nefisyemektarifleri.com/visne-soslu-muhallebi/"
+    ],
+    "confidence": "high",
+    "reason": "Lor ve vişneyle kuplu tatlı makul. Hata, adımda kullanılan yoğurt, bal ve cevizin listede olmaması ve ceviz allergeninin eksik kalması."
+  },
+  {
+    "slug": "visneli-mors-rus-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.rbth.com/russian-kitchen/333330-russian-mors-berry-drink-recipe",
+      "https://www.196flavors.com/russia-mors/"
+    ],
+    "confidence": "high",
+    "reason": "Mors, meyvenin su ve şekerle hazırlanıp soğuk servis edildiği Rus içeceğiyle uyumlu. Malzemeler, vegan etiketleri ve süreler makul."
+  },
+  {
+    "slug": "visneli-syrniki-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 tavayi yaglayin diyor ama pisirme yagi listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.olgasflavorfactory.com/recipes/breakfast/syrniki-russian-cheese-pancakes/",
+      "https://www.196flavors.com/russia-syrniki/"
+    ],
+    "confidence": "high",
+    "reason": "Syrniki lor benzeri peynir, yumurta ve unla yapılan tavada pancake akışına uygun. Eksik olan tek net öğe tavada kullanılan yağ."
+  },
+  {
+    "slug": "visneli-vermut-kokteyli-istanbul-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.liquor.com/recipes/manhattan-2/",
+      "https://www.diffordsguide.com/cocktails/recipe/2291/sweet-vermouth-cocktail"
+    ],
+    "confidence": "medium",
+    "reason": "Vermut, vişne ve portakal kabuğuyla kurulan aromatik kokteyl yapısı tutarlı. Alkollü ve vegan etiketleri, kısa servis süresi ve allergen boşluğu makul."
+  },
+  {
+    "slug": "visneli-yarma-hosafi-malatya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/hosaf-tarifi/",
+      "https://www.yemek.com/tarif/visne-hosafi/"
+    ],
+    "confidence": "medium",
+    "reason": "Yarma ve vişneyle kaynatılan hoşaf kurgusu Anadolu hoşaf tekniğiyle uyumlu. Gluten beyanı ve pişirme süreleri tarif içeriğiyle tutarlı."
+  },
+  {
+    "slug": "visneli-yogurt-shake",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: tarif Macar mutfağına ait klasik bir içecek olarak doğrulanmıyor, genel yoğurtlu meyve shake kurgusunda",
+      "description: Macar mutfağı atfı kaynakla desteklenmiyor"
+    ],
+    "corrections": {
+      "cuisine": "us",
+      "description": "Ekşi vişne, yoğurt ve sütle hazırlanan serin bir meyveli shake oluşturur."
+    },
+    "sources": [
+      "https://www.paeats.org/recipe/blueberry-oatmeal-smoothie/",
+      "https://www.driscolls.com/recipes/blueberry-oatmeal-smoothie"
+    ],
+    "confidence": "medium",
+    "reason": "İçecek tekniği doğru, fakat Macar mutfağı iddiası kaynaklarda net karşılık bulmuyor. Genel smoothie/shake olarak işaretlemek daha doğru."
+  },
+  {
+    "slug": "vitamina-de-abacate",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.oliviascuisine.com/vitamina-de-abacate/",
+      "https://www.easyanddelish.com/avocado-smoothie/"
+    ],
+    "confidence": "high",
+    "reason": "Brezilya vitamina de abacate avokado, süt ve şekerle hazırlanan blender içeceği olarak doğru. Süt allergeni, süre ve makrolar makul."
+  },
+  {
+    "slug": "viyana-hashasli-erikli-kaiserschmarrn",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "cuisine: tarif Avusturya/Viyana Kaiserschmarrn kimliğinde ama cuisine hu yazilmis",
+      "description: Avusturya usulü dese de cuisine kodu Macaristan'a bagli"
+    ],
+    "corrections": {
+      "cuisine": "de"
+    },
+    "sources": [
+      "https://www.austria.info/en/recipes/kaiserschmarrn/",
+      "https://www.seriouseats.com/kaiserschmarrn-austrian-torn-pancake-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Kaiserschmarrn Avusturya tatlısıdır, Macar cuisine kodu yanıltıcı. Austria kodu yoksa de en yakın uygulanabilir kod olarak manuel review gerektirir."
+  },
+  {
+    "slug": "waldorf-salatasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.foodnetwork.com/recipes/waldorf-salad-recipe-1937591",
+      "https://food52.com/recipes/36688-classic-waldorf-salad"
+    ],
+    "confidence": "high",
+    "reason": "Elma, kereviz, ceviz ve mayonezli sos Waldorf salatasıyla uyumlu. Süt, yumurta, kuruyemiş ve kereviz allergenleri doğru beyan edilmiş."
+  },
+  {
+    "slug": "warsaw-kotlet-schabowy",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "identity: kotlet schabowy klasik olarak domuz loin ile yapilir, mevcut tarif dana kontrfile kullaniyor",
+      "description: dana uyarlama oldugunu belirtmedigi icin klasik Polonya yemeği gibi yanıltıyor"
+    ],
+    "corrections": {
+      "description": "Kotlet schabowy, bu tarifte dana kontrfileyle uyarlanan Polonya usulü çıtır pane et tabağıdır."
+    },
+    "sources": [
+      "https://www.polonist.com/kotlet-schabowy-polish-pork-cutlet/",
+      "https://www.polishyourkitchen.com/polish-fried-pork-cutlets/"
+    ],
+    "confidence": "high",
+    "reason": "Pane et tekniği doğru olsa da kotlet schabowy kimliği domuz etiyle kurulur. Dana kullanımı ancak açıkça uyarlama diye belirtilirse yanıltıcılık azalır."
+  },
+  {
+    "slug": "warsaw-pierogi-ruskie",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.polonist.com/recipe/pierogi-ruskie-potato-cheese/",
+      "https://www.everydayhealthyrecipes.com/polish-cheese-potato-dumplings-pierogi-ruskie/"
+    ],
+    "confidence": "high",
+    "reason": "Patates, lor benzeri peynir, soğan, unlu hamur ve ekşi krema pierogi ruskie yapısıyla uyumlu. Gluten ve süt allergenleri doğru."
+  },
+  {
+    "slug": "wasabi-bezelye",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.self.com/story/wasabi-pea-snack-recipe",
+      "https://www.epicurious.com/recipes/food/views/crunchy-wasabi-salmon-with-lime-237322"
+    ],
+    "confidence": "medium",
+    "reason": "Wasabi bezelye atıştırmalığında bezelyenin kurutulup wasabi ve soya aromasıyla kaplanması doğru. Soya allergeni ve vegan etiketleri uyumlu."
+  },
+  {
+    "slug": "wattleseed-custard-kup-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 5 icindeki 2 saat sogutma toplam sureye dahil edilmemis"
+    ],
+    "corrections": {
+      "totalMinutes": 144
+    },
+    "sources": [
+      "https://www.sbs.com.au/food/recipe/wattleseed-custard-tart/4o1e2gv9b",
+      "https://www.australian-macadamias.org/consumer/our-nut-hub/recipes/wattleseed-custard/"
+    ],
+    "confidence": "medium",
+    "reason": "Wattleseed aromalı custard kurgusu Avustralya tatlı fikriyle uyumlu. Kritik sorun, iki saatlik soğutmanın toplam süreye yansımaması."
+  },
+  {
+    "slug": "wattleseed-espresso-martini-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 1 gazli ekler sona kalsin diyor ama espresso martini gazli bileşen içermiyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Espressoyu soğutun, votka, kahve likörü, wattleseed ve buzu tezgaha alın.", "timerSeconds": 60 }
+      ]
+    },
+    "sources": [
+      "https://iba-world.com/espresso-martini/",
+      "https://www.liquor.com/recipes/espresso-martini-2/"
+    ],
+    "confidence": "high",
+    "reason": "Espresso, votka, kahve likörü ve buzla çalkalama doğru. Sadece ilk adım gazlı içecek olmayan tarifte boilerplate bir ifade taşıyor."
+  },
+  {
+    "slug": "welsh-rarebit",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.wales.com/visit/food-and-drink/welsh-recipes/welsh-rarebit",
+      "https://realfood.tesco.com/recipes/welsh-rarebit.html"
+    ],
+    "confidence": "high",
+    "reason": "Cheddar, hardal, sütlü sos ve kızarmış ekmek rarebit yapısıyla uyumlu bir ev uyarlaması. Gluten, süt ve hardal allergenleri doğru."
+  },
+  {
+    "slug": "welsh-rarebit-bake-ingiliz-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.wales.com/visit/food-and-drink/welsh-recipes/welsh-rarebit",
+      "https://realfood.tesco.com/recipes/welsh-rarebit.html"
+    ],
+    "confidence": "high",
+    "reason": "Ekmek üstünde cheddar ve hardallı karışımı fırınlama rarebit bake yaklaşımıyla uyumlu. Süreler ve allergen beyanları tutarlı."
+  },
+  {
+    "slug": "welsh-rarebit-toast-ingiliz-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.therarewelshbit.com/welsh-rarebit-recipe/",
+      "https://www.allrecipes.com/article/what-is-welsh-rarebit/"
+    ],
+    "confidence": "high",
+    "reason": "Kızarmış ekmek, cheddar, hardal ve tereyağlı sos rarebit toast kimliğiyle doğru. Gluten, süt ve hardal allergenleri doğru beyan edilmiş."
+  },
+  {
+    "slug": "whiskey-highball",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.foodandwine.com/cocktails-spirits/how-master-highball",
+      "https://www.cocktail-maestro.com/cocktails/whiskey-highball"
+    ],
+    "confidence": "high",
+    "reason": "Viski, soğuk soda, buz ve limon kabuğu Japon highball tekniğiyle uyumlu. Kısa hazırlık süresi ve alkollü etiketleri doğru."
+  },
+  {
+    "slug": "whiskey-sour",
+    "verdict": "PASS",
+    "sources": [
+      "https://iba-world.com/iba-cocktail/whiskey-sour/",
+      "https://www.liquor.com/recipes/whiskey-sour/"
+    ],
+    "confidence": "high",
+    "reason": "Bourbon, limon suyu ve şeker şurubu klasik whiskey sour oranlarıyla uyumlu. Yumurta kullanılmadığı için allergen boşluğu doğru."
+  },
+  {
+    "slug": "white-bean-shakshuka",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: shakshuka Kuzey Afrika ve Orta Doğu kökenli, me kodu yanıltıcı",
+      "ingredients: step 2 tavayi yaglayin diyor ama yağ listede yok"
+    ],
+    "corrections": {
+      "cuisine": "ma",
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/white-bean-shakshuka/",
+      "https://www.nutrition.gov/recipes/white-bean-and-egg-shakshuka"
+    ],
+    "confidence": "high",
+    "reason": "Beyaz fasulyeli shakshuka doğru bir varyasyon. Cuisine kodu Montenegro yerine Kuzey Afrika hattına çekilmeli ve tavada kullanılan yağ listelenmeli."
+  },
+  {
+    "slug": "wonton-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 ve 5 susam yağı kullanıyor ama listede yok",
+      "ingredients: step 5 beyaz biber, step 6 taze soğan diyor ama listede yok",
+      "allergens: susam yağı eklenirse SUSAM beyanı gerekir"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Susam yağı", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Beyaz biber", "amount": "0.25", "unit": "çay kaşığı" },
+        { "name": "Taze soğan", "amount": "2", "unit": "dal" }
+      ],
+      "allergens_add": ["SUSAM"]
+    },
+    "sources": [
+      "https://thewoksoflife.com/wonton-soup/",
+      "https://www.recipetineats.com/wonton-soup/"
+    ],
+    "confidence": "high",
+    "reason": "Wonton çorbası tavuk dolgulu mantı ve berrak sıcak su yapısıyla doğru. Stepte geçen susam yağı, biber ve taze soğan veride eksik."
+  },
+  {
+    "slug": "xiao-long-bao",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "identity: klasik xiao long bao genelde domuz dolgulu çorbalı mantıdır, mevcut tarif dana kıyma kullanıyor",
+      "description: dana uyarlama oldugunu belirtmedigi icin klasik Shanghai tarifi gibi duruyor"
+    ],
+    "corrections": {
+      "description": "Şanghay çorbalı mantısının dana uyarlaması; ince hamurda buharla eriyen et suyu jölesi saklar."
+    },
+    "sources": [
+      "https://www.biteunite.com/recipes/chinese/soupdumpling",
+      "https://www.jillianraecooks.com/recipe/soup-dumplings-xiao-long-bao"
+    ],
+    "confidence": "high",
+    "reason": "Teknik olarak aspikli çorbalı mantı doğru. Fakat klasik kimlik domuz dolgulu olduğu için dana kullanımını açıklamamak kullanıcıyı yanıltır."
+  },
+  {
+    "slug": "yaban-mersinli-lor-smoothie",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.paeats.org/recipe/blueberry-oatmeal-smoothie/",
+      "https://www.driscolls.com/recipes/blueberry-oatmeal-smoothie"
+    ],
+    "confidence": "high",
+    "reason": "Lor, süt, yaban mersini ve bal ile yüksek proteinli smoothie kurgusu tutarlı. Süt allergeni, kısa blender süresi ve makrolar makul."
+  },
+  {
+    "slug": "yaban-mersinli-yulaf-smoothie-isvec-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.driscolls.com/recipes/blueberry-oatmeal-smoothie",
+      "https://www.umass.edu/agriculture-food-environment/nutrition/publications-resources/recipes/blueberry-oatmeal-smoothie"
+    ],
+    "confidence": "high",
+    "reason": "Yaban mersini, yoğurt, süt ve yulafla yapılan smoothie kaynaklarla uyumlu. Beş dakikalık yulaf bekletme toplam hazırlığa sığıyor."
+  },
+  {
+    "slug": "yabanmersinli-sutlac-kup-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 5 icindeki 1 saat sogutma toplam sureye dahil edilmemis"
+    ],
+    "corrections": {
+      "totalMinutes": 92
+    },
+    "sources": [
+      "https://www.berryworld.com/berries/recipes/192_blueberry-coconut-rice-pudding",
+      "https://chefreader.com/rice-pudding-with-blueberry-sauce/"
+    ],
+    "confidence": "high",
+    "reason": "Sütlaç ve yaban mersini sosu birleşimi rice pudding varyasyonlarıyla uyumlu. Bir saatlik soğutma servis dokusunun parçası olduğu için totalMinutes artmalı."
+  },
+  {
+    "slug": "yabanmersinli-yulaf-kup-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: 20 dakika yulaf bekletme ve 30 dakika sogutma toplam sureye dahil degil",
+      "tags: toplam sure 60 dakikaya ciktigi icin 30-dakika-alti yanlis"
+    ],
+    "corrections": {
+      "totalMinutes": 60,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.foodnetwork.com/recipes/food-network-kitchen/blueberry-overnight-oats-8855959",
+      "https://wholefully.com/blueberry-overnight-oats/"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurtlu yulaf kup akışı doğru. Ancak bekleme ve soğutma süreleri toplam süreye katılmadığı için kısa tarif etiketi yanlış kalıyor."
+  },
+  {
+    "slug": "yag-somunu-durum-konya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://sermehan.com/tr/menumuz/firin-cesitleri/yag-somunu",
+      "https://www.konyarehberi.com/yag-somunu-konya/"
+    ],
+    "confidence": "medium",
+    "reason": "Konya yağ somunu ekmeğinin peynir ve tereyağıyla sıcak servis edilmesi yerel ürün mantığıyla uyumlu. Gluten ve süt beyanı doğru."
+  },
+  {
+    "slug": "yag-somunu-konya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://sermehan.com/tr/menumuz/firin-cesitleri/yag-somunu",
+      "https://www.konyarehberi.com/yag-somunu-konya/"
+    ],
+    "confidence": "medium",
+    "reason": "Unlu hamur, tereyağı ve kaşarla fırınlanan Konya yağ somunu kurgusu doğru. Dinlendirme süresi hazırlık içinde, allergenler uyumlu."
+  },
+  {
+    "slug": "yaglama-corbasi-kayseri-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "identity: Kayseri yağlaması çorba değil, kıymalı harçla kat kat şebit/lavaş yemeğidir",
+      "ingredients: step 1 150 gr kıyma diyor ama listede 250 gr var",
+      "ingredients: step 3 tuz ve pul biber, step 5 yoğurt ve kuru nane kullanıyor ama listede yok"
+    ],
+    "corrections": {
+      "description": "Kayseri yağlama çorbası adıyla verilen bu içerik, klasik yağlamadan esinlenen kıymalı ve ekmekli serbest bir çorba uyarlamasıdır.",
+      "ingredients_add": [
+        { "name": "Yoğurt", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Kuru nane", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Pul biber", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": ["SUT"]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kayseri-yaglamasi/",
+      "https://www.efsanetarifler.com/tarif/kayseri-yaglama-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Kaynaklar Kayseri yağlamasını kat kat şebit yemeği olarak veriyor. Mevcut çorba kimliği yapısal olarak yanıltıcı, manuel review gerekir."
+  },
+  {
+    "slug": "yagli-biber-corbasi-kayseri-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 yarim su bardagi bulgur diyor ama ingredient 0.25 su bardagi",
+      "ingredients: step 3 sicak su ve step 4 dogranmis biber kullaniyor ama listede yok",
+      "ingredients: step 5 limon suyu ve servis icin tuz kullaniyor ama tuz listede yok"
+    ],
+    "corrections": {
+      "ingredients_amount_change": [
+        { "name": "İnce bulgur", "newAmount": "0.5", "newUnit": "su bardağı" }
+      ],
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "1", "unit": "litre" },
+        { "name": "Yeşil biber", "amount": "1", "unit": "adet" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.ibrahiminyeri.com/post/yayla-corbasi-tarifi",
+      "https://tarifmotoru.com/tarif/yayla-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Salça, tereyağı ve bulgurlu çorba akışı makul. Sorun, steplerdeki miktar ve su, biber, tuz kullanımının ingredient verisiyle eşleşmemesi."
+  },
+  {
+    "slug": "yagli-kete-tostu-kayseri-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/yagli-kete-tarifi/",
+      "https://www.yemek.com/tarif/kete/"
+    ],
+    "confidence": "medium",
+    "reason": "Yağlı kete, peynir ve domatesle hızlı tost kurgusu makul bir kahvaltı uyarlaması. Mevcut allergenler kete ve peynir içeriğiyle uyumlu."
+  },
+  {
+    "slug": "yaglisi-giresun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: Giresun yağlısı kaynaklarda yumurtalı pide olarak geçiyor, mevcut listede yumurta yok",
+      "allergens: yumurta eklenirse YUMURTA beyanı gerekir"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yumurta", "amount": "1", "unit": "adet" }
+      ],
+      "allergens_add": ["YUMURTA"]
+    },
+    "sources": [
+      "https://www.sebingundem.com/haber/giresun-yaglisi-4174.html",
+      "https://www.nefisyemektarifleri.com/giresun-yaglisi/"
+    ],
+    "confidence": "high",
+    "reason": "Giresun yağlısı hamur, tereyağı ve çoğu tarifte yumurtayla tamamlanır. Mevcut tarif yumurtayı kaçırdığı için ingredient ve allergen eksik."
+  },
+  {
+    "slug": "yakisoba",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 havuc ve sogan kullaniyor ama listede yok",
+      "ingredients: step 5 yakisoba sosu diyor ama listede yalniz soya sosu var"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Havuç", "amount": "1", "unit": "adet" },
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Yakisoba sosu", "amount": "3", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/chicken-yakisoba",
+      "https://patient.info/recipes/high-protein-recipes/stir-fried-noodles-with-pork-cabbage-and-ginger-yakisoba"
+    ],
+    "confidence": "high",
+    "reason": "Yakisoba, noodle, lahana, et ve sosla tavada çevrilen Japon yemeği olarak doğru. Stepte kullanılan havuç, soğan ve sos listede eksik."
+  },
+  {
+    "slug": "yakitori",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 sake ve sekerle tare hazirliyor ama ikisi listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sake", "amount": "60", "unit": "ml" },
+        { "name": "Şeker", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.onceuponachef.com/recipes/yakitori.html",
+      "https://yakgrills.com/blogs/recipes/yakitori-series-part-i-tare"
+    ],
+    "confidence": "high",
+    "reason": "Yakitori tavuk ve taze soğan şişlerinin soya, mirin, sake ve şekerli tare ile parlatılmasıdır. Sake ve şeker listede eksik."
+  },
+  {
+    "slug": "yam-woon-sen",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 balik sosu ve seker kullaniyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Balık sosu", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Şeker", "amount": "1", "unit": "tatlı kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.seriouseats.com/yam-woon-sen-glass-noodle-salad-5206676",
+      "https://chefreader.com/thai-glass-noodle-salad-yam-woon-sen/"
+    ],
+    "confidence": "high",
+    "reason": "Cam erişte, karides, lime, yer fıstığı ve otlar yam woon sen ile uyumlu. Sosun temel parçaları olan balık sosu ve şeker listede eksik."
+  },
+  {
+    "slug": "yaprak-sarma",
+    "verdict": "PASS",
+    "sources": [
+      "https://sadikamca.com/tarifler/zeytinyagli-yaprak-sarma/",
+      "https://www.adimadimyemektarifi.com/zeytinyagli-yaprak-sarma-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Asma yaprağı, pirinçli iç harç, zeytinyağı, baharat ve limonla zeytinyağlı sarma yapısı doğru. Vegan etiketleri ve süreler uyumlu."
+  },
+  {
+    "slug": "yarma-ve-kurut-corbasi-erzincan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 5 tereyagli nane sosu diyor ama tereyagi listede yok",
+      "steps: step 1 yarim su bardagi yarma diyor ama ingredient 1 su bardagi"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "1 su bardağı yarmayı 5 su bardağı suda 20 dakika haşlayın.", "timerSeconds": 1200 }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kurut-corbasi/",
+      "https://www.yemek.com/tarif/kurut-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Yarma ve kurutla yoğurt karakterli çorba kurgusu doğru. Tereyağı stepte kullanılıp listede yok, yarma miktarı da step ile ingredient arasında çelişiyor."
+  },
+  {
+    "slug": "yarpuzlu-ayran-igdir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: kefir bazindan bahsediyor ama tarif yoğurtlu ayran",
+      "steps: step 2 yarpuzlu ile otlu dokunus ifadesi bozuk ve muglak"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Yoğurt, su ve tuzu derin kapta pürüzsüz ayran olana kadar çırpın.", "timerSeconds": 45 },
+        { "stepNumber": 2, "instruction": "Yarpuzu ince kıyıp ayrana ekleyin ve 20 saniye karıştırın.", "timerSeconds": 20 },
+        { "stepNumber": 3, "instruction": "Yarpuzlu ayranı soğuk bardaklara paylaştırıp hemen servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/ayran/",
+      "https://www.nefisyemektarifleri.com/naneli-ayran/"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurt, su, tuz ve yarpuzla aromalı ayran mantığı doğru. Mevcut adımlar kefir ve bozuk otlu ifade nedeniyle ingredient listesiyle uyuşmuyor."
+  },
+  {
+    "slug": "yayik-ayranli-nane-icecegi-giresun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: yoğurt ile kefir bazini suyla acin diyor ama ingredient yayik ayrani, nane ve buzdan olusuyor",
+      "steps: step 2 yayik ile otlu dokunus ifadesi bozuk"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Yayık ayranını sürahiye alın, tuzunu kontrol edin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Taze naneyi ince kıyıp buzla birlikte ayrana ekleyin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "İçeceği 20 saniye karıştırıp soğuk bardaklarda servis edin.", "timerSeconds": 20 }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/ayran/",
+      "https://www.nefisyemektarifleri.com/naneli-ayran/"
+    ],
+    "confidence": "high",
+    "reason": "Yayık ayranı ve nane ile soğuk içecek kurgusu doğru. Adımlar kefir bazına kaydığı ve bozuk ifade taşıdığı için değiştirilmelidir."
+  },
+  {
+    "slug": "yayla-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: pirinc haslama, kaynatma ve nane kavurma adimlarinda timerSeconds yok",
+      "steps: step 7 kisa bir dinlenme gibi muglak sure ifadesi kullaniyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Pirinci yıkayıp 5 su bardağı suda 15 dakika yumuşayana kadar haşlayın.", "timerSeconds": 900 },
+        { "stepNumber": 2, "instruction": "Yoğurt, yumurta ve unu ayrı kapta pürüzsüz çırpın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Sıcak çorba suyundan iki kepçe ekleyerek terbiyeyi ılıtın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Terbiyeyi tencereye ince akıtarak ekleyin ve 8 dakika karıştırarak pişirin.", "timerSeconds": 480 },
+        { "stepNumber": 5, "instruction": "Tuzu ekleyip çorbayı 2 dakika düşük ateşte toparlayın.", "timerSeconds": 120 },
+        { "stepNumber": 6, "instruction": "Tereyağında kuru naneyi 45 saniye yakmadan kızdırıp çorbanın üstüne gezdirin.", "timerSeconds": 45 },
+        { "stepNumber": 7, "instruction": "Yayla çorbasını 3 dakika dinlendirip sıcak servis edin.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://www.ibrahiminyeri.com/post/yayla-corbasi-tarifi",
+      "https://tarifmotoru.com/tarif/yayla-corbasi/"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurt, pirinç, yumurta, un ve naneli tereyağı yayla çorbası için doğru. Düzeltme süre ve belirsiz adım disiplinini toparlıyor."
+  },
+  {
+    "slug": "yayla-fasulyeli-gulyas-corbasi-macaristan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "tags: step 4 yoğurt kullanıyor, bu nedenle vegan etiketi yanlis",
+      "ingredients: step 1 havuc ve yağ, step 4 yoğurt, step 5 maydanoz kullaniyor ama listede yok",
+      "allergens: yoğurt eklenirse SUT beyanı gerekir"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Havuç", "amount": "1", "unit": "adet" },
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Yoğurt", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Maydanoz", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "tags_remove": ["vegan"],
+      "allergens_add": ["SUT"]
+    },
+    "sources": [
+      "https://tastehungary.com/journal/hungarian-gulyas-goulash-recipe/",
+      "https://www.gonnawantseconds.com/hungarian-goulash/"
+    ],
+    "confidence": "medium",
+    "reason": "Paprika, soğan, patates ve fasulyeli çorba Macar gulyas çizgisine yakın. Yoğurt ve eksik sebzeler listelenmeli, vegan etiketi kalkmalı."
+  },
+  {
+    "slug": "yer-fistikli-tahin-dip-osmaniye-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.yemek.com/tarif/tahinli-dip-sos/",
+      "https://www.nefisyemektarifleri.com/tahinli-sos/"
+    ],
+    "confidence": "medium",
+    "reason": "Tahin, yer fıstığı, limon ve pideyle sunulan dip sos kurgusu tutarlı. Susam, yer fıstığı ve gluten allergenleri doğru beyan edilmiş."
+  },
+  {
+    "slug": "yesil-detoks-smoothie",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.loveandlemons.com/green-smoothie/",
+      "https://www.eatingwell.com/recipe/251749/really-green-smoothie/"
+    ],
+    "confidence": "high",
+    "reason": "Ispanak, yeşil elma, salatalık ve limon suyuyla blenderda hazırlanan yeşil smoothie tutarlı. Vegan, düşük kalorili etiketleri ve süre makul."
+  }
+]

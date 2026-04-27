@@ -1,0 +1,1193 @@
+[
+  {
+    "slug": "yesil-elma-cevizli-salata-amerikan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: mayonezli yoğurt sosu kullanıyor ama ingredient listesinde mayonez ve yoğurt yok, vegan tag de bozulur"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 3,
+          "instruction": "Limon suyu, zeytinyağı ve bir çimdik tuzu küçük kasede çırpın.",
+          "timerSeconds": null
+        }
+      ],
+      "ingredients_add": [
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çimdik"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/butter-lettuce-with-apples-walnuts-and-pomegranate-seeds",
+      "https://www.epicurious.com/recipes/food/views/butter-lettuce-with-apples-walnuts-and-pomegranate-seeds-380584"
+    ],
+    "confidence": "high",
+    "reason": "Elma, ceviz, marul ve limonlu yağ sosu kaynaklarla uyumlu. Sorun, vegan salatada listede olmayan yoğurtlu mayonez sosunun stepte geçmesi."
+  },
+  {
+    "slug": "yesil-mercimek-yemegi",
+    "verdict": "PASS",
+    "reason": "Yeşil mercimek, soğan, salça ve zeytinyağıyla pişen sade baklagil yemeği kaynaklarla uyumlu. Süre, vegan tag ve allergen beyanı makul.",
+    "sources": [
+      "https://yemek.com/tarif/yesil-mercimek-yemegi/",
+      "https://www.nefisyemektarifleri.com/yesil-mercimek-yemegi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "yesil-mercimekli-bulgur-pilavi-kirsehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step zeytinyağı veya tereyağı ve tuz kullanıyor ama ingredient listesinde yağ ve tuz yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Soğan ve salçayı zeytinyağında orta ateşte kokusu çıkana kadar çevirin.",
+          "timerSeconds": 240
+        }
+      ],
+      "servingSuggestion": "Sıcak pide dilimleri ve közlenmiş biberle tamamlayın."
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yesil-mercimekli-bulgur-pilavi-tarifi/18706",
+      "https://yemek.com/tarif/yesil-mercimekli-bulgur-pilavi/"
+    ],
+    "confidence": "high",
+    "reason": "Mercimekli bulgur pilavı yapısı doğru. Vegan tag korunacaksa tereyağı yerine zeytinyağı netleşmeli, tuz da listede yer almalı."
+  },
+  {
+    "slug": "yesil-mercimekli-eriste-corbasi-yozgat-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step yağ, salça, kuru nane ve tuz kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Domates salçası",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        },
+        {
+          "name": "Kuru nane",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yesil-mercimekli-eriste-corbasi/5653",
+      "https://www.nefisyemektarifleri.com/yesil-mercimekli-eriste-corbasi/"
+    ],
+    "confidence": "high",
+    "reason": "Mercimekli erişte çorbası kaynaklarda erişte, mercimek, salça veya naneli yağla kuruluyor. Mevcut tarifte stepte kullanılan temel ekler listede eksik."
+  },
+  {
+    "slug": "yesil-mercimekli-kete-erzurum-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: hamur stepinde geçen su, maya ve tuz ingredient listesinde yok",
+      "time: 30 dakika mayalanma ve 8 dakika dinlenme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Su",
+          "amount": "0.75",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Kuru maya",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "prepMinutes": 35,
+      "cookMinutes": 25,
+      "totalMinutes": 98,
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Hamuru mayalanana kadar dinlendirin, daha kolay açılacak kıvama gelsin.",
+          "timerSeconds": 1800
+        }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/erzurum/neyenir/kete",
+      "https://www.nefisyemektarifleri.com/mercimekli-kete/"
+    ],
+    "confidence": "medium",
+    "reason": "Kete hamuru için su, maya ve tuz gerekir. Mercimekli iç makul, fakat mevcut süre mayalanma ve son dinlenmeyi kullanıcıya göstermiyor."
+  },
+  {
+    "slug": "yesil-mercimekli-pancar-corbasi-bolu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step zeytinyağı, tuz ve ekşi denge için sirke veya limon kullanıyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Limon suyu",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://ye-mek.net/tarif/pancarli-mercimek-salatasi",
+      "https://www.nefisyemektarifleri.com/pancar-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Pancar ve yeşil mercimek uyumlu bir baklagil sebze birleşimi. Açık sorun, stepte kullanılan yağ, limon ve tuzun listede olmaması."
+  },
+  {
+    "slug": "yesil-papayali-karides-salatasi-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: kaynaklarda yeşil papaya salatası sosunda şeker, ot ve çoğunlukla kavrulmuş yer fıstığı var; step şeker kullanıyor ama listede yok",
+      "servingSuggestion: zeytin ve beyaz peynir Vietnam salatası için yanıltıcı"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Toz şeker",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        },
+        {
+          "name": "Kavrulmuş yer fıstığı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "allergens_add": [
+        "YER_FISTIGI"
+      ],
+      "servingSuggestion": "Üzerine yer fıstığı ve nane serpip lime dilimiyle soğuk servis edin."
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/green-papaya-salad-with-shrimp-10520",
+      "https://scootersaigontour.com/green-papaya-salad-with-shrimp-and-pork/"
+    ],
+    "confidence": "high",
+    "reason": "Vietnam tipi yeşil papaya salatasında balık sosu, lime, şeker ve fıstık dengesi beklenir. Mevcut tarifte şeker eksik, servis metni yanlış mutfak hissi veriyor."
+  },
+  {
+    "slug": "yesil-smoothie",
+    "verdict": "PASS",
+    "reason": "Ispanak, muz, elma, portakal suyu ve chia ile beş dakikalık yeşil smoothie yapısı kaynaklarla uyumlu. Vegan ve allergen alanları makul.",
+    "sources": [
+      "https://www.goeatgreen.com/recipe-for-spinach-smoothie-vegan/",
+      "https://yaaholidays.com/en/recipes/smoothies/green-smoothie"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "yesil-soganli-omlet-banh-mi-tost-vietnam-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "identity: banh mi tost adı kullanılıyor ama kaynaklardaki turşulu havuç, salatalık ve kişniş gibi temel sandviç öğeleri yok",
+      "ingredients: mevcut tarif omletli baget olarak çalışır ama banh mi kimliği eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Turşulanmış havuç",
+          "amount": "0.5",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Salatalık",
+          "amount": "0.5",
+          "unit": "adet"
+        },
+        {
+          "name": "Kişniş",
+          "amount": "0.25",
+          "unit": "demet"
+        }
+      ],
+      "servingSuggestion": "Kesip turşulu havuç ve kişniş katmanını görünür bırakın."
+    },
+    "sources": [
+      "https://www.tastemade.com/recipes/omelette-banh-mi",
+      "https://omnivorescookbook.com/egg-banh-mi/"
+    ],
+    "confidence": "high",
+    "reason": "Omletli baget tek başına banh mi kimliği taşımaz. Banh mi için turşulu sebze, salatalık ve taze ot katmanı temel bağlamdır."
+  },
+  {
+    "slug": "yesil-tay-korisi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step bambu filizi ve şeker kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Bambu filizi",
+          "amount": "1",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Toz şeker",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.foodreference.com/html/green-thai-chicken-212.html",
+      "https://hot-thai-kitchen.com/green-curry-new-2/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, yeşil köri ezmesi, hindistan cevizi sütü, balık sosu ve fesleğen doğru. Bambu filizi ve şeker stepte geçtiği için listede de olmalı."
+  },
+  {
+    "slug": "yogurtlu-bulgurlu-sebze-salatasi-ankara-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step domates, yeşillik, sarımsak ve tuz kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Domates",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Dereotu",
+          "amount": "0.25",
+          "unit": "demet"
+        },
+        {
+          "name": "Sarımsak",
+          "amount": "1",
+          "unit": "diş"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.islamveihsan.com/yogurtlu-bulgur-salatasi-tarifi.html",
+      "https://www.nefisyemektarifleri.com/yogurtlu-bulgur-salatasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Yoğurtlu bulgur salatası kaynaklarda sarımsak ve yeşillikle destekleniyor. Mevcut stepte geçen ekler listede olmadığı için veri eksik."
+  },
+  {
+    "slug": "yogurtlu-chia-protein-kup",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 12 dakika bekletme istiyor ama totalMinutes 10 dakika"
+    ],
+    "corrections": {
+      "prepMinutes": 12,
+      "totalMinutes": 12
+    },
+    "sources": [
+      "https://www.verywellhealth.com/chia-seed-in-yogurt-for-gut-health-11945047",
+      "https://www.eatingwell.com/chia-seed-pudding-vs-overnight-oats-11839670"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurt, chia ve protein tozu kup yapısı makul. Tek net sorun, 12 dakikalık bekletme adımının toplam süreden uzun olması."
+  },
+  {
+    "slug": "yogurtlu-cirpilmis-patates-ezmesi-eskisehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 8-18 dakika gibi belirsiz aralık ve listede olmayan tahin seçeneği var",
+      "time: 15 dakika soğutma totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "prepMinutes": 10,
+      "cookMinutes": 12,
+      "totalMinutes": 37,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Patatesleri iri doğrayıp tuzlu suda 12 dakika yumuşayana kadar haşlayın.",
+          "timerSeconds": 720
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Yoğurt, sarımsak ve zeytinyağını pürüzsüz karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Ezmesini servis tabağına yayıp üstüne yağı gezdirin ve 15 dakika buzdolabında dinlendirin.",
+          "timerSeconds": 900
+        }
+      ]
+    },
+    "sources": [
+      "https://ye-mek.net/tarif/yogurtlu-patates-ezmesi",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yogurtlu-patates-salatasi-tarifi/2688"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurtlu patates ezmesi doğru bir meze yapısı. Aralıklı süre ve tahin ifadesi net değil, ayrıca soğutma toplam süreye eklenmeli."
+  },
+  {
+    "slug": "yogurtlu-eriste-corbasi-cankiri-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step un ve tereyağı kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Un",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Tereyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yesil-mercimekli-eriste-corbasi/5653",
+      "https://www.nefisyemektarifleri.com/yogurtlu-eriste-corbasi/"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurtlu erişte çorbası unlu yumurtalı terbiye ve naneli tereyağıyla uyumlu. Mevcut ingredient listesi bu iki kullanılan öğeyi eksik bırakmış."
+  },
+  {
+    "slug": "yogurtlu-findikli-biber-dip-bartin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: hazır köz biber için haşlama ve tahin gibi alakasız şablon ifade var",
+      "time: 15 dakika dinlenme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "cookMinutes": 0,
+      "totalMinutes": 25,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Köz kapya biberleri süzgeçte 2 dakika bekletip ince doğrayın.",
+          "timerSeconds": 120
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Süzme yoğurdu sarımsak ve bir çimdik tuzla pürüzsüz karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Biber ve fındığı yoğurtla birleştirip ezmeden karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Dipi servis tabağına yayıp 15 dakika buzdolabında dinlendirin.",
+          "timerSeconds": 900
+        }
+      ],
+      "ingredients_add": [
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çimdik"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yogurtlu-biber-tarifi/11151",
+      "https://www.nefisyemektarifleri.com/kozlenmis-biberli-yogurtlu-meze/"
+    ],
+    "confidence": "medium",
+    "reason": "Köz biber, yoğurt, sarımsak ve fındık meze olarak uyumlu. Mevcut step şablonu hazır köz bibere yanlış işlem ve eksik süre yazıyor."
+  },
+  {
+    "slug": "yogurtlu-havuc-salatasi-cankiri-usulu",
+    "verdict": "PASS",
+    "reason": "Havuç, yoğurt, sarımsak ve zeytinyağıyla yapılan yoğurtlu havuç salatası kaynaklarla uyumlu. Süre, süt allergeni ve servis makul.",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yogurtlu-havuc-salatasi-tarifi/9392",
+      "https://www.misssgibi.com/yogurtlu-havuc-salatasi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "yogurtlu-kabak-cacik-corbasi-burdur-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step zeytinyağı, sarımsak, tuz ve dereotu kullanıyor ama listede yok",
+      "time: 30 dakika soğutma totalMinutes içinde görünmüyor",
+      "servingSuggestion: yumurta ekleme ingredient ve allergen beyanıyla uyumsuz"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Sarımsak",
+          "amount": "1",
+          "unit": "diş"
+        },
+        {
+          "name": "Dereotu",
+          "amount": "0.25",
+          "unit": "demet"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "cookMinutes": 5,
+      "totalMinutes": 45,
+      "servingSuggestion": "Soğuk kaseye alıp üzerine nane ve dereotu serpin."
+    },
+    "sources": [
+      "https://www.kabak.gen.tr/yogurtlu-kabak-corbasi.html",
+      "https://www.arcelik.com.tr/blog/yogurtlu-kabak-corbasi-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Kabaklı yoğurtlu soğuk çorba mantığı doğru. Eksik aromalar listede yok, soğutma süresi saklanmış ve yumurtalı servis allergen dışı kalıyor."
+  },
+  {
+    "slug": "yogurtlu-kabak-corbasi-konya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step un, yumurta sarısı ve tuz kullanıyor ama ingredient listesinde yok",
+      "allergens: un ve yumurta kullanıldığı için GLUTEN ve YUMURTA eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Un",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Yumurta sarısı",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "allergens_add": [
+        "GLUTEN",
+        "YUMURTA"
+      ],
+      "servingSuggestion": "Üzerine naneli tereyağı gezdirip sıcak servis edin."
+    },
+    "sources": [
+      "https://www.arcelik.com.tr/blog/yogurtlu-kabak-corbasi-tarifi",
+      "https://www.hendexfood.com/yogurtlu-kabak-corbasi"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurtlu kabak çorbası unlu yumurtalı terbiye ile uyumlu. Ingredient ve allergen listesi stepte kullanılan terbiye öğelerini kaçırıyor."
+  },
+  {
+    "slug": "yogurtlu-kabak-keskegi-sivas-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: son step nane kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Kuru nane",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/corbalar/corba-tarifleri/yogurtlu-yarma-corbasi",
+      "https://www.nefisyemektarifleri.com/kabakli-bugday-yemegi/"
+    ],
+    "confidence": "medium",
+    "reason": "Buğday, kabak, yoğurt ve tereyağı birleşimi yöresel yoğurtlu buğday yemekleriyle uyumlu. Açık eksik, naneli yağ için nanenin listede olmaması."
+  },
+  {
+    "slug": "yogurtlu-nohut-yahni-konya-ova-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step yumurta, tereyağı ve pul biber kullanıyor ama ingredient listesinde yok",
+      "allergens: yumurta stepte kullanıldığı için YUMURTA eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Yumurta",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Tereyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Pul biber",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "allergens_add": [
+        "YUMURTA"
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/nohutlu-yogurt-corbasi/9172",
+      "https://www.kisikates.com/tarif/antep-usulu-yogurtlu-patates-tarifi-959"
+    ],
+    "confidence": "medium",
+    "reason": "Nohutlu yoğurtlu terbiye yapısı makul. Ancak stepteki yumurta, tereyağı ve pul biber listede olmadığı için allergen ve ingredient eksikliği var."
+  },
+  {
+    "slug": "yogurtlu-pirasa-corbasi-edirne-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step zeytinyağı, sıcak su, dereotu ve tuz kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Sıcak su",
+          "amount": "4",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Dereotu",
+          "amount": "0.25",
+          "unit": "demet"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.kabak.gen.tr/yogurtlu-kabak-corbasi.html",
+      "https://ye-mek.net/tarif/pirincli-yogurt-corbasi"
+    ],
+    "confidence": "medium",
+    "reason": "Yoğurtlu terbiyeli sebze çorbası mantığı doğru, pırasa ile de uygulanabilir. Kullanılan su, yağ, tuz ve dereotu listede eksik."
+  },
+  {
+    "slug": "yogurtlu-sebzeli-bulgur-salatasi-ankara-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step domates, yeşillik, sarımsak ve tuz kullanıyor ama ingredient listesinde yok",
+      "time: 10 dakika dinlenme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Domates",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Dereotu",
+          "amount": "0.25",
+          "unit": "demet"
+        },
+        {
+          "name": "Sarımsak",
+          "amount": "1",
+          "unit": "diş"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "totalMinutes": 22
+    },
+    "sources": [
+      "https://www.islamveihsan.com/yogurtlu-bulgur-salatasi-tarifi.html",
+      "https://www.nefisyemektarifleri.com/yogurtlu-bulgur-salatasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Yoğurtlu bulgur salatası kaynaklarla uyumlu. Mevcut tarif stepte geçen aromaları listelemiyor ve dinlenme süresini toplamdan düşürüyor."
+  },
+  {
+    "slug": "yogurtlu-semizotu-corbasi-tire-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step zeytinyağı ve tuz kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/yogurtlu-semizotu-corbasi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/terbiyeli-yogurtlu-semizotu-corbasi/22034"
+    ],
+    "confidence": "high",
+    "reason": "Semizotu, pirinç, yoğurt ve unlu terbiye kaynaklarla uyumlu. Zeytinyağı ve tuz servis adımında kullanılıyor ama listede yok."
+  },
+  {
+    "slug": "yogurtlu-semizotu-ezmesi-denizli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: bazı Türkçe karakterler bozuk veya yanlış yazılmış, kullanıcıya ASCII katlanmış metin görünüyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Semizotunu ayıklayıp iyice yıkayın, yaprak ve ince saplarını küçük parçalara doğrayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Sarımsağı ezin, yoğurtla birlikte pürüzsüz olana kadar karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Doğranmış semizotunu yoğurda ekleyin, zeytinyağını gezdirip nazikçe harmanlayın.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.olivkoy.com/zeytinyagli-yogurtlu-semizotu-salatasi-tarifi",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yogurtlu-semizotu-salatasi-tarifi/1723"
+    ],
+    "confidence": "high",
+    "reason": "Semizotu, yoğurt, sarımsak ve zeytinyağı yapısı doğru. Düzeltme içerik değil, bozuk Türkçe karakterlerin kullanıcıya hatalı görünmesini önlüyor."
+  },
+  {
+    "slug": "yogurtlu-semizotu-salatasi",
+    "verdict": "PASS",
+    "reason": "Semizotu, yoğurt, sarımsak ve zeytinyağıyla yapılan salata kaynaklarla uyumlu. Süt allergeni, kısa hazırlık ve soğuk servis doğru.",
+    "sources": [
+      "https://www.arcelik.com.tr/blog/yogurtlu-semizotu-salatasi-tarifi",
+      "https://www.sofra.com.tr/tarif/salata/yogurtlu-semizotu-salatasi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "yogurtlu-yarma-corbasi-sivas-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step un, tereyağı ve tuz kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Un",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Tereyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/corbalar/corba-tarifleri/yogurtlu-yarma-corbasi",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yogurtlu-nohutlu-yarma-corbasi/20512"
+    ],
+    "confidence": "high",
+    "reason": "Yarma, yoğurt, yumurta ve naneli yağ çorba yapısı kaynaklarla uyumlu. Stepte kullanılan un, tereyağı ve tuz listede eksik."
+  },
+  {
+    "slug": "yogurtlu-yesil-erik-mezesi-yalova-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: yeşil erik mezesi için haşlama şablonu yanlış, kaynaklarda erik çiğ ve ekşi meze olarak kullanılıyor",
+      "time: 15 dakika dinlenme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 25,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Yeşil erikleri çekirdeklerinden ayırıp küçük parçalar halinde doğrayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Süzme yoğurdu nane, zeytinyağı ve bir çimdik tuzla karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Erikleri yoğurtlu karışıma ekleyip ekşiliği aynı kapta dengeleyin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Mezeyi servis tabağına yayıp 15 dakika buzdolabında dinlendirin.",
+          "timerSeconds": 900
+        }
+      ],
+      "ingredients_add": [
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çimdik"
+        }
+      ]
+    },
+    "sources": [
+      "https://kisikates.org/tarif/yogurtlu-yesil-erik-mezesi-tarifi-2049",
+      "https://www.nefisyemektarifleri.com/yesil-erikli-yogurtlu-meze/"
+    ],
+    "confidence": "high",
+    "reason": "Yeşil erikli yoğurt mezesi çiğ, ekşi ve soğuk servis edilen bir meze. Mevcut haşlama şablonu yanlış, dinlenme süresi de toplamda yok."
+  },
+  {
+    "slug": "yorkshire-kuzu-shepherds-pie",
+    "verdict": "PASS",
+    "reason": "Kuzu kıyma, sebzeli harç, et suyu ve sütlü patates kaplaması shepherd's pie kaynaklarıyla uyumlu. Süre, süt allergeni ve porsiyon makul.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Shepherd%27s_pie",
+      "https://thecookful.com/lamb-shepherds-pie/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "yorkshire-pirasali-patates-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: pırasa yumuşatma, patates pişirme ve sütle ısıtma toplamı cookMinutes değerini aşıyor"
+    ],
+    "corrections": {
+      "cookMinutes": 29,
+      "totalMinutes": 39
+    },
+    "sources": [
+      "https://www.theguardian.com/food/2024/oct/30/how-to-make-leek-potato-soup-recipe-felicity-cloake",
+      "https://www.laylita.com/recipes/leek-potato-soup/"
+    ],
+    "confidence": "high",
+    "reason": "Pırasa, patates, tereyağı, süt ve sebze suyu klasik çorba yapısıyla uyumlu. Sadece step süreleri toplamı mevcut pişirme süresinden uzun."
+  },
+  {
+    "slug": "yorkshire-toad-in-the-hole",
+    "verdict": "PASS",
+    "reason": "Sosis, un, yumurta ve sütlü hamurun kızgın kapta fırınlanması toad in the hole kaynaklarıyla uyumlu. Süreler ve allergenler doğru.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/sams-toad-hole/",
+      "https://www.pbs.org/food/recipes/toad-in-the-hole"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "yoruk-tarhana-corbasi-burdur-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step domates salçası ve tuz kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Domates salçası",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://tarhana.com.tr/corba-tarifi/tarhana-tarifi/",
+      "https://cookidoo.thermomix.com/recipes/recipe/en-us/r776106"
+    ],
+    "confidence": "high",
+    "reason": "Tarhana, su, tereyağı, nane ve salça çorba kaynaklarıyla uyumlu. Salça ve tuz stepte kullanıldığı halde listede yok."
+  },
+  {
+    "slug": "yu-xiang-qiezi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: zencefil, acı fasulye ezmesi, şeker, nişasta ve taze soğan stepte geçiyor ama listede yok",
+      "tipNote: pirinç pilavı ipucu patlıcan yemeğiyle alakasız",
+      "servingSuggestion: Osmanlı pilavı sunumu Çin patlıcan yemeği için yanıltıcı"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zencefil",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        },
+        {
+          "name": "Acı fasulye ezmesi",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Toz şeker",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        },
+        {
+          "name": "Mısır nişastası",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        },
+        {
+          "name": "Taze soğan",
+          "amount": "2",
+          "unit": "dal"
+        }
+      ],
+      "tipNote": "Patlıcanı sosla kısa çevirmek parçaların ezilmeden parlak kalmasını sağlar.",
+      "servingSuggestion": "Buharda pişmiş pirinç ve taze soğanla sıcak servis edin."
+    },
+    "sources": [
+      "https://thewoksoflife.com/yu-xiang-qie-zi-sichuan-eggplant/",
+      "https://omnivorescookbook.com/sichuan-eggplant/"
+    ],
+    "confidence": "high",
+    "reason": "Yu xiang qiezi sarımsak, zencefil, doubanjiang, sirke, şeker ve nişastalı sosla kurulur. Mevcut listede temel sos öğeleri eksik."
+  },
+  {
+    "slug": "yuca-con-mojo",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step zeytinyağı, kişniş, soğan ve tuz kullanıyor ama listede yok",
+      "servingSuggestion: arpa ekmeği ve sarımsaklı yoğurt Küba yuca con mojo için yanıltıcı"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "4",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Kişniş",
+          "amount": "0.25",
+          "unit": "demet"
+        },
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "servingSuggestion": "Kişniş, ince soğan ve narenciye sosuyla ılık servis edin."
+    },
+    "sources": [
+      "https://www.196flavors.com/yuca-con-mojo/",
+      "https://travelfoodatlas.com/cuban-yuca-con-mojo-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Küba yuca con mojo haşlanmış manyok ve sarımsaklı narenciye yağ sosudur. Yağ ve tuz eksik, servis metni yanlış mutfağa kayıyor."
+  },
+  {
+    "slug": "yuca-mojo-bites-kuba-usulu",
+    "verdict": "PASS",
+    "reason": "Haşlanıp tavada kızartılan yuca parçalarının sarımsaklı narenciye mojo ile harmanlanması Küba yuca kaynaklarıyla uyumlu. Süreler makul.",
+    "sources": [
+      "https://www.196flavors.com/yuca-con-mojo/",
+      "https://www.goodhousekeeping.com/food-recipes/a44902070/yuca-con-mojo-recipe/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "yuca-sarimsak-dip-kuba-usulu",
+    "verdict": "PASS",
+    "reason": "Yuca, sarımsak, lime ve zeytinyağıyla ezme veya mojo tabanlı dip yapılması Küba yuca çizgisiyle uyumlu. Süre ve vegan tag doğru.",
+    "sources": [
+      "https://www.196flavors.com/yuca-con-mojo/",
+      "https://travelfoodatlas.com/cuban-yuca-con-mojo-recipe"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "yuca-siyah-fasulye-tavasi-kuba-usulu",
+    "verdict": "PASS",
+    "reason": "Yuca, siyah fasulye, sarımsak, lime ve zeytinyağı Küba mutfağıyla uyumlu sade bir tava oluşturuyor. Vegan tag ve süreler makul.",
+    "sources": [
+      "https://www.196flavors.com/yuca-con-mojo/",
+      "https://www.cubanrecipes.org/recipes/side-dishes/cuban-black-beans-and-rice/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "yucatan-cochinita-pibil",
+    "verdict": "PASS",
+    "reason": "Domuz omuz, achiote, ekşi turunç yerine portakal lime karışımı ve muz yaprağı cochinita pibil kaynaklarıyla uyumlu. Bekleme süresi toplamda var.",
+    "sources": [
+      "https://www.mexsabores.com/en/post/cochinita-pibil-recipe",
+      "https://www.seriouseats.com/cochinita-pibil-yucatan-barbecue-mexican-smoked-pork-recipe"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "yufkali-hasir-pilavi-konya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step tuz kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/pilav-ve-makarna-tarifleri/pilav-tarifleri/yufkali-pilav",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yufkada-icli-pilav/8318"
+    ],
+    "confidence": "medium",
+    "reason": "Yufkayla kapatılıp fırınlanan pilav kaynaklardaki yufkalı pilav yapısıyla uyumlu. Stepte tuz geçtiği için listede olmalı."
+  },
+  {
+    "slug": "yuksek-protein-mercimek-waffle",
+    "verdict": "PASS",
+    "reason": "Kırmızı mercimek, yumurta, yoğurt ve kabartma tozuyla yapılan tuzlu waffle kaynaklardaki mercimekli kahvaltı hamurlarına uyuyor. Süre makul.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kirmizi-mercimek-waffle/",
+      "https://www.eatingwell.com/recipe/252780/red-lentil-pancakes/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "yuksuk-corbasi-adana-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step hamur için su ve servis için limon kullanıyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Su",
+          "amount": "0.5",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Limon",
+          "amount": "1",
+          "unit": "adet"
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/yuksuk-corbasi/",
+      "https://www.nefisyemektarifleri.com/yuksuk-corbasi/"
+    ],
+    "confidence": "high",
+    "reason": "Adana yüksük çorbası küçük mantı, nohut, salça ve nane yapısıyla doğru. Hamur suyu ve limon stepte geçtiği halde listede yok."
+  },
+  {
+    "slug": "yulaf-lapasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: yulaf lapası için tava ısıtıp yağlama ifadesi yanıltıcı, tarif tencerede sütle pişiyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Küçük tencereyi orta ateşe alın, yulaf ve sütü eklemeden önce hazırlayın.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/perfect-porridge",
+      "https://www.theguardian.com/lifeandstyle/2011/jan/15/irish-porridge-banana-mango"
+    ],
+    "confidence": "high",
+    "reason": "Yulaf, süt, muz, bal, ceviz ve tarçın lapayla uyumlu. Sadece tava yağlama step'i lapaya ait değil, kullanıcıyı yanlış kaba yönlendiriyor."
+  },
+  {
+    "slug": "yulafli-cheddar-griddle-cake-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "servingSuggestion: bal, kaymak ve simit İngiliz yulaflı cheddar griddle cake için yanıltıcı"
+    ],
+    "corrections": {
+      "servingSuggestion": "Sıcak dilimleri domates veya chutney ile servis edin."
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/staffordshire-oatcakes",
+      "https://www.bbc.co.uk/food/recipes/staffordshireoatcak_92371"
+    ],
+    "confidence": "medium",
+    "reason": "Yulaf, un, cheddar, tereyağı ve sütle tavada pişen hamur İngiliz oatcake çizgisine yakın. Servis önerisi Türk kahvaltısına kaymış."
+  },
+  {
+    "slug": "yulafli-granola-bar",
+    "verdict": "PASS",
+    "reason": "Yulaf, kuruyemiş, kuru meyve, bal ve fıstık ezmesiyle bastırılıp pişirilen bar kaynaklarla uyumlu. Allergen beyanları doğru.",
+    "sources": [
+      "https://www.food.com/recipe/peanut-butter-and-honey-chewy-granola-bars-477653",
+      "https://www.bonappetit.com/recipe/nut-butter-granola-bars"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "yulafli-hurma-smoothie",
+    "verdict": "PASS",
+    "reason": "Yulaf, hurma, süt ve tarçınla yapılan kısa smoothie kaynaklardaki kahvaltılık içecek çizgisiyle uyumlu. Süt ve gluten beyanı doğru.",
+    "sources": [
+      "https://www.eatingwell.com/recipe/252885/date-smoothie/",
+      "https://www.bbcgoodfood.com/recipes/date-banana-rum-loaf"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "yumurtali-ekmek",
+    "verdict": "PASS",
+    "reason": "Bayat ekmek, yumurta, süt, tuz ve yağla tavada kızartma yapısı Türk usulü yumurtalı ekmek kaynaklarıyla uyumlu. Süreler makul.",
+    "sources": [
+      "https://ye-mek.net/tarif/yumurtali-ekmek",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yumurtali-ekmek-bayat-ekmekten/18700"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "yumurtali-ekmek-kapadokya-usulu",
+    "verdict": "PASS",
+    "reason": "Köy ekmeği, yumurta, süt ve tereyağıyla yapılan yumurtalı ekmek yapısı kaynaklarla uyumlu. Bölgesel ad iddialı ama içerik yanıltıcı değil.",
+    "sources": [
+      "https://ye-mek.net/tarif/yumurtali-ekmek",
+      "https://www.ibrahiminyeri.com/post/yumurtali-ekmek-tarifi-1"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "yumurtali-ekmek-trakya-usulu",
+    "verdict": "PASS",
+    "reason": "Bayat ekmek, yumurta, süt ve tereyağıyla tavada kızaran kahvaltılık yapı kaynaklarla uyumlu. Süreler ve allergenler doğru.",
+    "sources": [
+      "https://ye-mek.net/tarif/yumurtali-ekmek",
+      "https://afiyetle.com/tarif/yumurtali-bayat-ekmek-tirit"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "yumurtali-eriste-kavurmasi-kirsehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "servingSuggestion: parmesan ve fesleğen Türk erişte kavurması için mutfak bağlamını yanlış gösteriyor"
+    ],
+    "corrections": {
+      "servingSuggestion": "Pul biber ve kıyılmış maydanozla sıcak servis edin."
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/yumurtali-eriste/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yumurtali-eriste/12290"
+    ],
+    "confidence": "high",
+    "reason": "Erişte, tereyağı ve yumurta kavurması doğru. Servis önerisi parmesan ve fesleğenle İtalyan bağlamına kaydığı için düzeltilmeli."
+  },
+  {
+    "slug": "yumurtali-ispanak-kavurmasi-karadeniz-usulu",
+    "verdict": "PASS",
+    "reason": "Ispanak, soğan, yumurta ve tereyağıyla yapılan hızlı tava kaynaklardaki yumurtalı ıspanak kavurmasıyla uyumlu. Allergenler doğru.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/yumurtali-ispanak-kavurmasi/",
+      "https://ye-mek.net/tarif/yumurtali-ispanak"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "yumurtali-ispanak-tava",
+    "verdict": "PASS",
+    "reason": "Ispanak, sarımsak, zeytinyağı ve yumurtanın tavada kısa pişmesi kaynaklarla uyumlu. Yumurta allergeni, süre ve yüksek protein tag makul.",
+    "sources": [
+      "https://ye-mek.net/tarif/yumurtali-ispanak",
+      "https://www.nefisyemektarifleri.com/yumurtali-ispanak/"
+    ],
+    "confidence": "high"
+  }
+]

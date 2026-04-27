@@ -161,7 +161,7 @@ const VALID_CUISINES = new Set([
   "tr", "it", "fr", "es", "gr", "jp", "cn", "kr", "th", "in",
   "mx", "us", "me", "ma", "vn", "br", "cu", "ru", "hu", "se",
   "pe", "gb", "pl", "au", "de", "ir", "pk", "id", "et", "ng",
-  "tn", "ar", "co", "ve", "dk", "za", "pt",
+  "tn", "ar", "co", "ve", "dk", "za", "pt", "cl",
 ]);
 
 function isHttpUrl(u: string): boolean {

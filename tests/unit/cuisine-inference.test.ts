@@ -250,6 +250,33 @@ describe("inferCuisineFromRecipe", () => {
     ).toBe("pt");
   });
 
+  // ─── Chilean (oturum 28, cl eklenmesiyle) ─────────────────
+
+  test("Chilean title keyword (Şili) → cl", () => {
+    expect(
+      inferCuisineFromRecipe(
+        recipe({
+          title: "Şili Usulü Pastel de Choclo",
+          slug: "santiago-misirli-pastel-de-choclo",
+        }),
+      ),
+    ).toBe("cl");
+  });
+
+  test("Chilean slug: pastel-de-choclo → cl", () => {
+    expect(
+      inferCuisineFromRecipe(recipe({ slug: "santiago-pastel-de-choclo" })),
+    ).toBe("cl");
+  });
+
+  test("Chilean title keyword (Santiago) → cl", () => {
+    expect(
+      inferCuisineFromRecipe(
+        recipe({ title: "Santiago Charquican", slug: "santiago-charquican" }),
+      ),
+    ).toBe("cl");
+  });
+
   // ─── Default to Turkish ───────────────────────────────────
 
   test("no international markers → default tr", () => {
@@ -292,8 +319,8 @@ describe("inferCuisineFromRecipe", () => {
 });
 
 describe("cuisine constants", () => {
-  test("CUISINE_CODES has 37 entries", () => {
-    expect(CUISINE_CODES).toHaveLength(37);
+  test("CUISINE_CODES has 38 entries", () => {
+    expect(CUISINE_CODES).toHaveLength(38);
   });
 
   test("every code has a label", () => {

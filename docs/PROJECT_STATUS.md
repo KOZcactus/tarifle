@@ -1,7 +1,14 @@
 # Tarifle, Proje Durumu
 
-> **Oturum 26 (28 Nis 2026, 7 commit, P1 SEO batch 2 + Mod K v2
-> 8 batch + manuel mini-rev 7 tarif).** Mod K v2 progress: 12 → 20/
+> **Oturum 26 (28 Nis 2026, 9 commit, P1 SEO batch 2 + Mod K v2
+> 8 batch + manuel mini-rev 7 tarif + Test Campaign Kategori 3).**
+> Test Campaign başladı (commit `5cee0da`): docs/TEST_CAMPAIGN_OTURUM_
+> 26.md 8 kategori plan + Kategori 3 (Sayfa/Route Smoke + 404 Audit)
+> tamamlandı. Desktop 118/118 PASS (%100), 8 kritik route mobile
+> spot-check 0 horizontal overflow. 1 P1 (mobile breadcrumb touch
+> target ~18px height, WCAG 44x44 altı, Kategori 6 scope) + 1 P2
+> (React 19 dev warning false-positive JSON-LD pattern, monitoring).
+> Detaylı rapor: docs/TEST_REPORT_OTURUM_26_KATEGORI_3.md. Mod K v2 progress: 12 → 20/
 > 71 sub-batch done (%28.2). 9b + 10a + 10b apply (commit `f86789f`):
 > 150 entry, 75 PASS / 71 CORRECTION / 4 MAJOR / 0 BLOCKED. 4 yeni
 > MAJOR (erzsebet-sour, feijao-tropeiro, feslegenli-tavuklu-pirinc-

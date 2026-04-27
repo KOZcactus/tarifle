@@ -1,0 +1,863 @@
+[
+  {
+    "slug": "madeleine",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 telde 10 dakika dinlendirme veriyor, totalMinutes bu beklemeyi kapsamıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 47
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/madeleines",
+      "https://www.epicurious.com/recipes/food/views/lemon-tea-cakes-101801"
+    ],
+    "confidence": "high",
+    "reason": "Deniz kabuğu kalıp, tereyağlı hamur ve kısa fırın süresi doğru; telde dinlendirme toplam süreye eklenmeli."
+  },
+  {
+    "slug": "madimak-yemegi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 zeytinyağında kavurma diyor, ingredient listesinde zeytinyağı yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "4", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/madimak-yemegi/",
+      "https://www.sivasyemekleri.com/madimak-yemegi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Madımak, bulgur, soğan ve salça yapısı kaynaklarla uyumlu; kavurma yağı malzeme listesinde eksik kalmış."
+  },
+  {
+    "slug": "madimakli-bulgur-pilavi-sivas-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sivasyemekleri.com/madimak-yemegi-tarifi/",
+      "https://www.nefisyemektarifleri.com/madimak-yemegi-sivas/"
+    ],
+    "confidence": "medium",
+    "reason": "Madımak ve bulgur birlikteliği Sivas kaynaklarıyla uyumlu; pilav varyasyonu sade ve süreleri kendi akışıyla tutarlı."
+  },
+  {
+    "slug": "madimakli-yumurta-sivas-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 tarif adını tekrar eden hazırlık scaffold cümlesi taşıyor.",
+      "Step 5 peynirli doku diyor, tarifte peynir yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Madımağı ayıklayın, bol suyla yıkayın ve iri parçalar halinde doğrayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Yumurtalar parlak ve hafif sulu kalınca tavayı ocaktan alın, sıcak ekmekle hemen servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.sivasyemekleri.com/madimak-yemegi-tarifi/",
+      "https://www.nefisyemektarifleri.com/madimak-yemegi-sivas/"
+    ],
+    "confidence": "medium",
+    "reason": "Madımak, tereyağı ve yumurta kurgusu makul; son adım peynir olmayan tarifte yanlış doku tarifi veriyor."
+  },
+  {
+    "slug": "madrid-churros-cikolatali",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/churros-chocolate-dipping-sauce",
+      "https://www.thespanishchef.com/recipes/churros-con-chocolate"
+    ],
+    "confidence": "high",
+    "reason": "Kızarmış yıldız uçlu hamur, tarçınlı şeker ve koyu çikolata sosu klasik churros akışıyla uyumlu."
+  },
+  {
+    "slug": "madrid-gambas-al-ajillo",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.thespanishchef.com/recipes/gambas-al-ajillo",
+      "https://www.bonappetit.com/recipe/gambas-al-ajillo-spanish-garlic-shrimp"
+    ],
+    "confidence": "high",
+    "reason": "Karides, zeytinyağı, sarımsak, acı biber ve kısa pişirme süresi klasik tapas tarifiyle uyumlu."
+  },
+  {
+    "slug": "madrid-patatas-bravas",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/patatas-bravas-0",
+      "https://spanishsabores.com/patatas-bravas-recipe-spanish-fried-potatoes-with-spicy-sauce/"
+    ],
+    "confidence": "high",
+    "reason": "Patates, paprikalı domates sosu ve fırında çıtırlaştırma yöntemi kaynaklarla uyumlu; süreler de tutarlı."
+  },
+  {
+    "slug": "madrid-sarimsakli-karides-tavasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.thespanishchef.com/recipes/gambas-al-ajillo",
+      "https://www.bonappetit.com/recipe/gambas-al-ajillo-spanish-garlic-shrimp"
+    ],
+    "confidence": "high",
+    "reason": "Sarımsaklı zeytinyağında kısa pişen karides ve ekmekle servis gambas al ajillo kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "madrid-tortilla-espanola",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.seriouseats.com/tortilla-espanola-spanish-potato-omelette-recipe",
+      "https://spanishsabores.com/best-spanish-omelet-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Patates, soğan, yumurta ve zeytinyağıyla kalın omlet hazırlığı klasik tortilla española tekniğine uyuyor."
+  },
+  {
+    "slug": "maduros",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.delish.com/cooking/recipe-ideas/a34776930/sweet-plantains-recipe/",
+      "https://www.bonappetit.com/story/platanos-maduros-horneados"
+    ],
+    "confidence": "high",
+    "reason": "Olgun plantainin yağda tatlılaşıp karamelize edilmesi maduros için doğru; içerik ve süre makul."
+  },
+  {
+    "slug": "mafis-tatlisi-balikesir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 parçaları yağda kızartıyor, ingredient listesinde kızartmalık yağ yok.",
+      "ServingSuggestion Antep fıstığı öneriyor, servis için ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ayçiçek yağı", "amount": "2", "unit": "su bardağı" },
+        { "name": "Toz Antep fıstığı", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/mafis-tatlisi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/serbetli-tatlilar/mafis-tatlisi"
+    ],
+    "confidence": "medium",
+    "reason": "Hamur, kızartma ve şerbet akışı mafiş tatlısıyla uyumlu; kızartma yağı ve servis süslemesi listede eksik."
+  },
+  {
+    "slug": "magrip-nane-cayi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.food.com/recipe/moroccan-mint-tea-55799",
+      "https://www.foodandwine.com/moroccan-mint-tea-11837816"
+    ],
+    "confidence": "high",
+    "reason": "Yeşil çay, taze nane, şeker ve yüksekten dökerek servis Fas nane çayı geleneğiyle uyumlu."
+  },
+  {
+    "slug": "magrip-saksukasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 yüzeyi yağlayın diyor, ingredient listesinde yağ yok.",
+      "Step 1, 2 ve 6 tarif adını tekrar eden scaffold cümleleri taşıyor.",
+      "Step 6 gevrek doku diyor, bu tarif sulu domates soslu yumurta yemeğidir."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Domatesleri rendeleyin, biberleri küçük doğrayın ve yumurtaları ayrı bir kasede hazır bekletin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Zeytinyağında sarımsağı kokusu çıkana kadar çevirin, ardından biberleri ekleyin.",
+          "timerSeconds": 60
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Yumurta beyazları pişip sarıları hafif akışkan kalınca tavayı ocaktan alın ve ekmekle sıcak servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/shakshuka",
+      "https://www.seriouseats.com/shakshuka-north-african-shirred-eggs-tomato-pepper-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Domatesli biberli sosta yumurta doğru; yağ eksikliği ve scaffold adımlar kullanıcıyı yanıltıyor."
+  },
+  {
+    "slug": "mahlepli-yesil-mercimek-corbasi-tokat-bag-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Mahlepli Tokat yeşil mercimek çorbası adı güvenilir kaynaklarla doğrulanamadı.",
+      "Yeşil mercimek çorbası kaynaklarında mahlep kullanımı görünmüyor.",
+      "Step 5 tarif adını tekrar eden uzun scaffold cümlesi taşıyor."
+    ],
+    "corrections": {
+      "description": "Yeşil mercimek çorbası, mercimeği soğan ve tereyağıyla kaynatan sade ve doyurucu bir Türk çorbasıdır.",
+      "ingredients_remove": [
+        "Mahlep"
+      ],
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 4,
+          "instruction": "Tuzunu ekleyip çorbayı kısa süre daha kaynatın.",
+          "timerSeconds": 120
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Kıvam koyu gelirse sıcak suyla açın ve çorbayı sıcak servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/yesil-mercimek-corbasi/",
+      "https://www.turkeysforlife.com/2019/02/turkish-green-lentil-soup-recipe.html"
+    ],
+    "confidence": "medium",
+    "reason": "Yeşil mercimek çorbası doğru bir temel; Tokat ve mahlep iddiası kaynakla desteklenmediği için manuel review gerekir."
+  },
+  {
+    "slug": "mahluta-corbasi-hatay-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/mahluta-corbasi/",
+      "https://www.nefisyemektarifleri.com/mahluta-corbasi-2/"
+    ],
+    "confidence": "high",
+    "reason": "Kırmızı mercimek, pirinç, kimyon, soğan ve limonlu servis kaynaklarla uyumlu; süreler de dengeli."
+  },
+  {
+    "slug": "mai-tai",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/mai-tai",
+      "https://www.bonappetit.com/recipe/mai-tai"
+    ],
+    "confidence": "high",
+    "reason": "Rom, lime, portakal likörü ve badem şurubu dengesi klasik Mai Tai yapısıyla uyumlu; süre gerçekçi."
+  },
+  {
+    "slug": "makowiec-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1, 4 ve 6 toplam 80 dakika mayalanma ve soğuma içeriyor, totalMinutes 70 bunu karşılamıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 120
+    },
+    "sources": [
+      "https://www.polonist.com/poppy-seed-roll-makowiec/",
+      "https://www.polishyourkitchen.com/polish-poppyseed-roll-makowiec/"
+    ],
+    "confidence": "high",
+    "reason": "Haşhaş dolgulu mayalı rulo doğru; iki dinlenme ve soğuma süreleri RecipeTimeline için toplam süreye eklenmeli."
+  },
+  {
+    "slug": "makroudh",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 dilimleri yağda kızartıyor, ingredient listesinde kızartmalık yağ yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ayçiçek yağı", "amount": "2", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.jewishfoodsociety.org/recipes/north-african-makroud-with-dates-and-semolina",
+      "https://en.wikipedia.org/wiki/Makroudh"
+    ],
+    "confidence": "high",
+    "reason": "İrmik, hurma, elmas kesim, kızartma ve ballı bitiriş makroudh ile uyumlu; kızartma yağı listede eksik."
+  },
+  {
+    "slug": "malatya-kagit-kebabi-kuzu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Malatya kağıt kebabı resmi kaynakta uzun süreli pişen et yemeği olarak geçiyor, mevcut toplam süre ev tipi hızlı versiyon için bile kısa kalıyor."
+    ],
+    "corrections": {
+      "cookMinutes": 85,
+      "totalMinutes": 110
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/malatya/neyenir/kagit-kebabi",
+      "https://www.efsanetarifler.com/tarif/kagit-kebabi-malatya-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Kuzu ve kağıtta kapalı pişirme doğru; etin yumuşaması için mevcut 55 dakika kaynaklara göre düşük kalıyor."
+  },
+  {
+    "slug": "malatya-kayisi-dolmasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kolaylezzet.com/kolay-cay-saati-tarifleri/tatlilar/808-gun-kurusu-kayisi-dolmasi-tatlisi-malatya",
+      "https://www.evvelcevap.com/kayisi-dolmasi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Gün kurusu kayısı, ceviz, tereyağı, şeker ve kaymakla servis Malatya kayısı dolması kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "malatya-kayisili-kavurma",
+    "verdict": "PASS",
+    "sources": [
+      "https://bimalatya.com/kesfet/yoresel-lezzet-kayisili-kavurma",
+      "https://turkiye.ee/tr/malatya/akcadag/yerel-lezzetler/kayisili-kavurma/"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu etinin kuru kayısı, soğan ve tarçınla pişmesi Malatya kayısılı kavurma kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "malatya-kayisili-tavuk-yahni",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.refikaninmutfagi.com/malatya-kayisisiyla-tavuk-tarifi",
+      "https://bimalatya.com/kesfet/yoresel-lezzet-kayisili-kavurma"
+    ],
+    "confidence": "medium",
+    "reason": "Kayısılı tavuk tam yöresel adla yaygın görünmese de Malatya kayısısı ve etli tatlı ekşi yahni mantığı tutarlı."
+  },
+  {
+    "slug": "malatya-kiraz-yapragi-sarmasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/malatya/neyenir/kiraz-yapragi-sarmasi",
+      "https://www.firatikesfet.com/tr/detail/malatya/kiraz-yapragi-sarmasi"
+    ],
+    "confidence": "high",
+    "reason": "Yarma, kiraz yaprağı, yoğurtlu ekşi sos ve soğanlı tereyağı resmi Malatya kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "malinowy-kompot-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 tamamen soğutma istiyor, totalMinutes yalnızca kaynatma süresini içeriyor."
+    ],
+    "corrections": {
+      "totalMinutes": 45
+    },
+    "sources": [
+      "https://www.winiary.pl/przepisy/kompot-malinowy/",
+      "https://www.polonist.com/kompot-fruit-drink/"
+    ],
+    "confidence": "high",
+    "reason": "Ahududu, su, şeker ve kısa kaynatma Polonya kompot akışıyla uyumlu; soğutma beklemesi toplam süreye yansıtılmalı."
+  },
+  {
+    "slug": "mamzana-tekirdag-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 domates diyor, ingredient listesinde domates yok.",
+      "Step 5 maydanozla tamamlayın diyor, ingredient listesinde maydanoz yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Domates", "amount": "1", "unit": "adet" },
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/mamzana/",
+      "https://lezzetler.com/manca-tekirdag-tarif-165988"
+    ],
+    "confidence": "high",
+    "reason": "Köz patlıcan, biber, sirke, zeytinyağı ve sarımsak Trakya mamzana çizgisine uyuyor; iki malzeme eksik."
+  },
+  {
+    "slug": "manakish",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 su ve tuzla hamur yoğurun diyor, ingredient listesinde su ve tuz yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ilık su", "amount": "1", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://urbanfarmandkitchen.com/manakish-zaatar-flatbread/",
+      "https://www.cheftariq.com/recipe/manakish/"
+    ],
+    "confidence": "high",
+    "reason": "Zahter, susam ve zeytinyağlı yassı ekmek doğru; hamur kurulması için su ve tuz listede olmalı."
+  },
+  {
+    "slug": "mancar-diblesi-zonguldak-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/zonguldak/neyenir/mancar-yemegi",
+      "https://lezzetler.com/mancar-yemegi-zonguldak-tarif-103821"
+    ],
+    "confidence": "medium",
+    "reason": "Pancar yaprağı, pirinç, soğan ve zeytinyağıyla tek tencere pişirme Karadeniz mancar yemeğiyle tutarlı."
+  },
+  {
+    "slug": "mandalinali-adacayi-fizz-bodrum-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Adımlar tarif adını sürekli tekrar eden scaffold cümleleri taşıyor.",
+      "Adaçayı şurubu sıcak kullanılırsa kokteyli sulandırır, soğutma süresi totalMinutes içinde yok."
+    ],
+    "corrections": {
+      "totalMinutes": 25,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Mandalina suyunu süzün, cin ve sodayı soğukta bekletin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Adaçayı, şeker ve 4 yemek kaşığı suyu 5 dakika kaynatın, ardından şurubu 10 dakika soğutun.",
+          "timerSeconds": 900
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Cin, mandalina suyu ve soğuyan şurubu buzla 12 saniye çalkalayın.",
+          "timerSeconds": 12
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Karışımı buzlu bardaklara süzün, soda ekleyip gazı kaçmadan servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.liquor.com/herbal-cocktail-recipes-5214371",
+      "https://www.thespruceeats.com/sage-simple-syrup-recipe-760220"
+    ],
+    "confidence": "medium",
+    "reason": "Mandalina, adaçayı şurubu ve cin kokteyl olarak makul; sıcak şurup ve tekrar eden adımlar düzeltilmeli."
+  },
+  {
+    "slug": "mandalinali-kefir-smoothie-didim-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/smoothie",
+      "https://www.lifewaykefir.com/recipes/orange-kefir-smoothie/"
+    ],
+    "confidence": "medium",
+    "reason": "Kefir, mandalina, bal ve buzla blender içeceği tutarlı; üç kısa adım içecek tipi için kabul edilebilir."
+  },
+  {
+    "slug": "mandalinali-reyhan-serbeti-aydin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Şerbet adı ve kaynak akışı şekerli demleme beklerken ingredient listesinde tatlandırıcı yok.",
+      "TotalMinutes reyhanın aromayı suya bırakması için bekleme süresi içermiyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Toz şeker", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "totalMinutes": 28,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Mandalina suyunu süzün, reyhan yapraklarını avucunuzda hafifçe ezin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Su, toz şeker, limon suyu ve reyhanı karıştırıp 20 dakika buzdolabında bekletin.",
+          "timerSeconds": 1200
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Mandalina suyunu ekleyin, karışımı süzüp bol buzla servis edin.",
+          "timerSeconds": null
+        }
+      ],
+      "averageCalories": 66,
+      "carbs": 16
+    },
+    "sources": [
+      "https://yemek.com/tarif/reyhan-serbeti/",
+      "https://www.nefisyemektarifleri.com/reyhan-serbeti/"
+    ],
+    "confidence": "medium",
+    "reason": "Reyhan şerbeti tatlandırılmış ve bekletilmiş içecek olmalı; mevcut tarif suyla karıştırılmış mandalina gibi kalıyor."
+  },
+  {
+    "slug": "mandalinali-soguk-icecek-alanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1, 2 ve 3 tarif adını tekrar eden scaffold cümleleri taşıyor.",
+      "Step 3 soğuk içeceği serin veya ılık servis edin diyerek kendi adıyla çelişiyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Mandalina suyunu süzün, nane yapraklarını hafifçe avucunuzda ovun.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Mandalina suyu, nane ve buzu bardakta karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Sodayı son anda ekleyin ve gazı kaçmadan soğuk servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/mocktails",
+      "https://www.thespruceeats.com/citrus-fizz-mocktail-recipe-760877"
+    ],
+    "confidence": "medium",
+    "reason": "Mandalina, soda, nane ve buzla soğuk içecek mantıklı; mevcut adımlar doğal kullanım talimatı vermiyor."
+  },
+  {
+    "slug": "mandu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 soya sirkeli sosla servis diyor, ingredient listesinde sirke yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Pirinç sirkesi", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.maangchi.com/recipe/mandu",
+      "https://www.koreanbapsang.com/mandu-korean-dumplings/"
+    ],
+    "confidence": "high",
+    "reason": "Kıyma, lahana, soya sosu, susam yağı ve buharda pişirme mandu için doğru; dip sos sirkesi eksik."
+  },
+  {
+    "slug": "mango-chutney",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 tamamen soğutma istiyor, totalMinutes bu 30 dakikalık beklemeyi içermiyor.",
+      "Mango chutney için 35 dakika pişirme kısa bir küçük parti olabilir ama soğutma toplamda görünmeli."
+    ],
+    "corrections": {
+      "totalMinutes": 80
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/mango-chutney",
+      "https://www.epicurious.com/recipes/food/views/mango-chutney"
+    ],
+    "confidence": "high",
+    "reason": "Mango, sirke, şeker ve zencefille ekşi tatlı sos doğru; soğuma süresi toplam süreye eklenmeli."
+  },
+  {
+    "slug": "mango-korisi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ingredient listesinde kokos içeceği yazıyor, Tay köri için kaynaklar hindistan cevizi sütü kullanıyor."
+    ],
+    "corrections": {
+      "ingredients_remove": [
+        "Kokos içeceği"
+      ],
+      "ingredients_add": [
+        { "name": "Hindistan cevizi sütü", "amount": "400", "unit": "ml" }
+      ]
+    },
+    "sources": [
+      "https://www.archanaskitchen.com/thai-style-mango-chicken-coconut-curry-recipe",
+      "https://veggieanh.com/thai-mango-coconut-curry/"
+    ],
+    "confidence": "medium",
+    "reason": "Mango ve köri ezmesi fikri kaynaklarla uyumlu; sos gövdesi için içecek yerine hindistan cevizi sütü gerekir."
+  },
+  {
+    "slug": "mango-lassi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.tarladalal.com/mango-lassi-30864r",
+      "https://www.bonappetit.com/recipe/sweet-and-salty-mango-lassi"
+    ],
+    "confidence": "high",
+    "reason": "Mango, yoğurt, süt, bal ve kakuleyle soğuk blender içeceği klasik mango lassi yapısıyla uyumlu."
+  },
+  {
+    "slug": "mango-lassi-chia-hint-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.tarladalal.com/mango-lassi-30864r",
+      "https://www.bonappetit.com/recipe/sweet-and-salty-mango-lassi"
+    ],
+    "confidence": "medium",
+    "reason": "Mango lassi temeli doğru; chia eklemesi modern varyasyon olarak makul ve 5 dakika bekleme totalMinutes içinde."
+  },
+  {
+    "slug": "mango-lime-soda-vietnam-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.seriouseats.com/fresh-lime-soda-recipe",
+      "https://cookonloop.com/recipe/vietnamese-ch-xo-i"
+    ],
+    "confidence": "medium",
+    "reason": "Mango, lime, soda ve buzla hızlı serin içecek tutarlı; Vietnam esintisi genel meyveli içecek çizgisinde kalıyor."
+  },
+  {
+    "slug": "mango-smoothie",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 yarım muz ve portakal suyu kullanıyor, ingredient listesinde bu malzemeler yok.",
+      "Step 2 listede bulunan yoğurt, bal ve sütü kullanmıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Mango, yoğurt, bal, süt ve buzu blendera alın.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/mango-banana-smoothie",
+      "https://www.delish.com/cooking/recipe-ideas/a24892347/how-to-make-a-smoothie/"
+    ],
+    "confidence": "high",
+    "reason": "Smoothie yapısı doğru; ikinci adım başka reçeteden taşmış malzemelerle mevcut listeyi bozuyor."
+  },
+  {
+    "slug": "mango-sticky-rice",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Sticky rice kaynakları en az birkaç saat, tercihen gece boyu ıslatma ister; mevcut 30 dakika yetersiz.",
+      "Step 4 pirinci 15 dakika dinlendiriyor, totalMinutes bu beklemeyi içermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 250,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Yapışkan pirinci yıkayın ve en az 3 saat suda bekletin.",
+          "timerSeconds": 10800
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/sticky-rice-mango",
+      "https://www.seriouseats.com/thai-coconut-sticky-rice-mango-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Mango, yapışkan pirinç ve hindistan cevizi sütü doğru; ıslatma ve dinlenme süreleri toplam süreye girmeli."
+  },
+  {
+    "slug": "mango-zerdecal-smoothie",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/turmeric-smoothie-bowl",
+      "https://www.delish.com/cooking/recipe-ideas/a24892347/how-to-make-a-smoothie/"
+    ],
+    "confidence": "medium",
+    "reason": "Mango, portakal suyu, limon ve az zerdeçalla hızlı blender içeceği tutarlı; süre ve malzemeler uyumlu."
+  },
+  {
+    "slug": "mangolu-pirinc-kremasi-kup-tayland-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 tatlıyı 25 dakika soğutuyor, totalMinutes bu beklemeyi içermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 47
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/sticky-coconut-rice-mango-passion-fruit",
+      "https://www.epicurious.com/recipes/food/views/coconut-milk-sticky-rice-with-mangoes-233842"
+    ],
+    "confidence": "medium",
+    "reason": "Mango, pirinç ve hindistan cevizi sütü Tay tatlı çizgisine uyuyor; soğutma beklemesi toplam süreye eklenmeli."
+  },
+  {
+    "slug": "mangolu-tapyoka-kup-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 kup tatlısını 20 dakika soğutuyor, totalMinutes bu beklemeyi içermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 42
+    },
+    "sources": [
+      "https://cookonloop.com/recipe/vietnamese-ch-xo-i",
+      "https://www.wandercooks.com/mango-sago/"
+    ],
+    "confidence": "medium",
+    "reason": "Mango, tapyoka ve hindistan cevizi sütlü kup doğru; servis öncesi soğutma RecipeTimeline içine alınmalı."
+  },
+  {
+    "slug": "manhattan",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.liquor.com/recipes/manhattan-2/",
+      "https://www.epicurious.com/recipes/food/views/classic-manhattan-cocktail"
+    ],
+    "confidence": "high",
+    "reason": "Rye viski, tatlı vermut, bitter ve karıştırarak soğutma klasik Manhattan tarifiyle uyumlu."
+  },
+  {
+    "slug": "manisa-kula-guveci",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Resmi Kula güveci kaynakları patlıcan, soğan, sarımsak ve zeytinyağı kullanmıyor.",
+      "Mevcut tarif genel sebzeli kuzu güvece dönmüş, Kula güveci kimliği zayıflamış.",
+      "Pişirme süresi resmi kaynaklardaki yavaş pişirme akışına göre kısa."
+    ],
+    "corrections": {
+      "description": "Kula güveci, kuzu etinin domates, biber ve tereyağıyla toprak güveçte yavaş piştiği Manisa yemeğidir.",
+      "ingredients_remove": [
+        "Patlıcan",
+        "Soğan",
+        "Sarımsak",
+        "Zeytinyağı"
+      ],
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "60", "unit": "gr" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 170,
+      "totalMinutes": 195,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Kuzu etini iri parçalar halinde güvece alın, üstünü geçecek kadar su ekleyin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Güvecin ağzını kapatıp eti 180°C fırında 90 dakika yumuşayana kadar pişirin.",
+          "timerSeconds": 5400
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Etleri kemiklerinden ayırın, domates ve biberle birlikte küçük güvece yerleştirin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Tuz, tereyağı ve et suyunu ekleyip güveci 180°C fırında 70 dakika daha pişirin.",
+          "timerSeconds": 4200
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Et lif lif ayrılınca güveci 10 dakika dinlendirin ve pilavla sıcak servis edin.",
+          "timerSeconds": 600
+        }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/manisa/neyenir/kula-govec",
+      "https://visitmanisa.org/icerik/kula-guveci"
+    ],
+    "confidence": "high",
+    "reason": "Kula güveci resmi tarifte kuzu, domates, biber ve tereyağıyla yavaş pişer; mevcut sebze listesi adı yanıltıyor."
+  },
+  {
+    "slug": "manisa-kulah-kapamasi",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Külah kapaması adı Manisa kaynaklarında doğrulanamadı.",
+      "Tarifin içeriği Manisa Alaşehir kapamasıyla karışmış görünüyor ama pirinç ve fırın kullanımı kaynaklarla uyuşmuyor."
+    ],
+    "corrections": {
+      "description": "Alaşehir kapaması, kıymalı harcın ince hamura kapatılıp kızartıldıktan sonra et suyu ya da yoğurtla servis edildiği Manisa yemeğidir.",
+      "ingredients_remove": [
+        "Pirinç",
+        "Yoğurt"
+      ],
+      "ingredients_add": [
+        { "name": "Maydanoz", "amount": "0.5", "unit": "demet" },
+        { "name": "Et suyu", "amount": "2", "unit": "su bardağı" },
+        { "name": "Sıvı yağ", "amount": "1", "unit": "su bardağı" }
+      ],
+      "cookMinutes": 25,
+      "totalMinutes": 70
+    },
+    "sources": [
+      "https://manisa.ktb.gov.tr/TR-152211/alasehir-kapamasi.html",
+      "https://www.kulturportali.gov.tr/turkiye/manisa/neyenir/alasehr-kapamasi"
+    ],
+    "confidence": "medium",
+    "reason": "Manisa kaynakları Alaşehir kapamasını doğruluyor; külah adı ve pirinçli fırın akışı manuel review gerektiriyor."
+  },
+  {
+    "slug": "manisa-kuzu-etli-sehriye-pilavi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/etli-sehriye-pilavi/",
+      "https://www.nefisyemektarifleri.com/etli-sehriye-pilavi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kuzu eti, arpa şehriye, domates ve et suyuyla pilav akışı kaynaklarla uyumlu; Manisa özgüllüğü düşük ama yanıltıcı değil."
+  },
+  {
+    "slug": "mansaf",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.latimes.com/recipe/mansaf",
+      "https://www.hungrypaprikas.com/mansaf/"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu, pirinç, yoğurt veya jameed sosu, badem ve geniş tepside servis Ürdün mansafıyla uyumlu."
+  },
+  {
+    "slug": "mantar-dolmasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/stuffed-mushrooms",
+      "https://www.lacucinaitaliana.com/italian-food/how-to-cook/sausage-stuffed-mushrooms"
+    ],
+    "confidence": "high",
+    "reason": "Mantar şapkalarının peynirli harçla doldurulup fırınlanması kaynaklarla uyumlu; süre ve malzeme tutarlı."
+  },
+  {
+    "slug": "mantar-pate",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 pateyi 30 dakika buzdolabında dinlendiriyor, totalMinutes bu beklemeyi içermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 57
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/mushroom-tarragon-pate",
+      "https://www.epicurious.com/recipes/food/views/exotic-mushroom-pate-14253"
+    ],
+    "confidence": "high",
+    "reason": "Mantar, tereyağı ve krema ile sürmelik pate doğru; buzdolabı beklemesi toplam sürede görünmeli."
+  },
+  {
+    "slug": "mantar-sote",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/mantar-sote/",
+      "https://www.nefisyemektarifleri.com/mantar-sote-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Mantar, soğan, biber, domates ve yüksek ateşte kısa soteleme Türk mutfağındaki mantar sote kaynaklarıyla uyumlu."
+  }
+]

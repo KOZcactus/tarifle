@@ -1,0 +1,926 @@
+[
+  {
+    "slug": "lod-chong-tay-tatli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "TipNote 45 dakika soğutma öneriyor, totalMinutes bu beklemeyi içermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 73
+    },
+    "sources": [
+      "https://talardthai.com/lod-chong/",
+      "https://go2-thailand.com/food/lod-chong/"
+    ],
+    "confidence": "high",
+    "reason": "Pandan şerit, hindistan cevizi sütü ve buzlu servis doğru; soğutma beklemesi RecipeTimeline için totalMinutes'a eklenmeli."
+  },
+  {
+    "slug": "lohikeitto",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Son step aynı tarif adını tekrar edip doğal olmayan scaffold cümlesi taşıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 5,
+          "instruction": "Dereotunu son anda ekleyin ve somon parçalarını dağıtmadan çorbayı sıcak servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://food52.com/recipes/73800-lohikeitto-finnish-salmon-soup",
+      "https://true-north-kitchen.com/traditional-finnish-salmon-soup-lohikeitto/"
+    ],
+    "confidence": "high",
+    "reason": "Somon, patates, krema ve dereotu kaynaklarla uyumlu; yalnızca son adımda kullanıcıya anlamsız gelen tekrar temizlenmeli."
+  },
+  {
+    "slug": "lokma-tatlisi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 7 tarçınla servis diyor, ingredient listesinde tarçın yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tarçın", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/lokma-tatlisi/",
+      "https://www.nefisyemektarifleri.com/lokma-tatlisi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Mayalı hamur, kızartma ve soğuk şerbet kurgusu doğru; son adımda kullanılan tarçın malzeme listesine eklenmeli."
+  },
+  {
+    "slug": "lomo-saltado",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Description ve step pirinçle servis diyor, ingredient listesinde pirinç yok.",
+      "Step 1 patatesi kızgın yağda kızartıyor, listede kızartmalık yağ yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Pişmiş pirinç", "amount": "2", "unit": "su bardağı" },
+        { "name": "Sıvı yağ", "amount": "1", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.eatperu.com/lomo-saltado-recipe/",
+      "https://www.seriouseats.com/essential-peruvian-cuisine"
+    ],
+    "confidence": "high",
+    "reason": "Peru lomo saltado et, soya sosu, domates, soğan, patates ve pirinçle uyumlu; eksik servis ve kızartma malzemeleri tamamlanmalı."
+  },
+  {
+    "slug": "london-fish-and-chips",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/golden-beer-battered-fish-chips",
+      "https://www.epicurious.com/recipes/food/views/fish-and-chips"
+    ],
+    "confidence": "high",
+    "reason": "Beyaz balık, biralı hamur, kalın patates, iki aşamalı kızartma ve bezelye eşliği klasik İngiliz fish and chips çizgisiyle uyumlu."
+  },
+  {
+    "slug": "london-fog",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.foodandwine.com/london-fog-tea-latte-8547106",
+      "https://londonfog.uk/"
+    ],
+    "confidence": "medium",
+    "reason": "Earl Grey, vanilya ve süt köpüğü doğru; içeceğin Kanada çıkışı description'da zaten belirtilmiş, mutfak kodu için ayrı ca kodu yok."
+  },
+  {
+    "slug": "london-mulligatawny-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 sebzeleri yağda yumuşatıyor, ingredient listesinde yağ yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.theguardian.com/food/2026/feb/01/how-to-make-mulligatawny-recipe-felicity-cloake",
+      "https://www.allrecipes.com/meet-mulligatawny-soup-11884081"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, mercimek, pirinç, köri ve elma Mulligatawny kaynaklarıyla uyumlu; soteleme yağı listede eksik kalmış."
+  },
+  {
+    "slug": "london-shepherds-pie",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/collection/shepherds-pie-recipes",
+      "https://www.epicurious.com/recipes/food/views/shepherds-pie-240224"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu kıyma, sebzeli harç ve patates püresi Shepherd's pie için doğru; süreler ve süt alerjeni de içerikle tutarlı."
+  },
+  {
+    "slug": "londra-balik-patates-kizartma",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/ultimate-makeover-fish-chips",
+      "https://www.theguardian.com/food/2020/sep/28/fish-and-chips-and-minted-mushy-peas-by-tim-hughes"
+    ],
+    "confidence": "high",
+    "reason": "Sodalı hamur, beyaz balık, patates ve sirke eşliği İngiliz fish and chips varyasyonlarıyla uyumlu; belirgin veri hatası yok."
+  },
+  {
+    "slug": "londra-balikli-pie",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/creamy-fish-leek-pie",
+      "https://www.theguardian.com/food/2023/jan/30/fish-pie-with-rosti-topping-recipe-rosie-sykes"
+    ],
+    "confidence": "high",
+    "reason": "Beyaz balık, somon, pırasa, krema ve patates kaplama İngiliz fish pie kaynaklarıyla uyumlu; süre ve alerjenler makul."
+  },
+  {
+    "slug": "londra-bangers-and-mash",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/bangers-n-mash-with-onion-gravy",
+      "https://www.allrecipes.com/article/what-is-bangers-and-mash/"
+    ],
+    "confidence": "high",
+    "reason": "Sosis, patates püresi, soğanlı sos ve hardal servisi bangers and mash tanımıyla uyumlu; HARDAL, SUT ve GLUTEN beyanı doğru."
+  },
+  {
+    "slug": "londra-cottage-pie-dana",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/cottage-pie",
+      "https://www.southernliving.com/shepherds-pie-vs-cottage-pie-8422521"
+    ],
+    "confidence": "high",
+    "reason": "Dana kıyma kullanımı cottage pie için doğru ayrım; patates püresi, sebzeli harç, unlu sos ve fırın bitişi kaynaklarla uyumlu."
+  },
+  {
+    "slug": "lor-dolgulu-pazi-sarma-erzurum-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 yeşillik ve baharat kullanıyor, ingredient listesinde bu kalemler yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" },
+        { "name": "Dereotu", "amount": "0.25", "unit": "demet" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.almostturkishrecipes.com/2010/12/stuffed-chard-with-bulgur-and-cheese.html",
+      "https://www.foodista.com/recipe/STL7TC2H/lorlu-paz-dolmas"
+    ],
+    "confidence": "medium",
+    "reason": "Lor, bulgur ve pazı sarma kaynaklarla örtüşüyor; step içinde geçen yeşillik ve baharatlar listede görünmediği için eklenmeli."
+  },
+  {
+    "slug": "lor-mantisi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Description Ege iddiası taşıyor, kaynaklar lorlu mantıyı bölgesel Ege klasiği olarak doğrulamıyor."
+    ],
+    "corrections": {
+      "description": "Lor mantısı ince hamurun içine lorlu harç alır, yoğurt ve tereyağıyla hafif bir tabak olur."
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/lorlu-manti-tarifi/",
+      "https://turkishstylecooking.com/turkish-manti-recipe.html"
+    ],
+    "confidence": "medium",
+    "reason": "Hamur, lor dolgusu, yoğurt ve tereyağlı servis mantı mantığıyla uyumlu; Ege kökeni net kaynakla desteklenmediği için çıkarılmalı."
+  },
+  {
+    "slug": "lorlu-biber-dolmasi-tekirdag-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Lorlu biber dolması kaynaklarla doğrulanıyor, fakat Tekirdağ usulü iddiası için güvenilir kaynak bulunamadı.",
+      "Title bölge iddiası taşıyor ve Mod K correction alanları title değiştiremiyor."
+    ],
+    "corrections": {
+      "description": "Lorlu biber dolması, biberleri lorlu pirinç harcıyla doldurarak hafif, otlu ve yaz sofralarına uygun bir dolma sunar."
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/lorlu-biber-dolmasi/22118",
+      "https://www.sahrapsoysal.com/peynirli-arnavut-biber-dolmasi-tarifi-t-4848"
+    ],
+    "confidence": "medium",
+    "reason": "Tarif tipi makul, ancak Tekirdağ etiketi doğrulanamadığı ve title düzeltilemediği için manuel review gerekir."
+  },
+  {
+    "slug": "lorlu-biber-kavurmasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 1 ve 5 tarif adını tekrar eden scaffold cümleleri içeriyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Biberleri yıkayıp çekirdeklerini ayıklayın, orta kalınlıkta halka halka doğrayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Ocaktan alıp karabiber serpin; sıcak ya da ılık servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://ye-mek.net/tarif/lorlu-biber-kavurmasi",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/biberli-lor-kavurmasi/8073"
+    ],
+    "confidence": "high",
+    "reason": "Biber ve lorun tavada kavrulması kaynaklarla uyumlu; yalnızca kullanıcıya anlamsız gelen scaffold adımları temizlenmeli."
+  },
+  {
+    "slug": "lorlu-biberli-krep",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Krep hamuru için sıvı malzeme eksik; ingredient listesinde süt veya su yok.",
+      "Steps 1 ve 6 tarif adını tekrar eden scaffold cümleleri içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Süt", "amount": "1", "unit": "su bardağı" }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un, yumurta ve sütü pürüzsüz, akışkan bir hamur olana kadar çırpın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Krepleri lorlu biberli içle doldurup ikiye katlayın ve ılık servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.mygourmetconnection.com/hungarian-crepes-palacsinta/",
+      "https://www.youtube.com/watch?v=Mg17QBm7n1o"
+    ],
+    "confidence": "medium",
+    "reason": "Krep tabanı için süt gerekir; lorlu otlu krep fikri makul, fakat mevcut akışta sıvı eksik ve scaffold metni var."
+  },
+  {
+    "slug": "lorlu-biberli-sembusek-mardin-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Sembusek Mardin mutfağında doğrulanıyor, ancak lorlu biberli iç için güvenilir kaynak bulunamadı.",
+      "Title ve description bölgesel iddia taşıyor, Mod K title alanını değiştiremiyor."
+    ],
+    "corrections": {
+      "description": "Lorlu biberli sembusek, ince hamuru lor ve biberli harçla buluşturarak kıtır, baharatlı ve paylaşmalık bir hamur işi kurar."
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/mardin/neyenir/sembusek",
+      "https://www.nefisyemektarifleri.com/sembusek-mardin-usulu/"
+    ],
+    "confidence": "medium",
+    "reason": "Sembusek ana formu doğru, fakat lorlu biberli Mardin varyantı doğrulanamadı; title için manuel karar gerekir."
+  },
+  {
+    "slug": "lorlu-dereotlu-krep-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 1, 2 ve 5 tarif adını tekrar eden scaffold cümleleri içeriyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un, yumurta, süt ve tuzu akışkan bir krep hamuru olana kadar çırpın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Tavayı hafif yağlayıp hamurdan ince bir tabaka yayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Lor ve dereotlu içi kreplere paylaştırıp rulo sarın ve ılık servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/hungarian-crepes-palacsinta/",
+      "https://www.mygourmetconnection.com/hungarian-crepes-palacsinta/"
+    ],
+    "confidence": "medium",
+    "reason": "Macar palacsinta ve lor benzeri túró dolgusu kaynaklarda var; sorun tarif adını yineleyen yapay step metinleri."
+  },
+  {
+    "slug": "lorlu-enginar-boregi-urla-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Lorlu börek ve lorlu enginar ayrı ayrı doğrulanıyor, ancak Urla usulü lorlu enginar böreği için güvenilir kaynak bulunamadı.",
+      "Steps scaffold cümleler taşıyor ve title düzeltmesi Mod K alanlarıyla yapılamıyor."
+    ],
+    "corrections": {
+      "description": "Lorlu enginar böreği, ince yufkayı enginar ve lorla buluşturarak hafif, çıtır ve Ege kokulu bir hamur işi yapar."
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/diger-tarifler/peynirli-tarifler/firinda-lorlu-enginar",
+      "https://www.borek.gen.tr/lor-boregi.html"
+    ],
+    "confidence": "medium",
+    "reason": "Malzeme eşleşmesi makul olsa da Urla claim'i ve scaffold step kalitesi manuel review gerektiriyor."
+  },
+  {
+    "slug": "lorlu-enginar-kizartmasi-izmir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.evvelcevap.com/enginar-kizartmasi-tarifi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/diger-tarifler/peynirli-tarifler/firinda-lorlu-enginar"
+    ],
+    "confidence": "medium",
+    "reason": "Enginarı unlayıp kızartma ve lorla tamamlama kaynaklardaki enginar kızartması ve lorlu enginar çizgisiyle uyumlu; kritik hata yok."
+  },
+  {
+    "slug": "lorlu-firik-dolma-izmir-bostan-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Firik Güneydoğu mutfağıyla daha güçlü bağ kuruyor, İzmir bostan usulü lorlu firik dolma iddiası doğrulanamadı.",
+      "Title bölge ve teknik iddiası taşıyor, Mod K correction alanları title değiştiremiyor."
+    ],
+    "corrections": {
+      "description": "Lorlu firik dolma, biberleri lor ve firikle doldurarak hafif isli, yumuşak içli bir dolma hazırlar."
+    },
+    "sources": [
+      "https://www.yemektarifleri.gumushaneliler.net/lor-dolmasi/",
+      "https://www.nefisyemektarifleri.com/firikli-biber-dolmasi/"
+    ],
+    "confidence": "low",
+    "reason": "Dolma tekniği makul, ancak İzmir bostan bağlamı güvenilir kaynakla desteklenmedi; title için manuel karar gerekir."
+  },
+  {
+    "slug": "lorlu-ispanakli-tandir-boregi-kars-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.borek.gen.tr/lor-boregi.html",
+      "https://www.nefisyemektarifleri.com/ispanakli-lorlu-borek/"
+    ],
+    "confidence": "medium",
+    "reason": "Yufka, lor, ıspanak ve fırınlama akışı lorlu ıspanaklı börek kaynaklarıyla uyumlu; belirgin süre veya alerjen hatası yok."
+  },
+  {
+    "slug": "lorlu-kabak-cicegi-tostu-izmir-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Kabak çiçeği ve lor Ege mutfağında uyumlu, ancak İzmir usulü kabak çiçeği tostu için güvenilir kaynak bulunamadı.",
+      "Steps scaffold cümleler içeriyor ve title bölge iddiası Mod K ile düzeltilemiyor."
+    ],
+    "corrections": {
+      "description": "Lorlu kabak çiçeği tostu, kabak çiçeğini lor ve otlarla ekmek arasında pişirerek hafif, kokulu ve çıtır bir kahvaltı lokması getirir."
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kabak-cicegi-dolmasi-tarifi/",
+      "https://www.yilmazmandira.com/peynirli-kirmizi-biber"
+    ],
+    "confidence": "low",
+    "reason": "Malzeme fikri mümkün, fakat kaynaklarda tost ve İzmir usulü claim'i doğrulanmadı; manuel review daha güvenli."
+  },
+  {
+    "slug": "lorlu-kabak-corbasi-edirne-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Son step aynı tarif adını tekrar eden scaffold cümlesi içeriyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 5,
+          "instruction": "Dereotunu serpin, tuzunu kontrol edin ve çorbayı sıcak servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kabak-corbasi-tarifi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/corba-tarifleri/sebze-corbasi-tarifleri/kabak-corbasi"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak, lor ve dereotu hafif çorba kurgusu makul; sadece son adımda kullanıcıya garip gelen tekrar temizlenmeli."
+  },
+  {
+    "slug": "lorlu-kabak-salatasi-mugla-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 ceviz veya badem diyor, ingredient listesinde kabuklu yemiş yok ve alerjen beyanı SUT ile sınırlı."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 5,
+          "instruction": "Lorun kalanını üstüne serpin, limon suyuyla tadını dengeleyip servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kabak-salatasi-tarifi/",
+      "https://www.afiyetle.com/tarif/lor-peynirli-salata"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak, lor, dereotu, zeytinyağı ve limon salata olarak uyumlu; alerjen doğurmamak için listede olmayan yemiş çıkarılmalı."
+  },
+  {
+    "slug": "lorlu-kete-erzurum-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 1 ve 5 tarif adını tekrar eden scaffold cümleleri içeriyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un, süt, yumurta ve tuzla yumuşak bir hamur yoğurun; tereyağını eritip ılıtın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Fırından çıkan keteyi ılık hale gelince dilimleyin ve çayla servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.evvelcevap.com/erzurum-koy-ketesi-tarifi/",
+      "https://www.tenceretv.com/borekler-corekler/kete-erzurum-tarifi-20781"
+    ],
+    "confidence": "medium",
+    "reason": "Erzurum kete formu doğru; lor dolgusu yerel varyasyon gibi makul, ancak scaffold step metinleri temizlenmeli."
+  },
+  {
+    "slug": "lorlu-kirmizi-biberli-acma-bursa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Açma hamuru için maya eksik.",
+      "Steps tarif adını tekrar eden scaffold cümleleri taşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru maya", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un, süt, yumurta, maya ve tereyağıyla yumuşak bir hamur yoğurun.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Lor ve köz biberli harcı hamur parçalarının içine paylaştırıp kapatın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Açmaları ılık servis edin; iç dolgusu görünür kalacak şekilde ikiye bölün.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.pogacatarifi.com/lor-peynirli-borek-tarifi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/peynirli-kozlenmis-kirmizi-biber-dolmasi/8349"
+    ],
+    "confidence": "medium",
+    "reason": "Lor ve köz biberli hamur işi fikri makul, fakat mayasız açma tarifi eksik kalır ve step metinleri yapay görünüyor."
+  },
+  {
+    "slug": "lorlu-pancar-ezme-kirsehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step ve servingSuggestion ceviz kullanıyor, ingredient listesinde ceviz ve KUSUYEMIS alerjeni yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ceviz", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["KUSUYEMIS"]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/pancar-mezesi/",
+      "https://www.afiyetle.com/tarif/lor-peynirli-salata"
+    ],
+    "confidence": "medium",
+    "reason": "Pancar, lor, sarımsak ve zeytinyağı meze olarak uyumlu; ceviz servis ve step içinde geçtiği için malzeme ve alerjen eklenmeli."
+  },
+  {
+    "slug": "lorlu-patatesli-firin-borek-eskisehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps içinde patates haşlama, soğutma ve fırınlama toplamı mevcut totalMinutes değerinden uzun."
+    ],
+    "corrections": {
+      "cookMinutes": 40,
+      "totalMinutes": 64
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/lor-peynirli-tepsi-boregi/8589",
+      "https://www.nefisyemektarifleri.com/patatesli-borek-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Yufka, patates ve lor börek kurgusu doğru; haşlama ve fırınlama birlikte sayılınca süre RecipeTimeline için yükseltilmeli."
+  },
+  {
+    "slug": "lorlu-pazi-kavurmasi-artvin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 1, 2, 6 ve 7 tarif adını tekrar eden scaffold cümleleri içeriyor.",
+      "Step 7 kavurma için anlamsız biçimde dilimleme söylüyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Pazıyı yıkayıp saplarını ince, yapraklarını iri doğrayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Tavayı ısıtın, zeytinyağını ekleyip soğanı kavurmaya hazırlayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Tuzunu ve pul biberini ayarlayın, lor erimeden ocaktan alın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 7,
+          "instruction": "Mısır ekmeğiyle sıcak servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://turkishstylecooking.com/swiss-chard-with-eggs-recipe.html",
+      "https://ye-mek.net/tarif/lorlu-biber-kavurmasi"
+    ],
+    "confidence": "medium",
+    "reason": "Pazı kavurması ve lorlu kavurma tekniği makul; ancak scaffold tekrarları ve dilimleme talimatı uygulamayı bozuyor."
+  },
+  {
+    "slug": "lorlu-yumurta-muffin",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 tarif adını tekrar eden scaffold cümlesi içeriyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Fırını 190°C'ye ayarlayın, muffin kalıplarını hafifçe yağlayın.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.allrecipes.com/recipe/231480/muffin-tin-omelets/",
+      "https://www.foodnetwork.com/recipes/ree-drummond/omelet-muffins-3233134"
+    ],
+    "confidence": "high",
+    "reason": "Yumurta, lor ve yeşillikli fırın muffin kahvaltı hazırlığı olarak doğru; yalnızca ilk adım scaffold metni taşıyor."
+  },
+  {
+    "slug": "lorlu-zahter-salatasi-kilis-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps domates, salatalık, nar ekşisi ve pul biber kullanıyor, ingredient listesinde yok.",
+      "Taze zahter ve lor için SUSAM alerjeni gerekmiyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Domates", "amount": "1", "unit": "adet" },
+        { "name": "Salatalık", "amount": "1", "unit": "adet" },
+        { "name": "Nar ekşisi", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "allergens_remove": ["SUSAM"]
+    },
+    "sources": [
+      "https://www.hataydanal.com/blog/zahter-salatasi-tarifi",
+      "https://www.evvelcevap.com/zahter-salatasi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Taze zahter salatası nar ekşisi, domates ve zeytinyağıyla doğrulanıyor; eksik malzemeler eklenmeli, susam over-tag çıkarılmalı."
+  },
+  {
+    "slug": "lorlu-zahterli-yumurta-pide-antalya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tip yumurtanın son bölümde kırılmasını söylüyor, step 4 yumurtayı baştan setleştiriyor.",
+      "Steps tarif adını tekrar eden scaffold cümleleri içeriyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Pide hamurunu unlu tezgahta ince oval açın ve kenarlarını hafifçe yükseltin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Lor ve zahteri hamurun orta kısmına yayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Pideyi sıcak fırına verin, kenarlar kabarıp renk alınca çıkarın.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Yumurtayı ortasına kırıp fırına geri alın; beyazı setleşip sarısı diri kalınca çıkarın.",
+          "timerSeconds": 360
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Pideyi kısa dinlendirip sıcak dilimleyin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/yumurtali-pide-tarifi/",
+      "https://www.evvelcevap.com/zahter-salatasi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Pide, yumurta ve zahter fikri makul; mevcut adımlar tip ile çelişiyor ve scaffold metinleri içeriyor."
+  },
+  {
+    "slug": "lorlu-zeytinli-katmer-izmir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 1, 2, 3 ve 6 tarif adını tekrar eden scaffold cümleleri içeriyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un, su ve tuzla yumuşak bir hamur yoğurun.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Hamuru ince açın, yüzeyini az zeytinyağıyla yağlayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Lor ve doğranmış siyah zeytini hamurun ortasına yayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Katmeri ılık tabakta, domates ve çay eşliğinde servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/katmer-tarifi/",
+      "https://www.afiyetle.com/tarif/lor-peynirli-salata"
+    ],
+    "confidence": "medium",
+    "reason": "Katmer tekniği ile lor ve zeytin içi makul; sorun tarif adını yineleyen doğal olmayan step metinleri."
+  },
+  {
+    "slug": "lorlu-zeytinli-otlu-krep-izmir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Krep hamuru için sıvı malzeme eksik; ingredient listesinde süt veya su yok.",
+      "Steps tarif adını tekrar eden scaffold cümleleri içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Süt", "amount": "1", "unit": "su bardağı" }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un, yumurta ve sütü pürüzsüz olana kadar çırpın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Krepleri lorlu zeytinli içle katlayın ve ılık servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.mygourmetconnection.com/hungarian-crepes-palacsinta/",
+      "https://www.youtube.com/watch?v=Mg17QBm7n1o"
+    ],
+    "confidence": "medium",
+    "reason": "Lorlu otlu krep mantığı doğru, fakat krep için sıvı eksik ve son adımda yapay tekrar var."
+  },
+  {
+    "slug": "lorraine-kis-tart",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.theguardian.com/lifeandstyle/2018/jun/20/felicity-cloake-masterclass-quiche-lorraine-recipe",
+      "https://www.epicurious.com/recipes/food/views/ba-syn-bas-best-quiche-lorraine"
+    ],
+    "confidence": "high",
+    "reason": "Tereyağlı tart hamuru, kör pişirme, pastırma, yumurta, krema ve gruyere dolgusu Quiche Lorraine kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "loubia",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 kuru fasulyeyi akşamdan ıslatıyor, totalMinutes bu beklemeyi içermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 585
+    },
+    "sources": [
+      "https://www.recipesandplaces.com/loubia-moroccan-white-bean-stew/",
+      "https://www.darngoodveggies.com/loubia-stewed-moroccan-white-beans/"
+    ],
+    "confidence": "high",
+    "reason": "Domates, sarımsak ve kimyonlu Fas beyaz fasulye yapısı doğru; gecelik ıslatma beklemesi totalMinutes farkına eklenmeli."
+  },
+  {
+    "slug": "louisiana-karidesli-gumbo",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Louisiana gumbo tabanı için soğan beklenir, ingredient listesinde kereviz ve biber var ama soğan yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://www.foodandwine.com/what-is-gumbo-11687877",
+      "https://www.thespruceeats.com/cajun-trinity-of-cooking-3052290"
+    ],
+    "confidence": "high",
+    "reason": "Roux, karides, sosis, kereviz ve biber gumbo için doğru; Louisiana üçlüsünü tamamlamak için soğan eklenmeli."
+  },
+  {
+    "slug": "loukoumades",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.olivemagazine.com/recipes/loukoumades-greek-donuts/",
+      "https://www.grannyzen.com/recipe/320-loukoumades-greek-honey-puffs-honey-doughnuts"
+    ],
+    "confidence": "high",
+    "reason": "Mayalı hamur, kabarma, kızartma, bal ve tarçın servisi Yunan loukoumades kaynaklarıyla uyumlu; süreler de makul."
+  },
+  {
+    "slug": "lucuma-kremali-kup-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 kup tatlısını 30 dakika soğutuyor, totalMinutes bu beklemeyi içermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 42
+    },
+    "sources": [
+      "https://olenkacooks.com/dessert-recipes/lucuma-mousse/",
+      "https://www.apega.pe/receta-de-mousse-de-lucuma/"
+    ],
+    "confidence": "high",
+    "reason": "Lucuma ve krema bazlı Peru tatlısı kaynaklarla uyumlu; soğutma beklemesi totalMinutes'a eklenmeli."
+  },
+  {
+    "slug": "lucuma-yogurt-kup-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 tatlıyı 20 dakika soğutuyor, totalMinutes bu beklemeyi içermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 30
+    },
+    "sources": [
+      "https://lucuma.com/pages/lucuma-fruit",
+      "https://www.herbazest.com/recipes/lucuma-mousse-passion-fruit"
+    ],
+    "confidence": "medium",
+    "reason": "Lucuma'nın Peru tatlılarında kullanımı doğru; yoğurtlu kup modern varyasyon gibi makul, fakat soğutma süresi eklenmeli."
+  },
+  {
+    "slug": "lucumali-yogurt-kupu-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 kup tatlısını 20 dakika soğutuyor, totalMinutes bu beklemeyi içermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 28
+    },
+    "sources": [
+      "https://lucuma.com/pages/lucuma-fruit",
+      "https://www.fertur-travel.com/blog/2009/lucuma/869/"
+    ],
+    "confidence": "medium",
+    "reason": "Lucuma Peru tatlıları için doğru bir meyve; yoğurtlu kup hafif varyasyon, ancak bekleme süresi totalMinutes'a yansıtılmalı."
+  },
+  {
+    "slug": "lyon-hardalli-pirasa-graten",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/cheesy-leek-gratin",
+      "https://www.leeks.co.uk/recipes/leek-gratin/"
+    ],
+    "confidence": "medium",
+    "reason": "Pırasa, krema, hardal ve peynirle fırın graten yapısı Fransız tarzı sebze gratenleriyle uyumlu; süre ve alerjenler tutarlı."
+  },
+  {
+    "slug": "lyon-quiche-lorraine",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.theguardian.com/lifeandstyle/2018/jun/20/felicity-cloake-masterclass-quiche-lorraine-recipe",
+      "https://www.jonesdairyfarm.com/recipes/quiche-lorraine/"
+    ],
+    "confidence": "high",
+    "reason": "Tart tabanı, yumurta, krema, süt, gruyere, muskat ve pastırma Quiche Lorraine kaynaklarıyla uyumlu; alerjenler doğru."
+  },
+  {
+    "slug": "lyon-salata-lyonnaise",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.pbs.org/food/recipes/salade-lyonnaise",
+      "https://www.epicurious.com/recipes/food/views/frisee-salad-with-lardons-and-poached-eggs-100876"
+    ],
+    "confidence": "high",
+    "reason": "Frisee, pastırma, kruton, poşe yumurta ve Dijonlu sos Salade Lyonnaise kaynaklarıyla uyumlu; süre ve alerjen beyanı doğru."
+  },
+  {
+    "slug": "maakouda-fas-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Patates haşlama, harcı dinlendirme ve kızartma toplamı mevcut totalMinutes değerini aşıyor."
+    ],
+    "corrections": {
+      "cookMinutes": 30,
+      "totalMinutes": 55
+    },
+    "sources": [
+      "https://www.cookingwithalia.com/maakouda-moroccan-potato-patties/",
+      "https://www.moroccoworldnews.com/2013/03/143955/moroccan-cuisine-a-recipe-for-maakouda-potato-fritters/"
+    ],
+    "confidence": "high",
+    "reason": "Patates, yumurta, maydanoz ve kimyonlu kızarmış köfte yapısı doğru; haşlama ve dinlendirme nedeniyle süre yükseltilmeli."
+  },
+  {
+    "slug": "mac-and-cheese",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/macaroni-cheese-4-easy-steps",
+      "https://www.seriouseats.com/how-to-fix-grainy-mac-and-cheese-11893813"
+    ],
+    "confidence": "high",
+    "reason": "Makarna, tereyağı, un, süt ve cheddar sosu klasik mac and cheese yapısıyla uyumlu; peynirin ocak dışında eklenmesi de doğru."
+  },
+  {
+    "slug": "macar-visneli-tarhonya-pilavi",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tarhonya ve paprika Macar mutfağıyla uyumlu, ancak vişneli tarhonya pilavı için güvenilir kaynak bulunamadı.",
+      "Title ve description Macar usulü iddiası taşıyor, doğrulanmamış varyasyon olabilir."
+    ],
+    "corrections": {
+      "description": "Vişneli tarhonya pilavı, kavrulmuş tarhonyayı vişne, soğan ve paprika ile tatlı ekşi bir garnitüre dönüştürür."
+    },
+    "sources": [
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/hungarian-egg-barley-tarhonya/",
+      "https://www.food.com/recipe/hungarian-tarhonya-egg-barley-432456"
+    ],
+    "confidence": "low",
+    "reason": "Tarhonya kaynakları mevcut, fakat vişne ekli Macar pilav iddiası desteklenmediği için manuel review gerekir."
+  },
+  {
+    "slug": "madartej",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ServingSuggestion en az 2 saat soğutma öneriyor, totalMinutes bu beklemeyi içermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 160
+    },
+    "sources": [
+      "https://budapestcookingclass.com/hungarian-floating-island-madartej-recipe/",
+      "https://www.bestofhungary.co.uk/blogs/recipes/madartej"
+    ],
+    "confidence": "high",
+    "reason": "Yumurta akı bezeleri ve vanilyalı süt kreması madártej kaynaklarıyla uyumlu; soğutma beklemesi totalMinutes'a eklenmeli."
+  }
+]

@@ -1,0 +1,840 @@
+[
+  {
+    "slug": "lima-kinoali-tavuk-aguadito",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Description Peru usulü diyor, cuisine alanı mx görünüyor."
+    ],
+    "corrections": {
+      "cuisine": "pe"
+    },
+    "sources": [
+      "https://www.eatperu.com/aguadito-de-pollo/",
+      "https://www.limaeasy.com/peruvian-food-guide/typical-peruvian-soups/aguadito-de-pollo"
+    ],
+    "confidence": "high",
+    "reason": "Aguadito Peru çorbasıdır; kişniş, tavuk, bezelye ve tahıllı yeşil çorba yapısı doğru, tek net hata mutfak kodu."
+  },
+  {
+    "slug": "lima-mor-misirli-tavuk-salatasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 lima fasulyesi kullanıyor, ingredient listesinde yok.",
+      "Step 4 zeytinyağı ve kimyon kullanıyor, ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Lima fasulyesi", "amount": "0.75", "unit": "su bardağı" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Kimyon", "amount": "0.25", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.eatperu.com/solterito/",
+      "https://www.epicurious.com/recipes/food/views/solterito-de-quinua-quinoa-solterito-56389771"
+    ],
+    "confidence": "medium",
+    "reason": "Peru salatası kurgusu makul, fakat step içinde geçen fasulye, yağ ve kimyon listede olmadığı için uygulama eksik kalır."
+  },
+  {
+    "slug": "lima-papa-a-la-huancaina",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.pbs.org/food/recipes/papa-a-la-huancaina",
+      "https://www.196flavors.com/papa-a-la-huancaina/"
+    ],
+    "confidence": "high",
+    "reason": "Patates, queso fresco, buharlaşmış süt, ají amarillo, kraker, yumurta ve zeytin kaynaklardaki klasik yapıyla uyumlu."
+  },
+  {
+    "slug": "lima-patatesli-causa-tavuk",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5'te 20 dakika soğutma var, totalMinutes prep+cook toplamı olan 54 dakikada kalmış."
+    ],
+    "corrections": {
+      "totalMinutes": 74
+    },
+    "sources": [
+      "https://www.hellmanns.com/us/en/r/causa-rellena-recipe.html/178021",
+      "https://kripalu.org/living-kripalu/kripalu-recipe-ysmaels-peruvian-causa-rellena"
+    ],
+    "confidence": "high",
+    "reason": "Causa için patates, ají amarillo, lime ve tavuk dolgusu doğru; bekleme süresi RecipeTimeline farkı olarak totalMinutes'a eklenmeli."
+  },
+  {
+    "slug": "lime-biberli-barramundi-tava-avustralya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.taste.com.au/recipes/pan-fried-barramundi-lime-caper-butter/8884efef-e53b-4ea8-8f0b-dd79a0cfc897",
+      "https://www.bhg.com.au/recipe/food/crispy-skin-barramundi/"
+    ],
+    "confidence": "medium",
+    "reason": "Barramundiyi tavada kısa pişirme, lime ile bitirme ve biberli hafif servis Avustralya balık tabağı mantığıyla uyumlu."
+  },
+  {
+    "slug": "lime-bitters-spritz-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "İçecek lemon lime bitters çizgisinde düşük alkollü veya alkolsüz servis edilir, alkollu tag'i yanıltıcı."
+    ],
+    "corrections": {
+      "tags_remove": ["alkollu"],
+      "tags_add": ["alkolsuz"]
+    },
+    "sources": [
+      "https://www.taste.com.au/recipes/lemon-lime-bitters/58926db0-001c-44d7-b111-aa4c9be3bbc3",
+      "https://angosturabitters.com/cocktail/cocktail-2/"
+    ],
+    "confidence": "medium",
+    "reason": "Bitters aroması ve soda kullanımı doğru, ancak servis kültürü alkolsüz serinleticiye daha yakın olduğu için tag düzeltilmeli."
+  },
+  {
+    "slug": "lime-coconut-batida-brezilya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Description rom diyor, Brezilya batida temel içkisi kaşasadır.",
+      "Ingredient listesinde kaşasa yok."
+    ],
+    "corrections": {
+      "description": "Lime hindistan cevizli batida, kaşasayı lime ve hindistan cevizi sütüyle karıştırarak tropik, serin bir Brezilya kokteyli hazırlar.",
+      "ingredients_remove": ["Rom"],
+      "ingredients_add": [
+        { "name": "Kaşasa", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Şeker şurubu", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.food.com/recipe/batida-de-coco-brazil-455162",
+      "https://www.youtube.com/watch?v=sGEiBERRZZU"
+    ],
+    "confidence": "high",
+    "reason": "Batida kaynakları kaşasa temelli kokteyl gösteriyor; rom alternatif olabilir ama ana tarifte kaşasa yazılması daha doğru."
+  },
+  {
+    "slug": "lime-kabuklu-irmik-kup-peru-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tarif Türk usulü sütlü irmik tatlısına benziyor, Peru kökeni güvenilir kaynakla doğrulanamadı.",
+      "Title ve description Peru iddiası taşıyor, mutfak bağlamı manuel review ister."
+    ],
+    "corrections": {
+      "description": "Lime kabuklu irmik kup, irmiği süt ve lime kabuğuyla buluşturarak ferah bir sütlü tatlı kurar.",
+      "cuisine": "tr"
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/irmik-muhallebisi-tarifi/",
+      "https://www.eatperu.com/peruvian-desserts/"
+    ],
+    "confidence": "medium",
+    "reason": "Süt, irmik ve şekerli kup yapısı yerel irmik muhallebisine yakın; Peru etiketi kaynakla desteklenmediği için manuel karar gerekir."
+  },
+  {
+    "slug": "lime-kekikli-limonata-avustralya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.taste.com.au/recipes/fresh-lemonade-recipe/8d9474ef-c361-4d2a-9100-2214a91a51db",
+      "https://www.bbcgoodfood.com/recipes/thyme-lemonade"
+    ],
+    "confidence": "medium",
+    "reason": "Narenciye suyu, bal, taze kekik demleme ve soğuk servis akışı aromalı limonata kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "lime-zencefilli-ananas-fizz-avustralya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.taste.com.au/recipes/pineapple-ginger-fizz/0e1ba8b3-4a24-44db-b8e2-0dd52e9d36ec",
+      "https://www.bbcgoodfood.com/recipes/pineapple-ginger-punch"
+    ],
+    "confidence": "medium",
+    "reason": "Ananas, lime, zencefil gazozu, buz ve nane ile gazlı tropik içecek kurgusu doğru ve süre bilgisi tutarlı."
+  },
+  {
+    "slug": "limeade-with-coconut-brezilya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 1-3 tarif adı tekrarlayan, generic ve uygulanabilir ölçü vermiyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Lime suyu, hindistan cevizi sütü, su ve şekeri blendera alın." },
+        { "stepNumber": 2, "instruction": "Karışımı köpürene kadar çekin, şeker tamamen dağılsın.", "timerSeconds": 20 },
+        { "stepNumber": 3, "instruction": "İçeceği ince süzgeçten geçirip buz dolu bardaklarda hemen servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.goya.com/en/recipes/brazilian-style-frozen-coconut-lemonade/",
+      "https://healthylittlevittles.com/coconut-milk-brazilian-lemonade/"
+    ],
+    "confidence": "high",
+    "reason": "Brezilya usulü coconut limeade malzemeleri makul; sorun tarif adını yineleyen ve uygulama bilgisi vermeyen step metinleri."
+  },
+  {
+    "slug": "limon-mersinli-tavuk-pirinci-tava-avustralya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.taste.com.au/recipes/lemon-myrtle-chicken/2cdd798f-0da2-4de7-8e34-113eac28b1be",
+      "https://www.sbs.com.au/food/recipe/lemon-myrtle-chicken/0d8xtjks3"
+    ],
+    "confidence": "medium",
+    "reason": "Limon mersini aromasıyla tavuk ve pirinç tek tencere kurgusu makul; süre ve step akışı kendi içinde tutarlı."
+  },
+  {
+    "slug": "limon-myrtle-avokado-toast-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps tarif adını tekrar ediyor ve gereksiz template cümleler içeriyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Ekşi mayalı ekmek dilimlerini tavada kızartmaya hazır edin." },
+        { "stepNumber": 2, "instruction": "Tavayı ısıtıp ekmekleri iki yüzü gevrekleşene kadar kızartın.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Avokadoyu limon suyu ve limon myrtle ile püre gibi ezin." },
+        { "stepNumber": 4, "instruction": "Ezilmiş avokadoyu sıcak ekmeklerin üstüne yayın." },
+        { "stepNumber": 5, "instruction": "Üstüne az tuz ve limon kabuğu serpip bekletmeden servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.taste.com.au/recipes/avocado-toast/4b981f33-43a8-4cb4-b2ef-37d4a8d44c9f",
+      "https://www.eatingwell.com/article/7953232/ree-drummond-lemony-caprese-avocado-toast-recipe/"
+    ],
+    "confidence": "medium",
+    "reason": "Avokado tost yapısı doğru, ancak mevcut adımlar tarif adını tekrarlayan boilerplate olduğu için temiz step gerekir."
+  },
+  {
+    "slug": "limonana",
+    "verdict": "PASS",
+    "sources": [
+      "https://toriavey.com/limonana/",
+      "https://www.themediterraneandish.com/limonana-mint-lemonade/"
+    ],
+    "confidence": "high",
+    "reason": "Limon, taze nane, şeker, su ve buzun blenderda kısa çekilmesi klasik limonana kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "limonata",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3'te 'kısa süre' muğlak kalıyor.",
+      "TipNote 2 saat dinlendirme öneriyor, ancak bu opsiyonel olduğu için totalMinutes değişikliği gerekmiyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Limonların kabuğunu beyaz kısmına inmeden rendeleyin, suyunu sıkın." },
+        { "stepNumber": 2, "instruction": "Limon suyu, kabuk rendesi, şeker ve suyu blendera alın." },
+        { "stepNumber": 3, "instruction": "Karışımı kabuk acılaşmadan çekip ince süzgeçten süzün.", "timerSeconds": 20 }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/limonata/",
+      "https://www.nefisyemektarifleri.com/ev-yapimi-limonata-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Ev limonatası içeriği doğru; tek sorun kısa süre ifadesinin kullanıcıya uygulanabilir zaman vermemesi."
+  },
+  {
+    "slug": "limonata-cremosa-italyan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2'de 'kısa çekin' muğlak.",
+      "İçeceğin İtalyan köken iddiası zayıf, ama sütlü limonata olarak içerik uygulanabilir."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Limon suyu, süt, su ve şekeri blendera alın." },
+        { "stepNumber": 2, "instruction": "Karışımı köpük oluşana kadar çekin.", "timerSeconds": 20 },
+        { "stepNumber": 3, "instruction": "Buzu bardaklara paylaştırıp kremamsı limonatayı hemen dökün." }
+      ]
+    },
+    "sources": [
+      "https://www.simplyrecipes.com/creamy-lemonade-recipe-11780784",
+      "https://www.allrecipes.com/what-is-brazilian-lemonade-8417811"
+    ],
+    "confidence": "medium",
+    "reason": "Kremamsı limonata tekniği sütlü veya yoğunlaştırılmış sütlü örneklerle uyumlu, fakat mevcut adımlar fazla muğlak."
+  },
+  {
+    "slug": "limonlu-biberiye-soda-avustralya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/rosemary-lemonade",
+      "https://www.taste.com.au/recipes/rosemary-lemonade/7d5b4984-639a-4dbb-9268-1a89fbd23c9e"
+    ],
+    "confidence": "medium",
+    "reason": "Biberiyeyi kısa demleyip limon, bal, soda ve buzla bitirme akışı aromalı soda kaynaklarıyla tutarlı."
+  },
+  {
+    "slug": "limonlu-deniz-borulceli-tavuk-sote-bodrum-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 tuz kontrolü yapıyor, ingredient listesinde tuz yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/deniz-borulcesi-salatasi/",
+      "https://www.bbcgoodfood.com/recipes/lemon-chicken-stir-fry"
+    ],
+    "confidence": "medium",
+    "reason": "Deniz börülcesi tuzlu olduğu için düşük tuz notu doğru, ancak stepte kontrol edilen tuz ingredient listesinde yer almalı."
+  },
+  {
+    "slug": "limonlu-enginar-salatasi-ege-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 taze soğan kullanıyor, ingredient listesinde yok.",
+      "Step 5 bezelye veya iç bakla ile tamamlıyor, ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Taze soğan", "amount": "2", "unit": "dal" },
+        { "name": "Bezelye", "amount": "0.5", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://ye-mek.net/tarif/zeytinyagli-enginar-salatasi",
+      "https://www.antiofarm.com/enginar-salatasi/"
+    ],
+    "confidence": "high",
+    "reason": "Enginar, limon, zeytinyağı ve dereotu doğru; stepte geçen iki tamamlayıcı malzeme listede olmadığı için eklenmeli."
+  },
+  {
+    "slug": "limonlu-humus-mersin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.e-sehir.com/yemek_tarifleri/humus-yemegi-tarifi-mersin-tarifi.html",
+      "https://www.misssgibi.com/humus-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Nohut, tahin, limon, sarımsak ve zeytinyağıyla hazırlanan humus içeriği Mersin ve genel humus kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "limonlu-irmik-muhallebisi-isparta-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4'te 20 dakika oda sıcaklığında bekleme var, totalMinutes bu beklemeyi içermiyor.",
+      "ServingSuggestion ve step Antep fıstığı kullanıyor, ingredient listesinde yok."
+    ],
+    "corrections": {
+      "totalMinutes": 45,
+      "ingredients_add": [
+        { "name": "Antep fıstığı", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["KUSUYEMIS"]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/irmik-muhallebisi-tarifi/",
+      "https://www.yemek.com/tarif/irmik-muhallebisi/"
+    ],
+    "confidence": "high",
+    "reason": "Sütlü irmik muhallebisi yapısı doğru; bekleme süresi totalMinutes'a, fıstık da ingredient ve allergen alanına yansımalı."
+  },
+  {
+    "slug": "limonlu-katalan-krem-kup-ispanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5'te 1 saat soğutma var, totalMinutes 20 dakika kalmış."
+    ],
+    "corrections": {
+      "totalMinutes": 80
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/crema-catalana",
+      "https://en.wikipedia.org/wiki/Crema_catalana"
+    ],
+    "confidence": "high",
+    "reason": "Süt, yumurta sarısı, nişasta, limon kabuğu ve şeker kabuğu doğru; pasif soğutma süresi totalMinutes içinde görünmeli."
+  },
+  {
+    "slug": "limonlu-kinoa-salatasi-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps domates, taze soğan, zeytinyağı, hardal ve limon kabuğu kullanıyor, ingredient listesinde yok.",
+      "Hardal ingredient eklendiğinde allergen alanı da güncellenmeli."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Domates", "amount": "1", "unit": "adet" },
+        { "name": "Taze soğan", "amount": "2", "unit": "dal" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Hardal", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Limon kabuğu rendesi", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": ["HARDAL"]
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/solterito-de-quinua-quinoa-solterito-56389771",
+      "https://www.eatperu.com/solterito/"
+    ],
+    "confidence": "high",
+    "reason": "Kinoa salatası Peru bağlamında makul; sorun stepte kullanılan sebze, yağ ve hardalın listede olmaması."
+  },
+  {
+    "slug": "limonlu-kirmizi-mercimek-corbasi-orta-dogu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 soğanı çeviriyor, fakat ingredient listesinde yağ yok.",
+      "Çorba tuzlanıyor varsayımı var, ingredient listesinde tuz yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/turkish-lentil-soup/",
+      "https://www.bbcgoodfood.com/recipes/red-lentil-soup"
+    ],
+    "confidence": "high",
+    "reason": "Mercimek, soğan, kimyon ve limonlu çorba yapısı doğru; kavurma ve tuzlama için iki temel malzeme listede eksik."
+  },
+  {
+    "slug": "limonlu-lorlu-irmik-keki-hatay-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/lorlu-irmik-tatlisi/",
+      "https://www.yemek.com/tarif/limonlu-irmik-tatlisi/"
+    ],
+    "confidence": "medium",
+    "reason": "Lor, irmik, yumurta, şeker ve limon kabuğu ile fırın tatlısı yapısı makul; süre ve allergen alanları uyumlu."
+  },
+  {
+    "slug": "limonlu-nohut-corbasi-yunan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Yunan revithosoupa kaynaklarında soğan ve zeytinyağı temel bileşen, listede yok.",
+      "Mevcut step 2 nohutları doğrudan suda kaynatıyor, yağlı soğan tabanı kurulmadığı için tarif eksik kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Soğanı ince doğrayın, nohudu süzüp tencereye yakın tutun." },
+        { "stepNumber": 2, "instruction": "Soğanı zeytinyağında yumuşayana kadar çevirin.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Nohut, su ve kekiği ekleyip kısık ateşte pişirin.", "timerSeconds": 900 },
+        { "stepNumber": 4, "instruction": "Limon suyunu ekleyip birkaç tur karıştırın, tadı parlak kalsın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Tuzunu kontrol edip çorbayı sıcak kaselere paylaştırın." }
+      ]
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/greek-chickpea-soup-revithosoupa/",
+      "https://natliciousfood.com/recipes/revithada"
+    ],
+    "confidence": "high",
+    "reason": "Nohut ve limon doğru, ancak Yunan nohut çorbası için soğanlı zeytinyağı tabanı eksik olduğu için tarif zayıf kalıyor."
+  },
+  {
+    "slug": "limonlu-nohut-guveci-yunan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://lauerhouse.gr/greek-specialities/revithada",
+      "https://natliciousfood.com/recipes/revithada"
+    ],
+    "confidence": "high",
+    "reason": "Nohut, soğan, zeytinyağı, limon ve kekikle ağır pişen revithada çizgisi doğru; süreler kendi içinde tutarlı."
+  },
+  {
+    "slug": "limonlu-nohutlu-semizotu-mersin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 sarımsak, kimyon ve tuz kullanıyor, ingredient listesinde yok.",
+      "Step 5 taze soğan kullanıyor, ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Kimyon", "amount": "0.25", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Taze soğan", "amount": "2", "unit": "dal" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/nohutlu-semizotu-salatasi/",
+      "https://www.yemek.com/tarif/semizotu-salatasi/"
+    ],
+    "confidence": "high",
+    "reason": "Semizotu, nohut, limon ve zeytinyağı salatası doğru; stepteki dört malzeme listede olmadığı için eksik uygulama riski var."
+  },
+  {
+    "slug": "limonlu-posset",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5'te 4 saat soğutma var, totalMinutes 18 dakika kalmış."
+    ],
+    "corrections": {
+      "totalMinutes": 258
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/lemon-posset",
+      "https://www.theguardian.com/food/2024/jan/31/how-to-make-lemon-posset-recipe-felicity-cloake"
+    ],
+    "confidence": "high",
+    "reason": "Krema, şeker ve limonlu İngiliz posset doğru; dört saatlik pasif soğutma totalMinutes içinde görünmeli."
+  },
+  {
+    "slug": "limonlu-raki-spritz-kas-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps tarif adını her adımda tekrarlıyor ve son iki adım aynı gerekçeyi yineliyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kısa bardağı buzla doldurun ve limon kabuğunu bardağın ağzına sürün." },
+        { "stepNumber": 2, "instruction": "Rakı ve limon suyunu buzun üstüne dökün." },
+        { "stepNumber": 3, "instruction": "Sodayı yavaşça ekleyip bardağı bir kez nazikçe karıştırın." },
+        { "stepNumber": 4, "instruction": "Limon kabuğu veya ince limon dilimiyle bekletmeden servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.diffordsguide.com/cocktails/recipe/2277/raki-and-soda",
+      "https://www.thespruceeats.com/raki-cocktail-recipe-760879"
+    ],
+    "confidence": "medium",
+    "reason": "Rakı, limon, soda ve buzlu spritz fikri uygulanabilir; sorun tekrarlı ve düşük kaliteli step metinlerinde."
+  },
+  {
+    "slug": "limonlu-ricotta-risotto-italyan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.taste.com.au/recipes/lemon-ricotta-risotto/0c0919d4-264e-48a6-8e2f-83f34bc2462f",
+      "https://www.delicious.com.au/recipes/lemon-ricotta-risotto/5db649cd-68ca-405d-a1e6-8b221f7c86b1"
+    ],
+    "confidence": "high",
+    "reason": "Arborio, sıcak sebze suyu, ricotta, parmesan ve limon kabuğu ile akışkan risotto yapısı kaynaklarla uyumlu."
+  },
+  {
+    "slug": "limonlu-somon-arpa-tavasi-avustralya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.taste.com.au/recipes/lemon-dill-salmon/31a4d8b2-99f9-4e88-a39c-ae45d80bb378",
+      "https://www.bbcgoodfood.com/recipes/salmon-lemon-dill"
+    ],
+    "confidence": "medium",
+    "reason": "Somon, limon, dereotu ve arpa şehriyeli tek tava yapısı makul; pişirme süreleri toplam süreyle uyumlu."
+  },
+  {
+    "slug": "limonlu-susamli-barbunya-pilaki-mersin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.yemek.com/tarif/barbunya-pilaki/",
+      "https://www.nefisyemektarifleri.com/barbunya-pilaki-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Barbunya, havuç, zeytinyağı ve limonlu pilaki yapısı doğru; susam bölgesel yorum olarak allergen alanına yansımış."
+  },
+  {
+    "slug": "limonlu-susamli-tavuk-sis-durumu-mersin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 zeytinyağı kullanıyor, ingredient listesinde yok.",
+      "Step 5 yeşillik kullanıyor, ingredient listesinde yok.",
+      "Step 1'de 10 dakika dinlendirme var, totalMinutes prep+cook toplamında kalmış."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Yeşillik", "amount": "1", "unit": "avuç" }
+      ],
+      "totalMinutes": 38
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/tavuk-sis/",
+      "https://www.nefisyemektarifleri.com/tavuk-sis-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Limon, susam, yoğurt ve lavaşlı tavuk dürüm uygulanabilir; eksik yağ, yeşillik ve bekleme süresi düzeltilmeli."
+  },
+  {
+    "slug": "limonlu-trifle-kup-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5'te 30 dakika soğutma var, totalMinutes 12 dakika kalmış."
+    ],
+    "corrections": {
+      "totalMinutes": 42
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/lemon-trifle",
+      "https://www.deliciousmagazine.co.uk/recipes/lemon-trifle/"
+    ],
+    "confidence": "high",
+    "reason": "Kek, krema, limon kreması ve meyveli trifle yapısı doğru; pasif soğutma süresi totalMinutes'a eklenmeli."
+  },
+  {
+    "slug": "limonlu-zencefil-cayi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/fresh-ginger-tea",
+      "https://www.youtube.com/watch?v=b84o3d1O8Ng"
+    ],
+    "confidence": "high",
+    "reason": "Taze zencefilin suda kısa kaynatılıp limonla servis edilmesi limonlu zencefil çayı kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "limonlu-zeytinli-bulgur-kisiri-mersin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 sıcak su kullanıyor, ingredient listesinde yok.",
+      "Step 3 pul biber kullanıyor, ingredient listesinde yok.",
+      "Step 4 taze soğan kullanıyor, ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "1", "unit": "su bardağı" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Taze soğan", "amount": "3", "unit": "dal" }
+      ]
+    },
+    "sources": [
+      "https://www.evvelcevap.com/tarifi/",
+      "https://www.nefisyemektarifleri.com/kisir-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kısır için bulgur, salça, limon, zeytinyağı ve yeşillik doğru; sıcak su, pul biber ve taze soğan listede eksik."
+  },
+  {
+    "slug": "limonlu-zeytinli-tavuk-tajin-fas-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Fas tavuk tajininde korunmuş limon beklenir, ingredient listesi taze limon diyor.",
+      "Step 1 zencefil, zerdeçal, tuz ve zeytinyağı kullanıyor, ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_remove": ["Limon"],
+      "ingredients_add": [
+        { "name": "Korunmuş limon", "amount": "1", "unit": "adet" },
+        { "name": "Zencefil", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Zerdeçal", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://taste.co.za/recipes/moroccan-chicken-tagine-with-preserved-lemon-and-olives/",
+      "https://www.theguardian.com/lifeandstyle/wordofmouth/2013/mar/13/how-make-perfect-chicken-tagine"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, zeytin ve limonlu Fas tajini doğru, fakat kaynaklar korunmuş limon ve baharatlı yağ tabanını temel gösteriyor."
+  },
+  {
+    "slug": "limonotlu-dana-pirinc-tava-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Vietnam limonotlu dana için soya sosu ve sarımsak gibi temel tatlandırıcılar eksik.",
+      "Soya sosu eklendiğinde allergen alanı güncellenmeli."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soya sosu", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Esmer şeker", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Sıvı yağ", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["SOYA"]
+    },
+    "sources": [
+      "https://food52.com/recipes/74489-vietnamese-lemon-grass-beef-with-rice-noodles-bun-bo-xao",
+      "https://www.washingtonpost.com/recipes/vietnamese-style-beef-with-lemon-grass/"
+    ],
+    "confidence": "high",
+    "reason": "Limonotu ve dana uyumlu, ancak Vietnam çizgisi için soya sosu, sarımsak ve hafif tat dengesi listede eksik."
+  },
+  {
+    "slug": "limonotlu-mantar-corbasi-tayland-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tayland limonotlu mantar çorbasında lime suyu ve soya sosu veya benzeri tuzlu taban beklenir, listede yok.",
+      "Soya sosu eklendiğinde allergen alanı güncellenmeli."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Lime suyu", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Soya sosu", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["SOYA"]
+    },
+    "sources": [
+      "https://www.realthairecipes.com/recipes/clear-mushroom-lemongrass-soup/",
+      "https://www.food.com/recipe/thai-lemon-grass-chicken-and-mushroom-broth-128842"
+    ],
+    "confidence": "high",
+    "reason": "Mantar ve limonotu doğru, fakat Tayland çorbasının ekşi ve tuzlu dengesi için lime suyu ile soya sosu eksik."
+  },
+  {
+    "slug": "limonotlu-pirinc-eristesi-bowl-vietnam-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://food52.com/recipes/74489-vietnamese-lemon-grass-beef-with-rice-noodles-bun-bo-xao",
+      "https://hermanathome.com/air-fryer-lemongrass-chicken/"
+    ],
+    "confidence": "medium",
+    "reason": "Pirinç eriştesi, limonotu, soya sosu ve sebzeli bowl yapısı Vietnam erişte kaseleriyle uyumlu."
+  },
+  {
+    "slug": "limonotlu-tavuklu-eriste-vietnam-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.thesavorychopstick.com/vietnamese-lemongrass-chicken/",
+      "https://christieathome.com/blog/vietnamese-lemongrass-chicken/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, erişte, limonotu, taze soğan ve soya soslu kısa tavada çevirme akışı kaynaklarla uyumlu."
+  },
+  {
+    "slug": "limonotlu-tavuklu-pirinc-tava-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Vietnam limonotlu tavuk kaynaklarında soya sosu veya balık sosu tabanı beklenir, ingredient listesinde yok.",
+      "Soya sosu eklendiğinde allergen alanı güncellenmeli."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soya sosu", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Sıvı yağ", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["SOYA"]
+    },
+    "sources": [
+      "https://www.thesavorychopstick.com/vietnamese-lemongrass-chicken/",
+      "https://christieathome.com/blog/vietnamese-lemongrass-chicken/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk ve limonotu doğru, ancak pirinç tavasında Vietnam tat profili için soya sosu, sarımsak ve yağ eksik kalıyor."
+  },
+  {
+    "slug": "limonotlu-tofu-bulyon-vietnam-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bonappetit.com/recipe/vegetable-soup-sriracha-lemongrass-tofu",
+      "https://www.realthairecipes.com/recipes/clear-mushroom-lemongrass-soup/"
+    ],
+    "confidence": "medium",
+    "reason": "Tofu, limonotu, zencefil ve berrak sıcak bulyon yapısı Güneydoğu Asya çorba tekniğiyle uyumlu; SOYA allergen doğru."
+  },
+  {
+    "slug": "lingonberry-cavdar-lapasi-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 1 ve 5 tarif adını tekrarlayan boilerplate cümleler içeriyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Çavdar ezmesi, süt ve balı küçük tencereye alın." },
+        { "stepNumber": 2, "instruction": "Karışımı kısık ateşte koyulaşana kadar karıştırarak pişirin.", "timerSeconds": 480 },
+        { "stepNumber": 3, "instruction": "Lingonberryleri ekleyip meyveler hafif yumuşayana kadar karıştırın.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Lapayı kaselere paylaştırıp yoğurdu üstüne ekleyin." },
+        { "stepNumber": 5, "instruction": "Ilık servis edin, çavdar bekledikçe koyulaşacağı için fazla bekletmeyin." }
+      ]
+    },
+    "sources": [
+      "https://www.food.com/recipe/whipped-lingonberry-porridge-vispipuuro-457381",
+      "https://www.arcticflavors.com/recipes/lingonberry-recipe-lingonberry-yogurt-parfait-for-breakfast-snack-or-dessert/"
+    ],
+    "confidence": "medium",
+    "reason": "Lingonberryli kahvaltı kurgusu makul; asıl sorun tarif adı tekrarlayan ve kullanıcıya değer katmayan iki step."
+  },
+  {
+    "slug": "lingonberry-collins-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps her adımda tarif adını tekrarlıyor, doğal kokteyl akışı yerine boilerplate metin veriyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Uzun bardağı buzla doldurun." },
+        { "stepNumber": 2, "instruction": "Cin, lingonberry püresi ve limon suyunu bardağa ekleyin." },
+        { "stepNumber": 3, "instruction": "Karışımı kaşıkla nazikçe karıştırın." },
+        { "stepNumber": 4, "instruction": "Sodayla tamamlayıp lingonberry veya limon dilimiyle servis edin." }
+      ]
+    },
+    "sources": [
+      "https://secretkitchensociety.com/gin-lingonberry-or-cranberry-cocktail/",
+      "https://www.epicurious.com/recipes/food/views/tom-collins"
+    ],
+    "confidence": "medium",
+    "reason": "Cin, limon, soda ve ekşi kırmızı meyve Collins mantığıyla uyumlu; düzeltme yalnızca tekrarlı step kalitesi için."
+  },
+  {
+    "slug": "lingonberry-tonic-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps tarif adını tekrarlıyor ve ölçülü, doğal içecek akışı vermiyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Uzun bardakları buzla doldurun." },
+        { "stepNumber": 2, "instruction": "Lingonberry şurubu ve limon suyunu bardağa paylaştırın." },
+        { "stepNumber": 3, "instruction": "Tonik suyu yavaşça ekleyip bir kez karıştırarak servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.youtube.com/watch?v=lkBvSPxSJrI",
+      "https://www.drinklab.org/very-berry-tonic/"
+    ],
+    "confidence": "medium",
+    "reason": "Lingonberry, limon ve tonik ferah içecek olarak makul; mevcut step metinleri gereksiz tekrar içeriyor."
+  },
+  {
+    "slug": "lingonberry-yogurt-parfe-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 yulafı 3 dakika ısıtıyor, cookMinutes 0 görünüyor.",
+      "Step 5'te 15 dakika soğutma var, totalMinutes bu beklemeyi içermiyor."
+    ],
+    "corrections": {
+      "cookMinutes": 3,
+      "totalMinutes": 28
+    },
+    "sources": [
+      "https://www.arcticflavors.com/recipes/lingonberry-recipe-lingonberry-yogurt-parfait-for-breakfast-snack-or-dessert/",
+      "https://www.splenda.com/recipe/mixed-berry-yogurt-parfait/"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurt, lingonberry ve yulaflı parfe doğru; kısa yulaf ısıtma ve pasif soğutma süresi timeline alanlarına yansımalı."
+  },
+  {
+    "slug": "lisbon-nohutlu-morina-salatasi",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Description Portekiz usulü diyor, cuisine alanı es görünüyor.",
+      "Tarifle cuisine enum içinde pt kodu yok, bu nedenle cuisine düzeltmesi otomatik önerilemez.",
+      "Step 5 yumurta dilimleriyle servis ediyor, ingredient listesinde yumurta yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yumurta", "amount": "2", "unit": "adet" }
+      ],
+      "allergens_add": ["YUMURTA"]
+    },
+    "sources": [
+      "https://www.196flavors.com/portugal-salada-de-bacalhau-com-grao/",
+      "https://www.foodfromportugal.com/recipes/cod-chickpea-salad/"
+    ],
+    "confidence": "high",
+    "reason": "Morina ve nohutlu salata Portekiz bacalhau salatasıyla uyumlu; es cuisine kodu ve eksik yumurta manuel review gerektirir."
+  },
+  {
+    "slug": "lizbon-portakalli-badem-keki",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Description Portekiz usulü diyor, cuisine alanı es görünüyor.",
+      "Tarifle cuisine enum içinde pt kodu yok, bu nedenle Portekiz mutfağı otomatik kodlanamıyor."
+    ],
+    "corrections": {
+      "description": "Portakallı badem keki, öğütülmüş bademi portakal kabuğu ve yumurtayla nemli, kokulu bir çay tatlısına dönüştürür."
+    },
+    "sources": [
+      "https://www.foodfromportugal.com/recipes/orange-almond-cake/",
+      "https://www.bbcgoodfood.com/recipes/orange-almond-cake"
+    ],
+    "confidence": "high",
+    "reason": "Portakallı badem keki içeriği makul, ancak Lizbon ve Portekiz iddiası es cuisine koduyla çeliştiği için manuel karar gerekir."
+  }
+]

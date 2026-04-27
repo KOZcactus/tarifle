@@ -1,0 +1,876 @@
+[
+  {
+    "slug": "lagos-pepper-soup-dana",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.allnigerianrecipes.com/soups/pepper-soup/",
+      "https://allnigerianfoods.com/nigerian-peppersoup"
+    ],
+    "confidence": "high",
+    "reason": "Dana eti, ehu veya uda benzeri baharat, acı biber ve sıcak servis akışı Nijerya pepper soup kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "lagos-suya-sis",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes 35 olduğu halde 30-dakika-alti tag'i var.",
+      "Step 6 domatesle servis ediyor, ingredient listesinde domates yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Domates", "amount": "2", "unit": "adet" }
+      ],
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.tilda.com/recipes/nigerian-beef-suya/",
+      "https://www.foodfidelity.com/nigerian-beef-suya/"
+    ],
+    "confidence": "high",
+    "reason": "Suya için et, yer fıstıklı yaji ve soğan domates servisi doğru; süre tag'i ve domates listesi düzeltilmeli."
+  },
+  {
+    "slug": "lagos-tavuklu-jollof-pilavi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Jollof tabanı kavruluyor, fakat ingredient listesinde sıvı yağ yok.",
+      "Pirinç ve tavuk suyuna rağmen tuz ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1.5", "unit": "tatlı kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.foodnetwork.com/recipes/food-network-kitchen/nigerian-jollof-rice-19493519",
+      "https://www.allnigerianrecipes.com/rice/jollof-rice/"
+    ],
+    "confidence": "medium",
+    "reason": "Domates biber soslu tek tencere jollof kurgusu doğru, ancak kavurma ve tuzlama için iki temel malzeme listede eksik."
+  },
+  {
+    "slug": "lagos-yer-fistikli-tatli-patates-guveci",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Description Nijerya usulü diyor, cuisine alanı ma görünüyor."
+    ],
+    "corrections": {
+      "cuisine": "ng"
+    },
+    "sources": [
+      "https://www.withinnigeria.com/piece/2024/01/22/nigerian-groundnut-soup-peanut-soup-recipe/",
+      "https://lakecares.org/oldways-sweet-potato-peanut-stew-mafe/"
+    ],
+    "confidence": "high",
+    "reason": "Yer fıstığı ve tatlı patatesli Batı Afrika tencere yapısı makul; tek net hata Fas kodu yerine Nijerya kodu gerekmesi."
+  },
+  {
+    "slug": "lahanali-mantar-guveci-zonguldak-maden-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 tuz ve sıcak su ekliyor, ingredient listesinde ikisi de yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "0.75", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.diyetkolik.com/yemek-tarifi/mantar-yemegi",
+      "https://yemek.com/tarif/kapuska/"
+    ],
+    "confidence": "medium",
+    "reason": "Lahana ve mantarlı sebze tenceresi makul; uygulamada geçen su ve tuz listede olmadığı için kullanıcı ölçü alamaz."
+  },
+  {
+    "slug": "lahmacun",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.turkishcuisine.org/recipes/pastries/lahmacun-turkish-pizza",
+      "https://www.turkeysforlife.com/2023/01/turkish-lahmacun-recipe.html"
+    ],
+    "confidence": "high",
+    "reason": "İnce hamur, kıymalı salçalı harç, yüksek ısıda kısa pişirme ve sumaklı soğan servisi kaynaklarla uyumlu."
+  },
+  {
+    "slug": "lahor-biryani",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 sarımsak, zencefil ve tuz kullanıyor, ingredient listesinde yok.",
+      "Step 5 safranlı süt diyor, ingredient listesinde süt yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "4", "unit": "diş" },
+        { "name": "Zencefil", "amount": "25", "unit": "gr" },
+        { "name": "Süt", "amount": "0.25", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "1.5", "unit": "tatlı kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/story/how-to-make-biryani",
+      "https://www.teaforturmeric.com/chicken-biryani/"
+    ],
+    "confidence": "medium",
+    "reason": "Yoğurtlu tavuk, yarı pişmiş basmati, kızarmış soğan ve demleme doğru; step'te geçen dört malzeme eksik."
+  },
+  {
+    "slug": "lahor-chicken-karahi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps tuz ve kişniş kullanıyor, ingredient listesinde ikisi de yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Taze kişniş", "amount": "0.25", "unit": "demet" }
+      ]
+    },
+    "sources": [
+      "https://www.pakistaneats.com/recipes/chicken-karahai/",
+      "https://www.cookwell.com/recipe/pakistani-chicken-karahi"
+    ],
+    "confidence": "high",
+    "reason": "Domates, yeşil biber, zencefil ve karabiberli karahi akışı doğru; tuz ve kişniş ölçüsü ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "lahor-nihari-kuzu-incik",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/nihari",
+      "https://www.princeofpaneer.com/recipes/pakistani-meat-nihari"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu incik, ghee, unla bağlanan sos, nihari masala ve uzun pişirme süresi Pakistan nihari kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "lahor-nohutlu-palak-tavasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.olivemagazine.com/recipes/vegetarian/spiced-chickpea-curry-with-spinach-tomato-and-garam-masala-chole-palak/",
+      "https://www.thefieryvegetarian.com/chickpea-spinach-curry/"
+    ],
+    "confidence": "medium",
+    "reason": "Nohut, ıspanak, domates, zencefil ve garam masala birleşimi chana palak çizgisiyle tutarlı ve vegan tag'i doğru."
+  },
+  {
+    "slug": "lalanga-trakya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps template cümleleri ve slug metni içeriyor, tarif akışı doğal değil."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, yoğurt, yumurta ve tuzu derin kasede pürüzsüz akışkan hamur olana kadar çırpın." },
+        { "stepNumber": 2, "instruction": "Hamuru 5 dakika dinlendirin, tavada daha düzgün yayılsın.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Tavayı orta ateşte 2 dakika ısıtıp tereyağının küçük kısmını eritin.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Hamurdan kaşıkla alıp tavaya ince parçalar halinde yayın." },
+        { "stepNumber": 5, "instruction": "Lalangaları iki yüzü kızarana kadar toplam 8 dakika pişirin.", "timerSeconds": 480 },
+        { "stepNumber": 6, "instruction": "Ilık lalangaları beyaz peynir ve bal ile servis edin." }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/lalanga/",
+      "https://www.nefisyemektarifleri.com/lalanga-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Malzemeler lalanga için uygun, fakat mevcut adımlar kullanıcıya gerçek pişirme sırası yerine üretim şablonu gösteriyor."
+  },
+  {
+    "slug": "lamington",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps pişirme, kaplama ve dinlendirme süreleriyle totalMinutes 50 uyuşmuyor."
+    ],
+    "corrections": {
+      "totalMinutes": 95
+    },
+    "sources": [
+      "https://www.cookingwithnanaling.com/lamington-recipe/",
+      "https://www.epicurious.com/recipes/food/views/lamingtons"
+    ],
+    "confidence": "high",
+    "reason": "Lamington içeriği doğru, ancak kekin pişip soğuması ve kaplamanın oturması toplam sürede görünmeli."
+  },
+  {
+    "slug": "lamington-kakaolu-kup-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 25 dakika soğutma içeriyor, totalMinutes 8 kalmış."
+    ],
+    "corrections": {
+      "totalMinutes": 35
+    },
+    "sources": [
+      "https://www.cookingwithnanaling.com/lamington-recipe/",
+      "https://www.food.com/recipe/australian-lamington-370513"
+    ],
+    "confidence": "medium",
+    "reason": "Kakao ve hindistan cevizli kup lamington esintisi makul; servis öncesi soğutma süresi toplam süreye eklenmeli."
+  },
+  {
+    "slug": "lamington-krema-kup-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 30 dakika soğutma içeriyor, totalMinutes 12 kalmış.",
+      "Toplam süre 30 dakikayı aştığı için 30-dakika-alti tag'i yanıltıcı."
+    ],
+    "corrections": {
+      "totalMinutes": 44,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.cookingwithnanaling.com/lamington-recipe/",
+      "https://www.food.com/recipe/australian-lamington-370513"
+    ],
+    "confidence": "high",
+    "reason": "Lamington kup fikri tutarlı, fakat krema katının oturması bekleme süresi gerektiriyor ve hızlı tag'i doğru değil."
+  },
+  {
+    "slug": "lamington-trifle-kup-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 30 dakika soğutma içeriyor, totalMinutes 12 kalmış.",
+      "Toplam süre 30 dakikayı aştığı için 30-dakika-alti tag'i yanıltıcı."
+    ],
+    "corrections": {
+      "totalMinutes": 45,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.cookingwithnanaling.com/lamington-recipe/",
+      "https://www.epicurious.com/recipes/food/views/lamingtons"
+    ],
+    "confidence": "high",
+    "reason": "Kek, krema, reçel ve hindistan cevizi lamington trifle için uygun; soğutma adımı toplam süreye yansımamış."
+  },
+  {
+    "slug": "lamington-yogurt-kup-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 bal kullanıyor, ingredient listesinde bal yok.",
+      "Steps 20 dakika soğutma içeriyor, totalMinutes 10 kalmış.",
+      "Toplam süre 30 dakikayı aştığı için 30-dakika-alti tag'i yanıltıcı."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Bal", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "totalMinutes": 31,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.cookingwithnanaling.com/lamington-recipe/",
+      "https://www.epicurious.com/recipes/food/views/lamingtons"
+    ],
+    "confidence": "medium",
+    "reason": "Yoğurtlu kup uyarlaması makul, fakat bal eksik ve soğutma adımı toplam süre ile tag alanında görünmüyor."
+  },
+  {
+    "slug": "lancashire-hotpot-ingiliz-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps toplamda 80 dakika kapalı pişirme, 20 dakika kızartma ve 10 dakika dinlendirme içeriyor; totalMinutes 70 kısa kalıyor.",
+      "Step 2 karabiber, step 5 tereyağı kullanıyor; ikisi de ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Tereyağı", "amount": "25", "unit": "gr" }
+      ],
+      "cookMinutes": 100,
+      "totalMinutes": 130
+    },
+    "sources": [
+      "https://www.canadianliving.com/food/recipe/lancashire-hotpot",
+      "https://realfood.tesco.com/step-by-step/how-to-make-lancashire-hotpot.html"
+    ],
+    "confidence": "high",
+    "reason": "Lamb, soğan, stok ve patates katı doğru; fırın ve dinlenme süreleri mevcut toplam süreyi açıkça aşıyor."
+  },
+  {
+    "slug": "langos",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 suyla hamur yoğuruyor, ingredient listesinde su yok.",
+      "Serving sarımsaklı sos diyor, sarımsak ingredient listesinde yok.",
+      "Kızartma için yağ kullanılıyor, ingredient listesinde kızartma yağı yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ilık su", "amount": "300", "unit": "ml" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Kızartma yağı", "amount": "2", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.variousetc.com/en/food/langos.html",
+      "https://www.foodways.recipes/dishes/hungarian/langos"
+    ],
+    "confidence": "high",
+    "reason": "Mayalı hamur, kızartma, ekşi krema ve peynir doğru; hamurun suyu, sarımsak ve kızartma yağı listede eksik."
+  },
+  {
+    "slug": "langos-budapeste-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 45 dakika mayalanma ve 10 dakika dinlenme içeriyor; totalMinutes 40 pasif süreleri dışarıda bırakıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 95
+    },
+    "sources": [
+      "https://www.variousetc.com/en/food/langos.html",
+      "https://www.foodways.recipes/dishes/hungarian/langos"
+    ],
+    "confidence": "high",
+    "reason": "Budapeşte usulü lángos malzemeleri ve pişirme yöntemi uygun, fakat hamur mayalanması toplam sürede görünmüyor."
+  },
+  {
+    "slug": "larb-gai",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 balık sosu, acı biber ve şeker kullanıyor, ingredient listesinde yok.",
+      "Step 5 kişniş ve marul yapraklarıyla servis ediyor, ingredient listesinde yok.",
+      "Balık sosu eklendiğinde DENIZ_URUNLERI allergen'i de eklenmeli."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Balık sosu", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Acı pul biber", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Toz şeker", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Taze kişniş", "amount": "0.25", "unit": "demet" },
+        { "name": "Marul yaprağı", "amount": "8", "unit": "adet" }
+      ],
+      "allergens_add": ["DENIZ_URUNLERI"]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/larb-gai-chicken-larb",
+      "https://hot-thai-kitchen.com/laab-gai/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, lime, nane ve kavrulmuş pirinç doğru; larb'ın ana sos malzemesi balık sosu ve servis yeşilliği listede eksik."
+  },
+  {
+    "slug": "last-word",
+    "verdict": "PASS",
+    "sources": [
+      "https://officialcocktails.com/cocktails/last_word/",
+      "https://www.bonappetit.com/recipe/the-last-word-cocktail"
+    ],
+    "confidence": "high",
+    "reason": "Cin, yeşil Chartreuse, maraschino ve lime suyunun eşit oranlı kullanımı klasik Last Word kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "lavantali-badem-sutlac-foca-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps pişirme ve 30 dakika dinlendirme içeriyor, totalMinutes 28 kısa kalıyor."
+    ],
+    "corrections": {
+      "cookMinutes": 25,
+      "totalMinutes": 65
+    },
+    "sources": [
+      "https://yemek.com/tarif/sutlac/",
+      "https://www.thespicehouse.com/blogs/recipes/lavender-blossom-lemonade"
+    ],
+    "confidence": "medium",
+    "reason": "Sütlaç tabanı ve lavantanın az kullanılması makul; pişirme ile dinlendirme süreleri toplam alana eklenmemiş."
+  },
+  {
+    "slug": "lavantali-limon-kremasi-kupu-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 bir saat soğutma içeriyor, totalMinutes 18 kalmış.",
+      "Toplam süre 30 dakikayı aştığı için 30-dakika-alti tag'i yanıltıcı."
+    ],
+    "corrections": {
+      "totalMinutes": 83,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.greatbritishchefs.com/recipes/lemon-posset-lavender-recipe",
+      "https://www.deliciousmagazine.co.uk/recipes/lemon-and-lavender-possets/"
+    ],
+    "confidence": "high",
+    "reason": "Limonlu lavantalı İngiliz kup fikri posset çizgisine yakın; soğutma süresi toplam süre ve hızlı tag alanına yansımamış."
+  },
+  {
+    "slug": "lavantali-limonata-isparta-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 içeceği 10 dakika dinlendiriyor, totalMinutes 8 kalmış."
+    ],
+    "corrections": {
+      "totalMinutes": 18
+    },
+    "sources": [
+      "https://www.thespicehouse.com/blogs/recipes/lavender-blossom-lemonade",
+      "https://www.tastingtable.com/1839442/lavender-lemonade-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Lavanta ve limonata dengesi doğru, ancak 10 dakikalık aroma bekleme süresi toplam süreye eklenmeli."
+  },
+  {
+    "slug": "lavantali-limonlu-soda-ingiltere-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://sugarandcharm.com/lavender-lemonade-recipe",
+      "https://www.thespicehouse.com/blogs/recipes/lavender-blossom-lemonade"
+    ],
+    "confidence": "medium",
+    "reason": "Lavanta şurubu, limon ve soda ile hızlı soğuk içecek kurulumu kaynaklardaki lavantalı limonata mantığıyla uyumlu."
+  },
+  {
+    "slug": "lavas",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.everythingturkish.net/cuisine/puffy-bread-lavash-recipe/",
+      "https://www.epicurious.com/recipes/food/views/lavash"
+    ],
+    "confidence": "medium",
+    "reason": "Un, su ve tuzlu ince hamur, kısa tava pişirme ve üst üste yumuşatma akışı lavaş için tutarlı görünüyor."
+  },
+  {
+    "slug": "laz-boregi-rize-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 20 dakika muhallebi ılıtma ve 15 dakika tatlı dinlendirme içeriyor; totalMinutes 65 bu bekleme sürelerini dışarıda bırakıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 100
+    },
+    "sources": [
+      "https://yemek.com/tarif/laz-boregi/",
+      "https://www.nefisyemektarifleri.com/laz-boregi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Yufka, muhallebi, tereyağı ve fırın akışı Laz böreğiyle uyumlu; pasif bekleme süreleri toplam alana eklenmeli."
+  },
+  {
+    "slug": "laz-otlu-tava-boregi-artvin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps template cümleleri içeriyor ve gerçek hazırlama sırasını yeterince anlatmıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Karışık otları yıkayıp 8 dakika süzgeçte süzdürün, iri sapları ayırıp ince doğrayın.", "timerSeconds": 480 },
+        { "stepNumber": 2, "instruction": "Doğranmış otları beyaz peynirle karıştırın, harç suluysa elinizle hafifçe sıkın." },
+        { "stepNumber": 3, "instruction": "Yufkaları ikiye bölüp otlu peynirli harcı aralarına yayın ve tavaya sığacak şekilde kapatın." },
+        { "stepNumber": 4, "instruction": "Tereyağını tavada eritip böreği orta ateşte 6 dakika pişirin.", "timerSeconds": 360 },
+        { "stepNumber": 5, "instruction": "Böreği çevirip ikinci yüzünü 6 dakika kızartın ve sıcak dilimleyin.", "timerSeconds": 360 }
+      ]
+    },
+    "sources": [
+      "https://www.theguardian.com/food/2025/mar/19/how-to-make-the-perfect-spinach-and-cheese-borek-recipe-felicity-cloake",
+      "https://yemek.com/tarif/tavada-borek/"
+    ],
+    "confidence": "medium",
+    "reason": "Otlu peynirli yufka böreği kurgusu makul, fakat mevcut adımlar şablon kalmış ve kullanıcıya net tava akışı vermiyor."
+  },
+  {
+    "slug": "lazanya",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 tereyağı kullanıyor, ingredient listesinde tereyağı yok.",
+      "Ragu, beşamel, fırın ve dinlendirme süreleri totalMinutes 80 değerini aşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "40", "unit": "gr" }
+      ],
+      "cookMinutes": 66,
+      "totalMinutes": 113
+    },
+    "sources": [
+      "https://www.giallozafferano.com/recipes/Lasagne-alla-Bolognese.html",
+      "https://www.bbcgoodfood.com/recipes/classic-lasagne"
+    ],
+    "confidence": "high",
+    "reason": "Kat kat makarna, ragu ve beşamel doğru; beşamel yağı eksik ve adımlardaki sürelerin toplamı mevcut süre alanını aşıyor."
+  },
+  {
+    "slug": "lazotlu-kabak-salatasi-artvin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps mısır, zeytinyağı, dereotu ve pul biberli yağ kullanıyor; ingredient listesinde yok.",
+      "Ingredient listesindeki Lazotu step'lerde kullanılmıyor."
+    ],
+    "corrections": {
+      "ingredients_remove": ["Lazotu"],
+      "ingredients_add": [
+        { "name": "Haşlanmış mısır", "amount": "1", "unit": "su bardağı" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Dereotu", "amount": "0.25", "unit": "demet" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yogurtlu-kabak-kabugu-salatasi/14809",
+      "https://ye-mek.net/tarif/yogurtlu-cig-kabak-salatasi"
+    ],
+    "confidence": "medium",
+    "reason": "Yoğurtlu kabak salatası mantığı doğru, fakat mevcut ingredient listesi step'lerdeki mısır ve sos malzemeleriyle uyuşmuyor."
+  },
+  {
+    "slug": "lebeniye-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 beş su bardağı su kullanıyor, ingredient listesinde su yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Su", "amount": "5", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.sabriulkerfoundation.org/tr/projelerimiz/yemekte-denge-mutfagi/etli-nohutlu-lebeniye-corbasi",
+      "https://ye-mek.net/tarif/lebeniye-corbasi"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurt, nohut, pirinç ve köfteli lebeniye akışı doğru; çorbanın ana sıvısı ingredient listesinde ölçülü görünmeli."
+  },
+  {
+    "slug": "leche-frita-ispanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Son step tarçınlı şeker kullanıyor, ingredient listesinde tarçın yok.",
+      "tipNote Türkçe karakter hatası taşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tarçın", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "tipNote": "Harcı tam soğutmak kızartırken dilimleri korur."
+    },
+    "sources": [
+      "https://www.theguardian.com/food/2024/feb/20/leche-frita-recipe-caramel-blood-oranges-jose-pizarro",
+      "https://en.wikipedia.org/wiki/Leche_frita"
+    ],
+    "confidence": "high",
+    "reason": "Sütlü harcı soğutup yumurta ve unla kızartma doğru; tarçınlı bitiş ölçüsü ve Türkçe karakter düzeltmesi gerekiyor."
+  },
+  {
+    "slug": "leche-merengada-ispanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Leche merengada kaynaklarda çok soğuk veya yarı donuk servis edilir; totalMinutes 18 ve 30-dakika-alti tag'i yanıltıcı.",
+      "Steps soğutma süresini ölçmüyor ve içeceğin köpüklü hazırlığını eksik bırakıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 138,
+      "tags_remove": ["30-dakika-alti"],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Sütü tarçın çubuğu, limon kabuğu ve şekerle 6 dakika ısıtın.", "timerSeconds": 360 },
+        { "stepNumber": 2, "instruction": "Sütü süzüp oda sıcaklığına gelene kadar 20 dakika soğutun.", "timerSeconds": 1200 },
+        { "stepNumber": 3, "instruction": "Sütü buzdolabında 1 saat soğutun, içecek buz gibi olmalı.", "timerSeconds": 3600 },
+        { "stepNumber": 4, "instruction": "Yumurta akını yumuşak köpük olana kadar 3 dakika çırpın.", "timerSeconds": 180 },
+        { "stepNumber": 5, "instruction": "Köpüğü soğuk süte katlayıp 30 dakika buzlukta yarı donuk kıvama getirin.", "timerSeconds": 1800 },
+        { "stepNumber": 6, "instruction": "Tarçın serperek çok soğuk servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.spanish-food.org/desserts-leche-merengada.html",
+      "https://en.wikipedia.org/wiki/Leche_merengada"
+    ],
+    "confidence": "high",
+    "reason": "Süt, tarçın, limon ve yumurta akı doğru; ama içeceğin soğuk servis doğası mevcut süre ve kısa adımlarda kaybolmuş."
+  },
+  {
+    "slug": "lechon-asado",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Lechón asado Küba mutfağında mojo ile marine edilmiş domuz etidir; ingredient listesinde dana döş kullanılmış."
+    ],
+    "corrections": {
+      "ingredients_remove": ["Dana döş"],
+      "ingredients_add": [
+        { "name": "Domuz omzu", "amount": "1.5", "unit": "kg" },
+        { "name": "Kekik", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Tuz", "amount": "1.5", "unit": "tatlı kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/lechon-asado",
+      "https://www.traeger.com/recipes/cuban-lechon-asado-cuban-pork-roast"
+    ],
+    "confidence": "high",
+    "reason": "Mojo marinadı doğru yönde, fakat ana protein dana olunca tarif lechón asado adını yanlış temsil ediyor."
+  },
+  {
+    "slug": "lecso-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Recipe vegan görünüyor, servingSuggestion sosis öneriyor ve vegan tag'iyle çelişiyor."
+    ],
+    "corrections": {
+      "servingSuggestion": "Lecsóyu sıcak sunun, yanına rustik ekmek ve taze maydanoz ekleyin."
+    },
+    "sources": [
+      "https://www.olivemagazine.com/recipes/one-pots/hungarian-lecso/",
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/lecso/"
+    ],
+    "confidence": "high",
+    "reason": "Biber, domates, soğan ve paprika doğru; vegan tarifte sosisli servis önerisi tag alanıyla açık çelişiyor."
+  },
+  {
+    "slug": "lecso-yumurtali-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 paprika ve tuz kullanıyor, ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tatlı paprika", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/lecso/",
+      "https://en.wikipedia.org/wiki/Lecs%C3%B3"
+    ],
+    "confidence": "high",
+    "reason": "Yumurtalı lecsó varyasyonu kaynaklarda makul; paprika ve tuz lecsó tabanı için gerekli olup listede eksik."
+  },
+  {
+    "slug": "lecso-yumurtali-tava-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps template cümleleri içeriyor ve recipe adı tekrarlarıyla şişmiş.",
+      "Tavada pişirme için yağ ve tuz ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Soğanı yarım ay, kapya biberleri şerit, domatesleri küçük küp doğrayın." },
+        { "stepNumber": 2, "instruction": "Zeytinyağını tavada ısıtıp soğanı 3 dakika yumuşatın.", "timerSeconds": 180 },
+        { "stepNumber": 3, "instruction": "Biberleri ekleyip 7 dakika orta ateşte pişirin.", "timerSeconds": 420 },
+        { "stepNumber": 4, "instruction": "Domates, paprika ve tuzu katıp 6 dakika koyulaştırın.", "timerSeconds": 360 },
+        { "stepNumber": 5, "instruction": "Yumurtaları tavaya kırıp akları toparlanana kadar 3 dakika pişirin.", "timerSeconds": 180 },
+        { "stepNumber": 6, "instruction": "Yumurtaları fazla kurutmadan ateşten alın." },
+        { "stepNumber": 7, "instruction": "Sıcak tavada ekmekle servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/lecso/",
+      "https://en.wikipedia.org/wiki/Lecs%C3%B3"
+    ],
+    "confidence": "high",
+    "reason": "Yumurtalı lecsó fikri doğru, fakat mevcut step metni şablonlu ve tavada kullanılan temel yağ ile tuz eksik."
+  },
+  {
+    "slug": "leek-and-potato-soup-british",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.worcestershire.gov.uk/lets-waste-less/foodsavvy/recipes/leek-and-potato-soup",
+      "https://www.bbcgoodfood.com/recipes/leek-potato-soup"
+    ],
+    "confidence": "high",
+    "reason": "Pırasa, patates, tereyağı, sebze suyu ve krema ile pişirip blenderdan geçirme akışı Britanya çorbasıyla uyumlu."
+  },
+  {
+    "slug": "leka-ispanakli-krep-isvec-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "'Leka' adı İsveç mutfağında doğrulanabilir bir ıspanaklı krep adı olarak kaynaklarda görünmüyor.",
+      "Description İskandinav mutfağı diyor, ancak verilen kaynaklar bunu belirli İsveç yemeği olarak desteklemiyor."
+    ],
+    "corrections": {
+      "description": "Ispanaklı krep, ince krepleri ıspanaklı peynirli içle doldurarak fırında ısıtılan yumuşak bir öğün tabağı oluşturur."
+    },
+    "sources": [
+      "https://chefreader.com/spinach-cheese-pancakes/",
+      "https://www.bbcgoodfood.com/recipes/spinach-pancakes-harissa-yogurt"
+    ],
+    "confidence": "medium",
+    "reason": "Tarif teknik olarak ıspanaklı peynirli krep, fakat İsveç ve 'Leka' iddiası güvenilir kaynakla doğrulanamadı."
+  },
+  {
+    "slug": "lemon-myrtle-iced-tea-avustralya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.girl.com.au/lemon-myrtle-iced-tea.htm",
+      "https://neradatea.com.au/blogs/tea-talk/lemon-myrtle-iced-tea"
+    ],
+    "confidence": "high",
+    "reason": "Siyah çay, lemon myrtle, bal ve buzla soğuk servis akışı Avustralya lemon myrtle iced tea kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "lemon-myrtle-spritz-avustralya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://roogenic.com.au/blogs/recipes/lemon-myrtle-rose-iced-tea",
+      "https://www.bonappetit.com/recipe/hugo-spritz"
+    ],
+    "confidence": "medium",
+    "reason": "Lemon myrtle şurubu ile soda bazlı ferah spritz uyarlaması tutarlı; alkollü, vegan ve hızlı tag'leri makul."
+  },
+  {
+    "slug": "lemon-slice-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Australian lemon slice kaynaklarında hindistan cevizi tipik; ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Hindistan cevizi", "amount": "0.75", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.mckenziesfoods.com.au/recipe/lemon-slice/",
+      "https://www.sbs.com.au/food/recipe/double-lemon-slice/3mjcmd1v1"
+    ],
+    "confidence": "high",
+    "reason": "Bisküvi, tereyağı, yoğunlaştırılmış süt ve limon doğru; Avustralya lemon slice için hindistan cevizi eksik kalıyor."
+  },
+  {
+    "slug": "lemonato-tavuklu-orzo-yunan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.thehungrybites.com/lemon-chicken-orzo/",
+      "https://www.epicurious.com/recipes/food/views/lemony-chicken-and-orzo-soup-51155410"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk, orzo, tavuk suyu, limon ve dereotu akışı Yunan esintili limonlu tavuk orzo çizgisiyle uyumlu."
+  },
+  {
+    "slug": "lemongrass-dana-pirinc-bowl-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps salatalık, yeşillik, lime suyu ve sosla servis ediyor; ingredient listesinde yok.",
+      "Step 1 marine süresi ve step 2 pirinç pişirme toplamı totalMinutes 26 değerini aşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Salatalık", "amount": "1", "unit": "adet" },
+        { "name": "Taze kişniş", "amount": "0.25", "unit": "demet" },
+        { "name": "Lime suyu", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "totalMinutes": 47
+    },
+    "sources": [
+      "https://platinumcookware.com/blogs/recipes/vietnamese-lemongrass-beef-bo-n%C6%B0%E1%BB%9Bng-x%E1%BA%A3",
+      "https://raikesbeef.co/blogs/recipes/lemongrass-beef-rice-bowls"
+    ],
+    "confidence": "medium",
+    "reason": "Limon otlu dana ve pirinç bowl doğru yönde, fakat servis malzemeleri eksik ve marine dahil süre 26 dakikayı geçiyor."
+  },
+  {
+    "slug": "lemongrass-tofu-rice-salad-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 sarımsak ve soya sosu kullanıyor, ingredient listesinde yok.",
+      "Step 4 salatalık, nane ve kişniş kullanıyor, ingredient listesinde yok.",
+      "Step 5 fıstıkla servis ediyor, ingredient listesinde yok ve YER_FISTIGI allergen'i eksik.",
+      "Step süreleri totalMinutes 27 değerini aşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Soya sosu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Salatalık", "amount": "1", "unit": "adet" },
+        { "name": "Taze nane", "amount": "0.25", "unit": "demet" },
+        { "name": "Taze kişniş", "amount": "0.25", "unit": "demet" },
+        { "name": "Kavrulmuş yer fıstığı", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["YER_FISTIGI"],
+      "totalMinutes": 58
+    },
+    "sources": [
+      "https://www.velivery.com/en/recipes/bowls/bun-vietnamese-rice-noodle-salad-with-crispy-lemongrass-tofu",
+      "https://www.epicurious.com/recipes/food/views/spicy-lemongrass-tofu-233844"
+    ],
+    "confidence": "high",
+    "reason": "Limon otlu tofu ve pirinç salata uyarlaması doğru; sos, otlar, fıstık ve gerçek süre ingredient ile alerjenlere yansımamış."
+  },
+  {
+    "slug": "licuado-de-papaya",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.mexicoinmykitchen.com/papaya-milkshake-recipe/",
+      "https://www.allrecipes.com/recipe/139446/papaya-licuado/"
+    ],
+    "confidence": "high",
+    "reason": "Papaya, süt, tatlandırıcı ve buzla hızlı blender içeceği Meksika licuado mantığıyla uyumlu; süt alerjeni doğru."
+  },
+  {
+    "slug": "lima-aji-de-gallina",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.eatperu.com/aji-de-gallina/",
+      "https://www.amigofoods.com/blogs/peruvian-recipes-recetas-peruanas/aji-de-gallina"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, ají amarillo, sütlü ekmek, ceviz, parmesan, patates, pirinç ve yumurta servisi klasik ají de gallina ile uyumlu."
+  },
+  {
+    "slug": "lima-ceviche-clasico-levrek",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 20 dakika tatlı patates, 10 dakika mısır ve 8 dakika marine içeriyor; totalMinutes 33 kısa kalıyor.",
+      "Toplam süre 30 dakikayı aştığı için 30-dakika-alti tag'i yanıltıcı."
+    ],
+    "corrections": {
+      "totalMinutes": 63,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.eatperu.com/ceviche-recipe/",
+      "https://www.ciafoodies.com/ceviche-tradicional-con-leche-de-tigre-peruvian-ceviche-with-leche-de-tigre/"
+    ],
+    "confidence": "high",
+    "reason": "Levrek, lime, soğan, ají, mısır ve tatlı patates doğru; garnitür haşlama süreleri toplam alana eklenmemiş."
+  },
+  {
+    "slug": "lima-ceviche-klasik",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 20 dakika tatlı patates, 5 dakika soğan bekletme ve 10 dakika marine içeriyor; totalMinutes 30 kısa kalıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 55,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.eatperu.com/ceviche-recipe/",
+      "https://shop.woodlandfoods.com/recipes/peruvian-ceviche"
+    ],
+    "confidence": "high",
+    "reason": "Klasik Peru ceviche malzemeleri doğru, fakat tatlı patates haşlama ve marine süreleri toplam değeri aşıyor."
+  },
+  {
+    "slug": "lima-fasulyeli-kinoa-salata-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps kişniş, domates, salatalık, zeytinyağı, kimyon, tuz ve avokado kullanıyor; ingredient listesinde yok.",
+      "Step süreleri totalMinutes 24 değerini aşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Taze kişniş", "amount": "0.25", "unit": "demet" },
+        { "name": "Domates", "amount": "1", "unit": "adet" },
+        { "name": "Salatalık", "amount": "1", "unit": "adet" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Kimyon", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Avokado", "amount": "1", "unit": "adet" }
+      ],
+      "totalMinutes": 35
+    },
+    "sources": [
+      "https://www.peru.travel/en/masperu/quinoa-the-peruvian-superfood",
+      "https://www.allrecipes.com/recipe/229156/zesty-quinoa-salad/"
+    ],
+    "confidence": "medium",
+    "reason": "Kinoa, lima fasulyesi ve lime salatası makul; step'lerdeki sebze, sos ve avokado listede olmadığı için ölçü eksik."
+  }
+]

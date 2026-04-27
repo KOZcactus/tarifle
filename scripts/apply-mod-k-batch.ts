@@ -425,6 +425,21 @@ async function main() {
   console.log(`Summary: ${updated} updated, ${skipped} idempotent, ${notFound} not_found`);
   if (!APPLY) console.log(`Dry-run. --apply ile DB'ye yaz.`);
 
+  // K7 P2 #3 (oturum 26 test campaign) hatirlatma: Mod K v2 ingredient
+  // degisiklikleri sonrasi nutrition macro alanlari (averageCalories,
+  // protein, carbs, fat) eskimis kalir. Recompute pipeline ayri kosulur.
+  // audit-nutrition-anomaly script bu drift'i raporlar (oturum 26'da
+  // 1162 -> 1181 anomali). Mod K v2 71 sub-batch tamamlanmasinin sonunda
+  // veya ara araliklarda compute-recipe-nutrition koşulmali.
+  if (APPLY && updated > 0) {
+    console.log("");
+    console.log(`⚠️  Nutrition macro recompute hatirlatmasi:`);
+    console.log(`   Bu batch'te ingredient degisikligi olabilir. Macro fields`);
+    console.log(`   (averageCalories/protein/carbs/fat) eski kalir.`);
+    console.log(`   Onerilen: 'npx tsx scripts/compute-recipe-nutrition.ts'`);
+    console.log(`   Audit: 'npx tsx scripts/audit-nutrition-anomaly.ts'`);
+  }
+
   await prisma.$disconnect();
 }
 

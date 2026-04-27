@@ -423,20 +423,26 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
         ) : null;
       })()}
 
-      {/* Breadcrumb */}
-      <nav className="mb-6 text-sm text-text-muted" aria-label={t("breadcrumbAria")}>
-        <Link href="/tarifler" className="hover:text-text">
+      {/* Breadcrumb - mobile touch target 44x44 (K6 a11y fix: py-2 + inline-flex
+          her link için min-height ~44px, WCAG 2.5.5 conformance) */}
+      <nav className="mb-6 flex flex-wrap items-center gap-x-1 text-sm text-text-muted" aria-label={t("breadcrumbAria")}>
+        <Link
+          href="/tarifler"
+          className="inline-flex min-h-[44px] items-center px-1 hover:text-text"
+        >
           {tRecipe("pageTitle")}
         </Link>
-        <span className="mx-2">›</span>
+        <span aria-hidden="true">›</span>
         <Link
           href={`/tarifler/${recipe.category.slug}`}
-          className="hover:text-text"
+          className="inline-flex min-h-[44px] items-center px-1 hover:text-text"
         >
           {recipe.category.emoji} {recipe.category.name}
         </Link>
-        <span className="mx-2">›</span>
-        <span className="text-text">{translatedTitle}</span>
+        <span aria-hidden="true">›</span>
+        <span className="inline-flex min-h-[44px] items-center px-1 text-text" aria-current="page">
+          {translatedTitle}
+        </span>
       </nav>
 
       {/* Header */}

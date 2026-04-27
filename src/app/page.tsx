@@ -49,7 +49,17 @@ const POPULAR_SEARCHES = [
   "çorba",
 ];
 
-export default async function HomePage() {
+interface HomePageProps {
+  searchParams: Promise<{ error?: string }>;
+}
+
+export default async function HomePage({ searchParams }: HomePageProps) {
+  const sp = await searchParams;
+  // K7 P3 #4 (oturum 26 test campaign): /admin redirect ?error=admin-only
+  // banner. USER role admin sayfasina ulasmaya calisirsa anasayfada
+  // niye redirect oldugunu bilir. (Tek query param, MODERATOR/admin
+  // ayrim yok - genel "yetkin yok" mesajı.)
+  const accessDeniedAdmin = sp.error === "admin-only";
   // Session önce çekiliyor ki aşağıdaki Promise.all'da personalized shelf
   // çağrısı userId'ye bağlı olarak conditional yapılabilsin. auth() hızlı
   // (~50ms); waterfall alt-sınırı minimum.
@@ -145,6 +155,17 @@ export default async function HomePage() {
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       {/* A/B variant cookie persist + Sentry tag tracker (render etmez). */}
       <HeroVariantInit variant={heroVariant} />
+
+      {/* K7 P3 #4 access denied banner: USER role admin layout'tan
+          /?error=admin-only ile redirect olunca burada bilgilendirme. */}
+      {accessDeniedAdmin && (
+        <div
+          role="alert"
+          className="mt-4 rounded-xl border border-error/30 bg-error/10 px-4 py-3 text-sm text-error"
+        >
+          Bu sayfaya erişim yetkin yok. Yönetim Paneli yalnızca yetkili kullanıcılara açıktır.
+        </div>
+      )}
 
       {/* Profil eksik banner (login + bio/avatar NULL), dismissable */}
       <div className="pt-4">

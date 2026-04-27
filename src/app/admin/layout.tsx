@@ -12,7 +12,7 @@ export default async function AdminLayout({
   const session = await auth();
 
   if (!session?.user?.id) {
-    redirect("/giris");
+    redirect("/giris?callbackUrl=/admin");
   }
 
   const user = await prisma.user.findUnique({
@@ -20,8 +20,12 @@ export default async function AdminLayout({
     select: { role: true },
   });
 
+  // K7 P3 #4 (oturum 26 test campaign): USER role -> /admin redirect'e
+  // error context ekle. Onceden silent / redirect ediyordu, kullanici
+  // niye redirect oldugunu bilmiyordu. ?error=admin-only ile anasayfa
+  // toast/banner gosterir (handler ileri commit'te).
   if (!user || (user.role !== "ADMIN" && user.role !== "MODERATOR")) {
-    redirect("/");
+    redirect("/?error=admin-only");
   }
 
   const t = await getTranslations("admin.layout");

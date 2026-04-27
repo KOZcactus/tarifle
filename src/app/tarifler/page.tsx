@@ -104,7 +104,13 @@ interface TariflerPageProps {
 
 export default async function TariflerPage({ searchParams }: TariflerPageProps) {
   const params = await searchParams;
-  const query = params.q ?? "";
+  // K7 P2 #2 (oturum 26 test campaign): query length cap. Server-side
+  // 200 char limit, asiri uzun query (10000+ char) full-text search +
+  // fuzzy Levenshtein DoS amplification engellenir. Vercel function
+  // timeout + Cloudflare CDN cache zaten katman korumasi, bu cap
+  // saldirgani daha onceden bloke eder.
+  const rawQuery = params.q ?? "";
+  const query = rawQuery.slice(0, 200);
   const difficulty = params.zorluk ?? "";
   const category = params.kategori ?? "";
   const maxMinutes = params.sure ? parseInt(params.sure, 10) : undefined;

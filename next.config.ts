@@ -113,6 +113,16 @@ const nextConfig: NextConfig = {
           key: "X-Frame-Options",
           value: "DENY",
         },
+        // K7 P2 #1 (oturum 26 test campaign): HSTS hardening. Vercel
+        // platform-level default `max-age=63072000` set ediyor ama
+        // includeSubDomains + preload yoktu. Subdomain'lerde de HTTPS-
+        // only force + Chrome HSTS preload list'e ekleme imkanı.
+        // Manuel adım: hstspreload.org/?domain=tarifle.app submit gerek
+        // (header sadece signal verir, list eklemesi user-task).
+        {
+          key: "Strict-Transport-Security",
+          value: "max-age=63072000; includeSubDomains; preload",
+        },
         // Content-Security-Policy ENFORCE mode (oturum 21 itibariyla).
         // Onceden Report-Only mode (oturum 19 ship). 14 gunluk izleme
         // sonrasi Sentry'de 0 violation: policy stabil, whitelist dogru

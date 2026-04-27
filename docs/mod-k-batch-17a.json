@@ -1,0 +1,787 @@
+[
+  {
+    "slug": "kelecos-erzurum-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Erzurum kaynakları kelecoşta kurut ve çoğu tarifte kavurma kullanıyor; mevcut reçete yoğurtlu ekmek tabağına dönmüş.",
+      "Step 2 sarımsak ve tuz diyor ama ingredient listesinde ikisi de yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kurut", "amount": "2", "unit": "adet" },
+        { "name": "Kavurma", "amount": "1", "unit": "kase" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "ingredients_remove": ["Yoğurt"],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kurutları 7 dakika ılık suyla yumuşatıp pürüzsüz olana kadar ezin.", "timerSeconds": 420 },
+        { "stepNumber": 2, "instruction": "Kurutlu karışımı tencereye alıp 5 dakika karıştırarak ısıtın.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Bayat ekmeği iri lokmalara bölüp servis tabağına yayın." },
+        { "stepNumber": 4, "instruction": "Soğanı tereyağında 5 dakika kavurun, kavurma ve pul biberi ekleyin.", "timerSeconds": 300 },
+        { "stepNumber": 5, "instruction": "Sarımsaklı kurutu ekmeğin üzerine gezdirin, kavurmalı yağı en üste döküp sıcak servis edin." }
+      ]
+    },
+    "sources": [
+      "https://turkiye.influence.cool/tr/erzurum/tekman/yerel-lezzetler/erzurum-usulu-kelecos/",
+      "https://lezzetler.com/tarif-67718"
+    ],
+    "confidence": "high",
+    "reason": "İki kaynak da Erzurum kelecoşunu kurut temelli anlatıyor; mevcut yoğurtlu versiyon ana kimliği kaçırıyor."
+  },
+  {
+    "slug": "kelecos-van-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Kaynaklarda kelecoş adı bölgesel karışım yemekleri için geçiyor, mevcut Van versiyonunun mercimekli lavaş kurgusu net doğrulanmıyor.",
+      "Step 4 sıvı eklemeyi söylüyor ama tarif zaten katmanlama ile servis edilen bir tabağa benziyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Yeşil mercimeği 20 dakika diri kalacak şekilde haşlayıp süzün.", "timerSeconds": 1200 },
+        { "stepNumber": 2, "instruction": "Yoğurdu sarımsak ve tuzla çırpın, lavaşları iri parçalara ayırın." },
+        { "stepNumber": 3, "instruction": "Lavaş, mercimek ve sarımsaklı yoğurdu servis tabağında katmanlayın." },
+        { "stepNumber": 4, "instruction": "Tereyağını kuru naneyle 2 dakika kızdırıp tabağın üzerine gezdirin.", "timerSeconds": 120 },
+        { "stepNumber": 5, "instruction": "Kelecoşu 5 dakika dinlendirip sıcak servis edin.", "timerSeconds": 300 }
+      ]
+    },
+    "sources": [
+      "https://aksozluk.org/kelecos",
+      "https://ye-mek.net/tarif/yogurtlu-yesil-mercimek-corbasi"
+    ],
+    "confidence": "medium",
+    "reason": "Kelecoşun Van çevresinde adı geçiyor ama mercimekli lavaş tarifi doğrudan doğrulanmadı; manuel review gerekli."
+  },
+  {
+    "slug": "kelle-paca-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.gundemturkiye.com/kultur_ve_sanat/yemek/corbalar/kelle-paca-corbasi-tarifi.html",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/kelle-paca-corbasi/9895"
+    ],
+    "confidence": "high",
+    "reason": "Uzun haşlama, ayıklama, sarımsaklı sirke ve limonla servis temel kaynaklarla uyumlu görünüyor."
+  },
+  {
+    "slug": "kemalpasa-tatlisi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ev yapımı Kemalpaşa kaynaklarında hamurda irmik ve kabartıcı kullanılır; mevcut hamur bu iki temel unsuru kaçırıyor.",
+      "Şerbet adımında 700 ml su geçiyor ama ingredient listesinde şerbet suyu ve limon suyu yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "İrmik", "amount": "2", "unit": "yemek kaşığı", "group": "Hamur için" },
+        { "name": "Kabartma tozu", "amount": "0.5", "unit": "paket", "group": "Hamur için" },
+        { "name": "Su", "amount": "700", "unit": "ml", "group": "Şerbet için" },
+        { "name": "Limon suyu", "amount": "1", "unit": "tatlı kaşığı", "group": "Şerbet için" }
+      ]
+    },
+    "sources": [
+      "https://www.evvelcevap.com/kemalpasa-tatlisi-peynir-tatlisi-tarifi/",
+      "https://www.sofra.com.tr/tarif/serbetli-tatlilar/kemalpasa-tatlisi-1724658808"
+    ],
+    "confidence": "high",
+    "reason": "Peynirli hamur doğru yönde, fakat irmik, kabartıcı ve şerbet suyu eksikleri reçeteyi uygulamada aksatır."
+  },
+  {
+    "slug": "kengerli-bulgur-tavasi-bingol-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Kengerli bulgur kaynaklarında yağ ile bitirme var; mevcut tarifte hiç yağ yok.",
+      "Vegan tag yağı tereyağıyla tamamlanacaksa doğru kalmaz."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "tags_remove": ["vegan"],
+      "allergens_add": ["SUT"]
+    },
+    "sources": [
+      "https://www.evvelcevap.com/kengerli-bulgur-pilavi-tarifi/",
+      "https://www.sofra.com.tr/tarif/pilavlar/kengerli_bulgur_pilavi"
+    ],
+    "confidence": "high",
+    "reason": "Kaynaklar kenger ve bulgurun yağla tamamlandığını gösteriyor; mevcut yağsız ve vegan etiketli yapı eksik."
+  },
+  {
+    "slug": "kengerli-kuzu-sote-erzincan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.evvelcevap.com/kengerli-bulgur-pilavi-tarifi/",
+      "https://www.sofra.com.tr/tarifler/pilavlar/2011/02/16/kengerli_bulgur_pilavi"
+    ],
+    "confidence": "medium",
+    "reason": "Kenger kullanımı ve ön haşlama mantığı kaynaklarla uyumlu; kuzu sote versiyonu için net karşı kaynak sınırlı."
+  },
+  {
+    "slug": "kerebic-kup-mersin-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Mersin kerebiç kaynakları çöven köpüğü ve içli kurabiye yapısını anlatıyor; mevcut kup irmik muhallebisi gibi kurulmuş.",
+      "Krema, çöven köpüğünün yerine yazılmış ama başlık Mersin usulü kerebiç iddiası taşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kerebiç kurabiyesi", "amount": "4", "unit": "adet" },
+        { "name": "Çöven köpüğü", "amount": "1", "unit": "su bardağı" },
+        { "name": "Tarçın", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "ingredients_remove": ["Krema"]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/mersin/neyenir/kerebic",
+      "https://www.kirazinmutfagi.com.tr/tarif/kerebic-mersin"
+    ],
+    "confidence": "high",
+    "reason": "Kerebiçin ayırt edici unsuru çöven köpüğü ve içli kurabiyedir; mevcut kup yorumu bunu karşılamıyor."
+  },
+  {
+    "slug": "kereviz-sapli-barbunya-tava-balikesir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sahrapsoysal.com/zeytinyagli-kerevizli-barbunya-tarifi-t-4995",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/barbunya-pilaki-tarifi/319"
+    ],
+    "confidence": "medium",
+    "reason": "Barbunya, kereviz, domates ve zeytinyağı uyumu kaynaklarla makul; Balıkesir iddiası ayrıca güçlendirilebilir."
+  },
+  {
+    "slug": "kerevizli-beyaz-fasulye-corbasi-ingiltere-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.riverford.co.uk/recipes/celeriac-apple-white-bean-soup",
+      "https://www.countryandtownhouse.com/food-and-drink/recipes/coconut-white-bean-celery-soup/"
+    ],
+    "confidence": "medium",
+    "reason": "Beyaz fasulye ve kerevizli çorba mantığı İngiliz kaynaklarında görülüyor; sade versiyon uygulanabilir."
+  },
+  {
+    "slug": "kerevizli-bezelye-corbasi-polonya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://dh.scripts.mit.edu/recipes/1351/",
+      "https://www.youtube.com/watch?v=lAA1kO382Cw"
+    ],
+    "confidence": "medium",
+    "reason": "Polonya bezelye çorbalarında kereviz kökü veya sapı yaygın aromatik; mevcut vejetaryen sadeleşme makul."
+  },
+  {
+    "slug": "kerevizli-elma-cheddar-salatasi-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps ceviz, limon suyu, elma sirkesi ve zeytinyağı kullanıyor ama ingredient listesinde yok.",
+      "Ceviz eklendiğinde KUSUYEMIS allergen bildirimi gerekir."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ceviz", "amount": "0.25", "unit": "su bardağı" },
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Elma sirkesi", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["KUSUYEMIS"]
+    },
+    "sources": [
+      "https://www.abelandcole.co.uk/recipes/apple-cheddar-celery-salad",
+      "https://www.epicurious.com/recipes/food/views/endive-apple-and-celery-salad-with-smoked-almonds-and-cheddar"
+    ],
+    "confidence": "high",
+    "reason": "Salata fikri kaynaklarla uyumlu, fakat uygulama adımları listede olmayan sos ve ceviz malzemeleri istiyor."
+  },
+  {
+    "slug": "kerevizli-havuclu-yogurt-corbasi-edirne-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://ye-mek.net/tarif/yogurtlu-kereviz-corbasi",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yogurtlu-havuc-corbasi/20649"
+    ],
+    "confidence": "medium",
+    "reason": "Yoğurt terbiyesi, kereviz ve havuçla hafif çorba yapısı teknik olarak tutarlı; alerjenler doğru bildirilmiş."
+  },
+  {
+    "slug": "kerevizli-rezeneli-balik-corbasi-isvec-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.cooks.com/recipe/508qu4vt/swedish-fish-soup.html",
+      "https://oliviasorganics.org/recipes/celery-fennel-white-bean-soup/"
+    ],
+    "confidence": "medium",
+    "reason": "Balık, kereviz, rezene ve krema birleşimi kuzey mutfağına uygun; süre ve alerjen bildirimi tutarlı."
+  },
+  {
+    "slug": "kerevizli-yogurt-corbasi-edirne-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://ye-mek.net/tarif/yogurtlu-kereviz-corbasi",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yogurtlu-kereviz-corbasi/15038"
+    ],
+    "confidence": "medium",
+    "reason": "Kereviz, yoğurt, yumurta ve unla terbiyeli çorba kurgusu doğru; süreler ve alerjenler uyumlu."
+  },
+  {
+    "slug": "keskek-aydin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve 2 yumuşak buğday ve tavuk haşlamayı 5 dakika gösteriyor, keşkek için gerçekçi değil.",
+      "Keşkek dövülerek kıvam almalı; mevcut adımlar bu ana tekniği çok kısa geçiyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Dövme buğdayı yıkayıp tencereye alın, üzerini geçecek kadar su ekleyin." },
+        { "stepNumber": 2, "instruction": "Buğdayı 60 dakika yumuşayana kadar haşlayın.", "timerSeconds": 3600 },
+        { "stepNumber": 3, "instruction": "Tavuğu ayrı tencerede 20 dakika haşlayıp etini didikleyin.", "timerSeconds": 1200 },
+        { "stepNumber": 4, "instruction": "Buğday, tavuk eti ve tuzu birleştirip ezerek 15 dakika pişirin.", "timerSeconds": 900 },
+        { "stepNumber": 5, "instruction": "Tereyağını kırmızı toz biberle 2 dakika kızdırıp keşkeğin üzerine gezdirin.", "timerSeconds": 120 },
+        { "stepNumber": 6, "instruction": "Keşkeği 10 dakika dinlendirin, kıvamı toklaşınca sıcak servis edin.", "timerSeconds": 600 }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/tavuklu-keskek-tarifi/15083",
+      "https://www.kulturportali.gov.tr/turkiye/kocaeli/neyenir/tavuklu-keskek"
+    ],
+    "confidence": "high",
+    "reason": "Keşkek uzun pişen ve ezilen bir yemektir; mevcut 5 dakikalık haşlama adımları kullanıcıyı yanıltır."
+  },
+  {
+    "slug": "keskek-usulu-tavuklu-bartin",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 jenerik su veya sos cümlesi tarif akışına katkı vermiyor.",
+      "Tavuklu keşkekte dövme buğday ve tavuk birlikte özleşmeli; mevcut akış bunu net anlatmıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Dövme buğdayı 15 dakika sıcak suda bekletip süzün.", "timerSeconds": 900 },
+        { "stepNumber": 2, "instruction": "Dövme buğday, tavuk butları ve suyu tencereye alın." },
+        { "stepNumber": 3, "instruction": "Karışımı 70 dakika kısık ateşte pişirin.", "timerSeconds": 4200 },
+        { "stepNumber": 4, "instruction": "Tavuk etini kemiklerinden ayırıp buğdayla birlikte ezerek karıştırın." },
+        { "stepNumber": 5, "instruction": "Tereyağını kızdırıp keşkeğin üzerine gezdirin." },
+        { "stepNumber": 6, "instruction": "Keşkeği 10 dakika dinlendirip sıcak servis edin.", "timerSeconds": 600 }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/tavuklu-keskek-tarifi/15083",
+      "https://www.kulturportali.gov.tr/turkiye/kocaeli/neyenir/tavuklu-keskek"
+    ],
+    "confidence": "high",
+    "reason": "Tarifin malzemeleri doğru yönde, fakat jenerik step yerine tavuk ve buğdayın özleştiği akış yazılmalı."
+  },
+  {
+    "slug": "keskekli-istavrit-tava-sinop-liman-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Keşkekli istavrit tava için güvenilir kaynak bulunamadı; Sinop liman usulü iddiası net doğrulanmıyor.",
+      "Step 1 buğdayı 5 dakikada yumuşatıyor, keşkeklik buğday için gerçek dışı."
+    ],
+    "corrections": {
+      "prepMinutes": 25,
+      "cookMinutes": 45,
+      "totalMinutes": 70,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Keşkeklik buğdayı 35 dakika yumuşayana kadar haşlayın.", "timerSeconds": 2100 },
+        { "stepNumber": 2, "instruction": "Haşlanan buğdayı ezip tuzla koyu bir taban haline getirin." },
+        { "stepNumber": 3, "instruction": "İstavritleri unlayıp tavada 8 dakika kızartın.", "timerSeconds": 480 },
+        { "stepNumber": 4, "instruction": "Keşkek tabanını tabağa yayın, balıkları üzerine yerleştirin." },
+        { "stepNumber": 5, "instruction": "Yemeği 5 dakika dinlendirip sıcak servis edin.", "timerSeconds": 300 }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/hamsili-pilav/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/hamsili-pilav-tarifi/327"
+    ],
+    "confidence": "low",
+    "reason": "Benzer Karadeniz balık pilavları var, ancak bu özgül keşkekli istavrit iddiası kaynakla doğrulanamadı."
+  },
+  {
+    "slug": "keskul",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps içinde 40 dakika soğutma var ama totalMinutes 30 kalmış.",
+      "RecipeTimeline bekleme segmentini gösterebilmesi için totalMinutes bu pasif süreyi içermeli."
+    ],
+    "corrections": {
+      "totalMinutes": 70
+    },
+    "sources": [
+      "https://yemek.com/tarif/keskul/",
+      "https://www.nefisyemektarifleri.com/keskul-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Pişirme akışı doğru, fakat 40 dakikalık soğutma toplam süreden dışlanmış; kullanıcı süresi eksik görür."
+  },
+  {
+    "slug": "kesli-cevizli-eriste-bolu-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/bolu/neyenir/kesli-cevizli-eriste",
+      "https://www.boluolay.com/haber/23413770/bolu-mutfaginin-gizli-hazinesi-kesli-cevizli-eriste-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Erişte, keş, ceviz ve tereyağı birleşimi Bolu kaynaklarıyla uyumlu; alerjenler de doğru bildirilmiş."
+  },
+  {
+    "slug": "kesme-asi-erzincan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kesme-asi-tarifi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/eristeli-yesil-mercimek-corbasi/7149"
+    ],
+    "confidence": "medium",
+    "reason": "Mercimek, erişte ve salçalı çorba akışı uygulanabilir; süre ve gluten bildirimi tutarlı görünüyor."
+  },
+  {
+    "slug": "kesme-corbasi-sivas-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kesme-corbasi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yesil-mercimekli-eriste-corbasi/12810"
+    ],
+    "confidence": "medium",
+    "reason": "Kesme erişte ve yeşil mercimekli çorba yapısı kaynaklarla uyumlu; ölçüler ve süreler makul."
+  },
+  {
+    "slug": "kesme-kete-erzincan-firin",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Fırın ketesi başlığında pişirme adımı yok; akış hamuru tepsiye dizdikten sonra bitiyor.",
+      "CookMinutes 30 olmasına rağmen steps içinde fırın pişirme timerı bulunmuyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, süt, maya ve tuzla yumuşak hamur yoğurup 30 dakika mayalandırın.", "timerSeconds": 1800 },
+        { "stepNumber": 2, "instruction": "Hamuru açıp eritilmiş tereyağını sürün ve rulo yapın." },
+        { "stepNumber": 3, "instruction": "Ruloyu dilimleyip tepsiye aralıklı dizin, üstüne yumurta sürün." },
+        { "stepNumber": 4, "instruction": "Parçaları 5 dakika tepside dinlendirin.", "timerSeconds": 300 },
+        { "stepNumber": 5, "instruction": "Kesme keteyi 190°C fırında 25 dakika kızarana kadar pişirin.", "timerSeconds": 1500 }
+      ]
+    },
+    "sources": [
+      "https://www.erzincannet.com/erzincanin-meshur-tereyagli-ketesi-tarifi",
+      "https://www.nefisyemektarifleri.com/kete-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Malzemeler kete için uygun, ancak fırın tarifi pişirme adımı olmadan uygulanamaz halde kalmış."
+  },
+  {
+    "slug": "kestaneli-hamsi-pilavi-zonguldak-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Kestaneli hamsi pilavı için güvenilir özgül kaynak bulunamadı; Karadeniz hamsili pilavına kestane eklenmiş görünüyor.",
+      "Mevcut adımlar hamsili pilav tekniğini anlatmıyor, hamsiyi pilavla birlikte tencerede pişiriyor."
+    ],
+    "corrections": {
+      "prepMinutes": 25,
+      "cookMinutes": 40,
+      "totalMinutes": 70,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Pirinci 10 dakika ılık suda bekletip süzün.", "timerSeconds": 600 },
+        { "stepNumber": 2, "instruction": "Soğanı kavurun, pirinç ve kestaneyi ekleyip 5 dakika çevirin.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Sıcak suyu ekleyip iç pilavı 15 dakika pişirin.", "timerSeconds": 900 },
+        { "stepNumber": 4, "instruction": "Hamsi filetolarını yağlanmış kaba dizin, iç pilavı ortasına yayın." },
+        { "stepNumber": 5, "instruction": "Kalan hamsilerle üstünü kapatıp 180°C fırında 20 dakika pişirin.", "timerSeconds": 1200 },
+        { "stepNumber": 6, "instruction": "Pilavı 10 dakika dinlendirip ters çevirerek servis edin.", "timerSeconds": 600 }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/hamsili-pilav/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/hamsili-pilav-tarifi/327"
+    ],
+    "confidence": "medium",
+    "reason": "Hamsili pilav tekniği kaynaklarda net, fakat kestaneli Zonguldak yorumu doğrulanmadığı için manuel review gerekir."
+  },
+  {
+    "slug": "kestaneli-irmik-kup-bursa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 10 dakika pişirme, 10 dakika ılıtma ve 30 dakika soğutma içeriyor; totalMinutes 20 yazılmış.",
+      "Bekleme süresi görünmediği için kullanıcı tatlının hazır olma süresini yanlış görür."
+    ],
+    "corrections": {
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/irmik-tatlisi-tarifi/",
+      "https://www.kulturportali.gov.tr/turkiye/bursa/neyenir/kestane-sekeri"
+    ],
+    "confidence": "medium",
+    "reason": "İrmikli kup fikri uygulanabilir, fakat 30 dakikalık soğutma toplam süreden eksik bırakılmış."
+  },
+  {
+    "slug": "kestaneli-kereviz-yahnisi-bursa-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sahrapsoysal.com/zeytinyagli-kerevizli-barbunya-tarifi-t-4995",
+      "https://www.kulturportali.gov.tr/turkiye/bursa/neyenir/kestane-sekeri"
+    ],
+    "confidence": "low",
+    "reason": "Kereviz ve kestane uyumu teknik olarak makul; Bursa yöresiyle özgül tarif bağı zayıf ama net hata yok."
+  },
+  {
+    "slug": "kestaneli-mantar-sote-bilecik-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/mantar-sote-tarifi/",
+      "https://www.kulturportali.gov.tr/turkiye/bursa/neyenir/kestane-sekeri"
+    ],
+    "confidence": "low",
+    "reason": "Mantar sote tekniği ve kestane eklemesi uygulanabilir; Bilecik yöre iddiası için güçlü kaynak bulunmadı."
+  },
+  {
+    "slug": "kestaneli-mantarli-pilav-bolu-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/mantarli-pilav-tarifi/",
+      "https://www.kulturportali.gov.tr/turkiye/bursa/neyenir/kestane-sekeri"
+    ],
+    "confidence": "medium",
+    "reason": "Mantarlı pilav akışı doğru, kestane eklemesi teknik olarak uyumlu; alerjen ve sürelerde büyük çelişki yok."
+  },
+  {
+    "slug": "kestaneli-pirinc-kek-bursa-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/pirinc-unlu-kek/",
+      "https://www.kulturportali.gov.tr/turkiye/bursa/neyenir/kestane-sekeri"
+    ],
+    "confidence": "medium",
+    "reason": "Pirinç unlu kek ve kestane birleşimi uygulanabilir; süre farkı sınırda ama büyük tutarsızlık oluşturmuyor."
+  },
+  {
+    "slug": "kestaneli-sut-helvasi-bursa-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/sut-helvasi/",
+      "https://www.kulturportali.gov.tr/turkiye/bursa/neyenir/kestane-sekeri"
+    ],
+    "confidence": "medium",
+    "reason": "Bursa süt helvası tabanı doğru, kestane eklemesi tatlı dokusuna uyuyor; süreler tutarlı görünüyor."
+  },
+  {
+    "slug": "kestaneli-sutlac-bursa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 10 dakika pirinç haşlama, 15 dakika sütle pişirme ve 30 dakika dinlendirme içeriyor.",
+      "TotalMinutes 40 olduğundan pasif bekleme görünmüyor ve toplam süre eksik kalıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 70
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/sutlac-tarifi/",
+      "https://www.kulturportali.gov.tr/turkiye/bursa/neyenir/kestane-sekeri"
+    ],
+    "confidence": "medium",
+    "reason": "Sütlaç akışı doğru, fakat dinlendirme süresi toplam sürede görünmediği için zaman bilgisi düzeltilmeli."
+  },
+  {
+    "slug": "kestaneli-tavuk-kapama-bursa-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/tavuk-kapama-tarifi/",
+      "https://www.kulturportali.gov.tr/turkiye/bursa/neyenir/kestane-sekeri"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk kapama, pirinç ve tavuk suyu akışı doğru; kestane eklemesi Bursa bağlamında makul bir yorum."
+  },
+  {
+    "slug": "kete-erzincan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.erzincannet.com/erzincanin-meshur-tereyagli-ketesi-tarifi",
+      "https://www.nefisyemektarifleri.com/kete-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Mayalı hamur, tereyağlı unlu iç ve fırın pişirme akışı kete kaynaklarıyla genel olarak uyumlu."
+  },
+  {
+    "slug": "kete-erzurum-tava-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kete-tarifi/",
+      "https://www.erzincannet.com/erzincanin-meshur-tereyagli-ketesi-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Tereyağlı iç ve hamur yapısı kete mantığına uyuyor; tava yorumu için net kaynak az ama uygulanabilir."
+  },
+  {
+    "slug": "kete-kirigi-tava-ardahan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ingredient listesinde yumurta yok ama allergen listesinde YUMURTA var.",
+      "Kete kırığı süt ve tereyağıyla ısıtılıyor; yumurta bildirimi over-tag görünüyor."
+    ],
+    "corrections": {
+      "allergens_remove": ["YUMURTA"]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kete-tarifi/",
+      "https://www.erzincannet.com/erzincanin-meshur-tereyagli-ketesi-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Tarifte yumurta bileşeni yok; YUMURTA allergen bildirimi kullanıcıya yanlış alerjen sinyali verir."
+  },
+  {
+    "slug": "key-lime-pie-abd-florida-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 2 saat soğutma içeriyor, totalMinutes 33 yazılmış.",
+      "Key lime pie dilimlenmeden önce soğutulmalı; bu bekleme RecipeTimeline farkı olarak görünmeli."
+    ],
+    "corrections": {
+      "totalMinutes": 153
+    },
+    "sources": [
+      "https://piecouncil.org/recipe/florida-key-lime-pie-2/",
+      "https://en.wikipedia.org/wiki/Key_lime_pie"
+    ],
+    "confidence": "high",
+    "reason": "Dolgu ve taban doğru, fakat 2 saat soğutma toplam süreden eksik; hazır olma süresi yanlış gösteriliyor."
+  },
+  {
+    "slug": "khanom-krok",
+    "verdict": "PASS",
+    "sources": [
+      "https://hot-thai-kitchen.com/khanom-krok/",
+      "https://www.eatingthaifood.com/thai-khanom-krok-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Pirinç unu, hindistan cevizi sütü ve gözlü tavada pişirme Khanom Krok için doğru ana yapıyı veriyor."
+  },
+  {
+    "slug": "khao-man-gai-tay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Khao Man Gai kaynaklarında pirinç tavuk suyuyla ve aromatiklerle pişer; yanında soya bazlı sos ve salatalık beklenir.",
+      "Mevcut ingredient listesi sosu hiç içermediği için yemeğin ayırt edici servis karakteri eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soya ezmesi", "amount": "1", "unit": "yemek kaşığı", "group": "Sos için" },
+        { "name": "Soya sosu", "amount": "1", "unit": "yemek kaşığı", "group": "Sos için" },
+        { "name": "Sirke", "amount": "1", "unit": "yemek kaşığı", "group": "Sos için" },
+        { "name": "Salatalık", "amount": "1", "unit": "adet", "group": "Servis için" }
+      ],
+      "allergens_add": ["SOYA"]
+    },
+    "sources": [
+      "https://www.thaicookbook.tv/thai-recipes/one-dish-meals/khao-man-gai-thai-chicken-and-rice/",
+      "https://www.pacificfoods.com/recipes/thai-chicken-rice-khao-man-gai/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk ve pirinç temeli doğru, ancak Khao Man Gai sosu ve servis salatalığı olmadan tarif eksik kalıyor."
+  },
+  {
+    "slug": "khao-pad",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Wokta kızarmış pilav için yağ gerekir; step tavuk ve pirinci kavuruyor ama ingredient listesinde yağ yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bigoven.com/recipe/thai-fried-rice-khao-pad/3172415",
+      "https://www.recipe.info/2024/11/10/khao-pad-fried-rice/"
+    ],
+    "confidence": "high",
+    "reason": "Khao Pad kısa wok pişirmesine uygun, fakat yağ olmadan tavuk, yumurta ve pirinç kavurma adımları uygulanamaz."
+  },
+  {
+    "slug": "khao-soi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.templeofthai.com/recipes/khao-soi.php",
+      "https://hot-thai-kitchen.com/kao-soy/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, yumurtalı erişte, köri macunu, hindistan cevizi kreması ve lime yapısı Khao Soi ile uyumlu."
+  },
+  {
+    "slug": "kheer",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.punchfork.com/recipe/Kheer-Rice-Pudding-Allrecipes",
+      "https://www.epicurious.com/recipes/food/views/cardamom-kheer"
+    ],
+    "confidence": "high",
+    "reason": "Pirinç, süt, şeker ve fıstıkla uzun kısık pişirme Kheer için doğru; süre ve alerjenler makul."
+  },
+  {
+    "slug": "khobz-eldar",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Khobz el dar Cezayir ekmeğidir; cuisine kodu ma Fas mutfağına işaret ediyor.",
+      "Sistemde Cezayir kodu yoksa Kuzey Afrika geneli için MAJOR_ISSUE manuel karar gerektirir."
+    ],
+    "corrections": {
+      "description": "Khobz el dar, irmik, un, süt, yumurta ve susamla hazırlanan yumuşak Cezayir ev ekmeğidir."
+    },
+    "sources": [
+      "https://www.chefsresource.com/recipes/khobz-el-dar-algerian-semolina-bread-recipe/",
+      "https://www.themealdb.com/meal/53286-khobz-el-dar-%28algerian-semolina-bread%29-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Tarif yapısı doğru, fakat mevcut ma kodu ülkeyi yanlış gösteriyor; açıklama Cezayir kökenini netleştirmeli."
+  },
+  {
+    "slug": "kibbeh",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 sıcak suyla tencereye verme gibi dolma cümlesi içeriyor; kibbeh kızartılır veya fırınlanır.",
+      "Mevcut akış şekillendirme sonrası pişirme yöntemini net ve doğru bitirmiyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "İnce bulguru 15 dakika sıcak suda bekletip süzün.", "timerSeconds": 900 },
+        { "stepNumber": 2, "instruction": "Dış harç için bulgur, kıyma, soğan ve baharatı 10 dakika yoğurun.", "timerSeconds": 600 },
+        { "stepNumber": 3, "instruction": "İç harcı soğan, kıyma ve cevizle 12 dakika pişirin.", "timerSeconds": 720 },
+        { "stepNumber": 4, "instruction": "Dış harçtan parçalar açıp iç harcı koyun, oval şekilde kapatın." },
+        { "stepNumber": 5, "instruction": "Kibbehleri kızgın yağda 5-6 dakika kızartıp kağıt havluya alın.", "timerSeconds": 360 }
+      ]
+    },
+    "sources": [
+      "https://www.saveur.com/article/Recipes/Fried-Stuffed--Ground-Bulgur-Meat-Balls/",
+      "https://www.canadianliving.com/food/article/make-middle-eastern-beef-bulgur-meatballs-kibbeh"
+    ],
+    "confidence": "high",
+    "reason": "Bulgur ve etli harç doğru, fakat son pişirme adımı kibbeh yerine dolma tarifinden taşmış görünüyor."
+  },
+  {
+    "slug": "kibe-mumbar",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Ingredient listesinde 'Kibe' adı malzeme gibi yazılmış; kaynaklarda kuzu işkembe, mumbar, kuşbaşı et, kuyruk yağı ve pirinç kullanılır.",
+      "Temizleme ve doldurma adımları çok eksik; 5 dakikalık tuzlu suda bekletme kaynaklardaki 3-4 saat önerisini karşılamıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuzu işkembe", "amount": "2", "unit": "adet" },
+        { "name": "Kuzu mumbar", "amount": "800", "unit": "gr" },
+        { "name": "Kuşbaşı kuzu eti", "amount": "500", "unit": "gr" },
+        { "name": "Kuyruk yağı", "amount": "100", "unit": "gr" },
+        { "name": "Nane", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Karabiber", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "ingredients_remove": ["Kibe", "Kıyma"],
+      "prepMinutes": 120,
+      "cookMinutes": 100,
+      "totalMinutes": 400
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/mardin/neyenir/kibe",
+      "https://mardin.ktb.gov.tr/TR-311920/kibe-mumbar-dolmasi.html"
+    ],
+    "confidence": "high",
+    "reason": "Mardin kaynakları kibe mumbarı ayrıntılı tanımlar; mevcut reçete hem malzeme hem hazırlık bakımından ciddi eksik."
+  },
+  {
+    "slug": "kibris-mercimekli-mucendra-pilavi",
+    "verdict": "PASS",
+    "sources": [
+      "https://tarifmotoru.com/tarif/mercimekli-kibris-pilavi/",
+      "https://www.nefisyemektarifleri.com/muceddere-pilavi/"
+    ],
+    "confidence": "high",
+    "reason": "Yeşil mercimek, pirinç ve bol soğanlı pilav yapısı mücendra kaynaklarıyla uyumlu; süreler makul."
+  },
+  {
+    "slug": "kilis-cennet-camuru-fistikli",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/kilis/neyenir/cennet-camuru",
+      "https://turkiyeturizmansiklopedisi.com/cennet-camuru"
+    ],
+    "confidence": "high",
+    "reason": "Kadayıf, tereyağı, fıstık, şeker ve kaymak yapısı Kilis Cennet Çamuru kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "kilis-eksili-yesil-mercimek-tavasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://ye-mek.net/tarif/yesil-mercimek-yemegi",
+      "https://www.nefisyemektarifleri.com/nar-eksili-yesil-mercimek-salatasi/"
+    ],
+    "confidence": "low",
+    "reason": "Yeşil mercimek ve nar ekşisi uyumu uygulanabilir; Kilis tava adı için özgül kaynak sınırlı ama net hata yok."
+  },
+  {
+    "slug": "kilis-oruk",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Kilis Oruk kaynağı içli köfte değil, ince bulgur ve etle yoğrulup şişte veya ızgarada pişen oruk kebabı anlatıyor.",
+      "Mevcut tarif cevizli içli köfte kurgusuyla Kilis oruk adını yanlış taşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "4", "unit": "diş" },
+        { "name": "Kuru nane", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Pul biber", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "ingredients_remove": ["Ceviz", "Tereyağı"],
+      "allergens_remove": ["KUSUYEMIS", "SUT"],
+      "prepMinutes": 45,
+      "cookMinutes": 15,
+      "totalMinutes": 60,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "İnce bulguru az suyla ıslatıp 10 dakika bekletin.", "timerSeconds": 600 },
+        { "stepNumber": 2, "instruction": "Soğan, sarımsak, nane, pul biber, tuz ve karabiberi bulgura ekleyin." },
+        { "stepNumber": 3, "instruction": "Kıymayı ekleyip harcı 20 dakika yoğurun.", "timerSeconds": 1200 },
+        { "stepNumber": 4, "instruction": "Harcı şişlere bastırarak geçirin veya yassı köfteler yapın." },
+        { "stepNumber": 5, "instruction": "Orukları kömür ateşinde 12-15 dakika çevirerek pişirin.", "timerSeconds": 900 }
+      ]
+    },
+    "sources": [
+      "https://kilis.ktb.gov.tr/TR-61784/oruk.html",
+      "https://www.kilispostasi.com/oruk-kebabi-tarifi/1217189/"
+    ],
+    "confidence": "high",
+    "reason": "Kilis Oruk kaynakları şiş köfte formunu doğruluyor; mevcut cevizli içli köfte versiyonu yanlış kimlik taşıyor."
+  },
+  {
+    "slug": "kilis-oruk-kebabi-sis",
+    "verdict": "PASS",
+    "sources": [
+      "https://kilis.ktb.gov.tr/TR-61784/oruk.html",
+      "https://yemek.com/tarif/oruk-kebabi/"
+    ],
+    "confidence": "high",
+    "reason": "Yağlı kuzu kıyma, ince bulgur, soğan, nane ve şişte pişirme Kilis oruk kebabı kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "kilis-tava-kuzu-kiymali",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/kilis/neyenir/kilis-tava",
+      "https://yemek.com/tarif/kilis-tava/"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu kıyma, biber, domates, soğan, salça ve patlıcan tabanı Kilis tava kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "kimbap",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Kimbap pirinci genelde susam yağı ve tuzla lezzetlenir; step 4 susam yağı diyor ama ingredient listesinde yok.",
+      "Susam yağı eklenirse SUSAM allergen bildirimi gerekir."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Susam yağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": ["SUSAM"]
+    },
+    "sources": [
+      "https://www.koreanbapsang.com/gimbapkimbap-korean-dried-seaweed-rolls/",
+      "https://www.beyondkimchee.com/kimbap/"
+    ],
+    "confidence": "high",
+    "reason": "Kimbap yapısı doğru, fakat pirinci ve ruloyu parlatan susam yağı listede yok; alerjen de eksik kalmış."
+  }
+]

@@ -1,0 +1,692 @@
+[
+  {
+    "slug": "kapuska",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kapuska-kiymali/",
+      "https://yemek.com/tarif/kapuska/"
+    ],
+    "confidence": "high",
+    "reason": "Lahana, kıyma, pirinç ve salçalı tencere akışı kaynaklarla uyumlu; süre ve makro değerlerinde belirgin çelişki görülmedi."
+  },
+  {
+    "slug": "karaage",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: kızartma yağı ve sarımsak yok, ancak kaynaklı karaage tariflerinde ikisi de temel",
+      "steps: sos ve tava ifadeleri karaage tekniğiyle ilişkili değil"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ayçiçek yağı", "amount": "4", "unit": "su bardağı" },
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Tavuğu soya sosu, rendelenmiş zencefil ve ezilmiş sarımsakla harmanlayıp buzdolabında bekletin.", "timerSeconds": 1800 },
+        { "stepNumber": 3, "instruction": "Derin tencerede yağı 170°C'ye ısıtın; nişastalı tavukların fazla kaplamasını silkeleyin." },
+        { "stepNumber": 5, "instruction": "Tavukları tel ızgarada dinlendirin; yüzey buharı uzaklaşınca dışı daha çıtır kalır.", "timerSeconds": 180 },
+        { "stepNumber": 6, "instruction": "Yağı 180°C'ye çıkarıp tavukları kısa ikinci tur kızartın.", "timerSeconds": 90 },
+        { "stepNumber": 7, "instruction": "Fazla yağı süzdürüp limon dilimleriyle sıcak servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.justonecookbook.com/karaage/",
+      "https://www.bbcgoodfood.com/recipes/double-fried-karaage-chicken"
+    ],
+    "confidence": "high",
+    "reason": "Karaage kaynakları sarımsaklı soya marinasyonu, nişasta kaplama ve derin yağda kızartmayı doğruluyor; mevcut sos adımları hatalı."
+  },
+  {
+    "slug": "karabiberli-lahana-dana-tava-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: son iki adım sos varmış gibi yazılmış, tarifte sos malzemesi yok",
+      "steps: dana kuşbaşı için kısa kapaklı pişirme yumuşaklık açısından yetersiz kalabilir"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 3, "instruction": "Karabiberi katıp kapağı kapalı şekilde et yumuşayana kadar pişirin.", "timerSeconds": 900 },
+        { "stepNumber": 4, "instruction": "Tavanın dibine tutunan parçaları 2 yemek kaşığı sıcak suyla çözdürün, lahana yanmadan yumuşasın." },
+        { "stepNumber": 5, "instruction": "Ocaktan almadan önce tuzunu kontrol edin ve yemeği sıcak servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.polonist.com/kielbasa-and-cabbage/",
+      "https://www.allrecipes.com/gallery/polish-cabbage-recipes/"
+    ],
+    "confidence": "medium",
+    "reason": "Polonya mutfağında lahana tava teması kaynaklı, ancak dana kuşbaşı versiyonu serbest uyarlama; teknik adımlar düzeltilmeli."
+  },
+  {
+    "slug": "karabugdayli-kofte-tava-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: grechaniki tipi köftede yumurta bağlayıcı olarak beklenir",
+      "allergens: yumurta eklendiğinde YUMURTA allergen'i de eklenmeli",
+      "steps: karabuğday köfte harcına pişmiş olarak girmeli, sonradan suyla tencereye eklenmemeli"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yumurta", "amount": "1", "unit": "adet" }
+      ],
+      "allergens_add": ["YUMURTA"],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Karabuğdayı suyla yumuşatıp süzün ve ılıtın.", "timerSeconds": 900 },
+        { "stepNumber": 2, "instruction": "Kıyma, soğan, yumurta, galeta unu ve ılımış karabuğdayı yoğurup köfteler hazırlayın." },
+        { "stepNumber": 3, "instruction": "Köfteleri tavada iki yüzü renk alana kadar mühürleyin.", "timerSeconds": 360 },
+        { "stepNumber": 4, "instruction": "Kapağı kapatıp içleri pişene kadar kısık ateşte tutun.", "timerSeconds": 600 },
+        { "stepNumber": 6, "instruction": "Köfteleri sıcak servis edin; karabuğday harcı dağılmadan tabağa alın." }
+      ]
+    },
+    "sources": [
+      "https://bosskitchen.com/cutlets-grechaniki/",
+      "https://master-recipes.com/en/recipe/grechaniki"
+    ],
+    "confidence": "high",
+    "reason": "Grechaniki kaynakları pişmiş karabuğday ve yumurtalı köfte harcını doğruluyor; mevcut sıra yemeğin yapısını bozuyor."
+  },
+  {
+    "slug": "karabugdayli-tavuk-firini-rus-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.alyonascooking.com/one-pan-buckwheat-with-chicken/",
+      "https://nomadparadise.com/buckwheat-recipe-kasha/"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk, mantar ve karabuğdayı fırında pişirme fikri Doğu Avrupa kasha kullanımıyla uyumlu; belirgin süre veya içerik hatası yok."
+  },
+  {
+    "slug": "karabuk-cevizli-kesli-yayim",
+    "verdict": "PASS",
+    "sources": [
+      "https://visitkarabuk.com/neler-yenir/cevizli-kesli-yayim",
+      "https://www.kulturportali.gov.tr/turkiye/karabuk/neyenir"
+    ],
+    "confidence": "medium",
+    "reason": "Yayımın erişte, keş, ceviz ve tereyağıyla servis edilmesi yöresel kaynakla uyumlu; allergen ve makro dengesinde açık sorun yok."
+  },
+  {
+    "slug": "karachi-biryani-tavuklu",
+    "verdict": "PASS",
+    "sources": [
+      "https://pakistani.recipes/recipes/biryani/karachi-biryani/",
+      "https://www.bonappetit.com/recipe/chicken-thigh-biryani"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurtlu tavuk masala, basmati pirinci ve dum pişirme akışı Karachi tavuk biryani kaynaklarıyla uyumlu görünüyor."
+  },
+  {
+    "slug": "karachi-chapli-kebab",
+    "verdict": "CORRECTION",
+    "issues": [
+      "allergens: yoğurtlu raita SUT allergen'ini açıklar, fakat ekmek kırıntısı ve naan nedeniyle GLUTEN doğru olsa da yumurta yok",
+      "ingredients: kaynaklarda chapli kebab harcında anardana ya da ekşi nar notası sık görülür, mevcut tarifte bu karakter eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Nar ekşisi", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 2, "instruction": "Kıyma, baharat, soğan, biber, ekmek kırıntısı, nar ekşisi ve otları yoğurun." }
+      ]
+    },
+    "sources": [
+      "https://food.ndtv.com/recipe-peshawari-chapli-kebab-952988",
+      "https://foodiection.com/recipe/chapli-kabab/"
+    ],
+    "confidence": "medium",
+    "reason": "Chapli kebab genel akışı doğru; kaynaklardaki ekşi nar karakteri eksik olduğu için küçük içerik düzeltmesi uygun."
+  },
+  {
+    "slug": "karadeniz-hamsi-kayganasi",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "ingredients: masa harina Karadeniz hamsi kayganası için kaynaklı malzeme değil, mısır unu olmalı",
+      "allergens: hamsi ve yumurta bulunduğu halde DENIZ_URUNLERI ve YUMURTA allergen'leri eksikse kritik hata olur"
+    ],
+    "corrections": {
+      "ingredients_remove": ["Masa harina"],
+      "ingredients_add": [
+        { "name": "Mısır unu", "amount": "80", "unit": "gr" }
+      ],
+      "allergens_add": ["DENIZ_URUNLERI", "YUMURTA"],
+      "steps_replace": [
+        { "stepNumber": 2, "instruction": "3 yumurta, mısır unu ve maydanozu kasede karıştırın." }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/hamsi-kaygana/",
+      "https://yemek.com/tarif/hamsili-kaygana/"
+    ],
+    "confidence": "high",
+    "reason": "Hamsi kayganası kaynakları mısır unu, yumurta ve hamsi kullanıyor; masa harina ve eksik allergen bilgisi yanıltıcı."
+  },
+  {
+    "slug": "karadeniz-hamsili-pilav-tepsisi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.buradanara.com/2024/07/04/karadeniz-lezzeti-hamsili-pilav-tarifi/",
+      "https://www.pilav.gen.tr/hamsili-pilav.html"
+    ],
+    "confidence": "high",
+    "reason": "Hamsiyle kaplanan iç pilav, kuş üzümü ve fırınlama akışı Karadeniz hamsili pilav kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "karadeniz-lahana-sarmasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/karalahana-sarmasi/",
+      "https://www.kulturportali.gov.tr/turkiye/trabzon/neyenir/karalahana-sarmasi"
+    ],
+    "confidence": "medium",
+    "reason": "Karalahana yaprağı, bulgurlu iç ve tencerede pişirme mantığı kaynaklı sarma tekniğiyle uyumlu; büyük çelişki saptanmadı."
+  },
+  {
+    "slug": "karadeniz-misir-ekmegi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/karadeniz-usulu-nefis-misir-ekmegi/",
+      "https://www.youtube.com/watch?v=9WSCpqI5F5c"
+    ],
+    "confidence": "high",
+    "reason": "Mısır unu, yoğurt, yumurta ve yağlı hamur kaynaklardaki Karadeniz mısır ekmeğiyle uyumlu; gluten over-tag görünmüyor."
+  },
+  {
+    "slug": "karadeniz-pidesi",
+    "verdict": "PASS",
+    "sources": [
+      "https://ye-mek.net/tarif/kiymali-yumurtali-karadeniz-pidesi",
+      "https://www.nefisyemektarifleri.com/karadeniz-pidesi/"
+    ],
+    "confidence": "medium",
+    "reason": "Mayalı hamur, peynir, tereyağı, yumurta ve yüksek ısıda pişirme Karadeniz pidesiyle uyumlu; allergen beyanı doğru."
+  },
+  {
+    "slug": "karadutlu-votka-fizz-polonya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.liquor.com/recipes/vodka-soda/",
+      "https://www.thespruceeats.com/blackberry-vodka-tonic-recipe-760978"
+    ],
+    "confidence": "medium",
+    "reason": "Votka, meyve ve soda üstleme tekniği fizz tarzı içecekle uyumlu; Polonya atfı genel votka kültürü düzeyinde kalıyor."
+  },
+  {
+    "slug": "karalahana-corbasi-ordu-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/ordu-usulu-karalahana-corbasi/",
+      "https://www.sahrapsoysal.com/barbunyali-karalahana-corbasi-ordu-tarifi-t-6444"
+    ],
+    "confidence": "high",
+    "reason": "Karalahana, barbunya, mısır yarması ve tereyağlı yapı Ordu usulü kaynaklarla uyumlu; mısır ekmeği nedeniyle GLUTEN doğru."
+  },
+  {
+    "slug": "karalahana-diblesi-giresun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: son adımlar şablon ve dible tekniğini açıklamıyor",
+      "steps: taze ot veya kızgın yağ seçeneği kaynaklı Giresun diblesinde net değil"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 3, "instruction": "Sıcak suyu pirincin hizasına gelecek kadar ölçülü ekleyin." },
+        { "stepNumber": 5, "instruction": "Pirinç yumuşayınca yemeği kapak kapalı halde dinlendirin.", "timerSeconds": 300 },
+        { "stepNumber": 6, "instruction": "Dilerseniz kızdırılmış tereyağını üstüne gezdirip karıştırın." },
+        { "stepNumber": 7, "instruction": "Dibleyi pirinci ezmeden sıcak servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/giresun/neyenir/karalahana-diblesi",
+      "https://giresun.ktb.gov.tr/TR-208459/karalahana-pancar-diblesi.html"
+    ],
+    "confidence": "high",
+    "reason": "Giresun diblesinde pirinç, karalahana ve yağ sonlandırması kaynaklı; mevcut şablon servis adımları doğruluk sorunu yaratıyor."
+  },
+  {
+    "slug": "karalahana-misirli-ayran-corbasi-trabzon-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.karaca.com/blog/trabzon-usulu-vitamin-deposu-leziz-karalahana-corbasi-tarifi",
+      "https://www.habertrabzon.tr/trabzon-usulu-karalahana-corbasi-tarifi-ve-puf-noktalari"
+    ],
+    "confidence": "medium",
+    "reason": "Karalahana, mısır ve yoğurt terbiyesi Trabzon çorba ailesiyle uyumlu; yoğurdu ılıtarak ekleme adımı kesilmeyi önlüyor."
+  },
+  {
+    "slug": "karalahana-patates-corbasi-bartin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.giresunhakkinda.com/yoresel-yemekler/karalahana-pancar-corbasi",
+      "https://www.karaca.com/blog/trabzon-usulu-vitamin-deposu-leziz-karalahana-corbasi-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Karalahana çorbasına patatesle kıvam verme bölgesel bir uyarlama olarak makul; süre ve ingredient eşleşmesi tutarlı."
+  },
+  {
+    "slug": "karalahana-sarmasi-karadeniz-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/karalahana-sarmasi/",
+      "https://www.kulturportali.gov.tr/turkiye/trabzon/neyenir/karalahana-sarmasi"
+    ],
+    "confidence": "medium",
+    "reason": "Pirinçli karalahana sarması, haşlama ve yoğurtla servis akışı kaynaklarla uyumlu; 75 dakikalık toplam süre makul."
+  },
+  {
+    "slug": "karalahanali-barbunya-corbasi-giresun-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.giresunhakkinda.com/yoresel-yemekler/karalahana-pancar-corbasi",
+      "https://www.sahrapsoysal.com/barbunyali-karalahana-corbasi-tarifi-t-6344"
+    ],
+    "confidence": "high",
+    "reason": "Karalahana ve barbunya birleşimi Giresun ve Karadeniz kaynaklarında yer alıyor; mevcut kısa çorba akışı tutarlı."
+  },
+  {
+    "slug": "karalahanali-barbunya-diblesi-giresun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: ilk adımda süre belirsiz, 'kısa' ifadesi kalite kuralına aykırı",
+      "steps: son servis adımı şablon ve tarifte kaynaklı zorunlu değil"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Soğanı zeytinyağında yumuşayana kadar çevirin.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Sıcak suyu pirincin hizasına gelecek kadar ölçülü ekleyin." },
+        { "stepNumber": 6, "instruction": "Pirinç dinlenince dibleyi taneleri ezmeden sıcak servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/giresun/neyenir/karalahana-diblesi",
+      "https://giresun.ktb.gov.tr/TR-208459/karalahana-pancar-diblesi.html"
+    ],
+    "confidence": "medium",
+    "reason": "Barbunya eklemesi serbest uyarlama olsa da dible tekniği Giresun kaynaklarıyla uyumlu; şablon ve muğlak adım düzeltilmeli."
+  },
+  {
+    "slug": "karalahanali-kuru-fasulye-diblesi-rize-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: sıcak su eklendikten sonra tekrar 'sıvıyı hizasına kadar ekleyin' denmesi tekrar ve belirsizlik yaratıyor",
+      "steps: son adım şablon servis gerekçesi taşıyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 4, "instruction": "Pirinç suyunu çekince ocağı kısın ve dibinin tutmaması için tencereyi hafifçe sallayın." },
+        { "stepNumber": 5, "instruction": "Yemeği kapak kapalı halde dinlendirin; pirinç bu sürede fazla nemi çeker.", "timerSeconds": 300 }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/giresun/neyenir/karalahana-diblesi",
+      "https://www.giresunhakkinda.com/yoresel-yemekler/karalahana-pancar-corbasi"
+    ],
+    "confidence": "medium",
+    "reason": "Karalahana ve bakliyat uyarlaması makul, fakat adım 4 ve 5 tekrarlı şablon içeriyor; ölçülü dible akışı daha doğru."
+  },
+  {
+    "slug": "karalahanali-lorlu-gozleme-trabzon-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: gözleme için fırında akma ve tepsi sıcak hava adımları hatalı",
+      "steps: tavada pişen gözleme tekniği yerine fırın dili kullanılmış"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 3, "instruction": "Yufkayı kapatırken kenarları bastırın, lorlu harç tavada dışarı taşmasın." },
+        { "stepNumber": 4, "instruction": "Gözlemeyi sıcak tavada iki yüzü renk alana kadar pişirin.", "timerSeconds": 600 },
+        { "stepNumber": 5, "instruction": "Pişen yüzlere tereyağı sürün; yufka kuruyup kırılmasın." },
+        { "stepNumber": 6, "instruction": "Gözlemeyi kısa dinlendirip dilimleyerek sıcak servis edin.", "timerSeconds": 120 }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/lorlu-gozleme-tarifi/",
+      "https://www.karaca.com/blog/gozleme-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Gözleme tavada pişer; mevcut fırın ve tepsi ifadeleri tarif tekniğiyle çeliştiği için step düzeltmesi gerekli."
+  },
+  {
+    "slug": "karalahanali-pirincli-tava-giresun-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/giresun/neyenir/karalahana-diblesi",
+      "https://giresun.ktb.gov.tr/TR-208459/karalahana-pancar-diblesi.html"
+    ],
+    "confidence": "medium",
+    "reason": "Pirinçli karalahana tavası Giresun diblesine yakın; su ölçüsü, demleme ve pişirme süresi kaynaklı teknikle uyumlu."
+  },
+  {
+    "slug": "karalahanali-yogurtlu-salata-bartin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/yogurtlu-karalahana-salatasi/",
+      "https://www.karaca.com/blog/karalahana-salatasi"
+    ],
+    "confidence": "medium",
+    "reason": "Haşlanmış karalahanayı sarımsaklı yoğurtla karıştırma ve fazla suyunu sıkma adımları salata tekniğiyle uyumlu."
+  },
+  {
+    "slug": "karaman-batirik-tahinli",
+    "verdict": "PASS",
+    "sources": [
+      "https://karaman.net/neler-yenir-batirik-tarifi-32.html",
+      "https://www.nefisyemektarifleri.com/batirik-karaman-yoresine-ait/"
+    ],
+    "confidence": "high",
+    "reason": "İnce bulgur, tahin, domates, ceviz ve sulu ya da katı servis seçenekleri Karaman batırık kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "karamel-biberli-tavuk-pirinci-vietnam-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "ingredients: Vietnam caramel chicken için balık sosu ve sarımsak gibi temel tatlar eksik",
+      "steps: mevcut adımlar kaynaklı ga kho tekniğini anlatmıyor, şablon ifadeler içeriyor",
+      "allergens: balık sosu eklenirse DENIZ_URUNLERI allergen'i gerekir"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Balık sosu", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Su", "amount": "0.75", "unit": "su bardağı" }
+      ],
+      "allergens_add": ["DENIZ_URUNLERI"],
+      "totalMinutes": 45,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Şekeri tavada koyu kehribar renge gelene kadar eritin.", "timerSeconds": 180 },
+        { "stepNumber": 2, "instruction": "Tavuğu ekleyip karamelin tavuk parçalarını kaplamasını sağlayın.", "timerSeconds": 360 },
+        { "stepNumber": 3, "instruction": "Balık sosu, ezilmiş sarımsak, karabiber ve suyu ekleyin." },
+        { "stepNumber": 4, "instruction": "Tavuğu sos koyulaşana ve içi pişene kadar kısık ateşte tutun.", "timerSeconds": 1200 },
+        { "stepNumber": 5, "instruction": "Pirinci ayrı haşlayıp süzün veya buharda pişirin.", "timerSeconds": 900 },
+        { "stepNumber": 6, "instruction": "Tavuğu pirincin üzerine alın ve koyu sosu gezdirin." },
+        { "stepNumber": 7, "instruction": "Karabiberini kontrol edip sıcak servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.177milkstreet.com/recipes/vietnamese-caramel-chicken",
+      "https://www.marionskitchen.com/vietnamese-caramel-chicken/"
+    ],
+    "confidence": "high",
+    "reason": "Kaynaklı Vietnam caramel chicken balık soslu, sarımsaklı ve koyu soslu pişer; mevcut tarif çekirdek tekniği kaçırıyor."
+  },
+  {
+    "slug": "karamelize-soganli-pirojki-rus-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.tastingtable.com/687551/larisas-pirozhki-recipe/",
+      "https://immigrantstable.com/russian-vegetarian-pirozhki/"
+    ],
+    "confidence": "medium",
+    "reason": "Mayalı hamur ve soğanlı içle fırında küçük hamur işi akışı pirojki kaynaklarıyla uyumlu; süre genel ev tipi uyarlama için makul."
+  },
+  {
+    "slug": "karanfilli-erik-kompostosu-polonya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.coffeeandvanilla.com/kompot-sliwkowy-plum-compote/",
+      "https://www.polonist.com/polish-kompot/"
+    ],
+    "confidence": "high",
+    "reason": "Erik, su, şeker ve karanfil ile kaynatılan kompot Polonya kaynaklarıyla uyumlu; süre ve kalori makul aralıkta."
+  },
+  {
+    "slug": "karayemis-kompostosu-trabzon-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.tarifikolay.com/karayemis-receli_569",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/taze-meyve-kompostosu/5844"
+    ],
+    "confidence": "medium",
+    "reason": "Karayemiş yöresel meyve olarak kaynaklı; komposto tekniği taze meyve, su ve şeker kaynatma yöntemiyle tutarlı."
+  },
+  {
+    "slug": "karayemisli-muhallebi-trabzon-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: steps içinde 45 dakika soğutma var, totalMinutes 22 bu bekleme süresini kapsamıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 67
+    },
+    "sources": [
+      "https://www.karaca.com/blog/muhallebi-tarifi",
+      "https://mutfaksirlari.com/karayemis-receli.html"
+    ],
+    "confidence": "high",
+    "reason": "Muhallebi pişirme akışı uygun, ancak soğutma beklemesi toplam süreye eklenmediği için RecipeTimeline yanıltıcı olur."
+  },
+  {
+    "slug": "karayemisli-soguk-cay-ordu-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.tarifikolay.com/karayemis-receli_569",
+      "https://www.lipton.com/us/en/recipes/iced-tea/"
+    ],
+    "confidence": "medium",
+    "reason": "Demli çay ve meyve suyu karışımı soğuk çay tekniğiyle uyumlu; karayemiş yöresel meyve olarak makul uyarlama."
+  },
+  {
+    "slug": "kardamomlu-elma-coplari-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "description: 'elma çöpleri' ifadesi yenilebilir elma çubuğu tarifini yanlış çağrıştırıyor",
+      "title düzeltmesi output şemasında desteklenmiyor, manuel review gerekir"
+    ],
+    "corrections": {
+      "description": "İsveç esintili kakuleli elma çubukları, elmayı limon ve şekerle fırınlayarak hafif bir atıştırmalık sunar."
+    },
+    "sources": [
+      "https://www.swedishfood.com/desserts/apple-crumble",
+      "https://www.cooking-therapy.com/cardamom-apple-crumble/"
+    ],
+    "confidence": "medium",
+    "reason": "Kakuleli elma İsveç tatlı profiline uyuyor, fakat 'çöpleri' kelimesi kullanıcıyı yanlış yönlendirir; description düzelmeli."
+  },
+  {
+    "slug": "kardemummali-elma-crumble-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: yulaf kullanımı yazıyor, ingredient listesinde yulaf yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yulaf ezmesi", "amount": "0.5", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.swedishfood.com/desserts/apple-crumble",
+      "https://www.cooking-therapy.com/cardamom-apple-crumble/"
+    ],
+    "confidence": "high",
+    "reason": "Crumble kaynakları un, yağ ve çoğu zaman yulaflı kırıntı kullanır; step yulaf dediği için ingredient listesi eksik kalmış."
+  },
+  {
+    "slug": "karidesli-safranli-pirinc-tava-ispanya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.allrecipes.com/article/what-is-paella/",
+      "https://www.bbcgoodfood.com/recipes/seafood-paella"
+    ],
+    "confidence": "medium",
+    "reason": "Karides, safran ve pirinç birleşimi İspanyol paella ailesiyle uyumlu; sadeleştirilmiş tava hali açık hata taşımıyor."
+  },
+  {
+    "slug": "karidesli-smorrebrod",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "cuisine: smørrebrød Danimarka açık sandviçidir, İsveç cuisine kodu yanıltıcı",
+      "ingredients ve steps karidesli açık sandviçle uyumlu olsa da ülke etiketi düzeltilmeli"
+    ],
+    "corrections": {
+      "cuisine": "dk"
+    },
+    "sources": [
+      "https://www.bonv.se/shrimp-smorrebrod/",
+      "https://travelfoodatlas.com/danish-smorrebrod-recipe-open-sandwich"
+    ],
+    "confidence": "high",
+    "reason": "Smørrebrød kaynaklarda Danimarka açık sandviçi olarak geçiyor; 'se' cuisine kullanıcı ve filtre açısından yanlış."
+  },
+  {
+    "slug": "karniyarik",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/karniyarik/",
+      "https://www.nefisyemektarifleri.com/karniyarik-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Patlıcanı yarıp kıymalı harçla doldurma, tuzlu suda bekletme ve fırınlama akışı klasik karnıyarıkla uyumlu."
+  },
+  {
+    "slug": "karpuzlu-agua-fresca",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.isabeleats.com/mexican-watermelon-water-agua-de-sandia/",
+      "https://mexicanmademeatless.com/how-to-make-watermelon-agua-fresca/"
+    ],
+    "confidence": "high",
+    "reason": "Karpuz, su, limon, az şeker ve süzme adımları Meksika agua fresca kaynaklarıyla uyumlu; süre gerçekçi."
+  },
+  {
+    "slug": "kars-evelik-asi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.youtube.com/watch?v=kRt1avLnPWs",
+      "https://www.karstayiz.org/place/evelik-corbasi/144"
+    ],
+    "confidence": "medium",
+    "reason": "Evelik, yarma, mercimek ve yoğurt terbiyesi Kars yöresi evelik aşı anlatımlarıyla uyumlu; bekleme veya macro sorunu yok."
+  },
+  {
+    "slug": "kars-hangel-eriste-yogurtlu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/kars/neyenir/hangel",
+      "https://www.e-sehir.com/yemek_tarifleri/hangel-kars-tarifi.html"
+    ],
+    "confidence": "high",
+    "reason": "Hamur kesme, haşlama, sarımsaklı yoğurt ve tereyağlı soğanla servis Kars hangel kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "kars-kaz-etli-arpa-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nuranabla.com/menus",
+      "https://www.nefisyemektarifleri.com/kars-kaz-eti-ve-bulgur-pilavi-yoresel-kars-kazi-menusu/"
+    ],
+    "confidence": "medium",
+    "reason": "Kars kazı ve kaz suyunu kullanma yerel kaynaklarla uyumlu; arpa şehriyeli çorba uyarlamasında allergen ve süre tutarlı."
+  },
+  {
+    "slug": "kars-kaz-etli-pilav",
+    "verdict": "PASS",
+    "sources": [
+      "https://turkiye.influence.cool/tr/kars/selim/yerel-lezzetler/kars-kazi-ve-pilavi/",
+      "https://www.nefisyemektarifleri.com/kars-kaz-eti-ve-bulgur-pilavi-yoresel-kars-kazi-menusu/"
+    ],
+    "confidence": "medium",
+    "reason": "Kazın haşlanıp suyuyla pilav yapılması Kars kazı kaynaklarıyla uyumlu; pirinç kullanımı bulgur dışı ev uyarlaması olarak makul."
+  },
+  {
+    "slug": "kars-kazli-bulgur-pilavi",
+    "verdict": "PASS",
+    "sources": [
+      "https://turkiye.influence.cool/tr/kars/selim/yerel-lezzetler/kars-kazi-ve-pilavi/",
+      "https://www.nefisyemektarifleri.com/kaz-etli-bulgur-pilavi-kars-kazi/"
+    ],
+    "confidence": "high",
+    "reason": "Kaz eti, kaz suyu ve bulgur pilavı Kars kaynaklarıyla doğrudan uyumlu; toplam süre uzun pişirme için gerçekçi."
+  },
+  {
+    "slug": "kars-ketesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: hamurda maya beklenir, mevcut listede maya yok",
+      "time: mayalı kete için 90 dakika toplam süre, 30 dakika dinlenme ve fırın süresini kapsıyor ancak maya eksikliği kritik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru maya", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "4 su bardağı un, süt, yumurta ve kuru mayayla hamur yoğurun." }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kars-ketesi/",
+      "https://turkiye.influence.cool/tr/kars/susuz/yerel-lezzetler/kars-ketesi/"
+    ],
+    "confidence": "high",
+    "reason": "Kars ketesi kaynakları mayalı hamurla hazırlanıyor; ingredient listesinde maya olmadan hamur tanımı eksik kalır."
+  },
+  {
+    "slug": "kars-piti-nohutlu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.karstayiz.org/place/piti-bozbas/129",
+      "https://www.kulturportali.gov.tr/turkiye/kars/neyenir/bozbas"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu incik, nohut, sarı kök safran notası ve uzun pişirme Kars piti bozbaş bilgisiyle uyumlu; süre gerçekçi."
+  },
+  {
+    "slug": "kars-yogurtlu-hangel",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/kars/neyenir/hangel",
+      "https://lezzetler.com/hangel-kars-tarif-145683"
+    ],
+    "confidence": "high",
+    "reason": "Unlu hamur kareleri, haşlama, sarımsaklı yoğurt ve tereyağlı soğan Kars hangel kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "kasarli-biberli-pide-tekirdag-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kasarli-pide/",
+      "https://www.karaca.com/blog/pide-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Kaşarlı pide hamuru, harcı ortaya yayıp kenar kapatma ve yüksek ısıda fırınlama tekniği kaynaklarla uyumlu."
+  },
+  {
+    "slug": "kasarli-eriste-tavasi-kars-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: son iki adım sos varmış gibi yazılmış, tarifte sos yok",
+      "steps: erişte ve kaşar için tava tekniği daha sade olmalı"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 4, "instruction": "Kaşar eriyince tavayı ocaktan alın; peynir dipte sertleşmeden karıştırmayı bırakın." },
+        { "stepNumber": 5, "instruction": "Erişteyi kısa dinlendirip karabiberle sıcak servis edin.", "timerSeconds": 120 }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kasarli-eriste/",
+      "https://www.karaca.com/blog/eriste-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Erişte, tereyağı ve kaşar akışı tutarlı; ancak sos ve sulu yayılma ifadeleri tarifte olmayan bir yapı anlatıyor."
+  },
+  {
+    "slug": "kasarli-fasulyeli-kahvalti-kase-ingiltere-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/collection/full-english-breakfast-recipes",
+      "https://www.heinz.com/products/00013000001170-baked-beans"
+    ],
+    "confidence": "medium",
+    "reason": "Fasulye, yumurta, tost ekmeği ve peynirli kahvaltı kasesi İngiliz kahvaltı bileşenleriyle uyumlu; allergen beyanı doğru."
+  },
+  {
+    "slug": "kasarli-ispanakli-gurme-tost-bursa-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/ispanakli-kasarli-tost/",
+      "https://www.karaca.com/blog/tost-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Ispanağı önce soteleyip kaşarlı tost içinde kullanma tekniği tutarlı; süre, ingredient ve allergen alanlarında sorun yok."
+  }
+]

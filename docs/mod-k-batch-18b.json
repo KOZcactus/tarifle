@@ -1,0 +1,989 @@
+[
+  {
+    "slug": "kuru-domatesli-firik-corbasi-gaziantep-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 soğanı çeviriyor, ancak ingredient listesinde pişirme yağı yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "averageCalories": 204,
+      "protein": 5,
+      "carbs": 30,
+      "fat": 7
+    },
+    "sources": [
+      "https://yemek.com/tarif/kuru-domates-corbasi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/kuru-domates-ile-domates-corbasi/16813"
+    ],
+    "confidence": "medium",
+    "reason": "Kuru domatesli çorba akışı makul, fakat soğanı çevirmek için gereken yağ listede yok; makro yağ değeri de bu eklemeyle dengelenmeli."
+  },
+  {
+    "slug": "kuru-domatesli-gozleme-aydin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Gözleme adımlarında template cümleler var.",
+      "Hamurda tuz kullanımı kaynaklarla uyumlu, ancak ingredient listesinde tuz yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, su, zeytinyağı ve tuzu yoğurup yumuşak bir hamur hazırlayın." },
+        { "stepNumber": 2, "instruction": "Hamuru örtüp 10 dakika dinlendirin.", "timerSeconds": 600 },
+        { "stepNumber": 3, "instruction": "Kuru domatesi ince doğrayıp beyaz peynirle karıştırın." },
+        { "stepNumber": 4, "instruction": "Hamuru dört bezeye ayırıp ince açın ve iç harcı yarısına yayın." },
+        { "stepNumber": 5, "instruction": "Gözlemeleri kapatıp kuru tavada iki yüzünü toplam 10 dakika pişirin.", "timerSeconds": 600 },
+        { "stepNumber": 6, "instruction": "Sıcak gözlemeleri ayran veya çayla servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/tuzlu-hamur-isi-tarifleri/domatesli-peynirli-gozleme-tarifi",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/peynirli-gozleme-tarifi/15248"
+    ],
+    "confidence": "high",
+    "reason": "Malzeme kurgusu gözlemeye uygun, fakat adımlar tarif-spesifik değil ve temel hamur tuzu eksik görünüyor."
+  },
+  {
+    "slug": "kuru-domatesli-guvec-beypazari-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 tuz ve karabiber kullanıyor, ingredient listesinde ikisi de yok.",
+      "Step 2 sebzeyi çeviriyor, ancak pişirme yağı listede yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "averageCalories": 232,
+      "protein": 8,
+      "carbs": 27,
+      "fat": 10
+    },
+    "sources": [
+      "https://ye-mek.net/tarif/kuru-domates-corbasi",
+      "https://www.bornovadan.com/2025/11/17/pancar-borani-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kuru domatesli sebze yemeği makul, ancak step içinde geçen tuz, karabiber ve pişirme yağı ingredient listesinde yok."
+  },
+  {
+    "slug": "kuru-domatesli-omlet",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Adımlarda omletle ilgisiz template cümleler ve peynir referansı var.",
+      "Yumurta karışımı için tuz ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kuru domatesleri ince doğrayın; çok tuzluysa 5 dakika sıcak suda bekletip süzün.", "timerSeconds": 300 },
+        { "stepNumber": 2, "instruction": "Yumurtaları süt ve tuzla çırpın." },
+        { "stepNumber": 3, "instruction": "Zeytinyağını tavada 1 dakika ısıtın.", "timerSeconds": 60 },
+        { "stepNumber": 4, "instruction": "Kuru domatesleri tavada 1 dakika çevirin.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Yumurtalı karışımı tavaya döküp kısık ateşte 5 dakika pişirin.", "timerSeconds": 300 },
+        { "stepNumber": 6, "instruction": "Omletin kenarı toparlanınca tabağa alın ve bekletmeden servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.gzt.com/lokma/kuru-domatesli-omlet-32759",
+      "https://ye-mek.net/tarif/domatesli-omlet"
+    ],
+    "confidence": "high",
+    "reason": "Kuru domatesli omlet kaynaklarla uyumlu, fakat mevcut adımlarda peynirli doku gibi tarif dışı ifadeler ve eksik tuz var."
+  },
+  {
+    "slug": "kuru-elma-pekmezli-kek-kastamonu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 şeker kullanıyor, ingredient listesinde şeker yok.",
+      "Kek yapısı için kabartma tozu ve yağ eksik; mevcut liste fırın keki için yetersiz."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Toz şeker", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Sıvı yağ", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Kabartma tozu", "amount": "1", "unit": "paket" }
+      ],
+      "averageCalories": 318,
+      "protein": 5,
+      "carbs": 43,
+      "fat": 14
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/kayisili-malatya-kurabiyesi-tarifi-t-4248",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/kuru-domates-ile-domates-corbasi/16813"
+    ],
+    "confidence": "medium",
+    "reason": "Kuru meyveli hamur işi fikri makul, fakat step şeker kullanıyor ve mevcut kek listesi yağ ile kabartıcı olmadan eksik kalıyor."
+  },
+  {
+    "slug": "kuru-erikli-komposto",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kusburnu.gen.tr/kusburnu-kompostosu.html",
+      "https://gurmebebek.com/yemek-tarifi/kusburnu-cayi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kuru meyve, su, şeker ve tarçınla kısa kaynatma komposto mantığıyla uyumlu; net ingredient veya süre çelişkisi görünmüyor."
+  },
+  {
+    "slug": "kuru-fasulye",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 fasulyeyi bir gece suda bekletiyor, ancak totalMinutes 75 dakika kalmış."
+    ],
+    "corrections": {
+      "totalMinutes": 555
+    },
+    "sources": [
+      "https://yemek.com/tarif/kuru-fasulye/",
+      "https://www.ibrahiminyeri.com/post/kuru-fasulye-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Kuru fasulye içeriği doğru, fakat 8 saatlik ıslatma totalMinutes içinde bekleme süresi olarak görünmeli."
+  },
+  {
+    "slug": "kuru-kayisili-bulgur-corbasi-erzurum-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 bir litre su ekliyor, ingredient listesinde su yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Su", "amount": "1", "unit": "litre" }
+      ]
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/etli-kayisi-yahnisi-tarifi-t-3612",
+      "https://www.pilav.gen.tr/kusbasi-etli-bulgur-pilavi.html"
+    ],
+    "confidence": "medium",
+    "reason": "Kayısı ve bulgurlu çorba kurgusu makul, ancak adımda kullanılan pişirme suyu ingredient listesinde eksik."
+  },
+  {
+    "slug": "kuru-kayisili-etli-yahni-malatya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Kayısılı et yahnisi kaynaklarda daha uzun pişer; mevcut 28 dakika cookMinutes dana eti için kısa.",
+      "Step içinde tuz ve baharat ima ediliyor, ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 84,
+      "totalMinutes": 110,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kuru kayısıları 10 dakika ılık suda bekletip süzün.", "timerSeconds": 600 },
+        { "stepNumber": 2, "instruction": "Eti tereyağında 8 dakika mühürleyin.", "timerSeconds": 480 },
+        { "stepNumber": 3, "instruction": "Soğanı ekleyip 5 dakika kavurun.", "timerSeconds": 300 },
+        { "stepNumber": 4, "instruction": "Sıcak su, tuz ve karabiberi ekleyip eti 55 dakika kısık ateşte pişirin.", "timerSeconds": 3300 },
+        { "stepNumber": 5, "instruction": "Kayısıları katıp 16 dakika daha pişirin.", "timerSeconds": 960 },
+        { "stepNumber": 6, "instruction": "Yahniyi 8 dakika dinlendirin, kayısılar dağılmadan servis edin.", "timerSeconds": 480 }
+      ]
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/etli-kayisi-yahnisi-tarifi-t-3612",
+      "https://www.bbcgoodfood.com/recipes/lamb-squash-apricot-tagine"
+    ],
+    "confidence": "high",
+    "reason": "Kayısılı et yahnisi fikri doğru, fakat dana etinin yumuşaması için süre kısa ve temel tuz karabiber listede eksik."
+  },
+  {
+    "slug": "kuru-kayisili-un-helvasi-nevsehir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.helva.gen.tr/kaymakli-un-helvasi-tarifi-nedir-nasil-yapilir.html",
+      "https://www.sahrapsoysal.com/kayisili-malatya-kurabiyesi-tarifi-t-4248"
+    ],
+    "confidence": "medium",
+    "reason": "Un, tereyağı, sütlü şerbet ve kuru kayısı akışı helva tekniğiyle uyumlu; alerjen ve süre tarafında net hata yok."
+  },
+  {
+    "slug": "kurut-asi-igdir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/erzincan/neyenir/kesme-corbasi",
+      "https://www.sahrapsoysal.com/sikicik-corbasi-tarifi-t-5755"
+    ],
+    "confidence": "medium",
+    "reason": "Kurut, erişte, mercimek ve nane ile kurulan ekşi çorba akışı tutarlı; gluten ve süt alerjenleri doğru işaretlenmiş."
+  },
+  {
+    "slug": "kurutlu-arpa-sehriye-pilavi-elazig-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://ye-mek.net/tarif/arpa-sehriye-pilavi",
+      "https://www.knorr.com/tr/r/krmz-biberli-arpa-ehriye-pilav-tarifi.html/112628"
+    ],
+    "confidence": "medium",
+    "reason": "Arpa şehriyeyi tereyağında kavurup sıcak suyla pişirme doğru; kurutun ocak kapandıktan sonra eklenmesi sütlü karışım için mantıklı."
+  },
+  {
+    "slug": "kurutlu-pancar-borani-erzincan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps ceviz ve pul biberli yağ kullanıyor, ingredient listesinde ceviz ve pul biber yok.",
+      "Ceviz eklenince KUSUYEMIS allergen eksik kalıyor.",
+      "Pancar haşlama süresi cookMinutes değerini aşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ceviz", "amount": "0.25", "unit": "su bardağı" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": ["KUSUYEMIS"],
+      "cookMinutes": 26,
+      "totalMinutes": 40
+    },
+    "sources": [
+      "https://www.bornovadan.com/2025/11/17/pancar-borani-tarifi/",
+      "https://turkiye.ee/tr/kutahya/simav/yerel-lezzetler/sikicik-corbasi/"
+    ],
+    "confidence": "high",
+    "reason": "Pancar borani yapısı doğru, fakat mevcut steps cevizli üst kullanıyor; bu hem ingredient hem allergen tarafında eksik."
+  },
+  {
+    "slug": "kurutlu-semizotu-corbasi-erzincan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/erzincan/neyenir/kesme-corbasi",
+      "https://www.sahrapsoysal.com/sikicik-corbasi-tarifi-t-5755"
+    ],
+    "confidence": "medium",
+    "reason": "Buğday, kurut ve yeşil otla yapılan ekşi çorba kurgusu tutarlı; su, gluten ve süt bilgileri içerikle uyumlu."
+  },
+  {
+    "slug": "kusbasili-bulgurlu-firik-tava-sanliurfa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 soğan veya salçalı taban diyor, ancak soğan ve salça ingredient listesinde yok.",
+      "Pişirme yağı, tuz ve karabiber de firik pilavı kaynaklarına göre eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Domates salçası", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "averageCalories": 392,
+      "protein": 24,
+      "carbs": 27,
+      "fat": 21
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/etli-firik-pilavi/317",
+      "https://www.lezzet.com.tr/yemek-tarifleri/pilav-ve-makarna-tarifleri/pilav-tarifleri/etli-firik-pilavi-532457"
+    ],
+    "confidence": "high",
+    "reason": "Etli firik pilavı kaynakları soğan, salça ve yağlı taban kullanıyor; mevcut step de bunu söylüyor ama listede yok."
+  },
+  {
+    "slug": "kusbasili-firikli-domates-tava-sanliurfa-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/etli-firik-pilavi/317",
+      "https://www.lezzet.com.tr/yemek-tarifleri/pilav-ve-makarna-tarifleri/pilav-tarifleri/etli-firik-pilavi-532457"
+    ],
+    "confidence": "medium",
+    "reason": "Firik, et, domates ve suyla kurulan tava akışı kaynaklardaki etli firik mantığına yakın; net alan hatası görünmüyor."
+  },
+  {
+    "slug": "kusburnu-cayi",
+    "verdict": "PASS",
+    "sources": [
+      "https://ye-mek.net/tarif/kusburnu-cayi",
+      "https://gurmebebek.com/yemek-tarifi/kusburnu-cayi/"
+    ],
+    "confidence": "high",
+    "reason": "Kuru kuşburnunu 10-15 dakika kaynatma ve süzme akışı kaynaklarla uyumlu; süre ve ingredient tarafı tutarlı."
+  },
+  {
+    "slug": "kusburnu-kompostosu-eskisehir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kusburnu.gen.tr/kusburnu-kompostosu.html",
+      "https://www.tgrthaber.com/aktuel/kusburnu-cayi-nasil-yapilir-tarifi-nedir-kusburnu-cayinin-faydalari-ve-yapilisi-2991493"
+    ],
+    "confidence": "medium",
+    "reason": "Kuşburnu, su, şeker ve tarçınla kısa kaynatma komposto için makul; alerjen, tag ve toplam süre hatası yok."
+  },
+  {
+    "slug": "kusburnulu-cevizli-pelte-erzurum-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 pelteyi 30 dakika soğutuyor, ancak totalMinutes 24 dakika.",
+      "30-dakika-alti tag'i toplam süreyle çelişiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 54,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kavun-pelte/",
+      "https://www.kusburnu.gen.tr/kusburnu-kompostosu.html"
+    ],
+    "confidence": "high",
+    "reason": "Pelte tekniği doğru, fakat soğutma adımı toplam sürede görünmüyor; gerçek toplam süre 30 dakika altı değil."
+  },
+  {
+    "slug": "kusburnulu-elma-kompostosu-gumushane-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kusburnu.gen.tr/kusburnu-kompostosu.html",
+      "https://www.bornovadan.com/2026/01/26/kusburnu-marmelati-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Elma, kuşburnu marmeladı, su ve karanfille kısa kaynatma içecek için tutarlı; net ingredient veya süre hatası yok."
+  },
+  {
+    "slug": "kusburnulu-kavut-peltesi-erzurum-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 ceviz kullanıyor, ingredient listesinde ceviz yok.",
+      "Ceviz eklenince KUSUYEMIS allergen eksik kalıyor.",
+      "Step 5 tatlıyı 25 dakika dinlendiriyor, ancak totalMinutes 24 dakika."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ceviz", "amount": "0.25", "unit": "su bardağı" }
+      ],
+      "allergens_add": ["KUSUYEMIS"],
+      "totalMinutes": 49,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kavun-pelte/",
+      "https://www.bornovadan.com/2026/01/26/kusburnu-marmelati-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kavutlu pelte akışı makul, fakat ceviz ingredient ve allergen olarak eksik; dinlendirme süresi de toplam süreye eklenmeli."
+  },
+  {
+    "slug": "kusburnulu-soguk-cay-giresun-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://ye-mek.net/tarif/kusburnu-cayi",
+      "https://www.tgrthaber.com/aktuel/kusburnu-cayi-nasil-yapilir-tarifi-nedir-kusburnu-cayinin-faydalari-ve-yapilisi-2991493"
+    ],
+    "confidence": "medium",
+    "reason": "Kuşburnu çayı bazını demleyip bal ve buzla soğuk servis etme fikri tutarlı; alerjen ve süre tarafında net hata yok."
+  },
+  {
+    "slug": "kutahya-cimcik-mantisi-yogurtlu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve step 5 tuz kullanıyor, ingredient listesinde tuz yok.",
+      "Step 5 kaynar tuzlu su kullanıyor, hamur suyundan ayrı haşlama suyu listede yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Haşlama suyu", "amount": "2", "unit": "litre" }
+      ]
+    },
+    "sources": [
+      "https://www.e-sehir.com/yemek_tarifleri/cimcik-kutahya-tarifi.html",
+      "https://www.kanald.com.tr/mutfagim/haber/cimcik-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Cimcik hamuru ve yoğurtlu servis doğru; fakat step içinde geçen tuz ve haşlama suyu ingredient listesinde eksik."
+  },
+  {
+    "slug": "kutahya-sikicik-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Sıkıcık çorbasında kaynaklara göre tarhana bulunur, mevcut ingredient listesinde yok.",
+      "Step 3 salçalı su diyor, fakat çorba suyu ingredient listesinde yok.",
+      "Kaynaklardaki soğanlı salça tabanı mevcut listede eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tarhana", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sıcak su", "amount": "5", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://ye-mek.net/tarif/sikicik-corbasi",
+      "https://kutahyaekspres.com/sikicik-corbasi-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Kütahya sıkıcık çorbasının ana köfte harcında tarhana ve çorba tabanında soğanlı su var; mevcut liste bunları eksik bırakmış."
+  },
+  {
+    "slug": "kuymak",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 template hazırlık cümlesi içeriyor; tarif-spesifik değil."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Tereyağını tavada köpürene kadar 2 dakika eritin.", "timerSeconds": 120 },
+        { "stepNumber": 2, "instruction": "Mısır ununu ekleyip 3 dakika karıştırarak kavurun.", "timerSeconds": 180 },
+        { "stepNumber": 3, "instruction": "Suyu ve tuzu ekleyip 5 dakika koyulaşana kadar pişirin.", "timerSeconds": 300 },
+        { "stepNumber": 4, "instruction": "Kolot peynirini ekleyip kısık ateşte 4 dakika uzayana kadar karıştırın.", "timerSeconds": 240 },
+        { "stepNumber": 5, "instruction": "Yağ yüzeye çıkınca kuymağı sıcak servis edin." }
+      ]
+    },
+    "sources": [
+      "https://ye-mek.net/amp/kuymak",
+      "https://gastroguru.co/tr/receteler/kahvalti/trabzon-kuymak-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Malzemeler kuymakla uyumlu, fakat ilk adım batch template cümlesi; yerine gerçek pişirme akışı yazılmalı."
+  },
+  {
+    "slug": "kuymakli-kara-lahana-omleti-rize-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Adımlarda template cümleler var ve son adım gevrek dokudan bahsediyor; omlet için bağlam dışı.",
+      "Yumurta karışımında tuz yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kara lahanayı ince kıyın, yumurtaları tuzla çırpın." },
+        { "stepNumber": 2, "instruction": "Tereyağını tavada 1 dakika eritin.", "timerSeconds": 60 },
+        { "stepNumber": 3, "instruction": "Kara lahanayı tavada 3 dakika çevirin.", "timerSeconds": 180 },
+        { "stepNumber": 4, "instruction": "Mısır unu ve tel peyniri yumurtaya ekleyip karıştırın." },
+        { "stepNumber": 5, "instruction": "Karışımı tavaya döküp kısık ateşte 7 dakika pişirin.", "timerSeconds": 420 },
+        { "stepNumber": 6, "instruction": "Omlet toparlanınca sıcak servis edin." }
+      ]
+    },
+    "sources": [
+      "https://ye-mek.net/amp/kuymak",
+      "https://www.gzt.com/lokma/kuru-domatesli-omlet-32759"
+    ],
+    "confidence": "high",
+    "reason": "Kuymak ve omlet birleşimi yaratıcı ama tutarlı; sorun, template adımlar ve eksik tuz nedeniyle uygulama kalitesi."
+  },
+  {
+    "slug": "kuzu-etli-domatesli-bulgur-tava-mus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 tuz kullanıyor, ingredient listesinde tuz yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.pilav.gen.tr/kusbasi-etli-bulgur-pilavi.html",
+      "https://www.lezzet.com.tr/yemek-tarifleri/pilav-ve-makarna-tarifleri/pilav-tarifleri/etli-firik-pilavi-532457"
+    ],
+    "confidence": "medium",
+    "reason": "Etli bulgur tava akışı kaynaklardaki etli bulgur pilavıyla uyumlu; yalnız step içinde geçen tuz listede yok."
+  },
+  {
+    "slug": "kuzu-etli-eristeli-nohut-tava-sivas-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Kuzu etini mühürlemek için pişirme yağı ingredient listesinde yok.",
+      "Temel tuz ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "averageCalories": 362,
+      "protein": 24,
+      "carbs": 21,
+      "fat": 20
+    },
+    "sources": [
+      "https://www.pilav.gen.tr/kusbasi-etli-bulgur-pilavi.html",
+      "https://ye-mek.net/tarif/arpa-sehriye-pilavi"
+    ],
+    "confidence": "medium",
+    "reason": "Kuzu, nohut ve erişte tavası makul; fakat mühürleme yağı ve temel tuz listede olmadığı için uygulama eksik."
+  },
+  {
+    "slug": "kuzu-etli-kenger-kavurma-bingol-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 tuz kullanıyor, ingredient listesinde tuz yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.pilav.gen.tr/kusbasi-etli-bulgur-pilavi.html",
+      "https://www.mantarsote.gen.tr/etli-mantar-sote.html"
+    ],
+    "confidence": "medium",
+    "reason": "Kenger ve kuzu kavurma kurgusu yöresel ot kavurması mantığıyla uyumlu; yalnız step içinde geçen tuz ingredient listesinde yok."
+  },
+  {
+    "slug": "kuzu-etli-mantar-sote-mus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 baharatı ekleyin diyor, ingredient listesinde tuz veya karabiber yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.mantarsote.gen.tr/etli-mantar-sote.html",
+      "https://www.pilav.gen.tr/kusbasi-etli-bulgur-pilavi.html"
+    ],
+    "confidence": "high",
+    "reason": "Etli mantar sote kaynakla uyumlu, fakat step içinde baharat denmesine rağmen tuz ve karabiber listede bulunmuyor."
+  },
+  {
+    "slug": "kuzu-etli-pazi-diblesi-amasya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 yoğurtla servis edin diyor, ingredient listesinde yoğurt yok.",
+      "Yoğurt eklendiğinde SUT allergen eksik kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yoğurt", "amount": "1", "unit": "su bardağı" }
+      ],
+      "allergens_add": ["SUT"]
+    },
+    "sources": [
+      "https://www.pilav.gen.tr/kusbasi-etli-bulgur-pilavi.html",
+      "https://www.bornovadan.com/2025/11/17/pancar-borani-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Pazı, pirinç ve kuzu tencere akışı makul; ancak servis adımında geçen yoğurt ingredient ve allergen olarak eksik."
+  },
+  {
+    "slug": "kuzu-koftesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps içinde 20 dakika soğutma ve 4 dakika dinlendirme var, ancak totalMinutes sadece prep+cook toplamı."
+    ],
+    "corrections": {
+      "totalMinutes": 59
+    },
+    "sources": [
+      "https://www.theguardian.com/food/2022/jul/18/lamb-koftes-recipe-griddled-apricots-couscous-tahini-yoghurt-thomasina-miers",
+      "https://www.pilav.gen.tr/kusbasi-etli-bulgur-pilavi.html"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu köftesi içeriği makul, fakat soğutma ve dinlendirme toplam süreye bekleme olarak eklenmeli."
+  },
+  {
+    "slug": "kuzu-tagine",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 tuz ve baharat kullanıyor, ingredient listesinde tuz ve Fas baharatı yok.",
+      "Step 3 su ekliyor, ingredient listesinde su yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Su", "amount": "400", "unit": "ml" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Ras el hanout", "amount": "1", "unit": "tatlı kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/lamb-squash-apricot-tagine",
+      "https://www.williams-sonoma.com/recipe/lamb-tagine-with-apricots-and-almonds.html"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu, kayısı, badem ve tarçın tagine için doğru; eksik olan su, tuz ve Fas baharatı step içeriğiyle uyuşmuyor."
+  },
+  {
+    "slug": "kuzu-tandir",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 30 dakika oda sıcaklığı, 3 saat kapalı pişirme, 15 dakika kızartma ve 12 dakika dinlendirme içeriyor; totalMinutes 200 kısa kalıyor.",
+      "cookMinutes 180 dakika, fırın pişirme adımlarındaki 195 dakikayı karşılamıyor."
+    ],
+    "corrections": {
+      "cookMinutes": 195,
+      "totalMinutes": 257
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/slow-roast-lamb",
+      "https://www.bonappetit.com/recipe/slow-roast-lamb-with-harissa-and-apricots"
+    ],
+    "confidence": "medium",
+    "reason": "Kuzu tandır düşük ısıda uzun pişirme olarak doğru, fakat fırın ve bekleme adımları toplam süre alanlarına yansımamış."
+  },
+  {
+    "slug": "kuzukulakli-patates-corbasi-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Polonya kuzukulağı çorbası kaynaklarında ekşi krema veya sütlü bitiriş yaygın; servingSuggestion da ekşi krema söylüyor.",
+      "Ekşi krema ingredient ve SUT allergen olarak eksik.",
+      "Soğanı çevirmek için pişirme yağı listede yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Ekşi krema", "amount": "0.5", "unit": "su bardağı" }
+      ],
+      "allergens_add": ["SUT"],
+      "averageCalories": 214,
+      "protein": 5,
+      "carbs": 24,
+      "fat": 11
+    },
+    "sources": [
+      "https://www.polonist.com/polish-sorrel-soup-szczawiowa/",
+      "https://www.bbcgoodfood.com/recipes/sorrel-soup"
+    ],
+    "confidence": "high",
+    "reason": "Polonya usulü kuzukulağı çorbasında sütlü bitiriş beklenir ve öneride de var; yağ, krema ve allergen eksik."
+  },
+  {
+    "slug": "kvass",
+    "verdict": "CORRECTION",
+    "issues": [
+      "24 saat mayalanma cookMinutes içinde tutulmuş; bu pasif bekleme totalMinutes farkı olarak görünmeli.",
+      "Step 1 template ifade içeriyor."
+    ],
+    "corrections": {
+      "cookMinutes": 10,
+      "totalMinutes": 1470,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Çavdar ekmeğini küp doğrayın." },
+        { "stepNumber": 2, "instruction": "Ekmekleri 180°C fırında 10 dakika kızartın.", "timerSeconds": 600 },
+        { "stepNumber": 3, "instruction": "Kızarmış ekmek, şeker ve suyu kavanoza alın." },
+        { "stepNumber": 4, "instruction": "Maya ekleyip kavanozun ağzını gevşek kapatın." },
+        { "stepNumber": 5, "instruction": "Kvassı 24 saat oda sıcaklığında mayalandırın.", "timerSeconds": 86400 },
+        { "stepNumber": 6, "instruction": "Süzüp soğutarak servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.thespruceeats.com/russian-bread-kvass-recipe-1135725",
+      "https://www.seriouseats.com/kvass-russian-fermented-rye-bread-drink-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Kvass için 24 saat mayalanma doğru, fakat pişirme değil bekleme süresidir; RecipeTimeline için totalMinutes farkı korunmalı."
+  },
+  {
+    "slug": "kyoto-katsu-curry",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 yağı, step 2 suyu ve step 4 tuzu kullanıyor; bu malzemeler ingredient listesinde yok.",
+      "Katsu kızartması için yağ miktarı listelenmemiş."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "2", "unit": "su bardağı" },
+        { "name": "Su", "amount": "2", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.justonecookbook.com/katsu-curry/",
+      "https://www.bonappetit.com/recipe/katsu-curry"
+    ],
+    "confidence": "high",
+    "reason": "Katsu curry içeriği kaynaklarla uyumlu; sorun, adımlarda kullanılan su, tuz ve kızartma yağının listede olmaması."
+  },
+  {
+    "slug": "kyoto-matchali-kestane-mochi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 su kullanıyor, ingredient listesinde su yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Su", "amount": "0.75", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.masterclass.com/articles/daifuku-recipe/",
+      "https://food52.com/recipes/33755-daifuku-mochi"
+    ],
+    "confidence": "high",
+    "reason": "Mochi için yapışkan pirinç unu, şeker ve nişasta doğru; hamuru bağlayan su ingredient listesinde eksik."
+  },
+  {
+    "slug": "kyoto-miso-patlican-sandvic",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 tek başına 25 dakika pişirme içeriyor, ancak cookMinutes 20 dakika.",
+      "Total süre 30 dakika altını aşıyor.",
+      "Description içindeki 'umamili' ifadesi günlük mutfak dili için gereksiz jargon."
+    ],
+    "corrections": {
+      "description": "Japon usulü miso patlıcan sandviç, közlenmiş patlıcanı miso, susam ve yumuşak ekmekle tuzlu, doyurucu bir atıştırmalığa dönüştürür.",
+      "cookMinutes": 25,
+      "totalMinutes": 35,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/ginger-miso-glazed-eggplant",
+      "https://www.simplyrecipes.com/miso-glazed-eggplant-recipe-11796166"
+    ],
+    "confidence": "high",
+    "reason": "Miso patlıcan fikri doğru, fakat pişirme süresi alanlarıyla çelişiyor ve açıklamadaki jargon sadeleştirilmeli."
+  },
+  {
+    "slug": "lablabi",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Lablabi Tunus çorbasıdır; cuisine alanı ma görünüyor.",
+      "Kaynaklardaki temel harissa, zeytinyağı ve tuz mevcut ingredient listesinde yok."
+    ],
+    "corrections": {
+      "cuisine": "tn",
+      "ingredients_add": [
+        { "name": "Harissa", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "averageCalories": 307,
+      "protein": 10,
+      "carbs": 35,
+      "fat": 15
+    },
+    "sources": [
+      "https://www.food.com/recipe/lablabi-tunisian-chickpea-soup-183675",
+      "https://more.ctv.ca/shows/the-good-stuff-with-mary-berg/recipes/2026/lablabi-tunisian-chickpea-bread-soup/"
+    ],
+    "confidence": "high",
+    "reason": "Tarif Tunus lablabisi olarak tanımlanıyor ama cuisine Fas kodunda; ayrıca harissa ve zeytinyağı temel bileşen olarak eksik."
+  },
+  {
+    "slug": "labneh",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 yoğurdu 12 saat süzüyor, ancak totalMinutes 10 dakika.",
+      "pratik tag'i toplam süre açısından yanıltıcı."
+    ],
+    "corrections": {
+      "totalMinutes": 730,
+      "tags_remove": ["pratik"]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/homemade-labneh-recipe",
+      "https://www.seriouseats.com/guide-to-labaneh-labne-5225594"
+    ],
+    "confidence": "high",
+    "reason": "Labneh için 12 saat süzme doğru, fakat bu pasif bekleme totalMinutes alanında görünmeli; pratik tag'i yanıltıyor."
+  },
+  {
+    "slug": "labneli-biber-dolmasi-orta-dogu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 baharat kullanıyor, ingredient listesinde tuz ve karabiber yok.",
+      "Step 4 on dakika soğutma içeriyor, totalMinutes 15 dakika kalmış."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 25
+    },
+    "sources": [
+      "https://www.wholefoodsmarket.com/recipes/zaatar-spiked-labneh-flatbread",
+      "https://www.seriouseats.com/guide-to-labaneh-labne-5225594"
+    ],
+    "confidence": "medium",
+    "reason": "Labneli soğuk meze kurgusu makul; baharat denmesine rağmen tuz karabiber eksik ve soğutma toplam süreye eklenmeli."
+  },
+  {
+    "slug": "labneli-misir-mucveri-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Adımlarda template servis cümlesi var.",
+      "Tavada pişirmek için yağ ve temel tuz ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Mısır, un, yumurta, taze soğan ve tuzu 5 dakika içinde karıştırın.", "timerSeconds": 300 },
+        { "stepNumber": 2, "instruction": "Harç kıvamını toparlaması için 4 dakika bekletin.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Tavayı zeytinyağıyla 1 dakika ısıtın.", "timerSeconds": 60 },
+        { "stepNumber": 4, "instruction": "Harçtan kaşıkla parçalar alıp tavaya yayın." },
+        { "stepNumber": 5, "instruction": "Mücverleri iki yüzü kızarana kadar toplam 6 dakika pişirin.", "timerSeconds": 360 },
+        { "stepNumber": 6, "instruction": "Labneyi üstüne koyup 2 dakika içinde sıcak servis edin.", "timerSeconds": 120 }
+      ],
+      "averageCalories": 314,
+      "protein": 9,
+      "carbs": 23,
+      "fat": 20
+    },
+    "sources": [
+      "https://www.taste.com.au/recipes/corn-fritters/95bc718c-f057-4718-9915-f0f045a73e20",
+      "https://www.seriouseats.com/guide-to-labaneh-labne-5225594"
+    ],
+    "confidence": "medium",
+    "reason": "Mısır mücveri ve labne servisi tutarlı, fakat tavada pişirme yağı ile tuz eksik ve son adım template kalmış."
+  },
+  {
+    "slug": "labneli-somonlu-bagel",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Bagel, labne ve füme somon kurgusu Türk mutfağı değil; cuisine tr yanıltıcı."
+    ],
+    "corrections": {
+      "cuisine": "us"
+    },
+    "sources": [
+      "https://www.acouplecooks.com/smoked-salmon-bagel/",
+      "https://coastalstylemag.com/smoked-salmon-bagel-with-cream-cheese-capers-dill/"
+    ],
+    "confidence": "high",
+    "reason": "Füme somonlu bagel içerik olarak deli tarzı bagel geleneğine yakın; tarif doğru olsa da cuisine alanı tr olmamalı."
+  },
+  {
+    "slug": "labneli-zaatar-pide-orta-dogu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 tavayı ısıtıyor, fakat tarif fırında pide olarak ilerliyor.",
+      "Hamur için tuz ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, su, zeytinyağı ve tuzu yoğurup yumuşak hamur yapın." },
+        { "stepNumber": 2, "instruction": "Hamuru 10 dakika dinlendirin.", "timerSeconds": 600 },
+        { "stepNumber": 3, "instruction": "Hamuru ince pide biçiminde açın." },
+        { "stepNumber": 4, "instruction": "Labneyi yüzeye yayın, zahteri üstüne serpin." },
+        { "stepNumber": 5, "instruction": "Pideyi 200°C fırında 12 dakika kenarları kızarana kadar pişirin.", "timerSeconds": 720 },
+        { "stepNumber": 6, "instruction": "Üç dakika dinlendirip dilimleyerek servis edin.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://basiraspices.com/blogs/recipes/za-atar-flatbread-with-labneh",
+      "https://www.kingarthurbaking.com/recipes/zaatar-flatbread-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Labneh ve zaatar flatbread kaynaklarla uyumlu, fakat mevcut adım tavada tost gibi başlıyor ve hamur tuzu eksik."
+  },
+  {
+    "slug": "labneli-zaatar-tost-orta-dogu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 servis adımına 10 dakika timer verilmiş.",
+      "Step 5 tost için gereksiz 3 dakika dinlendirme ve template ifade içeriyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Ekmek dilimlerini ve labneyi 3 dakika içinde hazır edin.", "timerSeconds": 180 },
+        { "stepNumber": 2, "instruction": "Ekmekleri tavada veya tost makinesinde 2 dakika kızartın.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Labneyi sıcak ekmeklerin üstüne 2 dakika içinde ince tabaka halinde sürün.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Zaatarı serpip zeytinyağını 1 dakika içinde gezdirin.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Tostları 1 dakika içinde sıcak servis edin.", "timerSeconds": 60 }
+      ]
+    },
+    "sources": [
+      "https://terraneanherbs.com/blogs/recipes/zaatar-labneh-toast",
+      "https://www.wholefoodsmarket.com/recipes/zaatar-spiked-labneh-flatbread"
+    ],
+    "confidence": "high",
+    "reason": "Labneh ve zaatar toast doğru, fakat timer ve dinlendirme adımları tarif akışını bozuyor."
+  },
+  {
+    "slug": "labneli-zahterli-bazlama-antalya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Adımlarda tekrar eden template cümleler var.",
+      "Step 2 timer 240 saniye, instruction ise 3 dakika diyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bazlamaları ortadan ikiye ayırıp labneyi 4 dakika içinde hazır edin.", "timerSeconds": 240 },
+        { "stepNumber": 2, "instruction": "Bazlamaları kuru tavada 3 dakika ısıtın.", "timerSeconds": 180 },
+        { "stepNumber": 3, "instruction": "Labneyi sıcak bazlamanın üstüne 2 dakika içinde yayın.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Zahteri serpip zeytinyağını 1 dakika içinde gezdirin.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Bazlamayı 1 dakika içinde sıcak servis edin.", "timerSeconds": 60 }
+      ]
+    },
+    "sources": [
+      "https://terraneanherbs.com/blogs/recipes/zaatar-labneh-toast",
+      "https://www.wholefoodsmarket.com/recipes/zaatar-spiked-labneh-flatbread"
+    ],
+    "confidence": "high",
+    "reason": "Bazlama üstü labne ve zahter makul, fakat mevcut adımlarda template tekrarları ve dakika-saniye uyuşmazlığı var."
+  },
+  {
+    "slug": "lagos-egusi-soup",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.cuisinetaster.com/egusi-soup-recipe",
+      "https://www.allnigerianrecipes.com/soups/egusi-soup/"
+    ],
+    "confidence": "high",
+    "reason": "Egusi, palm yağı, kurutulmuş balık, kerevit, et ve yeşillik kombinasyonu Nijerya egusi soup kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "lagos-jollof-rice-firin",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 salçayı yağda kavuruyor, ingredient listesinde yağ yok.",
+      "Step 5 sıcak su ekliyor, ingredient listesinde su veya sebze suyu yok.",
+      "Tuz ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "4", "unit": "yemek kaşığı" },
+        { "name": "Sıcak su", "amount": "4", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "averageCalories": 440,
+      "protein": 8,
+      "carbs": 66,
+      "fat": 16
+    },
+    "sources": [
+      "https://www.nigerianfoodtv.com/jollof-rice-how-to-cook-nigerian-jollof/",
+      "https://www.eating-better.org/recipes/smoky-party-jollof-rice/"
+    ],
+    "confidence": "high",
+    "reason": "Jollof pirinç ve domates biber sosu doğru, ancak yağ, sıcak su ve tuz adımlarda kullanılıp listede eksik kalmış."
+  },
+  {
+    "slug": "lagos-party-jollof-rice",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Party jollof kaynaklarında yağ ve domates salçası temel; mevcut ingredient listesinde yok.",
+      "Tuz ingredient listesinde yok.",
+      "Makro değerleri yağ eklenince düşük kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "4", "unit": "yemek kaşığı" },
+        { "name": "Domates salçası", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "averageCalories": 546,
+      "protein": 10,
+      "carbs": 86,
+      "fat": 18
+    },
+    "sources": [
+      "https://www.allnigerianrecipes.com/rice/smoky-party-jollof-rice/",
+      "https://www.nigerianfoodtv.com/jollof-rice-how-to-cook-nigerian-jollof/"
+    ],
+    "confidence": "high",
+    "reason": "Party jollof için domatesli sos doğru, fakat yağ, salça ve tuz eksik; mevcut kalori ve yağ değerleri de bu yüzden düşük."
+  }
+]

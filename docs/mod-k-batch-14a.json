@@ -1,0 +1,773 @@
+[
+  {
+    "slug": "hurmali-sutlu-tatli-nusaybin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/sutlu-hurma-tatlisi-sekersiz/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/hurmali-muhallebi-tarifi/14142"
+    ],
+    "confidence": "high",
+    "reason": "Süt, hurma ve nişastayla koyulaşan tatlı kaynaklardaki hurmalı muhallebi omurgasıyla uyumlu; süre ve alerjen tarafında büyük çelişki yok."
+  },
+  {
+    "slug": "hurmali-tahin-kup-orta-dogu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 5 içinde 20 dakika soğutma var, toplam süre 10 dakika kalmış",
+      "ingredients: step 5 susam serpiliyor diyor, susam malzeme listesinde yok"
+    ],
+    "corrections": {
+      "totalMinutes": 30,
+      "ingredients_add": [
+        {
+          "name": "Susam",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.hurma.com/hurmali-tatli-tarifleri",
+      "https://www.themediterraneandish.com/tahini-date-banana-shake/"
+    ],
+    "confidence": "high",
+    "reason": "Hurma ve tahin uyumlu, ancak soğutma süresi ve susam kullanımının kayıtla eşleşmesi için küçük düzeltme gerekiyor."
+  },
+  {
+    "slug": "hurmali-tahin-shake",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 1 içinde 10 dakika yumuşatma var, toplam süre 8 dakika yazılmış",
+      "steps: bazı adımlarda Türkçe karakterler eksik"
+    ],
+    "corrections": {
+      "totalMinutes": 18,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Hurmaların çekirdeklerini çıkarıp sütün içinde 10 dakika yumuşatın.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Yumuşayan hurmaları tahinle birlikte blender haznesine alın."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Buzu ekleyip içecek pürüzsüz ve soğuk olana kadar 30 saniye çekin.",
+          "timerSeconds": 30
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Shake'i bardağa alıp bekletmeden servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.ziyad.com/recipe/date-tahini-smoothie",
+      "https://www.themediterraneandish.com/tahini-date-banana-shake/"
+    ],
+    "confidence": "high",
+    "reason": "Hurma, tahin, süt ve buzlu shake yapısı kaynaklarla uyumlu; sorun süre hesabı ve birkaç Türkçe karakter kaçığıyla sınırlı."
+  },
+  {
+    "slug": "hurmali-tahin-smoothie",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.pbs.org/food/recipes/banana-date-tahini-smoothie",
+      "https://sunset.com/recipe/tbd-tahini-banana-date-smoothie"
+    ],
+    "confidence": "high",
+    "reason": "Hurma, tahin, muz ve bitkisel içecekle hazırlanan smoothie kaynaklardaki date tahini smoothie ailesiyle uyumlu görünüyor."
+  },
+  {
+    "slug": "hurmali-tahinli-kup-levant-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 5 içinde 25 dakika soğutma var, toplam süre bunu yansıtmıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 47
+    },
+    "sources": [
+      "https://www.hurma.com/hurmali-tatli-tarifleri",
+      "https://www.themediterraneandish.com/tahini-date-banana-shake/"
+    ],
+    "confidence": "medium",
+    "reason": "Hurma, tahin, labneh ve bisküvi katmanı makul bir kuplu tatlı; yalnız soğutma süresi toplam süreye eklenmeli."
+  },
+  {
+    "slug": "hush-puppies",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.foodnetwork.com/recipes/food-network-kitchen/hush-puppies-recipe-2105667",
+      "https://www.pauladeen.com/recipe/hushpuppies/"
+    ],
+    "confidence": "high",
+    "reason": "Mısır unu, un, yumurta, ayran ve kızgın yağda kısa kızartma yapısı klasik Southern hush puppies kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "ic-pilav",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nepisirsem.com/tarifler/ic-pilav",
+      "https://www.bornovadan.com/2025/12/19/ic-pilav-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Pirinç, çam fıstığı, kuş üzümü, yenibahar ve dinlendirme adımları klasik iç pilav kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "icli-kofte",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 6 kızgın yağda kızartma diyor, kızartma yağı malzeme listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Ayçiçek yağı",
+          "amount": "2",
+          "unit": "su bardağı",
+          "group": "Kızartmak için"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/cevizli-kiymali-icli-kofte-tarifi/11011",
+      "https://bagdatonline.com/blog/icerik/icli-kofte-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "İçli köfte omurgası doğru; kızartma tekniği açıkça geçerken yağın malzeme listesinde bulunmaması küçük ama uygulanabilir bir eksik."
+  },
+  {
+    "slug": "icli-tava-sinop-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "ingredients: Sinop içli tava kaynaklarda hamsinin arasına pirinçli, soğanlı ve maydanozlu iç harç konarak hazırlanıyor; mevcut listede pirinç ve maydanoz yok",
+      "steps: mevcut tarif hamsiyi soğan yatağında pişiren sade hamsi tava gibi ilerliyor, içli tava tekniğiyle örtüşmüyor"
+    ],
+    "corrections": {
+      "description": "Sinop içli tava, hamsinin pirinçli ve soğanlı iç harçla katmanlanıp tavada veya fırında pişirildiği Karadeniz balık yemeğidir."
+    },
+    "sources": [
+      "https://sinop.city/yemekler/icli-tava",
+      "https://www.kulturportali.gov.tr/turkiye/sinop/neyenir"
+    ],
+    "confidence": "medium",
+    "reason": "Mevcut kayıt balık türüyle uyumlu olsa da içli tava yapısını taşımıyor; malzeme ve teknik için manuel review gerekir."
+  },
+  {
+    "slug": "igdir-bozbas",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/igdir/neyenir/bozbas",
+      "https://www.serka.gov.tr/cografi-isaretli-urunlerimiz/igdir-cografi-isaretli-urunler/igdir-bozbas-yemegi"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu eti, nohut, patates ve uzun pişirme yapısı Iğdır bozbaş kaynaklarıyla uyumlu; toplam süre de tarif akışını karşılıyor."
+  },
+  {
+    "slug": "ihlammurlu-armut-kompostosu-yalova-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://ye-mek.net/tarif/armut-kompostosu",
+      "https://www.lezzet.com.tr/lezzetten-haberler/ihlamur-cayi-nasil-demlenir"
+    ],
+    "confidence": "medium",
+    "reason": "Armut kompostosu tekniği ve ıhlamurun sonradan demlenmesi mantıklı; Yalova atfı sınırlı olsa da tarif içeriği yanıltıcı görünmüyor."
+  },
+  {
+    "slug": "ihlamur",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezzet.com.tr/lezzetten-haberler/ihlamur-cayi-nasil-demlenir",
+      "https://www.acibadem.com.tr/hayat/ihlamur-nasil-demlenir/"
+    ],
+    "confidence": "high",
+    "reason": "Ihlamurun sıcak suda 5-10 dakika demlenmesi, bal ve limonla servis edilmesi kaynaklarla uyumlu."
+  },
+  {
+    "slug": "ihlamur-balli-sicak-icecek",
+    "verdict": "PASS",
+    "sources": [
+      "https://hayfene.com/blog/ihlamur-cayi-nasil-demlenir-5-farkli-ihlamur-cayi-tarifi",
+      "https://www.acibadem.com.tr/hayat/ihlamur-nasil-demlenir/"
+    ],
+    "confidence": "high",
+    "reason": "Ihlamur, bal ve limonlu sıcak içecek kaynaklardaki demleme süresi ve servis önerileriyle uyumlu."
+  },
+  {
+    "slug": "imam-bayildi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: tuzlu suda bekletme, ön yumuşatma ve fırın pişirme süreleri toplam 60 dakikayı aşıyor"
+    ],
+    "corrections": {
+      "cookMinutes": 60,
+      "totalMinutes": 90
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/zeytinyagli-patlican-imam-bayildi-tarifi-t-4962",
+      "https://www.misssgibi.com/imam-bayildi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Malzeme ve teknik klasik imam bayıldıyla uyumlu; yalnız adımlardaki bekleme ve pişirme süreleri mevcut toplam süreyi belirgin aşıyor."
+  },
+  {
+    "slug": "incir-dolmasi-aydin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 4 az şeker ekleyin diyor, şeker malzeme listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Toz şeker",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.tatli.gen.tr/kuru-incir-tatlisi.html",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/kuru-incir-tatlisi/6870"
+    ],
+    "confidence": "high",
+    "reason": "Kuru incir, ceviz ve kısa pişirme yapısı doğru; step içinde geçen şekerin listede bulunmaması basit malzeme eşleşmesi hatası."
+  },
+  {
+    "slug": "incir-uyutmasi-balikesir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: 2 saat oda sıcaklığında uyutma ve 2 saat buzdolabında soğutma toplam süreye dahil edilmemiş",
+      "ingredients: step 5 cevizle servis edin diyor, ceviz malzeme ve alerjen listesinde yok"
+    ],
+    "corrections": {
+      "totalMinutes": 260,
+      "ingredients_add": [
+        {
+          "name": "Ceviz",
+          "amount": "0.5",
+          "unit": "su bardağı"
+        }
+      ],
+      "allergens_add": [
+        "KUSUYEMIS"
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/incir-uyutmasi/7244",
+      "https://www.gzt.com/lokma/incir-uyutmasi-35006"
+    ],
+    "confidence": "high",
+    "reason": "İncir uyutması süt ve kuru incirle doğru kurulmuş; bekleme süresi ve ceviz servisi kayıt alanlarına yansıtılmalı."
+  },
+  {
+    "slug": "incirli-irmik-keki-aydin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 yumurta ve şekeri çırpın diyor, toz şeker malzeme listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Toz şeker",
+          "amount": "0.75",
+          "unit": "su bardağı"
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kuru-incirli-kek/",
+      "https://www.misssgibi.com/incirli-kek/"
+    ],
+    "confidence": "high",
+    "reason": "Kuru incirli kek yapısı kaynaklarla uyumlu; step içinde kullanılan şekerin malzeme listesinde eksik olması düzeltilmeli."
+  },
+  {
+    "slug": "incirli-kekikli-semizotu-salatasi-aydin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 az bal kullanıyor, bal malzeme listesinde yok",
+      "ingredients: step 5 lor parçaları diyor, lor malzeme ve süt alerjeni listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Bal",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        },
+        {
+          "name": "Lor peyniri",
+          "amount": "100",
+          "unit": "gr"
+        }
+      ],
+      "allergens_add": [
+        "SUT"
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/semizotu-salatasi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/incirli-semizotu-salatasi"
+    ],
+    "confidence": "medium",
+    "reason": "Semizotu, incir ve peynirli salata fikri makul; fakat stepteki bal ve lor mevcut kayıt alanlarında eksik."
+  },
+  {
+    "slug": "incirli-kereviz-aydin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/portakalli-kereviz/",
+      "https://www.sofra.com.tr/tarif/zeytinyaglilar/zeytinyagli-portakalli-kereviz"
+    ],
+    "confidence": "medium",
+    "reason": "Portakallı zeytinyağlı kereviz omurgası kaynaklarla uyumlu; kuru incir eklemesi bölgesel yorum gibi duruyor ve temel tekniği bozmuyor."
+  },
+  {
+    "slug": "incirli-kesme-muhallebi-aydin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 5 içinde 2 saat soğutma var, toplam süre 24 dakika kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 144
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/incirli-muhallebi-tarifi/1384",
+      "https://tarifi.com.tr/incirli-muhallebi/"
+    ],
+    "confidence": "high",
+    "reason": "İncirli muhallebi yapısı doğru; kalıpta kesilecek tatlı için 2 saat soğutma toplam süreye eklenmeli."
+  },
+  {
+    "slug": "incirli-lor-tatlisi-aydin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.egetelgraf.com/egenin-en-duygusal-tatlisi-izmirin-baglarinda-sakli-lezzet-tire-usulu-incirli-lor-tatlisi-tarifi",
+      "https://www.tatli.gen.tr/kuru-incir-tatlisi.html"
+    ],
+    "confidence": "medium",
+    "reason": "Lor, incir, bal, ceviz ve fırınlama yapısı Ege usulü incirli lor tatlısı fikriyle uyumlu; kayıt alanlarında belirgin çelişki yok."
+  },
+  {
+    "slug": "incirli-misir-irmigi-kup-aydin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 5 içinde 40 dakika soğutma var, toplam süre 18 dakika kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 58
+    },
+    "sources": [
+      "https://www.muhallebi.gen.tr/incirli-muhallebi.html",
+      "https://afiyetle.com/tarif/incirli-muhallebi"
+    ],
+    "confidence": "medium",
+    "reason": "Sütlü incirli kup mantığı muhallebi ailesiyle uyumlu; soğutma süresi toplam süreye dahil edilmeli."
+  },
+  {
+    "slug": "incirli-yulaf-kup-aydin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: 10 dakika yulaf yumuşatma ve 20 dakika soğutma toplam süreye dahil edilmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 38
+    },
+    "sources": [
+      "https://yemek.com/tarif/incirli-yogurtlu-yulaf/",
+      "https://www.vegkit.com/recipes/tahini-date-smoothie/"
+    ],
+    "confidence": "high",
+    "reason": "İncir, yoğurt, yulaf ve bal yapısı kaynakla uyumlu; bekleme ve soğutma süreleri toplam süreyi aşmış."
+  },
+  {
+    "slug": "inegol-kofte-izgara",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/bursa/neyenir/inegol-kofte",
+      "https://www.nefisyemektarifleri.com/inegol-kofte-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Karbonatlı ve uzun dinlenen sade köfte yapısı İnegöl köfte kaynaklarıyla uyumlu; 24 saatlik bekleme toplam süreye yakın şekilde yansımış."
+  },
+  {
+    "slug": "ingiliz-bezelyeli-naneli-tart",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cookMinutes: step 5 pişirme süresi 22 dakika, kayıtta cookMinutes 16",
+      "totalMinutes: 22 dakika pişirme ve 5 dakika dinlendirme toplam süreyi 30 dakikanın üstüne çıkarıyor"
+    ],
+    "corrections": {
+      "cookMinutes": 22,
+      "totalMinutes": 41
+    },
+    "sources": [
+      "https://www.puffpastry.com/recipe/pea-goat-cheese-fresh-mint-tartlets/",
+      "https://www.goodhousekeeping.com/food-recipes/a38312/sweet-pea-and-ricotta-tart-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Bezelye, nane, ricotta ve milföy tartı kaynaklarla uyumlu; pişirme ve dinlendirme süreleri kayıtla eşleşmiyor."
+  },
+  {
+    "slug": "irmik-helvasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 süt, su ve şekeri ısıtın diyor, su malzeme listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Su",
+          "amount": "1",
+          "unit": "su bardağı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.icim.com.tr/tarifler/irmik-helvasi-tarifi/",
+      "https://www.sofra.com.tr/tarif/serbetli-tatlilar/cam-fistikli-irmik-helvasi"
+    ],
+    "confidence": "high",
+    "reason": "Tereyağı, irmik, sütlü şerbet ve çam fıstığı yapısı doğru; stepteki su malzeme listesine eklenmeli."
+  },
+  {
+    "slug": "irmik-helvasi-maras-dondurmali",
+    "verdict": "PASS",
+    "sources": [
+      "https://tarifi.online/dondurmali-irmik-helvasi-tarifi/",
+      "https://www.helvaciyakut.com/"
+    ],
+    "confidence": "medium",
+    "reason": "İrmik helvasının sıcak servis edilip Maraş dondurmasıyla sunulması kaynaklarla uyumlu; süre ve alerjenlerde net hata görünmüyor."
+  },
+  {
+    "slug": "irmikli-armut-tatlisi-aksaray-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 5 içinde 30 dakika soğutma var, toplam süre 20 dakika kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://ye-mek.net/tarif/armut-kompostosu",
+      "https://www.irmik.gen.tr/cam-fistikli-irmik-helvasi.html"
+    ],
+    "confidence": "medium",
+    "reason": "Armut ve irmikli sütlü tatlı kurgusu makul; soğutma süresi toplam süreye yansımadığı için düzeltme gerekir."
+  },
+  {
+    "slug": "irmikli-peynir-helvasi-canakkale-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 4 şekerli süt diyor, malzeme listesinde süt yok; listede su var"
+    ],
+    "corrections": {
+      "ingredients_remove": [
+        "Su"
+      ],
+      "ingredients_add": [
+        {
+          "name": "Süt",
+          "amount": "1",
+          "unit": "su bardağı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.youtube.com/watch?v=zYTljJsEgIQ",
+      "https://www.sofra.com.tr/tarif/serbetli-tatlilar/cam-fistikli-irmik-helvasi"
+    ],
+    "confidence": "medium",
+    "reason": "Peynir, irmik ve şekerle pişen helva yapısı doğru; stepteki süt ifadesi mevcut su malzemesiyle çelişiyor."
+  },
+  {
+    "slug": "irmikli-topalak-corbasi-konya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://ye-mek.net/tarif/yogurtlu-topalak-corbasi",
+      "https://www.kulturportali.gov.tr/turkiye/konya/neyenir/topalak"
+    ],
+    "confidence": "medium",
+    "reason": "İrmikli küçük toplar ve yoğurtlu çorba yapısı topalak çorbası ailesiyle uyumlu; süre ve malzeme eşleşmesi makul."
+  },
+  {
+    "slug": "isirgan-corbasi-ordu-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/ordu/neyenir/isirgan-corbasi",
+      "https://www.diyetkolik.com/yemek-tarifi/isirgan-otu-corbasi"
+    ],
+    "confidence": "high",
+    "reason": "Isırgan, mısır unu, süt ve tereyağıyla çorba yapısı Ordu ve genel ısırgan çorbası kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "isirganli-misir-ekmegi-sakarya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 yağlanmış kalıp diyor, kalıbı yağlamak için yağ malzeme listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/duzce/neyenir/isirgan-oto-corbasi",
+      "https://www.dombili.com/isirgan-otu-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Isırgan ve mısır unu Karadeniz hattı tarifleriyle uyumlu; yağlanmış kalıp için malzeme listesinde yağ eksik."
+  },
+  {
+    "slug": "isirganli-pirinc-corbasi-rize-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.evvelcevap.com/isirgan-corbasi-rize-usulu-tarifi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/pirinc-corbasi-yogurtlu/14299"
+    ],
+    "confidence": "medium",
+    "reason": "Isırganlı çorba ve pirinçli çorba tekniği birleşimi makul; kayıt süresi ve step-malzeme eşleşmesi büyük hata göstermiyor."
+  },
+  {
+    "slug": "isirganli-yogurt-corbasi-rize-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.evvelcevap.com/pazili-isirgan-corbasi-tarifi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/pirinc-corbasi-yogurtlu/14299"
+    ],
+    "confidence": "medium",
+    "reason": "Isırgan, pirinç ve yoğurtla kesmeden pişirme tekniği çorba ailesiyle uyumlu; alerjen ve süre tarafında belirgin sorun yok."
+  },
+  {
+    "slug": "iskembe-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://cookidoo.thermomix.com/recipes/recipe/en-US/r173377",
+      "https://www.nefisyemekler.net/iskembe-corbasi"
+    ],
+    "confidence": "high",
+    "reason": "İşkembe, yoğurt, yumurta sarısı, un, sarımsak ve sirke yapısı kaynaklarla uyumlu; alerjenler doğru görünüyor."
+  },
+  {
+    "slug": "iskender-kebap",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/iskender/",
+      "https://www.e-sehir.com/yemek_tarifleri/bursa-kebabi-iskender-kebap-bursa-tarifi.html"
+    ],
+    "confidence": "high",
+    "reason": "Pide, döner veya ince et, domates sosu, tereyağı ve yoğurtla servis yapısı Bursa İskender kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "isotlu-bulgur-tava-kofte-sanliurfa-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/genel/neyenir/urfa-yumurtali-kofte",
+      "https://www.isot.tr/"
+    ],
+    "confidence": "medium",
+    "reason": "İsot, bulgur ve kıyma kullanımı Urfa köfte ailesiyle uyumlu; tavada tek parça pişirme bölgesel yorum gibi duruyor."
+  },
+  {
+    "slug": "isotlu-kabak-borani-sanliurfa-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/kabak-borani/",
+      "https://www.isot.tr/"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak, yoğurt ve sarımsaklı borani temeli doğru; isot eklemesi Şanlıurfa baharat bağlamıyla makul bir varyasyon."
+  },
+  {
+    "slug": "isotlu-mercimek-ezmesi-sanliurfa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 2 ve step 4 içinde Türkçe karakter eksikleri var"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Kırmızı mercimeği suyla birlikte tencereye alıp yumuşayana kadar 15-18 dakika haşlayın.",
+          "timerSeconds": 1080
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Mercimeği süzüp sarımsakla birlikte sıcakken ezin."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "İsotu ekleyip ezmeyi tamamen karıştırın."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Tırnak pideyi 200°C fırında 4-5 dakika ısıtın.",
+          "timerSeconds": 270
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Mercimek ezmesini ılık pideyle servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/genel/neyenir/mercimekli-kofte",
+      "https://www.isot.tr/"
+    ],
+    "confidence": "medium",
+    "reason": "Mercimek, isot ve sarımsaklı ezme kurgusu makul; içerik değil, Türkçe karakter temizliği gerekiyor."
+  },
+  {
+    "slug": "isotlu-nohutlu-semsek-sanliurfa-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/semsek-cig-borek-sanli-urfa-usulu/",
+      "https://www.tariflerinefis.com/sanliurfa-meshur-semsek-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Şemsek hamur işi yapısı kaynaklarla uyumlu; nohutlu iç harç vegan yorum gibi duruyor ve temel süre, alerjen alanları tutarlı."
+  },
+  {
+    "slug": "isotlu-patates-borek-tava-sanliurfa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 1 pişmiş patates diyor, malzeme listesi patatesin önceden haşlanmış olduğunu belirtmiyor"
+    ],
+    "corrections": {
+      "ingredients_amount_change": [
+        {
+          "name": "Patates",
+          "newAmount": "3",
+          "newUnit": "adet haşlanmış"
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/patatesli-tava-boregi/",
+      "https://www.isot.tr/"
+    ],
+    "confidence": "medium",
+    "reason": "Yufkalı patatesli tava böreği ve isotlu harç makul; patatesin haşlanmış kullanıldığı malzemede açık olmalı."
+  },
+  {
+    "slug": "isotlu-sehriye-corbasi-sanliurfa-ev-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/sehriye-corbasi/",
+      "https://www.isot.tr/"
+    ],
+    "confidence": "medium",
+    "reason": "Şehriye, tereyağı ve isotla kısa pişen çorba yapısı pratik ev çorbası olarak tutarlı; alerjen ve süreler uyumlu."
+  },
+  {
+    "slug": "isotlu-sogan-kavurmasi-sanliurfa-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.altasyumurta.com/yumurtali-sogan-kavurma-tarifi",
+      "https://www.sanliurfa.bel.tr/icerik/204/68/isot-recelli-yumurta"
+    ],
+    "confidence": "medium",
+    "reason": "Soğan, yumurta ve isotlu kahvaltılık tava kurgusu yumurtalı soğan kavurması ve Urfa yumurtalı tarifleriyle uyumlu."
+  },
+  {
+    "slug": "isotlu-susamli-patlican-ezmesi-adiyaman-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://tarifi.com.tr/patlican-ezmesi/",
+      "https://www.yemektekeyifvar.com/meze-tarifleri/patlican-ezmesi-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Köz patlıcan, baharat, zeytinyağı ve susamlı meze yapısı patlıcan ezmesi ailesiyle uyumlu; susam alerjeni doğru işaretlenmiş."
+  },
+  {
+    "slug": "isotlu-tandir-boregi-sanliurfa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 kıymalı iç diyor, dana kıyma malzeme listesinde yok",
+      "tags: kıyma eklenince vegan ve vejetaryen etiketleri yanlış olur"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Dana kıyma",
+          "amount": "250",
+          "unit": "gr"
+        }
+      ],
+      "tags_remove": [
+        "vegan",
+        "vejetaryen"
+      ]
+    },
+    "sources": [
+      "https://www.pakmayamutfakta.com/tarif/kiymali-tandir-boregi-tarifi",
+      "https://yemek.com/tarif/tandir-boregi-2/"
+    ],
+    "confidence": "high",
+    "reason": "Tandır böreği kaynaklarda kıymalı harçla yaygın; mevcut step kıyma dediği halde listede olmaması ve etiketlerin kalması hatalı."
+  },
+  {
+    "slug": "isotlu-tava-eriste-siirt-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sahrapsoysal.com/cevizli-sekerli-eriste-tarifi-t-5521",
+      "https://www.isot.tr/"
+    ],
+    "confidence": "medium",
+    "reason": "Erişte, tereyağı ve cevizle hazırlanan tava kurgusu erişte tarifleriyle uyumlu; isot bölgesel baharat yorumu olarak makul."
+  },
+  {
+    "slug": "isotlu-tavuk-sis-sanliurfa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 2 içinde 30 dakika dinlendirme var, toplam süre 30 dakika kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 60
+    },
+    "sources": [
+      "https://www.isot.tr/tarif/isotlu-tavuk-sote-tarifi-aci-severlere-nefis-lezzet",
+      "https://yemek.com/tarif/tavuk-sis/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, isot, sarımsak ve yağlı marine yapısı tutarlı; 30 dakikalık dinlendirme toplam süreye dahil edilmemiş."
+  },
+  {
+    "slug": "isotlu-yogurtlu-yumurta-ekmegi-gaziantep-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/yumurtali-ekmek/",
+      "https://www.sanliurfa.bel.tr/icerik/204/68/isot-recelli-yumurta"
+    ],
+    "confidence": "medium",
+    "reason": "Yumurtalı ekmek, yoğurt ve isotlu servis pratik kahvaltı yorumu olarak tutarlı; alerjen ve süreler uyumlu."
+  },
+  {
+    "slug": "isotlu-yumurta-durumu-sanliurfa-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sanliurfa.bel.tr/icerik/204/68/isot-recelli-yumurta",
+      "https://www.kulturportali.gov.tr/turkiye/genel/neyenir/urfa-yumurtali-kofte"
+    ],
+    "confidence": "medium",
+    "reason": "İsotlu yumurta ve lavaşa sarma fikri Urfa kahvaltılık baharat kullanımıyla uyumlu; süre ve alerjenler tutarlı."
+  },
+  {
+    "slug": "ispanak-yemegi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/ispanak-yemegi/",
+      "https://www.nefisyemektarifleri.com/ispanak-yemegi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Ispanak, soğan, pirinç, salça ve zeytinyağıyla pişen klasik yemek kaynaklarla uyumlu; süre ve malzeme eşleşmesi temiz."
+  }
+]

@@ -1,0 +1,1780 @@
+[
+  {
+    "slug": "kaymakli-cevizli-havuclu-tatli-mardin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 3 şeker diyor, ingredient listesinde şeker yok",
+      "totalMinutes: 15 dakika ılıtma toplam süreye yansımıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 37,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Havuçları ince rendeleyin, cevizleri iri kırın ve kaymağı buzdolabında tutun.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Havucu kısık ateşte 10 dakika pişirin, suyunu tamamen kaybetmeden yumuşasın.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Balı ekleyip 3 dakika karıştırın, havucun üstü parlak kalsın.",
+          "timerSeconds": 180
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Havuç karışımını 15 dakika ılıtın, kaymak eklenince eriyip akmasın.",
+          "timerSeconds": 900
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Kaymak ve cevizi havuçla katmanlayıp soğuk servis tabağına alın.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.main-board.com/631008/kaymakli-havuc-tatlisi",
+      "https://yemek.com/tarif/kaymakli-pancar/"
+    ],
+    "confidence": "medium",
+    "reason": "Havuç, kaymak ve ceviz tatlı yapısı çalışır; esas sorun şekersiz listede şeker denmesi ve ılıtma süresinin toplam süre dışında kalması."
+  },
+  {
+    "slug": "kaymakli-cevizli-pancar-tatlisi-mardin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: 12 dakika süzme beklemesi toplam süreye eklenmemiş",
+      "steps: haşlanmış pancar tekrar 8 dakika pişiriliyor, akış gereksiz uzuyor"
+    ],
+    "corrections": {
+      "cookMinutes": 0,
+      "totalMinutes": 22,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Haşlanmış pancarı ince dilimleyin, cevizleri iri kırın ve servis tabağını soğutun.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Pancar dilimlerini 12 dakika süzgeçte bekletin, fazla su kaymağı gevşetmesin.",
+          "timerSeconds": 720
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Kaymak, pancar ve cevizi ince katlar halinde üst üste yerleştirin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Balı servis öncesi gezdirin, cevizlerin dokusu yumuşamasın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Tatlıyı bekletmeden soğuk servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kaymakli-pancar/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/diger-tatli-tarifleri/kaymakli-ve-cevizli-hurma-tatlisi"
+    ],
+    "confidence": "medium",
+    "reason": "Pancar, kaymak ve ceviz birlikteliği kaynaklarla destekleniyor; haşlanmış pancarı yeniden pişirmek yerine süzme beklemesi doğru süreye alınmalı."
+  },
+  {
+    "slug": "kaymakli-kaygana-bolu-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/kaygana/",
+      "https://www.nefisyemektarifleri.com/kaygana-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Un, yumurta, süt ve tereyağıyla tava kayganası kaynaklarla uyumlu; kaymak servis yorumu yağlı ama tarifin çalışmasını bozan bir hata yok."
+  },
+  {
+    "slug": "kaymakli-kayisi-dolmasi-malatya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: kaynaklarda kayısı dolması için su ve tereyağı pişirme akışında temel, listede yok",
+      "totalMinutes: 8 dakika bekletme, 4 dakika ısıtma ve 10 dakika ılıtma toplam süreyi aşıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 37,
+      "ingredients_add": [
+        {
+          "name": "Su",
+          "amount": "0.5",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Tereyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Kayısıları 8 dakika ılık suda bekletin, yırtılmadan açılabilsin.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Cevizleri iri kırın ve kayısıların iç ceplerini nazikçe açın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Kayısıları cevizle doldurup tereyağı ve suyla 4 dakika ısıtın.",
+          "timerSeconds": 240
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Tatlıyı 10 dakika ılıtın, kaymak dolguya eklenince akmasın.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Kaymak ve balı servis öncesi ekleyip cevizle tamamlayın.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.kolaylezzet.com/kolay-cay-saati-tarifleri/tatlilar/808-gun-kurusu-kayisi-dolmasi-tatlisi-malatya",
+      "https://www.evvelcevap.com/kayisi-dolmasi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Malatya kayısı dolması ceviz, kaymak, su ve yağla uyumlu; mevcut kayıtta pişirme sıvısı eksik ve bekleme toplam sürede görünmüyor."
+  },
+  {
+    "slug": "kaymakli-kayisi-tatlisi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 5 ceviz diyor, ingredient listesinde ceviz yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Ceviz",
+          "amount": "0.25",
+          "unit": "su bardağı"
+        }
+      ],
+      "allergens_add": [
+        "KUSUYEMIS"
+      ]
+    },
+    "sources": [
+      "https://turkiye.influence.cool/tr/malatya/kuluncak/yerel-lezzetler/kayisi-tatlisi/",
+      "https://www.oyascuisine.com/index.php/tr/49-tatlilar/1546-kaymakli-kayisi-tatlisi"
+    ],
+    "confidence": "high",
+    "reason": "Kaymaklı kayısı tatlısı akışı doğru; yalnızca servis adımında geçen ceviz malzeme ve alerjen listesinde eksik kalmış."
+  },
+  {
+    "slug": "kaymakli-pekmezli-incir-kup-van-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: 10 dakika soğutma toplam süreye dahil edilmemiş",
+      "nutrition: 120 gr kaymak ve cevizle porsiyon başı yağ mevcut değerden yüksek olur"
+    ],
+    "corrections": {
+      "totalMinutes": 28,
+      "averageCalories": 276,
+      "protein": 5,
+      "carbs": 31,
+      "fat": 16
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/cok-pratik-kaymakli-incir-tatlisi/13999",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/diger-tatli-tarifleri/kaymakli-ve-cevizli-hurma-tatlisi"
+    ],
+    "confidence": "medium",
+    "reason": "İncir, kaymak, pekmez ve ceviz uyumlu; ancak soğutma süresi toplamda eksik ve kaymaklı tatlı için yağ değeri düşük kalıyor."
+  },
+  {
+    "slug": "kayseri-cemenli-patatesli-yaglama",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: hamurda kullanılan su listede yok",
+      "steps: lavaşları tavada pişirme süresi ölçülü verilmemiş"
+    ],
+    "corrections": {
+      "prepMinutes": 80,
+      "cookMinutes": 12,
+      "totalMinutes": 92,
+      "ingredients_add": [
+        {
+          "name": "Su",
+          "amount": "1.25",
+          "unit": "su bardağı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un, tuz ve suyla yumuşak hamur yoğurup 20 dakika dinlendirin.",
+          "timerSeconds": 1200
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Patatesleri 20 dakika haşlayıp iri ezin.",
+          "timerSeconds": 1200
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Çemen ve domates püresini tavada 6 dakika pişirin.",
+          "timerSeconds": 360
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Hamur bezelerini ince açıp tavada her yüzünü 1 dakika pişirin.",
+          "timerSeconds": 120
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Lavaşları patatesli sosla kat kat dizip yoğurtla servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kayseri-yaglamasi/",
+      "https://www.nefistarif.net/nefis-kayseri-yaglamasi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Çemenli patatesli yorum klasik yağlamadan ayrılıyor ama teknik olarak yapılabilir; hamur suyu ve şebit pişirme süresi netleşmeli."
+  },
+  {
+    "slug": "kayseri-kursun-asi",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "description: kaynaklarda kurşun aşı hamur topu değil, ince bulgurlu küçük köftelerle yapılıyor",
+      "ingredients: bulgur, irmik ve yumurta yok; unlu hamur topları Kayseri kurşun aşı yapısını yanlış temsil ediyor"
+    ],
+    "corrections": {
+      "description": "Kurşun aşı, nohut, yeşil mercimek ve ince bulgur köftelerini salçalı suda pişiren Kayseri çorbasıdır.",
+      "ingredients_add": [
+        {
+          "name": "İnce bulgur",
+          "amount": "1.5",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "İrmik",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Yumurta",
+          "amount": "1",
+          "unit": "adet"
+        }
+      ],
+      "ingredients_remove": [
+        "Su"
+      ],
+      "allergens_add": [
+        "YUMURTA"
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kursun-asi/",
+      "https://www.nefistarifvesunumlar.com/kayseri-koftesi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kurşun aşı kaynakları bulgurlu küçük köfte gösteriyor; mevcut unlu hamur topu tarifi yöresel yemeğin ana yapısını değiştiriyor."
+  },
+  {
+    "slug": "kayseri-mantisi-otantik",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: kıymalı iç için soğan ve servis sosu için sarımsak eksik",
+      "steps: fırın ve tepsi cümleleri haşlama Kayseri mantısı akışına ait değil"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Soğan",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Sarımsak",
+          "amount": "2",
+          "unit": "diş"
+        },
+        {
+          "name": "Tereyağı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Domates salçası",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un, yumurta ve suyla sert bir hamur yoğurun.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Hamuru 20 dakika dinlendirin, ince açarken yırtılmasın.",
+          "timerSeconds": 1200
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Hamuru açıp küçük karelere kesin, kıymalı harcı 60 dakika içinde paylaştırıp kapatın.",
+          "timerSeconds": 3600
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Mantıları sıkıca kapatın ve kaynar suda 12 dakika haşlayın.",
+          "timerSeconds": 720
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Sarımsaklı yoğurt ve tereyağlı salçayla sıcak servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kayseri-mantisi/",
+      "https://nhmag.net/nefis-kayseri-mantisi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kayseri mantısı hamur, kıyma, yoğurt ve salçalı yağla doğru; mevcut adımlarda fırın şablonu ve eksik sos malzemesi var."
+  },
+  {
+    "slug": "kayseri-nevzin-tatlisi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 kabartma tozu diyor, ingredient listesinde yok",
+      "allergens: tahin SUSAM alerjeni gerektirir"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Kabartma tozu",
+          "amount": "1",
+          "unit": "paket"
+        }
+      ],
+      "allergens_add": [
+        "SUSAM"
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kayseri-nevzine-tatlisi/",
+      "https://www.nefisyemektarifleri.com/kayseri-nevzine-tatlisi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Tahinli, cevizli ve pekmezli şerbetli Kayseri tatlısı doğru; kabartma tozu ve tahin kaynaklı susam alerjeni eksik."
+  },
+  {
+    "slug": "kayseri-nevzine",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: şekerli şerbet için su ve şeker listede yok",
+      "allergens: tahin SUSAM alerjeni gerektirir"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Şeker",
+          "amount": "1",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Su",
+          "amount": "1.5",
+          "unit": "su bardağı"
+        }
+      ],
+      "allergens_add": [
+        "SUSAM"
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/nevzine-tatlisi/",
+      "https://www.nefisyemektarifleri.com/nevzine-kayseri-tatlisi/"
+    ],
+    "confidence": "high",
+    "reason": "Nevzine için tahin, ceviz ve pekmez doğru; fakat şerbet adımı malzemesiz kalmış ve tahin alerjeni işaretlenmeli."
+  },
+  {
+    "slug": "kayseri-nevzine-tatlisi-cevizli",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 kabartma tozu diyor, ingredient listesinde yok",
+      "allergens: tahin SUSAM alerjeni gerektirir"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Kabartma tozu",
+          "amount": "1",
+          "unit": "paket"
+        }
+      ],
+      "allergens_add": [
+        "SUSAM"
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kayseri-nevzine-tatlisi/",
+      "https://www.nefisyemektarifleri.com/kayseri-nevzine-tatlisi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Cevizli nevzine ölçüleri ve süreleri kaynaklarla uyumlu; yalnız kabartma tozu malzemede yok ve tahin için susam alerjeni eksik."
+  },
+  {
+    "slug": "kayseri-pastirmali-nohutlu-tava",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: tarif adını tekrar eden şablon cümleler var",
+      "steps: pastırma ekleme zamanı açık anlatılmıyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Soğanı tereyağında 4 dakika yumuşatın.",
+          "timerSeconds": 240
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Domatesi ekleyip suyunu çekene kadar 6 dakika pişirin.",
+          "timerSeconds": 360
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Nohudu tavaya katıp 8 dakika ısıtın.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Pastırmayı ekleyip 2 dakika çevirin, fazla pişerse sertleşmesin.",
+          "timerSeconds": 120
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Tavayı 3 dakika dinlendirip sıcak servis edin.",
+          "timerSeconds": 180
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/pastirmali-yumurta/",
+      "https://www.nefisyemektarifleri.com/nohutlu-pilav-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Pastırma ve nohut tavası uygulanabilir bir yorum; sorun pastırmanın ne zaman ekleneceğini saklayan şablon adımlar."
+  },
+  {
+    "slug": "kayseri-pastirmali-yarma-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/ayran-corbasi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/ayran-asi-corbasi/6128"
+    ],
+    "confidence": "medium",
+    "reason": "Yarma, yoğurt terbiyesi, un ve tereyağlı nane çorba tekniğiyle uyumlu; pastırma Kayseri bağlamlı bir ekleme ve akışta kritik hata yok."
+  },
+  {
+    "slug": "kayseri-pastirmali-yumurta",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/pastirmali-yumurta/",
+      "https://www.oz-kayseri.de/tr/tarifeler/pastirmali-yumurta/"
+    ],
+    "confidence": "high",
+    "reason": "Pastırma, yumurta ve tereyağıyla kısa sahanda pişirme klasik kaynaklarla uyumlu; süre, makro ve alerjen bilgisi makul."
+  },
+  {
+    "slug": "kayseri-poc",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cookMinutes: Kültür Portalı en az 3-4 saat, Yemek.com 5-6 saat pişirme veriyor; 180 dakika alt sınırda kalıyor",
+      "steps: sıcak suyu veya sosu kenardan ekleme cümlesi şablon ve miktarsız"
+    ],
+    "corrections": {
+      "cookMinutes": 240,
+      "totalMinutes": 255,
+      "ingredients_add": [
+        {
+          "name": "Su",
+          "amount": "4",
+          "unit": "su bardağı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Pöç parçalarını tuzla ovup geniş tencereye alın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Domates, biber, sarımsak ve suyu ekleyip kapağı kapatın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Çok kısık ateşte 240 dakika pişirin, et kemikten kolay ayrılsın.",
+          "timerSeconds": 14400
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Yemeği 10 dakika dinlendirin, et suyu tabağa dengeli aksın.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Pöçü sıcak servis edin, tenceredeki suyu etin üstüne gezdirin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/kayseri/neyenir/poc",
+      "https://yemek.com/tarif/kayseri-poc-tandir/"
+    ],
+    "confidence": "high",
+    "reason": "Pöç çok uzun ve kısık pişen bir Kayseri yemeği; mevcut akışta süre düşük ve su ekleme cümlesi ölçüsüz şablon olarak kalmış."
+  },
+  {
+    "slug": "kayseri-sebit-yaglamasi-katli",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: klasik yağlama hamurunda maya ve tuz bulunur, listede yok",
+      "steps: şebitlerin tavada pişme süresi ölçüsüz"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Instant maya",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un, ılık su, maya ve tuzla yumuşak hamur yoğurup 25 dakika dinlendirin.",
+          "timerSeconds": 1500
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Hamuru bezelere ayırıp ince yuvarlak şebitler açın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Şebitleri sacda her yüzü 1 dakika renk alana kadar pişirin.",
+          "timerSeconds": 120
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Kıyma, soğan ve biberi 8 dakika kavurun.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Domates rendesi ekleyip harcı 12 dakika sulu kıvamda pişirin.",
+          "timerSeconds": 720
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Şebitleri harçla katlayıp sarımsaklı yoğurtla servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kayseri-yaglamasi/",
+      "https://www.nefistarif.net/nefis-kayseri-yaglamasi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Yağlama katlı şebit ve sulu kıymalı harçla doğru kurulmuş; hamur için maya, tuz ve tava süresi netleşmeli."
+  },
+  {
+    "slug": "kayseri-yag-mantisi",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "description: yağ mantısı kızartılır, mevcut description haşlanmış mantı gibi anlatıyor",
+      "steps: haşlama, fırın ve tepsi şablonları Kayseri yağ mantısının kızartma tekniğine aykırı"
+    ],
+    "corrections": {
+      "prepMinutes": 35,
+      "cookMinutes": 20,
+      "totalMinutes": 55,
+      "description": "Kayseri yağ mantısı, mayalı kıymalı hamur bohçalarının kızartılıp sarımsaklı yoğurt ve salçalı sosla sunulduğu yerel bir tabaktır.",
+      "ingredients_add": [
+        {
+          "name": "Instant maya",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        },
+        {
+          "name": "Sıvı yağ",
+          "amount": "3",
+          "unit": "su bardağı",
+          "group": "Kızartmak için"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un, su ve mayayla hamur yoğurup 20 dakika dinlendirin.",
+          "timerSeconds": 1200
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Kıyma ve soğanla iç harcı 5 dakika karıştırarak hazırlayın.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Hamuru açıp karelere kesin ve 15 dakika içinde kıymalı harçla bohça kapatın.",
+          "timerSeconds": 900
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Mantıları kızgın yağda 4 dakika renk alana kadar kızartın.",
+          "timerSeconds": 240
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Tereyağında salçayı 3 dakika çevirip sos yapın.",
+          "timerSeconds": 180
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Mantıları sarımsaklı yoğurt ve salçalı sosla bekletmeden servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kayseri-yag-mantisi/",
+      "https://www.nefisyemektarifleri.com/kayseri-yag-mantisi-tarifi-807916/"
+    ],
+    "confidence": "high",
+    "reason": "Kayseri yağ mantısının ayırt edici noktası kızartmadır; mevcut kayıt haşlama mantı ve fırın şablonuyla yemeği yanlış temsil ediyor."
+  },
+  {
+    "slug": "kayseri-yag-mantisi-kizartma",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: kızartma için sıvı yağ listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Sıvı yağ",
+          "amount": "3",
+          "unit": "su bardağı",
+          "group": "Kızartmak için"
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kayseri-yag-mantisi/",
+      "https://www.nefisyemektarifleri.com/kayseri-yag-mantisi-orjinal-tarif/"
+    ],
+    "confidence": "high",
+    "reason": "Mayalı kıymalı hamurun kızartılması ve yoğurtlu salçalı servis doğru; yalnız kızartma yağı malzemede eksik."
+  },
+  {
+    "slug": "kayseri-yaglamasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: yağlama hamuru için su, tuz ve şeker listede yok",
+      "steps: kapatma ve tepsi cümleleri şebit yağlamasına ait değil"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Ilık su",
+          "amount": "1",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        },
+        {
+          "name": "Şeker",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        },
+        {
+          "name": "Soğan",
+          "amount": "1",
+          "unit": "adet"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un, maya, ılık su, tuz ve şekerle hamur yoğurup 40 dakika mayalandırın.",
+          "timerSeconds": 2400
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Bezeleri ince açıp tavada her yüzünü 1 dakika pişirin.",
+          "timerSeconds": 120
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Kıyma, soğan ve domatesi 20 dakika sulu kalacak şekilde pişirin.",
+          "timerSeconds": 1200
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Şebitleri kıymalı harçla üst üste dizin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Dilimleyip yoğurtla sıcak servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kayseri-yaglamasi/",
+      "https://www.nefistarif.net/nefis-kayseri-yaglamasi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kayseri yağlaması doğru yemek; mevcut kayıt temel hamur malzemelerini ve katlama akışını şablon cümlelerle eksik bırakıyor."
+  },
+  {
+    "slug": "kayseri-yaglamasi-sebit",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/kayseri-yaglamasi/",
+      "https://www.lezzetitarifet.com/kayseri-sebit-yaglamasi-tarifi.html"
+    ],
+    "confidence": "high",
+    "reason": "Mayalı şebit, sulu kıymalı harç ve yoğurtlu servis kaynaklarla uyumlu; süreler ve adım sırası makul görünüyor."
+  },
+  {
+    "slug": "kayseri-yogurtlu-yag-mantisi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: kızartma için sıvı yağ listede yok",
+      "ingredients: sarımsaklı yoğurt servisinde sarımsak listelenmemiş"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Sıvı yağ",
+          "amount": "3",
+          "unit": "su bardağı",
+          "group": "Kızartmak için"
+        },
+        {
+          "name": "Sarımsak",
+          "amount": "2",
+          "unit": "diş"
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kayseri-yag-mantisi/",
+      "https://www.nefisyemektarifleri.com/kayseri-bin-meshur-lezzeti-yag-mantisi/"
+    ],
+    "confidence": "high",
+    "reason": "Mayalı hamur, kıyma, kızartma, yoğurt ve domates sosu doğru; yalnız kızartma yağı ve sarımsaklı yoğurt için sarımsak eksik."
+  },
+  {
+    "slug": "kaytaz-boregi-hatay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: Hatay kaytaz böreğinde nar ekşisi ve zeytinyağı tipik harç bileşeni, listede yok",
+      "steps: pişirme adımı yok, tencere sıvısı ve servis şablonları var"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Nar ekşisi",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Zeytinyağı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un, su ve mayayla hamur yoğurup 20 dakika dinlendirin.",
+          "timerSeconds": 1200
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Kıyma, rendelenmiş soğan, domates, salça, nar ekşisi ve tuzu karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Hamurdan küçük bezeler açıp harcı üstlerine yayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Kenarları hafif yükseltip üstlerine zeytinyağı gezdirin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "220°C fırında 18 dakika pişirin.",
+          "timerSeconds": 1080
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "5 dakika dinlendirip sıcak servis edin.",
+          "timerSeconds": 300
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kaytaz-boregi/",
+      "https://www.nefisyemektarifleri.com/kaytaz-boregi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kaytaz böreği açık kıymalı hamur işi olarak doğru; mevcut kayıtta fırınlama yok ve nar ekşili yağlı harç eksik."
+  },
+  {
+    "slug": "kaz-etli-bulgur-tava-ardahan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: su ekleme iki kez yazılmış",
+      "steps: tarif adını tekrar eden şablon cümleler var"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Soğanı tereyağında 3 dakika çevirin.",
+          "timerSeconds": 180
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Bulguru ekleyip 2 dakika yağla karıştırın.",
+          "timerSeconds": 120
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Suyu ve haşlanmış kaz etini ekleyip kapağı kapatın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Pilavı 14 dakika pişirin.",
+          "timerSeconds": 840
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "8 dakika demleyin, buharı bulguru ezmeden yumuşatsın.",
+          "timerSeconds": 480
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kaz-etli-bulgur-pilavi/",
+      "https://www.sahrapsoysal.com/kavurmali-bulgur-pilavi-tarifi-t-4626"
+    ],
+    "confidence": "medium",
+    "reason": "Kaz etiyle bulgur pilavı Ardahan kış mutfağına uygun bir yorum; asıl sorun yinelenen su adımı ve şablon cümleler."
+  },
+  {
+    "slug": "kazablanka-limonlu-tavuk-tajin",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: Moroccan preserved lemon yerine 'koruk limonu' yazılmış, bu farklı bir malzeme izlenimi veriyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Tuzlu limon",
+          "amount": "1",
+          "unit": "adet"
+        }
+      ],
+      "ingredients_remove": [
+        "Koruk limonu"
+      ]
+    },
+    "sources": [
+      "https://www.curiouscuisiniere.com/preserved-lemon-chicken-tagine/",
+      "https://www.theguardian.com/lifeandstyle/wordofmouth/2013/mar/13/how-make-perfect-chicken-tagine"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, zeytin, safran ve limonlu tajin doğru; Fas bağlamında kullanılan malzeme koruk değil tuzlu limon olarak düzeltilmeli."
+  },
+  {
+    "slug": "kazandibi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps içinde 3 saat soğutma var, toplam süre 55 dakika kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 235
+    },
+    "sources": [
+      "https://yemek.com/tarif/kazandibi/",
+      "https://www.nefisyemektarifleri.com/kazandibi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kazandibi malzemeleri ve pişirme akışı klasik sütlü tatlıyla uyumlu; yalnız 3 saat soğutma toplam süreye eklenmemiş."
+  },
+  {
+    "slug": "keci-peynirli-biber-dolmasi-antalya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: dolma için tencereye su verme şablonu var, kaynaklarla uyumlu fırın akışı değil",
+      "steps: iç harç detayları belirsiz"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Biberlerin sap ve çekirdeklerini çıkarın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Keçi peyniri, dereotu, zeytinyağı ve doğranmış domatesi karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Biberleri harçla doldururken üstte 1 parmak boşluk bırakın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Dolmaları fırın kabına dizip 180°C fırında 18 dakika pişirin.",
+          "timerSeconds": 1080
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "8 dakika dinlendirip ılık servis edin, peynir içi toparlansın.",
+          "timerSeconds": 480
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/peynirli-biber-dolmasi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/pratik-peynirli-biber-dolmasi/16360"
+    ],
+    "confidence": "high",
+    "reason": "Peynirli biber dolması fırın tekniğiyle tutarlı; tencereye su verme şablonu ve belirsiz iç harç adımı temizlenmeli."
+  },
+  {
+    "slug": "keci-peynirli-kabak-mucveri-bodrum-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/mucver/",
+      "https://www.nefisyemektarifleri.com/mucver-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kabak, yumurta, un, ot ve peynirli mücver yapısı kaynaklarla uyumlu; kabak suyunu sıkma ve kısa tava süresi doğru verilmiş."
+  },
+  {
+    "slug": "keciboynuzlu-sutlac-datca-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cookMinutes: pirinç, süt ve keçiboynuzu özü pişirme adımları toplam 25 dakika sürüyor",
+      "totalMinutes: 30 dakika dinlendirme toplam süreye eklenmemiş"
+    ],
+    "corrections": {
+      "cookMinutes": 25,
+      "totalMinutes": 65
+    },
+    "sources": [
+      "https://yemek.com/tarif/sutlac/",
+      "https://www.nefisyemektarifleri.com/sutlac-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Sütlaç tekniğine keçiboynuzu özü eklemek tutarlı bir yorum; pişirme ve dinlenme süreleri toplam süreye doğru yansımamış."
+  },
+  {
+    "slug": "kedgeree-ingiliz-kahvalti-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: kedgeree için soğan ve köri baharatı temel bileşenler, listede yok",
+      "steps: pirince baharatlı taban hazırlama adımı eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Soğan",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Köri",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        },
+        {
+          "name": "Zerdeçal",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Basmati pirinci yıkayıp 12 dakika haşlayın.",
+          "timerSeconds": 720
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Yumurtaları 7 dakika haşlayıp soğuk suya alın.",
+          "timerSeconds": 420
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Tereyağında soğan, köri ve zerdeçalı 4 dakika çevirin.",
+          "timerSeconds": 240
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Tütsülenmiş balık, bezelye ve pirinci tavaya ekleyip 3 dakika ısıtın.",
+          "timerSeconds": 180
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Yumurtaları dörde bölüp pirincin üstüne yerleştirin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Kedgeree'yi sıcak servis edin, balığı ezmeden tabaklara alın.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/kedgeree",
+      "https://www.theguardian.com/food/2019/mar/13/how-to-make-kedgeree"
+    ],
+    "confidence": "high",
+    "reason": "Balık, pirinç ve yumurta temeli doğru; klasik İngiliz kedgeree tadı için soğanlı baharat tabanı eksik."
+  },
+  {
+    "slug": "kefirli-ayran",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/ayran/",
+      "https://culturesforhealth.com/blogs/recipes/milk-kefir-recipe-okroshka-cold-kefir-soup-russian"
+    ],
+    "confidence": "medium",
+    "reason": "Kefir, yoğurt, su, tuz ve nane ile soğuk içecek akışı tutarlı; blender süresi, porsiyon ve alerjen bilgisi makul."
+  },
+  {
+    "slug": "kefirli-pancar-kase-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: 30 dakika buzdolabı soğutması toplam süreye dahil edilmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 60
+    },
+    "sources": [
+      "https://www.food400.com/2023/06/okhroshka-russian-cold-cucumber-soup/",
+      "https://culturesforhealth.com/blogs/recipes/milk-kefir-recipe-okroshka-cold-kefir-soup-russian"
+    ],
+    "confidence": "medium",
+    "reason": "Kefirli soğuk sebze çorbası Rus okroshka çizgisine yakın; yalnız buzdolabı beklemesi toplam sürede eksik."
+  },
+  {
+    "slug": "kefirli-soguk-okroshka-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: 45 dakika soğutma toplam süreye dahil edilmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 71
+    },
+    "sources": [
+      "https://restexpert.com/recipe/okroshka/",
+      "https://culturesforhealth.com/blogs/recipes/milk-kefir-recipe-okroshka-cold-kefir-soup-russian"
+    ],
+    "confidence": "high",
+    "reason": "Kefir, patates, salatalık, turp ve dereotu okroshka varyasyonlarıyla uyumlu; soğutma süresi toplam süreye eklenmeli."
+  },
+  {
+    "slug": "kefta-tagine",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: sıcak su veya sosu kenardan ekleme şablon cümlesi var",
+      "steps: domates sos, köfte ve yumurta sırası daha net kurulmalı"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Kıyma, kimyon ve kıyılmış maydanozla küçük köfteler hazırlayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Domates rendesini tavada 10 dakika koyulaşana kadar pişirin.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Köfteleri sosa yerleştirip kapağı kapalı 12 dakika pişirin.",
+          "timerSeconds": 720
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Yumurtaları sosun üstüne kırıp 8 dakika daha pişirin.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Maydanoz serpip sıcak servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/meatball-tagine",
+      "https://www.epicurious.com/recipes/food/views/moroccan-beef-meatball-tagine-356751"
+    ],
+    "confidence": "high",
+    "reason": "Köfte, domates sosu ve yumurta Fas kefta tagine yapısıyla uyumlu; yalnız şablon su cümlesi ve sıra netliği düzeltilmeli."
+  },
+  {
+    "slug": "keftali-bulgur-tava-fas-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: tarif adını tekrar eden şablon cümleler var",
+      "steps: bulgur için su miktarı ve kapaklı pişirme akışı açık değil"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Su",
+          "amount": "2",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Kıymayı kimyon, tarçın ve tuzla yoğurup küçük köfteler hazırlayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Domatesi tavada 4 dakika pişirin.",
+          "timerSeconds": 240
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Bulgur ve suyu ekleyip kapağı kapatın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Köftelerle birlikte 14 dakika pişirin.",
+          "timerSeconds": 840
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "8 dakika demleyin, buharı bulguru ezmeden yumuşatsın.",
+          "timerSeconds": 480
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/meatball-tagine",
+      "https://www.nefisyemektarifleri.com/bulgur-pilavi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Fas köfte baharatlarıyla bulgur tavası modern bir yorum olarak çalışır; mevcut adımlar suyu ve pişirme sırasını şablon bırakıyor."
+  },
+  {
+    "slug": "kekik-ayran-asi-hakkari-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/ayran-corbasi/",
+      "https://www.nefisyemek.com/ayran-asi-corbasi.html"
+    ],
+    "confidence": "medium",
+    "reason": "Buğday, ayran, un terbiyesi ve tereyağlı ot bitişi ayran aşı çorbası tekniğiyle uyumlu; Hakkari kekik yorumu kritik hata değil."
+  },
+  {
+    "slug": "kekikli-beyaz-peynirli-katmer-antalya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/katmer/",
+      "https://www.nefisyemektarifleri.com/katmer-peynirli/"
+    ],
+    "confidence": "medium",
+    "reason": "Unlu ince hamur, peynirli harç, yağlama ve tavada iki yüzlü pişirme katmer ile gözleme arasında uygulanabilir bir kahvaltı akışı kuruyor."
+  },
+  {
+    "slug": "kekikli-biber-dolmasi-denizli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: dolmanın pişmesi için su ve tuz listede yok",
+      "steps: fırında pişirme ile tencereye su verme sırası karışmış"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Su",
+          "amount": "1",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Biberlerin içini temizleyin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Pirinç, soğan, kekik, zeytinyağı ve tuzu karıştırarak harç yapın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Biberleri üstte 1 parmak boşluk kalacak şekilde doldurun.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Dolmaları kaba dizip suyu kenardan ekleyin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "190°C fırında 30 dakika pişirin.",
+          "timerSeconds": 1800
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/zeytinyagli-biber-dolmasi/",
+      "https://www.nefisyemektarifleri.com/zeytinyagli-biber-dolmasi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Pirinçli zeytinyağlı biber dolması yapısı doğru; su, tuz ve fırın sırası eksik olduğu için uygulama belirsizleşiyor."
+  },
+  {
+    "slug": "kekikli-cipura-izgara-bodrum-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: sosu ortaya toplama gibi tava şablonu ızgara balık için uygunsuz",
+      "steps: marine adımı çok belirsiz"
+    ],
+    "corrections": {
+      "totalMinutes": 28,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Çipurayı zeytinyağı, limon suyu ve taze kekikle ovun.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Balığı 8 dakika bekletin, kekik kokusu yüzeye geçsin.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Izgarada ilk yüzünü 6 dakika pişirin.",
+          "timerSeconds": 360
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Çevirip ikinci yüzünü 6 dakika pişirin.",
+          "timerSeconds": 360
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "3 dakika dinlendirip limonla sıcak servis edin.",
+          "timerSeconds": 180
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/izgara-cipura/",
+      "https://www.nefisyemektarifleri.com/firinda-cipura-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Çipura, limon, zeytinyağı ve kekik uyumlu; ancak mevcut adımlarda ızgara yerine tava sosu şablonu kullanılmış."
+  },
+  {
+    "slug": "kekikli-dana-arpacik-tava-denizli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: dana tavası için su ve tuz listede yok",
+      "steps: 10 dakika dana kuşbaşı için kısa kalır, şablon cümleler var"
+    ],
+    "corrections": {
+      "cookMinutes": 35,
+      "totalMinutes": 49,
+      "ingredients_add": [
+        {
+          "name": "Su",
+          "amount": "0.75",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Dana etini zeytinyağında 6 dakika mühürleyin.",
+          "timerSeconds": 360
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Arpacık soğanları ekleyip 5 dakika çevirin.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Su ve tuzu ekleyip kapağı kapatın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Eti 24 dakika kısık ateşte pişirin.",
+          "timerSeconds": 1440
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Kekiği ekleyip 3 dakika dinlendirerek servis edin.",
+          "timerSeconds": 180
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/arpacik-soganli-et-yahni/",
+      "https://www.nefisyemektarifleri.com/arpacik-soganli-et-yahni/"
+    ],
+    "confidence": "medium",
+    "reason": "Dana ve arpacık soğan tavası makul; fakat kuşbaşı et için süre kısa, su ve tuz eksik, şablon adımlar temizlenmeli."
+  },
+  {
+    "slug": "kekikli-dana-firinda-patlican-bodrum-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: patlıcan için mühürleme denmiş, dana eti mühürlenmeli",
+      "ingredients: fırın yemeği için zeytinyağı ve tuz eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Dana etini zeytinyağında 6 dakika mühürleyin.",
+          "timerSeconds": 360
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Patlıcanı küp doğrayıp domates rendesi, kekik ve tuzla karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Et ve patlıcanlı karışımı fırın kabına alın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "190°C fırında 24 dakika pişirin.",
+          "timerSeconds": 1440
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "5 dakika dinlendirip sıcak servis edin.",
+          "timerSeconds": 300
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/etli-patlican-yemegi/",
+      "https://www.nefisyemektarifleri.com/firinda-etli-patlican-yemegi/"
+    ],
+    "confidence": "medium",
+    "reason": "Dana, patlıcan, domates ve kekik fırın yemeği olarak çalışır; mevcut adım patlıcanı mühürleyerek tekniği karıştırıyor."
+  },
+  {
+    "slug": "kekikli-erik-kompostosu-mugla-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/erik-kompostosu/",
+      "https://www.nefisyemektarifleri.com/kirmizi-erik-kompostosu-tarifi-erik-kompostosu/"
+    ],
+    "confidence": "high",
+    "reason": "Erik, su ve şekerle kısa kaynatma komposto kaynaklarıyla uyumlu; kekik aroması modern ama süre ve içecek akışı tutarlı."
+  },
+  {
+    "slug": "kekikli-kabak-cicegi-kizartmasi-mugla-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/kabak-cicegi-kizartmasi/",
+      "https://www.nefisyemektarifleri.com/kabak-cicegi-kizartmasi-lorlu-ve-sade/"
+    ],
+    "confidence": "high",
+    "reason": "Kabak çiçeğini temizleme, unlu yumurtalı kaplama ve kısa kızartma kaynaklarla uyumlu; kekik eklemesi uygulamayı bozmaz."
+  },
+  {
+    "slug": "kekikli-lorlu-gozleme-isparta-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: fırın ve tepsi cümleleri gözleme tekniğine ait değil",
+      "steps: gözlemeyi kapatma adımı pişirme adımından sonra geliyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un ve suyla hamur yoğurup 15 dakika dinlendirin.",
+          "timerSeconds": 900
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Lor peyniri ve kekiği karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Hamuru ince açıp lorlu harcı yarısına yayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Hamuru kapatıp kenarları bastırın, harç dışarı akmasın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Gözlemeyi sacda toplam 8 dakika iki yüzlü pişirin.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Üzerine tereyağı sürüp sıcak servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/peynirli-gozleme/",
+      "https://www.nefisyemektarifleri.com/peynirli-gozleme-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Lor peynirli gözleme tekniği doğru; fakat mevcut adımlar fırın ve tepsi şablonuyla sırayı bozuyor."
+  },
+  {
+    "slug": "kekikli-mantar-guveci-denizli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: güvece malzeme hizasına kadar sıvı ekleme mantarı fırında haşlar",
+      "steps: tarif adını tekrar eden şablon cümleler var"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Mantarları iri bırakıp sarımsak, zeytinyağı ve tuzla karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Kekiği ekleyip karışımı güvece aktarın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "180°C fırında 20 dakika pişirin.",
+          "timerSeconds": 1200
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "5 dakika dinlendirin, mantarın suyu tabağa hemen akmasın.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Kızarmış ekmekle sıcak servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/firinda-mantar/",
+      "https://www.nefisyemektarifleri.com/firinda-mantar-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Sarımsaklı kekikli fırın mantar uyumlu; fazla sıvı ekleme ve tekrar eden şablon cümleler yemeğin dokusunu bozar."
+  },
+  {
+    "slug": "kekikli-nohutlu-pilav-mersin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: pilav için yağ ve tuz listede yok",
+      "steps: su ekleme iki kez yazılmış ve tarif adını tekrar ediyor"
+    ],
+    "corrections": {
+      "totalMinutes": 36,
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Pirinci yıkayıp zeytinyağında 2 dakika çevirin.",
+          "timerSeconds": 120
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Su, nohut ve tuzu ekleyip kapağı kapatın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Pilavı 14 dakika kısık ateşte pişirin.",
+          "timerSeconds": 840
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Kekiği ekleyip pilavı 8 dakika demleyin.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Taneleri ezmeden havalandırıp ılık servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/nohutlu-pilav/",
+      "https://www.nefisyemektarifleri.com/nohutlu-pilav-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Nohutlu pirinç pilavı doğru; yağ, tuz, tek su ekleme akışı ve demleme süresi netleştirilmeli."
+  },
+  {
+    "slug": "kekikli-patlican-sogurtme-denizli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: steps içinde limon suyu, domates ve tuz geçiyor, listede yok",
+      "totalMinutes: 15 dakika közleme ve 5 dakika süzme toplam süreyi aşıyor"
+    ],
+    "corrections": {
+      "cookMinutes": 15,
+      "totalMinutes": 32,
+      "ingredients_add": [
+        {
+          "name": "Limon suyu",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Domates",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/patlican-sogurtme/",
+      "https://yemek.com/tarif/koz-patlican-salatasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Köz patlıcanlı söğürtme çizgisi doğru; adımlarda geçen limon, domates ve tuz malzemede yok, közleme süresi de toplamda eksik."
+  },
+  {
+    "slug": "kekikli-peynirli-sikma-konya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/peynirli-sikma/",
+      "https://www.nefisyemektarifleri.com/peynirli-sikma-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Sacda pişen ince hamura peynirli harç sarma sıkma tekniğiyle uyumlu; Konya etiketi zayıf olsa da tarifte kritik uygulama hatası yok."
+  },
+  {
+    "slug": "kekikli-tavuklu-kuskus-tava-izmir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: tavuk sote ve kuskus için yağ ve tuz listede yok",
+      "steps: su ekleme iki kez yazılmış ve şablon cümleler var"
+    ],
+    "corrections": {
+      "totalMinutes": 36,
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Tavuğu zeytinyağında 6 dakika soteleyin.",
+          "timerSeconds": 360
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Kuskus, su ve tuzu ekleyip kapağı kapatın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Kekikle birlikte 10 dakika pişirin.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Tencereyi ocaktan alıp 8 dakika demleyin.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Taneleri ezmeden havalandırıp sıcak servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/tavuklu-kuskus-pilavi/",
+      "https://www.nefisyemektarifleri.com/tavuklu-kuskus-pilavi/"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuklu kuskus tavası uygulanabilir; mevcut kayıtta yağ, tuz ve tek seferlik su ekleme akışı eksik."
+  },
+  {
+    "slug": "kekikli-taze-badem-salatasi-antalya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: roka, marul, bal ve peynir geçiyor, ingredient listesinde yok",
+      "steps: mevcut malzeme listesi sade badem salatası iken adımlar farklı salataya kaymış"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Taze bademleri ikiye bölün, sert iç kabuk kalmışsa uçlarını temizleyin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Limon suyu, zeytinyağı ve tuzu 30 saniye çırpın.",
+          "timerSeconds": 30
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Bademleri sosla karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Taze kekiği ekleyip nazikçe harmanlayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Bekletmeden serin servis edin, badem diriliğini kaybetmesin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/bademli-roka-salatasi/",
+      "https://www.nefisyemektarifleri.com/bademli-salata/"
+    ],
+    "confidence": "medium",
+    "reason": "Taze badem, limon, zeytinyağı ve kekik sade salata olarak çalışır; mevcut adımlar listede olmayan yeşillik ve peynir ekliyor."
+  }
+]

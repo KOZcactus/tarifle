@@ -1,0 +1,882 @@
+[
+  {
+    "slug": "konya-ebegumecili-bulgur-asi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 sıcak su ekliyor, ancak ingredient listesinde su yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "3", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.evvelcevap.com/ebegumeci-yemegi-tarifi/",
+      "https://yemek.com/tarif/bulgur-pilavi/"
+    ],
+    "confidence": "medium",
+    "reason": "Ebegümeci ve bulgur kurgusu makul, fakat pilav tipi pişirme için kullanılan sıcak su ingredient listesinde yok."
+  },
+  {
+    "slug": "konya-etli-ekmek",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps tuz ve karabiber kullanıyor, ingredient listesinde ikisi de yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1.5", "unit": "tatlı kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.konya.gov.tr/konya-etliekmek",
+      "https://turkiyeturizmansiklopedisi.com/konya-etli-ekmegi"
+    ],
+    "confidence": "high",
+    "reason": "Konya etli ekmek içeriği kaynaklarla uyumlu; yalnız hamur ve harçta geçen tuz ile karabiber listede eksik."
+  },
+  {
+    "slug": "konya-ev-tipi-firin-kebabi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.konya.gov.tr/konya-firin-kebabi",
+      "https://www.kulturportali.gov.tr/turkiye/konya/neyenir/firin-kebabi"
+    ],
+    "confidence": "medium",
+    "reason": "Ev tipi uyarlama olduğu belirtilmiş; kuzu eti, sade baharat ve uzun fırın pişirme akışı kaynaklarla uyumlu."
+  },
+  {
+    "slug": "konya-firin-kebabi-kuzu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Konya fırın kebabı kaynaklarda 5-6 saat pişer; mevcut 190 dakika toplam süre kısa kalıyor."
+    ],
+    "corrections": {
+      "cookMinutes": 330,
+      "totalMinutes": 340,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kuzu etlerini büyük parçalara ayırıp tuzla ovun." },
+        { "stepNumber": 2, "instruction": "Etleri ağır kapaklı fırın kabına yağlı yüzleri üste gelecek şekilde dizin." },
+        { "stepNumber": 3, "instruction": "Yarım su bardağı su ekleyip kabı sıkıca kapatın." },
+        { "stepNumber": 4, "instruction": "Eti 150°C fırında 5 saat lifleri ayrılana kadar pişirin.", "timerSeconds": 18000 },
+        { "stepNumber": 5, "instruction": "Kapağı açıp 200°C'de 20 dakika üstünü kızartın.", "timerSeconds": 1200 },
+        { "stepNumber": 6, "instruction": "Eti pide üstüne alıp soğanla servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.konya.gov.tr/konya-firin-kebabi",
+      "https://www.kulturportali.gov.tr/turkiye/konya/neyenir/firin-kebabi"
+    ],
+    "confidence": "high",
+    "reason": "Malzeme seçimi doğru, ancak fırın kebabının uzun pişme süresi mevcut süre alanlarına yansımamış."
+  },
+  {
+    "slug": "konya-hashasli-mercimekli-eriste",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 sıcak su ekliyor, ingredient listesinde su yok.",
+      "Steps toplamı 28 dakikayı aşıyor; 30-dakika-alti tag'i yanıltıcı."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "2.5", "unit": "su bardağı" }
+      ],
+      "totalMinutes": 44,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/yesil-mercimekli-eriste/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yesil-mercimekli-eriste/10725"
+    ],
+    "confidence": "high",
+    "reason": "Erişte, mercimek ve haşhaş fikri tutarlı, fakat su eksik ve pişirme ile dinlendirme süreleri toplam süreyi aşıyor."
+  },
+  {
+    "slug": "konya-sac-arasi-tatlisi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/serbetli-tatlilar/sac-arasi",
+      "https://www.nefisyemektarifleri.com/sac-arasi-tatlisi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Yufka, kaymak, tereyağı, ceviz ve şerbet kullanımı Konya sac arası kaynaklarıyla uyumlu görünüyor."
+  },
+  {
+    "slug": "konya-tiridi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.konya.gov.tr/tirit",
+      "https://www.kirazinmutfagi.com.tr/tarif/tirit-konya"
+    ],
+    "confidence": "high",
+    "reason": "Et suyu, pide, et ve yoğurt düzeni Konya tiridi kaynaklarıyla uyumlu; süre ve alerjenler makul."
+  },
+  {
+    "slug": "kopenhag-smorrebrod-ringa",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Smørrebrød Kopenhag ve Danimarka yemeği; cuisine se yerine dk olmalı."
+    ],
+    "corrections": {
+      "cuisine": "dk"
+    },
+    "sources": [
+      "https://travelfoodatlas.com/danish-smorrebrod-recipe-open-sandwich",
+      "https://ifoodchef.com/recipes/smorrebrod"
+    ],
+    "confidence": "high",
+    "reason": "Ringa, çavdar ekmeği ve açık sandviç kurgusu doğru, fakat mutfak kodu İsveç değil Danimarka olmalı."
+  },
+  {
+    "slug": "koper-soslu-fasulye-polonya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.polonist.com/fasolka-szparagowa/",
+      "https://www.polishyourkitchen.com/polish-green-beans-with-breadcrumbs-fasolka-szparagowa-z-bulka-tarta/"
+    ],
+    "confidence": "medium",
+    "reason": "Yeşil fasulyeyi dereotu ve sütlü sosla servis etme fikri Polonya yan yemek mantığına uygun; kritik hata yok."
+  },
+  {
+    "slug": "kopytka-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Klasik kopytka hamurunda yumurta bulunur; mevcut listede yok.",
+      "Patates haşlama, buhar uçurma ve kızartma süreleri totalMinutes 35 dakikayı aşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yumurta", "amount": "1", "unit": "adet" }
+      ],
+      "allergens_add": ["YUMURTA"],
+      "totalMinutes": 55
+    },
+    "sources": [
+      "https://www.polonist.com/polish-kopytka-dumplings/",
+      "https://www.polishyourkitchen.com/polish-potato-dumplings-kopytka/"
+    ],
+    "confidence": "high",
+    "reason": "Patates, un ve tereyağı doğru, fakat klasik bağlayıcı yumurta eksik ve süre alanı adımlarla tutarsız."
+  },
+  {
+    "slug": "kore-armutlu-bulgogi-marul-kasesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes 66 dakika olduğu halde 30-dakika-alti tag'i var."
+    ],
+    "corrections": {
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.koreanbapsang.com/bulgogi-korean-bbq-beef/",
+      "https://www.bonappetit.com/recipe/bulgogi-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Armutlu soya marinadı ve marulla servis bulgogi kaynaklarına uyuyor; sadece hızlı tarif tag'i süreyle çelişiyor."
+  },
+  {
+    "slug": "korean-fried-chicken",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 kızartma yağı kullanıyor, ingredient listesinde yağ yok.",
+      "Step 5 sarımsak ve bal kullanıyor, ingredient listesinde ikisi de yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ayçiçek yağı", "amount": "3", "unit": "su bardağı" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Bal", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.maangchi.com/recipe/easy-dakgangjeong",
+      "https://www.theguardian.com/food/2021/oct/06/how-to-make-the-perfect-korean-fried-chicken-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Çift kızartma ve gochujanglı sos doğru, ancak yağ, sarımsak ve tatlandırıcı step içinde geçip listede yok."
+  },
+  {
+    "slug": "kornisonlu-yumurta-salatasi-kocaeli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 hardal ve zeytinyağı kullanıyor, ingredient listesinde yok.",
+      "Hardal kullanımı varsa HARDAL alerjeni eksik.",
+      "Step 1 yumurtayı 9 dakika haşlıyor, cookMinutes 8 dakika kalmış."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Hardal", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": ["HARDAL"],
+      "cookMinutes": 9,
+      "totalMinutes": 27,
+      "tipNote": "Yumurtayı 9 dakika haşlamak salatada diri bir sarı merkez bırakır."
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/egg-salad",
+      "https://www.allrecipes.com/recipe/147103/delicious-egg-salad-for-sandwiches/"
+    ],
+    "confidence": "high",
+    "reason": "Yumurta salatası mantığı doğru, fakat hardal alerjeni ve step malzemeleri listede eksik kalmış."
+  },
+  {
+    "slug": "korokke",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Patates haşlama, soğan kavurma ve kızartma süreleri totalMinutes 35 dakikayı aşıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 51
+    },
+    "sources": [
+      "https://www.justonecookbook.com/korokke-croquette/",
+      "https://www.punchfork.com/recipe/Japanese-Croquettes-Moms-Korokke-Just-One-Cookbook"
+    ],
+    "confidence": "high",
+    "reason": "Patatesli Japon kroket kurgusu doğru, ancak adımlardaki pişirme süreleri toplam süre alanından uzun."
+  },
+  {
+    "slug": "koruk-serbetli-soda-manisa-bag-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps tarif adını tekrar eden boilerplate cümleler içeriyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bardakları buzla doldurun ve koruk şerbetini eşit paylaştırın." },
+        { "stepNumber": 2, "instruction": "Sodayı bardakların kenarından yavaşça dökün, köpüğü söndürmeden karıştırın." },
+        { "stepNumber": 3, "instruction": "Nane yapraklarını ekleyip içeceği bekletmeden serin servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.evvelcevap.com/koruk-suyu-tarifi/",
+      "https://www.bornovadan.com/2025/09/11/koruk-suyu-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Koruk suyu ve soda kullanımı makul, fakat adımlar tarif adı tekrarına kaçtığı için doğal akışla değişmeli."
+  },
+  {
+    "slug": "koruklu-marul-salatasi-tekirdag-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps salatalık, domates, pekmez ve koruk tanesi gibi listede olmayan malzemeler kullanıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 11,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Marul yapraklarını ayırıp yıkayın, suyunu iyice kurutun." },
+        { "stepNumber": 2, "instruction": "Taze soğanı ince doğrayın ve marulla geniş kaseye alın." },
+        { "stepNumber": 3, "instruction": "Koruk suyu, zeytinyağı ve tuzu küçük kasede 30 saniye çırpın.", "timerSeconds": 30 },
+        { "stepNumber": 4, "instruction": "Sosu marula servis anında ekleyip yaprakları ezmeden karıştırın." },
+        { "stepNumber": 5, "instruction": "Salatayı bekletmeden tabağa alın, koruk ekşisi yaprakları yumuşatmasın.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://www.evvelcevap.com/koruklu-salata-tarifi/",
+      "https://www.dokuzuncubulut.com/index.php/salatalar/331-koruk-suyu.html"
+    ],
+    "confidence": "high",
+    "reason": "Koruk suyu salatada doğru asit kaynağı, ancak mevcut steps listede olmayan malzemelerle kirlenmiş."
+  },
+  {
+    "slug": "koruklu-mercimek-piyazi-izmir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 yumurta dilimiyle servis diyor; tarif vegan tag'li ve YUMURTA alerjeni yok.",
+      "Step 3 sumak kullanıyor, ingredient listesinde yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Yeşil mercimeği 15 dakika diri kalacak şekilde haşlayın ve süzün.", "timerSeconds": 900 },
+        { "stepNumber": 2, "instruction": "Kuru soğanı piyazlık doğrayın, tuzla 1 dakika ovup acılığını azaltın.", "timerSeconds": 60 },
+        { "stepNumber": 3, "instruction": "Koruk suyu, zeytinyağı ve karabiberi küçük kasede karıştırın." },
+        { "stepNumber": 4, "instruction": "Mercimeği ılıkken sosla buluşturun, ekşilik tanelere işlesin diye 5 dakika bekletin.", "timerSeconds": 300 },
+        { "stepNumber": 5, "instruction": "Maydanoz ve soğanı ekleyip piyazı serin servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.evvelcevap.com/koruk-salatasi-tarifi/",
+      "https://www.nefisyemektarifleri.com/yesil-mercimek-salatasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Bakliyat piyazı ve koruk ekşisi uyumlu, ancak yumurta ve sumak mevcut listeyle çelişiyor."
+  },
+  {
+    "slug": "koruklu-pancar-salatasi-manisa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps bal, roka, taze soğan, ceviz veya fındık kullanıyor; ingredient listesinde yok.",
+      "Pancar haşlama 25 dakika, mevcut cookMinutes 18 ve 30-dakika-alti tag'iyle çelişiyor."
+    ],
+    "corrections": {
+      "cookMinutes": 25,
+      "totalMinutes": 45,
+      "tags_remove": ["30-dakika-alti"],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Pancarları 25 dakika haşlayın, soğuyunca kabuklarını soyup küp doğrayın.", "timerSeconds": 1500 },
+        { "stepNumber": 2, "instruction": "Koruk suyunu zeytinyağı ve tuzla 30 saniye çırpın.", "timerSeconds": 30 },
+        { "stepNumber": 3, "instruction": "Pancarları sosla karıştırıp 10 dakika bekletin, ekşi tat içine geçsin.", "timerSeconds": 600 },
+        { "stepNumber": 4, "instruction": "Dereotunu ince kıyıp pancara ekleyin." },
+        { "stepNumber": 5, "instruction": "Salatayı soğuk tabakta servis edin, dereotunu en son serpin." }
+      ]
+    },
+    "sources": [
+      "https://www.evvelcevap.com/koruk-suyu-tarifi/",
+      "https://www.bbcgoodfood.com/recipes/beetroot-salad"
+    ],
+    "confidence": "high",
+    "reason": "Koruklu pancar fikri doğru, fakat adımlar vegan ve ingredient listesiyle uyuşmayan ek malzemeler taşıyor."
+  },
+  {
+    "slug": "koruklu-patlican-ezme-foca-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.evvelcevap.com/koruk-suyu-tarifi/",
+      "https://www.nefisyemektarifleri.com/kozlenmis-patlican-ezmesi/"
+    ],
+    "confidence": "medium",
+    "reason": "Köz patlıcan, sarımsak, zeytinyağı ve koruk ekşisi meze mantığına uyuyor; kritik eksik görünmüyor."
+  },
+  {
+    "slug": "koruklu-peynir-ezmesi-tekirdag-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.evvelcevap.com/koruk-suyu-tarifi/",
+      "https://www.nefisyemektarifleri.com/peynir-ezmesi/"
+    ],
+    "confidence": "medium",
+    "reason": "Peynir ezmesini koruk suyuyla açma fikri bağ sofrası mezesine uygun; süt alerjeni ve süre doğru."
+  },
+  {
+    "slug": "koruklu-zeytinli-bulgur-pilavi-ayvalik-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 zeytinyağı kullanıyor, ingredient listesinde yok.",
+      "Tip koruk ekşisini ateşten sonra eklemeyi öneriyor, ancak step 4 pişirme öncesi ekliyor.",
+      "Servis önerisi tereyağı diyor; vegan tag ve ingredient listesiyle çelişiyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "totalMinutes": 34,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bulguru yıkayıp süzün, zeytinleri çekirdeksiz halde hazır edin." },
+        { "stepNumber": 2, "instruction": "Soğanı zeytinyağında 4 dakika şeffaflaşana kadar çevirin.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Bulguru ekleyip 2 dakika kavurun, taneler yağla kaplansın.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Sıcak su ve tuzu ekleyip kapağı kapatın." },
+        { "stepNumber": 5, "instruction": "Pilavı 12 dakika kısık ateşte pişirin.", "timerSeconds": 720 },
+        { "stepNumber": 6, "instruction": "Koruk ekşisi ve zeytinleri ekleyip 6 dakika dinlendirin, sonra havalandırın.", "timerSeconds": 360 }
+      ],
+      "servingSuggestion": "Üzerine ince dilimlenmiş taze soğan serpip ılık servis edin."
+    },
+    "sources": [
+      "https://yemek.com/tarif/bulgur-pilavi/",
+      "https://www.evvelcevap.com/koruk-suyu-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Bulgur pilavı akışı doğru, ancak yağ eksik ve koruk ekşisinin eklenme zamanı kendi notuyla çelişiyor."
+  },
+  {
+    "slug": "kotleti-rus-ev-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 galeta unu kullanıyor, ingredient listesinde yok.",
+      "Harcın 10 dakika dinlenmesi totalMinutes 28 dakikaya dahil edilmemiş."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Galeta unu", "amount": "0.5", "unit": "su bardağı" }
+      ],
+      "totalMinutes": 38
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/kotleti-51193010",
+      "https://natashaskitchen.com/russian-katleti-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Sütlü ekmekli Rus köftesi doğru, fakat kaplama malzemesi ve dinlenme süresi listede ve toplamda eksik."
+  },
+  {
+    "slug": "kottbullar",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps soğan, tereyağı, un ve et suyu kullanıyor; ingredient listesinde yok.",
+      "Köftelerin 10 dakika dinlenmesi totalMinutes 50 dakikaya dahil edilmemiş."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Tereyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Un", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Et suyu", "amount": "1", "unit": "su bardağı" }
+      ],
+      "totalMinutes": 60
+    },
+    "sources": [
+      "https://www.newsweden.org/resources/recipes/swedish-meatballs-kottbullar/",
+      "https://swedishfood.com/swedish-food-recipes-main-courses/192-meatballs"
+    ],
+    "confidence": "high",
+    "reason": "Köfte, sütlü ekmek kırıntısı ve kremalı sos İsveç köftesine uygun, fakat sos malzemeleri listede eksik."
+  },
+  {
+    "slug": "kourabiethes",
+    "verdict": "CORRECTION",
+    "issues": [
+      "TipNote pişmiş kurabiye için ocakta dinlendirme diyor, bağlam dışı.",
+      "15 dakika soğutma adımı totalMinutes 47 dakikaya dahil edilmemiş."
+    ],
+    "corrections": {
+      "totalMinutes": 62,
+      "tipNote": "Hamuru 15 dakika soğutmak kurabiyelerin fırında yayılmasını azaltır."
+    },
+    "sources": [
+      "https://www.greekflavours.com/en-us/blogs/recipes/kourabiedes-the-delicious-christmas-almond-cookies",
+      "https://www.themediterraneandish.com/greek-almond-cookies-kourabiedes/"
+    ],
+    "confidence": "high",
+    "reason": "Bademli tereyağlı kurabiye doğru, ancak tip notu tarif dışı ve soğutma süresi toplam süreye eklenmeli."
+  },
+  {
+    "slug": "koz-biberli-barbunya-ezmesi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/barbunya-ezmesi/",
+      "https://www.acedarspoon.com/white-bean-sun-dried-tomato-dip/"
+    ],
+    "confidence": "medium",
+    "reason": "Haşlanmış bakliyat, köz biber, sarımsak ve zeytinyağıyla ezme kurgusu tutarlı; süre ve tag uyumlu."
+  },
+  {
+    "slug": "koz-karnabahar-salatasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps yoğurt, tahin, nar ekşisi, maydanoz ve susam kullanıyor; ingredient listesinde yok.",
+      "Vegan tag varken yoğurtlu sos step içinde geçiyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Karnabaharı küçük çiçeklere ayırın, kalın sapları ince dilimleyin." },
+        { "stepNumber": 2, "instruction": "Karnabaharı zeytinyağı, kimyon ve tuzla karıştırıp 200°C fırında 22 dakika kızartın.", "timerSeconds": 1320 },
+        { "stepNumber": 3, "instruction": "Limon suyunu sıcak karnabaharın üstüne gezdirin." },
+        { "stepNumber": 4, "instruction": "Karnabaharı 5 dakika ılıtın, ekşi tat parçaların içine geçsin.", "timerSeconds": 300 },
+        { "stepNumber": 5, "instruction": "Salatayı ılık ya da oda sıcaklığında servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/roasted-cauliflower-salad",
+      "https://www.themediterraneandish.com/roasted-cauliflower/"
+    ],
+    "confidence": "high",
+    "reason": "Köz karnabahar ve limonlu kimyonlu salata doğru, fakat mevcut adımlar vegan ve ingredient listesine uymuyor."
+  },
+  {
+    "slug": "koz-misirli-esquites-kase-meksika-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps yoğurt, kişniş ve taze soğan kullanıyor; ingredient listesinde yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Mısır tanelerini tavaya alın, yüksek ateşte 6 dakika yer yer kızarana kadar kavurun.", "timerSeconds": 360 },
+        { "stepNumber": 2, "instruction": "Köz tadı çıkan mısırı 5 dakika ılıtın, sıcak kalırsa mayonezli sos ayrılır.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Mayonez, lime suyu ve acı toz biberi karıştırın." },
+        { "stepNumber": 4, "instruction": "Mısırı sosla birleştirin ve beyaz peyniri üstüne kırın." },
+        { "stepNumber": 5, "instruction": "Lime dilimi ve toz biberle kase içinde ılık servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.seriouseats.com/esquites-mexican-street-corn-salad-recipe",
+      "https://www.isabeleats.com/esquites/"
+    ],
+    "confidence": "high",
+    "reason": "Mısır, lime, peynir ve mayonezli esquites doğru, fakat bazı adım malzemeleri mevcut listeye sızmış."
+  },
+  {
+    "slug": "koz-patlicanli-humus",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.themediterraneandish.com/baba-ganoush-recipe/",
+      "https://www.loveandlemons.com/hummus-recipe/"
+    ],
+    "confidence": "medium",
+    "reason": "Nohut, tahin, limon ve köz patlıcan birleşimi humus ile köz patlıcan ezmesi arasında tutarlı bir dip."
+  },
+  {
+    "slug": "koz-patlicanli-kuzu-kapama-urfa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps soğan ve sıcak su kullanıyor, ingredient listesinde yok.",
+      "Adımlardaki mühürleme, kapalı pişirme ve dinlendirme süreleri totalMinutes 44 dakikayı aşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sıcak su", "amount": "0.5", "unit": "su bardağı" }
+      ],
+      "cookMinutes": 45,
+      "totalMinutes": 78
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kuzu-kapama-tarifi/",
+      "https://yemek.com/tarif/patlicanli-kuzu-kapama/"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu ve köz patlıcan eşleşmesi doğru, fakat soğan ve su eksik, ayrıca toplam süre mevcut adımları karşılamıyor."
+  },
+  {
+    "slug": "koz-patlicanli-mercimek-ezmesi-orta-dogu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Mercimek haşlama 20-25 dakika sürüyor, cookMinutes 18 kısa kalıyor.",
+      "Son step tarif adını tekrar eden boilerplate ifade içeriyor."
+    ],
+    "corrections": {
+      "cookMinutes": 25,
+      "totalMinutes": 49,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Yeşil mercimeği yumuşayana kadar 20-25 dakika haşlayın.", "timerSeconds": 1500 },
+        { "stepNumber": 2, "instruction": "Patlıcanları közleyip kabuklarını dikkatlice soyun." },
+        { "stepNumber": 3, "instruction": "Mercimek, patlıcan ve sarımsağı robotta çekin." },
+        { "stepNumber": 4, "instruction": "Kimyon ve zeytinyağı ekleyip pürüzsüz karıştırın." },
+        { "stepNumber": 5, "instruction": "Ezmeyi 10 dakika dinlendirip soğuk servis edin.", "timerSeconds": 600 }
+      ]
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/mediterranean-spicy-spinach-lentil-dip/",
+      "https://www.nefisyemektarifleri.com/kozlenmis-patlican-ezmesi/"
+    ],
+    "confidence": "medium",
+    "reason": "Mercimekli köz patlıcan dip mantıklı, fakat süre ve son adımın şablon dili düzeltilmeli."
+  },
+  {
+    "slug": "krakow-elmali-twarog-krebi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.polonist.com/nalesniki-polish-crepes/",
+      "https://www.polishyourkitchen.com/polish-sweet-cheese-crepes-nalesniki-z-serem/"
+    ],
+    "confidence": "high",
+    "reason": "Naleśniki tarzı krep, twarog dolgusu ve tatlı elma kullanımı Polonya kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "krakow-lahanali-mantar-pierogi-tava",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.theguardian.com/food/2024/feb/07/how-to-make-perfect-pierogi-recipe-felicity-cloake",
+      "https://www.polonist.com/sauerkraut-mushroom-pierogi/"
+    ],
+    "confidence": "high",
+    "reason": "Pierogi, lahana, mantar ve tereyağında tavada çevirme akışı Polonya pierogi kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "krakow-mantarli-karabugday-kaszotto",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.polonist.com/kaszotto-polish-buckwheat-risotto/",
+      "https://www.everyday-delicious.com/buckwheat-kasha-with-mushrooms/"
+    ],
+    "confidence": "high",
+    "reason": "Karabuğday, mantar, soğan, sebze suyu ve ekşi krema kurgusu kaszotto tarzıyla uyumlu görünüyor."
+  },
+  {
+    "slug": "krakow-peynirli-pierogi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.theguardian.com/food/2024/feb/07/how-to-make-perfect-pierogi-recipe-felicity-cloake",
+      "https://www.polonist.com/pierogi-ruskie/"
+    ],
+    "confidence": "high",
+    "reason": "Patatesli peynir dolgusu, haşlama ve tereyağında çevirme akışı klasik pierogi ruskie kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "kremali-mantar-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.food.com/recipe/creamy-mushroom-soup-337573",
+      "https://www.bonappetit.com/story/homemade-cream-of-mushroom-soup"
+    ],
+    "confidence": "high",
+    "reason": "Mantar, un, tereyağı, sebze suyu ve krema kullanımı klasik kremalı mantar çorbasına uygun."
+  },
+  {
+    "slug": "kroppkakor",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Kroppkakor kaynaklarında hamurda yumurta yaygın; mevcut tarifte YUMURTA alerjeni yok.",
+      "Geleneksel iç genelde domuz eti veya mantardır; dana eti İsveç köftesiyle karışmış görünüyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yumurta", "amount": "1", "unit": "adet" },
+        { "name": "Soğan", "amount": "1", "unit": "adet" }
+      ],
+      "ingredients_amount_change": [
+        { "name": "Dana eti", "newAmount": "250", "newUnit": "gr" }
+      ],
+      "allergens_add": ["YUMURTA"]
+    },
+    "sources": [
+      "https://swedishfood.com/swedish-food-recipes-main-courses/541-potato-dumplings",
+      "https://en.wikipedia.org/wiki/Kroppkaka"
+    ],
+    "confidence": "medium",
+    "reason": "Patates hamurlu dolma köfte doğru, fakat hamurdaki yumurta ve iç harç aroması kaynaklara göre eksik kalmış."
+  },
+  {
+    "slug": "kuba-siyah-fasulyeli-muz-kasesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 plantainleri tavada kızartıyor, ingredient listesinde yağ yok.",
+      "Step 3 az su kullanıyor, ingredient listesinde su yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Su", "amount": "0.25", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.sweetandsorrel.com/cuban-black-bean-grain-bowl/",
+      "https://www.bonappetit.com/recipe/cuban-style-black-beans"
+    ],
+    "confidence": "high",
+    "reason": "Siyah fasulye, plantain, pirinç ve lime Küba esintili kaseye uyuyor; pişirme için yağ ve su eksik."
+  },
+  {
+    "slug": "kulak-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/yogurtlu-nohutlu-manti-corbasi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/manti-corbasi-yogurtlu-nohutlu/12333"
+    ],
+    "confidence": "medium",
+    "reason": "Mantı, nohut, yoğurtlu terbiye ve naneli tereyağı akışı yoğurtlu mantı çorbası kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "kulebyaka",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.foodandwine.com/cooking-techniques/how-to-make-salmon-coulibiac-step-by-step",
+      "https://www.epicurious.com/recipes/food/views/salmon-and-rice-wrapped-in-pastry-with-dill-sauce-1248"
+    ],
+    "confidence": "high",
+    "reason": "Somon, pirinç, mantar ve mayalı hamurla kapalı balık böreği kurgusu kulebyaka kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "kunafa-arap-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.1worldcafe.com/2019/10/04/cheese-kunafa/",
+      "https://www.themediterraneandish.com/knafeh-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Kadayıf, peynir, tereyağı, şerbet ve fıstık düzeni peynirli kunafa kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "kunefe",
+    "verdict": "CORRECTION",
+    "issues": [
+      "TipNote peyniri bir gece suda bekletmeyi söylüyor; bu, toplam 35 dakika algısıyla çelişiyor."
+    ],
+    "corrections": {
+      "tipNote": "Tuzlu peynir kullanıyorsanız 30 dakika suda bekletip süzün."
+    },
+    "sources": [
+      "https://yemek.com/tarif/kunefe/",
+      "https://www.nefisyemektarifleri.com/kunefe-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Künefe yapısı doğru, fakat bir gece bekletme önerisi kısa toplam süreyi yanıltıcı gösteriyor."
+  },
+  {
+    "slug": "kung-pao-tavuk",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps nişasta, sirke, şeker, su, sarımsak ve zencefil kullanıyor; ingredient listesinde yok.",
+      "TipNote aynı öneriyi iki kez tekrar ediyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Mısır nişastası", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Pirinç sirkesi", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Şeker", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Su", "amount": "0.25", "unit": "su bardağı" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Taze zencefil", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "tipNote": "Tavuğu küçük küp kesin; wokta yüksek ateşte kısa sürede pişer."
+    },
+    "sources": [
+      "https://www.seriouseats.com/gong-bao-ji-ding-sichuan-kung-pow-chicken-recipe",
+      "https://thewoksoflife.com/kung-pao-chicken/"
+    ],
+    "confidence": "high",
+    "reason": "Kung Pao profili doğru, fakat sos ve marine malzemelerinin yarısı listede eksik, tip notu da tekrar ediyor."
+  },
+  {
+    "slug": "kursun-asi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 nohut ve havucu pişiriyor, ancak su veya et suyu ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "5", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/kursun-asi-corbasi/4605",
+      "https://www.nefisyemektarifleri.com/kursun-asi-corbasi/"
+    ],
+    "confidence": "high",
+    "reason": "Nohutlu ve köfteli Kurşun Aşı mantığı kaynaklarla uyumlu, fakat tencere suyu listede eksik."
+  },
+  {
+    "slug": "kuru-bakla-yemegi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 bir gece ıslatma içeriyor, ancak totalMinutes 70 dakika kalmış.",
+      "Steps soğan, sıcak su ve tuz kullanıyor; ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sıcak su", "amount": "4", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 550
+    },
+    "sources": [
+      "https://www.evvelcevap.com/bakla-ezmesi-tarifi/",
+      "https://www.etyemekleri.gen.tr/etli-kuru-bakla-yemegi.html"
+    ],
+    "confidence": "high",
+    "reason": "Kuru baklada gece ıslatma doğru, fakat bekleme süresi ve tencere temel malzemeleri kayıtta eksik."
+  },
+  {
+    "slug": "kuru-biberli-lorlu-bazlama-sirnak-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps tarif adını tekrar eden boilerplate cümleler içeriyor.",
+      "Bekletme, ısıtma ve dinlendirme süreleri totalMinutes 20 dakikayı hafif aşıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 24,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kuru biberi 5 dakika sıcak suda bekletip süzün.", "timerSeconds": 300 },
+        { "stepNumber": 2, "instruction": "Biberi ince doğrayıp lor peyniri ve zeytinyağıyla karıştırın." },
+        { "stepNumber": 3, "instruction": "Bazlamaları yatay kesip lorlu harcı içlerine paylaştırın." },
+        { "stepNumber": 4, "instruction": "Bazlamaları tavada 4 dakika iki yüzü ısınana kadar çevirin.", "timerSeconds": 240 },
+        { "stepNumber": 5, "instruction": "Dilimlemeden önce 3 dakika dinlendirin, iç harç ekmeğe yerleşsin.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/bazlama-tostu/",
+      "https://yemek.com/tarif/bazlama/"
+    ],
+    "confidence": "medium",
+    "reason": "Bazlama, lor ve kuru biber birleşimi makul, fakat adımlar şablon dil taşıyor ve süre biraz kısa."
+  },
+  {
+    "slug": "kuru-biberli-tavuk-tava-mardin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 tuz ve karabiber kullanıyor, ingredient listesinde yok.",
+      "Kuru biber bekletme ve pişirme adımları totalMinutes 32 dakikayı aşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 44
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/tavuk-tava-tarifi/",
+      "https://yemek.com/tarif/tavuk-tava/"
+    ],
+    "confidence": "medium",
+    "reason": "Kuru biberli tavuk tava akışı tutarlı, ancak baharatlar eksik ve süre toplamı mevcut alanı geçiyor."
+  },
+  {
+    "slug": "kuru-borulce-salatasi-aydin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ingredient haşlanmış kuru börülce diyor, ancak steps kuru börülceyi 35 dakika haşlatıyor.",
+      "Steps sumak, nar ekşisi, karabiber ve ceviz kullanıyor; ingredient listesinde yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Haşlanmış kuru börülceyi süzün ve 10 dakika oda sıcaklığında bekletin.", "timerSeconds": 600 },
+        { "stepNumber": 2, "instruction": "Kuru soğanı ince piyazlık doğrayıp limon suyuyla 1 dakika ovun.", "timerSeconds": 60 },
+        { "stepNumber": 3, "instruction": "Limon suyu, zeytinyağı ve tuzu küçük kasede karıştırın." },
+        { "stepNumber": 4, "instruction": "Börülce, soğan ve maydanozu sosla birleştirin." },
+        { "stepNumber": 5, "instruction": "Salatayı soğuk ya da oda sıcaklığında servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.evvelcevap.com/kuru-borulce-piyazi-tarifi/",
+      "https://www.nefisyemektarifleri.com/kuru-borulce-salatasi/"
+    ],
+    "confidence": "high",
+    "reason": "Börülce piyazı fikri doğru, fakat pre-haşlanmış ingredient ile yeniden haşlatan adımlar çelişiyor."
+  },
+  {
+    "slug": "kuru-borulce-yemegi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 bir gece ıslatma içeriyor, ancak totalMinutes 60 dakika kalmış."
+    ],
+    "corrections": {
+      "totalMinutes": 550
+    },
+    "sources": [
+      "https://www.evvelcevap.com/kuru-borulce-piyazi-tarifi/",
+      "https://www.nefisyemektarifleri.com/kuru-borulce-yemegi/"
+    ],
+    "confidence": "high",
+    "reason": "Kuru börülce yemeği malzemeleri ve pişirme akışı makul, fakat gece ıslatma toplam süreye eklenmemiş."
+  },
+  {
+    "slug": "kuru-dolma",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 baharat, zeytinyağı ve yeşillik kullanıyor; ingredient listesinde yok.",
+      "Step 5 sıcak su kullanıyor, ingredient listesinde yok.",
+      "Vegan tag varken servingSuggestion sarımsaklı yoğurt öneriyor.",
+      "Haşlama, pişirme ve dinlendirme süreleri totalMinutes 105 dakikayı aşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Kuru nane", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" },
+        { "name": "Sıcak su", "amount": "3", "unit": "su bardağı" }
+      ],
+      "totalMinutes": 125,
+      "servingSuggestion": "Limon dilimi ve nar ekşili sosla ılık servis edin."
+    },
+    "sources": [
+      "https://www.evvelcevap.com/kuru-patlican-biber-dolmasi-tarifi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/eksili-kuru-dolma/8060"
+    ],
+    "confidence": "high",
+    "reason": "Kuru patlıcan, kuru biber, pirinç ve ekşi sos doğru, fakat liste eksikleri ve vegan servis çelişkisi var."
+  },
+  {
+    "slug": "kuru-domatesli-beyaz-fasulye-dip",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.pauladeen.com/recipe/white-bean-and-sun-dried-tomato-dip/",
+      "https://www.acedarspoon.com/white-bean-sun-dried-tomato-dip/"
+    ],
+    "confidence": "high",
+    "reason": "Beyaz fasulye, kuru domates, limon ve zeytinyağıyla hazırlanan dip iki kaynakla uyumlu; kritik eksik yok."
+  }
+]

@@ -1,0 +1,955 @@
+[
+  {
+    "slug": "hatay-tepsi-kebabi-antakya",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.hataydanal.com/blog/tepsi-kebabi",
+      "https://www.asigazetesi.com/cografi-isaretli-lezzet-tepsi-kebabi"
+    ],
+    "confidence": "high",
+    "reason": "Hatay tepsi kebabı ince yayılmış kıyma, biber, domates, sarımsak ve fırın pişirme yapısıyla kaynaklarla uyumlu görünüyor."
+  },
+  {
+    "slug": "hatay-zahterli-nohut-durumu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "description: nohut dürümü kaynaklarda Gaziantep ve Güneydoğu sokak lezzeti olarak geçiyor; Hatay usulü iddiası doğrulanamadı"
+    ],
+    "corrections": {
+      "description": "Zahterli nohut dürümü, ılık ezilmiş nohudu zeytinyağı, limon ve zahterle lavaşa sarılan hızlı bir öğüne çevirir."
+    },
+    "sources": [
+      "https://yemek.com/tarif/nohut-durumu/",
+      "https://www.youtube.com/watch?v=VB1AnhWwHUQ"
+    ],
+    "confidence": "medium",
+    "reason": "Tarif omurgası nohut dürümüyle uyumlu, ancak Hatay atfı kaynaklarla desteklenmediği için manuel review gerekli."
+  },
+  {
+    "slug": "hatay-zahterli-tepsi-koftesi",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "description: Hatay tepsi oruğu kaynaklarda katmanlı bulgur köftesi olarak geçiyor; mevcut tarif tek kat kıymalı köfte gibi yazılmış",
+      "ingredients: Hatay tepsi oruğu için tipik patatesli dış hamur, iç harç ve ceviz yapısı yok"
+    ],
+    "corrections": {
+      "description": "Tepsi köftesi, kıyma ve ince bulgurun salça ve soğanla yoğrulup fırında pişirildiği doyurucu bir yemektir."
+    },
+    "sources": [
+      "https://yemek.com/tarif/tepsi-orugu/",
+      "https://www.tenceretv.com/yoresel-yemekler/tepsi-orugu-hatay-tarifi-21130"
+    ],
+    "confidence": "medium",
+    "reason": "Mevcut kayıt Hatay tepsi oruğu kaynaklarıyla birebir örtüşmüyor; yöre ve tarif adı için insan kontrolü gerekir."
+  },
+  {
+    "slug": "hatay-zirh-kagit-kebabi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.hataytso.org.tr/tr/genel-sayfa/cografi-tescilli-urunler/antakya-kagit-kebabi-57.html",
+      "https://yemek.com/tarif/kagit-kebabi/"
+    ],
+    "confidence": "high",
+    "reason": "Dana kıyma, biber, domates, sarımsak, maydanoz ve yağlı kağıtta fırınlama yapısı Antakya kağıt kebabı kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "havana-ananasli-naneli-mojito-mocktail",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/pineapple-mojito",
+      "https://www.liquor.com/recipes/mojito/"
+    ],
+    "confidence": "high",
+    "reason": "Nane, lime, soda ve ananaslı alkolsüz kurgu mojito tekniğine uygun; alerjen, süre ve makro tarafında belirgin çelişki yok."
+  },
+  {
+    "slug": "havana-cuban-sandwich",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: klasik Cuban sandwich domuz jambonu kullanır; mevcut kayıtta mojo domuz eti yanında dana jambon yazıyor"
+    ],
+    "corrections": {
+      "ingredients_remove": [
+        "Dana jambon"
+      ],
+      "ingredients_add": [
+        {
+          "name": "Domuz jambonu",
+          "amount": "200",
+          "unit": "gr"
+        }
+      ]
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Cuban_sandwich",
+      "https://www.seriouseats.com/cuban-sandwich-history"
+    ],
+    "confidence": "high",
+    "reason": "Ekmek, rosto domuz, Swiss peyniri, turşu ve hardal doğru; jambon türü klasik kaynaklarla uyumsuz."
+  },
+  {
+    "slug": "havana-karidesli-enchilado",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 soteleme söylüyor ama yağ listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.youtube.com/watch?v=IV8U2fcvX3w",
+      "https://asassyspoon.com/camarones-enchilados-cuban-shrimp-creole/"
+    ],
+    "confidence": "medium",
+    "reason": "Karides, domates, biber ve sarımsaklı sos uyumlu; soteleme için eksik yağ miktarı tarif uygulamasını bozuyor."
+  },
+  {
+    "slug": "havana-pilavli-ropa-vieja",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 tavada sebze soteleme söylüyor ama yağ listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.saveur.com/article/Recipes/Cuban-Style-Ropa-Vieja/",
+      "https://www.bonappetit.com/recipe/ropa-vieja"
+    ],
+    "confidence": "high",
+    "reason": "Uzun pişmiş didiklenmiş dana, biberli domates sosu ve pirinç servisi doğru; sebze soteleme yağı eksik kalmış."
+  },
+  {
+    "slug": "havana-ropa-vieja-dana",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 yağda çevirme söylüyor ama tarifte yağ miktarı yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.saveur.com/article/Recipes/Shredded-Beef/",
+      "https://www.punchfork.com/recipe/Ropa-Vieja-Serious-Eats"
+    ],
+    "confidence": "high",
+    "reason": "Ropa vieja omurgası, uzun haşlama ve domatesli biberli sosla uyumlu; sadece yağ miktarı step ile eşleşmiyor."
+  },
+  {
+    "slug": "havuc-zencefil-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/carrot-ginger-soup",
+      "https://www.bbcgoodfoodme.com/recipes/carrot-ginger-soup/"
+    ],
+    "confidence": "high",
+    "reason": "Havuç, zencefil, soğan, sebze suyu ve blender akışı kaynaklarla uyumlu; süre ve makro değerleri de makul aralıkta."
+  },
+  {
+    "slug": "havuclu-kirmizi-mercimek-corbasi-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 sebzeleri çevirme söylüyor ama yağ listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/premium/carrot-red-lentil-cumin-pul-biber-soup",
+      "https://www.allrecipes.com/recipe/160051/lentil-carrot-soup/"
+    ],
+    "confidence": "medium",
+    "reason": "Havuç ve kırmızı mercimek çorbası İngiliz kaynaklarında makul; sebze kavurma adımı için yağ eksik."
+  },
+  {
+    "slug": "haydari",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/haydari/",
+      "https://www.nefisyemektarifleri.com/haydari-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Süzme yoğurt, beyaz peynir, sarımsak, nane ve zeytinyağı içeriği klasik haydari kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "hedgehog-slice",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 5 bir saat soğutma söylüyor ama totalMinutes 20, pasif bekleme toplam süreye dahil edilmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 80
+    },
+    "sources": [
+      "https://www.taste.com.au/recipes/hedgehog-slice-2/1d9a30b7-98eb-44fd-a100-655644baeaee",
+      "https://www.womensweeklyfood.com.au/recipe/baking/hedgehog-slice-9675/"
+    ],
+    "confidence": "high",
+    "reason": "No-bake bisküvili çikolatalı yapı doğru; soğutma süresi timeline içinde görünmediği için toplam süre hatalı."
+  },
+  {
+    "slug": "helise-malatya-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "description: kaynaklar heliseyi Bitlis ve çevre mutfaklarda dövme buğdaylı uzun pişen yemek olarak veriyor; Malatya iddiası doğrulanamadı",
+      "cookMinutes: buğday ve tavuk için 40 dakika çok kısa; kaynaklarda uzun pişirme var"
+    ],
+    "corrections": {
+      "description": "Helise, dövme buğday ile tavuk ya da etin uzun pişirilip ezilmesiyle hazırlanan tok bir Anadolu yemeğidir.",
+      "cookMinutes": 90,
+      "totalMinutes": 102,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Buğdayı yıkayıp tencereye alın, suyu ekleyin."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Buğdayı kısık ateşte 45 dakika yumuşayana kadar pişirin.",
+          "timerSeconds": 2700
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Tavuk parçalarını tencereye ekleyin."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Tavuk ve buğdayı 40 dakika daha pişirin, buğday tamamen açılsın.",
+          "timerSeconds": 2400
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Yemeği tahta kaşıkla ezerek liflendirin, tavuk ve buğday bütünleşsin."
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Tereyağını 2 dakika eritip helisenin üstüne gezdirin.",
+          "timerSeconds": 120
+        }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/bitlis/neyenir/helise",
+      "https://www.nefisyemektarifleri.com/helise-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Tarif tekniği heliseye yakın, fakat yöre atfı ve pişirme süresi kaynaklara göre güven vermiyor."
+  },
+  {
+    "slug": "helle-tatlisi-tokat-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "type: kaynaklarda Tokat helle tatlı değil çorba olarak geçiyor; mevcut kayıt unlu şerbetli tatlı kurgusu yapmış",
+      "description: Tokat helle tatlısı iddiası güvenilir kaynaklarla doğrulanamadı"
+    ],
+    "corrections": {
+      "description": "Tokat helle, un ve pirinçle yapılan geleneksel bir çorbadır; bu kayıt tatlı olarak kurgulanmış görünüyor."
+    },
+    "sources": [
+      "https://tokat.gov.tr/yoresel-yemeklerimiz",
+      "https://www.nefisyemektarifleri.com/tokat-usulu-yesil-mercimek-corbasi-helle/"
+    ],
+    "confidence": "high",
+    "reason": "Resmi Tokat listesi ve tarif kaynakları helleyi çorba olarak veriyor; type değişimi manuel ele alınmalı."
+  },
+  {
+    "slug": "hellimli-bazlama-pizza-isparta-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/bazlama-pizza/",
+      "https://www.bbcgoodfood.com/recipes/collection/halloumi-recipes"
+    ],
+    "confidence": "medium",
+    "reason": "Bazlama tabanlı hızlı pizza ve hellim kullanımı teknik olarak tutarlı; Isparta vurgusu zayıf ama yanıltıcı ana hata yok."
+  },
+  {
+    "slug": "hellimli-salata",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 4 limon suyu, kekik ve karabiber söylüyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Limon suyu",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Kekik",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Karabiber",
+          "amount": "0.25",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/halloumi-pea-salad",
+      "https://www.foodandwine.com/halloumi-recipes-8661665"
+    ],
+    "confidence": "high",
+    "reason": "Izgara hellimli salata yapısı doğru; sos adımında geçen üç malzeme ingredient listesinde eksik."
+  },
+  {
+    "slug": "hibiscus-iced-tea",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/iced-hibiscus-tea",
+      "https://www.simplyrecipes.com/hibiscus-tea-recipe-7560628"
+    ],
+    "confidence": "high",
+    "reason": "Hibiskus, su, tatlandırıcı ve narenciye ile soğuk servis edilen yapı kaynaklarla uyumlu; alerjen ve makro sorunu yok."
+  },
+  {
+    "slug": "hibiscus-paloma-meksika-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "tags: tekila içerdiği halde alkollu tag'i yok",
+      "steps: son adımda kremsi doku deniyor; Paloma kokteylde kremsi yapı yok"
+    ],
+    "corrections": {
+      "tags_add": [
+        "alkollu"
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Servis bardağını 5 dakika soğutun, kokteyl daha diri kalsın.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Bardağı taze buzla doldurun."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Tekila, hibiskus şurubu ve greyfurt suyunu ekleyip 8 saniye karıştırın.",
+          "timerSeconds": 8
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Sodayı ekleyin ve kokteyli bekletmeden greyfurt dilimiyle servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/ba-syn-paloma",
+      "https://www.bonappetit.com/recipe/siesta"
+    ],
+    "confidence": "high",
+    "reason": "Tekila ve greyfurt Paloma çizgisine uygun; alkollü tag ve yanlış kremsi doku ifadesi düzeltilmeli."
+  },
+  {
+    "slug": "hibiskus-serbeti",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 3 bir saat soğutma söylüyor ama totalMinutes 20"
+    ],
+    "corrections": {
+      "totalMinutes": 80
+    },
+    "sources": [
+      "https://yemek.com/tarif/hibiskus-serbeti-4/",
+      "https://www.youtube.com/watch?v=kkfUd67hO7g"
+    ],
+    "confidence": "high",
+    "reason": "Hibiskus, limon ve baharatlı şerbet omurgası doğru; açık soğutma süresi timeline içinde eksik."
+  },
+  {
+    "slug": "hindistan-cevizli-balkabagi-corbasi-tay-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/thai-pumpkin-soup",
+      "https://www.food.com/recipe/thai-coconut-pumpkin-soup-39443"
+    ],
+    "confidence": "high",
+    "reason": "Balkabağı, zencefil, hindistancevizi sütü, sebze suyu ve lime kullanımı Tay esintili kabak çorbasıyla uyumlu."
+  },
+  {
+    "slug": "hindistancevizli-flan-kup-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cookMinutes: karamel ve 30 dakika benmari pişirme toplamı 12 dakikaya sığmıyor",
+      "steps: step 1 hindistancevizi sütü diyor ama ingredient listesinde sadece süt var"
+    ],
+    "corrections": {
+      "cookMinutes": 35,
+      "totalMinutes": 165,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Yumurtaları sütle köpürtmeden çırpın."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Şekeri 5 dakika karamel rengi alana kadar pişirip küçük kaselere paylaştırın.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Sütlü karışımı süzgeçten geçirip karamel üstüne dökün."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Kaseleri sıcak su dolu tepsiye oturtun."
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Flanları 170°C fırında 30 dakika benmaride pişirin.",
+          "timerSeconds": 1800
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "En az 2 saat soğutup ters çevirin ve hindistanceviziyle servis edin.",
+          "timerSeconds": 7200
+        }
+      ]
+    },
+    "sources": [
+      "https://en.cibercuba.com/cocina/recetas/flan-de-coco",
+      "https://cuban.recipes/coconut-flan/"
+    ],
+    "confidence": "high",
+    "reason": "Flan de coco tekniği doğru yöne bakıyor; pişirme ve soğutma süreleri mevcut toplam süreyi aşıyor."
+  },
+  {
+    "slug": "hindistancevizli-havuc-corbasi-vietnam-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/carrot-ginger-soup",
+      "https://www.countrygrocer.com/recipe/lemongrass-coconut-chicken-soup/"
+    ],
+    "confidence": "medium",
+    "reason": "Havuç, zencefil ve hindistancevizi sütlü çorba tekniği tutarlı; Vietnam iddiası güçlü değil ama tarif yanıltıcı görünmüyor."
+  },
+  {
+    "slug": "hindistancevizli-lamington-kup-avustralya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.taste.com.au/recipes/lamingtons/06e2fc9e-054f-4f4c-b6a2-b1fef3e45d6d",
+      "https://www.epicurious.com/recipes/food/views/lamingtons"
+    ],
+    "confidence": "high",
+    "reason": "Kek, çikolata ve hindistancevizi birlikteliği lamington temelini koruyor; kup formu uyarlama olsa da ana içerik doğru."
+  },
+  {
+    "slug": "hindistancevizli-pirinc-tatlisi-kuba-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.food.com/recipe/coconut-rice-pudding-arroz-con-coco-539083",
+      "https://www.foodservicedirector.com/food-beverage-trends/arroz-con-coco"
+    ],
+    "confidence": "high",
+    "reason": "Pirinç, hindistancevizi sütü, tarçın ve şekerle hazırlanan tatlı Küba tarzı arroz con coco kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "hindistancevizli-tavuk-corbasi-vietnam-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.countrygrocer.com/recipe/lemongrass-coconut-chicken-soup/",
+      "https://www.theguardian.com/food/article/2024/may/27/chicken-soup-with-lime-leaf-lemongrass-and-coconut-recipe-by-claire-thomson"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk, limon otu, mantar ve hindistancevizi sütlü çorba Güneydoğu Asya çizgisine uyuyor; süreler makul."
+  },
+  {
+    "slug": "hindistancevizli-tavuklu-pirinc-tava-brezilya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 tavada soteleme söylüyor ama yağ listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Sıvı yağ",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.tudogostoso.com.br/receita/4271-galinhada.html",
+      "https://www.food.com/recipe/brazilian-chicken-and-rice-galinhada-472547"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuklu pirinç tavası Brezilya galinhada çizgisine yakın; sote adımı için yağ miktarı eksik."
+  },
+  {
+    "slug": "hindistancevizli-yumurtali-tost-tayland-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/coconut-french-toast",
+      "https://www.food.com/recipe/coconut-french-toast-109437"
+    ],
+    "confidence": "medium",
+    "reason": "Yumurtalı ekmek ve hindistancevizi uyarlaması teknik olarak tutarlı; Tayland vurgusu güçlü değil ama içerik hatası yok."
+  },
+  {
+    "slug": "hingel-kars-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: hamur dinlendirme 20 dakika pasif bekleme olarak var ama totalMinutes sadece prep+cook toplamı"
+    ],
+    "corrections": {
+      "totalMinutes": 70
+    },
+    "sources": [
+      "https://www.evvelcevap.com/hingel-kars-usulu-tarifi/",
+      "https://www.ardahanvakfi.org/hingel/"
+    ],
+    "confidence": "high",
+    "reason": "Hıngel hamuru, patates içi, haşlama ve yoğurtlu servis doğru; dinlenme süresi toplam sürede görünmüyor."
+  },
+  {
+    "slug": "hiyayakko",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.justonecookbook.com/japanese-tofu-cold-tofu-hiyayakko/",
+      "https://www.punchfork.com/recipe/Hiyayakko-Japanese-Cold-Tofu-Just-One-Cookbook"
+    ],
+    "confidence": "high",
+    "reason": "İpek tofu, soya sosu, taze soğan ve zencefil ile soğuk servis hiyayakko kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "hobak-bokkeum-kore-ev-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.maangchi.com/recipe/aehobak-saeu-bokkeum",
+      "https://www.koreanbapsang.com/hobak-bokkeum-stir-fried-zucchini/"
+    ],
+    "confidence": "high",
+    "reason": "Kabak, sarımsak, susam yağı ve kısa soteleme Kore kabak bokkeum mantığıyla uyumlu; alerjen doğru."
+  },
+  {
+    "slug": "hobakjuk",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: steps suyla haşlama söylüyor ama su ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Su",
+          "amount": "3",
+          "unit": "su bardağı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.maangchi.com/recipe/hobakjuk",
+      "https://www.koreanbapsang.com/hobakjuk-korean-pumpkin-porridge/"
+    ],
+    "confidence": "high",
+    "reason": "Balkabağı ve pirinç unu ile koyulaştırma doğru; haşlama suyu listede olmadığı için uygulama eksik kalıyor."
+  },
+  {
+    "slug": "hollandez-sos",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/basic-hollandaise",
+      "https://www.bbcgoodfoodme.com/recipes/hollandaise-sauce/"
+    ],
+    "confidence": "high",
+    "reason": "Yumurta sarısı, tereyağı, limon ve benmari tekniği klasik hollandaise kaynaklarıyla uyumlu; makro da yağ ağırlıklı."
+  },
+  {
+    "slug": "honey-kefir-pancar-kup-rus-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.thespruceeats.com/russian-beet-salad-with-sour-cream-1137304",
+      "https://www.allrecipes.com/recipe/222728/lithuanian-saltibarsciai-cold-beet-soup/"
+    ],
+    "confidence": "low",
+    "reason": "Pancar ve fermente süt ürünü Rus çevresiyle makul bağ kuruyor; tatlı kup yorumu modern ama net veri hatası taşımıyor."
+  },
+  {
+    "slug": "hong-kong-egg-tart",
+    "verdict": "PASS",
+    "sources": [
+      "https://thewoksoflife.com/2014/07/hong-kong-egg-tarts/",
+      "https://www.food.com/recipe/hong-kong-style-egg-tarts-322942"
+    ],
+    "confidence": "high",
+    "reason": "Tereyağlı tart kabuğu, yumurtalı sütlü dolgu, süzme ve iki aşamalı fırınlama Hong Kong egg tart kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "hoppin-john",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 sıcak su ve tuz söylüyor ama ikisi de ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Sıcak su",
+          "amount": "3",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.75",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.goodhousekeeping.com/food-recipes/a97/hoppin-john-350/",
+      "https://www.punchfork.com/recipe/Hoppin-John-Serious-Eats"
+    ],
+    "confidence": "high",
+    "reason": "Börülce, pirinç ve tütsülü et fikri doğru; pişirme sıvısı ve tuz listede olmadığı için tarif eksik."
+  },
+  {
+    "slug": "horchata",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 1 pirinci 6 saat bekletiyor ama totalMinutes 15"
+    ],
+    "corrections": {
+      "totalMinutes": 375
+    },
+    "sources": [
+      "https://www.pbs.org/food/recipes/horchata",
+      "https://www.bonappetit.com/recipe/horchata-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Pirinç, tarçın, su, şeker ve süzme akışı Meksika horchata ile uyumlu; bekleme süresi toplamda yok."
+  },
+  {
+    "slug": "horchata-de-chufa",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 1 tiger nutları 8-12 saat bekletiyor ama totalMinutes 15",
+      "servingSuggestion: ayrıca 1 saat soğutma öneriyor, bu süre de toplamda görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 675
+    },
+    "sources": [
+      "https://www.spain.info/en/recipe/horchata/",
+      "https://www.thespruceeats.com/horchata-de-chufa-recipe-3083015"
+    ],
+    "confidence": "high",
+    "reason": "Chufa, su, şeker ve soğuk servis doğru; 10 saat bekleme ve 1 saat soğutma timeline dışında kalmış."
+  },
+  {
+    "slug": "horiatiki-salatasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: steps biber, zeytinyağı, sirke, tuz ve kekik kullanıyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Yeşil biber",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Zeytinyağı",
+          "amount": "3",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Sirke",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Kekik",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.greekboston.com/food/salads/horiatiki-recipe/",
+      "https://www.foodiecrush.com/horiatiki-greek-salad/"
+    ],
+    "confidence": "high",
+    "reason": "Domates, salatalık, soğan, zeytin ve feta doğru; step içinde geçen temel salata malzemeleri listede eksik."
+  },
+  {
+    "slug": "hortobagyi-palacsinta-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: krep hamuru için sıvı eksik; step 1 ince krep hazırlamayı mümkün kılmıyor",
+      "steps: step 2 tavuklu iç harcı diyor ama ingredient dana kıyma"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Süt",
+          "amount": "1",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Soğan",
+          "amount": "1",
+          "unit": "adet"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un, yumurta ve sütle ince krep hamuru çırpın; tavada 18 dakika içinde ince krepler pişirin.",
+          "timerSeconds": 1080
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Soğan, dana kıyma ve paprikayı tavada 10 dakika pişirin.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Kıymalı iç harcı kreplere paylaştırıp rulo sarın."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Krepleri fırın kabına ek yerleri alta gelecek şekilde dizin, açılmasın."
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Yoğurtlu paprika sosunu üstüne gezdirin."
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Krepleri 190°C fırında 10 dakika fırınlayın.",
+          "timerSeconds": 600
+        }
+      ]
+    },
+    "sources": [
+      "https://www.tasteatlas.com/hortobagyi-palacsinta",
+      "https://www.thespruceeats.com/hungarian-hortobagyi-palacsinta-recipe-1136614"
+    ],
+    "confidence": "medium",
+    "reason": "Macar etli krep fikri doğru; mevcut step ve ingredient arasında et türü ve krep sıvısı çelişkisi var."
+  },
+  {
+    "slug": "hosmerim",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/hosmerim/",
+      "https://www.nefisyemektarifleri.com/hosmerim-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Taze peynir, irmik, şeker ve yumurta sarısıyla pişirme Balıkesir höşmerimi kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "hotteok-kore-kis-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 maya, step 3 ceviz söylüyor ama listede yok",
+      "allergens: ceviz eklendiğinde KUSUYEMIS allergen'i gerekir",
+      "totalMinutes: 30 dakika mayalanma toplam süreye dahil edilmemiş"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Kuru maya",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        },
+        {
+          "name": "Ceviz",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "allergens_add": [
+        "KUSUYEMIS"
+      ],
+      "totalMinutes": 62
+    },
+    "sources": [
+      "https://www.maangchi.com/recipe/hotteok",
+      "https://www.koreanbapsang.com/hotteok-sweet-korean-pancakes/"
+    ],
+    "confidence": "high",
+    "reason": "Hotteok tarifi maya ve cevizli tarçınlı içle uyumlu; iki malzeme ve pasif mayalanma süresi eksik."
+  },
+  {
+    "slug": "huevos-motulenos",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: kaynaklarda huevos motuleños jambon, bezelye ve peynirle tamamlanıyor; mevcut listede bu ana üstler yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Jambon",
+          "amount": "80",
+          "unit": "gr"
+        },
+        {
+          "name": "Bezelye",
+          "amount": "0.5",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Edam peyniri",
+          "amount": "60",
+          "unit": "gr"
+        }
+      ],
+      "allergens_add": [
+        "SUT"
+      ]
+    },
+    "sources": [
+      "https://www.saveur.com/article/Recipes/Mexico-Eggs-Tortillas-Ham-Peas/",
+      "https://www.mexicoinmykitchen.com/huevos-motulenos-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Tortilla, fasulye, yumurta ve salsa tabanı doğru; Yucatán klasiğinin belirgin üstleri eksik."
+  },
+  {
+    "slug": "humus",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: zeytinyağı, tuz ve kimyon miktarları boş bırakılmış"
+    ],
+    "corrections": {
+      "ingredients_amount_change": [
+        {
+          "name": "Zeytinyağı",
+          "newAmount": "2",
+          "newUnit": "yemek kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "newAmount": "0.5",
+          "newUnit": "çay kaşığı"
+        },
+        {
+          "name": "Kimyon",
+          "newAmount": "0.5",
+          "newUnit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/humus/",
+      "https://www.hataystore.com/urun/humus-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Nohut, tahin, limon ve sarımsak doğru; boş miktarlı üç ingredient apply öncesi tamamlanmalı."
+  },
+  {
+    "slug": "hunkar-begendi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "nutrition: kuzu eti, tereyağı, süt ve kaşar içeren 4 porsiyon için 420 kcal ve 25 gr yağ düşük görünüyor"
+    ],
+    "corrections": {
+      "averageCalories": 560,
+      "protein": 32,
+      "carbs": 18,
+      "fat": 42
+    },
+    "sources": [
+      "https://yemek.com/tarif/hunkar-begendi/",
+      "https://www.nefisyemektarifleri.com/hunkar-begendi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Tarif yapısı doğru; kaynak besin değerleri ve ingredient yağı mevcut makroların düşük kaldığını gösteriyor."
+  },
+  {
+    "slug": "hurmali-bademli-irmik-kup-fas-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.thespruceeats.com/moroccan-semolina-soup-with-milk-anise-2394977",
+      "https://www.tasteofmaroc.com/moroccan-date-recipes/"
+    ],
+    "confidence": "medium",
+    "reason": "İrmik, süt, hurma ve badem Fas tatlı profiline yakın bir uyarlama; alerjen ve süre tarafında açık hata yok."
+  },
+  {
+    "slug": "hurmali-ekmek-tatlisi-kirklareli-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "description: Kırklareli usulü hurmalı ekmek tatlısı iddiası kaynaklarla doğrulanamadı",
+      "totalMinutes: step 5 on dakika dinlendirme söylüyor ama totalMinutes prep+cook toplamı"
+    ],
+    "corrections": {
+      "description": "Hurmalı ekmek tatlısı, bayat ekmeği hurma ve sütle buluşturarak yumuşak ve ekonomik bir tatlı yapar.",
+      "totalMinutes": 32
+    },
+    "sources": [
+      "https://kirklareli.ktb.gov.tr/TR-64372/ne-yenir.html",
+      "https://www.allrecipes.com/recipe/7177/bread-pudding-ii/"
+    ],
+    "confidence": "medium",
+    "reason": "Bayat ekmekli sütlü tatlı tekniği makul; Kırklareli atfı desteklenmedi ve dinlendirme süresi toplamda yok."
+  },
+  {
+    "slug": "hurmali-fistik-ezmeli-smoothie",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.eatingwell.com/recipe/268938/peanut-butter-banana-smoothie/",
+      "https://www.bbcgoodfood.com/recipes/peanut-butter-smoothie"
+    ],
+    "confidence": "high",
+    "reason": "Hurma, fıstık ezmesi, süt ve muzlu smoothie besin ve alerjen açısından tutarlı; kısa hazırlık süresi gerçekçi."
+  },
+  {
+    "slug": "hurmali-muzlu-smoothie",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/banana-smoothie",
+      "https://www.loveandlemons.com/tahini-smoothie/"
+    ],
+    "confidence": "high",
+    "reason": "Muz, hurma, süt ve tahinli smoothie yapısı dengeli; SUT ve SUSAM alerjenleri ingredient listesiyle uyumlu."
+  },
+  {
+    "slug": "hurmali-susamli-irmik-kup-orta-dogu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 5 otuz dakika soğutma söylüyor ama totalMinutes 20"
+    ],
+    "corrections": {
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://www.thespruceeats.com/basbousa-recipe-semolina-cakes-2355448",
+      "https://www.tasteofbeirut.com/semolina-pudding-layali-lubnan/"
+    ],
+    "confidence": "medium",
+    "reason": "İrmik, hurma ve susam Orta Doğu tatlı profiline uyuyor; açık soğutma süresi timeline dışında kalmış."
+  }
+]

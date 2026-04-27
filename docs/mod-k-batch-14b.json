@@ -1,0 +1,857 @@
+[
+  {
+    "slug": "ispanakli-borek",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/amp/tarif/ispanakli-borek/",
+      "https://www.nefisyemektarifleri.com/ispanakli-borek/"
+    ],
+    "confidence": "high",
+    "reason": "Yufka, ıspanak, peynirli iç harç ve 180 derece fırın yapısı kaynaklardaki ıspanaklı börek omurgasıyla uyumlu; alerjenler doğru."
+  },
+  {
+    "slug": "ispanakli-muzlu-smoothie",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.eatingwell.com/recipe/271091/spinach-banana-smoothie/",
+      "https://www.allrecipes.com/recipe/241019/spinach-and-banana-power-smoothie/"
+    ],
+    "confidence": "high",
+    "reason": "Ispanak, muz, sütlü baz ve kısa blender adımı yeşil smoothie kaynaklarıyla uyumlu; toplam süre ve süt alerjeni tarafında sorun yok."
+  },
+  {
+    "slug": "ispanakli-nohut-tava-ispanya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://spanishsabores.com/espinacas-con-garbanzos-spinach-chickpeas/",
+      "https://www.196flavors.com/garbanzos-con-espinacas/"
+    ],
+    "confidence": "high",
+    "reason": "Nohut, ıspanak, sarımsak ve tatlı biberle hazırlanan tapas yapısı garbanzos con espinacas kaynaklarıyla uyumlu görünüyor."
+  },
+  {
+    "slug": "ispanakli-paneer-durum-hindistan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.cookwithmanali.com/paneer-kathi-roll/",
+      "https://www.indianhealthyrecipes.com/palak-paneer-recipe/"
+    ],
+    "confidence": "medium",
+    "reason": "Paneer dürüm ve ıspanaklı paneer temelleri kaynaklarla uyumlu; lavaşla sarılan vejetaryen öğün sadeleştirilmiş ama yanıltıcı değil."
+  },
+  {
+    "slug": "ispanyol-safranli-kabak-pilavi",
+    "verdict": "PASS",
+    "sources": [
+      "https://spanishsabores.com/vegetarian-paella-recipe/",
+      "https://www.bbcgoodfood.com/recipes/veggie-paella"
+    ],
+    "confidence": "high",
+    "reason": "Kısa taneli pirinç, safran, sebze suyu ve karıştırmadan pişirme paella tarzı sebzeli İspanyol pirinciyle uyumlu."
+  },
+  {
+    "slug": "isparta-banak-etli",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/isparta/neyenir/banak",
+      "https://www.nefisyemektarifleri.com/isparta-banak-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Uzun haşlanmış kuzu eti, pide, et suyu ve tereyağı yapısı Isparta banak kaynaklarıyla uyumlu; süre ve alerjenler makul."
+  },
+  {
+    "slug": "isparta-gul-sulu-sutlac",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/sutlac/",
+      "https://www.nefisyemektarifleri.com/gul-sulu-sutlac/"
+    ],
+    "confidence": "high",
+    "reason": "Pirinç, süt, şeker ve gül suyu ile hazırlanan sütlaç mantığı kaynaklardaki sütlü tatlı omurgasıyla uyumlu."
+  },
+  {
+    "slug": "isparta-kabune-pilavi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: adımlarda 45 dakika et haşlama, 20 dakika pirinç bekletme, 35 dakika pişirme ve 15 dakika demleme var; toplam süre 105 dakika kalmış",
+      "prepMinutes/cookMinutes: bekleme ve demleme süresi aktif hazırlık ya da pişirme içinde kayboluyor, RecipeTimeline bekleme segmentini göstermez"
+    ],
+    "corrections": {
+      "prepMinutes": 25,
+      "cookMinutes": 80,
+      "totalMinutes": 140
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/isparta/neyenir/kabune",
+      "https://www.youtube.com/watch?v=qSfCB_6qZds"
+    ],
+    "confidence": "high",
+    "reason": "Kabune omurgası doğru, ancak mevcut adımlardaki bekletme ve demleme süreleri toplam sürede görünmeli; pasif süre ayrı kalmalı."
+  },
+  {
+    "slug": "istanbul-sultanahmet-kofte-piyazli",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/amp/tarif/sultanahmet-koftesi/",
+      "https://www.e-sehir.com/yemek_tarifleri/sultanahmet-koftesi-istanbul-tarifi.html"
+    ],
+    "confidence": "high",
+    "reason": "Döş kıyma, galeta unu, maden suyu, sarımsak ve dinlendirme kaynaklardaki Sultanahmet köftesiyle uyumlu; makro hesabı da tutarlı."
+  },
+  {
+    "slug": "istanbul-uskumru-ekmek-tavasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/amp/tarif/balik-ekmek/",
+      "https://www.nefisyemektarifleri.com/balik-ekmek-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Uskumru, ekmek, sumaklı soğan, roka ve limonla kurulan sokak yemeği yapısı İstanbul balık ekmek kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "isvec-yaban-mersinli-yulaf-pankeki",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/blueberry-oat-pancakes",
+      "https://www.ica.se/recept/amerikanska-pannkakor-med-blabar-725498/"
+    ],
+    "confidence": "medium",
+    "reason": "Yulaflı hamur, yumurta, yoğurt ve yaban mersiniyle yapılan küçük pankek yapısı kaynaklarla uyumlu; süreler pratik kahvaltı için makul."
+  },
+  {
+    "slug": "italyan-kabak-cicekli-orzo",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lacucinaitaliana.com/recipe/pasta/orzo-with-zucchini-flowers",
+      "https://www.giallozafferano.com/recipes/Pasta-with-zucchini-flowers.html"
+    ],
+    "confidence": "medium",
+    "reason": "Orzo, kabak çiçeği, zeytinyağı, limon ve parmesan çizgisi İtalyan kabak çiçekli makarna kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "izgara-levrekli-enginar-sote-izmir-korfez-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/levrek-fileto/",
+      "https://www.kisikatesakademi.com.tr/tarif/enginar-sote-tarifi-1844"
+    ],
+    "confidence": "medium",
+    "reason": "Levrek filetoyu kısa pişirme ve limonlu enginar sote eşliği Ege balık tabağı için makul; malzeme ve alerjen tutarlılığı var."
+  },
+  {
+    "slug": "izgara-sardalyali-arapsaci-salatasi-izmir-korfez-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kisikatesakademi.com.tr/tarif/izgara-sardalya-tarifi-1335",
+      "https://www.nefisyemektarifleri.com/arapsaci-salatasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kısa pişmiş sardalya ile limonlu arapsaçı salatası Ege ot ve balık eşleşmesi içinde makul; deniz ürünü alerjeni doğru."
+  },
+  {
+    "slug": "izmir-boyoz",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/boyoz/",
+      "https://www.nefisyemektarifleri.com/boyoz-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Un, su, tuz ve bol yağla katlanan sade hamur, fırında pişen İzmir boyozu kaynaklarıyla uyumlu; gluten alerjeni yeterli."
+  },
+  {
+    "slug": "izmir-boyoz-kahvalti-tabagi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/boyoz/",
+      "https://www.kulturportali.gov.tr/turkiye/izmir/neyenir/boyoz"
+    ],
+    "confidence": "high",
+    "reason": "Boyozun fırın yumurtası, peynir, zeytin ve çayla kahvaltıda sunulması İzmir kaynaklarıyla uyumlu; kayıt hazır boyoz tabağı olarak doğru."
+  },
+  {
+    "slug": "izmir-boyoz-yumurtali",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/boyoz/",
+      "https://www.nefisyemektarifleri.com/boyoz-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Yağ içinde dinlenen hamur ve fırın yumurtasıyla servis yapısı boyoz kaynaklarıyla uyumlu; toplam süre bekleme dahil makul."
+  },
+  {
+    "slug": "izmir-cesme-kumru-sandvic",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/cesme-kumrusu/",
+      "https://www.nefisyemektarifleri.com/cesme-kumrusu-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Susamlı kumru ekmeği, sucuk, salam, kaşar ve tost tekniği Çeşme kumrusu kaynaklarıyla uyumlu; alerjenler doğru."
+  },
+  {
+    "slug": "izmir-enginar-dolmasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nepisirsem.com/tarifler/izmir-usulu-enginar-dolmasi",
+      "https://www.nefisyemektarifleri.com/zeytinyagli-enginar-dolmasi/"
+    ],
+    "confidence": "high",
+    "reason": "Çiçek enginarı pirinç, yeşillik, limon ve zeytinyağıyla doldurma yapısı İzmir usulü enginar dolması kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "izmir-enginarli-bakla-pilakisi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 1 içinde 10 dakika bekletme, step 4 içinde 25-28 dakika pişirme var; toplam 30 dakika bu süreleri karşılamıyor",
+      "cookMinutes: pişirme adımı 25-28 dakika derken cookMinutes 18 dakika kalmış"
+    ],
+    "corrections": {
+      "cookMinutes": 28,
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/enginarli-bakla/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/sebze-yemekleri/zeytinyaglilar/enginarli-bakla"
+    ],
+    "confidence": "high",
+    "reason": "Zeytinyağlı enginar ve bakla yapısı doğru, ancak mevcut adımların bekletme ve pişirme süreleri toplam süreyi aşıyor."
+  },
+  {
+    "slug": "izmir-ispanakli-boyoz-tepsisi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/boyoz/",
+      "https://www.nefisyemektarifleri.com/ispanakli-borek/"
+    ],
+    "confidence": "medium",
+    "reason": "Boyoz hamuru tekniğini ıspanaklı peynirli harçla tepsi formuna taşımak makul bir varyasyon; süre ve alerjenler tutarlı."
+  },
+  {
+    "slug": "izmir-kabak-cicekli-menemen",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/menemen/",
+      "https://www.nefisyemektarifleri.com/kabak-cicegi-dolmasi-10550676/"
+    ],
+    "confidence": "medium",
+    "reason": "Domates, biber ve yumurtalı menemen tabanına kabak çiçeğinin son dakikada eklenmesi yazlık Ege varyasyonu olarak tutarlı."
+  },
+  {
+    "slug": "izmir-kofte",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/izmir-kofte/",
+      "https://www.nefisyemektarifleri.com/izmir-kofte/"
+    ],
+    "confidence": "high",
+    "reason": "Köfte, patates, biber ve domatesli fırın düzeni klasik İzmir köfte kaynaklarıyla uyumlu; makro ve süre tarafında büyük çelişki yok."
+  },
+  {
+    "slug": "izmir-koruklu-borulce-ezmesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 4 içinde 15 dakika buzdolabında dinlendirme var, toplam süre 10 dakika yazılmış"
+    ],
+    "corrections": {
+      "totalMinutes": 25
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/borulce-ezmesi/",
+      "https://www.kisikatesakademi.com.tr/tarif/koruk-suyu-tarifi-1865"
+    ],
+    "confidence": "medium",
+    "reason": "Börülce, koruk suyu, sarımsak ve zeytinyağıyla yapılan meze makul; yalnız dinlendirme süresi toplam sürede görünmeli."
+  },
+  {
+    "slug": "izmir-kumru-sandvic-cesme-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/cesme-kumrusu/",
+      "https://www.nefisyemektarifleri.com/cesme-kumrusu-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Susamlı ekmek, sucuk, salam, sosis, domates ve kaşar dolgusu Çeşme kumrusu kaynaklarıyla uyumlu; süreler kısa sandviç için makul."
+  },
+  {
+    "slug": "izmir-sakizli-badem-kremasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 5 içinde 2 saat buzdolabında soğutma var, toplam süre 34 dakika kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 154
+    },
+    "sources": [
+      "https://yemek.com/tarif/sakizli-muhallebi/",
+      "https://www.nefisyemektarifleri.com/sakizli-muhallebi/"
+    ],
+    "confidence": "high",
+    "reason": "Süt, irmik, damla sakızı ve bademli kuplu tatlı yapısı doğru; soğutma süresi toplam süreye eklenmeli."
+  },
+  {
+    "slug": "izmir-sogus-kelle-sogus",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/sogus/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/kelle-sogus-tarifi-izmirin-meshur-sogusu/22524"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu kelle, dil, yanak, lavaş, soğan, maydanoz, domates ve baharatla servis İzmir söğüş kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "izmir-sutlu-balik-firin",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sahrapsoysal.com/izmirin-sutlu-baligi-tarifi-t-3440",
+      "https://www.kisikatesakademi.com.tr/tarif/sutlu-balik-tarifi-367"
+    ],
+    "confidence": "high",
+    "reason": "Levrek, sütlü beşamel, kaşar, tereyağı ve fırın tekniği İzmir sütlü balık kaynaklarıyla uyumlu; alerjenler doğru."
+  },
+  {
+    "slug": "jakarta-gado-gado-salatasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/gado-gado-salad",
+      "https://www.saveur.com/article/recipes/gado-gado-indonesian-vegetable-salad-with-peanut-dressing/"
+    ],
+    "confidence": "high",
+    "reason": "Tofu, patates, yumurta, sebze ve yer fıstıklı sos yapısı gado gado kaynaklarıyla uyumlu; alerjen listesi karides ezmesini de kapsıyor."
+  },
+  {
+    "slug": "jakarta-nasi-goreng-ayamli",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.andy-cooks.com/blogs/recipes/nasi-goreng-1",
+      "https://www.theguardian.com/food/2019/nov/06/how-to-cook-the-perfect-nasi-goreng-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Soğuk pirinç, tavuk, karides, yumurta, kecap manis, soya sosu ve yüksek ateşli wok yapısı nasi goreng kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "jakarta-nasi-goreng-telur",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.chocolatesandchai.com/nasi-goreng-indonesian-fried-rice/",
+      "https://www.theguardian.com/food/2019/nov/06/how-to-cook-the-perfect-nasi-goreng-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Kecap manis, soya sosu, arpacık soğan, sarımsak, acı biber, soğuk pirinç ve kızarmış yumurta yapısı nasi goreng telur için tutarlı."
+  },
+  {
+    "slug": "jakarta-soto-ayam-tavuklu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sunset.com/recipe/recipe-soto-ayam",
+      "https://www.aia.com/etc.clientlibs/aia-group/clientlibs/eatwell-en-site/resources/html/slowyourslurp/sotoayam.html"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk suyu, zerdeçal, limon otu, lime yaprağı, erişte, yumurta ve lime ile servis soto ayam kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "jalapeno-poppers",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.allrecipes.com/recipe/20858/best-ever-jalapeno-poppers/",
+      "https://www.foodnetwork.com/recipes/ree-drummond/jalapeno-poppers-2505715"
+    ],
+    "confidence": "high",
+    "reason": "Jalapeno, krem peynir, cheddar ve galeta unuyla fırında pişen atıştırmalık yapısı klasik jalapeno poppers kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "jambalaya",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 soğan, biber ve baharat kullanıyor ama malzeme listesinde soğan, biber ve baharat yok",
+      "ingredients: step 4 sıcak tavuk suyu ekliyor ama malzeme listesinde tavuk suyu yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Soğan",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Yeşil biber",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Cajun baharatı",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        },
+        {
+          "name": "Tavuk suyu",
+          "amount": "4",
+          "unit": "su bardağı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.seriouseats.com/jambalaya-recipe",
+      "https://www.foodnetwork.com/recipes/emeril-lagasse/cajun-jambalaya-recipe-1938620"
+    ],
+    "confidence": "high",
+    "reason": "Jambalaya için pirinç, tavuk, sucuk, kereviz ve tavuk suyu doğru çizgi; ancak adımlarda geçen temel aromalar listede yok."
+  },
+  {
+    "slug": "janssons-frestelse",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.swedishfood.com/swedish-food-recipes-main-courses/405-janssons",
+      "https://www.bbcgoodfood.com/recipes/janssons-temptation"
+    ],
+    "confidence": "high",
+    "reason": "Patates, soğan, hamsi benzeri konserve, krema ve tereyağlı fırın yapısı Janssons frestelse kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "japchae",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.koreanbapsang.com/japchae-korean-stir-fried-starch/",
+      "https://www.maangchi.com/recipe/japchae"
+    ],
+    "confidence": "high",
+    "reason": "Tatlı patates nişastası eriştesi, ıspanak, havuç, mantar, soya sosu ve susam yağı japchae kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "japon-susamli-edamame-pirinc-kasesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 4 ve step 5 pişmiş pirinç kasesi yerine tencere pilavı talimatı veriyor",
+      "steps: pişmiş pirinç kullanıldığı halde 8 dakika demleme adımı eklenmiş, tarif akışıyla uyumsuz"
+    ],
+    "corrections": {
+      "prepMinutes": 6,
+      "cookMinutes": 0,
+      "totalMinutes": 6,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Edamameyi kaynar suda 3 dakika haşlayıp süzün.",
+          "timerSeconds": 180
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Soya sosu ve susam yağını küçük kasede karıştırın."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Sıcak pirinci kaselere paylaştırıp edamameyi üstüne ekleyin."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Sos karışımını pirincin üstüne gezdirin, nori şeritleri ve susamla servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.justonecookbook.com/edamame-rice/",
+      "https://www.bbcgoodfood.com/recipes/edamame-rice-bowl"
+    ],
+    "confidence": "high",
+    "reason": "Malzeme fikri doğru, ancak mevcut adımlar pişmiş pirinç kasesini tencere pilavı gibi anlatarak kullanıcıyı yanıltıyor."
+  },
+  {
+    "slug": "jeyuk-bokkeum",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "ingredients: jeyuk bokkeum kaynaklarda gochujanglı domuz etiyle yapılır; mevcut kayıt dana eti kullanıyor",
+      "description: geleneksel yemeğin ana proteinini belirsiz et gibi anlattığı için kullanıcıyı yanıltıyor"
+    ],
+    "corrections": {
+      "description": "Jeyuk bokkeum, gochujanglı marine edilmiş ince domuz etinin tavada hızlı pişirildiği Kore yemeğidir."
+    },
+    "sources": [
+      "https://www.koreanbapsang.com/web-stories/jeyuk-bokkeum-spicy-pork-bulgogi/",
+      "https://www.beyondkimchee.com/spicy-korean-pork/"
+    ],
+    "confidence": "high",
+    "reason": "Teknik ve sos doğru olsa da yemeğin ana proteini kaynaklarda domuz eti; dana etiyle kayıt adı klasik yemeği yanlış temsil ediyor."
+  },
+  {
+    "slug": "jjajangmyeon",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: kaynaklarda siyah fasulye sosu için soğan ve patates temel sebzeler arasında, mevcut listede yok",
+      "steps: step 3 noodle üzerine sos dökmeye timerSeconds 300 vermiş, bu gerçek pişirme süresi değil",
+      "steps: mevcut adımlar sosu koyulaştıracak su ve nişasta aşamasını anlatmıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Soğan",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Patates",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Nişasta",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Su",
+          "amount": "1.5",
+          "unit": "su bardağı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Eti küçük doğrayıp tavada 5 dakika kavurun.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Soğan, patates ve kabağı ekleyip 6 dakika soteleyin.",
+          "timerSeconds": 360
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Siyah fasulye ezmesini ekleyip 2 dakika kavurun, çiğ tadı azalsın.",
+          "timerSeconds": 120
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Suyu ekleyip sebzeler yumuşayana kadar 10 dakika pişirin.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Nişastayı az suyla açıp sosa karıştırın ve 2 dakika koyulaştırın.",
+          "timerSeconds": 120
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Sosu pişmiş noodle üzerine döküp bekletmeden servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.maangchi.com/recipe/jjajangmyeon/comment-page-8",
+      "https://www.koreanbapsang.com/jajangmyeon-noodles-in-black-bean-sauce/"
+    ],
+    "confidence": "high",
+    "reason": "Siyah fasulye soslu noodle yapısı doğru, ancak temel sebze ve sos koyulaştırma adımı eksik olduğu için tarif eksik kalıyor."
+  },
+  {
+    "slug": "jokai-bableves",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "ingredients: Jókai bableves kaynaklarda füme domuz eti, kolbász, kök sebzeler ve ekşi krema içerir; mevcut kayıt bunları taşımıyor",
+      "description: klasik Macar çorbasını sadece paprika ve sebzeli fasulye çorbası gibi anlatıyor"
+    ],
+    "corrections": {
+      "description": "Jókai bableves, füme domuz eti, kolbász, fasulye, kök sebzeler ve ekşi kremayla yapılan yoğun Macar çorbasıdır."
+    },
+    "sources": [
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/jokai-bean-soup-jokai-bableves/",
+      "https://thetasteofhungary.com/collections/recipes-soups-jokai-bableves"
+    ],
+    "confidence": "high",
+    "reason": "Mevcut kayıt sade fasulye çorbası gibi; Jókai bableves adı ise füme etli ve ekşi kremalı daha belirgin bir tarifi işaret ediyor."
+  },
+  {
+    "slug": "jumeokbap-kore-piknik-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.maangchi.com/recipe/jumeokbap",
+      "https://www.koreanbapsang.com/jumeokbap-korean-rice-balls/"
+    ],
+    "confidence": "high",
+    "reason": "Pişmiş pirinç, kavrulmuş yosun, susam ve susam yağıyla elde sıkıştırılan pirinç topları jumeokbap kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "kaak-bi-simsim",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.maureenabood.com/lebanese-sesame-kaak/",
+      "https://www.tasteofbeirut.com/kaak-bi-simsim/"
+    ],
+    "confidence": "medium",
+    "reason": "Un, tereyağı, şeker ve bol susamla yapılan halka atıştırmalık kaak bi simsim ailesiyle uyumlu; alerjenler doğru."
+  },
+  {
+    "slug": "kabak-bastisi-gaziantep-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "description: Gaziantep kaynaklarında kabaklama ve kabak yemekleri etli, nohutlu, salçalı ve ekşili tencere yemeği olarak geçiyor; mevcut kayıt irmikli tatlı gibi yazılmış",
+      "ingredients: irmik, şeker, tarçın ve cevizli tatlı yapısı Gaziantep kabaklama kaynaklarıyla uyuşmuyor"
+    ],
+    "corrections": {
+      "description": "Gaziantep kabaklama, kış kabağı, et, nohut, salça, sarımsak ve ekşiyle pişen sıcak tencere yemeğidir."
+    },
+    "sources": [
+      "https://gaziantep.net/mutfak/kabaklama.php",
+      "https://mygaziantep.com/gaziantep-yemekleri/kabaklama-15.html"
+    ],
+    "confidence": "high",
+    "reason": "Kayıt bir tatlı gibi kurulmuş, fakat Gaziantep kabaklama kaynakları etli ve ekşili ana yemek gösteriyor; manuel review gerekir."
+  },
+  {
+    "slug": "kabak-boranisi-gaziantep-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: bazı adımlar tarif adını tekrar eden boilerplate metinler içeriyor",
+      "steps: step 3 sıvıyı malzemelerin hizasına kadar ekleyin diyor ama malzeme listesinde su yok"
+    ],
+    "corrections": {
+      "prepMinutes": 10,
+      "cookMinutes": 12,
+      "totalMinutes": 22,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Kabakları iri küp doğrayın, sarımsağı ezin."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Kabakları zeytinyağında 12 dakika yumuşayana kadar pişirin.",
+          "timerSeconds": 720
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Kabakları 5 dakika ılıtın, yoğurt kesilmesin.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Yoğurt, sarımsak ve naneyi karıştırıp kabakla birleştirin."
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Üzerine zeytinyağı gezdirip ılık ya da serin servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/yogurtlu-kabak-borani/",
+      "https://www.sahrapsoysal.com/yogurtlu-kabak-borani-tarifi-t-4786"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurtlu kabak borani fikri doğru, ancak mevcut adımlarda listede olmayan su ve tekrar eden kalıp metinler var."
+  },
+  {
+    "slug": "kabak-cekirdekli-corek-aksaray-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: mayalı hamurda tuz ve yağ eksik, kaynaklardaki çekirdekli ekmek hamuru bu iki dengeyi kullanıyor",
+      "totalMinutes: mayalı hamur için 15 dakika dinlenme çok kısa, toplam süre gerçek mayalanmayı karşılamıyor"
+    ],
+    "corrections": {
+      "prepMinutes": 55,
+      "cookMinutes": 22,
+      "totalMinutes": 83,
+      "ingredients_add": [
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Zeytinyağı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.aksarayportal.com/haber/kabak-cekirdegi-marka-haline-getirilmeli-36744",
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/ekmek-tarifleri/yedi-tahilli-cekirdekli-ekmek"
+    ],
+    "confidence": "medium",
+    "reason": "Aksaray kabak çekirdeği bağlantısı makul, ancak mayalı çekirdekli çörek için tuz, yağ ve daha uzun mayalanma gerekiyor."
+  },
+  {
+    "slug": "kabak-cicegi-borani-aydin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/yogurtlu-kabak-borani/",
+      "https://www.sahrapsoysal.com/yogurtlu-kabak-borani-tarifi-t-4786"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak çiçeğini kısa yumuşatıp sarımsaklı yoğurtla birleştirmek borani mantığına ve kabak çiçeği kullanımına uygun."
+  },
+  {
+    "slug": "kabak-cicegi-dolmasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: dolma içi için dereotu, tuz, karabiber ve pişirme suyu adımlarda gerekli ama listede yok",
+      "steps: mevcut adım sırası pişirmeyi anlatıp sonra sıcak su ekleme talimatı veriyor, akış ters"
+    ],
+    "corrections": {
+      "prepMinutes": 29,
+      "cookMinutes": 29,
+      "totalMinutes": 58,
+      "ingredients_add": [
+        {
+          "name": "Dereotu",
+          "amount": "0.25",
+          "unit": "demet"
+        },
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Karabiber",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Sıcak su",
+          "amount": "1",
+          "unit": "su bardağı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Kabak çiçeklerinin iç kısımlarını nazikçe temizleyip soğuk suda çalkalayın."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Soğanı zeytinyağında 4 dakika yumuşatın.",
+          "timerSeconds": 240
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Pirinci, dereotunu, tuzu ve karabiberi ekleyip iç harcı karıştırın."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Çiçekleri gevşek doldurun, üstte 1 parmak boşluk bırakın."
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Dolmaları tencereye dizip sıcak suyu kenardan verin."
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Kısık ateşte 25 dakika pişirin, çiçekler yırtılmadan yumuşasın.",
+          "timerSeconds": 1500
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kabak-cicegi-dolmasi/",
+      "https://www.nefisyemektarifleri.com/kabak-cicegi-dolmasi-10550676/"
+    ],
+    "confidence": "high",
+    "reason": "Kabak çiçeği dolması fikri doğru, ancak mevcut liste ve adım sırası uygulamada eksik ve ters akış yaratıyor."
+  },
+  {
+    "slug": "kabak-cicegi-dolmasi-izmir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/kabak-cicegi-dolmasi/",
+      "https://www.nefisyemektarifleri.com/kabak-cicegi-dolmasi-10550676/"
+    ],
+    "confidence": "high",
+    "reason": "Kabak çiçeği, pirinç, soğan, zeytinyağı ve dereotuyla hafif doldurma yapısı Ege usulü kabak çiçeği dolması kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "kabak-cicegi-salatasi-mugla-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 3 ve step 5 içinde körpe kabak, lor, dereotu ve sarımsak geçiyor ama bu malzemeler listede yok",
+      "steps: mevcut akış başlıktaki sade kabak çiçeği salatasından farklı bir lorlu kabak salatasına kayıyor"
+    ],
+    "corrections": {
+      "prepMinutes": 10,
+      "cookMinutes": 0,
+      "totalMinutes": 10,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Kabak çiçeklerinin iç saplarını çıkarın ve yaprakları yırtmadan soğuk suda çalkalayın."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Çiçekleri kağıt havlu üzerinde 5 dakika kurutun.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Limon suyu ve zeytinyağını 30 saniye çırpın.",
+          "timerSeconds": 30
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Kabak çiçeklerini sosla nazikçe harmanlayın, yapraklar ezilmesin."
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Taze soğanı ince kıyıp üstüne serpin ve salatayı bekletmeden servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kabak-cicegi-dolmasi/",
+      "https://www.nefisyemektarifleri.com/kabak-cicegi-dolmasi-10550676/"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak çiçeği salatası fikri makul, fakat mevcut adımlar listede olmayan lorlu kabak salatası malzemelerine kayıyor."
+  },
+  {
+    "slug": "kabak-cicekli-bulgur-pilavi-mugla-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 7 tuz dengesinden söz ediyor ama malzeme listesinde tuz yok",
+      "steps: mevcut adımlar tarif adını tekrar eden boilerplate cümleler içeriyor ve pişirme akışı 5 dakikaya sıkışıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Soğanı zeytinyağında 3 dakika yumuşayana kadar çevirin.",
+          "timerSeconds": 180
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Bulguru ve tuzu ekleyip 2 dakika kavurun, taneler yağla kaplansın.",
+          "timerSeconds": 120
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Suyu ekleyip kapağı kapatın ve bulguru 12 dakika pişirin.",
+          "timerSeconds": 720
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Kabak çiçeklerini iri parçalayıp pilavın üstüne ekleyin."
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Tencereyi kapatıp 8 dakika demleyin, çiçekler buharla yumuşasın.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Pilavı ezmeden alttan üste havalandırıp ılık servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kabak-cicekli-bulgur-pilavi/",
+      "https://www.nefisyemektarifleri.com/kabak-cicekli-bulgur-pilavi/"
+    ],
+    "confidence": "high",
+    "reason": "Kabak çiçekli bulgur pilavı kaynaklarla uyumlu, ancak mevcut adımlar kalıp metinli ve tuz listede olmadığı halde kontrol ediliyor."
+  }
+]

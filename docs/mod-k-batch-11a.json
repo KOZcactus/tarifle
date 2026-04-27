@@ -1,0 +1,879 @@
+[
+  {
+    "slug": "findikli-tavuklu-eriste-kocaeli-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.efsanetarifler.com/tarif/tavuklu-eriste-tarifi",
+      "https://www.lezzet.com.tr/yemek-tarifleri/sebze-yemekleri/firin-yemekleri/firinda-tavuklu-eriste-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk, erişte, tereyağı ve sıcak servis çizgisi tavuklu erişte kaynaklarıyla uyumlu. Fındık yöresel dokunuş gibi duruyor, allergen ve süreler makul."
+  },
+  {
+    "slug": "findikli-un-helvasi-giresun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps içinde 10 dakika dinlendirme var, toplam süre prep + cook toplamı olarak 28 dakikada kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 38
+    },
+    "sources": [
+      "https://sahrapsoysal.com/findikli-un-helvasi-tarifi-t-5741",
+      "https://giresun.ktb.gov.tr/TR-215653/misir-unu-helvasi.html"
+    ],
+    "confidence": "high",
+    "reason": "Fındık, un, yağ ve şerbet hattı kaynaklarla uyumlu. Ancak 10 dakikalık pasif dinlendirme totalMinutes içinde görünmeli."
+  },
+  {
+    "slug": "finger-lime-soda-avustralya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.dasherandfisher.com.au/product/finger-lime-soda",
+      "https://www.friedas.com/products/organic-finger-lime/"
+    ],
+    "confidence": "high",
+    "reason": "Finger lime'ın Avustralya kökenli, keskin citrus taneli bir ürün olduğu ve sodada kullanıldığı kaynaklarla doğrulanıyor. Vegan ve alkolsüz alanlar doğru."
+  },
+  {
+    "slug": "firik-mucveri-gaziantep-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/gaziantep/neyenir/frk-plavi?ya_src=serp300",
+      "https://www.gaziantep.net/mutfak/bulgurlu_kabak.php"
+    ],
+    "confidence": "medium",
+    "reason": "Firik ve yumurtalı unlu harcın mücver gibi tavada pişirilmesi mantıklı. Kaynaklar firik ve Antep dolma mutfağını destekliyor, içerik riski düşük."
+  },
+  {
+    "slug": "firik-pilavi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps içinde 10 dakika dinlendirme var, toplam süre bekleme farkını göstermiyor"
+    ],
+    "corrections": {
+      "totalMinutes": 65
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/gaziantep/neyenir/frk-plavi?ya_src=serp300",
+      "https://www.pilav.gen.tr/firik-pilav.html"
+    ],
+    "confidence": "high",
+    "reason": "Firik, bulgur, et suyu ve tereyağı kaynaklarla uyumlu. Pilavdaki 10 dakikalık demlenme totalMinutes içinde pasif fark olarak kalmalı."
+  },
+  {
+    "slug": "firik-pilavi-gaziantep-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps içinde 10 dakika dinlendirme var, totalMinutes prep + cook toplamında kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://www.biantep.com/kesfet/gaziantep-firik-pilavi-g1201",
+      "https://turkiyeturizmansiklopedisi.com/gaziantep-antep-firik-pilavi"
+    ],
+    "confidence": "high",
+    "reason": "Gaziantep firik pilavı için firik, bulgur, et suyu ve demleme kaynaklarla uyumlu. Bekleme süresi toplamda ayrıca görünmeli."
+  },
+  {
+    "slug": "firik-ve-nohutlu-biber-dolmasi-gaziantep-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.gaziantep.net/mutfak/bulgurlu_kabak.php",
+      "https://www.kulturportali.gov.tr/turkiye/gaziantep/neyenir/frk-plavi?ya_src=serp300"
+    ],
+    "confidence": "medium",
+    "reason": "Firik, nohut, salça ve kuru dolmalık biber çizgisi Gaziantep dolma ve firik kaynaklarıyla tutarlı. Vegan etiket ve gluten allergen doğru."
+  },
+  {
+    "slug": "firikli-kabak-dolmasi-gaziantep-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps_replace: 2. adım pirinç ve salça diyor, ingredient listesinde pirinç ve salça yok",
+      "steps_replace: 4. adım ekşi sos diyor, ingredient listesinde ekşi malzeme yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Biber salçası",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Sarımsak",
+          "amount": "2",
+          "unit": "diş"
+        },
+        {
+          "name": "Nar ekşisi",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Zeytinyağı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Firik, kıyma, soğan, domates, biber salçası, ezilmiş sarımsak, nar ekşisi, zeytinyağı ve tuzu karıştırın."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Kabakları tencereye dizip sıcak suyu kenardan ekleyin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.gaziantep.net/mutfak/bulgurlu_kabak.php",
+      "https://www.youtube.com/watch?v=EGi-OBT3kKE"
+    ],
+    "confidence": "high",
+    "reason": "Gaziantep dolma kaynaklarında salça, sarımsak, ekşi ve yağ çizgisi var. Mevcut adımlar ingredient listesiyle çeliştiği için eşleşme düzeltilmeli."
+  },
+  {
+    "slug": "firikli-kabak-kisiri-gaziantep-bag-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients_add: steps içinde zeytinyağı, nar ekşisi, pul biber, taze soğan ve marul geçiyor ama ingredient listesinde yok",
+      "cookMinutes: steps içindeki firik ve kabak pişirme süreleri toplam 18 dakika, cookMinutes 10 kalmış",
+      "totalMinutes: güncel cookMinutes ile toplam süre 32 dakika olmalı"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Nar ekşisi",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Pul biber",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Taze soğan",
+          "amount": "2",
+          "unit": "dal"
+        },
+        {
+          "name": "Marul",
+          "amount": "4",
+          "unit": "yaprak"
+        }
+      ],
+      "cookMinutes": 18,
+      "totalMinutes": 32
+    },
+    "sources": [
+      "https://cookonloop.com/recipe/lebanese-freekeh-salad",
+      "https://www.theguardian.com/food/2018/aug/27/thomasina-miers-recipe-for-freekeh-salad-nectarine-halloumi"
+    ],
+    "confidence": "medium",
+    "reason": "Firikli salata/kısır mantığı kaynaklarla uyumlu, fakat step içindeki sos ve servis malzemeleri listede eksik. Süre de adımlarla eşleşmeli."
+  },
+  {
+    "slug": "firikli-kabakli-pilav-mardin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps içinde 10 dakika dinlendirme var, toplam süre bekleme farkını göstermiyor"
+    ],
+    "corrections": {
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://www.pilav.gen.tr/firik-pilav.html",
+      "https://www.gaziantep.net/mutfak/firik-pilavi-nasil-yapilir.php"
+    ],
+    "confidence": "medium",
+    "reason": "Firikli pilav tekniği ve demleme kaynaklarla uyumlu. Kabak bölgesel yorum olabilir, fakat pasif dinlenme totalMinutes içinde görünmeli."
+  },
+  {
+    "slug": "firikli-kuru-patlican-dolmasi-gaziantep-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients_add: 6. adım sarımsaklı yoğurt diyor, sarımsak ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Sarımsak",
+          "amount": "1",
+          "unit": "diş"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.gaziantep.net/mutfak/haylan_dolma.php",
+      "https://www.lezzet.com.tr/yemek-tarifleri/pilav-ve-makarna-tarifleri/pilav-tarifleri/firikli-kuru-patlican-ve-biber-dolmasi"
+    ],
+    "confidence": "high",
+    "reason": "Kuru dolma çizgisi Gaziantep dolma kaynaklarıyla uyumlu. Sadece step içinde geçen sarımsaklı yoğurt ingredient listesine bağlanmalı."
+  },
+  {
+    "slug": "firikli-mercimek-corbasi-diyarbakir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.knorr.com/tr/r/mercimek-%C3%A7orbas%C4%B1-tarifi.html/112741",
+      "https://app.samsungfood.com/recipes/107e89fe0a44ae34b779bbe16e94f51bb5b"
+    ],
+    "confidence": "medium",
+    "reason": "Mercimek çorbası tekniği ve firik çorbası mantığı kaynaklarla uyumlu. Gluten allergen doğru, süreler adımlarla makul örtüşüyor."
+  },
+  {
+    "slug": "firikli-ot-corbasi-lubnan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.simplyleb.com/recipe/freekeh-soup-with-chicken/",
+      "https://feelgoodfoodie.net/recipe/freekeh-soup/"
+    ],
+    "confidence": "high",
+    "reason": "Lübnan freekeh çorbası kaynakları firik, soğan, baharat ve limon çizgisini destekliyor. Otlu vegan yorum makul, gluten allergen doğru."
+  },
+  {
+    "slug": "firikli-patlican-dolmasi-gaziantep-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.gaziantep.net/mutfak/haylan_dolma.php",
+      "https://www.lezzet.com.tr/yemek-tarifleri/pilav-ve-makarna-tarifleri/pilav-tarifleri/firikli-kuru-patlican-ve-biber-dolmasi"
+    ],
+    "confidence": "medium",
+    "reason": "Kuru patlıcan, firik, kıyma, salça ve ekşi dolma çizgisi Gaziantep dolma kaynaklarıyla uyumlu. Süre ve allergen alanları makul."
+  },
+  {
+    "slug": "firikli-tavuk-corbasi-gaziantep-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.simplyleb.com/recipe/freekeh-soup-with-chicken/",
+      "https://feelgoodfoodie.net/recipe/freekeh-soup/"
+    ],
+    "confidence": "medium",
+    "reason": "Firik ve tavuklu çorba kaynaklarıyla temel yapı uyumlu. Gaziantep yorumu makul, tavuk ve firik süreleri totalMinutes ile çelişmiyor."
+  },
+  {
+    "slug": "firikli-tavuk-kapama-diyarbakir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cookMinutes: steps içindeki mühürleme, soğan, firik kavurma ve kapalı pişirme toplamı 30 dakika",
+      "totalMinutes: 8 dakika dinlendirme pasif süre olarak toplamda görünmüyor"
+    ],
+    "corrections": {
+      "cookMinutes": 30,
+      "totalMinutes": 54
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/et-yemekleri/tavuk-yemekleri/tavuk-kapama-tarifi",
+      "https://www.pogacatarifi.com/tavuk-kapama-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk kapama mantığı tavuk suyu ve pilav üstü tavukla uyumlu. Mevcut süreler adım toplamını ve 8 dakika dinlendirmeyi kaçırıyor."
+  },
+  {
+    "slug": "firikli-yesil-mercimekli-kuzu-tava-gaziantep-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/gaziantep/neyenir/frk-plavi?ya_src=serp300",
+      "https://www.gaziantep.net/mutfak/firik-pilavi-nasil-yapilir.php"
+    ],
+    "confidence": "medium",
+    "reason": "Firik, kuzu eti ve bakliyatlı Antep pilavı/tava çizgisi kaynaklarla uyumlu. Kuzu ve firik süreleri kısa ama haşlanmış mercimek kullanımıyla makul."
+  },
+  {
+    "slug": "firin-baharatli-tofu-kupleri",
+    "verdict": "PASS",
+    "sources": [
+      "https://foodhero.org/recipes/baked-tofu",
+      "https://www.epicurious.com/expert-advice/how-to-cook-tofu-step-by-step-article"
+    ],
+    "confidence": "high",
+    "reason": "Tofuyu bastırıp soslamak ve fırında pişirmek kaynaklarla uyumlu. Soya allergen doğru, protein ve kalori 400 gr tofuya göre makul."
+  },
+  {
+    "slug": "firin-balikli-orzo-tava-yunan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps içinde 4 dakika fırından sonra bekletme var, toplam süre bekleme farkını göstermiyor"
+    ],
+    "corrections": {
+      "totalMinutes": 38
+    },
+    "sources": [
+      "https://www.delallo.com/recipe/greek-baked-orzo/",
+      "https://www.tastingtable.com/1946831/1-pot-baked-fish-lemon-orzo-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Yunan usulü domatesli orzo ve beyaz balık birlikteliği kaynaklarla uyumlu. Sadece 4 dakikalık pasif bekleme totalMinutes içinde görünmeli."
+  },
+  {
+    "slug": "firin-domatesli-bulgur-koftesi-adana-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps içinde 5 dakika dinlendirme var, toplam süre prep + cook toplamında kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/en/recipe/fellah-kofta-with-yogurt-cream",
+      "https://cinnamonsnail.com/fellah-koftesi/"
+    ],
+    "confidence": "medium",
+    "reason": "Bulgur köftesi ve domatesli sos çizgisi Adana fellah köftesi kaynaklarıyla uyumlu. Fırın yorumu makul, bekleme süresi toplamda eksik."
+  },
+  {
+    "slug": "firin-elmali-granola-bar",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps_replace: mevcut adımlar tarif adını tekrar eden boilerplate metinler içeriyor ve elma, yulaf, bal, ceviz işlemlerini somut anlatmıyor",
+      "totalMinutes: 10 dakika soğutma totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Yulaf ezmesi ve cevizi geniş kasede karıştırın."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Elma rendesinin fazla suyunu avuç içinde hafifçe sıkın, bar harcı sulanmasın."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Balı elma rendesiyle karıştırıp yulaflı karışıma ekleyin."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Karışımı yağlı kağıt serili küçük tepsiye 1.5 cm kalınlıkta bastırarak yayın."
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "180°C fırında 25 dakika, kenarlar altın renk alana kadar pişirin.",
+          "timerSeconds": 1500
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Tepside 10 dakika soğutup keskin bıçakla barlara ayırın.",
+          "timerSeconds": 600
+        }
+      ],
+      "totalMinutes": 47
+    },
+    "sources": [
+      "https://www.kirazinmutfagi.com.tr/tarif/firinlanmis-yulaf-ezmesi",
+      "https://www.epicurious.com/recipes/food/views/baked-oatmeal-365069"
+    ],
+    "confidence": "high",
+    "reason": "Yulaf, meyve ve fırın tekniği kaynaklarla uyumlu. Mevcut adımlar scaffold gibi, gerçek işlem ve soğutma süresiyle değiştirilmelidir."
+  },
+  {
+    "slug": "firin-elmali-syrniki-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: 4 dakika tepside dinlendirme var, totalMinutes 30 dakika kalmış",
+      "tags_remove: güncel toplam süre 30 dakika üstüne çıktığı için 30-dakika-alti etiketi yanlış olur"
+    ],
+    "corrections": {
+      "totalMinutes": 34,
+      "tags_remove": [
+        "30-dakika-alti"
+      ]
+    },
+    "sources": [
+      "https://www.rbth.com/russian-kitchen/333439-syrniki-russian-cottage-cheese-pancakes",
+      "https://www.allrecipes.com/recipe/262346/russian-cheese-pancakes-syrniki/"
+    ],
+    "confidence": "medium",
+    "reason": "Lor, yumurta ve unla yapılan syrniki çizgisi kaynaklarla uyumlu. Fırın yorumu makul, fakat 4 dakikalık dinlenme 30 dakika altı etiketini düşürüyor."
+  },
+  {
+    "slug": "firin-fasulyeli-kofte-tava-ingiltere-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/meatballs-tomato-baked-beans",
+      "https://www.theguardian.com/food/2020/jan/25/meera-sodha-masala-baked-beans-on-toast-recipe-vegan"
+    ],
+    "confidence": "medium",
+    "reason": "Baked beans ile köfteyi domatesli sos içinde birleştirme İngiliz ev yemeği çizgisine uyuyor. Gluten allergen ve süreler adımlarla makul."
+  },
+  {
+    "slug": "firin-fistikli-tel-kadayif-kahramanmaras-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients_add: 4. adımda şerbet için su kullanılıyor ama ingredient listesinde su yok",
+      "cookMinutes: şerbetin 12 dakika kaynaması cookMinutes içinde görünmüyor",
+      "totalMinutes: güncel pişirme süresiyle toplam süre 55 dakika olmalı"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Su",
+          "amount": "0.5",
+          "unit": "su bardağı"
+        }
+      ],
+      "cookMinutes": 37,
+      "totalMinutes": 55
+    },
+    "sources": [
+      "https://yemek.com/tarif/fistikli-tel-kadayif/",
+      "https://www.nefisyemektarifleri.com/fistikli-tel-kadayif-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Tel kadayıf, tereyağı, fıstık ve şerbet yapısı kaynaklarla uyumlu. Şerbet suyu ve 12 dakikalık kaynatma süresi eksik kalmış."
+  },
+  {
+    "slug": "firin-kabakli-bulgur-pilavi-burdur-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cookMinutes: fırınlama, soğan kavurma, bulgur kavurma ve pilav pişirme toplamı 30 dakika",
+      "totalMinutes: 6 dakika demleme totalMinutes içinde pasif fark olarak görünmüyor"
+    ],
+    "corrections": {
+      "cookMinutes": 30,
+      "totalMinutes": 48
+    },
+    "sources": [
+      "https://www.pilav.gen.tr/firik-pilav.html",
+      "https://www.lezzet.com.tr/yemek-tarifleri/pilav-ve-makarna-tarifleri/bulgur-pilavi-tarifleri/kabakli-bulgur-pilavi"
+    ],
+    "confidence": "medium",
+    "reason": "Kabaklı bulgur pilavı tekniği kaynaklarla uyumlu. Mevcut süreler adım toplamını ve demlenme farkını göstermiyor."
+  },
+  {
+    "slug": "firin-lorlu-patlican-antalya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps içinde 5 dakika fırından sonra bekletme var, toplam süre prep + cook toplamında kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 49
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/firinda-peynirli-patlican/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/sebze-yemekleri/patlican-yemekleri/firinda-peynirli-patlican"
+    ],
+    "confidence": "medium",
+    "reason": "Patlıcanı peynirli harçla fırınlama kaynaklarla uyumlu. Lorlu Antalya yorumu makul, fakat 5 dakika bekleme toplam süreye eklenmeli."
+  },
+  {
+    "slug": "firin-mantarli-ekmek-asisi-sakarya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/bayat-ekmek-asisi/",
+      "https://www.yemek.com/tarif/bayat-ekmek-yemegi/"
+    ],
+    "confidence": "medium",
+    "reason": "Bayat ekmeği sebzeli sosla ıslatıp değerlendirme çizgisi ekmek aşı kaynaklarıyla uyumlu. Mantar yorumu makul, vegan ve gluten alanları doğru."
+  },
+  {
+    "slug": "firin-misir-yarmasi-muhallebisi-trabzon-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cookMinutes: steps içinde 12 dakika ocak pişirmesi ve 35 dakika fırın pişirmesi var, cookMinutes 35 kalmış",
+      "totalMinutes: 10 dakika süt içinde bekletme ve 20 dakika fırından sonra bekletme toplam sürede görünmüyor"
+    ],
+    "corrections": {
+      "cookMinutes": 47,
+      "totalMinutes": 77
+    },
+    "sources": [
+      "https://lezzetler.com/yarma-misir-corbasi-trabzon-tarif-139023",
+      "https://www.kulturportali.gov.tr/turkiye/trabzon/neyenir/gastronom---yoresel-tatlar"
+    ],
+    "confidence": "medium",
+    "reason": "Trabzon mutfağında mısır yarması kullanımı kaynaklarla doğrulanıyor. Tatlı yorumu doğrudan kaynaklı değil, ama asıl sorun açık süre eksikleri."
+  },
+  {
+    "slug": "firin-patatesli-testi-tava-nevsehir-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "cookMinutes: 500 gr dana eti ve patates için 28 dakika fırın süresi güvenilir Nevşehir testi kebabı kaynaklarına göre çok kısa",
+      "ingredients_add: steps içinde soğan, salçalı su ve yağ kullanımı var ama ingredient listesinde soğan, salça, yağ ve tuz yok",
+      "steps_replace: 2. adım 'et veya tavuk' diyor, ingredient dana eti olduğu için içerik kararsız görünüyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Kuru soğan",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Domates salçası",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Zeytinyağı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Dana kuşbaşı etini sebzelerin arasına tek kat yerleştirin."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Domates salçası, zeytinyağı, tuz ve suyu karıştırıp kabın kenarından dökün."
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Kabı 190°C fırında 75 dakika kapalı pişirin.",
+          "timerSeconds": 4500
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Kağıdı açıp 10 dakika daha pişirin, yüzey hafif kızarsın.",
+          "timerSeconds": 600
+        }
+      ],
+      "cookMinutes": 85,
+      "totalMinutes": 103
+    },
+    "sources": [
+      "https://yemek.com/tarif/testi-kebabi/",
+      "https://sahrapsoysal.com/testi-kebabi-tarifi-t-3529"
+    ],
+    "confidence": "high",
+    "reason": "Nevşehir testi kebabı kaynakları uzun ve kapalı pişirme ister. Mevcut 28 dakika dana eti için yanıltıcı, ayrıca step ve ingredient listesi çelişiyor."
+  },
+  {
+    "slug": "firin-peynir-helvasi-canakkale-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/canakkale/neyenir/peynir-helvasi",
+      "https://www.nefisyemektarifleri.com/canakkale-peynir-helvasi/"
+    ],
+    "confidence": "high",
+    "reason": "Tuzsuz peynir, irmik, şeker ve fırında kızartma Çanakkale peynir helvası kaynaklarıyla uyumlu. Süre ve allergen alanları makul."
+  },
+  {
+    "slug": "firin-somon-brokoli-kasesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps içinde 3 dakika dinlendirme var, totalMinutes prep + cook toplamında kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 33
+    },
+    "sources": [
+      "https://www.eatingwell.com/recipe/279303/garlic-butter-roasted-salmon-with-potatoes-asparagus/",
+      "https://www.goodhousekeeping.com/food-recipes/healthy/a69180811/roasted-broccoli-with-tahini-and-crispy-chickpeas-recipe/"
+    ],
+    "confidence": "medium",
+    "reason": "Somon ve brokoliyi aynı tepside fırınlama tekniği kaynaklarla uyumlu. Balık allergen doğru, yalnız 3 dakikalık dinlendirme toplam süreye eklenmeli."
+  },
+  {
+    "slug": "firin-tarcinli-armut",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps içinde 8 dakika dinlendirme var, toplam süre prep + cook toplamında kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 41
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/baked-pears",
+      "https://www.foodnetwork.com/recipes/ellie-krieger/baked-pears-with-walnuts-and-honey-recipe-1944588"
+    ],
+    "confidence": "high",
+    "reason": "Armut, bal, tereyağı ve tarçınla fırınlama kaynaklarla uyumlu. Süt allergen tereyağından doğru, sadece dinlendirme totalMinutes içinde eksik."
+  },
+  {
+    "slug": "firinda-baharatli-leblebi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps içinde 10 dakika tepside soğutma var, toplam süre prep + cook toplamında kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://yemek.com/tarif/firinda-nohut-cipsi/",
+      "https://www.sofra.com.tr/tarif/cips/nohut-cipsi"
+    ],
+    "confidence": "high",
+    "reason": "Haşlanmış nohut, yağ ve baharatla fırında çıtırlaştırma kaynaklarla uyumlu. Soğutma çıtırlık için işlevsel, toplam sürede görünmeli."
+  },
+  {
+    "slug": "firinda-balkabagi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.foragerproject.com/recipes/roasted-pumpkin-with-tahini-yogurt-sauce/",
+      "https://time.com/5043567/weekend-recipe-roasted-pumpkin-teresa-cutter/"
+    ],
+    "confidence": "high",
+    "reason": "Balkabağını zeytinyağıyla fırınlayıp tahinli dokunuşla servis etme kaynaklarla uyumlu. Susam allergen tahinden doğru, süreler makul."
+  },
+  {
+    "slug": "firinda-falafel-cipsi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps içinde 5 dakika dinlendirme var, toplam süre prep + cook toplamında kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 40
+    },
+    "sources": [
+      "https://www.hannaford.com/recipe/baked-falafel-with-tahini-sauce/12757",
+      "https://detoxinista.com/baked-falafel/"
+    ],
+    "confidence": "medium",
+    "reason": "Haşlanmış nohut ve tahinle fırın falafel yorumu kaynaklarla uyumlu. Susam allergen doğru, ancak 5 dakikalık dinlendirme totalMinutes içinde eksik."
+  },
+  {
+    "slug": "firinda-karnabahar",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cookMinutes: steps içinde 8 dakika haşlama ve 25 dakika fırınlama var, cookMinutes en az 33 dakika olmalı",
+      "totalMinutes: 5 dakika buhar attırma pasif süre olarak toplamda görünmüyor"
+    ],
+    "corrections": {
+      "cookMinutes": 33,
+      "totalMinutes": 58
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/firinda-soslu-karnabahar-tarifi/16669",
+      "https://www.rafinera.com/blog/diyet-yemek-tarifleri/firinda-karnabahar"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurt, yumurta, un ve kaşarlı fırın karnabahar kaynaklarla uyumlu. Süre alanları haşlama, fırınlama ve buhar bekletmeyi yansıtmalı."
+  },
+  {
+    "slug": "firinda-karniyarik",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cookMinutes: patlıcan kızartma, kıymalı harç ve fırın pişirme adımları toplam 48 dakika",
+      "totalMinutes: mevcut toplam süre cookMinutes güncellemesiyle 78 dakika olmalı"
+    ],
+    "corrections": {
+      "cookMinutes": 48,
+      "totalMinutes": 78
+    },
+    "sources": [
+      "https://www.icim.com.tr/tarifler/firinda-karniyarik-tarifi/",
+      "https://www.lezzizyemeklerim.com/yemek-tarifi/patlican-karniyarik-firinda/956"
+    ],
+    "confidence": "high",
+    "reason": "Patlıcan, kıyma, soğan, domates ve biberli karnıyarık kaynaklarla uyumlu. Mevcut cookMinutes adım sürelerinin altında kalıyor."
+  },
+  {
+    "slug": "firinda-makarna",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cookMinutes: makarna haşlama, beşamel ve fırın pişirme toplamı 40 dakika",
+      "totalMinutes: 8 dakika dinlendirme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "cookMinutes": 40,
+      "totalMinutes": 63
+    },
+    "sources": [
+      "https://www.lezzizyemeklerim.com/yemek-tarifi/besamel-soslu-kasarli-firinda-makarna/18475",
+      "https://www.makarna.info/besamel-soslu-firinda-makarna-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Beşamel, kaşar ve fırın makarna kaynaklarla uyumlu. Adımlardaki haşlama, sos ve fırın süreleri ile dinlendirme toplamda eksik."
+  },
+  {
+    "slug": "firinda-mucver",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kolaytarifim.com/tarifler/firinda-kabak-mucver-tarifi",
+      "https://www.youtube.com/watch?v=OKBVIfkKUvE"
+    ],
+    "confidence": "high",
+    "reason": "Kabak, yumurta, un, beyaz peynir ve dereotuyla fırında mücver kaynaklarla uyumlu. Allergen ve süreler kabul edilebilir aralıkta."
+  },
+  {
+    "slug": "firinda-nohut-cipsi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps içinde 8 dakika bekletme ve tamamen soğutma uyarısı var, totalMinutes prep + cook toplamında kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 48
+    },
+    "sources": [
+      "https://yemek.com/tarif/firinda-nohut-cipsi/",
+      "https://www.sofra.com.tr/tarif/cips/nohut-cipsi"
+    ],
+    "confidence": "high",
+    "reason": "Haşlanmış nohudu kurutup baharatla fırınlama kaynaklarla uyumlu. Çıtır sonuç için bekleme süresi toplamda görünmeli."
+  },
+  {
+    "slug": "firinda-soslu-tavuk-kanat",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps içinde 30 dakika buzdolabında dinlendirme var, toplam süre bu pasif marineyi içermiyor"
+    ],
+    "corrections": {
+      "totalMinutes": 85
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/firinda-soslu-kanat-nefis/",
+      "https://www.nefissunumlar.com/firinda-soslu-kanat-2/"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurt, salça, yağ ve sarımsaklı kanat sosu kaynaklarla uyumlu. 30 dakikalık marine totalMinutes içinde bekleme farkı olarak yer almalı."
+  },
+  {
+    "slug": "firinda-tavuk-baget",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.recipevibes.com/oven-baked-chicken-drumsticks-recipe/",
+      "https://cookinglsl.com/oven-baked-chicken-drumsticks/"
+    ],
+    "confidence": "high",
+    "reason": "Bageti yağ ve baharatla kaplayıp 200°C civarında 40-45 dakika pişirme kaynaklarla uyumlu. Allergen yok, süre ve makro makul."
+  },
+  {
+    "slug": "firinda-tavuk-pirzola",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps içinde 30 dakika buzdolabında dinlendirme var, toplam süre bu pasif marineyi içermiyor"
+    ],
+    "corrections": {
+      "totalMinutes": 95
+    },
+    "sources": [
+      "https://www.lezzizyemeklerim.com/yemek-tarifi/firin-posetinde-tavuk-pirzola-patates/24005",
+      "https://www.pembeoje.com/yemek-tarifleri/firinda-tavuk-pirzola-tarifi.html"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurtlu salçalı tavuk pirzola ve patatesli fırın tekniği kaynaklarla uyumlu. 30 dakikalık marine totalMinutes içinde görünmeli."
+  },
+  {
+    "slug": "firinlanmis-kabak-cekirdegi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cookMinutes: fırın pişirme adımı 18 dakika, cookMinutes 20 kalmış",
+      "totalMinutes: steps içinde 20 dakika kurutma var, toplam süre bu pasif kurutmayı içermiyor"
+    ],
+    "corrections": {
+      "cookMinutes": 18,
+      "totalMinutes": 48
+    },
+    "sources": [
+      "https://www.finedininglovers.com/explore/recipes/how-roast-pumpkin-seeds",
+      "https://buncombe.ces.ncsu.edu/2024/09/roasted-pumpkin-seeds-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Kabak çekirdeğini yıkayıp kurutmak, yağ ve baharatla fırınlamak kaynaklarla uyumlu. Kurutma süresi totalMinutes içinde eksik."
+  },
+  {
+    "slug": "firinlanmis-yulaf",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps içinde 3 dakika bekletme ve 8 dakika dinlendirme var, toplam süre prep + cook toplamında kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 46
+    },
+    "sources": [
+      "https://pittsburghfoodbank.org/tr/recipes/banana-baked-oatmeal/",
+      "https://www.kirazinmutfagi.com.tr/tarif/firinlanmis-yulaf-ezmesi"
+    ],
+    "confidence": "high",
+    "reason": "Yulaf, süt, muz ve yumurtayla fırınlanmış kahvaltı kaynaklarla uyumlu. Bekletme ve dinlendirme totalMinutes içinde görünmeli."
+  },
+  {
+    "slug": "fish-and-chips-ingiliz-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/next-level-fish-chips",
+      "https://www.epicurious.com/recipes/food/views/fish-and-chips"
+    ],
+    "confidence": "high",
+    "reason": "Morina, patates, unlu gazlı hamur ve kızartma yöntemi klasik fish and chips kaynaklarıyla uyumlu. Gluten ve deniz ürünü allergen doğru."
+  },
+  {
+    "slug": "fiskefrikadeller",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps içinde 15 dakika buzdolabında soğutma var, toplam süre pasif beklemeyi içermiyor"
+    ],
+    "corrections": {
+      "totalMinutes": 58
+    },
+    "sources": [
+      "https://www.carolinescooking.com/fiskefrikadeller-danish-fish-cakes/",
+      "https://trinehahnemann.com/recipe/fiskefrikadeller-fish-cakes/"
+    ],
+    "confidence": "high",
+    "reason": "Beyaz balık, krema, yumurta ve unlu Danimarka balık köftesi kaynaklarla uyumlu. Soğutma süresi totalMinutes içinde pasif fark olmalı."
+  },
+  {
+    "slug": "fistik-ezmeli-muz-smoothie",
+    "verdict": "PASS",
+    "sources": [
+      "https://foodviva.com/smoothie-recipes/peanut-butter-smoothie-recipe/",
+      "https://minimalistbaker.com/4-ingredient-peanut-butter-banana-smoothie/"
+    ],
+    "confidence": "high",
+    "reason": "Muz, fıstık ezmesi, süt ve yulaflı smoothie kaynaklarla uyumlu. Süt, yer fıstığı ve yulaf kaynaklı allergen alanları doğru."
+  },
+  {
+    "slug": "fistikli-bulgur-kofte-gaziantep-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients_add: 1. adımda sıcak su kullanılıyor ama ingredient listesinde yok",
+      "steps_replace: 1. adım 'yumuşayana kadar' diyor, süre belirsiz"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Sıcak su",
+          "amount": "0.75",
+          "unit": "su bardağı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "İnce bulguru 0.75 su bardağı sıcak suyla 10 dakika kapalı bekletin.",
+          "timerSeconds": 600
+        }
+      ]
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/fistikli-bulgurlu-antep-koftesi-t-6286",
+      "https://www.hungrypaprikas.com/cig-kofte/"
+    ],
+    "confidence": "high",
+    "reason": "Bulgur, salça, kimyon ve Antep fıstığı çizgisi kaynaklarla uyumlu. Sıcak su ve bekleme süresi netleşmeli."
+  },
+  {
+    "slug": "fistikli-domates-corbasi-edirne-bag-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "description: Edirne bağ usulü ve Antep fıstıklı domates çorbası iddiası için güvenilir doğrudan kaynak bulunamadı",
+      "description: yemek doğru bir füzyon çorba olabilir ama yöresel köken iddiası yanıltıcı görünüyor"
+    ],
+    "corrections": {
+      "description": "Domates ve Antep fıstığıyla hazırlanan bu çorba, parlak renkli ve hafif yoğun bir başlangıç sunar."
+    },
+    "sources": [
+      "https://yemek.com/tarif/domates-corbasi/",
+      "https://www.hgtv.com/design/make-and-celebrate/entertaining/pistachio-soup-recipe"
+    ],
+    "confidence": "medium",
+    "reason": "Domates çorbası ve fıstıkla çorba bağlama ayrı ayrı kaynaklı. Ancak Edirne bağ usulü iddiası doğrudan doğrulanmadı, manuel review gerekir."
+  }
+]

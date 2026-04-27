@@ -1,0 +1,930 @@
+[
+  {
+    "slug": "hardalli-lufer-salatasi-canakkale-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: lüfer fileto pişirilmeden salataya giriyor, ayrıca kapari, kırmızı soğan ve limon kabuğu adımda var ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Lüfer filetolarını tuzlayıp ızgara tavada pişirin, sonra iri parçalara ayırın.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Tane hardal, limon suyu ve zeytinyağını 45 saniye çırpın.",
+          "timerSeconds": 45
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Salatayı limon dilimleriyle servis edin, balığı tekrar karıştırmayın ki lüfer lifleri tabakta belirgin kalsın."
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/firinda-lufer/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/balik-yemekleri/balik-tarifleri/firinda-lufer"
+    ],
+    "confidence": "high",
+    "reason": "Lüfer kaynaklarında balık pişirilerek servis ediliyor; mevcut salata adımlarında hem güvenli pişirme hem de listeyle eşleşen sos eksik."
+  },
+  {
+    "slug": "hardalli-luferli-patates-tepsi-canakkale-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 4 dakikalık dinlendirme süresi totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 44
+    },
+    "sources": [
+      "https://yemek.com/tarif/firinda-lufer/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/balik-yemekleri/balik-tarifleri/firinda-lufer"
+    ],
+    "confidence": "high",
+    "reason": "Fırında lüfer ve patates hattı kaynaklarla uyumlu; sadece tarifteki pasif dinlenme süresi toplam süreye eklenmeli."
+  },
+  {
+    "slug": "hardalli-pancar-salatasi-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: haşlanmış pancar yazdığı halde adımda 25 dakika haşlama var",
+      "steps: zeytinyağı, kornişon ve taze soğan adımda geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Haşlanmış pancarları iri küp doğrayın, elma sirkesiyle harmanlayın."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Hardal, yoğurt ve dereotunu parlak bir sos olana kadar çırpın.",
+          "timerSeconds": 60
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Salatayı dereotu serperek soğuk servis edin, sosu fazla ezmeden karıştırın."
+        }
+      ]
+    },
+    "sources": [
+      "https://swedishfood.com/swedish-food-recipes-side-dishes/441-beetroot-salad",
+      "https://www.scandikitchen.co.uk/recipe-beetroot-salad-rodbetssallad/"
+    ],
+    "confidence": "high",
+    "reason": "İsveç pancar salatası kaynaklarında soğuk pancar ve kremalı sos makul; mevcut adımlar liste dışı malzeme ve gereksiz haşlama içeriyor."
+  },
+  {
+    "slug": "hardalli-patates-salatasi-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: haşlanmış patates yazdığı halde adımda tekrar 20 dakika haşlama var",
+      "steps: zeytinyağı, bal, kornişon, taze soğan ve karabiber adımda geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Haşlanmış patatesleri iri küpler halinde kesin."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Patatesleri elma sirkesiyle harmanlayıp sosu çekmesi için bekletin.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Hardal, yoğurt ve dereotunu 45 saniye çırpın.",
+          "timerSeconds": 45
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Salatayı soğuk servis edin, dereotunu son anda serpin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.tastingtable.com/687364/how-to-make-swedish-potato-salad/",
+      "https://www.food.com/recipe/mustard-dill-potato-salad-323756"
+    ],
+    "confidence": "high",
+    "reason": "Hardallı dereotlu patates salatası kaynaklarla uyumlu; adımlar pişmiş patates girdisini ve mevcut malzeme listesini takip etmeli."
+  },
+  {
+    "slug": "hardalli-sari-bezelye-corbasi-isvec-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://swedishfood.com/swedish-food-recipes-starters/134-pea-soup",
+      "https://www.foodista.com/recipe/QY7FZK5B/swedish-yellow-split-pea-soup"
+    ],
+    "confidence": "medium",
+    "reason": "İsveç sarı bezelye çorbası hardalla servis edilir; hazır haşlanmış bezelyeyle hızlı versiyon süre ve alerjen açısından makul."
+  },
+  {
+    "slug": "hardalli-tavuk-sote-tekirdag-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/hardal-soslu-tavuk/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tavuk-yemekleri/tavuk-tarifleri/hardal-soslu-tavuk"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk, soğan, hardal ve zeytinyağıyla hızlı tava yemeği kaynaklardaki hardal soslu tavuk çizgisiyle uyumlu; süreler tutarlı."
+  },
+  {
+    "slug": "hardalli-tavuklu-karabugday-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 5 dakikalık dinlendirme süresi totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 37
+    },
+    "sources": [
+      "https://www.polonist.com/kasha-gryczana-buckwheat-groats/",
+      "https://www.everyday-delicious.com/buckwheat-kasha/"
+    ],
+    "confidence": "medium",
+    "reason": "Karabuğdayın tavuklu ve kremalı kullanımı Polonya kasha mutfağıyla makul; tarifteki pasif bekleme toplam süreye eklenmeli."
+  },
+  {
+    "slug": "harira-kuzey-afrika-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: limon ve kişniş servis adımında geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 6,
+          "instruction": "Çorbayı sıcak kaselere alın ve bekletmeden servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/harira",
+      "https://www.themediterraneandish.com/harira-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Harira kaynakları mercimek, nohut, domates ve unla kıvam verme hattını doğruluyor; servis adımı listedeki malzemeyle sınırlanmalı."
+  },
+  {
+    "slug": "harire-mardin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/harire-tatlisi/",
+      "https://www.harire.com/"
+    ],
+    "confidence": "high",
+    "reason": "Pekmez, un, su ve cevizle yapılan pelte yapısı Mardin hariresi kaynaklarıyla uyumlu; süre, alerjen ve makro tarafında belirgin hata yok."
+  },
+  {
+    "slug": "harire-tatlisi-mardin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/harire-tatlisi/",
+      "https://www.harire.com/"
+    ],
+    "confidence": "high",
+    "reason": "Pekmezli nişastalı pelte ve ceviz servisi harire kaynaklarıyla uyumlu; nişasta kullanımı una alternatif olarak makul görünüyor."
+  },
+  {
+    "slug": "harissa-yogurt-sos",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: iki ayrı 10 dakikalık soğuk dinlendirme var, totalMinutes bunları karşılamıyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 5,
+          "instruction": "Harissa yoğurt sosunu küçük kaseye alın ve soğuk servis edin."
+        }
+      ],
+      "totalMinutes": 16
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/roast-aubergines-yogurt-harissa",
+      "https://www.foodandwine.com/lifestyle/9-ways-use-harissa"
+    ],
+    "confidence": "high",
+    "reason": "Harissa ve yoğurt birlikteliği kaynaklarla uyumlu; tek soğuk dinlenme yeterli ve toplam süre bunu göstermeli."
+  },
+  {
+    "slug": "hasanpasa-koftesi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/hasanpasa-koftesi/",
+      "https://www.nefisyemektarifleri.com/hasanpasa-koftesi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Çanak köfte, patates püresi ve salçalı sos hattı Hasanpaşa köftesi kaynaklarıyla uyumlu; süt, yumurta ve gluten alerjenleri doğru."
+  },
+  {
+    "slug": "hashasli-armut-tatlisi-afyon-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: limon adımda geçiyor ama ingredient listesinde yok",
+      "steps: 10 dakikalık dinlendirme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Limon",
+          "amount": "0.5",
+          "unit": "adet"
+        }
+      ],
+      "totalMinutes": 42
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/baked-pears",
+      "https://www.allrecipes.com/recipe/8847/baked-pears/"
+    ],
+    "confidence": "medium",
+    "reason": "Fırında armut tatlısında limon ve bal kullanımı kaynaklarla uyumlu; listede limon eksik ve dinlenme toplam süreye eklenmeli."
+  },
+  {
+    "slug": "hashasli-armutlu-revani-afyon-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: şeker, su ve limon adımlarda geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Toz şeker",
+          "amount": "1",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Su",
+          "amount": "1",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Limon suyu",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        }
+      ],
+      "averageCalories": 315,
+      "carbs": 48
+    },
+    "sources": [
+      "https://yemek.com/tarif/revani/",
+      "https://www.nefisyemektarifleri.com/revani-tatlisi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Revani kaynaklarında kek harcı ve şerbet için şeker, su ve limon beklenir; mevcut liste adımları karşılamıyor."
+  },
+  {
+    "slug": "hashasli-bukme-afyon-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 20 dakikalık hamur dinlendirme ve 8 dakikalık son dinlenme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 83
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/afyonkarahisar/neyenir/hashasli-bukme",
+      "https://www.nefisyemektarifleri.com/hashasli-bukme-afyon-yoresi/"
+    ],
+    "confidence": "high",
+    "reason": "Afyon haşhaşlı bükme kaynakları mayalı hamur ve haşhaş ezmesi hattını destekliyor; pasif beklemeler toplam süreye yansıtılmalı."
+  },
+  {
+    "slug": "hashasli-cevizli-bukme-eskisehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 15 dakikalık hamur dinlendirme ve 8 dakikalık son dinlenme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 73
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/afyonkarahisar/neyenir/hashasli-bukme",
+      "https://www.nefisyemektarifleri.com/hashasli-cevizli-bukme/"
+    ],
+    "confidence": "medium",
+    "reason": "Haşhaşlı cevizli bükme yapısı kaynaklarla uyumlu; adımlardaki iki bekleme süresi RecipeTimeline için totalMinutes içinde kalmalı."
+  },
+  {
+    "slug": "hashasli-cevizli-irmik-tatlisi-usak-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: sıcak su adımda geçiyor ama ingredient listesinde yok",
+      "steps: 10 dakikalık kapalı dinlendirme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Sıcak su",
+          "amount": "1.5",
+          "unit": "su bardağı"
+        }
+      ],
+      "totalMinutes": 35
+    },
+    "sources": [
+      "https://yemek.com/tarif/irmik-helvasi/",
+      "https://www.nefisyemektarifleri.com/irmik-helvasi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "İrmik helvası kaynaklarında sıvı eklenerek kıvam verilir; mevcut tatlıda sıcak su listede yok ve dinlenme süresi eksik."
+  },
+  {
+    "slug": "hashasli-elma-kompostosu-eskisehir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/elma-kompostosu/",
+      "https://www.nefisyemektarifleri.com/elma-kompostosu-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Elma, su, şeker ve tarçınla komposto hattı kaynaklarla uyumlu; haşhaş eklemesi servis karakteri veriyor ve alerjen gerektirmiyor."
+  },
+  {
+    "slug": "hashasli-erikli-krep-macar-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.thespruceeats.com/hungarian-crepes-palacsinta-recipe-1136665",
+      "https://www.daringgourmet.com/hungarian-palacsinta/"
+    ],
+    "confidence": "medium",
+    "reason": "Macar palacsinta temeli un, süt ve yumurtayla uyumlu; erik ve haşhaş tatlı iç olarak makul, süre ve alerjenler yerinde."
+  },
+  {
+    "slug": "hashasli-erikli-rulo-macaristan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: şeker ve yağ adımda geçiyor ama ingredient listesinde yok",
+      "steps: jargon sayılan ifade var"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Toz şeker",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Sıvı yağ",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 3,
+          "instruction": "Hamuru dinlendirin, böylece daha rahat açılır.",
+          "timerSeconds": 900
+        }
+      ],
+      "totalMinutes": 61,
+      "averageCalories": 340,
+      "carbs": 48,
+      "fat": 13
+    },
+    "sources": [
+      "https://www.thespruceeats.com/hungarian-poppy-seed-roll-recipe-1136666",
+      "https://www.daringgourmet.com/makowiec-polish-poppy-seed-roll/"
+    ],
+    "confidence": "medium",
+    "reason": "Haşhaşlı rulo kaynakları hamur, tatlı iç ve dinlendirme hattını destekliyor; eksik şeker, yağ ve jargonlu adım düzeltilmeli."
+  },
+  {
+    "slug": "hashasli-gozleme-kutahya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/afyonkarahisar/neyenir/hashasli-bukme",
+      "https://yemek.com/tarif/gozleme/"
+    ],
+    "confidence": "medium",
+    "reason": "İnce açılmış hamur ve haşhaş ezmeli iç, haşhaşlı hamur işi ve gözleme kaynaklarıyla uyumlu; süreler toplamla çelişmiyor."
+  },
+  {
+    "slug": "hashasli-kaymakli-ekmek-afyon-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/afyonkarahisar/neyenir/kaymakli-ekmek-kadayifi",
+      "https://www.nefisyemektarifleri.com/hashas-ezmeli-ekmek/"
+    ],
+    "confidence": "medium",
+    "reason": "Afyon kaymağı ve haşhaş ezmesi birlikte yöresel kullanım açısından makul; kısa tava kızartması ve süt alerjenleri tutarlı."
+  },
+  {
+    "slug": "hashasli-kete-toplari-kars-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 6 dakikalık dinlendirme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 48
+    },
+    "sources": [
+      "https://yemek.com/tarif/kete/",
+      "https://www.nefisyemektarifleri.com/kete-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kete hamuru ve fırın pişirme hattı kaynaklarla uyumlu; tarifteki son dinlenme toplam süreye eklenmeli."
+  },
+  {
+    "slug": "hashasli-limonlu-kek-manisa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: şeker ve yağ adımda geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Toz şeker",
+          "amount": "1",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Sıvı yağ",
+          "amount": "0.5",
+          "unit": "su bardağı"
+        }
+      ],
+      "averageCalories": 330,
+      "carbs": 44,
+      "fat": 14
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/lemon-poppyseed-cake",
+      "https://sallysbakingaddiction.com/lemon-poppy-seed-cake/"
+    ],
+    "confidence": "high",
+    "reason": "Limonlu haşhaşlı kek kaynaklarında şeker ve yağ temel bileşen; mevcut adımlar bu malzemeleri kullanıyor ama liste eksik."
+  },
+  {
+    "slug": "hashasli-mercimek-krep-kutahya-koy-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/krep/",
+      "https://www.nefisyemektarifleri.com/yesil-mercimekli-krep/"
+    ],
+    "confidence": "medium",
+    "reason": "Krep hamuru ve haşlanmış mercimekli iç kaynaklarla uyumlu; haşhaş ezmesi yerel tat ekliyor, alerjenler doğru."
+  },
+  {
+    "slug": "hashasli-mercimekli-bukme-afyon-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 20 dakikalık hamur dinlendirme ve 8 dakikalık son dinlenme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 93
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/afyonkarahisar/neyenir/hashasli-bukme",
+      "https://www.nefisyemektarifleri.com/hashasli-mercimekli-bukme/"
+    ],
+    "confidence": "high",
+    "reason": "Afyon mercimekli bükme kaynakları haşhaşlı hamur ve mercimekli içi doğruluyor; bekleme süreleri toplam süreye eklenmeli."
+  },
+  {
+    "slug": "hashasli-nohutlu-borek-eskisehir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/nohutlu-borek/",
+      "https://www.nefisyemektarifleri.com/nohutlu-borek-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Yufkalı nohutlu börek fikri kaynaklarla uyumlu; haşhaş ezmesi listeyle eşleşiyor, pişirme süresi ve gluten alerjeni makul."
+  },
+  {
+    "slug": "hashasli-pancar-salatasi-afyon-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: haşlanmış pancar yazdığı halde adımda tekrar 25 dakika haşlama var",
+      "steps: limon, tuz, zeytinyağı ve dereotu adımda geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Haşlanmış pancarları iri rendeleyin."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Yoğurt ve sarımsağı 45 saniye çırpın.",
+          "timerSeconds": 45
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Haşhaşı üstüne serpin ve salatayı serin servis edin."
+        }
+      ],
+      "totalMinutes": 10
+    },
+    "sources": [
+      "https://yemek.com/tarif/yogurtlu-pancar-salatasi/",
+      "https://www.nefisyemektarifleri.com/yogurtlu-pancar-salatasi/"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurtlu pancar salatası kaynaklarla uyumlu; mevcut tarif haşlanmış pancarı tekrar pişiriyor ve listede olmayan servis malzemeleri kullanıyor."
+  },
+  {
+    "slug": "hashasli-patates-ezmeli-bukme-afyon-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/afyonkarahisar/neyenir/hashasli-bukme",
+      "https://www.nefisyemektarifleri.com/patatesli-bukme/"
+    ],
+    "confidence": "medium",
+    "reason": "Haşhaş ezmeli bükme ve patatesli iç Afyon hamur işi çizgisiyle uyumlu; malzeme adım eşleşmesi ve süreler makul."
+  },
+  {
+    "slug": "hashasli-peynirli-gozleme-eskisehir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/peynirli-gozleme/",
+      "https://www.nefisyemektarifleri.com/peynirli-gozleme-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Peynirli gözleme tekniği kaynaklarla uyumlu; haşhaş ezmesi yöresel ek olarak malzeme listesinde yer alıyor, alerjenler doğru."
+  },
+  {
+    "slug": "hashasli-tahinli-revani-kup-afyon-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: şekerli süt adımda geçiyor ama ingredient listesinde süt ve şeker yok",
+      "steps: cookMinutes 0 olduğu halde 5 dakika ısıtma adımı var"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 3,
+          "instruction": "Revani küplerini tahinli kremayla hafifçe nemlendirin, kup içinde dağılmasın."
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/revani/",
+      "https://www.nefisyemektarifleri.com/tahinli-muhallebili-kup/"
+    ],
+    "confidence": "medium",
+    "reason": "Revani ve tahinli krema kup olarak makul; pişirme içermeyen tarifte listede olmayan şekerli süt adımı kaldırılmalı."
+  },
+  {
+    "slug": "hashasli-yogurt-corbasi-afyon-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/yogurt-corbasi/",
+      "https://www.nefisyemektarifleri.com/yogurt-corbasi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurt, pirinç ve yumurtalı terbiye kaynaklardaki yoğurt çorbasıyla uyumlu; haşhaş eklemesi liste ve alerjenlerle tutarlı."
+  },
+  {
+    "slug": "hashasli-yogurtlu-makarna-denizli-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/yogurtlu-makarna/",
+      "https://www.nefisyemektarifleri.com/yogurtlu-makarna-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Yoğurtlu makarna temel tekniği kaynaklarla uyumlu; erişte, yoğurt, haşhaş ezmesi ve tereyağı adımlarda düzgün eşleşiyor."
+  },
+  {
+    "slug": "hashasli-yogurtlu-patates-eskisehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: limon, sarımsak, zeytinyağı ve dereotu adımda geçiyor ama ingredient listesinde yok",
+      "steps: 10 dakikalık soğutma süresi totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Patatesleri iri küp doğrayın ve tuzla hafifçe tatlandırın."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Yoğurdu 45 saniye karıştırın.",
+          "timerSeconds": 45
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Patatesleri yoğurtla birleştirin, haşhaşı üstüne serpip soğuk servis edin."
+        }
+      ],
+      "totalMinutes": 37
+    },
+    "sources": [
+      "https://yemek.com/tarif/yogurtlu-patates-salatasi/",
+      "https://www.nefisyemektarifleri.com/yogurtlu-patates-salatasi/"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurtlu patates salatası kaynaklarla uyumlu; mevcut adımlar liste dışı malzeme ve görünmeyen soğutma süresi taşıyor."
+  },
+  {
+    "slug": "hashasli-yumurta-durumu-afyon-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/yumurta-durum/",
+      "https://www.nefisyemektarifleri.com/yumurtali-lavas-durum/"
+    ],
+    "confidence": "medium",
+    "reason": "Yumurtalı lavaş dürüm fikri kaynaklarla uyumlu; haşhaş ezmesi ve tereyağı listede var, süre ve alerjenler doğru görünüyor."
+  },
+  {
+    "slug": "hasir-kunefe",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: su şerbet adımında geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Su",
+          "amount": "2",
+          "unit": "su bardağı"
+        }
+      ],
+      "averageCalories": 515,
+      "carbs": 66
+    },
+    "sources": [
+      "https://yemek.com/tarif/kunefe/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/serbetli-tatlilar/kunefe"
+    ],
+    "confidence": "high",
+    "reason": "Künefe kaynaklarında şerbet için su ve şeker birlikte kullanılır; mevcut adım suyu kullanıyor ama ingredient listesinde göstermiyor."
+  },
+  {
+    "slug": "hasselback-pancar-salatasi-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: hardal, tuz, kornişon ve yoğurt adımda geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 3,
+          "instruction": "Zeytinyağı ve elma sirkesini 45 saniye çırpın.",
+          "timerSeconds": 45
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Pancarları dereotuyla tabağa alın, dilimleri bozmadan servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/hasselback-beets-with-dill-yogurt-sauce",
+      "https://www.bbcgoodfood.com/recipes/hasselback-potatoes"
+    ],
+    "confidence": "medium",
+    "reason": "Hasselback kesim tekniği pancara uygulanabilir; mevcut salata adımlarında liste dışı sos ve servis malzemeleri temizlenmeli."
+  },
+  {
+    "slug": "hasselback-potatis",
+    "verdict": "PASS",
+    "sources": [
+      "https://swedishfood.com/swedish-food-recipes-side-dishes/299-hasselback-potatoes",
+      "https://www.bbcgoodfood.com/recipes/hasselback-potatoes"
+    ],
+    "confidence": "high",
+    "reason": "İnce kesilmiş bütün patates, yağlama ve uzun fırın pişirme İsveç Hasselback kaynaklarıyla uyumlu; süt alerjeni doğru."
+  },
+  {
+    "slug": "hasselback-potatoes-iskandinav-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: fırın süresi 50 dakika ve dinlendirme 5 dakika, cookMinutes ve totalMinutes bu süreleri tam karşılamıyor"
+    ],
+    "corrections": {
+      "cookMinutes": 50,
+      "totalMinutes": 65
+    },
+    "sources": [
+      "https://swedishfood.com/swedish-food-recipes-side-dishes/299-hasselback-potatoes",
+      "https://www.bbcgoodfood.com/recipes/hasselback-potatoes"
+    ],
+    "confidence": "high",
+    "reason": "Hasselback patates kaynakları 45 dakika üstü fırın süresi verir; mevcut adım süreleri toplam ve pişirme alanına yansıtılmalı."
+  },
+  {
+    "slug": "hasude-erzincan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/hasude/",
+      "https://www.kulturportali.gov.tr/turkiye/erzincan/neyenir/hasude"
+    ],
+    "confidence": "medium",
+    "reason": "Nişasta, süt, şeker ve tereyağıyla yapılan hasude kaynaklarla uyumlu; süre kısa ama adımlar ve süt alerjeni tutarlı."
+  },
+  {
+    "slug": "hatay-biberli-ekmek",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: şeker, tuz ve baharat adımda geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Toz şeker",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Pul biber",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/biberli-ekmek/",
+      "https://www.kulturportali.gov.tr/turkiye/hatay/neyenir/biberli-ekmek"
+    ],
+    "confidence": "high",
+    "reason": "Hatay biberli ekmek kaynaklarında mayalı hamur, salçalı harç ve baharat bulunur; adımda geçen temel tatlandırıcılar listeye eklenmeli."
+  },
+  {
+    "slug": "hatay-firin-oruk-dilimleri",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: sıcak su adımda geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Sıcak su",
+          "amount": "1.5",
+          "unit": "su bardağı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/hatay/neyenir/oruk",
+      "https://yemek.com/tarif/oruk/"
+    ],
+    "confidence": "high",
+    "reason": "Fırın oruk kaynakları ince bulgurun suyla yumuşatılıp tepsiye basılmasını destekliyor; sıcak su listede eksik."
+  },
+  {
+    "slug": "hatay-kagit-kebabi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: baharat adımda geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Doğranmış malzemeleri tuzla karıştırın."
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/hatay-kagit-kebabi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/et-yemekleri/kebap-tarifleri/kagit-kebabi"
+    ],
+    "confidence": "high",
+    "reason": "Kağıt kebabı kaynakları et, domates, biber ve soğanı kağıtta pişirme hattını doğruluyor; liste dışı baharat ifadesi kaldırılmalı."
+  },
+  {
+    "slug": "hatay-kagit-kebabi-tepsi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/hatay-kagit-kebabi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/et-yemekleri/kebap-tarifleri/kagit-kebabi"
+    ],
+    "confidence": "medium",
+    "reason": "Kıymalı tepsi yorumu Hatay kağıt kebabı ve tepsi kebabı çizgisine yakın; listedeki sebze, salça ve fırın süresi tutarlı."
+  },
+  {
+    "slug": "hatay-kaytaz-boregi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: soğan adımda geçiyor ama ingredient listesinde yok",
+      "steps: 5 dakikalık son dinlenme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Soğan",
+          "amount": "1",
+          "unit": "adet"
+        }
+      ],
+      "totalMinutes": 85
+    },
+    "sources": [
+      "https://yemek.com/tarif/kaytaz-boregi/",
+      "https://www.nefisyemektarifleri.com/kaytaz-boregi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kaytaz böreği kaynaklarında kıymalı harçta soğan beklenir; mevcut adım soğan kullanıyor ve son dinlenme toplam sürede görünmüyor."
+  },
+  {
+    "slug": "hatay-kaytaz-boregi-tepsi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/kaytaz-boregi/",
+      "https://www.nefisyemektarifleri.com/kaytaz-boregi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Mayalı hamur, yağla açma ve nar ekşili kıymalı harç Hatay kaytaz böreği kaynaklarıyla uyumlu; süre ve gluten alerjeni makul."
+  },
+  {
+    "slug": "hatay-kunefe-tepsi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 12 dakikalık şerbet ve 20 dakikalık künefe pişirme toplam cookMinutes değerini aşıyor"
+    ],
+    "corrections": {
+      "cookMinutes": 32,
+      "totalMinutes": 52
+    },
+    "sources": [
+      "https://yemek.com/tarif/kunefe/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/serbetli-tatlilar/kunefe"
+    ],
+    "confidence": "high",
+    "reason": "Künefe kaynaklarında şerbet ve kadayıf ayrı işlem görür; mevcut adım süreleri cookMinutes ve totalMinutes içinde eksik kalıyor."
+  },
+  {
+    "slug": "hatay-nar-eksili-zahter-salatasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: salatalık, kırmızı soğan, limon suyu, pul biber ve ceviz adımda geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Zahteri iki kez durulayın ve iyice kurutun."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Domatesleri küçük küpler halinde doğrayın."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Nar ekşisi, zeytinyağı ve susamı 30 saniye çırpın.",
+          "timerSeconds": 30
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Zahter ve domatesi sosla harmanlayıp bekletmeden servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/zahter-salatasi/",
+      "https://www.kulturportali.gov.tr/turkiye/hatay/neyenir/zahter-salatasi"
+    ],
+    "confidence": "high",
+    "reason": "Hatay zahter salatası kaynakları nar ekşisi ve zeytinyağını destekliyor; mevcut adımlar listedeki sade malzemeye dönmeli."
+  },
+  {
+    "slug": "hatay-oruk",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: pişirme ve yoğurma adımlarında süre belirsizliği var"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Soğan ve cevizi tavada çevirerek iç harcı hazırlayın.",
+          "timerSeconds": 360
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Bulgur, kıyma ve tuzu yoğurup çatlamayan dış kat elde edin.",
+          "timerSeconds": 720
+        }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/hatay/neyenir/oruk",
+      "https://yemek.com/tarif/oruk/"
+    ],
+    "confidence": "high",
+    "reason": "Hatay oruğu kaynakları bulgurlu dış kat ve cevizli içi doğruluyor; mevcut tarifte kritik yoğurma ve iç harç süreleri netleşmeli."
+  },
+  {
+    "slug": "hatay-oruk-icli-kofte-cevizli",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/hatay/neyenir/oruk",
+      "https://yemek.com/tarif/oruk/"
+    ],
+    "confidence": "high",
+    "reason": "Bulgur, kıyma, irmik ve cevizli içle hazırlanan oruk kaynaklarla uyumlu; fırın süresi, gluten ve kuruyemiş alerjeni doğru."
+  }
+]

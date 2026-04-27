@@ -1,0 +1,923 @@
+[
+  {
+    "slug": "gyros",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/greek-lamb-gyros",
+      "https://www.thespruceeats.com/how-greek-gyro-is-made-4121890"
+    ],
+    "confidence": "high",
+    "reason": "Pita, baharatlı et ve yoğurtlu sos hattı Yunan gyros kaynaklarıyla uyumlu; marine beklemesi totalMinutes içinde görünüyor."
+  },
+  {
+    "slug": "haemul-pajeon",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: adımda tavaya yağ koyuluyor ama ingredient listesinde yağ yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Sıvı yağ",
+          "amount": "3",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "averageCalories": 380,
+      "fat": 17
+    },
+    "sources": [
+      "https://www.maangchi.com/recipe/haemul-pajeon",
+      "https://www.koreanbapsang.com/haemul-pajeon-seafood-scallion-pancake/"
+    ],
+    "confidence": "high",
+    "reason": "Kaynaklarda pajeon tavada yağla kızartılır; mevcut adım yağı kullanıyor fakat listeye yazılmadığı için malzeme ve yağ hesabı eksik."
+  },
+  {
+    "slug": "hakkari-doleme-balkabakli",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: doleme köftesinde yumurta kaynaklarda temel bileşen değil, mevcut tarif gereksiz yumurta alerjeni taşıyor"
+    ],
+    "corrections": {
+      "ingredients_remove": [
+        "Yumurta"
+      ],
+      "allergens_remove": [
+        "YUMURTA"
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Kıyma, ince bulgur, kimyon, pul biber ve tuzu sekiz dakika yoğurun.",
+          "timerSeconds": 480
+        }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/hakkari-usulu-doleme/",
+      "https://www.kulturportali.gov.tr/turkiye/hakkari/neyenir/doleme"
+    ],
+    "confidence": "medium",
+    "reason": "Hakkari doleme kaynaklarında kabak, köfte ve soğan hattı var; yumurta ana reçetede görünmediği için alerjen ve adım sadeleşmeli."
+  },
+  {
+    "slug": "halaszle",
+    "verdict": "PASS",
+    "sources": [
+      "https://tastehungary.com/journal/hungarian-fishermans-soup-halaszle/",
+      "https://www.hungariantidbits.com/hungarian-fishermans-soup-halaszle/"
+    ],
+    "confidence": "high",
+    "reason": "Tatlı su balığı, soğan ve bol kırmızı biber temeli halászlé kaynaklarıyla uyumlu; süre, alerjen ve mutfak kodunda net hata yok."
+  },
+  {
+    "slug": "hallongrottor",
+    "verdict": "PASS",
+    "sources": [
+      "https://visitsweden.com/what-to-do/food-drink/recipes/hallongrottor/",
+      "https://www.swedishfood.com/swedish-food-recipes-biscuits-cakes/155-raspberry-caves"
+    ],
+    "confidence": "high",
+    "reason": "Tereyağlı hamur, başparmak çukuru ve ahududu reçeli İsveç hallongrottor kaynaklarıyla örtüşüyor; alerjenler doğru."
+  },
+  {
+    "slug": "halloumi-izgara",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/griddled-halloumi-beetroot-orange",
+      "https://www.themediterraneandish.com/grilled-halloumi/"
+    ],
+    "confidence": "high",
+    "reason": "Halloumi dilimlerinin kısa sürede ızgarada kızartılması ve limonla servis edilmesi kaynaklarla uyumlu; süt alerjeni yerinde."
+  },
+  {
+    "slug": "hamsi-kusu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: iç harçta soğan kaynaklarda temel, mevcut listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Kuru soğan",
+          "amount": "1",
+          "unit": "adet"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Maydanoz ve ince doğranmış soğanla iç harcı hazırlayıp iki hamsinin arasına ince tabaka halinde yerleştirin."
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/hamsi-kusu/",
+      "https://www.nefisyemektarifleri.com/hamsi-kusu-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Hamsi kuşu kaynaklarında yeşillikli soğanlı iç yaygın; mevcut adım iç harcı tarif ediyor ama soğanı listede göstermiyor."
+  },
+  {
+    "slug": "hamsi-kususu-samsun-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/hamsi-kusu/",
+      "https://www.nefisyemektarifleri.com/hamsi-kusu-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Hamsi, soğan, yumurta ve mısır unu ile tavada kızartma hattı hamsi kuşu kaynaklarıyla uyumlu; mısır unu gluten alerjeni gerektirmez."
+  },
+  {
+    "slug": "hamsi-pastirmasi-salatasi-trabzon-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: adımlarda maydanoz, taze soğan, karabiber, mısır ekmeği ve turp geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Hamsi pastırmasını ince şeritler halinde kesin, tuzu yoğun parçaları ayırın."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Rokayı yıkayıp kurutun, kırmızı soğanı ince piyazlık doğrayın."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Limon suyu ve zeytinyağını kısa süre çırpıp canlı bir salata sosu hazırlayın.",
+          "timerSeconds": 30
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Roka ve soğanı sosla hafifçe harmanlayın, hamsi şeritlerini üstüne yerleştirin."
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Salatayı serin servis edin, ek sos eklemeyin ki hamsi tuzu yeşilliği bastırmasın."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/hamsi-marin/",
+      "https://www.nefisyemektarifleri.com/hamsi-marin-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Marine hamsi salatası fikri kaynaklarla makul; mevcut adımlar listedeki malzemeden koptuğu için adımlar sadeleşmeli."
+  },
+  {
+    "slug": "hamsi-tava",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/hamsi-tava/",
+      "https://www.nefisyemektarifleri.com/hamsi-tava-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Mısır ununa bulanmış hamsinin tavada iki yüzlü pişirilmesi Karadeniz hamsi tava kaynaklarıyla uyumlu; süre ve alerjenler makul."
+  },
+  {
+    "slug": "hamsikoy-sutlaci",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.yemek.com/tarif/hamsikoy-sutlaci/",
+      "https://www.nefisyemektarifleri.com/hamsikoy-sutlaci-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Bol süt, az pirinç ve fırında üst kızartma Hamsiköy sütlacı kaynaklarıyla uyumlu; süt alerjeni doğru."
+  },
+  {
+    "slug": "hamsili-ekmek-rize-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: altı dakika dinlendirme süresi totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 61
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/hamsili-ekmek/",
+      "https://yemek.com/tarif/hamsili-ekmek/"
+    ],
+    "confidence": "medium",
+    "reason": "Hamsili ekmek kaynakları mısır unlu tepsi hattını destekliyor; tarifteki pasif dinlenme toplam süreye eklenmeli."
+  },
+  {
+    "slug": "hamsili-kabakli-firin-pilav-rize-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: sekiz dakikalık pilav dinlendirme süresi totalMinutes hesabında yok"
+    ],
+    "corrections": {
+      "totalMinutes": 44
+    },
+    "sources": [
+      "https://yemek.com/tarif/hamsili-pilav/",
+      "https://www.nefisyemektarifleri.com/hamsili-pilav-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Hamsili pilav kaynakları fırın ve dinlendirme hattını doğruluyor; pasif dinlenme RecipeTimeline için totalMinutes farkı olarak kalmalı."
+  },
+  {
+    "slug": "hamsili-karalahana-sote-giresun-ev-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/giresun/neyenir/karalahana-pancar-diblesi",
+      "https://giresun.ktb.gov.tr/TR-208459/karalahana-pancar-diblesi.html"
+    ],
+    "confidence": "medium",
+    "reason": "Karalahana ve hamsinin kısa tavada pişirilmesi yöresel Karadeniz malzeme hattıyla uyumlu; belirgin süre veya alerjen hatası yok."
+  },
+  {
+    "slug": "hamsili-mantar-guveci-zonguldak-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/firinda-hamsi/",
+      "https://www.nefisyemektarifleri.com/firinda-hamsi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Fırında hamsi ve sebzeli güveç hattı kaynaklarla makul; mantar eklemesi tarif içinde tutarlı ve alerjen bildirimi doğru."
+  },
+  {
+    "slug": "hamsili-misir-ekmegi-tostu-samsun-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/hamsi-tava/",
+      "https://www.nefisyemektarifleri.com/misir-ekmegi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Hamsi, mısır ekmeği ve peynirli sıcak tost yerel uyarlama olarak tutarlı; süt ve deniz ürünü alerjenleri doğru."
+  },
+  {
+    "slug": "hamsili-misirli-pilav-giresun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: on dakika pirinç bekletme ve sekiz dakika dinlendirme totalMinutes içinde ayrılmamış"
+    ],
+    "corrections": {
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://yemek.com/tarif/hamsili-pilav/",
+      "https://www.nefisyemektarifleri.com/hamsili-pilav-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Hamsili pilav kaynakları pirinçli ve dinlendirmeli akışı destekliyor; pasif bekleme toplam süreye eklenmeli."
+  },
+  {
+    "slug": "hamsili-patates-tavasi-sinop-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/hamsi-tava/",
+      "https://www.nefisyemektarifleri.com/hamsili-patates-tava/"
+    ],
+    "confidence": "medium",
+    "reason": "Hamsi ve patatesin tavada bağlanması Karadeniz tava kaynaklarıyla uyumlu; yumurta ve deniz ürünü alerjenleri yerinde."
+  },
+  {
+    "slug": "hamsili-patatesli-bulgur-pilavi-sinop-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/hamsili-pilav/",
+      "https://www.nefisyemektarifleri.com/hamsili-bulgur-pilavi/"
+    ],
+    "confidence": "medium",
+    "reason": "Hamsi, bulgur ve patatesli tek tencere akışı yöresel pilav mantığıyla uyumlu; gluten ve deniz ürünü bildirimi doğru."
+  },
+  {
+    "slug": "hamsili-pazi-sarma-trabzon-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/trabzon/neyenir/hamsili-pilav",
+      "https://yemek.com/tarif/pazi-sarmasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Pazı sarma tekniği ve hamsili pirinçli iç Karadeniz kaynaklarıyla makul; süre ve alerjen alanında net hata görmedim."
+  },
+  {
+    "slug": "hamsili-pazi-tava-rize-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/hamsi-tava/",
+      "https://www.nefisyemektarifleri.com/pazi-kavurmasi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Pazı, hamsi ve mısır unuyla tava kurulumu Karadeniz malzeme hattına uyuyor; mevcut adımlar ingredient listesiyle tutarlı."
+  },
+  {
+    "slug": "hamsili-pilav-artvin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: on dakikalık dinlendirme süresi totalMinutes hesabında yok"
+    ],
+    "corrections": {
+      "totalMinutes": 75
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/trabzon/neyenir/hamsili-pilav",
+      "https://yemek.com/tarif/hamsili-pilav/"
+    ],
+    "confidence": "high",
+    "reason": "Hamsili pilavın fırından sonra dinlenmesi kaynaklarla uyumlu; mevcut totalMinutes pasif dinlenmeyi göstermediği için artırılmalı."
+  },
+  {
+    "slug": "hamsili-pilav-rize-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: sekiz dakikalık tepsi dinlendirme süresi totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 78
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/trabzon/neyenir/hamsili-pilav",
+      "https://www.nefisyemektarifleri.com/hamsili-pilav-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Hamsili pilav kaynakları iç pilav ve fırın düzenini doğruluyor; servis öncesi dinlenme RecipeTimeline farkı olmalı."
+  },
+  {
+    "slug": "hamsili-pirasa-tava-sinop-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: üç dakika bekletme süresi totalMinutes içinde ayrılmamış"
+    ],
+    "corrections": {
+      "totalMinutes": 33
+    },
+    "sources": [
+      "https://yemek.com/tarif/hamsi-tava/",
+      "https://www.nefisyemektarifleri.com/pirasali-hamsi-tava/"
+    ],
+    "confidence": "medium",
+    "reason": "Hamsili tava tekniği kaynaklarla uyumlu; son bekleme pasif süre olduğundan toplam süreye eklenmeli."
+  },
+  {
+    "slug": "hamsili-pirincli-yesil-lahana-sarmasi-sinop-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/lahana-sarmasi/",
+      "https://www.kulturportali.gov.tr/turkiye/trabzon/neyenir/hamsili-pilav"
+    ],
+    "confidence": "medium",
+    "reason": "Lahana sarma tekniği ve hamsili pirinçli iç yöresel hatla uyumlu; deniz ürünü alerjeni ve süreler makul."
+  },
+  {
+    "slug": "hamsili-taze-bezelye-pilavi-samsun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: sekiz dakikalık pilav dinlendirme süresi totalMinutes içinde yok"
+    ],
+    "corrections": {
+      "totalMinutes": 42
+    },
+    "sources": [
+      "https://yemek.com/tarif/hamsili-pilav/",
+      "https://www.nefisyemektarifleri.com/hamsili-pilav-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Hamsili pilav kaynakları dinlendirme gerektiren pilav akışını destekliyor; totalMinutes pasif beklemeyi kapsamalı."
+  },
+  {
+    "slug": "hanoi-bun-cha",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "description: Hanoi bun cha gelenekte domuz etiyle yapılır, mevcut tarif dana kıymalı yerel uyarlama olduğunu söylemiyor",
+      "timing: yirmi dakikalık köfte dinlendirme prepMinutes içine gömülmüş, RecipeTimeline bekleme segmenti görünmez"
+    ],
+    "corrections": {
+      "description": "Hanoi bun cha, gelenekte domuzla yapılan yemeğin dana kıymalı uyarlamasıdır; pirinç eriştesi, otlar ve nuoc cham ile servis edilir.",
+      "prepMinutes": 15
+    },
+    "sources": [
+      "https://www.seriouseats.com/bun-cha-vietnamese-grilled-pork-meatballs-with-vermicelli-noodles-recipe",
+      "https://www.vickypham.com/blog/bun-cha-hanoi"
+    ],
+    "confidence": "high",
+    "reason": "Kaynaklar Hanoi bun cha için domuz köftesi verir; dana kullanılan tarif uyarlama olarak açık yazılmalı ve bekleme süresi ayrılmalı."
+  },
+  {
+    "slug": "hanoi-limon-otlu-tavuk-bun",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: on beş dakikalık buzdolabı dinlendirme süresi totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 49
+    },
+    "sources": [
+      "https://www.recipetineats.com/vietnamese-chicken-noodle-bowl/",
+      "https://www.vickypham.com/blog/vietnamese-lemongrass-chicken"
+    ],
+    "confidence": "high",
+    "reason": "Vietnam limon otlu tavuk noodle kaynakları marine beklemesini destekliyor; pasif süre totalMinutes farkı olarak işlenmeli."
+  },
+  {
+    "slug": "hanoi-pho-bo",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.seriouseats.com/traditional-beef-pho-recipe",
+      "https://www.vietworldkitchen.com/blog/2008/10/pho-beef-noodle-soup.html"
+    ],
+    "confidence": "high",
+    "reason": "Kemik suyu, köz soğan, zencefil, yıldız anason, tarçın, balık sosu ve pirinç eriştesi pho bo kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "hanoi-tavuklu-pho",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.vietworldkitchen.com/blog/2007/06/chicken_pho_noo.html",
+      "https://www.seriouseats.com/30-minute-pressure-cooker-pho-ga-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, köz soğan, zencefil, baharat ve pirinç noodle hattı pho ga kaynaklarıyla uyumlu; alerjen alanı boş kalabilir."
+  },
+  {
+    "slug": "hanoi-taze-otlu-pirinc-kagidi-omleti",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.vickypham.com/blog/vietnamese-rice-paper-pizza-banh-trang-nuong",
+      "https://www.wandercooks.com/vietnamese-rice-paper-pizza-banh-trang-nuong/"
+    ],
+    "confidence": "medium",
+    "reason": "Pirinç kağıdı üstünde yumurta, taze soğan ve balık sosuyla kısa tavada pişirme Vietnam sokak yemeği kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "hanoi-zencefilli-kabak-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.vickypham.com/blog/vietnamese-kabocha-squash-soup-canh-bi-do",
+      "https://www.hungryhuy.com/canh-bi-do-vietnamese-kabocha-squash-soup/"
+    ],
+    "confidence": "medium",
+    "reason": "Vietnam kabak çorbası kaynakları bal kabağı, hafif çorba tabanı ve balık sosunu destekliyor; tarifte büyük çelişki yok."
+  },
+  {
+    "slug": "har-gow",
+    "verdict": "PASS",
+    "sources": [
+      "https://thewoksoflife.com/har-gow/",
+      "https://www.seriouseats.com/har-gow-shrimp-dumplings-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Karides, buğday nişastası, tapyoka nişastası, susam yağı ve buharda pişirme Kanton har gow kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "hardal-soslu-tavuk-pie-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: ikinci adımda soğan geçiyor ama ingredient listesinde pırasa var"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Pırasayı ve hardalı ekleyip harcı üç dakika çevirin.",
+          "timerSeconds": 180
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/chicken-leek-pie",
+      "https://www.deliciousmagazine.co.uk/recipes/chicken-leek-and-mustard-pie/"
+    ],
+    "confidence": "high",
+    "reason": "Britanya tavuk pie kaynakları pırasa ve kremalı hardal hattını destekliyor; adım ingredient listesine göre düzeltilmeli."
+  },
+  {
+    "slug": "hardal-soslu-tavuk-pie-tepsi-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: ilk adımda soğan geçiyor ama ingredient listesinde soğan yok"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Tavuk parçalarını geniş tavada sekiz dakika pişirin.",
+          "timerSeconds": 480
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/chicken-leek-pie",
+      "https://www.deliciousmagazine.co.uk/recipes/chicken-leek-and-mustard-pie/"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk, hardal, krema ve milföy hattı İngiliz pie kaynaklarıyla makul; soğan listede olmadığı için adım sadeleşmeli."
+  },
+  {
+    "slug": "hardaliyeli-cin-fizz-kirklareli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: her adım tarif adını tekrar eden boilerplate yapı taşıyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Bardağı ve shakerı buzla soğutun, hardaliye köpüğünü kaybetmeden kullanmaya hazır tutun.",
+          "timerSeconds": 60
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Cin, hardaliye ve limon suyunu buzla on iki saniye çalkalayın.",
+          "timerSeconds": 12
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Karışımı soğuk bardağa süzün, tortu geçmemesi için ince süzgeç kullanın."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Sodayı yavaşça ekleyip bir kez karıştırın, gazı kaçırmayın."
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Bardağı bekletmeden servis edin, buz erirse hardaliyenin üzüm tadı zayıflar."
+        }
+      ]
+    },
+    "sources": [
+      "https://kirklareli.ktb.gov.tr/TR-175654/hardaliye.html",
+      "https://www.liquor.com/recipes/gin-fizz/"
+    ],
+    "confidence": "high",
+    "reason": "Hardaliye ve gin fizz kaynakları içeceğin temelini destekliyor; mevcut adımlar tekrar ve şablon kokusu taşıdığı için yenilenmeli."
+  },
+  {
+    "slug": "hardaliyeli-istavrit-tava-tekirdag-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: on iki dakikalık hardaliye marinasyonu totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 34
+    },
+    "sources": [
+      "https://kirklareli.ktb.gov.tr/TR-175654/hardaliye.html",
+      "https://yemek.com/tarif/istavrit-tava/"
+    ],
+    "confidence": "medium",
+    "reason": "Hardaliye yerel üzüm içeceği olarak uygun, istavrit tava kaynakları da mısır unlu kızartmayı destekliyor; marine süresi eklenmeli."
+  },
+  {
+    "slug": "hardaliyeli-kabak-salatasi-tekirdag-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: hardal, yoğurt, limon suyu ve pul biber geçiyor ama ingredient listesinde yok; hardaliye yerine hardal yazılmış",
+      "timing: kısa tuz bekletmesi totalMinutes içinde ayrılmamış"
+    ],
+    "corrections": {
+      "totalMinutes": 25,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Kabakları yarım ay doğrayın, tuzla beş dakika bekletip fazla suyunu alın.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Kabakları geniş tavada altı dakika çevirin, parçalar ezilmeden diri kalsın.",
+          "timerSeconds": 360
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Hardaliye, zeytinyağı ve ince kıyılmış dereotunu kısa süre çırpın.",
+          "timerSeconds": 45
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Ilıyan kabağı hardaliyeli sosla karıştırın, sıcak kabak sosu sulandırmasın."
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Salatayı serin servis edin, dereotunu en son ekleyin."
+        }
+      ]
+    },
+    "sources": [
+      "https://kirklareli.ktb.gov.tr/TR-175654/hardaliye.html",
+      "https://www.yemek.com/tarif/kabak-salatasi/"
+    ],
+    "confidence": "high",
+    "reason": "Hardaliye ve kabak salatası kaynakları fikri destekliyor; mevcut adımlar listede olmayan yoğurtlu hardal sosuna kaymış."
+  },
+  {
+    "slug": "hardaliyeli-lahana-salatasi-kirklareli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: beyaz lahana, havuç, kırmızı soğan, hardal, limon suyu, bal ve maydanoz geçiyor ama ingredient listesi kırmızı lahana ve hardaliye içeriyor",
+      "timing: on dakikalık serin bekletme totalMinutes içinde yok"
+    ],
+    "corrections": {
+      "totalMinutes": 22,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Kırmızı lahanayı ince kıyın ve geniş kaseye alın."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Lahanayı elma sirkesiyle iki dakika ovun, sertliği azalıp rengi açılsın.",
+          "timerSeconds": 120
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Hardaliye ve zeytinyağını küçük kasede çırpıp lahanaya gezdirin."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Dereotunu ekleyip salatayı on dakika serin yerde bekletin.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Lahanayı son kez harmanlayıp soğuk servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://kirklareli.ktb.gov.tr/TR-175654/hardaliye.html",
+      "https://www.yemek.com/tarif/mor-lahana-salatasi/"
+    ],
+    "confidence": "high",
+    "reason": "Hardaliye yerel bağlamı ve lahana salatası tekniği doğru; mevcut adımlar ingredient listesinden ciddi biçimde sapıyor."
+  },
+  {
+    "slug": "hardaliyeli-nohut-durumu-tekirdag-bag-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "servingSuggestion: tarif vegan etiketli ama servis önerisi ayran öneriyor"
+    ],
+    "corrections": {
+      "servingSuggestion": "Dürümleri ılık sunun, yanında turşu ve yeşil salata verin."
+    },
+    "sources": [
+      "https://kirklareli.ktb.gov.tr/TR-175654/hardaliye.html",
+      "https://www.yemek.com/tarif/nohut-durumu/"
+    ],
+    "confidence": "high",
+    "reason": "Nohut dürümü ve hardaliye hattı makul; vegan etiketiyle ayran servis önerisi çeliştiği için öneri bitkisel kalmalı."
+  },
+  {
+    "slug": "hardaliyeli-pancar-mezesi-kirklareli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: on dakikalık dinlendirme süresi totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 38
+    },
+    "sources": [
+      "https://kirklareli.ktb.gov.tr/TR-175654/hardaliye.html",
+      "https://www.yemek.com/tarif/pancar-mezesi/"
+    ],
+    "confidence": "medium",
+    "reason": "Hardaliye ve pancar mezesi kaynakları malzeme hattını destekliyor; soğuk meze dinlendirmesi toplam süreye eklenmeli."
+  },
+  {
+    "slug": "hardaliyeli-tavuk-kapama-kirklareli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: on dakikalık kapama dinlendirme süresi totalMinutes içinde yok"
+    ],
+    "corrections": {
+      "totalMinutes": 55
+    },
+    "sources": [
+      "https://kirklareli.ktb.gov.tr/TR-175654/hardaliye.html",
+      "https://yemek.com/tarif/tavuk-kapama/"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk kapama ve hardaliye yerel bağlamı kaynaklarla makul; pirinçli yemeğin dinlenme süresi totalMinutes içinde görünmeli."
+  },
+  {
+    "slug": "hardaliyeli-uzum-hosafi-edirne-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: üç adım da tarif adını tekrar eden boilerplate metin, üzüm kaynatma ve hardaliye ekleme işlemi anlatılmıyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Siyah üzümleri yıkayıp tanelerini ayıklayın, ezik taneleri çıkarın."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Su, şeker ve üzümü tencereye alıp üzümler yumuşayana kadar pişirin.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Tencereyi ocaktan alıp hardaliye suyu ve tane hardalı ekleyin, hardal kokusu kaynamada uçmasın."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Hoşafı oda sıcaklığına gelince soğutun ve bardakta birkaç üzüm tanesiyle servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://kirklareli.ktb.gov.tr/TR-175654/hardaliye.html",
+      "https://www.nefisyemektarifleri.com/uzum-hosafi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Üzüm hoşafı ve hardaliye kaynakları malzeme fikrini destekliyor; mevcut adımlar gerçek pişirme akışını vermiyor."
+  },
+  {
+    "slug": "hardaliyeli-uzum-sorbesi-kirklareli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: üç saat dondurma ve iki kez birer saat tekrar dondurma toplamı totalMinutes ile uyumsuz"
+    ],
+    "corrections": {
+      "totalMinutes": 320
+    },
+    "sources": [
+      "https://kirklareli.ktb.gov.tr/TR-175654/hardaliye.html",
+      "https://www.bbcgoodfood.com/recipes/grape-sorbet"
+    ],
+    "confidence": "medium",
+    "reason": "Sorbe kaynağı uzun dondurma beklemesini destekliyor; mevcut adımlardaki beş saatlik pasif süre toplamda görünmüyor."
+  },
+  {
+    "slug": "hardalli-artsoppa",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: geceden ıslatma süresi totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 810
+    },
+    "sources": [
+      "https://www.swedishfood.com/swedish-food-recipes-soups/206-pea-soup",
+      "https://www.scandikitchen.co.uk/recipe-artsoppa-swedish-pea-soup/"
+    ],
+    "confidence": "high",
+    "reason": "İsveç ärtsoppa kaynakları sarı bezelyeyi önceden ıslatıp hardalla servis etmeyi doğruluyor; pasif bekleme süreye eklenmeli."
+  },
+  {
+    "slug": "hardalli-balik-salatasi-amasra-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: marul, roka, kırmızı soğan, limon suyu, kapari ve turp geçiyor ama ingredient listesinde yok; patates listede olduğu halde adımlarda kullanılmıyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Haşlanmış balığı iri lokmalara ayırın, kılçık kalmadığını parmak ucuyla kontrol edin."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Patatesleri haşlayıp küp doğrayın, balıkla karışırken ezilmemesi için ılıtın.",
+          "timerSeconds": 900
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Hardal ve zeytinyağını kısa süre çırparak parlak bir sos hazırlayın.",
+          "timerSeconds": 45
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Patates ve balığı sosla nazikçe karıştırın, balık parçaları dağılmasın."
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Dereotunu ekleyip salatayı serin servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/balik-salatasi/",
+      "https://www.bbcgoodfood.com/recipes/mustard-potato-salad"
+    ],
+    "confidence": "high",
+    "reason": "Balık salatası ve hardallı patates salatası kaynakları malzeme hattını destekliyor; mevcut adımlar listeden kopmuş."
+  },
+  {
+    "slug": "hardalli-elma-havuc-salatasi-tekirdag-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: süzme yoğurt, zeytinyağı, elma sirkesi, maydanoz ve ceviz geçiyor ama ingredient listesinde yok",
+      "timing: beş dakikalık bekleme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 15,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Havuçları iri rendeleyin, elmayı ince jülyen kesip limon suyuyla karıştırın."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Hardalı kalan limon suyuyla küçük kasede çırpın."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Havuç ve elmayı hardallı sosla birleştirin, elma kırılmasın diye spatulayla çevirin."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Salatayı beş dakika serin yerde bekletin, havuç sosu içine çeksin.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Tuzunu kontrol edip soğuk tabakta servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/havuclu-elma-salatasi/",
+      "https://www.bbcgoodfood.com/recipes/carrot-apple-salad"
+    ],
+    "confidence": "high",
+    "reason": "Elma havuç salatası kaynakları fikri destekliyor; mevcut adımlar listedeki vegan malzemeye uymayan yoğurt ve ceviz ekliyor."
+  },
+  {
+    "slug": "hardalli-elma-soslu-tavuk-ingiltere-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/creamy-mustard-chicken",
+      "https://www.deliciousmagazine.co.uk/recipes/normandy-chicken/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, elma, hardal, krema ve tereyağlı tava yemeği Britanya ve Normandiya çizgisiyle uyumlu; alerjenler doğru."
+  },
+  {
+    "slug": "hardalli-kabak-mucveri-edirne-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: on dakika kabak bekletme ve üç dakika tel üzerinde dinlendirme totalMinutes içinde görünmüyor",
+      "steps: son adım sade servis derken servingSuggestion sarımsaklı yoğurt öneriyor"
+    ],
+    "corrections": {
+      "totalMinutes": 40,
+      "steps_replace": [
+        {
+          "stepNumber": 6,
+          "instruction": "Mücverleri ılık servis edin, sarımsaklı yoğurdu yanında verin ki kızarmış yüzey yumuşamasın."
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kabak-mucveri/",
+      "https://www.nefisyemektarifleri.com/kabak-mucveri-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kabak mücveri kaynakları bekletme ve dinlendirme ihtiyacını destekliyor; ayrıca servis adımı mevcut öneriyle çelişiyor."
+  },
+  {
+    "slug": "hardalli-kok-sebze-salatasi-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: pancar, sirke, dereotu, turşu ve taze soğan geçiyor ama ingredient listesinde yok; patates listede olduğu halde adımda kullanılmıyor",
+      "timing: on beş dakikalık buzdolabı bekletmesi totalMinutes içinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Elma sirkesi",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "totalMinutes": 45,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Patates, havuç ve kereviz sapını küçük küpler halinde kesin, boyları eşit olsun."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Kök sebzeleri tuzlu suda on iki dakika haşlayın, diri kalınca süzüp soğutun.",
+          "timerSeconds": 720
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Dijon hardalı, elma sirkesi ve zeytinyağını kısa süre çırpın.",
+          "timerSeconds": 60
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Soğuyan sebzeleri sosla nazikçe karıştırın."
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Salatayı buzdolabında on beş dakika bekletip serin servis edin.",
+          "timerSeconds": 900
+        }
+      ]
+    },
+    "sources": [
+      "https://www.swedishfood.com/swedish-food-recipes-salads/164-beetroot-salad",
+      "https://www.bbcgoodfood.com/recipes/root-veg-lentil-bowl-herb-pistachio-dressing"
+    ],
+    "confidence": "medium",
+    "reason": "İsveç usulü hardallı kök sebze fikri makul; mevcut adımlar ingredient listesine uymadığı için malzeme ve süre düzelmeli."
+  }
+]

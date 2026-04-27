@@ -1,0 +1,644 @@
+[
+  {
+    "slug": "fistikli-irmik-kurabiye-kilis-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/irmikli-kurabiye/",
+      "https://www.nefisyemektarifleri.com/irmikli-kurabiye-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "İrmik, un, tereyağı ve fıstık hattı kurabiye kaynaklarıyla uyumlu; süre, alerjen ve makro tarafında net hata görmedim."
+  },
+  {
+    "slug": "fistikli-katmer-kup-gaziantep-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/katmer/",
+      "https://www.mygaziantep.com/gaziantep-yemekleri/-fistikli-katmer-7.html"
+    ],
+    "confidence": "medium",
+    "reason": "Katmerin kaymak, fıstık ve çıtır hamur temeli doğru; kup sunumu modern yorum olduğu için mevcut süre ve içerik kabul edilebilir."
+  },
+  {
+    "slug": "fistikli-kuru-baklava-gaziantep-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 1 saat dinlendirme var ama totalMinutes prep+cook ile sınırlı kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 135
+    },
+    "sources": [
+      "https://www.fistikbaklava.com/product-page/fistikli-kuru-baklava",
+      "https://shop.petekpastane.com.tr/fistikli-kuru-baklava"
+    ],
+    "confidence": "high",
+    "reason": "Kuru baklava az şerbetli ve dinlenen bir tatlı; mevcut adımda 1 saat bekleme açık yazdığı için toplam süre 135 dakika olmalı."
+  },
+  {
+    "slug": "fistikli-sut-receli-kup-kahramanmaras-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "tipNote ve step: 20 dakika dinlendirme totalMinutes içinde yok"
+    ],
+    "corrections": {
+      "totalMinutes": 35
+    },
+    "sources": [
+      "https://yemek.com/tarif/pratik-sut-receli/",
+      "https://www.youtube.com/watch?v=n2zjHyVE_iQ"
+    ],
+    "confidence": "medium",
+    "reason": "Süt reçeli tabanı doğru; tarif kendi içinde 20 dakika soğutma söylediği için totalMinutes 15 değil 35 olmalı."
+  },
+  {
+    "slug": "fistikli-sutlu-irmik-tatlisi-kahramanmaras-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 1 saat soğutma totalMinutes hesabına eklenmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 82
+    },
+    "sources": [
+      "https://yemek.com/tarif/fistikli-irmik-tatlisi/",
+      "https://www.pakmayamutfakta.com/tarif/antep-fistikli-irmik-tatlisi-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Sütlü irmik tatlısında soğutma yapısal bir bekleme; adımda 1 saat geçtiği için toplam süre 22 dakikada kalamaz."
+  },
+  {
+    "slug": "fistikli-sutlu-nuriye-kare-gaziantep-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 1 saat dinlendirme totalMinutes değerine dahil değil"
+    ],
+    "corrections": {
+      "totalMinutes": 116
+    },
+    "sources": [
+      "https://www.sofra.com.tr/tarif/serbetli-tatlilar/sutlu-nuriye-1726128868",
+      "https://www.yemektekeyifvar.com/serbetli-tatlilar/sutlu-nuriye-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Sütlü nuriye kaynaklarda şerbet çekerek dinlenen bir tatlı; tarifteki 1 saat bekleme totalMinutes içinde görünmeli."
+  },
+  {
+    "slug": "flan-cubano",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: Cuban flan için tipik yoğunlaştırılmış ve buharlaştırılmış süt yerine sadece süt yazılmış"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yoğunlaştırılmış süt", "amount": "1", "unit": "kutu" },
+        { "name": "Buharlaştırılmış süt", "amount": "1", "unit": "kutu" }
+      ],
+      "ingredients_remove": [
+        "Süt"
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 4,
+          "instruction": "Yoğunlaştırılmış süt, buharlaştırılmış süt, vanilya ve şekeri yumurtaya karıştırın, köpük oluşmasın."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.eater.com/22871056/cuban-flan-recipe-traditional-dessert-how-to-make",
+      "https://www.stopandcompare.net/recipe/flan-cubano/"
+    ],
+    "confidence": "high",
+    "reason": "Cuban flan kaynakları konserve süt tabanını özellikle vurguluyor; mevcut süt listesi tatlının karakterini eksik bırakıyor."
+  },
+  {
+    "slug": "flan-de-coco-cubano",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 3 saat buzdolabı soğutması totalMinutes içinde yok"
+    ],
+    "corrections": {
+      "totalMinutes": 240
+    },
+    "sources": [
+      "https://en.cibercuba.com/cocina/recetas/flan-de-coco",
+      "https://www.chefsresource.com/recipes/flan-de-coco-coconut-flan-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Hindistan cevizli flan piştikten sonra soğutulur; tarifte 3 saat net yazdığı için toplam süre 240 dakika olmalı."
+  },
+  {
+    "slug": "flat-white",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: flat white Türk mutfağı değil, Avustralya ve Yeni Zelanda kahve kültürüyle ilişkili"
+    ],
+    "corrections": {
+      "cuisine": "au"
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Flat_white",
+      "https://www.nespresso.com/recipes/nz/en/23075FLA-original-flat-white.html"
+    ],
+    "confidence": "high",
+    "reason": "Flat white espresso ve mikro köpüklü süt içeceği olarak Avustralya ve Yeni Zelanda ile anılıyor; tr cuisine yanıltıcı."
+  },
+  {
+    "slug": "flat-white-freddo-avustralya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.jedscoffee.com.au/inspo/recipes/iced-flat-white/",
+      "https://www.nescafe.com/au/coffee-culture/knowledge/iced-flat-white"
+    ],
+    "confidence": "high",
+    "reason": "Iced flat white kaynakları çift espresso, buz ve süt hattını doğruluyor; süre, mutfak kodu ve süt alerjeni uyumlu."
+  },
+  {
+    "slug": "floransa-ribollita-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/tuscan-style-ribollita",
+      "https://www.seriouseats.com/ribollita-tuscan-italian-vegetable-soup-stew-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Ribollita fasulye, ekmek, lahana, kereviz ve zeytinyağı çizgisinde doğru; parmesan nedeniyle süt alerjeni de makul."
+  },
+  {
+    "slug": "focaccia",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/focaccia",
+      "https://www.bhg.com/recipes/bread/samin-nosrat-focaccia-trick/"
+    ],
+    "confidence": "high",
+    "reason": "Focaccia için mayalı hamur, zeytinyağı, mayalanma ve fırın süresi kaynaklarla uyumlu; gluten alerjeni doğru."
+  },
+  {
+    "slug": "frambuazli-kisiel-polonya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bayareapolishgroup.com/en/food/kisiel/",
+      "https://www.polishyourkitchen.com/polish-fruit-kisiel-kisiel-owocowy/"
+    ],
+    "confidence": "medium",
+    "reason": "Kisiel meyve suyu veya meyve püresiyle nişasta üzerinden bağlanan Polonya tatlısı; frambuaz yorumu makul görünüyor."
+  },
+  {
+    "slug": "frankfurt-grune-sosse-yumurtali",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.neantog.com/recipes-2/2022/4/13/frankfurter-grne-sosse-frankfurt-green-sauce",
+      "https://en.wikipedia.org/wiki/Frankfurter_Gr%C3%BCne_So%C3%9Fe"
+    ],
+    "confidence": "high",
+    "reason": "Yedi otlu soğuk sos, yoğurt veya ekşi krema, hardal, yumurta ve patates sunumu kaynaklarla uyumlu."
+  },
+  {
+    "slug": "frankfurti-leves-macar-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.hungariantidbits.com/cabbage-and-frankfurter-soup-frankfurti-leves/",
+      "https://cooktogether.com/recipe-items/cabbage-soup-frankfurters/"
+    ],
+    "confidence": "medium",
+    "reason": "Lahana, sosis, paprika ve kremalı bağlama Macar frankfurti leves çizgisine uyuyor; süt alerjeni doğru."
+  },
+  {
+    "slug": "fransiz-mercimekli-hardalli-tartine",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.washingtonpost.com/recipes/french-lentil-salad-goat-cheese/",
+      "https://www.loveandlemons.com/french-green-lentil-salad/"
+    ],
+    "confidence": "medium",
+    "reason": "Yeşil mercimek, Dijon hardalı, turşu ve ekmek üstü sunum Fransız esintili tartine için tutarlı; alerjenler uygun."
+  },
+  {
+    "slug": "freekeh-herb-soup-orta-dogu-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://mezete.com/product/soups/freekeh-soup",
+      "https://www.eatingwell.com/article/7835706/what-is-freekeh/"
+    ],
+    "confidence": "medium",
+    "reason": "Freekeh buğday kökenli Orta Doğu tahılıdır; otlu çorba yorumu ve gluten alerjeni kaynaklarla uyumlu."
+  },
+  {
+    "slug": "freekeh-pilaf",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfoodme.com/recipes/leek-freekeh-pilaf-with-feta-toasted-pine-nuts/",
+      "https://ottolenghi.co.uk/pages/recipes/freekeh-pilaf"
+    ],
+    "confidence": "high",
+    "reason": "Freekeh pilavında buğday, yağ, kuruyemiş ve süt ürünü eşlikleri kaynaklarla uyumlu; alerjen seti doğru."
+  },
+  {
+    "slug": "french-75",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: French 75 kokteyli Middle East koduyla işaretlenmiş"
+    ],
+    "corrections": {
+      "cuisine": "fr"
+    },
+    "sources": [
+      "https://iba-world.com/iba-cocktail/french-75/",
+      "https://us.thebar.com/en-US/cocktail-recipes/french-75"
+    ],
+    "confidence": "high",
+    "reason": "French 75 cin, limon, şurup ve şampanya ile kayıtlı klasik kokteyl; me cuisine açık biçimde yanlış."
+  },
+  {
+    "slug": "french-martini",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.liquor.com/recipes/french-martini/",
+      "https://www.garnishdrinks.com/cocktail/french-martini"
+    ],
+    "confidence": "high",
+    "reason": "Vodka, Chambord ve ananas suyu formülü kaynaklarla uyumlu; alkol kalorisi makro hesabına birebir yansımaz."
+  },
+  {
+    "slug": "frenk-soganli-twarog-kase-polonya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.aggiespolishkitchen.com/twarozek-farmers-cheese-spread/",
+      "https://www.thespruceeats.com/polish-cheesecake-sernik-recipes-1136989"
+    ],
+    "confidence": "medium",
+    "reason": "Twarog temelli kahvaltılık kase ve frenk soğanı kullanımı Polonya kahvaltı bağlamıyla uyumlu; süt ve gluten bildirimi makul."
+  },
+  {
+    "slug": "frijoles-charros",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: frijoles charros etli pinto fasulye yemeğidir, mevcut tarif vegan barbunya yemeğine dönmüş",
+      "tags: vegan ve vejetaryen etli charros fasulyesiyle çelişiyor"
+    ],
+    "corrections": {
+      "description": "Frijoles charros, pinto fasulyeyi domates, soğan, bacon ve chorizo ile pişiren Meksika kovboy fasulyesidir.",
+      "ingredients_add": [
+        { "name": "Bacon", "amount": "100", "unit": "gr" },
+        { "name": "Chorizo", "amount": "150", "unit": "gr" }
+      ],
+      "ingredients_amount_change": [
+        { "name": "Haşlanmış barbunya", "newAmount": "500", "newUnit": "gr" }
+      ],
+      "tags_remove": [
+        "vegan",
+        "vejetaryen"
+      ]
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Frijoles_charros",
+      "https://www.thedailymeal.com/recipes/mexican-charro-beans-frijoles-charros-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Kaynaklarda charros fasulyesi bacon veya chorizo ile tanımlanıyor; mevcut vegan etiket ve içerik ana yemeği değiştiriyor."
+  },
+  {
+    "slug": "frijoles-negros-cubanos",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.saveur.com/article/Recipes/Cuban-Style-Black-Beans/",
+      "https://www.camelliabrand.com/recipes/frijoles-negros-cuban-black-beans/"
+    ],
+    "confidence": "high",
+    "reason": "Küba siyah fasulyesi sofrito, kimyon ve sirke çizgisine yakın; süre ve alerjen tarafında net hata görmedim."
+  },
+  {
+    "slug": "frittata-di-zucchine",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.food.com/recipe/frittata-di-zucchine-zucchini-frittata-33312",
+      "https://www.allrecipes.com/article/what-frittata/"
+    ],
+    "confidence": "high",
+    "reason": "Kabaklı frittata yumurta, peynir ve tavada pişirme temelini doğru taşıyor; yumurta ve süt alerjenleri yerinde."
+  },
+  {
+    "slug": "froccs-macar-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://visitdebrecen.com/hot-now/a-guide-to-froccs-the-hungarian-spritzer/",
+      "https://en.wikipedia.org/wiki/Spritzer"
+    ],
+    "confidence": "medium",
+    "reason": "Fröccs beyaz şarap ve soda suyuyla yapılan Macar spritzeridir; kısa hazırlık ve alkollü içecek bağlamı doğru."
+  },
+  {
+    "slug": "ful-medames",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/ful-medames",
+      "https://www.foodnetwork.com/recipes/ful-medames-with-eggs-and-pita-12138271"
+    ],
+    "confidence": "high",
+    "reason": "Ful medames bakla, tahin, limon, sarımsak, yumurta ve pide sunumuyla kaynaklara uyuyor; alerjenler doğru."
+  },
+  {
+    "slug": "furikake-popcorn",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.popcorn.org/Recipes/Details/furikake-popcorn-1",
+      "https://sunset.com/recipe/furikake-popcorn"
+    ],
+    "confidence": "medium",
+    "reason": "Furikake, nori ve susamla popcorn üzerine kullanılan Japon çeşnisidir; mevcut ayçiçek yağlı yorum kabul edilebilir."
+  },
+  {
+    "slug": "gaeng-daeng",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.simplythaiutah.com/gaeng-daeng-recipe/",
+      "https://cookonloop.com/recipe/thai-gaeng-daeng"
+    ],
+    "confidence": "medium",
+    "reason": "Kırmızı köri ezmesi, hindistan cevizi sütü, tavuk ve balık sosu gaeng daeng için doğru ana iskeleti veriyor."
+  },
+  {
+    "slug": "gajar-halwa-hint-kis-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: gajar halwa kaynaklarında sütle pişen havuç genellikle ghee veya tereyağıyla bitirilir, mevcut listede yağ yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "fat": 13,
+      "averageCalories": 244
+    },
+    "sources": [
+      "https://www.sugarspicenmore.com/carrot-halwa-gajar-halwa/",
+      "https://www.bonappetit.com/story/gajar-ka-halwa-diwali-dessert"
+    ],
+    "confidence": "high",
+    "reason": "Gajar halwa süt, havuç, şeker, kakule ve yağla tamamlanır; yağ eksikliği doku ve makroyu olduğundan hafif gösteriyor."
+  },
+  {
+    "slug": "galaktoboureko-yunan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://realgreekrecipes.com/galaktoboureko-greek-custard-pie/",
+      "https://www.greekboston.com/food/desserts/galaktobouriko-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Galaktoboureko yufka, irmikli sütlü muhallebi, yumurta, tereyağı ve şerbet bileşenleriyle doğru kurulmuş."
+  },
+  {
+    "slug": "galbi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "tipNote ve servingSuggestion 4 saat marine söylerken step 2 sadece 30 dakika bekletiyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Kaburgaları marine sosa yatırıp buzdolabında 4 saat bekletin.",
+          "timerSeconds": 14400
+        }
+      ]
+    },
+    "sources": [
+      "https://www.maangchi.com/recipe/galbi",
+      "https://www.koreanbapsang.com/galbikalbi-korean-bbq-short-ribs/"
+    ],
+    "confidence": "high",
+    "reason": "Galbi kaynakları uzun marineyi destekliyor; tarifin toplam süresi 4 saat beklemeye göre doğru, adım 30 dakika ile çelişiyor."
+  },
+  {
+    "slug": "galdirik-kavurmasi-ordu-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/portal/ordu-galdirik-kavurmasi",
+      "https://www.e-sehir.com/yemek_tarifleri/galdirik-kavurmasi-ordu-tarifi.html"
+    ],
+    "confidence": "high",
+    "reason": "Galdirik sapının haşlanıp soğanla kavrulması Ordu tescil metniyle uyumlu; mevcut tarif sade ama doğru."
+  },
+  {
+    "slug": "gavurdagi-salatasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/gavurdagi-salatasi/",
+      "https://www.nefisyemektarifleri.com/gavurdagi-salatasi/"
+    ],
+    "confidence": "high",
+    "reason": "Domates, biber, nar ekşisi, sumak ve ceviz hattı Gavurdağı salatasını doğru temsil ediyor; alerjen uygundur."
+  },
+  {
+    "slug": "gavutlu-parfe-kars-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 2 saat dondurucu ve 5 dakika oda bekleme totalMinutes içinde yok"
+    ],
+    "corrections": {
+      "totalMinutes": 141
+    },
+    "sources": [
+      "https://www.evvelcevap.com/gavut-kars-usulu-tarifi/",
+      "https://yemek.com/tarif/sut-receli/"
+    ],
+    "confidence": "medium",
+    "reason": "Gavut temeli bölgesel olarak doğru; parfe adımı 2 saat 5 dakika bekleme yazdığı için toplam süre 16 dakika olamaz."
+  },
+  {
+    "slug": "gaziantep-alaca-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://kulturportali.gov.tr/turkiye/gaziantep/neyenir/alaca-corba",
+      "https://www.gaziantep.net/mutfak/alaca-corbasi-dolmasi-nasil-yapilir.php"
+    ],
+    "confidence": "high",
+    "reason": "Dövme, nohut, yeşil mercimek, soğan, biber ve tarhun çizgisi Gaziantep alaca çorbasıyla uyumlu."
+  },
+  {
+    "slug": "gaziantep-alinazik-kebabi",
+    "verdict": "PASS",
+    "sources": [
+      "https://kulturportali.gov.tr/turkiye/gaziantep/neyenir/yogurtlu-alnazk",
+      "https://en.wikipedia.org/wiki/Alinazik_kebab"
+    ],
+    "confidence": "high",
+    "reason": "Köz patlıcan, yoğurt, sarımsak ve kıymalı üst kat Alinazik için doğru; süt alerjeni yerinde."
+  },
+  {
+    "slug": "gaziantep-beyran-corbasi-kuzu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.mygaziantep.com/gaziantep-yemekleri/beyran-corbasi-40.html",
+      "https://www.lezzetitarifet.com/antep-usulu-beyran-corbasi-tarifi.html"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu gerdan, pirinç, sarımsak, et suyu ve acı biber beyran için doğru ana hattı veriyor; süre uzun pişirmeye uygun."
+  },
+  {
+    "slug": "gaziantep-eksili-kuru-dolma-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/eksili-kuru-patlican-dolmasi/",
+      "https://www.nefisyemektarifleri.com/kuru-patlican-dolmasi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kuru patlıcan, kuru biber, pirinç ve ekşilik Güneydoğu kuru dolma lezzetine yakın; çorba yorumu tutarlı."
+  },
+  {
+    "slug": "gaziantep-firin-simit-kebabi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/gaziantep/neyenir/smt-kebabi",
+      "https://www.gaziantep.net/mutfak/simit-kebabi-nasil-yapilir.php"
+    ],
+    "confidence": "medium",
+    "reason": "Simit, kıyma, sarımsak ve baharat temeli doğru; fırın uygulaması geleneksel ızgara tarifinin ev yorumu olarak kabul edilebilir."
+  },
+  {
+    "slug": "gaziantep-katmer-kaymakli",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/katmer/",
+      "https://www.bakkalhasan.com/urun/bakkal-hasan-gaziantep-usulu-fistikli-kaymakli-katmer"
+    ],
+    "confidence": "high",
+    "reason": "Katmerde ince yufka, kaymak, fıstık, şeker ve tereyağı Gaziantep kaynaklarıyla uyumlu; kalori yüksekliği gerçekçi."
+  },
+  {
+    "slug": "gaziantep-nar-eksili-kuru-patlican-dolmasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/kuru-patlican-dolmasi/",
+      "https://www.nefisyemektarifleri.com/kuru-patlican-dolmasi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kuru patlıcan, pirinç, salça, zeytinyağı ve nar ekşisi kaynaklarla uyumlu; süre de dolma pişirme aralığında."
+  },
+  {
+    "slug": "gaziantep-omac",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: Gaziantep omaç kaynaklarında Antep peyniri belirgin malzeme, mevcut listede yok",
+      "tags: peynir eklenince vegan etiketi yanlış olur",
+      "allergens: peynir nedeniyle SUT eklenmeli"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Antep peyniri", "amount": "100", "unit": "gr" }
+      ],
+      "allergens_add": [
+        "SUT"
+      ],
+      "tags_remove": [
+        "vegan"
+      ]
+    },
+    "sources": [
+      "https://www.gaziantep.net/mutfak/omac.php",
+      "https://www.biantep.com/kesfet/gaziantep-omac-g1131"
+    ],
+    "confidence": "high",
+    "reason": "Omaç kaynaklarında yufka veya ekmekle birlikte Antep peyniri kullanılıyor; vegan sürüm adı ve yöre bağlamını zayıflatıyor."
+  },
+  {
+    "slug": "gaziantep-siveydiz",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.gaziantep.net/mutfak/siveydiz.php",
+      "https://yemek.com/tarif/siveydiz/"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu eti, taze sarımsak, nohut, yoğurt ve yumurtalı terbiye şiveydiz için doğru; alerjenler yerinde."
+  },
+  {
+    "slug": "gaziantep-yuvalama-yogurtlu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.gaziantephaberler.com/haber/24133438/gaziantepin-ozel-lezzeti-bayram-yuvalamasi-tarifi-ve-puf-noktalari",
+      "https://www.mygaziantep.com/gaziantep-yemekleri/siveydiz-4.html"
+    ],
+    "confidence": "medium",
+    "reason": "Pirinçli minik köfte, et, nohut ve yoğurtlu tencere yapısı yuvalama için doğru; süre uzun işçiliğe uyuyor."
+  },
+  {
+    "slug": "gazpacho",
+    "verdict": "CORRECTION",
+    "issues": [
+      "tipNote ve step: 1 saat soğutma totalMinutes içinde yok"
+    ],
+    "corrections": {
+      "totalMinutes": 75
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/gazpacho",
+      "https://www.seriouseats.com/andalusian-gazpacho-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Gazpacho kaynaklarda soğuk servis edilir ve tarifin kendi adımında 60 dakika soğutma var; totalMinutes 75 olmalı."
+  },
+  {
+    "slug": "gemista-yunan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.mygreekdish.com/recipe/gemista-stuffed-tomatoes-peppers-and-onions/",
+      "https://www.getgreece.com/recipes/gemista"
+    ],
+    "confidence": "high",
+    "reason": "Domates ve biberin pirinçli harçla doldurulup fırınlanması gemista için doğru; vegan yorum da kaynaklarda var."
+  },
+  {
+    "slug": "gendime-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemektarifleri.gumushaneliler.net/gendime-corbasi/",
+      "https://www.kulturportali.gov.tr/portal/gendime-corbasi"
+    ],
+    "confidence": "medium",
+    "reason": "Aşurelik buğday, yoğurt ve yumurtalı terbiye Anadolu gendime çorbası çizgisine uyuyor; gluten ve süt doğru."
+  },
+  {
+    "slug": "general-tso-tavuk",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: sos adımında şeker geçiyor ama ingredient listesinde şeker yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Şeker", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes-menus/how-to-make-quick-easy-general-tsos-chicken-recipe-takeout-at-home-article",
+      "https://time.com/4591567/general-tsos-chicken-creator-peng-chang-kuei-chuck/"
+    ],
+    "confidence": "high",
+    "reason": "General Tso sosu tatlı ekşi yapı taşır; tarif adımı şeker kullanıyor ama listede olmadığı için miktar eklenmeli."
+  },
+  {
+    "slug": "gigantes-plaki",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: bir gece ıslatma timerSeconds ile yazılmış ama totalMinutes sadece aktif pişirmeyi kapsıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 570
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/gigantes-plaki",
+      "https://www.olivemagazine.com/recipes/vegetarian/gigantes-plaki-greek-baked-beans/"
+    ],
+    "confidence": "high",
+    "reason": "Dried bean gigantes plaki kaynaklarda overnight soaking ister; tarifteki 8 saat bekleme toplam süreye yansıtılmalı."
+  },
+  {
+    "slug": "gilda-pintxos",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bascofinefoods.com/spanish-recipes/gilda-pintxo/",
+      "https://www.spanishsabores.com/gilda-pintxo-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Gilda pintxos zeytin, hamsi ve turşu biber üçlüsüyle doğru kurulmuş; deniz ürünü alerjeni yerinde."
+  }
+]

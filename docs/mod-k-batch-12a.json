@@ -1,0 +1,990 @@
+[
+  {
+    "slug": "gin-tonik",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: gin tonik Türk mutfağı değil, İngiliz sömürge dönemi gin and tonic kültürüyle ilişkili"
+    ],
+    "corrections": {
+      "cuisine": "gb"
+    },
+    "sources": [
+      "https://www.redbull.com/int-en/theorganics/recipe-gin-tonic",
+      "https://www.goodlifeeats.com/grapefruit-gin-and-tonic/"
+    ],
+    "confidence": "high",
+    "reason": "Kaynaklar gin tonic için gin, tonik ve lime temelini doğruluyor; tr mutfak kodu içeceğin kökenini yanlış gösteriyor."
+  },
+  {
+    "slug": "ginger-pineapple-smash-avustralya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://kitchen.nine.com.au/drinks/ginger-and-pineapple-rum-punch/0fbd12e7-355f-486d-a4af-0de39000900e",
+      "https://www.thecocktailproject.com/drink-recipes/pineapple-smash"
+    ],
+    "confidence": "medium",
+    "reason": "Ananas, rom, zencefil ve buz hattı benzer kokteyl kaynaklarıyla uyumlu; süre, alerjen ve servis bilgisinde net hata görmedim."
+  },
+  {
+    "slug": "giresun-fasulye-tursusu-kavurmasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://giresun.ktb.gov.tr/TR-208465/fasulye-tursusu-kavurmasi.html",
+      "https://www.giresun.net.tr/fasulye-tursusu-kavurmasi/"
+    ],
+    "confidence": "high",
+    "reason": "Giresun kaynakları fasulye turşusu, soğan ve yağla kavurma tekniğini doğruluyor; mevcut tarifte kritik tutarsızlık yok."
+  },
+  {
+    "slug": "giresun-isirganli-misir-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 30 dakika mısır yarması bekletme süresi totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 95
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/giresun/neyenir/karalahana-diblesi",
+      "https://giresun.ktb.gov.tr/TR-208459/karalahana-pancar-diblesi.html"
+    ],
+    "confidence": "medium",
+    "reason": "Karadeniz mısır yarmalı ot yemeklerinde bekletme ayrı pasif süredir; tarifteki 30 dakika totalMinutes hesabına eklenmeli."
+  },
+  {
+    "slug": "giresun-karalahana-diblesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "nutrition: 4 yemek kaşığı zeytinyağı porsiyon başına en az 13 gram yağ getirir, mevcut fat 7 gram düşük"
+    ],
+    "corrections": {
+      "averageCalories": 295,
+      "fat": 15
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/giresun/neyenir/karalahana-diblesi",
+      "https://giresun.ktb.gov.tr/TR-208459/karalahana-pancar-diblesi.html"
+    ],
+    "confidence": "high",
+    "reason": "Karalahana diblesi kaynaklarla uyumlu; yağ miktarı ingredient bazlı hesaba göre düşük kaldığı için fat ve kalori yükselmeli."
+  },
+  {
+    "slug": "giresun-misirli-pancar-diblesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: ingredient listesinde karalahana ve mısır kırığı var, adımlar pancar yaprağı, mısır tanesi, limon ve pul biberden söz ediyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Karalahanayı ayıklayıp bol suda yıkayın, ince şeritler halinde doğrayın."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Karalahanayı kaynar suda 6 dakika haşlayıp süzün, sertliği kırılsın.",
+          "timerSeconds": 360
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Soğanı ince doğrayıp zeytinyağında 5 dakika kavurun.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Yıkanmış mısır kırığını ve karalahanayı soğanla birleştirin, tuzu ekleyin."
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Yarım su bardağı sıcak su ekleyip kapağı kapalı 12 dakika pişirin, mısır kırığı yumuşasın.",
+          "timerSeconds": 720
+        }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/giresun/neyenir/karalahana-diblesi",
+      "https://www.kolaylezzet.com/kolay-yemek-tarifleri/sebze-yemekleri/884-karalahana-diblesi-giresun-ordu-trabzon-rize"
+    ],
+    "confidence": "high",
+    "reason": "Giresun'da pancar karalahana anlamında kullanılır; adımlar mevcut ingredient listesiyle aynı malzemeleri izlemeli."
+  },
+  {
+    "slug": "girit-ezmesi-izmir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/girit-ezmesi/",
+      "https://www.youtube.com/watch?v=O3rjA6wKUJE"
+    ],
+    "confidence": "medium",
+    "reason": "Peynir, labne veya lor, ceviz, ot ve zeytinyağı çizgisi Girit ezmesi kaynaklarıyla uyumlu; alerjenler doğru görünüyor."
+  },
+  {
+    "slug": "gnocchi-alla-sorrentina",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.giallozafferano.com/recipes/Gnocchi-alla-sorrentina.html",
+      "https://www.lacucinaitaliana.com/italian-food/italian-dishes/gnocchi-sorrentina-the-classic-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Domates sosu, mozzarella, parmesan ve fesleğen hattı klasik Sorrentina kaynaklarıyla uyumlu; hazır gnocchi ile süre makul."
+  },
+  {
+    "slug": "goa-fish-curry",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: soğanı yağda pişiriyor ama ingredient listesinde yağ yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Ayçiçek yağı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.goanfoodrecipes.com/2009/04/goan-fish-curry.html",
+      "https://www.gomantaktimes.com/best-of-goa/food-drinks/recipe-goan-fish-curry"
+    ],
+    "confidence": "high",
+    "reason": "Goa balık körisi kaynakları hindistan cevizi, demirhindi ve yağda soğan tabanını doğruluyor; eksik yağ ingredient'a eklenmeli."
+  },
+  {
+    "slug": "goa-vindaloo",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.goanfoodrecipes.com/2009/01/fiery-goan-pork-vindaloo.html",
+      "https://www.bonappetit.com/recipe/pork-vindaloo"
+    ],
+    "confidence": "medium",
+    "reason": "Sirke, sarımsak, zencefil ve acı biberli marine vindaloo karakteriyle uyumlu; kuzu ve yoğurt sunumu varyasyon olarak kalabilir."
+  },
+  {
+    "slug": "gobete-eskisehir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.e-sehir.com/yemek_tarifleri/gobete-eskisehir-tarifi.html",
+      "https://www.kulturportali.gov.tr/turkiye/eskisehir/neyenir"
+    ],
+    "confidence": "medium",
+    "reason": "Göbete kapalı hamur ve pirinçli iç mantığıyla kaynaklara uyuyor; mevcut tavuklu yorumda süre ve alerjen tarafı makul."
+  },
+  {
+    "slug": "gochujang-dip",
+    "verdict": "CORRECTION",
+    "issues": [
+      "allergens: gochujang ticari olarak soya ve çoğu üründe glutenli tahıl içerebilir, GLUTEN eksik"
+    ],
+    "corrections": {
+      "allergens_add": [
+        "GLUTEN"
+      ]
+    },
+    "sources": [
+      "https://saucesanddips.com/2025/05/04/gochujang-dipping-sauce/",
+      "https://www.bhg.com/what-is-gochujang-7112501"
+    ],
+    "confidence": "medium",
+    "reason": "Gochujang dip içeriği doğru; generic gochujang soya yanında glutenli tahıl riski taşıdığı için allergen listesi eksik kalıyor."
+  },
+  {
+    "slug": "goi-cuon",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: nane, fesleğen ve salatalık kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Taze nane",
+          "amount": "0.25",
+          "unit": "demet"
+        },
+        {
+          "name": "Fesleğen",
+          "amount": "0.25",
+          "unit": "demet"
+        },
+        {
+          "name": "Salatalık",
+          "amount": "1",
+          "unit": "adet"
+        }
+      ]
+    },
+    "sources": [
+      "https://openspicebox.com/recipes/goi-cuon",
+      "https://praewcooks.com/goi-cuon/"
+    ],
+    "confidence": "high",
+    "reason": "Goi cuon kaynakları pirinç kağıdı, karides, erişte, marul ve taze otları doğruluyor; adımda geçen otlar listede olmalı."
+  },
+  {
+    "slug": "goi-du-du-tom-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: adımlarda ve klasik tarifte geçen havuç, balık sosu, şeker, sarımsak, biber, fıstık ve kızarmış arpacık eksik",
+      "allergens: yer fıstığı eklendiğinde YER_FISTIGI allergen'i de eklenmeli"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Havuç",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Balık sosu",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Toz şeker",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Sarımsak",
+          "amount": "1",
+          "unit": "diş"
+        },
+        {
+          "name": "Acı biber",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Yer fıstığı",
+          "amount": "3",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Kızarmış arpacık",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "allergens_add": [
+        "YER_FISTIGI"
+      ]
+    },
+    "sources": [
+      "https://www.foodnetwork.com/recipes/green-papaya-salad-with-prawn-and-pork-goi-du-du-tom-thit-recipe-2009948",
+      "https://www.latimes.com/recipe/green-papaya-salad-with-shrimp-goi-du-du"
+    ],
+    "confidence": "high",
+    "reason": "Vietnam papaya salatası kaynakları balık sosu, şeker, sarımsak, otlar ve fıstığı doğruluyor; mevcut liste eksik."
+  },
+  {
+    "slug": "goi-ga-bap-cai",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step balık sosu, şeker, sirke, sarımsak, nane, kişniş ve kızarmış soğan kullanıyor ama listede yok",
+      "allergens: balık sosu eklendiğinde DENIZ_URUNLERI gerekir, soya sosu kaldırılırsa SOYA kalmamalı"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Balık sosu",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Toz şeker",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Pirinç sirkesi",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Sarımsak",
+          "amount": "2",
+          "unit": "diş"
+        },
+        {
+          "name": "Taze nane",
+          "amount": "0.25",
+          "unit": "demet"
+        },
+        {
+          "name": "Kişniş",
+          "amount": "0.25",
+          "unit": "demet"
+        },
+        {
+          "name": "Kızarmış soğan",
+          "amount": "3",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "ingredients_remove": [
+        "Soya sosu"
+      ],
+      "allergens_add": [
+        "DENIZ_URUNLERI"
+      ],
+      "allergens_remove": [
+        "SOYA"
+      ]
+    },
+    "sources": [
+      "https://www.punchfork.com/recipe/Goi-Ga-Bap-Cai-Vietnamese-Chicken-and-Cabbage-Salad-Serious-Eats",
+      "https://grantourismotravels.com/vietnamese-chicken-salad-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Goi ga bap cai kaynakları balık soslu canlı sos, otlar, fıstık ve kızarmış soğanı gösteriyor; mevcut liste step ile uyuşmuyor."
+  },
+  {
+    "slug": "goi-xoai-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: klasik gỏi xoài için havuç, salatalık, balık sosu, şeker, sarımsak, acı biber ve yer fıstığı eksik",
+      "tags: balık sosu eklenirse vegan ve vejetaryen tag'leri yanlış olur",
+      "allergens: balık sosu ve yer fıstığı için alerjenler eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Havuç",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Salatalık",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Balık sosu",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Toz şeker",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Sarımsak",
+          "amount": "1",
+          "unit": "diş"
+        },
+        {
+          "name": "Acı biber",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Yer fıstığı",
+          "amount": "0.25",
+          "unit": "su bardağı"
+        }
+      ],
+      "allergens_add": [
+        "DENIZ_URUNLERI",
+        "YER_FISTIGI"
+      ],
+      "tags_remove": [
+        "vegan",
+        "vejetaryen"
+      ]
+    },
+    "sources": [
+      "https://www.vietnamonline.com/entry/goi-xoai-green-mango-salad.html",
+      "https://chopped.com/recipe/green-mango-salad-goi-xoai/"
+    ],
+    "confidence": "high",
+    "reason": "Gỏi xoài kaynakları balık sosu ve fıstıklı sosu doğruluyor; mevcut vegan etiket ve eksik malzemeler kullanıcıyı yanıltır."
+  },
+  {
+    "slug": "golabki-polonya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.polonist.com/golabki-polish-stuffed-cabbage-rolls/",
+      "https://www.everyday-delicious.com/golabki-polish-stuffed-cabbage-rolls/"
+    ],
+    "confidence": "high",
+    "reason": "Lahana yaprağı, kıyma, pirinç ve domates sosu Polonya gołąbki kaynaklarıyla uyumlu; mevcut süre ve içerikte net hata yok."
+  },
+  {
+    "slug": "golden-gaytime-kadeh-tatlisi-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 20 dakika soğutma totalMinutes içinde yok",
+      "steps: fındıklı krokan adımda geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "totalMinutes": 34,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Bisküvi kırıntısını iri parçalar halinde hazırlayın."
+        }
+      ]
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Golden_Gaytime",
+      "https://www.streetsicecream.com.au/brands/golden-gaytime.html"
+    ],
+    "confidence": "medium",
+    "reason": "Golden Gaytime karamelli ve bisküvili profile dayanıyor; tarifteki 20 dakika soğutma toplam süreye eklenmeli."
+  },
+  {
+    "slug": "golden-gaytime-kup-avustralya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Golden_Gaytime",
+      "https://www.streetsicecream.com.au/brands/golden-gaytime.html"
+    ],
+    "confidence": "medium",
+    "reason": "Karamel, vanilya kreması ve bisküvi kırığı Golden Gaytime profiline uyuyor; 1 saat soğutma totalMinutes içinde görünüyor."
+  },
+  {
+    "slug": "golubtsy",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.russlandjournal.de/en/russian-recipes/main-dishes/golubtsi/",
+      "https://realfood.tesco.com/recipes/golubtsy.html"
+    ],
+    "confidence": "high",
+    "reason": "Rus golubtsy kaynakları lahana, kıyma, pirinç ve domatesli sosu doğruluyor; mevcut tarifte süre ve alerjen hatası yok."
+  },
+  {
+    "slug": "gondar-doro-wat-yumurtali",
+    "verdict": "CORRECTION",
+    "issues": [
+      "description: 'yahnisiidir' yazım hatası var"
+    ],
+    "corrections": {
+      "description": "Doro wat, tavuk butlarını soğan, berbere, baharatlı tereyağı ve haşlanmış yumurtayla ağır ağır pişiren Etiyopya yahnisidir."
+    },
+    "sources": [
+      "https://www.masterclass.com/articles/doro-wat-recipe",
+      "https://www.epicurious.com/recipes/food/views/chicken-stew-em-doro-wett-em-353750"
+    ],
+    "confidence": "high",
+    "reason": "Doro wat içeriği kaynaklarla uyumlu; sadece description alanındaki yazım hatası kullanıcı tarafında düzeltilmeli."
+  },
+  {
+    "slug": "granola-kasesi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.yemek.com/tarif/granola-kasesi/",
+      "https://www.nefisyemektarifleri.com/granola-kasesi/"
+    ],
+    "confidence": "medium",
+    "reason": "Yoğurt, granola, meyve ve bal dengeli kahvaltı kasesiyle uyumlu; makro hesabı ve alerjenler mevcut ingredient listesine göre makul."
+  },
+  {
+    "slug": "gratin-dauphinois",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 10 dakika dinlendirme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 90
+    },
+    "sources": [
+      "https://www.tastefrance.com/us/recipes/french-classics/gratin-dauphinois",
+      "https://en.wikipedia.org/wiki/Gratin_dauphinois"
+    ],
+    "confidence": "high",
+    "reason": "Gratin dauphinois patates, krema, süt ve sarımsakla uyumlu; adımda yazan 10 dakika dinlenme toplam süreye eklenmeli."
+  },
+  {
+    "slug": "gravad-patates-salatasi-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: sos içinde zeytinyağı geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://recipes.fandom.com/wiki/Swedish_Gravlax",
+      "https://true-north-kitchen.com/traditional-mustard-dill-sauce-for-gravlax-gravlaxsas/"
+    ],
+    "confidence": "medium",
+    "reason": "Gravlax ve hardallı dereotlu sos uyumlu; adımda kullanılan zeytinyağı ingredient listesinde yer almalı."
+  },
+  {
+    "slug": "grechka-mantar-kofte-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: zamanlı adımlar toplamı 31 dakika, mevcut cookMinutes 10 ve totalMinutes 28 düşük kalıyor"
+    ],
+    "corrections": {
+      "cookMinutes": 31,
+      "totalMinutes": 49
+    },
+    "sources": [
+      "https://www.russiancuisine.us/node/235",
+      "https://www.grechka.co.uk/post/savory-grechka-buckwheat-recipe-with-mushrooms"
+    ],
+    "confidence": "medium",
+    "reason": "Karabuğday ve mantar hattı doğru; haşlama, sote ve köfte pişirme süreleri toplam süreyi 28 dakikanın üstüne çıkarıyor."
+  },
+  {
+    "slug": "grechka-s-gribami-rus-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.russiancuisine.us/node/235",
+      "https://www.grechka.co.uk/post/savory-grechka-buckwheat-recipe-with-mushrooms"
+    ],
+    "confidence": "high",
+    "reason": "Karabuğday, mantar ve soğan temeli Rus greçka kaynaklarıyla uyumlu; mevcut 30 dakikalık süre ve makro değerleri makul."
+  },
+  {
+    "slug": "greek-coffee",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.thespruceeats.com/what-is-greek-coffee-765337",
+      "https://en.wikipedia.org/wiki/Greek_coffee"
+    ],
+    "confidence": "medium",
+    "reason": "Cezvede ince öğütülmüş kahve, su ve isteğe bağlı şekerle köpüklü pişirme Greek coffee kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "greyfurtlu-cin-fizz-antalya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.tanqueray.com/en-us/recipes/tanqueray-greyhound",
+      "https://www.goodlifeeats.com/grapefruit-gin-and-tonic/"
+    ],
+    "confidence": "medium",
+    "reason": "Cin, greyfurt ve soda bileşimi greyhound ve greyfurtlu gin tonic varyasyonlarıyla uyumlu; süre ve alerjen hatası yok."
+  },
+  {
+    "slug": "greyfurtlu-cin-highball-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 4. adımda 'buz erirse denge bozulmasın' ifadesi iki kez tekrarlanmış"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 4,
+          "instruction": "Greyfurtlu Cin Highball üstünü tonikle tamamlayıp 5 saniye karıştırın, gazı kaçırmayın.",
+          "timerSeconds": 5
+        }
+      ]
+    },
+    "sources": [
+      "https://www.tanqueray.com/en-us/recipes/tanqueray-greyhound",
+      "https://www.goodlifeeats.com/grapefruit-gin-and-tonic/"
+    ],
+    "confidence": "high",
+    "reason": "İçecek içeriği makul; yalnızca aynı cümledeki tekrar profesyonel görünümü bozduğu için tek adım düzeltilmeli."
+  },
+  {
+    "slug": "greyfurtlu-raki-tonik-akdeniz-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: 2 porsiyon için 1 su bardağı rakı çok yüksek, kokteyl oranı ve kaloriyle uyuşmuyor"
+    ],
+    "corrections": {
+      "ingredients_amount_change": [
+        {
+          "name": "Rakı",
+          "newAmount": "100",
+          "newUnit": "ml"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.goodlifeeats.com/grapefruit-gin-and-tonic/",
+      "https://www.tanqueray.com/en-us/recipes/tanqueray-greyhound"
+    ],
+    "confidence": "medium",
+    "reason": "Highball oranları porsiyon başına yaklaşık 50 ml distile içkiyle kurulur; 1 su bardağı rakı mevcut kaloriyle tutarlı değil."
+  },
+  {
+    "slug": "grissini",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kingarthurbaking.com/recipes/grissini-crunchy-italian-breadsticks-recipe",
+      "https://www.italianrecipebook.com/grissini-italian-breadsticks/"
+    ],
+    "confidence": "high",
+    "reason": "Un, su, maya, zeytinyağı ve fırınlanmış ince çubuk ekmek yapısı grissini kaynaklarıyla uyumlu; alerjen doğru."
+  },
+  {
+    "slug": "guadalajara-birria-taco",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.foodandwine.com/cooking-techniques/secret-perfect-birria-claudette-zepeda",
+      "https://www.allrecipes.com/our-most-saved-taco-recipe-of-all-time-8639608"
+    ],
+    "confidence": "high",
+    "reason": "Dana eti, guajillo ve ancho biberli uzun pişirme, consome ve mısır tortilla birria taco kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "guava-kremali-tres-leches-kup-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: tres leches için yoğunlaştırılmış ve buharlaştırılmış süt eksik",
+      "steps: 30 dakika soğutma totalMinutes içinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Yoğunlaştırılmış süt",
+          "amount": "0.5",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Buharlaştırılmış süt",
+          "amount": "0.5",
+          "unit": "su bardağı"
+        }
+      ],
+      "totalMinutes": 46,
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Süt, yoğunlaştırılmış süt, buharlaştırılmış süt ve kremayı kekin üstüne azar azar gezdirin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.goya.com/en/recipes/three-milk-cake/",
+      "https://www.theguardian.com/food/2023/oct/25/how-to-make-the-perfect-tres-leches-cake-recipe-felicity-cloake"
+    ],
+    "confidence": "high",
+    "reason": "Tres leches kaynakları üç sütlü ıslatma temelini doğruluyor; mevcut kup hem sütleri eksik hem de soğutmayı süreye katmıyor."
+  },
+  {
+    "slug": "guava-mojito-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: mojito için soda ve şeker ya da şeker şurubu eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Soda",
+          "amount": "0.5",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Şeker şurubu",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.goya.com/en/recipes/guava-mojito/",
+      "https://www.tupperware.com/blogs/recipes/guava-mojito"
+    ],
+    "confidence": "high",
+    "reason": "Guava mojito kaynakları rom, guava, lime, nane, şeker ve soda dengesini doğruluyor; mevcut ingredient listesi eksik."
+  },
+  {
+    "slug": "guava-rum-cooler-kuba-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sunset.com/recipe/guava-lime-coolers",
+      "https://www.diffordsguide.com/cocktails/recipe/7790/guava-lime-rum-cooler"
+    ],
+    "confidence": "high",
+    "reason": "Guava, beyaz rom, lime ve buz hattı guava cooler kaynaklarıyla uyumlu; 5 dakikalık hazırlık ve kalori makul görünüyor."
+  },
+  {
+    "slug": "gul-recelli-muhallebi-isparta-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 40 dakika soğutma totalMinutes içinde yok",
+      "steps: vanilya geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Vanilya",
+          "amount": "1",
+          "unit": "paket"
+        }
+      ],
+      "totalMinutes": 60
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/gulsulu-muhallebi-tarifi-t-5132",
+      "https://yemek.com/tarif/gul-serbeti//"
+    ],
+    "confidence": "medium",
+    "reason": "Gül aromalı sütlü tatlı çizgisi makul; tarif kendi adımında 40 dakika soğutma ve vanilya söylediği için liste ve süre eksik."
+  },
+  {
+    "slug": "gul-serbeti",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/gul-serbeti//",
+      "https://lezzetler.com/gul-serbeti-tarif-110339"
+    ],
+    "confidence": "high",
+    "reason": "Gül, su, şeker ve limonlu serin içecek hattı gül şerbeti kaynaklarıyla uyumlu; totalMinutes mevcut adımları karşılıyor."
+  },
+  {
+    "slug": "gul-serbetli-bici-bici-adana-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: peltenin tamamen soğuması için gereken süre totalMinutes içinde yok"
+    ],
+    "corrections": {
+      "totalMinutes": 147,
+      "steps_replace": [
+        {
+          "stepNumber": 3,
+          "instruction": "Pelteyi tepsiye döküp buzdolabında 2 saat soğutun, küpler dağılmadan kesilsin.",
+          "timerSeconds": 7200
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/bici-bici-adana-usulu/",
+      "https://www.e-tarifler.com/bici-bici.0.html"
+    ],
+    "confidence": "high",
+    "reason": "Adana bici bici kaynakları nişasta peltesinin soğutulmasını gerektiriyor; mevcut 27 dakika tatlının hazır olma süresini eksik gösteriyor."
+  },
+  {
+    "slug": "gul-sirkeli-tavuk-isparta-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "description: Isparta yöresel yemeği iddiasını doğrulayan güvenilir tarif kaynağı bulunamadı",
+      "description: Akdeniz'in iç kesimleri ifadesi gerçek tarif bilgisi yerine desteklenmeyen köken iddiası veriyor"
+    ],
+    "corrections": {
+      "description": "Gül sirkeli tavuk, tavuk kalçayı gül sirkesi ve soğanla kısa sürede pişiren ekşi aromalı bir ana yemektir."
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/isparta/nealinir/gul-ve-gul-urunleri",
+      "https://isparta.ktb.gov.tr/TR-71042/gul.html"
+    ],
+    "confidence": "low",
+    "reason": "Isparta gülü ve gül ürünleri doğrulanıyor, ancak bu adla yöresel tavuk tarifi doğrulanamadığı için köken iddiası kaldırılmalı."
+  },
+  {
+    "slug": "gulab-jamun",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: adımlarda ghee, kabartma tozu ve kızartma yağı geçiyor ama ingredient listesinde yok",
+      "ingredients: klasik şerbet aroması için kakule kaynaklarda yaygın, mevcut adımda da baharat bağlamı eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Kabartma tozu",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Ghee",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Kızartma yağı",
+          "amount": "2",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Kakule",
+          "amount": "2",
+          "unit": "adet"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.indianhealthyrecipes.com/gulab-jamun-recipe-using-milk-powder/",
+      "https://cookpad.com/eng/recipes/15406336"
+    ],
+    "confidence": "high",
+    "reason": "Gulab jamun kaynakları süt tozu, un, kabartıcı, ghee, kızartma ve aromalı şerbeti doğruluyor; mevcut liste eksik."
+  },
+  {
+    "slug": "gulas-corbasi-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: zamanlı adımlar 48 dakika tutuyor, prepMinutes de eklenince totalMinutes 44 olamaz"
+    ],
+    "corrections": {
+      "cookMinutes": 48,
+      "totalMinutes": 64
+    },
+    "sources": [
+      "https://www.recipetineats.com/hungarian-goulash-recipe/",
+      "https://www.gonnawantseconds.com/hungarian-goulash/"
+    ],
+    "confidence": "high",
+    "reason": "Macar gulaş çorbası dana, patates, soğan ve paprika ile uyumlu; mevcut zamanlı adımlar toplam süreyi aşmış durumda."
+  },
+  {
+    "slug": "gullac",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 2 saat buzdolabında dinlendirme totalMinutes hesabına dahil değil"
+    ],
+    "corrections": {
+      "totalMinutes": 148
+    },
+    "sources": [
+      "https://yemek.com/tarif/gullac/",
+      "https://www.nefisyemektarifleri.com/gullac-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Güllaç kaynakları buzdolabında en az 2 saat dinlendirmeyi doğruluyor; 28 dakika toplam süre kullanıcıyı yanıltır."
+  },
+  {
+    "slug": "gulluklu-muhallebi-kup-mersin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sahrapsoysal.com/gulsulu-muhallebi-tarifi-t-5132",
+      "https://yemek.com/tarif/gul-serbeti//"
+    ],
+    "confidence": "medium",
+    "reason": "Süt, nişasta, gül suyu ve fıstıklı kup yorumu makul; açık süre çelişkisi veya alerjen eksiği görmedim."
+  },
+  {
+    "slug": "gumbo",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: roux için yağ, Louisiana holy trinity için soğan ve yeşil biber, ayrıca sarımsak eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Ayçiçek yağı",
+          "amount": "60",
+          "unit": "ml"
+        },
+        {
+          "name": "Soğan",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Yeşil biber",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Sarımsak",
+          "amount": "2",
+          "unit": "diş"
+        }
+      ]
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Gumbo",
+      "https://www.food.com/recipe/louisiana-shrimp-gumbo-503765"
+    ],
+    "confidence": "high",
+    "reason": "Gumbo için roux ve soğan, biber, kereviz üçlüsü temel kabul ediliyor; mevcut ingredient listesi step ve kaynaklarla eksik."
+  },
+  {
+    "slug": "gumushane-cevizli-siron",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemektarifleri.gumushaneliler.net/siron-tarifi/",
+      "https://www.sondakika.com/guncel/haber-gumushane-nin-vazgecilmez-lezzeti-siron-12242933/"
+    ],
+    "confidence": "high",
+    "reason": "Kuru yufka, yoğurt, tereyağı ve ceviz hattı Gümüşhane siron kaynaklarıyla uyumlu; alerjen ve makro değerleri makul."
+  },
+  {
+    "slug": "gumushane-lemis-ispanakli",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/gumushane/neyenir/lemis",
+      "https://www.e-sehir.com/yemek_tarifleri/lemis-gumushane-tarifi.html"
+    ],
+    "confidence": "high",
+    "reason": "Un hamuru, ıspanak, yumurta, lor, dereotu ve tereyağlı sac pişirme Gümüşhane lemis kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "gumushane-sironlu-yogurt-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemektarifleri.gumushaneliler.net/siron-tarifi/",
+      "https://www.besinanaliz.com/recipe/siron-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Siron, yoğurt, un, tereyağı ve nane çizgisi sironlu yoğurt yorumu için tutarlı; süre ve alerjen hatası görmedim."
+  },
+  {
+    "slug": "gundel-palacsinta",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: klasik Gundel palacsinta ceviz dolgusuna kuru üzüm, rom ve portakal kabuğu ekler, mevcut listede yok",
+      "tags: rom eklenirse alkollü tag'i gerekir"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Kuru üzüm",
+          "amount": "0.25",
+          "unit": "su bardağı",
+          "group": "İç için"
+        },
+        {
+          "name": "Rom",
+          "amount": "2",
+          "unit": "yemek kaşığı",
+          "group": "İç için"
+        },
+        {
+          "name": "Portakal kabuğu rendesi",
+          "amount": "1",
+          "unit": "tatlı kaşığı",
+          "group": "İç için"
+        }
+      ],
+      "tags_add": [
+        "alkollu"
+      ]
+    },
+    "sources": [
+      "https://gundel.hu/en/food-and-drinks/az-eredeti-gundel-palacsinta/",
+      "https://www.itshungarian.com/hungarian/recipes/hungarian-pancakes-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Gundel kaynakları cevizli dolgunun rom, kuru üzüm ve portakal kabuğuyla yapıldığını gösteriyor; mevcut tarif eksik."
+  },
+  {
+    "slug": "gyeran-jjim-kore-buhar-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.maangchi.com/recipe/gyeranjjim",
+      "https://www.koreanbapsang.com/gyeranjjim-korean-steamed-eggs/"
+    ],
+    "confidence": "high",
+    "reason": "Yumurta, su, tuz ve taze soğanla buharda pişirme gyeran jjim kaynaklarıyla uyumlu; süre ve alerjenler doğru."
+  },
+  {
+    "slug": "gyeran-mari",
+    "verdict": "CORRECTION",
+    "issues": [
+      "description: 'klasikdir' yazım hatası var"
+    ],
+    "corrections": {
+      "description": "Kore usulü yumurta rulosu, kahvaltı kutularında ince dilimler halinde yer alan sade ama düzenli bir klasiktir."
+    },
+    "sources": [
+      "https://www.koreanbapsang.com/gyeran-mari-korean-rolled-omelette/",
+      "https://www.foodnetwork.com/recipes/gyeran-mari-korean-rolled-omelet-18572638"
+    ],
+    "confidence": "high",
+    "reason": "Gyeran mari içeriği kaynaklarla uyumlu; description alanındaki tek yazım hatası kullanıcıya görünmeden düzeltilmeli."
+  }
+]

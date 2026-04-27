@@ -1,0 +1,923 @@
+[
+  {
+    "slug": "kimchi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps içinde 2-3 saat tuzlama ve 1 gün fermantasyon var, ama totalMinutes 45 dakika kalmış."
+    ],
+    "corrections": {
+      "totalMinutes": 1635
+    },
+    "sources": [
+      "https://www.maangchi.com/recipe/easy-kimchi",
+      "https://www.seriouseats.com/guide-to-kimchi"
+    ],
+    "confidence": "high",
+    "reason": "Kimchi reçetesi kaynaklarla uyumlu, fakat bekleme ve fermantasyon süresi toplam süreye yansımamış."
+  },
+  {
+    "slug": "kimchi-jeon-kore-sokak-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.maangchi.com/recipe/kimchijeon",
+      "https://www.bbcgoodfood.com/recipes/spicy-kimchi-pancake-kimchi-jeon"
+    ],
+    "confidence": "high",
+    "reason": "Kimchi, un, su, taze soğan ve bol yağla tavada pişirme akışı iki kaynakla uyumlu görünüyor."
+  },
+  {
+    "slug": "kimchili-pirinc-mucveri-kore-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.maangchi.com/recipe/kimchijeon",
+      "https://www.koreanbapsang.com/kimchi-fried-rice-bokkeum-bap/"
+    ],
+    "confidence": "medium",
+    "reason": "Kimchi, pirinç ve yumurta birleşimi Kore ev mutfağına uygun; mücver formu doğru bir yorum."
+  },
+  {
+    "slug": "kimyonlu-yesil-mercimekli-bulgur-pilavi-konya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 su ekliyor ama ingredient listesinde su yok.",
+      "Step 4 ve 5 tarif adını tekrar eden boilerplate cümleler içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "2.5", "unit": "su bardağı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Soğanı küçük doğrayın, tereyağında 3 dakika yumuşayana kadar çevirin.", "timerSeconds": 180 },
+        { "stepNumber": 2, "instruction": "Bulgur ve kimyonu ekleyip 2 dakika kavurun, kokusu açılsın.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Mercimek ve 2.5 su bardağı sıcak suyu katıp kapağı kapatın." },
+        { "stepNumber": 4, "instruction": "Pilavı 12 dakika kısık ateşte pişirin, bulgur suyu çekince ocaktan alın.", "timerSeconds": 720 },
+        { "stepNumber": 5, "instruction": "Kapağı kapalı 8 dakika demleyin, sonra taneleri ezmeden havalandırın.", "timerSeconds": 480 }
+      ],
+      "totalMinutes": 35
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yesil-mercimekli-bulgur-pilavi-tarifi/18706",
+      "https://www.nefisyemektarifleri.com/yesil-mercimekli-bulgur-pilavi/"
+    ],
+    "confidence": "high",
+    "reason": "Bulgur pilavı kurgusu doğru, ancak su ingredient listesinde yok ve iki adım açıkça şablon kalmış."
+  },
+  {
+    "slug": "kinoa-pancar-bowl-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps roka, salatalık, hardal, bal ve peynir diyor; bu malzemeler ingredient listesinde yok.",
+      "Vegan tag varken step peynir ve bal kullanıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kinoayı ince süzgeçte yıkayın, acı tadı azalması için 1 dakika ovalayın.", "timerSeconds": 60 },
+        { "stepNumber": 2, "instruction": "Kinoayı 2 ölçü suda 12 dakika pişirin, kapağı kapalı 5 dakika bekletin.", "timerSeconds": 1020 },
+        { "stepNumber": 3, "instruction": "Pancarı küp doğrayın, maydanozu ince kıyın." },
+        { "stepNumber": 4, "instruction": "Limon suyu ve zeytinyağını 30 saniye çırpın.", "timerSeconds": 30 },
+        { "stepNumber": 5, "instruction": "Kinoa, pancar, maydanoz ve sosu kasede harmanlayıp serin servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.healthyfamilies.tennessee.edu/recipes/peruvian-quinoa-salad/",
+      "https://yemek.com/tarif/kinoa-salatasi/"
+    ],
+    "confidence": "high",
+    "reason": "Kinoa salatası temeli doğru, fakat step metni tarifte olmayan malzemelerle vegan beyanını bozuyor."
+  },
+  {
+    "slug": "kinoa-salatalik-salatasi-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 kırmızı soğan, step 5 avokado diyor; ingredient listesinde ikisi de yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kinoayı yıkayıp 12 dakika haşlayın, süzgeçte 5 dakika buharını attırın.", "timerSeconds": 1020 },
+        { "stepNumber": 2, "instruction": "Salatalığı çekirdekli kısmı sulandırmasın diye ortadan kazıyıp küp doğrayın." },
+        { "stepNumber": 3, "instruction": "Kişnişi ince kıyın, lime suyunu ve zeytinyağını küçük kasede karıştırın." },
+        { "stepNumber": 4, "instruction": "Kinoayı sosla karıştırın, taneleri ezmemeye dikkat edin." },
+        { "stepNumber": 5, "instruction": "Salatalığı ekleyin, kişnişle tamamlayıp soğuk servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.healthyfamilies.tennessee.edu/recipes/peruvian-quinoa-salad/",
+      "https://www.thegeneticchef.com/peruvian-cucumber-salad/"
+    ],
+    "confidence": "high",
+    "reason": "Peru esintili kinoa ve salatalık uyumlu, ancak iki step ingredient listesinde olmayan malzeme kullanıyor."
+  },
+  {
+    "slug": "kinoa-salatasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 taze soğan ve nane diyor; ingredient listesinde yok.",
+      "Step 4 tuz diyor; ingredient listesinde tuz yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Taze soğan", "amount": "3", "unit": "dal" },
+        { "name": "Taze nane", "amount": "0.25", "unit": "demet" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kinoa-salatasi/",
+      "https://www.themediterraneandish.com/quinoa-salad/"
+    ],
+    "confidence": "high",
+    "reason": "Kinoa salatası kaynaklarla uyumlu, fakat step içinde geçen yeşillik ve tuz listede eksik."
+  },
+  {
+    "slug": "kinoali-sebze-corbasi-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 sebzeleri çevirmeyi söylüyor ama listede yağ yok.",
+      "Peru kinoa çorbası kaynaklarında soğan ve yağ tabanı yaygın; mevcut listede soğan yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://connect.bcbstx.com/nutrition/w/recipe-book/331/peruvian-quinoa-soup",
+      "https://www.youtube.com/watch?v=a9VnHoW_MmQ"
+    ],
+    "confidence": "medium",
+    "reason": "Kinoa, sebze ve aji fikri doğru; yağ ve soğan tabanı eksik olduğu için adım pratikte havada kalıyor."
+  },
+  {
+    "slug": "kiraz-yaprakli-kofte-malatya-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Malatya kaynakları kiraz yaprağı köftesini yoğurtlu ayran sosu, yumurta, un ve soğanlı yağla anlatıyor.",
+      "Mevcut tarif salçalı suda pişen vegan bir yemeğe dönmüş; bu ana kimliği kaçırıyor."
+    ],
+    "corrections": {
+      "description": "Malatya kiraz yapraklı köfte, bulgurlu küçük sarmaları yoğurtlu ekşi sos ve soğanlı yağla buluşturan yöresel yemektir.",
+      "ingredients_add": [
+        { "name": "Yoğurt", "amount": "2", "unit": "su bardağı", "group": "Ayran sosu" },
+        { "name": "Yumurta", "amount": "1", "unit": "adet", "group": "Ayran sosu" },
+        { "name": "Soğan", "amount": "2", "unit": "adet", "group": "Üzeri için" },
+        { "name": "Tereyağı", "amount": "2", "unit": "yemek kaşığı", "group": "Üzeri için" },
+        { "name": "Erik ekşisi", "amount": "1", "unit": "yemek kaşığı", "group": "Ayran sosu" }
+      ],
+      "ingredients_remove": ["Domates salçası"],
+      "tags_remove": ["vegan"],
+      "allergens_add": ["SUT", "YUMURTA"],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bulgur, un ve tuzu azar azar suyla yoğurup yumuşak bir hamur yapın." },
+        { "stepNumber": 2, "instruction": "Kiraz yapraklarını bir dakika sıcak suda yumuşatın.", "timerSeconds": 60 },
+        { "stepNumber": 3, "instruction": "Hamurdan küçük parçalar alıp yapraklara ince sarın." },
+        { "stepNumber": 4, "instruction": "Sarmaları tencereye dizip üstünü geçmeyecek suyla on beş dakika pişirin.", "timerSeconds": 900 },
+        { "stepNumber": 5, "instruction": "Yoğurt, yumurta, un ve erik ekşisini çırpıp sekiz dakika karıştırarak ısıtın.", "timerSeconds": 480 },
+        { "stepNumber": 6, "instruction": "Sarmaları yoğurtlu sosa alın, soğanlı tereyağını üstüne gezdirip sıcak servis edin." }
+      ],
+      "prepMinutes": 35,
+      "cookMinutes": 30,
+      "totalMinutes": 65
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/malatya/neyenir/kiraz-yapragi-sarmasi",
+      "https://bimalatya.com/kesfet/malatya-ayranli-kiraz-yapragi-koftesi"
+    ],
+    "confidence": "high",
+    "reason": "Resmi kültür kaynağı ve Malatya kaynağı yoğurtlu ekşi sosu doğruluyor; mevcut vegan salçalı yapı yanıltıcı."
+  },
+  {
+    "slug": "kiraz-yaprakli-sarma-malatya-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Kaynaklarda Malatya kiraz yaprağı sarması pirinçli değil, yarma veya bulgur hamuruyla sarılıyor.",
+      "Yoğurt, yumurta, un, erik ekşisi ve soğanlı yağ yok; bu ana tarif kimliğini değiştiriyor."
+    ],
+    "corrections": {
+      "description": "Malatya kiraz yaprağı sarması, bulgurlu ince sarmaları yoğurtlu ekşi sos ve soğanlı yağla birleştiren yöresel yemektir.",
+      "ingredients_add": [
+        { "name": "İnce bulgur", "amount": "2", "unit": "su bardağı", "group": "İç için" },
+        { "name": "Un", "amount": "2", "unit": "yemek kaşığı", "group": "İç için" },
+        { "name": "Yoğurt", "amount": "2", "unit": "su bardağı", "group": "Ayran sosu" },
+        { "name": "Yumurta", "amount": "1", "unit": "adet", "group": "Ayran sosu" },
+        { "name": "Erik ekşisi", "amount": "1", "unit": "yemek kaşığı", "group": "Ayran sosu" }
+      ],
+      "ingredients_remove": ["Pirinç", "Limon"],
+      "tags_remove": ["vegan"],
+      "allergens_add": ["GLUTEN", "SUT", "YUMURTA"],
+      "prepMinutes": 45,
+      "cookMinutes": 35,
+      "totalMinutes": 80
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/malatya/neyenir/kiraz-yapragi-sarmasi",
+      "https://www.firatikesfet.com/tr/detail/malatya/kiraz-yapragi-sarmasi"
+    ],
+    "confidence": "high",
+    "reason": "İki kaynak da pirinçli dolmadan farklı, yoğurtlu ve bulgurlu yöresel sarma yapısını anlatıyor."
+  },
+  {
+    "slug": "kirazli-soguk-cay-canakkale-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lipton.com/us/en/recipes/cherry-iced-tea/",
+      "https://www.bbcgoodfood.com/recipes/iced-tea"
+    ],
+    "confidence": "medium",
+    "reason": "Çay, kiraz, limon ve buzla hazırlanan soğuk içecek kurgusu pratik içecek kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "kirazli-tarhana-corbasi-konya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kirazinmutfagi.com.tr/tarif/tarhana-corbasi",
+      "https://www.nefisyemektarifleri.com/tarhana-corbasi-tarifi/"
+    ],
+    "confidence": "low",
+    "reason": "Tarhana çorbası temeli doğru; kuru kiraz yöresel varyasyon olarak net doğrulanmadığı için güven düşük tutuldu."
+  },
+  {
+    "slug": "kiremitte-mantar-kavurma-zonguldak-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 ve 6 genel şablon cümle; tarifin gerçek işlemini anlatmıyor.",
+      "Kiremit aşaması mevcut step setinde net değil."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Mantarları iri doğrayın, biberleri halka halka, sarımsakları ince kesin." },
+        { "stepNumber": 2, "instruction": "Zeytinyağını kızdırın, biber ve sarımsağı 2 dakika çevirin.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Mantarı ekleyip yüksek ateşte 8 dakika suyunu çektirin.", "timerSeconds": 480 },
+        { "stepNumber": 4, "instruction": "Karışımı sıcak kiremit kaba alın." },
+        { "stepNumber": 5, "instruction": "Fırının üst ızgarasında 5 dakika hafif kızartın.", "timerSeconds": 300 },
+        { "stepNumber": 6, "instruction": "Kiremit sıcakken servis edin, mantar suyunu tabakta bırakın." }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kiremitte-mantar/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/kiremitte-kasarli-soganli-mantar/16486"
+    ],
+    "confidence": "high",
+    "reason": "Mantarın yüksek ateşte çevrilip kiremitte tamamlanması doğru, ama mevcut adımlar şablon kalmış."
+  },
+  {
+    "slug": "kiren-serbeti-gumushane-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps kirenin ayıklanması, kaynatılması ve süzülmesini anlatmıyor; genel içecek şablonu kalmış."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kirenleri ayıklayıp yıkayın, tencereye su ve karanfille alın." },
+        { "stepNumber": 2, "instruction": "Meyveleri 15 dakika kısık ateşte kaynatın.", "timerSeconds": 900 },
+        { "stepNumber": 3, "instruction": "Şekeri ekleyip 3 dakika karıştırın, sonra süzerek soğutun.", "timerSeconds": 180 }
+      ],
+      "cookMinutes": 18,
+      "totalMinutes": 26
+    },
+    "sources": [
+      "https://www.diyetkolik.com/yemek-tarifi/kizilcik-serbeti",
+      "https://ye-mek.net/amp/kizilcik-serbeti-kiren"
+    ],
+    "confidence": "high",
+    "reason": "Kiren şerbetinde meyveyi kaynatıp süzme ana işlem; mevcut metin bu işlemi tarif etmiyor."
+  },
+  {
+    "slug": "kirenli-elma-hosafi-gumushane-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://ye-mek.net/amp/kizilcik-serbeti-kiren",
+      "https://www.justapinch.com/recipes/drink/drink-non-alcoholic-drink/russian-fruit-compote-kompot.html"
+    ],
+    "confidence": "medium",
+    "reason": "Kiren, elma, şeker ve karanfille kısa kaynatma hoşaf mantığına uygun; yöre iddiası sınırlı doğrulandı."
+  },
+  {
+    "slug": "kirklareli-hardalli-lahana-salatasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps havuç, maydanoz, şeker, zeytinyağı, limon ve kornişon diyor; ingredient listesinde yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Beyaz lahanayı ince kıyın, dereotunu doğrayın." },
+        { "stepNumber": 2, "instruction": "Lahanayı tuz ve elma sirkesiyle 3 dakika ovun.", "timerSeconds": 180 },
+        { "stepNumber": 3, "instruction": "Yoğurt ve hardalı 45 saniye çırpın.", "timerSeconds": 45 },
+        { "stepNumber": 4, "instruction": "Dereotunu lahanaya katın, hardallı yoğurt sosunu ekleyin." },
+        { "stepNumber": 5, "instruction": "Salatayı 10 dakika serin yerde bekletip soğuk servis edin.", "timerSeconds": 600 }
+      ]
+    },
+    "sources": [
+      "https://hthayat.haberturk.com/hardalli-lahana-salatasi-1085018",
+      "https://www.lezzet.com.tr/yemek-tarifleri/diger-tarifler/sos-tarifleri/yogurtlu-hardal-sos-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Hardallı lahana fikri doğru, ancak mevcut adımlar ingredient listesinde olmayan ek malzemeler kullanıyor."
+  },
+  {
+    "slug": "kirklareli-kacamak-peynirli",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/kirklareli/neyenir/kacamak795162",
+      "https://lezzetler.com/kacamak-kirklareli-tarif-105793"
+    ],
+    "confidence": "high",
+    "reason": "Mısır ununu kaynar suda koyulaştırıp tereyağı, peynir veya yoğurtla sunma Kırklareli kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "kirklareli-yogurtlu-papara",
+    "verdict": "PASS",
+    "sources": [
+      "https://turkiye.ee/tr/kirklareli/babaeski/yerel-lezzetler/kirklareli-usulu-papara/",
+      "https://www.nefisyemektarifleri.com/papara/"
+    ],
+    "confidence": "medium",
+    "reason": "Bayat ekmek, sıcak sıvı, tereyağı ve yoğurtla kurulan papara akışı kaynaklarla genel olarak örtüşüyor."
+  },
+  {
+    "slug": "kirmizi-erikli-taze-fasulye-manisa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 su eklemeyi söylüyor ama ingredient listesinde su yok.",
+      "Step 1 ve 5 tarif adını tekrar eden boilerplate cümleler içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "0.75", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Soğanı ince doğrayıp zeytinyağında 4 dakika yumuşatın.", "timerSeconds": 240 },
+        { "stepNumber": 2, "instruction": "Ayıklanmış fasulyeyi ekleyip 6 dakika çevirin.", "timerSeconds": 360 },
+        { "stepNumber": 3, "instruction": "Domates, tuz ve sıcak suyu ekleyin." },
+        { "stepNumber": 4, "instruction": "Fasulyeyi 18 dakika kısık ateşte pişirin.", "timerSeconds": 1080 },
+        { "stepNumber": 5, "instruction": "Erikleri ekleyip 7 dakika daha pişirin, ılık servis edin.", "timerSeconds": 420 }
+      ],
+      "cookMinutes": 35,
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/erikli-taze-fasulye/",
+      "https://yemek.com/tarif/zeytinyagli-taze-fasulye/"
+    ],
+    "confidence": "medium",
+    "reason": "Erikli fasulye zeytinyağlı mantığına uygun, fakat su ve tuz eksik, iki step şablon kokuyor."
+  },
+  {
+    "slug": "kirmizi-pancar-mihlama-trabzon-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 yumurta bekleyip dokusunu kaybetmesin diyor; tarifte yumurta yok.",
+      "Step 6 dilimleme diyor; mıhlama dilimlenmez, sıcak tavadan yenir."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Tereyağını tavada eritin, mısır ununu iki dakika kavurun.", "timerSeconds": 120 },
+        { "stepNumber": 2, "instruction": "Suyu azar azar ekleyip pürüzsüz kıvam alana kadar karıştırın." },
+        { "stepNumber": 3, "instruction": "Rendelenmiş haşlanmış pancarı ekleyin." },
+        { "stepNumber": 4, "instruction": "Kolot peynirini katıp dört dakika eriyene kadar pişirin.", "timerSeconds": 240 },
+        { "stepNumber": 5, "instruction": "Peynir uzamaya başlayınca tavadan sıcak servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.tarifmotoru.com/tarif/mihlama",
+      "https://www.bogatepemandira.com/tr/tr/blog/mihlama-tarifi-lezzetli-ve-kivaminda-mihlama-yapimi"
+    ],
+    "confidence": "high",
+    "reason": "Mıhlama tabanı doğru, ancak mevcut metindeki yumurta ve dilimleme ifadeleri tarifle uyumsuz."
+  },
+  {
+    "slug": "kirmizi-pancarli-kefir-kasesi-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 süzme yoğurt ve sarımsak diyor; ingredient listesinde yok.",
+      "Step 4 ve 5 yumurta diyor; ingredient listesinde yok ve YUMURTA allergen eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Süzme yoğurt", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Yumurta", "amount": "2", "unit": "adet" }
+      ],
+      "allergens_add": ["YUMURTA"]
+    },
+    "sources": [
+      "https://www.polonist.com/polish-chlodnik-cold-beet-soup/",
+      "https://www.everyday-delicious.com/chlodnik-polish-cold-beet-soup/"
+    ],
+    "confidence": "high",
+    "reason": "Polonya usulü soğuk pancar kasesi mantığı doğru, fakat step içinde geçen yoğurt, sarımsak ve yumurta eksik."
+  },
+  {
+    "slug": "kirmizi-yabanmersinli-soda-isvec-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://swedishfood.com/swedish-food-recipes-drinks/164-lingonberry-drink",
+      "https://www.scandinaviastandard.com/what-is-lingonberry/"
+    ],
+    "confidence": "medium",
+    "reason": "Lingonberry tipi kırmızı meyve, limon ve soda kullanımı modern içecek yorumu olarak makul duruyor."
+  },
+  {
+    "slug": "kirsehir-besmec-koftesi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sendeyapsana.com/kirsehir-besmec-tarifi/",
+      "https://www.nefisyemektarifleri.com/kirsehir-besmec-koftesi/"
+    ],
+    "confidence": "high",
+    "reason": "İnce bulgur, kıyma, soğan, salça, yumurta ve tavada pişirme Kırşehir besmeç kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "kisir",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 sıcak su ekliyor ama ingredient listesinde su yok.",
+      "Step 3 tuz ve pul biber, step 5 nane diyor; ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "2", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Pul biber", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Taze nane", "amount": "0.25", "unit": "demet" }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kisir/",
+      "https://www.nefisyemektarifleri.com/kisir-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kısır yapısı doğru, ama sıcak su ve baharat gibi step içinde geçen temel malzemeler listede eksik."
+  },
+  {
+    "slug": "kisnisli-misir-corbasi-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 soğanı çevirmeyi söylüyor ama listede yağ yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.eatperu.com/aguadito-de-pollo/",
+      "https://www.perudelights.com/corn-and-cilantro-soup/"
+    ],
+    "confidence": "medium",
+    "reason": "Kişnişli mısır çorbası Peru tatlarına uygun, fakat soğanı çevirmek için yağ ve tuz listede eksik."
+  },
+  {
+    "slug": "kitsune-udon",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Kitsune udon kaynaklarında tatlı soya soslu aburaage kullanılır; mevcut listede tofu genel kalmış.",
+      "Steps erişteyi sosla tavada çevirmeyi söylüyor; kitsune udon çorba kasesi olarak servis edilir."
+    ],
+    "corrections": {
+      "ingredients_amount_change": [
+        { "name": "Tofu", "newAmount": "4", "newUnit": "adet" }
+      ],
+      "ingredients_add": [
+        { "name": "Şeker", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Mirin", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Tofuyu şeker, mirin ve soya sosuyla on dakika tatlandırın.", "timerSeconds": 600 },
+        { "stepNumber": 2, "instruction": "Sebze suyunu kaynatın, tuzunu ve soya tadını kontrol edin.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Udon eriştesini ayrı tencerede sekiz dakika haşlayıp süzün.", "timerSeconds": 480 },
+        { "stepNumber": 4, "instruction": "Erişteyi kaselere paylaştırın, üstüne sıcak suyu dökün." },
+        { "stepNumber": 5, "instruction": "Tatlı soya soslu tofuyu ve taze soğanı ekleyip hemen servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.justonecookbook.com/kitsune-udon/",
+      "https://www.japanesecooking101.com/kitsune-udon-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Kitsune udon çorba kasesidir; mevcut tavada çevirme adımları ve sade tofu ifadesi kaynaklarla uyuşmuyor."
+  },
+  {
+    "slug": "kivili-maydanoz-smoothie",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/green-smoothie",
+      "https://www.allrecipes.com/recipe/241019/kiwi-smoothie/"
+    ],
+    "confidence": "medium",
+    "reason": "Kivi, yeşil elma, salatalık, limon ve suyla blender içeceği basit smoothie mantığına uygun."
+  },
+  {
+    "slug": "kiymali-pide",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ev tipi kıymalı pide kaynaklarında hamurda az şeker ve iç harçta az yağ veya su yaygın; mevcut iç harç kuru kalabilir.",
+      "Fırın süresi 15-18 dakika denmiş, cookMinutes 18 ile uyumlu; ana sorun eksik harç nemi."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı", "group": "İç için" },
+        { "name": "Toz şeker", "amount": "1", "unit": "tatlı kaşığı", "group": "Hamur için" }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kiymali-pide/",
+      "https://www.nefisyemektarifleri.com/kiymali-pide-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Temel pide doğru, fakat harç nemi ve maya beslemesi için kaynaklardaki yağ ve şeker listede eksik."
+  },
+  {
+    "slug": "kizilcik-eksili-tarhana-corbasi-bolu-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kirazinmutfagi.com.tr/tarif/tarhana-corbasi",
+      "https://www.nefisyemektarifleri.com/tarhana-corbasi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Tarhana, su, tereyağı ve nane akışı doğru; kızılcık ekşisi bölgesel ekşi yorum olarak makul duruyor."
+  },
+  {
+    "slug": "kizilcik-hosafi-yozgat-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps tamamen genel şablon; kızılcığın kaynatılması, elmanın eklenmesi ve süzme veya soğutma yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kızılcığı ayıklayıp yıkayın, elmayı iri küpler halinde doğrayın." },
+        { "stepNumber": 2, "instruction": "Su, şeker ve karanfili tencerede kaynatın.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Kızılcığı ekleyip altı dakika pişirin.", "timerSeconds": 360 },
+        { "stepNumber": 4, "instruction": "Elmayı katıp altı dakika daha kaynatın, meyveler dağılmasın.", "timerSeconds": 360 },
+        { "stepNumber": 5, "instruction": "Hoşafı ılık veya soğuk servis edin." }
+      ],
+      "cookMinutes": 17,
+      "totalMinutes": 25
+    },
+    "sources": [
+      "https://www.diyetkolik.com/yemek-tarifi/kizilcik-serbeti",
+      "https://www.justapinch.com/recipes/drink/drink-non-alcoholic-drink/russian-fruit-compote-kompot.html"
+    ],
+    "confidence": "high",
+    "reason": "Hoşaf tekniği meyveyi kaynatmayı gerektirir; mevcut üç step içeriği fiilen tarif etmiyor."
+  },
+  {
+    "slug": "kizilcik-kvas-fizz-rus-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.seriouseats.com/kvass-russian-fermented-rye-bread-drink",
+      "https://www.bonappetit.com/story/kvass-russian-bread-drink"
+    ],
+    "confidence": "medium",
+    "reason": "Kvasın ekşi fermente tabanı kızılcık suyuyla karıştırmaya uygun; içecek modern fizz yorumu olarak makul."
+  },
+  {
+    "slug": "kizilcikli-cay-serbeti-elazig-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/iced-tea",
+      "https://www.diyetkolik.com/yemek-tarifi/kizilcik-serbeti"
+    ],
+    "confidence": "medium",
+    "reason": "Soğuk çay ve kızılcık suyu birleşimi teknik olarak tutarlı; yöresel Elazığ bağlantısı sınırlı doğrulandı."
+  },
+  {
+    "slug": "kizilcikli-kissel-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 nişastayı doğrudan sıcak tabana ekliyor; kaynaklarda nişasta önce soğuk suyla açılır.",
+      "Mevcut metin kızılcığı süzme ve nişastayla bağlama ayrımını yeterince net vermiyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kızılcık, şeker ve suyu 6 dakika kaynatın.", "timerSeconds": 360 },
+        { "stepNumber": 2, "instruction": "Meyveli tabanı süzün, kızılcıkları kaşıkla hafifçe ezin." },
+        { "stepNumber": 3, "instruction": "Mısır nişastasını yarım su bardağı soğuk suyla açın." },
+        { "stepNumber": 4, "instruction": "Nişastalı karışımı tencereye ince akıtarak ekleyin." },
+        { "stepNumber": 5, "instruction": "Kisseli 3 dakika koyulaşana kadar karıştırın, ılık ya da soğuk servis edin.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://world.food/recipes/russian-kissel",
+      "https://www.food.com/recipe/russian-berry-custard-kissel-227451"
+    ],
+    "confidence": "high",
+    "reason": "Kisselde nişastayı soğuk sıvıyla açmak kritik; mevcut anlatım topaklanma riski taşıyor."
+  },
+  {
+    "slug": "kladdkaka-portakalli-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 yumurta ve şekeri çırpıyor ama ingredient listesinde şeker yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Şeker", "amount": "1", "unit": "su bardağı" }
+      ],
+      "totalMinutes": 55
+    },
+    "sources": [
+      "https://visitsweden.com/what-to-do/food-drink/recipes/swedish-sticky-chocolate-cake-recipe/",
+      "https://swedishfood.com/swedish-food-recipes-biscuits-cakes/298-kladdkaka"
+    ],
+    "confidence": "high",
+    "reason": "Kladdkaka şekerle yapılan yapışkan kek; stepte geçen şeker ingredient listesinde bulunmuyor."
+  },
+  {
+    "slug": "klasik-menemen",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 boilerplate hazırlık cümlesi.",
+      "Step 5 dilimleyin diyor; menemen dilimlenmez."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Biberleri ince doğrayın, domatesleri rendeleyin veya küçük küp kesin." },
+        { "stepNumber": 2, "instruction": "Biberleri zeytinyağında 4 dakika kavurun.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Domatesleri ekleyip suyunu hafif çekene kadar 8 dakika pişirin.", "timerSeconds": 480 },
+        { "stepNumber": 4, "instruction": "Yumurtaları ekleyip 3 dakika karıştırarak pişirin.", "timerSeconds": 180 },
+        { "stepNumber": 5, "instruction": "Tuzunu ayarlayın, menemen sulu kalırken tavadan sıcak servis edin." }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/menemen/",
+      "https://www.nefisyemektarifleri.com/menemen-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Menemen içeriği doğru, fakat bir hazırlık step'i şablon ve son adım dilimleme diyerek yemeği yanlış anlatıyor."
+  },
+  {
+    "slug": "kluski-leniwe-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 timerSeconds eksik; 4 dakika yoğurma söylüyor.",
+      "Step 5 gevrek doku diyor; haşlanmış kluski için gevrek doku doğru değil."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Taze peyniri ezin, yumurta ve unla yumuşak hamur haline getirin." },
+        { "stepNumber": 2, "instruction": "Hamuru unlu tezgahta iki dakika toparlayın, fazla yoğurmayın.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Hamuru şerit yapıp verev parçalar halinde kesin." },
+        { "stepNumber": 4, "instruction": "Kluski parçalarını dört dakika kaynar suda haşlayın.", "timerSeconds": 240 },
+        { "stepNumber": 5, "instruction": "Tereyağını eritip kluski üstüne gezdirin, ılık servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.polonist.com/kluski-leniwe-polish-lazy-dumplings/",
+      "https://www.everyday-delicious.com/lazy-pierogi-lazy-dumplings/"
+    ],
+    "confidence": "high",
+    "reason": "Kluski leniwe hamuru doğru, fakat haşlanan hamur için gevrek doku ifadesi ve eksik timer sorunlu."
+  },
+  {
+    "slug": "kluski-slaskie-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 iç harç fırında akmasın diyor; bu tarifte iç harç ve fırın yok.",
+      "Step 5 tepsi ve sıcak hava diyor; kluski suda haşlanır."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Haşlanmış patatesleri ezin, patates nişastası, yumurta ve tuzla yoğurun." },
+        { "stepNumber": 2, "instruction": "Hamurdan küçük toplar yapıp ortasını başparmakla bastırın." },
+        { "stepNumber": 3, "instruction": "Tencerede bol su kaynatıp hafifçe tuzlayın.", "timerSeconds": 300 },
+        { "stepNumber": 4, "instruction": "Kluski parçalarını suya bırakıp yüzeye çıktıktan sonra dört dakika haşlayın.", "timerSeconds": 240 },
+        { "stepNumber": 5, "instruction": "Süzüp sıcak servis edin, ortadaki oyuk sosu tutar." }
+      ],
+      "totalMinutes": 31
+    },
+    "sources": [
+      "https://www.polonist.com/silesian-dumplings/",
+      "https://www.everyday-delicious.com/silesian-dumplings/"
+    ],
+    "confidence": "high",
+    "reason": "Silesian dumpling haşlanır; mevcut fırın ve iç harç cümleleri başka tariften kalmış."
+  },
+  {
+    "slug": "knafeh-cups",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 şerbet ekliyor ama ingredient listesinde şerbet için su ve şeker yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Şeker", "amount": "0.75", "unit": "su bardağı", "group": "Şerbet için" },
+        { "name": "Su", "amount": "0.75", "unit": "su bardağı", "group": "Şerbet için" }
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/mini-knafeh-with-rose-and-pistachio",
+      "https://www.seriouseats.com/knafeh-naameh-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Knafeh şerbetli bir tatlı; stepte şerbet geçmesine rağmen şeker ve su listede yok."
+  },
+  {
+    "slug": "kol-boregi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 tencere ve sıvı hizası diyor; kol böreği fırın tepsisinde pişer.",
+      "Step 6 kızgın yağ ve tekrar tarif adı şablon kalmış."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Beyaz peynir ve maydanozu karıştırın." },
+        { "stepNumber": 2, "instruction": "Süt, sıvı yağ ve yumurtayı çırparak yufka sosunu hazırlayın." },
+        { "stepNumber": 3, "instruction": "Yufkaları soslayıp peynirli harçla uzun rulo sarın." },
+        { "stepNumber": 4, "instruction": "Ruloları tepsiye spiral dizin, kalan sosu üzerine sürün." },
+        { "stepNumber": 5, "instruction": "180°C fırında 35 dakika kızarana kadar pişirin.", "timerSeconds": 2100 },
+        { "stepNumber": 6, "instruction": "Böreği 5 dakika dinlendirip dilimleyin.", "timerSeconds": 300 }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kol-boregi/",
+      "https://www.nefisyemektarifleri.com/kol-boregi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kol böreği şekli ve pişmesi doğru, ama mevcut iki step açık biçimde başka tencere yemeği şablonundan kalmış."
+  },
+  {
+    "slug": "kolbaszli-lecso",
+    "verdict": "PASS",
+    "sources": [
+      "https://thetasteofhungary.com/en/recipes/main-dishes/lecso-with-kolbasz",
+      "https://www.theomaway.com/main-dishes/letscho-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Biber, domates, soğan, paprika ve kolbász ile tek tencere pişirme Macar lecsó kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "kolot-peynirli-kavrulmus-domates-tostu-rize-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bogatepemandira.com/tr/tr/blog/mihlama-tarifi-lezzetli-ve-kivaminda-mihlama-yapimi",
+      "https://www.yemektekeyifvar.com/kahvaltilik-tarifler/mihlama"
+    ],
+    "confidence": "medium",
+    "reason": "Kolotun eriyen peynir olarak kullanımı doğrulanıyor; tost yorumu modern ama ingredient ve süreler tutarlı."
+  },
+  {
+    "slug": "kolotlu-mantar-guveci-artvin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/guvecte-kasarli-mantar-tarifi/8979",
+      "https://afiyetle.com/tarif/kasarli-mantar-guvec"
+    ],
+    "confidence": "medium",
+    "reason": "Mantar, soğan, tereyağı ve eriyen peynirle güveçte tamamlama genel mantar güveç tekniğiyle uyumlu."
+  },
+  {
+    "slug": "kolotlu-misir-ekmegi-trabzon-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 boilerplate hazırlık cümlesi.",
+      "Step 4 tereyağıyla servis edin diyor ama tereyağı ingredient olarak hamurun içinde mi, servis için mi belirsiz."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Fırını 190°C'ye ısıtın, tepsiyi tereyağıyla yağlayın.", "timerSeconds": 600 },
+        { "stepNumber": 2, "instruction": "Mısır unu, un ve suyu koyu bir hamur olana kadar karıştırın." },
+        { "stepNumber": 3, "instruction": "Rendelenmiş kolot peynirini hamura yedirip tepsiye yayın." },
+        { "stepNumber": 4, "instruction": "Ekmeği 30 dakika üstü kızarana kadar pişirin.", "timerSeconds": 1800 },
+        { "stepNumber": 5, "instruction": "10 dakika dinlendirip dilimleyin, peynir sertleşmeden sıcak servis edin.", "timerSeconds": 600 }
+      ],
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://www.sofra.com.tr/tarif/gluten-iceren-ekmekler/taze-soganli-peynirli-misir-ekmegi",
+      "https://www.tarifikolay.com/peynirli-misir-ekmegi-2234"
+    ],
+    "confidence": "medium",
+    "reason": "Peynirli mısır ekmeği fikri doğru, fakat ilk step şablon ve tereyağı kullanımı net anlatılmıyor."
+  },
+  {
+    "slug": "kombe",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 kabartıcı diyor ama ingredient listesinde kabartma tozu yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kabartma tozu", "amount": "0.5", "unit": "paket" }
+      ],
+      "totalMinutes": 70
+    },
+    "sources": [
+      "https://www.hataysofra.com/urun/sade-kombe",
+      "https://www.nefisyemektarifleri.com/kombe-tarifi-hatay/"
+    ],
+    "confidence": "high",
+    "reason": "Hatay kömbesi genel olarak doğru, ancak stepte geçen kabartıcı ingredient listesine yazılmamış."
+  },
+  {
+    "slug": "kompot",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ServingSuggestion buzdolabında 1 saat soğutmayı söylüyor, fakat totalMinutes 30 dakika."
+    ],
+    "corrections": {
+      "totalMinutes": 90
+    },
+    "sources": [
+      "https://www.justapinch.com/recipes/drink/drink-non-alcoholic-drink/russian-fruit-compote-kompot.html",
+      "https://www.inspirationsforall.com/en/kompot-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Kompot reçetesi doğru, ancak önerilen 1 saat soğutma toplam süreye eklenmediği için süre yanıltıcı."
+  },
+  {
+    "slug": "kompot-z-suszu-polonya-kis-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "TipNote kısa ön ıslatma diyor ama adımlarda ıslatma yok.",
+      "Kompot z suszu kaynaklarında pişirme süresi genelde 40-50 dakika; mevcut 18 dakika zayıf kalıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kuru meyveleri yıkayıp 20 dakika suda bekletin.", "timerSeconds": 1200 },
+        { "stepNumber": 2, "instruction": "Meyveleri tarçın ve suyla tencereye alın." },
+        { "stepNumber": 3, "instruction": "Kompotu 40 dakika kısık ateşte pişirin.", "timerSeconds": 2400 },
+        { "stepNumber": 4, "instruction": "Balı ocaktan aldıktan sonra karıştırın, ılık servis edin." }
+      ],
+      "cookMinutes": 40,
+      "totalMinutes": 68
+    },
+    "sources": [
+      "https://polishfeast.com/polish-dried-fruit-compote/",
+      "https://polishhousewife.com/kompot-z-suszu-polish-dried-fruit-compote/"
+    ],
+    "confidence": "high",
+    "reason": "Polonya kuru meyve kompotu daha uzun pişer; mevcut kısa kaynatma ve eksik ıslatma tutarsız."
+  },
+  {
+    "slug": "kongguksu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 soya sütünü 30 dakika soğutuyor ama totalMinutes 25 dakika.",
+      "Kongguksu soğuk servis edildiği için bu bekleme toplam süreye dahil olmalı."
+    ],
+    "corrections": {
+      "totalMinutes": 55
+    },
+    "sources": [
+      "https://www.maangchi.com/recipe/kongguksu",
+      "https://www.koreanbapsang.com/kongguksu-chilled-soy-milk-noodle-soup/"
+    ],
+    "confidence": "high",
+    "reason": "Kongguksu içeriği doğru, fakat 30 dakikalık soğutma toplam süreye yansımadığı için kullanıcıyı yanıltır."
+  },
+  {
+    "slug": "kongnamul-guk-kore-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Bu tarifte maş fasulyesi filizi yazıyor; kongnamul guk soya filiziyle yapılır.",
+      "Kore kaynaklarında sarımsak, soğan veya yosun suyu gibi tat tabanı da bulunur; mevcut sade su çok zayıf kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soya filizi", "amount": "300", "unit": "gr" },
+        { "name": "Kuru yosun", "amount": "1", "unit": "parça" },
+        { "name": "Susam yağı", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "ingredients_remove": ["Maş fasulyesi filizi"],
+      "allergens_add": ["SOYA", "SUSAM"]
+    },
+    "sources": [
+      "https://www.maangchi.com/recipe/kongnamulguk",
+      "https://www.koreanbapsang.com/kongnamul-guk-soybean-sprout-soup/"
+    ],
+    "confidence": "high",
+    "reason": "Kongnamul Korecede soya filizidir; maş filizi kullanımı tarifin adını ve alerjen bilgisini bozuyor."
+  },
+  {
+    "slug": "kongnamul-muchim",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 gochugaru diyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Gochugaru", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.maangchi.com/recipe/kongnamul-muchim",
+      "https://www.koreanbapsang.com/kongnamul-muchim-seasoned-soybean-sprouts/"
+    ],
+    "confidence": "high",
+    "reason": "Kongnamul muchim akışı doğru, fakat stepte kullanılan gochugaru ingredient listesine eklenmemiş."
+  },
+  {
+    "slug": "konya-bamya-corbasi-limonlu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.konya.gov.tr/bamya-corbasi",
+      "https://www.sahrapsoysal.com/bamya-corbasi-tarifi-t-5900"
+    ],
+    "confidence": "high",
+    "reason": "Kuru çiçek bamya, kuzu eti, salça, tereyağı, limon ve uzun pişirme Konya kaynaklarıyla uyumlu."
+  }
+]

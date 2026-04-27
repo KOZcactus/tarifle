@@ -1,0 +1,1160 @@
+[
+  {
+    "slug": "kabak-cicekli-lor-pilavi-izmir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 4 ve step 5 pilav akışını tekrar ediyor ve sıcak su ekleme sırası bozuluyor",
+      "totalMinutes: pişirme ve demleme süreleri hazırlıkla birlikte 36 dakikayı aşıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 44,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Pirinci 15 dakika ılık suda bekletin, süzüp zeytinyağında 3 dakika çevirin.",
+          "timerSeconds": 1080
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "2 su bardağı sıcak su ekleyip kapağı kapalı şekilde 10 dakika pişirin.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Kabak çiçeklerini iri doğrayıp pilavın üstüne yayın, yapraklar ezilmesin.",
+          "timerSeconds": 60
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Lor peyniri ve dereotunu ekleyip kapağı kapatın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Pilavı 8 dakika dinlendirin, buhar tanelerin içine yayılsın.",
+          "timerSeconds": 480
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kabak-cicekli-bulgur-pilavi/",
+      "https://www.icim.com.tr/tarifler/peynirli-kabak-cicegi-dolmasi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak çiçeği ve lor kullanımı Ege tarzı yorum olarak makul; sorun pilav adımlarındaki tekrar ve toplam süre hesabıyla sınırlı."
+  },
+  {
+    "slug": "kabak-cicekli-mucver-aydin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 4 tavada kızartma diyor, kızartma yağı malzeme listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Ayçiçek yağı",
+          "amount": "0.5",
+          "unit": "su bardağı",
+          "group": "Kızartmak için"
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/peynirli-kabak-cicegi-kizartmasi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/nefis-kabak-mucver-tarifi/5465"
+    ],
+    "confidence": "high",
+    "reason": "Kabak çiçeği, yumurta, un ve peynirli mücver yapısı doğru; yalnızca kızartma yağı kayıtla eşleşmiyor."
+  },
+  {
+    "slug": "kabak-cicekli-peynirli-borek-mugla-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: bazı adımlar tarif adı tekrarlı ve börek yapımını yeterince açık anlatmıyor",
+      "totalMinutes: step 6 içindeki 5 dakika bekleme toplam süreye dahil edilmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 45,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Kabak çiçeklerini temizleyip kuruladıktan sonra iri doğrayın."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Beyaz peyniri çiçeklerle karıştırıp iç harcı hazırlayın."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Yufkaları zeytinyağıyla hafifçe yağlayıp harcı içine yayın."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Böreği kapatıp tepsiye yerleştirin, kenarları açılmasın diye bastırın."
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Böreği 200°C fırında 22 dakika pişirin.",
+          "timerSeconds": 1320
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Fırından çıkan böreği 5 dakika bekletip dilimleyin.",
+          "timerSeconds": 300
+        }
+      ]
+    },
+    "sources": [
+      "https://www.icim.com.tr/tarifler/peynirli-kabak-cicegi-dolmasi-tarifi/",
+      "https://en.wikipedia.org/wiki/Kabakl%C4%B1_peynirli_b%C3%B6rek"
+    ],
+    "confidence": "medium",
+    "reason": "Yufka, peynir ve kabak çiçeği uyumlu; düzeltme yalnızca açık olmayan boilerplate adımlar ve bekleme süresi için gerekli."
+  },
+  {
+    "slug": "kabak-cicekli-peynirli-omlet-izmir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.omlet.gen.tr/kabakli-omlet-tarifi.html",
+      "https://yemek.com/tarif/peynirli-kabak-cicegi-kizartmasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Yumurta, kabak çiçeği, peynir ve kısa tava pişirme akışı kahvaltılık omlet mantığıyla uyumlu; süre ve alerjenler temiz."
+  },
+  {
+    "slug": "kabak-cicekli-yogurt-asi-ayvalik-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/kabakli-toyga-corbasi/11384",
+      "https://yemek.com/tarif/yogurtlu-arpa-sehriye-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Yoğurtlu pirinç çorbası tekniği ve kabağın sonradan eklenmesi tutarlı; çiçekli yorumda belirgin kayıt hatası görünmüyor."
+  },
+  {
+    "slug": "kabak-cipsi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.ankaramasasi.com.tr/haber/2098384/firinda-misir-unlu-kabak-tarifi",
+      "https://tarifi.com.tr/saglikli-firinda-kabak-cipsi/"
+    ],
+    "confidence": "high",
+    "reason": "İnce kabak, mısır unu, peynir ve fırında çıtırlaştırma yapısı kaynaklarla uyumlu; süt alerjeni parmesan nedeniyle doğru."
+  },
+  {
+    "slug": "kabak-dolmasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/sarma-ve-dolma-tarifleri/dolma-tarifleri/kiymali-kabak-dolmasi-tarifi",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/kiymali-kabak-dolmasi-tarifi/21905"
+    ],
+    "confidence": "high",
+    "reason": "Kabak, kıyma, pirinç, salça ve 35-40 dakikalık tencere pişirme yapısı klasik kabak dolmasıyla uyumlu."
+  },
+  {
+    "slug": "kabak-kalye",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 4 sıvı eklemeyi pişirme bittikten sonra söylüyor, yemek akışı karışıyor",
+      "ingredients: step 4 sıvı eklemeyi gerektiriyor, su malzeme listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Sıcak su",
+          "amount": "1",
+          "unit": "su bardağı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Soğanı zeytinyağında 4 dakika kavurun.",
+          "timerSeconds": 240
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Kabak, domates ve nohudu ekleyip 2 dakika karıştırın.",
+          "timerSeconds": 120
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "1 su bardağı sıcak suyu ekleyip kapağı kapatın."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Yemeği 25 dakika kısık ateşte pişirin, kabaklar dağılmasın.",
+          "timerSeconds": 1500
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Dereotunu ekleyip 5 dakika dinlendirin, sıcaklığı dengelensin.",
+          "timerSeconds": 300
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kabak-kalye/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/kabak-kalye-tarifi/644"
+    ],
+    "confidence": "high",
+    "reason": "Kabak kalye sebzeli tencere yemeği olarak doğru; sorun suyun listede olmaması ve step sırasının bozulması."
+  },
+  {
+    "slug": "kabak-mucver-lokmalari",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 5 içindeki 4 dakika bekleme toplam süreye eklenmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 39
+    },
+    "sources": [
+      "https://www.gurmion.com/tr/tarifler/zucchini-fritters",
+      "https://www.taylankumeli.com/kabak-mucver-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Fırın mücver lokması mantıklı; yalnızca pişirme sonrası 4 dakikalık bekleme toplam süreye yansıtılmalı."
+  },
+  {
+    "slug": "kabak-mucveri",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 3, step 5 ve step 6 sos boilerplate'i içeriyor; mücver tekniğiyle uyumsuz"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Kabakları rendeleyin, tuzlayıp 10 dakika bekletin ve suyunu sıkın.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Yumurta, un, dereotu, beyaz peynir, tuz ve karabiberi kabakla karıştırın."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Sıvı yağı tavada ısıtın, harcı kaşıkla küçük parçalar halinde bırakın.",
+          "timerSeconds": 60
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Mücverlerin iki yüzünü toplam 5 dakika kızartın.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Kızaran mücverleri kağıt havluya alın, fazla yağı süzülsün."
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Haydari veya yoğurtla ılık servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.gurmion.com/tr/tarifler/zucchini-fritters",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/nefis-kabak-mucver-tarifi/5465"
+    ],
+    "confidence": "high",
+    "reason": "Malzeme ve süre mücverle uyumlu; fakat birkaç step soslu yemek şablonundan kalmış ve uygulanabilir değil."
+  },
+  {
+    "slug": "kabak-tatlisi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: 2 saat şekerde bekletme ve 10 dakika şurup koyulaştırma toplam süreye dahil edilmemiş",
+      "cookMinutes: step 3 ve step 4 toplam 60 dakika pişirme gösteriyor, kayıtta 50 dakika yazıyor"
+    ],
+    "corrections": {
+      "cookMinutes": 60,
+      "totalMinutes": 200
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/candied-pumpkin-with-tahini-and-date-syrup",
+      "https://www.kabaktatlisi.gen.tr/tahinli-cevizli-kabak-tatlisi.html"
+    ],
+    "confidence": "high",
+    "reason": "Kabak, şeker, tahin ve ceviz yapısı doğru; bekletme ve ek pişirme süresi toplam süreye açıkça eklenmeli."
+  },
+  {
+    "slug": "kabakli-badem-corbasi-usak-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 içinde 2 su bardağı su kullanılıyor, su malzeme listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Su",
+          "amount": "2",
+          "unit": "su bardağı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/kabakli-toyga-corbasi/11384",
+      "https://www.lezzet.com.tr/yemek-tarifleri/corbalar/corba-tarifleri/badem-corbasi"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak, süt ve bademle püre çorba kurgusu makul; stepte kullanılan suyun ingredient listesine eklenmesi yeterli."
+  },
+  {
+    "slug": "kabakli-bulgur-dolmasi-diyarbakir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 5 sıcak su eklenmesini söylüyor, su malzeme listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Sıcak su",
+          "amount": "1.5",
+          "unit": "su bardağı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/kiymali-kabak-dolmasi-tarifi/21905",
+      "https://yemek.com/tarif/kabak-cicekli-bulgur-pilavi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak dolması ve bulgur iç harcı uyumlu bir yöresel yorum; kayıtta sadece pişirme suyunun malzeme karşılığı eksik."
+  },
+  {
+    "slug": "kabakli-bulgur-pilavi-antalya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 içinde 2.5 su bardağı sıcak su geçiyor, su malzeme listesinde yok",
+      "totalMinutes: pişirme ve 8 dakika demleme ile toplam süre 30 dakikayı aşıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 38,
+      "ingredients_add": [
+        {
+          "name": "Sıcak su",
+          "amount": "2.5",
+          "unit": "su bardağı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Soğanı zeytinyağında 4 dakika çevirin.",
+          "timerSeconds": 240
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Bulgur, domates rendesi ve 2.5 su bardağı sıcak suyu ekleyin."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Pilavı 10 dakika kapağı kapalı pişirin.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Doğranmış kabağı ekleyip 8 dakika daha pişirin.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Pilavı 8 dakika demleyin.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Taneleri ezmeden alttan üste havalandırıp servis edin."
+        },
+        {
+          "stepNumber": 7,
+          "instruction": "Servis öncesi tuz ve yağ dengesini kontrol edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.pilav.gen.tr/kabakli-bulgur-pilavi.html",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/havuclu-kabakli-bulgur-pilavi/21285"
+    ],
+    "confidence": "high",
+    "reason": "Kabaklı bulgur pilavı omurgası doğru; su ingredient listesinde eksik ve demleme toplam süreye eklenmemiş."
+  },
+  {
+    "slug": "kabakli-goce-corbasi-burdur-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 4 içinde 5 su bardağı su kullanılıyor, su malzeme listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Su",
+          "amount": "5",
+          "unit": "su bardağı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/kabakli-toyga-corbasi/11384",
+      "https://www.kulturportali.gov.tr/turkiye/konya/neyenir/topalak"
+    ],
+    "confidence": "medium",
+    "reason": "Göce, kabak ve taneli çorba yapısı yöresel çorba ailesiyle uyumlu; yalnızca pişirme suyu ingredient listesinde eksik."
+  },
+  {
+    "slug": "kabakli-gozleme-bilecik-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.tarifzamani.com/ispanakli-peynirli-gozleme-tarifi/",
+      "https://en.wikipedia.org/wiki/Kabakl%C4%B1_peynirli_b%C3%B6rek"
+    ],
+    "confidence": "medium",
+    "reason": "Yufka, rendelenmiş kabak, beyaz peynir ve tavada pişirme akışı gözleme mantığıyla uyumlu; süre ve alerjenler tutarlı."
+  },
+  {
+    "slug": "kabakli-kombe-nevsehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: 15 dakika iç harç pişirme, 35 dakika fırın ve 10 dakika dinlendirme hazırlık süresiyle birlikte 65 dakikayı aşıyor",
+      "cookMinutes: pişirme adımları toplam 50 dakika"
+    ],
+    "corrections": {
+      "cookMinutes": 50,
+      "totalMinutes": 90
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/tuzlu-hamur-isi-tarifleri/kabakli-beyaz-peynirli-pankek-tarifi",
+      "https://yemek-tariflerim.com/Recipe/Details/peynirli-kabakli-kek"
+    ],
+    "confidence": "medium",
+    "reason": "Hamur arasında kabaklı iç mantığı tutarlı; ana hata açıkça verilen pişirme ve dinlendirme sürelerinin toplamda eksik kalması."
+  },
+  {
+    "slug": "kabakli-tarhana-corbasi-burdur-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "allergens: tarhana genellikle yoğurt içerir, SUT alerjeni eksik",
+      "tags: tarhana yoğurtlu olduğu için vegan etiketi hatalı"
+    ],
+    "corrections": {
+      "allergens_add": [
+        "SUT"
+      ],
+      "tags_remove": [
+        "vegan"
+      ]
+    },
+    "sources": [
+      "https://ye-mek.net/tarif/tarhana-corbasi",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/sebzeli-tarhana-corbasi/1154"
+    ],
+    "confidence": "high",
+    "reason": "Kabaklı tarhana çorbası akışı doğru; tarhananın yoğurtlu yapısı nedeniyle süt alerjeni ve vegan etiketi düzeltilmeli."
+  },
+  {
+    "slug": "kabakli-yalanci-manti-kocaeli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 4 ve step 5 fırın böreği boilerplate'i içeriyor, haşlanan yalancı mantı tekniğiyle uyumsuz"
+    ],
+    "corrections": {
+      "totalMinutes": 30,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un ve az suyla sertçe bir hamur yoğurup 18 dakika dinlendirin.",
+          "timerSeconds": 1080
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Kabakları küçük küp doğrayıp hamur parçalarıyla birlikte 10 dakika haşlayın.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Yoğurdu çırpıp haşlanan hamur ve kabakla karıştırın."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Tereyağını naneyle 2 dakika kızdırın.",
+          "timerSeconds": 120
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Naneli yağı üstüne gezdirip sıcak servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.youtube.com/watch?v=ay55bV9gizw",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yogurtlu-sehriye-corbasi-tarifi/20167"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak, hamur ve yoğurtlu yalancı mantı fikri makul; ama iki step yanlış yemek şablonundan kalmış."
+  },
+  {
+    "slug": "kabakli-yesil-mercimek-corbasi-aydin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.diyetkolik.com/yemek-tarifi/yesil-mercimek-corbasi",
+      "https://www.kabak.gen.tr/kabak-kalye.html"
+    ],
+    "confidence": "medium",
+    "reason": "Yeşil mercimek, kabak, su ve nane ile taneli çorba kurgusu tutarlı; süre, tag ve alerjen alanlarında net hata yok."
+  },
+  {
+    "slug": "kabakli-yogurtlu-arpa-sehriye-balikesir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/yogurtlu-arpa-sehriye-corbasi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/corbalar/corba-tarifleri/yogurtlu-arpa-sehriye-corbasi-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Arpa şehriye, yoğurt terbiyesi ve kabağı sonradan ekleme akışı yoğurtlu şehriye çorbasıyla uyumlu; alerjenler doğru."
+  },
+  {
+    "slug": "kadayif-tatlisi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kadayif.gen.tr/kadayif-tatlisi.html",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/cevizli-tel-kadayif-tatlisi/12606"
+    ],
+    "confidence": "high",
+    "reason": "Tel kadayıf, tereyağı, ceviz, şerbet ve sıcak tatlıya soğuk şerbet yapısı klasik kadayıfla uyumlu; alerjenler doğru."
+  },
+  {
+    "slug": "kagit-kebabi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 3 tencere sıvısı boilerplate'i içeriyor, kağıt kebabı tekniğiyle uyumsuz",
+      "steps: step 6 taze ot veya kızgın yağ diyor, bu malzemeler listede yok",
+      "totalMinutes: 5 dakika dinlendirme toplam süreye dahil edilmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 90,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Dana etini zeytinyağında 8 dakika mühürleyin.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Patates, havuç, bezelye, domates ve defne yaprağını etle karıştırın."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Karışımı yağlı kağıtların ortasına paylaştırın."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Kağıtları sıkı paket yapıp tepsiye kat yeri alta gelecek şekilde dizin."
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Paketleri 180°C fırında 55-60 dakika pişirin.",
+          "timerSeconds": 3600
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Paketleri 5 dakika dinlendirip sıcak servis edin.",
+          "timerSeconds": 300
+        }
+      ]
+    },
+    "sources": [
+      "https://turkishstylecooking.com/kagit-kebabi-recipe.html",
+      "https://www.nefisyemektarifleri.com/kagit-kebabi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Et, sebze ve yağlı kağıt paketi doğru; yalnızca iki boilerplate step ve bekleme süresi düzeltilmeli."
+  },
+  {
+    "slug": "kahire-falafel-tabagi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bonappetit.com/recipe/homemade-falafel-recipe",
+      "https://www.epicurious.com/recipes/food/views/taameya-fava-bean-fritters"
+    ],
+    "confidence": "medium",
+    "reason": "Kuru bakliyatın ıslatılıp baharatla çekilmesi, kızartılması ve tahinli sosla servis edilmesi falafel tabağıyla uyumlu."
+  },
+  {
+    "slug": "kahire-kimyonlu-bakla-ezmesi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/ful-medames",
+      "https://www.themediterraneandish.com/foul-mudammas-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Bakla, sarımsak, limon, kimyon ve zeytinyağıyla ezme yapısı Mısır ful medames ailesiyle uyumlu; süre ve alerjenler temiz."
+  },
+  {
+    "slug": "kahramanmaras-sumakli-dovme-salatasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/bugday-salatasi",
+      "https://yemek.com/tarif/bugday-salatasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Haşlanmış dövme, yeşillik, zeytinyağı ve ekşili sosla hazırlanan soğuk salata yapısı tutarlı; gluten alerjeni doğru."
+  },
+  {
+    "slug": "kahveli-balkabagi-pudingi-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 6 içindeki 45 dakika soğutma toplam süreye dahil edilmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 67
+    },
+    "sources": [
+      "https://www.simplyrecipes.com/pumpkin-pudding-recipe-5218691",
+      "https://www.bhg.com/recipes/how-to/cooking-basics/how-to-make-hot-chocolate/"
+    ],
+    "confidence": "medium",
+    "reason": "Balkabağı püresi, süt, nişasta ve kahveli puding kurgusu makul; tek net sorun soğutma süresinin toplamda eksik kalması."
+  },
+  {
+    "slug": "kahveli-hindistancevizli-shaker-vietnam-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.milklabco.com/recipes/vietnamese-iced-coconut-coffee",
+      "https://www.nam.coffee/blogs/recipes/creamy-coconut-coffee-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Güçlü kahve, hindistancevizi sütü ve buzla hazırlanan soğuk içecek Vietnam tarzı hindistancevizli kahveyle uyumlu."
+  },
+  {
+    "slug": "kahveli-sutlu-puding-avustralya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bhg.com/recipes/how-to/cooking-basics/how-to-make-hot-chocolate/",
+      "https://www.food52.com/recipes/9489-cardamom-hot-chocolate"
+    ],
+    "confidence": "medium",
+    "reason": "Süt, krema, nişasta, şeker ve kahveyle pişen puding mantıklı; açık süre, alerjen veya ingredient eşleşmesi hatası görünmüyor."
+  },
+  {
+    "slug": "kai-jeow",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.thaifoodguide.com/recipes/kai-jeow",
+      "https://www.saveur.com/recipes/kai-jeow-thai-omelette/"
+    ],
+    "confidence": "high",
+    "reason": "Yumurta, balık sosu ve kızgın yağda kabarık kızartma tekniği klasik kai jeow ile uyumlu; deniz ürünleri alerjeni doğru."
+  },
+  {
+    "slug": "kai-yang",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 4 tencere sıvısı boilerplate'i içeriyor, ızgara tavuk tekniğiyle uyumsuz",
+      "totalMinutes: 15 dakika dinlendirme, 24 dakika pişirme ve 5 dakika son dinlendirme toplam süreye dahil edilmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 64,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Soya sosu, bal, ince kıyılmış limon otu ve sarımsağı karıştırıp tavuğu marine edin."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Marine edilmiş tavuğu 15 dakika dinlendirin.",
+          "timerSeconds": 900
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Tavuğun her yüzünü ızgarada veya döküm tavada 10-12 dakika pişirin.",
+          "timerSeconds": 1440
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Tavuğun içi tamamen pişince ızgaradan alın."
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Tavuğu 5 dakika dinlendirip yapışkan pirinçle servis edin.",
+          "timerSeconds": 300
+        }
+      ]
+    },
+    "sources": [
+      "https://www.thaicookbook.tv/thai-recipes/main-dishes/grilled-thai-chicken/",
+      "https://www.recipetineats.com/thai-grilled-chicken-gai-yang/"
+    ],
+    "confidence": "high",
+    "reason": "Limon otu, soya ve sarımsaklı tavuk Tay gai yang ile uyumlu; yalnızca boilerplate step ve süre hesabı bozuk."
+  },
+  {
+    "slug": "kakaolu-csiga",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 mayalandırma diyor, maya malzeme listesinde yok",
+      "totalMinutes: 30 dakika mayalanma toplam süreye dahil edilmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 83,
+      "ingredients_add": [
+        {
+          "name": "Kuru maya",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://zserbo.com/breads-buns-biscuits/cocoa-snails-kakaos-csiga/",
+      "https://sundaybaker.co/kakaos-csiga/"
+    ],
+    "confidence": "high",
+    "reason": "Macar kakaolu rulo yapısı doğru; mayalı hamur için maya ingredient olarak eksik ve dinlenme toplam süreye eklenmemiş."
+  },
+  {
+    "slug": "kakaolu-enerji-lokmalari",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: 8 dakika hurma yumuşatma ve 20 dakika soğutma toplam süreye dahil edilmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 43
+    },
+    "sources": [
+      "https://www.eatingwell.com/energy-ball-recipes-no-dates-8630687",
+      "https://www.bonappetit.com/story/no-bake-energy-bites"
+    ],
+    "confidence": "medium",
+    "reason": "Hurma, yulaf, kakao ve fındıkla hazırlanan enerji lokması tutarlı; bekleme ve soğutma süreleri toplamda eksik."
+  },
+  {
+    "slug": "kakaolu-muzlu-kup-brezilya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 5 hindistanceviziyle tamamlayın diyor, hindistancevizi malzeme listesinde yok",
+      "totalMinutes: step 3 içindeki 10 dakika soğutma toplam süreye dahil edilmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 18,
+      "ingredients_add": [
+        {
+          "name": "Hindistancevizi rendesi",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nhlbi.nih.gov/health/educational/wecan/eat-right/yogurt-parfait.htm",
+      "https://www.glamour.com/story/summer-dessert-recipe-parfait"
+    ],
+    "confidence": "medium",
+    "reason": "Muz, kakao ve yoğurtlu kup yapısı makul; stepte kullanılan hindistancevizi ve soğutma süresi kayıtla eşleşmeli."
+  },
+  {
+    "slug": "kakaolu-muzlu-protein-shake",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bigoven.com/recipe/paleo-protein-shake-chcolate-banana/284781",
+      "https://www.businessinsider.com/tasty-no-protein-powder-shake-reduce-ultra-processed-foods-diet-2024-1"
+    ],
+    "confidence": "high",
+    "reason": "Muz, süt, kakao ve protein tozu ile blenderda hazırlanan shake yapısı doğru; süre ve süt alerjeni tutarlı."
+  },
+  {
+    "slug": "kakaolu-protein-shake",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bigoven.com/recipe/paleo-protein-shake-chcolate-banana/284781",
+      "https://www.businessinsider.com/tasty-no-protein-powder-shake-reduce-ultra-processed-foods-diet-2024-1"
+    ],
+    "confidence": "high",
+    "reason": "Süt, muz, kakao, protein tozu ve buzla kısa blender akışı uyumlu; besin değeri ve alerjen alanlarında net sorun yok."
+  },
+  {
+    "slug": "kakuleli-armut-kompostosu-isvec-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.inthemoodforfood.fr/en/pear-cardamom-compote/",
+      "https://www.masterclass.com/articles/pear-compote"
+    ],
+    "confidence": "medium",
+    "reason": "Armut, su, şeker ve kakuleyle kısa kaynatma komposto mantığıyla uyumlu; süre hesabı ve alerjenler temiz."
+  },
+  {
+    "slug": "kakuleli-armut-kup-isvec-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.inthemoodforfood.fr/en/pear-cardamom-compote/",
+      "https://www.thespruceeats.com/all-about-cardamom-995599"
+    ],
+    "confidence": "medium",
+    "reason": "Armut, kakule, krema ve bisküviyle soğuk kup kurgusu tatlı olarak tutarlı; gluten ve süt alerjenleri doğru."
+  },
+  {
+    "slug": "kakuleli-armut-limonatasi-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 şeker diyor, şeker malzeme listesinde yok",
+      "totalMinutes: step 2 içindeki 10 dakika dinlendirme toplam süreye dahil edilmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 18,
+      "ingredients_add": [
+        {
+          "name": "Toz şeker",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.masterclass.com/articles/pear-compote",
+      "https://www.thespruceeats.com/all-about-cardamom-995599"
+    ],
+    "confidence": "medium",
+    "reason": "Armut, limon ve kakuleli soğuk içecek mantıklı; stepte geçen şeker ve dinlendirme süresi kayıt alanlarına eklenmeli."
+  },
+  {
+    "slug": "kakuleli-sicak-cikolata",
+    "verdict": "PASS",
+    "sources": [
+      "https://food52.com/recipes/9489-cardamom-hot-chocolate",
+      "https://www.waitrose.com/ecom/recipe/cardamom-coffee-hot-chocolate"
+    ],
+    "confidence": "high",
+    "reason": "Süt, çikolata, kakao ve kakuleyle sıcak içecek yapısı kaynaklarla uyumlu; süt alerjeni ve süre alanları makul."
+  },
+  {
+    "slug": "kakuleli-sicak-elma-suyu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.thespruceeats.com/all-about-cardamom-995599",
+      "https://www.bbcgoodfood.com/recipes/mulled-apple-juice"
+    ],
+    "confidence": "medium",
+    "reason": "Elma suyu, tarçın, kakule ve portakal kabuğunu kaynatmadan ısıtma akışı sıcak baharlı içecekle uyumlu."
+  },
+  {
+    "slug": "kakuleli-turk-kahvesi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.cuisinart.com/recipes/beverages/turkish-coffee-recipe.html",
+      "https://www.bonappetit.com/test-kitchen/tools-test-kitchen/article/cardamom"
+    ],
+    "confidence": "high",
+    "reason": "Türk kahvesine kakule ekleme ve cezvede köpüklenene kadar pişirme tekniği kaynaklarla uyumlu; süre ve alerjen sorunu yok."
+  },
+  {
+    "slug": "kakuleli-yabanmersinli-kup-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 5 içindeki 15 dakika soğutma toplam süreye dahil edilmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 23
+    },
+    "sources": [
+      "https://www.bmc.org/recipes/blueberry-yogurt-parfait",
+      "https://diabetesfoodhub.org/recipes/blueberry-lemon-yogurt-parfait"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurt ve yaban mersinli kup yapısı doğru; tek eksik 15 dakikalık soğutmanın toplam süreye eklenmesi."
+  },
+  {
+    "slug": "kaldirikli-misir-ekmegi-tostu-ordu-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.youtube.com/watch?v=hTnqd-KMPhc",
+      "https://www.yumurta.gen.tr/yumurtali-kaldirik-kavurmasi.html"
+    ],
+    "confidence": "medium",
+    "reason": "Kaldırık otu, minci peyniri, tereyağı ve mısır ekmeğiyle kahvaltılık tava-tost yorumu tutarlı; süt alerjeni doğru."
+  },
+  {
+    "slug": "kaldirikli-yumurtali-tava-samsun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "description: Türkçe karakter eksikleri var, 'kaldirikli' ve 'kaldiriği' yazımları düzeltilmeli"
+    ],
+    "corrections": {
+      "description": "Samsun kaldırıklı yumurtalı tava, kaldırığı tereyağında çevirip yumurtayla buluşturan otlu ve sıcak bir Karadeniz kahvaltısıdır."
+    },
+    "sources": [
+      "https://www.yumurta.gen.tr/yumurtali-kaldirik-kavurmasi.html",
+      "https://www.youtube.com/watch?v=hTnqd-KMPhc"
+    ],
+    "confidence": "high",
+    "reason": "Yumurta, tereyağı ve kaldırık otu tavada kahvaltılık kavurma olarak doğru; sorun yalnızca açıklamadaki Türkçe karakter kaçakları."
+  },
+  {
+    "slug": "kalops-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: klasik kalops için yenibahar ve defne yaprağı eksik",
+      "cookMinutes: dana yahni için 50 dakika kaynaklardaki 90 dakika üstü pişirmeden kısa",
+      "steps: bazı adımlar boilerplate ve kalops tekniğini açık anlatmıyor"
+    ],
+    "corrections": {
+      "cookMinutes": 90,
+      "totalMinutes": 116,
+      "ingredients_add": [
+        {
+          "name": "Yenibahar",
+          "amount": "8",
+          "unit": "adet"
+        },
+        {
+          "name": "Defne yaprağı",
+          "amount": "2",
+          "unit": "adet"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Eti iri küpler halinde doğrayıp tencerede her yüzü renk alana kadar kavurun.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Soğanları ekleyip 5 dakika yumuşatın.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Et suyu, yenibahar, defne yaprağı, tuz ve karabiberi ekleyin."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Yahniyi kısık ateşte 90 dakika pişirin, et çatalla kolay ayrılsın.",
+          "timerSeconds": 5400
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Kalopsu 10 dakika dinlendirip haşlanmış patatesle servis edin.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Koyu pişme suyunu etin üzerine gezdirin."
+        },
+        {
+          "stepNumber": 7,
+          "instruction": "Servis öncesi tuz ve karabiber dengesini kontrol edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.food.com/recipe/kalops-swedish-beef-stew-425646",
+      "https://scandification.com/swedish-beef-stew-recipe-kalops/"
+    ],
+    "confidence": "high",
+    "reason": "Kalops ana fikri doğru ama yenibahar, defne ve uzun pişirme eksik; bunlar yemeğin kimliğini etkileyen net düzeltmeler."
+  },
+  {
+    "slug": "kanelbullar",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: mayalı çörek için kuru maya ve şeker eksik",
+      "ingredients: description kakuleli hamur diyor, kakule malzeme listesinde yok",
+      "totalMinutes: 45 dakika mayalanma ve 5 dakika son bekleme toplam süreye dahil edilmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 95,
+      "ingredients_add": [
+        {
+          "name": "Kuru maya",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        },
+        {
+          "name": "Toz şeker",
+          "amount": "0.5",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Kakule",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un, süt, maya, şeker ve kakuleyle yumuşak hamur yoğurup 45 dakika mayalandırın.",
+          "timerSeconds": 2700
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Hamuru açıp tereyağı ve tarçın sürerek rulo yapın."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Ruloyu dilimleyip tepsiye aralıklı dizin."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Çörekleri 190°C fırında 18-20 dakika pişirin.",
+          "timerSeconds": 1200
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Fırından çıkan çörekleri 5 dakika dinlendirip ılık servis edin.",
+          "timerSeconds": 300
+        }
+      ]
+    },
+    "sources": [
+      "https://scandinaviancookbook.com/kanelbullar-swedish-cinnamon-buns/",
+      "https://www.voguescandinavia.com/articles/kanelbulle-swedish-cinnamon-bun-recipe"
+    ],
+    "confidence": "high",
+    "reason": "İsveç tarçınlı çöreği doğru tanımlanmış; ancak mayalı hamurun temel malzemeleri ve toplam süre kayıtta eksik."
+  },
+  {
+    "slug": "kanelbulle",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 maya diyor, maya malzeme listesinde yok",
+      "ingredients: tatlı tarçınlı çörek için şeker ve açıklamada geçen kakule malzeme listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Kuru maya",
+          "amount": "1",
+          "unit": "tatlı kaşığı",
+          "group": "Hamur için"
+        },
+        {
+          "name": "Toz şeker",
+          "amount": "0.5",
+          "unit": "su bardağı",
+          "group": "Hamur için"
+        },
+        {
+          "name": "Kakule",
+          "amount": "0.5",
+          "unit": "çay kaşığı",
+          "group": "Hamur için"
+        }
+      ]
+    },
+    "sources": [
+      "https://scandinaviancookbook.com/kanelbullar-swedish-cinnamon-buns/",
+      "https://insimoneskitchen.com/swedish-kanelbullar-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Mayalanma ve pişirme süreleri kayıtla uyumlu; fakat maya, şeker ve kakule gibi temel malzemeler listede eksik."
+  },
+  {
+    "slug": "kapali-pide-carsamba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: kapalı pide hamuru için maya eksik görünüyor",
+      "totalMinutes: 20 dakika hamur dinlendirme, 5 dakika kapatma ve 5 dakika son bekleme toplam süreye dahil edilmemiş",
+      "steps: birkaç adım boilerplate ve kapalı pide akışını yeterince açık anlatmıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 75,
+      "ingredients_add": [
+        {
+          "name": "Kuru maya",
+          "amount": "1",
+          "unit": "tatlı kaşığı",
+          "group": "Hamur için"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un, su ve kuru mayayla hamuru yoğurup 20 dakika dinlendirin.",
+          "timerSeconds": 1200
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Kıyma, soğan ve karabiberi karıştırıp iç harcı hazırlayın."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Hamuru bezelere ayırıp uzun açın ve iç harcı ortaya yayın."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Kenarları üstte kapatıp 5 dakika tepside bekletin.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Pideleri 220°C fırında 15 dakika pişirin.",
+          "timerSeconds": 900
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Fırından çıkan pideleri 5 dakika bekletip dilimleyin.",
+          "timerSeconds": 300
+        }
+      ]
+    },
+    "sources": [
+      "https://pratikevyemekleritarifi.com/kapali-kiymali-pide",
+      "https://www.samsungazetesi.com/carsambada-pide-fiyatlari-belli-oldu"
+    ],
+    "confidence": "medium",
+    "reason": "Çarşamba pide bağlamı ve kapalı kıymalı pide kurgusu makul; maya ve bekleme süreleri kayıtta eksik."
+  },
+  {
+    "slug": "kapros-zoldbabfozelek-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 içinde sıvı ekleme var, su malzeme listesinde yok",
+      "steps: step 3 ve step 6 boilerplate içeriyor, Macar fasulye főzelék akışını açık anlatmıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Su",
+          "amount": "2",
+          "unit": "su bardağı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Taze fasulyeyi doğrayıp 2 su bardağı suyla 12 dakika haşlayın.",
+          "timerSeconds": 720
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Krema ve unu ayrı bir kasede pürüzsüz çırpın."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Fasulyenin sıcak suyundan bir kepçe alıp kremalı karışıma ekleyin, kesilmesin."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Sosu tencereye ekleyip 3 dakika kısık ateşte pişirin.",
+          "timerSeconds": 180
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Dereotunu ekleyip 5 dakika dinlendirin, sıcağı dağılsın.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Ilık servis edin, yanında sosis ya da köfte sunabilirsiniz."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/green-beans-stew-zoldbabfozelek/",
+      "https://www.canadianliving.com/food/recipe/green-beans-with-sour-cream"
+    ],
+    "confidence": "high",
+    "reason": "Taze fasulye, dereotu, un ve sütlü sos Macar főzelék yapısıyla uyumlu; su ve boilerplate step düzeltmesi gerekiyor."
+  }
+]

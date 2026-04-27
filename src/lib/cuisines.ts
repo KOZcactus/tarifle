@@ -89,6 +89,18 @@ export const CUISINE_CODES = [
   // mirasi 8000 yillik. Region 'caucasus' yeni cluster, gelecekte
   // az/hyq eklenirse hazir.
   "ge",
+  // Oturum 28 (Mod K mini-rev paketi 11): viyana-hashasli-erikli-
+  // kaiserschmarrn MAJOR_ISSUE'inda Codex cuisine 'hu' (Macar!)
+  // yazmis, oysa Kaiserschmarrn Kayser Franz Joseph I doneminden ad
+  // alan klasik Wiener tatlisi (Wikipedia + wien.info + Sacher
+  // referans). Plus viena-tavuk-schnitzel cuisine 'de' yumusatilmis
+  // ama asıl 'at' Avusturya (Wiener Schnitzel imza). at = Avusturya
+  // (Habsburg sarayi mirasi + Alpler; Kaiserschmarrn, Wiener
+  // Schnitzel, Sachertorte, Apfelstrudel, Linzer Torte, Tafelspitz,
+  // Gulasch, Knodel, Marillenknodel). Tereyagi + taze sut urunleri
+  // + erik/kayisi kompostolari sofranin temeli. Region 'west-europe'
+  // (de + fr + gb ile ayni kume, Almanca konusan Avrupa).
+  "at",
 ] as const;
 
 export type CuisineCode = (typeof CUISINE_CODES)[number];
@@ -133,6 +145,7 @@ export const CUISINE_LABEL: Record<CuisineCode, string> = {
   pt: "Portekiz",
   cl: "Şili",
   ge: "Gürcü",
+  at: "Avusturya",
 };
 
 /**
@@ -181,6 +194,7 @@ export const CUISINE_SLUG: Record<CuisineCode, string> = {
   pt: "portekiz",
   cl: "sili",
   ge: "gurcu",
+  at: "avusturya",
 };
 
 /** URL slug → kod ters lookup. Slug bilinmiyorsa null. */
@@ -237,6 +251,7 @@ export const CUISINE_DESCRIPTION_TR: Record<CuisineCode, string> = {
   pt: "Portekiz mutfağı Atlantik kıyısının deniz ürünleri ve İber yarımadası mirasını birleştirir: bacalhau (tuzlanmış morina, 365 günde 365 farklı tarif denilir), pastel de nata (Lizbon kremalı tart), caldo verde (lahanalı patates çorbası), francesinha (Porto sandviçi), bifana (jambon sandviç). Zeytinyağı, taze morina, hindistan cevizi (Brezilya bağı) ve piri-piri sosu sofranın imzası.",
   cl: "Şili mutfağı, And dağları ile Pasifik kıyısının buluştuğu uzun ülkenin criolla mirası: pastel de choclo (mısırlı kıymalı fırın), empanada de pino (kıymalı börek), cazuela (et ve sebze çorbası), charquicán (kabaklı patates ezmesi), sopaipilla (balkabaklı kızarmış hamur), mote con huesillo (buğday ve kuru şeftali içeceği), completo italiano (avokadolu sosisli). Tane mısır, balkabağı ve Pasifik balıkları sofranın imzası, Mapuche köklerini İspanyol mirasıyla harmanlar.",
   ge: "Gürcü mutfağı, Kafkas dağları ile Karadeniz kıyısının buluştuğu zengin bir mirastır: khachapuri (peynirli ekmek, Adjarian + Imeruli + Megruli bölgesel varyantları), khinkali (etli mantı), satsivi (cevizli soğuk tavuk), lobio (kırmızı fasulye yahnisi), churchkhela (cevizli üzüm pekmezi şekeri), ajapsandali (patlıcanlı sebze yahnisi), tkemali (ekşi erik sosu) klasiklerini barındırır. Ceviz, kişniş, yarpuz (ombalo) ve sulguni peyniri sofranın imzası. UNESCO İnsanlığın Somut Olmayan Kültürel Mirası listesindeki kvevri (kil küp) şarap geleneği 8000 yıl öncesine dayanır.",
+  at: "Avusturya mutfağı, Habsburg sarayı mirasını Alp coğrafyasıyla birleştirir: Kaiserschmarrn (Kayser Franz Joseph I döneminden çatallı pankek), Wiener Schnitzel (panelenmiş dana pirzola), Sachertorte (Hotel Sacher kakaolu kabuklu klasik), Apfelstrudel (incecik yufkalı elma rulo), Linzer Torte, Tafelspitz, Gulasch (Macar etkisiyle), Knödel (mantar veya erik), Marillenknödel (kayısılı). Tereyağı, taze süt ürünleri, erik ve kayısı kompostoları sofranın temelini kurar.",
 };
 
 /** EN description, aynı set, kısa SEO metni. */
@@ -280,6 +295,7 @@ export const CUISINE_DESCRIPTION_EN: Record<CuisineCode, string> = {
   pt: "Portuguese cuisine joins Atlantic seafood with Iberian heritage: bacalhau (salted cod, said to have 365 recipes), pastel de nata (Lisbon custard tart), caldo verde (kale and potato soup), francesinha (Porto sandwich), bifana (pork sandwich). Olive oil, fresh cod, Brazilian-influenced flavors and piri-piri sauce anchor the table.",
   cl: "Chilean cuisine spans the long country between the Andes and the Pacific, blending Mapuche roots with Spanish heritage: pastel de choclo (corn and beef pie), empanada de pino (beef-filled turnover), cazuela (meat and vegetable stew), charquicán (pumpkin and potato mash), sopaipilla (pumpkin fried dough), mote con huesillo (wheat and dried peach drink), completo italiano (avocado hot dog). Sweet corn, pumpkin, and Pacific seafood anchor the table.",
   ge: "Georgian cuisine fuses the Caucasus mountains with the Black Sea coast: khachapuri (cheese-stuffed bread with Adjarian, Imeruli, and Megruli regional forms), khinkali (meat dumplings), satsivi (chilled walnut chicken), lobio (red bean stew), churchkhela (walnut and grape-syrup candy), ajapsandali (eggplant vegetable stew), and tkemali (sour plum sauce) anchor the table. Walnut, coriander, pennyroyal (ombalo), and sulguni cheese are signature. The kvevri clay-vessel winemaking tradition, on UNESCO's Intangible Cultural Heritage list, dates back 8,000 years.",
+  at: "Austrian cuisine carries Habsburg court heritage into the Alpine landscape: Kaiserschmarrn (torn pancakes named for Emperor Franz Joseph I), Wiener Schnitzel (breaded veal cutlet), Sachertorte (Hotel Sacher chocolate classic), Apfelstrudel (paper-thin apple pastry), Linzer Torte, Tafelspitz, Gulasch (Hungarian-influenced), Knödel (with mushroom or plum), and Marillenknödel (apricot dumpling) are signatures. Butter, fresh dairy, plum and apricot compotes anchor the table.",
 };
 
 export const CUISINE_FLAG: Record<CuisineCode, string> = {
@@ -322,6 +338,7 @@ export const CUISINE_FLAG: Record<CuisineCode, string> = {
   pt: "🇵🇹",
   cl: "🇨🇱",
   ge: "🇬🇪",
+  at: "🇦🇹",
 };
 
 /**
@@ -383,6 +400,9 @@ export const CUISINE_REGION: Record<CuisineCode, string> = {
   // jenerik. Kafkas mutfagi (Gurcu + ileride Ermeni + Azeri) dogal
   // kume.
   ge: "caucasus",
+  // Avusturya west-europe (de + fr + gb ile ayni kume), Almanca
+  // konusan Avrupa + Habsburg/Alpler kulturel hattini paylasir.
+  at: "west-europe",
 };
 
 // ─── Inference engine ───────────────────────────────────────
@@ -621,6 +641,15 @@ const SLUG_PATTERNS: readonly { cuisine: CuisineCode; patterns: string[] }[] = [
       "churchkhela", "ajapsandali", "tkemali", "mtsvadi",
     ],
   },
+  // Austrian (oturum 28 mini-rev paketi 11, at eklenmesiyle).
+  // Klasik Wiener tatlilari ve Avusturya/Habsburg klasikleri.
+  {
+    cuisine: "at",
+    patterns: [
+      "kaiserschmarrn", "sachertorte", "apfelstrudel", "linzer-torte",
+      "wiener-schnitzel", "tafelspitz", "marillenknodel", "knodel",
+    ],
+  },
 ];
 
 /**
@@ -661,6 +690,7 @@ const TEXT_KEYWORDS: readonly { cuisine: CuisineCode; keywords: string[] }[] = [
   { cuisine: "pt", keywords: ["portekiz", "portekizli", "portekiz mutfağı", "portekiz usulü", "lizbon", "porto"] },
   { cuisine: "cl", keywords: ["şili", "şilili", "şili mutfağı", "şili usulü", "santiago", "valparaiso"] },
   { cuisine: "ge", keywords: ["gürcü", "gurcu", "gürcistan", "gurcistan", "tiflis", "kafkas", "kakheti", "georgian"] },
+  { cuisine: "at", keywords: ["avusturya", "avusturyalı", "viyana", "wiener", "habsburg", "kaiser franz", "salzburg", "tirol", "österreich"] },
 ];
 
 interface InferInput {

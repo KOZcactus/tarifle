@@ -299,6 +299,30 @@ describe("inferCuisineFromRecipe", () => {
     ).toBe("ge");
   });
 
+  // ─── Austrian (oturum 28 mini-rev paketi 11, at eklenmesiyle) ─
+
+  test("Austrian title keyword (Avusturya) → at", () => {
+    expect(
+      inferCuisineFromRecipe(
+        recipe({ title: "Avusturya Apfelstrudel", slug: "avusturya-apfelstrudel" }),
+      ),
+    ).toBe("at");
+  });
+
+  test("Austrian slug: kaiserschmarrn → at", () => {
+    expect(
+      inferCuisineFromRecipe(recipe({ slug: "viyana-kaiserschmarrn" })),
+    ).toBe("at");
+  });
+
+  test("Austrian title keyword (Viyana) → at", () => {
+    expect(
+      inferCuisineFromRecipe(
+        recipe({ title: "Viyana Sachertorte", slug: "viyana-sachertorte" }),
+      ),
+    ).toBe("at");
+  });
+
   // ─── Default to Turkish ───────────────────────────────────
 
   test("no international markers → default tr", () => {
@@ -341,8 +365,8 @@ describe("inferCuisineFromRecipe", () => {
 });
 
 describe("cuisine constants", () => {
-  test("CUISINE_CODES has 39 entries", () => {
-    expect(CUISINE_CODES).toHaveLength(39);
+  test("CUISINE_CODES has 40 entries", () => {
+    expect(CUISINE_CODES).toHaveLength(40);
   });
 
   test("every code has a label", () => {

@@ -49,6 +49,14 @@ export const CUISINE_CODES = [
   // latin-america region).
   "tn",
   "ar",
+  // Oturum 25: Mod K Batch 1a-3a v2 audit MAJOR_ISSUE'larinda tekrar
+  // tekrar manuel cuisine kararsizligi cikti (Kolombiya 2x: arepa +
+  // arequipe-flan; Venezuela 1x: arepa; Danimarka 1x: aebleskiver).
+  // Codex sonraki batch'lerde direkt cuisine fix onersin diye enum
+  // genisledi. co = Kolombiya, ve = Venezuela, dk = Danimarka.
+  "co",
+  "ve",
+  "dk",
 ] as const;
 
 export type CuisineCode = (typeof CUISINE_CODES)[number];
@@ -86,6 +94,9 @@ export const CUISINE_LABEL: Record<CuisineCode, string> = {
   ng: "Nijerya",
   tn: "Tunus",
   ar: "Arjantin",
+  co: "Kolombiya",
+  ve: "Venezuela",
+  dk: "Danimarka",
 };
 
 /**
@@ -127,6 +138,9 @@ export const CUISINE_SLUG: Record<CuisineCode, string> = {
   ng: "nijerya",
   tn: "tunus",
   ar: "arjantin",
+  co: "kolombiya",
+  ve: "venezuela",
+  dk: "danimarka",
 };
 
 /** URL slug → kod ters lookup. Slug bilinmiyorsa null. */
@@ -176,6 +190,9 @@ export const CUISINE_DESCRIPTION_TR: Record<CuisineCode, string> = {
   ng: "Nijerya mutfağı Batı Afrika'nın renk paleti: jollof rice, egusi çorbası, suya, plantain kızartması. Hindistan cevizi yağı, acı biber ve iç erkek fıstığı yaygın.",
   tn: "Tunus mutfağı Akdeniz'in güney kıyısındaki sıcak baharatlı mirası: brik (yumurtalı çıtır börek), kuskus, harissa, mechouia salatası. Zeytinyağı, kimyon ve acı biber Berberi köklerini Akdeniz tatlarıyla birleştirir.",
   ar: "Arjantin mutfağı Pampas ovalarının et kültürü ve göçmen mutfaklarının buluşması: asado (ızgara et), empanada, chimichurri sosu, milanesa. Sığır eti, dana parça ızgara ve İtalyan mirası makarna sofrasının temeli.",
+  co: "Kolombiya mutfağı Karayip kıyısı, And dağları ve Amazon havzasının zengin sentezi: arepa (mısır ekmeği), bandeja paisa, ajiaco çorbası, arequipe (sütlü tatlı). Mısır, bezelye ve hindistan cevizi sütü merkezi rol oynar.",
+  ve: "Venezuela mutfağı arepa diyarı ve Karayip lezzetleri: arepa rellena, pabellón criollo, hallaca, asado negro. Plantain, kara fasulye ve mısır unu klasik üçleme.",
+  dk: "Danimarka mutfağı İskandinav rahatlığı ile Kuzey Avrupa klasiklerini birleştirir: aebleskiver (yuvarlak çörek), smørrebrød (açık sandviç), frikadeller, rødgrød. Tereyağı, ringa ve kara çavdar ekmeği sofranın temeli.",
 };
 
 /** EN description, aynı set, kısa SEO metni. */
@@ -212,6 +229,9 @@ export const CUISINE_DESCRIPTION_EN: Record<CuisineCode, string> = {
   ng: "Nigerian cuisine paints West Africa's palette: jollof rice, egusi soup, suya, fried plantain. Palm oil, chili and ground melon seeds appear often.",
   tn: "Tunisian cuisine joins the Mediterranean's southern shore with Berber heat: brik (egg-stuffed pastry), couscous, harissa, mechouia salad. Olive oil, cumin and red chili thread Berber roots through Mediterranean palates.",
   ar: "Argentine cuisine fuses Pampas beef culture with immigrant kitchens: asado (grilled meats), empanadas, chimichurri sauce, milanesa. Beef, parrilla cuts and Italian-rooted pasta anchor the table.",
+  co: "Colombian cuisine blends Caribbean coast, Andean highlands, and Amazonian heritage: arepa, bandeja paisa, ajiaco soup, arequipe (caramel). Corn, peas, and coconut milk play central roles.",
+  ve: "Venezuelan cuisine is the land of arepa with Caribbean flavors: arepa rellena, pabellón criollo, hallaca, asado negro. Plantain, black beans, and corn flour form the classic trio.",
+  dk: "Danish cuisine pairs Scandinavian comfort with Northern European classics: aebleskiver (round dumplings), smørrebrød (open-faced sandwich), frikadeller, rødgrød. Butter, herring, and dark rye bread anchor the table.",
 };
 
 export const CUISINE_FLAG: Record<CuisineCode, string> = {
@@ -247,6 +267,9 @@ export const CUISINE_FLAG: Record<CuisineCode, string> = {
   ng: "🇳🇬",
   tn: "🇹🇳",
   ar: "🇦🇷",
+  co: "🇨🇴",
+  ve: "🇻🇪",
+  dk: "🇩🇰",
 };
 
 /**
@@ -292,6 +315,9 @@ export const CUISINE_REGION: Record<CuisineCode, string> = {
   ng: "west-africa",
   tn: "mediterranean-levant",
   ar: "latin-america",
+  co: "latin-america",
+  ve: "latin-america",
+  dk: "nordic",
 };
 
 // ─── Inference engine ───────────────────────────────────────
@@ -523,6 +549,9 @@ const TEXT_KEYWORDS: readonly { cuisine: CuisineCode; keywords: string[] }[] = [
   { cuisine: "ma", keywords: ["kuzey afrika", "fas mutfağı", "fas usulü", "cezayir"] },
   { cuisine: "tn", keywords: ["tunus", "tunuslu", "tunus mutfağı", "tunus usulü"] },
   { cuisine: "ar", keywords: ["arjantin", "arjantinli", "arjantin mutfağı", "arjantin usulü", "pampas", "asado"] },
+  { cuisine: "co", keywords: ["kolombiya", "kolombiyalı", "kolombiya mutfağı", "kolombiya usulü"] },
+  { cuisine: "ve", keywords: ["venezuela", "venezuelalı", "venezuela mutfağı", "venezuela usulü"] },
+  { cuisine: "dk", keywords: ["danimarka", "danimarkalı", "danimarka mutfağı", "danimarka usulü", "dansk"] },
   { cuisine: "vn", keywords: ["vietnam"] },
   { cuisine: "br", keywords: ["brezilya"] },
   { cuisine: "cu", keywords: ["küba"] },

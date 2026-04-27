@@ -268,8 +268,8 @@ describe("inferCuisineFromRecipe", () => {
 });
 
 describe("cuisine constants", () => {
-  test("CUISINE_CODES has 32 entries", () => {
-    expect(CUISINE_CODES).toHaveLength(32);
+  test("CUISINE_CODES has 35 entries", () => {
+    expect(CUISINE_CODES).toHaveLength(35);
   });
 
   test("every code has a label", () => {

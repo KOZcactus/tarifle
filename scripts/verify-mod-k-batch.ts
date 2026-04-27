@@ -154,12 +154,13 @@ const VALID_ALLERGENS = new Set([
   "SOYA", "DENIZ_URUNLERI", "SUSAM", "KEREVIZ", "HARDAL",
 ]);
 
-// Tarifle CUISINE_CODES (src/lib/cuisines.ts), 32 kod (oturum 25 +tn +ar).
+// Tarifle CUISINE_CODES (src/lib/cuisines.ts), 35 kod (oturum 25 +tn +ar
+// + ikinci pas oturum 25 sonu +co +ve +dk).
 const VALID_CUISINES = new Set([
   "tr", "it", "fr", "es", "gr", "jp", "cn", "kr", "th", "in",
   "mx", "us", "me", "ma", "vn", "br", "cu", "ru", "hu", "se",
   "pe", "gb", "pl", "au", "de", "ir", "pk", "id", "et", "ng",
-  "tn", "ar",
+  "tn", "ar", "co", "ve", "dk",
 ]);
 
 function isHttpUrl(u: string): boolean {

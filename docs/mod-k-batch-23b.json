@@ -1,0 +1,1027 @@
+[
+  {
+    "slug": "nevsehir-divil-patatesli",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Dıvıl kaynaklarında sarımsak harçta veya yoğurt servisinde geçiyor, mevcut ingredient listesinde yok.",
+      "Step 3 soğan kullanıyor, ancak temel Nevşehir dıvıl kaynakları patates, bulgur, un ve yumurta ekseninde daha yalın."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "3", "unit": "diş" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patatesleri 20 dakika haşlayıp süzün, soyup püre haline getirin.", "timerSeconds": 1200 },
+        { "stepNumber": 2, "instruction": "İnce bulguru sıcak suyla 10 dakika şişirin, fazla suyu kalırsa süzün.", "timerSeconds": 600 },
+        { "stepNumber": 3, "instruction": "Patates, bulgur, un, yumurta, ezilmiş sarımsak, kimyon, pul biber ve tuzu yoğurun.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Harcı yassı köfteler halinde şekillendirin, çatlak kalırsa kızarırken dağılabilir.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Yağı 175°C'ye ısıtın, köfteleri tavaya sıkıştırmadan yerleştirin.", "timerSeconds": null },
+        { "stepNumber": 6, "instruction": "Dıvılları her yüzü 3 dakika kızartın ve kağıt havluya alın.", "timerSeconds": 360 },
+        { "stepNumber": 7, "instruction": "Sarımsaklı yoğurt ve maydanozla sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://lezzetler.com/divil-nevsehir-tarif-146004",
+      "https://yemek.com/tarif/divil/"
+    ],
+    "confidence": "high",
+    "reason": "Dıvıl kimliği doğru; sarımsak eksikliği ve soğanlı harç kaynaklarla zayıf kaldığı için küçük içerik düzeltmesi yeterli."
+  },
+  {
+    "slug": "nevsehir-pekmezli-aside",
+    "verdict": "PASS",
+    "reason": "Pekmez, un, su, tereyağı ve cevizli aside yapısı kaynaklarla uyumlu; süre, alerjen ve servis bilgisi tutarlı.",
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/diger-tatli-tarifleri/aside-tatlisi",
+      "https://ye-mek.net/tarif/aside-tatlisi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "nevsehir-testi-kebabi",
+    "verdict": "PASS",
+    "reason": "Et, domates, biber, sarımsak ve kapalı testide uzun pişirme Kapadokya testi kebabı kaynaklarıyla uyumlu; hamur kapatma ve bekleme süresi kabul edilebilir.",
+    "sources": [
+      "https://turkiye.influence.cool/tr/nevsehir/derinkuyu/yerel-lezzetler/testi-kebabi/",
+      "https://www.e-sehir.com/yemek_tarifleri/testi-kebabi-nevsehir-tarifi.html"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "new-orleans-creole-jambalaya",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 sıcak su kullanıyor ama ingredient listesinde sıvı yok.",
+      "Step 5 taze soğanla servis diyor, ingredient listesinde taze soğan yok.",
+      "Tavuk ve sosis mühürleme için yağ listelenmemiş."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tavuk suyu", "amount": "3", "unit": "su bardağı" },
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Taze soğan", "amount": "3", "unit": "dal" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Sıvı yağı ısıtıp tavuk parçalarını tencerede 6 dakika mühürleyin.", "timerSeconds": 360 },
+        { "stepNumber": 2, "instruction": "Sosis, soğan, kereviz ve biberi ekleyip 6 dakika kavurun.", "timerSeconds": 360 },
+        { "stepNumber": 3, "instruction": "Pirinç, domates püresi, Cajun baharatı ve sıcak tavuk suyunu ekleyin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Kapağı kapalı şekilde 22-25 dakika pirinç yumuşayana kadar pişirin.", "timerSeconds": 1500 },
+        { "stepNumber": 5, "instruction": "Tencereyi 8 dakika dinlendirip taze soğanla servis edin.", "timerSeconds": 480 }
+      ]
+    },
+    "sources": [
+      "https://www.gocollette.com/en-us/traveling-well/2018/2/a-taste-of-new-orleans",
+      "https://www.vitalchoice.com/articles/cooking-tips/jambalaya-recipe-origins"
+    ],
+    "confidence": "high",
+    "reason": "Creole jambalaya kimliği doğru; eksik tavuk suyu, yağ ve taze soğan step ile ingredient listesini tutarsız yapıyor."
+  },
+  {
+    "slug": "new-orleans-gumbo",
+    "verdict": "PASS",
+    "reason": "Koyu roux, kereviz, biber, soğan, sosis, karides ve uzun kaynatma New Orleans gumbo çizgisiyle uyumlu; alerjenler doğru.",
+    "sources": [
+      "https://www.gocollette.com/en-us/traveling-well/2018/2/a-taste-of-new-orleans",
+      "https://www.bonappetit.com/recipe/chicken-sausage-gumbo"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "new-orleans-gumbo-tavuk-sosis",
+    "verdict": "PASS",
+    "reason": "Roux, holy trinity, tavuk, tütsülü sosis, okra ve Cajun baharatı kaynaklardaki tavuklu gumbo yapısıyla uyumlu.",
+    "sources": [
+      "https://www.bonappetit.com/recipe/chicken-sausage-gumbo",
+      "https://www.foodandwine.com/what-is-gumbo-11687877"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "new-orleans-misirli-karides-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 kerevizi pişiriyor ama tencerede kullanılacak yağ listelenmemiş.",
+      "Step 5 aynı ifadeyi tekrarlayan scaffold cümlesi taşıyor.",
+      "Servis taze soğan diyor, ingredient listesinde taze soğan yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Taze soğan", "amount": "2", "unit": "dal" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kereviz sapını küçük doğrayın, karidesleri ayıklayıp kurulayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tereyağında kereviz sapını orta ateşte 5 dakika yumuşatın.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Unu ekleyip 1 dakika kokusu çıkana kadar karıştırın.", "timerSeconds": 60 },
+        { "stepNumber": 4, "instruction": "Mısır ve sıcak suyu katıp 12 dakika kaynatın.", "timerSeconds": 720 },
+        { "stepNumber": 5, "instruction": "Karides, krema ve tuzu ekleyip 4 dakika pişirin, karides lastikleşmeden ocaktan alın.", "timerSeconds": 240 },
+        { "stepNumber": 6, "instruction": "Taze soğanla sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.allrecipes.com/recipe/13086/shrimp-and-corn-soup/",
+      "https://www.foodandwine.com/what-is-gumbo-11687877"
+    ],
+    "confidence": "medium",
+    "reason": "Mısırlı karides çorbası Louisiana çizgisine makul; ancak eksik yağ, taze soğan ve scaffold step düzeltilmeli."
+  },
+  {
+    "slug": "new-orleans-shrimp-etouffee",
+    "verdict": "PASS",
+    "reason": "Karides, roux, kereviz, biber, soğan, domatesli sos ve pirinç üstü servis etouffee kaynaklarıyla uyumlu; süre ve alerjenler tutarlı.",
+    "sources": [
+      "https://www.laurafuentes.com/shrimp-etouffee-recipe/",
+      "https://www.masterclass.com/articles/shrimp-etouffee-recipe"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "new-york-cheesecake",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 7 iki saat fırında soğutma ve sekiz saat buzdolabı bekletme içeriyor, totalMinutes 60 dakika kısa kalıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 695
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/original-new-york-cheesecake-51200640",
+      "https://www.kingarthurbaking.com/recipes/new-york-cheesecake-recipe"
+    ],
+    "confidence": "high",
+    "reason": "New York cheesecake kimliği doğru; fakat toplam süre, tarifte açık yazan uzun soğutma ve buzdolabı dinlendirmesini tam göstermiyor."
+  },
+  {
+    "slug": "new-york-chicken-parmesan",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tavada kızartma step'i yağ gerektiriyor, ingredient listesinde yağ yok.",
+      "Fesleğenli servis önerisi var ama temel tabakta sorun değil; ana düzeltme kızartma yağıdır."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Tavuk göğüslerini ince pirzola kalınlığında dövüp tuzlayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tavukları un, yumurta ve parmesanlı galetaya bulayın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Yağı ısıtıp tavukları tavada iki yüzü de kızarana kadar pişirin.", "timerSeconds": 540 },
+        { "stepNumber": 4, "instruction": "Domates sosunu fırın kabına yayıp tavukları yerleştirin.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Mozzarella ekleyip ızgara altında peynir eriyene kadar tutun.", "timerSeconds": 240 }
+      ]
+    },
+    "sources": [
+      "https://www.lacucinaitaliana.com/italian-food/how-to-cook/how-to-make-chicken-parmigiana-italian-american-at-home",
+      "https://www.allrecipes.com/recipe/223042/chicken-parmesan/"
+    ],
+    "confidence": "high",
+    "reason": "Chicken parmesan kimliği doğru; yağ ve tuz eksikliği uygulama sırasında ölçü tutarsızlığı yaratır."
+  },
+  {
+    "slug": "new-york-lox-bagel-tabagi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Bagel kızartma step'i timerSeconds içermiyor.",
+      "Step 2 iki dakika bekleme diyor ama timerSeconds boş."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bagelleri ortadan ikiye kesip kesik yüzlerini kızartın.", "timerSeconds": 240 },
+        { "stepNumber": 2, "instruction": "Krem peyniri yumuşaması için kısa süre oda sıcaklığında bekletin.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Kırmızı soğanı ince halkalar halinde doğrayın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Bagel yüzlerine krem peyniri eşit sürün.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Füme somon, kapari, soğan ve dereotunu üstüne yerleştirin.", "timerSeconds": null },
+        { "stepNumber": 6, "instruction": "Limon suyu sıkarak hemen servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://tastesbetterfromscratch.com/lox-bagel/",
+      "https://www.tastingtable.com/1228537/loaded-lox-bagel-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Lox bagel malzemeleri doğru; iki süreli step timer alanı boş kaldığı için teknik düzeltme gerekli."
+  },
+  {
+    "slug": "nice-firin-ratatouille",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 kekik kullanıyor ama ingredient listesinde kekik yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kekik", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/ratatouille",
+      "https://www.lemonde.fr/les-recettes-du-monde/article/2025/09/26/la-ratatouille-la-recette-de-la-romanciere-juliette-oury_6643033_5324493.html"
+    ],
+    "confidence": "high",
+    "reason": "Ratatouille sebze kompozisyonu doğru; yalnızca step'te geçen kekik ingredient listesinde eksik."
+  },
+  {
+    "slug": "nice-salade-nicoise",
+    "verdict": "PASS",
+    "reason": "Ton balığı, yumurta, patates, taze fasulye, zeytin ve Dijon soslu kurgu modern salade niçoise kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.newyorker.com/culture/kitchen-notes/the-summer-magic-of-a-classic-salade-nicoise",
+      "https://www.theguardian.com/food/2023/mar/26/salade-nicoise-tonnato-sauce-recipe-georgia-levy"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "nicoise-salatasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 zeytinyağı, sirke, sarımsak ve ançüez kullanıyor ama ingredient listesinde yok.",
+      "Step 5 marul ve domates kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "4", "unit": "yemek kaşığı" },
+        { "name": "Sirke", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Ançüez", "amount": "2", "unit": "fileto" },
+        { "name": "Marul", "amount": "1", "unit": "küçük göbek" },
+        { "name": "Domates", "amount": "2", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://www.newyorker.com/culture/kitchen-notes/the-summer-magic-of-a-classic-salade-nicoise",
+      "https://www.lacucinaitaliana.com/italian-food/how-to-cook/pasta-nicoise-perfect-first-picnic"
+    ],
+    "confidence": "high",
+    "reason": "Niçoise salatası kimliği doğru; fakat sos ve tabak öğeleri step'te var, ingredient listesinde yok."
+  },
+  {
+    "slug": "nigde-pekmezli-armut-boranasi",
+    "verdict": "PASS",
+    "reason": "Pekmez, tereyağı ve armutla hazırlanan sıcak meyve tatlısı tutarlı; süreler, alerjen ve 30 dakika etiketi uyumlu.",
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/meyveli-tatlilar/armut-tatlisi",
+      "https://ye-mek.net/tarif/pekmezli-armut-tatlisi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "nigde-sogurmeli-yumurta",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Köz biberli domatesli yumurta yapısı makul, ancak Niğde söğürmeli yumurta adıyla güvenilir kaynak doğrulaması zayıf.",
+      "Step 1 açık scaffold cümlesi taşıyor.",
+      "Biber közleme için 3 dakika pratikte kısa kalır veya önceden közlenmiş biber varsayımı açık değildir."
+    ],
+    "corrections": {
+      "description": "Köz biberli domatesli yumurta, tereyağında yumuşayan biber ve domatesin üstüne yumurta kırarak sıcak bir kahvaltılık hazırlar.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kapya biberleri ocakta veya fırında közleyip kabuklarını soyun ve iri doğrayın.", "timerSeconds": 900 },
+        { "stepNumber": 2, "instruction": "Domatesleri rendeleyin, yumurtaları ayrı kaseye kırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Biber ve domatesi tereyağında suyunu toparlayana kadar pişirin.", "timerSeconds": 300 },
+        { "stepNumber": 4, "instruction": "Yumurtaları tavaya kırıp tuz ekleyin ve akları toparlanana kadar pişirin.", "timerSeconds": 240 },
+        { "stepNumber": 5, "instruction": "Yumurtalar akışkanlığını korurken ekmekle sıcak servis edin.", "timerSeconds": null }
+      ],
+      "cookMinutes": 21,
+      "totalMinutes": 31
+    },
+    "sources": [
+      "https://www.diyetkolik.com/yemek-tarifi/domatesli-yumurta",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/nefis-domatesli-yumurta-tarifi/24533"
+    ],
+    "confidence": "low",
+    "reason": "Genel kahvaltılık doğru görünüyor, fakat yöresel ad ve közleme süresi manuel kimlik review gerektiriyor."
+  },
+  {
+    "slug": "nigde-tava-kuzu-tepsi",
+    "verdict": "PASS",
+    "reason": "Kuzu, kuyruk yağı, sarımsak, biber, domates ve salçalı suyla fırın tepsisi akışı Niğde tava kaynaklarıyla uyumlu; yağ makrosu da makul.",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/nigde-tava/14462",
+      "https://www.nefisyemektarifleri.com/nigde-tava-3784667/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "nikujaga",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 havuç kullanıyor ama ingredient listesinde havuç yok.",
+      "Step 4 dashi, mirin ve şeker kullanıyor ama ingredient listesinde yok.",
+      "Step 2 ve 3 için yağ listelenmemiş."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Havuç", "amount": "1", "unit": "adet" },
+        { "name": "Dashi", "amount": "2", "unit": "su bardağı" },
+        { "name": "Mirin", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Toz şeker", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sıvı yağ", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.justonecookbook.com/nikujaga/",
+      "https://www.japanesecooking101.com/nikujaga-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Nikujaga tekniği doğru; klasik dashi, mirin, şeker ve havuç step'te var ama listede eksik."
+  },
+  {
+    "slug": "nohut-salatasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step'lerde kornişon, mısır, nane, dereotu, nar ekşisi ve tuz geçiyor ama ingredient listesinde yok.",
+      "Step 6 tekrar eden açıklama niteliğinde, ayrı işlem değil."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Nohutları süzün, kabukları ayrılmış taneleri ayıklayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Salatalık, domates ve kırmızı soğanı küçük doğrayın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Maydanozu ince kıyın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Zeytinyağı ve limon suyunu 30 saniye çırpın.", "timerSeconds": 30 },
+        { "stepNumber": 5, "instruction": "Nohut, sebze, maydanoz ve sosu birleştirin, aroması oturunca servis edin.", "timerSeconds": 300 }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/nohut-salatasi-tarifi/",
+      "https://yemek.com/tarif/nohut-salatasi/"
+    ],
+    "confidence": "high",
+    "reason": "Nohut salatası ana fikri doğru; mevcut step akışı ingredient listesinde olmayan malzemelerle genişletilmiş."
+  },
+  {
+    "slug": "nohut-unlu-protein-krep",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 tavayı yağlamayı söylüyor ama ingredient listesinde yağ yok.",
+      "Step 1 ve step 6 tarif adını tekrar eden scaffold cümleleri içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Nohut unu, yumurta, yoğurt, su ve tuzu pürüzsüz olana kadar çırpın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Hamuru 5 dakika dinlendirin, nohut unu sıvıyı çeksin.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Tavayı orta ateşte 2 dakika ısıtıp yüzeyini zeytinyağıyla yağlayın.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Hamurdan ince tabaka dökün ve ilk yüzünü 2 dakika pişirin.", "timerSeconds": 120 },
+        { "stepNumber": 5, "instruction": "Krebi çevirip ikinci yüzünü 2 dakika pişirin.", "timerSeconds": 120 },
+        { "stepNumber": 6, "instruction": "Krepleri sıcak servis edin, yanında yoğurt ve taze ot verin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/chickpea-pancakes",
+      "https://www.indianhealthyrecipes.com/besan-chilla/"
+    ],
+    "confidence": "high",
+    "reason": "Nohut unlu krep mantığı doğru; eksik yağ ve scaffold step'ler uygulama kalitesini düşürüyor."
+  },
+  {
+    "slug": "nohutlu-alaca-corba-gaziantep-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Gaziantep alaca çorba kaynaklarında mercimek yeşil veya kabuklu siyah mercimek, tarhun ve kurutulmuş kırmızı biberle geçiyor.",
+      "Mevcut listede tarhun, yağ, biber salçası, kurutulmuş biber ve tuz yok.",
+      "Step 5 scaffold benzeri ifade taşıyor."
+    ],
+    "corrections": {
+      "ingredients_remove": ["Kırmızı mercimek"],
+      "ingredients_add": [
+        { "name": "Yeşil mercimek", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Kurutulmuş kırmızı biber", "amount": "3", "unit": "adet" },
+        { "name": "Biber salçası", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Zeytinyağı", "amount": "0.25", "unit": "su bardağı" },
+        { "name": "Tarhun", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Nohut, dövme ve yeşil mercimeği süzün, soğanı yarım halka doğrayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Soğanı zeytinyağında 4 dakika çevirin.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Biber salçası, kurutulmuş kırmızı biber, nohut, dövme ve mercimeği ekleyin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Sıcak suyu katıp çorbayı 25 dakika özleşene kadar pişirin.", "timerSeconds": 1500 },
+        { "stepNumber": 5, "instruction": "Tarhun ve tuzu ekleyip 2 dakika daha kaynatın, sıcak servis edin.", "timerSeconds": 120 }
+      ],
+      "cookMinutes": 31,
+      "totalMinutes": 43
+    },
+    "sources": [
+      "https://kulturportali.gov.tr/turkiye/gaziantep/neyenir/alaca-corba",
+      "https://ci.gaziantep.bel.tr/Urunler/gaziantep-antep-alaca-corbasi-1045"
+    ],
+    "confidence": "high",
+    "reason": "Gaziantep alaca çorbası doğrulanıyor; mevcut tarif tarhun ve kuru biber gibi ayırt edici öğeleri eksik bırakıyor."
+  },
+  {
+    "slug": "nohutlu-bulgur-kapama-ankara-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Vegan tag'i var, ancak step 1 tavuk suyu ve step 2 tereyağı diyor.",
+      "Ingredient listesinde zeytinyağı, sıcak su ve tuz yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Sıcak su", "amount": "2.5", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bulguru ayıklayın, nohudu süzün ve sıcak suyu hazır tutun.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Soğanı zeytinyağında 5 dakika kavurun.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Salça ve bulguru ekleyip 4 dakika kavurun, taneler yağla kaplansın.", "timerSeconds": 240 },
+        { "stepNumber": 4, "instruction": "Nohut, tuz ve sıcak suyu ekleyip kapağı kapatın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Kapamayı 16 dakika kısık ateşte pişirin, kapağı açmayın ki buhar kaçmasın.", "timerSeconds": 960 },
+        { "stepNumber": 6, "instruction": "Pilavı 10 dakika dinlendirip çatalla havalandırın.", "timerSeconds": 600 }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/nohutlu-bulgur-pilavi-tarifi/",
+      "https://yemek.com/tarif/nohutlu-bulgur-pilavi/"
+    ],
+    "confidence": "medium",
+    "reason": "Bulgur ve nohutlu pilav yapısı doğru; vegan etiketini bozan tavuk suyu ve tereyağı ifadeleri düzeltilmeli."
+  },
+  {
+    "slug": "nohutlu-firikli-semsek-gaziantep-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Semsek veya sembusek kaynaklarda daha çok Mardin hattında etli kapalı hamur işi olarak doğrulanıyor.",
+      "Gaziantep nohutlu firikli semsek adıyla güvenilir kaynak doğrulanamadı.",
+      "Vegan tag'i var, ancak step 5 yumurta sürmeyi söylüyor."
+    ],
+    "corrections": {
+      "description": "Nohutlu firikli kapalı börek, ince hamuru firik ve nohutlu içle doldurarak isli aromalı, çıtır bir hamur işi hazırlar.",
+      "tags_remove": ["vegan"],
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Su", "amount": "0.75", "unit": "su bardağı" },
+        { "name": "Yumurta", "amount": "1", "unit": "adet" }
+      ],
+      "allergens_add": ["YUMURTA"]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/mardin/neyenir/sembusek",
+      "https://www.nefisyemektarifleri.com/sembusek-mardin-usulu/"
+    ],
+    "confidence": "low",
+    "reason": "Hamur işi düzeltilebilir, fakat Gaziantep nohutlu firikli semsek kimliği kaynaklarla güvenli doğrulanmadı."
+  },
+  {
+    "slug": "nohutlu-ispanak",
+    "verdict": "PASS",
+    "reason": "Ispanak, nohut, soğan, salça ve zeytinyağıyla kısa pişen tencere yemeği yaygın nohutlu ıspanak kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/nohutlu-ispanak-yemegi/",
+      "https://yemek.com/tarif/nohutlu-ispanak/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "nohutlu-kabak-basti-adana-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 dereotu kullanıyor ama ingredient listesinde yok.",
+      "Step 2 salça ve step 3 tuz kullanıyor, ingredient listesinde ikisi de yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Dereotu", "amount": "0.25", "unit": "demet" },
+        { "name": "Domates salçası", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/nohutlu-kabak-yemegi/",
+      "https://yemek.com/tarif/nohutlu-kabak-yemegi/"
+    ],
+    "confidence": "medium",
+    "reason": "Nohutlu kabak yemeği makul; step'te kullanılan dereotu, salça ve tuz ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "nohutlu-kabak-boranisi-adiyaman-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 soğan kullanıyor ama ingredient listesinde yok.",
+      "Step 5 tereyağı ve pul biber kullanıyor ama ingredient listesinde yok.",
+      "Tereyağı eklendiğinde mevcut SUT alerjeni doğru kalır."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kabak-borani-tarifi/",
+      "https://yemek.com/tarif/kabak-borani/"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak borani yoğurtlu yapı olarak doğru; soğanlı taban ve tereyağlı biber step'te var ama listede eksik."
+  },
+  {
+    "slug": "nohutlu-kereviz-corbasi-mardin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Soğan ve kereviz soteleme için yağ listelenmemiş.",
+      "Step 5 tekrar eden scaffold ifadesi içeriyor.",
+      "Tuz ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kerevizi küçük küp doğrayın, nohudu süzün.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Soğan ve kerevizi zeytinyağında orta ateşte 4 dakika çevirin.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Nohut ve 5 su bardağı suyu ekleyip 12 dakika kaynatın.", "timerSeconds": 720 },
+        { "stepNumber": 4, "instruction": "Limon suyu ve tuzu katıp 3 dakika pişirin, kereviz tadı dengelensin.", "timerSeconds": 180 },
+        { "stepNumber": 5, "instruction": "Çorbayı sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kereviz-corbasi-tarifi/",
+      "https://yemek.com/tarif/kereviz-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kerevizli nohut çorbası teknik olarak çalışır; eksik yağ, tuz ve scaffold kapanış step'i düzeltilmeli."
+  },
+  {
+    "slug": "nohutlu-keskek-bingol-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 geceden ıslatma içeriyor, totalMinutes 60 dakika kalıyor.",
+      "CookMinutes 45 dakika, ancak step pişirme ve dövme süreleri toplamda daha uzun."
+    ],
+    "corrections": {
+      "cookMinutes": 75,
+      "totalMinutes": 570
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/bingol/neyenir/keskek",
+      "https://www.nefisyemektarifleri.com/keskek-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Buğday ve nohutlu keşkek yapısı makul; geceden ıslatma ve uzun pişirme toplam süreye yansıtılmamış."
+  },
+  {
+    "slug": "nohutlu-kuru-bamya-yahnisi-konya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Vegan tag'i var, ancak step 2 tereyağı diyor.",
+      "Ingredient listesinde zeytinyağı bulunduğu için step tereyağı yerine zeytinyağıyla uyumlanmalı."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kuru bamyaları ipinden çıkarın ve limonlu kaynar suda 8 dakika haşlayın.", "timerSeconds": 480 },
+        { "stepNumber": 2, "instruction": "Soğanı zeytinyağında 5 dakika kavurun, salçayı ekleyip 2 dakika çevirin.", "timerSeconds": 420 },
+        { "stepNumber": 3, "instruction": "Nohut ve sıcak suyu ekleyip 10 dakika kaynatın.", "timerSeconds": 600 },
+        { "stepNumber": 4, "instruction": "Bamyayı tencereye alın ve limon suyunu ekleyin.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Yahniyi 18 dakika kısık ateşte pişirin, bamyaları karıştırmayın ki salyalanmasın.", "timerSeconds": 1080 }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kuru-bamya-yemegi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/sebze-yemekleri/zeytinyagli-tarifler/kuru-bamya-yemegi"
+    ],
+    "confidence": "medium",
+    "reason": "Kuru bamya ve nohutlu yahni tutarlı; vegan tag'i korumak için tereyağı ifadesi zeytinyağıyla düzeltilmeli."
+  },
+  {
+    "slug": "nohutlu-otlu-borek-aydin-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Aydın usulü nohutlu otlu börek adıyla güvenilir kaynak doğrulanamadı.",
+      "Steps açık scaffold kalıbı taşıyor ve yufka ile hamur arasında kararsız.",
+      "İç harçta hangi Ege otlarının kullanılacağı belirsiz."
+    ],
+    "corrections": {
+      "description": "Nohutlu otlu börek, yufkayı haşlanmış nohut ve karışık otlu içle doldurarak çıtır, doyurucu bir fırın böreği hazırlar.",
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" },
+        { "name": "Su", "amount": "0.25", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/otlu-borek-tarifi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/borek-tarifleri/otlu-borek"
+    ],
+    "confidence": "low",
+    "reason": "Börek olarak çalışabilir, fakat Aydın nohutlu otlu börek kimliği ve scaffold step'ler manuel review gerektiriyor."
+  },
+  {
+    "slug": "nohutlu-pancar-bulguru-ankara-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Vegan tag'i var, ancak step 2 tereyağı diyor.",
+      "Sıcak su ve tuz step'te kullanılıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "2.5", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Pancarı küçük küpler halinde doğrayın, bulguru yıkayıp süzün.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Soğanı zeytinyağında 5 dakika kavurun.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Pancarı ekleyip 6 dakika çevirin, rengi yağa geçsin.", "timerSeconds": 360 },
+        { "stepNumber": 4, "instruction": "Bulguru ve nohudu ekleyip taneler yağla kaplanana kadar kavurun.", "timerSeconds": 180 },
+        { "stepNumber": 5, "instruction": "Sıcak su ve tuzu ekleyip 17 dakika kısık ateşte pişirin.", "timerSeconds": 1020 },
+        { "stepNumber": 6, "instruction": "Tencereyi 10 dakika dinlendirin, pancar buharıyla bulgur taneleri yumuşasın.", "timerSeconds": 600 }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/pancarli-bulgur-pilavi/",
+      "https://yemek.com/tarif/pancarli-bulgur-pilavi/"
+    ],
+    "confidence": "medium",
+    "reason": "Pancarlı bulgur yapısı çalışır; vegan etiketiyle çelişen tereyağı ifadesi ve eksik su, tuz düzeltilmeli."
+  },
+  {
+    "slug": "nohutlu-pazi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 tuz ve sıcak su kullanıyor ama ingredient listesinde yok.",
+      "Servis önerisindeki yoğurt opsiyonel olduğu için vegan tag'i doğrudan bozulmuyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/nohutlu-pazi-yemegi/",
+      "https://yemek.com/tarif/pazi-yemegi/"
+    ],
+    "confidence": "high",
+    "reason": "Nohutlu pazı yemeği doğru; pişirme sıvısı ve tuz listede eksik kaldığı için küçük correction gerekir."
+  },
+  {
+    "slug": "nohutlu-sarimsakli-yogurt-corbasi-gaziantep-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 tuzdan bahsediyor ama ingredient listesinde tuz yok.",
+      "Servis sıcak pide diyor, ingredient listesine girmesi gerekmez."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/nohutlu-yogurt-corbasi/",
+      "https://yemek.com/tarif/yogurt-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Yoğurtlu nohut çorbası tekniği doğru; tuz step'te var ama ingredient listesinde eksik."
+  },
+  {
+    "slug": "nohutlu-semizotu-borani-aydin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 limon suyu ve zeytinyağı kullanıyor ama ingredient listesinde yok.",
+      "Step 5 pul biberli zeytinyağı ve dereotu diyor, pul biber ve dereotu listede yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Dereotu", "amount": "2", "unit": "dal" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/semizotu-borani/",
+      "https://yemek.com/tarif/semizotu-borani/"
+    ],
+    "confidence": "medium",
+    "reason": "Semizotu borani yapısı doğru; yoğurtlu sosta ve üst yağda kullanılan malzemeler listede eksik."
+  },
+  {
+    "slug": "nohutlu-semizotu-corbasi-gaziantep-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Soğan ve sarımsak soteleme için yağ listelenmemiş.",
+      "Step 5 tekrar eden scaffold ifadesi taşıyor.",
+      "Tuz ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Semizotunu ayıklayın, nohudu süzün ve sarımsağı ezin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Soğan ve sarımsağı zeytinyağında orta ateşte 3 dakika soteleyin.", "timerSeconds": 180 },
+        { "stepNumber": 3, "instruction": "Nohut ve 5 su bardağı suyu ekleyip 10 dakika kaynatın.", "timerSeconds": 600 },
+        { "stepNumber": 4, "instruction": "Semizotunu katıp 4 dakika pişirin, yapraklar fazla kararmasın.", "timerSeconds": 240 },
+        { "stepNumber": 5, "instruction": "Tuzunu ayarlayıp sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/semizotu-corbasi/",
+      "https://yemek.com/tarif/semizotu-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Semizotlu nohut çorbası uygulanabilir; eksik yağ, tuz ve tekrar cümlesi düzeltilmeli."
+  },
+  {
+    "slug": "nohutlu-sevketibostan-izmir-usulu",
+    "verdict": "PASS",
+    "reason": "Şevketibostan, zeytinyağı, limonlu terbiye ve nohutlu Ege tencere yapısı kaynaklarla uyumlu; süre ve vegan etiketi tutarlı.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/sevketi-bostan-yemegi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/sebze-yemekleri/zeytinyagli-tarifler/sevketi-bostan"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "nohutlu-topalak",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Topalak köftesi için ılık veya sıcak su ve tuz ingredient listesinde yok.",
+      "TipNote mevcut tarifte sıvıyı çırpmaktan söz ediyor, topalak köftesiyle uyumsuz.",
+      "Kaynakların bir kısmı yumurtalı veya etli olsa da mevcut vegan versiyon teknik olarak yapılabilir."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ilık su", "amount": "1.5", "unit": "su bardağı" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "tipNote": "Köfteleri nohut büyüklüğünde sıkı yuvarlamak çorbada dağılmalarını önler."
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/nohutlu-topalak-bulgur-kofte/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/topalak-corbasi-tarifi/23727"
+    ],
+    "confidence": "medium",
+    "reason": "Topalak çorbası doğru yönde; eksik su, yağ, tuz ve tarifle ilgisiz tipNote düzeltilmeli."
+  },
+  {
+    "slug": "nohutlu-yahni-konya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 bir gece ıslatma içeriyor, totalMinutes 75 dakika kalıyor.",
+      "Ingredient listesinde pilav ve turşu servis öğesi olarak duruyor, tarif bileşeni değil.",
+      "CookMinutes step pişirme ve dinlendirme toplamından kısa."
+    ],
+    "corrections": {
+      "ingredients_remove": ["Pilav", "Turşu"],
+      "cookMinutes": 65,
+      "totalMinutes": 565
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/nohutlu-et-yahni/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/et-yemekleri/kirmizi-et-tarifleri/nohutlu-yahni"
+    ],
+    "confidence": "high",
+    "reason": "Etli nohut yahnisi doğru; geceden ıslatma toplam süreye yansımıyor ve pilav, turşu ingredient gibi yazılmış."
+  },
+  {
+    "slug": "nohutlu-yogurt-corbasi-diyarbakir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 bir litre su kullanıyor ama ingredient listesinde su yok.",
+      "Tuzdan servis ayarında söz edilmese de yoğurt çorbasında ölçülü tuz eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Su", "amount": "1", "unit": "litre" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/nohutlu-yogurt-corbasi/",
+      "https://yemek.com/tarif/yogurt-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Yoğurtlu nohut çorbası teknik olarak doğru; su ve tuz ingredient listesinde eksik."
+  },
+  {
+    "slug": "nohutlu-yogurt-ezmesi-kirikkale-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "CookMinutes 0 ve totalMinutes 8, ancak step 1 haşlama ve step 4 on beş dakika buzdolabı dinlendirme içeriyor.",
+      "Step 2 tahin veya zeytinyağı diyor, ingredient listesinde ikisi de yok.",
+      "Steps tarif adını tekrarlayan scaffold cümleleri taşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Haşlanmış nohudu süzüp yarısını çatalla ezin, yarısını bütün bırakın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Yoğurt, sarımsak, nane, zeytinyağı ve tuzu pürüzsüz karıştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Ezilmiş ve bütün nohutları yoğurtlu sosla birleştirin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Ezmeyi servis tabağına yayıp 15 dakika buzdolabında dinlendirin.", "timerSeconds": 900 }
+      ],
+      "totalMinutes": 23
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/nohutlu-yogurtlu-meze/",
+      "https://yemek.com/tarif/yogurtlu-nohut-mezesi/"
+    ],
+    "confidence": "medium",
+    "reason": "Yoğurtlu nohut ezmesi uygulanabilir; süre, eksik yağ ve scaffold step'ler düzeltilmeli."
+  },
+  {
+    "slug": "nokul-samsun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Samsun nokulu kaynaklarında iç harçta şeker ve tarçın yaygın, mevcut ingredient listesinde yok.",
+      "Step 5 peynirli doku ifadesi tarifle ilgisiz.",
+      "Üst kızartma için yumurta sarısı eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Toz şeker", "amount": "0.75", "unit": "su bardağı" },
+        { "name": "Tarçın", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Yumurta sarısı", "amount": "1", "unit": "adet" }
+      ],
+      "allergens_add": ["YUMURTA"],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, ılık süt ve mayayı yoğurup yumuşak bir hamur hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Hamuru 20 dakika mayalandırın.", "timerSeconds": 1200 },
+        { "stepNumber": 3, "instruction": "Ceviz, kuru üzüm, şeker, tarçın ve eritilmiş tereyağını karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Hamuru açıp iç harcı yayın, rulo yapıp dilimleyin.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Üstlerine yumurta sarısı sürüp 190°C fırında 25 dakika pişirin.", "timerSeconds": 1500 },
+        { "stepNumber": 6, "instruction": "Nokulu 10 dakika dinlendirip ılık servis edin.", "timerSeconds": 600 }
+      ],
+      "totalMinutes": 65
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/cevizli-uzumlu-nokul-tarifi-t-3790",
+      "https://www.nefisyemektarifleri.com/bafra-nokulu/"
+    ],
+    "confidence": "high",
+    "reason": "Samsun nokulu doğru; iç harç ve üst kızartma malzemeleri eksik, ayrıca peynirli doku cümlesi yanlış."
+  },
+  {
+    "slug": "nom-hoa-chuoi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Recipe vegan tag'i taşıyor, ancak step 3 tavuk veya karides, step 4 balık sosu kullanıyor.",
+      "Ingredient listesinde soya sosu olduğu için vegan versiyona uygun step akışı gerekir."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Muz çiçeğinin sert dış yapraklarını ayırın, iç kısmı ince jülyen doğrayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Doğranmış muz çiçeğini limonlu soğuk suda 15 dakika bekletin, kararma olmasın.", "timerSeconds": 900 },
+        { "stepNumber": 3, "instruction": "Havucu jülyen doğrayın, nane yapraklarını ayıklayın ve yer fıstığını iri kırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Soya sosu, limon suyu ve ince kıyılmış biberi karıştırın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Muz çiçeğini süzüp havuç, nane ve sosla harmanlayın.", "timerSeconds": null },
+        { "stepNumber": 6, "instruction": "Üstüne yer fıstığı serperek serin servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.vietnamonline.com/entry/nom-hoa-chuoi-banana-blossom-salad.html",
+      "https://edibleaustin.com/recipes/nom-hoa-chuoi-vietnamese-banana-blossom-salad/"
+    ],
+    "confidence": "high",
+    "reason": "Muz çiçeği salatası doğru; vegan ingredient listesiyle çelişen protein ve balık sosu step'leri temizlenmeli."
+  },
+  {
+    "slug": "nom-yen",
+    "verdict": "PASS",
+    "reason": "Sala şurubu, süt, yoğunlaştırılmış süt ve buzla yapılan Tay pembe süt içeceği kaynaklarla uyumlu; süre ve SUT alerjeni doğru.",
+    "sources": [
+      "https://travelfoodatlas.com/thai-pink-milk-recipe-nom-yen",
+      "https://www.wandercooks.com/pink-milk-thai-nom-yen/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "nuoc-cham",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 şekeri 80 ml ılık suda eritiyor ama su ingredient listesinde yok.",
+      "Step 5 on dakika aroma oturtma içeriyor, totalMinutes 8 dakika kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ilık su", "amount": "80", "unit": "ml" }
+      ],
+      "totalMinutes": 18
+    },
+    "sources": [
+      "https://www.washingtonpost.com/recipes/nuoc-cham/",
+      "https://www.emerils.com/120904/nuoc-cham"
+    ],
+    "confidence": "high",
+    "reason": "Nuoc cham oranları doğru; su ingredient listesine eklenmeli ve on dakikalık bekleme toplam süreye yansıtılmalı."
+  },
+  {
+    "slug": "nyponsoppa-bademli-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 yirmi dakika soğutma içeriyor, totalMinutes 22 dakika kalıyor.",
+      "Step 5 tekrar eden scaffold ifadesi taşıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 42,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kuşburnu püresini ve suyu tencereye alın, bademi servis için ayırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Karışımı orta ateşte 10 dakika pişirin.", "timerSeconds": 600 },
+        { "stepNumber": 3, "instruction": "Şeker ve mısır nişastasını ekleyip pürüzsüz çırpın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Çorbayı 20 dakika soğutun, kıvamı otursun.", "timerSeconds": 1200 },
+        { "stepNumber": 5, "instruction": "Bademle tamamlayıp ılık veya soğuk servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.swedishfood.com/swedish-food-recipes-desserts/217-rosehip-soup",
+      "https://www.food.com/recipe/nyponsoppa-swedish-rose-hip-soup-507585"
+    ],
+    "confidence": "high",
+    "reason": "Nyponsoppa kimliği doğru; soğutma süresi toplam süreye eklenmeli ve tekrar cümlesi temizlenmeli."
+  },
+  {
+    "slug": "nyponsoppa-parfe-isvec-usulu",
+    "verdict": "PASS",
+    "reason": "Kuşburnu püresi, krema ve şekerle dondurulan parfe varyasyonu tutarlı; iki saat donma totalMinutes içinde görünüyor.",
+    "sources": [
+      "https://www.swedishfood.com/swedish-food-recipes-desserts/217-rosehip-soup",
+      "https://www.food.com/recipe/nyponsoppa-swedish-rose-hip-soup-507585"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "oatcake-mushroom-stack-ingiliz-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Staffordshire oatcake kaynakları yulafa ek olarak un ve maya kullanıyor; mevcut listede ikisi yok.",
+      "Oatcake hamuru en az iki saat mayalanır, totalMinutes 34 dakika bunu göstermiyor.",
+      "Step 1 ve step 5 scaffold cümlesi taşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tam buğday unu", "amount": "0.75", "unit": "su bardağı" },
+        { "name": "Instant maya", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Yulaf unu, tam buğday unu, maya, su ve tuzu akışkan bir hamur olana kadar karıştırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Hamuru 2 saat oda sıcaklığında mayalandırın.", "timerSeconds": 7200 },
+        { "stepNumber": 3, "instruction": "İnce oatcake'leri yağlı tavada toplam 8 dakika pişirin.", "timerSeconds": 480 },
+        { "stepNumber": 4, "instruction": "Mantarları zeytinyağı ve kekikle 8 dakika soteleyin.", "timerSeconds": 480 },
+        { "stepNumber": 5, "instruction": "Oatcake'leri mantarla katlayıp 3 dakika dinlendirin.", "timerSeconds": 180 }
+      ],
+      "totalMinutes": 154
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/staffordshire-oatcakes-mushrooms",
+      "https://www.bbcgoodfoodme.com/recipes/staffordshire-oatcakes-mushrooms/"
+    ],
+    "confidence": "high",
+    "reason": "Oatcake fikri doğru; maya, un ve mayalanma süresi olmadan Staffordshire oatcake yapısı eksik kalıyor."
+  },
+  {
+    "slug": "oaxaca-guacamole-klasik",
+    "verdict": "PASS",
+    "reason": "Avokado, lime, kişniş, jalapeno, domates, soğan ve tuzlu guacamole yapısı klasik Meksika kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.rickbayless.com/recipe/classic-guacamole/",
+      "https://www.allrecipes.com/recipe/14231/guacamole/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "oaxaca-kabak-cekirdekli-tavuk-mole",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 tomatillo, soğan ve sarımsak kullanıyor ama ingredient listesinde yok.",
+      "Step 3 tavuk suyu kullanıyor ama ingredient listesinde yok.",
+      "Pipián verde kaynaklarında pepita, tomatillo, yeşil biber, soğan ve sarımsak temel öğeler."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tomatillo", "amount": "400", "unit": "gr" },
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Tavuk suyu", "amount": "2", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.saveur.com/article/Recipes/Mexico-Chicken-Pumpkin-Seed-Tomatillo/",
+      "https://www.rickbayless.com/recipe/chicken-in-easy-green-pumpkin-seed-sauce/"
+    ],
+    "confidence": "high",
+    "reason": "Kabak çekirdekli yeşil mole kimliği doğru; tomatillo, soğan, sarımsak ve tavuk suyu listede eksik."
+  },
+  {
+    "slug": "oaxaca-moleli-tavuk",
+    "verdict": "PASS",
+    "reason": "Tavuk, kuru biber, susam, yer fıstığı, badem, kakao ve tavuk suyuyla koyu mole kurgusu Oaxacan mole kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.recipebridge.com/recipe/70/2147942368/mole-negro-ozaqueno--oaxacan-black-mole",
+      "https://www.bigoven.com/recipe/oaxacan-black-mole-mole-negro-oaxaqueno/116923"
+    ],
+    "confidence": "medium"
+  }
+]

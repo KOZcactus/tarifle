@@ -1,0 +1,1039 @@
+[
+  {
+    "slug": "muzlu-hindistancevizli-tapyoka-kup-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Bal ingredient olarak durduğu halde tarif vegan tag'i taşıyor.",
+      "20 dakika soğutma süresi totalMinutes içinde görünmüyor."
+    ],
+    "corrections": {
+      "ingredients_remove": ["Bal"],
+      "ingredients_add": [
+        { "name": "Toz şeker", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "cookMinutes": 13,
+      "totalMinutes": 41
+    },
+    "sources": [
+      "https://www.hungryhuy.com/vietnamese-banana-coconut-tapioca-dessert-che-chuoi/",
+      "https://www.pbs.org/food/recipes/che-chuoi-warm-bananas-and-tapioca-pearls-in-coconut"
+    ],
+    "confidence": "high",
+    "reason": "Chè chuối kimliği, tapyoka, muz ve hindistancevizi sütüyle doğru; bal ve eksik soğutma süresi vegan ve zaman tutarlılığını bozuyor."
+  },
+  {
+    "slug": "muzlu-kakaolu-tahin-kup-alanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Bal kullanıldığı halde vegan tag'i var.",
+      "Step 2 limon kullanıyor ama ingredient listesinde limon yok.",
+      "15 dakika soğutma totalMinutes içinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "tags_remove": ["vegan"],
+      "totalMinutes": 25
+    },
+    "sources": [
+      "https://www.pbs.org/food/recipes/banana-date-tahini-smoothie",
+      "https://www.bitememore.com/drink-recipes/banana-tahini-smoothie-recipe"
+    ],
+    "confidence": "medium",
+    "reason": "Muz, tahin ve kakao birlikteliği makul; sorun kimlikten çok bal kaynaklı vegan çakışması, limon bahis eksikliği ve soğutma süresidir."
+  },
+  {
+    "slug": "muzlu-milkshake",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ingredient listesi 200 ml süt ve 2 top dondurma diyor, step 250 ml süt ve 1 top dondurma kullanıyor.",
+      "Step 3 tarçın kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tarçın", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Muzları dilimleyip 200 ml soğuk süt ve 2 top vanilyalı dondurmayla blendera alın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "40 saniye pürüzsüz çekin, fazla uzatmayın ki milkshake dokusu incelmesin.", "timerSeconds": 40 },
+        { "stepNumber": 3, "instruction": "Soğuk bardağa döküp tarçın serpin ve köpüğü sönmeden servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.punchfork.com/recipe/Creamy-Banana-Milkshake-Allrecipes",
+      "https://www.epicurious.com/recipes/food/views/banana-milkshake"
+    ],
+    "confidence": "high",
+    "reason": "Muz, süt ve vanilyalı dondurma milkshake yapısı doğru; ölçü uyuşmazlığı ve tarçın eksikliği uygulamada yanıltıcı olur."
+  },
+  {
+    "slug": "muzlu-susamli-tapiyoka-kase-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Bal ingredient olarak durduğu halde vegan tag'i var."
+    ],
+    "corrections": {
+      "ingredients_remove": ["Bal"],
+      "ingredients_add": [
+        { "name": "Toz şeker", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.hungryhuy.com/vietnamese-banana-coconut-tapioca-dessert-che-chuoi/",
+      "https://www.pbs.org/food/recipes/che-chuoi-warm-bananas-and-tapioca-pearls-in-coconut"
+    ],
+    "confidence": "high",
+    "reason": "Vietnam usulü muzlu tapyoka tatlısı ve susam üstlemesi kaynaklarla uyumlu; yalnızca bal vegan tag'iyle çelişiyor."
+  },
+  {
+    "slug": "muzlu-tahinli-shake",
+    "verdict": "PASS",
+    "reason": "Muz, tahin, süt ve bal ile hazırlanan kısa blender akışı kaynaklardaki banana tahini smoothie yapısıyla uyumlu; alerjen ve süreler makul.",
+    "sources": [
+      "https://www.pbs.org/food/recipes/banana-date-tahini-smoothie",
+      "https://www.bitememore.com/drink-recipes/banana-tahini-smoothie-recipe"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "muzlu-tapiyoka-kup-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "20 dakika soğutma totalMinutes içinde görünmüyor."
+    ],
+    "corrections": {
+      "totalMinutes": 42
+    },
+    "sources": [
+      "https://www.hungryhuy.com/vietnamese-banana-coconut-tapioca-dessert-che-chuoi/",
+      "https://www.pbs.org/food/recipes/che-chuoi-warm-bananas-and-tapioca-pearls-in-coconut"
+    ],
+    "confidence": "high",
+    "reason": "Muz, tapyoka, hindistancevizi sütü ve şekerle chè chuối çizgisi doğru; tek net hata soğutma beklemesinin toplam süreye eklenmemesidir."
+  },
+  {
+    "slug": "naan",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 su, tuz ve şeker kullanıyor ama ingredient listesinde yok.",
+      "60 dakika mayalanma pasif bekleme süresi totalMinutes içinde doğru ayrışmıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Su", "amount": "0.25", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Toz şeker", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "prepMinutes": 15,
+      "cookMinutes": 15,
+      "totalMinutes": 90
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/naan-bread",
+      "https://www.indianhealthyrecipes.com/naan/"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurtlu mayalı naan kimliği doğru; su, tuz, şeker eksikliği ve mayalanmanın prep içinde saklanması Kural 9 açısından düzelmeli."
+  },
+  {
+    "slug": "nalesniki-z-serem",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 vanilya, step 6 pudra şekeri kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Vanilya", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Pudra şekeri", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://mypolishcuisine.com/crepes-with-farmers-cheeses-nalesniki-z-serem/",
+      "https://www.everydayhealthyrecipes.com/strawberry-ricotta-crepe-pancakes/"
+    ],
+    "confidence": "high",
+    "reason": "Polonya usulü tatlı peynir dolgulu krep yapısı doğru; dolgu aroması ve servis şekeri step'te geçtiği için listede de yer almalı."
+  },
+  {
+    "slug": "nam-khao-tod",
+    "verdict": "PASS",
+    "reason": "Çıtır pirinç topları, köri ezmesi, yer fıstığı, nane, lime ve marulda servis akışı nam khao'nun vejetaryen uyarlaması olarak makul; süre ve alerjen tutarlı.",
+    "sources": [
+      "https://stickyricethaikitchen.com/crispy-rice-salad/",
+      "https://riceinfo.com/recipe/nam-khao/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "naneli-bulgurlu-kabak-salatasi-sanliurfa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 ve 5 nar ekşisi, kuru nane, pul biber, taze soğan ve marul kullanıyor ama ingredient listesinde yok.",
+      "5 dakika bekleme totalMinutes içinde görünmüyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Nar ekşisi", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Kuru nane", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Taze soğan", "amount": "2", "unit": "dal" },
+        { "name": "Marul", "amount": "4", "unit": "yaprak" }
+      ],
+      "totalMinutes": 27
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/kisir-bulgur-salad/",
+      "https://www.bbcgoodfood.com/recipes/kisir"
+    ],
+    "confidence": "medium",
+    "reason": "Bulgurlu, limonlu ve naneli salata çizgisi makul; step'te açıkça kullanılan ekşi, baharat ve servis öğeleri listede eksik."
+  },
+  {
+    "slug": "naneli-guava-mojito-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Klasik mojito dengesi için lime ve şeker gerekir, mevcut listede ikisi de yok.",
+      "Steps tekrarlı boilerplate içeriyor ve ölçülü mojito akışını gereksiz uzatıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Lime suyu", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Toz şeker", "amount": "2", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Nane yapraklarını lime suyu ve şekerle bardağın dibinde 10 saniye hafifçe ezin.", "timerSeconds": 10 },
+        { "stepNumber": 2, "instruction": "Bardağı buzla doldurup rom ve guava suyunu ekleyin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Sodayı en son dökün, gazı kaçmasın diye tek tur karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Nane ve guava dilimiyle soğuk servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/mojito-recipe",
+      "https://www.bigbasket.com/cookbook/recipes/4604/guava-mojito"
+    ],
+    "confidence": "high",
+    "reason": "Guava twist'i makul bir mojito varyasyonu; fakat lime ve şeker eksikliği ile tekrar eden step metni kokteyl uygulamasını zayıflatıyor."
+  },
+  {
+    "slug": "naneli-kabakli-kuskus-salata-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 nohut ve beyaz peynir kullanıyor ama ingredient listesinde yok.",
+      "Beyaz peynir step'te geçtiği için vegan tag'i ve alerjen listesi yanlış kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Haşlanmış nohut", "amount": "1", "unit": "su bardağı" },
+        { "name": "Beyaz peynir", "amount": "80", "unit": "gr" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "tags_remove": ["vegan"],
+      "allergens_add": ["SUT"],
+      "averageCalories": 238,
+      "protein": 10,
+      "carbs": 32,
+      "fat": 8
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/courgette-couscous-salad",
+      "https://www.taste.com.au/recipes/zucchini-mint-couscous-salad/"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak, kuskus, nane ve limonlu salata yapısı doğru; nohut ve peynir step'te kullanıldığı için liste, vegan tag'i ve makrolar güncellenmeli."
+  },
+  {
+    "slug": "naneli-limonata",
+    "verdict": "PASS",
+    "reason": "Limon kabuğunu şekerle ovma, su ve nane ile süzme akışı ev limonatası kaynaklarıyla uyumlu; süre, vegan tag'i ve servis önerisi tutarlı.",
+    "sources": [
+      "https://yemek.com/tarif/naneli-limonata/",
+      "https://www.nefisyemektarifleri.com/naneli-limonata/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "naneli-mango-lassi-spritz-hindistan-usulu",
+    "verdict": "PASS",
+    "reason": "Mango, yoğurt ve nane ile hazırlanan lassi tabanı kaynaklarla uyumlu; soda spritz varyasyonu olarak açık, alerjen ve kısa blender süresi makul.",
+    "sources": [
+      "https://www.vegrecipesofindia.com/mango-lassi-recipe/",
+      "https://www.healthline.com/recipes/mango-mint-lassi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "naneli-patatesli-humus-kase-mersin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps sarımsak, zeytinyağı, tuz, pul biber ve pide kullanıyor ama ingredient listesinde yok.",
+      "Patatesi 12 dakika haşlayıp 5 dakika çevirmek cookMinutes ve totalMinutes değerlerini aşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Pide", "amount": "1", "unit": "adet" }
+      ],
+      "cookMinutes": 17,
+      "totalMinutes": 31,
+      "averageCalories": 286,
+      "protein": 10,
+      "carbs": 38,
+      "fat": 11,
+      "allergens_add": ["GLUTEN"]
+    },
+    "sources": [
+      "https://idahopotato.com/recipes/roasted-idaho-potato-hummus-bowl",
+      "https://www.eatingwell.com/article/291328/how-to-make-hummus-from-scratch/"
+    ],
+    "confidence": "medium",
+    "reason": "Humus, patates, tahin ve limon kasesi makul; step'te geçen ek öğeler ve pişirme süreleri liste, alerjen ve toplam süreye yansımıyor."
+  },
+  {
+    "slug": "naneli-portakal-soda-fas-usulu",
+    "verdict": "PASS",
+    "reason": "Portakal suyu, soda, nane ve buzla yapılan alkolsüz ferah içecek akışı doğru; kısa hazırlık, düşük kalori ve vegan tag'i tutarlı.",
+    "sources": [
+      "https://www.thespruceeats.com/moroccan-orange-juice-recipe-2394966",
+      "https://www.tasteofhome.com/recipes/orange-spritzer/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "naneli-seftalili-soguk-cay-mugla-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Çayı demleme ve tamamen soğutma adımı totalMinutes içinde gerçekçi görünmüyor.",
+      "Step 2 belirsiz, şeftalinin nasıl eklendiğini açık söylemiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 38,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Demli çayı 5 dakika hazırlayıp süzün.", "timerSeconds": 300 },
+        { "stepNumber": 2, "instruction": "Şeftalileri ince dilimleyip nane yapraklarıyla çaya ekleyin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Karışımı 25 dakika buzdolabında soğutun, şeftali aroması çaya geçsin.", "timerSeconds": 1500 },
+        { "stepNumber": 4, "instruction": "Buzlu bardaklara paylaştırıp bekletmeden servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/peach-iced-tea",
+      "https://www.allrecipes.com/recipe/24492/peach-iced-tea/"
+    ],
+    "confidence": "medium",
+    "reason": "Şeftali, nane ve soğuk çay uyumu doğru; mevcut akış soğutmayı ölçmediği için 8 dakikalık toplam süre yanıltıcı kalıyor."
+  },
+  {
+    "slug": "naneli-soganli-kurut-sosu-hakkari-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Kurut çözmek için su kullanılıyor ama ingredient listesinde yok.",
+      "10 dakika kurut bekletme totalMinutes içinde ayrı bekleme olarak görünmüyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ilık su", "amount": "1", "unit": "su bardağı" }
+      ],
+      "totalMinutes": 26
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/hakkari/neyenir/kurut",
+      "https://www.nefisyemektarifleri.com/kurut-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kurutun suyla açılıp yağlı soğan ve naneyle soslaşması yöresel mantığa uygun; su ve bekleme süresi açıkça listelenmeli."
+  },
+  {
+    "slug": "naneli-yogurtlu-patlican-corbasi-burdur-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Patlıcan közleme 15 dakika sürüyor, cookMinutes 12 bu süreyi bile karşılamıyor.",
+      "Toplam süre közleme, ısıtma ve 5 dakika pişirmeyi eksik gösteriyor."
+    ],
+    "corrections": {
+      "cookMinutes": 24,
+      "totalMinutes": 39
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/yogurtlu-patlican-corbasi/",
+      "https://yemek.com/tarif/yogurtlu-patlican-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Yoğurtlu patlıcan çorbası tekniği ve yoğurdu kaynatmadan ısıtma uyarısı doğru; zaman alan közleme pişirme süresine eklenmeli."
+  },
+  {
+    "slug": "naples-pasta-puttanesca",
+    "verdict": "PASS",
+    "reason": "Spaghetti, domates, zeytin, kapari, sarımsak, ançuez ve acı biber yapısı klasik puttanesca kaynaklarıyla uyumlu; süre, makro ve alerjenler makul.",
+    "sources": [
+      "https://www.foodiecrush.com/pasta-puttanesca/",
+      "https://www.lacucinaitaliana.com/italian-food/how-to-cook/pasta-alla-puttanesca-video-recipe"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "napoli-limonlu-ricotta-gnocchi",
+    "verdict": "PASS",
+    "reason": "Ricotta, un, yumurta, limon kabuğu ve tereyağıyla kısa haşlanan gnocchi yapısı kaynaklarla uyumlu; alerjen ve süreler uygulanabilir.",
+    "sources": [
+      "https://www.punchfork.com/recipe/Quick-and-Easy-Homemade-Ricotta-Gnocchi-Serious-Eats",
+      "https://www.epicurious.com/recipes/food/views/zuni-ricotta-gnocchi-241532"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "napoli-marinara-pizza",
+    "verdict": "PASS",
+    "reason": "Peynirsiz Napoli marinara kimliği, domates, sarımsak, kekik, zeytinyağı ve uzun mayalanma ile doğru; totalMinutes bekleme farkını içeriyor.",
+    "sources": [
+      "https://www.acouplecooks.com/pizza-marinara/",
+      "https://www.pizzarecipe.org/recipes/pizza-marinara/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "nar-eksili-cokelek-salatasi-hatay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps salatalık, taze soğan, zahter, pul biber, maydanoz ve ceviz kullanıyor ama ingredient listesinde yok.",
+      "Ceviz step'te geçtiği halde KUSUYEMIS alerjeni yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Salatalık", "amount": "1", "unit": "adet" },
+        { "name": "Taze soğan", "amount": "3", "unit": "dal" },
+        { "name": "Zahter", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" },
+        { "name": "Ceviz", "amount": "0.25", "unit": "su bardağı" }
+      ],
+      "allergens_add": ["KUSUYEMIS"]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/surk-salatasi-cokelek-salatasi-hatay-yoresi/17418",
+      "https://www.nefisyemektarifleri.com/surk-salatasi-hatay-usulu/"
+    ],
+    "confidence": "high",
+    "reason": "Hatay çökelek salatası sebze, nar ekşisi ve zeytinyağıyla doğru; step'te geçen yeşillik ve ceviz listede yok, alerjen de eksik."
+  },
+  {
+    "slug": "nar-eksili-hindi-tava-mardin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 biber kullanıyor ama ingredient listesinde yok.",
+      "20 dakika dinlendirme ve 27 dakika pişirme toplam süreyi 30 dakikanın üstüne çıkarıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yeşil biber", "amount": "2", "unit": "adet" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 27,
+      "totalMinutes": 61
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/pomegranate-molasses-chicken-with-bulgur-salad",
+      "https://www.lezzet.com.tr/yemek-tarifleri/et-yemekleri/tavuk-yemekleri/nar-eksili-tavuk"
+    ],
+    "confidence": "medium",
+    "reason": "Nar ekşili kanatlı tava fikri makul; biber eksik ve marine, mühürleme, kavurma, kapalı pişirme süreleri totalMinutes ile çelişiyor."
+  },
+  {
+    "slug": "nar-eksili-karnabahar-salatasi-levant-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps tahin, limon suyu, sarımsak, nar tanesi, sumak ve tuz kullanıyor ama ingredient listesinde yok.",
+      "Tahin kullanıldığı halde SUSAM alerjeni yok.",
+      "Fırında 22 dakika pişirme cookMinutes değerini aşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tahin", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Nar tanesi", "amount": "0.25", "unit": "su bardağı" },
+        { "name": "Sumak", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 22,
+      "totalMinutes": 36,
+      "allergens_add": ["SUSAM"],
+      "averageCalories": 176,
+      "protein": 5,
+      "carbs": 16,
+      "fat": 11
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/roasted-cauliflower-salad/",
+      "https://www.simplyrecipes.com/upgrade-for-roasted-vegetables-persian-8753805"
+    ],
+    "confidence": "medium",
+    "reason": "Kavrulmuş karnabahar, tahin, nar ekşisi ve otlar Levant meze çizgisine uyuyor; liste, alerjen ve süreler eksik kalmış."
+  },
+  {
+    "slug": "nar-eksili-kisir-salatasi-orta-dogu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps salça, limon suyu, sumak, pul biber, nane, taze soğan ve marul kullanıyor ama ingredient listesinde yok.",
+      "Bulguru 12 dakika şişirme ve 5 dakika bekletme totalMinutes değerini aşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Biber salçası", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sumak", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Taze nane", "amount": "0.25", "unit": "demet" },
+        { "name": "Taze soğan", "amount": "3", "unit": "dal" },
+        { "name": "Marul", "amount": "6", "unit": "yaprak" }
+      ],
+      "totalMinutes": 25
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/kisir-bulgur-salad/",
+      "https://www.bbcgoodfood.com/recipes/kisir"
+    ],
+    "confidence": "high",
+    "reason": "Kısır kimliği doğru; nar ekşisi, bulgur ve yeşillik uyumlu. Ancak step'teki sos ve servis öğeleri ingredient listesinde yok."
+  },
+  {
+    "slug": "nar-eksili-kuru-domates-salatasi-diyarbakir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps ceviz, sarımsak, isot ve taze soğan kullanıyor ama ingredient listesinde yok.",
+      "Ceviz nedeniyle KUSUYEMIS alerjeni eksik.",
+      "10 dakika yumuşatma ve 5 dakika sos bekletme totalMinutes değerini aşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ceviz", "amount": "0.25", "unit": "su bardağı" },
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "İsot", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Taze soğan", "amount": "2", "unit": "dal" }
+      ],
+      "allergens_add": ["KUSUYEMIS"],
+      "totalMinutes": 15,
+      "averageCalories": 142,
+      "protein": 3,
+      "carbs": 12,
+      "fat": 9
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kuru-domates-salatasi/",
+      "https://www.yemek.com/tarif/kuru-domates-salatasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kuru domatesi nar ekşisi ve zeytinyağıyla salata yapmak doğru; step'te kullanılan ceviz ve aromatikler listede eksik."
+  },
+  {
+    "slug": "nar-eksili-kuru-domates-salatasi-siirt-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps yeşil soğan, maydanoz, limon suyu ve pul biber kullanıyor ama ingredient listesinde yok.",
+      "10 dakika yumuşatma ve 5 dakika sos bekletme totalMinutes değerini aşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yeşil soğan", "amount": "2", "unit": "dal" },
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" },
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 17
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kuru-domates-salatasi/",
+      "https://www.yemek.com/tarif/kuru-domates-salatasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kuru domates, ceviz, nar ekşisi ve zeytinyağı salata yapısı makul; yeşillik, limon ve biber step'te var ama listede yok."
+  },
+  {
+    "slug": "nar-eksili-kuru-patlican-dolgusu-gaziantep-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps salça, zeytinyağı, baharat, sıcak su ve ek nar ekşisi kullanıyor ama ingredient listesinde yok.",
+      "12 dakika haşlama, 35 dakika pişirme ve 10 dakika dinlendirme totalMinutes değerini aşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Biber salçası", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Zeytinyağı", "amount": "0.5", "unit": "çay bardağı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Sıcak su", "amount": "2", "unit": "su bardağı" }
+      ],
+      "cookMinutes": 47,
+      "totalMinutes": 75,
+      "averageCalories": 280,
+      "protein": 5,
+      "carbs": 39,
+      "fat": 12
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/nar-eksili-kuru-patlican-dolmasi/",
+      "https://www.karaca.com/blog/antep-usulu-kuru-patlican-dolmasi-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Gaziantep kuru patlıcan dolması kimliği doğru; iç harç ve pişirme suyu öğeleri ile gerçek pişirme süresi eksik kalmış."
+  },
+  {
+    "slug": "nar-eksili-kuru-patlican-ezmesi-mardin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 yoğurt veya tahin diyerek ingredient listesinde olmayan seçenekleri tarif ediyor.",
+      "12 dakika haşlama ve 15 dakika buzdolabı beklemesi totalMinutes içinde görünmüyor."
+    ],
+    "corrections": {
+      "totalMinutes": 37,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kuru patlıcanları 12 dakika yumuşayana kadar haşlayıp süzün.", "timerSeconds": 720 },
+        { "stepNumber": 2, "instruction": "Sarımsağı nar ekşisi, zeytinyağı ve az tuzla pürüzsüz karıştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Kuru patlıcanı bıçakla ince kıyıp sosla birleştirin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Ezmeyi servis tabağına yayın ve 15 dakika buzdolabında dinlendirin.", "timerSeconds": 900 }
+      ]
+    },
+    "sources": [
+      "https://www.pratiktabak.com/nar-eksili-koz-patlican-salatasi-tarifidumanli-lezzet-ferah-ve-sik/",
+      "https://www.sosyalvadi.com/tarif/nar-eksili-cevizli-patlican-ezmesi"
+    ],
+    "confidence": "medium",
+    "reason": "Nar ekşili patlıcan ezmesi fikri doğru; mevcut step seçenekli ve belirsiz, ayrıca haşlama ve dinlendirme toplam süreye yansımıyor."
+  },
+  {
+    "slug": "nar-eksili-kuru-patlican-pilavi-mardin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 yağ, step 5 tuz kullanıyor ama ingredient listesinde yok.",
+      "Haşlama, pirinç bekletme, kavurma, pişirme ve dinlendirme süreleri totalMinutes değerinden çok yüksek."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 36,
+      "totalMinutes": 61,
+      "averageCalories": 250,
+      "protein": 5,
+      "carbs": 36,
+      "fat": 9
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kuru-patlicanli-pilav/",
+      "https://www.yemek.com/tarif/patlicanli-pilav/"
+    ],
+    "confidence": "medium",
+    "reason": "Kuru patlıcanlı, ekşili pilav kurgusu makul; yağ ve tuz eksik, bahsi geçen süreler toplam süreyle uyuşmuyor."
+  },
+  {
+    "slug": "nar-eksili-patlican-dizmesi-gaziantep-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tarif vegan ve vejetaryen etiketli, fakat steps köfteli patlıcan dizmesi anlatıyor.",
+      "Köfte için kıyma, soğan, salça, tuz ve sıcak su ingredient listesinde yok.",
+      "15 dakika bekleme, 35 dakika fırın ve 8 dakika dinlendirme totalMinutes değerini aşıyor."
+    ],
+    "corrections": {
+      "ingredients_remove": ["Bulgur pilavı"],
+      "ingredients_add": [
+        { "name": "Dana kıyma", "amount": "400", "unit": "gr" },
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Biber salçası", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sıcak su", "amount": "1", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "tags_remove": ["vegan", "vejetaryen"],
+      "allergens_remove": ["GLUTEN"],
+      "cookMinutes": 35,
+      "totalMinutes": 78,
+      "averageCalories": 360,
+      "protein": 22,
+      "carbs": 14,
+      "fat": 24
+    },
+    "sources": [
+      "https://www.kolaylezzet.com/kolay-yemek-tarifleri/sebze-yemekleri/947-balcan-dograma-patlican-dograma-gaziantep",
+      "https://www.nefisyemektarifleri.com/patlican-dizmesi/"
+    ],
+    "confidence": "high",
+    "reason": "Mevcut steps etli tepsi dizmesi anlatıyor; ingredient, tag, alerjen ve zaman alanları bu kimliği karşılamadığı için düzeltilmeli."
+  },
+  {
+    "slug": "nar-eksili-sehriye-pilavi-mardin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 tereyağı diyor, ingredient listesinde zeytinyağı var ve tarif vegan tag'i taşıyor.",
+      "Pişirme ve 8 dakika dinlendirme totalMinutes değerini aşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "2", "unit": "su bardağı" }
+      ],
+      "totalMinutes": 34,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Arpa şehriyeyi ölçün, sıcak suyu ve nar ekşisini hazır edin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Şehriyenin yarısını zeytinyağında 5 dakika kavurun, rengi koyulaşsın.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Kalan şehriyeyi ekleyip 1 dakika çevirin.", "timerSeconds": 60 },
+        { "stepNumber": 4, "instruction": "Sıcak su, tuz ve nar ekşisini ekleyip kapağı kapatın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Şehriyeyi 11 dakika kısık ateşte pişirin, fazla karıştırmayın ki hamurlaşmasın.", "timerSeconds": 660 },
+        { "stepNumber": 6, "instruction": "Pilavı 8 dakika dinlendirin ve çatalla havalandırın.", "timerSeconds": 480 }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/sehriye-pilavi-tarifi/",
+      "https://www.yemek.com/tarif/arpa-sehriye-pilavi/"
+    ],
+    "confidence": "high",
+    "reason": "Şehriye pilavı tekniği doğru; tereyağı ifadesi vegan tag'iyle çelişiyor ve sıcak su ile dinlenme süresi eksik görünüyor."
+  },
+  {
+    "slug": "nar-eksili-tepsi-kofte-adiyaman-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps ince bulgur, salça, baharat ve sıcak su kullanıyor ama ingredient listesinde yok.",
+      "Bayat ekmek içi ingredient listesinde var fakat steps bulgurlu köfte anlatıyor.",
+      "10 dakika dinlendirme, 28 dakika fırın ve 7 dakika dinlendirme totalMinutes değerini aşıyor."
+    ],
+    "corrections": {
+      "ingredients_remove": ["Bayat ekmek içi"],
+      "ingredients_add": [
+        { "name": "İnce bulgur", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Domates salçası", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Sıcak su", "amount": "0.75", "unit": "su bardağı" }
+      ],
+      "totalMinutes": 61
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/et-yemekleri/kofte-tarifleri/nar-eksili-kofte-tarifi",
+      "https://www.youtube.com/watch?v=Ngs2wZrGBMQ"
+    ],
+    "confidence": "medium",
+    "reason": "Nar ekşili tepsi köfte kurgusu makul; mevcut içerik ekmekli liste ile bulgurlu step arasında bölünmüş, süreler de eksik."
+  },
+  {
+    "slug": "narenciyeli-avokado-salatasi-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps greyfurt, zeytinyağı, tuz, acı biber, marul, kırmızı soğan, turp ve maydanoz kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Greyfurt", "amount": "1", "unit": "adet" },
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Acı biber", "amount": "0.25", "unit": "çay kaşığı" },
+        { "name": "Marul", "amount": "4", "unit": "yaprak" },
+        { "name": "Kırmızı soğan", "amount": "0.5", "unit": "adet" },
+        { "name": "Turp", "amount": "2", "unit": "adet" },
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" }
+      ],
+      "averageCalories": 205,
+      "protein": 3,
+      "carbs": 18,
+      "fat": 15
+    },
+    "sources": [
+      "https://www.foodandwine.com/recipes/citrus-and-avocado-salad",
+      "https://www.epicurious.com/recipes/food/views/avocado-and-citrus-salad"
+    ],
+    "confidence": "medium",
+    "reason": "Avokado ve narenciye salatası doğru bir soğuk tabak; ancak step'te kullanılan çok sayıda garnitür ve sos öğesi listede eksik."
+  },
+  {
+    "slug": "narenciyeli-cin-tonik-antalya-usulu",
+    "verdict": "PASS",
+    "reason": "Cin, tonik, buz ve turunçgil garnitürü klasik gin tonic oranıyla uyumlu; alkollü kokteyl tag'i, süre ve kısa karıştırma akışı makul.",
+    "sources": [
+      "https://www.garnishdrinks.com/cocktail/gin-and-tonic",
+      "https://www.esquire.com/food-drink/drinks/recipes/a3751/gin-and-tonic-drink-recipe/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "narenciyeli-cin-tonik-mersin-usulu",
+    "verdict": "PASS",
+    "reason": "Cin, tonik, buz ve narenciye kabuğu kombinasyonu klasik gin tonic kaynaklarıyla uyumlu; ölçüler ve beş dakikalık servis akışı doğru.",
+    "sources": [
+      "https://www.garnishdrinks.com/cocktail/gin-and-tonic",
+      "https://www.beefeatergin.com/en/gin-cocktails/zesty-gin-tonic/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "narenciyeli-levrek-sis-alanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps limon kabuğu, deniz tuzu ve dereotu kullanıyor ama ingredient listesinde yok.",
+      "15 dakika balık dinlendirme totalMinutes içinde görünmüyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon kabuğu", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Deniz tuzu", "amount": "0.75", "unit": "çay kaşığı" },
+        { "name": "Dereotu", "amount": "0.25", "unit": "demet" }
+      ],
+      "totalMinutes": 39
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/deniz-urunleri/balik-yemekleri/levrek-sis",
+      "https://www.bbcgoodfood.com/recipes/citrus-marinated-fish"
+    ],
+    "confidence": "medium",
+    "reason": "Narenciye marineli levrek şiş doğru ve güvenli kısa marine kullanıyor; eksik aromatikler ile pasif dinlenme süresi düzelmeli."
+  },
+  {
+    "slug": "narenciyeli-raki-fizz-alanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps taze buz kullanıyor ama ingredient listesinde buz yok.",
+      "Steps tekrarlı boilerplate içeriyor ve kokteyl akışını gereksiz uzatıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Buz", "amount": "1", "unit": "su bardağı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bardağı buzla doldurun ve rakıyı ekleyin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Portakal suyu ve limon suyunu döküp 5 saniye karıştırın.", "timerSeconds": 5 },
+        { "stepNumber": 3, "instruction": "Sodayı en son ekleyin, köpüğü söndürmeden soğuk servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.garnishdrinks.com/cocktail/gin-and-tonic",
+      "https://cirkadistilleries.com/blogs/cocktails/amalfi-fizz"
+    ],
+    "confidence": "medium",
+    "reason": "Rakı, narenciye ve soda ile fizz mantığı makul; buz eksik ve tekrar eden step metni yerine ölçülü kısa kokteyl akışı gerekir."
+  },
+  {
+    "slug": "narenciyeli-raki-spritz-adana-usulu",
+    "verdict": "PASS",
+    "reason": "Rakı, portakal, limon, soda ve buzla hazırlanan narenciyeli spritz akışı tutarlı; alkollü tag'i, kısa süre ve gazı koruma adımı doğru.",
+    "sources": [
+      "https://www.garnishdrinks.com/cocktail/gin-and-tonic",
+      "https://www.epicurious.com/recipes/food/views/mojito-recipe"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "narenciyeli-rakili-fizz-izmir-usulu",
+    "verdict": "PASS",
+    "reason": "Rakı, mandalina suyu, soda, buz ve portakal kabuğu kısa bir fizz varyasyonu olarak tutarlı; ingredient, tag ve sürelerde net hata yok.",
+    "sources": [
+      "https://cirkadistilleries.com/blogs/cocktails/amalfi-fizz",
+      "https://www.epicurious.com/recipes/food/views/mojito-recipe"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "narenciyeli-semizotu-salatasi-antalya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps tuz ve badem kırığı kullanıyor ama ingredient listesinde yok.",
+      "Badem nedeniyle KUSUYEMIS alerjeni eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Badem kırığı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": ["KUSUYEMIS"],
+      "averageCalories": 126,
+      "protein": 3,
+      "carbs": 13,
+      "fat": 7
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/purslane-salad/",
+      "https://www.foodandwine.com/recipes/citrus-and-avocado-salad"
+    ],
+    "confidence": "medium",
+    "reason": "Semizotu, narenciye ve zeytinyağı salatası doğru; step'te kullanılan badem listede ve alerjenlerde yer almıyor."
+  },
+  {
+    "slug": "narli-bulgur-kisiri-mardin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps nar ekşisi, limon, sumak, pul biber, taze soğan, nane ve marul kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Nar ekşisi", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sumak", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Taze soğan", "amount": "3", "unit": "dal" },
+        { "name": "Taze nane", "amount": "0.25", "unit": "demet" },
+        { "name": "Marul", "amount": "6", "unit": "yaprak" }
+      ]
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/kisir-bulgur-salad/",
+      "https://www.bbcgoodfood.com/recipes/kisir"
+    ],
+    "confidence": "high",
+    "reason": "Narlı kısır yapısı kaynaklarla uyumlu; step'teki ekşi, baharat ve yeşillikler ingredient listesine taşınmalı."
+  },
+  {
+    "slug": "narli-bulgur-kofte-kasesi-adiyaman-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps salça, limon suyu, zeytinyağı ve pul biber kullanıyor ama ingredient listesinde yok.",
+      "10 dakika şişirme, 6 dakika haşlama ve 5 dakika ılıtma totalMinutes değerini aşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Biber salçası", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 39,
+      "averageCalories": 256,
+      "protein": 6,
+      "carbs": 38,
+      "fat": 9
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/fellah-koftesi-tarifi/",
+      "https://www.themediterraneandish.com/kisir-bulgur-salad/"
+    ],
+    "confidence": "medium",
+    "reason": "Bulgur köftesini nar ve yeşillikle kase yapmak makul; sos öğeleri eksik ve bekleme süreleri toplam süreye yansımıyor."
+  },
+  {
+    "slug": "narli-reyhanli-bulgur-salatasi-diyarbakir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps salça, sumak, limon suyu ve nar ekşisi kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Biber salçası", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sumak", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Nar ekşisi", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/kisir",
+      "https://www.themediterraneandish.com/kisir-bulgur-salad/"
+    ],
+    "confidence": "medium",
+    "reason": "Bulgur, nar ve reyhan salatası kısır ailesinde makul; step'te adı geçen salça ve ekşi öğeleri listede eksik."
+  },
+  {
+    "slug": "narli-salatalik-cooler-orta-dogu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 gazlı kısım diyor fakat ingredient listesinde soda yok, su var."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Nar suyu ve suyu sürahide karıştırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Salatalık dilimleri ve nane yapraklarını ekleyip hafifçe karıştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Buzlu bardaklara paylaştırıp soğuk servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/cucumber-mint-water/",
+      "https://www.tasteofhome.com/recipes/pomegranate-spritzer/"
+    ],
+    "confidence": "medium",
+    "reason": "Nar, salatalık ve nane ile alkolsüz serin içecek fikri doğru; gazlı ifade mevcut ingredient listesiyle çelişiyor."
+  },
+  {
+    "slug": "narli-turplu-maydanoz-salata-diyarbakir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps nar ekşisi, zeytinyağı ve sumak kullanıyor ama ingredient listesinde yok.",
+      "5 dakika turp bekletme totalMinutes içinde görünmüyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Nar ekşisi", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sumak", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 15,
+      "averageCalories": 122,
+      "protein": 2,
+      "carbs": 12,
+      "fat": 7
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/radish-salad/",
+      "https://www.cuisineathome.com/recipes/side-dishes/sumac-salad/"
+    ],
+    "confidence": "medium",
+    "reason": "Turp, maydanoz ve narla ekşi salata makul; sos öğeleri ingredient listesinde yok ve kısa bekleme süresi toplamda eksik."
+  },
+  {
+    "slug": "nasu-dengaku-japon-izgara-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 mirin, şeker ve sake kullanıyor ama ingredient listesinde yok.",
+      "Bal ingredient listesinde var fakat step'te kullanılmıyor.",
+      "Step 3 yağda pişirme anlatıyor ama yağ ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_remove": ["Bal"],
+      "ingredients_add": [
+        { "name": "Mirin", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sake", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Toz şeker", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sıvı yağ", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "averageCalories": 168,
+      "protein": 4,
+      "carbs": 18,
+      "fat": 9
+    },
+    "sources": [
+      "https://www.justonecookbook.com/miso-glazed-eggplant/",
+      "https://www.seriouseats.com/japanese-miso-glazed-eggplant-nasu-no-dengaku-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Nasu dengaku kimliği doğru; klasik miso glaze için mirin, sake ve şeker step'te var ama listede yok, bal ise kullanılmıyor."
+  },
+  {
+    "slug": "negroni",
+    "verdict": "PASS",
+    "reason": "Cin, Campari ve tatlı vermutun eşit ölçülü karıştırılması klasik Negroni standardıyla uyumlu; portakal kabuğu, süre ve alkollü tag'i doğru.",
+    "sources": [
+      "https://iba-world.com/negroni/",
+      "https://www.liquor.com/recipes/negroni/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "negroni-sbagliato",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ingredient adı Kampari yazılmış, doğru ürün adı Campari.",
+      "Steps tekrarlı boilerplate içeriyor ve aynı süsleme bilgisini iki kez veriyor."
+    ],
+    "corrections": {
+      "ingredients_remove": ["Kampari"],
+      "ingredients_add": [
+        { "name": "Campari", "amount": "30", "unit": "ml" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Buz dolu kadehe Campari ve tatlı vermutu ekleyin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Proseccoyu en son döküp 5 saniye tek tur karıştırın, gazı kaçmasın.", "timerSeconds": 5 },
+        { "stepNumber": 3, "instruction": "Portakal dilimiyle soğuk servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.campari.com/en-us/cocktails/negroni-sbagliato/",
+      "https://www.liquor.com/negroni-sbagliato-cocktail-recipe-6828911"
+    ],
+    "confidence": "high",
+    "reason": "Negroni Sbagliato kimliği doğru; Campari adındaki yazım hatası ve tekrarlı step akışı uygulanmadan önce düzeltilmeli."
+  }
+]

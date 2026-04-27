@@ -1,0 +1,995 @@
+[
+  {
+    "slug": "methi-matar-malai-hint-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2, 3 ve 5 zencefil, sarımsak, kaju, tereyağı ve tuz kullanıyor ama ingredient listesinde yok.",
+      "Step toplamındaki 10 dakika bekleme ve 5 dakika dinlendirme totalMinutes içinde görünmüyor.",
+      "Krema, tereyağı ve kaju eklendiğinde mevcut yağ ve kalori değeri düşük kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zencefil", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Kaju", "amount": "0.25", "unit": "su bardağı" },
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 49,
+      "averageCalories": 330,
+      "protein": 9,
+      "carbs": 22,
+      "fat": 22
+    },
+    "sources": [
+      "https://www.vegrecipesofindia.com/methi-matar-malai-recipe-methi-matar-malai/",
+      "https://www.vidhyashomecooking.com/methi-malai-matar/"
+    ],
+    "confidence": "high",
+    "reason": "Methi matar malai kimliği doğru; kaynaklarda soğanlı kaju ezmesi, krema ve baharat tabanı net, eksik malzemeler ve süre düzelmeli."
+  },
+  {
+    "slug": "mevsim-salatasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1, 2, 3, 4 ve 6 mor lahana, maydanoz, sirke, nar ekşisi ve karabiber kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Mor lahana", "amount": "0.25", "unit": "adet" },
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" },
+        { "name": "Sirke", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Nar ekşisi", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://ye-mek.net/tarif/mevsim-salatasi",
+      "https://yemek.com/tarif/mevsim-salatasi/"
+    ],
+    "confidence": "high",
+    "reason": "Mevsim salatası yapısı kaynaklarla uyumlu; sorun tarif kimliği değil, stepte geçen klasik salata malzemelerinin listede eksik olması."
+  },
+  {
+    "slug": "mexico-city-chilaquiles",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Description chilaquiles'i fırınlanan yemek gibi anlatıyor, mevcut step akışı tavada sosla kısa çevirmeye dayanıyor."
+    ],
+    "corrections": {
+      "description": "Chilaquiles, tortilla cipslerini biberli domates sosu, tavuk, peynir, krema ve soğanla kısa tavada çeviren Meksika kahvaltısıdır."
+    },
+    "sources": [
+      "https://lonestartortillas.com/recipes/chilaquiles",
+      "https://www.epicurious.com/recipes/food/views/chilaquiles-rojos"
+    ],
+    "confidence": "high",
+    "reason": "Chilaquiles için salsa içinde yumuşayan tortilla ve kahvaltı üstleri doğru; fırın ifadesi tek yanıltıcı nokta."
+  },
+  {
+    "slug": "mexico-city-enchiladas-verdes",
+    "verdict": "PASS",
+    "reason": "Tomatillo, yeşil biber, tavuk, mısır tortilla, krema ve peynir yapısı enchiladas verdes kaynaklarıyla uyumlu; süreler makul.",
+    "sources": [
+      "https://www.food.com/recipe/chicken-enchiladas-with-tomatillo-sauce-enchiladas-verdes-168716",
+      "https://www.epicurious.com/recipes/food/views/enchiladas-verdes-green-chicken-enchiladas-56389864"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "mexico-city-huevos-rancheros",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Meksika huevos rancheros kaynaklarında taban genelde mısır tortilladır; generic tortilla nedeniyle GLUTEN allergeni yanıltıcı.",
+      "Step 4 yumurta pişiriyor ama timerSeconds yok."
+    ],
+    "corrections": {
+      "ingredients_remove": [
+        "Tortilla"
+      ],
+      "ingredients_add": [
+        { "name": "Mısır tortilla", "amount": "4", "unit": "adet" }
+      ],
+      "allergens_remove": [
+        "GLUTEN"
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 4,
+          "instruction": "Yumurtaları düşük ateşte akları pişene kadar kızartın.",
+          "timerSeconds": 180
+        }
+      ]
+    },
+    "sources": [
+      "https://www.cook2eatwell.com/huevos-rancheros/",
+      "https://www.theguardian.com/food/2024/apr/24/how-to-make-the-perfect-huevos-rancheros-recipe-felicity-cloake"
+    ],
+    "confidence": "high",
+    "reason": "Yumurta, fasulye, salsa ve avokado kurgusu doğru; mısır tortilla netleşmeli ve yumurta adımına süre eklenmeli."
+  },
+  {
+    "slug": "mexico-city-pozole-rojo",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 oregano kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Meksika kekiği", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.holajalapeno.com/pozole-rojo-pork-and-hominy-stew/",
+      "https://www.daisybrand.com/recipes/pozole-rojo-522/"
+    ],
+    "confidence": "high",
+    "reason": "Domuz eti, hominy, guajillo biber, lahana, turp ve lime pozole rojo ile uyumlu; tek açık eksik servis kekiği."
+  },
+  {
+    "slug": "meyan-koklu-limonata-sanliurfa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 şeker kullanıyor ama ingredient listesinde yok.",
+      "Step 2'deki 10 dakika dinlendirme totalMinutes içinde görünmüyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Şeker", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "totalMinutes": 18
+    },
+    "sources": [
+      "https://www.urfalilar.org.tr/icecekler/",
+      "https://www.yemektekeyifvar.com/icecek-tarifleri/meyan-koku-serbeti-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Urfa meyan şerbeti soğuk suyla bekletme mantığına dayanıyor; limonlu uyarlamada şeker ve bekleme süresi listede görünmeli."
+  },
+  {
+    "slug": "mi-quang",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 balık sosu ve sarımsak kullanıyor ama ingredient listesinde yok.",
+      "Step 6 taze ot, lime ve pirinç krakeri kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Balık sosu", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Taze ot karışımı", "amount": "1", "unit": "su bardağı" },
+        { "name": "Lime", "amount": "1", "unit": "adet" },
+        { "name": "Pirinç krakeri", "amount": "4", "unit": "adet" }
+      ],
+      "allergens_add": [
+        "DENIZ_URUNLERI"
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Tavuğu zerdeçal, balık sosu ve sarımsakla karıştırıp kenarda hazır tutun.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.seriouseats.com/how-to-make-mi-quang-vietnamese-noodles",
+      "https://www.slurrp.com/recipes/mi-quang-1612537877"
+    ],
+    "confidence": "high",
+    "reason": "Mi quang az sulu, zerdeçallı erişte ve fıstıkla doğru çizgide; Vietnam lezzet tabanı için eksik sos ve servis öğeleri eklenmeli."
+  },
+  {
+    "slug": "midyeli-pirinc-tava-canakkale-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 tuz ve baharat kullanıyor ama ingredient listesinde yok.",
+      "Step 2 ile 6 arasındaki pişirme ve dinlendirme süreleri totalMinutes içinde eksik kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Yenibahar", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 26,
+      "totalMinutes": 65
+    },
+    "sources": [
+      "https://www.pilav.gen.tr/midyeli-pilav.html",
+      "https://www.wikiderya.org/wiki/midyeli-pilav"
+    ],
+    "confidence": "high",
+    "reason": "Midyeli pilav mantığı kaynaklarla uyumlu; baharat listesi ve pilavın dinlenme farkı süre alanında görünmeli."
+  },
+  {
+    "slug": "mihalic-peynirli-domates-boregi-bursa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5'te 5 dakika dinlendirme var, totalMinutes prep plus cook toplamıyla aynı kaldığı için bekleme görünmüyor."
+    ],
+    "corrections": {
+      "totalMinutes": 45
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/bursa/nealinir/mihalic-peyniri",
+      "https://www.nefisyemektarifleri.com/patatesli-misir-unlu-borek/"
+    ],
+    "confidence": "medium",
+    "reason": "Mihaliç peynirinin Bursa bağı doğru, yufkalı domatesli börek uyarlaması makul; sadece dinlenme süresi toplamda görünmeli."
+  },
+  {
+    "slug": "mihalic-peynirli-krep-balikesir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Krep pişirmek için yağ ve tuz gerekiyor ama ingredient listesinde yok.",
+      "Steps tekrar eden tarif adıyla kalıp cümleler içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, süt, yumurta ve tuzu pürüzsüz olana kadar çırpın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tavayı orta ateşte ısıtıp ince yağlayın.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Hamurdan ince kepçeler dökerek krepleri iki yüzü beneklenene kadar pişirin.", "timerSeconds": 360 },
+        { "stepNumber": 4, "instruction": "Sıcak kreplere ufalanmış Mihaliç peynirini paylaştırın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Krepleri katlayıp peynir yumuşakken tabağa alın.", "timerSeconds": null },
+        { "stepNumber": 6, "instruction": "Tuzlu peynir dengesi için yanında domates ve çayla ılık servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/bursa/nealinir/mihalic-peyniri",
+      "https://yemek.com/tarif/peynirli-kaygana/"
+    ],
+    "confidence": "medium",
+    "reason": "Mihaliç peynirli krep kahvaltı uyarlaması makul; yağ, tuz ve daha doğal step diliyle uygulanabilir hale gelmeli."
+  },
+  {
+    "slug": "mihalic-peynirli-patates-tava-bursa-usulu",
+    "verdict": "PASS",
+    "reason": "Patates, Mihaliç peyniri, yağ ve kekikle yapılan tava uyarlaması Bursa peynir bağıyla makul; süre ve allergenler tutarlı.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/bursa/nealinir/mihalic-peyniri",
+      "https://www.deliklipeynir.com/mihalic-peyniri"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "mihlamali-mantar-tava-rize-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Mıhlama tabanında tuz kontrolü gerekli ama ingredient listesinde tuz yok.",
+      "Step 1 ve 5 kalıp hazırlık ve servis cümlesi içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Mantarı temizleyip iri dilimleyin, kolot peynirini ufak parçalara ayırın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Peynir uzayan kıvama gelince tavayı sıcak ekmekle hemen servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.tarifmotoru.com/tarif/mihlama",
+      "https://hamarat.org/kolot-peyniri-ile-mihlama.html"
+    ],
+    "confidence": "medium",
+    "reason": "Mantar eklemesi modern uyarlama olsa da kolot, mısır unu, tereyağı ve su mıhlama tabanıyla uyumlu; kalıp cümleler temizlenmeli."
+  },
+  {
+    "slug": "mihlamali-mantarli-tost-trabzon-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Köy ekmeği GLUTEN allergeni gerektirir.",
+      "Step 4 çok belirsiz, peynirli tost akışını anlatmıyor."
+    ],
+    "corrections": {
+      "allergens_add": [
+        "GLUTEN"
+      ],
+      "steps_replace": [
+        { "stepNumber": 4, "instruction": "Ekmeklerin arasına mantar ve kolot peynirini koyup peynir eriyene kadar bastırarak ısıtın.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://www.carrefoursa.com/blog/kuymak-mihlama-tarifi/",
+      "https://www.sutyo.com/mihlama-kuymak-yapilisi/"
+    ],
+    "confidence": "medium",
+    "reason": "Mıhlama peyniri ve mantarlı tost uyarlaması makul; ekmek allergeni ve tostun eritme adımı daha net olmalı."
+  },
+  {
+    "slug": "milan-risotto-alla-milanese",
+    "verdict": "PASS",
+    "reason": "Arborio pirinci, safran, beyaz şarap, sıcak et suyu, tereyağı ve parmesan klasik risotto alla Milanese çizgisiyle uyumlu.",
+    "sources": [
+      "https://www.giallozafferano.com/recipes/saffron-risotto.html",
+      "https://www.recipesfromitaly.com/saffron-risotto-recipe/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "milano-bezelyeli-safran-risotto",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 soğan ve tereyağı kullanıyor ama ingredient listesinde yok.",
+      "Step 6 tereyağı kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Tereyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": [
+        "SUT"
+      ]
+    },
+    "sources": [
+      "https://www.giallozafferano.com/recipes/saffron-risotto.html",
+      "https://www.pbs.org/food/recipes/risotto-alla-milanese"
+    ],
+    "confidence": "high",
+    "reason": "Bezelyeli safran risotto kimliği makul; soğan ve tereyağı risotto tabanının açık parçası olduğu için listede yer almalı."
+  },
+  {
+    "slug": "minas-pao-de-queijo",
+    "verdict": "PASS",
+    "reason": "Tapioka nişastası, süt, tereyağı, yumurta ve peynirle fırınlanan glutensiz Brezilya peynir topu yapısı kaynaklarla uyumlu.",
+    "sources": [
+      "https://www.kingarthurbaking.com/recipes/brazilian-cheese-buns-pao-de-queijo-recipe",
+      "https://www.saveur.com/article/Recipes/Pao-de-Queijo/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "minci-peynirli-pazi-kaygana-giresun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tava için yağ ve hamur için tuz ingredient listesinde yok.",
+      "Step 1 ve 6 kalıp cümle içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Pazıyı ince kıyın, minci peynirini ufalayın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Yumurta, un, su ve tuzu çırparak akışkan bir harç hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Pazı ve minciyi harca katıp yağlı tavada iki yüzünü pişirin.", "timerSeconds": 300 },
+        { "stepNumber": 6, "instruction": "Kayganayı sıcak tabağa alıp peynir yumuşakken servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/peynirli-kaygana/",
+      "https://turkiyeturizmansiklopedisi.com/minci"
+    ],
+    "confidence": "medium",
+    "reason": "Kaygana yapısı ve minci kullanımı yöresel olarak makul; yağ, tuz ve kalıp olmayan step diliyle düzeltilmeli."
+  },
+  {
+    "slug": "mincili-laz-boregi-rize-ev-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Laz böreği kaynaklarda muhallebili, şerbetli tatlıdır; mevcut tarif mincili tuzlu börek olarak farklı bir kimlik taşıyor.",
+      "Title değişmeden tam kimlik düzeltmesi uygulanamaz."
+    ],
+    "corrections": {
+      "description": "Rize mincili böreği, ince hamur arasına minci ve tereyağı doldurarak tuzlu, kat kat ve çay yanına uygun bir hamur işi sunar."
+    },
+    "sources": [
+      "https://www.rizedeyiz.com/rizenin-tatli-lezzeti-laz-boregi",
+      "https://turkiyeturizmansiklopedisi.com/minci"
+    ],
+    "confidence": "high",
+    "reason": "Mevcut içerik mincili tuzlu börek gibi çalışıyor; Laz böreği adı muhallebili tatlıya ait olduğu için manuel kimlik kararı gerekir."
+  },
+  {
+    "slug": "mincili-misir-ekmegi-rize-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Mısır ekmeği harcında tuz ve kabartma tozu beklenir ama ingredient listesinde yok.",
+      "Step 2'deki 5 dakika dinlendirme totalMinutes içinde görünmüyor.",
+      "Step 1 ve 5 kalıp cümle içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kabartma tozu", "amount": "1", "unit": "paket" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 45,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Mısır unu, kabartma tozu ve tuzu geniş kapta karıştırın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Ekmeği fırından çıkınca kısa dinlendirip sıcak dilimler halinde servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.sofra.com.tr/tarif/gluten-iceren-ekmekler/taze-soganli-peynirli-misir-ekmegi",
+      "https://turkiyeturizmansiklopedisi.com/minci"
+    ],
+    "confidence": "medium",
+    "reason": "Minci ve mısır ekmeği birleşimi Karadeniz mutfağıyla uyumlu; kabarma, tuz ve dinlendirme bilgisi eksik."
+  },
+  {
+    "slug": "minestrone",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 soğan kullanıyor ama ingredient listesinde yok.",
+      "Step 5 fesleğen veya maydanoz kullanıyor ama ingredient listesinde yok.",
+      "Kereviz sapı nedeniyle KEREVIZ allergeni eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" }
+      ],
+      "allergens_add": [
+        "KEREVIZ"
+      ]
+    },
+    "sources": [
+      "https://www.melskitchencafe.com/classic-minestrone-soup/",
+      "https://familystylefood.com/classic-minestrone-soup-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Sebze, fasulye, makarna ve parmesan minestrone çizgisiyle uyumlu; soğan, yeşillik ve kereviz allergeni eksik kalmış."
+  },
+  {
+    "slug": "mini-banh-xeo-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Banh xeo kaynaklarında pirinç unu ve zerdeçal yanında genelde Hindistan cevizi sütü, filiz ve otlarla servis var; mevcut listede eksik.",
+      "Step 4 yeşillik kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Hindistan cevizi sütü", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Maş fasulyesi filizi", "amount": "1", "unit": "su bardağı" },
+        { "name": "Marul", "amount": "8", "unit": "yaprak" },
+        { "name": "Balık sosu", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": [
+        "DENIZ_URUNLERI"
+      ]
+    },
+    "sources": [
+      "https://www.expatolife.com/vietnamese-banh-xeo-recipe/",
+      "https://pickledplum.com/banh-xeo/"
+    ],
+    "confidence": "high",
+    "reason": "Mini boy uyarlama doğru; banh xeo için çıtır hamur, karides, filiz ve otlu servis daha tam bir malzeme listesi ister."
+  },
+  {
+    "slug": "mini-kis",
+    "verdict": "PASS",
+    "reason": "Tart hamuru, yumurta, krema, peynir, ıspanak ve mantarla yapılan mini kiş kaynaklardaki quiche tekniğiyle uyumlu.",
+    "sources": [
+      "https://www.eatingwell.com/article/7945694/joanna-gaines-mushroom-spinach-swiss-cheese-quiche-recipe/",
+      "https://www.bbcgoodfood.com/recipes/mini-quiches"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "mint-julep",
+    "verdict": "PASS",
+    "reason": "Burbon, nane, şeker şurubu ve kırık buz klasik mint julep formülüdür; kısa muddle ve buzlu karıştırma adımları doğru.",
+    "sources": [
+      "https://www.liquor.com/recipes/mint-julep/",
+      "https://www.bonappetit.com/recipe/mint-julep"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "mint-tea-tonic-fas-usulu",
+    "verdict": "PASS",
+    "reason": "Yeşil çay, nane, şeker ve buz Fas naneli çay çizgisine uygun; tonik modern soğuk içecek uyarlaması olarak makul.",
+    "sources": [
+      "https://www.poetictea.com/tea-inspired-recipes/moroccan-mint-green-tea",
+      "https://worldspice.com/blogs/recipes/iced-moroccan-mint-tea"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "minzili-domates-tavasi-rize-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 7 'dilimleyin' diyor, domates tavası için bağlamsız.",
+      "Step 7'deki 3 dakika dinlendirme totalMinutes içinde görünmüyor."
+    ],
+    "corrections": {
+      "totalMinutes": 19,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Domatesleri yıkayın, minzi peynirini ufalayın ve tereyağını tavaya alın.", "timerSeconds": null },
+        { "stepNumber": 6, "instruction": "Peynir eriyince tavayı ocaktan alın ve ekmek banmalık kıvamda bırakın.", "timerSeconds": null },
+        { "stepNumber": 7, "instruction": "Ateşi kapatıp kısa bekletin, domates suyu peynirle bütünleşsin.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://www.marsispeynircilik.com/product-page/minzi",
+      "https://turkiyeturizmansiklopedisi.com/minci"
+    ],
+    "confidence": "medium",
+    "reason": "Minzi, domates ve tereyağı kahvaltı tavası olarak makul; bağlamsız dilimleme adımı ve bekleme süresi düzeltilmeli."
+  },
+  {
+    "slug": "minzili-peynirli-kaygana-rize-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tava için yağ ve harç için tuz ingredient listesinde yok.",
+      "Step 6 'dilimleyin' diyor ama kaygana için bağlam zayıf ve 3 dakika bekleme totalMinutes içinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 21,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Minzi peynirini ufalayın, maydanozu ince kıyın.", "timerSeconds": null },
+        { "stepNumber": 6, "instruction": "Kayganayı kısa dinlendirip sıcak servis edin, peynir içte yumuşak kalsın.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/peynirli-kaygana/",
+      "https://turkiyeturizmansiklopedisi.com/minci"
+    ],
+    "confidence": "medium",
+    "reason": "Kaygana ve minzi kullanımı doğru bağlamda; yağ, tuz ve bağlamsız son step küçük ama uygulanabilir düzeltme gerektiriyor."
+  },
+  {
+    "slug": "mirra",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Mırra uzun kaynatılıp yoğunlaştırılan sert kahvedir; mevcut 20 dakikalık demleme mırra yoğunluğunu zayıf bırakıyor."
+    ],
+    "corrections": {
+      "cookMinutes": 45,
+      "totalMinutes": 50,
+      "steps_replace": [
+        { "stepNumber": 2, "instruction": "Karışımı kısık ateşte yoğunlaşana kadar kaynatın, arada köpüğünü alıp tadını sertleştirin.", "timerSeconds": 2700 }
+      ]
+    },
+    "sources": [
+      "https://www.kahve.com/blog/icerik/mirra",
+      "https://sakiproducts.com/tr/pages/glossary-mirra"
+    ],
+    "confidence": "medium",
+    "reason": "Mırra kimliği sert ve uzun kaynatılmış kahveye dayanıyor; mevcut tarifin süresi içeceği fazla hafif bırakıyor."
+  },
+  {
+    "slug": "misir-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 kalıp ve tekrarlı ifade içeriyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 5, "instruction": "Çorbanın yarısını blenderdan geçirip taneli kısımla karıştırın ve sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.tat.com.tr/tat-sofrasi/misir-corbasi",
+      "https://tarifmotoru.com/tarif/sutlu-misir-corbasi/"
+    ],
+    "confidence": "high",
+    "reason": "Süt, tereyağı, un ve tane mısırla çorba yapısı doğru; sadece son adım doğal olmayan tekrar içeriyor."
+  },
+  {
+    "slug": "misir-unlu-balik-koftesi",
+    "verdict": "PASS",
+    "reason": "Haşlanmış beyaz balık, mısır unu, yumurta ve maydanozla köfte yapısı balık köftesi kaynaklarıyla uyumlu; süreler makul.",
+    "sources": [
+      "https://www.sahrapsoysal.com/balik-koftesi-tarifi-t-3436",
+      "https://www.kivitadinda.com/2021/01/hamsi-koftesi-tarifi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "misir-unlu-hamsi-koftesi-bartin-liman-usulu",
+    "verdict": "PASS",
+    "reason": "Hamsi, mısır unu, soğan, yumurta ve tavada kızartma hamsi köftesi kaynaklarıyla uyumlu; süre ve allergenler doğru.",
+    "sources": [
+      "https://www.kivitadinda.com/2021/01/hamsi-koftesi-tarifi/",
+      "https://www.takvim.com.tr/yemek/denizurunleri/2014/07/01/hamsili-kofte-tarifi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "misir-unlu-kefal-bugulama-sinop-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 domates kullanıyor ama ingredient listesinde yok.",
+      "Step 3 zeytinyağı ve step 1 tuz kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Domates", "amount": "2", "unit": "adet" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.wikiderya.org/wiki/midyeli-pilav",
+      "https://www.nefisyemekler.net/kefal-tava"
+    ],
+    "confidence": "medium",
+    "reason": "Kefal ve mısır unu Karadeniz balık pratiğine uygun; buğulama stepinde kullanılan domates, yağ ve tuz listede eksik."
+  },
+  {
+    "slug": "misir-unlu-kefal-tava-sinop-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 karabiber kullanıyor ama ingredient listesinde yok.",
+      "Step 1'deki 10 dakika bekleme totalMinutes içinde görünmüyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 32
+    },
+    "sources": [
+      "https://www.nefisyemekler.net/kefal-tava",
+      "https://www.yasemin.com/yemek/haber/2707390-palamut-baligi-nasil-pisirilir-palamut-baliginin-tavada-ve-firinda-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Kefal tava için mısır unu, tuz ve kızartma doğru; karabiber ve tuzda bekleme toplam süreye eklenmeli."
+  },
+  {
+    "slug": "misir-unlu-palamut-tava-samsun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 karabiber kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://hizlitarifim.com/tarifler/palamut-tava",
+      "https://www.misssgibi.com/misir-unlu-palamut-tava/"
+    ],
+    "confidence": "high",
+    "reason": "Palamut, mısır unu, tuz, yağ ve limonla tava yöntemi kaynaklarla uyumlu; tek eksik stepte kullanılan karabiber."
+  },
+  {
+    "slug": "misir-unlu-pazi-boregi-zonguldak-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 soğan ve yağ kullanıyor ama ingredient listesinde yok.",
+      "Step 3 su, tuz ve yoğurt kullanıyor ama ingredient listesinde yok.",
+      "Step 6'daki 10 dakika dinlendirme totalMinutes içinde görünmüyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Yoğurt", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Su", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": [
+        "SUT"
+      ],
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/misir-unlu-pazi-tavasi-tarifi-t-5991",
+      "https://yemek.com/tarif/pazili-misir-unlu-kek/"
+    ],
+    "confidence": "medium",
+    "reason": "Pazı ve mısır unu Karadeniz tipi tepsi işiyle uyumlu; stepteki temel bağlayıcılar ve dinlendirme süresi eksik."
+  },
+  {
+    "slug": "misir-unlu-yaban-mersinli-pankek-amerikan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Pankek için kabartma tozu, şeker ve tuz beklenir ama ingredient listesinde yok.",
+      "Step 1 ve 5 kalıp cümle içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kabartma tozu", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Şeker", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Mısır unu, un, kabartma tozu, şeker ve tuzu kapta karıştırın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Pankekleri sıcak tabağa alıp yaban mersini ezilmeden servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://tr.hiloved.com/yogurt-misir/",
+      "https://www.kingarthurbaking.com/recipes/blueberry-cornmeal-pancakes-recipe"
+    ],
+    "confidence": "medium",
+    "reason": "Mısır unlu yaban mersinli pankek Amerikan kahvaltısı olarak makul; kabartıcı ve doğal step dili eksik."
+  },
+  {
+    "slug": "misir-unlu-yagli-ekmek-giresun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 peynirli doku diyor ama tarifte peynir yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 6, "instruction": "Ekmeği birkaç dakika dinlendirip tereyağı erimişken sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.sofra.com.tr/tarif/gluten-iceren-ekmekler/taze-soganli-peynirli-misir-ekmegi",
+      "https://tr.hiloved.com/yogurt-misir/"
+    ],
+    "confidence": "medium",
+    "reason": "Mısır unu ve buğday unlu tava ekmeği makul; son step peynirden söz ederek tarif içeriğiyle çelişiyor."
+  },
+  {
+    "slug": "misir-yarmali-balik-corbasi-sinop-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3'te 1 litre su kullanılıyor ama ingredient listesinde su yok.",
+      "Çorba için tuz gerekiyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Su", "amount": "1", "unit": "lt" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/altunun-tavuklu-misir-corbasi-tarifi-t-3350",
+      "https://www.nefisyemekler.net/kefal-tava"
+    ],
+    "confidence": "medium",
+    "reason": "Balık ve mısır yarmalı çorba yerel uyarlama olarak makul; su ve tuz gibi temel çorba girdileri listede görünmeli."
+  },
+  {
+    "slug": "misir-yarmali-ispanak-corbasi-ordu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 tuzdan söz ediyor ama ingredient listesinde tuz yok.",
+      "Step 5 kalıp ve tekrarlı ifade içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 5, "instruction": "Tuzunu ayarlayıp çorbayı sıcak kaselere alın.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/ordu-usulu-karalahana-corbasi/",
+      "https://www.sahrapsoysal.com/barbunyali-karalahana-corbasi-ordu-tarifi-t-6444"
+    ],
+    "confidence": "medium",
+    "reason": "Mısır yarması ve yeşillikli Karadeniz çorbası mantığı doğru; tuz ve doğal bitiş cümlesi eksik."
+  },
+  {
+    "slug": "misir-yarmali-nohut-corbasi-sinop-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 soğanı çevirmek için yağ kullanıyor ama ingredient listesinde yağ yok.",
+      "Step timer toplamı cookMinutes değerini aşıyor, totalMinutes da aktif süreyi karşılamıyor.",
+      "Step 5 kalıp ve tekrarlı ifade içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "cookMinutes": 34,
+      "totalMinutes": 44,
+      "steps_replace": [
+        { "stepNumber": 5, "instruction": "Nane ile sıcak servis edin, yarma ve nohut taneleri diri kalsın.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/barbunyali-karalahana-corbasi-ordu-tarifi-t-6444",
+      "https://yemek.com/tarif/ordu-usulu-karalahana-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Mısır yarmalı bakliyat çorbası bölgesel mantıkta doğru; yağ, süre ve kalıp bitiş cümlesi düzeltilmeli."
+  },
+  {
+    "slug": "misir-yarmali-tavuk-corbasi-ordu-koy-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step timer toplamı 53 dakika, mevcut cookMinutes 28 ve totalMinutes 40 ile çelişiyor.",
+      "Step 5 kalıp ve tekrarlı ifade içeriyor."
+    ],
+    "corrections": {
+      "cookMinutes": 53,
+      "totalMinutes": 65,
+      "steps_replace": [
+        { "stepNumber": 5, "instruction": "Çorbayı sıcak servis edin, tavuk lifleri kurumadan kaselere paylaştırın.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/altunun-tavuklu-misir-corbasi-tarifi-t-3350",
+      "https://yemek.com/tarif/ordu-usulu-karalahana-corbasi/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuklu mısır yarması çorbası kaynaklarla uyumlu; haşlama ve yarma pişirme süreleri totalMinutes alanına yansıtılmalı."
+  },
+  {
+    "slug": "misirli-kabak-corbasi-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Description kişnişten söz ediyor ama ingredient listesinde kişniş yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kişniş", "amount": "0.25", "unit": "demet" }
+      ]
+    },
+    "sources": [
+      "https://www.eatperu.com/peruvian-soups/",
+      "https://www.196flavors.com/peru-locro-de-zapallo/"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak ve mısır Peru usulü sebze çorbası fikrine uyuyor; description'daki kişniş listede yer almalı."
+  },
+  {
+    "slug": "misirli-karalahana-sarma-samsun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Title ve step mısır yarması çizgisinde, ingredient listesinde ise mısır unu yazıyor.",
+      "Step 5 zeytinyağı, step 3 baharat kullanıyor ama listede yok.",
+      "Pişirme ve dinlendirme süreleri totalMinutes içinde eksik kalıyor."
+    ],
+    "corrections": {
+      "ingredients_remove": [
+        "Mısır unu"
+      ],
+      "ingredients_add": [
+        { "name": "Mısır yarması", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 39,
+      "totalMinutes": 73,
+      "steps_replace": [
+        { "stepNumber": 3, "instruction": "Mısır yarması, pirinç, soğan, salça, tuz ve karabiberle iç harcı karıştırın.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/giresun/neyenir/yarmali-karalahana-pancar-sarmasi",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/misir-yarmali-karalahana-sarmasi/8786"
+    ],
+    "confidence": "high",
+    "reason": "Karalahana sarmasında mısır yarması kaynaklarla net; mevcut mısır unu ve kısa süre alanları yanıltıcı."
+  },
+  {
+    "slug": "misirli-palamut-corbasi-sinop-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 limon kullanıyor ama ingredient listesinde yok.",
+      "Çorba için tuz ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon", "amount": "1", "unit": "adet" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.yasemin.com/yemek/haber/2707390-palamut-baligi-nasil-pisirilir-palamut-baliginin-tavada-ve-firinda-tarifi",
+      "https://www.tat.com.tr/tat-sofrasi/misir-corbasi"
+    ],
+    "confidence": "medium",
+    "reason": "Palamut ve mısırlı çorba yerel uyarlama olarak makul; servis limonu ve temel tuz listede eksik."
+  },
+  {
+    "slug": "misirli-pazili-tava-ekmegi-rize-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 peynirli doku diyor ama tarifte peynir yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 5, "instruction": "Tava ekmeğini kısa dinlendirip sıcak dilimler halinde servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/misir-unlu-pazi-tavasi-tarifi-t-5991",
+      "https://yemek.com/tarif/pazili-misir-unlu-kek/"
+    ],
+    "confidence": "medium",
+    "reason": "Mısır unu, pazı ve tereyağıyla tava ekmeği fikri makul; son step tarifte olmayan peynirden söz ediyor."
+  },
+  {
+    "slug": "misket-limonlu-balik-corbasi-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Vietnam ekşi balık çorbalarında balık sosu ve domates yaygın; mevcut çorba su ve lime ile fazla çıplak kalıyor.",
+      "Çorba için tuzlu umami kaynağı ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Balık sosu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Domates", "amount": "1", "unit": "adet" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 2, "instruction": "Su, taze soğan ve domatesi orta ateşte kaynatın.", "timerSeconds": 360 },
+        { "stepNumber": 4, "instruction": "Ocak kapalıyken misket limonu suyu ve balık sosunu katın, ekşilik taze kalsın.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.food.com/recipe/canh-chua-ca-sweet-and-sour-fish-soup-181043",
+      "https://www.theseasonedwok.com/canh-chua-vietnamese-sour-soup/"
+    ],
+    "confidence": "medium",
+    "reason": "Beyaz balıklı lime çorbası Vietnam canh chua fikrine yakın; balık sosu ve domatesle lezzet tabanı tamamlanmalı."
+  },
+  {
+    "slug": "miso-corbasi",
+    "verdict": "PASS",
+    "reason": "Miso, tofu, wakame ve taze soğanla yapılan hafif Japon çorbası kaynaklarla uyumlu; misoyu ocak kapalı ekleme doğru.",
+    "sources": [
+      "https://www.marukome.co.jp/global/en/recipe/miso_001/",
+      "https://www.pccmarkets.com/recipe/tofu-and-wakame-miso-soup/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "miso-corn-soup-japon-kis-usulu",
+    "verdict": "PASS",
+    "reason": "Mısır ve misonun ocak kapalıyken birleştirilmesi Japon miso çorbası tekniğine uygun; kısa süre ve vegan etiket makul.",
+    "sources": [
+      "https://www.marukome.co.jp/global/en/recipe/miso_001/",
+      "https://www.hikarimiso.com/recipes/miso-soup-with-tofu-and-wakame-seaweed/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "misolu-misir-ramen-japon-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 susam yağı, step 2 tereyağı ve step 3 tavuk veya sebze suyu kullanıyor ama ingredient listesinde yok.",
+      "Tereyağı ve susam yağı eklendiğinde allergen beyanı eksik kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Susam yağı", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sebze suyu", "amount": "4", "unit": "su bardağı" }
+      ],
+      "allergens_add": [
+        "SUSAM",
+        "SUT"
+      ]
+    },
+    "sources": [
+      "https://www.japanesecooking101.com/butter-corn-ramen/",
+      "https://kikkomanusa.com/foodservice/recipes/miso-corn-butter-ramen/"
+    ],
+    "confidence": "high",
+    "reason": "Miso, mısır, noodle ve yumurta ramen kimliği doğru; stepte kullanılan yağlar ve su tabanı listede eksik."
+  },
+  {
+    "slug": "misolu-yumurtali-pirinc-kase-japon-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 'dilimleyin' diyor, pirinç kasesi için bağlamsız.",
+      "Step 1 ve 5 kalıp cümle içeriyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Sıcak pirinci kaseye alın, misoyu ve yumurtayı tezgaha çıkarın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Yumurtayı düşük ateşte akı toparlanana kadar pişirin.", "timerSeconds": 240 },
+        { "stepNumber": 5, "instruction": "Kaseyi kısa dinlendirip misolu sos pirince yayılmışken servis edin.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://umamipot.com/tamago-kake-gohan/",
+      "https://www.abokichi.com/blogs/recipes/onsen-tamago-style-rice-bowl"
+    ],
+    "confidence": "medium",
+    "reason": "Yumurta ve pirinç kasesi Japon kahvaltı fikrine uyumlu; son stepin dilimleme ifadesi tarif biçimiyle çelişiyor."
+  }
+]

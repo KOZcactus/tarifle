@@ -1,0 +1,954 @@
+[
+  {
+    "slug": "misto-quente",
+    "verdict": "PASS",
+    "reason": "Brezilya usulü sıcak jambonlu peynirli sandviç kimliği, malzeme listesi ve kısa tost akışı kaynaklarla uyumlu; süre ve alerjenler makul.",
+    "sources": [
+      "https://www.mestredofogao.com.br/receita/misto-quente-kglpn",
+      "https://www.receitaspraticas.com.br/misto-quente-2/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "misugaru-shake",
+    "verdict": "PASS",
+    "reason": "Misugaru tozu, süt, tatlandırıcı ve buzla hazırlanan Kore tahıl shake yapısı doğru; kısa blender süresi ve servis bağlamı kaynaklarla uyumlu.",
+    "sources": [
+      "https://flavor365.com/misugaru-korean-multigrain-shake/",
+      "https://www.youtube.com/watch?v=ELauJ5rsqFU"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "mizeria-polonya-yaz-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 limon suyu, şeker ve karabiber kullanıyor ama ingredient listesinde yok.",
+      "15 dakika salatalık bekletme ve 10 dakika soğutma totalMinutes içinde görünmüyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Toz şeker", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 35
+    },
+    "sources": [
+      "https://www.polonist.com/mizeria-polish-cucumber-salad/",
+      "https://www.whats4eats.com/salads/mizeria-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Mizeria kimliği doğru; salatalığın tuzla beklemesi, ekşi kremalı dereotlu sos ve soğuk servis kaynaklarla eşleşiyor, eksik sos öğeleri ve bekleme süresi düzelmeli."
+  },
+  {
+    "slug": "mocha",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Sütü ısıtma adımında pişirme fiili var ama timerSeconds yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Çikolatayı sıcak espresso içinde eritin, kakao topakları kalmasın diye 20 saniye karıştırın.", "timerSeconds": 20 },
+        { "stepNumber": 2, "instruction": "Sütü küçük tencerede veya buhar çubuğunda 3 dakika ısıtıp köpürtün.", "timerSeconds": 180 },
+        { "stepNumber": 3, "instruction": "Sütü kahveye ekleyin, üstüne kakao serpip sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.allrecipes.com/recipe/32567/cafe-mocha/",
+      "https://www.tasteofhome.com/recipes/mocha/"
+    ],
+    "confidence": "medium",
+    "reason": "Mocha için espresso, çikolata ve süt yapısı doğru; tek kalite açığı ısıtma adımındaki eksik zaman bilgisidir."
+  },
+  {
+    "slug": "mocha-protein-shake",
+    "verdict": "PASS",
+    "reason": "Soğuk kahve, süt, kakao ve protein tozu ile hazırlanan shake yapısı kaynaklarla uyumlu; pişirme gerektirmeyen kısa blender akışı doğru.",
+    "sources": [
+      "https://www.prevention.com/food-nutrition/recipes/a20518253/mocha-protein-shake/",
+      "https://www.health.com/nutrition/protein-coffee"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "mojito",
+    "verdict": "PASS",
+    "reason": "Beyaz rom, lime, nane, şeker, soda ve buz oranı klasik mojito kaynaklarıyla uyumlu; kısa ezme ve gazı koruyan servis akışı doğru.",
+    "sources": [
+      "https://iba-world.com/mojito/",
+      "https://www.bacardi.com/us/en/rum-cocktails/lime-mojito/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "mojo-black-bean-bowl-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step ve servis metni pirinç, lime, tuz, avokado ve kişniş kullanıyor ama ingredient listesinde yok.",
+      "Pirinç ve avokado kaseye dahil edilirse mevcut kalori ve makro değerleri düşük kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Lime suyu", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" },
+        { "name": "Pişmiş pirinç", "amount": "2", "unit": "su bardağı" },
+        { "name": "Avokado", "amount": "1", "unit": "adet" },
+        { "name": "Taze kişniş", "amount": "0.25", "unit": "demet" }
+      ],
+      "averageCalories": 420,
+      "protein": 13,
+      "carbs": 62,
+      "fat": 13
+    },
+    "sources": [
+      "https://www.food.com/recipe/cuban-mojo-sauce-248397",
+      "https://www.bonappetit.com/recipe/mojo-roast-pork-and-gravy"
+    ],
+    "confidence": "medium",
+    "reason": "Mojo için sarımsaklı narenciye ve kimyon çizgisi doğru; kase formatında pirinç ve garnitürler açıkça tarifin parçası olduğu için liste ve makro güncellenmeli."
+  },
+  {
+    "slug": "mojo-patates-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 patatesi 25 dakika pişiriyor, ayrıca 10 dakika suda bekletme ve 3 dakika dinlendirme var; totalMinutes 26 gerçeği karşılamıyor.",
+      "Mojo sosunda lime suyu kaynaklarda temel öğe, mevcut listede yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Lime suyu", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Kızartmalık yağ", "amount": "2", "unit": "su bardağı" }
+      ],
+      "cookMinutes": 29,
+      "totalMinutes": 48
+    },
+    "sources": [
+      "https://www.chefsresource.com/recipes/cuban-mojo-potatoes-recipe/",
+      "https://www.food.com/recipe/cuban-mojo-sauce-248397"
+    ],
+    "confidence": "high",
+    "reason": "Patates ve sarımsaklı narenciye sosu uyumlu; sorun tarif kimliği değil, pişirme ve bekleme sürelerinin toplam süreye eksik yansımasıdır."
+  },
+  {
+    "slug": "mole-poblano",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 ve 3 soğan, sarımsak, domates, baharat ve tavuk suyu kullanıyor ama ingredient listesinde yok.",
+      "Klasik mole poblano kaynaklarında kuru meyve veya tatlı denge öğesi bulunur, mevcut listede bu taban eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "3", "unit": "diş" },
+        { "name": "Domates", "amount": "2", "unit": "adet" },
+        { "name": "Tavuk suyu", "amount": "2", "unit": "su bardağı" },
+        { "name": "Kuru üzüm", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tarçın", "amount": "0.25", "unit": "çay kaşığı" },
+        { "name": "Karanfil", "amount": "2", "unit": "adet" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.mccormick.com/blogs/el-guapo-recipes/mole-poblano-chicken",
+      "https://www.bigoven.com/recipe/mole-de-poblano-chocolate-chicken-wchilli/112843"
+    ],
+    "confidence": "high",
+    "reason": "Mole poblano kimliği doğru; kuru biber, çikolata, kuruyemiş ve susam var, fakat sosun aromatik tabanı ingredient listesinde eksik kalmış."
+  },
+  {
+    "slug": "moong-dal-chilla",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 ıslatılmış maş fasulyesi diyor ama ıslatma süresi tarifte ve totalMinutes içinde yok.",
+      "Yeşil biber, tuz, su ve tava yağı gibi temel chilla öğeleri ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yeşil biber", "amount": "2", "unit": "adet" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" },
+        { "name": "Su", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "prepMinutes": 15,
+      "cookMinutes": 15,
+      "totalMinutes": 150,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Sarı maş fasulyesini yıkayıp bol suda 2 saat bekletin, sonra süzün.", "timerSeconds": 7200 },
+        { "stepNumber": 2, "instruction": "Maş fasulyesi, soğan, zencefil, yeşil biber, tuz ve az suyu pürüzsüz hamur olana kadar çekin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Tavayı orta ateşte yağlayıp hamurdan ince daireler yayın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Chillaların her yüzünü 3-4 dakika pişirin.", "timerSeconds": 420 },
+        { "stepNumber": 5, "instruction": "Sıcak chillaları naneli yoğurt veya kişniş chutney ile servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://foodviva.com/healthy-recipes/moong-dal-chilla/",
+      "https://www.ishrikitchen.com/post/moong-dal-chilla"
+    ],
+    "confidence": "high",
+    "reason": "Moong dal chilla kimliği doğru; kaynaklarda ıslatma ve tavada ince pişirme zorunlu, mevcut toplam süre ve temel malzeme listesi eksik."
+  },
+  {
+    "slug": "moqueca",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve 5 sarımsak, soğan, dende yağı ve kişniş kullanıyor ama ingredient listesinde yok.",
+      "15 dakika marinasyon dahil edildiğinde totalMinutes 50 yerine yaklaşık 60 dakika olmalı."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "3", "unit": "diş" },
+        { "name": "Dende yağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Taze kişniş", "amount": "0.25", "unit": "demet" }
+      ],
+      "totalMinutes": 60
+    },
+    "sources": [
+      "https://www.simplyrecipes.com/recipes/moqueca___brazilian_fish_stew/",
+      "https://www.epicurious.com/recipes/food/views/brazilian-shrimp-stew-107419"
+    ],
+    "confidence": "high",
+    "reason": "Bahia tipi moqueca için balık, Hindistan cevizi sütü ve biber yapısı doğru; aromatik taban ile dende yağı listede tamamlanmalı."
+  },
+  {
+    "slug": "moqueca-de-banana-brezilya-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Moqueca de banana kaynaklarda pişmeye dayanıklı banana da terra veya plantain ile yapılır; mevcut 'olgun muz' ifadesi tatlı sofra muzuna kayabilir.",
+      "Biber, zeytinyağı, tuz, acı biber, dende yağı ve kişniş step akışında var ama ingredient listesinde yok.",
+      "Ingredient ad değişimi mevcut Mod K correction şemasında doğrudan güvenli uygulanamadığı için manuel review gerekir."
+    ],
+    "corrections": {
+      "description": "Moqueca de banana, pişmeye dayanıklı muz veya plantaini domatesli, biberli, Hindistan cevizli ve dende yağlı Brezilya sosunda pişiren sebze ana yemeğidir.",
+      "ingredients_add": [
+        { "name": "Biber", "amount": "1", "unit": "adet" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" },
+        { "name": "Acı biber", "amount": "0.25", "unit": "çay kaşığı" },
+        { "name": "Dende yağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Taze kişniş", "amount": "0.25", "unit": "demet" }
+      ]
+    },
+    "sources": [
+      "https://www.panelinha.com.br/receita/moqueca-de-banana-da-terra",
+      "https://www.tudogostoso.com.br/receita/193635-moqueca-de-banana-da-terra.html"
+    ],
+    "confidence": "medium",
+    "reason": "Yemeğin genel moqueca çizgisi doğru; ancak ana malzeme adı ve eksik aromatikler kullanıcıyı yanlış ürüne yönlendirebilir."
+  },
+  {
+    "slug": "moqueca-de-palmito-brezilya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 ve 5 soğan, zeytinyağı, tuz, dende yağı, kişniş ve lime kabuğu kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" },
+        { "name": "Dende yağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Taze kişniş", "amount": "0.25", "unit": "demet" },
+        { "name": "Lime kabuğu", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.panelinha.com.br/receita/moqueca-de-palmito",
+      "https://www.tudogostoso.com.br/receita/144167-moqueca-de-palmito.html"
+    ],
+    "confidence": "medium",
+    "reason": "Palmitolu ve Hindistan cevizli Brezilya moqueca fikri doğru; sorun stepte geçen temel sos bileşenlerinin listede eksik olması."
+  },
+  {
+    "slug": "moros-y-cristianos-kuban-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 ve 4 biber, defne ve kimyon kullanıyor ama ingredient listesinde yok.",
+      "Küba kaynaklarında sofrito için biber ve baharat tabanı temel kabul ediliyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yeşil biber", "amount": "1", "unit": "adet" },
+        { "name": "Defne yaprağı", "amount": "1", "unit": "adet" },
+        { "name": "Kimyon", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Kekik", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.cookingcuban.com/moros-y-cristianos-black-beans-rice/",
+      "https://www.epicurious.com/recipes/food/views/rice-cooked-in-black-beans-em-moros-y-cristianos-em-364829"
+    ],
+    "confidence": "high",
+    "reason": "Siyah fasulye ve pirincin birlikte pişmesi doğru; Küba sofrito ve baharat öğeleri ingredient tarafında tamamlanmalı."
+  },
+  {
+    "slug": "mors-frambuazli-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Description meyveyi kaynatarak mors hazırlandığını söylüyor ama steps ham meyveyi blenderdan geçiriyor.",
+      "CookMinutes 6 olmasına rağmen mevcut step akışında pişirme adımı yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Frambuazı su ve şekerle tencereye alın, orta ateşte kaynama noktasına getirin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Karışımı 5 dakika kısık ateşte pişirin, meyve tadı suya geçsin.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Morsu süzün, oda sıcaklığına gelince soğuk bardakta servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.thedailymeal.com/mors-russian-berry-drink-recipe/",
+      "https://www.olgasflavorfactory.com/recipes/russianrecipes/cranberry-raspberry-mors-drink/"
+    ],
+    "confidence": "high",
+    "reason": "Frambuazlı mors yapılabilir; kaynaklar meyvenin su ve şekerle ısıtılıp süzüldüğünü gösteriyor, mevcut blender akışı içeriğe ters."
+  },
+  {
+    "slug": "mors-visneli-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 içeceği soğutmayı söylüyor ama soğutma için timerSeconds ve totalMinutes karşılığı yok.",
+      "Mors kaynaklarında meyve ezme veya süzme adımı belirgin, mevcut akış fazla kısa."
+    ],
+    "corrections": {
+      "totalMinutes": 28,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Vişneleri hafifçe ezin, suyla tencereye alıp 8 dakika kaynatın.", "timerSeconds": 480 },
+        { "stepNumber": 2, "instruction": "Bal ve limon suyunu ekleyip 1 dakika karıştırın.", "timerSeconds": 60 },
+        { "stepNumber": 3, "instruction": "İçeceği süzün ve 10 dakika ılıtın, sonra soğuk servis edin.", "timerSeconds": 600 }
+      ]
+    },
+    "sources": [
+      "https://www.mixmarkt.eu/en/germany/recipes/Rezept/16/mors-kljukvennyi/",
+      "https://bridgetomoscow.com/mors"
+    ],
+    "confidence": "high",
+    "reason": "Vişneli mors, meyve suyu mantığıyla doğru; fakat süzme ve soğutma adımları kısa geçilmiş, toplam süre eksik kalmış."
+  },
+  {
+    "slug": "moscow-beef-stroganoff",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 tuz ve karabiber kullanıyor ama ingredient listesinde karabiber yok, tuz da açık miktarla listelenmemiş."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.food.com/recipe/beef-stroganoff-363503",
+      "https://www.bbcgoodfood.com/recipes/beef-stroganoff"
+    ],
+    "confidence": "medium",
+    "reason": "Dana eti, ekşi krema, hardal, mantar ve erişte servisi modern stroganoff ile uyumlu; yalnızca stepte geçen baharatlar listede tamamlanmalı."
+  },
+  {
+    "slug": "moscow-golubtsi-lahana-sarma",
+    "verdict": "PASS",
+    "reason": "Lahana yaprağı, kıyma, pirinç, domatesli ekşi kremalı sos ve dereotu servisli golubtsi yapısı kaynaklarla uyumlu; süre hesabı da tutarlı.",
+    "sources": [
+      "https://www.chefsresource.com/recipes/golubtsy-russian-cabbage-rolls-recipe/",
+      "https://www.ruscuisine.com/recipes/vegetable-dishes/cabbage/n--51/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "moscow-mule",
+    "verdict": "PASS",
+    "reason": "Votka, zencefilli gazoz, lime ve buzla yapılan klasik Moscow Mule yapısı doğru; bakır kupa servisi ve kısa karıştırma kaynaklarla uyumlu.",
+    "sources": [
+      "https://www.bundaberg.com/cocktail/moscow-mule/",
+      "https://www.thecocktailproject.com/drink-recipes/moscow-mule/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "moskova-balli-kefir-smoothie",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Yulafın kefirde 5 dakika beklemesi totalMinutes 6 içinde tam görünmüyor."
+    ],
+    "corrections": {
+      "totalMinutes": 11
+    },
+    "sources": [
+      "https://www.food.com/recipe/kefir-banana-smoothie-500341",
+      "https://www.marthastewart.com/341010/banana-oat-smoothie"
+    ],
+    "confidence": "medium",
+    "reason": "Kefir, muz, bal, yulaf ve tarçın kahvaltı smoothie yapısı makul; bekleme süresi kullanıcıya toplam sürede görünmeli."
+  },
+  {
+    "slug": "moskova-dereotlu-lahana-blini",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Hamur dinlendirme, lahana pişirme ve blini pişirme adımları toplamda 33 dakikaya yaklaşıyor; prepMinutes ile birlikte totalMinutes 40 düşük kalıyor.",
+      "Tavada blini pişirmek için yağ veya tereyağı ve tuz ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 51
+    },
+    "sources": [
+      "https://www.russianfood.com/recipes/recipe.php?rid=115573",
+      "https://www.thespruceeats.com/russian-blini-recipe-1136792"
+    ],
+    "confidence": "low",
+    "reason": "Blini tekniği ve lahana dolgu fikri makul; kaynaklar genel blini ve lahana dolgusunu destekliyor, fakat süre ve tava yağı listesi eksik."
+  },
+  {
+    "slug": "moskova-eksi-kremali-pelmeni-tavasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Pelmeni hamuru için su ve tuz, iç harç için karabiber ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Su", "amount": "0.75", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.recipelink.com/recipes/russian-pelmeni-0033977",
+      "https://cakestudiodsm.com/recipes/pelmeni"
+    ],
+    "confidence": "medium",
+    "reason": "Pelmeni hamuru, kıymalı harç, haşlama ve ekşi krema servisi doğru; hamur suyu ve baharatlar malzeme listesinde tamamlanmalı."
+  },
+  {
+    "slug": "moskova-pelmeni",
+    "verdict": "PASS",
+    "reason": "Unlu yumurtalı hamur, kıymalı soğanlı iç, haşlama ve smetana tereyağı servisi pelmeni kaynaklarıyla uyumlu; süre ve alerjenler makul.",
+    "sources": [
+      "https://www.recipelink.com/recipes/russian-pelmeni-0033977",
+      "https://cakestudiodsm.com/recipes/pelmeni"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "moussaka",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Kıymalı sos için soğan ve baharatlar, beşamel için tereyağı ve muskat ingredient listesinde yok.",
+      "Kaynaklarda Yunan moussaka aromatik kıymalı sos ve beşamel katmanı ile kuruluyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Tereyağı", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Muskat", "amount": "0.25", "unit": "çay kaşığı" },
+        { "name": "Tarçın", "amount": "0.25", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.mygreekdish.com/recipe/mousakas/",
+      "https://www.themediterraneandish.com/moussaka-recipe-eggplant-casserole/"
+    ],
+    "confidence": "high",
+    "reason": "Patlıcan, kıymalı sos ve beşamel katmanları doğru; sosun aromatik ve beşamel tamamlayıcıları listede eksik."
+  },
+  {
+    "slug": "moutabal",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step metninde Türkçe karakterler bozuk yazılmış: Patlicanlari, kozleyin, iclerini.",
+      "Közleme 35-40 dakika sürüyor ama cookMinutes 25 ve totalMinutes 40 bu süreyi karşılamıyor.",
+      "Sarımsak, tuz ve zeytinyağı klasik moutabal öğeleri olmasına rağmen ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "cookMinutes": 40,
+      "totalMinutes": 65,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patlıcanları 220°C fırında tamamen yumuşayana kadar 35-40 dakika közleyin.", "timerSeconds": 2400 },
+        { "stepNumber": 2, "instruction": "Patlıcanları 10 dakika ılıtıp içlerini kaşıkla çıkarın, fazla suyunu süzün.", "timerSeconds": 600 },
+        { "stepNumber": 3, "instruction": "Tahin, yoğurt, limon suyu, sarımsak ve tuzu ayrı kapta karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Patlıcan etini tahinli karışıma ezerek yedirin.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Moutabal'i 10 dakika dinlendirin, üstüne zeytinyağı gezdirip servis edin.", "timerSeconds": 600 }
+      ]
+    },
+    "sources": [
+      "https://momsnotes.me/recipe/moutabal",
+      "https://www.bonappetit.com/recipe/smoky-eggplant-dip-eggplant-moutabal"
+    ],
+    "confidence": "high",
+    "reason": "Moutabal kimliği doğru; köz patlıcan, tahin, yoğurt ve limon uyumlu, fakat süre, eksik sarımsak ve ASCII fold hataları düzelmeli."
+  },
+  {
+    "slug": "mozaik-pasta",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Dondurucuda 3 saat dinlendirme totalMinutes 25 içinde görünmüyor."
+    ],
+    "corrections": {
+      "totalMinutes": 205
+    },
+    "sources": [
+      "https://yemek.com/tarif/mozaik-pasta/",
+      "https://www.nefisyemektarifleri.com/mozaik-pasta-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Mozaik pasta kimliği ve malzemeleri doğru; pişmeyen tatlıda uzun soğutma kullanıcıya toplam sürede açık görünmeli."
+  },
+  {
+    "slug": "msemen",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Mevcut steps generic template cümleler içeriyor ve msemen için hamur dinlendirme, yağla açma, katlama detayları yeterince açık değil.",
+      "Tuz ve şeker kaynaklarda hamur için temel, ingredient listesinde yok.",
+      "Dinlendirme süreleri açık yazılınca totalMinutes 65 düşük kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Toz şeker", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 95,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, irmik, tuz ve şekeri karıştırın, suyu azar azar ekleyip elastik hamur yoğurun.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Hamuru yağlı bezeler halinde 30 dakika dinlendirin.", "timerSeconds": 1800 },
+        { "stepNumber": 3, "instruction": "Her bezeyi yağlı zeminde inceltin, yüzeye yağ sürüp irmik serperek kare biçiminde katlayın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Katlanmış kareleri 10 dakika dinlendirin, sonra tekrar hafifçe genişletin.", "timerSeconds": 600 },
+        { "stepNumber": 5, "instruction": "Msemenleri sıcak tavada iki yüzü kızarana kadar 8-10 dakika pişirin.", "timerSeconds": 600 },
+        { "stepNumber": 6, "instruction": "Bal veya tereyağıyla sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.moroccogonow.com/msemen/",
+      "https://www.moroccanflavorsandmore.com/2024/04/moroccan-pancake-msemen.html"
+    ],
+    "confidence": "high",
+    "reason": "Fas msemen kimliği doğru; katlı hamur tekniği korunmalı, mevcut template adımlar yerine gerçek dinlendirme ve katlama akışı yazılmalı."
+  },
+  {
+    "slug": "mugla-cokertme-kebabi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "30 dakika marinasyon prepMinutes içinde sayılmış görünüyor; RecipeTimeline için pasif bekleme prepMinutes dışında kalmalı.",
+      "Step 1 zeytinyağı kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "prepMinutes": 20,
+      "cookMinutes": 20,
+      "totalMinutes": 70
+    },
+    "sources": [
+      "https://www.turkishcuisine.org/recipes/main-dishes/authentic-turkish-cokertme-kebab-recipe",
+      "https://turkish-riviera.bodrumadvisor.com/culture/local-cuisine/cokertme-kebabi/"
+    ],
+    "confidence": "high",
+    "reason": "Bodrum çökertme kimliği doğru; ince patates, yoğurt, domates sos ve et uyumlu, fakat marine süresi aktif hazırlığa gömülmemeli."
+  },
+  {
+    "slug": "mugla-kabak-cicegi-dolmasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ön pişirme, dolma pişirme ve tencerede soğutma toplamı mevcut totalMinutes 50 değerini aşıyor.",
+      "Step süreleri toplandığında cookMinutes 25 yerine yaklaşık 37 dakika pişirme görünüyor."
+    ],
+    "corrections": {
+      "cookMinutes": 37,
+      "totalMinutes": 72
+    },
+    "sources": [
+      "https://poyrazbalik.com/dishes/kabak-cicegi-dolmasi/",
+      "https://www.kirazinmutfagi.com.tr/tarif/kabak-cicegi-dolmasi-mugla"
+    ],
+    "confidence": "high",
+    "reason": "Kabak çiçeği dolması malzeme kimliği doğru; zeytinyağlı iç ve narin doldurma uyumlu, süre hesabı eksik."
+  },
+  {
+    "slug": "mugla-koruklu-deniz-borulcesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "15 dakika sirkeli suda bekletme ve 18 dakika haşlama varken totalMinutes 20 ve cookMinutes 6 tutarsız.",
+      "Kaynaklarda deniz börülcesinin haşlanıp kılçığından sıyrılması ana teknik, mevcut süre bu tekniği karşılamıyor."
+    ],
+    "corrections": {
+      "cookMinutes": 18,
+      "totalMinutes": 47
+    },
+    "sources": [
+      "https://mugla.goturkiye.com/taste",
+      "https://www.nefisyemektarifleri.com/deniz-borulcesi-salatasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Muğla ve Ege deniz börülcesi bağlamı doğru; koruklu sos makul, fakat haşlama ve bekleme süreleri toplam sürede görünmeli."
+  },
+  {
+    "slug": "mugla-lorlu-kabak-mucver",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Mücveri tavada pişirmek için sıvı yağ ingredient listesinde yok.",
+      "Step 4 iki yüzü pişirme dese de yağ miktarı belirtilmediği için uygulama eksik kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kabak-mucveri/",
+      "https://www.nefisyemektarifleri.com/lorlu-kabak-mucveri/"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak, yumurta, un, lor ve dereotlu mücver yapısı doğru; tavada pişirme için yağ listede açık olmalı."
+  },
+  {
+    "slug": "mugla-sundirme",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Resmi Muğla turizm kaynağı sündürmeyi turp otu, soğan, sarımsak ve nar ekşisiyle tanımlıyor; mevcut tarif peynirli genel kahvaltılık gibi duruyor.",
+      "Kaynaklar arasında peynirli sündürme adı geçse de Muğla yöresel kimliğiyle çelişki var.",
+      "Bu fark basit ingredient ekleme ile güvenli çözülemez, manuel identity review gerekir."
+    ],
+    "corrections": {
+      "description": "Muğla sündürmesi için kaynaklar iki farklı çizgi gösteriyor: resmi Muğla kaynağı turp otlu ekşili yemeği, bazı tarif kaynakları ise peynirli kahvaltılığı anlatıyor."
+    },
+    "sources": [
+      "https://mugla.goturkiye.com/taste",
+      "https://www.hamlegazetesi.com.tr/amp/haber/26016107/muglanin-yoresel-lezzeti-sundurme-nasil-yapilir"
+    ],
+    "confidence": "high",
+    "reason": "Yöresel kimlik çelişkisi var; mevcut peynirli versiyon Muğla resmi tanımıyla uyuşmadığı için otomatik apply uygun değil."
+  },
+  {
+    "slug": "mugla-susamli-kabak-cicegi-boregi",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Muğla özelinde susamlı kabak çiçeği böreği için bağımsız güvenilir kaynak bulunamadı.",
+      "Step 2 dereotu, taze soğan ve zeytinyağı kullanıyor ama ingredient listesinde yok.",
+      "Yöresel atıf doğrulanmadan yalnızca eksik malzeme eklemek tarif kimliğini güvenli hale getirmiyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Dereotu", "amount": "0.25", "unit": "demet" },
+        { "name": "Taze soğan", "amount": "2", "unit": "dal" },
+        { "name": "Zeytinyağı", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://mugla.goturkiye.com/taste",
+      "https://tarifle.app/tarif/peynirli-kabak-cicegi-boregi-balikesir-usulu"
+    ],
+    "confidence": "low",
+    "reason": "Kabak çiçeği ve yufkalı börek fikri mümkün; fakat Muğla ve susamlı özgül iddiası bağımsız kaynakla desteklenmiyor."
+  },
+  {
+    "slug": "mugla-tavuklu-cokertme",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Patates kızartması için sıvı yağ, tavuk baharatı için tuz ve karabiber ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "2", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.turkishcuisine.org/recipes/main-dishes/authentic-turkish-cokertme-kebab-recipe",
+      "https://www.bodrumtips.com/en/flavors/bodrum-cokertme-kebab-the-unique-flavor-of-bodrum-cuisine"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuklu çökertme uyarlaması, patates yoğurt domates sos katmanı bakımından doğru; kızartma yağı ve baharatlar listede eksik."
+  },
+  {
+    "slug": "muhallebi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "40 dakika soğutma totalMinutes 20 içinde görünmüyor."
+    ],
+    "corrections": {
+      "totalMinutes": 60
+    },
+    "sources": [
+      "https://yemek.com/tarif/muhallebi/",
+      "https://www.nefisyemektarifleri.com/muhallebi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Süt, şeker, nişasta, un ve vanilinle klasik muhallebi doğru; kaselerde soğutma toplam süreye eklenmeli."
+  },
+  {
+    "slug": "muhallebili-elma-tatlisi-kastamonu-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Muhallebili elma tatlısı için genel kaynaklar var, ancak Kastamonu usulü iddiasını destekleyen güvenilir kaynak bulunamadı.",
+      "Muhallebi kısmında toz şeker ve vanilya gibi temel öğeler ingredient listesinde yok.",
+      "Yöresel atıf doğrulanmadan otomatik correction ile prod'a uygulanması riskli."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Toz şeker", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Vanilya", "amount": "1", "unit": "paket" }
+      ],
+      "description": "Muhallebili elma tatlısı, elmayı tarçınla yumuşatıp sütlü muhallebiyle katmanlayan hafif bir meyveli tatlıdır."
+    },
+    "sources": [
+      "https://www.sofra.com.tr/tarifler/cikolatali-ve-meyveli-tatlilar/muhallebili-elma-tatlisi",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/meyveli-tatlilar/muhallebili-elma"
+    ],
+    "confidence": "medium",
+    "reason": "Tatlı yapısı genel olarak doğru; sorun Kastamonu yöresel etiketi ve eksik muhallebi tatlandırıcılarıdır."
+  },
+  {
+    "slug": "muhammara-gaziantep-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Kapya biberi közleme adımında timerSeconds yok ve cookMinutes 10 çiğ biber közleme için düşük kalıyor.",
+      "Tuz ve pul biber muhammara dengesinde temel ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 20,
+      "totalMinutes": 35,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kapya biberleri 200°C fırında veya ocak üzerinde 18-20 dakika közleyip kabuklarını soyun.", "timerSeconds": 1200 },
+        { "stepNumber": 2, "instruction": "Ceviz ve galeta ununu rondoda kısa çekerek iri dokulu baz oluşturun.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Köz biber, sarımsak, nar ekşisi, zeytinyağı, kimyon, tuz ve pul biberi ekleyip çekin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Muhammarayı ezme kıvamında servis tabağına yayın.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.linsfood.com/muhammara-recipe/",
+      "https://vegworldmag.com/recipes/muhammara-red-pepper-and-walnut-dip/"
+    ],
+    "confidence": "medium",
+    "reason": "Köz biber, ceviz, galeta unu, nar ekşisi ve zeytinyağı yapısı doğru; közleme süresi ve baharat listesi netleşmeli."
+  },
+  {
+    "slug": "mujadara-dip-orta-dogu-usulu",
+    "verdict": "PASS",
+    "reason": "Mujadara temeli mercimek, soğan ve kimyondur; dip yorumu geleneksel yemek kadar klasik olmasa da açıkça esintili meze olarak sunulmuş, içerik tutarlı.",
+    "sources": [
+      "https://www.usarice.com/thinkrice/recipes/lentils-rice-%28mujaddara%29",
+      "https://www.sumisculinarynotes.com/mujaddara-lentils-rice-with-caramelized-onions/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "mujaddara",
+    "verdict": "PASS",
+    "reason": "Mercimek, pirinç, zeytinyağı, kimyon ve karamelize soğanla kurulan mujaddara yapısı kaynaklarla uyumlu; dinlendirme ve pişirme süreleri makul.",
+    "sources": [
+      "https://www.usarice.com/thinkrice/recipes/lentils-rice-%28mujaddara%29",
+      "https://www.epicurious.com/recipes/food/views/mujadara-51100640"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "mumbai-hindistan-cevizli-balik-curry",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Balık curry için soğan, sarımsak, yağ, zerdeçal veya acı biber ve tuz ingredient listesinde yok.",
+      "Kaynaklarda domatesli Hindistan cevizi sosu aromatik tabanla pişiriliyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Zerdeçal", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Kırmızı toz biber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/ba-syn-fish-curry",
+      "https://www.indianhealthyrecipes.com/fish-curry-recipe/"
+    ],
+    "confidence": "medium",
+    "reason": "Hindistan cevizi sütlü balık curry kimliği doğru; hardal tohumu, köri yaprağı ve domates var, fakat aromatik taban eksik."
+  },
+  {
+    "slug": "mumbai-pav-bhaji-tereyagli",
+    "verdict": "PASS",
+    "reason": "Patates, karnabahar, bezelye, domates, soğan, pav bhaji masala, bol tereyağı ve pav ekmeği kaynaklarla uyumlu; süre makul.",
+    "sources": [
+      "https://www.flavorsofmumbai.com/mumbai-pav-bhaji-recipe/",
+      "https://www.bonappetit.com/recipe/pav-bhaji-recipe"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "mumbai-vada-pav",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Nohut unu kaplaması için su ve tuz ingredient listesinde yok.",
+      "Step 2 sarımsağı baharatlı patates dolgusuna ekliyor ama sarımsak sadece hazır chutney olarak listelenmiş.",
+      "Köri yaprağı Mumbai batata vada kaynaklarında temel temperleme öğesi, mevcut listede yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Su", "amount": "0.75", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Sarımsak", "amount": "3", "unit": "diş" },
+        { "name": "Köri yaprağı", "amount": "8", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://www.sailusfood.com/batata-vada-vada-pav/",
+      "https://www.mygingergarlickitchen.com/vada-pav-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Vada pav kimliği doğru; batata vada, besan kaplama, pav ve chutney uyumlu, ancak kaplama sıvısı ve temperleme öğeleri eksik."
+  },
+  {
+    "slug": "mumbar-dolmasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 temizlik için limon kullanıyor ama ingredient listesinde yok.",
+      "Step 2 soğan ve baharatlardan söz ediyor, fakat soğan, kimyon, karabiber ve pul biber listede yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Limon", "amount": "1", "unit": "adet" },
+        { "name": "Kimyon", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Pul biber", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/tokat/neyenir/mumbar-dolmasi",
+      "https://www.sahrapsoysal.com/mumbar-dolmasi-tarifi-t-3681"
+    ],
+    "confidence": "high",
+    "reason": "Mumbar dolması kimliği doğru; bağırsak, pirinç, kıyma ve salça var, fakat temizlik ve iç harç aromatikleri eksik."
+  },
+  {
+    "slug": "mumbar-dolmasi-guneydogu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 sirke kullanıyor ama ingredient listesinde yok.",
+      "Step 2 bulgur, salça ve baharat kullanıyor ama ingredient listesinde yok.",
+      "Güneydoğu ve Gaziantep kaynaklarında pirinç veya bulgur, kıyma, salça, soğan, sarımsak ve baharat birlikte geçiyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sirke", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Bulgur", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Domates salçası", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Biber salçası", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Kimyon", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Pul biber", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://venereturkey.com/gaziantep-mumbar-stuffed.html",
+      "https://www.lezzet.com.tr/yemek-tarifleri/sarma-ve-dolma-tarifleri/dolma-tarifleri/batman-usulu-mumbar-dolmasi"
+    ],
+    "confidence": "high",
+    "reason": "Güneydoğu usulü mumbar kimliği doğru; temizlik ve dolgu adımlarındaki temel malzemeler listede görünür olmalı."
+  },
+  {
+    "slug": "munich-schnitzel-patates-salatali",
+    "verdict": "PASS",
+    "reason": "İnce dövülmüş dana etinin un, yumurta ve ekmek kırıntısıyla kızartılması, limon ve patates salatası servisi kaynaklarla uyumlu.",
+    "sources": [
+      "https://www.allrecipes.com/article/what-is-schnitzel/",
+      "https://www.bbcgoodfood.com/recipes/schnitzel"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "munih-bratwurst-lahana-tabagi",
+    "verdict": "PASS",
+    "reason": "Bratwurst, bira, soğan, sauerkraut, patates ve hardal tabağı Alman servis çizgisiyle uyumlu; sosisleri önce ısıtıp sonra kızartma tekniği doğru.",
+    "sources": [
+      "https://homebrewacademy.com/beer-bratwurst-sauerkraut-recipe/",
+      "https://www.epicurious.com/recipes/food/views/beer-bratwurst"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "munih-obatzda-peynir-dip",
+    "verdict": "PASS",
+    "reason": "Camembert, tereyağı, krem peynir, paprika, kimyon tohumu, soğan ve bira ile hazırlanan Obatzda kaynaklarla uyumlu; pretzel servisi doğru.",
+    "sources": [
+      "https://www.food.com/recipe/obazda-bavarian-style-camembert-spread-501549",
+      "https://www.theomaway.com/appetizers/obatzda-cheese-butter-spread-beergarden/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "murtuga-pide-tostu-kars-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Murtuğa kaynaklarda Van, Hakkari, Ağrı, Ahlat hattında un, tereyağı ve yumurtayla yapılan kahvaltılık olarak geçiyor; Kars ve pide tostu iddiası desteklenmiyor.",
+      "Mevcut tarif murtuğayı pide içine koyan türetilmiş bir tost gibi duruyor, bu özgül kimlik için güvenilir kaynak bulunamadı.",
+      "Bu durum basit malzeme ekleme değil, tarif adı ve yöresel kimlik sorunu."
+    ],
+    "corrections": {
+      "description": "Murtuğa, unun tereyağında kavrulup yumurtayla pişirildiği Doğu Anadolu kahvaltılığıdır; pide tostu ve Kars atfı için ayrıca kaynak gerekir."
+    },
+    "sources": [
+      "https://www.sofra.com.tr/tarif/diger/murtuga-murtuga-tarifi",
+      "https://ye-mek.net/tarif/murtuga"
+    ],
+    "confidence": "high",
+    "reason": "Temel murtuğa tekniği biliniyor; ancak bu slugdaki Kars pide tostu kimliği kaynakla doğrulanmadığı için manuel mini rev gerekir."
+  },
+  {
+    "slug": "musakhan",
+    "verdict": "PASS",
+    "reason": "Tavuk, bol soğan, sumak, zeytinyağı, tabun veya lavaş ekmeği ve çam fıstığıyla kurulan Filistin musakhan yapısı kaynaklarla uyumlu.",
+    "sources": [
+      "https://food-heritage.org/palestinian-chicken-musakhan/",
+      "https://www.linsfood.com/musakhan-palestinian-recipe/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "mushroom-stroganoff",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3, 4 ve 5 tereyağı, un, sıcak su veya et suyu ve ekşi krema kullanıyor ama ingredient listesinde yok.",
+      "Un stepte geçtiği için GLUTEN allergen eksik.",
+      "Servis erişteyle önerildiği halde alerjen tarafında gluten görünmüyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Un", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sebze suyu", "amount": "1", "unit": "su bardağı" },
+        { "name": "Ekşi krema", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": [
+        "GLUTEN"
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/mushroom-stronganoff-wonton-noodles",
+      "https://www.glamour.com/story/mushroom-stroganoff"
+    ],
+    "confidence": "medium",
+    "reason": "Mantar, krema veya ekşi krema, hardal ve soslu stroganoff kimliği doğru; stepte geçen bağlayıcı ve gluten alerjeni eksik."
+  }
+]

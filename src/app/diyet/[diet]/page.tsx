@@ -44,14 +44,28 @@ export async function generateMetadata({
     limit: 1,
   });
 
+  // Sayfa-spesifik openGraph + twitter (oturum 25 GPT SEO audit)
+  const pageTitle = t("dietMetaTitle", { label, count: total });
+  const pageDescription = t("dietMetaDescription", {
+    label,
+    count: total,
+    description: description.slice(0, 120),
+  });
   return {
-    title: t("dietMetaTitle", { label, count: total }),
-    description: t("dietMetaDescription", {
-      label,
-      count: total,
-      description: description.slice(0, 120),
-    }),
+    title: pageTitle,
+    description: pageDescription,
     alternates: { canonical: `/diyet/${diet}` },
+    openGraph: {
+      title: pageTitle,
+      description: pageDescription,
+      url: `/diyet/${diet}`,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: pageTitle,
+      description: pageDescription,
+    },
   };
 }
 

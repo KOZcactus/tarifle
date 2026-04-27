@@ -45,11 +45,27 @@ export async function generateMetadata({
   const pageNum = parseInt(sp.page ?? "1", 10) || 1;
   const isPaginated = pageNum > 1;
 
+  // Sayfa-spesifik openGraph + twitter (oturum 25 GPT SEO audit).
+  // Root layout og:title generic 'Tarifle · Make Eat' override icin
+  // explicit set zorunlu.
+  const pageTitle = `${category.name} Tarifleri`;
+  const pageDescription = `${category.name} kategorisindeki tüm tarifler. ${category.emoji ?? ""}`;
   return {
-    title: `${category.name} Tarifleri`,
-    description: `${category.name} kategorisindeki tüm tarifler. ${category.emoji ?? ""}`,
+    title: pageTitle,
+    description: pageDescription,
     alternates: {
       canonical: `/tarifler/${kategori}`,
+    },
+    openGraph: {
+      title: pageTitle,
+      description: pageDescription,
+      url: `/tarifler/${kategori}`,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: pageTitle,
+      description: pageDescription,
     },
     robots: isPaginated ? { index: false, follow: true } : undefined,
   };

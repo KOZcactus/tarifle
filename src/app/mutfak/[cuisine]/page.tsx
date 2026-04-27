@@ -71,14 +71,28 @@ export async function generateMetadata({
       where: { status: "PUBLISHED", cuisine: code },
     }));
 
+  // Sayfa-spesifik openGraph/twitter (oturum 25 GPT SEO audit)
+  const pageTitle = t("cuisineMetaTitle", { label, count: total });
+  const pageDescription = t("cuisineMetaDescription", {
+    label,
+    count: total,
+    description: description.slice(0, 120),
+  });
   return {
-    title: t("cuisineMetaTitle", { label, count: total }),
-    description: t("cuisineMetaDescription", {
-      label,
-      count: total,
-      description: description.slice(0, 120),
-    }),
+    title: pageTitle,
+    description: pageDescription,
     alternates: { canonical: `/mutfak/${cuisine}` },
+    openGraph: {
+      title: pageTitle,
+      description: pageDescription,
+      url: `/mutfak/${cuisine}`,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: pageTitle,
+      description: pageDescription,
+    },
   };
 }
 

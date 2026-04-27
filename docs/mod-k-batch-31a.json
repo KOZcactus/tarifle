@@ -1,0 +1,889 @@
+[
+  {
+    "slug": "sutlu-balkabagi-tatlisi-bursa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 cevizle servis etmeyi söylüyor ama ingredient listesinde ceviz yok.",
+      "Sütlü kabak tatlısı kaynaklarla uyumlu, Bursa atfı ise iki kaynakla net kurulamadı."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ceviz içi", "amount": "0.25", "unit": "su bardağı" }
+      ],
+      "allergens_add": ["KUSUYEMIS"]
+    },
+    "sources": [
+      "https://yemek.com/tarif/sutlu-kabak-tatlisi/",
+      "https://www.kabaktatlisi.gen.tr/tahinli-cevizli-kabak-tatlisi.html"
+    ],
+    "confidence": "medium",
+    "reason": "Sütlü kabak yapısı ve cevizli servis kaynaklarla uyumlu; eksik olan ceviz alerjen ve ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "sutlu-hurmali-ekmek-kasigi-kirklareli-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Sütlü ekmek tatlısı ve hurmalı tatlı fikri kaynaklarla ayrı ayrı destekleniyor, Kırklareli yöre kimliği doğrulanamadı.",
+      "Mevcut tarif fırında pişen sütlü ekmek tatlısından çok hızlı süt dökülen ekmek kupu gibi duruyor."
+    ],
+    "corrections": {
+      "description": "Sütlü hurmalı ekmek kaşığı, yumuşak ekmeği hurmalı süt sosuyla ıslatan pratik bir kaşık tatlısı uyarlamasıdır."
+    },
+    "sources": [
+      "https://www.sofra.com.tr/tarif/sutlu-tatlilar/firinda-sutlu-ekmek-tatlisi",
+      "https://www.hurma.com/hurmali-tatli-tarifleri"
+    ],
+    "confidence": "low",
+    "reason": "Ekmek, süt ve hurma uyumu makul; ancak Kırklareli ve klasik tarif kimliği için yeterli kaynak bulunamadı."
+  },
+  {
+    "slug": "sutlu-irmik-corbasi-aksaray-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "İrmik çorbası kaynaklarında su veya et suyu ile süt birlikte kullanılır, mevcut tarifte tuz yok.",
+      "Aksaray yöre atfı iki kaynakla net doğrulanamadı."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://zayiflamadiyetim.com/irmik-corbasi-tarifi",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/diger-tatli-tarifleri/sutlu-irmik-helvasi-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Süt, su, irmik, tereyağı ve nane çorba kurgusu olarak makul; temel tuz eksikliği giderilmeli."
+  },
+  {
+    "slug": "sutlu-kete-bingol-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Bingöl ketesi kaynaklarında maya, yumurta, tuz ve uzun dinlenme var; mevcut tarifte maya, yumurta ve tuz yok.",
+      "Steps içinde peynirli doku deniyor ama tarifte peynir bulunmuyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru maya", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Yumurta", "amount": "1", "unit": "adet" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": ["YUMURTA"],
+      "prepMinutes": 75,
+      "totalMinutes": 97,
+      "steps_replace": [
+        { "stepNumber": 3, "instruction": "Hamuru yoğurup üzerini kapatın ve mayanın çalışması için bekletin.", "timerSeconds": 3600 },
+        { "stepNumber": 6, "instruction": "Keteyi ılık servis edin, katları sertleşmeden sofraya çıkarın." }
+      ]
+    },
+    "sources": [
+      "https://www.evvelcevap.com/bingol-ketesi-tarifi/",
+      "https://lezzetler.com/kete-tunceli-tarif-131054"
+    ],
+    "confidence": "high",
+    "reason": "Bingöl ketesi için sütlü ve mayalı hamur kaynakla doğrulanıyor; mevcut içerik ana hamur malzemelerini eksik bırakıyor."
+  },
+  {
+    "slug": "sutlu-turk-kahvesi",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://ye-mek.net/tarif/sutlu-turk-kahvesi/",
+      "https://www.kisikatesakademi.com.tr/tarif/sutlu-turk-kahvesi-tarifi-1422"
+    ],
+    "confidence": "high",
+    "reason": "Kahve, süt ve şekerle cezvede pişirme kaynaklarla uyumlu; süre, SUT alerjeni ve alkolsüz etiketi tutarlı."
+  },
+  {
+    "slug": "sweet-corn-chowder-amerikan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve step 2 soğan kullanıyor ama ingredient listesinde soğan yok.",
+      "Step 4 sütü unla açmayı söylüyor ama ingredient listesinde un yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Un", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["GLUTEN"]
+    },
+    "sources": [
+      "https://farmflavor.com/recipes/seasonal/summer/potato-corn-chowder/",
+      "https://www.tastingtable.com/686200/creamy-potato-soup-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Mısır, patates, süt ve tereyağı Amerikan chowder yapısıyla uyumlu; stepte geçen soğan ve un listeye eklenmeli."
+  },
+  {
+    "slug": "sweetcorn-fritter-stack-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Fritter kaynakları tavada yağla pişirme yapıyor, mevcut ingredient listesinde yağ yok.",
+      "Stack ve brunch sunumu makul, temel hamur oranı kaynaklarla uyumlu."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://edgell.com.au/recipe/simple-sweetcorn-fritters/5023",
+      "https://www.paddysmarkets.com.au/recipes/sweetcorn-fritters"
+    ],
+    "confidence": "high",
+    "reason": "Mısır, un, yumurta, süt ve taze soğan fritter için doğru; tavada pişirme için yağ eksik bırakılmış."
+  },
+  {
+    "slug": "sydney-meat-pie",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.foodnetwork.com/recipes/australian-meat-pie-recipe-1937920",
+      "https://www.food.com/recipe/australian-meat-pie-21726"
+    ],
+    "confidence": "high",
+    "reason": "Dana kıyma, soğan, unla koyulaşan gravy, Worcestershire sos, milföy kapak ve yumurta sürme Avustralya meat pie ile uyumlu."
+  },
+  {
+    "slug": "sydney-pavlova-meyveli",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.bhg.com/recipes/desserts/what-is-pavlova/",
+      "https://www.allrecipes.com/article/what-is-pavlova/"
+    ],
+    "confidence": "high",
+    "reason": "Yumurta akı, şeker, nişasta, sirke, krema ve meyveli beze tabanı pavlova kaynaklarıyla tutarlı; süre ve alerjenler makul."
+  },
+  {
+    "slug": "syrniki",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Syrniki tavada yağ veya tereyağı ile pişirilir, ingredient listesinde pişirme yağı yok.",
+      "TipNote yumurtayı tereyağında pişirmekten söz ediyor, tarif bağlamı syrniki hamuru olmalı."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "tipNote": "Lor fazla suluysa hamura eklemeden önce süzdürmek disklerin dağılmasını önler.",
+      "servingSuggestion": "Ekşi krema, reçel veya bal ile sıcak servis edin."
+    },
+    "sources": [
+      "https://www.alyonascooking.com/syrniki-recipe-cheese-pancakes/",
+      "https://realfood.tesco.com/recipes/russian-syrniki-pancakes.html"
+    ],
+    "confidence": "high",
+    "reason": "Lor, yumurta, un ve şeker doğru; pişirme yağı eksik, mevcut tip ve servis metni tarif bağlamından kopuk."
+  },
+  {
+    "slug": "syrniki-yaban-mersin-soslu-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Syrniki pişirme yağı ingredient listesinde yok.",
+      "Servis önerisi yumurta, peynir ve sahlep söylüyor; yaban mersinli syrniki bağlamıyla uyumsuz."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "servingSuggestion": "Yaban mersin sosu ve bir kaşık ekşi krema ile sıcak servis edin."
+    },
+    "sources": [
+      "https://www.babaganosh.org/syrniki-russian-cheese-pancakes/",
+      "https://www.alyonascooking.com/syrniki-recipe-cheese-pancakes/"
+    ],
+    "confidence": "high",
+    "reason": "Lorlu pankek yapısı ve meyve sosu uyumlu; eksik yağ ve bağlam dışı servis önerisi düzeltilmeli."
+  },
+  {
+    "slug": "szarlotka-kup-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Szarlotka klasik olarak hamurlu elmalı kek yapısında, mevcut kup versiyonu uyarlama olduğunu açıklamıyor.",
+      "Bardak tatlısı olduğu için klasik szarlotka kimliği fazla kesin yazılmış."
+    ],
+    "corrections": {
+      "description": "Polonya szarlotka kup, tarçınlı elmalı kek lezzetini bisküvi ve krema katlarıyla bardakta sunan serin bir uyarlamadır."
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/polish-apple-cake-szarlotka/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/diger-tarifler/tahinli-ve-pekmezli-tarifler/nevzine-tatlisi-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Elma, tarçın ve krema szarlotka tadına yakın; kup formu klasik tarif değil, uyarlama olarak netlenmeli."
+  },
+  {
+    "slug": "szarlotka-polonya-usulu",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/polish-apple-cake-szarlotka/",
+      "https://www.tesco.com/groceries/en-GB/recipes/russian-syrniki-pancakes"
+    ],
+    "confidence": "medium",
+    "reason": "Elma, tarçın, tereyağlı hamur ve fırın süresi szarlotka için makul; alerjen ve süre alanlarında belirgin tutarsızlık yok."
+  },
+  {
+    "slug": "tabbouleh",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 zeytinyağı ve tuzla sos hazırlıyor ama ingredient listesinde ikisi de yok.",
+      "Tabbouleh kaynaklarında maydanoz, domates, nane, bulgur, limon ve zeytinyağı temel yapı."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.theguardian.com/food/2023/sep/06/how-to-make-tabbouleh-recipe-felicity-cloake-masterclass",
+      "https://www.bbcgoodfood.com/recipes/tabbouleh"
+    ],
+    "confidence": "high",
+    "reason": "Salata kimliği ve malzeme dengesi doğru; stepte kullanılan zeytinyağı ve tuz listede eksik."
+  },
+  {
+    "slug": "tacos-al-pastor",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Al pastor kaynakları domuz eti, achiote ve kurutulmuş biber marinasyonunu temel alıyor; mevcut tarif dana etiyle klasik kimliği bozuyor.",
+      "TipNote aynı anda kısa marine ve dört saat bekleme söylüyor, step süreleriyle çelişiyor."
+    ],
+    "corrections": {
+      "description": "Tacos al pastor, ananaslı biber marineli etin mısır tortillasında soğan ve lime ile sunulduğu Meksika tacosudur.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Eti acı biber püresi, ananas ve baharatla marine edin; al pastor tadı için bekleme süresini kısa tutmayın.", "timerSeconds": 14400 }
+      ],
+      "tipNote": "Dana kullanılıyorsa tarifi klasik al pastor değil, ev tipi uyarlama olarak anlatın."
+    },
+    "sources": [
+      "https://www.bonappetit.com/test-kitchen/article/tacos-al-pastor",
+      "https://www.epicurious.com/recipes/food/views/tacos-al-pastor-marinated-spit-roasted-tacos-56389863"
+    ],
+    "confidence": "high",
+    "reason": "Al pastor kimliği domuz eti ve uzun biberli marinasyonla kuruluyor; dana versiyon ancak açık uyarlama olarak güvenli."
+  },
+  {
+    "slug": "tacu-tacu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tacu tacu kaynakları soğanla birlikte sarımsak ve aji amarillo kullanımını veriyor, mevcut listede sarımsak yok.",
+      "Step 2 genel şablon cümle, tarifin gerçek akışına bilgi katmıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Aji amarillo ezmesi", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 2, "instruction": "Sarımsak ve aji amarillo ezmesini soğana ekleyip kokusu çıkana kadar çevirin.", "timerSeconds": 60 }
+      ]
+    },
+    "sources": [
+      "https://www.peru.travel/gastronomy/en/recipes/main-dishes/tacu-tacu.html",
+      "https://www.eatperu.com/tacu-tacu/"
+    ],
+    "confidence": "high",
+    "reason": "Pirinç, fasulye ve yumurtalı servis doğru; Peru kaynaklarındaki sarımsak ve aji amarillo tabanı eksik."
+  },
+  {
+    "slug": "tacu-tacu-sebzeli-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Vegan etiketli tarifin servis önerisinde yoğurt var.",
+      "Peru kaynakları tacu tacu tabanında sarımsak kullanımını destekliyor, mevcut listede yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" }
+      ],
+      "servingSuggestion": "Salsa criolla, maydanoz ve lime dilimiyle sıcak servis edin."
+    },
+    "sources": [
+      "https://www.goya.com/en/recipes/tacu-tacu/",
+      "https://www.eatperu.com/tacu-tacu/"
+    ],
+    "confidence": "high",
+    "reason": "Pirinç, fasulye ve aji amarillo yapısı doğru; vegan etiketi yoğurtlu servisle bozuluyor."
+  },
+  {
+    "slug": "taflan-serbeti-ordu-usulu",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.yasemin.com/saglik/haber/2961097-taflankarayemis-nedir-taflanin-faydalari-nelerdir-karadenizin-sifa-deposu-karayemis",
+      "https://www.sahrapsoysal.com/reyhan-serbeti-tarifi-t-5934"
+    ],
+    "confidence": "medium",
+    "reason": "Karayemişin Karadeniz bağlamı ve şerbet tekniği makul; limonlu, şekerli ve süzülen içecek olarak belirgin çelişki yok."
+  },
+  {
+    "slug": "taflan-tursulu-patates-tava-ordu-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Ordu taflan turşusu kaynağı soğanla kavurma verir, patatesli tava kimliği iki kaynakla desteklenemedi.",
+      "Steps tamamen genel aperatif şablonu gibi, patates kızartma ve taflan turşusunu ayrı ekleme akışını anlatmıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 2, "instruction": "Soğanı zeytinyağında yumuşatın, patatesleri ekleyip dışı kızarana kadar pişirin.", "timerSeconds": 600 },
+        { "stepNumber": 3, "instruction": "Taflan turşusunu çekirdeklerinden ayırıp tavaya son aşamada ekleyin." }
+      ]
+    },
+    "sources": [
+      "https://lezzetler.com/taflan-tursusu-kavurmasi-ordu-tarif-110856",
+      "https://ordu.net.tr/yazi/91/kurutulmus-patates-kavurmasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Taflan turşusu Ordu kaynağıyla var; patatesli versiyon özgün tarif gibi değil, yerel uyarlama olarak ele alınmalı."
+  },
+  {
+    "slug": "taflanli-reyhan-serbeti-ordu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 şeker kullanıyor ama ingredient listesinde şeker yok.",
+      "Step 2 içeceği dinlendirmeyi söylüyor; totalMinutes 8 bu beklemeyi karşılamıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Toz şeker", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "totalMinutes": 18
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/reyhan-serbeti-tarifi-t-5934",
+      "https://www.yasemin.com/saglik/haber/2961097-taflankarayemis-nedir-taflanin-faydalari-nelerdir-karadenizin-sifa-deposu-karayemis"
+    ],
+    "confidence": "high",
+    "reason": "Reyhan şerbeti tekniği ve taflan aroması makul; stepteki şeker ve bekleme süresi alanlara yansımamış."
+  },
+  {
+    "slug": "tahin-pekmez-bazlama-tostu-konya-usulu",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/kek-tarifleri/tahin-pekmezli-kek-tarifi",
+      "https://www.sahrapsoysal.com/pekmezli-tahinli-kek-tarifi-t-4087"
+    ],
+    "confidence": "medium",
+    "reason": "Tahin pekmez kahvaltı uyumu ve bazlamayı ısıtıp sürme akışı basit bir tost için makul; alerjenler doğru."
+  },
+  {
+    "slug": "tahin-pekmezli-nevzine-kup-kayseri-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Nevzine kaynakları fırında pişen tahinli, cevizli hamur ve pekmezli şerbet verir; mevcut tarif bisküvili kup.",
+      "Vegan etiketi bisküvi içeriği belirsiz olduğu için riskli, ayrıca klasik nevzine kimliği korunmuyor."
+    ],
+    "corrections": {
+      "description": "Tahin pekmezli nevzine kup, Kayseri nevzinesinin tahin, pekmez ve ceviz tadını bisküvili bardak tatlısına taşıyan bir uyarlamadır.",
+      "tags_remove": ["vegan"]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kayseri-nevzine-tatlisi/",
+      "https://www.cumhuriyet.com.tr/gurme/kayseri-nin-meshur-lezzeti-nevzine-tatlisi-tarifi-2490640"
+    ],
+    "confidence": "high",
+    "reason": "Nevzine kimliği hamur, ceviz, tahin ve pekmezli şerbetle kuruluyor; kup versiyonu ancak uyarlama olarak doğru."
+  },
+  {
+    "slug": "tahin-pekmezli-pankek",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Pankek kaynaklarında süt ve kabartma tozu var, mevcut ingredient listesinde ikisi de eksik.",
+      "Serviste ceviz öneriliyor ama ingredient listesinde ceviz yok; isteğe bağlı servis olduğu için kritik değil."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Süt", "amount": "0.75", "unit": "su bardağı" },
+        { "name": "Kabartma tozu", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": ["SUT"]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/diger-tarifler/tahinli-ve-pekmezli-tarifler/tahinli-ve-cevizli-pankek",
+      "https://yemek.com/tarif/tahin-pekmezli-kek/"
+    ],
+    "confidence": "high",
+    "reason": "Tahinli pankek fikri kaynakla uyumlu; akışkan hamur ve kabarma için süt ile kabartma tozu eksik."
+  },
+  {
+    "slug": "tahin-pekmezli-yulaf",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 tava ısıtma ve yağlama söylüyor, sıcak yulaf kasesi için tencere akışıyla ilgisiz.",
+      "Temel yulaf, süt, tahin, pekmez ve muz kurgusu tutarlı."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 2, "instruction": "Küçük bir tencereyi hazırlayın, yulaf sütle pişerken dibi tutmasın diye karıştırma kaşığını yanında tutun." }
+      ]
+    },
+    "sources": [
+      "https://www.youtube.com/watch?v=mkVoTRJJexA",
+      "https://www.lezzet.com.tr/yemek-tarifleri/diger-tarifler/tahinli-ve-pekmezli-tarifler/tahinli-ve-cevizli-pankek"
+    ],
+    "confidence": "medium",
+    "reason": "Tahinli yulaf yapısı makul; yalnız tava ve yağlama şablonu sıcak yulaf tarifine yanlış düşmüş."
+  },
+  {
+    "slug": "tahin-sos",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.tahin.gen.tr/tahin-sos.html",
+      "https://www.infethiye.net/turkish/tarifler/salatalar/patlican-salatalari.htm"
+    ],
+    "confidence": "high",
+    "reason": "Tahin, limon, sarımsak, su ve tuzla açılan sos kaynaklarla uyumlu; vegan, susam alerjeni ve süre alanları doğru."
+  },
+  {
+    "slug": "tahinli-cevizli-kahvalti-durumu",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.hayalyemekler.com/tahinli-katmer/",
+      "https://www.nefisyemektarifleri.com/kayserinin-tahinli-katmeri/"
+    ],
+    "confidence": "medium",
+    "reason": "Lavaş içinde tahin, ceviz ve pekmez kahvaltılık uyarlama olarak makul; GLUTEN, KUSUYEMIS ve SUSAM alerjenleri tutarlı."
+  },
+  {
+    "slug": "tahinli-elma-tatlisi-konya-usulu",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/polish-apple-cake-szarlotka/",
+      "https://www.kabaktatlisi.gen.tr/tahinli-cevizli-kabak-tatlisi.html"
+    ],
+    "confidence": "medium",
+    "reason": "Fırınlanmış elma, tahin, ceviz, bal ve tarçın tatlı uyumu makul; süreler ve KUSUYEMIS ile SUSAM alerjenleri doğru."
+  },
+  {
+    "slug": "tahinli-incir-muhallebisi-adana-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 tatlıyı soğutmayı söylüyor, totalMinutes bu beklemeyi karşılamıyor.",
+      "Muhallebi kaynakları süt ve pirinç unu veya nişasta ile pişirme yapısını destekliyor."
+    ],
+    "corrections": {
+      "totalMinutes": 54
+    },
+    "sources": [
+      "https://www.icim.com.tr/tarifler/sutlu-irmik-tatlisi-tarifi/",
+      "https://www.hurma.com/hurmali-tatli-tarifleri"
+    ],
+    "confidence": "medium",
+    "reason": "Sütlü taban ve kuru incir uyumu makul; soğutma süresi toplam süreye dahil edilmemiş."
+  },
+  {
+    "slug": "tahinli-incirli-krep-denizli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Servis önerisinde anlamsız ve bağlam dışı 'karmaşık tane ekmek' ifadesi var.",
+      "Krep, tahin ve incir kurgusu kahvaltı uyarlaması olarak makul."
+    ],
+    "corrections": {
+      "servingSuggestion": "İnce sarılmış krepleri ılık tabakta, üstüne tahin çizgisi ve incir parçalarıyla servis edin."
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/diger-tarifler/tahinli-ve-pekmezli-tarifler/tahinli-ve-cevizli-pankek",
+      "https://www.hurma.com/hurmali-tatli-tarifleri"
+    ],
+    "confidence": "medium",
+    "reason": "Krep tekniği ve meyveli tahinli dolgu makul; servis cümlesi tarif bağlamını bozacak kadar hatalı."
+  },
+  {
+    "slug": "tahinli-isotlu-kabak-dip-adiyaman-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tahinli kabak mezesi kaynakla destekleniyor, Adıyaman isotlu yöre kimliği iki kaynakla doğrulanamadı.",
+      "Steps sarımsak, yoğurt ve zeytinyağı olasılığı söylüyor ama mevcut tarif vegan ve bu malzemelerin bir kısmı listede yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kabağı zeytinyağında yumuşayana kadar soteleyip ılıtın.", "timerSeconds": 480 },
+        { "stepNumber": 2, "instruction": "Tahin, limon suyu, sarımsak ve isotu ayrı kapta karıştırın." }
+      ]
+    },
+    "sources": [
+      "https://www.arcelik.com.tr/blog/tahinli-kabak-ezmesi-tarifi",
+      "https://yemek.com/tarif/limonlu-kabak-mezesi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak ve tahin mezesi doğru zeminde; Adıyaman isot kimliği zayıf, ayrıca şablon step listeyle çelişiyor."
+  },
+  {
+    "slug": "tahinli-isotlu-koplenmis-biber-ezme-adiyaman-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Başlıkta 'köplenmiş', description içinde 'köpüklenmiş' geçiyor; kaynak ve mutfak dili közlenmiş bibere işaret ediyor.",
+      "Adıyaman isotlu tahinli biber ezmesi kimliği iki kaynakla doğrulanamadı, mevcut step haşlama şablonu köz biberle uyumsuz."
+    ],
+    "corrections": {
+      "description": "Tahinli isotlu közlenmiş biber ezme, köz kapya biberi tahin ve isotla birleştiren sürülebilir bir meze uyarlamasıdır.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Köz kapya biberleri doğrayıp fazla suyunu süzdürün." },
+        { "stepNumber": 2, "instruction": "Tahin, zeytinyağı ve isotu pürüzsüz bir sos olana kadar karıştırın." }
+      ]
+    },
+    "sources": [
+      "https://www.infethiye.net/turkish/tarifler/salatalar/patlican-salatalari.htm",
+      "https://www.tahin.gen.tr/tahin-sos.html"
+    ],
+    "confidence": "medium",
+    "reason": "Köz biber, tahin ve isot uyarlama olarak makul; ad, yöre ve step akışı hatalı biçimde kurulmuş."
+  },
+  {
+    "slug": "tahinli-kabak-basti-antalya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 kabak ve sarımsağı tencerede çevirmeyi söylüyor ama ingredient listesinde yağ yok.",
+      "Antalya tahinli sebze kurgusu makul, ancak kabak bastı yerel kimliği sınırlı kaynakla destekleniyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.arcelik.com.tr/blog/tahinli-kabak-ezmesi-tarifi",
+      "https://www.tahin.gen.tr/tahin-sos.html"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak, tahin, sarımsak ve limon uyumu makul; tencerede çevirme için yağ ve temel tuz eksik."
+  },
+  {
+    "slug": "tahinli-kabak-mezesi-antalya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 sarımsak veya yoğurt seçeneği söylüyor ama ingredient listesinde sarımsak ve yoğurt yok.",
+      "Vegan etiket korunacaksa yoğurt şablonu çıkarılmalı."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kabağı zeytinyağında suyunu çekene kadar soteleyip ılıtın.", "timerSeconds": 480 },
+        { "stepNumber": 2, "instruction": "Tahin, limon suyu, sarımsak ve tuzu ayrı kapta akışkan hale getirin." }
+      ]
+    },
+    "sources": [
+      "https://www.arcelik.com.tr/blog/tahinli-kabak-ezmesi-tarifi",
+      "https://yemek.com/tarif/limonlu-kabak-mezesi/"
+    ],
+    "confidence": "high",
+    "reason": "Kabak ve tahin mezesi kaynakla uyumlu; yoğurt şablonu vegan tarifte bırakılmamalı."
+  },
+  {
+    "slug": "tahinli-kabak-tatlisi-antalya-usulu",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://antalyacityzone.com/galeri/antalyanin-en-ozel-iki-lezzetinin-tarifi-piyaz-ve-tahinli-kabak-tatlisi/1280",
+      "https://ye-mek.net/amp/tahinli-kabak-tatlisi"
+    ],
+    "confidence": "high",
+    "reason": "Balkabağı, şeker, tahin ve ceviz Antalya kaynaklarıyla uyumlu; SUSAM ve KUSUYEMIS alerjenleri doğru."
+  },
+  {
+    "slug": "tahinli-kapya-biber-dip-urla-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 biberi haşlama şablonuyla anlatıyor, ingredient köz biber tadına daha yakın kapya dip kurgusu veriyor.",
+      "Step 4 yağ gezdirmeyi ima ediyor ama ingredient listesinde zeytinyağı yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kapya biberleri közleyip kabuklarını soyun ve fazla suyunu süzdürün.", "timerSeconds": 900 }
+      ]
+    },
+    "sources": [
+      "https://www.infethiye.net/turkish/tarifler/salatalar/patlican-salatalari.htm",
+      "https://www.tahin.gen.tr/tahin-sos.html"
+    ],
+    "confidence": "medium",
+    "reason": "Tahinli köz sebze dip fikri doğru; haşlama şablonu ve eksik yağ biber mezesi akışını bozuyor."
+  },
+  {
+    "slug": "tahinli-kereviz-salatasi-antalya-bahce-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps limon suyuyla tahini açmayı söylüyor ama ingredient listesinde limon suyu yok.",
+      "Portakal suyu tarif kimliğine uygun olsa da limon olmadan step miktar eşleşmesi bozuluyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.tahin.gen.tr/tahin-sos.html",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/meze-tarifleri/tahinli-ve-cevizli-pancar-mezesi-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Kereviz, tahin, portakal ve zeytinyağı soğuk salata için makul; stepte geçen limon listede eksik."
+  },
+  {
+    "slug": "tahinli-koz-patlican-salatasi-hatay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tahinli patlıcan salatası kaynakla uyumlu, ancak step 3 zeytinyağı söylüyor ve listede zeytinyağı yok.",
+      "Servis önerisi beyaz peynir ekliyor, vegan etiketiyle çelişiyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "servingSuggestion": "Sığ tabakta yayıp üzerine zeytinyağı ve pul biber gezdirerek servis edin."
+    },
+    "sources": [
+      "https://www.infethiye.net/turkish/tarifler/salatalar/patlican-salatalari.htm",
+      "https://www.tahin.gen.tr/tahin-sos.html"
+    ],
+    "confidence": "high",
+    "reason": "Köz patlıcan, tahin, limon ve sarımsak yapısı doğru; vegan etiketi için peynirli servis kaldırılmalı."
+  },
+  {
+    "slug": "tahinli-kuru-elma-lokmasi-nevsehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Vegan etiketli atıştırmalığın servis önerisinde yoğurtlu sos ve ayran var.",
+      "Kuru meyve, tahin, tarçın ve susam lokması kaynaklardaki kuru meyveli tatlı mantığıyla uyumlu."
+    ],
+    "corrections": {
+      "servingSuggestion": "Küçük lokmaları düz tabakta, yanında sıcak çay ve ekstra susamla servis edin."
+    },
+    "sources": [
+      "https://www.hurma.com/hurmali-tatli-tarifleri",
+      "https://www.tahin.gen.tr/tahin-sos.html"
+    ],
+    "confidence": "medium",
+    "reason": "Tahinli kuru meyve lokması makul; vegan tarif süt ürünlü servis önerisi taşımamalı."
+  },
+  {
+    "slug": "tahinli-kuru-elma-tatlisi-nigde-usulu",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.hurma.com/hurmali-tatli-tarifleri",
+      "https://www.kabaktatlisi.gen.tr/tahinli-cevizli-kabak-tatlisi.html"
+    ],
+    "confidence": "medium",
+    "reason": "Kuru meyveyi ıslatıp tahin, bal, tarçın ve cevizle fırınlama tatlı uyarlaması olarak tutarlı; alerjenler doğru."
+  },
+  {
+    "slug": "tahinli-muzlu-gozleme-alanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Servis önerisi yumurta, peynir ve bal-kaymak söylüyor; vegan etiketiyle çelişiyor.",
+      "Step 2 tavayı yağlamayı söylüyor ama ingredient listesinde pişirme yağı yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "servingSuggestion": "Gözlemeyi üçgen kesip sıcak çay ve muz dilimleriyle ılık servis edin."
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/diger-tarifler/tahinli-ve-pekmezli-tarifler/tahinli-ve-cevizli-pankek",
+      "https://www.tahin.gen.tr/tahinli-pekmezli-kek.html"
+    ],
+    "confidence": "medium",
+    "reason": "Tahinli muzlu yufka kahvaltılık uyarlama olarak makul; vegan etiketi süt ürünlü servisle bozuluyor."
+  },
+  {
+    "slug": "tahinli-muzlu-irmik-kasesi-alanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 peynirli doku diyor ama tarifte peynir yok.",
+      "Servis önerisi domates, salatalık ve kahveyle bağlam dışı; tatlımsı irmik kasesi için uygun değil."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 6, "instruction": "Kaseyi bekletmeden servis edin, irmik soğudukça katılaşır." }
+      ],
+      "servingSuggestion": "Üzerine muz dilimleri, tahin çizgisi ve tarçın serperek ılık servis edin."
+    },
+    "sources": [
+      "https://www.icim.com.tr/tarifler/sutlu-irmik-tatlisi-tarifi/",
+      "https://www.youtube.com/watch?v=mkVoTRJJexA"
+    ],
+    "confidence": "medium",
+    "reason": "Sütlü irmik, muz ve tahin kahvaltı kasesi olarak makul; şablon servis ve peynirli doku ifadesi hatalı."
+  },
+  {
+    "slug": "tahinli-nohutlu-piyaz-antalya-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Antalya piyazı kaynakları kuru fasulye, tahinli sos ve yumurta verir; mevcut tarif nohutlu vegan salata.",
+      "Step 3 zeytinyağı söylüyor ama ingredient listesinde zeytinyağı yok."
+    ],
+    "corrections": {
+      "description": "Tahinli nohutlu piyaz, Antalya piyazının tahinli sosundan ilham alan nohutlu bir salata uyarlamasıdır.",
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://ye-mek.net/tarif/tahinli-piyaz",
+      "https://www.rafinera.com/blog/diyet-yemek-tarifleri/antalya-usulu-piyaz-tahinli-piyaz"
+    ],
+    "confidence": "high",
+    "reason": "Antalya piyazı fasulyeli ve çoğu kaynakta yumurtalı; nohutlu vegan tarif ancak açık uyarlama olarak kalmalı."
+  },
+  {
+    "slug": "tahinli-pancar-ezme-kirsehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tahinli pancar ezmesi kaynakla destekleniyor, ancak Kırşehir yöre atfı iki kaynakla netleşmedi.",
+      "Step 2 yoğurt veya zeytinyağı şablonu söylüyor, mevcut vegan listede yoğurt yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 2, "instruction": "Tahin, limon suyu, sarımsak, zeytinyağı ve tuzu pürüzsüz olana kadar karıştırın." }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/tahinli-pancar-ezmesi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/meze-tarifleri/tahinli-ve-cevizli-pancar-mezesi-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Pancar ve tahin ezmesi doğru; vegan içerikte yoğurt şablonu yerine listedeki malzemelerle net sos kurulmalı."
+  },
+  {
+    "slug": "tahinli-patlican-corbasi-hatay-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Kaynaklar tahinli köz patlıcan salatası veya meze yapısını destekliyor, Hatay tahinli patlıcan çorbası iki kaynakla doğrulanamadı.",
+      "Servis önerisi yumurta ekliyor, vegan etiketiyle çelişiyor."
+    ],
+    "corrections": {
+      "description": "Tahinli patlıcan çorbası, köz patlıcan ve tahinli sosu sıcak çorba formuna taşıyan bir ev uyarlamasıdır.",
+      "servingSuggestion": "Sıcak kasede, üzerine zeytinyağı ve köz patlıcan parçalarıyla servis edin."
+    },
+    "sources": [
+      "https://www.infethiye.net/turkish/tarifler/salatalar/patlican-salatalari.htm",
+      "https://www.tahin.gen.tr/tahin-sos.html"
+    ],
+    "confidence": "medium",
+    "reason": "Köz patlıcan ve tahin uyumu gerçek; çorba ve Hatay iddiası kaynakla zayıf, vegan servis de korunmalı."
+  },
+  {
+    "slug": "tahinli-pekmezli-krep-sakarya-usulu",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/diger-tarifler/tahinli-ve-pekmezli-tarifler/tahinli-ve-cevizli-pankek",
+      "https://www.sahrapsoysal.com/pekmezli-tahinli-kek-tarifi-t-4087"
+    ],
+    "confidence": "medium",
+    "reason": "Un, süt, yumurta ile krep ve tahin pekmezli servis kahvaltı uyarlaması olarak tutarlı; alerjenler doğru."
+  },
+  {
+    "slug": "tahinli-peynirli-pide-tekirdag-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tahinli pide kaynakları tatlı veya tahinli hamur işi verir; beyaz peynirli Tekirdağ kimliği iki kaynakla doğrulanamadı.",
+      "Tarif tahinli pide ile peynirli pideyi birleştiriyor, klasik kimlik belirsizleşiyor."
+    ],
+    "corrections": {
+      "description": "Tahinli peynirli pide, klasik tahinli pideye beyaz peynir ekleyen tatlı tuzlu bir fırın işi uyarlamasıdır."
+    },
+    "sources": [
+      "https://www.bursa.com.tr/tr/icerik/tahinli-pide-65/",
+      "https://yemek.com/tarif/kayseri-tahinlisi/"
+    ],
+    "confidence": "medium",
+    "reason": "Tahinli pide geleneği kaynakla var; peynirli Tekirdağ yorumu klasik veya yöresel tarif olarak doğrulanamadı."
+  },
+  {
+    "slug": "tahinli-pide",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tahinli pide kaynaklarında hamurda su kullanılıyor, mevcut ingredient listesinde su yok.",
+      "TipNote 'mayalı hamursa' diye belirsiz başlıyor; tarif zaten mayalı."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ilık su", "amount": "1", "unit": "su bardağı" }
+      ],
+      "tipNote": "Hamuru mayalandıktan sonra nazikçe açmak tahinli katların yırtılmasını önler."
+    },
+    "sources": [
+      "https://www.bursa.com.tr/tr/icerik/tahinli-pide-65/",
+      "https://yemek.com/tarif/kayseri-tahinlisi/"
+    ],
+    "confidence": "high",
+    "reason": "Tahinli pide kimliği doğru; hamur için su eksik ve tip notu belirsiz yazılmış."
+  },
+  {
+    "slug": "tahinli-piyaz-antalya-usulu",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://ye-mek.net/tarif/tahinli-piyaz",
+      "https://www.rafinera.com/blog/diyet-yemek-tarifleri/antalya-usulu-piyaz-tahinli-piyaz"
+    ],
+    "confidence": "high",
+    "reason": "Kuru fasulye, tahin, sarımsak, limon, sirke, zeytinyağı, yumurta ve maydanoz Antalya piyazı kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "tahinli-portakal-cilbiri-antalya-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Çılbır kaynakları yoğurtlu poşe yumurta yapısını temel alır; tahin ve portakal soslu Antalya kimliği doğrulanamadı.",
+      "Tarif çılbır adını taşısa da yoğurt yok ve klasik teknikten uzak."
+    ],
+    "corrections": {
+      "description": "Tahinli portakal çılbırı, poşe yumurtayı tahinli portakal sosuyla servis eden Akdeniz esintili bir kahvaltı uyarlamasıdır."
+    },
+    "sources": [
+      "https://www.tahin.gen.tr/tahin-sos.html",
+      "https://www.sahrapsoysal.com/kayseri-yaglama-sebit-tarifi-t-6374"
+    ],
+    "confidence": "low",
+    "reason": "Poşe yumurta tekniği doğru olsa da çılbır kimliği ve Antalya tahin portakal iddiası zayıf kaynaklı."
+  },
+  {
+    "slug": "tahinli-soganlama-kayseri-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Kayseri kaynakları tahinli pide ve yağlama gibi yemekleri destekliyor; tahinli soğanlama kimliği iki kaynakla doğrulanamadı.",
+      "Mevcut tarif daha çok tahinli soğan mezesi veya sürmelik uyarlama gibi duruyor."
+    ],
+    "corrections": {
+      "description": "Tahinli soğanlama, kavrulmuş soğanı tahin ve zeytinyağıyla birleştiren sürülebilir bir kahvaltılık uyarlamadır."
+    },
+    "sources": [
+      "https://www.gzt.com/lokma/tahinli-suzme-yogurtlu-sogan-mezesi-38381",
+      "https://www.kayseri.com.tr/tr/tat/tahinli-pide"
+    ],
+    "confidence": "low",
+    "reason": "Tahinli soğan mezesi fikri var; Kayseri tahinli soğanlama adıyla yöresel tarif güvenle doğrulanamadı."
+  }
+]

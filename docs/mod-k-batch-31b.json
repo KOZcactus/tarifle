@@ -1,0 +1,944 @@
+[
+  {
+    "slug": "tahinli-susamli-corek-manisa-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tahinli çörek kaynaklarla uyumlu, fakat Manisa atfı iki bağımsız kaynakla net doğrulanamadı.",
+      "Mevcut tarifte mayalı çörek için maya ve şeker yok; bu haliyle kaynaklardaki tahinli çörek yapısından eksik kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Instant maya", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Toz şeker", "amount": "3", "unit": "yemek kaşığı" }
+      ],
+      "prepMinutes": 65,
+      "totalMinutes": 83
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/diger-hamurisi-tarifleri/tahinli-corek-tarifi",
+      "https://www.yuvamaya.com.tr/tahinli-corek-tarifi"
+    ],
+    "confidence": "low",
+    "reason": "Tahinli çörek kimliği doğru, ancak Manisa bağı ve mayalı hamur omurgası eksik. Bu yüzden doğrudan PASS yerine yapısal düzeltme ve düşük güven verildi."
+  },
+  {
+    "slug": "tahinli-uzumlu-corek-ankara-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tahinli çörek kaynaklarda mayalı hamurla hazırlanır, mevcut tarifte maya yok.",
+      "Ankara ve kuru üzümlü varyasyon atfı iki kaynakla doğrulanamadı."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Instant maya", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Toz şeker", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "prepMinutes": 70,
+      "totalMinutes": 92
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/diger-hamurisi-tarifleri/tahinli-corek-tarifi",
+      "https://www.droetker.com.tr/tarifler/r/tahinli-cevizli-corek"
+    ],
+    "confidence": "low",
+    "reason": "Tahinli çörek tekniği kaynaklarla destekleniyor, fakat Ankara ve üzümlü özel kimlik zayıf. Maya eksikliği tarifin çalışmasını doğrudan etkiliyor."
+  },
+  {
+    "slug": "tahinli-yesil-mercimek-salatasi-konya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Yeşil mercimek salatası ve tahin sosu kaynaklarla ayrı ayrı uyumlu, Konya atfı net değil.",
+      "Step 3 zeytinyağı diyor ama ingredient listesinde zeytinyağı yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1.5", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/yesil-mercimek-salatasi-tarifi",
+      "https://www.sigortahaber.com/tahin-soslu-mercimek-salatasi-tarifi-ve-malzemeleri-24446097"
+    ],
+    "confidence": "medium",
+    "reason": "Salata ve tahin sosu kurgusu makul. Eksik yağ ve tuz step metniyle ingredient listesini çeliştiriyor, Konya atfı ise düşük kesinlikte kalıyor."
+  },
+  {
+    "slug": "tahinli-yufka-coregi-ankara-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tahinli yufka böreği kaynaklarla uyumlu, fakat Ankara atfı iki kaynakla kurulamadı.",
+      "Step 3 peynir ve otlardan söz ediyor, ingredient listesinde peynir veya ot yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 3, "instruction": "Tahin, eritilmiş tereyağı ve şekeri kasede pürüzsüz karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Yufkaları tahinli harçla yağlayıp rulo sarın ve tepsiye dizin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.yufka.gen.tr/tahinli-yufka-boregi.html",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/tahinli-corek-yapilisi/4318"
+    ],
+    "confidence": "medium",
+    "reason": "Yufka, tahin, yağ ve şeker yapısı doğru. Hatalı peynirli step temizlenirse tarif uygulanabilir, ancak Ankara etiketi kaynakla güçlü değil."
+  },
+  {
+    "slug": "tahinli-zahterli-yumurta-durumu-antalya-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tahin, zahter ve yumurta dürümü için Antalya usulü diye doğrulanabilir klasik kaynak bulunamadı.",
+      "Tarif uygulanabilir bir kahvaltı uyarlaması olsa da yerel kimlik iddiası kaynak desteği taşımıyor."
+    ],
+    "corrections": {
+      "description": "Tahinli zahterli yumurta dürümü, lavaşa sarılan yumurtayı tahin ve zahterle birleştiren hızlı, aromalı bir kahvaltı uyarlamasıdır."
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/kahvaltilik-tarifleri/yumurta-tarifleri",
+      "https://www.yemek.com/tarif/zahter-salatasi/"
+    ],
+    "confidence": "low",
+    "reason": "Malzemeler kendi başına uyumlu, ancak Antalya usulü diye sunmak doğrulanamadı. En doğru çözüm yerel iddiayı düşürüp uyarlama olarak anlatmak."
+  },
+  {
+    "slug": "tahran-zereshkli-tavuk-pilavi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Zereshk polo ba morgh İran yemeğidir; cuisine kodu me yerine ir olmalı.",
+      "Kaynaklarda tavuk genellikle soğan, safran ve bazen domates salçası ya da zerdeçal ile pişer; mevcut içerik temel ama sade."
+    ],
+    "corrections": {
+      "cuisine": "ir",
+      "ingredients_add": [
+        { "name": "Domates salçası", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Zerdeçal", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://food52.com/recipes/91710-zereshk-polo-ba-morgh-persian-barberry-rice-with-chicken",
+      "https://surfiran.com/mag/zereshk-polo-ba-morgh/"
+    ],
+    "confidence": "high",
+    "reason": "Yemek kimliği net İran. Pirinç, tavuk, zereshk ve safran doğru; cuisine ve tavuk sosu için iki küçük düzeltme yeterli."
+  },
+  {
+    "slug": "taktouka",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Taktouka kaynaklarında paprika, maydanoz veya kişniş sık kullanılır; mevcut tarifte kimyon var ama yeşillik ve paprika eksik.",
+      "Step 3 limon suyu diyor, ingredient listesinde limon yok; bu kaynaklardaki temel salata için şart değil."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tatlı toz biber", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 3, "instruction": "Domates, sarımsak, kimyon ve toz biberi zeytinyağında yumuşayana kadar pişirin.", "timerSeconds": 900 }
+      ]
+    },
+    "sources": [
+      "https://www.177milkstreet.com/recipes/moroccan-pepper-tomato-salad-taktouka",
+      "https://www.moroccan-food.com/taktouka.php"
+    ],
+    "confidence": "high",
+    "reason": "Köz biber, domates, sarımsak ve zeytinyağı doğru. Limonlu sos ifadesi çıkarılıp paprika ve maydanoz eklenirse Fas salatasına yaklaşır."
+  },
+  {
+    "slug": "talas-boregi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Talaş böreği milföy, tavuk ve sebzeli harçla uyumlu.",
+      "Ingredient listesinde tuz, karabiber ve yağ yok; harcı pişirme adımı bu malzemeleri gerektiriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/borek-tarifleri/talas-boregi",
+      "https://www.nefisyemektarifleri.com/talas-boregi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Ana kimlik doğru ve pişirme süresi makul. Harç lezzeti için yağ, tuz ve karabiber ingredient tarafında eksik kalmış."
+  },
+  {
+    "slug": "tallarin-verdes-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tallarines verdes kaynaklarında fesleğene ek olarak ıspanak, sarımsak ve çoğu zaman ceviz veya benzeri kuruyemiş bulunur.",
+      "Mevcut tarifte sos omurgası eksik ve alerjenlerde kuruyemiş yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ispanak", "amount": "2", "unit": "su bardağı" },
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Ceviz içi", "amount": "0.25", "unit": "su bardağı" }
+      ],
+      "allergens_add": ["KUSUYEMIS"]
+    },
+    "sources": [
+      "https://www.bonappetit.com/story/tallarines-verdes",
+      "https://www.eatperu.com/tallarin-verde/"
+    ],
+    "confidence": "high",
+    "reason": "Peru yeşil makarnası kimliği doğru, fakat sosun ıspanaklı ve kuruyemişli karakteri eksik. Düzeltmeler tarifin temel profilini tamamlar."
+  },
+  {
+    "slug": "tamago-sando-japon-kafe-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tamago sando kaynaklarla uyumlu.",
+      "Serving suggestion Türk kahvaltısı ve sahlep bağlamına kaymış, Japon kafe sandviçiyle uyumsuz."
+    ],
+    "corrections": {
+      "servingSuggestion": "Sandviçi kenarları kesilmiş halde ikiye bölün; yanında sade yeşil salata sunun."
+    },
+    "sources": [
+      "https://www.justonecookbook.com/japanese-egg-sandwich-tamago-sando/",
+      "https://www.japanesecooking101.com/tamago-sando-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Yumurta, mayonez ve süt ekmeği yapısı doğru. Sadece servis metni başka bir kahvaltı kalıbından kalmış ve düzeltilmeli."
+  },
+  {
+    "slug": "tamal-en-cazuela",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Küba tamal en cazuela kaynaklarında genellikle domuz eti, soğan, sarımsak, biber, domates sosu, yağ ve taze mısır ya da mısır unu bulunur.",
+      "Mevcut tarif dana kıyma ve çok eksik aromatiklerle klasik kimlikten belirgin uzaklaşıyor."
+    ],
+    "corrections": {
+      "description": "Tamal en cazuela, mısır ve etli harcın tencerede koyu kıvamda piştiği Küba usulü tamaldir.",
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.goya.com/en/recipes/tamal-en-cazuela/",
+      "https://www.cibercuba.com/cocina/recetas/tamal-en-cazuela"
+    ],
+    "confidence": "medium",
+    "reason": "Küba yemeği kimliği net ama mevcut dana uyarlaması klasik domuzlu reçeteden uzak. Aromatik eksikleri giderilse de kimlik riski yüksek."
+  },
+  {
+    "slug": "tamale",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tamale için masa harina, tavuk, sıvı ve mısır yaprağı doğru.",
+      "Masa hamurunda tuz ve kabartma tozu eksik; kaynaklarda hamurun hafifliği için tuz ve yağ dengesi vurgulanır."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kabartma tozu", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.allrecipes.com/article/how-to-make-tamales/",
+      "https://www.thespruceeats.com/all-about-tamales-3029232"
+    ],
+    "confidence": "high",
+    "reason": "Temel tamale yapısı doğru. Hamurun lezzet ve doku dengesi için tuz ve kabartma tozu eklenmeli."
+  },
+  {
+    "slug": "tandir-biberli-bulgur-kapama-batman-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Etli bulgur kapama yapısı makul, fakat Batman tandır biberli bulgur kapama adıyla doğrulanabilir kaynak bulunamadı.",
+      "Tandır vurgusu mevcut adımlarda yok; tarif tencere pilavı gibi çalışıyor."
+    ],
+    "corrections": {
+      "description": "Biberli bulgur kapama, kuşbaşı eti domates ve biberle pişirip bulgurla aynı tencerede dinlendiren doyurucu bir ana yemektir."
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/pilav-ve-makarna-tarifleri/bulgur-pilavi-tarifleri",
+      "https://www.nefisyemektarifleri.com/etli-bulgur-pilavi-tarifi/"
+    ],
+    "confidence": "low",
+    "reason": "Teknik olarak etli bulgur yemeği çalışabilir, ancak Batman ve tandır kimliği kaynakla doğrulanamadığı için yerel iddia sorunlu."
+  },
+  {
+    "slug": "tandir-boregi-kars-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tandır böreği adı farklı yörelerde geçse de Kars usulü bu yufkalı tepsi böreği için iki güvenilir kaynak bulunamadı.",
+      "Mevcut adımlarda gerçek tandır tekniği yok; fırında peynirli börek gibi anlatılıyor."
+    ],
+    "corrections": {
+      "description": "Tandır böreği uyarlaması, yufka katlarını peynirli iç ve sütlü sosla fırında kızartan doyurucu bir tepsi böreğidir."
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/borek-tarifleri",
+      "https://www.nefisyemektarifleri.com/peynirli-tepsi-boregi-tarifi/"
+    ],
+    "confidence": "low",
+    "reason": "Malzeme kombinasyonu yenebilir bir börek verir, fakat Kars ve tandır iddiası kaynaklı değil. Uyarlama olarak düzeltilmesi gerekir."
+  },
+  {
+    "slug": "tandir-ekmeginde-kavurmali-yumurta-van-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tandır ekmeği, kavurma ve yumurta kahvaltı tabağı olarak tutarlı.",
+      "Van usulü iddiası zayıf; ayrıca SUT alerjeni tereyağından geliyor ve doğru."
+    ],
+    "corrections": {
+      "description": "Tandır ekmeğinde kavurmalı yumurta, sıcak ekmeği kavurma ve yumurtayla buluşturan güçlü, pratik bir kahvaltı tabağıdır."
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/kavurmali-yumurta/",
+      "https://www.nefisyemektarifleri.com/kavurmali-yumurta-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Yumurta ve kavurma tekniği doğru. Van atfı kaynakla güçlenmediği için açıklamada yerel iddia azaltılmalı."
+  },
+  {
+    "slug": "tandir-ekmekli-fasulye-ezmesi-bingol-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Fasulye ezmesi ve ekmekle kıvam verme mümkün, fakat Bingöl tandır ekmekli fasulye ezmesi adı kaynaklarda doğrulanamadı.",
+      "SOS type içinde tandır ekmeğiyle doyurucu ana eşlikçi gibi duruyor, kategori ve yerel kimlik zayıf."
+    ],
+    "corrections": {
+      "description": "Tandır ekmekli fasulye ezmesi, haşlanmış kuru fasulyeyi sarımsak, zeytinyağı ve ekmekle koyulaştıran pratik bir sofra ezmesidir."
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/fasulye-ezmesi/",
+      "https://www.nefisyemektarifleri.com/kuru-fasulye-ezmesi/"
+    ],
+    "confidence": "low",
+    "reason": "Fasulye ezmesi fikri uygulanabilir, ancak Bingöl ve tandır ekmeği kimliği güçlü kaynak taşımıyor. Yerel iddia azaltılmalı."
+  },
+  {
+    "slug": "tandir-otlu-gozleme-sirnak-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Otlu gözleme kaynaklarla uyumlu bir Türk hamur işi, fakat Şırnak tandır usulü özel kimlik doğrulanamadı.",
+      "Mevcut tarif tavada pişiyor; tandır vurgusu ad ve açıklamada kalıyor."
+    ],
+    "corrections": {
+      "description": "Otlu gözleme, ince açılmış hamurun karışık otlarla doldurulup tavada pişirilmesiyle hazırlanan hafif bir kahvaltılık hamur işidir."
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/otlu-gozleme/",
+      "https://www.nefisyemektarifleri.com/otlu-gozleme-tarifi/"
+    ],
+    "confidence": "low",
+    "reason": "Gözleme reçetesi çalışır, ancak Şırnak ve tandır iddiası desteklenmedi. Açıklama tavada otlu gözleme olarak sadeleştirilmeli."
+  },
+  {
+    "slug": "tangyuan",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tangyuan için yapışkan pirinç unu, su ve siyah susam dolgusu doğru.",
+      "Siyah susam dolgusunda yağ veya tereyağı benzeri bağlayıcı kaynaklarda bulunur; mevcut susam ezmesi bunu karşılıyorsa sorun az, ama net değil."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Susam yağı", "amount": "1", "unit": "tatlı kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.chinasichuanfood.com/tang-yuan-recipe-black-sesame-filling/",
+      "https://www.siftandsimmer.com/black-sesame-tang-yuan-glutinous-rice-balls/"
+    ],
+    "confidence": "high",
+    "reason": "Tatlı kimliği doğru. Dolgunun daha akışkan ve bağlı olması için az yağ eklemek kaynaklardaki siyah susam içiyle uyumlu."
+  },
+  {
+    "slug": "tantanmen",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tantanmen için ramen, kıyma, susam ezmesi ve soya doğru.",
+      "Kaynaklarda etli harç ve çorba tabanı için sarımsak, zencefil, chili yağı veya miso gibi aromalar bulunur; mevcut liste çok eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Taze zencefil", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Chili yağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tavuk suyu", "amount": "4", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://qbcooks.com/tantanmen-recipe/",
+      "https://maruchan.com/recipes/wonton/tantanmen-ramen"
+    ],
+    "confidence": "high",
+    "reason": "Japon susamlı ramen kimliği doğru. Aromatik ve çorba sıvısı eklenmeden tarif kasede gerçek tantanmen profiline ulaşmıyor."
+  },
+  {
+    "slug": "tantuni",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Mersin tantunisi kaynaklarda haşlanıp sacda yağ ve baharatla çevrilen ince et dürümüdür; mevcut tarif bu yapıyı karşılıyor.",
+      "Ingredient listesinde tuz, yağ ve maydanoz yok; tantuni servisinde maydanoz sık kullanılır."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Pamuk yağı veya sıvı yağ", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Tantuni",
+      "https://www.nefisyemektarifleri.com/tantuni-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Tantuni kimliği doğru. Yağ, tuz ve maydanoz eksikleri giderilirse malzeme listesi pişirme ve servisle tutarlı olur."
+  },
+  {
+    "slug": "tantunili-nohut-salatasi-mersin-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tantuni ve nohut salatası ayrı ayrı anlaşılır, fakat Mersin usulü tantunili nohut salatası için güvenilir kaynak bulunamadı.",
+      "Step metinlerinde zeytinyağı, limon ve tuz geçiyor, ingredient listesinde bunlar yok."
+    ],
+    "corrections": {
+      "description": "Tantunili nohut salatası, baharatlı dana etini haşlanmış nohut, soğan ve yeşillikle birleştiren sıcak salata uyarlamasıdır.",
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1.5", "unit": "yemek kaşığı" },
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Tantuni",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/nohut-salatasi"
+    ],
+    "confidence": "low",
+    "reason": "Uyarlama olarak yenebilir, fakat yerel klasik gibi sunulması doğru değil. Step içindeki sos malzemeleri de listede eksik."
+  },
+  {
+    "slug": "tapioca-crepe",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.vogue.com/article/gluten-free-healthy-tapioca-crepes",
+      "https://www.foodandwine.com/a-brazilian-feast-with-junior-borges-8644764"
+    ],
+    "confidence": "high",
+    "reason": "Brezilya tapioca crepe yapısı, nemlendirilmiş tapyoka nişastası ve tavada pişirme tekniğiyle uyumlu. Peynirli tuzlu dolgu da doğal."
+  },
+  {
+    "slug": "taratorlu-kabak-corbasi-mersin-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tarator ve kabak çorbası ayrı ayrı destekleniyor, fakat Mersin taratorlu kabak çorbası kimliği iki kaynakla doğrulanamadı.",
+      "Step 1 tahinli karışım diyor, ingredient listesinde tahin yok; servis de bruşetta gibi bağlam dışı."
+    ],
+    "corrections": {
+      "description": "Taratorlu kabak çorbası, haşlanmış kabağı yoğurt, ceviz ve sarımsakla buluşturan serin, hafif bir çorba uyarlamasıdır.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kabağı küçük doğrayın; yoğurt, ceviz ve sarımsağı ayrı kasede pürüzsüz karıştırın.", "timerSeconds": null },
+        { "stepNumber": 6, "instruction": "Çorbayı limon yerine yoğurtlu tarator dengesiyle sıcak ya da ılık servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/kabak-corbasi/",
+      "https://www.nefisyemektarifleri.com/tarator-soslu-kabak/"
+    ],
+    "confidence": "low",
+    "reason": "Kabak ve tarator uyumu mantıklı, ancak Mersin kimliği ve tahinli step hatası tarif güvenini düşürüyor. Uyarlama dili daha doğru."
+  },
+  {
+    "slug": "taratorlu-kabak-mucveri-mugla-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Kabak mücveri ve yoğurtlu cevizli tarator sos uyumlu.",
+      "Ingredient listesinde kızartma için yağ, yeşillik, tuz ve sarımsak yok; kaynaklardaki mücver ve tarator yapısı bunları bekler."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Dereotu", "amount": "0.25", "unit": "demet" },
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" },
+        { "name": "Kızartma yağı", "amount": "0.5", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/kabak-mucveri/",
+      "https://www.nefisyemektarifleri.com/kabak-mucveri-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Mücver yapısı doğru, tarator sos fikri de uyumlu. Temel lezzet ve kızartma malzemeleri eksik olduğu için düzeltme gerekli."
+  },
+  {
+    "slug": "tarcinli-ananas-kup-peru-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Ananas, yoğurt, bal ve tarçınlı kup için Peru usulü doğrulanabilir kaynak bulunamadı.",
+      "Tarif sağlıklı kup uyarlaması gibi duruyor; ülke atfı yanıltıcı olabilir."
+    ],
+    "corrections": {
+      "description": "Tarçınlı ananas kup, ananası yoğurt, bal ve tarçınla birleştiren hafif, serin ve hızlı bir kaşık tatlısı uyarlamasıdır."
+    },
+    "sources": [
+      "https://www.eatperu.com/peruvian-desserts/",
+      "https://www.yemek.com/tarif/ananasli-yogurtlu-kup/"
+    ],
+    "confidence": "low",
+    "reason": "Malzemeler uyumlu fakat Peru mutfağına özgü kimlik bulunamadı. Yerel atıf kaldırılıp kup tatlısı olarak sunulmalı."
+  },
+  {
+    "slug": "tarcinli-erik-kremasi-polonya-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Polonya mutfağında erik ve nişastalı tatlılar var, ancak bu sütlü erik kreması için net geleneksel kaynak bulunamadı.",
+      "Tarif budyn benzeri bir uyarlama gibi duruyor; Polonya usulü iddiası zayıf."
+    ],
+    "corrections": {
+      "description": "Tarçınlı erik kreması, sütlü nişasta tabanını erik ve tarçınla koyulaştıran yumuşak bir kaşık tatlısı uyarlamasıdır."
+    },
+    "sources": [
+      "https://www.polonist.com/polish-plum-recipes/",
+      "https://www.yemek.com/tarif/erikli-muhallebi/"
+    ],
+    "confidence": "low",
+    "reason": "Erik kullanımı bölgesel olarak makul, ancak mevcut sütlü krema Polonya klasiği diye doğrulanmadı. Uyarlama anlatımı daha güvenli."
+  },
+  {
+    "slug": "tarcinli-etli-erik-tavasi-mardin-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Kuzu ve kuru erik tatlı-tuzlu yemeklerde uyumlu, fakat Mardin tarçınlı etli erik tavası adı iki kaynakla doğrulanamadı.",
+      "Ingredient listesinde tuz ve yağ yok; tava yemeği için temel eksikler var."
+    ],
+    "corrections": {
+      "description": "Tarçınlı etli erik tavası, kuzu etini kuru erik ve soğanla tatlı-tuzlu dengede pişiren aromalı bir tava uyarlamasıdır.",
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/et-yemekleri/kuzu-yemekleri",
+      "https://www.nefisyemektarifleri.com/erikli-et-yemegi/"
+    ],
+    "confidence": "low",
+    "reason": "Tat profili makul, fakat Mardin adıyla kaynaklanmış bir klasik görünmüyor. Temel tuz ve yağ da listede eksik."
+  },
+  {
+    "slug": "tarcinli-mor-misir-muhallebisi-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Bu tarif Peru mazamorra morada yapısına yakın.",
+      "Kaynaklarda mor mısır suyu genellikle meyve, lime ve kuru meyveyle zenginleşir; mevcut sade versiyon çalışır ama Peru kimliği için limon suyu eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Kuru erik", "amount": "0.25", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.eatperu.com/mazamorra-morada-purple-corn-pudding/",
+      "https://www.amigofoods.com/blogs/peruvian-recipes-recetas-peruanas/mazamorra-morada"
+    ],
+    "confidence": "high",
+    "reason": "Mor mısır, tarçın, karanfil ve nişasta doğru temel. Peru mazamorra morada profili için asit ve meyve desteği eklenmeli."
+  },
+  {
+    "slug": "tarcinli-quinoa-puding-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Peru quinua con leche kaynakları quinoa, süt, şeker ve baharatla uyumlu.",
+      "Kaynaklarda karanfil ya da vanilya gibi ek aroma sık görülür; mevcut tarif temel ama biraz eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Karanfil", "amount": "2", "unit": "adet" },
+        { "name": "Vanilya", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.eatperu.com/quinoa-con-leche-pudding/",
+      "https://perudelights.com/quinoa-pudding-quinua-con-leche"
+    ],
+    "confidence": "high",
+    "reason": "Peru quinoa pudingi kimliği doğru. Karanfil ve vanilya küçük ama kaynaklarla uyumlu bir aroma tamamlaması sağlar."
+  },
+  {
+    "slug": "tarcinli-sicak-elma",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.yemek.com/tarif/sicak-elma-suyu/",
+      "https://www.allrecipes.com/recipe/211772/hot-apple-cider/"
+    ],
+    "confidence": "high",
+    "reason": "Elma suyu, tarçın ve elma dilimiyle sıcak içecek yapısı doğru. Süre, type ve vegan alerjen durumu tutarlı."
+  },
+  {
+    "slug": "tarhana-corbasi-kahramanmaras-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tarhana çorbası yapısı doğru.",
+      "Kaynaklarda salça, sarımsak veya nane sık kullanılır; mevcut tarifte pul biber var ama salça ve sarımsak eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Domates salçası", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/tarhana-corbasi/",
+      "https://yemektarifi.co/tarif/tarhana-corbasi-87"
+    ],
+    "confidence": "high",
+    "reason": "Tarhana, su, tereyağı, pul biber ve tuz temel olarak doğru. Salça ve sarımsak eklenince kaynaklardaki klasik çorba profili tamamlanır."
+  },
+  {
+    "slug": "tarhanali-kofte-tava-usak-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tarhanalı köfte tava adıyla Uşak yöresine ait net kaynak bulunamadı.",
+      "Köfte için tuz, baharat ve bağlayıcı yok; sadece kıyma, soğan ve tarhana ile yapı zayıf."
+    ],
+    "corrections": {
+      "description": "Tarhanalı köfte tava, dana kıymalı küçük köfteleri ekşi tarhana sosuyla pişiren koyu kıvamlı bir tava yemeği uyarlamasıdır.",
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Yumurta", "amount": "1", "unit": "adet" }
+      ],
+      "allergens_add": ["YUMURTA"]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kofte/",
+      "https://www.nefisyemektarifleri.com/kofte-tarifi/"
+    ],
+    "confidence": "low",
+    "reason": "Tarhana soslu köfte uyarlaması mümkün, ancak Uşak yöresel kimliği doğrulanmadı. Köfte harcı da temel bağlayıcı ve baharattan yoksun."
+  },
+  {
+    "slug": "tarhanali-mercimek-corbasi-usak-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tarhanalı mercimek çorbası kaynaklarla uyumlu.",
+      "Step 1 yarım su bardağı mercimek ve step 2 dört yemek kaşığı tarhana diyor; ingredient listesinde bir su bardağı mercimek ve üç yemek kaşığı tarhana var."
+    ],
+    "corrections": {
+      "ingredients_amount_change": [
+        { "name": "Kırmızı mercimek", "newAmount": "0.5", "newUnit": "su bardağı" },
+        { "name": "Tarhana", "newAmount": "4", "newUnit": "yemek kaşığı" }
+      ],
+      "ingredients_add": [
+        { "name": "Nane", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.beyorganik.com/yesil-mercimekli-tarhana-corbasi-tarifi",
+      "https://yemek.com/tarif/tarhana-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Çorba fikri doğru, fakat step ve ingredient ölçüleri çelişiyor. Nane de stepte var ama listede eksik."
+  },
+  {
+    "slug": "tarhanali-nohut-corbasi-kahramanmaras-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Maraş tarhanası ve nohutlu çorba fikri bölgesel olarak makul.",
+      "Step 2 biber salçası diyor, ingredient listesinde salça yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Biber salçası", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/tarhana-corbasi/",
+      "https://www.nefisyemektarifleri.com/nohutlu-tarhana-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Tarhana, nohut, nane ve tereyağı uyumlu. Stepte geçen salça ve temel tuz listede bulunmadığı için düzeltme gerekir."
+  },
+  {
+    "slug": "tarhanali-yesil-mercimek-corbasi-ankara-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Yeşil mercimekli tarhana çorbası kaynaklarla uyumlu.",
+      "Step 3 tereyağı, sarımsak ve salça diyor ama ingredient listesinde yok.",
+      "Tarhana çoğunlukla yoğurt içerir; vegan tag ve sadece GLUTEN alerjeni riskli."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Domates salçası", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "tags_remove": ["vegan"],
+      "allergens_add": ["SUT"]
+    },
+    "sources": [
+      "https://www.beyorganik.com/yesil-mercimekli-tarhana-corbasi-tarifi",
+      "https://yemek.com/tarif/tarhana-corbasi/"
+    ],
+    "confidence": "high",
+    "reason": "Çorba kimliği doğru. Stepte kullanılan tereyağı, sarımsak ve salça listede yok; tarhana ve tereyağı nedeniyle vegan etiketi uygun değil."
+  },
+  {
+    "slug": "tarka-dal",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tarka dal için kırmızı mercimek, sarımsak, kimyon ve yağ doğru omurga.",
+      "Ingredient adı tereyağı yerine sıvı yağ olduğu için SUT alerjeni gereksiz.",
+      "Soğan, zencefil, zerdeçal ve tuz gibi temel dal aromaları eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Taze zencefil", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Zerdeçal", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "allergens_remove": ["SUT"],
+      "tags_add": ["vegan"]
+    },
+    "sources": [
+      "https://www.tilda.com/recipes/tarka-daal/",
+      "https://shop.woodlandfoods.com/recipes/masoor-dal-tarka/"
+    ],
+    "confidence": "high",
+    "reason": "Dal kimliği doğru, fakat temel baharat ve alerjen tutarlılığı eksik. Sıvı yağlı versiyon vegan olabilir ve SUT taşımamalı."
+  },
+  {
+    "slug": "tarsus-sikmasi",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.nefisyemektarifleri.com/tarsus-sikmasi-tarifi/",
+      "https://www.yemek.com/tarif/sikma/"
+    ],
+    "confidence": "high",
+    "reason": "Unlu sac ekmeği, peynirli iç ve sıcak sarma tekniği Tarsus sıkmasıyla uyumlu. Süre ve alerjenler de tutarlı."
+  },
+  {
+    "slug": "tarta-de-santiago-minik-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tarta de Santiago için badem unu, şeker, yumurta ve limon kabuğu doğru.",
+      "Step 2 tarçın diyor, ingredient listesinde tarçın yok; kaynaklarda tarçın kullanılan versiyonlar var."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tarçın", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Pudra şekeri", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.carolinescooking.com/tarta-de-santiago/",
+      "https://www.instructables.com/Almond-Cake-Tarta-de-Santiago-Recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Galicia badem keki kimliği doğru. Step ve servis için tarçın ile pudra şekeri ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "tartar-sos",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.foodnetwork.com/recipes/ina-garten/tartar-sauce-recipe-1940881",
+      "https://www.allrecipes.com/recipe/183835/quick-tartar-sauce/"
+    ],
+    "confidence": "high",
+    "reason": "Mayonez, turşu, kapari, dereotu ve limon suyu soğuk tartar sos için doğru malzemeler. Type, süre ve YUMURTA alerjeni tutarlı."
+  },
+  {
+    "slug": "tarte-tatin",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.lecreuset.com/salted-caramel-tarte-tatin/LCR-2949.html",
+      "https://www.madaboutmacarons.com/tarte-tatin-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Elma, şeker, tereyağı ve milföy ile ters tart yapısı doğru. Süre, fırın tekniği ve alerjenler kaynaklarla uyumlu."
+  },
+  {
+    "slug": "tas-kebabi",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.yemek.com/tarif/tas-kebabi/",
+      "https://www.nefisyemektarifleri.com/tas-kebabi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Dana kuşbaşı, soğan, salça, sebze ve uzun tencere pişirme klasik tas kebabı yapısıyla uyumlu. Alerjen ve süre tarafında büyük sorun yok."
+  },
+  {
+    "slug": "tatar-boregi-eskisehir-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Eskişehir Tatar böreği kaynaklarında mantı benzeri hamur, çoğunlukla kıymalı iç ve yoğurtlu sos bulunur.",
+      "Mevcut tarif içsiz haşlanmış hamur parçası gibi; klasik kimliği eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Dana kıyma", "amount": "250", "unit": "gr" },
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Yumurta", "amount": "1", "unit": "adet" }
+      ],
+      "allergens_add": ["YUMURTA"],
+      "tags_remove": ["vejetaryen"]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/tatar-boregi-tarifi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/borek-tarifleri/tatar-boregi"
+    ],
+    "confidence": "medium",
+    "reason": "Mevcut yemek Tatar böreği kimliğini tam taşımıyor. Kıymalı iç ve yumurtalı hamur eklenmeden Eskişehir iddiası zayıf kalır."
+  },
+  {
+    "slug": "tatli-eksi-tavuk",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tarif açıklaması Kanton lokantası klasiği diyor, cuisine kodu tr kalmış.",
+      "Kaynaklarda tatlı ekşi tavukta biber ve çoğu zaman nişasta ile sos koyulaştırma bulunur; mevcut listede biber ve nişasta yok."
+    ],
+    "corrections": {
+      "cuisine": "cn",
+      "ingredients_add": [
+        { "name": "Kapya biber", "amount": "1", "unit": "adet" },
+        { "name": "Mısır nişastası", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Ketçap", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.food.com/recipe/sweet-sour-chicken-with-pineapple-94996",
+      "https://www.bowlofdelicious.com/sweet-and-sour-chicken/"
+    ],
+    "confidence": "high",
+    "reason": "Tatlı ekşi tavuk kimliği Çin esintili ve ananaslı sosla doğru. Cuisine kodu ve sos sebze eksikleri düzeltilmeli."
+  },
+  {
+    "slug": "tava-coregi-beypazari-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Beypazarı tava çöreği adıyla doğrulanabilir iki kaynak bulunamadı.",
+      "Mayalı peynirli tava çöreği çalışabilir, fakat yerel Ankara iddiası kaynak desteği taşımıyor."
+    ],
+    "corrections": {
+      "description": "Tava çöreği, mayalı hamurun peynir ve zeytinle tavada kapağı kapalı pişirilmesiyle hazırlanan yumuşak içli bir hamur işidir."
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/tava-coregi/",
+      "https://www.yemek.com/tarif/tavada-bazlama/"
+    ],
+    "confidence": "low",
+    "reason": "Teknik olarak uygulanabilir, ancak Beypazarı özel kimliği doğrulanmadı. Yerel iddia düşürülürse tarif daha güvenli olur."
+  },
+  {
+    "slug": "tavali-katmer-kayseri-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tavada katmer tekniği doğru.",
+      "Kayseri usulü iddiası net değil; ayrıca kaymak servis önerisinde ve ingredientte olduğu için SUT doğru."
+    ],
+    "corrections": {
+      "description": "Tavalı katmer, yağlanan ince hamur katlarının tavada çevrilerek dışı çıtır, içi yumuşak pişirildiği sade bir kahvaltılıktır."
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/tavada-katmer-tarifi/",
+      "https://www.yemek.com/tarif/katmer/"
+    ],
+    "confidence": "medium",
+    "reason": "Katmer tekniği tutarlı, ancak Kayseri atfı kaynakla güçlenmedi. Açıklamada yerel iddia azaltılmalı."
+  },
+  {
+    "slug": "tavuk-doner",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ev usulü tavuk döner için yoğurtlu marine, tavuk but ve baharatlar doğru.",
+      "Step 3 dondurucuda iki saat dinlendirme içeriyor, totalMinutes 45 olduğu için süre çelişkisi var.",
+      "Serviste lavaş deniyor ama ingredient listesinde lavaş yok."
+    ],
+    "corrections": {
+      "totalMinutes": 165,
+      "ingredients_add": [
+        { "name": "Lavaş", "amount": "4", "unit": "adet" }
+      ],
+      "allergens_add": ["GLUTEN"]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/ev-yapimi-tavuk-doner/",
+      "https://www.nefisyemektarifleri.com/evde-tavuk-doner-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Döner kimliği doğru, ancak bekleme süresi toplam zamana yansımamış. Lavaş servisi de ingredient ve alerjen tarafına eklenmeli."
+  },
+  {
+    "slug": "tavuk-gogsu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tavuk göğsü tatlısı için tavuk, süt, şeker, pirinç unu ve nişasta doğru.",
+      "Step 6 iki saat soğutma içeriyor, totalMinutes 60 bunu yansıtmıyor.",
+      "Serviste tarçın deniyor ama ingredient listesinde tarçın yok."
+    ],
+    "corrections": {
+      "totalMinutes": 180,
+      "ingredients_add": [
+        { "name": "Tarçın", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/sariyerin-tavuk-gogsu-tatlisi-tarifi-t-5133",
+      "https://www.nefisyemektarifleri.com/gercek-tavuk-gogsu-tatlisi/"
+    ],
+    "confidence": "high",
+    "reason": "Osmanlı sütlü tatlı kimliği doğru. Soğutma süresi toplam sürede görünmeli ve tarçın ingredient olarak eklenmeli."
+  },
+  {
+    "slug": "tavuk-kapama",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.banvit.com/tarifler/tavuk-kapama",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/tavuk-buryan-kapama/7041"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, pirinç, tavuk suyu ve fırın ya da tencere kapama yapısı doğru. Süre, tereyağı alerjeni ve servis önerisi tutarlı."
+  },
+  {
+    "slug": "tavuk-kapama-edirne-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tavuk kapama için tavuk, pirinç, tereyağı ve tavuk suyu gerekir; mevcut ingredient listesinde tavuk suyu yok.",
+      "Cacık ingredient olarak değil servis eşliği olarak durmalı."
+    ],
+    "corrections": {
+      "ingredients_remove": ["Cacık"],
+      "ingredients_add": [
+        { "name": "Tavuk suyu", "amount": "3", "unit": "su bardağı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Soğan", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://www.banvit.com/tarifler/tavuk-kapama",
+      "https://www.pogacatarifi.com/tavuk-kapama-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kapama kimliği doğru. Tavuk suyunun ingredientte olmaması büyük eksik, cacık ise ana tarif değil servis yanıdır."
+  },
+  {
+    "slug": "tavuk-katsu",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://norecipes.com/chicken-katsu/",
+      "https://paqupeljapan.com/recipes/chicken-katsu"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk göğsü, un, yumurta ve panko kaplaması Japon tavuk katsu yapısıyla uyumlu. SOYA alerjeni sos bağlamında kabul edilebilir."
+  }
+]

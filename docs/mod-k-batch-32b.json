@@ -1,0 +1,986 @@
+[
+  {
+    "slug": "terbiyeli-nohut-corbasi-antalya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1, ingredient listesindeki 2 su bardağı nohut yerine 1 su bardağı nohut kullanıyor.",
+      "Step 5 tereyağı ve pul biber kullanıyor, fakat ikisi de ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "2 su bardağı haşlanmış nohudu 4 su bardağı sıcak suda kaynatın.", "timerSeconds": 480 },
+        { "stepNumber": 5, "instruction": "Tuzunu ayarlayın, pul biberli tereyağını 45 saniye kızdırıp üstüne gezdirin.", "timerSeconds": 45 }
+      ]
+    },
+    "sources": [
+      "https://www.nohut.gen.tr/terbiyeli-nohutlu-yogurt-corbasi-nasil-yapilir.html",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/nohutlu-yogurt-corbasi/9172"
+    ],
+    "confidence": "high",
+    "reason": "Nohutlu terbiyeli çorba yapısı doğru, ancak mevcut adımlar listede olmayan yağ ve biber kullanıyor. Nohut miktarı da ingredient ile eşlenmeli."
+  },
+  {
+    "slug": "terbiyeli-nohut-corbasi-burdur-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 nane ve tereyağı kullanıyor, fakat ikisi de ingredient listesinde yok.",
+      "Step 1, ingredient listesindeki 1.5 su bardağı nohut yerine 1 su bardağı nohut kullanıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Kuru nane", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "1.5 su bardağı haşlanmış nohudu 5 su bardağı sıcak suyla kaynatın.", "timerSeconds": 600 },
+        { "stepNumber": 5, "instruction": "Naneli tereyağını kızdırıp çorbaya dökün, sıcak servis edin.", "timerSeconds": 60 }
+      ]
+    },
+    "sources": [
+      "https://www.nohut.gen.tr/terbiyeli-nohutlu-yogurt-corbasi-nasil-yapilir.html",
+      "https://www.bornovadan.com/2025/07/14/terbiyeli-yogurt-corbasi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurt, yumurta ve unlu terbiye kaynaklarla uyumlu. Eksik olan naneli tereyağı ve nohut miktarı uygulamada hata çıkarıyor."
+  },
+  {
+    "slug": "tereyagli-bezelye-ezmesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps genel scaffold cümleleri içeriyor ve yoğurt, tahin, zeytinyağı gibi listede olmayan malzemeler söylüyor.",
+      "Bezelye, tereyağı, limon ve nane ile ezme tekniği doğru ama mevcut adımlar uygulanabilir değil."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bezelyeyi tuzlu kaynar suda yumuşayana kadar haşlayın.", "timerSeconds": 300 },
+        { "stepNumber": 2, "instruction": "Bezelyeyi süzüp 2 yemek kaşığı haşlama suyunu ayırın, rengi canlı kalsın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Sıcak bezelyeyi tereyağı, limon suyu ve nane yapraklarıyla ezin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Kıvamı sertse ayırdığınız sudan azar azar ekleyip sürülebilir hale getirin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/smashed-minted-peas",
+      "https://food52.com/recipes/3817-pea-mint-puree"
+    ],
+    "confidence": "medium",
+    "reason": "Bezelye ezmesi mantığı kaynaklarla uyumlu, fakat mevcut scaffold adımlar malzeme dışına çıkıyor. Adımlar gerçek bezelye ezmesine çekilmeli."
+  },
+  {
+    "slug": "tereyagli-bulgurlu-kaz-sote-ardahan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 2, 3 ve 6 genel scaffold cümleleri içeriyor.",
+      "Ardahan kazı bulgurla servis edilir, fakat adımlar kaz suyu ve bulgur bağını yeterince kurmuyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kaz suyu veya tavuk suyu", "amount": "2.5", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "ingredients_amount_change": [
+        { "name": "Su", "newAmount": "0", "newUnit": "su bardağı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bulguru yıkayıp süzün, tereyağının yarısında 2 dakika çevirin.", "timerSeconds": 120 },
+        { "stepNumber": 2, "instruction": "Kaz suyu ve tuzu ekleyip kapağı kapalı 12 dakika pişirin.", "timerSeconds": 720 },
+        { "stepNumber": 3, "instruction": "Pişmiş kaz etini ince didikleyin, kalan tereyağında 5 dakika ısıtın.", "timerSeconds": 300 },
+        { "stepNumber": 4, "instruction": "Kaz etini bulgurun üzerine alın ve tencereyi kapatıp 5 dakika dinlendirin.", "timerSeconds": 300 },
+        { "stepNumber": 5, "instruction": "Pilavı ezmeden karıştırın, kaz parçaları üstte kalacak şekilde sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.ardahan.gov.tr/kaz-yemegi",
+      "https://www.ardahanvakfi.org/kaz-etli-icli-pilav/"
+    ],
+    "confidence": "high",
+    "reason": "Ardahan kazında bulgurun kaz suyuyla pişmesi temel unsur. Mevcut tarif doğru yöne yakın, ama scaffold adımlar ve sade su bilgisi düzeltilmeli."
+  },
+  {
+    "slug": "tereyagli-domatesli-bulgur-kayseri-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 2, 3 ve 6 genel scaffold cümleleri içeriyor.",
+      "Bulgur pilavında tuz ingredient listesinde yok, fakat adımlarda tuz dengesi geçiyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Tereyağını eritip bulguru 2 dakika kavurun.", "timerSeconds": 120 },
+        { "stepNumber": 2, "instruction": "Domates rendesini ekleyip suyunun keskin kokusu gidene kadar 3 dakika pişirin.", "timerSeconds": 180 },
+        { "stepNumber": 3, "instruction": "Sıcak su ve tuzu ekleyip bir kez karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Kapağı kapalı şekilde kısık ateşte 15 dakika pişirin.", "timerSeconds": 900 },
+        { "stepNumber": 5, "instruction": "Pilavı ocaktan alıp 5 dakika demlendirin, taneler ezilmesin.", "timerSeconds": 300 }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/pilav-ve-makarna-tarifleri/pilav-tarifleri/domatesli-bulgur-pilavi",
+      "https://www.klasiktatlar.com/domatesli-bulgur-pilavi-19614.html"
+    ],
+    "confidence": "high",
+    "reason": "Domatesli bulgur pilavı oranları makul, fakat genel scaffold adımlar yerine gerçek kavurma, pişirme ve demlenme sırası yazılmalı."
+  },
+  {
+    "slug": "tereyagli-etli-bulgur-pilavi-ardahan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "350 gr dana eti toplam 20 dakika pişirmeyle yumuşamaz.",
+      "Steps 2, 3 ve 6 genel scaffold cümleleri içeriyor."
+    ],
+    "corrections": {
+      "cookMinutes": 45,
+      "totalMinutes": 59,
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Dana etini tereyağının yarısıyla 6 dakika mühürleyin.", "timerSeconds": 360 },
+        { "stepNumber": 2, "instruction": "1 su bardağı sıcak su ekleyip eti kapağı kapalı 25 dakika yumuşatın.", "timerSeconds": 1500 },
+        { "stepNumber": 3, "instruction": "Bulguru, sıcak kalan suyu, tuzu ve karabiberi ekleyin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Pilavı kısık ateşte 14 dakika suyunu çekene kadar pişirin.", "timerSeconds": 840 },
+        { "stepNumber": 5, "instruction": "Kalan tereyağını ekleyip 5 dakika demlendirin.", "timerSeconds": 300 }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/pilav-ve-makarna-tarifleri/pilav-tarifleri/kurutulmus-domates-ve-biberli-etli-bulgur-pilavi",
+      "https://www.ardahan.gov.tr/kaz-yemegi"
+    ],
+    "confidence": "medium",
+    "reason": "Etli bulgur pilavında kısa mühürleme tek başına yetmez. Süre ve adımlar etin yumuşamasını sağlayacak şekilde düzeltilmeli."
+  },
+  {
+    "slug": "tereyagli-karalahana-tava-bartin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 2, 3 ve 6 genel scaffold cümleleri içeriyor.",
+      "Mısır unlu karalahana tavada tuz ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Karalahanayı ince doğrayıp 4 dakika haşlayın ve süzün.", "timerSeconds": 240 },
+        { "stepNumber": 2, "instruction": "Tereyağını tavada eritin, karalahanayı ekleyip 2 dakika çevirin.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Mısır unu, tuz ve suyu ekleyip karışımı tavaya yayın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Kısık ateşte 8 dakika pişirin, altı tutmadan spatulayla toparlayın.", "timerSeconds": 480 },
+        { "stepNumber": 5, "instruction": "Tavayı 5 dakika dinlendirip sıcak servis edin.", "timerSeconds": 300 }
+      ]
+    },
+    "sources": [
+      "https://www.youtube.com/watch?v=W7KTTIQe_6U",
+      "https://www.nefisyemektarifleri.com/misir-unlu-kara-lahana-kavurmasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Karalahana, tereyağı ve mısır unu çizgisi doğru, ancak scaffold adımlar gerçek tava sırasını anlatmıyor. Tuz da listede olmalı."
+  },
+  {
+    "slug": "tereyagli-mantar-eriste-erzurum-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 2, 3 ve 6 genel scaffold cümleleri içeriyor.",
+      "Erişte haşlama ve mantar sote için tuz ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Erişteyi tuzlu kaynar suda 8 dakika haşlayıp süzün.", "timerSeconds": 480 },
+        { "stepNumber": 2, "instruction": "Mantarı dilimleyin ve geniş tavada suyunu salmadan 5 dakika soteleyin.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Tereyağını ve karabiberi ekleyip mantarı 1 dakika daha çevirin.", "timerSeconds": 60 },
+        { "stepNumber": 4, "instruction": "Süzülen erişteyi tavaya alın, tereyağı her yere değene kadar karıştırın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Erişteyi sıcak servis edin, mantar suyunu bırakmadan tabağa çıksın.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/mantarli-eriste/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/makarna-tarifleri/eriste-tarifleri/mantarli-eriste"
+    ],
+    "confidence": "medium",
+    "reason": "Mantar erişte yapısı makul, fakat mevcut adımlar genel kalıp cümlelerden oluşuyor. Uygulanabilir haşlama ve sote sırası yazılmalı."
+  },
+  {
+    "slug": "tereyagli-pazi-diblesi-trabzon-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 2, 3 ve 6 genel scaffold cümleleri içeriyor.",
+      "Pazı diblesinde tuz ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Soğanı tereyağında 4 dakika yumuşayana kadar çevirin.", "timerSeconds": 240 },
+        { "stepNumber": 2, "instruction": "Doğranmış pazıyı ekleyip 3 dakika söndürün.", "timerSeconds": 180 },
+        { "stepNumber": 3, "instruction": "Pirinç, su ve tuzu tencereye alın, bir kez karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Kapağı kapalı şekilde 12 dakika kısık ateşte pişirin.", "timerSeconds": 720 },
+        { "stepNumber": 5, "instruction": "Tencereyi 5 dakika dinlendirip dibleyi sıcak servis edin.", "timerSeconds": 300 }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/pazi-diblesi/",
+      "https://www.kulturportali.gov.tr/turkiye/giresun/neyenir/pazi-diblesi"
+    ],
+    "confidence": "medium",
+    "reason": "Dible tekniği pazı, pirinç ve tereyağıyla uyumlu. Sorun, scaffold adımların tarife özel olmaması ve tuzun listede eksik kalması."
+  },
+  {
+    "slug": "tereyagli-tavuklu-pilav-ardahan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 2, 3 ve 6 genel scaffold cümleleri içeriyor.",
+      "Pilavda tuz ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Tavuk but parçalarını tereyağının yarısıyla 6 dakika soteleyin.", "timerSeconds": 360 },
+        { "stepNumber": 2, "instruction": "Yıkanmış pirinci ekleyip 2 dakika tavukla çevirin.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Sıcak su ve tuzu ekleyip kapağı kapatın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Pilavı kısık ateşte 14 dakika pişirin.", "timerSeconds": 840 },
+        { "stepNumber": 5, "instruction": "Kalan tereyağını ekleyip 5 dakika dinlendirin.", "timerSeconds": 300 }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/tavuklu-pilav-tarifi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/pilav-ve-makarna-tarifleri/pilav-tarifleri/tavuklu-pilav"
+    ],
+    "confidence": "high",
+    "reason": "Tavuklu pilav oranı ve süresi makul, ancak genel scaffold adımlar tarife özel akışı bozar. Tuz ve gerçek pişirme sırası eklenmeli."
+  },
+  {
+    "slug": "tereyagli-tavuklu-pirinc-tava-hindistan-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Hindistan usulü iddiası kaynakla desteklenmiyor; tarifte soğan, sarımsak, zencefil, garam masala, zerdeçal veya benzeri temel Hint lezzetleri yok.",
+      "Steps 2, 3, 4 ve 6 scaffold cümleleri içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Taze zencefil", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Garam masala", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Soğanı tereyağında 4 dakika yumuşatın.", "timerSeconds": 240 },
+        { "stepNumber": 2, "instruction": "Sarımsak, zencefil ve garam masalayı ekleyip 1 dakika kokusu çıkana kadar çevirin.", "timerSeconds": 60 },
+        { "stepNumber": 3, "instruction": "Küp doğranmış tavuğu ekleyip 6 dakika soteleyin.", "timerSeconds": 360 },
+        { "stepNumber": 4, "instruction": "Pirinç, su ve tuzu ekleyip kapağı kapatın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Kısık ateşte 14 dakika pişirin, sonra 5 dakika dinlendirin.", "timerSeconds": 1140 }
+      ]
+    },
+    "sources": [
+      "https://www.indianhealthyrecipes.com/chicken-pulao/",
+      "https://www.tarladalal.com/chicken-pulao-42001r"
+    ],
+    "confidence": "medium",
+    "reason": "Mevcut içerik sade tavuklu pilav gibi duruyor, Hint mutfağı iddiası zayıf. Bu yüzden mini-rev sırasında kimlik düzeyi kontrol edilmeli."
+  },
+  {
+    "slug": "tereyagli-yesil-mercimekli-ic-pilav-osmaniye-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 2, 3 ve 6 genel scaffold cümleleri içeriyor.",
+      "Pilavda tuz ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Pirinci yıkayıp süzün, tereyağında 2 dakika çevirin.", "timerSeconds": 120 },
+        { "stepNumber": 2, "instruction": "Haşlanmış yeşil mercimeği, sıcak suyu ve tuzu ekleyin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Kapağı kapalı şekilde kısık ateşte 14 dakika pişirin.", "timerSeconds": 840 },
+        { "stepNumber": 4, "instruction": "Pilavı ocaktan alıp 5 dakika demlendirin.", "timerSeconds": 300 },
+        { "stepNumber": 5, "instruction": "Mercimekler ezilmeden hafifçe karıştırıp sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/yesil-mercimekli-pilav/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/pilav-ve-makarna-tarifleri/pilav-tarifleri/yesil-mercimekli-pilav"
+    ],
+    "confidence": "high",
+    "reason": "Yeşil mercimekli pirinç pilavı yapısı doğru, fakat scaffold adımlar tarife özel değil. Tuz ve gerçek pilav sırası eklenmeli."
+  },
+  {
+    "slug": "teriyaki-tavuk",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Japon teriyaki sosunun temelinde soya sosu, mirin, sake ve şeker bulunur; mevcut listede mirin ve sake yok.",
+      "Step 2, 3 ve 6 genel scaffold cümleleri içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Mirin", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Sake", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Tavuk kalçaları tavada 10 dakika iki yüzü renk alana kadar kızartın.", "timerSeconds": 600 },
+        { "stepNumber": 2, "instruction": "Soya sosu, mirin, sake, bal, zencefil ve sarımsağı ayrı kapta karıştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Sosu tavaya ekleyip 6 dakika koyulaşana kadar tavuğu çevirerek pişirin.", "timerSeconds": 360 },
+        { "stepNumber": 4, "instruction": "Tavuğu 3 dakika dinlendirip dilimleyin.", "timerSeconds": 180 },
+        { "stepNumber": 5, "instruction": "Üzerine susam serpip sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://norecipes.com/teriyaki-chicken-recipe/",
+      "https://kazukosrecipes.com/2021/01/29/teriyaki-chicken/"
+    ],
+    "confidence": "high",
+    "reason": "Teriyaki kimliği doğru, ancak mirin ve sake eksikliği lezzet temelini zayıflatıyor. Scaffold adımlar da gerçek sos sırasına çevrilmeli."
+  },
+  {
+    "slug": "texas-chili-con-carne",
+    "verdict": "PASS",
+    "sources": [
+      "https://creativehomemaking.com/recipes/soups/authentic-texas-chili-recipe-no-beans/",
+      "https://recipes.jackiealpers.com/chile-con-carne/"
+    ],
+    "confidence": "high",
+    "reason": "Fasulyesiz Texas chili kimliği, kuru biber püresi, iri dana eti, kimyon, kekik ve masa harina ile kaynaklarla uyumlu. Süreler ve makrolar makul."
+  },
+  {
+    "slug": "thai-milk-tea-granita-tay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Granita dondurma ve kazıma ister, totalMinutes 15 dakika bu yöntemle tutarlı değil.",
+      "Thai milk tea için yoğun sütlü yapı gerekir; mevcut süt var ama yoğunlaştırılmış süt veya Thai tea tabanı eksik."
+    ],
+    "corrections": {
+      "totalMinutes": 245,
+      "ingredients_add": [
+        { "name": "Thai tea yaprağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Yoğunlaştırılmış süt", "amount": "3", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Thai tea yaprağını siyah çayla 5 dakika demleyip süzün.", "timerSeconds": 300 },
+        { "stepNumber": 2, "instruction": "Sıcakken şeker ve yoğunlaştırılmış sütü ekleyip eritin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Sütü karıştırıp sığ kaba alın ve 2 saat dondurun.", "timerSeconds": 7200 },
+        { "stepNumber": 4, "instruction": "Karışımı çatalla kazıyıp 2 saat daha dondurun.", "timerSeconds": 7200 },
+        { "stepNumber": 5, "instruction": "Servisten önce kristalleri tekrar kazıyıp soğuk kaselere paylaştırın.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/coffee-granita-395",
+      "https://hot-thai-kitchen.com/thai-iced-tea/"
+    ],
+    "confidence": "medium",
+    "reason": "Thai milk tea ve granita mantığı doğru, fakat dondurma süresi totalMinutes dışında kalmış. Sütlü Thai tea karakteri de güçlendirilmeli."
+  },
+  {
+    "slug": "thessaloniki-spanakopita",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.saveur.com/article/Recipes/Spanakopita-Spinach-Pie/",
+      "https://www.theguardian.com/food/2020/aug/26/how-to-make-spanakopita-recipe-felicity-cloake-masterclass-filo-spinach-feta"
+    ],
+    "confidence": "high",
+    "reason": "Ispanak, beyaz peynir, dereotu, yumurta ve yağlı filo katları klasik spanakopita yapısıyla uyumlu. Süre, allergen ve vejetaryen tag doğru."
+  },
+  {
+    "slug": "thit-kho",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ingredient listesinde dana döş var, fakat step 2 domuz eti diyor.",
+      "Step 3 balık sosu, Hindistan cevizi suyu ve sarımsak kullanıyor, fakat listede yok.",
+      "Balık sosu eklenince DENIZ_URUNLERI allergen declare edilmeli."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Balık sosu", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Hindistan cevizi suyu", "amount": "2", "unit": "su bardağı" },
+        { "name": "Sarımsak", "amount": "3", "unit": "diş" }
+      ],
+      "allergens_add": ["DENIZ_URUNLERI"],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Şekeri 2 yemek kaşığı suyla orta ateşte amber renge gelene kadar eritin.", "timerSeconds": 360 },
+        { "stepNumber": 2, "instruction": "Dana döş parçalarını karamele ekleyip yüzeyi renk alana kadar 5 dakika çevirin.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Balık sosu, soya sosu, Hindistan cevizi suyu ve sarımsağı ekleyip kaynatın.", "timerSeconds": 300 },
+        { "stepNumber": 4, "instruction": "Eti kısık ateşte 45 dakika kapağı aralık pişirin.", "timerSeconds": 2700 },
+        { "stepNumber": 5, "instruction": "Haşlanmış yumurtaları ekleyip 20 dakika daha pişirin.", "timerSeconds": 1200 },
+        { "stepNumber": 6, "instruction": "Sosu koyulaşınca buharda pilavla sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.wokandkin.com/vietnamese-braised-pork-belly-and-eggs-in-coconut-water-thit-kho/",
+      "https://gastronomyblog.com/2007/03/20/thit-kho/"
+    ],
+    "confidence": "high",
+    "reason": "Thit kho klasik olarak karamelli et, yumurta, balık sosu ve Hindistan cevizi suyuyla yapılır. Mevcut tarifte malzeme ve adım çelişkisi var."
+  },
+  {
+    "slug": "tinto-de-verano-punch-ispanya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.tasteselectrepeat.com/blogs/cocktail-recipes/tinto-de-verano",
+      "https://www.simplyrecipes.com/tinto-de-verano-recipe-11775194"
+    ],
+    "confidence": "high",
+    "reason": "Kırmızı şarap, soda, buz ve narenciye çizgisi tinto de verano ile uyumlu. Punch yorumu olsa da süre, vegan tag ve alkollü tag doğru."
+  },
+  {
+    "slug": "tinto-limon-slush-ispanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "TotalMinutes 125 dakika olduğu halde tarifte 30-dakika-alti tag var.",
+      "Dondurucu adımı mevcut total süreyle uyumlu, tag yanıltıcı kalıyor."
+    ],
+    "corrections": {
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.tasteselectrepeat.com/blogs/cocktail-recipes/tinto-de-verano",
+      "https://www.epicurious.com/recipes/food/views/coffee-granita-395"
+    ],
+    "confidence": "high",
+    "reason": "Tinto limon slush mantığı doğru, ancak iki saatlik dondurma total süreye dahil. Bu tarif 30 dakika altı etiketi taşımamalı."
+  },
+  {
+    "slug": "tiramisu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 en az 4 saat buzdolabı dinlendirme söylüyor, fakat totalMinutes 45 dakika.",
+      "Dinlenme prepMinutes içine yazılmamalı, totalMinutes içinde ayrı bekleme farkı olarak kalmalı."
+    ],
+    "corrections": {
+      "totalMinutes": 285
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/tiramisu",
+      "https://www.lacucinaitaliana.com/italian-food/how-to-cook/tiramisu-without-eggs-5-recipes"
+    ],
+    "confidence": "high",
+    "reason": "Tiramisu yapısı doğru, fakat 4 saat soğutma total süreye yansımıyor. Kural 9 gereği totalMinutes beklemeyi göstermeli."
+  },
+  {
+    "slug": "tire-firin-koftesi-domatesli",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/firinda-izmir-kofte-tarifi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/et-yemekleri/kofte-tarifleri/firinda-kofte"
+    ],
+    "confidence": "medium",
+    "reason": "Fırında köfte, patates, biber, domates ve salçalı sos yapısı güvenilir kaynaklarla uyumlu. Süreler, allergen ve fırın tag makul."
+  },
+  {
+    "slug": "tirit",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 soğan kullanıyor, fakat ingredient listesinde yok.",
+      "Step 6 sarımsaklı yoğurt diyor, fakat sarımsak ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kemikli eti soğan, tuz ve 5 su bardağı suyla tencereye alın.", "timerSeconds": null },
+        { "stepNumber": 6, "instruction": "Didiklenmiş et, sarımsaklı yoğurt ve tereyağlı biberle hemen servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://theturkishdishes.com/2025/06/17/anatolian-tirit-traditional-bread-and-meat-dish/",
+      "https://www.nefisyemektarifleri.com/tirit-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Tiritte et suyu, ekmek, et ve sarımsaklı yoğurt uyumlu. Eksik soğan ve sarımsak step-ingredient eşleşmesini bozuyor."
+  },
+  {
+    "slug": "tiritli-tavuk-kapama-samsun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 defne kullanıyor, fakat ingredient listesinde yok.",
+      "Step 5 tereyağı ve pul biber kullanıyor, fakat listede yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Defne yaprağı", "amount": "1", "unit": "adet" },
+        { "name": "Tereyağı", "amount": "1.5", "unit": "yemek kaşığı" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/tavuklu-tirit/",
+      "https://theturkishdishes.com/2025/06/17/anatolian-tirit-traditional-bread-and-meat-dish/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk suyu ile pide ıslatma yapısı tiritli kapamaya uygun. Sadece adımlarda geçen defne, tereyağı ve pul biber listede eksik."
+  },
+  {
+    "slug": "tkemali",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tkemali Gürcü ekşi erik sosudur, mevcut cuisine ru yanıltıcı.",
+      "Tarifle cuisine kodlarında Gürcistan için destek görünmüyor, bu nedenle mini-rev veya cuisine enum kararı gerekir."
+    ],
+    "corrections": {
+      "description": "Tkemali, ekşi erik, kişniş ve sarımsakla et yemeklerine canlılık veren Gürcü usulü bir sostur."
+    },
+    "sources": [
+      "https://georgianrecipes.com/recipes/Tkemali-sauce/",
+      "https://en.wikipedia.org/wiki/Tkemali"
+    ],
+    "confidence": "high",
+    "reason": "İçerik tkemali olarak doğru, ancak Rus mutfağı etiketi yanlış. Gürcü cuisine kodu olmadığı için bu kayıt manuel karar gerektiriyor."
+  },
+  {
+    "slug": "toast-skagen",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Klasik Toast Skagen karidesli karışıma limon ve çoğunlukla krema veya ekşi krema ekler; mevcut listede limon yok.",
+      "Roe klasik servis unsurudur, mevcut ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Ekşi krema", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Balık yumurtası", "amount": "4", "unit": "tatlı kaşığı" }
+      ],
+      "allergens_add": ["SUT"],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Karidesleri kurulayın ve iri doğrayın, dereotunu ince kıyın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Mayonez, ekşi krema, limon suyu, karides ve dereotunu kısa süre karıştırın.", "timerSeconds": 60 },
+        { "stepNumber": 3, "instruction": "Ekmek dilimlerini tereyağlı tavada kızartın.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Karides karışımını ekmeklere paylaştırıp balık yumurtasıyla servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/toast-skagen-swedish-shrimp-toast",
+      "https://scandinaviancookbook.com/toast-skagen-swedish-shrimp-salad-toast/"
+    ],
+    "confidence": "high",
+    "reason": "Toast Skagen kimliği doğru, ama limon, sütlü bağlayıcı ve balık yumurtası eksik. Ekşi krema eklenince SUT allergen da declare edilmeli."
+  },
+  {
+    "slug": "toast-skagen-patates-kase-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps tamamen genel scaffold cümleleri içeriyor.",
+      "Toast Skagen karidesli karışımında limon ve balık yumurtası eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Balık yumurtası", "amount": "4", "unit": "tatlı kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patatesleri kabuklu halde yumuşayana kadar haşlayın.", "timerSeconds": 720 },
+        { "stepNumber": 2, "instruction": "Karidesleri kurulayın, dereotunu ince kıyın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Mayonez, ekşi krema, limon suyu, karides ve dereotunu karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Ilık patatesleri ortadan açıp karidesli karışımı içine paylaştırın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Balık yumurtası ve dereotuyla bekletmeden servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/toast-skagen-swedish-shrimp-toast",
+      "https://scandinaviancookbook.com/toast-skagen-swedish-shrimp-salad-toast/"
+    ],
+    "confidence": "high",
+    "reason": "Patates kasesi varyasyon olabilir, ancak mevcut adımlar tarife özel değil. Skagen karışımı için limon ve balık yumurtası tamamlanmalı."
+  },
+  {
+    "slug": "tod-mun-pla",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tod mun pla için balık sosu, makrut lime yaprağı ve az şeker kaynaklarda temel lezzet unsuru; mevcut listede yok.",
+      "Steps tamamen genel scaffold cümlelerinden oluşuyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Balık sosu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Makrut lime yaprağı", "amount": "3", "unit": "adet" },
+        { "name": "Şeker", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Balık filetoyu mutfak robotunda yapışkan kıvam alana kadar çekin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Kırmızı köri ezmesi, yumurta, balık sosu ve şekeri ekleyip karıştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "İnce doğranmış fasulye ve makrut lime yaprağını harca katın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Harçtan yassı köfteler yapıp kızgın yağda iki yüzünü 3'er dakika kızartın.", "timerSeconds": 360 },
+        { "stepNumber": 5, "instruction": "Kağıt havluya alıp tatlı acı sosla sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.cookrepublic.com/thai-fish-cakes-tod-mun-pla/",
+      "https://www.templeofthai.com/recipes/thai_fish_cakes.php"
+    ],
+    "confidence": "high",
+    "reason": "Tod mun pla kimliği doğru, fakat mevcut adımlar scaffold. Balık sosu ve lime yaprağı olmadan Tay balık köftesi eksik kalır."
+  },
+  {
+    "slug": "tofu-lotus-salad-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 balık sosu kullanıyor, fakat tarif vegan tag taşıyor.",
+      "Sos için şeker ve soya sosu gibi vegan dengeleyiciler ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soya sosu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Şeker", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Tofuyu küp doğrayıp kurulayın, tavada 6 dakika renk alana kadar kızartın.", "timerSeconds": 360 },
+        { "stepNumber": 2, "instruction": "Lotus kökünü ince dilimleyip 3 dakika haşlayın ve soğuk sudan geçirin.", "timerSeconds": 180 },
+        { "stepNumber": 3, "instruction": "Lime suyu, soya sosu ve şekeri karıştırarak vegan sos hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Tofu, lotus kökü, havuç ve kişnişi sosla 1 dakika ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Salatayı 10 dakika soğutup servis edin.", "timerSeconds": 600 }
+      ]
+    },
+    "sources": [
+      "https://www.vickypham.com/blog/vietnamese-lotus-root-salad-goi-ngo-sen",
+      "https://www.thevietvegan.com/vietnamese-lotus-root-salad-goi-ngo-sen/"
+    ],
+    "confidence": "medium",
+    "reason": "Lotus salata fikri doğru, ancak balık sosu vegan tag ile çelişiyor. Soya soslu vegan sosla hem allergen hem tag tutarlı kalır."
+  },
+  {
+    "slug": "tofulu-kabak-noodle",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 sarımsak ve zencefil kullanıyor, fakat ingredient listesinde yok.",
+      "Step 5 susam yağı ve taze soğan kullanıyor, fakat listede yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Taze zencefil", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Susam yağı", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Taze soğan", "amount": "2", "unit": "dal" }
+      ]
+    },
+    "sources": [
+      "https://www.eatingwell.com/article/7867712/trader-joes-low-carb-zucchini-noodle-stir-fry/",
+      "https://www.bonappetit.com/recipe/creamy-sesame-noodles-with-yuba"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak noodle ve tofu uyumlu, tagler doğru. Uygulamada geçen sarımsak, zencefil, susam yağı ve taze soğan listeye eklenmeli."
+  },
+  {
+    "slug": "tokaj-sarap-spritz-macaristan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://dailynewshungary.com/the-best-summer-drinks-with-hungarian-wines/",
+      "https://www.hungarianwines.eu/froccs-the-hungarian-spritzer/"
+    ],
+    "confidence": "medium",
+    "reason": "Macar fröccs mantığı şarap ve soda üzerine kurulu. Tokaj beyaz şarapla yapılan spritz yorumu süre, tag ve malzeme açısından tutarlı."
+  },
+  {
+    "slug": "tokat-bakla-dolmasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 kuru baklayı 4 saat ıslatıyor, fakat totalMinutes 80 dakika.",
+      "Bekleme süresi prepMinutes içine yazılmamalı, totalMinutes içinde ayrı bekleme farkı olarak korunmalı."
+    ],
+    "corrections": {
+      "totalMinutes": 320
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/tokat/neyenir/bakla-dolmasi",
+      "https://www.misssgibi.com/baklali-sarma/"
+    ],
+    "confidence": "high",
+    "reason": "Tokat bakla dolması yapısı kaynaklarla uyumlu. Kuru bakla ıslatma süresi total süreye yansımadığı için Kural 9 düzeltmesi gerekiyor."
+  },
+  {
+    "slug": "tokat-baklali-yaprak-sarma",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 kuru baklayı geceden ıslatmayı söylüyor, fakat totalMinutes 100 dakika.",
+      "Geceden ıslatma total süre dışında kalmış."
+    ],
+    "corrections": {
+      "totalMinutes": 820
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/tokat/neyenir/bakla-dolmasi",
+      "https://www.misssgibi.com/baklali-sarma/"
+    ],
+    "confidence": "high",
+    "reason": "Baklalı yaprak sarma içerik olarak makul, ancak geceden ıslatma açıkça yazılı. TotalMinutes bu beklemeyi göstermeli."
+  },
+  {
+    "slug": "tokat-bat-mercimekli",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/tokat/neyenir/bat512657",
+      "https://www.bitokat.com/kesfet/bir-nevi-kisir-bat-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Yeşil mercimek, ince bulgur, salça, ceviz, yeşillik, nar ekşisi ve asma yaprağı Tokat batı kaynaklarıyla uyumlu. Süreler ve tagler makul."
+  },
+  {
+    "slug": "tokat-bat-mezesi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/tokat/neyenir/bat512657",
+      "https://www.nepisirsem.com/resimliyemektarifi.aspx?yemekid=2262"
+    ],
+    "confidence": "high",
+    "reason": "Mercimek, ince bulgur, ceviz, salça ve yeşillikli sulu Tokat bat yapısı doğru. Vegan, yaz ve bütçe tagleri içerikle uyumlu."
+  },
+  {
+    "slug": "tokat-bati",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tokat batı kaynaklarda yeşil mercimekli yapılır, mevcut ingredient listesinde mercimek yok.",
+      "Step 2 domates diyor, fakat domates ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Haşlanmış yeşil mercimek", "amount": "1.5", "unit": "su bardağı" },
+        { "name": "Domates", "amount": "2", "unit": "adet" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "İnce bulguru az sıcak suyla 10 dakika şişirin.", "timerSeconds": 600 },
+        { "stepNumber": 2, "instruction": "Haşlanmış yeşil mercimek, salça, limon suyu ve bulguru geniş kapta karıştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Domates, taze soğan ve maydanozu ince doğrayıp karışıma ekleyin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Cevizi katın, kıvamı sulu kalacak şekilde az suyla açın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Batı asma yapraklarıyla serin servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/tokat/neyenir/bat512657",
+      "https://www.bitokat.com/kesfet/bir-nevi-kisir-bat-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Bat kimliği yeşil mercimeksiz eksik kalıyor. Bu temel malzeme yoksa kullanıcı Tokat batı yerine farklı bir bulgur salatası yapar."
+  },
+  {
+    "slug": "tokat-cemeni",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tokat çemeni kaynaklarda çemen unu ve baharatlı macun olarak geçiyor, mevcut tarif salça ve cevizli ezmeye kaymış.",
+      "Köy ekmeği ingredient olarak yazılmış, bu sürmelik çemenin kendisi değil; bu yüzden GLUTEN allergen fazla declare edilmiş olabilir."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Çemen unu", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tatlı toz biber", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Yenibahar", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "ingredients_remove": ["Köy ekmeği"],
+      "allergens_remove": ["GLUTEN"],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Çemen unu, kimyon, tatlı toz biber ve yenibaharı küçük kapta karıştırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Salça, ezilmiş sarımsak ve zeytinyağını ekleyip pürüzsüz macun yapın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Cevizi iri çekip macuna katın, doku tamamen kaybolmasın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Çemeni 10 dakika dinlendirip ekmek yanında servis edin.", "timerSeconds": 600 }
+      ]
+    },
+    "sources": [
+      "https://www.cevizlibahar.com/urun/tokat-cemeni-300-gr/",
+      "https://www.kulturportali.gov.tr/turkiye/tokat/neyenir/cemen"
+    ],
+    "confidence": "medium",
+    "reason": "Mevcut tarif çemen değil, daha çok cevizli salça ezmesi gibi. Çemen unu ve baharat temeli olmadan Tokat çemeni kimliği zayıf."
+  },
+  {
+    "slug": "tokat-kebabi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tokat kebabında biber, sarımsak ve kuyruk yağı temel kaynak malzemeleri arasında, mevcut listede yok.",
+      "Step 2 biber, step 5 sarımsak kullanıyor, fakat ikisi de ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yeşil biber", "amount": "6", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "1", "unit": "baş" },
+        { "name": "Kuyruk yağı", "amount": "80", "unit": "gr" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "tatlı kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.tokat.gov.tr/tokat-kebabi",
+      "https://www.kulturportali.gov.tr/turkiye/tokat/neyenir/tokat-kebabi"
+    ],
+    "confidence": "high",
+    "reason": "Tokat kebabı kimliği doğru, ancak biber, sarımsak ve kuyruk yağı gibi ana unsurlar eksik. Step-ingredient eşleşmesi de bozulmuş."
+  },
+  {
+    "slug": "tokat-kebabi-firin",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.tokat.gov.tr/tokat-kebabi",
+      "https://gastrotokat.com/lezzet/armut-tursusu/"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu eti, patlıcan, patates, domates, biber, sarımsak ve kuyruk yağı Tokat kebabı kaynaklarıyla uyumlu. Fırın uyarlaması açık ve süre makul."
+  },
+  {
+    "slug": "tokat-niksar-cevizli-corek",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bitokat.com/kesfet/tokat-cevizli-corek-tarifi-ve-yapilisi",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/cevizli-corek-tarifi/3904"
+    ],
+    "confidence": "medium",
+    "reason": "Mayalı sütlü hamur, ceviz, yumurta ve tereyağı çizgisi Tokat cevizli çörek kaynaklarıyla uyumlu. Allergens ve süreler makul."
+  },
+  {
+    "slug": "tokat-yapragi-dolmasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 soğan, salça ve baharat kullanıyor, fakat listede yok.",
+      "Step 5 zeytinyağı kullanıyor, fakat ingredient listesinde yok.",
+      "TipNote yağlı etle ilgili, bu tarifin mevcut dolma bağlamına uymuyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Domates salçası", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Zeytinyağı", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "tipNote": "Yaprakları tuzuna göre bekletin; fazla tuz iç harcı bastırır."
+    },
+    "sources": [
+      "https://www.tokatsalamurayaprak.com/kiymali-yaprak-sarma/",
+      "https://www.yemek.com/tarif/etli-yaprak-sarma/"
+    ],
+    "confidence": "high",
+    "reason": "Kıymalı Tokat yaprağı dolması mantığı doğru, ama adımlarda geçen temel iç harç malzemeleri listede yok. Tip notu da tarif dışı kalmış."
+  },
+  {
+    "slug": "tokat-yaprak-sarmasi-etli",
+    "verdict": "PASS",
+    "sources": [
+      "https://boltarifler.com/tokat-usulu-etli-yaprak-sarma/",
+      "https://www.nefisyemektarifleri.com/tokat-usulu-etli-yaprak-sarma/"
+    ],
+    "confidence": "high",
+    "reason": "Tokat usulü etli yaprak sarma küçük yaprak, kıyma, bulgur, soğan, salça ve nane çizgisiyle uyumlu. Süre, allergen ve servis makul."
+  },
+  {
+    "slug": "tokat-yesil-mercimekli-bat",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/tokat/neyenir/bat512657",
+      "https://www.karaca.com/blog/tokat-usulu-bat-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Yeşil mercimek, ince bulgur, salça, taze ot ve limonlu sulu kıvam Tokat batı ile uyumlu. Vegan ve yaz tagleri doğru."
+  },
+  {
+    "slug": "tokat-zile-pekmezli-katmer",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/pekmezli-katmer/",
+      "https://www.kulturportali.gov.tr/turkiye/tokat/nealinir/zile-pekmezi"
+    ],
+    "confidence": "medium",
+    "reason": "İnce hamur, ceviz, tereyağı, pekmez ve kaymakla sunum mantıklı. Zile pekmezi bağı açık, allergenler ve sacda pişirme süresi makul."
+  },
+  {
+    "slug": "tokyo-chicken-katsu-curry",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.justonecookbook.com/katsu-curry/",
+      "https://www.bonappetit.com/recipe/katsu-curry"
+    ],
+    "confidence": "high",
+    "reason": "Panko kaplı tavuk, Japon köri roux, havuç, soğan ve pirinç yapısı katsu curry ile uyumlu. Kalori yüksek ama porsiyon için makul."
+  },
+  {
+    "slug": "tokyo-gyoza-tavasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.justonecookbook.com/gyoza/",
+      "https://www.epicurious.com/recipes/food/views/gyoza-japanese-dumplings-56390033"
+    ],
+    "confidence": "high",
+    "reason": "Gyoza hamuru, lahana, zencefil, sarımsak, soya ve susam yağıyla pan-fry sonra buharlama tekniği doğru. Tavuk kıyma kabul edilebilir."
+  },
+  {
+    "slug": "tokyo-omurice",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.japanesecooking101.com/omurice-recipe/",
+      "https://japanesetaste.com/blogs/japanese-taste-recipes/how-to-make-omurice-japanese-omelet-rice-at-home"
+    ],
+    "confidence": "high",
+    "reason": "Ketçaplı tavuklu pilavı ince omletle kapatma yapısı omurice kaynaklarıyla uyumlu. Süre, çocuk-dostu tag ve allergenler doğru."
+  },
+  {
+    "slug": "tokyo-shoyu-ramen",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.justonecookbook.com/shoyu-ramen/",
+      "https://www.bonappetit.com/recipe/shoyu-ramen"
+    ],
+    "confidence": "high",
+    "reason": "Soya tare, tavuk suyu, ramen eriştesi, chashu, yumurta, nori ve katsuobushi ile Tokyo shoyu ramen yapısı doğru. Uzun total süre makul."
+  },
+  {
+    "slug": "tokyo-tavuk-katsu-kare",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.justonecookbook.com/katsu-curry/",
+      "https://www.bonappetit.com/recipe/katsu-curry"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk katsu kare, panko kaplı tavuk, patates, havuç, Japon köri roux ve pirinçle kaynaklara uyuyor. Süre ve makrolar ağır porsiyon için makul."
+  },
+  {
+    "slug": "tokyo-tonkatsu-pirinc-kasesi",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tonkatsu klasik olarak domuz pane cutlet anlamına gelir, mevcut tarif tavuk pirzola kullanıyor.",
+      "Title ve slug tonkatsu dediği için tavuk adaptasyonu kullanıcıyı yanıltabilir."
+    ],
+    "corrections": {
+      "ingredients_remove": ["Tavuk pirzola"],
+      "ingredients_add": [
+        { "name": "Domuz bonfile veya domuz pirzolası", "amount": "600", "unit": "gr" }
+      ],
+      "description": "Japon tonkatsu pirinç kasesi, panko kaplı domuz pirzolayı çıtır kızartıp lahana, pirinç ve koyu sosla dengeli bir kaseye çevirir."
+    },
+    "sources": [
+      "https://www.justonecookbook.com/tonkatsu/",
+      "https://www.japanesecooking101.com/tonkatsu-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Mevcut içerik tavuk katsu, fakat tonkatsu adı domuzla özdeş. Bu kimlik farkı mini-rev sırasında kullanıcı hassasiyetiyle ele alınmalı."
+  },
+  {
+    "slug": "tom-kha-gai",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps tavuk suyu, lime yaprağı, mantar, balık sosu ve kişniş kullanıyor, fakat ingredient listesinde yok.",
+      "Balık sosu eklenince DENIZ_URUNLERI allergen declare edilmeli."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tavuk suyu", "amount": "300", "unit": "ml" },
+        { "name": "Makrut lime yaprağı", "amount": "4", "unit": "adet" },
+        { "name": "Mantar", "amount": "150", "unit": "gr" },
+        { "name": "Balık sosu", "amount": "1.5", "unit": "yemek kaşığı" },
+        { "name": "Kişniş", "amount": "0.25", "unit": "demet" }
+      ],
+      "allergens_add": ["DENIZ_URUNLERI"]
+    },
+    "sources": [
+      "https://hot-thai-kitchen.com/tom-ka-gai/",
+      "https://www.thaicookbook.tv/thai-recipes/soups/tom-kha-gai-chicken-and-galangal-soup-with-mushrooms/"
+    ],
+    "confidence": "high",
+    "reason": "Tom kha gai için galangal, limon otu, lime yaprağı, mantar, balık sosu ve kokos sütü temel. Mevcut adımlar doğru ama malzeme listesi eksik."
+  }
+]

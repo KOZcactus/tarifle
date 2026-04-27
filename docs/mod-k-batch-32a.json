@@ -1,0 +1,895 @@
+[
+  {
+    "slug": "tavuk-pho-hizli-tencere-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 balık sosu ve lime suyu kullanıyor, fakat ikisi de ingredient listesinde yok.",
+      "Step 1 tarçın parçası kullanıyor, fakat ingredient listesinde yok.",
+      "Balık sosu eklendiğinde DENIZ_URUNLERI allergen declare edilmeli."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Balık sosu", "amount": "1.5", "unit": "yemek kaşığı" },
+        { "name": "Lime suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tarçın çubuğu", "amount": "1", "unit": "küçük parça" }
+      ],
+      "ingredients_amount_change": [
+        { "name": "Tavuk göğsü", "newAmount": "250", "newUnit": "gr" }
+      ],
+      "allergens_add": ["DENIZ_URUNLERI"]
+    },
+    "sources": [
+      "https://www.vickypham.com/blog/vietnamese-chicken-pho-pho-ga",
+      "https://www.recipetineats.com/vietnamese-chicken-pho-soup-pho-ga/"
+    ],
+    "confidence": "high",
+    "reason": "Pho ga için balık sosu, lime, ot ve sıcak baharat kullanımı kaynaklarla uyumlu. Mevcut step malzemeleri listede olmadığı için uygulanabilir düzeltme gerekiyor."
+  },
+  {
+    "slug": "tavuk-shawarma",
+    "verdict": "CORRECTION",
+    "issues": [
+      "4 lavaş içeren dürümde porsiyon başı karbonhidrat 7 gr olamaz.",
+      "Ingredient bazlı kalori ve macro değerleri tavuk kalça, lavaş ve yoğurtla düşük kalıyor."
+    ],
+    "corrections": {
+      "averageCalories": 470,
+      "protein": 34,
+      "carbs": 34,
+      "fat": 22
+    },
+    "sources": [
+      "https://www.saveur.com/chicken-shawarma-recipe/",
+      "https://www.foodnetwork.com/recipes/food-network-kitchen/yogurt-marinated-grilled-chicken-shawarma-9961050"
+    ],
+    "confidence": "high",
+    "reason": "Shawarma yapısı doğru, ancak lavaş ve tavuk kalça porsiyonunda macro değerleri belirgin düşük. Karbonhidrat ve kalori ingredient miktarına çekilmeli."
+  },
+  {
+    "slug": "tavuk-sis",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 en az 2 saat dinlendirme söylüyor, fakat totalMinutes 35 dakika.",
+      "Marine beklemesi prepMinutes içine yazılmamalı, totalMinutes içinde ayrı bekleme farkı olarak korunmalı."
+    ],
+    "corrections": {
+      "totalMinutes": 155,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Tavukları kuşbaşı doğrayın; yoğurt, zeytinyağı, baharatlar ve limon suyuyla kaplayın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Tavukları buzdolabında en az 2 saat dinlendirin, marine ete işlesin.", "timerSeconds": 7200 }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/tavuk-sis/",
+      "https://www.nefisyemektarifleri.com/tavuk-sis-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk şişte yoğurtlu marine doğru, fakat 2 saat bekleme toplam süreye yansımıyor. Kural 9 gereği totalMinutes 155 olmalı."
+  },
+  {
+    "slug": "tavuk-sote",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Sıvı yağ, tuz ve baharatlar amount ve unit olmadan yazılmış.",
+      "Step 4 domates ve biberle pişirme doğru, fakat miktarsız temel malzeme kullanıcıyı belirsiz bırakıyor."
+    ],
+    "corrections": {
+      "ingredients_amount_change": [
+        { "name": "Sıvı yağ", "newAmount": "3", "newUnit": "yemek kaşığı" },
+        { "name": "Tuz", "newAmount": "1", "newUnit": "çay kaşığı" },
+        { "name": "Baharatlar", "newAmount": "1", "newUnit": "tatlı kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/tavuk-sote/",
+      "https://www.nefisyemektarifleri.com/tavuk-sote-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk sote kompozisyonu doğru, ancak üç temel malzeme ölçüsüz. Miktar düzeltmesi uygulama belirsizliğini giderir."
+  },
+  {
+    "slug": "tavuk-suyu-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 terbiyede 1 yemek kaşığı un kullanıyor, fakat ingredient listesinde un yok.",
+      "Step 5 yoğurtlu doku ifadesi geçiyor, tarifte yoğurt yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Un", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/tavuk-suyu-corbasi/",
+      "https://www.nefisyemektarifleri.com/tavuk-suyu-corbasi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk suyu çorbası genel yapı olarak doğru. Eksik un ve hatalı yoğurt referansı küçük ama gerçek bir uygulama çelişkisi yaratıyor."
+  },
+  {
+    "slug": "tavuk-tagine",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 soğanla kavurma söylüyor, fakat soğan ingredient listesinde yok.",
+      "Klasik limon turşulu zeytinli tavuk tagine kaynaklarda soğan, sarımsak ve taze otla desteklenir."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Taze kişniş", "amount": "0.25", "unit": "demet" }
+      ]
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/tagine-of-chicken-with-preserved-lemon-and-olives-372998",
+      "https://www.olivemagazine.com/recipes/meat-and-poultry/chicken-tagine-with-preserved-lemons-green-olives-and-thyme/"
+    ],
+    "confidence": "high",
+    "reason": "Tagine kimliği doğru, limon turşusu ve zeytin uyumlu. Step içinde kullanılan soğan ve temel aromatikler listeye eklenmeli."
+  },
+  {
+    "slug": "tavuklu-arpa-sehriyeli-pilav-yozgat-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tavuklu arpa şehriye pilavı kaynaklarla uyumlu, fakat Yozgat usulü özel atfı iki bağımsız kaynakla doğrulanamadı.",
+      "Ingredient listesinde tuz ve kavurma yağı yok.",
+      "Description yöre iddiasını gerçek tarif kimliğinden daha güçlü veriyor."
+    ],
+    "corrections": {
+      "description": "Tavuklu arpa şehriyeli pilav, sotelenmiş tavuk ve arpa şehriyeyi tavuk suyuyla pişiren sade, tok ve ev tipi bir pilavdır.",
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/tavuklu-arpa-sehriye-pilavi/5335",
+      "https://www.pilav.gen.tr/tavuklu-pilav.html"
+    ],
+    "confidence": "low",
+    "reason": "Pilav uygulanabilir, ancak Yozgat iddiası kaynakla güçlü değil. Yerel iddia düşürülmeli, eksik tuz ve yağ eklenmeli."
+  },
+  {
+    "slug": "tavuklu-bezelye",
+    "verdict": "PASS",
+    "reason": "Tavuk, bezelye, patates, havuç, soğan ve salçalı tencere yapısı kaynaklarla uyumlu. Süre, allergen ve tags tarafında belirgin çelişki yok.",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/tavuklu-bezelye-yemegi/7310",
+      "https://ye-mek.net/amp/tavuklu-patates-yemegi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "tavuklu-biryani",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes 145 dakika, fakat step 1 sadece 30 dakika marine veriyor.",
+      "TipNote en az 1 saat bekleme söylüyor, bu da totalMinutes farkıyla daha uyumlu."
+    ],
+    "corrections": {
+      "totalMinutes": 115
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/chicken-thigh-biryani",
+      "https://www.indianhealthyrecipes.com/chicken-biryani-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Biryani yapısı doğru. Step 30 dakika marine ve 45 dakika pişirme verirken total 145 fazla kalıyor, 115 dakika daha tutarlı."
+  },
+  {
+    "slug": "tavuklu-bulgurlu-nohut-pilavi-siirt-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tavuklu nohutlu bulgur pilavı kaynaklarla uyumlu, fakat Siirt usulü özel atfı doğrulanamadı.",
+      "Ingredient listesinde tuz ve yağ yok.",
+      "Tarif tavuk suyu yerine düz su yazıyor, kaynaklarda tavuk suyu daha tipik."
+    ],
+    "corrections": {
+      "description": "Tavuklu bulgurlu nohut pilavı, bulguru tavuk, nohut ve tavuk suyuyla pişiren sade, tok ve kalabalık sofralık bir ana yemektir.",
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "ingredients_amount_change": [
+        { "name": "Su", "newAmount": "2.5", "newUnit": "su bardağı tavuk suyu" }
+      ],
+      "allergens_add": ["SUT"]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/tavuklu-nohutlu-bulgur-pilavi/14988",
+      "https://www.unutulmazlezzetler.com/tarifler/pilavlar/tavuklu-nohutlu-bulgur-pilavi/"
+    ],
+    "confidence": "low",
+    "reason": "Tarifin temel pilav kimliği doğru, fakat Siirt atfı zayıf ve yağ, tuz eksik. Tavuk suyuna geçiş içerikle daha tutarlı olur."
+  },
+  {
+    "slug": "tavuklu-eristeli-tava-polonya-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Kremsi tavuklu erişte yapısı kaynaklarla uyumlu, fakat Polonya usulü özel kimlik iki kaynakla doğrulanamadı.",
+      "Ingredient listesinde tuz, soğan veya sarımsak gibi temel aromatikler yok.",
+      "Step metinleri tarif özelinden çok generic kalıyor."
+    ],
+    "corrections": {
+      "description": "Tavuklu erişteli tava, tavuk, erişte ve kremayı aynı tavada buluşturan sıcak, pratik ve tok bir ana yemektir.",
+      "ingredients_add": [
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.makarna.info/tavuklu-mantarli-kremali-makarna/",
+      "https://www.tavuk.web.tr/tavuklu-mantarli-kremali-makarna.html"
+    ],
+    "confidence": "low",
+    "reason": "Yemek uygulanabilir bir kremalı tavuklu erişte, fakat Polonya iddiası güçlü değil. Aromatik ve tuz eksikleri de düzeltilmeli."
+  },
+  {
+    "slug": "tavuklu-fajita",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Fajita kaynaklarında yoğurt temel malzeme değil; lime suyu, yağ ve baharat daha tipik.",
+      "Yoğurt nedeniyle SUT allergen eklenmiş, fakat tarif kimliği için gereksiz."
+    ],
+    "corrections": {
+      "ingredients_remove": ["Yoğurt"],
+      "ingredients_add": [
+        { "name": "Lime suyu", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Toz kırmızı biber", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "allergens_remove": ["SUT"]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/chicken-fajitas",
+      "https://www.recipetineats.com/chicken-fajitas/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, biber, soğan ve tortilla doğru. Yoğurt marinasyonu fajita için yanıltıcı ve allergen fazlası yaratıyor."
+  },
+  {
+    "slug": "tavuklu-firik-patlican-batman-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Firik ve patlıcanlı tavuk yemeği mantıklı, fakat Batman usulü özel atfı iki kaynakla doğrulanamadı.",
+      "ServingSuggestion kuzu pembesi tabaka ifadesi tarifle ilgisiz ve hatalı.",
+      "Ingredient listesinde yağ ve tuz yok."
+    ],
+    "corrections": {
+      "description": "Tavuklu firik patlıcan, tavuk, firik bulguru, patlıcan ve domatesi aynı tencerede pişiren dumanlı ve doyurucu bir yemektir.",
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "servingSuggestion": "Sıcak servis tabağına alıp üstüne maydanoz ve birkaç damla limon ekleyin."
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/firik-pilavi/1437",
+      "https://www.nefisyemektarifleri.com/firik-pilavi-tarifi/"
+    ],
+    "confidence": "low",
+    "reason": "Firikli yemek omurgası doğru olabilir, ama Batman iddiası ve servis metni sorunlu. Yerel iddia düşürülmeli."
+  },
+  {
+    "slug": "tavuklu-hortobagyi-palacsinta",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Hortobagyi palacsinta için tavuklu harç ve paprika sos doğru, fakat soğan ve tavuk suyu gibi temel sos bileşenleri listede yok.",
+      "Paprika sosun akışkanlığı için su veya tavuk suyu gerekir."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Tavuk suyu", "amount": "1", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.tasteatlas.com/hortobagyi-palacsinta/recipe",
+      "https://www.thespruceeats.com/hungarian-savory-pancakes-recipe-1136617"
+    ],
+    "confidence": "high",
+    "reason": "Macar krep kimliği doğru. Soğan ve tavuk suyu olmadan paprika sos eksik kalıyor, küçük ingredient düzeltmesi yeterli."
+  },
+  {
+    "slug": "tavuklu-kalle-kirklareli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Kaynaklarda Kırklareli tavuklu kalle genellikle lahana turşusu ve bulgurla geçiyor, mevcut tarif pirinç kullanıyor.",
+      "Salça ve sıvı yağ kaynaklarda temel, fakat ingredient listesinde yok.",
+      "Step 3 turşu suyu kullanıyor, kaynaklarda salça ve su omurgası daha belirgin."
+    ],
+    "corrections": {
+      "ingredients_remove": ["Pirinç", "Turşu suyu"],
+      "ingredients_add": [
+        { "name": "Bulgur", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Domates salçası", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 3, "instruction": "Salçayı ekleyip 2 dakika kavurun, ardından lahana turşusu, bulgur ve suyu tencereye alın.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Yemeği 25 dakika kısık ateşte pişirin ve karabiberle sıcak servis edin.", "timerSeconds": 1500 }
+      ]
+    },
+    "sources": [
+      "https://turkiye.influence.cool/tr/kirklareli/merkez/yerel-lezzetler/tavuklu-kalle/",
+      "https://www.kanald.com.tr/mutfagim/haber/kalle-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Kırklareli kalle kimliği doğru, fakat pirinç yerine bulgur ve salça omurgası kaynaklarla daha uyumlu. Bu gerçek reçete düzeltmesi."
+  },
+  {
+    "slug": "tavuklu-karnabahar-pilavi-kasesi",
+    "verdict": "PASS",
+    "reason": "Karnabahar pirinci, tavuk, zeytinyağı ve avokadoyla düşük karbonhidratlı kase yapısı kaynaklarla uyumlu. Süre ve macro makul.",
+    "sources": [
+      "https://californiaavocado.com/recipe/cauliflower-rice-bowl-chili-lime-chicken-avocado/",
+      "https://www.atkins.com/recipes/shredded-salsa-chicken-cauliflower-rice-bowl"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "tavuklu-keskek",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 bir gece ıslatma söylüyor, fakat totalMinutes 150 dakika.",
+      "Bekleme süresi prepMinutes içine yazılmamalı, totalMinutes içinde ayrı fark olarak görünmeli."
+    ],
+    "corrections": {
+      "totalMinutes": 630,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Buğdayı bir gece, en az 8 saat suda bekletip süzün.", "timerSeconds": 28800 }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/aydin/neyenir/keskek",
+      "https://www.nefisyemektarifleri.com/tavuklu-keskek/"
+    ],
+    "confidence": "high",
+    "reason": "Keşkek yapısı doğru, ancak 8 saat ıslatma toplam süreye yansımıyor. Kural 9 gereği totalMinutes beklemeyi göstermeli."
+  },
+  {
+    "slug": "tavuklu-kisnisli-pirinc-tava-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Peru arroz con pollo kaynaklarında kişnişli pirince bezelye, havuç, biber ve sarımsak eşlik eder.",
+      "Mevcut tarif çok çıplak kaldığı için Peru kimliğini zayıf taşıyor.",
+      "Pişirme süresi 18 dakika, tavuklu pirinç için biraz kısa kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Bezelye", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Havuç", "amount": "1", "unit": "adet" },
+        { "name": "Kapya biber", "amount": "1", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" }
+      ],
+      "cookMinutes": 30,
+      "totalMinutes": 42
+    },
+    "sources": [
+      "https://www.eatperu.com/arroz-con-pollo/",
+      "https://www.knowmsg.com/recipes/peruvian-arroz-con-pollo-chicken-with-rice/"
+    ],
+    "confidence": "medium",
+    "reason": "Kişnişli tavuklu pirinç Peru arroz con pollo ile uyumlu, fakat sebze ve aromatik eksikleri kimliği zayıflatıyor."
+  },
+  {
+    "slug": "tavuklu-limonlu-firik-pilavi-mersin-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Firik pilavı kaynaklarla uyumlu, fakat Mersin usulü limonlu tavuklu varyasyon iki kaynakla doğrulanamadı.",
+      "Ingredient listesinde yağ ve tuz yok.",
+      "Description yerel iddiayı fazla kesin veriyor."
+    ],
+    "corrections": {
+      "description": "Tavuklu limonlu firik pilavı, firik bulgurunu tavuk, sıcak su ve limonla pişiren isli, tok ve ferah bir ana yemektir.",
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/firik-pilavi-tarifi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/firik-pilavi/1437"
+    ],
+    "confidence": "low",
+    "reason": "Firik pilavı uygulanabilir, fakat Mersin limonlu tavuklu kimliği güçlü kaynak bulmuyor. Yerel iddia düşürülmeli."
+  },
+  {
+    "slug": "tavuklu-mantarli-kesme-makarna-zonguldak-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tavuklu mantarlı makarna yapısı kaynaklarla uyumlu, fakat Zonguldak usulü kesme makarna atfı doğrulanamadı.",
+      "Ingredient listesinde yağ, tuz, soğan veya sarımsak yok.",
+      "Step 3 generic tuz ve baharat metni kullanıyor, fakat bu malzemeler listede yer almıyor."
+    ],
+    "corrections": {
+      "description": "Tavuklu mantarlı kesme makarna, tavuk ve mantarı kesme makarnayla aynı tencerede buluşturan pratik ve tok bir yemektir.",
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.tavuk.web.tr/tavuklu-mantarli-kremali-makarna.html",
+      "https://www.makarna.info/tavuklu-mantarli-kremali-makarna/"
+    ],
+    "confidence": "low",
+    "reason": "Makarna kurgusu çalışır, ancak Zonguldak özel kimliği zayıf ve temel aromatikler eksik. Manuel review gerekli."
+  },
+  {
+    "slug": "tavuklu-mantarli-pie-tava-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Chicken mushroom pie kaynaklarında soğan, un, tavuk suyu ve yumurta sürme yaygın, mevcut listede yok.",
+      "Milföy kapak için 14 dakika kısa; kaynaklarda yaklaşık 25-30 dakika pişirme geçer.",
+      "Yumurta eklendiğinde YUMURTA allergen declare edilmeli."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Un", "amount": "1.5", "unit": "yemek kaşığı" },
+        { "name": "Tavuk suyu", "amount": "1", "unit": "su bardağı" },
+        { "name": "Yumurta", "amount": "1", "unit": "adet" }
+      ],
+      "cookMinutes": 30,
+      "totalMinutes": 44,
+      "allergens_add": ["YUMURTA"]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/chicken-mushroom-puff-pie",
+      "https://www.bonappetit.com/recipe/one-skillet-rotisserie-chicken-pot-pie"
+    ],
+    "confidence": "high",
+    "reason": "İngiliz pie kimliği doğru, fakat sos bağlayıcıları ve yumurta sürme eksik. Fırın süresi de gerçek puff pie için kısa kalıyor."
+  },
+  {
+    "slug": "tavuklu-nohutlu-arpa-pilavi-ankara-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tavuklu nohutlu arpa şehriye pilavı kaynaklarla genel olarak uyumlu, fakat Ankara usulü özel atfı doğrulanamadı.",
+      "Ingredient listesinde yağ ve tuz yok.",
+      "Description yerel iddiayı fazla kesin kuruyor."
+    ],
+    "corrections": {
+      "description": "Tavuklu nohutlu arpa pilavı, arpa şehriye, tavuk ve nohudu aynı tencerede buluşturan tok ve sade bir pilavdır.",
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": ["SUT"]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/tavuklu-arpa-sehriye-pilavi/5335",
+      "https://www.pilav.gen.tr/tavuklu-pilav.html"
+    ],
+    "confidence": "low",
+    "reason": "Pilav uygulanabilir, ancak Ankara atfı desteklenmedi. Yağ ve tuz eksikleri de tarifin çalışmasını etkiliyor."
+  },
+  {
+    "slug": "tavuklu-nohutlu-sehriye-pilavi-siirt-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tavuklu nohutlu şehriye pilavı genel kaynaklarla uyumlu, fakat Siirt usulü özel atıf doğrulanamadı.",
+      "Ingredient listesinde yağ ve tuz yok.",
+      "Step 3 generic tuz, baharat ve ekşi metni kullanıyor, fakat listede bu ayrıntılar yok."
+    ],
+    "corrections": {
+      "description": "Tavuklu nohutlu şehriye pilavı, arpa şehriye, tavuk ve nohudu aynı tencerede pişiren tok, sıcak bir ana yemektir.",
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": ["SUT"]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/tavuklu-arpa-sehriye-pilavi/5335",
+      "https://www.unutulmazlezzetler.com/tarifler/pilavlar/tavuklu-nohutlu-bulgur-pilavi/"
+    ],
+    "confidence": "low",
+    "reason": "Temel pilav yapısı doğru, fakat Siirt iddiası kaynakla güçlü değil. Yağ ve tuz eksikleri giderilmeli."
+  },
+  {
+    "slug": "tavuklu-noodle",
+    "verdict": "PASS",
+    "reason": "Noodle, tavuk, sebze, soya sosu ve susam yağı hızlı wok yapısıyla uyumlu. GLUTEN, SOYA ve SUSAM allergenleri doğru görünüyor.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/chicken-noodle-stir-fry",
+      "https://www.recipetineats.com/chicken-stir-fry-with-rice-noodles/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "tavuklu-pilav",
+    "verdict": "PASS",
+    "reason": "Haşlanmış tavuk, tavuk suyu, pirinç ve tereyağlı pilav yapısı kaynaklarla uyumlu. Süre, allergen ve macro değerleri makul.",
+    "sources": [
+      "https://www.pilav.gen.tr/tavuk-suyuna-pilav.html",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/tavuk-suyuna-tavuklu-pirinc-pilavi/12423"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "tavuklu-salata",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ingredient listesinde yoğurt ve hardal var, fakat step 3 sosu sadece zeytinyağı, limon ve tuzla kuruyor.",
+      "Tarif description yoğurtlu sos diyor, step bu sosu uygulamıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 3, "instruction": "Yoğurt, hardal, limon suyu, zeytinyağı ve tuzu çırpıp pürüzsüz bir salata sosu hazırlayın.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://ye-mek.net/tarif/yogurtlu-hardal-sos",
+      "https://www.bbcgoodfood.com/recipes/chicken-salad"
+    ],
+    "confidence": "high",
+    "reason": "Tavuklu salata yapısı doğru, ancak yoğurtlu hardal sos ingredient ile step arasında kaybolmuş. Tek step düzeltmesi yeterli."
+  },
+  {
+    "slug": "tavuklu-sezar-wrap",
+    "verdict": "PASS",
+    "reason": "Tavuk, tortilla, marul, parmesan, mayonez ve ançüezli Sezar sos wrap yapısıyla uyumlu. Allergen listesi doğru görünüyor.",
+    "sources": [
+      "https://www.foodnetwork.com/recipes/chicken-caesar-wraps-3363125",
+      "https://www.bbcgoodfood.com/recipes/chicken-caesar-wraps"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "tavuklu-sultan-kebabi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Beşamel sos için süt ve un var, fakat yağ veya tereyağı ingredient listesinde yok.",
+      "Sultan kebabı kaynaklarında iç harç yufkaya sarılır, üstüne beşamel ve kaşar eklenir; mevcut yapı doğru ama beşamel yağsız eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://yemektarifleri.gumushaneliler.net/sultan-kebabi-tarifi/",
+      "https://www.nefisyemektarifleri.com/tavuklu-sultan-kebabi/"
+    ],
+    "confidence": "high",
+    "reason": "Tarif kimliği doğru, fakat beşamel için yağ bileşeni eksik. Tereyağı eklenince ingredient ve yöntem tutarlı olur."
+  },
+  {
+    "slug": "tavuklu-yesil-mercimek-pilavi-yozgat-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tavuklu mercimekli pilav kaynaklarla genel olarak uyumlu, fakat Yozgat usulü özel atfı doğrulanamadı.",
+      "Ingredient listesinde yağ ve tuz yok.",
+      "Description yerel iddiayı fazla kesin kuruyor."
+    ],
+    "corrections": {
+      "description": "Tavuklu yeşil mercimek pilavı, pirinci tavuk ve haşlanmış mercimekle pişiren tok, sade ve aile sofralık bir pilavdır.",
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": ["SUT"]
+    },
+    "sources": [
+      "https://www.pilav.gen.tr/tavuklu-pilav.html",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yesil-mercimekli-pilav/4544"
+    ],
+    "confidence": "low",
+    "reason": "Pilav uygulanabilir, ama Yozgat özel kimliği kaynakla güçlü değil. Yağ ve tuz eksikleri de giderilmeli."
+  },
+  {
+    "slug": "tay-buzlu-cayi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Thai iced tea kaynaklarında süt yerine şekerli yoğunlaştırılmış süt ve buharlaştırılmış süt daha tipik.",
+      "Sadece süt kullanımı içeceğin klasik cha yen dokusunu ve tatlılığını zayıflatıyor."
+    ],
+    "corrections": {
+      "ingredients_remove": ["Süt"],
+      "ingredients_add": [
+        { "name": "Şekerli yoğunlaştırılmış süt", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Buharlaştırılmış süt", "amount": "0.5", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/thai-style-iced-tea-51169480",
+      "https://www.lifeslittlesweets.com/thai-iced-tea/"
+    ],
+    "confidence": "high",
+    "reason": "Siyah çay, şeker ve buz doğru. Klasik Tay sütlü çay kimliği için yoğunlaştırılmış ve buharlaştırılmış süt daha doğru."
+  },
+  {
+    "slug": "tay-feslegenli-patlican",
+    "verdict": "PASS",
+    "reason": "Patlıcan, soya sosu, acı biber ve Tay fesleğeni hızlı tavada uyumlu. Vegan soya bazlı yorum kaynaklarla makul, allergenler doğru.",
+    "sources": [
+      "https://www.thaitable.com/thai/recipe/basil-eggplant",
+      "https://www.foodreference.com/html/thai-eggplant-1015.html"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "taze-bakla-ezmesi-aydin-usulu",
+    "verdict": "PASS",
+    "reason": "Bakla ezmesi veya fava, bakla, zeytinyağı, limon ve dereotuyla soğuk meze olarak uyumlu. Süre ve allergen tarafında sorun yok.",
+    "sources": [
+      "https://tr.wikipedia.org/wiki/Fava_(meze)",
+      "https://www.nefisyemektarifleri.com/fava-tarifi-bakla-ezmesi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "taze-fasulyeli-bulgur-pilavi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ingredient listesinde yağ, sıcak su ve tuz yok.",
+      "ServingSuggestion yoğurt öneriyor, fakat tarif vegan tag'i taşıyor.",
+      "Kaynaklarda soğan, fasulye, domates, bulgur ve sıcak su temel yapı olarak geçer."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Sıcak su", "amount": "3", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "servingSuggestion": "Domates salatasıyla sıcak servis edin."
+    },
+    "sources": [
+      "https://www.knorr.com/tr/r/taze-fasulyeli-bulgur-pilav-tarifi.html/112637",
+      "https://www.sahrapsoysal.com/taze-fasulyeli-bulgur-pilavi-tarifi-t-4571"
+    ],
+    "confidence": "high",
+    "reason": "Pilav yapısı doğru, ancak temel pişirme sıvısı ve tuz eksik. Vegan tag varken yoğurt servis önerisi de çelişki yaratıyor."
+  },
+  {
+    "slug": "taze-kekikli-lorlu-omlet-ege-usulu",
+    "verdict": "PASS",
+    "reason": "Yumurta, lor, taze kekik ve zeytinyağıyla kısa tavada omlet yapısı tutarlı. SUT ve YUMURTA allergenleri doğru, süre makul.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/lor-peynirli-omlet/",
+      "https://yemek.com/tarif/peynirli-omlet/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "tea-eggs-cin-atistirmalik-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tea eggs kaynaklarında tarçın, tuz ve az şeker yaygın, mevcut listede yok.",
+      "ServingSuggestion portakal suyu ve karmaşık ekmek diyor, Çin tea egg bağlamıyla ilgisiz.",
+      "Step 2 tava ısıtma metni bu tarif için hatalı boilerplate."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tarçın çubuğu", "amount": "1", "unit": "adet" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Şeker", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 2, "instruction": "Çay, soya sosu, yıldız anason, tarçın, tuz ve şekeri ayrı tencerede kaynatıp aromalı pişirme suyunu hazırlayın.", "timerSeconds": 300 }
+      ],
+      "servingSuggestion": "Kabuklarını soyup tek başına atıştırmalık veya pirinç yanında servis edin."
+    },
+    "sources": [
+      "https://www.saveur.com/article/Recipes/chinese-tea-eggs/",
+      "https://www.eatingchina.com/recipes/tea-egg.htm"
+    ],
+    "confidence": "high",
+    "reason": "Tea egg kimliği doğru, fakat tarçın, tuz, şeker ve servis bağlamı eksik. Boilerplate tava step'i de temizlenmeli."
+  },
+  {
+    "slug": "tehran-fesenjan-cevizli",
+    "verdict": "PASS",
+    "reason": "Tavuk, ceviz, nar ekşisi, soğan, zerdeçal ve uzun pişirme fesenjan kaynaklarıyla uyumlu. Yağlı ceviz nedeniyle macro değerleri makul.",
+    "sources": [
+      "https://www.themediterraneandish.com/fesenjan-persian-pomegranate-walnut-stew/",
+      "https://food52.com/recipes/91512-modern-fesenjan-pomegranate-walnut-chicken"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "tehran-ghormeh-sabzi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ghormeh sabzi için çemen otu veya fenugreek önemli yeşil bileşendir, mevcut ingredient listesinde yok.",
+      "Ingredient listesinde kavurma yağı ve tuz yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru çemen otu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sıvı yağ", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/ghormeh-sabzi",
+      "https://www.themediterraneandish.com/ghormeh-sabzi/"
+    ],
+    "confidence": "high",
+    "reason": "Ghormeh sabzi kimliği doğru, ancak çemen otu ve yağ eksik. Bu bileşenler yahninin klasik ot karakteri için kritik."
+  },
+  {
+    "slug": "tehran-tahdig-safranli",
+    "verdict": "PASS",
+    "reason": "Basmati pirinç, safran, yoğurt, yağ ve tereyağıyla çıtır tabanlı İran pilavı kaynaklarla uyumlu. Süre ve allergen doğru.",
+    "sources": [
+      "https://www.thespruceeats.com/essential-tips-for-the-crispiest-tahdig-7975253",
+      "https://zaffaron.com/recipe/tahchin-tahdig-saffron-yogurt-rice-crust"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "tejfolos-biber-corbasi-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 doğranmış patates ekliyor, fakat ingredient listesinde patates yok.",
+      "Ekşi krema ve paprika ile çorba yapısı uyumlu, sorun ingredient-step eşleşmesi."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Patates", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://www.tasteatlas.com/tejfolos-paprikas-krumplileves",
+      "https://budapestcookingclass.com/hungarian-potato-soup-with-sausage-tejfolos-krumplileves/"
+    ],
+    "confidence": "medium",
+    "reason": "Macar ekşi kremalı paprika çorbası mantıklı, fakat step patates kullanırken liste eksik. Ingredient eklemek yeterli."
+  },
+  {
+    "slug": "tekirdag-hardalli-uskumru-salatasi",
+    "verdict": "PASS",
+    "reason": "Uskumru, roka, kırmızı soğan, limon, zeytinyağı ve hardal soslu salata yapısı tutarlı. Balık ve hardal allergenleri doğru.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/mackerel-salad",
+      "https://www.deliciousmagazine.co.uk/recipes/mackerel-salad-with-horseradish-and-mustard-dressing/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "tekirdag-kofte-izgara",
+    "verdict": "PASS",
+    "reason": "İrmik, yumurta, galeta unu, baharat ve gece dinlendirme Tekirdağ köftesi kaynaklarıyla uyumlu. totalMinutes uzun beklemeyi yansıtıyor.",
+    "sources": [
+      "https://www.iyiyemektarifleri.net/tekirdag-koftesi-tarifi.html",
+      "https://www.nefisyemektarifleri.com/tekirdag-koftesi-tarifi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "tekirdag-koftesi-izgara",
+    "verdict": "PASS",
+    "reason": "Kıyma, ekmek içi, soğan, sarımsak, karbonat ve dinlendirme Tekirdağ köftesi yapısıyla uyumlu. Süre beklemeyi içeriyor.",
+    "sources": [
+      "https://www.iyiyemektarifleri.net/tekirdag-koftesi-tarifi.html",
+      "https://www.nefisyemektarifleri.com/tekirdag-koftesi-tarifi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "tekirdag-peynirli-pirasa-boregi",
+    "verdict": "PASS",
+    "reason": "Pırasa, beyaz peynir, yufka, yoğurt, yumurta ve yağlı sosla fırın böreği kaynaklarla uyumlu. Allergen listesi doğru.",
+    "sources": [
+      "https://yemek.com/tarif/pirasali-borek/",
+      "https://www.nefisyemektarifleri.com/pirasali-peynirli-borek/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "tekirdag-pirasali-peynir-boregi",
+    "verdict": "PASS",
+    "reason": "Yufka, pırasa, beyaz peynir, süt, yumurta ve yağlı sosla hazırlanan fırın böreği tutarlı. Süre ve allergenler doğru.",
+    "sources": [
+      "https://yemek.com/tarif/pirasali-borek/",
+      "https://www.nefisyemektarifleri.com/pirasali-peynirli-borek/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "tel-aviv-shakshuka",
+    "verdict": "PASS",
+    "reason": "Domates, biber, soğan, sarımsak, kimyon ve yumurtalı tava yapısı shakshuka kaynaklarıyla uyumlu. Süre ve allergenler makul.",
+    "sources": [
+      "https://www.seriouseats.com/shakshuka-baked-eggs-matbucha-recipe",
+      "https://www.themediterraneandish.com/shakshuka-recipe/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "tepsi-kebabi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Hatay tepsi kebabı kaynaklarında sarımsak, maydanoz ve baharatlar temel harçta yer alır, mevcut listede yok.",
+      "Kıyma, soğan, biber, domates ve salça yapısı doğru, fakat aromatik eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "3", "unit": "diş" },
+        { "name": "Maydanoz", "amount": "0.5", "unit": "demet" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.hataydanal.com/blog/tepsi-kebabi",
+      "https://www.kirazinmutfagi.com.tr/tarif/tepsi-kebabi-hatay"
+    ],
+    "confidence": "high",
+    "reason": "Hatay tepsi kebabı kimliği doğru. Sarımsak, maydanoz, tuz ve baharat eklenince kaynaklardaki harç omurgası tamamlanır."
+  },
+  {
+    "slug": "tepsi-kebabi-adana-ev-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tepsi kebabı kaynaklarda güçlü biçimde Hatay ve Antakya ile geçiyor, Adana ev usulü özel atfı doğrulanamadı.",
+      "Ingredient listesinde soğan ve maydanoz yok, tepsi kebabı harcı eksik kalıyor.",
+      "Description Güney mutfağı iddiası kuruyor, fakat Adana özel kimliği manuel review gerektiriyor."
+    ],
+    "corrections": {
+      "description": "Tepsi kebabı, kıymayı biber, domates ve sarımsakla tepsiye yayarak fırında pişiren kalabalık sofralara uygun güçlü bir ana yemektir.",
+      "ingredients_add": [
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Maydanoz", "amount": "0.5", "unit": "demet" },
+        { "name": "Biber salçası", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.hataydanal.com/blog/tepsi-kebabi",
+      "https://www.gurmerehberi.com/tarifler/yemek-tarifleri/tepsi-kebabi-hatay-usulu/"
+    ],
+    "confidence": "low",
+    "reason": "Tepsi kebabı doğru bir yemek, ancak Adana özel etiketi kaynakla desteklenmiyor. Kimlik iddiası düşürülmeli ve harç tamamlanmalı."
+  },
+  {
+    "slug": "tepsi-orugu",
+    "verdict": "PASS",
+    "reason": "İnce bulgur, kıyma, soğan ve cevizli içle tepsiye basılan fırın oruk yapısı Hatay kaynaklarıyla uyumlu. Allergenler doğru.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/hatay/neyenir/oruk",
+      "https://www.nefisyemektarifleri.com/tepsi-orugu-tarifi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "tepsi-orugu-adiyaman-usulu",
+    "verdict": "PASS",
+    "reason": "Bulgurlu dış harç, kıymalı soğanlı cevizli iç ve fırında tepsi yapısı oruk ailesiyle uyumlu. Süre ve allergenler makul.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/hatay/neyenir/oruk",
+      "https://www.nefisyemektarifleri.com/tepsi-orugu-tarifi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "tepsi-simit-kebabi-adiyaman-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Simit kebabı kaynaklarda özellikle Gaziantep ve Kilis bağlamında geçiyor, Adıyaman tepsi simit kebabı atfı doğrulanamadı.",
+      "Simit kebabı için soğan, sarımsak, nane ve baharatlar temel, mevcut listede yok.",
+      "Tepsi formu fırın uyarlaması olabilir, fakat mevcut description yöresel kimliği fazla kesin veriyor."
+    ],
+    "corrections": {
+      "description": "Tepsi simit kebabı, ince bulgurla bağlanan kıymayı biber ve domatesle fırında pişiren yoğun aromalı, kalabalık sofralık bir ana yemektir.",
+      "ingredients_add": [
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "3", "unit": "diş" },
+        { "name": "Kuru nane", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Pul biber", "amount": "1", "unit": "tatlı kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/gaziantep/neyenir/smt-kebabi",
+      "https://www.gaziantep.net/mutfak/simit-kebabi-nasil-yapilir.php"
+    ],
+    "confidence": "low",
+    "reason": "Simit kebabı omurgası kaynaklı, fakat Adıyaman tepsi kimliği zayıf. Bu yüzden manuel review gerektiren kimlik düzeltmesi."
+  }
+]

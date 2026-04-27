@@ -1,0 +1,933 @@
+[
+  {
+    "slug": "sumakli-kuru-dolma-pilavi-bitlis-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Kaynaklar kuru patlıcan ve kuru biberi doldurulan kuru dolma olarak verir; mevcut içerik dolma içinden türetilmiş pilav gibi duruyor.",
+      "Bitlis yöre atfı iki kaynakla doğrulanamadı, kimlik iddiası zayıf."
+    ],
+    "corrections": {
+      "description": "Kuru biber ve patlıcanla yapılan bu tabak, kuru dolma içini bulgurla pişiren ekşili bir tencere pilavı uyarlamasıdır."
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/sebze-yemekleri/zeytinyaglilar/bulgurlu-kuru-dolma",
+      "https://www.nefisyemektarifleri.com/sumakli-nar-eksili-etli-kuru-patlican-kuru-biber-dolmasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kuru sebze, bulgur ve ekşi lezzet uyumlu; ancak kaynaklar bunu pilav değil dolma olarak anlatıyor, Bitlis iddiası da net destek bulmuyor."
+  },
+  {
+    "slug": "sumakli-kuru-patlican-dolgusu-sirnak-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Vegan etiketli tarifin servis önerisinde tereyağı var.",
+      "Kuru dolma kaynaklarında yağ temel pişirme malzemesi; ingredient listesinde yağ yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "servingSuggestion": "Üzerine ince taze soğan ve zeytinyağı gezdirerek ılık servis edin."
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/sebze-yemekleri/zeytinyaglilar/bulgurlu-kuru-dolma",
+      "https://www.nefisyemektarifleri.com/sumakli-nar-eksili-etli-kuru-patlican-kuru-biber-dolmasi/"
+    ],
+    "confidence": "high",
+    "reason": "Kuru patlıcan, bulgur, salça ve sumak yapısı kaynaklarla uyumlu; tereyağlı servis vegan etiketini bozuyor ve yağ listede eksik."
+  },
+  {
+    "slug": "sumakli-mahluta-corbasi-mardin-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Mardin mahluta kaynaklarında mercimeğe bulgur veya pirinç eşlik ediyor; mevcut tarifte bu gövde yok.",
+      "Kaynaklar ekşiliği daha çok nar ekşisi veya limonla verir; sumaklı Mardin kimliği doğrulanamadı."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Pilavlık bulgur", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Pirinç", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://lezzetler.com/tarif-161675",
+      "https://www.lezzet.com.tr/yemek-tarifleri/corbalar/corba-tarifleri/mahluta-corbasi-470155"
+    ],
+    "confidence": "medium",
+    "reason": "Mercimekli çorba fikri doğru ama Mardin mahluta için bulgur veya pirinç eksik; sumaklı yöre iddiası net kaynakla desteklenmiyor."
+  },
+  {
+    "slug": "sumakli-nohut-corbasi-mardin-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Nohut çorbası kaynakları soğan, yağ ve çoğu zaman sarımsak veya sebze tabanı kullanır; mevcut listede yağ yok.",
+      "Mardin sumaklı nohut çorbası kimliği iki kaynakla doğrulanamadı."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nohut.gen.tr/nohut-corbasi.html",
+      "https://www.lezzet.com.tr/yemek-tarifleri/corbalar/corba-tarifleri/zerdecalli-nohut-corbasi"
+    ],
+    "confidence": "medium",
+    "reason": "Nohut çorbası iskeleti makul; ancak yağ ve tuz eksik, Mardin sumaklı kimlik iddiası kaynaklarla yeterince kurulamadı."
+  },
+  {
+    "slug": "sumakli-nohut-ezmesi-diyarbakir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Haşlanmış nohutla başlayan tarifte 8-18 dakika haşlama adımı gereksiz ve totalMinutes 10 ile çelişiyor.",
+      "Step 2 yoğurt veya tahin diyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "totalMinutes": 25,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Haşlanmış nohudu süzüp sarımsak ve sumakla birlikte ezmeye hazır hale getirin." },
+        { "stepNumber": 2, "instruction": "Zeytinyağı ve limon suyunu ekleyip pürüzsüz bir sos kıvamı yakalayın." },
+        { "stepNumber": 4, "instruction": "Ezmeği servis tabağına yayıp buzdolabında 15 dakika dinlendirin.", "timerSeconds": 900 }
+      ]
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/nohut-piyazi-tarifi-t-5737",
+      "https://www.nohut.gen.tr/nohut-corbasi.html"
+    ],
+    "confidence": "high",
+    "reason": "Nohut, sumak, sarımsak, zeytinyağı ve limon uyumlu; asıl hata haşlanmış nohudu yeniden haşlatan ve listede olmayan sosları sayan adımlar."
+  },
+  {
+    "slug": "sumakli-nohut-salatasi-nevsehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 zeytinyağı kullanıyor ama ingredient listesinde zeytinyağı yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/nohut-piyazi-tarifi-t-5737",
+      "https://yemek.com/tarif/sumakli-sogan-salatasi/"
+    ],
+    "confidence": "high",
+    "reason": "Nohut, soğan, sumak, maydanoz ve limon piyaz kaynaklarıyla uyumlu; yalnız stepte kullanılan zeytinyağı ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "sumakli-nohutlu-salata-mardin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 limon suyu kullanıyor ama ingredient listesinde limon suyu yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/nohut-piyazi-tarifi-t-5737",
+      "https://yemek.com/tarif/sumakli-sogan-salatasi/"
+    ],
+    "confidence": "high",
+    "reason": "Nohutlu sumaklı salata yapısı doğru; kaynaklarda limonlu ve yağlı sos var, mevcut step limon suyu dediği için liste tamamlanmalı."
+  },
+  {
+    "slug": "sumakli-nohutlu-tavuk-tava-kahramanmaras-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tavuğu mühürleme ve sebze çevirme adımları yağ gerektiriyor ama ingredient listesinde yağ yok.",
+      "Tuz dengesi kontrol ediliyor ama tuz ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://urbanfarmandkitchen.com/musakhan-sumac-chicken/",
+      "https://www.nohut.gen.tr/nohut-corbasi.html"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk, nohut ve sumak uyarlaması makul; pratik uygulamada yağ ve tuz olmadan adımlar eksik kalıyor."
+  },
+  {
+    "slug": "sumakli-ot-salatasi-cesme-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 bekletmeden servis etmeyi söylerken timerSeconds 600 verilmiş.",
+      "Servis önerisinde ceviz geçiyor ama recipe ingredient ve alerjen kapsamına dahil değil."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 5, "instruction": "Ot salatasını sosla son anda buluşturup bekletmeden servis edin.", "timerSeconds": null }
+      ],
+      "servingSuggestion": "Soğuk limon dilimleriyle servis edin."
+    },
+    "sources": [
+      "https://yemek.com/tarif/sumakli-sogan-salatasi/",
+      "https://www.bbcgoodfood.com/recipes/fattoush"
+    ],
+    "confidence": "high",
+    "reason": "Ot, limon, zeytinyağı ve sumak dengesi uygun; net hata bekletmeden servis denilen adıma 10 dakika timer verilmesi."
+  },
+  {
+    "slug": "sumakli-patates-asi-afyon-ova-usulu",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://yemek.com/tarif/sumakli-sogan-salatasi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/sebze-yemekleri/zeytinyaglilar/bulgurlu-kuru-dolma"
+    ],
+    "confidence": "medium",
+    "reason": "Patates, tereyağı, sumak ve kısa pişirme kurgusu basit sıcak yan tabak olarak makul; süre, SUT alerjeni ve vejetaryen etiketi tutarlı."
+  },
+  {
+    "slug": "sumakli-sogan-piyazi-batman-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 domates ve bulgurdan bahsediyor ama ingredient listesinde ikisi de yok.",
+      "Step 3 zeytinyağı kullanıyor ama ingredient listesinde zeytinyağı yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 2, "instruction": "Maydanozu ince kıyın ve soğanla karıştırmadan önce fazla suyunu süzdürün." }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/sumakli-sogan-salatasi/",
+      "https://www.sahrapsoysal.com/nohut-piyazi-tarifi-t-5737"
+    ],
+    "confidence": "high",
+    "reason": "Sumaklı soğan piyazı kaynaklarla uyumlu; adımda olmayan domates ve bulgur temizlenmeli, zeytinyağı listeye eklenmeli."
+  },
+  {
+    "slug": "sumakli-sogan-salatasi-sanliurfa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 zeytinyağı kullanıyor ama ingredient listesinde zeytinyağı yok.",
+      "Step 2 genel şablon cümlesi salata özelinde gereksiz."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 2, "instruction": "Maydanozu ince kıyın ve nar ekşisini sos için hazır tutun." }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/sumakli-sogan-salatasi/",
+      "https://www.sahrapsoysal.com/nohut-piyazi-tarifi-t-5737"
+    ],
+    "confidence": "high",
+    "reason": "Soğan, sumak, nar ekşisi ve maydanoz yapısı doğru; zeytinyağı stepte var ama listede yok, bir şablon adım da sadeleşmeli."
+  },
+  {
+    "slug": "sumakli-soganli-tavuk-tepsi-orta-dogu-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Orta Doğu sumaklı tavuk kaynakları musakhan çizgisinde soğan, zeytinyağı, sumak ve çoğunlukla ekmek tabanı içerir.",
+      "Mevcut tarif fırın etiketli ama step 4 orta ateşte pişirme diyor; tepsi yemeği kimliği teknik olarak tutarsız.",
+      "Servis önerisi kuzu pembesi tabak diyor, tavuk tarifiyle ilgisiz."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Lavaş veya pide", "amount": "2", "unit": "adet" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "servingSuggestion": "Tavuğu soğanlı pişme suyuyla sıcak ekmek üzerinde servis edin."
+    },
+    "sources": [
+      "https://food-heritage.org/palestinian-chicken-musakhan/",
+      "https://www.linsfood.com/musakhan-palestinian-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Sumaklı tavuk ve soğan fikri doğru; fakat fırın tepsi, orta ateş ve kuzu servis cümlesi aynı tarifte ciddi kimlik bozulması yaratıyor."
+  },
+  {
+    "slug": "sumakli-tavuk-pilav-kasesi-levant-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Servis önerisi kuzu eti gibi yazılmış, tavuklu pilav kasesiyle ilgisiz."
+    ],
+    "corrections": {
+      "servingSuggestion": "Pilavı kaseye alın, üstüne sumaklı tavuk ve yoğurt sosu gezdirin."
+    },
+    "sources": [
+      "https://urbanfarmandkitchen.com/musakhan-sumac-chicken/",
+      "https://food-heritage.org/palestinian-chicken-musakhan/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, sumak, yoğurt ve pirinç kasesi Levant esintili uyarlama olarak makul; tek net hata kuzuya ait servis cümlesi."
+  },
+  {
+    "slug": "sumakli-tavuk-sis-salatasi-adana-usulu",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/chicken-fattoush",
+      "https://yemek.com/tarif/sumakli-sogan-salatasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Izgara tavuk, sumaklı soğan, marul ve zeytinyağı salata mantığıyla uyumlu; süreler, protein etiketi ve alerjen alanı makul."
+  },
+  {
+    "slug": "sumakli-tavuk-sote-kilis-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "tipNote içinde 'Sumakı' yazım hatası var."
+    ],
+    "corrections": {
+      "tipNote": "Sumağı ocaktan almaya yakın eklemek rengini daha canlı tutar."
+    },
+    "sources": [
+      "https://urbanfarmandkitchen.com/musakhan-sumac-chicken/",
+      "https://www.linsfood.com/musakhan-palestinian-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, biber, soğan, sumak ve zeytinyağı sote kurgusu tutarlı; düzeltme yalnızca görünen Türkçe yazım hatasına yönelik."
+  },
+  {
+    "slug": "sumakli-tavuklu-bulgur-pilavi-adana-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tavuk soteleme adımı yağ gerektiriyor ama ingredient listesinde yağ yok.",
+      "Tuz dengesi kontrol ediliyor ama tuz ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/pilav-ve-makarna-tarifleri/pilav-tarifleri/firikli-kuru-patlican-ve-biber-dolmasi",
+      "https://urbanfarmandkitchen.com/musakhan-sumac-chicken/"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuklu bulgur pilavı uyarlaması makul; pratik pişirme için yağ ve tuz eksikliği ingredient seviyesinde düzeltilmeli."
+  },
+  {
+    "slug": "sumakli-tavuklu-fattoush-orta-dogu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Fattoush kaynaklarında salatalık, limonlu yağlı sos ve taze otlar ana bileşenlerdir; mevcut listede eksikler var.",
+      "Step 5 soğan diyor ama ingredient listesinde soğan yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Salatalık", "amount": "1", "unit": "adet" },
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" },
+        { "name": "Limon suyu", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 5, "instruction": "Lavaş cipsini son anda ekleyin, salata beklerken gevrekliğini kaybetmesin." }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/chicken-fattoush",
+      "https://www.mayoclinic.org/healthy-lifestyle/recipes/fattoush/rcp-20049872"
+    ],
+    "confidence": "high",
+    "reason": "Tavuklu fattoush fikri doğru; fakat klasik salata için salatalık, otlar, limon ve zeytinyağı eksik, soğan adımı da listeyle uyuşmuyor."
+  },
+  {
+    "slug": "sumakli-tulum-salatasi-kars-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 limon suyu kullanıyor ama ingredient listesinde limon suyu yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/sumakli-sogan-salatasi/",
+      "https://www.sahrapsoysal.com/nohut-piyazi-tarifi-t-5737"
+    ],
+    "confidence": "high",
+    "reason": "Tulum peyniri, soğan, sumak ve maydanoz salata olarak makul; stepte geçen limon suyu listede olmadığı için eklenmeli."
+  },
+  {
+    "slug": "sumakli-turplu-yogurt-salata-malatya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 soğanı sumakla ovmaktan bahsediyor ama ingredient listesinde soğan yok.",
+      "Yoğurtlu salata kaynaklarında sarımsak ve tuz temel destek; mevcut listede ikisi de eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 5, "instruction": "Sumağı yoğurtlu karışıma ekleyip turpları ezmeden karıştırın." }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yogurtlu-pancar-salatasi-tarifi/4281",
+      "https://ye-mek.net/tarif/yogurtlu-pancar-salatasi"
+    ],
+    "confidence": "high",
+    "reason": "Turp, yoğurt, sumak ve nane serin salata olarak uyumlu; soğan şablonu silinmeli, sarımsak ve tuz listeye eklenmeli."
+  },
+  {
+    "slug": "sumakli-yogurtlu-kofte-kilis-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Bulgurlu yoğurtlu köfte adımında yoğurt doğrudan sıcak suya ekleniyor; kesilme riski var.",
+      "Tuz kontrol ediliyor ama ingredient listesinde tuz yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 4, "instruction": "Yoğurdu sıcak sudan bir kepçeyle ılıtıp tencereye ekleyin, kısık ateşte ısıtın.", "timerSeconds": 120 }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/corbalar/corba-tarifleri/nohut-corbasi",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yogurtlu-pancar-salatasi-tarifi/4281"
+    ],
+    "confidence": "medium",
+    "reason": "Bulgurlu köfte ve yoğurtlu sos mantığı uygulanabilir; tuz eksik, yoğurdu ılıtmadan eklemek teknik hata oluşturuyor."
+  },
+  {
+    "slug": "sumakli-yogurtlu-pancar-gaziantep-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 soğandan bahsediyor ama ingredient listesinde soğan yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 5, "instruction": "Sumağı zeytinyağıyla açıp yoğurtlu pancarın üstüne gezdirin." }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yogurtlu-pancar-salatasi-tarifi/4281",
+      "https://ye-mek.net/tarif/yogurtlu-pancar-salatasi"
+    ],
+    "confidence": "high",
+    "reason": "Pancar, yoğurt, sarımsak ve zeytinyağı salata kaynaklarıyla uyumlu; tek net hata listede olmayan soğan adımı."
+  },
+  {
+    "slug": "sumakli-yumurta-kapama-kilis-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Yumurta kapama kaynakları genelde haşlanmış yumurtayı tereyağlı baharatlı sosla verir; mevcut tarif tavada kırılmış yumurta gibi.",
+      "Kilis sumaklı kapama kimliği iki kaynakla doğrulanamadı."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "20", "unit": "gr" }
+      ],
+      "allergens_add": [
+        "SUT"
+      ]
+    },
+    "sources": [
+      "https://www.nedemek.page/kavramlar/yumurta%20kapama%20tarifi",
+      "https://yemek.com/tarif/sumakli-sogan-salatasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Yumurta ve sumak fikri uygulanabilir ama kapama kimliği zayıf; klasik kapama haşlanmış yumurta ve tereyağlı baharat tabanına daha yakın."
+  },
+  {
+    "slug": "sumakli-yumurta-piyazi-adiyaman-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 peynirli dokudan bahsediyor ama tarifte peynir yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 5, "instruction": "Yumurtaları sumaklı soğanla ezmeden karıştırıp bekletmeden servis edin." }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/sumakli-sogan-salatasi/",
+      "https://www.sahrapsoysal.com/nohut-piyazi-tarifi-t-5737"
+    ],
+    "confidence": "high",
+    "reason": "Haşlanmış yumurta, soğan, sumak, maydanoz ve zeytinyağı piyaz olarak makul; peynirli doku cümlesi tarif dışı."
+  },
+  {
+    "slug": "summer-pudding",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/summer-pudding",
+      "https://www.deliaonline.com/recipes/international/european/british/summer-pudding"
+    ],
+    "confidence": "high",
+    "reason": "Ekmekle kalıp kaplama, şekerli kırmızı meyve, ağırlık altında soğutma ve krema servisi klasik Britanya summer pudding ile uyumlu."
+  },
+  {
+    "slug": "sundubu-jjigae",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Sundubu kaynaklarında gochugaru ve susam yağının yanında sarımsak, soğan veya taze soğan tabanı var; mevcut tarifte aromatik taban eksik.",
+      "Susam yağı ingredient olduğu için SUSAM alerjeni doğru, SOYA ve YUMURTA da doğru."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Taze soğan", "amount": "2", "unit": "dal" }
+      ]
+    },
+    "sources": [
+      "https://www.maangchi.com/recipe/gogi-sundubu-jjigae",
+      "https://www.theguardian.com/food/2024/nov/04/sundubu-jjigae-recipe-seji-hong-spicy-tofu-and-seafood-stew"
+    ],
+    "confidence": "high",
+    "reason": "Tofu, gochugaru, soya sosu ve yumurta doğru; Kore kaynaklarına göre sarımsak ve taze soğan gibi aromatik taban eksik."
+  },
+  {
+    "slug": "suppli",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Suppli kaynaklarında pirinç topları genellikle domatesli et sosu veya domatesli risotto tabanıyla yapılır; mevcut tarifte sos tabanı yok.",
+      "Mozzarella, yumurta ve galeta unu doğru; alerjenler doğru."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Domates sosu", "amount": "0.5", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.lacucinaitaliana.com/italian-food/italian-dishes/suppli-a-typical-fried-food-from-rome",
+      "https://www.bonappetit.com/recipe/mozzarella-arancini-stuffed-rice-balls"
+    ],
+    "confidence": "medium",
+    "reason": "Pirinç, mozzarella, yumurta ve pane yapısı doğru; Roma supplì kimliği için domatesli pirinç tabanı eksik kalıyor."
+  },
+  {
+    "slug": "surabaya-ayam-geprek",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Ayam_geprek",
+      "https://simple-spices.com/ayam-geprek/"
+    ],
+    "confidence": "high",
+    "reason": "Çıtır kızarmış tavuk, sarımsaklı acı sambal, ezerek servis ve pirinç eşliği ayam geprek kaynaklarıyla uyumlu; alerjenler makul."
+  },
+  {
+    "slug": "surk-baharatli-labne-ezmesi-hatay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ceviz içi ingredient olduğu halde KUSUYEMIS alerjeni doğru; SUT de doğru.",
+      "Step 5 içinde 'Ezmeği' yazım hatası var."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 5, "instruction": "Ezmeyi ekmeğe sürülecek kıvamda servis edin." }
+      ]
+    },
+    "sources": [
+      "https://www.hataytso.org.tr/tr/genel-sayfa/cografi-tescilli-urunler/antakya-surku-cokelegi-60.html",
+      "https://www.hataystore.com/urun/surk-peyniri"
+    ],
+    "confidence": "high",
+    "reason": "Sürk, süt ürünü, baharat ve zeytinyağı Hatay kaynaklarıyla uyumlu; düzeltme yalnızca yazım hatalı servis adımına yönelik."
+  },
+  {
+    "slug": "surk-ezmesi-hatay-usulu",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.hataytso.org.tr/tr/genel-sayfa/cografi-tescilli-urunler/antakya-surku-cokelegi-60.html",
+      "https://www.hataystore.com/urun/surk-peyniri"
+    ],
+    "confidence": "high",
+    "reason": "Sürk peyniri, domates, zeytinyağı ve baharatla ezme yapısı Hatay sürk kullanımına uyuyor; SUT alerjeni ve süreler makul."
+  },
+  {
+    "slug": "surk-peynirli-biberli-durum-hatay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 tava hazırlamayı 10 dakika timer ile işaretliyor; bu gerçek pişirme veya bekleme süresi değil."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Tava, kase ve spatulayı hazırlayın, pişirme başlayınca ritim bozulmasın.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.hataytso.org.tr/tr/genel-sayfa/cografi-tescilli-urunler/antakya-surku-cokelegi-60.html",
+      "https://www.hataystore.com/urun/surk-peyniri"
+    ],
+    "confidence": "high",
+    "reason": "Lavaş, sürk ve köz biber hızlı dürüm için tutarlı; tek net hata ekipman hazırlığına 10 dakika timer verilmesi."
+  },
+  {
+    "slug": "susamli-armut-tatlisi-bursa-usulu",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/meyveli-tatlilar/armut-tatlisi",
+      "https://www.dogusekerleme.com/urun/sade-tahin-helvasi"
+    ],
+    "confidence": "medium",
+    "reason": "Armutu şekerli limonlu suda pişirme ve susamla bitirme meyve tatlısı olarak tutarlı; vegan etiketi, süre ve SUSAM alerjeni doğru."
+  },
+  {
+    "slug": "susamli-biber-dizmesi-kocaeli-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Kocaeli susamlı biber dizmesi kimliği iki kaynakla doğrulanamadı.",
+      "Adımlar biber dizmesi yerine genel harç toparlama şablonu gibi; biberin közlenmesi veya fırınlanması net değil."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 2, "instruction": "Zeytinyağı, susam ve tuzu küçük bir kapta karıştırın." },
+        { "stepNumber": 3, "instruction": "Biberleri tek sıra tepsiye dizip susamlı yağla kaplayın." },
+        { "stepNumber": 4, "instruction": "Biberleri 190°C fırında 18 dakika yumuşayıp kenarları kızarana kadar pişirin.", "timerSeconds": 1080 }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/meze-tarifleri/sarimsakli-koz-biber-ezmesi",
+      "https://yemek.com/tarif/koz-biber-ezmesi/"
+    ],
+    "confidence": "medium",
+    "reason": "Biber, zeytinyağı ve susam uyumlu ama yöresel kimlik desteklenmiyor; mevcut adımlar biber hazırlığını doğru tarif etmiyor."
+  },
+  {
+    "slug": "susamli-borulce-salatasi-izmir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 zeytinyağı kullanıyor ama ingredient listesinde zeytinyağı yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/nohut-piyazi-tarifi-t-5737",
+      "https://yemek.com/tarif/sumakli-sogan-salatasi/"
+    ],
+    "confidence": "high",
+    "reason": "Börülce, limon, maydanoz, biber ve susam salata olarak uyumlu; adımda kullanılan zeytinyağı ingredient listesinde eksik."
+  },
+  {
+    "slug": "susamli-corek-eskisehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Mayalı hamur için 20 dakika tek mayalama kısa; tipNote ayrıca şekil sonrası 10 dakika bekletmeyi öneriyor ama steps içinde yok.",
+      "Toplam süre 45 dakika, mevcut adımlar 10 dakika ısıtma, 20 dakika mayalama ve 20 dakika pişirme ile zaten 50 dakika ediyor."
+    ],
+    "corrections": {
+      "totalMinutes": 60,
+      "steps_replace": [
+        { "stepNumber": 3, "instruction": "Hamuru yoğurup 30 dakika mayalandırın.", "timerSeconds": 1800 },
+        { "stepNumber": 4, "instruction": "Hamura şekil verip susama bulayın, tepside 10 dakika dinlendirin.", "timerSeconds": 600 }
+      ]
+    },
+    "sources": [
+      "https://www.hataytso.org.tr/tr/genel-sayfa/cografi-tescilli-urunler/antakya-surku-cokelegi-60.html",
+      "https://www.dogusekerleme.com/urun/sade-tahin-helvasi"
+    ],
+    "confidence": "medium",
+    "reason": "Un, süt, maya, tereyağı ve susam çörek için uygun; zaman planı mayalı hamur için kısa ve toplam süreyle çelişiyor."
+  },
+  {
+    "slug": "susamli-kabak-cicegi-tava-adana-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Adımlar kabak çiçeği kızartması yerine genel harç toparlama şablonu gibi.",
+      "Kabak çiçeği tavada çiçekler tek tek hamura batırılıp kızartılmalı."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kabak çiçeklerini yırtmadan temizleyip iç kısımlarını nazikçe ayıklayın." },
+        { "stepNumber": 2, "instruction": "Un, yumurta, su, susam ve tuzu pürüzsüz çırpın.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Çiçekleri hamura batırıp fazla harcını süzdürün." },
+        { "stepNumber": 4, "instruction": "Çiçekleri kızgın yağda çevirerek kızartın.", "timerSeconds": 300 }
+      ]
+    },
+    "sources": [
+      "https://www.dombili.com/kabak-cicegi-kizartmasi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/meze-tarifleri/koz-biber-ezmesi-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Malzeme listesi kabak çiçeği kızartmasına uygun; fakat mevcut adımlar çiçek temizleme, hamura batırma ve kızartmayı net anlatmıyor."
+  },
+  {
+    "slug": "susamli-kabak-corbasi-japon-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Japon usulü kabak çorbası kimliği iki kaynakla doğrulanamadı; Japon kabak çorbaları çoğunlukla kabocha ile anılır.",
+      "Mevcut tarifte kabak türü belirsiz ve miso, dashi veya soya gibi Japon bağlamını kuran unsur yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soya sosu", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": [
+        "SOYA"
+      ]
+    },
+    "sources": [
+      "https://www.justonecookbook.com/kabocha-squash-soup/",
+      "https://www.chineserecipes.com/noodles/sesame-noodles"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak ve susam çorba olarak uygulanabilir; Japon kimliği zayıf, en azından soya sosu gibi bağlayıcı bir malzeme olmadan iddia eksik."
+  },
+  {
+    "slug": "susamli-kabak-ezme-foca-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 yoğurt veya tahinden bahsediyor ama ingredient listesinde yok.",
+      "Haşlama 8-18 dakika aralığı belirsiz, totalMinutes 18 ile 15 dakika dinlenme beraber sıkışıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 30,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kabağı doğrayıp 8 dakika yumuşayana kadar haşlayın ve süzün.", "timerSeconds": 480 },
+        { "stepNumber": 2, "instruction": "Sarımsak, zeytinyağı ve susamı pürüzsüz karıştırın." },
+        { "stepNumber": 4, "instruction": "Ezmeği servis tabağına yayıp buzdolabında 15 dakika dinlendirin.", "timerSeconds": 900 }
+      ]
+    },
+    "sources": [
+      "https://www.arcelik.com.tr/blog/tahinli-kabak-ezmesi-tarifi",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/meze-tarifleri/sarimsakli-koz-biber-ezmesi"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak ezmesi fikri uyumlu; adımlar listede olmayan yoğurt veya tahini sayıyor ve toplam süre dinlenmeyi kapsamıyor."
+  },
+  {
+    "slug": "susamli-kabak-sote-aksaray-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve 2 hazırlık adımlarında gereksiz timerSeconds var.",
+      "Tuz dengesi kontrol ediliyor ama ingredient listesinde tuz yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kabağı yarım ay doğrayıp tavaya hazır edin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Sarımsağı ezin, susam ve zeytinyağını ölçün.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.arcelik.com.tr/blog/tahinli-kabak-ezmesi-tarifi",
+      "https://thefeedfeed.com/thrivingonplants/crispy-sesame-tofu"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak, sarımsak, zeytinyağı ve susam sote için makul; hatalar hazırlık adımlarındaki yapay timerlar ve eksik tuz."
+  },
+  {
+    "slug": "susamli-katikli-corek",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tarif çörek olmasına rağmen type YEMEK görünüyor; apply şeması type düzeltmiyor, manuel review gerekebilir.",
+      "Step 2 genel şablon cümlesi ve son step 'su salma' ifadesi çörekle uyumsuz."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 2, "instruction": "Beyaz peyniri ufalayın ve susamı ayrı tabağa alın." },
+        { "stepNumber": 6, "instruction": "Çöreği kısa dinlendirip ılık servis edin.", "timerSeconds": 300 }
+      ]
+    },
+    "sources": [
+      "https://www.hataytso.org.tr/tr/genel-sayfa/cografi-tescilli-urunler/antakya-surku-cokelegi-60.html",
+      "https://www.dogusekerleme.com/urun/sade-tahin-helvasi"
+    ],
+    "confidence": "medium",
+    "reason": "Hamur, yoğurt, peynir ve susam çörek için tutarlı; fakat type alanı ve iki şablon adım bu tarifi zayıflatıyor."
+  },
+  {
+    "slug": "susamli-kereviz-tava-manisa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve 2 hazırlık adımlarında gereksiz timerSeconds var.",
+      "Tuz dengesi kontrol ediliyor ama ingredient listesinde tuz yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kerevizi yarım ay doğrayıp limon suyuyla kararmadan bekletin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Susam, zeytinyağı ve tuzu ölçüp pişirme alanına alın.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/meze-tarifleri/koz-biber-ezmesi-tarifi",
+      "https://yemek.com/tarif/koz-biber-ezmesi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kereviz, limon, zeytinyağı ve susam sıcak sebze olarak makul; hazırlık timerları ve eksik tuz düzeltilmeli."
+  },
+  {
+    "slug": "susamli-koz-biber-ezme-adana-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Köz biber zaten pişmiş malzeme; step 1 haşlama şablonu yanlış.",
+      "Toplam süre 10 dakika ama step 4 tek başına 15 dakika dinlendirme içeriyor."
+    ],
+    "corrections": {
+      "totalMinutes": 25,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Köz biberlerin kabuk ve çekirdeklerini temizleyip küçük doğrayın." },
+        { "stepNumber": 4, "instruction": "Ezmeyi servis tabağına yayıp buzdolabında 15 dakika dinlendirin.", "timerSeconds": 900 }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/koz-biber-ezmesi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/meze-tarifleri/sarimsakli-koz-biber-ezmesi"
+    ],
+    "confidence": "high",
+    "reason": "Köz biber, sarımsak, zeytinyağı ve susam meze olarak uyumlu; haşlama şablonu ve süre hesabı net biçimde hatalı."
+  },
+  {
+    "slug": "susamli-kraker",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ServingSuggestion labneli dip öneriyor ama tarif vegan etiketli; bu kullanıcıyı yanıltır.",
+      "Hamurda tuz kullanılıyor ama ingredient listesinde tuz yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "servingSuggestion": "Zeytin ezmesiyle servis edin."
+    },
+    "sources": [
+      "https://www.dogusekerleme.com/urun/sade-tahin-helvasi",
+      "https://www.bonappetit.com/recipe/tofu-nuggets"
+    ],
+    "confidence": "high",
+    "reason": "Un, zeytinyağı, susam ve fırınlama kraker için tutarlı; labneli servis vegan etiketiyle çelişiyor ve tuz listede eksik."
+  },
+  {
+    "slug": "susamli-salatalik-noodle-cin-usulu",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.chineserecipes.com/noodles/sesame-noodles",
+      "https://www.epicurious.com/recipes/food/views/sesame-noodles"
+    ],
+    "confidence": "high",
+    "reason": "Noodle, salatalık, susam ezmesi, soya sosu ve pirinç sirkesi soğuk susamlı noodle kaynaklarıyla uyumlu; alerjenler doğru."
+  },
+  {
+    "slug": "susamli-tahin-helvasi-aksaray-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 toplam sürede görünmeyen 30 dakika dinlenme içeriyor; totalMinutes 27 ile çelişiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 57
+    },
+    "sources": [
+      "https://www.tahin.gen.tr/tahin-helvasi.html",
+      "https://www.dogusekerleme.com/urun/sade-tahin-helvasi"
+    ],
+    "confidence": "high",
+    "reason": "Tahin, şeker, su ve susam helva mantığıyla uyumlu; tek net hata 30 dakika dinlenmenin toplam süreye dahil edilmemesi."
+  },
+  {
+    "slug": "susamli-tofu-nugget",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.bonappetit.com/recipe/tofu-nuggets",
+      "https://www.coolinarco.com/recipe/baked-crispy-tofu-nuggets"
+    ],
+    "confidence": "high",
+    "reason": "Sert tofu, soya sosu, nişasta ve fırında çıtır kaplama kaynaklarla uyumlu; SOYA ve SUSAM alerjenleri doğru."
+  },
+  {
+    "slug": "suspiro-limeno-peru-lima-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Suspiro limeño kaynaklarında kremada yumurta sarısı, üstte ise porto şaraplı şerbetle yapılan beze bulunur.",
+      "Mevcut tarifte yumurta sarısı ve porto şarabı yok; yalnız süt, şeker ve yumurta akı kimliği eksik bırakıyor.",
+      "Sütlü krema 12 dakika pişirme kaynaklardaki 30 dakika civarı koyulaştırma süresine göre düşük."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yumurta sarısı", "amount": "2", "unit": "adet" },
+        { "name": "Porto şarabı", "amount": "0.25", "unit": "su bardağı" },
+        { "name": "Tarçın", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 35,
+      "totalMinutes": 83
+    },
+    "sources": [
+      "https://www.peru.travel/gastronomy/en/recipes/desserts/suspiro-limeno.html",
+      "https://www.goya.com/en/recipes/suspiro-limeno-peruvian-custard/"
+    ],
+    "confidence": "high",
+    "reason": "Tatlı kimliği tanınabilir ama yumurta sarısı, porto şarabı ve daha uzun sütlü krema pişirme süresi olmadan Lima klasiği eksik kalıyor."
+  },
+  {
+    "slug": "susurluk-ayran-asi-balikesir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "45 dakika soğutma adımı totalMinutes 25 içinde yok.",
+      "30-dakika-alti etiketi 45 dakika soğutma nedeniyle yanıltıcı."
+    ],
+    "corrections": {
+      "totalMinutes": 70,
+      "tags_remove": [
+        "30-dakika-alti"
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/corbalar/corba-tarifleri/nohut-corbasi",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yogurtlu-pancar-salatasi-tarifi/4281"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurt, buğday, nohut ve nane soğuk ayran aşı için makul; 45 dakika soğutma toplam süreye girmeli ve hızlı tarif etiketi kalkmalı."
+  },
+  {
+    "slug": "sut-recelli-ekmek-tatlisi-bilecik-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Başlık süt reçelli diyor ama ingredient listesinde süt reçeli yok; sadece meyve reçeli var.",
+      "Step 5 süt reçeli gezdiriyor, bu ingredient listesiyle çelişiyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Süt reçeli", "amount": "4", "unit": "yemek kaşığı" }
+      ],
+      "ingredients_remove": [
+        "Meyve reçeli"
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/koz-biber-ezmesi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/meyveli-tatlilar/armut-tatlisi"
+    ],
+    "confidence": "medium",
+    "reason": "Ekmek, süt ve şekerle pratik tatlı mümkün; fakat ad ve step süt reçeli isterken listede meyve reçeli yazması net veri hatası."
+  },
+  {
+    "slug": "sutlac",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://yemek.com/tarif/firin-sutlac/",
+      "https://www.nefisyemektarifleri.com/firin-sutlac-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Süt, pirinç, şeker, nişasta, kaselere paylaştırma ve fırında üst kızartma klasik fırın sütlaçla uyumlu; SUT alerjeni doğru."
+  }
+]

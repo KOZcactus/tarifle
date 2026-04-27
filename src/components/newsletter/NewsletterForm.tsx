@@ -102,6 +102,8 @@ export function NewsletterForm({ variant = "footer" }: NewsletterFormProps) {
         </form>
         {result && (
           <p
+            role="status"
+            aria-live="polite"
             className={`mt-3 text-xs ${
               result.ok ? "text-accent-green" : "text-error"
             }`}
@@ -139,6 +141,8 @@ export function NewsletterForm({ variant = "footer" }: NewsletterFormProps) {
       </form>
       {result && (
         <p
+          role="status"
+          aria-live="polite"
           className={`mt-2 text-[11px] ${
             result.ok ? "text-accent-green" : "text-error"
           }`}

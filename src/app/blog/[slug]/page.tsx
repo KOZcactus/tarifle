@@ -122,11 +122,11 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd).replace(/</g, "\u003c") }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, "\u003c") }}
       />
 
       <nav aria-label="breadcrumb" className="mb-4 text-xs text-text-muted">

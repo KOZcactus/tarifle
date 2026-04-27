@@ -166,18 +166,18 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
       {/* Schema.org BreadcrumbList JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, "\u003c") }}
       />
       {/* Schema.org FAQPage JSON-LD, kategori SSS rich results.
           landingCopy varsa Mod C 4 spesifik soru, yoksa fallback generic. */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, "\u003c") }}
       />
       {recipes.length > 0 && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(recipeListJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(recipeListJsonLd).replace(/</g, "\u003c") }}
         />
       )}
 

@@ -76,6 +76,13 @@ if (dsn) {
       // Sentry's own load failures (already-failed event reporting,
       // nothing to do inside Sentry itself)
       "Cannot load Sentry",
+      // K3 React 19 dev console warning (oturum 26 test campaign):
+      // <script type="application/ld+json"> + dangerouslySetInnerHTML
+      // pattern Next.js docs supported (JSON-LD SEO için), React 19'un
+      // "Encountered a script tag while rendering" warning'i bu use
+      // case için false-positive. Crawler okur, client execute etmez.
+      // Pattern stabil kalir, Sentry'ye dropping prevent.
+      /Encountered a script tag while rendering React component/,
     ],
     // Block events originating from browser extension scripts; these
     // execute in page context but their errors never come from our code.

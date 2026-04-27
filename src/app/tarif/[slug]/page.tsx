@@ -403,13 +403,13 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
       {/* Schema.org Recipe JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\u003c") }}
       />
       {/* Schema.org BreadcrumbList JSON-LD, Google Search'te kartın
           altına "Ana Sayfa › Tarifler › Kategori › Tarif" şeridi çıkar. */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, "\u003c") }}
       />
       {/* Schema.org FAQPage JSON-LD, Google SERP'te FAQ rich results.
           "Kaç kişilik?", "Kaç kalori?", "Hangi alerjenler?" otomatik. */}
@@ -418,7 +418,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
         return faqJsonLd ? (
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, "\u003c") }}
           />
         ) : null;
       })()}

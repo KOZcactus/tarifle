@@ -145,7 +145,15 @@ export default async function RootLayout({
           <script
             key={i}
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            // K3 (oturum 26) JSON-LD security hardening: '<' karakteri
+            // <'ye escape edilir, </script> injection vector engellenir.
+            // Next.js docs canonical pattern (https://nextjs.org/docs/app/
+            // building-your-application/optimizing/metadata#json-ld).
+            // React 19 dev warning false-positive (Sentry filter eklendi
+            // src/instrumentation-client.ts'te).
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
+            }}
           />
         ))}
         <NextIntlClientProvider locale={locale} messages={messages}>

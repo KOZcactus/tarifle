@@ -10,16 +10,25 @@
 > Mod K v2 Batch 7a + 7b + 8a + 8b + 9a apply (commit `1c1dccf`):
 > 250 entry, 161 PASS (%64) / 84 CORRECTION / 5 MAJOR_ISSUE / 0
 > BLOCKED. 84 prod CORRECTION uygulandı. Total Mod K progress 17/71
-> sub-batch (~405 correction prod). Spot-check DB query ile 3
-> critical (elazig-lobik-corbasi 85→565 dk pasif bekleme + çoban
-> salatası miktar + cizleme maya/tuz) doğrulandı. 5 MAJOR_ISSUE
-> manuel review listesinde: dark-and-stormy (Bermuda enum yok),
-> denizli-yen-boregi (içerik sapması mini-rev gerek), dereotlu-
-> patates-rosti-isvec-usulu (röşti İsviçre kökenli), domatesli-
-> firik-pilavi-tekirdag-usulu (yöre atfı kaynaksız), eggs-benedict
-> (cuisine + vejetaryen tag yanıltıcı). Commits: `c8aa01a` SEO
-> batch2 + `3d31034` em-dash skip + `b81f9e3` docs + `1c1dccf` Mod
-> K 5 batch.
+> sub-batch (~405 correction prod).
+>
+> Manuel mini-rev 7 tarif (3 BLOCKED oturum 25 + 4 MAJOR oturum 26):
+> 2 paralel web research agent ile 2-3 kaynak/tarif teyit edildi.
+> Verdict: 2 PASS + 5 CORRECTION (dark-and-stormy skip kalıcı).
+> ankara-tava (3 kaynak, BLOCKED override) ve anzac-biscuits (Kural
+> 9 BLOCK override, cooling pasif) PASS, sadece AuditLog. cevizli-
+> narli-kofte-siirt-usulu (kıyma+soğan ekle, vegan tag kaldır,
+> kitel otantik), denizli-yen-boregi (full rewrite mısır unu mayalı
+> hamur+kuzu kıyma+iç yağı+fırın 25-30 dk, total 58→115 mayalama
+> pasif), dereotlu-patates-rosti-isvec-usulu (title raggmunk rename
+> + süt+un ekle), domatesli-firik-pilavi-tekirdag-usulu (Tekirdağ
+> kaldır, Antep coğrafi işaret 728), eggs-benedict (cuisine tr→us
+> + Kanada jambonu ekle + vejetaryen tag kaldır). Tüm 7 tarif dev
+> + prod apply 7/7 PASS, AuditLog action="MOD_K_MANUAL_REV".
+>
+> Commits: `c8aa01a` SEO batch2 + `3d31034` em-dash skip + `b81f9e3`
+> docs + `1c1dccf` Mod K 5 batch + `750d108` Mod K docs + (bu commit)
+> mini-rev 7 tarif docs.
 
 > **Oturum 25 SONU (27 Nis 2026, oturum 24'ün devamı), 26 commit,
 > GPT 5 Pro audit + Mod K v2 maratonu.** **GPT 5 Pro tam analiz

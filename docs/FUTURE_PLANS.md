@@ -32,22 +32,19 @@ fransiz, japon. Multi-session iş, oturum 27-30+ tamamlanır.
 
 **Oturum 26 progress**: Batch 7a + 7b + 8a + 8b + 9a apply
 (commit `1c1dccf`), 84 ek correction prod. PASS oranı %64 (oturum 25
-ortalaması %48'in üstünde). 5 MAJOR_ISSUE manuel review listesi:
+ortalaması %48'in üstünde).
 
-- `dark-and-stormy` (7a): Bermuda kokteyli, CUISINE_CODES enum'da
-  Bermuda yok. Karar: skip kalıcı (1 tarif için bm enum mantıksız).
-- `denizli-yen-boregi` (7a): kaynak içerik ciddi sapması (mısır unu
-  vs buğday, kuzu vs dana, fırın vs tava). Codex'ten mini-rev iste.
-- `dereotlu-patates-rosti-isvec-usulu` (7b/8a): röşti İsviçre kökenli,
-  İsveç cuisine yanıltıcı. Codex'ten mini-rev iste (cuisine değiş,
-  başlık revize).
-- `domatesli-firik-pilavi-tekirdag-usulu` (8a/8b): firik pilavı
-  Güneydoğu/Anadolu, Tekirdağ atfı kaynaksız. Mini-rev "Tekirdağ
-  usulü" ifadesini kaldır.
-- `eggs-benedict` (8a/9a): cuisine 'tr' yanıltıcı (us brunch klasiği),
-  vejetaryen tag yanıltıcı (klasik Canadian bacon içerir). Codex'ten
-  mini-rev iste (cuisine us, vejetaryen tag kaldır, ingredient
-  bacon ekle).
+**Mini-rev 7 tarif TAMAM ✅** (3 BLOCKED oturum 25 + 4 MAJOR oturum
+26): Manuel düzeltme + 2 web research agent + 2-3 kaynak/tarif teyit.
+2 PASS (ankara-tava + anzac-biscuits) + 5 CORRECTION (cevizli-narli-
+kofte-siirt-usulu + denizli-yen-boregi + dereotlu-patates-rosti-isvec-
+usulu + domatesli-firik-pilavi-tekirdag-usulu + eggs-benedict).
+dark-and-stormy skip kalıcı (Bermuda enum yok, 1 tarif için
+mantıksız). Tüm 7 dev + prod apply 7/7 PASS, AuditLog action=
+"MOD_K_MANUAL_REV".
+
+Sıradaki Codex tetikleri için temiz: 9b + 10a Codex teslim diskte
+hazır (henüz verify+apply yapılmadı), bir sonraki adım.
 
 **Aşağıdaki eski oturum 25 başlığı kaldı (referans):**
 

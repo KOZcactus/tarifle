@@ -1,64 +1,67 @@
 # Mod K verify raporu
 
-Okunan dosya: 2 batch
-Toplam entry: 100
+Okunan dosya: 1 batch
+Toplam entry: 50
 
 ## Ozet (verdict)
 
-- PASS: **42** (42.0%)
-- CORRECTION: 56 (56.0%)
-- MAJOR_ISSUE: 2 (2.0%)
+- PASS: **18** (36.0%)
+- CORRECTION: 29 (58.0%)
+- MAJOR_ISSUE: 3 (6.0%)
 
 ## Confidence
 
-- high: 58, medium: 38, low: 4
+- high: 26, medium: 24, low: 0
 
 ## Format integrity
 
-- Apply'a hazir (clean format): **100**
+- Apply'a hazir (clean format): **50**
 - BLOCKED (format issue): 0
 
 ## MAJOR_ISSUE (manuel review zorunlu)
 
-### `cape-town-mercimek-bobotie`
+### `chilaquiles`
 
-**Reason**: Bobotie Güney Afrika yemeğidir ve gb kodu yanıltıcıdır. Enum eksikliği manuel karar ister; ayrıca stepteki temel malzemeler listede yok.
-
-**Issues**:
-- cuisine: Güney Afrika yemeği için cuisine 'gb' yanıltıcı; mevcut enumlarda Güney Afrika kodu yok, manuel mapping gerekiyor
-- step 2 ve 3: soğan, sarımsak, zerdeçal ve ekmek içi geçiyor ama ingredient listesinde yok
-- allergen: ekmek içi kullanıldığı için GLUTEN allergeni eksik
-
-**Corrections** (sample):
-- description: "Güney Afrika usulü mercimek bobotie, körili mercimek ve kuru üzümü yumurtalı süt katmanıyla fırınlayan baharatlı bir yem..."
-- ingredients_add: 4
-
-### `cennet-camurlu-muhallebi-mersin-usulu`
-
-**Reason**: Mevcut kayıt adından ve kaynaklardaki temel reçeteden kopmuş. Bu muhallebi değil, kadayıf, fıstık, şerbet ve kaymaklı tatlıdır.
+**Reason**: Chilaquiles Meksika kahvaltısıdır. Tayland cuisine kodu ve step'te kullanılan krema, kişniş, soğan eksikleri kullanıcıyı yanıltır.
 
 **Issues**:
-- description: cennet çamuru muhallebi ve bisküvi katmanı değil, kaynaklarda kadayıf, tereyağı, şerbet, Antep fıstığı ve kaymakla yapılan tatlı
-- ingredients: mevcut liste cennet çamuru yerine muhallebi benzeri farklı bir tatlıya gidiyor
-- steps: nişasta geçiyor ama ingredient listesinde pirinç unu var; tarif kendi içinde de çelişkili
+- cuisine: description Meksika kahvaltısı diyor ama cuisine 'th' yazılı
+- step 4: krema ekleniyor ama ingredient listesinde krema yok
+- step 5: kişniş ve soğanla servis yazıyor ama ingredient listesinde ikisi de yok
 
 **Corrections** (sample):
-- description: "Cennet çamuru, tel kadayıfı tereyağı, şerbet ve Antep fıstığıyla tavada birleştiren, kaymakla servis edilen Kilis tatlıs..."
 - ingredients_add: 3
-- ingredients_remove: Bisküvi kırıntısı, Süt, Pirinç unu
-- steps_replace: 5
+
+### `chimichurri`
+
+**Reason**: Maydanoz, sarımsak, sirke, yağ ve pul biber sosu doğru. Fakat Arjantin kökenli chimichurri için Türk cuisine kodu yanıltıcıdır.
+
+**Issues**:
+- cuisine: chimichurri Arjantin mutfağına aittir ama cuisine 'tr' yazılı
+
+**Corrections** (sample):
+
+### `cirpilmis-zeytin-salatasi`
+
+**Reason**: Yeşil zeytin, ceviz, nar ekşisi ve zeytinyağı Hatay tipi zeytin salatasıyla uyumlu. Cuisine kodu Tayland değil Türkiye olmalı.
+
+**Issues**:
+- cuisine: description Hatay usulü diyor ama cuisine 'th' yazılı
+- Hatay zeytin salatası için Tayland cuisine kodu kullanıcıyı yanıltır
+
+**Corrections** (sample):
 
 ## CORRECTION sample (ilk 10)
 
 | Slug | Conf | Issues count | Corrections fields |
 |---|---|---:|---|
-| `bulgurlu-domatesli-kabak-corbasi-diyarbakir-usulu` | medium | 1 | ingredients_add |
-| `bulgurlu-kabak-cicegi-dolmasi-antalya-usulu` | high | 2 | ingredients_add |
-| `bun-bo-hue` | high | 2 | cuisine, ingredients_remove, ingredients_add, allergens_remove, allergens_add, steps_replace |
-| `bun-cha` | high | 2 | ingredients_remove, ingredients_add, allergens_remove |
-| `bun-thit-nuong-vietnam-usulu` | high | 3 | ingredients_add, allergens_add, totalMinutes |
-| `buraczki-z-chrzanem-polonya-usulu` | medium | 2 | steps_replace |
-| `burdur-ceviz-ezmesi` | high | 1 | steps_replace, totalMinutes |
-| `burdur-cevizli-kabak-tatlisi` | high | 1 | totalMinutes |
-| `bursa-cantik-pide` | medium | 2 | ingredients_add |
-| `bursa-inegol-kofte` | high | 1 | totalMinutes |
+| `char-siu-chicken-cin-firin-usulu` | high | 3 | ingredients_add, allergens_add |
+| `chawanmushi` | high | 2 | tags_remove, allergens_add |
+| `che-ba-mau` | high | 3 | cookMinutes, totalMinutes, steps_replace |
+| `che-chuoi-vietnam-usulu` | high | 3 | ingredients_add, steps_replace, allergens_add |
+| `cheddarli-pirasa-scone-ingiltere-usulu` | high | 1 | ingredients_add |
+| `cheddarli-pirasali-galeta-kizartmasi-ingiltere-usulu` | medium | 2 | ingredients_add |
+| `chennai-masala-dosa` | medium | 2 | totalMinutes |
+| `chermoula-patates-salatasi-fas-usulu` | high | 1 | ingredients_add |
+| `chermoula-sos` | high | 1 | ingredients_add |
+| `chermoula-tavuk` | high | 2 | ingredients_add, steps_replace |

@@ -1,0 +1,752 @@
+[
+  {
+    "slug": "cevizli-bulgur-koftesi-yalova-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/cevizli-bulgur-koftesi/",
+      "https://www.bornovadan.com/2025/09/22/cevizli-bulgur-koftesi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "İnce bulgur, ceviz, salça ve yoğurma kurgusu cevizli bulgur köftesi kaynaklarıyla uyumlu. Vegan tag, allergen ve süre toplamı makul."
+  },
+  {
+    "slug": "cevizli-bulgur-sarmasi-amasya-bag-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 2: salça ile iç harç hazırlanıyor ama ingredient listesinde salça yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Biber salçası", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/cevizli-yaprak-sarmasi/",
+      "https://yemek.com/tarif/zeytinyagli-yaprak-sarmasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Yaprak sarmasında bulgurlu iç ve salça kullanımı makul. Ancak mevcut adım salçayı açıkça kullanıyor, listeye eklenmeli."
+  },
+  {
+    "slug": "cevizli-cokelek-ezmesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3: pul biber kullanılıyor ama ingredient listesinde pul biber yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/cokelek-ezmesi/",
+      "https://yemek.com/tarif/cokelek-salatasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Çökelek, ceviz, zeytinyağı ve yeşillik dengesi kahvaltılık ezme için doğru. Step ingredient eşleşmesi için pul biber eksik."
+  },
+  {
+    "slug": "cevizli-corek-dilimi-tokat-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 30 dakika mayalanma, 5 dakika dinlenme, 22 dakika fırın ve 10 dakika dinlenme toplamı 67 dakika; totalMinutes 50 eksik kalıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 67
+    },
+    "sources": [
+      "https://www.bitokat.com/kesfet/tokat-cevizli-corek-tarifi-ve-yapilisi",
+      "https://www.nefisyemektarifleri.com/cevizli-rulo-sarma/"
+    ],
+    "confidence": "high",
+    "reason": "Tokat cevizli çörek kaynakları mayalı hamur, süt, yumurta ve ceviz içeriyor. Pasif beklemeler totalMinutes içinde görünmeli."
+  },
+  {
+    "slug": "cevizli-corek-trakya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/cevizli-corek-tarifi/3904",
+      "https://www.nefisyemektarifleri.com/cevizli-rulo-sarma/"
+    ],
+    "confidence": "medium",
+    "reason": "Mayalı hamur, süt, yumurta, ceviz, tarçın ve tereyağı içeriği cevizli çörek çizgisiyle uyumlu. Allergen ve süreler makul."
+  },
+  {
+    "slug": "cevizli-domatesli-biber-dip-hatay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 2: sarımsak eziliyor ama ingredient listesinde sarımsak yok",
+      "step 4: lavaş yanında servis yazıyor ama ingredient listesinde lavaş yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Lavaş", "amount": "1", "unit": "adet" }
+      ],
+      "allergens_add": ["GLUTEN"]
+    },
+    "sources": [
+      "https://yemek.com/tarif/muhammara/",
+      "https://www.nefisyemektarifleri.com/muhammara-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Biber, ceviz, domates ve sarımsaklı dip muhammara çizgisine yakın. Step sarımsak ve lavaş kullandığı için liste ve gluten allergen tamamlanmalı."
+  },
+  {
+    "slug": "cevizli-ekmek-mengen-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: tuzla hamur yoğurma yazıyor ama ingredient listesinde tuz yok",
+      "steps: 10 dakika yoğurma, 30 dakika mayalanma, 15 dakika ikinci maya, 35 dakika pişirme ve 20 dakika dinlenme toplamı 110 dakika; totalMinutes 55 eksik kalıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "totalMinutes": 110
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/cevizli-ekmek-tarifi/",
+      "https://yemek.com/tarif/cevizli-ekmek/"
+    ],
+    "confidence": "medium",
+    "reason": "Cevizli ekmekte un, maya, ceviz ve dinlendirme doğru. Hamur tuzu ve uzun maya, dinlenme süreleri current metadata içinde eksik."
+  },
+  {
+    "slug": "cevizli-erik-tatlisi-erzincan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 10 dakika ıslatma, 5 dakika şurup, 10 dakika pişirme ve 10 dakika ılıtma toplamı en az 35 dakika; totalMinutes 27 eksik kalıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 35
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kuru-erik-tatlisi/",
+      "https://yemek.com/tarif/kuru-meyve-tatlisi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kuru eriğin cevizle doldurulması ve şerbetle kısa pişmesi meyveli tatlı mantığına uygun. Bekletme ve ılıtma totalMinutes'a eklenmeli."
+  },
+  {
+    "slug": "cevizli-eriste-boregi-sivas-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "step 3: peynir katmanı yazıyor ama ingredient listesinde peynir yok",
+      "step 4: yumurtalı süt dökülüyor ama ingredient listesinde yumurta ve süt yok",
+      "allergen: step'te yumurta kullanıldığı halde YUMURTA declare edilmemiş"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Beyaz peynir", "amount": "120", "unit": "gr" },
+        { "name": "Yumurta", "amount": "1", "unit": "adet" },
+        { "name": "Süt", "amount": "0.5", "unit": "su bardağı" }
+      ],
+      "allergens_add": ["YUMURTA"]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/eriste-boregi/",
+      "https://yemek.com/tarif/eriste-boregi/"
+    ],
+    "confidence": "high",
+    "reason": "Erişte böreği kaynaklarında sütlü ya da yumurtalı bağlayıcı görülebilir. Mevcut tarifte üç ana malzeme step'te var ama listede yok."
+  },
+  {
+    "slug": "cevizli-eriste-salatasi-kirsehir-bag-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/eriste-salatasi-tarifi/",
+      "https://yemek.com/tarif/eriste-salatasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Erişte, yoğurt, sarımsak ve cevizle yapılan soğuk salata kurgusu kaynaklarla uyumlu. Allergen, süre ve makro dengesi kabul edilebilir."
+  },
+  {
+    "slug": "cevizli-gavut-kup-tatlisi-kars-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 3 dakika gavut, 4 dakika süt ısıtma ve 15 dakika dinlendirme toplamı 22 dakika; totalMinutes 20 sınırda eksik kalıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 22
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/kars/ne-yenir/gavut",
+      "https://www.nefisyemektarifleri.com/gavut-tatlisi/"
+    ],
+    "confidence": "medium",
+    "reason": "Gavutun kavrulmuş unlu tahıl tabanı, süt ve cevizle kup tatlıya uyarlanması makul. Dinlenme süresi toplam süreye eklenmeli."
+  },
+  {
+    "slug": "cevizli-goce-icli-borek-sivas-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 2: tereyağıyla karıştırma yazıyor ama ingredient listesinde tereyağı yok; mevcut yağ zeytinyağı",
+      "tags: vegan tag ancak step tereyağı derse yanıltıcı hale geliyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Yumuşayan göceyi süzüp ceviz ve zeytinyağıyla karıştırın.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/goce-boregi/",
+      "https://yemek.com/tarif/mercimekli-borek/"
+    ],
+    "confidence": "medium",
+    "reason": "Göce, yufka ve cevizli iç börek olarak makul. Vegan uyumu korumak için step mevcut zeytinyağıyla eşleşmeli."
+  },
+  {
+    "slug": "cevizli-havuclu-labne-dip-bilecik-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/havuclu-tarator/",
+      "https://www.nefisyemektarifleri.com/havuclu-cevizli-meze/"
+    ],
+    "confidence": "high",
+    "reason": "Havuç, süt ürünü ve cevizle yapılan dip, havuçlu tarator çizgisiyle uyumlu. Süt ve kuruyemiş allergenleri doğru."
+  },
+  {
+    "slug": "cevizli-irmik-helvasi-kahramanmaras-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/cevizli-irmik-helvasi/",
+      "https://www.nefisyemektarifleri.com/cevizli-irmik-helvasi/"
+    ],
+    "confidence": "high",
+    "reason": "İrmik, tereyağı, ceviz, şeker ve suyla yapılan helva kaynaklarla uyumlu. Gluten, süt ve kuruyemiş allergenleri doğru."
+  },
+  {
+    "slug": "cevizli-kabak-ezmesi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/cevizli-kabak-mezesi/",
+      "https://www.nefisyemektarifleri.com/cevizli-kabak-mezesi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak, ceviz, zeytinyağı ve süt ürünüyle yapılan ezme kaynaklardaki kabak mezesi yapısıyla uyumlu. Süre ve allergen bilgisi makul."
+  },
+  {
+    "slug": "cevizli-kabak-mezesi-mardin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/cevizli-kabak-mezesi/",
+      "https://www.nefisyemektarifleri.com/cevizli-kabak-mezesi/"
+    ],
+    "confidence": "high",
+    "reason": "Kabak, ceviz, sarımsak ve zeytinyağıyla yapılan sütsüz meze kendi vegan konumuyla tutarlı. Süre ve allergen bilgisi doğru."
+  },
+  {
+    "slug": "cevizli-kabak-mucver-burdur-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/kabak-mucveri/",
+      "https://www.nefisyemektarifleri.com/kabak-mucveri-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak, yumurta, un, dereotu ve tavada pişirme mücver kaynaklarıyla uyumlu. Allergen ve 30 dakika altı tag doğru."
+  },
+  {
+    "slug": "cevizli-kabak-sinkonta-burdur-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 5: yoğurtla servis yazıyor ama ingredient listesinde yoğurt yok",
+      "tags: step yoğurtla servis dediği için vegan tag yanıltıcı olur",
+      "allergen: yoğurt eklenirse SUT declare edilmeli"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yoğurt", "amount": "1", "unit": "su bardağı" }
+      ],
+      "tags_remove": ["vegan"],
+      "allergens_add": ["SUT"]
+    },
+    "sources": [
+      "https://yemek.com/tarif/sinkonta/",
+      "https://www.nefisyemektarifleri.com/kabak-sinkonta/"
+    ],
+    "confidence": "high",
+    "reason": "Sinkonta fırın kabak tabağı olarak uyumlu. Mevcut step yoğurt servis ediyor, bu yüzden ingredient, allergen ve vegan tag aynı anda düzeltilmeli."
+  },
+  {
+    "slug": "cevizli-kapya-ezme-hatay-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/muhammara/",
+      "https://www.nefisyemektarifleri.com/muhammara-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Köz kapya, ceviz, sarımsak ve zeytinyağı Hatay tipi biber ezmesiyle uyumlu. Vegan ve kuruyemiş allergen bilgisi doğru."
+  },
+  {
+    "slug": "cevizli-kayisi-ezmesi-malatya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cookMinutes 0 yazıyor ama step 3 karışımı 8 dakika pişiriyor",
+      "steps: 10 dakika ıslatma, 8 dakika pişirme ve 20 dakika soğutma toplamı 38 dakika; totalMinutes 10 eksik"
+    ],
+    "corrections": {
+      "cookMinutes": 8,
+      "totalMinutes": 38
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kayisi-ezmesi/",
+      "https://yemek.com/tarif/kayisi-uyutmasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kayısı, ceviz ve bal tatlı ezme için uyumlu. Ancak tarif pişirme ve soğutma içerdiği için süre metadata'sı yanıltıcı."
+  },
+  {
+    "slug": "cevizli-keskul-bursa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 12 dakika pişirme, 2 dakika cevizle karıştırma ve 1 saat soğutma var; totalMinutes 25 eksik kalıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 85
+    },
+    "sources": [
+      "https://yemek.com/tarif/keskul/",
+      "https://www.nefisyemektarifleri.com/keskul-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Süt, şeker ve pirinç unu keşkül tabanıyla uyumlu. Bir saat soğutma servisten önce zorunlu gösterildiği için totalMinutes'a dahil olmalı."
+  },
+  {
+    "slug": "cevizli-lokum-afyon-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/lokum/",
+      "https://www.nefisyemektarifleri.com/ev-yapimi-lokum/"
+    ],
+    "confidence": "medium",
+    "reason": "Nişasta, şeker, su ve cevizle yapılan ev lokumu temel şekerleme tekniğiyle uyumlu. Vegan tag ve kuruyemiş allergen bilgisi doğru."
+  },
+  {
+    "slug": "cevizli-lorlu-havuclu-dip-bilecik-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/havuclu-tarator/",
+      "https://www.nefisyemektarifleri.com/havuclu-cevizli-meze/"
+    ],
+    "confidence": "high",
+    "reason": "Havuç, lor, ceviz ve az yağla yapılan dip, havuçlu meze çizgisiyle uyumlu. Süt ve kuruyemiş allergenleri doğru."
+  },
+  {
+    "slug": "cevizli-lorlu-kuru-biber-dolmasi-diyarbakir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kuru-biber-dolmasi/",
+      "https://yemek.com/tarif/kuru-biber-dolmasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kuru biberi yumuşatıp lor, ceviz, sumak ve zeytinyağıyla doldurma kurgusu meze olarak makul. Allergen ve süreler tutarlı."
+  },
+  {
+    "slug": "cevizli-medovik",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: Medovik 8 saat buzdolabında dinleniyor ama totalMinutes 85 yazıyor",
+      "RecipeTimeline için 480 dakikalık pasif bekleme totalMinutes içinde fark olarak görünmeli"
+    ],
+    "corrections": {
+      "totalMinutes": 565
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Medovik",
+      "https://www.bylena.com/recipe/555/Russian-Honey-Cake-Medovik/"
+    ],
+    "confidence": "high",
+    "reason": "Medovik kaynakları bal, ekşi krema ve uzun beklemeyle katların yumuşadığını gösteriyor. 8 saat dinlenme totalMinutes'a eklenmeli."
+  },
+  {
+    "slug": "cevizli-misir-unu-helvasi-artvin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient listesinde ayçiçek yağı var ama step 1 tereyağı erimiş tavaya alın diyor",
+      "tags vegan olduğu için step'te tereyağı kullanımı yanıltıcı"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Mısır ununu ayçiçek yağı ısınmış tavaya alın.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/misir-unu-helvasi/",
+      "https://yemek.com/tarif/misir-unu-helvasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Mısır unu, pekmez, ceviz ve yağla helva kurgusu makul. Vegan metadata korunacaksa step tereyağı yerine mevcut ayçiçek yağıyla eşleşmeli."
+  },
+  {
+    "slug": "cevizli-muz-kadayifi-alanya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/kadayif-tatlisi/",
+      "https://www.nefisyemektarifleri.com/muzlu-kadayifli-muhallebi/"
+    ],
+    "confidence": "medium",
+    "reason": "Tel kadayıf, tereyağı, ceviz ve meyveli ara kat tatlı kurgusu mantıklı. Gluten, süt ve kuruyemiş allergenleri doğru."
+  },
+  {
+    "slug": "cevizli-narli-kofte-siirt-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 2: kıyma ekleyin diyor ama ingredient listesinde kıyma yok",
+      "tags vegan ve vejetaryen olduğu için step'teki kıyma ifadesi metadata ile çelişiyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Bulgura ceviz, nar ekşisi ve baharat ekleyip 8 dakika yoğurun.",
+          "timerSeconds": 480
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/cevizli-bulgur-koftesi/",
+      "https://www.bornovadan.com/2025/09/22/cevizli-bulgur-koftesi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Bulgur, ceviz ve nar ekşili etsiz köfte kaynaklarla uyumlu. Kıyma ifadesi ingredient ve vegan tag ile açıkça çelişiyor."
+  },
+  {
+    "slug": "cevizli-pancar-dip-zonguldak-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/pancar-mezesi/",
+      "https://www.nefisyemektarifleri.com/pancar-mezesi/"
+    ],
+    "confidence": "high",
+    "reason": "Haşlanmış pancar, süzme yoğurt, sarımsak ve ceviz kaynaklardaki pancar mezesiyle uyumlu. Süt ve kuruyemiş allergenleri doğru."
+  },
+  {
+    "slug": "cevizli-pancar-muhlama-ekmegi-ordu-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/trabzon/ne-yenir/kuymak",
+      "https://yemek.com/tarif/kuymak/"
+    ],
+    "confidence": "medium",
+    "reason": "Kolot peyniri ve tereyağıyla uzayan sıcak taban, mısır ekmeği üstünde kahvaltılık yorum olarak makul. Süt ve kuruyemiş allergenleri doğru."
+  },
+  {
+    "slug": "cevizli-patates-bastisi-igdir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/patates-ezmesi/",
+      "https://www.nefisyemektarifleri.com/patates-ezmesi/"
+    ],
+    "confidence": "medium",
+    "reason": "Haşlanmış patates, ceviz ve tereyağıyla bastırılmış aperatif kurgusu patates ezmesiyle uyumlu. Süt ve kuruyemiş allergenleri doğru."
+  },
+  {
+    "slug": "cevizli-patates-corbasi-bilecik-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/patates-corbasi/",
+      "https://www.nefisyemektarifleri.com/patates-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Patates, soğan, su ve cevizle koyulaştırılan bitkisel çorba tutarlı. Vegan tag ve kuruyemiş allergeni doğru."
+  },
+  {
+    "slug": "cevizli-patlican-sote-mardin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/patlican-sote/",
+      "https://www.nefisyemektarifleri.com/patlican-sote/"
+    ],
+    "confidence": "medium",
+    "reason": "Patlıcan, sarımsak, zeytinyağı ve cevizle yapılan etsiz sote meze olarak makul. Vegan tag ve allergen bilgisi tutarlı."
+  },
+  {
+    "slug": "cevizli-pazi-sarmasi-artvin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/pazi-sarmasi/",
+      "https://www.nefisyemektarifleri.com/pazi-sarmasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Pazı yaprağı, bulgur, soğan, ceviz ve limonlu pişirme Karadeniz tipi sarma kurgusuyla uyumlu. Süre ve allergen bilgisi makul."
+  },
+  {
+    "slug": "cevizli-sarimsakli-kabak-ezme-igdir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/cevizli-kabak-mezesi/",
+      "https://www.nefisyemektarifleri.com/cevizli-kabak-mezesi/"
+    ],
+    "confidence": "high",
+    "reason": "Kabak, ceviz, sarımsak ve zeytinyağıyla yapılan sütsüz ezme kaynaklarla uyumlu. Vegan, süre ve kuruyemiş allergeni doğru."
+  },
+  {
+    "slug": "cevizli-sarimsakli-kopuk-biber-ezme-hatay-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/muhammara/",
+      "https://www.nefisyemektarifleri.com/muhammara-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kapya biber, ceviz, sarımsak ve zeytinyağıyla yapılan biber ezmesi Hatay meze çizgisine uygun. Vegan ve allergen bilgisi doğru."
+  },
+  {
+    "slug": "cevizli-sogan-mucveri-siirt-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 2: yeşillikler ekleniyor ama ingredient listesinde yeşillik yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/sogan-mucveri/",
+      "https://www.nefisyemektarifleri.com/sogan-mucveri/"
+    ],
+    "confidence": "medium",
+    "reason": "Soğan, yumurta, un ve tavada kızartma mücver mantığıyla uyumlu. Step'te geçen yeşillik için maydanoz listeye eklenmeli."
+  },
+  {
+    "slug": "cevizli-sucuk",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: ceviz dizileri 2 gün kurutuluyor ama totalMinutes 85 yazıyor",
+      "RecipeTimeline için 2880 dakikalık pasif kurutma totalMinutes içinde fark olarak görünmeli"
+    ],
+    "corrections": {
+      "totalMinutes": 2965
+    },
+    "sources": [
+      "https://yemek.com/tarif/cevizli-sucuk/",
+      "https://www.nefisyemektarifleri.com/cevizli-sucuk-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Cevizli sucuk kaynakları pekmezli bulamaç ve kurutma beklemesi içeriyor. İki günlük kurutma totalMinutes dışında bırakılmış."
+  },
+  {
+    "slug": "cevizli-sutlu-kadayif-amasya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 20 dakika fırın, 5 dakika sütlü şerbet ve 10 dakika dinlenme prep süresine eklenince totalMinutes 55 olmalı"
+    ],
+    "corrections": {
+      "totalMinutes": 55
+    },
+    "sources": [
+      "https://yemek.com/tarif/sutlu-kadayif/",
+      "https://www.nefisyemektarifleri.com/sutlu-kadayif-tatlisi/"
+    ],
+    "confidence": "high",
+    "reason": "Kadayıf, tereyağı, ceviz ve sütlü şerbet uyumlu. Servisten önceki 10 dakika şerbet çekme süresi toplam süreye dahil edilmeli."
+  },
+  {
+    "slug": "cevizli-tava-ekmegi-sirnak-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/bazlama/",
+      "https://www.nefisyemektarifleri.com/tavada-mayasiz-ekmek/"
+    ],
+    "confidence": "medium",
+    "reason": "Un, su, ceviz ve tavada iki yüzlü pişirme tava ekmeği mantığıyla uyumlu. Vegan tag, gluten ve kuruyemiş allergenleri doğru."
+  },
+  {
+    "slug": "cevizli-tirit-samsun-ocak-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 4: sarımsaklı yoğurt yazıyor ama ingredient listesinde sarımsak yok",
+      "step 6: pul biberle tamamlama yazıyor ama ingredient listesinde pul biber yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/tirit/",
+      "https://www.nefisyemektarifleri.com/tirit-yemegi/"
+    ],
+    "confidence": "high",
+    "reason": "Ekmek, et suyu, yoğurt ve tereyağlı üst tirit kurgusuyla uyumlu. Step'te kullanılan sarımsak ve pul biber listede eksik."
+  },
+  {
+    "slug": "cevizli-yulaf-kavurmasi-kastamonu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 5: karabiber ve maydanozla servis yazıyor ama ingredient listesinde ikisi de yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" },
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/yulaf-lapasi/",
+      "https://www.nefisyemektarifleri.com/yulafli-kahvalti/"
+    ],
+    "confidence": "medium",
+    "reason": "Yulaf ve cevizli sıcak kahvaltı kurgusu makul. Son servis adımındaki karabiber ve maydanoz ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "cevizli-zahter-salatasi-hatay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "allergen: SUSAM declare edilmiş ama ingredient listesinde susam, tahin veya susam yağı yok"
+    ],
+    "corrections": {
+      "allergens_remove": ["SUSAM"]
+    },
+    "sources": [
+      "https://yemek.com/tarif/zahter-salatasi-2/",
+      "https://www.kulturportali.gov.tr/turkiye/hatay/ne-yenir/zahter-salatasi"
+    ],
+    "confidence": "high",
+    "reason": "Zahter, ceviz, nar ekşisi ve zeytinyağı Hatay salatasıyla uyumlu. Pide gluten getirir, fakat susam allergeni için ingredient yok."
+  },
+  {
+    "slug": "cha-gio",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 4: rulolar yağda kızartılıyor ama ingredient listesinde kızartma yağı yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ayçiçek yağı", "amount": "2", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.saveur.com/article/recipes/vietnamese-spring-rolls/",
+      "https://www.wandercooks.com/easy-vietnamese-fried-spring-rolls/"
+    ],
+    "confidence": "high",
+    "reason": "Cha gio kaynakları pirinç kağıdı, kıyma, cam erişte, sebze ve kızartma tekniğini doğruluyor. Kızartma yağı listede eksik."
+  },
+  {
+    "slug": "chai-latte",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/chai-latte",
+      "https://www.indianhealthyrecipes.com/masala-chai-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Siyah çay, süt, tarçın, kakule, karanfil ve tatlandırıcı chai latte kaynaklarıyla uyumlu. Süt allergeni ve süreler doğru."
+  },
+  {
+    "slug": "champurrado",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bonappetit.com/recipe/champurrado",
+      "https://www.seriouseats.com/nonalcoholic-hot-drinks-for-toasty-warmth-without-the-tipple"
+    ],
+    "confidence": "medium",
+    "reason": "Masa harina, süt, çikolata ve tarçınla koyulaşan sıcak içecek champurrado kaynaklarıyla uyumlu. Süt allergeni doğru."
+  },
+  {
+    "slug": "chana-masala",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: yeşil biber püre yapılıyor ama ingredient listesinde yeşil biber yok",
+      "step 2: soğan püresi yağda pişiriliyor ama ingredient listesinde yağ yok",
+      "step 3: zerdeçal ekleniyor ama ingredient listesinde zerdeçal yok",
+      "step 7: limon suyu ile bitiriliyor ama ingredient listesinde limon yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yeşil biber", "amount": "1", "unit": "adet" },
+        { "name": "Ayçiçek yağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Zerdeçal", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Limon", "amount": "0.5", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/chana-masala",
+      "https://www.indianhealthyrecipes.com/chana-masala/"
+    ],
+    "confidence": "high",
+    "reason": "Nohut, soğan, domates, zencefil, sarımsak ve baharat kurgusu doğru. Step'te kullanılan dört malzeme listede eksik."
+  },
+  {
+    "slug": "chao-ga",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "cuisine: description Vietnam tavuklu pirinç lapası diyor ama cuisine 'tr' yazılı",
+      "step 5: balık sosu kullanılıyor ama ingredient listesinde balık sosu yok",
+      "step 5: kızarmış soğanla servis yazıyor ama ingredient listesinde kızarmış soğan yok",
+      "allergen: balık sosu eklenirse DENIZ_URUNLERI declare edilmeli"
+    ],
+    "corrections": {
+      "cuisine": "vn",
+      "ingredients_add": [
+        { "name": "Balık sosu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Kızarmış soğan", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["DENIZ_URUNLERI"]
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Congee",
+      "https://www.hungryhuy.com/chao-ga-vietnamese-chicken-rice-porridge/"
+    ],
+    "confidence": "high",
+    "reason": "Chao ga Vietnam tavuklu pirinç lapasıdır. Türk cuisine kodu ve balık sosu eksikliği kullanıcıyı yanıltacak düzeyde."
+  },
+  {
+    "slug": "char-siu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 2: sarımsak marinada ekleniyor ama ingredient listesinde sarımsak yok",
+      "steps: totalMinutes 315 ve tipNote 4 saat dinlendirme diyor, fakat step 3 sadece 30 dakika marine gösteriyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 3,
+          "instruction": "Eti marinadda 4 saat buzdolabında bekletin, yüzeyi ve içi eşit tat alsın diye.",
+          "timerSeconds": 14400
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/cantonese-char-siu",
+      "https://thewoksoflife.com/chinese-bbq-pork-cha-siu/"
+    ],
+    "confidence": "high",
+    "reason": "Char siu kaynakları soya, bal, beş baharat ve uzun marineyle uyumlu. Mevcut totalMinutes 4 saat beklemeyi ima ediyor, step bunu göstermeli."
+  },
+  {
+    "slug": "char-siu-bao",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "title ve description char siu bao diyor, kaynaklarda bu Cantonese BBQ pork bun olarak geçiyor",
+      "ingredient listesinde dana eti var; bu klasik char siu bao kimliğiyle çelişiyor",
+      "description 'dana içi' diyerek klasik domuz eti içeriğini başka yöne çekiyor"
+    ],
+    "corrections": {
+      "description": "Kanton dim sum arabalarının buharlı çöreği; tatlı soya soslu char siu domuz eti yumuşak hamurda saklanır.",
+      "ingredients_remove": ["Dana eti"],
+      "ingredients_add": [
+        { "name": "Char siu domuz eti", "amount": "350", "unit": "gr", "group": "İç için" }
+      ]
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Cha_siu_bao",
+      "https://omnivorescookbook.com/steamed-char-siu-bao/"
+    ],
+    "confidence": "high",
+    "reason": "Char siu bao adı BBQ pork bun anlamına gelir. Dana etiyle verilmesi tarif kimliğini ve kullanıcı beklentisini yanıltıyor."
+  }
+]

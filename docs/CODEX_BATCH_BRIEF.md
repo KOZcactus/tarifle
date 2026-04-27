@@ -4190,4 +4190,36 @@ toplam.
 correction (mevcut 168'in üzerine), ~5-15 yeni MAJOR_ISSUE (cuisine
 kalmasıyla nutrition anomaly + süre çelişkisi).
 
+### 20.8 Oturum 25 sonu durum (27 Nis 2026)
+
+**12 sub-batch v2 done** (1a + 1b + 2a + 2b + 3a + 3b + 4a + 4b +
+5a + 5b + 6a + 6b), ~321 yeni correction prod, 59 sub-batch kalan.
+
+**PASS oran trend**: 1a 66 → 1b 52 → 2a 40 → 2b 42 → 3a 46 → 3b 42
+→ 4a 60 → 4b 58 → 5a 50 → 5b 34 → 6a 48 → 6b 36 (ortalama %48).
+
+**3 BLOCKED reject**: ankara-tava-eristeli-kuzu (tek-domain), anzac-
+biscuits (Kural 9 süre %67), cevizli-narli-kofte-siirt-usulu (Kural
+9 süre %73). Codex'ten mini-rev istenecek.
+
+**6 cuisine fix MAJOR_ISSUE çözüldü** (CUISINE_CODES expansion 30 →
+36): tn (brik), ar (chimichurri + provoleta), co (arepa + arequipe-
+flan), ve (arepa), dk (aebleskiver), za (cape-town-bobotie). Manuel
+DB updates: cape-town-bobotie 'gb' → 'za', Adana Kebap marine fix
+prep 90 → 30.
+
+**Kural 9 marine clarification (oturum 25)**: marine ve dinlendirme
+süresi prepMinutes'a DAHİL EDİLMEMELİ, totalMinutes - (prep + cook)
+farkı olarak korunmalı. RecipeTimeline 3-segment (Hazırlık + Bekleme/
+Marine + Pişirme) bunu görselleştirir. Adana Kebap doğru sample:
+prep 30 + cook 20 + total 110 → wait 60.
+
+**Yeni script altyapı**: scripts/audit-nutrition-anomaly.ts
+deterministic 3517 tarif scan (1162 anomali raporu, Mod K v2 ile
+paralel). scripts/fix-adana-kebap-marine.ts + scripts/fix-cape-town-
+bobotie-cuisine.ts tek-seferlik DB update pattern'leri.
+
+**Sıradaki Codex tetik**: `Mod K. Batch 7a.` (Bölüm 6). Codex 6b
+döndüğünde verify+apply pipeline koştuğunda 7a v2 tetiği gönderebilir.
+
 

@@ -398,7 +398,7 @@ adında üzerine yazılır.
 | Mod IA | KAPANDI | docs/MOD_IA_TRIGGER.md | 3 batch pair audit (oturum 23, 26 sil) |
 | Mod IB | KAPANDI | docs/MOD_IB_TRIGGER.md | 2 batch UNCERTAIN+cross-language (oturum 23, 28 sil + 2 manuel) |
 | Mod M | **Batch 1-4 yeniden istenecek** | brief §19 + docs/MOD_M_TRIGGER.md | 167 marine aday, oturum 24'te Batch 1-3 quality issue revert edildi (TR karakter + redundancy), brief §19 yeni Kural 7+8 ile yeniden istenir |
-| Mod K | **v2 audit, 1a'dan tekrar** | brief §20 + §20.7 | 3517 tarif kontrol, 71 sub-batch × 50, ŞİŞİRME YASAK, oturum 25 GPT audit Kural 9 (süre) + 10 (nutrition ingredient) + 11 (step-ingredient miktar) eklendi, 1a-4b yeniden audit |
+| Mod K | **v2 audit aktif, 12/71 sub-batch done** | brief §20 + §20.7 | 3517 tarif kontrol, oturum 25 sonu 12 sub-batch v2 apply (1a-6b ~321 correction prod), 59 sub-batch kalan (7a-36b), Kural 9/10/11 + marine clarification disiplini, PASS oran ortalama %48 |
 
 ## Aktif paketler (oturum 24+)
 

@@ -15,42 +15,45 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
-### Mod M PIPELINE TAM KAPANIŞ ✅ (oturum 24)
+### Mod K v2 (Tarif Kontrol, oturum 25 itibariyle 12/71 sub-batch done = %16.9)
 
-**Durum**: 4 batch hepsi prod canlı, 75 marine apply (167 aday SKIP
-çıkartıldıktan sonra). Brief §19 Kural 7 (TR karakter) + Kural 8
-(redundancy) ile kalite stabil. RecipeTimeline 3 segment ~75+ tarif
-görünür: lechon-asado/char-siu 8s + tacos-al-pastor 5s + hanoi-bun-
-cha + oltu-cag-kebabi +4 saat + sauerbraten 3 gün marine demo.
+**Durum**: 12 sub-batch v2 tam pipeline (1a + 1b + 2a + 2b + 3a + 3b
++ 4a + 4b + 5a + 5b + 6a + 6b = ~321 yeni correction prod oturum 25).
+59 sub-batch kalan (7a-36b). Brief §20.3 Kural 9/10/11 (süre
+tutarlılığı + nutrition ingredient-aware + step-ingredient miktar)
++ §20.7 yeniden audit (1a'dan tekrar, idempotent guarantee). Eski
+1a-4b v1 outputs `docs/mod-k-archive-pre-rule17/` arşivinde.
 
-Mod M kapandı, sıradaki Codex paketi Mod A 40+ veya Mod K devam.
+**Codex tetik (kullanıcı)**: tek satır `Mod K. Batch Nx.` (CODEX_NEW_
+CHAT_INTRO Bölüm 6). Codex 2-3 saat web research, output `docs/mod-
+k-batch-Nx.json` diske yazılır. Claude verify+apply pipeline (--batch
++ --apply + --apply-major + --slugs cherry-pick + --env prod
+--confirm-prod).
 
-### Mod K (Tarif Kontrol, oturum 24 aktif, 400/3517 = %11.4 kontrol)
+**PASS oran trend (12 batch, oturum 25)**: 1a 66 → 1b 52 → 2a 40 →
+2b 42 → 3a 46 → 3b 42 → 4a 60 → 4b 58 → 5a 50 → 5b 34 → 6a 48 →
+6b 36 (ortalama %48). Codex Kural 9/10/11 sıkı disiplin oturmuş;
+düşük PASS = yüksek CORRECTION = kaliteli audit (yumuşak değil sıkı
+düzeltme).
 
-**Durum**: 8 sub-batch tam pipeline (1a+1b+2a+2b+3a+3b+4a+4b = 168
-correction prod, 9 MAJOR_ISSUE). 71 sub-batch input dosyası önceden
-üretildi (4 mevcut + 67 yeni). Codex tetik tek satır `Mod K. Batch
-Nx.` (CODEX_NEW_CHAT_INTRO Bölüm 6). 64 sub-batch kalan.
+**3 BLOCKED reject (oturum 25)**: ankara-tava-eristeli-kuzu (tek-
+domain source), anzac-biscuits (Kural 9 süre %67), cevizli-narli-
+kofte-siirt-usulu (Kural 9 süre %73). Mini-rev Codex'ten istenecek.
 
-**PASS oranı serisi**: 79/79/58/54/72/46/64/62 (ortalama %64.3,
-brief §20.6 hedefi %75-85 alt sınırı).
+### CUISINE_CODES TAMAM ✅ (30 → 36, oturum 25)
 
-**Cuisine field altyapı kuruldu (oturum 24)**: apply-mod-k-batch.ts
-+ verify-mod-k-batch.ts + brief §20.2. Gelecek MAJOR_ISSUE cuisine
-fix'leri otomatik apply, manuel one-off gereksiz. Mevcut 30 cuisine
-kod (CUISINE_CODES). Bilinmeyen kod (tn/ar) önermek YASAK; Codex
-bunda description fix önerip MAJOR_ISSUE bayrak bırakır.
+Mod K v2 cuisine gap'leri kapatıldı: tn (Tunus, brik), ar (Arjantin,
+provoleta + chimichurri), co (Kolombiya, arepa + arequipe-flan),
+ve (Venezuela, arepa), dk (Danimarka, aebleskiver), za (Güney Afrika,
+cape-town-bobotie). 7 map + TEXT_KEYWORDS + verify VALID_CUISINES +
+tests + i18n + 6 yeni /mutfak/[slug] landing prod canlı 200.
 
-### CUISINE_CODES tn + ar genişletme (~30 dk, opsiyonel)
+Manuel cuisine fix DB updates: cape-town-bobotie 'gb' → 'za'
+(scripts/fix-cape-town-bobotie-cuisine.ts). Adana Kebap marine fix
+prep 90 → 30 (scripts/fix-adana-kebap-marine.ts).
 
-Manuel cuisine fix'ler (brik tn, provoleta ar) DB'de manuel uygulandı
-ama `src/lib/cuisines.ts`'deki 7 map'te tn/ar yok = `/mutfak/tunus`
-ve `/mutfak/arjantin` 404. CUISINE_CODES + CUISINE_LABEL + CUISINE_
-SLUG + CUISINE_FLAG + CUISINE_DESCRIPTION_TR/EN + CUISINE_REGION
-güncellenmesi + i18n ek.
-
-Etki: gelecek Mod K MAJOR_ISSUE cuisine fix'lerinde tn/ar valid
-olur, /mutfak/tunus + /mutfak/arjantin landing'leri çalışır.
+Sıradaki cuisine genişlemesi: Codex sonraki batch'lerde benzer gap
+çıkarsa (örn. ph Filipinler, ng zaten var, no Norveç ayrı) eklenebilir.
 
 ### Polish phase TAMAMLANDI ✅ (oturum 23 sonu)
 

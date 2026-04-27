@@ -1,16 +1,166 @@
 # Tarifle, Proje Durumu
 
-> **Oturum 24 SONU (27 Nis 2026), 35+ commit, çift-pipeline maraton.**
-> **Personal "Pişirdiklerim" anasayfa shelf + Mod M PIPELINE TAM
-> KAPANIŞ (Batch 1-4 = 75 marine prod) + Mod K (Tarif Kontrol) tam
-> paket (brief §20 + 3 script + 71 input dosyası + Batch 1a-4b apply
-> 168 correction + 9 MAJOR_ISSUE) + butter-chicken Delhi merge +
-> 4 yeni blog (yumurta tazeliği + tahıl çeşitleri + çorba bilimi +
-> kokteyl bilimi) + remark-gfm MDX desteği + 7 çeşitleri yazısı table
-> format (15 table) + Mod K cuisine field altyapı + Sentry "Connection
-> closed" filter.** Prod tarif sayısı sabit 3517, içerik kalitesi 168
-> Mod K correction + 75 Mod M marine apply ile yenilendi. Pre-push
-> 6 katman temiz, tsc 0 error.
+> **Oturum 25 SONU (27 Nis 2026, oturum 24'ün devamı), 26 commit,
+> GPT 5 Pro audit + Mod K v2 maratonu.** **GPT 5 Pro tam analiz
+> uygulaması: P0 paket 1+2+3+4 (Quick QA + landing-copy 252 artifact
+> temizlik + süre/nutrition QA + sayaç tek source) + P3 Topluluk UI
+> + P2 Kayıt fayda dili + Menü Planlayıcı banner + AI Asistan birincil
+> CTA + mini demo grid + P1 SEO landing top 5 derinlik (Aperatifler/
+> Çorbalar/Türk/Vegan/Glutensiz). CUISINE_CODES 30 → 36 (tn/ar/co/ve/
+> dk/za, hepsi Mod K v2 cuisine gap'leri). Mod K v2 altyapı + 12
+> sub-batch apply (1a-6b, ~321 yeni correction prod, brief §20.3
+> Kural 9/10/11 + marine clarification). Sentry N+1 dev spam fix.
+> Ana sayfa reorganizasyon (BugününSeçimi + RastgeleÖneri /kesfet'e
+> taşındı, AI Demo Menü Planlayıcı altına). AI Asistan timeHint
+> widget kaldırma. Adana Kebap RecipeTimeline 3-segment fix. 1 yeni
+> blog (Kuruyemiş Çeşitleri, 56 → 57).** Prod tarif sayısı sabit
+> 3517, içerik kalitesi oturum 24'ün 168 + oturum 25'in 321 = ~489
+> Mod K correction prod ile yenilendi. Pre-push 6 katman temiz,
+> tsc 0 error, Sentry mail spam çözüldü, 36 cuisine canlı.
+
+> ## Oturum 25 detay (27 Nis 2026, A-K paketler)
+>
+> **A. GPT 5 Pro audit P0 paket 1+4 (commit `e9eca8c`)** Quick QA
+> bundle: gelecek tarihli blog filter (`getAllBlogPosts` publishedAt
+> > now, 28-30 Nis + 1/7 May 2026 yazıları gizli), i18n cuisines
+> 24 → 32 entry (de/ir/pk/id/et/ng/tn/ar 8 yeni anahtar, "cuisines.de"
+> key kalıntıları kayboldu), ana sayfa cuisineSubtitle count
+> CUISINE_CODES.length (Hakkımızda ile tutarlı "32 mutfaktan
+> 3517+"), RecipeCard emoji dup check (kategori = recipe emoji ise
+> badge sadece name), LanguageToggle locale.toUpperCase() DOM'da,
+> RecipeSteps "1. 1" double bug zaten fix'liydi (yorum referanslı,
+> smoke confirm).
+>
+> **B. CUISINE_CODES expansion 30 → 36 (commit `9a17507` +
+> `b8dad2d` + `e980567`)** 6 yeni cuisine, hepsi Mod K v2 audit
+> MAJOR_ISSUE'larında Codex'in işaret ettiği gerçek mapping gap'leri:
+> tn (Tunus, brik), ar (Arjantin, provoleta + chimichurri), co
+> (Kolombiya, arepa + arequipe-flan), ve (Venezuela, arepa), dk
+> (Danimarka, aebleskiver), za (Güney Afrika, cape-town-bobotie).
+> 7 map (CODES + LABEL + SLUG + DESCRIPTION_TR/EN + FLAG + REGION) +
+> TEXT_KEYWORDS + verify-mod-k VALID_CUISINES + tests + i18n. /mutfak/
+> tunus + /mutfak/arjantin + /mutfak/kolombiya + /mutfak/venezuela +
+> /mutfak/danimarka + /mutfak/guney-afrika hepsi prod canlı 200.
+> generateMetadata count fallback (getCuisineStats >= 3 filter altı
+> direct prisma.recipe.count).
+>
+> **C. GPT Paket 2 landing-copy temizlik (commit `c87bb30`)** Codex
+> Mod C teslim docs/seo-copy-v1.json'da 3 ayrı artifact pattern
+> seti tespit edildi, 252 yarım cümle + jenerik dolgu kalıntısı
+> temizlendi. Pass 1: 118 FAQ "Bu küçük ek adım..." suni kapanış +
+> yarım prefix (Malzemenin durumuna bak / Servis / Acele etmemek, k).
+> Pass 2: 34 yalın yarım suffix ("Acele etmemek, k", "Bu son kontrol,
+> tarifin dengesini bozmadan daha temiz bir sonu"). Pass 3: 100
+> intro jenerik dolgu cümlesi (38 intro × ~3: "Bu yüzden küçük görünen
+> teknik kararlar...", "Ek olarak malzeme seçimi...", "Böylece bu
+> alan...", "Do Bu çerçeve..."). scripts/clean-landing-copy.mjs
+> 3-pass non-greedy regex + sabit string match (idempotent).
+>
+> **D. GPT Paket 3 + audit-nutrition + Adana fix (commit `97e7a02`)**
+> Brief §20.3 Kural 9 marine clarification (KRİTİK netlik): marine
+> ve dinlendirme süresi prepMinutes'a DAHİL EDİLMEMELİ, totalMinutes
+> - (prep + cook) farkı olarak korunmalı. RecipeTimeline 3-segment
+> bunu görselleştirir. Adana Kebap örneği fix (prep 90 → 30, cook
+> 20, total 110, wait otomatik 60). scripts/audit-nutrition-anomaly.ts
+> deterministic 3517 tarif scan: 3 anomaly tipi (macro_deviation
+> 4P+4C+9F vs avg ±%30 + high_fat_anomaly HIGH_FAT_INGREDIENTS 15
+> ingredient yağ ratio + missing_nutrition). 1162 anomali (763 high
+> + 398 medium + 1 low). scripts/fix-adana-kebap-marine.ts tek-
+> seferlik DB update + AuditLog MOD_K_MARINE_FIX.
+>
+> **E. Mod K v2 audit altyapı + 12 sub-batch apply (commit
+> `6b0d688` + Batch 1a-6b serisi)** Brief §20.3 Kural 9/10/11
+> eklendi (oturum 25 GPT 5 Pro audit): süre tutarlılığı (description/
+> steps'te bahsi geçen süreler vs totalMinutes; Adana Kebap örneği),
+> nutrition ingredient-aware anomaly (yüksek-yağ ingredient + porsiyon
+> başı yağ tahmini ±%50), step-ingredient miktar eşleşmesi (step
+> bahis vs ingredient list, pre-push 96 warning baseline). Brief
+> §20.5 self-check 11/12/13 + §20.6 kapanış kriter + §20.7 yeniden
+> audit (1a'dan tekrar, idempotent). docs/mod-k-archive-pre-rule17/
+> 8 eski output (1a-4b) arşivi. verify-mod-k-batch.ts: DbRecipe tip
+> genişledi + HIGH_FAT_INGREDIENTS Set (15 ingredient) + Kural 9
+> deterministic süre regex check. **12 sub-batch v2 apply (1a + 1b +
+> 2a + 2b + 3a + 3b + 4a + 4b + 5a + 5b + 6a + 6b)**: ~321 yeni
+> correction prod, 2 BLOCKED reject (ankara-tava-eristeli-kuzu tek-
+> domain + anzac-biscuits Kural 9 süre tutarsız + cevizli-narli-kofte-
+> siirt Kural 9 %73), 6 cuisine fix MAJOR_ISSUE (tn/ar/co/ve/dk/za
+> enum gap'leri). PASS oran trend: 1a (66%) → 1b (52) → 2a (40) → 2b
+> (42) → 3a (46) → 3b (42) → 4a (60) → 4b (58) → 5a (50) → 5b (34) →
+> 6a (48) → 6b (36). Adana Kebap commit'i `43243ae`'de Kural 9+10
+> demo (totalMinutes 50 → 110, fat 28 → 48g, kcal 250 → 570).
+>
+> **F. Topluluk UI fix (P3, commit `72c0074`)** GPT 5 Pro
+> "topluluk vaadi sosyal kanıtla desteklenmiyor" maddesi: 0 yorum /
+> 0 takipçi / 0 uyarlama "boş platform" algısı yaratır. ReviewsSection:
+> count = 0 → "Yıldız & Yorumlar (0)" yerine "İlk yorumu sen bırak"
+> sıcak başlık + 💬 emoji + "Bu tarife ilk yıldızı sen ver" CTA card.
+> SuggestedCooksSection: koşullu secondaryLine, "0 takipçi · 0
+> uyarlama" yerine sadece pozitif sayıları göster. FollowUserCard:
+> secondaryLine empty ise <p> render etme. tr.json + en.json
+> reviews.sectionTitleEmpty + emptyCallout yeni i18n keys.
+>
+> **G. P2 paketleri: Kayıt fayda dili + Menü Planlayıcı banner +
+> AI Asistan birincil CTA + mini demo (commit `7b4f010` + `a038a1c`
+> + `ed65750`)** Kayıt benefits 4 madde Tarifle gerçek prod feature
+> odaklı revize: "Dolabındaki malzemeden tarif bul, eksiğini alışveriş
+> listesine ekle" + "Bu haftanın menüsünü AI ile planla, 7 günlük
+> plan + alışveriş listesi" + "Pişirdiğini tek tıkla işaretle, dolabın
+> otomatik düşsün" + "Diyet skorun + tercihlerin, sana özel tarif
+> önerileri". Menü Planlayıcı ana sayfa banner (📅 yeşil accent,
+> login → /menu-planlayici, anon → /kayit). AI Asistan mini demo
+> grid: 3 örnek malzeme set (🍗 Tavuk + 🍅 Domates + 🥖 Makarna
+> "Hızlı akşam" / 🐟 Somon + 🥦 Brokoli + 🍋 Limon "Hafif sağlıklı"
+> / 🍳 Yumurta + 🧀 Peynir + 🌾 Un "Klasik kahvaltı"). Kart click →
+> /ai-asistan?m=X,Y,Z URL param ile AiAssistantForm hydrate (1-tık
+> inline AI demo).
+>
+> **H. SEO teknik (OG title 3 sayfa fix + Sentry dev spam, commit
+> `32e2f5e` + `c561411`)** Schema audit: tarif detay (Recipe +
+> BreadcrumbList + FAQPage), blog (Article + BreadcrumbList), kategori/
+> mutfak/diyet (ItemList + FAQPage + BreadcrumbList) hepsi mevcut.
+> KRİTİK: 3 landing'de generateMetadata title set var ama openGraph
+> + twitter explicit set yok, root layout og:title generic "Tarifle ·
+> Make Eat" override edilmiyor → sayfa-spesifik openGraph + twitter
+> eklendi (Aperatifler Tarifleri, Türk Tarifleri 1941 yemek çeşidi,
+> Vegan Tarifleri 1053 yemek çeşidi). Sentry: dev environment
+> tracesSampleRate 1.0 → 0 (N+1 Query mail spam fix), beforeSend
+> Transaction dev null guard, prod 4 landing route filter Set (tarif/
+> [slug] + tarifler/[kategori] + mutfak/[cuisine] + diyet/[diet]).
+>
+> **I. P1 SEO landing top 5 derinlik (commit `5fba333`)** GPT'nin
+> "150-250 kelime özgün açıklama, somut sayı + otorite + pratik
+> öngörü, fayda yoğunluğu" önerisi. 5 sayfa intro revize: aperatifler
+> (190 tarif + 180-200°C fırın + 175°C kızartma + 4 sos kategorisi),
+> corbalar (350+ tarif + kemik suyu 4-6 sa vs sebze suyu 40-60 dk),
+> turk (1900+ tarif + 7 bölge + Slow Food Türkiye 100+ yöresel
+> ürün), vegan (1050+ tarif + B12 + omega-3 ALA + protein gram somut),
+> glutensiz (800+ tarif + çölyak %1 + non-celiac duyarlılık %6 + 5
+> glutensiz un). Plus Türk mutfağında "Sofrada birlikte gelen k"
+> yarım cümle (Paket 2 cleanup kaçırmıştı) tamamen kaldırıldı.
+> scripts/seo-revise-top5.mjs idempotent pattern.
+>
+> **J. Ana sayfa reorganizasyon + AI timeHint widget kaldırma
+> (commit `1a0ba9b` + `48c0521`)** Kullanıcı geri bildirimi ile
+> ana sayfa AI Asistan + Menü Planlayıcı + Hızlı Dene retention
+> odaklı, discovery (BugününSeçimi + RastgeleÖneri) /kesfet
+> sayfasının en üstüne (hero altı) taşındı. /kesfet'te 2-kolonlu
+> grid (lg+): RecipeOfTheDay sol 2/3 + RandomRecipeBanner sağ 1/3.
+> Ana sayfa AI Demo grid (HIZLI DENE) Menü Planlayıcı banner'ın
+> ALTINA taşındı (önce büyük CTA'lar sonra hızlı aksiyon kartları
+> akışı). AI Asistan formundan "Gece saati / Sabah saatleri /
+> Akşam yemeği" timeHint banner'ı kaldırıldı (kullanıcı geri
+> bildirimi: form üstü sadeleşsin, "Hızlı başlangıç" preset chips
+> doğrudan formun en üstünde). i18n key'ler korundu, gelecek
+> re-aktivasyon için.
+>
+> **K. Blog Kuruyemiş Çeşitleri (commit `31752bd`, 56 → 57)**
+> malzeme-tanima kategori. 6 tür yan yana (badem, ceviz, fındık,
+> kaju, Antep fıstığı, yer fıstığı). 3 GFM table (besin değer 6×6
+> + kavurma 6×4 + mutfak kullanım 9×3). 8 kaynak (Linus Pauling
+> Institute USDA, Almond Board, Healthline, UC Davis Food Safety,
+> Eat By Date, Maureen Abood, FDA, FoodAllergy). Yer fıstığı
+> baklagil ayrımı + tree nut FDA sınıflandırması + çocukta %40
+> çapraz alerji notu.
 
 > ## Oturum 24 detay (A-K paketler)
 >

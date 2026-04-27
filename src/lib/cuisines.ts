@@ -101,6 +101,15 @@ export const CUISINE_CODES = [
   // + erik/kayisi kompostolari sofranin temeli. Region 'west-europe'
   // (de + fr + gb ile ayni kume, Almanca konusan Avrupa).
   "at",
+  // Oturum 28 (Mod K mini-rev paketi 14): toronto-akcaagacli-yulaf-bar
+  // MAJOR_ISSUE'inda Codex Toronto/Kanada iddiasinin cuisine 'us' ile
+  // ceLismesi flag'lemis. Akçaağaç şurubu (maple syrup) Quebec klasik
+  // (Quebec %71 dunya uretimi, Quebec Maple Syrup Producers tescil).
+  // ca = Kanada (Maple Syrup, poutine, butter tart, nanaimo bar,
+  // tourtière, Montreal bagel, Caesar kokteyl mirasi). Region
+  // 'anglo-americas' (us + au ile ayni kume, Anglo-Saxon Kuzey
+  // Amerika).
+  "ca",
 ] as const;
 
 export type CuisineCode = (typeof CUISINE_CODES)[number];
@@ -146,6 +155,7 @@ export const CUISINE_LABEL: Record<CuisineCode, string> = {
   cl: "Şili",
   ge: "Gürcü",
   at: "Avusturya",
+  ca: "Kanada",
 };
 
 /**
@@ -195,6 +205,7 @@ export const CUISINE_SLUG: Record<CuisineCode, string> = {
   cl: "sili",
   ge: "gurcu",
   at: "avusturya",
+  ca: "kanada",
 };
 
 /** URL slug → kod ters lookup. Slug bilinmiyorsa null. */
@@ -252,6 +263,7 @@ export const CUISINE_DESCRIPTION_TR: Record<CuisineCode, string> = {
   cl: "Şili mutfağı, And dağları ile Pasifik kıyısının buluştuğu uzun ülkenin criolla mirası: pastel de choclo (mısırlı kıymalı fırın), empanada de pino (kıymalı börek), cazuela (et ve sebze çorbası), charquicán (kabaklı patates ezmesi), sopaipilla (balkabaklı kızarmış hamur), mote con huesillo (buğday ve kuru şeftali içeceği), completo italiano (avokadolu sosisli). Tane mısır, balkabağı ve Pasifik balıkları sofranın imzası, Mapuche köklerini İspanyol mirasıyla harmanlar.",
   ge: "Gürcü mutfağı, Kafkas dağları ile Karadeniz kıyısının buluştuğu zengin bir mirastır: khachapuri (peynirli ekmek, Adjarian + Imeruli + Megruli bölgesel varyantları), khinkali (etli mantı), satsivi (cevizli soğuk tavuk), lobio (kırmızı fasulye yahnisi), churchkhela (cevizli üzüm pekmezi şekeri), ajapsandali (patlıcanlı sebze yahnisi), tkemali (ekşi erik sosu) klasiklerini barındırır. Ceviz, kişniş, yarpuz (ombalo) ve sulguni peyniri sofranın imzası. UNESCO İnsanlığın Somut Olmayan Kültürel Mirası listesindeki kvevri (kil küp) şarap geleneği 8000 yıl öncesine dayanır.",
   at: "Avusturya mutfağı, Habsburg sarayı mirasını Alp coğrafyasıyla birleştirir: Kaiserschmarrn (Kayser Franz Joseph I döneminden çatallı pankek), Wiener Schnitzel (panelenmiş dana pirzola), Sachertorte (Hotel Sacher kakaolu kabuklu klasik), Apfelstrudel (incecik yufkalı elma rulo), Linzer Torte, Tafelspitz, Gulasch (Macar etkisiyle), Knödel (mantar veya erik), Marillenknödel (kayısılı). Tereyağı, taze süt ürünleri, erik ve kayısı kompostoları sofranın temelini kurar.",
+  ca: "Kanada mutfağı, Quebec akçaağaç hasadından Pasifik somonuna uzanan geniş yelpazeyi yansıtır: maple syrup (akçaağaç şurubu, Quebec %71 dünya üretimi), poutine (kızarmış patates + et suyu sosu + cheese curd), butter tart, nanaimo bar, tourtière (Quebec et turtası), Montreal bagel, peameal bacon, Caesar kokteyli. İngiliz, Fransız ve First Nations etkilerini akçaağaç şekeri, somon ve kanola gibi yerel ürünlerle harmanlar.",
 };
 
 /** EN description, aynı set, kısa SEO metni. */
@@ -296,6 +308,7 @@ export const CUISINE_DESCRIPTION_EN: Record<CuisineCode, string> = {
   cl: "Chilean cuisine spans the long country between the Andes and the Pacific, blending Mapuche roots with Spanish heritage: pastel de choclo (corn and beef pie), empanada de pino (beef-filled turnover), cazuela (meat and vegetable stew), charquicán (pumpkin and potato mash), sopaipilla (pumpkin fried dough), mote con huesillo (wheat and dried peach drink), completo italiano (avocado hot dog). Sweet corn, pumpkin, and Pacific seafood anchor the table.",
   ge: "Georgian cuisine fuses the Caucasus mountains with the Black Sea coast: khachapuri (cheese-stuffed bread with Adjarian, Imeruli, and Megruli regional forms), khinkali (meat dumplings), satsivi (chilled walnut chicken), lobio (red bean stew), churchkhela (walnut and grape-syrup candy), ajapsandali (eggplant vegetable stew), and tkemali (sour plum sauce) anchor the table. Walnut, coriander, pennyroyal (ombalo), and sulguni cheese are signature. The kvevri clay-vessel winemaking tradition, on UNESCO's Intangible Cultural Heritage list, dates back 8,000 years.",
   at: "Austrian cuisine carries Habsburg court heritage into the Alpine landscape: Kaiserschmarrn (torn pancakes named for Emperor Franz Joseph I), Wiener Schnitzel (breaded veal cutlet), Sachertorte (Hotel Sacher chocolate classic), Apfelstrudel (paper-thin apple pastry), Linzer Torte, Tafelspitz, Gulasch (Hungarian-influenced), Knödel (with mushroom or plum), and Marillenknödel (apricot dumpling) are signatures. Butter, fresh dairy, plum and apricot compotes anchor the table.",
+  ca: "Canadian cuisine spans Quebec's maple syrup harvest to Pacific salmon: maple syrup (Quebec produces 71% of global supply), poutine (fries with gravy and cheese curds), butter tart, nanaimo bar, tourtière (Quebec meat pie), Montreal bagel, peameal bacon, and Caesar cocktail. British, French, and First Nations influences blend with maple sugar, salmon, and canola as signature local ingredients.",
 };
 
 export const CUISINE_FLAG: Record<CuisineCode, string> = {
@@ -339,6 +352,7 @@ export const CUISINE_FLAG: Record<CuisineCode, string> = {
   cl: "🇨🇱",
   ge: "🇬🇪",
   at: "🇦🇹",
+  ca: "🇨🇦",
 };
 
 /**
@@ -403,6 +417,10 @@ export const CUISINE_REGION: Record<CuisineCode, string> = {
   // Avusturya west-europe (de + fr + gb ile ayni kume), Almanca
   // konusan Avrupa + Habsburg/Alpler kulturel hattini paylasir.
   at: "west-europe",
+  // Kanada anglo-americas (us + au ile ayni kume). Anglo-Saxon Kuzey
+  // Amerika kulturel hatti, Maple Syrup + poutine + butter tart Quebec
+  // mirasi.
+  ca: "anglo-americas",
 };
 
 // ─── Inference engine ───────────────────────────────────────
@@ -650,6 +668,15 @@ const SLUG_PATTERNS: readonly { cuisine: CuisineCode; patterns: string[] }[] = [
       "wiener-schnitzel", "tafelspitz", "marillenknodel", "knodel",
     ],
   },
+  // Canadian (oturum 28 mini-rev paketi 14, ca eklenmesiyle).
+  // Klasik Kanada yiyecekleri Quebec maple miras + Anglo-Saxon mutfak.
+  {
+    cuisine: "ca",
+    patterns: [
+      "poutine", "butter-tart", "nanaimo-bar", "tourtiere",
+      "montreal-bagel", "peameal-bacon", "maple-bar", "akcaagacli",
+    ],
+  },
 ];
 
 /**
@@ -691,6 +718,7 @@ const TEXT_KEYWORDS: readonly { cuisine: CuisineCode; keywords: string[] }[] = [
   { cuisine: "cl", keywords: ["şili", "şilili", "şili mutfağı", "şili usulü", "santiago", "valparaiso"] },
   { cuisine: "ge", keywords: ["gürcü", "gurcu", "gürcistan", "gurcistan", "tiflis", "kafkas", "kakheti", "georgian"] },
   { cuisine: "at", keywords: ["avusturya", "avusturyalı", "viyana", "wiener", "habsburg", "kaiser franz", "salzburg", "tirol", "österreich"] },
+  { cuisine: "ca", keywords: ["kanada", "kanadalı", "kanada mutfağı", "toronto", "quebec", "montreal", "vancouver", "akçaağaç şurubu", "maple syrup"] },
 ];
 
 interface InferInput {

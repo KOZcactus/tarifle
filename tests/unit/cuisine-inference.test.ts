@@ -323,6 +323,30 @@ describe("inferCuisineFromRecipe", () => {
     ).toBe("at");
   });
 
+  // ─── Canadian (oturum 28 mini-rev paketi 14, ca eklenmesiyle) ─
+
+  test("Canadian title keyword (Toronto) → ca", () => {
+    expect(
+      inferCuisineFromRecipe(
+        recipe({ title: "Toronto Akçaağaçlı Yulaf Bar", slug: "toronto-akcaagacli-yulaf-bar" }),
+      ),
+    ).toBe("ca");
+  });
+
+  test("Canadian slug: poutine → ca", () => {
+    expect(
+      inferCuisineFromRecipe(recipe({ slug: "klasik-poutine" })),
+    ).toBe("ca");
+  });
+
+  test("Canadian title keyword (Quebec) → ca", () => {
+    expect(
+      inferCuisineFromRecipe(
+        recipe({ title: "Quebec Maple Syrup Tart", slug: "quebec-maple-tart" }),
+      ),
+    ).toBe("ca");
+  });
+
   // ─── Default to Turkish ───────────────────────────────────
 
   test("no international markers → default tr", () => {
@@ -365,8 +389,8 @@ describe("inferCuisineFromRecipe", () => {
 });
 
 describe("cuisine constants", () => {
-  test("CUISINE_CODES has 40 entries", () => {
-    expect(CUISINE_CODES).toHaveLength(40);
+  test("CUISINE_CODES has 41 entries", () => {
+    expect(CUISINE_CODES).toHaveLength(41);
   });
 
   test("every code has a label", () => {

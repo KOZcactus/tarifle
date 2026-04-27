@@ -28,25 +28,28 @@ Speech API), Firefox (Gecko), Edge (Blink), Mobile Safari, Chrome
 Android, PWA install banner + standalone mode. Kullanıcı telefondan
 test eder, bulguları rapora geçirilir.
 
-### P1 SEO landing intro derinlik (oturum 27 itibariyle top 20/41 done)
+### P1 SEO landing intro derinlik (oturum 27 itibariyle top 29/41 done)
 
 Top 5 (oturum 25): aperatifler, corbalar, turk, vegan, glutensiz.
 Top 12 (oturum 26 batch 2): + tatlilar, kahvaltiliklar, tavuk-yemekleri,
 et-yemekleri, hamur-isleri, italyan, vejetaryen.
-**Top 20** (oturum 27 batch 3, commit `b39b4df`): + salatalar (270+),
-baklagil-yemekleri (113), makarna-pilav (244, slug fix), atistirmaliklar
-(68 YENI), sebze-yemekleri (187 YENI), fransiz (52), japon (59),
-portekiz (2 YENI, oturum 27 cuisine 'pt' eklendi).
+Top 20 (oturum 27 batch 3, commit `b39b4df`): + salatalar, baklagil-
+yemekleri, makarna-pilav, atistirmaliklar, sebze-yemekleri, fransiz,
+japon, portekiz.
+**Top 29** (oturum 27 batch 4, commit `36fff69`): + ispanyol (81),
+yunan (45), cin (53), kore (44), tay (46), hint (47), meksika (61),
+smoothie-shake (64 YENI), soslar-dippler (59 YENI).
 
-**Kalan 18+ sayfa** (kategori + cuisine + diet) batch 4-6 ile devam.
-Pattern: 150-250 kelime, somut sayı + USDA/Akdeniz Diyet Vakfı/Escoffier/
-UNESCO/ATK otorite + pratik öngörü. Pattern script `scripts/seo-revise-
-batch3.mjs` (oturum 27, slug fix + revize + insert 3 mod).
+**Kalan 12+ sayfa** batch 5-6 ile devam. Pattern: 150-250 kelime,
+somut sayı + UNESCO/FAO/Escoffier/ATK otorite + pratik öngörü.
+Pattern script `scripts/seo-revise-batch4.mjs`.
 
-Sıradaki batch 4 (5-7 sayfa): hamur-isleri-yumusak (varsa), kahveler-
-ve-cay, kokteyller, mezeler, soslar, smoothie-shake, pideler-ve-
-lahmacunlar (kategoriler); ispanyol, yunan, cin, kore, tay, hint,
-meksika (cuisine). Multi-session, oturum 28-30+ tamamlanır.
+Sıradaki batch 5 (5-7 sayfa) adayları: kahveler-ve-cay, kokteyller,
+icecekler, pideler-ve-lahmacunlar, kahve-sicak-icecekler (kategoriler);
+vietnam (29), brezilya (15), küba (12), peru (15), rus (24), macar (12),
+iskandinav (18), ingiliz (40+), polonya, avustralya (cuisine'lar).
+diet/sutsuz, diet/alkolsuz (diet'lar). Multi-session, oturum 28-30+
+tamamlanır.
 
 ### Mod K v2 (Tarif Kontrol, oturum 27 itibariyle 42/71 sub-batch done = %59.2)
 

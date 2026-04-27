@@ -1,8 +1,16 @@
 # Tarifle, Proje Durumu
 
-> **Oturum 27 (27 Nis 2026, oturum 26'nın aynı gün devamı), 10 commit:
+> **Oturum 27 (27 Nis 2026, oturum 26'nın aynı gün devamı), 13 commit:
 > Mod K v2 24 batch apply (11a-21b + 22a + 23a, 22b BAD reject) +
-> CUISINE_CODES `pt` ekleme + 4 mini-rev paketi 1 + SEO batch 3.**
+> CUISINE_CODES `pt` ekleme + 4 mini-rev paketi 1 + SEO batch 3 + 4.**
+>
+> **SEO landing batch 4** (commit `36fff69`): top 20 → **top 29**.
+> 7 cuisine revize (ispanyol 154→202 kelime, yunan 154→171, cin 155→
+> 204, kore 154→182, tay 153→215, hint 154→210, meksika 147→212) +
+> 2 yeni kategori (smoothie-shake 225, soslar-dippler 227). Otorite:
+> FAO 2022/2023 + UNESCO 2010 (Akdeniz Diyeti + Meksika) + KOCIS 2013
+> (Kore) + Escoffier 1903 + Verace Pesto Genovese 1865. Em-dash 0.
+> Kalan 12+ sayfa batch 5-6'a.
 >
 > **Mod K Batch 22a + 23a apply** (commit önceki paket sonrası):
 > 71 yeni prod correction (22a 36 + 23a 35), 0 BLOCKED 22a/23a.

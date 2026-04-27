@@ -79,6 +79,16 @@ export const CUISINE_CODES = [
   // cazuela, charquican, sopaipilla, mote con huesillo, completo
   // italiano, chorrillana; Mapuche kokleri + Ispanyol mirasi).
   "cl",
+  // Oturum 28 (Mod K mini-rev paketi 9): tkemali MAJOR_ISSUE'inda
+  // Codex cuisine 'ru' (Rus mutfagi!) yazmis, oysa tkemali Gurcu
+  // klasik eksi erik sosu. ge = Gurcustan (Kafkas + Karadeniz kiyisi;
+  // khachapuri peynirli ekmek, khinkali etli manti, satsivi cevizli
+  // tavuk, lobio kirmizi fasulye, churchkhela cevizli sekerleme,
+  // tkemali eksi erik sosu, mtsvadi izgara et). Ceviz + kisnis +
+  // ombalo (yarpuz) + sulguni peyniri imza. UNESCO 2013 kvevri sarap
+  // mirasi 8000 yillik. Region 'caucasus' yeni cluster, gelecekte
+  // az/hyq eklenirse hazir.
+  "ge",
 ] as const;
 
 export type CuisineCode = (typeof CUISINE_CODES)[number];
@@ -122,6 +132,7 @@ export const CUISINE_LABEL: Record<CuisineCode, string> = {
   za: "Güney Afrika",
   pt: "Portekiz",
   cl: "Şili",
+  ge: "Gürcü",
 };
 
 /**
@@ -169,6 +180,7 @@ export const CUISINE_SLUG: Record<CuisineCode, string> = {
   za: "guney-afrika",
   pt: "portekiz",
   cl: "sili",
+  ge: "gurcu",
 };
 
 /** URL slug → kod ters lookup. Slug bilinmiyorsa null. */
@@ -224,6 +236,7 @@ export const CUISINE_DESCRIPTION_TR: Record<CuisineCode, string> = {
   za: "Güney Afrika mutfağı Hollandalı sömürge mirası, Hindistan göçmen mutfakları ve yerel Bantu kültürünün buluşması: bobotie (baharatlı kıymalı yumurta dolması), biltong (kuru et), sosatie (sis kebabı), malva pudding (kayısılı sıcak puding). Köri, hindistan cevizi sütü ve mısır lapası (pap) günlük sofranın imzası.",
   pt: "Portekiz mutfağı Atlantik kıyısının deniz ürünleri ve İber yarımadası mirasını birleştirir: bacalhau (tuzlanmış morina, 365 günde 365 farklı tarif denilir), pastel de nata (Lizbon kremalı tart), caldo verde (lahanalı patates çorbası), francesinha (Porto sandviçi), bifana (jambon sandviç). Zeytinyağı, taze morina, hindistan cevizi (Brezilya bağı) ve piri-piri sosu sofranın imzası.",
   cl: "Şili mutfağı, And dağları ile Pasifik kıyısının buluştuğu uzun ülkenin criolla mirası: pastel de choclo (mısırlı kıymalı fırın), empanada de pino (kıymalı börek), cazuela (et ve sebze çorbası), charquicán (kabaklı patates ezmesi), sopaipilla (balkabaklı kızarmış hamur), mote con huesillo (buğday ve kuru şeftali içeceği), completo italiano (avokadolu sosisli). Tane mısır, balkabağı ve Pasifik balıkları sofranın imzası, Mapuche köklerini İspanyol mirasıyla harmanlar.",
+  ge: "Gürcü mutfağı, Kafkas dağları ile Karadeniz kıyısının buluştuğu zengin bir mirastır: khachapuri (peynirli ekmek, Adjarian + Imeruli + Megruli bölgesel varyantları), khinkali (etli mantı), satsivi (cevizli soğuk tavuk), lobio (kırmızı fasulye yahnisi), churchkhela (cevizli üzüm pekmezi şekeri), ajapsandali (patlıcanlı sebze yahnisi), tkemali (ekşi erik sosu) klasiklerini barındırır. Ceviz, kişniş, yarpuz (ombalo) ve sulguni peyniri sofranın imzası. UNESCO İnsanlığın Somut Olmayan Kültürel Mirası listesindeki kvevri (kil küp) şarap geleneği 8000 yıl öncesine dayanır.",
 };
 
 /** EN description, aynı set, kısa SEO metni. */
@@ -266,6 +279,7 @@ export const CUISINE_DESCRIPTION_EN: Record<CuisineCode, string> = {
   za: "South African cuisine blends Dutch colonial heritage, Indian immigrant kitchens and indigenous Bantu culture: bobotie (spiced minced meat with egg topping), biltong (cured meat), sosatie (skewered kebab), malva pudding (apricot warm pudding). Curry, coconut milk and maize porridge (pap) are everyday signatures.",
   pt: "Portuguese cuisine joins Atlantic seafood with Iberian heritage: bacalhau (salted cod, said to have 365 recipes), pastel de nata (Lisbon custard tart), caldo verde (kale and potato soup), francesinha (Porto sandwich), bifana (pork sandwich). Olive oil, fresh cod, Brazilian-influenced flavors and piri-piri sauce anchor the table.",
   cl: "Chilean cuisine spans the long country between the Andes and the Pacific, blending Mapuche roots with Spanish heritage: pastel de choclo (corn and beef pie), empanada de pino (beef-filled turnover), cazuela (meat and vegetable stew), charquicán (pumpkin and potato mash), sopaipilla (pumpkin fried dough), mote con huesillo (wheat and dried peach drink), completo italiano (avocado hot dog). Sweet corn, pumpkin, and Pacific seafood anchor the table.",
+  ge: "Georgian cuisine fuses the Caucasus mountains with the Black Sea coast: khachapuri (cheese-stuffed bread with Adjarian, Imeruli, and Megruli regional forms), khinkali (meat dumplings), satsivi (chilled walnut chicken), lobio (red bean stew), churchkhela (walnut and grape-syrup candy), ajapsandali (eggplant vegetable stew), and tkemali (sour plum sauce) anchor the table. Walnut, coriander, pennyroyal (ombalo), and sulguni cheese are signature. The kvevri clay-vessel winemaking tradition, on UNESCO's Intangible Cultural Heritage list, dates back 8,000 years.",
 };
 
 export const CUISINE_FLAG: Record<CuisineCode, string> = {
@@ -307,6 +321,7 @@ export const CUISINE_FLAG: Record<CuisineCode, string> = {
   za: "🇿🇦",
   pt: "🇵🇹",
   cl: "🇨🇱",
+  ge: "🇬🇪",
 };
 
 /**
@@ -362,6 +377,12 @@ export const CUISINE_REGION: Record<CuisineCode, string> = {
   // Sili Latin Amerika (mx, br, cu, pe, ar, co, ve ile ayni cluster).
   // pastel de choclo, empanada, cazuela: criolla ortak miras.
   cl: "latin-america",
+  // Gurcustan Kafkas yeni cluster, gelecekte az/hyq eklenirse hazir.
+  // Slavic-central-europe (ru/pl/hu) kulturel cakismaz, mediterranean-
+  // levant zeytinyagi-domates ucgeni Gurcu mutfagina yabanci, west-asia
+  // jenerik. Kafkas mutfagi (Gurcu + ileride Ermeni + Azeri) dogal
+  // kume.
+  ge: "caucasus",
 };
 
 // ─── Inference engine ───────────────────────────────────────
@@ -589,6 +610,17 @@ const SLUG_PATTERNS: readonly { cuisine: CuisineCode; patterns: string[] }[] = [
       "completo-italiano", "chorrillana",
     ],
   },
+  // Georgian (oturum 28 mini-rev paketi 9, ge eklenmesiyle).
+  // Klasik Gurcu yemekleri unique-cuisine, "tkemali" eksi erik sosu da
+  // dahil. Bolgesel khachapuri varyantlari (Adjarian/Imeruli/Megruli)
+  // pattern olarak khachapuri yakaliyor.
+  {
+    cuisine: "ge",
+    patterns: [
+      "khachapuri", "khinkali", "satsivi", "lobio",
+      "churchkhela", "ajapsandali", "tkemali", "mtsvadi",
+    ],
+  },
 ];
 
 /**
@@ -628,6 +660,7 @@ const TEXT_KEYWORDS: readonly { cuisine: CuisineCode; keywords: string[] }[] = [
   { cuisine: "au", keywords: ["avustralya", "avustralyalı"] },
   { cuisine: "pt", keywords: ["portekiz", "portekizli", "portekiz mutfağı", "portekiz usulü", "lizbon", "porto"] },
   { cuisine: "cl", keywords: ["şili", "şilili", "şili mutfağı", "şili usulü", "santiago", "valparaiso"] },
+  { cuisine: "ge", keywords: ["gürcü", "gurcu", "gürcistan", "gurcistan", "tiflis", "kafkas", "kakheti", "georgian"] },
 ];
 
 interface InferInput {

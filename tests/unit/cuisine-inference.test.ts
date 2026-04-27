@@ -277,6 +277,28 @@ describe("inferCuisineFromRecipe", () => {
     ).toBe("cl");
   });
 
+  // ─── Georgian (oturum 28 mini-rev paketi 9, ge eklenmesiyle) ──
+
+  test("Georgian title keyword (Gürcü) → ge", () => {
+    expect(
+      inferCuisineFromRecipe(
+        recipe({ title: "Gürcü Usulü Tkemali", slug: "tkemali-gurcu" }),
+      ),
+    ).toBe("ge");
+  });
+
+  test("Georgian slug: khachapuri → ge", () => {
+    expect(
+      inferCuisineFromRecipe(recipe({ slug: "adjarian-khachapuri" })),
+    ).toBe("ge");
+  });
+
+  test("Georgian slug: tkemali → ge", () => {
+    expect(
+      inferCuisineFromRecipe(recipe({ slug: "tkemali" })),
+    ).toBe("ge");
+  });
+
   // ─── Default to Turkish ───────────────────────────────────
 
   test("no international markers → default tr", () => {
@@ -319,8 +341,8 @@ describe("inferCuisineFromRecipe", () => {
 });
 
 describe("cuisine constants", () => {
-  test("CUISINE_CODES has 38 entries", () => {
-    expect(CUISINE_CODES).toHaveLength(38);
+  test("CUISINE_CODES has 39 entries", () => {
+    expect(CUISINE_CODES).toHaveLength(39);
   });
 
   test("every code has a label", () => {

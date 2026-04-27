@@ -5,80 +5,51 @@ Toplam entry: 50
 
 ## Ozet (verdict)
 
-- PASS: **26** (52.0%)
-- CORRECTION: 20 (40.0%)
-- MAJOR_ISSUE: 4 (8.0%)
+- PASS: **21** (42.0%)
+- CORRECTION: 28 (56.0%)
+- MAJOR_ISSUE: 1 (2.0%)
 
 ## Confidence
 
-- high: 39, medium: 11, low: 0
+- high: 27, medium: 23, low: 0
 
 ## Format integrity
 
-- Apply'a hazir (clean format): **50**
-- BLOCKED (format issue): 0
+- Apply'a hazir (clean format): **47**
+- BLOCKED (format issue): 3
+
+## BLOCKED (format issue, apply yapma)
+
+| Slug | Verdict | Issues |
+|---|---|---|
+| `avokadolu-misir-mucveri-avustralya-usulu` | CORRECTION | Kural 9 süre tutarsız: ifade ~1 dk vs totalMinutes 22 dk (fark %95) |
+| `ayranli-kete-agri-usulu` | CORRECTION | Kural 9 süre tutarsız: ifade ~20 dk vs totalMinutes 82 dk (fark %76) |
+| `baharatli-lor-ezmesi-edirne-usulu` | CORRECTION | Kural 9 süre tutarsız: ifade ~2 dk vs totalMinutes 25 dk (fark %92) |
 
 ## MAJOR_ISSUE (manuel review zorunlu)
 
-### `amasra-peynirli-misir-tavasi`
+### `avokadolu-yumurtali-tost-peru-usulu`
 
-**Reason**: Amasra kaynaklarında salata, balık ve Bartın yöresel yemekleri öne çıkıyor; bu adla yöresel yemek doğrulanamadı.
-
-**Issues**:
-- description: Amasra yöresel iddiası güvenilir Bartın ve Amasra yemek listelerinde desteklenmedi
-- identity: tarif daha çok peynirli mısır unu kuymağına benziyor, Amasra'ya özgü adlandırma manuel incelenmeli
-
-**Corrections** (sample):
-- description: "Peynirli mısır unu tavası, mısır unu, süt, tereyağı ve peyniri tavada koyulaştırarak sıcak servis edilen pratik bir kahv..."
-
-### `amasya-keskek`
-
-**Reason**: Resmi coğrafi işaret kaynağı mevcut tariften ciddi ayrılıyor; bu kayıt uygulama öncesi manuel incelenmeli.
+**Reason**: Kaynaklar avokadolu yumurtalı tostu modern genel kahvaltı olarak verir; Peru köken iddiası doğrulanmadı.
 
 **Issues**:
-- description: tescilli Amasya keşkeği tavukla dövülen bir yemek değil; koyun eti, kemik iliği, kuyruk yağı, nohut ve buğdayla uzun pişirilir
-- time: step 1 bir gece buğday bekletiyor ama totalMinutes 140 bunu kapsamıyor
-- method: resmi kaynak Amasya keşkeğinde bileşenlerin dövülmediğini, bütün halde kaldığını belirtiyor
+- cuisine: avokadolu yumurtalı tost modern genel bir tosttur, Peru mutfağına özgü bir tarif olarak doğrulanmıyor
+- description: Peru usulü ifadesi kaynaklarla desteklenmediği için kullanıcıyı yanıltabilir
 
 **Corrections** (sample):
-- description: "Amasya keşkeği, buğdayı koyun eti, kemik iliği, kuyruk yağı ve nohutla uzun sürede pişiren tescilli yöresel yemektir...."
-- ingredients_add: 5
-- ingredients_remove: Tavuk but
-
-### `ananasli-rom-highball-tayland-usulu`
-
-**Reason**: Highball formatı kaynaklarda genel kokteyl tekniği olarak geçiyor; Tayland usulü iddiası doğrulanamadı.
-
-**Issues**:
-- cuisine: ananaslı rom highball için Tayland mutfağı iddiası güvenilir kaynaklarla desteklenmedi
-- identity: tarif highball kokteyl formatına uyuyor ama ülke iddiası manuel incelenmeli
-
-**Corrections** (sample):
-- description: "Ananaslı rom highball, romu ananas suyu, soda ve bol buzla uzatarak hazırlanan ferah, tropik karakterli bir kokteyldir...."
-
-### `antep-katikli-dolma`
-
-**Reason**: Tarif tekniği katıklı dolmaya uyuyor ama Antep yöre iddiası kaynaklarla doğrulanmadı; manuel review gerekir.
-
-**Issues**:
-- description: katıklı dolma kaynaklarda Bitlis ve çevre illerle ilişkilendiriliyor, Antep iddiası güvenilir kaynakla desteklenmedi
-- ingredient: step 2 soğan ve salça kullanıyor ama ingredient listesinde yok
-
-**Corrections** (sample):
-- description: "Katıklı dolma, kabakları bulgurlu kıymalı içle doldurup sarımsaklı yoğurt ve yağlı sosla servis edilen dolmadır...."
-- ingredients_add: 2
+- description: "Avokadolu yumurtalı tost, kızarmış ekmeği avokado ve yumurtayla buluşturarak kremsi, tok bir kahvaltı yapar...."
 
 ## CORRECTION sample (ilk 10)
 
 | Slug | Conf | Issues count | Corrections fields |
 |---|---|---:|---|
-| `aji-de-gallina` | high | 2 | ingredients_add, allergens_add |
-| `aji-panca-soslu-tavuklu-pirinc-peru-usulu` | high | 2 | ingredients_add, prepMinutes, cookMinutes, totalMinutes |
-| `aji-panca-tavuk-tava-peru-usulu` | high | 1 | ingredients_add |
-| `aji-verde-tavuk-patates-kasesi-peru-usulu` | high | 1 | ingredients_add |
-| `ajili-tavuk-anticucho-bowl-peru-usulu` | high | 2 | ingredients_add, ingredients_amount_change, tags_remove |
-| `aloo-gobi` | high | 1 | ingredients_add |
-| `amasya-bakla-dolmasi-yarmali` | high | 1 | prepMinutes, cookMinutes, totalMinutes |
-| `amasya-coregi` | high | 1 | ingredients_add |
-| `americano` | high | 1 | cuisine |
-| `anali-kizli-corbasi` | high | 2 | ingredients_add, allergens_add |
+| `avokadolu-kakao-smoothie` | medium | 2 | allergens_remove |
+| `avokadolu-misir-mucveri-avustralya-usulu` | high | 2 | steps_replace |
+| `avokadolu-patates-causa-peru-usulu` | high | 3 | ingredients_add, totalMinutes |
+| `avustralya-balkabakli-damper-muffin` | medium | 2 | cookMinutes, totalMinutes |
+| `aydin-cine-koftesi` | high | 3 | ingredients_add, ingredients_remove, totalMinutes |
+| `aydin-enginarli-kuru-domatesli-pilav` | high | 1 | totalMinutes |
+| `aydin-zeytinyagli-enginar-kalbi` | high | 1 | totalMinutes |
+| `ayran-asi-corbasi-erzurum-usulu` | high | 2 | cookMinutes, totalMinutes |
+| `ayran-asili-kesme-corbasi-erzincan-usulu` | high | 1 | ingredients_add, allergens_add |
+| `ayranli-evelik-corbasi-erzincan-usulu` | medium | 1 | cookMinutes, totalMinutes |

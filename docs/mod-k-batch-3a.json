@@ -1,0 +1,825 @@
+[
+  {
+    "slug": "baharatli-yumurta-ekmegi-hindistan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: zerdeçal, kimyon, kişniş ve süt diyor ama ingredient listesinde bu malzemeler yok",
+      "step 3: 1 yemek kaşığı yağ diyor, ingredient listesinde yalnızca 1 tatlı kaşığı tereyağı var",
+      "step 5: taze kişniş diyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "2 yumurtayı garam masala, tuz ve 1 yemek kaşığı suyla çırpın."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Geniş tavayı tereyağıyla orta ateşte ısınana kadar bekletin.",
+          "timerSeconds": 60
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Ekmekleri tavadan çıkar çıkmaz sıcak servis edin, beklerse yumuşar."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.indianhealthyrecipes.com/egg-bread-toast-recipe/",
+      "https://www.cookwithmanali.com/masala-french-toast/"
+    ],
+    "confidence": "high",
+    "reason": "Hint usulü yumurtalı ekmek fikri doğru; fakat mevcut adımlar listede olmayan süt, baharat, yağ ve kişniş kullanıyor."
+  },
+  {
+    "slug": "bakewell-tart-ingiliz-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: klasik frangipane için şeker gerekir ama ingredient listesinde yok",
+      "step 4: file badem diyor ama ingredient listesinde file badem yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Şeker", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "File badem", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.kingarthurbaking.com/recipes/british-almond-jam-tart-bakewell-tart-recipe",
+      "https://www.masterclass.com/articles/bakewell-tart-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Bakewell tart kurgusu doğru; ahududu reçeli, bademli dolgu ve üst badem kaynaklarla uyumlu ama iki malzeme eksik."
+  },
+  {
+    "slug": "baklava",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/ev-baklavasi/",
+      "https://www.seriouseats.com/turkish-sweets-desserts-guide-baklava-and-beyond"
+    ],
+    "confidence": "high",
+    "reason": "Yufka, ceviz, tereyağı ve şerbet temeli Türk baklavasıyla uyumlu; süre, porsiyon ve alerjen beyanında net hata yok."
+  },
+  {
+    "slug": "bal-kabakli-eriste-tava-malatya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 5: ceviz ekleyin diyor ama ingredient listesinde ceviz yok",
+      "allergen: ceviz eklenmeyecekse KUSUYEMIS beyanı gerekmiyor, adım listeden sapıyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 5,
+          "instruction": "Tereyağını ekleyin, kabaklar ezilmesin diye nazik karıştırıp sıcak servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/balkabakli-eriste/",
+      "https://yemek.com/tarif/eriste/"
+    ],
+    "confidence": "medium",
+    "reason": "Balkabağı ve erişte uyumlu bir tava fikri; asıl sorun adımda listede olmayan ceviz kullanılması."
+  },
+  {
+    "slug": "bal-karamelli-syrniki-kup-rus-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.196flavors.com/russia-syrniki/",
+      "https://www.alyonascooking.com/syrniki-recipe-cheese-pancakes/"
+    ],
+    "confidence": "high",
+    "reason": "Syrniki için lor, yumurta ve un temeli doğru; bal ve krema sunumu modern kup yorumu olarak makul kalıyor."
+  },
+  {
+    "slug": "bal-katli-medovik-kup-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 5 kupları 8 saat dinlendirin diyor ama totalMinutes 12",
+      "tag: 8 saat bekleme nedeniyle 30-dakika-alti etiketi yanıltıcı"
+    ],
+    "corrections": {
+      "totalMinutes": 492,
+      "tags_remove": ["30-dakika-alti"],
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Krema ile balı pürüzsüz olana kadar çırpın, krema gevşek kalsın ki kek nemlensin.",
+          "timerSeconds": 120
+        }
+      ]
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Medovik",
+      "https://www.homecookingadventure.com/medovik-honey-cake/"
+    ],
+    "confidence": "high",
+    "reason": "Medovik katlarının kremayla yumuşaması doğru; ancak 8 saat bekleme toplam süreye ve hızlı tarif etiketine yansımamış."
+  },
+  {
+    "slug": "bal-kremali-elma-kup-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: yanlışlıkla haşhaşlı kup ifadesi kullanılmış",
+      "time: step 5 içindeki 20 dakika soğutma totalMinutes içinde yok",
+      "tag: toplam süre 30 dakikayı geçtiği için 30-dakika-alti etiketi yanıltıcı"
+    ],
+    "corrections": {
+      "totalMinutes": 38,
+      "tags_remove": ["30-dakika-alti"],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Elmalı kup için elmaları küçük küp doğrayıp tavaya alın."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/blueberry-fool-toasted-coconut",
+      "https://www.epicurious.com/recipes/food/views/blackberry-borage-fool-51176200"
+    ],
+    "confidence": "high",
+    "reason": "Meyve ve kremalı İngiliz kup fikri makul; fakat tarif adıyla çelişen adım ve eksik soğutma süresi düzeltilmeli."
+  },
+  {
+    "slug": "bal-kremali-un-helvasi-bingol-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/un-helvasi/",
+      "https://www.nefisyemektarifleri.com/un-helvasi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Un, tereyağı ve tatlandırıcı temeli un helvasıyla uyumlu; bal ve krema bölgesel iddia zayıf olsa da içerikte net çelişki yok."
+  },
+  {
+    "slug": "balik-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/balik-corbasi/",
+      "https://www.nefisyemektarifleri.com/balik-corbasi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Balık, sebze, limon ve yumurta terbiyesi kaynaklarla uyumlu; deniz ürünü ve yumurta alerjenleri doğru beyan edilmiş."
+  },
+  {
+    "slug": "balikesir-firin-hosmerimi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/balikesir/neyenir/hosmerim817102",
+      "https://www.hosmerimcim.com/urun/firinlanmis-bol-peynirli-hosmerim-200g/"
+    ],
+    "confidence": "high",
+    "reason": "Taze peynir, irmik, yumurta ve şeker temeli Balıkesir höşmerimiyle uyumlu; fırınlama yorumu kaynakla destekleniyor."
+  },
+  {
+    "slug": "balikesir-hosmerim-peynir-tatlisi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/balikesir/neyenir/hosmerim817102",
+      "https://www.e-sehir.com/yemek_tarifleri/hosmerim-balikesir-tarifi.html"
+    ],
+    "confidence": "high",
+    "reason": "Peynir, irmik, şeker, yumurta sarısı ve süt kullanımı Balıkesir höşmerimiyle tutarlı; alerjenler de doğru."
+  },
+  {
+    "slug": "balikesir-susurluk-tostu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/portal/susurluktostu",
+      "https://yemek.com/tarif/susurluk-tostu/"
+    ],
+    "confidence": "high",
+    "reason": "Peynirli tost, dışa salça sürme ve sıcak servis Susurluk tostuyla uyumlu; gluten ve süt alerjenleri doğru."
+  },
+  {
+    "slug": "balikli-dereotu-pilaki-canakkale-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: zeytinyağı diyor ama ingredient listesinde zeytinyağı yok",
+      "step 2: havuç diyor ama ingredient listesinde havuç yok",
+      "time: 10 dakika dinlendirme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Havuç", "amount": "1", "unit": "adet" }
+      ],
+      "totalMinutes": 46
+    },
+    "sources": [
+      "https://yemek.com/tarif/balik-pilaki/",
+      "https://www.nefisyemektarifleri.com/balik-pilaki/"
+    ],
+    "confidence": "high",
+    "reason": "Balık pilaki fikri doğru; ancak pilaki adımlarında kullanılan zeytinyağı ve havuç listede yok, dinlenme süresi de eksik."
+  },
+  {
+    "slug": "balila",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 4: zeytinyağı diyor ama ingredient listesinde yok",
+      "step 5: maydanoz ve pul biber diyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://chopped.com/recipe/balila-%D8%A8%D9%84%D9%8A%D9%84%D8%A9/",
+      "https://www.diningandcooking.com/1970813/balila-lebanese-chickpeas-dish-balila-ramadan2025/"
+    ],
+    "confidence": "high",
+    "reason": "Nohut, sarımsak, limon ve kimyon temeli balila ile uyumlu; zeytinyağı ve servis otları adımda var ama listede yok."
+  },
+  {
+    "slug": "balkabagi-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/balkabagi-corbasi/",
+      "https://cookieandkate.com/creamy-vegan-pumpkin-soup/"
+    ],
+    "confidence": "high",
+    "reason": "Balkabağı, havuç, soğan, zencefil ve sebze suyu çorba kurgusu kaynaklarla uyumlu; vegan tag ve süre makul."
+  },
+  {
+    "slug": "balkabakli-damper-scone-avustralya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.taste.com.au/recipes/pumpkin-scones/688b4546-aeff-45da-85bd-f397317e0c7a",
+      "https://www.womensweeklyfood.com.au/recipe/baking/pumpkin-scones-18574/"
+    ],
+    "confidence": "high",
+    "reason": "Avustralya usulü balkabaklı scone için un, kabak püresi, süt ürünü ve kısa yoğurma yaklaşımı kaynaklarla uyumlu."
+  },
+  {
+    "slug": "balkabakli-damper-toast-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 2: balkabağı püresi, tuz ve karabiber diyor ama ingredient listesinde bu malzemeler yok",
+      "ingredient listesi hazır kabaklı damper ekmeği üzerine kuruluyken adım hamur dışı kabak karışımı hazırlıyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Tereyağını balla karıştırıp sürülebilir hale getirin."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Ballı tereyağını sıcak ekmek dilimlerine sürüp üst yüzey kurumadan tekrar ısıtın.",
+          "timerSeconds": 120
+        }
+      ]
+    },
+    "sources": [
+      "https://www.taste.com.au/recipes/pumpkin-scones-2/9918e189-7d24-428a-b470-115271f337e0",
+      "https://www.womensweeklyfood.com.au/recipe/baking/pumpkin-scones-18574/"
+    ],
+    "confidence": "medium",
+    "reason": "Kabaklı Avustralya ekmeğini kızartma fikri makul; mevcut adım listede olmayan ikinci bir kabak karışımı hazırlıyor."
+  },
+  {
+    "slug": "balkabakli-hindistancevizli-corba-avustralya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://cookieandkate.com/creamy-vegan-pumpkin-soup/",
+      "https://www.theaustralian.com.au/weekend-australian-magazine/bolstered-with-carrot-lifted-with-harissa-and-honey-this-soup-is-a-balance-of-earthy-sweet-and-spicy/news-story/08bf9ca61707f96b58c9625d42c91a49"
+    ],
+    "confidence": "medium",
+    "reason": "Balkabağı, zencefil ve hindistancevizi sütlü çorba dengesi kaynaklarla uyumlu; allergen ve vegan etiketinde net hata yok."
+  },
+  {
+    "slug": "balkabakli-tavuk-tepsi-firini-avustralya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.female.com.au/roast-chicken-tray-bake.htm",
+      "https://www.taste.com.au/recipes/roast-pumpkin-chicken-tray-bake/"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk, balkabağı, soğan ve zeytinyağıyla tepsi fırını kurgusu kaynaklarla uyumlu; süre ve protein etiketi makul."
+  },
+  {
+    "slug": "balli-armutlu-yulaf-lapasi-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: yarım su bardağı yulaf diyor ama ingredient listesinde yulaf 1 su bardağı"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "1 su bardağı yulafı 2 su bardağı sütle tencereye alın."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/pear-porridge",
+      "https://www.quakeroats.com/cooking-and-recipes/pear-honey-oatmeal"
+    ],
+    "confidence": "high",
+    "reason": "Armutlu ballı yulaf lapası doğru bir kahvaltı kurgusu; tek net hata yulaf miktarının adımda yarıya düşmesi."
+  },
+  {
+    "slug": "balli-cevizli-sutlac-kup-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 5 içinde 30 dakika soğutma var ama totalMinutes 28"
+    ],
+    "corrections": {
+      "totalMinutes": 58
+    },
+    "sources": [
+      "https://www.thespruceeats.com/hungarian-rice-pudding-recipe-rizskoch-1136613",
+      "https://www.allrecipes.com/recipe/228914/hungarian-rice-pudding/"
+    ],
+    "confidence": "medium",
+    "reason": "Pirinç, süt ve tatlı kuplama fikri Macar sütlü tatlılarına yakın; ancak 30 dakika soğutma toplam süreye eklenmemiş."
+  },
+  {
+    "slug": "balli-gin-fizz-ingiltere-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.labreabakery.com/recipes/honey-sage-gin-fizz",
+      "https://www.drinkwillibald.com/products/honey-gin-fizz-cocktail"
+    ],
+    "confidence": "medium",
+    "reason": "Gin, bal, narenciye ve soda ile fizz yapısı kaynaklarla uyumlu; alkollü tag, süre ve allergen beyanı makul."
+  },
+  {
+    "slug": "balli-hardalli-tavuk",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: 15 dakika dinlendirme ve 5 dakika servis öncesi dinlendirme totalMinutes içinde görünmüyor",
+      "prepMinutes pasif marine süresini taşıyor, RecipeTimeline bekleme segmentini göstermez"
+    ],
+    "corrections": {
+      "prepMinutes": 15,
+      "cookMinutes": 18,
+      "totalMinutes": 53
+    },
+    "sources": [
+      "https://www.ambitiouskitchen.com/honey-mustard-chicken/",
+      "https://www.familyfoodonthetable.com/honey-mustard-chicken/"
+    ],
+    "confidence": "high",
+    "reason": "Bal, hardal, limon ve tavuk uyumu doğru; ancak tarifteki 20 dakika pasif bekleme toplam süreye ayrı yansıtılmalı."
+  },
+  {
+    "slug": "balli-hashasli-syrniki-rus-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.196flavors.com/russia-syrniki/",
+      "https://www.babaganosh.org/syrniki-russian-cheese-pancakes/"
+    ],
+    "confidence": "high",
+    "reason": "Lor peyniri, yumurta, un ve tavada pişirme syrniki kaynaklarıyla uyumlu; haşhaş ve bal eklemesi net hata oluşturmuyor."
+  },
+  {
+    "slug": "balli-kabak-ceviz-kup-nevsehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 5 içinde 20 dakika soğutma var ama totalMinutes 26",
+      "tag: toplam süre 30 dakikayı geçtiği için 30-dakika-alti etiketi yanıltıcı"
+    ],
+    "corrections": {
+      "totalMinutes": 46,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kabak-tatlisi/",
+      "https://www.nefisyemektarifleri.com/kabak-tatlisi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Balkabağı, bal, yoğurt ve cevizli kup yorumu makul; fakat 20 dakika soğutma toplam süreye ve hızlı etikete yansımamış."
+  },
+  {
+    "slug": "balli-pisco-highball-peru-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://drinksworld.com/recipe/pisco-highball-cocktail/",
+      "https://www.liquor.com/recipes/pisco-sour/"
+    ],
+    "confidence": "medium",
+    "reason": "Pisco, lime ve soda yüksek bardak kurgusu Peru içki bağlamıyla uyumlu; bal eklemesi modern tatlandırma olarak makul."
+  },
+  {
+    "slug": "balli-tahinli-helva-kaseleri-siirt-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/irmik-helvasi/",
+      "https://www.nefisyemektarifleri.com/tahinli-irmik-helvasi/"
+    ],
+    "confidence": "medium",
+    "reason": "İrmik, tahin, bal ve susamlı helva kasesi tutarlı; gluten ve susam alerjenleri doğru beyan edilmiş."
+  },
+  {
+    "slug": "balli-yogurtlu-incir-kup-yunan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 5 içinde 15 dakika soğutma var ama totalMinutes 8"
+    ],
+    "corrections": {
+      "totalMinutes": 23
+    },
+    "sources": [
+      "https://thegreekfoodie.com/greek-yogurt-with-honey-figs-walnuts-and-mint/",
+      "https://greekgrapevine.com/reek-yogurt-with-honey-and-walnuts-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurt, bal, incir ve ceviz Yunan tarzı basit tatlıyla uyumlu; yalnızca 15 dakika soğutma toplam süreye eklenmemiş."
+  },
+  {
+    "slug": "banduma-kastamonu-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/kastamonu/neyenir/banduma",
+      "https://yemek.com/tarif/banduma/"
+    ],
+    "confidence": "high",
+    "reason": "Yufka, tavuk suyu, tavuk eti, tereyağı ve ceviz Kastamonu bandumasıyla uyumlu; alerjenler doğru görünüyor."
+  },
+  {
+    "slug": "bangkok-feslegenli-karides-omleti",
+    "verdict": "PASS",
+    "sources": [
+      "https://hot-thai-kitchen.com/thai-omelette/",
+      "https://www.templeofthai.com/recipes/thai_omelette.php"
+    ],
+    "confidence": "medium",
+    "reason": "Tay omleti, balık sosu, karides ve fesleğen birleşimi makul; yumurta ve deniz ürünü alerjenleri doğru."
+  },
+  {
+    "slug": "bangkok-pad-krapow-tavuklu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 2: kızgın yağda yumurta pişiriliyor ama ingredient listesinde sıvı yağ yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/gai-pad-bai-gaprow-14425",
+      "https://hot-thai-kitchen.com/holy-basil-stir-fry/"
+    ],
+    "confidence": "high",
+    "reason": "Pad krapow için tavuk, sarımsak, acı biber, balık sosu ve fesleğen doğru; yalnız yumurta pişirme yağı listede eksik."
+  },
+  {
+    "slug": "bangkok-pad-see-ew",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bonappetit.com/recipe/pad-see-ew-recipe",
+      "https://www.thedailymeal.com/pad-see-ew-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Pirinç noodle, kai lan, yumurta, koyu soya ve istiridye sosu pad see ew kaynaklarıyla uyumlu; alerjenler doğru."
+  },
+  {
+    "slug": "bangkok-pad-thai-karidesli",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: klasik pad thai sosunda balık sosu bulunur ama ingredient listesinde yok",
+      "step 4: demirhindi ve soya sosu var, balık sosu eklenmediği için tat profili eksik kalıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Balık sosu", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 4,
+          "instruction": "Erişte, demirhindi sosu, soya sosu ve balık sosunu ekleyip sos erişteyi sarana kadar çevirin.",
+          "timerSeconds": 180
+        }
+      ]
+    },
+    "sources": [
+      "https://www.foodnetwork.com/recipes/food-network-kitchen/shrimp-pad-thai-4664893",
+      "https://chefkatiechin.com/our-recipes/shrimp-pad-thai-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Karidesli pad thai ana fikri doğru; demirhindi, erişte ve filiz var ama kaynaklardaki temel balık sosu eksik."
+  },
+  {
+    "slug": "bangkok-tom-kha-gai-klasik",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: klasik tom kha gai için limon otu beklenir ama ingredient listesinde yok",
+      "step 1: aroma demlemesi galangal ve lime yaprağıyla sınırlı kalmış"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon otu", "amount": "2", "unit": "sap" }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Tavuk suyu, limon otu, galangal ve lime yapraklarını aroması çıkana kadar demleyin.",
+          "timerSeconds": 480
+        }
+      ]
+    },
+    "sources": [
+      "https://hot-thai-kitchen.com/tom-ka-gai/",
+      "https://www.theguardian.com/food/article/2024/may/27/chicken-soup-with-lime-leaf-lemongrass-and-coconut-recipe-by-claire-thomson"
+    ],
+    "confidence": "high",
+    "reason": "Tom kha gai için tavuk, hindistan cevizi sütü, galangal ve lime yaprağı doğru; limon otu eksikliği net içerik açığı."
+  },
+  {
+    "slug": "bangkok-tom-yum-goong",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.templeofthai.com/recipes/tom_yum_goong.php",
+      "https://www.food.com/recipe/tom-yum-goong-spicy-thai-shrimp-soup-280697"
+    ],
+    "confidence": "high",
+    "reason": "Karides, limon otu, galangal, lime yaprağı, mantar ve balık sosu tom yum goong kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "bangkok-yesil-mangolu-som-tam",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.seriouseats.com/guide-to-thai-salads-5209897",
+      "https://www.theguardian.com/food/2023/aug/02/how-to-make-som-tam-recipe-felicity-cloake"
+    ],
+    "confidence": "medium",
+    "reason": "Yeşil mango, fasulye, lime, balık sosu ve acı biberle ezilmiş salata kurgusu som tam ailesiyle uyumlu."
+  },
+  {
+    "slug": "banh-cuon",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "cuisine: Banh cuon Vietnam yemeği olduğu halde cuisine tr yazılmış",
+      "ingredient: step 3 soğan diyor ama ingredient listesinde soğan yok"
+    ],
+    "corrections": {
+      "cuisine": "vn",
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/banh-cuon",
+      "https://recipes.net/main-dish/pan-skillet/vietnamese-pork-rice-rolls-banh-cuon-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Tarifin içeriği Vietnam banh cuon; Türk cuisine kodu kullanıcıyı yanıltır, ayrıca harçtaki soğan listede eksik."
+  },
+  {
+    "slug": "banh-cuon-chay-vietnam-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bonappetit.com/recipe/banh-cuon",
+      "https://recipes.net/main-dish/pan-skillet/vietnamese-pork-rice-rolls-banh-cuon-recipe/"
+    ],
+    "confidence": "medium",
+    "reason": "Pirinç unu tabakası ve mantarlı iç banh cuon chay yorumuna uyuyor; soya alerjeni ve vegan etiketinde net hata yok."
+  },
+  {
+    "slug": "banh-flan-vietnam",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "cuisine: Banh flan Vietnam tatlısı olduğu halde cuisine tr yazılmış"
+    ],
+    "corrections": {
+      "cuisine": "vn"
+    },
+    "sources": [
+      "https://www.theseasonedwok.com/banh-flan-vietnamese-creme-caramel-egg-pudding-recipe/",
+      "https://scruffandsteph.com/2020/11/24/banh-flan-vietnamese-creme-caramel/"
+    ],
+    "confidence": "high",
+    "reason": "Yumurta, süt, şeker ve karamel doğru; ancak Vietnam flanı için Türk cuisine kodu ciddi sınıflandırma hatasıdır."
+  },
+  {
+    "slug": "banh-mi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 1 içinde 30 dakika turşu dinlendirme var ama prepMinutes içinde eritilmiş",
+      "RecipeTimeline için pasif bekleme prepMinutes dışında kalmalı"
+    ],
+    "corrections": {
+      "prepMinutes": 20,
+      "cookMinutes": 15,
+      "totalMinutes": 65
+    },
+    "sources": [
+      "https://www.theguardian.com/food/2020/oct/26/uyen-luu-banh-mi-pork-belly-pickled-carrot-chilli-coriander-cucumber",
+      "https://www.epicurious.com/recipes/food/views/ba-syn-do-chua-pickle"
+    ],
+    "confidence": "high",
+    "reason": "Baget, salamura sebze, mayonez, soya soslu et ve kişniş doğru; pasif turşu bekleme süresi ayrı gösterilmeli."
+  },
+  {
+    "slug": "banh-tom",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: kızartma için yağ kullanılıyor ama ingredient listesinde yağ yok",
+      "step 1: kısa süre suda bekletin ifadesi ölçüsüz ve timersız"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "2", "unit": "su bardağı" }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Tatlı patatesi kibrit inceliğinde şeritler kesip nişastası azalsın diye suda bekletin.",
+          "timerSeconds": 600
+        }
+      ],
+      "totalMinutes": 58
+    },
+    "sources": [
+      "https://www.cooking-therapy.com/banh-tom/",
+      "https://scruffandsteph.com/2017/07/06/banh-tom-sweet-potato-prawn-fritters/"
+    ],
+    "confidence": "high",
+    "reason": "Karides ve tatlı patatesli Vietnam kızartması doğru; yağ listede eksik ve patates bekletme süresi somut değil."
+  },
+  {
+    "slug": "banh-tom-vietnam-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.cooking-therapy.com/banh-tom/",
+      "https://www.bakosweet.com/recipes/banh-tom-vietnamese-sweet-potato-fritters"
+    ],
+    "confidence": "high",
+    "reason": "Karides, tatlı patates, pirinç unu, yumurta ve kızartma tekniği banh tom kaynaklarıyla uyumlu; alerjenler doğru."
+  },
+  {
+    "slug": "banh-xeo",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: step 3 yağ ekleyin diyor ama ingredient listesinde yağ yok",
+      "time: 20 dakika hamur dinlendirme prepMinutes içinde eritilmiş, RecipeTimeline bekleme segmenti görünmez"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "prepMinutes": 10,
+      "cookMinutes": 15,
+      "totalMinutes": 45
+    },
+    "sources": [
+      "https://www.seriouseats.com/banh-xeo-vietnamese-crepes-recipe-7971199",
+      "https://www.vickypham.com/blog/vietnamese-sizzling-crepe-banh-xeo"
+    ],
+    "confidence": "high",
+    "reason": "Pirinç unu, hindistancevizi sütü, zerdeçal, karides ve filiz doğru; eksik yağ ve pasif dinlenme ayrımı düzeltilmeli."
+  },
+  {
+    "slug": "banoffee-posset-ingiliz-kadeh-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: step 2 limon suyu ya da asitli kısım diyor ama ingredient listesinde yok",
+      "ingredient: step 5 bisküvi kırığı diyor ama ingredient listesinde yok",
+      "time: 3 saat soğutma totalMinutes içinde yok",
+      "tag: 3 saat soğutma nedeniyle 30-dakika-alti etiketi yanıltıcı"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Bisküvi kırıntısı", "amount": "0.5", "unit": "su bardağı" }
+      ],
+      "totalMinutes": 200,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.theguardian.com/food/2024/jan/31/how-to-make-lemon-posset-recipe-felicity-cloake",
+      "https://www.tastefrance.com/us/recipes/french-desserts/lemon-and-caramel-posset"
+    ],
+    "confidence": "high",
+    "reason": "Posset için krema, şeker ve asitli koyulaştırma mantığı doğru; eksik limon, bisküvi ve 3 saat soğutma kritik."
+  },
+  {
+    "slug": "bao-bun",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: süt diyor ama ingredient listesinde süt yok",
+      "time: 45 dakika mayalanma ve 15 dakika ikinci dinlenme prepMinutes içine gömülmüş",
+      "prepMinutes pasif beklemeyi taşıdığı için RecipeTimeline bekleme segmentini göstermez"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un, maya, şeker, ılık su ve sıvı yağla yumuşak hamur yoğurun."
+        }
+      ],
+      "prepMinutes": 15,
+      "cookMinutes": 15,
+      "totalMinutes": 90
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/steamed-bao",
+      "https://redstaryeast.com/recipes/bao-buns-steamed-chinese-buns/"
+    ],
+    "confidence": "high",
+    "reason": "Bao için un, maya, şeker, yağ ve buharda pişirme doğru; süt adımda fazladan geçiyor, pasif bekleme ayrılmalı."
+  },
+  {
+    "slug": "barbacoa-taco",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: step 1 acı biber diyor ama ingredient listesinde yok",
+      "time: 8 dakika mühürleme, 3 saat pişirme ve 10 dakika dinlendirme toplam süreyle tam uyumlu değil"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kurutulmuş acı biber", "amount": "2", "unit": "adet" }
+      ],
+      "cookMinutes": 188,
+      "totalMinutes": 223
+    },
+    "sources": [
+      "https://www.chilipeppermadness.com/recipes/barbacoa-tacos/",
+      "https://www.foodandwine.com/barbacoa-and-how-to-make-it-at-home-explained-7371908"
+    ],
+    "confidence": "high",
+    "reason": "Dana etini lime, sarımsak, kimyon ve acı biberle uzun pişirme doğru; eksik biber ve süre hesabı düzeltilmeli."
+  },
+  {
+    "slug": "barbeku-tavuklu-misir-bowl-amerikan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 4: pilav veya yeşillik tabanı diyor ama ingredient listesinde pilav veya yeşillik yok"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 4,
+          "instruction": "Mısır ve barbekü soslu karışımı kaselere paylaştırın."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.eatingwell.com/recipe/7919617/bbq-chicken-bowls/",
+      "https://www.budgetbytes.com/bbq-chicken-bowl/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, mısır ve barbekü soslu bowl fikri doğru; ancak adım listede olmayan taban malzemesi ekliyor."
+  },
+  {
+    "slug": "barbunya-pilaki",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3: salça, sarımsak, tuz ve şeker diyor ama ingredient listesinde yok",
+      "step 7: maydanoz diyor ama ingredient listesinde yok",
+      "time: 30 dakika tencerede soğutma totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Domates salçası", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Şeker", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" }
+      ],
+      "totalMinutes": 95
+    },
+    "sources": [
+      "https://yemek.com/tarif/barbunya-pilaki/",
+      "https://en.wikipedia.org/wiki/Barbunya_pilaki"
+    ],
+    "confidence": "high",
+    "reason": "Barbunya pilaki temeli doğru; klasik aromalar adımda geçiyor ama listede yok, ayrıca soğuma süresi eksik."
+  },
+  {
+    "slug": "barbunyali-karalahana-corbasi-ordu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: zeytinyağıyla çevirin diyor ama ingredient listesinde zeytinyağı yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/barbunyali-karalahana-corbasi-ordu-tarifi-t-6444",
+      "https://www.nefisyemektarifleri.com/karalahana-corbasi/"
+    ],
+    "confidence": "high",
+    "reason": "Karalahana ve barbunya çorbası Ordu mutfağıyla uyumlu; tek net hata soğanı çevirmek için gereken yağın listede olmaması."
+  },
+  {
+    "slug": "barramundi-paket-avustralya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://australianbarramundi.com.au/recipes/baked-barramundi-en-papillote/",
+      "https://www.diabetesaustralia.com.au/recipe/fish-en-papillote/"
+    ],
+    "confidence": "high",
+    "reason": "Barramundi filetoyu limon, ot ve yağlı kağıtta fırınlama Avustralya kaynaklarıyla uyumlu; süre ve alerjen doğru."
+  }
+]

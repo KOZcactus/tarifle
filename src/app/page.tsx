@@ -27,6 +27,7 @@ import { getCategories } from "@/lib/queries/category";
 import { auth } from "@/lib/auth";
 import type { RecipeCard as RecipeCardType } from "@/types/recipe";
 import { getCuisineStats } from "@/lib/queries/cuisine-stats";
+import { CUISINE_CODES } from "@/lib/cuisines";
 import { getSearchSuggestions } from "@/lib/queries/search-suggestions";
 import { getRandomRecipe } from "@/lib/queries/random-recipe";
 import { getDietBadgesIfApplicable } from "@/lib/queries/diet-score";
@@ -466,7 +467,10 @@ export default async function HomePage() {
             </Link>
           </div>
           <p className="mt-1 text-sm text-text-muted">
-            {t("cuisineSubtitle", { count: cuisineStats.length, total: recipeCount })}
+            {/* count = toplam mutfak sayisi (Hakkimizda ile tutarli, oturum
+                25 GPT audit fix). cuisineStats >=3 filtreli oldugu icin
+                sadece liste sirasinda kullanilir; subtitle gercek total. */}
+            {t("cuisineSubtitle", { count: CUISINE_CODES.length, total: recipeCount })}
           </p>
           <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {cuisineStats.slice(0, 10).map((cs) => (

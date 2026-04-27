@@ -70,9 +70,15 @@ export function RecipeCard({ recipe, dietBadge }: RecipeCardProps) {
             </span>
           )}
 
-          {/* Category Badge */}
+          {/* Category Badge. Recipe ana emoji ile category emoji ayni
+              ise (ornek: kategori "Kahve ve Sicak Icecekler" + tarif
+              emoji ☕) badge sadece category name gosterir; ayni emoji
+              kart uzerinde iki yerde tekrar etmesin (oturum 25 GPT
+              audit fix). */}
           <span className="absolute left-3 top-3 rounded-full bg-bg/80 px-2.5 py-1 text-xs font-medium backdrop-blur-sm">
-            {recipe.category.emoji} {recipe.category.name}
+            {recipe.category.emoji && recipe.category.emoji !== recipe.emoji
+              ? `${recipe.category.emoji} ${recipe.category.name}`
+              : recipe.category.name}
           </span>
 
           {/* Diyet uyumu skoru chip (oturum 20, DIET_SCORE_PLAN). Sol alt

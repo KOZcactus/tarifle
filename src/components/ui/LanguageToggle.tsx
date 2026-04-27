@@ -59,7 +59,7 @@ export function LanguageToggle() {
         disabled={pending}
         className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-xs font-semibold uppercase tracking-wide text-text transition-colors hover:bg-bg-card disabled:opacity-60"
       >
-        {locale}
+        {locale.toUpperCase()}
       </button>
       {isOpen && (
         <div

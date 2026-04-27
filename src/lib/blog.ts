@@ -126,8 +126,15 @@ export async function getAllBlogPosts(): Promise<BlogPostMeta[]> {
       return meta;
     }),
   );
+  // Gelecek tarihli yazıları gizle (oturum 25 GPT audit fix). Frontmatter
+  // `date` alanı bugünden sonraysa "scheduled" sayılır, public listede
+  // gözükmez. Bireysel /blog/<slug> URL'i (paylaşılmış link) hala açılır
+  // ama listede + RSS + sitemap'te görünmemeli. Tarih karşılaştırması
+  // gün granülasyonunda: bugünün 00:00 UTC'sinden büyük date "ileri".
+  const now = Date.now();
   return posts
     .filter((p): p is BlogPostMeta => p !== null)
+    .filter((p) => new Date(p.date).getTime() <= now)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 

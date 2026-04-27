@@ -64,9 +64,9 @@
       ],
       "steps_replace": [
         { "stepNumber": 1, "instruction": "Tofuyu kağıt havluyla kurulayın ve iri küpler halinde kesin.", "timerSeconds": null },
-        { "stepNumber": 2, "instruction": "Tofuyu kızgın yağlı tavada 6 dakika kızartın, dışı renk alsın.", "timerSeconds": 360 },
-        { "stepNumber": 3, "instruction": "Sarımsak ve acı biberi 45 saniye çevirin, yanarsa fesleğenin aroması bastırılır.", "timerSeconds": 45 },
-        { "stepNumber": 4, "instruction": "Tofu, soya sosu ve esmer şekeri tavaya ekleyip 3 dakika yüksek ateşte çevirin.", "timerSeconds": 180 },
+        { "stepNumber": 2, "instruction": "Tofuyu kızgın yağlı tavada dışı renk alana kadar kızartın.", "timerSeconds": 360 },
+        { "stepNumber": 3, "instruction": "Sarımsak ve acı biberi kısa süre çevirin, yanarsa fesleğenin aroması bastırılır.", "timerSeconds": 45 },
+        { "stepNumber": 4, "instruction": "Tofu, soya sosu ve esmer şekeri tavaya ekleyip yüksek ateşte çevirin.", "timerSeconds": 180 },
         { "stepNumber": 5, "instruction": "Tay fesleğenini son anda katın ve yapraklar sönünce ocaktan alın.", "timerSeconds": null }
       ]
     },
@@ -95,9 +95,9 @@
       ],
       "steps_replace": [
         { "stepNumber": 1, "instruction": "Sarımsak ve acı biberi havanda ezin, fesleğen yapraklarını ayıklayın.", "timerSeconds": null },
-        { "stepNumber": 2, "instruction": "Kıymayı kızgın wokta 5 dakika kavurun, suyunu salıp çekmesini bekleyin.", "timerSeconds": 300 },
-        { "stepNumber": 3, "instruction": "Sarımsaklı biber ezmesini ekleyip 1 dakika çevirin.", "timerSeconds": 60 },
-        { "stepNumber": 4, "instruction": "Balık sosu, soya sosu ve şekeri ekleyip 2 dakika pişirin.", "timerSeconds": 120 },
+        { "stepNumber": 2, "instruction": "Kıymayı kızgın wokta kavurun, suyunu salıp çekmesini bekleyin.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Sarımsaklı biber ezmesini ekleyip kokusu çıkana kadar çevirin.", "timerSeconds": 60 },
+        { "stepNumber": 4, "instruction": "Balık sosu, soya sosu ve şekeri ekleyip sos kıvamlanana kadar pişirin.", "timerSeconds": 120 },
         { "stepNumber": 5, "instruction": "Tay fesleğenini son anda katın ve sahanda yumurtayla pirinç üzerine alın.", "timerSeconds": null }
       ]
     },
@@ -122,10 +122,10 @@
       ],
       "steps_replace": [
         { "stepNumber": 1, "instruction": "Geniş pirinç eriştesini ayırın, yapışan parçaları nazikçe açın.", "timerSeconds": null },
-        { "stepNumber": 2, "instruction": "Sarımsağı ve tavuğu wokta 4 dakika yüksek ateşte mühürleyin.", "timerSeconds": 240 },
-        { "stepNumber": 3, "instruction": "Brokoliyi ekleyip 2 dakika yüksek ateşte çevirin.", "timerSeconds": 120 },
-        { "stepNumber": 4, "instruction": "Yumurtayı kenara kırın ve 45 saniye karıştırarak pişirin.", "timerSeconds": 45 },
-        { "stepNumber": 5, "instruction": "Erişte, koyu soya, açık soya ve istiridye sosunu ekleyip 3 dakika wokta çevirin.", "timerSeconds": 180 },
+        { "stepNumber": 2, "instruction": "Sarımsağı ve tavuğu wokta yüksek ateşte mühürleyin.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Brokoliyi ekleyip yüksek ateşte çevirin.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Yumurtayı kenara kırın ve yumuşak kalacak şekilde karıştırarak pişirin.", "timerSeconds": 45 },
+        { "stepNumber": 5, "instruction": "Erişte, koyu soya, açık soya ve istiridye sosunu ekleyip wokta çevirin.", "timerSeconds": 180 },
         { "stepNumber": 6, "instruction": "Erişteyi spatulayla kaldırarak karıştırın, geniş şeritler parçalanmasın.", "timerSeconds": null }
       ]
     },
@@ -177,7 +177,7 @@
         { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
         { "name": "Kızartma yağı", "amount": "2", "unit": "su bardağı" }
       ],
-      "servingSuggestion": "Nane chutney veya demirhindi sosuyla sıcak servis edin."
+      "servingSuggestion": "Nane chutney ile sıcak servis edin."
     },
     "sources": [
       "https://www.indianhealthyrecipes.com/pakora-recipe-vegetable-pakora-pakoda/",
@@ -294,10 +294,10 @@
       ],
       "steps_replace": [
         { "stepNumber": 1, "instruction": "Dana biftekleri ince dövün, sarımsak, limon suyu, tuz ve karabiberle ovun.", "timerSeconds": null },
-        { "stepNumber": 2, "instruction": "Soğanı tavada 4 dakika yumuşatıp kenara alın.", "timerSeconds": 240 },
-        { "stepNumber": 3, "instruction": "Biftekleri aynı tavada her yüzü 2 dakika olacak şekilde hızlıca pişirin.", "timerSeconds": 240 },
+        { "stepNumber": 2, "instruction": "Soğanı tavada yumuşatıp kenara alın.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Biftekleri aynı tavada iki yüzü renk alacak şekilde hızlıca pişirin.", "timerSeconds": 240 },
         { "stepNumber": 4, "instruction": "Ekmekleri ikiye açıp mayonez sürün, et, soğan ve patates çubuklarını yerleştirin.", "timerSeconds": null },
-        { "stepNumber": 5, "instruction": "Sandviçleri tavada bastırarak 3 dakika ısıtın ve sıcak servis edin.", "timerSeconds": 180 }
+        { "stepNumber": 5, "instruction": "Sandviçleri tavada bastırarak ısıtın ve sıcak servis edin.", "timerSeconds": 180 }
       ],
       "allergens_add": [
         "YUMURTA"
@@ -338,9 +338,9 @@
     ],
     "corrections": {
       "steps_replace": [
-        { "stepNumber": 1, "instruction": "Ekmek dilimlerini tavada 3 dakika kızartın, domates suyunu taşıyacak kadar gevrek olsun.", "timerSeconds": 180 },
+        { "stepNumber": 1, "instruction": "Ekmek dilimlerini tavada kızartın, domates suyunu taşıyacak kadar gevrek olsun.", "timerSeconds": 180 },
         { "stepNumber": 2, "instruction": "Domates rendesini zeytinyağı ve bir tutam tuzla karıştırın.", "timerSeconds": null },
-        { "stepNumber": 3, "instruction": "Yumurtaları tavada 3 dakika pişirin, sarılarını hafif akışkan bırakın.", "timerSeconds": 180 },
+        { "stepNumber": 3, "instruction": "Yumurtaları tavada pişirin, sarılarını hafif akışkan bırakın.", "timerSeconds": 180 },
         { "stepNumber": 4, "instruction": "Domatesli karışımı sıcak ekmeklere yayın.", "timerSeconds": null },
         { "stepNumber": 5, "instruction": "Yumurtaları üstüne yerleştirip bekletmeden servis edin.", "timerSeconds": null }
       ]
@@ -713,7 +713,7 @@
       "https://www.bonappetit.com/recipe/pao-de-queijo-brazilian-cheese-bread"
     ],
     "confidence": "medium",
-    "reason": "Pão de queijo waffle modern uyarlama olarak makul; mevcut sorun scaffold step dili."
+      "reason": "Pão de queijo waffle modern uyarlama olarak makul; mevcut sorun adımların scaffold dilinde kalması."
   },
   {
     "slug": "pao-na-chapa",
@@ -783,11 +783,11 @@
       ],
       "steps_replace": [
         { "stepNumber": 1, "instruction": "Haşlanmış patatesleri ezip tuzla yoğurun, şekil alacak kıvama getirin.", "timerSeconds": null },
-        { "stepNumber": 2, "instruction": "Soğan ve sarımsağı 4 dakika kavurun.", "timerSeconds": 240 },
-        { "stepNumber": 3, "instruction": "Kıyma ve kimyonu ekleyip 7 dakika pişirin.", "timerSeconds": 420 },
-        { "stepNumber": 4, "instruction": "Zeytin ve haşlanmış yumurtayı dolguya katıp 5 dakika soğutun.", "timerSeconds": 300 },
+        { "stepNumber": 2, "instruction": "Soğan ve sarımsağı yumuşayana kadar kavurun.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Kıyma ve kimyonu ekleyip suyunu çekene kadar pişirin.", "timerSeconds": 420 },
+        { "stepNumber": 4, "instruction": "Zeytin ve haşlanmış yumurtayı dolguya katıp kısa süre soğutun.", "timerSeconds": 300 },
         { "stepNumber": 5, "instruction": "Patates püresini avuçta açın, dolguyu koyup oval kapatın.", "timerSeconds": null },
-        { "stepNumber": 6, "instruction": "Köfteleri yumurta ve galeta ununa bulayıp kızgın yağda 6 dakika kızartın.", "timerSeconds": 360 }
+        { "stepNumber": 6, "instruction": "Köfteleri yumurta ve galeta ununa bulayıp kızgın yağda kızartın.", "timerSeconds": 360 }
       ]
     },
     "sources": [
@@ -807,9 +807,9 @@
     "corrections": {
       "steps_replace": [
         { "stepNumber": 1, "instruction": "Bayat ekmekleri iri parçalara ayırın.", "timerSeconds": null },
-        { "stepNumber": 2, "instruction": "Tereyağını tavada 2 dakika eritin ve hafif köpürtün.", "timerSeconds": 120 },
-        { "stepNumber": 3, "instruction": "Et suyunu ekleyip ekmekleri 2 dakika yumuşatın.", "timerSeconds": 120 },
-        { "stepNumber": 4, "instruction": "Yumurtaları ekleyip 4 dakika karıştırarak pişirin.", "timerSeconds": 240 },
+        { "stepNumber": 2, "instruction": "Tereyağını tavada eritip hafif köpürtün.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Et suyunu ekleyip ekmekleri yumuşatın.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Yumurtaları ekleyip karıştırarak pişirin.", "timerSeconds": 240 },
         { "stepNumber": 5, "instruction": "Karabiber serpip sıcak servis edin.", "timerSeconds": null }
       ]
     },
@@ -830,9 +830,9 @@
     "corrections": {
       "steps_replace": [
         { "stepNumber": 1, "instruction": "Bayat ekmekleri iri küpler halinde doğrayın.", "timerSeconds": null },
-        { "stepNumber": 2, "instruction": "Ekmekleri tavada 3 dakika hafifçe ısıtın, çok sertleştirmeyin.", "timerSeconds": 180 },
+        { "stepNumber": 2, "instruction": "Ekmekleri tavada hafifçe ısıtın, çok sertleştirmeyin.", "timerSeconds": 180 },
         { "stepNumber": 3, "instruction": "Yoğurdu ekmeklerin üzerine yayın.", "timerSeconds": null },
-        { "stepNumber": 4, "instruction": "Tereyağını pul biberle 1 dakika kızdırıp yoğurdun üzerine gezdirin.", "timerSeconds": 60 },
+        { "stepNumber": 4, "instruction": "Tereyağını pul biberle kızdırıp yoğurdun üzerine gezdirin.", "timerSeconds": 60 },
         { "stepNumber": 5, "instruction": "Ekmekler tamamen hamurlaşmadan ılık servis edin.", "timerSeconds": null }
       ]
     },
@@ -1028,7 +1028,7 @@
       ],
       "steps_replace": [
         { "stepNumber": 1, "instruction": "Lor, paprika, zeytinyağı, ince kıyılmış kırmızı soğan ve kimyonu karıştırın.", "timerSeconds": null },
-        { "stepNumber": 2, "instruction": "Ekmeği tavada 2 dakika ısıtın.", "timerSeconds": 120 },
+        { "stepNumber": 2, "instruction": "Ekmeği tavada ısıtın.", "timerSeconds": 120 },
         { "stepNumber": 3, "instruction": "Paprikalı lor karışımını sıcak ekmeklerin üzerine yayın.", "timerSeconds": null },
         { "stepNumber": 4, "instruction": "Kapya biber dilimleriyle tamamlayıp hemen servis edin.", "timerSeconds": null }
       ]
@@ -1050,9 +1050,9 @@
     "corrections": {
       "steps_replace": [
         { "stepNumber": 1, "instruction": "Domatesi küçük doğrayın, loru ufalayın ve yumurtaları hazırlayın.", "timerSeconds": null },
-        { "stepNumber": 2, "instruction": "Tereyağında paprikayı 1 dakika kısık ateşte açın.", "timerSeconds": 60 },
-        { "stepNumber": 3, "instruction": "Domatesi ekleyip 2 dakika pişirin.", "timerSeconds": 120 },
-        { "stepNumber": 4, "instruction": "Yumurta ve loru katıp 4 dakika pişirin.", "timerSeconds": 240 },
+        { "stepNumber": 2, "instruction": "Tereyağında paprikayı kısık ateşte açın.", "timerSeconds": 60 },
+        { "stepNumber": 3, "instruction": "Domatesi ekleyip suyunu hafif çekene kadar pişirin.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Yumurta ve loru katıp yumuşak kalacak şekilde pişirin.", "timerSeconds": 240 },
         { "stepNumber": 5, "instruction": "Yumurta tamamen kurumadan sıcak servis edin.", "timerSeconds": null }
       ]
     },

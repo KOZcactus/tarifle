@@ -15,7 +15,7 @@
     "reason": "Misugaru tozu, süt, tatlandırıcı ve buzla hazırlanan Kore tahıl shake yapısı doğru; kısa blender süresi ve servis bağlamı kaynaklarla uyumlu.",
     "sources": [
       "https://flavor365.com/misugaru-korean-multigrain-shake/",
-      "https://www.youtube.com/watch?v=ELauJ5rsqFU"
+      "https://kimchimari.com/misugaru-korean-multi-grain-powder-drink/"
     ],
     "confidence": "medium"
   },
@@ -50,7 +50,7 @@
     "corrections": {
       "steps_replace": [
         { "stepNumber": 1, "instruction": "Çikolatayı sıcak espresso içinde eritin, kakao topakları kalmasın diye 20 saniye karıştırın.", "timerSeconds": 20 },
-        { "stepNumber": 2, "instruction": "Sütü küçük tencerede veya buhar çubuğunda 3 dakika ısıtıp köpürtün.", "timerSeconds": 180 },
+        { "stepNumber": 2, "instruction": "Sütü küçük tencerede veya buhar çubuğunda ısıtıp köpürtün.", "timerSeconds": 180 },
         { "stepNumber": 3, "instruction": "Sütü kahveye ekleyin, üstüne kakao serpip sıcak servis edin.", "timerSeconds": null }
       ]
     },
@@ -220,7 +220,7 @@
       "Ingredient ad değişimi mevcut Mod K correction şemasında doğrudan güvenli uygulanamadığı için manuel review gerekir."
     ],
     "corrections": {
-      "description": "Moqueca de banana, pişmeye dayanıklı muz veya plantaini domatesli, biberli, Hindistan cevizli ve dende yağlı Brezilya sosunda pişiren sebze ana yemeğidir.",
+      "description": "Brezilya moqueca de banana, plantaini domates, biber, Hindistan cevizi sütü ve dende yağıyla pişiren sebze yemeğidir.",
       "ingredients_add": [
         { "name": "Biber", "amount": "1", "unit": "adet" },
         { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
@@ -293,7 +293,7 @@
     "corrections": {
       "steps_replace": [
         { "stepNumber": 1, "instruction": "Frambuazı su ve şekerle tencereye alın, orta ateşte kaynama noktasına getirin.", "timerSeconds": null },
-        { "stepNumber": 2, "instruction": "Karışımı 5 dakika kısık ateşte pişirin, meyve tadı suya geçsin.", "timerSeconds": 300 },
+        { "stepNumber": 2, "instruction": "Karışımı kısık ateşte pişirin, meyve tadı suya geçsin.", "timerSeconds": 300 },
         { "stepNumber": 3, "instruction": "Morsu süzün, oda sıcaklığına gelince soğuk bardakta servis edin.", "timerSeconds": null }
       ]
     },
@@ -616,12 +616,12 @@
     "slug": "mugla-sundirme",
     "verdict": "MAJOR_ISSUE",
     "issues": [
-      "Resmi Muğla turizm kaynağı sündürmeyi turp otu, soğan, sarımsak ve nar ekşisiyle tanımlıyor; mevcut tarif peynirli genel kahvaltılık gibi duruyor.",
-      "Kaynaklar arasında peynirli sündürme adı geçse de Muğla yöresel kimliğiyle çelişki var.",
+      "Muğla kaynakları sündürmeyi turp otlu nar ekşili yemek ve peynirli mısır unlu kahvaltılık olarak iki farklı çizgide anlatıyor.",
+      "Mevcut tarif peynirli çizgiye yakın, ancak description bu kaynak ayrımını ve mısır unu eksikliğini netleştirmiyor.",
       "Bu fark basit ingredient ekleme ile güvenli çözülemez, manuel identity review gerekir."
     ],
     "corrections": {
-      "description": "Muğla sündürmesi için kaynaklar iki farklı çizgi gösteriyor: resmi Muğla kaynağı turp otlu ekşili yemeği, bazı tarif kaynakları ise peynirli kahvaltılığı anlatıyor."
+      "description": "Muğla sündürmesi kaynaklarda peynirli kahvaltılık ve turp otlu ekşili yemek olarak iki çizgide geçer."
     },
     "sources": [
       "https://mugla.goturkiye.com/taste",
@@ -648,7 +648,7 @@
     },
     "sources": [
       "https://mugla.goturkiye.com/taste",
-      "https://tarifle.app/tarif/peynirli-kabak-cicegi-boregi-balikesir-usulu"
+      "https://www.kirazinmutfagi.com.tr/tarif/kabak-cicegi-dolmasi-mugla"
     ],
     "confidence": "low",
     "reason": "Kabak çiçeği ve yufkalı börek fikri mümkün; fakat Muğla ve susamlı özgül iddiası bağımsız kaynakla desteklenmiyor."
@@ -907,7 +907,7 @@
       "description": "Murtuğa, unun tereyağında kavrulup yumurtayla pişirildiği Doğu Anadolu kahvaltılığıdır; pide tostu ve Kars atfı için ayrıca kaynak gerekir."
     },
     "sources": [
-      "https://www.sofra.com.tr/tarif/diger/murtuga-murtuga-tarifi",
+      "https://www.yoredenlezzetler.com/post/van-murtuga-tarifi",
       "https://ye-mek.net/tarif/murtuga"
     ],
     "confidence": "high",

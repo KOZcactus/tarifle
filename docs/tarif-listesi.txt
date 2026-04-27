@@ -1,6 +1,6 @@
 # Tarifle, tarif listesi (alfabetik, TR locale)
-# Toplam: 3517 tarif
-# Son guncelleme: 2026-04-26
+# Toplam: 3515 tarif
+# Son guncelleme: 2026-04-27
 #
 # Bu liste DB'den otomatik uretilir. Tarif silindigi/eklendiginde
 # 'npx tsx scripts/dump-tarif-listesi.ts' ile yeniden uretilir.
@@ -773,7 +773,6 @@ Dereotlu Kür Somon
 Dereotlu Mantarlı Pirojki
 Dereotlu Olivier Salatası
 Dereotlu Patates Çorbası
-Dereotlu Patates Röşti
 Dereotlu Patates Salatası
 Dereotlu Patates Yumurta Tava
 Dereotlu Peynirli Çırpma Yumurta
@@ -963,7 +962,6 @@ Erzincan Kesme Kete
 Erzincan Kurutlu Pancar Boranisi
 Erzincan Tutlu Yarma Çorbası
 Erzincan Yoğurtlu Kesme Çorbası
-Erzsebet Sour
 Erzurum Ayran Aşı
 Erzurum Ayranlı Bulgur Çorbası
 Erzurum Ayranlı Yeşil Mercimek Çorbası
@@ -1422,6 +1420,7 @@ Izgara Sardalyalı Arapsaçı Salatası
 İsveç Lingonberry Yoğurt Parfe
 İsveç Mantarlı Arpa Pilavı
 İsveç Salatalıklı Dereotlu Soğuk Çorba
+İsveç Usulü Raggmunk (Dereotlu)
 İsveç Yaban Mersinli Yulaf Pankeki
 İşkembe Çorbası
 İtalyan Kabak Çiçekli Orzo
@@ -2367,7 +2366,6 @@ Oralet
 Orange Mint Cooler
 Ordu Dolazı
 Ordu Fındıklı Fasulye Kavurması
-Ordu Fındıklı Keşkek Topları
 Ordu Fındıklı Pancar Salatası
 Ordu Fındıklı Pazı Sarması
 Ordu Galdirik Kavurması

@@ -435,6 +435,63 @@ export default async function HomePage() {
         </Link>
       </section>
 
+      {/* AI Asistan mini demo grid (oturum 25 GPT P2 audit). 3 ornek
+          malzeme set; click → /ai-asistan?m=X,Y,Z URL param ile form
+          hydrate olur, kullanici 1-tikla 3 tarif onerisini gorur.
+          GPT analizinde "ana sayfaya mini demo koy + rozet" onerisinin
+          karsiligi. AiAssistantForm 'm' URL param'ini destekliyor. */}
+      <section className="pt-3">
+        <div className="rounded-2xl border border-accent-blue/15 bg-bg-card/60 p-5 sm:p-6">
+          <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-wide text-accent-blue">
+                {t("aiDemoEyebrow")}
+              </p>
+              <h3 className="mt-0.5 font-heading text-lg font-semibold text-text sm:text-xl">
+                {t("aiDemoTitle")}
+              </h3>
+              <p className="mt-1 text-sm text-text-muted">
+                {t("aiDemoSubtitle")}
+              </p>
+            </div>
+            <Link
+              href="/ai-asistan"
+              className="text-xs font-medium text-accent-blue hover:underline"
+            >
+              {t("aiDemoCustomCta")}
+            </Link>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { i: 1, m: "tavuk,domates,makarna" },
+              { i: 2, m: "somon,brokoli,limon" },
+              { i: 3, m: "yumurta,peynir,un" },
+            ].map(({ i, m }) => (
+              <Link
+                key={i}
+                href={`/ai-asistan?m=${m}`}
+                className="group flex flex-col gap-2 rounded-xl border border-border bg-bg p-4 transition-all hover:border-accent-blue/50 hover:shadow-sm"
+              >
+                <p className="text-[11px] font-semibold uppercase tracking-wide text-text-muted">
+                  {t(`aiDemoSet${i}Label` as "aiDemoSet1Label" | "aiDemoSet2Label" | "aiDemoSet3Label")}
+                </p>
+                <p className="font-medium text-text">
+                  {t(`aiDemoSet${i}Ingredients` as "aiDemoSet1Ingredients" | "aiDemoSet2Ingredients" | "aiDemoSet3Ingredients")}
+                </p>
+                <div className="mt-1 flex flex-wrap gap-1.5">
+                  <span className="inline-flex items-center rounded-full bg-accent-blue/10 px-2 py-0.5 text-[11px] font-medium text-accent-blue">
+                    {t(`aiDemoSet${i}Badge1` as "aiDemoSet1Badge1" | "aiDemoSet2Badge1" | "aiDemoSet3Badge1")}
+                  </span>
+                  <span className="inline-flex items-center rounded-full bg-accent-blue/10 px-2 py-0.5 text-[11px] font-medium text-accent-blue">
+                    {t(`aiDemoSet${i}Badge2` as "aiDemoSet1Badge2" | "aiDemoSet2Badge2" | "aiDemoSet3Badge2")}
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Menü Planlayıcı banner (oturum 25 GPT P2 audit). AI Asistan
           banner'ın hemen altına; "premium/retention özelliği daha
           görünür olmalı" GPT önerisi. Login user'a /menu-planlayici,

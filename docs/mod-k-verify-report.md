@@ -5,13 +5,13 @@ Toplam entry: 50
 
 ## Ozet (verdict)
 
-- PASS: **11** (22.0%)
-- CORRECTION: 38 (76.0%)
-- MAJOR_ISSUE: 1 (2.0%)
+- PASS: **18** (36.0%)
+- CORRECTION: 30 (60.0%)
+- MAJOR_ISSUE: 2 (4.0%)
 
 ## Confidence
 
-- high: 30, medium: 20, low: 0
+- high: 28, medium: 20, low: 2
 
 ## Format integrity
 
@@ -20,28 +20,43 @@ Toplam entry: 50
 
 ## MAJOR_ISSUE (manuel review zorunlu)
 
-### `lablabi`
+### `menekse-serbeti-erzurum-usulu`
 
-**Reason**: Tarif Tunus lablabisi olarak tanımlanıyor ama cuisine Fas kodunda; ayrıca harissa ve zeytinyağı temel bileşen olarak eksik.
+**Reason**: Menekşe şerbeti doğrulanıyor ama Erzurum bağı kaynaklanmadı; köken iddiası kaldırılıp eksik şeker ve bekleme süresi düzeltilmeli.
 
 **Issues**:
-- Lablabi Tunus çorbasıdır; cuisine alanı ma görünüyor.
-- Kaynaklardaki temel harissa, zeytinyağı ve tuz mevcut ingredient listesinde yok.
+- Erzurum usulü iddiası için güvenilir kaynak bulunamadı; kaynaklar menekşe şerbeti veya Osmanlı menekşe şurubu anlatıyor.
+- Step 1 şekerden bahsediyor ama ingredient listesinde şeker yok.
+- Step 2 on dakika dinlendirme içeriyor, totalMinutes 8 dakika.
 
 **Corrections** (sample):
-- ingredients_add: 3
+- description: "Menekşe şerbeti, menekşe şurubu ve limonu suyla açarak hafif çiçeksi, ferah ve serin bir içecek ortaya çıkarır...."
+- ingredients_add: 1
+
+### `mesir-baharatli-tavuk-manisa-usulu`
+
+**Reason**: Manisa mesir geleneği doğrulanıyor ama tavuk yemeği yöresel klasik değil; ad, description, eksik baharat ve süre düzeltilmeli.
+
+**Issues**:
+- Kaynaklar Manisa mesir macununu doğruluyor, ancak 'Manisa mesir baharatlı tavuk' adıyla yerleşik bir yöresel yemek doğrulanmadı.
+- Step 1 mesir baharatı diyor ama ingredient listesinde mesir baharatı yok.
+- Step 2 otuz dakika marine ve step 6 altı dakika dinlendirme içeriyor, totalMinutes bu beklemeleri göstermiyor.
+
+**Corrections** (sample):
+- description: "Mesir baharatı esintili fırın tavuk, tavuk parçalarını yoğurt ve aromatik baharatlarla marine ederek kokulu ve sulu bir ..."
+- ingredients_add: 1
 
 ## CORRECTION sample (ilk 10)
 
 | Slug | Conf | Issues count | Corrections fields |
 |---|---|---:|---|
-| `kuru-domatesli-firik-corbasi-gaziantep-usulu` | medium | 1 | ingredients_add, averageCalories, protein, carbs, fat |
-| `kuru-domatesli-gozleme-aydin-usulu` | high | 2 | ingredients_add, steps_replace |
-| `kuru-domatesli-guvec-beypazari-usulu` | medium | 2 | ingredients_add, averageCalories, protein, carbs, fat |
-| `kuru-domatesli-omlet` | high | 2 | ingredients_add, steps_replace |
-| `kuru-elma-pekmezli-kek-kastamonu-usulu` | medium | 2 | ingredients_add, averageCalories, protein, carbs, fat |
-| `kuru-fasulye` | high | 1 | totalMinutes |
-| `kuru-kayisili-bulgur-corbasi-erzurum-usulu` | medium | 1 | ingredients_add |
-| `kuru-kayisili-etli-yahni-malatya-usulu` | high | 2 | ingredients_add, cookMinutes, totalMinutes, steps_replace |
-| `kurutlu-pancar-borani-erzincan-usulu` | high | 3 | ingredients_add, allergens_add, cookMinutes, totalMinutes |
-| `kusbasili-bulgurlu-firik-tava-sanliurfa-usulu` | high | 2 | ingredients_add, averageCalories, protein, carbs, fat |
+| `mazurek-polonya-usulu` | high | 1 | totalMinutes |
+| `mechoui` | high | 1 | totalMinutes |
+| `mechouia-salatasi` | high | 3 | cuisine, cookMinutes, totalMinutes, steps_replace |
+| `medianoche` | medium | 1 | ingredients_remove, ingredients_add, steps_replace |
+| `medianoche-sandwich` | high | 2 | ingredients_add, totalMinutes |
+| `medovik-kup-rus-usulu` | high | 2 | totalMinutes, tags_remove |
+| `medovik-rus-usulu` | high | 1 | totalMinutes |
+| `meggyes-makos-retes-macar-usulu` | medium | 1 | totalMinutes |
+| `meggyes-retes` | medium | 1 | totalMinutes |
+| `meggyleves-soguk-macar-usulu` | high | 1 | totalMinutes, tags_remove |

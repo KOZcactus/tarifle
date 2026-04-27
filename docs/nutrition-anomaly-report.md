@@ -1,18 +1,18 @@
 # Nutrition anomaly raporu
 
-Tarama tarihi: 2026-04-27T15:05:40.022Z
+Tarama tarihi: 2026-04-27T15:38:16.432Z
 Toplam tarif: 3517
-Anomali bulunan: 1210
+Anomali bulunan: 1222
 
 ## Tip dağılımı
 
-- high_fat_anomaly: 1106
+- high_fat_anomaly: 1118
 - macro_deviation: 104
 
 ## Şiddet dağılımı
 
-- medium: 415
-- high: 794
+- medium: 417
+- high: 804
 - low: 1
 
 ## High severity (top 30)

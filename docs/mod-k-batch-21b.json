@@ -1,0 +1,940 @@
+[
+  {
+    "slug": "mazurek-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 ve 5 toplam 30 dakika pasif bekleme içeriyor, totalMinutes bu farkı göstermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 75
+    },
+    "sources": [
+      "https://based.cooking/mazurek/",
+      "https://en.wikipedia.org/wiki/Mazurek_%28cake%29"
+    ],
+    "confidence": "high",
+    "reason": "Mazurek kısa hamur, reçel ve yemiş kurgusuyla kaynaklarla uyumlu; soğutma ve dinlendirme toplam süreye eklenmeli."
+  },
+  {
+    "slug": "mechoui",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 ve 6 toplam 45 dakika pasif bekleme içeriyor, totalMinutes bekleme farkını göstermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 280
+    },
+    "sources": [
+      "https://www.tknaturallamb.com/recipes/moroccan-mechoui/",
+      "https://www.youtube.com/watch?v=Zc9FrqdSCsM"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu eti, kimyon ve düşük ısıda uzun pişirme mechoui kaynaklarıyla uyumlu; toplam süre bekleme farkını içermeli."
+  },
+  {
+    "slug": "mechouia-salatasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Description Tunus diyor ama cuisine ma kalmış.",
+      "Step 4 kimyon ve kişnişten bahsediyor, ingredient listesinde yok.",
+      "Step 5 tuna, yumurta, zeytin ve kapari ekliyor; tarif vegan etiketli ve bu malzemeler listede yok."
+    ],
+    "corrections": {
+      "cuisine": "tn",
+      "cookMinutes": 25,
+      "totalMinutes": 45,
+      "steps_replace": [
+        {
+          "stepNumber": 4,
+          "instruction": "Zeytinyağı, limon suyu ve tuzla köz sebzeleri karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Salatayı oda sıcaklığında dinlendirin, köz tadı limonla dengelensin.",
+          "timerSeconds": 600
+        }
+      ]
+    },
+    "sources": [
+      "https://www.foodieatlas.com/recipes/tunisia-mechouia-salad",
+      "https://www.food.com/recipe/salad-mechouia-tunisian-salad-457252"
+    ],
+    "confidence": "high",
+    "reason": "Mechouia Tunus salatasıdır; mevcut vegan listeyle tuna ve yumurta adımı çelişiyor, süre de 25 dakikalık közlemeye göre düzelmeli."
+  },
+  {
+    "slug": "medianoche",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Küba medianoche kaynakları roast pork ve ham kullanır; mevcut listede rosto et ve dana jambon yazıyor."
+    ],
+    "corrections": {
+      "ingredients_remove": [
+        "Dana jambon",
+        "Rosto et"
+      ],
+      "ingredients_add": [
+        {
+          "name": "Jambon",
+          "amount": "200",
+          "unit": "gr",
+          "group": null
+        },
+        {
+          "name": "Rosto domuz eti",
+          "amount": "250",
+          "unit": "gr",
+          "group": null
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Rosto domuz eti, jambon, peynir ve turşuyu ekmeklerin içine dengeli yerleştirin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.foodnetwork.com/recipes/ham-roasted-pork-and-swiss-cheese-sandwich-on-sweet-bread-medianoche-recipe-1939528",
+      "https://www.chilipeppermadness.com/recipes/medianoche/"
+    ],
+    "confidence": "medium",
+    "reason": "Sandviç yapısı ve süre doğru; özgün Küba medianoche ana proteini roast pork ve ham olarak netleşmeli."
+  },
+  {
+    "slug": "medianoche-sandwich",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 tereyağı kullanıyor, ingredient listesinde tereyağı yok.",
+      "Step 5 iki dakika dinlendirme içeriyor, totalMinutes bu beklemeyi göstermiyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Tereyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı",
+          "group": null
+        }
+      ],
+      "totalMinutes": 22
+    },
+    "sources": [
+      "https://www.chilipeppermadness.com/recipes/medianoche/",
+      "https://en.wikipedia.org/wiki/Medianoche"
+    ],
+    "confidence": "high",
+    "reason": "Medianoche içeriği kaynaklarla uyumlu; dış yüzeyde kullanılan tereyağı ve kısa dinlendirme süre hesabına eklenmeli."
+  },
+  {
+    "slug": "medovik-kup-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 iki saat soğutma içeriyor, totalMinutes 14 kaldığı için yanıltıcı.",
+      "30-dakika-alti etiketi iki saat soğutmayla çelişiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 134,
+      "tags_remove": [
+        "30-dakika-alti"
+      ]
+    },
+    "sources": [
+      "https://www.youtube.com/watch?v=vp_CV4jU2FI",
+      "https://en.wikipedia.org/wiki/Medovik"
+    ],
+    "confidence": "high",
+    "reason": "Medovik katmanlarının yumuşaması için soğutma gerekir; kupa uyarlamasında da iki saatlik bekleme toplam sürede görünmeli."
+  },
+  {
+    "slug": "medovik-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 altı saat dinlendirme içeriyor, totalMinutes 53 kaldığı için RecipeTimeline bekleme segmentini göstermez."
+    ],
+    "corrections": {
+      "totalMinutes": 413
+    },
+    "sources": [
+      "https://www.youtube.com/watch?v=vp_CV4jU2FI",
+      "https://en.wikipedia.org/wiki/Medovik"
+    ],
+    "confidence": "high",
+    "reason": "Bal katları ve krema kurgusu doğru; klasik medovik dinlendirilerek yumuşar, bu pasif süre toplamda görünmeli."
+  },
+  {
+    "slug": "meggyes-makos-retes-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 on dakika dinlendirme içeriyor, totalMinutes prep+cook ile aynı kalmış."
+    ],
+    "corrections": {
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://www.hungariantidbits.com/hungarian-chilled-sour-cherry-soup-hideg-meggyleves/",
+      "https://www.food.com/recipe/hungarian-strudel-152107"
+    ],
+    "confidence": "medium",
+    "reason": "Vişne ve haşhaşlı rétes yapısı Macar strudel geleneğiyle uyumlu; dilimleme öncesi bekleme süreye eklenmeli."
+  },
+  {
+    "slug": "meggyes-retes",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve 6 toplam 22 dakika pasif bekleme içeriyor, totalMinutes bunu yansıtmıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 72
+    },
+    "sources": [
+      "https://www.hungariantidbits.com/hungarian-chilled-sour-cherry-soup-hideg-meggyleves/",
+      "https://www.food.com/recipe/hungarian-strudel-152107"
+    ],
+    "confidence": "medium",
+    "reason": "Vişneli rétes içeriği makul; vişne süzdürme ve pişmiş ruloyu dinlendirme süreleri toplam sürede eksik."
+  },
+  {
+    "slug": "meggyleves-soguk-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 iki saat soğutma içeriyor, totalMinutes sadece 22 dakika."
+    ],
+    "corrections": {
+      "totalMinutes": 142,
+      "tags_remove": [
+        "30-dakika-alti"
+      ]
+    },
+    "sources": [
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/chilled-sour-cherry-soup-hideg-meggyleves/",
+      "https://www.saveur.com/article/Recipes/Hungarian-Chilled-Cherry-Soup/"
+    ],
+    "confidence": "high",
+    "reason": "Meggyleves soğuk servis edilen vişne çorbasıdır; buzdolabı bekleme süresi toplamda ve etiketlerde görünmeli."
+  },
+  {
+    "slug": "meksika-fasulyeli-enchilada",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.mccormick.com/blogs/recipes/black-bean-enchiladas",
+      "https://www.slenderkitchen.com/recipe/black-bean-enchiladas"
+    ],
+    "confidence": "high",
+    "reason": "Fasulye, tortilla, sos ve peynir yapısı kaynaklarla uyumlu; süre, alerjen ve makro değerlerinde bariz çelişki yok."
+  },
+  {
+    "slug": "meksika-kabak-cicekli-quesadilla",
+    "verdict": "PASS",
+    "sources": [
+      "https://extension.oregonstate.edu/es/imported-publication/squash-blossom-quesadilla",
+      "https://www.saveur.com/article/Recipes/Squash-Blossom-Quesadilla/"
+    ],
+    "confidence": "high",
+    "reason": "Kabak çiçeği, tortilla ve eriyen peynir kullanımı quesadilla kaynaklarıyla uyumlu; süre ve alerjenler doğru görünüyor."
+  },
+  {
+    "slug": "meksika-sicak-cikolatasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.saveur.com/cinnamon-hot-chocolate-recipe/",
+      "https://www.mccormick.com/blogs/cholula-recipes/mexican-hot-chocolate"
+    ],
+    "confidence": "high",
+    "reason": "Süt, kakao, çikolata, tarçın ve hafif acı biber kurgusu Meksika sıcak çikolatası kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "meksika-tavuk-enchiladas",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/instant-pot-red-chicken-enchiladas",
+      "https://www.theblackpeppercorn.com/chicken-enchiladas/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, tortilla, kırmızı sos ve peynirle fırınlama yapısı kaynaklarla uyumlu; mevcut alanlarda net hata yok."
+  },
+  {
+    "slug": "meksiko-tacos-al-pastor",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/tacos-al-pastor-marinated-spit-roasted-tacos-56389863",
+      "https://www.bonappetit.com/recipe/tacos-al-pastor-2"
+    ],
+    "confidence": "high",
+    "reason": "Achiote, guajillo, ananas marinadı ve domuz eti kaynaklarla uyumlu; marine süresi totalMinutes içinde fark olarak duruyor."
+  },
+  {
+    "slug": "melbourne-avokadolu-yumurtali-tost",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/avocado-and-egg-toast",
+      "https://www.tastingtable.com/686143/simple-avocado-toast-recipe-poached-egg-asparagus/"
+    ],
+    "confidence": "high",
+    "reason": "Avokado, kızarmış ekmek ve yumurta kurgusu kaynaklarla uyumlu; süre, alerjen ve makrolarda büyük sapma görünmüyor."
+  },
+  {
+    "slug": "melbourne-pancar-avokado-tostu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1, 2, 3 ve 7 tarif adını tekrar eden scaffold cümleler taşıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Ekşi mayalı ekmekleri ve roka yapraklarını tezgaha alın, pancarı ince dilimleyin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Tavayı orta ateşte ısıtın, ekmeklerin iki yüzü eşit kızarsın.",
+          "timerSeconds": 120
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Ekmek dilimlerini tavada kızartın.",
+          "timerSeconds": 180
+        },
+        {
+          "stepNumber": 7,
+          "instruction": "Rokayı üstüne yerleştirip tostları bekletmeden servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.australianavocados.com.au/recipes/avocado-feta-beetroot-hummus/",
+      "https://www.diabetesaustralia.com.au/recipe/avocado-beetroot-and-hummus-toast/"
+    ],
+    "confidence": "high",
+    "reason": "Pancar ve avokadolu tost fikri kaynaklarla uyumlu; adımların bir kısmı tarif adını tekrar eden yapay kalıp içeriyor."
+  },
+  {
+    "slug": "melbourne-pancar-relishli-tavuk-burger",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.goodchefbadchef.com.au/recipes/grilled-chicken-burger-with-pickle-beetroot-relish",
+      "https://www.hellofresh.com.au/recipes/chicken-and-beetroot-relish-burger-67f842304264524ca978fc3d"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk burger ve pancar relish eşleşmesi Avustralya kaynaklarıyla uyumlu; süre ve makro dengesinde açık hata yok."
+  },
+  {
+    "slug": "melocan-kavurmasi-ordu-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/ordu/neyenir/melocandiken-ucu-kavurmasi",
+      "https://lezzetler.com/melocan-diken-ucu-kavurmasi-ordu-tarif-110821"
+    ],
+    "confidence": "high",
+    "reason": "Melocanın haşlanıp soğan ve sarımsakla kavrulması Ordu kaynaklarıyla uyumlu; mevcut tarifte net düzeltme gerekmiyor."
+  },
+  {
+    "slug": "melomakarona",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 ve 6 toplam 30 dakika pasif bekleme içeriyor, totalMinutes prep+cook ile aynı kalmış."
+    ],
+    "corrections": {
+      "totalMinutes": 75
+    },
+    "sources": [
+      "https://www.tastingtable.com/688823/melomakarona-greek-honey-cookies-recipe/",
+      "https://www.food.com/recipe/melomakarona-greek-honey-cookies-423965"
+    ],
+    "confidence": "high",
+    "reason": "Portakal, zeytinyağı, bal şerbeti ve ceviz kurgusu doğru; hamur ve şerbet sonrası dinlendirme süreye eklenmeli."
+  },
+  {
+    "slug": "menekse-serbeti-erzurum-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Erzurum usulü iddiası için güvenilir kaynak bulunamadı; kaynaklar menekşe şerbeti veya Osmanlı menekşe şurubu anlatıyor.",
+      "Step 1 şekerden bahsediyor ama ingredient listesinde şeker yok.",
+      "Step 2 on dakika dinlendirme içeriyor, totalMinutes 8 dakika."
+    ],
+    "corrections": {
+      "description": "Menekşe şerbeti, menekşe şurubu ve limonu suyla açarak hafif çiçeksi, ferah ve serin bir içecek ortaya çıkarır.",
+      "ingredients_add": [
+        {
+          "name": "Toz şeker",
+          "amount": "1",
+          "unit": "yemek kaşığı",
+          "group": null
+        }
+      ],
+      "totalMinutes": 18
+    },
+    "sources": [
+      "https://www.sofra.com.tr/tarifler/soslar-ve-icecekler/menekse_surubu",
+      "https://www.kadinlarduysun.com/menekse-serbeti/"
+    ],
+    "confidence": "medium",
+    "reason": "Menekşe şerbeti doğrulanıyor ama Erzurum bağı kaynaklanmadı; köken iddiası kaldırılıp eksik şeker ve bekleme süresi düzeltilmeli."
+  },
+  {
+    "slug": "menemen",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 tarif adını tekrar eden scaffold hazırlık cümlesi taşıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Domatesleri rendeleyin veya küçük doğrayın, biberleri ince halkalar halinde kesin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/menemen/",
+      "https://www.nefisyemektarifleri.com/menemen-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Domates, biber ve yumurta yapısı doğru; ilk adım yapay hazırlık kalıbı olduğu için tarif-spesifik hale getirilmeli."
+  },
+  {
+    "slug": "menengic-kahvesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Description içinde İngilizce 'pistachio benzeri' ifadesi var.",
+      "Menengiç Antep fıstığı gibi ağaç yemişi değil; KUSUYEMIS alerjeni fazla etiketlenmiş.",
+      "Step 2 pişirme içeriyor ama timerSeconds boş."
+    ],
+    "corrections": {
+      "description": "Menengiç kahvesi, fıstığı andıran yumuşak kokusuyla Güneydoğu kahvehanelerinden eve taşınan sütlü bir sıcak içecektir.",
+      "allergens_remove": [
+        "KUSUYEMIS"
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Karışımı kısık ateşte 5 dakika taşırmadan ısıtın.",
+          "timerSeconds": 300
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/menengic-kahvesi/",
+      "https://www.nefisyemektarifleri.com/menengic-kahvesi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Sütle pişirme doğru; İngilizce sızıntı, fazla alerjen ve eksik pişirme timerı düzeltilmeli."
+  },
+  {
+    "slug": "menengicli-irmik-muhallebisi-gaziantep-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 otuz beş dakika soğutma içeriyor, totalMinutes 22 dakika.",
+      "30-dakika-alti etiketi soğutma süresiyle çelişiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 57,
+      "tags_remove": [
+        "30-dakika-alti"
+      ]
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Muhallebi",
+      "https://yemek.com/tarif/menengic-kahvesi/"
+    ],
+    "confidence": "medium",
+    "reason": "Muhallebi tabanı ve menengiç aroması makul; servis öncesi soğutma toplam süre ve hızlı etiketinde düzeltilmeli."
+  },
+  {
+    "slug": "menengicli-muhallebi-sanliurfa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 nişasta kullanıyor, ingredient listesinde pirinç unu var.",
+      "Step 4 yirmi dakika bekleme içeriyor, totalMinutes prep+cook ile aynı.",
+      "30-dakika-alti etiketi pasif beklemeyle çelişiyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Menengiçli muhallebi için süt, pirinç unu ve şekeri pürüzsüz çırpın.",
+          "timerSeconds": null
+        }
+      ],
+      "totalMinutes": 42,
+      "tags_remove": [
+        "30-dakika-alti"
+      ]
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Muhallebi",
+      "https://yemek.com/tarif/menengic-kahvesi/"
+    ],
+    "confidence": "medium",
+    "reason": "Sütlü muhallebi ve menengiç aroması makul; ingredient-step eşleşmesi ve bekleme süresi düzeltilmeli."
+  },
+  {
+    "slug": "mercimek-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/tereyagli-kirmizi-mercimek-corbasi/",
+      "https://www.savoryspiceshop.com/blogs/recipes/turkish-red-lentil-soup"
+    ],
+    "confidence": "high",
+    "reason": "Kırmızı mercimek, soğan, havuç, patates, salça ve tereyağı yapısı kaynaklarla uyumlu; süre ve alerjenler makul."
+  },
+  {
+    "slug": "mercimek-koftesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 on beş dakika dinlendirme içeriyor, totalMinutes prep+cook ile aynı."
+    ],
+    "corrections": {
+      "totalMinutes": 55
+    },
+    "sources": [
+      "https://yemek.com/tarif/mercimek-koftesi/",
+      "https://www.nefisyemektarifleri.com/mercimek-koftesi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Mercimek, ince bulgur, salça ve yeşillik yapısı doğru; bulgurun kapalı dinlenme süresi totalMinutes içinde görünmeli."
+  },
+  {
+    "slug": "mercimekli-bukme-nevsehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1, 2, 3 ve 6 tarif adını veya slug'ı tekrar eden scaffold ifadeler taşıyor.",
+      "Step 6 peynirli doku diyor ama tarifte peynir yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Unu, mayayı, ılık suyu ve tuzu ayrı kaplarda hazırlayın; mercimekli iç için soğanı doğrayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Fırını 190°C'ye ısıtın, hamur beklerken sıcaklık dengelensin.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Hamuru yoğurup mayalandırın.",
+          "timerSeconds": 1200
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Bükmeyi dinlendirip dilimleyin, mercimekli iç hamuru ıslatmasın.",
+          "timerSeconds": 420
+        }
+      ],
+      "totalMinutes": 62
+    },
+    "sources": [
+      "https://www.lepleziz.com/mercimekli-bukme-borek-tarifi-i324675",
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/borek-tarifleri/mercimekli-borek"
+    ],
+    "confidence": "medium",
+    "reason": "Mercimekli bükme yapısı makul; adımlar yapay tekrar ve peynir hatası içeriyor, son dinlendirme de toplam süreye eklenmeli."
+  },
+  {
+    "slug": "mercimekli-bulgur-pilavi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 on dakika dinlendirme içeriyor, totalMinutes bekleme farkını göstermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://yemek.com/tarif/yesil-mercimekli-bulgur-pilavi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yesil-mercimekli-bulgur-pilavi-tarifi/18706"
+    ],
+    "confidence": "high",
+    "reason": "Yeşil mercimekli bulgur pilavı kaynaklarla uyumlu; pilav demlenmesi pasif bekleme olarak toplam süreye eklenmeli."
+  },
+  {
+    "slug": "mercimekli-cevizli-borek-sivas-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://ye-mek.net/tarif/yesil-mercimekli-borek",
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/borek-tarifleri/mercimekli-borek"
+    ],
+    "confidence": "medium",
+    "reason": "Yeşil mercimekli börek yapısı kaynaklarla uyumlu; cevizli yöresel yorumda net süre veya alerjen hatası görülmedi."
+  },
+  {
+    "slug": "mercimekli-domatesli-shorba-hindistan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.tarladalal.com/masoor-dal-and-tomato-soup-4044r",
+      "https://www.indianhealthyrecipes.com/masoor-dal-recipe/"
+    ],
+    "confidence": "medium",
+    "reason": "Mercimek, domates ve baharatlı çorba kurgusu Hint dal çorbası kaynaklarıyla uyumlu; belirgin düzeltme gerekmiyor."
+  },
+  {
+    "slug": "mercimekli-eriste-asi-kirsehir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.youtube.com/watch?v=ns3N2ZvLXF8",
+      "https://www.lezzet.com.tr/yemek-tarifleri/corba-tarifleri/mercimekli-eriste-corbasi"
+    ],
+    "confidence": "medium",
+    "reason": "Mercimek, erişte, salça ve soğanlı aş yapısı erişte aşı kaynaklarıyla uyumlu; mevcut sürelerde büyük çelişki yok."
+  },
+  {
+    "slug": "mercimekli-eriste-borek-ardahan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://ye-mek.net/tarif/yesil-mercimekli-borek",
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/borek-tarifleri/mercimekli-borek"
+    ],
+    "confidence": "low",
+    "reason": "Mercimekli börek mantığı kaynaklarla uyumlu; erişteli Ardahan varyantı için güçlü kaynak az, ama net yanlış alan görülmedi."
+  },
+  {
+    "slug": "mercimekli-hingel-kars-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Hıngel için hamurda yumurta yaygın; mevcut allergens listesinde YUMURTA yok.",
+      "Step 1 ve 2 toplam 38 dakika pasif hazırlık içeriyor, totalMinutes buna göre düşük kalıyor."
+    ],
+    "corrections": {
+      "allergens_add": [
+        "YUMURTA"
+      ],
+      "ingredients_add": [
+        {
+          "name": "Yumurta",
+          "amount": "1",
+          "unit": "adet",
+          "group": "Hamur için"
+        }
+      ],
+      "totalMinutes": 98
+    },
+    "sources": [
+      "https://www.evvelcevap.com/hingel-kars-usulu-tarifi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/patatesli-hingel-kars-yoresi/19304"
+    ],
+    "confidence": "medium",
+    "reason": "Kars hıngelinde hamur ve haşlama yapısı doğru; yumurta alerjeni ve hamur dinlendirme süreleri eksik görünüyor."
+  },
+  {
+    "slug": "mercimekli-kabak-sote",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/courgette-lentil-salad",
+      "https://www.eatingwell.com/recipe/252450/lentil-stuffed-zucchini/"
+    ],
+    "confidence": "low",
+    "reason": "Kabak ve mercimek eşleşmesi mutfak olarak makul; inputta süre, alerjen veya ingredient-step açısından net hata yakalanmadı."
+  },
+  {
+    "slug": "mercimekli-karnabahar",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 beş dakika kapalı dinlendirme içeriyor, totalMinutes prep+cook ile aynı kalmış."
+    ],
+    "corrections": {
+      "totalMinutes": 55
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/cauliflower-lentil-curry",
+      "https://www.eatingwell.com/recipe/252518/roasted-cauliflower-lentil-salad/"
+    ],
+    "confidence": "medium",
+    "reason": "Mercimek ve karnabahar kurgusu güvenilir kaynaklarla uyumlu; kapalı dinlendirme süresi toplamda ayrıca görünmeli."
+  },
+  {
+    "slug": "mercimekli-katmer-elazig-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve 2 toplam 38 dakika hamur ve mercimek hazırlığı içeriyor, totalMinutes 36 dakika kalmış.",
+      "Step 7 buharla yumuşatma anlatıyor ama timer yok ve toplam süreye yansımıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 7,
+          "instruction": "Katmerleri üst üste kapatıp bekletin, sıcak buhar dış yüzeyi yumuşak tutsun.",
+          "timerSeconds": 300
+        }
+      ],
+      "totalMinutes": 83
+    },
+    "sources": [
+      "https://www.lepleziz.com/mercimekli-bukme-borek-tarifi-i324675",
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/borek-tarifleri/mercimekli-borek"
+    ],
+    "confidence": "medium",
+    "reason": "Mercimekli hamur işi yapısı makul; mevcut adımlardaki bekleme ve haşlama süreleri toplam süreyle açıkça uyumsuz."
+  },
+  {
+    "slug": "mercimekli-keci-peynirli-tart-fransiz-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 sekiz dakika dinlendirme içeriyor, totalMinutes prep+cook ile aynı kalmış."
+    ],
+    "corrections": {
+      "totalMinutes": 62
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/herbed-goat-cheese-tart-14184",
+      "https://www.goodhousekeeping.com/food-recipes/a14484/provencal-goat-cheese-tart-recipe-ghk0813/"
+    ],
+    "confidence": "medium",
+    "reason": "Keçi peynirli tart yapısı Fransız bistro çizgisine uyuyor; dilimleme öncesi dinlendirme süresi toplamda eksik."
+  },
+  {
+    "slug": "mercimekli-kisir-corbasi-levant-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 üç dakika dinlendirme içeriyor, totalMinutes prep+cook ile aynı."
+    ],
+    "corrections": {
+      "totalMinutes": 37
+    },
+    "sources": [
+      "https://www.ecurry.com/blog/soups-and-salads/soup/turkish-red-lentil-soup-with-sumac/",
+      "https://www.thespicehouse.com/blogs/recipes/tomato-and-red-lentil-soup-recipe"
+    ],
+    "confidence": "medium",
+    "reason": "Mercimek, bulgur, domates ve ekşi profil bölgeye uygun; kısa dinlendirme totalMinutes içinde ayrıca görünmeli."
+  },
+  {
+    "slug": "mercimekli-koy-boregi-yozgat-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1, 2 ve 6 toplam 45 dakika bekleme veya ön hazırlık içeriyor, totalMinutes 60 dakika kalmış.",
+      "Step 1 az yağdan bahsediyor, ingredient listesinde kat yağı dışında hamur yağı yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Sıvı yağ",
+          "amount": "2",
+          "unit": "yemek kaşığı",
+          "group": "Hamur için"
+        }
+      ],
+      "totalMinutes": 105
+    },
+    "sources": [
+      "https://ye-mek.net/tarif/yesil-mercimekli-borek",
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/borek-tarifleri/mercimekli-borek"
+    ],
+    "confidence": "medium",
+    "reason": "Mercimekli köy böreği yapısı makul; hamurdaki yağ bahsi ve pasif süreler tarif verisiyle uyuşmuyor."
+  },
+  {
+    "slug": "mercimekli-sumakli-domates-corbasi-mardin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 aynı ifadeyi tekrar eden uzatılmış boilerplate cümle taşıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 5,
+          "instruction": "Çorbayı sıcak kaselere alın ve bekletmeden servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.ecurry.com/blog/soups-and-salads/soup/turkish-red-lentil-soup-with-sumac/",
+      "https://www.thespicehouse.com/blogs/recipes/tomato-and-red-lentil-soup-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Mercimek, domates ve sumak uyumu kaynaklarla uyumlu; son adım gereksiz tekrar içerdiği için sadeleşmeli."
+  },
+  {
+    "slug": "merguezlu-nohut-tava-fas-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://spicetribe.com/blogs/recipes/lamb-merguez-sausage-with-braised-chickpeas",
+      "https://www.foodandwine.com/comfort-food/moroccan"
+    ],
+    "confidence": "high",
+    "reason": "Merguez, nohut, domates ve soğan tavası Kuzey Afrika kaynaklarıyla uyumlu; süre ve alerjenlerde açık hata yok."
+  },
+  {
+    "slug": "mersin-batirik-kasesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Batırık kaynaklarında yer fıstığı sık kullanılır; mevcut tarifte yok.",
+      "Step 5 belirli miktarda su ekliyor, ingredient listesinde su yok.",
+      "Step 1 on beş dakika şişirme içeriyor, totalMinutes zaten 30 dakika olduğu için 30-dakika-alti etiketi sınır dışı kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Kavrulmuş yer fıstığı",
+          "amount": "0.5",
+          "unit": "su bardağı",
+          "group": null
+        },
+        {
+          "name": "Soğuk su",
+          "amount": "0.5",
+          "unit": "su bardağı",
+          "group": null
+        }
+      ],
+      "allergens_add": [
+        "YER_FISTIGI"
+      ],
+      "tags_remove": [
+        "30-dakika-alti"
+      ]
+    },
+    "sources": [
+      "https://www.karaca.com/blog/mersinin-efsanesi-tam-kivaminda-orijinal-batirik-tarifi",
+      "https://www.yasemin.com/yemek/haber/2908224-batirik-nedir-ve-batirik-nasil-yapilir-mersin-usulu-batirik-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Batırıkta tahin ve bulgur doğru; yer fıstığı ve eklenen su ingredient listesinde yer almalı, alerjen de eklenmeli."
+  },
+  {
+    "slug": "mersin-cezerye-havuclu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kolaylezzet.com/kolay-cay-saati-tarifleri/tatlilar/535-cezerye-tatlisi-mersin",
+      "https://www.e-sehir.com/yemek_tarifleri/cezerye-mersin-tarifi.html"
+    ],
+    "confidence": "high",
+    "reason": "Havuç, şeker, ceviz, tarçın ve Hindistan cevizi yapısı Mersin cezeryesi kaynaklarıyla uyumlu; süre farkı zaten toplamda var."
+  },
+  {
+    "slug": "mersin-humuslu-sikma",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 tarif adını tekrar eden scaffold cümle taşıyor ve yumurtadan bahsediyor, tarifte yumurta yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Unu, tuzu ve suyu hamur için ayırın; nohut, tahin, limon suyu ve maydanozu iç harç için hazırlayın.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.karaca.com/blog/mersinin-efsanesi-tam-kivaminda-orijinal-batirik-tarifi",
+      "https://yemek.com/tarif/humus/"
+    ],
+    "confidence": "medium",
+    "reason": "Sac ekmeği ve tahinli nohut içi mantıklı; ilk adım yapay ve tarifte olmayan yumurta referansı içeriyor."
+  },
+  {
+    "slug": "mersin-kerebic",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ingredient listesinde yağ yok ama step 1 yağla hamur hazırlıyor.",
+      "Kerebiç kaynaklarında hamurda süt veya yumurta sık görülür; mevcut vegan etiketi çövenli Mersin kurgusuyla güvenli değil.",
+      "Step 2 yirmi dakika dinlendirme içeriyor, totalMinutes prep+cook ile aynı."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Tereyağı",
+          "amount": "125",
+          "unit": "gr",
+          "group": "Hamur için"
+        },
+        {
+          "name": "Sıvı yağ",
+          "amount": "0.5",
+          "unit": "çay bardağı",
+          "group": "Hamur için"
+        }
+      ],
+      "allergens_add": [
+        "SUT"
+      ],
+      "tags_remove": [
+        "vegan"
+      ],
+      "totalMinutes": 125
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/mersin/neyenir/kerebic",
+      "https://www.kirazinmutfagi.com.tr/tarif/kerebic-mersin"
+    ],
+    "confidence": "high",
+    "reason": "Mersin kerebiçi irmik, ceviz ve çöven köpüğüyle doğru; hamurdaki yağ eksik, vegan etiketi ve pasif süre düzeltilmeli."
+  },
+  {
+    "slug": "mersin-susamli-sikma",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 tarif adını tekrar eden scaffold cümle taşıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Unu, tuzu ve suyu hamur için ayırın; lor, soğan, susam ve baharatları iç harç için hazırlayın.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.karaca.com/blog/mersinin-efsanesi-tam-kivaminda-orijinal-batirik-tarifi",
+      "https://yemek.com/tarif/sikma/"
+    ],
+    "confidence": "medium",
+    "reason": "Sıkma yapısı sac ekmeği ve iç harçla makul; ilk adım gerçek işlem yerine yapay başlangıç kalıbı taşıyor."
+  },
+  {
+    "slug": "mersin-tantuni-lavas",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/tantuni/",
+      "https://www.nefisyemektarifleri.com/tantuni-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "İnce doğranmış et, yağlı sac tava, lavaş, soğan ve maydanoz kurgusu tantuni kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "mersin-tantuni-pirinc-kasesi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/tantuni/",
+      "https://www.nefisyemektarifleri.com/tantuni-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Pirinç kasesi özgün tantuniden uyarlama olsa da et, yağ, sumaklı soğan ve domates mantığı doğru; net hata yok."
+  },
+  {
+    "slug": "mesir-baharatli-tavuk-manisa-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Kaynaklar Manisa mesir macununu doğruluyor, ancak 'Manisa mesir baharatlı tavuk' adıyla yerleşik bir yöresel yemek doğrulanmadı.",
+      "Step 1 mesir baharatı diyor ama ingredient listesinde mesir baharatı yok.",
+      "Step 2 otuz dakika marine ve step 6 altı dakika dinlendirme içeriyor, totalMinutes bu beklemeleri göstermiyor."
+    ],
+    "corrections": {
+      "description": "Mesir baharatı esintili fırın tavuk, tavuk parçalarını yoğurt ve aromatik baharatlarla marine ederek kokulu ve sulu bir ana yemek yapar.",
+      "ingredients_add": [
+        {
+          "name": "Mesir baharatı",
+          "amount": "1",
+          "unit": "çay kaşığı",
+          "group": null
+        }
+      ],
+      "totalMinutes": 76
+    },
+    "sources": [
+      "https://manisaturizmdernegi.com/mesir/mesir-macunu/33",
+      "https://www.eeas.europa.eu/delegations/t%C3%BCrkiye/ab-taraf%C4%B1ndan-tan%C4%B1nan-geleneksel-manisa-mesir-macununun-%C3%B6zellikleri-neler_tr?s=230"
+    ],
+    "confidence": "medium",
+    "reason": "Manisa mesir geleneği doğrulanıyor ama tavuk yemeği yöresel klasik değil; ad, description, eksik baharat ve süre düzeltilmeli."
+  }
+]

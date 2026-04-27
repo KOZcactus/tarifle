@@ -1,0 +1,957 @@
+[
+  {
+    "slug": "mantarli-arpa-corbasi-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 tarif adını tekrar eden boilerplate cümle taşıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 5,
+          "instruction": "Arpa dişe gelir kalınca çorbayı sıcak kaselere alın, mantar dokusu ezilmeden servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.olgasflavorfactory.com/recipes/soups/russian-mushroom-barley-soup/",
+      "https://www.food.com/recipe/russian-mushroom-and-barley-soup-427912"
+    ],
+    "confidence": "high",
+    "reason": "Mantar, arpa ve soğan kurgusu Rus arpa çorbası kaynaklarıyla uyumlu; son adımda tekrar eden yapay ifade temizlenmeli."
+  },
+  {
+    "slug": "mantarli-arpa-pilavi-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 pasif 8 dakika dinlendirme içeriyor, totalMinutes bu beklemeyi ayrı fark olarak göstermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 44
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/mushroom-barley-risotto",
+      "https://www.sainsburysmagazine.co.uk/recipes/mains/mushroom-barley-risotto"
+    ],
+    "confidence": "medium",
+    "reason": "Arpa ve mantar pilav yapısı güvenilir tariflerle uyumlu; demlenme süresi RecipeTimeline için toplam süre farkına eklenmeli."
+  },
+  {
+    "slug": "mantarli-cheddar-crumpet-tava-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 tarif adını tekrar eden hazırlık scaffold cümlesi taşıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Mantarları temizleyip dilimleyin, crumpetleri ve rendelenmiş cheddarı tezgaha alın.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/cheesy-mushrooms-crumpets",
+      "https://www.warburtons.co.uk/recipes/cheesy-garlic-mushrooms-on-crumpets"
+    ],
+    "confidence": "high",
+    "reason": "Mantar, crumpet ve eriyen peynir fikri İngiliz kahvaltı kaynaklarıyla uyumlu; ilk adım yapay hazırlık kalıbı içeriyor."
+  },
+  {
+    "slug": "mantarli-dereotlu-arpa-corbasi-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 tarif adını tekrar eden boilerplate cümle taşıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 5,
+          "instruction": "Dereotunu son anda katın, çorbayı karıştırıp sıcak servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.polonist.com/polish-barley-soup-krupnik/",
+      "https://www.polishyourkitchen.com/polishrecipes/polish-barley-soup-krupnik/"
+    ],
+    "confidence": "high",
+    "reason": "Krupnik çizgisindeki arpa, mantar ve dereotu yapısı Polonya kaynaklarıyla uyumlu; son adım tekrar cümlesiyle zayıflıyor."
+  },
+  {
+    "slug": "mantarli-grechnevaya-kasha-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 pasif 10 dakika dinlendirme içeriyor, totalMinutes bu beklemeyi ayrı fark olarak göstermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 40
+    },
+    "sources": [
+      "https://www.olgasflavorfactory.com/recipes/main-course/buckwheat-kasha-with-mushrooms/",
+      "https://www.babaganosh.org/buckwheat-kasha-with-mushrooms/"
+    ],
+    "confidence": "high",
+    "reason": "Karabuğday, mantar ve soğanlı kasha kaynaklarla uyumlu; 10 dakika dinlenme toplam süreye bekleme olarak yansımalı."
+  },
+  {
+    "slug": "mantarli-karabugday-kasha-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 pasif 8 dakika dinlendirme içeriyor, totalMinutes bu beklemeyi ayrı fark olarak göstermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 38
+    },
+    "sources": [
+      "https://www.polonist.com/kasha-gryczana-buckwheat-groats/",
+      "https://www.polishyourkitchen.com/polishrecipes/kasha-gryczana-buckwheat-groats/"
+    ],
+    "confidence": "high",
+    "reason": "Karabuğday kasha Polonya mutfağıyla uyumlu; dinlendirme süresi totalMinutes içinde ayrı bekleme farkı bırakmalı."
+  },
+  {
+    "slug": "mantarli-misir-ekmegi-dilimi-kastamonu-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/kastamonu/neyenir/misir-ekmegi",
+      "https://yemek.com/tarif/misir-ekmegi/"
+    ],
+    "confidence": "medium",
+    "reason": "Mısır ekmeği Kastamonu bağlamı kaynaklarla uyumlu; mantarlı sıcak üst kullanımında süre ve malzeme akışı tutarlı."
+  },
+  {
+    "slug": "mantarli-misir-yarmasi-zonguldak-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 pasif 10 dakika dinlendirme içeriyor, totalMinutes bu beklemeyi ayrı fark olarak göstermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 46
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/zonguldak/neyenir/misir-yarmasi",
+      "https://www.nefisyemektarifleri.com/misir-yarmasi-yemegi/"
+    ],
+    "confidence": "medium",
+    "reason": "Mısır yarması bölgesel bağlamı makul; 10 dakika dinlenme toplam süre farkına eklenmediği için zaman çizgisi eksik kalır."
+  },
+  {
+    "slug": "mantarli-risotto",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/mushroom-risotto",
+      "https://www.seriouseats.com/pressure-cooker-mushroom-risotto-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Arborio, mantar, sıcak sebze suyu ve parmesan akışı klasik risotto kaynaklarıyla uyumlu; süre ve malzemeler dengeli."
+  },
+  {
+    "slug": "mantarli-simit-dolmasi-balikesir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/simit-dolmasi/",
+      "https://yemek.com/tarif/simit-pizza/"
+    ],
+    "confidence": "medium",
+    "reason": "Bayat simidi sütle yumuşatıp peynirli sıcak dolguya çevirmek kaynaklardaki simit değerlendirme mantığıyla uyumlu."
+  },
+  {
+    "slug": "mantarli-smetanali-blini-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve Step 5 tarif adını tekrar eden scaffold cümleleri taşıyor.",
+      "Step 2 pasif 10 dakika hamur dinlendirme içeriyor, totalMinutes bu beklemeyi ayrı fark olarak göstermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 40,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un, süt ve yumurtayı pürüzsüz hamur olacak şekilde çırpın, mantarları ince dilimleyin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Blinileri ılık tabaklara alın, mantar ve smetanayı üstüne paylaştırıp bekletmeden servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.thespruceeats.com/russian-blini-recipe-1137032",
+      "https://www.olgasflavorfactory.com/recipes/appetizers/russian-blini/"
+    ],
+    "confidence": "high",
+    "reason": "Blini, smetana ve mantarlı servis Rus mutfağıyla uyumlu; scaffold adımlar ve hamur dinlenme süresi düzeltilmeli."
+  },
+  {
+    "slug": "mantarli-soganli-yumurta-tava-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve Step 6 tarif adını tekrar eden scaffold cümleleri taşıyor.",
+      "Step 3 belirgin işlem ve süre detayı vermiyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Soğanı ince doğrayın, mantarı dilimleyin ve yumurtaları bir kasede hafifçe çırpın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Soğan ve mantarı tereyağında 6 dakika soteleyin, mantar suyunu çeksin.",
+          "timerSeconds": 360
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Yumurta parlak ve yumuşak kalınca tavayı ocaktan alın, 3 dakika dinlendirip sıcak servis edin.",
+          "timerSeconds": 180
+        }
+      ]
+    },
+    "sources": [
+      "https://www.polonist.com/polish-scrambled-eggs-with-mushrooms/",
+      "https://www.thespruceeats.com/polish-scrambled-eggs-recipe-1137024"
+    ],
+    "confidence": "medium",
+    "reason": "Mantar, soğan ve yumurta kahvaltı kurgusu makul; üç adımda yapay kalıp ve eksik işlem tarifi var."
+  },
+  {
+    "slug": "mantarli-tavuk-paprikash-tava-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 pasif 3 dakika dinlendirme içeriyor, totalMinutes bu beklemeyi ayrı fark olarak göstermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 33
+    },
+    "sources": [
+      "https://www.daringgourmet.com/chicken-paprikash-paprikas-csirke/",
+      "https://www.seriouseats.com/chicken-paprikash-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, paprika ve kremalı sos yapısı paprikash kaynaklarıyla uyumlu; kısa dinlendirme totalMinutes farkında görünmeli."
+  },
+  {
+    "slug": "manti",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 pasif 30 dakika hamur dinlendirme içeriyor, prepMinutes bu beklemeyi yuttuğu için RecipeTimeline bekleme segmenti göstermez."
+    ],
+    "corrections": {
+      "prepMinutes": 30
+    },
+    "sources": [
+      "https://yemek.com/tarif/kayseri-mantisi/",
+      "https://www.nefisyemektarifleri.com/kayseri-mantisi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Mantı içeriği ve haşlama akışı doğru; 30 dakika hamur dinlenmesi aktif hazırlık dışında bekleme olarak kalmalı."
+  },
+  {
+    "slug": "maple-tavuklu-pirinc-tava-amerikan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/sticky-maple-glazed-chicken",
+      "https://www.allrecipes.com/recipe/234643/maple-glazed-chicken-with-sweet-potatoes/"
+    ],
+    "confidence": "medium",
+    "reason": "Maple ile tavukta tatlı tuzlu denge Amerikan kaynaklarıyla uyumlu; pirinçli tava yorumu süre ve miktar açısından tutarlı."
+  },
+  {
+    "slug": "mapo-tofu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 sarımsak, zencefil ve kıyma diyor, ingredient listesinde bu malzemeler yok.",
+      "Step 6 nişastalı su diyor, ingredient listesinde nişasta yok.",
+      "Step 7 Sichuan biberi diyor, ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Zencefil", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Dana kıyma", "amount": "150", "unit": "gr" },
+        { "name": "Mısır nişastası", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Sichuan biberi", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.seriouseats.com/the-best-mapo-tofu-recipe",
+      "https://thewoksoflife.com/ma-po-tofu-real-deal/"
+    ],
+    "confidence": "high",
+    "reason": "Mapo tofu için aromatikler, kıyma, nişasta ve Sichuan biberi kaynaklarda temel; adımlarda geçip listede olmayanlar eklenmeli."
+  },
+  {
+    "slug": "maqluba",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 pasif 10 dakika dinlendirme içeriyor, totalMinutes bu beklemeyi ayrı fark olarak göstermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 100
+    },
+    "sources": [
+      "https://www.seriouseats.com/maqluba-upside-down-chicken-rice-recipe",
+      "https://www.falasteenifoodie.com/maqluba/"
+    ],
+    "confidence": "high",
+    "reason": "Ters çevrilen etli pirinç ve sebze katları Levant kaynaklarıyla uyumlu; 10 dakika dinlenme toplam süreye eklenmeli."
+  },
+  {
+    "slug": "maracuyali-zencefilli-icecek-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps genel scaffold cümlelerinden oluşuyor, gerçek hazırlık işlemini anlatmıyor.",
+      "Step 3 içeceği serin veya ılık servis edin diyor, buzlu maraçuya içeceği bağlamıyla tutarsız."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Maraçuya püresini suyla karıştırın, çekirdek kalmasını istemiyorsanız ince süzgeçten geçirin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Zencefili ekleyip 30 saniye karıştırın, keskinliği meyvenin önüne geçmesin.",
+          "timerSeconds": 30
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Buz dolu bardaklara paylaştırın ve içecek sulanmadan soğuk servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.perudelights.com/passion-fruit-juice-jugo-de-maracuya/",
+      "https://www.laylita.com/recipes/passion-fruit-juice/"
+    ],
+    "confidence": "medium",
+    "reason": "Maraçuya suyu Peru ve Latin içecek kaynaklarıyla uyumlu; mevcut adımlar tarif yerine genel şablon gibi kalıyor."
+  },
+  {
+    "slug": "marakes-harira-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/harira",
+      "https://www.thespruceeats.com/classic-moroccan-harira-soup-2394920"
+    ],
+    "confidence": "high",
+    "reason": "Et, nohut, mercimek, domates, kereviz, safran ve kişnişli uzun pişirme harira kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "marakes-harissali-havuc-meze",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 pasif 10 dakika dinlendirme içeriyor, totalMinutes bu beklemeyi ayrı fark olarak göstermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 34
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/moroccan-carrot-salad",
+      "https://www.themediterraneandish.com/moroccan-carrot-salad/"
+    ],
+    "confidence": "high",
+    "reason": "Havuç, kimyon, limon ve zeytinyağlı Fas salatası kaynaklarla uyumlu; 10 dakika sos dinlenmesi toplam süreye eklenmeli."
+  },
+  {
+    "slug": "marakes-kayisili-kuskus-salatasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 maydanoz diyor, ingredient listesinde maydanoz yok.",
+      "Step 4 zeytinyağı, tarçın, kimyon ve bal diyor, ingredient listesinde yok.",
+      "Step 5 nohut diyor, ingredient listesinde yok.",
+      "Step 6 pasif 5 dakika bekletme içeriyor, timerSeconds yok ve totalMinutes bu beklemeyi ayrı fark olarak göstermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 25,
+      "steps_replace": [
+        {
+          "stepNumber": 3,
+          "instruction": "Kuru kayısıyı küçük küp doğrayın, bademi iri kırın ve naneyi yaprak yaprak ayırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Limon suyunu kuskusa ekleyip 30 saniye karıştırın.",
+          "timerSeconds": 30
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Kuskus, kayısı ve bademi karıştırın, nane yapraklarını son anda ekleyin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Salatayı beş dakika bekletin, kayısı limon suyuyla hafifçe yumuşasın.",
+          "timerSeconds": 300
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/fruity-couscous-salad",
+      "https://www.themediterraneandish.com/moroccan-couscous-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Kuskus, kayısı, badem ve nane uyumlu; adımlarda listede olmayan beş malzeme ve eksik bekleme süresi var."
+  },
+  {
+    "slug": "maras-dondurmasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 30 dakika soğutma, 30 dakika dondurma, 3 saat dövme ve 5 dakika servis beklemesi içeriyor; totalMinutes 50 bu süreleri kapsamıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 265
+    },
+    "sources": [
+      "https://yemek.com/tarif/maras-dondurmasi/",
+      "https://www.nefisyemektarifleri.com/maras-dondurmasi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Salep ve keçi sütlü Maraş dondurması doğru; dondurma ve dövme beklemeleri toplam sürede açıkça yer almalı."
+  },
+  {
+    "slug": "mardin-ikbebet",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 pasif 20 dakika bulgur dinlendirme içeriyor, prepMinutes bu beklemeyi yuttuğu için RecipeTimeline bekleme segmenti göstermez."
+    ],
+    "corrections": {
+      "prepMinutes": 40
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/mardin/neyenir/ikbebet",
+      "https://www.nefisyemektarifleri.com/ikbebet-mardin-usulu-icli-kofte/"
+    ],
+    "confidence": "high",
+    "reason": "Haşlanan Mardin içli köftesi bilgisi kaynaklarla uyumlu; bulgurun 20 dakika şişmesi aktif hazırlık dışında kalmalı."
+  },
+  {
+    "slug": "mardin-ikbebet-icli-kofte",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 pasif 15 dakika bulgur ve irmik şişirme içeriyor, prepMinutes bu beklemeyi yuttuğu için RecipeTimeline bekleme segmenti göstermez."
+    ],
+    "corrections": {
+      "prepMinutes": 45
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/mardin/neyenir/ikbebet",
+      "https://www.nefisyemektarifleri.com/mardin-usulu-icli-kofte-ikbebet/"
+    ],
+    "confidence": "high",
+    "reason": "İkbebet içli köfte yapısı kaynaklarla uyumlu; 15 dakika şişirme aktif hazırlık süresine dahil edilmemeli."
+  },
+  {
+    "slug": "mardin-kaburga-dolmasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/mardin/neyenir/kaburga-dolmasi",
+      "https://www.nefisyemektarifleri.com/mardin-kaburga-dolmasi/"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu kaburga, bademli iç pilav ve uzun pişirme Mardin kaburga dolması kaynaklarıyla uyumlu; süre ve makro makul."
+  },
+  {
+    "slug": "mardin-kaburga-pilavi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "tipNote kuşbaşı mühürleme anlatıyor, tarifte kuşbaşı değil kaburga kullanılıyor.",
+      "Step 3 pasif 20 dakika pirinç bekletme içeriyor, totalMinutes bu beklemeyi ayrı fark olarak göstermiyor.",
+      "Step 7 pasif 10 dakika dinlendirme içeriyor, totalMinutes bu beklemeyi ayrı fark olarak göstermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 190,
+      "tipNote": "Pirinci 20 dakika bekletip süzmek pilavın kaburga suyuyla daha tane pişmesini sağlar."
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/mardin/neyenir/kaburga-dolmasi",
+      "https://www.nefisyemektarifleri.com/kaburga-pilavi/"
+    ],
+    "confidence": "high",
+    "reason": "Kaburga ve baharatlı pilav bağı doğru; tip kuşbaşıya kaymış, pirinç bekleme ve dem süresi toplamda görünmeli."
+  },
+  {
+    "slug": "mardin-kapali-sembusek",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 pasif 30 dakika mayalanma içeriyor, prepMinutes bu beklemeyi yuttuğu için RecipeTimeline bekleme segmenti göstermez."
+    ],
+    "corrections": {
+      "prepMinutes": 15
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/mardin/neyenir/sembusek",
+      "https://www.nefisyemektarifleri.com/sembusek-mardin-usulu/"
+    ],
+    "confidence": "high",
+    "reason": "Mayalı kıymalı kapalı hamur işi kaynaklarla uyumlu; 30 dakika mayalanma aktif hazırlık dışında bekleme olmalı."
+  },
+  {
+    "slug": "mardin-reyhanli-kaburga-bulguru",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 pasif 10 dakika dinlendirme içeriyor, totalMinutes bu beklemeyi ayrı fark olarak göstermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 75
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/mardin/neyenir/kaburga-dolmasi",
+      "https://www.nefisyemektarifleri.com/kuzu-kaburga-yemegi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kaburga ve bulgur birlikteliği bölgesel Mardin etli pilav çizgisine uyuyor; 10 dakika dem süresi toplamda eksik."
+  },
+  {
+    "slug": "mardin-sembusek-kapali-lahmacun",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 yağ diyor, ingredient listesinde yağ yok.",
+      "Step 2 pasif 35 dakika mayalanma içeriyor, totalMinutes aktif hazırlık ve beklemeyi ayrıştırmıyor."
+    ],
+    "corrections": {
+      "prepMinutes": 35,
+      "totalMinutes": 95,
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/mardin/neyenir/sembusek",
+      "https://www.nefisyemektarifleri.com/sembusek/"
+    ],
+    "confidence": "high",
+    "reason": "Sembusek yapısı kaynaklarla uyumlu; hamurda geçen yağ listede yok ve mayalanma toplam sürede bekleme olarak ayrılmalı."
+  },
+  {
+    "slug": "mardin-soganli-mercimekli-bulgur",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 15 dakika mercimek haşlama, 8 dakika soğan kavurma, 16-18 dakika pilav pişirme ve 10 dakika demleme içeriyor; totalMinutes 28 bu akışla tutarsız."
+    ],
+    "corrections": {
+      "cookMinutes": 41,
+      "totalMinutes": 61
+    },
+    "sources": [
+      "https://yemek.com/tarif/mercimekli-bulgur-pilavi/",
+      "https://www.nefisyemektarifleri.com/yesil-mercimekli-bulgur-pilavi/"
+    ],
+    "confidence": "high",
+    "reason": "Mercimekli bulgur pilavı içeriği doğru; haşlama, pişirme ve demleme toplamı mevcut süre değerlerini aşıyor."
+  },
+  {
+    "slug": "mardin-sumakli-kuzu-kaburga",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/mardin/neyenir/kaburga-dolmasi",
+      "https://www.nefisyemektarifleri.com/firinda-kuzu-kaburga/"
+    ],
+    "confidence": "medium",
+    "reason": "Sumaklı soğanlı kuzu kaburga fikri Mardin et yemekleri ve fırın kaburga kaynaklarıyla uyumlu; süreler tutarlı."
+  },
+  {
+    "slug": "margarita",
+    "verdict": "PASS",
+    "sources": [
+      "https://iba-world.com/margarita/",
+      "https://www.diffordsguide.com/cocktails/recipe/1254/margarita"
+    ],
+    "confidence": "high",
+    "reason": "Tekila, lime, triple sec, buz ve tuzlu bardak klasik Margarita oranlarıyla uyumlu; kısa çalkalama süresi doğru."
+  },
+  {
+    "slug": "marrakesh-chicken-tagine",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/chicken-tagine",
+      "https://www.seriouseats.com/moroccan-chicken-tagine-with-preserved-lemons-olives-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, zencefil, zerdeçal, limon turşusu, zeytin ve bademli tajin kaynaklarla uyumlu; süre ve sıra makul."
+  },
+  {
+    "slug": "marsilya-bouillabaisse-safranli",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/bouillabaisse",
+      "https://www.seriouseats.com/bouillabaisse-marseillaise-fish-stew-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Rezene, domates, safran, balık suyu, deniz ürünleri ve rouille ekmek sunumu Marsilya bouillabaisse kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "marsilya-safranli-balik-yahni",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/provencal-fish-stew",
+      "https://www.seriouseats.com/bouillabaisse-marseillaise-fish-stew-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Safran, rezene, domates ve beyaz balıklı Akdeniz yahni yapısı Provence ve bouillabaisse kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "martini",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 gazlı ekler sona kalsın diyor, martini tarifinde gazlı ek yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Cin, kuru vermut, buz ve zeytini ölçüp soğutulmuş karıştırma bardağını hazırlayın.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://iba-world.com/dry-martini/",
+      "https://www.diffordsguide.com/cocktails/recipe/1282/dry-martini"
+    ],
+    "confidence": "high",
+    "reason": "Cin ve kuru vermutlu klasik martini doğru; ilk adım kokteylde olmayan gazlı eklerden söz ediyor."
+  },
+  {
+    "slug": "mas-fasulyesi-yemegi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 limonla servis edin diyor, ingredient listesinde limon yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 6,
+          "instruction": "Yemeği sekiz dakika dinlendirip yoğurtla servis edin.",
+          "timerSeconds": 480
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/mas-fasulyesi-yemegi/",
+      "https://www.nefisyemektarifleri.com/mas-fasulyesi-yemegi/"
+    ],
+    "confidence": "high",
+    "reason": "Maş fasulyesi, domates ve zeytinyağlı tencere akışı kaynaklarla uyumlu; serviste geçen limon listede yok."
+  },
+  {
+    "slug": "masala-chai",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/masala-chai",
+      "https://www.vegrecipesofindia.com/masala-chai-recipe-masala-tea/"
+    ],
+    "confidence": "high",
+    "reason": "Süt, siyah çay, kakule ve tarçınla kaynatma akışı masala chai kaynaklarıyla uyumlu; süre ve oranlar makul."
+  },
+  {
+    "slug": "masala-rum-punch-hindistan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 kremsi doku diyor, ingredient listesinde kremalı bir malzeme yok.",
+      "Steps tarif adını tekrar eden scaffold cümleleri taşıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Buzu, limon suyunu, demli siyah çayı ve baharat şurubunu soğuk tutun.",
+          "timerSeconds": 60
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Bardağı taze buzla doldurun, romu ve çayı ekleyin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Baharat şurubu ve limon suyunu ekleyip 8 saniye karıştırın.",
+          "timerSeconds": 8
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Kokteyli bekletmeden servis edin, buz erirse tat dengesi sulanır.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "İsterseniz limon kabuğu veya tarçın çubuğuyla süsleyin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/rum-punch",
+      "https://www.liquor.com/recipes/rum-punch/"
+    ],
+    "confidence": "medium",
+    "reason": "Rom punch yapısı makul; mevcut adımlar tekrar eden şablon ve kremasız tarifte yanlış doku ifadesi taşıyor."
+  },
+  {
+    "slug": "massaman-curry",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Dana kuşbaşı için Step 4'teki 45 dakika pişirme Massaman kaynaklarına göre kısa kalıyor.",
+      "Yeni pişirme akışı totalMinutes ve cookMinutes değerlerini gerektiriyor."
+    ],
+    "corrections": {
+      "cookMinutes": 110,
+      "totalMinutes": 138,
+      "steps_replace": [
+        {
+          "stepNumber": 4,
+          "instruction": "Eti 90 dakika kısık ateşte pişirin, lifler çatal değince ayrılacak kadar yumuşasın.",
+          "timerSeconds": 5400
+        }
+      ]
+    },
+    "sources": [
+      "https://hot-thai-kitchen.com/massaman-curry/",
+      "https://www.bbcgoodfood.com/recipes/massaman-curry"
+    ],
+    "confidence": "high",
+    "reason": "Massaman köri malzeme çizgisi doğru; dana etinin yumuşaması için 45 dakika kısa, süreler buna göre büyümeli."
+  },
+  {
+    "slug": "mastikha-limonata-yunan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 pasif 10 dakika dinlendirme içeriyor, totalMinutes bu beklemeyi kapsamıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 16
+    },
+    "sources": [
+      "https://www.mastiha.com/recipes/mastiha-lemonade/",
+      "https://www.greekflavours.com/en/blog/greek-recipes/mastiha-lemonade"
+    ],
+    "confidence": "medium",
+    "reason": "Limon ve mastikha aromalı içecek kurgusu Yunan kaynaklarıyla uyumlu; 10 dakika dinlenme toplam süreye eklenmeli."
+  },
+  {
+    "slug": "matcha-latte",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.justonecookbook.com/matcha-latte/",
+      "https://www.bbcgoodfood.com/recipes/matcha-latte"
+    ],
+    "confidence": "high",
+    "reason": "Matchayı sıcak suyla açıp sütle birleştirme yöntemi kaynaklarla uyumlu; süre, malzeme ve servis tutarlı."
+  },
+  {
+    "slug": "matchali-armut-kup-japon-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 limonla karıştırın diyor, ingredient listesinde limon yok.",
+      "Step 5 pasif 15 dakika soğutma içeriyor, totalMinutes bu beklemeyi kapsamıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 23,
+      "steps_replace": [
+        {
+          "stepNumber": 3,
+          "instruction": "Armutu ince dilimleyin ve hemen kup hazırlığına geçin, beklerse rengi koyulaşabilir.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.justonecookbook.com/matcha-parfait/",
+      "https://www.bbcgoodfood.com/recipes/matcha-green-tea-yogurt-pots"
+    ],
+    "confidence": "medium",
+    "reason": "Matchalı yoğurtlu kup fikri kaynaklardaki matcha tatlılarına yakın; limon listede yok ve soğutma süresi eksik."
+  },
+  {
+    "slug": "matchali-muzlu-smoothie",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.justonecookbook.com/matcha-smoothie/",
+      "https://www.bbcgoodfood.com/recipes/matcha-smoothie"
+    ],
+    "confidence": "high",
+    "reason": "Matchayı az sıvıyla açıp yoğurt, muz ve sütle blenderdan geçirme yöntemi kaynaklarla uyumlu; süre doğru."
+  },
+  {
+    "slug": "mavi-yemisli-komposto-artvin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 tamamen soğutarak servis edin diyor, ancak totalMinutes soğutma beklemesini kapsamıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 48,
+      "steps_replace": [
+        {
+          "stepNumber": 3,
+          "instruction": "Kompostoyu süzün, 30 dakika soğutup tarçın çubuğunu çıkararak servis edin.",
+          "timerSeconds": 1800
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/yaban-mersini-kompostosu/",
+      "https://www.nefisyemektarifleri.com/yaban-mersini-kompostosu/"
+    ],
+    "confidence": "medium",
+    "reason": "Mavi yemiş kompostosu kaynaklarla uyumlu; soğuk servis için gereken bekleme mevcut toplam sürede görünmüyor."
+  },
+  {
+    "slug": "maydanozlu-fasulye-piyazi-sinop-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ingredient listesi haşlanmış kuru fasulye diyor, Step 1 tekrar 35 dakika haşlama yaptırıyor.",
+      "Steps kırmızı soğan, sumak, yumurta, sirke ve karabiber diyor, ingredient listesinde bu malzemeler yok.",
+      "Step 6 pasif 8 dakika dinlendirme içeriyor, totalMinutes bu beklemeyi kapsamıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 18,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Haşlanmış kuru fasulyeyi süzüp geniş kaseye alın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Maydanozu ince kıyın, limon suyunu ve zeytinyağını küçük kasede 30 saniye çırpın.",
+          "timerSeconds": 30
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Fasulye ve maydanozu limonlu sosla karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Salatayı sekiz dakika dinlendirin, fasulye limonlu yağı içine alsın.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Tuzunu kontrol edip sığ tabakta servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/fasulye-piyazi/",
+      "https://www.nefisyemektarifleri.com/fasulye-piyazi/"
+    ],
+    "confidence": "high",
+    "reason": "Piyaz temeli doğru; adımlar listede olmayan malzemelere kaymış ve haşlanmış fasulyeyi tekrar pişiriyor."
+  },
+  {
+    "slug": "maydanozlu-findikli-fasulye-salatasi-giresun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 taze soğan diyor, ingredient listesinde yok.",
+      "Step 4 sarımsak diyor, ingredient listesinde yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 3,
+          "instruction": "Fındığı iri kırın ve maydanozu ince doğrayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Limon suyu, zeytinyağı ve tuzu 30 saniye çırpın.",
+          "timerSeconds": 30
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/taze-fasulye-salatasi/",
+      "https://yemek.com/tarif/taze-fasulye-salatasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Taze fasulye, maydanoz, fındık ve limonlu sos uyumlu; iki adım listede olmayan malzeme kullanıyor."
+  },
+  {
+    "slug": "maydanozlu-peynir-ezmesi-tekirdag-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps dereotu, taze soğan, limon suyu, pul biber, ceviz ve ekmek diyor, ingredient listesinde bu malzemeler yok.",
+      "Step 6 pasif 10 dakika serinde bekletme içeriyor, totalMinutes bu beklemeyi kapsamıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 18,
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Maydanozu ince kıyın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Zeytinyağı ve karabiberi peynirle karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Peynir ezmesini tabağa yayın ve üstüne az zeytinyağı gezdirin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Peynir ezmesini 10 dakika serinde bekletin, yağ ve karabiber dengeli yayılsın.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 7,
+          "instruction": "Soğuk servis edin, yüzeyi kurumadan sofraya alın.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/peynir-ezmesi/",
+      "https://www.nefisyemektarifleri.com/peynir-ezmesi/"
+    ],
+    "confidence": "high",
+    "reason": "Peynir, yoğurt, maydanoz ve zeytinyağı tabanı doğru; adımlar birçok listelenmemiş malzemeye kayıyor."
+  },
+  {
+    "slug": "mazamorra-morada-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 pasif 30 dakika soğutma içeriyor, totalMinutes bu beklemeyi kapsamıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 65
+    },
+    "sources": [
+      "https://www.perudelights.com/mazamorra-morada/",
+      "https://www.eatperu.com/mazamorra-morada/"
+    ],
+    "confidence": "high",
+    "reason": "Mor mısır, meyve, tarçın ve nişasta ile koyulaştırma Peru kaynaklarıyla uyumlu; 30 dakika soğutma toplam süreye eklenmeli."
+  },
+  {
+    "slug": "mazarin-kekleri",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 pasif 25 dakika soğutma içeriyor, totalMinutes bu beklemeyi kapsamıyor."
+    ],
+    "corrections": {
+      "totalMinutes": 75
+    },
+    "sources": [
+      "https://swedishfood.com/swedish-food-recipes-biscuits-cakes/230-mazariner",
+      "https://www.carolinescooking.com/swedish-mazarin-tarts/"
+    ],
+    "confidence": "high",
+    "reason": "Bademli dolgu, hamur tabanı ve sırla bitirme İsveç mazarin kaynaklarıyla uyumlu; soğutma süresi toplamda eksik."
+  }
+]

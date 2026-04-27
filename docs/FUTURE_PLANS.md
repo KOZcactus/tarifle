@@ -15,6 +15,19 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## 🎯 Aktif (şu an çalışılıyor / kısa vade)
 
+### P1 SEO landing intro derinlik (oturum 26 itibariyle top 12/38 done)
+
+Top 5 (oturum 25): aperatifler, corbalar, turk, vegan, glutensiz.
+Top 12 (oturum 26 batch 2): + tatlilar, kahvaltiliklar, tavuk-yemekleri,
+et-yemekleri, hamur-isleri, italyan, vejetaryen. **26 landing sayfası
+kaldı** (10 kategori + 15 cuisine + 1 diet, ana-yemekler scope dışı,
+Category tablosunda yok). Pattern: 150-250 kelime, somut sayı + otorite
++ pratik öngörü. Pattern script `scripts/seo-revise-batch2.mjs`.
+
+Sıradaki batch 3 (5-7 sayfa): salatalar (269), baklagil-yemekleri (113),
+makarna-pilav (244), sebze-yemekleri (187), atistirmaliklar (69),
+fransiz, japon. Multi-session iş, oturum 27-30+ tamamlanır.
+
 ### Mod K v2 (Tarif Kontrol, oturum 25 itibariyle 12/71 sub-batch done = %16.9)
 
 **Durum**: 12 sub-batch v2 tam pipeline (1a + 1b + 2a + 2b + 3a + 3b

@@ -1,5 +1,18 @@
 # Tarifle, Proje Durumu
 
+> **Oturum 26 (28 Nis 2026, 2 commit, P1 SEO landing batch 2).**
+> 7 yüksek trafik sayfasında intro derinlik revize: tatlilar (470+),
+> kahvaltiliklar (310+), tavuk-yemekleri (yaklaşık 160), et-yemekleri
+> (350+), hamur-isleri (350+), italyan (yaklaşık 50), vejetaryen
+> (2400+). Pattern oturum 25 top 5 ile aynı: 150-250 kelime, somut
+> sayı + otorite (USDA, Slow Food, Verace Pizza Napoletana, AND 2016)
+> + pratik öngörü. Kelime sayıları 186-208 (target band). Browser
+> smoke 7/7 PASS, em-dash 0 ihlal, console 0 error. Top 5 → top 12
+> done, 26 landing sayfası kaldı. Em-dash guard NEW_SESSION_MESSAGE.md
+> skip eklendi (kullanıcı brief kopyası untracked false-positive
+> önlemek için). Commits: `c8aa01a` SEO batch2 + `3d31034` em-dash
+> skip list.
+
 > **Oturum 25 SONU (27 Nis 2026, oturum 24'ün devamı), 26 commit,
 > GPT 5 Pro audit + Mod K v2 maratonu.** **GPT 5 Pro tam analiz
 > uygulaması: P0 paket 1+2+3+4 (Quick QA + landing-copy 252 artifact

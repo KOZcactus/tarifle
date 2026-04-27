@@ -127,22 +127,22 @@ Yeni 26 (oturum 27, 11a-18b MAJOR identity/structural mismatch):
 - ~~`jokai-bableves`~~: ✅ REWRITE (sucuk uyarlaması + ekşi krema + csipetke, paketi 3)
 - ~~`kabak-bastisi-gaziantep-usulu`~~: ✅ REWRITE (TATLI→YEMEK etli klasik, paketi 3)
 
-16a-16b (6, paketi 2'de 2 + paketi 3'te 1 tarif kapandı, kalan 3):
+16a-16b (6, paketi 2'de 2 + paketi 3'te 1 + paketi 4'te 2 tarif kapandı, kalan 1):
 - `kastamonu-eksili-siyez-pilavi`: Yoğurtlu/otlu klasik, mevcut kızılcık ekşili sade
-- `katikli-ekmek-kilis-usulu`: Kilis kaynaksız (klasik Hatay/Antakya)
-- `kayisava-trabzon-usulu`: Trabzon kayısava doğrulanamadı, mevcut pekmezli helva
+- ~~`katikli-ekmek-kilis-usulu`~~: ✅ REWRITE (Hatay/Antakya kanonik, zahter ekle, paketi 4)
+- ~~`kayisava-trabzon-usulu`~~: ✅ DELETE (Codex halüsinasyonu, paketi 4)
 - ~~`kayisili-irmik-pilavi-macaristan-usulu`~~: ✅ REWRITE (YEMEK→TATLI tejbegríz, paketi 3)
 - ~~`kayseri-kursun-asi`~~: ✅ REWRITE (bulgur+kıyma köfte klasik, paketi 2, KRİTİK fix)
 - ~~`kayseri-yag-mantisi`~~: ✅ REWRITE (mayalı bohça kızartma, paketi 2)
 
-17a (7, paketi 2'de 2 tarif kapandı, kalan 5):
+17a (7, paketi 2'de 2 + paketi 4'te 5 tarif kapandı, kalan 0): ✅ HEPSI KAPANDI
 - ~~`kelecos-erzurum-usulu`~~: ✅ REWRITE (kurut+kavurma klasik, paketi 2)
 - ~~`kelecos-van-usulu`~~: ✅ REWRITE (bakliyat+et+pazı keledoş, paketi 2)
-- `kerebic-kup-mersin-usulu`: Çöven köpüğü + içli kurabiye klasiği, mevcut irmik muhallebisi
-- `keskekli-istavrit-tava-sinop-liman-usulu`: Kaynak yok + buğday 5dk yumuşatma yanlış
-- `kestaneli-hamsi-pilavi-zonguldak-usulu`: Kaynak yok + hamsili pilav tekniği yanlış
-- `kibe-mumbar`: Mardin yemek (kuzu işkembe + mumbar + kuşbaşı + kuyruk yağı), mevcut "kibe" ingredient gibi yazılmış (data corruption)
-- `kilis-oruk`: Şiş köfte formu klasik, mevcut cevizli içli köfte
+- ~~`kerebic-kup-mersin-usulu`~~: ✅ REWRITE (çöven köpük + içli kurabiye klasiği, paketi 4)
+- ~~`keskekli-istavrit-tava-sinop-liman-usulu`~~: ✅ DELETE (Codex halüsinasyonu, paketi 4)
+- ~~`kestaneli-hamsi-pilavi-zonguldak-usulu`~~: ✅ DELETE (Codex halüsinasyonu, paketi 4)
+- ~~`kibe-mumbar`~~: ✅ REWRITE (KRİTİK data corruption fix, paketi 4)
+- ~~`kilis-oruk`~~: ✅ REWRITE (şiş kebap klasik, paketi 4)
 
 17b (2): ~~ikisi de paketi 2'de kapandı (REWRITE)~~
 - ~~`kiraz-yaprakli-kofte-malatya-usulu`~~: ✅ REWRITE (yoğurt+yumurta sos klasik, paketi 2)

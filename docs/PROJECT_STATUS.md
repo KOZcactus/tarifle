@@ -1,9 +1,22 @@
 # Tarifle, Proje Durumu
 
-> **Oturum 27 (27 Nis 2026, oturum 26'nın aynı gün devamı), 17 commit:
+> **Oturum 27 (27 Nis 2026, oturum 26'nın aynı gün devamı), 18 commit:
 > Mod K v2 27 batch apply (11a-21b + 22a + 23a + 23b + 24a + 25a, 22b
-> + 24b BAD reject) + CUISINE_CODES `pt` ekleme + 17 mini-rev (paketi
-> 1: 4 + paketi 2: 7 + paketi 3: 6) + SEO batch 3 + 4.**
+> + 24b BAD reject) + CUISINE_CODES `pt` ekleme + 24 mini-rev (paketi
+> 1: 4 + paketi 2: 7 + paketi 3: 6 + paketi 4: 7) + SEO batch 3 + 4.**
+>
+> **Mini-rev paketi 4** (commit `b2f4509`, kuyruk 39 → **32**, prod
+> 3515 → **3512**): 4 REWRITE + 3 DELETE Türk yöresel. 2 paralel agent
+> + 18+ kaynak teyit (Vikipedi + 3 resmi ktb.gov.tr/valilik + 15+
+> tarif portalı). **REWRITE**: kerebic-mersin (cöven köpük klasik,
+> coğrafi işaret), **kibe-mumbar KRİTİK data corruption fix** ("Kibe"
+> ingredient yanlış, doğrusu işkembe; Diyarbakır coğrafi işaret),
+> kilis-oruk (şiş kebap klasik, içli köfte değil), katikli-ekmek-kilis
+> (Hatay/Antakya kanonik, zahter+susam+çörek otu). **DELETE** (kullanıcı
+> onayı, Codex halüsinasyonu): keskekli-istavrit-sinop (Sinop ktb resmi
+> listede yok), kestaneli-hamsi-zonguldak (Zonguldak ktb resmi listede
+> yok), kayisava-trabzon (Google'da 0 sonuç, içerik aslında pekmezli
+> un helvası).
 >
 > **Mod K Batch 25a apply** (commit `6a8d445`): 38 yeni prod correction.
 > 24b BAD reject (12 BLOCKED Kural 9 + Kural 1 ihlal, Codex'ten

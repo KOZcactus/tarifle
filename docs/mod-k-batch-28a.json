@@ -1,0 +1,1081 @@
+[
+  {
+    "slug": "sakarya-islama-kofte",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.sakarya.gov.tr/islama-kofte",
+      "https://www.nefisyemektarifleri.com/islama-kofte-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Sakarya kimliği, kemik ya da et suyuna batırılmış ekmek ve ızgara köfte yapısı kaynaklarla uyumlu; süre ve alerjenler makul."
+  },
+  {
+    "slug": "sakarya-islama-kofte-tabagi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 baharat diyor ama listede kimyon, karabiber ve tuz yok.",
+      "Step 4 ısıtma işlemi içeriyor ama timerSeconds eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kimyon", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kıyma, ekmek içi, rendelenmiş soğan, kimyon, karabiber ve tuzu 8 dakika yoğurun.", "timerSeconds": 480 },
+        { "stepNumber": 2, "instruction": "Köfteleri yassı şekillendirip 15 dakika buzdolabında dinlendirin.", "timerSeconds": 900 },
+        { "stepNumber": 3, "instruction": "Köfteleri ızgara tavada toplam 10-12 dakika pişirin.", "timerSeconds": 660 },
+        { "stepNumber": 4, "instruction": "Kemik suyunu kırmızı toz biberle 5 dakika ısıtıp ekmekleri kısa batırın.", "timerSeconds": 300 },
+        { "stepNumber": 5, "instruction": "Islanmış ekmekleri köfte ve köz biberle sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.sakarya.gov.tr/islama-kofte",
+      "https://www.nefisyemektarifleri.com/islama-kofte-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Tarif kimliği doğru; eksik olan kısım köfte baharatlarının listelenmesi ve kemik suyu ısıtma adımının zamanlanması."
+  },
+  {
+    "slug": "sakizli-badem-sutlac-cesme-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps içinde 30 dakika dinlendirme var ama totalMinutes bu beklemeyi içermiyor."
+    ],
+    "corrections": {
+      "totalMinutes": 70
+    },
+    "sources": [
+      "https://yemek.com/tarif/damla-sakizli-muhallebi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/sutlu-tatlilar/sakizli-muhallebi-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Damla sakızlı sütlü tatlı tabanı kaynaklarla uyumlu; asıl sorun pasif soğutma süresinin toplam süreye yansıtılmaması."
+  },
+  {
+    "slug": "sakizli-bademli-muhallebi-cesme-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 nişasta diyor ama ingredient listesinde pirinç unu var.",
+      "35 dakikalık soğutma totalMinutes içinde görünmüyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Süt, pirinç unu ve şekeri tencerede pürüzsüz çırpın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Damla sakızını toz bademle ezip sütlü karışıma ekleyin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Muhallebiyi kısık ateşte koyulaşana kadar karıştırarak pişirin.", "timerSeconds": 600 },
+        { "stepNumber": 4, "instruction": "Muhallebiyi kaselere paylaştırın, badem dibe çökmesin diye son kez karıştırın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Tatlıyı 35 dakika soğutun, sakız aroması otursun.", "timerSeconds": 2100 }
+      ],
+      "totalMinutes": 57
+    },
+    "sources": [
+      "https://www.sofra.com.tr/tarif/sutlu-tatlilar/damla-sakizli-muhallebi",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/sutlu-tatlilar/damla-sakizli-muhallebi-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Sakızlı muhallebi tekniği doğru; pirinç unu ile step dili eşleştirilmeli ve soğutma toplam süreye alınmalı."
+  },
+  {
+    "slug": "sakizli-erikli-muhallebi-cesme-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tatlı tarifinde şeker yok; kaynaklardaki sakızlı muhallebi tabanı şeker içeriyor.",
+      "10 dakika ılıtma ve 30 dakika soğutma totalMinutes içinde görünmüyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Toz şeker", "amount": "0.5", "unit": "su bardağı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Erikleri küçük doğrayıp kenara alın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Süt, mısır nişastası ve toz şekeri tencerede çırpıp 8 dakika pişirin.", "timerSeconds": 480 },
+        { "stepNumber": 3, "instruction": "Damla sakızını ekleyip muhallebiyi 10 dakika ılıtın, erikli katman akmasın.", "timerSeconds": 600 },
+        { "stepNumber": 4, "instruction": "Erikleri kaselere paylaştırıp muhallebiyle kapatın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Tatlıyı 30 dakika soğutup servis edin.", "timerSeconds": 1800 }
+      ],
+      "totalMinutes": 58
+    },
+    "sources": [
+      "https://yemek.com/tarif/visne-soslu-damla-sakizli-muhallebi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/cilekli-damla-sakizli-muhallebi/9548"
+    ],
+    "confidence": "medium",
+    "reason": "Meyveli sakızlı muhallebi varyantı makul; şeker eksikliği ve bekleme süresi uygulamada sonucu etkiler."
+  },
+  {
+    "slug": "sakizli-incir-kompostosu-mugla-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "İncir kompostosu ve damla sakızı ayrı ayrı makul ama Muğla usulü özel kombinasyon güvenilir kaynakla desteklenmiyor.",
+      "Soğuk servis ifadesi var fakat soğutma süresi steps ve totalMinutes içinde yok."
+    ],
+    "corrections": {
+      "description": "Sakızlı incir kompostosu, kuru inciri hafif damla sakızı aromasıyla kaynatıp soğutarak tatlı ve serin bir içecek sunar.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kuru incirleri ikiye bölün, damla sakızını şekerle ezip hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Su, şeker ve inciri 10 dakika kaynatın.", "timerSeconds": 600 },
+        { "stepNumber": 3, "instruction": "Damla sakızını ekleyip 1 dakika karıştırın.", "timerSeconds": 60 },
+        { "stepNumber": 4, "instruction": "Kompostoyu oda sıcaklığında 45 dakika soğutup incir dilimleriyle servis edin.", "timerSeconds": 2700 }
+      ],
+      "totalMinutes": 68
+    },
+    "sources": [
+      "https://www.sofra.com.tr/tarif/sutlu-tatlilar/damla-sakizli-muhallebi",
+      "https://yemek.com/tarif/incir-kompostosu/"
+    ],
+    "confidence": "low",
+    "reason": "Teknik olarak yapılabilir ama Muğla usulü sakızlı incir kompostosu kimliği güvenli doğrulanamadı."
+  },
+  {
+    "slug": "sakizli-incir-muhallebisi-cesme-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "35 dakikalık soğutma totalMinutes içinde görünmüyor."
+    ],
+    "corrections": {
+      "totalMinutes": 65
+    },
+    "sources": [
+      "https://yemek.com/tarif/damla-sakizli-muhallebi/",
+      "https://www.sofra.com.tr/tarif/sutlu-tatlilar/damla-sakizli-muhallebi"
+    ],
+    "confidence": "medium",
+    "reason": "Sakızlı muhallebi tabanı ve incir eklemesi tutarlı; toplam süre soğutma adımını kapsamadığı için düzeltilmeli."
+  },
+  {
+    "slug": "sakizli-incir-parfe-cesme-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "2 saat dondurma ve 5 dakika servis öncesi bekleme totalMinutes içinde yok."
+    ],
+    "corrections": {
+      "totalMinutes": 139
+    },
+    "sources": [
+      "https://www.sofra.com.tr/tarif/sutlu-tatlilar/damla-sakizli-muhallebi",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/sutlu-tatlilar/damla-sakizli-muhallebi-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Sakızlı kremalı tatlı mantığı makul; RecipeTimeline için dondurma süresi totalMinutes değerine eklenmeli."
+  },
+  {
+    "slug": "sakizli-kabak-cicegi-dolmasi-mugla-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Muğla kabak çiçeği dolması kaynaklarla destekleniyor ama damla sakızlı özel varyant güvenli doğrulanmıyor.",
+      "Step 3 dereotu ve baharat diyor, ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Dereotu", "amount": "0.25", "unit": "demet" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "description": "Kabak çiçeği dolması, pirinçli zeytinyağlı içle doldurulan narin Muğla ve Ege tabaklarından biridir."
+    },
+    "sources": [
+      "https://www.kirazinmutfagi.com.tr/tarif/kabak-cicegi-dolmasi-mugla",
+      "https://yemek.com/tarif/kabak-cicegi-dolmasi/"
+    ],
+    "confidence": "low",
+    "reason": "Kabak çiçeği dolması kimliği doğru; damla sakızlı Muğla iddiası ve eksik ot baharat listesi güvenli değil."
+  },
+  {
+    "slug": "sakizli-kavun-kasesi-cesme-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Çeşme usulü sakızlı kavun kasesi için güvenilir kaynak bulunmuyor; tarif yaratıcı tatlı kasesi gibi duruyor.",
+      "10 dakika soğutma totalMinutes içinde yok."
+    ],
+    "corrections": {
+      "description": "Sakızlı kavun kasesi, soğuk kavunu yoğurt, bal ve çok az damla sakızıyla hafif bir yaz tatlısına dönüştürür.",
+      "totalMinutes": 18
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/sutlu-tatlilar/sakizli-muhallebi-tarifi",
+      "https://yemek.com/tarif/yogurtlu-meyve-kasesi/"
+    ],
+    "confidence": "low",
+    "reason": "Malzeme uyumu mümkün; ancak Çeşme usulü yerel kimlik ve sakızlı kavun kasesi adı güvenli kaynaklanmıyor."
+  },
+  {
+    "slug": "sakizli-lor-tatlisi-izmir-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "İzmir lor tatlısı genellikle şerbetli veya fırınlanan yapıdayken mevcut tarif sütlü kaşık tatlısı gibi.",
+      "Yerel ad ile tarif formu arasında kimlik uyuşmazlığı var."
+    ],
+    "corrections": {
+      "description": "Sakızlı lor tatlısı, lor peynirini süt ve damla sakızıyla pişiren hafif, sütlü bir kaşık tatlısı uyarlamasıdır."
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/lor-tatlisi-tarifi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/serbetli-tatlilar/lor-tatlisi"
+    ],
+    "confidence": "low",
+    "reason": "Lor tatlısı kaynakları bu kaşık tatlısı formunu güçlü desteklemiyor; ad ve yapı ayrıştırılmalı."
+  },
+  {
+    "slug": "sakizli-lorlu-gozleme-izmir-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Sakızlı lorlu gözleme ve İzmir usulü özel adlandırma güvenilir kaynakla doğrulanmıyor.",
+      "Steps tarif adını tekrar eden scaffold cümleleri içeriyor."
+    ],
+    "corrections": {
+      "description": "Sakızlı lorlu gözleme, lor peyniri ve maydanozlu içe çok az damla sakızı ekleyen gevrek bir tavada hamur işi uyarlamasıdır.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Lor peynirini çatalla ezin, maydanozu ince kıyın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Damla sakızını çok az toz şekerle ezip lorlu harca karıştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Yufkaları iç harçla doldurup kenarlarını sıkıca kapatın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Gözlemeleri orta ateşte iki yüzü kızarana kadar pişirin.", "timerSeconds": 480 },
+        { "stepNumber": 5, "instruction": "Sıcakken dilimleyin; beklerse yufka gevrekliğini kaybeder.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/gozleme/",
+      "https://www.sofra.com.tr/tarif/sutlu-tatlilar/damla-sakizli-muhallebi"
+    ],
+    "confidence": "low",
+    "reason": "Gözleme tekniği doğru olsa da sakızlı lorlu İzmir kimliği kaynaklanmadı; scaffold step dili de temizlenmeli."
+  },
+  {
+    "slug": "sakizli-muhallebi-cesme-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "35 dakikalık soğutma totalMinutes içinde görünmüyor."
+    ],
+    "corrections": {
+      "totalMinutes": 57
+    },
+    "sources": [
+      "https://yemek.com/tarif/damla-sakizli-muhallebi/",
+      "https://www.sofra.com.tr/tarif/sutlu-tatlilar/damla-sakizli-muhallebi"
+    ],
+    "confidence": "high",
+    "reason": "Sakızlı muhallebi malzemeleri ve teknik doğru; tek eksik pasif soğutma süresinin toplam süreye eklenmesi."
+  },
+  {
+    "slug": "saksuka-izmir-usulu",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.nepisirsem.com/tarifler/saksuka",
+      "https://yemek.com/tarif/saksuka/"
+    ],
+    "confidence": "high",
+    "reason": "Patlıcan, kabak ve domates soslu şakşuka yapısı kaynaklarla uyumlu; step süreleri ve alerjen listesi sorunlu görünmüyor."
+  },
+  {
+    "slug": "salade-de-lentilles",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 sirke kullanıyor ama ingredient listesinde sirke yok.",
+      "Step 3 yasak jargon içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kırmızı şarap sirkesi", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Mercimeği 20-25 dakika diri kalacak şekilde haşlayıp süzün.", "timerSeconds": 1500 },
+        { "stepNumber": 2, "instruction": "Arpacık soğanları ince doğrayın, keçi peynirini iri kırıntılara ayırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Dijon hardalı, sirke ve zeytinyağını pürüzsüz bir sos olana kadar çırpın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Ilık mercimeği sosla 1 dakika ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Tuz ve ekşiliği kontrol edip keçi peynirini ekleyin.", "timerSeconds": null },
+        { "stepNumber": 6, "instruction": "Salatayı ılık ya da oda sıcaklığında servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.supertoinette.com/recette/11575/salade-de-lentilles-au-chevre-et-noix.html",
+      "https://www.bbcgoodfood.com/recipes/lentil-goats-cheese-salad"
+    ],
+    "confidence": "high",
+    "reason": "Fransız mercimek salatası mantığı doğru; sirke eksikliği ve jargonlu sos step'i kalite kapısından geçmez."
+  },
+  {
+    "slug": "salade-lyonnaise",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Hardallı sos step'i var ama Dijon hardalı, sirke ve yağ ingredient listesinde yok.",
+      "Step metinleri tarif adını tekrar eden scaffold kalıbı içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Dijon hardalı", "amount": "2", "unit": "çay kaşığı" },
+        { "name": "Şarap sirkesi", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["HARDAL"],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Frisée marulu yıkayıp kurutun, krutonları hazır edin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Pastırmayı tavada çıtırlaşana kadar pişirin.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Yumurtaları poşe kıvamda pişirip süzün.", "timerSeconds": 180 },
+        { "stepNumber": 4, "instruction": "Dijon hardalı, sirke ve zeytinyağını sıcak pastırma yağıyla çırpın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Marulu sosla harmanlayıp pastırma, kruton ve poşe yumurtayla servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.pbs.org/food/recipes/salade-lyonnaise",
+      "https://fabriquedelices.com/recipe/salade-lyonnaise/"
+    ],
+    "confidence": "high",
+    "reason": "Lyonnaise salata kimliği doğru; eksik sos malzemeleri ve tekrar eden step dili düzeltilmeli."
+  },
+  {
+    "slug": "salade-nicoise-fransiz-bistro-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Hardallı sos step'i var ama hardal ve sos yağı ingredient listesinde yok.",
+      "Step metinleri tarif adını tekrar ediyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Dijon hardalı", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Zeytinyağı", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Şarap sirkesi", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["HARDAL"],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Yumurtaları haşlayıp soğuk suya alın.", "timerSeconds": 480 },
+        { "stepNumber": 2, "instruction": "Yeşil fasulyeyi diri kalacak şekilde haşlayıp soğutun.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Domatesleri dilimleyin, zeytinleri ve ton balığını hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Dijon hardalı, sirke ve zeytinyağını kısa çırpıp sos yapın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Malzemeleri tabakta ayrı kümeler halinde dizip sosu servis anında gezdirin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.newyorker.com/culture/kitchen-notes/the-summer-magic-of-a-classic-salade-nicoise",
+      "https://www.theguardian.com/food/2023/mar/26/salade-nicoise-tonnato-sauce-recipe-georgia-levy"
+    ],
+    "confidence": "high",
+    "reason": "Niçoise ana bileşenleri uyumlu; hardallı sos için eksik ingredient ve scaffold step dili düzeltilmeli."
+  },
+  {
+    "slug": "salatalikli-aquavit-fizz-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps tarif adını tekrar eden scaffold cümleleri içeriyor.",
+      "Son step aynı buz erime gerekçesini tekrar ediyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Servis bardağını buzla soğutun.", "timerSeconds": 60 },
+        { "stepNumber": 2, "instruction": "Salatalığı shaker içinde 15 saniye hafifçe ezin.", "timerSeconds": 15 },
+        { "stepNumber": 3, "instruction": "Aquavit ve limon suyunu buzla 8 saniye çalkalayın.", "timerSeconds": 8 },
+        { "stepNumber": 4, "instruction": "Karışımı soğuk bardağa süzüp soda ve taze buzla tamamlayın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "İnce salatalık dilimiyle süsleyip gazı kaçmadan servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.theguardian.com/food/2022/jun/17/cocktail-of-the-week-weve-met-before-recipe-aquavit-gin-elderflower-cucumber",
+      "https://www.foodandwine.com/what-is-aquavit-8584458"
+    ],
+    "confidence": "medium",
+    "reason": "Aquavit ve salatalık kokteylde uyumlu; sorun tarif kimliğinden çok tekrar eden düşük kaliteli step dili."
+  },
+  {
+    "slug": "salatalikli-dereotlu-soguk-corba-isvec-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Salatalık, yoğurt ve dereotlu soğuk çorba kaynaklarla uyumlu ama İsveç usulü özel atıf güçlü desteklenmiyor.",
+      "30 dakika dinlendirme totalMinutes içinde yok."
+    ],
+    "corrections": {
+      "description": "Salatalıklı dereotlu soğuk çorba, salatalığı yoğurt ve dereotuyla birleştirerek serin, temiz aromalı bir yaz kasesi hazırlar.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Salatalığı rendeleyip 5 dakika süzgeçte bekletin.", "timerSeconds": 300 },
+        { "stepNumber": 2, "instruction": "Yoğurt ve suyu pürüzsüz olana kadar çırpın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Süzülen salatalığı yoğurtlu karışıma ekleyin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Dereotunu ince kıyıp çorbaya katın, ot aromasını ezmeyin.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Çorbayı 30 dakika buzdolabında dinlendirin.", "timerSeconds": 1800 },
+        { "stepNumber": 6, "instruction": "Çok soğuk servis edin.", "timerSeconds": null }
+      ],
+      "totalMinutes": 40
+    },
+    "sources": [
+      "https://www.kosher.com/recipe/cold-cucumber-yogurt-and-dill-soup-301",
+      "https://andrewzimmern.com/recipes/andrew-zimmern-cooks-cold-cucumber-soup/"
+    ],
+    "confidence": "low",
+    "reason": "Temel soğuk çorba doğru; İsveç usulü iddiası ve zaman çizelgesi güvenli değil."
+  },
+  {
+    "slug": "salatalikli-elmali-smoothie",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps tarif adını gereksiz tekrar ediyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Salatalık ve yeşil elmayı iri doğrayıp limon suyu ve suyla blender kabına alın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Karışımı 35-60 saniye pürüzsüz olana kadar çekin.", "timerSeconds": 45 },
+        { "stepNumber": 3, "instruction": "Smoothieyi soğuk bardaklara paylaştırıp bekletmeden servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.eatingwell.com/article/7964855/padma-lakshmi-3-ingredient-chilled-cucumber-soup/",
+      "https://www.self.com/story/a-refreshing-dinner-recipe-vietnamese-rice-noodle-salad"
+    ],
+    "confidence": "medium",
+    "reason": "Salatalık ve elma içecek yapısı basit ve tutarlı; sadece tekrar eden step dili temizlenmeli."
+  },
+  {
+    "slug": "salatalikli-maki",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/cucumber-small-rolls-kappa-maki",
+      "https://www.food.com/recipe/kappa-maki-cucumber-sushi-178493"
+    ],
+    "confidence": "high",
+    "reason": "Kappa maki, sushi pirinci, nori ve salatalık yapısı kaynaklarla uyumlu; alerjen ve step akışı makul."
+  },
+  {
+    "slug": "salatalikli-naneli-ayran",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://yemek.com/tarif/naneli-ayran/",
+      "https://www.nefisyemektarifleri.com/naneli-ayran/"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurt, su, salatalık, nane ve tuzdan oluşan ayran yapısı doğru; süre ve süt alerjeni tutarlı."
+  },
+  {
+    "slug": "salatalikli-naneli-pirinc-eristesi-salata-vietnam-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Vietnam usulü pirinç eriştesi salatası için tipik sos balık sosu, sarımsak ve şeker içerir; mevcut liste çok eksik.",
+      "Steps zeytinyağı ve tuzdan söz ediyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Balık sosu", "amount": "1.5", "unit": "yemek kaşığı" },
+        { "name": "Toz şeker", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" }
+      ],
+      "allergens_add": ["DENIZ_URUNLERI"],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Pirinç eriştesini haşlayıp soğuk sudan geçirin.", "timerSeconds": 360 },
+        { "stepNumber": 2, "instruction": "Salatalığı ince şerit kesin, naneyi iri koparın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Limon suyu, balık sosu, şeker ve ezilmiş sarımsağı karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Erişteyi sosla ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Salatalık ve naneyi ekleyip serin servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.self.com/story/a-refreshing-dinner-recipe-vietnamese-rice-noodle-salad",
+      "https://www.bonappetit.com/recipe/banh-cuon"
+    ],
+    "confidence": "medium",
+    "reason": "Pirinç eriştesi, salatalık ve nane doğru yönde; Vietnam kimliği için sos yapısı eksik."
+  },
+  {
+    "slug": "salatalikli-yogurtlu-dereotu-salata-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Mizeria yapısında tuz gerekir, listede yok.",
+      "Steps tarif adını tekrar eden scaffold cümleleri içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Salatalıkları ince dilimleyip tuzla 10 dakika bekletin.", "timerSeconds": 600 },
+        { "stepNumber": 2, "instruction": "Salatalıkların fazla suyunu nazikçe süzün.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Yoğurt, dereotu ve limon suyunu pürüzsüz karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Salatalığı yoğurtlu sosla 1 dakika ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Salatayı soğuk servis edin.", "timerSeconds": null }
+      ],
+      "totalMinutes": 18
+    },
+    "sources": [
+      "https://www.polonist.com/mizeria-polish-cucumber-salad/",
+      "https://www.whats4eats.com/salads/mizeria-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Polonya mizeria kimliği doğru; tuz eksikliği ve scaffold step dili kaliteyi düşürüyor."
+  },
+  {
+    "slug": "salcali-madimakli-bulgur-pilavi-sivas-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 tuz diyor ama ingredient listesinde tuz yok.",
+      "Soğan ve salça kavurma adımı yağsız yazılmış; kaynaklarda yağ kullanımı var."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": ["SUT"],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Madımağı ayıklayıp yıkayın, bulguru süzgeçte bekletin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Soğanı tereyağında 4 dakika kavurup salçayı ekleyin.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Kıyılmış madımağı ekleyip 5 dakika söndürün.", "timerSeconds": 300 },
+        { "stepNumber": 4, "instruction": "Bulgur, sıcak su ve tuzu katıp karıştırın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Kısık ateşte 14 dakika pişirin.", "timerSeconds": 840 },
+        { "stepNumber": 6, "instruction": "10 dakika dinlendirin, bulgur taneleri servis sırasında kırılmasın.", "timerSeconds": 600 }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/madimakli-bulgur-pilavi/",
+      "https://www.showtv.com.tr/programlar/sahne/nursel-ile-ramazan-sofrasi-sivas-mutfagindan-madimak-tarifi/23886"
+    ],
+    "confidence": "medium",
+    "reason": "Madımaklı bulgur pilavı Sivas bağlamıyla makul; yağ ve tuz eksikleri uygulamada belirgin hata yaratır."
+  },
+  {
+    "slug": "salcali-yarma-corbasi-batman-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Yarma ve salçalı çorba yapısı makul ama Batman usulü özel kimlik güvenilir kaynakla desteklenmiyor.",
+      "Soğan salça kavurma adımı yağsız; tuz da listede yok."
+    ],
+    "corrections": {
+      "description": "Salçalı yarma çorbası, dövme buğdayı salça, soğan ve nane ile kaynatarak koyu ve tok bir Anadolu çorbası yapar.",
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/yarma-corbasi-tarifi/",
+      "https://yemek.com/tarif/yarma-corbasi/"
+    ],
+    "confidence": "low",
+    "reason": "Çorba tekniği tutarlı; Batman atfı ve kavurma malzemeleri güvenli seviyede değil."
+  },
+  {
+    "slug": "salep",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://yemek.com/tarif/gercek-salep/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/pratik-yemekler/pratik-yemek-tarifleri/salep-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Süt, salep tozu, şeker ve tarçınla hazırlanan sıcak içecek yapısı kaynaklarla uyumlu; süre ve alerjen doğru."
+  },
+  {
+    "slug": "salep-latte",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 sütle salep ısıtıyor ama timerSeconds eksik.",
+      "Latte yaratıcı uyarlama olduğu için klasik salep kaynağıyla sınırlı destekleniyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Salebi sütle birlikte kısık ateşte 6 dakika çırparak ısıtın.", "timerSeconds": 360 },
+        { "stepNumber": 2, "instruction": "Espressoyu fincana alın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Salepli sütü üstüne döküp tarçın serpin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/gercek-salep/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/pratik-yemekler/pratik-yemek-tarifleri/salep-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Klasik salep tekniği doğru; latte kısmı uyarlama ve ısıtma adımı zamanlanmalı."
+  },
+  {
+    "slug": "salgam-suyu",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.aa.com.tr/tr/sokak-lezzetleri/adanada-kebabin-tescilli-dostu-salgam-suyu/2650468",
+      "https://turkiyeturizmansiklopedisi.com/salgam-suyu"
+    ],
+    "confidence": "high",
+    "reason": "Hazır şalgam suyunu soğuk servis etme akışı, Adana fermente içecek kimliği ve besin değerleri makul görünüyor."
+  },
+  {
+    "slug": "salgamli-narenciye-smash-adana-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Şalgam suyu Adana kaynaklıdır ama votkalı narenciye smash yerel gelenek olarak doğrulanmıyor.",
+      "Steps tarif adını tekrar eden scaffold cümleleri içeriyor."
+    ],
+    "corrections": {
+      "description": "Şalgamlı narenciye smash, şalgam suyunu portakal ve votkayla birleştiren tuzlu ekşi dengeli yaratıcı bir kokteyldir.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bardağı buzla soğutun.", "timerSeconds": 60 },
+        { "stepNumber": 2, "instruction": "Şalgam suyu, portakal suyu ve votkayı buzla 12 saniye çalkalayın.", "timerSeconds": 12 },
+        { "stepNumber": 3, "instruction": "Karışımı soğuk bardaklara süzün.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Bol buzla soğuk servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.aa.com.tr/tr/sokak-lezzetleri/adanada-kebabin-tescilli-dostu-salgam-suyu/2650468",
+      "https://www.bonappetit.com/drinks/article/fizzy-does-it"
+    ],
+    "confidence": "low",
+    "reason": "Şalgam kimliği doğru; Adana usulü votkalı kokteyl iddiası yaratıcı uyarlama olarak etiketlenmeli."
+  },
+  {
+    "slug": "salmorejo-ispanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Salmorejo için kaynaklarda sarımsak ve sirke var; mevcut listede yok.",
+      "45 dakika soğutma totalMinutes içinde görünmüyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Şeri sirkesi", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Domatesleri doğrayın, bayat ekmeği küçük parçalara ayırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Domates, ekmek ve sarımsağı rondoda 1 dakika çekin.", "timerSeconds": 60 },
+        { "stepNumber": 3, "instruction": "Zeytinyağı, şeri sirkesi ve tuzu ekleyip 1 dakika daha pürüzsüz çekin.", "timerSeconds": 60 },
+        { "stepNumber": 4, "instruction": "Çorbayı 45 dakika buzdolabında soğutun, kıvamı sıkılaşsın.", "timerSeconds": 2700 },
+        { "stepNumber": 5, "instruction": "Soyulmuş yumurta ile soğuk servis edin.", "timerSeconds": null },
+        { "stepNumber": 6, "instruction": "Serviste zeytinyağı gezdirin.", "timerSeconds": null }
+      ],
+      "totalMinutes": 57
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/salmorejo-rustic-tomato-soup-olive-oil-bread",
+      "https://www.thecookscook.com/recipes/salmorejo/"
+    ],
+    "confidence": "high",
+    "reason": "Salmorejo kimliği doğru; sarımsak ve sirke eksikliği ile soğutma süresi düzeltilmeli."
+  },
+  {
+    "slug": "salpicao",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Brezilya salpicao için mısır, kuru üzüm ve patates çubuğu tipik; mevcut listede yok.",
+      "Step 3 zeytinyağı, limon ve tuzdan söz ediyor ama ingredient listesi mayonezli sosla uyumlu değil."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Konserve mısır", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Kuru üzüm", "amount": "0.25", "unit": "su bardağı" },
+        { "name": "Patates çubuğu", "amount": "1", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Tavuğu 20 dakika haşlayıp 5 dakika dinlendirin.", "timerSeconds": 1500 },
+        { "stepNumber": 2, "instruction": "Tavuğu didikleyin, havuç ve elmayı ince doğrayın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Tavuk, havuç, elma, mısır ve kuru üzümü mayonezle karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Tuzunu kontrol edip salatayı 10 dakika buzdolabında soğutun.", "timerSeconds": 600 },
+        { "stepNumber": 5, "instruction": "Patates çubuklarını servis anında üstüne serpin, çıtırlığı kaybolmasın.", "timerSeconds": null }
+      ],
+      "totalMinutes": 55
+    },
+    "sources": [
+      "https://www.food.com/recipe/salpicao-brazilian-chicken-salad-215385",
+      "https://www.journeylatinamerica.com/travel-inspiration/recipes/salpicao/"
+    ],
+    "confidence": "high",
+    "reason": "Brezilya tavuk salatası kimliği doğru; tipik garnitürler ve mayonezli sos akışı eksik."
+  },
+  {
+    "slug": "salsa-roja",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/salsa-roja-389544",
+      "https://www.realsimple.com/food-recipes/cooking-tips-techniques/cooking/salsa-styles-recipes"
+    ],
+    "confidence": "high",
+    "reason": "Domates, acı biber, soğan, sarımsak ve kişnişle hazırlanan kırmızı sos kaynaklarla uyumlu; step sayısı sos için yeterli."
+  },
+  {
+    "slug": "sambousek",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps generic scaffold diliyle yazılmış; sambousek yarım ay böreği tekniğini anlatmıyor.",
+      "Kıymalı iç için tuz ve temel baharatlar listede eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Yedi bahar", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, zeytinyağı, yoğurt ve tuzla yumuşak hamur yoğurun.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Soğanı ve kıymayı tavada kavurup baharatla tatlandırın.", "timerSeconds": 480 },
+        { "stepNumber": 3, "instruction": "Hamuru ince açıp yuvarlak parçalar kesin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Kıymalı içi yerleştirip yarım ay kapatın, kenarları bastırın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Börekleri kızgın yağda ya da fırında dışı kızarana kadar pişirin.", "timerSeconds": 600 },
+        { "stepNumber": 6, "instruction": "Kısa dinlendirip sıcak veya ılık servis edin.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://www.simplyleb.com/recipe/beef-sambousek/",
+      "https://hildaskitchenblog.com/recipe/sambousek-lebanese-meat-filled-savory-pies/"
+    ],
+    "confidence": "high",
+    "reason": "Sambousek kimliği doğru; mevcut adımlar gerçek şekillendirme ve kıymalı iç tekniğini taşımıyor."
+  },
+  {
+    "slug": "samgyetang",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Samgyetang için yapışkan pirinç, hünnap ve taze soğan tipiktir; mevcut liste eksik.",
+      "Sadece pirinç yazılması Kore ginsengli tavuk çorbası için düşük doğruluk bırakıyor."
+    ],
+    "corrections": {
+      "ingredients_remove": ["Pirinç"],
+      "ingredients_add": [
+        { "name": "Yapışkan pirinç", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Hünnap", "amount": "3", "unit": "adet" },
+        { "name": "Taze soğan", "amount": "2", "unit": "dal" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Yapışkan pirinci 30 dakika ıslatıp süzün.", "timerSeconds": 1800 },
+        { "stepNumber": 2, "instruction": "Tavuğun içini pirinç, sarımsak, hünnap ve ginsengle doldurun.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Tavuğu ginseng, su ve kalan sarımsakla tencereye alın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Çorbayı 10 dakika güçlü kaynatın.", "timerSeconds": 600 },
+        { "stepNumber": 5, "instruction": "Ateşi kısın ve tavuk yumuşayana kadar 80 dakika pişirin.", "timerSeconds": 4800 },
+        { "stepNumber": 6, "instruction": "Taze soğan, tuz ve karabiberle sıcak servis edin.", "timerSeconds": null }
+      ],
+      "prepMinutes": 55,
+      "totalMinutes": 145
+    },
+    "sources": [
+      "https://www.koreanbapsang.com/samgyetang/",
+      "https://tastecooking.com/recipes/samgyetang-ginseng-chicken-soup/"
+    ],
+    "confidence": "high",
+    "reason": "Kore ginsengli tavuk çorbası doğru; özgün pirinç ve garnitür eksikleri tarif kimliğini zayıflatıyor."
+  },
+  {
+    "slug": "samosa",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Patatesli samosa için tuz ve kimyon gibi temel baharatlar eksik.",
+      "Step sayısı kabul edilebilir ama şekillendirme fazla sıkıştırılmış."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Kimyon", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Kişniş", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, yağ ve tuzla sert bir hamur yoğurup 20 dakika dinlendirin.", "timerSeconds": 1200 },
+        { "stepNumber": 2, "instruction": "Patates ve bezelyeyi garam masala, kimyon ve kişnişle 10 dakika pişirin.", "timerSeconds": 600 },
+        { "stepNumber": 3, "instruction": "Hamuru açıp yarım dairelere kesin, her parçayı koni şeklinde kapatın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Dolguyu konilere paylaştırıp kenarları suyla yapıştırın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Samosaları 6-8 dakika kızartın.", "timerSeconds": 480 }
+      ]
+    },
+    "sources": [
+      "https://www.theguardian.com/food/2023/jun/07/how-to-make-vegetable-samosas-recipe-felicity-cloake",
+      "https://www.epicurious.com/recipes/food/views/potato-samosa-phyllo-triangles-358132"
+    ],
+    "confidence": "high",
+    "reason": "Samosa kimliği doğru; baharat ve şekillendirme detayları eklenmeden tarif eksik kalıyor."
+  },
+  {
+    "slug": "samsades-tatlisi-izmir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Şerbet malzemesi var ama şerbet yapımı steps içinde açık yazılmamış.",
+      "İki ayrı Su ingredient adı kafa karıştırıyor; step açıklaması bunu telafi etmeli."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un ve 220 ml suyla hamur yoğurup 20 dakika dinlendirin.", "timerSeconds": 1200 },
+        { "stepNumber": 2, "instruction": "Toz şeker ve 1.5 su bardağı suyu 8 dakika kaynatıp şerbet hazırlayın.", "timerSeconds": 480 },
+        { "stepNumber": 3, "instruction": "Lor harcını hazırlayıp hamuru ince açın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Hamuru yarım ay biçiminde kapatın, kenarlar açılıp dağılmasın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Samsadesleri 170°C yağda 6 dakika kızartın.", "timerSeconds": 360 },
+        { "stepNumber": 6, "instruction": "Tatlıları şerbete 1 dakika alıp çıkarın.", "timerSeconds": 60 },
+        { "stepNumber": 7, "instruction": "Tarçınla sıcak servis edin.", "timerSeconds": null }
+      ],
+      "cookMinutes": 28,
+      "totalMinutes": 63
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/samsades-tatlisi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/serbetli-tatlilar/samsades-tatlisi"
+    ],
+    "confidence": "medium",
+    "reason": "Samsades kimliği makul; şerbetin yapılmadığı step akışı uygulamada eksik sonuç verir."
+  },
+  {
+    "slug": "samsun-bafra-pidesi-kapali",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/samsun/neyenir/bafra-pidesi",
+      "https://www.nefisyemektarifleri.com/bafra-pidesi/"
+    ],
+    "confidence": "high",
+    "reason": "Kapalı Bafra pidesi, kavrulmuş kıymalı iç ve tereyağlı servis yapısı kaynaklarla uyumlu; süreler tutarlı."
+  },
+  {
+    "slug": "samsun-kaz-tiridi",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Samsun Kaz Tiridi coğrafi işaret kaynaklarında bulgur pilavı ve yufka ekmekle yapılır; mevcut tarif yoğurtlu tirit gibi.",
+      "Bulgur pilavı ana bileşen olarak eksik."
+    ],
+    "corrections": {
+      "ingredients_remove": ["Yoğurt", "Tereyağı"],
+      "ingredients_add": [
+        { "name": "Bulgur", "amount": "1", "unit": "kg" },
+        { "name": "Kaz suyu", "amount": "2", "unit": "lt" },
+        { "name": "Tuz", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "description": "Samsun kaz tiridi, kaz eti, kaz suyuyla pişen bulgur pilavı ve yağlı yufka ekmekle kurulan kış yemeğidir.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kazı temizleyip kısık ateşte 2 saat haşlayın.", "timerSeconds": 7200 },
+        { "stepNumber": 2, "instruction": "Kaz suyunun bir bölümüyle bulguru pilav gibi pişirin.", "timerSeconds": 1500 },
+        { "stepNumber": 3, "instruction": "Yufkaları dilimleyip yağlı kaz suyuna batırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Bulgur pilavını tepsiye yayın, üzerine kaz yağından gezdirin.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Kaz etini parçalara ayırıp pilavın üstüne yerleştirin.", "timerSeconds": null },
+        { "stepNumber": 6, "instruction": "Yağlanmış yufka ile sıcak servis edin.", "timerSeconds": null }
+      ],
+      "prepMinutes": 35,
+      "cookMinutes": 145,
+      "totalMinutes": 180
+    },
+    "sources": [
+      "https://samsun.ktb.gov.tr/TR-280863/samsun-kaz-tiridi.html",
+      "https://www.kulturportali.gov.tr/turkiye/samsun/neyenir/kaz-tiridi-kaz-asma"
+    ],
+    "confidence": "high",
+    "reason": "Coğrafi işaretli Samsun tarifi mevcut içerikten farklı; bulgur pilavı eksikliği kimlik düzeyinde hata."
+  },
+  {
+    "slug": "san-sebastian-cheesecake",
+    "verdict": "CORRECTION",
+    "issues": [
+      "1 saat oda sıcaklığı ve 3 saat soğutma totalMinutes içinde yok."
+    ],
+    "corrections": {
+      "totalMinutes": 295
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/burnt-basque-cheesecake",
+      "https://www.kingarthurbaking.com/recipes/basque-style-cheesecake-tarta-de-queso-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Yanık yüzeyli Bask cheesecake yapısı doğru; uzun dinlendirme ve soğutma toplam süreye eklenmeli."
+  },
+  {
+    "slug": "sanghay-susamli-dan-dan-noodle",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Dan dan noodle Şanghay değil Sichuan kökenli bir yemektir; bölgesel adlandırma yanıltıcı.",
+      "Sos için sirke, sarımsak ve şeker gibi dengeleyici malzemeler eksik."
+    ],
+    "corrections": {
+      "description": "Dan dan noodle, erişteyi acılı susamlı soya sosu, kıymalı üst ve taze soğanla kaplayan güçlü aromalı bir Çin erişte kasesidir.",
+      "ingredients_add": [
+        { "name": "Siyah sirke", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Toz şeker", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.theguardian.com/food/article/2024/sep/04/how-to-make-dan-dan-noodles-recipe-felicity-cloake",
+      "https://www.washingtonpost.com/food/2025/12/11/dan-dan-noodles-salad-hetty-mckinnon/"
+    ],
+    "confidence": "medium",
+    "reason": "Malzeme yönü dan dan noodle ile uyumlu; Şanghay etiketi bölgesel kimlik hatası yaratıyor."
+  },
+  {
+    "slug": "sanghay-taze-soganli-eriste",
+    "verdict": "CORRECTION",
+    "issues": [
+      "0.5 su bardağı yağın tamamı sosa girdiğinde mevcut fat değeri çok düşük kalıyor.",
+      "Kural 10 yüksek yağ ingredient kontrolü porsiyon başı yağı daha yüksek gösterir."
+    ],
+    "corrections": {
+      "averageCalories": 530,
+      "protein": 12,
+      "carbs": 66,
+      "fat": 28
+    },
+    "sources": [
+      "https://tastecooking.com/recipes/scallion-oil-noodles/",
+      "https://tasteasianfood.com/scallion-oil-noodles/"
+    ],
+    "confidence": "high",
+    "reason": "Şanghay taze soğan yağlı erişte kimliği doğru; kullanılan yağ miktarı mevcut makroyu gerçekçi kılmıyor."
+  },
+  {
+    "slug": "sanghay-yer-fistikli-salatalik-noodle",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://www.allrecipes.com/26-cold-noodle-recipes-for-refreshing-dinners-11754833",
+      "https://www.washingtonpost.com/food/2025/12/27/vermicelli-rice-noodle-recipes/"
+    ],
+    "confidence": "medium",
+    "reason": "Soğuk noodle, salatalık, soya ve yer fıstıklı sos yapısı kaynaklardaki soğuk erişte ailesiyle uyumlu; alerjenler doğru."
+  },
+  {
+    "slug": "sanghay-zencefilli-pak-choi-noodle",
+    "verdict": "PASS",
+    "issues": [],
+    "sources": [
+      "https://tasteasianfood.com/scallion-oil-noodles/",
+      "https://cupofyum.com/recipes/shanghai-scallion-oil-noodle"
+    ],
+    "confidence": "medium",
+    "reason": "Çin usulü hızlı noodle, pak choi, zencefil, soya ve susam yağı akışı makul; süre ve alerjenler uyumlu."
+  },
+  {
+    "slug": "sangria",
+    "verdict": "CORRECTION",
+    "issues": [
+      "2 saat buzdolabı bekletme totalMinutes içinde yok.",
+      "Steps tarif adını tekrar eden scaffold dili içeriyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Portakal ve elmayı ince dilimleyip sürahiye alın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Kırmızı şarap, brendi ve tarçın çubuğunu ekleyin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Sürahiyi buzdolabında 2 saat bekletin, meyve aroması şaraba geçsin.", "timerSeconds": 7200 },
+        { "stepNumber": 4, "instruction": "Servis öncesi tadını kontrol edin ve gerekirse buz ekleyin.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Meyve dilimleriyle soğuk servis edin.", "timerSeconds": null }
+      ],
+      "totalMinutes": 135
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/sangria",
+      "https://www.bonappetit.com/test-kitchen/common-mistakes/article/how-to-make-sangria"
+    ],
+    "confidence": "high",
+    "reason": "Sangria bileşenleri doğru; bekletme süresi toplam süreye alınmalı ve tekrar eden step dili temizlenmeli."
+  },
+  {
+    "slug": "sanliurfa-arap-silligi-pekmezli",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ceviz, tereyağı ve kaymak miktarı mevcut fat ve kalori değerlerini düşük bırakıyor."
+    ],
+    "corrections": {
+      "averageCalories": 520,
+      "protein": 8,
+      "carbs": 64,
+      "fat": 27
+    },
+    "sources": [
+      "https://lezzetler.com/tarif-130304",
+      "https://www.kulturportali.gov.tr/turkiye/sanliurfa/neyenir"
+    ],
+    "confidence": "medium",
+    "reason": "Arap şıllığı malzemeleri kaynakla uyumlu; yüksek yağlı ceviz, tereyağı ve kaymak mevcut makroyu düşük gösteriyor."
+  },
+  {
+    "slug": "sanliurfa-borani-pazili",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Şanlıurfa Pencer Boranısı coğrafi işaret kaynaklarında kuzu eti, pazı sapı, nohut, börülce ve kızarmış bulgur köftesi içerir.",
+      "Mevcut tarifte kuzu eti, börülce ve isot yok; Urfa kimliği eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuzu kuşbaşı", "amount": "400", "unit": "gr" },
+        { "name": "Haşlanmış börülce", "amount": "1", "unit": "su bardağı" },
+        { "name": "İsot", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "description": "Şanlıurfa boranisi, pazı sapı, kuzu eti, nohut, börülce ve bulgur köftesiyle kurulan zahmetli bir yöresel yemektir.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bulguru sıcak suyla şişirin.", "timerSeconds": 600 },
+        { "stepNumber": 2, "instruction": "Bulgur, un, isot ve tuzla küçük köfteler yoğurup yuvarlayın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Kuzu etini tencerede suyunu çekene kadar kavurun.", "timerSeconds": 600 },
+        { "stepNumber": 4, "instruction": "Doğranmış pazı sapı, nohut ve börülceyi ekleyip yumuşayana kadar pişirin.", "timerSeconds": 1200 },
+        { "stepNumber": 5, "instruction": "Bulgur köftelerini ayrı tavada kızartıp yemeğe ekleyin.", "timerSeconds": 480 },
+        { "stepNumber": 6, "instruction": "Sarımsaklı yoğurt ve biberli yağla servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/sanliurfa/neyenir/urfa--sanliurfa--pencer--pazi--boranisi",
+      "https://www.lezzet.com.tr/yemek-tarifleri/turkiye-turu/guneydogu-anadolu-yemekleri/borani-urfa"
+    ],
+    "confidence": "high",
+    "reason": "Coğrafi işaretli borani yapısı mevcut tariften belirgin farklı; eksik et ve bakliyat kimlik hatası."
+  },
+  {
+    "slug": "sanliurfa-isotlu-ayran-asi",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Şanlıurfa isotlu ayran aşı özel adı güvenilir kaynakla desteklenmiyor.",
+      "Step 5 yağda çevirme diyor ama ingredient listesinde yağ yok."
+    ],
+    "corrections": {
+      "description": "İsotlu ayran aşı, buğday ve nohudu yoğurtla buluşturup isotlu yağla bitiren serin ama doyurucu bir çorba uyarlamasıdır.",
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/ayran-asi-corbasi/",
+      "https://www.kulturportali.gov.tr/turkiye/genel/neyenir/urfa-yumurtali-kofte"
+    ],
+    "confidence": "low",
+    "reason": "Ayran aşı ve isot ayrı ayrı makul; Şanlıurfa isotlu ayran aşı adı ve yağ eksikliği güvenli değil."
+  },
+  {
+    "slug": "sanliurfa-patlicanli-kazan-kebabi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Şanlıurfa kazan kebabı kaynaklarında sarımsak, pul biber veya isot ve yağ bulunur; mevcut listede eksik.",
+      "Step 4 salçalı su diyor ama yağ bileşeni yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "3", "unit": "diş" },
+        { "name": "İsot", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sadeyağ", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patlıcanları kalın halka kesip ortalarını hafifçe açın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Kıyma, rendelenmiş soğan, sarımsak, isot, tuz ve karabiberi yoğurun.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Patlıcan halkalarının arasına kıymalı harç yerleştirin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Domates, biber, salçalı su ve sadeyağı tencereye ekleyin.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Kapağı kapalı 40-45 dakika patlıcan yumuşayana kadar pişirin.", "timerSeconds": 2550 }
+      ],
+      "averageCalories": 470,
+      "protein": 24,
+      "carbs": 24,
+      "fat": 31
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/sanliurfa/neyenir/kazan-kebabi",
+      "https://afiyetle.com/tarif/kazan-kebabi-sanliurfa-yemekleri"
+    ],
+    "confidence": "high",
+    "reason": "Kazan kebabı kimliği doğru; Şanlıurfa lezzetini taşıyan sarımsak, isot ve yağ eksik kalmış."
+  },
+  {
+    "slug": "santiago-misirli-pastel-de-choclo",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Pastel de choclo Şili yemeği; cuisine alanı mx olduğu için ülke kodu yanlış.",
+      "Tarifle cuisine listesinde Şili kodu olmadığı için doğrudan güvenli cuisine correction yazılamıyor.",
+      "Klasik tarifte çoğunlukla kuru üzüm ve bazen tavuk da bulunur; mevcut içerik sadeleştirilmiş."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru üzüm", "amount": "0.25", "unit": "su bardağı" },
+        { "name": "Kimyon", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "description": "Şili usulü pastel de choclo, kıymalı harcı tatlı mısır püresi, zeytin, yumurta ve hafif baharatla kaplayan fırın yemeğidir."
+    },
+    "sources": [
+      "https://www.marcachile.cl/en/cocina-chilena/pastel-de-choclo/",
+      "https://www.whats4eats.com/meats/pastel-de-choclo-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Yemek kimliği Şili ile net; mevcut mx cuisine kodu yapısal veri hatasıdır ve cuisine enum genişletmesi gerekir."
+  }
+]

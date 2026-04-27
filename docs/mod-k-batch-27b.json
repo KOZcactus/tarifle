@@ -1,0 +1,1007 @@
+[
+  {
+    "slug": "reyhanli-lorlu-pilav-mardin-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Mardin atfı güvenilir kaynakla desteklenmiyor; tarif daha çok reyhanlı ve lorlu yaratıcı pilav varyantı gibi duruyor.",
+      "Step 3 tuz kullanıyor ama ingredient listesinde tuz yok."
+    ],
+    "corrections": {
+      "description": "Reyhanlı lorlu pirinç pilavı, pirinci tereyağı, lor ve taze reyhanla buluşturan yumuşak bir ana yemek çıkarır.",
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/otlu-pilav/",
+      "https://www.knorr.com/tr/r/domatesli-ve-lor-peynirli-pilav-tarifi.html/112623"
+    ],
+    "confidence": "low",
+    "reason": "Reyhanlı pilav ve lorlu pilav tekniği ayrı ayrı makul; Mardin kimliği ve bu tam kombinasyon güvenli doğrulanamadı."
+  },
+  {
+    "slug": "reyhanli-lorlu-yumurta-ekmegi-hatay-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Hatay biberli ekmek kaynakları lor, çökelek ve reyhanı destekliyor ama yumurtalı bayat ekmek formunu desteklemiyor.",
+      "Step metinleri tarif adını tekrar eden scaffold dil taşıyor."
+    ],
+    "corrections": {
+      "description": "Reyhanlı lorlu yumurta ekmeği, bayat ekmeği yumurtalı karışım ve reyhan kokulu lorla buluşturarak hızlı bir sabah tabağı kurar.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Yumurta, süt ve tuzu geniş kasede pürüzsüz çırpın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Loru ince kıyılmış reyhanla karıştırıp kenarda bekletin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Ekmek dilimlerini yumurtalı karışıma batırıp fazla sıvısını süzdürün.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Ekmekleri orta ateşte iki yüzü kızarana kadar pişirin.", "timerSeconds": 360 },
+        { "stepNumber": 5, "instruction": "Lorlu harcı sıcak ekmeklerin üzerine paylaştırıp bekletmeden servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://ye-mek.net/tarif/yumurtali-ekmek",
+      "https://www.hataydanaldim.com/urun/biberli-ekmek/"
+    ],
+    "confidence": "low",
+    "reason": "Yumurtalı ekmek yapısı doğru, Hatay katıklı ekmek bağlantısı ise bu tavada kahvaltı formu için yeterli değil."
+  },
+  {
+    "slug": "reyhanli-pisco-cooler-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step metinleri tarif adını gereksiz tekrar ediyor.",
+      "Kokteyl akışı pisco, lime, reyhan ve soda için daha sade yazılmalı."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Servis bardaklarını buzla doldurup soğutun.", "timerSeconds": 60 },
+        { "stepNumber": 2, "instruction": "Reyhan yapraklarını lime suyuyla hafifçe ezin, yapraklar acılaşmasın.", "timerSeconds": 10 },
+        { "stepNumber": 3, "instruction": "Piscoyu ekleyip karışımı buzla kısa süre çalkalayın.", "timerSeconds": 8 },
+        { "stepNumber": 4, "instruction": "Bardağa süzüp soda ve taze buzla tamamlayın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Reyhan yaprağıyla süsleyip gazı kaçmadan servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.wineenthusiast.com/recipe/sierpe-pisco-cooler/",
+      "https://www.sunset.com/recipe/recipe-orange-basil-cooler"
+    ],
+    "confidence": "medium",
+    "reason": "Pisco cooler ve basil cooler teknikleri bu uyarlamayı destekliyor; asıl sorun tekrar eden, düşük değerli step dili."
+  },
+  {
+    "slug": "reyhanli-seftali-kompostosu-izmir-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Şeftali kompostosu kaynaklarla uyumlu, ancak İzmir usulü ve reyhanlı özel adlandırma güçlü kaynakla desteklenmiyor.",
+      "Step 1 belirsiz ve tarif adını tekrar ediyor."
+    ],
+    "corrections": {
+      "description": "Reyhanlı şeftali kompostosu, şeftaliyi reyhan kokusuyla buluşturan hafif tatlı ve ferah bir içecek yapar.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Şeftalileri soyup iri dilimleyin; reyhan yapraklarını yıkayıp süzün.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Su ve şekeri kaynatıp şeftalileri yumuşayana kadar pişirin.", "timerSeconds": 600 },
+        { "stepNumber": 3, "instruction": "Ocağı kapatıp reyhanı ekleyin, kompostoyu süzüp soğuk servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/seftali-kompostosu/",
+      "https://www.yemektekeyifvar.com/komposto-tarifleri/seftali-kompostosu-tarifi"
+    ],
+    "confidence": "low",
+    "reason": "Komposto tekniği doğru; İzmir ve reyhanlı özel varyant iddiası kaynaklarda güvenli biçimde doğrulanamadı."
+  },
+  {
+    "slug": "reyhanli-sumak-serbeti-diyarbakir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 şekerden söz ediyor ama ingredient listesinde şeker yok.",
+      "Diyarbakır sumak suyu ve reyhan şerbeti bağlantısı makul, birleşik tarif için kaynaklar dolaylı kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Toz şeker", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Sumak suyu, toz şeker ve suyu sürahide karıştırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Reyhan yapraklarını ekleyip renk ve koku suya geçene kadar bekletin.", "timerSeconds": 600 },
+        { "stepNumber": 3, "instruction": "Şerbeti süzüp bol buzla soğuk servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.diyarbakir.net/diyarbakircity/diyarbakirin-meshur-reyhan-serbeti/2732",
+      "https://yemek.com/tarif/sumak-serbeti/"
+    ],
+    "confidence": "medium",
+    "reason": "Diyarbakır reyhan şerbeti ve sumak şerbeti ayrı kaynaklarda var; eksik şeker ve belirsiz adımlar düzeltilmeli."
+  },
+  {
+    "slug": "reyhanli-tavuklu-yogurt-corbasi-osmaniye-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Osmaniye atfı güçlü kaynakla desteklenmiyor.",
+      "Step 1, 3 ve 6 tekrar eden scaffold kapanışları içeriyor."
+    ],
+    "corrections": {
+      "description": "Reyhanlı tavuklu yoğurt çorbası, didik tavuk ve yoğurdu reyhanla birleştirerek ferah ve proteinli bir kase çıkarır.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Yoğurt ve unu ayrı kapta pürüzsüz çırpın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Su ve didik tavuk etini tencerede ısıtın.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Sıcak çorba suyundan yoğurda azar azar ekleyerek terbiyeyi ılıtın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Terbiyeyi tencereye yavaşça ekleyip kısık ateşte pişirin.", "timerSeconds": 480 },
+        { "stepNumber": 5, "instruction": "Reyhanı son anda ekleyin, kaynarsa kokusu solar.", "timerSeconds": null },
+        { "stepNumber": 6, "instruction": "Tuzunu kontrol edip çorbayı sıcak kaselere paylaştırın.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yogurtlu-tavuk-corbasi/11936",
+      "https://www.makra-kuchnie-swiata.com/pl/en/recipes/tavuklu-yogurt-corbasi-delicate-yogurt-chicken-soup-recipe"
+    ],
+    "confidence": "medium",
+    "reason": "Yoğurtlu tavuk çorbası tekniği doğru; Osmaniye ve reyhanlı özel kimlik zayıf, scaffold step dili temizlenmeli."
+  },
+  {
+    "slug": "rfissa",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Rfissa için temel aromatiklerden soğan, zencefil, ras el hanout ve çemen otu ingredient listesinde yok.",
+      "Kaynaklarda fenugreek rfissa için ayırt edici unsur; mevcut listede eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "2", "unit": "adet" },
+        { "name": "Zencefil", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Ras el hanout", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Çemen otu tohumu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://tasteofmaroc.com/moroccan-chicken-rfissa/",
+      "https://www.infostourismemaroc.com/en/moroccan-cuisine/chicken-rfissa-quail-eggs"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, mercimek ve msemen omurgası doğru; rfissa kimliği için temel baharat ve soğan eksikleri tamamlanmalı."
+  },
+  {
+    "slug": "rhein-sauerbraten-dana",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step en az 24 saat marinasyon söylüyor, totalMinutes bu pasif beklemeyi ve uzun pişirmeyi tam karşılamıyor.",
+      "Rheinischer Sauerbraten kaynaklarında marinat ve tatlı ekşi sos uyumlu."
+    ],
+    "corrections": {
+      "totalMinutes": 1655,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Sirke, su, soğan, havuç, defne ve karanfili kaynatıp tamamen soğutun.", "timerSeconds": 600 },
+        { "stepNumber": 2, "instruction": "Dana etini soğuk marinada en az 24 saat buzdolabında bekletin.", "timerSeconds": 86400 },
+        { "stepNumber": 3, "instruction": "Eti marinattan çıkarıp kurulayın, marinatı ve sebzeleri saklayın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Eti tereyağında her yüzü renk alana kadar mühürleyin.", "timerSeconds": 600 },
+        { "stepNumber": 5, "instruction": "Marinat sebzeleri, süzülmüş marinat ve et suyunu tencereye ekleyin.", "timerSeconds": null },
+        { "stepNumber": 6, "instruction": "Eti kapağı kapalı 2,5 saat kısık ateşte pişirin.", "timerSeconds": 9000 },
+        { "stepNumber": 7, "instruction": "Un ve ufalanmış zencefilli bisküviyle sosu 10 dakika koyulaştırın.", "timerSeconds": 600 },
+        { "stepNumber": 8, "instruction": "Eti dilimleyip koyu sosuyla sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.koeln.de/leben/ll/koelsche-rezepte/rheinischer-sauerbraten-soorbrode/",
+      "https://www.sauerbraterei.de/rezepte/rheinischer-sauerbraten-original"
+    ],
+    "confidence": "high",
+    "reason": "Kimlik ve malzeme hattı doğru; bekleme süresi timeline hesabına dahil edilmediği için totalMinutes düzeltilmeli."
+  },
+  {
+    "slug": "rhubarb-yogurt-fool-ingiliz-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ravent karışımının soğuması step içinde var ama totalMinutes pasif soğutmayı içermiyor.",
+      "Fool kaynaklarında yoğurt veya krema ile soğuk katlama tekniği uyumlu."
+    ],
+    "corrections": {
+      "totalMinutes": 38,
+      "tags_remove": ["30-dakika-alti"],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Ravendi küçük doğrayıp şekerle tencereye alın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Ravendi yumuşayıp suyunu bırakana kadar pişirin.", "timerSeconds": 360 },
+        { "stepNumber": 3, "instruction": "Ravent kompostosunu yoğurdu kesmeyecek kadar soğutun.", "timerSeconds": 1200 },
+        { "stepNumber": 4, "instruction": "Yoğurdu raventle mermer görünümünde nazikçe katlayın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Tatlıyı kuplara paylaştırıp soğuk servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/rhubarb-fool",
+      "https://www.epicurious.com/recipes/food/views/rhubarb-fool-354959"
+    ],
+    "confidence": "high",
+    "reason": "Ravent, şeker ve yoğurtlu fool yapısı doğru; pasif soğuma süresi toplam zamandan eksik kalmış."
+  },
+  {
+    "slug": "ribollita",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 havuç ve kereviz söylüyor ama ingredient listesinde yok.",
+      "Ribollita kaynaklarında soffritto sebzeleri ve zeytinyağı temel unsur."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Havuç", "amount": "1", "unit": "adet" },
+        { "name": "Kereviz sapı", "amount": "1", "unit": "dal" },
+        { "name": "Zeytinyağı", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/simple-ribollita",
+      "https://www.theguardian.com/lifeandstyle/2016/nov/25/winter-vegetable-soup-recipes-ribollita-squash-and-pasta-thomasina-miers"
+    ],
+    "confidence": "high",
+    "reason": "Kara lahana, fasulye ve bayat ekmek doğru; stepte geçen soffritto malzemeleri ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "ricottali-misir-boregi-avustralya-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Avustralya usulü ricottalı mısır böreği adı güvenilir kaynakla desteklenmiyor.",
+      "Step metinleri tarif adını tekrar eden scaffold dili içeriyor."
+    ],
+    "corrections": {
+      "description": "Ricottalı mısır böreği, taze mısırı ricotta ve ince hamurla buluşturan nemli ve hafif tatlı bir brunch dilimi çıkarır.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Milföyleri kalıba yerleştirip tabanda boşluk kalmayacak şekilde bastırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Ricotta, yumurta, mısır ve karabiberi dengeli bir harç olana kadar karıştırın.", "timerSeconds": 60 },
+        { "stepNumber": 3, "instruction": "Harcı hamurun içine yayın ve yüzeyi düzeltin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Böreği hamur kızarıp iç harç sabitlenene kadar pişirin.", "timerSeconds": 1440 },
+        { "stepNumber": 5, "instruction": "Dilimlemeden önce kısa süre ılıtıp servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://food52.com/recipes/72804-tomato-and-corn-tart",
+      "https://www.sbs.com.au/food/recipe/rosss-ricotta-tart/tk1p9pftn"
+    ],
+    "confidence": "low",
+    "reason": "Ricotta ve mısır tart tekniği makul; Avustralya kimliği ve börek adı güvenilir biçimde doğrulanamadı."
+  },
+  {
+    "slug": "rio-feijoada-completa",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Kuru fasulye için bir gece ıslatma stepte var ama totalMinutes içinde görünmüyor.",
+      "Feijoada completa kaynakları siyah fasulye, domuz eti, sosis, defne, pirinç ve portakal hattını destekliyor."
+    ],
+    "corrections": {
+      "totalMinutes": 895,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Siyah fasulyeyi bir gece suda bekletip süzün.", "timerSeconds": 43200 },
+        { "stepNumber": 2, "instruction": "Domuz eti ve sosisi iri parçalar halinde doğrayın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Soğan ve sarımsağı tencerede kokusu çıkana kadar kavurun.", "timerSeconds": 360 },
+        { "stepNumber": 4, "instruction": "Etleri ekleyip yüzeyleri renk alana kadar çevirin.", "timerSeconds": 480 },
+        { "stepNumber": 5, "instruction": "Fasulye, defne ve suyu ekleyip ağır ateşte pişirin.", "timerSeconds": 7200 },
+        { "stepNumber": 6, "instruction": "Pirinç ve portakal dilimleriyle sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.bigoven.com/recipe/feijoada-completa/2825271",
+      "https://www.food.com/recipe/feijoada-brazilian-black-beans-with-smoked-meats-456811"
+    ],
+    "confidence": "high",
+    "reason": "Feijoada kimliği doğru; kuru fasulye ıslatma süresi timeline toplamından ayrı kalmamalı."
+  },
+  {
+    "slug": "rio-hizli-feijoada",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 sıcak su kullanıyor ama ingredient listesinde su yok.",
+      "Hızlı feijoada uyarlaması haşlanmış siyah fasulye ve tütsülü etle makul."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "1.5", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.theguardian.com/lifeandstyle/2014/jun/25/jack-monroe-pork-black-bean-feijoada-recipe",
+      "https://www.foodfidelity.com/brazilian-feijoada-recipe-black-bean-stew-with-pork/"
+    ],
+    "confidence": "high",
+    "reason": "Kısa süreli feijoada uyarlaması kaynaklarla uyumlu; tenceredeki sıvı ve tuz ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "rio-moqueca-balik",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Balık marinasyonu ve sos için sarımsak ile tuz kaynaklarda temel, mevcut listede yok.",
+      "Moqueca kimliği balık, lime, biber, domates, hindistan cevizi sütü ve palm yağıyla uyumlu."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.saveur.com/moqueca-brazilian-fish-stew-recipe/",
+      "https://www.whats4eats.com/fish/moqueca-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Moqueca omurgası doğru; kaynaklarda yer alan tuz ve sarımsak eksikleri tamamlanmalı."
+  },
+  {
+    "slug": "rio-yesil-muzlu-feijao-corbasi",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Feijão com banana verde Brezilya kaynaklarında var, ancak siyah fasulyeli Rio çorbası kimliği güvenli doğrulanmıyor.",
+      "Step 4 sıcak su diyor ama ingredient listesinde su yok."
+    ],
+    "corrections": {
+      "description": "Yeşil muzlu feijão çorbası, fasulyeyi yeşil muz, sarımsak ve kişnişle yoğun bir kaseye dönüştürür.",
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "3", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.deline.com.br/receitas/feijao-com-banana-verde/12/",
+      "https://receitas.globo.com/tipos-de-prato/caldos-e-sopas/sopa-de-banana-verde-4d98c349e463b90796001354.ghtml"
+    ],
+    "confidence": "low",
+    "reason": "Yeşil muz ve fasulye fikri Brezilya hattında mümkün; Rio siyah fasulye çorbası iddiası zayıf kalıyor."
+  },
+  {
+    "slug": "risgrynsgrot",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 su kullanıyor ama ingredient listesinde su yok.",
+      "Klasik risgrynsgröt kaynaklarında pirinç önce suda, sonra sütle pişirilir ve tereyağıyla tamamlanabilir."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Su", "amount": "1.25", "unit": "su bardağı" },
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.swedishfood.com/desserts/rice-pudding",
+      "https://food52.com/recipes/90725-swedish-rice-pudding-risgrynsgrt"
+    ],
+    "confidence": "high",
+    "reason": "Pirinç, süt, şeker ve tarçın doğru; başlangıç suyu, az tuz ve tereyağı ingredient listesinde eksik."
+  },
+  {
+    "slug": "rize-fasulye-tursulu-kavurma",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/rize-usulu-fasulye-tursusu-kavurmasi/",
+      "https://www.kirazinmutfagi.com.tr/tarif/fasulye-tursusu-kavurmasi-rize"
+    ],
+    "confidence": "high",
+    "reason": "Fasulye turşusu, soğan, yağ ve kısa kavurma hattı Rize kaynaklarıyla uyumlu; süre ve alerjenlerde belirgin sorun yok."
+  },
+  {
+    "slug": "rize-hamsikoli-firini",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Hamsikoli kaynaklarında soğan, tuz ve karabiber yaygın; mevcut listede bu temel lezzetlendiriciler yok.",
+      "Step 3 tuz kullanıyor ama ingredient listesinde tuz yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/hamsikoli-tarifi-t-3497",
+      "https://www.sabriulkerfoundation.org/tr/projelerimiz/yemekte-denge-mutfagi/pazili-hamsikoli"
+    ],
+    "confidence": "high",
+    "reason": "Hamsi, mısır unu, pazı ve yeşillik hattı doğru; kaynaklardaki soğan ve baharat eksikleri tamamlanmalı."
+  },
+  {
+    "slug": "rize-hamsili-pazi-diblesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 sıcak su kullanıyor ama ingredient listesinde su yok.",
+      "Rize kaynakları hamsi, pazı veya prasa ve pirinçli hamsili pilav hattını destekliyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "1.5", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://rize.tarimorman.gov.tr/Menu/14/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/hamsili-pazili-pilav/297"
+    ],
+    "confidence": "medium",
+    "reason": "Hamsili pazılı pirinç yapısı Rize kültür kaynaklarıyla uyumlu; pişirme sıvısı ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "rize-hamsili-pazi-kayganasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 ve 6 tavada yağ kullanıyor ama ingredient listesinde yağ yok.",
+      "Step 4 az su diyor, su ingredient listesinde yok; ilk step scaffold dili taşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Su", "amount": "0.25", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Hamsileri kağıt havluda kurutup pazıyı ve taze soğanı ince kıyın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Yumurta, mısır unu, su ve tuzu pürüzsüz bir harç olana kadar çırpın.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Hamsi, pazı ve taze soğanı harca nazikçe katın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Tavayı yağlayıp orta ateşte ısıtın.", "timerSeconds": 120 },
+        { "stepNumber": 5, "instruction": "Harcı tavaya yayıp alt yüzü kızarana kadar pişirin.", "timerSeconds": 360 },
+        { "stepNumber": 6, "instruction": "Kayganayı çevirip diğer yüzünü de kızartın ve sıcak servis edin.", "timerSeconds": 300 }
+      ]
+    },
+    "sources": [
+      "https://rize.tarimorman.gov.tr/Menu/14/",
+      "https://www.sabriulkerfoundation.org/tr/projelerimiz/yemekte-denge-mutfagi/pazili-hamsikoli"
+    ],
+    "confidence": "medium",
+    "reason": "Hamsi çığırtası ve pazılı hamsi hamuru kaynakla uyumlu; yağ, su ve scaffold step sorunları düzeltilmeli."
+  },
+  {
+    "slug": "rize-pepecura-uzum-tatlisi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 iki saat soğutma içeriyor ama totalMinutes 30 dakika görünüyor.",
+      "Pepeçura kaynaklarında kokulu üzüm, mısır unu, nişasta veya un ve soğuk servis uyumlu."
+    ],
+    "corrections": {
+      "totalMinutes": 150,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://rize.net.tr/pepecura-tarifi/",
+      "https://www.tarimtv.gov.tr/tr/video-detay/rize-nin-favori-tatlisi-pepecura-10526"
+    ],
+    "confidence": "high",
+    "reason": "Tarif kimliği doğru; soğutma beklemesi toplam süreden ve 30 dakika altı etiketinden ayrışıyor."
+  },
+  {
+    "slug": "rize-telli-muhlama",
+    "verdict": "PASS",
+    "sources": [
+      "https://rize.ktb.gov.tr/TR-256617/rize-muhlamasi.html",
+      "https://www.evvelcevap.com/muhlama-rize-usulu-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Tereyağı, mısır unu, kolot peyniri, su ve tuz Rize muhlaması kaynaklarıyla uyumlu; süre ve alerjenler makul."
+  },
+  {
+    "slug": "rogan-josh",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Rogan josh için zencefil, rezene, yağ, su ve tuz gibi temel bileşenler listede yok.",
+      "Step 3 baharatları çoğul söylüyor ama ingredient listesinde yalnızca Keşmir biberi var."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Zencefil tozu", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Rezene tohumu tozu", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Garam masala", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Sıcak su", "amount": "2", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.whiskaffair.com/lamb-rogan-josh/",
+      "https://zaffaron.com/recipe/authentic-kashmiri-lamb-rogan-josh"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu, yoğurt ve Keşmir biberi doğru omurga; rogan josh kimliği için baharat ve pişirme sıvısı eksikleri giderilmeli."
+  },
+  {
+    "slug": "roka-salatasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps 1 ve 2 aynı kurutma bilgisini tekrar ediyor.",
+      "Step 5 bekletmeden servis derken timerSeconds 600 verilmiş, bu davranışla çelişiyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Rokayı yıkayıp tamamen kurutun ve sert saplarını ayıklayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Cherry domatesleri ikiye bölün, parmesanı ince rendeleyin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Zeytinyağı, limon suyu ve tuzu küçük kasede çırpın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Roka ve domatesi sosla ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Parmesanı serpip salatayı bekletmeden servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/roka-salatasi/",
+      "https://www.nefisyemektarifleri.com/roka-salatasi/"
+    ],
+    "confidence": "high",
+    "reason": "Malzeme ve salata kimliği doğru; tekrar eden adımlar ve bekletmeden servis timer çelişkisi temizlenmeli."
+  },
+  {
+    "slug": "roka-zeytin-portakal-salatasi-ispanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 limon suyu ve tuz kullanıyor ama ingredient listesinde yok.",
+      "Step metinleri tarif adını tekrar eden scaffold dil içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Rokayı yıkayıp kurulayın ve sert saplarını ayıklayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Portakalı zarlarından ayırıp dilimleyin, kırmızı soğanı ince kesin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Zeytinyağı, limon suyu ve tuzu küçük kasede çırpın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Roka, portakal, zeytin ve soğanı sosla ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Salatayı geniş tabağa yayıp hemen servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.thespruceeats.com/spanish-orange-salad-recipe-3083489",
+      "https://www.seriouseats.com/ensalada-malaguena-salt-cod-orange-olive-salad-recipe"
+    ],
+    "confidence": "medium",
+    "reason": "İspanyol portakal ve zeytin salatası hattı makul; eksik sos malzemeleri ve scaffold step dili düzeltilmeli."
+  },
+  {
+    "slug": "roma-cacio-e-pepe-klasik",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 tuzlu kaynar su diyor ama ingredient listesinde tuz yok.",
+      "Klasik cacio e pepe kaynakları pecorino, karabiber ve nişastalı makarna suyu tekniğini destekliyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "tatlı kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/cacio-e-pepe",
+      "https://www.theguardian.com/lifeandstyle/2018/feb/13/cacio-e-pepe-recipe-three-ingredient-pecorino-romano-pepper"
+    ],
+    "confidence": "high",
+    "reason": "Cacio e pepe tekniği doğru; makarna haşlama tuzu ingredient listesinde görünmediği için küçük düzeltme gerekli."
+  },
+  {
+    "slug": "roma-enginarli-farro-salatasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://shop.woodlandfoods.com/recipes/farro-salad-with-artichokes-arugula-and-parmesan",
+      "https://www.themediterraneandish.com/farro-salad-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Farro, enginar, roka, parmesan, limon ve zeytinyağı bileşimi kaynaklarla uyumlu; süre ve alerjenler makul."
+  },
+  {
+    "slug": "rome-saltimbocca-tavuklu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.themediterraneandish.com/chicken-saltimbocca/",
+      "https://www.thechoppingblock.com/recipe-chicken-saltimbocca"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuklu saltimbocca uyarlaması, adaçayı, ince et, un ve hızlı tava sosu kaynaklarıyla uyumlu; pastırma yerel ikame olarak açık."
+  },
+  {
+    "slug": "romesco-nohut-kase-ispanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 sarımsak ve sirke kullanıyor ama ingredient listesinde yok.",
+      "Step 5 maydanoz ve limonla servis diyor, bu malzemeler listede yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Sirke", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" },
+        { "name": "Limon", "amount": "0.5", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/romesco-sauce-recipe/",
+      "https://www.chilipeppermadness.com/recipes/romesco-sauce/"
+    ],
+    "confidence": "high",
+    "reason": "Romesco ve nohut kasesi fikri tutarlı; stepte kullanılan sarımsak, sirke ve servis öğeleri ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "romesco-sos",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bonappetit.com/recipe/romesco-sauce",
+      "https://www.themediterraneandish.com/romesco-sauce-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Köz biber, domates, badem, ekmek, sarımsak, zeytinyağı ve sirke klasik romesco kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "romlu-ananas-soda-vietnam-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Ananaslı rom soda kokteyli makul olsa da Vietnam usulü iddiası güvenilir kaynakla desteklenmiyor.",
+      "Step metinleri tarif adını tekrar eden scaffold dili içeriyor."
+    ],
+    "corrections": {
+      "description": "Romlu ananas soda, romu ananas suyu ve soda ile buluşturarak hafif ve tropik bir kokteyl yapar.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Rom, ananas suyu, soda ve buzu ölçüp servis sırasına hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Bardağı taze buzla doldurun.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Rom ve ananas suyunu buzun üstüne ekleyin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Sodayla tamamlayıp kısa karıştırın ve hemen servis edin.", "timerSeconds": 5 }
+      ]
+    },
+    "sources": [
+      "https://www.pbs.org/food/recipes/pineapple-pisco-coconut-cooler",
+      "https://www.greygoose.com/cocktails/grey-goose-vodka/basil-watermelon-cooler.html"
+    ],
+    "confidence": "low",
+    "reason": "Tropik soda kokteyli tekniği anlaşılır; Vietnam kimliği ve özgül tarif adı güvenli doğrulanamadı."
+  },
+  {
+    "slug": "rommegrot",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Rømmegrøt Norveç yemeği; mevcut cuisine kodu se İsveç gösteriyor ve Norveç kodu enumda yok.",
+      "Step metinleri scaffold dili taşıyor."
+    ],
+    "corrections": {
+      "description": "Rømmegrøt, ekşi krema ve unla pişen, üzerine tarçın serpilen sıcak bir İskandinav kahvaltısıdır.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Ekşi krema, un, süt ve tarçını ölçüp ocağa yakın hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Ekşi kremayı tencerede hafifçe kaynatın.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Unu eleyerek ekleyin ve topak kalmayacak şekilde çırpın.", "timerSeconds": 180 },
+        { "stepNumber": 4, "instruction": "Sütü azar azar ekleyip koyu lapa kıvamına gelene kadar pişirin.", "timerSeconds": 480 },
+        { "stepNumber": 5, "instruction": "Tarçınla tamamlayıp sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.visitnorway.com/things-to-do/food-and-drink/the-norwegian-cookbook/rommegrot/",
+      "https://www.sofn.com/norwegian_culture/featured_recipes/rommegrot/"
+    ],
+    "confidence": "low",
+    "reason": "Tarif içeriği Norveç rømmegrøt kaynaklarıyla uyumlu; cuisine kodu sistemi kimliği doğru temsil edemiyor."
+  },
+  {
+    "slug": "ropa-vieja",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1, 3 ve 4 soğan, defne ve sarımsak kullanıyor ama ingredient listesinde yok.",
+      "Küba ropa vieja kaynaklarında biber, domates, kimyon ve uzun pişmiş didik dana uyumlu."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "3", "unit": "diş" },
+        { "name": "Defne yaprağı", "amount": "1", "unit": "adet" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.saveur.com/article/Recipes/Cuban-Style-Ropa-Vieja/",
+      "https://www.cardenasmarkets.com/recipes/cuban-ropa-vieja/"
+    ],
+    "confidence": "high",
+    "reason": "Ropa vieja kimliği doğru; stepte kullanılan aromatikler ve tuz ingredient listesinde eksik."
+  },
+  {
+    "slug": "ropa-vieja-pirinc-bowl-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 soğan ve sarımsak kullanıyor ama ingredient listesinde yok.",
+      "Step 6 limon ve kişniş diyor, ingredient listesinde bu servis öğeleri yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Limon", "amount": "0.5", "unit": "adet" },
+        { "name": "Kişniş", "amount": "0.25", "unit": "demet" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.saveur.com/article/Recipes/Cuban-Style-Ropa-Vieja/",
+      "https://www.chilipeppermadness.com/chili-pepper-recipes/beef/ropa-vieja-cuban-shredded-beef/"
+    ],
+    "confidence": "high",
+    "reason": "Didiklenmiş dana ve domatesli Küba bowl yapısı doğru; stepte geçen aromatik ve servis malzemeleri eksik."
+  },
+  {
+    "slug": "rosehip-soup-iskandinav-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Serving suggestion krema diyor, ancak tarif vegan etiketi taşıyor.",
+      "Kuşburnu çorbası kaynaklarında krema veya bademli servis olabilir; vegan etiketle krema önerisi çelişiyor."
+    ],
+    "corrections": {
+      "servingSuggestion": "Çorbayı soğuk verin, üstüne badem ya da küçük bisküvi ekleyin."
+    },
+    "sources": [
+      "https://www.swedishfood.com/swedish-food-recipes-desserts/217-rosehip-soup",
+      "https://www.food.com/recipe/nyponsoppa-swedish-rose-hip-soup-507585"
+    ],
+    "confidence": "high",
+    "reason": "Kuşburnu, su, şeker ve nişasta doğru; vegan etiketle krema servis önerisi çeliştiği için düzeltilmeli."
+  },
+  {
+    "slug": "rosto-kofte",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 salçalı su ekliyor ama ingredient listesinde su yok.",
+      "Rulo köfte kaynakları kıyma, yumurta, galeta unu, sebze dolgu ve fırınlama hattıyla uyumlu."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Su", "amount": "1", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/rosto-kofte-tarifi/",
+      "https://yemek.com/tarif/dalyan-kofte/"
+    ],
+    "confidence": "high",
+    "reason": "Rosto köfte yapısı doğru; salçalı sos için kullanılan su ingredient listesinde eksik."
+  },
+  {
+    "slug": "rozmarinli-tavuk-tepsi-ingiliz-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 tuz ve karabiber, step 2 soğan, step 4 tavuk suyu kullanıyor ama listede yok.",
+      "Tavuk ve patates tepsi yemeği için cookMinutes 28 dakika düşük kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Tavuk suyu", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 45,
+      "totalMinutes": 59,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Tavuk parçalarını tuz, karabiber, rozmarin ve zeytinyağıyla ovun.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Patates ve soğanı iri doğrayıp tepsiye yayın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Tavuğu sebzelerin üstüne yerleştirin, deri yüzeyi açık kalsın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Tepsiye tavuk suyunu ekleyin, sebzeler fırında kurumasın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Tepsiyi 200°C fırında tavuk iyice pişene kadar kızartın.", "timerSeconds": 2700 },
+        { "stepNumber": 6, "instruction": "Tavuğu dinlendirip tepsi suyuyla servis edin.", "timerSeconds": 420 }
+      ]
+    },
+    "sources": [
+      "https://www.theguardian.com/food/2022/dec/27/baked-chicken-and-potatoes-with-lemon-and-rosemary-recipe-rachel-roddy",
+      "https://www.bbcgoodfood.com/recipes/rosemary-chicken-potatoes"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk, patates ve rozmarin tepsi yapısı doğru; eksik aromatikler ve düşük fırın süresi düzeltilmeli."
+  },
+  {
+    "slug": "rus-lahanali-karabugday-tavasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 sıcak su kullanıyor ama ingredient listesinde su yok.",
+      "Karabuğday, lahana, soğan ve havuç Rus ve Doğu Avrupa kasha hattıyla uyumlu."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "2.5", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/kasha-with-browned-onions-and-walnuts-236413",
+      "https://www.theguardian.com/lifeandstyle/2016/oct/06/polish-little-pigeon-recipe-stuffed-cabbage-gypsy-style-buckwheat-salad-zuza-zak-cook-residency"
+    ],
+    "confidence": "medium",
+    "reason": "Karabuğday ve lahanalı tava uyarlaması makul; pişirme için gerekli sıcak su ingredient listesinde eksik."
+  },
+  {
+    "slug": "sac-arasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Sac arası kaynaklarında kaymak önemli bir unsur; mevcut ingredient listesinde yok.",
+      "Cevizli varyant mümkün olsa da kaynaklarda kaymaklı Konya hattı öne çıkıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kaymak", "amount": "200", "unit": "gr" }
+      ]
+    },
+    "sources": [
+      "https://www.sofra.com.tr/tarif/serbetli-tatlilar/sac-arasi",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/serbetli-tatlilar/sac-arasi"
+    ],
+    "confidence": "medium",
+    "reason": "Yufka, yağ, ceviz ve şerbet hattı çalışır; sac arası kimliği için kaymak eksik kalıyor."
+  },
+  {
+    "slug": "sac-arasi-kayseri-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Kayseri usulü sac arası atfı güçlü kaynakla desteklenmiyor; kaynaklar daha çok Konya sac arası gösteriyor.",
+      "Mevcut tarifte kaymak yok, oysa kaynaklarda sac arası için belirleyici unsur."
+    ],
+    "corrections": {
+      "description": "Sac arası, ince yufkaların cevizli harçla kurulup fırınlandığı katlı bir şerbetli hamur işidir.",
+      "ingredients_add": [
+        { "name": "Kaymak", "amount": "200", "unit": "gr" }
+      ]
+    },
+    "sources": [
+      "https://www.sofra.com.tr/tarif/serbetli-tatlilar/sac-arasi-1724931832",
+      "https://www.yenisafak.com/amphtml/sac-arasi-tarifi-sac-arasi-tarifi-nasil-yapilir-h-3589378"
+    ],
+    "confidence": "low",
+    "reason": "Tatlı yapısı mümkün; Kayseri atfı ve kaymaksız form kaynaklarla güvenli örtüşmüyor."
+  },
+  {
+    "slug": "sac-kavurma",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezizyemeklerim.com/sac-kavurma-tarifi",
+      "https://www.bornovadan.com/2025/09/18/sac-kavurma-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu eti, soğan, biber, domates, yağ ve yüksek ateşte kavurma hattı sac kavurma kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "sac-kavurma-bayburt-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 tereyağı ekliyor ama ingredient listesinde tereyağı yok.",
+      "Bayburt özel atfı zayıf olsa da kuyruk yağlı kuzu sac kavurma tekniği genel kaynaklarla uyumlu."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["SUT"]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/sac-kavurma-kuzu-etinden/9293",
+      "https://www.bornovadan.com/2025/09/18/sac-kavurma-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kuyruk yağlı kuzu kavurma yapısı makul; stepte kullanılan tereyağı ve süt alerjeni eksik."
+  },
+  {
+    "slug": "sac-kavurma-rize-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Rize usulü sac kavurma iddiası güvenilir kaynakla desteklenmiyor.",
+      "Dört malzemeli sade dana kavurma genel sac kavurma tekniğiyle uyumlu ama bölgesel kimlik zayıf."
+    ],
+    "corrections": {
+      "description": "Sade sac kavurma, eti yüksek ateşte hızla mühürleyip tereyağı, tuz ve karabiberle öne çıkaran güçlü bir ana yemektir."
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/sac-kavurma-tarifi",
+      "https://www.bornovadan.com/2025/09/18/sac-kavurma-tarifi/"
+    ],
+    "confidence": "low",
+    "reason": "Genel sac kavurma doğru; Rize özel kimliği kaynaklarla güvenli doğrulanamadı."
+  },
+  {
+    "slug": "safranli-kaju-kheer-kup-hindistan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 şekeri ekleyin diyor ama ingredient listesinde şeker yok.",
+      "Kheer kaynaklarında pirinç, süt, safran ve kuruyemişle birlikte kakule yaygın."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Toz şeker", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Kakule", "amount": "0.25", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.sharmispassions.com/rice-kheer-recipe/",
+      "https://www.indianhealthyrecipes.com/rice-kheer-recipe-chawal-ki-kheer/"
+    ],
+    "confidence": "high",
+    "reason": "Kheer omurgası doğru; şeker stepte var ama listede yok, kakule de kaynaklara göre temel aromatik."
+  },
+  {
+    "slug": "safranli-risotto",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 sıcak su diyor, ingredient listesinde sebze suyu var.",
+      "Safranlı risotto kaynakları arborio, sıcak stock, tereyağı, parmesan ve safran tekniğini destekliyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Sebze suyunu sıcak tutun ve safranı küçük bir kepçe sebze suyunda bekletin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Soğanı tereyağında şeffaflaşana kadar kavurun.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Pirinci ekleyip taneler yağla kaplanana kadar kavurun.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Sıcak sebze suyunu kepçe kepçe ekleyerek pirinci kremamsı pişirin.", "timerSeconds": 1320 },
+        { "stepNumber": 5, "instruction": "Safran ve parmesanı ekleyip ocağı kapatın, risottoyu hemen servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.recipesfromitaly.com/saffron-risotto-recipe/",
+      "https://www.pbs.org/food/recipes/risotto-alla-milanese"
+    ],
+    "confidence": "high",
+    "reason": "Risotto alla Milanese yapısı doğru; adım metnindeki su ifadesi sebze suyuyla eşleşmeli."
+  },
+  {
+    "slug": "safranli-tavuklu-arroz-tava-ispanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 tavuk suyu diyor ama ingredient listesinde yalnızca su var.",
+      "Tavuklu safranlı İspanyol pirinç tavası için yağ ve tuz listede yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tavuk suyu", "amount": "3", "unit": "su bardağı" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "ingredients_remove": ["Su"]
+    },
+    "sources": [
+      "https://www.williams-sonoma.com/recipe/chicken-with-saffron-rice.html",
+      "https://patient.info/recipes/high-protein-recipes/spanish-style-chicken-with-saffron-rice-arroz-con-pollo"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, pirinç, safran ve biber hattı doğru; tavuk suyu, yağ ve tuz ingredient düzeyiyle eşleşmeli."
+  },
+  {
+    "slug": "saganaki",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.dianekochilas.com/saganaki-greek-fried-cheese/",
+      "https://www.getgreece.com/recipes/saganaki"
+    ],
+    "confidence": "high",
+    "reason": "Kefalotiri, un, zeytinyağı ve limonla tavada kızaran saganaki kaynaklarla uyumlu; süre ve alerjenler doğru."
+  },
+  {
+    "slug": "sahlab",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Description tarçından söz ediyor ama ingredient listesinde tarçın yok.",
+      "Sahlab kaynakları süt, sahlab veya nişasta, şeker, tarçın ve fıstıklı servis hattını destekliyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tarçın", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.middleeastkitchen.com/desserts/sahlab.html",
+      "https://www.epicurious.com/recipes/food/views/sahlab-salep-373651"
+    ],
+    "confidence": "high",
+    "reason": "Sütlü sıcak sahlab yapısı doğru; açıklama ve servisle uyum için tarçın ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "sahlep",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/sahlep/",
+      "https://www.nefisyemektarifleri.com/ev-yapimi-sahlep-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Süt, sahlep tozu, şeker ve tarçınla sürekli karıştırarak koyulaştırma geleneksel sahlep kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "sakarya-findikli-kabak-tatlisi-kup",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Description yoğurt dokusu diyor ama ingredient listesinde yoğurt yok.",
+      "Kabak tatlısı, tahin ve fındık hattı makul; Sakarya özel atfı sınırlı kaynakla destekleniyor."
+    ],
+    "corrections": {
+      "description": "Sakarya usulü fındıklı kabak tatlısı kup, pişmiş bal kabağını fındık ve tahinle katlı bir tatlıya dönüştürür."
+    },
+    "sources": [
+      "https://yemek.com/tarif/kabak-tatlisi/",
+      "https://www.nefisyemektarifleri.com/tahinli-kabak-tatlisi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak, fındık ve tahin uyumlu; açıklamadaki yoğurt dokusu ingredient listesinde karşılık bulmuyor."
+  }
+]

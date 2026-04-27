@@ -27,7 +27,6 @@ import {
   readV3FormState,
   saveV3FormState,
 } from "@/lib/ai/form-persistence";
-import { getTimeHint, type TimeHint } from "@/lib/ai/time-context";
 
 /** Popular ingredients shown as quick-add chips when input is empty. */
 const POPULAR_INGREDIENTS = [
@@ -166,14 +165,6 @@ export function AiAssistantForm({
   // top popular ingredient fetch, "+un (1200 tarifte)" chip göster.
   const [completions, setCompletions] = useState<IngredientCompletion[]>([]);
   const [isLoadingCompletions, setIsLoadingCompletions] = useState(false);
-  // #11 Saate göre öneri ipucu. Mount'ta hesaplanır + her saatte bir
-  // yenilenebilir ama zaten single-page form, mount yeterli.
-  const [timeHint, setTimeHint] = useState<TimeHint | null>(null);
-  const [timeHintDismissed, setTimeHintDismissed] = useState(false);
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setTimeHint(getTimeHint());
-  }, []);
 
   // #13 Fırsat öneri helper: submit handler çağırır, server action'dan
   // top popular ingredient döner. Effect değil, submit sonucu explicit.
@@ -623,41 +614,9 @@ export function AiAssistantForm({
         onSubmit={handleSubmit}
         className="rounded-2xl border border-border bg-bg-card p-5 sm:p-6"
       >
-        {/* #11 Saate göre öneri banner'ı. Hint kind "none" değilse ve
-            kullanıcı kapatmadıysa üstte ince bant. suggestedMaxMinutes
-            varsa tek tıkla maxMinutes filter'ı uygulanır. */}
-        {timeHint &&
-          timeHint.kind !== "none" &&
-          !timeHintDismissed && (
-            <div className="mb-4 flex flex-wrap items-center gap-2 rounded-md border border-sky-200/60 bg-sky-50/70 px-3 py-2 text-xs text-sky-900 dark:border-sky-500/30 dark:bg-sky-950/30 dark:text-sky-200">
-              <span aria-hidden>🕒</span>
-              <span className="flex-1">
-                {tForm(`timeHint.${timeHint.labelKey}`)}
-              </span>
-              {timeHint.suggestedMaxMinutes && (
-                <button
-                  type="button"
-                  onClick={() => {
-                    setMaxMinutes(String(timeHint.suggestedMaxMinutes));
-                    setTimeHintDismissed(true);
-                  }}
-                  className="rounded-md border border-sky-400/60 bg-sky-100 px-2 py-0.5 font-medium text-sky-900 transition hover:bg-sky-200 dark:border-sky-500/40 dark:bg-sky-900/60 dark:text-sky-100"
-                >
-                  {tForm("timeHint.apply", {
-                    minutes: timeHint.suggestedMaxMinutes,
-                  })}
-                </button>
-              )}
-              <button
-                type="button"
-                onClick={() => setTimeHintDismissed(true)}
-                className="text-sky-700/70 transition hover:text-sky-900 dark:text-sky-300/70 dark:hover:text-sky-200"
-                aria-label={tForm("timeHint.dismiss")}
-              >
-                ✕
-              </button>
-            </div>
-          )}
+        {/* #11 Saate göre öneri banner'i kullanici geri bildirimi
+            uzerine kaldirildi (oturum 25). Form ust kismini sadelestirdi,
+            'Hizli baslangic' preset chips dogrudan formun en ustunde. */}
         <PresetChips
           mode="single"
           className="mb-4"

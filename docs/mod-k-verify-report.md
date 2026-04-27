@@ -15,16 +15,8 @@ Toplam entry: 50
 
 ## Format integrity
 
-- Apply'a hazir (clean format): **47**
-- BLOCKED (format issue): 3
-
-## BLOCKED (format issue, apply yapma)
-
-| Slug | Verdict | Issues |
-|---|---|---|
-| `avokadolu-misir-mucveri-avustralya-usulu` | CORRECTION | Kural 9 süre tutarsız: ifade ~1 dk vs totalMinutes 22 dk (fark %95) |
-| `ayranli-kete-agri-usulu` | CORRECTION | Kural 9 süre tutarsız: ifade ~20 dk vs totalMinutes 82 dk (fark %76) |
-| `baharatli-lor-ezmesi-edirne-usulu` | CORRECTION | Kural 9 süre tutarsız: ifade ~2 dk vs totalMinutes 25 dk (fark %92) |
+- Apply'a hazir (clean format): **50**
+- BLOCKED (format issue): 0
 
 ## MAJOR_ISSUE (manuel review zorunlu)
 

@@ -1,0 +1,788 @@
+[
+  {
+    "slug": "avokadolu-ispanak-smoothie",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sunset.com/recipe/avocado-and-spinach-smoothie",
+      "https://foodviva.com/smoothie-recipes/healthy-avocado-smoothie/"
+    ],
+    "confidence": "high",
+    "reason": "Avokado, ıspanak, muz ve badem sütü kombinasyonu kaynaklarla uyumlu; süre, vegan tag ve badem kaynaklı alerjen beyanı makul."
+  },
+  {
+    "slug": "avokadolu-kakao-smoothie",
+    "verdict": "CORRECTION",
+    "issues": [
+      "allergen: yulaf içeceği tek başına Tarifle allergen enumlarında zorunlu GLUTEN beyanı gerektirmiyor",
+      "allergen: tarifte buğday, arpa, çavdar veya benzeri glutenli tahıl yok"
+    ],
+    "corrections": {
+      "allergens_remove": ["GLUTEN"]
+    },
+    "sources": [
+      "https://simplegreensmoothies.com/chocolate-avocado-smoothie",
+      "https://www.eatingwell.com/recipe/269928/chocolate-avocado-smoothie/"
+    ],
+    "confidence": "medium",
+    "reason": "Avokado ve kakao smoothie içeriği doğru; ancak mevcut ingredient listesinde zorunlu GLUTEN beyanını destekleyen açık bir kaynak yok."
+  },
+  {
+    "slug": "avokadolu-lahana-salata-kuba-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.foodfidelity.com/cuban-avocado-salad/",
+      "https://www.hitchcockfarms.com/napa-cabbage-avocado-citrus-salad"
+    ],
+    "confidence": "medium",
+    "reason": "Küba avokado salatası ve lahana, narenciye, avokado salatası kaynakları ana fikri destekliyor; içerikte net hata yok."
+  },
+  {
+    "slug": "avokadolu-misir-mucveri-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: 2 yemek kaşığı un diyor ama ingredient listesinde un 0.75 su bardağı",
+      "step 3: yağlı tava ifadesi yağ ingredient'ı yokken miktar belirsizliği yaratıyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Mısır, yumurta, 0.75 su bardağı un ve taze otları kaseye alın."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Yapışmaz tavayı orta ateşte ısıtıp harcı kaşıkla porsiyonlayın.",
+          "timerSeconds": 60
+        }
+      ]
+    },
+    "sources": [
+      "https://www.australianavocados.com.au/recipes/avocado-and-corn-fritters-with-poached-eggs/",
+      "https://avowest.com.au/recipes/corn-fritters-with-avocado-salsa/"
+    ],
+    "confidence": "high",
+    "reason": "Mısır mücveri ve avokado eşleşmesi doğru; yalnız adımda verilen un miktarı ve yağlı tava ifadesi ingredient listesiyle uyuşmuyor."
+  },
+  {
+    "slug": "avokadolu-narli-gavurdagi-salata-hatay-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/gavurdagi-salatasi/",
+      "https://www.nefisyemektarifleri.com/gavurdagi-salatasi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Domates, ceviz, nar ekşili Gavurdağı karakteri korunmuş; avokado modern ek olsa da mevcut metin bunu salata varyasyonu olarak taşıyor."
+  },
+  {
+    "slug": "avokadolu-patates-causa-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: step 2 zeytinyağı diyor ama ingredient listesinde zeytinyağı yok",
+      "ingredient: causa rellena için aji amarillo veya sarı acı biber ezmesi temel tat verici olarak eksik",
+      "time: 15 dakika soğutma totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Sarı acı biber ezmesi", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "totalMinutes": 45
+    },
+    "sources": [
+      "https://peruvianimport.com/recipes/causa-rellena/",
+      "https://avocadosfromperu.com/recipe/peruvian-avocado-causa-rellena-layered-potato-tower/"
+    ],
+    "confidence": "high",
+    "reason": "Causa patates, lime, yağ ve sarı biberle kurulur; mevcut tarifin ana fikri doğru ama eksik ingredient ve soğutma süresi var."
+  },
+  {
+    "slug": "avokadolu-ton-balikli-salata-kasesi",
+    "verdict": "PASS",
+    "sources": [
+      "https://diabetesfoodhub.org/recipes/tuna-salad-avocado-bowls",
+      "https://www.mealgarden.com/recipe/avocado-tuna-salad/"
+    ],
+    "confidence": "high",
+    "reason": "Ton balığı, avokado ve limonlu hızlı salata kaynaklarla uyumlu; protein, süre ve deniz ürünü allergen beyanı makul."
+  },
+  {
+    "slug": "avokadolu-tost",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.incredibleegg.org/recipe/avocado-toast-egg/",
+      "https://www.verywellfit.com/avocado-and-egg-toast-4144603"
+    ],
+    "confidence": "high",
+    "reason": "Avokado, ekmek ve yumurta kurgusu kaynaklarda açıkça destekleniyor; süre, makro ve allergen beyanında net hata görülmedi."
+  },
+  {
+    "slug": "avokadolu-turplu-tahinli-salata-hatay-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.loveandlemons.com/tahini-dressing/",
+      "https://yemek.com/tarif/tahinli-piyaz/"
+    ],
+    "confidence": "medium",
+    "reason": "Tahinli limon sos ve sebzeli salata kurgusu tutarlı; SUSAM allergen beyanı doğru, süre ve adımlar uygulanabilir."
+  },
+  {
+    "slug": "avokadolu-yumurtali-tost-peru-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "cuisine: avokadolu yumurtalı tost modern genel bir tosttur, Peru mutfağına özgü bir tarif olarak doğrulanmıyor",
+      "description: Peru usulü ifadesi kaynaklarla desteklenmediği için kullanıcıyı yanıltabilir"
+    ],
+    "corrections": {
+      "cuisine": "us",
+      "description": "Avokadolu yumurtalı tost, kızarmış ekmeği avokado ve yumurtayla buluşturarak kremsi, tok bir kahvaltı yapar."
+    },
+    "sources": [
+      "https://www.incredibleegg.org/recipe/avocado-toast-egg/",
+      "https://www.epicurious.com/recipes/food/views/avocado-and-egg-toast"
+    ],
+    "confidence": "high",
+    "reason": "Kaynaklar avokadolu yumurtalı tostu modern genel kahvaltı olarak verir; Peru köken iddiası doğrulanmadı."
+  },
+  {
+    "slug": "avustralya-balkabakli-damper-muffin",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 5 fırın süresi 22 dakika, cookMinutes 18 dakika yazılmış",
+      "time: 10 dakika kalıpta dinlendirme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "cookMinutes": 22,
+      "totalMinutes": 42
+    },
+    "sources": [
+      "https://www.taste.com.au/recipes/pumpkin-damper/0f0b08b3-9393-4b55-a52b-4dbd9b0db7e8",
+      "https://www.womensweeklyfood.com.au/recipe/baking/pumpkin-damper-12677/"
+    ],
+    "confidence": "medium",
+    "reason": "Damper ve balkabaklı tuzlu hamur fikri makul; ancak adımlardaki fırın ve dinlenme süreleri mevcut toplam süreyle uyuşmuyor."
+  },
+  {
+    "slug": "aycekirdekli-bulgur-kofte-kirikkale-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/bulgur-koftesi/",
+      "https://www.nefisyemektarifleri.com/bulgur-koftesi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Bulgur köfte tekniği ve kısa pişirme süresi makul; ayçekirdeği eklemesi tarifi bozacak bir doğruluk hatası oluşturmuyor."
+  },
+  {
+    "slug": "aydin-cine-koftesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: Çine köftesi kaynaklarında kimyon ve zeytinyağı temel harç malzemesi olarak öne çıkmıyor",
+      "ingredient: bayat ekmek içi ve karbonat eksik",
+      "time: 20 dakika buzdolabı dinlendirmesi totalMinutes içinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Bayat ekmek içi", "amount": "2", "unit": "dilim" },
+        { "name": "Karbonat", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "ingredients_remove": ["Kimyon", "Zeytinyağı"],
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://yemek.com/tarif/cine-koftesi/",
+      "https://www.nefisyemektarifleri.com/cine-koftesi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Çine köftesi sade harçla bilinir; mevcut tarifte yöresel karakteri değiştiren ek baharat ve eksik bağlayıcılar var."
+  },
+  {
+    "slug": "aydin-enginarli-kuru-domatesli-pilav",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: 15 dakika pirinç bekletme ve 10 dakika dinlendirme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 53
+    },
+    "sources": [
+      "https://yemek.com/tarif/enginarli-pilav/",
+      "https://www.nefisyemektarifleri.com/enginarli-pilav-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Enginarlı pilav içeriği doğru yönde; sadece adımlarda geçen bekletme ve dinlendirme süreleri toplam süreye eklenmeli."
+  },
+  {
+    "slug": "aydin-kuru-incirli-lor-tatlisi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/lor-tatlisi/",
+      "https://www.nefisyemektarifleri.com/incir-dolmasi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Lor, kuru incir, bal ve cevizle kurulan kısa tatlı fikri kaynaklardaki lor tatlısı ve incir dolgusu çizgisiyle uyumlu."
+  },
+  {
+    "slug": "aydin-lorlu-patlican-bohcasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/lorlu-patlican-sarmasi/",
+      "https://yemek.com/tarif/patlican-sarma/"
+    ],
+    "confidence": "medium",
+    "reason": "Patlıcan dilimi, lorlu iç ve domates soslu fırınlama tekniği makul; süre, allergen ve vejetaryen tag tutarlı."
+  },
+  {
+    "slug": "aydin-zeytinyagli-enginar-kalbi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: 10 dakika limonlu suda bekletme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 54
+    },
+    "sources": [
+      "https://yemek.com/tarif/zeytinyagli-enginar/",
+      "https://www.nefisyemektarifleri.com/zeytinyagli-enginar-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Zeytinyağlı enginar yapısı doğru; limonlu bekletme adımı toplam süreye yansıtılmadığı için zaman bilgisi eksik kalıyor."
+  },
+  {
+    "slug": "ayran",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/ayran/",
+      "https://www.nefisyemektarifleri.com/ayran-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurt, su ve tuzla hazırlanan ayran tarifi kaynaklarla birebir uyumlu; SUT allergen beyanı ve süre doğru."
+  },
+  {
+    "slug": "ayran-asi-corbasi-erzurum-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 1 içinde 40 dakika haşlama var, cookMinutes 20 dakika yazılmış",
+      "time: toplam süre haşlama ve 10 dakika ısıtma adımlarıyla uyumsuz"
+    ],
+    "corrections": {
+      "cookMinutes": 50,
+      "totalMinutes": 65
+    },
+    "sources": [
+      "https://yemek.com/tarif/ayran-corbasi/",
+      "https://www.carrefoursa.com/blog/yogurtlu-bugday-corbasi/"
+    ],
+    "confidence": "high",
+    "reason": "Buğday, nohut ve yoğurtlu ayran aşı doğru; ancak haşlama süresi mevcut cookMinutes ve totalMinutes değerlerini aşıyor."
+  },
+  {
+    "slug": "ayran-asili-kesme-corbasi-erzincan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: step 2 ayranı unla çırpın diyor ama ingredient listesinde un yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Un", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["GLUTEN"]
+    },
+    "sources": [
+      "https://yemek.com/tarif/ayran-corbasi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/ayran-asi-corbasi/6128"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurtlu çorba terbiyesinde un kullanımı kaynaklarla uyumlu; step'te geçen un ingredient listesinde olmadığı için eklenmeli."
+  },
+  {
+    "slug": "ayranli-bulgur-corbasi-erzurum-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/ayran-corbasi/",
+      "https://www.nefisyemektarifleri.com/yogurtlu-bulgur-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Bulgur, ayran ve nane ile yoğurtlu çorba kurgusu uygulanabilir; süreler ve allergen beyanı mevcut adımlarla uyumlu."
+  },
+  {
+    "slug": "ayranli-evelik-corbasi-erzincan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: 20 dakika buğday pişirme, 2 dakika ılıştırma ve 6 dakika son pişirme toplam süreye tam yansımıyor"
+    ],
+    "corrections": {
+      "cookMinutes": 28,
+      "totalMinutes": 40
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/evelik-corbasi-tarifi/",
+      "https://www.carrefoursa.com/blog/yogurtlu-bugday-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Evelik ve yoğurtlu buğday çorbası çizgisi makul; adımlarda geçen pişirme dakikaları toplam süreyi aşıyor."
+  },
+  {
+    "slug": "ayranli-kete-agri-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: 20 dakika hamur dinlendirme ve 10 dakika son dinlendirme totalMinutes içinde görünmüyor",
+      "step 2: açıklama teknik jargon içeriyor, daha sade Türkçe kullanılmalı"
+    ],
+    "corrections": {
+      "totalMinutes": 82,
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Hamuru üstü kapalı dinlendirin, açarken çatlamasın ve daha rahat şekil alsın.",
+          "timerSeconds": 1200
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kete-tarifi/",
+      "https://yemek.com/tarif/kete/"
+    ],
+    "confidence": "medium",
+    "reason": "Kete tekniği doğru yönde; bekleme süreleri toplamda eksik ve bir adım günlük mutfak diliyle sadeleştirilmeli."
+  },
+  {
+    "slug": "ayranli-yesil-bugday-asi-tunceli-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/ayran-corbasi/",
+      "https://www.carrefoursa.com/blog/yogurtlu-bugday-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Buğday ve ayran tabanlı çorba kurgusu kaynaklarla uyumlu; allergen, süre ve adım akışında net hata görülmedi."
+  },
+  {
+    "slug": "ayranli-yesil-mercimek-corbasi-erzurum-yayla-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/yogurtlu-yesil-mercimek-corbasi/",
+      "https://yemek.com/tarif/yesil-mercimek-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Yeşil mercimekli yoğurtlu çorba fikri tutarlı; süreler, un ve SUT allergen beyanı mevcut içerikle uyumlu."
+  },
+  {
+    "slug": "ayva-tatlisi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.diyetkolik.com/yemek-tarifi/ayva-tatlisi",
+      "https://en.wikipedia.org/wiki/Ayva_tatl%C4%B1s%C4%B1"
+    ],
+    "confidence": "high",
+    "reason": "Ayva, şeker, karanfil, kaymak ve cevizle 60 dakika pişirme kaynaklarla uyumlu; SUT ve KUSUYEMIS beyanı doğru."
+  },
+  {
+    "slug": "ayvali-bulgur-pilavi-konya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/bulgur-pilavi/",
+      "https://www.nefisyemektarifleri.com/meyveli-bulgur-pilavi/"
+    ],
+    "confidence": "medium",
+    "reason": "Bulgur pilavı tekniği ve ayva eklemesi uygulanabilir; süre, vegan tag ve GLUTEN beyanında net sorun yok."
+  },
+  {
+    "slug": "ayvali-hardalli-yesil-salata-yalova-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: 5 dakika servis öncesi dinlendirme totalMinutes içinde yok"
+    ],
+    "corrections": {
+      "totalMinutes": 15
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/quince-and-baby-greens-salad-with-maple-mustard-vinaigrette",
+      "https://www.loveandlemons.com/honey-mustard-dressing/"
+    ],
+    "confidence": "medium",
+    "reason": "Ayva, yeşillik ve hardallı sos fikri makul; adımda verilen 5 dakikalık bekleme toplam süreye eklenmeli."
+  },
+  {
+    "slug": "ayvali-kereviz-guveci-canakkale-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sahrapsoysal.com/zeytinyagli-ayvali-kereviz-tarifi-t-4978",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/zeytinyagli-ayvali-kereviz/9682"
+    ],
+    "confidence": "high",
+    "reason": "Kereviz, ayva, havuç ve zeytinyağı kaynaklarda da birlikte kullanılıyor; KEREVIZ allergen beyanı ve süreler makul."
+  },
+  {
+    "slug": "ayvali-kestaneli-kup-bursa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "allergen: kestane Tarifle'de KUSUYEMIS enumuna zorunlu bağlı değil",
+      "time: 30 dakika soğutma totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "allergens_remove": ["KUSUYEMIS"],
+      "cookMinutes": 13,
+      "totalMinutes": 53
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kestaneli-muhallebi/",
+      "https://yemek.com/tarif/kestaneli-muhallebi/"
+    ],
+    "confidence": "medium",
+    "reason": "Sütlü kestaneli kup fikri doğru; ancak kestane ağaç yemişi olarak beyan edilmemeli ve soğutma süresi eklenmeli."
+  },
+  {
+    "slug": "ayvali-komposto-yozgat-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: mevcut adımlar fazla genel, ayva kompostosu için kesme, baharatla pişirme ve süzmeden soğutma netleşmeli"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Ayvaları soyup çekirdek yataklarını çıkarın, iri küpler halinde doğrayın."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Su, şeker, tarçın ve karanfili tencereye alın; ayvaları ekleyip 16 dakika kısık ateşte pişirin.",
+          "timerSeconds": 960
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Kompostoyu oda sıcaklığına gelene kadar bekletin, sonra soğuk bardaklarda servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/ayva-kompostosu/",
+      "https://www.nefisyemektarifleri.com/ayva-kompostosu-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Ayva kompostosu içeriği doğru; fakat mevcut adımlar kullanıcıya yeterli işlem detayı vermiyor."
+  },
+  {
+    "slug": "ayvali-kuzu-yahnisi-nevsehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: mühürleme, kavurma, iki pişirme ve dinlendirme adımları toplam 70 dakika; prepMinutes ayrıca 20 dakika",
+      "time: current totalMinutes 70 dakika, aktif hazırlığı dışarıda bırakıyor"
+    ],
+    "corrections": {
+      "cookMinutes": 60,
+      "totalMinutes": 90
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/ayvali-kuzu-yahnisi-tarifi-t-3668",
+      "https://www.nefisyemektarifleri.com/ayvali-kuzu-yahnisi/"
+    ],
+    "confidence": "medium",
+    "reason": "Ayvalı kuzu yahnisi lezzet eşleşmesi doğru; ancak adımlardaki pişirme ve dinlendirme süreleri toplam süreyi aşıyor."
+  },
+  {
+    "slug": "ayvali-tavuk-kapama-bursa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: 10 dakika dinlendirme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 62
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/tavuk-kapama-tarifi/",
+      "https://yemek.com/tarif/tavuk-kapama/"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk kapama tekniği ve pirinçli fırın akışı doğru; sadece dinlendirme süresi toplam süreye eklenmeli."
+  },
+  {
+    "slug": "ayvalik-papalina-tava",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/balikesir/neyenir/papalina",
+      "https://www.nefisyemektarifleri.com/citir-hamsi-tava/"
+    ],
+    "confidence": "medium",
+    "reason": "Küçük balığı unlayıp kızartma tekniği ve Ayvalık papalina bağı kaynaklarla uyumlu; allergen beyanı doğru."
+  },
+  {
+    "slug": "ayvalik-tostu-klasik",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.diyetkolik.com/yemek-tarifi/ayvalik-tostu",
+      "https://www.cumhuriyet.com.tr/gurme/egeden-gelen-lezzet-ayvalik-tostu-tarifi-2304069"
+    ],
+    "confidence": "high",
+    "reason": "Ayvalık tostu için ekmek, kaşar, sucuk, sosis, salam, turşu ve domates kaynaklarla uyumlu; süre ve allergen beyanı makul."
+  },
+  {
+    "slug": "babagannus-gaziantep-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "timer: patlıcan ve biber közleme için 180 saniye gerçekçi değil, mevcut cookMinutes 15 dakika ile de çelişiyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Patlıcan ve biberleri közleyip kabuklarını soyun.",
+          "timerSeconds": 900
+        }
+      ]
+    },
+    "sources": [
+      "https://turkishstylecooking.com/babagannus-recipe.html",
+      "https://www.yeniraki.com/the-raki-experience/meze-and-food-recipes/baba-ghanoush-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Köz patlıcanlı babagannuş doğru; 3 dakikalık közleme süresi sebzeleri yumuşatmaya yetmeyeceği için düzeltilmeli."
+  },
+  {
+    "slug": "babgulyas",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: step 2 soğanı ekleyin diyor ama ingredient listesinde soğan yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://tastehungary.com/journal/babgulyas-hungarian-bean-goulash/",
+      "https://www.daringgourmet.com/hungarian-goulash-gulyas/"
+    ],
+    "confidence": "high",
+    "reason": "Macar fasulyeli et yemeği paprika ve soğanla kurulur; step'te geçen soğan ingredient listesinde eksik."
+  },
+  {
+    "slug": "badem-ezmesi-edirne-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: 2 saat badem bekletme ve 20 dakika dinlendirme totalMinutes içinde yok"
+    ],
+    "corrections": {
+      "totalMinutes": 150
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/edirne/neyenir/badem-ezmesi",
+      "https://www.edirne.gov.tr/badem-ezmesi"
+    ],
+    "confidence": "high",
+    "reason": "Edirne badem ezmesi içeriği doğru; ancak bekletme ve dinlendirme süreleri toplam süreyi çok aşıyor."
+  },
+  {
+    "slug": "bademli-kabak-tatlisi-denizli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: 20 dakika bekletme ve 5 dakika şerbet kıvamlandırma totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "cookMinutes": 27,
+      "totalMinutes": 57
+    },
+    "sources": [
+      "https://yemek.com/tarif/kabak-tatlisi/",
+      "https://www.nefisyemektarifleri.com/kabak-tatlisi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kabak tatlısı yapısı doğru; şekerde bekletme ve şerbet kıvamlandırma süreleri toplam süreye yansıtılmalı."
+  },
+  {
+    "slug": "bademli-muzlu-serinletici-alanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: mevcut adımlar generic, muz ve badem sütlü içecek için gerçek işlem sırasını anlatmıyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Muzları soyup iri parçalar halinde blender kabına alın."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Badem sütü, bal ve buzu ekleyip 45 saniye pürüzsüz olana kadar çekin.",
+          "timerSeconds": 45
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "İçeceği soğuk bardaklara paylaştırıp buz erimeden servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.allrecipes.com/recipe/237509/banana-almond-smoothie/",
+      "https://www.eatingwell.com/recipe/251091/banana-almond-butter-smoothie/"
+    ],
+    "confidence": "high",
+    "reason": "Muz ve badem sütü içeriği doğru; fakat adımlar tarif özelinde işlem anlatmadığı için uygulanabilir değil."
+  },
+  {
+    "slug": "bademli-soguk-domates-corbasi-ispanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: 30 dakika soğutma totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 44
+    },
+    "sources": [
+      "https://www.foodandwine.com/recipes/salmorejo",
+      "https://apnews.com/article/8760247f8333f18ea11d8919555500ec"
+    ],
+    "confidence": "medium",
+    "reason": "Domates, ekmek ve bademle soğuk İspanyol çorbası makul; soğutma süresi toplam süreye eklenmeli."
+  },
+  {
+    "slug": "bademli-tavuk-pilavi-edirne-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: 15 dakika pirinç bekletme ve 10 dakika dinlendirme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 71
+    },
+    "sources": [
+      "https://yemek.com/tarif/tavuklu-pilav/",
+      "https://www.nefisyemektarifleri.com/tavuklu-bademli-pilav/"
+    ],
+    "confidence": "high",
+    "reason": "Bademli tavuk pilavı içerik olarak tutarlı; adımlardaki bekletme ve dinlendirme süreleri toplam süreye eklenmeli."
+  },
+  {
+    "slug": "bademli-zeytinli-salata-ispanya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bonappetit.com/recipe/mixed-greens-with-olives-and-almonds",
+      "https://www.foodandwine.com/recipes/green-salad-almonds-and-olives"
+    ],
+    "confidence": "medium",
+    "reason": "Yeşillik, zeytin, badem ve zeytinyağı kombinasyonu kaynaklarla uyumlu; KUSUYEMIS beyanı ve süreler doğru görünüyor."
+  },
+  {
+    "slug": "bafra-nokulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: 30 dakika mayalandırma ve 10 dakika dinlendirme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 105
+    },
+    "sources": [
+      "https://yemek.com/tarif/bafra-nokulu/",
+      "https://www.e-sehir.com/yemek_tarifleri/bafra-nokulu-samsun-tarifi.html"
+    ],
+    "confidence": "high",
+    "reason": "Bafra nokulu için cevizli üzümlü rulo hamur doğru; ancak mayalanma ve son dinlendirme toplam süreye eklenmemiş."
+  },
+  {
+    "slug": "bafra-pidesi-samsun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: 45 dakika mayalanma totalMinutes içinde yok",
+      "ingredient: step 7 tereyağı sürün diyor ama ingredient listesinde tereyağı yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["SUT"],
+      "cookMinutes": 15,
+      "totalMinutes": 90
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/bafra-pidesi-tarifi/",
+      "https://www.kulturportali.gov.tr/turkiye/samsun/neyenir/bafra-pidesi"
+    ],
+    "confidence": "high",
+    "reason": "Bafra pidesi kapalı kıymalı yapı olarak doğru; mayalanma süresi ve servis tereyağı ingredient listesine yansıtılmalı."
+  },
+  {
+    "slug": "baghrir",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: step 1 kabartma tozu ve tuz diyor ama ingredient listesinde yok",
+      "ingredient: step 5 tereyağıyla servis diyor ama tereyağı ingredient ve SUT allergen beyanında yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kabartma tozu", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" },
+        { "name": "Tereyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["SUT"]
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/baghrir-moroccan-semolina-pancakes/",
+      "https://www.mymoroccanfood.com/home/2015/4/27/moroccan-pancakes-baghrir"
+    ],
+    "confidence": "high",
+    "reason": "Baghrir için irmik, un, maya ve kabartma tozu doğru çekirdek; ancak adımda geçen malzemeler listede eksik."
+  },
+  {
+    "slug": "baharatli-lor-ezmesi-edirne-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: 15 dakika dinlendirme totalMinutes içinde yok",
+      "step 4: birkaç dakika ifadesi belirsiz, timer verilmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 25,
+      "steps_replace": [
+        {
+          "stepNumber": 4,
+          "instruction": "Karışımı çatalla ezerek pürüzsüz ve sürülebilir hale getirin.",
+          "timerSeconds": 120
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/lor-ezmesi/",
+      "https://yemek.com/tarif/peynir-ezmesi/"
+    ],
+    "confidence": "medium",
+    "reason": "Lor ezmesi içeriği doğru; belirsiz süre ifadesi netleşmeli ve dinlendirme toplam süreye eklenmeli."
+  },
+  {
+    "slug": "baharatli-misir-bardak",
+    "verdict": "PASS",
+    "sources": [
+      "https://food52.com/recipes/6766-elote-en-vaso-corn-in-a-cup",
+      "https://www.foodista.com/recipe/QVHWKJNN/elote-en-vaso-corn-in-a-cup"
+    ],
+    "confidence": "medium",
+    "reason": "Mısır, tereyağı, lime ve biberle bardakta servis fikri elote en vaso kaynaklarıyla uyumlu; SUT beyanı doğru."
+  },
+  {
+    "slug": "baharatli-patlamis-misir",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.koroplast.com/hayatikolaylastirir/mikrodalgada-patlamis-misir-nasil-yapilir",
+      "https://www.bagdatbaharat.com.tr/blog/bagdat-baharatli-patlamis-misir-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Yağda patlatılmış mısırın paprika, sarımsak tozu ve limonla baharatlanması kaynaklarla uyumlu; süreler makul."
+  },
+  {
+    "slug": "baharatli-trail-mix",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: step 2 yağ diyor ama ingredient listesinde yağ yok",
+      "time: 25 dakika fırın ve 10 dakika soğutma totalMinutes içinde görünmüyor",
+      "tag: fırında pişirme var ama firinda tag'i eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "cookMinutes": 25,
+      "totalMinutes": 43,
+      "tags_add": ["firinda"]
+    },
+    "sources": [
+      "https://calraisins.org/recipe/sweet-spicy-whole-grain-trail-mix-raisins/",
+      "https://naturesfoodpatch.com/spicy-raisin-nut-trail-mix/"
+    ],
+    "confidence": "high",
+    "reason": "Baharatlı kuruyemiş karışımı doğru; ancak yağ ingredient'ı, fırın süresi ve fırın tag'i eksik."
+  }
+]

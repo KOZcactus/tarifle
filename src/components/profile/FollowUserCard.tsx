@@ -62,7 +62,12 @@ export function FollowUserCard({
         {bio && (
           <p className="mt-1 line-clamp-2 text-xs text-text-muted">{bio}</p>
         )}
-        <p className="mt-1 text-[11px] text-text-muted">{secondaryLine}</p>
+        {/* secondaryLine empty ise (eşik altı 0 takipçi/0 uyarlama) hiç
+            render etme; "0 takipçi · 0 uyarlama" yerine boş satır,
+            oturum 25 GPT P3 audit. */}
+        {secondaryLine && (
+          <p className="mt-1 text-[11px] text-text-muted">{secondaryLine}</p>
+        )}
       </div>
       {showFollowButton && (
         <div className="shrink-0">

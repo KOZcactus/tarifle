@@ -41,20 +41,34 @@ export async function SuggestedCooksSection({
         </Link>
       </div>
       <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-        {cooks.map((cook) => (
-          <FollowUserCard
-            key={cook.id}
-            userId={cook.id}
-            username={cook.username}
-            name={cook.name}
-            avatarUrl={cook.avatarUrl}
-            bio={cook.bio}
-            secondaryLine={`${tList("followersBadge", { count: cook.followerCount })} · ${tList("variationsBadge", { count: cook.variationCount })}`}
-            showFollowButton={viewerId !== cook.id}
-            viewerSignedIn={viewerSignedIn}
-            viewerFollows={viewerFollowingIds.has(cook.id)}
-          />
-        ))}
+        {cooks.map((cook) => {
+          // Eşik altı sayı saklama (oturum 25 GPT P3 audit): 0 takipçi
+          // veya 0 uyarlama yerine secondaryLine'da sadece anlamlı
+          // sayıları göster. İkisi de 0 ise satır boş geçer (boş
+          // platform algısını azaltır).
+          const parts: string[] = [];
+          if (cook.followerCount > 0) {
+            parts.push(tList("followersBadge", { count: cook.followerCount }));
+          }
+          if (cook.variationCount > 0) {
+            parts.push(tList("variationsBadge", { count: cook.variationCount }));
+          }
+          const secondaryLine = parts.join(" · ");
+          return (
+            <FollowUserCard
+              key={cook.id}
+              userId={cook.id}
+              username={cook.username}
+              name={cook.name}
+              avatarUrl={cook.avatarUrl}
+              bio={cook.bio}
+              secondaryLine={secondaryLine}
+              showFollowButton={viewerId !== cook.id}
+              viewerSignedIn={viewerSignedIn}
+              viewerFollows={viewerFollowingIds.has(cook.id)}
+            />
+          );
+        })}
       </div>
     </section>
   );

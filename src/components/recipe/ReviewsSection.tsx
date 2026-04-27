@@ -90,7 +90,12 @@ export async function ReviewsSection({
         id="reviews-heading"
         className="mb-4 text-xl font-semibold md:text-2xl"
       >
-        {t("sectionTitle", { count: summary.count })}
+        {/* Eşik altı sıcak başlık (oturum 25 GPT P3 audit): "0 yorum"
+            yerine "İlk yorumu sen bırak" sıcak CTA, kullanıcı boş
+            platform izlenimi yerine katkı çağrısı görür. */}
+        {summary.count === 0
+          ? t("sectionTitleEmpty")
+          : t("sectionTitle", { count: summary.count })}
       </h2>
 
       {/* Summary card */}
@@ -134,11 +139,17 @@ export async function ReviewsSection({
         </div>
       )}
 
-      {/* Reviews list */}
+      {/* Reviews list. Empty state sıcak CTA (oturum 25 GPT P3 audit):
+          "Henüz yorum yok" gri satır yerine vurgulu emoji + büyük metin
+          + giriş yap CTA (anonim user'da). */}
       {reviews.length === 0 ? (
-        <p className="text-sm text-gray-600 dark:text-gray-400">
-          {t("empty")}
-        </p>
+        <div className="rounded-xl border border-dashed border-primary/20 bg-primary/5 p-6 text-center">
+          <span aria-hidden className="block text-3xl">💬</span>
+          <p className="mt-2 text-sm font-medium text-text">
+            {t("emptyCallout")}
+          </p>
+          <p className="mt-1 text-xs text-text-muted">{t("empty")}</p>
+        </div>
       ) : (
         <ul className="space-y-4">
           {reviews.map((r) => (

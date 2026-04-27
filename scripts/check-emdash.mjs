@@ -43,6 +43,10 @@ const SKIP_FILES = new Set([
   "docs/PROJECT_STATUS.md",
   "docs/CHANGELOG.md",
   "docs/BLOG_CONTENT_GUIDE.md",
+  // Untracked session brief copy files (user's manual paste of session
+  // intro message). These are local scratch references, gitignored
+  // intent. Em-dash here is from the user-pasted brief, not new content.
+  "NEW_SESSION_MESSAGE.md",
 ]);
 // prisma/migrations içinde geçmiş migration SQL'leri em-dash'siz ama
 // Prisma generated tiplerde şüphe yok; yine de klasörü atlayalım.

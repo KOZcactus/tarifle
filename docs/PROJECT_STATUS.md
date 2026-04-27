@@ -1,7 +1,17 @@
 # Tarifle, Proje Durumu
 
-> **Oturum 27 (27 Nis 2026, oturum 26'nın aynı gün devamı), Mod K v2
-> 22 batch apply maratonu (11a-21b).**
+> **Oturum 27 (27 Nis 2026, oturum 26'nın aynı gün devamı), 6 commit:
+> Mod K v2 22 batch apply (11a-21b) + CUISINE_CODES `pt` ekleme.**
+>
+> **CUISINE_CODES 36 → 37** (commit `43844f0`): `pt` (Portekiz)
+> eklendi (oturum 25 6 cuisine ekleme pattern'i ile). Codex Mod K
+> Batch 19b v2 2 MAJOR'da bu cuisine gap'ini explicit isaret
+> etmişti. 7 map + 8 SLUG_PATTERNS + 6 TEXT_KEYWORDS + 3 yeni test
+> (46/46 PASS) + scripts/fix-portekiz-cuisine.ts tek-seferlik fix
+> (lisbon-nohutlu-morina + lizbon-portakalli-badem-keki dev+prod
+> 'es' → 'pt' update + AuditLog `MOD_K_CUISINE_FIX`). /mutfak/portekiz
+> programatik landing route Vercel deploy + ISR sonrası prod canlı.
+> Mini-rev kuyruğu 46 → **44** (2 azaldı, otomatik fix).
 >
 > **Mod K v2 progress: 20 → 42/71 sub-batch (%59.2)**. Codex queue tam
 > temizlendi (11a-21b 22 batch verify+manuel review+dev/prod apply

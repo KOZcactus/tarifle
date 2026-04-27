@@ -60,20 +60,14 @@ Toplam Mod K v2 prod ~480 → ~876 correction. Nutrition anomaly
 - 22a-36b kalan 29 sub-batch (~%40 hedef)
 - Codex `Mod K. Batch 22a.` tetiği gerekli
 
-**CUISINE_CODES `pt` (Portekiz) ekleme önerisi** (oturum 25 pattern,
-~30-45 dk):
+**CUISINE_CODES `pt` (Portekiz) eklendi ✅** (oturum 27, commit
+`43844f0`, 36 → 37 cuisine). 7 map + 8 SLUG_PATTERNS + 6 TEXT_KEYWORDS
++ 3 yeni test + scripts/fix-portekiz-cuisine.ts ile 2 tarif dev+prod
+'es' → 'pt' update. Mini-rev kuyruğu 46 → 44 (lisbon-nohutlu-morina
++ lizbon-portakalli-badem-keki otomatik fix).
 
-Batch 19b'de 2 MAJOR `pt` cuisine eksikliği nedeniyle otomatik fix
-yapılamadı (lisbon-nohutlu-morina-salatasi + lizbon-portakalli-badem-
-keki). Tarifle CUISINE_CODES'a `pt` eklenirse bu 2 mini-rev otomatik
-çözülür. Pattern oturum 25 (tn/ar/co/ve/dk/za 6 cuisine ekleme):
-- `src/lib/cuisines.ts`: 7 map (CODES + LABEL + SLUG + DESCRIPTION_TR/EN
-  + FLAG + REGION) + TEXT_KEYWORDS
-- `scripts/verify-mod-k-batch.ts` VALID_CUISINES set
-- Tests + i18n
-- /mutfak/portekiz landing prod canlı 200
-
-**Mini-rev kuyruğu 46 (4 önceki + 26 batch 11a-18b + 16 batch 19a-21b):**
+**Mini-rev kuyruğu 44 (4 önceki + 26 batch 11a-18b + 14 batch 19a-21b,
+2 lisbon/lizbon pt fix ile çözüldü):**
 
 Önceki 4 (oturum 26 sonu):
 - `erzsebet-sour-macar-usulu`: Erzsebet adı + Macar köken kaynaksız
@@ -127,10 +121,10 @@ Yeni 26 (oturum 27, 11a-18b MAJOR identity/structural mismatch):
 - `lechon-asado`: Küba klasik DOMUZ etiyle, mevcut dana döş (jeyuk-bokkeum pattern)
 - `leka-ispanakli-krep-isvec-usulu`: 'Leka' İsveç adı kaynaksız, ıspanaklı krep genel
 
-19b (3, 2'si cuisine pt gap):
+19b (1, lisbon/lizbon pt fix oldu):
 - `lime-kabuklu-irmik-kup-peru-usulu`: Peru atfı kaynaksız, Türk irmik tatlısı
-- `lisbon-nohutlu-morina-salatasi`: Portekiz bacalhau, cuisine es ama pt gerek (CUISINE_CODES pt ekleme ile çözülür)
-- `lizbon-portakalli-badem-keki`: Lizbon Portekiz, cuisine es ama pt gerek (aynı)
+- ~~`lisbon-nohutlu-morina-salatasi`~~: ✅ pt fix (commit `43844f0`)
+- ~~`lizbon-portakalli-badem-keki`~~: ✅ pt fix (commit `43844f0`)
 
 20a (6, en yoğun):
 - `lorlu-biber-dolmasi-tekirdag-usulu`: Tekirdağ atfı kaynaksız

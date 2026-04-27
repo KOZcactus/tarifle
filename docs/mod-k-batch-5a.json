@@ -1,0 +1,790 @@
+[
+  {
+    "slug": "bulgur-pilavi",
+    "verdict": "PASS",
+    "reason": "Domates salçası, biber salçası, soğan, bulgur ve 15 dakika kısık ateş akışı kaynaklarla uyumlu. Süre, vegan tag ve GLUTEN allergen doğru.",
+    "sources": [
+      "https://www.ziyad.com/recipe/turkish-style-bulgur-pilaf-2/",
+      "https://www.turkishfoodblog.net/bulgur-pilaf-turkish-recipe/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "bulgurlu-domatesli-kabak-corbasi-diyarbakir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: zeytinyağı ile çevirme yazılı ama ingredient listesinde yağ yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kabak-corbasi-tarifi/",
+      "https://www.yemek.com/tarif/kabak-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak çorbası tabanında soğanı yağda çevirmek makul, fakat mevcut ingredient listesinde yağ yok. Step ingredient eşleşmesi için zeytinyağı eklenmeli."
+  },
+  {
+    "slug": "bulgurlu-kabak-borani-mardin-usulu",
+    "verdict": "PASS",
+    "reason": "Kabak, bulgur ve sarımsaklı yoğurt kurgusu borani karakteriyle uyumlu. SUT ve GLUTEN allergen doğru, süre ve makro değerler makul.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kabak-borani-tarifi/",
+      "https://www.yemek.com/tarif/kabak-borani/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "bulgurlu-kabak-cicegi-dolmasi-antalya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 2: soğan ve nane geçiyor ama ingredient listesinde yok",
+      "step 6: limonla servis yazıyor ama ingredient listesinde limon yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Kuru nane", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Limon", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/kabak-cicegi-dolmasi/",
+      "https://www.nefisyemektarifleri.com/kabak-cicegi-dolmasi/"
+    ],
+    "confidence": "high",
+    "reason": "Kabak çiçeği dolmasında soğan, ot ve limon kullanımı kaynaklarla uyumlu. Mevcut steps bu malzemeleri söylüyor ama listede göstermiyor."
+  },
+  {
+    "slug": "bun-bo-hue",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: Vietnam yemeği olduğu halde cuisine 'tr' yazılı",
+      "ingredient: klasik Bun Bo Hue balık sosu ve karides ezmesi çizgisindedir; soya sosu allergen ve içerik olarak yanıltıcı"
+    ],
+    "corrections": {
+      "cuisine": "vn",
+      "ingredients_remove": ["Soya sosu"],
+      "ingredients_add": [
+        { "name": "Balık sosu", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Karides ezmesi", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "allergens_remove": ["SOYA"],
+      "allergens_add": ["DENIZ_URUNLERI"],
+      "steps_replace": [
+        {
+          "stepNumber": 3,
+          "instruction": "Et suyunu acı biber, balık sosu ve karides ezmesiyle kaynatın.",
+          "timerSeconds": 300
+        }
+      ]
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/bun-bo-hue-51115000",
+      "https://www.seriouseats.com/vietnamese-food-101-a-guide-to-vietnamese-food-8422405"
+    ],
+    "confidence": "high",
+    "reason": "Bun Bo Hue Hue kökenli Vietnam çorbasıdır. Kaynaklar limon otu, balık sosu ve karides ezmesini destekliyor; soya allergen burada hatalı."
+  },
+  {
+    "slug": "bun-cha",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: soya sosu yazılı ama steps iki kez balık sosu kullanıyor",
+      "allergen: soya sosu kaldırılınca SOYA allergen gereksiz kalıyor"
+    ],
+    "corrections": {
+      "ingredients_remove": ["Soya sosu"],
+      "ingredients_add": [
+        { "name": "Balık sosu", "amount": "4", "unit": "yemek kaşığı" }
+      ],
+      "allergens_remove": ["SOYA"]
+    },
+    "sources": [
+      "https://flavorsofhanoi.com/blog/how-to-cook-bun-cha-hanoi/",
+      "https://www.umamicart.com/blog/2026/03/14/bun-cha-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Hanoi bun cha marinadı ve sosu balık sosuyla kuruluyor. Mevcut step de balık sosu diyor; ingredient listesi soya yazdığı için düzeltilmeli."
+  },
+  {
+    "slug": "bun-rieu",
+    "verdict": "PASS",
+    "reason": "Domatesli yengeç suyu, pirinç eriştesi ve yumurtalı yengeç karışımı Bun Rieu için doğru ana yapı. Süre, allergen ve protein tag makul.",
+    "sources": [
+      "https://www.vogue.com/article/vietnamese-food-guide-dishes",
+      "https://www.seriouseats.com/vietnamese-food-101-a-guide-to-vietnamese-food-8422405"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "bun-thit-nuong-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: limon otu, sarımsak, balık sosu, salatalık ve yer fıstığı geçiyor ama ingredient listesinde yok",
+      "allergen: yer fıstığı servis önerisinde ve stepte var ama allergen declare edilmemiş",
+      "totalMinutes: 20 dakika marine süresi totalMinutes'a dahil değil"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon otu", "amount": "1", "unit": "dal" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Balık sosu", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Salatalık", "amount": "1", "unit": "adet" },
+        { "name": "Yer fıstığı", "amount": "0.25", "unit": "su bardağı" }
+      ],
+      "allergens_add": ["YER_FISTIGI"],
+      "totalMinutes": 48
+    },
+    "sources": [
+      "https://www.cooking-therapy.com/bun-thit-nuong/",
+      "https://recipes.net/main-dish/noodles/bun-thit-nuong-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Bun thit nuong kaynakları limon otu, balık sosu, salatalık, otlar ve fıstığı destekliyor. Mevcut tarifte bu malzemeler stepte var, listede yok."
+  },
+  {
+    "slug": "bungeoppang",
+    "verdict": "PASS",
+    "reason": "Balık kalıbında sütlü hamur ve tatlı kırmızı fasulye dolgusu bungeoppang için doğru. Süreler ve GLUTEN, SUT, YUMURTA allergenleri uyumlu.",
+    "sources": [
+      "https://www.beyondkimchee.com/bungeoppang/",
+      "https://www.masterclass.com/articles/bungeoppang-recipe"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "buraczki-z-chrzanem-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: tarif adı her adımda tekrarlanıyor ve 'çıtır doku' ifadesi rendelenmiş pancar salatası için yanıltıcı",
+      "step 1: sos malzemelerini ayırma dışında gerçek hazırlık bilgisi vermiyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Pancarları kabuklarıyla yumuşayana kadar haşlayın, sonra soğutup soyun.", "timerSeconds": 900 },
+        { "stepNumber": 2, "instruction": "Soğuyan pancarları rendenin iri tarafıyla rendeleyin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Rendelenmiş pancarı yaban turbu, elma sirkesi ve tuzla karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Salatayı dinlendirin, yaban turbu pancara eşit dağılsın.", "timerSeconds": 600 },
+        { "stepNumber": 5, "instruction": "Buraczki z chrzanem salatasını soğuk servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://polishhousewife.com/buraczki/",
+      "https://www.thespruceeats.com/polish-beets-with-horseradish-recipe-1137525"
+    ],
+    "confidence": "medium",
+    "reason": "Pancar ve yaban turbu eşleşmesi doğru, fakat mevcut steps şablon izleri taşıyor ve yanlış doku anlatıyor. Somut salata akışıyla değişmeli."
+  },
+  {
+    "slug": "burdur-ceviz-ezmesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 5: buzdolabında 2 saat dinlendirme yazıyor ama totalMinutes 25 ve geleneksel akış ılıkken kesme üzerine kurulu"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 5,
+          "instruction": "Harcı ılıtın, tamamen soğumadan baklava dilimi gibi kesin.",
+          "timerSeconds": 600
+        }
+      ],
+      "totalMinutes": 30
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/burdur/neyenir/ceviz-ezmesi",
+      "https://www.visitburdur.com/place/ceviz-ezmesi/1"
+    ],
+    "confidence": "high",
+    "reason": "Burdur ceviz ezmesinde şerbet, irmik ve ceviz karışımı ılık halde kesilir. 2 saat buzdolabı hem süreyi bozuyor hem kaynaklarla uyuşmuyor."
+  },
+  {
+    "slug": "burdur-cevizli-kabak-tatlisi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 1'deki 2 saat şekerle bekletme toplam süreye dahil değil"
+    ],
+    "corrections": {
+      "totalMinutes": 180
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/kabak-tatlisi/",
+      "https://www.nefisyemektarifleri.com/kabak-tatlisi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kabak tatlısında şekerle bekletme yaygın ve tarifte açıkça 2 saat yazıyor. RecipeTimeline için bu pasif süre totalMinutes içinde görünmeli."
+  },
+  {
+    "slug": "burdur-sis-kofte-pideli",
+    "verdict": "PASS",
+    "reason": "Kaburga kıyması, sade tuzlu harç, kısa dinlendirme ve pideli servis Burdur şiş köfte kaynaklarıyla uyumlu. Süre ve makro değerler makul.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/portal/burdursiskoftesi",
+      "https://www.burdur.com.tr/burdur-sis-kofte/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "burgonya-coq-au-vin",
+    "verdict": "PASS",
+    "reason": "Tavuk, kırmızı şarap, mantar, arpacık soğan, pastırma ve uzun pişirme klasik coq au vin yapısıyla uyumlu. SUT, GLUTEN ve alkollü tag doğru.",
+    "sources": [
+      "https://www.foodnetwork.com/recipes/chicken-in-red-wine-with-onions-mushrooms-and-bacon-coq-au-vin-recipe-2013688",
+      "https://www.bbcgoodfood.com/recipes/coq-au-vin"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "bursa-cantik-pide",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: şeker kullanılıyor ama ingredient listesinde yok",
+      "step 6: kenarlara yumurta sarısı sürülüyor ama ingredient sadece yumurta akı gösteriyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Şeker", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Yumurta sarısı", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://pidelibursa.com/menu-item/kiymali-cantik/",
+      "https://www.nefisyemektarifleri.com/cantik-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Cantıkta mayalı hamur ve kıymalı harç doğru. Mevcut step iki malzemeyi kullanıyor, fakat ingredient listesi bunları eksik bırakıyor."
+  },
+  {
+    "slug": "bursa-inegol-kofte",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 3'teki 6 saat dinlendirme toplam süreye dahil değil"
+    ],
+    "corrections": {
+      "totalMinutes": 400
+    },
+    "sources": [
+      "https://www.evvelcevap.com/inegol-koftesi-tarifi/",
+      "https://sosy.co/inegol-kofte/"
+    ],
+    "confidence": "high",
+    "reason": "İnegöl köftesinde uzun dinlendirme kaynaklarla uyumlu, fakat mevcut totalMinutes sadece aktif süreyi gösteriyor. 6 saat bekleme totalMinutes'a eklenmeli."
+  },
+  {
+    "slug": "bursa-kemalpasa-tatlisi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 7: kaymakla servis yazıyor ama ingredient listesinde kaymak yok",
+      "totalMinutes: 15 dakika dinlendirme toplam süreye dahil değil"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kaymak", "amount": "0.5", "unit": "su bardağı" }
+      ],
+      "totalMinutes": 100
+    },
+    "sources": [
+      "https://www.evvelcevap.com/kemalpasa-tatlisi-peynir-tatlisi-tarifi/",
+      "https://www.emrahtatlicilik.com/"
+    ],
+    "confidence": "medium",
+    "reason": "Kemalpaşa tatlısı peynirli hamur ve şerbet akışıyla doğru. Ancak step kaymak servisi ve 15 dakika dinlenmeyi yazdığı halde liste ve total eksik."
+  },
+  {
+    "slug": "bursa-kestane-sekeri",
+    "verdict": "PASS",
+    "reason": "Kestanenin soyulup şerbette düşük ısıyla dinlendirilmesi Bursa kestane şekeri anlatımıyla uyumlu. Total süre beklemeyi içeriyor, allergen doğru.",
+    "sources": [
+      "https://www.bursa.com.tr/tr/mekan/sevdiklerinize-kestane-sekeri-alin-1055/",
+      "https://www.kulturportali.gov.tr/turkiye/bursa/nealinir/kestane-sekeri"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "bursa-kestaneli-ic-pilav",
+    "verdict": "PASS",
+    "reason": "Pirinç, kestane, kuş üzümü, dolmalık fıstık, yenibahar ve tereyağı iç pilav karakteriyle uyumlu. Süre, makro ve allergenler makul.",
+    "sources": [
+      "https://ozlemsturkishtable.com/2021/12/rice-pilaf-with-chestnuts-pine-nuts-and-currants-kestaneli-ic-pilav/",
+      "https://www.giverecipe.com/rice-with-currants/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "bursa-kestaneli-pilav",
+    "verdict": "PASS",
+    "reason": "Kestane, pirinç, tereyağı, soğan, kuş üzümü, fıstık ve baharat dengesi kaynaklı iç pilav çizgisine uyuyor. Süreler ve allergenler doğru.",
+    "sources": [
+      "https://ozlemsturkishtable.com/2021/12/rice-pilaf-with-chestnuts-pine-nuts-and-currants-kestaneli-ic-pilav/",
+      "https://www.giverecipe.com/rice-with-currants/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "bursa-kestaneli-tavuk-kapama",
+    "verdict": "PASS",
+    "reason": "Tavuk, pirinç, kestane, tavuk suyu ve fırın kapama akışı tutarlı. Pirinç bekletme, fırın süresi, makro ve SUT, KUSUYEMIS allergenleri makul.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/tavuk-kapama-tarifi/",
+      "https://www.yemek.com/tarif/tavuk-kapama/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "bursa-kestaneli-tavuk-pilavi",
+    "verdict": "PASS",
+    "reason": "Didilmiş tavuk, pirinç, kestane, tereyağı ve tavuk suyuyla kurulan pilav akışı tutarlı. Protein tag, süre ve allergenler makul.",
+    "sources": [
+      "https://ozlemsturkishtable.com/2021/12/rice-pilaf-with-chestnuts-pine-nuts-and-currants-kestaneli-ic-pilav/",
+      "https://www.giverecipe.com/rice-with-currants/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "bursa-muradiye-corbasi-tavuklu",
+    "verdict": "PASS",
+    "reason": "Tavuk, kabak, havuç, arpa şehriye ve yoğurtlu terbiye Muradiye çorbası kaynaklarıyla uyumlu. GLUTEN, SUT, YUMURTA allergenleri doğru.",
+    "sources": [
+      "https://turkeyoutdoor.org/bursa-yoresel-lezzetleri-muradiye-corbasi/",
+      "https://www.halil.gen.tr/masterchef-muradiye-corbasi-tarifi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "bursa-pideli-kofte",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: step köfte harcında soğan ve karabiber kullanıyor ama listede yok",
+      "ingredient: coğrafi işaret anlatımında Bursa pideli köfte harcı bayat ekmek, tuz, karabiber ve kimyon içerir; mevcut liste çok eksik",
+      "step 1: rendelenmiş soğan tescilli Bursa pideli köfte harcıyla uyuşmuyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Bayat ekmek içi", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Kimyon", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Kıymayı bayat ekmek içi, tuz, karabiber ve kimyonla yoğurun.",
+          "timerSeconds": 360
+        }
+      ]
+    },
+    "sources": [
+      "https://kureansiklopedi.com/en/detay/bursa-pideli-kofte-5b171",
+      "https://en.wikipedia.org/wiki/Pideli_k%C3%B6fte"
+    ],
+    "confidence": "high",
+    "reason": "Bursa pideli köfte ana yapısı doğru, fakat tescilli harçta soğan yok. Mevcut step ve ingredient listesi köfte harcını tutarsız bırakıyor."
+  },
+  {
+    "slug": "bursa-tahinli-pide-cevizli",
+    "verdict": "PASS",
+    "reason": "Mayalı hamur, tahin, şeker ve cevizli harç Bursa tahinli pide çizgisiyle uyumlu. Vegan tag ve SUSAM, KUSUYEMIS, GLUTEN allergenleri doğru.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/bursa/neyenir/tahinli-pide",
+      "https://kureansiklopedi.com/en/detay/bursa-tahinli-pide-f0a01"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "busan-kimchi-jjigae",
+    "verdict": "PASS",
+    "reason": "Olgun kimchi, kimchi suyu, et, tofu, gochugaru, gochujang, hamsi suyu ve susam yağı kimchi jjigae için doğru. Allergenler makul.",
+    "sources": [
+      "https://www.koreanbapsang.com/2014/03/kimchi-jjigae-kimchi-stew.html",
+      "https://www.seriouseats.com/korean-food-types-of-soups-stews-jjigae-guk-tang"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "butter-chicken",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: limon suyu kullanılıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/butter-chicken",
+      "https://www.seriouseats.com/stovetop-butter-chicken"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurt, domates, tereyağı, krema ve garam masala butter chicken için uyumlu. Sadece marinatta geçen limon suyu ingredient listesinde eksik."
+  },
+  {
+    "slug": "buzlu-pandan-kahvesi-vietnam-usulu",
+    "verdict": "PASS",
+    "reason": "Kahve, pandan şurubu, su ve buzla kurulan soğuk içecek mantıklı. Vegan ve alkolsüz tag doğru, süre ve kalori değerleri makul.",
+    "sources": [
+      "https://www.vogue.com/article/vietnamese-food-guide-dishes",
+      "https://www.seriouseats.com/vietnamese-food-101-a-guide-to-vietnamese-food-8422405"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "ca-kho-to",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: Vietnam yemeği olduğu halde cuisine 'tr' yazılı",
+      "ingredient: step 3 balık sosu kullanıyor ama ingredient listesinde yok",
+      "ingredient: soya sosu klasik ca kho to yerine yanıltıcı allergen üretiyor"
+    ],
+    "corrections": {
+      "cuisine": "vn",
+      "ingredients_remove": ["Soya sosu"],
+      "ingredients_add": [
+        { "name": "Balık sosu", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Su", "amount": "0.25", "unit": "su bardağı" }
+      ],
+      "allergens_remove": ["SOYA"],
+      "steps_replace": [
+        {
+          "stepNumber": 3,
+          "instruction": "Balık sosu ve az suyu karamele ekleyin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/ca-kho-fish-with-coconut-caramel",
+      "https://www.bigoven.com/recipe/ca-kho-to-caramelised-claypot-fish/224626"
+    ],
+    "confidence": "high",
+    "reason": "Ca kho to Vietnam karamelize balık yemeğidir ve kaynaklar balık sosu kullanımını destekler. Cuisine ve soya kaynaklı allergen hatalı."
+  },
+  {
+    "slug": "ca-phe-sua-chua",
+    "verdict": "PASS",
+    "reason": "Yoğurt, yoğunlaştırılmış süt, koyu kahve ve buz Vietnam yoğurt kahvesi için doğru ve SUT allergen uygun. Süre ve kalori makul.",
+    "sources": [
+      "https://www.vogue.com/article/vietnamese-food-guide-dishes",
+      "https://www.seriouseats.com/vietnamese-food-101-a-guide-to-vietnamese-food-8422405"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "ca-phe-sua-da",
+    "verdict": "PASS",
+    "reason": "Vietnam kahvesi, yoğunlaştırılmış süt, buz ve 4-5 dakika phin demleme akışı cà phê sữa đá kaynaklarıyla uyumlu. SUT allergen doğru.",
+    "sources": [
+      "https://www.langthangcoffee.com/pages/recipes/ca-phe-sua-da",
+      "https://reilyproducts.com/recipes/classic-vietnamese-iced-coffee-ca-phe-sua-da/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "ca-phe-sua-da-smoothie-vietnam-usulu",
+    "verdict": "PASS",
+    "reason": "Yoğun kahve, yoğunlaştırılmış süt, süt ve buz smoothie yorumu olarak tutarlı. SUT allergen, 5 dakika süre ve makro değerler makul.",
+    "sources": [
+      "https://www.langthangcoffee.com/pages/recipes/ca-phe-sua-da",
+      "https://dailyphin.com/vietnamese-iced-coffee-recipe/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "ca-ri-ga-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: sarımsak, limon otu, lime suyu ve kişniş geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "3", "unit": "diş" },
+        { "name": "Limon otu", "amount": "1", "unit": "dal" },
+        { "name": "Lime suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Kişniş", "amount": "0.25", "unit": "demet" }
+      ]
+    },
+    "sources": [
+      "https://www.hungryhuy.com/vietnamese-chicken-curry-recipe/",
+      "https://www.pccmarkets.com/recipe/ca-ri-ga-vietnamese-chicken-curry/"
+    ],
+    "confidence": "high",
+    "reason": "Cà ri gà için tavuk, köri, hindistan cevizi sütü, patates ve havuç doğru. Ancak stepteki aromatikler listede eksik kaldığı için eklenmeli."
+  },
+  {
+    "slug": "cacik-dip",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 5'teki 10 dakika soğutma toplam süreye dahil değil"
+    ],
+    "corrections": {
+      "totalMinutes": 20
+    },
+    "sources": [
+      "https://www.babadoh.com/blogs/recipes/cacik",
+      "https://iran-cuisine.com/recipe/cacik/"
+    ],
+    "confidence": "high",
+    "reason": "Süzme yoğurt, salatalık, sarımsak, dereotu ve zeytinyağı cacık dip için doğru. Sadece tarifte yazan soğutma süresi totalMinutes'a eklenmeli."
+  },
+  {
+    "slug": "cafe-au-lait",
+    "verdict": "PASS",
+    "reason": "Eşit ölçü kahve ve sıcak süt café au lait tanımıyla uyumlu. SUT allergen doğru, süre ve kalori makul.",
+    "sources": [
+      "https://www.kitchenaid.com/pinch-of-help/countertop-appliances/how-to-make-cafe-au-lait.html",
+      "https://www.cuisinart.com/recipes/beverages/Cafe_au_Lait.html"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "cafe-bombon",
+    "verdict": "PASS",
+    "reason": "Espresso ve yoğunlaştırılmış süt katmanlı servis edildiği için Café Bombón yapısı doğru. SUT allergen, 5 dakika süre ve tatlı profil makul.",
+    "sources": [
+      "https://coffee-slang.com/coffee-recipes/cafe-bombon-recipe/",
+      "https://www.brewcoffeehome.com/cafe-bombon-recipe/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "cafe-cubano",
+    "verdict": "PASS",
+    "reason": "İlk espresso damlalarının şekerle çırpılıp köpük yapılması Café Cubano tekniğiyle uyumlu. Vegan tag, süre ve düşük kalori makul.",
+    "sources": [
+      "https://athome.starbucks.com/recipe/cafe-cubano",
+      "https://www.epicurious.com/recipes/food/views/cuban-coffee-em-cafecito-em-365329"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "cafezinho-brasileiro",
+    "verdict": "PASS",
+    "reason": "Şekerli, küçük ve güçlü filtre kahve anlatımı cafezinho ile uyumlu. Vegan tag, süre ve kalori değerleri makul.",
+    "sources": [
+      "https://www.caffeatlas.com/coffee/cafezinho",
+      "https://parade.com/food/cafezinho-coffee-brazilian-style/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "caffe-latte",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: caffe latte İtalyan kahve içeceği olduğu halde cuisine 'tr' yazılı"
+    ],
+    "corrections": {
+      "cuisine": "it"
+    },
+    "sources": [
+      "https://www.allrecipes.com/article/cafe-au-lait-vs-latte/",
+      "https://www.seriouseats.com/translating-coffee-menus-different-names-for-coffee-plus-milk"
+    ],
+    "confidence": "high",
+    "reason": "Espresso ve buharda ısıtılmış süt yapısı doğru, fakat içecek İtalyan kökenli caffe latte olarak kodlanmalı. SUT allergen ve süre makul."
+  },
+  {
+    "slug": "caffe-shakerato",
+    "verdict": "PASS",
+    "reason": "Espresso, şeker şurubu ve buzun shaker ile çalkalanıp süzülmesi caffè shakerato kaynaklarıyla uyumlu. Vegan tag ve süre doğru.",
+    "sources": [
+      "https://www.loacker.com/ca/en/experience-loacker/our-recipes/shakerato.html",
+      "https://www.nespresso.com/recipes/int/en/22992CAF-caffe-shakerato.html"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "cagla-asi-erzincan-usulu",
+    "verdict": "PASS",
+    "reason": "Çağla, buğday ve yoğurtla ekşi yoğurtlu çorba kurgusu bölgesel aş mantığıyla uyumlu. GLUTEN ve SUT allergen doğru, süreler makul.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/erzincan/neyenir",
+      "https://www.nefisyemektarifleri.com/yogurtlu-bugday-corbasi/"
+    ],
+    "confidence": "low"
+  },
+  {
+    "slug": "caglali-kurutlu-bulgur-salatasi-malatya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: tarif adı her adımda tekrar ediyor ve step 1 ile step 6 yeşilliklerden söz ediyor ama ingredient listesinde yeşillik yok"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "İnce bulguru sıcak suyla 10 dakika ıslatın, taneler şişsin.", "timerSeconds": 600 },
+        { "stepNumber": 2, "instruction": "Çağlaları yıkayıp ince dilimleyin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Kurutu az sıcak suyla ezin, pürüzsüz ve akışkan hale getirin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Şişen bulguru eritilmiş kurutla karıştırın, topak kalmasın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Çağla dilimlerini ekleyip salatayı 5 dakika dinlendirin.", "timerSeconds": 300 },
+        { "stepNumber": 6, "instruction": "Karışımı geniş tabağa alın ve bekletmeden servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/malatya/neyenir",
+      "https://www.nefisyemektarifleri.com/kurutlu-bulgur-koftesi/"
+    ],
+    "confidence": "low",
+    "reason": "Çağla, kurut ve bulgur birlikteliği makul, fakat mevcut steps şablon tekrarına düşüyor ve olmayan yeşilliklerden söz ediyor. Temiz akış gerekli."
+  },
+  {
+    "slug": "caipirinha",
+    "verdict": "CORRECTION",
+    "issues": [
+      "description: cachaça rom olarak adlandırılmış; cachaça ayrı bir Brezilya şeker kamışı içkisidir",
+      "ingredient: 'Cachaça rom' adı yanıltıcı",
+      "step 4: aynı gerekçe cümlesi gereksiz biçimde iki kez tekrar ediyor"
+    ],
+    "corrections": {
+      "description": "Cachaça, misket limonu ve şekerle hazırlanan Brezilya kokteyli.",
+      "ingredients_remove": ["Cachaça rom"],
+      "ingredients_add": [
+        { "name": "Cachaça", "amount": "60", "unit": "ml" }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 4,
+          "instruction": "Caipirinha kokteylini 10 saniye karıştırın, şeker erisin ama buz fazla sulandırmasın.",
+          "timerSeconds": 10
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bhg.com/cachaca-creative-cocktails-7554016",
+      "https://www.diffordsguide.com/cocktails/recipe/1478/passion-fruit-caipirinha"
+    ],
+    "confidence": "high",
+    "reason": "Caipirinha ana yapısı doğru, fakat cachaça rom diye yazılmamalı. Ayrıca son stepteki tekrar kullanıcıya hatalı şablon hissi veriyor."
+  },
+  {
+    "slug": "caipirinha-passionfruit-brezilya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 2: şekerle ezme yazıyor ama ingredient listesinde şeker yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Şeker", "amount": "2", "unit": "tatlı kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.jamieoliver.com/recipes/fruit/passion-fruit-caipirinha/",
+      "https://www.olivemagazine.com/recipes/cocktails-and-drinks/passion-fruit-caipirinha/"
+    ],
+    "confidence": "high",
+    "reason": "Passionfruit caipirinha lime, şeker, cachaça ve passionfruit ile yapılır. Mevcut step şekeri kullanıyor, ingredient listesi eksik."
+  },
+  {
+    "slug": "cairo-koshari-kasesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 4: sarımsakla sos yapılıyor ama ingredient listesinde sarımsak yok",
+      "step 5: soğanları kızgın yağda çıtırlaştırma yazıyor ama ingredient listesinde yağ yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "3", "unit": "diş" },
+        { "name": "Sıvı yağ", "amount": "0.5", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.theguardian.com/food/2018/dec/29/koshari-egyptian-rice-lentils-tomato-sauce-and-onion-recipe-vegan-meera-sodha",
+      "https://www.bonappetit.com/story/pantry-pasta-koshari"
+    ],
+    "confidence": "high",
+    "reason": "Koshari tabanı doğru, fakat domates sosundaki sarımsak ve çıtır soğan için yağ ingredient listesinde görünmeli. Step ingredient eşleşmesi eksik."
+  },
+  {
+    "slug": "cairo-molokhia-tavuklu",
+    "verdict": "PASS",
+    "reason": "Jüt yaprağı, tavuk suyu, sarımsak, kişnişli yağ, tavuk ve pirinç servisi Mısır molokhia kaynaklarıyla uyumlu. SUT allergen tereyağından doğru.",
+    "sources": [
+      "https://www.theegyptiancook.com/post/recipe-molokhia",
+      "https://tastycooking.recipes/egyptian-molokhia-stew-with-chicken/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "cajeta-yogurt-kup-meksika-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3: bisküvi kırığı yazıyor ama ingredient listesinde granola var",
+      "totalMinutes: 20 dakika soğutma toplam süreye dahil değil"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 3,
+          "instruction": "Kup tabanına yoğurt, cajeta ve granolayı sırayla yerleştirin.",
+          "timerSeconds": null
+        }
+      ],
+      "totalMinutes": 34
+    },
+    "sources": [
+      "https://www.mexicoinmykitchen.com/cajeta-mexican-caramel-sauce/",
+      "https://honestcooking.com/cajeta-mexican-goats-milk-caramel-sauce/"
+    ],
+    "confidence": "medium",
+    "reason": "Cajeta ve yoğurtlu kup yorumu makul, ancak step ingredient listesiyle çelişiyor. Ayrıca 20 dakika soğutma totalMinutes içinde görünmeli."
+  },
+  {
+    "slug": "cajun-misir-cerezi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: mevcut adımlar şablon ve bağlayıcı harçtan söz ediyor; ingredient listesinde böyle bir harç yok",
+      "steps: haşlanmış mısırı yağ ve baharatla kavurma tekniği somut anlatılmıyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Haşlanmış mısırı kağıt havluyla kurulayın, tavada buhar yapmasın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Zeytinyağını geniş tavada 1 dakika ısıtın.", "timerSeconds": 60 },
+        { "stepNumber": 3, "instruction": "Mısırı tavaya yayıp 8 dakika ara ara karıştırarak kavurun.", "timerSeconds": 480 },
+        { "stepNumber": 4, "instruction": "Louisiana baharatını ekleyip 2 dakika daha çevirin.", "timerSeconds": 120 },
+        { "stepNumber": 5, "instruction": "Lime suyunu sıkıp mısır çerezini sıcak ya da ılık servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/cajun-chicken-with-peach-salsa",
+      "https://www.allrecipes.com/recipe/246700/cajun-spice-mix/"
+    ],
+    "confidence": "medium",
+    "reason": "Malzeme kurgusu atıştırmalık için makul, fakat steps şablon kalmış ve olmayan bağlayıcı harçtan söz ediyor. Somut kavurma akışı gerekli."
+  },
+  {
+    "slug": "cajun-tavuk",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 5: limonla servis yazıyor ama ingredient listesinde limon yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/cajun-chicken-with-capers-and-lemon-3035",
+      "https://www.culinaryhill.com/cajun-chicken/"
+    ],
+    "confidence": "high",
+    "reason": "Cajun baharatlı tavuk, yağ ve hızlı tava pişirme akışı doğru. Ancak servis stepindeki limon listede yok, ingredient eşleşmesi için eklenmeli."
+  },
+  {
+    "slug": "cakarta-hindistan-cevizli-tempeh",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: başlık ve description Endonezya, Cakarta diyor ama cuisine 'th' yazılı"
+    ],
+    "corrections": {
+      "cuisine": "id"
+    },
+    "sources": [
+      "https://vegnews.com/recipes/indonesian-tempeh",
+      "https://recipesindonesia.com/indonesian-tempeh-tofu-recipes/tofu-tempeh-in-coconut-milk/"
+    ],
+    "confidence": "high",
+    "reason": "Tempeh ve hindistan cevizi sütü Endonezya mutfağıyla uyumlu. Başlık Cakarta ve description Endonezya derken cuisine kodunun Tayland kalması hatalı."
+  }
+]

@@ -1,0 +1,921 @@
+[
+  {
+    "slug": "cakarta-tavuk-satay-pirinc-kasesi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/satay-chicken-rice-bowl",
+      "https://www.olivemagazine.com/recipes/meat-and-poultry/chicken-satay-with-rice/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, pirinç, salatalık ve yer fıstıklı sos kurgusu kaynaklarla uyumlu. Bekleme süresi totalMinutes içinde, allergen ve makro dengesi makul."
+  },
+  {
+    "slug": "cakarta-yumurtali-nasi-goreng",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 2: wokta yağ kızdırma yazıyor ama ingredient listesinde yağ yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ayçiçek yağı", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.theguardian.com/food/2019/nov/06/how-to-cook-the-perfect-nasi-goreng-recipe",
+      "https://www.bonappetit.com/recipe/vegetable-nasi-goreng"
+    ],
+    "confidence": "high",
+    "reason": "Nasi goreng yüksek ateşte yağla çevrilen bir kızarmış pirinçtir. Mevcut step yağı kullanıyor, fakat ingredient listesinde göstermiyor."
+  },
+  {
+    "slug": "caldo-de-feijao",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 5: limonla servis yazıyor ama ingredient listesinde limon yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://cookidoo.thermomix.com/recipes/recipe/en-us/r645286",
+      "https://www.minasgerais.com.br/pt/blog/artigo/caldo-de-feijao"
+    ],
+    "confidence": "medium",
+    "reason": "Fasulye, soğan, sarımsak ve zeytinyağı tabanı uygun. Servis adımında limon kullanıldığı için step ingredient eşleşmesi tamamlanmalı."
+  },
+  {
+    "slug": "caldo-verde-brasil",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: başlık ve description Brezilya usulü diyor ama cuisine 'tr' yazılı",
+      "step 5: zeytinyağı gezdirme yazıyor ama ingredient listesinde zeytinyağı yok"
+    ],
+    "corrections": {
+      "cuisine": "br",
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.punchfork.com/recipe/Caldo-Verde-Portuguese-Potato-and-Kale-Soup-with-Sausage-Serious-Eats",
+      "https://www.theguardian.com/food/2021/mar/10/how-to-make-the-perfect-caldo-verde-recipe-felicity-cloake"
+    ],
+    "confidence": "medium",
+    "reason": "Caldo verde Portekiz kökenli olsa da bu kayıt Brezilya usulü diye konumlanmış. Türk cuisine kodu ve eksik zeytinyağı hatalı."
+  },
+  {
+    "slug": "caldo-verde-brezilya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.punchfork.com/recipe/Caldo-Verde-Portuguese-Potato-and-Kale-Soup-with-Sausage-Serious-Eats",
+      "https://www.venturists.net/sausage-kale-potato-soup-caldo-verde/"
+    ],
+    "confidence": "medium",
+    "reason": "Patates, karalahana ve zeytinyağıyla bitkisel yorum net belirtilmiş. Vegan varyasyon olduğu için et eksikliği hata sayılmadı."
+  },
+  {
+    "slug": "california-cobb-salad",
+    "verdict": "CORRECTION",
+    "issues": [
+      "tag: 520 kcal ve 35 gr yağ içeren salata 'dusuk-kalorili' etiketiyle uyumsuz"
+    ],
+    "corrections": {
+      "tags_remove": ["dusuk-kalorili"]
+    },
+    "sources": [
+      "https://www.errenskitchen.com/cobb-salad/",
+      "https://www.cookingclassy.com/cobb-salad/"
+    ],
+    "confidence": "high",
+    "reason": "Cobb salata tavuk, avokado, yumurta, peynir ve pastırmayla doyurucu bir ana salatadır. Kalori ve yağ değeri düşük kalorili etiketiyle çelişiyor."
+  },
+  {
+    "slug": "camarao-na-moranga",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3: soğan ve biber yazıyor ama ingredient listesinde ikisi de yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Yeşil biber", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://www.waitrose.com/ecom/recipe/camarao-na-moranga",
+      "https://panamei.com/portfolio/camarao-moranga-shrimp-pumpkin/"
+    ],
+    "confidence": "high",
+    "reason": "Karidesli balkabağı dolgusunun soğanlı ve domatesli tabanı kaynaklarla uyumlu. Stepte geçen soğan ve biber listede gösterilmeli."
+  },
+  {
+    "slug": "canakkale-metez",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/canakkale/neyenir/metez",
+      "https://www.nefisyemektarifleri.com/metez-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Yumurtalı hamur, peynirli iç, haşlama ve yoğurtlu tereyağlı servis çizgisi metez için makul. Allergenler ve süreler uyumlu."
+  },
+  {
+    "slug": "canakkale-ovmac-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kaleninsesi.com/haber/22300457/canakkalede-cok-meshur-ovmac-corbasi-tarifi",
+      "https://www.nefisyemektarifleri.com/ovmac-corbasi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Un kırıntısı, yoğurtlu terbiye ve naneli tereyağı akışı ovmaç çorbası için anlaşılır. Süt, yumurta ve gluten allergenleri doğru."
+  },
+  {
+    "slug": "canakkale-peynir-helvasi-firin",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.uludaghelva.com/firinlanmis-peynir-helvasi-",
+      "https://www.nefisyemektarifleri.com/firinlanmis-peynir-helvasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Taze peynir, irmik, şeker, tereyağı ve fırında kızartma Çanakkale peynir helvası çizgisine uyuyor. Allergenler doğru."
+  },
+  {
+    "slug": "canakkale-sardalyali-domates-tavasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/izgara-sardalya/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/et-yemekleri/balik-yemekleri/firinda-sardalya"
+    ],
+    "confidence": "medium",
+    "reason": "Sardalya, domates, sarımsak, zeytinyağı ve kısa pişirme süresi hafif balık tavası için doğru. Deniz ürünleri allergeni tanımlı."
+  },
+  {
+    "slug": "canakkale-sardalyali-domatesli-omlet",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/izgara-sardalya/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/diger-tarifler/yumurtali-yemekler/domatesli-omlet"
+    ],
+    "confidence": "medium",
+    "reason": "Sardalya, yumurta, domates ve zeytinyağı kahvaltılık omlet olarak tutarlı. Yumurta ve deniz ürünleri allergenleri doğru."
+  },
+  {
+    "slug": "canakkale-tumbi-goce",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/canakkale/neyenir/tumbi",
+      "https://www.kaleninsesi.com/haber/22185369/canakkale-mutfaginin-incisi-tumbi-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Göce, patlıcan, domates, soğan, zeytinyağı ve fırınlama akışı tumbi için uygun. Bekleme ve pişirme süreleri toplamla uyumlu."
+  },
+  {
+    "slug": "canchanchara-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: gazlı ekler sona kalsın ifadesi bu tarifte olmayan soda için kalan template cümlesi gibi duruyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Canchánchara için rom, bal, lime suyu ve buzu ölçüp bardağı hazırlayın."
+        }
+      ]
+    },
+    "sources": [
+      "https://officialcocktails.com/cocktails/canchanchara/",
+      "https://www.kitchengeekery.com/cocktail-recipes/c/canchanchara-cocktail"
+    ],
+    "confidence": "high",
+    "reason": "Klasik içecek rom, bal, lime ve buzla yapılır. Mevcut stepte olmayan gazlı içecekten söz edilmesi kullanıcıyı yanıltır."
+  },
+  {
+    "slug": "canelali-arroz-con-leche-peru-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.limaeasy.com/peruvian-food-guide/typical-desserts/arroz-con-leche",
+      "https://www.eatperu.com/arroz-con-leche/"
+    ],
+    "confidence": "high",
+    "reason": "Pirinç, süt, şeker ve tarçınla yavaş pişirme arroz con leche için uyumlu. Süt allergeni ve tatlı süreleri makul."
+  },
+  {
+    "slug": "canh-chua-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: canh chua için ekşi tabanda tamarind yaygın, mevcut tarif sadece lime suyuna dayanıyor",
+      "ingredient: balıklı Vietnam çorbasında balık sosu kaynaklarla uyumlu ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tamarind ezmesi", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Balık sosu", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Su, doğranmış domates ve tamarind ezmesini tencerede kaynatın.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Balık sosu ve lime suyunu ocaktan almaya yakın ekleyin, taze ekşilik acılaşmasın."
+        }
+      ]
+    },
+    "sources": [
+      "https://cookonloop.com/recipe/vietnamese-c-l-c-n-u-canh-chua",
+      "https://en.wikipedia.org/wiki/Canh_chua"
+    ],
+    "confidence": "medium",
+    "reason": "Canh chua balık, ananas, domates ve tamarindli ekşi tabanıyla bilinir. Mevcut tarifin ekşi ve tuzlu omurgası eksik kalıyor."
+  },
+  {
+    "slug": "canjica",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: Brezilya tatlısı olduğu halde cuisine 'tr' yazılı",
+      "step 1: bir gece bekletme totalMinutes içine dahil edilmemiş",
+      "step 3: tarçın geçiyor ama ingredient listesinde tarçın yok"
+    ],
+    "corrections": {
+      "cuisine": "br",
+      "ingredients_add": [
+        { "name": "Tarçın", "amount": "1", "unit": "çubuk" }
+      ],
+      "totalMinutes": 580
+    },
+    "sources": [
+      "https://www.amigofoods.com/blogs/brazilian-recipes-receitas-brasileiras/canjica-recipe",
+      "https://braziliankitchenabroad.com/canjica/"
+    ],
+    "confidence": "high",
+    "reason": "Canjica Brezilya tatlısıdır. Bir gece bekletme pasif süre olarak totalMinutes farkına girmeli, tarçın da listede görünmeli."
+  },
+  {
+    "slug": "canjica-kadeh-tatlisi-brezilya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: ingredient haşlanmış beyaz mısır diyor, step ise yumuşamamış mısır diyor",
+      "step 5: 30 dakika soğutma totalMinutes içine dahil edilmemiş"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Haşlanmış beyaz mısırı sütle tencereye alın."
+        }
+      ],
+      "totalMinutes": 64
+    },
+    "sources": [
+      "https://camilamade.com/canjica/",
+      "https://braziliankitchenabroad.com/canjica/"
+    ],
+    "confidence": "high",
+    "reason": "Hazır haşlanmış mısır kullanımıyla step uyumsuzdu. Ayrıca 30 dakikalık soğutma pasif bekleme olarak toplam süreye eklenmeli."
+  },
+  {
+    "slug": "cankiri-yaren-guveci",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.e-sehir.com/yemek_tarifleri/yaren-guveci-cankiri-tarifi.html",
+      "https://www.youtube.com/watch?v=tY67DqoS8xc"
+    ],
+    "confidence": "medium",
+    "reason": "Kuzu eti, patlıcan, soğan, sarımsak, biber, domates ve güveçte uzun pişirme kaynaklarla uyumlu. Süreler ve makrolar makul."
+  },
+  {
+    "slug": "cannoli",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3: kabukları yağda kızartma yazıyor ama ingredient listesinde kızartma yağı yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kızartma yağı", "amount": "1", "unit": "lt" }
+      ]
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/cannoli-recipe",
+      "https://www.lacucinaitaliana.com/italian-food/italian-dishes/digging-into-the-sweet-history-of-sicilian-cannoli"
+    ],
+    "confidence": "high",
+    "reason": "Cannoli kabuğu yağda kızartılır ve ricotta dolgusu servis öncesi sıkılır. Kızartma yağı stepte var, ingredient listesinde yok."
+  },
+  {
+    "slug": "cantik-bursa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3: domates geçiyor ama ingredient listesinde domates yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Domates", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/pide-tarifleri/cantik-tarifi",
+      "https://bursam.net/bursa-cantik/"
+    ],
+    "confidence": "medium",
+    "reason": "Bursa cantığında kıymalı harcın domatesli hazırlanması yaygın. Mevcut step domates kullanıyor ama listede göstermiyor."
+  },
+  {
+    "slug": "cantik-pidesi-bursa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 6: tereyağı sürme yazıyor ama ingredient listesinde tereyağı yok",
+      "allergen: tereyağı kullanımı nedeniyle SUT allergeni eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "20", "unit": "gr" }
+      ],
+      "allergens_add": ["SUT"]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/pide-tarifleri/cantik-tarifi",
+      "https://bursam.net/bursa-cantik/"
+    ],
+    "confidence": "high",
+    "reason": "Pidenin kenarına tereyağı sürülüyorsa malzeme ve süt allergeni listede olmalı. Mevcut tarif stepte kullanıp listede atlıyor."
+  },
+  {
+    "slug": "cao-lau",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: Hoi An yemeği olduğu halde cuisine 'tr' yazılı",
+      "step 1: domuz veya tavuk eti diyor ama ingredient listesinde dana eti var",
+      "step 1 ve 4: sarımsak, beş baharat ve fasulye filizi geçiyor ama ingredient listesinde yok",
+      "step 1: 20 dakika bekleme totalMinutes içine dahil edilmemiş"
+    ],
+    "corrections": {
+      "cuisine": "vn",
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Beş baharat", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Fasulye filizi", "amount": "1", "unit": "su bardağı" }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Dana etini soya sosu, sarımsak ve beş baharatla bekletin.",
+          "timerSeconds": 1200
+        }
+      ],
+      "totalMinutes": 75
+    },
+    "sources": [
+      "https://e.vnexpress.net/news/food-recipes/how-to-make-hoi-an-thick-noodles-cao-lau-4725060.html",
+      "https://www.seriouseats.com/vietnamese-food-101-a-guide-to-vietnamese-food-8422405"
+    ],
+    "confidence": "medium",
+    "reason": "Cao lau Vietnam, Hoi An kökenlidir. Mevcut kayıt hem cuisine hem et adı hem de stepte kullanılan malzemeler açısından tutarsız."
+  },
+  {
+    "slug": "cape-town-mercimek-bobotie",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "cuisine: Güney Afrika yemeği için cuisine 'gb' yanıltıcı; mevcut enumlarda Güney Afrika kodu yok, manuel mapping gerekiyor",
+      "step 2 ve 3: soğan, sarımsak, zerdeçal ve ekmek içi geçiyor ama ingredient listesinde yok",
+      "allergen: ekmek içi kullanıldığı için GLUTEN allergeni eksik"
+    ],
+    "corrections": {
+      "description": "Güney Afrika usulü mercimek bobotie, körili mercimek ve kuru üzümü yumurtalı süt katmanıyla fırınlayan baharatlı bir yemektir.",
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Zerdeçal", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Bayat ekmek içi", "amount": "1", "unit": "su bardağı" }
+      ],
+      "allergens_add": ["GLUTEN"]
+    },
+    "sources": [
+      "https://ecook.webeng.co/meal/zippy-lentil-bobotie/",
+      "https://www.theguardian.com/food/2019/oct/21/a-south-african-shepherds-pie-thomasina-miers-family-recipe-for-bobotie"
+    ],
+    "confidence": "high",
+    "reason": "Bobotie Güney Afrika yemeğidir ve gb kodu yanıltıcıdır. Enum eksikliği manuel karar ister; ayrıca stepteki temel malzemeler listede yok."
+  },
+  {
+    "slug": "capirotada-meksika-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3: kuru meyve geçiyor ama ingredient listesinde kuru meyve yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru üzüm", "amount": "0.5", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.isabeleats.com/capirotada-mexican-bread-pudding/",
+      "https://www.foodreference.com/html/capirotada-020808.html"
+    ],
+    "confidence": "high",
+    "reason": "Capirotada ekmek, tarçınlı şurup, kuruyemiş, peynir ve kuru meyve katmanlarıyla yapılır. Stepteki kuru meyve listede eksik."
+  },
+  {
+    "slug": "cappuccino",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: cappuccino İtalyan kahvesi olduğu halde cuisine 'tr' yazılı"
+    ],
+    "corrections": {
+      "cuisine": "it"
+    },
+    "sources": [
+      "https://www.cuisinart.com/recipes/beverages/cappuccino3-recipe.html",
+      "https://www.thespruceeats.com/difference-between-wet-and-dry-cappuccino-765339"
+    ],
+    "confidence": "high",
+    "reason": "Cappuccino espresso, sıcak süt ve süt köpüğüyle hazırlanan İtalyan kahvesidir. Türk cuisine kodu tarifin kökenini yanlış gösteriyor."
+  },
+  {
+    "slug": "caprese-salatasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lacucinaitaliana.com/italian-food/italian-dishes/how-to-make-the-original-caprese-salad",
+      "https://www.food.com/recipe/tomato-mozzarella-caprese-official-recipe-olive-garden-239050"
+    ],
+    "confidence": "high",
+    "reason": "Domates, mozzarella, fesleğen, zeytinyağı ve balzamik servis Caprese için doğru. Süt allergeni ve pişirmesiz süre uygun."
+  },
+  {
+    "slug": "carne-asada",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: portakal suyu ve yağ geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Portakal suyu", "amount": "4", "unit": "yemek kaşığı" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/carne-asada-recipe",
+      "https://www.simplyrecipes.com/recipes/carne_asada/"
+    ],
+    "confidence": "medium",
+    "reason": "Carne asada asitli narenciye ve yağlı marinadla uyumlu. Mevcut step portakal suyu ve yağ kullanıyor, fakat ingredient listesi eksik."
+  },
+  {
+    "slug": "carne-de-panela",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3: sarımsak geçiyor ama ingredient listesinde yok",
+      "step 4: havuç geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "3", "unit": "diş" },
+        { "name": "Havuç", "amount": "2", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://cookonloop.com/recipe/brazilian-carne-de-panela",
+      "https://www.brazil-foods.com/2025/11/19/carne-de-panela/"
+    ],
+    "confidence": "high",
+    "reason": "Carne de panela soğan, sarımsak, domates, patates ve havuçla tencerede pişen Brezilya et yemeğidir. Stepteki iki malzeme eksik."
+  },
+  {
+    "slug": "casablanca-harira",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: nohut için bir gece bekletme totalMinutes içine dahil edilmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 595
+    },
+    "sources": [
+      "https://tasteofmaroc.com/moroccan-harira-soup-recipe/",
+      "https://thinkmorocco.com/harira-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Harira için nohut bekletme pasif süre olarak toplam süreye yansıtılmalı. İçerik ve allergenler uygun, sorun süre tutarlılığı."
+  },
+  {
+    "slug": "casablanca-tavuk-tagine",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/tagine-of-chicken-with-preserved-lemon-and-olives-372998",
+      "https://www.mymoroccanfood.com/home/chicken-preserved-lemon-and-olives-tagine-chicken-mkalli"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, zeytin, limon turşusu, zencefil, zerdeçal ve yavaş pişirme Fas tagine karakteriyle uyumlu. Badem allergeni doğru."
+  },
+  {
+    "slug": "casir-otlu-peynir-salatasi-bingol-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.evvelcevap.com/casir-kavurmasi-tarifi/",
+      "https://www.sofra.com.tr/tarif/salata/beyaz-peynir-salatasi-1729585712"
+    ],
+    "confidence": "low",
+    "reason": "Çaşırın kısa haşlanıp peynir ve limonla salataya dönmesi bölgesel ot kullanımıyla makul. Net kaynak sınırlı olduğu için güven düşük."
+  },
+  {
+    "slug": "cassoulet",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: bir gece fasulye bekletme totalMinutes içine dahil edilmemiş",
+      "steps: 45 dakika haşlama, 150 dakika fırın ve 20 dakika ek fırınlama cookMinutes değerinden yüksek"
+    ],
+    "corrections": {
+      "cookMinutes": 215,
+      "totalMinutes": 740
+    },
+    "sources": [
+      "https://www.allrecipes.com/article/all-about-cassoulet/",
+      "https://www.foodandwine.com/cooking-techniques/same-day-cassoulet"
+    ],
+    "confidence": "high",
+    "reason": "Cassoulet uzun pişen ve fasulyesi bekleyen bir yemektir. Mevcut totalMinutes hem gece bekletmeyi hem de gerçek cook toplamını dışarıda bırakıyor."
+  },
+  {
+    "slug": "cauliflower-cheese-pie-ingiliz-firin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3: sosu az unla koyulaştırma yazıyor ama ingredient listesinde un yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Un", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.chefsresource.com/recipes/cauliflower-cheese-pie-recipe/",
+      "https://www.punchfork.com/recipe/Cauliflower-Cheese-Pie-Allrecipes"
+    ],
+    "confidence": "medium",
+    "reason": "Karnabahar, cheddar, süt ve hamur tabanı uyumlu. Ancak stepte sos bağlamak için un kullanılıyor, ingredient listesinde yok."
+  },
+  {
+    "slug": "causa-limena-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: patates haşlama yazıyor ama timerSeconds eksik"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Patatesleri haşlayıp limon suyu ve tuzla ezerek sıkı, pürüzsüz püre hazırlayın.",
+          "timerSeconds": 1200
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/user/58247/recipe/causa-limena-chicken",
+      "https://www.eatperu.com/causa-limena-de-pollo/"
+    ],
+    "confidence": "high",
+    "reason": "Causa limeña için patates haşlama ana pişirme adımıdır ve cookMinutes bu süreyi taşıyor. Step timer eksikliği kullanıcıyı zayıflatır."
+  },
+  {
+    "slug": "causa-limena-verde-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: patates haşlama yazıyor ama timerSeconds eksik"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Patatesi haşlayıp sıcakken ezin, tuz ve lime suyuyla esnek bir püreye çevirin.",
+          "timerSeconds": 840
+        }
+      ]
+    },
+    "sources": [
+      "https://ivu.org/vegan-recipes-around-the-world/vegan-food-academy/front-page/item/causa-limena-peruvian-potato-salad.html",
+      "https://en.wikipedia.org/wiki/Causa_lime%C3%B1a"
+    ],
+    "confidence": "medium",
+    "reason": "Causa verde soğuk patates ve avokado katmanıyla tutarlı. Ana haşlama adımında timer eksik olduğu için pişirme süresi görünmüyor."
+  },
+  {
+    "slug": "cavdarli-kabak-tatlisi-denizli-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kabak-tatlisi-tarifi/",
+      "https://www.youtube.com/watch?v=9rX0E4zhpCU"
+    ],
+    "confidence": "low",
+    "reason": "Kabak, şeker ve tarçınla pişirme kabak tatlısı için doğru. Çavdar kırıntısı yöresel varyasyon gibi duruyor, allergen belirtilmiş."
+  },
+  {
+    "slug": "cavdarli-kete-kars-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: maya ve tuz geçiyor ama ingredient listesinde yok",
+      "step 4: yumurta sürme yazıyor ama ingredient listesinde yumurta yok",
+      "allergen: yumurta kullanıldığı halde YUMURTA allergeni eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Instant maya", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Yumurta", "amount": "1", "unit": "adet" }
+      ],
+      "allergens_add": ["YUMURTA"]
+    },
+    "sources": [
+      "https://www.kirazinmutfagi.com.tr/tarif/kars-ketesi",
+      "https://www.youtube.com/watch?v=_95zWTefZ2c"
+    ],
+    "confidence": "high",
+    "reason": "Kars ketesinde mayalı hamur ve üzeri yumurtalı pişirme kaynaklarla uyumlu. Mevcut stepte geçen üç malzeme listede eksik."
+  },
+  {
+    "slug": "cavdarli-peynirli-sandvic-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3: dereotu ve karabiber geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Dereotu", "amount": "2", "unit": "dal" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.lovefood.com/recipes/56527/scandinavian-open-sandwich-smrbrd-recipe",
+      "https://www.bostonglobe.com/lifestyle/food-dining/2012/07/03/recipe-for-danish-style-open-faced-cucumber-sandwiches/lp57zqiWW7Tl1SPErK5HFK/story.html"
+    ],
+    "confidence": "medium",
+    "reason": "Çavdar ekmeği, tereyağı, peynir ve salatalık İskandinav açık sandviç çizgisine uygun. Stepteki dereotu ve karabiber listede yok."
+  },
+  {
+    "slug": "cavdarli-yumurta-kapamasi-corum-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 5: pul biber serpme yazıyor ama ingredient listesinde pul biber yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/tereyagli-yumurta-kapama/2696",
+      "https://www.nedemek.page/kavramlar/yumurta%20kapama%20tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Yumurta kapama tereyağı ve biberli servisle uyumlu. Mevcut tarifte pul biber stepte kullanılıyor ama ingredient listesinde yok."
+  },
+  {
+    "slug": "cemenli-yumurta-tavasi-kayseri-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/cemenli-yumurta-tarifi/",
+      "https://www.e-sehir.com/yemek_tarifleri/cemenli-tirit-tokat-tarifi.html"
+    ],
+    "confidence": "medium",
+    "reason": "Çemen, tereyağı, domates ve yumurta tavada pişen kahvaltılık için tutarlı. Süt ve yumurta allergenleri doğru görünüyor."
+  },
+  {
+    "slug": "cennet-camurlu-muhallebi-mersin-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "description: cennet çamuru muhallebi ve bisküvi katmanı değil, kaynaklarda kadayıf, tereyağı, şerbet, Antep fıstığı ve kaymakla yapılan tatlı",
+      "ingredients: mevcut liste cennet çamuru yerine muhallebi benzeri farklı bir tatlıya gidiyor",
+      "steps: nişasta geçiyor ama ingredient listesinde pirinç unu var; tarif kendi içinde de çelişkili"
+    ],
+    "corrections": {
+      "description": "Cennet çamuru, tel kadayıfı tereyağı, şerbet ve Antep fıstığıyla tavada birleştiren, kaymakla servis edilen Kilis tatlısıdır.",
+      "ingredients_remove": ["Bisküvi kırıntısı", "Süt", "Pirinç unu"],
+      "ingredients_add": [
+        { "name": "Tel kadayıf", "amount": "250", "unit": "gr" },
+        { "name": "Tereyağı", "amount": "100", "unit": "gr" },
+        { "name": "Kaymak", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Şeker ve 1 su bardağı suyu 5 dakika kaynatıp limonla kısa bir şerbet hazırlayın.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Tel kadayıfı küçük parçalara ayırın ve tereyağında 8 dakika renk aldırmadan kavurun.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Antep fıstığının büyük kısmını kadayıfa katıp 2 dakika karıştırın.",
+          "timerSeconds": 120
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Şerbeti azar azar ekleyip kadayıf yumuşayana kadar 5 dakika karıştırın.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Tatlıyı sıcak tabaklayıp kaymak ve kalan Antep fıstığıyla servis edin."
+        }
+      ],
+      "cookMinutes": 20,
+      "totalMinutes": 34
+    },
+    "sources": [
+      "https://yemek.com/tarif/cennet-camuru-tatlisi/",
+      "https://www.lezzetlitatlitarifleri.com/cennet-camuru-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Mevcut kayıt adından ve kaynaklardaki temel reçeteden kopmuş. Bu muhallebi değil, kadayıf, fıstık, şerbet ve kaymaklı tatlıdır."
+  },
+  {
+    "slug": "cerkez-tavugu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.yemek.com/tarif/cerkez-tavugu/",
+      "https://www.nefisyemektarifleri.com/cerkez-tavugu-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Haşlanmış tavuk, ceviz, ekmek içi, sarımsak ve tavuk suyu Çerkez tavuğu için doğru. Gluten ve kuruyemiş allergenleri tanımlı."
+  },
+  {
+    "slug": "ceviche",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: Peru ceviche olduğu halde cuisine 'tr' yazılı",
+      "steps: tekrar eden ve şişkin ceviche başlıklı template cümleleri var"
+    ],
+    "corrections": {
+      "cuisine": "pe",
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Balığı 1.5 cm küpler halinde doğrayıp çok soğuk bir kasede bekletin."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Kırmızı soğanı ince piyazlık doğrayın, kişnişi iri kıyın."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Balığı lime suyu ve soğanla marine edin.",
+          "timerSeconds": 900
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Kişnişi ekleyip nazikçe karıştırın, balık fazla bekleyip sertleşmesin."
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Cevicheyi mısır ve tatlı patatesle soğuk servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.peru.travel/gastronomy/en/recipes/entrees/peruvian-fish-ceviche.html",
+      "https://www.eatperu.com/ceviche-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Ceviche Peru kökenli bir tabaktır. Mevcut step seti tekrar ediyor ve gereksiz şişiyor; sade, kaynak uyumlu akışla düzeltilmeli."
+  },
+  {
+    "slug": "cevizli-batirik-karaman-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: Karaman batırıkta salça, limon ve nar ekşisi yaygın; mevcut listede ekşi ve salça eksik",
+      "steps: tekrar eden Cevizli Batırık başlıklı template cümleleri var",
+      "step 5: 5 dakika dinlendirme totalMinutes içine dahil edilmemiş"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Domates salçası", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Limon suyu", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Nar ekşisi", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "İnce bulguru domates rendesiyle 15 dakika yumuşatın.",
+          "timerSeconds": 900
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Tahin, ceviz ve domates salçasını ekleyip 2 dakika yoğurun.",
+          "timerSeconds": 120
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Maydanozu, limon suyunu ve nar ekşisini katıp karıştırın."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Kıvamı gerekirse birkaç kaşık soğuk suyla açın."
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Batırığı 5 dakika dinlendirip marul yapraklarıyla serin servis edin.",
+          "timerSeconds": 300
+        }
+      ],
+      "totalMinutes": 22
+    },
+    "sources": [
+      "https://karaman.net/neler-yenir-batirik-tarifi-32.html",
+      "https://www.nefisyemektarifleri.com/batirik-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Batırık bulgur, tahin, salça, ekşi ve yeşillikle yapılır. Mevcut tarif hem eksik hem de tekrarlı template cümleleri içeriyor."
+  },
+  {
+    "slug": "cevizli-biber-ezmesi-hatay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 2: nar ekşisi ingredient listesinde doğru yazılı ama stepte 'nar eksisi' olarak ASCII fold hatası var"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Biberleri ceviz, nar ekşisi, zeytinyağı ve kimyonla robota alın."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.hataydanal.com/blog/cevizli-biber-hatay-yoresi",
+      "https://www.hataymutfagirehberi.com/cevizli-biber/"
+    ],
+    "confidence": "high",
+    "reason": "Hatay cevizli biberinde biber, ceviz, zeytinyağı ve ekşi denge uygundur. Stepteki Türkçe karakter hatası düzeltilmeli."
+  },
+  {
+    "slug": "cevizli-biber-kavurmasi-adiyaman-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3: 'kısa süre' ifadesi somut timer olmadan muğlak kalıyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 3,
+          "instruction": "Sarımsağı ekleyip acılığı yanmadan açılana kadar çevirin.",
+          "timerSeconds": 60
+        }
+      ]
+    },
+    "sources": [
+      "https://www.hataydanal.com/blog/cevizli-biber-hatay-yoresi",
+      "https://ozlemsturkishtable.com/2011/02/walnut-red-pepper-paste-dip-cevizli-biber/"
+    ],
+    "confidence": "medium",
+    "reason": "Biber, ceviz, sarımsak ve zeytinyağı meze mantığıyla uyumlu. Ancak pişirme adımında somut süre yok, kullanıcı için netleşmeli."
+  },
+  {
+    "slug": "cevizli-biberli-dip-antep-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://mezetapa.com/muhammara-tarifi-antep-usulu/",
+      "https://www.antepsofrasi.com/tarif/kahvaltilik-sos-muhammara-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Köz biber, ceviz, sarımsak, zeytinyağı ve kimyon Antep usulü biberli dip için uyumlu. Lavaş nedeniyle gluten allergeni doğru."
+  },
+  {
+    "slug": "cevizli-biberli-patlican-dip-kirklareli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3: sarımsak geçiyor ama ingredient listesinde sarımsak yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/meze-tarifleri/kozlenmis-patlican-mezesi-tarifi",
+      "https://www.sosyalvadi.com/tarif/nar-eksili-cevizli-patlican-ezmesi"
+    ],
+    "confidence": "medium",
+    "reason": "Köz patlıcan, köz biber, ceviz ve zeytinyağı meze olarak tutarlı. Stepte sarımsak kullanıldığı için ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "cevizli-biberli-yogurt-ezme-artvin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: zeytinyağı kullanılıyor ama ingredient listesinde zeytinyağı yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/meze-tarifleri/koz-biber-mezesi-tarifi",
+      "https://yemek.com/tarif/cevizli-peynirli-biber-ezme/"
+    ],
+    "confidence": "medium",
+    "reason": "Biber, yoğurt, ceviz ve sarımsaklı ezme mantığı doğru. Biberi çevirmek için kullanılan zeytinyağı listede eksik."
+  }
+]

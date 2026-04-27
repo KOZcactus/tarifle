@@ -1,0 +1,956 @@
+[
+  {
+    "slug": "turos-palacsinta-kup-macaristan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 pudra şekeri, yoğurt ve limon kabuğu kullanıyor ama ingredient listesinde yok",
+      "steps: step 4 meyve diyor, mevcut ingredient reçel; reçel kup için yeterli ve daha tutarlı"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Pudra şekeri", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Yoğurt", "amount": "0.25", "unit": "su bardağı" },
+        { "name": "Limon kabuğu rendesi", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 4, "instruction": "Kup tabanına reçel, üstüne lorlu krep karışımı yerleştirin; katlar nemli kalsın ama krep ezilmesin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.sbs.com.au/food/recipe/hungarian-sweet-pancakes-turos-palacsinta/eyouynqlp",
+      "https://www.thespruceeats.com/hungarian-sweet-pancakes-recipe-palacsinta-1136669"
+    ],
+    "confidence": "high",
+    "reason": "Macar túrós palacsinta lor, şekerli süt ürünü ve limon aromasıyla uyumlu. Sorun tarif kimliği değil, stepte geçen üç malzemenin listede olmaması."
+  },
+  {
+    "slug": "turp-otu-kavurmasi",
+    "verdict": "PASS",
+    "reason": "Ege turp otu kavurması haşlanan otun soğan ve zeytinyağıyla çevrilmesi üzerine kurulu. Süre, vegan etiketleri ve limonlu servis makul görünüyor.",
+    "sources": [
+      "https://www.yemek.com/tarif/turp-otu-yemegi/",
+      "https://www.nefisyemektarifleri.com/turp-otu-kavurmasi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "turplu-narli-tahinli-salata-hatay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: boilerplate tekrarları var ve tarif adı cümle içinde yapay biçimde tekrarlanıyor",
+      "ingredients: step 3 zeytinyağı ve tuz kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Turpları ince dilimleyin ve fazla suyunu süzdürün.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tahin, limon suyu, zeytinyağı, tuz ve az suyu akışkan bir sos olana kadar çırpın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Turpları tahinli sosla ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 4, "instruction": "Nar tanelerini son anda ekleyin, taneler patlayıp sosu sulandırmasın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Salatayı sığ tabağa alın ve sos parlakken servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.kisikates.com.tr/tarif/tahinli-turp-salatasi-2034",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/narli-turp-salatasi"
+    ],
+    "confidence": "medium",
+    "reason": "Tahinli turp salatası çizgisi doğru, nar eklemesi makul. Ancak mevcut adımlar üretim cümlesi gibi duruyor ve sos malzemesi eksik."
+  },
+  {
+    "slug": "turplu-yogurtlu-asma-salatasi-malatya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: boilerplate tekrarları var ve asma yaprağı, turp, yoğurt akışı doğal anlatılmıyor",
+      "ingredients: yoğurtlu sos için tuz listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Asma yapraklarını sıcak suda yumuşatıp süzün ve ince şeritler halinde kesin.", "timerSeconds": 60 },
+        { "stepNumber": 2, "instruction": "Turpları ince dilimleyin, fazla suyunu süzdürün.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Yoğurdu sarımsak ve tuzla pürüzsüz çırpın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Asma yaprağı ve turpu yoğurtla ezmeden karıştırın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Salatayı soğuk kasede servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/yogurtlu-turp-salatasi",
+      "https://www.nefisyemektarifleri.com/asma-yapragi-salatasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Yoğurtlu turp ve asma yaprağı salatası tekniği makul. Düzeltme yöre iddiasını büyütmeden, bozuk step akışını ve eksik tuzu toparlıyor."
+  },
+  {
+    "slug": "turron-yogurt-kup-ispanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 5 içinde 25 dakika soğutma var, fakat totalMinutes 10 dk",
+      "tags: 30-dakika-alti total 35 dakikaya çıkınca yanıltıcı olur"
+    ],
+    "corrections": {
+      "totalMinutes": 35,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.directoalpaladar.com/postres/vasitos-de-crema-de-turron-y-mascarpone-receta-facil",
+      "https://www.bonviveur.es/recetas/mousse-de-turron"
+    ],
+    "confidence": "high",
+    "reason": "Turronlu sütlü kup fikri İspanyol tatlılarına uyuyor. Açık hata süre tarafında: soğutma eklendiğinde toplam 10 dakika kalamaz."
+  },
+  {
+    "slug": "tursu-kavurmali-yumurta-rize-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: ilk iki ve son iki adım boilerplate; peynirli doku ifadesi tarifle ilgisiz",
+      "steps: fasulye turşusu kavurması ve yumurta akışı daha kısa, doğrudan anlatılmalı"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Fasulye turşusunu iri doğrayın, fazla tuzluysa sudan geçirip suyunu sıkın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Soğanı tereyağında yumuşayana kadar kavurun.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Turşuyu tavaya ekleyip diri dokusu kalacak şekilde çevirin.", "timerSeconds": 360 },
+        { "stepNumber": 4, "instruction": "Yumurtaları tavaya kırın ve beyazı toparlanana kadar pişirin.", "timerSeconds": 240 },
+        { "stepNumber": 5, "instruction": "Sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.rize.gov.tr/mutfak-kulturu",
+      "https://ye-mek.net/tarif/yumurtali-fasulye-tursusu-kavurmasi"
+    ],
+    "confidence": "high",
+    "reason": "Rize fasulye turşusu kavurması ve yumurtalı versiyon kaynaklarla uyumlu. Sorun kimlikte değil, yapay ve ilgisiz step cümlelerinde."
+  },
+  {
+    "slug": "tursulu-kavrulmus-lahana-rize-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "identity: Rize kaynaklarında turşu kavurması fasulye turşusu ekseninde geçiyor, beyaz lahana ana malzeme olarak doğrulanamadı",
+      "steps: peynirli doku ve servis tabağı hazırlığı gibi ilgisiz boilerplate var"
+    ],
+    "corrections": {
+      "description": "Rize usulü turşu kavurması, fasulye turşusunu soğanla kavuran ekşi ve sıcak bir Karadeniz tabağıdır.",
+      "ingredients_remove": ["Beyaz lahana"],
+      "ingredients_amount_change": [
+        { "name": "Fasulye turşusu", "newAmount": "500", "newUnit": "gr" }
+      ]
+    },
+    "sources": [
+      "https://www.rize.gov.tr/mutfak-kulturu",
+      "https://www.nefisyemektarifleri.com/rize-usulu-fasulye-tursusu-kavurmasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Turşu kavurma kimliği Rize için güçlü, fakat mevcut beyaz lahana ana omurgası kaynaklarla desteklenmiyor. Manuel review uygun."
+  },
+  {
+    "slug": "tursulu-patates-salata-sinop-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 limon suyu ve tuz kullanıyor ama ingredient listesinde yok",
+      "totalMinutes: 12 dk haşlama, 1 dk karıştırma ve 10 dk dinlenme toplam 23 dk; totalMinutes 22 dk küçük sapma gösteriyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 23
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/patates-salatasi/",
+      "https://www.nefisyemektarifleri.com/kornison-tursulu-patates-salatasi/"
+    ],
+    "confidence": "high",
+    "reason": "Patates, kornişon ve dereotlu salata yapısı doğru. Açık eksik, sosta adı geçen limon ve tuzun ingredient listesinde olmaması."
+  },
+  {
+    "slug": "turunc-recelli-labne-tostu-antalya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: başlangıç ve bitişte boilerplate cümleleri var",
+      "steps: 3 dakika dinlendirme labneli tost için gereksiz ve toplam süreyi tarif amacı dışında uzatıyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Ekmek dilimlerini tereyağıyla tavada kızartın.", "timerSeconds": 120 },
+        { "stepNumber": 2, "instruction": "Labneyi ekmeğin üzerine ince bir kat sürün.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Turunç reçelini labnenin üstüne paylaştırın, ekmeği ıslatmayacak kadar kullanın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Tostları ikiye kesip bekletmeden servis edin.", "timerSeconds": null }
+      ],
+      "totalMinutes": 10
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/turunc-receli/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/kahvaltilik-tarifler/kahvaltiliklar/labneli-tost"
+    ],
+    "confidence": "medium",
+    "reason": "Turunç reçeli Antalya için makul bir ürün, labneli tost tekniği basit. Düzeltme kimliği değil, yapay step uzamasını hedefliyor."
+  },
+  {
+    "slug": "turunc-recelli-yogurt-kup-antalya-usulu",
+    "verdict": "PASS",
+    "reason": "Süzme yoğurt, turunç reçeli, badem ve bal ile hazırlanan soğuk kup dengeli. Süreler, süt ve kuruyemiş alerjenleri tutarlı.",
+    "sources": [
+      "https://www.yemek.com/tarif/turunc-receli/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/sutlu-tatlilar/yogurtlu-kup"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "turunclu-irmik-tatlisi-mersin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: listede turunç suyu var ama step 3 turunç reçeli ekliyor",
+      "totalMinutes: 2 saat soğutma totalMinutes içine dahil değil",
+      "tags: toplam süre 144 dakikaya çıkınca 30-dakika-alti yanıltıcı olur"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 3, "instruction": "Ocaktan alınca turunç suyunu ekleyip karıştırın; kabuk aromasını acılaştırmayın.", "timerSeconds": null }
+      ],
+      "totalMinutes": 144,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/irmik-tatlisi/",
+      "https://www.nefisyemektarifleri.com/portakalli-irmik-tatlisi/"
+    ],
+    "confidence": "high",
+    "reason": "Narenciyeli irmik tatlısı yapısı doğru. Hata, ingredient ile step arasındaki turunç suyu ve reçel çelişkisi ile eksik soğutma süresi."
+  },
+  {
+    "slug": "turunclu-kuskus-salatasi-mersin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: turunç suyu yerine limon suyu yazıyor ve beyaz zar temizleme adımı ingredientle uyumsuz",
+      "ingredients: tuz stepte geçiyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 2, "instruction": "Salatalığı küçük doğrayın, maydanozu ince kıyın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Zeytinyağı, turunç suyu ve tuzu çırpın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Kuskus, salatalık ve maydanozu turunçlu sosla ezmeden karıştırın.", "timerSeconds": 60 }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/kuskus-salatasi/",
+      "https://www.nefisyemektarifleri.com/kuskus-salatasi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kuskus salatası akışı doğru. Mevcut sorun narenciye adımının yanlış kurulması ve tuzun listede yer almaması."
+  },
+  {
+    "slug": "turunclu-reyhan-serbeti-adana-usulu",
+    "verdict": "PASS",
+    "reason": "Reyhan şerbetinde şekerli sıcak sıvı ve kısa demleme tekniği kaynaklarla uyumlu. Turunç suyu eklemesi narenciye dengesi olarak makul.",
+    "sources": [
+      "https://www.yemek.com/tarif/reyhan-serbeti/",
+      "https://www.nefisyemektarifleri.com/reyhan-serbeti-tarifi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "turunclu-soguk-cay-alanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "tags: bal içerdiği için vejetaryen uygun ama vegan etiketi yok; mevcut doğru",
+      "description: Alanya yöre iddiası kaynakla netleşmiyor, fakat içerik soğuk çay olarak makul",
+      "totalMinutes: 5 dakika ılıtma ve hazırlıkla 13 dk uyumlu"
+    ],
+    "corrections": {
+      "description": "Turunçlu soğuk çay, siyah çayı turunç suyu ve bal ile buluşturan ferah bir bardak çıkarır."
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/soguk-cay/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/icecek-tarifleri/soguk-cay"
+    ],
+    "confidence": "medium",
+    "reason": "Tarif içecek olarak doğru, ancak Alanya usulü iddiasını destekleyen iki kaynak bulunmadı. Minimum düzeltme yöre iddiasını kaldırıyor."
+  },
+  {
+    "slug": "turunclu-yogurtlu-kabak-salatasi-antalya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: turunç suyu ingredient olmasına rağmen beyaz zar temizleme gibi ilgisiz narenciye adımı var",
+      "ingredients: tuz stepte geçiyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 2, "instruction": "Yoğurdu sarımsak, turunç suyu ve tuzla çırpın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Ilık kabağı yoğurtlu sosla ezmeden karıştırın.", "timerSeconds": 60 },
+        { "stepNumber": 4, "instruction": "Dereotunu son anda ekleyip salatayı soğuk servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/kabak-salatasi/",
+      "https://www.nefisyemektarifleri.com/yogurtlu-kabak-salatasi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurtlu kabak salatası tekniği doğru. Turunç suyu sos bileşeni olarak kalmalı, mevcut beyaz zar adımı tarife uymuyor."
+  },
+  {
+    "slug": "turunclu-zeytin-salatasi-antalya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: turunç suyu yerine limon suyu yazıyor ve zeytin salatasına uygun olmayan otomatik cümleler var",
+      "ingredients: tuz kullanımı stepte geçiyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 2, "instruction": "Turunç suyu, zeytinyağı ve tuzu küçük kasede çırpın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Zeytinleri maydanoz ve turunçlu sosla karıştırın.", "timerSeconds": 60 },
+        { "stepNumber": 4, "instruction": "Salatayı küçük kasede bekletmeden servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/zeytin-salatasi/",
+      "https://www.nefisyemektarifleri.com/zeytin-salatasi/"
+    ],
+    "confidence": "high",
+    "reason": "Zeytin salatası ve narenciye sosu uyumlu. Asıl hata, stepte limon ve otomatik salata kalıbının turunçlu içeriği bozması."
+  },
+  {
+    "slug": "tutlu-yarma-corbasi-erzincan-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "identity: Erzincan dutlu yarma çorbası için güvenilir iki kaynakla yöresel doğrulama yapılamadı",
+      "ingredients: step 4 tereyağı kullanıyor ama ingredient listesinde yok",
+      "tags: stepte tereyağı kullanıldığı halde vegan etiketi var"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["SUT"],
+      "tags_remove": ["vegan"]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/yarma-corbasi/",
+      "https://www.yemek.com/tarif/kuru-dut-hosafi/"
+    ],
+    "confidence": "low",
+    "reason": "Yarma çorbası ve kuru dut kullanımı ayrı ayrı bilinir, fakat bu Erzincan kimliği doğrulanamadı. İçerik de vegan etiketle çelişiyor."
+  },
+  {
+    "slug": "tutmac-corbasi",
+    "verdict": "PASS",
+    "reason": "Tutmaç çorbası erişte, mercimek, yoğurtlu terbiye ve naneli yağla kaynaklara uyuyor. Süre, alerjen ve kış etiketi tutarlı.",
+    "sources": [
+      "https://www.yemek.com/tarif/tutmac-corbasi/",
+      "https://www.nefisyemektarifleri.com/tutmac-corbasi-tarifi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "tutu-de-feijao",
+    "verdict": "CORRECTION",
+    "issues": [
+      "identity: klasik tutu de feijao çoğu kaynakta fasulye, manyok unu ve sarımsaklı soğanla doğru; ancak sık eşlikçileri yumurta veya et olabilir",
+      "servingSuggestion: vegan etiket korunacaksa kızarmış yumurta servis önerisinde ana öneri olmamalı"
+    ],
+    "corrections": {
+      "servingSuggestion": "Yanına pirinç, kavrulmuş lahana ve portakal dilimi koyarak sıcak sunun."
+    },
+    "sources": [
+      "https://www.oliviascuisine.com/tutu-de-feijao/",
+      "https://www.196flavors.com/brazil-tutu-de-feijao/"
+    ],
+    "confidence": "high",
+    "reason": "Fasulye ve manyok unu omurgası doğru. Vegan etiketli bu uyarlamada yumurta servis önerisi yanıltıcı olduğu için çıkarılmalı."
+  },
+  {
+    "slug": "tuzlu-karamelli-kahve",
+    "verdict": "PASS",
+    "reason": "Espresso, süt, karamel ve çok az tuz dengesi yaygın tuzlu karamelli kahve formülüyle uyumlu. Süt alerjeni ve kısa süre doğru.",
+    "sources": [
+      "https://www.nespresso.com/recipes/int/en/40716SAL-salted-caramel-latte.html",
+      "https://www.torani.com/recipes/salted-caramel-latte"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "tvorog-zapekanka-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 kuru üzüm ekliyor ama ingredient listesinde yok",
+      "serving: step 5 ekşi krema ile servis ediyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru üzüm", "amount": "0.25", "unit": "su bardağı" },
+        { "name": "Ekşi krema", "amount": "0.5", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.rbth.com/russian-kitchen/334131-zapekanka-russian-cottage-cheese-cake-recipe",
+      "https://www.olgasflavorfactory.com/recipes/breakfast/cheese-zapekanka/"
+    ],
+    "confidence": "high",
+    "reason": "Tvorog, yumurta ve irmikli zapekanka doğru. Kuru üzüm ve ekşi krema kaynaklarda da yaygın, fakat mevcut listede eksik."
+  },
+  {
+    "slug": "tvoroglu-biberli-tost-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "identity: Macar körözött çizgisi taze peynir, paprika ve biberle uyumlu; mevcut tost bunu açık anlatmıyor",
+      "steps: boilerplate ve gereksiz dinlendirme var"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Ekmekleri tereyağıyla tavada kızartın.", "timerSeconds": 120 },
+        { "stepNumber": 2, "instruction": "Tvorog peynirini ince doğranmış tatlı biberle ezerek sürülebilir hale getirin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Peynirli harcı sıcak ekmeklerin üzerine paylaştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Tostları gevrekliği kaybolmadan servis edin.", "timerSeconds": null }
+      ],
+      "totalMinutes": 10
+    },
+    "sources": [
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/korozott-hungarian-cheese-spread/",
+      "https://www.thespruceeats.com/hungarian-goat-cheese-spread-recipe-korozott-1136732"
+    ],
+    "confidence": "medium",
+    "reason": "Peynirli paprika harcı Macar körözött geleneğiyle uyumlu. Düzeltme yemeği değiştirmeden gereksiz boilerplate akışı temizliyor."
+  },
+  {
+    "slug": "tvorozhnaya-zapekanka-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: fırın tatlısı için tava ısıtma adımı yanlış",
+      "steps: 10 dakikalık ekipman hazırlığı timerı gerçek hazırlık değil ve süreyi şişiriyor",
+      "servingSuggestion: karışık tane ekmek ifadesi anlamsız"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Taze peynir, irmik, yumurta ve şekeri pürüzsüz ama çok köpürtmeden karıştırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Kuru üzümü ekleyip harcı irmik nem çekene kadar dinlendirin.", "timerSeconds": 600 },
+        { "stepNumber": 3, "instruction": "Karışımı yağlanmış kalıba yayın ve üstünü düzeltin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Zapekankayı 180°C fırında üstü hafif kızarana kadar pişirin.", "timerSeconds": 1320 },
+        { "stepNumber": 5, "instruction": "Ilık dilimleyip servis edin.", "timerSeconds": null }
+      ],
+      "servingSuggestion": "Ilık dilimleyip yanında çay veya meyve reçeliyle servis edin."
+    },
+    "sources": [
+      "https://www.rbth.com/russian-kitchen/334131-zapekanka-russian-cottage-cheese-cake-recipe",
+      "https://www.olgasflavorfactory.com/recipes/breakfast/cheese-zapekanka/"
+    ],
+    "confidence": "high",
+    "reason": "Zapekanka kimliği doğru, ancak mevcut adımlar fırın akışına aykırı tava ısıtma ve yapay hazırlık timerı içeriyor."
+  },
+  {
+    "slug": "twaroglu-patates-pancake-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: boilerplate cümleleri var, peynirli doku sertleşir ifadesi otomatik ve zayıf",
+      "steps: patates pancake için kızartma akışı daha net olmalı"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patatesleri rendeleyip suyunu sıkın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Patates, twarog, yumurta, un ve tuzu karıştırıp yumuşak bir harç hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Harçtan ince parçalar alıp kızgın tavaya yayın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Pancakeleri iki yüzü kızarana kadar pişirin.", "timerSeconds": 600 },
+        { "stepNumber": 5, "instruction": "Kağıt havluya alıp sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.polonist.com/polish-potato-pancakes-placki-ziemniaczane/",
+      "https://www.everyday-delicious.com/polish-potato-pancakes/"
+    ],
+    "confidence": "medium",
+    "reason": "Polonya patates pancake tekniği doğru, twarog eklemesi uyarlama olarak makul. Sorun, doğal olmayan otomatik step dili."
+  },
+  {
+    "slug": "tzatziki",
+    "verdict": "PASS",
+    "reason": "Tzatziki süzme yoğurt, salatalık, sarımsak, dereotu ve zeytinyağıyla kaynaklara uyuyor. Süt alerjeni ve kısa dinlendirme makul.",
+    "sources": [
+      "https://www.themediterraneandish.com/tzatziki-sauce-recipe/",
+      "https://www.loveandlemons.com/tzatziki-sauce/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "uborkali-patates-kofte-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: köfteleri yağlı tavada pişiriyor ama yağ listede yok",
+      "servingSuggestion: yoğurt veya cacık önerisi SUT alerjeni olmayan tarife ek servis riski yaratıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ayçiçek yağı", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "servingSuggestion": "Yanına ince salatalık salatası koyarak sıcak veya ılık servis edin."
+    },
+    "sources": [
+      "https://www.daringgourmet.com/hungarian-potato-pancakes-lapcsanka/",
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/uborkasalata-hungarian-cucumber-salad/"
+    ],
+    "confidence": "medium",
+    "reason": "Patates köftesi ve uborka salatası eşleşmesi makul. Kızartma yağı listede eksik, sütlü servis önerisi alerjen dışı kalmalı."
+  },
+  {
+    "slug": "uborkasalata-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: klasik uborkasalata salatalığın tuzlanıp suyunun sıkılmasını ister, mevcut adımlar bunu net yapmıyor",
+      "ingredients: steps zeytinyağı ve limon kullanıyor ama klasik tarifte sirke, şeker, tuz ve paprika daha uygun",
+      "tags: totalMinutes 40 dk olduğu için 30-dakika-alti yanlış"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Salatalıkları çok ince dilimleyip tuzla harmanlayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Salatalıkları suyunu bırakana kadar bekletip sıkın.", "timerSeconds": 1800 },
+        { "stepNumber": 3, "instruction": "Sirke, şeker ve tatlı toz biberi karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Salatalığı sosla harmanlayıp soğuk servis edin.", "timerSeconds": null }
+      ],
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/uborkasalata-hungarian-cucumber-salad/",
+      "https://www.thespruceeats.com/hungarian-cucumber-salad-recipe-uborkasalata-1136681"
+    ],
+    "confidence": "high",
+    "reason": "Macar uborkasalata 30 dakikalık tuzlama adımıyla bilinir. Mevcut total 40 dk iken hızlı tag ve limonlu boilerplate yanlış."
+  },
+  {
+    "slug": "ukha",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 soğan kullanıyor ama ingredient listesinde yok",
+      "ingredients: step 2 tane karabiber, step 5 dereotu ve limon kullanıyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Tane karabiber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Dereotu", "amount": "0.25", "unit": "demet" },
+        { "name": "Limon", "amount": "0.5", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://www.rbth.com/russian-kitchen/331182-ukha-russian-fish-soup-recipe",
+      "https://www.thespruceeats.com/russian-fish-soup-recipe-ukha-1135521"
+    ],
+    "confidence": "high",
+    "reason": "Ukha berrak balık çorbası olarak doğru. Sorun, kaynaklarda da temel görülen soğan, karabiber, dereotu ve limonun listede eksik olması."
+  },
+  {
+    "slug": "umm-ali",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 krema kullanıyor ama ingredient listesinde yok",
+      "description: Mısır usulü tatlı doğru, cuisine me kodu Tarifle içinde bölgesel karşılık olarak kalabilir"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Krema", "amount": "200", "unit": "ml" }
+      ]
+    },
+    "sources": [
+      "https://www.cleobuttera.com/middle-eastern/om-ali-egyptian-bread-pudding/",
+      "https://www.themediterraneandish.com/umm-ali-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Umm Ali milföy, süt, krema, yemiş ve kuru meyveyle uyumlu. Açık eksik, stepte ısıtılan kremanın listede olmaması."
+  },
+  {
+    "slug": "un-helvasi-tekirdag-usulu",
+    "verdict": "PASS",
+    "reason": "Un helvası tereyağında un kavurma ve şerbetle toparlama tekniğiyle kaynaklara uyuyor. Süreler, süt ve gluten alerjenleri makul.",
+    "sources": [
+      "https://www.yemek.com/tarif/un-helvasi/",
+      "https://www.nefisyemektarifleri.com/un-helvasi-tarifi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "unlu-eriste-corbasi-kirsehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 5 kuru nane kullanıyor ama ingredient listesinde yok",
+      "ingredients: step 1 ve step 6 tuz kullanımı gerektiriyor ama listede tuz yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru nane", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/yogurtlu-eriste-corbasi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/corba-tarifleri/corba-tarifleri/yogurtlu-eriste-corbasi"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurtlu unlu erişte çorbası yapısı doğru. Mevcut listede nane ve tuz eksik olduğu için apply edilebilir küçük düzeltme gerekiyor."
+  },
+  {
+    "slug": "unlu-tava-coregi-ankara-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: servis tabağı hazırlığı ve peynirli doku cümleleri tarifle ilgisiz",
+      "tipNote: iyi sonuç verir ifadesi çok genel, fakat Mod K tarz düzeltmesi yapmadan step akışı düzeltilmeli"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, yoğurt, yumurta ve tuzu yumuşak bir hamur olana kadar yoğurun.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Hamuru dört bezeye ayırıp ince açın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Tereyağını tavada eritin.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Çörekleri iki yüzü kızarana kadar pişirin.", "timerSeconds": 480 },
+        { "stepNumber": 5, "instruction": "Sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/tava-coregi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/corek-tarifleri/tava-coregi"
+    ],
+    "confidence": "medium",
+    "reason": "Tava çöreği hamur ve tava pişirme olarak makul. Sorun, tarifle ilgisiz otomatik step cümleleri."
+  },
+  {
+    "slug": "urfa-acili-lahmacun-ev",
+    "verdict": "PASS",
+    "reason": "Urfa lahmacunu ince hamur, kıyma, isot, salça, domates, soğan ve maydanozla uyumlu. Dinlenme ve yüksek ısı süresi makul.",
+    "sources": [
+      "https://www.yemek.com/tarif/lahmacun/",
+      "https://www.nefisyemektarifleri.com/urfa-usulu-lahmacun-tarifi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "urfa-agzi-acik",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "ingredients: Urfa ağzı açık için kıymalı harçta biber, baharat ve yağ eksik; mevcut liste dört malzemeyle yetersiz",
+      "steps: mevcut adımlar otomatik ve belirsiz; kızartma, harç ve hamur kapatma biçimi doğru anlatılmıyor",
+      "tipNote: çorba terbiyesiyle ilgili, bu tarifle ilgisiz"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yumurta", "amount": "1", "unit": "adet" },
+        { "name": "İsot", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Sıvı yağ", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, su, tuz ve yumurtayla yumuşak bir hamur yoğurun.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Kıyma, soğan, salça, isot ve tuzu yoğurup harç hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Hamuru küçük açıp harcı ortasına yayın, kenarlarını açık kalacak biçimde kapatın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Parçaları sıcak yağda iki yüzü kızarana kadar pişirin.", "timerSeconds": 600 },
+        { "stepNumber": 5, "instruction": "Kağıt havluya alıp sıcak servis edin.", "timerSeconds": null }
+      ],
+      "tipNote": "Harcı ince yaymak hamurun içini çiğ bırakmadan kızartır."
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/agzi-acik/",
+      "https://www.nefisyemektarifleri.com/agzi-acik-urfa-yoresi/"
+    ],
+    "confidence": "high",
+    "reason": "Bu entry kimlik olarak Urfa ağzı açık, fakat malzeme ve step kalitesi apply öncesi manuel bakış gerektirecek kadar eksik."
+  },
+  {
+    "slug": "urfa-etsiz-cig-kofte",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 zeytinyağı kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "3", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/etsiz-cig-kofte/",
+      "https://www.nefisyemektarifleri.com/etsiz-cig-kofte-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Urfa usulü etsiz çiğ köfte bulgur, isot, salça ve nar ekşisiyle doğru. Açık eksik, stepte kullanılan yağın listede olmaması."
+  },
+  {
+    "slug": "urfa-isotlu-patlican-kebabi-ev-usulu",
+    "verdict": "PASS",
+    "reason": "Patlıcan kebabı patlıcan, kıyma, domates, biber ve fırın pişirme düzeniyle kaynaklara uyuyor. Süre ve yüksek protein etiketi makul.",
+    "sources": [
+      "https://www.yemek.com/tarif/patlican-kebabi/",
+      "https://www.nefisyemektarifleri.com/urfa-usulu-patlican-kebabi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "urfa-nar-eksili-bostana",
+    "verdict": "PASS",
+    "reason": "Bostana ince doğranmış sebze, isot, nar ekşisi ve sulu-ekşi yapı ile Urfa kaynaklarına uyuyor. Düşük kalorili ve vegan etiketleri doğru.",
+    "sources": [
+      "https://www.yemek.com/tarif/bostana-salatasi/",
+      "https://www.nefisyemektarifleri.com/bostana-salatasi-sanliurfa-yoresi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "uskumrulu-bulgur-pilavi-canakkale-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 zeytinyağı, step 4 tuz ve karabiber, step 6 maydanoz kullanıyor ama listede yok",
+      "totalMinutes: steps içinde 4+2+10+8+10 dk aktif pişme ve demleme var, totalMinutes 30 dk eksik kalıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" },
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" }
+      ],
+      "totalMinutes": 42
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/bulgur-pilavi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/pilav-ve-makarna-tarifleri/pilav-tarifleri/balikli-bulgur-pilavi"
+    ],
+    "confidence": "medium",
+    "reason": "Balıklı bulgur pilavı yapısı makul. Açık sorun, pişirme yardımcılarının listede eksik olması ve demleme dahil toplam sürenin düşük kalması."
+  },
+  {
+    "slug": "uskumrulu-patates-salata-canakkale-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: uskumru fileto raw görünüyor ama pişirme veya hazır füme bilgisi yok",
+      "ingredients: step 3 limon suyu ve tuz kullanıyor ama listede yok",
+      "totalMinutes: uskumru pişirme eklendiğinde 22 dk yetmez"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patatesleri haşlayıp ılık halde soyun ve iri doğrayın.", "timerSeconds": 720 },
+        { "stepNumber": 2, "instruction": "Uskumru filetoyu tavada pişirip iri parçalara ayırın.", "timerSeconds": 420 },
+        { "stepNumber": 3, "instruction": "Zeytinyağı, limon suyu ve tuzu çırpın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Patates, uskumru ve dereotunu sosla ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Salatayı oda sıcaklığında servis edin.", "timerSeconds": null }
+      ],
+      "totalMinutes": 29
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/patates-salatasi/",
+      "https://www.bbcgoodfood.com/recipes/mackerel-potato-salad"
+    ],
+    "confidence": "high",
+    "reason": "Uskumrulu patates salatası fikri doğru, ancak raw fileto için pişirme adımı yoktu. Bu gıda güvenliği açısından net correction."
+  },
+  {
+    "slug": "uunijuusto",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "identity: uunijuusto Finlandiya süt tatlısıdır; cuisine se İsveç olarak kayıtlı",
+      "ingredients: klasik tarif kolostrum sütü veya sütlü yumurtalı karışım üzerine kurulu, lor peyniri omurgası kimliği bozuyor",
+      "schema: Tarifle cuisine listesinde fi kodu yoksa manuel cuisine kararı gerekir"
+    ],
+    "corrections": {
+      "description": "Uunijuusto, Finlandiya mutfağında sütlü karışımın fırında kesilip yumuşak bir tatlıya dönüştüğü sade bir fırın tatlısıdır.",
+      "ingredients_remove": ["Lor peyniri"],
+      "ingredients_amount_change": [
+        { "name": "Süt", "newAmount": "800", "newUnit": "ml" }
+      ]
+    },
+    "sources": [
+      "https://www.tasteatlas.com/uunijuusto",
+      "https://www.daringgourmet.com/finnish-baked-cheese-uunijuusto/"
+    ],
+    "confidence": "high",
+    "reason": "Uunijuusto kimliği ve ülke eşleşmesi yapısal sorunlu. Tarifle'de Finlandiya cuisine kodu olmadığı için manuel review gerekli."
+  },
+  {
+    "slug": "uzo-limon-spritz-yunan-usulu",
+    "verdict": "PASS",
+    "reason": "Uzo, limon, soda ve bol buzla hazırlanan uzun içimli kokteyl Yunan içki karakterine uyuyor. Alkollü etiketi ve süreler doğru.",
+    "sources": [
+      "https://www.diffordsguide.com/cocktails/recipe/3662/ouzo-lemonade",
+      "https://www.greekflavours.com/en/blog/greek-food/greek-ouzo-cocktails"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "uzum-hosafi-kayisi-cekirdekli-nevsehir-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "steps: mevcut üç adım generic, kuru üzüm hoşafı pişirme akışını anlatmıyor",
+      "identity: kayısı çekirdeği kullanımı gıda güvenliği ve yöre doğrulaması açısından manuel review gerektirir",
+      "totalMinutes: üzüm hoşafı için pişirme süresi verilmediği halde cookMinutes 10"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kuru üzümleri yıkayıp tencereye alın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Su ve tarçını ekleyip üzümler yumuşayana kadar pişirin.", "timerSeconds": 900 },
+        { "stepNumber": 3, "instruction": "Kayısı çekirdeğini bütün halde kısa süre demleyip çıkarın.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Hoşafı süzüp soğuk servis edin.", "timerSeconds": null }
+      ],
+      "totalMinutes": 25
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/uzum-hosafi/",
+      "https://www.nefisyemektarifleri.com/uzum-hosafi/"
+    ],
+    "confidence": "low",
+    "reason": "Üzüm hoşafı doğru, fakat kayısı çekirdeği ve Nevşehir iddiası yeterince net değil. Generic steps de apply öncesi riskli."
+  },
+  {
+    "slug": "uzum-hosafli-irmik-kupu-manisa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: 1 saat soğutma step içinde var ama totalMinutes 22 dk",
+      "tags: 30-dakika-alti toplam süre 82 dakikaya çıkınca yanıltıcı olur"
+    ],
+    "corrections": {
+      "totalMinutes": 82,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/irmik-tatlisi/",
+      "https://www.nefisyemektarifleri.com/uzum-hosafi/"
+    ],
+    "confidence": "high",
+    "reason": "İrmik kupu ve üzüm hoşafı birleşimi makul. Net hata, soğutma süresinin totalMinutes ve hızlı tag içinde hesaba katılmaması."
+  },
+  {
+    "slug": "uzum-pekmezli-keskek-manisa-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "identity: keşkek kaynaklarda dövme buğdayın uzun piştiği tören yemeği, üzüm pekmezli kahvaltı versiyonu Manisa için doğrulanamadı",
+      "steps: tava ısıtma ve otomatik servis cümleleri buğday lapası akışına uymuyor"
+    ],
+    "corrections": {
+      "description": "Üzüm pekmezli dövme buğday kasesi, haşlanmış buğdayı pekmez, ceviz ve tarçınla tatlandıran sıcak bir kahvaltılık olarak sunulur.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Dövme buğdayı suyla yumuşayana kadar pişirin.", "timerSeconds": 1800 },
+        { "stepNumber": 2, "instruction": "Buğdayı tahta kaşıkla ezerek kıvamlandırın.", "timerSeconds": 180 },
+        { "stepNumber": 3, "instruction": "Ocaktan alıp pekmez, ceviz ve tarçını ekleyin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Ilık servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/keskek/",
+      "https://www.kulturportali.gov.tr/turkiye/manisa/neyenir/keskek"
+    ],
+    "confidence": "low",
+    "reason": "Keşkek adı güçlü bir geleneksel yemeğe işaret ediyor. Bu tatlı kahvaltı yorumu kaynakla zayıf, bu yüzden MAJOR ve manuel review uygun."
+  },
+  {
+    "slug": "uzum-sirali-feslegen-icecegi-yalova-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "steps: üç adım tamamen generic, üzüm şırası ve fesleğenle gerçek içecek yapımını anlatmıyor",
+      "identity: Yalova usulü üzüm şıralı fesleğen içeceği için iki güvenilir kaynakla doğrulama yapılamadı"
+    ],
+    "corrections": {
+      "description": "Üzüm şıralı fesleğen içeceği, üzüm şırasını soğuk su, fesleğen ve buzla karıştıran serin bir ev içeceğidir.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Fesleğen yapraklarını avuç içinde hafifçe ovun.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Üzüm şırası ve suyu karıştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Fesleğen ve buzu ekleyip soğuk servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/uzum-suyu/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/icecek-tarifleri/reyhan-serbeti"
+    ],
+    "confidence": "low",
+    "reason": "İçecek fikri uygulanabilir, fakat yöresel iddia ve mevcut generic steps güven vermiyor. Apply öncesi manuel karar gerekir."
+  },
+  {
+    "slug": "uzum-suyu",
+    "verdict": "PASS",
+    "reason": "Siyah üzümün su ve şekerle pişirilip süzülmesi ev yapımı üzüm suyu kaynaklarıyla uyumlu. Limon, soğutma ve vegan etiketleri doğru.",
+    "sources": [
+      "https://www.yemek.com/tarif/uzum-suyu/",
+      "https://www.nefisyemektarifleri.com/ev-yapimi-uzum-suyu/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "uzumlu-aside-tatlisi-nevsehir-usulu",
+    "verdict": "PASS",
+    "reason": "Aside tatlısı un, yağ ve şekerli suyla yapılan sade tencere tatlısı olarak kaynaklara uyuyor. Üzüm eklemesi yapıyı bozmuyor.",
+    "sources": [
+      "https://www.yemek.com/tarif/aside-tatlisi/",
+      "https://www.nefisyemektarifleri.com/aside-tatlisi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "uzumlu-dugun-pilavi-nevsehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: pirinç 20 dk, üzüm 10 dk, pişirme 15 dk ve demleme 10 dk ile toplam 58 dk; totalMinutes 28 dk",
+      "tags: 30-dakika-alti gerçek toplam süreye göre yanlış"
+    ],
+    "corrections": {
+      "totalMinutes": 58,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/ic-pilav/",
+      "https://www.nefisyemektarifleri.com/kus-uzumlu-pilav/"
+    ],
+    "confidence": "high",
+    "reason": "Kuş üzümlü pirinç pilavı yapısı doğru. Açık hata, bekletme ve demleme sürelerinin toplam süreden düşülmüş olması."
+  },
+  {
+    "slug": "uzumlu-karanfilli-hosaf-nevsehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: 12-15 dk pişirme ve 30 dk soğutma varken totalMinutes 16 dk",
+      "tags: gerçek toplam süre 46 dakikaya çıkınca 30-dakika-alti yanıltıcı olur",
+      "tipNote: karanfili 10 dakikadan fazla tutmayın diyor ama stepte 12-15 dk birlikte pişiyor"
+    ],
+    "corrections": {
+      "totalMinutes": 46,
+      "tags_remove": ["30-dakika-alti"],
+      "steps_replace": [
+        { "stepNumber": 3, "instruction": "Hoşafı orta ateşte üzümler yumuşayana kadar pişirin.", "timerSeconds": 840 },
+        { "stepNumber": 4, "instruction": "Karanfil ve tarçını çıkarıp hoşafı soğumaya bırakın.", "timerSeconds": 1800 }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/uzum-hosafi/",
+      "https://www.nefisyemektarifleri.com/uzum-hosafi/"
+    ],
+    "confidence": "high",
+    "reason": "Üzüm hoşafı yapısı doğru. Hata, pişirme ve soğutmanın toplam süreye yansımaması ve karanfil notuyla step arasındaki çelişki."
+  },
+  {
+    "slug": "uzumlu-kefir-serbeti-nevsehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "identity: Nevşehir usulü şerbet olarak kaynakla doğrulanamadı; kefirli üzüm içeceği olarak daha dürüst",
+      "tags: bal içerdiği için vegan etiketi yok, mevcut doğru"
+    ],
+    "corrections": {
+      "description": "Üzümlü kefir içeceği, kefiri üzüm suyu, bal ve tarçınla karıştıran serin ve sütlü bir bardak hazırlar."
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/kefirli-smoothie/",
+      "https://www.lifewaykefir.com/recipes/grape-kefir-smoothie/"
+    ],
+    "confidence": "medium",
+    "reason": "Kefir ve üzüm suyu içeceği beslenme olarak makul, fakat şerbet ve Nevşehir atfı kaynakla güçlenmiyor. Açıklama sadeleştirilmeli."
+  }
+]

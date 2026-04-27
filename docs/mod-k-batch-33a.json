@@ -1,0 +1,901 @@
+[
+  {
+    "slug": "tom-yum",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 galangal kullanıyor ama ingredient listesinde yok",
+      "ingredients: step 3 şili ezmesi, step 5 kişniş kullanıyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Galangal", "amount": "4", "unit": "dilim" },
+        { "name": "Şili ezmesi", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Kişniş", "amount": "0.25", "unit": "demet" }
+      ]
+    },
+    "sources": [
+      "https://hot-thai-kitchen.com/tom-yum-goong/",
+      "https://www.seriouseats.com/tom-yum-goong-thai-soup-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Tom yum yapısı doğru, fakat aromatik omurga olan galangal ve bitirişte kullanılan kişniş stepte var ama listede eksik."
+  },
+  {
+    "slug": "tomato-egg-stir-fry-cin-ev-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: mevcut akışta 10 dakikalık hazırlık timerı ve tekrar eden boilerplate cümleler var",
+      "steps: yumurta ve domatesin ayrı pişirilip tekrar birleşmesi daha doğru gösterilmeli"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Domatesleri iri küp doğrayın, yumurtaları tuzla çırpın ve taze soğanı ince kıyın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Yağın yarısını tavada ısıtıp yumurtayı yumuşak parçalar halinde pişirin, sonra tabağa alın.", "timerSeconds": 90 },
+        { "stepNumber": 3, "instruction": "Kalan yağı tavaya ekleyip domatesleri suyunu bırakana kadar çevirin.", "timerSeconds": 240 },
+        { "stepNumber": 4, "instruction": "Yumurtayı tavaya geri alın ve domates sosuyla nazikçe karıştırın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Taze soğanı serpip sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://thewoksoflife.com/stir-fried-tomato-and-egg/",
+      "https://www.seriouseats.com/tomato-egg-love-letter-11763041"
+    ],
+    "confidence": "high",
+    "reason": "Çin usulü domatesli yumurta kısa ve ayrı pişirme akışıyla uyumlu. Mevcut steps doğru fikri taşıyor ama boilerplate ve süre şişmesi var."
+  },
+  {
+    "slug": "tomato-rasam-hint-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: steps hardal tohumu, köri yaprağı, rasam baharatı ve ekşi bileşen kullanıyor ama listede yok",
+      "ingredients: step 1 yağ kullanıyor ama ingredient listesinde yağ yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Hardal tohumu", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Köri yaprağı", "amount": "6", "unit": "adet" },
+        { "name": "Rasam baharatı", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Tamarind suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Kişniş", "amount": "0.25", "unit": "demet" }
+      ]
+    },
+    "sources": [
+      "https://www.indianhealthyrecipes.com/tomato-rasam-recipe/",
+      "https://www.theguardian.com/food/article/2024/jul/03/how-to-make-the-perfect-tomato-rasam-recipe-felicity-cloake"
+    ],
+    "confidence": "high",
+    "reason": "Tomato rasam ince, ekşi ve baharatlı çorba çizgisine uyuyor. Açık sorun, stepteki temel baharat ve ekşi öğelerin listede olmaması."
+  },
+  {
+    "slug": "tonkatsu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: ingredient dana kontrfileyken step 1 domuz pirzolası diyor",
+      "tipNote: unlu sıvı çırpma notu tonkatsu pane tekniğiyle ilgili değil"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Dana kontrfile dilimlerini aynı kalınlığa inceltip kenarlarını birkaç yerinden çizin.", "timerSeconds": null }
+      ],
+      "tipNote": "Pankoyu bastırmadan kaplayın; gevşek kırıntı kızarınca daha çıtır olur."
+    },
+    "sources": [
+      "https://www.justonecookbook.com/tonkatsu/",
+      "https://www.seriouseats.com/tonkatsu-chicken-pork-katsu-japanese-breaded-cutlets-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Klasik tonkatsu domuzla yapılır, mevcut tarif dana uyarlaması kurmuş. Stepte domuz kalması veri çelişkisi yaratıyor."
+  },
+  {
+    "slug": "tonkatsu-sos",
+    "verdict": "CORRECTION",
+    "issues": [
+      "tags: Worcestershire sos standart olarak balık içerebildiği için vegan tag güvenli değil",
+      "allergens: Worcestershire sos nedeniyle deniz ürünleri beyanı gerekir"
+    ],
+    "corrections": {
+      "tags_remove": ["vegan"],
+      "allergens_add": ["DENIZ_URUNLERI"]
+    },
+    "sources": [
+      "https://www.justonecookbook.com/tonkatsu-sauce/",
+      "https://www.bbcgoodfood.com/glossary/worcestershire-sauce-glossary"
+    ],
+    "confidence": "medium",
+    "reason": "Tonkatsu sos bileşimi doğru, ancak generic Worcestershire sos vegan kabul edilemez ve balık temelli ürünlerde allergen riski var."
+  },
+  {
+    "slug": "toronto-akcaagacli-yulaf-bar",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "cuisine: description Kanada ve Toronto bağlamı kuruyor ama cuisine us kayıtlı",
+      "cuisine: mevcut enumda Kanada kodu olmadığı için manuel karar gerekir"
+    ],
+    "corrections": {
+      "description": "Akçaağaçlı yulaf bar, yulafı ceviz, kuru üzüm ve akçaağaç şurubuyla dilimlenen pratik bir tatlıya çevirir."
+    },
+    "sources": [
+      "https://www.canadianliving.com/food/baking-and-desserts/recipe/maple-oat-bars",
+      "https://www.foodnetwork.ca/recipe/maple-oatmeal-bars/"
+    ],
+    "confidence": "medium",
+    "reason": "Akçaağaçlı yulaf bar yapısı tutarlı, fakat Toronto ve Kanada iddiası us cuisine koduyla çelişiyor. Kod ekseni manuel review ister."
+  },
+  {
+    "slug": "torrijas",
+    "verdict": "PASS",
+    "reason": "Sütle ıslatılan bayat ekmek, yumurta kaplama, kızartma ve tarçınlı şeker yapısı İspanyol torrijas kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.spanishsabores.com/torrijas-recipe/",
+      "https://www.carolinescooking.com/torrijas/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "tortilla-de-camarones-ispanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: mevcut steps generic harç ve fırın cümleleri taşıyor",
+      "steps: tortilla de camarones ince hamurun yağda küçük parçalar halinde kızartılmasıyla yapılmalı"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, su ve tuzu pürüzsüz, akışkan bir hamur olana kadar çırpın.", "timerSeconds": 120 },
+        { "stepNumber": 2, "instruction": "Küçük karidesleri hamura ekleyip her parçanın ince kaplanmasını sağlayın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Yağı tavada kızdırıp hamurdan kaşıkla ince parçalar bırakın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Parçaları iki yüzü kızarana kadar pişirip kağıt havluya alın.", "timerSeconds": 240 },
+        { "stepNumber": 5, "instruction": "Tuzu kontrol edip limonla sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://spanishsabores.com/tortillitas-de-camarones-recipe/",
+      "https://www.andalucia.com/gastronomy/recipes/tortillitas.htm"
+    ],
+    "confidence": "high",
+    "reason": "İspanyol karides tortillitas akışı ince hamur ve tavada kızartmadır. Mevcut steps bu tekniği tarif etmiyor."
+  },
+  {
+    "slug": "tortilla-espanola",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 7 peynirli doku diyor ama tarifte peynir yok"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 7, "instruction": "Tortillayı birkaç dakika dinlendirip ılık ya da oda sıcaklığında dilimleyin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.seriouseats.com/tortilla-espanola-spanish-potato-omelette-recipe",
+      "https://spanishsabores.com/best-spanish-omelet-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Patates, yumurta ve soğanla tortilla yapısı doğru. Sorun sadece peynir içermeyen tarifte peynir dokusundan söz edilmesi."
+  },
+  {
+    "slug": "tortilla-kahvalti-sandvici-ispanya-usulu",
+    "verdict": "PASS",
+    "reason": "Patatesli tortilla dilimini ekmek arasında sunmak bocadillo de tortilla çizgisiyle uyumlu. Peynirli uyarlama allergenlerle uyumlu.",
+    "sources": [
+      "https://spanishsabores.com/bocadillo-de-tortilla-spanish-omelet-sandwich/",
+      "https://www.seriouseats.com/tortilla-espanola-spanish-potato-omelette-recipe"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "tortillali-ispanak-tava-ispanya-usulu",
+    "verdict": "PASS",
+    "reason": "Yumurta, patates ve ıspanakla tava tortilla uyarlaması makul. Süreler, vejetaryen tag ve yumurta allergeni içerikle uyumlu.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/spinach-potato-tortilla",
+      "https://www.seriouseats.com/tortilla-espanola-spanish-potato-omelette-recipe"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "tosca-kaka",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: Tosca kekinde kabartma tozu ve üst karışım için krema yaygın, mevcut listede yok",
+      "steps: step 4 krema kullanıyor ama ingredient listesinde krema yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kabartma tozu", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Krema", "amount": "100", "unit": "ml" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 2, "instruction": "Un ve kabartma tozunu ekleyip eritilmiş tereyağıyla kek hamurunu söndürmeden karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Tereyağı, şeker, krema ve file bademi parlak üst karışım olana kadar pişirin.", "timerSeconds": 240 }
+      ]
+    },
+    "sources": [
+      "https://swedishfood.com/swedish-food-recipes-biscuits-cakes/202-tosca-cake",
+      "https://www.theguardian.com/food/2020/feb/29/tamal-ray-toscakaka-swedish-almond-cake-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Tosca kaka bademli üst katıyla doğru, ancak krema stepte geçip listede yok. Kabartma tozu da kek tabanı için gerekli."
+  },
+  {
+    "slug": "tostones",
+    "verdict": "PASS",
+    "reason": "Yeşil plantainin iki kez kızartılıp ezilmesi tostones kaynaklarıyla uyumlu. Vegan tag, süre ve allergen boşluğu doğru.",
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/tostones-11456",
+      "https://www.bonappetit.com/recipe/tostones-fried-green-plantains"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "tostones-con-mojo",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 5 zeytinyağı kullanıyor ama listede yok",
+      "ingredients: mojo için sarımsaklı yağ tabanı kaynaklarla uyumlu, miktar açık yazılmalı"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı", "group": "Mojo için" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 5, "instruction": "Sarımsak, lime suyu ve zeytinyağını çırpıp sıcak tostones üzerine gezdirin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.pbs.org/food/recipes/tostones-mojo-sauce",
+      "https://www.drkarenslee.com/twice-fried-plantains-tostones/"
+    ],
+    "confidence": "high",
+    "reason": "Tostones ve mojo yapısı doğru. Açık hata, mojo stepinde kullanılan zeytinyağının ingredient listesinde bulunmaması."
+  },
+  {
+    "slug": "tostones-rellenos",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: mevcut steps generic harç, fırın ve dinlendirme cümleleri taşıyor",
+      "steps: rellenos için yeşil muz kaplarının kızartılıp karidesle doldurulması gösterilmeli"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Yeşil muzları soyup kalın parçalar halinde kesin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Parçaları sıcak yağda ilk tur yumuşatıp çıkarın.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Muz parçalarını küçük kase biçiminde bastırın ve tekrar kızartın.", "timerSeconds": 240 },
+        { "stepNumber": 4, "instruction": "Karidesi sarımsakla tavada pembeleşene kadar çevirin.", "timerSeconds": 180 },
+        { "stepNumber": 5, "instruction": "Kızarmış muz kaplarını karidesle doldurup kişnişle servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.pbs.org/food/recipes/tostones-mojo-sauce",
+      "https://www.quericavida.com/recipes/tostones-rellenos/3c7c6b7d-cd9a-4b8b-8f05-17cf4a5d1bdb"
+    ],
+    "confidence": "medium",
+    "reason": "Tostones rellenos fikri doğru, fakat mevcut steps gerçek muz kabı ve karides dolgusu akışını anlatmıyor."
+  },
+  {
+    "slug": "tostones-yumurta-tabagi-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "servingSuggestion: portakal suyu ve karmaşık tane ekmek ifadesi tarif bağlamına uymuyor",
+      "steps: mevcut akış boilerplate ve soğursa gevrek kenar gibi hatalı cümleler içeriyor"
+    ],
+    "corrections": {
+      "servingSuggestion": "Tostonesları yumurta ve avokadoyla sıcak tabakta servis edin.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Yeşil muzları soyup kalın dilimleyin, avokadoyu servis için dilimleyin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Muz dilimlerini yağda ilk tur kızartıp yassılaştırın.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Yassı dilimleri ikinci kez kızartıp kağıt havluya alın.", "timerSeconds": 180 },
+        { "stepNumber": 4, "instruction": "Yumurtaları tavada istediğiniz kıvamda pişirin.", "timerSeconds": 180 },
+        { "stepNumber": 5, "instruction": "Tostones, yumurta ve avokadoyu aynı tabakta sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/tostones-11456",
+      "https://www.drkarenslee.com/twice-fried-plantains-tostones/"
+    ],
+    "confidence": "medium",
+    "reason": "Tostones tabanı doğru, yumurtalı kahvaltı uyarlaması makul. Ancak servis ve steps metni boilerplate kaynaklı hatalar taşıyor."
+  },
+  {
+    "slug": "tottori-curry",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 soğan kullanıyor ama ingredient listesinde yok",
+      "tipNote: kemikli fırın et notu Japon körisiyle ilgili değil",
+      "servingSuggestion: pembe dilim ve pişme suyu ifadesi körü tabağına uymuyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" }
+      ],
+      "tipNote": "Köri bloğunu ocak kısıkken ekleyin; yüksek ateşte dibe tutabilir.",
+      "servingSuggestion": "Körüyü sıcak Japon pirinci üzerinde servis edin."
+    },
+    "sources": [
+      "https://www.justonecookbook.com/simple-chicken-curry/",
+      "https://www.japan.travel/en/spot/2127/"
+    ],
+    "confidence": "medium",
+    "reason": "Japon köri yapısı tavuk, sebze ve köri bloğuyla uyumlu. Soğan eksik, tip ve servis metni başka tariften kalmış."
+  },
+  {
+    "slug": "toum",
+    "verdict": "CORRECTION",
+    "issues": [
+      "description: yasak jargon içeriyor",
+      "tipNote: yasak jargon içeriyor",
+      "nutrition: 300 ml yağ 12 porsiyonda porsiyon başı yaklaşık 22-25 gr yağ eder, mevcut fat 12 düşük"
+    ],
+    "corrections": {
+      "description": "Lübnan toum sosu, sarımsak ve yağı azar azar çekerek beyaz, keskin ve kabarık bir kremaya dönüştürür.",
+      "tipNote": "Yağı ince akıtın; hızlı dökülürse sos ayrılır.",
+      "averageCalories": 230,
+      "protein": 1,
+      "carbs": 2,
+      "fat": 25
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/toum-garlic-sauce",
+      "https://www.bonappetit.com/story/toum-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Toum sarımsak, limon ve bol yağla yapılır. Mevcut metin yasak jargon taşıyor, yağ miktarına göre macro da düşük kalıyor."
+  },
+  {
+    "slug": "toyga-corbasi",
+    "verdict": "PASS",
+    "reason": "Yoğurt, buğday, nohut, yumurta ve naneli tereyağı yapısı toyga çorbası kaynaklarıyla uyumlu. Allergen beyanı doğru.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/toyga-corbasi-tarifi/",
+      "https://yemek.com/tarif/toyga-corbasi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "toyga-corbasi-anadolu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 un kullanıyor ama ingredient listesinde un yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Un", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/toyga-corbasi-tarifi/",
+      "https://yemek.com/tarif/toyga-corbasi/"
+    ],
+    "confidence": "high",
+    "reason": "Toyga çorbası içeriği doğru. Açık veri sorunu, terbiyede kullanılan unun ingredient listesinde bulunmaması."
+  },
+  {
+    "slug": "trabzon-akcaabat-kofte",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 3 köfte harcı 30 dakika dinleniyor, totalMinutes içinde bekleme segmenti görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 70
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/portal/akcaabat-koftesi",
+      "https://www.nefisyemektarifleri.com/akcaabat-koftesi/"
+    ],
+    "confidence": "high",
+    "reason": "Akçaabat köftesi sade et, ekmek, sarımsak ve dinlendirme çizgisiyle uyumlu. Bekleme süresi totalMinutes değerine eklenmeli."
+  },
+  {
+    "slug": "trabzon-firinda-hamsili-pilav",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: pirinç 25 dakika ıslatılıyor, bu pasif süre prepMinutes içinde görünmemeli"
+    ],
+    "corrections": {
+      "prepMinutes": 20
+    },
+    "sources": [
+      "https://www.allaboutturkey.com/meze-hamsi.html",
+      "https://www.turkeysforlife.com/2017/12/hamsili-pilav-baked-rice-anchovies.html"
+    ],
+    "confidence": "high",
+    "reason": "Hamsili pilav içeriği ve fırın akışı doğru. Pirinç ıslatma pasif bekleme olduğu için prep 20, total 85 kalarak wait segmenti oluşmalı."
+  },
+  {
+    "slug": "trabzon-hamsi-kusu",
+    "verdict": "PASS",
+    "reason": "Fileto hamsi, soğanlı yeşillik harcı, yumurta ve mısır unuyla kızartma hamsi kuşu kaynaklarıyla uyumlu. Allergenler doğru.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/hamsi-kusu-tarifi/",
+      "https://yemek.com/tarif/hamsi-kusu/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "trabzon-hamsikoy-sutlaci",
+    "verdict": "PASS",
+    "reason": "Süt, pirinç ve uzun kaynatma sonrası fırınlama yapısı Hamsiköy sütlacı kaynaklarıyla uyumlu. Süt allergeni ve süre makul.",
+    "sources": [
+      "https://kureansiklopedi.com/en/detay/hamsikoy-sutlaci-a275b",
+      "https://www.nefisyemektarifleri.com/hamsikoy-sutlaci/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "trabzon-hamsili-misir-ekmegi",
+    "verdict": "PASS",
+    "reason": "Mısır unu, hamsi, yoğurt, taze soğan ve fırınlama akışı Karadeniz hamsili mısır ekmeği çizgisiyle uyumlu.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/hamsili-misir-ekmegi/",
+      "https://www.kulturportali.gov.tr/turkiye/trabzon/neyenir/hamsili-ekmek"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "trabzon-hamsili-pilav-tepsi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 baharatlar diyor ama listede baharat yok",
+      "time: pirinç 15 dakika ıslatılıyor, bu pasif süre prepMinutes içinde görünmemeli"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Yenibahar", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "prepMinutes": 30
+    },
+    "sources": [
+      "https://www.allaboutturkey.com/meze-hamsi.html",
+      "https://www.mahmoodrice.com/en/recipe/hamsili-pilav-134"
+    ],
+    "confidence": "high",
+    "reason": "Hamsili pilav yapısı doğru. Baharat adı listede yok ve ıslatma pasif bekleme olduğu için prep değeri azaltılmalı."
+  },
+  {
+    "slug": "trabzon-hurmali-misir-ekmegi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 zeytinyağı, step 2 tuz kullanıyor ama listede yok",
+      "time: step 5 fırında 30 dakika diyor, cookMinutes 20 dakika kısa kalıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 30,
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/misir-ekmegi-tarifi/",
+      "https://yemek.com/tarif/misir-ekmegi/"
+    ],
+    "confidence": "medium",
+    "reason": "Mısır ekmeği tabanı makul, ancak stepteki zeytinyağı ve tuz eksik. Fırın ve dinlenme süresi de toplam süreye yansımıyor."
+  },
+  {
+    "slug": "trabzon-kayganasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: mevcut steps boilerplate hazırlık ve tekrarlı servis cümleleri içeriyor",
+      "steps: kaygana için ince hamurun tavada iki yüzlü pişmesi daha net yazılmalı"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Yumurta, un ve sütü pürüzsüz, akışkan bir hamur olana kadar çırpın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tavayı tereyağıyla yağlayıp hamurun yarısını ince tabaka halinde dökün.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Kayganayı bir yüzü beneklenince çevirip diğer yüzünü pişirin.", "timerSeconds": 180 },
+        { "stepNumber": 4, "instruction": "Kalan hamuru aynı şekilde pişirin.", "timerSeconds": 180 },
+        { "stepNumber": 5, "instruction": "Kayganaları sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kaygana-tarifi/",
+      "https://yemek.com/tarif/kaygana/"
+    ],
+    "confidence": "high",
+    "reason": "Kaygana içerik olarak doğru, fakat mevcut steps gerçek tava akışını gereksiz boilerplate ile bulanıklaştırıyor."
+  },
+  {
+    "slug": "trabzon-laz-boregi",
+    "verdict": "PASS",
+    "reason": "Yufka, karabiberli muhallebi, tereyağı ve şerbetle Laz böreği yapısı kaynaklarla uyumlu. Süre ve allergenler makul.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/laz-boregi-tarifi/",
+      "https://yemek.com/tarif/laz-boregi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "trabzon-misir-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 3 mısır yarması kullanıyor ama ingredient listesinde haşlanmış mısır var",
+      "ingredients: step 5 pul biberli tereyağı diyor ama pul biber listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 3, "instruction": "Haşlanmış mısırı katıp çorbayı kısık ateşte kıvam alana kadar pişirin.", "timerSeconds": 720 },
+        { "stepNumber": 5, "instruction": "Kıvam koyulaşınca sıcak kaselere alıp pul biberli tereyağıyla servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/misir-corbasi-tarifi/",
+      "https://www.kulturportali.gov.tr/turkiye/trabzon/neyenir/misir-corbasi"
+    ],
+    "confidence": "medium",
+    "reason": "Mısır ve fasulyeli Karadeniz çorbası makul, ancak stepte mısır türü ingredient listesiyle çelişiyor ve pul biber eksik."
+  },
+  {
+    "slug": "trabzon-vakfikebir-ekmegi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: hamurun 60 dakika dinlenmesi pasif bekleme, prepMinutes içinde görünmemeli",
+      "steps: step 6 ve 7 peynirli doku ve çay tabağı gibi ekmekle ilgisiz boilerplate cümleler içeriyor"
+    ],
+    "corrections": {
+      "prepMinutes": 30,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, su, ekşi maya ve tuzu geniş kapta birleştirin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Hamuru ele daha az yapışan güçlü bir doku alana kadar yoğurun.", "timerSeconds": 600 },
+        { "stepNumber": 3, "instruction": "Hamuru örtüp hacmi belirgin artana kadar dinlendirin.", "timerSeconds": 3600 },
+        { "stepNumber": 4, "instruction": "Hamura büyük somun şekli verip üstünü hafifçe unlayın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Sıcak fırında kalın kabuk oluşana kadar pişirin.", "timerSeconds": 3300 },
+        { "stepNumber": 6, "instruction": "Ekmeği tel üzerinde tamamen soğutup kalın dilimleyin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/trabzon/neyenir/vakfikebir-ekmegi",
+      "https://www.youtube.com/watch?v=PYN_i-1eC-Y"
+    ],
+    "confidence": "medium",
+    "reason": "Vakfıkebir ekmeği ekşi maya, un, su ve tuzla uyumlu. Sorun, pasif bekleme ile ilgisiz boilerplate servis adımları."
+  },
+  {
+    "slug": "treacle-tart",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 yumurta kullanıyor ama ingredient listesinde yumurta yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yumurta", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/treacle-tart",
+      "https://www.theguardian.com/lifeandstyle/wordofmouth/2013/feb/21/how-cook-perfect-treacle-tart"
+    ],
+    "confidence": "high",
+    "reason": "Treacle tart şurup ve ekmek kırıntısıyla doğru. Açık veri sorunu, stepte kullanılan yumurtanın listede olmaması."
+  },
+  {
+    "slug": "trilece",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 6 tatlıyı 3 saat soğutuyor, mevcut totalMinutes 65 dakika kullanıcıyı yanıltıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 245
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/trilece-tatlisi-tarifi/",
+      "https://yemek.com/tarif/trilece/"
+    ],
+    "confidence": "high",
+    "reason": "Trileçe içeriği ve sütlü ıslatma akışı doğru. Ancak uzun soğutma toplam süreye bekleme segmenti olarak eklenmeli."
+  },
+  {
+    "slug": "tropik-smoothie",
+    "verdict": "PASS",
+    "reason": "Ananas, mango, kokos suyu ve lime ile pişmeyen smoothie yapısı kaynaklardaki tropik smoothie çizgisine uyuyor.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/tropical-smoothie",
+      "https://www.eatingwell.com/recipe/251089/tropical-smoothie/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "tteokbokki",
+    "verdict": "PASS",
+    "reason": "Pirinç keki, gochujang, soya sosu, şeker ve susamla et içermeyen tteokbokki uyarlaması makul. Allergenler uyumlu.",
+    "sources": [
+      "https://www.maangchi.com/recipe/tteokbokki",
+      "https://mykoreankitchen.com/tteokbokki-spicy-rice-cakes/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "tulumba-tatlisi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 2 tereyağı, tuz ve şeker kullanıyor ama ingredient listesinde hamur için bu malzemeler yok",
+      "time: şerbetin tamamen soğuması için bekleme gerekiyor, mevcut totalMinutes bunu göstermiyor"
+    ],
+    "corrections": {
+      "totalMinutes": 190,
+      "steps_replace": [
+        { "stepNumber": 2, "instruction": "Hamur için suyu kaynatıp unu tek seferde ekleyin.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/tulumba-tatlisi-tarifi/",
+      "https://gastrotarifler.com/tulumba-tatlisi-tarifi-citir-hamur-ve-soguk-serbetin-mukemmel-uyumu/"
+    ],
+    "confidence": "high",
+    "reason": "Tulumba için sıcak hamur ve soğuk şerbet doğru, fakat stepte listede olmayan hamur malzemeleri var ve soğutma süresi eksik."
+  },
+  {
+    "slug": "tulumlu-domates-pidesi-tekirdag-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 2 iki yemek kaşığı zeytinyağı diyor ama ingredient listesinde bir yemek kaşığı var",
+      "steps: step 5 yumurta sürmeyi öneriyor ama ingredient ve allergen listesinde yumurta yok"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 2, "instruction": "Domatesli tulum harcını listedeki zeytinyağıyla kısa süre çevirip soğutun.", "timerSeconds": 300 },
+        { "stepNumber": 5, "instruction": "Pidelerin üstünü zeytinyağıyla fırçalayın ve sıcak fırında altı kızarana kadar pişirin.", "timerSeconds": 1200 }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/peynirli-pide/",
+      "https://www.nefisyemektarifleri.com/peynirli-pide-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Peynirli pide yapısı makul, ancak stepteki yağ miktarı ve yumurta sürme bilgisi ingredient listesiyle çelişiyor."
+  },
+  {
+    "slug": "tulumlu-lor-kavurmasi-erzurum-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "servingSuggestion: portakal suyu ve karmaşık tane ekmek ifadesi kahvaltı peynir kavurmasıyla uyumsuz",
+      "steps: mevcut steps gereksiz boilerplate ve tekrar eden servis cümleleri içeriyor"
+    ],
+    "corrections": {
+      "servingSuggestion": "Sıcak ekmek ve çayla küçük tavada servis edin.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Lor ve tulum peynirini ufalayın, karabiberi hazır edin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tereyağını tavada köpüğü yanmadan eritin.", "timerSeconds": 60 },
+        { "stepNumber": 3, "instruction": "Peynirleri ekleyip orta ateşte yumuşayana kadar çevirin.", "timerSeconds": 180 },
+        { "stepNumber": 4, "instruction": "Karabiber serpip sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/lor-kavurmasi/",
+      "https://yemek.com/tarif/lor-kavurmasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Peynir kavurması fikri ve allergen doğru, fakat servis ve step metinleri başka tariflerden kalmış boilerplate izleri taşıyor."
+  },
+  {
+    "slug": "tulumlu-patates-gozleme-van-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: gözleme hamuru ve iç harcı için tuz listede yok",
+      "ingredients: tavada pişirme için yağ listede yok",
+      "steps: patatesin haşlanmış kullanıldığı açıklanmalı"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Sıvı yağ", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, su ve tuzla yumuşak bir hamur yoğurun.", "timerSeconds": 360 },
+        { "stepNumber": 4, "instruction": "Haşlanmış patatesi tulum peyniriyle ezip hamura yayın ve kenarları kapatın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Gözlemeyi az yağlı tavada iki yüzü kızarana kadar pişirin.", "timerSeconds": 480 }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/patatesli-gozleme-tarifi/",
+      "https://yemek.com/tarif/patatesli-gozleme/"
+    ],
+    "confidence": "medium",
+    "reason": "Patatesli peynirli gözleme yapısı makul. Tuz, pişirme yağı ve haşlanmış patates açıklığı ingredient ve step tarafında eksik."
+  },
+  {
+    "slug": "tunceli-babuko-sarimsakli",
+    "verdict": "PASS",
+    "reason": "Un hamurunun fırınlanıp parçalanması, sarımsaklı yoğurt ve tereyağıyla servis edilmesi babuko kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/tunceli/neyenir/babuko",
+      "https://www.nefisyemektarifleri.com/babuko/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "tunnbrod-rulo-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 6 iç sıcaklık dengelensin diyor ama tarif soğuk rulo",
+      "steps: step 7 sıcak ve gevrek kenar ifadesi tunnbröd ruloyla uyumsuz"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 6, "instruction": "Ruloyu dilimlerken kesitlerin dağılmaması için kısa süre sıkı tutun.", "timerSeconds": null },
+        { "stepNumber": 7, "instruction": "Dilimleri dereotuyla soğuk ya da oda sıcaklığında servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.swedishfood.com/swedish-food-recipes-starters/206-tunnbrod-wrap",
+      "https://www.scandikitchen.co.uk/recipe-tunnbrodsrulle/"
+    ],
+    "confidence": "medium",
+    "reason": "Tunnbröd, krem peynir ve somonlu soğuk rulo makul. Hatalı kısım sıcak servis ve gevrek kenar boilerplate cümleleri."
+  },
+  {
+    "slug": "tunus-harissali-shakshuka",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: Tunus ve harissa bağlamı varken cuisine ma kayıtlı"
+    ],
+    "corrections": {
+      "cuisine": "tn"
+    },
+    "sources": [
+      "https://www.seriouseats.com/shakshuka-eggs-poached-in-tomato-sauce-recipe",
+      "https://www.britannica.com/topic/harissa-food"
+    ],
+    "confidence": "high",
+    "reason": "Domates, biber, harissa ve yumurta yapısı doğru. Tarif açıkça Tunus diyor, güncel cuisine enum içinde tn bulunduğu için kod düzelmeli."
+  },
+  {
+    "slug": "turk-kahvesi",
+    "verdict": "PASS",
+    "reason": "İnce çekilmiş kahve, su, isteğe bağlı şeker ve cezvede köpürtme UNESCO ve tarif kaynaklarıyla uyumlu. Allergen yok.",
+    "sources": [
+      "https://ich.unesco.org/en/RL/turkish-coffee-culture-and-tradition-00645",
+      "https://www.unesco.org/en/articles/turkish-coffee-not-just-drink-culture"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "turlu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 biber, step 4 salça kullanıyor ama ingredient listesinde yok",
+      "time: step timer toplamı cookMinutes değerini ve 10 dakikalık dinlenme totalMinutes değerini aşıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yeşil biber", "amount": "2", "unit": "adet" },
+        { "name": "Domates salçası", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "cookMinutes": 47,
+      "totalMinutes": 82
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/turlu-yemegi-tarifi/",
+      "https://yemek.com/tarif/turlu/"
+    ],
+    "confidence": "high",
+    "reason": "Türlü sebze ve domatesli sos yapısı doğru. Biber ve salça listede eksik, ayrıca pişirme ve dinlenme toplam süreyi aşıyor."
+  },
+  {
+    "slug": "turo-rudi-parfe-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 bal ve limon kabuğu kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Bal", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Limon kabuğu rendesi", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.tastingtable.com/1209618/turo-rudi-hungarys-chocolate-covered-cottage-cheese-candy/",
+      "https://www.researchgate.net/publication/314637202_Turo_Rudi_Everyone%27s_Favourite_Milk_Dessert_in_Hungary"
+    ],
+    "confidence": "medium",
+    "reason": "Túró Rudi çikolata ve sütlü lor eksenine dayanıyor; parfe uyarlaması makul. Stepte kullanılan bal ve limon kabuğu listede eksik."
+  },
+  {
+    "slug": "turos-barack-kup-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 yoğurt, step 5 kırıntı kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Süzme yoğurt", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Bisküvi kırıntısı", "amount": "0.25", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.tasteatlas.com/turos-barackos",
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/cottage-cheese-dumplings-turogomboc/"
+    ],
+    "confidence": "medium",
+    "reason": "Túrós barack kup lor ve kayısı fikriyle makul bir Macar esintisi taşıyor. Açık sorun, stepteki yoğurt ve kırıntının listede olmaması."
+  },
+  {
+    "slug": "turos-batyu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: mevcut steps gereksiz tava hazırlığı ve tekrarlı sıcak servis boilerplate içeriyor",
+      "steps: fırın çöreği akışı dolgu, kapatma ve pişirme etrafında sadeleşmeli"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Lor peyniri, şeker ve yumurtayı dolgu haline gelene kadar karıştırın.", "timerSeconds": 120 },
+        { "stepNumber": 2, "instruction": "Milföy parçalarını tezgaha alıp ortalarına lorlu dolguyu paylaştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Hamurları bohça gibi kapatıp ek yerleri alta gelecek şekilde tepsiye dizin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Sıcak fırında hamur kabarıp kızarana kadar pişirin.", "timerSeconds": 1200 },
+        { "stepNumber": 5, "instruction": "Ilık servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.youtube.com/watch?v=wTewtLpTqYI",
+      "https://www.tasteatlas.com/turos-batyu"
+    ],
+    "confidence": "medium",
+    "reason": "Túrós batyu lor dolgulu kapalı hamur tatlısı olarak doğru. Mevcut steps tava ve servis boilerplate yüzünden akışı bozuyor."
+  },
+  {
+    "slug": "turos-csusza-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 2 pastırma veya bacon kullanıyor ama ingredient listesinde yok",
+      "tags: mevcut tarif vejetaryen tutulmuş, bu yüzden etli step kaldırılmalı"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 2, "instruction": "Tereyağını tavada eritip ekşi kremayı ekleyin.", "timerSeconds": 120 },
+        { "stepNumber": 6, "instruction": "Erişteyi lor peyniriyle sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/cottage-cheese-noodles-turos-csusza/",
+      "https://www.food.com/recipe/turos-csusza-dry-curd-cottage-cheese-and-noodles-270836"
+    ],
+    "confidence": "high",
+    "reason": "Túrós csusza klasik olarak baconla da yapılır, fakat mevcut ingredient ve tag vejetaryen uyarlama kuruyor. Etli step çelişiyor."
+  },
+  {
+    "slug": "turos-gomboc-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 irmik, step 5 tereyağı kullanıyor ama ingredient listesinde yok",
+      "time: step 2 bir saat dinlenme içeriyor, totalMinutes 28 dakika kısa kalıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "İrmik", "amount": "80", "unit": "gr" },
+        { "name": "Tereyağı", "amount": "30", "unit": "gr" }
+      ],
+      "totalMinutes": 88
+    },
+    "sources": [
+      "https://budapestcookingclass.com/hungarian-cottage-cheese-dumplings-recipe-turogomboc/",
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/cottage-cheese-dumplings-turogomboc/"
+    ],
+    "confidence": "high",
+    "reason": "Túrógombóc lor, yumurta, irmik ve galeta kaplamasıyla uyumlu. İrmik ve tereyağı eksik, dinlenme süresi de total içine girmeli."
+  },
+  {
+    "slug": "turos-lepeny",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 limon kabuğu kullanıyor ama ingredient listesinde yok",
+      "time: step 5 tepside 25 dakika dinlenme içeriyor, totalMinutes bunu göstermiyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon kabuğu rendesi", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 80
+    },
+    "sources": [
+      "https://www.tasteatlas.com/turos-lepeny",
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/cottage-cheese-dumplings-turogomboc/"
+    ],
+    "confidence": "medium",
+    "reason": "Túrós lepeny lorlu tepsi tatlısı olarak uyumlu. Limon kabuğu listede eksik ve kesim öncesi dinlenme toplam sürede görünmüyor."
+  }
+]

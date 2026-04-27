@@ -1,0 +1,879 @@
+[
+  {
+    "slug": "uzumlu-pelte-tokat-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 6 cevizle servis ediyor ama ingredient listesinde ceviz yok",
+      "allergens: ceviz eklenirse KUSUYEMIS beyanı gerekir",
+      "totalMinutes: step 5 içindeki 20 dakika bekleme toplam süreye yansımıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ceviz", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["KUSUYEMIS"],
+      "totalMinutes": 42
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/uzum-peltesi/",
+      "https://ye-mek.net/tarif/uzum-peltesi"
+    ],
+    "confidence": "high",
+    "reason": "Üzüm peltesi nişasta ve üzüm suyu akışıyla doğru. Net sorun, cevizli servis ve 20 dakikalık beklemenin veride eksik kalması."
+  },
+  {
+    "slug": "uzumlu-tahinli-un-helvasi-konya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 tereyağı kullanıyor ama ingredient listesinde yok",
+      "tags: tereyağı kullanılan tarif vegan olamaz",
+      "allergens: tereyağı nedeniyle SUT beyanı gerekir"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "80", "unit": "gr" }
+      ],
+      "tags_remove": ["vegan"],
+      "allergens_add": ["SUT"],
+      "averageCalories": 340,
+      "protein": 5,
+      "carbs": 30,
+      "fat": 22
+    },
+    "sources": [
+      "https://ye-mek.net/tarif/tahinli-un-helvasi",
+      "https://www.nefisyemektarifleri.com/tahinli-un-helvasi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Tahinli un helvasında yağ ve tereyağı kullanımı kaynaklarla uyumlu. Mevcut tarif tereyağını stepte kullanıp listede, etikette ve allergen beyanında kaçırıyor."
+  },
+  {
+    "slug": "uzumlu-tavuk-kapama-manisa-sultaniye-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 tuz ve karabiber kullanıyor ama listede yok",
+      "steps: step 4 tavuk suyu diyor, ingredient listesinde yalnız su var",
+      "totalMinutes: 10 dakika tavuk dinlendirme ve 10 dakika demleme toplam süreye yansımıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 4, "instruction": "Sultaniye üzümü ve sıcak suyu ekleyin, pirinç tabana yapışmasın diye düzleyin.", "timerSeconds": null }
+      ],
+      "totalMinutes": 63
+    },
+    "sources": [
+      "https://yemek.com/tarif/tavuk-kapama/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/ic-pilavli-tavuk-kapama/8892"
+    ],
+    "confidence": "medium",
+    "reason": "Kapama tekniği tavuk ve pirincin birlikte pişmesiyle uyumlu. Düzeltme, stepte geçen baharatı ve toplam sürede eksik kalan beklemeyi topluyor."
+  },
+  {
+    "slug": "vaca-frita",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 defne ve tuz kullanıyor ama listede yok",
+      "ingredients: step 3 kimyon kullanıyor ama listede yok",
+      "ingredients: kızartma adımı için yağ listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Defne yaprağı", "amount": "1", "unit": "adet" },
+        { "name": "Kimyon", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.amigofoods.com/blogs/cuban-recipes-recetas-cubanas/vaca-frita-recipe",
+      "https://www.196flavors.com/vaca-frita/"
+    ],
+    "confidence": "high",
+    "reason": "Vaca frita haşlanmış etin lime, sarımsak ve soğanla çıtırlaştırılmasıdır. Tarif kimliği doğru, fakat kullanılan aromatikler listede eksik."
+  },
+  {
+    "slug": "vaca-frita-cubana",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 portakal suyu kullanıyor ama ingredient listesinde yok",
+      "totalMinutes: 20 dakika dinlendirme totalMinutes değerine dahil edilmemiş"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Portakal suyu", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "totalMinutes": 55
+    },
+    "sources": [
+      "https://www.cook2eatwell.com/vaca-frita/",
+      "https://cuban.recipes/vaca-frita/"
+    ],
+    "confidence": "high",
+    "reason": "Küba usulü dana vaca frita lime, sarımsak ve soğan çizgisinde doğru. Stepte portakal suyu ve 20 dakikalık bekleme veride eksik kalmış."
+  },
+  {
+    "slug": "vaca-frita-de-pollo-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 kimyon ve tuz kullanıyor ama listede yok",
+      "tags: totalMinutes 47 olduğu için 30-dakika-alti etiketi yanıltıcı"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kimyon", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.bonappetit.com/columns/cooking-without-recipes/article/easy-cuban-chicken-recipe",
+      "https://www.foodandwine.com/cuban-recipes-11731491"
+    ],
+    "confidence": "high",
+    "reason": "Tavuklu vaca frita didiklenmiş tavuğun turunçgil ve soğanla tavada çıtırlaşmasıdır. Süre etiketi ve stepte geçen baharatlar düzeltilmeli."
+  },
+  {
+    "slug": "valencia-paella-valenciana-tavuklu",
+    "verdict": "PASS",
+    "reason": "Tavuklu uyarlama olduğu açık, yeşil fasulye, domates, safran ve karıştırmadan pişirme paella tekniğiyle uyumlu. Süre ve allergen verisi makul.",
+    "sources": [
+      "https://www.saveur.com/article/Recipes/Paella-with-Rabbit-and-Snails-Paella-Valenciana/",
+      "https://spaininsight.com/paella-valenciana-recipe/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "valencia-tavuklu-paella",
+    "verdict": "PASS",
+    "reason": "Tavuklu paella, safranlı kısa taneli pirinç ve geniş tavada karıştırmadan pişirme akışıyla doğru. 58 dakikalık toplam süre yanıltıcı değil.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/paella-mixta",
+      "https://www.saveur.com/article/recipes/paella-mixta-recipe/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "valensiya-biberli-nohutlu-fideua",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 zeytinyağı kullanıyor ama ingredient listesinde yok",
+      "ingredients: step 6 limon dilimiyle servis ediyor ama limon listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Limon", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://spanishsabores.com/fideua-recipe/",
+      "https://www.themediterraneandish.com/fideua-recipe/"
+    ],
+    "confidence": "medium",
+    "reason": "Fideua kısa erişteyi safranlı suyla tavada pişirme fikriyle doğru. Net sorun, stepte kullanılan zeytinyağı ve servis limonunun listede olmaması."
+  },
+  {
+    "slug": "valensiya-deniz-urunlu-paella",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 zeytinyağı kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "3", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/seafood-paella",
+      "https://spanishsabores.com/seafood-paella-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Deniz ürünlü paella pirinç, safran, balık suyu ve kabuklu deniz ürünü yapısıyla doğru. Sadece tavada pişirme yağı ingredient listesinde eksik."
+  },
+  {
+    "slug": "valensiya-paella-mixta",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: tavuk, chorizo ve sofrito adımları yağ kullanıyor ama ingredient listesinde yağ yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "4", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/paella-mixta",
+      "https://www.saveur.com/article/recipes/paella-mixta-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Paella mixta tavuk, chorizo ve deniz ürünlü popüler uyarlamayla uyumlu. Açık eksik, tüm kavurma adımlarını taşıyan zeytinyağının listede olmaması."
+  },
+  {
+    "slug": "valensiya-portakalli-badem-kek",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 4 32-34 dakika pişirme ve step 5 15 dakika dinlendirme içeriyor, totalMinutes 30 dk kalmış",
+      "tags: düzeltilmiş toplam süre 30 dakikanın üstünde olacağı için 30-dakika-alti etiketi yanlış"
+    ],
+    "corrections": {
+      "totalMinutes": 59,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://spanishsabores.com/2015/06/07/tarta-de-santiago-recipe-spanish-almond-cake/",
+      "https://oldwayspt.org/recipe/spanish-almond-cake-tarta-de-santiago/"
+    ],
+    "confidence": "high",
+    "reason": "İspanyol badem keki yumurta, badem ve narenciye ile uyumlu. Problem tarif kimliği değil, pişirme ve dinlendirme süresinin toplamda eksik kalması."
+  },
+  {
+    "slug": "van-ayran-asi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 su, step 4 sıcak su ve step 5 kuru nane kullanıyor ama listede yok",
+      "ingredients: step 1 yarım su bardağı dövme diyor, mevcut ingredient 1 su bardağı"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Su", "amount": "5", "unit": "su bardağı" },
+        { "name": "Kuru nane", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Dövme buğdayı 5 su bardağı suda 30 dakika haşlayın.", "timerSeconds": 1800 }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/ayran-corbasi/",
+      "https://www.rafinera.com/blog/diyet-yemek-tarifleri/ayran-asi-corbasi"
+    ],
+    "confidence": "high",
+    "reason": "Ayran aşı yoğurt, buğday, nohut ve ot çizgisiyle doğru. Düzeltme yalnız stepte geçen su, nane ve buğday miktarı tutarsızlığını gideriyor."
+  },
+  {
+    "slug": "van-ayran-asi-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 1 bir gece bekletme ve step 6 bir saat soğutma toplam süreyle çelişiyor",
+      "ingredients: step 6 tuz kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Önceden ıslatılmış buğdayı taze suda yumuşayana kadar haşlayın.", "timerSeconds": 2700 }
+      ],
+      "totalMinutes": 130
+    },
+    "sources": [
+      "https://yemek.com/tarif/ayran-corbasi/",
+      "https://www.efsanetarifler.com/tarif/ayran-asi-corbasi-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Soğuk ayran aşı yapısı doğru. Mandatory gece bekletme yerine önceden ıslatılmış buğday yazılmalı, servis soğutması toplam sürede görünmeli."
+  },
+  {
+    "slug": "van-ayran-asi-kislik",
+    "verdict": "PASS",
+    "reason": "Kışlık yoğurtlu ayran aşı, buğday, nohut, yoğurt terbiyesi, yumurta ve naneli tereyağı akışıyla doğru. Süre ve allergen beyanı tutarlı.",
+    "sources": [
+      "https://yemek.com/tarif/ayran-corbasi/",
+      "https://www.rafinera.com/blog/diyet-yemek-tarifleri/ayran-asi-corbasi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "van-ayranli-otlu-corba",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 1 içindeki 30 dakika bekletme prepMinutes içine gömülmüş, RecipeTimeline bekleme segmenti oluşmuyor"
+    ],
+    "corrections": {
+      "prepMinutes": 18,
+      "cookMinutes": 45,
+      "totalMinutes": 93
+    },
+    "sources": [
+      "https://yemek.com/tarif/ayran-corbasi/",
+      "https://www.andacyesilyurt.com/post/yaz-sofralar%C4%B1n%C4%B1n-kurtar%C4%B1c%C4%B1s%C4%B1-nohutlu-ve-bu%C4%9Fdayl%C4%B1-ayran-a%C5%9F%C4%B1-%C3%A7orbas%C4%B1-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Yoğurtlu buğday ve otlu çorba çizgisi makul. Bekletme süresi aktif hazırlığa gömülmemeli, toplam sürede ayrı bekleme olarak görünmeli."
+  },
+  {
+    "slug": "van-kavut-kahvaltisi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: aynı başlığı tekrar eden boilerplate adımlar var",
+      "steps: gerçek kavut akışı ısıtma, tereyağı, un kavurma ve pekmez servisi olarak daha kısa olmalı"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Tereyağını geniş tavada orta ateşte eritin.", "timerSeconds": 90 },
+        { "stepNumber": 2, "instruction": "Buğday ununu ekleyip rengi hafif dönene kadar sürekli karıştırarak kavurun.", "timerSeconds": 360 },
+        { "stepNumber": 3, "instruction": "Cevizi ekleyip kokusu çıkana kadar kısa süre çevirin.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Kavutu servis tabağına alın ve pekmezi üstüne gezdirin.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Sıcakken servis edin; beklerse unlu karışım ağırlaşır.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kavut-van-yoresi-kahvaltisi/",
+      "https://www.vanolay.com/van-kavutu-nasil-yapilir-vanda-kavut-nedir"
+    ],
+    "confidence": "high",
+    "reason": "Van kavutu tereyağında kavrulmuş unun pekmez veya balla servisidir. Mevcut içerik doğru, ancak step metni şablon tekrarlarıyla bozulmuş."
+  },
+  {
+    "slug": "van-kavutlu-yogurt-kasesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: aynı başlığı tekrar eden boilerplate adımlar var",
+      "steps: yoğurt kasesi için tavayı yağlama gereksiz ve ingredient listesiyle uyumsuz"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kavutu kuru tavada kokusu çıkana kadar kısa süre çevirin.", "timerSeconds": 180 },
+        { "stepNumber": 2, "instruction": "Süzme yoğurdu soğuk kaselere paylaştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Kavut ve balı yoğurdun üzerine gezdirin, katmanlar ezilmesin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Ceviz ve tarçını serpin.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Kavut nem çekmeden hemen servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kavut-van-yoresi-kahvaltisi/",
+      "https://vandangelsin.com/tarifler/kavut-yoresel-van-kahvaltiligi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kavutun yoğurt kasesine taşınması modern ama makul bir servis. Düzeltme, yanlış tava yağlama ve başlık tekrarı içeren adımları temizliyor."
+  },
+  {
+    "slug": "van-keledoslu-bulgur-asi",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "identity: Van keledoşu kaynaklarda et, nohut, mercimek, dövme, akpancar ve kurutla tanımlanıyor",
+      "ingredients: mevcut tarifte et, akpancar veya pazı ve nohut yok",
+      "description: keledoş adıyla sunulan içerik daha çok kurutlu mercimekli bulgur aşı gibi duruyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuzu kuşbaşı", "amount": "250", "unit": "gr" },
+        { "name": "Haşlanmış nohut", "amount": "1", "unit": "su bardağı" },
+        { "name": "Akpancar veya pazı", "amount": "1", "unit": "demet" }
+      ],
+      "description": "Van keledoşlu bulgur aşı, kurut, mercimek, nohut, et ve yöresel otlarla yoğunlaşan doyurucu bir Doğu Anadolu yemeğidir."
+    },
+    "sources": [
+      "https://kulturportali.gov.tr/turkiye/van/neyenir/keledos",
+      "https://van.ktb.gov.tr/TR-436987/keledos.html"
+    ],
+    "confidence": "high",
+    "reason": "Keledoş tescilli Van yemeği olarak etli, nohutlu, dövmeli, akpancarlı ve kurutlu tanımlanıyor. Mevcut tarif bu kimliği önemli ölçüde kaçırıyor."
+  },
+  {
+    "slug": "van-murtuga",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: aynı başlığı tekrar eden boilerplate adımlar var",
+      "steps: murtuğa için unun tereyağında kavrulup yumurtayla bağlanması daha net yazılmalı"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Tereyağını tavada orta ateşte eritin.", "timerSeconds": 120 },
+        { "stepNumber": 2, "instruction": "Unu ekleyip kokusu çıkana kadar sürekli karıştırarak kavurun.", "timerSeconds": 180 },
+        { "stepNumber": 3, "instruction": "Yumurtaları tuzla çırpın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Çırpılmış yumurtayı kavrulmuş una dökün ve yumuşak parçalar halinde pişirin.", "timerSeconds": 240 },
+        { "stepNumber": 5, "instruction": "Murtuğayı tavada bekletmeden sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://ye-mek.net/story/murtuga",
+      "https://www.vanolay.com/van-kahvaltisi-murtuga-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Murtuğa un, tereyağı ve yumurtayla doğru kurulmuş. Sorun tarif kimliği değil, şablon tekrarlarının gerçek pişirme akışını gölgelemesi."
+  },
+  {
+    "slug": "van-murtuga-kahvaltisi",
+    "verdict": "PASS",
+    "reason": "Murtuğa un, tereyağı ve yumurtanın tavada pişmesiyle doğru. Bal ve kaymak servis yorumu makul, allergen ve süre bilgisi tutarlı.",
+    "sources": [
+      "https://ye-mek.net/story/murtuga",
+      "https://www.yoredenlezzetler.com/post/van-murtuga-tarifi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "van-otlu-peynirli-gozleme",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: hamur için tuz listede yok",
+      "steps: aynı başlığı tekrar eden boilerplate adımlar var",
+      "totalMinutes: hamur dinlendirme bilgisi tipNote'ta var ama zaman çizelgesinde görünmüyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, su ve tuzu pürüzsüz bir hamur olana kadar yoğurun.", "timerSeconds": 360 },
+        { "stepNumber": 2, "instruction": "Hamuru dinlendirin, açarken yırtılmasın.", "timerSeconds": 1200 },
+        { "stepNumber": 3, "instruction": "Hamuru ince açıp otlu peyniri ortasına yayın ve kenarlarını kapatın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Gözlemeyi sacda iki yüzü kızarana kadar pişirin.", "timerSeconds": 480 },
+        { "stepNumber": 5, "instruction": "Tereyağı sürüp sıcak servis edin.", "timerSeconds": null }
+      ],
+      "totalMinutes": 75
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/gozleme-tarifi/",
+      "https://vandangelsin.com/tarifler/dogal-lezzetlerle-van-usulu-otlu-peynirli-kahvalti-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Otlu peynirli gözleme fikri doğru. Net sorun, hamur tuzu ve dinlendirme süresinin eksik kalması ile şablonlaşmış step metinleri."
+  },
+  {
+    "slug": "van-otlu-peynirli-kahvalti",
+    "verdict": "PASS",
+    "reason": "Van otlu peyniri, lavaş, yumurta, bal, ceviz ve çayla kahvaltı tabağı olarak makul. Süre, allergen ve servis bilgisi tutarlı.",
+    "sources": [
+      "https://vandangelsin.com/tarifler/dogal-lezzetlerle-van-usulu-otlu-peynirli-kahvalti-tarifi",
+      "https://www.kulturportali.gov.tr/turkiye/van/neyenir/van-otlu-peyniri"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "van-otlu-peynirli-yumurta-tavasi",
+    "verdict": "PASS",
+    "reason": "Otlu peynirin yumurta ve tereyağıyla tavada pişirilmesi Van kahvaltısı bağlamına uygun. 18 dakikalık süre ve allergen beyanı doğru.",
+    "sources": [
+      "https://vandangelsin.com/tarifler/dogal-lezzetlerle-van-usulu-otlu-peynirli-kahvalti-tarifi",
+      "https://www.kulturportali.gov.tr/turkiye/van/neyenir/van-otlu-peyniri"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "vanilla-slice-australian",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 6 içindeki 3 saat soğutma totalMinutes değerine dahil edilmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 225
+    },
+    "sources": [
+      "https://pampas.com.au/recipes/classic-vanilla-slice",
+      "https://www.womensweeklyfood.com.au/recipe/baking/vanilla-slice-9564/"
+    ],
+    "confidence": "high",
+    "reason": "Avustralya vanilla slice milföy ve custard katıyla doğru. Tek kritik hata, kesim için gereken 3 saatlik soğutmanın toplam sürede görünmemesi."
+  },
+  {
+    "slug": "vanilyali-erikli-irmik-kup-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 5 içindeki 1 saat soğutma toplam süreye dahil edilmemiş",
+      "steps: step 5 vanilyalı kırıntı diyor ama ingredient listesinde kırıntı yok"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 5, "instruction": "Tatlıyı 1 saat soğutup servis edin.", "timerSeconds": 3600 }
+      ],
+      "totalMinutes": 82
+    },
+    "sources": [
+      "https://www.thespruceeats.com/polish-semolina-pudding-1136914",
+      "https://www.everyday-delicious.com/semolina-pudding/"
+    ],
+    "confidence": "medium",
+    "reason": "Sütlü irmik kup ve erik katmanı makul. Düzeltme, listede olmayan kırıntıyı kaldırıyor ve 1 saatlik soğutmayı toplam süreye ekliyor."
+  },
+  {
+    "slug": "vareniki",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 su ve tuz kullanıyor ama listede yok",
+      "ingredients: step 3 soğan, step 6 ekşi krema kullanıyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Su", "amount": "200", "unit": "ml" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Ekşi krema", "amount": "0.5", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.theguardian.com/food/2024/feb/07/how-to-make-perfect-pierogi-recipe-felicity-cloake",
+      "https://www.epicurious.com/recipes/food/views/pierogi-and-vareniki-dough-104662"
+    ],
+    "confidence": "high",
+    "reason": "Patatesli vareniki hamur ve haşlama akışıyla doğru. Stepte geçen su, tuz, soğan ve ekşi krema ingredient listesinde eksik kalmış."
+  },
+  {
+    "slug": "varshova-bigos",
+    "verdict": "PASS",
+    "reason": "Bigos, lahana turşusu, taze lahana, et, sosis, soğan ve uzun pişirme çizgisiyle Polonya avcı yahnisine uyuyor. Süre makul.",
+    "sources": [
+      "https://www.everyday-delicious.com/bigos/",
+      "https://www.kitchenstories.com/en/recipes/bigos-polish-hunters-stew"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "varsova-bigos-lahana",
+    "verdict": "PASS",
+    "reason": "Sauerkraut, beyaz lahana, kielbasa, füme et, mantar, erik ve şarap kullanımı klasik bigosla uyumlu. Uzun pişirme süresi doğru görünüyor.",
+    "sources": [
+      "https://mypolishcuisine.com/hunters-stew-bigos/",
+      "https://www.kitchenstories.com/en/recipes/bigos-polish-hunters-stew"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "varsova-bigos-yahnisi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 4 soğan kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://www.everyday-delicious.com/bigos/",
+      "https://mypolishcuisine.com/hunters-stew-bigos/"
+    ],
+    "confidence": "high",
+    "reason": "Bigos yahnisi lahana, sauerkraut, sosis, pastırma, mantar ve erikle doğru. Açık sorun, stepte kavrulan soğanın listede olmaması."
+  },
+  {
+    "slug": "varsova-lahanali-bigos",
+    "verdict": "PASS",
+    "reason": "Lahana, lahana turşusu, tütsülü sosis, dana eti ve kuru mantarla uzun pişen yapı bigos için uygun. Süre ve kış etiketi tutarlı.",
+    "sources": [
+      "https://www.everyday-delicious.com/bigos/",
+      "https://www.chilipeppermadness.com/recipes/bigos/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "vasterbotten-patates-grateni-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 sarımsak ve tuz kullanıyor ama ingredient listesinde yok",
+      "servingSuggestion: yoğurt, cacık ve limon İsveç peynirli patates grateni için bağlamsız"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "servingSuggestion": "Fırından çıkınca ılık servis edin, yanında sade yeşil salata yeterli olur."
+    },
+    "sources": [
+      "https://vasterbottensost.com/en/recipe/dill-stewed-potatoes-with-vasterbottensost-cheese/",
+      "https://www.bonappetit.com/recipe/classic-potato-gratin"
+    ],
+    "confidence": "medium",
+    "reason": "Patates, krema ve Västerbotten peyniriyle gratin fikri doğru. Sarımsak ve tuz eksik, servis önerisi ise tarif bağlamından uzak."
+  },
+  {
+    "slug": "vasterbotten-payi",
+    "verdict": "PASS",
+    "reason": "Västerbottensostpaj hamur, yumurta, krema ve keskin peynir dolgusu ile kaynaklara uyuyor. Dinlendirme ve ön pişirme süreleri tutarlı.",
+    "sources": [
+      "https://vasterbottensost.com/en/recipe/vasterbotten-cheese-pie-original-recipe/",
+      "https://www.swedishfood.com/swedish-food-recipes-main-courses/212-cheese-pie"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "vatapa",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "ingredients: step 2 kaju, step 3 soğan, sarımsak, zencefil ve palm yağı kullanıyor ama listede yok",
+      "allergens: kaju eklenirse KUSUYEMIS beyanı gerekir",
+      "tipNote: tavuk kurutma notu vatapa ile ilgisiz",
+      "servingSuggestion: kuzu dilimleme cümlesi veri bozulması gibi duruyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kaju", "amount": "50", "unit": "gr" },
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Zencefil", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Palm yağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Kişniş", "amount": "0.25", "unit": "demet" }
+      ],
+      "allergens_add": ["KUSUYEMIS"],
+      "tipNote": "Ekmekli karışımı kısık ateşte sürekli karıştırın; tabana tutarsa vatapa pütürlü olur.",
+      "servingSuggestion": "Vatapayı pirinçle sıcak servis edin, üstüne taze kişniş serpin."
+    },
+    "sources": [
+      "https://myrecipestasty.com/vatapa/",
+      "https://www.foodmap.in/brazil/vatapa"
+    ],
+    "confidence": "high",
+    "reason": "Vatapa kimliği karides, ekmek, Hindistan cevizi sütü, yer fıstığı ve palm yağıyla doğru. Tip ve servis alanlarında açık veri karışması var."
+  },
+  {
+    "slug": "venedik-tiramisu-kup",
+    "verdict": "PASS",
+    "reason": "Tiramisu kup, kahveli kedi dili, mascarpone kreması, Marsala ve kakao katmanlarıyla doğru. 4 saat bekleme totalMinutes içinde görünüyor.",
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/tiramisu",
+      "https://www.lacucinaitaliana.com/italian-food/italian-dishes/tiramisu-all-you-need-to-know-about-the-iconic-italian-dessert"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "vermutlu-limon-spritz-ispanya-usulu",
+    "verdict": "PASS",
+    "reason": "Vermut, soda, buz ve limonla düşük alkollü aperitif çizgisi doğru. Kalori alkol kaynaklı olduğu için macro hesabından sapması beklenir.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/vermouth-soda",
+      "https://www.lanacion.com.ar/recetas/entradas/como-se-prepara-el-vermut-nid27012023/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "vichyssoise-fransiz-soguk-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 2 tavuk suyu diyor ama ingredient listesinde su var ve tarif vejetaryen etiketli",
+      "totalMinutes: step 5 içindeki 2 saat soğutma toplam süreye dahil edilmemiş",
+      "servingSuggestion: yoğurt, maydanoz ve limon vichyssoise için bağlamsız"
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 2, "instruction": "2 patates ve 4 su bardağı suyu ekleyip patatesler yumuşayana kadar pişirin.", "timerSeconds": 1200 }
+      ],
+      "totalMinutes": 156,
+      "servingSuggestion": "Soğuk kaselerde, ince kıyılmış frenk soğanıyla servis edin."
+    },
+    "sources": [
+      "https://www.greatbritishchefs.com/recipes/vichyssoise-recipe",
+      "https://www.bbcgoodfood.com/recipes/vichyssoise"
+    ],
+    "confidence": "high",
+    "reason": "Vichyssoise pırasa, patates ve kremalı soğuk çorba olarak doğru. Tavuk suyu ifadesi ve 2 saatlik soğutma süresi düzeltilmeli."
+  },
+  {
+    "slug": "viena-tavuk-schnitzel",
+    "verdict": "PASS",
+    "reason": "Tavuk schnitzel dana Wiener schnitzel değil, fakat başlık tavuk uyarlamasını açık söylüyor. Pane, kızartma, limon ve allergen beyanı tutarlı.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/chicken-schnitzel",
+      "https://www.seriouseats.com/chicken-schnitzel-recipe"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "vietnam-buzlu-kahvesi",
+    "verdict": "PASS",
+    "reason": "Vietnam buzlu kahvesi koyu kahve, yoğunlaştırılmış süt ve buzla doğru. 5 dakikalık demleme ve SUT allergen beyanı tutarlı.",
+    "sources": [
+      "https://dailyphin.com/vietnamese-iced-coffee-recipe/",
+      "https://reilyproducts.com/recipes/classic-vietnamese-iced-coffee-ca-phe-sua-da/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "vietnam-limonotlu-tavuk-pirinc-salatasi",
+    "verdict": "PASS",
+    "reason": "Vietnam esintili tavuklu pirinç salatası limonotu, lime, balık sosu ve yer fıstığıyla tutarlı. Allergen ve yüksek protein etiketi doğru.",
+    "sources": [
+      "https://www.recipetineats.com/vietnamese-chicken-salad/",
+      "https://www.theguardian.com/food/article/2024/may/27/roasted-lemongrass-and-turmeric-chicken-steaks-recipe-by-karen-martini"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "vietnam-yumurta-kahvesi",
+    "verdict": "PASS",
+    "reason": "Vietnam yumurta kahvesi yumurta sarısı, yoğun süt ve sert kahveyle doğru. 4 dakika çırpma, allergenler ve 15 dakikalık süre tutarlı.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/vietnamese-egg-coffee/",
+      "https://www.nam.coffee/blogs/recipes/vietnamese-egg-coffee"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "vinagrete-brezilya-mangal-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 3 limon suyu ve tuz kullanıyor ama ingredient listesinde limon suyu yok",
+      "steps: Brezilya vinagrete için sirke zaten listede varken sos adımı limona kaymış",
+      "ingredients: tuz listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Domates ve soğanı 5 mm küpler halinde doğrayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Maydanozu ince kıyın ve sebzelerle karıştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Sirke, zeytinyağı ve tuzu çırpıp sebzelerin üzerine dökün.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Vinagreteyi ezmeden kısa süre harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Sosu parlakken mangal etlerinin yanında servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.oliviascuisine.com/vinagrete-brazilian-vinaigrette-salsa/",
+      "https://www.easyanddelish.com/vinagrete-brazilian-vinaigrette-salsa/"
+    ],
+    "confidence": "high",
+    "reason": "Vinagrete domates, soğan, maydanoz, sirke ve yağlı salsa çizgisinde doğru. Mevcut step sirke yerine limon suyu diyerek listeyle çelişiyor."
+  },
+  {
+    "slug": "vinegret-herringli-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: aynı başlığı tekrar eden boilerplate adımlar var",
+      "ingredients: step 3 limon suyu ve tuz kullanıyor ama listede yok",
+      "tags: pancarlı ve ringalı vinegret kış salatası bağlamına daha yakın, yaz-tarifi yanıltıcı"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Pancar ve patatesi ayrı haşlayıp soğutun, sonra küp doğrayın.", "timerSeconds": 600 },
+        { "stepNumber": 2, "instruction": "Ringa filetoyu ve salatalık turşusunu küçük parçalara kesin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Zeytinyağı ve tuzu küçük kasede karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Sebzeleri ringa ve sosla ezmeden kısa süre harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Salatayı soğuk servis tabağına alın.", "timerSeconds": null }
+      ],
+      "tags_remove": ["yaz-tarifi"]
+    },
+    "sources": [
+      "https://restexpert.com/recipe/vinegret/",
+      "https://www.food.com/recipe/vinaigrette-vinegret-russian-beet-herring-salad-507538"
+    ],
+    "confidence": "high",
+    "reason": "Herringli vinegret kaynaklarda bilinen bir pancarlı salata varyasyonu. Sorun step şablonu, eksik tuz ve yaz etiketi."
+  },
+  {
+    "slug": "vinegret-salatasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: step 3 limon suyu kullanıyor ama ingredient listesinde yok",
+      "steps: aynı başlığı tekrar eden boilerplate adımlar var",
+      "ingredients: klasik vinegret içinde havuç ve soğan yaygın, mevcut temel liste eksik kalıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Havuç", "amount": "1", "unit": "adet" },
+        { "name": "Soğan", "amount": "0.5", "unit": "adet" },
+        { "name": "Sirke", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Pancar, patates ve havucu ayrı haşlayıp soğutun, sonra küp doğrayın.", "timerSeconds": 600 },
+        { "stepNumber": 2, "instruction": "Salatalık turşusu ve soğanı küçük küpler halinde kesin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Zeytinyağı, sirke ve tuzu çırpın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Sebzeleri, bezelyeyi ve sosu ezmeden kısa süre harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Tuz ve ekşiliği tadına bakarak ayarlayın.", "timerSeconds": null },
+        { "stepNumber": 6, "instruction": "Vinegreti soğuk servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.whats4eats.com/salads/vinegret-recipe",
+      "https://www.ruspirit.ru/en/content/vinegret-salad"
+    ],
+    "confidence": "high",
+    "reason": "Klasik vinegret pancar, patates, havuç, turşu ve yağlı ekşi sosla yapılır. Mevcut tarifte limon sızıntısı ve temel sebze eksikleri var."
+  },
+  {
+    "slug": "visne-kompostosu",
+    "verdict": "PASS",
+    "reason": "Vişne kompostosu su, şeker, vişne, tarçın ve karanfille klasik akışta. 15 dakikalık pişirme ve soğuk servis bilgisi doğru.",
+    "sources": [
+      "https://www.webanne.com/visne-kompostosu.html",
+      "https://www.sahrapsoysal.com/visne-kompostosu-tarifi-t-3949"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "visneli-cevizli-hosaf-elazig-usulu",
+    "verdict": "PASS",
+    "reason": "Vişneli hoşaf su, şeker ve kısa pişirme akışıyla doğru; ceviz servis yorumu ayrı bir varyasyon olarak makul. Allergen beyanı mevcut.",
+    "sources": [
+      "https://www.webanne.com/visne-kompostosu.html",
+      "https://tombulmutfak.com/visne-kompostosu-tarifi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "visneli-cevizli-keskul-malatya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 nişasta kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Nişasta", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/keskul/",
+      "https://www.nefisyemektarifleri.com/keskul-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Keşkül süt, badem, şeker ve bağlayıcıyla pişen bir sütlü tatlıdır. Mevcut step nişasta kullanıyor ama ingredient listesi bunu atlamış."
+  },
+  {
+    "slug": "visneli-cevizli-kesme-tatlisi-tekirdag-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "identity: mevcut yapı vişneli cevizli yoğurtlu kek gibi, kesme tatlısı veya Tekirdağ yöresi iddiası kaynakla desteklenmiyor",
+      "description: Trakya çay saati ve kesme tatlısı iddiası yanıltıcı olabilir",
+      "steps: şerbet, kesme hamur veya yöresel teknik yok"
+    ],
+    "corrections": {
+      "description": "Vişneli cevizli yoğurtlu kek, yumuşak hamuru vişne ve cevizle birleştiren, dilimlenerek servis edilen pratik bir çay saati tatlısıdır."
+    },
+    "sources": [
+      "https://ye-mek.net/story/visneli-kek",
+      "https://www.sofra.com.tr/tarif/kekler/visneli-yogurtlu-kek"
+    ],
+    "confidence": "medium",
+    "reason": "Tarif kaynaklardaki vişneli yoğurtlu kek yapısına benziyor. Tekirdağ kesme tatlısı iddiası bu içerikle doğrulanamadığı için manuel review gerekli."
+  },
+  {
+    "slug": "visneli-ekmek-kadayifi-kars-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 3, 4 ve 5 toplam 41 dakika bekleme ve ısıtma içeriyor, totalMinutes 32 dk kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 64
+    },
+    "sources": [
+      "https://www.efsanetarifler.com/tarif/visneli-ekmek-kadayifi-tarifi",
+      "https://en.wikipedia.org/wiki/Ekmek_kaday%C4%B1f%C4%B1"
+    ],
+    "confidence": "medium",
+    "reason": "Vişneli ekmek kadayıfı ve kaymak servisi makul. Kars yöre iddiası zayıf olsa da net teknik hata, toplam sürenin step sürelerini karşılamaması."
+  },
+  {
+    "slug": "visneli-ekmek-kadayifi-kup-tekirdag-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 3 içinde 10 dakika bekleme ve step 5 içinde 20 dakika soğutma var, totalMinutes 28 dk kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 58
+    },
+    "sources": [
+      "https://www.efsanetarifler.com/tarif/visneli-ekmek-kadayifi-tarifi",
+      "https://en.wikipedia.org/wiki/Ekmek_kaday%C4%B1f%C4%B1"
+    ],
+    "confidence": "medium",
+    "reason": "Kup formu ekmek kadayıfı, vişne ve kaymakla uygulanabilir. Ana düzeltme, şerbet emdirme ve soğutmanın toplam süreye eklenmesi."
+  }
+]

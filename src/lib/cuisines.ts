@@ -63,6 +63,15 @@ export const CUISINE_CODES = [
   // bredie). Bu Codex'in MAJOR_ISSUE'da explicit isaret ettigi cuisine
   // gap, manuel mapping pattern'i gibi.
   "za",
+  // Oturum 27 (Mod K Batch 19b v2): lisbon-nohutlu-morina-salatasi
+  // ve lizbon-portakalli-badem-keki MAJOR_ISSUE'larinda Codex 'pt'
+  // (Portekiz) cuisine kodu olmadigi icin otomatik fix yapamadi
+  // (cuisine es kalmis, Portekiz bacalhau ve Lizbon badem keki
+  // klasiklerine yanlis Ispanyol etiketi). pt = Portekiz (bacalhau
+  // tuzlanmis morina, pastel de nata kremali tart, caldo verde
+  // lahana corbasi, francesinha sandvic; Atlantik balikciligi +
+  // Iber yarimadasi mirasi).
+  "pt",
 ] as const;
 
 export type CuisineCode = (typeof CUISINE_CODES)[number];
@@ -104,6 +113,7 @@ export const CUISINE_LABEL: Record<CuisineCode, string> = {
   ve: "Venezuela",
   dk: "Danimarka",
   za: "Güney Afrika",
+  pt: "Portekiz",
 };
 
 /**
@@ -149,6 +159,7 @@ export const CUISINE_SLUG: Record<CuisineCode, string> = {
   ve: "venezuela",
   dk: "danimarka",
   za: "guney-afrika",
+  pt: "portekiz",
 };
 
 /** URL slug → kod ters lookup. Slug bilinmiyorsa null. */
@@ -202,6 +213,7 @@ export const CUISINE_DESCRIPTION_TR: Record<CuisineCode, string> = {
   ve: "Venezuela mutfağı arepa diyarı ve Karayip lezzetleri: arepa rellena, pabellón criollo, hallaca, asado negro. Plantain, kara fasulye ve mısır unu klasik üçleme.",
   dk: "Danimarka mutfağı İskandinav rahatlığı ile Kuzey Avrupa klasiklerini birleştirir: aebleskiver (yuvarlak çörek), smørrebrød (açık sandviç), frikadeller, rødgrød. Tereyağı, ringa ve kara çavdar ekmeği sofranın temeli.",
   za: "Güney Afrika mutfağı Hollandalı sömürge mirası, Hindistan göçmen mutfakları ve yerel Bantu kültürünün buluşması: bobotie (baharatlı kıymalı yumurta dolması), biltong (kuru et), sosatie (sis kebabı), malva pudding (kayısılı sıcak puding). Köri, hindistan cevizi sütü ve mısır lapası (pap) günlük sofranın imzası.",
+  pt: "Portekiz mutfağı Atlantik kıyısının deniz ürünleri ve İber yarımadası mirasını birleştirir: bacalhau (tuzlanmış morina, 365 günde 365 farklı tarif denilir), pastel de nata (Lizbon kremalı tart), caldo verde (lahanalı patates çorbası), francesinha (Porto sandviçi), bifana (jambon sandviç). Zeytinyağı, taze morina, hindistan cevizi (Brezilya bağı) ve piri-piri sosu sofranın imzası.",
 };
 
 /** EN description, aynı set, kısa SEO metni. */
@@ -242,6 +254,7 @@ export const CUISINE_DESCRIPTION_EN: Record<CuisineCode, string> = {
   ve: "Venezuelan cuisine is the land of arepa with Caribbean flavors: arepa rellena, pabellón criollo, hallaca, asado negro. Plantain, black beans, and corn flour form the classic trio.",
   dk: "Danish cuisine pairs Scandinavian comfort with Northern European classics: aebleskiver (round dumplings), smørrebrød (open-faced sandwich), frikadeller, rødgrød. Butter, herring, and dark rye bread anchor the table.",
   za: "South African cuisine blends Dutch colonial heritage, Indian immigrant kitchens and indigenous Bantu culture: bobotie (spiced minced meat with egg topping), biltong (cured meat), sosatie (skewered kebab), malva pudding (apricot warm pudding). Curry, coconut milk and maize porridge (pap) are everyday signatures.",
+  pt: "Portuguese cuisine joins Atlantic seafood with Iberian heritage: bacalhau (salted cod, said to have 365 recipes), pastel de nata (Lisbon custard tart), caldo verde (kale and potato soup), francesinha (Porto sandwich), bifana (pork sandwich). Olive oil, fresh cod, Brazilian-influenced flavors and piri-piri sauce anchor the table.",
 };
 
 export const CUISINE_FLAG: Record<CuisineCode, string> = {
@@ -281,6 +294,7 @@ export const CUISINE_FLAG: Record<CuisineCode, string> = {
   ve: "🇻🇪",
   dk: "🇩🇰",
   za: "🇿🇦",
+  pt: "🇵🇹",
 };
 
 /**
@@ -330,6 +344,9 @@ export const CUISINE_REGION: Record<CuisineCode, string> = {
   ve: "latin-america",
   dk: "nordic",
   za: "africa-southern",
+  // Portekiz Iber yarimadasi (es ile ayni region), Akdeniz tarafi
+  // mutfak benzerligi (zeytinyagi, balik, baharat).
+  pt: "mediterranean-levant",
 };
 
 // ─── Inference engine ───────────────────────────────────────
@@ -538,6 +555,14 @@ const SLUG_PATTERNS: readonly { cuisine: CuisineCode; patterns: string[] }[] = [
       "fairy-bread", "anzac-biscuit",
     ],
   },
+  // Portuguese (oturum 27, pt eklenmesiyle)
+  {
+    cuisine: "pt",
+    patterns: [
+      "bacalhau", "pastel-de-nata", "francesinha", "caldo-verde",
+      "bifana", "piri-piri", "bolinho-de-bacalhau", "queijada",
+    ],
+  },
 ];
 
 /**
@@ -575,6 +600,7 @@ const TEXT_KEYWORDS: readonly { cuisine: CuisineCode; keywords: string[] }[] = [
   { cuisine: "gb", keywords: ["ingiliz", "britanya", "britanyalı"] },
   { cuisine: "pl", keywords: ["polonya", "polonyalı", "polish"] },
   { cuisine: "au", keywords: ["avustralya", "avustralyalı"] },
+  { cuisine: "pt", keywords: ["portekiz", "portekizli", "portekiz mutfağı", "portekiz usulü", "lizbon", "porto"] },
 ];
 
 interface InferInput {

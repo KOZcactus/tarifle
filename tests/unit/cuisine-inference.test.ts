@@ -226,6 +226,30 @@ describe("inferCuisineFromRecipe", () => {
     ).toBe("ar");
   });
 
+  // ─── Portuguese (oturum 27) ────────────────────────────────
+
+  test("Portuguese title keyword → pt", () => {
+    expect(
+      inferCuisineFromRecipe(
+        recipe({ title: "Portekiz Usulü Bacalhau", slug: "portekiz-bacalhau" }),
+      ),
+    ).toBe("pt");
+  });
+
+  test("Portuguese slug: bacalhau → pt", () => {
+    expect(
+      inferCuisineFromRecipe(recipe({ slug: "bacalhau-bras" })),
+    ).toBe("pt");
+  });
+
+  test("Portuguese title keyword (Lizbon) → pt", () => {
+    expect(
+      inferCuisineFromRecipe(
+        recipe({ title: "Lizbon Pastel de Nata", slug: "lizbon-pastel" }),
+      ),
+    ).toBe("pt");
+  });
+
   // ─── Default to Turkish ───────────────────────────────────
 
   test("no international markers → default tr", () => {
@@ -268,8 +292,8 @@ describe("inferCuisineFromRecipe", () => {
 });
 
 describe("cuisine constants", () => {
-  test("CUISINE_CODES has 36 entries", () => {
-    expect(CUISINE_CODES).toHaveLength(36);
+  test("CUISINE_CODES has 37 entries", () => {
+    expect(CUISINE_CODES).toHaveLength(37);
   });
 
   test("every code has a label", () => {

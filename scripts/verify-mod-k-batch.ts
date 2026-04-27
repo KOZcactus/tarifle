@@ -154,14 +154,14 @@ const VALID_ALLERGENS = new Set([
   "SOYA", "DENIZ_URUNLERI", "SUSAM", "KEREVIZ", "HARDAL",
 ]);
 
-// Tarifle CUISINE_CODES (src/lib/cuisines.ts), 36 kod (oturum 25 +tn
-// +ar +co +ve +dk +za, sonuncu Mod K Batch 5b cape-town-bobotie
-// MAJOR_ISSUE'da Codex'in isaret ettigi gap).
+// Tarifle CUISINE_CODES (src/lib/cuisines.ts), 37 kod (oturum 25 +tn
+// +ar +co +ve +dk +za, oturum 27 +pt Mod K Batch 19b lisbon-portekiz
+// gap'i icin eklendi).
 const VALID_CUISINES = new Set([
   "tr", "it", "fr", "es", "gr", "jp", "cn", "kr", "th", "in",
   "mx", "us", "me", "ma", "vn", "br", "cu", "ru", "hu", "se",
   "pe", "gb", "pl", "au", "de", "ir", "pk", "id", "et", "ng",
-  "tn", "ar", "co", "ve", "dk", "za",
+  "tn", "ar", "co", "ve", "dk", "za", "pt",
 ]);
 
 function isHttpUrl(u: string): boolean {

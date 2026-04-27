@@ -76,11 +76,18 @@ Toplam Mod K v2 prod ~480 → ~876 correction. Nutrition anomaly
 'es' → 'pt' update. Mini-rev kuyruğu 46 → 44 (lisbon-nohutlu-morina
 + lizbon-portakalli-badem-keki otomatik fix).
 
-**Mini-rev kuyruğu 41** (4 önceki paketi 1 ile kapandı, kuyrukta 26
-batch 11a-18b + 14 batch 19a-21b + 1 batch 22a kalan):
+**Mini-rev kuyruğu 39** (4 önceki + 7 paketi 2 kapandı, kuyrukta 19
+batch 11a-18b + 14 batch 19a-21b + 1 batch 22a + 5 batch 23b/24a kalan):
 
-22a (1, oturum 27 ikinci paket):
+22a (1):
 - `mincili-laz-boregi-rize-ev-usulu`: Laz böreği muhallebili tatlı klasik (kaynaklar şerbetli), mevcut tuzlu mincili börek (identity mismatch)
+
+23b/24a yeni 5 (oturum 27 üçüncü paket sonrası):
+- `nigde-sogurmeli-yumurta` (23b): Niğde söğürmeli yumurta kaynaksız + scaffold + biber közleme süresi
+- `nohutlu-firikli-semsek-gaziantep-usulu` (23b): Sembusek Mardin etli kapalı, Gaziantep nohutlu firikli yok + vegan-yumurta çakışma
+- `nohutlu-otlu-borek-aydin-usulu` (23b): Aydın atfı kaynaksız + scaffold + ot belirsiz
+- `otlu-kete-dilimi-kars-usulu` (24a): Kars ketesi kavrulmuş unlu iç klasik, mevcut otlu hamur işi farklı kimlik
+- `otlu-lorlu-kete-artvin-usulu` (24a): Artvin kaynaksız + tava/fırın kete karıştırılmış
 
 
 
@@ -96,10 +103,10 @@ Yeni 26 (oturum 27, 11a-18b MAJOR identity/structural mismatch):
 - `fistikli-domates-corbasi-edirne-bag-usulu`: Edirne yöresel iddia kaynaksız
 - `gul-sirkeli-tavuk-isparta-usulu`: Isparta yöresel iddia kaynaksız
 
-13b (5):
+13b (5, paketi 2'de 1 tarif kapandı, kalan 4):
 - `hatay-zahterli-nohut-durumu`: Hatay atfı kaynaksız (klasik Gaziantep)
 - `hatay-zahterli-tepsi-koftesi`: Klasik katmanlı bulgur, mevcut basit kıymalı
-- `helise-malatya-usulu`: Helise Bitlis klasiği, Malatya kaynaksız + Kural 9 süre
+- ~~`helise-malatya-usulu`~~: ✅ REWRITE (Bitlis/Van menşeli, paketi 2)
 - `helle-tatlisi-tokat-usulu`: Tokat helle ÇORBA, mevcut tatlı (type mismatch)
 - `hurmali-ekmek-tatlisi-kirklareli-usulu`: Kırklareli kaynaksız + Kural 9
 
@@ -109,26 +116,26 @@ Yeni 26 (oturum 27, 11a-18b MAJOR identity/structural mismatch):
 - `jokai-bableves`: Macar klasik füme et + ekşi krema, mevcut sade fasulye
 - `kabak-bastisi-gaziantep-usulu`: Gaziantep kabaklama etli ana yemek, mevcut tatlı tip
 
-16a-16b (6):
+16a-16b (6, paketi 2'de 2 tarif kapandı, kalan 4):
 - `kastamonu-eksili-siyez-pilavi`: Yoğurtlu/otlu klasik, mevcut kızılcık ekşili sade
 - `katikli-ekmek-kilis-usulu`: Kilis kaynaksız (klasik Hatay/Antakya)
 - `kayisava-trabzon-usulu`: Trabzon kayısava doğrulanamadı, mevcut pekmezli helva
 - `kayisili-irmik-pilavi-macaristan-usulu`: Macar tejbegríz tatlı sütlü, mevcut suyla pilav
-- `kayseri-kursun-asi`: Bulgurlu küçük köfte (klasik), mevcut unlu hamur top
-- `kayseri-yag-mantisi`: Yağ mantısı kızartılır, mevcut haşlama
+- ~~`kayseri-kursun-asi`~~: ✅ REWRITE (bulgur+kıyma köfte klasik, paketi 2, KRİTİK fix)
+- ~~`kayseri-yag-mantisi`~~: ✅ REWRITE (mayalı bohça kızartma, paketi 2)
 
-17a (7, en yoğun):
-- `kelecos-erzurum-usulu`: Kurut temelli klasik, mevcut yoğurtlu ekmek
-- `kelecos-van-usulu`: Van mercimekli lavaş kurgusu doğrulanamadı
+17a (7, paketi 2'de 2 tarif kapandı, kalan 5):
+- ~~`kelecos-erzurum-usulu`~~: ✅ REWRITE (kurut+kavurma klasik, paketi 2)
+- ~~`kelecos-van-usulu`~~: ✅ REWRITE (bakliyat+et+pazı keledoş, paketi 2)
 - `kerebic-kup-mersin-usulu`: Çöven köpüğü + içli kurabiye klasiği, mevcut irmik muhallebisi
 - `keskekli-istavrit-tava-sinop-liman-usulu`: Kaynak yok + buğday 5dk yumuşatma yanlış
 - `kestaneli-hamsi-pilavi-zonguldak-usulu`: Kaynak yok + hamsili pilav tekniği yanlış
 - `kibe-mumbar`: Mardin yemek (kuzu işkembe + mumbar + kuşbaşı + kuyruk yağı), mevcut "kibe" ingredient gibi yazılmış (data corruption)
 - `kilis-oruk`: Şiş köfte formu klasik, mevcut cevizli içli köfte
 
-17b (2):
-- `kiraz-yaprakli-kofte-malatya-usulu`: Yoğurtlu+yumurta+un+soğanlı yağ klasik, mevcut salçalı vegan
-- `kiraz-yaprakli-sarma-malatya-usulu`: Yarma/bulgur hamuru klasik, mevcut pirinçli dolma
+17b (2): ~~ikisi de paketi 2'de kapandı (REWRITE)~~
+- ~~`kiraz-yaprakli-kofte-malatya-usulu`~~: ✅ REWRITE (yoğurt+yumurta sos klasik, paketi 2)
+- ~~`kiraz-yaprakli-sarma-malatya-usulu`~~: ✅ REWRITE (bulgur+yarma+yoğurt sos, paketi 2)
 
 19a-21b yeni 16 (oturum 27 ikinci paket):
 

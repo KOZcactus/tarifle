@@ -1,8 +1,26 @@
 # Tarifle, Proje Durumu
 
-> **Oturum 27 (27 Nis 2026, oturum 26'nın aynı gün devamı), 13 commit:
-> Mod K v2 24 batch apply (11a-21b + 22a + 23a, 22b BAD reject) +
-> CUISINE_CODES `pt` ekleme + 4 mini-rev paketi 1 + SEO batch 3 + 4.**
+> **Oturum 27 (27 Nis 2026, oturum 26'nın aynı gün devamı), 15 commit:
+> Mod K v2 26 batch apply (11a-21b + 22a + 23a + 23b + 24a, 22b BAD
+> reject) + CUISINE_CODES `pt` ekleme + 11 mini-rev (paketi 1: 4 +
+> paketi 2: 7) + SEO batch 3 + 4.**
+>
+> **Mod K Batch 23b + 24a apply** (commit `2f9b770`): 60 yeni prod
+> correction (23b 31 + 24a 29). 5 yeni MAJOR mini-rev kuyruğa (23b
+> nigde-sogurmeli + nohutlu-firikli-semsek-gaziantep + nohutlu-otlu-
+> borek-aydin, 24a otlu-kete-dilimi-kars + otlu-lorlu-kete-artvin).
+> Mod K v2 progress 44 → **46/71 (%64.8)**, kümülatif prod ~947 → ~1007.
+>
+> **Mini-rev paketi 2** (commit `2f9b770`, kuyruk 46 → **39**):
+> 7 yöresel REWRITE Doğu Anadolu + Kayseri. 2 paralel agent + 13+
+> kaynak teyit. helise-malatya (Bitlis/Van menşeli rename), kelecos-
+> erzurum (kurut+kavurma klasik), kelecos-van (lavaş→bakliyat+et+pazı
+> coğrafi işaret), kiraz-yaprakli-kofte/sarma malatya (yoğurt+yumurta
+> sos klasik, padişah yemeği coğrafi işaret), kayseri-kursun-asi
+> (KRİTİK: mevcut DB unlu hamur YANLIŞ, klasik bulgur+kıyma köfte
+> Kültür Portalı resmi), kayseri-yag-mantisi (mayalı bohça kızartma
+> 3 kaynak). 7/7 REWRITE (DELETE yok). AuditLog `MOD_K_MANUAL_REV`
+> paket=oturum-27-mini-rev-batch-2.
 >
 > **SEO landing batch 4** (commit `36fff69`): top 20 → **top 29**.
 > 7 cuisine revize (ispanyol 154→202 kelime, yunan 154→171, cin 155→

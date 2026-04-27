@@ -1,0 +1,839 @@
+[
+  {
+    "slug": "bolu-mengen-pilavi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps soğan, sıcak su, tuz ve dereotu kullanıyor, ingredient listesinde bu malzemeler yok",
+      "description dereotu diyor, ingredient listesi dereotunu içermiyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Soğan",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Sıcak su",
+          "amount": "3",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Dereotu",
+          "amount": "0.25",
+          "unit": "demet"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/mengen-pilavi/302",
+      "https://www.ustayemektarifleri.com/pilavlar/mengen-pilavi"
+    ],
+    "confidence": "high",
+    "reason": "Mengen pilavı kaynaklarında soğan, su, tuz ve dereotu temel akışta var; mevcut adımlar bu malzemeleri kullanıyor ama liste eksik."
+  },
+  {
+    "slug": "bolu-mengen-pilavi-etli",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/mengen-pilavi/302",
+      "https://www.ustayemektarifleri.com/pilavlar/mengen-pilavi"
+    ],
+    "confidence": "high",
+    "reason": "Et, mantar, pirinç, ceviz ve dereotu yapısı Mengen pilavı kaynaklarıyla uyumlu; süre ve allergen tarafında net hata görünmüyor."
+  },
+  {
+    "slug": "borani-erzincan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/ispanak-borani/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/nefis-ispanak-borani-tarifi/17916"
+    ],
+    "confidence": "medium",
+    "reason": "Ispanak, yoğurt, sarımsak ve tereyağlı biberli üst yapı borani kaynaklarıyla uyumlu; net ingredient veya süre hatası yok."
+  },
+  {
+    "slug": "borscht",
+    "verdict": "CORRECTION",
+    "issues": [
+      "description borscht'u sadece Rus pancar çorbası diye tanımlıyor, kaynaklar yemeği daha geniş Doğu Avrupa ve özellikle Ukrayna bağlamında verir"
+    ],
+    "corrections": {
+      "description": "Borscht, pancar, lahana ve et suyuyla yapılan ekşi dokulu Doğu Avrupa çorbasıdır."
+    },
+    "sources": [
+      "https://www.onceuponachef.com/recipes/borscht.html",
+      "https://en.wikipedia.org/wiki/Borscht"
+    ],
+    "confidence": "high",
+    "reason": "Pancar, lahana, et suyu ve ekşi krema uyumlu; yalnız kökeni sadece Rus diye vermek yanıltıcı olduğu için description daraltılmalı."
+  },
+  {
+    "slug": "borulce-eksilemesi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/egenin-meshur-lezzeti-borulce-tarator-borulce-eksilemesi/21704",
+      "https://www.sahrapsoysal.com/egeli-taze-borulce-salatasi-tarifi-t-6523"
+    ],
+    "confidence": "medium",
+    "reason": "Taze börülce, zeytinyağı, limon ve kısa pişirme Ege börülce kaynaklarıyla uyumlu; net allergen veya süre çelişkisi yok."
+  },
+  {
+    "slug": "borulce-ezmesi-aydin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/egenin-meshur-lezzeti-borulce-tarator-borulce-eksilemesi/21704",
+      "https://www.sahrapsoysal.com/egeli-taze-borulce-salatasi-tarifi-t-6523"
+    ],
+    "confidence": "medium",
+    "reason": "Haşlanmış börülce, sarımsak, limon ve zeytinyağıyla meze yapısı kaynaklarla uyumlu; vegan ve allergen beyanı makul."
+  },
+  {
+    "slug": "borulce-salatasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sahrapsoysal.com/egeli-taze-borulce-salatasi-tarifi-t-6523",
+      "https://www.kirazinmutfagi.com.tr/tarif/zeytinyagli-kuru-borulce-salatasi"
+    ],
+    "confidence": "high",
+    "reason": "Kuru börülce, domates, soğan, maydanoz, limon ve zeytinyağı salata kaynaklarıyla uyumlu; net düzeltme gerekmiyor."
+  },
+  {
+    "slug": "borulceli-arapsaci-salatasi-aydin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sahrapsoysal.com/egeli-taze-borulce-salatasi-tarifi-t-6523",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/deniz-borulcesi-salatasi"
+    ],
+    "confidence": "medium",
+    "reason": "Haşlanmış börülceyi taze ot, limon ve zeytinyağıyla soğuk salata yapmak Ege meze akışıyla uyumlu; net hata bulunmadı."
+  },
+  {
+    "slug": "borulceli-bulgur-pilavi-aydin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.yemektekeyifvar.com/pilav-tarifleri/acebekli-bulgur-pilavi",
+      "https://ye-mek.net/tarif/kuru-borulceli-bulgur-pilavi"
+    ],
+    "confidence": "high",
+    "reason": "Börülce, bulgur, soğan, domates ve zeytinyağıyla tek tencere pilav akışı kaynaklarla uyumlu; GLUTEN beyanı doğru."
+  },
+  {
+    "slug": "borulceli-dag-tarhana-corbasi-mugla-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/mugla/neyenir/tarhana-corbasi-tarhana-asi",
+      "https://www.nefisyemektarifleri.com/tarhana-corbasi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Muğla tarhana aşı kaynaklarında börülce kullanımı var; tarhana, börülce, tereyağı ve nane yapısı makul görünüyor."
+  },
+  {
+    "slug": "borulceli-domates-sogurtmesi-aydin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/domates-soslu-taze-borulce-salatasi/1204",
+      "https://www.salata.gen.tr/domates-soslu-borulce-salatasi.html"
+    ],
+    "confidence": "medium",
+    "reason": "Taze börülceyi domates, sarımsak ve zeytinyağıyla kısa pişirme akışı Ege tipi domatesli börülce kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "borulceli-domates-yahnisi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 6 tuz ayarlamayı söylüyor, ingredient listesinde tuz yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/domates-soslu-taze-borulce-salatasi/1204",
+      "https://www.salata.gen.tr/domates-soslu-borulce-salatasi.html"
+    ],
+    "confidence": "high",
+    "reason": "Domatesli börülce akışı makul, fakat adım tuz kullanımını açıkça söylüyor; listede tuz olmadığı için ingredient eklenmeli."
+  },
+  {
+    "slug": "borulceli-eksi-ot-kavurmasi-ayvalik-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/deniz-borulcesi-salatasi/1651",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/deniz-borulcesi-salatasi"
+    ],
+    "confidence": "medium",
+    "reason": "Deniz börülcesi, sarımsak, limon ve zeytinyağıyla kurulan Ege meze mantığı kaynaklarla uyumlu; net düzeltme yok."
+  },
+  {
+    "slug": "borulceli-eksileme-izmir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/egenin-meshur-lezzeti-borulce-tarator-borulce-eksilemesi/21704",
+      "https://www.sahrapsoysal.com/egeli-taze-borulce-salatasi-tarifi-t-6523"
+    ],
+    "confidence": "medium",
+    "reason": "Taze börülce, zeytinyağı ve limonla hafif ekşi Ege yorumu kaynaklarla uyumlu; süre ve allergen tarafında net hata yok."
+  },
+  {
+    "slug": "borulceli-kabak-mucveri-mugla-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3 yumurta kullanıyor, ingredient listesinde yumurta yok",
+      "yumurta eklendiğinde YUMURTA allergen declare edilmeli",
+      "tarifte yumurta kullanıldığı için vegan tag yanıltıcı"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Yumurta",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "tags_remove": [
+        "vegan"
+      ],
+      "allergens_add": [
+        "YUMURTA"
+      ]
+    },
+    "sources": [
+      "https://ye-mek.net/tarif/kabak-mucver/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/kabak-mucveri-tarifi/5126"
+    ],
+    "confidence": "high",
+    "reason": "Kabak mücveri kaynaklarında yumurta temel bağlayıcıdır; mevcut adım yumurta diyor ama liste, allergen ve vegan tag bunu karşılamıyor."
+  },
+  {
+    "slug": "borulceli-koruklu-fennel-salata-urla-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sahrapsoysal.com/egeli-taze-borulce-salatasi-tarifi-t-6523",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/deniz-borulcesi-salatasi"
+    ],
+    "confidence": "low",
+    "reason": "Börülce, ekşi sos ve zeytinyağlı soğuk salata yapısı Ege kaynaklarıyla uyumlu; rezene ve koruk özel varyasyonu için kaynak sınırlı."
+  },
+  {
+    "slug": "bossam",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1 zencefil kullanıyor, ingredient listesinde yok",
+      "step 5 kimchi ile servis ediyor, ingredient listesinde kimchi yok",
+      "ingredient dana döş iken step 1 domuz veya dana diye belirsiz yazılmış"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zencefil",
+          "amount": "20",
+          "unit": "gr"
+        },
+        {
+          "name": "Kimchi",
+          "amount": "1",
+          "unit": "su bardağı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Dana döşü tencereye alıp sarımsak, zencefil ve soya sosu ekleyin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.maangchi.com/recipe/bo-ssam",
+      "https://www.koreanbapsang.com/bossam-boiled-pork-wraps"
+    ],
+    "confidence": "high",
+    "reason": "Bossam kaynakları sarma ve aromalı haşlama akışını doğruluyor; mevcut kayıtta adımda geçen zencefil ve kimchi listede eksik."
+  },
+  {
+    "slug": "bostana-bulgur-salatasi-sanliurfa-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Şanlıurfa bostanası kaynaklarda ince doğranmış sebze, nar ekşisi, limon ve yeşillikle yapılır; bulgur temel malzeme değildir",
+      "slug ve title bulgur dediği için basit partial correction sonrası kayıt adıyla içerik arasında çelişki kalabilir"
+    ],
+    "corrections": {
+      "description": "Şanlıurfa bostanası, ince doğranmış domates, salatalık, biber ve yeşilliklerin nar ekşisiyle suluca karıştığı ferah salatadır.",
+      "ingredients_remove": [
+        "İnce bulgur"
+      ],
+      "ingredients_add": [
+        {
+          "name": "Yeşil biber",
+          "amount": "2",
+          "unit": "adet"
+        },
+        {
+          "name": "Maydanoz",
+          "amount": "0.5",
+          "unit": "demet"
+        },
+        {
+          "name": "Taze nane",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Limon suyu",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "allergens_remove": [
+        "GLUTEN"
+      ]
+    },
+    "sources": [
+      "https://www.theguardian.com/food/article/2024/jul/29/bostana-salatas-orchard-salad-with-pomegranate-molasses-recipe-by-ozlem-warren",
+      "https://www.nefisyemektarifleri.com/bostana-salatasi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kaynaklarda bostana bulgursuz, çok ince doğranmış sebzeli ve ekşi sulu salata; mevcut kayıt kısır benzeri olduğu için manuel review gerekir."
+  },
+  {
+    "slug": "boston-clam-chowder",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.theguardian.com/food/2025/jun/01/how-to-make-clam-chowder-felicity-cloake-recipe",
+      "https://boston.eater.com/maps/best-clam-chowder-boston"
+    ],
+    "confidence": "high",
+    "reason": "Midye, patates, pastırma, süt, krema ve unla koyu New England chowder yapısı kaynaklarla uyumlu; allergen beyanı doğru."
+  },
+  {
+    "slug": "bouillabaisse",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1 zeytinyağı kullanıyor, ingredient listesinde zeytinyağı yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/bouillabaisse",
+      "https://www.epicurious.com/recipes/food/views/bouillabaisse-238411"
+    ],
+    "confidence": "high",
+    "reason": "Bouillabaisse için rezene, domates, safran ve balık suyu uyumlu; adımda kullanılan zeytinyağı listede olmadığı için eklenmeli."
+  },
+  {
+    "slug": "boulevardier",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine tr yazılmış, Boulevardier Paris çıkışlı klasik bir kokteyl olarak TR mutfağına ait değil",
+      "step 1 gazlı eklerden ve step 3 köpükten bahsediyor, bu stirred kokteyl için yanlış"
+    ],
+    "corrections": {
+      "cuisine": "fr",
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Viski, Kampari, tatlı vermut, buz ve portakal kabuğunu ölçüp karıştırma bardağını hazırlayın.",
+          "timerSeconds": 60
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Soğuyan karışımı buzlu ya da soğutulmuş bardağa ince süzün."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.liquor.com/recipes/boulevardier/",
+      "https://en.wikipedia.org/wiki/Boulevardier_%28cocktail%29"
+    ],
+    "confidence": "high",
+    "reason": "Oranlar doğru, fakat cuisine ve iki adım klasik stirred Boulevardier tekniğiyle çelişiyor; gazlı veya köpüklü işlem yok."
+  },
+  {
+    "slug": "bourbon-cherry-smash-amerikan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.youtube.com/watch?v=ylo-cf-7je0",
+      "https://www.foodandwine.com/cocktails-spirits/bruto-americano"
+    ],
+    "confidence": "medium",
+    "reason": "Bourbon, kiraz ya da vişne, limon ve buzla kısa içimli smash mantığı uyumlu; tarif basit ama net yanlış alan görünmüyor."
+  },
+  {
+    "slug": "bourbon-elma-smash-amerikan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.masterclass.com/articles/classic-boulevardier-cocktail-recipe/",
+      "https://www.foodandwine.com/cocktails-spirits/bruto-americano"
+    ],
+    "confidence": "low",
+    "reason": "Bourbon, meyve suyu, limon ve buzla kısa kokteyl yapısı makul bir smash varyasyonu; spesifik elmalı kaynak sınırlı ama net hata yok."
+  },
+  {
+    "slug": "boza",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps 24-48 saat mayalanma söylüyor, totalMinutes 150 dakika kaldığı için süre yanıltıcı",
+      "step 3 mayalanma süresinde timerSeconds yok"
+    ],
+    "corrections": {
+      "totalMinutes": 3030,
+      "steps_replace": [
+        {
+          "stepNumber": 3,
+          "instruction": "Ağzı kapalı serin yerde 48 saat mayalanmaya bırakın.",
+          "timerSeconds": 172800
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/boza/",
+      "https://www.nefisyemektarifleri.com/boza/"
+    ],
+    "confidence": "high",
+    "reason": "Boza kaynakları uzun fermantasyon verir; mevcut toplam süre 24-48 saat beklemeyi dışarıda bıraktığı için RecipeTimeline yanıltır."
+  },
+  {
+    "slug": "bozali-irmik-kup-istanbul-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 5 tatlıyı 30 dakika soğutuyor, totalMinutes 20 dakika kaldığı için süre tutarsız"
+    ],
+    "corrections": {
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://yemek.com/tarif/boza/",
+      "https://www.nefisyemektarifleri.com/irmik-tatlisi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "İrmik tabanı ve boza katmanı makul, fakat 30 dakika soğutma totalMinutes içine girmeli; prep 10, cook 10, wait 30 toplam 50 dk."
+  },
+  {
+    "slug": "bramble",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/bramble",
+      "https://www.theginguide.com/bramble.html"
+    ],
+    "confidence": "high",
+    "reason": "Cin, limon suyu, şeker şurubu ve böğürtlen likörü oranları Bramble kaynaklarıyla uyumlu; adım akışında net hata yok."
+  },
+  {
+    "slug": "briam",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1 patlıcan kullanıyor, ingredient listesinde patlıcan yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Patlıcan",
+          "amount": "2",
+          "unit": "adet"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.dianekochilas.com/briam/",
+      "https://www.yayasevoo.com/blogs/recipes/briam-traditional-greek-roasted-vegetables"
+    ],
+    "confidence": "high",
+    "reason": "Briam sebze fırını için kabak, patates, domates ve zeytinyağı doğru; adımda patlıcan geçtiği için listeye eklenmeli."
+  },
+  {
+    "slug": "brigadeiro",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3 harcı 45 dakika soğutuyor, totalMinutes 27 dakika kaldığı için bekleme süresi eksik"
+    ],
+    "corrections": {
+      "totalMinutes": 72
+    },
+    "sources": [
+      "https://nomadparadise.com/brigadeiros-recipe/",
+      "https://www.mygorgeousrecipes.com/brigadeiros-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Malzeme ve pişirme akışı brigadeiro kaynaklarıyla uyumlu; 45 dakika soğutma toplam süreye eklenmediği için totalMinutes düzelmeli."
+  },
+  {
+    "slug": "brigadeiro-de-colher",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 5 tatlıyı 20 dakika dinlendiriyor, totalMinutes 17 dakika kaldığı için süre tutarsız"
+    ],
+    "corrections": {
+      "totalMinutes": 37
+    },
+    "sources": [
+      "https://nomadparadise.com/brigadeiros-recipe/",
+      "https://www.mygorgeousrecipes.com/brigadeiros-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Kaşık brigadeiro yapısı makul; 20 dakika oda sıcaklığı dinlenmesi totalMinutes içinde görünmediği için toplam 37 dk olmalı."
+  },
+  {
+    "slug": "brik",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine cn yazılmış, brik Tunus mutfağına ait",
+      "step 4 kızgın yağda kızartma diyor, ingredient listesinde yağ yok"
+    ],
+    "corrections": {
+      "cuisine": "tn",
+      "ingredients_add": [
+        {
+          "name": "Ayçiçek yağı",
+          "amount": "1",
+          "unit": "su bardağı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/tunisian-brik/",
+      "https://frontiersusa.org/blog/brik-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Yumurta, ton balığı ve patatesli brik akışı doğru, fakat cuisine CN hatalı ve kızartma yağı listede eksik."
+  },
+  {
+    "slug": "brik-tunus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine ma yazılmış, tarif Tunus usulü brik olduğu için cuisine tn olmalı",
+      "servingSuggestion zeytinyağı ve pul biber öneriyor ama brik kaynaklarında temel servis limonla yapılır"
+    ],
+    "corrections": {
+      "cuisine": "tn",
+      "servingSuggestion": "Limon dilimleri ve maydanozla sıcak servis edin."
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/tunisian-brik/",
+      "https://frontiersusa.org/blog/brik-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Tunus brik içeriği doğru; cuisine Fas kodunda kalmış ve servis önerisi kaynaklardaki limonlu sıcak servisle uyumsuz."
+  },
+  {
+    "slug": "brokoli-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/easy-broccoli-soup-cheese-toasties",
+      "https://yemek.com/tarif/brokoli-corbasi/"
+    ],
+    "confidence": "high",
+    "reason": "Brokoli, patates, soğan, sebze suyu ve sütle pürüzsüz çorba akışı kaynaklarla uyumlu; SUT allergen beyanı doğru."
+  },
+  {
+    "slug": "brownie",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/best-cocoa-brownies",
+      "https://www.seriouseats.com/butter-vs-oil-brownies-11899982"
+    ],
+    "confidence": "high",
+    "reason": "Çikolata, tereyağı, yumurta, şeker, un ve kakao ile fudgy brownie akışı makul; allergen ve süre tarafında net hata yok."
+  },
+  {
+    "slug": "bruschetta",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lacucinaitaliana.com/italian-food/italian-dishes/how-to-make-bruschetta-al-pomodoro",
+      "https://www.punchfork.com/recipe/Bruschetta-with-Tomato-and-Basil-Simply-Recipes"
+    ],
+    "confidence": "high",
+    "reason": "Kızarmış ekmek, domates, sarımsak, fesleğen ve zeytinyağı yapısı klasik bruschetta kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "bubble-and-squeak-ingiliz-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.jamesbeard.org/recipes/bubble-and-squeak",
+      "https://www.tastingtable.com/1531323/bubble-and-squeak-a-classic-leftover-makeover-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Patates ve lahananın tavada kızartılması, yumurtayla servis edilmesi ve SUT/YUMURTA beyanı kaynaklarla uyumlu."
+  },
+  {
+    "slug": "buckwheat-mushroom-salata-rus-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/mushroom-buckwheat-risotto",
+      "https://www.everyday-delicious.com/buckwheat-kasha-with-mushrooms/"
+    ],
+    "confidence": "medium",
+    "reason": "Karabuğday, mantar, dereotu ve zeytinyağıyla tahıl salatası makul; gluten allergen yokluğu doğru, net hata görünmüyor."
+  },
+  {
+    "slug": "budae-jjigae",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps tofu, lahana, soya sosu, sarımsak ve yeşil soğan kullanıyor, ingredient listesinde bu malzemeler yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Tofu",
+          "amount": "200",
+          "unit": "gr"
+        },
+        {
+          "name": "Lahana",
+          "amount": "150",
+          "unit": "gr"
+        },
+        {
+          "name": "Soya sosu",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Sarımsak",
+          "amount": "2",
+          "unit": "diş"
+        },
+        {
+          "name": "Yeşil soğan",
+          "amount": "2",
+          "unit": "dal"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.maangchi.com/recipe/budae-jjigae/comment-page-1?ICID=ref_fark",
+      "https://www.seriouseats.com/korean-food-types-of-soups-stews-jjigae-guk-tang"
+    ],
+    "confidence": "high",
+    "reason": "Budae jjigae için kimchi, ramen, sosis ve gochujang uyumlu; adımların kullandığı tofu, lahana, soya sosu ve aromatikler eksik."
+  },
+  {
+    "slug": "budapest-gulas-yahnisi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.thespicehouse.com/blogs/recipes/hungarian-goulash-recipe",
+      "https://www.gonnawantseconds.com/hungarian-goulash/"
+    ],
+    "confidence": "high",
+    "reason": "Dana eti, soğan, paprika, patates, biber ve uzun pişirme Macar goulash kaynaklarıyla uyumlu; net düzeltme gerekmiyor."
+  },
+  {
+    "slug": "budapeste-paprikali-gulyas-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.thespicehouse.com/blogs/recipes/hungarian-goulash-recipe",
+      "https://www.gonnawantseconds.com/hungarian-goulash/"
+    ],
+    "confidence": "high",
+    "reason": "Dana eti, patates, havuç, soğan, paprika ve et suyuyla çorba kıvamlı gulyás yapısı kaynaklarla uyumlu."
+  },
+  {
+    "slug": "budapeste-paprikali-mantar-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 4 sıcak su ekliyor, ingredient listesinde sıvı baz yok",
+      "servingSuggestion dereotu diyor, ingredient listesinde dereotu yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Sebze suyu",
+          "amount": "4",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Dereotu",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 4,
+          "instruction": "Sebze suyu ve tuzu ekleyip kapağı aralık bırakarak kısık ateşte kaynatın.",
+          "timerSeconds": 600
+        }
+      ]
+    },
+    "sources": [
+      "https://mealcrafting.com/hungarian-mushroom-soup/",
+      "https://www.daringgourmet.com/hungarian-mushroom-soup/"
+    ],
+    "confidence": "high",
+    "reason": "Paprika, mantar ve ekşi kremalı çorba doğru; ancak sıvı baz ve dereotu listede olmadığı için adım ile ingredient uyuşmuyor."
+  },
+  {
+    "slug": "budapeste-paprikali-nohut-tavasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.thespicehouse.com/blogs/recipes/hungarian-goulash-recipe",
+      "https://www.gonnawantseconds.com/hungarian-goulash/"
+    ],
+    "confidence": "low",
+    "reason": "Paprika, biber ve domatesle sıcak bakliyat tavası mantıklı bir vegan varyasyon; özel klasik kaynak sınırlı ama net hata yok."
+  },
+  {
+    "slug": "budapeste-tavuk-paprikas-nokedli",
+    "verdict": "PASS",
+    "sources": [
+      "https://norecipes.com/chicken-paprikash/",
+      "https://www.food.com/recipe/hungarian-chicken-paprikash-54820"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, paprika, soğan, ekşi krema ve nokedli için un-yumurta yapısı kaynaklarla uyumlu; allergen beyanı doğru."
+  },
+  {
+    "slug": "budapeste-tavuk-paprikash",
+    "verdict": "PASS",
+    "sources": [
+      "https://norecipes.com/chicken-paprikash/",
+      "https://www.hawaiianelectric.com/recipes/find-a-recipe/hungarian-chicken-paprikash"
+    ],
+    "confidence": "high",
+    "reason": "Kemikli tavuk, soğan, paprika, un, tavuk suyu ve ekşi krema akışı chicken paprikash kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "budino-al-caffe-italyan-kafe-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 5 kaseleri 2 saat soğutuyor, totalMinutes 20 dakika kaldığı için bekleme süresi eksik"
+    ],
+    "corrections": {
+      "totalMinutes": 140
+    },
+    "sources": [
+      "https://www.giallozafferano.com/recipes/Coffee-pudding.html",
+      "https://www.lacucinaitaliana.com/recipe/cakes-and-desserts/coffee-pudding"
+    ],
+    "confidence": "high",
+    "reason": "Kahveli sütlü nişastalı budino akışı makul; 2 saat soğutma toplam süreye eklenmediği için totalMinutes yanıltıcı."
+  },
+  {
+    "slug": "buenos-aires-kabakli-provoleta",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine mx yazılmış, provoleta Arjantin mutfağıyla ilişkilidir"
+    ],
+    "corrections": {
+      "cuisine": "ar"
+    },
+    "sources": [
+      "https://www.saveur.com/recipes/provoleta-grilled-provolone-cheese/",
+      "https://www.food.com/recipe/provoleta-grilled-provolone-cheese-478205"
+    ],
+    "confidence": "high",
+    "reason": "Provolone peynirini sıcak eritme akışı provoleta kaynaklarıyla uyumlu; yalnız cuisine Meksika değil Arjantin olmalı."
+  },
+  {
+    "slug": "buffalo-chicken-dip-abd-pub-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3 ve step 4 toplam 18-20 dakika fırın ve 5 dakika dinlenme içeriyor, totalMinutes 22 dakika kaldığı için süre tutarsız",
+      "servingSuggestion kereviz sapı diyor, ingredient ve allergen listesinde yok"
+    ],
+    "corrections": {
+      "cookMinutes": 20,
+      "totalMinutes": 35,
+      "ingredients_add": [
+        {
+          "name": "Kereviz sapı",
+          "amount": "4",
+          "unit": "dal"
+        }
+      ],
+      "allergens_add": [
+        "KEREVIZ"
+      ]
+    },
+    "sources": [
+      "https://www.franksredhot.com/en-us/recipes/franks-redhot-buffalo-chicken-dip",
+      "https://www.allrecipes.com/recipe/68461/buffalo-chicken-dip/"
+    ],
+    "confidence": "high",
+    "reason": "Buffalo chicken dip yapısı doğru; fırın ve dinlenme süresi toplam süreye yansımıyor, kereviz servisi de allergen listesine girmeli."
+  },
+  {
+    "slug": "buffalo-wings-firinda",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.seriouseats.com/the-best-buffalo-wings-oven-fried-wings-recipe",
+      "https://www.franksredhot.com/en-us/recipes/franks-redhot-original-buffalo-chicken-wings"
+    ],
+    "confidence": "high",
+    "reason": "Kuru bekletme, yüksek ısıda fırınlama, acı sos ve tereyağıyla kaplama kaynaklarla uyumlu; 8 saat bekleme totalMinutes içinde."
+  },
+  {
+    "slug": "bugdayli-kurutlu-kis-corbasi-erzincan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://kemah.eu/ayran-corbasi/",
+      "https://www.carrefoursa.com/blog/yogurtlu-bugday-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Buğday ve ekşi süt ürünüyle çorba yapısı Erzincan ayran aşı geleneğiyle uyumlu; kurut özelinde net hata saptanmadı."
+  },
+  {
+    "slug": "bugdayli-yogurtlu-ayran-corbasi-erzincan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://kemah.eu/ayran-corbasi/",
+      "https://www.diyetisyenaylinodabasi.com/tarifler/ayran-asi-corbasi-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Yoğurt, buğday, su ve nane ile ayran aşı yapısı kaynaklarla uyumlu; SUT ve GLUTEN beyanı doğru görünüyor."
+  },
+  {
+    "slug": "bulgur-kofteli-semizotu-antalya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3 haşlama için su kullanıyor, ingredient listesinde su yok",
+      "steps tuz ve asit dengesi kontrolünden bahsediyor, listede tuz veya limon yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Su",
+          "amount": "5",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Limon suyu",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/semizotlu-bulgur-koftesi/",
+      "https://www.yemektekeyifvar.com/salata-tarifleri/semizotu-salatasi"
+    ],
+    "confidence": "medium",
+    "reason": "Bulgur köftesi ve semizotu fikri makul, fakat haşlama suyu ile tuz-asit adımları ingredient listesinde karşılık bulmuyor."
+  }
+]

@@ -35,6 +35,9 @@ const SKIP_DIRS = new Set([
   "dist",
   "build",
   ".vercel",
+  // Logo/branding scratch dir (oturum 28): tasarım keşif notları,
+  // user-paste em-dash içerebilir; commit kapsamında değil.
+  "logo",
 ]);
 const SKIP_FILES = new Set([
   "AGENTS.md",

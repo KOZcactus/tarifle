@@ -1,10 +1,24 @@
 # Tarifle, Proje Durumu
 
-> **Oturum 27 (27 Nis 2026, oturum 26'nın aynı gün devamı), 20 commit:
+> **Oturum 27 (27 Nis 2026, oturum 26'nın aynı gün devamı), 21 commit:
 > Mod K v2 31 batch apply (11a-21b + 22a + 23a + 23b + 24a + 25a + 25b
 > + 26a + 26b + 27a, 22b + 24b BAD reject) + CUISINE_CODES `pt` ekleme
-> + **38 mini-rev** (paketi 1: 4 + paketi 2: 7 + paketi 3: 6 + paketi
-> 4: 7 + paketi 5: 7 + paketi 6: 7) + SEO batch 3 + 4. Prod **3510**.**
+> + **45 mini-rev** (paketi 1+2+3+4+5+6+7) + SEO batch 3 + 4 + 2 KRİTİK
+> cuisine fix. Prod **3508**.**
+>
+> **Mini-rev paketi 7** (commit `ea25210`, kuyruk 46 → **39**, prod
+> 3510 → **3508**): 5 REWRITE + 2 DELETE + **2 KRİTİK cuisine fix**.
+> 2 paralel agent + 18+ kaynak (Wikipedia + UNESCO + IBA-world +
+> perudelights + Hurriyet Lezizz + Lezzetler + diyarbakir.org.tr +
+> samsun.ktb + Lezzet + Yemek.com). REWRITE: bursa-mucver-tost
+> (Bursa atfı kaldır), pezik-diyarbakir (Karadeniz/Giresun klasiği
+> yöre düzelt + 6 ingredient_add), picarones-peru (klasik halka formu
+> + tatlı patates + chancaca şurup), **pina-colada cuisine in→cu**
+> (Karayip/Porto Riko 1954 Caribe Hilton), **pupusa cuisine cn→mx**
+> (El Salvador Pipil mirası, UNESCO 2022 + curtido eklendi). DELETE
+> (kullanıcı onayı): yozgat-mercimek (Yozgat ispanak/pastırma klasik),
+> samsun-pirasa-misir-unlu-pide (Bafra pidesi buğday unu, mısır unu
+> pide hamurunda anomali).
 >
 > **Mod K Batch 27a apply** (commit `0cbb715`): 35 yeni prod correction
 > (50 entry, PASS %10, 5 MAJOR mini-rev'e). Mod K v2 progress 50 →

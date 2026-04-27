@@ -164,9 +164,10 @@ export function RecipeCard({ recipe, dietBadge }: RecipeCardProps) {
             )}
           </div>
 
-          {/* Footer */}
-          {(recipe._count.variations > 0 ||
-            (recipe.cookedCount && recipe.cookedCount > 0)) && (
+          {/* Footer. Outer'da `&&` ile değer döndüğünde JSX `{0}` literal
+              render etmesin diye `> 0` karşılaştırma ile tam boolean'a
+              indiriyoruz. cookedCount nullish gelebilir (`?? 0`). */}
+          {(recipe._count.variations > 0 || (recipe.cookedCount ?? 0) > 0) && (
             <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-text-muted">
               {recipe._count.variations > 0 && (
                 <span className="flex items-center gap-1">
@@ -174,14 +175,14 @@ export function RecipeCard({ recipe, dietBadge }: RecipeCardProps) {
                   {t("adaptations", { count: recipe._count.variations })}
                 </span>
               )}
-              {recipe.cookedCount && recipe.cookedCount > 0 ? (
+              {(recipe.cookedCount ?? 0) > 0 && (
                 <span className="flex items-center gap-1">
                   <span aria-hidden>👨‍🍳</span>
                   {recipe.cookedCount === 1
                     ? "1 kişi pişirdi"
-                    : `${recipe.cookedCount.toLocaleString("tr-TR")} kişi pişirdi`}
+                    : `${recipe.cookedCount!.toLocaleString("tr-TR")} kişi pişirdi`}
                 </span>
-              ) : null}
+              )}
             </div>
           )}
         </div>

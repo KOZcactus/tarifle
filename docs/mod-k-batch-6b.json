@@ -1,0 +1,837 @@
+[
+  {
+    "slug": "char-siu-chicken-cin-firin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 2: zencefil ve susam yağı kullanılıyor ama ingredient listesinde yok",
+      "step 6: yeşil soğanla servis yazıyor ama ingredient listesinde yeşil soğan yok",
+      "allergen: susam yağı eklenirse SUSAM declare edilmeli"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Taze zencefil", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Susam yağı", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Yeşil soğan", "amount": "2", "unit": "dal" }
+      ],
+      "allergens_add": ["SUSAM"]
+    },
+    "sources": [
+      "https://thewoksoflife.com/char-siu-chicken/",
+      "https://www.bonappetit.com/recipe/char-siu-chicken"
+    ],
+    "confidence": "high",
+    "reason": "Char siu chicken kaynakları soya, bal, beş baharat ve aromatiklerle uyumlu. Step içinde geçen zencefil, susam yağı ve yeşil soğan listede eksik."
+  },
+  {
+    "slug": "chawanmushi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: dashi suyu çoğunlukla palamut bazlıdır, bu yüzden vejetaryen tag yanıltıcı olabilir",
+      "allergen: balık bazlı dashi için DENIZ_URUNLERI declare edilmemiş"
+    ],
+    "corrections": {
+      "tags_remove": ["vejetaryen"],
+      "allergens_add": ["DENIZ_URUNLERI"]
+    },
+    "sources": [
+      "https://www.justonecookbook.com/chawanmushi-savory-steamed-egg-custard/",
+      "https://www.bonappetit.com/recipes/article/chawan-mushi"
+    ],
+    "confidence": "high",
+    "reason": "Chawanmushi yumurta, dashi ve soya sosuyla doğru kurulmuş. Ancak klasik dashi balık içerdiği için vejetaryen tag ve deniz ürünü allergeni düzeltilmeli."
+  },
+  {
+    "slug": "che-ba-mau",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 2: fasulyeler 45 dakika pişiyor ama cookMinutes 25 yazıyor",
+      "steps: 35 dakika prep, 45 dakika pişirme ve katmanlama ile totalMinutes 60 eksik kalıyor",
+      "step 6: İngilizce coconut milk ifadesi Türkçe içerik içinde sızmış"
+    ],
+    "corrections": {
+      "cookMinutes": 45,
+      "totalMinutes": 80,
+      "steps_replace": [
+        {
+          "stepNumber": 6,
+          "instruction": "Bardağın üstüne kırık buz ekleyin, hindistan cevizi sütü soğuk kalsın.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.wandercooks.com/che-ba-mau/",
+      "https://www.takeaway.com/foodwiki/vietnam/che-ba-mau/"
+    ],
+    "confidence": "high",
+    "reason": "Üç renkli fasulye, jöle ve hindistan cevizi sütü doğru. Mevcut süreler 45 dakikalık fasulye pişirmeyi karşılamıyor, ayrıca İngilizce ifade temizlenmeli."
+  },
+  {
+    "slug": "che-ba-mau-vietnam-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.wandercooks.com/che-ba-mau/",
+      "https://www.takeaway.com/foodwiki/vietnam/che-ba-mau/"
+    ],
+    "confidence": "medium",
+    "reason": "Hazır haşlanmış fasulye, jöle, buz ve hindistan cevizi sütüyle hızlı katmanlı içecek yorumu kaynaklarla uyumlu. Süre ve allergen bilgisi makul."
+  },
+  {
+    "slug": "che-chuoi-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 4: tapioka incisi kullanılıyor ama ingredient listesinde yok",
+      "step 6: susam serpiliyor ama ingredient listesinde susam yok",
+      "allergen: susam eklenirse SUSAM declare edilmeli"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tapioka incisi", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Susam", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 5,
+          "instruction": "Tatlıyı kaselere alıp susamla servis edin.",
+          "timerSeconds": null
+        }
+      ],
+      "allergens_add": ["SUSAM"]
+    },
+    "sources": [
+      "https://www.vietnamtourism.org.vn/vietnam-cuisine/drink-cocktail/che-chuoi-banana-sago-in-coconut-milk.html",
+      "https://www.ateliersetsaveurs.com/en/the-recipes/culinaries/detail/4008/che-chuoi-vietnamese-dessert"
+    ],
+    "confidence": "high",
+    "reason": "Muz, hindistan cevizi sütü ve tapioka klasik che chuoi yapısıyla uyumlu. Step'te kullanılan tapioka ve susam listede ve allergende tamamlanmalı."
+  },
+  {
+    "slug": "cheddarli-leek-tart-ingiliz-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/leek-cheese-bacon-tart",
+      "https://www.theguardian.com/food/article/2024/aug/26/quick-and-easy-crab-and-leek-tarts-chicory-salad-recipe-rukmini-iyer"
+    ],
+    "confidence": "medium",
+    "reason": "Pırasa, peynir, yumurta, krema ve hamurla fırın tart kurgusu Britanya kaynaklarıyla uyumlu. Allergen, süre ve makro dengesi kabul edilebilir."
+  },
+  {
+    "slug": "cheddarli-mantarli-crumpet-ingiltere-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/crumpets",
+      "https://www.warburtons.co.uk/recipes/mushroom-cheese-crumpets/"
+    ],
+    "confidence": "medium",
+    "reason": "Crumpet, mantar, tereyağı ve cheddar ile sıcak kahvaltılık üstleme Britanya crumpet kullanımına uygun. Gluten ve süt allergenleri doğru."
+  },
+  {
+    "slug": "cheddarli-pirasa-scone-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 2: kabartma tozu ve tuz kullanılıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kabartma tozu", "amount": "1", "unit": "paket" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/classic-cheese-scones",
+      "https://www.goodhousekeeping.com/food-recipes/a70627840/thyme-cheddar-scones-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Cheddar, süt, tereyağı ve unla scone kurgusu doğru. Hamuru kabartan toz ve tuz step'te geçtiği halde listede eksik."
+  },
+  {
+    "slug": "cheddarli-pirasali-galeta-kizartmasi-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: tereyağında soteleme yazıyor ama ingredient listesinde tereyağı yok",
+      "step 4: yağlı tavada kızartma yazıyor ama ingredient listesinde kızartma yağı yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/leek-cheese-bacon-tart",
+      "https://www.goodhousekeeping.com/food-recipes/a70627840/thyme-cheddar-scones-recipe/"
+    ],
+    "confidence": "medium",
+    "reason": "Pırasa, cheddar, yumurta ve galeta unu kızartması tutarlı bir kahvaltılık yorum. Step'teki tereyağı ve tava yağı listede eksik."
+  },
+  {
+    "slug": "chennai-masala-dosa",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: gece boyunca ıslatma ve 24 saat fermantasyon totalMinutes 1440 içinde tam görünmüyor",
+      "RecipeTimeline için pasif bekleme süreleri totalMinutes farkı olarak korunmalı"
+    ],
+    "corrections": {
+      "totalMinutes": 1950
+    },
+    "sources": [
+      "https://www.indianhealthyrecipes.com/masala-dosa-recipe/",
+      "https://www.vegrecipesofindia.com/masala-dosa-recipe/"
+    ],
+    "confidence": "medium",
+    "reason": "Masala dosa pirinç, urad dal, çemen, patates ve hardal tohumu ile doğru. Mevcut toplam süre gece ıslatma ve 24 saat fermantasyonu karşılamıyor."
+  },
+  {
+    "slug": "chermoula-patates-salatasi-fas-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "recipe name chermoula diyor ama ingredient listesinde chermoula için temel sarımsak ve kimyon yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Kimyon", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/chermoula",
+      "https://www.bonappetit.com/recipe/chermoula"
+    ],
+    "confidence": "high",
+    "reason": "Patates salatası ve otlu limonlu Fas sosu uyumlu. Chermoula kimliği için sarımsak ve kimyon listede olmalı."
+  },
+  {
+    "slug": "chermoula-sos",
+    "verdict": "CORRECTION",
+    "issues": [
+      "classic chermoula kaynaklarında sarımsak temel bileşen, mevcut ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/chermoula",
+      "https://www.bonappetit.com/recipe/chermoula"
+    ],
+    "confidence": "high",
+    "reason": "Kişniş, maydanoz, limon, zeytinyağı ve kimyon chermoula için doğru. Kaynakların temel bileşeni sarımsak listede eksik."
+  },
+  {
+    "slug": "chermoula-tavuk",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: maydanoz kullanılıyor ama ingredient listesinde yok",
+      "tipNote ve totalMinutes 1 saat beklemeyi ima ediyor, step 2 sadece 20 dakika dinlendirme gösteriyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Tavuğu chermoula ile kaplayıp 1 saat buzdolabında dinlendirin.",
+          "timerSeconds": 3600
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/chermoula",
+      "https://www.seriouseats.com/chermoula-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Chermoula tavuk için ot, sarımsak, limon ve fırın tekniği doğru. Maydanoz eksik ve bekleme süresi metadata ile step arasında çelişiyor."
+  },
+  {
+    "slug": "chermoulali-havuc-salatasi-fas-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "recipe name chermoulalı havuç diyor ama ingredient listesinde kişniş veya maydanoz yok",
+      "step 5 yeşilliklerden söz ediyor ama listede yeşillik bulunmuyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kişniş", "amount": "0.25", "unit": "demet" },
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/chermoula",
+      "https://www.theguardian.com/food/2025/jun/25/how-to-turn-the-whole-carrot-from-leaf-to-root-into-a-moroccan-spiced-stew-recipe-zero-waste-cooking"
+    ],
+    "confidence": "medium",
+    "reason": "Havuç, sarımsak, kimyon, limon ve zeytinyağı Fas salatası için makul. Chermoula otları ve step'teki yeşillik listede eksik."
+  },
+  {
+    "slug": "cherry-kvas-cooler-rus-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Kvass",
+      "https://www.thespruceeats.com/russian-kvass-recipe-1135533"
+    ],
+    "confidence": "medium",
+    "reason": "Kvasın fermente tahıl içeceği olması ve vişneyle soğuk servis edilmesi makul bir Rus yaz içeceği yorumu. Gluten allergeni doğru."
+  },
+  {
+    "slug": "chex-mix",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.chex.com/recipes/original-chex-mix",
+      "https://www.allrecipes.com/recipe/87605/original-chex-party-mix/"
+    ],
+    "confidence": "medium",
+    "reason": "Tahıl gevreği, kraker, pretzel, tereyağı ve sarımsak tozu Chex Mix kaynaklarıyla uyumlu. Gluten ve süt allergenleri doğru."
+  },
+  {
+    "slug": "chiang-mai-khao-soi-tavuk",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: köri ezmesi yağla kavruluyor ama ingredient listesinde yağ yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.templeofthai.com/recipes/khao-soi.php",
+      "https://inquiringchef.com/khao-soi-chiang-mai-noodles/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, hindistan cevizi sütü, köri ezmesi ve yumurtalı erişte Chiang Mai khao soi için doğru. Step'teki kavurma yağı listede eksik."
+  },
+  {
+    "slug": "chicago-deep-dish-pizza",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.seriouseats.com/the-best-chicago-style-deep-dish-pizza",
+      "https://www.thespruceeats.com/chicago-style-deep-dish-pizza-2708753"
+    ],
+    "confidence": "high",
+    "reason": "Derin kalıp, tereyağlı hamur, peynir altta ve domates sos üstte düzeni Chicago deep dish kaynaklarıyla uyumlu. Süre ve allergen bilgisi makul."
+  },
+  {
+    "slug": "chicha-morada-spritz-peru-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.eatperu.com/chicha-morada/",
+      "https://www.amigofoods.com/blogs/peruvian-recipes-recetas-peruanas/chicha-morada-recipe"
+    ],
+    "confidence": "medium",
+    "reason": "Hazır chicha morada, portakal suyu, soda ve buzla spritz yorumu Peru içeceği tabanıyla tutarlı. Alkolsüz ve vegan etiketleri doğru."
+  },
+  {
+    "slug": "chicken-and-waffles",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: tuz, paprika ve sarımsak tozu kullanılıyor ama ingredient listesinde yok",
+      "step 3: tavuk yağda kızartılıyor ama ingredient listesinde kızartma yağı yok",
+      "step 5: waffle hamuru için kabartma tozu veya benzer kabartıcı yok",
+      "step 6: akçaağaç şurubu veya bal ile servis yazıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Paprika", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Sarımsak tozu", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Sıvı yağ", "amount": "2", "unit": "su bardağı" },
+        { "name": "Kabartma tozu", "amount": "1", "unit": "paket" },
+        { "name": "Akçaağaç şurubu", "amount": "4", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.foodnetwork.com/recipes/ree-drummond/chicken-and-waffles-2690966",
+      "https://www.allrecipes.com/recipe/246998/chicken-and-waffles/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, un, yumurta ve süt tabanı doğru olsa da tarifin uygulanması için baharat, kızartma yağı, kabartıcı ve şurup listede eksik."
+  },
+  {
+    "slug": "chicken-paprikash",
+    "verdict": "PASS",
+    "sources": [
+      "https://apnews.com/article/898250ed32ad7dbe341b13eaf15e406f",
+      "https://www.thespruceeats.com/hungarian-chicken-paprikash-recipe-1136645"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk, soğan, paprika ve ekşi krema Macar paprikash kaynaklarıyla uyumlu. Süt allergeni ve tek tencere metadata makul."
+  },
+  {
+    "slug": "chicken-tikka-masala",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: limon, garam masala ve sarımsak kullanılıyor ama ingredient listesinde yok",
+      "step 4: tereyağıyla sos pişiriliyor ama ingredient listesinde tereyağı yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı", "group": "Tavuk için" },
+        { "name": "Garam masala", "amount": "1", "unit": "tatlı kaşığı", "group": "Tavuk için" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş", "group": "Tavuk için" },
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı", "group": "Sos için" }
+      ]
+    },
+    "sources": [
+      "https://www.theguardian.com/lifeandstyle/wordofmouth/2014/apr/24/how-to-cook-perfect-chicken-tikka-masala",
+      "https://www.bbcgoodfood.com/recipes/chicken-tikka-masala"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurtlu marine, domatesli kremalı sos ve tavuk tikka masala yapısı doğru. Step'te geçen limon, garam masala, sarımsak ve tereyağı eksik."
+  },
+  {
+    "slug": "chilaquiles",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "cuisine: description Meksika kahvaltısı diyor ama cuisine 'th' yazılı",
+      "step 4: krema ekleniyor ama ingredient listesinde krema yok",
+      "step 5: kişniş ve soğanla servis yazıyor ama ingredient listesinde ikisi de yok"
+    ],
+    "corrections": {
+      "cuisine": "mx",
+      "ingredients_add": [
+        { "name": "Krema", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Kişniş", "amount": "0.25", "unit": "demet" },
+        { "name": "Soğan", "amount": "0.5", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://lonestartortillas.com/recipes/chilaquiles",
+      "https://www.youtube.com/watch?v=lHsj_dNC5NA"
+    ],
+    "confidence": "high",
+    "reason": "Chilaquiles Meksika kahvaltısıdır. Tayland cuisine kodu ve step'te kullanılan krema, kişniş, soğan eksikleri kullanıcıyı yanıltır."
+  },
+  {
+    "slug": "chilaquiles-verdes",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 4: krema kullanılıyor ama ingredient listesinde yok",
+      "step 5: kişniş ve lime ile servis yazıyor ama ingredient listesinde ikisi de yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Krema", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Kişniş", "amount": "0.25", "unit": "demet" },
+        { "name": "Lime", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://lonestartortillas.com/recipes/chilaquiles",
+      "https://www.meatsweats303.com/chilaquiles"
+    ],
+    "confidence": "high",
+    "reason": "Tomatillo salsa, tortilla cipsi, yumurta ve peynir chilaquiles verdes için doğru. Step'te geçen krema, kişniş ve lime listede eksik."
+  },
+  {
+    "slug": "chilcano-de-pisco-narenciyeli-peru-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://cocktail-society.com/recipes/the-chilcano-cocktail/",
+      "https://www.diffordsguide.com/cocktails/recipe/3490/chilcano-de-pisco"
+    ],
+    "confidence": "high",
+    "reason": "Pisco, lime, zencefilli soda, buz ve narenciye süslemesi chilcano kaynaklarıyla uyumlu. Kokteyl süresi ve allergen bilgisi makul."
+  },
+  {
+    "slug": "chiles-rellenos-meksika-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.isabeleats.com/chile-relleno-recipe/",
+      "https://www.mexicoinmykitchen.com/chiles-rellenos-recipe/"
+    ],
+    "confidence": "medium",
+    "reason": "Közlenmiş biber, peynir, un, yumurta kaplaması ve yağda kızartma chiles rellenos kaynaklarıyla uyumlu. Allergen ve süreler tutarlı."
+  },
+  {
+    "slug": "chilorio-tavuklu-taco-meksika-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3: kuru biberli sos ve sirke kullanılıyor ama ingredient listesinde kuru biber ve sirke yok",
+      "step 6: soğan, kişniş ve lime ile servis yazıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru ancho biber", "amount": "2", "unit": "adet" },
+        { "name": "Sirke", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Soğan", "amount": "0.5", "unit": "adet" },
+        { "name": "Kişniş", "amount": "0.25", "unit": "demet" },
+        { "name": "Lime", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://recetasmexas.com/en-gb/recipe/chilorio",
+      "https://www.mexicoinmykitchen.com/chilorio-recipe/"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuklu taco yorumu klasik domuz chilorio'dan uyarlanmış görünüyor. Step'teki kuru biber, sirke, soğan, kişniş ve lime listede eksik."
+  },
+  {
+    "slug": "chimichurri",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "cuisine: chimichurri Arjantin mutfağına aittir ama cuisine 'tr' yazılı"
+    ],
+    "corrections": {
+      "cuisine": "ar"
+    },
+    "sources": [
+      "https://www.bonappetit.com/test-kitchen/ingredients/article/chimichurri",
+      "https://en.wikipedia.org/wiki/Chimichurri"
+    ],
+    "confidence": "high",
+    "reason": "Maydanoz, sarımsak, sirke, yağ ve pul biber sosu doğru. Fakat Arjantin kökenli chimichurri için Türk cuisine kodu yanıltıcıdır."
+  },
+  {
+    "slug": "choclo-kinoa-salatasi-peru-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.eatperu.com/solterito/",
+      "https://www.perudelights.com/quinoa-solterito/"
+    ],
+    "confidence": "medium",
+    "reason": "Choclo mısır, kinoa, avokado, lime ve kişniş Peru tarzı soğuk salata için makul. Vegan, süre ve allergen bilgisi tutarlı."
+  },
+  {
+    "slug": "chokladbollar",
+    "verdict": "PASS",
+    "sources": [
+      "https://swedishfood.com/swedish-food-recipes-desserts/216-chocolate-balls",
+      "https://recipes.net/dessert/chocolate-desserts/swedish-chocolate-balls-chokladbollar-recipe/"
+    ],
+    "confidence": "medium",
+    "reason": "Yulaf, tereyağı, kakao, şeker ve hindistan cevizi İsveç chokladbollar kaynaklarıyla uyumlu. Gluten ve süt allergenleri doğru."
+  },
+  {
+    "slug": "churros",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: tuz kullanılıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.tourspain.org/recipes/churros",
+      "https://www.bonappetit.com/recipe/churros-with-bittersweet-chocolate-sauce"
+    ],
+    "confidence": "high",
+    "reason": "Un, su, tereyağı, yumurta, kızartma yağı ve tarçınlı şeker churros kaynaklarıyla uyumlu. Step'te kullanılan tuz listede eksik."
+  },
+  {
+    "slug": "cig-kofte",
+    "verdict": "CORRECTION",
+    "issues": [
+      "servingSuggestion ve step 4 marulla servis diyor ama ingredient listesinde marul yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Marul", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://cookingorgeous.com/blog/easy-meatless-cig-kofte-recipe/",
+      "https://zaffaron.com/recipe/cig-kofte-isot-bulgur-lettuce-wraps"
+    ],
+    "confidence": "high",
+    "reason": "Etsiz çiğ köfte bulgur, isot, salça, soğan ve yeşillikle doğru. Marul servis adımında açıkça kullanıldığı için listeye eklenmeli."
+  },
+  {
+    "slug": "ciger-sote",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/ciger-sote/",
+      "https://www.nefisyemektarifleri.com/ciger-sote-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Dana ciğeri, soğan, biber, domates ve kısa yüksek ateş sote tekniği kaynaklarla uyumlu. Lavaş nedeniyle gluten allergeni makul."
+  },
+  {
+    "slug": "cigerli-arpa-sehriye-pilavi-edirne-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: prep 15 dakika, pişirme adımları ve 10 dakika demlenme toplamı totalMinutes 35 değerini aşıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 46
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/arpasehriye-pilavi/",
+      "https://yemek.com/tarif/edirne-cigeri/"
+    ],
+    "confidence": "medium",
+    "reason": "Ciğer ve tereyağlı arpa şehriye pilavı kurgusu makul. On dakikalık demlenme totalMinutes içinde görünmediği için süre düzeltilmeli."
+  },
+  {
+    "slug": "cigerli-bulgur-pilavi-edirne-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 16 dakika prep, 26 dakika aktif pişirme ve 10 dakika demlenme toplamı totalMinutes 38 değerini aşıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 52
+    },
+    "sources": [
+      "https://yemek.com/tarif/bulgur-pilavi/",
+      "https://www.nefisyemektarifleri.com/cigerli-pilav/"
+    ],
+    "confidence": "medium",
+    "reason": "Ciğer, bulgur, soğan ve tereyağıyla pilav yorumu tutarlı. Step'teki demlenme toplam sürede görünmediği için totalMinutes eksik kalıyor."
+  },
+  {
+    "slug": "cilbir",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.ibrahiminyeri.com/post/cilbir-tarifi",
+      "https://tarifmotoru.com/tarif/kolay-yalanci-cilbir/"
+    ],
+    "confidence": "high",
+    "reason": "Poşe yumurta, sarımsaklı yoğurt ve pul biberli tereyağı çılbır kaynaklarıyla uyumlu. Süt, yumurta allergenleri ve süreler doğru."
+  },
+  {
+    "slug": "cilekli-kefir-smoothie",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sabriulkerfoundation.org/tr/projelerimiz/yemekte-denge-mutfagi/muzlu-ve-cilekli-smoothie",
+      "https://bizbayanlar.com/yemek-tarifleri/icecek-tarifleri/soguk-icecekler/muzlu-ve-cilekli-smoothie-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kefir, çilek, muz ve bal ile soğuk blender içeceği smoothie kaynaklarıyla uyumlu. Süt allergeni ve kısa hazırlık süresi doğru."
+  },
+  {
+    "slug": "cilekli-magnolia",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 6: buzdolabında 2 saat dinlendirme var ama totalMinutes 35 yazıyor",
+      "RecipeTimeline için 120 dakikalık pasif bekleme totalMinutes içinde fark olarak görünmeli"
+    ],
+    "corrections": {
+      "totalMinutes": 155
+    },
+    "sources": [
+      "https://yemek.com/tarif/cilekli-magnolia/",
+      "https://www.leziztarifim.com/klasik-magnolia-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Sütlü muhallebi, bisküvi ve çilek katları doğru. İki saat buzdolabı dinlendirmesi totalMinutes dışında bırakılmış."
+  },
+  {
+    "slug": "cilekli-smoothie",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sabriulkerfoundation.org/tr/projelerimiz/yemekte-denge-mutfagi/muzlu-ve-cilekli-smoothie",
+      "https://bizbayanlar.com/yemek-tarifleri/icecek-tarifleri/soguk-icecekler/muzlu-ve-cilekli-smoothie-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Çilek, muz, yoğurt, süt, bal ve buzla hazırlanan smoothie kaynaklarla uyumlu. Süt allergeni ve beş dakikalık süre doğru."
+  },
+  {
+    "slug": "cilekli-yulaf-smoothie",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sabriulkerfoundation.org/tr/projelerimiz/yemekte-denge-mutfagi/muzlu-ve-cilekli-smoothie",
+      "https://www.arcelik.com.tr/blog/muzlu-cilekli-ve-cikolatali-biskuvili-smoothie-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Çilek, yoğurt, yulaf ve bal ile hızlı içecek kurgusu smoothie kaynaklarıyla uyumlu. Yulaf ve süt allergenleri doğru."
+  },
+  {
+    "slug": "cin-hot-pot",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: acı biber ve zencefil kullanılıyor ama ingredient listesinde yok",
+      "step 2: lahana ve tofu tabaklara diziliyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Acı biber", "amount": "1", "unit": "adet" },
+        { "name": "Taze zencefil", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Lahana", "amount": "200", "unit": "gr" },
+        { "name": "Tofu", "amount": "200", "unit": "gr" }
+      ]
+    },
+    "sources": [
+      "https://thewoksoflife.com/chinese-hot-pot-at-home/",
+      "https://www.seriouseats.com/chinese-hot-pot-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Et suyu, soya, susam ezmesi, et ve mantar hot pot için doğru. Step'te geçen acı biber, zencefil, lahana ve tofu listede eksik."
+  },
+  {
+    "slug": "cin-usulu-yumurtali-pilav",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 4: susam yağı kullanılıyor ama ingredient listesinde yok",
+      "allergen: susam yağı eklenirse SUSAM declare edilmeli"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Susam yağı", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "allergens_add": ["SUSAM"]
+    },
+    "sources": [
+      "https://www.eatingchina.com/recipes/egg-fried-rice.htm",
+      "https://www.marionskitchen.com/chinese-egg-fried-rice/"
+    ],
+    "confidence": "high",
+    "reason": "Soğuk pirinç, yumurta, bezelye, soya sosu ve yeşil soğan Çin usulü kızarmış pilavla uyumlu. Susam yağı ve allergeni eksik."
+  },
+  {
+    "slug": "cingene-pilavi-aydin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 4: lor ile servis bağlamı yazıyor ama ingredient listesinde lor yok",
+      "tags: lor eklenirse vegan tag yanıltıcı olur",
+      "allergen: lor peyniri için SUT declare edilmeli"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Lor peyniri", "amount": "150", "unit": "gr" }
+      ],
+      "tags_remove": ["vegan"],
+      "allergens_add": ["SUT"]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/cingene-pilavi/",
+      "https://yemek.com/tarif/cingene-pilavi/"
+    ],
+    "confidence": "high",
+    "reason": "Aydın tipi çingene pilavı domates, biber, yeşillik ve lorla salata gibi yapılır. Lor eksik olduğu için vegan ve süt allergeni de düzelmeli."
+  },
+  {
+    "slug": "cinnamon-coconut-pudding-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 5: tatlı 1 saat soğutuluyor ama totalMinutes 20 yazıyor",
+      "RecipeTimeline için soğutma süresi totalMinutes içinde pasif bekleme olarak görünmeli"
+    ],
+    "corrections": {
+      "totalMinutes": 80
+    },
+    "sources": [
+      "https://www.cubanrecipes.org/recipes/desserts/coconut-pudding/",
+      "https://www.food.com/recipe/coconut-pudding-423121"
+    ],
+    "confidence": "medium",
+    "reason": "Hindistan cevizi sütü, nişasta, şeker ve tarçınla muhallebi kurgusu tutarlı. Bir saat soğutma toplam sürenin dışında bırakılmış."
+  },
+  {
+    "slug": "cintar-kavurmasi-mugla-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/cintar-kavurmasi/",
+      "https://yemek.com/tarif/mantar-kavurma/"
+    ],
+    "confidence": "medium",
+    "reason": "Çıntar mantarı, sarımsak, zeytinyağı, tuz ve limonla kısa tava kavurması Ege mantar tabağına uygun. Vegan ve süre bilgisi doğru."
+  },
+  {
+    "slug": "cirpilmis-zeytin-salatasi",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "cuisine: description Hatay usulü diyor ama cuisine 'th' yazılı",
+      "Hatay zeytin salatası için Tayland cuisine kodu kullanıcıyı yanıltır"
+    ],
+    "corrections": {
+      "cuisine": "tr"
+    },
+    "sources": [
+      "https://yemek.com/tarif/zeytin-salatasi/",
+      "https://www.nefisyemektarifleri.com/zeytin-salatasi/"
+    ],
+    "confidence": "high",
+    "reason": "Yeşil zeytin, ceviz, nar ekşisi ve zeytinyağı Hatay tipi zeytin salatasıyla uyumlu. Cuisine kodu Tayland değil Türkiye olmalı."
+  },
+  {
+    "slug": "citir-nori-cipsi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 15 dakika ve 10 dakika fırınlama nori cipsi için cookMinutes 8 ile çelişiyor",
+      "steps: mevcut pişirme tarifi nori yaprakları için gereğinden uzun, yanma riski yaratır"
+    ],
+    "corrections": {
+      "cookMinutes": 5,
+      "totalMinutes": 15,
+      "steps_replace": [
+        {
+          "stepNumber": 4,
+          "instruction": "Nori yapraklarını 160°C fırında 5 dakika kuruyup çıtırlaşana kadar pişirin.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Tepsiyi 5 dakika soğutun, yapraklar buharı çıkınca kolay kırılır.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Nori parçalarını kaseye alıp bekletmeden servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.justonecookbook.com/seaweed-chips/",
+      "https://www.maangchi.com/recipe/gim-gui"
+    ],
+    "confidence": "high",
+    "reason": "Nori, susam yağı, susam ve tuz doğru. Ancak mevcut uzun fırın adımları nori için yanma riski taşır ve süre metadata'sıyla çelişir."
+  },
+  {
+    "slug": "citir-patates",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 30 dakika suda bekletme, 28 dakika fırın ve 5 dakika bekletme totalMinutes 40 içinde tam görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 73
+    },
+    "sources": [
+      "https://yemek.com/tarif/firinda-citir-patates/",
+      "https://www.nefisyemektarifleri.com/firinda-citir-patates/"
+    ],
+    "confidence": "high",
+    "reason": "Baharatlı fırın patates kaynaklarla uyumlu. Otuz dakikalık suda bekletme ve son bekleme toplam süreye eklenmeli."
+  },
+  {
+    "slug": "cive-mersin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 2: zeytinyağı ve tuz kullanılıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/cive-yemegi/",
+      "https://yemek.com/tarif/kabak-yemegi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kabak, bulgur, domates ve yeşil erikle yazlık tencere kurgusu makul. Step'te kullanılan zeytinyağı ve tuz listede eksik."
+  },
+  {
+    "slug": "civil-peynirli-patates-tava-erzurum-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 5: karabiber serpiliyor ama ingredient listesinde karabiber yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/erzurum/ne-yenir/civil-peyniri",
+      "https://yemek.com/tarif/patatesli-yumurta/"
+    ],
+    "confidence": "medium",
+    "reason": "Civil peynir, patates, yumurta ve tereyağlı kahvaltı tavası Erzurum ürünüyle uyumlu. Son adımda kullanılan karabiber listede eksik."
+  }
+]

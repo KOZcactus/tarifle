@@ -13,6 +13,33 @@ export function RegisterForm() {
   const tDivider = useTranslations("auth");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  // K1 P2 #5 (oturum 26): Password strength indicator state.
+  // Custom inline 4-level heuristic, no zxcvbn (~300KB) dependency.
+  // Score: 0=zayıf, 1=orta, 2=iyi, 3=güçlü.
+  const [password, setPassword] = useState("");
+
+  function passwordStrength(pw: string): { score: number; label: string } {
+    if (pw.length === 0) return { score: -1, label: "" };
+    let s = 0;
+    if (pw.length >= 12) s++;
+    if (pw.length >= 16) s++;
+    const variety =
+      Number(/[a-z]/.test(pw)) +
+      Number(/[A-Z]/.test(pw)) +
+      Number(/[0-9]/.test(pw)) +
+      Number(/[^a-zA-Z0-9]/.test(pw));
+    if (variety >= 3) s++;
+    if (variety >= 4) s++;
+    const score = Math.min(3, s);
+    const labels = [
+      t("strengthWeak"),
+      t("strengthFair"),
+      t("strengthGood"),
+      t("strengthStrong"),
+    ];
+    return { score, label: labels[score] };
+  }
+  const pwStrength = passwordStrength(password);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -129,12 +156,58 @@ export function RegisterForm() {
             name="password"
             type="password"
             required
-            minLength={8}
+            minLength={12}
             maxLength={128}
             autoComplete="new-password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            aria-describedby="password-strength"
             className="w-full rounded-lg border border-border bg-bg px-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
             placeholder={t("passwordPlaceholder")}
           />
+          {/* K1 P2 #5: Password strength visual indicator. 4-level bar
+              (zayıf/orta/iyi/güçlü) + a11y aria-live polite. score=-1 ise
+              hidden (input boş). */}
+          {pwStrength.score >= 0 && (
+            <div
+              id="password-strength"
+              role="status"
+              aria-live="polite"
+              className="mt-2 flex items-center gap-2"
+            >
+              <div className="flex flex-1 gap-1">
+                {[0, 1, 2, 3].map((i) => (
+                  <div
+                    key={i}
+                    className={`h-1.5 flex-1 rounded-full transition-colors ${
+                      i <= pwStrength.score
+                        ? pwStrength.score >= 3
+                          ? "bg-accent-green"
+                          : pwStrength.score === 2
+                            ? "bg-secondary"
+                            : pwStrength.score === 1
+                              ? "bg-amber-500"
+                              : "bg-error"
+                        : "bg-border"
+                    }`}
+                  />
+                ))}
+              </div>
+              <span
+                className={`text-xs font-medium ${
+                  pwStrength.score >= 3
+                    ? "text-accent-green"
+                    : pwStrength.score === 2
+                      ? "text-secondary"
+                      : pwStrength.score === 1
+                        ? "text-amber-500"
+                        : "text-error"
+                }`}
+              >
+                {pwStrength.label}
+              </span>
+            </div>
+          )}
         </div>
 
         <div className="flex items-start gap-2">

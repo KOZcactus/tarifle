@@ -17,9 +17,14 @@ export const registerSchema = z
       .max(50)
       .regex(/^[a-zA-Z0-9_]+$/, "Kullanıcı adı sadece harf, rakam ve alt çizgi içerebilir"),
     email: z.string().email("Geçerli bir e-posta adresi girin"),
+    // K1 P2 #6 (oturum 26): password minLength 8 -> 12. NIST SP 800-63B
+    // memorized secret guideline: minimum 8 char + complexity, ama
+    // modern best practice 12+ char (entropy ~64 bit @ casual user
+    // patterns). Yeni hesaplar icin zorunlu, mevcut user'lar
+    // login schema'sinda min(8) kalir (eski hesap kirilmasin).
     password: z
       .string()
-      .min(8, "Şifre en az 8 karakter olmalıdır")
+      .min(12, "Şifre en az 12 karakter olmalıdır")
       .max(128, "Şifre en fazla 128 karakter olabilir"),
     confirmPassword: z.string(),
     kvkkAccepted: z.literal(true, {

@@ -123,11 +123,20 @@ interface FAQPageSchema {
  * dokümantasyonu: minimum 1 question, max ~10 önerilen, her cevap
  * tam metin (sadece özet değil).
  */
-export function buildFaqPageSchema(faqs: { q: string; a: string }[]): FAQPageSchema {
+export function buildFaqPageSchema(
+  faqs: { q: string; a: string }[] | null | undefined,
+): FAQPageSchema {
+  // Defensive guard, oturum 28 Sentry fix: SEO landing batch 3+4'te
+  // 5 entry'de faqs field'ı eksik teslim edildi (atistirmaliklar /
+  // sebze-yemekleri / portekiz / smoothie-shake / soslar-dippler).
+  // Empty/undefined → boş array, sayfa çakılmasın. Caller'lar yine de
+  // landingCopy.faqs?.length kontrolü yapsın ki rich result eligibility
+  // için boş FAQPage emit etmeyelim.
+  const safe = faqs ?? [];
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.map((f) => ({
+    mainEntity: safe.map((f) => ({
       "@type": "Question",
       name: f.q,
       acceptedAnswer: {

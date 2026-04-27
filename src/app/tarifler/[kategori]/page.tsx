@@ -157,9 +157,14 @@ export default async function KategoriPage({ params, searchParams }: KategoriPag
   // Mod C SEO copy (intro + 4 FAQ + FAQPage JSON-LD). Varsa generic
   // generateCategoryFaqJsonLd yerine bunu kullan (daha spesifik + somut).
   const landingCopy = getLandingCopy("category", kategori);
-  const faqJsonLd = landingCopy
-    ? buildFaqPageSchema(landingCopy.faqs)
-    : generateCategoryFaqJsonLd(category.name, total);
+  // Oturum 28 Sentry fix: 5 entry'de faqs field'ı eksik (atistirmaliklar /
+  // sebze-yemekleri / smoothie-shake / soslar-dippler / portekiz). Empty
+  // veya undefined faqs için generic fallback'e düş, boş FAQPage emit
+  // etmeyelim (rich result eligibility hatalı).
+  const faqJsonLd =
+    landingCopy && landingCopy.faqs && landingCopy.faqs.length > 0
+      ? buildFaqPageSchema(landingCopy.faqs)
+      : generateCategoryFaqJsonLd(category.name, total);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">

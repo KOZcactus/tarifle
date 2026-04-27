@@ -180,7 +180,13 @@ export default async function MutfakLandingPage({
   // 38 item Codex teslim docs/seo-copy-v1.json'da; eksik slug için null
   // dönerse mevcut metin (description) yeterli kalır.
   const landingCopy = getLandingCopy("cuisine", cuisine);
-  const faqJsonLd = landingCopy ? buildFaqPageSchema(landingCopy.faqs) : null;
+  // Oturum 28 Sentry fix: cuisine/portekiz entry'de faqs field'ı eksik
+  // (SEO landing batch 4 teslim eksiği). Empty veya undefined faqs için
+  // null döndür, sayfa çakılmasın.
+  const faqJsonLd =
+    landingCopy && landingCopy.faqs && landingCopy.faqs.length > 0
+      ? buildFaqPageSchema(landingCopy.faqs)
+      : null;
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">

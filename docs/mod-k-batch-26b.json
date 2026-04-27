@@ -1,0 +1,1049 @@
+[
+  {
+    "slug": "pirasa-yemegi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/pirincli-pirasa-yemegi/",
+      "https://ye-mek.net/story/pirincli-pirasa-yemegi"
+    ],
+    "confidence": "high",
+    "reason": "Pırasa, havuç, pirinç, zeytinyağı, limon ve 30 dakikalık pişirme hattı klasik zeytinyağlı pırasa kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "pirasali-kesme-corbasi-bursa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 pırasayı çevirmek için yağ kullanıyor ama ingredient listesinde yağ yok.",
+      "Yoğurtlu kesme çorbası kaynaklarla uyumlu, ancak pırasalı Bursa atfı güçlü ikinci kaynakla desteklenmiyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Pırasayı ince doğrayın, kesme erişteyi ölçün ve yoğurdu pürüzsüz çırpın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tereyağını eritip pırasayı orta ateşte yumuşayana kadar çevirin.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Suyu ve kesme erişteyi ekleyip erişte yumuşayana kadar pişirin.", "timerSeconds": 480 },
+        { "stepNumber": 4, "instruction": "Yoğurdu sıcak çorba suyundan 1 kepçeyle ılıtıp tencereye azar azar katın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Tuzu ekleyip çorbayı kısık ateşte karıştırarak pişirin, yoğurt kesilmesin.", "timerSeconds": 240 }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/yogurtlu-eriste-corbasi-kesme-asi-corbasi/",
+      "https://www.tenceretv.com/corbalar/yogurtlu-kesme-corbasi-tarifi-20450"
+    ],
+    "confidence": "medium",
+    "reason": "Kesme erişte ve yoğurtlu çorba tekniği doğru; asıl sorun yağ ve tuz eksikliği ile yöresel pırasa iddiasının zayıf kalması."
+  },
+  {
+    "slug": "pirasali-mihalic-mucveri-bursa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step metinleri tarif adını sürekli tekrar ediyor ve generic scaffold dili taşıyor.",
+      "Step 2 yeşilliklerden söz ediyor ama ingredient listesinde yeşillik yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Pırasaları ince doğrayıp avucunuzla hafifçe sıkın, harç sulanmasın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Yumurta, un ve rendelenmiş Mihaliç peynirini pırasayla koyu bir harç olana kadar karıştırın.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Harcı un nemi çekene kadar dinlendirin, böylece mücver tavada dağılmaz.", "timerSeconds": 300 },
+        { "stepNumber": 4, "instruction": "Sıvı yağı tavada ısıtıp harçtan kaşıkla küçük parçalar bırakın.", "timerSeconds": 120 },
+        { "stepNumber": 5, "instruction": "Mücverleri orta ateşte iki yüzü kızarana kadar pişirin.", "timerSeconds": 420 },
+        { "stepNumber": 6, "instruction": "Kağıt havluya alıp fazla yağını süzdürün ve ılık servis edin.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/bursa/nealinir/mihalic-peyniri",
+      "https://www.nefisyemektarifleri.com/pirasali-mucver-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Mihaliç peynirinin Bursa bağı ve pırasalı mücver tekniği makul; scaffold adımları ile ingredient dışı yeşillik ifadesi temizlenmeli."
+  },
+  {
+    "slug": "pirasali-misir-unlu-pide-samsun-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Pide hamuru için su, maya ve tuz ingredient listesinde yok.",
+      "Samsun pidesi kaynakları kıymalı veya geleneksel açık kapalı pide hattını anlatıyor; pırasalı mısır unlu peynirli varyant desteklenmiyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ilık su", "amount": "0.75", "unit": "su bardağı" },
+        { "name": "Kuru maya", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "prepMinutes": 28,
+      "cookMinutes": 20,
+      "totalMinutes": 58
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/samsun/neyenir/samsun-pidesi",
+      "https://www.pide.gen.tr/peynirli-pide.html"
+    ],
+    "confidence": "low",
+    "reason": "Pide ve peynirli pide tekniği ayrı ayrı doğru; fakat Samsun pidesi kimliği bu pırasalı mısır unlu içerikle güvenli doğrulanamıyor."
+  },
+  {
+    "slug": "pirasali-patates-bulyon-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 sıcak su diyor ama ingredient listesinde sebze suyu var.",
+      "Step 5 tarif adını tekrar eden düşük değerli kapanış cümlesi içeriyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Pırasayı ince dilimleyin, patatesi küçük küp doğrayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Zeytinyağında pırasayı orta ateşte yumuşayana kadar çevirin.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Patates ve sebze suyunu ekleyip patates ezilebilir hale gelene kadar pişirin.", "timerSeconds": 840 },
+        { "stepNumber": 4, "instruction": "Çorbayı püre yapmadan ezin, patates sebze suyunu hafifçe bağlasın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Tuzunu kontrol edip sıcak kaselere paylaştırın.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/soup-maker-leek-and-potato-soup",
+      "https://www.theguardian.com/food/2024/oct/30/how-to-make-leek-potato-soup-recipe-felicity-cloake"
+    ],
+    "confidence": "high",
+    "reason": "Pırasa, patates ve sebze suyu İngiliz leek potato soup yapısıyla uyumlu; sadece su ifadesi ve generic kapanış düzeltilmeli."
+  },
+  {
+    "slug": "pirasali-patates-corbasi-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 kremayı kullanmadan servis ediyor.",
+      "Krema ve patatesli pırasa çorbası için tuz ile yağ eksik kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Pırasayı yıkayıp ince dilimleyin, patatesi küp doğrayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tereyağında pırasayı orta ateşte yumuşayana kadar çevirin.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Patatesi ekleyip yağla kaplanana kadar karıştırın.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Suyu ve tuzu katıp patates tamamen ezilebilir hale gelene kadar pişirin.", "timerSeconds": 960 },
+        { "stepNumber": 5, "instruction": "Blenderdan geçirip kremayı ekleyin ve kaynatmadan sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/soup-maker-leek-and-potato-soup",
+      "https://www.foodandwine.com/soup/vegetable-soup/potato-soup/best-ever-potato-and-leek-soup"
+    ],
+    "confidence": "high",
+    "reason": "Kremalı leek and potato soup kimliği doğru; mevcut akışta krema kullanılmadığı için servis öncesi bağlama adımı gerekli."
+  },
+  {
+    "slug": "pirasali-patates-pasty-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 tereyağı kullanıyor ama ingredient listesinde tereyağı yok.",
+      "Milföy kullanımı kaynaklardaki shortcrust pasty kadar klasik değil, ancak içerik ve kapatma tekniği tutarlı."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/leek-cheese-potato-pasties",
+      "https://www.theguardian.com/food/2025/nov/06/homty-pie-marmite-leek-recipe-jimi-famurewa"
+    ],
+    "confidence": "high",
+    "reason": "Pırasa, patates, cheddar ve yumurta sürülmüş hamur kaynaklarla uyumlu; tek somut eksik pırasayı yumuşatan tereyağı."
+  },
+  {
+    "slug": "pirasali-tavuk-pie-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 tereyağı, step 3 un kullanıyor ama ikisi ingredient listesinde yok.",
+      "Timer toplamı cookMinutes değerini aşıyor ve 5 dakikalık dinlendirme totalMinutes içinde görünmüyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Un", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 34,
+      "totalMinutes": 59
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/chicken-leek-pie",
+      "https://www.jamieoliver.com/recipes/chicken-recipes/proper-chicken-pie/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, pırasa, krema ve hamurla pie kimliği doğru; unlu roux malzemeleri ve dinlendirme süre hesabı eksik."
+  },
+  {
+    "slug": "pirinc-patlagi-bar",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4'teki 30 dakikalık buzdolabı beklemesi totalMinutes değerine dahil değil."
+    ],
+    "corrections": {
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/peanut-butter-rice-krispie-treats-with-brown-butter-recipe",
+      "https://www.epicurious.com/recipes/food/views/scotcheroos"
+    ],
+    "confidence": "high",
+    "reason": "Pirinç patlağı, fıstık ezmesi ve bal bağlayıcı olarak tutarlı; pasif soğutma süresi RecipeTimeline için totalMinutes'a eklenmeli."
+  },
+  {
+    "slug": "pirinc-pilavi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1'de 20-30 dakika ıslatma ve step 5'te 10 dakika demleme var, ancak totalMinutes sadece prep+cook toplamı.",
+      "Marine ve dinlendirme kuralı gereği pasif bekleme totalMinutes içinde ayrı segment oluşturmalı."
+    ],
+    "corrections": {
+      "totalMinutes": 60
+    },
+    "sources": [
+      "https://yemek.com/tarif/tane-tane-pirincli-pilav/",
+      "https://ye-mek.net/tarif/tel-sehriyeli-pirinc-pilavi"
+    ],
+    "confidence": "high",
+    "reason": "Tereyağlı şehriyeli pilav yapısı doğru; pirinci ıslatma ve demleme süreleri mevcut total değerde görünmediği için süre düzeltilmeli."
+  },
+  {
+    "slug": "pirozhki",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step metinleri generic scaffold ve pirozhki tekniğini anlatmıyor.",
+      "Mayalı hamur için tuz, şeker ve yağ eksik; toplam süre de mayalanma beklemesini doğru ayırmıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Toz şeker", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "prepMinutes": 25,
+      "cookMinutes": 25,
+      "totalMinutes": 90,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, maya, süt, şeker, tuz ve sıvı yağla yumuşak bir hamur yoğurun.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Hamuru üzeri kapalı 40 dakika mayalandırın, hacmi artınca kolay şekillenir.", "timerSeconds": 2400 },
+        { "stepNumber": 3, "instruction": "Kıymayı soğanla tavada suyunu çekene kadar kavurun ve harcı ılıtın.", "timerSeconds": 600 },
+        { "stepNumber": 4, "instruction": "Hamuru bezelere ayırıp açın, kıymalı harcı koyup kenarlarını sıkıca kapatın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Pirozhkileri 180°C fırında üzeri kızarana kadar pişirin.", "timerSeconds": 1500 },
+        { "stepNumber": 6, "instruction": "Tepside 5 dakika dinlendirip ılık servis edin.", "timerSeconds": 300 }
+      ]
+    },
+    "sources": [
+      "https://travelfoodatlas.com/russian-pirozhki-recipe",
+      "https://www.youtube.com/watch?v=4RNr8gFOytk"
+    ],
+    "confidence": "high",
+    "reason": "Rus pirozhki kimliği doğru; mevcut adımlar tarif yerine şablon anlatıyor ve mayalı hamurun temel denge malzemeleri eksik."
+  },
+  {
+    "slug": "pisco-ginger-fizz-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Fizz adı soda veya gazlı tamamlayıcı gerektiriyor ama ingredient listesinde soda yok.",
+      "Step metinleri kokteyl adını tekrar ederek düşük değerli scaffold dili taşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soda", "amount": "100", "unit": "ml" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bardağı buzla soğutun, içecek ısınmadan dengede kalsın.", "timerSeconds": 60 },
+        { "stepNumber": 2, "instruction": "Pisco, lime suyu ve rendelenmiş zencefili buz üstüne ekleyin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Karışımı 8 saniye karıştırın ve zencefil aromasını bardağa dağıtın.", "timerSeconds": 8 },
+        { "stepNumber": 4, "instruction": "Sodayı yavaşça ekleyip köpüğü söndürmeden hemen servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.liquor.com/recipes/pisco-sour/",
+      "https://www.tommacy.com/piscosour"
+    ],
+    "confidence": "medium",
+    "reason": "Pisco, lime ve zencefil ferah bir sour-fizz varyantı olarak makul; ancak gazlı bileşen olmadan fizz adı eksik kalıyor."
+  },
+  {
+    "slug": "pisco-sour",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.liquor.com/recipes/pisco-sour/",
+      "https://www.delish.com/cooking/recipe-ideas/a40231140/pisco-sour-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Pisco, lime, şeker şurubu, yumurta akı, bitters ve dry shake akışı klasik Perulu pisco sour kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "pisco-zencefil-fizz-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Description pisco diyor ama ingredient listesinde genel Brendi yazıyor.",
+      "Alkollü ve fizz yapısındaki içecek için step sayısı ve teknik detay zayıf."
+    ],
+    "corrections": {
+      "ingredients_remove": [
+        "Brendi"
+      ],
+      "ingredients_add": [
+        { "name": "Pisco brendi", "amount": "50", "unit": "ml" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bardağı buzla soğutun ve eriyen suyu dökün.", "timerSeconds": 60 },
+        { "stepNumber": 2, "instruction": "Pisco, lime suyu ve taze zencefili bardağa alın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Buzu ekleyip karışımı 8 saniye karıştırın.", "timerSeconds": 8 },
+        { "stepNumber": 4, "instruction": "Sodayı yavaşça tamamlayıp gazı kaçmadan servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.liquor.com/recipes/pisco-sour/",
+      "https://www.goodhousekeeping.com/food-recipes/a28713392/classic-pisco-sour-recipe/"
+    ],
+    "confidence": "medium",
+    "reason": "Pisco temeli doğru ama genel brendi Peru pisco kimliğini zayıflatıyor; soda ve kısa karıştırma tekniği korunmalı."
+  },
+  {
+    "slug": "pisto-yumurtali-kase-ispanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve 2 soğan ile biber kullanıyor ama ingredient listesinde yok.",
+      "Pisto için domatesli sebze tabanında soğan ve biber temel bileşenler arasında."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Kırmızı biber", "amount": "1", "unit": "adet" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.recipesfromeurope.com/pisto/",
+      "https://www.themediterraneandish.com/pisto-spanish-vegetable-stew/"
+    ],
+    "confidence": "high",
+    "reason": "Pisto ve yumurtalı servis doğru; mevcut tarifte step tarafından kullanılan soğan ve biber ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "piyaz",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Kuru fasulye için bir gece ıslatma süresi totalMinutes değerine dahil değil.",
+      "40 dakikalık haşlama cookMinutes içinde var, ancak pasif ıslatma RecipeTimeline'da görünmüyor."
+    ],
+    "corrections": {
+      "totalMinutes": 780
+    },
+    "sources": [
+      "https://tenmorebites.com/2015/05/23/piyaz/",
+      "https://www.youtube.com/watch?v=T82V9zr5bIs"
+    ],
+    "confidence": "high",
+    "reason": "Tahinli piyaz, yumurta, fasulye ve soğan yapısı doğru; kuru fasulyenin gece ıslatma süresi toplam sürede gösterilmeli."
+  },
+  {
+    "slug": "pizza-margherita",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Hamur mayalanması ve fırın taşı ısıtma süreleri prepMinutes içinde görünmemeli, totalMinutes içinde bekleme olarak korunmalı.",
+      "CookMinutes 12 dakika, mevcut totalMinutes 180 dakika ise wait segmenti için prep değeri düşürülmeli."
+    ],
+    "corrections": {
+      "prepMinutes": 30,
+      "cookMinutes": 12,
+      "totalMinutes": 132
+    },
+    "sources": [
+      "https://www.lacucinaitaliana.com/italian-food/italian-dishes/pizza-margherita-the-neapolitan-recipe",
+      "https://www.epicurious.com/recipes/food/views/pizza-margherita-351165"
+    ],
+    "confidence": "high",
+    "reason": "Margherita bileşenleri doğru; mayalanma ve ön ısıtma pasif süreleri prep'e gömülmeden totalMinutes içinde görünmeli."
+  },
+  {
+    "slug": "placki-z-cukinii-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tüm step metinleri tarif adını tekrar eden generic scaffold cümlelerinden oluşuyor.",
+      "Kabak mücveri için fazla suyu sıkma ve küçük porsiyon kızartma tekniği belirtilmiyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kabakları rendeleyip suyunu salana kadar bekletin, sonra fazla suyunu sıkın.", "timerSeconds": 300 },
+        { "stepNumber": 2, "instruction": "Kabak, yumurta, un ve ince kıyılmış dereotunu koyu bir harç olana kadar karıştırın.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Sıvı yağı tavada ısıtıp harçtan kaşıkla küçük parçalar bırakın.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Plackileri iki yüzü altın renk alana kadar orta ateşte kızartın.", "timerSeconds": 480 },
+        { "stepNumber": 5, "instruction": "Kağıt havluya alıp fazla yağını süzdürün ve ılık servis edin.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://www.polonist.com/polish-zucchini-pancakes/",
+      "https://www.everyday-delicious.com/zucchini-pancakes/"
+    ],
+    "confidence": "high",
+    "reason": "Kabak, un, yumurta ve dereotu Polonya usulü kabak pankek hattıyla uyumlu; mevcut step metinleri tarif tekniği vermiyor."
+  },
+  {
+    "slug": "placki-ziemniaczane",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 yağ kızdırma pişirme eylemi içeriyor ama timerSeconds boş.",
+      "Step 4 toplam 3-4 dakika diyor, iki yüz için daha net süre yazılmalı."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patates ve soğanın kabuklarını soyup rendeleyin, fazla suyunu hafifçe sıkın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Rendelenmiş karışıma un ve yumurtayı ekleyip koyu akışkan bir harç yapın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Ayçiçek yağını tavada orta yüksek ateşte kızdırın.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Harçtan kaşıkla bırakıp iki yüzünü altın renk alana kadar kızartın.", "timerSeconds": 360 },
+        { "stepNumber": 5, "instruction": "Placki ziemniaczane'yi ekşi krema eşliğinde sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.polonist.com/polish-potato-pancakes-placki-ziemniaczane/",
+      "https://www.everyday-delicious.com/polish-potato-pancakes/"
+    ],
+    "confidence": "high",
+    "reason": "Patates, soğan, yumurta, un ve ekşi krema servis yapısı doğru; pişirme adımlarında timer netliği artırılmalı."
+  },
+  {
+    "slug": "plantain-black-bean-tost-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step metinleri tamamen generic scaffold ve tost tekniğini anlatmıyor.",
+      "Plantain ile siyah fasulye Küba mutfağıyla uyumlu olsa da tarif tost olarak modern bir uyarlama."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Plantaini çapraz dilimleyin, ekmekleri kızartmaya hazır edin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Plantain dilimlerini zeytinyağında iki yüzü kızarana kadar pişirin.", "timerSeconds": 480 },
+        { "stepNumber": 3, "instruction": "Siyah fasulyeyi çatalla hafif ezin, tost üstünde dağılmadan duracak kıvamda kalsın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Ekmekleri kızartıp fasulye ezmesini üzerlerine yayın.", "timerSeconds": 180 },
+        { "stepNumber": 5, "instruction": "Kızarmış plantainleri üste yerleştirip bekletmeden servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.laylita.com/recipes/cuban-black-beans/",
+      "https://www.bonappetit.com/recipe/maduros-fried-sweet-plantains"
+    ],
+    "confidence": "medium",
+    "reason": "Siyah fasulye ve maduros Küba mutfağıyla uyumlu; sorun tarif kimliğinden çok şablon adımların gerçek tost akışını vermemesi."
+  },
+  {
+    "slug": "platanos-maduros-fritos",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.food.com/recipe/fried-sweet-plantains-platanos-maduros-fritos-79727",
+      "https://www.bonappetit.com/recipe/maduros-fried-sweet-plantains"
+    ],
+    "confidence": "high",
+    "reason": "Olgun plantainleri çapraz kesip yağda iki yüzünü karamelleştirme akışı, klasik platanos maduros fritos kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "poha",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 soğan ve yer fıstığını tavada çevirmek için yağ kullanıyor ama ingredient listesinde yağ yok.",
+      "Poha tariflerinde tuz ve genellikle kısa bir yağlı baharat tabanı gerekir."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Pohayı süzgeçte sudan geçirip süzdürün, taneler yumuşasın ama hamurlaşmasın.", "timerSeconds": 300 },
+        { "stepNumber": 2, "instruction": "Soğanı doğrayın, yer fıstığını ve zerdeçalı hazır edin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Sıvı yağda soğanı ve yer fıstığını orta ateşte çevirin.", "timerSeconds": 300 },
+        { "stepNumber": 4, "instruction": "Poha, zerdeçal ve tuzu ekleyip taneleri kırmadan karıştırın.", "timerSeconds": 180 },
+        { "stepNumber": 5, "instruction": "Limon suyunu ekleyip sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.indianhealthyrecipes.com/poha-recipe-kanda-batata-poha/",
+      "https://timesofindia.indiatimes.com/life-style/food-news/how-to-make-classic-poha-for-breakfast-at-home/photostory/126917829.cms"
+    ],
+    "confidence": "high",
+    "reason": "Poha, yer fıstığı, zerdeçal ve limon yapısı doğru; tavada kavurma için yağ ve temel tuz eksik."
+  },
+  {
+    "slug": "pollo-al-ajillo-ispanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 maydanoz hazırlıyor ama ingredient listesinde maydanoz yok.",
+      "Step 5 şarap alternatifini anıyor; ingredient listesinde şarap yok, limon suyu mevcut."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Tavuk parçalarını tuzlayıp oda sıcaklığında bekletin, tuz yüzeye eşit yayılsın.", "timerSeconds": 600 },
+        { "stepNumber": 2, "instruction": "Sarımsakları kabaca ezin ve limon suyunu hazır edin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Tavuğu zeytinyağında çevirerek kızartın, parçalar içte pembe kalmasın.", "timerSeconds": 720 },
+        { "stepNumber": 4, "instruction": "Sarımsağı ekleyip yakmadan kısa süre çevirin.", "timerSeconds": 120 },
+        { "stepNumber": 5, "instruction": "Limon suyunu ekleyip tavadaki lezzeti toparlayacak kadar sosu çektirin.", "timerSeconds": 240 },
+        { "stepNumber": 6, "instruction": "Sarımsak acılaşmadan tavuğu sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/spanish-garlic-chicken-pollo-al-ajillo/",
+      "https://www.thespanishchef.com/recipes/chicken-garlic-pollo-ajillo"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, bol sarımsak, zeytinyağı ve kısa tava sosu doğru; ingredient dışı maydanoz ve şarap ifadeleri temizlenmeli."
+  },
+  {
+    "slug": "pollo-cacciatora-italyan-ev-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 biber, step 4 defne ve az su kullanıyor ama ingredient listesinde yok.",
+      "Cacciatora için yağ, tuz ve karabiber temel pişirme girdileri listede eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Yeşil biber", "amount": "1", "unit": "adet" },
+        { "name": "Defne yaprağı", "amount": "1", "unit": "adet" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 36,
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://www.lacucinaitaliana.com/italian-food/italian-dishes/chicken-cacciatora-recipe-two-ways",
+      "https://www.theguardian.com/food/article/2024/may/27/pollo-alla-cacciatora-recipe-by-joe-trivelli"
+    ],
+    "confidence": "high",
+    "reason": "Domatesli tavuk cacciatora kimliği doğru; step içinde kullanılan biber, defne, yağ ve tuz ingredient listesinde tamamlanmalı."
+  },
+  {
+    "slug": "polonya-dereotlu-salatalik-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 sebze suyunda pişirme diyor ama ingredient listesinde sebze suyu yok.",
+      "Timer toplamı mevcut cookMinutes değerini aşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sebze suyu", "amount": "5", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 23,
+      "totalMinutes": 31
+    },
+    "sources": [
+      "https://www.polonist.com/polish-pickle-soup-ogorkowa/",
+      "https://food52.com/recipes/89129-best-polish-dill-pickle-soup"
+    ],
+    "confidence": "high",
+    "reason": "Zupa ogorkowa için turşu, patates, yoğurt veya krema ve dereotu doğru; kullanılan sebze suyu listede yok ve süre güncellenmeli."
+  },
+  {
+    "slug": "ponzu-sos",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Kombuyu 15 dakika bekletme ve servis öncesi 10 dakika dinlendirme totalMinutes değerinde görünmüyor."
+    ],
+    "corrections": {
+      "totalMinutes": 33
+    },
+    "sources": [
+      "https://www.masterclass.com/articles/ponzu-sauce-recipe",
+      "https://www.realsimple.com/what-is-ponzu-sauce-8646147"
+    ],
+    "confidence": "high",
+    "reason": "Soya, narenciye, pirinç sirkesi ve kombu ponzu yapısıyla uyumlu; pasif bekleme süreleri toplam süreye eklenmeli."
+  },
+  {
+    "slug": "porkolt",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 soğanı yağda kavuruyor ama ingredient listesinde yağ yok.",
+      "Tuz ve sıcak su miktarı pişirme için gerekli olduğu halde listede belirtilmemiş."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Sıcak su", "amount": "1", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.chilipeppermadness.com/recipes/porkolt/",
+      "https://www.daringgourmet.com/porkolt-hungarian-beef-and-onion-stew/"
+    ],
+    "confidence": "high",
+    "reason": "Dana eti, soğan, kırmızı biber ve uzun pişirme Macar pörkölt kimliğiyle uyumlu; yağ, tuz ve su eksikleri giderilmeli."
+  },
+  {
+    "slug": "portakal-cicekli-soguk-cay-fas-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step metinleri tarif adını tekrar ediyor ve soğuk çay akışını yeterince somut anlatmıyor.",
+      "Demlenen çayın soğutulması totalMinutes içinde açık değil."
+    ],
+    "corrections": {
+      "totalMinutes": 28,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Siyah çayı 5 dakika demleyip süzün.", "timerSeconds": 300 },
+        { "stepNumber": 2, "instruction": "Şekeri sıcak çayda eritin ve portakal çiçeği suyunu ekleyin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Çayı 20 dakika soğutun, buz eklenince hemen sulanmasın.", "timerSeconds": 1200 },
+        { "stepNumber": 4, "instruction": "Buz ve nane ile bardaklara paylaştırıp serin servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.food.com/recipe/moroccan-orange-blossom-tea-recipe-424452",
+      "https://www.epicurious.com/recipes/food/views/moroccan-mint-tea-200679"
+    ],
+    "confidence": "medium",
+    "reason": "Fas çayında nane, şeker ve portakal çiçeği aroması makul; mevcut step akışı sıcak demleme ve soğutmayı net göstermiyor."
+  },
+  {
+    "slug": "portakal-pekmez-soda-antalya-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Portakal ve soda ile yaz içeceği makul olsa da Antalya usulü portakal pekmez soda için güvenilir kaynak bulunamadı.",
+      "Bölgesel iddia başlıkta kaldığı için yalnızca step veya description düzeltmesi kimlik sorununu çözmez."
+    ],
+    "corrections": {
+      "description": "Portakal pekmez soda, portakal suyu, pekmez, buz ve sodayla hazırlanan tatlı ekşi dengeli pratik bir yaz içeceğidir."
+    },
+    "sources": [
+      "https://www.antalya.bel.tr/",
+      "https://www.food.com/recipe/moroccan-orange-blossom-tea-recipe-424452"
+    ],
+    "confidence": "low",
+    "reason": "Antalya portakalı genel olarak bilinir, fakat bu özel içecek adı ve usulü için tarif kaynağı doğrulanamadı."
+  },
+  {
+    "slug": "portakal-salatasi-antalya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step metinleri Antalya Portakal ifadesini tekrar eden scaffold dili taşıyor.",
+      "Step 3 limon suyu ve tuz kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Portakalların kabuklarını ve beyaz zarını temizleyip ince dilimleyin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Kırmızı soğanı ince doğrayın, portakalın suyunu boşa akıtmadan tabağa alın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Zeytinyağı ve tuzu küçük kasede çırpın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Portakal ve soğanı sosla ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Naneyi serpip salatayı bekletmeden servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/portakal-salatasi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/portakal-salatasi"
+    ],
+    "confidence": "medium",
+    "reason": "Portakal, soğan ve zeytinyağıyla salata yapısı doğru; ingredient dışı limon ve tekrar eden scaffold metinleri düzeltilmeli."
+  },
+  {
+    "slug": "portakalli-arroz-con-leche-ispanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5'te 30 dakika soğutma var ama totalMinutes değerine dahil değil."
+    ],
+    "corrections": {
+      "totalMinutes": 64
+    },
+    "sources": [
+      "https://www.goya.com/en/recipes/arroz-con-leche/",
+      "https://spanishsabores.com/antonias-arroz-con-leche-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Sütlü pirinç, portakal kabuğu ve tarçın İspanyol arroz con leche ile uyumlu; soğutma süresi totalMinutes'a eklenmeli."
+  },
+  {
+    "slug": "portakalli-bademli-irmik-kup-adana-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tatlı ingredient listesinde şeker yok.",
+      "Adana usulü portakallı bademli irmik kup için güvenilir yöresel kaynak bulunamadı."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Toz şeker", "amount": "3", "unit": "yemek kaşığı" }
+      ],
+      "totalMinutes": 43
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/sutlu-tatlilar/portakalli-irmikli-kesme-muhallebi-tarifi",
+      "https://www.sahrapsoysal.com/portakalli-irmik-helvasi-tarifi-t-5013"
+    ],
+    "confidence": "low",
+    "reason": "İrmik, süt, portakal ve badem tatlı olarak çalışır; fakat Adana kimliği ve şekersiz tatlı listesi güvenli değil."
+  },
+  {
+    "slug": "portakalli-crema-kup-ispanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Crema tipi yumurtalı tatlıda koyulaştırma için nişasta eksik.",
+      "Step 5'teki 1 saat soğutma totalMinutes değerine dahil değil."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Mısır nişastası", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "totalMinutes": 80
+    },
+    "sources": [
+      "https://www.theguardian.com/food/2023/sep/15/crema-catalana-recipe-benjamina-ebuehi",
+      "https://www.truffleandegg.com/recipes/orange-crema-catalana"
+    ],
+    "confidence": "high",
+    "reason": "Süt, yumurta sarısı, şeker ve portakal kabuğu İspanyol crema hattıyla uyumlu; nişasta ve soğutma süresi eksik."
+  },
+  {
+    "slug": "portakalli-dana-picadillo-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 kimyon ve sarımsak kullanıyor ama ingredient listesinde yok.",
+      "Picadillo için zeytin ve kapari doğru; portakal suyu modern bir varyasyon olarak kalmalı."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Kimyon", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.laylita.com/recipes/picadillo-recipe/",
+      "https://worldspice.com/blogs/recipes/cuban-picadillo"
+    ],
+    "confidence": "high",
+    "reason": "Küba picadillo için kıyma, soğan, zeytin ve kapari doğru; step içinde geçen sarımsak ve kimyon ingredient listesinde yok."
+  },
+  {
+    "slug": "portakalli-havuc-salatasi-fas-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step metinleri tarif adını tekrar eden scaffold dili taşıyor.",
+      "Step 3 limon suyu ve tuz kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Havuçları rendeleyin, portakalı zarlarından ayırıp küçük parçalara kesin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Portakalın akan suyunu küçük kaseye alın, zeytinyağı ve kimyonla çırpın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Havuç ve portakalı sosla ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 4, "instruction": "Tuzu ayarlayıp salatayı 5 dakika dinlendirin, havuç sosu çeksin.", "timerSeconds": 300 },
+        { "stepNumber": 5, "instruction": "Taze nane yapraklarıyla serin servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://thelocalpalate.com/recipes/moroccan-carrot-salad/",
+      "https://www.themediterraneandish.com/moroccan-carrot-salad/"
+    ],
+    "confidence": "high",
+    "reason": "Fas usulü havuç salatasında kimyon, zeytinyağı, narenciye ve nane uyumlu; şablon adımlar ile ingredient dışı limon temizlenmeli."
+  },
+  {
+    "slug": "portakalli-havuc-suyu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.alphafoodie.com/carrot-orange-juice/",
+      "https://www.themediterraneandish.com/carrot-juice-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Havuç, portakal, limon ve buzla taze sıkılmış içecek akışı basit ve tutarlı; süre ile ingredient-step eşleşmesi doğru."
+  },
+  {
+    "slug": "portakalli-irmik-helvasi-antakya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5'te 10 dakika dinlendirme var ama totalMinutes değerinde görünmüyor.",
+      "Antakya yöresel atfı güçlü kaynakla desteklenmiyor, ancak portakallı irmik helvası tekniği doğru."
+    ],
+    "corrections": {
+      "totalMinutes": 33
+    },
+    "sources": [
+      "https://yemek.com/tarif/portakalli-irmik-helvasi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/diger-tatli-tarifleri/portakalli-irmik-helvasi"
+    ],
+    "confidence": "medium",
+    "reason": "İrmik, tereyağı, portakal suyu ve şeker helva yapısı doğru; dinlenme totalMinutes içinde görünmeli."
+  },
+  {
+    "slug": "portakalli-irmik-keki-adana-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 şeker, kek yapısı kabartma tozu gerektiriyor ama ingredient listesinde ikisi yok.",
+      "Step 5'te 15 dakika dinlendirme totalMinutes değerine dahil değil."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Toz şeker", "amount": "0.75", "unit": "su bardağı" },
+        { "name": "Kabartma tozu", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "totalMinutes": 51
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/irmikli-portakalli-kek-tarifi-t-5473",
+      "https://www.nefisyemektarifleri.com/portakalli-irmik-keki/"
+    ],
+    "confidence": "medium",
+    "reason": "Portakallı irmik keki yapısı doğru; şeker ve kabartma tozu olmadan kek dengesi eksik, dinlenme süresi de toplamda yok."
+  },
+  {
+    "slug": "portakalli-irmik-muhallebisi-mugla-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5'te 30 dakika soğutma var ama totalMinutes değerinde görünmüyor.",
+      "Muğla yöresel atfı desteklenmiyor, ancak portakallı irmik muhallebi tekniği tutarlı."
+    ],
+    "corrections": {
+      "totalMinutes": 52
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/sutlu-tatlilar/portakalli-irmikli-kesme-muhallebi-tarifi",
+      "https://irmik.gen.tr/portakalli-irmik.html"
+    ],
+    "confidence": "medium",
+    "reason": "Süt, irmik, şeker ve portakal suyu muhallebi olarak doğru; pasif soğutma süresi RecipeTimeline'a eklenmeli."
+  },
+  {
+    "slug": "portakalli-krema-kup-ispanya-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Krema, portakal suyu, şeker ve vanilya tek başına ısıtılıp soğutulduğunda güvenilir şekilde kup tatlısı olarak set olmaz.",
+      "İspanya usulü crema kaynaklarında yumurta sarısı ve nişasta bulunur; mevcut tarif kimlik olarak eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yumurta sarısı", "amount": "2", "unit": "adet" },
+        { "name": "Mısır nişastası", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": [
+        "YUMURTA"
+      ],
+      "totalMinutes": 76
+    },
+    "sources": [
+      "https://www.theguardian.com/food/2023/sep/15/crema-catalana-recipe-benjamina-ebuehi",
+      "https://www.truffleandegg.com/recipes/orange-crema-catalana"
+    ],
+    "confidence": "medium",
+    "reason": "İspanyol crema yönü ancak yumurta ve nişastayla anlamlı; mevcut liste set olmayan kremalı içecek gibi kalıyor."
+  },
+  {
+    "slug": "portakalli-labneli-krep-antalya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve 5 tarif adını tekrar eden scaffold dili taşıyor.",
+      "Step 3 slug metni içeriyor ve kullanıcıya görünür kaliteyi düşürüyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, yumurta ve suyu pürüzsüz bir krep hamuru olana kadar çırpın.", "timerSeconds": 120 },
+        { "stepNumber": 2, "instruction": "Hamuru un sıvıyı çekene kadar dinlendirin, krepler daha düzgün yayılır.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "İnce krepleri yapışmaz tavada iki yüzü hafif renk alana kadar pişirin.", "timerSeconds": 360 },
+        { "stepNumber": 4, "instruction": "Labneyi portakal kabuğu rendesiyle karıştırın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Krepleri labneli harçla doldurup bekletmeden servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/labneli-krep-tarifi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/krep-tarifleri/labneli-krep"
+    ],
+    "confidence": "medium",
+    "reason": "Labneli krep yapısı doğru; sorun Antalya iddiasından çok görünür slug ve şablon cümlelerinin kalitesizliği."
+  },
+  {
+    "slug": "portakalli-sicak-cikolata",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Isıtma ve eritme adımlarında timerSeconds yok.",
+      "Sıcak çikolata için kısa çırpma adımı dokuyu netleştirir."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Sütü tencerede kaynatmadan ısıtın.", "timerSeconds": 240 },
+        { "stepNumber": 2, "instruction": "Bitter çikolatayı ekleyip tamamen eriyene kadar karıştırın.", "timerSeconds": 180 },
+        { "stepNumber": 3, "instruction": "Kakao ve portakal kabuğunu ekleyip pürüzsüzleşene kadar çırpın.", "timerSeconds": 60 },
+        { "stepNumber": 4, "instruction": "Fincanlara paylaştırıp sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/homemade-hot-chocolate",
+      "https://www.delish.com/cooking/recipe-ideas/a27218173/orange-hot-chocolate-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Süt, çikolata, kakao ve portakal kabuğu uyumlu; sıcak içecek adımlarına pişirme süreleri eklenmeli."
+  },
+  {
+    "slug": "portakalli-tahinli-irmik-kek-mersin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 un kullanıyor ama ingredient listesinde un yok.",
+      "Step 5'te 15 dakika dinlendirme totalMinutes değerine dahil değil."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Un", "amount": "0.75", "unit": "su bardağı" }
+      ],
+      "totalMinutes": 51
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/irmikli-portakalli-kek-tarifi-t-5473",
+      "https://www.nefisyemektarifleri.com/tahinli-portakalli-kek/"
+    ],
+    "confidence": "medium",
+    "reason": "Tahin, portakal, irmik ve susamlı kek yapısı makul; step içindeki un ve pasif dinlendirme süresi eksik."
+  },
+  {
+    "slug": "portakalli-tarcinli-irmik-kup-fas-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ingredient listesi portakal suyu içeriyor ama step 3 portakal kabuğu diyor.",
+      "Step 5'te 25 dakika soğutma totalMinutes değerinde görünmüyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Portakal kabuğu rendesi", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 49
+    },
+    "sources": [
+      "https://irmik.gen.tr/portakalli-irmik.html",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/sutlu-tatlilar/portakalli-irmikli-kesme-muhallebi-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Portakallı tarçınlı irmik kup tatlı olarak tutarlı; portakal kabuğu ve soğutma süresi listede tamamlanmalı."
+  },
+  {
+    "slug": "portakalli-tavuk-kapama-antalya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 tuz, step 2 tavada mühürleme için yağ kullanıyor ama ingredient listesinde yok.",
+      "Step 6'da 8 dakika dinlendirme totalMinutes içinde görünmüyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 60
+    },
+    "sources": [
+      "https://yemek.com/tarif/tavuk-kapama/",
+      "https://www.nefisyemektarifleri.com/tavuk-kapama-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk, pirinç ve fırın kapama tekniği doğru; portakal varyasyonu kabul edilebilir ama yağ, tuz ve dinlendirme süresi eksik."
+  },
+  {
+    "slug": "portakalli-tavuk-kulbasti-antalya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 tuz ve portakal kabuğu kullanıyor ama ingredient listesinde yok.",
+      "Antalya usulü iddiası zayıf, ancak portakallı tavuk külbastı tekniği uygulanabilir."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Portakal kabuğu rendesi", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/et-yemekleri/tavuk-yemekleri/tavuk-kulbasti",
+      "https://www.bbcgoodfood.com/recipes/sticky-citrus-chicken"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk külbastı ve turunçgil sos fikri doğru; step içinde geçen portakal kabuğu ile tuz ingredient listesinde yok."
+  },
+  {
+    "slug": "portakalli-un-helvasi-hatay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5'te 10 dakika dinlendirme totalMinutes değerine dahil değil.",
+      "Hatay yöresel atfı doğrulanmıyor, ancak portakallı un helvası tekniği tutarlı."
+    ],
+    "corrections": {
+      "totalMinutes": 34
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/portakalli-un-helvasi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/serbetli-tatlilar/un-helvasi"
+    ],
+    "confidence": "medium",
+    "reason": "Un, tereyağı, şekerli su ve portakal kabuğu helva olarak doğru; dinlendirme süresi toplam süreye eklenmeli."
+  },
+  {
+    "slug": "portokalopita",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Portokalopita için şeker ve kabartma tozu ingredient listesinde yok.",
+      "Step 6'da 30 dakika şerbet çekme beklemesi totalMinutes içinde görünmüyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Toz şeker", "amount": "0.75", "unit": "su bardağı" },
+        { "name": "Kabartma tozu", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "totalMinutes": 100
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/portokalopita-greek-orange-cake/",
+      "https://www.argiro.gr/en/recipe/portokalopita-greek-orange-phyllo-cake/"
+    ],
+    "confidence": "high",
+    "reason": "Yufka, yoğurt, yumurta ve portakal portokalopita için doğru; şeker, kabartma tozu ve şerbet bekleme süresi eksik."
+  },
+  {
+    "slug": "pot-au-feu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 soğan, defne ve tane karabiber kullanıyor ama ingredient listesinde yok.",
+      "Timer toplamı cookMinutes değerinden yüksek; prep+cook toplamı totalMinutes değerini aşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Defne yaprağı", "amount": "1", "unit": "adet" },
+        { "name": "Tane karabiber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Patates", "amount": "3", "unit": "adet" },
+        { "name": "Tuz", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "cookMinutes": 180,
+      "totalMinutes": 210
+    },
+    "sources": [
+      "https://www.thefrenchcookingacademy.com/recipes/pot-au-feu",
+      "https://everydayfrenchchef.com/recipes/meat-dishes/pot-au-feu/"
+    ],
+    "confidence": "high",
+    "reason": "Dana eti, pırasa, havuç ve kereviz sapı Fransız pot-au-feu ile uyumlu; kullanılan aromatikler ve gerçek pişirme süresi eksik."
+  },
+  {
+    "slug": "pozole-rojo",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 6 lahana, turp ve lime kullanıyor ama ingredient listesinde marul var ve garnitürler eksik.",
+      "Pozole rojo kaynaklarında hominy, kuru biber sosu ve taze garnitürler temel yapıdadır."
+    ],
+    "corrections": {
+      "ingredients_remove": [
+        "Marul"
+      ],
+      "ingredients_add": [
+        { "name": "Lahana", "amount": "1", "unit": "su bardağı" },
+        { "name": "Turp", "amount": "4", "unit": "adet" },
+        { "name": "Lime", "amount": "1", "unit": "adet" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.goodhousekeeping.com/food-recipes/a46132437/pozole-rojo-recipe/",
+      "https://www.chilipeppermadness.com/chili-pepper-recipes/pork/pozole-rojo/"
+    ],
+    "confidence": "high",
+    "reason": "Hominy, kuru biber ve uzun pişen et pozole rojo için doğru; marul yerine lahana, turp ve lime garnitürü listelenmeli."
+  }
+]

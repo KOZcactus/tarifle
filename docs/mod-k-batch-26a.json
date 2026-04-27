@@ -1,0 +1,1091 @@
+[
+  {
+    "slug": "peynirli-biber-kavurma-edirne-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1, 4 ve 5 uygulama değeri düşük kapanış ve hazırlık cümleleri içeriyor.",
+      "Timer toplamı totalMinutes değerini aşıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Biberleri yıkayıp iri halka doğrayın, çekirdekleri acılık vermesin diye ayıklayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Zeytinyağını tavada ısıtıp biberleri orta ateşte yumuşayana kadar çevirin.", "timerSeconds": 360 },
+        { "stepNumber": 3, "instruction": "Tuzu ekleyip biberlerin suyunu uçurun, peynir eklenince tabak sulanmasın.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Beyaz peyniri iri ufalayarak tavaya alın ve dağılmadan karıştırın.", "timerSeconds": 120 },
+        { "stepNumber": 5, "instruction": "Peynir tamamen erimeden ocaktan alıp sıcak ekmekle servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.rafinera.com/blog/diyet-yemek-tarifleri/biber-kavurmasi",
+      "https://www.lezzet.com.tr/yemek-tarifleri/diger-tarifler/sos-tarifleri/beyaz-peynirli-sos"
+    ],
+    "confidence": "high",
+    "reason": "Biber, beyaz peynir ve zeytinyağı hattı doğru; sorun tarif kimliğinden çok tekrar eden düşük değerli adımlar ve süre fazlası."
+  },
+  {
+    "slug": "peynirli-biber-salatasi-edirne-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step metinlerinde Peynirli Biber ifadesi tekrarlanıyor ve scaffold izleri var.",
+      "Step 3 limon suyu ve tuz kullanıyor ama ingredient listesinde sirke var, limon ve tuz yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Közlenmiş biberleri şerit kesin ve fazla suyunu süzdürün.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Maydanozu ince kıyın, beyaz peyniri iri parçalar halinde ufalayın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Zeytinyağı ve üzüm sirkesini küçük kasede çırpın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Biberleri sosla harmanlayın, peyniri ezilmemesi için en son ekleyin.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Maydanozu serpip salatayı bekletmeden servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kozlenmis-biber-salatasi/",
+      "https://www.nefisyemektarifleri.com/kozlenmis-kirmizi-biber-salatasi/"
+    ],
+    "confidence": "high",
+    "reason": "Köz biber, peynir, zeytinyağı ve sirke ile meze yapısı tutarlı; limonlu scaffold cümleleri ingredient listesiyle çelişiyor."
+  },
+  {
+    "slug": "peynirli-biberiyeli-bazlama-isparta-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Peynirli bazlama kaynaklarla uyumlu olsa da Isparta ve biberiye atfı desteklenmiyor.",
+      "Başlık yöresel iddiayı koruduğu için yalnız description patch'i kimlik sorununu tam çözmez."
+    ],
+    "corrections": {
+      "description": "Peynirli biberiyeli bazlama, sıcak bazlamayı beyaz peynir ve zeytinyağıyla dolduran pratik bir tava hamur işidir."
+    },
+    "sources": [
+      "https://yemek.com/tarif/peynirli-bazlama-2/",
+      "https://www.carrefoursa.com/blog/peynirli-gozleme/"
+    ],
+    "confidence": "medium",
+    "reason": "Bazlama içinde peynir fikri doğru; ancak Isparta usulü ve biberiyeli varyant için güvenilir ikinci kaynak bulunamadı."
+  },
+  {
+    "slug": "peynirli-biberli-firikli-gozleme-kahramanmaras-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Gözleme tekniği doğru ama firikli peynirli gözlemenin Kahramanmaraş kimliği kaynakla doğrulanmıyor.",
+      "Ingredient listesinde hamur için su ve tuz yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Su", "amount": "0.75", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.carrefoursa.com/blog/peynirli-gozleme/",
+      "https://yemek.com/tarif/firik-pilavi/"
+    ],
+    "confidence": "low",
+    "reason": "Firik ve gözleme ayrı ayrı anlamlı; fakat bu yöresel birleşim için kaynak zemini zayıf, manuel kimlik kararı gerekir."
+  },
+  {
+    "slug": "peynirli-dereotlu-mini-borek-bilecik-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tüm step metinleri tarif adını tekrar ediyor ve generic börek scaffold'u taşıyor.",
+      "Step 2 iç harcı tavada çeviriyor; peynirli dereotlu yufka böreğinde bu işlem gereksiz."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Beyaz peyniri ezip ince kıyılmış dereotuyla karıştırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Yufkaları üçgen parçalara kesin ve kurumamaları için üstlerini örtün.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Her parçanın geniş kenarına peynirli harç koyup mini rulo sarın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Börekleri tepsiye dizin, üzerine yumurta ve zeytinyağı karışımı sürün.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Önceden ısıtılmış fırında altı ve üstü kızarana kadar pişirin.", "timerSeconds": 1200 },
+        { "stepNumber": 6, "instruction": "Tepside kısa dinlendirip iç harcı akmadan ılık servis edin.", "timerSeconds": 300 }
+      ]
+    },
+    "sources": [
+      "https://www.lezzetsirri.com/peynirli-dereotlu-borek-tarifi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/borek-tarifleri/peynirli-borek-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Yufka, peynir, dereotu ve yumurta yapısı doğru; revizyon sadece hatalı tavada harç pişirme ve scaffold adımlarını temizliyor."
+  },
+  {
+    "slug": "peynirli-fasulye-diblesi-samsun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 zeytinyağı, step 4 tuz kullanıyor ama ingredient listesinde yok.",
+      "Fasulye diblesi Karadeniz kaynaklarıyla uyumlu olsa da peynir ve Samsun atfı net desteklenmiyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.giresunhakkinda.com/yoresel-yemekler/fasulye-diblesi",
+      "https://www.misssgibi.com/fasulye-diblesi/"
+    ],
+    "confidence": "medium",
+    "reason": "Dible tekniği pirinçli taze fasulye için doğru; eksik yağ ve tuz ingredient patch'iyle uygulama tutarlılığı sağlanır."
+  },
+  {
+    "slug": "peynirli-findikli-pide-duzce-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Peynirli pide tekniği doğru olsa da fındıklı Düzce pidesi kimliği kaynakla doğrulanmadı.",
+      "Yöresel ve ürün eşleştirmesi Düzce fındığı varsayımına dayanıyor."
+    ],
+    "corrections": {
+      "description": "Peynirli fındıklı pide, ince açılmış hamuru beyaz peynir ve kırık fındıkla fırınlayan çıtır bir hamur işidir."
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/pide-tarifleri/peynirli-pide",
+      "https://www.kulturportali.gov.tr/turkiye/duzce/nealinir/findik"
+    ],
+    "confidence": "low",
+    "reason": "Pide ve fındık ayrı ayrı makul; ancak bölgesel tarif kanıtı yok, başlık ve cuisine bağlamı manuel incelenmeli."
+  },
+  {
+    "slug": "peynirli-gozleme",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.carrefoursa.com/blog/peynirli-gozleme/",
+      "https://www.ustayemektarifleri.com/hamur-isleri/peynirli-gozleme-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Unlu hamur, beyaz peynir, maydanoz ve tavada pişirme yapısı klasik peynirli gözleme kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "peynirli-incir-kupu-canakkale-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "İncir, labne ve bal ile kup tatlısı mantıklı fakat Çanakkale usulü iddiası kaynakla doğrulanmıyor.",
+      "totalMinutes 10 iken step 5 soğutma timer'ı 20 dakika."
+    ],
+    "corrections": {
+      "totalMinutes": 30
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/meyveli-tatlilar/incirli-kuplar",
+      "https://yemek.com/tarif/labneli-incir-tatlisi/"
+    ],
+    "confidence": "medium",
+    "reason": "Tatlı kompozisyonu uygulanabilir; süre hatası net, yöresel Çanakkale iddiası ise kaynakla taşınmıyor."
+  },
+  {
+    "slug": "peynirli-kabak-cicegi-boregi-balikesir-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Kabak çiçeği dolması ve böreği kaynaklarda var, fakat Balıkesir usulü peynirli yufka sarımı doğrulanmadı.",
+      "Başlık bölgesel iddiayı koruduğu için otomatik apply uygun değil."
+    ],
+    "corrections": {
+      "description": "Peynirli kabak çiçeği böreği, kabak çiçeklerini lorlu iç ve yufkayla fırınlayan narin bir hamur işidir."
+    },
+    "sources": [
+      "https://yemek.com/tarif/kabak-cicegi-dolmasi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/sebze-yemekleri/zeytinyagli-yemekler/kabak-cicegi-dolmasi"
+    ],
+    "confidence": "low",
+    "reason": "Kabak çiçeğiyle lorlu iç makul; Balıkesir ve börek formu için yeterli güvenilir kaynak bulunmadı."
+  },
+  {
+    "slug": "peynirli-kabak-mucver-tostu-bursa-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Mücver kaynakları kabak, yumurta, un ve peynir yapısını destekliyor, fakat tost formu ve Bursa atfı desteklenmiyor.",
+      "Step 1, 2 ve 5 scaffold metni taşıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kabağı rendeleyip suyunu sıkın, ekmek içi ıslanmasın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Kabak, yumurta, un ve rendelenmiş kaşarı karıştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Harcı ekmek dilimlerinin arasına ince tabaka halinde yayın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Tost makinesinde dışı kızarıp içi pişene kadar bastırmadan pişirin.", "timerSeconds": 480 },
+        { "stepNumber": 5, "instruction": "Tostu kesmeden önce kısa dinlendirin, peynirli harç dağılmasın.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/kabak-mucveri/",
+      "https://www.nefisyemektarifleri.com/kabak-mucveri-tarifi/"
+    ],
+    "confidence": "low",
+    "reason": "Kabak mücver çekirdeği doğru; ancak tost ve Bursa kimliği yapısal iddia olduğu için sadece step patch'i yeterli sayılmaz."
+  },
+  {
+    "slug": "peynirli-kabakli-borek-kocaeli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1, 2, 3 ve 5 tarif adını tekrar eden scaffold cümleleri içeriyor.",
+      "Kabaklı peynirli börek kaynaklarla uyumlu, fakat mevcut adımlar uygulama detayı vermiyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kabakları rendeleyip tuzlamadan suyunu avuç içinde sıkın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Kabak, beyaz peynir ve yoğurdun yarısını kasede karıştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Yufkaları yağlanmış tepsiye kat kat serip aralarına zeytinyağı sürün.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Kabaklı harcı ortaya yayın ve kalan yufkalarla üstünü kapatın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Kalan yoğurdu üst yüzeye sürüp fırında kızarana kadar pişirin.", "timerSeconds": 1800 }
+      ],
+      "cookMinutes": 30,
+      "totalMinutes": 48
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/kabakli-saray-boregi-tarifi-t-3230",
+      "https://www.yemektekeyifvar.com/borek-tarifleri/kabakli-borek-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Kabak, peynir, yoğurt ve yufka yapısı doğru; pişirme süresi kaynaklara göre kısa kaldığı için süre ve adımlar yenilendi."
+  },
+  {
+    "slug": "peynirli-kavrulmus-misir-ekmegi-samsun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve 5 hazırlık ve kapanış scaffold'u içeriyor.",
+      "Step timer toplamı totalMinutes değerinden uzun."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Mısır ekmeği dilimlerini iri küpler halinde kesin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tereyağını tavada eritip ekmekleri çıtırlaşana kadar çevirin.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Kaşarı ekmeklerin üstüne paylaştırın ve pul biber serpin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Peynir eriyince tavayı ocaktan alın, ekmek fazla kurumadan servis edin.", "timerSeconds": 120 },
+        { "stepNumber": 5, "instruction": "Sıcak tabakta hemen sunun, tereyağlı yüzey yumuşamadan yenir.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.tarifikolay.com/peynirli-misir-ekmegi-2234",
+      "https://yemek.com/tarif/misir-ekmegi/"
+    ],
+    "confidence": "medium",
+    "reason": "Mısır ekmeği ve peynir uyumlu; kavrulmuş kahvaltı formunda sorun daha çok scaffold ve süre tutarsızlığı."
+  },
+  {
+    "slug": "peynirli-kekikli-katmer-kilis-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Peynirli katmer kaynaklarla uyumlu olsa da Kilis ve kekik atfı kaynakla doğrulanmıyor.",
+      "Step 6 tereyağı kullanıyor ama ingredient listesinde tereyağı yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/peynirli-katmer/",
+      "https://www.yemektekeyifvar.com/2026-ramazan-iftar-menuleri-ve-sahur-tarifleri/peynirli-katmer"
+    ],
+    "confidence": "medium",
+    "reason": "Katmer tekniği doğru ve eksik tereyağı net; yöresel Kilis iddiası için ayrıca manuel kaynak kontrolü gerekir."
+  },
+  {
+    "slug": "peynirli-kraker",
+    "verdict": "PASS",
+    "sources": [
+      "https://sallysbakingaddiction.com/homemade-cheese-crackers/",
+      "https://www.kingarthurbaking.com/recipes/cheese-pennies-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Un, keskin peynir, tereyağı, soğutma ve kısa fırınlama hattı peynirli kraker kaynaklarıyla tutarlı."
+  },
+  {
+    "slug": "peynirli-mantar-dolmasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step metinleri tarif adını tekrar eden generic aperatif scaffold'u içeriyor.",
+      "Mantar saplarının çıkarılması ve mantarların doldurulması gibi temel uygulama adımları yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Mantarların saplarını çıkarın ve şapkaları nemli bezle temizleyin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Krem peynir, parmesan ve ezilmiş sarımsağı pürüzsüz harç olana kadar karıştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Peynirli harcı mantar boşluklarına taşırmadan doldurun.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Mantarları fırın kabına dizip peynir hafif kızarana kadar pişirin.", "timerSeconds": 1080 },
+        { "stepNumber": 5, "instruction": "Fırından çıkınca kısa dinlendirin, mantar suyu tabağa dağılmasın.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://ye-mek.net/tarif/firinda-peynirli-cevizli-mantar-dolmasi",
+      "https://www.foodnetwork.com/recipes/food-network-kitchen/cheese-stuffed-mushrooms-3364497"
+    ],
+    "confidence": "high",
+    "reason": "Peynirli mantar dolması kimliği doğru; mevcut adımlar mantara özel olmadığı için doğrudan uygulanabilir tarif adımıyla değiştirildi."
+  },
+  {
+    "slug": "peynirli-mantarli-rulo-borek-sakarya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 maydanoz ve karabiber kullanıyor ama ingredient listesinde yok.",
+      "Step 3 yağlı süt karışımı diyor, süt ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" },
+        { "name": "Süt", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Yumurta", "amount": "1", "unit": "adet" }
+      ],
+      "allergens_add": [
+        "YUMURTA"
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/borek-tarifleri/peynirli-borek-tarifi",
+      "https://www.nefisyemektarifleri.com/mantarli-rulo-borek/"
+    ],
+    "confidence": "high",
+    "reason": "Mantar, peynir ve yufka böreği yapısı doğru; step içinde geçen sos ve harç malzemeleri ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "peynirli-manyok-kase-brezilya-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Brezilya peynirli manyok kimliği pão de queijo kaynaklarıyla karşılaştırıldığında eksik kalıyor.",
+      "Mevcut tarif manyok haşlama kasesi; Brezilya kahvaltı klasiği olarak doğrulanmadı."
+    ],
+    "corrections": {
+      "description": "Peynirli manyok kase, haşlanmış manyoku tereyağı ve eriyen peynirle sıcak servis eden sade bir tabaktır."
+    },
+    "sources": [
+      "https://www.kingarthurbaking.com/recipes/brazilian-cheese-buns-pao-de-queijo-recipe",
+      "https://www.tastingtable.com/1305234/at-home-pao-de-queijo-brazilian-cheese-bread-recipe/"
+    ],
+    "confidence": "low",
+    "reason": "Brezilya peynirli manyok denince kaynaklar tapioka nişastalı pão de queijo'yu destekliyor; mevcut kase kimliği zayıf."
+  },
+  {
+    "slug": "peynirli-maydanozlu-kol-boregi-sakarya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 yoğurt, step 5 yumurta ve susam kullanıyor ama ingredient listesinde yok.",
+      "Pişirme ve dinlendirme aynı timer'da birleştiği için totalMinutes sınırına yaklaşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yoğurt", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Yumurta", "amount": "1", "unit": "adet" },
+        { "name": "Susam", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "allergens_add": [
+        "YUMURTA",
+        "SUSAM"
+      ],
+      "cookMinutes": 30,
+      "totalMinutes": 48
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/borek-tarifleri/peynirli-borek-tarifi",
+      "https://www.nefisyemektarifleri.com/peynirli-kol-boregi/"
+    ],
+    "confidence": "high",
+    "reason": "Peynirli kol böreği doğru bir yapı; eksik sos ve üst malzemeleri alerjenleriyle birlikte tamamlanmalı."
+  },
+  {
+    "slug": "peynirli-milfoy",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tüm step metinleri generic scaffold ve tarif adı tekrarı içeriyor.",
+      "Milföyün kesilmesi, doldurulması ve kenarlarının kapatılması gibi ana işlemler yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Milföy karelerini çözdürüp hafif unlu zemine alın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Beyaz peynir ve kıyılmış maydanozu ezmeden karıştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Harcı milföylerin ortasına koyup üçgen kapatın, kenarları çatalla bastırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Üstlerine yumurta sarısı sürüp çörek otu serpin.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Önceden ısıtılmış fırında kabarıp kızarana kadar pişirin.", "timerSeconds": 1200 }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/peynirli-milfoy-boregi/",
+      "https://yemek.com/tarif/peynirli-milfoy/"
+    ],
+    "confidence": "high",
+    "reason": "Malzeme listesi peynirli milföy için doğru; sorun tamamen tarif dışı kalan generic adım metinleri."
+  },
+  {
+    "slug": "peynirli-misir-ekmegi-balikesir-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Peynirli mısır ekmeği kaynaklarla uyumlu, fakat Balıkesir usulü atfı doğrulanmıyor.",
+      "Step 2 unlu tezgahta yoğurma diyor; mevcut harç mısır unu, yoğurt ve yumurtayla kekimsi karışım olmalı."
+    ],
+    "corrections": {
+      "allergens_add": [
+        "GLUTEN"
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Mısır unu, yoğurt, yumurta ve eritilmiş tereyağını karıştırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Beyaz peyniri iri ufalayarak harca katın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Karışımı yağlanmış küçük kalıba dökün ve yüzeyi düzeltin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Fırında üstü kızarıp içi çekene kadar pişirin.", "timerSeconds": 2100 },
+        { "stepNumber": 5, "instruction": "Dilimlemeden önce ılık hale gelmesini bekleyin.", "timerSeconds": 300 }
+      ],
+      "cookMinutes": 35,
+      "totalMinutes": 47
+    },
+    "sources": [
+      "https://www.tarifikolay.com/peynirli-misir-ekmegi-2234",
+      "https://yemek.com/tarif/misir-ekmegi/"
+    ],
+    "confidence": "medium",
+    "reason": "Peynirli mısır ekmeği uygulanabilir; ama bölge iddiası ve hamur tekniği hatası birlikte manuel review gerektirir."
+  },
+  {
+    "slug": "peynirli-omlet",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve 5 tarif adını tekrar eden düşük değerli cümleler içeriyor.",
+      "Step 3 timerSeconds 240 olmasına rağmen instruction sadece tereyağını eritme ve yumurtayı dökme işlemini anlatıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Yumurtaları süt ve tuzla köpürtmeden çırpın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Beyaz peyniri iri ufalayın, maydanozu ince kıyın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Tereyağını tavada eritip yumurtalı karışımı dökün.", "timerSeconds": 60 },
+        { "stepNumber": 4, "instruction": "Peyniri ve maydanozu serpip kısık ateşte omleti pişirin.", "timerSeconds": 300 },
+        { "stepNumber": 5, "instruction": "Omleti ikiye katlayıp sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.altasyumurta.com/beyaz-peynirli-omlet-tarifi",
+      "https://ye-mek.net/amp/beyaz-peynirli-omlet"
+    ],
+    "confidence": "high",
+    "reason": "Yumurta, beyaz peynir, süt, tereyağı ve maydanoz yapısı doğru; sadece scaffold ve timer uyumu düzeltilmeli."
+  },
+  {
+    "slug": "peynirli-patatesli-tunnbrod-durum-isvec-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tunnbröd İsveç ekmeği doğru, fakat patates ve peynirli sıcak dürüm kimliği kaynakla doğrulanmadı.",
+      "Step timer toplamı totalMinutes değerinden çok kısa; tarifte patates haşlama hazır kabul edilmiş."
+    ],
+    "corrections": {
+      "description": "Peynirli patatesli tunnbröd dürüm, ince İsveç ekmeğini ezilmiş patates, dereotu ve peynirle dolduran sıcak bir dürümdür."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Tunnbr%C3%B6d",
+      "https://www.swedishfood.com/swedish-food-recipes-biscuits-cakes/520-tunnbroed"
+    ],
+    "confidence": "low",
+    "reason": "Ekmek kimliği doğru; ancak bu dolgu ve yemek formatı için yeterli kaynak bulunmadığından manuel karar gerekir."
+  },
+  {
+    "slug": "peynirli-pazili-tava-boregi-balikesir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1, 2, 3 ve 5 tarif adını tekrar eden scaffold cümleleri içeriyor.",
+      "Pazı ve peynirli tava böreği yapısı doğru, ancak adımlar uygulanabilir değil."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Pazıyı yıkayıp ince doğrayın ve fazla suyunu sıkın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Pazı ve beyaz peyniri karıştırın, tuzluluğu peynire göre ayarlayın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Yufkanın yarısını yağlanmış tavaya serip harcı yayın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Kalan yufkayla üstünü kapatıp kenarları içe kıvırın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Tavada iki yüzü kızarana kadar çevirerek pişirin.", "timerSeconds": 720 }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/borek-tarifleri/peynirli-tava-boregi-tarifi",
+      "https://www.nefisyemektarifleri.com/pazili-borek/"
+    ],
+    "confidence": "high",
+    "reason": "Pazı, peynir ve yufka böreği doğru; mevcut metinler sadece generic olduğu için adım değişimi yeterli."
+  },
+  {
+    "slug": "peynirli-pogaca",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/dereotlu-peynirli-pogaca-tarifi/25072",
+      "https://www.yamanpeynircilik.com.tr/blog/icerik/yaman-peynircilik-ile-mis-gibi-beyaz-peynirli-dereotlu-pogaca-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Mayasız hamur, yoğurt, sıvı yağ, kabartma tozu, beyaz peynir ve fırın süresi poğaça kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "peynirli-quesadilla",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tüm step metinleri generic scaffold ve tarif adı tekrarı içeriyor.",
+      "Quesadilla için tortillanın katlanması, peynirin eritilmesi ve dilimleme adımları eksik."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kırmızı biberi ince şerit, taze soğanı halka doğrayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tortillanın yarısına kaşar, biber ve taze soğanı yayın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Tortillayı yarım ay kapatıp kuru tavaya alın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "İki yüzü kızarıp peynir eriyene kadar orta ateşte pişirin.", "timerSeconds": 480 },
+        { "stepNumber": 5, "instruction": "Kısa dinlendirip üçgen dilimleyin, peynir akmadan servis edin.", "timerSeconds": 120 }
+      ]
+    },
+    "sources": [
+      "https://www.simplyrecipes.com/recipes/quesadilla/",
+      "https://www.seriouseats.com/cheese-quesadilla-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Tortilla, eriyen peynir ve tavada pişirme quesadilla için doğru; eski adımlar tarif dışı generic metindi."
+  },
+  {
+    "slug": "peynirli-semizotu-salatasi-tekirdag-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2, 3, 4 ve 5 tarif adını tekrar ediyor.",
+      "Step 3 tuz kullanıyor ama ingredient listesinde tuz yok.",
+      "Step 5 timerSeconds 600 olmasına rağmen instruction bekletme veya soğutma söylemiyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Semizotunu ayıklayıp yıkayın ve tamamen kurutun.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Domatesleri iri küp doğrayın, beyaz peyniri ufalayın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Zeytinyağı, limon suyu ve tuzu küçük kasede çırpın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Semizotu ve domatesi sosla ezmeden karıştırın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Peyniri en üste serpip salatayı bekletmeden servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.sabriulkerfoundation.org/tr/projelerimiz/yemekte-denge-mutfagi/semizotu-salatasi",
+      "https://www.sofra.com.tr/tarif/salata/peynir-soslu-semizotu-salatasi"
+    ],
+    "confidence": "high",
+    "reason": "Semizotu, domates, beyaz peynir, zeytinyağı ve limon salatası doğru; adım tekrarları ve eksik tuz düzeltilmeli."
+  },
+  {
+    "slug": "peynirli-sikma-mersin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve 2 gereksiz hazırlık scaffold'u içeriyor.",
+      "Step 5 hamur açma, sacda pişirme ve iç koyma işlemlerini tek adımda sıkıştırıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, su ve az tuzla yumuşak hamur yoğurun.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Hamuru bezelere ayırıp üstü kapalı dinlendirin.", "timerSeconds": 1200 },
+        { "stepNumber": 3, "instruction": "Lor ve kıyılmış maydanozu karıştırarak iç harcı hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Bezeleri ince açıp sacda iki yüzünü pişirin.", "timerSeconds": 600 },
+        { "stepNumber": 5, "instruction": "Sıcak ekmeğe tereyağı sürün, peynirli harcı koyup sıkı dürüm sarın.", "timerSeconds": null },
+        { "stepNumber": 6, "instruction": "Domates dilimleriyle sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.e-sehir.com/yemek_tarifleri/sikma-mersin-tarifi.html",
+      "https://www.nefisyemektarifleri.com/sikma-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Mersin sıkma yapısı kaynakla uyumlu; akışı bozan hazırlık scaffold'u ve birleşik işlem adımı ayrıldı."
+  },
+  {
+    "slug": "peynirli-sogan-pidesi-tekirdag-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Peynirli soğan pidesi makul bir fırın işi olsa da Tekirdağ usulü iddiası doğrulanmadı.",
+      "Tüm step metinleri başlığı tekrar eden scaffold yapısında."
+    ],
+    "corrections": {
+      "description": "Peynirli soğan pidesi, ince hamuru yumuşatılmış soğan ve beyaz peynirle fırınlayan tuzlu bir hamur işidir."
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/pide-tarifleri/peynirli-pide",
+      "https://yemek.com/tarif/soganli-pide/"
+    ],
+    "confidence": "low",
+    "reason": "Soğanlı ve peynirli pide kaynaklarla uyumlu; fakat Tekirdağ atfı ve başlıktaki kimlik manuel review ister."
+  },
+  {
+    "slug": "peynirli-soganli-sikma-konya-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Sıkma kaynaklarda Mersin ve Çukurova hattıyla destekleniyor; Konya usulü iddiası doğrulanmadı.",
+      "Teknik uygulanabilir olsa da başlıkta yöresel kimlik sorunu var."
+    ],
+    "corrections": {
+      "description": "Peynirli soğanlı sıkma, ince sac ekmeğini yumuşatılmış soğan ve beyaz peynirle sararak sıcak servis edilen bir hamur işidir."
+    },
+    "sources": [
+      "https://www.e-sehir.com/yemek_tarifleri/sikma-mersin-tarifi.html",
+      "https://www.nefisyemektarifleri.com/sikma-tarifi/"
+    ],
+    "confidence": "low",
+    "reason": "Sıkma tekniği doğru; ancak Konya yöresel iddiası kaynaklarla taşınmadığı için otomatik apply edilmemeli."
+  },
+  {
+    "slug": "peynirli-soganli-tahinli-pide-sakarya-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tahinli pide Sakarya ile bilinir, ancak peynir ve soğanlı tuzlu varyant için yeterli kaynak yok.",
+      "Başlık yöresel iddia ve varyantı birlikte taşıyor."
+    ],
+    "corrections": {
+      "description": "Peynirli soğanlı tahinli pide, ince hamuru soğan, beyaz peynir ve tahinle fırınlayan yoğun aromalı bir pidedir."
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/sakarya/neyenir/tahinli-pide",
+      "https://yemek.com/tarif/tahinli-pide/"
+    ],
+    "confidence": "low",
+    "reason": "Sakarya tahinli pide bağı var; fakat peynirli soğanlı varyant güvenilir kaynakla doğrulanmadı."
+  },
+  {
+    "slug": "peynirli-souffle",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Fransız peynirli souffle için 4 step minimum APERATIF sınırında kalsa da yumurta akı katlama detayı yetersiz.",
+      "Step 2 beşamel sosun koyulaşma zamanını timer olarak taşımıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kalıbı tereyağıyla yağlayıp unlayın, souffle tutunup yükselsin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tereyağı ve unu kokusu çıkana kadar kavurun.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Sütü azar azar ekleyip koyu beşamel hazırlayın.", "timerSeconds": 240 },
+        { "stepNumber": 4, "instruction": "Peynir ve yumurta sarılarını ılık sosa katın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Çırpılmış yumurta aklarını söndürmeden katlayın.", "timerSeconds": null },
+        { "stepNumber": 6, "instruction": "Fırında kabarıp üstü kızarana kadar pişirin ve hemen servis edin.", "timerSeconds": 1200 }
+      ],
+      "cookMinutes": 26,
+      "totalMinutes": 51
+    },
+    "sources": [
+      "https://www.lecreuset.com/cheese-souffle/LCR-2378.html",
+      "https://www.theguardian.com/food/2021/mar/29/20-best-cheese-recipes-claire-ptak-anais-nin-cheese-souffle"
+    ],
+    "confidence": "high",
+    "reason": "Yumurta, beşamel ve gruyere kimliği doğru; souffle tekniği için kalıp ve yumurta akı katlama adımları netleşmeli."
+  },
+  {
+    "slug": "peynirli-yesil-mercimek-borek-yozgat-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Yeşil mercimekli börek kaynaklarla uyumlu, fakat Yozgat peynirli varyantı doğrulanmadı.",
+      "Tüm step metinleri başlığı tekrar eden generic börek scaffold'u içeriyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Yeşil mercimeği haşlayıp süzün, harç sulu kalmasın.", "timerSeconds": 1200 },
+        { "stepNumber": 2, "instruction": "Mercimek soğuyunca beyaz peynirle karıştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Yufkaları tezgaha serip zeytinyağıyla hafifçe nemlendirin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Harcı yufkalara paylaştırıp rulo veya gül şekli verin.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Üzerine yumurta sürüp fırında kızarana kadar pişirin.", "timerSeconds": 1500 },
+        { "stepNumber": 6, "instruction": "Tepside kısa dinlendirip ılık servis edin.", "timerSeconds": 300 }
+      ],
+      "cookMinutes": 50,
+      "totalMinutes": 72
+    },
+    "sources": [
+      "https://yemek.com/tarif/yesil-mercimekli-borek/",
+      "https://ye-mek.net/tarif/yesil-mercimekli-borek"
+    ],
+    "confidence": "medium",
+    "reason": "Mercimekli börek tekniği doğru; Yozgat ve peynirli kimlik kesinleşmediği için major, ama scaffold adımlar temizlenebilir."
+  },
+  {
+    "slug": "peynirli-zeytinli-gozleme-isparta-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Peynirli zeytinli gözleme uygulanabilir, fakat Isparta usulü iddiası kaynakla doğrulanmıyor.",
+      "Step 2 kekik kullanıyor ama ingredient listesinde kekik yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kekik", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.carrefoursa.com/blog/peynirli-gozleme/",
+      "https://www.ustayemektarifleri.com/hamur-isleri/peynirli-gozleme-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Gözleme yapısı doğru ve eksik kekik net; ancak Isparta yöresel etiketi için kaynak desteği yok."
+  },
+  {
+    "slug": "pezik-mucveri-diyarbakir-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Pezik ve pazı ilişkisi makul, fakat Diyarbakır pezik mücveri kimliği güvenilir kaynakla doğrulanmadı.",
+      "Step metinleri sürekli tarif adını tekrar ediyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Pazıyı ince kıyıp fazla suyunu sıkın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Yumurta, un ve kıyılmış taze soğanla koyu harç hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Harcı kısa dinlendirin, un nemi çekip tavada dağılmasın.", "timerSeconds": 300 },
+        { "stepNumber": 4, "instruction": "Yağı tavada ısıtıp harçtan kaşıkla küçük porsiyonlar bırakın.", "timerSeconds": 120 },
+        { "stepNumber": 5, "instruction": "Mücverleri iki yüzü kızarana kadar pişirin.", "timerSeconds": 420 },
+        { "stepNumber": 6, "instruction": "Kağıt havluda süzdürüp ılık servis edin.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/pazi-mucveri/",
+      "https://www.nefisyemektarifleri.com/pazi-mucveri/"
+    ],
+    "confidence": "low",
+    "reason": "Pazı mücveri kaynaklarla destekleniyor; pezik ve Diyarbakır atfı netleşmediği için otomatik düzeltme riskli."
+  },
+  {
+    "slug": "pho-bo",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Klasik pho bo et suyunda soya sosu yerine balık sosu kullanılır.",
+      "30 dakikalık broth kaynatma pho bo için çok kısa; dana kemikli etle uzun kaynatma gerekir."
+    ],
+    "corrections": {
+      "ingredients_remove": [
+        "Soya sosu"
+      ],
+      "ingredients_add": [
+        { "name": "Balık sosu", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Zencefil", "amount": "30", "unit": "gr" },
+        { "name": "Tarçın çubuğu", "amount": "1", "unit": "adet" }
+      ],
+      "allergens_remove": [
+        "SOYA"
+      ],
+      "allergens_add": [
+        "DENIZ_URUNLERI"
+      ],
+      "cookMinutes": 240,
+      "totalMinutes": 270
+    },
+    "sources": [
+      "https://www.mccormick.com/blogs/gourmet-recipes/beef-pho",
+      "https://www.food.com/recipe/authentic-beef-pho-529670"
+    ],
+    "confidence": "high",
+    "reason": "Dana kemik, erişte ve baharat kimliği doğru; fakat soya sosu ve kısa broth süresi klasik pho bo ile uyuşmuyor."
+  },
+  {
+    "slug": "pho-ga",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Klasik pho ga içinde soya sosu yerine balık sosu kullanılır.",
+      "Ingredient listesinde yıldız anason, tarçın ve karanfil gibi temel aromatikler yok."
+    ],
+    "corrections": {
+      "ingredients_remove": [
+        "Soya sosu"
+      ],
+      "ingredients_add": [
+        { "name": "Balık sosu", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Yıldız anason", "amount": "2", "unit": "adet" },
+        { "name": "Tarçın çubuğu", "amount": "1", "unit": "adet" },
+        { "name": "Karanfil", "amount": "3", "unit": "adet" }
+      ],
+      "allergens_remove": [
+        "SOYA"
+      ],
+      "allergens_add": [
+        "DENIZ_URUNLERI"
+      ]
+    },
+    "sources": [
+      "https://www.recipetineats.com/vietnamese-chicken-pho-soup-pho-ga/",
+      "https://www.foodnetwork.com/recipes/pho-ga-vietnamese-chicken-noodle-soup-3644275"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, zencefil, soğan ve pirinç eriştesi doğru; soya sosu yerine balık sosu ve baharat eklenmeli."
+  },
+  {
+    "slug": "picadillo-empanada-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tüm step metinleri generic scaffold ve tarif adı tekrarı içeriyor.",
+      "Küba picadillo dolgusunda biber, sarımsak, domates sosu, zeytin ve kapari gibi temel bileşenler eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Kırmızı biber", "amount": "1", "unit": "adet" },
+        { "name": "Domates sosu", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Yeşil zeytin", "amount": "0.25", "unit": "su bardağı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Soğan, sarımsak ve biberi ince doğrayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Kıymayı sebzelerle kavurup kimyon ve tuz ekleyin.", "timerSeconds": 480 },
+        { "stepNumber": 3, "instruction": "Domates sosu ve zeytini katıp iç harcı koyulaştırın.", "timerSeconds": 420 },
+        { "stepNumber": 4, "instruction": "Soğuyan harcı empanada hamurlarına paylaştırıp kenarları kapatın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Empanadaları kızarıp gevrekleşene kadar pişirin.", "timerSeconds": 900 }
+      ],
+      "cookMinutes": 30,
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://www.cbsnews.com/news/recipe-cuban-style-picadillo-empanadas-from-the-salty-cubana/",
+      "https://letseatcuban.com/cuban-empanadas-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Küba picadillo empanada kimliği doğru; eksik dolgu bileşenleri ve generic adımlar uygulamayı bozuyor."
+  },
+  {
+    "slug": "picanha",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Geleneksel Brezilya picanha çoğunlukla iri tuzla yapılır; karabiber ve zeytinyağı zorunlu değil.",
+      "Fat yüksekliği 1 kg yağ kapaklı dana eti için porsiyon başına düşük kalabilir."
+    ],
+    "corrections": {
+      "ingredients_remove": [
+        "Karabiber",
+        "Zeytinyağı"
+      ],
+      "averageCalories": 560,
+      "protein": 35,
+      "carbs": 0,
+      "fat": 45
+    },
+    "sources": [
+      "https://world.food/recipes/brazilian-picanha",
+      "https://ownthegrill.com/picanha-steak/"
+    ],
+    "confidence": "medium",
+    "reason": "Picanha kimliği güçlü; geleneksel sade tuz yaklaşımı ve yağ kapağına göre macro daha yüksek yağlı olmalı."
+  },
+  {
+    "slug": "picarones",
+    "verdict": "CORRECTION",
+    "issues": [
+      "45 dakikalık mayalanma totalMinutes 45 içinde cook süresiyle birlikte sığmıyor.",
+      "Picarones için anason aroması tipik kaynaklarda yer alıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Anason tohumu", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "prepMinutes": 70,
+      "cookMinutes": 20,
+      "totalMinutes": 90
+    },
+    "sources": [
+      "https://www.amigofoods.com/blogs/peruvian-recipes-recetas-peruanas/picarones",
+      "https://www.greatbritishchefs.com/recipes/picarones-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Balkabağı, tatlı patates, maya ve şurup doğru; mayalanma süresi toplamdan ayrılmalı ve anason eklenmeli."
+  },
+  {
+    "slug": "picarones-kup-tatlisi-peru-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Picarones halka şeklinde kızartılıp chancaca şurubuyla servis edilen bir tatlıdır; kup formu kaynakla desteklenmiyor.",
+      "Ingredient listesinde tatlı patates ve maya yok, bu nedenle picarones kimliği eksik.",
+      "totalMinutes 30 iken step timer toplamı çok daha uzun."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tatlı patates püresi", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Instant maya", "amount": "0.5", "unit": "paket" }
+      ],
+      "totalMinutes": 75
+    },
+    "sources": [
+      "https://www.amigofoods.com/blogs/peruvian-recipes-recetas-peruanas/picarones",
+      "https://en.wikipedia.org/wiki/Picarones"
+    ],
+    "confidence": "high",
+    "reason": "Kup formu klasik picarones değil; eksik tatlı patates, maya ve süre sorunu kimliği yapısal hale getiriyor."
+  },
+  {
+    "slug": "pide-ekmegi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tarif vegan tag taşıyor ama step 4 yumurtalı yoğurt sürmeyi söylüyor.",
+      "Ingredient listesinde tuz yok, step 1 tuz kullanıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Yoğurt", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Yumurta sarısı", "amount": "1", "unit": "adet" }
+      ],
+      "tags_remove": [
+        "vegan"
+      ],
+      "allergens_add": [
+        "SUT",
+        "YUMURTA"
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/ramazan-pidesi/",
+      "https://www.nefisyemektarifleri.com/ramazan-pidesi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Pide ekmeği tekniği doğru; üst karışım hayvansal olduğu için vegan tag ve alerjenler düzeltilmeli."
+  },
+  {
+    "slug": "pierogi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 tuz kullanıyor ama ingredient listesinde tuz yok.",
+      "Tereyağı miktarı ve 4 porsiyonluk enerji hesabı yüksek ama macro toleransı makul."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.polonist.com/recipe/pierogi-ruskie-potato-cheese/",
+      "https://www.polishyourkitchen.com/potato-and-cheese-pierogi-pierogi-ruskie/"
+    ],
+    "confidence": "high",
+    "reason": "Patates, lor peyniri, soğan, haşlama ve tereyağında çevirme klasik pierogi hattıyla uyumlu; yalnız tuz eksik."
+  },
+  {
+    "slug": "pierogi-ruskie",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 tuz kullanıyor ama ingredient listesinde tuz yok.",
+      "Klasik ruskie dolgusundaki patates, twaróg benzeri lor ve soğan yapısı doğru."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.polonist.com/recipe/pierogi-ruskie-potato-cheese/",
+      "https://www.everydayhealthyrecipes.com/polish-cheese-potato-dumplings-pierogi-ruskie/"
+    ],
+    "confidence": "high",
+    "reason": "Pierogi ruskie kimliği doğru; hamurda kullanılan tuz ingredient listesine eklenirse uygulama tutarlı olur."
+  },
+  {
+    "slug": "pimientos-de-padron",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/padron-peppers",
+      "https://www.seriouseats.com/spanish-style-blistered-padron-peppers-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Padron biberi, zeytinyağı, iri tuz ve kısa tavada kabarcıklı kızartma yapısı kaynaklarla birebir uyumlu."
+  },
+  {
+    "slug": "pimms-cup-ingiliz-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step metinleri Pimm's Cup ifadesini gereksiz tekrar ediyor.",
+      "Klasik servis garnitüründe nane, limon veya çilek gibi aromatikler beklenir; mevcut liste çok sade ama kabul edilebilir."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bardağı taze buzla doldurun.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Pimm's likörünü buzun üstüne dökün.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Limonatayı ekleyip uzun kaşıkla nazikçe karıştırın.", "timerSeconds": 5 },
+        { "stepNumber": 4, "instruction": "Salatalık dilimlerini bardağa yerleştirin.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Soğuk ve gazı kaçmadan hemen servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.pbs.org/food/recipes/pimms-cup",
+      "https://www.epicurious.com/recipes/food/views/pimms-cup"
+    ],
+    "confidence": "high",
+    "reason": "Pimm's, limonata, salatalık ve buz İngiliz yaz kokteyli için doğru; yalnız tekrar eden bar scaffold'u temizlenmeli."
+  },
+  {
+    "slug": "pimms-cup-punch-ingiliz-bahce-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ingredient name Pimm's likor ASCII fold içeriyor.",
+      "Step metinleri tarif adını tekrar eden scaffold yapısında."
+    ],
+    "corrections": {
+      "ingredients_remove": [
+        "Pimm's likor"
+      ],
+      "ingredients_add": [
+        { "name": "Pimm's likörü", "amount": "1.5", "unit": "su bardağı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Salatalık, çilek ve portakalı ince dilimleyin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Sürahiye meyveleri ve bol buzu alın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Pimm's likörünü ekleyin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Gazozu son anda döküp nazikçe karıştırın.", "timerSeconds": 5 }
+      ]
+    },
+    "sources": [
+      "https://www.pbs.org/food/recipes/pimms-cup",
+      "https://www.epicurious.com/recipes/food/views/pimms-cup"
+    ],
+    "confidence": "high",
+    "reason": "Punch yapısı Pimm's, gazlı içecek ve meyveyle doğru; ASCII fold ve scaffold adımlar düzeltilmeli."
+  },
+  {
+    "slug": "pina-colada",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Cuisine kodu in görünüyor, Piña Colada Porto Riko kökenli kokteyldir ve mevcut cuisine şeması bunu doğrudan karşılamıyor.",
+      "Step 5 gazlı yapı diyor, Piña Colada gazlı bir kokteyl değildir."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Beyaz rom, ananas suyu, Hindistan cevizi kreması ve lime suyunu blender'a alın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Kırık buzu ekleyin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Karışımı pürüzsüz ve kremsi olana kadar çekin.", "timerSeconds": 20 },
+        { "stepNumber": 4, "instruction": "Soğuk bardağa dökün.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Ananas dilimiyle süsleyip bekletmeden servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.rumcapital.pr.gov/all-recipes/pina-coladas",
+      "https://en.wikipedia.org/wiki/Pi%C3%B1a_colada"
+    ],
+    "confidence": "high",
+    "reason": "Malzemeler klasik Piña Colada ile uyumlu; cuisine ve gazlı yapı cümlesi yapısal hata olduğundan major tutuldu."
+  },
+  {
+    "slug": "pineapple-rum-fizz-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ICECEK type için 3 step kabul edilebilir ama kokteyl 4 step minimumuna yakın; alkollü içecek daha net akış ister.",
+      "Pineapple fizz kaynaklarında lime veya şeker şurubu dengesi bulunur, mevcut tarif yalnız ananas ve soda ile düz kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Lime suyu", "amount": "15", "unit": "ml" },
+        { "name": "Şeker şurubu", "amount": "10", "unit": "ml" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Rom, ananas suyu, lime suyu ve şeker şurubunu buzla çalkalayın.", "timerSeconds": 10 },
+        { "stepNumber": 2, "instruction": "Karışımı taze buz dolu bardağa süzün.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Sodayı ekleyip nazikçe karıştırın.", "timerSeconds": 5 },
+        { "stepNumber": 4, "instruction": "Ananas dilimiyle soğuk servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.thatcocktail.com/cocktails/pineapple-fizz/",
+      "https://www.drinklab.org/pineapple-fizz/"
+    ],
+    "confidence": "medium",
+    "reason": "Rum, ananas ve soda hattı uygun; lime ve şurup eklenince fizz dengesi ve kokteyl akışı daha doğru olur."
+  },
+  {
+    "slug": "pipirrana-endulus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step metinleri Pipirrana adını tekrar eden scaffold cümleleri içeriyor.",
+      "Step 3 limon suyu ve tuz kullanıyor, ingredient listesinde şeri sirkesi var ama tuz yok.",
+      "Step 2, step 1 ile aynı hazırlık işini tekrar ediyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Domates, salatalık ve yeşil biberi küçük küp doğrayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Sebzelerin fazla suyunu süzdürün, salata sosu incelmesin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Zeytinyağı, şeri sirkesi ve tuzu çırpın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Sebzeleri sosla ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Salatayı soğuk tabakta bekletmeden servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.theguardian.com/food/2023/aug/26/lemon-oregano-lamb-chops-pipirrana-tomato-salad-recipe-jose-pizarro",
+      "https://www.spanishrecipesbynuriaalbert.com/pipirrana-andalusian-salad/"
+    ],
+    "confidence": "high",
+    "reason": "Domates, salatalık, biber, zeytinyağı ve sirke pipirrana ile uyumlu; scaffold ve sos malzemesi çelişkisi giderilmeli."
+  }
+]

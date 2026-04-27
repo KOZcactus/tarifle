@@ -1,0 +1,1019 @@
+[
+  {
+    "slug": "prinsesstarta",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Klasik prinsesstarta katlarında vanilyalı pastacı kreması bulunur, ingredient listesi bunu açık yazmıyor.",
+      "Step 4'te 40 dakika soğutma var ama totalMinutes prep + cook toplamında kalmış."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Vanilyalı pastacı kreması", "amount": "1", "unit": "su bardağı" }
+      ],
+      "totalMinutes": 105
+    },
+    "sources": [
+      "https://hejsweden.com/en/swedish-princess-cake-recipe-prinsesstarta/",
+      "https://www.epicurious.com/recipes/food/views/prinsesstarta-princess-cake"
+    ],
+    "confidence": "high",
+    "reason": "Yeşil badem ezmesi, pandispanya, reçel ve krema hattı doğru; pastacı kreması ve 40 dakikalık bekleme total süreye eklenmeli."
+  },
+  {
+    "slug": "profiterol",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 pastacı kreması pişiriyor ama kremayı bağlayacak un veya nişasta ingredient listesinde yok.",
+      "Tereyağı ve çikolata nedeniyle yağ değeri makul, alerjenler doğru."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Un", "amount": "2", "unit": "yemek kaşığı", "group": "Krema ve kaplama için" },
+        { "name": "Vanilya", "amount": "1", "unit": "çay kaşığı", "group": "Krema ve kaplama için" }
+      ]
+    },
+    "sources": [
+      "https://www.pbs.org/food/recipes/profiteroles-with-chocolate-sauce-and-ice-cream",
+      "https://www.micheldumas.com/en/chocolate-profiteroles/"
+    ],
+    "confidence": "high",
+    "reason": "Şu hamuru, yumurta ve fırın süresi klasik profiterolle uyumlu; pastacı kreması için bağlayıcı malzeme eksik kalmış."
+  },
+  {
+    "slug": "ptichye-moloko",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Ptichye moloko köpüksü katman için jelatin veya benzeri bir sabitleyici ister, mevcut listede yok.",
+      "Steps içinde 2 saat 40 dakika bekleme var ama totalMinutes 35 dakika görünüyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Toz jelatin", "amount": "10", "unit": "gr" }
+      ],
+      "totalMinutes": 195
+    },
+    "sources": [
+      "https://natashaskitchen.com/2011/12/09/ptichye-moloko-cake-recipe-birds-milk-cake/",
+      "https://www.alyonascooking.com/2018/01/birds-milk-cake-recipe-ptichye-moloko/"
+    ],
+    "confidence": "high",
+    "reason": "Tatlı kimliği doğru yönde, ancak jelatin eksikliği ve bekleme süresinin yok sayılması yapısal hata oluşturuyor."
+  },
+  {
+    "slug": "pudin-de-pan-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1'de 15 dakika bekleme ve Step 5'te 20 dakika dinlendirme var, totalMinutes bunları kapsamıyor.",
+      "Bayat ekmek, süt, yumurta, şeker ve tarçın kompozisyonu pudin de pan ile uyumlu."
+    ],
+    "corrections": {
+      "totalMinutes": 77
+    },
+    "sources": [
+      "https://asassyspoon.com/cuban-bread-pudding/",
+      "https://www.cook2eatwell.com/pudin-de-pan/"
+    ],
+    "confidence": "medium",
+    "reason": "Küba ekmek pudingi hattı doğru; pasif sütle bekleme ve kalıpta dinlendirme süresi toplam zamana eklenmeli."
+  },
+  {
+    "slug": "puebla-mole-poblano",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.mexicoinmykitchen.com/mole-poblano-recipe/",
+      "https://www.rickbayless.com/recipe/classic-red-mole/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, ancho, guajillo, susam, yer fıstığı, domates, tortilla ve çikolata dengesi mole poblano kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "puebla-tavuklu-tinga-tostada",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 soğanı tavada pişiriyor ama ingredient listesinde yağ yok.",
+      "Tinga tostada için tavuk, domates, chipotle, tostada, fasulye ve krema hattı doğru."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.wpr.org/food/chicken-tinga-tostadas-recipe",
+      "https://www.chilipeppermadness.com/recipes/tostadas-de-tinga/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk tinga tostada kimliği sağlam; soğanı çevirmek ve sosu dengelemek için yağ ile tuz ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "pulled-pork-sandvic",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Tarif adı pulled pork, fakat ingredient listesinde dana döş var; bu ancak açıkça dana uyarlaması olarak sunulabilir.",
+      "Steps tamamen scaffold dilinde, 4 saatlik düşük ısıda pişirme tekniğini anlatmıyor."
+    ],
+    "corrections": {
+      "description": "Amerikan barbekü uyarlamasında uzun pişen dana döş, soslu ve lahana salatalı sandviçe dönüşür.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Dana döşü tuz ve karabiberle ovup fırın kabına alın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Barbekü sosun yarısını etin üstüne sürüp kabı sıkıca kapatın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Eti 150°C fırında liflerine ayrılacak kadar yumuşayana dek pişirin.", "timerSeconds": 14400 },
+        { "stepNumber": 4, "instruction": "Eti iki çatalla didikleyip kalan sosla karıştırın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Ekmekleri ısıtıp içine et ve coleslaw paylaştırın.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://www.greenpan.us/blogs/recipes/slow-cooker-pulled-pork-sandwiches-with-homemade-coleslaw",
+      "https://www.realsimple.com/food-recipes/recipe-collections-favorites/slow-cooker-pulled-pork"
+    ],
+    "confidence": "high",
+    "reason": "Başlık ve içerik arasında domuz eti yerine dana döş kullanımı var; kullanıcıya bunun uyarlama olduğu açık söylenmeli."
+  },
+  {
+    "slug": "pumpkin-scone-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Avustralya pumpkin scone tariflerinde şeker ve çoğunlukla yumurta bulunur, mevcut listede ikisi de yok.",
+      "Steps scaffold tekrarları içeriyor ve hamur tekniğini yeterince anlatmıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yumurta", "amount": "1", "unit": "adet" },
+        { "name": "Toz şeker", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["YUMURTA"],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, kabartma tozu ve şekeri geniş kapta karıştırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Soğuk tereyağını una parmak uçlarınızla yedirin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Balkabağı püresi, süt ve yumurtayı ekleyip yumuşak hamur yapın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Hamuru 2 cm kalınlığında açıp keskin bıçakla porsiyonlayın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Scone parçalarını 190°C fırında kabarıp kızarana kadar pişirin.", "timerSeconds": 1080 }
+      ]
+    },
+    "sources": [
+      "https://www.taste.com.au/recipes/pumpkin-scones/7d7a0e9e-3df0-4b69-a28d-55f791be7e05",
+      "https://www.womensweeklyfood.com.au/recipe/baking/pumpkin-scones-17278/"
+    ],
+    "confidence": "medium",
+    "reason": "Balkabaklı scone kimliği doğru; yumurta, şeker ve temiz hamur adımlarıyla tarif daha uygulanabilir olur."
+  },
+  {
+    "slug": "pumpkin-soup-australian",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.taste.com.au/recipes/pumpkin-soup/e54ab2b5-7d19-4e4b-b383-781292dc4bfb",
+      "https://www.recipetineats.com/classic-pumpkin-soup/"
+    ],
+    "confidence": "high",
+    "reason": "Balkabağı, soğan, sebze suyu, krema ve 30 dakikalık pişirme hattı Avustralya pumpkin soup kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "pupusa",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Pupusa El Salvador yemeği; mevcut cuisine cn Çin kodu açıkça yanlış.",
+      "Tarifle cuisine listesinde El Salvador için ayrı kod yok, bu yüzden taxonomy gap manuel ele alınmalı."
+    ],
+    "corrections": {
+      "description": "Pupusa, El Salvador mutfağında mısır hamurunun peynir ve fasulye dolguyla tavada piştiği kalın bir gözlemedir."
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/pupusas",
+      "https://www.ipm.org/show/eartheats/2019-11-04/pupusas"
+    ],
+    "confidence": "high",
+    "reason": "Malzeme ve teknik pupusaya uyuyor; asıl hata cuisine kodu, El Salvador için mevcut taxonomy genişletmesi gerekiyor."
+  },
+  {
+    "slug": "pytt-i-panna-iskandinav-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 tuz, karabiber ve maydanozla tamamlıyor ama bu malzemeler listede yok.",
+      "Patates, et ve soğanla yapılan tava yemeği kimliği doğru."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" },
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" }
+      ]
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Pyttipanna",
+      "https://www.dvo.com/recipe_pages/deluxe/Pytt_i_Panna_%28Swedish_Hash%29.php"
+    ],
+    "confidence": "high",
+    "reason": "Pytt i panna patates, soğan ve doğranmış et hattıyla doğru; step'te geçen tamamlayıcılar ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "pyttipanna-med-agg",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Patates, et ve soğanı kızartmak için yağ veya tereyağı listede yok.",
+      "Yumurtalı servis ve temel kompozisyon kaynaklarla uyumlu."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": ["SUT"]
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Pyttipanna",
+      "https://www.dvo.com/recipe_pages/deluxe/Pytt_i_Panna_%28Swedish_Hash%29.php"
+    ],
+    "confidence": "high",
+    "reason": "Yumurtalı pyttipanna kimliği doğru; tavada kızartma için tereyağı ve tuz eksikliği giderilmeli."
+  },
+  {
+    "slug": "pyzy-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Polonya pyzy için patates nişastası veya benzer bağlayıcı yaygın, mevcut listede sadece un var.",
+      "Step 6 tereyağlı servis öneriyor ama tereyağı ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Patates nişastası", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tereyağı", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["SUT"]
+    },
+    "sources": [
+      "https://www.polonist.com/pyzy-potato-dumplings-kluski/",
+      "https://www.bayareapolishgroup.com/en/food/pyzy/"
+    ],
+    "confidence": "high",
+    "reason": "Patates topu yapısı doğru; nişasta ve servis tereyağı olmadan adımlar ile ingredient listesi tam örtüşmüyor."
+  },
+  {
+    "slug": "queijadinha",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 şeker diyor ama ingredient listesinde ayrı şeker yok.",
+      "Queijadinha için hindistan cevizi, yoğunlaştırılmış süt, yumurta ve peynir hattı doğru."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Toz şeker", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Queijadinha",
+      "https://www.oliviascuisine.com/queijadinha-brazilian-coconut-tart/"
+    ],
+    "confidence": "medium",
+    "reason": "Brezilya hindistan cevizli peynirli tatlı kimliği doğru; step'te geçen şeker ve klasik yağ dokusu listede görünmeli."
+  },
+  {
+    "slug": "quiche-lorraine",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Klasik quiche Lorraine bacon veya lardonla yapılır; mevcut tarif dana pastırmalı uyarlama olduğunu açık söylemiyor.",
+      "Step 4 tuz ve karabiber kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "description": "Lorraine bölgesinin tereyağlı tart hamuru, yumurtalı krema ve dana pastırmalı uyarlamayla fırınlanır.",
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.theguardian.com/lifeandstyle/2018/jun/20/felicity-cloake-masterclass-quiche-lorraine-recipe",
+      "https://www.lifeslittlesweets.com/quiche-lorraine-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Tart, yumurta ve krema doğru; et seçimi klasik bacon yerine dana pastırması olduğu için açıklama netleşmeli."
+  },
+  {
+    "slug": "quindim",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5'te 20 dakika soğutma var ama totalMinutes prep + cook toplamında kalmış.",
+      "Yumurta sarısı, şeker, hindistan cevizi ve tereyağı kompozisyonu quindim için doğru."
+    ],
+    "corrections": {
+      "totalMinutes": 75
+    },
+    "sources": [
+      "https://www.amigofoods.com/blogs/brazilian-recipes-receitas-brasileiras/quindim-recipe",
+      "https://www.foodways.recipes/dishes/brazilian/quindim"
+    ],
+    "confidence": "high",
+    "reason": "Quindim kimliği ve benmari tekniği doğru; kalıpta soğutma toplam süreye dahil edilmeli."
+  },
+  {
+    "slug": "quinoa-chupe-corbasi-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 soğan ve baharat diyor ama ingredient listesinde soğan yok.",
+      "Peru chupe de quinoa kaynaklarında ají amarillo veya aromatik taban yaygın, mevcut tarif çok çıplak kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Ají amarillo ezmesi", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://food52.com/recipes/80683-milk-street-s-peruvian-quinoa-and-corn-chowder-chupe-de-quinoa",
+      "https://www.laylita.com/recipes/quinoa-and-cheese-soup/"
+    ],
+    "confidence": "medium",
+    "reason": "Quinoa, mısır, patates ve süt çorba hattı makul; soğan ve ají tabanı eklenmeden step ile liste örtüşmüyor."
+  },
+  {
+    "slug": "quinoa-lime-salatasi-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps Peru Quinoa Lime adını tekrarlayan scaffold dili içeriyor.",
+      "Step 3 tuz kullanıyor ama ingredient listesinde tuz yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Quinoayı yıkayıp 15 dakika haşlayın ve fazla suyunu süzün.", "timerSeconds": 900 },
+        { "stepNumber": 2, "instruction": "Quinoayı tepsiye yayıp 5 dakika ılındırın, taneler yapışmasın.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Zeytinyağı, misket limonu suyu ve tuzu küçük kapta çırpın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Salatalık, kişniş ve quinoayı sosla ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Salatayı oda sıcaklığında veya soğuk servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.healthyfamilies.tennessee.edu/recipes/peruvian-quinoa-salad/",
+      "https://www.eatperu.com/peruvian-avocado-quinoa-salad/"
+    ],
+    "confidence": "high",
+    "reason": "Quinoa, lime ve kişniş salata kurgusu doğru; scaffold adımlar temizlenmeli ve tuz listeye eklenmeli."
+  },
+  {
+    "slug": "radika-borani-ayvalik-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps tarif adını tekrar eden scaffold dili taşıyor.",
+      "Step 6'da 10 dakika bekleme timer'ı var, oysa borani son anda servis edilmeli."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Radikayı bol suda yıkayıp sert saplarını ayıklayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Radikayı tuzlu kaynar suda yumuşayana kadar haşlayın.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Otları süzüp avucunuzla hafifçe sıkın, yoğurdu sulandırmasın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Yoğurt, ezilmiş sarımsak ve tuzu pürüzsüz çırpın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Radikayı yoğurtla karıştırıp üstüne zeytinyağı gezdirin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/radika-salatasi/",
+      "https://www.yemek.com/tarif/borani/"
+    ],
+    "confidence": "medium",
+    "reason": "Haşlanmış ot ve sarımsaklı yoğurt borani tekniği doğru; scaffold ve gereksiz bekleme adımı temizlenmeli."
+  },
+  {
+    "slug": "radika-salatasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps radika adını tekrar eden scaffold dili içeriyor.",
+      "Step 3 tuzdan söz ediyor ama ingredient listesinde tuz yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Radikayı yıkayıp sert saplarını ayıklayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Radikayı kaynar suda yumuşayana kadar haşlayın.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Süzüp ılınınca fazla suyunu sıkın ve iri doğrayın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Zeytinyağı, limon suyu, ezilmiş sarımsak ve tuzu çırpın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Radikayı sosla harmanlayıp oda sıcaklığında servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/radika-salatasi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/radika-salatasi"
+    ],
+    "confidence": "high",
+    "reason": "Ege usulü haşlama, zeytinyağı ve limon çizgisi doğru; adımlar daha doğal ve ingredient ile uyumlu olmalı."
+  },
+  {
+    "slug": "raggmunk-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1'de hazırlık için 10 dakika timer verilmiş, bu pişirme veya gerçek bekleme değil.",
+      "Steps raggmunk adını tekrarlayan scaffold dili taşıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, süt ve yumurtayı pürüzsüz bir hamur olana kadar çırpın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Patatesleri rendeleyip fazla suyunu hafifçe sıkın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Rende patatesi hamura ekleyip tuz ve karabiberle karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Tereyağını tavada eritip harcı ince parçalar halinde yayın.", "timerSeconds": 120 },
+        { "stepNumber": 5, "instruction": "Pankekleri iki yüzü kızarana kadar parti parti pişirin.", "timerSeconds": 600 }
+      ]
+    },
+    "sources": [
+      "https://www.swedishfood.com/swedish-food-recipes-side-dishes/215-potato-pancakes",
+      "https://www.food.com/recipe/swedish-potato-pancakes-with-pork-raggmunk-med-flask-502789"
+    ],
+    "confidence": "high",
+    "reason": "Patates, un, süt, yumurta ve tereyağı raggmunk için doğru; scaffold adımlar gerçek tekniğe çevrilmeli."
+  },
+  {
+    "slug": "raita-sos",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 ve Step 5 iki kez dinlendirme yapıyor, totalMinutes 10 dakika kalmış.",
+      "Raita için yoğurt, salatalık, nane ve kimyon doğru; tuz eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Salatalığı rendeleyip suyunu sıkın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Yoğurdu tuz ve kimyonla pürüzsüz çırpın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Salatalık ve naneyi yoğurda karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Sosu 10 dakika buzdolabında dinlendirin ve soğuk servis edin.", "timerSeconds": 600 }
+      ]
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/cucumber-mint-raita",
+      "https://veggiefestchicago.org/recipe/cucumber-and-mint-raita/"
+    ],
+    "confidence": "high",
+    "reason": "Raita kompozisyonu doğru; çift bekleme ve tuz eksikliği düzeltilirse süre ile adımlar uyumlu olur."
+  },
+  {
+    "slug": "rajma",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 sarımsak hazırlıyor ama ingredient listesinde sarımsak yok.",
+      "Step 2 soğanı yağda kavuruyor ama yağ ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/rajma",
+      "https://www.indianhealthyrecipes.com/rajma-recipe-rajma-masala-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Haşlanmış barbunya, domates ve garam masala hattı rajma için makul; sarımsak, yağ ve tuz listede eksik."
+  },
+  {
+    "slug": "rakoczi-turos",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Rákóczi túrós kaynaklarında kayısı reçeli ve beze üst katı ayırt edici, mevcut listede kayısı reçeli yok.",
+      "Step 6'daki 10 dakika dinlendirme totalMinutes içinde görünmüyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kayısı reçeli", "amount": "0.5", "unit": "su bardağı" }
+      ],
+      "totalMinutes": 75
+    },
+    "sources": [
+      "https://www.bakeacrosseurope.com/2025/09/05/hungarian-apricot-cheesecake-rakoczi-turos/",
+      "https://www.thedanubian.com/cake/rakoczi-turos"
+    ],
+    "confidence": "high",
+    "reason": "Lorlu taban ve beze doğru; kayısı reçeli olmadan klasik Rákóczi túrós kimliği eksik kalıyor."
+  },
+  {
+    "slug": "rakott-karfiol-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 karabiber kullanıyor ama ingredient listesinde karabiber yok.",
+      "Etli ve pirinçli klasikler olsa da vejetaryen karnabahar, yoğurt, yumurta ve peynir varyasyonu makul."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.hungariantidbits.com/hungarian-layered-cauliflower-rakott-karfiol/",
+      "https://www.food.com/recipe/rakott-karfiol-layered-cauliflower-152370"
+    ],
+    "confidence": "medium",
+    "reason": "Rakott karfiol için karnabahar, sütlü sos ve fırınlama doğru; sadece step'te geçen karabiber listede yok."
+  },
+  {
+    "slug": "rakott-krumpli",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 ekşi kremayı tuzla çırpıyor ama tuz ingredient listesinde yok.",
+      "Patates, yumurta, sucuk ve ekşi krema katmanları Macar rakott krumpli ile uyumlu."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/layered-potatoes-rakott-krumpli/",
+      "https://hungarianpaprika.net/layered-potatoes/"
+    ],
+    "confidence": "high",
+    "reason": "Rakott krumpli kimliği doğru; step'te kullanılan tuz ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "ramos-gin-fizz",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ramos Gin Fizz için limon suyu, misket limonu suyu, şeker şurubu ve portakal çiçeği suyu eksik.",
+      "Mevcut dört malzeme içeceğin klasik tat dengesini kurmaya yetmiyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "15", "unit": "ml" },
+        { "name": "Misket limonu suyu", "amount": "15", "unit": "ml" },
+        { "name": "Şeker şurubu", "amount": "20", "unit": "ml" },
+        { "name": "Portakal çiçeği suyu", "amount": "3", "unit": "damla" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Cin, krema, yumurta akı, limon suyu, misket limonu suyu, şurup ve portakal çiçeği suyunu shakera alın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Buzsuz 20 saniye çalkalayın, yumurta akı köpük tutsun.", "timerSeconds": 20 },
+        { "stepNumber": 3, "instruction": "Buz ekleyip 20 saniye daha çalkalayın.", "timerSeconds": 20 },
+        { "stepNumber": 4, "instruction": "Karışımı Collins bardağına süzün ve soda ile yavaşça tamamlayın.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.goodhousekeeping.com/food-recipes/a28579576/ramos-gin-fizz-recipe/",
+      "https://www.cocktailogy.com/ramos-gin-fizz/"
+    ],
+    "confidence": "high",
+    "reason": "Krema, yumurta akı ve soda doğru; klasik Ramos Gin Fizz için narenciye, şurup ve portakal çiçeği suyu şart."
+  },
+  {
+    "slug": "rarakor-soslu-patates-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Title soslu diyor ve Step 5 sosla servis edin diyor, ancak ingredient listesinde sos yok.",
+      "Rårakor aslında rendelenmiş patates, tuz ve yağ ile sade patates keki olarak destekleniyor."
+    ],
+    "corrections": {
+      "description": "Rårakor, rendelenmiş patatesi tavada kızartarak dışı çıtır, içi yumuşak bir İsveç patates keki çıkarır.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patatesleri iri rendeleyip suyunu temiz bezle sıkın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Patatesi tuzla karıştırın, nişastası parçaları tutsun.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Zeytinyağını tavada orta ateşte ısıtın.", "timerSeconds": 90 },
+        { "stepNumber": 4, "instruction": "Patatesi ince diskler halinde yayıp iki yüzünü kızartın.", "timerSeconds": 480 },
+        { "stepNumber": 5, "instruction": "Çıtır yüzeyi yumuşamadan sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.swedishfood.com/swedish-food-recipes-side-dishes/215-potato-pancakes",
+      "https://www.scandikitchen.co.uk/rakor-swedish-potato-pancakes/"
+    ],
+    "confidence": "medium",
+    "reason": "Rårakor tekniği doğru; sos iddiası ingredient ile desteklenmediği için açıklama ve servis adımı sadeleşmeli."
+  },
+  {
+    "slug": "rassolnik-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 soğanı orta ateşte çeviriyor ama ingredient listesinde yağ yok.",
+      "Arpa ve turşulu ekşi çorba hattı rassolnik için doğru."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Turşu suyu", "amount": "0.25", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.olgasflavorfactory.com/recipes/soups/rassolnik/",
+      "https://www.rbth.com/russian-kitchen/329683-rassolnik-russian-soup-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Arpa, soğan ve salatalık turşusu kimliği doğru; soğanı çevirmek için yağ ve ekşilik için turşu suyu listede olmalı."
+  },
+  {
+    "slug": "ratatouille",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 sarımsak ve kekik kullanıyor ama ingredient listesinde yok.",
+      "Step 6'da 8 dakika dinlenme var, totalMinutes bunu tam yansıtmıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Kekik", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 80
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/ratatouille",
+      "https://www.seriouseats.com/ratatouille-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Patlıcan, kabak, biber, domates ve zeytinyağı doğru; sarımsak, kekik ve dinlenme süresi eksikliği düzeltilmeli."
+  },
+  {
+    "slug": "ratatouille-orzo-fransiz-provans-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 biber ve soğanı doğratıyor ama ingredient listesinde yok.",
+      "Step 3 kekik, Step 4 sıcak su kullanıyor ama listede ikisi de yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kırmızı biber", "amount": "1", "unit": "adet" },
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Kekik", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Sıcak su", "amount": "2", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/ratatouille",
+      "https://www.themediterraneandish.com/orzo-ratatouille/"
+    ],
+    "confidence": "medium",
+    "reason": "Ratatouille sebzelerini orzo ile birleştirme makul; step'te geçen dört temel malzeme listede eksik."
+  },
+  {
+    "slug": "raventli-bal-soda-ingiltere-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/rhubarb-cordial",
+      "https://www.theguardian.com/food/2026/mar/04/how-to-turn-limp-rhubarb-into-tasty-jam-recipe"
+    ],
+    "confidence": "medium",
+    "reason": "Raventi kısa pişirip süzerek soda ile tamamlama ferah içecek mantığına uyuyor; süre, kalori ve alerjenler makul."
+  },
+  {
+    "slug": "raventli-krem-kup-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3'te 15 dakika soğutma var ama totalMinutes 20 dakika kalmış.",
+      "Ravent, şeker ve krema hattı İngiliz rhubarb fool tarzıyla uyumlu."
+    ],
+    "corrections": {
+      "totalMinutes": 35
+    },
+    "sources": [
+      "https://www.doddingtonhall.com/recipe/rhubarb-fool/",
+      "https://www.greatbritishchefs.com/recipes/rhubarb-fool-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Raventli krem kup kimliği doğru; pişmiş raventin kremaya katılmadan önce soğuma süresi totalMinutes'a eklenmeli."
+  },
+  {
+    "slug": "raventli-vanilyali-trifle-kup-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2'de 10 dakika soğutma ve Step 5'te 25 dakika soğutma var, totalMinutes 20 dakika kalmış.",
+      "Ravent, vanilyalı krema ve kek katmanları trifle için uygun."
+    ],
+    "corrections": {
+      "totalMinutes": 55
+    },
+    "sources": [
+      "https://www.greatbritishchefs.com/recipes/rhubarb-orange-custard-trifle-recipe",
+      "https://www.theguardian.com/food/2022/jun/03/ravneet-gill-big-fat-summer-trifle-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Trifle katmanları doğru; iki ayrı soğutma adımı toplam süreye yansıtılmalı."
+  },
+  {
+    "slug": "rebujito-granita-ispanya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Rebujito fino veya manzanilla şeri ile yapılır, ingredient listesinde beyaz şarap yazıyor.",
+      "Granita süresi totalMinutes ile uyumlu, asıl sorun içki türü."
+    ],
+    "corrections": {
+      "ingredients_remove": ["Beyaz şarap"],
+      "ingredients_add": [
+        { "name": "Kuru şeri", "amount": "1", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.sherry.wine/enjoying-sherry/sherry-cocktails/rebujito",
+      "https://www.cocktail-maestro.com/cocktails/rebujito"
+    ],
+    "confidence": "high",
+    "reason": "Granita fikri frozen rebujito varyasyonuna uyuyor; beyaz şarap yerine kuru şeri kullanılmalı."
+  },
+  {
+    "slug": "rebujito-ispanya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sherry.wine/enjoying-sherry/sherry-cocktails/rebujito",
+      "https://www.cocktail-maestro.com/cocktails/rebujito"
+    ],
+    "confidence": "high",
+    "reason": "Kuru şeri, limonata, nane, buz ve çok kısa hazırlık süresi klasik İspanyol rebujito ile uyumlu."
+  },
+  {
+    "slug": "rebujito-limon-fizz-ispanyol-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Rebujito limon fizz için şeri tabanı gerekir, ingredient listesinde beyaz şarap var.",
+      "Limon ve soda varyasyonu makul, ancak içki türü yanlış yönlendiriyor."
+    ],
+    "corrections": {
+      "ingredients_remove": ["Beyaz şarap"],
+      "ingredients_add": [
+        { "name": "Kuru şeri", "amount": "0.5", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.sherry.wine/enjoying-sherry/sherry-cocktails/rebujito",
+      "https://www.grouchy-bartender.com/cocktails/rebujito"
+    ],
+    "confidence": "high",
+    "reason": "Rebujito ailesi şeri tabanlıdır; beyaz şarap yerine kuru şeri yazılmalı."
+  },
+  {
+    "slug": "red-bean-soup-cin-tatli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Kuru kırmızı fasulye için 45 dakika pişirme ıslatma yoksa düşük kalır.",
+      "Çin tatlı kırmızı fasulye çorbasında kuru mandalina veya portakal kabuğu kullanımı doğru."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kırmızı fasulyeyi bol suda en az 6 saat ıslatın.", "timerSeconds": 21600 },
+        { "stepNumber": 2, "instruction": "Fasulyeyi süzüp su ve portakal kabuğuyla tencereye alın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Fasulyeleri yumuşayana kadar kısık ateşte pişirin.", "timerSeconds": 4500 },
+        { "stepNumber": 4, "instruction": "Tanelerin bir kısmını kaşıkla ezip çorbayı koyulaştırın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Şekeri ekleyip eriyene kadar 5 dakika daha kaynatın.", "timerSeconds": 300 }
+      ],
+      "cookMinutes": 80,
+      "totalMinutes": 450
+    },
+    "sources": [
+      "https://www.tcmworld.org/recipes/azuki-red-bean-soup-with-lotus-seed-and-tangerine-peel/",
+      "https://thewoksoflife.com/red-bean-soup/"
+    ],
+    "confidence": "high",
+    "reason": "Tatlı kırmızı fasulye çorbası doğru; kuru bakliyat için ıslatma ve daha uzun pişirme süresi gerekir."
+  },
+  {
+    "slug": "refried-beans",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 tuzunu ayarlayın diyor ama ingredient listesinde tuz yok.",
+      "Haşlanmış fasulye, soğan, yağ ve kimyonla ezme tekniği refried beans için makul."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.mccormick.com/blogs/el-guapo-recipes/refried-beans",
+      "https://tastemicocina.com/recipes/refried-beans/"
+    ],
+    "confidence": "high",
+    "reason": "Vegan yağlı refried beans uyarlaması doğru; step'te geçen tuz listede olmalı."
+  },
+  {
+    "slug": "revani",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.revani.gen.tr/revani.html",
+      "https://yemek.com/tarif/revani/"
+    ],
+    "confidence": "high",
+    "reason": "İrmik, un, yumurta, yoğurt, kabartma tozu ve soğuk şerbet hattı klasik revaniyle uyumlu; süreler ve alerjenler makul."
+  },
+  {
+    "slug": "revithia-yunan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 defne ve tuz ekliyor ama ingredient listesinde yok.",
+      "Haşlanmış nohut kullanıldığı için 30 dakikalık ikinci pişirme makul."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Defne yaprağı", "amount": "1", "unit": "adet" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.olivetomato.com/greek-chickpea-stew/",
+      "https://www.mygreekdish.com/recipe/greek-chickpea-soup-recipe-revithia/"
+    ],
+    "confidence": "high",
+    "reason": "Nohut, zeytinyağı ve limon hattı revithia için doğru; defne ve tuz ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "revithokeftedes",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 yumurta diyor ama tarif vegan tag'li ve ingredient listesinde yumurta yok.",
+      "Step 4 yağda pişiriyor ama listede yağ yok; soğan da klasik harçta eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" },
+        { "name": "Zeytinyağı", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Haşlanmış nohudu süzüp fazla suyunu elinizle sıkın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Nohudu soğan, sarımsak, maydanoz, un ve tuzla koyu harç yapın.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Harcı dinlendirin, un nemi çeksin ve köfteler dağılmasın.", "timerSeconds": 300 },
+        { "stepNumber": 4, "instruction": "Zeytinyağını tavada ısıtıp harçtan küçük köfteler bırakın.", "timerSeconds": 120 },
+        { "stepNumber": 5, "instruction": "Köfteleri iki yüzü kızarana kadar pişirin.", "timerSeconds": 420 },
+        { "stepNumber": 6, "instruction": "Kağıt havluya alıp ılık servis edin.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://www.mygreekdish.com/recipe/chickpea-fritters-revithokeftedes/",
+      "https://www.greekboston.com/food/vegetables/revithokeftedes-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Nohut köftesi kimliği doğru; vegan tag korunacaksa yumurta adımı çıkarılmalı, soğan ve yağ eklenmeli."
+  },
+  {
+    "slug": "reyhan-serbeti",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3'te 20 dakika demleme var ama totalMinutes 15 dakika kalmış.",
+      "Süzüp buzdolabında soğutma adımı timer'sız ve toplam süre belirsiz."
+    ],
+    "corrections": {
+      "totalMinutes": 35,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Reyhanı yıkayıp saplarıyla birlikte sürahiye alın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Şeker, limon suyu ve karanfili ekleyin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Sıcak suyu üstüne döküp renk verene kadar demleyin.", "timerSeconds": 1200 },
+        { "stepNumber": 4, "instruction": "Şerbeti süzüp buzdolabında soğutun ve buzla servis edin.", "timerSeconds": 900 }
+      ]
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/reyhan-serbeti-tarifi-t-5934",
+      "https://ye-mek.net/story/limonlu-reyhan-serbeti"
+    ],
+    "confidence": "high",
+    "reason": "Reyhan, limon, şeker ve sıcak su çizgisi doğru; demleme ve soğutma toplam süreye yansıtılmalı."
+  },
+  {
+    "slug": "reyhanli-bostana-salatasi-diyarbakir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 sumak, limon suyu ve zeytinyağı diyor ama ingredient listesinde yok.",
+      "Steps tarif adını tekrar eden scaffold dili içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sumak", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Domates, salatalık ve mor soğanı küçük küpler halinde doğrayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Sebzelerin fazla suyunu süzdürün, salata tabakta sulanmasın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Nar ekşisi, limon suyu, zeytinyağı, sumak ve tuzu çırpın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Sebzeleri sosla ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Reyhanı son anda ekleyip salatayı bekletmeden servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/sanliurfa/neyenir/bostana",
+      "https://www.nefisyemektarifleri.com/bostana-salatasi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Bostana için ince doğranmış sebze ve ekşi sos doğru; step'te geçen sos malzemeleri listede eksik."
+  },
+  {
+    "slug": "reyhanli-bulgur-koftesi-diyarbakir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 tuz kullanıyor ama ingredient listesinde tuz yok.",
+      "Reyhanlı bulgur köftesi için bulgur, un, salça ve reyhan hattı destekleniyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.gzt.com/lokma/buharda-reyhanli-bulgur-koftesi-33467",
+      "https://sofratarifi.com/2024/10/23/buharda-reyhanli-bulgur-koftesi/"
+    ],
+    "confidence": "medium",
+    "reason": "Bulgur, un ve reyhanlı köfte akışı makul; tuz step'te var ama ingredient listesinde eksik."
+  },
+  {
+    "slug": "reyhanli-bulgur-patlican-dolmasi-isparta-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Isparta'ya özgü reyhanlı bulgur patlıcan dolması iddiası iki güçlü kaynakla desteklenemedi.",
+      "Step 2 doğranmış soğan kullanıyor ama ingredient listesinde soğan yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kuru soğan", "amount": "1", "unit": "adet" }
+      ]
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/reyhanli-kabak-dolmasi-tarifi-t-4887",
+      "https://www.nefisyemektarifleri.com/etsiz-kuru-patlican-dolmasi/"
+    ],
+    "confidence": "low",
+    "reason": "Dolma tekniği makul, fakat Isparta ve reyhanlı patlıcan iddiası zayıf; manuel yöresel kaynak kontrolü gerekir."
+  },
+  {
+    "slug": "reyhanli-bulgur-salatasi-batman-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Batman'a özgü reyhanlı bulgur salatası iddiası güvenilir iki bağımsız kaynakla desteklenemedi.",
+      "Steps scaffold dili taşıyor ve Step 3 tuz diyor ama ingredient listesinde tuz yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bulguru sıcak suyla 5 dakika ıslatıp fazla suyunu süzün.", "timerSeconds": 300 },
+        { "stepNumber": 2, "instruction": "Domatesi küçük doğrayın, reyhanı ince kıyın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Zeytinyağı, limon suyu ve tuzu küçük kapta çırpın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Bulgur, domates ve reyhanı sosla ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Salatayı 10 dakika dinlendirip oda sıcaklığında servis edin.", "timerSeconds": 600 }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kisir-tarifi/",
+      "https://www.gzt.com/lokma/buharda-reyhanli-bulgur-koftesi-33467"
+    ],
+    "confidence": "low",
+    "reason": "Bulgur salatası yapısı uygulanabilir; Batman yöresel iddiası ve scaffold adımlar manuel review ister."
+  },
+  {
+    "slug": "reyhanli-domates-asi-diyarbakir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 sıcak su ekliyor ama ingredient listesinde su yok.",
+      "Bulgur, domates ve reyhanla kaşıklık yemek hattı makul."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "2", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://lezzetler.com/tarif-174524",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/reyhanli-sulu-kofte/18456"
+    ],
+    "confidence": "medium",
+    "reason": "Domatesli tahıl yemeği ve reyhan kullanımı bölge mutfağıyla uyumlu; pişirme suyu ve tuz listeye eklenmeli."
+  },
+  {
+    "slug": "reyhanli-domates-pilavi-diyarbakir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1'de 15 dakika süzgeçte bekleme ve Step 6'da 10 dakika dinlenme var, totalMinutes 30 dakika kalmış.",
+      "Diyarbakır domatesli pilav kaynakları domates, pirinç ve tereyağı hattını destekliyor."
+    ],
+    "corrections": {
+      "prepMinutes": 25,
+      "totalMinutes": 55
+    },
+    "sources": [
+      "https://lezzetler.com/tarif-174524",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/domatesli-pirinc-pilavi-tarifi/8812"
+    ],
+    "confidence": "medium",
+    "reason": "Domatesli pilav kimliği doğru; pirinç süzme ve demlenme süreleri toplam zamana eklenmeli."
+  },
+  {
+    "slug": "reyhanli-limon-serbeti-kilis-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2'de 10 dakika dinlendirme var ama totalMinutes 8 dakika kalmış.",
+      "Reyhan, limon, şeker ve su kompozisyonu reyhan şerbeti kaynaklarıyla uyumlu."
+    ],
+    "corrections": {
+      "totalMinutes": 18,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Limon suyu, şeker ve mor reyhanı sürahide karıştırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Suyu ekleyip karışımı reyhan rengini verene kadar dinlendirin.", "timerSeconds": 600 },
+        { "stepNumber": 3, "instruction": "Şerbeti süzüp buzla soğuk servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://ye-mek.net/story/limonlu-reyhan-serbeti",
+      "https://www.sahrapsoysal.com/reyhan-serbeti-tarifi-t-5934"
+    ],
+    "confidence": "medium",
+    "reason": "Limonlu reyhan şerbeti doğru; dinlendirme süresi totalMinutes'a eklenmeli ve adımlar sadeleşmeli."
+  }
+]

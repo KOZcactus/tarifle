@@ -5,7 +5,10 @@ const dsn = process.env.NEXT_PUBLIC_SENTRY_DSN;
 if (dsn) {
   Sentry.init({
     dsn,
-    tracesSampleRate: process.env.NODE_ENV === "production" ? 0.1 : 1.0,
+    // Dev environment'ta tracesSampleRate 0 (oturum 25 GPT audit):
+    // localhost'ta performance issue spam aliniyor; prod'da 0.1 sample
+    // gercek N+1 sinyali korunur, dev'de sifir alarm.
+    tracesSampleRate: process.env.NODE_ENV === "production" ? 0.1 : 0,
     // Sentry Replay (oturum 13 aktivasyon): hata aninda kullanici session
     // replay'i kaydet. Onceki konfigurasyonda sample rate set edilmis ama
     // integration eklenmemis idi (Sentry v8+ artik manuel integration

@@ -14,7 +14,13 @@ const dsn = process.env.SENTRY_DSN ?? process.env.NEXT_PUBLIC_SENTRY_DSN;
 if (dsn) {
   Sentry.init({
     dsn,
-    tracesSampleRate: process.env.NODE_ENV === "production" ? 0.1 : 1.0,
+    // Dev environment'ta tracesSampleRate 0 (oturum 25 GPT audit):
+    // localhost'ta N+1 Query + Slow DB Query gibi performance issue
+    // alarmlari spam ediyordu (mutfak/tunus, tarifler/aperatifler,
+    // diyet/vegan vs.). Local DB fresh data + cache temiz; prod
+    // gercegi yansitmiyor. Prod'da 0.1 sample ile gercek N+1 sinyali
+    // korunur, dev'de sifir trace = sifir alarm.
+    tracesSampleRate: process.env.NODE_ENV === "production" ? 0.1 : 0,
     // Session 11 noise tune: Prisma/Auth.js/Next.js internal "expected"
     // error'ları dashboard'u dolduruyor. Aşağıdakiler bilinen benign
     // pattern'ler, gerçek outage sinyalini bulandırmasın.
@@ -59,16 +65,28 @@ if (dsn) {
     // monitor dashboard'da izleniyor; buradan duplicate alarm lazım
     // değil.
     beforeSendTransaction(event) {
+      // Dev environment double-guard: tracesSampleRate 0 ile transaction
+      // hic uretilmemeli, ama runtime'da kacak olursa filter.
+      if (process.env.NODE_ENV !== "production") {
+        return null;
+      }
+      // Prod'da Prisma N+1 issue'lari belirli landing sayfalarinda
+      // bilincli/cache'li (oturum 17 + oturum 25 genisletme): tarif
+      // detay + 3 landing route. Sample %5 ile temsil yeterli.
+      const N1_ROUTES = new Set([
+        "/tarif/[slug]",
+        "/tarifler/[kategori]",
+        "/mutfak/[cuisine]",
+        "/diyet/[diet]",
+      ]);
       const spans = event.spans ?? [];
       const hasN1Issue = spans.some(
         (s) =>
           s.op === "db.query" &&
           s.description?.includes("prisma") &&
-          event.transaction === "/tarif/[slug]",
+          N1_ROUTES.has(event.transaction ?? ""),
       );
       if (hasN1Issue && event.contexts?.trace?.op === "http.server") {
-        // Performance issue sadece sample'da görünsün, her trace
-        // Sentry'ye gönderilmesin.
         if (Math.random() > 0.05) return null;
       }
       return event;

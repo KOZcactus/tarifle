@@ -5,7 +5,6 @@ import { getTranslations } from "next-intl/server";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
 import { FeaturedShelf } from "@/components/home/FeaturedShelf";
-import { RecipeOfTheDay } from "@/components/home/RecipeOfTheDay";
 import { SeasonalBanner } from "@/components/home/SeasonalBanner";
 import { TimeAwareBanner } from "@/components/home/TimeAwareBanner";
 import { ExpiringSoonBanner } from "@/components/home/ExpiringSoonBanner";
@@ -29,9 +28,7 @@ import type { RecipeCard as RecipeCardType } from "@/types/recipe";
 import { getCuisineStats } from "@/lib/queries/cuisine-stats";
 import { CUISINE_CODES } from "@/lib/cuisines";
 import { getSearchSuggestions } from "@/lib/queries/search-suggestions";
-import { getRandomRecipe } from "@/lib/queries/random-recipe";
 import { getDietBadgesIfApplicable } from "@/lib/queries/diet-score";
-import { RandomRecipeBanner } from "@/components/discovery/RandomRecipeBanner";
 import { CountUp } from "@/components/ui/CountUp";
 import { ProfileIncompleteBanner } from "@/components/home/ProfileIncompleteBanner";
 import { DietProfilePromptBanner } from "@/components/home/DietProfilePromptBanner";
@@ -92,7 +89,6 @@ export default async function HomePage() {
     { total: recipeCount },
     cuisineStats,
     searchSuggestions,
-    randomRecipe,
     personalized,
     suggestedCooks,
     viewerFollowingIds,
@@ -107,7 +103,6 @@ export default async function HomePage() {
     getRecipes({ limit: 0 }),
     getCuisineStats(),
     getSearchSuggestions(),
-    getRandomRecipe(),
     userId
       ? getPersonalizedRecipes({ userId, limit: 8 })
       : Promise.resolve({ recipes: [], hasPrefs: false }),
@@ -406,10 +401,11 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* Recipe of the day, Ome Cikan grid'inin kuratoryel devami gibi */}
-      <RecipeOfTheDay />
-
-      {/* AI Assistant Banner, ozellesmis oneri istiyorsan tarzi bir CTA, Gunun Tarifi'nin altinda */}
+      {/* AI Assistant Banner, ozellesmis oneri istiyorsan tarzi bir CTA.
+          Oturum 25 yeniden duzenleme: RecipeOfTheDay + RandomRecipeBanner
+          /kesfet sayfasinin en ustune tasindi (discovery odakli sayfa).
+          Ana sayfa odagi: AI Asistan + Menu Planlayici + Hizli Dene
+          discovery + retention akisi. */}
       <section className="pt-4">
         <Link
           href="/ai-asistan"
@@ -435,11 +431,41 @@ export default async function HomePage() {
         </Link>
       </section>
 
+      {/* Menü Planlayıcı banner (oturum 25 GPT P2 audit). AI Asistan
+          banner'ın hemen altına; "premium/retention özelliği daha
+          görünür olmalı" GPT önerisi. Login user'a /menu-planlayici,
+          anonymous'a /kayit yönlendirir. */}
+      <section className="pt-3">
+        <Link
+          href={userId ? "/menu-planlayici" : "/kayit"}
+          className="group flex flex-col items-start gap-4 rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-transparent p-6 transition-all hover:border-emerald-500/40 hover:shadow-md sm:flex-row sm:items-center sm:gap-6"
+        >
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-emerald-500/15 text-3xl">
+            📅
+          </div>
+          <div className="flex-1">
+            <p className="text-xs font-medium uppercase tracking-wide text-emerald-700 dark:text-emerald-400">
+              {t("menuPlannerBannerEyebrow")}
+            </p>
+            <h3 className="mt-0.5 font-heading text-xl font-bold text-text sm:text-2xl">
+              {t("menuPlannerBannerTitle")}
+            </h3>
+            <p className="mt-1 text-sm text-text-muted">
+              {t("menuPlannerBannerDescription")}
+            </p>
+          </div>
+          <span className="ml-auto rounded-lg border border-emerald-500/30 bg-bg-card px-4 py-2 text-sm font-medium text-emerald-700 transition-colors group-hover:bg-emerald-500 group-hover:text-white dark:text-emerald-400">
+            {t("menuPlannerBannerCta")}
+          </span>
+        </Link>
+      </section>
+
       {/* AI Asistan mini demo grid (oturum 25 GPT P2 audit). 3 ornek
           malzeme set; click → /ai-asistan?m=X,Y,Z URL param ile form
           hydrate olur, kullanici 1-tikla 3 tarif onerisini gorur.
-          GPT analizinde "ana sayfaya mini demo koy + rozet" onerisinin
-          karsiligi. AiAssistantForm 'm' URL param'ini destekliyor. */}
+          Oturum 25 yeniden duzenleme: Menu Planlayici banner'inin
+          ALTINA tasindi (kullanici geri bildirimi: "ekran akisi daha
+          temiz", once buyuk CTA'lar sonra hizli aksiyon kartlari). */}
       <section className="pt-3">
         <div className="rounded-2xl border border-accent-blue/15 bg-bg-card/60 p-5 sm:p-6">
           <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
@@ -491,45 +517,6 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Menü Planlayıcı banner (oturum 25 GPT P2 audit). AI Asistan
-          banner'ın hemen altına; "premium/retention özelliği daha
-          görünür olmalı" GPT önerisi. Login user'a /menu-planlayici,
-          anonymous'a /kayit yönlendirir (kayit sayfası benefits'inde
-          "Bu haftanın menüsünü AI ile planla" zaten görünür). */}
-      <section className="pt-3">
-        <Link
-          href={userId ? "/menu-planlayici" : "/kayit"}
-          className="group flex flex-col items-start gap-4 rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-transparent p-6 transition-all hover:border-emerald-500/40 hover:shadow-md sm:flex-row sm:items-center sm:gap-6"
-        >
-          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-emerald-500/15 text-3xl">
-            📅
-          </div>
-          <div className="flex-1">
-            <p className="text-xs font-medium uppercase tracking-wide text-emerald-700 dark:text-emerald-400">
-              {t("menuPlannerBannerEyebrow")}
-            </p>
-            <h3 className="mt-0.5 font-heading text-xl font-bold text-text sm:text-2xl">
-              {t("menuPlannerBannerTitle")}
-            </h3>
-            <p className="mt-1 text-sm text-text-muted">
-              {t("menuPlannerBannerDescription")}
-            </p>
-          </div>
-          <span className="ml-auto rounded-lg border border-emerald-500/30 bg-bg-card px-4 py-2 text-sm font-medium text-emerald-700 transition-colors group-hover:bg-emerald-500 group-hover:text-white dark:text-emerald-400">
-            {t("menuPlannerBannerCta")}
-          </span>
-        </Link>
-      </section>
-
-      {/* Random recipe shuffle (oturum 21 yer degisiklik): kullanici geri
-          bildirim sonrasi anasayfa ust kismindan AI Asistan altina tasindi,
-          kesfet kumesinin kalbinde duruyor. */}
-      {randomRecipe && (
-        <section className="py-4">
-          <RandomRecipeBanner initial={randomRecipe} />
-        </section>
-      )}
 
       {/* Önerilen Aşçılar, topluluk loop açısı. Boşsa section kendini
           gizler (SuggestedCooksSection içinde). Anonymous kullanıcı için

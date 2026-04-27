@@ -3,6 +3,8 @@ import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 import { RecipeCard } from "@/components/recipe/RecipeCard";
 import { SearchBar } from "@/components/search/SearchBar";
+import { RecipeOfTheDay } from "@/components/home/RecipeOfTheDay";
+import { RandomRecipeBanner } from "@/components/discovery/RandomRecipeBanner";
 import {
   getFeaturedRecipes,
   getQuickRecipes,
@@ -12,6 +14,7 @@ import {
 import { getCategories } from "@/lib/queries/category";
 import { getCuisineStats } from "@/lib/queries/cuisine-stats";
 import { getSearchSuggestions } from "@/lib/queries/search-suggestions";
+import { getRandomRecipe } from "@/lib/queries/random-recipe";
 import { auth } from "@/lib/auth";
 import { getDietBadgesIfApplicable } from "@/lib/queries/diet-score";
 import type { Metadata } from "next";
@@ -44,6 +47,7 @@ export default async function KesfetPage() {
     allCategories,
     cuisineStats,
     searchSuggestions,
+    randomRecipe,
     personalized,
     t,
   ] = await Promise.all([
@@ -53,6 +57,7 @@ export default async function KesfetPage() {
     getCategories(),
     getCuisineStats(),
     getSearchSuggestions(),
+    getRandomRecipe(),
     userId
       ? getPersonalizedRecipes({ userId, limit: 8 })
       : Promise.resolve({ recipes: [], hasPrefs: false }),
@@ -100,6 +105,16 @@ export default async function KesfetPage() {
           ))}
         </div>
       </div>
+
+      {/* Discovery section: Recipe of the day + Random recipe shuffle.
+          Oturum 25 yeniden duzenleme: bu iki kart ana sayfadan kaldirilip
+          /kesfet sayfasinin en ustune tasindi (kullanici geri bildirimi:
+          "ana sayfa AI Asistan + Menu Planlayici odakli olsun, discovery
+          /kesfet'te konsantre olsun"). */}
+      <section className="mt-6 grid gap-4 lg:grid-cols-[2fr,1fr]">
+        <RecipeOfTheDay />
+        {randomRecipe && <RandomRecipeBanner initial={randomRecipe} />}
+      </section>
 
       {/* Sana özel, giriş yapmış + tercihleri dolu user'a featured'den önce
           render edilir. Tercih boşsa bu section hiç çıkmaz. */}

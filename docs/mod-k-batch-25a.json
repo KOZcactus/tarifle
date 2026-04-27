@@ -363,10 +363,11 @@
       ],
       "steps_replace": [
         { "stepNumber": 1, "instruction": "Un, su, 1 yemek kaşığı sıvı yağ ve tuzu yoğurup pürüzsüz bir hamur hazırlayın.", "timerSeconds": null },
-        { "stepNumber": 2, "instruction": "Soğanı az yağda 3 dakika yumuşatın, kıymayı ekleyip 6 dakika kavurun.", "timerSeconds": 540 },
-        { "stepNumber": 3, "instruction": "Domates, tuz ve karabiberi ekleyip harcı 5 dakika suyunu çekene kadar pişirin.", "timerSeconds": 300 },
-        { "stepNumber": 4, "instruction": "Hamuru ince açın, harcı yerleştirip kenarlarını sıkıca kapatın.", "timerSeconds": null },
-        { "stepNumber": 5, "instruction": "Pastelleri kızgın yağda 3 dakika kızartın, kabarıp altın renk alınca süzdürün.", "timerSeconds": 180 }
+        { "stepNumber": 2, "instruction": "Hamuru 30 dakika kapalı dinlendirin, ince açılacak kadar gevşesin.", "timerSeconds": 1800 },
+        { "stepNumber": 3, "instruction": "Soğanı az yağda 3 dakika yumuşatın, kıymayı ekleyip 6 dakika kavurun.", "timerSeconds": 540 },
+        { "stepNumber": 4, "instruction": "Domates, tuz ve karabiberi ekleyip harcı 5 dakika suyunu çekene kadar pişirin.", "timerSeconds": 300 },
+        { "stepNumber": 5, "instruction": "Hamuru ince açın, harcı yerleştirip kenarlarını sıkıca kapatın.", "timerSeconds": null },
+        { "stepNumber": 6, "instruction": "Pastelleri kızgın yağda 3 dakika kızartın, kabarıp altın renk alınca süzdürün.", "timerSeconds": 180 }
       ]
     },
     "sources": [
@@ -483,7 +484,7 @@
         { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
       ],
       "steps_replace": [
-        { "stepNumber": 1, "instruction": "Kuru domatesleri ince doğrayın, pastırmaları iri parçalar halinde ayırın.", "timerSeconds": null },
+        { "stepNumber": 1, "instruction": "Kuru domatesleri 5 dakika sıcak suda yumuşatın, pastırmaları iri parçalar halinde ayırın.", "timerSeconds": 300 },
         { "stepNumber": 2, "instruction": "Tereyağını tavada eritin ve kuru domatesi 2 dakika yumuşatın.", "timerSeconds": 120 },
         { "stepNumber": 3, "instruction": "Pastırmayı ekleyip 1 dakika ısıtın, çemen yanmasın.", "timerSeconds": 60 },
         { "stepNumber": 4, "instruction": "Yumurtaları tavaya kırın ve 4 dakika beyazları donana kadar pişirin.", "timerSeconds": 240 },
@@ -637,7 +638,7 @@
       "Kızartma ve kıymalı harç adımlarında timerSeconds eksik."
     ],
     "corrections": {
-      "description": "Kızarmış patateslerin kıymalı domates sosuyla katmanlanıp fırında piştiği doyurucu bir ev yemeği.",
+      "description": "Kızarmış patateslerin kıymalı domates sosuyla fırında piştiği doyurucu ev yemeği.",
       "steps_replace": [
         { "stepNumber": 1, "instruction": "Patatesleri halka doğrayıp kızgın yağda 8 dakika hafif kızartın.", "timerSeconds": 480 },
         { "stepNumber": 2, "instruction": "Soğan ve kıymayı 8 dakika kavurun, tuz, karabiber ve kimyonu ekleyin.", "timerSeconds": 480 },
@@ -662,9 +663,10 @@
     ],
     "corrections": {
       "description": "Rendelenmiş patatesin küçük porsiyon rösti olarak tavada kızarması, sıcak servis edilen gevrek lokmalar verir.",
+      "totalMinutes": 27,
       "steps_replace": [
-        { "stepNumber": 1, "instruction": "Patatesi rendeleyip temiz bezle suyunu sıkın.", "timerSeconds": null },
-        { "stepNumber": 2, "instruction": "Patatesi un ve tuzla karıştırın, karışımı küçük disklere ayırın.", "timerSeconds": null },
+        { "stepNumber": 1, "instruction": "Patatesi rendeleyip temiz bezle suyunu sıkın, 10 dakika süzülmeye bırakın.", "timerSeconds": 600 },
+        { "stepNumber": 2, "instruction": "Patatesi un ve tuzla 2 dakika karıştırın, karışımı küçük disklere ayırın.", "timerSeconds": 120 },
         { "stepNumber": 3, "instruction": "Tereyağını tavada orta ateşte 90 saniye eritin.", "timerSeconds": 90 },
         { "stepNumber": 4, "instruction": "Diskleri tavada toplam 10 dakika iki yüzü kızarana kadar pişirin.", "timerSeconds": 600 },
         { "stepNumber": 5, "instruction": "Ekşi kremayı yanında verip sıcak servis edin.", "timerSeconds": null }
@@ -1093,8 +1095,8 @@
       "cookMinutes": 25,
       "totalMinutes": 40,
       "steps_replace": [
-        { "stepNumber": 1, "instruction": "Patlıcanları közleyip kabuklarını soyun.", "timerSeconds": 1500 },
-        { "stepNumber": 2, "instruction": "Köz patlıcanı iri kıyın ve fazla suyunu süzdürün.", "timerSeconds": null },
+        { "stepNumber": 1, "instruction": "Patlıcanları 25 dakika közleyip kabuklarını soyun.", "timerSeconds": 1500 },
+        { "stepNumber": 2, "instruction": "Köz patlıcanı iri kıyın ve fazla suyunu 10 dakika süzdürün.", "timerSeconds": 600 },
         { "stepNumber": 3, "instruction": "Zeytinyağı, limon suyu, ezilmiş sarımsak ve tuzu karıştırın.", "timerSeconds": null },
         { "stepNumber": 4, "instruction": "Patlıcanı sosla 1 dakika ezmeden harmanlayın.", "timerSeconds": 60 },
         { "stepNumber": 5, "instruction": "Mezeyi serin servis edin.", "timerSeconds": null }
@@ -1150,6 +1152,9 @@
       "Step 5 gevrek kenar diyor, omlet dokusuyla uyumsuz."
     ],
     "corrections": {
+      "prepMinutes": 2,
+      "cookMinutes": 6,
+      "totalMinutes": 8,
       "steps_replace": [
         { "stepNumber": 1, "instruction": "Köz patlıcanı ince doğrayın, yumurta ve sütü ayrı kasede çırpın.", "timerSeconds": null },
         { "stepNumber": 2, "instruction": "Köz patlıcanı tereyağında 2 dakika çevirip fazla suyunu uçurun.", "timerSeconds": 120 },

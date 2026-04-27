@@ -41,35 +41,71 @@ Sıradaki batch 3 (5-7 sayfa): salatalar (269), baklagil-yemekleri (113),
 makarna-pilav (244), sebze-yemekleri (187), atistirmaliklar (69),
 fransiz, japon. Multi-session iş, oturum 27-30+ tamamlanır.
 
-### Mod K v2 (Tarif Kontrol, oturum 26 itibariyle 20/71 sub-batch done = %28.2)
+### Mod K v2 (Tarif Kontrol, oturum 27 itibariyle 36/71 sub-batch done = %50.7)
 
-**Oturum 26 progress**: Batch 7a + 7b + 8a + 8b + 9a + 9b + 10a + 10b
-apply (commit `1c1dccf` + `f86789f`), 155 ek correction prod (84 + 71).
-PASS oranı 7a-9a %64 + 9b-10b %50, ortalama %57 (oturum 25 %48'in
-üstünde). Plus 7 manuel mini-rev (3 oturum 25 BLOCKED + 4 oturum 26
-MAJOR, commit `6d40c38`): 2 PASS + 5 CORRECTION. Toplam ~480 Mod K
-v2 correction prod.
+**Oturum 27 progress**: Batch 11a + 11b + 12a + 12b + 13a + 13b + 14a +
+14b + 15a + 15b + 16a + 16b + 17a + 17b + 18a + 18b apply (commit
+`49f4545`), 283 yeni prod correction (CORRECTION + 6 onayli MAJOR).
+PASS ortalama %44 (range 22-70), 0 BLOCKED, 800/800 format clean.
+Toplam Mod K v2 prod ~480 → ~763 correction. Nutrition anomaly
+1181 → 1210 (+29, Kural 10 etkisi).
 
-**Codex 9 yeni batch teslim, working tree'de hazır** (oturum 26
-sırasında geldi, henüz verify+apply yapılmadı):
-- `docs/mod-k-batch-11a.json` + 11b + 12a + 12b + 13a + 13b + 14a +
-  14b + 15a (9 batch x 50 entry = 450 entry tahmin)
-- Sıradaki oturum verify+apply pipeline (~30-45 dk standart akış)
-- Mod K v2 20 → 29/71 sub-batch (%40+) progress hedef
+**Codex 4 yeni batch teslim, apply pending** (commit `96f47bf`):
+- `docs/mod-k-batch-19a.json` + 19b + 20a + 20b (4 batch × 50 = 200 entry)
+- Sıradaki oturum verify+apply pipeline (~25-35 dk/batch disiplinli)
+- Mod K v2 36 → 40/71 sub-batch (%56) progress hedef
 
-**4 yeni MAJOR_ISSUE manuel review listesi** (9b/10a/10b'den):
+**Mini-rev kuyruğu 30 (4 önceki + 26 yeni 11a-18b):**
 
-- `erzsebet-sour-macar-usulu`: Erzsebet adı + Macar köken kaynaksız.
-  Title revize ya da cuisine değişikliği gerek.
-- `feijao-tropeiro-brezilya-usulu`: Klasik Feijão tropeiro etli (bacon
-  veya sosis), mevcut tarif vegetarian. Identity mismatch, kıyma/
-  bacon ekle veya title revize.
-- `feslegenli-tavuklu-pirinc-tayland-usulu`: Tayland fesleğenli
-  tavuk soslu sote olmali (sarımsak + acı biber + soya sosu + balık
-  sosu); mevcut sade pilav. Step + ingredient rewrite.
-- `findikli-keskek-toplari-ordu-usulu`: Scaffold steps + buğday
-  süresi eksik (aşurelik buğday 25 dk yerine uzun veya ön ıslama).
-  Step rewrite.
+Önceki 4 (oturum 26 sonu):
+- `erzsebet-sour-macar-usulu`: Erzsebet adı + Macar köken kaynaksız
+- `feijao-tropeiro-brezilya-usulu`: Klasik etli (bacon/sosis), mevcut vegetarian
+- `feslegenli-tavuklu-pirinc-tayland-usulu`: Tayland soslu sote olmalı, mevcut sade pilav
+- `findikli-keskek-toplari-ordu-usulu`: Scaffold steps + buğday süresi eksik
+
+Yeni 26 (oturum 27, 11a-18b MAJOR identity/structural mismatch):
+
+11a-12a:
+- `fistikli-domates-corbasi-edirne-bag-usulu`: Edirne yöresel iddia kaynaksız
+- `gul-sirkeli-tavuk-isparta-usulu`: Isparta yöresel iddia kaynaksız
+
+13b (5):
+- `hatay-zahterli-nohut-durumu`: Hatay atfı kaynaksız (klasik Gaziantep)
+- `hatay-zahterli-tepsi-koftesi`: Klasik katmanlı bulgur, mevcut basit kıymalı
+- `helise-malatya-usulu`: Helise Bitlis klasiği, Malatya kaynaksız + Kural 9 süre
+- `helle-tatlisi-tokat-usulu`: Tokat helle ÇORBA, mevcut tatlı (type mismatch)
+- `hurmali-ekmek-tatlisi-kirklareli-usulu`: Kırklareli kaynaksız + Kural 9
+
+14a-14b (4):
+- `icli-tava-sinop-usulu`: Sinop içli tava katmanlı pirinçli, mevcut sade hamsi tava
+- `jeyuk-bokkeum`: Kore klasik DOMUZ, mevcut dana eti
+- `jokai-bableves`: Macar klasik füme et + ekşi krema, mevcut sade fasulye
+- `kabak-bastisi-gaziantep-usulu`: Gaziantep kabaklama etli ana yemek, mevcut tatlı tip
+
+16a-16b (6):
+- `kastamonu-eksili-siyez-pilavi`: Yoğurtlu/otlu klasik, mevcut kızılcık ekşili sade
+- `katikli-ekmek-kilis-usulu`: Kilis kaynaksız (klasik Hatay/Antakya)
+- `kayisava-trabzon-usulu`: Trabzon kayısava doğrulanamadı, mevcut pekmezli helva
+- `kayisili-irmik-pilavi-macaristan-usulu`: Macar tejbegríz tatlı sütlü, mevcut suyla pilav
+- `kayseri-kursun-asi`: Bulgurlu küçük köfte (klasik), mevcut unlu hamur top
+- `kayseri-yag-mantisi`: Yağ mantısı kızartılır, mevcut haşlama
+
+17a (7, en yoğun):
+- `kelecos-erzurum-usulu`: Kurut temelli klasik, mevcut yoğurtlu ekmek
+- `kelecos-van-usulu`: Van mercimekli lavaş kurgusu doğrulanamadı
+- `kerebic-kup-mersin-usulu`: Çöven köpüğü + içli kurabiye klasiği, mevcut irmik muhallebisi
+- `keskekli-istavrit-tava-sinop-liman-usulu`: Kaynak yok + buğday 5dk yumuşatma yanlış
+- `kestaneli-hamsi-pilavi-zonguldak-usulu`: Kaynak yok + hamsili pilav tekniği yanlış
+- `kibe-mumbar`: Mardin yemek (kuzu işkembe + mumbar + kuşbaşı + kuyruk yağı), mevcut "kibe" ingredient gibi yazılmış (data corruption)
+- `kilis-oruk`: Şiş köfte formu klasik, mevcut cevizli içli köfte
+
+17b (2):
+- `kiraz-yaprakli-kofte-malatya-usulu`: Yoğurtlu+yumurta+un+soğanlı yağ klasik, mevcut salçalı vegan
+- `kiraz-yaprakli-sarma-malatya-usulu`: Yarma/bulgur hamuru klasik, mevcut pirinçli dolma
+
+Pattern: Web research agent + 2-3 kaynak/tarif teyit + manuel update
+script + AuditLog `MOD_K_MANUAL_REV`. Her biri ~15-20 dk. Sonraki
+oturumlara dağılır (4 mevcut + 26 yeni = 30 toplam, ~7-10 saat iş).
 
 ### Test Campaign K8 + kalan polish (~3 saat toplam, opsiyonel)
 
@@ -98,9 +134,6 @@ usulu + domatesli-firik-pilavi-tekirdag-usulu + eggs-benedict).
 dark-and-stormy skip kalıcı (Bermuda enum yok, 1 tarif için
 mantıksız). Tüm 7 dev + prod apply 7/7 PASS, AuditLog action=
 "MOD_K_MANUAL_REV".
-
-Sıradaki Codex tetikleri için temiz: 9b + 10a Codex teslim diskte
-hazır (henüz verify+apply yapılmadı), bir sonraki adım.
 
 **Aşağıdaki eski oturum 25 başlığı kaldı (referans):**
 

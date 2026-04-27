@@ -4222,4 +4222,67 @@ bobotie-cuisine.ts tek-seferlik DB update pattern'leri.
 **Sıradaki Codex tetik**: `Mod K. Batch 7a.` (Bölüm 6). Codex 6b
 döndüğünde verify+apply pipeline koştuğunda 7a v2 tetiği gönderebilir.
 
+### 20.9 Oturum 27 başı durum (27 Nis 2026)
+
+**16 sub-batch v2 apply (11a-18b)**, 283 net yeni prod correction
+(CORRECTION + 6 onayli MAJOR), 35 sub-batch kalan (19a-36b'den 4 zaten
+disk'te hazır, apply pending).
+
+**PASS oran trend (16 batch)**: 11a 36 → 11b 68 → 12a 44 → 12b 42 →
+13a 42 → 13b 44 → 14a 56 → 14b 70 → 15a 44 → 15b 68 → 16a 48 → 16b
+22 → 17a 54 → 17b 34 → 18a 34 → 18b 22 (ortalama %44, range 22-70).
+Düşük PASS (<%30): 16b/18b yöresel sıkı audit, kaliteli düzeltme.
+Yüksek PASS (>%65): 11b/14b/15b temiz batch'ler.
+
+**6 onayli MAJOR apply** (substantive corrections, identity-correct):
+- 11a `firin-patatesli-testi-tava-nevsehir-usulu`: cookMinutes 28 →
+  85 + 4 ingredient_add (soğan/salça/zeytinyağı/tuz) + 4 step revize
+  (testi kebabı 75 dk kapalı + 10 dk açık)
+- 12b `hanoi-bun-cha`: description revize "dana kıymalı uyarlama" +
+  20 dk dinlendirme totalMinutes - prep - cook farkına alındı
+- 15b `karadeniz-hamsi-kayganasi`: masa harina → mısır unu +
+  DENIZ_URUNLERI + YUMURTA allergen
+- 15b `karamel-biberli-tavuk-pirinci-vietnam-usulu`: 3 ingredient_add
+  (balık sosu + sarımsak + soya) + 7 step revize (Vietnam ga kho
+  tekniği) + DENIZ_URUNLERI allergen
+- 15b `karidesli-smorrebrod`: cuisine se → dk
+- 18b `lablabi`: cuisine ma → tn + 3 ingredient_add (harissa +
+  zeytinyağı + tuz)
+
+**26 yeni MAJOR mini-rev kuyruğu** (yapısal/identity mismatch, Codex
+teklifi yetersiz, manuel web research + 2-3 kaynak teyit ile
+çözülecek):
+- 11a-12a (2): edirne-bag, isparta-tavuk
+- 13b (5): hatay-zahter ×2, helise-malatya, helle-tatlisi-tokat
+  (çorba/tatlı type), hurmali-kirklareli
+- 14a-14b (4): icli-tava-sinop, jeyuk-bokkeum (Kore klasik domuz
+  yerine dana), jokai-bableves (Macar füme et yerine sade fasulye),
+  kabak-bastisi-gaziantep (etli ana yerine tatlı tip)
+- 16a-16b (6): kastamonu-siyez, kilis-ekmek, kayisava, macar-irmik,
+  kayseri-kursun (bulgur köfte vs hamur top), kayseri-yag-mantisi
+  (kızartma vs haşlama)
+- 17a (7, en yoğun): kelecos-erzurum/van, kerebic-mersin, keskekli-
+  istavrit, kestaneli-hamsi, kibe-mumbar (data corruption "kibe"
+  ingredient gibi yazılmış), kilis-oruk
+- 17b (2): kiraz-yaprak kofte/sarma malatya
+
+Toplam mini-rev kuyruğu: 4 önceki + 26 yeni = **30 tarif**.
+
+**Nutrition anomaly**: 1181 → 1210 (+29, Kural 10 ingredient
+değişikliği etkisi). compute-recipe-nutrition.ts ile düzeltilebilir
+(opsiyonel, sonraki oturum).
+
+**Disiplin notu (oturum 27 dersi)**: 16 batch boyunca her batch için
+manuel review uygulandı (verify report → MAJOR'ları aç → CORRECTION
+spot-check → apply karar matrisi). Plan §3.5 "Apply karar matrisi"
+işledi: substantive MAJOR (cuisine fix + ingredient eklenmesi)
+`--apply-major --slugs` ile cherry-pick; identity/structural mismatch
+mini-rev kuyruğa. Net etki: %44 PASS ile sıkı audit kalitesi
+korundu, yüksek mini-rev sayısı (30) Codex'in yöresel iddia /
+identity sorunlarına dair sağlam dataset üretti.
+
+**Sıradaki Codex tetik**: `Mod K. Batch 19a.` (Bölüm 6). 19a-20b
+4 batch zaten disk'te hazır (Codex 11a-18b apply'i sırasında teslim
+etti); sıradaki oturum verify+apply pipeline.
+
 

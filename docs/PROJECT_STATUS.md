@@ -1,5 +1,32 @@
 # Tarifle, Proje Durumu
 
+> **Oturum 27 BAŞI (27 Nis 2026, oturum 26'nın aynı gün devamı, Mod K
+> v2 16 batch apply maratonu).**
+>
+> **Mod K v2 progress: 20 → 36/71 sub-batch (%50.7)**. Codex'in oturum
+> 26 sonu ile oturum 27 başı arasında teslim ettiği 16 batch (11a-18b)
+> verify+manuel review+dev/prod apply pipeline. PASS ortalama %44 (range
+> 22-70), 0 BLOCKED, 800/800 format clean. 403 dev correction + 6 onayli
+> MAJOR (testi-nevsehir, hanoi-bun-cha, hamsi-kayganasi, vietnam-karamel-
+> tavuk, smorrebrod cuisine se→dk, lablabi cuisine ma→tn). **283 net
+> yeni prod correction**. Toplam Mod K v2 prod ~480 → ~763 correction.
+> Nutrition anomaly 1181 → 1210 (+29, Kural 10 ingredient değişikliği
+> etkisi). Plus Codex ek 4 batch (19a/19b/20a/20b) teslim, apply pending.
+>
+> **Mini-rev kuyruğu büyüdü: 4 → 30** (4 önceki + 26 yeni 11a-18b
+> MAJOR). Yapısal/identity mismatch tarifler: edirne-bag, isparta-tavuk,
+> hatay-zahter ×2, helise-malatya, helle-tatlisi-tokat, hurmali-kirklareli,
+> icli-tava-sinop, jeyuk-bokkeum, jokai-bableves, kabak-bastisi, kastamonu-
+> siyez, kilis-ekmek, kayisava-trabzon, macar-irmik, kayseri-kursun,
+> kayseri-yag-mantisi, kelecos ×2, kerebic, keskekli-istavrit, kestaneli-
+> hamsi, kibe-mumbar, kilis-oruk, kiraz-yaprak ×2 malatya. Sonraki
+> oturumlara dağıtılacak (her biri ~15-20 dk web research + manuel
+> update + AuditLog).
+>
+> Pre-push 6 katman temiz, autonomous yetki kapsamında prod apply
+> (test/audit/spot-check PASS sonrası). Commit'ler: `49f4545` 16 batch
+> apply + `96f47bf` Codex 19a-20b teslim (apply pending).
+
 > **Oturum 26 SONU (27 Nis 2026, oturum 25'in aynı gün devamı, 22
 > commit, Test Campaign 7/8 + Mod K v2 8 batch + manuel mini-rev 7 +
 > 16 fix paketi prod).**

@@ -1,9 +1,28 @@
 # Tarifle, Proje Durumu
 
-> **Oturum 27 (27 Nis 2026, oturum 26'nın aynı gün devamı), 18 commit:
-> Mod K v2 27 batch apply (11a-21b + 22a + 23a + 23b + 24a + 25a, 22b
-> + 24b BAD reject) + CUISINE_CODES `pt` ekleme + 24 mini-rev (paketi
-> 1: 4 + paketi 2: 7 + paketi 3: 6 + paketi 4: 7) + SEO batch 3 + 4.**
+> **Oturum 27 (27 Nis 2026, oturum 26'nın aynı gün devamı), 19 commit:
+> Mod K v2 30 batch apply (11a-21b + 22a + 23a + 23b + 24a + 25a + 25b
+> + 26a + 26b, 22b + 24b BAD reject) + CUISINE_CODES `pt` ekleme +
+> 31 mini-rev (paketi 1: 4 + paketi 2: 7 + paketi 3: 6 + paketi 4: 7 +
+> paketi 5: 7) + SEO batch 3 + 4.**
+>
+> **Mod K Batch 25b + 26a + 26b apply** (commit `c1bf27f`): 88 yeni
+> prod correction (25b 27 + 26a 28 + 26b 33). 26a 18 MAJOR yöre yoğun
+> (mini-rev'e). Mod K v2 progress 47 → **50/71 (%70.4)**, kümülatif
+> prod ~1095. Plus Codex 27a teslim (apply pending).
+>
+> **Mini-rev paketi 5** (commit `c1bf27f`, kuyruk 55 → **48**): 7
+> Türk yöresel REWRITE. 2 paralel agent + 25+ kaynak teyit (Kültür
+> Portalı resmi 4 + Gaziantep Belediyesi coğrafi işaret + 15+ tarif
+> portalı). Slug korunur (URL break önleme), description-light
+> disambiguate yaklaşımı. **kastamonu-siyez** (İhsangazi yoğurt+
+> ebegümeci klasik), **icli-tava-sinop** (pirinçli iç harç + yumurta
+> kapama), **patila-kars** (Tunceli/Elazığ klasiği, içli varyant),
+> **patatesli-kete-ardahan** (kete kuşağı patatesli varyant), **hatay-
+> zahterli-nohut** (Gaziantep coğrafi işaret, Hatay atfı yumuşat),
+> **hurmali-kirklareli** (Trakya jenerik), **mincili-laz-boregi-rize**
+> (klasik tatlı disambiguate, tuzlu varyant kalır). 7/7 REWRITE,
+> DELETE yok.
 >
 > **Mini-rev paketi 4** (commit `b2f4509`, kuyruk 39 → **32**, prod
 > 3515 → **3512**): 4 REWRITE + 3 DELETE Türk yöresel. 2 paralel agent

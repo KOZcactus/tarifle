@@ -76,22 +76,28 @@ Toplam Mod K v2 prod ~480 → ~876 correction. Nutrition anomaly
 'es' → 'pt' update. Mini-rev kuyruğu 46 → 44 (lisbon-nohutlu-morina
 + lizbon-portakalli-badem-keki otomatik fix).
 
-**Mini-rev kuyruğu 39** (4 önceki + 7 paketi 2 + 6 paketi 3 kapandı,
-kuyrukta 13 batch 11a-18b + 14 batch 19a-21b + 1 batch 22a + 5 batch
-23b/24a + 6 batch 25a kalan):
+**Mini-rev kuyruğu 48** (4 önceki + 7 paketi 2 + 6 paketi 3 + 7
+paketi 4 + 7 paketi 5 = 31 kapandı, plus 23 yeni 25b/26a/26b
+eklendi. Kuyrukta 4 batch 19a-21b + 4 batch 25a + 23 batch 25b/26a/
+26b + diğer kalanlar):
 
-25a yeni 6 (oturum 27 dördüncü paket sonrası):
+25a yeni 6 (oturum 27 dördüncü paket sonrası, paketi 5'te 2 tarif kapandı, kalan 4):
 - `passionfruit-pisco-spritz-peru-usulu`: Pisco yerine brendi + KOKTEYL/ICECEK type karışıklık
 - `patates-rosti-lokmalari`: Rösti İsviçre kökenli, cuisine se yanlış (İsviçre kodu yok)
-- `patatesli-kete-tavasi-ardahan-usulu`: Ardahan patatesli kete tava kaynaksız + scaffold
+- ~~`patatesli-kete-tavasi-ardahan-usulu`~~: ✅ REWRITE (kete kuşağı patatesli varyant, paketi 5)
 - `patatesli-soganli-midye-tava-istanbul-bogaz-usulu`: Midye tava klasik unlu kızartma, patatesli farklı
-- `patila-kars-usulu`: Patila Elazığ + patatesli gözleme hattı, Kars sade ekmek doğrulanmadı
+- ~~`patila-kars-usulu`~~: ✅ REWRITE description (Doğu Anadolu disambiguate + içli varyant, paketi 5)
 - `patlican-pacarasi-manisa-usulu`: Manisa paçarası kaynaksız + step tekrar + közleme süre tutarsız
 
+25b/26a/26b yeni 23 MAJOR (oturum 27 5. paket sonrası, sonraki paketlere):
+- 25b (1): inceleme bekliyor
+- 26a (18): yöre yoğun batch, çoğu yöresel atıf belirsiz
+- 26b (4): inceleme bekliyor
 
 
-22a (1):
-- `mincili-laz-boregi-rize-ev-usulu`: Laz böreği muhallebili tatlı klasik (kaynaklar şerbetli), mevcut tuzlu mincili börek (identity mismatch)
+
+22a (1, paketi 5'te kapandı): ✅ HEPSI KAPANDI
+- ~~`mincili-laz-boregi-rize-ev-usulu`~~: ✅ REWRITE description (klasik tatlı disambiguate, tuzlu varyant kalır, paketi 5)
 
 23b/24a yeni 5 (oturum 27 üçüncü paket sonrası):
 - `nigde-sogurmeli-yumurta` (23b): Niğde söğürmeli yumurta kaynaksız + scaffold + biber közleme süresi
@@ -114,21 +120,21 @@ Yeni 26 (oturum 27, 11a-18b MAJOR identity/structural mismatch):
 - `fistikli-domates-corbasi-edirne-bag-usulu`: Edirne yöresel iddia kaynaksız
 - `gul-sirkeli-tavuk-isparta-usulu`: Isparta yöresel iddia kaynaksız
 
-13b (5, paketi 2'de 1 + paketi 3'te 2 tarif kapandı, kalan 2):
-- `hatay-zahterli-nohut-durumu`: Hatay atfı kaynaksız (klasik Gaziantep)
+13b (5, paketi 2'de 1 + paketi 3'te 2 + paketi 5'te 2 tarif kapandı, kalan 0): ✅ HEPSI KAPANDI
+- ~~`hatay-zahterli-nohut-durumu`~~: ✅ REWRITE description (Gaziantep coğrafi işaret disambiguate, paketi 5)
 - ~~`hatay-zahterli-tepsi-koftesi`~~: ✅ DESC_ONLY + minor (Antakya kofte uyumlu, paketi 3)
 - ~~`helise-malatya-usulu`~~: ✅ REWRITE (Bitlis/Van menşeli, paketi 2)
 - ~~`helle-tatlisi-tokat-usulu`~~: ✅ REWRITE (TATLI→CORBA un çorbası, paketi 3)
-- `hurmali-ekmek-tatlisi-kirklareli-usulu`: Kırklareli kaynaksız + Kural 9
+- ~~`hurmali-ekmek-tatlisi-kirklareli-usulu`~~: ✅ REWRITE description (Trakya jenerik, paketi 5)
 
-14a-14b (4, paketi 3'te 3 tarif kapandı, kalan 1):
-- `icli-tava-sinop-usulu`: Sinop içli tava katmanlı pirinçli, mevcut sade hamsi tava
+14a-14b (4, paketi 3'te 3 + paketi 5'te 1 tarif kapandı, kalan 0): ✅ HEPSI KAPANDI
+- ~~`icli-tava-sinop-usulu`~~: ✅ REWRITE (pirinçli iç harç + yumurta kapama, paketi 5)
 - ~~`jeyuk-bokkeum`~~: ✅ REWRITE (TR pazar dana uyarlaması, paketi 3)
 - ~~`jokai-bableves`~~: ✅ REWRITE (sucuk uyarlaması + ekşi krema + csipetke, paketi 3)
 - ~~`kabak-bastisi-gaziantep-usulu`~~: ✅ REWRITE (TATLI→YEMEK etli klasik, paketi 3)
 
-16a-16b (6, paketi 2'de 2 + paketi 3'te 1 + paketi 4'te 2 tarif kapandı, kalan 1):
-- `kastamonu-eksili-siyez-pilavi`: Yoğurtlu/otlu klasik, mevcut kızılcık ekşili sade
+16a-16b (6, paketi 2'de 2 + paketi 3'te 1 + paketi 4'te 2 + paketi 5'te 1 tarif kapandı, kalan 0): ✅ HEPSI KAPANDI
+- ~~`kastamonu-eksili-siyez-pilavi`~~: ✅ REWRITE (İhsangazi yoğurt+ebegümeci klasik, paketi 5)
 - ~~`katikli-ekmek-kilis-usulu`~~: ✅ REWRITE (Hatay/Antakya kanonik, zahter ekle, paketi 4)
 - ~~`kayisava-trabzon-usulu`~~: ✅ DELETE (Codex halüsinasyonu, paketi 4)
 - ~~`kayisili-irmik-pilavi-macaristan-usulu`~~: ✅ REWRITE (YEMEK→TATLI tejbegríz, paketi 3)

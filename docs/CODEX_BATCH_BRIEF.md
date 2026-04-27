@@ -4285,4 +4285,54 @@ identity sorunlarına dair sağlam dataset üretti.
 4 batch zaten disk'te hazır (Codex 11a-18b apply'i sırasında teslim
 etti); sıradaki oturum verify+apply pipeline.
 
+### 20.10 Oturum 27 ikinci paket durum (27 Nis 2026)
+
+**6 sub-batch v2 apply (19a-21b)**, 113 net yeni prod correction
+(default `--apply` sadece CORRECTION). 0 onayli MAJOR (hepsi mini-rev'e).
+29 sub-batch kalan (22a-36b), Codex tetiki gerekecek.
+
+**PASS oran trend (6 batch, 19a-21b)**: 19a 26 → 19b 34 → 20a 30 →
+20b 50 → 21a 28 → 21b 36 (ortalama %34, range 26-50). Önceki paketten
+(11a-18b ortalama %44) biraz düşük; CORRECTION yoğun, identity-yöresel
+sorunları mini-rev'e atılarak temiz audit.
+
+**16 yeni MAJOR mini-rev kuyruğu** (yapısal/identity, Codex teklifi
+yetersiz):
+
+A. Yöresel atıf kaynaksız (10): leka-ispanak isvec, peru-irmik, lorlu-*
+   tekirdag/mardin/urla/izmir-bostan/izmir, macar-tarhonya, mahlepli-tokat,
+   menekse-erzurum, mesir-tavuk-manisa.
+
+B. Yapı/identity mismatch (4): lechon-asado (Küba klasik domuz vs dana),
+   manisa-kula-guveci (yapı revize, Codex 4 ingredient_remove geniş),
+   manisa-kulah-kapamasi (külah ≠ Alaşehir kapaması).
+
+C. Cuisine GAP `pt` (Portekiz) (2): lisbon-nohutlu-morina-salatasi,
+   lizbon-portakalli-badem-keki. Tarifle CUISINE_CODES'a `pt` eklenirse
+   otomatik fix (oturum 25 6 cuisine ekleme pattern).
+
+Toplam mini-rev kuyruğu: 30 + 16 = **46 tarif**.
+
+**Nutrition anomaly**: 1210 → 1222 (+12, Kural 10 etkisi, küçük artış
+beklenen).
+
+**Disiplin notu (oturum 27 ikinci paket dersi)**: Apply'dan ÖNCE
+kullanıcıya 6 batch'in tam manuel review özeti sunuldu (verify report'lar
++ MAJOR detayları + apply karar matrisi). Kullanıcı onayı alındıktan
+sonra apply pipeline çalıştırıldı. Bu disiplin, ilk paket (11a-18b)'de
+gözlenen "manuel review içeride yapıldı ama kullanıcıya görünür rapor
+sunulmadı" eksikliğini kapatır. Plan §3 "Apply karar matrisi" işledi:
+0 BLOCKED + 16 MAJOR identity/cuisine gap (mini-rev) + 182 CORRECTION
+(default apply).
+
+**Sıradaki Codex tetik**: `Mod K. Batch 22a.` (Bölüm 6). Codex'in 21b
+döndüğünde verify+apply pipeline koştuğunda 22a tetiği gönderilebilir.
+
+**Oturum 27 toplam Mod K v2 progress (11a-21b, 22 batch)**:
+- 1100 entry kontrol, 396 net yeni prod correction
+- 6 onayli MAJOR + 46 mini-rev kuyruk
+- Mod K v2 toplam prod correction: ~480 → ~876
+- Sub-batch progress: 20 → 42/71 (%59.2)
+- 29 sub-batch kalan (22a-36b)
+
 

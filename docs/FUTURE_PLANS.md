@@ -41,21 +41,39 @@ Sıradaki batch 3 (5-7 sayfa): salatalar (269), baklagil-yemekleri (113),
 makarna-pilav (244), sebze-yemekleri (187), atistirmaliklar (69),
 fransiz, japon. Multi-session iş, oturum 27-30+ tamamlanır.
 
-### Mod K v2 (Tarif Kontrol, oturum 27 itibariyle 36/71 sub-batch done = %50.7)
+### Mod K v2 (Tarif Kontrol, oturum 27 itibariyle 42/71 sub-batch done = %59.2)
 
-**Oturum 27 progress**: Batch 11a + 11b + 12a + 12b + 13a + 13b + 14a +
-14b + 15a + 15b + 16a + 16b + 17a + 17b + 18a + 18b apply (commit
-`49f4545`), 283 yeni prod correction (CORRECTION + 6 onayli MAJOR).
-PASS ortalama %44 (range 22-70), 0 BLOCKED, 800/800 format clean.
-Toplam Mod K v2 prod ~480 → ~763 correction. Nutrition anomaly
-1181 → 1210 (+29, Kural 10 etkisi).
+**Oturum 27 progress** (toplam 22 batch apply, 1100 entry):
 
-**Codex 4 yeni batch teslim, apply pending** (commit `96f47bf`):
-- `docs/mod-k-batch-19a.json` + 19b + 20a + 20b (4 batch × 50 = 200 entry)
-- Sıradaki oturum verify+apply pipeline (~25-35 dk/batch disiplinli)
-- Mod K v2 36 → 40/71 sub-batch (%56) progress hedef
+Pak 1 (11a-18b, 16 batch, commit `49f4545`): 283 net yeni prod
+correction + 6 onayli MAJOR (testi-nevsehir, hanoi-bun-cha, hamsi-
+kayganasi, vietnam-karamel-tavuk, smorrebrod cuisine se→dk, lablabi
+cuisine ma→tn). PASS ortalama %44.
 
-**Mini-rev kuyruğu 30 (4 önceki + 26 yeni 11a-18b):**
+Pak 2 (19a-21b, 6 batch, commit `22eb807`): 113 net yeni prod
+correction + 0 onayli MAJOR (hepsi mini-rev'e). PASS ortalama %34.
+
+Toplam Mod K v2 prod ~480 → ~876 correction. Nutrition anomaly
+1181 → 1222 (+41, Kural 10 etkisi).
+
+**Codex queue temiz** (oturum 27 sonu, sonraki Codex tetik gerekecek):
+- 22a-36b kalan 29 sub-batch (~%40 hedef)
+- Codex `Mod K. Batch 22a.` tetiği gerekli
+
+**CUISINE_CODES `pt` (Portekiz) ekleme önerisi** (oturum 25 pattern,
+~30-45 dk):
+
+Batch 19b'de 2 MAJOR `pt` cuisine eksikliği nedeniyle otomatik fix
+yapılamadı (lisbon-nohutlu-morina-salatasi + lizbon-portakalli-badem-
+keki). Tarifle CUISINE_CODES'a `pt` eklenirse bu 2 mini-rev otomatik
+çözülür. Pattern oturum 25 (tn/ar/co/ve/dk/za 6 cuisine ekleme):
+- `src/lib/cuisines.ts`: 7 map (CODES + LABEL + SLUG + DESCRIPTION_TR/EN
+  + FLAG + REGION) + TEXT_KEYWORDS
+- `scripts/verify-mod-k-batch.ts` VALID_CUISINES set
+- Tests + i18n
+- /mutfak/portekiz landing prod canlı 200
+
+**Mini-rev kuyruğu 46 (4 önceki + 26 batch 11a-18b + 16 batch 19a-21b):**
 
 Önceki 4 (oturum 26 sonu):
 - `erzsebet-sour-macar-usulu`: Erzsebet adı + Macar köken kaynaksız
@@ -103,9 +121,38 @@ Yeni 26 (oturum 27, 11a-18b MAJOR identity/structural mismatch):
 - `kiraz-yaprakli-kofte-malatya-usulu`: Yoğurtlu+yumurta+un+soğanlı yağ klasik, mevcut salçalı vegan
 - `kiraz-yaprakli-sarma-malatya-usulu`: Yarma/bulgur hamuru klasik, mevcut pirinçli dolma
 
+19a-21b yeni 16 (oturum 27 ikinci paket):
+
+19a (2):
+- `lechon-asado`: Küba klasik DOMUZ etiyle, mevcut dana döş (jeyuk-bokkeum pattern)
+- `leka-ispanakli-krep-isvec-usulu`: 'Leka' İsveç adı kaynaksız, ıspanaklı krep genel
+
+19b (3, 2'si cuisine pt gap):
+- `lime-kabuklu-irmik-kup-peru-usulu`: Peru atfı kaynaksız, Türk irmik tatlısı
+- `lisbon-nohutlu-morina-salatasi`: Portekiz bacalhau, cuisine es ama pt gerek (CUISINE_CODES pt ekleme ile çözülür)
+- `lizbon-portakalli-badem-keki`: Lizbon Portekiz, cuisine es ama pt gerek (aynı)
+
+20a (6, en yoğun):
+- `lorlu-biber-dolmasi-tekirdag-usulu`: Tekirdağ atfı kaynaksız
+- `lorlu-biberli-sembusek-mardin-usulu`: Mardin lorlu biberli varyant doğrulanamadı
+- `lorlu-enginar-boregi-urla-usulu`: Urla atfı + scaffold steps
+- `lorlu-firik-dolma-izmir-bostan-usulu`: Firik Güneydoğu, İzmir bostan iddiası kaynaksız
+- `lorlu-kabak-cicegi-tostu-izmir-usulu`: İzmir tost iddiası kaynaksız + scaffold
+- `macar-visneli-tarhonya-pilavi`: Tarhonya doğru, vişneli Macar varyant kaynaksız
+
+20b (3):
+- `mahlepli-yesil-mercimek-corbasi-tokat-bag-usulu`: Tokat+mahlep iddia kaynaksız + Codex 4 ingredient_remove geniş scope
+- `manisa-kula-guveci`: Resmi kuzu+domates+biber+tereyağı, mevcut patlıcan+soğan+sarımsak+zeytinyağı (yapı revize)
+- `manisa-kulah-kapamasi`: Külah kapaması yok, Alaşehir kapaması ile karıştırılmış
+
+21b (2):
+- `menekse-serbeti-erzurum-usulu`: Erzurum atfı kaynaksız + step şeker ingredient yok + Kural 9 dinlendirme
+- `mesir-baharatli-tavuk-manisa-usulu`: Mesir baharatlı tavuk yöresel klasik değil + ingredient mesir yok + Kural 9
+
 Pattern: Web research agent + 2-3 kaynak/tarif teyit + manuel update
 script + AuditLog `MOD_K_MANUAL_REV`. Her biri ~15-20 dk. Sonraki
-oturumlara dağılır (4 mevcut + 26 yeni = 30 toplam, ~7-10 saat iş).
+oturumlara dağılır (4 mevcut + 26 11a-18b + 16 19a-21b = **46 toplam**,
+~12-15 saat iş, 4-6 oturuma yayılır).
 
 ### Test Campaign K8 + kalan polish (~3 saat toplam, opsiyonel)
 

@@ -68,7 +68,30 @@ interface DbRecipe {
   tipNote: string | null;
   servingSuggestion: string | null;
   status: string;
+  totalMinutes: number;
+  prepMinutes: number;
+  cookMinutes: number;
 }
+
+// Kural 10 (oturum 25 GPT audit), yüksek-yağ ingredient lookup. Set
+// içinde geçen ingredient adı varsa nutrition anomaly suspect flag.
+// TR locale lowercase, ASCII fold + diakritik versiyonları dahil.
+const HIGH_FAT_INGREDIENTS = new Set([
+  "kuyruk yağı", "kuyruk yagi",
+  "tereyağı", "tereyagi", "tere yağı", "tere yagi",
+  "zeytinyağı", "zeytinyagi", "zeytin yağı", "zeytin yagi",
+  "ay çiçek yağı", "ay cicek yagi", "ayçiçek yağı", "aycicek yagi",
+  "mısırözü yağı", "misir ozu yagi", "misirozu yagi",
+  "hindistan cevizi yağı", "hindistan cevizi yagi",
+  "susam yağı", "susam yagi",
+  "yer fıstığı yağı", "yer fistigi yagi",
+  "kanola yağı", "kanola yagi",
+  "krema",
+  "kaymak",
+  "badem yağı", "badem yagi",
+  "ceviz yağı", "ceviz yagi",
+  "fındık yağı", "findik yagi",
+]);
 
 interface VerifiedEntry {
   entry: ModKEntry;
@@ -301,6 +324,39 @@ function validateEntry(entry: ModKEntry, db: DbRecipe | null): string[] {
         }
       }
 
+      // Kural 9 (oturum 25 GPT audit), süre tutarlılığı kabaca check.
+      // description + steps_replace içinde geçen "X saat / Y gün" bahsi
+      // toplamı totalMinutes ile karşılaştır. Çok geniş tolerance (%50)
+      // çünkü description birden fazla süre bahsedebilir (marine + pişme).
+      const targetTotal = c.totalMinutes ?? db.totalMinutes ?? 0;
+      if (targetTotal > 0) {
+        const desc = c.description ?? db.description ?? "";
+        const stepTexts = (c.steps_replace ?? [])
+          .map((s) => s.instruction)
+          .join(" ");
+        const text = (desc + " " + stepTexts).toLocaleLowerCase("tr");
+        // Regex: 1 saat, 30 dakika, 2 gün, 45 dk, 1 sa
+        const regex = /(\d+(?:[\.,]\d+)?)\s*(saat|sa\b|dakika|dk\b|gün|gun)/g;
+        let mentionedTotal = 0;
+        let m: RegExpExecArray | null;
+        while ((m = regex.exec(text)) !== null) {
+          const n = parseFloat(m[1].replace(",", "."));
+          const unit = m[2];
+          if (unit === "saat" || unit === "sa") mentionedTotal += n * 60;
+          else if (unit === "dakika" || unit === "dk") mentionedTotal += n;
+          else if (unit === "gün" || unit === "gun") mentionedTotal += n * 1440;
+        }
+        if (mentionedTotal > 0) {
+          const diff = Math.abs(mentionedTotal - targetTotal);
+          const tol = targetTotal * 0.5;
+          if (diff > tol) {
+            issues.push(
+              `Kural 9 süre tutarsız: ifade ~${mentionedTotal} dk vs totalMinutes ${targetTotal} dk (fark %${Math.round((diff / targetTotal) * 100)})`,
+            );
+          }
+        }
+      }
+
       // servingCount makul
       if (c.servingCount !== undefined && (c.servingCount < 1 || c.servingCount > 20)) {
         issues.push(`servingCount aralik disi: ${c.servingCount} (1-20)`);
@@ -379,7 +435,18 @@ async function main() {
   const slugs = [...new Set(all.map((e) => e.slug).filter(Boolean))];
   const dbRows = await prisma.recipe.findMany({
     where: { slug: { in: slugs } },
-    select: { id: true, slug: true, description: true, tipNote: true, servingSuggestion: true, status: true },
+    select: {
+      id: true,
+      slug: true,
+      description: true,
+      tipNote: true,
+      servingSuggestion: true,
+      status: true,
+      totalMinutes: true,
+      prepMinutes: true,
+      cookMinutes: true,
+      ingredients: { select: { name: true, amount: true, unit: true } },
+    },
   });
   const dbMap = new Map<string, DbRecipe>();
   for (const r of dbRows) dbMap.set(r.slug, r as DbRecipe);

@@ -3970,6 +3970,80 @@ HER ALAN dahil):**
    - docs/mod-k-batch-N-input.json'da gönderilen slug'lar
    - Batch dışı slug yazma
 
+**9. Süre-içerik tutarlılığı (oturum 25, GPT 5 Pro audit):**
+   - description ve steps içinde geçen TÜM süreler (örn. "1 saat
+     dinlendir", "30 dk fırında pişir", "yarım saat marinaya bırak",
+     "buzdolabında 12 saat bekle") totalMinutes'a dahil edilmiş
+     OLMALI. Aksi halde tutarsızlık.
+   - **GPT örneği**: Adana Kebap "Toplam 50 dk" yazılı, ama steps'te
+     "15 dk yoğur + 1 saat dinlendir + 20 dk pişir" = 95 dk. totalMinutes
+     50 dk yanıltıcı, "50 dakikada biter" izlenimi.
+   - **Çözüm seçenekleri** (CORRECTION):
+     a) totalMinutes değerini gerçek toplam yapacak şekilde güncelle
+        (15 + 60 + 20 = 95 dk)
+     b) prepMinutes/cookMinutes/totalMinutes ayrımı net: aktif süre +
+        bekleme süresi (marine, dinlendirme) ayrı segment. Mod M
+        marineMinutes alanı zaten DB'de var; uzun bekleme süresi
+        marineMinutes'a, totalMinutes prep+cook olarak kalır
+     c) Description revize: "Aktif süre 35 dk, dinlendirme 1 saat
+        (toplam ~95 dk)" gibi açık ayrım
+   - **Codex tarama**: Her tarif için description + steps regex
+     `(\d+)\s*(saat|sa|dakika|dk|gün)` ile süre bahsi tespit, totalMinutes
+     ile karşılaştır. Fark > %30 ise CORRECTION (totalMinutes veya
+     marineMinutes düzelt veya step paragraf revize).
+   - **Tip**: marine/dinlendirme süresi değerse marineMinutes alanı
+     ayrı; aksi halde totalMinutes'a dahil. RecipeTimeline 3-segment
+     UI bu ayrımı zaten görselleştiriyor.
+
+**10. Nutrition ingredient-aware anomaly (oturum 25, GPT 5 Pro audit):**
+   - Mevcut Kural: 4×protein + 4×carbs + 9×fat ≈ averageCalories
+     (%25 toleransla). Bu korunur.
+   - **Yeni katman**: Yüksek-yağ ingredient varsa doymuş yağ ratio
+     kontrol. **HIGH_FAT_INGREDIENTS** (>%70 yağ): kuyruk yağı,
+     tereyağı, zeytinyağı, ay çiçek yağı, mısırözü yağı, hindistan
+     cevizi yağı, susam yağı, yer fıstığı yağı, krema (>%30 yağ),
+     kaymak (>%60 yağ), badem yağı, ceviz yağı, fındık yağı.
+   - **GPT örneği**: Adana Kebap 500g kuzu kıyma + 100g kuyruk yağı
+     (~%80 doymuş yağ = 80g doymuş). 4 porsiyon dağıtınca 20g doymuş
+     yağ/porsiyon olmalı. Mevcut: porsiyon başına toplam yağ 28g +
+     doymuş yağ 0.3g. **Doymuş yağ değeri imkansız**, gerçek değer
+     ~20g.
+   - **Codex tarama**: Her tarif ingredient list'inde yüksek-yağ
+     ingredient var mı kontrol. Varsa ingredient gram × yağ ratio
+     kabaca hesap; porsiyon başına yağ tahmini DB averageFat ile
+     karşılaştır. Fark > %50 ise CORRECTION (averageCalories +
+     protein + carbs + fat revize, doymuş yağ ratio dengeli).
+   - **Yağ ratio referansı (TIP)**:
+     - Tereyağı: %81 yağ (~%51 doymuş)
+     - Kuyruk yağı: %95 yağ (~%80 doymuş)
+     - Zeytinyağı: %100 yağ (~%14 doymuş, %73 monoünsat)
+     - Ay çiçek yağı: %100 yağ (~%12 doymuş, %20 mono, %66 polyünsat)
+     - Krema (%35): %35 yağ (~%22 doymuş)
+     - Kaymak: %60 yağ (~%38 doymuş)
+   - Tarif macro'larında "fat" toplam yağ; doymuş yağ ayrı alan
+     yok ama ratio anomalisi kabaca yakalanır (toplam yağ vs ingredient
+     yağ kabaca eşleşmesi).
+
+**11. Step-ingredient miktar eşleşmesi (oturum 25, GPT 5 Pro audit):**
+   - Mevcut: pre-push hook bahis kontrolü ("Step 4 mentions 'tuz' but
+     ingredient list has no match" warning veriyor).
+   - **Yeni katman**: Step'te belirli miktar + birim ile bahsedilen
+     ingredient (örn. "2 yemek kaşığı zeytinyağı", "yarım çay bardağı
+     süt", "1 tutam karabiber") ingredient list'inde mevcut + benzer
+     miktar.
+   - **Çözüm**: Step regex parser quantity + unit + name (örn.
+     `(\d+|yarım|bir|iki|üç|tutam)\s*(yemek kaşığı|çay kaşığı|su bardağı|gr|kg|adet|tutam)\s+(\w+)`)
+     → ingredient list çapraz kontrol. Yoksa:
+     a) ingredients_add (step'te bahsedilen miktar + birim ile)
+     b) steps_replace (step'i revize, ingredient'ta olan miktarla
+        eşleştir)
+   - Mod K Batch'lerde: tüm tarifler için step parser çalıştırma
+     gerekmez (Codex zaten bütünsel okuma yapar); sadece tutarsızlık
+     fark edilirse CORRECTION.
+   - **Tip**: Pre-push warning'de tespit edilenler (96 warning, son
+     push) Mod K Batch'lerinde MAJOR_ISSUE olarak çözülmeli; basit
+     bahis değil miktar tutarlılığı.
+
 ### 20.4 Pipeline (Claude apply)
 
 1. **Prep** (her batch öncesi):
@@ -4018,6 +4092,17 @@ HER ALAN dahil):**
 9. **CORRECTION/MAJOR_ISSUE**: corrections objesi en az 1 alan
    içeriyor.
 10. **Slug evren**: input dışı slug yazılmadı.
+11. **Süre tutarlılığı (Kural 9, oturum 25)**: description + steps
+    içindeki bahsi geçen süreler totalMinutes ile fark > %30 mı? Varsa
+    CORRECTION (totalMinutes/marineMinutes/step revize).
+12. **Nutrition ingredient-aware (Kural 10, oturum 25)**: Yüksek-yağ
+    ingredient (kuyruk yağı, tereyağı, zeytinyağı, krema, kaymak,
+    bitki yağları) varsa porsiyon başı yağ kabaca hesabı DB averageFat
+    ile fark > %50 mı? Varsa macro CORRECTION (P/C/F + averageCalories
+    revize).
+13. **Step-ingredient miktar eşleşmesi (Kural 11, oturum 25)**: Step'te
+    belirli miktar + birim ile bahsedilen ingredient list'inde var mı?
+    Yoksa CORRECTION (ingredients_add veya steps_replace).
 
 Bitince "Mod K Batch N hazır" + özet:
 - Toplam: 100
@@ -4046,5 +4131,47 @@ Mod K kapanış kriterleri:
   averageCalories (%20 toleransla)
 - Allergen + tag declare tutarlılığı: 0 vegan-yumurtalı, 0 gluten
   declare-eksik tarif
+- **Süre tutarlılığı** (Kural 9, oturum 25): description/steps'te
+  bahsi geçen süreler ile totalMinutes/marineMinutes uyumlu, 0 büyük
+  çelişki ("Toplam 50 dk" + "1 saat dinlendir" örneği)
+- **Nutrition ingredient-aware** (Kural 10, oturum 25): Yüksek-yağ
+  ingredient'lı tariflerde porsiyon başı yağ ingredient bazlı kabaca
+  hesapla uyumlu, 0 büyük anomali (Adana Kebap 100g kuyruk yağı +
+  0.3g doymuş yağ örneği)
+- **Step-ingredient miktar** (Kural 11, oturum 25): Step'te belirli
+  miktar ile bahsedilen ingredient'lar list'te mevcut, pre-push warning
+  sayısı 0 (oturum 25 öncesi 96 warning baseline)
+
+### 20.7 Yeniden audit, oturum 25 (Kural 9/10/11 sonrası)
+
+Oturum 25'te GPT 5 Pro analizi tarif doğruluk noktalarını işaret etti
+(süre çelişkisi + nutrition anomaly + step-ingredient miktar). Brief
+§20.3'e Kural 9/10/11 eklendi. Mod K Batch 1a-4b (oturum 24'te 168
+correction + 9 MAJOR_ISSUE prod'a uygulanmış) bu yeni kurallarla
+audit edilmedi.
+
+**Karar (oturum 25, Kerem)**: 1a'dan başa tekrar audit. Codex Batch
+1a-4b yeniden tetiklenir, **yeni Kural 9/10/11** ile süre tutarlılığı +
+nutrition ingredient-aware + step-ingredient miktar kontrolü.
+
+**Idempotent guarantee**: apply-mod-k-batch.ts zaten zaten-uygulanmış
+correction'ları DB karşılaştırmasıyla SKIP eder (oturum 24'te bu davranış
+test edildi). Yeni v2 audit'te:
+- Eski correction zaten uygulanmış: SKIP, log yok
+- Yeni correction (Kural 9/10/11 tespiti): apply, AuditLog MOD_K_APPLY
+  yeni kayıt
+- Eski PASS verdict v2'de CORRECTION oldu: yeni correction apply
+
+**Eski output arşiv**: `docs/mod-k-archive-pre-rule17/` klasörüne
+batch 1a-4b output JSON'ları taşındı (oturum 25). Yeni v2 output'lar
+`docs/mod-k-batch-Nx.json` aynı dosya adında üzerine yazılır.
+
+**Tahmini süre**: 8 sub-batch × ~3 saat Codex araştırma = 24 saat
+(oturumlara dağılır), Claude verify+apply ~30 dk/sub-batch = 4 saat
+toplam.
+
+**Beklenen ek correction (Kural 9/10/11 odaklı)**: ~30-80 yeni
+correction (mevcut 168'in üzerine), ~5-15 yeni MAJOR_ISSUE (cuisine
+kalmasıyla nutrition anomaly + süre çelişkisi).
 
 

@@ -337,6 +337,24 @@ detayında.
 uzar. "Tarihte X yıllık" gibi süs cümleleri yasak. Sadece **gerçek
 hata** veya **yanıltıcı bilgi** düzeltilir.
 
+**Oturum 25 v2 audit (1a'dan tekrar)**: Brief §20.3'e Kural 9/10/11
+eklendi (GPT 5 Pro analizi):
+- **Kural 9**: Süre tutarlılığı (description/steps'te bahsi geçen
+  süreler vs totalMinutes; "Toplam 50 dk" + "1 saat dinlendir"
+  çelişkisi gibi)
+- **Kural 10**: Nutrition ingredient-aware anomaly (yüksek-yağ
+  ingredient: kuyruk yağı, tereyağı, zeytinyağı, krema, kaymak vs
+  porsiyon başı yağ tutarlılığı; Adana Kebap 100g kuyruk yağı + 0.3g
+  doymuş yağ imkansız)
+- **Kural 11**: Step-ingredient miktar eşleşmesi (step'te bahsedilen
+  miktar + birim ingredient'ta var mı; pre-push 96 warning baseline)
+
+Mod K Batch 1a'dan v2 olarak yeniden tetiklenir (Kural 9/10/11 aktif).
+Apply-mod-k idempotent: zaten uygulanan correction'lar SKIP, sadece
+yeni tespit (Kural 9/10/11) DB'ye yansır. Eski 8 output (1a-4b)
+`docs/mod-k-archive-pre-rule17/` arşivinde, yeni output aynı dosya
+adında üzerine yazılır.
+
 ---
 
 
@@ -380,7 +398,7 @@ hata** veya **yanıltıcı bilgi** düzeltilir.
 | Mod IA | KAPANDI | docs/MOD_IA_TRIGGER.md | 3 batch pair audit (oturum 23, 26 sil) |
 | Mod IB | KAPANDI | docs/MOD_IB_TRIGGER.md | 2 batch UNCERTAIN+cross-language (oturum 23, 28 sil + 2 manuel) |
 | Mod M | **Batch 1-4 yeniden istenecek** | brief §19 + docs/MOD_M_TRIGGER.md | 167 marine aday, oturum 24'te Batch 1-3 quality issue revert edildi (TR karakter + redundancy), brief §19 yeni Kural 7+8 ile yeniden istenir |
-| Mod K | **Hazır, batch bekler** | brief §20 | 3517 tarif kontrol, 35 batch × 100, ŞİŞİRME YASAK, prep script gerek |
+| Mod K | **v2 audit, 1a'dan tekrar** | brief §20 + §20.7 | 3517 tarif kontrol, 71 sub-batch × 50, ŞİŞİRME YASAK, oturum 25 GPT audit Kural 9 (süre) + 10 (nutrition ingredient) + 11 (step-ingredient miktar) eklendi, 1a-4b yeniden audit |
 
 ## Aktif paketler (oturum 24+)
 

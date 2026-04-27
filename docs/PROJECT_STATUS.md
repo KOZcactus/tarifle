@@ -1,9 +1,22 @@
 # Tarifle, Proje Durumu
 
-> **Oturum 27 (27 Nis 2026, oturum 26'nın aynı gün devamı), 15 commit:
-> Mod K v2 26 batch apply (11a-21b + 22a + 23a + 23b + 24a, 22b BAD
-> reject) + CUISINE_CODES `pt` ekleme + 11 mini-rev (paketi 1: 4 +
-> paketi 2: 7) + SEO batch 3 + 4.**
+> **Oturum 27 (27 Nis 2026, oturum 26'nın aynı gün devamı), 17 commit:
+> Mod K v2 27 batch apply (11a-21b + 22a + 23a + 23b + 24a + 25a, 22b
+> + 24b BAD reject) + CUISINE_CODES `pt` ekleme + 17 mini-rev (paketi
+> 1: 4 + paketi 2: 7 + paketi 3: 6) + SEO batch 3 + 4.**
+>
+> **Mod K Batch 25a apply** (commit `6a8d445`): 38 yeni prod correction.
+> 24b BAD reject (12 BLOCKED Kural 9 + Kural 1 ihlal, Codex'ten
+> yeniden istenecek). 25a PASS oran %10 (en düşük) ama 0 BLOCKED
+> format temiz. Mod K v2 progress 46 → **47/71 (%66.2)**.
+>
+> **Mini-rev paketi 3** (commit `6a8d445`, kuyruk 45 → **39**): 6
+> yabancı klasik + Türk yöresel REWRITE. 2 paralel agent + 14+ kaynak
+> teyit. **3 type değişimi**: kayisili-irmik (YEMEK→TATLI tejbegríz),
+> kabak-bastisi (TATLI→YEMEK etli klasik), helle-tatlisi (TATLI→CORBA
+> Tokat un çorbası). jeyuk-bokkeum + jokai-bableves TR pazar uyarlaması
+> (sucuk + dana, "klasik domuz iledir" disambiguate). hatay-zahterli-
+> tepsi DESC_ONLY (yapı uyumlu, zahter yan salata).
 >
 > **Mod K Batch 23b + 24a apply** (commit `2f9b770`): 60 yeni prod
 > correction (23b 31 + 24a 29). 5 yeni MAJOR mini-rev kuyruğa (23b

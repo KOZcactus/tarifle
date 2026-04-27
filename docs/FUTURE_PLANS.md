@@ -76,8 +76,19 @@ Toplam Mod K v2 prod ~480 → ~876 correction. Nutrition anomaly
 'es' → 'pt' update. Mini-rev kuyruğu 46 → 44 (lisbon-nohutlu-morina
 + lizbon-portakalli-badem-keki otomatik fix).
 
-**Mini-rev kuyruğu 39** (4 önceki + 7 paketi 2 kapandı, kuyrukta 19
-batch 11a-18b + 14 batch 19a-21b + 1 batch 22a + 5 batch 23b/24a kalan):
+**Mini-rev kuyruğu 39** (4 önceki + 7 paketi 2 + 6 paketi 3 kapandı,
+kuyrukta 13 batch 11a-18b + 14 batch 19a-21b + 1 batch 22a + 5 batch
+23b/24a + 6 batch 25a kalan):
+
+25a yeni 6 (oturum 27 dördüncü paket sonrası):
+- `passionfruit-pisco-spritz-peru-usulu`: Pisco yerine brendi + KOKTEYL/ICECEK type karışıklık
+- `patates-rosti-lokmalari`: Rösti İsviçre kökenli, cuisine se yanlış (İsviçre kodu yok)
+- `patatesli-kete-tavasi-ardahan-usulu`: Ardahan patatesli kete tava kaynaksız + scaffold
+- `patatesli-soganli-midye-tava-istanbul-bogaz-usulu`: Midye tava klasik unlu kızartma, patatesli farklı
+- `patila-kars-usulu`: Patila Elazığ + patatesli gözleme hattı, Kars sade ekmek doğrulanmadı
+- `patlican-pacarasi-manisa-usulu`: Manisa paçarası kaynaksız + step tekrar + közleme süre tutarsız
+
+
 
 22a (1):
 - `mincili-laz-boregi-rize-ev-usulu`: Laz böreği muhallebili tatlı klasik (kaynaklar şerbetli), mevcut tuzlu mincili börek (identity mismatch)
@@ -103,24 +114,24 @@ Yeni 26 (oturum 27, 11a-18b MAJOR identity/structural mismatch):
 - `fistikli-domates-corbasi-edirne-bag-usulu`: Edirne yöresel iddia kaynaksız
 - `gul-sirkeli-tavuk-isparta-usulu`: Isparta yöresel iddia kaynaksız
 
-13b (5, paketi 2'de 1 tarif kapandı, kalan 4):
+13b (5, paketi 2'de 1 + paketi 3'te 2 tarif kapandı, kalan 2):
 - `hatay-zahterli-nohut-durumu`: Hatay atfı kaynaksız (klasik Gaziantep)
-- `hatay-zahterli-tepsi-koftesi`: Klasik katmanlı bulgur, mevcut basit kıymalı
+- ~~`hatay-zahterli-tepsi-koftesi`~~: ✅ DESC_ONLY + minor (Antakya kofte uyumlu, paketi 3)
 - ~~`helise-malatya-usulu`~~: ✅ REWRITE (Bitlis/Van menşeli, paketi 2)
-- `helle-tatlisi-tokat-usulu`: Tokat helle ÇORBA, mevcut tatlı (type mismatch)
+- ~~`helle-tatlisi-tokat-usulu`~~: ✅ REWRITE (TATLI→CORBA un çorbası, paketi 3)
 - `hurmali-ekmek-tatlisi-kirklareli-usulu`: Kırklareli kaynaksız + Kural 9
 
-14a-14b (4):
+14a-14b (4, paketi 3'te 3 tarif kapandı, kalan 1):
 - `icli-tava-sinop-usulu`: Sinop içli tava katmanlı pirinçli, mevcut sade hamsi tava
-- `jeyuk-bokkeum`: Kore klasik DOMUZ, mevcut dana eti
-- `jokai-bableves`: Macar klasik füme et + ekşi krema, mevcut sade fasulye
-- `kabak-bastisi-gaziantep-usulu`: Gaziantep kabaklama etli ana yemek, mevcut tatlı tip
+- ~~`jeyuk-bokkeum`~~: ✅ REWRITE (TR pazar dana uyarlaması, paketi 3)
+- ~~`jokai-bableves`~~: ✅ REWRITE (sucuk uyarlaması + ekşi krema + csipetke, paketi 3)
+- ~~`kabak-bastisi-gaziantep-usulu`~~: ✅ REWRITE (TATLI→YEMEK etli klasik, paketi 3)
 
-16a-16b (6, paketi 2'de 2 tarif kapandı, kalan 4):
+16a-16b (6, paketi 2'de 2 + paketi 3'te 1 tarif kapandı, kalan 3):
 - `kastamonu-eksili-siyez-pilavi`: Yoğurtlu/otlu klasik, mevcut kızılcık ekşili sade
 - `katikli-ekmek-kilis-usulu`: Kilis kaynaksız (klasik Hatay/Antakya)
 - `kayisava-trabzon-usulu`: Trabzon kayısava doğrulanamadı, mevcut pekmezli helva
-- `kayisili-irmik-pilavi-macaristan-usulu`: Macar tejbegríz tatlı sütlü, mevcut suyla pilav
+- ~~`kayisili-irmik-pilavi-macaristan-usulu`~~: ✅ REWRITE (YEMEK→TATLI tejbegríz, paketi 3)
 - ~~`kayseri-kursun-asi`~~: ✅ REWRITE (bulgur+kıyma köfte klasik, paketi 2, KRİTİK fix)
 - ~~`kayseri-yag-mantisi`~~: ✅ REWRITE (mayalı bohça kızartma, paketi 2)
 

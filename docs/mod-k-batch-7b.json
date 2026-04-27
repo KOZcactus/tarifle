@@ -1,0 +1,746 @@
+[
+  {
+    "slug": "creme-brulee",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/us/ultimate-creme-brulee-recipe",
+      "https://www.seriouseats.com/creme-brulee-recipe-7107199"
+    ],
+    "confidence": "high",
+    "reason": "Krema, yumurta sarısı, vanilya ve üst şeker yakma akışı klasik crème brûlée ile uyumlu. Süre, alerjen ve porsiyon bilgisi makul görünüyor."
+  },
+  {
+    "slug": "croque-madame",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/croque-madame",
+      "https://www.epicurious.com/recipes/food/views/croque-madame-237589"
+    ],
+    "confidence": "high",
+    "reason": "Jambonlu, peynirli sıcak sandviç üzerine yumurta eklenmesi croque madame için doğru. Mevcut süre, alerjen ve kalori aralığı kabul edilebilir."
+  },
+  {
+    "slug": "croque-monsieur-fransiz-kafe-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/perfect-croque-monsieur/",
+      "https://www.bonappetit.com/recipe/basically-croque-monsieur"
+    ],
+    "confidence": "high",
+    "reason": "Ekmek, jambon, peynir ve sütlü üst sosla fırında kızaran akış croque monsieur için doğru. Kısa dinlenme süreyi bozacak ölçüde değil."
+  },
+  {
+    "slug": "croquetas",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 3 içinde 60 dakika soğutma var ama totalMinutes bu bekleme süresini içermiyor"
+    ],
+    "corrections": {
+      "totalMinutes": 115
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/ham-croquetas",
+      "https://www.seriouseats.com/how-to-make-croquetas-from-leftovers-11853687"
+    ],
+    "confidence": "high",
+    "reason": "Croquetas harcı şekil almadan önce soğutulur. Mevcut tarifte 60 dakika bekleme step içinde var, timeline bunu totalMinutes farkı olarak göstermeli."
+  },
+  {
+    "slug": "csalamade",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 4: totalMinutes 24 saatlik turşu bekleme süresi ima ediyor ama adım sadece 15 dakika dinlendirme söylüyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 4,
+          "instruction": "Sebzeleri sirke, tuz ve şekerle harmanladıktan sonra kapalı kapta 24 saat buzdolabında bekletin.",
+          "timerSeconds": 86400
+        }
+      ]
+    },
+    "sources": [
+      "https://www.196flavors.com/csalamade/",
+      "https://www.hungariantidbits.com/hungarian-pickled-summer-vegetables-csalamade/"
+    ],
+    "confidence": "medium",
+    "reason": "Csalamade taze turşu mantığıyla bekletilerek lezzet kazanır. Toplam süre 24 saate yakın olduğu için step de aynı beklemeyi açık söylemeli."
+  },
+  {
+    "slug": "cuba-libre",
+    "verdict": "PASS",
+    "sources": [
+      "https://iba-world.com/iba-cocktail/cuba-libre/",
+      "https://www.bacardi.com/us/en/rum-cocktails/cuba-libre/"
+    ],
+    "confidence": "high",
+    "reason": "Rom, kola, misket limonu ve buz oranı IBA tarifiyle uyumlu. Küba çıkışı, alkol etiketi ve hızlı hazırlık bilgisi doğru görünüyor."
+  },
+  {
+    "slug": "cuban-black-beans",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: Küba yemeği tr cuisine koduyla kaydedilmiş",
+      "time: step 1 içindeki bir gece bekletme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "cuisine": "cu",
+      "totalMinutes": 580
+    },
+    "sources": [
+      "https://www.tastingtable.com/745704/cuban-black-beans-recipe/",
+      "https://www.food.com/recipe/cuban-black-beans-233154"
+    ],
+    "confidence": "high",
+    "reason": "Siyah fasulye, biber, soğan ve kimyon akışı Küba siyah fasulyesiyle uyumlu. Ancak mutfak kodu ve gece ıslatma süresi düzeltilmeli."
+  },
+  {
+    "slug": "cuban-flan",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: Küba flanı tr cuisine koduyla kaydedilmiş"
+    ],
+    "corrections": {
+      "cuisine": "cu"
+    },
+    "sources": [
+      "https://www.eater.com/22871056/cuban-flan-recipe-traditional-dessert-how-to-make",
+      "https://www.stopandcompare.net/recipe/flan-cubano/"
+    ],
+    "confidence": "high",
+    "reason": "Yoğunlaştırılmış süt, yumurta ve karamel tabanı Küba flanı için doğru. Tek net sorun tarifin Türk mutfağı koduyla durması."
+  },
+  {
+    "slug": "cuban-mojo-chicken",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.feastingathome.com/cuban-chicken-with-chili-roasted-yams/",
+      "https://www.bonappetit.com/recipe/mojo-roast-pork-and-gravy"
+    ],
+    "confidence": "high",
+    "reason": "Portakal, lime ve sarımsaklı mojo marinadı Küba usulüne uygun. İki saat bekleme totalMinutes içinde ayrılmış ve alerjen sorunu yok."
+  },
+  {
+    "slug": "cuban-picadillo",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.foodnetwork.com/recipes/ingrid-hoffmann/cuban-picadillo-recipe-2047190",
+      "https://tuttorossotomatoes.com/recipes/detail/cuban-picadillo"
+    ],
+    "confidence": "high",
+    "reason": "Kıyma, domates, zeytin, kuru üzüm ve kimyon kullanımı Küba picadillo tarifiyle uyumlu. Süre ve makro değerleri makul aralıkta."
+  },
+  {
+    "slug": "cubuk-tursulu-patates-salatasi-ankara-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/portal/cubuk-tursusu",
+      "https://www.youtube.com/watch?v=NhFuhGAIMow"
+    ],
+    "confidence": "medium",
+    "reason": "Çubuk turşusu coğrafi bağlamı doğru, patates salatasında turşu ve zeytinyağlı ekşi sos kullanımı makul. Alerjen ve süre sorunu yok."
+  },
+  {
+    "slug": "cubuklu-patates-borani-ankara-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/portal/cubuk-tursusu",
+      "https://yemek.com/tarif/patates-borani/"
+    ],
+    "confidence": "medium",
+    "reason": "Patates, sarımsaklı yoğurt ve tereyağı çizgisi borani mantığıyla uyumlu. Çubuk turşusu servis bağlamı yerel dokunuş olarak makul."
+  },
+  {
+    "slug": "cucumber-cooler",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.rotinrice.com/cucumber-mint-cooler/",
+      "https://ingenium.ca/agriculture/en/recipes/cucumber-mint-cooler/"
+    ],
+    "confidence": "high",
+    "reason": "Salatalık, lime, nane, soda ve buzla alkolsüz yaz içeceği tanımı doğru. Kısa hazırlık süresi ve düşük kalori bilgisi makul."
+  },
+  {
+    "slug": "cullama-kofte-konya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: step 6 tereyağı kullanıyor ama ingredient listesinde tereyağı yok",
+      "allergen: tereyağı eklendiğinde SUT alerjeni de eklenmeli"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Tereyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "allergens_add": [
+        "SUT"
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/cullama-kofte/",
+      "https://lezzetler.com/cullama-kofte-konya-tarif-103683"
+    ],
+    "confidence": "medium",
+    "reason": "Bulgur ve kıymalı köfte gövdesi makul. Ancak stepte tereyağlı sos var; malzeme listesi ve süt alerjeni bununla eşleşmeli."
+  },
+  {
+    "slug": "curau-de-milho",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 5 içindeki 1 saat soğutma totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 95
+    },
+    "sources": [
+      "https://www.curiouscuisiniere.com/curau-de-milho-corn-pudding/",
+      "https://infoodtruck.fr/en/flavor/curau-de-milho-brazilian-corn-pudding"
+    ],
+    "confidence": "high",
+    "reason": "Mısır, süt, şeker ve tarçınla pişen puding akışı doğru. Soğutma adımı tarifte yazdığı için toplam süreye bekleme olarak eklenmeli."
+  },
+  {
+    "slug": "currywurst-sos",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: Currywurst Alman sokak yemeği, hu cuisine kodu yanlış",
+      "steps: Türkçe karakterler bozulmuş, Kori/baharatin/koyulastirin gibi ASCII fold ifadeler var"
+    ],
+    "corrections": {
+      "cuisine": "de",
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Köri tozunu küçük tencerede bir damla yağla 30 saniye çevirin, baharatın kokusu açılsın.",
+          "timerSeconds": 30
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Domates püresi, elma sirkesi ve esmer şekeri ekleyin, topak kalmaması için çırpıcıyla karıştırın."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Sosu kısık ateşte ara ara karıştırarak 12-15 dakika koyulaştırın, yüzeyinde yavaş baloncuklar göreceksiniz.",
+          "timerSeconds": 840
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Currywurst sosunu tadıp ekşi tatlı dengesini ayarlayın, akışkan ama kaplayıcı kıvamdayken kullanın."
+        }
+      ]
+    },
+    "sources": [
+      "https://culinaryginger.com/curry-ketchup-currywurst-sauce/",
+      "https://www.craftbeering.com/currywurst-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Domates ve köri temelli sos Almanya kökenli currywurst ile uyumlu. Mutfak kodu ve bozuk Türkçe adımlar düzeltilmeli."
+  },
+  {
+    "slug": "daiquiri",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: gazlı ekler sona kalsın ifadesi yanlış, klasik daiquiri gazlı içecek içermez"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Daiquiri için kadehi soğutun, rom, lime suyu ve şeker şurubunu ölçüp shaker'a hazır edin.",
+          "timerSeconds": 60
+        }
+      ]
+    },
+    "sources": [
+      "https://www.barschool.net/recipes/daiquiri",
+      "https://www.liquor.com/recipes/daiquiri/"
+    ],
+    "confidence": "high",
+    "reason": "Klasik daiquiri rom, lime ve şeker şurubuyla çalkalanır; gazlı ek yoktur. Malzemeler doğru, yalnız ilk adım yanıltıcı."
+  },
+  {
+    "slug": "dakgalbi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.maangchi.com/recipe/dakgalbi/comment-page-1",
+      "https://www.beyondkimchee.com/dak-galbi/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk but, lahana, pirinç keki, gochujang ve soya soslu tava akışı Chuncheon dakgalbi ile uyumlu. Bekleme süresi timeline içinde."
+  },
+  {
+    "slug": "dakos",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.mygreekdish.com/recipe/ntakos-rusks-with-tomatoes-and-feta-cheese/",
+      "https://www.thehellenicodyssey.com/cretan-dakos-barley-rusk/"
+    ],
+    "confidence": "high",
+    "reason": "Arpa peksimeti, domates, feta, zeytinyağı ve kekik bileşimi Girit dakos tarifiyle uyumlu. Kısa yumuşatma süresi makul."
+  },
+  {
+    "slug": "dal-makhani",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 1 içindeki 8 saat bekletme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 625
+    },
+    "sources": [
+      "https://www.tarladalal.com/dal-makhani-30901r",
+      "https://timesofindia.indiatimes.com/life-style/food-news/how-to-make-dhaba-style-dal-makhani-at-home/photostory/126307661.cms"
+    ],
+    "confidence": "high",
+    "reason": "Siyah mercimek, tereyağı ve kremayla uzun pişirme doğru. Tarif 8 saat ıslatma dediği için toplam süre bunu bekleme segmenti olarak içermeli."
+  },
+  {
+    "slug": "damla-sakizli-elma-muhallebisi-izmir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 5 içindeki 1 saat soğutma totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 82
+    },
+    "sources": [
+      "https://yemek.com/tarif/damla-sakizli-muhallebi/",
+      "https://www.nefisyemektarifleri.com/damla-sakizli-muhallebi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Süt, nişasta, şeker ve damla sakızlı muhallebi tabanı doğru. Stepte yazan soğutma süresi timeline içinde ayrıca görünmeli."
+  },
+  {
+    "slug": "damla-sakizli-sicak-cikolata",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/sicak-cikolata/",
+      "https://www.nefisyemektarifleri.com/sicak-cikolata-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Süt, bitter çikolata, kakao ve şekerle yapılan sıcak çikolata akışı doğru. Damla sakızı yerel aroma olarak makul ve alerjen doğru."
+  },
+  {
+    "slug": "damla-sakizli-un-kurabiyesi-alacati-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 3 içindeki 10 dakika dinlendirme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 42
+    },
+    "sources": [
+      "https://yemek.com/tarif/damla-sakizli-un-kurabiyesi/",
+      "https://www.nefisyemektarifleri.com/damla-sakizli-un-kurabiyesi/"
+    ],
+    "confidence": "medium",
+    "reason": "Un, tereyağı, pudra şekeri ve damla sakızıyla kurabiye gövdesi doğru. Dinlenme süresi toplam süreye bekleme olarak eklenmeli."
+  },
+  {
+    "slug": "damper",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.food.com/recipe/australian-damper-22353",
+      "https://www.goodto.com/recipes/damper"
+    ],
+    "confidence": "high",
+    "reason": "Un, kabartma tozu, süt, tuz ve tereyağıyla mayasız Avustralya ekmeği akışı doğru. Fırın süresi ve alerjen listesi uyumlu."
+  },
+  {
+    "slug": "dan-dan-noodle",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.pbs.org/food/recipes/dan-dan-noodle",
+      "https://www.theguardian.com/food/article/2024/sep/04/how-to-make-dan-dan-noodles-recipe-felicity-cloake"
+    ],
+    "confidence": "high",
+    "reason": "Buğday eriştesi, kıyma, soya sosu, susam ezmesi ve acı yağ bileşimi dan dan noodle için makul. Alerjen ve süre bilgisi tutarlı."
+  },
+  {
+    "slug": "dana-lo-mein",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 2 içindeki 10 dakika bekletme totalMinutes içinde görünmüyor",
+      "tag: totalMinutes 37 olunca 30-dakika-alti etiketi yanıltıcı olur"
+    ],
+    "corrections": {
+      "totalMinutes": 37,
+      "tags_remove": [
+        "30-dakika-alti"
+      ]
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/roast-pork-lo-mein-51149600",
+      "https://www.southernliving.com/food/kitchen-assistant/chow-mein-vs-lo-mein"
+    ],
+    "confidence": "medium",
+    "reason": "Lo mein pişmiş eriştenin sosla çevrilmesi mantığıyla uyumlu. Ancak etin 10 dakika bekletilmesi toplam süreyi 30 dakikanın üstüne çıkarıyor."
+  },
+  {
+    "slug": "dana-solyanka",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.foodista.com/recipe/3FB4XW3R/solyanka",
+      "https://www.rbth.com/russian-kitchen/327975-how-to-cook-solyanka-soup"
+    ],
+    "confidence": "medium",
+    "reason": "Et, domates, kornişon turşu ve zeytinle ekşi tuzlu çorba profili solyanka ile uyumlu. Mevcut süre ve malzeme listesi makul."
+  },
+  {
+    "slug": "dana-stroganoff",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.seriouseats.com/ultimate-beef-stroganof-recipe",
+      "https://www.bonappetit.com/recipes/quick-recipes/article/peppered-beef-stroganoff"
+    ],
+    "confidence": "high",
+    "reason": "Dana eti, mantar, krema, hardal ve et suyuyla kurulan sos stroganoff çizgisine uygun. Süt ve hardal alerjenleri doğru verilmiş."
+  },
+  {
+    "slug": "dark-and-stormy",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "cuisine: Bermuda çıkışlı kokteyl tr cuisine koduyla kaydedilmiş",
+      "cuisine: Tarifle kod listesinde Bermuda yok, tr kodu kullanıcıyı yanıltır"
+    ],
+    "corrections": {
+      "cuisine": "gb"
+    },
+    "sources": [
+      "https://goslings.com/recipes/dark-n-stormy/",
+      "https://iba-world.com/iba-cocktail/dark-n-stormy/"
+    ],
+    "confidence": "medium",
+    "reason": "Koyu rom ve zencefil birası doğru, fakat Bermuda çıkışlı kokteyl Türk mutfağı altında duruyor. gb kodu geçici seçenek olarak manuel incelenmeli."
+  },
+  {
+    "slug": "date-orange-couscous-fas-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: step 5 zeytinyağı kullanıyor ama ingredient listesinde yok",
+      "ingredient: step 5 badem kullanıyor ama ingredient listesinde yok",
+      "allergen: badem eklendiğinde KUSUYEMIS alerjeni de eklenmeli"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Badem",
+          "amount": "0.25",
+          "unit": "su bardağı"
+        }
+      ],
+      "allergens_add": [
+        "KUSUYEMIS"
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/orange-date-couscous",
+      "https://www.theguardian.com/food/2021/apr/10/yotam-ottolenghi-couscous-recipes"
+    ],
+    "confidence": "medium",
+    "reason": "Hurma ve portakallı kuskus Fas profiline uygun. Ancak adımda geçen zeytinyağı ve badem listede yok, badem alerjeni de eklenmeli."
+  },
+  {
+    "slug": "date-tahini-cake-orta-dogu-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.youtube.com/watch?v=DBokCO-FcHs",
+      "https://www.bonappetit.com/recipe/tahini-dip-for-dates"
+    ],
+    "confidence": "medium",
+    "reason": "Hurma ve tahin birlikteliği Orta Doğu tat profiline uygun, kekte un ve yumurta kullanımı makul. Gluten, susam ve yumurta alerjenleri doğru."
+  },
+  {
+    "slug": "defneli-limon-serbeti-isparta-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: step 1 şeker kullanıyor ama ingredient listesinde yok",
+      "time: step 2 içindeki 10 dakika dinlendirme totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Şeker",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "totalMinutes": 18
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/isparta/nealinir/limon",
+      "https://yemek.com/tarif/limon-serbeti/"
+    ],
+    "confidence": "low",
+    "reason": "Limonlu şerbet akışı makul, defne yerel aroma olarak kullanılabilir. Stepte şeker ve 10 dakika bekleme var, ikisi de kayıtta görünmeli."
+  },
+  {
+    "slug": "delhi-chole-bhature",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 1 içindeki geceden ıslatma totalMinutes içinde görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 605
+    },
+    "sources": [
+      "https://www.tarladalal.com/chole-bhature-2810r",
+      "https://www.slurrp.com/web-stories/delhi-street-style-chole-bhature-recipe-for-a-heavy-brunch/"
+    ],
+    "confidence": "high",
+    "reason": "Nohut, chole masala, yoğurtlu hamur ve kızarmış bhature akışı doğru. Geceden ıslatma süresi toplamda bekleme segmenti olmalı."
+  },
+  {
+    "slug": "delhi-tereyagli-tavuk-makhani",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/butter-chicken",
+      "https://en.wikipedia.org/wiki/Butter_chicken"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurtlu marine, domatesli tereyağlı sos, krema, kaju ve çemen yaprağı butter chicken için doğru. Bir saat bekleme toplam süreye dahil."
+  },
+  {
+    "slug": "delhi-zerdecalli-patates-poha",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.tarladalal.com/batata-poha-quick-kanda-batata-poha-aloo-poha-38677r",
+      "https://timesofindia.indiatimes.com/life-style/food-news/how-to-make-classic-poha-for-breakfast-at-home/photostory/126917829.cms"
+    ],
+    "confidence": "high",
+    "reason": "Poha, patates, hardal tohumu, zerdeçal ve yer fıstığı bileşimi klasik kahvaltı poha akışıyla uyumlu. Alerjenler doğru."
+  },
+  {
+    "slug": "demirhindi-kompostosu-gaziantep-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://cookidoo.thermomix.com/recipes/recipe/en-us/r171363",
+      "https://www.efsanetarifler.com/tarif/demirhindi-serbeti-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Demirhindi, su, şeker ve tarçınla kısa kaynatma komposto için makul. Tarif adımı ve toplam süre arasında belirgin çelişki yok."
+  },
+  {
+    "slug": "demirhindi-naneli-soguk-icecek-sanliurfa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3: soğuk içecek başlığına rağmen serin veya ılık servis edin ifadesi belirsiz ve çelişkili"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 3,
+          "instruction": "Demirhindi naneli içeceği buzla karıştırıp soğuk servis edin, nane kokusu taze kalsın."
+        }
+      ]
+    },
+    "sources": [
+      "https://cookidoo.thermomix.com/recipes/recipe/en-us/r171363",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/demirhindi-serbeti-tarifi/21474"
+    ],
+    "confidence": "medium",
+    "reason": "Demirhindi içeceği soğuk servis bağlamında doğru. Son adım ılık servis diyerek başlıkla çelişiyor, açıkça soğuk servis demeli."
+  },
+  {
+    "slug": "demirhindi-serbeti",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 1 içindeki 30 dakika bekletme totalMinutes içinde görünmüyor",
+      "time: step 3 içindeki buzdolabında soğutma için süre verilmiş gibi 2 saat timer var ama totalMinutes bunu içermiyor"
+    ],
+    "corrections": {
+      "totalMinutes": 185
+    },
+    "sources": [
+      "https://cookidoo.thermomix.com/recipes/recipe/en-us/r171363",
+      "https://www.efsanetarifler.com/tarif/demirhindi-serbeti-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Demirhindi şerbeti bekletme, baharatla kaynatma ve soğutma içerir. Step timerları toplam süreye bekleme segmenti olarak yansımalı."
+  },
+  {
+    "slug": "demirhindi-zencefilli-soguk-icecek-sanliurfa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3: soğuk içecek başlığına rağmen serin veya ılık servis edin ifadesi belirsiz ve çelişkili"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 3,
+          "instruction": "Demirhindi zencefilli içeceği buzla karıştırıp soğuk servis edin, zencefil tadı keskin kalır."
+        }
+      ]
+    },
+    "sources": [
+      "https://cookidoo.thermomix.com/recipes/recipe/en-us/r471397",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/demirhindi-serbeti-tarifi/21474"
+    ],
+    "confidence": "medium",
+    "reason": "Demirhindi ve zencefil soğuk şerbet varyasyonu olarak makul. Son adım ılık servis diyerek başlıkla çelişiyor, netleştirilmeli."
+  },
+  {
+    "slug": "deniz-borulceli-fava-bodrum-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "description: mezesı yazım hatası var, doğru Türkçe meze olmalı"
+    ],
+    "corrections": {
+      "description": "Bodrum deniz börülceli fava, bakla püresini deniz börülcesiyle buluşturarak tuzlu, kremamsı ve ferah bir Ege mezesi sunar."
+    },
+    "sources": [
+      "https://yemek.com/tarif/fava/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/sebze-yemekleri/zeytinyagli-tarifler/fava"
+    ],
+    "confidence": "medium",
+    "reason": "Bakla püresi ve deniz börülcesi Ege mezesi bağlamında makul. Tek net sorun description içindeki Türkçe yazım hatası."
+  },
+  {
+    "slug": "deniz-borulceli-levrek-bugulama-izmir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/levrek-bugulama/",
+      "https://www.nefisyemektarifleri.com/levrek-bugulama-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Levrek buğulama ile deniz börülcesi, limon, sarımsak ve zeytinyağı uyumlu. Deniz ürünleri alerjeni ve süreler doğru görünüyor."
+  },
+  {
+    "slug": "deniz-borulcesi-salatasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/deniz-borulcesi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/deniz-borulcesi-salatasi"
+    ],
+    "confidence": "high",
+    "reason": "Deniz börülcesi, sarımsak, zeytinyağı ve limonla hazırlanan salata kaynaklarla uyumlu. Alerjen ve süre bilgisi makul."
+  },
+  {
+    "slug": "deniz-mahsullu-paella",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/seafood-paella",
+      "https://www.epicurious.com/recipes/food/views/seafood-paella-366249"
+    ],
+    "confidence": "high",
+    "reason": "Paella pirinci, safran, balık suyu, karides ve midyeyle geniş tavada pişirme akışı deniz mahsullü paella için doğru."
+  },
+  {
+    "slug": "deniz-yosunu-cipsi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: totalMinutes 11 iken steps toplamda 25 dakikadan fazla pişirme ve soğutma söylüyor",
+      "steps: nori cipsi için 15+10 dakika fırın fazla uzun, yakma riski yüksek"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Nori yapraklarını kuru bezle silin, yüzey nemli kalırsa fırında çıtırlaşması gecikir."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Susam yağı, tuz ve susamı küçük kasede karıştırıp nori yapraklarının parlak yüzüne ince sürün."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Yaprakları tepsiye tek sıra yayın ve 160°C fırına alın."
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Nori yapraklarını 5-6 dakika çıtırlaşana kadar pişirin, kenarlar koyulaşmadan çıkarın.",
+          "timerSeconds": 360
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Tepside 3 dakika soğutup karelere bölün, buhar çıkınca gevreklik korunur.",
+          "timerSeconds": 180
+        }
+      ]
+    },
+    "sources": [
+      "https://www.terrasana.com/recipe/korean-nori-chips/",
+      "https://www.food.com/recipe/toasted-sesame-nori-207916"
+    ],
+    "confidence": "high",
+    "reason": "Nori ve susam yağıyla cips fikri doğru, fakat mevcut pişirme adımları süreyle çelişiyor ve fazla uzun. Kısa fırın akışı daha doğru."
+  },
+  {
+    "slug": "denizli-kabakli-kofte-bazlamasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/denizli/neyenir",
+      "https://lezzetler.com/tavas-goveci-denizli-tarif-110500"
+    ],
+    "confidence": "low",
+    "reason": "Denizli yerel etli hamur işi bağlamı makul, köfte, kabak, bazlama ve salçalı et suyu kendi içinde tutarlı. Net kaynaklı hata bulunmadı."
+  },
+  {
+    "slug": "denizli-kale-biber-tava",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/denizli/nealinir/kale-biberi",
+      "https://kale-denizli.gov.tr/kale-biberi"
+    ],
+    "confidence": "medium",
+    "reason": "Kale biberi Denizli coğrafi ürünü olarak doğru. Biber, domates, sarımsak ve zeytinyağıyla tava yemeği akışı makul görünüyor."
+  },
+  {
+    "slug": "denizli-kuyu-kebabi-kuzu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/denizli/neyenir/kuyu-tandiri-kuyu-kebabi",
+      "https://www.e-sehir.com/yemek_tarifleri/kuyu-tandiri-kuyu-kebabi-denizli-tarifi.html"
+    ],
+    "confidence": "medium",
+    "reason": "Kuzu eti, kapalı ağır pişirme ve lavaşla servis Denizli kuyu kebabı ev tipi yorumu için makul. Süre farkı kritik eşiği aşmıyor."
+  },
+  {
+    "slug": "denizli-tandir-kebabi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.aa.com.tr/tr/rahmet-ve-bereket-ayi-ramazan/denizlinin-tescilli-lezzeti-tandir-kebabi-paket-servisle-iftar-sofralarini-susluyor/2234372",
+      "https://www.haberdenizli.com/denizlinin-tescilli-lezzeti-tandir-kebabi"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu etinin taş fırın veya kapalı fırın düzeninde 2-3 saat pişmesi ve pideyle servis edilmesi Denizli tandır kebabıyla uyumlu."
+  },
+  {
+    "slug": "denizli-tavasi-kuzu",
+    "verdict": "PASS",
+    "sources": [
+      "https://lezzetler.com/tavas-goveci-denizli-tarif-110500",
+      "https://www.kulturportali.gov.tr/turkiye/denizli/neyenir"
+    ],
+    "confidence": "medium",
+    "reason": "Kemikli kuzu, kuyruk yağı, domates, biber ve sarımsakla uzun fırın pişirme Denizli tava çizgisine uygun. Yağ ve kalori dengesi makul."
+  },
+  {
+    "slug": "denizli-yen-boregi",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "ingredient: kaynaklarda yen böreği mısır unlu mayalı hamurla yapılır, mevcut tarif buğday unu kullanıyor",
+      "ingredient: kaynaklarda kuzu kıyma ve iç yağı öne çıkıyor, mevcut tarif dana kıyma, tereyağı ve sıvı yağ kullanıyor",
+      "steps: kaynaklarda fırın böreği akışı var, mevcut tarif tavada kızartılan yufka rulosuna dönmüş",
+      "allergen: kaynaklara göre SUT alerjeni gerekmeyebilir, mevcut tereyağı nedeniyle SUT eklenmiş"
+    ],
+    "corrections": {
+      "description": "Denizli yen böreği, mısır unlu mayalı hamur ve kıymalı içle fırında pişen yöresel bir börektir."
+    },
+    "sources": [
+      "https://turkiye.influence.cool/tr/denizli/acipayam/yerel-lezzetler/yen-boregi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/borek-tarifleri/yen-boregi"
+    ],
+    "confidence": "high",
+    "reason": "Mevcut tarif kaynaklardaki yen böreğiyle temel malzeme ve teknik düzeyinde ayrışıyor. Bu tarif manuel inceleme gerektiren ciddi sorun taşıyor."
+  }
+]

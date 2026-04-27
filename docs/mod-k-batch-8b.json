@@ -1,0 +1,618 @@
+[
+  {
+    "slug": "domatesli-makarna",
+    "verdict": "PASS",
+    "reason": "Domates, sarımsak, zeytinyağı, fesleğen ve parmesan çizgisi kaynaklarla uyumlu. Süre, porsiyon, makro ve allergen beyanı makul.",
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/pilav-ve-makarna-tarifleri/makarna-tarifleri/feslegenli-domates-soslu-makarna-tarifi",
+      "https://ye-mek.net/tarif/feslegenli-domates-soslu-makarna-spagetti"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "domatesli-mercimekli-borani-sanliurfa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: steps içindeki pişirme süreleri 29 dakika ediyor; prep 12 dakika ile total 41 dakika olmalı"
+    ],
+    "corrections": {
+      "cookMinutes": 29,
+      "totalMinutes": 41
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/meze-tarifleri/mercimekli-borani",
+      "https://ye-mek.net/tarif/mercimek-borani"
+    ],
+    "confidence": "high",
+    "reason": "Mercimekli borani yoğurt ve sarımsakla uyumlu, fakat mevcut timer toplamı 30 dakikalık total süreyi aşıyor."
+  },
+  {
+    "slug": "domatesli-mercimekli-cokertme-bilecik-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "servingSuggestion: tarif vegan tag taşıyor ama servis önerisi yoğurt öneriyor; ingredient listesinde yoğurt da yok"
+    ],
+    "corrections": {
+      "servingSuggestion": "Yemeği ılık servis edin, üstüne limon ve kıyılmış maydanoz ekleyin."
+    },
+    "sources": [
+      "https://www.diyetkolik.com/yemek-tarifi/yesil-mercimek-corbasi",
+      "https://www.sigortahaber.com/domatesli-yesil-mercimek-corbasi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Mercimek ve domatesli tencere yapısı makul, ancak vegan etiketli tarifte yoğurt servis önerisi kullanıcıyı yanıltır."
+  },
+  {
+    "slug": "domatesli-misir-coregi-sakarya-usulu",
+    "verdict": "PASS",
+    "reason": "Mısır unu, un, yumurta, zeytinyağı ve domatesli fırın çöreği yapısı kaynaklarla makul. Süre ve allergenler doğru.",
+    "sources": [
+      "https://www.sahrapsoysal.com/benim-misir-unu-coregim-tarifi-t-5990",
+      "https://ye-mek.net/tarif/misir-ekmegi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "domatesli-sardalya-pilaki-canakkale-usulu",
+    "verdict": "PASS",
+    "reason": "Sardalya, domates, sarımsak ve zeytinyağıyla kısa tencere pişirmesi balık pilaki mantığına uyuyor. Allergen ve süreler makul.",
+    "sources": [
+      "https://yemek.com/tarif/sardalya-ve-zeytinli-penne/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/zeytinyagli-barbunya-pilaki-tarifi/1823"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "domatesli-sarimsak-corbasi-ispanya-usulu",
+    "verdict": "PASS",
+    "reason": "Sopa de ajo tabanı sarımsak, ekmek ve zeytinyağıyla uyumlu; domatesli vegan yorum yanıltıcı değil. Gluten beyanı doğru.",
+    "sources": [
+      "https://www.themediterraneandish.com/sopa-de-ajo-spanish-garlic-bread-soup/",
+      "https://www.bascofinefoods.com/spanish-recipes/sopa-de-ajo/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "domatesli-tarhana-corbasi-trakya-usulu",
+    "verdict": "PASS",
+    "reason": "Tarhanayı soğuk suyla açıp domatesli yağda pişirme kaynaklarla uyumlu. Tarhana ve tereyağı nedeniyle allergenler doğru.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/canakkale/neyenir/domatesli-tarhana-corbasi",
+      "https://www.sahrapsoysal.com/tarhana-corbasi-tarifi-t-3393"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "domatesli-tavuklu-firik-pilavi-siirt-usulu",
+    "verdict": "PASS",
+    "reason": "Firik, tavuk, domates ve tek tencere pilav yapısı doğru. Timer toplamı total süreyle uyumlu, gluten beyanı firik için doğru.",
+    "sources": [
+      "https://www.pilav.gen.tr/domatesli-tavuklu-pilav.html",
+      "https://www.nefisyemektarifleri.com/tavuklu-firik-pilavi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "domatesli-uskumru-bugulama-tekirdag-usulu",
+    "verdict": "PASS",
+    "reason": "Uskumru, domates, soğan, defne ve zeytinyağıyla buğulama tekniği kaynaklarla uyumlu. Süre ve deniz ürünü allergeni doğru.",
+    "sources": [
+      "https://yemek.com/tarif/firinda-uskumru/",
+      "https://www.nefisyemektarifleri.com/balik-bugulama-9997184/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "domatesli-yarma-corbasi-konya-usulu",
+    "verdict": "PASS",
+    "reason": "Yarma buğdayın domates ve naneyle çorba yapılması tutarlı. Gluten allergeni doğru, vegan ve tek tencere etiketleri makul.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/konya/neyenir/yarma-corbasi",
+      "https://www.nefisyemektarifleri.com/yarma-corbasi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "domatesli-yesil-mercimek-corbasi-konya-usulu",
+    "verdict": "PASS",
+    "reason": "Yeşil mercimek, domates rendesi, nane ve suyla sade çorba yapısı güvenilir kaynaklarla uyumlu. Allergen yokluğu makul.",
+    "sources": [
+      "https://www.sigortahaber.com/domatesli-yesil-mercimek-corbasi-tarifi/",
+      "https://www.diyetkolik.com/yemek-tarifi/yesil-mercimek-corbasi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "dorayaki-japon-kafe-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step içinde şeker ve kabartma tozu kullanılıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Şeker",
+          "amount": "0.5",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Kabartma tozu",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.justonecookbook.com/dorayaki-japanese-red-bean-pancake/",
+      "https://www.japanesecooking101.com/dorayaki-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Dorayaki kaynaklarında yumurta, şeker, bal, un, kabartıcı ve anko temel yapı. Mevcut tarifte iki zorunlu kuru malzeme eksik."
+  },
+  {
+    "slug": "douhua",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 7: susam öneriliyor ama ingredient listesinde susam yok; SUSAM allergeni de declare edilmemiş"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 7,
+          "instruction": "Kaseleri bekletmeden servis edin, tofu yüzeyi parçalanmadan kaşıkla alınsın."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.foodnetwork.com/recipes/food-network-kitchen/douhua-12501458",
+      "https://www.chinasichuanfood.com/douhua/"
+    ],
+    "confidence": "high",
+    "reason": "Douhua için tofu ve zencefilli şurup doğru, fakat step'teki susam ingredient ve allergen listesinde yok."
+  },
+  {
+    "slug": "dublin-soda-bread",
+    "verdict": "PASS",
+    "reason": "Un, ayran, karbonat ve tuzla mayasız ekmek yapısı doğru. 200°C ve 30-35 dakika pişirme kaynaklarla uyumlu.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/irish-soda-bread",
+      "https://www.realsimple.com/food-recipes/cooking-tips-techniques/baking/irish-soda-bread"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "duck-confit",
+    "verdict": "PASS",
+    "reason": "Ördek budunun tuzlanıp ördek yağında düşük ısıda uzun pişmesi klasik confit tekniğiyle uyumlu. Makro ve süreler makul.",
+    "sources": [
+      "https://www.seriouseats.com/the-1-ingredient-upgrade-for-classic-duck-confit-8746702",
+      "https://www.thespruceeats.com/what-is-confit-995765"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "dugulu-bulgur-pilavi-nevsehir-usulu",
+    "verdict": "PASS",
+    "reason": "İnce bulgurun soğan, domates ve suyla sade pilav yapılması doğru. Vegan tag, gluten allergeni ve süreler uyumlu.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/domatesli-bulgur-pilavi-tarifi/",
+      "https://ye-mek.net/tarif/domatesli-bulgur-pilavi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "dugun-corbasi",
+    "verdict": "PASS",
+    "reason": "Kuzu gerdan, yoğurt, yumurta sarısı, un ve limonlu terbiye klasik düğün çorbasıyla uyumlu. Allergenler doğru.",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/nefis-dugun-corbasi/18016",
+      "https://www.nefisyemektarifleri.com/dugun-corbasi-tarifi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "dut-pekmezli-bulgur-tatlisi-elazig-usulu",
+    "verdict": "PASS",
+    "reason": "Bulgur, dut pekmezi ve cevizle kaşıklık tatlı yapısı makul. Gluten ve kuruyemiş allergenleri doğru, süre farkı kritik değil.",
+    "sources": [
+      "https://www.evvelcevap.com/pekmezli-un-helvasi-tarifi/",
+      "https://www.harputsepeti.com/urun/cevizli-dut-pestili/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "dut-pekmezli-cevizli-un-helvasi-erzurum-usulu",
+    "verdict": "PASS",
+    "reason": "Un, tereyağı, süt, pekmez ve cevizle helva yapısı kaynaklarla uyumlu. Makro, süre ve allergen beyanları makul.",
+    "sources": [
+      "https://www.evvelcevap.com/pekmezli-un-helvasi-tarifi/",
+      "https://www.diyetkolik.com/yemek-tarifi/pekmezli-un-helvasi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "dut-pekmezli-irmik-helvasi-elazig-usulu",
+    "verdict": "PASS",
+    "reason": "İrmik, tereyağı ve pekmezli sıcak şerbet tekniği helva kaynaklarıyla uyumlu. Gluten ve süt allergenleri doğru.",
+    "sources": [
+      "https://www.beyorganik.com/dut-ozlu-sekersiz-irmik-helvasi",
+      "https://www.evvelcevap.com/irmik-helvasi-tarifi-5/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "dut-pekmezli-kesme-muhallebi-elazig-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 5 tatlıyı 3 saat soğutuyor; totalMinutes 22 dakika olduğu için bekleme süresi görünmüyor"
+    ],
+    "corrections": {
+      "totalMinutes": 202
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kesme-muhallebi/",
+      "https://ye-mek.net/tarif/muhallebi"
+    ],
+    "confidence": "high",
+    "reason": "Muhallebinin kesilmesi için uzun soğutma gerekir. Mevcut total süre 3 saatlik beklemeyi dışarıda bırakıyor."
+  },
+  {
+    "slug": "dut-pekmezli-kete-kup-erzurum-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 5 kup tatlısını 20 dakika dinlendiriyor; totalMinutes 10 dakika yazıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 30
+    },
+    "sources": [
+      "https://www.nukhetintarifdefteri.net/en/kete/",
+      "https://www.evvelcevap.com/pekmezli-un-helvasi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kete ve kaymaklı kup yorumu makul, fakat step içindeki 20 dakika bekleme total süreye eklenmeli."
+  },
+  {
+    "slug": "dut-pekmezli-lor-kup-erzincan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 5 tatlıyı 15 dakika soğutuyor; totalMinutes 10 dakika yazıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 25
+    },
+    "sources": [
+      "https://www.diyetkolik.com/yemek-tarifi/pekmezli-un-helvasi",
+      "https://www.harputsepeti.com/urun/cevizli-dut-pestili/"
+    ],
+    "confidence": "medium",
+    "reason": "Lor, pekmez ve cevizli soğuk kup yapısı tutarlı, ancak 15 dakikalık soğutma total süreye dahil edilmeli."
+  },
+  {
+    "slug": "dut-pekmezli-un-helvasi-erzurum-usulu",
+    "verdict": "PASS",
+    "reason": "Unun tereyağında kavrulup pekmezli sıvıyla bağlanması kaynaklarla uyumlu. Süre, makro ve allergenler makul.",
+    "sources": [
+      "https://www.evvelcevap.com/pekmezli-un-helvasi-tarifi/",
+      "https://www.diyetkolik.com/yemek-tarifi/pekmezli-un-helvasi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "dut-serbetli-kadayif-kup-elazig-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 4: ceviz katmanı yazıyor ama ingredient listesinde ceviz yok; KUSUYEMIS allergeni de declare edilmemiş"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 4,
+          "instruction": "Kup içine kadayıf, dut şerbeti ve krema katlarını yerleştirin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kadayifli-muhallebi-kuplari/",
+      "https://www.evvelcevap.com/pekmezli-un-helvasi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kadayıf, şerbet ve krema katmanı tutarlı. Ceviz ise listede olmadığı için step'ten çıkarılmalı."
+  },
+  {
+    "slug": "dutlu-cevizli-un-helvasi-erzurum-usulu",
+    "verdict": "PASS",
+    "reason": "Pekmezli un helvasına ceviz eklenmesi kaynaklarla uyumlu. Gluten, süt ve kuruyemiş allergenleri doğru.",
+    "sources": [
+      "https://www.evvelcevap.com/pekmezli-un-helvasi-tarifi/",
+      "https://www.diyetkolik.com/yemek-tarifi/pekmezli-un-helvasi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "dutlu-pestil-sarma-elazig-usulu",
+    "verdict": "PASS",
+    "reason": "Dut pestili, dut özü ve cevizli sarma fikri Elazığ pestil kaynaklarıyla uyumlu. Kuruyemiş allergeni doğru.",
+    "sources": [
+      "https://www.harputsepeti.com/urun/cevizli-dut-pestili/",
+      "https://www.shopier.com/elazigpazariyorezza/36211530"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "duzce-mamursa-peynirli",
+    "verdict": "PASS",
+    "reason": "Mısır unu, su, tereyağı ve Çerkez peyniriyle mamursa yapısı Düzce kaynaklarıyla uyumlu. Süt allergeni doğru.",
+    "sources": [
+      "https://lezzetler.com/tarif-162363",
+      "https://www.e-sehir.com/yemek_tarifleri/mamursa-duzce-tarifi.html"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "duzce-mancarli-pide",
+    "verdict": "PASS",
+    "reason": "Mancar veya pazı, soğanlı iç ve mayalı hamurla kapalı pide yapısı Akçakoca mancarlı pide kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/duzce/neyenir/akcakoca-mancarli-pide",
+      "https://duzce.ktb.gov.tr/TR-249199/akcakoca-mancarli-pide.html"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "earl-grey-collins-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 4: aynı cümle parçası iki kez tekrar ediyor, servis adımı boilerplate görünüyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 4,
+          "instruction": "Üstünü sodayla tamamlayıp bir kez karıştırın ve bekletmeden servis edin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.theguardian.com/food/2021/feb/26/cocktail-of-the-week-pritesh-mody-earl-grey-collins-recipe",
+      "https://www.epicurious.com/recipes/food/views/tom-collins"
+    ],
+    "confidence": "high",
+    "reason": "Earl Grey, cin, limon ve soda çizgisi doğru. Yalnız son step'te tekrar eden ifade temizlenmeli."
+  },
+  {
+    "slug": "edamame",
+    "verdict": "PASS",
+    "reason": "Kabuklu edamamenin tuzlu suda 4-6 dakika haşlanması kaynaklarla uyumlu. Soya allergeni ve vegan tag doğru.",
+    "sources": [
+      "https://www.justonecookbook.com/edamame/",
+      "https://www.epicurious.com/recipes/food/views/edamame-15260"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "edamame-kinoa-salatasi",
+    "verdict": "PASS",
+    "reason": "Kinoa, edamame, salatalık, susam ve limonlu soğuk salata yapısı makul. Soya ve susam allergenleri doğru.",
+    "sources": [
+      "https://www.justonecookbook.com/edamame/",
+      "https://www.loveandlemons.com/quinoa-salad/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "edirne-arnavut-cigeri",
+    "verdict": "PASS",
+    "reason": "Küp ciğerin unlanıp kısa kızartılması, patates ve sumaklı soğan servisi Arnavut ciğeri kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/arnavut-cigeri-tarifi/",
+      "https://ye-mek.net/tarif/arnavut-cigeri"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "edirne-badem-ezmesi-lokum",
+    "verdict": "PASS",
+    "reason": "Badem, şeker ve suyla yoğrulup kesilen Edirne badem ezmesi kaynaklarla uyumlu. Kuruyemiş allergeni doğru.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/edirne/neyenir/badem-ezmesi",
+      "https://edirnekultur.com/detay/badem-ezmesi-205"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "edirne-bademli-ciger-pilavi",
+    "verdict": "PASS",
+    "reason": "Ciğer, badem, pirinç, tereyağı ve et suyuyla güçlü Trakya pilavı yapısı tutarlı. Allergenler ve süreler makul.",
+    "sources": [
+      "https://www.sahrapsoysal.com/ciger-sarma-tarifi-t-3678",
+      "https://www.kulturportali.gov.tr/turkiye/edirne/neyenir/ciger-sarma"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "edirne-bademli-kestane-tatlisi",
+    "verdict": "PASS",
+    "reason": "Kestane, badem, süt, şeker ve tarçınla kışlık kaşık tatlısı yapısı makul. Süt ve kuruyemiş allergenleri doğru.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kestane-tatlisi/",
+      "https://www.kulturportali.gov.tr/turkiye/edirne/neyenir/badem-ezmesi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "edirne-bademli-pirasali-borek",
+    "verdict": "PASS",
+    "reason": "Yufka, pırasa, peynir, yumurta, süt ve bademli börek yapısı tutarlı. Gluten, süt, yumurta ve kuruyemiş allergenleri doğru.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/pirasali-borek-tarifi/",
+      "https://ye-mek.net/tarif/pirasali-borek"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "edirne-ciger-sarma-pilavli",
+    "verdict": "PASS",
+    "reason": "Kuzu ciğeri, iç pilav ve gömlek yağıyla bohça yapıp fırınlama klasik ciğer sarma kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.sahrapsoysal.com/ciger-sarma-tarifi-t-3678",
+      "https://www.kulturportali.gov.tr/turkiye/edirne/neyenir/ciger-sarma"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "edirne-cigeri",
+    "verdict": "PASS",
+    "reason": "Yaprak doğranmış dana ciğerinin unlanıp kızgın yağda kısa kızartılması Edirne tava ciğeri kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.edirne.com.tr/place/edirne-tava-cigeri/33",
+      "https://www.havsa.gov.tr/edirne-tava-cigeri"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "edirne-mutancana-osmanli",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 2: sarımsak ekleniyor ama ingredient listesinde sarımsak yok"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Arpacık soğanları ekleyip parlaklaşıp yumuşayana kadar çevirin."
+        }
+      ]
+    },
+    "sources": [
+      "https://www.misssgibi.com/mutancana-tarifi/",
+      "https://www.nefisyemektarifleri.com/mutancana-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu, arpacık soğan, kuru meyve, badem, bal ve sumak doğru. Sarımsak listede olmadığı için step sadeleşmeli."
+  },
+  {
+    "slug": "edirne-tava-ciger-yaprak",
+    "verdict": "PASS",
+    "reason": "İnce yaprak dana ciğeri, un, bol kızgın yağ, kuru biber ve sumaklı soğan servisi Edirne kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.edirne.com.tr/place/edirne-tava-cigeri/33",
+      "https://www.havsa.gov.tr/edirne-tava-cigeri"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "edirne-tavuklu-mutancana",
+    "verdict": "PASS",
+    "reason": "Tavuklu uyarlama olsa da kuru kayısı, erik, badem, bal ve tarçınla mutancana lezzet mantığını koruyor. Allergen doğru.",
+    "sources": [
+      "https://www.misssgibi.com/mutancana-tarifi/",
+      "https://www.nefisyemektarifleri.com/mutancana-tarifi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "edirne-yaprak-ciger-tava",
+    "verdict": "PASS",
+    "reason": "Yaprak ciğerin süzdürülüp unlanması ve 2-3 dakika kızartılması Edirne tava ciğeri kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.edirne.com.tr/place/edirne-tava-cigeri/33",
+      "https://www.havsa.gov.tr/edirne-tava-cigeri"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "ege-otlu-gozleme",
+    "verdict": "PASS",
+    "reason": "Unlu hamur, lor ve karışık otla sacda gözleme yapısı kaynaklarla uyumlu. Gluten ve süt allergenleri doğru.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/otlu-gozleme-tarifi/",
+      "https://ye-mek.net/tarif/gozleme"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "ege-zeytinyagli-taze-bakla",
+    "verdict": "CORRECTION",
+    "issues": [
+      "servingSuggestion: tarif vegan tag taşıyor ama sarımsaklı yoğurtla servis öneriyor"
+    ],
+    "corrections": {
+      "servingSuggestion": "Dereotu ve limon dilimiyle soğuk servis edin."
+    },
+    "sources": [
+      "https://ye-mek.net/tarif/zeytinyagli-taze-bakla",
+      "https://www.nefisyemekler.net/zeytinyagli-taze-bakla"
+    ],
+    "confidence": "high",
+    "reason": "Zeytinyağlı bakla doğru, fakat vegan tarifte yoğurt servis önerisi allergen ve diyet filtresini bozar."
+  },
+  {
+    "slug": "egg-coffee",
+    "verdict": "PASS",
+    "reason": "Vietnam egg coffee yumurta sarısı, yoğunlaştırılmış süt ve güçlü kahveyle uyumlu. Süt ve yumurta allergenleri doğru.",
+    "sources": [
+      "https://www.nam.coffee/blogs/recipes/vietnamese-egg-coffee",
+      "https://www.foodandwine.com/what-is-vietnamese-egg-coffee-11814075"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "egg-coffee-overnight-oats-vietnam-usulu",
+    "verdict": "PASS",
+    "reason": "Egg coffee köpüğüyle kahveli overnight oats yorumu yaratıcı ama içerik tutarlı. 8 saat bekleme totalMinutes içinde görünüyor.",
+    "sources": [
+      "https://www.nam.coffee/blogs/recipes/vietnamese-egg-coffee",
+      "https://www.foodandwine.com/what-is-vietnamese-egg-coffee-11814075"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "egg-drop-soup",
+    "verdict": "PASS",
+    "reason": "Tavuk suyu, yumurta, nişasta ve soya sosuyla yumurta şeritleri oluşturan hızlı Çin çorbası kaynaklarla uyumlu.",
+    "sources": [
+      "https://honestcooking.com/homemade-egg-drop-soup-recipe/",
+      "https://www.chilipeppermadness.com/recipes/egg-drop-soup/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "egg-in-a-hole",
+    "verdict": "PASS",
+    "reason": "Ortası kesilmiş ekmekte yumurta pişirme tekniği kaynaklarla uyumlu. Gluten, yumurta ve tereyağı için süt allergenleri doğru.",
+    "sources": [
+      "https://www.farmanddairy.com/recipes/egg-in-a-hole",
+      "https://www.egglandsbest.com/recipes/egg-in-a-hole"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "eggs-benedict",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "cuisine: Eggs Benedict Amerikan brunch klasiğidir; cuisine 'tr' yanıltıcı",
+      "ingredients: klasik tarifte Canadian bacon veya jambon bulunur, mevcut ingredient listesinde yok",
+      "tags: klasik Eggs Benedict etli olduğu için vejetaryen tag yanıltıcı"
+    ],
+    "corrections": {
+      "cuisine": "us",
+      "tags_remove": [
+        "vejetaryen"
+      ],
+      "ingredients_add": [
+        {
+          "name": "Kanada bacon veya dana jambon",
+          "amount": "4",
+          "unit": "dilim"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.foodnetwork.com/recipes/food-network-kitchen/eggs-benedict-recipe-1928006",
+      "https://en.wikipedia.org/wiki/Eggs_Benedict"
+    ],
+    "confidence": "high",
+    "reason": "Klasik Eggs Benedict İngiliz muffin, poşe yumurta, hollandez ve Canadian bacon içerir; mevcut kayıt mutfak ve tag açısından yanıltıcı."
+  }
+]

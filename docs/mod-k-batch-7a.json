@@ -1,0 +1,737 @@
+[
+  {
+    "slug": "civil-peynirli-tava-lavas-erzurum-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://tr.wikipedia.org/wiki/Civil_peyniri",
+      "https://www.kulturportali.gov.tr/turkiye/erzurum/nealinir/civil-peyniri"
+    ],
+    "confidence": "medium",
+    "reason": "Civil peyniri, lavaş ve tereyağıyla kurulan hızlı tava yorumu Erzurum malzemesiyle uyumlu. Süre, allergen ve servis bilgisi makul görünüyor."
+  },
+  {
+    "slug": "cizlak-balikesir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: tuz kullanılıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/cizlak-tarifi/",
+      "https://www.yemektarifleri.com/tarif/cizlak"
+    ],
+    "confidence": "medium",
+    "reason": "Cızlak hamuru un, süt ürünü, yumurta ve tuzla hazırlanır. Tarif gövdesi uyumlu, fakat step içinde geçen tuz malzeme listesinde eksik."
+  },
+  {
+    "slug": "cizleme-trakya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: description ve step mayalı hamur diyor ama maya listede yok",
+      "step 1: tuz kullanılıyor ama ingredient listesinde yok",
+      "time: 20 dakika dinlendirme totalMinutes içinde bekleme segmenti olarak ayrılmamış",
+      "tag: totalMinutes 46 olunca 30-dakika-alti tag'i yanıltıcı"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Instant maya", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 46,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/cizleme-7791203/",
+      "https://www.kulturportali.gov.tr/turkiye/kirklareli/neyenir/cizleme"
+    ],
+    "confidence": "high",
+    "reason": "Cizleme mayalı ve dinlenen akışkan hamurla yapılır. Mevcut tarifte maya ve tuz eksik, ayrıca pasif dinlenme süresi timeline farkı olarak kalmalı."
+  },
+  {
+    "slug": "clafoutis",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/cherry-clafoutis",
+      "https://www.seriouseats.com/cherry-clafoutis-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Kiraz, yumurta, süt, un ve şeker oranı klasik clafoutis kaynaklarıyla uyumlu. Fırın süresi, allergen ve servis önerisi makul."
+  },
+  {
+    "slug": "clam-chowder-abd-sahil-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: soğan tereyağında pişiriliyor ama ingredient listesinde tereyağı yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/clam-chowder",
+      "https://www.foodandwine.com/recipes/new-england-clam-chowder"
+    ],
+    "confidence": "high",
+    "reason": "Clam chowder deniz tarağı, patates, krema ve yağlı tabanla uyumlu. Step içinde kullanılan tereyağı listede olmadığı için eklenmeli."
+  },
+  {
+    "slug": "cloudberry-tonic-isvec-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/glossary/cloudberry-glossary",
+      "https://www.liquor.com/recipes/vodka-tonic/"
+    ],
+    "confidence": "medium",
+    "reason": "Cloudberry reçeli, limon ve tonikle kurulan alkolsüz içecek yorumu teknik olarak tutarlı. Süre kısa, allergen ve tag bilgisi makul."
+  },
+  {
+    "slug": "clover-club",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.liquor.com/recipes/clover-club/",
+      "https://www.diffordsguide.com/cocktails/recipe/431/clover-club-cocktail"
+    ],
+    "confidence": "high",
+    "reason": "Cin, ahududu, limon ve yumurta akı Clover Club için doğru çekirdeği verir. Kuru çalkalama, süre ve yumurta allergeni yerinde."
+  },
+  {
+    "slug": "coastal-negroni-avustralya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.liquor.com/recipes/negroni/",
+      "https://www.campari.com/cocktails/negroni/"
+    ],
+    "confidence": "high",
+    "reason": "Cin, Campari ve kırmızı vermut eşit oranı klasik Negroni ile uyumlu. Greyfurt kabuğu yorumu küçük servis dokunuşu, allergen sorunu yok."
+  },
+  {
+    "slug": "coban-salatasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient amount: zeytinyağı miktarı boş",
+      "ingredient amount: limon miktarı boş",
+      "ingredient amount: tuz miktarı boş"
+    ],
+    "corrections": {
+      "ingredients_amount_change": [
+        { "name": "Zeytinyağı", "newAmount": "3", "newUnit": "yemek kaşığı" },
+        { "name": "Limon", "newAmount": "1", "newUnit": "adet" },
+        { "name": "Tuz", "newAmount": "0.5", "newUnit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/coban-salata/",
+      "https://www.nefisyemektarifleri.com/coban-salatasi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Çoban salatası sebze, zeytinyağı, limon ve tuzla doğru kurulmuş. Ancak üç sos malzemesinin miktarı boş bırakılmış, ölçekleme bozulur."
+  },
+  {
+    "slug": "cocada",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.thespruceeats.com/cocadas-brazilian-coconut-cookies-3029705",
+      "https://www.oliviascuisine.com/cocada-brazilian-coconut-candy/"
+    ],
+    "confidence": "high",
+    "reason": "Hindistan cevizi, şeker ve yoğunlaştırılmış sütle kısa pişirme cocada kaynaklarıyla uyumlu. Süt allergeni ve süre makul."
+  },
+  {
+    "slug": "coconut-lime-flan-kuba-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.foodandwine.com/recipes/coconut-flan",
+      "https://www.bonappetit.com/recipe/coconut-flan"
+    ],
+    "confidence": "medium",
+    "reason": "Hindistan cevizi sütü, yumurta ve karamel tabanı flan mantığıyla uyumlu. Süt ürünü içermediği için yalnız yumurta allergeni yeterli."
+  },
+  {
+    "slug": "coconut-lime-rice-pudding-vietnam-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.wandercooks.com/vietnamese-rice-pudding-che-dau-trang/",
+      "https://www.bbcgoodfood.com/recipes/coconut-rice-pudding"
+    ],
+    "confidence": "medium",
+    "reason": "Pirinç, hindistan cevizi sütü ve şekerle yapılan tatlı kaynaklardaki pirinç tatlısı çizgisine yakın. Vegan tag ve süre tutarlı."
+  },
+  {
+    "slug": "coffee-coconut-chia-kase-vietnam-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/chia-pudding",
+      "https://www.loveandlemons.com/chia-seed-pudding/"
+    ],
+    "confidence": "medium",
+    "reason": "Chia, hindistan cevizi sütü ve soğuk dinlendirme oranı chia pudingi kaynaklarıyla uyumlu. Dört saat bekleme totalMinutes içinde görünüyor."
+  },
+  {
+    "slug": "cokelekli-bazlama-sandvic-sivas-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/bazlama-tarifi/",
+      "https://www.kulturportali.gov.tr/turkiye/sivas/nealinir/cokelek"
+    ],
+    "confidence": "medium",
+    "reason": "Bazlama, çökelek, ot ve domatesle kurulan hızlı kahvaltı yorumu malzeme bakımından tutarlı. Allergen ve kısa tava süresi makul."
+  },
+  {
+    "slug": "cokelekli-biber-dolmasi-mugla-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 2: maydanoz yazıyor ama ingredient listesinde dereotu var",
+      "step 2: yumurta listede var ama iç harç step'inde kullanılmıyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 2,
+          "instruction": "Çökelek, dereotu, yumurta, zeytinyağı ve karabiberi karıştırın, iç harç biberin içinde kuru kalmasın.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/cokelekli-biber-dolmasi/",
+      "https://www.yemek.com/tarif/lorlu-biber-dolmasi/"
+    ],
+    "confidence": "high",
+    "reason": "Çökelekli biber dolması fikri kaynaklarla uyumlu. İç harç step'i listedeki dereotu ve yumurtayı kullanacak biçimde düzeltilmeli."
+  },
+  {
+    "slug": "cokelekli-corek-tokat-firin",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: step 2 mayalanma diyor ama maya listede yok",
+      "ingredient: hamurda tuz beklenir ama listede yok",
+      "time: 25 dakika mayalanma totalMinutes içinde bekleme segmenti olarak ayrılmamış"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Instant maya", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 80
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/cokelekli-corek/",
+      "https://www.yemek.com/tarif/peynirli-corek/"
+    ],
+    "confidence": "medium",
+    "reason": "Çökelekli mayalı çörek akışı doğru, fakat maya ve tuz eksik. Pasif mayalanma süresi totalMinutes farkında görünmeli."
+  },
+  {
+    "slug": "cokelekli-katmer-tokat-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 6: tereyağı kullanılıyor ama ingredient listesinde yok",
+      "time: 20 dakika hamur dinlendirme totalMinutes içinde bekleme segmenti olarak ayrılmamış"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "totalMinutes": 68
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/cokelekli-katmer/",
+      "https://www.yemek.com/tarif/katmer/"
+    ],
+    "confidence": "medium",
+    "reason": "Katmerde hamur dinlendirme ve yağlı son dokunuş kaynaklarla uyumlu. Tereyağı listede eksik, bekleme süresi totalMinutes farkı olmalı."
+  },
+  {
+    "slug": "cokelekli-pide-tokat-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: 20 dakika hamur dinlendirme totalMinutes içinde bekleme segmenti olarak ayrılmamış"
+    ],
+    "corrections": {
+      "totalMinutes": 59
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/cokelekli-pide/",
+      "https://www.yemek.com/tarif/peynirli-pide/"
+    ],
+    "confidence": "medium",
+    "reason": "Çökelekli pide malzeme ve fırın akışı makul. Hamur dinlendirme pasif süre olduğu için totalMinutes içinde ayrıca görünmeli."
+  },
+  {
+    "slug": "cokelekli-tirit-corbasi-konya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/konya/neyenir/tirit",
+      "https://www.nefisyemektarifleri.com/tirit-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kuru ekmek, et suyu, çökelek ve biberli tereyağıyla kurulan tirit çorbası yöresel mantığa uyuyor. Allergen ve süre makul."
+  },
+  {
+    "slug": "cokertme-kebabi-mugla-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "allergen: lavaş ingredient listesinde var ama GLUTEN declare edilmemiş",
+      "time: patates için 10 dakika bekleme totalMinutes içinde ayrılmamış"
+    ],
+    "corrections": {
+      "allergens_add": ["GLUTEN"],
+      "totalMinutes": 55
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/cokertme-kebabi/",
+      "https://www.nefisyemektarifleri.com/cokertme-kebabi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Çökertme kebabı et, kibrit patates, yoğurt ve domates sosuyla doğru. Lavaş nedeniyle gluten eksik, patates bekleme süresi totalMinutes'a eklenmeli."
+  },
+  {
+    "slug": "coleslaw",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/classic-coleslaw",
+      "https://www.seriouseats.com/creamy-cole-slaw"
+    ],
+    "confidence": "high",
+    "reason": "Lahana, havuç, mayonezli yoğurt sosu ve kısa dinlendirme coleslaw kaynaklarıyla uyumlu. Süt ve yumurta allergenleri doğru."
+  },
+  {
+    "slug": "com-tam",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 2: sarımsak ve şeker kullanılıyor ama ingredient listesinde yok",
+      "step 6: nuoc cham için balık sosu gerekir ama ingredient listesinde yok",
+      "allergen: balık sosu eklenirse DENIZ_URUNLERI declare edilmeli",
+      "time: 20 dakika marine totalMinutes içinde bekleme segmenti olarak ayrılmamış"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Şeker", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Balık sosu", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["DENIZ_URUNLERI"],
+      "totalMinutes": 75
+    },
+    "sources": [
+      "https://www.hungryhuy.com/com-tam-recipe-vietnamese-broken-rice/",
+      "https://www.vickypham.com/blog/vietnamese-broken-rice-com-tam"
+    ],
+    "confidence": "high",
+    "reason": "Cơm tấm kırık pirinç, ızgara et, yumurta ve nuoc cham ile uyumlu. Sos ve marine malzemeleri listede eksik, bekleme süresi ayrıca görünmeli."
+  },
+  {
+    "slug": "comlek-fasulyeli-tirit-konya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/konya/neyenir/tirit",
+      "https://www.nefisyemektarifleri.com/fasulyeli-tirit/"
+    ],
+    "confidence": "medium",
+    "reason": "Bayat ekmek, et suyu, kuru fasulye ve tereyağıyla yapılan tirit yorumu kaynaklardaki Konya tirit mantığına yakın. Süre ve allergen makul."
+  },
+  {
+    "slug": "cong-you-bing",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.seriouseats.com/extra-flaky-scallion-pancakes-recipe",
+      "https://thewoksoflife.com/shanghai-scallion-pancakes/"
+    ],
+    "confidence": "high",
+    "reason": "Sıcak su hamuru, taze soğan, yağlama, spiral katlama ve tavada pişirme cong you bing kaynaklarıyla uyumlu. Gluten ve susam allergenleri doğru."
+  },
+  {
+    "slug": "congee",
+    "verdict": "CORRECTION",
+    "issues": [
+      "servingSuggestion: susam yağı öneriliyor ama ingredient listesinde yok",
+      "allergen: susam yağı eklenirse SUSAM declare edilmeli"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Susam yağı", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "allergens_add": ["SUSAM"]
+    },
+    "sources": [
+      "https://www.seriouseats.com/chinese-rice-porridge-congee-recipe",
+      "https://thewoksoflife.com/20-minute-congee-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Pirinç lapası, tavuk suyu, zencefil ve soya ile congee doğru. Serviste önerilen susam yağı listede ve allergenlerde eksik."
+  },
+  {
+    "slug": "cop-sis-izmir-ocak-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: 20 dakika et dinlendirme totalMinutes içinde bekleme segmenti olarak ayrılmamış",
+      "tag: totalMinutes 50 olunca 30-dakika-alti tag'i yanıltıcı"
+    ],
+    "corrections": {
+      "totalMinutes": 50,
+      "tags_remove": ["30-dakika-alti"]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/cop-sis/",
+      "https://www.nefisyemektarifleri.com/cop-sis-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Küçük kuzu parçaları, kısa marine ve hızlı ocak pişirme çöp şiş için tutarlı. Dinlendirme bekleme süresi olarak totalMinutes'a eklenmeli."
+  },
+  {
+    "slug": "coq-au-vin",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 5: tavuk suyu kullanılıyor ama ingredient listesinde yok",
+      "step 7: maydanozla servis yazıyor ama ingredient listesinde maydanoz yok",
+      "step 1: tuz kullanılıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tavuk suyu", "amount": "1", "unit": "su bardağı" },
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 105,
+      "totalMinutes": 135
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/coq-au-vin",
+      "https://www.seriouseats.com/coq-au-vin-chicken-red-wine-braise-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Coq au vin tavuk, kırmızı şarap, mantar, soğan ve bağlanmış sosla doğru. Step'teki tavuk suyu, maydanoz ve tuz listede eksik."
+  },
+  {
+    "slug": "corekotlu-gobit-ekmegi-konya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/gobit-ekmegi-tarifi/",
+      "https://www.yemek.com/tarif/gobit-ekmegi/"
+    ],
+    "confidence": "medium",
+    "reason": "Un, su, zeytinyağı ve çörekotuyla fırınlanan küçük ekmek yorumu gobit kaynaklarıyla uyumlu. Vegan tag, gluten allergeni ve süre makul."
+  },
+  {
+    "slug": "corekotlu-incir-kurabiye-nazilli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 6: 5 dakika bekletme yazıyor ama timerSeconds boş",
+      "time: 5 dakika tepsi bekletmesi totalMinutes içinde ayrılmamış"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 6,
+          "instruction": "Kurabiyeleri tepside bekletin, incirli iç dağılmasın.",
+          "timerSeconds": 300
+        }
+      ],
+      "totalMinutes": 39
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/incirli-kurabiye/",
+      "https://www.yemek.com/tarif/incirli-kurabiye/"
+    ],
+    "confidence": "medium",
+    "reason": "İncirli kurabiye malzemesi ve fırın süresi makul. Step'te yazan beş dakikalık bekleme timer ve totalMinutes tarafında görünmeli."
+  },
+  {
+    "slug": "corekotlu-mercimek-corbasi-kayseri-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/mercimek-corbasi-tarifi/",
+      "https://www.yemek.com/tarif/mercimek-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kırmızı mercimek, soğan, tereyağı ve suyla yapılan kısa çorba akışı doğru. Çörekotu yorumu küçük yerel dokunuş, allergen uyumlu."
+  },
+  {
+    "slug": "corekotlu-un-helvasi-ankara-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/un-helvasi-tarifi/",
+      "https://www.yemek.com/tarif/un-helvasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Un, tereyağı ve şerbetle hazırlanan helva akışı kaynaklarla uyumlu. Çörekotu aroması küçük ekleme, süre ve allergen bilgisi makul."
+  },
+  {
+    "slug": "corekotlu-yufka-pizza-aksaray-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/yufka-pizza-tarifi/",
+      "https://www.yemek.com/tarif/yufkadan-pizza/"
+    ],
+    "confidence": "medium",
+    "reason": "Yufka, peynir, domates, zeytinyağı ve kısa fırın pişmesi hızlı yufka pizza kaynaklarıyla uyumlu. Allergen ve süre doğru."
+  },
+  {
+    "slug": "corn-dog",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: mısır unlu hamur için süt ve kabartıcı eksik",
+      "ingredient: kızartma için yağ ve çubuk listede yok",
+      "servingSuggestion: hardal öneriliyor ama ingredient listesinde yok",
+      "allergen: süt ve hardal eklenirse SUT ve HARDAL declare edilmeli",
+      "steps: mevcut adımlar boilerplate, corn dog tekniğini açık anlatmıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Süt", "amount": "200", "unit": "ml" },
+        { "name": "Kabartma tozu", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Ayçiçek yağı", "amount": "2", "unit": "su bardağı" },
+        { "name": "Tahta çubuk", "amount": "6", "unit": "adet" },
+        { "name": "Hardal", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["SUT", "HARDAL"],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Sosisleri kurulayın ve her birine tahta çubuk geçirin, hamur yüzeye tutunsun.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Mısır unu, un, kabartma tozu, yumurta ve sütü koyu akışkan hamur olana kadar çırpın.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Hamuru uzun bardağa alın, sosisleri tamamen kaplanana kadar batırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Kaplanan sosisleri 175°C yağda kızartın, dışı altın renk alsın.", "timerSeconds": 300 },
+        { "stepNumber": 5, "instruction": "Kağıt havluya alıp dinlendirin, hardal ve ketçapla sıcak servis edin.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://www.foodnetwork.com/recipes/alton-brown/corn-dogs-recipe-1915859",
+      "https://www.delish.com/cooking/recipe-ideas/a28884271/corn-dogs-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Corn dog çubuklu sosisin mısır unlu hamura batırılıp kızartılmasıdır. Mevcut malzeme ve adımlar bu tekniği eksik anlatıyor."
+  },
+  {
+    "slug": "cornbread-kahvalti-kasesi-amerikan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/cornbread",
+      "https://www.incredibleegg.org/recipes/breakfast-bowl-recipes"
+    ],
+    "confidence": "medium",
+    "reason": "Mısır ekmeği, yumurta, avokado ve cheddar ile hazırlanan brunch kasesi içerik olarak tutarlı. Allergen, porsiyon ve süre makul."
+  },
+  {
+    "slug": "cornbread-skillet-abd-guney-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: tuz kullanılıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.seriouseats.com/moist-and-tender-brown-butter-cornbread-recipe",
+      "https://www.bbcgoodfood.com/recipes/cornbread"
+    ],
+    "confidence": "high",
+    "reason": "Mısır unu, un, süt, yumurta ve sıcak tava kullanımı cornbread kaynaklarıyla uyumlu. Step'te geçen tuz malzeme listesine eklenmeli."
+  },
+  {
+    "slug": "cornish-pasty",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 3: tuz ve karabiber kullanılıyor ama ingredient listesinde yok",
+      "time: 30 dakika hamur dinlendirme ve 10 dakika son dinlendirme totalMinutes içinde bekleme segmenti olarak ayrılmamış"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 115
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/cornish-pasties",
+      "https://cornishpastyassociation.co.uk/about-the-pasty/make-your-own-genuine-cornish-pasty/"
+    ],
+    "confidence": "high",
+    "reason": "Cornish pasty hamur içinde et, patates ve soğanla doğru kurulmuş. Baharatlar listede eksik, iki pasif bekleme süresi totalMinutes farkında olmalı."
+  },
+  {
+    "slug": "coronation-chicken-ingiliz-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/easy-coronation-chicken",
+      "https://www.deliciousmagazine.co.uk/recipes/coronation-chicken/"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk, köri, kremamsı sos, limon ve bademle hazırlanan soğuk salata coronation chicken çizgisine uygun. Allergen ve süre makul."
+  },
+  {
+    "slug": "corpse-reviver-no-2",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredient: klasik Corpse Reviver No 2 için Lillet blanc eksik",
+      "steps: son step aynı fikri tekrar ediyor ve okunabilirliği bozuyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Lillet blanc", "amount": "25", "unit": "ml" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Soğuk kokteyl kadehini absintle çalkalayın ve fazlasını dökün.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Cin, portakal likörü, Lillet blanc ve limon suyunu shaker'a alın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Buz ekleyip 12 saniye çalkalayın, içki tamamen soğusun.", "timerSeconds": 12 },
+        { "stepNumber": 4, "instruction": "Karışımı kadehe süzün ve bekletmeden servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.liquor.com/recipes/corpse-reviver-no-2/",
+      "https://www.diffordsguide.com/cocktails/recipe/573/corpse-reviver-no2"
+    ],
+    "confidence": "high",
+    "reason": "Klasik tarif cin, portakal likörü, Lillet blanc, limon ve absint ister. Lillet eksik, son adım da gereksiz tekrar içeriyor."
+  },
+  {
+    "slug": "cortado",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nespresso.com/recipes/int/en/390COR-cortado.html",
+      "https://perfectdailygrind.com/2020/03/what-is-a-cortado/"
+    ],
+    "confidence": "high",
+    "reason": "Espresso ve az miktar sıcak süt oranı cortado için doğru. Kısa hazırlık süresi, süt allergeni ve servis biçimi tutarlı."
+  },
+  {
+    "slug": "corti-asili-bulgur-pilavi-tunceli-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/tunceli/neyenir",
+      "https://www.nefisyemektarifleri.com/bulgur-pilavi-tarifi/"
+    ],
+    "confidence": "low",
+    "reason": "Corti yöresel ekşi sebze olarak bulgurla kullanılabilir, genel pilav tekniği tutarlı. Kaynak ayrıntısı sınırlı olduğu için güven düşük."
+  },
+  {
+    "slug": "corum-iskilip-dolmasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/corum/neyenir/iskilip-dolmasi",
+      "https://www.nefisyemektarifleri.com/iskilip-dolmasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Et suyu, pirinç, tereyağı ve didiklenmiş etle kurulan sade İskilip dolması yorumu kaynaklarla uyumlu. Süre kısa ev tipi yorum olarak makul."
+  },
+  {
+    "slug": "corum-iskilip-dolmasi-lenger",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/corum/neyenir/iskilip-dolmasi",
+      "https://www.aa.com.tr/tr/yasam/corumun-cografi-isaretli-lezzeti-iskilip-dolmasi/2714618"
+    ],
+    "confidence": "medium",
+    "reason": "Lenger sunumu, pirinç, et suyu, tereyağı ve uzun et pişirme Çorum İskilip dolmasıyla uyumlu. Zaman çizelgesi kendi adımlarıyla tutarlı."
+  },
+  {
+    "slug": "corum-keskek",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/corum/neyenir/keskek",
+      "https://www.nefisyemektarifleri.com/keskek-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Buğdayın bir gece beklemesi, etle uzun pişmesi ve tereyağlı servis keşkek kaynaklarıyla uyumlu. TotalMinutes uzun beklemeyi kapsıyor."
+  },
+  {
+    "slug": "corum-madimak-yemegi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/madimak-yemegi/",
+      "https://www.yemek.com/tarif/madimak-yemegi/"
+    ],
+    "confidence": "high",
+    "reason": "Madımak, bulgur, soğan, salça, zeytinyağı ve sarımsaklı yoğurtla kurulan yemek kaynaklarla uyumlu. Gluten ve süt allergenleri doğru."
+  },
+  {
+    "slug": "cosmopolitan",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 4: aynı buz erirse ifadesi iki kez tekrar ediyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 4,
+          "instruction": "Cosmopolitan karışımını soğuk kokteyl kadehine süzün, buz parçası kalmadan hemen servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.liquor.com/recipes/cosmopolitan/",
+      "https://iba-world.com/cosmopolitan/"
+    ],
+    "confidence": "high",
+    "reason": "Votka, portakal likörü, cranberry ve lime oranı Cosmopolitan için doğru. Son adımda tekrar eden ifade temizlenmeli."
+  },
+  {
+    "slug": "couscous-royal",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.196flavors.com/couscous-royal/",
+      "https://www.thespruceeats.com/moroccan-couscous-seven-vegetables-2394688"
+    ],
+    "confidence": "medium",
+    "reason": "Kuskus, kuzu, tavuk, sebze ve nohutla yapılan gösterişli tabak couscous royal çizgisine uyuyor. Gluten allergeni ve süre makul."
+  },
+  {
+    "slug": "coxinha",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.seriouseats.com/coxinha-brazilian-chicken-croquettes-recipe",
+      "https://www.oliviascuisine.com/coxinha-brazilian-chicken-croquettes/"
+    ],
+    "confidence": "high",
+    "reason": "Didiklenmiş tavuk, tavuk suyuyla pişen un hamuru, şekillendirme ve pane kızartma coxinha kaynaklarıyla uyumlu. Allergenler doğru."
+  },
+  {
+    "slug": "cranberry-chicken-salad-abd-delicatessen-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.allrecipes.com/recipe/214488/cranberry-walnut-chicken-salad/",
+      "https://www.foodnetwork.com/recipes/cranberry-chicken-salad-recipe-2105070"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk, kuru cranberry, ceviz ve yoğurtlu sosla hazırlanan soğuk salata deli tarzına uygun. Süt ve kuruyemiş allergenleri doğru."
+  },
+  {
+    "slug": "crema-catalana",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/crema-catalana",
+      "https://www.thespruceeats.com/crema-catalana-recipe-3083001"
+    ],
+    "confidence": "high",
+    "reason": "Süt, yumurta sarısı, şeker, nişasta, tarçın ve soğuk dinlendirme crema catalana kaynaklarıyla uyumlu. Allergen ve total süre doğru."
+  },
+  {
+    "slug": "crema-catalana-kavanozu-ispanyol-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "step 1: tarçın ve turunçgil kabuğu kullanılıyor ama ingredient listesinde yok",
+      "step 2: nişasta kullanılıyor ama ingredient listesinde yok",
+      "time: 3 saat soğutma totalMinutes içinde bekleme segmenti olarak ayrılmamış"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Mısır nişastası", "amount": "1.5", "unit": "yemek kaşığı" },
+        { "name": "Tarçın çubuğu", "amount": "1", "unit": "adet" },
+        { "name": "Limon kabuğu", "amount": "1", "unit": "şerit" }
+      ],
+      "totalMinutes": 202
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/crema-catalana",
+      "https://www.thespruceeats.com/crema-catalana-recipe-3083001"
+    ],
+    "confidence": "high",
+    "reason": "Crema catalana kavanoz yorumu doğru, fakat step'te geçen nişasta, tarçın ve turunçgil listede eksik. Üç saat soğutma totalMinutes'a eklenmeli."
+  }
+]

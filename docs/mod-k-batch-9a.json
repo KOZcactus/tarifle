@@ -1,0 +1,907 @@
+[
+  {
+    "slug": "ekmek-asilamasi-konya-usulu",
+    "verdict": "PASS",
+    "reason": "Bayat ekmek, salçalı tereyağlı sos ve yoğurtla servis yapısı ekmek aşı papara çizgisiyle uyumlu. Allergen ve süreler makul.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/konya/neyenir/ekmek-salamasi",
+      "https://www.nefisyemektarifleri.com/papara-tarifi-bayat-ekmek-yemegi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "ekmek-kadayifi",
+    "verdict": "PASS",
+    "reason": "Afyon ekmek kadayıfı, şerbetle yumuşatılan ekmek kadayıfı ve kaymak servis çizgisiyle kaynaklarla uyumlu. Süre ve allergenler makul.",
+    "sources": [
+      "https://www.afyonturkeligazetesi.com/kaymakli-ekmek-kadayifi-tarifi/51193",
+      "https://www.nefisyemektarifleri.com/ekmek-kadayifi-tarifi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "eksi-kremali-mantar-corbasi-polonya-usulu",
+    "verdict": "PASS",
+    "reason": "Polonya mantar çorbasında mantar, soğan, tereyağı ve ekşi krema kullanımı doğrulanıyor. Süt allergeni ve kısa pişirme süresi makul.",
+    "sources": [
+      "https://polishfoodies.com/polish-cream-of-mushroom-soup-recipe/",
+      "https://www.justapinch.com/recipes/soup/vegetable-soup/zupa-gzybowa-polish-mushroom-soup.html"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "eksi-kremali-yesil-fasulye-macaristan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step timer toplamı 31 dakika, prep 12 dakika ile total 43 dakika olmalı"
+    ],
+    "corrections": {
+      "cookMinutes": 31,
+      "totalMinutes": 43
+    },
+    "sources": [
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/green-beans-stew-zoldbabfozelek/",
+      "https://myhungariankitchen.com/zoldbabfozelek-hungarian-green-bean-stew/"
+    ],
+    "confidence": "high",
+    "reason": "Macar zöldbabfőzelék ekşi krema ve kırmızı biberle uyumlu, ancak mevcut total süre tarifteki timer toplamını karşılamıyor."
+  },
+  {
+    "slug": "eksi-maya-zeytinli-bazlama-soke-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: ekşi mayalı bazlama için 20 dakikalık dinlenme yetersiz; kaynaklar daha uzun mayalanma gösteriyor"
+    ],
+    "corrections": {
+      "totalMinutes": 145,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Un, ekşi maya ve suyu yoğurup ele hafif yapışan bir hamur hazırlayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Hamuru kapalı kapta 90 dakika dinlendirin, ekşi maya hamuru kabartsın.",
+          "timerSeconds": 5400
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Zeytini hamura katlayıp bezeler hazırlayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Bezeleri 15 dakika bekletin, tavada açılırken yırtılmasın.",
+          "timerSeconds": 900
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Bezeleri açıp orta ateşte ilk yüzünü 5 dakika pişirin.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "İkinci yüzünü 5 dakika pişirip bazlamaları temiz bez arasında yumuşak tutun.",
+          "timerSeconds": 300
+        }
+      ]
+    },
+    "sources": [
+      "https://www.mutfaktakiadam.net/eksi-mayali-bazlama-tarifi/",
+      "https://www.nefisyemektarifleri.com/eksi-mayali-bazlama/"
+    ],
+    "confidence": "medium",
+    "reason": "Bazlama yapısı doğru, fakat ekşi maya için 45 dakikalık toplam süre kullanıcıyı yanıltır."
+  },
+  {
+    "slug": "eksili-dolma",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: steps soğan ve salça kullanıyor ama ingredient listesinde yok",
+      "servingSuggestion: vegan tag taşıyan tarifte yoğurt öneriliyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Kuru soğan",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Biber salçası",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "servingSuggestion": "Dolmaları sıcak servis edin, yanında limon ve maydanoz sunun."
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/eksili-kuru-dolma/8060",
+      "https://www.halil.gen.tr/eksili-kuru-dolma-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Sumaklı kuru dolma yapısı doğru, fakat step malzemeleri eksik ve vegan servis önerisi yoğurtla çelişiyor."
+  },
+  {
+    "slug": "eksili-kabak-siyirmasi-mugla-bag-evi-usulu",
+    "verdict": "PASS",
+    "reason": "Kabak sıyırma tekniği, zeytinyağı, sarımsak, limon ve dereotu kullanımı kaynaklarla uyumlu. Vegan etiket ve kısa süre makul.",
+    "sources": [
+      "https://www.sahrapsoysal.com/zeytinyagli-kabak-siyirma-kaskarikas-tarifi-t-6231",
+      "https://ye-mek.net/amp/kabak-siyirma"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "eksili-kofte",
+    "verdict": "PASS",
+    "reason": "Pirinçli kıymalı köfte, unla kaplama, havuç patates ve limonlu su yapısı ekşili köfte kaynaklarıyla uyumlu. Gluten beyanı doğru.",
+    "sources": [
+      "https://yemek.com/tarif/eksili-kofte/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/eksili-kofte-tarifi/952"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "eksili-kofte-malatya-usulu",
+    "verdict": "PASS",
+    "reason": "Malatya ekşili köfte bulgurlu köfte, nohut ve ekşi tat eksenine oturuyor. Yumurta ve gluten allergenleri mevcut içerikle uyumlu.",
+    "sources": [
+      "https://cahidesultan.com/2012/10/30/eksili-kofte-tarifi-malatya/",
+      "https://www.malatyasoz.com/haber/17365773/malatyanin-meshur-ispanakli-eksili-kofte-tarifi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "eksili-kuru-dolma-gaziantep-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: Gaziantep ekşili kuru dolma kaynaklarında iç harç pirinçli; mevcut ingredient ince bulgur, step ise pirinç diyor",
+      "allergens: pirinçli düzeltmede GLUTEN allergeni gereksiz kalıyor"
+    ],
+    "corrections": {
+      "ingredients_remove": [
+        "İnce bulgur"
+      ],
+      "ingredients_add": [
+        {
+          "name": "Pirinç",
+          "amount": "1",
+          "unit": "su bardağı"
+        }
+      ],
+      "allergens_remove": [
+        "GLUTEN"
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/eksili-kuru-dolma/8060",
+      "https://www.halil.gen.tr/eksili-kuru-dolma-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Nar ekşili kuru dolma yapısı doğru, fakat ingredient ve step birbiriyle çelişiyor; pirinçli kaynaklar daha güçlü."
+  },
+  {
+    "slug": "eksili-nohutlu-eriste-mersin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step sarımsak kullanıyor ama ingredient listesinde sarımsak yok",
+      "tags: erişte çoğunlukla yumurtalı olduğu için vegan tag yanıltıcı",
+      "allergens: erişte için YUMURTA allergeni eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Sarımsak",
+          "amount": "1",
+          "unit": "diş"
+        }
+      ],
+      "tags_remove": [
+        "vegan"
+      ],
+      "allergens_add": [
+        "YUMURTA"
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/nohutlu-eriste-corbasi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/eriste-tarifleri/ev-yapimi-eriste"
+    ],
+    "confidence": "medium",
+    "reason": "Nohutlu erişte yemeği makul, ancak sarımsak stepte eksik ve yumurtalı erişte vegan beyanıyla uyumsuz."
+  },
+  {
+    "slug": "eksili-pancarli-keskek-kastamonu-ova-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step timer toplamı 70 dakika, prep 14 dakika ile total 84 dakika olmalı",
+      "servingSuggestion: vegan tag taşıyan tarifte yoğurt öneriliyor"
+    ],
+    "corrections": {
+      "cookMinutes": 70,
+      "totalMinutes": 84,
+      "servingSuggestion": "Keşkeği sıcak verin, yanında turşu ve maydanoz sunun."
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/kastamonu/neyenir/keskek",
+      "https://www.nefisyemektarifleri.com/pancarli-bugday-yemegi/"
+    ],
+    "confidence": "medium",
+    "reason": "Buğdaylı pancarlı tencere yapısı makul, fakat mevcut süre timer toplamını karşılamıyor ve vegan servis yoğurtla çelişiyor."
+  },
+  {
+    "slug": "eksili-ufak-kofte-gaziantep-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "servingSuggestion: ingredient listesinde tereyağı yok ve allergen SUT beyanı bulunmuyor; servis önerisi tereyağı ekliyor"
+    ],
+    "corrections": {
+      "servingSuggestion": "Sıcak pide dilimleri, limon ve közlenmiş biberle derin tabakta servis edin."
+    },
+    "sources": [
+      "https://www.gaziantep.net/mutfak/eksili_kofte.php",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/eksili-ufak-kofte/8499"
+    ],
+    "confidence": "high",
+    "reason": "Gaziantep ekşili ufak köfte nohut, simit ve limon çizgisine uyuyor; servis önerisi undeclared süt ürününü kaldırmalı."
+  },
+  {
+    "slug": "el-presidente-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: klasik El Presidente kaynaklarında grenadin bulunur; mevcut tarifte eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Grenadin",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.liquor.com/recipes/el-presidente/",
+      "https://www.bacardi.com/us/en/rum-cocktails/el-presidente/"
+    ],
+    "confidence": "high",
+    "reason": "Rom, vermut ve portakal likörü doğru, fakat El Presidente dengesinde grenadin temel bileşenlerden biri."
+  },
+  {
+    "slug": "elazig-harput-koftesi-bulgurlu",
+    "verdict": "PASS",
+    "reason": "Harput köftesinde kıyma, köftelik bulgur, salça, reyhan ve tereyağlı salçalı su kaynaklarla uyumlu. Gluten ve süt beyanı doğru.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/elazig/neyenir/harput---kofte",
+      "https://www.nefisyemektarifleri.com/harput-koftesi-elazig-yoresi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "elazig-harput-koftesi-ince-bulgur",
+    "verdict": "PASS",
+    "reason": "İnce bulgur, kıyma, soğan, salça ve salçalı suda pişirme Harput köftesiyle uyumlu. Süre, protein ve gluten allergeni makul.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/elazig/neyenir/harput---kofte",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/harput-koftesi/12643"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "elazig-lobik-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: steps içinde geceden ıslatma var; totalMinutes bunu içermiyor",
+      "ingredients: kaynaklarda tereyağı veya kavurma yaygın, mevcut vegan yorum zeytinyağıyla mümkün ama bekleme süresi açık olmalı"
+    ],
+    "corrections": {
+      "totalMinutes": 565
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/elazig/neyenir/lobk-corbasi",
+      "https://www.evvelcevap.com/lobik-corbasi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Lobik, buğday, salça ve soğan yapısı doğru; ancak gece ıslatma total süreye yansıtılmadığı için timeline yanıltıcı."
+  },
+  {
+    "slug": "elazig-orcikli-pestil-sarma",
+    "verdict": "PASS",
+    "reason": "Orcik ve pestil Elazığ yöresiyle uyumlu, ceviz ve kaymaklı sarma yorumu içerik açısından tutarlı. Süt ve kuruyemiş beyanı doğru.",
+    "sources": [
+      "https://gelaziz.com/gelaziz/orcik/",
+      "https://www.kulturportali.gov.tr/turkiye/elazig/neyenir/orcik"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "elazig-yogurtlu-harput-koftesi",
+    "verdict": "PASS",
+    "reason": "Harput köftesi tabanı ve sarımsaklı yoğurt servisi yöresel köfte mantığıyla uyumlu. Gluten, süt ve yumurta beyanları mevcut.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/elazig/neyenir/harput---kofte",
+      "https://www.nefisyemektarifleri.com/yogurtlu-bulgur-koftesi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "elderflower-elma-fizz-ingiltere-usulu",
+    "verdict": "PASS",
+    "reason": "Mürver şurubu, elma suyu, soda ve buzla alkolsüz fizz yapısı kaynaklardaki elderflower spritz mantığıyla uyumlu. Allergen yokluğu makul.",
+    "sources": [
+      "https://www.thebar.com/en-gb/recipes/elderflower-spritz",
+      "https://www.bbcgoodfood.com/recipes/elderflower-spritz"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "elderflower-gin-cooler-ingiliz-usulu",
+    "verdict": "PASS",
+    "reason": "Cin, mürver şurubu, limon, soda ve buzla uzun içimli cooler yapısı kaynaklarla uyumlu. Alkollü tag ve kısa hazırlık süresi doğru.",
+    "sources": [
+      "https://us.warnersdistillery.com/blogs/recipes/elderflower-cooler",
+      "https://opendrinks.io/recipe/elderflower-cooler"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "elderflower-gin-spritz-ingiltere-usulu",
+    "verdict": "PASS",
+    "reason": "Cin, mürver aroması, soda ve buz spritz kaynaklarıyla uyumlu. Prosecco içermeyen yorum daha hafif olsa da yanıltıcı değil.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/elderflower-spritz",
+      "https://www.warnersdistillery.com/blogs/recipes/elderflower-gin-spritz"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "eli-bogrunde-kahramanmaras-usulu",
+    "verdict": "PASS",
+    "reason": "Kuzu eti, domates, biber ve sarımsakla tepside fırınlama Kahramanmaraş eli böğründe kaynaklarıyla uyumlu. Süre ve makro makul.",
+    "sources": [
+      "https://yemek.com/tarif/eli-bogrunde/",
+      "https://ye-mek.net/tarif/eli-bogrunde"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "elma-cheddar-slaw-ingiltere-usulu",
+    "verdict": "PASS",
+    "reason": "Lahana, elma, cheddar ve hardallı sos slaw kaynaklarıyla uyumlu. Süt ve hardal allergenleri doğru, süre kısa salata için makul.",
+    "sources": [
+      "https://www.foodreference.com/html/cabapleched-0309.html",
+      "https://www.cabotcreamery.com/recipe/cabbage-apple-and-cheddar-slaw/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "elma-cipsi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: mevcut steps 25 dakikalık yüksek ısı atıştırmalık gibi yazılmış; elma cipsi düşük ısıda uzun kurutma ister"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Elmaları çok ince ve eş kalınlıkta dilimleyin, çekirdekli orta kısmı çıkarın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Dilimleri limon suyu ve tarçınla harmanlayıp tek sıra tepsiye dizin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "100 derecede 60 dakika kurutun, dilimler kenardan kıvrılmaya başlasın.",
+          "timerSeconds": 3600
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Dilimleri çevirip 60 dakika daha kurutun, nemli kalan parçalar yumuşak kalmasın.",
+          "timerSeconds": 3600
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Tepside 10 dakika soğutup hava alan kaseye alın.",
+          "timerSeconds": 600
+        }
+      ]
+    },
+    "sources": [
+      "https://www.allrecipes.com/recipe/216737/apple-chips/",
+      "https://www.thekitchn.com/how-to-make-apple-chips-in-the-oven-115361"
+    ],
+    "confidence": "high",
+    "reason": "Elma cipsi malzemeleri doğru, fakat cips dokusu için düşük ısıda uzun kurutma gerekir; mevcut step süresi yanıltıcı."
+  },
+  {
+    "slug": "elma-hardal-lahana-salata-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "servingSuggestion: vegan tarifte ingredient listesinde olmayan cheddar öneriliyor"
+    ],
+    "corrections": {
+      "servingSuggestion": "Elma hardal lahana salatasını soğuk kasede sunup üstüne dereotu ve elma dilimleri ekleyin."
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/red-cabbage-apple-slaw",
+      "https://www.foodreference.com/html/cabapleched-0309.html"
+    ],
+    "confidence": "high",
+    "reason": "Elma, lahana ve hardal sosu uyumlu; ancak vegan tarifte cheddar servis önerisi kullanıcıyı yanıltır."
+  },
+  {
+    "slug": "elma-havuclu-kok-patates-salatasi-isvec-usulu",
+    "verdict": "PASS",
+    "reason": "Patates, havuç, elma ve hardallı sosla soğuk yan salata yapısı İskandinav patates salatası mantığıyla uyumlu. Hardal beyanı doğru.",
+    "sources": [
+      "https://www.swedishfood.com/swedish-food-recipes-side-dishes/225-potato-salad",
+      "https://www.bbcgoodfood.com/recipes/scandi-potato-salad"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "elma-kompot-fizz-polonya-usulu",
+    "verdict": "PASS",
+    "reason": "Polonya kompotu elma bazlı meyve içeceği olarak doğrulanıyor; hazır kompotun sodayla fizz yapılması makul bir alkolsüz yorum.",
+    "sources": [
+      "https://polishhousewife.com/kompot-polish-fruit-drink/",
+      "https://www.polonist.com/polish-kompot/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "elma-melisa-kompotu-polonya-usulu",
+    "verdict": "PASS",
+    "reason": "Elma kompotu Polonya mutfağıyla uyumlu, melisa sonradan eklenen aromatik bitki olarak makul. Süre ve vegan etiket doğru.",
+    "sources": [
+      "https://polishhousewife.com/kompot-polish-fruit-drink/",
+      "https://www.polonist.com/polish-kompot/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "elma-pekmezli-yulaf-lapasi-kirsehir-usulu",
+    "verdict": "PASS",
+    "reason": "Yulaf lapasında elma, su ve pekmez kullanımı tutarlı. Pişirme ve dinlendirme süresi total ile uyumlu, gluten beyanı yulaf için makul.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/apple-cinnamon-porridge",
+      "https://www.nefisyemektarifleri.com/elmali-yulaf-lapasi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "elma-sirkeli-lahana-corbasi-bolu-usulu",
+    "verdict": "PASS",
+    "reason": "Lahana, soğan, sirke ve kısa tencere pişirmesi ekşili lahana çorbası çizgisine uyuyor. Vegan etiket ve süreler makul.",
+    "sources": [
+      "https://www.thespruceeats.com/czech-sauerkraut-soup-recipe-1136307",
+      "https://www.nefisyemektarifleri.com/lahana-corbasi-tarifi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "elma-sirkeli-lahana-salatasi-tekirdag-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: mevcut steps tarif adını tekrarlayan boilerplate cümleler içeriyor; işlem yine doğru ama doğal tarif adımı değil"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Beyaz lahanayı ince kıyın, dereotunu ayıklayıp doğrayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Lahanayı 1 dakika tuzla ovun, lifleri hafif yumuşasın.",
+          "timerSeconds": 60
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Elma sirkesi ve zeytinyağını ayrı kasede karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Sosu lahanaya ekleyip 1 dakika karıştırın.",
+          "timerSeconds": 60
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Salatayı 5 dakika dinlendirin, sirke lahanaya işlesin.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Dereotunu en son ekleyip soğuk servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/lahana-salatasi/",
+      "https://www.bbcgoodfood.com/recipes/red-cabbage-apple-slaw"
+    ],
+    "confidence": "high",
+    "reason": "Lahana, sirke ve dereotu uyumlu; sorun içerikten çok tekrarlı ve yapay görünen step metinlerinde."
+  },
+  {
+    "slug": "elma-zencefilli-soda-avustralya-usulu",
+    "verdict": "PASS",
+    "reason": "Elma suyu, zencefil, soda ve buzla hazırlanan alkolsüz içecek ginger ale benzeri kaynaklarla uyumlu. Allergen yokluğu doğru.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/homemade-ginger-ale",
+      "https://www.allrecipes.com/recipe/8777/homemade-ginger-ale/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "elmali-crumble-kup-ingiltere-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: steps içinde 10 dakika ılıtma var; totalMinutes prep ve cook toplamında kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 42
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/best-apple-crumble",
+      "https://www.epicurious.com/recipes/food/views/apple-crumble-crisp"
+    ],
+    "confidence": "high",
+    "reason": "Elmalı crumble içeriği doğru, fakat servis öncesi bekleme süresi totalMinutes içinde görünmeli."
+  },
+  {
+    "slug": "elmali-findikli-irmik-kup-aksaray-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: 30 dakika soğutma totalMinutes dışında kalmış",
+      "ingredients: step şeker kullanıyor ama ingredient listesinde şeker yok"
+    ],
+    "corrections": {
+      "totalMinutes": 48,
+      "ingredients_add": [
+        {
+          "name": "Şeker",
+          "amount": "3",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/elmali-irmik-tatlisi/1608",
+      "https://www.nefisyemektarifleri.com/elmali-irmik-tatlisi/"
+    ],
+    "confidence": "high",
+    "reason": "İrmik, süt, elma ve fındık uyumlu; soğutma süresi ve stepte geçen şeker mevcut kayıtta eksik."
+  },
+  {
+    "slug": "elmali-hashasli-kek-kup-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: 30 dakika soğutma totalMinutes dışında kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 40
+    },
+    "sources": [
+      "https://www.polonist.com/poppy-seed-cake-makowiec/",
+      "https://www.bbcgoodfood.com/recipes/apple-cake"
+    ],
+    "confidence": "medium",
+    "reason": "Kek, elma, krema ve haşhaşlı kup yorumu makul; ancak buzdolabı bekleme süresi timeline dışında kalmış."
+  },
+  {
+    "slug": "elmali-hashasli-kup-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: 20 dakika soğutma totalMinutes dışında kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 36
+    },
+    "sources": [
+      "https://www.polonist.com/poppy-seed-cake-makowiec/",
+      "https://www.nefisyemektarifleri.com/elmali-kup-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Elma, krema ve haşhaş tatlı kup olarak tutarlı, fakat soğutma beklemesi toplam sürede gösterilmeli."
+  },
+  {
+    "slug": "elmali-hashasli-retes-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step 6 içinde 10 dakika bekleme var ama timer ve totalMinutes bunu içermiyor",
+      "ingredients: step şeker kullanıyor ama ingredient listesinde şeker yok"
+    ],
+    "corrections": {
+      "totalMinutes": 48,
+      "ingredients_add": [
+        {
+          "name": "Şeker",
+          "amount": "3",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Elmayı rendeleyip suyunu hafifçe sıkın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Elmayı haşhaş, şeker ve tarçınla karıştırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Yufkaları tereyağı sürerek üst üste dizin, katlar kurumasın diye hızlı çalışın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Harcı uzun kenara yayın ve ruloyu sıkmadan sarın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Rétesi 190 derecede 18 dakika pişirip fırından alın.",
+          "timerSeconds": 1080
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Rétesi 10 dakika bekletin, sıcak harç dilimlenirken akmasın.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 7,
+          "instruction": "Pudra şekerini ılık dilimlerin üstüne ince eleyin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.youtube.com/watch?v=zd0ukgULbvI",
+      "https://www.epicurious.com/recipes/food/views/apple-strudel"
+    ],
+    "confidence": "medium",
+    "reason": "Elmalı haşhaşlı rétes kaynaklarla uyumlu, fakat şeker ingredientte yok ve dinlendirme süresi timeline dışında."
+  },
+  {
+    "slug": "elmali-irmik-dolgu-kup-kirsehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: 30 dakika soğutma totalMinutes dışında kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/elmali-irmik-tatlisi/1608",
+      "https://www.nefisyemektarifleri.com/elmali-irmik-tatlisi/"
+    ],
+    "confidence": "high",
+    "reason": "İrmikli elmalı kup yapısı doğru, fakat soğutma adımı toplam sürede yer almadığı için kullanıcı süresi eksik görür."
+  },
+  {
+    "slug": "elmali-karanfilli-hosaf-nevsehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: mevcut steps genel içecek şablonu gibi; elma, karanfil ve pişirme süresini somut anlatmıyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Elmaları kabuklarıyla iri dilimleyip tencereye alın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Su, şeker ve karanfili ekleyip orta ateşte kaynatın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Hoşafı 10 dakika kaynatın, elmalar dağılmadan aromasını bıraksın.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Karanfilleri çıkarıp hoşafı oda sıcaklığına alın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Meyvesiyle birlikte soğuk veya ılık servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/elmali-komposto/",
+      "https://yemek.com/tarif/elma-kompostosu/"
+    ],
+    "confidence": "high",
+    "reason": "Elmalı karanfilli hoşaf içeriği doğru, fakat mevcut adımlar tarif yerine genel şablon gibi duruyor."
+  },
+  {
+    "slug": "elmali-karanfilli-soda-ingiltere-usulu",
+    "verdict": "PASS",
+    "reason": "Elma suyu, karanfil, limon ve soda ile baharatlı alkolsüz içecek yapısı apple spritz mantığıyla uyumlu. Süre ve allergen yokluğu doğru.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/mulled-apple-juice",
+      "https://www.thebar.com/en-gb/recipes/elderflower-spritz"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "elmali-kefir-smoothie",
+    "verdict": "PASS",
+    "reason": "Kefir, elma, yulaf ve tarçınla smoothie yapısı kaynaklarla uyumlu. Süt ve gluten beyanı içerikle tutarlı, süre makul.",
+    "sources": [
+      "https://www.dogadan.com.tr/tr/blog/dogadan-tarifler/elmali-bademli-smoothie-tarifi",
+      "https://www.yemeksahibi.com/elmali-smoothie.html"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "elmali-misir-unu-keki-rize-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: steps yumurta, yağ ve kabartıcı kullanıyor ama ingredient listesinde yok",
+      "allergens: yumurta kullanımı nedeniyle YUMURTA allergeni eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Yumurta",
+          "amount": "2",
+          "unit": "adet"
+        },
+        {
+          "name": "Sıvı yağ",
+          "amount": "0.5",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Kabartma tozu",
+          "amount": "1",
+          "unit": "paket"
+        }
+      ],
+      "allergens_add": [
+        "YUMURTA"
+      ]
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/misir-unu-keki-tarifi-t-4132",
+      "https://www.efsanetarifler.com/tarif/elmali-kek-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Mısır unu, un, yoğurt ve elma uyumlu; fakat kekin step malzemeleri ingredient ve allergen alanında eksik."
+  },
+  {
+    "slug": "elmali-tarcin-serbeti-nigde-usulu",
+    "verdict": "PASS",
+    "reason": "Elma, tarçın, bal, limon ve suyla kısa kaynatılmış içecek yapısı şerbet ve komposto kaynaklarıyla uyumlu. Süre doğru.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/elmali-tarcinli-komposto/",
+      "https://yemek.com/tarif/elma-kompostosu/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "elmali-tarcinli-komposto",
+    "verdict": "PASS",
+    "reason": "Elma, tarçın, karanfil, şeker ve limonla komposto yapısı kaynaklarla uyumlu. Vegan tag, alkolsüz tag ve süreler doğru.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/elmali-komposto/",
+      "https://yemek.com/tarif/elma-kompostosu/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "elmali-tarcinli-smoothie",
+    "verdict": "PASS",
+    "reason": "Elma, yoğurt, süt ve tarçınla smoothie yapısı kaynaklarla uyumlu. Süt allergeni doğru, hazırlık süresi kısa içecek için makul.",
+    "sources": [
+      "https://www.arcelik.com.tr/blog/elmali-yogurtlu-ve-cevizli-smoothie-tarifi",
+      "https://www.elmaelma.com/icecekler/elmali-smoothie-nedir-nasil-yapilir-tarifi-ve-malzemeleri-nelerdir-5b02bd0c8ca780773a348ed2"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "elmali-tart",
+    "verdict": "PASS",
+    "reason": "Un, tereyağı, yumurta ve tarçınlı elma harcı klasik elmalı tartla uyumlu. Gluten, süt ve yumurta beyanları doğru.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/elmali-tart-tarifi/",
+      "https://yemek.com/tarif/elmali-tart/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "elmali-twaroglu-krep-polonya-usulu",
+    "verdict": "PASS",
+    "reason": "Polonya usulü krep ve twarog peyniri yapısı pierogi ve naleśniki kaynaklarıyla uyumlu. Gluten, süt ve yumurta beyanı doğru.",
+    "sources": [
+      "https://www.polonist.com/nalesniki-polish-crepes/",
+      "https://www.theguardian.com/food/2024/feb/07/how-to-make-perfect-pierogi-recipe-felicity-cloake"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "elmali-un-helvasi-aksaray-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: 10 dakika dinlendirme totalMinutes dışında kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 36
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/un-helvasi-tarifi/",
+      "https://yemek.com/tarif/un-helvasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Un, tereyağı, elma ve tarçınlı helva yapısı makul; ancak dinlendirme süresi toplam sürede görünmüyor."
+  },
+  {
+    "slug": "elote",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: mevcut steps eloteye özgü değil, genel atıştırmalık şablonu gibi yazılmış",
+      "ingredients: acı toz biber veya Tajin benzeri baharat kaynaklarda temel bitirişlerden biri"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Acı toz biber",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Mısır koçanlarını temizleyip ızgarayı orta yüksek ateşe hazırlayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Mısırları çevirerek 15 dakika közleyin, yer yer iz alması lezzeti artırır.",
+          "timerSeconds": 900
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Mayonezi lime suyu ile karıştırıp sıcak mısırların üstüne sürün.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Beyaz peyniri ufalayıp mısırların üstüne bastırmadan serpin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Acı toz biber serpip lime dilimiyle sıcak servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.isabeleats.com/authentic-mexican-street-corn/",
+      "https://cookieandkate.com/elote-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Elote içeriği temel olarak doğru, fakat mevcut adımlar Meksika sokak mısırını tarif edecek kadar özgül değil."
+  }
+]

@@ -1,0 +1,617 @@
+[
+  {
+    "slug": "dereotlu-cubuk-tursu-salatasi-ankara-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://cubuktursucum.tr/",
+      "https://www.evvelcevap.com/pirincli-domates-corbasi-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Çubuk turşusu, dereotu ve yağlı ekşi sos mantığı salata için tutarlı; süre ve makro değerlerde belirgin çelişki yok."
+  },
+  {
+    "slug": "dereotlu-kofte-patates-tava-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: kremalı sos geçiyor ama ingredient listesinde krema yok",
+      "allergens: krema ekleneceği için SUT eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Krema", "amount": "0.5", "unit": "su bardağı" }
+      ],
+      "allergens_add": ["SUT"]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/classic-swedish-meatballs",
+      "https://www.ikea.com/gb/en/rooms/kitchen/how-to/classic-swedish-meatballs-and-cream-sauce-pub9dd609a0/"
+    ],
+    "confidence": "high",
+    "reason": "İsveç köftesi kaynaklarında kremalı sos olağan; mevcut adımda geçen krema ingredient ve alerjen tarafında eksik kalmış."
+  },
+  {
+    "slug": "dereotlu-kofte-patates-tepsisi-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: yumurta geçiyor ama ingredient listesinde yok",
+      "allergens: yumurta kullanılacağı için YUMURTA eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yumurta", "amount": "1", "unit": "adet" }
+      ],
+      "allergens_add": ["YUMURTA"]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/classic-swedish-meatballs",
+      "https://www.ikea.com/gb/en/rooms/kitchen/how-to/classic-swedish-meatballs-and-cream-sauce-pub9dd609a0/"
+    ],
+    "confidence": "high",
+    "reason": "Köfte harcında yumurta bağlayıcı olarak kaynaklarla uyumlu; adımda var ama liste ve alerjenlerde yok."
+  },
+  {
+    "slug": "dereotlu-kofte-tava-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: süt geçiyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Süt", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/classic-swedish-meatballs",
+      "https://www.epicurious.com/recipes/food/views/veal-meatballs-and-baby-carrots-in-dilled-cream-sauce-870"
+    ],
+    "confidence": "high",
+    "reason": "Sütlü veya kremalı bağlama İsveç köftesiyle uyumlu; mevcut adım ingredient listesinde olmayan süt kullanıyor."
+  },
+  {
+    "slug": "dereotlu-kur-somon",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: 24 saat kür ve 20 dakika hazırlık birlikte 1460 dakika eder",
+      "cookMinutes: kür süresi pasif bekleme olduğu için cookMinutes içinde olmamalı"
+    ],
+    "corrections": {
+      "prepMinutes": 20,
+      "cookMinutes": 0,
+      "totalMinutes": 1460
+    },
+    "sources": [
+      "https://www.food.com/recipe/gravlax-swedish-sugar-and-salt-cured-salmon-68164",
+      "https://www.epicurious.com/recipes/food/views/gravlaks-with-sweet-mustard-sauce-234998"
+    ],
+    "confidence": "high",
+    "reason": "Gravlax pişmez, buzdolabında kürlenir; pasif süre toplamda görünmeli ama pişirme süresine yazılmamalı."
+  },
+  {
+    "slug": "dereotlu-kuru-domates-gozleme-nevsehir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/tuzlu-hamur-isi-tarifleri/domatesli-peynirli-gozleme-tarifi",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/peynirli-gozleme-tarifi/15248"
+    ],
+    "confidence": "medium",
+    "reason": "Peynirli gözleme yapısı ve domatesli iç harç kaynaklarla uyumlu; kuru domates varyasyonu net hata oluşturmuyor."
+  },
+  {
+    "slug": "dereotlu-mantarli-pirojki-polonya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.polonist.com/mushroom-pierogi/",
+      "https://anglopolishsociety.org/mushroom-pierogi-recipe/"
+    ],
+    "confidence": "medium",
+    "reason": "Mantar dolgulu Polonya hamur işi referanslarla uyumlu; tereyağı, mantar ve hamur dengesi makul görünüyor."
+  },
+  {
+    "slug": "dereotlu-olivier-salatasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Olivier_salad",
+      "https://www.everydayhealthyrecipes.com/olivier-salad/"
+    ],
+    "confidence": "high",
+    "reason": "Patates, havuç, bezelye, turşu ve mayonez Olivier salatası için doğru eksen; süre ve alerjenler tutarlı."
+  },
+  {
+    "slug": "dereotlu-patates-corbasi-macar-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.food.com/recipe/hungarian-potato-soup-311932",
+      "https://www.bonappetit.com/recipe/hungarian-mushroom-soup"
+    ],
+    "confidence": "medium",
+    "reason": "Patates, paprika ve dereotu Macar çorba profiliyle uyumlu; vegan versiyon kaynaklardan sapmıyor."
+  },
+  {
+    "slug": "dereotlu-patates-rosti-isvec-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "title/description: röşti İsviçre kökenli bir ad; İsveç mutfağı iddiası yanıltıcı olabilir",
+      "cuisine: desteklenen kodlarda İsviçre yok, manuel karar gerekir"
+    ],
+    "corrections": {
+      "description": "Dereotlu patates röşti, rendelenmiş patatesi tavada gevrekleştirerek yoğurtla sunulan sıcak bir kahvaltı tabağı çıkarır."
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/rosti-with-fried-eggs-51144200",
+      "https://www.sverigesradio.se/artikel/554088"
+    ],
+    "confidence": "medium",
+    "reason": "Röşti adı İsviçre patates tavasına işaret ediyor; İsveç kodu ve başlık birlikte manuel review gerektiriyor."
+  },
+  {
+    "slug": "dereotlu-patates-salatasi-polonya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.polonist.com/polish-potato-salad/",
+      "https://tastylicious.com/russian-potato-salad/"
+    ],
+    "confidence": "medium",
+    "reason": "Patates, turşu, dereotu ve hardallı sos Doğu Avrupa patates salatası mantığıyla uyumlu; vegan etiket doğru."
+  },
+  {
+    "slug": "dereotlu-patates-yumurta-tava-isvec-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://cookingsessions.com/pytt-i-panna-recipe/",
+      "https://www.food.com/recipe/swedish-hash-pytt-i-panna-137943"
+    ],
+    "confidence": "medium",
+    "reason": "Patates ve yumurtalı tava İsveç hash geleneğine yakın duruyor; süreler ve alerjenler net biçimde tutarlı."
+  },
+  {
+    "slug": "dereotlu-peynirli-cirpma-yumurta-isvec-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.healthline.com/recipes/scrambled-eggs-with-goat-cheese-and-dill",
+      "https://www.bbcgoodfood.com/recipes/creamy-swedish-meatballs"
+    ],
+    "confidence": "medium",
+    "reason": "Dereotu ve sütlü peynirli yumurta tekniği makul; ingredient, süre ve alerjen tarafında eksik görünmüyor."
+  },
+  {
+    "slug": "dereotlu-somon-acik-sandvic-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "tipNote: tereyağı öneriyor ama ingredient listesinde tereyağı yok"
+    ],
+    "corrections": {
+      "tipNote": "Ekmeği kuru tavada ısıtmak krem peynir sürülünce ıslanmayı azaltır."
+    },
+    "sources": [
+      "https://www.foodnetwork.com/fnk/recipes/open-rye-sandwich-with-smoked-salmon-herb-cream-cheese-and-radishes-8134035.amp",
+      "https://www.epicurious.com/recipes/food/views/smoked-salmon-smorrebrod-51155280"
+    ],
+    "confidence": "high",
+    "reason": "Açık somon sandviçte ekmek, otlu krem peynir ve somon doğru; püf notu ingredient dışı tereyağı çağırıyordu."
+  },
+  {
+    "slug": "dereotlu-somon-patates-tava-isvec-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://swedishfood.com/swedish-food-recipes-side-dishes/496-potatoes-chive-sauce",
+      "https://www.foodandwine.com/smoked-salmon-recipes-8683241"
+    ],
+    "confidence": "medium",
+    "reason": "Somon, patates, tereyağı ve dereotu kuzey mutfağı için uyumlu; balık pişirme süresi kısa ve makul."
+  },
+  {
+    "slug": "dereotlu-yumurta-patates-kase-polonya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.everydayhealthyrecipes.com/olivier-salad/",
+      "https://www.bravabod.com/recipe/russian-potato-salad-olivier-salad/"
+    ],
+    "confidence": "medium",
+    "reason": "Patates, yumurta, yoğurt ve dereotu kombinasyonu bölgesel salata kasesi olarak tutarlı; süre çelişkisi yok."
+  },
+  {
+    "slug": "deviled-eggs",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.foodnetwork.com/recipes/classic-deviled-eggs-recipe-1911032",
+      "https://www.bbcgoodfood.com/recipes/devilled-eggs"
+    ],
+    "confidence": "high",
+    "reason": "Haşlanmış yumurta sarısı, mayonez, hardal ve paprika klasik deviled eggs çizgisiyle uyumlu."
+  },
+  {
+    "slug": "dibek-kahveli-irmik-kupu-mardin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: 1 saat soğutma adımı toplam sürede görünmüyor"
+    ],
+    "corrections": {
+      "prepMinutes": 10,
+      "cookMinutes": 12,
+      "totalMinutes": 82
+    },
+    "sources": [
+      "https://www.sofra.com.tr/tarif/sutlu-tatlilar/kahveli-irmik-tatlisi",
+      "https://www.artukbey.com/blog/icerik/mardin-dibek-kahvesi"
+    ],
+    "confidence": "high",
+    "reason": "İrmik tatlısı ve dibek kahvesi uyumlu; ancak soğutma süresi toplam dakikaya eklenmemiş."
+  },
+  {
+    "slug": "dibek-kahvesi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.artukbey.com/blog/icerik/mardin-dibek-kahvesi",
+      "https://aliasultan.com/dibek-kahvesi/"
+    ],
+    "confidence": "medium",
+    "reason": "Dibek kahvesinin yumuşak, sütlü tada yakın profili kaynaklarla uyumlu; cezvede kısa pişirme makul."
+  },
+  {
+    "slug": "dill-potato-salad-rus-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.food.com/recipe/russian-potato-salad-salad-olivier-331199",
+      "https://www.everydayhealthyrecipes.com/olivier-salad/"
+    ],
+    "confidence": "medium",
+    "reason": "Patates, dereotu ve turşu ekseni Rus tarzı soğuk patates salatasıyla uyumlu; hardal alerjeni doğru."
+  },
+  {
+    "slug": "dillstuvad-potatis-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: süt, unlu tereyağı ve tereyağı geçiyor ama ingredient listesinde süt, un ve tereyağı yok",
+      "allergens: un ekleneceği için GLUTEN eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Süt", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Un", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": ["GLUTEN"]
+    },
+    "sources": [
+      "https://swedishfood.com/swedish-food-recipes-side-dishes/496-potatoes-chive-sauce",
+      "https://www.eatyourbooks.com/library/recipes/1558145/creamed-potatoes-with-dill-dillstuvad"
+    ],
+    "confidence": "high",
+    "reason": "Dillstuvad potatis kaynaklarında sütlü unlu sos var; mevcut adımlar da bunu kullanıyor ama liste eksik."
+  },
+  {
+    "slug": "diyarbakir-duvakli-pilav",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.diyarbakir.gov.tr/diyarbakir-duvakli-pilavi",
+      "https://www.kulturportali.gov.tr/turkiye/diyarbakir/neyenir/duvakli-plav"
+    ],
+    "confidence": "high",
+    "reason": "Bademli kıymalı üst harç ve pirinç pilavı Diyarbakır duvaklı pilav kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "diyarbakir-kaburga-dolmasi-ic-pilavli",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.diyarbakir.gov.tr/kaburga-dolmasi",
+      "https://www.e-sehir.com/yemek_tarifleri/kaburga-dolmasi-diyarbakir-tarifi.html"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu kaburga, iç pilav, badem ve uzun pişirme kaynaklarla uyumlu; süre ve makro değerler makul aralıkta."
+  },
+  {
+    "slug": "diyarbakir-kuzu-etli-mumbar-dolmasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.diyarbakir.gov.tr/kuru-dolma",
+      "https://www.antepsofrasi.com/tarif/diyarbakir-usulu-eksili-kuru-dolma-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Mumbarın gevşek doldurulup uzun haşlanması doğru teknik; ingredient ve sürelerde kritik çelişki yok."
+  },
+  {
+    "slug": "diyarbakir-lebeniyesi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/lebeniye-corbasi-diyarbakir-yoresine-ait/",
+      "https://www.refikaninmutfagi.com/antep-usulu-lebeniye-corbasi"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurt, nohut, köfte ve bulgurlu yapı Diyarbakır lebeniyesiyle uyumlu; terbiye tekniği doğru anlatılmış."
+  },
+  {
+    "slug": "diyarbakir-meftune-sumakli",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.diyarbakir.gov.tr/patlican-meftunesi",
+      "https://yemek.com/tarif/meftune/"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu eti, patlıcan, domates ve sumak suyu meftune için doğru ana eksen; süre ve adımlar tutarlı."
+  },
+  {
+    "slug": "diyarbakir-mumbar-dolmasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.antepsofrasi.com/tarif/diyarbakir-usulu-eksili-kuru-dolma-tarifi/",
+      "https://www.diyarbakir.gov.tr/kuru-dolma"
+    ],
+    "confidence": "medium",
+    "reason": "Pirinçli, kıymalı ve salçalı dolgu ile uzun pişirme mumbar mantığına uygun; alerjenler mevcut malzemeyle uyumlu."
+  },
+  {
+    "slug": "diyarbakir-narli-kuru-dolma",
+    "verdict": "CORRECTION",
+    "issues": [
+      "servingSuggestion: tarif vegan etiketliyken sarımsaklı yoğurt öneriyor"
+    ],
+    "corrections": {
+      "servingSuggestion": "Nar ekşili sosuyla ılık servis edin."
+    },
+    "sources": [
+      "https://www.diyarbakir.gov.tr/kuru-dolma",
+      "https://yemek.com/tarif/nar-eksili-kuru-dolma-ve-sarma/"
+    ],
+    "confidence": "high",
+    "reason": "Kuru dolma içeriği vegan kalabilir; yoğurt önerisi vegan etiketle çeliştiği için servis metni düzeltilmeli."
+  },
+  {
+    "slug": "diyarbakir-narli-patlican-dizmesi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: nar taneleri geçiyor ama ingredient listesinde yok",
+      "servingSuggestion: vegan etiketliyken süzme yoğurt öneriyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Nar taneleri", "amount": "0.25", "unit": "su bardağı" }
+      ],
+      "servingSuggestion": "Ilık servis edin, nar serpin."
+    },
+    "sources": [
+      "https://turkiye.influence.cool/tr/diyarbakir/ergani/yerel-lezzetler/patlican-dizme/",
+      "https://yemek.com/tarif/nar-eksili-kuru-dolma-ve-sarma/"
+    ],
+    "confidence": "medium",
+    "reason": "Patlıcan dizme yapısı makul; nar taneleri ve vegan etiketle çelişen yoğurt önerisi düzeltilmeli."
+  },
+  {
+    "slug": "dobos-torta",
+    "verdict": "PASS",
+    "sources": [
+      "https://tastehungary.com/journal/dobos-torta/",
+      "https://www.food.com/recipe/dobos-torte-50774"
+    ],
+    "confidence": "high",
+    "reason": "İnce kat pandispanya, çikolatalı tereyağ kreması ve karamelli üst kat Dobos torta için doğru."
+  },
+  {
+    "slug": "dobos-torte",
+    "verdict": "PASS",
+    "sources": [
+      "https://tastehungary.com/journal/dobos-torta/",
+      "https://www.food.com/recipe/dobos-torte-50774"
+    ],
+    "confidence": "high",
+    "reason": "Dobos torte içeriği ve karamelli üst kat kaynaklarla uyumlu; süre ve yüksek yağlı makro değerleri makul."
+  },
+  {
+    "slug": "doenjang-jjigae",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.maangchi.com/recipe/doenjang-jjigae",
+      "https://www.foodnetwork.com/recipes/food-network-kitchen/doenjang-jjigae-22308195"
+    ],
+    "confidence": "high",
+    "reason": "Doenjang, tofu, kabak, mantar ve yeşil soğan Kore güveci için doğru çekirdek; soya alerjeni yerinde."
+  },
+  {
+    "slug": "dolanger-tatlisi-sanliurfa-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/dolangel-tatlisi/",
+      "https://www.youtube.com/watch?v=5Xum432Bhk8"
+    ],
+    "confidence": "medium",
+    "reason": "İnce hamur, yağ, şerbet ve fıstıkla yapılan tatlı yapısı kaynaklarla genel olarak uyumlu."
+  },
+  {
+    "slug": "dolaz-ordu-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sahrapsoysal.com/kesme-bulamaci-sanliurfa-tarifi-t-6516",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/sutsuz-tereyagli-domates-corbasi/15972"
+    ],
+    "confidence": "low",
+    "reason": "Un, tereyağı ve pekmezle kısa pişen tatlı tekniği tutarlı; kaynaklar dolazı birebir değil, yakın pekmezli tatlı profili veriyor."
+  },
+  {
+    "slug": "domates-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://ye-mek.net/tarif/domates-corbasi/",
+      "https://www.takvim.com.tr/yemek/corbalar/2016/12/12/domates-corbasi-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Domates, un, tereyağı, süt ve salça klasik domates çorbası kaynaklarıyla uyumlu; alerjenler doğru."
+  },
+  {
+    "slug": "domates-recelli-tost-bursa-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.tarifibasit.com/evde-kolayca-yapabileceginiz-en-lezzetli-bursa-domates-receli-tarifi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/hamurisi-tarifleri/tuzlu-hamur-isi-tarifleri/domatesli-peynirli-gozleme-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Bursa domates reçeli ve peynirli sıcak ekmek fikri tutarlı; spesifik tost gelenek iddiası sınırlı ama yanıltıcı değil."
+  },
+  {
+    "slug": "domatesli-arapsaci-corbasi-urla-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.evvelcevap.com/pirincli-domates-corbasi-tarifi/",
+      "https://tr.hiloved.com/provencal-domates-pirinc-corbasi-tarifi/"
+    ],
+    "confidence": "low",
+    "reason": "Domatesli pirinç çorbası temeli kaynaklarla uyumlu; arapsaçı özelinde kaynak zayıf ama içerikte açık hata yok."
+  },
+  {
+    "slug": "domatesli-arpa-sehriye-corbasi-bilecik-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.diyetkolik.com/yemek-tarifi/domatesli-arpa-sehriye-corba",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/domatesli-arpa-sehriye-corbasi/17642"
+    ],
+    "confidence": "high",
+    "reason": "Domates, arpa şehriye, yağ ve sıcak su çorba yapısı kaynaklarla uyumlu; süreler net ve kısa."
+  },
+  {
+    "slug": "domatesli-beyaz-fasulye-corbasi-ispanya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://beaninstitute.com/recipes/spanish-white-beans-with-smoked-paprika-and-chorizo/",
+      "https://www.foodnetwork.com/recipes/food-network-kitchen/tuscan-tomato-white-bean-soup-3363249"
+    ],
+    "confidence": "medium",
+    "reason": "Beyaz fasulye, domates ve sarımsak ekseni tutarlı; vegan sade versiyon İspanyol esinli çorba olarak makul."
+  },
+  {
+    "slug": "domatesli-borulce-corbasi-manisa-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/domatesli-biberli-kuru-borulce-yemegi/14311",
+      "https://www.sahrapsoysal.com/masli-borulce-corbasi-tarifi-t-3371"
+    ],
+    "confidence": "medium",
+    "reason": "Börülceyi domates ve sarımsakla pişirme fikri tutarlı; çorba formu için süre ve makro değerler makul."
+  },
+  {
+    "slug": "domatesli-cokelek-durumu-bilecik-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.e-sehir.com/yemek_tarifleri/sikma-mersin-tarifi.html",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/domatesli-kasar-peynirli-gozleme-yufkadan/13049"
+    ],
+    "confidence": "medium",
+    "reason": "Lavaş, çökelek, domates ve kısa tavada ısıtma kahvaltılık dürüm olarak tutarlı; alerjenler yerinde."
+  },
+  {
+    "slug": "domatesli-cokelek-sikma-mersin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.e-sehir.com/yemek_tarifleri/sikma-mersin-tarifi.html",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/domatesli-kasar-peynirli-gozleme-yufkadan/13049"
+    ],
+    "confidence": "high",
+    "reason": "Mersin sıkma kaynaklarında çökelekli seçenek var; domatesli varyasyon, süre ve alerjenler makul."
+  },
+  {
+    "slug": "domatesli-etli-arpa-sehriye-tava-balikesir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://ye-mek.net/tarif/kiymali-arpa-sehriye-corbasi",
+      "https://www.diyetkolik.com/yemek-tarifi/domatesli-arpa-sehriye-corba"
+    ],
+    "confidence": "medium",
+    "reason": "Et, domates ve arpa şehriye tek tava mantığıyla uyumlu; gluten alerjeni doğru ve süreler tutarlı."
+  },
+  {
+    "slug": "domatesli-etli-eriste-tavasi-ankara-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/domatesli-pirinc-pilavi-tarifi/8812",
+      "https://ye-mek.net/tarif/kiymali-arpa-sehriye-corbasi"
+    ],
+    "confidence": "medium",
+    "reason": "Etli domatesli makarna benzeri tek tava kurgu makul; erişte nedeniyle gluten alerjeni doğru."
+  },
+  {
+    "slug": "domatesli-firik-pilavi-tekirdag-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "description: firik pilavı genellikle Güneydoğu ve Anadolu bağlamında geçiyor; Tekirdağ atfı kaynakla doğrulanamadı"
+    ],
+    "corrections": {
+      "description": "Domatesli firik pilavı, firik bulguru domates ve tereyağıyla pişirerek isli, tane tane ve sofralık bir pilav kurar."
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/pilav-ve-makarna-tarifleri/pilav-tarifleri/firik-pilavi-tarifi",
+      "https://www.sana.com.tr/tarifi/patlican-ve-canakkale-domatesli-etli-firik-pilavi-249959"
+    ],
+    "confidence": "medium",
+    "reason": "Firik pilavı doğru, ancak Tekirdağ usulü iddiasını destekleyen kaynak bulunamadı; manuel review uygun."
+  },
+  {
+    "slug": "domatesli-kofte-toplari-balikesir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: ekmek içi ve sarımsak geçiyor ama ingredient listesinde yok",
+      "allergens: ekmek içi ekleneceği için GLUTEN eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Ekmek içi", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" }
+      ],
+      "allergens_add": ["GLUTEN"]
+    },
+    "sources": [
+      "https://www.seriouseats.com/meatball-cooking-tip-8716216",
+      "https://www.bbcgoodfood.com/recipes/classic-swedish-meatballs"
+    ],
+    "confidence": "high",
+    "reason": "Köfte bağlayıcısı adımda açıkça var; ingredient ve gluten alerjeni aynı tarife eklenmeli."
+  },
+  {
+    "slug": "domatesli-kuzu-orzo-tava-balikesir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.cntraveler.com/stories/2014-09-17/recipe-white-bean-and-chorizo-soup",
+      "https://www.diyetkolik.com/yemek-tarifi/domatesli-arpa-sehriye-corba"
+    ],
+    "confidence": "medium",
+    "reason": "Kuzu, domates ve orzo tek tava yapısı Akdeniz çizgisiyle uyumlu; gluten alerjeni doğru."
+  },
+  {
+    "slug": "domatesli-lebeniye-corbasi-gaziantep-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.yemektekeyifvar.com/corbalar/lebeniye-corbasi-tarifi",
+      "https://ye-mek.net/tarif/lebeniye-corbasi"
+    ],
+    "confidence": "medium",
+    "reason": "Yoğurtlu taban, pirinç ve küçük köfte lebeniye için doğru; domatesli yorum net hata oluşturmuyor."
+  },
+  {
+    "slug": "domatesli-lor-ezmesi-ayvalik-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/domatesli-kasar-peynirli-gozleme-yufkadan/13049",
+      "https://www.afiyetle.com/tarif/lorlu-borek"
+    ],
+    "confidence": "medium",
+    "reason": "Lor, domates, zeytinyağı ve ekmekle servis kahvaltılık ezme olarak tutarlı; süt ve gluten alerjenleri doğru."
+  },
+  {
+    "slug": "domatesli-lorlu-kirik-borek-denizli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: maydanoz, yumurta ve süt geçiyor ama ingredient listesinde yok",
+      "allergens: yumurta kullanılacağı için YUMURTA eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" },
+        { "name": "Yumurta", "amount": "1", "unit": "adet" },
+        { "name": "Süt", "amount": "0.5", "unit": "su bardağı" }
+      ],
+      "allergens_add": ["YUMURTA"]
+    },
+    "sources": [
+      "https://www.afiyetle.com/tarif/lorlu-borek",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/peynirli-gozleme-tarifi/15248"
+    ],
+    "confidence": "high",
+    "reason": "Börek adımlarında yumurtalı sütlü sos ve maydanoz var; liste ve alerjenler bu kullanımı karşılamıyor."
+  }
+]

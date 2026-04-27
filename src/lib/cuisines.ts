@@ -57,6 +57,12 @@ export const CUISINE_CODES = [
   "co",
   "ve",
   "dk",
+  // Oturum 25 (Mod K Batch 5b v2): cape-town-mercimek-bobotie tarifi
+  // Codex 'gb' (Ingiliz) cuisine yaniltici, gercek Guney Afrika yemegi.
+  // za = Guney Afrika (bobotie, biltong, sosatie, malva pudding,
+  // bredie). Bu Codex'in MAJOR_ISSUE'da explicit isaret ettigi cuisine
+  // gap, manuel mapping pattern'i gibi.
+  "za",
 ] as const;
 
 export type CuisineCode = (typeof CUISINE_CODES)[number];
@@ -97,6 +103,7 @@ export const CUISINE_LABEL: Record<CuisineCode, string> = {
   co: "Kolombiya",
   ve: "Venezuela",
   dk: "Danimarka",
+  za: "Güney Afrika",
 };
 
 /**
@@ -141,6 +148,7 @@ export const CUISINE_SLUG: Record<CuisineCode, string> = {
   co: "kolombiya",
   ve: "venezuela",
   dk: "danimarka",
+  za: "guney-afrika",
 };
 
 /** URL slug → kod ters lookup. Slug bilinmiyorsa null. */
@@ -193,6 +201,7 @@ export const CUISINE_DESCRIPTION_TR: Record<CuisineCode, string> = {
   co: "Kolombiya mutfağı Karayip kıyısı, And dağları ve Amazon havzasının zengin sentezi: arepa (mısır ekmeği), bandeja paisa, ajiaco çorbası, arequipe (sütlü tatlı). Mısır, bezelye ve hindistan cevizi sütü merkezi rol oynar.",
   ve: "Venezuela mutfağı arepa diyarı ve Karayip lezzetleri: arepa rellena, pabellón criollo, hallaca, asado negro. Plantain, kara fasulye ve mısır unu klasik üçleme.",
   dk: "Danimarka mutfağı İskandinav rahatlığı ile Kuzey Avrupa klasiklerini birleştirir: aebleskiver (yuvarlak çörek), smørrebrød (açık sandviç), frikadeller, rødgrød. Tereyağı, ringa ve kara çavdar ekmeği sofranın temeli.",
+  za: "Güney Afrika mutfağı Hollandalı sömürge mirası, Hindistan göçmen mutfakları ve yerel Bantu kültürünün buluşması: bobotie (baharatlı kıymalı yumurta dolması), biltong (kuru et), sosatie (sis kebabı), malva pudding (kayısılı sıcak puding). Köri, hindistan cevizi sütü ve mısır lapası (pap) günlük sofranın imzası.",
 };
 
 /** EN description, aynı set, kısa SEO metni. */
@@ -232,6 +241,7 @@ export const CUISINE_DESCRIPTION_EN: Record<CuisineCode, string> = {
   co: "Colombian cuisine blends Caribbean coast, Andean highlands, and Amazonian heritage: arepa, bandeja paisa, ajiaco soup, arequipe (caramel). Corn, peas, and coconut milk play central roles.",
   ve: "Venezuelan cuisine is the land of arepa with Caribbean flavors: arepa rellena, pabellón criollo, hallaca, asado negro. Plantain, black beans, and corn flour form the classic trio.",
   dk: "Danish cuisine pairs Scandinavian comfort with Northern European classics: aebleskiver (round dumplings), smørrebrød (open-faced sandwich), frikadeller, rødgrød. Butter, herring, and dark rye bread anchor the table.",
+  za: "South African cuisine blends Dutch colonial heritage, Indian immigrant kitchens and indigenous Bantu culture: bobotie (spiced minced meat with egg topping), biltong (cured meat), sosatie (skewered kebab), malva pudding (apricot warm pudding). Curry, coconut milk and maize porridge (pap) are everyday signatures.",
 };
 
 export const CUISINE_FLAG: Record<CuisineCode, string> = {
@@ -270,6 +280,7 @@ export const CUISINE_FLAG: Record<CuisineCode, string> = {
   co: "🇨🇴",
   ve: "🇻🇪",
   dk: "🇩🇰",
+  za: "🇿🇦",
 };
 
 /**
@@ -318,6 +329,7 @@ export const CUISINE_REGION: Record<CuisineCode, string> = {
   co: "latin-america",
   ve: "latin-america",
   dk: "nordic",
+  za: "africa-southern",
 };
 
 // ─── Inference engine ───────────────────────────────────────
@@ -552,6 +564,7 @@ const TEXT_KEYWORDS: readonly { cuisine: CuisineCode; keywords: string[] }[] = [
   { cuisine: "co", keywords: ["kolombiya", "kolombiyalı", "kolombiya mutfağı", "kolombiya usulü"] },
   { cuisine: "ve", keywords: ["venezuela", "venezuelalı", "venezuela mutfağı", "venezuela usulü"] },
   { cuisine: "dk", keywords: ["danimarka", "danimarkalı", "danimarka mutfağı", "danimarka usulü", "dansk"] },
+  { cuisine: "za", keywords: ["güney afrika", "guney afrika", "güney afrikalı", "güney afrika mutfağı", "güney afrika usulü", "cape town"] },
   { cuisine: "vn", keywords: ["vietnam"] },
   { cuisine: "br", keywords: ["brezilya"] },
   { cuisine: "cu", keywords: ["küba"] },

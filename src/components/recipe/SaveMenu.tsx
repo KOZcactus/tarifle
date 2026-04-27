@@ -65,7 +65,9 @@ export function SaveMenu({
 
   const requireAuth = () => {
     if (!session?.user) {
-      router.push("/giris");
+      router.push(
+        `/giris?callbackUrl=${encodeURIComponent(window.location.pathname)}`,
+      );
       return false;
     }
     return true;

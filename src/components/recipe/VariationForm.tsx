@@ -40,7 +40,11 @@ export function VariationForm({ recipeId, recipeSlug }: VariationFormProps) {
   if (!session?.user) {
     return (
       <button
-        onClick={() => router.push("/giris")}
+        onClick={() =>
+          router.push(
+            `/giris?callbackUrl=${encodeURIComponent(window.location.pathname)}`,
+          )
+        }
         className="rounded-lg border border-dashed border-border px-4 py-2 text-sm text-text-muted transition-colors hover:border-primary hover:text-primary"
       >
         {t("loginCta")}

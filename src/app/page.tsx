@@ -199,6 +199,48 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Hero altı anonim CTA: yeni-user funnel'i (oturum 26 K1 P1 #2 fix).
+          Login kullanıcı için gizli. 3 madde benefit + primary "Üye Ol" +
+          secondary "Giriş yap" (zaten hesabı olanlar için). */}
+      {!session?.user && (
+        <section className="pb-12">
+          <div className="rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 to-primary/0 p-6 sm:p-8">
+            <div className="grid gap-6 sm:grid-cols-[1fr_auto] sm:items-center">
+              <div className="text-center sm:text-left">
+                <h2 className="font-heading text-xl font-bold sm:text-2xl">
+                  {t("heroAnonCtaTitle")}
+                </h2>
+                <p className="mt-2 text-sm text-text-muted sm:text-base">
+                  {t("heroAnonCtaDescription")}
+                </p>
+                <ul className="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs text-text sm:justify-start sm:text-sm">
+                  <li>{t("heroAnonBenefit1")}</li>
+                  <li>{t("heroAnonBenefit2")}</li>
+                  <li>{t("heroAnonBenefit3")}</li>
+                </ul>
+              </div>
+              <div className="flex flex-col items-center gap-2 sm:items-end">
+                <Link
+                  href="/kayit"
+                  className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                >
+                  {t("heroAnonCtaButton")}
+                </Link>
+                <p className="text-xs text-text-muted">
+                  {t("heroAnonCtaLogin")}{" "}
+                  <Link
+                    href="/giris"
+                    className="font-medium text-primary hover:text-primary-hover"
+                  >
+                    {t("heroAnonCtaLoginLink")}
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* İkinci hero: karar-motoru vaadi ile AI Asistan'a yönlendirme.
           Eski versiyonda burada inline malzeme prompt'u vardı; Kerem
           oturum 12 kararı, prompt /ai-asistan ile tekrar ediyordu. İllüs

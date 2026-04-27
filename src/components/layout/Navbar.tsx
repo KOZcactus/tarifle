@@ -193,12 +193,20 @@ export function Navbar({ notificationSlot, features }: NavbarProps = {}) {
               )}
             </div>
           ) : (
-            <Link
-              href="/giris"
-              className="hidden rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-hover md:block"
-            >
-              {t("login")}
-            </Link>
+            <div className="hidden items-center gap-2 md:flex">
+              <Link
+                href="/giris"
+                className="rounded-lg border border-border px-3 py-2 text-sm font-medium text-text transition-colors hover:bg-bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              >
+                {t("login")}
+              </Link>
+              <Link
+                href="/kayit"
+                className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              >
+                {t("signup")}
+              </Link>
+            </div>
           )}
 
           {/* Mobile Menu Button */}
@@ -310,13 +318,22 @@ export function Navbar({ notificationSlot, features }: NavbarProps = {}) {
                 </button>
               </>
             ) : (
-              <Link
-                href="/giris"
-                onClick={() => setIsMobileOpen(false)}
-                className="rounded-lg bg-primary px-3 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-primary-hover"
-              >
-                {t("login")}
-              </Link>
+              <>
+                <Link
+                  href="/kayit"
+                  onClick={() => setIsMobileOpen(false)}
+                  className="rounded-lg bg-primary px-3 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-primary-hover"
+                >
+                  {t("signup")}
+                </Link>
+                <Link
+                  href="/giris"
+                  onClick={() => setIsMobileOpen(false)}
+                  className="rounded-lg border border-border px-3 py-2 text-center text-sm font-medium text-text transition-colors hover:bg-bg-card"
+                >
+                  {t("login")}
+                </Link>
+              </>
             )}
           </div>
         </div>

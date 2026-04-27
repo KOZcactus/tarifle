@@ -2,7 +2,10 @@ import { z } from "zod";
 
 export const loginSchema = z.object({
   email: z.string().email("Geçerli bir e-posta adresi girin"),
-  password: z.string().min(8, "Şifre en az 8 karakter olmalıdır"),
+  password: z
+    .string()
+    .min(8, "Şifre en az 8 karakter olmalıdır")
+    .max(128, "Şifre en fazla 128 karakter olabilir"),
 });
 
 export const registerSchema = z
@@ -14,7 +17,10 @@ export const registerSchema = z
       .max(50)
       .regex(/^[a-zA-Z0-9_]+$/, "Kullanıcı adı sadece harf, rakam ve alt çizgi içerebilir"),
     email: z.string().email("Geçerli bir e-posta adresi girin"),
-    password: z.string().min(8, "Şifre en az 8 karakter olmalıdır"),
+    password: z
+      .string()
+      .min(8, "Şifre en az 8 karakter olmalıdır")
+      .max(128, "Şifre en fazla 128 karakter olabilir"),
     confirmPassword: z.string(),
     kvkkAccepted: z.literal(true, {
       error: "KVKK metnini kabul etmelisiniz",

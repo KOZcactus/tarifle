@@ -52,7 +52,9 @@ export function LikeButton({
     e.stopPropagation();
 
     if (!session?.user) {
-      router.push("/giris");
+      router.push(
+        `/giris?callbackUrl=${encodeURIComponent(window.location.pathname)}`,
+      );
       return;
     }
 

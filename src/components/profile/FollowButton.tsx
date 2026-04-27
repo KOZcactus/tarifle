@@ -33,7 +33,9 @@ export function FollowButton({
   function handleClick() {
     setError(null);
     if (!signedIn) {
-      router.push("/giris");
+      router.push(
+        `/giris?callbackUrl=${encodeURIComponent(window.location.pathname)}`,
+      );
       return;
     }
     startTransition(async () => {

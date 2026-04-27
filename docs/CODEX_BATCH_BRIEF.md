@@ -4376,4 +4376,86 @@ apply)**:
 - Sub-batch progress: 20 → 44/71 (%62.0, 22b skip)
 - 27 sub-batch kalan (22b yeniden + 23b + 24a-36b)
 
+### 20.12 Oturum 27 SONU durum (27 Nis 2026)
+
+**31 sub-batch v2 apply tamamlandı** (11a-18b + 19a-21b + 22a + 23a +
+23b + 24a + 25a + 25b + 26a + 26b + 27a). 22b + 24b BAD reject. 51/71
+sub-batch (%71.8). Toplam ~650 net yeni prod correction (oturum 27),
+kümülatif Mod K v2 prod ~480 → ~1130.
+
+**PASS oran trend (oturum 27, 31 batch)**: 11a 36 → 18b 22 (ortalama
+~%41), 19a-21b ortalama %34, 22a 22 / 23a 26 (22b BAD reject), 23b 28 /
+24a 36 (24b BAD reject), 25a 10, 25b 18 / 26a 8 / 26b 8, 27a 10. PASS
+oranı oturum sonuna doğru azalarak Codex'in sıkılaştığını gösteriyor
+(yöre yoğun batch'lerde özellikle düşük PASS, çoğu MAJOR mini-rev'e).
+
+**8 onayli MAJOR apply (substantive)**:
+- Pak 1 (11a-18b): testi-nevsehir, hanoi-bun-cha, hamsi-kayganasi,
+  vietnam-karamel-tavuk, smorrebrod cuisine se→dk, lablabi cuisine
+  ma→tn (6 onayli)
+- Pak 2 (19a-21b): 0 onayli (hepsi mini-rev'e)
+- Pak 3-7: 0 onayli, MAJOR'lar mini-rev'e gidiyor
+
+**22b + 24b BAD reject (Codex disiplin ihlali)**:
+- 22b: 4 BLOCKED (mocha + mors-frambuazli Kural 9 süre tutarsız +
+  moqueca-de-banana + mugla-sundirme description şişirme Kural 1)
+- 24b: 12 BLOCKED (11 Kural 9 süre tutarsız + 1 description şişirme +
+  1 ASCII fold)
+- Karar: tamamen SKIP, Codex'ten yeniden istenecek (Brief sec.20.3
+  Kural 1 + Kural 9 disiplini hatırlatma)
+
+**45 mini-rev kapandı (paketi 1-7, oturum 27 boyunca)**:
+- Paketi 1 (4): erzsebet-sour, feijao-tropeiro, feslegenli-tavuklu-
+  pirinc, findikli-keskek (4 önceki oturum 26 kalan)
+- Paketi 2 (7): helise-malatya, kelecos-erzurum/van, kiraz-yaprak
+  ×2 malatya, kayseri-kursun-asi (KRİTİK fix), kayseri-yag-mantisi
+- Paketi 3 (6): jeyuk-bokkeum, jokai-bableves, kayisili-irmik
+  (YEMEK→TATLI), kabak-bastisi (TATLI→YEMEK), helle-tatlisi
+  (TATLI→CORBA), hatay-zahterli-tepsi
+- Paketi 4 (7): kerebic-mersin, kibe-mumbar (KRİTİK data corruption
+  fix), kilis-oruk, katikli-ekmek-kilis + 3 DELETE (keskekli-istavrit-
+  sinop, kestaneli-hamsi-zonguldak, kayisava-trabzon)
+- Paketi 5 (7): kastamonu-siyez, icli-tava-sinop, patila-kars,
+  patatesli-kete-ardahan, hatay-zahterli-nohut, hurmali-kirklareli,
+  mincili-laz-boregi-rize
+- Paketi 6 (7): bazlama-isparta, findikli-pide-duzce, sikma-konya,
+  incir-kupu-canakkale, kabak-cicegi-balikesir + 2 DELETE (firikli-
+  gozleme-kahramanmaras, peynirli-manyok-kase-brezilya)
+- Paketi 7 (7): bursa-mucver-tost, pezik-diyarbakir (Karadeniz yöre
+  düzelt), picarones-peru, **pina-colada cuisine in→cu KRİTİK**,
+  **pupusa cuisine cn→mx KRİTİK** + 2 DELETE (yozgat-mercimek,
+  samsun-pirasa-misir-unlu-pide)
+
+**3 KRİTİK fix**: kibe-mumbar (data corruption), pina-colada cuisine,
+pupusa cuisine.
+
+**9 silme (kullanıcı onayı, Codex halüsinasyonu)**: erzsebet-sour,
+findikli-keskek-toplari, keskekli-istavrit-sinop, kestaneli-hamsi-
+zonguldak, kayisava-trabzon, firikli-gozleme-kahramanmaras, peynirli-
+manyok-kase-brezilya, yozgat-mercimek-borek, samsun-pirasa-misir-pide.
+Prod 3517 → 3508 (-9).
+
+**Mini-rev paketi pattern (oturum 27 sırasında oluşturuldu, brief
+referansı)**:
+1. DB state çek (7 tarif paralel, single bash node script)
+2. 2 paralel agent (3-4 tarif/agent, web research + 2-3 kaynak/tarif)
+3. Karar matrisi (REWRITE / DESC_ONLY / REJECT / KEEP) + DELETE
+   onayı (kullanıcı, destructive op)
+4. scripts/fix-mini-rev-batch-N.ts yaz (RewriteOp + DeleteOp,
+   idempotent, AuditLog MOD_K_MANUAL_REV / MOD_K_REJECT_DELETE)
+5. Dev test + idempotent re-run + prod apply (--env prod
+   --confirm-prod)
+6. dump-tarif-listesi.ts (silme varsa)
+7. Commit + push (pre-push 6 katman)
+
+**Sıradaki Codex tetik**: `Mod K. Batch 27b.` (Bölüm 6). 27b + 28a
+disk'te zaten hazır, verify+apply pipeline. Plus `Mod K. Batch 22b.`
++ `Mod K. Batch 24b.` (yeniden disiplin ile, BAD reject sebebi
+hatırlatma).
+
+**CUISINE_CODES `pt` (Portekiz) eklendi** (oturum 27, commit
+`43844f0`): 36 → 37. lisbon-nohutlu-morina + lizbon-portakalli-badem-
+keki es→pt otomatik fix.
+
+
 

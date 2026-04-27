@@ -1,6 +1,65 @@
 # Tarifle, Proje Durumu
 
-> **Oturum 27 (27 Nis 2026, oturum 26'nın aynı gün devamı), 21 commit:
+> **Oturum 27 SONU (27 Nis 2026, oturum 26'nın aynı gün devamı), 26
+> commit, MUTLAK REKOR Mod K v2 + mini-rev maraton günü.**
+>
+> **Toplam 26 commit, 4 büyük başarı:**
+>
+> 1. **Mod K v2 31 batch apply (11a → 27a)**: 51/71 sub-batch
+>    (%71.8). Toplam **~650 net yeni prod correction** (oturum 27),
+>    Mod K v2 kümülatif ~480 → **~1130** prod correction. PASS oran
+>    ortalama %35-40 (sıkı audit, kaliteli). 22b + 24b BAD reject
+>    (Codex disiplin ihlali, yeniden istenecek).
+>
+> 2. **CUISINE_CODES `pt` (Portekiz) ekleme** (commit `43844f0`):
+>    36 → 37 cuisine. 7 map + 8 SLUG_PATTERNS + 6 TEXT_KEYWORDS +
+>    3 yeni test (46/46 PASS) + 2 mini-rev otomatik fix (lisbon-
+>    nohutlu-morina + lizbon-portakalli-badem-keki es→pt). /mutfak/
+>    portekiz programatik landing prod canlı.
+>
+> 3. **45 mini-rev paketi (paketi 1+2+3+4+5+6+7)**: 2 paralel web
+>    research agent + ortalama 18+ kaynak/paket teyit (Wikipedia +
+>    UNESCO + IBA-world + Kültür Portalı resmi 4+ kayıt + 3 valilik/
+>    ktb + Belediye coğrafi işaret + 15+ tarif portalı). **9 silme
+>    (kullanıcı onayı, Codex halüsinasyonu)**, **36 REWRITE** (slug
+>    korunur, description-light disambiguate çoğunluk + 5 type
+>    değişimi + ingredient/step revize). **2 KRİTİK cuisine fix**:
+>    pina-colada in→cu (Karayip), pupusa cn→mx (Mezoamerika). **1
+>    KRİTİK data corruption fix**: kibe-mumbar ("Kibe" ingredient
+>    yanlış, doğrusu kuzu işkembesi, Diyarbakır coğrafi işaret).
+>    Prod 3517 → **3508** (-9 silme).
+>
+> 4. **SEO landing batch 3 + 4** (commit `b39b4df` + `36fff69`):
+>    **top 12 → top 29 sayfa** intro derinleştirildi (8 + 9 sayfa,
+>    150-250 kelime + UNESCO/FAO/Escoffier 1903/Verace Pesto 1865/
+>    KOCIS 2013/ATK otorite). Pattern script `scripts/seo-revise-
+>    batch3.mjs` + `seo-revise-batch4.mjs`. Kalan 12+ sayfa batch
+>    5-6'a.
+>
+> **Final state**: Mod K v2 51/71 (%71.8) + mini-rev kuyruğu **39**
+> + Prod **3508 tarif** + Codex queue temiz (27b + 28a teslim ama
+> apply pending, sonraki oturum). Pre-push 6 katman temiz tüm 26
+> commit. Plus 27 chapter (CCD session marker). Site **LAUNCH-READY**.
+>
+> **Sıradaki oturum 28 öncelik**: (a) Mod K Batch 27b + 28a verify+
+> apply (~30-40 dk), (b) Mini-rev paketi 8 (kalan 39 mini-rev'den
+> 5-7 tarif), (c) K8 Cross-browser + PWA test (sen telefondan), (d)
+> SEO batch 5 (top 29 → 36), (e) Codex'ten 22b + 24b yeniden iste.
+>
+> Commit özet (oturum 27, ters kronoloji, son 26): `fb806ff` docs
+> mini-rev 7 + `ea25210` paketi 7 (5 REW + 2 DEL + 2 cuisine fix) +
+> `bd7bcf8` docs paketi 6 + `0cbb715` 27a + paketi 6 + `a551c23`
+> docs paketi 5 + `c1bf27f` 25b/26a/26b + paketi 5 + `7d2d34a` docs
+> paketi 4 + `b2f4509` paketi 4 + `926b66a` docs paketi 3 + `6a8d445`
+> 25a + paketi 3 + `7f19ef1` docs paketi 2 + `2f9b770` 23b/24a +
+> paketi 2 + `d359abd` docs SEO 4 + `36fff69` SEO 4 + `b342b15`
+> docs 22a/23a/SEO 3 + `b39b4df` SEO 3 + `6e67b9f` 22a/23a + `75bb895`
+> docs paketi 1 + `7db92af` paketi 1 + `d7824b0` docs pt + `43844f0`
+> cuisines pt + `0d5628a` docs §20.10 + `22eb807` 19a-21b + `af536e6`
+> docs §20.9 + `96f47bf` Codex 19-20 teslim + `49f4545` 16 batch
+> apply (11a-18b).
+
+> **Oturum 27 başı (27 Nis 2026), 21 commit:
 > Mod K v2 31 batch apply (11a-21b + 22a + 23a + 23b + 24a + 25a + 25b
 > + 26a + 26b + 27a, 22b + 24b BAD reject) + CUISINE_CODES `pt` ekleme
 > + **45 mini-rev** (paketi 1+2+3+4+5+6+7) + SEO batch 3 + 4 + 2 KRİTİK

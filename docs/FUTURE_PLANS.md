@@ -51,24 +51,43 @@ iskandinav (18), ingiliz (40+), polonya, avustralya (cuisine'lar).
 diet/sutsuz, diet/alkolsuz (diet'lar). Multi-session, oturum 28-30+
 tamamlanır.
 
-### Mod K v2 (Tarif Kontrol, oturum 27 itibariyle 42/71 sub-batch done = %59.2)
+### Mod K v2 (Tarif Kontrol, oturum 27 SONU itibariyle 51/71 sub-batch done = %71.8)
 
-**Oturum 27 progress** (toplam 22 batch apply, 1100 entry):
+**Oturum 27 progress (toplam 31 batch apply, ~1550 entry)**:
 
 Pak 1 (11a-18b, 16 batch, commit `49f4545`): 283 net yeni prod
-correction + 6 onayli MAJOR (testi-nevsehir, hanoi-bun-cha, hamsi-
-kayganasi, vietnam-karamel-tavuk, smorrebrod cuisine se→dk, lablabi
-cuisine ma→tn). PASS ortalama %44.
+correction. PASS ortalama %44.
 
 Pak 2 (19a-21b, 6 batch, commit `22eb807`): 113 net yeni prod
 correction + 0 onayli MAJOR (hepsi mini-rev'e). PASS ortalama %34.
 
-Toplam Mod K v2 prod ~480 → ~876 correction. Nutrition anomaly
-1181 → 1222 (+41, Kural 10 etkisi).
+Pak 3 (22a + 23a, 2 batch, commit `6e67b9f`): 71 net yeni prod
+correction (22a 36 + 23a 35). 22b BAD reject (4 BLOCKED format
+ihlali Kural 9 + Kural 1).
 
-**Codex queue temiz** (oturum 27 sonu, sonraki Codex tetik gerekecek):
-- 22a-36b kalan 29 sub-batch (~%40 hedef)
-- Codex `Mod K. Batch 22a.` tetiği gerekli
+Pak 4 (23b + 24a, 2 batch, commit `2f9b770`): 60 net yeni prod
+correction (23b 31 + 24a 29).
+
+Pak 5 (25a, 1 batch, commit `6a8d445`): 38 net yeni prod correction.
+24b BAD reject (12 BLOCKED Kural 9 + Kural 1).
+
+Pak 6 (25b + 26a + 26b, 3 batch, commit `c1bf27f`): 88 net yeni
+prod correction. 26a 18 MAJOR yöre yoğun batch.
+
+Pak 7 (27a, 1 batch, commit `0cbb715`): 35 net yeni prod correction.
+
+Toplam Mod K v2 prod correction (oturum 27): ~480 → **~1130** (+650
+yeni). Mod K v2 progress 51/71 sub-batch (%71.8). Nutrition anomaly
+1181 → ~1250 (Kural 10 etkisi, sonraki oturum compute-recipe-
+nutrition.ts ile düzeltilecek).
+
+**Codex queue (oturum 27 sonu)**:
+- Disk'te hazır: `docs/mod-k-batch-27b.json` + `docs/mod-k-batch-
+  28a.json` (sonraki oturum verify+apply pipeline)
+- 22b + 24b BAD batch'ler Codex'ten yeniden istenecek (Brief
+  sec.20.3 Kural 1 sisirme yasak + Kural 9 sure tutarliligi disiplini
+  hatırlatma)
+- 28b → 36b kalan ~17 sub-batch Codex tetiki gerek
 
 **CUISINE_CODES `pt` (Portekiz) eklendi ✅** (oturum 27, commit
 `43844f0`, 36 → 37 cuisine). 7 map + 8 SLUG_PATTERNS + 6 TEXT_KEYWORDS
@@ -76,10 +95,10 @@ Toplam Mod K v2 prod ~480 → ~876 correction. Nutrition anomaly
 'es' → 'pt' update. Mini-rev kuyruğu 46 → 44 (lisbon-nohutlu-morina
 + lizbon-portakalli-badem-keki otomatik fix).
 
-**Mini-rev kuyruğu 48** (4 önceki + 7 paketi 2 + 6 paketi 3 + 7
-paketi 4 + 7 paketi 5 = 31 kapandı, plus 23 yeni 25b/26a/26b
-eklendi. Kuyrukta 4 batch 19a-21b + 4 batch 25a + 23 batch 25b/26a/
-26b + diğer kalanlar):
+**Mini-rev kuyruğu 39** (oturum 27 sonu, paketi 1+2+3+4+5+6+7 ile
+**45 mini-rev kapandı**, plus 25b/26a/26b/27a yeni MAJOR'lar
+eklendi). Kalanın yapısı: 25a kalan 4 + 25b/26b/27a yeni 8 + 26a
+kalan 11 + diğer dağınık 16. Sonraki paketlere dağılır.
 
 25a yeni 6 (oturum 27 dördüncü paket sonrası, paketi 5'te 2 tarif kapandı, kalan 4):
 - `passionfruit-pisco-spritz-peru-usulu`: Pisco yerine brendi + KOKTEYL/ICECEK type karışıklık

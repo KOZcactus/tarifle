@@ -1,0 +1,1066 @@
+[
+  {
+    "slug": "ovmac-corbasi-konya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Konya ovmaç kaynaklarında yeşil mercimek ve çoğu reçetede yumurta hamurun ayırt edici parçası, mevcut listede yok.",
+      "Step 5 tekrar eden scaffold cümlesi taşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yeşil mercimek", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Yumurta", "amount": "1", "unit": "adet" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, yumurta ve suyu avuç içinde ovalayıp şehriye iriliğinde ovmaç taneleri hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Ovmaçları tepsiye yayıp 5 dakika dinlendirin, böylece tencereye girerken topaklanmaz.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Et suyunu ve haşlanmış yeşil mercimeği orta ateşte 10 dakika kaynatın.", "timerSeconds": 600 },
+        { "stepNumber": 4, "instruction": "Ovmaçları azar azar ekleyip karıştırarak 10 dakika pişirin.", "timerSeconds": 600 },
+        { "stepNumber": 5, "instruction": "Tereyağında nane ve pul biberi 30 saniye çevirip çorbanın üzerine gezdirin.", "timerSeconds": 30 }
+      ],
+      "allergens_add": [
+        "YUMURTA"
+      ]
+    },
+    "sources": [
+      "https://gokonya.com/tr/ovmac-corbasi",
+      "https://www.konyapedia.com/makale/2099/ovmac-corbasi"
+    ],
+    "confidence": "high",
+    "reason": "Konya kaynakları mercimekli ve yumurtalı ovmaç yapısını doğruluyor; mevcut reçete fazla sade kalmış ve son adım scaffold."
+  },
+  {
+    "slug": "oyakodon",
+    "verdict": "PASS",
+    "reason": "Tavuk, soğan, yumurta, pirinç ve dashi-soya-mirin hattı klasik oyakodon yapısıyla uyumlu; süre ve allergen beyanı da tutarlı.",
+    "sources": [
+      "https://www.linsfood.com/oyakodon/",
+      "https://www.bonappetit.com/recipe/oyakodon"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "pacanga-boregi",
+    "verdict": "PASS",
+    "reason": "Yufka, pastırma, kaşar, biber ve domatesli kızartma akışı paçanga böreği kaynaklarıyla uyumlu; süre ve allergenler makul.",
+    "sources": [
+      "https://www.refikaninmutfagi.com/pacanga-boregi-tarifi-571",
+      "https://www.nepisirsem.com/tarifler/pacanga-boregi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "pad-kra-pao-tofu-tay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 istiridye sosu kullanıyor ama ingredient listesinde yok.",
+      "Vegan tag korunacaksa istiridye sosu yerine vegan uyumlu soya bazlı sos kullanılmalı."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Esmer şeker", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Nötr yağ", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Tofuyu kağıt havluyla kurulayın ve iri küpler halinde kesin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tofuyu kızgın yağlı tavada 6 dakika kızartın, dışı renk alsın.", "timerSeconds": 360 },
+        { "stepNumber": 3, "instruction": "Sarımsak ve acı biberi 45 saniye çevirin, yanarsa fesleğenin aroması bastırılır.", "timerSeconds": 45 },
+        { "stepNumber": 4, "instruction": "Tofu, soya sosu ve esmer şekeri tavaya ekleyip 3 dakika yüksek ateşte çevirin.", "timerSeconds": 180 },
+        { "stepNumber": 5, "instruction": "Tay fesleğenini son anda katın ve yapraklar sönünce ocaktan alın.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.savorysweetspoon.com/pad-krapow-tofu/",
+      "https://www.theguardian.com/food/2021/oct/13/how-to-make-the-perfect-pad-kra-pao-or-thai-stir-fry-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Kimlik doğru; tek sorun vegan tarifte ingredient dışı istiridye sosu geçmesi ve buna bağlı step-ingredient uyumsuzluğu."
+  },
+  {
+    "slug": "pad-krapow",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 sarımsak, step 4 balık sosu ve şeker kullanıyor ama bu malzemeler listede yok.",
+      "Balık sosu eklenirse DENIZ_URUNLERI allergen beyanı gerekir."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "3", "unit": "diş" },
+        { "name": "Balık sosu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Esmer şeker", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": [
+        "DENIZ_URUNLERI"
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Sarımsak ve acı biberi havanda ezin, fesleğen yapraklarını ayıklayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Kıymayı kızgın wokta 5 dakika kavurun, suyunu salıp çekmesini bekleyin.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Sarımsaklı biber ezmesini ekleyip 1 dakika çevirin.", "timerSeconds": 60 },
+        { "stepNumber": 4, "instruction": "Balık sosu, soya sosu ve şekeri ekleyip 2 dakika pişirin.", "timerSeconds": 120 },
+        { "stepNumber": 5, "instruction": "Tay fesleğenini son anda katın ve sahanda yumurtayla pirinç üzerine alın.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/pad-kra-pao",
+      "https://www.theguardian.com/food/2021/oct/13/how-to-make-the-perfect-pad-kra-pao-or-thai-stir-fry-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Pad krapow yapısı doğru ama kaynaklardaki sarımsak, balık sosu ve şeker step'te varken ingredient ve allergen beyanında eksik."
+  },
+  {
+    "slug": "pad-see-ew",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 açık soya sosu kullanıyor ama ingredient listesinde yok.",
+      "Pad see ew kaynaklarında sarımsak yaygın temel aromatik; mevcut step akışı bunu atlıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Açık soya sosu", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Geniş pirinç eriştesini ayırın, yapışan parçaları nazikçe açın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Sarımsağı ve tavuğu wokta 4 dakika yüksek ateşte mühürleyin.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Brokoliyi ekleyip 2 dakika yüksek ateşte çevirin.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Yumurtayı kenara kırın ve 45 saniye karıştırarak pişirin.", "timerSeconds": 45 },
+        { "stepNumber": 5, "instruction": "Erişte, koyu soya, açık soya ve istiridye sosunu ekleyip 3 dakika wokta çevirin.", "timerSeconds": 180 },
+        { "stepNumber": 6, "instruction": "Erişteyi spatulayla kaldırarak karıştırın, geniş şeritler parçalanmasın.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/pad-see-ew-recipe",
+      "https://www.wokandskillet.com/pad-see-ew/"
+    ],
+    "confidence": "high",
+    "reason": "Genel pad see ew kimliği doğru; açık soya ve sarımsak eksikleri step-ingredient tutarlılığı için düzeltilmeli."
+  },
+  {
+    "slug": "pad-thai",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 demirhindi kullanıyor ama ingredient listesinde yok.",
+      "Step 6 fasulye filizi ve lime kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Demirhindi ezmesi", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Fasulye filizi", "amount": "1", "unit": "su bardağı" },
+        { "name": "Misket limonu", "amount": "1", "unit": "adet" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Pirinç eriştesini 25 dakika ılık suda yumuşatın ve süzün.", "timerSeconds": 1500 },
+        { "stepNumber": 2, "instruction": "Demirhindi, balık sosu, soya sosu ve şekeri küçük kasede çözerek sos hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Karidesi wokta 3 dakika mühürleyin.", "timerSeconds": 180 },
+        { "stepNumber": 4, "instruction": "Yumurtayı kenara kırıp 45 saniye pişirin, sonra karidesle karıştırın.", "timerSeconds": 45 },
+        { "stepNumber": 5, "instruction": "Erişte ve sosu ekleyip 4 dakika yüksek ateşte çevirin, erişte sosu çeksin.", "timerSeconds": 240 },
+        { "stepNumber": 6, "instruction": "Fasulye filizi, yer fıstığı, taze soğan ve misket limonunu servis anında ekleyin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.templeofthai.com/recipes/pad_thai.php",
+      "https://www.epicurious.com/recipes/food/views/ba-syn-pad-thai-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Pad Thai kimliği doğru ama demirhindi ve taze bitiriş malzemeleri kaynaklarda temel, mevcut listede ise step'e rağmen eksik."
+  },
+  {
+    "slug": "pakora",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Serving suggestion yoğurt sosu öneriyor ama tarif vegan tag taşıyor.",
+      "Kızartma yağı ve tuz step'te veya teknikte gerekli olsa da ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Kızartma yağı", "amount": "2", "unit": "su bardağı" }
+      ],
+      "servingSuggestion": "Nane chutney veya demirhindi sosuyla sıcak servis edin."
+    },
+    "sources": [
+      "https://www.indianhealthyrecipes.com/pakora-recipe-vegetable-pakora-pakoda/",
+      "https://www.bbcgoodfood.com/recipes/crispy-vegetable-pakoras"
+    ],
+    "confidence": "medium",
+    "reason": "Pakora yapısı doğru; vegan beyanı yoğurtlu servisle çelişiyor ve kızartma için temel yağ/tuz malzemeleri eksik."
+  },
+  {
+    "slug": "palak-paneer",
+    "verdict": "PASS",
+    "reason": "Ispanak püresi, paneer, soğan, sarımsak, zencefil, baharat ve krema hattı klasik palak paneer kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.indianhealthyrecipes.com/palak-paneer-recipe-easy-paneer-recipes-step-by-step-pics/",
+      "https://honestcooking.com/creamy-palak-paneer/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "palamutlu-pazi-diblesi-samsun-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Palamutlu pazı diblesi için güvenilir iki kaynakla Samsun kimliği doğrulanamadı.",
+      "Mevcut tarifte pirinçli pazı yemeğine palamut eklenmiş gibi duruyor; yöresel iddia manuel review gerektiriyor."
+    ],
+    "corrections": {
+      "description": "Pazı, pirinç ve palamutla hazırlanan hafif sulu bir Karadeniz tencere yemeği uyarlamasıdır."
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/samsun/neyenir",
+      "https://karadeniz.gov.tr/karadeniz-mutfagi/"
+    ],
+    "confidence": "low",
+    "reason": "Teknik olarak yenebilir bir yemek olsa da Samsun usulü palamutlu pazı diblesi iddiası sağlam kaynakla teyit edilemedi."
+  },
+  {
+    "slug": "paloma",
+    "verdict": "PASS",
+    "reason": "Tekila, greyfurt sodası, lime, tuz ve buz bileşimi klasik Paloma highball kaynaklarıyla uyumlu; süre ve servis doğru.",
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/paloma-cocktail",
+      "https://www.diffordsguide.com/cocktails/recipe/1456/paloma"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "paluze-hatay-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5'te 30 dakika soğutma var ama totalMinutes 20 dakika.",
+      "Step 6 ceviz kullanıyor ama ingredient ve allergen beyanında yok."
+    ],
+    "corrections": {
+      "totalMinutes": 50,
+      "ingredients_add": [
+        { "name": "Ceviz içi", "amount": "0.25", "unit": "su bardağı" }
+      ],
+      "allergens_add": [
+        "KUSUYEMIS"
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/paluze/",
+      "https://www.nefisyemektarifleri.com/paluze/"
+    ],
+    "confidence": "high",
+    "reason": "Paluze yapısı doğru; soğutma süresi toplam süreden düşmüş ve ceviz kullanımı allergen/ingredient tarafında eksik."
+  },
+  {
+    "slug": "paluze-kilis-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5'te 35 dakika soğutma var ama totalMinutes 25 dakika.",
+      "Step 6 ceviz veya fıstık öneriyor ama ingredient ve allergen beyanı yok."
+    ],
+    "corrections": {
+      "totalMinutes": 60,
+      "ingredients_add": [
+        { "name": "Ceviz içi", "amount": "0.25", "unit": "su bardağı" }
+      ],
+      "allergens_add": [
+        "KUSUYEMIS"
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/kilis/neyenir/pekmezli-hapisa-1",
+      "https://yemek.com/tarif/paluze/"
+    ],
+    "confidence": "high",
+    "reason": "Kilis pekmezli hapısa/paluze oranları uyumlu; eksik olan bekleme süresi ve kuruyemiş beyanı."
+  },
+  {
+    "slug": "pamonha",
+    "verdict": "PASS",
+    "reason": "Taze mısır püresinin mısır yaprağı içinde 35-45 dakika pişirilmesi Brezilya pamonha kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://travelfoodatlas.com/brazilian-pamonha-recipe",
+      "https://blog.amigofoods.com/index.php/brazilian-foods/pamonha/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "pan-con-bistec",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Mevcut steps tamamen scaffold ve sandviç tekniğini anlatmıyor.",
+      "Küba pan con bistec kaynaklarında soğan ve patates çubuğu yaygın, mevcut listede yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Patates çubuğu", "amount": "1", "unit": "su bardağı" },
+        { "name": "Mayonez", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Dana biftekleri ince dövün, sarımsak, limon suyu, tuz ve karabiberle ovun.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Soğanı tavada 4 dakika yumuşatıp kenara alın.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Biftekleri aynı tavada her yüzü 2 dakika olacak şekilde hızlıca pişirin.", "timerSeconds": 240 },
+        { "stepNumber": 4, "instruction": "Ekmekleri ikiye açıp mayonez sürün, et, soğan ve patates çubuklarını yerleştirin.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Sandviçleri tavada bastırarak 3 dakika ısıtın ve sıcak servis edin.", "timerSeconds": 180 }
+      ],
+      "allergens_add": [
+        "YUMURTA"
+      ]
+    },
+    "sources": [
+      "https://www.196flavors.com/pan-con-bistec/",
+      "https://www.cook2eatwell.com/pan-con-bistec/"
+    ],
+    "confidence": "high",
+    "reason": "Kimlik doğru ama mevcut adımlar üretim tarifi değil; klasik sandviç için soğan ve patates çubuğu da eksik."
+  },
+  {
+    "slug": "pan-con-tomate",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 tuz kullanıyor ama ingredient listesinde yok.",
+      "Kaynaklarda pan con tomate bitişinde tuz temel bileşen."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Deniz tuzu", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.olivemagazine.com/recipes/quick-and-easy/pan-y-tomate-catalan-tomato-bread/",
+      "https://spanishsabores.com/super-simple-pan-con-tomate-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Tarifin ana yapısı doğru; yalnızca step'te geçen ve klasik bitiş için gereken tuz ingredient listesinde eksik."
+  },
+  {
+    "slug": "pan-con-tomate-yumurtali-tost-ispanyol-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps scaffold cümleleri içeriyor ve yumurtanın nasıl pişirileceğini söylemiyor.",
+      "3 dakika dinlendirme tost için gereksiz ve kullanıcıyı yanıltıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Ekmek dilimlerini tavada 3 dakika kızartın, domates suyunu taşıyacak kadar gevrek olsun.", "timerSeconds": 180 },
+        { "stepNumber": 2, "instruction": "Domates rendesini zeytinyağı ve bir tutam tuzla karıştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Yumurtaları tavada 3 dakika pişirin, sarılarını hafif akışkan bırakın.", "timerSeconds": 180 },
+        { "stepNumber": 4, "instruction": "Domatesli karışımı sıcak ekmeklere yayın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Yumurtaları üstüne yerleştirip bekletmeden servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://spanishsabores.com/super-simple-pan-con-tomate-recipe/",
+      "https://www.olivemagazine.com/recipes/quick-and-easy/pan-y-tomate-catalan-tomato-bread/"
+    ],
+    "confidence": "medium",
+    "reason": "Pan con tomate tabanı doğru; yumurtalı uyarlamada mevcut adımlar tarif yerine scaffold metne dönmüş."
+  },
+  {
+    "slug": "panang-curry",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 balık sosu ve şeker kullanıyor ama ingredient listesinde yok.",
+      "Step 6 kaffir lime yaprağı kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Balık sosu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Palm şekeri", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Kaffir lime yaprağı", "amount": "3", "unit": "adet" }
+      ],
+      "allergens_add": [
+        "DENIZ_URUNLERI"
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kokos kremasının koyu kısmını tavaya alın ve 4 dakika pişirin.", "timerSeconds": 240 },
+        { "stepNumber": 2, "instruction": "Panang köri macununu ekleyip 3 dakika kavurun, yağ ayrışmaya başlasın.", "timerSeconds": 180 },
+        { "stepNumber": 3, "instruction": "İnce dana dilimlerini sosa katın ve 6 dakika pişirin.", "timerSeconds": 360 },
+        { "stepNumber": 4, "instruction": "Kalan kokos kreması, balık sosu, palm şekeri ve yer fıstığı ezmesini ekleyin.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Curry sosunu 8 dakika kısık ateşte pişirin, kaynatmayın ki kreması ayrışmasın.", "timerSeconds": 480 },
+        { "stepNumber": 6, "instruction": "Kaffir lime yaprağı ve Tay fesleğenini son anda ekleyip pirinçle servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.templeofthai.com/recipes/panang-curry.php",
+      "https://www.thaicookbook.tv/thai-recipes/main-dishes/panang-beef-curry/"
+    ],
+    "confidence": "high",
+    "reason": "Panang kimliği doğru; kaynaklardaki balık sosu, şeker ve kaffir lime step'te var ama ingredient/allergen tarafında eksik."
+  },
+  {
+    "slug": "pancar-arpa-corbasi-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve servingSuggestion dereotu kullanıyor ama ingredient listesinde yok.",
+      "Step 2 sebzeleri çevirmek için yağ gerekir, listede yağ yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Dereotu", "amount": "0.25", "unit": "demet" },
+        { "name": "Zeytinyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.polonist.com/polish-red-borscht-barszcz/",
+      "https://www.bayareapolishgroup.com/en/food/barszcz/"
+    ],
+    "confidence": "medium",
+    "reason": "Pancar-arpa fikri Polonya çorba hattına yakın; fakat step'te kullanılan dereotu ve yağ ingredient listesinde eksik."
+  },
+  {
+    "slug": "pancar-cipsi",
+    "verdict": "PASS",
+    "reason": "İnce pancar dilimleri, az yağ, tuz, fırınlama ve soğutma akışı pancar cipsi tekniğiyle uyumlu; yoğurt sosu allergen beyanı var.",
+    "sources": [
+      "https://www.foodnetwork.com/recipes/food-network-kitchen/baked-beet-chips-3362313",
+      "https://www.eatingwell.com/recipe/250405/oven-baked-beet-chips/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "pancar-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 scaffold tekrar içeriyor.",
+      "Yoğurt sıcak çorbaya doğrudan eklenirse kesilebilir; mevcut step güvenli temperleme anlatmıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Soğan, pancar ve patatesi küçük küp doğrayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Sebzeleri zeytinyağında orta ateşte 5 dakika kavurun.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Sebze suyunu ekleyip 30 dakika pancar yumuşayana kadar pişirin.", "timerSeconds": 1800 },
+        { "stepNumber": 4, "instruction": "Çorbayı blenderdan geçirip pürüzsüz kıvam için 1 dakika çekin.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Yoğurdu sıcak çorba suyuyla ılıtıp kaseye ekleyin, dereotuyla sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.polonist.com/polish-red-borscht-barszcz/",
+      "https://www.bayareapolishgroup.com/en/food/barszcz/"
+    ],
+    "confidence": "medium",
+    "reason": "Pancar çorbası temel olarak tutarlı; son adım scaffold ve yoğurdun kesilmesini önleyecek teknik net değil."
+  },
+  {
+    "slug": "pancarli-arpa-salatasi-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 zeytinyağı, limon suyu ve tuz kullanıyor ama ingredient listesinde yok.",
+      "Serving suggestion nar ekşisi ve pul biber ekliyor, bu da ingredient dışı servis yaratıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "servingSuggestion": "Derin kasede maydanoz ve portakallı sosuyla serin servis edin."
+    },
+    "sources": [
+      "https://corewellhealth.org/care-and-specialties/wellness-and-lifestyle-resources/recipes/beet-mandarin-orange-kumquat-and-toasted-barley-salad",
+      "https://www.taste.com.au/recipes/barley-beetroot-salad/"
+    ],
+    "confidence": "medium",
+    "reason": "Pancar-arpa salatası fikri makul; ancak sos ve servis malzemeleri ingredient listesine taşınmalı."
+  },
+  {
+    "slug": "pancarli-barszcz-corbasi-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve 2 soğan kullanıyor ama ingredient listesinde yok.",
+      "Serving suggestion ekşi krema öneriyor; vegan tag ile çelişiyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" }
+      ],
+      "servingSuggestion": "Çorbayı sıcak sunun, yanında dereotu ve ekmek verin."
+    },
+    "sources": [
+      "https://www.bayareapolishgroup.com/en/food/barszcz/",
+      "https://www.polonist.com/polish-red-borscht-barszcz/"
+    ],
+    "confidence": "high",
+    "reason": "Barszcz yapısı doğru; soğan step'te geçiyor ama listede yok, vegan etiket de ekşi krema servisiyle çelişiyor."
+  },
+  {
+    "slug": "pancarli-dereotlu-salata-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Raw pancarın 12 dakikada haşlanması güvenilir değil; Rus beet salad kaynaklarında pancar genelde 45 dakika civarı haşlanır veya fırınlanır.",
+      "Step 3 zeytinyağı ve limon suyu diyor, ingredient listesinde ayçiçek yağı var ve limon yok."
+    ],
+    "corrections": {
+      "cookMinutes": 45,
+      "totalMinutes": 57,
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Pancarları kabuklu halde 40 dakika yumuşayana kadar haşlayın, sonra soğutup soyun.", "timerSeconds": 2400 },
+        { "stepNumber": 2, "instruction": "Pancarı 1,5 cm küp doğrayın, turşuyu ve dereotunu hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Ayçiçek yağı, limon suyu ve tuzu çırpın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Pancar, turşu ve dereotunu sosla 1 dakika ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Salatayı 10 dakika serin yerde dinlendirip dereotuyla servis edin.", "timerSeconds": 600 }
+      ]
+    },
+    "sources": [
+      "https://www.russianfilipinokitchen.com/2014/08/29/russian-beet-salad-vinaigrette-vinegret/",
+      "https://www.simplyscratch.com/beet-salad-vinegret/"
+    ],
+    "confidence": "high",
+    "reason": "Rus pancar salatası fikri doğru; ana hata pancar pişirme süresinin gerçekçi olmaması ve sos malzemesi uyumsuzluğu."
+  },
+  {
+    "slug": "pancarli-elma-corba-polonya-usulu",
+    "verdict": "PASS",
+    "reason": "Pancar, elma, dereotu ve hafif tatlı-ekşi çorba hattı Polonya pancar çorbası varyasyonlarıyla uyumlu; süre makul.",
+    "sources": [
+      "https://www.polonist.com/polish-red-borscht-barszcz/",
+      "https://www.bayareapolishgroup.com/en/food/barszcz/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "pancarli-kuzu-tepsi-avustralya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps toplamı 20 + 45 + 10 dakika pasif/aktif süre içeriyor; totalMinutes 44 dakika ile çelişiyor.",
+      "Step 1 sarımsak, tuz ve karabiber; step 2 soğan ve patates kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "prepMinutes": 16,
+      "cookMinutes": 65,
+      "totalMinutes": 91,
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "3", "unit": "diş" },
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Patates", "amount": "2", "unit": "adet" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.agfg.com.au/recipe/lamb-shoulder-beetroot-mint-sorrel",
+      "https://www.theaustralian.com.au/weekend-australian-magazine/a-onetray-recipe-to-take-the-hassle-out-of-cooking-lamb-chops/news-story/2585ed03daaedeb6b37fa5a5addae16e"
+    ],
+    "confidence": "medium",
+    "reason": "Kuzu-pancar eşleşmesi makul; fakat süreler ciddi çelişiyor ve step'te kullanılan temel sebze/baharatlar listede yok."
+  },
+  {
+    "slug": "pancarli-misir-ekmegi-rize-usulu",
+    "verdict": "PASS",
+    "reason": "Rize/Doğu Karadeniz bağlamında pancar adının karalahana için kullanılması, mısır unu ve yoğurtlu fırın akışıyla uyumlu görünüyor.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/rize/neyenir",
+      "https://www.youtube.com/watch?v=qDOLR_8wqAM"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "pancarli-muhallebi-kup-istanbul-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5'te 40 dakika soğutma var ama totalMinutes 22 dakika.",
+      "Soğuk servis önerisiyle total süre arasında açık tutarsızlık var."
+    ],
+    "corrections": {
+      "totalMinutes": 62
+    },
+    "sources": [
+      "https://yemek.com/tarif/pancarli-muhallebi/",
+      "https://www.nefisyemektarifleri.com/pancarli-muhallebi/"
+    ],
+    "confidence": "medium",
+    "reason": "Muhallebi yapısı tutarlı; soğutma süresi toplam süreye dahil edilmediği için RecipeTimeline yanıltıcı olur."
+  },
+  {
+    "slug": "pancarli-patates-corbasi-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 soğan kullanıyor ama ingredient listesinde yok.",
+      "Serving suggestion ekşi krema öneriyor; vegan tag ile çelişiyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" }
+      ],
+      "servingSuggestion": "Sıcak kaseye alıp dereotunu tam sofraya giderken üstüne serpin."
+    },
+    "sources": [
+      "https://www.polonist.com/polish-red-borscht-barszcz/",
+      "https://www.bayareapolishgroup.com/en/food/barszcz/"
+    ],
+    "confidence": "high",
+    "reason": "Pancar-patates çorbası fikri tutarlı; soğan step'te eksik beyan edilmiş ve vegan servis dili düzeltilmeli."
+  },
+  {
+    "slug": "panettone",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps'teki 30 + 60 + 30 dakika mayalanma ve 42 dakika pişirme toplamı 162 dakika; totalMinutes 135 dakika düşük.",
+      "RecipeTimeline için bekleme süresi prepMinutes içine gömülmemeli."
+    ],
+    "corrections": {
+      "prepMinutes": 30,
+      "cookMinutes": 45,
+      "totalMinutes": 165
+    },
+    "sources": [
+      "https://www.bakingheritage.com/recipes/panettone-recipe",
+      "https://www.bbcgoodfood.com/recipes/panettone"
+    ],
+    "confidence": "high",
+    "reason": "Basitleştirilmiş panettone kabul edilebilir; ancak mayalanma süreleri totalMinutes'a fark olarak yansıtılmalı."
+  },
+  {
+    "slug": "pankek",
+    "verdict": "PASS",
+    "reason": "Un, süt, yumurta, kabartma tozu ve kısa tava pişirme akışı klasik pankek kaynaklarıyla uyumlu; süre ve allergenler doğru.",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/easy-pancakes",
+      "https://www.allrecipes.com/recipe/21014/good-old-fashioned-pancakes/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "panna-cotta",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5'te 4 saat soğutma var ama totalMinutes 25 dakika.",
+      "Panna cotta kaynakları minimum 4 saat chill süresini zorunlu görüyor."
+    ],
+    "corrections": {
+      "totalMinutes": 265
+    },
+    "sources": [
+      "https://www.mashed.com/376446/classic-panna-cotta-recipe/",
+      "https://www.cookingclassy.com/panna-cotta/"
+    ],
+    "confidence": "high",
+    "reason": "Malzemeler ve teknik doğru; tek kritik hata soğutma süresinin toplam süreye yansımaması."
+  },
+  {
+    "slug": "panzanella-italyan-yaz-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps scaffold tekrarları içeriyor ve ekmeği 'fazla suyunu süzdürün' diyerek yanlış nesneyle anlatıyor.",
+      "Panzanella kaynaklarında sirke ve tuz temel sos parçası, mevcut listede yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kırmızı şarap sirkesi", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bayat ekmeği iri parçalayın, domates suyunu emebilecek kadar kuru bırakın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Domates, salatalık ve fesleğeni lokmalık hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Zeytinyağı, sirke ve tuzu çırpın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Ekmek ve sebzeleri sosla 1 dakika ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Salatayı 10 dakika oda sıcaklığında bekletip fesleğenle servis edin.", "timerSeconds": 600 }
+      ],
+      "totalMinutes": 22
+    },
+    "sources": [
+      "https://www.theguardian.com/food/2021/sep/22/how-to-make-panzanella-recipe-felicity-cloake",
+      "https://www.lacucinaitaliana.com/italian-food/how-to-cook/home-cooking-panzanella-tuscanys-classic-bread-salad"
+    ],
+    "confidence": "high",
+    "reason": "Panzanella kimliği doğru; mevcut step kalitesi ve sirke/tuz eksikleri tarifin uygulanabilirliğini zayıflatıyor."
+  },
+  {
+    "slug": "pao-de-queijo",
+    "verdict": "PASS",
+    "reason": "Tapyoka/manyok nişastası, süt, yumurta, peynir ve 190 derece fırın akışı pão de queijo kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.kingarthurbaking.com/recipes/brazilian-cheese-buns-pao-de-queijo-recipe",
+      "https://www.bonappetit.com/recipe/pao-de-queijo-brazilian-cheese-bread"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "pao-de-queijo-kase-brezilya-kafe-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Description atıştırmalık diyor ama type YEMEK; type düzeltmesi apply şemasında yok, manuel review gerekir.",
+      "Tarif yapısı pão de queijo için doğru olsa da sınıflandırma kullanıcı filtresini yanıltır."
+    ],
+    "corrections": {
+      "description": "Pão de queijo, tapyoka nişastası ve peynirle küçük kabarık toplar pişirerek Brezilya kafe vitrininin ikonik atıştırmalığını yapar."
+    },
+    "sources": [
+      "https://www.kingarthurbaking.com/recipes/brazilian-cheese-buns-pao-de-queijo-recipe",
+      "https://www.easyanddelish.com/brazilian-cheese-bread/"
+    ],
+    "confidence": "medium",
+    "reason": "Reçete doğru; ancak ana yemek olarak sınıflanması içerik kimliğiyle uyumsuz ve manuel type düzeltmesi gerektirir."
+  },
+  {
+    "slug": "pao-de-queijo-waffle-brezilya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve 5 scaffold cümlesi taşıyor.",
+      "Waffle makinesinde pişirme akışı kısa ve uygulanabilir ama daha somut yazılmalı."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Tapyoka unu, peynir, süt, yumurta ve zeytinyağını pürüzsüz hamur olana kadar karıştırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Waffle makinesini 3 dakika ısıtın ve yüzeyini hafifçe yağlayın.", "timerSeconds": 180 },
+        { "stepNumber": 3, "instruction": "Hamuru kalıba ince yayıp kapağı kapatın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Waffleı 8 dakika dışı kızarıp içi esnek kalana kadar pişirin.", "timerSeconds": 480 },
+        { "stepNumber": 5, "instruction": "Buharı yumuşatmadan sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.kingarthurbaking.com/recipes/brazilian-cheese-buns-pao-de-queijo-recipe",
+      "https://www.bonappetit.com/recipe/pao-de-queijo-brazilian-cheese-bread"
+    ],
+    "confidence": "medium",
+    "reason": "Pão de queijo waffle modern uyarlama olarak makul; mevcut sorun scaffold step dili."
+  },
+  {
+    "slug": "pao-na-chapa",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1, 6 ve 7 scaffold cümlesi taşıyor; 3 dakika dinlendirme pão na chapa için gereksiz.",
+      "Klasik kaynaklar pão francês ve tereyağına odaklanıyor; peynir opsiyonel kalmalı."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Fransız ekmeklerini boyuna ikiye kesin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tavayı orta ateşte 2 dakika ısıtın.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Ekmeklerin iç yüzüne tereyağı sürün.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Ekmekleri tereyağlı yüzü alta gelecek şekilde 4 dakika bastırarak kızartın.", "timerSeconds": 240 },
+        { "stepNumber": 5, "instruction": "Peyniri kullanacaksanız son 1 dakikada ekleyip eritin ve hemen servis edin.", "timerSeconds": 60 }
+      ]
+    },
+    "sources": [
+      "https://receitas.globo.com/receitas-da-tv/e-de-casa/pao-na-chapa.ghtml",
+      "https://www.uol.com.br/nossa/reportagens-especiais/pao-na-chapa-os-truques-do-classico-que-nao-sai-de-moda-e-inspira-chefs/"
+    ],
+    "confidence": "high",
+    "reason": "Pão na chapa kimliği doğru; mevcut adımlar gereksiz scaffold ve dinlendirme içeriyor."
+  },
+  {
+    "slug": "papa-a-la-huancaina-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Sarı biber ifadesi aji amarillo kimliğini belirsizleştiriyor.",
+      "Step 1'de patates 18 dakika haşlanıyor ama cookMinutes 12 dakika."
+    ],
+    "corrections": {
+      "cookMinutes": 18,
+      "totalMinutes": 33,
+      "ingredients_remove": [
+        "Sarı biber"
+      ],
+      "ingredients_add": [
+        { "name": "Aji amarillo ezmesi", "amount": "1.5", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.pbs.org/food/recipes/papa-a-la-huancaina",
+      "https://www.196flavors.com/papa-a-la-huancaina/"
+    ],
+    "confidence": "high",
+    "reason": "Huancaína sosu için aji amarillo daha doğru; ayrıca patates haşlama süresi total/cook alanlarıyla uyumlu değil."
+  },
+  {
+    "slug": "papa-rellena-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Mevcut steps tamamen scaffold ve papa rellena dolgusunu anlatmıyor.",
+      "Peru kaynaklarında soğan, sarımsak, kimyon, zeytin ve haşlanmış yumurta dolguda yaygın; mevcut listede yok."
+    ],
+    "corrections": {
+      "prepMinutes": 35,
+      "cookMinutes": 25,
+      "totalMinutes": 60,
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Kimyon", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Siyah zeytin", "amount": "6", "unit": "adet" },
+        { "name": "Haşlanmış yumurta", "amount": "1", "unit": "adet" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Haşlanmış patatesleri ezip tuzla yoğurun, şekil alacak kıvama getirin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Soğan ve sarımsağı 4 dakika kavurun.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Kıyma ve kimyonu ekleyip 7 dakika pişirin.", "timerSeconds": 420 },
+        { "stepNumber": 4, "instruction": "Zeytin ve haşlanmış yumurtayı dolguya katıp 5 dakika soğutun.", "timerSeconds": 300 },
+        { "stepNumber": 5, "instruction": "Patates püresini avuçta açın, dolguyu koyup oval kapatın.", "timerSeconds": null },
+        { "stepNumber": 6, "instruction": "Köfteleri yumurta ve galeta ununa bulayıp kızgın yağda 6 dakika kızartın.", "timerSeconds": 360 }
+      ]
+    },
+    "sources": [
+      "https://www.limaeasy.com/peruvian-food-guide/typical-main-courses/papa-rellena",
+      "https://www.196flavors.com/peru-papa-rellena/"
+    ],
+    "confidence": "high",
+    "reason": "Papa rellena kimliği doğru; mevcut uygulama adımları ve dolgu malzemeleri klasik tarifi karşılamıyor."
+  },
+  {
+    "slug": "papara-edirne-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve 5 scaffold cümlesi taşıyor.",
+      "Step 3'te 2 dakika yazıyor ama timerSeconds yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bayat ekmekleri iri parçalara ayırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tereyağını tavada 2 dakika eritin ve hafif köpürtün.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Et suyunu ekleyip ekmekleri 2 dakika yumuşatın.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Yumurtaları ekleyip 4 dakika karıştırarak pişirin.", "timerSeconds": 240 },
+        { "stepNumber": 5, "instruction": "Karabiber serpip sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.kirazinmutfagi.com.tr/tarif/papara-edirne",
+      "https://www.nefisyemekler.net/papara"
+    ],
+    "confidence": "medium",
+    "reason": "Papara yapısı makul; sorun scaffold dili ve timer eksikliğinde."
+  },
+  {
+    "slug": "papara-kirklareli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve 5 scaffold cümlesi taşıyor.",
+      "Yoğurtlu papara için ekmek, yoğurt ve tereyağlı pul biber akışı daha net yazılmalı."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bayat ekmekleri iri küpler halinde doğrayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Ekmekleri tavada 3 dakika hafifçe ısıtın, çok sertleştirmeyin.", "timerSeconds": 180 },
+        { "stepNumber": 3, "instruction": "Yoğurdu ekmeklerin üzerine yayın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Tereyağını pul biberle 1 dakika kızdırıp yoğurdun üzerine gezdirin.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Ekmekler tamamen hamurlaşmadan ılık servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/papara-ekmek-mantisi/",
+      "https://www.nefisyemekler.net/papara"
+    ],
+    "confidence": "medium",
+    "reason": "Yoğurtlu papara varyasyonu uygulanabilir; mevcut step dili scaffold ve son adım yanlış dilimleme anlatıyor."
+  },
+  {
+    "slug": "papatya-limon-serbeti-yalova-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Yalova'ya özgü papatya limon şerbeti iddiası güvenilir iki kaynakla doğrulanamadı.",
+      "Tarif papatya-limon infüzyonu olarak uygulanabilir ama yöresel atıf manuel review gerektiriyor."
+    ],
+    "corrections": {
+      "description": "Papatya limon şerbeti, kurutulmuş papatyayı limon ve şekerle demleyerek hazırlanan çiçeksi, serin bir içecektir."
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/yalova/neyenir",
+      "https://www.nefisyemektarifleri.com/papatya-cayi/"
+    ],
+    "confidence": "low",
+    "reason": "İçecek tekniği doğru görünse de Yalova yöresel iddiası kaynaklanmadığı için kullanıcıya kesin bilgi gibi sunulmamalı."
+  },
+  {
+    "slug": "papatyali-soguk-limonata-yalova-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Yalova usulü papatyalı soğuk limonata iddiası güvenilir iki kaynakla doğrulanamadı.",
+      "Steps genel içecek scaffold dili taşıyor ve papatyanın demleme yöntemi net değil."
+    ],
+    "corrections": {
+      "description": "Papatyalı soğuk limonata, limon suyunu kısa demlenmiş papatya ve şekerle buluşturan çiçeksi bir yaz içeceğidir.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Papatyayı 1 su bardağı sıcak suda 7 dakika demleyip süzün.", "timerSeconds": 420 },
+        { "stepNumber": 2, "instruction": "Papatya demine şeker ve limon suyunu ekleyip şeker eriyene kadar karıştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Kalan soğuk suyu ekleyin ve buzla servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/yalova/neyenir",
+      "https://www.nefisyemektarifleri.com/limonata-tarifi/"
+    ],
+    "confidence": "low",
+    "reason": "Tarif içecek olarak makul; yöresel iddia ve mevcut scaffold adımlar güvenilirlik sorunu yaratıyor."
+  },
+  {
+    "slug": "paper-plane",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 gazlı eklerden söz ediyor ama Paper Plane gazlı içecek içermez.",
+      "Ingredient 'Viski' belirsiz; kaynaklarda bourbon viski ve Amaro Nonino eşit oranlı kullanılır."
+    ],
+    "corrections": {
+      "ingredients_remove": [
+        "Viski",
+        "Amaro"
+      ],
+      "ingredients_add": [
+        { "name": "Bourbon viski", "amount": "30", "unit": "ml" },
+        { "name": "Amaro Nonino", "amount": "30", "unit": "ml" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bourbon, Aperol, Amaro Nonino ve limon suyunu shaker'a alın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Shaker'a buz ekleyip 12 saniye kuvvetli çalkalayın.", "timerSeconds": 12 },
+        { "stepNumber": 3, "instruction": "Karışımı soğuk coupe kadehe süzün.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Bekletmeden servis edin; klasik tarifte garnitür gerekmez.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.esquire.com/food-drink/drinks/a22564455/best-paper-plane-recipe/",
+      "https://www.liquor.com/recipes/the-paper-plane/"
+    ],
+    "confidence": "high",
+    "reason": "Paper Plane oranı doğruya yakın; ancak gazlı içecek ifadesi yanlış ve bourbon/Amaro Nonino netleşmeli."
+  },
+  {
+    "slug": "pappa-al-pomodoro",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Pappa al pomodoro kaynaklarında su veya sebze suyu ekmekli kıvam için kullanılır, mevcut listede yok.",
+      "Step 5 scaffold tekrar içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıcak su", "amount": "1", "unit": "su bardağı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Sarımsağı zeytinyağında orta ateşte 1 dakika kokusu çıkana kadar çevirin.", "timerSeconds": 60 },
+        { "stepNumber": 2, "instruction": "Domates püresini ekleyip 20 dakika kaynatın.", "timerSeconds": 1200 },
+        { "stepNumber": 3, "instruction": "Bayat ekmeği iri parçalayın ve domatesli tencereye katın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Sıcak suyu ekleyip ekmekleri 10 dakika pişirin, kaşıkla ezerek çorbayı koyulaştırın.", "timerSeconds": 600 },
+        { "stepNumber": 5, "instruction": "Fesleğeni son anda ekleyin, zeytinyağı gezdirip ılık veya sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.visittuscany.com/en/recipes/pappa-al-pomodoro-recipe-00001/",
+      "https://www.lacucinaitaliana.com/italian-food/italian-dishes/pappa-al-pomodoro-bread-and-tomato-soup"
+    ],
+    "confidence": "high",
+    "reason": "Tuscan kimliği doğru; sıvı ve tuz eksik, son step ise scaffold metin taşıyor."
+  },
+  {
+    "slug": "paprika-soslu-mantar-tava-macaristan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 tereyağı kullanıyor ama ingredient listesinde yok.",
+      "Macar mushroom paprikash kaynaklarında sarımsak veya yağlı soğan-paprika tabanı yaygın."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Mantarları iri dilimleyin, soğanı ince doğrayın ve paprikayı ölçün.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Mantarları kuruya yakın tavada 6 dakika pişirin, suyunu çeksin.", "timerSeconds": 360 },
+        { "stepNumber": 3, "instruction": "Tereyağı, soğan ve sarımsağı ekleyip 5 dakika kavurun.", "timerSeconds": 300 },
+        { "stepNumber": 4, "instruction": "Paprikayı serpip 30 saniye çevirin, yanarsa acılaşır.", "timerSeconds": 30 },
+        { "stepNumber": 5, "instruction": "Kremayı ekleyip 4 dakika kısık ateşte pişirin.", "timerSeconds": 240 }
+      ]
+    },
+    "sources": [
+      "https://hungarianpaprika.net/mushroom-paprikash/",
+      "https://www.daringgourmet.com/hungarian-mushroom-soup/"
+    ],
+    "confidence": "high",
+    "reason": "Macar paprikalı mantar hattı doğru; step'te geçen tereyağı ve temel aromatik eksikleri giderilmeli."
+  },
+  {
+    "slug": "paprikali-beyaz-peynirli-yumurta-tava-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1, 2 ve 6 scaffold cümlesi taşıyor.",
+      "Macar usulü iddia paprika-yumurta tekniğiyle makul ama adımlar sadeleştirilmeli."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Domatesi küçük doğrayın, beyaz peyniri ufalayın ve yumurtaları hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tavayı orta ateşte 2 dakika ısıtıp tereyağını eritin.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Paprika ve domatesi 2 dakika çevirin.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Yumurtaları tavaya kırıp beyaz peynirin yarısını serpin.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Kapağı kapalı şekilde 4 dakika pişirip kalan peynirle sıcak servis edin.", "timerSeconds": 240 }
+      ]
+    },
+    "sources": [
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/liptauer-spread-korozott/",
+      "https://hungarianpaprika.net/korozott-hungarys-cottage-cheese-spread/"
+    ],
+    "confidence": "medium",
+    "reason": "Paprika ve taze peynir Macar kahvaltı hattına yakın; ana problem scaffold adımlar."
+  },
+  {
+    "slug": "paprikali-fasulye-corbasi-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Serving suggestion ekşi krema öneriyor ama tarif vegan tag taşıyor.",
+      "Step 5 scaffold tekrar içeriyor."
+    ],
+    "corrections": {
+      "servingSuggestion": "Çorbayı sıcak verin, üstüne maydanoz ve biraz paprika serpin.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Soğanı doğrayın, haşlanmış fasulyeyi süzün.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Soğanı orta ateşte 4 dakika çevirin, çiğ kokusu kalmasın.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Paprikayı ekleyip 30 saniye karıştırın, yanarsa acılaşır.", "timerSeconds": 30 },
+        { "stepNumber": 4, "instruction": "Fasulye ve suyu katıp 12 dakika pişirin.", "timerSeconds": 720 },
+        { "stepNumber": 5, "instruction": "Çorbayı sıcak servis edin, gerekirse tuzunu son anda ayarlayın.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.food.com/recipe/bab-leves-hungarian-bean-soup-119049",
+      "https://hungarianbookstore.com/bean-soup/"
+    ],
+    "confidence": "medium",
+    "reason": "Macar paprikalı fasulye fikri tutarlı; vegan etiket ekşi krema servisiyle çelişiyor ve son step scaffold."
+  },
+  {
+    "slug": "paprikali-lorlu-ekmek-dilimi-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tarif Macar körözött peynirli ekmek hattına yakın ama soğan/kimyon gibi ayırt edici öğeler eksik.",
+      "Step 1 ve 5 scaffold cümlesi taşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Kırmızı soğan", "amount": "0.25", "unit": "adet" },
+        { "name": "Kimyon", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Lor, paprika, zeytinyağı, ince kıyılmış kırmızı soğan ve kimyonu karıştırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Ekmeği tavada 2 dakika ısıtın.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Paprikalı lor karışımını sıcak ekmeklerin üzerine yayın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Kapya biber dilimleriyle tamamlayıp hemen servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/liptauer-spread-korozott/",
+      "https://www.bestofhungary.co.uk/blogs/recipes/korozott-liptauer"
+    ],
+    "confidence": "high",
+    "reason": "Kimlik körözött benzeri; paprika-lor doğru ama karakteristik soğan/kimyon ve temiz step akışı eksik."
+  },
+  {
+    "slug": "paprikali-lorlu-yumurta-tava-macaristan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve 5 scaffold cümlesi taşıyor.",
+      "Tava yumurtası için mevcut akış uygulanabilir ama son adım peynirli dokunun sertleşmesi gibi genel ifade kullanıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Domatesi küçük doğrayın, loru ufalayın ve yumurtaları hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tereyağında paprikayı 1 dakika kısık ateşte açın.", "timerSeconds": 60 },
+        { "stepNumber": 3, "instruction": "Domatesi ekleyip 2 dakika pişirin.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Yumurta ve loru katıp 4 dakika pişirin.", "timerSeconds": 240 },
+        { "stepNumber": 5, "instruction": "Yumurta tamamen kurumadan sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/liptauer-spread-korozott/",
+      "https://hungarianpaprika.net/korozott-hungarys-cottage-cheese-spread/"
+    ],
+    "confidence": "medium",
+    "reason": "Paprika-lor-yumurta uyarlaması makul; mevcut sorun scaffold dil ve fazla genel son adım."
+  }
+]

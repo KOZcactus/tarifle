@@ -1,0 +1,961 @@
+[
+  {
+    "slug": "oaxaca-quesadilla",
+    "verdict": "PASS",
+    "reason": "Mantar, soğan, biber, kişniş ve Oaxaca peyniriyle kurulan quesadilla yapısı Oaxacan mantarlı quesadilla kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/oaxaca-style-mushroom-and-cheese-quesadillas",
+      "https://www.punchfork.com/recipe/Oaxaca-Style-Mushroom-and-Cheese-Quesadillas-Epicurious"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "ojja-merguez",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Tunus ojja kaynaklarında sarımsak, soğan veya biberli aromatik baz yaygın, mevcut listede yok.",
+      "Step 1, 2, 5 ve 6 scaffold cümleleri taşıyor."
+    ],
+    "corrections": {
+      "cuisine": "tn",
+      "ingredients_add": [
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Sarımsak", "amount": "2", "unit": "diş" },
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Kimyon", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Merguezleri 2 cm kalınlığında dilimleyin, domatesleri rendeleyin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Zeytinyağında soğan ve sarımsağı orta ateşte 4 dakika yumuşatın.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Merguez dilimlerini ekleyip 6 dakika renk alana kadar pişirin.", "timerSeconds": 360 },
+        { "stepNumber": 4, "instruction": "Domates, harissa ve kimyonu ekleyip sos koyulaşana kadar 10 dakika kaynatın.", "timerSeconds": 600 },
+        { "stepNumber": 5, "instruction": "Yumurtaları sosun üstüne kırın, kapağı kapatıp akları donana kadar 4 dakika pişirin.", "timerSeconds": 240 },
+        { "stepNumber": 6, "instruction": "Sosu kurutmadan ocaktan alın ve sıcak ekmekle hemen servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.196flavors.com/tunisia-ojja-shakshuka-merguez/",
+      "https://www.foodmap.in/tunisia/ojja"
+    ],
+    "confidence": "high",
+    "reason": "Kimlik doğru ama aromatik baz ve step kalitesi eksik; Tunus cuisine kodu da mevcut kaynaklarla tn olmalı."
+  },
+  {
+    "slug": "okonomiyaki",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 su kullanıyor, ancak ingredient listesinde su veya dashi yok.",
+      "Description ve klasik servis sosu vurgusu okonomiyaki sosu ve mayonez gerektiriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Dashi suyu", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Okonomiyaki sosu", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Mayonez", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, yumurta, dashi suyu ve soya sosunu pürüzsüz bir hamur olana kadar çırpın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "İnce kıyılmış lahanayı hamura ekleyip lahanalar kaplanana kadar karıştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Karışımı yağlanmış tavaya kalın disk halinde yayın ve alt yüzü kızarana kadar pişirin.", "timerSeconds": 420 },
+        { "stepNumber": 4, "instruction": "Pankeki çevirip ikinci yüzü de renk alana kadar pişirin, sos, mayonez ve palamut rendesiyle servis edin.", "timerSeconds": 360 }
+      ],
+      "allergens_add": [
+        "YUMURTA"
+      ]
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/okonomiyaki-as-you-like-it-pancakes-with-bonito-flakes",
+      "https://www.bonappetit.com/recipe/okonomiyaki"
+    ],
+    "confidence": "high",
+    "reason": "Okonomiyaki kimliği doğru; sıvı ve klasik üst soslar eksik olduğu için ingredient-step eşleşmesi düzeltilmeli."
+  },
+  {
+    "slug": "okroshka-kefirli-rus-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 taze soğan kullanıyor ama ingredient listesinde yok.",
+      "Step 5'te 30 dakika soğutma var; totalMinutes 26 dakika kaldığı için süre tutarsız."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Taze soğan", "amount": "2", "unit": "dal" }
+      ],
+      "totalMinutes": 56
+    },
+    "sources": [
+      "https://www.food.com/recipe/okroshka-242037",
+      "https://www.rbth.com/russian-kitchen/334051-okroshka-russian-cold-soup"
+    ],
+    "confidence": "high",
+    "reason": "Kefir, patates, salatalık, yumurta ve dereotu çizgisi doğru; sadece eksik taze soğan ve pasif soğutma süresi var."
+  },
+  {
+    "slug": "oladi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Kefirli oladi için kabartıcı ve tavada pişirme yağı eksik.",
+      "Step 1, 2, 4, 6 ve 7 scaffold veya tarifle ilgisiz ifade taşıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Karbonat", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "tutam" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kefir, yumurta, şeker ve tuzu geniş kasede çırpın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Un ve karbonatı ekleyip koyu, kaşıktan yavaş akan bir hamur hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Tavayı yağlayıp orta kısık ateşte yüzeyi hazır olana kadar ısıtın.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Hamurdan kaşıkla küçük parçalar dökün ve ilk yüzleri kabarcıklanana kadar pişirin.", "timerSeconds": 180 },
+        { "stepNumber": 5, "instruction": "Oladi parçalarını çevirip ikinci yüzleri kızarana kadar pişirin.", "timerSeconds": 180 },
+        { "stepNumber": 6, "instruction": "Ekşi krema, bal veya reçelle sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.bylena.com/recipe/923/Russian-Kefir-Pancakes-Oladi/",
+      "https://www.chefsresource.com/recipes/oladi-russian-kefir-pancakes-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Oladi kimliği doğru; kabartıcı ve yağ eksik, son adımlar peynirli tarif scaffold'u gibi kalmış."
+  },
+  {
+    "slug": "old-fashioned",
+    "verdict": "PASS",
+    "reason": "Burbon, şeker, Angostura bitter, buz ve portakal kabuğu IBA Old Fashioned standardıyla uyumlu; süre ve alerjen riski yok.",
+    "sources": [
+      "https://iba-world.com/iba-cocktail/old-fashioned/",
+      "https://officialcocktails.com/cocktails/old_fashioned/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "oliang-kahvesi",
+    "verdict": "PASS",
+    "reason": "Koyu kahve, şeker ve buzla hazırlanan sade oliang yorumu kaynaklardaki Tay buzlu kahve akışıyla uyumlu; sütlü servis opsiyonel.",
+    "sources": [
+      "https://www.templeofthai.com/recipes/iced_coffee_oliang.php",
+      "https://www.thespruceeats.com/the-best-iced-coffee-recipes-4163564"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "oltu-cag-kebabi-yatay-sis",
+    "verdict": "PASS",
+    "reason": "Kuzu etini soğan suyu ve yoğurtla uzun marine edip yatay şişte yüksek ısıda pişirme, cağ kebabı kaynaklarıyla tutarlı.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/erzurum/neyenir/cag-kebabi",
+      "https://www.nefisyemektarifleri.com/cag-kebabi-tarifi/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "omurice",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ketchup fried rice için soğan ve tavada pişirme yağı eksik.",
+      "Step 1 ve 5 scaffold; step 3 omlet için 10 dakika fazla ve belirsiz."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "0.5", "unit": "adet" },
+        { "name": "Sıvı yağ", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Soğanı küçük doğrayın, tavuğu lokmalık parçalara kesin.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Yağda soğan ve tavuğu kavurun, tavuk pembe kalmasın.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Pirinç, ketçap ve tuzu ekleyip taneler sosla kaplanana kadar karıştırın.", "timerSeconds": 180 },
+        { "stepNumber": 4, "instruction": "Yumurtaları çırpıp yapışmaz tavada yumuşak omlet pişirin.", "timerSeconds": 120 },
+        { "stepNumber": 5, "instruction": "Pilavı omletin ortasına koyup kenarlarını kapatın ve ketçapla sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.japanesecooking101.com/omurice-recipe/",
+      "https://www.usarice.com/thinkrice/recipes/omurice"
+    ],
+    "confidence": "high",
+    "reason": "Omurice kimliği doğru; aromatik, yağ ve uygulanabilir omlet adımları eksik olduğu için küçük replacement yeterli."
+  },
+  {
+    "slug": "onigiri",
+    "verdict": "PASS",
+    "reason": "Japon pirinci, tuzlu el şekillendirme, ton balıklı mayonez dolgusu ve nori sargısı onigiri kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.justonecookbook.com/onigiri-rice-balls/",
+      "https://www.masterclass.com/articles/onigiri-rice-balls-recipe"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "oralet",
+    "verdict": "PASS",
+    "reason": "Oraletin sıcak suyla çözünen portakal aromalı toz içecek yapısı ürün hazırlama kaynaklarıyla uyumlu; kısa hazırlık süresi gerçekçi.",
+    "sources": [
+      "https://www.mahbubamarket.com/mahbuba-portakal-aromali-oralet-cayi-icecek-tozu-250gr-hot-drink-sicak-tuketiniz",
+      "https://www.idefix.com/oralet-portakal-aromali-icecek-tozu-250gr-p-20641089"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "orange-blossom-milk-pudding-fas-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5'te 1 saat soğutma var, totalMinutes 20 dakika kaldığı için süre tutarsız.",
+      "Step 5 fıstıkla servis diyor ama ingredient ve alerjen listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Antep fıstığı", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": [
+        "KUSUYEMIS"
+      ],
+      "totalMinutes": 80
+    },
+    "sources": [
+      "https://www.thespruceeats.com/mahalabia-middle-eastern-milk-pudding-2355418",
+      "https://www.196flavors.com/muhallebi/"
+    ],
+    "confidence": "high",
+    "reason": "Süt, nişasta, şeker ve portakal çiçeği suyu çizgisi doğru; bekleme süresi ve fıstık eşleşmesi eksik."
+  },
+  {
+    "slug": "orange-mint-cooler-orta-dogu-usulu",
+    "verdict": "PASS",
+    "reason": "Portakal suyu, limon, nane, bal ve buzla kurulan alkolsüz cooler dengeli; kısa ve soğuk servis akışı tutarlı.",
+    "sources": [
+      "https://www.allrecipes.com/recipe/230473/orange-mint-cooler/",
+      "https://www.tasteofhome.com/recipes/orange-mint-mocktail/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "ordu-findikli-fasulye-kavurmasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 tereyağı kullanıyor ama ingredient listesinde zeytinyağı var; SUT alerjeni de yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Taze fasulyeyi ayıklayın, verev doğrayın ve tuzlu suda 12 dakika haşlayın.", "timerSeconds": 720 },
+        { "stepNumber": 2, "instruction": "Fasulyeyi süzün, soğuk sudan geçirip rengini sabitleyin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Soğanı zeytinyağında 6 dakika yumuşayana kadar kavurun.", "timerSeconds": 360 },
+        { "stepNumber": 4, "instruction": "Fasulyeyi tavaya ekleyip 8 dakika kavurun, suyu kalmasın.", "timerSeconds": 480 },
+        { "stepNumber": 5, "instruction": "Kırık fındığı ekleyip 2 dakika çevirin, fındık yanmasın diye geç katın.", "timerSeconds": 120 },
+        { "stepNumber": 6, "instruction": "Ocaktan alıp 5 dakika dinlendirin ve ılık servis edin.", "timerSeconds": 300 }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/ordu/neyenir/galdirik-kavurmasi",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/findikli-taze-fasulye-kavurmasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Fındıklı fasulye kavurması makul bir yöresel yorum; tek net sorun step'teki yağın ingredient listesiyle çelişmesi."
+  },
+  {
+    "slug": "ordu-findikli-pazi-sarmasi",
+    "verdict": "PASS",
+    "reason": "Pazı yaprağına pirinçli, soğanlı ve zeytinyağlı iç sarma tekniği doğru; fındık Ordu yorumuyla uyumlu ve alerjen işaretli.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/pazi-sarmasi-tarifi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/sebze-yemekleri/sarma-tarifleri/pazi-sarmasi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "ordu-galdirik-kavurmasi-yumurtali",
+    "verdict": "PASS",
+    "reason": "Galdiriğin haşlanıp soğanla kavrulması ve yumurtayla tamamlanması Ordu galdirik kavurması kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/ordu/neyenir/galdirik-kavurmasi",
+      "https://www.e-sehir.com/yemek_tarifleri/galdirik-kavurmasi-ordu-tarifi.html"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "ordu-karalahana-sarmasi-misirli",
+    "verdict": "PASS",
+    "reason": "Karalahana yaprağı, mısır yarması, pirinç, soğan ve salçalı zeytinyağlı harç Karadeniz sarma tekniğiyle uyumlu.",
+    "sources": [
+      "https://www.youtube.com/watch?v=BbeFcnxgeDI",
+      "https://www.nefisyemektarifleri.com/kara-lahana-sarmasi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "ordu-pancar-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Ordu pancar çorbasında mısır unu, yağlı soğanlı terbiye ve tuz/salça katmanı eksik.",
+      "Step 5 tekrar eden scaffold suffix içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Mısır unu", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Biber salçası", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "allergens_add": [
+        "SUT"
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Mısır yarmasını yıkayın, karalahanayı ince doğrayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Mısır yarmasını orta ateşte 30 dakika haşlayın.", "timerSeconds": 1800 },
+        { "stepNumber": 3, "instruction": "Karalahana ve haşlanmış fasulyeyi ekleyip 25 dakika pişirin.", "timerSeconds": 1500 },
+        { "stepNumber": 4, "instruction": "Mısır ununu az suyla açıp çorbaya yavaşça ekleyin, topaklanmasın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Tereyağında soğan ve biber salçasını 5 dakika kavurup çorbaya katın.", "timerSeconds": 300 },
+        { "stepNumber": 6, "instruction": "Tuzunu ayarlayın, kıvam koyulaşınca mısır ekmeğiyle sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://kureansiklopedi.com/en/detay/pancar-karalahana-corbasi-46188",
+      "https://www.bulancakajans.com/pancar-orbas-karalahana-orbas/"
+    ],
+    "confidence": "high",
+    "reason": "Çorbanın ana kimliği doğru; kaynaklardaki mısır unu ve yağlı soğanlı katman olmadan tarif eksik kalıyor."
+  },
+  {
+    "slug": "ordu-pancar-diblesi",
+    "verdict": "PASS",
+    "reason": "Karalahana, pirinç, soğan ve zeytinyağıyla az su veya haşlama sonrası kavurma yapısı Ordu pancar diblesi kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/ordu/neyenir/pancar-karalahana-diblesi",
+      "https://www.e-sehir.com/yemek_tarifleri/pancar-karalahana-diblesi-ordu-tarifi.html"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "ordu-pazili-misir-unu-kayganasi",
+    "verdict": "PASS",
+    "reason": "Pazı, mısır unu, yumurta ve tavada iki yüzlü pişirme kaygana yapısıyla uyumlu; gluten over-tag yok, yumurta doğru işaretli.",
+    "sources": [
+      "https://www.sahrapsoysal.com/galdirik-kavurmasi-hodan-kavurmasi-tarifi-t-6004",
+      "https://www.nefisyemektarifleri.com/pazili-kaygana/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "orman-kebabi",
+    "verdict": "PASS",
+    "reason": "Et, patates, havuç, bezelye, soğan ve uzun pişirme orman kebabı kaynaklarıyla uyumlu; toplam süre ve makro aralığı makul.",
+    "sources": [
+      "https://www.kubracatering.com.tr/tr/post/89/orman-kebabi",
+      "https://www.nepisirsem.com/tarifler/orman-kebabi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "orman-meyveli-kefir-smoothie",
+    "verdict": "PASS",
+    "reason": "Kefir, orman meyvesi, muz ve yulaflı smoothie akışı kaynaklarla uyumlu; SUT ve GLUTEN alerjenleri doğru.",
+    "sources": [
+      "https://www.fielddoctor.co.uk/health-hub/recipe/kefir-berry-smoothie",
+      "https://www.livingchirpy.com/berry-kefir-smoothie/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "orman-meyveli-protein-shake",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Cuisine kodu cn; tarif Çin mutfağıyla ilişkili değil.",
+      "Yoğurt, süt ve protein tozu içeren batı tipi fitness shake için us daha tutarlı."
+    ],
+    "corrections": {
+      "cuisine": "us"
+    },
+    "sources": [
+      "https://experiencelife.lifetime.life/recipe/berry-protein-shake/",
+      "https://www.blenderbottle.com/blogs/recipes/freedom-protein-shake-berry-blast"
+    ],
+    "confidence": "high",
+    "reason": "İçerik ve hazırlık doğru; tek ciddi hata Çin cuisine kodu. Protein shake kimliği için us kodu daha az yanıltıcı."
+  },
+  {
+    "slug": "oruk-kebabi-kilis-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 biber salçası kullanıyor ama ingredient listesinde yok.",
+      "Kilis oruk kaynaklarında sarımsak ve nane de yaygın."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Biber salçası", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Sarımsak", "amount": "3", "unit": "diş" },
+        { "name": "Kuru nane", "amount": "1", "unit": "tatlı kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "İnce bulguru az sıcak suyla 10 dakika ıslatın.", "timerSeconds": 600 },
+        { "stepNumber": 2, "instruction": "Kıyma, soğan, sarımsak, biber salçası, nane, pul biber ve tuzu bulgurla 8 dakika yoğurun.", "timerSeconds": 480 },
+        { "stepNumber": 3, "instruction": "Harcı şişlere sıkıca bastırın, boşluk kalırsa ızgarada düşebilir.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Şişleri kızgın ızgarada ilk yüzünden 5 dakika pişirin.", "timerSeconds": 300 },
+        { "stepNumber": 5, "instruction": "Çevirip ikinci yüzü 5 dakika pişirin ve sumaklı soğanla servis edin.", "timerSeconds": 300 }
+      ]
+    },
+    "sources": [
+      "https://kilis.ktb.gov.tr/TR-61784/oruk.html",
+      "https://www.kulturportali.gov.tr/turkiye/kilis/neyenir/kasap-oruk"
+    ],
+    "confidence": "high",
+    "reason": "Kilis oruk kimliği doğru; step'teki salça ve kaynaklarda görülen sarımsak/nane eksikliği uygulanabilir düzeltme."
+  },
+  {
+    "slug": "osaka-okonomiyaki-lahana",
+    "verdict": "PASS",
+    "reason": "Lahana, un, yumurta, su, deniz ürünü, okonomi sosu ve mayonezle tavada pişirme Osaka okonomiyaki kaynaklarıyla uyumlu.",
+    "sources": [
+      "https://www.foodrepublic.com/2013/12/05/osaka-style-okonomiyaki-recipe",
+      "https://www.osaka.com/eat/okonomiyaki/ultimate-guide-to-okonomiyaki/page/3/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "osaka-okonomiyaki-tavasi",
+    "verdict": "PASS",
+    "reason": "Lahana, un, yumurta, dashi, sos ve mayonezli tavada kalın pankek yapısı Osaka stili okonomiyakiyle uyumlu.",
+    "sources": [
+      "https://www.foodrepublic.com/2013/12/05/osaka-style-okonomiyaki-recipe",
+      "https://www.bonappetit.com/recipe/okonomiyaki"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "osaka-takoyaki-ahtapotlu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Takoyaki kalıbını yağlama step'i var ama yağ ingredient listesinde yok.",
+      "Kaynaklarda bonito/aonori yaygın, mevcut servis susamla uzaklaşıyor ama kimliği bozacak düzeyde değil."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Palamut rendesi", "amount": "2", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.osaka.com/eat/takoyaki/how-to-make-takoyaki-ultimate-guide/",
+      "https://umamipot.com/takoyaki/"
+    ],
+    "confidence": "high",
+    "reason": "Takoyaki temeli doğru; kalıp yağı eksik ve klasik palamut rendesi servis kimliğini güçlendirir."
+  },
+  {
+    "slug": "oslo-frenk-soganli-somon-patates",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 tereyağı kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.fromnorway.com/recipes/salmon/norwegian-salmon-with-lemon-dill-and-butter/",
+      "https://www.seafoodfromnorway.us/recipes/salmon/norwegian-salmon-with-lemon-dill-and-butter/"
+    ],
+    "confidence": "high",
+    "reason": "Somon, patates, yoğurt ve frenk soğanı çizgisi tutarlı; tek net eksik step'te geçen tereyağı."
+  },
+  {
+    "slug": "osmaniye-tirsik-corbasi-mayali",
+    "verdict": "PASS",
+    "reason": "Tırşık otu, dövme, nohut, ayran, un, 7-8 saat mayalama ve 4 saat uzun pişirme Osmaniye Valiliği tarifiyle uyumlu.",
+    "sources": [
+      "https://www.osmaniye.gov.tr/tirsik-corbasi",
+      "https://www.kulturportali.gov.tr/turkiye/osmaniye/neyenir/tirsik-corbasi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "osso-buco",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 şarap veya et suyu, step 7 gremolata kullanıyor ama ingredient listesinde yok.",
+      "Gremolata klasik osso buco servisinin önemli parçası."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Et suyu", "amount": "2", "unit": "su bardağı" },
+        { "name": "Beyaz şarap", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Maydanoz", "amount": "0.25", "unit": "demet" },
+        { "name": "Limon kabuğu rendesi", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" }
+      ]
+    },
+    "sources": [
+      "https://www.pbs.org/food/recipes/osso-buco-gremolata",
+      "https://www.mangiabedda.com/veal-osso-buco-with-gremolata/"
+    ],
+    "confidence": "high",
+    "reason": "Osso buco ana yapısı doğru; braising sıvısı ve gremolata ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "ostkaka-smaland-usulu",
+    "verdict": "PASS",
+    "reason": "Süt, lor benzeri peynir, yumurta, krema ve bademle fırınlama Smaland ostkaka kaynaklarıyla uyumlu; alerjenler doğru.",
+    "sources": [
+      "https://scandinaviancookbook.com/smaland-ostkaka-swedish-cheesecake/",
+      "https://www.visitsmaland.se/en/discover/flavours-of-smaland/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "ostsmorgas-isvec-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2-6 yoğun scaffold taşıyor.",
+      "Basit peynirli açık sandviç için tavada tost anlatımı İsveç ostsmörgås kimliğini gereksiz daraltıyor."
+    ],
+    "corrections": {
+      "description": "Ostsmörgås, tereyağlı ekmek üstüne peynir yerleştirerek hazırlanan sade bir İsveç kahvaltı sandviçidir.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Ekmek dilimlerini hafif kızartın veya taze kullanacaksanız oda sıcaklığında bırakın.", "timerSeconds": 120 },
+        { "stepNumber": 2, "instruction": "Tereyağını ekmeğin üstüne ince bir kat halinde sürün.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Peyniri ekmeklerin üstüne bindirmeden yerleştirin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "İsterseniz salatalık veya frenk soğanı ekleyip hemen servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://swedishfood.com/swedish-food-recipes-starters/218-open-sandwiches",
+      "https://www.scandinaviastandard.com/how-to-make-a-classic-swedish-breakfast/"
+    ],
+    "confidence": "medium",
+    "reason": "Temel peynirli ekmek doğru; fakat scaffold ve sıcak tost vurgusu İsveç açık sandviç formunu bulanıklaştırıyor."
+  },
+  {
+    "slug": "otlu-bademli-roka-salata-mugla-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Description Muğla usulü diyor ama kaynaklanabilir özel Muğla kimliği zayıf.",
+      "Step 3 bal, step 5 lor kullanıyor; ingredient listesinde ikisi de yok."
+    ],
+    "corrections": {
+      "description": "Otlu bademli roka salata, roka ve taze otları bademle buluşturarak gevrek, hafif ve ferah bir salata kurar.",
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Çiçek balı", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Lor peyniri", "amount": "60", "unit": "gr" },
+        { "name": "Tuz", "amount": "1", "unit": "tutam" }
+      ],
+      "allergens_add": [
+        "SUT"
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/rokali-bademli-salata/15188",
+      "https://www.sofra.com.tr/tarif/salata/otlu-salata"
+    ],
+    "confidence": "medium",
+    "reason": "Salata yapısı iyi; Muğla iddiası temizlenmeli ve step'te geçen bal ile lor ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "otlu-cirpma-yumurtasi-izmir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "İzmir usulü iddiası kaynakla güçlenmiyor.",
+      "Step 1 ve 5 scaffold cümlesi taşıyor."
+    ],
+    "corrections": {
+      "description": "Otlu çırpma yumurtası, taze otları lor ve yumurtayla birleştirerek hafif ve hızlı hazırlanan bir kahvaltı tavası sunar.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Dereotu ve maydanozu ince kıyın, yumurtaları ayrı kasede çırpın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Lor peyniri ve otları yumurtaya ekleyip tuzunu ayarlayın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Karışımı orta ateşteki tavaya alın ve yumuşak kalacak şekilde karıştırarak pişirin.", "timerSeconds": 240 },
+        { "stepNumber": 4, "instruction": "Ekşi mayalı ekmek dilimleriyle sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.petitegourmets.com/tr/yemek-tarifleri/otlu-cirpilmis-yumurta",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/otlu-omlet-tarifi/4840"
+    ],
+    "confidence": "medium",
+    "reason": "Yumurta, lor ve otlar makul; özel İzmir iddiası ve scaffold temizlenmeli."
+  },
+  {
+    "slug": "otlu-cokelek-krep-denizli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Denizli usulü iddiası kaynakla desteklenmiyor.",
+      "Step 1 ve 5 scaffold; tavayı yağlama için yağ ingredient listesinde yok."
+    ],
+    "corrections": {
+      "description": "Otlu çökelek krep, ince krepleri çökelek ve dereotu ile buluşturarak hafif ama tok bir kahvaltı tabağı yapar.",
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "tutam" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, yumurta, süt ve tuzu pürüzsüz bir krep hamuru olana kadar çırpın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Yağlanmış tavada kreplerin iki yüzünü renk alana kadar pişirin.", "timerSeconds": 360 },
+        { "stepNumber": 3, "instruction": "Çökeleği dereotuyla karıştırıp sıcak kreplerin içine paylaştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Krepleri katlayın ve çökelek kurumadan ılık servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.droetker.com.tr/tarifler/r/tavada-kolay-borek-otlu-peynirli",
+      "https://www.nefisyemektarifleri.com/peynirli-krep-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Krep ve otlu peynir yapısı tutarlı; Denizli atfı ve kalıp adımlar temizlenmeli."
+  },
+  {
+    "slug": "otlu-kasarli-yufka-tostu-van-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Van usulü iddiası özel tarif olarak değil, Van otlu peyniri kullanımı olarak yazılmalı.",
+      "Step 1 ve 2 scaffold."
+    ],
+    "corrections": {
+      "description": "Otlu kaşarlı yufka tostu, ince yufkayı Van otlu peyniri ve kaşarla buluşturarak sıcak, uzayan ve hızlı bir kahvaltı çıkarır.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Otlu peynir ve kaşarı ufalayıp karıştırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Yufkaları ikiye katlayın ve peynirli içi ortalarına paylaştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Yufkaları zarf gibi kapatın, kenarları içe kıvırın ki peynir akmasın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Tereyağlı tavada iki yüzünü toplam 6 dakika kızartın.", "timerSeconds": 360 },
+        { "stepNumber": 5, "instruction": "Tostları 3 dakika dinlendirip çapraz keserek sıcak servis edin.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://vandangelsin.com/tarifler/dogal-lezzetlerle-van-usulu-otlu-peynirli-kahvalti-tarifi",
+      "https://yemek.com/tarif/dolu-dolu-lavas-tost/"
+    ],
+    "confidence": "medium",
+    "reason": "Van otlu peyniri kullanımı doğru; özel yöresel tarif iddiası ve scaffold cümleleri temizlenmeli."
+  },
+  {
+    "slug": "otlu-kelek-salatasi-van-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Van usulü iddiası kaynaklanabilir özel tarif olarak zayıf.",
+      "Step 3 reyhan ve taze soğan, step 4 pul biber ve sumak kullanıyor; ingredient listesinde yok."
+    ],
+    "corrections": {
+      "description": "Otlu kelek salatası, sert kavunu taze ot ve limonla buluşturarak çıtır, ferah ve yaz sıcağına uygun bir salata yapar.",
+      "ingredients_add": [
+        { "name": "Reyhan", "amount": "0.25", "unit": "demet" },
+        { "name": "Taze soğan", "amount": "2", "unit": "dal" },
+        { "name": "Pul biber", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Sumak", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.sofra.com.tr/tarif/salata/otlu-salata",
+      "https://www.nefisyemektarifleri.com/kelek-salatasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kelek ve otlu salata tekniği makul; Van iddiası ve step'te geçen eksik aromalar düzeltilmeli."
+  },
+  {
+    "slug": "otlu-kete-dilimi-kars-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Kars ketesi kaynaklarında kavrulmuş unlu iç veya klasik yağlı katman öne çıkıyor; mevcut tarif otlu hamur işi olarak kimliği değiştiriyor.",
+      "Step 1 ve 3 scaffold; suyla mayasız kısa hamur, Kars ketesi iddiası için yetersiz."
+    ],
+    "corrections": {
+      "description": "Kars usulü kete iddiası yeniden araştırılmalı; mevcut otlu hamur işi, geleneksel Kars ketesi formunu güvenle temsil etmiyor."
+    },
+    "sources": [
+      "https://www.sabirgazetesi.com/kars-ketesi-tarifi-buyuk-ilgi-goruyor",
+      "https://www.nefisyemektarifleri.com/kete-tarifi-peynirli/"
+    ],
+    "confidence": "medium",
+    "reason": "Kimlik yapısı zayıf. Basit step revizyonu yerine Kars ketesi mi otlu börek mi olduğuna manuel karar gerekli."
+  },
+  {
+    "slug": "otlu-lavas-durumu-van-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Van usulü yerine Van otlu peyniri kullanılan lavaş dürümü olarak yazmak daha doğru.",
+      "Step 1 ve 5 scaffold."
+    ],
+    "corrections": {
+      "description": "Van otlu peynirli lavaş dürümü, otlu peynir ve ince yeşillikleri sıcak lavaşla sararak taşınabilir, kokulu bir sabah lokması hazırlar.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Maydanoz ve taze soğanı ince kıyın, otlu peynirle karıştırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Lavaşları kuru tavada yumuşayana kadar ısıtın.", "timerSeconds": 60 },
+        { "stepNumber": 3, "instruction": "Peynirli içi lavaşlara paylaştırın ve sıkı dürüm yapın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Dürümleri ikiye kesip peynir kurumadan ılık servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://vandangelsin.com/tarifler/dogal-lezzetlerle-van-usulu-otlu-peynirli-kahvalti-tarifi",
+      "https://vanotlupeynir.com/urun/lavas-ekmek/"
+    ],
+    "confidence": "medium",
+    "reason": "Malzeme mantığı doğru; yöresel iddia dili ve scaffold step'leri düzeltilmeli."
+  },
+  {
+    "slug": "otlu-lorlu-kete-artvin-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Artvin otlu lorlu kete adı için güvenilir kaynak bulunamadı.",
+      "Mevcut steps tava ısıtma scaffold'u ile fırın ketesini karıştırıyor."
+    ],
+    "corrections": {
+      "description": "Artvin usulü otlu lorlu kete iddiası yeniden araştırılmalı; mevcut içerik yöresel kimliği güvenle doğrulamıyor."
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/kete-tarifi-peynirli/",
+      "https://www.dokuzuncubulut.com/index.php/boerekler-ve-tuzlu-tarifler/1049-otlu-peynirli-gul-boregi.html"
+    ],
+    "confidence": "medium",
+    "reason": "Kete ve otlu peynirli börek kaynakları ayrı ayrı var; Artvin kimliği ve tarif yapısı net değil."
+  },
+  {
+    "slug": "otlu-misir-mucveri-van-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Van usulü iddiası kaynaklanabilir özel yemek olarak zayıf.",
+      "Step 1 ingredient adını mekanik şekilde tekrar ediyor."
+    ],
+    "corrections": {
+      "description": "Otlu mısır mücveri, mısır unu ve taze otları tavada kızartarak kenarı çıtır, içi yumuşak bir atıştırmalık sunar.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Taze otları ince kıyın, fazla suyunu elinizle sıkın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Mısır unu, yumurta, su ve otları koyu kıvamlı harç olana kadar 2 dakika karıştırın.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Harcı 5 dakika dinlendirin, mısır unu nemi çeksin.", "timerSeconds": 300 },
+        { "stepNumber": 4, "instruction": "Yağı orta ateşte 2 dakika ısıtıp harçtan kaşıkla küçük porsiyonlar bırakın.", "timerSeconds": 120 },
+        { "stepNumber": 5, "instruction": "Mücverlerin iki yüzünü toplam 7 dakika kızartın.", "timerSeconds": 420 },
+        { "stepNumber": 6, "instruction": "Kağıt havluya alıp 3 dakika dinlendirin ve ılık servis edin.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/misir-mucveri/",
+      "https://www.sofra.com.tr/tarif/aperatifler/otlu-mucver"
+    ],
+    "confidence": "medium",
+    "reason": "Mısır unlu otlu mücver yapılabilir; Van iddiası ve mekanik step dili temizlenmeli."
+  },
+  {
+    "slug": "otlu-pancar-mucveri-van-gol-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Van Gölü usulü iddiası kaynaklanabilir özel tarif olarak zayıf.",
+      "Step 1 ingredient adını mekanik şekilde tekrar ediyor."
+    ],
+    "corrections": {
+      "description": "Otlu pancar mücveri, pancarı taze otlar ve yumurtayla tavada pişirerek renkli ve yumuşak bir atıştırmalık çıkarır.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Pancarı rendeleyin, fazla suyunu elinizle sıkın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Yumurta, un ve kıyılmış otları pancara ekleyip 2 dakika koyu kıvam alana kadar karıştırın.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Harcı 5 dakika dinlendirin, un nemi çeksin ve tavada dağılmasın.", "timerSeconds": 300 },
+        { "stepNumber": 4, "instruction": "Yağı orta ateşte 2 dakika ısıtıp harçtan kaşıkla küçük porsiyonlar bırakın.", "timerSeconds": 120 },
+        { "stepNumber": 5, "instruction": "Mücverlerin iki yüzünü toplam 7 dakika kızartın.", "timerSeconds": 420 },
+        { "stepNumber": 6, "instruction": "Kağıt havluya alıp 3 dakika dinlendirin ve ılık servis edin.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/pancar-mucveri/",
+      "https://www.sofra.com.tr/tarif/aperatifler/otlu-mucver"
+    ],
+    "confidence": "medium",
+    "reason": "Pancar mücver yapısı makul; Van Gölü atfı ve mekanik step dili temizlenmeli."
+  },
+  {
+    "slug": "otlu-peynirli-tandir-boregi-van-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Van usulü tandır böreği iddiası kaynakla netleşmiyor; Van otlu peyniri kullanılan börek olarak yazılmalı.",
+      "Step 1, 2 ve 5 scaffold."
+    ],
+    "corrections": {
+      "description": "Otlu peynirli börek, ince hamuru Van otlu peyniriyle doldurarak gevrek, tuzlu ve paylaşmalık bir hamur işi sunar.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, su ve zeytinyağını yoğurup pürüzsüz bir hamur hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Hamuru örtüp 10 dakika dinlendirin.", "timerSeconds": 600 },
+        { "stepNumber": 3, "instruction": "Otlu peynir ve maydanozu karıştırıp iç harcı hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Hamuru ince açın, peynirli içi yerleştirip kenarlarını kapatın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Böreği 190°C fırında 24 dakika altı ve üstü kızarana kadar pişirin.", "timerSeconds": 1440 }
+      ]
+    },
+    "sources": [
+      "https://vandangelsin.com/van-boreklik-otlu-peynir",
+      "https://www.droetker.com.tr/tarifler/r/tavada-kolay-borek-otlu-peynirli"
+    ],
+    "confidence": "medium",
+    "reason": "Van otlu peyniriyle börek mantıklı; özel tandır böreği iddiası ve scaffold step'leri temizlenmeli."
+  },
+  {
+    "slug": "otlu-peynirli-yumurta-durumu-van-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Van usulü özel tarif iddiası yerine Van otlu peynirli yumurta dürümü denmeli.",
+      "Step 1, 2, 6 ve 7 scaffold."
+    ],
+    "corrections": {
+      "description": "Otlu peynirli yumurta dürümü, yumurtayı Van otlu peyniri ve lavaşla buluşturarak sabaha uygun, tok bir dürüm yapar.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Yumurtaları çırpın, otlu peyniri ufalayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tereyağını tavada eritin ve yumurtayı orta ateşte pişirin.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Otlu peyniri sıcak yumurtanın üstüne serpin ve erimesini bekleyin.", "timerSeconds": 60 },
+        { "stepNumber": 4, "instruction": "Lavaşları ısıtın, yumurtalı harcı paylaştırıp sıkı dürüm yapın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Dürümleri çapraz kesip sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://vandangelsin.com/tarifler/dogal-lezzetlerle-van-usulu-otlu-peynirli-kahvalti-tarifi",
+      "https://www.petitegourmets.com/tr/yemek-tarifleri/otlu-cirpilmis-yumurta"
+    ],
+    "confidence": "medium",
+    "reason": "Yumurta, lavaş ve otlu peynir uyumlu; kaynaklanamayan yöresel iddia ve scaffold step'ler düzeltilmeli."
+  },
+  {
+    "slug": "otlu-pirinc-eristesi-salata-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 havuç ve Tay fesleğeni, step 3 balık sosu, şeker, sarımsak, biber, step 5 fıstık kullanıyor; ingredient listesinde yok.",
+      "Balık sosu eklendiğinde DENIZ_URUNLERI alerjeni gerekir."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Havuç", "amount": "1", "unit": "adet" },
+        { "name": "Tay fesleğeni", "amount": "0.25", "unit": "demet" },
+        { "name": "Balık sosu", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Şeker", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Acı biber", "amount": "1", "unit": "adet" },
+        { "name": "Yer fıstığı", "amount": "2", "unit": "yemek kaşığı" }
+      ],
+      "allergens_add": [
+        "DENIZ_URUNLERI",
+        "YER_FISTIGI"
+      ]
+    },
+    "sources": [
+      "https://www.food.com/recipe/bun-vietnamese-herb-noodle-salad-440521",
+      "https://www.cilantroandcitronella.com/vietnamese-rice-noodle-salad-with-vegetables-and-mixed-herbs/"
+    ],
+    "confidence": "high",
+    "reason": "Vietnam erişte salatası doğru; nuoc cham ve sebze/ot bileşenleri step'te var ama ingredient ve alerjen listesine yazılmamış."
+  },
+  {
+    "slug": "otlu-pirinc-frittata-yunan-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Yunan usulü özel kimlik zayıf; tarif genel otlu pirinç frittata gibi duruyor.",
+      "Step 1, 2 ve 6 scaffold."
+    ],
+    "corrections": {
+      "description": "Otlu pirinç frittata, dereotu, maydanoz ve pişmiş pirinci yumurtayla bağlayarak yeşil, doyurucu bir tava yapar.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Yumurta ve yoğurdu pürüzsüz olana kadar çırpın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Pirinç, dereotu ve maydanozu yumurtalı karışıma ekleyin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Karışımı yağlanmış tavaya yayın ve kapağı kapalı 12-14 dakika kısık ateşte pişirin.", "timerSeconds": 780 },
+        { "stepNumber": 4, "instruction": "Frittatayı 5 dakika dinlendirip dilimleyerek ılık servis edin.", "timerSeconds": 300 }
+      ]
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/frittata-recipe/",
+      "https://www.food.com/recipe/greek-frittata-64162"
+    ],
+    "confidence": "medium",
+    "reason": "Frittata tekniği doğru; Yunan iddiası ve scaffold cümleleri sadeleştirilmeli."
+  },
+  {
+    "slug": "otlu-tava-artvin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Artvin usulü özel ad kaynakla doğrulanamadı.",
+      "Step 2'de timerSeconds eksik; step 1 ve 5 scaffold."
+    ],
+    "corrections": {
+      "description": "Otlu tava, taze otları yumurta ve mısır unuyla tavada toparlayarak kısa ama kuvvetli bir kahvaltı tabağına dönüştürür.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Karışık otları yıkayıp kurulayın ve ince doğrayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tereyağını tavada eritin, otları hacmi inene kadar soldurun.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Yumurta ve mısır ununu ekleyip otlarla eşit karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Karışımı altı tutmadan ara ara çevirerek pişirin.", "timerSeconds": 360 },
+        { "stepNumber": 5, "instruction": "Tavadan sıcak alın ve ekmekle servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/isparta/neyenir/otlu-yumurta",
+      "https://www.sahrapsoysal.com/galdirik-kavurmasi-hodan-kavurmasi-tarifi-t-6004"
+    ],
+    "confidence": "medium",
+    "reason": "Otlu yumurta/kaygana tekniği tutarlı; Artvin özel iddiası ve scaffold adımlar düzeltilmeli."
+  },
+  {
+    "slug": "otlu-tulumlu-lavas-tostu-van-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Van usulü yerine Van otlu peynirli lavaş tostu olarak yazılmalı.",
+      "Step 1 ve 5 scaffold."
+    ],
+    "corrections": {
+      "description": "Otlu tulumlu lavaş tostu, lavaşı Van otlu peyniri ve tulumla buluşturarak eriyen, tuzlu ve hızlı bir kahvaltı tabağı kurar.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Otlu peynir ve tulumu ufalayıp karıştırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Peynirli içi lavaşlara paylaştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Lavaşları sıkıca kapatın, dolgu kenarlardan taşmasın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Tereyağlı tavada iki yüzü kızarana kadar pişirin.", "timerSeconds": 360 },
+        { "stepNumber": 5, "instruction": "Tostları çapraz kesip peynir erimişken servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://vandangelsin.com/tarifler/dogal-lezzetlerle-van-usulu-otlu-peynirli-kahvalti-tarifi",
+      "https://yemek.com/tarif/dolu-dolu-lavas-tost/"
+    ],
+    "confidence": "medium",
+    "reason": "Otlu peynirli lavaş tostu mantıklı; yöresel iddia dili ve scaffold step'ler temizlenmeli."
+  },
+  {
+    "slug": "otlu-yumurta-banh-mi-vietnam-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Banh mi kaynaklarında turşu havuç/daikon, mayonez ve kişniş/salatalık beklenir; mevcut tarifte temel sandviç bileşenleri eksik.",
+      "Step 1, 2 ve 6 scaffold."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Mayonez", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Havuç turşusu", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Soya sosu", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": [
+        "SOYA"
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bageti boyuna açın, salatalığı ince dilimleyin ve kişnişi ayıklayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Yumurtaları orta ateşte sarıları yumuşak kalacak şekilde pişirin.", "timerSeconds": 240 },
+        { "stepNumber": 3, "instruction": "Mayonez ve soya sosunu karıştırıp bagetin içine sürün.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Yumurta, salatalık, havuç turşusu, nane ve kişnişi bagete yerleştirin.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Sandviçi ikiye kesip ekmek çıtırlığını kaybetmeden servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.peteandgerrys.com/blogs/recipes/egg-banh-mi",
+      "https://omnivorescookbook.com/egg-banh-mi/"
+    ],
+    "confidence": "high",
+    "reason": "Yumurtalı banh mi fikri doğru; klasik sandviç bileşenleri ve step dili eksik."
+  },
+  {
+    "slug": "otlu-yumurta-tava-van-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Van usulü özel tarif iddiası zayıf, otlu çökelekli yumurta tava olarak yazılmalı.",
+      "Step 1 ve 5 scaffold."
+    ],
+    "corrections": {
+      "description": "Otlu yumurta tava, taze otları yumurta ve çökelekle buluşturarak kısa sürede doyurucu bir kahvaltı hazırlar.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Taze soğan ve maydanozu ince doğrayın, çökelekle karıştırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tereyağında otlu çökelekli harcı kokusu çıkana kadar çevirin.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Yumurtaları tavaya kırın ve kapağı kapalı pişirin.", "timerSeconds": 240 },
+        { "stepNumber": 4, "instruction": "Yumurta akları donunca ocaktan alın ve sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/isparta/neyenir/otlu-yumurta",
+      "https://www.petitegourmets.com/tr/yemek-tarifleri/otlu-cirpilmis-yumurta"
+    ],
+    "confidence": "medium",
+    "reason": "Otlu yumurta tekniği doğru; Van özel iddiası ve scaffold cümleleri temizlenmeli."
+  }
+]

@@ -1,0 +1,1204 @@
+[
+  {
+    "slug": "paprikali-mantar-guvec-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 tereyağı, step 4 tuz kullanıyor ama ingredient listesinde yok.",
+      "Patates ingredient ve description'da var, fakat steps içinde yemeğe dahil edilmiyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 32,
+      "totalMinutes": 44,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Mantarları iri doğrayın, patatesleri 2 cm küp kesin ve güveç kabını 190°C fırında 5 dakika ısıtın.", "timerSeconds": 300 },
+        { "stepNumber": 2, "instruction": "Soğanı tereyağında 5 dakika kavurun, mantarı ekleyip suyunu çekene kadar 7 dakika pişirin.", "timerSeconds": 720 },
+        { "stepNumber": 3, "instruction": "Paprikayı ekleyip 30 saniye çevirin, yanmaması için karışımı ocaktan kısa süre alın.", "timerSeconds": 30 },
+        { "stepNumber": 4, "instruction": "Patates, tuz ve 3 yemek kaşığı sıcak suyu ekleyip karışımı güveç kabına aktarın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Güveci 190°C fırında 20 dakika pişirin, patatesler yumuşayınca ekşi kremayı üstüne gezdirin.", "timerSeconds": 1200 }
+      ]
+    },
+    "sources": [
+      "https://hungarianpaprika.net/mushroom-paprikash/",
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/mushroom-paprikash-gombapaprikas/"
+    ],
+    "confidence": "high",
+    "reason": "Mantar, soğan, paprika ve ekşi krema hattı doğru; eksik yağ, tuz ve patatesin step'e girmemesi uygulama hatası."
+  },
+  {
+    "slug": "paprikali-mantarli-nohut-gulyasi-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 yağ, step 3 salça, step 4 patates ve sıcak su kullanıyor ama listede yok.",
+      "25 dakikalık pişirme cookMinutes ile uyumlu, fakat hazırlık ve step akışı eksik malzemeler yüzünden uygulanamaz."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Patates", "amount": "2", "unit": "adet" },
+        { "name": "Zeytinyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Domates salçası", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Nohudu süzün, mantarı iri doğrayın, patatesleri küp kesin ve soğanı yemeklik doğrayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Soğanı zeytinyağında 6 dakika kavurun, mantarı ekleyip 6 dakika daha pişirin.", "timerSeconds": 720 },
+        { "stepNumber": 3, "instruction": "Paprika ve salçayı ekleyip 30 saniye çevirin, baharat yanmadan domates püresini katın.", "timerSeconds": 30 },
+        { "stepNumber": 4, "instruction": "Nohut, patates, tuz ve 1 su bardağı sıcak suyu ekleyip kapağı kapatın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Gulaşı 25 dakika kısık ateşte pişirin, patatesler yumuşayınca ocaktan alın.", "timerSeconds": 1500 }
+      ]
+    },
+    "sources": [
+      "https://www.hungariancuisineinanutshell.com/2025/07/hungarian-potato-stew.html",
+      "https://www.lazycatkitchen.com/vegan-hungarian-goulash/"
+    ],
+    "confidence": "high",
+    "reason": "Paprikalı bakliyat tenceresi makul bir vejetaryen uyarlama; step içinde geçen patates, yağ ve salça listede tamamlanmalı."
+  },
+  {
+    "slug": "paprikali-nohut-gulas-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 ve 4 patates, havuç ve kimyon kullanıyor ama ingredient listesi bunları içermiyor.",
+      "Sıcak su ve tuz uygulama için gerekli, fakat listede yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Patates", "amount": "2", "unit": "adet" },
+        { "name": "Havuç", "amount": "1", "unit": "adet" },
+        { "name": "Kimyon", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Nohudu süzün, patates ve havucu iri küpler halinde doğrayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Soğanı zeytinyağında 7 dakika kavurun, tatlılaşınca paprikayı ekleyin.", "timerSeconds": 420 },
+        { "stepNumber": 3, "instruction": "Paprikayı 30 saniye çevirin, yanmaması için hemen domates rendesini ve sıcak suyu ekleyin.", "timerSeconds": 30 },
+        { "stepNumber": 4, "instruction": "Nohut, patates, havuç, kimyon ve tuzu tencereye alıp karıştırın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Gulaşı 28 dakika kısık ateşte pişirin, sebzeler yumuşayınca ocaktan alın.", "timerSeconds": 1680 }
+      ]
+    },
+    "sources": [
+      "https://www.hungariancuisineinanutshell.com/2025/07/hungarian-potato-stew.html",
+      "https://www.connoisseurusveg.com/vegan-goulash/"
+    ],
+    "confidence": "high",
+    "reason": "Nohutlu vejetaryen uyarlama kabul edilebilir; step'te açıkça geçen sebze ve baharatların listeye eklenmesi gerekiyor."
+  },
+  {
+    "slug": "paprikali-tavuklu-arpa-sehriye-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 tereyağı ve step 5 tuz kullanıyor ama listede yok.",
+      "6, 4.5, 3, 13 dakikalık pişirme ve 8 dakika dinlenme totalMinutes 30 ile uyumsuz."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 27,
+      "totalMinutes": 47
+    },
+    "sources": [
+      "https://www.everydayhealthyrecipes.com/hungarian-chicken-paprikash-recipe/",
+      "https://www.thetasteofhungary.com/en/tarhonya-egg-barley.html"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, paprika, soğan ve küçük makarna hattı Macar esintili; eksik yağ, tuz ve pasif dinlenme süresi düzeltilmeli."
+  },
+  {
+    "slug": "paprikas-csirke-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Paprikas csirke için sıvı ve pişirme yağı eksik, step 4 sıcak su kullanıyor ama listede yok.",
+      "Pişirme timer toplamı mevcut cookMinutes ve totalMinutes değerlerinden uzun."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tavuk suyu", "amount": "1", "unit": "su bardağı" },
+        { "name": "Sıvı yağ", "amount": "1", "unit": "yemek kaşığı" }
+      ],
+      "cookMinutes": 49,
+      "totalMinutes": 65,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Tavuk parçalarını kurulayın, tuzlayın ve soğanı ince doğrayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tavuğu yağda 7 dakika mühürleyin ve tabağa alın.", "timerSeconds": 420 },
+        { "stepNumber": 3, "instruction": "Soğanı aynı tencerede 8 dakika kavurun, paprikayı 30 saniye çevirin.", "timerSeconds": 510 },
+        { "stepNumber": 4, "instruction": "Tavuğu ve tavuk suyunu ekleyip 30 dakika kısık ateşte pişirin.", "timerSeconds": 1800 },
+        { "stepNumber": 5, "instruction": "Kremayı az sıcak sosla ılıtın ve tencereye karıştırın.", "timerSeconds": null },
+        { "stepNumber": 6, "instruction": "Sosu 3 dakika kaynatmadan ısıtın, krema kesilmesin.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://www.everydayhealthyrecipes.com/hungarian-chicken-paprikash-recipe/",
+      "https://www.food.com/recipe/hungarian-chicken-paprikash-54820"
+    ],
+    "confidence": "high",
+    "reason": "Kimlik doğru; tavuk paprikash sıvı içinde pişer ve mevcut timer toplamı 44 dakikalık total değere sığmıyor."
+  },
+  {
+    "slug": "paprikas-krumpli",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 yağ, step 3 kimyon ve step 4 sıcak su kullanıyor ama yağ, kimyon ve tuz listede yok.",
+      "Paprikas krumpli kaynaklarında yağlı soğan bazında paprika ve patates pişirme temel teknik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Kimyon", "amount": "0.5", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.hungariancuisineinanutshell.com/2025/07/hungarian-potato-stew.html",
+      "https://www.krumpli.co.uk/paprikas-krumpli/"
+    ],
+    "confidence": "high",
+    "reason": "Patates, soğan, paprika ve sosis yapısı doğru; step içinde geçen temel yağ ve baharat listede tamamlanmalı."
+  },
+  {
+    "slug": "paprikas-tarhonya-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 sebzeler, step 3 biber diyor ama listede biber yok.",
+      "8 dakika dinlenme totalMinutes içine yansımıyor; tarhonya pişirme süresiyle toplam süre kısa kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yeşil biber", "amount": "1", "unit": "adet" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 23,
+      "totalMinutes": 41
+    },
+    "sources": [
+      "https://www.thetasteofhungary.com/en/tarhonya-egg-barley.html",
+      "https://flavelo.com/recipes/shepherd-s-toasted-egg-barley-stew"
+    ],
+    "confidence": "high",
+    "reason": "Tarhonyayı yağda kavurup sıcak suyla pişirme tekniği doğru; eksik biber ve dinlenme süresi düzeltilmeli."
+  },
+  {
+    "slug": "paris-croque-monsieur",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.greatbritishchefs.com/recipes/croque-monsieur-recipe",
+      "https://www.foodista.com/recipe/K7G8TCBR/croque-monsieur"
+    ],
+    "confidence": "high",
+    "reason": "Ekmek, jambon, gruyere, beşamel, Dijon ve muskat çizgisi klasik croque monsieur kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "paris-elmali-kereviz-remoulade",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps title tekrarları ve yasak jargon içeriyor.",
+      "Mayonez, hardal ve kereviz nedeniyle YUMURTA, HARDAL ve KEREVIZ allergen eksik.",
+      "Step 3 sirke ve zeytinyağı kullanıyor ama mevcut sos mayonezli ve listede bu malzemeler yok."
+    ],
+    "corrections": {
+      "allergens_add": [
+        "YUMURTA",
+        "HARDAL",
+        "KEREVIZ"
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kerevizi soyup ince kibrit şeklinde doğrayın, kararmaması için limon suyuyla hemen karıştırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Yeşil elmayı aynı incelikte doğrayın ve kerevizle birlikte 5 dakika limonlu kasede bekletin.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Mayonez, Dijon hardalı ve kalan limon suyunu pürüzsüz olana kadar çırpın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Kereviz ve elmayı sosla 1 dakika ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Salatayı 10 dakika buzdolabında dinlendirin, sos kerevizin yüzeyine tutunsun.", "timerSeconds": 600 },
+        { "stepNumber": 6, "instruction": "Soğuk servis edin ve yüzeyi sulanmadan sofraya çıkarın.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://realfood.tesco.com/recipes/celeriac-and-apple-remoulade.html",
+      "https://www.epicurious.com/recipes/food/views/celery-root-remoulade-373963"
+    ],
+    "confidence": "high",
+    "reason": "Elmalı kereviz remoulade kimliği doğru; allergen ve step kalitesi düzeltme gerektiriyor."
+  },
+  {
+    "slug": "paris-ratatouille-tenceresi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 5 sirke kullanıyor ama ingredient listesinde yok ve klasik ratatouille için gerekli değil.",
+      "Step 5 tuz kullanıyor ama listede tuz yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patlıcan, kabak ve biberleri 2 cm parçalar halinde doğrayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Patlıcanı zeytinyağında 6 dakika soteleyip kenara alın.", "timerSeconds": 360 },
+        { "stepNumber": 3, "instruction": "Kabak ve biberleri ayrı ayrı 5 dakika soteleyin.", "timerSeconds": 300 },
+        { "stepNumber": 4, "instruction": "Soğan ve sarımsağı tencerede 5 dakika yumuşatın.", "timerSeconds": 300 },
+        { "stepNumber": 5, "instruction": "Domates, tuz ve sotelenmiş sebzeleri ekleyip 12 dakika pişirin.", "timerSeconds": 720 },
+        { "stepNumber": 6, "instruction": "Fesleğeni son anda katıp 5 dakika dinlendirin.", "timerSeconds": 300 }
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/ratatouille-recipe",
+      "https://www.southernliving.com/food/dish/casserole/what-is-ratatouille"
+    ],
+    "confidence": "high",
+    "reason": "Sebze kompozisyonu doğru; sirke kaynak çizgisiyle gerekli değil, tuz ise step'te geçtiği için listede olmalı."
+  },
+  {
+    "slug": "paris-sogan-corbasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 şeker kullanıyor ama ingredient listesinde yok.",
+      "Beyaz şarap içerdiği için alkollu tag eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Toz şeker", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "tags_add": [
+        "alkollu"
+      ]
+    },
+    "sources": [
+      "https://www.bhg.com/tips-for-making-french-onion-soup-11905363",
+      "https://www.foodandwine.com/french-sandwich-recipes-11936891"
+    ],
+    "confidence": "high",
+    "reason": "Soğanı uzun pişirme, et suyu, baget ve gruyere yapısı doğru; şeker ve alkol etiketi eksik."
+  },
+  {
+    "slug": "paris-tavuklu-coq-au-riesling",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.crateandbarrel.com/the-frame/coq-au-riesling",
+      "https://www.bigoven.com/recipe/coq-au-riesling-chicken-with-white-wine/2170006"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, mantar, beyaz şarap, krema ve erişte servisi coq au Riesling kaynaklarıyla uyumlu; süre de gerçekçi."
+  },
+  {
+    "slug": "passiflorali-pisco-cooler-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps title tekrarlarıyla scaffold görünüyor.",
+      "Alkollü pisco kullanıldığı halde alkollu tag eksikse eklenmeli."
+    ],
+    "corrections": {
+      "tags_add": [
+        "alkollu"
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bardağı buzla doldurun ve passiflora suyunu süzerek çekirdek parçalarını ayırın.", "timerSeconds": 60 },
+        { "stepNumber": 2, "instruction": "Pisco, passiflora suyu ve lime suyunu karıştırma bardağına alın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Karışımı 10 saniye soğutun ve buzlu servis bardağına süzün.", "timerSeconds": 10 },
+        { "stepNumber": 4, "instruction": "Sodayı ekleyip 5 saniye nazikçe karıştırın, gazı kaçırmayın.", "timerSeconds": 5 },
+        { "stepNumber": 5, "instruction": "Tadını kontrol edin ve buz erimeden hemen servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.diffordsguide.com/cocktails/recipe/4114/passion-fruit-pisco-sour",
+      "https://www.liquor.com/recipes/pisco-sour/"
+    ],
+    "confidence": "medium",
+    "reason": "Pisco ve passion fruit uyumu Peru kokteyl çizgisiyle uyumlu; mevcut step metni kalite eşiğinin altında."
+  },
+  {
+    "slug": "passionfruit-pisco-spritz-peru-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Title pisco spritz diyor ama ingredient listesi Brendi kullanıyor.",
+      "Alkollü kokteyl ICECEK type altında duruyor; Mod K corrections şeması type alanını düzeltemiyor.",
+      "3 step KOKTEYL minimum step sayısı olan 4'ün altında."
+    ],
+    "corrections": {
+      "ingredients_remove": [
+        "Brendi"
+      ],
+      "ingredients_add": [
+        { "name": "Pisco", "amount": "50", "unit": "ml" },
+        { "name": "Lime suyu", "amount": "10", "unit": "ml" }
+      ],
+      "tags_add": [
+        "alkollu"
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Bardağı taze buzla doldurun ve passionfruit püresini kısa karıştırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Pisco ve lime suyunu ekleyip 10 saniye soğutun.", "timerSeconds": 10 },
+        { "stepNumber": 3, "instruction": "Sodayı yavaşça dökün ve 5 saniye nazikçe karıştırın.", "timerSeconds": 5 },
+        { "stepNumber": 4, "instruction": "Gazlı yapısı korunurken hemen servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.diffordsguide.com/cocktails/recipe/4114/passion-fruit-pisco-sour",
+      "https://www.liquor.com/recipes/pisco-sour/"
+    ],
+    "confidence": "high",
+    "reason": "Pisco yerine brendi ve yanlış type yapısal hatadır; yalnız ingredient patch'i kimlik sorununu tam kapatmaz."
+  },
+  {
+    "slug": "pasta-alla-norma",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bonappetit.com/recipe/pasta-alla-norma-recipe",
+      "https://www.lacucinaitaliana.com/recipe/pasta/spaghettoni-alla-norma-with-eggplant-and-ricotta"
+    ],
+    "confidence": "high",
+    "reason": "Patlıcan, domates sosu, fesleğen, makarna ve ricotta salata kompozisyonu Sicilya pasta alla Norma ile uyumlu."
+  },
+  {
+    "slug": "pastel-brezilya",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps generic scaffold cümleleri içeriyor ve pastel tekniğini anlatmıyor.",
+      "Hamur için su listede yok, sadece un ve tuzla uygulanabilir hamur kurulamaz."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Su", "amount": "0.75", "unit": "su bardağı" },
+        { "name": "Karabiber", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, su, 1 yemek kaşığı sıvı yağ ve tuzu yoğurup pürüzsüz bir hamur hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Soğanı az yağda 3 dakika yumuşatın, kıymayı ekleyip 6 dakika kavurun.", "timerSeconds": 540 },
+        { "stepNumber": 3, "instruction": "Domates, tuz ve karabiberi ekleyip harcı 5 dakika suyunu çekene kadar pişirin.", "timerSeconds": 300 },
+        { "stepNumber": 4, "instruction": "Hamuru ince açın, harcı yerleştirip kenarlarını sıkıca kapatın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Pastelleri kızgın yağda 3 dakika kızartın, kabarıp altın renk alınca süzdürün.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://www.culinaryrio.com/popular-brazilian-recipes/beef-pastel",
+      "https://app.samsungfood.com/recipes/101c9027a201d6a0fdf9b4f0673beecf5dc27418685"
+    ],
+    "confidence": "high",
+    "reason": "Brezilya pasteli ince hamur ve kızartma tekniğiyle doğru; mevcut steps tarifi uygulamaya yetmiyor."
+  },
+  {
+    "slug": "pastelito-de-guayaba-kuba-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 yumurta sürmeyi söylüyor ama listede yumurta yok.",
+      "Milföy hamuru gluten ve süt içerebilir, step yumurta kullandığı için YUMURTA allergen eksik."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yumurta", "amount": "1", "unit": "adet" }
+      ],
+      "allergens_add": [
+        "YUMURTA"
+      ]
+    },
+    "sources": [
+      "https://www.pbs.org/food/recipes/pastelitos-de-guayaba",
+      "https://hispanicfoodnetwork.com/pastelitos-de-guayaba-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Guava dolgulu milföy kimliği doğru; yumurtalı üst sürme adımı ingredient ve allergen listesine yansıtılmalı."
+  },
+  {
+    "slug": "pastirmali-arpa-pilavi-kayseri-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Description arpa diyor ama ingredient arpa şehriye; kullanıcı gerçek tahıl bekleyebilir.",
+      "Step 3 tuz kullanıyor ama ingredient listesinde yok."
+    ],
+    "corrections": {
+      "description": "Kayseri pastırmalı arpa şehriye pilavı, şehriyeyi pastırma ve tereyağıyla buluşturarak tok, kokulu ve güçlü aromalı bir ana yemek sunar.",
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/arpa-sehriye-pilavi-tarifi/",
+      "https://www.yemek.com/tarif/tereyagli-arpa-sehriye-pilavi/"
+    ],
+    "confidence": "high",
+    "reason": "Tarif arpa değil arpa şehriye pilavı; malzeme ve açıklama aynı dili kullanmalı."
+  },
+  {
+    "slug": "pastirmali-biberli-yumurta-ekmegi-kayseri-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps title tekrarları ve scaffold cümleleri taşıyor.",
+      "Step 2 yağlama diyor ama listede yağ yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Tuz", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Yumurtaları tuzla çırpın, ekmekleri karışıma batırmaya hazır tutun.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tavayı tereyağıyla orta ateşte 2 dakika ısıtın.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Biberleri 2 dakika çevirin, pastırmayı ekleyip 1 dakika ısıtın.", "timerSeconds": 180 },
+        { "stepNumber": 4, "instruction": "Ekmekleri yumurtaya batırıp tavaya alın ve iki yüzünü toplam 5 dakika pişirin.", "timerSeconds": 300 },
+        { "stepNumber": 5, "instruction": "Pastırmalı biberleri ekmeklerin üstüne paylaştırıp sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/yumurtali-ekmek/",
+      "https://www.nefisyemektarifleri.com/pastirmali-yumurta/"
+    ],
+    "confidence": "high",
+    "reason": "Pastırma, yumurta ve biber kahvaltı kurgusu doğru; step kalitesi ve eksik yağ düzeltilmeli."
+  },
+  {
+    "slug": "pastirmali-eriste-omleti-kayseri-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps title ve slug tekrarları içeriyor.",
+      "Step 3 timerSeconds boş, fakat 2 dakika pişirme söylüyor.",
+      "Timer toplamı cookMinutes 10 değerini aşıyor."
+    ],
+    "corrections": {
+      "cookMinutes": 13,
+      "totalMinutes": 25,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Erişteyi tuzlu suda 6 dakika haşlayın ve süzün.", "timerSeconds": 360 },
+        { "stepNumber": 2, "instruction": "Pastırmayı tereyağında 2 dakika çevirip aromasını yağa bırakın.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Haşlanmış erişteyi tavaya alıp 2 dakika pastırmayla karıştırın.", "timerSeconds": 120 },
+        { "stepNumber": 4, "instruction": "Çırpılmış yumurtayı ekleyip omleti orta ateşte 5 dakika pişirin.", "timerSeconds": 300 },
+        { "stepNumber": 5, "instruction": "Omleti dilimleyip sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/eristeli-omlet/",
+      "https://www.misssgibi.com/pastirmali-yumurta-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Erişteli omlet ve pastırmalı yumurta birleşimi uygulanabilir; mevcut step metni üretim kalitesi taşımıyor."
+  },
+  {
+    "slug": "pastirmali-kuru-domatesli-yumurta-kayseri-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps title ve slug tekrarları içeriyor.",
+      "Step 1 hamurdan söz ediyor, tarif yumurta tavası."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Kuru domatesleri ince doğrayın, pastırmaları iri parçalar halinde ayırın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Tereyağını tavada eritin ve kuru domatesi 2 dakika yumuşatın.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Pastırmayı ekleyip 1 dakika ısıtın, çemen yanmasın.", "timerSeconds": 60 },
+        { "stepNumber": 4, "instruction": "Yumurtaları tavaya kırın ve 4 dakika beyazları donana kadar pişirin.", "timerSeconds": 240 },
+        { "stepNumber": 5, "instruction": "Karabiber serpip sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/pastirmali-yumurta/",
+      "https://www.yemek.com/tarif/pastirmali-yumurta/"
+    ],
+    "confidence": "high",
+    "reason": "Pastırmalı yumurta kimliği doğru; mevcut metin slug tekrarları ve bağlam dışı hamur ifadesi nedeniyle düzeltilmeli."
+  },
+  {
+    "slug": "pastirmali-mercimek-pilavi-kayseri-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 tereyağı ve step 4 tuz kullanıyor ama ingredient listesinde yok.",
+      "Mercimek haşlama, bulgur pişirme ve dinlenme süreleri totalMinutes 34 ile uyumsuz."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 42,
+      "totalMinutes": 64
+    },
+    "sources": [
+      "https://www.almostturkishrecipes.com/2007/10/bulgur-pilaf-with-green-lentils.html",
+      "https://www.nefisyemektarifleri.com/yesil-mercimekli-bulgur-pilavi/"
+    ],
+    "confidence": "high",
+    "reason": "Mercimekli bulgur pilavı yapısı doğru; pastırmalı uyarlamada eksik yağ, tuz ve süre tutarsızlığı var."
+  },
+  {
+    "slug": "pastirmali-nohutlu-bulgur-pilavi-kayseri-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 soğan kullanıyor ama ingredient listesinde yok.",
+      "Pişirme ve 8 dakika dinlenme totalMinutes 30 içine gerçekçi biçimde sığmıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 27,
+      "totalMinutes": 47
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/nohutlu-bulgur-pilavi/",
+      "https://www.yemek.com/tarif/nohutlu-bulgur-pilavi/"
+    ],
+    "confidence": "high",
+    "reason": "Bulgur, nohut ve pastırma kurgusu uygulanabilir; soğan listede yok ve süre çizelgesi pasif dinlenmeyi kaçırıyor."
+  },
+  {
+    "slug": "pastitsio",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 soğan ve tarçın kullanıyor ama listede yok.",
+      "Step 3 tereyağı kullanıyor ama listede yok.",
+      "Pastitsio için gluten, süt ve yumurta allergenleri eksiksiz işaretlenmeli."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Tereyağı", "amount": "3", "unit": "yemek kaşığı" },
+        { "name": "Tarçın", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": [
+        "GLUTEN",
+        "SUT",
+        "YUMURTA"
+      ]
+    },
+    "sources": [
+      "https://realgreekrecipes.com/pastitsio/",
+      "https://www.thehungrybites.com/pastitsio-recipe-greek-pasta-bake/"
+    ],
+    "confidence": "high",
+    "reason": "Makarna, kıymalı baharatlı sos ve beşamel katmanı doğru; step'te geçen temel malzemeler listede yok."
+  },
+  {
+    "slug": "patatas-bravas",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.themediterraneandish.com/patatas-bravas/",
+      "https://www.chocolatesandchai.com/patatas-bravas/"
+    ],
+    "confidence": "high",
+    "reason": "Küp patates ve acılı domatesli bravas sosu Madrid tapas çizgisiyle uyumlu; fırınlama ev tipi kabul edilebilir."
+  },
+  {
+    "slug": "patates-elma-salatasi-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps title tekrarları ve generic scaffold ifadeler içeriyor.",
+      "Step 3 mayonezli sos diyor ama ingredient yoğurt ve hardal içeriyor.",
+      "Limon ve tuz step içinde gerekli ama listede yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patatesleri 18 dakika haşlayın, süzüp ılımaya bırakın.", "timerSeconds": 1080 },
+        { "stepNumber": 2, "instruction": "Patatesleri 2 cm küp kesin, elmayı ince doğrayıp limon suyuyla karıştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Yoğurt, hardal, tuz ve ince kıyılmış dereotunu pürüzsüz sos olana kadar karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Patates ve elmayı sosla 1 dakika ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Salatayı 10 dakika dinlendirip oda sıcaklığında servis edin.", "timerSeconds": 600 }
+      ]
+    },
+    "sources": [
+      "https://realfood.tesco.com/recipes/celeriac-and-apple-remoulade.html",
+      "https://www.glamour.com/story/afternoon-snack-recipe-potato"
+    ],
+    "confidence": "medium",
+    "reason": "Patates, elma, yoğurt, hardal ve dereotu salata fikri tutarlı; mevcut steps yanlış sos diliyle yazılmış."
+  },
+  {
+    "slug": "patates-kroket",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps kroket tekniği yerine generic scaffold cümleleri taşıyor.",
+      "Haşlama, pane ve kızartma aşamaları net değil."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patatesleri 20 dakika haşlayın, süzüp sıcakken ezin.", "timerSeconds": 1200 },
+        { "stepNumber": 2, "instruction": "Ezilmiş patatesi kaşar peyniriyle karıştırıp kolay şekil alacak kıvama getirin.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Karışımdan lokmalar yapın, önce una, sonra çırpılmış yumurtaya, ardından galeta ununa bulayın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Kroketleri kızgın yağda 4 dakika çevirerek kızartın.", "timerSeconds": 240 },
+        { "stepNumber": 5, "instruction": "Kağıt havlu üzerinde 3 dakika dinlendirip çıtırken servis edin.", "timerSeconds": 180 }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/patates-kroket/",
+      "https://www.nefisyemektarifleri.com/patates-kroket/"
+    ],
+    "confidence": "high",
+    "reason": "Malzeme listesi kroket için doğru; mevcut step akışı üretim tekniğini anlatmadığı için değiştirilmeli."
+  },
+  {
+    "slug": "patates-oturtma",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Description köftelerden söz ediyor, klasik patates oturtma genelde kıymalı harçla katmanlanır.",
+      "Kızartma ve kıymalı harç adımlarında timerSeconds eksik."
+    ],
+    "corrections": {
+      "description": "Kızarmış patateslerin kıymalı domates sosuyla katmanlanıp fırında piştiği doyurucu bir ev yemeği.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patatesleri halka doğrayıp kızgın yağda 8 dakika hafif kızartın.", "timerSeconds": 480 },
+        { "stepNumber": 2, "instruction": "Soğan ve kıymayı 8 dakika kavurun, tuz, karabiber ve kimyonu ekleyin.", "timerSeconds": 480 },
+        { "stepNumber": 3, "instruction": "Domates ve biber salçasını ekleyip sosu 6 dakika pişirin.", "timerSeconds": 360 },
+        { "stepNumber": 4, "instruction": "Tepsiye patates ve kıymalı harcı katmanlayın, sosu üstüne gezdirin.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "180°C fırında 32 dakika pişirin, patatesler sosu çekince servis edin.", "timerSeconds": 1920 }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/patates-oturtma/",
+      "https://www.yemek.com/tarif/patates-oturtma/"
+    ],
+    "confidence": "high",
+    "reason": "Patates oturtma kimliği doğru; köfte ifadesi ve timersız pişirme adımları kullanıcıyı yanıltır."
+  },
+  {
+    "slug": "patates-rosti-lokmalari",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Rösti İsviçre kökenli patates yemeğidir, cuisine se İsveç kodu kimlik hatası yaratıyor.",
+      "Tarifle cuisine listesinde İsviçre kodu yok; Mod K correction şeması doğru cuisine'e güvenli geçiş sunmuyor."
+    ],
+    "corrections": {
+      "description": "Rendelenmiş patatesin küçük porsiyon rösti olarak tavada kızarması, sıcak servis edilen gevrek lokmalar verir.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patatesi rendeleyip temiz bezle suyunu sıkın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Patatesi un ve tuzla karıştırın, karışımı küçük disklere ayırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Tereyağını tavada orta ateşte 90 saniye eritin.", "timerSeconds": 90 },
+        { "stepNumber": 4, "instruction": "Diskleri tavada toplam 10 dakika iki yüzü kızarana kadar pişirin.", "timerSeconds": 600 },
+        { "stepNumber": 5, "instruction": "Ekşi kremayı yanında verip sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/R%C3%B6sti",
+      "https://www.bbcgoodfood.com/recipes/potato-rosti"
+    ],
+    "confidence": "high",
+    "reason": "Tarif tekniği röstiye yakın; ancak İsveç cuisine kodu yanlış ve uygun İsviçre kodu bulunmadığı için manuel karar gerekir."
+  },
+  {
+    "slug": "patates-salatasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps patates kelimesini hatalı tekrar ediyor ve scaffold title kullanıyor.",
+      "Mevcut adımlar uygulanabilir olsa da metin kalitesi düşük."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patatesleri 20 dakika yumuşayana kadar haşlayın ve süzün.", "timerSeconds": 1200 },
+        { "stepNumber": 2, "instruction": "Ilıyan patatesleri soyup 2 cm küpler halinde doğrayın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Zeytinyağı, limon suyu, sumak ve tuzu ayrı kasede karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Patates, taze soğan ve maydanozu sosla 1 dakika ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Salatayı 10 dakika dinlendirip oda sıcaklığında servis edin.", "timerSeconds": 600 }
+      ]
+    },
+    "sources": [
+      "https://www.whats4eats.com/salads/patates-salatasi-recipe",
+      "https://www.giverecipe.com/turkish-potato-salad/"
+    ],
+    "confidence": "high",
+    "reason": "Klasik Türk patates salatası kimliği doğru; step metni tekrar ve scaffold izleri nedeniyle temizlenmeli."
+  },
+  {
+    "slug": "patatesli-borek",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 baharat diyor ama tuz listede yok.",
+      "32 dakika fırın ve 8 dakika dinlenme totalMinutes 65 içinde eksik kalıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 38,
+      "totalMinutes": 76,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patatesleri 25 dakika yumuşayana kadar haşlayın, süzüp ezin.", "timerSeconds": 1500 },
+        { "stepNumber": 2, "instruction": "Soğanı yağda 6 dakika kavurun, patates, tuz ve pul biberle iç harcı hazırlayın.", "timerSeconds": 360 },
+        { "stepNumber": 3, "instruction": "Yufkaları sütlü yumurtalı sosla hafifçe ıslatın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Patatesli harcı yufkalara yayın, rulo yapıp tepsiye dizin.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Üstüne sos sürün ve 180°C fırında 32 dakika pişirin.", "timerSeconds": 1920 },
+        { "stepNumber": 6, "instruction": "Böreği 8 dakika dinlendirip dilimleyin.", "timerSeconds": 480 }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/patatesli-borek/",
+      "https://www.nefisyemektarifleri.com/patatesli-borek/"
+    ],
+    "confidence": "high",
+    "reason": "Yufka, patates, sütlü yumurtalı sos ve fırın çizgisi doğru; tuz ve süre hesabı düzeltilmeli."
+  },
+  {
+    "slug": "patatesli-dereotlu-pierogi-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 yumurta ve tuz, step 2 peynir kullanıyor ama listede yok.",
+      "Hamur dinlenmesi ve patates haşlama totalMinutes 42 içine sığmıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Yumurta", "amount": "1", "unit": "adet" },
+        { "name": "Lor peyniri", "amount": "100", "unit": "gr" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": [
+        "YUMURTA",
+        "SUT"
+      ],
+      "cookMinutes": 28,
+      "totalMinutes": 72
+    },
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/pierogi-potato-and-mushroom-sauerkraut-354032",
+      "https://www.delish.com/food/a69125444/i-tried-dill-and-cheddar-pierogi/"
+    ],
+    "confidence": "high",
+    "reason": "Patatesli pierogi kimliği doğru; step'teki yumurta ve peynir listede yok, dinlenme süresi de total'a eklenmeli."
+  },
+  {
+    "slug": "patatesli-gendime-pilavi-malatya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 geceden ıslatma söylüyor, totalMinutes 34 bu pasif süreyi içermiyor.",
+      "Step 3 ve 6 tereyağı, step 4 tuz kullanıyor ama listede yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tereyağı", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 58,
+      "totalMinutes": 560
+    },
+    "sources": [
+      "https://www.lezzetler.com/gendime-pilavi-malatya-vt2-111137",
+      "https://www.kulturportali.gov.tr/turkiye/malatya/neyenir/gendime-pilavi"
+    ],
+    "confidence": "medium",
+    "reason": "Gendime pilavı yöresel olarak makul; geceden ıslatma ve eksik tereyağı, tuz alanları düzeltilmeli."
+  },
+  {
+    "slug": "patatesli-gozleme-yozgat-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps title tekrarları ve scaffold cümleleri içeriyor.",
+      "Step 2 patates haşlama için 6 dakika çok kısa.",
+      "Tuz listede yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 26,
+      "totalMinutes": 49,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patatesleri 20 dakika haşlayın, süzüp sıcakken ezin.", "timerSeconds": 1200 },
+        { "stepNumber": 2, "instruction": "Patatesi pul biber, tuz ve 1 yemek kaşığı zeytinyağıyla karıştırın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Patatesli harcı yufkaların yarısına yayın ve kenarları kapatın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Gözlemeleri tavada iki yüzü kızarana kadar toplam 12 dakika pişirin.", "timerSeconds": 720 },
+        { "stepNumber": 5, "instruction": "Üstlerine kalan zeytinyağını sürüp sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/patatesli-gozleme/",
+      "https://yemek.com/tarif/patatesli-gozleme/"
+    ],
+    "confidence": "high",
+    "reason": "Patatesli gözleme kurgusu doğru; mevcut Yozgat vurgusunu destekleyen özel kaynak yok ama tarif generic olarak uygulanabilir."
+  },
+  {
+    "slug": "patatesli-kes-salatasi-bolu-yayla-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps title tekrarları ve scaffold ifadeleri içeriyor.",
+      "Step 3 limon suyu ve tuz kullanıyor ama listede yok."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patatesleri 18 dakika haşlayın, süzüp ılıkken 2 cm küp doğrayın.", "timerSeconds": 1080 },
+        { "stepNumber": 2, "instruction": "Keş peynirini ufalayın, dereotunu ince kıyın.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Zeytinyağı, limon suyu, tuz ve karabiberi küçük kasede karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Patates, keş peyniri ve dereotunu sosla 1 dakika ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Salatayı 10 dakika dinlendirin, keş tadı patatese geçsin.", "timerSeconds": 600 },
+        { "stepNumber": 6, "instruction": "Oda sıcaklığında servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://lezzetler.com/tarif-40137",
+      "https://www.whats4eats.com/salads/patates-salatasi-recipe"
+    ],
+    "confidence": "medium",
+    "reason": "Bolu peyniriyle salata fikri makul; step kalitesi ve eksik sos malzemeleri düzeltilmeli."
+  },
+  {
+    "slug": "patatesli-kete-tavasi-ardahan-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Kete kaynaklarında Kars ve çevresi içli kete geçiyor, fakat patatesli Ardahan tava kimliği yeterince doğrulanamıyor.",
+      "Steps generic scaffold içeriyor ve kete tekniğini ayrıntılandırmıyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, su ve tuzu yoğurup yumuşak bir hamur hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Hamuru 10 dakika dinlendirin.", "timerSeconds": 600 },
+        { "stepNumber": 3, "instruction": "Haşlanmış patatesi tereyağı ve tuzla ezip iç harcı hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Hamuru bezelere ayırıp açın, patatesli harcı koyup kapatın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Keteleri tavada iki yüzü kızarana kadar toplam 12 dakika pişirin.", "timerSeconds": 720 }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/kars-icli-kete/19614",
+      "https://www.nefistarif.net/nefis-patile-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Tarif uygulanabilir hamur işi gibi dursa da Ardahan patatesli kete tavası iddiası kaynaklarla güvenli doğrulanmadı."
+  },
+  {
+    "slug": "patatesli-kurut-ezmesi-igdir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 2 sarımsak, yoğurt, tahin veya zeytinyağı gibi listede olmayan ve birbiriyle ilgisiz seçenekler söylüyor.",
+      "Patates haşlama ve 15 dakika buzdolabı beklemesi totalMinutes 24 ile uyumlu değil."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Sarımsak", "amount": "1", "unit": "diş" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 20,
+      "totalMinutes": 47,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patatesleri 20 dakika haşlayın, süzüp sıcakken ezin.", "timerSeconds": 1200 },
+        { "stepNumber": 2, "instruction": "Kurutu sıcak suyla 5 dakika yumuşatın ve pürüzsüz olana kadar ezin.", "timerSeconds": 300 },
+        { "stepNumber": 3, "instruction": "Patates, kurut, ezilmiş sarımsak ve tuzu aynı kapta karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Tereyağını eritip üstüne gezdirin, 10 dakika ılık dinlendirip servis edin.", "timerSeconds": 600 }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/kars/neyenir/kurut-asi",
+      "https://www.nefisyemektarifleri.com/kurut-asi/"
+    ],
+    "confidence": "medium",
+    "reason": "Kurutlu ezme bölgesel olarak makul; mevcut step 2 alakasız alternatifler içeriyor ve süre hesabı yanlış."
+  },
+  {
+    "slug": "patatesli-lorlu-corek-agri-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Çörek hamuru için maya ve tuz yok, step 2 hamur yoğursa da kabarma süresi tanımlanmıyor.",
+      "Steps title tekrarları içeriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Instant maya", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" }
+      ],
+      "totalMinutes": 85,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, su, maya, yağ ve tuzu 5 dakika yoğurup yumuşak hamur yapın.", "timerSeconds": 300 },
+        { "stepNumber": 2, "instruction": "Hamuru 35 dakika kapalı dinlendirin.", "timerSeconds": 2100 },
+        { "stepNumber": 3, "instruction": "Haşlanmış patatesi lorla karıştırıp iç harcı hazırlayın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Hamuru açıp patatesli lorlu harcı yerleştirin ve çörekleri kapatın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Çörekleri 190°C fırında 22 dakika pişirin ve ılık servis edin.", "timerSeconds": 1320 }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/patatesli-corek/",
+      "https://www.yemek.com/tarif/peynirli-corek/"
+    ],
+    "confidence": "medium",
+    "reason": "Patatesli lorlu çörek uygulanabilir; Ağrı yöre atfı güçlü doğrulanmadı ama asıl hata eksik hamur bileşenleri ve süre."
+  },
+  {
+    "slug": "patatesli-lorlu-kete-kars-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps maya, su, tuz ve yumurta kullanıyor ama listede yok.",
+      "45 dakika mayalanma, patates haşlama, fırın ve dinlenme totalMinutes 38 ile uyumsuz."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Instant maya", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Su", "amount": "1", "unit": "su bardağı" },
+        { "name": "Yumurta", "amount": "1", "unit": "adet" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": [
+        "YUMURTA"
+      ],
+      "cookMinutes": 50,
+      "totalMinutes": 123
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/kars-icli-kete/19614",
+      "https://www.nefisyemektarifleri.com/kete-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kete yapısı doğru; mevcut malzeme listesi kendi step'lerini karşılamıyor ve pasif mayalanma total'a dahil edilmeli."
+  },
+  {
+    "slug": "patatesli-peynirli-kete-kars-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 maya, süt ve tuz kullanıyor ama listede yok.",
+      "Step 3 yağ, step 2 karabiber kullanıyor ama listede yok.",
+      "45 dakika mayalanma ve 8 dakika dinlenme totalMinutes 44 içine girmiyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Instant maya", "amount": "1", "unit": "tatlı kaşığı" },
+        { "name": "Süt", "amount": "0.5", "unit": "su bardağı" },
+        { "name": "Tereyağı", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Tuz", "amount": "1", "unit": "çay kaşığı" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": [
+        "SUT"
+      ],
+      "cookMinutes": 52,
+      "totalMinutes": 125
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/kars-icli-kete/19614",
+      "https://www.nefisyemektarifleri.com/kete-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Peynirli kete kurgusu uygun; hamur ve iç harçta kullanılan malzemeler listede eksik, süre de ciddi kısa."
+  },
+  {
+    "slug": "patatesli-soganli-midye-tava-istanbul-bogaz-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Midye tava klasik olarak unlu veya sodalı kaplamayla kızartılan midyedir; patatesli soğanlı tava kimliği kaynaklarla örtüşmüyor.",
+      "Step 5 limon suyu ve karabiber kullanıyor ama listede yok.",
+      "Type YEMEK ve İstanbul Boğaz usulü iddiası manuel karar gerektiriyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Limon suyu", "amount": "1", "unit": "yemek kaşığı" },
+        { "name": "Karabiber", "amount": "0.25", "unit": "çay kaşığı" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/midye-tava/",
+      "https://www.nefisyemektarifleri.com/midye-tava/"
+    ],
+    "confidence": "high",
+    "reason": "Mevcut yemek midyeli patates tavası olabilir, fakat midye tava adı klasik tarifle çeliştiği için apply öncesi manuel revizyon gerekir."
+  },
+  {
+    "slug": "patatesli-taze-fasulye-tava-osmaniye-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 4 tuz ve sıcak su kullanıyor ama listede yok.",
+      "Osmaniye özel atfı güçlü doğrulanmadı, ancak sebze tavası olarak tarif uygulanabilir."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.75", "unit": "çay kaşığı" },
+        { "name": "Sıcak su", "amount": "0.5", "unit": "su bardağı" }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/patatesli-taze-fasulye/",
+      "https://www.yemek.com/tarif/patatesli-taze-fasulye/"
+    ],
+    "confidence": "medium",
+    "reason": "Patatesli taze fasulye kompozisyonu doğru; step içinde geçen tuz ve sıcak su listeye eklenmeli."
+  },
+  {
+    "slug": "patatesli-yumurta",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 1 scaffold başlangıç cümlesi taşıyor.",
+      "Step 5 peynirli dokudan söz ediyor ama tarifte peynir yok."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patatesleri soyup küçük küpler halinde doğrayın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Sıvı yağı tavada 2 dakika ısıtın.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Patatesleri yağda 15 dakika çevirerek pişirin.", "timerSeconds": 900 },
+        { "stepNumber": 4, "instruction": "Yumurtaları tuz ve pul biberle çırpıp patateslerin üstüne dökün.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Yumurtalar 5 dakika içinde tutunca tavayı ocaktan alın ve sıcak servis edin.", "timerSeconds": 300 }
+      ]
+    },
+    "sources": [
+      "https://www.yemek.com/tarif/patatesli-yumurta/",
+      "https://www.nefisyemektarifleri.com/patatesli-yumurta/"
+    ],
+    "confidence": "high",
+    "reason": "Klasik patatesli yumurta kimliği doğru; iki step üretim kalitesi ve bağlam hatası taşıyor."
+  },
+  {
+    "slug": "patila-kars-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Patila veya patile kaynaklarında Elazığ patilesi ve patatesli gözleme hattı öne çıkıyor; Kars usulü yoğurtlu sade yayla ekmeği güvenle doğrulanmadı.",
+      "Step 1 10 dakika timer verip sadece ekipman hazırlığını anlatıyor.",
+      "Tarif içinde dolgu yok, fakat patila kaynakları genelde içli hamur işi olarak geçiyor."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Un, yoğurt, su ve tuzu 6 dakika yoğurup yumuşak hamur yapın.", "timerSeconds": 360 },
+        { "stepNumber": 2, "instruction": "Hamuru 15 dakika kapalı dinlendirin.", "timerSeconds": 900 },
+        { "stepNumber": 3, "instruction": "Hamuru 6 bezeye ayırıp unlu tezgahta ince açın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Patilaları orta ateşte tavada toplam 10 dakika iki yüzü beneklenene kadar pişirin.", "timerSeconds": 600 },
+        { "stepNumber": 5, "instruction": "Üstlerine tereyağı sürüp sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.nefistarif.net/nefis-patile-tarifi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/patatesli-hingel-kars-yoresi/19304"
+    ],
+    "confidence": "medium",
+    "reason": "Mevcut içerik sade tava ekmeği gibi; Kars patila kimliği ve dolgusuz yapı manuel doğrulama gerektiriyor."
+  },
+  {
+    "slug": "patlican-musakka",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Description fırında piştiğini söylüyor, steps tencerede pişiriyor.",
+      "20 dakika tuzlu suda bekletme ve 18 dakika son pişirme totalMinutes 60 ile uyumsuz."
+    ],
+    "corrections": {
+      "description": "Kızarmış patlıcanların kıymalı domates sosuyla tencerede piştiği klasik ev yemeği.",
+      "cookMinutes": 42,
+      "totalMinutes": 87
+    },
+    "sources": [
+      "https://yemek.com/tarif/patlican-musakka/",
+      "https://www.nefisyemektarifleri.com/patlican-musakka-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Patlıcan musakka kimliği doğru; fırın ifadesi ve toplam süre, mevcut tencere akışıyla çelişiyor."
+  },
+  {
+    "slug": "patlican-pacarasi-manisa-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "Manisa patlıcan paçarası adı güvenilir kaynaklarla doğrulanamadı; mevcut içerik köz patlıcan salatasına benziyor.",
+      "Steps her cümlede title tekrar ediyor ve közleme iki kez 25 dakika sayılmış.",
+      "TotalMinutes 33, iki ayrı 25 dakikalık timer ve servis adımlarıyla tutarsız."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "cookMinutes": 25,
+      "totalMinutes": 40,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patlıcanları közleyip kabuklarını soyun.", "timerSeconds": 1500 },
+        { "stepNumber": 2, "instruction": "Köz patlıcanı iri kıyın ve fazla suyunu süzdürün.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Zeytinyağı, limon suyu, ezilmiş sarımsak ve tuzu karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Patlıcanı sosla 1 dakika ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Mezeyi serin servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://merakrotasi.com/patlican-salatasi/",
+      "https://ye-mek.net/amp/patlican-salatasi"
+    ],
+    "confidence": "medium",
+    "reason": "Uygulama köz patlıcan salatası olarak düzeltilebilir; ancak Manisa paçarası adı manuel kaynak teyidi ister."
+  },
+  {
+    "slug": "patlican-salatasi",
+    "verdict": "CORRECTION",
+    "issues": [
+      "TipNote yasak jargon içeriyor.",
+      "Step 2 patlıcan kelimesini hatalı tekrar ediyor.",
+      "Step 1 ve 2 aynı közleme süresini iki kez sayıyor, totalMinutes şişiyor."
+    ],
+    "corrections": {
+      "tipNote": "Köz patlıcanı soyduktan sonra süzdürmek salatanın tabakta sulanmasını azaltır.",
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patlıcanları ocak üzerinde veya fırında 25 dakika közleyin.", "timerSeconds": 1500 },
+        { "stepNumber": 2, "instruction": "Kabuklarını soyup patlıcanları iri kıyın ve fazla suyunu süzdürün.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Zeytinyağı, limon suyu, sarımsak ve tuzu küçük kasede karıştırın.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Patlıcanı sos ve maydanozla 1 dakika ezmeden harmanlayın.", "timerSeconds": 60 },
+        { "stepNumber": 5, "instruction": "Salatayı servis tabağına alıp sos parlakken sofraya çıkarın.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://merakrotasi.com/patlican-salatasi/",
+      "https://ye-mek.net/amp/patlican-salatasi"
+    ],
+    "confidence": "high",
+    "reason": "Köz patlıcan salatası kimliği doğru; jargon ve hatalı tekrarlar temizlenmeli."
+  },
+  {
+    "slug": "patlicanli-firik-corbasi-adiyaman-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/gaziantep/neyenir/firik-pilavi",
+      "https://www.nefisyemektarifleri.com/firik-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Firik, soğan, salça, köz patlıcan ve limonlu servis yapısı bölgesel tahıl çorbası çizgisiyle uyumlu."
+  },
+  {
+    "slug": "patlicanli-kasarli-omlet-bursa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Steps title tekrarları ve scaffold cümleleri içeriyor.",
+      "Step 5 gevrek kenar diyor, omlet dokusuyla uyumsuz."
+    ],
+    "corrections": {
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Köz patlıcanı ince doğrayın, yumurta ve sütü ayrı kasede çırpın.", "timerSeconds": null },
+        { "stepNumber": 2, "instruction": "Köz patlıcanı tereyağında 2 dakika çevirip fazla suyunu uçurun.", "timerSeconds": 120 },
+        { "stepNumber": 3, "instruction": "Yumurtalı karışımı tavaya dökün ve kaşarı üstüne serpin.", "timerSeconds": null },
+        { "stepNumber": 4, "instruction": "Omleti kapağı kapalı şekilde 4 dakika pişirin.", "timerSeconds": 240 },
+        { "stepNumber": 5, "instruction": "Kaşar eriyince omleti katlayıp sıcak servis edin.", "timerSeconds": null }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/patlicanli-omlet/",
+      "https://www.yemek.com/tarif/kasarli-omlet/"
+    ],
+    "confidence": "medium",
+    "reason": "Patlıcanlı kaşarlı omlet uygulanabilir; mevcut step metni üretim şablonu izleri taşıyor."
+  },
+  {
+    "slug": "patlicanli-kekikli-borek-tekirdag-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "Step 3 soğan ve yağ kullanıyor ama listede yok.",
+      "Step 5 30 dakika fırın diyor, cookMinutes 22 ile uyumsuz.",
+      "Közleme, fırınlama ve dinlenme totalMinutes 40 içine sığmıyor."
+    ],
+    "corrections": {
+      "ingredients_add": [
+        { "name": "Soğan", "amount": "1", "unit": "adet" },
+        { "name": "Sıvı yağ", "amount": "2", "unit": "yemek kaşığı" },
+        { "name": "Yumurta", "amount": "1", "unit": "adet" },
+        { "name": "Tuz", "amount": "0.5", "unit": "çay kaşığı" }
+      ],
+      "allergens_add": [
+        "YUMURTA"
+      ],
+      "cookMinutes": 64,
+      "totalMinutes": 90,
+      "steps_replace": [
+        { "stepNumber": 1, "instruction": "Patlıcanları közleyin veya 220°C fırında 25 dakika yumuşatın.", "timerSeconds": 1500 },
+        { "stepNumber": 2, "instruction": "Köz patlıcanı soyup doğrayın, fazla suyunu süzün.", "timerSeconds": null },
+        { "stepNumber": 3, "instruction": "Soğanı yağda 5 dakika kavurun, patlıcan, kekik ve tuzu ekleyip 4 dakika çevirin.", "timerSeconds": 540 },
+        { "stepNumber": 4, "instruction": "Yufkaları sütle ıslatın, patlıcanlı harcı ve peyniri yayıp rulo yapın.", "timerSeconds": null },
+        { "stepNumber": 5, "instruction": "Üstüne yumurta sürüp böreği 180°C fırında 30 dakika pişirin.", "timerSeconds": 1800 },
+        { "stepNumber": 6, "instruction": "Fırından sonra 8 dakika dinlendirip dilimleyin.", "timerSeconds": 480 }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/koz-patlicanli-borek/7164",
+      "https://www.misssgibi.com/patlicanli-borek/"
+    ],
+    "confidence": "high",
+    "reason": "Köz patlıcanlı börek yapısı doğru; listede olmayan soğan, yağ, yumurta ve ciddi süre farkı düzeltilmeli."
+  }
+]

@@ -4335,4 +4335,45 @@ döndüğünde verify+apply pipeline koştuğunda 22a tetiği gönderilebilir.
 - Sub-batch progress: 20 → 42/71 (%59.2)
 - 29 sub-batch kalan (22a-36b)
 
+### 20.11 Oturum 27 ucuncu paket durum (27 Nis 2026)
+
+**2 sub-batch v2 apply (22a + 23a)**, 71 net yeni prod correction.
+**1 sub-batch BAD reject (22b)**: 4 BLOCKED format ihlali, Codex'ten
+yeniden istenecek. 27 sub-batch kalan (22b yeniden + 23b + 24a-36b).
+
+**PASS oran (3 batch verify, 22a-23a)**: 22a 22 → 22b 28 → 23a 26
+(ortalama %25, en dusuk paket).
+
+**22a (1 MAJOR identity, mini-rev'e)**:
+- mincili-laz-boregi-rize-ev-usulu: Laz boregi muhallebili tatli
+  klasik (kaynaklarda serbetli), mevcut tuzlu mincili borek
+
+**22b BAD batch (4 BLOCKED + 5 MAJOR, APPLY YAPILMADI)**:
+- BLOCKED 4 (Codex disiplin ihlali):
+  - mocha: Kural 9 sure tutarsiz, ifade ~3dk vs totalMinutes 10dk fark %70
+  - moqueca-de-banana-brezilya-usulu: description sisirildi 116->154 (max 139)
+  - mors-frambuazli-rus-usulu: Kural 9 sure tutarsiz, ifade ~5dk vs total 14dk
+  - mugla-sundirme: description sisirildi 92->164 (max 110)
+- MAJOR 5 (yoresel atif kaynaksiz veya tarif yapisi yanlis): moqueca-
+  de-banana, mugla-sundirme, mugla-susamli-kabak-cicegi-boregi,
+  muhallebili-elma-tatlisi-kastamonu, +1
+- Karar: 22b tamamen SKIP. Codex'e Brief sec.20.3 Kural 1 (sisirme
+  yasak max %20) + Kural 9 (sure tutarliligi) disiplini hatirlatma
+  + 22b yeniden teslim isteme.
+
+**23a (0 MAJOR, en temiz batch)**: 37 CORRECTION default apply, dev
+37 + prod 35 yeni correction.
+
+**Sıradaki Codex tetik**: `Mod K. Batch 22b.` (yeniden disiplin ile)
++ `Mod K. Batch 23b.` (dosyada hazir, verify+apply sonraki oturum).
+
+**Oturum 27 toplam Mod K v2 progress (11a-21b + 22a + 23a, 24 batch
+apply)**:
+- 1200 entry kontrol (22b 50 entry skip), 467 net yeni prod correction
+  (396 + 71)
+- 6 onayli MAJOR + 47 mini-rev kuyruk (46 onceki + 1 batch 22a)
+- Mod K v2 toplam prod correction: ~480 → ~947
+- Sub-batch progress: 20 → 44/71 (%62.0, 22b skip)
+- 27 sub-batch kalan (22b yeniden + 23b + 24a-36b)
+
 

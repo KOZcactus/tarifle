@@ -28,18 +28,25 @@ Speech API), Firefox (Gecko), Edge (Blink), Mobile Safari, Chrome
 Android, PWA install banner + standalone mode. Kullanıcı telefondan
 test eder, bulguları rapora geçirilir.
 
-### P1 SEO landing intro derinlik (oturum 26 itibariyle top 12/38 done)
+### P1 SEO landing intro derinlik (oturum 27 itibariyle top 20/41 done)
 
 Top 5 (oturum 25): aperatifler, corbalar, turk, vegan, glutensiz.
 Top 12 (oturum 26 batch 2): + tatlilar, kahvaltiliklar, tavuk-yemekleri,
-et-yemekleri, hamur-isleri, italyan, vejetaryen. **26 landing sayfası
-kaldı** (10 kategori + 15 cuisine + 1 diet, ana-yemekler scope dışı,
-Category tablosunda yok). Pattern: 150-250 kelime, somut sayı + otorite
-+ pratik öngörü. Pattern script `scripts/seo-revise-batch2.mjs`.
+et-yemekleri, hamur-isleri, italyan, vejetaryen.
+**Top 20** (oturum 27 batch 3, commit `b39b4df`): + salatalar (270+),
+baklagil-yemekleri (113), makarna-pilav (244, slug fix), atistirmaliklar
+(68 YENI), sebze-yemekleri (187 YENI), fransiz (52), japon (59),
+portekiz (2 YENI, oturum 27 cuisine 'pt' eklendi).
 
-Sıradaki batch 3 (5-7 sayfa): salatalar (269), baklagil-yemekleri (113),
-makarna-pilav (244), sebze-yemekleri (187), atistirmaliklar (69),
-fransiz, japon. Multi-session iş, oturum 27-30+ tamamlanır.
+**Kalan 18+ sayfa** (kategori + cuisine + diet) batch 4-6 ile devam.
+Pattern: 150-250 kelime, somut sayı + USDA/Akdeniz Diyet Vakfı/Escoffier/
+UNESCO/ATK otorite + pratik öngörü. Pattern script `scripts/seo-revise-
+batch3.mjs` (oturum 27, slug fix + revize + insert 3 mod).
+
+Sıradaki batch 4 (5-7 sayfa): hamur-isleri-yumusak (varsa), kahveler-
+ve-cay, kokteyller, mezeler, soslar, smoothie-shake, pideler-ve-
+lahmacunlar (kategoriler); ispanyol, yunan, cin, kore, tay, hint,
+meksika (cuisine). Multi-session, oturum 28-30+ tamamlanır.
 
 ### Mod K v2 (Tarif Kontrol, oturum 27 itibariyle 42/71 sub-batch done = %59.2)
 
@@ -66,8 +73,13 @@ Toplam Mod K v2 prod ~480 → ~876 correction. Nutrition anomaly
 'es' → 'pt' update. Mini-rev kuyruğu 46 → 44 (lisbon-nohutlu-morina
 + lizbon-portakalli-badem-keki otomatik fix).
 
-**Mini-rev kuyruğu 40** (4 önceki paketi 1 ile kapandı, kuyrukta 26
-batch 11a-18b + 14 batch 19a-21b kalan):
+**Mini-rev kuyruğu 41** (4 önceki paketi 1 ile kapandı, kuyrukta 26
+batch 11a-18b + 14 batch 19a-21b + 1 batch 22a kalan):
+
+22a (1, oturum 27 ikinci paket):
+- `mincili-laz-boregi-rize-ev-usulu`: Laz böreği muhallebili tatlı klasik (kaynaklar şerbetli), mevcut tuzlu mincili börek (identity mismatch)
+
+
 
 ~~Önceki 4 (oturum 26 sonu, mini-rev paketi 1 ile çözüldü, commit `7db92af`)~~:
 - ~~`erzsebet-sour-macar-usulu`~~: ✅ DELETE (Codex halüsinasyonu, klasik kokteyl yok)

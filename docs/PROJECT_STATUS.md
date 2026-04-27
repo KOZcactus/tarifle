@@ -1,8 +1,25 @@
 # Tarifle, Proje Durumu
 
-> **Oturum 27 (27 Nis 2026, oturum 26'nın aynı gün devamı), 7 commit:
-> Mod K v2 22 batch apply (11a-21b) + CUISINE_CODES `pt` ekleme + 4
-> mini-rev paketi 1.**
+> **Oturum 27 (27 Nis 2026, oturum 26'nın aynı gün devamı), 10 commit:
+> Mod K v2 24 batch apply (11a-21b + 22a + 23a, 22b BAD reject) +
+> CUISINE_CODES `pt` ekleme + 4 mini-rev paketi 1 + SEO batch 3.**
+>
+> **Mod K Batch 22a + 23a apply** (commit önceki paket sonrası):
+> 71 yeni prod correction (22a 36 + 23a 35), 0 BLOCKED 22a/23a.
+> 22b BAD reject: 4 BLOCKED format ihlali (mocha + mors-frambuazli
+> Kural 9 süre tutarsız, moqueca-de-banana + mugla-sundirme description
+> şişirme Kural 1 ihlal). Codex'ten 22b yeniden istenecek. Mini-rev
+> kuyruk 40 → 41 (mincili-laz-boregi-rize Laz böreği muhallebili
+> tatlı klasik vs tuzlu börek mevcut). Mod K v2 progress 42 → **44/71
+> (%62.0)**. Toplam Mod K v2 prod correction ~876 → ~947.
+>
+> **SEO landing batch 3** (commit `b39b4df`): top 12 → **top 20**.
+> 5 mevcut sayfa revize (salatalar 141→177 kelime, baklagil 138→196,
+> makarna-pilav 137→190 + slug fix, fransiz 149→195, japon 150→188)
+> + 3 yeni (atistirmaliklar 194, sebze-yemekleri 191, portekiz 215).
+> Pattern: 150-250 kelime + somut sayı + USDA/Akdeniz Diyet Vakfı/
+> Escoffier 1903/UNESCO 2013/ATK otoritesi + pratik öngörü. Em-dash
+> 0, idempotent. Kalan 18 sayfa (kategori + cuisine + diet) batch 4'e.
 >
 > **4 mini-rev paketi 1** (commit `7db92af`, kuyruk 44 → **40**):
 > 2 paralel web research agent + 8+ kaynak teyit. **2 REWRITE**:

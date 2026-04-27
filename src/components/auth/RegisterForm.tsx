@@ -20,17 +20,23 @@ export function RegisterForm() {
 
   function passwordStrength(pw: string): { score: number; label: string } {
     if (pw.length === 0) return { score: -1, label: "" };
+    // 4-level heuristic, baseline minLength=8 (validators.ts).
+    // Uzunluk + char çeşit kombine: 8 zorunlu min, 12+ + variety güçlü.
     let s = 0;
-    if (pw.length >= 12) s++;
-    if (pw.length >= 16) s++;
+    if (pw.length >= 8) s++; // baseline geçti
+    if (pw.length >= 12) s++; // recommended length
     const variety =
       Number(/[a-z]/.test(pw)) +
       Number(/[A-Z]/.test(pw)) +
       Number(/[0-9]/.test(pw)) +
       Number(/[^a-zA-Z0-9]/.test(pw));
     if (variety >= 3) s++;
-    if (variety >= 4) s++;
-    const score = Math.min(3, s);
+    if (variety >= 4 && pw.length >= 12) s++; // gerçek güçlü için ikisi de
+    const score = Math.min(3, Math.max(0, s - 1));
+    // s=1 (sadece 8 char) -> score 0 zayıf
+    // s=2 (12+ char veya 8+variety3) -> score 1 orta
+    // s=3 (12+ + variety3) -> score 2 iyi
+    // s=4 (12+ + variety4) -> score 3 güçlü
     const labels = [
       t("strengthWeak"),
       t("strengthFair"),
@@ -156,7 +162,7 @@ export function RegisterForm() {
             name="password"
             type="password"
             required
-            minLength={12}
+            minLength={8}
             maxLength={128}
             autoComplete="new-password"
             value={password}

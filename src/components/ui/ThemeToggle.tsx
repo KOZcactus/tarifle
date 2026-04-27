@@ -19,7 +19,7 @@ export function ThemeToggle() {
   }, []);
 
   if (!mounted) {
-    return <div className="h-9 w-9" />;
+    return <div className="h-11 w-11 sm:h-9 sm:w-9" />;
   }
 
   const isDark = theme === "dark";
@@ -27,7 +27,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="flex h-9 w-9 items-center justify-center rounded-lg border border-border transition-colors hover:bg-bg-card"
+      className="flex h-11 w-11 items-center justify-center rounded-lg border border-border transition-colors hover:bg-bg-card sm:h-9 sm:w-9"
       aria-label={isDark ? t("toggleThemeLight") : t("toggleThemeDark")}
     >
       {isDark ? (

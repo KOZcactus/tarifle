@@ -98,7 +98,7 @@ export function NotificationBell({
             ? `Bildirimler (${unreadCount} okunmamış)`
             : "Bildirimler"
         }
-        className="relative flex h-9 w-9 items-center justify-center rounded-lg border border-border transition-colors hover:bg-bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        className="relative flex h-11 w-11 items-center justify-center rounded-lg border border-border transition-colors hover:bg-bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:h-9 sm:w-9"
       >
         <BellIcon />
         {unreadCount > 0 && (

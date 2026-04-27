@@ -83,7 +83,11 @@ export function NewsletterForm({ variant = "footer" }: NewsletterFormProps) {
           </ul>
         </div>
         <form onSubmit={handleSubmit} className="mt-4 flex flex-col gap-2 sm:flex-row">
+          <label htmlFor="newsletter-email-inline" className="sr-only">
+            {t("emailLabel")}
+          </label>
           <input
+            id="newsletter-email-inline"
             type="email"
             required
             value={email}
@@ -122,7 +126,11 @@ export function NewsletterForm({ variant = "footer" }: NewsletterFormProps) {
       <h3 className="text-sm font-semibold text-text">{t("footerHeading")}</h3>
       <p className="mt-2 text-xs text-text-muted">{t("footerSubtitle")}</p>
       <form onSubmit={handleSubmit} className="mt-3 flex gap-2">
+        <label htmlFor="newsletter-email-footer" className="sr-only">
+          {t("emailLabel")}
+        </label>
         <input
+          id="newsletter-email-footer"
           type="email"
           required
           value={email}

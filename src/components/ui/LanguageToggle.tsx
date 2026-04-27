@@ -57,7 +57,7 @@ export function LanguageToggle() {
         // name'in basinda olmali (voice control "click TR" diyebilsin).
         aria-label={`${locale.toUpperCase()}, ${t("toggleLanguage")}`}
         disabled={pending}
-        className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-xs font-semibold uppercase tracking-wide text-text transition-colors hover:bg-bg-card disabled:opacity-60"
+        className="flex h-11 w-11 items-center justify-center rounded-lg border border-border text-xs font-semibold uppercase tracking-wide text-text transition-colors hover:bg-bg-card disabled:opacity-60 sm:h-9 sm:w-9"
       >
         {locale.toUpperCase()}
       </button>

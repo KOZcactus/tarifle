@@ -212,7 +212,7 @@ export function Navbar({ notificationSlot, features }: NavbarProps = {}) {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileOpen((v) => !v)}
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-border transition-colors hover:bg-bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary md:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-lg border border-border transition-colors hover:bg-bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary md:hidden"
             aria-label={isMobileOpen ? t("mobileMenuClose") : t("mobileMenuOpen")}
             aria-expanded={isMobileOpen}
             aria-controls="mobile-menu"

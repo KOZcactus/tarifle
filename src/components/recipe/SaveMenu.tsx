@@ -207,7 +207,7 @@ export function SaveMenu({
       <button
         onClick={handleToggleBookmark}
         disabled={isPending}
-        className={`flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-medium transition-colors ${
+        className={`flex min-h-[44px] items-center gap-2 rounded-lg border px-4 py-2 text-sm font-medium transition-colors sm:min-h-0 ${
           bookmarked
             ? "border-primary bg-primary/10 text-primary"
             : "border-border text-text-muted hover:border-primary hover:text-primary"
@@ -233,7 +233,7 @@ export function SaveMenu({
       <button
         onClick={handleAddToShoppingList}
         disabled={isPending || ingredientCount === 0}
-        className="flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-text-muted transition-colors hover:border-accent-green hover:text-accent-green disabled:opacity-50"
+        className="flex min-h-[44px] items-center gap-2 rounded-lg border border-border px-4 py-2 sm:min-h-0 text-sm font-medium text-text-muted transition-colors hover:border-accent-green hover:text-accent-green disabled:opacity-50"
         title={t("shoppingTitleAttr", { count: ingredientCount })}
       >
         <svg
@@ -263,7 +263,7 @@ export function SaveMenu({
         disabled={isPending}
         aria-haspopup="true"
         aria-expanded={isOpen}
-        className="flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-text-muted transition-colors hover:border-accent-blue hover:text-accent-blue"
+        className="flex min-h-[44px] items-center gap-2 rounded-lg border border-border px-4 py-2 sm:min-h-0 text-sm font-medium text-text-muted transition-colors hover:border-accent-blue hover:text-accent-blue"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

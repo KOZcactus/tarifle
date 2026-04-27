@@ -86,7 +86,7 @@ export function IngredientList({
         <div className="flex items-center gap-2">
           <button
             onClick={() => setServingCount(Math.max(1, servingCount - 1))}
-            className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-sm transition-colors hover:bg-bg-elevated"
+            className="flex h-11 w-11 items-center justify-center rounded-lg border border-border text-sm transition-colors hover:bg-bg-elevated sm:h-8 sm:w-8"
             aria-label={t("servingDown")}
           >
             −
@@ -96,7 +96,7 @@ export function IngredientList({
           </span>
           <button
             onClick={() => setServingCount(servingCount + 1)}
-            className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-sm transition-colors hover:bg-bg-elevated"
+            className="flex h-11 w-11 items-center justify-center rounded-lg border border-border text-sm transition-colors hover:bg-bg-elevated sm:h-8 sm:w-8"
             aria-label={t("servingUp")}
           >
             +

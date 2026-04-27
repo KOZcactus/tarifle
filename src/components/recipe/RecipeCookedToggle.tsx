@@ -69,7 +69,7 @@ export function RecipeCookedToggle({
           onClick={handleClick}
           disabled={isPending}
           aria-pressed={isCooked}
-          className={`inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium transition-colors disabled:opacity-60 ${
+          className={`inline-flex min-h-[44px] items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-colors disabled:opacity-60 sm:min-h-0 sm:py-1.5 ${
             isCooked
               ? "border border-amber-500 bg-amber-500 text-white hover:bg-amber-600"
               : "border border-border bg-bg-card text-text hover:border-amber-400 hover:text-amber-700 dark:hover:text-amber-300"

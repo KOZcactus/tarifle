@@ -1,7 +1,11 @@
 # Tarifle, Proje Durumu
 
-> **Oturum 26 (28 Nis 2026, 4 commit, P1 SEO batch 2 + Mod K v2
-> 5 batch).** P1 SEO landing batch 2 (7 sayfa): tatlilar (470+),
+> **Oturum 26 (28 Nis 2026, 7 commit, P1 SEO batch 2 + Mod K v2
+> 8 batch + manuel mini-rev 7 tarif).** Mod K v2 progress: 12 → 20/
+> 71 sub-batch done (%28.2). 9b + 10a + 10b apply (commit `f86789f`):
+> 150 entry, 75 PASS / 71 CORRECTION / 4 MAJOR / 0 BLOCKED. 4 yeni
+> MAJOR (erzsebet-sour, feijao-tropeiro, feslegenli-tavuklu-pirinc-
+> tayland, findikli-keskek-toplari) sonraki mini-rev batch'e bırakıldı. P1 SEO landing batch 2 (7 sayfa): tatlilar (470+),
 > kahvaltiliklar (310+), tavuk-yemekleri (yaklaşık 160), et-yemekleri
 > (350+), hamur-isleri (350+), italyan (yaklaşık 50), vejetaryen
 > (2400+). Browser smoke 7/7 PASS. Top 5 → top 12 done. Em-dash

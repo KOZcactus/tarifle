@@ -28,11 +28,26 @@ Sıradaki batch 3 (5-7 sayfa): salatalar (269), baklagil-yemekleri (113),
 makarna-pilav (244), sebze-yemekleri (187), atistirmaliklar (69),
 fransiz, japon. Multi-session iş, oturum 27-30+ tamamlanır.
 
-### Mod K v2 (Tarif Kontrol, oturum 26 itibariyle 17/71 sub-batch done = %23.9)
+### Mod K v2 (Tarif Kontrol, oturum 26 itibariyle 20/71 sub-batch done = %28.2)
 
-**Oturum 26 progress**: Batch 7a + 7b + 8a + 8b + 9a apply
-(commit `1c1dccf`), 84 ek correction prod. PASS oranı %64 (oturum 25
-ortalaması %48'in üstünde).
+**Oturum 26 progress**: Batch 7a + 7b + 8a + 8b + 9a + 9b + 10a + 10b
+apply (commit `1c1dccf` + `f86789f`), 155 ek correction prod (84 + 71).
+PASS oranı 7a-9a %64 + 9b-10b %50, ortalama %57 (oturum 25 %48'in
+üstünde).
+
+**4 yeni MAJOR_ISSUE manuel review listesi** (9b/10a/10b'den):
+
+- `erzsebet-sour-macar-usulu`: Erzsebet adı + Macar köken kaynaksız.
+  Title revize ya da cuisine değişikliği gerek.
+- `feijao-tropeiro-brezilya-usulu`: Klasik Feijão tropeiro etli (bacon
+  veya sosis), mevcut tarif vegetarian. Identity mismatch, kıyma/
+  bacon ekle veya title revize.
+- `feslegenli-tavuklu-pirinc-tayland-usulu`: Tayland fesleğenli
+  tavuk soslu sote olmali (sarımsak + acı biber + soya sosu + balık
+  sosu); mevcut sade pilav. Step + ingredient rewrite.
+- `findikli-keskek-toplari-ordu-usulu`: Scaffold steps + buğday
+  süresi eksik (aşurelik buğday 25 dk yerine uzun veya ön ıslama).
+  Step rewrite.
 
 **Mini-rev 7 tarif TAMAM ✅** (3 BLOCKED oturum 25 + 4 MAJOR oturum
 26): Manuel düzeltme + 2 web research agent + 2-3 kaynak/tarif teyit.

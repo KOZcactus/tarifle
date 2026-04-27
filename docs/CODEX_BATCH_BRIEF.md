@@ -3991,9 +3991,25 @@ HER ALAN dahil):**
      `(\d+)\s*(saat|sa|dakika|dk|gün)` ile süre bahsi tespit, totalMinutes
      ile karşılaştır. Fark > %30 ise CORRECTION (totalMinutes veya
      marineMinutes düzelt veya step paragraf revize).
-   - **Tip**: marine/dinlendirme süresi değerse marineMinutes alanı
-     ayrı; aksi halde totalMinutes'a dahil. RecipeTimeline 3-segment
-     UI bu ayrımı zaten görselleştiriyor.
+   - **Tip (KRİTİK, oturum 25 RecipeTimeline keşfi)**: Schema'da
+     marineMinutes ALANI YOK. Sadece prepMinutes + cookMinutes +
+     totalMinutes. RecipeTimeline component (`src/components/recipe/
+     RecipeTimeline.tsx`) "bekleme/marine" segmentini ŞÖYLE hesaplar:
+     `wait = totalMinutes - (prepMinutes + cookMinutes)`. Yani **marine
+     ve dinlendirme süresi prepMinutes'a DAHİL EDİLMEMELİ**, fark
+     olarak bırakılmalı. Adana Kebap örneği:
+     - YANLIŞ: prep 90 (15 yoğur + 60 marine + 15 hazırlık) + cook 20
+       + total 110 → wait 0, RecipeTimeline marine segment görünmez
+     - DOĞRU: prep 30 (15 yoğur + 15 hazırlık) + cook 20 + total 110
+       → wait 60, RecipeTimeline 3-segment görünür (Hazırlık 30 +
+       Bekleme/Marine 60 + Pişirme 20)
+     - Sauerbraten 3 gün marine örneği: prep 30 + cook 180 + total
+       4500 → wait 4290 (~3 gün), bekleme bar büyük segment
+   - **Codex talimatı**: Eğer steps'te "1 saat dinlendir", "12 saat
+     marinaya bırak", "buzdolabında 2 saat bekle" gibi pasif bekleme
+     süreleri varsa, bu süreler **totalMinutes'a dahil edilir AMA
+     prepMinutes/cookMinutes'a DAHİL EDİLMEZ**. RecipeTimeline'in
+     wait segmentini hesaplaması için fark gerekli.
 
 **10. Nutrition ingredient-aware anomaly (oturum 25, GPT 5 Pro audit):**
    - Mevcut Kural: 4×protein + 4×carbs + 9×fat ≈ averageCalories
